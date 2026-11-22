@@ -1,0 +1,85 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l1-010",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — طبيعة مثلث من مربعات أضلاعه",
+    "estimatedMinutes": 2,
+    "tags": [
+      "عكس فيثاغورس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_ithbat-khawas-maalam_P1",
+      "modelledOn": "ex-21"
+    }
+  },
+  "generator": {
+    "tool": "u1x-ithbat-khawas-maalam/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "ABC مثلث في معلم متعامد ومتجانس حيث $AB^2 = 9$ ، $BC^2 = 16$ ، $AC^2 = 25$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المثلث ABC :",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "قائم في A",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-FITHAGHURAS-WATAR"
+        },
+        {
+          "id": "B",
+          "content": "قائم في C",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-FITHAGHURAS-WATAR"
+        },
+        {
+          "id": "C",
+          "content": "متساوي الساقين",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SAQAYN-QAIM"
+        },
+        {
+          "id": "D",
+          "content": "قائم في B",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أكبر مربع هو $AC^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يساوي مجموع المربعين الآخرين؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الزاوية القائمة تقابل أطول ضلع [AC]."
+        }
+      ],
+      "feedback": {
+        "correct": "$9 + 16 = 25$ : $AB^2 + BC^2 = AC^2$ ، فالمثلث قائم في B المقابلة لـ [AC].",
+        "incorrect": "الزاوية القائمة عند الرأس المقابل لأطول ضلع."
+      }
+    }
+  ]
+}

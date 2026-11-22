@@ -1,0 +1,218 @@
+{
+  "id": "ex-4am-awwaliyan-fima-baynahuma-l4-008",
+  "lessonCode": "awwaliyan-fima-baynahuma",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2015 — العددان 2717 و 1729",
+    "estimatedMinutes": 13,
+    "tags": [
+      "خوارزمية إقليدس",
+      "كسر",
+      "إثبات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_awwaliyan-fima-baynahuma_P2",
+      "modelledOn": "BEM 2015 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 2717 و 1729 مع كتابة مراحل الحساب.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "247",
+      "misconceptionSignatures": [
+        {
+          "value": "19",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 2717 على 1729: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (2717 ; 1729) بالزوج (1729 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 247.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$2717 = 1729 \\times 1 + 988$",
+          "$1729 = 988 \\times 1 + 741$",
+          "$988 = 741 \\times 1 + 247$",
+          "$741 = 247 \\times 3 + 0$",
+          "آخر باقٍ غير معدوم هو 247، إذن:"
+        ],
+        "result": "PGCD(2717 ; 1729) = 247"
+      },
+      "work": "required",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب $\\dfrac{2717}{1729}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "11/7",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 247: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال 01.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2717}{1729} = \\dfrac{2717 \\div 247}{1729 \\div 247}$"
+        ],
+        "result": "\\dfrac{2717}{1729} = \\dfrac{11}{7}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب العدد P حيث: $P = \\dfrac{2717}{1729} - \\dfrac{3}{7} \\times \\dfrac{2}{3}$ ، واكتبه على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "9/7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الكتابة غير القابلة للاختزال للكسر $\\dfrac{2717}{1729}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ بالجداء، ثم اطرح كسرين لهما المقام نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$P = \\dfrac{11}{7} - \\dfrac{2}{7}$",
+        "incorrect": "الضرب قبل الطرح، ثم وحّد المقامين."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{7} \\times \\dfrac{2}{3} = \\dfrac{6}{21} = \\dfrac{2}{7}$",
+          "$P = \\dfrac{11}{7} - \\dfrac{2}{7}$"
+        ],
+        "result": "P = \\dfrac{9}{7}"
+      },
+      "timeSeconds": 210
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "بيّن أن بسط ومقام العدد P أوليان فيما بينهما.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيمة PGCD(9 ; 7) التي وجدتها",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عددان أوليان فيما بينهما: احسب قاسمهما المشترك الأكبر PGCD(9 ; 7)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 9 على 7، ثم واصل القسمات المتتابعة إلى أن تجد باقيًا معدومًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن آخر باقٍ غير معدوم بما يتطلّبه تعريف عددين أوليين فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(9 ; 7) = 1: العددان 9 و 7 أوليان فيما بينهما.",
+        "incorrect": "راجع القسمات المتتابعة باقيًا باقيًا: آخر باقٍ غير معدوم هو القاسم المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$9 = 7 \\times 1 + 2$",
+          "$7 = 2 \\times 3 + 1$",
+          "$2 = 1 \\times 2 + 0$",
+          "آخر باقٍ غير معدوم هو 1، إذن PGCD(9 ; 7) = 1 .",
+          "ومنه العددان 9 و 7 أوليان فيما بينهما."
+        ],
+        "result": "PGCD(9 ; 7) = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

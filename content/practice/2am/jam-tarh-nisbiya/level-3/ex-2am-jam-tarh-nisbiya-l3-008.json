@@ -1,0 +1,201 @@
+{
+  "id": "ex-2am-jam-tarh-nisbiya-l3-008",
+  "lessonCode": "jam-tarh-nisbiya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — المجموع والفرق لعددين",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جمع",
+      "طرح"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العددين $x=-7$ و $y=+3$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $x+y$ .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-JAMNISB-SIGNFIRST"
+        },
+        {
+          "value": "-10",
+          "id": "MISC-JAMNISB-ADDDIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن إشارتي العددين ثمّ قارن مسافتيهما إلى الصفر : أيّهما أبعد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عند اختلاف الإشارتين نطرح المسافة الصغرى من المسافة الكبرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "النتيجة تأخذ إشارة العدد الأبعد عن الصفر ؛ وإذا تساوت المسافتان فالنتيجة معدومة."
+        }
+      ],
+      "feedback": {
+        "correct": "$(-7)+(+3)=(-4)$ : العددان من إشارتين مختلفتين فنطرح المسافتين ونأخذ إشارة الأبعد عن الصفر.",
+        "incorrect": "راجع قاعدة الحساب المناسبة (الجمع، أو الطرح بإضافة المعاكس)، ثمّ أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "العددان من إشارتين مختلفتين : المسافتان إلى الصفر $7$ و $3$ ؛ نطرح الصغرى من الكبرى : $7-3=4$",
+          "نأخذ إشارة العدد الأبعد عن الصفر وهو $(-7)$ (السالبة)",
+          "$(-7)+(+3)=(-4)$"
+        ],
+        "result": "-4"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $x-y$ .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-10",
+      "misconceptionSignatures": [
+        {
+          "value": "-4",
+          "id": "MISC-JAMNISB-SUBNOFLIP"
+        },
+        {
+          "value": "10",
+          "id": "MISC-JAMNISB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الطرح يعني إضافة المعاكس : اكتب معاكس العدد المطروح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حوّل الفرق إلى مجموع بإبدال العدد المطروح بمعاكسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثمّ طبّق قاعدة الجمع المناسبة : إشارتان متماثلتان أم مختلفتان؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$(-7)-(+3)=(-10)$ : الطرح إضافة للمعاكس ثمّ نطبّق قاعدة الجمع.",
+        "incorrect": "راجع قاعدة الحساب المناسبة (الجمع، أو الطرح بإضافة المعاكس)، ثمّ أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الطرح يعني إضافة المعاكس : معاكس $(+3)$ هو $(-3)$",
+          "$(-7)-(+3)=(-7)+(-3)$",
+          "العددان لهما الإشارة نفسها (السالبة) : نجمع المسافتين إلى الصفر ، $7+3=10$",
+          "نحتفظ بالإشارة المشتركة (السالبة)",
+          "$(-7)-(+3)=(-10)$"
+        ],
+        "result": "-10"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب $y-x$ .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "-4",
+          "id": "MISC-JAMNISB-SUBNOFLIP"
+        },
+        {
+          "value": "-10",
+          "id": "MISC-JAMNISB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الطرح يعني إضافة المعاكس : اكتب معاكس العدد المطروح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حوّل الفرق إلى مجموع بإبدال العدد المطروح بمعاكسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثمّ طبّق قاعدة الجمع المناسبة : إشارتان متماثلتان أم مختلفتان؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$(+3)-(-7)=(+10)$ : الطرح إضافة للمعاكس ثمّ نطبّق قاعدة الجمع.",
+        "incorrect": "راجع قاعدة الحساب المناسبة (الجمع، أو الطرح بإضافة المعاكس)، ثمّ أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الطرح يعني إضافة المعاكس : معاكس $(-7)$ هو $(+7)$",
+          "$(+3)-(-7)=(+3)+(+7)$",
+          "العددان لهما الإشارة نفسها (الموجبة) : نجمع المسافتين إلى الصفر ، $3+7=10$",
+          "نحتفظ بالإشارة المشتركة (الموجبة)",
+          "$(+3)-(-7)=(+10)$"
+        ],
+        "result": "10"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

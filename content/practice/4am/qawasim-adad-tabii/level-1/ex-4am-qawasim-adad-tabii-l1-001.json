@@ -1,0 +1,148 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l1-001",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 1,
+  "metadata": {
+    "title": "قواسم العدد 60 بجداءات عاملين",
+    "estimatedMinutes": 8,
+    "tags": [
+      "جداء عاملين",
+      "قواسم"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-2",
+      "page": 8,
+      "section": "أنشطة",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نريد تعيين كل قواسم العدد 60."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "اكتب العدد 60 على شكل جداء عاملين بكل الأشكال الممكنة.",
+      "statement": "ما هو عدد هذه الكتابات؟ (دون اعتبار ترتيب العاملين)",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بـ $60 = 1 \\times 60$ ثم جرّب العامل الأول 2 ثم 3 …"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "توقّف عندما يصير العامل الأول أكبر من العامل الثاني: $7^2 \\leq 60 < 8^2$."
+        }
+      ],
+      "feedback": {
+        "correct": "$60 = 1 \\times 60$ ، $60 = 2 \\times 30$ ، $60 = 3 \\times 20$ ، $60 = 4 \\times 15$ ، $60 = 5 \\times 12$ ، $60 = 6 \\times 10$.",
+        "incorrect": "اكتب كل الجداءات $d \\times e = 60$ حيث $d \\leq e$، ولا تنسَ $60 = 1 \\times 60$."
+      },
+      "solution": {
+        "lines": [
+          "$7^2 \\leq 60 < 8^2$: نجرّب العامل الأول من 1 إلى 7.",
+          "$60 = 1 \\times 60$ ، $60 = 2 \\times 30$ ، $60 = 3 \\times 20$ ، $60 = 4 \\times 15$ ، $60 = 5 \\times 12$ ، $60 = 6 \\times 10$",
+          "إذن عدد الكتابات هو 6."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج كل قواسم العدد 60.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        15,
+        20,
+        30,
+        60
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            10,
+            12,
+            15,
+            20,
+            30
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 60 بمربعات الأعداد: إلى أي عدد يكفي أن تختبر قابلية القسمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل قسمة باقيها معدوم تعطي قاسمين: $d$ و $60 \\div d$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$60 = 1 \\times 60$ ، $60 = 2 \\times 30$ ، $60 = 3 \\times 20$ ، $60 = 4 \\times 15$ ، $60 = 5 \\times 12$ ، $60 = 6 \\times 10$.",
+        "incorrect": "اختبر الأعداد التي مربعها أصغر من العدد أو يساويه، وخذ من كل قسمة باقيها معدوم القاسمين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$7^2 = 49 \\leq 60 < 64 = 8^2$ ومنه نختبر قابلية قسمة 60 على الأعداد من 1 إلى 7.",
+          "نجد أن 60 يقبل القسمة على كل من الأعداد: 1 ، 2 ، 3 ، 4 ، 5 ، 6.",
+          "ومن المساويات: $60 = 1 \\times 60$ ، $60 = 2 \\times 30$ ، $60 = 3 \\times 20$ ، $60 = 4 \\times 15$ ، $60 = 5 \\times 12$ ، $60 = 6 \\times 10$",
+          "إذن قواسم العدد 60 هي: 1 ، 2 ، 3 ، 4 ، 5 ، 6 ، 10 ، 12 ، 15 ، 20 ، 30 ، 60."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 330
+    }
+  ]
+}

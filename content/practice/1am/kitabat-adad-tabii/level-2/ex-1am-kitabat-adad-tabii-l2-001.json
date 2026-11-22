@@ -1,0 +1,224 @@
+{
+  "id": "ex-1am-kitabat-adad-tabii-l2-001",
+  "lessonCode": "kitabat-adad-tabii",
+  "level": 2,
+  "metadata": {
+    "title": "رقم المرتبة وعدد وحداتها",
+    "estimatedMinutes": 5,
+    "tags": [
+      "رقم",
+      "عدد",
+      "جدول"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-1",
+      "page": 17,
+      "section": "أتمرّن",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العدد 4165."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما هو رقم العشرات في العدد 4165؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "رقم واحد",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد رقم الآحاد أولا: هو الرقم الأخير على اليمين في الجزء الصحيح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من رقم الآحاد وعُدّ المراتب نحو اليسار."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع العدد في جدول المراتب."
+        }
+      ],
+      "feedback": {
+        "correct": "رقم العشرات في العدد 4165 هو 6.",
+        "incorrect": "يأخذ كل رقم معناه من موقعه في كتابة العدد: نعدّ المراتب انطلاقا من رقم الآحاد."
+      },
+      "solution": {
+        "lines": [
+          "في العدد 4165: 4 رقم الآلاف، 1 رقم المئات، 6 رقم العشرات، 5 رقم الآحاد.",
+          "إذن رقم العشرات هو 6."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما هو عدد العشرات في العدد 4165؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "416",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-KITABA-DIGIT-COUNT"
+        },
+        {
+          "value": "41",
+          "id": "MISC-KITABA-RANKSHIFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد العشرات هو عدد المجموعات من 10 التي نكوّنها من العدد كله، لا الرقم وحده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احذف الأرقام التي على يمين مرتبة العشرات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: اضرب جوابك في 10 ثم أضف ما بقي."
+        }
+      ],
+      "feedback": {
+        "correct": "$4165 = 416 \\times 10 + 5$: عدد العشرات هو 416، أمّا رقم العشرات فهو 6.",
+        "incorrect": "رقم المرتبة هو ما يبقى فيها وحدها؛ أمّا عدد وحداتها فنحسب فيه كل ما يمكن تجميعه منها في العدد كله."
+      },
+      "solution": {
+        "lines": [
+          "$4165 = 416 \\times 10 + 5$",
+          "إذن عدد العشرات في العدد 4165 هو 416، ورقم العشرات هو 6."
+        ],
+        "result": "416"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما هو عدد المئات في العدد 4165؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "41",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-KITABA-DIGIT-COUNT"
+        },
+        {
+          "value": "4",
+          "id": "MISC-KITABA-RANKSHIFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد المئات هو عدد المجموعات من 100 التي نكوّنها من العدد كله، لا الرقم وحده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احذف الأرقام التي على يمين مرتبة المئات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: اضرب جوابك في 100 ثم أضف ما بقي."
+        }
+      ],
+      "feedback": {
+        "correct": "$4165 = 41 \\times 100 + 65$: عدد المئات هو 41، أمّا رقم المئات فهو 1.",
+        "incorrect": "رقم المرتبة هو ما يبقى فيها وحدها؛ أمّا عدد وحداتها فنحسب فيه كل ما يمكن تجميعه منها في العدد كله."
+      },
+      "solution": {
+        "lines": [
+          "$4165 = 41 \\times 100 + 65$",
+          "إذن عدد المئات في العدد 4165 هو 41، ورقم المئات هو 1."
+        ],
+        "result": "41"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "برّر لماذا يختلف رقم العشرات عن عدد العشرات في العدد 4165.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم عشرة في مئة واحدة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل تُحسب عشرات الآلاف والمئات في عدد العشرات؟"
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك بالحل النموذجي سطرا بسطر."
+      },
+      "solution": {
+        "lines": [
+          "رقم العشرات هو الرقم الواقع في مرتبة العشرات: 6.",
+          "عدد العشرات هو كل العشرات الموجودة في العدد: $4165 = 416 \\times 10 + 5$، أي 416 عشرة.",
+          "الآلاف والمئات تحتوي هي أيضا على عشرات، لذلك عدد العشرات أكبر من رقمها."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

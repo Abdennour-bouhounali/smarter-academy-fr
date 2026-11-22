@@ -1,0 +1,178 @@
+{
+  "id": "ex-3am-tabsit-hadhf-aqwas-l2-009",
+  "lessonCode": "tabsit-hadhf-aqwas",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — حذف قوسين وتحقّق",
+    "estimatedMinutes": 6,
+    "tags": [
+      "حذف الأقواس",
+      "تحقق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $C$ حيث:",
+    "formulas": [
+      "C = 3x^2 - (x^2 - 4x + 2)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "بسّط العبارة $C$ .",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $C$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "-4",
+          "id": "MISC-TABSIT-MINUS-FIRST-ONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة التي تسبق القوسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوسان مسبوقان بالإشارة $-$ يُحذفان مع تغيير إشارة كل حدّ بينهما، لا الحدّ الأول وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العبارة بدون أقواس حدًّا حدًّا، ثم اجمع الحدود المتشابهة، وتحقّق بتعويض $x$ بعدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = 2x^2 + 4x - 2$ إذن $b = 4$.",
+        "incorrect": "اجمع الحدود المتشابهة بإشاراتها بعد حذف الأقواس، ثم اقرأ العدد المطلوب في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$C = 3x^2 - x^2 + 4x - 2$",
+          "$C = 2x^2 + 4x - 2$"
+        ],
+        "result": "b = 4"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $c$ :",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $C$ على الشكل $ax^2 + bx + c$ : اكتب العدد $c$ فقط",
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-TABSIT-MINUS-FIRST-ONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة التي تسبق القوسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوسان مسبوقان بالإشارة $-$ يُحذفان مع تغيير إشارة كل حدّ بينهما، لا الحدّ الأول وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العبارة بدون أقواس حدًّا حدًّا، ثم اجمع الحدود المتشابهة، وتحقّق بتعويض $x$ بعدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = 2x^2 + 4x - 2$ إذن $c = -2$.",
+        "incorrect": "اجمع الحدود المتشابهة بإشاراتها بعد حذف الأقواس، ثم اقرأ العدد المطلوب في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$C = 3x^2 - x^2 + 4x - 2$",
+          "$C = 2x^2 + 4x - 2$"
+        ],
+        "result": "c = -2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "تحقّق من صحة تبسيطك بحساب العبارتين من أجل $x = 1$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى، ويُستحسن أن تعوّض في الشكل المبسّط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويات العمليات: القوى، ثم الضرب، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالتعويض في العبارة قبل تبسيطها: القيمة لا تتغيّر."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "العبارة الأصلية: $3 \\times 1^2 - (1^2 - 4 \\times 1 + 2) = 3 - (-1) = 4$ .",
+          "الشكل المبسّط: $2 \\times 1^2 + 4 \\times 1 - 2 = 4$ .",
+          "القيمتان متساويتان، وهذا يوافق أن التبسيط لا يغيّر قيمة العبارة."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

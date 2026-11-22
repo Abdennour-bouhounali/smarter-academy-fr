@@ -3,6 +3,8 @@ import RationalInput from './inputs/RationalInput';
 import AffineInput from './inputs/AffineInput';
 import IntervalInput from './inputs/IntervalInput';
 import PointInput from './inputs/PointInput';
+import IntegerSetInput from './inputs/IntegerSetInput';
+import SelfCheckInput from './inputs/SelfCheckInput';
 
 /**
  * Une entrée par `answerType` que le contenu peut déclarer.
@@ -22,9 +24,11 @@ const REGISTRY = {
   affine: AffineInput,
   interval: IntervalInput,
   point: PointInput,
+  integerSet: IntegerSetInput,
+  selfCheck: SelfCheckInput,
 };
 
-export default function QuestionRenderer({ question, value, onChange, disabled }) {
+export default function QuestionRenderer({ question, value, onChange, disabled, ...extra }) {
   const Widget = REGISTRY[question.answerType];
 
   if (!Widget) {
@@ -35,5 +39,7 @@ export default function QuestionRenderer({ question, value, onChange, disabled }
     );
   }
 
-  return <Widget question={question} value={value} onChange={onChange} disabled={disabled} />;
+  // `extra` : ce qu'un widget particulier attend en plus (SelfCheckInput :
+  // `onSelfMark`, `mark`, `busy`). Les autres l'ignorent.
+  return <Widget question={question} value={value} onChange={onChange} disabled={disabled} {...extra} />;
 }

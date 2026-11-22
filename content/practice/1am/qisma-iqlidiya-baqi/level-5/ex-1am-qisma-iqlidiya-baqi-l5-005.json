@@ -1,0 +1,381 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l5-005",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — عقود السيّدة نوال",
+    "estimatedMinutes": 18,
+    "tags": [
+      "عقود",
+      "ما ينقص",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 2,
+      "file": "1am-s2-70",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تصنع السيّدة نوال عقودًا تقليدية من اللؤلؤ لتعين بها أسرتها.\nالجزء الأول: لديها 543 لؤلؤة، ويحتاج كل عقد إلى 26 لؤلؤة.\nالجزء الثاني: تبيع العقد بـ 1250 دج، وتريد أن تشتري آلة خياطة ثمنها 26000 دج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "كم عقدًا تصنع؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد العقود",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "23",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "19",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "21",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 543 من 26 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 26 دون أن نتجاوز 543."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$543 = 26 \\times 20 + 23$ و $23 < 26$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 26 فلا يتجاوز الجداء 543، والباقي عندئذ أصغر من 26."
+      },
+      "solution": {
+        "lines": [
+          "$26 \\times 20 = 520$ و $26 \\times 21 = 546$",
+          "$520 \\le 543 < 546$ ، إذن الحاصل هو 20."
+        ],
+        "result": "q = 20"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "عبّر عن القسمة بالمساواة المناسبة.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$543 = 26 \\times 19 + 49$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "id": "B",
+          "content": "$543 = 26 \\times 23 + 20$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "id": "C",
+          "content": "$543 = 26 \\times 21 + 23$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        },
+        {
+          "id": "D",
+          "content": "$543 = 26 \\times 20 + 23$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق من صحة كل مساواة بالحساب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في القسمة الإقليدية على 26، يجب أن يكون الباقي أصغر من 26."
+        }
+      ],
+      "feedback": {
+        "correct": "$26 \\times 20 + 23 = 543$ و $23 < 26$: الشرطان محقّقان.",
+        "incorrect": "المساواة الصحيحة يجب أن تكون صحيحة حسابيًا، وأن يكون باقيها أصغر من المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$26 \\times 20 = 520$ و $520 + 23 = 543$",
+          "$23 < 26$ ، إذن:"
+        ],
+        "result": "543 = 26 \\times 20 + 23"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "كم لؤلؤة تبقى معها؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد اللآلئ",
+      "expectedAnswer": "23",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "49",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 543."
+        }
+      ],
+      "feedback": {
+        "correct": "$543 - 26 \\times 20 = 543 - 520 = 23$ ، و $23 < 26$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 26."
+      },
+      "solution": {
+        "lines": [
+          "$543 = 26 \\times 20 + 23$",
+          "$23 < 26$ ، إذن الباقي هو 23."
+        ],
+        "result": "r = 23"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "كم لؤلؤة يجب أن تشتري لتصنع عقدًا آخر؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد اللآلئ",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "23",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم يبقى بعد تشكيل المجموعات الكاملة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المجموعة الجديدة تحتاج إلى العدد الكامل للمجموعة."
+        }
+      ],
+      "feedback": {
+        "correct": "يبقى 23، والمجموعة تضمّ 26: $26 - 23 = 3$.",
+        "incorrect": "المطلوب ليس الباقي نفسه، بل ما ينقص الباقي ليصبح 26."
+      },
+      "solution": {
+        "lines": [
+          "$543 = 26 \\times 20 + 23$",
+          "$26 - 23 = 3$"
+        ],
+        "result": "3"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "احسب ثمن بيع العقود التي صنعتها.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "25000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد العقود × ثمن العقد."
+        }
+      ],
+      "feedback": {
+        "correct": "$20 \\times 1250 = 25000$ دج.",
+        "incorrect": "اضرب عدد العقود الكاملة في ثمن العقد."
+      },
+      "solution": {
+        "lines": [
+          "$20 \\times 1250 = 25000$"
+        ],
+        "result": "25000 \\text{ DA}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "sub": "ا",
+      "statement": "هل يكفيها هذا المبلغ لشراء الآلة؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المبلغ بثمن الآلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$25000 < 26000$.",
+        "incorrect": "قارن 25000 بثمن الآلة."
+      },
+      "solution": {
+        "lines": [
+          "$25000 < 26000$ ، إذن لا يكفي."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q7",
+      "step": "05",
+      "sub": "ب",
+      "statement": "إذا اشترت اللآلئ الناقصة وصنعت عقدًا آخر، هل يكفيها ثمن العقود؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-NISYAN-ZIYADA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم عقدًا يصبح لديها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب ثمن العقود الجديد وقارنه بثمن الآلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$21 \\times 1250 = 26250 > 26000$.",
+        "incorrect": "أضف عقدًا واحدًا ثم أعد الحساب."
+      },
+      "solution": {
+        "lines": [
+          "يصبح لديها $20 + 1 = 21$ عقدًا.",
+          "$21 \\times 1250 = 26250$ و $26250 > 26000$ ، إذن يكفيها."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

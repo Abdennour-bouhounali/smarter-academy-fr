@@ -1,0 +1,319 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l4-004",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — محور قطعة وخاصية فيثاغورس",
+    "estimatedMinutes": 12,
+    "tags": [
+      "خاصية فيثاغورس",
+      "محور قطعة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 3,
+      "file": "3am-s3-56",
+      "exercise": 4
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الرابع",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "$[AB]$ قطعة مستقيم طولها $6{,}4\\,\\mathrm{cm}$ ومنتصفها $I$ . $(\\Delta)$ محور القطعة $[AB]$ ، و $M$ نقطة من $(\\Delta)$ حيث $IM = 2{,}4\\,\\mathrm{cm}$ .",
+    "figure": {
+      "points": {
+        "A": [
+          -3.2,
+          0
+        ],
+        "B": [
+          3.2,
+          0
+        ],
+        "I": [
+          0,
+          0
+        ],
+        "M": [
+          0,
+          3.4
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "I",
+          "ticks": 1
+        },
+        {
+          "from": "I",
+          "to": "B",
+          "ticks": 1
+        },
+        [
+          "A",
+          "M"
+        ],
+        [
+          "M",
+          "B"
+        ],
+        {
+          "from": "I",
+          "to": "M",
+          "label": "2,4 cm"
+        }
+      ],
+      "rightAngles": [
+        [
+          "B",
+          "I",
+          "M"
+        ]
+      ],
+      "labels": {
+        "I": "s"
+      },
+      "lines": [
+        {
+          "through": [
+            "I",
+            "M"
+          ],
+          "name": "(Δ)",
+          "extend": true,
+          "dashed": true
+        }
+      ],
+      "ariaLabel": "قطعة [AB] طولها 6,4 cm ومنتصفها I، و M نقطة من محورها حيث IM = 2,4 cm",
+      "maxWidth": 320,
+      "caption": "(الأطوال غير حقيقية)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب الطول $IA$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm",
+      "expectedAnswer": "3.2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$I$ منتصف $[AB]$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خذ نصف طول القطعة."
+        }
+      ],
+      "feedback": {
+        "correct": "$IA = 3{,}2\\,\\mathrm{cm}$ .",
+        "incorrect": "المنتصف يقسم القطعة إلى نصفين متقايسين."
+      },
+      "solution": {
+        "lines": [
+          "$I$ منتصف $[AB]$ : $IA = \\dfrac{6{,}4}{2} = 3{,}2\\,\\mathrm{cm}$"
+        ],
+        "result": "IA = 3{,}2\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "برّر أن المثلث $AIM$ قائم في $I$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما تعريف محور قطعة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المحور يعامد القطعة في منتصفها."
+        }
+      ],
+      "feedback": {
+        "correct": "المحور عمودي على القطعة في منتصفها.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "$(\\Delta)$ محور القطعة $[AB]$ : يعامدها في منتصفها $I$ .",
+          "و $M \\in (\\Delta)$ ، إذن $(IM) \\perp (AB)$ والمثلث $AIM$ قائم في $I$ ."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب الطول $MA$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "5.6",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "16",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولا مربع الطول، ثم خذ جذره التربيعي بالآلة الحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$AM^2 = 3{,}2^2 + 2{,}4^2 = 16$ ، إذن $AM = 4\\,\\mathrm{cm}$ .",
+        "incorrect": "ابدأ بتحديد الوتر، ثم اكتب مساواة فيثاغورس، وتذكّر أن ما تحسبه أولا هو مربع الطول لا الطول نفسه."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $AIM$ قائم في $I$ ، حسب خاصية فيثاغورس: $AM^2 = IA^2 + IM^2$",
+          "$AM^2 = 3{,}2^2 + 2{,}4^2$",
+          "$AM^2 = 10{,}24 + 5{,}76 = 16$",
+          "$AM = \\sqrt{16} = 4\\,\\mathrm{cm}$"
+        ],
+        "result": "AM = 4\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "استنتج الطول $MB$ دون حساب جديد.",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$M$ على محور $[AB]$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل نقطة من محور قطعة متساوية البعد عن طرفيها."
+        }
+      ],
+      "feedback": {
+        "correct": "$MB = MA = 4\\,\\mathrm{cm}$ .",
+        "incorrect": "استعمل خاصية المحور: $MA = MB$ ."
+      },
+      "solution": {
+        "lines": [
+          "$M$ نقطة من محور $[AB]$ ، فهي متساوية البعد عن طرفيها: $MB = MA = 4\\,\\mathrm{cm}$"
+        ],
+        "result": "MB = 4\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "احسب مساحة المثلث $MAB$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: المساحة بـ cm²",
+      "expectedAnswer": "7.68",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القاعدة $[AB]$ والارتفاع الموافق لها $[IM]$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحة المثلث = القاعدة × الارتفاع ÷ 2."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{6{,}4 \\times 2{,}4}{2} = 7{,}68\\,\\mathrm{cm^2}$ .",
+        "incorrect": "الارتفاع المتعلّق بالقاعدة $[AB]$ هو $[IM]$ ، ولا تنس القسمة على 2."
+      },
+      "solution": {
+        "lines": [
+          "$\\mathcal{A} = \\dfrac{AB \\times IM}{2} = \\dfrac{6{,}4 \\times 2{,}4}{2} = 7{,}68\\,\\mathrm{cm^2}$"
+        ],
+        "result": "\\mathcal{A} = 7{,}68\\,\\mathrm{cm^2}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

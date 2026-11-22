@@ -1,0 +1,256 @@
+{
+  "id": "ex-3am-adad-natiq-l2-010",
+  "lessonCode": "adad-natiq",
+  "level": 2,
+  "metadata": {
+    "title": "قيم مقرّبة لأعداد ناطقة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "العدد الناطق"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-25",
+      "page": 31,
+      "section": "أوظّف تعلّماتي",
+      "number": 25
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يحسب أيمن وإيمان قيمًا مقرّبة لأعداد ناطقة قبل ترتيبها على الحبل."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أعط قيمة مقرّبة بالنقصان إلى $0{,}1$ للعدد $\\dfrac{25}{7}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "3.5",
+      "misconceptionSignatures": [
+        {
+          "value": "3.6",
+          "id": "MISC-NATIQ-APPROX"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة بالآلة أو بالطريقة العمودية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى رتبة التقريب المطلوبة وإلى كلمة بالنقصان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقطع الكتابة عند الرتبة المطلوبة دون أن تزيد الرقم الأخير."
+        }
+      ],
+      "feedback": {
+        "correct": "$3{,}5$ .",
+        "incorrect": "انتبه إلى رتبة التقريب وإلى معنى بالنقصان، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$25\\div 7=3{,}571428\\ldots$ .",
+          "التقريب بالنقصان يعني اختيار العدد العشري الأصغر الأقرب : $3{,}5$ ."
+        ],
+        "result": "3{,}5"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "أعط قيمة مقرّبة بالنقصان إلى $0{,}1$ للعدد $\\dfrac{-25}{7}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "-3.6",
+      "misconceptionSignatures": [
+        {
+          "value": "-3.5",
+          "id": "MISC-NATIQ-APPROX"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة بالآلة أو بالطريقة العمودية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى رتبة التقريب المطلوبة وإلى كلمة بالنقصان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقطع الكتابة عند الرتبة المطلوبة دون أن تزيد الرقم الأخير."
+        }
+      ],
+      "feedback": {
+        "correct": "$-3{,}6$ .",
+        "incorrect": "انتبه إلى رتبة التقريب وإلى معنى بالنقصان، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$-25\\div 7=-3{,}57142\\ldots$ .",
+          "التقريب بالنقصان يعني اختيار العدد العشري الأصغر الأقرب : العدد سالب، فنختار العدد الأصغر، أي الأبعد عن الصفر."
+        ],
+        "result": "-3{,}6"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "بين أيّ عددين صحيحين متتاليين يقع $\\dfrac{-25}{7}$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-4$ و $-3$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$-3$ و $-2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-NEGPLACE"
+        },
+        {
+          "id": "C",
+          "content": "$3$ و $4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-DROPSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة الإقليدية للبسط على المقام، ثمّ انتبه إلى الإشارة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارسم المستقيم المدرّج واقرأ التدريجات الصغيرة."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $-4$ و $-3$ .",
+        "incorrect": "حدّد الجهة من الصفر ثمّ العددين الصحيحين المتتاليين، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{25}{7}=3{,}57\\ldots$ يقع بين $3$ و $4$ .",
+          "في الجهة السالبة : $-4<\\dfrac{-25}{7}<-3$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "العدد $\\dfrac{-25}{7}$ :",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "ناطق وليس عشريًا",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "ناطق وعشري",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-NEGNOTDEC"
+        },
+        {
+          "id": "C",
+          "content": "ليس ناطقًا لأنّه سالب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-NEGNOTDEC"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ كلّ عدد صحيح نسبي وكلّ عدد عشري نسبي له كتابة كسرية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العدد على الشكل a/b ثمّ اقرأ تعريف العدد الناطق."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: ناطق وليس عشريًا .",
+        "incorrect": "راجع تعريف العدد الناطق ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "حاصل قسمة عددين صحيحين مقامه غير معدوم : العدد ناطق.",
+          "المقام $7$ ليس عاملاه الأوّليان $2$ و $5$ فقط، فلا كتابة عشرية تامّة له."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

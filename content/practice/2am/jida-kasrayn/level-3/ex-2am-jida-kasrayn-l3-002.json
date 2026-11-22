@@ -1,0 +1,296 @@
+{
+  "id": "ex-2am-jida-kasrayn-l3-002",
+  "lessonCode": "jida-kasrayn",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — عددان وجداؤهما",
+    "estimatedMinutes": 9,
+    "tags": [
+      "جداء كسرين",
+      "مجموع وفرق"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-67",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان $E = \\dfrac{5}{6}$ و $F = \\dfrac{7}{12}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "قارن العددين : $E$ و $F$ . أيّ علاقة تصحّ بين العدد الأوّل والثاني ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$>$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$<$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$=$",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا ثمّ تحقّق منها بحساب بسيط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الناتج بمقام مشترك ثمّ قارنه بما قيل."
+        }
+      ],
+      "feedback": {
+        "correct": "العلاقة الصحيحة هي $>$ .",
+        "incorrect": "احسب ثمّ قارن بدقّة قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "$E = \\dfrac{10}{12}$ و $F = \\dfrac{7}{12}$ ، و $10 > 7$ ، إذن $E > F$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب $E \\times F$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "35/72",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2/3",
+          "id": "MISC-JIDAKASR-SUMACROSS"
+        },
+        {
+          "value": "35/18",
+          "id": "MISC-JIDAKASR-DENSUM"
+        },
+        {
+          "value": "10/7",
+          "id": "MISC-JIDAKASR-CROSS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليّة بين الكسرين؟ وماذا يمثّل كلّ منهما من الكلّ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في ضرب كسرين لا نبحث عن مقام مشترك: نضرب البسطين معًا ونضرب المقامين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء على شكل كسر واحد ثمّ اختزله إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{35}{72}$ .",
+        "incorrect": "ضرب كسرين: بسط × بسط فوق مقام × مقام، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{6} \\times \\dfrac{7}{12} = \\dfrac{5 \\times 7}{6 \\times 12} = \\dfrac{35}{72}$ ."
+        ],
+        "result": "\\dfrac{35}{72}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب $E + F$ .",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "17/12",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط؟ جمع، طرح، أم مقارنة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{17}{12}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$E = \\dfrac{10}{12}$ ، $E + F = \\dfrac{10}{12} + \\dfrac{7}{12} = \\dfrac{17}{12}$ ."
+        ],
+        "result": "\\dfrac{17}{12}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "احسب $E - F$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "1/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط؟ جمع، طرح، أم مقارنة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{4}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$E - F = \\dfrac{10}{12} - \\dfrac{7}{12} = \\dfrac{3}{12} = \\dfrac{1}{4}$ ."
+        ],
+        "result": "\\dfrac{1}{4}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "استنتج $K = (E + F) \\times (E - F)$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "17/48",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "9/8",
+          "id": "MISC-JIDAKASR-SUMACROSS"
+        },
+        {
+          "value": "17/16",
+          "id": "MISC-JIDAKASR-DENSUM"
+        },
+        {
+          "value": "17/3",
+          "id": "MISC-JIDAKASR-CROSS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليّة بين الكسرين؟ وماذا يمثّل كلّ منهما من الكلّ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في ضرب كسرين لا نبحث عن مقام مشترك: نضرب البسطين معًا ونضرب المقامين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء على شكل كسر واحد ثمّ اختزله إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{17}{48}$ .",
+        "incorrect": "ضرب كسرين: بسط × بسط فوق مقام × مقام، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{17}{12} \\times \\dfrac{1}{4} = \\dfrac{17 \\times 1}{12 \\times 4} = \\dfrac{17}{48}$ ."
+        ],
+        "result": "\\dfrac{17}{48}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

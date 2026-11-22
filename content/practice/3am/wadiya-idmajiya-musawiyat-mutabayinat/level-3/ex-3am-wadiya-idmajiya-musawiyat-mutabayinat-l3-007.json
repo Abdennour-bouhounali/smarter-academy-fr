@@ -1,0 +1,255 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-musawiyat-mutabayinat-l3-007",
+  "lessonCode": "wadiya-idmajiya-musawiyat-mutabayinat",
+  "level": 3,
+  "metadata": {
+    "title": "اشتراكان في ناد",
+    "estimatedMinutes": 10,
+    "tags": [
+      "ترجمة وضعية",
+      "حلّ معادلة",
+      "التحقّق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "يعرض ناد رياضي اشتراكين: الأول ثمنه $100 + 4n$ دينارًا، والثاني ثمنه $70 + 7n$ دينارًا، حيث $n$ عدد الحصص."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نرمز بـ $n$ إلى عدد الحصص التي يتساوى عندها الثمنان. أيّ المعادلات التالية تترجم الوضعية ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$11n = 170$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        },
+        {
+          "id": "B",
+          "content": "$100n + 4 = 70n + 7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        },
+        {
+          "id": "C",
+          "content": "$4n + 70 = 7n + 100$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        },
+        {
+          "id": "D",
+          "content": "$4n + 100 = 7n + 70$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول وما الذي يتساوى في الوضعية ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلة من كمّيتين متساويتين ثمّ حلّها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الحلّ يناسب الوضعية."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $4n + 100 = 7n + 70$ .",
+        "incorrect": "راجع الترجمة إلى معادلة ثمّ الحلّ، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب الكمّيتين المتساويتين بدلالة $n$ ثمّ نساوي بينهما: $4n + 100 = 7n + 70$ .",
+          "الخيارات الأخرى تجمع الكمّيتين أو تبدّل ثوابتهما أو تخلط الأعداد."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "المعادلة المترجمة هي $4n + 100 = 7n + 70$ . احسب قيمة المجهول.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "-170/3",
+          "id": "MISC-MUADALA-SIGN-KEPT"
+        },
+        {
+          "value": "-30",
+          "id": "MISC-MUADALA-PARTIAL-SOLVE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين المجهول وأين الأعداد ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المجهول في طرف والأعداد في الطرف الآخر، ثمّ اقسم على معامل المجهول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض النتيجة في الطرفين لتتأكّد من تساويهما."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $10$ .",
+        "incorrect": "راجع نقل الحدود وإشاراتها ثمّ القسمة على المعامل، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نجمع المجهول في طرف والأعداد في الآخر: $-3n = -30$ .",
+          "نقسم على $-3$ : $n = 10$ ."
+        ],
+        "result": "10"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "الحلّ هو $n = 10$ . احسب قيمة الطرف الأيسر $4n + 100$ عند هذا الحلّ للتحقّق.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "140",
+      "misconceptionSignatures": [
+        {
+          "value": "-60",
+          "id": "MISC-MUADALA-NO-CHECK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين المجهول وأين الأعداد ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المجهول في طرف والأعداد في الطرف الآخر، ثمّ اقسم على معامل المجهول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض النتيجة في الطرفين لتتأكّد من تساويهما."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $140$ .",
+        "incorrect": "راجع نقل الحدود وإشاراتها ثمّ القسمة على المعامل، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض: $4 \\times 10 + (100) = 140$ .",
+          "ونجد القيمة نفسها في الطرف الأيمن: الحلّ مقبول."
+        ],
+        "result": "140"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "عرض حديقة قيس فكانت قراءة الأداة $5{,}5\\ \\mathrm{m}$ مدوّرة إلى $0{,}1$ . نسمّي $\\ell$ العرض الحقيقي، وقيمة العبارة $E = 2\\ell + 5$ . ما العدد الذي لا تبلغه $E$ (الحدّ الأعلى المستبعد) ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "16.1",
+      "misconceptionSignatures": [
+        {
+          "value": "16",
+          "id": "MISC-TADWIR-CENTER-EXACT"
+        },
+        {
+          "value": "16.2",
+          "id": "MISC-TADWIR-TRUNC"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ الأرقام يلي رتبة التدوير ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد المدوّر على بعد نصف رتبة منه من الجهتين: الحدّ الأدنى مضمّن والأعلى مستبعد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارجع من الحصر إلى المدوّر للتأكّد."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $16{,}1$ .",
+        "incorrect": "انتبه إلى نصف الرتبة وإلى الطرف الأعلى المستبعد، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "القراءة تعني $5{,}45 \\le \\ell < 5{,}55$ .",
+          "نضرب في $2$ ثم نضيف $5$ : الحدّ الأعلى المستبعد هو $16{,}1$ ."
+        ],
+        "result": "16{,}1"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

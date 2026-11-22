@@ -1,0 +1,169 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l5-009",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2021 — مسابقة ثقافية بورقلة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "قواسم",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qawasim-adad-tabii_P2",
+      "modelledOn": "BEM 2021 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تنظّم مديرية الشباب والرياضة بورقلة مسابقة ثقافية لتشجيع القراءة والتنافس الشريف يشارك فيها 324 تلميذا، يوزَّعون على فرق تضم كلها نفس العدد من التلاميذ، دون أن يبقى أي تلميذ.\n• تضم كل فرقة 5 تلاميذ على الأقل و 12 تلميذا على الأكثر.\n• يُمنح كل تلميذ قميصا ثمنه 850DA.\n• تُمنح كل فرقة جائزة، والجوائز كلها متساوية.\n• خصّصت المديرية للمسابقة مبلغ 410400DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن كل الأعداد الممكنة لعدد التلاميذ في كل فرقة.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        6,
+        9,
+        12
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد التلاميذ في الفرقة قاسم للعدد 324."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر الأعداد من 5 إلى 12 بقواعد قابلية القسمة أو بالقسمة الإقليدية."
+        }
+      ],
+      "feedback": {
+        "correct": "$324 = 6 \\times 54 = 9 \\times 36 = 12 \\times 27$.",
+        "incorrect": "اختبر قابلية قسمة 324 على كل عدد من 5 إلى 12."
+      },
+      "solution": {
+        "lines": [
+          "$324 = 5 \\times 64 + 4$ : الباقي غير معدوم.",
+          "$324 = 6 \\times 54$ : الباقي معدوم.",
+          "$324 = 7 \\times 46 + 2$ : الباقي غير معدوم.",
+          "$324 = 8 \\times 40 + 4$ : الباقي غير معدوم.",
+          "$324 = 9 \\times 36$ : الباقي معدوم.",
+          "$324 = 10 \\times 32 + 4$ : الباقي غير معدوم.",
+          "$324 = 11 \\times 29 + 5$ : الباقي غير معدوم.",
+          "$324 = 12 \\times 27$ : الباقي معدوم.",
+          "الأعداد الممكنة: 6 ، 9 ، 12."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "يختار المنظمون أكبر عدد ممكن من الفرق. ما هو عدد الفرق؟",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "54",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كلما كانت الفرقة أصغر كان عدد الفرق أكبر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد الفرق × عدد التلاميذ في الفرقة = 324."
+        }
+      ],
+      "feedback": {
+        "correct": "$324 = 6 \\times 54$.",
+        "incorrect": "اختر أصغر عدد ممكن للتلاميذ في الفرقة، ثم اقسم 324 عليه."
+      },
+      "solution": {
+        "lines": [
+          "أكبر عدد من الفرق يوافق أصغر فرقة ممكنة: 6 تلاميذ.",
+          "$324 = 6 \\times 54$",
+          "إذن عدد الفرق 54."
+        ],
+        "result": "54"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "☜ أعط أكبر قيمة ممكنة لجائزة الفرقة الواحدة حتى لا تتجاوز التكاليف المبلغ المخصص.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (DA)",
+      "expectedAnswer": "2500",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب ثمن القمصان أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثمن القمصان + الجوائز لا يتجاوز المبلغ المخصص."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كانت $p$ قيمة الجائزة فاكتب متراجحة بدلالة $p$."
+        }
+      ],
+      "feedback": {
+        "correct": "$54p + 275400 \\leq 410400$ تعطي $p \\leq 2500$.",
+        "incorrect": "ثمن القمصان = 324 × 850؛ اكتب أن التكلفة الكلية لا تتجاوز 410400DA."
+      },
+      "solution": {
+        "lines": [
+          "ثمن القمصان: $324 \\times 850 = 275400$ DA",
+          "لتكن $p$ قيمة الجائزة (بالـ DA):",
+          "$54p + 275400 \\leq 410400$",
+          "$54p \\leq 135000$",
+          "$p \\leq 2500$"
+        ],
+        "result": "p \\leq 2500\\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

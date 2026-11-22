@@ -1,0 +1,368 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-harfi-l5-010",
+  "lessonCode": "wadiya-idmajiya-harfi",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2015 — حقل البطاطا والجزر",
+    "estimatedMinutes": 18,
+    "tags": [
+      "نمذجة",
+      "متطابقات شهيرة",
+      "تحليل",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-harfi_P2",
+      "modelledOn": "BEM 2015 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يعتزّ فلاح بأرض وطنه، وله حقل بولاية عين الدفلى مستطيل الشكل $ABCD$ ، طوله $AB$ يزيد على عرضه $AD$ بـ $10$ m ، ومساحته $600\\,m^2$ . نرمز بـ $x$ للعرض $AD$ بالمتر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عبّر بدلالة $x$ عن مساحة الحقل على شكل مجموع مبسّط.",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "تُكتب المساحة على الشكل $x^2 + mx$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الطول $= x + 10$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المساحة = الطول × العرض، ثم انشر."
+        }
+      ],
+      "feedback": {
+        "correct": "$x^2 + 10x$ إذن $m = 10$ .",
+        "incorrect": "عبّر عن الأطوال بدلالة $x$ أولا، ثم طبّق قاعدة المساحة أو المحيط، وانشر وبسّط."
+      },
+      "solution": {
+        "lines": [
+          "المساحة $= x(x + 10)$"
+        ],
+        "result": "x^2 + 10x"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "تحقّق أنّ: $x^2 + 10x - 600 = (x + 5)^2 - 625$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر $(x + 5)^2$ بمتطابقة شهيرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح 625 وقارن."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك سطرًا بسطر بالحل النموذجي، وانتبه إلى الإشارات عند النشر."
+      },
+      "solution": {
+        "lines": [
+          "$(x + 5)^2 - 625 = x^2 + 10x + 25 - 625 = x^2 + 10x - 600$"
+        ],
+        "result": "x^2 + 10x - 600 = (x + 5)^2 - 625"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "حلّل العبارة $x^2 + 10x - 600$ إلى جداء عاملين من الدرجة الأولى — العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $x^2 + 10x - 600$ على الشكل $(x + m)(x + n)$ حيث $m < n$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "-20",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب 625 على شكل مربع عدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل $a^2 - b^2 = (a - b)(a + b)$ مع $a = x + 5$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بسّط ما بداخل كل قوس."
+        }
+      ],
+      "feedback": {
+        "correct": "$x^2 + 10x - 600 = (x - 20)(x + 30)$ إذن $m = -20$ .",
+        "incorrect": "تحقّق من تحليلك بنشر الجداء: يجب أن تجد العبارة الأصلية."
+      },
+      "solution": {
+        "lines": [
+          "$x^2 + 10x - 600 = (x + 5)^2 - 25^2$",
+          "$= (x + 5 - 25)(x + 5 + 25)$"
+        ],
+        "result": "x^2 + 10x - 600 = (x - 20)(x + 30)"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $x^2 + 10x - 600$ على الشكل $(x + m)(x + n)$ حيث $m < n$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "30",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بعد الحساب، اقرأ العدد $n$ في الشكل المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$x^2 + 10x - 600 = (x - 20)(x + 30)$ إذن $n = 30$ .",
+        "incorrect": "تحقّق من تحليلك بنشر الجداء: يجب أن تجد العبارة الأصلية."
+      },
+      "solution": {
+        "lines": [
+          "$x^2 + 10x - 600 = (x - 20)(x + 30)$"
+        ],
+        "result": "n = 30"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "استنتج عرض الحقل.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بـ m",
+      "expectedAnswer": "20",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المساحة $600$ تعطي المعادلة $x^2 + 10x - 600 = 0$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل التحليل السابق، و $x$ موجب."
+        }
+      ],
+      "feedback": {
+        "correct": "$AD = 20\\,m$ .",
+        "incorrect": "اكتب المعادلة على شكل جداء معدوم، واحتفظ بالحلّ الموجب فقط."
+      },
+      "solution": {
+        "lines": [
+          "$x^2 + 10x = 600$ يعني $(x - 20)(x + 30) = 0$",
+          "$x = 20$ أو $x = -30$ ، و $x$ موجب",
+          "العرض $20$ m والطول $30$ m"
+        ],
+        "result": "AD = 20\\,m"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "sub": "ا",
+      "lead": "$M$ نقطة من $[DC]$ حيث $DM = y$ m مع $0 \\leq y \\leq 30$ . يُزرع الجزء $ABMD$ بطاطا، والجزء المثلث $BCM$ جزرًا.",
+      "statement": "عبّر بدلالة $y$ عن مساحة المثلث $BCM$ — العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "تُكتب مساحة $BCM$ على الشكل $my + n$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "-10",
+      "misconceptionSignatures": [
+        {
+          "value": "-20",
+          "id": "MISC-NAMDHAJA-MISAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$MC = DC - DM$ و $BC = AD$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المثلث $BCM$ قائم في $C$ : مساحته نصف جداء ضلعيه القائمين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انشر وبسّط."
+        }
+      ],
+      "feedback": {
+        "correct": "$-10y + 300$ إذن $m = -10$ .",
+        "incorrect": "عبّر عن الأطوال بدلالة $x$ أولا، ثم طبّق قاعدة المساحة أو المحيط، وانشر وبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$MC = 30 - y$ و $BC = 20$",
+          "مساحة $BCM = \\dfrac{20(30 - y)}{2} = 10(30 - y)$"
+        ],
+        "result": "-10y + 300"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "sub": "ا",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "تُكتب مساحة $BCM$ على الشكل $my + n$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "300",
+      "misconceptionSignatures": [
+        {
+          "value": "600",
+          "id": "MISC-NAMDHAJA-MISAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بعد الحساب، اقرأ العدد $n$ في الشكل المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$-10y + 300$ إذن $n = 300$ .",
+        "incorrect": "عبّر عن الأطوال بدلالة $x$ أولا، ثم طبّق قاعدة المساحة أو المحيط، وانشر وبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$-10y + 300$"
+        ],
+        "result": "n = 300"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q8",
+      "step": "04",
+      "sub": "ب",
+      "statement": "جد قيمة $y$ التي تكون من أجلها مساحة الجزء المزروع بطاطا ضعف مساحة الجزء المزروع جزرًا.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بـ m",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة $ABMD$ = مساحة الحقل − مساحة $BCM$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب المعادلة: مساحة $ABMD$ = 2 × مساحة $BCM$ ، ثم حلّها."
+        }
+      ],
+      "feedback": {
+        "correct": "$y = 10\\,m$ .",
+        "incorrect": "انقل الحدود التي تحتوي على المجهول إلى طرف والأعداد إلى الطرف الآخر، ثم اقسم على المعامل."
+      },
+      "solution": {
+        "lines": [
+          "مساحة $ABMD = 600 - (300 - 10y) = 300 + 10y$",
+          "$300 + 10y = 2(300 - 10y)$ يعني $300 + 10y = 600 - 20y$",
+          "$30y = 300$"
+        ],
+        "result": "y = 10\\,m"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    }
+  ]
+}

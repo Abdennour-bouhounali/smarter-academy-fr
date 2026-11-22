@@ -1,0 +1,178 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l4-009",
+  "lessonCode": "mana-jam-tarh",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — رحلة الحافلة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "مدة",
+      "طرح"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 2,
+      "file": "1am-s2-64",
+      "exercise": 4
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الرابع",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "انطلقت حافلة من بوسعادة على الساعة $9\\,\\mathrm{h}\\,40\\,\\mathrm{min}$ ووصلت إلى الجلفة على الساعة $11\\,\\mathrm{h}\\,25\\,\\mathrm{min}$، والتزم سائقها بالسرعة القانونية طوال الطريق."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "في المخطط بأقواس: ساعة الانطلاق + مدة السير = ساعة الوصول. المجهول (مدة السير) هو:",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "جزء (قوس فوق الخط)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الكل (القوس تحت الخط)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يضمّ الآخرين: ساعة الوصول أم مدة السير؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكل هو ساعة الوصول."
+        }
+      ],
+      "feedback": {
+        "correct": "مدة السير جزء: ساعة الوصول هي الكل.",
+        "incorrect": "ساعة الوصول = ساعة الانطلاق + مدة السير: أين يقع المجهول؟"
+      },
+      "solution": {
+        "lines": [
+          "ساعة الانطلاق + مدة السير = ساعة الوصول.",
+          "الكل: ساعة الوصول؛ مدة السير جزء."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما الحساب الذي يعطي مدة السير؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$11\\,\\mathrm{h}\\,25\\,\\mathrm{min} - 9\\,\\mathrm{h}\\,40\\,\\mathrm{min}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$11\\,\\mathrm{h}\\,25\\,\\mathrm{min} + 9\\,\\mathrm{h}\\,40\\,\\mathrm{min}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        },
+        {
+          "id": "C",
+          "content": "$9\\,\\mathrm{h}\\,40\\,\\mathrm{min} - 11\\,\\mathrm{h}\\,25\\,\\mathrm{min}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-FARQ-MAQLUB"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مدة السير جزء من الكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لإيجاد جزء نطرح الجزء الآخر من الكل."
+        }
+      ],
+      "feedback": {
+        "correct": "مدة السير = ساعة الوصول − ساعة الانطلاق.",
+        "incorrect": "مدة السير جزء: نطرح من ساعة الوصول، لا نجمع."
+      },
+      "solution": {
+        "lines": [
+          "مدة السير = ساعة الوصول − ساعة الانطلاق."
+        ],
+        "result": "11\\,\\mathrm{h}\\,25\\,\\mathrm{min} - 9\\,\\mathrm{h}\\,40\\,\\mathrm{min}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب مدة سير الحافلة بالدقائق.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدقائق (min)",
+      "expectedAnswer": "105",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل الساعتين إلى دقائق منذ منتصف الليل، أو استعمل الاستلاف: $1\\,\\mathrm{h} = 60\\,\\mathrm{min}$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من $9\\,\\mathrm{h}\\,40\\,\\mathrm{min}$ إلى $10\\,\\mathrm{h}$ تمرّ $20\\,\\mathrm{min}$."
+        }
+      ],
+      "feedback": {
+        "correct": "من $9\\,\\mathrm{h}\\,40\\,\\mathrm{min}$ إلى $10\\,\\mathrm{h}$: $20\\,\\mathrm{min}$، ومن $10\\,\\mathrm{h}$ إلى $11\\,\\mathrm{h}\\,25\\,\\mathrm{min}$: $85\\,\\mathrm{min}$؛ المجموع $1\\,\\mathrm{h}\\,45\\,\\mathrm{min}$.",
+        "incorrect": "لا تطرح الدقائق مباشرة ($25 < 40$): استلف ساعة = 60 دقيقة."
+      },
+      "solution": {
+        "lines": [
+          "$11\\,\\mathrm{h}\\,25\\,\\mathrm{min} = 10\\,\\mathrm{h}\\,85\\,\\mathrm{min}$",
+          "$10\\,\\mathrm{h}\\,85\\,\\mathrm{min} - 9\\,\\mathrm{h}\\,40\\,\\mathrm{min} = 1\\,\\mathrm{h}\\,45\\,\\mathrm{min}$",
+          "$1\\,\\mathrm{h}\\,45\\,\\mathrm{min} = 60 + 45 = 105\\,\\mathrm{min}$"
+        ],
+        "result": "105 \\text{ min}"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

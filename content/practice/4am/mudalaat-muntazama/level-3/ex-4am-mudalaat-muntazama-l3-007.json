@@ -1,0 +1,65 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l3-007",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — عدد الأضلاع من زاوية المضلع",
+    "estimatedMinutes": 3,
+    "tags": [
+      "زاوية المضلع",
+      "عدد الأضلاع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mudalaat-muntazama_P2",
+      "modelledOn": "method-angle"
+    }
+  },
+  "statement": {
+    "content": "زاوية مضلع منتظم (بين ضلعين متتاليين) قيسها $140^\\circ$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "كم ضلعا لهذا المضلع؟",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUNTAZAM-MARKAZIYA",
+          "value": "18/7"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "زاوية المضلع = $180^\\circ$ ناقص الزاوية المركزية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الزاوية المركزية أولا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم كم مرة تدخل في الدورة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الزاوية المركزية $180^\\circ - 140^\\circ = 40^\\circ$ و $360 \\div 40 = 9$ .",
+        "incorrect": "لا تقسم الدورة على زاوية المضلع: اقسمها على الزاوية المركزية."
+      },
+      "difficulty": 3
+    }
+  ]
+}

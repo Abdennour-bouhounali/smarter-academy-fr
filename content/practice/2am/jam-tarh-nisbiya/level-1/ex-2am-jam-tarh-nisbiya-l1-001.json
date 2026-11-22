@@ -1,0 +1,203 @@
+{
+  "id": "ex-2am-jam-tarh-nisbiya-l1-001",
+  "lessonCode": "jam-tarh-nisbiya",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مجموع وفرق عددين نسبيين",
+    "estimatedMinutes": 6,
+    "tags": [
+      "جمع",
+      "طرح"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 2,
+      "file": "2am-s2-62",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "أحسب كلًّا من $A$ و $B$ و $C$ موضّحًا مراحل الحساب، حيث : $A=(-7)+(-15)$ ؛ $B=(+13)-(+28)$ ؛ $C=(-10)-(-4)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب : $A=(-7)+(-15)$ .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-22",
+      "misconceptionSignatures": [
+        {
+          "value": "22",
+          "id": "MISC-JAMNISB-SIGNLOST"
+        },
+        {
+          "value": "-8",
+          "id": "MISC-JAMNISB-SUBDIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن إشارتي العددين : هل هما متماثلتان؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عند تماثل الإشارتين نجمع المسافتين إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثمّ نكتب الإشارة المشتركة أمام ناتج الجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$(-7)+(-15)=(-22)$ : العددان لهما الإشارة نفسها فنجمع المسافتين ونحتفظ بالإشارة.",
+        "incorrect": "راجع قاعدة الحساب المناسبة (الجمع، أو الطرح بإضافة المعاكس)، ثمّ أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "العددان لهما الإشارة نفسها (السالبة) : نجمع المسافتين إلى الصفر ، $7+15=22$",
+          "نحتفظ بالإشارة المشتركة (السالبة)",
+          "$(-7)+(-15)=(-22)$"
+        ],
+        "result": "-22"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب : $B=(+13)-(+28)$ .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-15",
+      "misconceptionSignatures": [
+        {
+          "value": "41",
+          "id": "MISC-JAMNISB-SUBNOFLIP"
+        },
+        {
+          "value": "15",
+          "id": "MISC-JAMNISB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الطرح يعني إضافة المعاكس : اكتب معاكس العدد المطروح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حوّل الفرق إلى مجموع بإبدال العدد المطروح بمعاكسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثمّ طبّق قاعدة الجمع المناسبة : إشارتان متماثلتان أم مختلفتان؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$(+13)-(+28)=(-15)$ : الطرح إضافة للمعاكس ثمّ نطبّق قاعدة الجمع.",
+        "incorrect": "راجع قاعدة الحساب المناسبة (الجمع، أو الطرح بإضافة المعاكس)، ثمّ أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الطرح يعني إضافة المعاكس : معاكس $(+28)$ هو $(-28)$",
+          "$(+13)-(+28)=(+13)+(-28)$",
+          "العددان من إشارتين مختلفتين : المسافتان إلى الصفر $13$ و $28$ ؛ نطرح الصغرى من الكبرى : $28-13=15$",
+          "نأخذ إشارة العدد الأبعد عن الصفر وهو $(-28)$ (السالبة)",
+          "$(+13)-(+28)=(-15)$"
+        ],
+        "result": "-15"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب : $C=(-10)-(-4)$ .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-6",
+      "misconceptionSignatures": [
+        {
+          "value": "-14",
+          "id": "MISC-JAMNISB-SUBNOFLIP"
+        },
+        {
+          "value": "6",
+          "id": "MISC-JAMNISB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الطرح يعني إضافة المعاكس : اكتب معاكس العدد المطروح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حوّل الفرق إلى مجموع بإبدال العدد المطروح بمعاكسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثمّ طبّق قاعدة الجمع المناسبة : إشارتان متماثلتان أم مختلفتان؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$(-10)-(-4)=(-6)$ : الطرح إضافة للمعاكس ثمّ نطبّق قاعدة الجمع.",
+        "incorrect": "راجع قاعدة الحساب المناسبة (الجمع، أو الطرح بإضافة المعاكس)، ثمّ أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الطرح يعني إضافة المعاكس : معاكس $(-4)$ هو $(+4)$",
+          "$(-10)-(-4)=(-10)+(+4)$",
+          "العددان من إشارتين مختلفتين : المسافتان إلى الصفر $10$ و $4$ ؛ نطرح الصغرى من الكبرى : $10-4=6$",
+          "نأخذ إشارة العدد الأبعد عن الصفر وهو $(-10)$ (السالبة)",
+          "$(-10)-(-4)=(-6)$"
+        ],
+        "result": "-6"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

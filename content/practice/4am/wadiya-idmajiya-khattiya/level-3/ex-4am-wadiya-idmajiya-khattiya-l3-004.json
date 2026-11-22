@@ -1,0 +1,173 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-khattiya-l3-004",
+  "lessonCode": "wadiya-idmajiya-khattiya",
+  "level": 3,
+  "metadata": {
+    "title": "باقة الإنترنت في العيد",
+    "estimatedMinutes": 7,
+    "tags": [
+      "تخفيض",
+      "دالة خطية",
+      "تفسير النتيجة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-khattiya_P2",
+      "modelledOn": "act-1",
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-khattiya-l3-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "سعر الجيغا في باقة إنترنت يستعملها التلاميذ في البحث والمطالعة هو 100DA. بمناسبة العيد يطبّق المتعامل تخفيضا بـ 20% على كل جيغا. نسمّي $x$ عدد الجيغات و $M(x)$ المبلغ المدفوع في العيد (بـ DA)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب سعر الجيغا الواحد في العيد.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: السعر بـ DA",
+      "expectedAnswer": "80",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-TAKHFID-NISBA"
+        },
+        {
+          "value": "120",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح 20% من 100DA."
+        }
+      ],
+      "feedback": {
+        "correct": "$100 - 20 = 80$ DA.",
+        "incorrect": "السعر الجديد = السعر القديم − التخفيض."
+      },
+      "solution": {
+        "lines": [
+          "$100 \\times (1 - 0{,}2) = 100 \\times 0{,}8 = 80$",
+          "سعر الجيغا في العيد 80DA."
+        ],
+        "result": "80DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عبّر عن $M(x)$ بدلالة $x$ ، ثم احسب المبلغ المدفوع مقابل 7 جيغا.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "560",
+      "misconceptionSignatures": [
+        {
+          "value": "700",
+          "id": "MISC-TAKHFID-NISBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$M(x)$ دالة خطية معاملها سعر الجيغا في العيد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $M(7)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$M(x) = 80x$ و $M(7) = 560$ DA.",
+        "incorrect": "استعمل سعر العيد لا السعر العادي."
+      },
+      "solution": {
+        "lines": [
+          "$M(x) = 80x$",
+          "$M(7) = 80 \\times 7 = 560$"
+        ],
+        "result": "M(7) = 560"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "مع ياسين 1000DA. كم جيغا كاملا يمكنه شراؤه في العيد؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الجيغات",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-TAKHFID-NISBA"
+        },
+        {
+          "value": "13",
+          "id": "MISC-TARRID-TAFSIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ $80x \\leq 1000$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد الجيغات عدد طبيعي."
+        }
+      ],
+      "feedback": {
+        "correct": "$1000 \\div 80 = 12{,}5$ : يشتري 12 جيغا كاملا.",
+        "incorrect": "خذ أكبر عدد طبيعي لا يتجاوز الحاصل."
+      },
+      "solution": {
+        "lines": [
+          "$80x \\leq 1000$ معناه $x \\leq 12{,}5$",
+          "أكبر عدد طبيعي هو 12: يشتري ياسين 12 جيغا."
+        ],
+        "result": "12"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

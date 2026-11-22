@@ -1,0 +1,187 @@
+{
+  "id": "ex-4am-mafhum-taalufiya-l2-006",
+  "lessonCode": "mafhum-taalufiya",
+  "level": 2,
+  "metadata": {
+    "title": "صور بإشارات وعدد صورته 11",
+    "estimatedMinutes": 5,
+    "tags": [
+      "صورة عدد",
+      "العدد الذي صورته معلومة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "adaptedFrom": "ex-4am-mafhum-taalufiya-l2-006"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "$f$ دالة تآلفية حيث:",
+    "formulas": [
+      "f(x) = -2x + 5"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب $f(3)$ و $f(-1)$ .",
+      "statement": "$f(3)$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-1",
+      "misconceptionSignatures": [
+        {
+          "value": "-6",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $3$ في العبارة $f(x) = -2x + 5$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب في المعامل أولا، ثم أضف الحدّ الثابت، مع الانتباه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(3) = -2 \\times 3 + 5 = -1$ .",
+        "incorrect": "اضرب العدد في المعامل $a$ ، ثم أضف الحدّ الثابت $b$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(3) = -2 \\times 3 + 5$",
+          "$f(3) = -6 + 5$",
+          "$f(3) = -1$"
+        ],
+        "result": "f(3) = -1"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$f(-1)$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $-1$ في العبارة $f(x) = -2x + 5$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب في المعامل أولا، ثم أضف الحدّ الثابت، مع الانتباه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(-1) = -2 \\times (-1) + 5 = 7$ .",
+        "incorrect": "اضرب العدد في المعامل $a$ ، ثم أضف الحدّ الثابت $b$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(-1) = -2 \\times (-1) + 5$",
+          "$f(-1) = 2 + 5$",
+          "$f(-1) = 7$"
+        ],
+        "result": "f(-1) = 7"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "عيّن العدد الذي صورته $11$ بالدالة $f$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "value": "-5,5",
+          "id": "MISC-TAALUFI-SABIQ-QISMA"
+        },
+        {
+          "value": "-10,5",
+          "id": "MISC-TAALUFI-SABIQ-TARTIB"
+        },
+        {
+          "value": "-17",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن العدد $x$ الذي يحقق $f(x) = 11$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المعادلة $ax + b = m$ : اطرح الحدّ الثابت من الطرفين أولا، ثم اقسم على المعامل."
+        }
+      ],
+      "feedback": {
+        "correct": "$-2x + 5 = 11$ تعطي $x = -3$ .",
+        "incorrect": "اطرح الحدّ الثابت $b$ أولا، ثم اقسم على المعامل $a$ (البرنامج العكسي)."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 11$ معناه $-2x + 5 = 11$",
+          "$-2x = 11 - 5$",
+          "$-2x = 6$",
+          "$x = \\dfrac{6}{-2}$",
+          "$x = -3$"
+        ],
+        "result": "x = -3"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

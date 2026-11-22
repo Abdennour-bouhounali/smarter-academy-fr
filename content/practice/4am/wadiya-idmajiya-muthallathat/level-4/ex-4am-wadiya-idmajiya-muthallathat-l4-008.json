@@ -1,0 +1,289 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muthallathat-l4-008",
+  "lessonCode": "wadiya-idmajiya-muthallathat",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2020 — نافذة على شكل نصف قرص",
+    "estimatedMinutes": 14,
+    "tags": [
+      "مثلث في نصف دائرة",
+      "الجيب",
+      "خاصية فيثاغورس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-muthallathat_P1",
+      "modelledOn": "BEM 2020 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2020",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نافذة على شكل نصف قرص قطره $[AB]$ ومركزه $O$ حيث $AB = 1{,}3\\,\\mathrm{m}$ . يُثبَّت قضيبان معدنيان $[AM]$ و $[MB]$ حيث $M$ نقطة من نصف الدائرة و $BM = 1{,}2\\,\\mathrm{m}$ (الشكل المقابل). يصنع الحدّاد هذه النافذة بإتقان لمدرسة القرية.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          1.3,
+          0
+        ],
+        "O": [
+          0.65,
+          0
+        ],
+        "M": [
+          0.1923,
+          0.4615
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "1,3 m"
+        },
+        [
+          "A",
+          "M"
+        ],
+        {
+          "from": "M",
+          "to": "B",
+          "label": "1,2 m"
+        }
+      ],
+      "arcs": [
+        {
+          "center": "O",
+          "from": "B",
+          "to": "A",
+          "sweep": "ccw",
+          "tone": "slate"
+        }
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "M",
+          "B"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "B",
+          "from": "A",
+          "to": "M"
+        }
+      ],
+      "labels": {
+        "A": "sw",
+        "B": "se",
+        "O": "n",
+        "M": "nw"
+      },
+      "ariaLabel": "نصف دائرة قطرها [AB] طوله 1,3 m ومركزها O؛ M من نصف الدائرة و BM = 1,2 m؛ القضيبان [AM] و [MB]",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن المثلث $AMB$ قائم في $M$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$M$ نقطة من الدائرة التي قطرها $[AB]$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر خاصية المثلث المرسوم في نصف دائرة أحد أضلاعه قطرها."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي: كل مساواة تُكتب في مثلث قائم مسمّى، مع ذكر الضلعين المستعملين."
+      },
+      "solution": {
+        "lines": [
+          "النقطة $M$ من الدائرة التي قطرها $[AB]$ ، والمثلث $AMB$ أحد أضلاعه قطر هذه الدائرة،",
+          "إذن المثلث $AMB$ قائم في $M$ (أو: $OM = OA = OB$ فالمتوسط $[MO]$ يساوي نصف الضلع $[AB]$ )."
+        ]
+      },
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب الطول $AM$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P2",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m",
+      "expectedAnswer": "0.5",
+      "misconceptionSignatures": [
+        {
+          "value": "0.1",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $AMB$ قائم في $M$ ووتره $[AB]$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خاصية فيثاغورس: $AM^2 = AB^2 - BM^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AM^2 = 1{,}69 - 1{,}44 = 0{,}25$ ومنه $AM = 0{,}5\\,\\mathrm{m}$ .",
+        "incorrect": "نطرح المربعين لا الطولين، ثم نأخذ الجذر."
+      },
+      "solution": {
+        "lines": [
+          "حسب خاصية فيثاغورس: $AM^2 = AB^2 - BM^2 = 1{,}69 - 1{,}44 = 0{,}25$",
+          "$AM = \\sqrt{0{,}25}$"
+        ],
+        "result": "AM = 0{,}5\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أعط المدوّر إلى الوحدة من الدرجة لقيس الزاوية $\\widehat{MBA}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: القيس بالدرجة مدوّرا إلى الوحدة",
+      "expectedAnswer": "23",
+      "misconceptionSignatures": [
+        {
+          "value": "67",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $AMB$ : $[AM]$ مقابل للزاوية $\\widehat{MBA}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر نسبة بالأطوال المضبوطة ثم اللمسة العكسية."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin\\widehat{MBA} = \\dfrac{0{,}5}{1{,}3} = \\dfrac{5}{13}$ ومنه $\\widehat{MBA} \\approx 22{,}62^{\\circ}$ ، أي $23^{\\circ}$ .",
+        "incorrect": "المقابل للزاوية $\\widehat{MBA}$ هو $[AM]$ (لا يمرّ بـ $B$ )."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $AMB$ القائم في $M$ : $\\sin\\widehat{MBA} = \\dfrac{AM}{AB} = \\dfrac{0{,}5}{1{,}3} = \\dfrac{5}{13}$",
+          "باستعمال الآلة الحاسبة: $\\widehat{MBA} \\approx 22{,}6199^{\\circ}$"
+        ],
+        "result": "\\widehat{MBA} \\approx 23^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "احسب المسافة بين النقطة $M$ والقطر $[AB]$ ، أي الطول $MK$ حيث $K$ المسقط العمودي لـ $M$ على $[AB]$ ، بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m مدوّرا إلى 0,01",
+      "expectedAnswer": "0.46",
+      "misconceptionSignatures": [
+        {
+          "value": "1.11",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $MKB$ قائم في $K$ ووتره $[MB]$ ، وله الزاوية $\\widehat{MBA}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$MK = MB \\times \\sin\\widehat{MBA}$ والجيب معلوم بالضبط."
+        }
+      ],
+      "feedback": {
+        "correct": "$MK = 1{,}2 \\times \\dfrac{5}{13} = \\dfrac{6}{13} \\approx 0{,}46\\,\\mathrm{m}$ .",
+        "incorrect": "في المثلث $MKB$ الوتر هو $[MB]$ و $[MK]$ مقابل للزاوية $\\widehat{MBA}$ : نضرب."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $MKB$ القائم في $K$ : $\\sin\\widehat{MBK} = \\dfrac{MK}{MB}$",
+          "ومنه: $MK = MB \\times \\sin\\widehat{MBA} = 1{,}2 \\times \\dfrac{5}{13} = \\dfrac{6}{13}$"
+        ],
+        "result": "MK \\approx 0{,}46\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

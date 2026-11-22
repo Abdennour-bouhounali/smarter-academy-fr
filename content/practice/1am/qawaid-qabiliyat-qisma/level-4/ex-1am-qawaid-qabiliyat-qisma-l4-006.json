@@ -1,0 +1,219 @@
+{
+  "id": "ex-1am-qawaid-qabiliyat-qisma-l4-006",
+  "lessonCode": "qawaid-qabiliyat-qisma",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — بطاقات فيها صفر",
+    "estimatedMinutes": 10,
+    "tags": [
+      "بطاقات",
+      "أكبر عدد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "إليك البطاقات: 3 ، 0 ، 6 ، 1. نشكّل بها كلها، وبدون تكرار، أعدادًا من أربعة أرقام (لا يكون 0 في اليسار)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "شكّل أكبر عدد يقبل القسمة على 5.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "6310",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بأكبر الأرقام في اليسار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أيّ رقم (أو رقمين) يجب أن يكون في اليمين؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالقاعدة قبل أن تجيب."
+        }
+      ],
+      "feedback": {
+        "correct": "6310 يقبل القسمة على 5، ولا يوجد أكبر منه يحقّق ذلك.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 5 إذا كان رقم آحاده 0 أو 5."
+      },
+      "solution": {
+        "lines": [
+          "6310 هو أكبر عدد يمكن تشكيله.",
+          "6310: رقم آحاده 0 ، إذن يقبل القسمة على 5."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "شكّل أكبر عدد يقبل القسمة على 4.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3160",
+      "misconceptionSignatures": [
+        {
+          "value": "6310",
+          "id": "MISC-QABILIYA-ZAWJI-4"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بأكبر الأرقام في اليسار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أيّ رقم (أو رقمين) يجب أن يكون في اليمين؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالقاعدة قبل أن تجيب."
+        }
+      ],
+      "feedback": {
+        "correct": "3160 يقبل القسمة على 4، ولا يوجد أكبر منه يحقّق ذلك.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 4 إذا كان العدد المشكّل من رقمي آحاده وعشراته يقبل القسمة على 4."
+      },
+      "solution": {
+        "lines": [
+          "أكبر عدد يمكن تشكيله هو 6310.",
+          "الأعداد الأكبر من 3160 (6310 ، 6301 ، 6130 ، 6103 …) لا تقبل القسمة على 4.",
+          "3160: العدد المشكّل من رقميه الأخيرين 60 ، إذن يقبل القسمة على 4."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "يمكن تشكيل عدد يقبل القسمة على 9 بهذه البطاقات.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-3-9"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل يتغيّر مجموع الأرقام عندما نغيّر ترتيبها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب هذا المجموع."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 + 0 + 6 + 1 = 10$ لكل ترتيب، و 10 لا يقبل القسمة على 9.",
+        "incorrect": "مجموع الأرقام لا يتغيّر بتغيير ترتيبها."
+      },
+      "solution": {
+        "lines": [
+          "كل الأعداد المشكّلة لها مجموع الأرقام $3 + 0 + 6 + 1 = 10$.",
+          "10 لا يقبل القسمة على 9، إذن لا يوجد عدد منها يقبل القسمة على 9."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "احسب حاصل قسمة العدد 6310 على 5.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1262",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-QABILIYA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية عموديًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق بضرب الحاصل في 5."
+        }
+      ],
+      "feedback": {
+        "correct": "$6310 = 5 \\times 1262 + 0$.",
+        "incorrect": "ابحث عن أكبر عدد طبيعي نضربه في 5 دون أن نتجاوز 6310."
+      },
+      "solution": {
+        "lines": [
+          "$6310 = 5 \\times 1262 + 0$",
+          "الحاصل هو 1262."
+        ],
+        "result": "1262"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

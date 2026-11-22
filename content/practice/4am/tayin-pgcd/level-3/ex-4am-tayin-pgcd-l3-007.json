@@ -1,0 +1,225 @@
+{
+  "id": "ex-4am-tayin-pgcd-l3-007",
+  "lessonCode": "tayin-pgcd",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2024 — لوح زجاجي 120cm × 200cm",
+    "estimatedMinutes": 8,
+    "tags": [
+      "PGCD",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tayin-pgcd_P1",
+      "modelledOn": "BEM 2024 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يريد حرفي، إتقانًا لعمله وحفاظًا على المادة، تجزئة لوح زجاجي ملوّن مستطيل الشكل عرضه 120cm وطوله 200cm إلى مربعات متقايسة دون ضياع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "برّر إجابتك في كل حالة:",
+      "statement": "هل يمكن أن يكون طول ضلع كل مربع 8cm ؟",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول الضلع يجب أن يقسم البعدين معًا حتى لا يبقى ضياع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم كلا من 120 و 200 على 8، وانظر إلى الباقي."
+        }
+      ],
+      "feedback": {
+        "correct": "8 قاسم مشترك للعددين 120 و 200.",
+        "incorrect": "يكون ذلك ممكنًا فقط إذا كان طول الضلع قاسمًا مشتركًا للبعدين."
+      },
+      "solution": {
+        "lines": [
+          "$120 = 8 \\times 15$",
+          "$200 = 8 \\times 25$",
+          "العدد 8 قاسم مشترك للعددين 120 و 200، إذن يمكن ذلك."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل يمكن أن يكون طول ضلع كل مربع 15cm ؟",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول الضلع يجب أن يقسم البعدين معًا حتى لا يبقى ضياع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم كلا من 120 و 200 على 15، وانظر إلى الباقي."
+        }
+      ],
+      "feedback": {
+        "correct": "15 ليس قاسمًا مشتركًا للعددين 120 و 200.",
+        "incorrect": "يكون ذلك ممكنًا فقط إذا كان طول الضلع قاسمًا مشتركًا للبعدين."
+      },
+      "solution": {
+        "lines": [
+          "$120 = 15 \\times 8$",
+          "$200 = 15 \\times 13 + 5$",
+          "العدد 15 ليس قاسمًا مشتركًا للعددين 120 و 200، إذن لا يمكن ذلك."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "أوجد عدد المربعات التي يمكن الحصول عليها بحيث يكون طول ضلع كل مربع أكبر ما يمكن.",
+      "statement": "ما هو أكبر طول ممكن لضلع المربع ؟",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (الطول بالـ cm)",
+      "expectedAnswer": "40",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول ضلع المربع يجب أن يقسم البعدين معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "والمطلوب أكبر ضلع ممكن: هذا هو القاسم المشترك الأكبر للبعدين (بالـ cm)."
+        }
+      ],
+      "feedback": {
+        "correct": "طول الضلع هو PGCD(120 ; 200) = 40، أي 40cm.",
+        "incorrect": "حوّل البعدين إلى cm، ثم خذ القاسم المشترك الأكبر لهما."
+      },
+      "solution": {
+        "lines": [
+          "طول ضلع المربع يجب أن يقسم البعدين 120cm و 200cm معًا حتى لا يبقى ضياع، فهو قاسم مشترك للعددين 120 و 200.",
+          "وهو أكبر ما يمكن: إذن طول الضلع هو القاسم المشترك الأكبر للعددين 120 و 200.",
+          "PGCD(120 ; 200) = 40، أي أن طول ضلع كل مربع هو 40cm."
+        ],
+        "result": "40cm"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "استنتج عدد المربعات.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد المربعات)",
+      "expectedAnswer": "15",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب عدد المربعات على طول البعد الأول، ثم على طول البعد الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم كل بعد على طول ضلع المربع، ثم اضرب الناتجين."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 \\times 5 = 15$",
+        "incorrect": "عدد المربعات هو جداء عدد المربعات في الطول بعدد المربعات في العرض، وليس حاصل قسمة واحدًا."
+      },
+      "solution": {
+        "lines": [
+          "على طول البعد 120cm: $120 \\div 40 = 3$ مربعات.",
+          "على طول البعد 200cm: $200 \\div 40 = 5$ مربعات.",
+          "عدد المربعات: $3 \\times 5 = 15$"
+        ],
+        "result": "15"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

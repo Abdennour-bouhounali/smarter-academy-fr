@@ -1,0 +1,273 @@
+{
+  "id": "ex-4am-mushkilat-jumla-l5-004",
+  "lessonCode": "mushkilat-jumla",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2007 — مخبزة بقسنطينة",
+    "estimatedMinutes": 20,
+    "tags": [
+      "جملة",
+      "ترييض",
+      "نسبة مئوية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mushkilat-jumla_P2",
+      "modelledOn": "BEM 2007 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2007",
+      "heading": "التمرين",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "اشترى صاحب مخبزة بقسنطينة، يحرص على نظافة مخبزته وجودة خبزه، من تاجر جملة 5 أكياس من الدقيق وكيسين من السكر بمبلغ 21000DA، ثم اشترى من التاجر نفسه وبنفس الأسعار 3 أكياس من الدقيق و 4 أكياس من السكر بمبلغ 25200DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "نسمّي $x$ ثمن كيس الدقيق و $y$ ثمن كيس السكر (بالدينار).",
+      "statement": "ترجم المعطيات بجملة معادلتين مجهولاها $x$ و $y$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لكل عملية شراء معادلة."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "الشراء الأول: $5x + 2y = 21000$",
+          "الشراء الثاني: $3x + 4y = 25200$",
+          "ومنه الجملة: $\\begin{cases} 5x + 2y = 21000 \\\\ 3x + 4y = 25200 \\end{cases}$"
+        ],
+        "result": "\\begin{cases} 5x + 2y = 21000 \\\\ 3x + 4y = 25200 \\end{cases}"
+      },
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "حل هذه الجملة، ثم استنتج ثمن كيس الدقيق وثمن كيس السكر.",
+      "statement": "ثمن كيس الدقيق:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الثمن بـ DA (عدد فقط)",
+      "expectedAnswer": "2400",
+      "misconceptionSignatures": [
+        {
+          "value": "4500",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل $y$ في المعادلة الثانية ضعف معامله في الأولى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب المعادلة الأولى في $2$ والثانية في $-1$ ثم اجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد إيجاد $x$ عوّض في المعادلة الأولى."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن كيس الدقيق $2400DA$ .",
+        "incorrect": "اجعل معاملي $y$ متعاكسين ثم اجمع المعادلتين طرفا لطرف."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} 5x + 2y = 21000 & ...(1) \\\\ 3x + 4y = 25200 & ...(2) \\end{cases}$",
+          "بضرب طرفي المعادلة (1) في العدد $2$ وطرفي المعادلة (2) في العدد $-1$ نجد:",
+          "$\\begin{cases} 10x + 4y = 42000 \\\\ -3x - 4y = -25200 \\end{cases}$",
+          "بجمع المعادلتين طرفا لطرف نجد: $7x = 16800$",
+          "ومنه: $x = \\dfrac{16800}{7} = 2400$",
+          "بتعويض قيمة $x$ في المعادلة (1) نجد: $5 \\times 2400 + 2y = 21000$",
+          "$2y = 9000$",
+          "$y = 4500$",
+          "التحقق في النص: $5 \\times 2400 + 2 \\times 4500 = 21000$ و $3 \\times 2400 + 4 \\times 4500 = 25200$ .",
+          "إذن ثمن كيس الدقيق $2400DA$ وثمن كيس السكر $4500DA$ ."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 480
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ثمن كيس السكر:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الثمن بـ DA (عدد فقط)",
+      "expectedAnswer": "4500",
+      "misconceptionSignatures": [
+        {
+          "value": "2400",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض ثمن كيس الدقيق في المعادلة الأولى."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن كيس السكر $4500DA$ ، ونتحقق: $12000 + 9000 = 21000$ .",
+        "incorrect": "من المعادلة الأولى: $2y = 21000 - 5x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} 5x + 2y = 21000 & ...(1) \\\\ 3x + 4y = 25200 & ...(2) \\end{cases}$",
+          "بضرب طرفي المعادلة (1) في العدد $2$ وطرفي المعادلة (2) في العدد $-1$ نجد:",
+          "$\\begin{cases} 10x + 4y = 42000 \\\\ -3x - 4y = -25200 \\end{cases}$",
+          "بجمع المعادلتين طرفا لطرف نجد: $7x = 16800$",
+          "ومنه: $x = \\dfrac{16800}{7} = 2400$",
+          "بتعويض قيمة $x$ في المعادلة (1) نجد: $5 \\times 2400 + 2y = 21000$",
+          "$2y = 9000$",
+          "$y = 4500$",
+          "التحقق في النص: $5 \\times 2400 + 2 \\times 4500 = 21000$ و $3 \\times 2400 + 4 \\times 4500 = 25200$ .",
+          "إذن ثمن كيس الدقيق $2400DA$ وثمن كيس السكر $4500DA$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "مع اقتراب شهر رمضان اشترى صاحب المخبزة 30 كيسا من الدقيق و 8 أكياس من السكر، فمنحه التاجر تخفيضا بـ 10% من المبلغ الإجمالي.",
+      "statement": "احسب ثمن هذه المشتريات قبل التخفيض.",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "108000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل ثمني الكيسين (السؤال 02)."
+        }
+      ],
+      "feedback": {
+        "correct": "$72000 + 36000 = 108000DA$ .",
+        "incorrect": "اضرب عدد أكياس كل نوع في ثمن الكيس ثم اجمع."
+      },
+      "solution": {
+        "lines": [
+          "ثمن الدقيق: $30 \\times 2400 = 72000$",
+          "ثمن السكر: $8 \\times 4500 = 36000$",
+          "المجموع: $72000 + 36000 = 108000$ أي $108000DA$ ."
+        ],
+        "result": "108000\\,DA"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "☜ احسب المبلغ الذي دفعه صاحب المخبزة بعد التخفيض.",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "97200",
+      "misconceptionSignatures": [
+        {
+          "value": "10800",
+          "id": "MISC-JUMLA-TAHAQQUQ-NAS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التخفيض $10\\%$ من المبلغ الإجمالي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المبلغ المدفوع = المبلغ الإجمالي − التخفيض."
+        }
+      ],
+      "feedback": {
+        "correct": "التخفيض $10800DA$ ، والمبلغ المدفوع $97200DA$ .",
+        "incorrect": "احسب $10\\%$ من المبلغ الإجمالي ثم اطرحها منه."
+      },
+      "solution": {
+        "lines": [
+          "التخفيض: $108000 \\times \\dfrac{10}{100} = 10800$",
+          "المبلغ المدفوع: $108000 - 10800 = 97200$ أي $97200DA$ ."
+        ],
+        "result": "97200\\,DA"
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

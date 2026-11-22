@@ -1,0 +1,323 @@
+{
+  "id": "ex-4am-tarrid-taalufi-l4-009",
+  "lessonCode": "tarrid-taalufi",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2012 — صيغتا توصيل الطرود لتطبيق تجارة إلكترونية",
+    "estimatedMinutes": 14,
+    "tags": [
+      "صيغتان",
+      "جدول",
+      "معادلة",
+      "أفضل صيغة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tarrid-taalufi_P2",
+      "modelledOn": "BEM 2012 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2012",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يقترح تطبيق للتجارة الإلكترونية بقسنطينة، يلتزم بصدق الوصف وأمانة التوصيل، على زبائنه صيغتين لتوصيل الطرود:\n- الصيغة الأولى: 250DA لكل طرد.\n- الصيغة الثانية: اشتراك شهري 800DA و 150DA لكل طرد.\nليكن $x$ عدد الطرود في الشهر، و $f(x)$ ، $g(x)$ المبلغين بـ DA حسب الصيغتين: $f(x) = 250x$ و $g(x) = 150x + 800$ .",
+    "table": {
+      "head": [
+        "عدد الطرود في الشهر",
+        "5",
+        "…"
+      ],
+      "rows": [
+        [
+          "مبلغ الصيغة الأولى بـ DA",
+          "…",
+          "3000"
+        ],
+        [
+          "مبلغ الصيغة الثانية بـ DA",
+          "…",
+          "…"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انقل وأتمم الجدول.",
+      "statement": "مبلغ الصيغة الأولى من أجل 5 طرود:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "1250",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الصيغة الأولى: ثمن الطرود فقط."
+        }
+      ],
+      "feedback": {
+        "correct": "$250 \\times 5$ .",
+        "incorrect": "اضرب عدد الطرود في ثمن الطرد."
+      },
+      "solution": {
+        "lines": [
+          "$250 \\times 5 = 1250$ ؛ $150 \\times 5 + 800 = 1550$"
+        ],
+        "result": "1250DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "مبلغ الصيغة الثانية من أجل 5 طرود:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "1550",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAALUFI-NISYAN-B",
+          "value": "750"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثمن الطرود ثم الاشتراك."
+        }
+      ],
+      "feedback": {
+        "correct": "$150 \\times 5 + 800$ .",
+        "incorrect": "لا تنس الاشتراك الشهري."
+      },
+      "solution": {
+        "lines": [
+          "$250 \\times 5 = 1250$ ؛ $150 \\times 5 + 800 = 1550$"
+        ],
+        "result": "1550DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "عدد الطرود إذا كان مبلغ الصيغة الأولى 3000DA :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الطرود",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في الصيغة الأولى المبلغ = 250 × عدد الطرود."
+        }
+      ],
+      "feedback": {
+        "correct": "$3000 \\div 250$ .",
+        "incorrect": "اقسم المبلغ على ثمن الطرد."
+      },
+      "solution": {
+        "lines": [
+          "$3000 \\div 250 = 12$ ؛ $150 \\times 12 + 800 = 2600$"
+        ],
+        "result": "12"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "statement": "مبلغ الصيغة الثانية من أجل هذا العدد من الطرود:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "2600",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض عدد الطرود الذي وجدته في $g(x)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$150 \\times 12 + 800$ .",
+        "incorrect": "اضرب في 150 ثم أضف الاشتراك."
+      },
+      "solution": {
+        "lines": [
+          "$3000 \\div 250 = 12$ ؛ $150 \\times 12 + 800 = 2600$"
+        ],
+        "result": "2600DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "statement": "حل المعادلة $f(x) = g(x)$ ، وماذا يمثّل الحل؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب حل المعادلة فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكلفتان متساويتان: نحل معادلة من الدرجة الأولى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $250x = 150x + 800$ ثم اجمع حدود $x$ في طرف واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "هو عدد الطرود الذي يتساوى عنده مبلغا الصيغتين.",
+        "incorrect": "انقل حدود $x$ إلى طرف واحد والأعداد إلى الطرف الآخر، ثم اقسم على معامل $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = g(x)$ معناه $250x = 150x + 800$",
+          "$100x = 800$",
+          "$x = 8$",
+          "الحل يمثّل عدد الطرود الذي يتساوى عنده مبلغا الصيغتين (2000DA)."
+        ],
+        "result": "x = 8"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ا",
+      "lead": "ما هي الصيغة الأفضل في الحالتين التاليتين:",
+      "statement": "عند إرسال 5 طرود في الشهر؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الصيغة الأولى",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الصيغة الثانية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الجدول أو قارن 5 بحل المعادلة."
+        }
+      ],
+      "feedback": {
+        "correct": "لـ 5 طرود: 1250DA مقابل 1550DA .",
+        "incorrect": "قارن المبلغين في الجدول."
+      },
+      "solution": {
+        "lines": [
+          "لـ 5 طرود: $f(5) = 1250DA$ و $g(5) = 1550DA$ : الصيغة الأولى أفضل.",
+          "قبل 8 طرود الصيغة الأولى أفضل، وبعدها الصيغة الثانية."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "sub": "ب",
+      "statement": "عند إرسال 12 طردا في الشهر؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الصيغة الأولى",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        },
+        {
+          "id": "B",
+          "content": "الصيغة الثانية",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الجدول أو قارن 12 بحل المعادلة."
+        }
+      ],
+      "feedback": {
+        "correct": "لـ 12 طردا: 3000DA مقابل 2600DA .",
+        "incorrect": "قارن المبلغين في الجدول."
+      },
+      "solution": {
+        "lines": [
+          "لـ 12 طردا: $f(12) = 3000DA$ و $g(12) = 2600DA$ : الصيغة الثانية أفضل.",
+          "قبل 8 طرود الصيغة الأولى أفضل، وبعدها الصيغة الثانية."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

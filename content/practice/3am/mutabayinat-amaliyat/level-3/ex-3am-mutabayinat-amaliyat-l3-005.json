@@ -1,0 +1,239 @@
+{
+  "id": "ex-3am-mutabayinat-amaliyat-l3-005",
+  "lessonCode": "mutabayinat-amaliyat",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — مقارنة عبارتين",
+    "estimatedMinutes": 10,
+    "tags": [
+      "مقارنة عبارتين",
+      "تخمين وبرهان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$x$ عدد ناطق حيث $x>3$ ، و $A=5x+2$ ، $B=3x+8$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $A-B$ من أجل $x=4$ .",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المعطى بالضبط؟ وما العبارة المطلوب استنتاج متباينة لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابنِ المتباينة المطلوبة عملية بعد عملية، وانتبه إلى إشارة العدد عند كلّ ضرب أو قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر، وأعد كتابة الحصر من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$A=22$ و $B=20$ ؛ إذن $A-B=2$ .",
+        "incorrect": "استنتج المتباينة خطوة بخطوة، وانتبه إلى اتجاهها بعد كلّ ضرب أو قسمة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$A=22$ و $B=20$ ؛ إذن $A-B=2$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "قارن $A$ و $B$ : $A\\ \\square \\ B$",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$<$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-POS-FLIP"
+        },
+        {
+          "id": "B",
+          "content": "$>$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لا يمكن الحكم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-DIFF-CONST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المعطى بالضبط؟ وما العبارة المطلوب استنتاج متباينة لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابنِ المتباينة المطلوبة عملية بعد عملية، وانتبه إلى إشارة العدد عند كلّ ضرب أو قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر، وأعد كتابة الحصر من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "من $x>3$ نجد $2x>6$ ، إذن $2x-6>0$ ، أي $A>B$ .",
+        "incorrect": "استنتج المتباينة خطوة بخطوة، وانتبه إلى اتجاهها بعد كلّ ضرب أو قسمة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$A-B=2x-6$ .",
+          "من $x>3$ نجد $2x>6$ ، إذن $2x-6>0$ ، أي $A>B$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما المتباينة الصحيحة المتعلّقة بالعبارة $A-B=2x-6$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2x-6>0$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$2x-6>6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-ONE-SIDE"
+        },
+        {
+          "id": "C",
+          "content": "$2x-6<0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-POS-FLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المعطى بالضبط؟ وما العبارة المطلوب استنتاج متباينة لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابنِ المتباينة المطلوبة عملية بعد عملية، وانتبه إلى إشارة العدد عند كلّ ضرب أو قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر، وأعد كتابة الحصر من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "نطرح $6$ من الطرفين: $2x-6>0$ .",
+        "incorrect": "استنتج المتباينة خطوة بخطوة، وانتبه إلى اتجاهها بعد كلّ ضرب أو قسمة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضرب طرفي $x>3$ في $2$ (موجب): $2x>6$ .",
+          "نطرح $6$ من الطرفين: $2x-6>0$ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "برّر أنّ $A>B$ من أجل كلّ $x>3$ .",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المعطى بالضبط؟ وما العبارة المطلوب استنتاج متباينة لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابنِ المتباينة المطلوبة عملية بعد عملية، وانتبه إلى إشارة العدد عند كلّ ضرب أو قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر، وأعد كتابة الحصر من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "من $x>3$ نجد $2x>6$ ثم $2x-6>0$ ؛ فالفرق موجب، إذن $A>B$ .",
+        "incorrect": "استنتج المتباينة خطوة بخطوة، وانتبه إلى اتجاهها بعد كلّ ضرب أو قسمة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$A-B=(5x+2)-(3x+8)=2x-6$ .",
+          "من $x>3$ نجد $2x>6$ ثم $2x-6>0$ ؛ فالفرق موجب، إذن $A>B$ ."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

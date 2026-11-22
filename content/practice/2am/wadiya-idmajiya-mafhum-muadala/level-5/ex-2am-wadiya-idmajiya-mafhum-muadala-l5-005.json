@@ -1,0 +1,247 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-mafhum-muadala-l5-005",
+  "lessonCode": "wadiya-idmajiya-mafhum-muadala",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — صيغتان لتصوير حفلة",
+    "estimatedMinutes": 15,
+    "tags": [
+      "جزء ثابت",
+      "مقارنة",
+      "معادلة بعمليّتين",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يقترح نادٍ للتصوير صيغتين : $A$ تحتسب $2500$ DA ثابتة و $140$ DA عن كلّ ساعة ، و $B$ تحتسب $900$ DA ثابتة و $220$ DA عن كلّ ساعة . نسمّي $n$ عدد الساعات . الجزء الأوّل : الاختبار . الجزء الثاني : القرار ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل المساواة $2500+140n = 900+220n$ صحيحة من أجل $n = 20$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "feedback": {
+        "correct": "نعم .",
+        "incorrect": "عوّض الحرف في الطرفين، احسب كلّ طرف ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل : $2500+140 \\times 20 = 5300$ .",
+          "الطرف الثاني : $900+220 \\times 20 = 5300$ .",
+          "$5300 = 5300$ : الطرفان متساويان، فالمساواة صحيحة ."
+        ]
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بقيمته المعطاة في الطرفين معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة ثمّ قارن الناتجين بالرمز المكتوب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الرمز « أصغر أو يساوي » يقبل التساوي، والرمز « أصغر تمامًا » لا يقبله."
+        }
+      ],
+      "timeSeconds": 70
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم تدفع في الصيغة $B$ من أجل $n = 25$ ساعة بالدينار ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "6400",
+      "misconceptionSignatures": [
+        {
+          "value": "5500",
+          "id": "MISC-SYN-MUAD2-FIXED"
+        },
+        {
+          "value": "28000",
+          "id": "MISC-SYN-MUAD2-ADDCOEF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بقيمته المعلومة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات : الضرب والقسمة قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة."
+        }
+      ],
+      "feedback": {
+        "correct": "النتيجة $6400$ .",
+        "incorrect": "عوّض بالقيم المعلومة واحسب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$900+220 \\times 25 = 6400$ ."
+        ],
+        "result": "6400"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "الجزء الثاني : تلزم $12$ ساعة . أيّ الصيغتين أرخص ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الصيغة $A$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SYN-MUAD2-FIXED"
+        },
+        {
+          "id": "B",
+          "content": "الصيغة $B$",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "الصيغة $B$ .",
+        "incorrect": "احسب ما يدفعه الشخص في كلّ صيغة بالقيمة المعطاة ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "$A$ : $2500+140 \\times 12 = 4180$ ، $B$ : $900+220 \\times 12 = 3540$ .",
+          "الأرخص هو الصيغة $B$ لأنّ $3540$ أصغر من $4180$ ."
+        ]
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب ما يدفعه الشخص في كلّ صيغة من أجل القيمة المعطاة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تقارن ثمن الوحدة وحده : أضف الجزء الثابت في كلّ صيغة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختر الصيغة التي يكون ناتجها أصغر تمامًا."
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "ما أكبر عدد ساعات تغطّيه $6000$ DA بالصيغة $A$ ؟ حلّ المعادلة : $140n+2500 = 6000$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "25",
+      "misconceptionSignatures": [
+        {
+          "value": "3500",
+          "id": "MISC-MAJHUL-SUBFORM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في المعادلة ما يُفعل بالمجهول : ضرب أو قسمة أو جمع أو طرح، وما هي آخر عملية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ألغِ آخر عملية أُجريت على المجهول أوّلًا، ثمّ ألغِ ما بقي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من حلّك : عوّض المجهول بقيمته وأنجز العملية، فإن وجدت الطرف الآخر فالحلّ صحيح."
+        }
+      ],
+      "feedback": {
+        "correct": "$n = 25$ .",
+        "incorrect": "ابحث عن العدد الذي يجعل المساواة صحيحة بالعملية العكسية، ثمّ تحقّق منه بإنجاز العملية."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية هي جمع $2500$ : $140n = 6000-2500 = 3500$ .",
+          "$n = 3500 \\div 140 = 25$ .",
+          "التحقّق : $140 \\times 25+2500 = 6000$ ."
+        ],
+        "result": "25"
+      },
+      "work": "optional",
+      "timeSeconds": 85
+    }
+  ]
+}

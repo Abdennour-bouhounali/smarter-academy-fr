@@ -1,0 +1,128 @@
+{
+  "id": "ex-4am-tamthil-bayani-khatti-l1-010",
+  "lessonCode": "tamthil-bayani-khatti",
+  "level": 1,
+  "metadata": {
+    "title": "إشارة المعامل ومنحى المستقيم",
+    "estimatedMinutes": 4,
+    "tags": [
+      "منحى المستقيم",
+      "إشارة المعامل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tamthil-bayani-khatti_P3",
+      "modelledOn": "know-3",
+      "adaptedFrom": "ex-4am-tamthil-bayani-khatti-l1-010"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "$(\\Delta_1)$ و $(\\Delta_2)$ التمثيلان البيانيان للدالتين الخطيتين $f$ و $g$ حيث: $f(x) = 0{,}2x$ و $g(x) = -7x$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل المستقيم $(\\Delta_1)$ يصعد أم ينزل من اليسار إلى اليمين؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "يصعد من اليسار إلى اليمين",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "ينزل من اليسار إلى اليمين",
+          "isCorrect": false,
+          "misconceptionId": "MISC-BAYANI-MUNHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارة معامل الدالة الخطية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان المعامل موجبا فالمستقيم يصعد، وإذا كان سالبا فهو ينزل."
+        }
+      ],
+      "feedback": {
+        "correct": "المعامل $0{,}2$ موجب: المستقيم يصعد.",
+        "incorrect": "منحى المستقيم تعيّنه إشارة المعامل: موجب ← يصعد، سالب ← ينزل."
+      },
+      "solution": {
+        "lines": [
+          "معامل الدالة $f$ هو $0{,}2$ ، وهو عدد موجب.",
+          "إذن المستقيم $(\\Delta_1)$ يصعد من اليسار إلى اليمين."
+        ],
+        "result": "يصعد"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب ترتيب النقطة من $(\\Delta_2)$ التي فاصلتها $-1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "-7",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الترتيب هو صورة الفاصلة بالدالة $g$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $-7 \\times \\left(-1\\right)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$g(-1) = -7 \\times \\left(-1\\right) = 7$ .",
+        "incorrect": "جداء عددين سالبين عدد موجب."
+      },
+      "solution": {
+        "lines": [
+          "$g(-1) = -7 \\times \\left(-1\\right) = 7$",
+          "إذن النقطة $(-1 ; 7)$ تنتمي إلى $(\\Delta_2)$ ."
+        ],
+        "result": "g(-1) = 7"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

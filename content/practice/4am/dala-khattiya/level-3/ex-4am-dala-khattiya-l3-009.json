@@ -1,0 +1,247 @@
+{
+  "id": "ex-4am-dala-khattiya-l3-009",
+  "lessonCode": "dala-khattiya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2017 — مساحة مثلث بدلالة x",
+    "estimatedMinutes": 7,
+    "tags": [
+      "وضعية هندسية",
+      "دالة خطية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_dala-khattiya_P1",
+      "modelledOn": "BEM 2017 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2017",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$ABCD$ مستطيل حيث $AB = 8cm$ و $BC = 6cm$ . $M$ نقطة من الضلع $[BC]$ حيث $BM = x$ (بـ cm) مع $0 \\leqslant x \\leqslant 6$ . نسمّي $f(x)$ مساحة المثلث $ABM$ (بـ $cm^2$).",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          8,
+          0
+        ],
+        "C": [
+          8,
+          6
+        ],
+        "D": [
+          0,
+          6
+        ],
+        "M": [
+          8,
+          2.5
+        ]
+      },
+      "polygons": [
+        {
+          "points": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "tone": "slate"
+        },
+        {
+          "points": [
+            "A",
+            "B",
+            "M"
+          ],
+          "tone": "indigo"
+        }
+      ],
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "8cm"
+        },
+        {
+          "from": "B",
+          "to": "M",
+          "label": "x"
+        }
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "B",
+          "C"
+        ]
+      ],
+      "labels": {
+        "A": "sw",
+        "B": "se",
+        "C": "ne",
+        "D": "nw",
+        "M": "e"
+      },
+      "ariaLabel": "مستطيل ABCD فيه AB = 8cm ، والنقطة M من الضلع [BC] حيث BM = x ، والمثلث ABM مظلّل"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عبّر عن $f(x)$ بدلالة $x$ على الشكل $f(x) = ax$ .",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-KHATTIYA-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $ABM$ قائم في $B$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحة المثلث القائم = نصف جداء ضلعي الزاوية القائمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(x) = \\dfrac{8 \\times x}{2} = 4x$ : $f$ دالة خطية.",
+        "incorrect": "مساحة المثلث القائم هي $\\dfrac{AB \\times BM}{2}$ ."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABM$ قائم في $B$ :",
+          "$f(x) = \\dfrac{AB \\times BM}{2} = \\dfrac{8 \\times x}{2}$",
+          "$f(x) = 4x$ : $f$ دالة خطية معاملها 4 ."
+        ],
+        "result": "f(x) = 4x"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $f(2{,}5)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "0,625",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "-10",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "صورة العدد $x$ بالدالة الخطية $f$ هي $f(x) = 4 \\times x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $x$ بالعدد $2{,}5$ ثم احسب الجداء، وانتبه إلى الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(2{,}5) = 4 \\times 2{,}5 = 10$ .",
+        "incorrect": "الصورة جداء المعامل في العدد: $f(x) = 4 \\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(2{,}5) = 4 \\times 2{,}5$",
+          "$f(2{,}5) = 10$"
+        ],
+        "result": "f(2{,}5) = 10cm^2"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "جد قيمة $x$ التي تكون من أجلها مساحة المثلث $ABM$ تساوي $18cm^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "4,5",
+      "misconceptionSignatures": [
+        {
+          "value": "72",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "-4,5",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد المطلوب $x$ يحقق $f(x) = 18$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المعادلة $4x = 18$ : اقسم الطرفين على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{18}{4} = 4{,}5$ .",
+        "incorrect": "لا تحسب صورة العدد المعطى: ابحث عن العدد $x$ الذي صورته هذا العدد."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 18$ معناه $4x = 18$",
+          "$x = \\dfrac{18}{4} = 4{,}5$"
+        ],
+        "result": "x = 4{,}5cm"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

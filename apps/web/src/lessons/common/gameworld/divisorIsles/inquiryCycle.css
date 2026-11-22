@@ -1,0 +1,90 @@
+/* THE INVESTIGATION `cycle` (InquiryCycle.jsx) — one plank, a gap that grows one cell at a time, and the staircase of
+   the cells left. It reuses the frame of the division screens (inquiry.css › .iq--div: question, goal, scene,
+   calculation, fact, actions, what he found). Shapes are the brand blue; what is left is amber, as everywhere in this
+   world. SVG text is ≥ 18 units of a 1000-wide scene; HTML text keeps the 12 px floor of the forge's zoom. */
+
+/* the cell about to be added to the gap */
+.iq-cyc-new {
+  fill: rgba(125, 252, 255, 0.16);
+  stroke: #7dfcff;
+  stroke-width: 2.5;
+  stroke-dasharray: 5 4;
+  animation: iq-pulse 1.1s ease-in-out infinite;
+}
+/* the staircase: its ground line, one small cell per cell left, the mark of a plank that went in */
+.iq-cyc-base {
+  stroke: rgba(159, 216, 255, 0.45);
+  stroke-width: 2;
+}
+.iq-cyc-left {
+  fill: rgba(251, 191, 36, 0.3);
+  stroke: #fbbf24;
+  stroke-width: 1.5;
+  transform-box: fill-box;
+  animation: iq-drop 0.3s ease-out backwards;
+}
+.iq-cyc-plank {
+  fill: #2f7df6;
+  stroke: #7dfcff;
+  stroke-width: 1.5;
+  transform-box: fill-box;
+  animation: iq-drop 0.35s ease-out backwards;
+}
+.iq-scene text.iq-cyc-val {
+  font-size: 22px;
+  fill: #ffe2a8;
+}
+.iq-scene text.iq-cyc-val.is-miss {
+  fill: #fbbf24;
+}
+.iq-scene text.iq-cyc-val.is-next {
+  font-size: 26px;
+  fill: #7dfcff;
+}
+/* what he had said for a gap, when the strip showed another number: kept beside it, struck through */
+.iq-scene text.iq-cyc-said {
+  font-size: 18px;
+  fill: #9fd8ff;
+  text-decoration: line-through;
+  opacity: 0.85;
+}
+.iq-scene text.iq-cyc-gap {
+  font-size: 18px;
+  fill: #9fd8ff;
+}
+
+/* the two questions of a probe, side by side, each over its own answer */
+.iq-cyc-q {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  flex: 1 1 18rem;
+  max-width: 28rem;
+}
+.iq-cyc-q .iq-askline {
+  flex: none;
+}
+.iq-cyc-yn {
+  display: flex;
+  gap: 0.6rem;
+}
+.iq--cycle .iq-chip:disabled {
+  opacity: 0.6;
+}
+.iq--cycle .iq-chip.is-on:disabled {
+  opacity: 1;
+}
+
+@media (max-height: 500px) {
+  .iq-cyc-q {
+    gap: 0.15rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .iq-cyc-new,
+  .iq-cyc-left,
+  .iq-cyc-plank {
+    animation: none;
+  }
+}

@@ -1,0 +1,238 @@
+{
+  "id": "ex-4am-qiraat-wadiyat-ihsaiya-l4-005",
+  "lessonCode": "qiraat-wadiyat-ihsaiya",
+  "level": 4,
+  "metadata": {
+    "title": "هوايات التلاميذ: أعمدة تجمع هوايتين",
+    "estimatedMinutes": 9,
+    "tags": [
+      "قراءة مخطط بالأعمدة",
+      "التواتر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_qiraat-wadiyat-ihsaiya_P1",
+      "modelledOn": "ex-19"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لكل تلميذ في متوسطة هواية مفضّلة واحدة من ثلاث: الرياضة، الموسيقى، الرسم. يمثّل المخطط بالأعمدة الآتي النتائج، وبعض أعمدته يجمع هوايتين:",
+    "figure": {
+      "kind": "chart",
+      "type": "bar",
+      "ariaLabel": "مخطط بالأعمدة لهوايات التلاميذ: الرياضة والموسيقى، الموسيقى والرسم، الرسم",
+      "xTitle": "الهواية",
+      "yTitle": "عدد التلاميذ",
+      "y": {
+        "max": 700,
+        "step": 100,
+        "minor": 2
+      },
+      "bars": [
+        {
+          "label": "الرياضة والموسيقى",
+          "value": 600
+        },
+        {
+          "label": "الموسيقى والرسم",
+          "value": 500
+        },
+        {
+          "label": "الرسم",
+          "value": 150
+        }
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب عدد التلاميذ الذين هوايتهم الموسيقى.",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "350",
+      "misconceptionSignatures": [
+        {
+          "value": "500",
+          "id": "MISC-IHSA-QIRAA-MUKHATTAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالهواية التي لها عمود وحدها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عمود «الموسيقى والرسم» يجمع هوايتين: اطرح منه ما تعرفه."
+        }
+      ],
+      "feedback": {
+        "correct": "$500 - 150 = 350$ .",
+        "incorrect": "العمود الذي يجمع هوايتين لا يُنقل كما هو: اطرح منه عدد تلاميذ الهواية الأخرى."
+      },
+      "solution": {
+        "lines": [
+          "عمود «الرسم» يصل إلى 150 ، وعمود «الموسيقى والرسم» إلى 500 .",
+          "$500 - 150 = 350$"
+        ],
+        "result": "350"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب عدد التلاميذ الذين هوايتهم الرياضة.",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "250",
+      "misconceptionSignatures": [
+        {
+          "value": "600",
+          "id": "MISC-IHSA-QIRAA-MUKHATTAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عمود «الرياضة والموسيقى» يجمع هوايتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل نتيجة 01 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$600 - 350 = 250$ .",
+        "incorrect": "اطرح عدد تلاميذ الموسيقى (01) من عمود «الرياضة والموسيقى»."
+      },
+      "solution": {
+        "lines": [
+          "$600 - 350 = 250$"
+        ],
+        "result": "250"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "احسب العدد الكلي لتلاميذ المتوسطة.",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "750",
+      "misconceptionSignatures": [
+        {
+          "value": "1250",
+          "id": "MISC-IHSA-QIRAA-MUKHATTAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع عدد تلاميذ كل هواية مرّة واحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تجمع ارتفاعات الأعمدة: الموسيقى تظهر في عمودين."
+        }
+      ],
+      "feedback": {
+        "correct": "$250 + 350 + 150 = 750$ .",
+        "incorrect": "جمع الأعمدة الثلاثة يحسب بعض التلاميذ مرّتين."
+      },
+      "solution": {
+        "lines": [
+          "$250 + 350 + 150 = 750$"
+        ],
+        "result": "750"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "احسب تواتر الهواية «الرسم».",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b أو عدد عشري",
+      "expectedAnswer": "0,2",
+      "misconceptionSignatures": [
+        {
+          "value": "0,12",
+          "id": "MISC-IHSA-QIRAA-MUKHATTAT"
+        },
+        {
+          "value": "150",
+          "id": "MISC-IHSA-TAWATUR-BILA-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التواتر = التكرار ÷ التكرار الكلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{150}{750} = 0{,}2$ .",
+        "incorrect": "اقسم عدد تلاميذ الرسم على العدد الكلي الذي وجدته في (ا)."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{150}{750} = 0{,}2$"
+        ],
+        "result": "0{,}2"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

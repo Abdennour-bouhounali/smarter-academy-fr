@@ -1,0 +1,245 @@
+{
+  "id": "ex-1am-bahth-adad-naqisa-l5-009",
+  "lessonCode": "bahth-adad-naqisa",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — مشاريع النادي",
+    "estimatedMinutes": 14,
+    "tags": [
+      "وضعية إدماجية",
+      "مال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "جمع نادي القسم 9 600 دج لمشاريعه."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أنفق النادي على الدفاتر مبلغًا فبقي 5 400 دج. كم أنفق بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "4200",
+      "misconceptionSignatures": [
+        {
+          "value": "15000",
+          "id": "MISC-NAQISA-TRAPADD"
+        },
+        {
+          "value": "-4200",
+          "id": "MISC-NAQISA-REVSUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المجهول هنا هو المطروح: ما أُخذ من العدد الذي بدأنا منه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $9600-4200=5400$ ، فالعدد الناقص هو $4200$ .",
+        "incorrect": "في a − □ = b المجهول هو المطروح: نطرح الناتج من a ولا نعكس الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $9600-\\square=5400$ .",
+          "نُرجع بالعملية العكسية: $\\square=9600-5400=4200$ .",
+          "نتحقّق: $9600-4200=5400$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اشترى بالمبلغ المنفق ملصقات بثمن 70 دج للملصقة الواحدة. كم ملصقة اشترى؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "60",
+      "misconceptionSignatures": [
+        {
+          "value": "294000",
+          "id": "MISC-NAQISA-MULAGAIN"
+        },
+        {
+          "value": "1/60",
+          "id": "MISC-NAQISA-DIVREV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للضرب هي القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $60\\times 70=4200$ ، فالعدد الناقص هو $60$ .",
+        "incorrect": "في جداء نقسم الناتج على العدد المعلوم: لا نضربه فيه ولا نقسم المعلوم على الناتج."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square\\times 70=4200$ .",
+          "نُرجع بالعملية العكسية: $\\square=4200\\div 70=60$ .",
+          "نتحقّق: $60\\times 70=4200$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "وزّع الباقي (5 400 دج) على 9 لجان بالتساوي. كم نالت كلّ لجنة بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "600",
+      "misconceptionSignatures": [
+        {
+          "value": "48600",
+          "id": "MISC-NAQISA-MULAGAIN"
+        },
+        {
+          "value": "1/600",
+          "id": "MISC-NAQISA-DIVREV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للضرب هي القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $600\\times 9=5400$ ، فالعدد الناقص هو $600$ .",
+        "incorrect": "في جداء نقسم الناتج على العدد المعلوم: لا نضربه فيه ولا نقسم المعلوم على الناتج."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square\\times 9=5400$ .",
+          "نُرجع بالعملية العكسية: $\\square=5400\\div 9=600$ .",
+          "نتحقّق: $600\\times 9=5400$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "بعد أن تبرّع محسن بمبلغ صار مع النادي 6 100 دج من 5 400. كم تبرّع؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "700",
+      "misconceptionSignatures": [
+        {
+          "value": "11500",
+          "id": "MISC-NAQISA-SAMEOP"
+        },
+        {
+          "value": "-700",
+          "id": "MISC-NAQISA-REVSUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للجمع هي الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $700+5400=6100$ ، فالعدد الناقص هو $700$ .",
+        "incorrect": "في مجموع نطرح العدد المعلوم من الناتج: لا نجمع مرّة أخرى."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square+5400=6100$ .",
+          "نُرجع بالعملية العكسية: $\\square=6100-5400=700$ .",
+          "نتحقّق: $700+5400=6100$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

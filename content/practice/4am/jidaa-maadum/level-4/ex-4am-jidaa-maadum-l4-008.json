@@ -1,0 +1,166 @@
+{
+  "id": "ex-4am-jidaa-maadum-l4-008",
+  "lessonCode": "jidaa-maadum",
+  "level": 4,
+  "metadata": {
+    "title": "الخوارزمي — مال وواحد وعشرون",
+    "estimatedMinutes": 12,
+    "tags": [
+      "تاريخ الرياضيات",
+      "متطابقات شهيرة",
+      "جداء معدوم"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "history-khwarizmi",
+      "page": 43,
+      "section": "الخوارزمي",
+      "adaptedFrom": "ex-4am-jidaa-maadum-l5-002"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "جاء في كتاب الخوارزمي: «مال وواحد وعشرون من العدد يعدل عشرة أجذاره»، وتُكتب بالرموز الحالية:",
+    "formulas": [
+      "x^2 + 21 = 10x"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن: $x^2 - 10x + 21 = (x - 5)^2 - 4$ .",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر $(x - 5)^2$ ، ثم اطرح $4$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "أحسنت: برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "$(x - 5)^2 - 4 = x^2 - 10x + 25 - 4$",
+          "$= x^2 - 10x + 21$"
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "حلّل العبارة $x^2 - 10x + 21$ إلى جداء عاملين من الدرجة الأولى.",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $x^2 - 10x + 21$ على الشكل $(x - 3)(x - m)$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن عامل مشترك، أو عن متطابقة شهيرة من الشكل $a^2 - b^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرج العامل المشترك (أو طبّق $a^2 - b^2 = (a - b)(a + b)$ )، واكتب ما بقي بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بسّط ما بين القوسين بإشاراته، ثم قارن بالشكل المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$x^2 - 10x + 21 = (x - 3)(x - 7)$ إذن $m = 7$ .",
+        "incorrect": "أخرج العامل المشترك أو طبّق المتطابقة الشهيرة، ثم بسّط ما بقي بين القوسين بإشاراته."
+      },
+      "solution": {
+        "lines": [
+          "$x^2 - 10x + 21 = (x - 5)^2 - 2^2$",
+          "$= [(x - 5) - 2][(x - 5) + 2]$"
+        ],
+        "result": "x^2 - 10x + 21 = (x - 3)(x - 7)"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "حل المعادلة: $x^2 + 21 = 10x$ .",
+      "statement": "حلول المعادلة:",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "اكتب حلول المعادلة مفصولة بفاصلة",
+      "expectedAnswer": [
+        3,
+        7
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا تنشر الطرف الأول: استعمل تحليله إلى جداء عاملين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد التحليل تصير المعادلة معادلة جداء معدوم: أحد العاملين على الأقل معدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ كل معادلة من الدرجة الأولى، ثم رتّب الحلّين من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "للمعادلة حلّان: $3$ و $7$ .",
+        "incorrect": "كل عامل يعطي حلًّا: اكتب أن أحد العاملين معدوم، وحلّ المعادلتين، ولا تنسَ أيّ حلّ."
+      },
+      "solution": {
+        "lines": [
+          "$x^2 + 21 = 10x$ يعني $x^2 - 10x + 21 = 0$",
+          "أي: $(x - 3)(x - 7) = 0$",
+          "يعني أنّ: $x - 3 = 0$ أو $x - 7 = 0$",
+          "ومنه: $x = 3$ أو $x = 7$",
+          "إذن للمعادلة حلّان (جذران) هما $3$ و $7$"
+        ],
+        "result": "x = 3 \\; ; \\; x = 7"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

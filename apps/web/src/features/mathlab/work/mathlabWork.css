@@ -1,0 +1,584 @@
+/* ── « أعمالي » : l'atelier personnel de l'élève ──────────────────────────
+
+   Toutes les marges et les positions sont LOGIQUES (`inline-start`,
+   `margin-inline`, `inset-inline`) : la page est arabe et RTL, et rien ici
+   ne suppose une direction. Voir ARABIC_RTL_CONTRACT.md.
+
+   Les couleurs, les rayons et les hauteurs de frappe (44 px) sont ceux du
+   cahier (`.sa-ns-*`) et de la coquille du مختبر (`.sa-ml-*`) : une seule
+   langue visuelle sur la plateforme, l'accent bleu du مختبر au lieu du
+   violet du cahier. */
+
+.sa-mlw {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+/* ── Les boutons ─────────────────────────────────────────────────────── */
+
+.sa-mlw-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  min-height: 2.75rem;
+  min-width: 2.75rem;
+  padding: 0 0.75rem;
+  border-radius: 0.75rem;
+  border: 2px solid transparent;
+  background: #ffffff;
+  color: #475569;
+  font-family: 'Inter', 'Cairo', 'Tajawal', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.sa-mlw-btn:hover { background: #f1f5f9; color: #0f172a; }
+.sa-mlw-btn:focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; }
+.sa-mlw-btn:disabled { opacity: 0.5; cursor: default; }
+.sa-mlw-btn--primary { background: #3b82f6; color: #ffffff; border-color: #3b82f6; }
+.sa-mlw-btn--primary:hover:not(:disabled) { background: #2563eb; color: #ffffff; }
+.sa-mlw-btn--ghost { border-color: #e2e8f0; }
+.sa-mlw-btn--ghost:hover { border-color: #93c5fd; }
+.sa-mlw-btn--danger { border-color: #fecdd3; color: #be123c; background: #ffffff; }
+.sa-mlw-btn--danger:hover:not(:disabled) { background: #fff1f2; color: #be123c; }
+.sa-mlw-btn--icon { padding: 0; background: transparent; border-radius: 9999px; color: #64748b; }
+.sa-mlw-btn--icon:hover { background: #f1f5f9; color: #0f172a; }
+.sa-mlw-btn--icon[aria-pressed="true"] { background: #dbeafe; color: #1d4ed8; }
+.sa-mlw-btn--link {
+  background: transparent; border: 0; color: #1d4ed8; padding: 0 0.5rem;
+  min-height: 2.25rem; min-width: 0; text-decoration: underline; text-underline-offset: 3px;
+}
+
+/* ── Chercher ────────────────────────────────────────────────────────── */
+
+.sa-mlw-search { position: relative; display: flex; align-items: center; }
+
+.sa-mlw-search input {
+  width: 100%;
+  min-height: 3rem;
+  /* La loupe occupe le bord de DÉPART, la croix celui de fin : en RTL les
+     deux basculent sans une ligne de plus. */
+  padding-inline: 3rem 3rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 0.875rem;
+  background: #ffffff;
+  font-family: 'Inter', 'Cairo', 'Tajawal', sans-serif;
+  font-size: 0.9375rem;
+  color: #0f172a;
+}
+
+.sa-mlw-search input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+.sa-mlw-search > svg { position: absolute; inset-inline-start: 1rem; color: #94a3b8; pointer-events: none; }
+.sa-mlw-search > button { position: absolute; inset-inline-end: 0.375rem; }
+/* La croix native du champ `search` ferait doublon avec la nôtre. */
+.sa-mlw-search input::-webkit-search-cancel-button { display: none; }
+
+/* ── La barre : compteur, tri, vue, filtres ──────────────────────────── */
+
+.sa-mlw-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sa-mlw-count {
+  margin: 0;
+  margin-inline-end: auto;
+  font-family: 'Inter', 'Cairo', 'Tajawal', sans-serif;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.sa-mlw-sort { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: #475569; }
+
+.sa-mlw-select {
+  min-height: 2.75rem;
+  padding-inline: 0.75rem 2rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 0.75rem;
+  background: #ffffff;
+  font-family: 'Inter', 'Cairo', 'Tajawal', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.sa-mlw-select:focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; }
+
+.sa-mlw-views { display: inline-flex; gap: 0.125rem; padding: 0.125rem; border: 2px solid #e2e8f0; border-radius: 0.875rem; }
+
+/* ── Les filtres actifs ──────────────────────────────────────────────── */
+
+.sa-mlw-active { display: flex; flex-wrap: wrap; align-items: center; gap: 0.375rem; }
+.sa-mlw-active__label { font-size: 0.8125rem; font-weight: 700; color: #64748b; }
+
+.sa-mlw-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  min-height: 2rem;
+  padding-inline: 0.625rem;
+  border: 1px solid #bfdbfe;
+  border-radius: 9999px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-family: 'Inter', 'Cairo', 'Tajawal', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.sa-mlw-pill:hover { background: #dbeafe; }
+.sa-mlw-pill:focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; }
+
+.sa-mlw-error {
+  margin: 0;
+  padding: 0.625rem 0.875rem;
+  border: 2px solid #fecdd3;
+  border-radius: 0.875rem;
+  background: #fff1f2;
+  color: #be123c;
+  font-family: 'Inter', 'Cairo', 'Tajawal', sans-serif;
+  font-size: 0.875rem;
+}
+
+/* ── Le corps : colonne de filtres + travaux ─────────────────────────── */
+
+.sa-mlw-body-grid { display: block; }
+.sa-mlw-aside { display: none; }
+
+@media (min-width: 1024px) {
+  .sa-mlw-body-grid {
+    display: grid;
+    grid-template-columns: 15rem minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .sa-mlw-aside { display: block; }
+}
+
+.sa-mlw-aside__inner {
+  position: sticky;
+  top: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  background: #ffffff;
+}
+
+.sa-mlw-aside__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.75rem;
+  font-family: 'Space Grotesk', 'Cairo', 'Tajawal', sans-serif;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: #1e293b;
+}
+
+/* ── Le panneau des filtres ──────────────────────────────────────────── */
+
+.sa-mlw-filters { display: flex; flex-direction: column; gap: 1rem; }
+.sa-mlw-fieldset { border: 0; margin: 0; padding: 0; }
+
+.sa-mlw-fieldset legend {
+  padding: 0 0 0.5rem;
+  font-family: 'Inter', 'Cairo', 'Tajawal', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.sa-mlw-chips { display: flex; flex-wrap: wrap; gap: 0.375rem; }
+
+.sa-mlw-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  min-height: 2.25rem;
+  padding-inline: 0.625rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 9999px;
+  background: #ffffff;
+  color: #475569;
+  font-family: 'Inter', 'Cairo', 'Tajawal', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.sa-mlw-chip:hover { border-color: #93c5fd; color: #0f172a; }
+.sa-mlw-chip:focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; }
+.sa-mlw-chip[aria-pressed="true"] { background: #1d4ed8; border-color: #1d4ed8; color: #ffffff; }
+
+.sa-mlw-chip__count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.25rem;
+  padding-inline: 0.25rem;
+  border-radius: 9999px;
+  background: #f1f5f9;
+  color: #64748b;
+  font-family: 'JetBrains Mono', 'Cairo', monospace;
+  font-size: 0.6875rem;
+  font-weight: 700;
+}
+
+.sa-mlw-chip[aria-pressed="true"] .sa-mlw-chip__count { background: rgba(255, 255, 255, 0.22); color: #ffffff; }
+
+/* ── La grille et la liste ───────────────────────────────────────────── */
+
+.sa-mlw-grid { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.875rem; }
+
+.sa-mlw-grid[data-view="grid"] { grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); }
+.sa-mlw-grid[data-view="list"] { grid-template-columns: 1fr; gap: 0.5rem; }
+
+/* Sous 380 px, une colonne : une carte de 15 rem déborderait. */
+@media (max-width: 380px) {
+  .sa-mlw-grid[data-view="grid"] { grid-template-columns: 1fr; }
+}
+
+/* ── La carte d'un travail ───────────────────────────────────────────── */
+
+.sa-mlw-card {
+  position: relative;
+  display: flex;
+  border: 2px solid #e2e8f0;
+  border-radius: 1rem;
+  background: #ffffff;
+  transition: border-color 0.15s, box-shadow 0.15s, background-color 0.15s;
+}
+
+.sa-mlw-card:hover { border-color: #bfdbfe; box-shadow: 0 10px 24px -16px rgba(30, 64, 175, 0.4); }
+.sa-mlw-card:focus-within { border-color: #93c5fd; }
+
+/* La sélection ne se dit JAMAIS par la seule couleur (§45) : la case est
+   cochée, la bordure change, le fond change, et un trait d'accent marque le
+   bord de départ. */
+.sa-mlw-card[data-selected="true"] {
+  border-color: #2563eb;
+  background: #eff6ff;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18);
+}
+
+.sa-mlw-card[data-favorite] { border-inline-start: 4px solid #f59e0b; }
+
+.sa-mlw-card[data-view="grid"] { flex-direction: column; }
+.sa-mlw-card[data-view="list"] { flex-direction: row; align-items: center; gap: 0.75rem; padding: 0.5rem 0.625rem; }
+
+/* ── L'aperçu ────────────────────────────────────────────────────────── */
+
+.sa-mlw-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #f8fafc;
+  color: #94a3b8;
+}
+
+.sa-mlw-card[data-view="grid"] .sa-mlw-preview {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  border-start-start-radius: 0.875rem;
+  border-start-end-radius: 0.875rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.sa-mlw-card[data-view="list"] .sa-mlw-preview {
+  flex: none;
+  width: 4.5rem;
+  height: 3rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.625rem;
+}
+
+.sa-mlw-preview__svg { width: 100%; height: 100%; display: block; }
+.sa-mlw-preview__fallback { display: inline-flex; align-items: center; justify-content: center; color: #94a3b8; }
+
+/* ── Le corps de la carte ────────────────────────────────────────────── */
+
+.sa-mlw-card[data-view="grid"] .sa-mlw-body { padding: 0.75rem 0.875rem 0.5rem; min-width: 0; }
+.sa-mlw-card[data-view="list"] .sa-mlw-body { flex: 1 1 auto; min-width: 0; }
+
+.sa-mlw-title {
+  margin: 0;
+  font-family: 'Space Grotesk', 'Cairo', 'Tajawal', sans-serif;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: #0f172a;
+  /* Un titre arabe long se replie sur deux lignes, puis s'arrête — il ne
+     pousse jamais la carte hors de la grille. */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+}
+
+.sa-mlw-card[data-view="list"] .sa-mlw-title { -webkit-line-clamp: 1; }
+
+.sa-mlw-title a { color: inherit; text-decoration: none; }
+.sa-mlw-title a:hover { color: #1d4ed8; }
+.sa-mlw-title a:focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; border-radius: 0.25rem; }
+
+.sa-mlw-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 0.625rem;
+  margin: 0.25rem 0 0;
+  font-family: 'Inter', 'Cairo', 'Tajawal', sans-serif;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.sa-mlw-tool { display: inline-flex; align-items: center; gap: 0.25rem; font-weight: 700; color: #475569; }
+.sa-mlw-time { color: #94a3b8; }
+
+.sa-mlw-orphan {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0.375rem 0 0;
+  font-size: 0.75rem;
+  color: #b45309;
+}
+
+/* ── Les gestes d'une carte ──────────────────────────────────────────── */
+
+.sa-mlw-actions { display: inline-flex; align-items: center; gap: 0.125rem; }
+.sa-mlw-card[data-view="grid"] .sa-mlw-actions { padding: 0 0.5rem 0.5rem; margin-inline-start: auto; }
+.sa-mlw-card[data-view="list"] .sa-mlw-actions { flex: none; }
+
+/* La case à cocher : au coin de DÉPART de la carte, au-dessus de l'aperçu. */
+.sa-mlw-check-label {
+  position: absolute;
+  inset-block-start: 0.5rem;
+  inset-inline-start: 0.5rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.16);
+  cursor: pointer;
+  /* Discrète tant qu'on ne sélectionne pas — mais jamais absente du DOM :
+     un lecteur d'écran et le clavier la trouvent toujours. */
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.sa-mlw-card:hover .sa-mlw-check-label,
+.sa-mlw-card:focus-within .sa-mlw-check-label,
+.sa-mlw-check-label[data-armed] { opacity: 1; }
+
+/* Au doigt, il n'y a pas de survol : la case est toujours visible. */
+@media (hover: none) {
+  .sa-mlw-check-label { opacity: 1; }
+}
+
+.sa-mlw-card[data-view="list"] .sa-mlw-check-label {
+  position: static;
+  opacity: 1;
+  background: transparent;
+  box-shadow: none;
+  flex: none;
+}
+
+.sa-mlw-check { width: 1.125rem; height: 1.125rem; accent-color: #2563eb; cursor: pointer; }
+.sa-mlw-check:focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; }
+
+/* ── Le menu « ⋮ » ───────────────────────────────────────────────────── */
+
+.sa-mlw-menu-anchor { position: relative; display: inline-flex; }
+
+.sa-mlw-menu {
+  position: absolute;
+  z-index: 30;
+  inset-block-start: calc(100% + 0.25rem);
+  /* Il s'ouvre vers l'INTÉRIEUR de la page : aligné sur le bord de fin en
+     RTL comme en LTR, il ne sort jamais de l'écran (§17). */
+  inset-inline-end: 0;
+  min-width: 11rem;
+  max-width: min(16rem, calc(100vw - 2rem));
+  padding: 0.25rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.875rem;
+  background: #ffffff;
+  box-shadow: 0 14px 34px -12px rgba(15, 23, 42, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.sa-mlw-menu--wide { min-width: 13rem; }
+
+.sa-mlw-menu > button,
+.sa-mlw-menu > a,
+.sa-mlw-menu__group > a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.5rem;
+  padding-inline: 0.625rem;
+  border: 0;
+  border-radius: 0.625rem;
+  background: transparent;
+  color: #334155;
+  font-family: 'Inter', 'Cairo', 'Tajawal', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: start;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.sa-mlw-menu > button:hover,
+.sa-mlw-menu > a:hover,
+.sa-mlw-menu__group > a:hover { background: #f1f5f9; color: #0f172a; }
+.sa-mlw-menu > button:focus-visible,
+.sa-mlw-menu > a:focus-visible,
+.sa-mlw-menu__group > a:focus-visible { outline: 2px solid #3b82f6; outline-offset: -2px; }
+
+/* « عمل جديد » rangé par مخبر (NewWorkMenu) : une étiquette par groupe, et
+   une hauteur bornée — trois groupes et vingt instruments défilent dans le
+   menu, jamais sous le bas de l'écran. */
+.sa-mlw-menu--wide { max-height: min(28rem, 70vh); overflow-y: auto; }
+.sa-mlw-menu__group { display: flex; flex-direction: column; }
+.sa-mlw-menu__group + .sa-mlw-menu__group { margin-top: 0.25rem; padding-top: 0.25rem; border-top: 1px solid #f1f5f9; }
+.sa-mlw-menu__grouplabel {
+  margin: 0;
+  padding: 0.375rem 0.625rem 0.125rem;
+  font-family: 'Cairo', 'Tajawal', sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #94a3b8;
+}
+.sa-mlw-menu > button[data-danger] { color: #be123c; }
+.sa-mlw-menu > button[data-danger]:hover { background: #fff1f2; }
+
+/* ── La barre des actions groupées ───────────────────────────────────── */
+
+.sa-mlw-bulk {
+  position: fixed;
+  z-index: 40;
+  inset-inline: 0.75rem;
+  /* Au-dessus de la barre d'onglets de l'espace élève sur téléphone, et
+     au-dessus du bord bas ailleurs. `env(safe-area-inset-bottom)` tient
+     compte de la barre gestuelle d'iOS. */
+  inset-block-end: calc(5.25rem + env(safe-area-inset-bottom, 0px));
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 0.625rem;
+  border-radius: 1rem;
+  background: #0f172a;
+  box-shadow: 0 18px 40px -16px rgba(15, 23, 42, 0.7);
+}
+
+@media (min-width: 1024px) {
+  .sa-mlw-bulk {
+    inset-inline: auto;
+    inset-inline-start: 50%;
+    transform: translateX(-50%);
+    inset-block-end: 1.5rem;
+    max-width: min(44rem, calc(100vw - 3rem));
+  }
+}
+
+/* En RTL, `inset-inline-start: 50%` part du bord droit : le décalage de
+   recentrage doit donc aller dans l'autre sens. */
+@media (min-width: 1024px) {
+  [dir="rtl"] .sa-mlw-bulk { transform: translateX(50%); }
+}
+
+.sa-mlw-bulk__count {
+  margin-inline-end: auto;
+  padding-inline: 0.375rem;
+  color: #ffffff;
+  font-family: 'Inter', 'Cairo', 'Tajawal', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.sa-mlw-bulk .sa-mlw-btn { background: rgba(255, 255, 255, 0.1); color: #e2e8f0; border-color: transparent; }
+.sa-mlw-bulk .sa-mlw-btn:hover:not(:disabled) { background: rgba(255, 255, 255, 0.2); color: #ffffff; }
+.sa-mlw-bulk .sa-mlw-btn--danger { background: #be123c; color: #ffffff; }
+.sa-mlw-bulk .sa-mlw-btn--danger:hover:not(:disabled) { background: #9f1239; color: #ffffff; }
+.sa-mlw-bulk__close { color: #ffffff; }
+
+/* ── Les états vides ─────────────────────────────────────────────────── */
+
+.sa-mlw-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2rem 1.25rem;
+  border: 2px dashed #cbd5e1;
+  border-radius: 1rem;
+  background: #f8fafc;
+  text-align: center;
+}
+
+.sa-mlw-empty__title {
+  margin: 0;
+  font-family: 'Space Grotesk', 'Cairo', 'Tajawal', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #1e293b;
+}
+
+.sa-mlw-empty__body {
+  margin: 0;
+  max-width: 28rem;
+  font-family: 'Inter', 'Cairo', 'Tajawal', sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #64748b;
+}
+
+.sa-mlw-empty__tools { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-top: 0.5rem; }
+
+/* ── Le champ de « renommer » ────────────────────────────────────────── */
+
+.sa-mlw-input {
+  width: 100%;
+  min-height: 2.75rem;
+  padding-inline: 0.75rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 0.75rem;
+  font-family: 'Inter', 'Cairo', 'Tajawal', sans-serif;
+  font-size: 0.9375rem;
+  color: #0f172a;
+}
+
+.sa-mlw-input:focus { outline: none; border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18); }
+
+/* Qui préfère moins de mouvement n'en a aucun. */
+@media (prefers-reduced-motion: reduce) {
+  .sa-mlw-card, .sa-mlw-btn, .sa-mlw-chip, .sa-mlw-check-label { transition: none; }
+}

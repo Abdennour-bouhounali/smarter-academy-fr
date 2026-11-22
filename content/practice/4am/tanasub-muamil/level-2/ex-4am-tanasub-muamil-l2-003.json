@@ -1,0 +1,217 @@
+{
+  "id": "ex-4am-tanasub-muamil-l2-003",
+  "lessonCode": "tanasub-muamil",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2014 — عرض الرسائل القصيرة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "جدول تناسبية",
+      "y = a × x"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tanasub-muamil_P1",
+      "modelledOn": "BEM 2014 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2014",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "قدّمت مؤسسة للهاتف النقال عرضا لإرسال الرسائل القصيرة (SMS) ليطمئن الأبناء على أهلهم: 4DA للرسالة الواحدة.",
+    "table": {
+      "head": [
+        "عدد الرسائل",
+        "15",
+        "…"
+      ],
+      "rows": [
+        [
+          "المبلغ بـ DA",
+          "…",
+          "100"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "انقل الجدول وأكمله.",
+      "statement": "المبلغ من أجل 15 رسالة:",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "60",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب عدد الرسائل في ثمن الرسالة الواحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$15 \\times 4 = 60$ .",
+        "incorrect": "أعد الحساب: في جدول تناسبية حاصل القسمة ثابت، فتحقّق من جوابك بالضرب في المعامل."
+      },
+      "solution": {
+        "lines": [
+          "$15 \\times 4 = 60$"
+        ],
+        "result": "60DA"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "عدد الرسائل من أجل مبلغ 100DA :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الرسائل",
+      "expectedAnswer": "25",
+      "misconceptionSignatures": [
+        {
+          "value": "400",
+          "id": "MISC-TANASUB-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد المعلوم هنا في السطر الثاني: نبحث عن العدد المقابل له في السطر الأول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السطر الأول = السطر الثاني ÷ معامل التناسبية."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{100}{4} = 25$ .",
+        "incorrect": "اقسم المبلغ على ثمن الرسالة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{100}{4} = 25$"
+        ],
+        "result": "25"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "ليكن $x$ عدد الرسائل المرسلة و $y$ المبلغ المدفوع بـ DA .",
+      "statement": "عبّر عن $y$ بدلالة $x$ على الشكل $y = a \\times x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "1/4",
+          "id": "MISC-TANASUB-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في وضعية تناسبية: المقدار الثاني = معامل التناسبية × المقدار الأول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $a$ هو حاصل قسمة المقدار الثاني على المقدار الأول المقابل له."
+        }
+      ],
+      "feedback": {
+        "correct": "$y = 4 \\times x$ .",
+        "incorrect": "المبلغ = ثمن الرسالة × عدد الرسائل."
+      },
+      "solution": {
+        "lines": [
+          "$y = 4 \\times x$"
+        ],
+        "result": "y = 4 \\times x"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "هل المبلغ المدفوع متناسب مع عدد الرسائل؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى العلاقة التي كتبتها: هل فيها مبلغ ثابت يضاف؟"
+        }
+      ],
+      "feedback": {
+        "correct": "العلاقة من الشكل $y = a \\times x$ .",
+        "incorrect": "لا يوجد مبلغ ثابت: المبلغ يساوي عددا ثابتا مضروبا في $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$y = 4 \\times x$ : المبلغ يساوي عددا ثابتا مضروبا في عدد الرسائل.",
+          "$\\dfrac{60}{15} = \\dfrac{100}{25} = 4$ ، إذن المبلغ متناسب مع عدد الرسائل."
+        ],
+        "result": "متناسب"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

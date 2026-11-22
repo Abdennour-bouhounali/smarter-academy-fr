@@ -1,0 +1,168 @@
+{
+  "id": "ex-4am-takrar-mujamma-l2-006",
+  "lessonCode": "takrar-mujamma",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2020 — كتب مكتبة المتوسطة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "التكرار المجمع الصاعد",
+      "التواتر المجمع الصاعد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_takrar-mujamma_P1",
+      "modelledOn": "BEM 2020 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2020",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "يبيّن الجدول الآتي عدد الكتب التي استعارها 25 تلميذا من مكتبة المتوسطة خلال الفصل الأول:",
+    "table": {
+      "head": [
+        "عدد الكتب",
+        "0",
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "rows": [
+        [
+          "عدد التلاميذ",
+          "3",
+          "8",
+          "7",
+          "5",
+          "2"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب التكرار المجمع الصاعد للقيمة 2.",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "18",
+      "misconceptionSignatures": [
+        {
+          "value": "11",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        },
+        {
+          "value": "7",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        },
+        {
+          "value": "14",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكرار المجمع الصاعد لقيمة هو مجموع تكرارها وتكرارات القيم الأصغر منها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ من أول عمود في الجدول واجمع التكرارات حتى 2 مع تكرارها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: التكرار المجمع الصاعد لآخر عمود يساوي التكرار الكلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 + 8 + 7 = 18$ .",
+        "incorrect": "اجمع تكرار القيمة نفسها وتكرارات القيم الأصغر منها فقط، ولا تنس تكرار القيمة نفسها."
+      },
+      "solution": {
+        "lines": [
+          "التكرار المجمع الصاعد للقيمة 2 هو مجموع تكرار القيمة 2 وتكرارات القيم الأصغر منها:",
+          "$3 + 8 + 7 = 18$"
+        ],
+        "result": "18"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج التواتر المجمع الصاعد للقيمة 2.",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة أو كسر على الشكل a/b",
+      "expectedAnswer": "0,72",
+      "misconceptionSignatures": [
+        {
+          "value": "18",
+          "id": "MISC-IHSA-TAWATUR-BILA-QISMA"
+        },
+        {
+          "value": "0,56",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        },
+        {
+          "value": "0,44",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التواتر المجمع الصاعد هو التكرار المجمع الصاعد مقسوما على التكرار الكلي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أولا التكرار المجمع الصاعد ثم اقسمه على التكرار الكلي للسلسلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: التواتر عدد بين 0 و 1، والتواتر المجمع الصاعد لآخر عمود يساوي 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{18}{25}$ .",
+        "incorrect": "لا تكتف بالتكرار المجمع: اقسمه على التكرار الكلي للسلسلة."
+      },
+      "solution": {
+        "lines": [
+          "التواتر المجمع الصاعد = التكرار المجمع الصاعد ÷ التكرار الكلي:",
+          "$\\dfrac{18}{25}$"
+        ],
+        "result": "0{,}72"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

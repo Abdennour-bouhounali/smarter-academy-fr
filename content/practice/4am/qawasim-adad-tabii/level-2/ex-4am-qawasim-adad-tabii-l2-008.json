@@ -1,0 +1,145 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l2-008",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2021 — 116 و 116/(a + 3)",
+    "estimatedMinutes": 8,
+    "tags": [
+      "قواسم",
+      "كسر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qawasim-adad-tabii_P2",
+      "modelledOn": "BEM 2021 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب كل قواسم العدد 116.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        2,
+        4,
+        29,
+        58,
+        116
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            4,
+            29,
+            58
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 116 بمربعات الأعداد: إلى أي عدد يكفي أن تختبر قابلية القسمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل قسمة باقيها معدوم تعطي قاسمين: $d$ و $116 \\div d$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$116 = 1 \\times 116$ ، $116 = 2 \\times 58$ ، $116 = 4 \\times 29$.",
+        "incorrect": "اختبر الأعداد التي مربعها أصغر من العدد أو يساويه، وخذ من كل قسمة باقيها معدوم القاسمين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$10^2 = 100 \\leq 116 < 121 = 11^2$ ومنه نختبر قابلية قسمة 116 على الأعداد من 1 إلى 10.",
+          "نجد أن 116 يقبل القسمة على كل من الأعداد: 1 ، 2 ، 4.",
+          "ومن المساويات: $116 = 1 \\times 116$ ، $116 = 2 \\times 58$ ، $116 = 4 \\times 29$",
+          "إذن قواسم العدد 116 هي: 1 ، 2 ، 4 ، 29 ، 58 ، 116."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هي قيم العدد الطبيعي $a$ التي من أجلها يكون $\\dfrac{116}{a + 3}$ عددا طبيعيا؟",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        26,
+        55,
+        113
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "متى يكون $\\dfrac{116}{a + 3}$ عددا طبيعيا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يجب أن يكون $a + 3$ قاسما للعدد 116، وأكبر من 3 أو يساويه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "من كل قاسم مناسب $d$ نستنتج $a = d - 3$."
+        }
+      ],
+      "feedback": {
+        "correct": "$a + 3$ قاسم للعدد 116 أكبر من 3: 4 ، 29 ، 58 ، 116.",
+        "incorrect": "المطلوب قيم $a$ لا قيم $a + 3$: عيّن قواسم 116 التي تفوق 3 أو تساويه ثم اطرح منها 3."
+      },
+      "solution": {
+        "lines": [
+          "يكون $\\dfrac{116}{a + 3}$ عددا طبيعيا إذا كان $a + 3$ قاسما للعدد 116.",
+          "قواسم العدد 116 هي: 1 ، 2 ، 4 ، 29 ، 58 ، 116.",
+          "وبما أن $a + 3 \\geq 3$ فإن $a + 3$ يساوي أحد الأعداد: 4 ، 29 ، 58 ، 116.",
+          "ومنه قيم $a$ هي: 1 ، 26 ، 55 ، 113."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

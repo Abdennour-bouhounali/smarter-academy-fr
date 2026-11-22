@@ -1,0 +1,144 @@
+{
+  "id": "ex-4am-muadala-ula-l1-003",
+  "lessonCode": "muadala-ula",
+  "level": 1,
+  "metadata": {
+    "title": "معاملات من قوى العدد 10",
+    "estimatedMinutes": 4,
+    "tags": [
+      "ax = b",
+      "قوى 10"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-2",
+      "page": 50,
+      "section": "أوظّف تعلّماتي",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "حل كلا من المعادلتين الآتيتين:",
+      "statement": "$10x = 10^2$",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب حل المعادلة: عدد صحيح أو كسر على الشكل a/b (يُقبل العدد العشري)",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "1/10",
+          "id": "MISC-MUADALA-QISMA-MAQLUBA"
+        },
+        {
+          "value": "90",
+          "id": "MISC-MUADALA-TARH-MUAMIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعادلة من الشكل $ax = b$ : عيّن معامل $x$ والعدد الذي في الطرف الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم الطرفين على معامل $x$ مع إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحل هو العدد الذي في الطرف الآخر مقسومًا على معامل $x$ ، لا العكس، ثم اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 10$ .",
+        "incorrect": "الحل هو حاصل قسمة العدد الذي في الطرف الآخر على معامل $x$ بإشارته. تحقّق بالتعويض."
+      },
+      "solution": {
+        "lines": [
+          "$x = \\dfrac{10^2}{10}$",
+          "$x = 10^{2 - 1}$"
+        ],
+        "result": "x = 10"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$10^5x = 10^3$",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب حل المعادلة: عدد صحيح أو كسر على الشكل a/b (يُقبل العدد العشري)",
+      "expectedAnswer": "1/100",
+      "misconceptionSignatures": [
+        {
+          "value": "100",
+          "id": "MISC-MUADALA-QISMA-MAQLUBA"
+        },
+        {
+          "value": "-99000",
+          "id": "MISC-MUADALA-TARH-MUAMIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعادلة من الشكل $ax = b$ حيث $a$ و $b$ قوتان للعدد 10."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم الطرفين على $10^5$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل $\\dfrac{10^m}{10^n} = 10^{m - n}$ ثم اكتب الحل على شكل كسر أو عدد عشري."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{1}{100}$ .",
+        "incorrect": "الحل هو حاصل قسمة العدد الذي في الطرف الآخر على معامل $x$ بإشارته. تحقّق بالتعويض."
+      },
+      "solution": {
+        "lines": [
+          "$x = \\dfrac{10^3}{10^5}$",
+          "$x = 10^{3 - 5} = 10^{-2}$"
+        ],
+        "result": "x = \\dfrac{1}{100}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

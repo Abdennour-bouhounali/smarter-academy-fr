@@ -1,0 +1,128 @@
+{
+  "id": "ex-4am-alaqat-muthallathiya-l1-006",
+  "lessonCode": "alaqat-muthallathiya",
+  "level": 1,
+  "metadata": {
+    "title": "إنشاء زاوية جيبها 4/9: الدائرة والزاوية",
+    "estimatedMinutes": 5,
+    "tags": [
+      "إنشاء زاوية",
+      "الجيب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_alaqat-muthallathiya_P3",
+      "modelledOn": "method-construct"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نريد إنشاء زاوية حادة قيسها $x$ ، دون منقلة، حيث $\\sin x = \\dfrac{4}{9}$ . نرسم بالكوس زاوية قائمة رأسها $O$ ، ونعيّن على أحد ضلعيها النقطة $A$ حيث $OA = 4\\,\\mathrm{cm}$ ، ثم نرسم دائرة مركزها $A$ تقطع الضلع الآخر في النقطة $B$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما هو نصف قطر هذه الدائرة؟",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد: نصف القطر بـ cm",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الجيب = طول الضلع المقابل على طول الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في المثلث $AOB$ القائم في $O$ ، الضلع $[OA]$ مقابل للزاوية عند $B$ ، والوتر $[AB]$ نصف قطر الدائرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin\\widehat{OBA} = \\dfrac{OA}{AB} = \\dfrac{4}{AB}$ ، فيجب أن يكون $AB = 9\\,\\mathrm{cm}$ : الدائرة نصف قطرها $9\\,\\mathrm{cm}$ .",
+        "incorrect": "الوتر هو نصف قطر الدائرة؛ اكتب الجيب بالطولين $OA$ و $AB$ ثم قارن بالكسر المعطى."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $AOB$ القائم في $O$ : $\\sin\\widehat{OBA} = \\dfrac{OA}{AB}$",
+          "نريد $\\dfrac{OA}{AB} = \\dfrac{4}{9}$ مع $OA = 4\\,\\mathrm{cm}$ ، إذن $AB = 9\\,\\mathrm{cm}$ ، و $[AB]$ نصف قطر الدائرة."
+        ],
+        "result": "AB = 9\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عيّن الزاوية التي قيسها $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\widehat{OBA}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\widehat{OAB}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-ZAWIYA-KHATI"
+        },
+        {
+          "id": "C",
+          "content": "$\\widehat{AOB}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-WATAR-MUQABIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الضلع $[OA]$ الذي طوله 4 يجب أن يكون مقابلا للزاوية المطلوبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع المقابل لزاوية لا يمرّ برأسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$[OA]$ يقابل الزاوية التي رأسها $B$ : $\\sin\\widehat{OBA} = \\dfrac{4}{9}$ ، إذن $x = \\widehat{OBA}$ .",
+        "incorrect": "ابحث عن الزاوية الحادة التي لا يمرّ الضلع $[OA]$ برأسها."
+      },
+      "solution": {
+        "lines": [
+          "الزاوية $\\widehat{AOB}$ قائمة، والزاويتان الحادتان رأساهما $A$ و $B$ .",
+          "$[OA]$ يمرّ بـ $A$ ولا يمرّ بـ $B$ : هو المقابل للزاوية $\\widehat{OBA}$ .",
+          "$\\sin\\widehat{OBA} = \\dfrac{OA}{AB} = \\dfrac{4}{9}$"
+        ],
+        "result": "x = \\widehat{OBA}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

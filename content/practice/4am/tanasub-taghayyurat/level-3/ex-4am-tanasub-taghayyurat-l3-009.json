@@ -1,0 +1,206 @@
+{
+  "id": "ex-4am-tanasub-taghayyurat-l3-009",
+  "lessonCode": "tanasub-taghayyurat",
+  "level": 3,
+  "metadata": {
+    "title": "المعاملان ثم العدد الذي صورته معدومة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "تعيين دالة تآلفية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tanasub-taghayyurat_P2",
+      "modelledOn": "act-4",
+      "adaptedFrom": "ex-4am-tanasub-taghayyurat-l3-009"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "$f$ دالة تآلفية حيث: $f(4) = 13$ و $f(8) = 21$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عيّن العبارة الجبرية للدالة $f$ .",
+      "statement": "أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-TAGHAYYUR-BIDUN-QISMA"
+        },
+        {
+          "value": "-2",
+          "id": "MISC-TAGHAYYUR-TARTIB"
+        },
+        {
+          "value": "0,5",
+          "id": "MISC-BAYANI-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خاصية تناسب التغيّرات: المعامل $a$ هو حاصل قسمة فرق الصورتين على فرق العددين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $\\dfrac{f(8) - f(4)}{8 - 4}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح بالترتيب نفسه في البسط والمقام، وانتبه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{8}{4} = 2$ .",
+        "incorrect": "اقسم فرق الصورتين على فرق العددين، واطرح بالترتيب نفسه في البسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "العبارة الجبرية للدالة التآلفية $f$ هي: $f(x) = ax + b$ .",
+          "إيجاد العدد $a$ (خاصية تناسب التغيّرات):",
+          "$a = \\dfrac{f(x_2) - f(x_1)}{x_2 - x_1}$",
+          "$a = \\dfrac{21 - 13}{8 - 4}$",
+          "$a = \\dfrac{8}{4}$",
+          "$a = 2$"
+        ],
+        "result": "a = 2"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "3,25",
+          "id": "MISC-TAGHAYYUR-B-NISBA"
+        },
+        {
+          "value": "2",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$f(4) = 13$ و $f(x) = ax + b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $a$ بقيمته و $x$ بالعدد $4$ ، ثم حلّ المعادلة التي مجهولها $b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$b = 13 - 8 = 5$ .",
+        "incorrect": "بعد حساب $a$ : $b = f(x_1) - a x_1$ ، وليس حاصل قسمة الصورة على العدد."
+      },
+      "solution": {
+        "lines": [
+          "إيجاد العدد $b$ (الترتيب إلى المبدأ):",
+          "لدينا: $f(4) = 13$",
+          "أي: $2 \\times 4 + b = 13$",
+          "$8 + b = 13$",
+          "$b = 13 - 8$",
+          "$b = 5$",
+          "ومنه العبارة الجبرية للدالة $f$ هي: $f(x) = 2x + 5$"
+        ],
+        "result": "f(x) = 2x + 5"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "عيّن العدد الذي صورته 0 بالدالة $f$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-2,5",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-TAALUFI-SABIQ-QISMA"
+        },
+        {
+          "value": "-5",
+          "id": "MISC-TAALUFI-SABIQ-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة $f(x) = 0$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل الحدّ الثابت إلى الطرف الآخر أولا، ثم اقسم على المعامل."
+        }
+      ],
+      "feedback": {
+        "correct": "$2x = -5$ ، إذن $x = \\dfrac{-5}{2}$ .",
+        "incorrect": "اطرح الحدّ الثابت من الطرفين أولا، ثم اقسم على المعامل."
+      },
+      "solution": {
+        "lines": [
+          "نحلّ المعادلة: $f(x) = 0$",
+          "$2x + 5 = 0$",
+          "$2x = 0 - 5$",
+          "$2x = -5$",
+          "$x = \\dfrac{-5}{2}$",
+          "$x = -2{,}5$"
+        ],
+        "result": "x = -2{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

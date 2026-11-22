@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-takbir-tasghir-l4-003",
+  "lessonCode": "takbir-tasghir",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — من المساحة إلى الحجم",
+    "estimatedMinutes": 2,
+    "tags": [
+      "النسبة k",
+      "المساحة والحجم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takbir-tasghir_P1",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "كُبّر مجسّم فضُربت المساحة الكلية لأوجهه في $4$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "حجمه ضُرب في:",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-BUUD"
+        },
+        {
+          "id": "B",
+          "content": "$16$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-BUUD"
+        },
+        {
+          "id": "C",
+          "content": "$8$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المساحات تُضرب في $k^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من $k^2 = 4$ نجد $k$ ، ثم الحجم يُضرب في $k^3$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$k = 2$ ثم احسب $2^3$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$k^2 = 4$ ، إذن $k = 2$ والحجم يُضرب في $2^3 = 8$ .",
+        "incorrect": "نجد k أولا، ثم نرفعه إلى القوة 3."
+      }
+    }
+  ]
+}

@@ -1,0 +1,388 @@
+{
+  "id": "ex-1am-hasil-qisma-kasr-l5-005",
+  "lessonCode": "hasil-qisma-kasr",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — تعبئة قوارير الحليب",
+    "estimatedMinutes": 18,
+    "tags": [
+      "العدد الناقص",
+      "عدد عشري",
+      "قيمة مقرّبة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تملك تعاونية حليب 5 لترات تريد أن تعبّئها في 6 قوارير متساوية السعة لتوزّعها على الأسر دون هدر.\nالجزء الأول: نبحث عن سعة القارورة.\nالجزء الثاني: نتحقّق ونقرّر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "اكتب سعة القارورة الواحدة (باللتر) على شكل كسر.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "5/6",
+      "misconceptionSignatures": [
+        {
+          "value": "6/5",
+          "id": "MISC-HASIL-QALB"
+        },
+        {
+          "value": "5,6",
+          "id": "MISC-HASIL-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العدد الذي نقسمه والعدد الذي نقسم عليه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في الكتابة الكسرية يوضع المقسوم فوق الشرطة والمقسوم عليه تحتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب القسمة أولًا ثم حوّلها إلى كسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 \\div 6$ = $\\dfrac{5}{6}$ : المقسوم بسط والمقسوم عليه مقام.",
+        "incorrect": "الكسر $\\dfrac{a}{b}$ هو حاصل قسمة $a$ على $b$ : البسط هو المقسوم والمقام هو المقسوم عليه، والشرطة لا تتحوّل إلى فاصلة."
+      },
+      "solution": {
+        "lines": [
+          "$5 \\div 6$ = $\\dfrac{5}{6}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$\\dfrac{5}{6} \\times 6 = \\ldots$",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (طبيعي أو كسر)",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي ضربنا الكسر فيه؟ وما مقام الكسر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكسر $\\dfrac{a}{b}$ هو العدد الذي إذا ضُرب في $b$ أعطى $a$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن العامل المضروب فيه بمقام الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{5}{6} \\times 6 = 5$ : القوارير الستّ تحمل اللترات الخمسة.",
+        "incorrect": "العدد الذي نضربه في $b$ لنحصل على $a$ هو حاصل قسمة $a$ على $b$ ، أي $\\dfrac{a}{b}$ ؛ لا نطرح العددين ولا نضربهما."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{6} \\times 6 = 5$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "$6 \\times \\ldots = 5$",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b (أو عدد)",
+      "expectedAnswer": "5/6",
+      "misconceptionSignatures": [
+        {
+          "value": "30",
+          "id": "MISC-HASIL-DARB"
+        },
+        {
+          "value": "6/5",
+          "id": "MISC-HASIL-QALB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد الناقص هو الذي نضربه في العامل المعروف لنحصل على الجداء المعطى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كيف نجد أحد عاملي جداء إذا عرفنا الجداء والعامل الآخر؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العدد الناقص على شكل حاصل قسمة، ثم على شكل كسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 \\times \\dfrac{5}{6} = 5$ : العدد الناقص هو $\\dfrac{5}{6}$.",
+        "incorrect": "العدد الذي نضربه في $b$ لنحصل على $a$ هو حاصل قسمة $a$ على $b$ ، أي $\\dfrac{a}{b}$ ؛ لا نطرح العددين ولا نضربهما."
+      },
+      "solution": {
+        "lines": [
+          "العدد الناقص هو حاصل القسمة $5 \\div 6 = \\dfrac{5}{6}$",
+          "تحقّق : $6 \\times \\dfrac{5}{6} = 5$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "statement": "سعة القارورة (حاصل قسمة 5 على 6) عدد عشري.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASIL-KULL-ASHRI"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجعل المقام 10 أو 100 أو 1000 بالضرب في عدد مناسب، أو أجرِ القسمة العشرية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل تتوقّف الأرقام بعد الفاصلة أم تتكرّر بلا نهاية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نتحدّث عن عدد عشري عندما تتوقّف الأرقام بعد الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 \\div 6$ = $\\dfrac{5}{6}$ : الأرقام تتكرّر بلا نهاية.",
+        "incorrect": "حاصل القسمة عدد عشري إذا انتهت أرقامه بعد الفاصلة ؛ وإلاّ فالكسر هو الكتابة المضبوطة له."
+      },
+      "solution": {
+        "lines": [
+          "$5 \\div 6$ = $\\dfrac{5}{6}$",
+          "نكتب الأرقام بعد الفاصلة : $0{,}8333$… وهي تتكرّر بلا نهاية.",
+          "التصحيح : حاصل قسمة 5 على 6 ليس عددًا عشريًا، الكتابة المضبوطة له هي الكسر $\\dfrac{5}{6}$."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أعط القيمة المقرّبة بالنقصان إلى 0,01 لسعة القارورة.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بـ رقمين بعد الفاصلة",
+      "expectedAnswer": "0,83",
+      "misconceptionSignatures": [
+        {
+          "value": "0,84",
+          "id": "MISC-HASIL-TAQRIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أرقام حاصل القسمة بعد الفاصلة حتى المرتبة المطلوبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمة المقرّبة بالنقصان أصغر من الحاصل، والقيمة المقرّبة بالزيادة أكبر منه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زِد وحدة واحدة على آخر رقم محتفَظ به عند التقريب بالزيادة."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 \\div 6$ = $0{,}8333$…، إذن القيمة المقرّبة بالنقصان هي $0{,}83$.",
+        "incorrect": "القيمة المقرّبة ليست قيمة مضبوطة : بالنقصان نحذف ما بعد المرتبة المطلوبة، وبالزيادة نزيد وحدة على آخر رقم محتفَظ به."
+      },
+      "solution": {
+        "lines": [
+          "$5 \\div 6$ = $0{,}8333$… (الأرقام لا تتوقّف)",
+          "$0{,}83$ < $\\dfrac{5}{6}$ < $0{,}84$ : بالنقصان نأخذ $0{,}83$."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ج",
+      "statement": "أعط القيمة المقرّبة بالزيادة إلى 0,01 لسعة القارورة.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بـ رقمين بعد الفاصلة",
+      "expectedAnswer": "0,84",
+      "misconceptionSignatures": [
+        {
+          "value": "0,83",
+          "id": "MISC-HASIL-TAQRIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أرقام حاصل القسمة بعد الفاصلة حتى المرتبة المطلوبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمة المقرّبة بالنقصان أصغر من الحاصل، والقيمة المقرّبة بالزيادة أكبر منه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زِد وحدة واحدة على آخر رقم محتفَظ به عند التقريب بالزيادة."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 \\div 6$ = $0{,}8333$…، إذن القيمة المقرّبة بالزيادة هي $0{,}84$.",
+        "incorrect": "القيمة المقرّبة ليست قيمة مضبوطة : بالنقصان نحذف ما بعد المرتبة المطلوبة، وبالزيادة نزيد وحدة على آخر رقم محتفَظ به."
+      },
+      "solution": {
+        "lines": [
+          "$5 \\div 6$ = $0{,}8333$… (الأرقام لا تتوقّف)",
+          "$0{,}83$ < $\\dfrac{5}{6}$ < $0{,}84$ : بالزيادة نأخذ $0{,}84$."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "02",
+      "sub": "د",
+      "statement": "قالت سلمى : « سعة القارورة هي $0{,}83$ لتر بالضبط ». هل هي على صواب ؟",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASIL-QIMA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب 0,83 في 6 وقارن بالنتيجة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السعة المضبوطة تعطي 5 لترات تمامًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 \\times 0{,}83 = 4{,}98 \\neq 5$.",
+        "incorrect": "حاصل القسمة عدد عشري إذا انتهت أرقامه بعد الفاصلة ؛ وإلاّ فالكسر هو الكتابة المضبوطة له."
+      },
+      "solution": {
+        "lines": [
+          "$6 \\times 0{,}83 = 4{,}98$ ولا يساوي 5.",
+          "$0{,}83$ قيمة مقرّبة بالنقصان؛ أمّا $\\dfrac{5}{6}$ فهي السعة المضبوطة : سلمى ليست على صواب."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

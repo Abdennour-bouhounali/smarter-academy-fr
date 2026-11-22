@@ -1,0 +1,121 @@
+{
+  "id": "ex-1am-kitabat-adad-tabii-l1-007",
+  "lessonCode": "kitabat-adad-tabii",
+  "level": 1,
+  "metadata": {
+    "title": "أكوّن أعدادا",
+    "estimatedMinutes": 3,
+    "tags": [
+      "أكبر عدد",
+      "أصغر عدد"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-1",
+      "page": 9,
+      "section": "اكتشف",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نستعمل الأرقام 0، 2، 5، 9، على أن نأخذ كل رقم مرة واحدة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "باستعمال كل الأرقام 0، 2، 5، 9 (كل رقم مرة واحدة)، اكتب أكبر عدد طبيعي ممكن.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "9520",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ رقم يجب أن يكون في أكبر مرتبة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب الأرقام من الأكبر إلى الأصغر انطلاقا من اليسار."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنك استعملت كل رقم مرة واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "العدد المطلوب هو 9520.",
+        "incorrect": "كلما كان الرقم أكبر وجب أن يأخذ مرتبة أكبر."
+      },
+      "solution": {
+        "lines": [
+          "نضع الأرقام من الأكبر إلى الأصغر انطلاقا من المرتبة الكبرى: 9520."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "باستعمال كل الأرقام 0، 2، 5، 9 (كل رقم مرة واحدة)، اكتب أصغر عدد طبيعي ممكن.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2059",
+      "misconceptionSignatures": [
+        {
+          "value": "259",
+          "id": "MISC-KITABA-LEADING-ZERO"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل يمكن أن يبدأ العدد بالرقم 0؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع في المرتبة الكبرى أصغر رقم غير معدوم، ثم باقي الأرقام تصاعديا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنك استعملت كل رقم مرة واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "العدد المطلوب هو 2059.",
+        "incorrect": "الرقم 0 لا يمكن أن يفتتح كتابة عدد من عدة أرقام: نبدأ بأصغر رقم غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "لا يمكن أن يبدأ العدد بـ 0، فنبدأ بأصغر رقم غير معدوم ثم نرتّب الباقي تصاعديا: 2059."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l3-006",
+  "lessonCode": "mana-jam-tarh",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — سيارة في المرآب",
+    "estimatedMinutes": 8,
+    "tags": [
+      "طرح",
+      "مخطط بأقواس"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 1,
+      "file": "1am-s1-101",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يرتّب السيد كمال مرآبه بإتقان. طول المرآب $612{,}5\\,\\mathrm{cm}$. عند ركن سيارته يبقى أمامها $98{,}4\\,\\mathrm{cm}$ وخلفها $81{,}6\\,\\mathrm{cm}$ (انظر المخطط). أطوال أنواع السيارات التي عرضها عليه البائع مبيّنة في الجدول.",
+    "table": {
+      "head": [
+        "",
+        "النوع 1",
+        "النوع 2",
+        "النوع 3"
+      ],
+      "rows": [
+        [
+          "الطول (cm)",
+          "412,5",
+          "432,5",
+          "438,2"
+        ]
+      ]
+    },
+    "figure": {
+      "kind": "tape",
+      "parts": [
+        {
+          "label": "98,4",
+          "value": 98.4
+        },
+        {
+          "label": "□",
+          "unknown": true
+        },
+        {
+          "label": "81,6",
+          "value": 81.6
+        }
+      ],
+      "whole": {
+        "label": "612,5",
+        "value": 612.5
+      },
+      "ariaLabel": "مخطط بأقواس: الفراغ الأمامي 98,4 وطول السيارة □ والفراغ الخلفي 81,6 فوق الخط، وطول المرآب 612,5 تحته"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما الحساب الذي يعطي طول السيارة؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$612{,}5 - 98{,}4 - 81{,}6$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$612{,}5 + 98{,}4 + 81{,}6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        },
+        {
+          "id": "C",
+          "content": "$612{,}5 - 98{,}4 + 81{,}6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-JUZ-NAQIS"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول المرآب هو الكل، وله ثلاثة أجزاء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السيارة جزء: نطرح الجزأين الآخرين من الكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$612{,}5 = 98{,}4$ + طول السيارة + 81,6: نطرح الفراغين.",
+        "incorrect": "طول السيارة جزء من طول المرآب: لا يمكن أن يكون أكبر منه."
+      },
+      "solution": {
+        "lines": [
+          "الكل: طول المرآب؛ الأجزاء: الفراغ الأمامي، طول السيارة، الفراغ الخلفي.",
+          "لإيجاد جزء نطرح الأجزاء الأخرى من الكل:"
+        ],
+        "result": "612{,}5 - 98{,}4 - 81{,}6"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب طول السيارة.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالسنتيمتر (cm)",
+      "expectedAnswer": "432.5",
+      "misconceptionSignatures": [
+        {
+          "value": "792.5",
+          "id": "MISC-JAMTARH-KULL-JUZ"
+        },
+        {
+          "value": "514.1",
+          "id": "MISC-JAMTARH-JUZ-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح الفراغين من طول المرآب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يمكن جمع الفراغين أولًا ثم طرح مجموعهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$98{,}4 + 81{,}6 = 180$ و $612{,}5 - 180 = 432{,}5\\,\\mathrm{cm}$.",
+        "incorrect": "اطرح الفراغين كليهما من طول المرآب."
+      },
+      "solution": {
+        "lines": [
+          "$98{,}4 + 81{,}6 = 180$",
+          "$612{,}5 - 180 = 432{,}5$"
+        ],
+        "result": "432{,}5 \\text{ cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما نوع السيارة التي اشتراها السيد كمال؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "النوع 1",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-FASILA"
+        },
+        {
+          "id": "B",
+          "content": "النوع 2",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "النوع 3",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-FASILA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب طول السيارة أولًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن النتيجة بأطوال الجدول."
+        }
+      ],
+      "feedback": {
+        "correct": "طول السيارة $432{,}5\\,\\mathrm{cm}$: هو طول النوع 2.",
+        "incorrect": "احسب طول السيارة بدقة، ثم ابحث عنه في الجدول."
+      },
+      "solution": {
+        "lines": [
+          "طول السيارة $432{,}5\\,\\mathrm{cm}$.",
+          "في الجدول، هذا طول النوع 2."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

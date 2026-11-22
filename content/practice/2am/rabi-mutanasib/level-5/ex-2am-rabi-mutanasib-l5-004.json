@@ -1,0 +1,323 @@
+{
+  "id": "ex-2am-rabi-mutanasib-l5-004",
+  "lessonCode": "rabi-mutanasib",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — حافلة المؤسسة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "وقود",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تستهلك حافلة المؤسسة $18$ L من الوقود لقطع $60$ km، والاستهلاك يتناسب مع المسافة.\nالجزء الأول: الاستهلاك والمسافة.\nالجزء الثاني: قرار الرحلة.",
+    "table": {
+      "head": [
+        "المسافة (km)",
+        "60",
+        "150",
+        "…",
+        "240"
+      ],
+      "rows": [
+        [
+          "الوقود (L)",
+          "18",
+          "…",
+          "63",
+          "…"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "ما كمية الوقود اللازمة لقطع $150$ km؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "45",
+      "misconceptionSignatures": [
+        {
+          "value": "108",
+          "id": "MISC-RABI-ADD"
+        },
+        {
+          "value": "500",
+          "id": "MISC-RABI-INV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب أولًا: قيمة الوحدة الواحدة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قيمة الوحدة الواحدة تُحسب بقسمة العدد الموجود في السطر الثاني على مقابله في السطر الأول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد ذلك اضرب قيمة الوحدة في الكمية المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "الكمية $45$ L .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$18 \\div 60 = 0{,}3$",
+          "$0{,}3 \\times 150 = 45$"
+        ],
+        "result": "45"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما المسافة التي تقطعها الحافلة بـ $63$ L؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "210",
+      "misconceptionSignatures": [
+        {
+          "value": "18,9",
+          "id": "MISC-RABI-ALIGN"
+        },
+        {
+          "value": "105",
+          "id": "MISC-RABI-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "المسافة $210$ km .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$63 \\div 0{,}3 = 210$"
+        ],
+        "result": "210"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني: خزّان الحافلة يسع [[54]] L.",
+      "statement": "ما أقصى مسافة تقطعها الحافلة بخزّان ممتلئ؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "180",
+      "misconceptionSignatures": [
+        {
+          "value": "96",
+          "id": "MISC-RABI-ADD"
+        },
+        {
+          "value": "16,2",
+          "id": "MISC-RABI-ALIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "المسافة $180$ km .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$54 \\div 0{,}3 = 180$"
+        ],
+        "result": "180"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما كمية الوقود اللازمة لرحلة طولها $240$ km؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "72",
+      "misconceptionSignatures": [
+        {
+          "value": "198",
+          "id": "MISC-RABI-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "الكمية $72$ L .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}3 \\times 240 = 72$"
+        ],
+        "result": "72"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ج",
+      "statement": "هل تنجز الحافلة رحلة $240$ km بخزّان واحد ممتلئ؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، فسعة الخزّان تفوق ما تحتاجه الحافلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-RABI-ADD"
+        },
+        {
+          "id": "B",
+          "content": "لا، فهي تحتاج $72$ L وسعة الخزّان $54$ L",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولًا القيمة المطلوبة بدقّة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن القيمة المحسوبة بالمبلغ أو بالكمية المتاحة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القرار يُبنى على مقارنة بين عددين، لا على تقدير."
+        }
+      ],
+      "feedback": {
+        "correct": "تحتاج $72$ L وسعة الخزّان $54$ L فلا تكفي.",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$72 > 54$",
+          "تحتاج الحافلة إلى تزوّد بالوقود أثناء الرحلة."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

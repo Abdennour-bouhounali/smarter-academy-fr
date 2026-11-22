@@ -65,6 +65,18 @@ return [
             'replace_placeholders' => true,
         ],
 
+        // Mastery V2 — le journal de la maîtrise : preuves refusées,
+        // désaccords client/serveur, charges utiles héritées, rejeux,
+        // vérifications nocturnes. Jamais de réponse d'élève ni de nom : des
+        // clés d'item, des issues, des identifiants.
+        'mastery' => [
+            'driver' => 'daily',
+            'path' => storage_path('logs/mastery.log'),
+            'level' => env('LOG_LEVEL', 'debug'),
+            'days' => env('MASTERY_LOG_DAYS', 30),
+            'replace_placeholders' => true,
+        ],
+
         'daily' => [
             'driver' => 'daily',
             'path' => storage_path('logs/laravel.log'),

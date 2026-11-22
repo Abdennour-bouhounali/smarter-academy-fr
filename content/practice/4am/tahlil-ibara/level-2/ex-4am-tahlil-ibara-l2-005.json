@@ -1,0 +1,284 @@
+{
+  "id": "ex-4am-tahlil-ibara-l2-005",
+  "lessonCode": "tahlil-ibara",
+  "level": 2,
+  "metadata": {
+    "title": "التحليل بمربع فرق",
+    "estimatedMinutes": 10,
+    "tags": [
+      "مربع فرق",
+      "تحليل"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-27",
+      "page": 39,
+      "section": "أوظّف تعلّماتي",
+      "number": 27
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "حلّل باستعمال المتطابقة $a^2 - 2ab + b^2 = (a - b)^2$ العبارات الآتية:",
+    "formulas": [
+      "A = x^2 - 10x + 25",
+      "B = 9x^2 - 12x + 4",
+      "C = 81x^2 - 18x + 1",
+      "D = 9 - 6x + x^2"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "حلّل العبارة $A$ .",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $(x - n)^2$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على الشكل $a^2 + 2ab + b^2$ أو $a^2 - 2ab + b^2$ : عيّن $a$ و $b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق من الحد المضاعف $2ab$ قبل أن تكتب المربع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل $a^2 \\pm 2ab + b^2 = (a \\pm b)^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = (x - 5)^2$ إذن $n = 5$ .",
+        "incorrect": "تعرّف على المتطابقة الشهيرة المناسبة، وعيّن $a$ و $b$ بدقّة قبل التحليل."
+      },
+      "solution": {
+        "lines": [
+          "$A = x^2 - 2 \\times x \\times 5 + 5^2$"
+        ],
+        "result": "A = (x - 5)^2"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "حلّل العبارة $B$ .",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $B$ على الشكل $(mx - n)^2$ حيث $m$ و $n$ عددان طبيعيان : اكتب العدد $m$ فقط",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على الشكل $a^2 + 2ab + b^2$ أو $a^2 - 2ab + b^2$ : عيّن $a$ و $b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق من الحد المضاعف $2ab$ قبل أن تكتب المربع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل $a^2 \\pm 2ab + b^2 = (a \\pm b)^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = (3x - 2)^2$ إذن $m = 3$ .",
+        "incorrect": "تعرّف على المتطابقة الشهيرة المناسبة، وعيّن $a$ و $b$ بدقّة قبل التحليل."
+      },
+      "solution": {
+        "lines": [
+          "$B = (3x)^2 - 2 \\times 3x \\times 2 + 2^2$"
+        ],
+        "result": "B = (3x - 2)^2"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $B$ على الشكل $(mx - n)^2$ حيث $m$ و $n$ عددان طبيعيان : اكتب العدد $n$ فقط",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العدد المطلوب في الشكل المحلّل، بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = (3x - 2)^2$ إذن $n = 2$ .",
+        "incorrect": "تعرّف على المتطابقة الشهيرة المناسبة، وعيّن $a$ و $b$ بدقّة قبل التحليل."
+      },
+      "solution": {
+        "lines": [
+          "$B = (3x - 2)^2$"
+        ],
+        "result": "n = 2"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "lead": "حلّل العبارة $C$ .",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $C$ على الشكل $(mx - n)^2$ حيث $m$ و $n$ عددان طبيعيان : اكتب العدد $m$ فقط",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على الشكل $a^2 + 2ab + b^2$ أو $a^2 - 2ab + b^2$ : عيّن $a$ و $b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق من الحد المضاعف $2ab$ قبل أن تكتب المربع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل $a^2 \\pm 2ab + b^2 = (a \\pm b)^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = (9x - 1)^2$ إذن $m = 9$ .",
+        "incorrect": "تعرّف على المتطابقة الشهيرة المناسبة، وعيّن $a$ و $b$ بدقّة قبل التحليل."
+      },
+      "solution": {
+        "lines": [
+          "$C = (9x)^2 - 2 \\times 9x \\times 1 + 1^2$"
+        ],
+        "result": "C = (9x - 1)^2"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $C$ على الشكل $(mx - n)^2$ حيث $m$ و $n$ عددان طبيعيان : اكتب العدد $n$ فقط",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العدد المطلوب في الشكل المحلّل، بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = (9x - 1)^2$ إذن $n = 1$ .",
+        "incorrect": "تعرّف على المتطابقة الشهيرة المناسبة، وعيّن $a$ و $b$ بدقّة قبل التحليل."
+      },
+      "solution": {
+        "lines": [
+          "$C = (9x - 1)^2$"
+        ],
+        "result": "n = 1"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "lead": "حلّل العبارة $D$ .",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $D$ على الشكل $(x - n)^2$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رتّب حدود $D$ حسب قوى $x$ المتناقصة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق من الحد المضاعف $2ab$ قبل أن تكتب المربع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل $a^2 \\pm 2ab + b^2 = (a \\pm b)^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$D = (x - 3)^2$ إذن $n = 3$ .",
+        "incorrect": "تعرّف على المتطابقة الشهيرة المناسبة، وعيّن $a$ و $b$ بدقّة قبل التحليل."
+      },
+      "solution": {
+        "lines": [
+          "$D = x^2 - 6x + 9$",
+          "$D = x^2 - 2 \\times x \\times 3 + 3^2$"
+        ],
+        "result": "D = (x - 3)^2"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

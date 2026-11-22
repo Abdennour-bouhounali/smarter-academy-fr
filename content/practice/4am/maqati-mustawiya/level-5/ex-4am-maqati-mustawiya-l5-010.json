@@ -1,0 +1,65 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l5-010",
+  "lessonCode": "maqati-mustawiya",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — كرة على حلقة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مقطع كرة",
+      "تدوير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_maqati-mustawiya_P1",
+      "modelledOn": "method-section-radius"
+    }
+  },
+  "statement": {
+    "content": "كرة قدم نصف قطرها $11\\,\\mathrm{cm}$ موضوعة على حلقة دائرية أفقية نصف قطرها $9\\,\\mathrm{cm}$ : الحلقة مقطع للكرة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أعط بعد مستوي الحلقة عن مركز الكرة مدوّرا إلى $0{,}01\\,\\mathrm{cm}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري مدوّر إلى الجزء من مائة",
+      "expectedAnswer": "6.32",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAQTA-TARH",
+          "value": "2"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحلقة مقطع للكرة نصف قطره 9."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$h^2 = 11^2 - 9^2 = 40$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب $\\sqrt{40}$ بالآلة الحاسبة ثم دوّر إلى الجزء من مائة."
+        }
+      ],
+      "feedback": {
+        "correct": "$h = \\sqrt{121 - 81} = \\sqrt{40} = 2\\sqrt{10} \\approx 6{,}32\\,\\mathrm{cm}$ .",
+        "incorrect": "$11 - 9 = 2$ يطرح الطولين."
+      },
+      "difficulty": 5
+    }
+  ]
+}

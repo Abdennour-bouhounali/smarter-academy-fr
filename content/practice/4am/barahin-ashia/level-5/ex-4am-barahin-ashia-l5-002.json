@@ -1,0 +1,186 @@
+{
+  "id": "ex-4am-barahin-ashia-l5-002",
+  "lessonCode": "barahin-ashia",
+  "level": 5,
+  "generator": {
+    "tool": "gen-barahin.mjs",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — نقطة الهبوط",
+    "estimatedMinutes": 5,
+    "tags": [
+      "إنشاء",
+      "قاعدة متوازي الأضلاع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_barahin-ashia_P3",
+      "modelledOn": "now-138"
+    }
+  },
+  "statement": {
+    "content": "في عرض بساحة البريد المركزي يتعاون على إعداده مبرمجون شباب، تنطلق طائرة مسيّرة من النقطة S وتصل إلى النقطة X حيث $\\overrightarrow{SX} = \\overrightarrow{AB} + \\overrightarrow{AC}$ (الشكل على المرصوفة).",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          2,
+          3
+        ],
+        "C": [
+          5,
+          1
+        ],
+        "S": [
+          6,
+          4
+        ],
+        "X": [
+          13,
+          8
+        ],
+        "Y": [
+          8,
+          7
+        ],
+        "Z": [
+          11,
+          5
+        ]
+      },
+      "grid": true,
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "A",
+          "C"
+        ]
+      ],
+      "labels": {
+        "A": "sw",
+        "B": "nw",
+        "C": "se",
+        "S": "w",
+        "X": "ne",
+        "Y": "n",
+        "Z": "se"
+      },
+      "ariaLabel": "مرصوفة عليها النقط A و B و C و S و X و Y و Z"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الطريقة التي تعطي X :",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نرسم من S ممثّل $\\overrightarrow{AB}$ ثم من نهايته ممثّل $\\overrightarrow{AC}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نرسم من S ممثّلي $\\overrightarrow{AB}$ و $\\overrightarrow{AC}$ ونأخذ منتصف نهايتيهما",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSHA-MABDA"
+        },
+        {
+          "id": "C",
+          "content": "نرسم من A ممثّل المجموع ونأخذ نهايته",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSIHAB-SURA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "X صورة S بالانسحاب الذي شعاعه $\\overrightarrow{AB} + \\overrightarrow{AC}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "علاقة شال: الممثّلان متتابعان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نقطة الانطلاق هي S لا A ."
+        }
+      ],
+      "feedback": {
+        "correct": "الممثّلان متتابعان من S (علاقة شال)، فالنهاية الأخيرة هي X .",
+        "incorrect": "ممثّل المجموع يبدأ من S ، والممثّل الثاني يبدأ من نهاية الأول."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "على الشكل، X هي النقطة:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "المرسومة باسم X",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "المرسومة باسم Y",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSHA-MABDA"
+        },
+        {
+          "id": "C",
+          "content": "المرسومة باسم Z",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSHA-MABDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{AB}$ : 2 يمينا و 3 أعلى ؛ $\\overrightarrow{AC}$ : 5 يمينا و 1 أعلى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من S اجمع الانتقالين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "Y و Z صورتا S بشعاع واحد فقط."
+        }
+      ],
+      "feedback": {
+        "correct": "من S : 7 يمينا و 4 أعلى، أي النقطة المرسومة X .",
+        "incorrect": "اجمع الانتقالين الأفقيين ثم العموديين ابتداء من S ."
+      }
+    }
+  ]
+}

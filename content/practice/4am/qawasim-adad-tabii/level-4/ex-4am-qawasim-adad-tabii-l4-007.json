@@ -1,0 +1,179 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l4-007",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2021 — قواسم العدد 196",
+    "estimatedMinutes": 10,
+    "tags": [
+      "قواسم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qawasim-adad-tabii_P2",
+      "modelledOn": "BEM 2021 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب كل قواسم العدد 196.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        2,
+        4,
+        7,
+        14,
+        28,
+        49,
+        98,
+        196
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            4,
+            7,
+            14,
+            28,
+            49,
+            98
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 196 بمربعات الأعداد: إلى أي عدد يكفي أن تختبر قابلية القسمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل قسمة باقيها معدوم تعطي قاسمين: $d$ و $196 \\div d$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$196 = 1 \\times 196$ ، $196 = 2 \\times 98$ ، $196 = 4 \\times 49$ ، $196 = 7 \\times 28$ ، $196 = 14 \\times 14$.",
+        "incorrect": "اختبر الأعداد التي مربعها أصغر من العدد أو يساويه، وخذ من كل قسمة باقيها معدوم القاسمين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$14^2 = 196 \\leq 196 < 225 = 15^2$ ومنه نختبر قابلية قسمة 196 على الأعداد من 1 إلى 14.",
+          "نجد أن 196 يقبل القسمة على كل من الأعداد: 1 ، 2 ، 4 ، 7 ، 14.",
+          "ومن المساويات: $196 = 1 \\times 196$ ، $196 = 2 \\times 98$ ، $196 = 4 \\times 49$ ، $196 = 7 \\times 28$ ، $196 = 14 \\times 14$",
+          "إذن قواسم العدد 196 هي: 1 ، 2 ، 4 ، 7 ، 14 ، 28 ، 49 ، 98 ، 196."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 285
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عيّن قواسم العدد 196 التي مربع كل منها قاسم أيضا للعدد 196.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        2,
+        7,
+        14
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مربع كل قاسم وجدته في السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احتفظ بالقواسم التي يظهر مربعها في قائمة قواسم 196."
+        }
+      ],
+      "feedback": {
+        "correct": "$1^2 = 1$ ، $2^2 = 4$ ، $7^2 = 49$ ، $14^2 = 196$: كلها قواسم للعدد 196.",
+        "incorrect": "من أجل كل قاسم $d$ ، احسب $d^2$ وتحقّق هل هو في قائمة قواسم 196."
+      },
+      "solution": {
+        "lines": [
+          "قواسم 196: 1 ، 2 ، 4 ، 7 ، 14 ، 28 ، 49 ، 98 ، 196.",
+          "$1^2 = 1$ ، $2^2 = 4$ ، $7^2 = 49$ ، $14^2 = 196$ : قواسم للعدد 196.",
+          "$4^2 = 16$ و $28^2 = 784$ … ليست قواسم للعدد 196.",
+          "إذن القواسم المطلوبة هي: 1 ، 2 ، 7 ، 14."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب $\\sqrt{196}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "14",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث بين كتابات 196 على شكل جداء عاملين عن جداء عاملين متساويين."
+        }
+      ],
+      "feedback": {
+        "correct": "$196 = 14 \\times 14 = 14^2$.",
+        "incorrect": "ابحث عن العدد الموجب الذي مربعه 196."
+      },
+      "solution": {
+        "lines": [
+          "$196 = 14 \\times 14 = 14^2$"
+        ],
+        "result": "\\sqrt{196} = 14"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

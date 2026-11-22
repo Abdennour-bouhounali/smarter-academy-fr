@@ -1,0 +1,77 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-fada-l5-008",
+  "lessonCode": "wadiya-idmajiya-fada",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — مقطع مخروط قرب الرأس",
+    "estimatedMinutes": 7,
+    "tags": [
+      "مقطع مخروط",
+      "قراءة الوضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-fada_P2",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "مخروط دوران ارتفاعه $12\\,\\mathrm{cm}$ ونصف قطر قاعدته $9\\,\\mathrm{cm}$ ، يقطعه مستو مواز لقاعدته على بعد $4\\,\\mathrm{cm}$ من الرأس."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "نصف قطر المقطع:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-fada_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3\\,\\mathrm{cm}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$6\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MABTUR-RAS"
+        },
+        {
+          "id": "C",
+          "content": "$9\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQTA-HARAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المقطع تصغير للقاعدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة = بعد المقطع عن الرأس ÷ ارتفاع المخروط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب $9 \\times \\dfrac{4}{12}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$k = \\dfrac{4}{12} = \\dfrac{1}{3}$ ، فنصف قطر المقطع $9 \\times \\dfrac{1}{3} = 3\\,\\mathrm{cm}$ .",
+        "incorrect": "$6\\,\\mathrm{cm}$ من البعد إلى القاعدة ( $8$ ) لا إلى الرأس، والمقطع ليس بأبعاد القاعدة."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 5
+    }
+  ]
+}

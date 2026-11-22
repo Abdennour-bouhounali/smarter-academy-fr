@@ -1,0 +1,132 @@
+{
+  "id": "ex-4am-alaqat-muthallathiya-l1-008",
+  "lessonCode": "alaqat-muthallathiya",
+  "level": 1,
+  "metadata": {
+    "title": "قيم ممكنة وقيم مستحيلة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "حصر النسب المثلثية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_alaqat-muthallathiya_P2",
+      "modelledOn": "ex-18",
+      "adaptedFrom": "ex-4am-alaqat-muthallathiya-l1-008"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "$x$ قيس زاوية حادة في مثلث قائم."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل يمكن أن يكون $\\cos x = \\dfrac{\\sqrt{7}}{2}$ ؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-AKBAR-MIN-WAHID"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن $\\sqrt{7}$ بالعدد 2 (قارن مربعيهما)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جيب تمام زاوية حادة محصور تماما بين 0 و 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$7 > 4$ إذن $\\sqrt{7} > 2$ و $\\dfrac{\\sqrt{7}}{2} > 1$ : هذه القيمة مستحيلة.",
+        "incorrect": "قارن العدد المعطى بالعدد 1 قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "جيب تمام زاوية حادة = المجاور على الوتر، والوتر أطول أضلاع المثلث القائم، إذن $0 < \\cos x < 1$ .",
+          "$(\\sqrt{7})^2 = 7$ و $2^2 = 4$ ، و $7 > 4$ ، إذن $\\sqrt{7} > 2$ أي $\\dfrac{\\sqrt{7}}{2} > 1$ .",
+          "إذن لا يمكن أن يكون $\\cos x = \\dfrac{\\sqrt{7}}{2}$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل يمكن أن يكون $\\tan x = \\dfrac{\\sqrt{7}}{2}$ ؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-AKBAR-MIN-WAHID"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الظل = المقابل على المجاور، والوتر ليس في المقام."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يمكن أن يكون الضلع المقابل أطول من المجاور؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الظل ليس محصورا بـ 1: يكفي مثلث قائم ضلعا زاويته القائمة $\\sqrt{7}$ و 2.",
+        "incorrect": "الحصر بين 0 و 1 يخص الجيب وجيب التمام فقط."
+      },
+      "solution": {
+        "lines": [
+          "الظل = طول الضلع المقابل على طول الضلع المجاور، وكلاهما ضلع للزاوية القائمة: يمكن أن يكون المقابل أطول.",
+          "مثلا في مثلث قائم ضلعا زاويته القائمة $\\sqrt{7}$ و 2، الزاوية التي يقابلها $\\sqrt{7}$ ظلها $\\dfrac{\\sqrt{7}}{2}$ .",
+          "إذن القيمة ممكنة."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,248 @@
+{
+  "id": "ex-2am-jida-kasrayn-l5-004",
+  "lessonCode": "jida-kasrayn",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — وضعيّة إدماجيّة : خزّان ماء",
+    "estimatedMinutes": 11,
+    "tags": [
+      "كسر من الباقي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "06"
+    }
+  },
+  "statement": {
+    "content": "خزّان ماء سعته $480$ L : استُعمل $\\dfrac{1}{4}$ منه في اليوم الأوّل ، ثمّ استُعمل $\\dfrac{2}{3}$ من الباقي في اليوم الثاني ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما الكسر الذي يمثّل ما استُعمل في اليوم الثاني من الخزّان ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "1/2",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2/3",
+          "id": "MISC-JIDAKASR-OFWHOLE"
+        },
+        {
+          "value": "1/6",
+          "id": "MISC-JIDAKASR-OFSPENT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكسر الثاني مأخوذ من الباقي، لا من الكلّ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الباقي بعد المرّة الأولى أوّلًا ثمّ خذ الكسر الثاني من هذا الباقي: هذا جداء."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل الناتج وتحقّق أنّه أصغر من الباقي."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{2}$ .",
+        "incorrect": "الكسر الثاني يؤخذ من الباقي: احسب الباقي أوّلًا ثمّ اضربه في الكسر الثاني."
+      },
+      "solution": {
+        "lines": [
+          "الباقي بعد المرّة الأولى : $1 - \\dfrac{1}{4} = \\dfrac{3}{4}$ .",
+          "المأخوذ ثانيةً : $\\dfrac{2}{3} \\times \\dfrac{3}{4} = \\dfrac{1}{2}$ ."
+        ],
+        "result": "\\dfrac{1}{2}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما حجم الماء المستعمل في اليوم الثاني باللتر ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "240",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "960",
+          "id": "MISC-JIDAKASR-FLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كلمة «من» بعد كسر تعني الضرب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\dfrac{a}{b}$ من $x$ هو $x \\times \\dfrac{a}{b}$ : اقسم $x$ على $b$ ثمّ اضرب في $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي إذا كان الكسر أصغر من 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$240$ .",
+        "incorrect": "الكسر «من» عدد يعني الضرب: اقسم على المقام ثمّ اضرب في البسط، ولا تقلب الكسر."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{2}$ من $480$ هو $480 \\times \\dfrac{1}{2}$ .",
+          "$480 \\div 2 = 240$ ثمّ $240 \\times 1 = 240$ ."
+        ],
+        "result": "240"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما الكسر الذي بقي في الخزّان بعد اليومين ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "1/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1/12",
+          "id": "MISC-JIDAKASR-OFWHOLE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكسر الثاني مأخوذ من الباقي، لا من الكلّ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الباقي بعد المرّة الأولى أوّلًا ثمّ خذ الكسر الثاني من هذا الباقي: هذا جداء."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل الناتج وتحقّق أنّه أصغر من الباقي."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{4}$ .",
+        "incorrect": "الكسر الثاني يؤخذ من الباقي: احسب الباقي أوّلًا ثمّ اضربه في الكسر الثاني."
+      },
+      "solution": {
+        "lines": [
+          "بعد المرّة الأولى بقي $\\dfrac{3}{4}$ ، وبعد الثانية بقي منه $1 - \\dfrac{2}{3} = \\dfrac{1}{3}$ .",
+          "الباقي كلّه : $\\dfrac{3}{4} \\times \\dfrac{1}{3} = \\dfrac{1}{4}$ ."
+        ],
+        "result": "\\dfrac{1}{4}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "ما حجم الماء الباقي في الخزّان باللتر ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "120",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1920",
+          "id": "MISC-JIDAKASR-FLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كلمة «من» بعد كسر تعني الضرب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\dfrac{a}{b}$ من $x$ هو $x \\times \\dfrac{a}{b}$ : اقسم $x$ على $b$ ثمّ اضرب في $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي إذا كان الكسر أصغر من 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$120$ .",
+        "incorrect": "الكسر «من» عدد يعني الضرب: اقسم على المقام ثمّ اضرب في البسط، ولا تقلب الكسر."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{4}$ من $480$ هو $480 \\times \\dfrac{1}{4}$ .",
+          "$480 \\div 4 = 120$ ثمّ $120 \\times 1 = 120$ ."
+        ],
+        "result": "120"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

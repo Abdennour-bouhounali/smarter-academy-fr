@@ -1,0 +1,232 @@
+{
+  "id": "ex-4am-bahth-pgcd-l3-008",
+  "lessonCode": "bahth-pgcd",
+  "level": 3,
+  "metadata": {
+    "title": "رفوف المصاحف — 114 و 84",
+    "estimatedMinutes": 7,
+    "tags": [
+      "خوارزمية إقليدس",
+      "رفوف"
+    ],
+    "source": {
+      "type": "worksheet",
+      "worksheetId": "tafawwuq-01",
+      "elementId": "ws01-sit-08",
+      "section": "الوضعيات",
+      "number": 8,
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-aadad-l3-002"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "تبرّع أحمد لمدرسة قرآنية بـ 114 مصحفًا برواية ورش و 84 مصحفًا برواية حفص. يريد صاحب المدرسة ترتيبها كلها في رفوف متماثلة، أي في كل رفّ نفس عدد المصاحف برواية ورش ونفس عدد المصاحف برواية حفص."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما هو أكبر عدد من الرفوف التي يمكن استعمالها؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P5",
+          "role": "primary"
+        },
+        {
+          "code": "4am_bahth-pgcd_P4",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        },
+        {
+          "value": "0",
+          "id": "MISC-PGCD-SIFR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الرفوف يقسم 114 ويقسم 84."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أكبر عدد من الرفوف هو القاسم المشترك الأكبر للعددين 114 و 84."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسبه بخوارزمية إقليدس: آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "أكبر عدد من الرفوف هو $PGCD(114 ; 84) = 6$.",
+        "incorrect": "عدد الرفوف قاسم مشترك للعددين 114 و 84، والمطلوب أكبرها."
+      },
+      "solution": {
+        "lines": [
+          "عدد الرفوف قاسم مشترك للعددين 114 و 84، وأكبره $PGCD(114 ; 84)$.",
+          "باستعمال خوارزمية إقليدس:",
+          "$114 = 84 \\times 1 + 30$",
+          "$84 = 30 \\times 2 + 24$",
+          "$30 = 24 \\times 1 + 6$",
+          "$24 = 6 \\times 4 + 0$",
+          "آخر باقٍ غير معدوم هو 6، إذن:"
+        ],
+        "result": "PGCD(114 ; 84) = 6"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "احسب في هذه الحالة:",
+      "statement": "عدد المصاحف برواية ورش في كل رفّ.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P5",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "19",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل عدد الرفوف الذي وجدته في السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم عدد مصاحف ورش على عدد الرفوف."
+        }
+      ],
+      "feedback": {
+        "correct": "$114 \\div 6 = 19$ مصحفًا.",
+        "incorrect": "اقسم عدد مصاحف ورش على عدد الرفوف."
+      },
+      "solution": {
+        "lines": [
+          "$114 \\div 6 = 19$"
+        ],
+        "result": "19"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "عدد المصاحف برواية حفص في كل رفّ.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P5",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل عدد الرفوف الذي وجدته في السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم عدد مصاحف حفص على عدد الرفوف."
+        }
+      ],
+      "feedback": {
+        "correct": "$84 \\div 6 = 14$ مصحفًا.",
+        "incorrect": "اقسم عدد مصاحف حفص على عدد الرفوف."
+      },
+      "solution": {
+        "lines": [
+          "$84 \\div 6 = 14$"
+        ],
+        "result": "14"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "سُمك المصحف برواية ورش 3cm وسُمك المصحف برواية حفص 2,5cm، وتوضع المصاحف في كل رفّ جنبًا إلى جنب. احسب الطول اللازم لكل رفّ.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P5",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر)",
+      "expectedAnswer": "92",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل عدد مصاحف كل رواية في الرفّ الواحد (السؤال 02)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب كل عدد في سُمك المصحف الموافق."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الطولين."
+        }
+      ],
+      "feedback": {
+        "correct": "$19 \\times 3 + 14 \\times 2{,}5 = 92$ cm.",
+        "incorrect": "الطول = (عدد مصاحف ورش × 3) + (عدد مصاحف حفص × 2,5)."
+      },
+      "solution": {
+        "lines": [
+          "مصاحف ورش: $19 \\times 3 = 57$ cm",
+          "مصاحف حفص: $14 \\times 2{,}5 = 35$ cm",
+          "$57 + 35 = 92$"
+        ],
+        "result": "92\\,cm"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

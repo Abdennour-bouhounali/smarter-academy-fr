@@ -1,0 +1,151 @@
+{
+  "id": "ex-4am-tarrid-muthallathiya-l1-009",
+  "lessonCode": "tarrid-muthallathiya",
+  "level": 1,
+  "metadata": {
+    "title": "الكابل المائل لتلفريك تلمسان",
+    "estimatedMinutes": 4,
+    "tags": [
+      "ترييض وضعية",
+      "الجيب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-muthallathiya_P1",
+      "modelledOn": "challenge",
+      "adaptedFrom": "ex-4am-tarrid-muthallathiya-l1-009"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "تصعد عربة تلفريك تلمسان على كابل مستقيم طوله $600\\,\\mathrm{m}$ يصنع مع الأفق زاوية قيسها $18^{\\circ}$ . ويحرص مشغّل التلفريك على سلامة الركّاب والتزام مواعيد الرحلات."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "في المثلث القائم الذي وتره الكابل، ما هو الارتفاع الذي تصعده العربة بالنسبة إلى زاوية الكابل مع الأفق؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الضلع المقابل",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الضلع المجاور",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-MUQABIL-MUJAWIR"
+        },
+        {
+          "id": "C",
+          "content": "الوتر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-WATAR-MUQABIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم المثلث: الكابل مائل، والارتفاع شاقولي، والمسافة الأفقية أفقية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يمرّ الارتفاع برأس الزاوية التي يصنعها الكابل مع الأفق؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الارتفاع لا يمرّ برأس الزاوية: هو الضلع المقابل لها.",
+        "incorrect": "الوتر هو الكابل؛ المجاور هو المسافة الأفقية التي تمرّ برأس الزاوية."
+      },
+      "solution": {
+        "lines": [
+          "الزاوية القائمة بين الارتفاع (شاقولي) والمسافة الأفقية؛ الوتر هو الكابل.",
+          "الارتفاع لا يمرّ برأس الزاوية $18^{\\circ}$ : هو الضلع المقابل لها."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب الارتفاع الذي تصعده العربة بالتدوير إلى الوحدة.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-muthallathiya_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الارتفاع بـ m مدوّرا إلى الوحدة",
+      "expectedAnswer": "185",
+      "misconceptionSignatures": [
+        {
+          "value": "571",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "1942",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        },
+        {
+          "value": "195",
+          "id": "MISC-MUTH-NISBA-GHAYR-MUNASIBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المقابل والوتر: النسبة هي الجيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نسمّي $h$ الارتفاع: $\\sin 18^{\\circ} = \\dfrac{h}{600}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالآلة الحاسبة مبرمجة على الدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$h = 600 \\times \\sin 18^{\\circ} \\approx 185\\,\\mathrm{m}$ .",
+        "incorrect": "الطول المطلوب في بسط النسبة: نضرب الطول المعلوم في النسبة المثلثية ولا نقسم عليها؛ والآلة الحاسبة مبرمجة على الدرجة."
+      },
+      "solution": {
+        "lines": [
+          "نسمّي $h$ الارتفاع: $\\sin 18^{\\circ} = \\dfrac{h}{600}$ ومنه: $h = 600 \\times \\sin 18^{\\circ}$",
+          "باستعمال الآلة الحاسبة: $h \\approx 185{,}4102$"
+        ],
+        "result": "h \\approx 185\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

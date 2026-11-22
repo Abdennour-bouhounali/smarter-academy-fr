@@ -1,0 +1,221 @@
+{
+  "id": "ex-4am-mafhum-taalufiya-l4-008",
+  "lessonCode": "mafhum-taalufiya",
+  "level": 4,
+  "metadata": {
+    "title": "الدالة x ⟼ 3(x + 2)",
+    "estimatedMinutes": 8,
+    "tags": [
+      "المعاملان a و b",
+      "صورة عدد",
+      "العدد الذي صورته معلومة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "adaptedFrom": "ex-4am-mafhum-taalufiya-l4-008"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الدالة $f$ المعرّفة كما يلي:",
+    "formulas": [
+      "f : x \\longmapsto 3(x + 2)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انشر $3(x + 2)$ ، ثم عيّن المعاملين $a$ و $b$ للدالة التآلفية $f$ .",
+      "statement": "المعامل $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر: $3(x + 2) = 3 \\times x + 3 \\times 2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 3$ : هو معامل $x$ .",
+        "incorrect": "المعامل $a$ هو العدد المضروب في $x$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 3(x + 2) = 3 \\times x + 3 \\times 2 = 3x + 6$",
+          "$f(x) = 3x + 6$ من الشكل $ax + b$ حيث: $a = 3$ و $b = 6$ ."
+        ],
+        "result": "a = 3"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "المعامل $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بعد النشر، الحدّ الثابت هو $3 \\times 2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$b = 6$ ، إذن $f(x) = 3x + 6$ .",
+        "incorrect": "$b$ هو الحدّ الذي لا يحتوي على $x$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 3(x + 2) = 3 \\times x + 3 \\times 2 = 3x + 6$",
+          "$f(x) = 3x + 6$ من الشكل $ax + b$ حيث: $a = 3$ و $b = 6$ ."
+        ],
+        "result": "b = 6"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب $f(-2)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "0",
+      "misconceptionSignatures": [
+        {
+          "value": "-6",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $-2$ في العبارة $f(x) = 3x + 6$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب في المعامل أولا، ثم أضف الحدّ الثابت، مع الانتباه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(-2) = 3 \\times (-2) + 6 = 0$ .",
+        "incorrect": "اضرب العدد في المعامل $a$ ، ثم أضف الحدّ الثابت $b$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(-2) = 3 \\times (-2) + 6$",
+          "$f(-2) = -6 + 6$",
+          "$f(-2) = 0$"
+        ],
+        "result": "f(-2) = 0"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "عيّن العدد الذي صورته $12$ بالدالة $f$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-TAALUFI-SABIQ-QISMA"
+        },
+        {
+          "value": "-2",
+          "id": "MISC-TAALUFI-SABIQ-TARTIB"
+        },
+        {
+          "value": "42",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن العدد $x$ الذي يحقق $f(x) = 12$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المعادلة $ax + b = m$ : اطرح الحدّ الثابت من الطرفين أولا، ثم اقسم على المعامل."
+        }
+      ],
+      "feedback": {
+        "correct": "$3x + 6 = 12$ تعطي $x = 2$ .",
+        "incorrect": "اطرح الحدّ الثابت $b$ أولا، ثم اقسم على المعامل $a$ (البرنامج العكسي)."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 12$ معناه $3x + 6 = 12$",
+          "$3x = 12 - 6$",
+          "$3x = 6$",
+          "$x = \\dfrac{6}{3}$",
+          "$x = 2$"
+        ],
+        "result": "x = 2"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

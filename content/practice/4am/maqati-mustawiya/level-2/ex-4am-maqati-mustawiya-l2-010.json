@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l2-010",
+  "lessonCode": "maqati-mustawiya",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — مقطع مخروط",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مخروط",
+      "تصغير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_maqati-mustawiya_P4",
+      "modelledOn": "act-5"
+    }
+  },
+  "statement": {
+    "content": "مخروط دوران رأسه S، نصف قطر قاعدته $8\\,\\mathrm{cm}$ ، يقطعه مستو موازٍ لقاعدته يقطع المحور $[SO]$ في O′ حيث $SO' = \\dfrac{3}{4}SO$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما نصف قطر المقطع (بـ $\\mathrm{cm}$)؟",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P4",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAQTA-NISBA",
+          "value": "2"
+        },
+        {
+          "id": "MISC-MAQTA-HARAM",
+          "value": "8"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المقطع دائرة، تصغير للقاعدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة $\\dfrac{SO'}{SO} = \\dfrac{3}{4}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$r = \\dfrac{3}{4} \\times 8$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$r = \\dfrac{3}{4} \\times 8 = 6\\,\\mathrm{cm}$ .",
+        "incorrect": "النسبة من الرأس: $\\dfrac{3}{4}$ ، لا $\\dfrac{1}{4}$ ."
+      },
+      "difficulty": 2
+    }
+  ]
+}

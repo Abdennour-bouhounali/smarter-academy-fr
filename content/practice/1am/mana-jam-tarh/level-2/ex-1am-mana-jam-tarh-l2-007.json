@@ -1,0 +1,180 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l2-007",
+  "lessonCode": "mana-jam-tarh",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — حقيبتا أمين وأخته",
+    "estimatedMinutes": 4,
+    "tags": [
+      "فرق",
+      "مجموع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يحرص أمين وأخته على ألّا يحملا إلا كتب اليوم. كتلة حقيبة أمين $4{,}35\\,\\mathrm{kg}$، وكتلة حقيبة أخته $2{,}9\\,\\mathrm{kg}$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب فرق الكتلتين.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالكيلوغرام (kg)",
+      "expectedAnswer": "1.45",
+      "misconceptionSignatures": [
+        {
+          "value": "-1.45",
+          "id": "MISC-JAMTARH-FARQ-MAQLUB"
+        },
+        {
+          "value": "7.25",
+          "id": "MISC-JAMTARH-MAJMU-FARQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ الكتلتين أكبر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفرق: نطرح الأصغر من الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$4{,}35 - 2{,}9 = 1{,}45\\,\\mathrm{kg}$.",
+        "incorrect": "نطرح الكتلة الصغرى من الكتلة الكبرى بعد محاذاة الفاصلتين."
+      },
+      "solution": {
+        "lines": [
+          "$4{,}35 > 2{,}9$",
+          "$4{,}35 - 2{,}9 = 4{,}35 - 2{,}90 = 1{,}45$"
+        ],
+        "result": "1{,}45 \\text{ kg}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عند حساب فرق عددين، نطرح:",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الأصغر من الأكبر",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الأكبر من الأصغر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-FARQ-MAQLUB"
+        },
+        {
+          "id": "C",
+          "content": "لا نطرح بل نجمع العددين",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-MAJMU-FARQ"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جرّب على عددين بسيطين: فرق 7 و 3."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نتيجة الفرق عدد موجب أو معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "الفرق = الأكبر − الأصغر، والتحقق: الفرق + الأصغر = الأكبر.",
+        "incorrect": "فكّر في المخطط بأقواس: الأكبر هو الكل."
+      },
+      "solution": {
+        "lines": [
+          "في المخطط بأقواس، العدد الأكبر هو الكل، والعدد الأصغر والفرق جزآه.",
+          "إذن الفرق = الأكبر − الأصغر."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب كتلة الحقيبتين معًا.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالكيلوغرام (kg)",
+      "expectedAnswer": "7.25",
+      "misconceptionSignatures": [
+        {
+          "value": "4.64",
+          "id": "MISC-JAMTARH-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكتلتان معًا: الكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاذِ الفاصلتين: $2{,}9 = 2{,}90$."
+        }
+      ],
+      "feedback": {
+        "correct": "$4{,}35 + 2{,}9 = 7{,}25\\,\\mathrm{kg}$.",
+        "incorrect": "اجمع الكتلتين بعد كتابة 2,9 على الشكل 2,90."
+      },
+      "solution": {
+        "lines": [
+          "$4{,}35 + 2{,}9 = 4{,}35 + 2{,}90 = 7{,}25$"
+        ],
+        "result": "7{,}25 \\text{ kg}"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

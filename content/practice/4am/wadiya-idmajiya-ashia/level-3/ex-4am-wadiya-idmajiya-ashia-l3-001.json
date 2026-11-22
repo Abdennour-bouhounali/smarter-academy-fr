@@ -1,0 +1,180 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ashia-l3-001",
+  "lessonCode": "wadiya-idmajiya-ashia",
+  "level": 3,
+  "metadata": {
+    "title": "وضعية ممر الراجلين — مثال المنصّة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "أقصر مسلك",
+      "فيثاغورس"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "situation",
+      "page": 136,
+      "section": "أدمج تعلّماتي"
+    }
+  },
+  "statement": {
+    "content": "مثال على ورقة مرصوفة (الشكل): عرض الطريق مربعان، الحي A فوق الحافة العليا بـ 3 مربعات، والمدرسة B تحت الحافة السفلى بـ 3 مربعات، والمسافة الأفقية بينهما 7 مربعات. الوحدة ضلع مربع.",
+    "figure": {
+      "points": {
+        "R1": [
+          -4.5,
+          2
+        ],
+        "R2": [
+          5.5,
+          2
+        ],
+        "R3": [
+          5.5,
+          0
+        ],
+        "R4": [
+          -4.5,
+          0
+        ],
+        "A": [
+          -3,
+          5
+        ],
+        "M": [
+          -1,
+          2
+        ],
+        "N": [
+          -1,
+          0
+        ],
+        "B": [
+          4,
+          -3
+        ]
+      },
+      "polygons": [
+        {
+          "points": [
+            "R1",
+            "R2",
+            "R3",
+            "R4"
+          ],
+          "tone": "slate"
+        }
+      ],
+      "segments": [
+        {
+          "from": "R1",
+          "to": "R2",
+          "bold": true
+        },
+        {
+          "from": "R4",
+          "to": "R3",
+          "bold": true
+        },
+        {
+          "from": "A",
+          "to": "M",
+          "tone": "amber"
+        },
+        {
+          "from": "M",
+          "to": "N",
+          "bold": true,
+          "tone": "indigo"
+        },
+        {
+          "from": "N",
+          "to": "B",
+          "tone": "amber"
+        }
+      ],
+      "rightAngles": [
+        [
+          "R1",
+          "M",
+          "N"
+        ]
+      ],
+      "hidden": [
+        "R1",
+        "R2",
+        "R3",
+        "R4"
+      ],
+      "labels": {
+        "A": "n",
+        "B": "s",
+        "M": "ne",
+        "N": "se"
+      },
+      "grid": true,
+      "caption": "أعادت المنصّة رسم شكل الكتاب بوضوح أكبر، بنفس المعطيات",
+      "ariaLabel": "خريطة الوضعية على ورقة مرصوفة: طريق عرضه مربعان، الحي A فوق الحافة العليا بثلاثة مربعات، والمدرسة B تحت الحافة السفلى بثلاثة مربعات وعلى بعد سبعة مربعات أفقيا من A، والممر [MN] عمودي على الحافتين"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "طول أقصر مسلك من A إلى B مرورا بالممر [MN] هو:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\sqrt{85} + 2$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\sqrt{113}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MAMAR-MUBASHIR"
+        },
+        {
+          "id": "C",
+          "content": "$\\sqrt{85}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MAMAR-NASI"
+        },
+        {
+          "id": "D",
+          "content": "$15$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-JAM-ATWAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انقل B بالشعاع $\\overrightarrow{NM}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من A إلى B′: 7 أفقيا و 6 شاقوليا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف عرض الطريق."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB'^2 = 7^2 + 6^2 = 85$ ، وأقصر مسلك $\\sqrt{85} + 2 \\approx 11{,}22$ .",
+        "incorrect": "$\\sqrt{113} = AB$ ليس مسلكا ممكنا: الممر عمودي على الحافتين."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 3
+    }
+  ]
+}

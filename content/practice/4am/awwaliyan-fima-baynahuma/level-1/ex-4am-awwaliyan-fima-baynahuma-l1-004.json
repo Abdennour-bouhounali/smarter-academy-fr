@@ -1,0 +1,122 @@
+{
+  "id": "ex-4am-awwaliyan-fima-baynahuma-l1-004",
+  "lessonCode": "awwaliyan-fima-baynahuma",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2008 — PGCD(128 ; 135) وكسر",
+    "estimatedMinutes": 6,
+    "tags": [
+      "خوارزمية إقليدس",
+      "كسر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_awwaliyan-fima-baynahuma_P2",
+      "modelledOn": "BEM 2008 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2008",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "جد القاسم المشترك الأكبر للعددين 128 و 135.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 135 على 128: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (135 ; 128) بالزوج (128 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 1. العددان 128 و 135 أوليان فيما بينهما.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$135 = 128 \\times 1 + 7$",
+          "$128 = 7 \\times 18 + 2$",
+          "$7 = 2 \\times 3 + 1$",
+          "$2 = 1 \\times 2 + 0$",
+          "آخر باقٍ غير معدوم هو 1، إذن:"
+        ],
+        "result": "PGCD(128 ; 135) = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب الكسر $\\dfrac{135}{128}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "135/128",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "البسط والمقام أوليان فيما بينهما: الكسر غير قابل للاختزال أصلًا.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال 01.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "PGCD(135 ; 128) = 1: البسط والمقام أوليان فيما بينهما، فالكسر غير قابل للاختزال."
+        ],
+        "result": "\\dfrac{135}{128} = \\dfrac{135}{128}"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

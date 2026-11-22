@@ -1,0 +1,131 @@
+{
+  "id": "ex-4am-tatbiqat-tanasub-l2-001",
+  "lessonCode": "tatbiqat-tanasub",
+  "level": 2,
+  "metadata": {
+    "title": "تمرين 20 — سعر الكتاب",
+    "estimatedMinutes": 4,
+    "tags": [
+      "تخفيض",
+      "الدالة المرفقة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-20",
+      "page": 73,
+      "section": "أوظّف تعلّماتي",
+      "number": 20,
+      "adaptedFrom": "ex-4am-tatbiqat-tanasub-l2-001"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "سعر كتاب 560DA ، خُفّض هذا السعر بنسبة 6% تشجيعًا على القراءة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب عبارة الدالة الخطية التي ترفق بالسعر $x$ قبل التخفيض السعر بعده.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب معامل الدالة فقط (عدد عشري بالفاصلة)",
+      "expectedAnswer": "0,94",
+      "misconceptionSignatures": [
+        {
+          "value": "0,06",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        },
+        {
+          "value": "1,06",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التخفيض بـ $t\\%$ يُترجم بالضرب في $1 - \\dfrac{t}{100}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $t$ بالعدد 6 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x \\longmapsto \\left(1 - \\dfrac{6}{100}\\right)x = 0{,}94x$ .",
+        "incorrect": "بعد التخفيض يُدفع جزء من السعر: ليس 6% منه."
+      },
+      "solution": {
+        "lines": [
+          "$x \\longmapsto \\left(1 - \\dfrac{6}{100}\\right)x$",
+          "$x \\longmapsto 0{,}94x$"
+        ],
+        "result": "x \\longmapsto 0{,}94x"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب السعر الجديد لهذا الكتاب.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد عشري بالفاصلة)",
+      "expectedAnswer": "526,4",
+      "misconceptionSignatures": [
+        {
+          "value": "33,6",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        },
+        {
+          "value": "554",
+          "id": "MISC-NISBA-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "السعر الجديد صورة 560 بالدالة السابقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب 560 في معامل الدالة."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}94 \\times 560 = 526{,}4$ ، أي $526{,}4DA$ .",
+        "incorrect": "اضرب السعر الأول في المعامل، ولا تطرح العدد 6 ."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}94 \\times 560 = 526{,}4$",
+          "السعر الجديد للكتاب $526{,}4DA$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l2-003",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — شريط القماش: الحصر إلى 0,01",
+    "estimatedMinutes": 5,
+    "tags": [
+      "قيم مقرّبة",
+      "حصر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تقصّ خيّاطة شريطًا طوله $23$ m إلى $6$ قطع متساوية الطول."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}01$ بالنقصان لطول القطعة (بالمتر).",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "3.83",
+      "misconceptionSignatures": [
+        {
+          "value": "3.84",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "3.833",
+          "id": "MISC-QARIBA-RANK"
+        },
+        {
+          "value": "3.5",
+          "id": "MISC-QARIBA-REMCOMMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالنقصان لا تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة دون أن تزيد شيئًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب القيمة في المقسوم عليه: يجب ألاّ يتجاوز الجداء المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$3{,}83 < \\frac{23}{6} < 3{,}84$.",
+        "incorrect": "بالنقصان: نحتفظ بالأرقام حتى الرتبة المطلوبة ونُهمل ما بعدها دون تغيير الرقم الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$6 \\times 3{,}83 = 22{,}98$",
+          "$6 \\times 3{,}84 = 23{,}04$",
+          "$22{,}98 < 23 < 23{,}04$"
+        ],
+        "result": "3{,}83"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "وأعط القيمة المقرّبة إلى $0{,}01$ بالزيادة.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "3.84",
+      "misconceptionSignatures": [
+        {
+          "value": "3.83",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "3.834",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالزيادة هي أصغر قيمة من هذه الرتبة تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من القيمة بالنقصان ثم أضف وحدة واحدة من الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$3{,}83 < \\frac{23}{6} < 3{,}84$.",
+        "incorrect": "بالزيادة: هي القيمة التي تلي القيمة بالنقصان مباشرة في الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$6 \\times 3{,}84 = 23{,}04$",
+          "$23{,}04 > 23$",
+          "القيمة بالزيادة هي $3{,}84$"
+        ],
+        "result": "3{,}84"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل يمكن أن نكتب $\\dfrac{23}{6} = 3{,}84$ ؟ علّل بالحساب.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-EXACTAPPROX"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أو قارن بدقّة قبل أن تجيب."
+        }
+      ],
+      "feedback": {
+        "correct": "لا: $6 \\times 3{,}84 = 23{,}04 \\neq 23$.",
+        "incorrect": "اضرب العدد المكتوب في $6$ وقارن الجداء بـ $23$."
+      },
+      "solution": {
+        "lines": [
+          "$6 \\times 3{,}84 = 23{,}04$",
+          "$23{,}04 \\neq 23$ : المساواة خاطئة"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l5-010",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — سباعي بزاوية 51°",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الانغلاق",
+      "القيمة المضبوطة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mudalaat-muntazama_P2",
+      "modelledOn": "now-157"
+    }
+  },
+  "statement": {
+    "content": "يقول تلميذ: «أرسم سباعيا منتظما بالمنقلة: أدوّر كل رأس $51^\\circ$ حول المركز لأن $\\dfrac{360^\\circ}{7} \\approx 51^\\circ$ .»"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما رأيك؟",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الرأس الثامن لا يقع على الأول: $7 \\times 51^\\circ = 357^\\circ$ ، ينقص $3^\\circ$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الإنشاء مضبوط تماما",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-DAWRA"
+        },
+        {
+          "id": "C",
+          "content": "يجب الدوران $52^\\circ$ في كل مرة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-DAWRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب سبعة دورانات من $51^\\circ$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن بالدورة الكاملة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القيمة المضبوطة للزاوية المركزية كسر."
+        }
+      ],
+      "feedback": {
+        "correct": "التقريب يتراكم: $7 \\times 51^\\circ = 357^\\circ$ ، فالضلع الأخير أقصر. الزاوية المضبوطة $\\dfrac{360^\\circ}{7}$ .",
+        "incorrect": "سبع زوايا من $52^\\circ$ تعطي $364^\\circ$ : تتجاوز الدورة."
+      },
+      "difficulty": 5
+    }
+  ]
+}

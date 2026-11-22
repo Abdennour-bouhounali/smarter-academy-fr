@@ -1,0 +1,165 @@
+{
+  "id": "ex-4am-takrar-mujamma-l1-006",
+  "lessonCode": "takrar-mujamma",
+  "level": 1,
+  "metadata": {
+    "title": "مقاسات الأحذية",
+    "estimatedMinutes": 3,
+    "tags": [
+      "التكرار المجمع النازل",
+      "التكرار المجمع الصاعد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takrar-mujamma_P1"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "سُجّلت مقاسات أحذية لاعبي فريق كرة القدم لنادٍ رياضي في الجدول الآتي:",
+    "table": {
+      "head": [
+        "المقاس",
+        "36",
+        "37",
+        "38",
+        "39"
+      ],
+      "rows": [
+        [
+          "عدد اللاعبين",
+          "2",
+          "6",
+          "7",
+          "5"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب التكرار المجمع النازل للقيمة 37.",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "18",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        },
+        {
+          "value": "6",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        },
+        {
+          "value": "8",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكرار المجمع النازل هو مجموع تكرار هذه القيمة وتكرارات القيم الأكبر منها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع تكرار 37 وتكرارات ما بعدها حتى آخر عمود في الجدول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: التكرار المجمع النازل لأول عمود يساوي التكرار الكلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 + 7 + 5 = 18$ .",
+        "incorrect": "اجمع تكرار القيمة نفسها وتكرارات القيم الأكبر منها فقط: النازل يتّجه نحو نهاية الجدول."
+      },
+      "solution": {
+        "lines": [
+          "التكرار المجمع النازل للقيمة 37 هو مجموع تكرار القيمة 37 وتكرارات القيم الأكبر منها:",
+          "$6 + 7 + 5 = 18$"
+        ],
+        "result": "18"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب التكرار المجمع الصاعد للقيمة 38.",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        },
+        {
+          "value": "7",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        },
+        {
+          "value": "12",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكرار المجمع الصاعد لقيمة هو مجموع تكرارها وتكرارات القيم الأصغر منها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ من أول عمود في الجدول واجمع التكرارات حتى 38 مع تكرارها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: التكرار المجمع الصاعد لآخر عمود يساوي التكرار الكلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 + 6 + 7 = 15$ .",
+        "incorrect": "اجمع تكرار القيمة نفسها وتكرارات القيم الأصغر منها فقط، ولا تنس تكرار القيمة نفسها."
+      },
+      "solution": {
+        "lines": [
+          "التكرار المجمع الصاعد للقيمة 38 هو مجموع تكرار القيمة 38 وتكرارات القيم الأصغر منها:",
+          "$2 + 6 + 7 = 15$"
+        ],
+        "result": "15"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

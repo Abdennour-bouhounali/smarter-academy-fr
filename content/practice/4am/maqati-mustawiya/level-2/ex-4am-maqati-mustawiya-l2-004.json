@@ -1,0 +1,212 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l2-004",
+  "lessonCode": "maqati-mustawiya",
+  "level": 2,
+  "metadata": {
+    "title": "نشاط 3 — مقطع موازٍ للوجه CBFG",
+    "estimatedMinutes": 3,
+    "tags": [
+      "بلاطة قائمة",
+      "مساحة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-3",
+      "page": 164,
+      "section": "أنشطة"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 164): نقطع البلاطة القائمة ABCDEFGH ($DC = 25\\,\\mathrm{cm}$ ، $DA = 20\\,\\mathrm{cm}$ ، $DH = 6\\,\\mathrm{cm}$) بمستو يوازي الوجه CBFG، كما في الشكل.",
+    "figure": {
+      "kind": "space",
+      "view": {
+        "azimuth": -58,
+        "elevation": 28
+      },
+      "points": {
+        "D": [
+          0,
+          0,
+          6
+        ],
+        "C": [
+          25,
+          0,
+          6
+        ],
+        "B": [
+          25,
+          20,
+          6
+        ],
+        "A": [
+          0,
+          20,
+          6
+        ],
+        "H": [
+          0,
+          0,
+          0
+        ],
+        "G": [
+          25,
+          0,
+          0
+        ],
+        "F": [
+          25,
+          20,
+          0
+        ],
+        "E": [
+          0,
+          20,
+          0
+        ],
+        "I": [
+          10,
+          0,
+          6
+        ],
+        "J": [
+          10,
+          20,
+          6
+        ],
+        "K": [
+          10,
+          20,
+          0
+        ],
+        "L": [
+          10,
+          0,
+          0
+        ]
+      },
+      "solids": [
+        {
+          "type": "polyhedron",
+          "faces": [
+            [
+              "D",
+              "C",
+              "B",
+              "A"
+            ],
+            [
+              "H",
+              "G",
+              "F",
+              "E"
+            ],
+            [
+              "D",
+              "C",
+              "G",
+              "H"
+            ],
+            [
+              "C",
+              "B",
+              "F",
+              "G"
+            ],
+            [
+              "B",
+              "A",
+              "E",
+              "F"
+            ],
+            [
+              "A",
+              "D",
+              "H",
+              "E"
+            ]
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "points": [
+            "I",
+            "J",
+            "K",
+            "L"
+          ],
+          "tone": "emerald",
+          "label": "(P)"
+        }
+      ],
+      "segments": [
+        {
+          "from": "D",
+          "to": "C",
+          "label": "25 cm"
+        },
+        {
+          "from": "A",
+          "to": "D",
+          "label": "20 cm"
+        },
+        {
+          "from": "H",
+          "to": "D",
+          "label": "6 cm"
+        }
+      ],
+      "ariaLabel": "الشكل (1): بلاطة قائمة ABCDEFGH يقطعها مستو موازٍ للوجه CBFG وفق الرباعي IJKL",
+      "maxWidth": 480
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما مساحة المقطع IJKL (بـ $\\mathrm{cm}^2$)؟",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر المربع)",
+      "expectedAnswer": "120",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAQTA-BUUD",
+          "value": "150"
+        },
+        {
+          "id": "MISC-MAQTA-BUUD",
+          "value": "500"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المقطع يوازي الوجه CBFG."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعدا المقطع هما بعدا هذا الوجه: CB و CG."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المساحة = الطول × العرض."
+        }
+      ],
+      "feedback": {
+        "correct": "$IJ = CB = 20$ و $IL = CG = 6$ : المساحة $20 \\times 6 = 120\\,\\mathrm{cm}^2$ .",
+        "incorrect": "الطول $DC = 25$ عمودي على المستوي: لا يظهر في المقطع."
+      },
+      "difficulty": 2
+    }
+  ]
+}

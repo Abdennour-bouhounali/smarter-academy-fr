@@ -1,0 +1,190 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l2-004",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مقلوب قوة للعدد 10",
+    "estimatedMinutes": 6,
+    "tags": [
+      "المقلوب",
+      "أسّ سالب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نتذكّر أنّ مقلوب عدد غير معدوم $a$ هو $\\dfrac{1}{a}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ العلاقات التالية صحيحة؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما معنى القوة ذات الأسّ السالب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$10^{-n}$ هو مقلوب $10^{n}$ وهو عدد موجب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الكتابة العشرية لكلّ طرف وقارن."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$10^{-2} = \\dfrac{1}{10^{2}}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$10^{-2} = -10^{2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-SALIB"
+        },
+        {
+          "id": "C",
+          "content": "$10^{-2} = 0{,}001$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{-2} = \\dfrac{1}{10^{2}} = 0{,}01$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب الكتابة العشرية للقوة المعنية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10^{-2} = \\dfrac{1}{10^{2}} = \\dfrac{1}{100} = 0{,}01$ .",
+          "العدد $10^{-2}$ موجب."
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "مقلوب العدد $1\\,000$ هو $10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $1\\,000$ على شكل قوة للعدد 10 أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مقلوب $10^{n}$ هو $10^{-n}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "غيّر إشارة الأسّ."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-ASHARA-SALIB"
+        }
+      ],
+      "feedback": {
+        "correct": "مقلوب $1\\,000 = 10^{3}$ هو $10^{-3}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,000 = 10^{3}$ .",
+          "مقلوبه $\\dfrac{1}{10^{3}} = 10^{-3}$ ."
+        ],
+        "result": "n = -3"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "$\\dfrac{1}{10^{-3}} = 10^{n}$ : ما قيمة $n$ ؟ (تذكّر $10^{-3} = 0{,}001$)",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الكتابة العشرية للعدد $10^{-3}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن مقلوب العدد $0{,}001$ : كم ألفًا في الواحد؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مقلوب مقلوب القوة يعيدك إلى القوة الموجبة."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "-3",
+          "id": "MISC-ASHARA-SALIB"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{10^{-3}} = \\dfrac{1}{0{,}001} = 1\\,000 = 10^{3}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10^{-3} = 0{,}001$ .",
+          "$\\dfrac{1}{0{,}001} = 1\\,000 = 10^{3}$ ."
+        ],
+        "result": "n = 3"
+      }
+    }
+  ]
+}

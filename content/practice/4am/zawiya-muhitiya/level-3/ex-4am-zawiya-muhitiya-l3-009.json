@@ -1,0 +1,199 @@
+{
+  "id": "ex-4am-zawiya-muhitiya-l3-009",
+  "lessonCode": "zawiya-muhitiya",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — ثلاثة رؤوس",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الزاوية المحيطية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_zawiya-muhitiya_P1",
+      "modelledOn": "ex-12"
+    }
+  },
+  "statement": {
+    "content": "في الشكل: A و B و M نقط من دائرة مركزها O، النقطة E داخل الدائرة والنقطة F خارجها.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -1.7321,
+          -1.0
+        ],
+        "B": [
+          1.7321,
+          -1.0
+        ],
+        "M": [
+          -0.3473,
+          1.9696
+        ],
+        "E": [
+          0.2,
+          -0.3
+        ],
+        "F": [
+          2.55,
+          1.35
+        ]
+      },
+      "circles": [
+        {
+          "center": "O",
+          "radius": 2
+        }
+      ],
+      "segments": [
+        {
+          "from": "M",
+          "to": "A",
+          "tone": "amber"
+        },
+        {
+          "from": "M",
+          "to": "B",
+          "tone": "amber"
+        },
+        {
+          "from": "E",
+          "to": "A",
+          "tone": "rose",
+          "dashed": true
+        },
+        {
+          "from": "E",
+          "to": "B",
+          "tone": "rose",
+          "dashed": true
+        },
+        {
+          "from": "F",
+          "to": "A",
+          "tone": "sky",
+          "dashed": true
+        },
+        {
+          "from": "F",
+          "to": "B",
+          "tone": "sky",
+          "dashed": true
+        }
+      ],
+      "ariaLabel": "دائرة مركزها O، النقط A و B و M عليها، E داخلها و F خارجها، وقطع من M و E و F نحو A و B",
+      "maxWidth": 400
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "من بين $\\widehat{AMB}$ و $\\widehat{AEB}$ و $\\widehat{AFB}$ ، الزاوية المحيطية هي:",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الثلاث، لأن A و B على الدائرة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-RAS"
+        },
+        {
+          "id": "B",
+          "content": "$\\widehat{AMB}$ وحدها",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\widehat{AEB}$ لأن E داخل الدائرة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-RAS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر أولا إلى رأس الزاوية: أين يقع؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الزاوية المركزية رأسها مركز الدائرة؛ والمحيطية رأسها على الدائرة وضلعاها يقطعانها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زاوية رأسها داخل الدائرة أو خارجها ليست محيطية، ولو كان طرفا ضلعيها على الدائرة."
+        }
+      ],
+      "feedback": {
+        "correct": "M وحدها على الدائرة.",
+        "incorrect": "رأس الزاوية المحيطية على الدائرة."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "قارن $\\widehat{AEB}$ بالزاوية $\\widehat{AMB}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "متساويتان لأنهما تحصران نفس القوس",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-RAS"
+        },
+        {
+          "id": "B",
+          "content": "$\\widehat{AEB}$ أصغر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-RAS"
+        },
+        {
+          "id": "C",
+          "content": "$\\widehat{AEB}$ أكبر",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر أولا إلى رأس الزاوية: أين يقع؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الزاوية المركزية رأسها مركز الدائرة؛ والمحيطية رأسها على الدائرة وضلعاها يقطعانها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زاوية رأسها داخل الدائرة أو خارجها ليست محيطية، ولو كان طرفا ضلعيها على الدائرة."
+        }
+      ],
+      "feedback": {
+        "correct": "على الشكل $\\widehat{AEB}$ أكبر: رأس داخل الدائرة يرى الوتر بزاوية أكبر.",
+        "incorrect": "الخاصية 2 لا تطبّق إلا على زاويتين محيطيتين."
+      }
+    }
+  ]
+}

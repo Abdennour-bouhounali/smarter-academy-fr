@@ -1,0 +1,205 @@
+{
+  "id": "ex-2am-talim-mustaqim-mudarraj-2-l2-008",
+  "lessonCode": "talim-mustaqim-mudarraj-2",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — نقطة بين تدريجتين",
+    "estimatedMinutes": 8,
+    "tags": [
+      "وضع نقط",
+      "بين تدريجتين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "على لوح مدرّج قيمة تدريجته الواحدة $10\\,\\mathrm{m}$ ، نحدّد موضع نقاط الدخول إلى رواق الحيّ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "النقطة $T$ إلى اليسار من المبدأ، في منتصف المسافة بين التدريجة التي على 3 تدريجات من المبدأ والتي بعدها مباشرة. قيمة التدريجة الواحدة $10\\,\\mathrm{m}$. ما فاصلة $T$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-35",
+      "misconceptionSignatures": [
+        {
+          "value": "35",
+          "id": "MISC-TALIM2-SIGNSIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطة تقع بين تدريجتين متتاليتين فلا يكفي عدّ تدريجات كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "منتصف المسافة بين تدريجتين يضيف نصف تدريجة إلى العدد الكامل من التدريجات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب فاصلتي التدريجتين المجاورتين ثم خذ ما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$T(-35)$ : في منتصف $-30$ و $-40$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "التدريجتان المجاورتان: $-30$ و $-40$",
+          "منتصفهما $-30$ و $-40$ : $-35$"
+        ],
+        "result": "-35"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "النقطة $B(45)$ تقع على مستقيم قيمة تدريجته الواحدة $10\\,\\mathrm{m}$. بين أيّ تدريجتين متتاليتين تقع؟ (اختر فاصلتي التدريجتين)",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-50$ و $-40$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM2-SIGNSIDE"
+        },
+        {
+          "id": "B",
+          "content": "$40$ و $50$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$50$ و $60$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$30$ و $40$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قسّم الفاصلة على قيمة التدريجة لترى بين أيّ عددين صحيحين من التدريجات تقع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التدريجتان المجاورتان فاصلتاهما من مضاعفات قيمة التدريجة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى الإشارة: النقطة السالبة بين تدريجتين على اليسار."
+        }
+      ],
+      "feedback": {
+        "correct": "$45$ تقع بين $40$ و $50$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$45 \\div 10 = 4{,}5$ : بين $4$ و $5$ تدريجة",
+          "بين التدريجتين $40$ و $50$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "النقطة $C$ على تدريجتين إلى يمين المبدأ، وقيمة التدريجة الواحدة $10\\,\\mathrm{m}$. ما فاصلة $C$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-TALIM2-UNITIGNORED"
+        },
+        {
+          "value": "-20",
+          "id": "MISC-TALIM2-SIGNSIDE"
+        },
+        {
+          "value": "12",
+          "id": "MISC-TALIM2-ADDSTEP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ التدريجات بين المبدأ والنقطة، ثم انظر إلى جهتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفاصلة = عدد التدريجات × قيمة التدريجة الواحدة، وإشارتها حسب الجهة: يمين المبدأ موجبة، يسار المبدأ سالبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء أوّلًا ثم ضع الإشارة المناسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$C(20)$ : $2$ تدريجات × $10\\,\\mathrm{m}$ ، في الجهة اليمنى فالإشارة موجبة.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "عدد التدريجات $2$ ، قيمة التدريجة $10\\,\\mathrm{m}$",
+          "النقطة على يمين المبدأ فالإشارة موجبة",
+          "$C(20)$"
+        ],
+        "result": "20"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

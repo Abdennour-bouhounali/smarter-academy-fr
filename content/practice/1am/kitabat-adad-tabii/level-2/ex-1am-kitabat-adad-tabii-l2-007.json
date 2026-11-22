@@ -1,0 +1,127 @@
+{
+  "id": "ex-1am-kitabat-adad-tabii-l2-007",
+  "lessonCode": "kitabat-adad-tabii",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مفكوك عدد فيه أصفار",
+    "estimatedMinutes": 5,
+    "tags": [
+      "مفكوك نموذجي",
+      "صفر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العدد 50708."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما هو المفكوك النموذجي للعدد $50\\,708$؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$5 \\times 10\\,000 + 7 \\times 10 + 8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-RANK-NAME"
+        },
+        {
+          "id": "B",
+          "content": "$5 \\times 10\\,000 + 7 \\times 100 + 8$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$5 \\times 1000 + 7 \\times 100 + 8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-ZERO-PLACE"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العدد في جدول المراتب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل رقم غير معدوم يُضرب في قيمة مرتبته (1، 10، 100، 1000…)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الرقم 0 لا يظهر في المفكوك، لكنه يحفظ مراتب الأرقام الأخرى."
+        }
+      ],
+      "feedback": {
+        "correct": "$50\\,708 = 5 \\times 10\\,000 + 7 \\times 100 + 8$.",
+        "incorrect": "في المفكوك النموذجي يُضرب كل رقم في قيمة مرتبته؛ تحقّق بحساب المجموع."
+      },
+      "solution": {
+        "lines": [
+          "في العدد 50708: 5 رقم عشرات الآلاف، 0 رقم الآلاف، 7 رقم المئات، 0 رقم العشرات، 8 رقم الآحاد.",
+          "$50\\,708 = 5 \\times 10\\,000 + 7 \\times 100 + 8$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "برّر لماذا لا يظهر الرقم 0 في المفكوك النموذجي، مع أنه ضروري في كتابة العدد 50708.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم يساوي $0 \\times 1000$؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ماذا يحدث للعدد إذا حذفنا الأصفار من كتابته؟"
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك بالحل النموذجي سطرا بسطر."
+      },
+      "solution": {
+        "lines": [
+          "$0 \\times 1000 = 0$ و $0 \\times 10 = 0$: حدود معدومة لا نكتبها في المفكوك.",
+          "لكن في الكتابة 50708 يحفظ كل صفر مكان مرتبة فارغة، فيبقى 5 في مرتبة عشرات الآلاف و 7 في مرتبة المئات."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

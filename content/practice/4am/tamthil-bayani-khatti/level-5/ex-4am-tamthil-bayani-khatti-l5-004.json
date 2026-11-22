@@ -1,0 +1,378 @@
+{
+  "id": "ex-4am-tamthil-bayani-khatti-l5-004",
+  "lessonCode": "tamthil-bayani-khatti",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2015 — قطعة أرض مثلثة لفلاح من قالمة",
+    "estimatedMinutes": 20,
+    "tags": [
+      "وضعية إدماجية",
+      "مساحة",
+      "تمثيل بياني"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tamthil-bayani-khatti_P1",
+      "modelledOn": "BEM 2015 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "قطعة أرض على شكل مثلث $ABC$ قائم في $B$ ، حيث $AB = 8m$ و $BC = 6m$ ، يملكها فلاح من قالمة يعتني بأرضه بإتقان. يريد تقسيمها إلى قطعتين كما في الشكل: $M$ نقطة من $[BC]$ حيث $BM = x$ (بالمتر) مع $0 \\leqslant x \\leqslant 6$ ؛ يزرع الجزء $ABM$ بصلا والجزء $AMC$ ثوما.",
+    "figure": {
+      "points": {
+        "B": [
+          0,
+          0
+        ],
+        "A": [
+          0,
+          8
+        ],
+        "C": [
+          6,
+          0
+        ],
+        "M": [
+          2.5,
+          0
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "8m"
+        },
+        {
+          "from": "B",
+          "to": "M",
+          "label": "x"
+        },
+        [
+          "M",
+          "C"
+        ],
+        [
+          "C",
+          "A"
+        ],
+        [
+          "A",
+          "M"
+        ]
+      ],
+      "polygons": [
+        {
+          "points": [
+            "A",
+            "B",
+            "M"
+          ],
+          "tone": "emerald"
+        },
+        {
+          "points": [
+            "A",
+            "M",
+            "C"
+          ],
+          "tone": "amber"
+        }
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "B",
+          "C"
+        ]
+      ],
+      "labels": {
+        "A": "n",
+        "B": "sw",
+        "C": "se",
+        "M": "s"
+      },
+      "ariaLabel": "مثلث ABC قائم في B، طول AB يساوي 8m، و M نقطة من الضلع [BC] حيث BM = x، والقطعة [AM] تقسم المثلث إلى جزأين"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب مساحة الجزء $ABM$ من أجل $x = 2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المساحة بـ m²",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "16",
+          "id": "MISC-TANASUB-FARQ-THABIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$ABM$ مثلث قائم في $B$ : مساحته نصف جداء ضلعي الزاوية القائمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{8 \\times 2}{2} = 8$ : $8m^2$ .",
+        "incorrect": "لا تنس القسمة على 2 في مساحة المثلث."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AB \\times BM}{2} = \\dfrac{8 \\times 2}{2} = 8$ ، أي $8m^2$ ."
+        ],
+        "result": "8m^2"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "بيّن أن مساحة الجزء $ABM$ هي $f(x) = 4x$ ، ثم استنتج أن $f$ دالة خطية.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة المثلث القائم $ABM$ هي $\\dfrac{AB \\times BM}{2}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = \\dfrac{AB \\times BM}{2} = \\dfrac{8 \\times x}{2} = 4x$",
+          "$f(x)$ من الشكل $ax$ مع $a = 4$ : $f$ دالة خطية."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "لتكن $g(x)$ مساحة الجزء $AMC$ ، حيث $g(x) = 24 - 4x$ .",
+      "statement": "مثّل بيانيا الدالتين $f$ و $g$ في معلم متعامد من أجل $0 \\leqslant x \\leqslant 6$ (نأخذ $1cm$ لكل $1m$ على محور الفواصل و $1cm$ لكل $4m^2$ على محور التراتيب).",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تمثيل $f$ قطعة من مستقيم يشمل المبدأ، مثلا من $O$ إلى $(6 ; 24)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تمثيل $g$ قطعة من $(0 ; 24)$ إلى $(6 ; 0)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "تمثيل $f$ : القطعة من $O(0 ; 0)$ إلى $(6 ; 24)$ ، أي إلى النقطة $(6cm ; 6cm)$ على الورقة.",
+          "تمثيل $g$ : القطعة من $(0 ; 24)$ إلى $(6 ; 0)$ .",
+          "يتقاطع التمثيلان في النقطة $(3 ; 12)$ ."
+        ]
+      },
+      "timeSeconds": 300
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل النقطة $E(4{,}5 ; 18)$ تنتمي إلى التمثيل البياني للدالة $f$ ؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب صورة فاصلة $E$ بالدالة $f$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارنها بترتيب $E$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(4{,}5) = 4 \\times 4{,}5 = 18$ : $E$ تنتمي إلى تمثيل $f$ .",
+        "incorrect": "تنتمي النقطة إلى التمثيل إذا كانت صورة فاصلتها تساوي ترتيبها."
+      },
+      "solution": {
+        "lines": [
+          "$f(4{,}5) = 4 \\times 4{,}5 = 18$",
+          "صورة فاصلة $E$ تساوي ترتيبها، إذن $E$ تنتمي إلى التمثيل البياني للدالة $f$ ."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ج",
+      "statement": "هل التمثيل البياني للدالة $f$ يصعد أم ينزل من اليسار إلى اليمين؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "يصعد من اليسار إلى اليمين",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "ينزل من اليسار إلى اليمين",
+          "isCorrect": false,
+          "misconceptionId": "MISC-BAYANI-MUNHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارة معامل الدالة الخطية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان المعامل موجبا فالمستقيم يصعد، وإذا كان سالبا فهو ينزل."
+        }
+      ],
+      "feedback": {
+        "correct": "المعامل $4$ موجب: المستقيم يصعد.",
+        "incorrect": "منحى المستقيم تعيّنه إشارة المعامل: موجب ← يصعد، سالب ← ينزل."
+      },
+      "solution": {
+        "lines": [
+          "معامل الدالة الخطية $f$ هو 4، وهو عدد موجب.",
+          "إذن التمثيل البياني للدالة $f$ يصعد من اليسار إلى اليمين: كلما زاد $x$ زادت مساحة الجزء المزروع بصلا."
+        ],
+        "result": "يصعد"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "☜ ساعد الفلاح على تعيين $x$ حتى تكون مساحة الجزء المزروع بصلا ضعف مساحة الجزء المزروع ثوما.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول $BM$ بـ m",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-MUADALA-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المعادلة $f(x) = 2 \\times g(x)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انشر الطرف الأيمن ثم اجمع حدود $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$4x = 48 - 8x$ ، إذن $x = 4$ : $BM = 4m$ .",
+        "incorrect": "المعادلة هي $4x = 2\\left(24 - 4x\\right)$ : لا تنس ضرب الحدين معا."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 2g(x)$ معناه $4x = 2\\left(24 - 4x\\right)$",
+          "$4x = 48 - 8x$",
+          "$12x = 48$ ، إذن $x = 4$",
+          "تحقق: $f(4) = 16$ و $g(4) = 8$ ، و $16 = 2 \\times 8$ ."
+        ],
+        "result": "BM = 4m"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-jumal-l1-007",
+  "lessonCode": "wadiya-idmajiya-jumal",
+  "level": 1,
+  "metadata": {
+    "title": "زاويتان متكاملتان",
+    "estimatedMinutes": 7,
+    "tags": [
+      "ترييض",
+      "زوايا"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 62,
+      "section": "الوضعيات",
+      "number": 7
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "$x$ و $y$ قيسا زاويتين متكاملتين بالدرجات، و $x$ يزيد عن $y$ بـ $15°$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن $x$ و $y$ يحققان الجملة: $\\begin{cases} x + y = 180 \\\\ x - y = 15 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما مجموع قيسي زاويتين متكاملتين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم «يزيد بـ 15» بفرق."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "الزاويتان متكاملتان معناه مجموع قيسيهما $180°$ : $x + y = 180$",
+          "$x$ يزيد عن $y$ بـ $15°$ معناه: $x = y + 15$ أي $x - y = 15$",
+          "ومنه: $\\begin{cases} x + y = 180 \\\\ x - y = 15 \\end{cases}$"
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج قيسي الزاويتين.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ بالدرجات: قيمة $x$ ثم قيمة $y$ (عدد عشري مثل 12,5 أو كسر)",
+      "expectedAnswer": {
+        "x": "195/2",
+        "y": "165/2"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "165/2",
+            "y": "195/2"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معاملا $y$ في المعادلتين متعاكسان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المعادلتين طرفا لطرف لتجد $x$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض قيمة $x$ في المعادلة الأولى."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 97{,}5°$ و $y = 82{,}5°$ ، ومجموعهما $180°$ .",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} x + y = 180 & ...(1) \\\\ x - y = 15 & ...(2) \\end{cases}$",
+          "بجمع المعادلتين (1) و (2) طرفا لطرف نجد:",
+          "$2x = 195$",
+          "$x = 97{,}5$",
+          "بتعويض $x$ بـ $97{,}5$ في المعادلة (1) نجد: $97{,}5 + y = 180$",
+          "$y = 82{,}5$",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(97{,}5 ; 82{,}5)"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

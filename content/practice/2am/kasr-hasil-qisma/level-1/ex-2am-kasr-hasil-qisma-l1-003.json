@@ -1,0 +1,177 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l1-003",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — نسبة عدد إلى عدد",
+    "estimatedMinutes": 5,
+    "tags": [
+      "نسبة",
+      "كتابة كسرية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "يضمّ نادي المطالعة في المتوسطة $35$ عضوًا، منهم $9$ أعضاء من السنة الثانية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نسبة عدد أعضاء السنة الثانية إلى عدد أعضاء النادي هي:",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{35}{9}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-RATIOFLIP"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{9}{26}$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{26}{35}$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{9}{35}$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«نسبة $a$ إلى $b$» تُكتب بالعدد $a$ في البسط والعدد $b$ في المقام."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الأوّل المذكور هو الجزء، والثاني هو الكلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9}{35}$ : البسط هو الجزء والمقام هو الكلّ.",
+        "incorrect": "ابدأ بالعدد المذكور أوّلًا وضعه في البسط، والكلّ يوضع في المقام."
+      },
+      "solution": {
+        "lines": [
+          "الجزء: $9$ أعضاء، الكلّ: $35$ عضوًا",
+          "النسبة هي $\\dfrac{9}{35}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "الكسر $\\dfrac{9}{35}$ هو حاصل قسمة العدد $9$ على عدد. ما هو هذا العدد؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "35",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خط الكسر يعني القسمة: البسط على المقام."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9}{35}=9\\div35$.",
+        "incorrect": "خط الكسر هو علامة القسمة: يُقسم البسط على المقام."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{9}{35}=9 \\div 35$"
+        ],
+        "result": "35"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "نسبة العدد $4{,}5$ إلى العدد $1{,}5$ تُكتب:",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{1{,}5}{4{,}5}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-RATIOFLIP"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{4{,}5}{1{,}5}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{4{,}5}{6}$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{6}{4{,}5}$",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الصيغة نفسها حتى لو كان الحدّان عشريين."
+        }
+      ],
+      "feedback": {
+        "correct": "حدّاها عشريان فتسمّى كتابة كسرية.",
+        "incorrect": "العدد المذكور أوّلًا في البسط والثاني في المقام."
+      },
+      "solution": {
+        "lines": [
+          "نسبة $4{,}5$ إلى $1{,}5$ هي $\\dfrac{4{,}5}{1{,}5}$ ، وهي كتابة كسرية لأنّ حدّيها عشريان"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

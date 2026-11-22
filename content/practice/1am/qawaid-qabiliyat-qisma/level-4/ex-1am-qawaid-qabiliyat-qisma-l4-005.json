@@ -1,0 +1,224 @@
+{
+  "id": "ex-1am-qawaid-qabiliyat-qisma-l4-005",
+  "lessonCode": "qawaid-qabiliyat-qisma",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — أشجار حول الحديقة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "محيط",
+      "غرس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثالث",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "حديقة مستطيلة الشكل طولها $48\\,\\mathrm{m}$ وعرضها $36\\,\\mathrm{m}$. قرّر سكّان الحيّ غرس أشجار على محيطها بمسافات متساوية، تبدأ وتنتهي عند المدخل."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب محيط الحديقة.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالمتر (m)",
+      "expectedAnswer": "168",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "محيط المستطيل = 2 × (الطول + العرض)."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times (48 + 36) = 2 \\times 84 = 168$.",
+        "incorrect": "أنجز الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$48 + 36 = 84$",
+          "$2 \\times 84 = 168$"
+        ],
+        "result": "168"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "هل يمكن غرس شجرة كل $4\\,\\mathrm{m}$ دون أن تبقى مسافة ناقصة؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-ZAWJI-4"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى العدد المشكّل من رقمي الآحاد والعشرات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل هذا العدد المكوّن من رقمين يقبل القسمة على 4؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يكفي أن يكون العدد زوجيًا."
+        }
+      ],
+      "feedback": {
+        "correct": "العدد المشكّل من رقمي آحاد وعشرات 168 هو 68، و 68 يقبل القسمة على 4.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 4 إذا كان العدد المشكّل من رقمي آحاده وعشراته يقبل القسمة على 4."
+      },
+      "solution": {
+        "lines": [
+          "العدد المشكّل من رقمي آحاد وعشرات 168 هو 68، و 68 يقبل القسمة على 4.",
+          "$168 = 4 \\times 42 + 0$ ، الباقي معدوم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "وشجرة كل $5\\,\\mathrm{m}$؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-SIFR"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى رقم آحاد العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما الرقمان اللذان ينتهي بهما كل مضاعف للعدد 5؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإنجاز القسمة الإقليدية على 5."
+        }
+      ],
+      "feedback": {
+        "correct": "رقم آحاد العدد 168 هو 8، إذن 168 لا يقبل القسمة على 5.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 5 إذا كان رقم آحاده 0 أو 5."
+      },
+      "solution": {
+        "lines": [
+          "رقم آحاد العدد 168 هو 8، إذن 168 لا يقبل القسمة على 5.",
+          "$168 = 5 \\times 33 + 3$ ، الباقي 3 غير معدوم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب عدد الأشجار إذا غُرست شجرة كل $4\\,\\mathrm{m}$.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الأشجار",
+      "expectedAnswer": "42",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-QABILIYA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية عموديًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق بضرب الحاصل في 4."
+        }
+      ],
+      "feedback": {
+        "correct": "$168 = 4 \\times 42 + 0$.",
+        "incorrect": "ابحث عن أكبر عدد طبيعي نضربه في 4 دون أن نتجاوز 168."
+      },
+      "solution": {
+        "lines": [
+          "$168 = 4 \\times 42 + 0$",
+          "الحاصل هو 42."
+        ],
+        "result": "42"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

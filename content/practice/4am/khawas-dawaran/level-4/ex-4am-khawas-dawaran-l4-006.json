@@ -1,0 +1,118 @@
+{
+  "id": "ex-4am-khawas-dawaran-l4-006",
+  "lessonCode": "khawas-dawaran",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — النخلات الثلاث لمقام الشهيد",
+    "estimatedMinutes": 3,
+    "tags": [
+      "متقايس الأضلاع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_khawas-dawaran_P2",
+      "modelledOn": "know-3"
+    }
+  },
+  "generator": {
+    "tool": "u13-khawas-dawaran/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "في نموذج مصغّر لمقام الشهيد، قمم النخلات الثلاث A و B و C: B صورة A و C صورة B بالدوران الذي مركزه O وزاويته $120^\\circ$ ، و $OA = 10\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما الطول OC بالسنتيمتر؟",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-KHAWAS",
+          "value": "20"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "C صورة B، و B صورة A."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "صورة نقطة: نفس البعد عن المركز."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مرّتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$OC = OB = OA = 10\\,\\mathrm{cm}$ .",
+        "incorrect": "كل صورة على نفس البعد من O."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "المثلث ABC:",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "قائم ومتساوي الساقين",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-KHAWAS"
+        },
+        {
+          "id": "B",
+          "content": "أضلاعه كلها 10 cm",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-DIL"
+        },
+        {
+          "id": "C",
+          "content": "متقايس الأضلاع",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "[BC] صورة [AB]."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "[CA] صورة [BC]."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأطوال محفوظة."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = BC = CA$ : متقايس الأضلاع (طول ضلعه ليس OA).",
+        "incorrect": "الأضلاع متساوية بالدوران، لكنها ليست الأنصاف 10 cm."
+      }
+    }
+  ]
+}

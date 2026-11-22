@@ -1,0 +1,148 @@
+{
+  "id": "ex-1am-kitabat-adad-tabii-l1-001",
+  "lessonCode": "kitabat-adad-tabii",
+  "level": 1,
+  "metadata": {
+    "title": "رقم العشرات وعدد العشرات",
+    "estimatedMinutes": 3,
+    "tags": [
+      "رقم",
+      "عدد"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "prep",
+      "page": 8,
+      "section": "استحضر مكتسباتي",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "اختر الإجابة الصحيحة في كل حالة، وبرّر اختيارك."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "رقم العشرات في العدد 4083 هو:",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "408",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-DIGIT-COUNT"
+        },
+        {
+          "id": "B",
+          "content": "8",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "0",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-RANK-NAME"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رقم العشرات رقم واحد من أرقام العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من رقم الآحاد وتقدّم مرتبة واحدة نحو اليسار."
+        }
+      ],
+      "feedback": {
+        "correct": "في العدد 4083: 3 رقم الآحاد، و 8 رقم العشرات.",
+        "incorrect": "رقم مرتبة هو رقم واحد: الرقم الذي يقع في تلك المرتبة."
+      },
+      "solution": {
+        "lines": [
+          "في العدد 4083: 4 رقم الآلاف، 0 رقم المئات، 8 رقم العشرات، 3 رقم الآحاد.",
+          "إذن رقم العشرات هو 8."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عدد العشرات في العدد 4083 هو:",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "408",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "40",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-RANKSHIFT"
+        },
+        {
+          "id": "C",
+          "content": "8",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-DIGIT-COUNT"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم حزمة من 10 نستطيع تكوينها من كل وحدات العدد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تكتفِ برقم العشرات: الآلاف والمئات فيها عشرات أيضا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالضرب في 10 ثم إضافة ما بقي."
+        }
+      ],
+      "feedback": {
+        "correct": "$4083 = 408 \\times 10 + 3$: عدد العشرات 408، أمّا رقم العشرات فهو 8.",
+        "incorrect": "عدد العشرات هو عدد الحزم من 10 التي نكوّنها من العدد كله، وليس رقم العشرات وحده."
+      },
+      "solution": {
+        "lines": [
+          "$4083 = 408 \\times 10 + 3$",
+          "إذن عدد العشرات في العدد 4083 هو 408 (ورقم العشرات 8)."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

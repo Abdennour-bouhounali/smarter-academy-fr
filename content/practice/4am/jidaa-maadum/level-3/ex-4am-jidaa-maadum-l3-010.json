@@ -1,0 +1,293 @@
+{
+  "id": "ex-4am-jidaa-maadum-l3-010",
+  "lessonCode": "jidaa-maadum",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2022 — نشر، تحليل، معادلة جداء معدوم",
+    "estimatedMinutes": 12,
+    "tags": [
+      "نشر",
+      "تحليل",
+      "معادلة جداء معدوم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_jidaa-maadum_P2",
+      "modelledOn": "BEM 2022 I"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارتان $E$ و $F$ حيث:",
+    "formulas": [
+      "E = (3x - 1)(x - 4)",
+      "F = 3x^2 - 13x + 4 - (3x - 1)(2x + 3)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انشر وبسّط العبارة $E$ .",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $ax^2 + bx + c$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر كل جداء، وطبّق المتطابقة الشهيرة المناسبة على كل مربع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى الإشارة «−» أمام قوس: تغيّر إشارة كل حد داخله."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$ ، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 3x^2 - 13x + 4$ إذن $a = 3$ .",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$E = (3x - 1)(x - 4)$",
+          "$= 3x^2 - 12x - x + 4$"
+        ],
+        "result": "E = 3x^2 - 13x + 4"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "-13",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العدد المطلوب في الشكل المبسّط، بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 3x^2 - 13x + 4$ إذن $b = -13$ .",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$E = 3x^2 - 13x + 4$"
+        ],
+        "result": "b = -13"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "العدد $c$ :",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $ax^2 + bx + c$ : اكتب العدد $c$ فقط",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العدد المطلوب في الشكل المبسّط، بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 3x^2 - 13x + 4$ إذن $c = 4$ .",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$E = 3x^2 - 13x + 4$"
+        ],
+        "result": "c = 4"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "lead": "حلّل العبارة $F$ إلى جداء عاملين.",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $F$ على الشكل $(3x - 1)(-x - m)$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01: $3x^2 - 13x + 4$ هي العبارة $E$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّضها بشكلها المحلّل، فيظهر عامل مشترك."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى الإشارة «−» أمام القوس الثاني داخل القوس الكبير."
+        }
+      ],
+      "feedback": {
+        "correct": "$F = (3x - 1)(-x - 7)$ إذن $m = 7$ .",
+        "incorrect": "أخرج العامل المشترك أو طبّق المتطابقة الشهيرة، ثم بسّط ما بقي بين القوسين بإشاراته."
+      },
+      "solution": {
+        "lines": [
+          "حسب السؤال 01: $3x^2 - 13x + 4 = (3x - 1)(x - 4)$",
+          "$F = (3x - 1)(x - 4) - (3x - 1)(2x + 3)$",
+          "$= (3x - 1)[(x - 4) - (2x + 3)]$",
+          "$= (3x - 1)(x - 4 - 2x - 3)$"
+        ],
+        "result": "F = (3x - 1)(-x - 7)"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "lead": "حل المعادلة: $(3x - 1)(-x - 7) = 0$ .",
+      "statement": "الحلّ الأصغر:",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "-7",
+      "misconceptionSignatures": [
+        {
+          "value": "-1/3",
+          "id": "MISC-JIDAA-ISHARA-JADHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يكون جداء عاملين معدومًا إذا كان أحد عامليه على الأقل معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلتين من الدرجة الأولى: كل عامل يساوي $0$ ، ثم حلّ كل واحدة منهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى الإشارة عند نقل العدد إلى الطرف الثاني، ثم رتّب الحلّين من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = -7$ .",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة من الدرجة الأولى بإشاراتها، ثم رتّب الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $(3x - 1)(-x - 7) = 0$",
+          "يعني أنّ: $3x - 1 = 0$ أو $-x - 7 = 0$",
+          "أي: $3x = 1$ أو $-x = 7$",
+          "ومنه: $x = \\dfrac{1}{3}$ أو $x = -7$",
+          "إذن للمعادلة حلّان هما $-7$ و $\\dfrac{1}{3}$"
+        ],
+        "result": "x = -7"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "الحلّ الأكبر:",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "1/3",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-JIDAA-ISHARA-JADHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة الثانية من الدرجة الأولى، ثم قارن الحلّين."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{1}{3}$ .",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة من الدرجة الأولى بإشاراتها، ثم رتّب الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "إذن للمعادلة حلّان هما $-7$ و $\\dfrac{1}{3}$"
+        ],
+        "result": "x = \\dfrac{1}{3}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

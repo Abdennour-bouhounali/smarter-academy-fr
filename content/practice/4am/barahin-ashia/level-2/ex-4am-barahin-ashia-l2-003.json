@@ -1,0 +1,80 @@
+{
+  "id": "ex-4am-barahin-ashia-l2-003",
+  "lessonCode": "barahin-ashia",
+  "level": 2,
+  "generator": {
+    "tool": "gen-barahin.mjs",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — المنتصف وشعاعان متعاكسان",
+    "estimatedMinutes": 3,
+    "tags": [
+      "منتصف",
+      "الشعاع المعدوم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_barahin-ashia_P1",
+      "modelledOn": "ex-23"
+    }
+  },
+  "statement": {
+    "content": "I منتصف القطعة [AB]."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "$\\overrightarrow{AI}$ + $\\overrightarrow{BI}$ يساوي:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{0}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{AB}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MUNTASAF-IB-IA"
+        },
+        {
+          "id": "C",
+          "content": "$2\\overrightarrow{AI}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MUNTASAF-IB-IA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "I منتصف [AB] : $\\overrightarrow{AI} = \\overrightarrow{IB}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن $\\overrightarrow{BI}$ بـ $\\overrightarrow{IB}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض $\\overrightarrow{AI}$ ثم اجمع شعاعين متعاكسين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AI} + \\overrightarrow{BI} = \\overrightarrow{IB} + \\overrightarrow{BI} = \\overrightarrow{0}$ .",
+        "incorrect": "$\\overrightarrow{AI} = \\overrightarrow{IB}$ و $\\overrightarrow{BI}$ يعاكسه: المجموع معدوم."
+      }
+    }
+  ]
+}

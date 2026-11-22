@@ -1,0 +1,132 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l1-007",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2016 — قواسم العدد 63",
+    "estimatedMinutes": 5,
+    "tags": [
+      "قواسم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qawasim-adad-tabii_P3",
+      "modelledOn": "BEM 2016 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب كل قواسم العدد 63.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        3,
+        7,
+        9,
+        21,
+        63
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            3,
+            7,
+            9,
+            21
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 63 بمربعات الأعداد: إلى أي عدد يكفي أن تختبر قابلية القسمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "63 فردي: لا يقبل القسمة على 2 ولا على 4. اختبر 3 و 5 و 7 بقواعد قابلية القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$63 = 1 \\times 63$ ، $63 = 3 \\times 21$ ، $63 = 7 \\times 9$.",
+        "incorrect": "اختبر الأعداد التي مربعها أصغر من العدد أو يساويه، وخذ من كل قسمة باقيها معدوم القاسمين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$7^2 = 49 \\leq 63 < 64 = 8^2$ ومنه نختبر قابلية قسمة 63 على الأعداد من 1 إلى 7.",
+          "نجد أن 63 يقبل القسمة على كل من الأعداد: 1 ، 3 ، 7.",
+          "ومن المساويات: $63 = 1 \\times 63$ ، $63 = 3 \\times 21$ ، $63 = 7 \\times 9$",
+          "إذن قواسم العدد 63 هي: 1 ، 3 ، 7 ، 9 ، 21 ، 63."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هو أكبر قاسم للعدد 63 يختلف عن 63؟",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "21",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل قائمة القواسم التي وجدتها في السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أكبر قاسم يختلف عن العدد نفسه هو شريك أصغر قاسم يختلف عن 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$63 = 3 \\times 21$: 3 أصغر قاسم يختلف عن 1، وشريكه 21.",
+        "incorrect": "رتّب قواسم 63 تصاعديا وخذ القاسم الذي يسبق 63 مباشرة."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 63 هي: 1 ، 3 ، 7 ، 9 ، 21 ، 63.",
+          "أكبرها يختلف عن 63 هو 21، لأن $63 = 3 \\times 21$."
+        ],
+        "result": "21"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

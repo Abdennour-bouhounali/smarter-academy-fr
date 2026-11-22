@@ -1,0 +1,194 @@
+{
+  "id": "ex-4am-tarrid-taalufi-l2-003",
+  "lessonCode": "tarrid-taalufi",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2007 — تسعيرتا وكالة لكراء السيارات بسعيدة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "تسعيرتان",
+      "متراجحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tarrid-taalufi_P2",
+      "modelledOn": "BEM 2007 II (01، 02)"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2007",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "تقترح وكالة لكراء السيارات بسعيدة، معروفة بصدق التعامل، على زبائنها التسعيرتين التاليتين:\n- التسعيرة الأولى: 70DA للكيلومتر الواحد.\n- التسعيرة الثانية: 45DA للكيلومتر الواحد مع مبلغ ثابت قدره 2000DA ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "احسب المبلغ الذي يدفعه زبون قطع 150km حسب كل تسعيرة.",
+      "statement": "التسعيرة الأولى:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "10500",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التسعيرة الأولى: ثمن الكيلومترات فقط."
+        }
+      ],
+      "feedback": {
+        "correct": "$70 \\times 150$ .",
+        "incorrect": "اضرب المسافة في ثمن الكيلومتر."
+      },
+      "solution": {
+        "lines": [
+          "$70 \\times 150 = 10500DA$"
+        ],
+        "result": "10500DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "التسعيرة الثانية:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "8750",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAALUFI-NISYAN-B",
+          "value": "6750"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثمن الكيلومترات ثم المبلغ الثابت."
+        }
+      ],
+      "feedback": {
+        "correct": "$45 \\times 150 + 2000$ .",
+        "incorrect": "لا تنس المبلغ الثابت."
+      },
+      "solution": {
+        "lines": [
+          "$45 \\times 150 + 2000 = 6750 + 2000 = 8750DA$"
+        ],
+        "result": "8750DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "حل المتراجحة: $70x > 45x + 2000$ .\nحدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x < k$ أو $x > k$ : اكتب العدد $k$ فقط",
+      "expectedAnswer": "80",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحدّ هو حل المعادلة المرفقة $70x = 45x + 2000$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "حدّ الحلول هو حل المعادلة المرفقة.",
+        "incorrect": "انقل حدود $x$ إلى طرف واحد ثم اقسم على معامل $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$70x > 45x + 2000$",
+          "$70x - 45x > 2000$",
+          "$25x > 2000$",
+          "$x > 80$",
+          "التسعيرة الأولى أغلى عندما تتجاوز المسافة 80km ."
+        ],
+        "result": "x > 80"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < 80$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QALB-ZAID"
+        },
+        {
+          "id": "B",
+          "content": "$x > 80$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قسمنا في آخر سطر على عدد موجب."
+        }
+      ],
+      "feedback": {
+        "correct": "التسعيرة الأولى أغلى عندما تتجاوز المسافة هذا الحدّ.",
+        "incorrect": "القسمة على عدد موجب لا تغيّر اتجاه المتباينة."
+      },
+      "solution": {
+        "lines": [
+          "$70x > 45x + 2000$",
+          "$70x - 45x > 2000$",
+          "$25x > 2000$",
+          "$x > 80$",
+          "التسعيرة الأولى أغلى عندما تتجاوز المسافة 80km ."
+        ],
+        "result": "x > 80"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

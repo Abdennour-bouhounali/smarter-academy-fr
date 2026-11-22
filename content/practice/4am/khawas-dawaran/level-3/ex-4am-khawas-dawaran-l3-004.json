@@ -1,0 +1,71 @@
+{
+  "id": "ex-4am-khawas-dawaran-l3-004",
+  "lessonCode": "khawas-dawaran",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — مثلثان متقايسا الأضلاع",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الزاوية بين مستقيمين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_khawas-dawaran_P2",
+      "modelledOn": "method-properties"
+    }
+  },
+  "generator": {
+    "tool": "u13-khawas-dawaran/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "OAB و OCD مثلثان متقايسا الأضلاع، والدوران الذي مركزه O وزاويته $60^\\circ$ في الاتجاه المباشر يحوّل A إلى B و C إلى D."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قيس الزاوية الحادة بين المستقيمين (AC) و (BD) بالدرجات؟",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "60",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-TASAWI-TAAMUD",
+          "value": "90"
+        },
+        {
+          "id": "MISC-DAWARAN-TAWAZI",
+          "value": "0"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "[BD] صورة [AC]."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المستقيم وصورته يصنعان زاوية الدوران."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ما زاوية هذا الدوران؟"
+        }
+      ],
+      "feedback": {
+        "correct": "(BD) صورة (AC) بدوران زاويته $60^\\circ$ : الزاوية بينهما $60^\\circ$ .",
+        "incorrect": "التعامد يحدث فقط بزاوية دوران قائمة."
+      }
+    }
+  ]
+}

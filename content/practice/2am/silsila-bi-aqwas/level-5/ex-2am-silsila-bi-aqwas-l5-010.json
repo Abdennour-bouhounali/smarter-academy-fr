@@ -1,0 +1,270 @@
+{
+  "id": "ex-2am-silsila-bi-aqwas-l5-010",
+  "lessonCode": "silsila-bi-aqwas",
+  "level": 5,
+  "metadata": {
+    "title": "رفوف المكتبة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "أقواس",
+      "وضعية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-3",
+      "page": 8,
+      "section": "أنشطة",
+      "number": 3
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يريد أمين المكتبة ترتيب 15 قاموسًا و 131 قصّة في رفوف المكتبة المدرسية، على أن يتضمّن كلّ رفّ 8 كتب على الأكثر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ سلسلة عمليات تسمح بحساب عدد الرفوف اللازمة لترتيب جميع الكتب؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(15 + 131) \\div 8$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$15 + 131 \\div 8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-IGNORED"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: أيّ مقدار يجب حسابه كلّه قبل غيره؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع بين قوسين المقدار الذي يُحسب أوّلًا، ثم اختبر كل سلسلة بالحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "$(15 + 131) \\div 8 = 18{,}25$ .",
+        "incorrect": "اكتب جمل القصة بعمليات بالترتيب نفسه، وضع بين قوسين ما يجب حسابه أوّلًا، ثم اختبر السلسلة بعدد تقريبي."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة الصحيحة: $(15 + 131) \\div 8$",
+          "$A = 146 \\div 8$",
+          "$A = 18{,}25$"
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما قيمة هذه السلسلة؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "18.25",
+      "misconceptionSignatures": [
+        {
+          "value": "31.375",
+          "id": "MISC-AQWAS-IGNORED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: كل جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل جملة بعملية، وضع بين قوسين ما يجب حسابه أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب بالترتيب الصحيح: القوسان أوّلًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$(15 + 131) \\div 8 = 18{,}25$ .",
+        "incorrect": "نترجم القصة بسلسلة عمليات فيها الأقواس اللازمة ثم نحسب: ما بين القوسين أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $(15 + 131) \\div 8$",
+          "$R = 146 \\div 8$",
+          "$R = 18{,}25$"
+        ],
+        "result": "18{,}25"
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كم رفًّا يلزم لترتيب جميع الكتب؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد الرفوف",
+      "expectedAnswer": "19",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أوّلًا قيمة السلسلة: هل هي عدد طبيعي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رفّ ناقص يبقى رفًّا: نأخذ أصغر عدد طبيعي لا يقلّ عن قيمة السلسلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن القيمة بالعددين الطبيعيين المتتاليين اللذين يحصرانها."
+        }
+      ],
+      "feedback": {
+        "correct": "$(15 + 131) \\div 8 = 18{,}25$ ، ومنه 19 رفًّا.",
+        "incorrect": "القيمة ليست عددًا طبيعيًّا: لا نستعمل رفًّا بجزء منه، فنأخذ العدد الطبيعي الأكبر الذي يليها."
+      },
+      "solution": {
+        "lines": [
+          "$(15 + 131) \\div 8 = 18{,}25$",
+          "$18 < 18{,}25 < 19$ ، إذن نحتاج إلى $19$ رفًّا."
+        ],
+        "result": "19"
+      },
+      "work": "optional",
+      "timeSeconds": 100
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "هل تكفي 18 رفًّا لترتيب جميع الكتب؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النتيجتين بدقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كل عبارة بالترتيب الصحيح قبل أن تحكم."
+        }
+      ],
+      "feedback": {
+        "correct": "تحقّقت من ذلك بالحساب.",
+        "incorrect": "احسب كل عبارة مرحلة مرحلة وقارن النتيجتين قبل أن تحكم."
+      },
+      "solution": {
+        "lines": [
+          "$(15 + 131) \\div 8 = 18{,}25$",
+          "$18 < 18{,}25$"
+        ]
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "كتب زميل $15 + 131 \\div 8$ لحساب عدد الرفوف. بيّن خطأه وصحّحه.",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب على ورقتك مرحلة مرحلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اسأل: أيّ عملية تُنجز أوّلًا ولماذا؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تذكر القاعدة المستعملة."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$15 + 131 \\div 8 = 31{,}375$ : لم تُراعَ الأقواس فحُسب ما لا يجب حسابه أوّلًا.",
+          "الصحيح: $(15 + 131) \\div 8 = 18{,}25$ لأنّ القوسين يُحسبان قبل القسمة أو الضرب."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

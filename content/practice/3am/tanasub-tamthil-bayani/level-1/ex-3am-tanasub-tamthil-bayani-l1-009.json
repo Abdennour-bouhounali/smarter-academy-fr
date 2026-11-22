@@ -1,0 +1,178 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l1-009",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — قراءة معامل التناسبية",
+    "estimatedMinutes": 4,
+    "tags": [
+      "معامل التناسبية",
+      "قراءة بيانية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تنقل شاحنة تابعة للبلدية أكياس الإسمنت لترميم ملعب الحيّ. يمثّل المستقيم $(D)$ في المعلم التالي كتلة الحمولة (بمئات الكيلوغرامات) بدلالة عدد الأكياس، وهو يشمل المبدأ $O$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          4,
+          6
+        ]
+      },
+      "lines": [
+        {
+          "through": [
+            "O",
+            "A"
+          ],
+          "name": "(D)",
+          "tone": "indigo",
+          "extend": [
+            0,
+            0.4
+          ]
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw",
+        "A": "se"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس: مستقيم (D) يشمل المبدأ O والنقطة A(4;6)",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: عدد الأكياس — محور التراتيب: الكتلة بمئات الكيلوغرامات"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب معامل التناسبية $a$ لهذه الوضعية انطلاقا من النقطة $A$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: معامل التناسبية",
+      "expectedAnswer": "1.5",
+      "misconceptionSignatures": [
+        {
+          "value": "2/3",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        },
+        {
+          "value": "2",
+          "id": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل التناسبية هو ترتيب النقطة الذي فاصلته $1$ ، أو ناتج قسمة الترتيب على الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ إحداثيي النقطة $A$ ثم اقسم الترتيب على الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تقسم الفاصلة على الترتيب ولا تطرح أحد العددين من الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{6}{4} = 1{,}5$ .",
+        "incorrect": "المعامل هو ناتج قسمة الترتيب على الفاصلة (وليس العكس) لنقطة من المستقيم."
+      },
+      "solution": {
+        "lines": [
+          "النقطة $A(4\\,;\\,6)$ من المستقيم.",
+          "$a = \\dfrac{6}{4} = 1{,}5$"
+        ],
+        "result": "a = 1{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أيّ مساواة تربط ترتيب $y$ بفاصلة $x$ لكل نقطة من $(D)$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x = 1{,}5\\,y$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-COEF-INVERSE"
+        },
+        {
+          "id": "B",
+          "content": "$y = 1{,}5\\,x$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$y = x + 2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في وضعية تناسبية، الترتيب هو الفاصلة مضروبة في معامل التناسبية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل المعامل الذي وجدته في السؤال الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "الترتيب هو $y = a\\,x$ مع $a = 1{,}5$ .",
+        "incorrect": "الترتيب يساوي الفاصلة مضروبة في المعامل، لا الفاصلة مضافا إليها عدد."
+      },
+      "solution": {
+        "lines": [
+          "$y = a \\times x$ ومعامل التناسبية $a = 1{,}5$ .",
+          "إذن $y = 1{,}5\\,x$ ."
+        ],
+        "result": "y = 1{,}5\\,x"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

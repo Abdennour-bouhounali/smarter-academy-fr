@@ -1,0 +1,177 @@
+{
+  "id": "ex-4am-natiqa-ghayr-natiqa-l5-002",
+  "lessonCode": "natiqa-ghayr-natiqa",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2020 — سياج حديقة المدرسة",
+    "estimatedMinutes": 20,
+    "tags": [
+      "وضعية",
+      "قيمة مقربة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_natiqa-ghayr-natiqa_P3",
+      "modelledOn": "BEM 2020 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2020",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "أمام مدرسة ابتدائية حديقة مربعة الشكل مساحتها $200m^2$ . قررت البلدية، حفاظًا على سلامة التلاميذ، إحاطتها بسياج مع ترك مدخل عرضه $1{,}5m$ دون سياج.\n• يُباع السياج بالمتر، ثمن المتر الواحد 850DA.\n• حتى لا ينقص السياج، يعتمد المسؤول في الحساب على القيمة المقربة إلى $10^{-1}$ بالزيادة لطول ضلع الحديقة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل طول ضلع الحديقة عدد ناطق؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-KULL-JIDHR"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر جوابك، ثم قارن تبريرك بالحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول ضلع الحديقة هو الجذر التربيعي للعدد 200."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل 200 مربع لعدد ناطق؟ قارنه بمربعات الأعداد الطبيعية."
+        }
+      ],
+      "feedback": {
+        "correct": "$14^2 < 200 < 15^2$ : 200 ليس مربعًا لعدد ناطق، فجذره ليس عددًا ناطقًا.",
+        "incorrect": "قارن 200 بالمربعين التامين المتتاليين اللذين يحصرانه."
+      },
+      "solution": {
+        "lines": [
+          "طول ضلع الحديقة يساوي $\\sqrt{200}$ .",
+          "$14^2 = 196 < 200 < 225 = 15^2$ : العدد 200 ليس مربعًا لعدد ناطق.",
+          "إذن طول ضلع الحديقة ليس عددًا ناطقًا: نكتفي له بقيم مقرّبة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط القيمة المقربة إلى $10^{-1}$ بالزيادة لطول ضلع الحديقة.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري برقم واحد بعد الفاصلة (بـ m)",
+      "expectedAnswer": "14.2",
+      "misconceptionSignatures": [
+        {
+          "value": "14.1",
+          "id": "MISC-TAQRIB-NAQS-ZIYADA"
+        },
+        {
+          "value": "100",
+          "id": "MISC-JIDHR-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احصر $\\sqrt{200}$ بين عددين عشريين متتاليين لهما رقم واحد بعد الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمة بالزيادة هي الأكبر من عددي الحصر."
+        }
+      ],
+      "feedback": {
+        "correct": "$14{,}1^2 = 198{,}81 < 200 < 201{,}64 = 14{,}2^2$ .",
+        "incorrect": "القيمة بالزيادة هي العدد الأكبر من $\\sqrt{200}$ في الحصر."
+      },
+      "solution": {
+        "lines": [
+          "$14{,}1^2 = 198{,}81$ و $14{,}2^2 = 201{,}64$",
+          "$198{,}81 < 200 < 201{,}64$ إذن $14{,}1 < \\sqrt{200} < 14{,}2$"
+        ],
+        "result": "\\sqrt{200} < 14{,}2"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "☜ ما المبلغ الذي تدفعه البلدية ثمنًا للسياج حسب الشروط المذكورة؟",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (DA)",
+      "expectedAnswer": "47005",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المحيط باستعمال القيمة المقربة التي وجدتها في السؤال 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تنسَ طرح عرض المدخل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب طول السياج في ثمن المتر الواحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 14{,}2 - 1{,}5 = 55{,}3$ m ، و $55{,}3 \\times 850 = 47005$ DA.",
+        "incorrect": "طول السياج = المحيط (بالقيمة بالزيادة) ناقص عرض المدخل، ثم اضرب في ثمن المتر."
+      },
+      "solution": {
+        "lines": [
+          "طول السياج: $4 \\times 14{,}2 - 1{,}5 = 56{,}8 - 1{,}5 = 55{,}3$ أي $55{,}3m$",
+          "المبلغ: $55{,}3 \\times 850 = 47005$"
+        ],
+        "result": "47005 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

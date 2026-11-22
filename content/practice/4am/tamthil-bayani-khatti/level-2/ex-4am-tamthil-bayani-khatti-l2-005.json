@@ -1,0 +1,130 @@
+{
+  "id": "ex-4am-tamthil-bayani-khatti-l2-005",
+  "lessonCode": "tamthil-bayani-khatti",
+  "level": 2,
+  "metadata": {
+    "title": "دالة خطية من نقطة ومنحى تمثيلها",
+    "estimatedMinutes": 5,
+    "tags": [
+      "معامل",
+      "منحى المستقيم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tamthil-bayani-khatti_P1",
+      "modelledOn": "qcm",
+      "adaptedFrom": "ex-4am-tamthil-bayani-khatti-l2-005"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "$(D)$ التمثيل البياني لدالة خطية $f$ في معلم متعامد ومتجانس، وهو يشمل النقطة $A(4 ; 10)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن الدالة الخطية $f$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "2,5",
+      "misconceptionSignatures": [
+        {
+          "value": "0,4",
+          "id": "MISC-KHATTIYA-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$f$ دالة خطية: $f(x) = ax$ ، وتمثيلها يشمل النقطة ذات الإحداثيين $(4 ; 10)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب المعادلة $a \\times 4 = 10$ ثم حلّها: الترتيب على الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{10}{4} = 2{,}5$ ، إذن $f(x) = 2{,}5x$ .",
+        "incorrect": "المعامل هو الترتيب مقسوما على الفاصلة (وليس العكس)، مع الانتباه إلى الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "$f$ دالة خطية، إذن $f(x) = ax$ .",
+          "$f(4) = 10$ معناه $a \\times 4 = 10$",
+          "$a = \\dfrac{10}{4} = 2{,}5$"
+        ],
+        "result": "f(x) = 2{,}5x"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل المستقيم $(D)$ يصعد أم ينزل من اليسار إلى اليمين؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "يصعد من اليسار إلى اليمين",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "ينزل من اليسار إلى اليمين",
+          "isCorrect": false,
+          "misconceptionId": "MISC-BAYANI-MUNHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارة معامل الدالة الخطية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان المعامل موجبا فالمستقيم يصعد، وإذا كان سالبا فهو ينزل."
+        }
+      ],
+      "feedback": {
+        "correct": "المعامل $2{,}5$ موجب: المستقيم يصعد.",
+        "incorrect": "منحى المستقيم تعيّنه إشارة المعامل: موجب ← يصعد، سالب ← ينزل."
+      },
+      "solution": {
+        "lines": [
+          "معامل الدالة الخطية هو $2{,}5$ ، وهو عدد موجب.",
+          "إذن المستقيم $(D)$ يصعد من اليسار إلى اليمين."
+        ],
+        "result": "يصعد"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l2-005",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — شفرات عنفة رياح في أدرار",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الزاوية المركزية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mudalaat-muntazama_P2",
+      "modelledOn": "know-5"
+    }
+  },
+  "statement": {
+    "content": "عنفة رياح في حقل كابرتان بأدرار لها ثلاث شفرات متقايسة موزّعة بانتظام حول محورها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "قيس الزاوية بين شفرتين متتاليتين (بالدرجات):",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح (بالدرجات)",
+      "expectedAnswer": "120",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUNTAZAM-180",
+          "value": "60"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ أضلاع المضلع: كل ضلع تحصره زاوية مركزية واحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الزوايا المركزية متقايسة وتملأ دورة كاملة حول المركز."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم قيس الدورة الكاملة على عدد الأضلاع."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{360^\\circ}{3} = 120^\\circ$ : أطراف الشفرات رؤوس مثلث متقايس الأضلاع.",
+        "incorrect": "ثلاث زوايا متقايسة تملأ الدورة."
+      },
+      "difficulty": 2
+    }
+  ]
+}

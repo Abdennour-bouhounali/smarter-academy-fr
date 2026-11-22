@@ -1,0 +1,258 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-amaliyat-tabiiya-ushriya-l1-003",
+  "lessonCode": "wadiya-idmajiya-amaliyat-tabiiya-ushriya",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — جمع وقسمة وضرب، أقواس وخط كسر، تحليل جداء",
+    "estimatedMinutes": 6,
+    "tags": [
+      "أولوية",
+      "أقواس",
+      "تحليل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "سلاسل عمليات على أعداد طبيعية وعشرية: أجب عن الأسئلة الأربعة، ولا تنسَ أنّ كلّ سلسلة تُحسب بالترتيب الصحيح للعمليات."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب قيمة السلسلة $7 + 24 \\div 4 \\times 3$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "25",
+      "misconceptionSignatures": [
+        {
+          "value": "23.25",
+          "id": "MISC-SILSILA-NOPRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين وخطّ الكسر يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$7 + 24 \\div 4 \\times 3 = 25$ .",
+        "incorrect": "الضرب والقسمة يُنجزان قبل الجمع والطرح حتى لو ظهر الجمع أو الطرح أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "$A = 7 + 24 \\div 4 \\times 3$",
+          "$A = 7 + 6 \\times 3$",
+          "$A = 7 + 18$",
+          "$A = 25$"
+        ],
+        "result": "25"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب قيمة السلسلة $[60 - (7 + 3) \\times 4] \\div 5$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "55.4",
+          "id": "MISC-AQWAS-IGNORED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين وخطّ الكسر يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$[60 - (7 + 3) \\times 4] \\div 5 = 4$ .",
+        "incorrect": "القوسان ليسا زينة: ما بينهما يُحسب أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "$A = [60 - (7 + 3) \\times 4] \\div 5$",
+          "$A = [60 - 10 \\times 4] \\div 5$",
+          "$A = [60 - 40] \\div 5$",
+          "$A = 20 \\div 5$",
+          "$A = 4$"
+        ],
+        "result": "4"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما اسم السلسلة $\\dfrac{9 \\times 4 - 6}{5}$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "choices": [
+        {
+          "id": "A",
+          "content": "جداء",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-FIRSTOP"
+        },
+        {
+          "id": "B",
+          "content": "حاصل قسمة",
+          "isCorrect": true
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب مرحلة مرحلة وتتبّع آخر عملية بقيت لك."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع خطًّا تحت العملية التي تُنجز في الأخير."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العملية الأخيرة هي التي تسمّي السلسلة."
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة عبارة عن حاصل قسمة: آخر عملية تُنجز فيها هي القسمة.",
+        "incorrect": "لا تسمِّ السلسلة بأوّل عملية تُنجز ولا بأوّل رمز تراه: سمِّها بآخر عملية تُنجز فيها."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{9 \\times 4 - 6}{5}$",
+          "$A = \\dfrac{36 - 6}{5}$",
+          "$A = \\dfrac{30}{5}$",
+          "$A = 6$",
+          "آخر عملية تُنجز هي القسمة ، فالسلسلة عبارة عن حاصل قسمة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "أيّ سلسلة تساوي $8 \\times 13 - 8 \\times 7$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$8 \\times (13 - 7)$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$8 \\times (13 - 8)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-FACTORWRONG"
+        },
+        {
+          "id": "C",
+          "content": "$8 \\times 13 \\times 7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-FACTORMULT"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المطلوب جيّدًا: ما العملية التي تُنجز في الأخير، وما الذي يُحسب قبلها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ سلسلة مقترحة بالحساب أو بالقاعدة المناسبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الجواب هو السلسلة التي تترجم المطلوب وتعطي القيمة المنتظرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$8 \\times (13 - 7) = 48$ .",
+        "incorrect": "اختبر كلّ سلسلة بالحساب: الصحيحة هي التي تترجم المطلوب وتعطي القيمة المنتظرة، وانتبه إلى القوسين."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة الصحيحة: $8 \\times (13 - 7)$",
+          "$A = 8 \\times (13 - 7)$",
+          "$A = 8 \\times 6$",
+          "$A = 48$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

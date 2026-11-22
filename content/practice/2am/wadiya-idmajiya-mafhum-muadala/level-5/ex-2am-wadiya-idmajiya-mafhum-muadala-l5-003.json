@@ -1,0 +1,307 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-mafhum-muadala-l5-003",
+  "lessonCode": "wadiya-idmajiya-mafhum-muadala",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — شاحنة على جسر",
+    "estimatedMinutes": 15,
+    "tags": [
+      "متباينة",
+      "معادلة بعمليّتين",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تزن شاحنة فارغة $2800\\,\\mathrm{kg}$ وتحمل أكياس رمل كتلة الكيس منها $25\\,\\mathrm{kg}$ . عدد الأكياس $x$ . كتلتها الكلّية $2800+25x$ . يسمح جسر بمرور كتلة لا تتجاوز $5000\\,\\mathrm{kg}$ . الجزء الأوّل : الكتلة الكلّيّة . الجزء الثاني : هل تعبر الشاحنة ؟"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اختر عبارة الكتلة الكلّيّة للشاحنة بالكيلوغرام .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2825x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SYN-MUAD2-ADDCOEF"
+        },
+        {
+          "id": "B",
+          "content": "$25+2800x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SYN-MUAD2-ROLE"
+        },
+        {
+          "id": "C",
+          "content": "$2800+25x$",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "$2800+25x$ .",
+        "incorrect": "اكتب الجزء الثابت مرّة واحدة والجزء المتكرّر مضروبًا في عدده، ثمّ اختبر عبارتك على عدد صغير."
+      },
+      "solution": {
+        "lines": [
+          "كتلة الشاحنة الفارغة ثابتة : $2800$ .",
+          "والأكياس : $25x$ .",
+          "$2800+25x$ ."
+        ]
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في الوضعيّة ما يتغيّر (وهو الحرف) وما يبقى ثابتًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب ما يُدفع أو يُحسب مرّة واحدة، ثمّ ما يتكرّر مضروبًا في عدد مرّاته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر العبارة على عدد صغير مثل اثنين قبل أن تختار."
+        }
+      ],
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب الكتلة الكلّيّة من أجل $x = 80$ كيسًا بالكيلوغرام .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "4800",
+      "misconceptionSignatures": [
+        {
+          "value": "2000",
+          "id": "MISC-SYN-MUAD2-FIXED"
+        },
+        {
+          "value": "226000",
+          "id": "MISC-SYN-MUAD2-ADDCOEF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بقيمته المعلومة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات : الضرب والقسمة قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة."
+        }
+      ],
+      "feedback": {
+        "correct": "النتيجة $4800$ .",
+        "incorrect": "عوّض بالقيم المعلومة واحسب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$2800+25 \\times 80 = 4800$ ."
+        ],
+        "result": "4800"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل تعبر الشاحنة بـ $80$ كيسًا ، أي هل $2800+25x \\le 5000$ من أجل $x = 80$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "feedback": {
+        "correct": "نعم .",
+        "incorrect": "عوّض الحرف في الطرفين، احسب كلّ طرف ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل : $2800+25 \\times 80 = 4800$ .",
+          "الطرف الثاني : $5000 = 5000$ .",
+          "$4800 \\le 5000$ : العلاقة صحيحة ."
+        ]
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بقيمته المعطاة في الطرفين معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة ثمّ قارن الناتجين بالرمز المكتوب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الرمز « أصغر أو يساوي » يقبل التساوي، والرمز « أصغر تمامًا » لا يقبله."
+        }
+      ],
+      "timeSeconds": 70
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "الجزء الثاني : كم قيمة من القيم $84$ ، $88$ ، $90$ ، $96$ لعدد الأكياس تسمح بالعبور ، أي $2800+25x \\le 5000$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-IKHTIBAR-STRICT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ قيمة من القيم المعطاة على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الطرفين من أجل كلّ قيمة ثمّ قارن بالرمز المكتوب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عُدّ القيم التي تجعل المتباينة صحيحة فقط، وانتبه إلى حالة تساوي الطرفين."
+        }
+      ],
+      "feedback": {
+        "correct": "$2$ .",
+        "incorrect": "اختبر كلّ قيمة على حدة وانتبه إلى حالة تساوي الطرفين."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $x = 84$ : $2800+25 \\times 84 = 4900$ و $5000 = 5000$ ، فالعلاقة صحيحة .",
+          "من أجل $x = 88$ : $2800+25 \\times 88 = 5000$ و $5000 = 5000$ ، فالعلاقة صحيحة .",
+          "من أجل $x = 90$ : $2800+25 \\times 90 = 5050$ و $5000 = 5000$ ، فالعلاقة خاطئة .",
+          "من أجل $x = 96$ : $2800+25 \\times 96 = 5200$ و $5000 = 5000$ ، فالعلاقة خاطئة .",
+          "عدد القيم : $2$ ."
+        ],
+        "result": "2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "ما العدد الذي تبلغ عنده الكتلة $5000\\,\\mathrm{kg}$ تمامًا ؟ حلّ المعادلة : $25x+2800 = 5000$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "88",
+      "misconceptionSignatures": [
+        {
+          "value": "200",
+          "id": "MISC-SYN-MUAD2-FIXED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في المعادلة ما يُفعل بالمجهول : ضرب أو قسمة أو جمع أو طرح، وما هي آخر عملية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ألغِ آخر عملية أُجريت على المجهول أوّلًا، ثمّ ألغِ ما بقي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من حلّك : عوّض المجهول بقيمته وأنجز العملية، فإن وجدت الطرف الآخر فالحلّ صحيح."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 88$ .",
+        "incorrect": "ابحث عن العدد الذي يجعل المساواة صحيحة بالعملية العكسية، ثمّ تحقّق منه بإنجاز العملية."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية هي جمع $2800$ : $25x = 5000-2800 = 2200$ .",
+          "$x = 2200 \\div 25 = 88$ .",
+          "التحقّق : $25 \\times 88+2800 = 5000$ ."
+        ],
+        "result": "88"
+      },
+      "work": "optional",
+      "timeSeconds": 85
+    }
+  ]
+}

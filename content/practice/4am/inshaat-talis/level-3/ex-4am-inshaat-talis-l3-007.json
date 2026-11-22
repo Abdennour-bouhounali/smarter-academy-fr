@@ -1,0 +1,254 @@
+{
+  "id": "ex-4am-inshaat-talis-l3-007",
+  "lessonCode": "inshaat-talis",
+  "level": 3,
+  "metadata": {
+    "title": "اقرأ الإنشاء: خمس قطع متقايسة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "قراءة إنشاء",
+      "الجزء والكل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_inshaat-talis_P1",
+      "modelledOn": "method-divide",
+      "adaptedFrom": "ex-4am-inshaat-talis-l3-007"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل: $[AB]$ قطعة مستقيم طولها $6{,}5\\,\\mathrm{cm}$ ، وعلى نصف مستقيم مبدؤه $A$ خمس قطع متقايسة تنتهي عند العلامة $P_5$ . الموازي للمستقيم $(P_5B)$ المارّ بالعلامة الثانية $P_2$ يقطع $[AB]$ في $M$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0.0,
+          0.0
+        ],
+        "B": [
+          6.5,
+          0.0
+        ],
+        "P₁": [
+          0.6,
+          0.8
+        ],
+        "P₂": [
+          1.2,
+          1.6
+        ],
+        "P₃": [
+          1.8,
+          2.4
+        ],
+        "P₄": [
+          2.4,
+          3.2
+        ],
+        "P₅": [
+          3.0,
+          4.0
+        ],
+        "M": [
+          2.6,
+          0.0
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "bold": true
+        },
+        {
+          "from": "A",
+          "to": "P₁",
+          "ticks": 1
+        },
+        {
+          "from": "P₁",
+          "to": "P₂",
+          "ticks": 1
+        },
+        {
+          "from": "P₂",
+          "to": "P₃",
+          "ticks": 1
+        },
+        {
+          "from": "P₃",
+          "to": "P₄",
+          "ticks": 1
+        },
+        {
+          "from": "P₄",
+          "to": "P₅",
+          "ticks": 1
+        },
+        {
+          "from": "P₅",
+          "to": "B",
+          "arrows": 1,
+          "tone": "indigo"
+        },
+        {
+          "from": "P₂",
+          "to": "M",
+          "arrows": 1,
+          "tone": "emerald"
+        }
+      ],
+      "rays": [
+        {
+          "from": "A",
+          "through": "P₅",
+          "name": "x",
+          "extend": 0.18
+        }
+      ],
+      "hidden": [
+        "P₁",
+        "P₃",
+        "P₄"
+      ],
+      "labels": {
+        "A": "sw",
+        "B": "se",
+        "M": "s",
+        "P₂": "nw",
+        "P₅": "nw"
+      },
+      "ariaLabel": "قطعة [AB] ونصف مستقيم [Ax) عليه خمس قطع متقايسة ابتداءً من A تنتهي عند P5، والمستقيم (P5B) والموازي له المارّ بالعلامة الثانية P2 يقطع [AB] في M",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب النسبة $\\dfrac{AM}{AB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "0,4",
+      "misconceptionSignatures": [
+        {
+          "value": "2/3",
+          "id": "MISC-TALIS-NISBA-JUZ-KULL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(P_2M) \\parallel (P_5B)$ : طبّق خاصية طالس."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AM}{AB} = \\dfrac{AP_2}{AP_5} = \\dfrac{2}{5}$ .",
+        "incorrect": "النسبة تساوي $\\dfrac{AP_2}{AP_5}$ : عدّ القطع المتقايسة."
+      },
+      "solution": {
+        "lines": [
+          "$(P_2M) \\parallel (P_5B)$ ، حسب خاصية طالس في المثلثين $AP_2M$ و $AP_5B$ : $\\dfrac{AM}{AB} = \\dfrac{AP_2}{AP_5}$"
+        ],
+        "result": "\\dfrac{AM}{AB} = \\dfrac{2}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب النسبة $\\dfrac{MA}{MB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "2/3",
+      "misconceptionSignatures": [
+        {
+          "value": "0,4",
+          "id": "MISC-TALIS-NISBA-JUZ-KULL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AB$ خمسة أجزاء و $AM$ جزآن منها: كم جزءا في $MB$ ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$MA = 2u$ و $MB = 3u$ : $\\dfrac{MA}{MB} = \\dfrac{2}{3}$ .",
+        "incorrect": "$\\dfrac{MA}{MB}$ نسبة جزأين، لا نسبة الجزء إلى الكل."
+      },
+      "solution": {
+        "lines": [
+          "$AM = \\dfrac{2}{5}AB$ ومنه $MB = \\dfrac{3}{5}AB$",
+          "$\\dfrac{MA}{MB} = \\dfrac{2}{3}$"
+        ],
+        "result": "\\dfrac{MA}{MB} = \\dfrac{2}{3}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب الطول $MB$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "3,9",
+      "misconceptionSignatures": [
+        {
+          "value": "2,6",
+          "id": "MISC-TALIS-JIHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$MB = \\dfrac{3}{5}AB$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$MB = \\dfrac{3}{5} \\times 6{,}5 = 3{,}9\\,\\mathrm{cm}$ .",
+        "incorrect": "$[MB]$ ثلاثة أجزاء من خمسة."
+      },
+      "solution": {
+        "lines": [
+          "$MB = \\dfrac{3}{5}AB = \\dfrac{3 \\times 6{,}5}{5}$"
+        ],
+        "result": "MB = 3{,}9\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

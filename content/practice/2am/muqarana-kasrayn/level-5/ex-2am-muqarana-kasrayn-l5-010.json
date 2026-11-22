@@ -1,0 +1,285 @@
+{
+  "id": "ex-2am-muqarana-kasrayn-l5-010",
+  "lessonCode": "muqarana-kasrayn",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — قماش الخيّاط",
+    "estimatedMinutes": 12,
+    "tags": [
+      "مقارنة كسور",
+      "الباقي",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يملك خيّاط قطعة قماش طولها $60\\ \\mathrm{m}$ : استعمل $\\dfrac{1}{2}$ منها لخياطة قمصان ، و $\\dfrac{1}{6}$ لخياطة سراويل ، وصنع بالباقي أوشحة ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما الكسر الذي يمثّل القماش الذي صُنعت به الأوشحة ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "1/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط ؟ وما الكسور المعطاة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد قبل الجمع أو الطرح ثمّ اختزل ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{3}$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{2} = \\dfrac{3}{6}$ .",
+          "$1 - \\dfrac{3}{6} - \\dfrac{1}{6} = \\dfrac{2}{6} = \\dfrac{1}{3}$ ."
+        ],
+        "result": "\\dfrac{1}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 90,
+      "counted": false
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أيّ المنتجات استعمل أكبر جزء من القماش ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "القمصان",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "السراويل",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-BIGDEN"
+        },
+        {
+          "id": "C",
+          "content": "الأوشحة",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكسر الخاصّ بكلّ حالة ؟ وهل مقاماتها متساوية أو يقسم بعضها بعضًا ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور كلّها بالمقام نفسه إن اختلفت المقامات ثمّ قارن بين البسوط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحكم من البسط وحده ولا من المقام وحده ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب : القمصان .",
+        "incorrect": "وحّد المقامات قبل أن تحكم ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "البسوط متساوية : الأكبر هو صاحب أصغر مقام والأصغر هو صاحب أكبر مقام .",
+          "الجواب : القمصان ($\\dfrac{1}{2}$) ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "رتّب الكسور التالية تصاعديًّا : $\\dfrac{1}{2}$ ؛ $\\dfrac{1}{6}$ ؛ $\\dfrac{1}{3}$ .",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{1}{6} < \\dfrac{1}{2} < \\dfrac{1}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{1}{6} < \\dfrac{1}{3} < \\dfrac{1}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{1}{3} < \\dfrac{1}{6} < \\dfrac{1}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{1}{2} < \\dfrac{1}{3} < \\dfrac{1}{6}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-REVERSED"
+        }
+      ],
+      "answerFormat": "اختر الترتيب الصحيح",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما مقامات هذه الكسور ؟ هل يقسم أحدها الآخر ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن بين الكسور حسب البسوط أو حسب المقامات كما تقتضي الحالة ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى جهة الترتيب المطلوبة : الأصغر أوّلًا في الترتيب التصاعدي والأكبر أوّلًا في التنازلي ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{6} < \\dfrac{1}{3} < \\dfrac{1}{2}$ .",
+        "incorrect": "وحّد المقامات ثمّ رتّب البسوط في الجهة المطلوبة وأعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "البسوط متساوية : الأكبر هو الكسر الذي مقامه أصغر .",
+          "الترتيب تصاعديًّا : $\\dfrac{1}{6} < \\dfrac{1}{3} < \\dfrac{1}{2}$ ."
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "كم مترًا استُعملت للسراويل ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "10",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط ؟ وما الكسور المعطاة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد قبل الجمع أو الطرح ثمّ اختزل ."
+        }
+      ],
+      "feedback": {
+        "correct": "$10$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$60 \\div 6 = 10$ ، أي $10\\ \\mathrm{m}$ ."
+        ],
+        "result": "10"
+      },
+      "work": "optional",
+      "timeSeconds": 90,
+      "counted": false
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "كم مترًا استُعملت للأوشحة ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "20",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط ؟ وما الكسور المعطاة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد قبل الجمع أو الطرح ثمّ اختزل ."
+        }
+      ],
+      "feedback": {
+        "correct": "$20$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$60 \\div 3 = 20$ ، أي $20\\ \\mathrm{m}$ ."
+        ],
+        "result": "20"
+      },
+      "work": "optional",
+      "timeSeconds": 90,
+      "counted": false
+    }
+  ]
+}

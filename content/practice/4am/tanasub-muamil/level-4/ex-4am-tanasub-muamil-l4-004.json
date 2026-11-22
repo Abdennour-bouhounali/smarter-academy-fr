@@ -1,0 +1,449 @@
+{
+  "id": "ex-4am-tanasub-muamil-l4-004",
+  "lessonCode": "tanasub-muamil",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2007 — نقل البضائع بالبليدة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "تسعيرتان",
+      "جدول",
+      "متراجحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tanasub-muamil_P2",
+      "modelledOn": "BEM 2007 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2007",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "تقترح شركة لنقل البضائع بالبليدة، تلتزم بالمواعيد، التسعيرتين التاليتين:\n– التسعيرة الأولى: 45DA للكيلومتر الواحد.\n– التسعيرة الثانية: 35DA للكيلومتر الواحد مع اشتراك شهري قدره 2000DA .",
+    "table": {
+      "head": [
+        "المسافة (km)",
+        "100",
+        "…"
+      ],
+      "rows": [
+        [
+          "التسعيرة الأولى (DA)",
+          "…",
+          "…"
+        ],
+        [
+          "التسعيرة الثانية (DA)",
+          "…",
+          "7600"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "انقل الجدول وأكمله.",
+      "statement": "التسعيرة الأولى من أجل $100km$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "4500",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب المسافة في ثمن الكيلومتر."
+        }
+      ],
+      "feedback": {
+        "correct": "$45 \\times 100 = 4500$ .",
+        "incorrect": "المبلغ = 45 × المسافة."
+      },
+      "solution": {
+        "lines": [
+          "$45 \\times 100 = 4500$"
+        ],
+        "result": "4500DA"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ا",
+      "statement": "التسعيرة الثانية من أجل $100km$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "5500",
+      "misconceptionSignatures": [
+        {
+          "value": "3500",
+          "id": "MISC-TANASUB-MABLAGH-THABIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الصيغة جيدا: ما الذي يُدفع عن كل وحدة، وما الذي يُدفع مرة واحدة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المبلغ = العدد × ثمن الوحدة + المبلغ الثابت."
+        }
+      ],
+      "feedback": {
+        "correct": "$35 \\times 100 + 2000 = 5500$ .",
+        "incorrect": "لا تنس المبلغ الثابت: المبلغ = العدد × ثمن الوحدة + المبلغ الثابت."
+      },
+      "solution": {
+        "lines": [
+          "$35 \\times 100 + 2000 = 5500$"
+        ],
+        "result": "5500DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ب",
+      "statement": "المسافة التي تكون من أجلها التسعيرة الثانية 7600DA :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المسافة بـ km",
+      "expectedAnswer": "160",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح الاشتراك من المبلغ أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اقسم على ثمن الكيلومتر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{7600 - 2000}{35} = 160$ .",
+        "incorrect": "$35x + 2000 = 7600$ : اطرح 2000 ثم اقسم على 35 ."
+      },
+      "solution": {
+        "lines": [
+          "$35x + 2000 = 7600$",
+          "$35x = 5600$",
+          "$x = \\dfrac{5600}{35} = 160$"
+        ],
+        "result": "160km"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "ب",
+      "statement": "التسعيرة الأولى من أجل هذه المسافة:",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "7200",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب المسافة في 45 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$45 \\times 160 = 7200$ .",
+        "incorrect": "المبلغ = 45 × المسافة."
+      },
+      "solution": {
+        "lines": [
+          "$45 \\times 160 = 7200$"
+        ],
+        "result": "7200DA"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ا",
+      "lead": "ليكن $x$ عدد الكيلومترات المقطوعة، $y_1$ المبلغ حسب التسعيرة الأولى و $y_2$ المبلغ حسب التسعيرة الثانية.",
+      "statement": "عبّر عن $y_1$ بدلالة $x$ على الشكل $y_1 = a \\times x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "45",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في وضعية تناسبية: المقدار الثاني = معامل التناسبية × المقدار الأول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $a$ هو حاصل قسمة المقدار الثاني على المقدار الأول المقابل له."
+        }
+      ],
+      "feedback": {
+        "correct": "$y_1 = 45 \\times x$ .",
+        "incorrect": "المبلغ = ثمن الكيلومتر × عدد الكيلومترات."
+      },
+      "solution": {
+        "lines": [
+          "$y_1 = 45 \\times x$"
+        ],
+        "result": "y_1 = 45x"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ب",
+      "statement": "بيّن أن $y_2 = 35x + 2000$ ، ثم برّر أن $y_2$ غير متناسب مع $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ = ثمن الكيلومتر × المسافة + الاشتراك."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن حاصلي القسمة $\\dfrac{y_2}{x}$ في عمودي الجدول."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "$y_2 = 35 \\times x + 2000$ أي $y_2 = 35x + 2000$ .",
+          "$\\dfrac{5500}{100} = 55$ و $\\dfrac{7600}{160} = 47{,}5$ ،",
+          "حاصلا القسمة مختلفان، إذن $y_2$ غير متناسب مع $x$ (بسبب الاشتراك الشهري)."
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "lead": "حل المتراجحة: $45x > 35x + 2000$ .",
+      "statement": "حدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x > k$ أو $x < k$ : اكتب العدد $k$ فقط",
+      "expectedAnswer": "200",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إضافة عدد إلى الطرفين أو طرحه منهما لا تغيّر اتجاه المتباينة."
+        }
+      ],
+      "feedback": {
+        "correct": "حدّ الحلول هو $k = 200$ .",
+        "incorrect": "أعد الحل سطرًا سطرًا: العملية نفسها على الطرفين، ثم القسمة على معامل $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$45x - 35x > 2000$",
+          "$10x > 2000$",
+          "$x > \\dfrac{2000}{10}$",
+          "حدّ الحلول هو 200 ."
+        ],
+        "result": "k = 200"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q8",
+      "step": "03",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < 200$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QALB-ZAID"
+        },
+        {
+          "id": "B",
+          "content": "$x \\leqslant 200$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        },
+        {
+          "id": "C",
+          "content": "$x > 200$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$x \\geqslant 200$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قسمنا الطرفين على عدد موجب."
+        }
+      ],
+      "feedback": {
+        "correct": "$x > 200$ .",
+        "incorrect": "القسمة على عدد موجب تحافظ على اتجاه المتباينة ونوعها."
+      },
+      "solution": {
+        "lines": [
+          "$10x > 2000$",
+          "$x > 200$ (قسمنا على 10 وهو موجب، فبقي الاتجاه)."
+        ],
+        "result": "x > 200"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q9",
+      "step": "04",
+      "statement": "استعمل النتيجة السابقة لتحديد التسعيرة الأفضل لمسافة شهرية قدرها $250km$ . برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "التسعيرة الأولى",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QALB-ZAID"
+        },
+        {
+          "id": "B",
+          "content": "التسعيرة الثانية",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا تعني المتراجحة $45x > 35x + 2000$ بالنسبة إلى التسعيرتين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل 250 من حلولها؟"
+        }
+      ],
+      "feedback": {
+        "correct": "التسعيرة الثانية: 10750DA بدل 11250DA .",
+        "incorrect": "حلول المتراجحة هي المسافات التي تكون فيها التسعيرة الأولى أغلى."
+      },
+      "solution": {
+        "lines": [
+          "$250 > 200$ ، إذن 250 حل للمتراجحة: التسعيرة الأولى أغلى من الثانية.",
+          "التحقق: $45 \\times 250 = 11250$ و $35 \\times 250 + 2000 = 10750$ .",
+          "إذن التسعيرة الثانية أفضل."
+        ],
+        "result": "التسعيرة الثانية"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

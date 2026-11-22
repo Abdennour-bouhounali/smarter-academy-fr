@@ -1,0 +1,241 @@
+{
+  "id": "ex-3am-quwat-adad-nisbi-l2-003",
+  "lessonCode": "quwat-adad-nisbi",
+  "level": 2,
+  "metadata": {
+    "title": "دون إجراء العمليات",
+    "estimatedMinutes": 6,
+    "tags": [
+      "قوة قوة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-42",
+      "page": 48,
+      "section": "أوظّف تعلّماتي",
+      "number": 42
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "دون إجراء العمليات، نريد كتابة قوى أساساتها مختلفة على شكل قوة لأساس أصغر.",
+    "formulas": [
+      "25^{3} = 5^{6}",
+      "8^{4} = 2^{12}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما القاعدة التي تبرّر المساواة $25^{3} = 5^{6}$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(a^m)^n = a^{m \\times n}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$a^m \\times a^n = a^{m+n}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QUWA-POWER-ADD-EXP"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{a^m}{a^n} = a^{m-n}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QUWA-QUOTIENT-EXP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب 25 على شكل قوة للعدد 5."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحصل على قوة مرفوعة إلى قوة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ماذا نفعل بالأسين في هذه الحالة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$25^3 = (5^2)^3 = 5^{2 \\times 3}$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$25 = 5^{2}$",
+          "$25^{3} = (5^{2})^{3} = 5^{2 \\times 3} = 5^{6}$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب $27^{5}$ على الشكل $3^n$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-QUWA-POWER-ADD-EXP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب كل عدد على شكل قوة للأساس نفسه (مثلًا العدد 8 قوة للعدد 2)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تنسَ أن $a = a^1$ ، ثم طبّق قواعد الحساب على القوى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أس البسط ثم أس المقام، ثم اطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$27^5 = (3^3)^5 = 3^{15}$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$27 = 3^{3}$",
+          "$27^{5} = (3^{3})^{5} = 3^{3 \\times 5} = 3^{15}$"
+        ],
+        "result": "n = 15"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اكتب $16^{3}$ على الشكل $4^n$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-QUWA-POWER-ADD-EXP"
+        },
+        {
+          "value": "12",
+          "id": "MISC-QUWA-POWER-AS-PRODUCT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب كل عدد على شكل قوة للأساس نفسه (مثلًا العدد 8 قوة للعدد 2)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تنسَ أن $a = a^1$ ، ثم طبّق قواعد الحساب على القوى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أس البسط ثم أس المقام، ثم اطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$16^3 = (4^2)^3 = 4^6$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$16 = 4^{2}$",
+          "$16^{3} = (4^{2})^{3} = 4^{2 \\times 3} = 4^{6}$"
+        ],
+        "result": "n = 6"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "اشرح لماذا $8^{4} = 2^{12}$ دون حساب.",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب كل عدد على شكل قوة للأساس نفسه (مثلًا العدد 8 قوة للعدد 2)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تنسَ أن $a = a^1$ ، ثم طبّق قواعد الحساب على القوى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أس البسط ثم أس المقام، ثم اطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$8 = 2^{3}$",
+          "$8^{4} = (2^{3})^{4} = 2^{3 \\times 4} = 2^{12}$"
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

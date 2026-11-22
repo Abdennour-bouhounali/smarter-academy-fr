@@ -1,0 +1,179 @@
+{
+  "id": "ex-4am-amaliyat-judhur-l3-008",
+  "lessonCode": "amaliyat-judhur",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2018 — التمرين الأول",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جداء جذرين",
+      "الكتابة a√b"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_amaliyat-judhur_P1",
+      "modelledOn": "BEM 2018 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2018",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$A$ و $B$ عددان حيث:",
+    "formulas": [
+      "A = 4\\sqrt{5} \\times \\sqrt{20}",
+      "B = 3\\sqrt{20} - \\sqrt{45} + \\sqrt{5}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن $A$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $A$ (عدد طبيعي)",
+      "expectedAnswer": "40",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-MUAMIL-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $\\sqrt{5} \\times \\sqrt{20}$ تحت جذر واحد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل $5 \\times 20$ مربع تام؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ المعامل 4."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 4\\sqrt{100} = 4 \\times 10 = 40$ : عدد طبيعي.",
+        "incorrect": "اكتب $A = 4\\sqrt{5 \\times 20}$ ثم احسب الجذر واضرب في 4."
+      },
+      "solution": {
+        "lines": [
+          "$A = 4\\sqrt{5} \\times \\sqrt{20}$",
+          "$= 4\\sqrt{5 \\times 20}$",
+          "$= 4\\sqrt{100}$",
+          "$= 4 \\times 10$"
+        ],
+        "result": "A = 40"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب العدد $B$ على الشكل $a\\sqrt{5}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-MUAMIL-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $20 = 4 \\times 5$ و $45 = 9 \\times 5$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرج المربعات التامة من تحت الجذر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود التي فيها $\\sqrt{5}$ مع إشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 6\\sqrt{5} - 3\\sqrt{5} + \\sqrt{5} = 4\\sqrt{5}$",
+        "incorrect": "اكتب كل جذر على الشكل $k\\sqrt{5}$ ، ولا تنسَ أن $\\sqrt{5} = 1 \\times \\sqrt{5}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$B = 3\\sqrt{4} \\times \\sqrt{5} - \\sqrt{9} \\times \\sqrt{5} + \\sqrt{5}$",
+          "$= 3 \\times 2\\sqrt{5} - 3\\sqrt{5} + \\sqrt{5}$"
+        ],
+        "result": "B = 4\\sqrt{5}"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "بيّن أن: $\\dfrac{A}{B} = 2\\sqrt{5}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $A$ و $B$ بالقيمتين اللتين وجدتهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب البسط والمقام في $\\sqrt{5}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك سطرًا بسطر بالحل النموذجي، وانتبه إلى الخاصية المستعملة في كل مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{A}{B} = \\dfrac{40}{4\\sqrt{5}} = \\dfrac{10}{\\sqrt{5}}$",
+          "$= \\dfrac{10\\sqrt{5}}{\\sqrt{5} \\times \\sqrt{5}}$",
+          "$= \\dfrac{10\\sqrt{5}}{5}$"
+        ],
+        "result": "\\dfrac{A}{B} = 2\\sqrt{5}"
+      },
+      "timeSeconds": 210
+    }
+  ]
+}

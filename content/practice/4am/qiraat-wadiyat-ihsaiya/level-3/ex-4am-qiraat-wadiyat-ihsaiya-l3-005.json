@@ -1,0 +1,213 @@
+{
+  "id": "ex-4am-qiraat-wadiyat-ihsaiya-l3-005",
+  "lessonCode": "qiraat-wadiyat-ihsaiya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2018 — مدة المطالعة الأسبوعية بالبيض",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مخطط نصف دائري",
+      "التواتر",
+      "قراءة مخطط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qiraat-wadiyat-ihsaiya_P1",
+      "modelledOn": "BEM 2018 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2018",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "سألت مستشارة التوجيه بمتوسطة في البيض 240 تلميذا عن المدة $t$ (بالساعات) التي يقضيها كل واحد منهم في المطالعة كل أسبوع، فمثّلت النتائج بالمخطط نصف الدائري الآتي (أقياس الزوايا مكتوبة على القطاعات):",
+    "figure": {
+      "kind": "chart",
+      "type": "pie",
+      "half": true,
+      "show": "angle",
+      "ariaLabel": "مخطط نصف دائري لمدة المطالعة الأسبوعية بأربع فئات، الزوايا مكتوبة على القطاعات",
+      "parts": [
+        {
+          "label": "$0 \\le t < 1$",
+          "value": 80
+        },
+        {
+          "label": "$1 \\le t < 2$",
+          "value": 100
+        },
+        {
+          "label": "$2 \\le t < 3$",
+          "value": 40
+        },
+        {
+          "label": "$t \\ge 3$",
+          "value": 20
+        }
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب عدد التلاميذ:",
+      "statement": "الذين يطالعون أقل من ساعة في الأسبوع.",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "80",
+      "misconceptionSignatures": [
+        {
+          "value": "60",
+          "id": "MISC-IHSA-QIRAA-MUKHATTAT"
+        },
+        {
+          "value": "40",
+          "id": "MISC-IHSA-ZAWIYA-QITA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نصف الدائرة كلها (180°) يمثّل كل التلاميذ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد تلاميذ فئة = (زاوية قطاعها ÷ 180) × العدد الكلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{60}{180} \\times 240 = 80$ .",
+        "incorrect": "زاوية القطاع ليست عدد التلاميذ، والمخطط نصف دائري: الكلّ يوافق 180° لا 360°."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{60}{180} \\times 240 = 80$"
+        ],
+        "result": "80"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "الذين يطالعون 3 ساعات أو أكثر في الأسبوع.",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-IHSA-QIRAA-MUKHATTAT"
+        },
+        {
+          "value": "10",
+          "id": "MISC-IHSA-ZAWIYA-QITA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ زاوية القطاع $t \\ge 3$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكلّ يوافق 180° ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{15}{180} \\times 240 = 20$ .",
+        "incorrect": "استعمل التناسب: الزاوية من 180° كالعدد من العدد الكلي."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{15}{180} \\times 240 = 20$"
+        ],
+        "result": "20"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب تواتر التلاميذ الذين يطالعون ساعتين على الأقل في الأسبوع.",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b أو عدد عشري",
+      "expectedAnswer": "0,25",
+      "misconceptionSignatures": [
+        {
+          "value": "60",
+          "id": "MISC-IHSA-TAWATUR-BILA-QISMA"
+        },
+        {
+          "value": "1/12",
+          "id": "MISC-IHSA-SARAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«ساعتين على الأقل» تجمع فئتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب عدد تلاميذ الفئتين ثم اقسم على العدد الكلي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يمكنك أيضا جمع الزاويتين وقسمة المجموع على 180 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{30 + 15}{180} = 0{,}25$ .",
+        "incorrect": "اجمع الفئتين $2 \\le t < 3$ و $t \\ge 3$ ، ثم اقسم على الكلّ."
+      },
+      "solution": {
+        "lines": [
+          "عدد تلاميذ الفئة $2 \\le t < 3$ : $\\dfrac{30}{180} \\times 240 = 40$",
+          "$\\dfrac{40 + 20}{240} = 0{,}25$"
+        ],
+        "result": "0{,}25"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

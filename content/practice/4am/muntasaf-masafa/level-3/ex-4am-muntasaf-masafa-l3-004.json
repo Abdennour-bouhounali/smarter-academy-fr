@@ -1,0 +1,70 @@
+{
+  "id": "ex-4am-muntasaf-masafa-l3-004",
+  "lessonCode": "muntasaf-masafa",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — طرف قطعة علم منتصفها",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المنتصف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_muntasaf-masafa_P1",
+      "modelledOn": "know-mid"
+    }
+  },
+  "statement": {
+    "content": "I منتصف القطعة [AB] حيث $I(2\\,;\\,-1)$ و $A(-1\\,;\\,3)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا B:",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح أو كسر مثل 1/2)",
+      "expectedAnswer": {
+        "x": "5",
+        "y": "-5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MUNTASAF-NISF",
+          "value": {
+            "x": "1/2",
+            "y": "1"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطة المعلومة في الوسط هي المنتصف، والمجهولة طرف من الطرفين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب قانون المنتصف لكل إحداثية واجعل إحداثية الطرف المجهول مجهولا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة: اضرب طرفيها في 2 ثم اطرح الإحداثية المعلومة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{-1 + x_B}{2} = 2$ إذن $x_B = 5$ ، و $\\dfrac{3 + y_B}{2} = -1$ إذن $y_B = -5$ .",
+        "incorrect": "B ليست المنتصف: I هي المنتصف و B الطرف الآخر."
+      }
+    }
+  ]
+}

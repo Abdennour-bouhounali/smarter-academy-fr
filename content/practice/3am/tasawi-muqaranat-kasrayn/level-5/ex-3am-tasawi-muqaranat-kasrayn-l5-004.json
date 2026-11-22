@@ -1,0 +1,249 @@
+{
+  "id": "ex-3am-tasawi-muqaranat-kasrayn-l5-004",
+  "lessonCode": "tasawi-muqaranat-kasrayn",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — من الأقرب إلى النصف؟",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "ترتيب كسور",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: أجاب ثلاثة تلاميذ عن اختبار، فأصاب أمين $\\dfrac{4}{7}$ من أسئلته، وأصابت ياسمين $\\dfrac{5}{9}$ منها، وأصاب إلياس $\\dfrac{6}{11}$ منها.\nالجزء الثاني: يريد الأستاذ معرفة من هو الأقرب إلى نصف الأسئلة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "الجزء الأول.",
+      "statement": "رتّب الكسور $\\dfrac{4}{7} ، \\dfrac{5}{9} ، \\dfrac{6}{11}$ ترتيبًا تصاعديًا .",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{4}{7} < \\dfrac{5}{9} < \\dfrac{6}{11}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-NUMERATORS"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{6}{11} < \\dfrac{5}{9} < \\dfrac{4}{7}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكسور المطلوب ترتيبها؟ وما الترتيب المطلوب: تصاعدي أم تنازلي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور كلّها بمقام مشترك ثمّ قارن البسوط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بمقارنة كلّ كسرين متجاورين في ترتيبك."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{6}{11} < \\dfrac{5}{9} < \\dfrac{4}{7}$ .",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "المقام المشترك $693$ : $\\dfrac{4}{7} = \\dfrac{396}{693} ، \\dfrac{5}{9} = \\dfrac{385}{693} ، \\dfrac{6}{11} = \\dfrac{378}{693}$ .",
+          "الترتيب التصاعدي : $\\dfrac{6}{11} < \\dfrac{5}{9} < \\dfrac{4}{7}$ ."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "ما أصغر الكسور الثلاثة؟",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "6/11",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كل سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{6}{11}$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "بالمقام $693$ : $396 ، 385 ، 378$ ، والأصغر $\\dfrac{6}{11}$ ."
+        ],
+        "result": "\\dfrac{6}{11}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "جد العدد $x$ حيث $\\dfrac{6}{11} = \\dfrac{x}{66}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "36",
+      "misconceptionSignatures": [
+        {
+          "value": "61",
+          "id": "MISC-TASAWI-ADDSAME"
+        },
+        {
+          "value": "121",
+          "id": "MISC-TASAWI-CROSSWRONG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في أيّ موضع يوجد العدد المجهول؟ وما الكسر الآخر في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كسران متساويان جداءاهما المتصالبان متساويان: اكتب المعادلة المناسبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة كتابة المساواة بعد التعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 36$ لأنّ $6 \\times 66 = 11 \\times x$ .",
+        "incorrect": "كسران متساويان جداءاهما المتصالبان متساويان: اكتب المعادلة بدقّة وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{6}{11} = \\dfrac{x}{66}$ ، إذن $6 \\times 66 = 11 \\times x$ .",
+          "$x = 36$ ."
+        ],
+        "result": "x = 36"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "lead": "الجزء الثاني.",
+      "statement": "من هو التلميذ الذي نتيجته الأقرب إلى $\\dfrac{1}{2}$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "ياسمين",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "أمين",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "إلياس",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الخيارات واحسب كلاّ منها بدل أن تخمّن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ خيار على الأعداد الواردة فيه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بالجداءين المتصالبين أو بمقام مشترك، ثمّ قرّر."
+        }
+      ],
+      "feedback": {
+        "correct": "الفرق إلى النصف عند إلياس هو الأصغر.",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{6}{11} - \\dfrac{1}{2} = \\dfrac{1}{22}$ و $\\dfrac{5}{9} - \\dfrac{1}{2} = \\dfrac{1}{18}$ و $\\dfrac{4}{7} - \\dfrac{1}{2} = \\dfrac{1}{14}$ .",
+          "$\\dfrac{1}{22} < \\dfrac{1}{18} < \\dfrac{1}{14}$ ، فالأقرب هو إلياس."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

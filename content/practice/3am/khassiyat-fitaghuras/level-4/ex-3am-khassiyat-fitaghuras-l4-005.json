@@ -1,0 +1,296 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l4-005",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — غطاء صينية الضيوف",
+    "estimatedMinutes": 10,
+    "tags": [
+      "خاصية فيثاغورس",
+      "الدائرة المحيطة بالمثلث القائم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "تحضّر الأمّ صينية حلويات مستطيلة $ABCD$ لإكرام الضيوف، حيث $AB = 9{,}6\\,\\mathrm{dm}$ و $BC = 2{,}8\\,\\mathrm{dm}$ ، وتريد تغطيتها بغطاء دائري يشمل رؤوسها الأربعة.",
+    "figure": {
+      "points": {
+        "A": [
+          -4.8,
+          -1.4
+        ],
+        "B": [
+          4.8,
+          -1.4
+        ],
+        "C": [
+          4.8,
+          1.4
+        ],
+        "D": [
+          -4.8,
+          1.4
+        ],
+        "O": [
+          0,
+          0
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "9,6 dm"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "2,8 dm"
+        },
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "A"
+        ],
+        {
+          "from": "A",
+          "to": "C",
+          "dashed": true
+        }
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "B",
+          "C"
+        ]
+      ],
+      "labels": {
+        "O": "n"
+      },
+      "circles": [
+        {
+          "center": "O",
+          "through": "A"
+        }
+      ],
+      "ariaLabel": "صينية مستطيلة ABCD حيث AB = 9,6 dm و BC = 2,8 dm، ودائرة مركزها O تشمل رؤوسها الأربعة",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب طول القطر $AC$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ dm",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "12.4",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "100",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولا مربع الطول، ثم خذ جذره التربيعي بالآلة الحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC^2 = 9{,}6^2 + 2{,}8^2 = 100$ ، إذن $AC = 10\\,\\mathrm{dm}$ .",
+        "incorrect": "ابدأ بتحديد الوتر، ثم اكتب مساواة فيثاغورس، وتذكّر أن ما تحسبه أولا هو مربع الطول لا الطول نفسه."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $B$ ، حسب خاصية فيثاغورس: $AC^2 = AB^2 + BC^2$",
+          "$AC^2 = 9{,}6^2 + 2{,}8^2$",
+          "$AC^2 = 92{,}16 + 7{,}84 = 100$",
+          "$AC = \\sqrt{100} = 10\\,\\mathrm{dm}$"
+        ],
+        "result": "AC = 10\\,\\mathrm{dm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "برّر أن مركز الدائرة المحيطة بالمثلث $ABC$ هو منتصف $[AC]$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما نوع المثلث $ABC$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أين يقع مركز الدائرة المحيطة بمثلث قائم؟"
+        }
+      ],
+      "feedback": {
+        "correct": "مركز الدائرة المحيطة بمثلث قائم هو منتصف وتره.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $B$ لأن زوايا المستطيل قائمة.",
+          "مركز الدائرة المحيطة بمثلث قائم هو منتصف وتره، والوتر هنا $[AC]$ ."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "استنتج نصف قطر هذه الدائرة.",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: نصف القطر بـ dm",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-MAALAM-DAIRA-QUTR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$[AC]$ قطر للدائرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نصف القطر نصف القطر الكامل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{10}{2} = 5\\,\\mathrm{dm}$ .",
+        "incorrect": "$[AC]$ قطر الدائرة كلّه، ونصف القطر نصفه."
+      },
+      "solution": {
+        "lines": [
+          "نصف القطر $= \\dfrac{AC}{2} = \\dfrac{10}{2} = 5\\,\\mathrm{dm}$"
+        ],
+        "result": "r = 5\\,\\mathrm{dm}"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "عند الأمّ غطاء دائري قطره $9{,}9\\,\\mathrm{dm}$ . هل يغطّي الصينية كلّها بما فيها أركانها؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأن $9{,}9 > 9{,}6$ ، أطول ضلع للصينية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "id": "B",
+          "content": "لا، لأن قطر الصينية $10\\,\\mathrm{dm}$ أكبر من $9{,}9\\,\\mathrm{dm}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نعم، لأن $9{,}9$ قريب من $10$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-LOOKS-RIGHT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أبعد نقطتين في الصينية هما ركنان متقابلان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن قطر الغطاء بطول قطر الصينية."
+        }
+      ],
+      "feedback": {
+        "correct": "الغطاء أصغر من قطر الصينية بـ $0{,}1\\,\\mathrm{dm}$ .",
+        "incorrect": "أطول مسافة في المستطيل هي قطره، لا أطول أضلاعه."
+      },
+      "solution": {
+        "lines": [
+          "لكي يغطّي الغطاء الأركان الأربعة يجب أن يكون قطره على الأقل طول قطر الصينية $AC = 10\\,\\mathrm{dm}$ .",
+          "$9{,}9 < 10$ : الغطاء لا يغطّي الركنين المتقابلين $A$ و $C$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

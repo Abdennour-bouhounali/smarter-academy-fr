@@ -1,0 +1,220 @@
+{
+  "id": "ex-4am-qiraat-wadiyat-ihsaiya-l3-008",
+  "lessonCode": "qiraat-wadiyat-ihsaiya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2021 — تذاكر المسبح البلدي ببسكرة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "قراءة مخطط بالأعمدة",
+      "المتوسط",
+      "الوسيط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qiraat-wadiyat-ihsaiya_P1",
+      "modelledOn": "BEM 2021 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يمثّل المخطط بالأعمدة الآتي عدد التذاكر التي باعها المسبح البلدي ببسكرة في كل يوم من أيام أسبوع في شهر جوان:",
+    "figure": {
+      "kind": "chart",
+      "type": "bar",
+      "ariaLabel": "مخطط بالأعمدة لعدد التذاكر المبيعة في كل يوم من أيام الأسبوع",
+      "xTitle": "اليوم",
+      "yTitle": "عدد التذاكر",
+      "y": {
+        "max": 500,
+        "step": 100,
+        "minor": 4
+      },
+      "bars": [
+        {
+          "label": "السبت",
+          "value": 175
+        },
+        {
+          "label": "الأحد",
+          "value": 250
+        },
+        {
+          "label": "الإثنين",
+          "value": 325
+        },
+        {
+          "label": "الثلاثاء",
+          "value": 150
+        },
+        {
+          "label": "الأربعاء",
+          "value": 400
+        },
+        {
+          "label": "الخميس",
+          "value": 475
+        },
+        {
+          "label": "الجمعة",
+          "value": 325
+        }
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن عدد التذاكر المبيعة يوم الخميس.",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "475",
+      "misconceptionSignatures": [
+        {
+          "value": "450",
+          "id": "MISC-IHSA-QIRAA-MUKHATTAT"
+        },
+        {
+          "value": "500",
+          "id": "MISC-IHSA-QIRAA-MUKHATTAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الأعداد مكتوبة على المحور العمودي كل 100 ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بين عددين مكتوبين متتاليين ثلاثة خطوط رفيعة: كم تمثّل كل تدريجة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "عمود الخميس يصل إلى 475 .",
+        "incorrect": "بين 100 و 200 أربع مسافات متساوية: كل تدريجة 25 تذكرة. أعد القراءة."
+      },
+      "solution": {
+        "lines": [
+          "بين عددين مكتوبين متتاليين أربع مسافات متساوية، فكل تدريجة تمثّل 25 تذكرة.",
+          "رأس عمود الخميس عند التدريجة 475 ."
+        ],
+        "result": "475"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب متوسط عدد التذاكر المبيعة في اليوم.",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "300",
+      "misconceptionSignatures": [
+        {
+          "value": "325",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الأعمدة السبعة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم مجموعها على 7 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2100}{7} = 300$ .",
+        "incorrect": "اقرأ ارتفاع كل عمود بدقّة (التدريجة 25)، ثم اقسم مجموعها على عدد الأيام."
+      },
+      "solution": {
+        "lines": [
+          "$175 + 250 + 325 + 150 + 400 + 475 + 325 = 2100$",
+          "$\\dfrac{2100}{7} = 300$"
+        ],
+        "result": "300"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "عيّن وسيط هذه السلسلة.",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "325",
+      "misconceptionSignatures": [
+        {
+          "value": "150",
+          "id": "MISC-IHSA-WASIT-BILA-TARTIB"
+        },
+        {
+          "value": "300",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رتّب القيم السبع ترتيبا تصاعديا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد القيم فردي: الوسيط هو القيمة ذات الرتبة 4 ."
+        }
+      ],
+      "feedback": {
+        "correct": "بعد الترتيب القيمة ذات الرتبة 4 هي 325 .",
+        "incorrect": "لا تأخذ العمود الأوسط في المخطط: رتّب القيم أولا."
+      },
+      "solution": {
+        "lines": [
+          "الترتيب: 150 ، 175 ، 250 ، 325 ، 325 ، 400 ، 475",
+          "$Med = 325$"
+        ],
+        "result": "Med = 325"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

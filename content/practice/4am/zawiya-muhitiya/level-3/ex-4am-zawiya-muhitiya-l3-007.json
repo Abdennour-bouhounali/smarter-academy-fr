@@ -1,0 +1,109 @@
+{
+  "id": "ex-4am-zawiya-muhitiya-l3-007",
+  "lessonCode": "zawiya-muhitiya",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — مثلث في نصف دائرة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "حالة القطر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_zawiya-muhitiya_P2",
+      "modelledOn": "ex-20"
+    }
+  },
+  "statement": {
+    "content": "[AB] قطر لدائرة مركزها O، و C نقطة منها حيث $\\widehat{BAC} = 32^\\circ$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قيس $\\widehat{ABC}$ بالدرجة؟",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "58",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالزوايا التي تعطيها خاصيتا الزاوية المحيطية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم استعمل مجموع أقياس زوايا المثلث، أو الزاوية المستقيمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل زاوية بدلالة القوس الذي تحصره قبل أن تحسب."
+        }
+      ],
+      "feedback": {
+        "correct": "المثلث ABC قائم في C: $\\widehat{ABC} = 90^\\circ - 32^\\circ = 58^\\circ$ .",
+        "incorrect": "[AB] قطر: الزاوية في C قائمة."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-JUZ",
+          "value": "148"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "statement": "ما قيس $\\widehat{BOC}$ بالدرجة؟",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "64",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوس الذي تحصره كل زاوية: هل هو نفس القوس؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الزاويتين: أيهما أكبر، المركزية أم المحيطية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قيس الزاوية المحيطية نصف قيس الزاوية المركزية التي تحصر معها نفس القوس."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{BOC} = 2\\widehat{BAC} = 64^\\circ$ .",
+        "incorrect": "BAC و BOC تحصران القوس BC."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-DIF",
+          "value": "16"
+        },
+        {
+          "id": "MISC-MUHITIYA-MUSAWIYA",
+          "value": "32"
+        }
+      ]
+    }
+  ]
+}

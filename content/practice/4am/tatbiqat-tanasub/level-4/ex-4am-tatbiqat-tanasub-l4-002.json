@@ -1,0 +1,122 @@
+{
+  "id": "ex-4am-tatbiqat-tanasub-l4-002",
+  "lessonCode": "tatbiqat-tanasub",
+  "level": 4,
+  "metadata": {
+    "title": "دوري الآن — سعر السيارة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "تغيّرات متتابعة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "now-71",
+      "page": 71,
+      "section": "دوري الآن",
+      "adaptedFrom": "ex-4am-tatbiqat-tanasub-l4-002"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "كان سعر سيارة $1\\,800\\,000DA$ . ارتفع سعرها بنسبة 3%، ثم انخفض بنسبة 2%، ثم انخفض مرة أخرى بنسبة 1%."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما هو العدد الذي يجب ضرب $1\\,800\\,000$ فيه لإيجاد السعر الجديد؟",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط (عشري بالفاصلة، دون تدوير)",
+      "expectedAnswer": "0,999306",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-NISBA-TATABU-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب مضاعف كل تغيّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التغيّرات المتتابعة تُترجم بجداء مضاعفاتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}03 \\times 0{,}98 \\times 0{,}99 = 0{,}999306$ .",
+        "incorrect": "لا تجمع النسب ( $3 - 2 - 1 = 0$ ): اضرب المضاعفات الثلاثة."
+      },
+      "solution": {
+        "lines": [
+          "المضاعفات: $1{,}03$ ؛ $0{,}98$ ؛ $0{,}99$",
+          "$1{,}03 \\times 0{,}98 = 1{,}0094$",
+          "$1{,}0094 \\times 0{,}99 = 0{,}999306$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب السعر الجديد للسيارة.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد عشري بالفاصلة)",
+      "expectedAnswer": "1798750,8",
+      "misconceptionSignatures": [
+        {
+          "value": "1800000",
+          "id": "MISC-NISBA-TATABU-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب السعر الأول في العدد السابق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق أن النتيجة قريبة من السعر الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\,800\\,000 \\times 0{,}999306 = 1\\,798\\,750{,}8DA$ .",
+        "incorrect": "اضرب السعر الأول في المضاعف الكلي."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,800\\,000 \\times 0{,}999306 = 1\\,798\\,750{,}8$",
+          "السعر الجديد $1\\,798\\,750{,}8DA$ (انخفض قليلا)."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,293 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l3-010",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — قراءة قيم مجهولة والمربع يمثّل وحدتين",
+    "estimatedMinutes": 9,
+    "tags": [
+      "تمثيل بياني",
+      "تدريج"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يساعد تلميذ والده في مزرعة العائلة بأمانة وإتقان، فيسجّل كتلة الخضر المحصودة بدلالة عدد الصناديق. يمثّل المستقيم $(D)$ في المعلم التالي هذه الوضعية، وكل مربّع من الشبكة يمثّل وحدتين على كل محور.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          4,
+          6
+        ],
+        "B": [
+          8,
+          12
+        ]
+      },
+      "lines": [
+        {
+          "through": [
+            "O",
+            "B"
+          ],
+          "name": "(D)",
+          "tone": "indigo",
+          "extend": [
+            0,
+            0.25
+          ]
+        }
+      ],
+      "grid": {
+        "step": 2
+      },
+      "axes": {
+        "every": 2
+      },
+      "labels": {
+        "O": "sw",
+        "A": "se",
+        "B": "se"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس كل مربع فيه يمثل وحدتين: المستقيم (D) يشمل المبدأ O والنقطتين A(4;6) و B(8;12)",
+      "maxWidth": 340,
+      "caption": "كل مربّع من الشبكة يمثّل وحدتين على كل محور"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "بقراءة المعلم:",
+      "statement": "ما فاصلة النقطة $A$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد: فاصلة النقطة",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-TAMTHIL-SWAP-XY"
+        },
+        {
+          "value": "2",
+          "id": "MISC-TAMTHIL-SCALE-READ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفاصلة هي العدد الأوّل في زوج الإحداثيين، وتُقرأ على المحور الأفقي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انزل من النقطة عموديا إلى المحور الأفقي واقرأ العدد الذي تقع عليه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قبل أن تقرأ، احسب كم وحدة يمثّل المربع الواحد من الشبكة."
+        }
+      ],
+      "feedback": {
+        "correct": "فاصلة $A$ هي $4$.",
+        "incorrect": "الفاصلة تُقرأ على المحور الأفقي لا العمودي، ويجب أن تحترم قيمة المربع."
+      },
+      "solution": {
+        "lines": [
+          "ننزل من $A$ عموديا إلى محور الفواصل فنقرأ $4$ ."
+        ],
+        "result": "4"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما ترتيب النقطة $A$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد: ترتيب النقطة",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-TAMTHIL-SWAP-XY"
+        },
+        {
+          "value": "3",
+          "id": "MISC-TAMTHIL-SCALE-READ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الترتيب هو العدد الثاني في زوج الإحداثيين، وتُقرأ على المحور العمودي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اذهب من النقطة أفقيا إلى المحور العمودي واقرأ العدد الذي تقع عليه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قبل أن تقرأ، احسب كم وحدة يمثّل المربع الواحد من الشبكة."
+        }
+      ],
+      "feedback": {
+        "correct": "ترتيب $A$ هي $6$.",
+        "incorrect": "الترتيب يُقرأ على المحور العمودي لا الأفقي، ويجب أن تحترم قيمة المربع."
+      },
+      "solution": {
+        "lines": [
+          "نمشي من $A$ أفقيا إلى محور التراتيب فنقرأ $6$ ."
+        ],
+        "result": "6"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما معامل التناسبية $a$ لهذه الوضعية؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: معامل التناسبية",
+      "expectedAnswer": "1.5",
+      "misconceptionSignatures": [
+        {
+          "value": "2/3",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        },
+        {
+          "value": "2",
+          "id": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل التناسبية هو ترتيب النقطة الذي فاصلته $1$ ، أو ناتج قسمة الترتيب على الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ إحداثيي النقطة $A$ ثم اقسم الترتيب على الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تقسم الفاصلة على الترتيب ولا تطرح أحد العددين من الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{6}{4} = 1{,}5$ .",
+        "incorrect": "المعامل هو ناتج قسمة الترتيب على الفاصلة (وليس العكس) لنقطة من المستقيم."
+      },
+      "solution": {
+        "lines": [
+          "النقطة $A(4\\,;\\,6)$ من المستقيم.",
+          "$a = \\dfrac{6}{4} = 1{,}5$"
+        ],
+        "result": "a = 1{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "بقراءة بيانية، ما كتلة الخضر (بالكيلوغرام) في $10$ صناديق؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الكتلة بالكيلوغرام",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-TAMTHIL-SCALE-READ"
+        },
+        {
+          "value": "12",
+          "id": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ من العدد $10$ على المحور الأفقي، وانتبه إلى قيمة المربع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اصعد إلى المستقيم $(D)$ ثم اقرأ الترتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "عند الفاصلة $10$ الترتيب $15$ ، وهو $1{,}5 \\times 10$ .",
+        "incorrect": "اقرأ العدد المكتوب على المحور العمودي لا عدد المربعات."
+      },
+      "solution": {
+        "lines": [
+          "النقطة من $(D)$ التي فاصلتها $10$ ترتيبها $15$ .",
+          "تحقّق: $1{,}5 \\times 10 = 15$ kg."
+        ],
+        "result": "15\\ \\text{kg}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

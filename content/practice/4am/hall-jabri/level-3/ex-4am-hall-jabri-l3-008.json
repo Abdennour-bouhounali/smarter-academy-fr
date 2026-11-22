@@ -1,0 +1,346 @@
+{
+  "id": "ex-4am-hall-jabri-l3-008",
+  "lessonCode": "hall-jabri",
+  "level": 3,
+  "metadata": {
+    "title": "BEM 2024 — التمرين الرابع",
+    "estimatedMinutes": 12,
+    "tags": [
+      "جملة",
+      "التعويض",
+      "خاصية طالس"
+    ],
+    "source": {
+      "type": "bem",
+      "year": 2024,
+      "part": 1,
+      "exercise": 4
+    },
+    "exam": {
+      "kind": "official",
+      "badge": "BEM 2024",
+      "heading": "التمرين الرابع",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -5.134,
+          1.675
+        ],
+        "B": [
+          3.422,
+          -1.117
+        ],
+        "C": [
+          -5.751,
+          -3.239
+        ],
+        "D": [
+          3.834,
+          2.159
+        ]
+      },
+      "lines": [
+        {
+          "through": [
+            "A",
+            "B"
+          ],
+          "extend": [
+            0.1,
+            0.18
+          ]
+        },
+        {
+          "through": [
+            "C",
+            "D"
+          ],
+          "extend": [
+            0.08,
+            0.2
+          ]
+        },
+        {
+          "through": [
+            "A",
+            "C"
+          ],
+          "extend": [
+            0.3,
+            0.3
+          ]
+        },
+        {
+          "through": [
+            "B",
+            "D"
+          ],
+          "extend": [
+            0.45,
+            0.45
+          ]
+        }
+      ],
+      "labels": {
+        "A": "nw",
+        "C": "sw",
+        "D": "ne",
+        "B": "se",
+        "O": "n"
+      },
+      "ariaLabel": "المستقيمان (AB) و (CD) متقاطعان في O، والمستقيمان (AC) و (BD) متوازيان؛ الشكل مرسوم بأطوال غير حقيقية",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "حل الجملة التالية : $\\begin{cases} x + y = 90 \\\\ x - 1{,}5y = 0 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hall-jabri_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": {
+        "x": "54",
+        "y": "36"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "36",
+            "y": "54"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المعادلة (2) يمكن التعبير بسهولة عن $x$ بدلالة المجهول الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر عن $x$ بدلالة المجهول الآخر، ثم عوّض العبارة في المعادلة الأخرى (لا في المعادلة نفسها)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حل المعادلة ذات المجهول الواحد، ثم عوّض القيمة لتجد المجهول الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "الثنائية $(54 ; 36)$ تحقق المعادلتين معا: هي حل الجملة.",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} x + y = 90 & ...(1) \\\\ x - 1{,}5y = 0 & ...(2) \\end{cases}$",
+          "طريقة التعويض:",
+          "من المعادلة (2) نجد: $x = 1{,}5y$",
+          "بتعويض قيمة $x$ في المعادلة (1) نجد: $1{,}5y + y = 90$",
+          "$2{,}5y = 90$",
+          "$y = \\dfrac{90}{2{,}5} = 36$",
+          "بتعويض قيمة $y$ في $x$ نجد: $x = 1{,}5 \\times 36$",
+          "$x = 54$",
+          "طريقة الجمع والتعويض: بضرب المعادلة (2) في العدد $-1$ نجد $-x + 1{,}5y = 0$ ، وبجمع المعادلتين طرفا لطرف: $2{,}5y = 90$ أي $y = 36$ ، ثم بتعويض قيمة $y$ في المعادلة (1): $x + 36 = 90$ أي $x = 54$ .",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(54 ; 36)"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "الشكل المقابل مرسوم بأطوال غير حقيقية (لا يطلب إعادة رسمه) المستقيمان $(AB)$ و $(CD)$ متقاطعان في النقطة $O$ والمستقيمان $(AC)$ و $(BD)$ متوازيان. تعطى الأطوال : $AB = 90\\,mm$ ، $OD = 44\\,mm$ و $OC = 66\\,mm$",
+      "statement": "أوجد $OA + OB$ و $\\dfrac{OA}{OB}$ ثم استنتج الطولين $OA$ و $OB$ (يمكنك الاستعانة بالسؤال 1)",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "أعط أولا $OA + OB$ بـ mm (عدد فقط)",
+      "expectedAnswer": "90",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين تقع النقطة $O$ بالنسبة إلى النقطتين $A$ و $B$ ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$O$ بين $A$ و $B$ : $OA + OB = AB = 90\\,mm$ .",
+        "incorrect": "النقط $A$ ، $O$ ، $B$ في استقامية و $O$ بين $A$ و $B$ : استعمل الطول $AB$ ."
+      },
+      "solution": {
+        "lines": [
+          "النقط $A$ ، $O$ ، $B$ في استقامية و $O$ بين $A$ و $B$ : $OA + OB = AB = 90\\,mm$ ...(1)",
+          "لدينا في الشكل النقط $A$ ، $O$ ، $B$ والنقط $C$ ، $O$ ، $D$ في استقامية ومرتبة بنفس الترتيب، و $(AC) \\parallel (BD)$ (من المعطيات)،",
+          "وحسب خاصية طالس نجد: $\\dfrac{OA}{OB} = \\dfrac{OC}{OD} = \\dfrac{AC}{BD}$",
+          "من النسبتين $\\dfrac{OA}{OB} = \\dfrac{OC}{OD}$ : $\\dfrac{OA}{OB} = \\dfrac{66}{44} = 1{,}5$",
+          "ومنه: $OA = 1{,}5\\,OB$ أي $OA - 1{,}5\\,OB = 0$ ...(2)",
+          "لدينا مما سبق (1) و (2): $\\begin{cases} OA + OB = 90 \\\\ OA - 1{,}5\\,OB = 0 \\end{cases}$",
+          "ومن حل الجملة السابقة (سؤال 1): $OA = x = 54$ و $OB = y = 36$",
+          "أي: $OA = 54\\,mm$ و $OB = 36\\,mm$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "النسبة $\\dfrac{OA}{OB}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب النسبة على شكل عدد عشري أو كسر",
+      "expectedAnswer": "3/2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(AC) \\parallel (BD)$ و $(AB)$ ، $(CD)$ متقاطعان في $O$ : طبّق خاصية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسب المتساوية: $\\dfrac{OA}{OB} = \\dfrac{OC}{OD} = \\dfrac{AC}{BD}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "حسب خاصية طالس: $\\dfrac{OA}{OB} = \\dfrac{OC}{OD} = \\dfrac{66}{44} = 1{,}5$ .",
+        "incorrect": "استعمل النسبة $\\dfrac{OC}{OD}$ ، المعطاة بطوليها."
+      },
+      "solution": {
+        "lines": [
+          "النقط $A$ ، $O$ ، $B$ في استقامية و $O$ بين $A$ و $B$ : $OA + OB = AB = 90\\,mm$ ...(1)",
+          "لدينا في الشكل النقط $A$ ، $O$ ، $B$ والنقط $C$ ، $O$ ، $D$ في استقامية ومرتبة بنفس الترتيب، و $(AC) \\parallel (BD)$ (من المعطيات)،",
+          "وحسب خاصية طالس نجد: $\\dfrac{OA}{OB} = \\dfrac{OC}{OD} = \\dfrac{AC}{BD}$",
+          "من النسبتين $\\dfrac{OA}{OB} = \\dfrac{OC}{OD}$ : $\\dfrac{OA}{OB} = \\dfrac{66}{44} = 1{,}5$",
+          "ومنه: $OA = 1{,}5\\,OB$ أي $OA - 1{,}5\\,OB = 0$ ...(2)",
+          "لدينا مما سبق (1) و (2): $\\begin{cases} OA + OB = 90 \\\\ OA - 1{,}5\\,OB = 0 \\end{cases}$",
+          "ومن حل الجملة السابقة (سؤال 1): $OA = x = 54$ و $OB = y = 36$",
+          "أي: $OA = 54\\,mm$ و $OB = 36\\,mm$ ."
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "الطول $OA$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب الطول $OA$ بـ mm (عدد فقط)",
+      "expectedAnswer": "54",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب جملة مجهولاها $OA$ و $OB$ انطلاقا من النتيجتين السابقتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن هذه الجملة بجملة السؤال 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$OA$ هو المجهول الأول في جملة السؤال 1: $OA = 54\\,mm$ .",
+        "incorrect": "$OA + OB = 90$ و $OA - 1{,}5\\,OB = 0$ : هي جملة السؤال 1."
+      },
+      "solution": {
+        "lines": [
+          "النقط $A$ ، $O$ ، $B$ في استقامية و $O$ بين $A$ و $B$ : $OA + OB = AB = 90\\,mm$ ...(1)",
+          "لدينا في الشكل النقط $A$ ، $O$ ، $B$ والنقط $C$ ، $O$ ، $D$ في استقامية ومرتبة بنفس الترتيب، و $(AC) \\parallel (BD)$ (من المعطيات)،",
+          "وحسب خاصية طالس نجد: $\\dfrac{OA}{OB} = \\dfrac{OC}{OD} = \\dfrac{AC}{BD}$",
+          "من النسبتين $\\dfrac{OA}{OB} = \\dfrac{OC}{OD}$ : $\\dfrac{OA}{OB} = \\dfrac{66}{44} = 1{,}5$",
+          "ومنه: $OA = 1{,}5\\,OB$ أي $OA - 1{,}5\\,OB = 0$ ...(2)",
+          "لدينا مما سبق (1) و (2): $\\begin{cases} OA + OB = 90 \\\\ OA - 1{,}5\\,OB = 0 \\end{cases}$",
+          "ومن حل الجملة السابقة (سؤال 1): $OA = x = 54$ و $OB = y = 36$",
+          "أي: $OA = 54\\,mm$ و $OB = 36\\,mm$ ."
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "statement": "الطول $OB$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب الطول $OB$ بـ mm (عدد فقط)",
+      "expectedAnswer": "36",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$OB$ هو المجهول الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "$OB = 36\\,mm$ ، ونتحقق: $54 + 36 = 90$ و $\\dfrac{54}{36} = 1{,}5$ .",
+        "incorrect": "$OB$ هو العدد الثاني في الثنائية حل جملة السؤال 1."
+      },
+      "solution": {
+        "lines": [
+          "النقط $A$ ، $O$ ، $B$ في استقامية و $O$ بين $A$ و $B$ : $OA + OB = AB = 90\\,mm$ ...(1)",
+          "لدينا في الشكل النقط $A$ ، $O$ ، $B$ والنقط $C$ ، $O$ ، $D$ في استقامية ومرتبة بنفس الترتيب، و $(AC) \\parallel (BD)$ (من المعطيات)،",
+          "وحسب خاصية طالس نجد: $\\dfrac{OA}{OB} = \\dfrac{OC}{OD} = \\dfrac{AC}{BD}$",
+          "من النسبتين $\\dfrac{OA}{OB} = \\dfrac{OC}{OD}$ : $\\dfrac{OA}{OB} = \\dfrac{66}{44} = 1{,}5$",
+          "ومنه: $OA = 1{,}5\\,OB$ أي $OA - 1{,}5\\,OB = 0$ ...(2)",
+          "لدينا مما سبق (1) و (2): $\\begin{cases} OA + OB = 90 \\\\ OA - 1{,}5\\,OB = 0 \\end{cases}$",
+          "ومن حل الجملة السابقة (سؤال 1): $OA = x = 54$ و $OB = y = 36$",
+          "أي: $OA = 54\\,mm$ و $OB = 36\\,mm$ ."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

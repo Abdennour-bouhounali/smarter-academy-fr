@@ -1,0 +1,164 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l4-002",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 4,
+  "metadata": {
+    "title": "أيّ الكتابات تساوي $10^{6}$ ؟",
+    "estimatedMinutes": 6,
+    "tags": [
+      "قوى العدد 10",
+      "اختيار من متعدد"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-8",
+      "page": 46,
+      "section": "أوظّف تعلّماتي",
+      "number": 8
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اختر في كلّ سؤال الكتابة الصحيحة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "$10^{6}$ يساوي :",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $10^{6}$ كجداء ستّة عوامل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$10^{6}$ هو الرقم 1 متبوعًا بستّة أصفار."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا نضرب في الأسّ، ولا نعدّ الأرقام بدل الأصفار."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$6\\,000\\,000$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-DARB"
+        },
+        {
+          "id": "B",
+          "content": "$10\\,000\\,000$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-RAQAM"
+        },
+        {
+          "id": "C",
+          "content": "$60$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-DARB"
+        },
+        {
+          "id": "D",
+          "content": "$1\\,000\\,000$",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{6} = 1\\,000\\,000$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب الكتابة العشرية للقوة المعنية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10^{6} = 10 \\times 10 \\times 10 \\times 10 \\times 10 \\times 10$ .",
+          "$= 1\\,000\\,000$ ."
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أيّ الجداءات التالية يساوي $10^{6}$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$10^{6}$ جداء كم عاملًا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأسّ هو عدد العوامل التي تساوي 10، والعملية هي الضرب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدّ العوامل في كلّ اقتراح وانتبه إلى العملية."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$10 + 10 + 10 + 10 + 10 + 10$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-DARB"
+        },
+        {
+          "id": "B",
+          "content": "$10 \\times 10 \\times 10 \\times 10 \\times 10 \\times 10 \\times 10$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-RAQAM"
+        },
+        {
+          "id": "C",
+          "content": "$10 \\times 10 \\times 10 \\times 10 \\times 10 \\times 10$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$10 \\times 6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-DARB"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{6}$ جداء ستّة عوامل كلّها تساوي 10.",
+        "incorrect": "اختبر كلّ اقتراح بحساب الكتابة العشرية للقوة المعنية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10^{6} = 10 \\times 10 \\times 10 \\times 10 \\times 10 \\times 10$ ."
+        ]
+      }
+    }
+  ]
+}

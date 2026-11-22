@@ -1,0 +1,201 @@
+{
+  "_comment": "« حصّة القسم » — the DEFAULT class tests of lesson « الجذر التربيعي لعدد موجب » (docs/architecture/CLASS_SESSION.md §4). `start` opens the hour: what the lesson stands on (the power of a rational number, 3am.m3.r06: a square, the square of a negative number, of a decimal, a cube; Pythagoras, 3am.m4.r03: the SQUARE of the hypotenuse), then two questions of the NEW lesson (`teaser`: half the area taken for the side, the side of a court bracketed between two whole numbers — asked again at the end with other numbers and the same answer). `end` closes it on the three الكفاءات of the lesson (one item of the learning net, 4am.m1.r06), weighted as the bank weighs them (P1 45, P2 44, P3 51 of its 140 questions): the definition (P1: e1 — the half of the number is the trap —, e3 the side of a court), the sign and the exact value against an approximate one (P2: e2 bracketing √88, e4 the exact side √63 against 7,94 and the half, e5 the value by default to 0,01 of √71), the two properties (P3: e6 (√347)², e7 √((6,7)²), e8 √((−15)²) = 15: a side has no sign). `pool` holds more prepared questions a teacher may add to his own copy. The numbers are the platform's own: none of the lesson's exercise bank, none of the student's story nor of its course of gates (scripts/lesson-bank-numbers.mjs). A number answer is a whole number (the board's keypad has digits only); a decimal or a root is asked as a choice. Every question carries a `check` from which its answer is RE-COMPUTED, exactly, by a test (defaultTests.test.js): a default test never ships a wrong answer. A class test never changes a student's progress.",
+  "lesson": "jidhr-tarbii",
+  "grade": "4am",
+  "version": 1,
+  "start": [
+    {
+      "id": "s1",
+      "item": "3am.m3.r06",
+      "kind": "number",
+      "text": "احسب $57^2$.",
+      "answer": 3249,
+      "check": { "type": "power", "base": "57", "exp": 2 }
+    },
+    {
+      "id": "s2",
+      "item": "3am.m3.r06",
+      "kind": "choice",
+      "text": "ما قيمة $(-27)^2$؟",
+      "options": ["$-729$", "$729$", "$-54$"],
+      "answer": 1,
+      "check": { "type": "power", "base": "-27", "exp": 2 }
+    },
+    {
+      "id": "s3",
+      "item": "3am.m3.r06",
+      "kind": "truefalse",
+      "text": "$(0{,}4)^2 = 0{,}8$.",
+      "answer": false,
+      "check": { "type": "power", "base": "0,4", "exp": 2, "claim": "0,8" }
+    },
+    {
+      "id": "s4",
+      "item": "3am.m3.r06",
+      "kind": "truefalse",
+      "text": "$(-5)^3 = -125$.",
+      "answer": true,
+      "check": { "type": "power", "base": "-5", "exp": 3, "claim": "-125" }
+    },
+    {
+      "id": "s5",
+      "item": "3am.m4.r03",
+      "kind": "number",
+      "text": "$ABC$ مثلث قائم في $A$، حيث $AB = 4$ و $AC = 13$. احسب $BC^2$.",
+      "answer": 185,
+      "check": { "type": "pythagoras", "a": 4, "b": 13 }
+    },
+    {
+      "id": "s6",
+      "item": "3am.m4.r03",
+      "kind": "choice",
+      "text": "$EFG$ مثلث قائم في $E$، حيث $EF = 5$ و $EG = 8$. ما قيمة $FG^2$؟",
+      "options": ["$89$", "$13$", "$40$"],
+      "answer": 0,
+      "check": { "type": "pythagoras", "a": 5, "b": 8 }
+    },
+    {
+      "id": "s7",
+      "item": "4am.m1.r06",
+      "kind": "truefalse",
+      "teaser": true,
+      "text": "ساحة مربّعة مساحتها 42 بلاطة، إذن طول ضلعها 21.",
+      "answer": false,
+      "check": { "type": "root", "a": "42", "claim": "21", "court": true }
+    },
+    {
+      "id": "s8",
+      "item": "4am.m1.r06",
+      "kind": "choice",
+      "teaser": true,
+      "text": "ساحة مربّعة مساحتها 68 بلاطة. بين أيّ عددين طبيعيين متتاليين يقع طول ضلعها؟",
+      "options": ["8 و 9", "34 و 35", "7 و 8"],
+      "answer": 0,
+      "check": { "type": "rootBetween", "a": "68", "court": true }
+    }
+  ],
+  "end": [
+    {
+      "id": "e1",
+      "item": "4am.m1.r06",
+      "kind": "truefalse",
+      "pairOf": "s7",
+      "text": "$\\sqrt{82} = 41$.",
+      "answer": false,
+      "check": { "type": "root", "a": "82", "claim": "41" }
+    },
+    {
+      "id": "e2",
+      "item": "4am.m1.r06",
+      "kind": "choice",
+      "pairOf": "s8",
+      "text": "بين أيّ عددين طبيعيين متتاليين يقع العدد $\\sqrt{88}$؟",
+      "options": ["9 و 10", "44 و 45", "8 و 9"],
+      "answer": 0,
+      "check": { "type": "rootBetween", "a": "88" }
+    },
+    {
+      "id": "e3",
+      "item": "4am.m1.r06",
+      "kind": "number",
+      "text": "ساحة مربّعة مساحتها 2916 بلاطة. ما طول ضلعها؟",
+      "answer": 54,
+      "check": { "type": "root", "a": "2916", "court": true }
+    },
+    {
+      "id": "e4",
+      "item": "4am.m1.r06",
+      "kind": "choice",
+      "text": "ما القيمة المضبوطة لطول ضلع ساحة مربّعة مساحتها 63 بلاطة؟",
+      "options": ["$7{,}94$", "$\\sqrt{63}$", "$31{,}5$"],
+      "answer": 1,
+      "check": { "type": "exactSide", "a": "63" }
+    },
+    {
+      "id": "e5",
+      "item": "4am.m1.r06",
+      "kind": "choice",
+      "text": "ما القيمة المقرّبة إلى $0{,}01$ بالنقصان للعدد $\\sqrt{71}$؟",
+      "options": ["$8{,}43$", "$8{,}42$", "$8{,}4$"],
+      "answer": 1,
+      "check": { "type": "rootApprox", "a": "71", "step": "0,01", "by": "below" }
+    },
+    {
+      "id": "e6",
+      "item": "4am.m1.r06",
+      "kind": "number",
+      "text": "احسب $(\\sqrt{347})^2$.",
+      "answer": 347,
+      "check": { "type": "squareOfRoot", "a": "347" }
+    },
+    {
+      "id": "e7",
+      "item": "4am.m1.r06",
+      "kind": "choice",
+      "text": "احسب $\\sqrt{(6{,}7)^2}$.",
+      "options": ["$6{,}7$", "$44{,}89$", "$13{,}4$"],
+      "answer": 0,
+      "check": { "type": "rootOfSquare", "x": "6,7" }
+    },
+    {
+      "id": "e8",
+      "item": "4am.m1.r06",
+      "kind": "truefalse",
+      "text": "$\\sqrt{(-15)^2} = 15$.",
+      "answer": true,
+      "check": { "type": "rootOfSquare", "x": "-15", "claim": "15" }
+    }
+  ],
+  "pool": [
+    {
+      "id": "p1",
+      "item": "4am.m1.r06",
+      "kind": "number",
+      "text": "ساحة مربّعة مساحتها 5476 بلاطة. ما طول ضلعها؟",
+      "answer": 74,
+      "check": { "type": "root", "a": "5476", "court": true }
+    },
+    {
+      "id": "p2",
+      "item": "4am.m1.r06",
+      "kind": "choice",
+      "text": "ما القيمة المقرّبة إلى $0{,}1$ بالزيادة للعدد $\\sqrt{93}$؟",
+      "options": ["$9{,}6$", "$9{,}7$", "$46{,}5$"],
+      "answer": 1,
+      "check": { "type": "rootApprox", "a": "93", "step": "0,1", "by": "above" }
+    },
+    {
+      "id": "p3",
+      "item": "4am.m1.r06",
+      "kind": "choice",
+      "text": "احسب $\\sqrt{(0{,}68)^2}$.",
+      "options": ["$1{,}36$", "$0{,}4624$", "$0{,}68$"],
+      "answer": 2,
+      "check": { "type": "rootOfSquare", "x": "0,68" }
+    },
+    {
+      "id": "p4",
+      "item": "4am.m1.r06",
+      "kind": "truefalse",
+      "text": "$(\\sqrt{12{,}5})^2 = 12{,}5$.",
+      "answer": true,
+      "check": { "type": "squareOfRoot", "a": "12,5", "claim": "12,5" }
+    },
+    {
+      "id": "p5",
+      "item": "3am.m3.r06",
+      "kind": "number",
+      "text": "احسب $(-3)^4$.",
+      "answer": 81,
+      "check": { "type": "power", "base": "-3", "exp": 4 }
+    },
+    {
+      "id": "p6",
+      "item": "4am.m1.r06",
+      "kind": "truefalse",
+      "text": "$\\sqrt{0{,}9} = 0{,}3$.",
+      "answer": false,
+      "check": { "type": "root", "a": "0,9", "claim": "0,3" }
+    }
+  ]
+}

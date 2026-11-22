@@ -1,0 +1,218 @@
+{
+  "id": "ex-1am-adad-ashri-mustaqim-mudarraj-l4-001",
+  "lessonCode": "adad-ashri-mustaqim-mudarraj",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — حصر فاصلة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "حصر",
+      "تدريجة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 2,
+      "file": "1am-s2-72",
+      "exercise": 3
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يعلّم تلميذ نقاطًا على نصف مستقيم مدرّج ؛ عندما لا تقع النقطة على تدريجة يعطي حصرًا لفاصلتها بين تدريجتين متتاليتين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "النقطة $A$ فاصلتها $2{,}35$ ، وهي تقع بين تدريجتين صغيرتين متتاليتين على نصف مستقيم تدريجته الصغيرة $0{,}1$ . أيّ حصر صحيح لفاصلتها بين تدريجتين متتاليتين ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الحصر الصحيح",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2{,}2 < A < 2{,}3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-BOUNDSSHIFT"
+        },
+        {
+          "id": "B",
+          "content": "$2{,}3 < A < 2{,}4$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$2{,}4 < A < 2{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-BOUNDSSHIFT"
+        },
+        {
+          "id": "D",
+          "content": "$2{,}4 < A < 2{,}3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-BOUNDSREV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التدريجتان متتاليتان : الفرق بينهما قيمة التدريجة الصغيرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الأصغر في الحصر يكون على يسار النقطة والأكبر على يمينها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الفاصلة بكلّ تدريجة قريبة منها."
+        }
+      ],
+      "feedback": {
+        "correct": "الحصر الصحيح : $2{,}3$ < $2{,}35$ < $2{,}4$.",
+        "incorrect": "نحصر الفاصلة بين تدريجتين متتاليتين : الأصغر على يسار النقطة والأكبر على يمينها، والفرق بينهما قيمة التدريجة."
+      },
+      "solution": {
+        "lines": [
+          "نبحث عن التدريجتين المتتاليتين اللتين تحيطان بالعدد $2{,}35$",
+          "$2{,}3$ < $2{,}35$ < $2{,}4$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "النقطة $B$ فاصلتها $1{,}27$ ، وهي تقع بين تدريجتين صغيرتين متتاليتين قيمة التدريجة الصغيرة $0{,}1$ . ما فاصلة التدريجة التي على يسار النقطة مباشرة ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "1,2",
+      "misconceptionSignatures": [
+        {
+          "value": "1,3",
+          "id": "MISC-ABSC-BOUNDSSHIFT"
+        },
+        {
+          "value": "1,1",
+          "id": "MISC-ABSC-BOUNDSSHIFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب التدريجات القريبة من الفاصلة بخطوة قيمتها قيمة التدريجة الصغيرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التدريجة اليسرى أصغر من الفاصلة والتي تليها أكبر منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خذ آخر مضاعف للخطوة لا يتجاوز الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "التدريجة التي على يسار النقطة مباشرة فاصلتها $1{,}2$.",
+        "incorrect": "التدريجة اليسرى هي أكبر تدريجة لا تتجاوز فاصلة النقطة ؛ والتي تليها (اليمنى) أكبر من الفاصلة."
+      },
+      "solution": {
+        "lines": [
+          "التدريجات هي مضاعفات $0{,}1$ : ... $1{,}1$ ، $1{,}2$ ، $1{,}3$ ...",
+          "العدد $1{,}27$ محصور بين $1{,}2$ و$1{,}3$ ، فالتدريجة اليسرى هي $1{,}2$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "النقطة $C$ فاصلتها $0{,}64$ ، وهي تقع بين تدريجتين صغيرتين متتاليتين على نصف مستقيم تدريجته الصغيرة $0{,}1$ . أيّ حصر صحيح لفاصلتها بين تدريجتين متتاليتين ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الحصر الصحيح",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$0{,}5 < C < 0{,}6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-BOUNDSSHIFT"
+        },
+        {
+          "id": "B",
+          "content": "$0{,}6 < C < 0{,}7$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$0{,}7 < C < 0{,}8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-BOUNDSSHIFT"
+        },
+        {
+          "id": "D",
+          "content": "$0{,}7 < C < 0{,}6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-BOUNDSREV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التدريجتان متتاليتان : الفرق بينهما قيمة التدريجة الصغيرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الأصغر في الحصر يكون على يسار النقطة والأكبر على يمينها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الفاصلة بكلّ تدريجة قريبة منها."
+        }
+      ],
+      "feedback": {
+        "correct": "الحصر الصحيح : $0{,}6$ < $0{,}64$ < $0{,}7$.",
+        "incorrect": "نحصر الفاصلة بين تدريجتين متتاليتين : الأصغر على يسار النقطة والأكبر على يمينها، والفرق بينهما قيمة التدريجة."
+      },
+      "solution": {
+        "lines": [
+          "نبحث عن التدريجتين المتتاليتين اللتين تحيطان بالعدد $0{,}64$",
+          "$0{,}6$ < $0{,}64$ < $0{,}7$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

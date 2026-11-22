@@ -1,0 +1,74 @@
+{
+  "id": "ex-4am-kura-julla-l4-009",
+  "lessonCode": "kura-julla",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — نقطة على الجزء المتقطّع",
+    "estimatedMinutes": 5,
+    "tags": [
+      "تمثيل نقطة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_kura-julla_P3",
+      "modelledOn": "method-point"
+    }
+  },
+  "statement": {
+    "content": "في تمثيل كرة، النقطة A مرسومة على الجزء المتقطّع من الدائرة الكبرى الأفقية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "النقطة A:",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "على الكرة، في الجهة الخلفية",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "داخل الجلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-TAMTHIL"
+        },
+        {
+          "id": "C",
+          "content": "على الكرة، في الجهة الأمامية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-TAMTHIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدائرة الكبرى كلها على الكرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الجزء المتقطّع هو الجزء الخلفي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع المعلومتين."
+        }
+      ],
+      "feedback": {
+        "correct": "A على دائرة كبرى فهي على الكرة، والجزء المتقطّع خلفي: A خلف الكرة.",
+        "incorrect": "نقط الدائرة الكبرى على السطح، والخط المتقطّع يدل على الخلف."
+      }
+    }
+  ]
+}

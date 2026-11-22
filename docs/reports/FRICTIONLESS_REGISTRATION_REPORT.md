@@ -2,6 +2,8 @@
 
 Placed in `docs/reports/`, per this repo's convention for point-in-time phase reports (see `docs/architecture/ARCHITECTURE.md` §9–§11 for the living contract this report complements).
 
+> **Partly superseded (2026-09-29):** registration again asks « الاسم و اللقب » (first + family name), for students and teachers, by form and by Google — a teacher must recognise students by name, never by email. Grade stays out of signup. Current rule: `ARCHITECTURE.md` §9.
+
 ## Product decision
 
 Registration was asking for first name, last name, email, password, password confirmation, and grade — six fields before an account existed. The product decision: cut that to email + password only (inspired by the simplicity of platforms like SchoolMouv), create the account immediately, and collect everything else — starting with grade — progressively, after the account exists. Grade specifically needed to move from "required at signup" to "chosen right after, editable anytime from the profile."

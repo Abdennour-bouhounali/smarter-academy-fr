@@ -1,0 +1,188 @@
+{
+  "id": "ex-3am-nisba-miawiya-3am-l2-010",
+  "lessonCode": "nisba-miawiya-3am",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — غلاء المعيشة",
+    "estimatedMinutes": 7,
+    "tags": [
+      "معامل",
+      "نسبة الزيادة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ارتفع ثمن كيلوغرام من السميد في السوق من $2\\,000$ دج إلى $2\\,160$ دج. يريد التلميذ نبيل أن يعرف النسبة المئوية لهذا الارتفاع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما النسبة المئوية لارتفاع الثمن؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "النسبة المئوية (بدون الرمز %)",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من أيّ كمية حُسبت النسبة: الأصل أم الجديدة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة تُحسب دائما على الكمية الأصلية؛ والكمية الجديدة هي الأصل مضروبا في المعامل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب مساواة: الأصل × المعامل = الكمية الجديدة، ثم أوجد الأصل."
+        }
+      ],
+      "feedback": {
+        "correct": "$8$ .",
+        "incorrect": "النسبة تُحسب على الكمية الأصلية، والكمية الجديدة هي الأصل مضروبا في المعامل؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الزيادة : $|2\\,160 - 2\\,000| = 160$ .",
+          "النسبة تُحسب على الثمن القديم: $\\dfrac{160}{2\\,000} = \\dfrac{t}{100}$ ، فنجد $t = 8$ ."
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما العدد الذي نضرب فيه ثمنا قديما لنحصل على الثمن الجديد بعد هذه الزيادة؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$0{,}08$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NISBA3-COEF-INC"
+        },
+        {
+          "id": "B",
+          "content": "$1{,}08$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$1{,}8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NISBA3-DECIMAL-SHIFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل الكمية تزداد أم تنقص؟ وما النسبة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "زيادة بنسبة معيّنة تُبقي حصص الأصل كلها وتضيف إليها حصصا، وتخفيضها يسحب حصصا منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عبّر عن الأصل بمئة حصّة ثم عدّ الحصص بعد التغيّر."
+        }
+      ],
+      "feedback": {
+        "correct": "المعامل هو $1{,}08$ .",
+        "incorrect": "الزيادة تضيف حصصا إلى مئة حصّة الأصل والتخفيض يسحب منها؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "زيادة بـ $8\\,\\%$ تُبقي مئة حصّة وتضيف 8 حصّة (أو تسحبها)، فالمعامل هو $1 + \\dfrac{8}{100} = 1{,}08$ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "بالنسبة نفسها، ارتفع ثمن حزمة أخرى كان $3\\,500$ دج . ما ثمنها الجديد؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "المبلغ بالدينار (دج)",
+      "expectedAnswer": "3780",
+      "misconceptionSignatures": [
+        {
+          "value": "280",
+          "id": "MISC-NISBA3-COEF-INC"
+        },
+        {
+          "value": "3508",
+          "id": "MISC-NISBA3-ADD-T"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل الكمية تزداد أم تنقص؟ وما الكمية الأصلية؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الزيادة تُحسب على الكمية الأصلية: الناتج هو الأصل مضروبا في معامل أكبر من الواحد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب معامل الزيادة ثم اضرب فيه الكمية الأصلية، أو احسب الزيادة ثم أضفها إلى الأصل."
+        }
+      ],
+      "feedback": {
+        "correct": "$3\\,780$ .",
+        "incorrect": "النسبة تُحسب على الكمية الأصلية؛ والناتج بعد الزيادة هو الأصل مضروبا في معامل أكبر من الواحد؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "معامل الزيادة بـ $8\\,\\%$ هو $1 + \\dfrac{8}{100} = 1{,}08$ .",
+          "الناتج: $3\\,500 \\times 1{,}08 = 3\\,780$ ."
+        ],
+        "result": "3\\,500 \\times 1{,}08 = 3\\,780"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "id": "ex-4am-kura-julla-l4-002",
+  "lessonCode": "kura-julla",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — نقطة على محور",
+    "estimatedMinutes": 5,
+    "tags": [
+      "معلم الفضاء"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_kura-julla_P4",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس للفضاء مبدؤه O، كرة مركزها O ونصف قطرها 7. النقطة $A(x\\,;\\,0\\,;\\,0)$ حيث $x > 0$ على الكرة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قيمة x؟",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P4",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-KURA-MURABBA",
+          "value": "49"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$OA^2 = x^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "A على الكرة: $OA^2 = R^2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حل $x^2 = 49$ مع $x > 0$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x^2 = 49$ و $x > 0$ ، إذن $x = 7$ .",
+        "incorrect": "نقطة الكرة على المحور تبعد عن O بنصف القطر."
+      }
+    }
+  ]
+}

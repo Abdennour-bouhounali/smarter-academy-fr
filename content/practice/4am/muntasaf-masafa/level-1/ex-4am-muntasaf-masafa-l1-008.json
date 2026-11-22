@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-muntasaf-masafa-l1-008",
+  "lessonCode": "muntasaf-masafa",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — قانون المسافة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المسافة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_muntasaf-masafa_P2",
+      "modelledOn": "know-dist"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس: $A(x_A\\,;\\,y_A)$ و $B(x_B\\,;\\,y_B)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المسافة AB هي:",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\sqrt{(x_B - x_A)^2 + (y_B - y_A)^2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$(x_B - x_A) + (y_B - y_A)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-JAM"
+        },
+        {
+          "id": "C",
+          "content": "$(x_B - x_A)^2 + (y_B - y_A)^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-NASI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الفرقين: فرق الفاصلتين وفرق الترتيبين (النهاية ناقص المبدأ)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ربّع كل فرق ثم اجمع المربعين: هذا مربع المسافة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خذ الجذر التربيعي في الأخير، وبسّطه إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "خاصية الكتاب (ص 144): $AB = \\sqrt{(x_B - x_A)^2 + (y_B - y_A)^2}$ .",
+        "incorrect": "المسافة جذر مجموع مربعي الفرقين."
+      }
+    }
+  ]
+}

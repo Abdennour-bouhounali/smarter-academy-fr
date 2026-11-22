@@ -1,0 +1,143 @@
+{
+  "id": "ex-4am-tarrid-muthallathiya-l2-007",
+  "lessonCode": "tarrid-muthallathiya",
+  "level": 2,
+  "metadata": {
+    "title": "تمرين 24 (ص 125) — مثلث في نصف دائرة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "نصف دائرة",
+      "الجيب",
+      "زاوية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-24",
+      "page": 125,
+      "section": "أتعمّق",
+      "number": 24
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "دائرة مركزها $O$ ونصف قطرها $2{,}5\\,\\mathrm{cm}$ ، و $[AB]$ قطر لها، و $C$ نقطة من الدائرة حيث $AC = 3\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما نوع المثلث $ABC$ ؟ علّل إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "قائم في $A$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-FITHAGHURAS-WATAR"
+        },
+        {
+          "id": "B",
+          "content": "قائم في $C$ لأنه مرسوم في نصف دائرة قطرها $[AB]$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "قائم في $B$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-FITHAGHURAS-WATAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الرأس $C$ على الدائرة و $[AB]$ قطر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مثلث مرسوم في نصف دائرة قطرها أحد أضلاعه."
+        }
+      ],
+      "feedback": {
+        "correct": "$C$ على الدائرة التي قطرها $[AB]$ : المثلث قائم في $C$ ، ووتره القطر.",
+        "incorrect": "الزاوية القائمة تقابل القطر: رأسها هو النقطة الواقعة على الدائرة."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ مرسوم في نصف دائرة قطرها $[AB]$ (أحد أضلاعه)، إذن هو قائم في $C$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب قيس الزاوية $\\widehat{ABC}$ بالتدوير إلى الوحدة من الدرجة.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيس الزاوية بالدرجة مدوّرا إلى الوحدة",
+      "expectedAnswer": "37",
+      "misconceptionSignatures": [
+        {
+          "value": "53",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "0.6",
+          "id": "MISC-MUTH-NISBA-BADAL-QAYS"
+        },
+        {
+          "value": "31",
+          "id": "MISC-MUTH-NISBA-GHAYR-MUNASIBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الوتر هو القطر $[AB]$ ، وطوله ضعف نصف القطر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$[AC]$ مقابل للزاوية $\\widehat{ABC}$ : احسب جيبها ثم اللمسة العكسية."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin\\widehat{ABC} = \\dfrac{AC}{AB} = \\dfrac{3}{5}$ ، ومنه $\\widehat{ABC} \\approx 37^{\\circ}$ .",
+        "incorrect": "الوتر هو القطر (لا نصف القطر)، و $[AC]$ مقابل للزاوية $B$ ."
+      },
+      "solution": {
+        "lines": [
+          "$AB = 2 \\times 2{,}5 = 5\\,\\mathrm{cm}$ . في المثلث $ABC$ القائم في $C$ : $\\sin\\widehat{ABC} = \\dfrac{AC}{AB} = \\dfrac{3}{5} = 0{,}6$",
+          "باستعمال الآلة الحاسبة (⁦sin⁻¹⁩): $\\widehat{ABC} \\approx 36{,}8699^{\\circ}$"
+        ],
+        "result": "\\widehat{ABC} \\approx 37^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

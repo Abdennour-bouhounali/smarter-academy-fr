@@ -1,0 +1,66 @@
+{
+  "id": "ex-4am-misaha-hajm-kura-l5-004",
+  "lessonCode": "misaha-hajm-kura",
+  "level": 5,
+  "metadata": {
+    "title": "وضعية — جرّة زيت الزيتون",
+    "estimatedMinutes": 4,
+    "tags": [
+      "حجم الجلة",
+      "وحدات",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_misaha-hajm-kura_P3",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "جرّة فخّار لزيت الزيتون من القبائل جوفها على شكل جلة نصف قطرها الداخلي $15\\,\\mathrm{cm}$ . تذكّر: $1\\,\\mathrm{L} = 1000\\,\\mathrm{cm}^3$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "كم لترا تسع الجرّة؟ (مدوّرا إلى الجزء من عشرة)",
+      "learningPoints": [
+        {
+          "code": "4am_misaha-hajm-kura_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة (مثل 2,5) أو عدد طبيعي",
+      "expectedAnswer": "14.1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\mathcal{V} = \\frac{4}{3}\\pi \\times 15^3 = 4500\\pi\\,\\mathrm{cm}^3$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم على 1000 لتحوّل إلى لتر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "دوّر في آخر الحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "$4500\\pi \\approx 14137{,}2\\,\\mathrm{cm}^3 \\approx 14{,}1\\,\\mathrm{L}$ .",
+        "incorrect": "لا تنس التحويل إلى اللتر."
+      },
+      "difficulty": 5,
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-WAHDA",
+          "value": "14137.2"
+        }
+      ]
+    }
+  ]
+}

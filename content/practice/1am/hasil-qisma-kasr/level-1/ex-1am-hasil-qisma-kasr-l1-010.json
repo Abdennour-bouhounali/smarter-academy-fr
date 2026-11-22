@@ -1,0 +1,228 @@
+{
+  "id": "ex-1am-hasil-qisma-kasr-l1-010",
+  "lessonCode": "hasil-qisma-kasr",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — صحيح أو خطأ في نادي الرياضيات",
+    "estimatedMinutes": 4,
+    "tags": [
+      "حاصل القسمة",
+      "العدد الناقص"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في نادي الرياضيات يصحّح التلاميذ بعضهم أعمال بعض بصدق وتعاون. أجب بـ «صحيح» أو «خطأ» عن كل عبارة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "$\\dfrac{4}{9} \\times 9 = 4$",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASIL-QALB"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل العبارة إلى كتابة تعرفها (قسمة، جداء، كسر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر العبارة على الأعداد المعطاة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{4}{9} \\times 9 = 4$ : الكسر هو العدد الذي إذا ضُرب في مقامه أعطى بسطه.",
+        "incorrect": "العدد الذي نضربه في $b$ لنحصل على $a$ هو حاصل قسمة $a$ على $b$ ، أي $\\dfrac{a}{b}$ ؛ لا نطرح العددين ولا نضربهما."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{4}{9} \\times 9 = \\dfrac{4 \\times 9}{9} = 4$",
+          "العبارة صحيحة."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "$\\dfrac{4}{9} \\times 4 = 9$",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASIL-QALB"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل العبارة إلى كتابة تعرفها (قسمة، جداء، كسر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر العبارة على الأعداد المعطاة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{4}{9} \\times 4 = \\dfrac{16}{9}$ ولا يساوي 9.",
+        "incorrect": "العدد الذي نضربه في $b$ لنحصل على $a$ هو حاصل قسمة $a$ على $b$ ، أي $\\dfrac{a}{b}$ ؛ لا نطرح العددين ولا نضربهما."
+      },
+      "solution": {
+        "lines": [
+          "الكسر يُضرب في مقامه 9 ليعطي بسطه 4، لا في بسطه.",
+          "$\\dfrac{4}{9} \\times 4 = \\dfrac{16}{9} \\neq 9$ : العبارة خاطئة."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "$7 \\div 3 = 7{,}3$",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASIL-FASILA"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل العبارة إلى كتابة تعرفها (قسمة، جداء، كسر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر العبارة على الأعداد المعطاة."
+        }
+      ],
+      "feedback": {
+        "correct": "$7 \\div 3 = \\dfrac{7}{3}$ ، وليس $7{,}3$.",
+        "incorrect": "الكسر $\\dfrac{a}{b}$ هو حاصل قسمة $a$ على $b$ : البسط هو المقسوم والمقام هو المقسوم عليه، والشرطة لا تتحوّل إلى فاصلة."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\div 3 = \\dfrac{7}{3}$ : الشرطة الكسرية لا تتحوّل إلى فاصلة.",
+          "العبارة خاطئة."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "الكسر $\\dfrac{5}{8}$ هو العدد الذي إذا ضُرب في 8 أعطى 5.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASIL-QALB"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل العبارة إلى كتابة تعرفها (قسمة، جداء، كسر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر العبارة على الأعداد المعطاة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{5}{8} \\times 8 = 5$.",
+        "incorrect": "العدد الذي نضربه في $b$ لنحصل على $a$ هو حاصل قسمة $a$ على $b$ ، أي $\\dfrac{a}{b}$ ؛ لا نطرح العددين ولا نضربهما."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{8} \\times 8 = 5$ : العبارة صحيحة."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

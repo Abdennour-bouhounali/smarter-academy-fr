@@ -1,0 +1,23 @@
+{
+  "_comment": "La taxonomie CANONIQUE des issues et sa sémantique — une seule, lue par packages/core/practice (JS) et App\\Domain\\Progress\\Outcome (PHP). Un test de chaque côté échoue si l'un des deux s'en écarte.",
+  "outcomes": ["correct", "equivalent_correct", "partially_correct", "incorrect", "syntax_error", "abandoned"],
+  "semantics": {
+    "correct":            { "success": true,  "partial": false, "failure": false, "inert": false, "positive": true,  "inSuccessRate": true },
+    "equivalent_correct": { "success": true,  "partial": false, "failure": false, "inert": false, "positive": true,  "inSuccessRate": true },
+    "partially_correct":  { "success": false, "partial": true,  "failure": false, "inert": false, "positive": true,  "inSuccessRate": true },
+    "incorrect":          { "success": false, "partial": false, "failure": true,  "inert": false, "positive": false, "inSuccessRate": true },
+    "syntax_error":       { "success": false, "partial": false, "failure": false, "inert": true,  "positive": false, "inSuccessRate": false },
+    "abandoned":          { "success": false, "partial": false, "failure": false, "inert": true,  "positive": false, "inSuccessRate": false }
+  },
+  "successRate": {
+    "formula": "successes / (successes + partials + failures)",
+    "cases": [
+      { "outcomes": [], "rate": null },
+      { "outcomes": ["syntax_error", "abandoned"], "rate": null },
+      { "outcomes": ["correct", "equivalent_correct", "incorrect"], "rate": 66.7 },
+      { "outcomes": ["correct", "partially_correct"], "rate": 50.0 },
+      { "outcomes": ["correct", "syntax_error", "abandoned", "incorrect"], "rate": 50.0 },
+      { "outcomes": ["partially_correct", "partially_correct"], "rate": 0.0 }
+    ]
+  }
+}

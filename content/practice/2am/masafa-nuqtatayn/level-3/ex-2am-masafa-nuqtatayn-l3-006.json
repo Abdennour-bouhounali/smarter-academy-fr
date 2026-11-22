@@ -1,0 +1,185 @@
+{
+  "id": "ex-2am-masafa-nuqtatayn-l3-006",
+  "lessonCode": "masafa-nuqtatayn",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مسافات وعدد التدريجات",
+    "estimatedMinutes": 10,
+    "tags": [
+      "مسافة بين نقطتين",
+      "تدريجة",
+      "منتصف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "مستقيم مدرّج قيمة تدريجته الواحدة $0{,}25$ ، وعليه النقطتان $A(-1{,}5)$ و $B(+2)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "النقطتان $A(-1{,}5)$ و $B(+2)$ على مستقيم مدرّج. احسب المسافة $AB$ .",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "3.5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "0.5"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-3.5"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن أوّلًا أيّ الفاصلتين أكبر: الأكبر هي الأبعد إلى اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى مطروحًا منها الصغرى؛ وإذا كانت الصغرى سالبة فنطرح عددًا سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا: إن وجدت ناتجًا سالبًا فقد قلبت ترتيب الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB=3{,}5$ : النقطتان على جهتين من المبدأ فنجمع المسافتين إلى الصفر.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى هي $+2$ والفاصلة الصغرى هي $-1{,}5$",
+          "$AB=(+2)-(-1{,}5)=(+2)+(+1{,}5)=3{,}5$"
+        ],
+        "result": "3.5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "على مستقيم مدرّج قيمة تدريجته الواحدة $0{,}25$ ، النقطتان $A(-1{,}5)$ و $B(+2)$ . كم تدريجة تفصل بين النقطتين ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح موجب",
+      "expectedAnswer": "14",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أوّلًا المسافة بين النقطتين من فاصلتيهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثمّ اسأل: كم مرّة تتّسع قيمة التدريجة الواحدة في هذه المسافة؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: عدد التدريجات × قيمة التدريجة = المسافة."
+        }
+      ],
+      "feedback": {
+        "correct": "تفصل بينهما $14$ تدريجة.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$AB=3{,}5$",
+          "$3{,}5\\div0{,}25=14$"
+        ],
+        "result": "14"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "$A(-1{,}5)$ و $B(+2)$ نقطتان على مستقيم مدرّج، و $I$ منتصف القطعة $[AB]$ . ما فاصلة $I$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "0.25",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-HALFDIST",
+          "value": "1.75"
+        },
+        {
+          "id": "MISC-MASAFA2-SUMNOHALF",
+          "value": "0.5"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أوّلًا المسافة بين طرفي القطعة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المنتصف يبعد عن كلّ طرف بنصف هذه المسافة: انطلق من الطرف الأصغر فاصلة وتقدّم بنصف المسافة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: المسافة من المنتصف إلى كلّ طرف يجب أن تكون نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$I(+0{,}25)$ : يبعد عن كلّ طرف بـ $1{,}75$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$AB=3{,}5$ ونصفها $1{,}75$",
+          "فاصلة $I$ = الفاصلة الصغرى + نصف المسافة = $-1{,}5+1{,}75=+0{,}25$"
+        ],
+        "result": "0.25"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "id": "ex-4am-barahin-ashia-l2-002",
+  "lessonCode": "barahin-ashia",
+  "level": 2,
+  "generator": {
+    "tool": "gen-barahin.mjs",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — شعاعان متعاكسان في متوازي أضلاع",
+    "estimatedMinutes": 3,
+    "tags": [
+      "متوازي أضلاع",
+      "الشعاع المعدوم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_barahin-ashia_P1",
+      "modelledOn": "ex-17"
+    }
+  },
+  "statement": {
+    "content": "ABCD متوازي أضلاع (الشكل).",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          5,
+          0
+        ],
+        "C": [
+          7,
+          3
+        ],
+        "D": [
+          2,
+          3
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "A"
+        ]
+      ],
+      "labels": {
+        "A": "sw",
+        "B": "se",
+        "C": "ne",
+        "D": "nw"
+      },
+      "ariaLabel": "متوازي أضلاع ABCD",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "$\\overrightarrow{AB}$ + $\\overrightarrow{CD}$ يساوي:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{0}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$2\\overrightarrow{AB}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{AD}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-RABT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في ABCD الضلعان [AB] و [CD] متوازيان ومتقايسان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن اتجاه $\\overrightarrow{CD}$ باتجاه $\\overrightarrow{AB}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض $\\overrightarrow{CD}$ بشعاع مبدؤه B ثم طبّق علاقة شال."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{CD} = \\overrightarrow{BA}$ ، فـ $\\overrightarrow{AB} + \\overrightarrow{CD} = \\overrightarrow{AB} + \\overrightarrow{BA} = \\overrightarrow{0}$ .",
+        "incorrect": "$\\overrightarrow{CD}$ يعاكس $\\overrightarrow{AB}$ : مجموعهما الشعاع المعدوم."
+      }
+    }
+  ]
+}

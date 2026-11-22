@@ -1,0 +1,163 @@
+{
+  "id": "ex-4am-muadala-ula-l4-005",
+  "lessonCode": "muadala-ula",
+  "level": 4,
+  "metadata": {
+    "title": "معادلات بمقامات",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مقامات",
+      "معادلة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-9",
+      "page": 50,
+      "section": "أوظّف تعلّماتي",
+      "number": 9,
+      "adaptedFrom": "ex-4am-muadala-ula-l5-001"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "حل كلا من المعادلتين الآتيتين:",
+      "statement": "$\\dfrac{x - 1}{9} = \\dfrac{x + 1}{3}$",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب حل المعادلة: عدد صحيح أو كسر على الشكل a/b (يُقبل العدد العشري)",
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "-1/2",
+          "id": "MISC-MUADALA-QISMA-MAQLUBA"
+        },
+        {
+          "value": "2",
+          "id": "MISC-MUADALA-ISHARA-SALIBA"
+        },
+        {
+          "value": "-1",
+          "id": "MISC-MUADALA-NAQL-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب الطرفين في مقام مشترك لتتخلّص من المقامات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع كل بسط بين قوسين عند الضرب، ثم انشر وبسّط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انقل المجاهيل إلى طرف والمعاليم إلى الطرف الآخر حتى الشكل $ax = b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = -2$ .",
+        "incorrect": "اضرب كل حد من الطرفين في المقام المشترك، مع وضع البسوط بين قوسين، ثم انشر وحلّ. تحقّق بالتعويض."
+      },
+      "solution": {
+        "lines": [
+          "نضرب الطرفين في $9$ : $x - 1 = 3(x + 1)$",
+          "$x - 1 = 3x + 3$",
+          "$x - 3x = 3 + 1$",
+          "$-2x = 4$",
+          "$x = \\dfrac{4}{-2}$"
+        ],
+        "result": "x = -2"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$x = \\dfrac{x + 3}{5} + 1$",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب حل المعادلة: عدد صحيح أو كسر على الشكل a/b (يُقبل العدد العشري)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "1/2",
+          "id": "MISC-MUADALA-QISMA-MAQLUBA"
+        },
+        {
+          "value": "4/3",
+          "id": "MISC-MUADALA-NAQL-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب الطرفين في مقام مشترك لتتخلّص من المقامات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع كل بسط بين قوسين عند الضرب، ثم انشر وبسّط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انقل المجاهيل إلى طرف والمعاليم إلى الطرف الآخر حتى الشكل $ax = b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 2$ .",
+        "incorrect": "اضرب كل حد من الطرفين في المقام المشترك، مع وضع البسوط بين قوسين، ثم انشر وحلّ. تحقّق بالتعويض."
+      },
+      "solution": {
+        "lines": [
+          "نضرب الطرفين في $5$ : $5x = x + 3 + 5$",
+          "$5x = x + 8$",
+          "$5x - x = 8$",
+          "$4x = 8$",
+          "$x = \\dfrac{8}{4}$"
+        ],
+        "result": "x = 2"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

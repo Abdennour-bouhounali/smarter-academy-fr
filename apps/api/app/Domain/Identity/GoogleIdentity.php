@@ -23,4 +23,10 @@ final class GoogleIdentity
         public readonly ?string $firstName = null,
         public readonly ?string $lastName = null,
     ) {}
+
+    /** La même identité, avec le nom que la personne a CONFIRMÉ (§ PersonName). */
+    public function withName(string $firstName, string $lastName): self
+    {
+        return new self($this->providerUserId, $this->email, $this->emailVerified, $firstName, $lastName);
+    }
 }

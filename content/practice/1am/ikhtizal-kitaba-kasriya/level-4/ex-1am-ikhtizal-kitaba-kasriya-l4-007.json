@@ -1,0 +1,234 @@
+{
+  "id": "ex-1am-ikhtizal-kitaba-kasriya-l4-007",
+  "lessonCode": "ikhtizal-kitaba-kasriya",
+  "level": 4,
+  "metadata": {
+    "title": "العدد 5Δ2□",
+    "estimatedMinutes": 11,
+    "tags": [
+      "قابلية القسمة",
+      "اختزال",
+      "كسر عشري"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-8",
+      "page": 60,
+      "section": "أتعمّق",
+      "number": 8
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العدد $A = 5\\Delta2\\square$ حيث $\\Delta$ رقم مئاته و $\\square$ رقم آحاده."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن كل الأعداد $A$ التي تقبل القسمة على 5 وعلى 9 معًا.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        5220,
+        5625
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما هي أرقام الآحاد الممكنة للقسمة على 5؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في كل حالة، أيّ رقم مئات يجعل مجموع الأرقام يقبل القسمة على 9؟"
+        }
+      ],
+      "feedback": {
+        "correct": "العددان هما 5220 و 5625.",
+        "incorrect": "يقبل العدد القسمة على 5 إذا كان رقم آحاده 0 أو 5، وعلى 9 إذا كان مجموع أرقامه يقبل القسمة على 9."
+      },
+      "solution": {
+        "lines": [
+          "$\\square = 0$ : $5 + \\Delta + 2 + 0$ يقبل القسمة على 9 عندما $\\Delta = 2$ ، العدد 5220.",
+          "$\\square = 5$ : $5 + \\Delta + 2 + 5$ يقبل القسمة على 9 عندما $\\Delta = 6$ ، العدد 5625."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اختزل الكسر $\\dfrac{5220}{5625}$ (أصغر العددين على أكبرهما) إلى أبسط شكل ممكن.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b لا يقبل الاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "116/125",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1740/1875",
+          "id": "MISC-KASRIYA-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن قاسم مشترك للبسط والمقام بقواعد قابلية القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على هذا القاسم، ثم أعد البحث في الكسر الجديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا لم تنفع القواعد، جرّب جداول الضرب (7، 11، 13…)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{5220}{5625} = \\dfrac{116}{125}$ ولا يقبل البسط والمقام قاسمًا مشتركًا غير 1.",
+        "incorrect": "نقسم البسط والمقام على قاسم مشترك لهما، ونعيد ذلك حتى لا يبقى قاسم مشترك غير 1.",
+        "notIrreducible": "الكتابة تساوي الكسر لكنها ما زالت قابلة للاختزال: ابحث عن قاسم مشترك آخر للبسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "$5220 = 9 \\times 580$ و $5625 = 9 \\times 625$ ، إذن $\\dfrac{5220}{5625} = \\dfrac{5220 \\div 9}{5625 \\div 9} = \\dfrac{580}{625}$",
+          "$580 = 5 \\times 116$ و $625 = 5 \\times 125$ ، إذن $\\dfrac{580}{625} = \\dfrac{580 \\div 5}{625 \\div 5} = \\dfrac{116}{125}$",
+          "العددان 116 و 125 لا يقبلان قاسمًا مشتركًا غير 1: $\\dfrac{116}{125}$ في أبسط شكل ممكن."
+        ],
+        "result": "\\dfrac{5220}{5625} = \\dfrac{116}{125}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "أتمم: $\\dfrac{116}{125} = \\dfrac{\\ldots}{1000}$",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "928",
+      "misconceptionSignatures": [
+        {
+          "value": "991",
+          "id": "MISC-KASRIYA-JAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الحدّين المعروفين اللذين في نفس الموضع (بسطين أو مقامين)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بأيّ عدد نضرب (أو نقسم) أحدهما لنحصل على الآخر؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق نفس العملية على الحدّ الآخر من الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{116}{125} = \\dfrac{116 \\times 8}{125 \\times 8} = \\dfrac{928}{1000}$ : ضربنا البسط والمقام في نفس العدد.",
+        "incorrect": "الكسر لا يتغيّر إذا ضربنا البسط والمقام في نفس العدد غير المعدوم أو قسمناهما عليه، أمّا إضافة نفس العدد إليهما فتغيّره."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{116}{125} = \\dfrac{116 \\times 8}{125 \\times 8} = \\dfrac{928}{1000}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "استنتج الكتابة العشرية للكسر $\\dfrac{5220}{5625}$.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة)",
+      "expectedAnswer": "0,928",
+      "misconceptionSignatures": [
+        {
+          "value": "9,28",
+          "id": "MISC-KASRIYA-FASILA"
+        },
+        {
+          "value": "116,125",
+          "id": "MISC-KASRIYA-ARQAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل المقام 10 أو 100 أو 1000؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إن لم يكن كذلك، اضرب البسط والمقام في نفس العدد لتحصل على مقام 10 أو 100 أو 1000."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد أصفار المقام هو عدد الأرقام بعد الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{116}{125} = 0{,}928$.",
+        "incorrect": "في كسر عشري، عدد أصفار المقام هو عدد الأرقام بعد الفاصلة؛ وإن لم يكن المقام 10 أو 100 أو 1000 نحوّله أولًا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{116}{125} = \\dfrac{116 \\times 8}{125 \\times 8} = \\dfrac{928}{1000}$",
+          "$\\dfrac{928}{1000} = 0{,}928$"
+        ],
+        "result": "\\dfrac{116}{125} = 0{,}928"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

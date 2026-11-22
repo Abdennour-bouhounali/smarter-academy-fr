@@ -1,0 +1,163 @@
+{
+  "id": "ex-4am-khawass-qawasim-l4-006",
+  "lessonCode": "khawass-qawasim",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2015 — 4199 و 1547",
+    "estimatedMinutes": 9,
+    "tags": [
+      "خاصية 2",
+      "كسر غير قابل للاختزال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_khawass-qawasim_P3",
+      "modelledOn": "BEM 2015 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان 4199 و 1547."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أجرِ القسمة الإقليدية للعدد 4199 على 1547 مع كتابة مراحل الحساب.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الباقي فقط (عدد طبيعي)",
+      "expectedAnswer": "1105",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أكبر مضاعف للعدد 1547 لا يتجاوز 4199."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي هو الفرق بين 4199 وهذا المضاعف، ويجب أن يكون أصغر تمامًا من 1547."
+        }
+      ],
+      "feedback": {
+        "correct": "$4199 = 1547 \\times 2 + 1105$ مع $1105 < 1547$.",
+        "incorrect": "في القسمة الإقليدية $4199 = 1547 \\times q + r$ يكون الباقي $r$ أصغر تمامًا من 1547."
+      },
+      "solution": {
+        "lines": [
+          "$1547 \\times 2 = 3094$ و $1547 \\times 3 = 4641 > 4199$",
+          "$4199 - 3094 = 1105$",
+          "إذن $4199 = 1547 \\times 2 + 1105$ مع $1105 < 1547$."
+        ],
+        "result": "4199 = 1547 \\times 2 + 1105"
+      },
+      "work": "required",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "علمًا أن 221 يقسم كلا من 4199 و 1547، استنتج دون إجراء القسمة على 221 أن 221 يقسم الباقي 1105، ثم اكتبه على الشكل $221 \\times k$ حيث $k$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k$ فقط (عدد طبيعي)",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الباقي على الشكل $r = 4199 - 1547 \\times 2$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "221 يقسم 1547 فهو يقسم $1547 \\times 2$؛ وهو يقسم 4199، فيقسم الفرق (الخاصية 2)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم الباقي على 221 للحصول على $k$."
+        }
+      ],
+      "feedback": {
+        "correct": "$1105 = 221 \\times 5$: 221 يقسم باقي القسمة الإقليدية للعدد 4199 على 1547.",
+        "incorrect": "القاسم المشترك لعددين يقسم باقي القسمة الإقليدية لأحدهما على الآخر: اقسم الباقي على 221."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $4199 = 1547 \\times 2 + 1105$ ومنه $1105 = 4199 - 1547 \\times 2$.",
+          "221 يقسم 1547 فهو يقسم مضاعفه $1547 \\times 2$ ، و 221 يقسم 4199.",
+          "إذن 221 يقسم الفرق $4199 - 1547 \\times 2$ أي يقسم 1105 (الخاصية 2).",
+          "$1105 = 221 \\times 5$"
+        ],
+        "result": "1105 = 221 \\times 5"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اكتب الكسر $\\dfrac{1547}{4199}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "7/19",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب كلا من البسط والمقام على الشكل $221 \\times q$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختزل على 221، ثم تحقّق أن الكسر الناتج لا يُختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1547}{4199} = \\dfrac{221 \\times 7}{221 \\times 19} = \\dfrac{7}{19}$.",
+        "incorrect": "اقسم البسط والمقام على قاسمهما المشترك 221.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال."
+      },
+      "solution": {
+        "lines": [
+          "$1547 = 221 \\times 7$ و $4199 = 221 \\times 19$",
+          "$\\dfrac{1547}{4199} = \\dfrac{221 \\times 7}{221 \\times 19}$",
+          "العددان 7 و 19 ليس لهما قاسم مشترك غير 1."
+        ],
+        "result": "\\dfrac{1547}{4199} = \\dfrac{7}{19}"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

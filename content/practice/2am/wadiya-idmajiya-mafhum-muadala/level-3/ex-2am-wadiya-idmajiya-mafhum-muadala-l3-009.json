@@ -1,0 +1,194 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-mafhum-muadala-l3-009",
+  "lessonCode": "wadiya-idmajiya-mafhum-muadala",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — محلّان لكراء الدرّاجات",
+    "estimatedMinutes": 11,
+    "tags": [
+      "صيغتان",
+      "مقارنة",
+      "متباينة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يكترئ المحلّ $X$ دراجة بـ $500$ DA ثابتة و $100$ DA عن كلّ ساعة ، ويكترئها المحلّ $Y$ بـ $200$ DA ثابتة و $130$ DA عن كلّ ساعة . نسمّي $h$ عدد الساعات ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل المساواة $500+100h = 200+130h$ صحيحة من أجل $h = 10$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "feedback": {
+        "correct": "نعم .",
+        "incorrect": "عوّض الحرف في الطرفين، احسب كلّ طرف ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل : $500+100 \\times 10 = 1500$ .",
+          "الطرف الثاني : $200+130 \\times 10 = 1500$ .",
+          "$1500 = 1500$ : الطرفان متساويان، فالمساواة صحيحة ."
+        ]
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بقيمته المعطاة في الطرفين معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة ثمّ قارن الناتجين بالرمز المكتوب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الرمز « أصغر أو يساوي » يقبل التساوي، والرمز « أصغر تمامًا » لا يقبله."
+        }
+      ],
+      "timeSeconds": 70
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم قيمة من القيم $6$ ، $8$ ، $10$ ، $12$ للساعات يكون عندها المحلّ $Y$ أرخص تمامًا من المحلّ $X$ ، أي $200+130h < 500+100h$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-IKHTIBAR-BOUNDARY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ قيمة من القيم المعطاة على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الطرفين من أجل كلّ قيمة ثمّ قارن بالرمز المكتوب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عُدّ القيم التي تجعل المتباينة صحيحة فقط، وانتبه إلى حالة تساوي الطرفين."
+        }
+      ],
+      "feedback": {
+        "correct": "$2$ .",
+        "incorrect": "اختبر كلّ قيمة على حدة وانتبه إلى حالة تساوي الطرفين."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $h = 6$ : $200+130 \\times 6 = 980$ و $500+100 \\times 6 = 1100$ ، فالعلاقة صحيحة .",
+          "من أجل $h = 8$ : $200+130 \\times 8 = 1240$ و $500+100 \\times 8 = 1300$ ، فالعلاقة صحيحة .",
+          "من أجل $h = 10$ : $200+130 \\times 10 = 1500$ و $500+100 \\times 10 = 1500$ ، فالعلاقة خاطئة .",
+          "من أجل $h = 12$ : $200+130 \\times 12 = 1760$ و $500+100 \\times 12 = 1700$ ، فالعلاقة خاطئة .",
+          "عدد القيم : $2$ ."
+        ],
+        "result": "2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "يكترئ شاب دراجة $8$ ساعات . عند أيّ المحلّين يدفع أقلّ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "المحلّ $X$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SYN-MUAD2-FIXED"
+        },
+        {
+          "id": "B",
+          "content": "المحلّ $Y$",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "المحلّ $Y$ .",
+        "incorrect": "احسب ما يدفعه الشخص في كلّ صيغة بالقيمة المعطاة ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "$X$ : $500+100 \\times 8 = 1300$ ، $Y$ : $200+130 \\times 8 = 1240$ .",
+          "الأرخص هو المحلّ $Y$ لأنّ $1240$ أصغر من $1300$ ."
+        ]
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب ما يدفعه الشخص في كلّ صيغة من أجل القيمة المعطاة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تقارن ثمن الوحدة وحده : أضف الجزء الثابت في كلّ صيغة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختر الصيغة التي يكون ناتجها أصغر تمامًا."
+        }
+      ],
+      "timeSeconds": 90
+    }
+  ]
+}

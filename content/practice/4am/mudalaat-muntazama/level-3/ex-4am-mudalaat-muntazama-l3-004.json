@@ -1,0 +1,168 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l3-004",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 14 — زاوية الثماني",
+    "estimatedMinutes": 3,
+    "tags": [
+      "زاوية المضلع",
+      "الثماني"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-14",
+      "page": 159,
+      "section": "المضلعات المنتظمة",
+      "number": 14
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 159): ABCDEFGH ثماني منتظم مركزه O حيث $OA = \\sqrt{8}$ (الوحدة هي cm).",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "L": [
+          0,
+          2
+        ],
+        "A": [
+          0,
+          2.828
+        ],
+        "B": [
+          -2,
+          2
+        ],
+        "C": [
+          -2.828,
+          0
+        ],
+        "D": [
+          -2,
+          -2
+        ],
+        "E": [
+          0,
+          -2.828
+        ],
+        "F": [
+          2,
+          -2
+        ],
+        "G": [
+          2.828,
+          0
+        ],
+        "H": [
+          2,
+          2
+        ]
+      },
+      "circles": [
+        {
+          "center": "O",
+          "radius": 2.828
+        }
+      ],
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "E"
+        ],
+        [
+          "E",
+          "F"
+        ],
+        [
+          "F",
+          "G"
+        ],
+        [
+          "G",
+          "H"
+        ],
+        [
+          "H",
+          "A"
+        ],
+        [
+          "B",
+          "H"
+        ],
+        [
+          "O",
+          "A"
+        ],
+        {
+          "from": "O",
+          "to": "B",
+          "dashed": true
+        }
+      ],
+      "labels": {
+        "L": "se"
+      },
+      "ariaLabel": "ثماني منتظم ABCDEFGH مركزه O ونصف قطر دائرته جذر 8، والقطعة [BH] تقطع [OA] في L، ونصف القطر [OB]",
+      "maxWidth": 480
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "عيّن قيس الزاوية $\\widehat{ABC}$ (بالدرجات).",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح (بالدرجات)",
+      "expectedAnswer": "135",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUNTAZAM-MARKAZIYA",
+          "value": "45"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالزاوية المركزية التي تحصر ضلعا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المثلث الذي رأسه المركز وقاعدته ضلع متساوي الساقين: احسب زاويتي قاعدته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زاوية المضلع ضعف زاوية قاعدة هذا المثلث."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{AOB} = 45^\\circ$ و $\\widehat{ABC} = 180^\\circ - 45^\\circ$ .",
+        "incorrect": "زاوية الثماني ليست زاويته المركزية."
+      },
+      "difficulty": 3
+    }
+  ]
+}

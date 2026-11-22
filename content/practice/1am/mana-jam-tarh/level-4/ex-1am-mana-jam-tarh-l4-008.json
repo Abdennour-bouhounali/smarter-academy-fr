@@ -1,0 +1,178 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l4-008",
+  "lessonCode": "mana-jam-tarh",
+  "level": 4,
+  "metadata": {
+    "title": "سياج حقل الزيتون",
+    "estimatedMinutes": 8,
+    "tags": [
+      "محيط",
+      "مخطط بأقواس",
+      "طرح"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-8",
+      "page": 32,
+      "section": "أتعمّق",
+      "number": 8
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "قطعة أرض مستطيلة الشكل طولها $48{,}5\\,\\mathrm{m}$ وعرضها $31{,}25\\,\\mathrm{m}$، يريد العم صالح إحاطتها بسياج يحمي أشجار الزيتون التي غرسها، مع ترك مدخل عرضه $3{,}6\\,\\mathrm{m}$ وباب للمرآب عرضه $4{,}15\\,\\mathrm{m}$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب محيط قطعة الأرض.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالمتر (m)",
+      "expectedAnswer": "159.5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "محيط المستطيل = (الطول + العرض) × 2."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أو: مجموع الأضلاع الأربعة."
+        }
+      ],
+      "feedback": {
+        "correct": "$(48{,}5 + 31{,}25) \\times 2 = 159{,}5\\,\\mathrm{m}$.",
+        "incorrect": "المحيط مجموع أطوال الأضلاع الأربعة."
+      },
+      "solution": {
+        "lines": [
+          "$48{,}5 + 31{,}25 = 79{,}75$",
+          "$79{,}75 \\times 2 = 159{,}5$"
+        ],
+        "result": "159{,}5 \\text{ m}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "في المخطط بأقواس الذي يكون فيه محيط الأرض هو الكل، الأجزاء هي:",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "طول السياج، وعرض المدخل، وعرض باب المرآب",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "محيط الأرض، وعرض المدخل، وعرض باب المرآب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        },
+        {
+          "id": "C",
+          "content": "طول الأرض وعرضها فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-JUZ-NAQIS"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا يغطّي محيط الأرض كله؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السياج لا يغطّي المدخل ولا باب المرآب."
+        }
+      ],
+      "feedback": {
+        "correct": "المحيط = السياج + المدخل + باب المرآب.",
+        "incorrect": "المحيط هو الكل، فلا يكون جزءًا من نفسه."
+      },
+      "solution": {
+        "lines": [
+          "محيط الأرض يتكوّن من السياج والمدخل وباب المرآب.",
+          "إذن: محيط الأرض = طول السياج + عرض المدخل + عرض باب المرآب."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب طول السياج.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالمتر (m)",
+      "expectedAnswer": "151.75",
+      "misconceptionSignatures": [
+        {
+          "value": "167.25",
+          "id": "MISC-JAMTARH-KULL-JUZ"
+        },
+        {
+          "value": "155.9",
+          "id": "MISC-JAMTARH-JUZ-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول السياج جزء من المحيط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح عرض المدخل وعرض باب المرآب من المحيط."
+        }
+      ],
+      "feedback": {
+        "correct": "$159{,}5 - 3{,}6 - 4{,}15 = 151{,}75\\,\\mathrm{m}$.",
+        "incorrect": "السياج أقصر من المحيط: اطرح المدخل وباب المرآب كليهما."
+      },
+      "solution": {
+        "lines": [
+          "$3{,}6 + 4{,}15 = 7{,}75$",
+          "$159{,}5 - 7{,}75 = 151{,}75$"
+        ],
+        "result": "151{,}75 \\text{ m}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -47,6 +47,10 @@ export function usePremiumStatus() {
       hasSubscription: access?.subscriptionActive === true,
       /** Accès accordé par l'administration : ce n'est PAS un abonnement. */
       hasAdminOverride: access?.adminOverrideActive === true,
+      /** Couvert par l'offre de son ENSEIGNANT (modèle B) — dynamique, jamais une ligne. */
+      viaTeacher: access?.teacherCoverageActive === true,
+      /** Couvert par la LICENCE de son établissement (modèle C) — dynamique, jamais une ligne. */
+      viaSchool: access?.schoolCoverageActive === true,
       /** Fin du droit en cours, s'il a un terme (ISO 8601), sinon null. */
       expiresAt: access?.expiresAt ?? null,
       /** La réponse du serveur est-elle arrivée ? */
@@ -63,5 +67,3 @@ export function usePremiumStatus() {
     };
   }, [access, user]);
 }
-
-export default usePremiumStatus;

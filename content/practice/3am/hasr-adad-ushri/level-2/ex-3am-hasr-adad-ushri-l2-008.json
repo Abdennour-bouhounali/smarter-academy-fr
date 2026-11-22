@@ -1,0 +1,252 @@
+{
+  "id": "ex-3am-hasr-adad-ushri-l2-008",
+  "lessonCode": "hasr-adad-ushri",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — حصر عدد علم مدوّره",
+    "estimatedMinutes": 8,
+    "tags": [
+      "حصر",
+      "تدوير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "العدد $x$ مدوّره إلى $0{,}1$ هو $3{,}6$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أيّ حصر يضمّ كلّ الأعداد التي مدوّرها $3{,}6$ ولا يضمّ غيرها؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3{,}55\\le x\\le 3{,}65$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-UPPER-INCLUDED"
+        },
+        {
+          "id": "B",
+          "content": "$3{,}6\\le x<3{,}7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-TRUNC"
+        },
+        {
+          "id": "C",
+          "content": "$3{,}55\\le x<3{,}65$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$3{,}5<x<3{,}7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-WIDTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى الرقم الذي يلي الرتبة المطلوبة مباشرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إن كان هذا الرقم خمسة أو أكبر زدنا الرقم الأخير بواحد، وإلاّ تركناه كما هو."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لحصر عدد علمنا مدوّره: ارجع نصف وحدة من الرتبة إلى الخلف وتقدّم نصف وحدة إلى الأمام؛ الطرف الأدنى مشمول والطرف الأعلى مستبعد."
+        }
+      ],
+      "feedback": {
+        "correct": "$3{,}55\\le x<3{,}65$ ؛ الطرف الأعلى مستبعد.",
+        "incorrect": "راجع التدوير: انظر إلى الرقم الذي يلي الرتبة المطلوبة مباشرة؛ ولحصر عدد علمنا مدوّره نرجع نصف وحدة ونتقدّم نصف وحدة، والطرف الأعلى مستبعد."
+      },
+      "solution": {
+        "lines": [
+          "نرجع نصف وحدة من الرتبة ($0{,}05$) ونتقدّم نصف وحدة: $3{,}55$ و $3{,}65$ .",
+          "$3{,}55\\le x<3{,}65$ ؛ الطرف الأعلى مستبعد."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "هل يمكن أن يكون $x=3{,}65$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-UPPER-INCLUDED"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى الرقم الذي يلي الرتبة المطلوبة مباشرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إن كان هذا الرقم خمسة أو أكبر زدنا الرقم الأخير بواحد، وإلاّ تركناه كما هو."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لحصر عدد علمنا مدوّره: ارجع نصف وحدة من الرتبة إلى الخلف وتقدّم نصف وحدة إلى الأمام؛ الطرف الأدنى مشمول والطرف الأعلى مستبعد."
+        }
+      ],
+      "feedback": {
+        "correct": "إذن لا.",
+        "incorrect": "راجع التدوير: انظر إلى الرقم الذي يلي الرتبة المطلوبة مباشرة؛ ولحصر عدد علمنا مدوّره نرجع نصف وحدة ونتقدّم نصف وحدة، والطرف الأعلى مستبعد."
+      },
+      "solution": {
+        "lines": [
+          "الرقم الذي يلي رتبة $0{,}1$ في $3{,}65$ هو $5$ ، فنزيد الرقم $6$ بواحد: $3{,}7$ .",
+          "إذن لا."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "وهل يمكن أن يكون $x=3{,}55$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-HALF-DOWN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى الرقم الذي يلي الرتبة المطلوبة مباشرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إن كان هذا الرقم خمسة أو أكبر زدنا الرقم الأخير بواحد، وإلاّ تركناه كما هو."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لحصر عدد علمنا مدوّره: ارجع نصف وحدة من الرتبة إلى الخلف وتقدّم نصف وحدة إلى الأمام؛ الطرف الأدنى مشمول والطرف الأعلى مستبعد."
+        }
+      ],
+      "feedback": {
+        "correct": "إذن نعم.",
+        "incorrect": "راجع التدوير: انظر إلى الرقم الذي يلي الرتبة المطلوبة مباشرة؛ ولحصر عدد علمنا مدوّره نرجع نصف وحدة ونتقدّم نصف وحدة، والطرف الأعلى مستبعد."
+      },
+      "solution": {
+        "lines": [
+          "الرقم الذي يلي رتبة $0{,}1$ في $3{,}55$ هو $5$ ، فنزيد الرقم $5$ بواحد: $3{,}6$ .",
+          "إذن نعم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "statement": "علّل: لماذا الطرف $3{,}55$ مشمول في الحصر والطرف $3{,}65$ مستبعد؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى الرقم الذي يلي الرتبة المطلوبة مباشرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إن كان هذا الرقم خمسة أو أكبر زدنا الرقم الأخير بواحد، وإلاّ تركناه كما هو."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لحصر عدد علمنا مدوّره: ارجع نصف وحدة من الرتبة إلى الخلف وتقدّم نصف وحدة إلى الأمام؛ الطرف الأدنى مشمول والطرف الأعلى مستبعد."
+        }
+      ],
+      "feedback": {
+        "correct": "$3{,}65$ يُدوَّر إلى $3{,}7$ ، فهو خارج المجموعة.",
+        "incorrect": "راجع التدوير: انظر إلى الرقم الذي يلي الرتبة المطلوبة مباشرة؛ ولحصر عدد علمنا مدوّره نرجع نصف وحدة ونتقدّم نصف وحدة، والطرف الأعلى مستبعد."
+      },
+      "solution": {
+        "lines": [
+          "$3{,}55$ يُدوَّر إلى $3{,}6$ لأنّ الرقم الذي يلي الرتبة $5$ ، فهو من الأعداد التي مدوّرها $3{,}6$ .",
+          "$3{,}65$ يُدوَّر إلى $3{,}7$ ، فهو خارج المجموعة."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

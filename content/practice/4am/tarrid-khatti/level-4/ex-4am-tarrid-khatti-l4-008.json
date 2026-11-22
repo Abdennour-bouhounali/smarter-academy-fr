@@ -1,0 +1,213 @@
+{
+  "id": "ex-4am-tarrid-khatti-l4-008",
+  "lessonCode": "tarrid-khatti",
+  "level": 4,
+  "metadata": {
+    "title": "درّاج يتوقّف في الطريق",
+    "estimatedMinutes": 9,
+    "tags": [
+      "جدول",
+      "تفسير النتيجة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-khatti_P3",
+      "modelledOn": "ex-28",
+      "adaptedFrom": "ex-4am-tarrid-khatti-l4-008"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يعطي الجدول الآتي المسافة $d$ (بـ km) التي قطعها درّاج بدلالة المدة $t$ (بالساعة) منذ انطلاقه. سرعته ثابتة في كل مرحلة (من 0 إلى 1h ، ثم من 1h إلى 1,5h ، ثم من 1,5h إلى 3h).",
+    "table": {
+      "head": [
+        "المدة $t$ (h)",
+        "0",
+        "1",
+        "1,5",
+        "3"
+      ],
+      "rows": [
+        [
+          "المسافة $d$ (km)",
+          "0",
+          "30",
+          "30",
+          "72"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "في المرحلة الأولى ($0 \\leqslant t \\leqslant 1$) الوضعية تناسبية. عبّر عن $d(t)$ بدلالة $t$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "30",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المرحلة الأولى ينطلق الدرّاج من المبدأ بسرعة ثابتة."
+        }
+      ],
+      "feedback": {
+        "correct": "$d(t) = 30t$ .",
+        "incorrect": "استعمل المسافة المقطوعة بعد ساعة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "$d(1) = 30$ ، إذن $d(t) = 30t$ من أجل $0 \\leqslant t \\leqslant 1$ ."
+        ],
+        "result": "d(t) = 30t"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم دقيقة توقّف الدرّاج؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدة بالدقائق",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "50",
+          "id": "MISC-MAQADIR-WIHDA"
+        },
+        {
+          "value": "0,5",
+          "id": "MISC-MAQADIR-WIHDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في أي مرحلة لم تتغيّر المسافة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حوّل المدة إلى دقائق."
+        }
+      ],
+      "feedback": {
+        "correct": "من $t = 1$ إلى $t = 1{,}5$ : نصف ساعة، أي 30 دقيقة.",
+        "incorrect": "التوقّف: المدة تمرّ والمسافة لا تتغيّر. الساعة 60 دقيقة."
+      },
+      "solution": {
+        "lines": [
+          "بين $t = 1$ و $t = 1{,}5$ بقيت المسافة 30km.",
+          "$0{,}5h = 0{,}5 \\times 60 = 30$ دقيقة."
+        ],
+        "result": "30min"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما سرعة الدرّاج في المرحلة الأخيرة؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: السرعة بـ km/h",
+      "expectedAnswer": "28",
+      "misconceptionSignatures": [
+        {
+          "value": "24",
+          "id": "MISC-TARRID-NAMUDHAJ"
+        },
+        {
+          "value": "48",
+          "id": "MISC-TARRID-NAMUDHAJ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المسافة المقطوعة ومدة هذه المرحلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{72 - 30}{3 - 1{,}5} = \\dfrac{42}{1{,}5} = 28$ km/h.",
+        "incorrect": "استعمل المسافة والمدة الخاصتين بالمرحلة الأخيرة فقط."
+      },
+      "solution": {
+        "lines": [
+          "المسافة: $72 - 30 = 42$ km ، والمدة: $3 - 1{,}5 = 1{,}5$ h.",
+          "السرعة: $\\dfrac{42}{1{,}5} = 28$ km/h."
+        ],
+        "result": "28km/h"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "احسب سرعته المتوسطة خلال الرحلة كلها.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: السرعة بـ km/h",
+      "expectedAnswer": "24",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "السرعة المتوسطة = المسافة الكلية ÷ المدة الكلية (والتوقّف ضمنها)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{72}{3} = 24$ km/h.",
+        "incorrect": "قسّم المسافة الكلية على المدة الكلية."
+      },
+      "solution": {
+        "lines": [
+          "$v = \\dfrac{72}{3} = 24$ km/h."
+        ],
+        "result": "24km/h"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

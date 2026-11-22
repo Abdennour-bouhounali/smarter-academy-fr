@@ -1,0 +1,192 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-jumal-l4-006",
+  "lessonCode": "wadiya-idmajiya-jumal",
+  "level": 4,
+  "metadata": {
+    "title": "حافلة الرحلة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "ترييض",
+      "مبلغ ثابت",
+      "متراجحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-jumal_P1"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "لكراء حافلة لرحلة علمية إلى متحف المدينة، يدفع القسم مبلغا ثابتا $y$ DA يضاف إليه $x$ DA عن كل تلميذ. إذا شارك 30 تلميذا فالمبلغ 13500DA، وإذا شارك 45 تلميذا فالمبلغ 18000DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب جملة معادلتين تترجم هذه المعطيات، ثم حلها مبيّنا طريقة الحل.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": {
+        "x": "300",
+        "y": "4500"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "4500",
+            "y": "300"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب معادلة لكل حالة: المبلغ = عدد التلاميذ × $x$ + المبلغ الثابت."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "معامل $y$ هو نفسه في المعادلتين: اطرح طرفا لطرف."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض قيمة $x$ في إحدى المعادلتين لتجد $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "المبلغ عن كل تلميذ $300DA$ والمبلغ الثابت $4500DA$ .",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "30 تلميذا: $30x + y = 13500$",
+          "45 تلميذا: $45x + y = 18000$",
+          "$\\begin{cases} 30x + y = 13500 & ...(1) \\\\ 45x + y = 18000 & ...(2) \\end{cases}$",
+          "بطرح المعادلة (1) من المعادلة (2) طرفا لطرف نجد:",
+          "$15x = 4500$",
+          "$x = 300$",
+          "بتعويض $x$ بـ $300$ في المعادلة (1) نجد: $30 \\times 300 + y = 13500$",
+          "$y = 4500$",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(300 ; 4500)"
+      },
+      "work": "required",
+      "timeSeconds": 360
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "شارك في الرحلة 50 تلميذا وقُسّم المبلغ عليهم بالتساوي. كم يدفع كل تلميذ؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "390",
+      "misconceptionSignatures": [
+        {
+          "value": "300",
+          "id": "MISC-WADIYA-TARJAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المبلغ الكلي لـ 50 تلميذا أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اقسمه على عدد التلاميذ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{50 \\times 300 + 4500}{50} = 390$ .",
+        "incorrect": "احسب المبلغ الكلي (مع المبلغ الثابت) ثم اقسم على 50."
+      },
+      "solution": {
+        "lines": [
+          "المبلغ الكلي: $50 \\times 300 + 4500 = 19500$",
+          "نصيب كل تلميذ: $\\dfrac{19500}{50} = 390$",
+          "يدفع كل تلميذ $390DA$ ."
+        ],
+        "result": "390\\,DA"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ابتداءً من كم تلميذا يصبح نصيب كل تلميذ أقل من 400DA؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط",
+      "expectedAnswer": "46",
+      "misconceptionSignatures": [
+        {
+          "value": "45",
+          "id": "MISC-WADIYA-QIMAT-TASAWI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب نصيب التلميذ بدلالة عدد التلاميذ $n$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب طرفي المتراجحة في $n$ (عدد موجب) ثم حلها."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل 46 تلميذا: $\\dfrac{300 \\times 46 + 4500}{46} \\approx 397{,}8 < 400$ .",
+        "incorrect": "حل المتراجحة ثم خذ أول عدد طبيعي يحققها (المساواة لا تكفي)."
+      },
+      "solution": {
+        "lines": [
+          "نصيب التلميذ عند مشاركة $n$ تلميذا: $\\dfrac{300n + 4500}{n}$",
+          "نريد: $\\dfrac{300n + 4500}{n} < 400$ أي $300n + 4500 < 400n$",
+          "$4500 < 100n$ أي $n > 45$",
+          "إذن ابتداءً من 46 تلميذا."
+        ],
+        "result": "46"
+      },
+      "timeSeconds": 240
+    }
+  ]
+}

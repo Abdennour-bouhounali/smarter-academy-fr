@@ -1,0 +1,128 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-harfi-l1-004",
+  "lessonCode": "wadiya-idmajiya-harfi",
+  "level": 1,
+  "metadata": {
+    "title": "حساب دون آلة بالمتطابقات",
+    "estimatedMinutes": 3,
+    "tags": [
+      "حساب ذهني",
+      "متطابقات شهيرة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 40,
+      "section": "الوضعيات",
+      "number": 13,
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-harfi-l1-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "احسب دون استعمال الآلة الحاسبة، باستعمال متطابقة شهيرة مناسبة:"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "$19 \\times 21$",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "399",
+      "misconceptionSignatures": [
+        {
+          "value": "401",
+          "id": "MISC-JIDAA-MAJMU-FARQ-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$19 = 20 - 1$ و $21 = 20 + 1$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل $(a - b)(a + b) = a^2 - b^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$19 \\times 21 = 399$ .",
+        "incorrect": "اكتب العددين على شكل فرق ومجموع حول عدد مدوّر، ثم طبّق المتطابقة $(a - b)(a + b) = a^2 - b^2$ ."
+      },
+      "solution": {
+        "lines": [
+          "$19 \\times 21 = (20 - 1)(20 + 1)$",
+          "$= 20^2 - 1^2 = 400 - 1$"
+        ],
+        "result": "19 \\times 21 = 399"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "$19^2$",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "361",
+      "misconceptionSignatures": [
+        {
+          "value": "401",
+          "id": "MISC-MURABBA-FARQ-BILA-2AB"
+        },
+        {
+          "value": "181",
+          "id": "MISC-HISAB-DHIHNI-MURABBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$19 = 20 - 1$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل مربع فرق: $(a - b)^2 = a^2 - 2ab + b^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$19^2 = 361$ .",
+        "incorrect": "اكتب العدد على شكل فرق حول عدد مدوّر، ثم طبّق مربع فرق دون أن تنسى الحد المضاعف."
+      },
+      "solution": {
+        "lines": [
+          "$19^2 = (20 - 1)^2$",
+          "$= 20^2 - 2 \\times 20 \\times 1 + 1^2 = 400 - 40 + 1$"
+        ],
+        "result": "19^2 = 361"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,389 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ihsa-l5-005",
+  "lessonCode": "wadiya-idmajiya-ihsa",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2016 — ركّاب ترامواي سيدي بلعباس",
+    "estimatedMinutes": 20,
+    "tags": [
+      "وضعية إدماجية",
+      "مضلّع",
+      "المدى",
+      "المتوسط",
+      "الوسيط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-ihsa_P2",
+      "modelledOn": "BEM 2016 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يمثّل المضلّع الآتي عدد ركّاب ترامواي سيدي بلعباس، الذي يحافظ ركّابه على نظافته، في كل يوم من أيام أسبوع (يوم الجمعة يشتغل الترامواي نصف يوم فقط):",
+    "figure": {
+      "kind": "chart",
+      "type": "line",
+      "ariaLabel": "مضلّع عدد ركّاب الترامواي في كل يوم من السبت (1) إلى الجمعة (7)",
+      "xTitle": "اليوم",
+      "yTitle": "عدد الركّاب",
+      "caption": "1: السبت ، 2: الأحد ، 3: الإثنين ، 4: الثلاثاء ، 5: الأربعاء ، 6: الخميس ، 7: الجمعة",
+      "x": {
+        "min": 1,
+        "max": 7,
+        "step": 1
+      },
+      "y": {
+        "max": 7000,
+        "step": 1000,
+        "minor": 5
+      },
+      "points": [
+        [
+          1,
+          4200
+        ],
+        [
+          2,
+          5600
+        ],
+        [
+          3,
+          6000
+        ],
+        [
+          4,
+          5800
+        ],
+        [
+          5,
+          5400
+        ],
+        [
+          6,
+          6200
+        ],
+        [
+          7,
+          1800
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "بقراءة المضلّع:",
+      "statement": "ما هو عدد ركّاب يوم الخميس؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "6200",
+      "misconceptionSignatures": [
+        {
+          "value": "6100",
+          "id": "MISC-IHSA-QIRAA-MUKHATTAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يوم الخميس هو اليوم 6 على المحور الأفقي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأعداد مكتوبة كل 1000 ، وبين كل عددين 5 مسافات: التدريجة الرفيعة 200 ."
+        }
+      ],
+      "feedback": {
+        "correct": "رأس اليوم 6 على ارتفاع 6200 راكب.",
+        "incorrect": "حدّد قيمة التدريجة الرفيعة (1000 ÷ 5) قبل القراءة."
+      },
+      "solution": {
+        "lines": [
+          "التدريجة الرفيعة: $1000 \\div 5 = 200$ .",
+          "رأس اليوم 6 (الخميس) يقع على 6200 ."
+        ],
+        "result": "6200"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب مدى هذه السلسلة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "4400",
+      "misconceptionSignatures": [
+        {
+          "value": "6200",
+          "id": "MISC-IHSA-MADA-AKBAR-QIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أعلى رأس وأدنى رأس في المضلّع."
+        }
+      ],
+      "feedback": {
+        "correct": "$6200 - 1800 = 4400$ .",
+        "incorrect": "المدى = أكبر قيمة − أصغر قيمة، وأصغر قيمة هي يوم الجمعة."
+      },
+      "solution": {
+        "lines": [
+          "القراءة: 4200 ، 5600 ، 6000 ، 5800 ، 5400 ، 6200 ، 1800 .",
+          "$6200 - 1800 = 4400$"
+        ],
+        "result": "4400"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "احسب المتوسط وعيّن الوسيط لعدد الركّاب في اليوم.",
+      "statement": "المتوسط.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "5000",
+      "misconceptionSignatures": [
+        {
+          "value": "5600",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع الأعداد السبعة ثم اقسم على 7 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{35000}{7} = 5000$ راكب.",
+        "incorrect": "المتوسط = مجموع ركّاب الأيام السبعة ÷ 7 ."
+      },
+      "solution": {
+        "lines": [
+          "$4200 + 5600 + 6000 + 5800 + 5400 + 6200 + 1800 = 35000$",
+          "$\\dfrac{35000}{7} = 5000$"
+        ],
+        "result": "5000"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "الوسيط.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "5600",
+      "misconceptionSignatures": [
+        {
+          "value": "5800",
+          "id": "MISC-IHSA-WASIT-BILA-TARTIB"
+        },
+        {
+          "value": "5000",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رتّب الأعداد السبعة تصاعديا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوسيط القيمة ذات الرتبة 4 ."
+        }
+      ],
+      "feedback": {
+        "correct": "الترتيب: 1800 ، 4200 ، 5400 ، 5600 ، 5800 ، 6000 ، 6200 ؛ الوسيط 5600 .",
+        "incorrect": "لا تأخذ اليوم الرابع من الأسبوع: رتّب الأعداد أولا."
+      },
+      "solution": {
+        "lines": [
+          "الترتيب التصاعدي: 1800 ، 4200 ، 5400 ، 5600 ، 5800 ، 6000 ، 6200",
+          "القيمة ذات الرتبة 4 هي 5600 ."
+        ],
+        "result": "5600"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "أيّ المؤشرين يعبّر أفضل عن عدد ركّاب يوم عمل عادي؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "المتوسط، لأنه يأخذ كل أيام الأسبوع في الحساب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-WASIT-MUTAWASSIT"
+        },
+        {
+          "id": "B",
+          "content": "الوسيط، لأن العدد الصغير لركّاب الجمعة يخفض المتوسط ولا يؤثر في الوسيط",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المتوسط بعدد ركّاب أيام العمل العادية (من السبت إلى الخميس)."
+        }
+      ],
+      "feedback": {
+        "correct": "المتوسط 5000 أصغر من عدد ركّاب أغلب أيام العمل، أما الوسيط 5600 فقريب منها.",
+        "incorrect": "قيمة متطرفة واحدة (يوم الجمعة) تحرّك المتوسط ولا تحرّك الوسيط."
+      },
+      "solution": {
+        "lines": [
+          "المتوسط 5000 أصغر من عدد ركّاب خمسة أيام من ستة أيام عمل عادية: يوم الجمعة (1800) خفضه.",
+          "الوسيط 5600 لا يتأثر بهذه القيمة الصغيرة: هو الأنسب."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "sub": "ا",
+      "lead": "☜ ثمن التذكرة 40DA ، وتدفع مؤسسة الترامواي 20% من مداخيلها ضريبة. أعط مداخيل الأسبوع بعد دفع الضريبة.",
+      "statement": "ما هو العدد الإجمالي لركّاب الأسبوع؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "35000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد الإجمالي = المتوسط × 7 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$5000 \\times 7 = 35000$ راكب.",
+        "incorrect": "من تعريف المتوسط: المجموع = المتوسط × عدد الأيام."
+      },
+      "solution": {
+        "lines": [
+          "$5000 \\times 7 = 35000$"
+        ],
+        "result": "35000"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "sub": "ب",
+      "statement": "ما هي مداخيل الأسبوع بعد دفع الضريبة؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "1120000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المداخيل قبل الضريبة = عدد الركّاب × ثمن التذكرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد دفع 20% يبقى 80% ."
+        }
+      ],
+      "feedback": {
+        "correct": "$35000 \\times 40 \\times 0{,}8 = 1\\,120\\,000$ DA .",
+        "incorrect": "احسب المداخيل قبل الضريبة، ثم خذ 80% منها."
+      },
+      "solution": {
+        "lines": [
+          "$35000 \\times 40 = 1\\,400\\,000$",
+          "$1\\,400\\,000 \\times 0{,}8 = 1\\,120\\,000$"
+        ],
+        "result": "1\\,120\\,000\\,\\mathrm{DA}"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

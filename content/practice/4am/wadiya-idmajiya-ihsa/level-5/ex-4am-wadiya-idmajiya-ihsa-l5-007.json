@@ -1,0 +1,361 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ihsa-l5-007",
+  "lessonCode": "wadiya-idmajiya-ihsa",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2017 — بطاريات هواتف علامتين في محلّ بمستغانم",
+    "estimatedMinutes": 20,
+    "tags": [
+      "وضعية إدماجية",
+      "مخطط بالأعمدة",
+      "المتوسط المتوازن",
+      "الوسيط",
+      "اتخاذ قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-ihsa_P2",
+      "modelledOn": "BEM 2017 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2017",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يقارن صاحب محلّ للهواتف بمستغانم، وهو صادق مع زبائنه، بين علامتين «أ» و «ب»، فقاس مدة اشتغال البطارية (بالساعات) بعد شحنها كاملة لـ 20 هاتفا من كل علامة. يعطي الجدول نتائج العلامة «أ»، ويمثّل المخطط بالأعمدة نتائج العلامة «ب»:",
+    "table": {
+      "head": [
+        "المدة (h)",
+        "18",
+        "20",
+        "22",
+        "24"
+      ],
+      "rows": [
+        [
+          "عدد هواتف «أ»",
+          "2",
+          "6",
+          "8",
+          "4"
+        ]
+      ]
+    },
+    "figure": {
+      "kind": "chart",
+      "type": "bar",
+      "ariaLabel": "مخطط بالأعمدة لعدد هواتف العلامة «ب» حسب مدة اشتغال البطارية: 18 و 20 و 22 و 24 ساعة",
+      "xTitle": "مدة اشتغال البطارية (h)",
+      "yTitle": "عدد الهواتف",
+      "y": {
+        "max": 8,
+        "step": 2,
+        "minor": 2
+      },
+      "bars": [
+        {
+          "label": "18",
+          "value": 6
+        },
+        {
+          "label": "20",
+          "value": 4
+        },
+        {
+          "label": "22",
+          "value": 2
+        },
+        {
+          "label": "24",
+          "value": 8
+        }
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب متوسط مدة اشتغال البطارية لكل علامة.",
+      "statement": "العلامة «أ».",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة",
+      "expectedAnswer": "21,4",
+      "misconceptionSignatures": [
+        {
+          "value": "21",
+          "id": "MISC-IHSA-MUTAWASSIT-BILA-TARJIH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب كل مدة في عدد الهواتف الموافق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم المجموع على 20 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{18 \\times 2 + 20 \\times 6 + 22 \\times 8 + 24 \\times 4}{20} = 21{,}4$ h .",
+        "incorrect": "المتوسط المتوازن: مجموع (المدة × عدد الهواتف) ÷ 20 ."
+      },
+      "solution": {
+        "lines": [
+          "$18 \\times 2 + 20 \\times 6 + 22 \\times 8 + 24 \\times 4 = 428$",
+          "$\\dfrac{428}{20} = 21{,}4$"
+        ],
+        "result": "21{,}4\\,\\mathrm{h}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "العلامة «ب».",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة",
+      "expectedAnswer": "21,2",
+      "misconceptionSignatures": [
+        {
+          "value": "21",
+          "id": "MISC-IHSA-MUTAWASSIT-BILA-TARJIH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ ارتفاع كل عمود (التدريجة الرفيعة 1)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{18 \\times 6 + 20 \\times 4 + 22 \\times 2 + 24 \\times 8}{20} = 21{,}2$ h .",
+        "incorrect": "اقرأ الأعمدة بدقة، ثم احسب المتوسط المتوازن."
+      },
+      "solution": {
+        "lines": [
+          "القراءة: 6 ، 4 ، 2 ، 8 .",
+          "$18 \\times 6 + 20 \\times 4 + 22 \\times 2 + 24 \\times 8 = 424$",
+          "$\\dfrac{424}{20} = 21{,}2$"
+        ],
+        "result": "21{,}2\\,\\mathrm{h}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "عيّن وسيط مدة اشتغال البطارية لكل علامة.",
+      "statement": "العلامة «أ».",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة إن لزم)",
+      "expectedAnswer": "22",
+      "misconceptionSignatures": [
+        {
+          "value": "21,4",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        },
+        {
+          "value": "21",
+          "id": "MISC-IHSA-WASIT-QIMA-WUSTA-JADWAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الرتبتان الوسطيان 10 و 11 ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التكرارات المجمعة الصاعدة: 2 ، 8 ، …"
+        }
+      ],
+      "feedback": {
+        "correct": "الرتبتان 10 و 11 تقعان في المدة 22 ، فالوسيط 22 h .",
+        "incorrect": "حدّد بالتكرارات المجمعة الصاعدة المدة التي تقع فيها الرتبتان 10 و 11 ."
+      },
+      "solution": {
+        "lines": [
+          "التكرارات المجمعة الصاعدة: 2 ، 8 ، 16 ، 20 .",
+          "الرتب من 9 إلى 16 للمدة 22 .",
+          "$\\dfrac{22 + 22}{2} = 22$"
+        ],
+        "result": "22\\,\\mathrm{h}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "العلامة «ب».",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة إن لزم)",
+      "expectedAnswer": "21",
+      "misconceptionSignatures": [
+        {
+          "value": "21,2",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        },
+        {
+          "value": "24",
+          "id": "MISC-IHSA-QIRAA-MUKHATTAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكرارات المجمعة الصاعدة: 6 ، 10 ، …"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الرتبة 10 والرتبة 11 لا تقعان في المدة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{20 + 22}{2} = 21$ h .",
+        "incorrect": "حدّد القيمة ذات الرتبة 10 والقيمة ذات الرتبة 11 كلا على حدة، ثم خذ نصف مجموعهما."
+      },
+      "solution": {
+        "lines": [
+          "التكرارات المجمعة الصاعدة: 6 ، 10 ، 12 ، 20 .",
+          "الرتبة 10 للمدة 20 ، والرتبة 11 للمدة 22 .",
+          "$\\dfrac{20 + 22}{2} = 21$"
+        ],
+        "result": "21\\,\\mathrm{h}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "ينصح صاحب المحلّ زبائنه بالعلامة التي متوسط مدة بطاريتها ووسيطها أكبر. بأيّ علامة ينصحهم؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "العلامة «أ»، لأن متوسطها ووسيطها أكبر",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "العلامة «ب»، لأن أطول عمود في مخططها يوافق 24 ساعة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-QIRAA-MUKHATTAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المتوسطين (01) ثم الوسيطين (02)."
+        }
+      ],
+      "feedback": {
+        "correct": "$21{,}4 > 21{,}2$ و $22 > 21$ .",
+        "incorrect": "استعمل المؤشرين المحسوبين، لا أطول عمود."
+      },
+      "solution": {
+        "lines": [
+          "المتوسط: $21{,}4 > 21{,}2$ .",
+          "الوسيط: $22 > 21$ .",
+          "ينصح صاحب المحلّ بالعلامة «أ»."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "☜ ثمن هاتف العلامة المختارة 32000DA ، ويمنح المحلّ تخفيضا بـ 15% . أعط ثمن الهاتف بعد التخفيض.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "27200",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بعد تخفيض 15% يبقى 85% من الثمن."
+        }
+      ],
+      "feedback": {
+        "correct": "$32000 \\times 0{,}85 = 27200$ DA .",
+        "incorrect": "احسب 15% من الثمن ثم اطرحه، أو خذ 85% من الثمن مباشرة."
+      },
+      "solution": {
+        "lines": [
+          "مبلغ التخفيض: $32000 \\times 0{,}15 = 4800$",
+          "$32000 - 4800 = 27200$"
+        ],
+        "result": "27200\\,\\mathrm{DA}"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

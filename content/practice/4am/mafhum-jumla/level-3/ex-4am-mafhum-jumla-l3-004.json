@@ -1,0 +1,251 @@
+{
+  "id": "ex-4am-mafhum-jumla-l3-004",
+  "lessonCode": "mafhum-jumla",
+  "level": 3,
+  "metadata": {
+    "title": "خمس ثنائيات وأربع معادلات",
+    "estimatedMinutes": 8,
+    "tags": [
+      "ثنائية",
+      "جملة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-2",
+      "page": 60,
+      "section": "أوظّف تعلّماتي",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الثنائيات الخمس التالية:",
+    "formulas": [
+      "(0{,}5 ; -1{,}5)",
+      "(0 ; -2)",
+      "\\left(0 ; \\dfrac{1}{3}\\right)",
+      "(1 ; -2)",
+      "\\left(\\dfrac{1}{5} ; 0\\right)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "بيّن إن كانت كل ثنائية حلا للمعادلة $5x + 3y = 1$ :",
+      "statement": "هل الثنائية $\\left(0 ; \\dfrac{1}{3}\\right)$ حل للمعادلة $5x + 3y = 1$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $0$ و $y$ بـ $\\dfrac{1}{3}$ في المعادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن قيمة الطرف الأول بالطرف الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 \\times 0 + 3 \\times \\dfrac{1}{3} = 1$ : الثنائية حل للمعادلة.",
+        "incorrect": "العدد الأول في الثنائية قيمة $x$ والثاني قيمة $y$ ؛ عوّض ثم قارن بالطرف الثاني."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $x$ بـ $0$ و $y$ بـ $\\dfrac{1}{3}$ :",
+          "$5 \\times 0 + 3 \\times \\dfrac{1}{3} = 1$",
+          "ومنه الثنائية $\\left(0 ; \\dfrac{1}{3}\\right)$ حل للمعادلة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل الثنائية $(1 ; -2)$ حل للمعادلة $5x + 3y = 1$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $1$ و $y$ بـ $-2$ في المعادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن قيمة الطرف الأول بالطرف الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 \\times 1 + 3 \\times (-2) = -1 \\neq 1$ : الثنائية ليست حلا للمعادلة.",
+        "incorrect": "العدد الأول في الثنائية قيمة $x$ والثاني قيمة $y$ ؛ عوّض ثم قارن بالطرف الثاني."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $x$ بـ $1$ و $y$ بـ $-2$ :",
+          "$5 \\times 1 + 3 \\times (-2) = -1 \\neq 1$",
+          "ومنه الثنائية $(1 ; -2)$ ليست حلا للمعادلة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "من بين الثنائيات الخمس، عيّن الثنائية التي هي حل للجملة $\\begin{cases} x - y = 2 \\\\ x - 2y = 4 \\end{cases}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية التي هي حل للجملة: قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر)",
+      "expectedAnswer": {
+        "x": "0",
+        "y": "-2"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "1/2",
+            "y": "-3/2"
+          },
+          "id": "MISC-JUMLA-MUADALA-WAHIDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جرّب كل ثنائية في المعادلة الأولى، ثم احتفظ بالتي تحققها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جرّب الثنائيات المتبقية في المعادلة الثانية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحل يحقق المعادلتين في آن واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$0 - (-2) = 2$ ؛ $0 - 2 \\times (-2) = 4$.",
+        "incorrect": "الحل يحقق المعادلتين في آن واحد، والترتيب في الثنائية مهم: عوّض كل ثنائية في المعادلتين."
+      },
+      "solution": {
+        "lines": [
+          "المعادلة $x - y = 2$ : $0{,}5 - (-1{,}5) = 2$ ، $0 - (-2) = 2$ ، $0 - \\dfrac{1}{3} \\neq 2$ ، $1 - (-2) = 3 \\neq 2$ ، $\\dfrac{1}{5} - 0 \\neq 2$",
+          "تحققها الثنائيتان $(0{,}5 ; -1{,}5)$ و $(0 ; -2)$ فقط.",
+          "المعادلة $x - 2y = 4$ : $0{,}5 - 2 \\times (-1{,}5) = 3{,}5 \\neq 4$ ، $0 - 2 \\times (-2) = 4$",
+          "ومنه الثنائية $(0 ; -2)$ هي الوحيدة التي تحقق المعادلتين."
+        ],
+        "result": "(0 ; -2)"
+      },
+      "timeSeconds": 300,
+      "work": "optional"
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "هل توجد من بين الثنائيات الخمس ثنائية حل للمعادلة $3x + 5y = 1$ ؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كل ثنائية في الطرف الأول $3x + 5y$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن كل نتيجة بالعدد 1."
+        }
+      ],
+      "feedback": {
+        "correct": "القيم هي $-6$ ، $-10$ ، $\\dfrac{5}{3}$ ، $-7$ ، $\\dfrac{3}{5}$ : لا شيء منها يساوي 1.",
+        "incorrect": "احسب $3x + 5y$ للثنائيات الخمس واحدة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 0{,}5 + 5 \\times (-1{,}5) = -6$ ؛ $3 \\times 0 + 5 \\times (-2) = -10$ ؛ $3 \\times 0 + 5 \\times \\dfrac{1}{3} = \\dfrac{5}{3}$",
+          "$3 \\times 1 + 5 \\times (-2) = -7$ ؛ $3 \\times \\dfrac{1}{5} + 5 \\times 0 = \\dfrac{3}{5}$",
+          "لا تساوي أي قيمة العدد 1، ومنه لا توجد بين الثنائيات الخمس ثنائية حل للمعادلة $3x + 5y = 1$ ."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

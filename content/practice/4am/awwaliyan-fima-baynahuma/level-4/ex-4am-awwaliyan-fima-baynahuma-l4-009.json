@@ -1,0 +1,220 @@
+{
+  "id": "ex-4am-awwaliyan-fima-baynahuma-l4-009",
+  "lessonCode": "awwaliyan-fima-baynahuma",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2025 — PGCD(1365 ; 1001) ومنتصف قطعة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "خوارزمية إقليدس",
+      "نفي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_awwaliyan-fima-baynahuma_P3",
+      "modelledOn": "BEM 2025 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب: PGCD(1365 ; 1001).",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "91",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 1365 على 1001: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (1365 ; 1001) بالزوج (1001 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 91.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$1365 = 1001 \\times 1 + 364$",
+          "$1001 = 364 \\times 2 + 273$",
+          "$364 = 273 \\times 1 + 91$",
+          "$273 = 91 \\times 3 + 0$",
+          "آخر باقٍ غير معدوم هو 91، إذن:"
+        ],
+        "result": "PGCD(1365 ; 1001) = 91"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "$A(3 ; 1)$ و $C(1365 ; 1001)$ نقطتان من مستوٍ مزوّد بمعلم متعامد ومتجانس $(O ; \\vec{i} ; \\vec{j})$ . احسب إحداثيي النقطة M منتصف القطعة $[AC]$ .",
+      "statement": "فاصلة النقطة M .",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "684",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "إحداثيا منتصف قطعة هما نصف مجموع إحداثيي طرفيها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$x_M = \\dfrac{3 + 1365}{2}$"
+        }
+      ],
+      "feedback": {
+        "correct": "$x_M = \\dfrac{3 + 1365}{2} = 684$",
+        "incorrect": "اجمع الإحداثيين المتناظرين للطرفين ثم اقسم على 2."
+      },
+      "solution": {
+        "lines": [
+          "$x_M = \\dfrac{3 + 1365}{2} = \\dfrac{1368}{2} = 684$"
+        ],
+        "result": "x_M = 684"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ترتيبة النقطة M .",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "501",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "إحداثيا منتصف قطعة هما نصف مجموع إحداثيي طرفيها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$y_M = \\dfrac{1 + 1001}{2}$"
+        }
+      ],
+      "feedback": {
+        "correct": "$y_M = \\dfrac{1 + 1001}{2} = 501$",
+        "incorrect": "اجمع الإحداثيين المتناظرين للطرفين ثم اقسم على 2."
+      },
+      "solution": {
+        "lines": [
+          "$y_M = \\dfrac{1 + 1001}{2} = \\dfrac{1002}{2} = 501$"
+        ],
+        "result": "y_M = 501"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "هل العددان 684 و 501 (إحداثيا النقطة M) أوليان فيما بينهما؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن عدد يختلف عن 1 يقسم 684 و 501 معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قواعد قابلية القسمة قد لا تكشف كل القواسم المشتركة: احسب PGCD عند الشك."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يكفي قاسم مشترك واحد يختلف عن 1 لنفي أن العددين أوليان فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(684 ; 501) = 3: العددان ليسا أوليين فيما بينهما.",
+        "incorrect": "لا تكتفِ بقواعد قابلية القسمة: احسب القاسم المشترك الأكبر للعددين."
+      },
+      "solution": {
+        "lines": [
+          "مجموع أرقام 684 هو 18 ومجموع أرقام 501 هو 6، وكلاهما مضاعف للعدد 3، إذن 3 قاسم مشترك لهما يختلف عن 1.",
+          "الجواب: لا، العددان 684 و 501 ليسا أوليين فيما بينهما لأن لهما قاسمًا مشتركًا يختلف عن 1."
+        ],
+        "result": "PGCD(684 ; 501) = 3"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

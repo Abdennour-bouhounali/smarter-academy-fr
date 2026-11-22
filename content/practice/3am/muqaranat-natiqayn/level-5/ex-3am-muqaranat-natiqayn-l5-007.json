@@ -1,0 +1,317 @@
+{
+  "id": "ex-3am-muqaranat-natiqayn-l5-007",
+  "lessonCode": "muqaranat-natiqayn",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — عرضان لخدمة الإنترنت",
+    "estimatedMinutes": 17,
+    "tags": [
+      "وضعية إدماجية",
+      "عرضان",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تقترح شركة اشتراكًا شهريًّا بصيغتين: الصيغة $A$ ثمنها $900 + 18h$ دينارًا، والصيغة $B$ ثمنها $600 + 23h$ دينارًا، حيث $h$ عدد ساعات الاستعمال في الشهر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "الجزء الأول. احسب ثمن الصيغة $A$ من أجل $h = 40$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر مختزل)",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط؟ وما العمليات التي تحتاجها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب خطوة خطوة مع الانتباه إلى الإشارات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "راجع النتيجة بطريقة ثانية قبل أن تجيب."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "1620",
+      "feedback": {
+        "correct": "ثمن $A$ هو $1620$ دج.",
+        "incorrect": "أعد الحساب بالترتيب مع الانتباه إلى الإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$A = 900 + 18 \\times 40 = 1620$"
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب ثمن الصيغة $B$ من أجل $h = 40$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر مختزل)",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط؟ وما العمليات التي تحتاجها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب خطوة خطوة مع الانتباه إلى الإشارات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "راجع النتيجة بطريقة ثانية قبل أن تجيب."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "1520",
+      "feedback": {
+        "correct": "ثمن $B$ هو $1520$ دج.",
+        "incorrect": "أعد الحساب بالترتيب مع الانتباه إلى الإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$B = 600 + 23 \\times 40 = 1520$"
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "نكتب $A - B = 300 - kh$ . ما العدد $k$ ؟",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $k$ فقط",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العبارتان؟ وكيف يُكتب فرقهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الفرق بوضع العبارة الثانية بين قوسين ثم بسّط وانتبه إلى إشارة ما بعد الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض قيمة بسيطة للحرف في الفرق وفي النتيجة."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "5",
+      "feedback": {
+        "correct": "$A - B = 300 - 5h$ ، إذن $k = 5$ .",
+        "incorrect": "ضع العبارة الثانية بين قوسين قبل الطرح، ثمّ بسّط."
+      },
+      "solution": {
+        "lines": [
+          "$A - B = 900 + 18h - (600 + 23h)$",
+          "$A - B = 900 + 18h - 600 - 23h = 300 - 5h$"
+        ]
+      }
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "متى تكون الصيغة $A$ أرخص من الصيغة $B$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما هو الفرق المبسَّط؟ ومتى يكون موجبًا ومتى يكون سالبًا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن القيمة التي ينعدم عندها الفرق، ثم انظر إلى جهتيها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر قيمة من كل جهة للتأكّد من الإشارة."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "عندما $h > 60$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "عندما $h < 60$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-ORDER-SUB"
+        },
+        {
+          "id": "C",
+          "content": "دائمًا، لأنّ ثمن الساعة في $A$ أصغر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-COEF"
+        }
+      ],
+      "feedback": {
+        "correct": "$A - B < 0$ عندما $h > 60$ .",
+        "incorrect": "ادرس إشارة الفرق المبسَّط على جهتي القيمة التي ينعدم عندها."
+      },
+      "solution": {
+        "lines": [
+          "$A - B = 300 - 5h = 5(60 - h)$ سالب عندما $h > 60$ ."
+        ]
+      }
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "يستعمل مراد الإنترنت $40$ ساعة في الشهر. أيّ الصيغتين أرخص له؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُطلب مقارنته؟ وما الأعداد المعنيّة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الفرق بين الكمّيتين ثم اقرأ إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب القرار في جملة تذكر الفرق وإشارته."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "الصيغة $A$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-COEF"
+        },
+        {
+          "id": "B",
+          "content": "الصيغة $B$",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "الصيغة $B$ أرخص بـ $100$ دج.",
+        "incorrect": "احسب الفرق بين الكمّيتين واقرأ إشارته، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$A - B = 300 - 5 \\times 40 = 100 > 0$ ، إذن $B$ أرخص."
+        ]
+      }
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "اكتب قرارك: ماذا تنصح مرادًا إذا صار يستعمل الإنترنت $80$ ساعة في الشهر؟ علّل بإشارة $A - B$ .",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي تريد تبريره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الفرق أوّلًا ثم إشارته ثم الخلاصة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة واحدة تربط إشارة الفرق بالمقارنة."
+        }
+      ],
+      "timeSeconds": 180,
+      "feedback": {
+        "correct": "الفرق سالب، إذن $A$ أرخص.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثمّ قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $h = 80$ : $A - B = 300 - 5 \\times 80 = -100 < 0$ .",
+          "إذن $A < B$ ، وننصحه باختيار الصيغة $A$ لأنّها أرخص بـ $100$ دج."
+        ]
+      }
+    }
+  ]
+}

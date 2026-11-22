@@ -1,0 +1,474 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l5-005",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — جسر الراجلين",
+    "estimatedMinutes": 25,
+    "tags": [
+      "وضعية إدماجية",
+      "خاصية فيثاغورس",
+      "التدوير",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-70",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "لحماية التلاميذ من أخطار الطريق، أنجزت البلدية جسرا للراجلين فوق الطريق قرب المدرسة. يصعد الراجل المنحدر $[AC]$ ، ثم يسير على سطح الجسر $[CD]$ ، ثم ينزل المنحدر $[DB]$ . زاوية الصعود $\\widehat{ZAC} = 45^{\\circ}$ ، $CZ = 1{,}8\\,\\mathrm{m}$ ارتفاع الجسر و $(CZ) \\perp (AB)$ ، و $CD = 7\\,\\mathrm{m}$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "Z": [
+          2,
+          0
+        ],
+        "C": [
+          2,
+          3.6
+        ],
+        "D": [
+          5,
+          3.6
+        ],
+        "W": [
+          5,
+          0
+        ],
+        "B": [
+          7,
+          0
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "Z",
+          "label": "1,8 m"
+        },
+        {
+          "from": "Z",
+          "to": "W",
+          "dashed": true
+        },
+        {
+          "from": "W",
+          "to": "B"
+        },
+        {
+          "from": "Z",
+          "to": "C",
+          "label": "1,8 m",
+          "dashed": true
+        },
+        {
+          "from": "W",
+          "to": "D",
+          "dashed": true
+        },
+        {
+          "from": "A",
+          "to": "C",
+          "tone": "rose",
+          "bold": true
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "label": "7 m",
+          "tone": "rose",
+          "bold": true
+        },
+        {
+          "from": "D",
+          "to": "B",
+          "tone": "rose",
+          "bold": true
+        }
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "Z",
+          "C"
+        ],
+        [
+          "D",
+          "W",
+          "B"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "A",
+          "from": "Z",
+          "to": "C",
+          "label": "45°"
+        },
+        {
+          "at": "B",
+          "from": "W",
+          "to": "D",
+          "label": "45°"
+        }
+      ],
+      "ariaLabel": "جسر للراجلين: منحدر [AC] ثم سطح [CD] طوله 7 m ثم منحدر [DB]؛ ارتفاع الجسر CZ = DW = 1,8 m و AZ = WB = 1,8 m، وزاويتا الصعود والنزول 45 درجة",
+      "maxWidth": 320,
+      "caption": "(الأطوال غير حقيقية)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "الجزء الأول:",
+      "statement": "برّر أن $AZ = ZC = 1{,}8\\,\\mathrm{m}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الزاوية الثالثة للمثلث $AZC$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مثلث له زاويتان متقايستان متساوي الساقين."
+        }
+      ],
+      "feedback": {
+        "correct": "المثلث $AZC$ قائم ومتساوي الساقين.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $AZC$ قائم في $Z$ و $\\widehat{ZAC} = 45^{\\circ}$ ، إذن $\\widehat{ZCA} = 90^{\\circ} - 45^{\\circ} = 45^{\\circ}$ .",
+          "للمثلث $AZC$ زاويتان متقايستان، فهو متساوي الساقين رأسه $Z$ : $AZ = ZC = 1{,}8\\,\\mathrm{m}$ ."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $AC^2$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: قيمة $AC^2$ (بـ $m^2$)",
+      "expectedAnswer": "6.48",
+      "misconceptionSignatures": [
+        {
+          "value": "7.2",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        },
+        {
+          "value": "3.6",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مربع العدد هو جداؤه في نفسه: $a^2 = a \\times a$ وليس $2 \\times a$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC^2 = 1{,}8^2 + 1{,}8^2 = 6{,}48$ .",
+        "incorrect": "اكتب مساواة فيثاغورس بالوتر وحده في طرف، ثم ربّع كل طول (اضربه في نفسه) قبل الجمع."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $AZC$ قائم في $Z$ ، حسب خاصية فيثاغورس: $AC^2 = AZ^2 + ZC^2$",
+          "$AC^2 = 1{,}8^2 + 1{,}8^2$",
+          "$AC^2 = 3{,}24 + 3{,}24 = 6{,}48$"
+        ],
+        "result": "AC^2 = 6{,}48"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "ما القيمة المضبوطة للطول $AC$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$6{,}48\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-NO-ROOT"
+        },
+        {
+          "id": "B",
+          "content": "$\\sqrt{6{,}48}\\,\\mathrm{m}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$3{,}6\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-ROOT-SPLIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولا $AC^2$ بخاصية فيثاغورس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الطول هو العدد الموجب الذي مربعه يساوي القيمة التي حسبتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القيمة المضبوطة تُكتب بالرمز $\\sqrt{\\ }$ إذا لم يكن العدد مربعا تاما."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC^2 = 6{,}48$ ، إذن $AC = \\sqrt{6{,}48}$ (قيمة مضبوطة).",
+        "incorrect": "لا تخلط بين مربع الطول والطول نفسه، ولا تجمع الأطوال: احسب المربع ثم خذ جذره."
+      },
+      "solution": {
+        "lines": [
+          "$AC^2 = 6{,}48$ ، ومنه القيمة المضبوطة: $AC = \\sqrt{6{,}48}\\,\\mathrm{m}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "أعط قيمة مقرّبة للطول $AC$ بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m مدوّرا إلى 0,01",
+      "expectedAnswer": "2.55",
+      "misconceptionSignatures": [
+        {
+          "value": "2.54",
+          "id": "MISC-FITAGHURAS-ROUND-TRUNC"
+        },
+        {
+          "value": "3.6",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "6.48",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مربع الطول، ثم استعمل اللمسة $\\sqrt{\\ }$ ، ولا تدوّر إلا النتيجة الأخيرة (انظر إلى الرقم الموالي للرقم المطلوب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC^2 = 1{,}8^2 + 1{,}8^2 = 6{,}48$ ، إذن $AC \\approx 2{,}55\\,\\mathrm{m}$ .",
+        "incorrect": "ابدأ بتحديد الوتر، ثم اكتب مساواة فيثاغورس، وتذكّر أن ما تحسبه أولا هو مربع الطول لا الطول نفسه."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $AZC$ قائم في $Z$ ، حسب خاصية فيثاغورس: $AC^2 = AZ^2 + ZC^2$",
+          "$AC^2 = 1{,}8^2 + 1{,}8^2$",
+          "$AC^2 = 3{,}24 + 3{,}24 = 6{,}48$",
+          "$AC = \\sqrt{6{,}48}$ (القيمة المضبوطة)",
+          "باستعمال اللمسة $\\sqrt{\\ }$ للآلة الحاسبة: $\\sqrt{6{,}48} \\approx 2{,}545584412$",
+          "المدوّر إلى $0{,}01$ : $AC \\approx 2{,}55\\,\\mathrm{m}$"
+        ],
+        "result": "AC \\approx 2{,}55\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "lead": "الجزء الثاني:",
+      "statement": "المنحدر $[DB]$ يقايس المنحدر $[AC]$ . أعط قيمة مقرّبة إلى $0{,}1$ لطول مسار الراجل $A \\to C \\to D \\to B$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m مدوّرا إلى 0,1",
+      "expectedAnswer": "12.1",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-FITAGHURAS-ROUND-EARLY"
+        },
+        {
+          "value": "14.2",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسار: منحدران متقايسان والسطح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل القيمة المضبوطة $\\sqrt{6{,}48}$ أو قيمة الآلة كاملة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "دوّر النتيجة الأخيرة فقط."
+        }
+      ],
+      "feedback": {
+        "correct": "$2\\sqrt{6{,}48} + 7 \\approx 12{,}1\\,\\mathrm{m}$ .",
+        "incorrect": "لا تدوّر طول المنحدر قبل الجمع."
+      },
+      "solution": {
+        "lines": [
+          "$AC + CD + DB = 2\\sqrt{6{,}48} + 7$",
+          "$\\approx 2 \\times 2{,}545584 + 7 \\approx 12{,}0912$",
+          "إذن طول المسار $\\approx 12{,}1\\,\\mathrm{m}$"
+        ],
+        "result": "\\approx 12{,}1\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "اشترت البلدية $12\\,\\mathrm{m}$ من الدرابزين لتثبيته على طول المسار من جهة واحدة. هل يكفي؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأن $2{,}5 + 2{,}5 + 7 = 12$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-ROUND-EARLY"
+        },
+        {
+          "id": "B",
+          "content": "لا، لأن طول المسار حوالي $12{,}09\\,\\mathrm{m}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نعم، لأن $1{,}8 + 1{,}8 + 7 + 1{,}8 + 1{,}8 = 14{,}2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن طول المسار بطول الدرابزين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التدوير المبكّر إلى الوحدة يخفي الفرق."
+        }
+      ],
+      "feedback": {
+        "correct": "$12{,}09 > 12$ : الدرابزين لا يكفي.",
+        "incorrect": "احسب الطول بالقيمة الكاملة لكل منحدر قبل المقارنة."
+      },
+      "solution": {
+        "lines": [
+          "طول المسار $2\\sqrt{6{,}48} + 7 \\approx 12{,}09\\,\\mathrm{m}$ ، وهو أكبر من $12\\,\\mathrm{m}$ .",
+          "إذن الدرابزين لا يكفي (ينقصه حوالي $9\\,\\mathrm{cm}$)."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

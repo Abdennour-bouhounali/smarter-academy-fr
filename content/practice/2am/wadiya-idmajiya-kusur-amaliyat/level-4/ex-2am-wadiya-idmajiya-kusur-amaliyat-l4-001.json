@@ -1,0 +1,281 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-kusur-amaliyat-l4-001",
+  "lessonCode": "wadiya-idmajiya-kusur-amaliyat",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — وضعيّة إدماجيّة : أرض مزروعة بأنواع عدّة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "من يشغل أكبر مساحة",
+      "الجزء الباقي",
+      "المساحة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-83",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "06"
+    }
+  },
+  "statement": {
+    "content": "يملك العمّ كمال قطعة أرض مستطيلة طولها $160$ m وعرضها $155$ m ، قسّمها كما يلي : $\\dfrac{2}{5}$ للقمح ، و $\\dfrac{7}{20}$ للشعير ، و $\\dfrac{1}{10}$ لأشجار الزيتون ، والباقي للخضر ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "يقول العمّ كمال إنّ الشعير يشغل أكبر مساحة من القمح لأنّ بسط كسره $7$ أكبر . هل هو على صواب ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-NUMONLY"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا ثمّ تحقّق منها بحساب بسيط ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أو قارن بدقّة ثمّ قارن بما قيل ."
+        }
+      ],
+      "feedback": {
+        "correct": "لا .",
+        "incorrect": "اختر طريقة المقارنة المناسبة للحالة (توحيد المقامين ، أو البسطان المتساويان ، أو المقارنة بالعدد 1) ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$20 = 5 \\times 4$ : نكتب الكسر ذا المقام $5$ بالمقام $20$ .",
+          "$\\dfrac{7}{20}$ و $\\dfrac{2 \\times 4}{5 \\times 4} = \\dfrac{8}{20}$ .",
+          "ومنه $\\dfrac{7}{20} < \\dfrac{2}{5}$ .",
+          "الجواب : لا ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "وضّح جوابك .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا ، ثمّ اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي .",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب جملة أو جملتين : الفكرة ثمّ الحساب الذي يدعمها ."
+        }
+      ],
+      "feedback": {
+        "correct": "نوحّد المقامين قبل مقارنة البسطين .",
+        "incorrect": "قارن تبريرك بالحلّ النموذجي : الفكرة ثمّ الحساب الذي يدعمها ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2}{5} = \\dfrac{8}{20}$ ، و $8 > 7$ .",
+          "إذن $\\dfrac{2}{5} > \\dfrac{7}{20}$ والقمح هو الذي يشغل مساحة أكبر ."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "عبّر بكسر عن المساحة المخصّصة للخضر .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "3/20",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "17/20",
+          "id": "MISC-JAMKASR-PART"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكلّ يساوي كسرًا بسطه ومقامه عدد واحد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الأجزاء المأخوذة أوّلًا ثمّ اطرحها من الكلّ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الجزء الباقي هو الكلّ ناقص ما أُخذ ، وهو أصغر من الكلّ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{20}$ .",
+        "incorrect": "اجمع ما أُخذ أوّلًا ثمّ اطرحه من الكلّ ، ولا تُعطِ ما أُخذ بدل الباقي ."
+      },
+      "solution": {
+        "lines": [
+          "$1 = \\dfrac{20}{20}$ .",
+          "$\\dfrac{2}{5} = \\dfrac{2 \\times 4}{5 \\times 4} = \\dfrac{8}{20}$ .",
+          "$\\dfrac{1}{10} = \\dfrac{1 \\times 2}{10 \\times 2} = \\dfrac{2}{20}$ .",
+          "ما أُخذ : $\\dfrac{2}{5} + \\dfrac{7}{20} + \\dfrac{1}{10} = \\dfrac{8 + 7 + 2}{20} = \\dfrac{17}{20}$ .",
+          "الباقي : $1 - \\dfrac{17}{20} = \\dfrac{20}{20} - \\dfrac{17}{20} = \\dfrac{3}{20}$ ."
+        ],
+        "result": "\\dfrac{3}{20}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب مساحة القطعة بالمتر المربّع .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "24800",
+      "misconceptionSignatures": [
+        {
+          "value": "630",
+          "id": "MISC-SYN-KASR2-PERIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المستطيل : ما العمليّة التي تعطي مساحته ؟ وما التي تعطي محيطه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المساحة = الطول × العرض ، والمحيط = 2 × (الطول + العرض) ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى الوحدة : المساحة بالمتر المربّع والمحيط بالمتر ."
+        }
+      ],
+      "feedback": {
+        "correct": "$24800\\,\\mathrm{m}^2$ .",
+        "incorrect": "المساحة جداء البعدين والمحيط مجموع الأضلاع الأربعة : لا تخلط بينهما وانتبه إلى الوحدة ."
+      },
+      "solution": {
+        "lines": [
+          "$160 \\times 155 = 24800$ ، أي $24800\\,\\mathrm{m}^2$ ."
+        ],
+        "result": "24800\\,\\mathrm{m}^2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "احسب المساحة المخصّصة للخضر بالمتر المربّع .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3720",
+      "misconceptionSignatures": [
+        {
+          "value": "496000/3",
+          "id": "MISC-JIDAKASR-FLIP"
+        },
+        {
+          "value": "1240",
+          "id": "MISC-JIDAKASR-HALFWAY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزء من عدد يعني جداء الكسر في العدد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي ما دام الكسر أصغر من 1 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$3720$ .",
+        "incorrect": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ، ولا تقلب الكسر ."
+      },
+      "solution": {
+        "lines": [
+          "$24800 \\div 20 = 1240$ .",
+          "$1240 \\times 3 = 3720$ ."
+        ],
+        "result": "3720"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

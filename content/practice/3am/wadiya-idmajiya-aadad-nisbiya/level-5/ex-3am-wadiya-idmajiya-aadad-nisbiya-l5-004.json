@@ -1,0 +1,211 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-aadad-nisbiya-l5-004",
+  "lessonCode": "wadiya-idmajiya-aadad-nisbiya",
+  "level": 5,
+  "metadata": {
+    "title": "اختر التحويل الصحيح",
+    "estimatedMinutes": 7,
+    "tags": [
+      "وضعية إدماجية",
+      "تحويل",
+      "اختيار من متعدد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "للمرور من درجة سيلسيوس $T_C$ إلى درجة فهرنهايت $T_F$ نستعمل القاعدة $T_F = 1{,}8 \\times T_C + 32$ . اختر في كل سؤال القيمة الصحيحة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "كم تساوي $−12$ °C بالدرجة فهرنهايت؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$36$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WIDMAJ-REVCHAIN"
+        },
+        {
+          "id": "B",
+          "content": "$53{,}6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WIDMAJ-DROPNEG"
+        },
+        {
+          "id": "C",
+          "content": "$10{,}4$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القاعدة المعطاة وما تربطه بين الدرجتين، وأيّ الدرجتين معلومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "للتحويل من سيلسيوس إلى فهرنهايت نضرب ثم نضيف؛ وللعكس نُجري العمليتين بترتيب معاكس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة التحويل في الاتجاه المعاكس: يجب أن تجد العدد الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة الصحيحة هي $10{,}4$ .",
+        "incorrect": "راجع قاعدة التحويل وترتيب العمليتين، ثم تحقّق بالعملية المعاكسة."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}8 \\times (−12) + 32$",
+          "$= (−21{,}6) + 32$",
+          "$= 10{,}4$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كم تساوي $−22$ °F بالدرجة سيلسيوس؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$−30$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$30$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QISMA-SIGN"
+        },
+        {
+          "id": "C",
+          "content": "$−55{,}8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القاعدة المعطاة وما تربطه بين الدرجتين، وأيّ الدرجتين معلومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "للتحويل من سيلسيوس إلى فهرنهايت نضرب ثم نضيف؛ وللعكس نُجري العمليتين بترتيب معاكس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة التحويل في الاتجاه المعاكس: يجب أن تجد العدد الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة الصحيحة هي $−30$ .",
+        "incorrect": "راجع قاعدة التحويل وترتيب العمليتين، ثم تحقّق بالعملية المعاكسة."
+      },
+      "solution": {
+        "lines": [
+          "$(−22 − 32) \\div 1{,}8$",
+          "$= (−54) \\div 1{,}8$",
+          "$= −30$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "تحقّق: احسب $1{,}8 \\times (−30) + 32$ لتجد قيمة $−30$ °C بالفهرنهايت.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-22",
+      "misconceptionSignatures": [
+        {
+          "value": "3.6",
+          "id": "MISC-WIDMAJ-REVCHAIN"
+        },
+        {
+          "value": "86",
+          "id": "MISC-WIDMAJ-DROPNEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القاعدة المعطاة وما تربطه بين الدرجتين، وأيّ الدرجتين معلومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "للتحويل من سيلسيوس إلى فهرنهايت نضرب ثم نضيف؛ وللعكس نُجري العمليتين بترتيب معاكس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة التحويل في الاتجاه المعاكس: يجب أن تجد العدد الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $−22$ °F .",
+        "incorrect": "راجع قاعدة التحويل وترتيب العمليتين، ثم تحقّق بالعملية المعاكسة."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}8 \\times (−30) + 32$",
+          "$= (−54) + 32$",
+          "$= −22$"
+        ],
+        "result": "−22"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

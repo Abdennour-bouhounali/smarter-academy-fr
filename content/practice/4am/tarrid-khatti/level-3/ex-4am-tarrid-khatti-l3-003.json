@@ -1,0 +1,167 @@
+{
+  "id": "ex-4am-tarrid-khatti-l3-003",
+  "lessonCode": "tarrid-khatti",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 35 (ص 75) — مياه السد",
+    "estimatedMinutes": 8,
+    "tags": [
+      "نمذجة",
+      "نسب متتابعة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-35",
+      "page": 75,
+      "section": "أتعمّق",
+      "number": 35,
+      "adaptedFrom": "ex-4am-tarrid-khatti-l3-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "بلغ حجم المياه، التي يحرص الناس على ترشيد استعمالها، بأحد السدود $20\\,000\\,000m^3$ في نهاية سنة 2015. في سنة 2016 ارتفع مخزون المياه بنسبة 10%، ثم انخفض في سنة 2017 بنسبة 8%. نسمّي $x$ حجم المياه في نهاية 2015 و $f(x)$ حجمها في نهاية 2017 (بـ $m^3$ )."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن $f$ دالة خطية، وعيّن معاملها.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "1,012",
+      "misconceptionSignatures": [
+        {
+          "value": "1,02",
+          "id": "MISC-NISBA-TATABU-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارتفاع بنسبة 10%: نضرب في $1{,}1$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انخفاض بنسبة 8%: نضرب في $0{,}92$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "التغيّران المتتابعان: نضرب في جداء المعاملين."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(x) = 1{,}1 \\times 0{,}92 \\times x = 1{,}012x$ .",
+        "incorrect": "تغيّران متتابعان يُترجمان بجداء المضاعفين، لا بجمع النسبتين."
+      },
+      "solution": {
+        "lines": [
+          "بعد 2016: $x \\times 1{,}1$",
+          "بعد 2017: $x \\times 1{,}1 \\times 0{,}92 = 1{,}012x$",
+          "إذن $f(x) = 1{,}012x$ : $f$ دالة خطية معاملها $1{,}012$ ."
+        ],
+        "result": "f(x) = 1{,}012x"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب حجم المياه المخزّنة في نهاية 2017.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الحجم بـ $m^3$",
+      "expectedAnswer": "20240000",
+      "misconceptionSignatures": [
+        {
+          "value": "20400000",
+          "id": "MISC-NISBA-TATABU-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب صورة $20\\,000\\,000$ بالدالة $f$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(20\\,000\\,000) = 20\\,240\\,000$ $m^3$ .",
+        "incorrect": "عوّض $x$ بالحجم في نهاية 2015."
+      },
+      "solution": {
+        "lines": [
+          "$f(20\\,000\\,000) = 1{,}012 \\times 20\\,000\\,000 = 20\\,240\\,000$",
+          "حجم المياه في نهاية 2017 هو $20\\,240\\,000m^3$ ."
+        ],
+        "result": "20\\,240\\,000m^3"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما هي نسبة تطوّر المخزون بين نهاية 2015 ونهاية 2017؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: النسبة المئوية دون الرمز %",
+      "expectedAnswer": "1,2",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-NISBA-TATABU-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن معامل الدالة بالعدد 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}012 = 1 + \\dfrac{1{,}2}{100}$ : ارتفع المخزون بنسبة $1{,}2\\%$ .",
+        "incorrect": "النسبة هي الزيادة مقسومة على الحجم الأول، مضروبة في 100."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 1{,}012x = \\left(1 + \\dfrac{1{,}2}{100}\\right)x$",
+          "إذن ارتفع المخزون بنسبة $1{,}2\\%$ بين 2015 و 2017."
+        ],
+        "result": "1{,}2\\%"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

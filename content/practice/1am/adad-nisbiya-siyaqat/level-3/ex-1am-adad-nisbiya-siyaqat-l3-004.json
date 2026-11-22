@@ -1,0 +1,252 @@
+{
+  "id": "ex-1am-adad-nisbiya-siyaqat-l3-004",
+  "lessonCode": "adad-nisbiya-siyaqat",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — ما أبرد يوم؟",
+    "estimatedMinutes": 8,
+    "tags": [
+      "حرارة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "قراءات أسبوع في مدينة جبلية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "سجّلت محطّة أرصاد بشّار صباحًا القراءات الآتية : $7$ ؛ $-4$ ؛ $3$ ؛ $-9$ ؛ $0$ . أيّ هذه القراءات أبرد؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-REL-SIGNBIG"
+        },
+        {
+          "id": "B",
+          "content": "$3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-REL-SIGNBIG"
+        },
+        {
+          "id": "C",
+          "content": "$-9$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-REL-SIGNBIG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الجهة التي يقع فيها كلّ عدد من الصفر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما تحت الصفر أخفض ممّا فوقه، والأبعد تحت الصفر هو الأخفض."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن مواضع المستوى لا أحجام الأعداد المكتوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "الأبرد هو أدنى مستوى للسائل : $-9$ .",
+        "incorrect": "الأبرد ليس الأكبر عددًا : العدد السالب أصغر من الصفر ومن كلّ عدد موجب."
+      },
+      "solution": {
+        "lines": [
+          "نرتّب القراءات من الأصغر إلى الأكبر",
+          "الأصغر هو الأبرد : $-9$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما المسافة إلى الصفر للعدد $-9$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "-9",
+          "id": "MISC-REL-NEGDIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يقوله العدد : الجهة أم البعد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي عدد التدريجات بين المستوى والصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احذف الإشارة تجد المسافة إلى الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "المسافة إلى الصفر للعدد $-9$ هي $9$ .",
+        "incorrect": "المسافة لا تكون سالبة : هي العدد دون إشارته."
+      },
+      "solution": {
+        "lines": [
+          "المسافة هي عدد التدريجات بين $-9$ والصفر",
+          "$9$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اكتب معاكس العدد $-9$ .",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "-9",
+          "id": "MISC-REL-OPPSAME"
+        },
+        {
+          "value": "-10",
+          "id": "MISC-REL-OPPNEXT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العدد على الجهاز ثمّ انظر أين يقف ظلّه في المرآة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المعاكس له المسافة نفسها إلى الصفر على الجهة الأخرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "غيّر الإشارة وأبقِ المسافة."
+        }
+      ],
+      "feedback": {
+        "correct": "معاكس $-9$ هو $9$ : المسافة نفسها إلى الصفر على الجهة الأخرى.",
+        "incorrect": "المعاكس يقع على الجهة الأخرى من الصفر وبالمسافة نفسها."
+      },
+      "solution": {
+        "lines": [
+          "$-9$ : المسافة $9$ تحت الصفر",
+          "المعاكس : المسافة نفسها على الجهة الأخرى، $9$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "$-9$ < $4$",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-REL-SIGNBIG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختبر الجملة بمثال عددي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر : الإشارة تعيّن الجهة، والمسافة لا تكون سالبة، والمعاكس على الجهة الأخرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب الجملة على $3$ و $-3$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "عبارة صحيحة.",
+        "incorrect": "نختبر الجملة بمثال على الجهاز."
+      },
+      "solution": {
+        "lines": [
+          "$-9$ < $4$",
+          "صحيح"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

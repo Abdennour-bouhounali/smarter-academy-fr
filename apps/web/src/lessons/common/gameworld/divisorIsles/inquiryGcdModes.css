@@ -1,0 +1,108 @@
+/* THE FOUR MODES of common, ladder, nest (InquiryGcdModes.jsx) and the gap of 0 cells (InquiryGcd.jsx › Strip). They reuse
+   the frame of the division screens (inquiry.css › .iq--div) and the strips, shelves and rungs of the greatest common
+   divisor. Shapes are the brand blue; a plank that fills is green, what is left amber, the last value gold — as everywhere
+   in this world. HTML text keeps the 12 px floor (--di-min-font); the SVG of `both` holds no text. */
+
+/* a gap of 0 cells: an empty mark at the start of its line (its « 0 » is written above it) */
+.iq-gapzero {
+  fill: none;
+  stroke: #7dfcff;
+  stroke-width: 3;
+  stroke-dasharray: 5 4;
+}
+
+/* nest · pair: each pair of gaps on its own pale band */
+.iq-pairband {
+  fill: rgba(47, 125, 246, 0.08);
+  stroke: rgba(159, 216, 255, 0.28);
+  stroke-width: 1.5;
+}
+.iq--pair .iq-chip {
+  font-size: max(var(--di-min-font, 12px), 1.05rem);
+}
+
+/* ladder · fold: a folded line names its rows (« 1–3 »): a wider first column */
+.iq-ladder--fold .iq-rung {
+  grid-template-columns: 3.6rem minmax(6rem, 1fr) minmax(0, 1.5fr) minmax(0, 1fr);
+}
+.iq-rung--line {
+  border: 1.5px solid rgba(125, 252, 255, 0.35);
+}
+.iq-rung.is-counted .iq-rung__n {
+  border-radius: 0.5rem;
+  background: rgba(141, 255, 176, 0.15);
+}
+.rf-root .iq-rung.is-counted .iq-rung__n {
+  color: #8dffb0;
+}
+
+/* ladder · both: the two ladders side by side, their rows shrinking together to fit one screen */
+.iq--both {
+  grid-template-rows: auto auto minmax(0, 1fr) auto auto auto;
+}
+.iq-both {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+  min-height: 0;
+}
+.iq-both__col {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto auto;
+  justify-items: center;
+  gap: 0.3rem;
+  min-height: 0;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.9rem;
+  border: 1.5px solid rgba(159, 216, 255, 0.3);
+  background: rgba(255, 255, 255, 0.04);
+}
+.iq-both__col.is-done {
+  border-color: rgba(125, 252, 255, 0.6);
+}
+.iq-both__label {
+  font-size: max(var(--di-min-font, 12px), 0.95rem);
+  font-weight: 800;
+}
+.rf-root .iq-both__label {
+  color: #9fd8ff;
+}
+.iq-both__bars {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+.iq-both__bars g {
+  animation: iq-drop 0.25s ease-out backwards;
+}
+.iq-rest--flat {
+  stroke-dasharray: none;
+  animation: none;
+}
+.iq-both__tex {
+  min-height: 1.8rem;
+  font-size: max(var(--di-min-font, 12px), 1.1rem);
+  white-space: nowrap;
+}
+.rf-root .iq-both__tex {
+  color: #e8f6ff;
+}
+.iq-both__count {
+  min-height: 1.6rem;
+  font-size: max(var(--di-min-font, 12px), 1.15rem);
+  font-weight: 900;
+}
+.rf-root .iq-both__count {
+  color: #7dfcff;
+}
+@media (max-height: 500px) {
+  .iq-both__col {
+    padding: 0.2rem 0.5rem;
+    gap: 0.15rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .iq-both__bars g {
+    animation: none;
+  }
+}

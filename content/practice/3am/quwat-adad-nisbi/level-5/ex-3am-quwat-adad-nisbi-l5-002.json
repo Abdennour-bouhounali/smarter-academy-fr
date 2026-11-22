@@ -1,0 +1,333 @@
+{
+  "id": "ex-3am-quwat-adad-nisbi-l5-002",
+  "lessonCode": "quwat-adad-nisbi",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — النظافة تحمي الصحة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "قواعد الحساب على القوى",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في درس العلوم تعلّمت مريم أن عدد البكتيريا على يدين غير مغسولتين يتضاعف كل 20 دقيقة. نفترض أن عددها في البداية $2^{6}$ ، فيصبح بعد $n$ فترة من 20 دقيقة $2^{6} \\times 2^{n}$ .\nالجزء الأول: تكاثر البكتيريا.\nالجزء الثاني: غسل اليدين بالماء والصابون يقسم عدد البكتيريا على $2^{7}$ في كل غسلة، وتريد مريم أن يصبح العدد أقل من 10."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "كم يصبح عدد البكتيريا بعد ساعة واحدة (3 فترات)؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد البكتيريا",
+      "expectedAnswer": "512",
+      "misconceptionSignatures": [
+        {
+          "value": "262144",
+          "id": "MISC-QUWA-PRODUCT-MULTIPLY-EXP"
+        },
+        {
+          "value": "384",
+          "id": "MISC-QUWA-POWER-AS-PRODUCT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القوى لها الأساس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء قوتين لهما الأساس نفسه: نجمع الأسس ولا نضربها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه لإشارة كل أس عند الجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^6 \\times 2^3 = 2^9 = 512$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$2^{6} \\times 2^{3} = 2^{6+3} = 2^{9}$",
+          "$2^{9} = 512$"
+        ],
+        "result": "512"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "بعد 3 ساعات (9 فترات) يكتب العدد على الشكل $2^n$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "54",
+          "id": "MISC-QUWA-PRODUCT-MULTIPLY-EXP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القوى لها الأساس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء قوتين لهما الأساس نفسه: نجمع الأسس ولا نضربها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه لإشارة كل أس عند الجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^6 \\times 2^9 = 2^{15}$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$2^{6} \\times 2^{9} = 2^{6+9} = 2^{15}$"
+        ],
+        "result": "n = 15"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "بعد 3 ساعات غسلت مريم يديها مرة واحدة. كم يصبح عدد البكتيريا؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد البكتيريا",
+      "expectedAnswer": "256",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "البسط والمقام قوتان للأساس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل قسمة قوتين لهما الأساس نفسه: نطرح أس المقام من أس البسط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طرح أسّ سالب يعني إضافة معاكسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2^{15}}{2^7} = 2^8 = 256$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2^{15}}{2^{7}} = 2^{15-7} = 2^{8}$",
+          "$2^{8} = 256$"
+        ],
+        "result": "256"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ثم غسلت يديها مرة ثانية. كم يصبح عدد البكتيريا؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد البكتيريا",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-QUWA-ZERO-ONE-EXP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "البسط والمقام قوتان للأساس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل قسمة قوتين لهما الأساس نفسه: نطرح أس المقام من أس البسط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طرح أسّ سالب يعني إضافة معاكسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2^8}{2^7} = 2^1 = 2$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2^{8}}{2^{7}} = 2^{8-7} = 2^{1} = 2$"
+        ],
+        "result": "2"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ا",
+      "lead": "القرار.",
+      "statement": "هل تكفي غسلتان ليصبح العدد أقل من 10؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، تكفي غسلتان",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا، تلزم ثلاث غسلات على الأقل",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QUWA-DECISION-UNCHECKED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارجع إلى القيم التي حسبتها في الأسئلة السابقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين قبل أن تقرّر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القرار الصحيح يُبنى على حساب، لا على تخمين."
+        }
+      ],
+      "feedback": {
+        "correct": "بعد غسلتين يبقى 2، و $2 < 10$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "بعد غسلة: 256، وهو أكبر من 10.",
+          "بعد غسلتين: 2، وهو أقل من 10، إذن تكفي غسلتان."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ب",
+      "statement": "برّر قرارك بالحساب.",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارجع إلى القيم التي حسبتها في الأسئلة السابقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين قبل أن تقرّر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القرار الصحيح يُبنى على حساب، لا على تخمين."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$2^{15} \\div 2^{7} = 2^{8} = 256 > 10$",
+          "$2^{8} \\div 2^{7} = 2 < 10$",
+          "تكفي غسلتان."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

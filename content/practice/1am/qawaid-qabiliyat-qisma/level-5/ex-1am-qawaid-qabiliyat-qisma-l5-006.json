@@ -1,0 +1,224 @@
+{
+  "id": "ex-1am-qawaid-qabiliyat-qisma-l5-006",
+  "lessonCode": "qawaid-qabiliyat-qisma",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — رمز قفل الجمعية",
+    "estimatedMinutes": 18,
+    "tags": [
+      "بطاقات",
+      "رمز"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "رمز قفل خزانة جمعية الحيّ عدد من أربعة أرقام مختلفة يُشكّل بالبطاقات 8 ، 1 ، 6 ، 0 كلها (لا يكون 0 في اليسار). أمين الخزانة يحفظ الرمز ولا يفشيه.\nالجزء الأول: نبحث عن أعداد تقبل القسمة.\nالجزء الثاني: الرمز هو أصغر عدد يقبل القسمة على 4 وعلى 5 معًا."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "شكّل أكبر عدد يقبل القسمة على 2.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "8610",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بأكبر الأرقام في اليسار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أيّ رقم (أو رقمين) يجب أن يكون في اليمين؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالقاعدة قبل أن تجيب."
+        }
+      ],
+      "feedback": {
+        "correct": "8610 يقبل القسمة على 2، ولا يوجد أكبر منه يحقّق ذلك.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 2 إذا كان رقم آحاده 0 أو 2 أو 4 أو 6 أو 8."
+      },
+      "solution": {
+        "lines": [
+          "8610 هو أكبر عدد يمكن تشكيله.",
+          "8610: رقم آحاده 0 ، إذن يقبل القسمة على 2."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "شكّل أكبر عدد يقبل القسمة على 4.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "8160",
+      "misconceptionSignatures": [
+        {
+          "value": "8610",
+          "id": "MISC-QABILIYA-ZAWJI-4"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بأكبر الأرقام في اليسار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أيّ رقم (أو رقمين) يجب أن يكون في اليمين؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالقاعدة قبل أن تجيب."
+        }
+      ],
+      "feedback": {
+        "correct": "8160 يقبل القسمة على 4، ولا يوجد أكبر منه يحقّق ذلك.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 4 إذا كان العدد المشكّل من رقمي آحاده وعشراته يقبل القسمة على 4."
+      },
+      "solution": {
+        "lines": [
+          "أكبر عدد يمكن تشكيله هو 8610.",
+          "الأعداد الأكبر من 8160 (8610 ، 8601) لا تقبل القسمة على 4.",
+          "8160: العدد المشكّل من رقميه الأخيرين 60 ، إذن يقبل القسمة على 4."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "كل الأعداد المشكّلة بهذه البطاقات تقبل القسمة على 3.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-AHAD-3"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مجموع الأرقام."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يتغيّر عندما نغيّر الترتيب؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$8 + 1 + 6 + 0 = 15$ لكل ترتيب، و 15 يقبل القسمة على 3.",
+        "incorrect": "مجموع الأرقام لا يتغيّر بتغيير ترتيبها."
+      },
+      "solution": {
+        "lines": [
+          "مجموع الأرقام $8 + 1 + 6 + 0 = 15$ في كل ترتيب.",
+          "$15 = 3 \\times 5$: كل الأعداد تقبل القسمة على 3."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "ما هو رمز القفل؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1680",
+      "misconceptionSignatures": [
+        {
+          "value": "1068",
+          "id": "MISC-QABILIYA-SIFR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بأصغر رقم غير معدوم في اليسار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أيّ رقم (أو رقمين) يجب أن يكون في اليمين؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالقاعدة قبل أن تجيب."
+        }
+      ],
+      "feedback": {
+        "correct": "1680 يقبل القسمة على 4 و 5، ولا يوجد أصغر منه يحقّق ذلك.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 4 إذا كان العدد المشكّل من رقمي آحاده وعشراته يقبل القسمة على 4. يقبل عدد طبيعي القسمة على 5 إذا كان رقم آحاده 0 أو 5."
+      },
+      "solution": {
+        "lines": [
+          "أصغر عدد يمكن تشكيله هو 1068.",
+          "الأعداد الأصغر من 1680 (1068 ، 1086 ، 1608) لا تقبل القسمة على 4 و 5.",
+          "1680: العدد المشكّل من رقميه الأخيرين 80، رقم آحاده 0 ، إذن يقبل القسمة على 4 و 5."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "id": "ex-4am-mutatabiqat-shahira-l1-008",
+  "lessonCode": "mutatabiqat-shahira",
+  "level": 1,
+  "metadata": {
+    "title": "مربع مجموع وقيمة عبارة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "مربع مجموع",
+      "قيمة عبارة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mutatabiqat-shahira_P1",
+      "modelledOn": "know-2"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $E$ حيث:",
+    "formulas": [
+      "E = (x + 6)^2"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انشر ثم بسّط العبارة $E$ .",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $x^2 + mx + n$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-MURABBA-MAJMU-BILA-2AB"
+        },
+        {
+          "value": "6",
+          "id": "MISC-MUTATABIQA-2AB-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على مربع مجموع: $(a + b)^2 = a^2 + 2ab + b^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن الحدّين $a$ و $b$ ، ولا تنسَ الحد المضاعف $2ab$ ولا تربيع المعامل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = x^2 + 12x + 36$ إذن $m = 12$ .",
+        "incorrect": "طبّق المتطابقة الشهيرة حدًّا حدًّا (مربع كل حد والحد المضاعف)، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$E = (x + 6)^2$",
+          "$E = x^2 + 2 \\times x \\times 6 + 6^2$"
+        ],
+        "result": "E = x^2 + 12x + 36"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $x^2 + mx + n$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "36",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = x^2 + 12x + 36$ إذن $n = 36$ .",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $n$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$E = x^2 + 12x + 36$"
+        ],
+        "result": "n = 36"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب قيمة $E$ من أجل $x = 4$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "100",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى في الشكل المبسّط الذي وجدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 100$.",
+        "incorrect": "عوّض $x$ في كل حد، واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال الشكل المعطى: $E = (4 + 6)^2 = 10^2$",
+          "أو باستعمال الشكل المنشور: $E = 4^2 + 12 \\times 4 + 36 = 16 + 48 + 36$"
+        ],
+        "result": "E = 100"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

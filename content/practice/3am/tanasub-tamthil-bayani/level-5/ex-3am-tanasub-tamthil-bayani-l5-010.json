@@ -1,0 +1,363 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l5-010",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — ثمن يرتفع ثم يتسطّح",
+    "estimatedMinutes": 15,
+    "tags": [
+      "وضعية إدماجية",
+      "منحنى"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تدفع أسرة ثمن تغليف هدايا العيد للأيتام بمبلغ يتغيّر مع عدد الهدايا. يمثّل المنحنى $(C)$ في المعلم التالي المبلغ (بمئات الدنانير) بدلالة عدد العشرات من الهدايا، وهو يمرّ بالنقط $O$ و $A(1\\,;\\,3)$ و $B(2\\,;\\,4)$ و $E(5\\,;\\,5)$ .\nالجزء الأول: التمثيل البياني.\nالجزء الثاني: حسابات وقرار.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          1,
+          3
+        ],
+        "B": [
+          2,
+          4
+        ],
+        "E": [
+          5,
+          5
+        ],
+        "C": [
+          5,
+          0
+        ]
+      },
+      "arcs": [
+        {
+          "center": "C",
+          "from": "O",
+          "to": "E",
+          "sweep": "cw",
+          "tone": "rose",
+          "label": "(C)"
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw",
+        "A": "nw",
+        "B": "nw",
+        "E": "ne"
+      },
+      "hidden": [
+        "C"
+      ],
+      "ariaLabel": "معلم متعامد ومتجانس: منحن ينطلق من المبدأ ويمرّ بالنقط A(1;3) و B(2;4) و E(5;5) ويتسطّح",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: عدد العشرات من الهدايا — محور التراتيب: المبلغ بمئات الدنانير"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول:",
+      "statement": "هل المبلغ المدفوع متناسب مع عدد الهدايا؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأنّ المنحنى يمرّ بالمبدأ $O$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-THROUGH-O-ANY"
+        },
+        {
+          "id": "B",
+          "content": "نعم، لأنّ الترتيب يكبر كلما كبرت الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-RISING"
+        },
+        {
+          "id": "C",
+          "content": "لا، النقط ليست على مستقيم: الرسم منحنٍ",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط ليست على مستقيم، فليست الوضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "المنحنى يمرّ بـ $O$ لكنه ليس مستقيما.",
+          "إذن الوضعية ليست تناسبية."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "علّل جوابك.",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تعليلك ثم قارنه بالتصحيح النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اذكر الخاصية التي تستعملها: ما شرط التناسبية على النقط؟"
+        }
+      ],
+      "feedback": {
+        "correct": "التعليل يذكر استقامة النقط ومرور المستقيم بالمبدأ $O$ .",
+        "incorrect": "قارن تعليلك بالتصحيح النموذجي، وتأكد أنك ذكرت الشرطين معا."
+      },
+      "solution": {
+        "lines": [
+          "المرور بالمبدأ لا يكفي: النقط $A$ و $B$ و $E$ ليست على استقامة واحدة مع $O$ .",
+          "إذن الوضعية ليست تناسبية."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني:",
+      "statement": "احسب ناتج قسمة الترتيب على الفاصلة عند النقطة $A$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: ناتج القسمة",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "1/3",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ إحداثيي $A$ ثم اقسم الترتيب على الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 \\div 1 = 3$ .",
+        "incorrect": "اقسم الترتيب على الفاصلة (وليس العكس)."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{1} = 3$ ."
+        ],
+        "result": "3"
+      },
+      "work": "optional",
+      "timeSeconds": 70
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب ناتج قسمة الترتيب على الفاصلة عند النقطة $B$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: ناتج القسمة",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "0.5",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ إحداثيي $B$ ثم اقسم الترتيب على الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\div 2 = 2$ .",
+        "incorrect": "اقسم الترتيب على الفاصلة (وليس العكس)."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{4}{2} = 2$ ."
+        ],
+        "result": "2"
+      },
+      "work": "optional",
+      "timeSeconds": 70
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "الناتجان $3$ و $2$ مختلفان. ماذا نستنتج؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الوضعية تناسبية لأنّ الترتيب يكبر مع الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-RISING"
+        },
+        {
+          "id": "B",
+          "content": "لا يوجد معامل تناسبية ثابت: الوضعية ليست تناسبية",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "الوضعية تناسبية لأنّ المنحنى يمرّ بالمبدأ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-THROUGH-O-ANY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في الوضعية التناسبية يكون ناتج القسمة ثابتا."
+        }
+      ],
+      "feedback": {
+        "correct": "ناتجان مختلفان يعنيان أنّ النقط ليست على مستقيم يشمل $O$ .",
+        "incorrect": "التناسبية تتطلب ناتج قسمة ثابتا لكل النقط."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\neq 2$ : ناتج القسمة غير ثابت.",
+          "إذن الوضعية ليست تناسبية."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "ما المبلغ (بالدينار) لتغليف $50$ هدية، أي ما ترتيب $E$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بالدينار",
+      "expectedAnswer": "500",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-TAMTHIL-UNIT-AXIS"
+        },
+        {
+          "value": "1500",
+          "id": "MISC-TAMTHIL-THROUGH-O-ANY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$50$ هدية تعني $5$ عشرات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ ترتيب $E$ ثم حوّله."
+        }
+      ],
+      "feedback": {
+        "correct": "ترتيب $E$ هو $5$ مئات، أي $500$ دج.",
+        "incorrect": "اقرأ ترتيب $E$ وحوّله إلى دنانير."
+      },
+      "solution": {
+        "lines": [
+          "$50$ هدية $= 5$ عشرات: النقطة $E(5\\,;\\,5)$ .",
+          "$5 \\times 100 = 500$ دج."
+        ],
+        "result": "500\\ \\text{دج}"
+      },
+      "work": "optional",
+      "timeSeconds": 80
+    }
+  ]
+}

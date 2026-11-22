@@ -1,0 +1,135 @@
+{
+  "id": "ex-4am-mafhum-jumla-l2-001",
+  "lessonCode": "mafhum-jumla",
+  "level": 2,
+  "metadata": {
+    "title": "حل للجملة أم لا؟",
+    "estimatedMinutes": 4,
+    "tags": [
+      "جملة",
+      "تعويض"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-4",
+      "page": 60,
+      "section": "أوظّف تعلّماتي",
+      "number": 4
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الجملة:",
+    "formulas": [
+      "\\begin{cases} 2x + y = 4 \\\\ x + y = 3 \\end{cases}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل الثنائية $(3 ; -2)$ حل لهذه الجملة؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-MUADALA-WAHIDA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $3$ و $y$ بـ $-2$ في كل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الثنائية حل للجملة إذا حققت المعادلتين في آن واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 3 + (-2) = 4$ ؛ $3 + (-2) = 1 \\neq 3$ : الثنائية ليست حلا للجملة.",
+        "incorrect": "العدد الأول في الثنائية قيمة $x$ والثاني قيمة $y$ ؛ عوّض في المعادلتين معا وقارن كل نتيجة بالطرف الثاني."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $x$ بـ $3$ و $y$ بـ $-2$ :",
+          "$2 \\times 3 + (-2) = 4$",
+          "$3 + (-2) = 1 \\neq 3$",
+          "ومنه الثنائية $(3 ; -2)$ ليست حلا للجملة (لا تحقق المعادلتين معا)."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل الثنائية $(1 ; 2)$ حل لهذه الجملة؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $1$ و $y$ بـ $2$ في كل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الثنائية حل للجملة إذا حققت المعادلتين في آن واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 1 + 2 = 4$ ؛ $1 + 2 = 3$ : الثنائية حل للجملة.",
+        "incorrect": "العدد الأول في الثنائية قيمة $x$ والثاني قيمة $y$ ؛ عوّض في المعادلتين معا وقارن كل نتيجة بالطرف الثاني."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $x$ بـ $1$ و $y$ بـ $2$ :",
+          "$2 \\times 1 + 2 = 4$",
+          "$1 + 2 = 3$",
+          "ومنه الثنائية $(1 ; 2)$ حل للجملة."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

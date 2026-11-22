@@ -1,0 +1,66 @@
+{
+  "id": "ex-4am-misaha-hajm-kura-l5-006",
+  "lessonCode": "misaha-hajm-kura",
+  "level": 5,
+  "metadata": {
+    "title": "وضعية — قبة القبة الفلكية",
+    "estimatedMinutes": 4,
+    "tags": [
+      "حجم الجلة",
+      "نصف كرة",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_misaha-hajm-kura_P2",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "قبة القبة الفلكية بالمدينة على شكل نصف جلة نصف قطرها $8\\,\\mathrm{m}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما حجم الهواء تحت القبة بالـ $\\mathrm{m}^3$ مدوّرا إلى الوحدة؟",
+      "learningPoints": [
+        {
+          "code": "4am_misaha-hajm-kura_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1072",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نصف جلة: $\\frac{1}{2} \\times \\frac{4}{3}\\pi R^3 = \\frac{2}{3}\\pi R^3$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$8^3 = 512$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\frac{1024}{3}\\pi$ ثم دوّر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\frac{2}{3}\\pi \\times 512 = 1072{,}3\\ldots \\approx 1072\\,\\mathrm{m}^3$ .",
+        "incorrect": "القبة نصف جلة فقط."
+      },
+      "difficulty": 5,
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-HAJM-MUAMIL",
+          "value": "2145"
+        }
+      ]
+    }
+  ]
+}

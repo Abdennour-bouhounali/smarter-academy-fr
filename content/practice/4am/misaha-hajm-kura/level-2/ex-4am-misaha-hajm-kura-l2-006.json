@@ -1,0 +1,68 @@
+{
+  "id": "ex-4am-misaha-hajm-kura-l2-006",
+  "lessonCode": "misaha-hajm-kura",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — حجم جلة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "حجم الجلة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_misaha-hajm-kura_P2",
+      "modelledOn": "know-2"
+    }
+  },
+  "statement": {
+    "content": "جلة نصف قطرها $6\\,\\mathrm{cm}$ . اكتب حجمها على الشكل $k\\pi\\,\\mathrm{cm}^3$ ثم أعط $k$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قيمة $k$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_misaha-hajm-kura_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة (مثل 2,5) أو عدد طبيعي",
+      "expectedAnswer": "288",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\mathcal{V} = \\frac{4}{3}\\pi R^3$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$6^3 = 216$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب $\\frac{4}{3} \\times 216$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\mathcal{V} = \\frac{4}{3}\\pi \\times 216 = 288\\pi\\,\\mathrm{cm}^3$ .",
+        "incorrect": "الأس 3 والمعامل $\\frac{4}{3}$ ."
+      },
+      "difficulty": 2,
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-HAJM-QUWA",
+          "value": "48"
+        },
+        {
+          "id": "MISC-HAJM-MUAMIL",
+          "value": "162"
+        }
+      ]
+    }
+  ]
+}

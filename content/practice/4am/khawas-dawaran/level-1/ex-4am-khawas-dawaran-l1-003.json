@@ -1,0 +1,71 @@
+{
+  "id": "ex-4am-khawas-dawaran-l1-003",
+  "lessonCode": "khawas-dawaran",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — صورة زاوية",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الزوايا"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_khawas-dawaran_P1",
+      "modelledOn": "know-3"
+    }
+  },
+  "generator": {
+    "tool": "u13-khawas-dawaran/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "A′B′C′ صورة المثلث ABC بالدوران الذي مركزه O وزاويته $50^\\circ$ في الاتجاه المباشر، و $\\widehat{ABC} = 64^\\circ$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قيس الزاوية $\\widehat{A'B'C'}$ بالدرجات؟",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "64",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-KHAWAS",
+          "value": "114"
+        },
+        {
+          "id": "MISC-DAWARAN-KHAWAS",
+          "value": "14"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الزاوية $\\widehat{A'B'C'}$ صورة الزاوية $\\widehat{ABC}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "زاوية الدوران لا تُضاف إلى زوايا الشكل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الدوران يحافظ على أقياس الزوايا."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{A'B'C'} = \\widehat{ABC} = 64^\\circ$ .",
+        "incorrect": "لا نضيف ولا نطرح زاوية الدوران: الدوران يحافظ على الزوايا."
+      }
+    }
+  ]
+}

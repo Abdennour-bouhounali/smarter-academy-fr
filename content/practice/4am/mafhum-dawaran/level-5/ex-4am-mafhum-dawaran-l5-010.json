@@ -1,0 +1,117 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l5-010",
+  "lessonCode": "mafhum-dawaran",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — تدوير شاشة الهاتف",
+    "estimatedMinutes": 3,
+    "tags": [
+      "صورة دائرة",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mafhum-dawaran_P3",
+      "modelledOn": "act-3"
+    }
+  },
+  "statement": {
+    "content": "على شاشة هاتف، شعار تطبيق دائرة مركزها I ونصف قطرها $1\\,\\mathrm{cm}$ ، و $OI = 3\\,\\mathrm{cm}$ حيث O مركز الشاشة. نُدير الشاشة حول O بزاوية $90^\\circ$ في الاتجاه غير المباشر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "صورة الشعار هي:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "دائرة مركزها I′ صورة I ونصف قطرها $1\\,\\mathrm{cm}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "دائرة مركزها I ونصف قطرها $1\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-DAIRA"
+        },
+        {
+          "id": "C",
+          "content": "دائرة مركزها I′ ونصف قطرها $3\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-DAIRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المركز I يدور حول O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ونصف القطر؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "صورة دائرة."
+        }
+      ],
+      "feedback": {
+        "correct": "صورة دائرة: مركزها صورة المركز ونصف قطرها نفسه.",
+        "incorrect": "نصف القطر لا يصبح OI، والمركز لا يبقى في مكانه."
+      },
+      "difficulty": 3
+    },
+    {
+      "id": "q2",
+      "statement": "ما هو البعد OI′ بالسنتيمتر؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-DAIRA",
+          "value": "1"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "I′ صورة I بالدوران الذي مركزه O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تعريف صورة نقطة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "البعد عن المركز."
+        }
+      ],
+      "feedback": {
+        "correct": "$OI' = OI = 3\\,\\mathrm{cm}$ .",
+        "incorrect": "البعد عن مركز الدوران لا يتغيّر."
+      },
+      "difficulty": 3
+    }
+  ]
+}

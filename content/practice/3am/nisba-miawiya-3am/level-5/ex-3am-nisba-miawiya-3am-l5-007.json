@@ -1,0 +1,327 @@
+{
+  "id": "ex-3am-nisba-miawiya-3am-l5-007",
+  "lessonCode": "nisba-miawiya-3am",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — تاجر الخضر",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "زيادة ثم تخفيض",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: يشتري تاجر أمين صندوق فواكه بـ $8\\,000$ دج، ويضع ثمن بيعه بإضافة هامش $20\\,\\%$ إلى ثمن الشراء، ثم يمنح زبائنه الأوفياء تخفيضا بنسبة $10\\,\\%$ على ثمن البيع.\nالجزء الثاني: يبيع في الأسبوع $25$ صندوقا، ويريد ربحا لا يقلّ عن $15\\,000$ دج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "ما ثمن بيع الصندوق قبل التخفيض؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "المبلغ بالدينار (دج)",
+      "expectedAnswer": "9600",
+      "misconceptionSignatures": [
+        {
+          "value": "1600",
+          "id": "MISC-NISBA3-COEF-INC"
+        },
+        {
+          "value": "8020",
+          "id": "MISC-NISBA3-ADD-T"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل الكمية تزداد أم تنقص؟ وما الكمية الأصلية؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الزيادة تُحسب على الكمية الأصلية: الناتج هو الأصل مضروبا في معامل أكبر من الواحد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب معامل الزيادة ثم اضرب فيه الكمية الأصلية، أو احسب الزيادة ثم أضفها إلى الأصل."
+        }
+      ],
+      "feedback": {
+        "correct": "$9\\,600$ .",
+        "incorrect": "النسبة تُحسب على الكمية الأصلية؛ والناتج بعد الزيادة هو الأصل مضروبا في معامل أكبر من الواحد؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "معامل الزيادة بـ $20\\,\\%$ هو $1 + \\dfrac{20}{100} = 1{,}2$ .",
+          "الناتج: $8\\,000 \\times 1{,}2 = 9\\,600$ ."
+        ],
+        "result": "8\\,000 \\times 1{,}2 = 9\\,600"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما ثمنه بعد التخفيض؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "المبلغ بالدينار (دج)",
+      "expectedAnswer": "8640",
+      "misconceptionSignatures": [
+        {
+          "value": "8800",
+          "id": "MISC-NISBA3-SUM-RATES"
+        },
+        {
+          "value": "8000",
+          "id": "MISC-NISBA3-UNDO"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكمية عند البداية؟ وما التغيّر الأوّل ثم الثاني؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة الثانية تُؤخذ من الناتج الأوّل لا من الكمية الأصلية؛ والتغيّران يتتابعان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الناتج بعد التغيّر الأوّل، ثم طبّق التغيّر الثاني على هذا الناتج."
+        }
+      ],
+      "feedback": {
+        "correct": "$8\\,640$ .",
+        "incorrect": "النسبة الثانية تُؤخذ من الناتج الأوّل؛ التغيّران يتتابعان ولا يُلغي أحدهما الآخر؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "بعد زيادة بـ $20\\,\\%$ : $8\\,000 \\times 1{,}2 = 9\\,600$ .",
+          "بعد تخفيض بـ $10\\,\\%$ : $9\\,600 \\times 0{,}9 = 8\\,640$ ."
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "ما ربح التاجر في الصندوق الواحد؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "المبلغ بالدينار (دج)",
+      "expectedAnswer": "640",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كل سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بالتعويض أو بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$640$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$8\\,640 - 8\\,000 = 640$ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما النسبة المئوية لربحه من ثمن الشراء؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "النسبة المئوية (بدون الرمز %)",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من أيّ كمية حُسبت النسبة: الأصل أم الجديدة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة تُحسب دائما على الكمية الأصلية؛ والكمية الجديدة هي الأصل مضروبا في المعامل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب مساواة: الأصل × المعامل = الكمية الجديدة، ثم أوجد الأصل."
+        }
+      ],
+      "feedback": {
+        "correct": "$8$ .",
+        "incorrect": "النسبة تُحسب على الكمية الأصلية، والكمية الجديدة هي الأصل مضروبا في المعامل؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الزيادة : $|8\\,640 - 8\\,000| = 640$ .",
+          "النسبة تُحسب على الثمن القديم: $\\dfrac{640}{8\\,000} = \\dfrac{t}{100}$ ، فنجد $t = 8$ ."
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ج",
+      "statement": "ما ربحه في الأسبوع من $25$ صندوقا؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "المبلغ بالدينار (دج)",
+      "expectedAnswer": "16000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كل سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بالتعويض أو بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$16\\,000$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$640 \\times 25 = 16\\,000$ دج."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "د",
+      "statement": "هل يبلغ ربحه الأسبوعي ما يريد ($15\\,000$ دج على الأقلّ)؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيحة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خاطئة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NISBA3-UNDO"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكمية عند البداية؟ وما التغيّر الأوّل ثم الثاني؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة الثانية تُؤخذ من الناتج الأوّل لا من الكمية الأصلية؛ والتغيّران يتتابعان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الناتج بعد التغيّر الأوّل، ثم طبّق التغيّر الثاني على هذا الناتج."
+        }
+      ],
+      "feedback": {
+        "correct": "صحيحة .",
+        "incorrect": "النسبة الثانية تُؤخذ من الناتج الأوّل؛ التغيّران يتتابعان ولا يُلغي أحدهما الآخر؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$16\\,000 \\geq 15\\,000$ ، فيبلغ ما يريد."
+        ]
+      },
+      "timeSeconds": 100
+    }
+  ]
+}

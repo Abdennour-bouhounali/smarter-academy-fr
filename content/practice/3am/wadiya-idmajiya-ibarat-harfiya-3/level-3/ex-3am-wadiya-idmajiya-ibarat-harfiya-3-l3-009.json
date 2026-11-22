@@ -1,0 +1,271 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-ibarat-harfiya-3-l3-009",
+  "lessonCode": "wadiya-idmajiya-ibarat-harfiya-3",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — ساحة وممرّ",
+    "estimatedMinutes": 9,
+    "tags": [
+      "مساحة",
+      "ممرّ",
+      "نشر",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "ساحة مستطيلة بعداها $(x + 10)$ و $(x + 6)$ بالمتر (و $x$ عدد موجب). يُبلَّط ممرّ عرضه $2$ م على طول البعد $(x + 10)$ ويُعشَّب الباقي.",
+    "formulas": [
+      "S_{\\text{عشب}} = (x + 10)(x + 6 - 2)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "انشر مساحة العشب $S_{\\text{عشب}}$ واكتبها على الشكل $x^2 + ux + w$ .",
+      "statement": "العدد $u$ :",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $u$ فقط",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "value": "16",
+          "id": "MISC-SYN-HARF-PARTIAL"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض الحرف بعدد صغير في العبارة الأصلية وفي النتيجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$u = 14$ .",
+        "incorrect": "وزّع كل حدّ على كل حدّ مع الانتباه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$S_{\\text{عشب}} = x^2 + 4x + 10x + 10 \\times 4$",
+          "$S_{\\text{عشب}} = x^2 + 14x + 40$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "العدد $w$ :",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $w$ فقط",
+      "expectedAnswer": "40",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض الحرف بعدد صغير في العبارة الأصلية وفي النتيجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$w = 40$ .",
+        "incorrect": "وزّع كل حدّ على كل حدّ مع الانتباه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$S_{\\text{عشب}} = x^2 + 14x + 40$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "نأخذ $x = 5$ . ثمن المتر المربّع من العشب $150$ دج، وميزانية العشب $20000$ دج.",
+      "statement": "احسب مساحة العشب من أجل $x = 5$ (بالمتر المربّع).",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "135",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "مساحة العشب $135$ م² .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$S_{\\text{عشب}} = (5 + 10)(5 + 6 - 2)$",
+          "$S_{\\text{عشب}} = 135$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ثمن العشب بالدينار :",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "20250",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن العشب $20250$ دج.",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$150 \\times 135 = 20250$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ج",
+      "statement": "هل تكفي الميزانية؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لا تكفي",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم، تكفي",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SYN-HARF-PARTIAL"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد ما تطلبه كل خطوة: عبارة، أم قيمة من أجل عدد، أم قرار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بالعدد المعطى في كل مكان منه، واحترم الأقواس وأولوية العمليات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الأعداد التي حسبتها قبل أن تقرّر، وتحقّق من الوحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "الميزانية لا تكفي.",
+        "incorrect": "راجع خطوات الحل: عوّض ثم احسب، وقارن الأعداد قبل أن تقرّر."
+      },
+      "solution": {
+        "lines": [
+          "$20250 > 20000$ ، إذن لا تكفي الميزانية."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

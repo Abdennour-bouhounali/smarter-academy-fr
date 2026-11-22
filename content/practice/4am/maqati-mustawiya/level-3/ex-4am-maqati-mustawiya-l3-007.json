@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l3-007",
+  "lessonCode": "maqati-mustawiya",
+  "level": 3,
+  "metadata": {
+    "title": "دوري الآن — مساحة ABCD",
+    "estimatedMinutes": 3,
+    "tags": [
+      "أسطوانة",
+      "قيمة مضبوطة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "now-169",
+      "page": 169,
+      "section": "دوري الآن"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 169): أسطوانة دوران ارتفاعها $3\\,\\mathrm{cm}$ ونصف قطر قاعدتها $2\\,\\mathrm{cm}$ ، يقطعها مستو مُواز لمحورها على بعد $1\\,\\mathrm{cm}$ منه وفق المستطيل ABCD."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "القيمة المضبوطة لمساحة ABCD:",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$6\\,\\mathrm{cm}^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQTA-TARH"
+        },
+        {
+          "id": "B",
+          "content": "$3\\sqrt{3}\\,\\mathrm{cm}^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQTA-NISF"
+        },
+        {
+          "id": "C",
+          "content": "$6\\sqrt{3}\\,\\mathrm{cm}^2$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أحد البعدين ارتفاع الأسطوانة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "البعد الآخر وتر في القاعدة: $2\\sqrt{2^2 - 1^2}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المساحة = البعدان مضروبان."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = 2\\sqrt{3}$ و $BC = 3$ : المساحة $6\\sqrt{3}\\,\\mathrm{cm}^2$ .",
+        "incorrect": "استعمل الوتر كاملا ($2\\sqrt{3}$) لا نصفه."
+      },
+      "difficulty": 3
+    }
+  ]
+}

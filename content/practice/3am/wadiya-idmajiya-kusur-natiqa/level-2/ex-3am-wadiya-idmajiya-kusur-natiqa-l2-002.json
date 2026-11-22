@@ -1,0 +1,198 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-kusur-natiqa-l2-002",
+  "lessonCode": "wadiya-idmajiya-kusur-natiqa",
+  "level": 2,
+  "metadata": {
+    "title": "تهيئة ملعب الحيّ على ثلاث مراحل",
+    "estimatedMinutes": 7,
+    "tags": [
+      "جمع وطرح كسور",
+      "جزء باقٍ",
+      "مقارنة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 1,
+      "file": "3am-s1-5",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تُنجَز أشغال تهيئة ملعب حيّ في مدينة تيارت على ثلاث مراحل: أُنجز في المرحلة الأولى $\\dfrac{3}{8}$ من المشروع، وفي المرحلة الثانية $\\dfrac{5}{12}$ منه، وأُنجز الباقي في المرحلة الثالثة ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما الكسر الذي يمثّل ما أُنجز في المرحلة الثالثة من المشروع ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "5/24",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "5/8",
+          "id": "MISC-JAMTARH-JUZ-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكلّ الذي نقارن به ؟ وما الأجزاء المأخوذة منه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما بقي هو الكلّ ناقص مجموع الأجزاء المأخوذة، أي واحد ناقص مجموع الكسور."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الباقي موجب وأنّه أصغر من الكلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{5}{24}$ .",
+        "incorrect": "وحّد المقامات قبل الجمع أو الطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "المقام المشترك $24$ : $\\dfrac{3}{8} = \\dfrac{9}{24}$ و $\\dfrac{5}{12} = \\dfrac{10}{24}$ .",
+          "$1 - \\dfrac{9}{24} - \\dfrac{10}{24} = \\dfrac{24}{24} - \\dfrac{19}{24} = \\dfrac{5}{24}$ ."
+        ],
+        "result": "\\dfrac{5}{24}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "في أيّ مرحلة أُنجز أقلّ جزء من المشروع ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "المرحلة الثانية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-EYE"
+        },
+        {
+          "id": "B",
+          "content": "المرحلة الثالثة",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "المرحلة الأولى",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-NUMERATORS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للكسرين المقام نفسه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "وحّد المقامات ثمّ قارن البسطين، فالكسر الأكبر له البسط الأكبر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحكم بنظرة إلى البسط وحده أو المقام وحده."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: المرحلة الثالثة .",
+        "incorrect": "وحّد المقامات قبل المقارنة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "بالمقام $24$ : $\\dfrac{9}{24}$ و $\\dfrac{10}{24}$ و $\\dfrac{5}{24}$ .",
+          "$5 < 9 < 10$ ، فأقلّ جزء أُنجز في المرحلة الثالثة ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "كلّفت المرحلة الثالثة $1200000$ DA . ما تكلفة المشروع كلّه بالدينار ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "5760000",
+      "misconceptionSignatures": [
+        {
+          "value": "250000",
+          "id": "MISC-AMAL-NOFLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعطى جزء من الكلّ، ومعه الكسر الذي يمثّله هذا الجزء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكلّ هو الجزء مقسومًا على الكسر الذي يمثّله، أي مضروبًا في مقلوبه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بأخذ الكسر من الكلّ الذي وجدته: يجب أن تجد الجزء المعطى."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $5760000$ .",
+        "incorrect": "الكلّ يُحسب بقسمة الجزء على الكسر الذي يمثّله؛ تحقّق بالعملية العكسية ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "المبلغ $1200000$ DA يمثّل $\\dfrac{5}{24}$ من التكلفة .",
+          "$1200000 \\div \\dfrac{5}{24} = 1200000 \\times \\dfrac{24}{5} = 5760000$ DA ."
+        ],
+        "result": "5760000"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

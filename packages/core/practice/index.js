@@ -11,5 +11,5 @@ export { Rational, rationalEquals, normalizeNumeric } from './rational.js';
 export { affineFromPair, affineFromLatex, parseAffineAnswer, affineEquals, affineToString } from './affineCanonical.js';
 export { parseInterval, intervalEquals, intervalToString, isEmptyInterval } from './intervalCompare.js';
 export {
-  evaluateAnswer, feedbackFor, OUTCOMES, isSuccessOutcome, isInertOutcome, SUPPORTED_ANSWER_TYPES,
+  evaluateAnswer, feedbackFor, OUTCOMES, isSuccessOutcome, isInertOutcome, SUPPORTED_ANSWER_TYPES, countsForMastery,
 } from './answerEvaluator.js';

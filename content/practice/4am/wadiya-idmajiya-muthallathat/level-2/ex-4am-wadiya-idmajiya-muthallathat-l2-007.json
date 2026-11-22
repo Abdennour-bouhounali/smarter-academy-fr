@@ -1,0 +1,180 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muthallathat-l2-007",
+  "lessonCode": "wadiya-idmajiya-muthallathat",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2021 — دعامة لافتة محلّ تجاري",
+    "estimatedMinutes": 6,
+    "tags": [
+      "الظل",
+      "خاصية فيثاغورس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-muthallathat_P1",
+      "modelledOn": "BEM 2021 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "لافتة محلّ تجاري معلّقة بذراع أفقي $[BC]$ مثبّت في جدار شاقولي في النقطة $B$ ، وتسندها دعامة مائلة $[AC]$ حيث $A$ نقطة من الجدار تحت $B$ (الشكل المقابل). $BC = 1{,}8\\,\\mathrm{m}$ و $\\tan\\widehat{ACB} = \\dfrac{4}{3}$ . اختار صاحب المحلّ الدعامة الأمتن لأنّه يحرص على سلامة المارّة.",
+    "figure": {
+      "points": {
+        "B": [
+          0,
+          0
+        ],
+        "C": [
+          1.8,
+          0
+        ],
+        "A": [
+          0,
+          -2.4
+        ]
+      },
+      "segments": [
+        {
+          "from": "B",
+          "to": "C",
+          "label": "1,8 m"
+        },
+        [
+          "B",
+          "A"
+        ],
+        [
+          "A",
+          "C"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "B",
+          "C"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "C",
+          "from": "B",
+          "to": "A"
+        }
+      ],
+      "labels": {
+        "B": "nw",
+        "C": "ne",
+        "A": "sw"
+      },
+      "ariaLabel": "الجدار الشاقولي [AB] والذراع الأفقي [BC] طوله 1,8 m والدعامة المائلة [AC]؛ المثلث ABC قائم في B",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب الطول $AB$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P2",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m",
+      "expectedAnswer": "2.4",
+      "misconceptionSignatures": [
+        {
+          "value": "1.35",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بالنسبة إلى الزاوية $\\widehat{ACB}$ : $[AB]$ مقابل و $[BC]$ مجاور."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\tan\\widehat{ACB} = \\dfrac{AB}{BC}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = 1{,}8 \\times \\dfrac{4}{3} = 2{,}4\\,\\mathrm{m}$ .",
+        "incorrect": "الطول المطلوب في بسط الظل: نضرب $BC$ في الظل."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $ABC$ القائم في $B$ : $\\tan\\widehat{ACB} = \\dfrac{AB}{BC}$",
+          "ومنه: $AB = BC \\times \\tan\\widehat{ACB} = 1{,}8 \\times \\dfrac{4}{3}$"
+        ],
+        "result": "AB = 2{,}4\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب طول الدعامة $AC$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "4.2",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$[AC]$ وتر المثلث $ABC$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خاصية فيثاغورس: $AC^2 = AB^2 + BC^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC^2 = 5{,}76 + 3{,}24 = 9$ ومنه $AC = 3\\,\\mathrm{m}$ .",
+        "incorrect": "نجمع مربعي الضلعين لا الضلعين، ثم نأخذ الجذر."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $ABC$ القائم في $B$ ، حسب خاصية فيثاغورس: $AC^2 = AB^2 + BC^2 = 2{,}4^2 + 1{,}8^2 = 5{,}76 + 3{,}24 = 9$",
+          "$AC = \\sqrt{9}$"
+        ],
+        "result": "AC = 3\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

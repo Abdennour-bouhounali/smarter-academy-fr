@@ -1,0 +1,333 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-talis-l5-010",
+  "lessonCode": "wadiya-idmajiya-talis",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2021 — الحائط البشري في ضربة حرة",
+    "estimatedMinutes": 35,
+    "tags": [
+      "وضعية إدماجية",
+      "الخاصية العكسية",
+      "خاصية طالس",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-talis_P1",
+      "modelledOn": "BEM 2021 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في مباراة بملعب الحيّ، وُضعت الكرة في النقطة $O$ لتنفيذ ضربة حرّة. قائما المرمى $A$ و $B$ حيث $AB = 7{,}2\\,\\mathrm{m}$ ، و $OA = 25\\,\\mathrm{m}$ و $OB = 26\\,\\mathrm{m}$ . يشكّل لاعبو الفريق المدافع حائطا $[MN]$ ، حيث $M$ من $[OA]$ و $N$ من $[OB]$ ، و $OM = 10\\,\\mathrm{m}$ و $ON = 10{,}4\\,\\mathrm{m}$ (الشكل المقابل).",
+    "figure": {
+      "points": {
+        "O": [
+          0.0,
+          0.0
+        ],
+        "A": [
+          24.148145657227,
+          6.470476127563
+        ],
+        "B": [
+          22.268426051467,
+          13.420774984715
+        ],
+        "M": [
+          9.659258262891,
+          2.588190451025
+        ],
+        "N": [
+          8.907370420587,
+          5.368309993886
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "M",
+          "label": "10"
+        },
+        [
+          "M",
+          "A"
+        ],
+        {
+          "from": "O",
+          "to": "N",
+          "label": "10,4"
+        },
+        [
+          "N",
+          "B"
+        ],
+        {
+          "from": "A",
+          "to": "B",
+          "label": "7,2",
+          "bold": true
+        },
+        {
+          "from": "M",
+          "to": "N",
+          "bold": true,
+          "tone": "rose"
+        }
+      ],
+      "ariaLabel": "الكرة في O، القائمان A و B للمرمى حيث AB = 7,2، والحائط [MN] حيث M من [OA] و N من [OB)؛ OM = 10 و ON = 10,4",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب النسبة $\\dfrac{OM}{OA}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "2/5",
+      "misconceptionSignatures": [
+        {
+          "value": "5/2",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$OM$ و $OA$ طولان يُقاسان من النقطة $O$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $OM$ على $OA$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{OM}{OA} = \\dfrac{10}{25} = \\dfrac{2}{5}$ .",
+        "incorrect": "النسبة $\\dfrac{OM}{OA}$ : الطول $OM$ على الطول $OA$ ، وكلاهما من النقطة $O$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{OM}{OA} = \\dfrac{10}{25} = \\dfrac{2}{5}$"
+        ],
+        "result": "\\dfrac{OM}{OA} = \\dfrac{2}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب النسبة $\\dfrac{ON}{OB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "2/5",
+      "misconceptionSignatures": [
+        {
+          "value": "5/2",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$ON$ و $OB$ طولان يُقاسان من النقطة $O$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $ON$ على $OB$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{ON}{OB} = \\dfrac{10{,}4}{26} = \\dfrac{2}{5}$ .",
+        "incorrect": "النسبة $\\dfrac{ON}{OB}$ : الطول $ON$ على الطول $OB$ ، وكلاهما من النقطة $O$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{ON}{OB} = \\dfrac{10{,}4}{26} = \\dfrac{2}{5}$"
+        ],
+        "result": "\\dfrac{ON}{OB} = \\dfrac{2}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل الحائط $(MN)$ موازٍ لخط المرمى $(AB)$ ؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-TAQRIB-BURHAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النسبتين بقيمهما المضبوطة (الجداء المتصالب)، لا بقيم مقرّبة ولا بمظهر الشكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق أيضا من ترتيب النقط على المستقيمين المتقاطعين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{OM}{OA} = \\dfrac{ON}{OB} = 0{,}4$ والترتيب نفسه: $(MN) \\parallel (AB)$ .",
+        "incorrect": "الخاصية العكسية تتطلب شرطين معا: تساوي النسبتين بقيم مضبوطة، وترتيب النقط نفسه على المستقيمين."
+      },
+      "solution": {
+        "lines": [
+          "بما أن النقط $O$ ، $M$ ، $A$ و $O$ ، $N$ ، $B$ في استقامية وبنفس الترتيب،",
+          "و بما أن: $\\dfrac{OM}{OA} = \\dfrac{ON}{OB} = \\dfrac{2}{5}$",
+          "فإن المستقيمين $(MN)$ و $(AB)$ متوازيان حسب خاصية طالس العكسية."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "احسب عرض الحائط $MN$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "2,88",
+      "misconceptionSignatures": [
+        {
+          "value": "18",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(MN) \\parallel (AB)$ : المثلثان $OMN$ و $OAB$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $\\dfrac{OM}{OA} = \\dfrac{MN}{AB}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$MN = \\dfrac{2}{5} \\times 7{,}2 = 2{,}88\\,\\mathrm{m}$ .",
+        "incorrect": "في كل نسبة: طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "$(MN) \\parallel (AB)$ ، حسب خاصية طالس: $\\dfrac{OM}{OA} = \\dfrac{ON}{OB} = \\dfrac{MN}{AB}$",
+          "$\\dfrac{10}{25} = \\dfrac{MN}{7{,}2}$",
+          "$MN = \\dfrac{10 \\times 7{,}2}{25}$"
+        ],
+        "result": "MN = 2{,}88\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "☜ يغطّي كل لاعب عرض $0{,}45\\,\\mathrm{m}$ من الحائط. ما أقل عدد من اللاعبين يجب وضعه في الحائط لتغطية $[MN]$ كاملا؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد اللاعبين)",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-TALIS-MULAAMA-WAQI"
+        },
+        {
+          "value": "6.4",
+          "id": "MISC-TALIS-MULAAMA-WAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم عرض الحائط على العرض الذي يغطّيه لاعب واحد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد اللاعبين عدد طبيعي، ويجب أن يغطّي الحائط كاملا."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2{,}88}{0{,}45} = 6{,}4$ : ستة لاعبين لا يكفون، فيلزم 7 لاعبين.",
+        "incorrect": "العدد يجب أن يغطّي $2{,}88\\,\\mathrm{m}$ كاملة: لا تأخذ الجزء الصحيح بالنقصان."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2{,}88}{0{,}45} = 6{,}4$",
+          "6 لاعبين يغطّون $6 \\times 0{,}45 = 2{,}7\\,\\mathrm{m}$ فقط، وهو أقل من $2{,}88\\,\\mathrm{m}$ ،",
+          "إذن يلزم على الأقل 7 لاعبين ( $7 \\times 0{,}45 = 3{,}15\\,\\mathrm{m}$ )."
+        ],
+        "result": "7"
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

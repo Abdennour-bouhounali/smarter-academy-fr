@@ -1,0 +1,132 @@
+{
+  "id": "ex-4am-misaha-hajm-kura-l3-005",
+  "lessonCode": "misaha-hajm-kura",
+  "level": 3,
+  "metadata": {
+    "title": "أرخميدس — بالأرقام",
+    "estimatedMinutes": 2,
+    "tags": [
+      "أرخميدس",
+      "مساحة الكرة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_misaha-hajm-kura_P1",
+      "modelledOn": "intro-archimedes"
+    }
+  },
+  "statement": {
+    "content": "كرة نصف قطرها $4\\,\\mathrm{cm}$ داخل أسطوانة نصف قطر قاعدتها $4\\,\\mathrm{cm}$ وارتفاعها $8\\,\\mathrm{cm}$ (الشكل). اكتب مساحة الكرة على الشكل $k\\pi\\,\\mathrm{cm}^2$ ثم أعط $k$ .",
+    "figure": {
+      "kind": "space",
+      "view": {
+        "azimuth": -62,
+        "elevation": 16
+      },
+      "points": {
+        "O": [
+          0,
+          0,
+          0
+        ],
+        "N": [
+          0,
+          0,
+          1
+        ],
+        "S": [
+          0,
+          0,
+          -1
+        ],
+        "M": [
+          1,
+          0,
+          0
+        ]
+      },
+      "hidden": [
+        "N",
+        "S",
+        "M"
+      ],
+      "solids": [
+        {
+          "type": "cylinder",
+          "base": "S",
+          "top": "N",
+          "radius": 1,
+          "tone": "sky"
+        },
+        {
+          "type": "sphere",
+          "center": "O",
+          "radius": 1,
+          "tone": "rose"
+        }
+      ],
+      "segments": [
+        {
+          "from": "O",
+          "to": "M",
+          "label": "R",
+          "dashed": true
+        },
+        {
+          "from": "S",
+          "to": "N",
+          "dashed": true
+        }
+      ],
+      "labels": {
+        "O": "nw"
+      },
+      "ariaLabel": "كرة نصف قطرها R داخل أسطوانة دوران نصف قطر قاعدتها R وارتفاعها 2R: الكرة تمسّ القاعدتين والسطح الجانبي",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قيمة $k$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_misaha-hajm-kura_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة (مثل 2,5) أو عدد طبيعي",
+      "expectedAnswer": "64",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة الكرة = المساحة الجانبية للأسطوانة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "محيط القاعدة $2\\pi \\times 4 = 8\\pi$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب في الارتفاع 8."
+        }
+      ],
+      "feedback": {
+        "correct": "$8\\pi \\times 8 = 64\\pi = 4\\pi \\times 4^2$ .",
+        "incorrect": "مساحة الكرة أربعة أقراص كبرى، لا قرص واحد."
+      },
+      "difficulty": 3,
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MISAHA-DAIRA",
+          "value": "16"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "id": "ex-4am-tahlil-ibara-l1-007",
+  "lessonCode": "tahlil-ibara",
+  "level": 1,
+  "metadata": {
+    "title": "عامل مشترك حرفي",
+    "estimatedMinutes": 7,
+    "tags": [
+      "عامل مشترك"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tahlil-ibara_P2",
+      "modelledOn": "ex-20"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "حلّل كل عبارة باستخراج أكبر عامل مشترك:",
+    "formulas": [
+      "A = x^2 + 7x",
+      "B = 3x^2 - 6x"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "حلّل العبارة $A$ .",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $x(x + m)$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن عامل مشترك بين حدود العبارة (قد يكون عبارة كاملة بين قوسين)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل $ka + kb = k(a + b)$ : أخرج العامل المشترك، واكتب ما يبقى من كل حد بين قوسين كبيرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بسّط ما بين القوسين الكبيرين بإشاراته، ثم قارن بالشكل المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = x(x + 7)$ إذن $m = 7$ .",
+        "incorrect": "أخرج العامل المشترك من كل حد، ثم بسّط ما بين القوسين الكبيرين بإشاراته (حدّ وحده يعني $1$)."
+      },
+      "solution": {
+        "lines": [
+          "$A = x \\times x + 7 \\times x$",
+          "$A = x(x + 7)$"
+        ],
+        "result": "A = x(x + 7)"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "حلّل العبارة $B$ باستخراج أكبر عامل مشترك (عدد وحرف).",
+      "statement": "العدد $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $B$ على الشكل $kx(x - m)$ حيث $k$ عدد طبيعي : اكتب العدد $k$ فقط",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-TAHLIL-AMIL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العامل المشترك الأكبر يجمع أكبر عدد يقسم المعاملين والحرف $x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل حد على شكل جداء يظهر فيه هذا العامل."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 3x(x - 2)$ إذن $k = 3$ .",
+        "incorrect": "أخرج العامل المشترك من كل حد، ثم بسّط ما بين القوسين الكبيرين بإشاراته (حدّ وحده يعني $1$)."
+      },
+      "solution": {
+        "lines": [
+          "العامل المشترك الأكبر هو $3x$",
+          "$B = 3x \\times x - 3x \\times 2$",
+          "$B = 3x(x - 2)$"
+        ],
+        "result": "B = 3x(x - 2)"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $B$ على الشكل $kx(x - m)$ حيث $k$ عدد طبيعي : اكتب العدد $m$ فقط",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العدد المطلوب في الشكل المحلّل، بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 3x(x - 2)$ إذن $m = 2$ .",
+        "incorrect": "أخرج العامل المشترك من كل حد، ثم بسّط ما بين القوسين الكبيرين بإشاراته (حدّ وحده يعني $1$)."
+      },
+      "solution": {
+        "lines": [
+          "$B = 3x(x - 2)$"
+        ],
+        "result": "m = 2"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

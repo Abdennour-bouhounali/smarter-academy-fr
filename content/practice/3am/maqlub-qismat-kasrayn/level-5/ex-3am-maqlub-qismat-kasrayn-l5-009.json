@@ -1,0 +1,318 @@
+{
+  "id": "ex-3am-maqlub-qismat-kasrayn-l5-009",
+  "lessonCode": "maqlub-qismat-kasrayn",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — سعر الكيلوغرام عند تاجرين",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "قسمة",
+      "ثمن",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: يبيع تاجر أمين اللوز، وثمن $\\dfrac{3}{4}$ كغ منه $360$ دج.\nالجزء الثاني: يعرض تاجر ثانٍ $\\dfrac{5}{4}$ كغ بسعر $650$ دج، وتريد جمعية الحيّ الشراء بأقلّ ثمن للكيلوغرام."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "ما ثمن الكيلوغرام الواحد من اللوز عند التاجر الأوّل بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "480",
+      "misconceptionSignatures": [
+        {
+          "value": "270",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "1/480",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "1/270",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ الكسرين هو المقسوم وأيّهما المقسوم عليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني: نقلب المقسوم عليه وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء، اختزل العوامل المشتركة قبل الضرب، ثمّ اكتب الناتج على أبسط شكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$360 \\div \\dfrac{3}{4} = 480$ لأنّ قسمة كسر على كسر هي ضرب الأوّل في مقلوب الثاني.",
+        "incorrect": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني فقط، ثمّ نختزل؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $360 \\div \\dfrac{3}{4} = 360 \\times \\dfrac{4}{3}$ .",
+          "$= \\dfrac{360 \\times 4}{1 \\times 3} = 480$ ."
+        ],
+        "result": "480"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما ثمن $\\dfrac{5}{2}$ كغ عند التاجر الأوّل بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "1200",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كل سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\,200$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "ثمن $\\dfrac{5}{2}$ كغ هو $480 \\times \\dfrac{5}{2} = 1\\,200$ دج."
+        ],
+        "result": "1\\,200"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "كم كيلوغرامًا يشتري التاجر الأوّل بمبلغ $1\\,800$ دج؟ اكتب الناتج على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "15/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "864000",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "4/15",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "1/864000",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المقسوم؟ وما العدد المقسوم عليه؟ وما مقلوب هذا الأخير؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد غير معدوم هي الضرب في مقلوبه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حوّل القسمة إلى جداء، واختزل قبل أن تضرب كلّما أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\,800 \\div 480 = \\dfrac{15}{4}$ لأنّ القسمة على عدد هي الضرب في مقلوبه.",
+        "incorrect": "القسمة على عدد غير معدوم هي الضرب في مقلوبه؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $1\\,800 \\div 480 = 1\\,800 \\times \\dfrac{1}{480}$ .",
+          "$= \\dfrac{1800 \\times 1}{1 \\times 480} = \\dfrac{15}{4}$ ."
+        ],
+        "result": "\\dfrac{15}{4}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "ما ثمن الكيلوغرام الواحد عند التاجر الثاني بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "520",
+      "misconceptionSignatures": [
+        {
+          "value": "1625/2",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "1/520",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "2/1625",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ الكسرين هو المقسوم وأيّهما المقسوم عليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني: نقلب المقسوم عليه وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء، اختزل العوامل المشتركة قبل الضرب، ثمّ اكتب الناتج على أبسط شكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$650 \\div \\dfrac{5}{4} = 520$ لأنّ قسمة كسر على كسر هي ضرب الأوّل في مقلوب الثاني.",
+        "incorrect": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني فقط، ثمّ نختزل؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $650 \\div \\dfrac{5}{4} = 650 \\times \\dfrac{4}{5}$ .",
+          "$= \\dfrac{650 \\times 4}{1 \\times 5} = 520$ ."
+        ],
+        "result": "520"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أيّ التاجرين أرخص للكيلوغرام؟",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "التاجر الأوّل",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "التاجر الثاني",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "ثمنهما واحد",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الخيارات واحسب كلاّ منها بدل أن تخمّن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ خيار على الأعداد الواردة فيه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حوّل القسمة إلى جداء بمقلوب القاسم، ثمّ قارن."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن الكيلوغرام عند الأوّل $480$ دج وعند الثاني $520$ دج.",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الأوّل: $480$ دج للكيلوغرام، والثاني: $520$ دج للكيلوغرام."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

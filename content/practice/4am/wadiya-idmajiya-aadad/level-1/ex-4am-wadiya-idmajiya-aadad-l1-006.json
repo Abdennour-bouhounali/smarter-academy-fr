@@ -1,0 +1,138 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-aadad-l1-006",
+  "lessonCode": "wadiya-idmajiya-aadad",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2023 — العدد A = 630/1155",
+    "estimatedMinutes": 6,
+    "tags": [
+      "كسر غير قابل للاختزال",
+      "القاسم المشترك الأكبر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-aadad_P1",
+      "modelledOn": "BEM 2023 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد A حيث:",
+    "formulas": [
+      "A = \\dfrac{630}{1155}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "اكتب العدد A على شكل كسر غير قابل للاختزال.",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 630 و 1155.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "105",
+      "misconceptionSignatures": [
+        {
+          "value": "35",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 1155 على 630: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (1155 ; 630) بالزوج (630 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 105.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$1155 = 630 \\times 1 + 525$",
+          "$630 = 525 \\times 1 + 105$",
+          "$525 = 105 \\times 5 + 0$",
+          "آخر باقٍ غير معدوم هو 105، إذن:"
+        ],
+        "result": "PGCD(630 ; 1155) = 105"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "استنتج كتابة العدد A على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "6/11",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "210/385",
+          "id": "MISC-IKHTIZAL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01 (ا)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 105: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال 01 (ا).",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{630 \\div 105}{1155 \\div 105}$"
+        ],
+        "result": "A = \\dfrac{6}{11}"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

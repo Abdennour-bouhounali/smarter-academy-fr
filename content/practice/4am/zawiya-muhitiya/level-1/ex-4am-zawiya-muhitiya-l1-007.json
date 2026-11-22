@@ -1,0 +1,68 @@
+{
+  "id": "ex-4am-zawiya-muhitiya-l1-007",
+  "lessonCode": "zawiya-muhitiya",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — طاولة المقهى",
+    "estimatedMinutes": 2,
+    "tags": [
+      "خاصية 1"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_zawiya-muhitiya_P2",
+      "modelledOn": "know-4"
+    }
+  },
+  "statement": {
+    "content": "طاولة مستديرة في مقهى بقسنطينة مركزها O. ثلاثة أصدقاء يراجعون دروسهم معًا، يجلسون عند النقط A و B و M من حافتها، و M على القوس الكبير. الزاوية $\\widehat{AMB}$ قيسها $25^\\circ$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قيس الزاوية المركزية $\\widehat{AOB}$ بالدرجة؟",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "50",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوس الذي تحصره كل زاوية: هل هو نفس القوس؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الزاويتين: أيهما أكبر، المركزية أم المحيطية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قيس الزاوية المحيطية نصف قيس الزاوية المركزية التي تحصر معها نفس القوس."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{AOB} = 2 \\times 25^\\circ = 50^\\circ$ .",
+        "incorrect": "المركزية ضعف المحيطية التي تحصر معها نفس القوس."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-DIF",
+          "value": "12,5"
+        },
+        {
+          "id": "MISC-MUHITIYA-MUSAWIYA",
+          "value": "25"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-dawaran-l3-005",
+  "lessonCode": "wadiya-idmajiya-dawaran",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — نصف دورة الأرجوحة الدوّارة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "صورة نقطة بدوران"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-dawaran_P1",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "على مخطط مرصوف لساحة ألعاب، محور أرجوحة دوّارة في $O(1\\,;\\,1)$ ومقعد في $A(2\\,;\\,-3)$ . تدور الأرجوحة نصف دورة ( $180^\\circ$ ) حول O.",
+    "figure": {
+      "points": {
+        "O": [
+          1,
+          1
+        ],
+        "A": [
+          2,
+          -3
+        ]
+      },
+      "labels": {
+        "O": "nw",
+        "A": "se"
+      },
+      "grid": true,
+      "axes": true,
+      "ariaLabel": "معلم على ورقة مرصوفة: محور الأرجوحة O والمقعد A تحته وعلى يمينه قليلا"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا موضع المقعد بعد نصف الدورة:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الثنائية (x ; y)",
+      "expectedAnswer": {
+        "x": "0",
+        "y": "5"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدوران بـ $180^\\circ$ هو التناظر بالنسبة إلى O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "O منتصف القطعة التي تصل A بصورته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الصورة $(2x_O - x_A\\,;\\,2y_O - y_A)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$(2 - 2\\,;\\,2 + 3) = (0\\,;\\,5)$ .",
+        "incorrect": "O منتصف $[AA']$ : $x_{A'} = 2x_O - x_A$ و $y_{A'} = 2y_O - y_A$ ."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 3
+    }
+  ]
+}

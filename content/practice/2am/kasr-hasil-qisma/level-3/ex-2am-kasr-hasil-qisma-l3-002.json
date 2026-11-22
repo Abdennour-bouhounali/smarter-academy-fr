@@ -1,0 +1,293 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l3-002",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أكمل ثمّ حصر حاصل القسمة إلى العُشر",
+    "estimatedMinutes": 7,
+    "tags": [
+      "كتابة كسرية",
+      "حصر",
+      "قيم مقرّبة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-75",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لإجراء قسمة العدد $8{,}35$ على العدد العشري $0{,}8$ أكمل: $\\dfrac{8{,}35}{0{,}8} = \\dfrac{8{,}35 \\times \\ldots}{0{,}8 \\times \\ldots} = \\dfrac{\\ldots}{8}$ ثمّ أكمل الجدول."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "أكمل ثمّ أنجز القسمة:",
+      "statement": "أكمل: $\\dfrac{8{,}35}{0{,}8} = \\dfrac{\\ldots}{8}$ . ما البسط؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "83.5",
+      "misconceptionSignatures": [
+        {
+          "value": "8.35",
+          "id": "MISC-QARIBA-ONETERM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "البسط يُضرب في العدد نفسه الذي ضُرب فيه المقام."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما تفعله بالفاصلة في المقام تفعله بالفاصلة في البسط."
+        }
+      ],
+      "feedback": {
+        "correct": "$8{,}35 \\times 10 = 83{,}5$ ، إذن $\\frac{8{,}35}{0{,}8} = \\frac{83{,}5}{8}$.",
+        "incorrect": "لا يتغيّر الحاصل إلاّ إذا ضُرب البسط والمقام في العدد نفسه: ما فعلناه بالمقام نفعله بالبسط."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}8 \\times 10 = 8$",
+          "$8{,}35 \\times 10 = 83{,}5$"
+        ],
+        "result": "83{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "أنجز القسمة $8{,}35 \\div 0{,}8$ وأعط الحاصل كاملًا.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "10.4375",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل المقسوم عليه إلى عدد طبيعي بضرب الحدّين في العدد نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة على العدد الطبيعي، واضبط الفاصلة في الحاصل عند الوصول إلى الأرقام التي بعد فاصلة المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$8{,}35 \\div 0{,}8 = 83{,}5 \\div 8 = 10{,}4375$.",
+        "incorrect": "اضرب الحدّين في العدد نفسه ثم أنجز القسمة على العدد الطبيعي، وتحقّق بضرب الحاصل في المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$8{,}35 \\div 0{,}8 = 83{,}5 \\div 8$",
+          "$0{,}8 \\times 10{,}4375 = 8{,}35$"
+        ],
+        "result": "10{,}4375"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "أكمل الجدول:",
+      "statement": "أعط القيمة المقرّبة إلى العُشر $0{,}1$ بالنقصان لحاصل القسمة.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "10.4",
+      "misconceptionSignatures": [
+        {
+          "value": "10.5",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "10.43",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالنقصان لا تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة دون أن تزيد شيئًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب القيمة في المقسوم عليه: يجب ألاّ يتجاوز الجداء المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$10{,}4 < \\frac{8{,}35}{0{,}8} < 10{,}5$.",
+        "incorrect": "بالنقصان: نحتفظ بالأرقام حتى الرتبة المطلوبة ونُهمل ما بعدها دون تغيير الرقم الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}8 \\times 10{,}4 = 8{,}32$",
+          "$0{,}8 \\times 10{,}5 = 8{,}4$",
+          "$8{,}32 < 8{,}35 < 8{,}4$"
+        ],
+        "result": "10{,}4"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أعط القيمة المقرّبة إلى العُشر $0{,}1$ بالزيادة لحاصل القسمة.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "10.5",
+      "misconceptionSignatures": [
+        {
+          "value": "10.4",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "10.44",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالزيادة هي أصغر قيمة من هذه الرتبة تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من القيمة بالنقصان ثم أضف وحدة واحدة من الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$10{,}4 < \\frac{8{,}35}{0{,}8} < 10{,}5$.",
+        "incorrect": "بالزيادة: هي القيمة التي تلي القيمة بالنقصان مباشرة في الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}8 \\times 10{,}5 = 8{,}4$",
+          "$8{,}4 > 8{,}35$",
+          "القيمة بالزيادة هي $10{,}5$"
+        ],
+        "result": "10{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "اختر حصر حاصل القسمة $\\dfrac{8{,}35}{0{,}8}$ إلى العُشر.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$10{,}4 < \\dfrac{8{,}35}{0{,}8} < 10{,}5$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$10{,}5 < \\dfrac{8{,}35}{0{,}8} < 10{,}6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        },
+        {
+          "id": "C",
+          "content": "$10{,}3 < \\dfrac{8{,}35}{0{,}8} < 10{,}4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        },
+        {
+          "id": "D",
+          "content": "$10{,}6 < \\dfrac{8{,}35}{0{,}8} < 10{,}7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحصر الصحيح: عددان متتاليان في الرتبة المطلوبة، الأوّل لا يتجاوز الحاصل والثاني يتجاوزه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ حصر بضرب طرفيه في المقسوم عليه ثم قارن بالمقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$10{,}4 < \\dfrac{8{,}35}{0{,}8} < 10{,}5$.",
+        "incorrect": "تحقّق من الطرفين: الأصغر لا يتجاوز الحاصل والأكبر يتجاوزه، وبينهما وحدة واحدة من الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}8 \\times 10{,}4 = 8{,}32 \\text{ و } 0{,}8 \\times 10{,}5 = 8{,}4$",
+          "$8{,}32 < 8{,}35 < 8{,}4$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

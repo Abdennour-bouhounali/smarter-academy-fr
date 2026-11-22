@@ -1,0 +1,263 @@
+{
+  "id": "ex-3am-muqaranat-natiqayn-l5-009",
+  "lessonCode": "muqaranat-natiqayn",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — ثمن اللتر من العصير",
+    "estimatedMinutes": 16,
+    "tags": [
+      "وضعية إدماجية",
+      "سعر الوحدة",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يباع العصير في قنّينتين: قنّينة سعتها $0{,}75$ L بـ $48$ دج، وقنّينة سعتها $1{,}5$ L بـ $95$ دج. تريد أمّ أن تشتري $6$ L من العصير بأقلّ ثمن."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "الجزء الأول. احسب ثمن اللتر الواحد في القنّينة الصغيرة.",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر مختزل)",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط؟ وما العمليات التي تحتاجها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب خطوة خطوة مع الانتباه إلى الإشارات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "راجع النتيجة بطريقة ثانية قبل أن تجيب."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "64",
+      "feedback": {
+        "correct": "ثمن اللتر $64$ دج.",
+        "incorrect": "أعد الحساب بالترتيب مع الانتباه إلى الإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$48 \\div 0{,}75 = 64$"
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب الفرق بين ثمن اللتر في القنّينة الصغيرة وثمنه في الكبيرة. اكتبه في أبسط شكل كسري.",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العددان؟ وأيّهما يُطرح من الآخر في هذا الفرق؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح العدد الثاني من الأول واختزل النتيجة، فالإشارة هي التي تهمّنا في النهاية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد الحساب اقرأ إشارة الناتج وانتبه إلى ترتيب الطرح."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "2/3",
+      "misconceptionSignatures": [
+        {
+          "value": "-2/3",
+          "id": "MISC-MUQ-ORDER-SUB"
+        }
+      ],
+      "feedback": {
+        "correct": "الفرق هو $\\dfrac{2}{3}$ دج لكلّ لتر.",
+        "incorrect": "اطرح العدد الثاني من الأول بتوحيد المقامين، واختزل، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "ثمن اللتر في الكبيرة: $95 \\div 1{,}5 = \\dfrac{190}{3}$",
+          "$64 - \\dfrac{190}{3} = \\dfrac{192 - 190}{3} = \\dfrac{2}{3}$"
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "أيّ القنّينتين ثمن لترها أصغر؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُطلب مقارنته؟ وما الأعداد المعنيّة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الفرق بين الكمّيتين ثم اقرأ إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب القرار في جملة تذكر الفرق وإشارته."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "القنّينة الصغيرة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-ORDER-SUB"
+        },
+        {
+          "id": "B",
+          "content": "القنّينة الكبيرة",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن لتر القنّينة الكبيرة أصغر.",
+        "incorrect": "احسب الفرق بين الكمّيتين واقرأ إشارته، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الفرق $64 - \\dfrac{190}{3} = \\dfrac{2}{3} > 0$ ، إذن ثمن لتر الكبيرة أصغر."
+        ]
+      }
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "الجزء الثاني. احسب المبلغ الذي توفّره الأمّ بشراء $6$ L في قنّينات كبيرة بدل الصغيرة، بالدينار.",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر مختزل)",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط؟ وما العمليات التي تحتاجها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب خطوة خطوة مع الانتباه إلى الإشارات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "راجع النتيجة بطريقة ثانية قبل أن تجيب."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "4",
+      "feedback": {
+        "correct": "توفّر $4$ دج.",
+        "incorrect": "أعد الحساب بالترتيب مع الانتباه إلى الإشارات."
+      },
+      "solution": {
+        "lines": [
+          "التوفير في اللتر $\\dfrac{2}{3}$ دج، وفي $6$ L : $6 \\times \\dfrac{2}{3} = 4$"
+        ]
+      }
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "اكتب قرارك: هل تستحقّ القنّينة الكبيرة العناء إذا كان التوفير صغيرًا؟ علّل.",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي تريد تبريره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الفرق أوّلًا ثم إشارته ثم الخلاصة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة واحدة تربط إشارة الفرق بالمقارنة."
+        }
+      ],
+      "timeSeconds": 180,
+      "feedback": {
+        "correct": "الفرق موجب إذن الكبيرة أرخص.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثمّ قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "الفرق في ثمن اللتر موجب ($\\dfrac{2}{3}$ دج)، فالقنّينة الكبيرة هي الأرخص دائمًا.",
+          "التوفير في $6$ L هو $4$ دج: قليل لكنّه حقيقي، والقرار الأفضل الكبيرة ما دامت تتّسع لها حاجتها."
+        ]
+      }
+    }
+  ]
+}

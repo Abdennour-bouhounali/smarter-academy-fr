@@ -1,0 +1,141 @@
+{
+  "id": "ex-4am-jidaa-maadum-l1-007",
+  "lessonCode": "jidaa-maadum",
+  "level": 1,
+  "metadata": {
+    "title": "عامل x وعامل مكرّر",
+    "estimatedMinutes": 5,
+    "tags": [
+      "جداء معدوم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_jidaa-maadum_P2",
+      "modelledOn": "now-47-2"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "حل كلا من المعادلتين الآتيتين:",
+      "statement": "$x(x - 1) = 0$",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "اكتب حلول المعادلة مفصولة بفاصلة",
+      "expectedAnswer": [
+        0,
+        1
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-JIDAA-HAL-WAHID"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يكون جداء عاملين معدومًا إذا كان أحد عامليه على الأقل معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلتين من الدرجة الأولى: كل عامل يساوي $0$ ، ثم حلّ كل واحدة منهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى الإشارة عند نقل العدد إلى الطرف الثاني، ثم رتّب الحلّين من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "للمعادلة حلّان: $0$ و $1$ .",
+        "incorrect": "كل عامل يعطي حلًّا: اكتب أن أحد العاملين معدوم، وحلّ المعادلتين، ولا تنسَ أيّ حلّ."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $x(x - 1) = 0$",
+          "يعني أنّ: $x = 0$ أو $x - 1 = 0$",
+          "ومنه: $x = 0$ أو $x = 1$",
+          "إذن للمعادلة حلّان هما $0$ و $1$"
+        ],
+        "result": "x = 0 \\text{ أو } x = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$(x + 7)^2 = 0$",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب حل المعادلة: عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "-7",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-JIDAA-ISHARA-JADHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يكون جداء عاملين معدومًا إذا كان أحد عامليه على الأقل معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلتين من الدرجة الأولى: كل عامل يساوي $0$ ، ثم حلّ كل واحدة منهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى الإشارة عند نقل العدد إلى الطرف الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = -7$ .",
+        "incorrect": "اكتب أن العامل غير الثابت معدوم، ثم حلّ المعادلة من الدرجة الأولى بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $(x + 7)^2 = (x + 7)(x + 7) = 0$",
+          "يعني أنّ: $x + 7 = 0$",
+          "ومنه: $x = -7$",
+          "إذن للمعادلة حلّ وحيد هو $-7$"
+        ],
+        "result": "x = -7"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

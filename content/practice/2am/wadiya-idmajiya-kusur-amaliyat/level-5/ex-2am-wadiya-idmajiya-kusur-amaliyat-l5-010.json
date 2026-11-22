@@ -1,0 +1,306 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-kusur-amaliyat-l5-010",
+  "lessonCode": "wadiya-idmajiya-kusur-amaliyat",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — وضعيّة إدماجيّة : حيّ سكني",
+    "estimatedMinutes": 14,
+    "tags": [
+      "كسر من مساحة",
+      "القسمة الإقليدية",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "قطعة أرض مستطيلة طولها $180$ m وعرضها $120$ m : $\\dfrac{3}{5}$ منها للبناء ، و $\\dfrac{1}{10}$ للطرق ، والباقي مساحة خضراء . يحتاج كلّ مسكن إلى $85$ m² ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "الجزء الأوّل :",
+      "statement": "ما الكسر الذي تمثّله المساحة الخضراء ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "3/10",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "7/10",
+          "id": "MISC-JAMKASR-PART"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكلّ يساوي كسرًا بسطه ومقامه عدد واحد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الأجزاء المأخوذة أوّلًا ثمّ اطرحها من الكلّ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الجزء الباقي هو الكلّ ناقص ما أُخذ ، وهو أصغر من الكلّ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{10}$ .",
+        "incorrect": "اجمع ما أُخذ أوّلًا ثمّ اطرحه من الكلّ ، ولا تُعطِ ما أُخذ بدل الباقي ."
+      },
+      "solution": {
+        "lines": [
+          "$1 = \\dfrac{10}{10}$ .",
+          "$\\dfrac{3}{5} = \\dfrac{3 \\times 2}{5 \\times 2} = \\dfrac{6}{10}$ .",
+          "ما أُخذ : $\\dfrac{3}{5} + \\dfrac{1}{10} = \\dfrac{6 + 1}{10} = \\dfrac{7}{10}$ .",
+          "الباقي : $1 - \\dfrac{7}{10} = \\dfrac{10}{10} - \\dfrac{7}{10} = \\dfrac{3}{10}$ ."
+        ],
+        "result": "\\dfrac{3}{10}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني :",
+      "statement": "احسب مساحة القطعة بالمتر المربّع .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "21600",
+      "misconceptionSignatures": [
+        {
+          "value": "600",
+          "id": "MISC-SYN-KASR2-PERIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المستطيل : ما العمليّة التي تعطي مساحته ؟ وما التي تعطي محيطه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المساحة = الطول × العرض ، والمحيط = 2 × (الطول + العرض) ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى الوحدة : المساحة بالمتر المربّع والمحيط بالمتر ."
+        }
+      ],
+      "feedback": {
+        "correct": "$21600\\,\\mathrm{m}^2$ .",
+        "incorrect": "المساحة جداء البعدين والمحيط مجموع الأضلاع الأربعة : لا تخلط بينهما وانتبه إلى الوحدة ."
+      },
+      "solution": {
+        "lines": [
+          "$180 \\times 120 = 21600$ ، أي $21600\\,\\mathrm{m}^2$ ."
+        ],
+        "result": "21600\\,\\mathrm{m}^2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب مساحة الجزء المخصّص للبناء بالمتر المربّع .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "12960",
+      "misconceptionSignatures": [
+        {
+          "value": "36000",
+          "id": "MISC-JIDAKASR-FLIP"
+        },
+        {
+          "value": "4320",
+          "id": "MISC-JIDAKASR-HALFWAY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزء من عدد يعني جداء الكسر في العدد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي ما دام الكسر أصغر من 1 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$12960$ .",
+        "incorrect": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ، ولا تقلب الكسر ."
+      },
+      "solution": {
+        "lines": [
+          "$21600 \\div 5 = 4320$ .",
+          "$4320 \\times 3 = 12960$ ."
+        ],
+        "result": "12960"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "ما أكبر عدد من المساكن يمكن بناؤه ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "152",
+      "misconceptionSignatures": [
+        {
+          "value": "40",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "151",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "value": "153",
+          "id": "MISC-HASR-IZAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المقسوم هو العدد الذي نقسمه والمقسوم عليه هو العدد الذي نقسم به : كم مرّة يدخل الثاني تمامًا في الأوّل ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي أصغر تمامًا من المقسوم عليه ، والمساواة المميّزة : المقسوم = المقسوم عليه × الحاصل + الباقي ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالضرب ثمّ الجمع قبل أن تجيب ."
+        }
+      ],
+      "feedback": {
+        "correct": "$152$ .",
+        "incorrect": "المقسوم عليه × الحاصل + الباقي = المقسوم ، والباقي أصغر من المقسوم عليه . تحقّق ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$12960 = 85 \\times 152 + 40$ ، و $40 < 85$ .",
+          "$85 \\times 152 = 12920$ و $12960 - 12920 = 40$ .",
+          "حاصل القسمة الإقليدية : $152$ ."
+        ],
+        "result": "152"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "هل يمكن بناء $153$ مسكنًا على الجزء المخصّص للبناء ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا ثمّ تحقّق منها بحساب بسيط ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أو قارن بدقّة ثمّ قارن بما قيل ."
+        }
+      ],
+      "feedback": {
+        "correct": "لا .",
+        "incorrect": "احسب ثمّ قارن بدقّة قبل أن تجيب ."
+      },
+      "solution": {
+        "lines": [
+          "$12960 = 85 \\times 152 + 40$ : يمكن بناء $152$ مسكنًا فقط .",
+          "$152 < 153$ : لا يمكن ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

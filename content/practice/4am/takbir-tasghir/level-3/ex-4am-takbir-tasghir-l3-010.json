@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-takbir-tasghir-l3-010",
+  "lessonCode": "takbir-tasghir",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — مخروط البوظة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "التصغير",
+      "حجم المخروط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takbir-tasghir_P2",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "مخروط بوظة (مثلّجات) حجمه $81\\pi\\,\\mathrm{cm}^3$ . مخروط صغير للأطفال هو تصغير له بالنسبة $\\dfrac{1}{3}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "حجم المخروط الصغير يُكتب على الشكل $a\\pi\\,\\mathrm{cm}^3$ . أعط العدد $a$ .",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة مثل 1,25 ، أو كسر مثل 4/7)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAKBIR-HAJM-K",
+          "value": "27"
+        },
+        {
+          "id": "MISC-TAKBIR-HAJM-K",
+          "value": "9"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحجم ثلاثة أبعاد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأطوال تُضرب في $k$ ، والمساحات في $k^2$ ، والحجوم في $k^3$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\left(\\dfrac{1}{3}\\right)^3 = \\dfrac{1}{27}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{81\\pi}{27} = 3\\pi$ : $a = 3$ .",
+        "incorrect": "الحجم يُضرب في $k^3$ ."
+      }
+    }
+  ]
+}

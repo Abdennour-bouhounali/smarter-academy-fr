@@ -1,0 +1,153 @@
+{
+  "id": "ex-4am-tanasub-muamil-l2-010",
+  "lessonCode": "tanasub-muamil",
+  "level": 2,
+  "metadata": {
+    "title": "تذاكر الدربي",
+    "estimatedMinutes": 2,
+    "tags": [
+      "y = a × x"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tanasub-muamil_P3",
+      "modelledOn": "act-1",
+      "adaptedFrom": "ex-4am-tanasub-muamil-l2-010"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "ثمن تذكرة الدربي، الذي يحضره الأنصار بروح رياضية، 300DA . نسمّي $x$ عدد التذاكر و $y$ ثمنها بـ DA ، حيث $y = 300 \\times x$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب ثمن 25 تذكرة.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "7500",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بعدد التذاكر."
+        }
+      ],
+      "feedback": {
+        "correct": "$300 \\times 25 = 7500$ .",
+        "incorrect": "الثمن = 300 × عدد التذاكر."
+      },
+      "solution": {
+        "lines": [
+          "$y = 300 \\times 25$",
+          "$y = 7500$"
+        ],
+        "result": "7500DA"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كم تذكرة يمكن شراؤها بـ 4800DA ؟",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد التذاكر",
+      "expectedAnswer": "16",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الثمن معلوم هنا: نبحث عن $x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم المبلغ على ثمن التذكرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{4800}{300} = 16$ .",
+        "incorrect": "$300 \\times x = 4800$ : اقسم على 300 ."
+      },
+      "solution": {
+        "lines": [
+          "$300 \\times x = 4800$",
+          "$x = \\dfrac{4800}{300}$",
+          "$x = 16$"
+        ],
+        "result": "16"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل ثمن التذاكر متناسب مع عددها؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى شكل العلاقة بين $y$ و $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "العلاقة من الشكل $y = a \\times x$ .",
+        "incorrect": "العلاقة $y = 300 \\times x$ ليس فيها مبلغ ثابت."
+      },
+      "solution": {
+        "lines": [
+          "$y = 300 \\times x$ : الثمن يساوي عددا ثابتا مضروبا في عدد التذاكر.",
+          "إذن الثمن متناسب مع عدد التذاكر، ومعامل التناسبية 300 ."
+        ],
+        "result": "متناسب"
+      },
+      "timeSeconds": 45
+    }
+  ]
+}

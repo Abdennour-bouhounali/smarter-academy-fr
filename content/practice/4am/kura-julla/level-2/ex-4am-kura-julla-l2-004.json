@@ -1,0 +1,74 @@
+{
+  "id": "ex-4am-kura-julla-l2-004",
+  "lessonCode": "kura-julla",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — كرة نصف قطرها 3",
+    "estimatedMinutes": 3,
+    "tags": [
+      "معلم الفضاء"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_kura-julla_P4",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس للفضاء مبدؤه O، كرة مركزها O ونصف قطرها 3، والنقطة $L(2\\,;\\,2\\,;\\,1)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "النقطة L:",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P4",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "على الكرة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "داخل الجلة وليست على الكرة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-MASAFA"
+        },
+        {
+          "id": "C",
+          "content": "خارج الجلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-MURABBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $OL^2 = x^2 + y^2 + z^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن بـ $R^2 = 9$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المساواة: على الكرة ؛ الأصغر: داخل ؛ الأكبر: خارج."
+        }
+      ],
+      "feedback": {
+        "correct": "$OL^2 = 4 + 4 + 1 = 9 = 3^2$ : L على الكرة.",
+        "incorrect": "مجموع الإحداثيات لا يعطي البعد: نجمع مربعاتها ونقارن بـ 9."
+      }
+    }
+  ]
+}

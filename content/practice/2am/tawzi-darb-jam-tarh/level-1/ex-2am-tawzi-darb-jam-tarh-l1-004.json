@@ -1,0 +1,228 @@
+{
+  "id": "ex-2am-tawzi-darb-jam-tarh-l1-004",
+  "lessonCode": "tawzi-darb-jam-tarh",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أحلّل عبارة ثم أحسبها",
+    "estimatedMinutes": 8,
+    "tags": [
+      "تحليل",
+      "فرق"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-84",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "حلّل العبارة $H = 4 \\times 8{,}5 - 4 \\times 3{,}5$ ثم احسبها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ كتابة من الكتابات الآتية هي تحليل للعبارة $4 \\times 8{,}5 - 4 \\times 3{,}5$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$4 \\times 8{,}5 \\times 3{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-FACTORMULT"
+        },
+        {
+          "id": "B",
+          "content": "$4 \\times (8{,}5 - 4)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-FACTORWRONG"
+        },
+        {
+          "id": "C",
+          "content": "$4 \\times (8{,}5 - 3{,}5)$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$4 \\times (8{,}5 + 3{,}5)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-SIGNCHANGE"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "$4 \\times 8{,}5 - 4 \\times 3{,}5 = 4 \\times (8{,}5 - 3{,}5)$",
+          "العدد المشترك يُخرَج خارج القوسين."
+        ]
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن العدد الظاهر في الجداءين معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرج هذا العدد خارج القوسين واكتب الحدّين الآخرين بينهما بالعملية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انشر ما كتبته للتحقّق: يجب أن ترجع إلى العبارة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتابة الصحيحة هي $4 \\times (8{,}5 - 3{,}5)$ .",
+        "incorrect": "العدد الذي يضرب القوسين يضرب كلّ حدّ بالعملية نفسها التي بين الحدّين: راجع كلّ خيار بحساب الطرفين."
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $4 \\times (8{,}5 - 3{,}5)$ .",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "20",
+      "solution": {
+        "lines": [
+          "$4 \\times (8{,}5 - 3{,}5) = 20$"
+        ],
+        "result": "20"
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا: أين الأقواس؟ وهل يوجد عدد مشترك بين الجداءات؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر الطريقة الأسهل: وزّع الضرب على الحدّين أو أنجز ما بين القوسين أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز الحساب مرحلة مرحلة ثم تحقّق من النتيجة بطريقة ثانية."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times (8{,}5 - 3{,}5) = 20$",
+        "incorrect": "راجع حسابك مرحلة مرحلة، وتذكّر أنّ ما بين القوسين يُحسب أوّلًا وأنّ الضرب يتوزّع على كلّ حدّ."
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "تحقّق بالطريقة الثانية : احسب $4 \\times 8{,}5 - 4 \\times 3{,}5$ .",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "20",
+      "solution": {
+        "lines": [
+          "$4 \\times 8{,}5 - 4 \\times 3{,}5 = 20$"
+        ],
+        "result": "20"
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا: أين الأقواس؟ وهل يوجد عدد مشترك بين الجداءات؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر الطريقة الأسهل: وزّع الضرب على الحدّين أو أنجز ما بين القوسين أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز الحساب مرحلة مرحلة ثم تحقّق من النتيجة بطريقة ثانية."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 8{,}5 - 4 \\times 3{,}5 = 20$",
+        "incorrect": "راجع حسابك مرحلة مرحلة، وتذكّر أنّ ما بين القوسين يُحسب أوّلًا وأنّ الضرب يتوزّع على كلّ حدّ."
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "أتمم : $4 \\times 8{,}5 - 4 \\times 3{,}5 = 4 \\times (8{,}5 - \\ldots)$ .",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "3.5",
+      "solution": {
+        "lines": [
+          "$4 \\times 8{,}5 - 4 \\times 3{,}5 = 4 \\times (8{,}5 - 3{,}5)$",
+          "$4 \\times 8{,}5 - 4 \\times 3{,}5 = 20$"
+        ],
+        "result": "3{,}5"
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي يتكرّر في الطرفين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الطرفين حدًّا بحدّ لتعرف ما ينقص."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض ما وجدته في المساواة وتحقّق من أنّ الطرفين متساويان."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 8{,}5 - 4 \\times 3{,}5 = 4 \\times (8{,}5 - 3{,}5)$",
+        "incorrect": "قارن الطرفين حدًّا بحدّ ثم عوّض ما وجدته وتحقّق من تساوي الطرفين."
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

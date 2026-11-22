@@ -1,0 +1,177 @@
+{
+  "id": "ex-3am-muqaranat-natiqayn-l4-004",
+  "lessonCode": "muqaranat-natiqayn",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — طريقان بين نقطتين",
+    "estimatedMinutes": 12,
+    "tags": [
+      "فيثاغورس",
+      "مقارنة",
+      "فرق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$ABC$ مثلث قائم في $A$ حيث $AB = 9$ m و $AC = 12$ m . يريد سمير الذهاب من $B$ إلى $C$ : إمّا مباشرة، وإمّا عبر النقطة $A$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب الطول $BC$ بالمتر.",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالمتر)",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط؟ وما العمليات التي تحتاجها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب خطوة خطوة مع الانتباه إلى الإشارات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "راجع النتيجة بطريقة ثانية قبل أن تجيب."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "15",
+      "feedback": {
+        "correct": "$BC = 15$ m .",
+        "incorrect": "أعد الحساب بالترتيب مع الانتباه إلى الإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$BC^2 = AB^2 + AC^2 = 81 + 144 = 225$",
+          "$BC = 15$"
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب طول المسار $B \\to A \\to C$ ثمّ اطرح منه طول المسار المباشر $BC$ . ما الفرق؟",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر مختزل)",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُطلب مقارنته؟ وما الأعداد المعنيّة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الفرق بين الكمّيتين ثم اقرأ إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب القرار في جملة تذكر الفرق وإشارته."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "-6",
+          "id": "MISC-MUQ-ORDER-SUB"
+        }
+      ],
+      "feedback": {
+        "correct": "الفرق هو $6$ .",
+        "incorrect": "احسب الفرق بين الكمّيتين واقرأ إشارته، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$AB + AC = 9 + 12 = 21$",
+          "$(AB + AC) - BC = 21 - 15 = 6$"
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أيّ المسارين أقصر؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُطلب مقارنته؟ وما الأعداد المعنيّة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الفرق بين الكمّيتين ثم اقرأ إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب القرار في جملة تذكر الفرق وإشارته."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "المسار عبر $A$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-ORDER-SUB"
+        },
+        {
+          "id": "B",
+          "content": "المسار المباشر $BC$",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "المسار المباشر أقصر لأنّ الفرق موجب.",
+        "incorrect": "احسب الفرق بين الكمّيتين واقرأ إشارته، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$(AB + AC) - BC = 6 > 0$ ، إذن $AB + AC > BC$ والمسار المباشر أقصر."
+        ]
+      }
+    }
+  ]
+}

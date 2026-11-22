@@ -1,0 +1,181 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l1-007",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — رتبة الرقم 1",
+    "estimatedMinutes": 6,
+    "tags": [
+      "رتبة الرقم 1",
+      "أسّ سالب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "في الكتابة العشرية للعدد $10^{-n}$ ، من أجل $n$ طبيعي غير معدوم، يقع الرقم 1 بعد الفاصلة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما رتبة الرقم 1 بعد الفاصلة في الكتابة العشرية للعدد $10^{-5}$ ؟",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العدد $10^{-5}$ كتابة عشرية أولًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الرتبة الأولى بعد الفاصلة هي رتبة الأعشار."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدّ الأرقام بعد الفاصلة حتى تصل إلى الرقم 1."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-ASHARA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "الرقم 1 في الرتبة الخامسة بعد الفاصلة.",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10^{-5} = 0{,}00001$ .",
+          "الرقم 1 هو الخامس بعد الفاصلة."
+        ],
+        "result": "5"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كم صفرًا بين الفاصلة والرقم 1 في الكتابة العشرية للعدد $10^{-4}$ ؟",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العدد $10^{-4}$ كتابة عشرية أولًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الرقم 1 يحتلّ آخر رتبة، أمّا الأصفار فتسبقه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد الأصفار بعد الفاصلة أقلّ بواحد من رتبة الرقم 1."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-ASHARA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{-4} = 0{,}0001$ ، بين الفاصلة والرقم 1 ثلاثة أصفار.",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10^{-4} = 0{,}0001$ .",
+          "الرقم 1 في الرتبة الرابعة، قبله ثلاثة أصفار."
+        ],
+        "result": "3"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "في عدد عشري الرقم 1 في الرتبة 7 بعد الفاصلة وكلّ الأرقام الأخرى أصفار. نكتبه على الشكل $10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين يقع الرقم 1 بعد الفاصلة؟ حدّد رتبته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في $10^{-n}$ يكون الرقم 1 في الرتبة $n$ بعد الفاصلة (الأعشار هي الرتبة الأولى)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأسّ سالب وقيمته المطلقة هي رتبة الرقم 1، أمّا عدد الأصفار بين الفاصلة والرقم 1 فأقلّ منها بواحد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-7",
+      "misconceptionSignatures": [
+        {
+          "value": "-6",
+          "id": "MISC-ASHARA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "الرقم 1 في الرتبة 7 بعد الفاصلة إذن العدد $10^{-7}$ .",
+        "incorrect": "عدّ الأصفار (أو رتبة الرقم 1 بعد الفاصلة) بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الرتبة 7 بعد الفاصلة: $0{,}0000001$ .",
+          "$0{,}0000001 = \\dfrac{1}{10^{7}} = 10^{-7}$ ."
+        ],
+        "result": "n = -7"
+      }
+    }
+  ]
+}

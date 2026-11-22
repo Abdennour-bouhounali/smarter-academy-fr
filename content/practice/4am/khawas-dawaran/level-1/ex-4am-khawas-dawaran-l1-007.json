@@ -1,0 +1,71 @@
+{
+  "id": "ex-4am-khawas-dawaran-l1-007",
+  "lessonCode": "khawas-dawaran",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — عنفة رياح في أدرار",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الزوايا"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_khawas-dawaran_P1",
+      "modelledOn": "know-3"
+    }
+  },
+  "generator": {
+    "tool": "u13-khawas-dawaran/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "عنفة رياح في أدرار لها ثلاث شفرات؛ الزاوية بين شفرتين متتاليتين $120^\\circ$ . تدور العنفة حول محورها بزاوية $50^\\circ$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قيس الزاوية بين الشفرتين نفسيهما بعد الدوران، بالدرجات؟",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "120",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-KHAWAS",
+          "value": "170"
+        },
+        {
+          "id": "MISC-DAWARAN-KHAWAS",
+          "value": "70"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الشفرتان تدوران معا حول نفس المركز."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "صورة زاوية بدوران."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الدوران يحافظ على الزوايا."
+        }
+      ],
+      "feedback": {
+        "correct": "الزاوية بين الشفرتين لا تتغيّر: $120^\\circ$ .",
+        "incorrect": "زاوية الدوران لا تُضاف إلى الزاوية بين الشفرتين."
+      }
+    }
+  ]
+}

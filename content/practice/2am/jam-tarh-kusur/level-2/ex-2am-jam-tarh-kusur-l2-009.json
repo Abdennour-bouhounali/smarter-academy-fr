@@ -1,0 +1,155 @@
+{
+  "id": "ex-2am-jam-tarh-kusur-l2-009",
+  "lessonCode": "jam-tarh-kusur",
+  "level": 2,
+  "metadata": {
+    "title": "عدّة كتابات للعدد نفسه",
+    "estimatedMinutes": 6,
+    "tags": [
+      "جمع كسرين"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "self-5",
+      "page": 33,
+      "section": "أؤكّد تعلّماتي",
+      "number": 5
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اختر كلّ الإجابات الصحيحة ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "العدد $\\dfrac{9}{4} + \\dfrac{3}{12}$ يساوي :",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "multiChoice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{27}{12} + \\dfrac{3}{12}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{12}{16}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMKASR-ACROSS"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{5}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{30}{24}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMKASR-DENSUM"
+        }
+      ],
+      "answerFormat": "اختر كلّ الإجابات الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب ناتج العمليّة بنفسك قبل النظر في الخيارات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استبعد الخيار الذي جمع البسطين والمقامين معًا، والذي غيّر المقام وحده."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتابات الصحيحة تساوي الناتج نفسه .",
+        "incorrect": "احسب بنفسك ثمّ قارن بالخيارات: المقام لا يُجمع، والكسر يُكتب بمقام واحد قبل أن نجمع بسطيه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{9}{4} = \\dfrac{27}{12}$ ثمّ $\\dfrac{27}{12} + \\dfrac{3}{12} = \\dfrac{30}{12} = \\dfrac{5}{2}$ .",
+          "أمّا $\\dfrac{12}{16}$ فقد جمعنا فيها المقامين ، و $\\dfrac{30}{24}$ جمعنا فيها المقامين أيضًا ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $S = \\dfrac{9}{4} + \\dfrac{3}{12}$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "5/2",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "3/4",
+          "id": "MISC-JAMKASR-ACROSS"
+        },
+        {
+          "value": "1",
+          "id": "MISC-JAMKASR-NOSCALE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليّة المطلوبة؟ وهل المقامان متساويان، أم أنّ أحدهما مضاعف للآخر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا اختلف المقامان فاكتب الكسر ذا المقام الأصغر بالمقام الأكبر: اضرب حدّيه في العدد نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع (أو اطرح) البسطين وأبقِ المقام كما هو، ثمّ اختزل الناتج إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = \\dfrac{5}{2}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{9}{4} = \\dfrac{9 \\times 3}{4 \\times 3} = \\dfrac{27}{12}$ .",
+          "$S = \\dfrac{9}{4} + \\dfrac{3}{12} = \\dfrac{27 + 3}{12} = \\dfrac{30}{12}$ .",
+          "نختزل بالقسمة على $6$ : $\\dfrac{30}{12} = \\dfrac{5}{2}$ ."
+        ],
+        "result": "S = \\dfrac{5}{2}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

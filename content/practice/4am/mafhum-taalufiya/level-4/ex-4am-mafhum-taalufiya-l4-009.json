@@ -1,0 +1,371 @@
+{
+  "id": "ex-4am-mafhum-taalufiya-l4-009",
+  "lessonCode": "mafhum-taalufiya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2012 — صيغتا نادي الشطرنج بالمدية",
+    "estimatedMinutes": 10,
+    "tags": [
+      "وضعية",
+      "جدول",
+      "صورة عدد",
+      "دالة خطية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mafhum-taalufiya_P2",
+      "modelledOn": "BEM 2012 II (01)"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2012",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يقترح نادٍ للشطرنج بالمدية يعلّم التلاميذ الصبر والتفكير على المنخرطين صيغتين للدفع:\n– الصيغة الأولى: 150DA للحصة الواحدة.\n– الصيغة الثانية: 90DA للحصة الواحدة مع اشتراك سنوي قدره 1800DA .",
+    "table": {
+      "head": [
+        "عدد الحصص في السنة",
+        "10",
+        "…"
+      ],
+      "rows": [
+        [
+          "المبلغ حسب الصيغة الأولى (DA)",
+          "…",
+          "…"
+        ],
+        [
+          "المبلغ حسب الصيغة الثانية (DA)",
+          "…",
+          "5400"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انقل الجدول وأكمله.",
+      "statement": "المبلغ حسب الصيغة الأولى من أجل 10 حصص:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "1500",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ = ثمن الحصة × عدد الحصص."
+        }
+      ],
+      "feedback": {
+        "correct": "$150 \\times 10 = 1500$ .",
+        "incorrect": "اضرب عدد الحصص في ثمن الحصة."
+      },
+      "solution": {
+        "lines": [
+          "$150 \\times 10 = 1500$"
+        ],
+        "result": "1500DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "المبلغ حسب الصيغة الثانية من أجل 10 حصص:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "2700",
+      "misconceptionSignatures": [
+        {
+          "value": "900",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا تنسَ الاشتراك السنوي."
+        }
+      ],
+      "feedback": {
+        "correct": "$90 \\times 10 + 1800 = 2700$ .",
+        "incorrect": "اضرب عدد الحصص في 90، ثم أضف الاشتراك السنوي."
+      },
+      "solution": {
+        "lines": [
+          "$g(10) = 90 \\times 10 + 1800$",
+          "$g(10) = 900 + 1800$",
+          "$g(10) = 2700$ أي $2700DA$ ."
+        ],
+        "result": "2700DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "عدد الحصص الذي يكون من أجله المبلغ حسب الصيغة الثانية 5400DA :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الحصص",
+      "expectedAnswer": "40",
+      "misconceptionSignatures": [
+        {
+          "value": "60",
+          "id": "MISC-TAALUFI-SABIQ-QISMA"
+        },
+        {
+          "value": "-1740",
+          "id": "MISC-TAALUFI-SABIQ-TARTIB"
+        },
+        {
+          "value": "487800",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح الاشتراك السنوي من المبلغ أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اقسم على ثمن الحصة."
+        }
+      ],
+      "feedback": {
+        "correct": "$(5400 - 1800) \\div 90 = 40$ .",
+        "incorrect": "اطرح الاشتراك السنوي أولا، ثم اقسم على 90."
+      },
+      "solution": {
+        "lines": [
+          "$g(x) = 5400$ معناه $90x + 1800 = 5400$",
+          "$90x = 5400 - 1800$",
+          "$90x = 3600$",
+          "$x = \\dfrac{3600}{90}$",
+          "$x = 40$"
+        ],
+        "result": "40"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "statement": "المبلغ حسب الصيغة الأولى من أجل هذا العدد من الحصص:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "6000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل عدد الحصص الذي وجدته في العمود الأخير."
+        }
+      ],
+      "feedback": {
+        "correct": "$150 \\times 40 = 6000$ .",
+        "incorrect": "اضرب عدد الحصص الذي وجدته في 150."
+      },
+      "solution": {
+        "lines": [
+          "$150 \\times 40 = 6000$"
+        ],
+        "result": "6000DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ا",
+      "lead": "ليكن $x$ عدد الحصص في السنة، و $f(x)$ ، $g(x)$ المبلغان المدفوعان حسب الصيغتين الأولى والثانية على الترتيب. عبّر عن $g(x)$ بدلالة $x$ على الشكل $g(x) = ax + b$ .",
+      "statement": "أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "90",
+      "misconceptionSignatures": [
+        {
+          "value": "1800",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المبلغ الذي يُدفع عن كل حصة في الصيغة الثانية؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 90$ : هو معامل $x$ .",
+        "incorrect": "المعامل $a$ هو العدد المضروب في $x$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 150x$ و $g(x) = 90x + 1800$ .",
+          "$g(x) = 90x + 1800$ من الشكل $ax + b$ حيث: $a = 90$ و $b = 1800$ ."
+        ],
+        "result": "a = 90"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "1800",
+      "misconceptionSignatures": [
+        {
+          "value": "90",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المبلغ الذي يُدفع مرة واحدة في السنة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$b = 1800$ ، إذن $g(x) = 90x + 1800$ .",
+        "incorrect": "$b$ هو الحدّ الذي لا يحتوي على $x$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 150x$ و $g(x) = 90x + 1800$ .",
+          "$g(x) = 90x + 1800$ من الشكل $ax + b$ حيث: $a = 90$ و $b = 1800$ ."
+        ],
+        "result": "b = 1800"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q7",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أيّ الدالتين $f$ و $g$ دالة خطية؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$f$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$g$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KHATTIYA-AFFINE"
+        },
+        {
+          "id": "C",
+          "content": "كلتاهما",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAALUFI-KHATTIYA-KHALT"
+        },
+        {
+          "id": "D",
+          "content": "ولا واحدة منهما",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAALUFI-THABITA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب صورة 0 بكل دالة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الدالة الخطية من الشكل $x \\longmapsto ax$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(x) = 150x$ و $g(0) = 1800 \\neq 0$ .",
+        "incorrect": "صورة 0 بدالة خطية معدومة."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 150x$ من الشكل $ax$ : $f$ دالة خطية (وهي أيضا تآلفية مع $b = 0$ ).",
+          "$g(0) = 1800 \\neq 0$ : $g$ دالة تآلفية ليست خطية."
+        ],
+        "result": "f"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

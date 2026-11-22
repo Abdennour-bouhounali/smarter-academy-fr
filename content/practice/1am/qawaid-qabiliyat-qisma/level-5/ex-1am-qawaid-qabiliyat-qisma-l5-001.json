@@ -1,0 +1,364 @@
+{
+  "id": "ex-1am-qawaid-qabiliyat-qisma-l5-001",
+  "lessonCode": "qawaid-qabiliyat-qisma",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — أوتاد سياج الحقل",
+    "estimatedMinutes": 18,
+    "tags": [
+      "سياج",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 2,
+      "file": "1am-s2-70",
+      "exercise": 4
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يملك فلاح حقلًا مستطيلًا طوله $84\\,\\mathrm{m}$ وعرضه $60\\,\\mathrm{m}$ (الأطوال غير حقيقية).\nالجزء الأول: يريد إحاطة الحقل بسياج يثبّته بأوتاد موزّعة بمسافات متساوية على المحيط، أوّلها عند المدخل.\nالجزء الثاني: ثمن الوتد الواحد 120 دج، ويريد الفلاح ألا يبذّر ماله."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب محيط الحقل.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالمتر (m)",
+      "expectedAnswer": "288",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "محيط المستطيل = 2 × (الطول + العرض)."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times (84 + 60) = 288$.",
+        "incorrect": "أنجز الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$84 + 60 = 144$",
+          "$2 \\times 144 = 288$"
+        ],
+        "result": "288"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "هل يمكن وضع وتد كل $5\\,\\mathrm{m}$ دون أن تبقى مسافة ناقصة؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-SIFR"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى رقم آحاد العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما الرقمان اللذان ينتهي بهما كل مضاعف للعدد 5؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإنجاز القسمة الإقليدية على 5."
+        }
+      ],
+      "feedback": {
+        "correct": "رقم آحاد العدد 288 هو 8، إذن 288 لا يقبل القسمة على 5.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 5 إذا كان رقم آحاده 0 أو 5."
+      },
+      "solution": {
+        "lines": [
+          "رقم آحاد العدد 288 هو 8، إذن 288 لا يقبل القسمة على 5.",
+          "$288 = 5 \\times 57 + 3$ ، الباقي 3 غير معدوم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "وهل يمكن وضع وتد كل $9\\,\\mathrm{m}$؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-AHAD-3"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مجموع أرقام العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل هذا المجموع يقبل القسمة على 9؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يكفي أن يقبل المجموع القسمة على 3."
+        }
+      ],
+      "feedback": {
+        "correct": "مجموع أرقام العدد 288: $2 + 8 + 8 = 18$ ، و 18 يقبل القسمة على 9.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 9 إذا كان مجموع أرقامه يقبل القسمة على 9."
+      },
+      "solution": {
+        "lines": [
+          "مجموع أرقام العدد 288: $2 + 8 + 8 = 18$ ، و 18 يقبل القسمة على 9.",
+          "$288 = 9 \\times 32 + 0$ ، الباقي معدوم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "إذا وُضع وتد كل $7\\,\\mathrm{m}$، فكم مترًا يبقى في آخر المحيط؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الأمتار",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "41",
+          "id": "MISC-QABILIYA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية عموديًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي عدد طبيعي أصغر من 7."
+        }
+      ],
+      "feedback": {
+        "correct": "$288 = 7 \\times 41 + 1$ و $1 < 7$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 7."
+      },
+      "solution": {
+        "lines": [
+          "$288 = 7 \\times 41 + 1$",
+          "$1 < 7$ ، إذن الباقي هو 1، و 288 لا يقبل القسمة على 7."
+        ],
+        "result": "r = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "أيّ مسافة يختار الفلاح حتى تكون كل المسافات بين الأوتاد متساوية؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "وتد كل $9\\,\\mathrm{m}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "وتد كل $5\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-BAQI"
+        },
+        {
+          "id": "C",
+          "content": "وتد كل $7\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-BAQI"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة المناسبة تقسم المحيط دون باقٍ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل أجوبتك السابقة."
+        }
+      ],
+      "feedback": {
+        "correct": "288 يقبل القسمة على 9 فقط من بين 5 و 7 و 9.",
+        "incorrect": "اختر المسافة التي باقي قسمة المحيط عليها معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$288 = 5 \\times 57 + 3$ و $288 = 7 \\times 41 + 1$: الباقي غير معدوم.",
+          "$288 = 9 \\times 32 + 0$: يختار وتدًا كل $9\\,\\mathrm{m}$."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "احسب عدد الأوتاد اللازمة إذا وُضع وتد كل $9\\,\\mathrm{m}$.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الأوتاد",
+      "expectedAnswer": "32",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-QABILIYA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية عموديًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق بضرب الحاصل في 9."
+        }
+      ],
+      "feedback": {
+        "correct": "$288 = 9 \\times 32 + 0$.",
+        "incorrect": "ابحث عن أكبر عدد طبيعي نضربه في 9 دون أن نتجاوز 288."
+      },
+      "solution": {
+        "lines": [
+          "$288 = 9 \\times 32 + 0$",
+          "الحاصل هو 32."
+        ],
+        "result": "32"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "05",
+      "statement": "احسب ثمن الأوتاد إذا وُضع وتد كل $9\\,\\mathrm{m}$.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "3840",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الجداء."
+        }
+      ],
+      "feedback": {
+        "correct": "$32 \\times 120 = 3840$.",
+        "incorrect": "أنجز الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$32 \\times 120 = 3840$"
+        ],
+        "result": "3840"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

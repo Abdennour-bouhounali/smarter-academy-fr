@@ -1,0 +1,87 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l1-004",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2009 — قواسم العدد 121",
+    "estimatedMinutes": 3,
+    "tags": [
+      "قواسم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qawasim-adad-tabii_P3",
+      "modelledOn": "BEM 2009 I-4 02"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "جد كل قواسم العدد 121.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        11,
+        121
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            11
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 121 بمربعات الأعداد: إلى أي عدد يكفي أن تختبر قابلية القسمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل قسمة باقيها معدوم تعطي قاسمين: $d$ و $121 \\div d$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$121 = 1 \\times 121$ ، $121 = 11 \\times 11$.",
+        "incorrect": "اختبر الأعداد التي مربعها أصغر من العدد أو يساويه، وخذ من كل قسمة باقيها معدوم القاسمين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$11^2 = 121 \\leq 121 < 144 = 12^2$ ومنه نختبر قابلية قسمة 121 على الأعداد من 1 إلى 11.",
+          "نجد أن 121 يقبل القسمة على كل من الأعداد: 1 ، 11.",
+          "ومن المساويات: $121 = 1 \\times 121$ ، $121 = 11 \\times 11$",
+          "إذن قواسم العدد 121 هي: 1 ، 11 ، 121."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 195
+    }
+  ]
+}

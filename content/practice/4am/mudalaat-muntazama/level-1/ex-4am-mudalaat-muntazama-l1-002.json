@@ -1,0 +1,77 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l1-002",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 1,
+  "metadata": {
+    "title": "معارف 5 — تعريف المضلع المنتظم",
+    "estimatedMinutes": 3,
+    "tags": [
+      "المضلع المنتظم",
+      "التعريف"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-5",
+      "page": 156,
+      "section": "معارف",
+      "number": 5
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 156): نسمّي مضلعا منتظما كل مضلّع أضلاعه كلّها لها نفس الطول وزواياه كلّها متقايسة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أي هذه المضلعات منتظم؟",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "المربع",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "معين زاويته $70^\\circ$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-ADLA"
+        },
+        {
+          "id": "C",
+          "content": "مستطيل طوله $5\\,\\mathrm{cm}$ وعرضه $3\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-ZAWAYA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق من الشرطين لكل مضلع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المعين أضلاعه متقايسة، والمستطيل زواياه متقايسة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أي هذه الأشكال يحقق الشرطين معا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "المربع أضلاعه الأربعة متقايسة وزواياه الأربع قائمة: مضلع منتظم.",
+        "incorrect": "المعين يحقق شرط الأضلاع فقط، والمستطيل شرط الزوايا فقط."
+      },
+      "difficulty": 1
+    }
+  ]
+}

@@ -1,0 +1,244 @@
+{
+  "id": "ex-4am-tafsir-bayani-jumla-l4-005",
+  "lessonCode": "tafsir-bayani-jumla",
+  "level": 4,
+  "metadata": {
+    "title": "مستقيمان منطبقان",
+    "estimatedMinutes": 8,
+    "tags": [
+      "منطبقان",
+      "الحالات الثلاث"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tafsir-bayani-jumla_P3",
+      "modelledOn": "act-5"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الجملة:",
+    "formulas": [
+      "\\begin{cases} 2x - 3y = 6 \\\\ -4x + 6y = -12 \\end{cases}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "اكتب المعادلة الأولى على الشكل $y = ax + b$ .",
+      "statement": "أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "2/3",
+      "misconceptionSignatures": [
+        {
+          "value": "-2/3",
+          "id": "MISC-JUMLA-ISHARA-Y"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعادلة من الشكل $ax + by = c$ : نريد أن يبقى $y$ وحده في طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل حدّ $x$ إلى الطرف الثاني مع تغيير إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم اقسم كل الحدود على معامل $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{2}{3}$ : معامل $x$ بعد عزل $y$ .",
+        "incorrect": "انقل حدّ $x$ بتغيير إشارته، ثم اقسم الطرفين على معامل $y$ (بإشارته)."
+      },
+      "solution": {
+        "lines": [
+          "$2x - 3y = 6$",
+          "$-3y = -2x + 6$",
+          "نقسم كل الحدود على $-3$ :",
+          "$y = \\dfrac{2}{3}x - 2$",
+          "إذن: $a = \\dfrac{2}{3}$ و $b = -2$ ."
+        ],
+        "result": "y = \\dfrac{2}{3}x - 2"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-JUMLA-ISHARA-Y"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعادلة من الشكل $ax + by = c$ : نريد أن يبقى $y$ وحده في طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $b$ هو الحد الذي لا يحوي $x$ بعد عزل $y$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم اقسم كل الحدود على معامل $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$y = \\dfrac{2}{3}x - 2$ .",
+        "incorrect": "العدد $b$ هو الطرف الثاني مقسوما على معامل $y$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$2x - 3y = 6$",
+          "$-3y = -2x + 6$",
+          "نقسم كل الحدود على $-3$ :",
+          "$y = \\dfrac{2}{3}x - 2$",
+          "إذن: $a = \\dfrac{2}{3}$ و $b = -2$ ."
+        ],
+        "result": "y = \\dfrac{2}{3}x - 2"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما هو الوضع النسبي للمستقيمين الممثلين لمعادلتي الجملة؟",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "متقاطعان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-HALAT"
+        },
+        {
+          "id": "B",
+          "content": "متوازيان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-BAYANI-TAWAZI"
+        },
+        {
+          "id": "C",
+          "content": "منطبقان",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المعادلة الثانية أيضا على الشكل $y = ax + b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الكتابتين."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتابتان متطابقتان.",
+        "incorrect": "إذا تطابق $a$ و $b$ في الكتابتين فالمستقيمان منطبقان."
+      },
+      "solution": {
+        "lines": [
+          "$-4x + 6y = -12$ تُكتب $6y = 4x - 12$ ، أي $y = \\dfrac{2}{3}x - 2$ .",
+          "وهي نفس كتابة المعادلة الأولى: المستقيمان منطبقان."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "هل الثنائية $(3 ; 0)$ حل لهذه الجملة؟",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-HALAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض في المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل نقطة من مستقيم هي نقطة من الآخر إذا كانا منطبقين."
+        }
+      ],
+      "feedback": {
+        "correct": "تحقق المعادلتين معا.",
+        "incorrect": "عوّض $x$ بـ 3 و $y$ بـ 0 في المعادلتين."
+      },
+      "solution": {
+        "lines": [
+          "$2 \\times 3 - 3 \\times 0 = 6$ و $-4 \\times 3 + 6 \\times 0 = -12$ .",
+          "الثنائية $(3 ; 0)$ حل للجملة؛ وللجملة عدد غير منته من الحلول."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

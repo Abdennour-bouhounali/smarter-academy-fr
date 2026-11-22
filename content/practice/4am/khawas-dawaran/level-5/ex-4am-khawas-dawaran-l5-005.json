@@ -1,0 +1,118 @@
+{
+  "id": "ex-4am-khawas-dawaran-l5-005",
+  "lessonCode": "khawas-dawaran",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — مثلثان متقايسا الأضلاع على ضلعين",
+    "estimatedMinutes": 4,
+    "tags": [
+      "الإثبات بدوران"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_khawas-dawaran_P2",
+      "modelledOn": "method-properties"
+    }
+  },
+  "generator": {
+    "tool": "u13-khawas-dawaran/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "ABC مثلث. ABD و ACE مثلثان متقايسا الأضلاع مرسومان خارجه، بحيث يحوّل الدوران الذي مركزه A وزاويته $60^\\circ$ في الاتجاه المباشر النقطة D إلى B، والنقطة C إلى E."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "نستنتج:",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$DC = BE + 60$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-KHAWAS"
+        },
+        {
+          "id": "B",
+          "content": "$DC = BE$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$DC = 2BE$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-KHAWAS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما صورة [DC]؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "D ↦ B و C ↦ E."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأطوال محفوظة."
+        }
+      ],
+      "feedback": {
+        "correct": "[BE] صورة [DC]: $BE = DC$ .",
+        "incorrect": "الدوران يحافظ على الأطوال."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "ما قيس الزاوية الحادة بين (DC) و (BE) بالدرجات؟",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "60",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-TASAWI-TAAMUD",
+          "value": "90"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "(BE) صورة (DC)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المستقيم وصورته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زاوية الدوران."
+        }
+      ],
+      "feedback": {
+        "correct": "المستقيم وصورته يصنعان زاوية الدوران $60^\\circ$ .",
+        "incorrect": "ليست قائمة: زاوية الدوران هنا $60^\\circ$ ."
+      }
+    }
+  ]
+}

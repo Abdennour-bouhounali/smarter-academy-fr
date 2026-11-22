@@ -1,0 +1,81 @@
+{
+  "id": "ex-4am-murakkibata-shuaa-l3-002",
+  "lessonCode": "murakkibata-shuaa",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 4 — ممثّل للشعاع u",
+    "estimatedMinutes": 2,
+    "tags": [
+      "تمثيل شعاع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-4",
+      "page": 146,
+      "section": "إحداثيتا نقطة - مركبتا شعاع",
+      "number": 4
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 146): $\\vec{u}$ شعاع حيث $\\vec{u}\\begin{pmatrix} -2 \\\\ 3 \\end{pmatrix}$ . مثّل في معلم لمستوٍ، ثنائيتين نقطيتين تُمثّل كل منهما الشعاع $\\vec{u}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أي ثنائية تمثّل الشعاع $\\vec{u}$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_murakkibata-shuaa_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(E\\,;\\,F)$ حيث $E(3\\,;\\,-1)$ و $F(1\\,;\\,2)$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$(G\\,;\\,H)$ حيث $G(1\\,;\\,1)$ و $H(3\\,;\\,-2)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-ISHARA"
+        },
+        {
+          "id": "C",
+          "content": "$(O\\,;\\,V)$ حيث $V(3\\,;\\,-2)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-TABDIL-X-Y"
+        },
+        {
+          "id": "D",
+          "content": "$(K\\,;\\,L)$ حيث $K(1\\,;\\,0)$ و $L(-2\\,;\\,3)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انطلق من نقطة البداية المعطاة، لا من المبدأ O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المركبة الأولى تنقلك أفقيا والثانية عموديا، بإشارتيهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف المركبة الأولى إلى الفاصلة والمركبة الثانية إلى الترتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "من E إلى F: وحدتان نحو اليسار ثم 3 نحو الأعلى، أي $\\begin{pmatrix} -2 \\\\ 3 \\end{pmatrix}$ .",
+        "incorrect": "احسب حركة كل ثنائية من مبدئها إلى نهايتها."
+      }
+    }
+  ]
+}

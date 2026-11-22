@@ -1,0 +1,327 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l3-007",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 3,
+  "metadata": {
+    "title": "مثلث متساوي الساقين ومساحته",
+    "estimatedMinutes": 10,
+    "tags": [
+      "خاصية فيثاغورس",
+      "متساوي الساقين",
+      "التدوير"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-15",
+      "page": 175,
+      "section": "أوظّف تعلّماتي",
+      "number": 15
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "$RST$ مثلث متساوي الساقين رأسه الأساسي $S$ حيث $SR = ST = 5{,}5\\,\\mathrm{cm}$ و $RT = 6\\,\\mathrm{cm}$ . حامل الارتفاع المتعلّق بالضلع $[RT]$ يقطعه في منتصفه $H$ .",
+    "figure": {
+      "points": {
+        "R": [
+          -3,
+          0
+        ],
+        "T": [
+          3,
+          0
+        ],
+        "H": [
+          0,
+          0
+        ],
+        "S": [
+          0,
+          4.6098
+        ]
+      },
+      "segments": [
+        {
+          "from": "R",
+          "to": "H",
+          "ticks": 1
+        },
+        {
+          "from": "H",
+          "to": "T",
+          "ticks": 1
+        },
+        {
+          "from": "S",
+          "to": "R",
+          "label": "5,5 cm"
+        },
+        {
+          "from": "S",
+          "to": "T",
+          "label": "5,5 cm"
+        },
+        {
+          "from": "S",
+          "to": "H",
+          "dashed": true
+        }
+      ],
+      "rightAngles": [
+        [
+          "S",
+          "H",
+          "T"
+        ]
+      ],
+      "ariaLabel": "مثلث RST متساوي الساقين رأسه S، SR = ST = 5,5 cm و RT = 6 cm، وارتفاعه [SH] حيث H منتصف [RT]",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب الطول $RH$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$H$ منتصف $[RT]$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خذ نصف الطول $RT$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$RH = 3\\,\\mathrm{cm}$ .",
+        "incorrect": "المنتصف يقسم القطعة إلى نصفين متقايسين."
+      },
+      "solution": {
+        "lines": [
+          "$H$ منتصف $[RT]$ ، إذن $RH = \\dfrac{6}{2} = 3\\,\\mathrm{cm}$"
+        ],
+        "result": "RH = 3\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الارتفاع $[SH]$ :",
+      "statement": "ما القيمة المضبوطة للطول $SH$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\sqrt{39{,}25}\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-LEG-ADD"
+        },
+        {
+          "id": "B",
+          "content": "$21{,}25\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-NO-ROOT"
+        },
+        {
+          "id": "C",
+          "content": "$\\sqrt{21{,}25}\\,\\mathrm{cm}$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$2{,}5\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولا $SH^2$ بخاصية فيثاغورس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الطول هو العدد الموجب الذي مربعه يساوي القيمة التي حسبتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القيمة المضبوطة تُكتب بالرمز $\\sqrt{\\ }$ إذا لم يكن العدد مربعا تاما."
+        }
+      ],
+      "feedback": {
+        "correct": "$SH^2 = 21{,}25$ ، إذن $SH = \\sqrt{21{,}25}$ (قيمة مضبوطة).",
+        "incorrect": "لا تخلط بين مربع الطول والطول نفسه، ولا تجمع الأطوال: احسب المربع ثم خذ جذره."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $SHR$ قائم في $H$ ، حسب خاصية فيثاغورس: $SR^2 = SH^2 + RH^2$",
+          "ومنه: $SH^2 = SR^2 - RH^2$",
+          "$SH^2 = 5{,}5^2 - 3^2 = 30{,}25 - 9 = 21{,}25$",
+          "$SH^2 = 21{,}25$ ، ومنه القيمة المضبوطة: $SH = \\sqrt{21{,}25}\\,\\mathrm{cm}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أعط قيمة مقرّبة للطول $SH$ بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm مدوّرا إلى 0,01",
+      "expectedAnswer": "4.61",
+      "misconceptionSignatures": [
+        {
+          "value": "4.6",
+          "id": "MISC-FITAGHURAS-ROUND-TRUNC"
+        },
+        {
+          "value": "6.26",
+          "id": "MISC-FITAGHURAS-LEG-ADD"
+        },
+        {
+          "value": "2.5",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "21.25",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع المطلوب ليس الوتر: مربعه يساوي مربع الوتر ناقص مربع الضلع الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مربع الطول، ثم استعمل اللمسة $\\sqrt{\\ }$ ، ولا تدوّر إلا النتيجة الأخيرة (انظر إلى الرقم الموالي للرقم المطلوب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$SH^2 = 5{,}5^2 - 3^2 = 21{,}25$ ، إذن $SH \\approx 4{,}61\\,\\mathrm{cm}$ .",
+        "incorrect": "الطول المطلوب ضلع قائم وليس وترا: نطرح مربع الضلع المعلوم من مربع الوتر، ولا نجمع."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $SHR$ قائم في $H$ ، حسب خاصية فيثاغورس: $SR^2 = SH^2 + RH^2$",
+          "ومنه: $SH^2 = SR^2 - RH^2$",
+          "$SH^2 = 5{,}5^2 - 3^2 = 30{,}25 - 9 = 21{,}25$",
+          "$SH = \\sqrt{21{,}25}$ (القيمة المضبوطة)",
+          "باستعمال اللمسة $\\sqrt{\\ }$ للآلة الحاسبة: $\\sqrt{21{,}25} \\approx 4{,}609772228$",
+          "المدوّر إلى $0{,}01$ : $SH \\approx 4{,}61\\,\\mathrm{cm}$"
+        ],
+        "result": "SH \\approx 4{,}61\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "أعط قيمة مقرّبة إلى $0{,}01$ لمساحة المثلث $RST$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: المساحة بـ cm² مدوّرة إلى 0,01",
+      "expectedAnswer": "13.83",
+      "misconceptionSignatures": [
+        {
+          "value": "13.8",
+          "id": "MISC-FITAGHURAS-ROUND-EARLY"
+        },
+        {
+          "value": "27.66",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القاعدة $[RT]$ والارتفاع الموافق لها $[SH]$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحة المثلث = القاعدة × الارتفاع ÷ 2."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل القيمة المضبوطة للارتفاع (أو قيمة الآلة كاملة)، ولا تدوّر إلا النتيجة الأخيرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{6 \\times \\sqrt{21{,}25}}{2} \\approx 13{,}83\\,\\mathrm{cm^2}$ .",
+        "incorrect": "لا تدوّر الارتفاع قبل حساب المساحة، ولا تنس القسمة على 2."
+      },
+      "solution": {
+        "lines": [
+          "$\\mathcal{A} = \\dfrac{RT \\times SH}{2} = \\dfrac{6 \\times \\sqrt{21{,}25}}{2} = 3\\sqrt{21{,}25}$",
+          "$3\\sqrt{21{,}25} \\approx 13{,}829$ ، إذن $\\mathcal{A} \\approx 13{,}83\\,\\mathrm{cm^2}$"
+        ],
+        "result": "\\mathcal{A} \\approx 13{,}83\\,\\mathrm{cm^2}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

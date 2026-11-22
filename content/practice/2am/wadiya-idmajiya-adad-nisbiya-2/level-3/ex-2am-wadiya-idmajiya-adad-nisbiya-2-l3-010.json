@@ -1,0 +1,251 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-adad-nisbiya-2-l3-010",
+  "lessonCode": "wadiya-idmajiya-adad-nisbiya-2",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — صعود وهبوط طائرة شراعية",
+    "estimatedMinutes": 10,
+    "tags": [
+      "تغيّر",
+      "مجموع جبري",
+      "مسافة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "ارتفاع طائرة شراعية بالنسبة إلى مستوى سطح البحر يُقاس بالمتر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "انطلقت طائرة شراعية من الارتفاع $-15$ ووصلت إلى $+120$ . ما تغيّر ارتفاعها (الجديد ناقص القديم) ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "135",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-JAMNISB-REVERSED",
+          "value": "-135"
+        },
+        {
+          "id": "MISC-JAMNISB-ADDINSTEAD",
+          "value": "105"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الجديد هو القيمة الأخيرة والقديم هو القيمة الأولى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التغيّر هو الجديد ناقص القديم : نحوّل الطرح إلى جمع للمعاكس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إشارة النتيجة تقول هل ارتفعت القيمة أم انخفضت : تحقّق منها."
+        }
+      ],
+      "feedback": {
+        "correct": "التغيّر $(+135)$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "التغيّر $=(+120)-(-15)$",
+          "$=(+120)+(+15)=(+135)$"
+        ],
+        "result": "135"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "من الارتفاع $+120$ تغيّر ارتفاعها بـ $-45$ ثمّ $+30$ . احسب ارتفاعها : $(+120)+(-45)+(+30)$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "105",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نحوّل كلّ طرح إلى جمع لمعاكس العدد المطروح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نجمع الموجبة فيما بينها والسالبة فيما بينها، ونحسب ما بين الأقواس أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "في الأخير نجمع عددين من إشارتين مختلفتين : نأخذ إشارة الأبعد عن الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "$(+120)+(-45)+(+30)=(+105)$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "نجمع الموجبة معًا والسالبة معًا : $(+150)+(-45)$",
+          "المجموع الجبري : $(+105)$"
+        ],
+        "result": "105"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "الارتفاعان $-15$ و $+105$ . ما الفرق بينهما ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "120",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "90"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-120"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطتان على جهة واحدة من المبدأ أم على جهتين مختلفتين ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى ناقص الفاصلة الصغرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا : تحقّق من الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB=120$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى $+105$ والفاصلة الصغرى $-15$",
+          "$AB=(+105)-(-15)=120$"
+        ],
+        "result": "120"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "أربعة ارتفاعات: $-15$ ، $+120$ ، $+105$ ، $-45$ . رتّبها تصاعديًا.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$120 < 105 < -15 < -45$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-OD"
+        },
+        {
+          "id": "B",
+          "content": "$-15 < -45 < 105 < 120$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-SBD"
+        },
+        {
+          "id": "C",
+          "content": "$-45 < -15 < 105 < 120$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$-45 < 105 < -15 < 120$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "السالب أصغر من الصفر وكلّ موجب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بين عددين سالبين الأصغر هو الأبعد عن الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الأعداد من الأصغر إلى الأكبر، ثمّ عكس الترتيب إن طُلب التنازلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$-45 < -15 < 105 < 120$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "السالبة أصغر من الصفر ومن الموجبة، وبين السالبة الأصغر هو الأبعد عن الصفر",
+          "الترتيب التصاعدي : $-45 < -15 < 105 < 120$"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

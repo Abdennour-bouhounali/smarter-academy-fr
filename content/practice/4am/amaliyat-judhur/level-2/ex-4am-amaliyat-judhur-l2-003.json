@@ -1,0 +1,164 @@
+{
+  "id": "ex-4am-amaliyat-judhur-l2-003",
+  "lessonCode": "amaliyat-judhur",
+  "level": 2,
+  "metadata": {
+    "title": "تمرين — جداء جذرين",
+    "estimatedMinutes": 6,
+    "tags": [
+      "جداء جذرين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_amaliyat-judhur_P1",
+      "modelledOn": "ex-17"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن الأعداد $A$ ، $B$ ، $C$ حيث:",
+    "formulas": [
+      "A = \\sqrt{8} \\times \\sqrt{32}",
+      "B = \\sqrt{0{,}5} \\times \\sqrt{4{,}5}",
+      "C = \\sqrt{7} \\times \\sqrt{63}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "بيّن أن كلًّا من العددين $A$ و $C$ عدد طبيعي.",
+      "statement": "العدد $A$",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $A$ (عدد طبيعي)",
+      "expectedAnswer": "16",
+      "misconceptionSignatures": [
+        {
+          "value": "40",
+          "id": "MISC-JIDAA-JAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الجداء تحت جذر واحد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل $8 \\times 32$ مربع تام؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$A = \\sqrt{8 \\times 32} = \\sqrt{256} = 16$",
+        "incorrect": "اكتب $\\sqrt{8} \\times \\sqrt{32} = \\sqrt{8 \\times 32}$ ثم احسب."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\sqrt{8} \\times \\sqrt{32}$",
+          "$A = \\sqrt{8 \\times 32}$",
+          "$A = \\sqrt{256}$"
+        ],
+        "result": "A = 16"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $C$",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $C$ (عدد طبيعي)",
+      "expectedAnswer": "21",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الجداء تحت جذر واحد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل $7 \\times 63$ مربع تام؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$C = \\sqrt{7 \\times 63} = \\sqrt{441} = 21$",
+        "incorrect": "اكتب $\\sqrt{7} \\times \\sqrt{63} = \\sqrt{7 \\times 63}$ ثم احسب."
+      },
+      "solution": {
+        "lines": [
+          "$C = \\sqrt{7} \\times \\sqrt{63}$",
+          "$C = \\sqrt{7 \\times 63}$",
+          "$C = \\sqrt{441}$"
+        ],
+        "result": "C = 21"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب العدد $B$ واكتبه على الشكل العشري.",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة)",
+      "expectedAnswer": "1.5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الجداء تحت جذر واحد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $0{,}5 \\times 4{,}5$ : هل هو مربع عدد عشري؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$B = \\sqrt{0{,}5 \\times 4{,}5} = \\sqrt{2{,}25} = 1{,}5$",
+        "incorrect": "اضرب العددين العشريين تحت جذر واحد ثم احسب الجذر."
+      },
+      "solution": {
+        "lines": [
+          "$B = \\sqrt{0{,}5} \\times \\sqrt{4{,}5}$",
+          "$B = \\sqrt{0{,}5 \\times 4{,}5}$",
+          "$B = \\sqrt{2{,}25}$"
+        ],
+        "result": "B = 1{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

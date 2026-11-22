@@ -1,0 +1,181 @@
+{
+  "id": "ex-2am-muqarana-kasrayn-l2-009",
+  "lessonCode": "muqarana-kasrayn",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — حديقة المدرسة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مقارنة كسرين",
+      "برّر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يعتني تلاميذ المدرسة بحوضين متماثلين لزراعة الخضر :"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "زُرع $\\dfrac{5}{8}$ من الحوض الأوّل و $\\dfrac{9}{16}$ من الحوض الثاني . أيّ الحوضين زُرع منه جزء أكبر ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{5}{8} > \\dfrac{9}{16}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{5}{8} < \\dfrac{9}{16}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-NUMONLY"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن بين المقامين : هل أحدهما مضاعف للآخر ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسرين بالمقام الأكبر ثمّ قارن بين البسطين ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب بسط الكسر الأصغر مقامًا ومقامه في العدد نفسه حتّى يصير مقامه مساويًا للمقام الآخر ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{5}{8} > \\dfrac{9}{16}$ .",
+        "incorrect": "اختر طريقة المقارنة المناسبة للحالة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$16$ مضاعف للعدد $8$ : $16 = 8 \\times 2$ .",
+          "$\\dfrac{5}{8} = \\dfrac{5 \\times 2}{8 \\times 2} = \\dfrac{10}{16}$ .",
+          "نقارن بين البسطين : $10 > 9$ ، إذن $\\dfrac{5}{8} > \\dfrac{9}{16}$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "برّر جوابك عن السؤال السابق بكتابة الكسرين بالمقام نفسه .",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا ، ثمّ اضغط «سجّل إجابتي» لتطّلع على الحلّ النموذجي .",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب جملة أو جملتين : الطريقة المستعملة ثمّ المقارنة التي تدعمها ."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحلّ النموذجي .",
+        "incorrect": "قارن تبريرك بالحلّ النموذجي : الطريقة ثمّ المقارنة التي تدعمها ."
+      },
+      "solution": {
+        "lines": [
+          "$16 = 8 \\times 2$ ، إذن $\\dfrac{5}{8} = \\dfrac{10}{16}$ .",
+          "$10 > 9$ ، ومنه $\\dfrac{5}{8} > \\dfrac{9}{16}$ : الحوض الأوّل ."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "سُقي $7$ أجزاء من حوض قُسّم إلى $10$ أجزاء متساوية و $7$ أجزاء من حوض مماثل قُسّم إلى $12$ جزءًا . قارن بين ما سُقي في الحوضين :",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{7}{10} < \\dfrac{7}{12}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-BIGDEN"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{7}{10} > \\dfrac{7}{12}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{7}{10} = \\dfrac{7}{12}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-NUMONLY"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما البسطان في الكسرين ؟ هل هما متساويان ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا تساوى البسطان فالأكبر هو الكسر الذي مقامه أصغر ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بين المقامين ثمّ تذكّر : كلّما كبر المقام صغرت الحصّة ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{7}{10} > \\dfrac{7}{12}$ .",
+        "incorrect": "اختر طريقة المقارنة المناسبة للحالة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "البسطان متساويان ($7$) ، إذن الأكبر هو الكسر الذي مقامه أصغر (قطعه أكبر) .",
+          "$10 < 12$ ، ومنه $\\dfrac{7}{10} > \\dfrac{7}{12}$ ."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

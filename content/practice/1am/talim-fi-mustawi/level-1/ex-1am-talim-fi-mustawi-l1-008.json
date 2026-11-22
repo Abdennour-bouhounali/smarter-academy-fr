@@ -1,0 +1,264 @@
+{
+  "id": "ex-1am-talim-fi-mustawi-l1-008",
+  "lessonCode": "talim-fi-mustawi",
+  "level": 1,
+  "metadata": {
+    "title": "أيّ نقطة هي؟",
+    "estimatedMinutes": 6,
+    "tags": [
+      "إحداثيان",
+      "ترتيب"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "self-7",
+      "page": 73,
+      "section": "أقوّم تعلّماتي",
+      "number": 7
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في الشكل أربع نقط $M$ و $N$ و $P$ و $Q$ في معلم متعامد.",
+    "figure": {
+      "points": {
+        "M": [
+          3,
+          1
+        ],
+        "N": [
+          1,
+          3
+        ],
+        "P": [
+          -3,
+          1
+        ],
+        "Q": [
+          3,
+          -1
+        ],
+        "c1": [
+          -5,
+          -4
+        ],
+        "c2": [
+          5,
+          4
+        ]
+      },
+      "grid": true,
+      "axes": true,
+      "hidden": [
+        "c1",
+        "c2"
+      ],
+      "ariaLabel": "معلم متعامد تظهر فيه أربع نقط M و N و P و Q",
+      "maxWidth": 400
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ النقط في الشكل إحداثياها $(3\\,;\\,1)$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "النقطة $M$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "النقطة $N$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SWAP"
+        },
+        {
+          "id": "C",
+          "content": "النقطة $P$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNX"
+        },
+        {
+          "id": "D",
+          "content": "النقطة $Q$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالعدد الأول: أين تقع الفاصلة على الخط الأفقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثمّ اصعد أو انزل بمقدار العدد الثاني من الخط الأفقي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن كلّ نقطة بالزوج: إن بدّلتَ العددين وصلتَ إلى نقطة أخرى."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة $M$ إحداثياها $(3\\,;\\,1)$ .",
+        "incorrect": "ابدأ بالفاصلة على الخط الأفقي ثمّ بالترتيب على الخط الشاقولي."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة $3$ على الخط الأفقي ثمّ الترتيب $1$ على الخط الشاقولي",
+          "النقطة $M$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أيّ النقط في الشكل إحداثياها $(1\\,;\\,3)$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "النقطة $N$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "النقطة $P$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "النقطة $Q$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "النقطة $M$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SWAP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالعدد الأول: أين تقع الفاصلة على الخط الأفقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثمّ اصعد أو انزل بمقدار العدد الثاني من الخط الأفقي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن كلّ نقطة بالزوج: إن بدّلتَ العددين وصلتَ إلى نقطة أخرى."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة $N$ إحداثياها $(1\\,;\\,3)$ .",
+        "incorrect": "ابدأ بالفاصلة على الخط الأفقي ثمّ بالترتيب على الخط الشاقولي."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة $1$ على الخط الأفقي ثمّ الترتيب $3$ على الخط الشاقولي",
+          "النقطة $N$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أيّ النقط في الشكل إحداثياها $(3\\,;\\,-1)$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "النقطة $P$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "النقطة $Q$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "النقطة $M$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNY"
+        },
+        {
+          "id": "D",
+          "content": "النقطة $N$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالعدد الأول: أين تقع الفاصلة على الخط الأفقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثمّ اصعد أو انزل بمقدار العدد الثاني من الخط الأفقي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن كلّ نقطة بالزوج: إن بدّلتَ العددين وصلتَ إلى نقطة أخرى."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة $Q$ إحداثياها $(3\\,;\\,-1)$ .",
+        "incorrect": "ابدأ بالفاصلة على الخط الأفقي ثمّ بالترتيب على الخط الشاقولي."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة $3$ على الخط الأفقي ثمّ الترتيب $-1$ على الخط الشاقولي",
+          "النقطة $Q$"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

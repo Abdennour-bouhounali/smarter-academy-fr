@@ -1,0 +1,207 @@
+{
+  "id": "ex-2am-masafa-nuqtatayn-l1-010",
+  "lessonCode": "masafa-nuqtatayn",
+  "level": 1,
+  "metadata": {
+    "title": "قياس المسافة بين نقطتين معلّمتين",
+    "estimatedMinutes": 6,
+    "tags": [
+      "مسافة بين نقطتين",
+      "قراءة فاصلتين"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "self-9",
+      "page": 49,
+      "section": "أؤكّد تعلّماتي",
+      "number": 9
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نقطتان معلّمتان على مستقيم مدرّج، وفاصلتاهما معلومتان."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "النقطتان $A(-6)$ و $B(+2{,}5)$ على مستقيم مدرّج. احسب المسافة $AB$ .",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "8.5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "3.5"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-8.5"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن أوّلًا أيّ الفاصلتين أكبر: الأكبر هي الأبعد إلى اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى مطروحًا منها الصغرى؛ وإذا كانت الصغرى سالبة فنطرح عددًا سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا: إن وجدت ناتجًا سالبًا فقد قلبت ترتيب الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB=8{,}5$ : النقطتان على جهتين من المبدأ فنجمع المسافتين إلى الصفر.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى هي $+2{,}5$ والفاصلة الصغرى هي $-6$",
+          "$AB=(+2{,}5)-(-6)=(+2{,}5)+(+6)=8{,}5$"
+        ],
+        "result": "8.5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "النقطتان $C(-2)$ و $D(-9)$ على مستقيم مدرّج. احسب المسافة $CD$ .",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$7$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$11$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MASAFA2-ADDSAME"
+        },
+        {
+          "id": "C",
+          "content": "$-7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MASAFA2-NEGDIST"
+        },
+        {
+          "id": "D",
+          "content": "$9$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن أوّلًا أيّ الفاصلتين أكبر: الأكبر هي الأبعد إلى اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى مطروحًا منها الصغرى؛ وإذا كانت الصغرى سالبة فنطرح عددًا سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا: إن وجدت ناتجًا سالبًا فقد قلبت ترتيب الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$CD=7$ : نطرح الفاصلة الصغرى من الفاصلة الكبرى.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى هي $-2$ والفاصلة الصغرى هي $-9$",
+          "$CD=(-2)-(-9)=(-2)+(+9)=7$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "النقطتان $E(+1)$ و $F(+8)$ على مستقيم مدرّج. احسب المسافة $EF$ .",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-ADDSAME",
+          "value": "9"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-7"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن أوّلًا أيّ الفاصلتين أكبر: الأكبر هي الأبعد إلى اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى مطروحًا منها الصغرى؛ وإذا كانت الصغرى سالبة فنطرح عددًا سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا: إن وجدت ناتجًا سالبًا فقد قلبت ترتيب الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$EF=7$ : نطرح الفاصلة الصغرى من الفاصلة الكبرى.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى هي $+8$ والفاصلة الصغرى هي $+1$",
+          "$EF=(+8)-(+1)=(+8)+(-1)=7$"
+        ],
+        "result": "7"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "id": "ex-4am-mafhum-jumla-l4-006",
+  "lessonCode": "mafhum-jumla",
+  "level": 4,
+  "metadata": {
+    "title": "قسائم الحافلة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "حالات خاصة",
+      "جملة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mafhum-jumla_P4",
+      "modelledOn": "know-cases"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في حافلة للمناصرين الملتزمين بآداب التشجيع $x$ مناصرا بالتذكرة الكاملة و $y$ مناصرا بالتذكرة المخفّضة، ومجموعهم 40. ادّعى السائق أن كل مناصر قدّم 3 قسائم وأن مجموع القسائم 100، فكتب الجملة:",
+    "formulas": [
+      "\\begin{cases} x + y = 40 \\\\ 3x + 3y = 100 \\end{cases}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بقسمة طرفي المعادلة الثانية على 3، اكتبها على الشكل $x + y = c$ . أعط العدد $c$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P4",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mafhum-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $c$ : كسر غير قابل للاختزال مثل 7/9",
+      "expectedAnswer": "100/3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم كل الحدود، في الطرفين، على 3."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "100 لا يقبل القسمة على 3: اترك النتيجة كسرا."
+        }
+      ],
+      "feedback": {
+        "correct": "$x + y = \\dfrac{100}{3}$ .",
+        "incorrect": "اقسم الطرف الثاني أيضا على 3، واترك النتيجة كسرا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3x}{3} + \\dfrac{3y}{3} = \\dfrac{100}{3}$"
+        ],
+        "result": "x + y = \\dfrac{100}{3}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل لهذه الجملة حل وحيد، أم ليس لها حل، أم لها عدد غير منته من الحلول؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لها حل وحيد",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-HALAT"
+        },
+        {
+          "id": "B",
+          "content": "ليس لها حل",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لها عدد غير منته من الحلول",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-HALAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن بالمعادلة الأولى."
+        }
+      ],
+      "feedback": {
+        "correct": "ومنه الجملة ليس لها حل: ادّعاء السائق خاطئ.",
+        "incorrect": "قارن المعادلتين بعد ضرب إحداهما أو قسمتها على عدد مناسب: هل تؤولان إلى معادلة واحدة، أم إلى معادلتين طرفاهما الأولان متساويان وطرفاهما الثانيان مختلفان؟"
+      },
+      "solution": {
+        "lines": [
+          "الجملة تُكتب: $\\begin{cases} x + y = 40 \\\\ x + y = \\dfrac{100}{3} \\end{cases}$",
+          "لا يمكن أن يساوي العدد $x + y$ في آن واحد 40 و $\\dfrac{100}{3}$ .",
+          "ومنه الجملة ليس لها حل: ادّعاء السائق خاطئ."
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "عيّن العدد الذي يجب أن يعوّض 100 في المعادلة الثانية حتى يكون للجملة عدد غير منته من الحلول.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط",
+      "expectedAnswer": "120",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يجب أن تؤول المعادلة الثانية إلى المعادلة الأولى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب طرفي المعادلة الأولى في 3."
+        }
+      ],
+      "feedback": {
+        "correct": "$3(x + y) = 3 \\times 40 = 120$ .",
+        "incorrect": "المعادلة الثانية يجب أن تكون المعادلة الأولى مضروبة في 3."
+      },
+      "solution": {
+        "lines": [
+          "بضرب طرفي المعادلة الأولى في 3: $3x + 3y = 120$",
+          "ومنه العدد المطلوب هو 120."
+        ],
+        "result": "120"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

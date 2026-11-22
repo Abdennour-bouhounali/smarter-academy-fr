@@ -1,0 +1,131 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-jumal-l1-009",
+  "lessonCode": "wadiya-idmajiya-jumal",
+  "level": 1,
+  "metadata": {
+    "title": "باقات الإنترنت",
+    "estimatedMinutes": 7,
+    "tags": [
+      "ترييض",
+      "أثمان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-jumal_P2"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "اشترى أمين، ليستعين بالأنترنت في مراجعة دروسه، 3 باقات إنترنت صغيرة وباقة كبيرة بـ 700DA، واشترت لينة باقة صغيرة وباقتين كبيرتين بـ 900DA (الباقات من النوع نفسه لها الثمن نفسه)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "نسمّي $x$ ثمن الباقة الصغيرة و $y$ ثمن الباقة الكبيرة (بالدينار).",
+      "statement": "اكتب جملة معادلتين تترجم هذه المعطيات.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب معادلة لمشتريات أمين وأخرى لمشتريات لينة."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "مشتريات أمين: $3x + y = 700$",
+          "مشتريات لينة: $x + 2y = 900$",
+          "ومنه الجملة: $\\begin{cases} 3x + y = 700 \\\\ x + 2y = 900 \\end{cases}$"
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حل هذه الجملة، ثم استنتج ثمن كل باقة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : ثمن الباقة الصغيرة ثم ثمن الكبيرة بـ DA",
+      "expectedAnswer": {
+        "x": "100",
+        "y": "400"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "400",
+            "y": "100"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن معاملات $x$ ومعاملات $y$ في المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة التعويض أو طريقة الجمع (بعد ضرب المعادلتين في عددين مناسبين) لحذف أحد المجهولين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد إيجاد أحد المجهولين، عوّضه في إحدى المعادلتين لتجد الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "الباقة الصغيرة بـ $100DA$ والكبيرة بـ $400DA$ .",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} 3x + y = 700 & ...(1) \\\\ x + 2y = 900 & ...(2) \\end{cases}$",
+          "من المعادلة (1) نجد: $y = 700 - 3x$",
+          "بالتعويض في المعادلة (2) نجد: $x + 2(700 - 3x) = 900$",
+          "$-5x + 1400 = 900$",
+          "$-5x = -500$",
+          "$x = 100$",
+          "ومنه: $y = 700 - 3 \\times 100 = 400$",
+          "التحقق في النص: $3 \\times 100 + 400 = 700$ و $100 + 2 \\times 400 = 900$ .",
+          "إذن ثمن الباقة الصغيرة 100DA وثمن الكبيرة 400DA:"
+        ],
+        "result": "(100 ; 400)"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

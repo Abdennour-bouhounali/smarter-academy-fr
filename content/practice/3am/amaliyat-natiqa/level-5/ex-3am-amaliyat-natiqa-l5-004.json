@@ -1,0 +1,201 @@
+{
+  "id": "ex-3am-amaliyat-natiqa-l5-004",
+  "lessonCode": "amaliyat-natiqa",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — قيم عبارات من أجل أعداد ناطقة",
+    "estimatedMinutes": 16,
+    "tags": [
+      "العمليات على الأعداد الناطقة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "من أجل $x = \\dfrac{3}{2}$ و $y = -\\dfrac{4}{5}$ و $z = \\dfrac{1}{10}$ نحسب قيم ثلاث عبارات للمشاركة في مسابقة الرياضيات ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب قيمة $A = x \\times y - z$ من أجل $x = \\dfrac{3}{2}$ و $y = -\\dfrac{4}{5}$ و $z = \\dfrac{1}{10}$ ، واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "-13/10",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "13/10",
+          "id": "MISC-AMAL-PRODSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليات الموجودة؟ وهل توجد أقواس أو كسر مركّب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح، ومع كلّ عملية نحدّد الإشارة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز عملية واحدة في كلّ سطر، ثمّ اكتب النتيجة غير القابلة للاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = -\\dfrac{13}{10}$ .",
+        "incorrect": "احترم الأولويّة: الأقواس ثمّ الضرب والقسمة ثمّ الجمع والطرح، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "العاملان من إشارتين مختلفتين: الجداء سالب.",
+          "$\\dfrac{3}{2} \\times \\left(-\\dfrac{4}{5}\\right) = -\\dfrac{3 \\times 4}{2 \\times 5} = -\\dfrac{12}{10} = -\\dfrac{6}{5}$ .",
+          "$-\\dfrac{6}{5} - \\dfrac{1}{10} = -\\dfrac{6}{5} + \\left(-\\dfrac{1}{10}\\right)$ (طرح عدد هو جمع معاكسه).",
+          "العددان $-\\dfrac{6}{5}$ و $-\\dfrac{1}{10}$ سالبان، فنجمع بعديهما عن الصفر ونكتب الإشارة $-$.",
+          "$-\\dfrac{6}{5} + \\left(-\\dfrac{1}{10}\\right) = -\\dfrac{12}{10} - \\dfrac{1}{10} = \\dfrac{-12 - 1}{10} = -\\dfrac{13}{10}$ ."
+        ],
+        "result": "A = -\\dfrac{13}{10}"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب قيمة $B = \\left(x + y\\right) \\div z$ من أجل $x = \\dfrac{3}{2}$ و $y = -\\dfrac{4}{5}$ و $z = \\dfrac{1}{10}$ ، واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "7/100",
+          "id": "MISC-AMAL-NOFLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليات الموجودة؟ وهل توجد أقواس أو كسر مركّب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح، ومع كلّ عملية نحدّد الإشارة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز عملية واحدة في كلّ سطر، ثمّ اكتب النتيجة غير القابلة للاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 7$ .",
+        "incorrect": "احترم الأولويّة: الأقواس ثمّ الضرب والقسمة ثمّ الجمع والطرح، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "العددان $\\dfrac{3}{2}$ و $-\\dfrac{4}{5}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $\\dfrac{3}{2}$ ، فإشارة المجموع موجبة.",
+          "$\\dfrac{3}{2} + \\left(-\\dfrac{4}{5}\\right) = \\dfrac{15}{10} - \\dfrac{8}{10} = \\dfrac{15 - 8}{10} = \\dfrac{7}{10}$ .",
+          "القسمة على $\\dfrac{1}{10}$ هي الضرب في مقلوبه، ومقلوب $\\dfrac{1}{10}$ هو $10$ (يحتفظ بالإشارة نفسها).",
+          "$\\dfrac{7}{10} \\div \\dfrac{1}{10} = \\dfrac{7}{10} \\times 10$ .",
+          "العاملان موجبان: الجداء موجب.",
+          "$\\dfrac{7}{10} \\times 10 = \\dfrac{7 \\times 10}{10} = \\dfrac{70}{10} = 7$ ."
+        ],
+        "result": "B = 7"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب قيمة $C = x - y \\times z$ من أجل $x = \\dfrac{3}{2}$ و $y = -\\dfrac{4}{5}$ و $z = \\dfrac{1}{10}$ ، واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "79/50",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "23/100",
+          "id": "MISC-AMAL-PRIORITY"
+        },
+        {
+          "value": "-79/50",
+          "id": "MISC-AMAL-SUMSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليات الموجودة؟ وهل توجد أقواس أو كسر مركّب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح، ومع كلّ عملية نحدّد الإشارة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز عملية واحدة في كلّ سطر، ثمّ اكتب النتيجة غير القابلة للاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = \\dfrac{79}{50}$ .",
+        "incorrect": "احترم الأولويّة: الأقواس ثمّ الضرب والقسمة ثمّ الجمع والطرح، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "العاملان من إشارتين مختلفتين: الجداء سالب.",
+          "$-\\dfrac{4}{5} \\times \\dfrac{1}{10} = -\\dfrac{4 \\times 1}{5 \\times 10} = -\\dfrac{4}{50} = -\\dfrac{2}{25}$ .",
+          "$\\dfrac{3}{2} - \\left(-\\dfrac{2}{25}\\right) = \\dfrac{3}{2} + \\dfrac{2}{25}$ (طرح عدد هو جمع معاكسه).",
+          "العددان $\\dfrac{3}{2}$ و $\\dfrac{2}{25}$ موجبان، فمجموعهما موجب.",
+          "$\\dfrac{3}{2} + \\dfrac{2}{25} = \\dfrac{75}{50} + \\dfrac{4}{50} = \\dfrac{75 + 4}{50} = \\dfrac{79}{50}$ ."
+        ],
+        "result": "C = \\dfrac{79}{50}"
+      }
+    }
+  ]
+}

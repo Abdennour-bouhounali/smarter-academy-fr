@@ -1,0 +1,201 @@
+{
+  "id": "ex-4am-mushkilat-jumla-l2-007",
+  "lessonCode": "mushkilat-jumla",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2022 — عرض مسرحي",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جملة",
+      "ترييض",
+      "تحقق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mushkilat-jumla_P2",
+      "modelledOn": "BEM 2022 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "باعت جمعية ثقافية 60 تذكرة لعرض مسرحي خيري لفائدة المحتاجين بثمنين: 200DA و 300DA، فكانت المداخيل 14500DA.\nنسمّي $x$ عدد التذاكر ذات 200DA و $y$ عدد التذاكر ذات 300DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "لتكن الثنائيتان $(25 ; 35)$ و $(35 ; 25)$ . أيهما توافق معطيات هذا العرض؟",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية التي اخترتها $(x ; y)$",
+      "expectedAnswer": {
+        "x": "35",
+        "y": "25"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "25",
+            "y": "35"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق من المعلومتين: عدد التذاكر والمداخيل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $200x + 300y$ من أجل كل ثنائية."
+        }
+      ],
+      "feedback": {
+        "correct": "الثنائية $(35 ; 25)$ : $35 + 25 = 60$ و $7000 + 7500 = 14500$ .",
+        "incorrect": "الثنائيتان تعطيان 60 تذكرة: الفرق بينهما في المداخيل."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $(25 ; 35)$ : $25 + 35 = 60$ لكن $200 \\times 25 + 300 \\times 35 = 5000 + 10500 = 15500 \\neq 14500$",
+          "من أجل $(35 ; 25)$ : $35 + 25 = 60$ و $200 \\times 35 + 300 \\times 25 = 7000 + 7500 = 14500$",
+          "إذن الثنائية التي توافق المعطيات هي:"
+        ],
+        "result": "(35 ; 25)"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "في العرض الثاني بيعت 70 تذكرة بالثمنين نفسيهما، فكانت المداخيل 17000DA. جد عدد التذاكر المبيعة من كل ثمن في العرض الثاني.",
+      "statement": "عدد التذاكر ذات 200DA :",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط",
+      "expectedAnswer": "40",
+      "misconceptionSignatures": [
+        {
+          "value": "30",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب جملة جديدة: معادلة لعدد التذاكر ومعادلة للمداخيل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب معادلة عدد التذاكر في 300 ثم اطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد إيجاد $x$ عوّض لتجد $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "بيعت في العرض الثاني 40 تذكرة ذات 200DA.",
+        "incorrect": "الجملة: $x + y = 70$ و $200x + 300y = 17000$ ؛ اجعل معاملي $y$ متعاكسين."
+      },
+      "solution": {
+        "lines": [
+          "ترجمة معطيات العرض الثاني:",
+          "$\\begin{cases} x + y = 70 & ...(1) \\\\ 200x + 300y = 17000 & ...(2) \\end{cases}$",
+          "بضرب طرفي المعادلة (1) في العدد $300$ وطرفي المعادلة (2) في العدد $-1$ نجد:",
+          "$\\begin{cases} 300x + 300y = 21000 \\\\ -200x - 300y = -17000 \\end{cases}$",
+          "بجمع المعادلتين طرفا لطرف نجد: $100x = 4000$",
+          "ومنه: $x = \\dfrac{4000}{100} = 40$",
+          "بتعويض قيمة $x$ في المعادلة (1) نجد: $40 + y = 70$",
+          "$y = 30$",
+          "التحقق: $40 + 30 = 70$ و $200 \\times 40 + 300 \\times 30 = 8000 + 9000 = 17000$ .",
+          "إذن بيعت 40 تذكرة ذات 200DA و 30 تذكرة ذات 300DA."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 360
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "عدد التذاكر ذات 300DA :",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "40",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المجموع 70 تذكرة."
+        }
+      ],
+      "feedback": {
+        "correct": "بيعت 30 تذكرة ذات 300DA، ونتحقق: $8000 + 9000 = 17000$ .",
+        "incorrect": "من $x + y = 70$ : $y = 70 - x$ ."
+      },
+      "solution": {
+        "lines": [
+          "ترجمة معطيات العرض الثاني:",
+          "$\\begin{cases} x + y = 70 & ...(1) \\\\ 200x + 300y = 17000 & ...(2) \\end{cases}$",
+          "بضرب طرفي المعادلة (1) في العدد $300$ وطرفي المعادلة (2) في العدد $-1$ نجد:",
+          "$\\begin{cases} 300x + 300y = 21000 \\\\ -200x - 300y = -17000 \\end{cases}$",
+          "بجمع المعادلتين طرفا لطرف نجد: $100x = 4000$",
+          "ومنه: $x = \\dfrac{4000}{100} = 40$",
+          "بتعويض قيمة $x$ في المعادلة (1) نجد: $40 + y = 70$",
+          "$y = 30$",
+          "التحقق: $40 + 30 = 70$ و $200 \\times 40 + 300 \\times 30 = 8000 + 9000 = 17000$ .",
+          "إذن بيعت 40 تذكرة ذات 200DA و 30 تذكرة ذات 300DA."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

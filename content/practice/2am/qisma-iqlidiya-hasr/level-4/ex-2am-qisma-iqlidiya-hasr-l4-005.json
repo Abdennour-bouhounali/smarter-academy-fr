@@ -1,0 +1,255 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l4-005",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — كسر مقامه عشري",
+    "estimatedMinutes": 8,
+    "tags": [
+      "كسر",
+      "قسمة إقليدية",
+      "حصر"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-70",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العدد $C = \\frac{9}{0{,}4}$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب $C$ بكسر بسطه ومقامه عددان طبيعيان.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$C = \\frac{90}{4}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$C = \\frac{9}{4}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-HISAB"
+        },
+        {
+          "id": "C",
+          "content": "$C = \\frac{90}{40}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-HISAB"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب البسط والمقام في العدد نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر العدد الذي يجعل المقام عددًا طبيعيًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = \\frac{9 \\times 10}{0{,}4 \\times 10} = \\frac{90}{4}$.",
+        "incorrect": "نضرب البسط والمقام في 10 معًا."
+      },
+      "solution": {
+        "lines": [
+          "$C = \\frac{9 \\times 10}{0{,}4 \\times 10} = \\frac{90}{4}$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب حاصل القسمة الإقليدية للعدد 90 على 4.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "22",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "21",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "value": "23",
+          "id": "MISC-HASR-IZAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 90 من 4 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 4 دون أن نتجاوز 90."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من 4."
+        }
+      ],
+      "feedback": {
+        "correct": "$90 = 4 \\times 22 + 2$ و $2 < 4$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 4 فلا يتجاوز الجداء 90، والباقي عندئذ أصغر من 4."
+      },
+      "solution": {
+        "lines": [
+          "$4 \\times 22 = 88$ و $4 \\times 23 = 92$",
+          "$88 \\le 90 < 92$ ، إذن الحاصل هو 22."
+        ],
+        "result": "q = 22"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب باقي القسمة الإقليدية للعدد 90 على 4.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "22",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "6",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 90."
+        }
+      ],
+      "feedback": {
+        "correct": "$90 - 4 \\times 22 = 90 - 88 = 2$ ، و $2 < 4$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 4."
+      },
+      "solution": {
+        "lines": [
+          "$90 = 4 \\times 22 + 2$",
+          "$2 < 4$ ، إذن الباقي هو 2."
+        ],
+        "result": "r = 2"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "استنتج حصرًا للعدد $C$ بين عددين طبيعيين متتاليين (علمًا أنّ $C = \\frac{90}{4}$).",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$21 < \\frac{90}{4} < 22$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        },
+        {
+          "id": "B",
+          "content": "$22 < \\frac{90}{4} < 23$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$2 < \\frac{90}{4} < 3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 90 على 4."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من $4 \\times q \\le 90 < 4 \\times (q + 1)$ نقسم الأطراف على 4."
+        }
+      ],
+      "feedback": {
+        "correct": "$90 = 4 \\times 22 + 2$ والباقي غير معدوم، فـ $\\frac{90}{4}$ يقع تمامًا بين 22 و 23.",
+        "incorrect": "احصر 90 بين مضاعفين متتاليين للعدد 4 ثم اقسم على 4؛ وإذا كان الباقي معدومًا فحاصل القسمة عدد طبيعي."
+      },
+      "solution": {
+        "lines": [
+          "$90 = 4 \\times 22 + 2$",
+          "$4 \\times 22 < 90 < 4 \\times 23$ ، نقسم على 4: $22 < \\frac{90}{4} < 23$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

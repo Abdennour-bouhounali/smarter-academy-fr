@@ -1,0 +1,357 @@
+{
+  "id": "ex-3am-quwat-adad-nisbi-l5-007",
+  "lessonCode": "quwat-adad-nisbi",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — لعبة النقاط النزيهة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "إشارة",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في لعبة جماعية بنادي المتوسطة، اتّفق الفريقان على اللعب بنزاهة واحترام النتيجة: في الجولة رقم $n$ يحصل الفريق على $(-2)^{n}$ نقطة (العدد السالب يعني خسارة نقاط).\nالجزء الأول: نقاط الجولات.\nالجزء الثاني: لعب فريق «الأمل» الجولات من 1 إلى 4، ولعب فريق «النور» الجولتين 5 و 6."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "كم نقطة في الجولة رقم 5؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "-32",
+      "misconceptionSignatures": [
+        {
+          "value": "32",
+          "id": "MISC-QUWA-ODD-EVEN-SIGN"
+        },
+        {
+          "value": "-10",
+          "id": "MISC-QUWA-POWER-AS-PRODUCT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة الأساس؟ وهل الأس زوجي أم فردي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوة عدد سالب موجبة إذا كان الأس زوجيًا، وسالبة إذا كان فرديًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إشارة جداء عددين: موجبة إذا كانت إشارتاهما متماثلتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$(-2)^5 = -32$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الأس فردي والأساس سالب.",
+          "$(-2)^{5} = -32$"
+        ],
+        "result": "-32"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كم نقطة في الجولة رقم 6؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "64",
+      "misconceptionSignatures": [
+        {
+          "value": "-64",
+          "id": "MISC-QUWA-ODD-EVEN-SIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة الأساس؟ وهل الأس زوجي أم فردي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوة عدد سالب موجبة إذا كان الأس زوجيًا، وسالبة إذا كان فرديًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إشارة جداء عددين: موجبة إذا كانت إشارتاهما متماثلتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$(-2)^6 = 64$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الأس زوجي.",
+          "$(-2)^{6} = 64$"
+        ],
+        "result": "64"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما إشارة نقاط الجولة رقم 11؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "موجبة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QUWA-ODD-EVEN-SIGN"
+        },
+        {
+          "id": "B",
+          "content": "سالبة",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة الأساس؟ وهل الأس زوجي أم فردي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوة عدد سالب موجبة إذا كان الأس زوجيًا، وسالبة إذا كان فرديًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إشارة جداء عددين: موجبة إذا كانت إشارتاهما متماثلتين."
+        }
+      ],
+      "feedback": {
+        "correct": "11 فردي والأساس سالب.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$(-2)^{11}$ : الأس فردي والأساس سالب، فالعدد سالب."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "كم مجموع نقاط فريق «الأمل»؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "30",
+          "id": "MISC-QUWA-ODD-EVEN-SIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة الأساس؟ وهل الأس زوجي أم فردي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوة عدد سالب موجبة إذا كان الأس زوجيًا، وسالبة إذا كان فرديًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إشارة جداء عددين: موجبة إذا كانت إشارتاهما متماثلتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$-2 + 4 - 8 + 16 = 10$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$(-2)^{1} + (-2)^{2} + (-2)^{3} + (-2)^{4} = -2 + 4 - 8 + 16$",
+          "$= 10$"
+        ],
+        "result": "10"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "كم مجموع نقاط فريق «النور»؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "32",
+      "misconceptionSignatures": [
+        {
+          "value": "96",
+          "id": "MISC-QUWA-ODD-EVEN-SIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة الأساس؟ وهل الأس زوجي أم فردي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوة عدد سالب موجبة إذا كان الأس زوجيًا، وسالبة إذا كان فرديًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إشارة جداء عددين: موجبة إذا كانت إشارتاهما متماثلتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$-32 + 64 = 32$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$(-2)^{5} + (-2)^{6} = -32 + 64$",
+          "$= 32$"
+        ],
+        "result": "32"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "lead": "القرار.",
+      "statement": "أي الفريقين فاز؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الأمل",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QUWA-DECISION-UNCHECKED"
+        },
+        {
+          "id": "B",
+          "content": "النور",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "تعادل",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QUWA-DECISION-UNCHECKED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارجع إلى القيم التي حسبتها في الأسئلة السابقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين قبل أن تقرّر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القرار الصحيح يُبنى على حساب، لا على تخمين."
+        }
+      ],
+      "feedback": {
+        "correct": "$32 > 10$ : فاز فريق «النور».",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الأمل: 10 نقاط ؛ النور: 32 نقطة.",
+          "$32 > 10$ ، إذن فاز فريق «النور»."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

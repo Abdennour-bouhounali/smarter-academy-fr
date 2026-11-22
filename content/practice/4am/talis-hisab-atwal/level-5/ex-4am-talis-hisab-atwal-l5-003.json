@@ -1,0 +1,310 @@
+{
+  "id": "ex-4am-talis-hisab-atwal-l5-003",
+  "lessonCode": "talis-hisab-atwal",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2016 — ارتفاع خزان الماء",
+    "estimatedMinutes": 22,
+    "tags": [
+      "وضعية إدماجية",
+      "خاصية طالس",
+      "معامل التكبير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_talis-hisab-atwal_P2",
+      "modelledOn": "BEM 2016 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "لتقدير ارتفاع خزان الماء في قريته بالحساب لا بالتخمين، غرس سمير عمودا شاقوليا $[PQ]$ طوله $3{,}4\\,\\mathrm{m}$ على بعد $6\\,\\mathrm{m}$ من قدميه $S$ ، ثم وقف بحيث يرى رأس العمود $Q$ وقمة الخزان $T$ على استقامة واحدة مع عينه $O$ . عين سمير على ارتفاع $1{,}6\\,\\mathrm{m}$ عن الأرض، والمسافة بين قدميه وقاعدة الخزان $G$ هي $30\\,\\mathrm{m}$ . المستقيم الأفقي المار بالعين $O$ يقطع العمود في $R$ والخزان في $H$ ( الشكل غير مرسوم بالأبعاد الحقيقية).",
+    "figure": {
+      "points": {
+        "O": [
+          0.0,
+          2.56
+        ],
+        "R": [
+          6.0,
+          2.56
+        ],
+        "Q": [
+          6.0,
+          5.44
+        ],
+        "H": [
+          30.0,
+          2.56
+        ],
+        "T": [
+          30.0,
+          16.96
+        ],
+        "P": [
+          6.0,
+          0.0
+        ],
+        "G": [
+          30.0,
+          0.0
+        ],
+        "S": [
+          0.0,
+          0.0
+        ]
+      },
+      "segments": [
+        {
+          "from": "S",
+          "to": "G"
+        },
+        {
+          "from": "S",
+          "to": "O"
+        },
+        {
+          "from": "P",
+          "to": "Q"
+        },
+        {
+          "from": "G",
+          "to": "T"
+        },
+        {
+          "from": "O",
+          "to": "H"
+        },
+        {
+          "from": "O",
+          "to": "T"
+        }
+      ],
+      "rightAngles": [
+        [
+          "O",
+          "R",
+          "Q"
+        ],
+        [
+          "O",
+          "H",
+          "T"
+        ]
+      ],
+      "labels": {
+        "R": "se",
+        "H": "se",
+        "O": "w",
+        "S": "w"
+      },
+      "ariaLabel": "الأرض [SG] أفقية؛ سمير [SO] والعمود [PQ] والخزان [GT] شاقولية؛ الأفقي المار بالعين O يقطع العمود في R والخزان في H، و O و Q و T على استقامة",
+      "caption": "الشكل غير مرسوم بالأبعاد الحقيقية",
+      "maxWidth": 360
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب الطول $RQ$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "1,8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$R$ على ارتفاع العين نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$RQ = PQ - PR$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$RQ = 3{,}4 - 1{,}6 = 1{,}8\\,\\mathrm{m}$ .",
+        "incorrect": "اطرح ارتفاع العين من طول العمود."
+      },
+      "solution": {
+        "lines": [
+          "$PR = 1{,}6\\,\\mathrm{m}$ (ارتفاع العين)",
+          "$RQ = PQ - PR = 3{,}4 - 1{,}6$"
+        ],
+        "result": "RQ = 1{,}8\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب معامل التكبير $k$ الذي يحوّل المثلث $ORQ$ إلى المثلث $OHT$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "0,2",
+          "id": "MISC-TALIS-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(RQ) \\parallel (HT)$ (شاقوليان)، والمثلثان $ORQ$ و $OHT$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$k = \\dfrac{OH}{OR}$ ، و $OR$ و $OH$ مسافتان أفقيتان معلومتان."
+        }
+      ],
+      "feedback": {
+        "correct": "$k = \\dfrac{OH}{OR} = \\dfrac{30}{6} = 5$ .",
+        "incorrect": "معامل التناسبية k = (طول في المثلث الناتج) ÷ (الطول الموافق له في المثلث الأصلي)؛ راجع أي المثلثين هو الأصلي."
+      },
+      "solution": {
+        "lines": [
+          "$(RQ) \\parallel (HT)$ (عموديان على الأفقي $(OH)$)، و $O$ ، $R$ ، $H$ و $O$ ، $Q$ ، $T$ على استقامة: المثلثان $ORQ$ و $OHT$ في وضعية طالس.",
+          "$OR = 6\\,\\mathrm{m}$ و $OH = 30\\,\\mathrm{m}$",
+          "$k = \\dfrac{OH}{OR} = \\dfrac{30}{6}$"
+        ],
+        "result": "k = 5"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب الطول $HT$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "0,36",
+          "id": "MISC-TALIS-MUAMIL-MAQLUB"
+        },
+        {
+          "value": "17",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$HT$ هو الضلع الموافق لـ $[RQ]$ في المثلث $OHT$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$HT = k \\times RQ$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$HT = 5 \\times 1{,}8 = 9\\,\\mathrm{m}$ .",
+        "incorrect": "معامل التناسبية k = (طول في المثلث الناتج) ÷ (الطول الموافق له في المثلث الأصلي)؛ راجع أي المثلثين هو الأصلي."
+      },
+      "solution": {
+        "lines": [
+          "حسب خاصية طالس: $\\dfrac{OH}{OR} = \\dfrac{OT}{OQ} = \\dfrac{HT}{RQ}$",
+          "$HT = k \\times RQ = 5 \\times 1{,}8$"
+        ],
+        "result": "HT = 9\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "☜ استنتج ارتفاع الخزان $GT$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الارتفاع بـ m",
+      "expectedAnswer": "10,6",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-TALIS-MULAAMA-WAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$H$ على ارتفاع العين عن الأرض."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$GT = GH + HT$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$GT = 1{,}6 + 9 = 10{,}6\\,\\mathrm{m}$ .",
+        "incorrect": "لا تنس ارتفاع العين: $GT = GH + HT$ ."
+      },
+      "solution": {
+        "lines": [
+          "$GH = 1{,}6\\,\\mathrm{m}$ (ارتفاع العين)",
+          "$GT = GH + HT = 1{,}6 + 9$"
+        ],
+        "result": "GT = 10{,}6\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

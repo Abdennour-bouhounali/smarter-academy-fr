@@ -1,0 +1,211 @@
+{
+  "id": "ex-2am-rabi-mutanasib-l4-010",
+  "lessonCode": "rabi-mutanasib",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — ورشة الخياطة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "الرابع المتناسب",
+      "معامل التناسبية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يخيط خيّاط $3$ قمصان في $4{,}5$ h، والزمن يتناسب مع عدد القمصان.",
+    "table": {
+      "head": [
+        "عدد القمصان",
+        "3",
+        "5",
+        "8",
+        "…",
+        "…"
+      ],
+      "rows": [
+        [
+          "الزمن (h)",
+          "4,5",
+          "…",
+          "…",
+          "18",
+          "27"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما الزمن اللازم لخياطة $5$ قمصان؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "7,5",
+      "misconceptionSignatures": [
+        {
+          "value": "6,5",
+          "id": "MISC-RABI-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "الزمن $7{,}5$ h .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$4{,}5 \\div 3 = 1{,}5$",
+          "$1{,}5 \\times 5 = 7{,}5$"
+        ],
+        "result": "7{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما الزمن اللازم لخياطة $8$ قمصان؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "9,5",
+          "id": "MISC-RABI-ADD"
+        },
+        {
+          "value": "1,5",
+          "id": "MISC-RABI-UNITONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "الزمن $12$ h .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}5 \\times 8 = 12$"
+        ],
+        "result": "12"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "كم قميصًا يخيط في $18$ h؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "27",
+          "id": "MISC-RABI-INV"
+        },
+        {
+          "value": "16,5",
+          "id": "MISC-RABI-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد القمصان $12$ .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$18 \\div 1{,}5 = 12$"
+        ],
+        "result": "12"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "id": "ex-4am-khawass-qawasim-l4-002",
+  "lessonCode": "khawass-qawasim",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 15 — n + 19 و n + 1",
+    "estimatedMinutes": 8,
+    "tags": [
+      "خاصية 1",
+      "برهان",
+      "حرفي"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-15",
+      "page": 14,
+      "section": "أوظّف تعلّماتي",
+      "number": 15
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$n$ عدد طبيعي كيفي و $d$ قاسم مشترك للعددين $a$ و $b$ حيث $a = n + 19$ و $b = n + 1$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $a - b$.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "18",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $a - b = (n + 19) - (n + 1)$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احذف القوسين: الحد $n$ يختفي."
+        }
+      ],
+      "feedback": {
+        "correct": "$a - b = n + 19 - n - 1 = 18$.",
+        "incorrect": "احذف القوسين مع الانتباه إلى الإشارة أمام القوس الثاني."
+      },
+      "solution": {
+        "lines": [
+          "$a - b = (n + 19) - (n + 1)$",
+          "$a - b = n + 19 - n - 1$",
+          "$a - b = 18$"
+        ],
+        "result": "a - b = 18"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استعمل خواص قواسم الأعداد الطبيعية لتبيّن أن $d$ من قواسم 18.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$d$ قاسم مشترك للعددين $a$ و $b$ ، و $a > b$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القاسم المشترك لعددين يقسم فرقهما."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك سطرًا بسطر بالحل النموذجي، وانتبه إلى كل مرحلة من مراحل الاستدلال."
+      },
+      "solution": {
+        "lines": [
+          "$d$ يقسم كلا من $a$ و $b$ ، و $a > b$.",
+          "إذن $d$ يقسم الفرق $a - b$ (الخاصية 1).",
+          "وحسب السؤال 01: $a - b = 18$ ، إذن $d$ من قواسم 18."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "عيّن كل الأعداد الطبيعية التي يمكن أن تكون قواسم مشتركة للعددين $a$ و $b$.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        6,
+        9,
+        18
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$d$ من قواسم 18 حسب السؤال 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جد كل قواسم 18، ثم تحقّق أن كل واحد منها ممكن."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة الممكنة هي قواسم 18: 1 ، 2 ، 3 ، 6 ، 9 ، 18 (مثلًا من أجل $n = 17$: $a = 36$ و $b = 18$).",
+        "incorrect": "القاسم المشترك يقسم 18: ابحث عن كل قواسم 18."
+      },
+      "solution": {
+        "lines": [
+          "حسب السؤال 02، $d$ من قواسم 18: 1 ، 2 ، 3 ، 6 ، 9 ، 18.",
+          "وكلها ممكنة: من أجل $n = 17$ يكون $a = 36$ و $b = 18$ ، وقواسمهما المشتركة هي قواسم 18.",
+          "إذن القواسم المشتركة الممكنة هي: 1 ، 2 ، 3 ، 6 ، 9 ، 18."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

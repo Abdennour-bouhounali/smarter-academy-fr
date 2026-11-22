@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l4-003",
+  "lessonCode": "maqati-mustawiya",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — أين نقطع؟",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مقطع كرة",
+      "مسألة عكسية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_maqati-mustawiya_P1",
+      "modelledOn": "act-2"
+    }
+  },
+  "statement": {
+    "content": "كرة نصف قطرها $5\\,\\mathrm{cm}$ . نريد مقطعا دائريا نصف قطره $3\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "يجب أن يبعد المستوي عن المركز بـ:",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$4\\,\\mathrm{cm}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$2\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQTA-TARH"
+        },
+        {
+          "id": "C",
+          "content": "$\\sqrt{34}\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQTA-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$h^2 + r^2 = R^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$h^2 = 25 - 9$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$h = \\sqrt{16}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$h^2 = 25 - 9 = 16$ ، $h = 4\\,\\mathrm{cm}$ .",
+        "incorrect": "$5 - 3$ يطرح الطولين، و $\\sqrt{34}$ أكبر من نصف القطر: لا يقطع."
+      },
+      "difficulty": 4
+    }
+  ]
+}

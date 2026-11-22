@@ -1,0 +1,310 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l4-003",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أكياس التمر في جمعية الحيّ",
+    "estimatedMinutes": 9,
+    "tags": [
+      "قسمة إقليدية",
+      "قيم مقرّبة",
+      "برّر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "تضع جمعية الحيّ $347$ kg من التمر في أكياس، كتلة كلّ كيس $12$ kg ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "كم كيسًا يمتلئ تمامًا؟ (حاصل القسمة الإقليدية للعدد $347$ على $12$)",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "28",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أكبر عدد نضربه في المقسوم عليه دون أن يتجاوز المقسوم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي هو ما يبقى من المقسوم بعد طرح الجداء، وهو أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$347 = 12 \\times 28 + 11$ و $11 < 12$.",
+        "incorrect": "القسمة الإقليدية: المقسوم = المقسوم عليه × الحاصل + الباقي، والباقي أصغر من المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$347 = 12 \\times 28 + 11$",
+          "$11 < 12$"
+        ],
+        "result": "28"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم كيلوغرامًا يبقى خارج الأكياس الممتلئة؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "11",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أكبر عدد نضربه في المقسوم عليه دون أن يتجاوز المقسوم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي هو ما يبقى من المقسوم بعد طرح الجداء، وهو أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$347 = 12 \\times 28 + 11$ و $11 < 12$.",
+        "incorrect": "القسمة الإقليدية: المقسوم = المقسوم عليه × الحاصل + الباقي، والباقي أصغر من المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$347 = 12 \\times 28 + 11$",
+          "$11 < 12$"
+        ],
+        "result": "11"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أنجز القسمة العشرية $347 \\div 12$ ، واكتفِ بثلاثة أرقام بعد الفاصلة (دون تدوير).",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "28.916",
+      "misconceptionSignatures": [
+        {
+          "value": "28.917",
+          "id": "MISC-QARIBA-SWAP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل أوّلًا المقسوم عليه إلى عدد طبيعي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "واصل القسمة بعد الفاصلة بإضافة أصفار إلى الباقي، وتوقّف عند الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$347 \\div 12 = 347 \\div 12 = 28{,}916\\ldots$.",
+        "incorrect": "توقّف عند الرتبة المطلوبة دون زيادة: الأرقام الباقية تُهمل."
+      },
+      "solution": {
+        "lines": [
+          "$347 \\div 12 = 347 \\div 12$",
+          "$347 \\div 12 = 28{,}916\\ldots$"
+        ],
+        "result": "28{,}916"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}1$ بالنقصان لحاصل القسمة $347 \\div 12$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "28.9",
+      "misconceptionSignatures": [
+        {
+          "value": "29",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "28.91",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالنقصان لا تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة دون أن تزيد شيئًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب القيمة في المقسوم عليه: يجب ألاّ يتجاوز الجداء المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$28{,}9 < \\frac{347}{12} < 29$.",
+        "incorrect": "بالنقصان: نحتفظ بالأرقام حتى الرتبة المطلوبة ونُهمل ما بعدها دون تغيير الرقم الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$12 \\times 28{,}9 = 346{,}8$",
+          "$12 \\times 29 = 348$",
+          "$346{,}8 < 347 < 348$"
+        ],
+        "result": "28{,}9"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}1$ بالزيادة لحاصل القسمة $347 \\div 12$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "29",
+      "misconceptionSignatures": [
+        {
+          "value": "28.9",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "28.92",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالزيادة هي أصغر قيمة من هذه الرتبة تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من القيمة بالنقصان ثم أضف وحدة واحدة من الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$28{,}9 < \\frac{347}{12} < 29$.",
+        "incorrect": "بالزيادة: هي القيمة التي تلي القيمة بالنقصان مباشرة في الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$12 \\times 29 = 348$",
+          "$348 > 347$",
+          "القيمة بالزيادة هي $29$"
+        ],
+        "result": "29"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "06",
+      "statement": "هل يمكن أن نكتب $\\dfrac{347}{12} = 28{,}92$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-EXACTAPPROX"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أو قارن بدقّة قبل أن تجيب."
+        }
+      ],
+      "feedback": {
+        "correct": "لا: $12 \\times 28{,}92 = 347{,}04 \\neq 347$.",
+        "incorrect": "اضرب العدد المكتوب في $12$ وقارن الجداء بـ $347$."
+      },
+      "solution": {
+        "lines": [
+          "$12 \\times 28{,}92 = 347{,}04$",
+          "$347{,}04 \\neq 347$ : المساواة خاطئة"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

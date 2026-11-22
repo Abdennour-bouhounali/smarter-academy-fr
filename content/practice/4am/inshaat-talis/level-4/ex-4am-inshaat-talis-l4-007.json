@@ -1,0 +1,239 @@
+{
+  "id": "ex-4am-inshaat-talis-l4-007",
+  "lessonCode": "inshaat-talis",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2018 — وتر طوله جذر 5 وموازٍ",
+    "estimatedMinutes": 12,
+    "tags": [
+      "طول غير ناطق",
+      "فيثاغورس",
+      "خاصية طالس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_inshaat-talis_P2",
+      "modelledOn": "BEM 2018 I-4"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2018",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "(وحدة الطول هي السنتيمتر) $ABC$ مثلث قائم في $A$ حيث $AB = 1$ و $AC = 2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $BC^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طبّق خاصية فيثاغورس."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC^2 = 1 + 4 = 5$ ، فـ $BC = \\sqrt{5}$ .",
+        "incorrect": "مربع الوتر يساوي مجموع مربعي الضلعين القائمين."
+      },
+      "solution": {
+        "lines": [
+          "حسب خاصية فيثاغورس: $BC^2 = AB^2 + AC^2 = 1^2 + 2^2$"
+        ],
+        "result": "BC^2 = 5"
+      },
+      "timeSeconds": 90,
+      "counted": false
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "$M$ نقطة من $[CB]$ حيث $\\dfrac{CM}{CB} = \\dfrac{3}{4}$ .",
+      "statement": "أنشئ النقطة $M$ دون استعمال مسطرة مدرّجة.",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب خطوات الإنشاء مرقّمة (أو صوّر ورقتك)، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قسّم $[CB]$ إلى أربع قطع متقايسة بنصف مستقيم مساعد مبدؤه $C$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "أربع قطع متقايسة على $[Cx)$ ، نصل الرابعة بـ $B$ ، والموازي المارّ بالثالثة يعيّن $M$ .",
+        "incorrect": "قارن إنشاءك بالحل النموذجي خطوة خطوة، ثم صحّح الخطوة التي تختلف."
+      },
+      "solution": {
+        "lines": [
+          "1) نرسم نصف مستقيم $[Cx)$ لا يحمل القطعة $[CB]$ .",
+          "2) نعيّن عليه بالمدور، ابتداءً من $C$ ، 4 قطع متقايسة متتالية (بفتحة مدور كيفية) تنتهي عند العلامة $P_{4}$ .",
+          "3) نصل العلامة $P_{4}$ بالنقطة $B$ .",
+          "4) نرسم بالمسطرة والكوس الموازي للمستقيم $(P_{4}B)$ المارّ بالعلامة $P_{3}$ : يقطع $[CB]$ في $M$ .",
+          "التبرير: $(P_{3}M) \\parallel (P_{4}B)$ ، فحسب خاصية طالس في المثلثين $CP_{3}M$ و $CP_{4}B$ : $\\dfrac{CM}{CB} = \\dfrac{CP_{3}}{CP_{4}} = \\dfrac{3}{4}$ ."
+        ]
+      },
+      "timeSeconds": 360
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "اكتب $BM$ على الشكل $a\\sqrt{5}$ ثم أعط العدد $a$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (كسر أو عدد عشري)",
+      "expectedAnswer": "0,25",
+      "misconceptionSignatures": [
+        {
+          "value": "0,75",
+          "id": "MISC-TALIS-JIHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$M$ بين $C$ و $B$ : $BM = CB - CM$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$CM = \\dfrac{3}{4}\\sqrt{5}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$BM = \\sqrt{5} - \\dfrac{3}{4}\\sqrt{5} = \\dfrac{1}{4}\\sqrt{5}$ .",
+        "incorrect": "$BM$ ربع الوتر، لا ثلاثة أرباعه."
+      },
+      "solution": {
+        "lines": [
+          "$CM = \\dfrac{3}{4}\\sqrt{5}$ ومنه $BM = CB - CM = \\sqrt{5} - \\dfrac{3}{4}\\sqrt{5}$"
+        ],
+        "result": "BM = \\dfrac{\\sqrt{5}}{4}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "المستقيم الذي يشمل $M$ ويوازي $(AB)$ يقطع $[CA]$ في $N$ .",
+      "statement": "احسب $CN$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "1,5",
+      "misconceptionSignatures": [
+        {
+          "value": "0,5",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$M \\in [CB]$ و $N \\in [CA]$ و $(MN) \\parallel (BA)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خاصية طالس: $\\dfrac{CM}{CB} = \\dfrac{CN}{CA} = \\dfrac{MN}{BA}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$CN = \\dfrac{3}{4} \\times 2 = 1{,}5\\,\\mathrm{cm}$ .",
+        "incorrect": "$CN$ يقابل $CA$ ، والنسبة هي $\\dfrac{CM}{CB}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$M \\in [CB]$ و $N \\in [CA]$ و $(MN) \\parallel (BA)$ ، حسب خاصية طالس: $\\dfrac{CM}{CB} = \\dfrac{CN}{CA} = \\dfrac{MN}{BA}$",
+          "$CN = \\dfrac{3}{4} \\times 2$"
+        ],
+        "result": "CN = 1{,}5\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "احسب $MN$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "0,75",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل $\\dfrac{MN}{BA} = \\dfrac{CM}{CB}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$MN = \\dfrac{3}{4} \\times 1 = 0{,}75\\,\\mathrm{cm}$ : طولان ناطقان رغم أن الوتر غير ناطق.",
+        "incorrect": "$MN$ يقابل $AB$ ."
+      },
+      "solution": {
+        "lines": [
+          "$MN = \\dfrac{3}{4}AB = \\dfrac{3}{4} \\times 1$"
+        ],
+        "result": "MN = 0{,}75\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

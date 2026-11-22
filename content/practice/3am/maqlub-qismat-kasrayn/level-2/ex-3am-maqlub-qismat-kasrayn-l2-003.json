@@ -1,0 +1,235 @@
+{
+  "id": "ex-3am-maqlub-qismat-kasrayn-l2-003",
+  "lessonCode": "maqlub-qismat-kasrayn",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — العدد $0$ ومقلوبه",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مقلوب عدد",
+      "تعليل",
+      "الصفر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "تقول سارة: «لكلّ عدد مقلوب».",
+      "statement": "ما العدد الذي إذا ضربناه في $0$ نجد $1$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "العدد $1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQLUB-ZERO"
+        },
+        {
+          "id": "B",
+          "content": "العدد $0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQLUB-ZERO"
+        },
+        {
+          "id": "C",
+          "content": "لا يوجد أيّ عدد",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الخيارات واحسب كلاّ منها بدل أن تخمّن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ خيار على الأعداد الواردة فيه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حوّل القسمة إلى جداء بمقلوب القاسم، ثمّ قارن."
+        }
+      ],
+      "feedback": {
+        "correct": "كلّ عدد مضروب في $0$ يعطي $0$ ، فلا يوجد عدد جداؤه مع $0$ يساوي $1$ .",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$1 \\times 0 = 0$ و $0 \\times 0 = 0$ ، وكلّ عدد مضروب في $0$ يعطي $0$ لا $1$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "برّر أنّ العدد $0$ ليس له مقلوب.",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجب أن تبرّره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل تعريف المقلوب (جداء العدد ومقلوبه) أو القسمة بالضرب في المقلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "كلّ جداء في $0$ يساوي $0$ فلا يمكن أن يساوي $1$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "المقلوب $y$ للعدد $0$ يحقّق $0 \\times y = 1$ .",
+          "لكنّ $0 \\times y = 0$ مهما كان $y$ ، و $0 \\neq 1$ ، فلا يوجد مثل هذا العدد."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "احسب.",
+      "statement": "ما مقلوب العدد $\\dfrac{1}{4}$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "-1/4",
+          "id": "MISC-MAQLUB-OPPOSITE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي يُطلب مقلوبه؟ وهل هو عدد طبيعي أم عشري أم كسر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مقلوب عدد غير معدوم هو العدد الذي جداؤه معه يساوي $1$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العدد على شكل كسر ثمّ بدّل بسطه ومقامه، وتحقّق من ذلك بإجراء الجداء."
+        }
+      ],
+      "feedback": {
+        "correct": "$4$ لأنّ جداء العدد ومقلوبه يساوي $1$ .",
+        "incorrect": "جداء العدد ومقلوبه يساوي العدد الذي هو عنصر محايد للضرب؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "مقلوب $\\dfrac{1}{4}$ هو $\\dfrac{4}{1}$ لأنّ $\\dfrac{1}{4} \\times \\dfrac{4}{1} = 1$ ."
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما مقلوب مقلوب العدد $7$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "1/7",
+          "id": "MISC-MAQLUB-NUMONLY"
+        },
+        {
+          "value": "-7",
+          "id": "MISC-MAQLUB-OPPOSITE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي يُطلب مقلوبه؟ وهل هو عدد طبيعي أم عشري أم كسر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مقلوب عدد غير معدوم هو العدد الذي جداؤه معه يساوي $1$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العدد على شكل كسر ثمّ بدّل بسطه ومقامه، وتحقّق من ذلك بإجراء الجداء."
+        }
+      ],
+      "feedback": {
+        "correct": "$7$ لأنّ جداء العدد ومقلوبه يساوي $1$ .",
+        "incorrect": "جداء العدد ومقلوبه يساوي العدد الذي هو عنصر محايد للضرب؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "مقلوب $7$ هو $\\dfrac{1}{7}$ ، ومقلوب $\\dfrac{1}{7}$ هو $7$ ."
+        ],
+        "result": "7"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

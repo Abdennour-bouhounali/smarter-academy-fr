@@ -1,0 +1,204 @@
+{
+  "id": "ex-3am-adad-natiq-l1-010",
+  "lessonCode": "adad-natiq",
+  "level": 1,
+  "metadata": {
+    "title": "قيمة مقرّبة بالنقصان لعدد ناطق",
+    "estimatedMinutes": 10,
+    "tags": [
+      "العدد الناطق"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "self-4",
+      "page": 33,
+      "section": "أؤكّد تعلّماتي",
+      "number": 4
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أراد عبد القادر إتقان عمله فحسب قيمة مقرّبة لعدد ناطق ثمّ تأكّد من نوعه."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "القيمة المقرّبة بالنقصان إلى $0{,}001$ للعدد الناطق $\\dfrac{47}{13}$ هي :",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3{,}615$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$3{,}616$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-APPROX"
+        },
+        {
+          "id": "C",
+          "content": "$3{,}6153$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-APPROX"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى رتبة التقريب المطلوبة وإلى كلمة بالنقصان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقطع الكتابة عند الرتبة المطلوبة دون أن تزيد الرقم الأخير."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $3{,}615$ .",
+        "incorrect": "انتبه إلى رتبة التقريب وإلى معنى بالنقصان، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$47\\div 13=3{,}61538\\ldots$ .",
+          "التقريب بالنقصان إلى $0{,}001$ يعني قطع الكتابة عند الرتبة الثالثة بعد الفاصلة دون تغيير الرقم الأخير : $3{,}615$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط القيمة المقرّبة بالنقصان إلى $0{,}01$ للعدد $\\dfrac{29}{7}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "4.14",
+      "misconceptionSignatures": [
+        {
+          "value": "4.15",
+          "id": "MISC-NATIQ-APPROX"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة بالآلة أو بالطريقة العمودية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى رتبة التقريب المطلوبة وإلى كلمة بالنقصان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقطع الكتابة عند الرتبة المطلوبة دون أن تزيد الرقم الأخير."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{207}{50}$ .",
+        "incorrect": "انتبه إلى رتبة التقريب وإلى معنى بالنقصان، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$29\\div 7=4{,}142857\\ldots$ .",
+          "بالنقصان إلى $0{,}01$ : $4{,}14$ ."
+        ],
+        "result": "\\dfrac{207}{50}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "العدد $\\dfrac{47}{13}$ :",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "ناطق وليس عشريًا",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "ناطق وعشري",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-DECIMAL"
+        },
+        {
+          "id": "C",
+          "content": "ليس ناطقًا لأنّ قسمته لا تنتهي",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-NOTANUMBER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ كلّ عدد صحيح نسبي وكلّ عدد عشري نسبي له كتابة كسرية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العدد على الشكل a/b ثمّ اقرأ تعريف العدد الناطق."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: ناطق وليس عشريًا .",
+        "incorrect": "راجع تعريف العدد الناطق ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$47=13\\times 3+8$ : القسمة لا تنتهي، ولكنّ $\\dfrac{47}{13}$ حاصل قسمة عددين صحيحين مقامه غير معدوم.",
+          "المقام $13$ عدد أوّلي مختلف عن $2$ و $5$ ، فلا كتابة عشرية تامّة للعدد، لكنّه ناطق."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "id": "ex-4am-nashr-tabsit-l3-008",
+  "lessonCode": "nashr-tabsit",
+  "level": 3,
+  "metadata": {
+    "title": "مساحة قطعة أرض",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مساحة",
+      "جداء قوسين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_nashr-tabsit_P1",
+      "modelledOn": "act-1"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "قطعة أرض مستطيلة الشكل بعداها $(x + 3)$ m و $(2x + 1)$ m ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عبّر بدلالة $x$ عن مساحة القطعة $S$ ، ثم اكتبها على شكل مجموع مبسّط.",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $S$ على الشكل $ax^2 + bx + c$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب كل حد من القوس الأول في كل حد من القوس الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى إشارة كل حد عند كتابة الجداءات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = 2x^2 + 7x + 3$ إذن $a = 2$.",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$S = (x + 3) \\times (2x + 1)$",
+          "$S = x \\times 2x + x \\times 1 + 3 \\times 2x + 3 \\times 1$",
+          "$S = 2x^2 + x + 6x + 3$"
+        ],
+        "result": "S = 2x^2 + 7x + 3"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $S$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-NASHR-AWWAL-AKHIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع معاملات حدود $x$ بإشاراتها بعد النشر."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = 2x^2 + 7x + 3$ إذن $b = 7$.",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $b$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$S = 2x^2 + 7x + 3$"
+        ],
+        "result": "b = 7"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "العدد $c$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $S$ على الشكل $ax^2 + bx + c$ : اكتب العدد $c$ فقط",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = 2x^2 + 7x + 3$ إذن $c = 3$.",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $c$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$S = 2x^2 + 7x + 3$"
+        ],
+        "result": "c = 3"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "احسب مساحة القطعة من أجل $x = 10$ .",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (بالمتر المربع)",
+      "expectedAnswer": "273",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى في الشكل المبسّط الذي وجدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = 273$.",
+        "incorrect": "عوّض $x$ في كل حد، واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$S = (10 + 3)(2 \\times 10 + 1) = 13 \\times 21$"
+        ],
+        "result": "S = 273\\ m^2"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

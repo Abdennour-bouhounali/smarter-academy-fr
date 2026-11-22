@@ -1,0 +1,124 @@
+{
+  "id": "ex-4am-tatbiqat-tanasub-l2-010",
+  "lessonCode": "tatbiqat-tanasub",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2016 — محصول القمح لفلاح من سعيدة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "اقتطاع نسبة مئوية",
+      "سعر الوحدة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tatbiqat-tanasub_P1",
+      "modelledOn": "BEM 2016 II II-02"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "باع فلاح أمين من سعيدة محصوله من القمح الصلب، وهو 60 قنطارا، لتعاونية الحبوب. بعد اقتطاع نسبة 10% من المبلغ الإجمالي (مصاريف النقل والتخزين)، تحصّل الفلاح على 324000DA ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب المبلغ الإجمالي لبيع المحصول.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "360000",
+      "misconceptionSignatures": [
+        {
+          "value": "356400",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بعد اقتطاع 10% يبقى $90\\%$ من المبلغ الإجمالي $x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المعادلة $0{,}9x = 324000$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{324000}{0{,}9} = 360000$ ، أي 360000DA .",
+        "incorrect": "المبلغ المتحصّل عليه هو $90\\%$ من المبلغ الإجمالي: اقسم، ولا تضف 10% إليه."
+      },
+      "solution": {
+        "lines": [
+          "نسمّي $x$ المبلغ الإجمالي: $x \\times \\left(1 - \\dfrac{10}{100}\\right) = 324000$",
+          "$0{,}9x = 324000$",
+          "$x = \\dfrac{324000}{0{,}9} = 360000$"
+        ],
+        "result": "x = 360000DA"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حدّد سعر القنطار الواحد من القمح.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "6000",
+      "misconceptionSignatures": [
+        {
+          "value": "5400",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "سعر القنطار مقدار حاصل قسمة: المبلغ على عدد القناطير."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل المبلغ الإجمالي لا المبلغ المتحصّل عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{360000}{60} = 6000$ ، أي 6000DA للقنطار.",
+        "incorrect": "اقسم المبلغ الإجمالي للبيع على عدد القناطير."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{360000}{60} = 6000$",
+          "سعر القنطار الواحد 6000DA ."
+        ],
+        "result": "6000DA"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+/*
+ * The gate run on screen (`kit/GateRunHud.jsx`): its cards, the numbers over the arches, the fact of a gate. What he
+ * must read is 18 px or more at 1366×768. The pill of hearts and the order's white card are the kit's `di-dash`.
+ */
+.gr-run {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  font-family: 'Cairo', 'Tajawal', system-ui, sans-serif;
+  font-size: 1.125rem;
+  color: #eef5ff;
+  pointer-events: none;
+}
+.gr-run button {
+  pointer-events: auto;
+}
+.gr-run--card,
+.gr-paused {
+  display: grid;
+  place-items: center;
+  background: rgba(5, 14, 36, 0.55);
+  pointer-events: auto;
+}
+.gr-paused {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+}
+.gr-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  width: min(92%, 38rem);
+  padding: 1.6rem 2rem;
+  border-radius: 1.4rem;
+  border: 2px solid #fbbf24;
+  background: #0b1b3f;
+  text-align: center;
+}
+.gr-card > svg {
+  color: #fbbf24;
+}
+.di-root .gr-card h2 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #fff;
+}
+.di-root .gr-card p {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: #dbe9ff;
+}
+.di-root .gr-card .gr-card__score {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fde9b0;
+}
+.gr-btn,
+.gr-door {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 14rem;
+  padding: 0.7rem 1.6rem;
+  border-radius: 1rem;
+  font: inherit;
+  font-size: 1.25rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+.gr-btn {
+  border: 0;
+  background: #fbbf24;
+  color: #0b1b3f;
+}
+.gr-door {
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  background: transparent;
+  color: #fff;
+}
+.gr-run .di-dash__meta {
+  font-size: 1.2rem;
+  pointer-events: auto;
+  white-space: nowrap; /* one line: a second one would push the order over the far gates */
+}
+.gr-run .di-dash__say small {
+  font-size: 1.125rem;
+  opacity: 0.75;
+}
+.gr-run .di-dash__say strong {
+  font-size: 2.1rem;
+}
+/* the fact of the gate he took: a fact, in the world's dark ink — never the red of an error */
+.di-root .gr-run .di-dash__say.gr-why strong {
+  max-width: 44rem;
+  font-size: 1.5rem;
+  line-height: 1.7;
+  white-space: normal;
+  text-align: center;
+  color: #0f2147;
+}
+.gr-quit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.1rem 0.8rem;
+  border-radius: 999px;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+/* the numbers over the arches: big, white, outlined — no card */
+.gr-gate {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-shadow:
+    0 0 6px rgba(8, 20, 48, 0.95),
+    2px 2px 0 rgba(8, 20, 48, 0.9),
+    -2px -2px 0 rgba(8, 20, 48, 0.9),
+    2px -2px 0 rgba(8, 20, 48, 0.9),
+    -2px 2px 0 rgba(8, 20, 48, 0.9);
+  will-change: transform;
+}
+.gr-gate.is-right {
+  color: #6ef3a5;
+}
+.gr-gate.is-other {
+  color: #fcd34d;
+}
+/* a formula of the order: one left-to-right island inside the Arabic line (a radical drawn right-to-left loses its bar) */
+.gr-tex {
+  display: inline-block;
+  unicode-bidi: isolate;
+  direction: ltr;
+}

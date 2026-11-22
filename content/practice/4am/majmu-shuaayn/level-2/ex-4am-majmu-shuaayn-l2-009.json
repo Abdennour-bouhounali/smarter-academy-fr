@@ -1,0 +1,77 @@
+{
+  "id": "ex-4am-majmu-shuaayn-l2-009",
+  "lessonCode": "majmu-shuaayn",
+  "level": 2,
+  "metadata": {
+    "title": "معارف 4 — صورة نقطة بانسحابين",
+    "estimatedMinutes": 3,
+    "tags": [
+      "انسحابان متتابعان"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-4",
+      "page": 132,
+      "section": "معارف",
+      "number": 4
+    }
+  },
+  "statement": {
+    "content": "A و B و C ثلاث نقط، M′ صورة M بالانسحاب الذي شعاعه $\\overrightarrow{AB}$ ، و M″ صورة M′ بالانسحاب الذي شعاعه $\\overrightarrow{BC}$ (معارف 4)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "النقطة M″ هي",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صورة M بالانسحاب الذي شعاعه $\\overrightarrow{AC}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "صورة M بالانسحاب الذي شعاعه $\\overrightarrow{CA}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-AKS"
+        },
+        {
+          "id": "C",
+          "content": "صورة M بالانسحاب الذي شعاعه $\\overrightarrow{BC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSIHAB-NISYAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم الانتقالين واحدا بعد الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انسحابان متتابعان يعطيان انسحابا واحدا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "شعاع الانسحاب الناتج يذهب من نقطة البداية إلى نقطة الوصول النهائية."
+        }
+      ],
+      "feedback": {
+        "correct": "الانسحابان المتتابعان يعطيان الانسحاب الذي شعاعه $\\overrightarrow{AB} + \\overrightarrow{BC} = \\overrightarrow{AC}$ .",
+        "incorrect": "انسحابان متتابعان = انسحاب واحد شعاعه مجموع الشعاعين: من نقطة البداية إلى نقطة الوصول."
+      }
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "id": "ex-4am-tarrid-khatti-l2-009",
+  "lessonCode": "tarrid-khatti",
+  "level": 2,
+  "metadata": {
+    "title": "استهلاك الوقود",
+    "estimatedMinutes": 6,
+    "tags": [
+      "نمذجة",
+      "صورة وسابقة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-khatti_P1",
+      "modelledOn": "method-spring",
+      "adaptedFrom": "ex-4am-tarrid-khatti-l2-009"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تستهلك سيارة 6L من الوقود لكل 100km، والاستهلاك متناسب مع المسافة المقطوعة. نسمّي $f(x)$ الاستهلاك (باللتر) لقطع $x$ كيلومترا."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عبّر عن $f(x)$ بدلالة $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "0,06",
+      "misconceptionSignatures": [
+        {
+          "value": "50/3",
+          "id": "MISC-TANASUB-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$f(100) = 6$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$a$ هو الاستهلاك لكيلومتر واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{6}{100} = 0{,}06$ ، إذن $f(x) = 0{,}06x$ .",
+        "incorrect": "المعامل هو الاستهلاك مقسوما على المسافة."
+      },
+      "solution": {
+        "lines": [
+          "$f(100) = 6$ معناه $100a = 6$",
+          "$a = 0{,}06$ ، إذن $f(x) = 0{,}06x$ ."
+        ],
+        "result": "f(x) = 0{,}06x"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب الاستهلاك لقطع 350km.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الاستهلاك باللتر",
+      "expectedAnswer": "21",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب صورة 350 بالدالة $f$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(350) = 0{,}06 \\times 350 = 21$ L.",
+        "incorrect": "عوّض $x$ بالمسافة في عبارة $f(x)$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(350) = 0{,}06 \\times 350 = 21$",
+          "تستهلك السيارة 21L."
+        ],
+        "result": "21L"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "خزان السيارة يحتوي على 30L. ما المسافة التي يمكن قطعها بهذه الكمية؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المسافة بـ km",
+      "expectedAnswer": "500",
+      "misconceptionSignatures": [
+        {
+          "value": "1,8",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة هي العدد $x$ الذي يحقق $f(x) = 30$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}06x = 30$ ، إذن $x = 500$ km.",
+        "incorrect": "هنا الاستهلاك معلوم: اقسم على المعامل."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}06x = 30$",
+          "$x = \\dfrac{30}{0{,}06} = 500$",
+          "تقطع السيارة 500km."
+        ],
+        "result": "500km"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

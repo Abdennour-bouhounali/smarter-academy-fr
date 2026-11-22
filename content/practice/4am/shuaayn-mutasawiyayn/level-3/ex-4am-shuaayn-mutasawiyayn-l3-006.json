@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l3-006",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — متوازيا أضلاع لهما ضلع مشترك",
+    "estimatedMinutes": 3,
+    "tags": [
+      "برهان",
+      "متوازي الأضلاع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_shuaayn-mutasawiyayn_P2",
+      "modelledOn": "ex-9"
+    }
+  },
+  "statement": {
+    "content": "ABCD و ABEF متوازيا أضلاع (النقط D و C و E ليست على استقامة)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "البرهان على أن DCEF متوازي أضلاع:",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{DC} = \\overrightarrow{FE}$ ، إذن DCFE متوازي أضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{AB} = \\overrightarrow{DC}$ و $\\overrightarrow{AB} = \\overrightarrow{FE}$ ، إذن $\\overrightarrow{DC} = \\overrightarrow{FE}$ : DCEF متوازي أضلاع",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{DC} = \\overrightarrow{EF}$ ، إذن DCEF متوازي أضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المساواة الشعاعية لكل متوازي أضلاع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "شعاعان يساويان الشعاع AB متساويان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طابق المساواة الأخيرة مع ترتيب رؤوس DCEF."
+        }
+      ],
+      "feedback": {
+        "correct": "من ABCD: AB = DC، ومن ABEF: AB = FE (شعاعان). إذن DC = FE: الرباعي DCEF متوازي أضلاع.",
+        "incorrect": "اكتب الضلعين المتقابلين في الاتجاه نفسه لكل متوازي أضلاع."
+      }
+    }
+  ]
+}

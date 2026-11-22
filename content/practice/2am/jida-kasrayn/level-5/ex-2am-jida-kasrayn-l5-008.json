@@ -1,0 +1,292 @@
+{
+  "id": "ex-2am-jida-kasrayn-l5-008",
+  "lessonCode": "jida-kasrayn",
+  "level": 5,
+  "metadata": {
+    "title": "اقتسام أرباح مشروع",
+    "estimatedMinutes": 12,
+    "tags": [
+      "كسر من مبلغ",
+      "الجزء الباقي"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-30",
+      "page": 32,
+      "section": "أوظّف تعلّماتي",
+      "number": 30
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "الوضعية الإدماجية",
+      "points": "06"
+    }
+  },
+  "statement": {
+    "content": "اقتسم ثلاثة شركاء أرباح مشروعهم : حصّة الأوّل $\\dfrac{5}{8}$ ، وحصّة الثاني $\\dfrac{1}{4}$ ، والباقي حصّة الثالث . بلغت أرباح هذه السنة $840000$ دج ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما الكسر الذي يمثّل حصّة الثالث ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "1/8",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط؟ جمع، طرح، أم مقارنة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{8}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$1 - \\dfrac{5}{8} - \\dfrac{1}{4} = \\dfrac{8}{8} - \\dfrac{5}{8} - \\dfrac{2}{8} = \\dfrac{1}{8}$ ."
+        ],
+        "result": "\\dfrac{1}{8}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "ما حصّة الشريك الأوّل بالدينار ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "525000",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1344000",
+          "id": "MISC-JIDAKASR-FLIP"
+        },
+        {
+          "value": "105000",
+          "id": "MISC-JIDAKASR-HALFWAY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كلمة «من» بعد كسر تعني الضرب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\dfrac{a}{b}$ من $x$ هو $x \\times \\dfrac{a}{b}$ : اقسم $x$ على $b$ ثمّ اضرب في $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي إذا كان الكسر أصغر من 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$525000$ .",
+        "incorrect": "الكسر «من» عدد يعني الضرب: اقسم على المقام ثمّ اضرب في البسط، ولا تقلب الكسر."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{8}$ من $840000$ هو $840000 \\times \\dfrac{5}{8}$ .",
+          "$840000 \\div 8 = 105000$ ثمّ $105000 \\times 5 = 525000$ ."
+        ],
+        "result": "525000"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما حصّة الشريك الثاني بالدينار ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "210000",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "3360000",
+          "id": "MISC-JIDAKASR-FLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كلمة «من» بعد كسر تعني الضرب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\dfrac{a}{b}$ من $x$ هو $x \\times \\dfrac{a}{b}$ : اقسم $x$ على $b$ ثمّ اضرب في $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي إذا كان الكسر أصغر من 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$210000$ .",
+        "incorrect": "الكسر «من» عدد يعني الضرب: اقسم على المقام ثمّ اضرب في البسط، ولا تقلب الكسر."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{4}$ من $840000$ هو $840000 \\times \\dfrac{1}{4}$ .",
+          "$840000 \\div 4 = 210000$ ثمّ $210000 \\times 1 = 210000$ ."
+        ],
+        "result": "210000"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "ما حصّة الشريك الثالث بالدينار ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "105000",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "6720000",
+          "id": "MISC-JIDAKASR-FLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كلمة «من» بعد كسر تعني الضرب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\dfrac{a}{b}$ من $x$ هو $x \\times \\dfrac{a}{b}$ : اقسم $x$ على $b$ ثمّ اضرب في $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي إذا كان الكسر أصغر من 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$105000$ .",
+        "incorrect": "الكسر «من» عدد يعني الضرب: اقسم على المقام ثمّ اضرب في البسط، ولا تقلب الكسر."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{8}$ من $840000$ هو $840000 \\times \\dfrac{1}{8}$ .",
+          "$840000 \\div 8 = 105000$ ثمّ $105000 \\times 1 = 105000$ ."
+        ],
+        "result": "105000"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "هل حصّة الشريك الثاني تساوي ضعف حصّة الشريك الثالث ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا ثمّ تحقّق منها بحساب بسيط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الناتج بمقام مشترك ثمّ قارنه بما قيل."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم : $210000 = 2 \\times 105000$ .",
+        "incorrect": "احسب ثمّ قارن بدقّة قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "$2 \\times 105000 = 210000$ : الحصّتان مرتبطتان بهذا الضعف ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

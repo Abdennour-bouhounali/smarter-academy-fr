@@ -1,0 +1,153 @@
+{
+  "id": "ex-3am-kitaba-ilmiya-rutba-l4-010",
+  "lessonCode": "kitaba-ilmiya-rutba",
+  "level": 4,
+  "metadata": {
+    "title": "أتمرّن: رتّب الأعداد",
+    "estimatedMinutes": 9,
+    "tags": [
+      "ترتيب",
+      "كتابة علمية",
+      "اختيار من متعدد"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-29",
+      "page": 47,
+      "section": "أوظّف تعلّماتي",
+      "number": 29
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "رتّب الأعداد ترتيبًا تصاعديًا بعد كتابتها كتابة علمية. أجب باختيار الترتيب الصحيح."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "رتّب ترتيبًا تصاعديًا: $P = 62{,}4\\times10^{3}$ ، $Q = 7\\,805$ ، $R = 0{,}1002\\times10^{5}$ ، $S = 115\\,306\\times10^{-1}$ .",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل كلّ اقتراح إلى عدد عشري أو إلى الكتابة العلمية لتقارنه بالمعطى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكتابة العلمية $a\\times10^{n}$ تشترط $1\\le a<10$ ؛ وفي المقارنة تُقارَن الأسّ أوّلًا ثمّ العدد $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر كلّ اقتراح على حدة وأسقط الخاطئ منها."
+        }
+      ],
+      "timeSeconds": 100,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$Q<R<S<P$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$R<Q<S<P$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ILMIYA-MUQARANA"
+        },
+        {
+          "id": "C",
+          "content": "$Q<S<R<P$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ILMIYA-MUQARANA"
+        }
+      ],
+      "feedback": {
+        "correct": "$Q<R<S<P$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب قيمته أو بتطبيق القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$Q = 7{,}805\\times10^{3}$ و $R = 1{,}002\\times10^{4}$ و $S = 1{,}15306\\times10^{4}$ و $P = 6{,}24\\times10^{4}$ .",
+          "نقارن الأسّين ثمّ العدد $a$ : $Q<R<S<P$ ."
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "رتّب ترتيبًا تصاعديًا: $T = 0{,}083\\times10^{6}$ ، $U = 9{,}4\\times10^{4}$ ، $V = 1\\,250\\times10^{2}$ ، $W = 76\\,000$ .",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل كلّ اقتراح إلى عدد عشري أو إلى الكتابة العلمية لتقارنه بالمعطى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكتابة العلمية $a\\times10^{n}$ تشترط $1\\le a<10$ ؛ وفي المقارنة تُقارَن الأسّ أوّلًا ثمّ العدد $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر كلّ اقتراح على حدة وأسقط الخاطئ منها."
+        }
+      ],
+      "timeSeconds": 100,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$T<W<U<V$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ILMIYA-MUQARANA"
+        },
+        {
+          "id": "B",
+          "content": "$W<T<U<V$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$V<U<T<W$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ILMIYA-MUQARANA"
+        }
+      ],
+      "feedback": {
+        "correct": "$W<T<U<V$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب قيمته أو بتطبيق القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$W = 7{,}6\\times10^{4}$ و $T = 8{,}3\\times10^{4}$ و $U = 9{,}4\\times10^{4}$ و $V = 1{,}25\\times10^{5}$ ."
+        ]
+      }
+    }
+  ]
+}

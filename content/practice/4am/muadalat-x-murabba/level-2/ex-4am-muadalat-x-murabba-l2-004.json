@@ -1,0 +1,209 @@
+{
+  "id": "ex-4am-muadalat-x-murabba-l2-004",
+  "lessonCode": "muadalat-x-murabba",
+  "level": 2,
+  "metadata": {
+    "title": "المعادلتان x² = 49/64 و x² = 1,21",
+    "estimatedMinutes": 5,
+    "tags": [
+      "حل معادلة",
+      "كسر",
+      "عدد عشري"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_muadalat-x-murabba_P1",
+      "modelledOn": "ex-12"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "حل كل معادلة من المعادلتين الآتيتين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "حل المعادلة $x^2 = \\dfrac{49}{64}$.",
+      "statement": "الحل السالب:",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "-7/8",
+      "misconceptionSignatures": [
+        {
+          "value": "7/8",
+          "id": "MISC-HALL-WAHID"
+        },
+        {
+          "value": "-49/128",
+          "id": "MISC-HALL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب كلا من 49 و 64 على شكل مربع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\dfrac{a^2}{b^2} = \\left(\\dfrac{a}{b}\\right)^2$"
+        }
+      ],
+      "feedback": {
+        "correct": "نعم، هذا هو الحل السالب: للمعادلة حلان متعاكسان.",
+        "incorrect": "الحلان عددان متعاكسان مربع كل منهما هو الطرف الثاني بعد عزل $x^2$: خذ السالب منهما."
+      },
+      "solution": {
+        "lines": [
+          "$x^2 = \\dfrac{49}{64}$ يعني $x^2 = \\left(\\dfrac{7}{8}\\right)^2$",
+          "بالتالي $x = \\dfrac{7}{8}$ أو $x = -\\dfrac{7}{8}$"
+        ],
+        "result": "x = -\\dfrac{7}{8} \\quad ; \\quad x = \\dfrac{7}{8}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "الحل الموجب:",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "7/8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب كلا من 49 و 64 على شكل مربع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\dfrac{a^2}{b^2} = \\left(\\dfrac{a}{b}\\right)^2$"
+        }
+      ],
+      "feedback": {
+        "correct": "نعم، وهو معاكس الحل السالب.",
+        "incorrect": "الحل الموجب هو معاكس الحل السالب: مربعه هو الطرف الثاني بعد عزل $x^2$."
+      },
+      "solution": {
+        "lines": [
+          "$x^2 = \\dfrac{49}{64}$ يعني $x^2 = \\left(\\dfrac{7}{8}\\right)^2$",
+          "بالتالي $x = \\dfrac{7}{8}$ أو $x = -\\dfrac{7}{8}$"
+        ],
+        "result": "x = -\\dfrac{7}{8} \\quad ; \\quad x = \\dfrac{7}{8}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "حل المعادلة $x^2 = 1{,}21$.",
+      "statement": "الحل الموجب:",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة)",
+      "expectedAnswer": "1.1",
+      "misconceptionSignatures": [
+        {
+          "value": "0.11",
+          "id": "MISC-JIDHR-FASILA"
+        },
+        {
+          "value": "11",
+          "id": "MISC-JIDHR-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن عدد عشري مربعه $1{,}21$: فكّر في $11^2$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد الأرقام بعد الفاصلة في المربع ضعف عددها في العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم، وهو معاكس الحل السالب.",
+        "incorrect": "الحل الموجب هو معاكس الحل السالب: مربعه هو الطرف الثاني بعد عزل $x^2$."
+      },
+      "solution": {
+        "lines": [
+          "$x^2 = 1{,}21$ يعني $x^2 = 1{,}1^2$",
+          "بالتالي $x = 1{,}1$ أو $x = -1{,}1$"
+        ],
+        "result": "x = -1{,}1 \\quad ; \\quad x = 1{,}1"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "الحل السالب:",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة)",
+      "expectedAnswer": "-1.1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن عدد عشري مربعه $1{,}21$: فكّر في $11^2$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد الأرقام بعد الفاصلة في المربع ضعف عددها في العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم، هذا هو الحل السالب: للمعادلة حلان متعاكسان.",
+        "incorrect": "الحلان عددان متعاكسان مربع كل منهما هو الطرف الثاني بعد عزل $x^2$: خذ السالب منهما."
+      },
+      "solution": {
+        "lines": [
+          "$x^2 = 1{,}21$ يعني $x^2 = 1{,}1^2$",
+          "بالتالي $x = 1{,}1$ أو $x = -1{,}1$"
+        ],
+        "result": "x = -1{,}1 \\quad ; \\quad x = 1{,}1"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

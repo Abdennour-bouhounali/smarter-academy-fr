@@ -1,0 +1,289 @@
+{
+  "id": "ex-2am-jida-kasrayn-l5-010",
+  "lessonCode": "jida-kasrayn",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — وضعيّة إدماجيّة : مسافة رحلة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "كسر من الباقي",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "06"
+    }
+  },
+  "statement": {
+    "content": "مسافة رحلة $360$ km : قطعت حافلة $\\dfrac{1}{4}$ منها صباحًا ، ثمّ $\\dfrac{2}{3}$ من الباقي بعد الظهر ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما المسافة التي قطعتها صباحًا بالكيلومتر ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "90",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1440",
+          "id": "MISC-JIDAKASR-FLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كلمة «من» بعد كسر تعني الضرب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\dfrac{a}{b}$ من $x$ هو $x \\times \\dfrac{a}{b}$ : اقسم $x$ على $b$ ثمّ اضرب في $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي إذا كان الكسر أصغر من 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$90$ .",
+        "incorrect": "الكسر «من» عدد يعني الضرب: اقسم على المقام ثمّ اضرب في البسط، ولا تقلب الكسر."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{4}$ من $360$ هو $360 \\times \\dfrac{1}{4}$ .",
+          "$360 \\div 4 = 90$ ثمّ $90 \\times 1 = 90$ ."
+        ],
+        "result": "90"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "ما الكسر الذي تمثّله المسافة المقطوعة بعد الظهر من الرحلة كلّها ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "1/2",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2/3",
+          "id": "MISC-JIDAKASR-OFWHOLE"
+        },
+        {
+          "value": "1/6",
+          "id": "MISC-JIDAKASR-OFSPENT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكسر الثاني مأخوذ من الباقي، لا من الكلّ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الباقي بعد المرّة الأولى أوّلًا ثمّ خذ الكسر الثاني من هذا الباقي: هذا جداء."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل الناتج وتحقّق أنّه أصغر من الباقي."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{2}$ .",
+        "incorrect": "الكسر الثاني يؤخذ من الباقي: احسب الباقي أوّلًا ثمّ اضربه في الكسر الثاني."
+      },
+      "solution": {
+        "lines": [
+          "الباقي بعد المرّة الأولى : $1 - \\dfrac{1}{4} = \\dfrac{3}{4}$ .",
+          "المأخوذ ثانيةً : $\\dfrac{2}{3} \\times \\dfrac{3}{4} = \\dfrac{1}{2}$ ."
+        ],
+        "result": "\\dfrac{1}{2}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما المسافة التي قطعتها بعد الظهر بالكيلومتر ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "180",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "720",
+          "id": "MISC-JIDAKASR-FLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كلمة «من» بعد كسر تعني الضرب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\dfrac{a}{b}$ من $x$ هو $x \\times \\dfrac{a}{b}$ : اقسم $x$ على $b$ ثمّ اضرب في $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي إذا كان الكسر أصغر من 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$180$ .",
+        "incorrect": "الكسر «من» عدد يعني الضرب: اقسم على المقام ثمّ اضرب في البسط، ولا تقلب الكسر."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{2}$ من $360$ هو $360 \\times \\dfrac{1}{2}$ .",
+          "$360 \\div 2 = 180$ ثمّ $180 \\times 1 = 180$ ."
+        ],
+        "result": "180"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "ما المسافة المتبقية بالكيلومتر ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "90",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المعطيات ثمّ حدّد العملية المناسبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب خطوة بخطوة وراجع الوحدة في الناتج."
+        }
+      ],
+      "feedback": {
+        "correct": "$90$ .",
+        "incorrect": "راجع المعطيات والعمليّة ثمّ أعد الحساب."
+      },
+      "solution": {
+        "lines": [
+          "$360 - 90 - 180 = 90$ km ."
+        ],
+        "result": "90"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "تقطع الحافلة $15$ km بلتر واحد . هل تكفي $5$ L لقطع المسافة المتبقية ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا ثمّ تحقّق منها بحساب بسيط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الناتج بمقام مشترك ثمّ قارنه بما قيل."
+        }
+      ],
+      "feedback": {
+        "correct": "لا : تحتاج إلى $6$ L .",
+        "incorrect": "احسب ثمّ قارن بدقّة قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "$90 \\div 15 = 6$ L و $5 < 6$ : لا تكفي ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

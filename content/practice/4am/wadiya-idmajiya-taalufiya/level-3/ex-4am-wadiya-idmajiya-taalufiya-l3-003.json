@@ -1,0 +1,166 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-taalufiya-l3-003",
+  "lessonCode": "wadiya-idmajiya-taalufiya",
+  "level": 3,
+  "metadata": {
+    "title": "ثلاث صيغ لقاعة سينما",
+    "estimatedMinutes": 10,
+    "tags": [
+      "مفاضلة",
+      "ثلاث صيغ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-taalufiya_P1"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تقترح قاعة سينما تعرض أفلاما وثائقية عن تاريخ الوطن ثلاث صيغ، حيث $x$ عدد الحصص في الشهر:\n- الصيغة الأولى: 300DA للحصة.\n- الصيغة الثانية: بطاقة 800DA ثم 100DA للحصة.\n- الصيغة الثالثة: اشتراك شهري 2000DA مهما كان عدد الحصص."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "من أجل كم حصة تتساوى الصيغتان الأولى والثانية؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الحصص",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عبّر عن المبلغين بدلالة $x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ $300x = 100x + 800$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$300x = 100x + 800$ .",
+        "incorrect": "ساوِ المبلغين ثم اجمع حدود $x$ في طرف."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 300x$ و $g(x) = 100x + 800$ و $h(x) = 2000$",
+          "$300x = 100x + 800$",
+          "$200x = 800$",
+          "$x = 4$"
+        ],
+        "result": "x = 4"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "يحضر أنس 6 حصص في الشهر. ما هي الصيغة الأقل تكلفة له؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الصيغة الأولى",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        },
+        {
+          "id": "B",
+          "content": "الصيغة الثانية",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "الصيغة الثالثة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المبالغ الثلاثة من أجل 6 حصص."
+        }
+      ],
+      "feedback": {
+        "correct": "1800DA و 1400DA و 2000DA .",
+        "incorrect": "احسب $f(6)$ و $g(6)$ و $h(6)$ ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "$f(6) = 300 \\times 6 = 1800DA$",
+          "$g(6) = 100 \\times 6 + 800 = 1400DA$",
+          "$h(6) = 2000DA$",
+          "إذن الصيغة الثانية هي الأقل تكلفة لأنس."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ابتداء من كم حصة في الشهر تصبح الصيغة الثالثة أقل تكلفة من الصيغة الثانية؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الحصص",
+      "expectedAnswer": "13",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المتراجحة $100x + 800 > 2000$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خذ أصغر عدد طبيعي يحقّقها."
+        }
+      ],
+      "feedback": {
+        "correct": "$100x > 1200$ .",
+        "incorrect": "الثالثة أقل تكلفة عندما يكون $g(x) > 2000$ ؛ الحدّ نفسه لا يكفي."
+      },
+      "solution": {
+        "lines": [
+          "$g(x) > h(x)$",
+          "$100x + 800 > 2000$",
+          "$100x > 1200$",
+          "$x > 12$",
+          "إذن ابتداء من 13 حصة في الشهر تصبح الصيغة الثالثة أقل تكلفة من الثانية."
+        ],
+        "result": "13"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

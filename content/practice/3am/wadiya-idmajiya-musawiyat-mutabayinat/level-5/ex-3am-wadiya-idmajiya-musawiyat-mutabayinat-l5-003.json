@@ -1,0 +1,322 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-musawiyat-mutabayinat-l5-003",
+  "lessonCode": "wadiya-idmajiya-musawiyat-mutabayinat",
+  "level": 5,
+  "metadata": {
+    "title": "وضعية: أعمار العائلة",
+    "estimatedMinutes": 14,
+    "tags": [
+      "وضعية إدماجية",
+      "معادلة",
+      "متباينة وحصر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "عمر أمّ $33$ سنة وعمر ابنها $13$ سنة. بعد $n$ سنة يصير عمر الأمّ $2$ أمثال عمر ابنها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نرمز بـ $n$ إلى عدد السنوات المطلوبة. أيّ المعادلات التالية تترجم الوضعية ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$n + 33 = 2n + 26$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$3n = 59$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        },
+        {
+          "id": "C",
+          "content": "$33n + 1 = 26n + 2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        },
+        {
+          "id": "D",
+          "content": "$n + 26 = 2n + 33$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول وما الذي يتساوى في الوضعية ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلة من كمّيتين متساويتين ثمّ حلّها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الحلّ يناسب الوضعية."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $n + 33 = 2n + 26$ .",
+        "incorrect": "راجع الترجمة إلى معادلة ثمّ الحلّ، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب الكمّيتين المتساويتين بدلالة $n$ ثمّ نساوي بينهما: $n + 33 = 2n + 26$ .",
+          "الخيارات الأخرى تجمع الكمّيتين أو تبدّل ثوابتهما أو تخلط الأعداد."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "المعادلة المترجمة هي $n + 33 = 2n + 26$ . احسب قيمة المجهول.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "-59",
+          "id": "MISC-MUADALA-SIGN-KEPT"
+        },
+        {
+          "value": "-7",
+          "id": "MISC-MUADALA-PARTIAL-SOLVE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين المجهول وأين الأعداد ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المجهول في طرف والأعداد في الطرف الآخر، ثمّ اقسم على معامل المجهول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض النتيجة في الطرفين لتتأكّد من تساويهما."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $7$ .",
+        "incorrect": "راجع نقل الحدود وإشاراتها ثمّ القسمة على المعامل، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نجمع المجهول في طرف والأعداد في الآخر: $-n = -7$ .",
+          "نقسم على $-1$ : $n = 7$ ."
+        ],
+        "result": "7"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "الحلّ هو $n = 7$ . احسب قيمة الطرف الأيسر $n + 33$ عند هذا الحلّ للتحقّق.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "40",
+      "misconceptionSignatures": [
+        {
+          "value": "-26",
+          "id": "MISC-MUADALA-NO-CHECK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين المجهول وأين الأعداد ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المجهول في طرف والأعداد في الطرف الآخر، ثمّ اقسم على معامل المجهول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض النتيجة في الطرفين لتتأكّد من تساويهما."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $40$ .",
+        "incorrect": "راجع نقل الحدود وإشاراتها ثمّ القسمة على المعامل، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض: $1 \\times 7 + (33) = 40$ .",
+          "ونجد القيمة نفسها في الطرف الأيمن: الحلّ مقبول."
+        ],
+        "result": "40"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "تكلفة حفل عائلي هي $B(n) = 200 + 30n$ بالـ DA ، حيث $n$ هو عدد المدعوّين. المتاح $529$ DA على الأكثر. ما أكبر عدد صحيح $n$ يحقّق $B(n) \\le 529$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "11",
+          "id": "MISC-MUADALA-SOLUTION-CONTEXT"
+        },
+        {
+          "value": "17",
+          "id": "MISC-MUADALA-TRANSLATE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول وما الذي يتساوى في الوضعية ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلة من كمّيتين متساويتين ثمّ حلّها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الحلّ يناسب الوضعية."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $10$ .",
+        "incorrect": "راجع الترجمة إلى معادلة ثمّ الحلّ، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الشرط $200 + 30n \\le 529$ يعطي $30n \\le 329$ (الطرح يحفظ الاتجاه).",
+          "نقسم على $30$ (موجب): $n \\le 329/30$ ، فأكبر عدد صحيح هو $10$ ."
+        ],
+        "result": "10"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "كتلة علبة واحدة قُرئت $3{,}5\\ \\mathrm{kg}$ مدوّرة إلى $0{,}1$ ، ومجموع كتل $10$ علب مماثلة هو $S$ . حمولة الرفّ القصوى هي $35{,}3\\ \\mathrm{kg}$ . أيّ الاستنتاجات التالية صحيح ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$S < 35{,}3$ دائمًا: نستطيع الجزم بأنّ المجموع لا يتجاوز الحدّ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-DECISION"
+        },
+        {
+          "id": "B",
+          "content": "$S > 35{,}3$ دائمًا: نستطيع الجزم بأنّ المجموع يتجاوز الحدّ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-DECISION"
+        },
+        {
+          "id": "C",
+          "content": "لا نستطيع الجزم: الحدّ المسموح يقع داخل الحصر",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$S < 35{,}3$ دائمًا لأنّ $10 \\times 3{,}5 < 35{,}3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-CENTER-EXACT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل العدد الذي نضرب فيه موجب أم سالب ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في عدد موجب يحفظ الاتجاه، وفي عدد سالب يعكسه؛ والجمع والطرح يحفظانه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بين الطرفين الأصغر والأكبر بعد كل عملية."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: لا نستطيع الجزم: الحدّ المسموح يقع داخل الحصر .",
+        "incorrect": "انتبه إلى اتجاه المتباينة عند الضرب في عدد سالب، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "القراءة $3{,}5$ مدوّرة إلى $0{,}1$ تعني $3{,}45 \\le x < 3{,}55$ ، ومنه $34{,}5 \\le S < 35{,}5$ .",
+          "الحدّ المسموح يقع بين طرفي الحصر: لا نستطيع الجزم."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

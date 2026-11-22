@@ -1,0 +1,246 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l4-001",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — القسمة الإقليدية وقيمة مقرّبة",
+    "estimatedMinutes": 9,
+    "tags": [
+      "قسمة إقليدية",
+      "حصر",
+      "قيمة مقرّبة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-79",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نعتبر القسمة الإقليدية للعدد 341 على 15."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب حاصل القسمة الإقليدية للعدد 341 على 15.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "22",
+      "misconceptionSignatures": [
+        {
+          "value": "11",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "21",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "value": "23",
+          "id": "MISC-HASR-IZAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 341 من 15 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 15 دون أن نتجاوز 341."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من 15."
+        }
+      ],
+      "feedback": {
+        "correct": "$341 = 15 \\times 22 + 11$ و $11 < 15$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 15 فلا يتجاوز الجداء 341، والباقي عندئذ أصغر من 15."
+      },
+      "solution": {
+        "lines": [
+          "$15 \\times 22 = 330$ و $15 \\times 23 = 345$",
+          "$330 \\le 341 < 345$ ، إذن الحاصل هو 22."
+        ],
+        "result": "q = 22"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب باقي القسمة الإقليدية للعدد 341 على 15.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "value": "22",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "26",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 341."
+        }
+      ],
+      "feedback": {
+        "correct": "$341 - 15 \\times 22 = 341 - 330 = 11$ ، و $11 < 15$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 15."
+      },
+      "solution": {
+        "lines": [
+          "$341 = 15 \\times 22 + 11$",
+          "$11 < 15$ ، إذن الباقي هو 11."
+        ],
+        "result": "r = 11"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "استنتج حصرًا لحاصل القسمة $\\frac{341}{15}$ بين عددين طبيعيين متتاليين.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$21 < \\frac{341}{15} < 22$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        },
+        {
+          "id": "B",
+          "content": "$22 < \\frac{341}{15} < 23$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$11 < \\frac{341}{15} < 12$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 341 على 15."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من $15 \\times q \\le 341 < 15 \\times (q + 1)$ نقسم الأطراف على 15."
+        }
+      ],
+      "feedback": {
+        "correct": "$341 = 15 \\times 22 + 11$ والباقي غير معدوم، فـ $\\frac{341}{15}$ يقع تمامًا بين 22 و 23.",
+        "incorrect": "احصر 341 بين مضاعفين متتاليين للعدد 15 ثم اقسم على 15؛ وإذا كان الباقي معدومًا فحاصل القسمة عدد طبيعي."
+      },
+      "solution": {
+        "lines": [
+          "$341 = 15 \\times 22 + 11$",
+          "$15 \\times 22 < 341 < 15 \\times 23$ ، نقسم على 15: $22 < \\frac{341}{15} < 23$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}1$ بالنقصان لحاصل القسمة $\\frac{341}{15}$.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "22.7",
+      "misconceptionSignatures": [
+        {
+          "value": "22.8",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة العشرية للعدد 341 على 15."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "توقّف عند الرقم الأول بعد الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$341 \\div 15 = 22{,}733\\ldots$ فالقيمة بالنقصان إلى $0{,}1$ هي $22{,}7$.",
+        "incorrect": "بالنقصان إلى $0{,}1$: نحتفظ برقم واحد بعد الفاصلة دون زيادة."
+      },
+      "solution": {
+        "lines": [
+          "$341 \\div 15 = 22{,}733\\ldots$",
+          "$22{,}7 < 22{,}733\\ldots < 22{,}8$"
+        ],
+        "result": "22{,}7"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l2-007",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 2,
+  "metadata": {
+    "title": "أيّ وصف يناسب هذه النقط؟",
+    "estimatedMinutes": 6,
+    "tags": [
+      "تمثيل بياني",
+      "جدول"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "self-2",
+      "page": 97,
+      "section": "أؤكّد تعلّماتي",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يملأ متطوّعو النادي الأخضر أكياسا بالتراب الصالح لغرس شتلات الحيّ. يعطي الجدول التالي كتلة التراب بالكيلوغرام بدلالة عدد الأكياس، وقد مثّلنا نقطه في المعلم المتعامد والمتجانس الموالي.",
+    "table": {
+      "head": [
+        "عدد الأكياس",
+        "2",
+        "4",
+        "6"
+      ],
+      "rows": [
+        [
+          "الكتلة (kg)",
+          "5",
+          "10",
+          "15"
+        ]
+      ]
+    },
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          2,
+          5
+        ],
+        "B": [
+          4,
+          10
+        ],
+        "C": [
+          6,
+          15
+        ]
+      },
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw",
+        "A": "se",
+        "B": "se",
+        "C": "se"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس: النقط A(2;5) و B(4;10) و C(6;15) على استقامة واحدة مع المبدأ O",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: عدد الأكياس — محور التراتيب: الكتلة بالكيلوغرام"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "بقراءة المعلم:",
+      "statement": "ما ترتيب النقطة $B$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد: ترتيب النقطة",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-TAMTHIL-SWAP-XY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الترتيب هو العدد الثاني في زوج الإحداثيين، وتُقرأ على المحور العمودي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اذهب من النقطة أفقيا إلى المحور العمودي واقرأ العدد الذي تقع عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "ترتيب $B$ هي $10$.",
+        "incorrect": "الترتيب يُقرأ على المحور العمودي لا الأفقي، ويجب أن تحترم قيمة المربع."
+      },
+      "solution": {
+        "lines": [
+          "نمشي من $B$ أفقيا إلى محور التراتيب فنقرأ $10$ ."
+        ],
+        "result": "10"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما الوصف الصحيح لهذه النقط؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نقط من مستقيم لا يمرّ بالمبدأ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-ORIGIN-DROP"
+        },
+        {
+          "id": "B",
+          "content": "نقط على استقامة واحدة مع مبدأ المعلم",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نقط ليست على استقامة واحدة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-JOIN-DOTS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع مسطرة على $O$ و $A$ وانظر أين تمرّ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $O$ جزء من التمثيل."
+        }
+      ],
+      "feedback": {
+        "correct": "المسطرة المارّة بـ $O$ و $A$ تمرّ أيضا بـ $B$ و $C$ .",
+        "incorrect": "اشمل $O$ و $A$ بالمسطرة وتحقّق من بقية النقط."
+      },
+      "solution": {
+        "lines": [
+          "المسطرة المارّة بـ $O$ و $A$ تمرّ بـ $B$ و $C$ أيضا.",
+          "النقط على استقامة واحدة مع مبدأ المعلم."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما معامل التناسبية $a$ لهذه الوضعية؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: معامل التناسبية",
+      "expectedAnswer": "2.5",
+      "misconceptionSignatures": [
+        {
+          "value": "2/5",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        },
+        {
+          "value": "3",
+          "id": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل التناسبية هو ترتيب النقطة الذي فاصلته $1$ ، أو ناتج قسمة الترتيب على الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ إحداثيي النقطة $A$ ثم اقسم الترتيب على الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تقسم الفاصلة على الترتيب ولا تطرح أحد العددين من الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{5}{2} = 2{,}5$ .",
+        "incorrect": "المعامل هو ناتج قسمة الترتيب على الفاصلة (وليس العكس) لنقطة من المستقيم."
+      },
+      "solution": {
+        "lines": [
+          "النقطة $A(2\\,;\\,5)$ من المستقيم.",
+          "$a = \\dfrac{5}{2} = 2{,}5$"
+        ],
+        "result": "a = 2{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

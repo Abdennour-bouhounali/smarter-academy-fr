@@ -1,0 +1,295 @@
+{
+  "id": "ex-3am-mutabayinat-amaliyat-l5-009",
+  "lessonCode": "mutabayinat-amaliyat",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — صندوق المدّخرات",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "حصر",
+      "ادّخار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: يدّخر نبيل في صندوقه تعوّدًا على الاقتصاد: عنده $400$ دج، ويضيف إليه $150$ دج كلّ أسبوع. بعد $w$ أسبوعًا يملك $m=400+150w$ دج، حيث $4\\le w\\le 10$ .\nالجزء الثاني: يريد شراء دراجة هوائية ثمنها $1600$ دج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $m$ من أجل $w=6$ .",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "1300",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المعطى بالضبط؟ وما العبارة المطلوب استنتاج متباينة لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابنِ المتباينة المطلوبة عملية بعد عملية، وانتبه إلى إشارة العدد عند كلّ ضرب أو قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر، وأعد كتابة الحصر من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$m=400+900=1300$ .",
+        "incorrect": "استنتج المتباينة خطوة بخطوة، وانتبه إلى اتجاهها بعد كلّ ضرب أو قسمة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$m=400+900=1300$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اختر الحصر الصحيح للمبلغ $m$ .",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$1900\\le 400+150w\\le 1000$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-BOUND-ORDER"
+        },
+        {
+          "id": "B",
+          "content": "$1000\\le 400+150w\\le 1900$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$600\\le 400+150w\\le 1500$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-ONE-SIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المعطى بالضبط؟ وما العبارة المطلوب استنتاج متباينة لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابنِ المتباينة المطلوبة عملية بعد عملية، وانتبه إلى إشارة العدد عند كلّ ضرب أو قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر، وأعد كتابة الحصر من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$600\\le 150w\\le 1500$ ثم نضيف $400$ : $1000\\le m\\le 1900$ .",
+        "incorrect": "استنتج المتباينة خطوة بخطوة، وانتبه إلى اتجاهها بعد كلّ ضرب أو قسمة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$600\\le 150w\\le 1500$ ثم نضيف $400$ : $1000\\le m\\le 1900$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "الشرط $400+150w\\ge 1600$ . أكمل: $w\\ge\\ldots$",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "1200",
+          "id": "MISC-MUTABAYINA-COEF-LOST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل العدد الذي نضرب فيه (أو نقسم عليه) موجب أم سالب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في عدد موجب تمامًا (أو القسمة عليه) لا يغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق العملية على كلّ طرف ثم احتفظ بالرمز كما هو."
+        }
+      ],
+      "feedback": {
+        "correct": "نقسم على $150$ (موجب): $w\\ge 8$ .",
+        "incorrect": "الضرب في عدد موجب تمامًا (أو القسمة عليه) يحفظ اتجاه المتباينة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نطرح $400$ : $150w\\ge 1200$ .",
+          "نقسم على $150$ (موجب): $w\\ge 8$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل يملك الثمن $1600$ دج بعد $8$ أسابيع؟",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيحة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خاطئة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-DECISION"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المعطى بالضبط؟ وما العبارة المطلوب استنتاج متباينة لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابنِ المتباينة المطلوبة عملية بعد عملية، وانتبه إلى إشارة العدد عند كلّ ضرب أو قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر، وأعد كتابة الحصر من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$400+150\\times 8=1600$ و $1600\\ge 1600$ ؛ نعم.",
+        "incorrect": "استنتج المتباينة خطوة بخطوة، وانتبه إلى اتجاهها بعد كلّ ضرب أو قسمة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$400+150\\times 8=1600$ و $1600\\ge 1600$ ؛ نعم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ج",
+      "statement": "هل يستطيع شراء الدراجة خلال $7$ أسابيع؟",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأنّ $7$ أسابيع كثيرة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-DECISION"
+        },
+        {
+          "id": "B",
+          "content": "لا، لأنّ $7<8$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المعطى بالضبط؟ وما العبارة المطلوب استنتاج متباينة لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابنِ المتباينة المطلوبة عملية بعد عملية، وانتبه إلى إشارة العدد عند كلّ ضرب أو قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر، وأعد كتابة الحصر من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "يجب أن يكون $w\\ge 8$ و $7<8$ ؛ إذن لا.",
+        "incorrect": "استنتج المتباينة خطوة بخطوة، وانتبه إلى اتجاهها بعد كلّ ضرب أو قسمة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "يجب أن يكون $w\\ge 8$ و $7<8$ ؛ إذن لا."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

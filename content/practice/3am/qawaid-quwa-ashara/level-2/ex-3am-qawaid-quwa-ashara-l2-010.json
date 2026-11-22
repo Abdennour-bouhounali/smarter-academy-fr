@@ -1,0 +1,187 @@
+{
+  "id": "ex-3am-qawaid-quwa-ashara-l2-010",
+  "lessonCode": "qawaid-quwa-ashara",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — تصحيح حساب يوسف",
+    "estimatedMinutes": 7,
+    "tags": [
+      "سلسلة حساب",
+      "تصحيح"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "حسب يوسف العدد $K = \\dfrac{10^{-2}\\times10^{5}}{10^{-4}}$ فكتب: «$K = \\dfrac{10^{3}}{10^{-4}} = 10^{3-4} = 10^{-1}$». نريد مراجعة حسابه."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب البسط: $10^{-2}\\times10^{5} = 10^{n}$ ، ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوتين المضروبتين وأسّ كلّ منهما (انتبه إلى إشارته)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في جداء قوتين للعدد 10 نجري عملية واحدة على الأسّين: ما هي؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب القاعدة على مثال صغير: $10^{2}\\times10^{1}$ هو $10\\times10\\times10$ ، فكم عاملًا 10 في الجداء؟"
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "-10",
+          "id": "MISC-QAWAID-DARB-ASS"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{-2}\\times10^{5} = 10^{3}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نجمع الأسّين: $-2 + 5 = 3$ .",
+          "$10^{-2}\\times10^{5} = 10^{3}$ ، فسطره الأوّل صحيح."
+        ],
+        "result": "n = 3"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $K = \\dfrac{10^{-2}\\times10^{5}}{10^{-4}} = 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أوّلًا كلّ قوة على حدة وحدّد أسّها، وانتبه إلى القوى التي بين قوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز الجداءات والقوى لتحصل على قوة واحدة في البسط وقوة واحدة في المقام، ثمّ اقسم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب أسّ البسط وأسّ المقام كلًّا على حدة قبل أن تطرح، وانتبه إلى الإشارات."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "-1",
+          "id": "MISC-QAWAID-ISHARA"
+        }
+      ],
+      "feedback": {
+        "correct": "$K = 10^{7}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "البسط يساوي $10^{3}$ ، فنقسمه على $10^{-4}$ .",
+          "نطرح الأسّين: $3 - (-4) = 7$ .",
+          "$K = 10^{7}$ ، وخطأ يوسف أنّه أهمل إشارة الأسّ $-4$ فكتب $3 - 4$ ."
+        ],
+        "result": "n = 7"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل نتيجة يوسف $K = 10^{-1}$ صحيحة؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل كلّ اقتراح إلى قوة واحدة للعدد 10 مستعملًا القاعدة المناسبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر اقتراحًا واحدًا في كلّ مرّة، وانتبه إلى أنّ القواعد الثلاث لا تخصّ الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا شككت في قاعدة فجرّبها على قوة صغيرة تعرف قيمتها العشرية."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QAWAID-ISHARA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "نتيجة يوسف خاطئة: $K = 10^{7}$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب قيمته أو بتطبيق القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الأسّ الصحيح هو $3 - (-4) = 7$ ، وليس $3 - 4 = -1$ .",
+          "إذن $K = 10^{7}$ ونتيجة يوسف خاطئة."
+        ]
+      }
+    }
+  ]
+}

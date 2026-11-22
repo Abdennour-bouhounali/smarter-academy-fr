@@ -1,7 +1,8 @@
-import React, { useContext, useRef, useState } from 'react';
+import { useContext, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Flag } from 'lucide-react';
 import { AuthContext } from '../../context/AuthContext';
-import { initiateReport, completeReport, isRetryableFailure } from '../../services/reportService';
+import { submitReport } from '../../services/reportService';
 import ReportDialog from './ReportDialog';
 
 /**
@@ -12,102 +13,44 @@ import ReportDialog from './ReportDialog';
  * de le poser une fois dans chaque shell partagé (LessonIndex, ModuleLayout,
  * PracticeSession, DiagnosticRun) plutôt que 132 fois à la main.
  *
- * DEUX TEMPS, et c'est délibéré :
+ * RÉSERVÉ AUX RELECTEURS (2026-10-05) : l'administrateur et les enseignants
+ * ambassadeurs (« سفراء », `user.canReviewContent`). Pour tout autre compte,
+ * rien n'est rendu — et le serveur refuse de toute façon (middleware
+ * `reviewer`).
  *
- *   clic  → POST /reports  → le signal existe déjà en base
- *   envoi → PATCH /reports/{id} → la catégorie et les mots le complètent
- *
- * Un élève qui ouvre puis referme laisse donc une trace : « quelqu'un a buté
- * ici » est l'information qu'un formulaire abandonné fait perdre. Le serveur
- * déduplique les ouvertures répétées sur un même contexte.
+ * Le CLIC n'ouvre que le formulaire : rien ne part avant « إرسال ». L'envoi
+ * est unique (POST multipart), capture d'écran comprise.
  *
  * @param {'lesson'|'module'|'exercise'|'question'|'diagnostic'} source
  * @param {object} context  codes de contenu — jamais d'identifiant de base
- * @param {'chip'|'link'|'icon'} [variant]
+ * @param {'chip'|'link'|'icon'|'prominent'} [variant]
  */
 export default function ReportButton({ source, context = {}, variant = 'chip', className = '' }) {
-  const { token } = useContext(AuthContext);
+  const { t } = useTranslation('common');
+  const { token, user } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
-  const [reportId, setReportId] = useState(null);
   const [busy, setBusy] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(null);
-  // Le signal a-t-il échoué pour une raison qu'une nouvelle tentative peut
-  // lever (réseau coupé, serveur momentanément indisponible) ? Un refus
-  // d'autorisation ou une validation, eux, se reproduiront à l'identique :
-  // les rejouer à l'envoi ne ferait que masquer la vraie cause derrière un
-  // second échec.
-  const [signalPending, setSignalPending] = useState(false);
-  // Garde anti double-clic : deux clics rapides ne doivent pas lancer deux
-  // requêtes. Une ref plutôt qu'un état — il ne faut pas attendre un rendu.
-  const opening = useRef(false);
 
-  // Sans session, personne à qui rattacher le signalement. Ouvrir un
-  // formulaire qui échouera à l'envoi serait pire que ne rien proposer.
-  if (!token) return null;
+  if (!token || !user?.canReviewContent) return null;
 
-  const label = 'Signaler un problème';
+  const label = t('report.trigger');
 
-  const openDialog = async () => {
-    if (opening.current) return;
-    opening.current = true;
-
+  const openDialog = () => {
     setError(null);
     setSubmitted(false);
-    setSignalPending(false);
-    setReportId(null);
-    // La fenêtre s'ouvre TOUT DE SUITE : l'élève ne doit pas attendre le
-    // réseau pour voir qu'il s'est passé quelque chose.
     setOpen(true);
-
-    try {
-      const report = await initiateReport(token, { source, ...context });
-      setReportId(report.id);
-    } catch (caught) {
-      // Silencieux, et c'est délibéré : l'élève n'a encore rien demandé, et
-      // lui annoncer une panne au moment où il ouvre la fenêtre serait du
-      // bruit pour un problème qui se résoudra peut-être tout seul.
-      //
-      // On retient seulement s'il vaut la peine de réessayer. Une panne
-      // réseau, oui. Un 403 ou un 422, non : la même requête produira la
-      // même réponse, et l'élève verra alors une erreur claire à l'envoi
-      // plutôt qu'un second échec inexpliqué.
-      setSignalPending(isRetryableFailure(caught));
-    } finally {
-      opening.current = false;
-    }
   };
 
-  const submit = async ({ category, note }) => {
+  const submit = async ({ category, note, screenshot }) => {
     setBusy(true);
     setError(null);
-
     try {
-      let id = reportId;
-
-      if (id === null) {
-        // Le signal manque. On ne le repose QUE s'il avait échoué pour une
-        // raison passagère : sinon on laisse remonter l'erreur d'origine,
-        // qui dit quelque chose, au lieu d'en fabriquer une seconde.
-        //
-        // Aucun doublon possible : le serveur déduplique sur
-        // (élève, empreinte, signal encore incomplet), donc si le premier
-        // POST avait en réalité abouti — réponse perdue en route — cette
-        // seconde tentative retrouve la MÊME ligne.
-        if (!signalPending) {
-          throw new Error('Impossible d’envoyer le signalement pour le moment.');
-        }
-
-        id = (await initiateReport(token, { source, ...context })).id;
-      }
-
-      await completeReport(token, id, { category, note });
+      await submitReport(token, { source, context, category, note, screenshot });
       setSubmitted(true);
-      setReportId(null);
-      setSignalPending(false);
     } catch (caught) {
-      // La saisie de l'élève reste à l'écran : il peut réessayer sans avoir
-      // à tout retaper.
+      // La saisie reste à l'écran : on peut réessayer sans tout refaire.
       setError(caught.message);
     } finally {
       setBusy(false);
@@ -126,7 +69,20 @@ export default function ReportButton({ source, context = {}, variant = 'chip', c
   // survol/focus est porté par le <span> intérieur pour qu'il garde la taille
   // qu'on voit. Grossir la pastille encombrerait une barre d'outils déjà
   // dense ; laisser la cible à 36px la rendrait difficile à toucher.
-  const trigger = variant === 'icon' ? (
+  // Variante « prominent » (2026-10-05) : en HAUT de page, couleur d'alerte
+  // et libellé toujours visible — seuls les relecteurs la voient, et pour
+  // eux signaler EST le travail : le bouton doit se trouver d'un coup d'œil.
+  const trigger = variant === 'prominent' ? (
+    <button
+      type="button"
+      onClick={openDialog}
+      aria-haspopup="dialog"
+      data-report-trigger="prominent"
+      className={`inline-flex min-h-[44px] shrink-0 items-center gap-2 rounded-full border-2 border-amber-400 bg-amber-50 px-4 font-inter text-sm font-bold text-amber-900 shadow-sm transition-colors hover:bg-amber-100 focus-visible:ring-2 focus-visible:ring-amber-500 focus:outline-none ${className}`}
+    >
+      <Flag size={16} aria-hidden="true" /> {label}
+    </button>
+  ) : variant === 'icon' ? (
     <button
       type="button"
       onClick={openDialog}
@@ -141,7 +97,7 @@ export default function ReportButton({ source, context = {}, variant = 'chip', c
           l'étiquette accessible porte alors seule le sens. */}
       <span className="flex h-9 items-center gap-1.5 rounded-full border border-slate-200 bg-white px-2.5 font-mono text-xs font-bold text-slate-500 shadow-sm transition-colors group-hover:border-slate-300 group-hover:bg-slate-50 group-hover:text-slate-800 group-focus-visible:ring-2 group-focus-visible:ring-blue-400 sm:px-3">
         <Flag size={14} aria-hidden="true" />
-        <span className="hidden sm:inline">Signaler</span>
+        <span className="hidden sm:inline">{t('report.triggerShort')}</span>
       </span>
     </button>
   ) : variant === 'link' ? (

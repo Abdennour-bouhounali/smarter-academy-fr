@@ -1,0 +1,264 @@
+{
+  "id": "ex-4am-tarrid-mushkila-l3-001",
+  "lessonCode": "tarrid-mushkila",
+  "level": 3,
+  "metadata": {
+    "title": "المربع والمثلث المتقايس الأضلاع",
+    "estimatedMinutes": 9,
+    "tags": [
+      "ترييض",
+      "متراجحة",
+      "محيط"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "now-49-2",
+      "page": 49,
+      "section": "دوري الآن",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "مربع طول ضلعه $x$ (بالسنتيمتر) و مثلث متقايس الأضلاع ملتصقان، قاعدتاهما على استقامة واحدة و طول قاعدتيهما معًا $28cm$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عبّر بدلالة $x$ عن محيط المثلث.",
+      "statement": "يُكتب محيط المثلث على الشكل $a + bx$ : أعط العدد $a$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط",
+      "expectedAnswer": "84",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول ضلع المثلث هو ما يبقى من $28cm$ بعد ضلع المربع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "محيط المثلث المتقايس الأضلاع = 3 × طول ضلعه."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 84$ .",
+        "incorrect": "عبّر أولًا عن ضلع المثلث بدلالة $x$ ، ثم اضربه في 3 وانشر."
+      },
+      "solution": {
+        "lines": [
+          "طول ضلع المثلث: $28 - x$",
+          "محيطه: $3(28 - x) = 84 - 3x$"
+        ],
+        "result": "84 - 3x"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "أعط العدد $b$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (قد يكون سالبًا)",
+      "expectedAnswer": "-3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر $3(28 - x)$ : ما هو معامل $x$ ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "محيط المثلث $84 - 3x$ .",
+        "incorrect": "انتبه إلى الإشارة عند نشر $3(28 - x)$ ."
+      },
+      "solution": {
+        "lines": [
+          "$3(28 - x) = 84 - 3x$"
+        ],
+        "result": "84 - 3x"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "ترجم الشرط «محيط المربع أكبر من أو يساوي محيط المثلث» بمتراجحة ثم حلّها.",
+      "statement": "حدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x < k$ أو $x \\leqslant k$ أو $x > k$ أو $x \\geqslant k$ : اكتب العدد $k$ فقط (عدد صحيح أو كسر a/b، قد يكون سالبًا)",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر، كما في حل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إضافة عدد إلى الطرفين أو طرحه منهما لا تغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحدّ هو العدد الذي يحقّق المعادلة المرفقة (نضع «=» مكان رمز المتباينة): اقسم في الأخير على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "حدّ الحلول هو $k = 12$ .",
+        "incorrect": "أعد الحل سطرًا سطرًا: العملية نفسها على الطرفين، ثم القسمة على معامل $x$ في الأخير."
+      },
+      "solution": {
+        "lines": [
+          "حدّ الحلول هو حلّ المعادلة المرفقة: $4x = 84 - 3x$",
+          "$4x + 3x = 84$",
+          "$7x = 84$",
+          "$x = \\dfrac{84}{7}$",
+          "إذن حدّ الحلول هو $12$ ."
+        ],
+        "result": "k = 12"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < 12$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        },
+        {
+          "id": "B",
+          "content": "$x \\leqslant 12$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QALB-ZAID"
+        },
+        {
+          "id": "C",
+          "content": "$x > 12$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        },
+        {
+          "id": "D",
+          "content": "$x \\geqslant 12$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارة معامل $x$ في آخر سطر قبل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد موجب تحافظ على الاتجاه، والقسمة على عدد سالب تغيّره."
+        }
+      ],
+      "feedback": {
+        "correct": "$x \\geqslant 12$ .",
+        "incorrect": "تتبّع سطور الحل: الاتجاه يتغيّر فقط عند الضرب أو القسمة على عدد سالب، ونوع المتباينة (تامة أو غير تامة) لا يتغيّر أبدًا."
+      },
+      "solution": {
+        "lines": [
+          "$4x \\geqslant 84 - 3x$",
+          "$4x + 3x \\geqslant 84$",
+          "$7x \\geqslant 84$",
+          "$\\dfrac{7x}{7} \\geqslant \\dfrac{84}{7}$",
+          "إذن حلول المتراجحة هي كل قيم $x$ الأكبر من أو تساوي $12$ .",
+          "قسمنا الطرفين في آخر خطوة على عدد موجب، فبقي اتجاه المتباينة ونوعها."
+        ],
+        "result": "x \\geqslant 12"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "استنتج أقصر طول لضلع المربع.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من بين حلول المتراجحة، ما أصغر قيمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق أنها أصغر من $28$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "أقصر ضلع للمربع $12cm$ : محيط المربع $48cm$ ومحيط المثلث $3 \\times 16 = 48cm$ .",
+        "incorrect": "أصغر حل للمتراجحة هو الحدّ نفسه إذا كان حلًّا."
+      },
+      "solution": {
+        "lines": [
+          "حلول المتراجحة هي $x \\geqslant 12$ ، وأصغرها 12 لأن المتباينة غير تامة.",
+          "التحقق: من أجل $x = 12$ : $4 \\times 12 = 48$ و $3 \\times (28 - 12) = 48$ .",
+          "إذن أقصر طول لضلع المربع هو $12cm$ ."
+        ],
+        "result": "12\\,cm"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

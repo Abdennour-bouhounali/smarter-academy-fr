@@ -1,0 +1,197 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-aadad-nisbiya-l3-002",
+  "lessonCode": "wadiya-idmajiya-aadad-nisbiya",
+  "level": 3,
+  "metadata": {
+    "title": "أرباح تاجر وخسائره",
+    "estimatedMinutes": 6,
+    "tags": [
+      "ربح وخسارة",
+      "مجموع جبري",
+      "متوسط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "سجّل تاجر ربحه اليومي بالدينار خلال خمسة أيام، والخسارة عدد سالب: $1850$ ، $−920$ ، $640$ ، $−1300$ ، $410$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب مجموع الأرباح والخسائر خلال الأيام الخمسة.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "680",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ النص وحدّد الأعداد المعطاة وما يعبّر عنه كل منها: ارتفاع أم انخفاض، ربح أم خسارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر عن الانخفاض أو الخسارة أو الدَّين بعدد سالب، ثم اختر العملية التي تناسب السؤال."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العملية بأعداد نسبية ثم أنجزها بقاعدة الإشارات وبأولوية العمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $680$ DA .",
+        "incorrect": "راجع ترجمة النص إلى عملية بين أعداد نسبية: أيّ عدد سالب وأيّ عملية تناسب السؤال؟"
+      },
+      "solution": {
+        "lines": [
+          "$1850 + (−920) + 640 + (−1300) + 410$",
+          "$= 930 + 640 + (−1300) + 410$",
+          "$= 1570 + (−1300) + 410$",
+          "$= 270 + 410$",
+          "$= 680$"
+        ],
+        "result": "680"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب المتوسّط اليومي لهذه الأيام الخمسة.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "136",
+      "misconceptionSignatures": [
+        {
+          "value": "-136",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "675",
+          "id": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العددين اللذين نقسم أحدهما على الآخر وعيّن إشارة كل منهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عاملان مجهولان فالعامل الناقص هو حاصل قسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعملية العكسية: اضرب نتيجتك في العامل المعلوم."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $136$ DA .",
+        "incorrect": "راجع الربط بين الضرب والقسمة وقاعدة إشارات الحاصل، ثم تحقّق بالضرب."
+      },
+      "solution": {
+        "lines": [
+          "$(1850 + (−920) + 640 + (−1300) + 410) \\div 5$",
+          "$= (930 + 640 + (−1300) + 410) \\div 5$",
+          "$= (1570 + (−1300) + 410) \\div 5$",
+          "$= (270 + 410) \\div 5$",
+          "$= 680 \\div 5$",
+          "$= 136$"
+        ],
+        "result": "136"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "في اليوم السادس خسر $1100$ DA . احسب المتوسّط اليومي للأيام الستة.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-70",
+      "misconceptionSignatures": [
+        {
+          "value": "70",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "-426",
+          "id": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العددين اللذين نقسم أحدهما على الآخر وعيّن إشارة كل منهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عاملان مجهولان فالعامل الناقص هو حاصل قسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعملية العكسية: اضرب نتيجتك في العامل المعلوم."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $−70$ DA .",
+        "incorrect": "راجع الربط بين الضرب والقسمة وقاعدة إشارات الحاصل، ثم تحقّق بالضرب."
+      },
+      "solution": {
+        "lines": [
+          "$(1850 + (−920) + 640 + (−1300) + 410 + (−1100)) \\div 6$",
+          "$= (930 + 640 + (−1300) + 410 + (−1100)) \\div 6$",
+          "$= (1570 + (−1300) + 410 + (−1100)) \\div 6$",
+          "$= (270 + 410 + (−1100)) \\div 6$",
+          "$= (680 + (−1100)) \\div 6$",
+          "$= (−420) \\div 6$",
+          "$= −70$"
+        ],
+        "result": "−70"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

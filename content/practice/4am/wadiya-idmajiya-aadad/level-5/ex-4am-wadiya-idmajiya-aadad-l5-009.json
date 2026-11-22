@@ -1,0 +1,234 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-aadad-l5-009",
+  "lessonCode": "wadiya-idmajiya-aadad",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2022 — أفواج السنة الأولى بغرداية",
+    "estimatedMinutes": 12,
+    "tags": [
+      "كسر غير قابل للاختزال",
+      "القاسم المشترك الأكبر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-aadad_P1",
+      "modelledOn": "BEM 2022 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في بداية السنة الدراسية، وحرصًا على انطلاق الدروس في موعدها، سجّلت متوسطات بلدية بولاية غرداية في السنة الأولى متوسط 462 تلميذًا و 546 تلميذة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب نسبة عدد التلاميذ إلى عدد التلميذات $\\dfrac{462}{546}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "11/13",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "231/273",
+          "id": "MISC-IKHTIZAL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب القاسم المشترك الأكبر للعددين 462 و 546 بخوارزمية إقليدس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على هذا القاسم المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 42: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "احسب القاسم المشترك الأكبر للعددين بخوارزمية إقليدس، ثم اقسم عليه البسط والمقام.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{462}{546} = \\dfrac{462 \\div 42}{546 \\div 42}$",
+          "حيث $546 = 462 \\times 1 + 84$ ، $462 = 84 \\times 5 + 42$ ، $84 = 42 \\times 2 + 0$ : $PGCD(546 ; 462) = 42$"
+        ],
+        "result": "\\dfrac{462}{546} = \\dfrac{11}{13}"
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "يريد المسؤولون توزيع جميع هؤلاء التلاميذ على أكبر عدد ممكن من الأفواج التربوية المتماثلة (كل فوج فيه نفس عدد التلاميذ ونفس عدد التلميذات).",
+      "statement": "ما هو أكبر عدد من الأفواج التي يمكن تكوينها؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "42",
+      "misconceptionSignatures": [
+        {
+          "value": "21",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الأفواج يقسم 462 و 546 معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "وهو أكبر ما يمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد الأفواج هو PGCD(546 ; 462) = 42.",
+        "incorrect": "عدد الأفواج قاسم مشترك للعددين، وهو أكبرها: استعمل حسابك في السؤال 01."
+      },
+      "solution": {
+        "lines": [
+          "عدد الأفواج يقسم 462 و 546 وهو أكبر ما يمكن، فهو $PGCD(546 ; 462)$ (حُسب في السؤال 01)."
+        ],
+        "result": "42"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما هو عدد التلاميذ في كل فوج؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "11",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وُزّع التلاميذ بالتساوي على الأفواج."
+        }
+      ],
+      "feedback": {
+        "correct": "$462 \\div 42 = 11$",
+        "incorrect": "اقسم عدد التلاميذ على عدد الأفواج."
+      },
+      "solution": {
+        "lines": [
+          "$462 \\div 42 = 11$"
+        ],
+        "result": "11"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "ما هو عدد التلميذات في كل فوج؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "13",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وُزّعت التلميذات بالتساوي على الأفواج."
+        }
+      ],
+      "feedback": {
+        "correct": "$546 \\div 42 = 13$",
+        "incorrect": "اقسم عدد التلميذات على عدد الأفواج."
+      },
+      "solution": {
+        "lines": [
+          "$546 \\div 42 = 13$"
+        ],
+        "result": "13"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "☜ يجلس كل تلميذين على طاولة واحدة، وثمن الطاولة 4500DA. ما هو المبلغ اللازم لتجهيز كل الأفواج بالطاولات؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (بالدينار)",
+      "expectedAnswer": "2268000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب عدد تلاميذ الفوج الواحد، ثم عدد طاولاته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب في عدد الأفواج ثم في ثمن الطاولة."
+        }
+      ],
+      "feedback": {
+        "correct": "12 طاولة لكل فوج، أي 504 طاولة: $504 \\times 4500 = 2268000$",
+        "incorrect": "احسب عدد الطاولات في الفوج الواحد، ثم في كل الأفواج، ثم اضرب في ثمن الطاولة."
+      },
+      "solution": {
+        "lines": [
+          "في كل فوج: $11 + 13 = 24$ تلميذًا، أي $24 \\div 2 = 12$ طاولة.",
+          "عدد الطاولات: $42 \\times 12 = 504$",
+          "المبلغ: $504 \\times 4500 = 2268000$DA"
+        ],
+        "result": "2268000\\,DA"
+      },
+      "timeSeconds": 240
+    }
+  ]
+}

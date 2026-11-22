@@ -1,0 +1,119 @@
+{
+  "id": "ex-4am-jidhr-tarbii-l2-002",
+  "lessonCode": "jidhr-tarbii",
+  "level": 2,
+  "metadata": {
+    "title": "جذر كسر",
+    "estimatedMinutes": 4,
+    "tags": [
+      "تعريف الجذر التربيعي",
+      "(√a)² = a"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-1",
+      "page": 22,
+      "section": "معارف",
+      "number": 1,
+      "adaptedFrom": "ex-4am-jidhr-tarbii-l2-002"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد $A$ حيث: $A = \\sqrt{\\dfrac{25}{9}}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب $A$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "5/3",
+      "misconceptionSignatures": [
+        {
+          "value": "25/18",
+          "id": "MISC-JIDHR-NISF"
+        },
+        {
+          "value": "25/9",
+          "id": "MISC-TARBI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن الكسر الموجب الذي مربعه $\\dfrac{25}{9}$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما الجذر التربيعي للبسط؟ وللمقام؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\left(\\dfrac{5}{3}\\right)^2 = \\dfrac{25}{9}$ و $\\dfrac{5}{3}$ موجب: $A = \\dfrac{5}{3}$.",
+        "incorrect": "ابحث عن العدد الموجب الذي مربعه $\\dfrac{25}{9}$، وتحقّق بالتربيع."
+      },
+      "solution": {
+        "lines": [
+          "$\\left(\\dfrac{5}{3}\\right)^2 = \\dfrac{25}{9}$ و $\\dfrac{5}{3}$ موجب"
+        ],
+        "result": "A = \\dfrac{5}{3}"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $A^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "25/9",
+      "misconceptionSignatures": [
+        {
+          "value": "5/3",
+          "id": "MISC-TARBI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$A = \\sqrt{\\dfrac{25}{9}}$ و $(\\sqrt{a})^2 = a$."
+        }
+      ],
+      "feedback": {
+        "correct": "$A^2 = \\left(\\sqrt{\\dfrac{25}{9}}\\right)^2 = \\dfrac{25}{9}$.",
+        "incorrect": "مربع الجذر التربيعي لعدد موجب هو العدد نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$A^2 = \\left(\\sqrt{\\dfrac{25}{9}}\\right)^2$"
+        ],
+        "result": "A^2 = \\dfrac{25}{9}"
+      },
+      "timeSeconds": 45
+    }
+  ]
+}

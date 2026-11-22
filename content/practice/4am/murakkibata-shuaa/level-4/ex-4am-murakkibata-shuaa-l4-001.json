@@ -1,0 +1,131 @@
+{
+  "id": "ex-4am-murakkibata-shuaa-l4-001",
+  "lessonCode": "murakkibata-shuaa",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 3 — النظير والنقطة F",
+    "estimatedMinutes": 3,
+    "tags": [
+      "نظير",
+      "تمثيل شعاع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-3",
+      "page": 146,
+      "section": "إحداثيتا نقطة - مركبتا شعاع",
+      "number": 3
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 146): المستوي مُزوّد بمعلم متعامد ومتجانس مبدؤه النقطة O. A و B نقطتان حيث $A(1\\,;\\,3)$ و $B(-2\\,;\\,-3)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "C نظير A بالنسبة لـ O. ما مركبتا الشعاع $\\overrightarrow{OC}$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_murakkibata-shuaa_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "مركبتا الشعاع (x ; y): الأفقية ثم العمودية — عددان مثل −3 أو 2,5",
+      "expectedAnswer": {
+        "x": "-1",
+        "y": "-3"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مبدأ هذا الشعاع هو مبدأ المعلم O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من O، الإزاحة الأفقية هي الفاصلة والإزاحة العمودية هي الترتيب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مركبتا $\\overrightarrow{OM}$ هما إحداثيتا M بنفس الترتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "$C(-1\\,;\\,-3)$ ، إذن $\\overrightarrow{OC}\\begin{pmatrix} -1 \\\\ -3 \\end{pmatrix}$ .",
+        "incorrect": "نظير $(x\\,;\\,y)$ بالنسبة لـ O هو $(-x\\,;\\,-y)$ ."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "1",
+            "y": "3"
+          },
+          "id": "MISC-MAALAM-ISHARA"
+        },
+        {
+          "value": {
+            "x": "-3",
+            "y": "-1"
+          },
+          "id": "MISC-MAALAM-TABDIL-X-Y"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "statement": "F نقطة حيث $\\overrightarrow{FB}\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}$ . ما إحداثيتا F؟",
+      "learningPoints": [
+        {
+          "code": "4am_murakkibata-shuaa_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "إحداثيتا النقطة (x ; y) — عددان مثل −3 أو 2,5",
+      "expectedAnswer": {
+        "x": "-3",
+        "y": "-3"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الشعاع ينطلق من النقطة المجهولة وينتهي عند النقطة المعلومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ارجع من النهاية عكس الحركة: اطرح كل مركبة من الإحداثية الموافقة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: من النقطة التي وجدتها، هل تعيدك الحركة إلى النقطة المعلومة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "من F إلى B وحدة نحو اليمين: F على يسار B بوحدة، $F(-3\\,;\\,-3)$ .",
+        "incorrect": "الشعاع FB ينتهي عند B."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-1",
+            "y": "-3"
+          },
+          "id": "MISC-MAALAM-ISHARA"
+        },
+        {
+          "value": {
+            "x": "1",
+            "y": "0"
+          },
+          "id": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        }
+      ]
+    }
+  ]
+}

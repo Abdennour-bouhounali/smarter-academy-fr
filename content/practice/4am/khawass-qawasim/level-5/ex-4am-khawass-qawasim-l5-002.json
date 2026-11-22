@@ -1,0 +1,209 @@
+{
+  "id": "ex-4am-khawass-qawasim-l5-002",
+  "lessonCode": "khawass-qawasim",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2020 — شتلات الفلفل بتيبازة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "خاصية 2",
+      "قسمة إقليدية",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_khawass-qawasim_P3",
+      "modelledOn": "BEM 2020 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2020",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "اشترى فلاح يحبّ أرضه ويعتني بها من مشتلة بتيبازة 1288 شتلة فلفل، مرتّبة في صفائح بلاستيكية تضم كل منها 28 شتلة. يغرس الفلاح في كل بيت بلاستيكي 168 شتلة بالضبط، ويملأ أكبر عدد ممكن من البيوت.\n• تسترجع المشتلة كل صفيحة كاملة لم تُغرس بـ 1250DA.\n• ثمن كيس السماد الواحد 650DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "أجرِ القسمة الإقليدية للعدد 1288 على 168، ثم أجب:",
+      "statement": "ما هو عدد البيوت البلاستيكية التي يغرسها الفلاح كاملة؟",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد البيوت)",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 1288 على 168."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد البيوت الكاملة هو حاصل هذه القسمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$1288 = 168 \\times 7 + 112$: يغرس الفلاح 7 بيوت كاملة.",
+        "incorrect": "عدد البيوت الكاملة هو حاصل القسمة الإقليدية للعدد 1288 على 168، لا الباقي."
+      },
+      "solution": {
+        "lines": [
+          "$168 \\times 7 = 1176$ و $168 \\times 8 = 1344 > 1288$",
+          "$1288 = 168 \\times 7 + 112$ مع $112 < 168$",
+          "إذن يغرس الفلاح 7 بيوت كاملة."
+        ],
+        "result": "1288 = 168 \\times 7 + 112"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كم شتلة تبقى دون غرس؟",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد الشتلات)",
+      "expectedAnswer": "112",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الشتلات المتبقية هي باقي القسمة الإقليدية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق أن هذا الباقي أصغر من 168."
+        }
+      ],
+      "feedback": {
+        "correct": "يبقى 112 شتلة دون غرس، وهو باقي القسمة الإقليدية للعدد 1288 على 168.",
+        "incorrect": "الشتلات المتبقية هي باقي القسمة الإقليدية للعدد 1288 على 168."
+      },
+      "solution": {
+        "lines": [
+          "$1288 - 168 \\times 7 = 112$",
+          "إذن تبقى 112 شتلة دون غرس."
+        ],
+        "result": "r = 112"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "علمًا أن 28 يقسم كلا من 1288 و 168، بيّن دون إجراء أي قسمة على 28 أن الشتلات المتبقية تشكّل صفائح كاملة، وأعط عدد هذه الصفائح.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد الصفائح)",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الباقي على الشكل $r = 1288 - 168 \\times 7$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "28 يقسم 168 فهو يقسم $168 \\times 7$؛ وهو يقسم 1288، فيقسم الفرق (الخاصية 2)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم الباقي على 28 للحصول على $k$."
+        }
+      ],
+      "feedback": {
+        "correct": "$112 = 28 \\times 4$: 28 يقسم باقي القسمة الإقليدية للعدد 1288 على 168.",
+        "incorrect": "القاسم المشترك لعددين يقسم باقي القسمة الإقليدية لأحدهما على الآخر: اقسم الباقي على 28."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $1288 = 168 \\times 7 + 112$ ومنه $112 = 1288 - 168 \\times 7$.",
+          "28 يقسم 168 فهو يقسم مضاعفه $168 \\times 7$ ، و 28 يقسم 1288.",
+          "إذن 28 يقسم الفرق $1288 - 168 \\times 7$ أي يقسم 112 (الخاصية 2).",
+          "$112 = 28 \\times 4$"
+        ],
+        "result": "112 = 28 \\times 4"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "☜ يُرجع الفلاح الصفائح المتبقية إلى المشتلة، ويشتري بالمبلغ الذي يسترجعه أكياسًا من السماد. أعط أكبر عدد من الأكياس يمكنه شراؤه.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد الأكياس)",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المبلغ الذي يسترجعه الفلاح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان $x$ عدد الأكياس فإن $650x$ لا يتجاوز هذا المبلغ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد الأكياس عدد طبيعي."
+        }
+      ],
+      "feedback": {
+        "correct": "يسترجع $4 \\times 1250 = 5000$DA، و $650 \\times 7 = 4550 \\leq 5000 < 5200 = 650 \\times 8$: يشتري 7 أكياس.",
+        "incorrect": "احسب المبلغ المسترجَع، ثم ابحث عن أكبر عدد طبيعي من الأكياس لا يتجاوز ثمنها هذا المبلغ."
+      },
+      "solution": {
+        "lines": [
+          "المبلغ المسترجَع: $4 \\times 1250 = 5000$",
+          "ليكن $x$ عدد الأكياس: $650x \\leq 5000$",
+          "$650 \\times 7 = 4550 \\leq 5000$ و $650 \\times 8 = 5200 > 5000$",
+          "إذن أكبر عدد من الأكياس هو 7."
+        ],
+        "result": "x = 7"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

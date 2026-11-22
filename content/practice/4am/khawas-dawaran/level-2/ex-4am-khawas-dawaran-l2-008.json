@@ -1,0 +1,67 @@
+{
+  "id": "ex-4am-khawas-dawaran-l2-008",
+  "lessonCode": "khawas-dawaran",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — زاوية منفرجة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "المستقيم وصورته"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_khawas-dawaran_P2",
+      "modelledOn": "method-properties"
+    }
+  },
+  "generator": {
+    "tool": "u13-khawas-dawaran/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "(d′) صورة المستقيم (d) بالدوران الذي مركزه O وزاويته $130^\\circ$ في الاتجاه المباشر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قيس الزاوية الحادة بين (d) و (d′) بالدرجات؟",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "50",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-TAWAZI",
+          "value": "0"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المستقيم وصورته يصنعان زاوية الدوران."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "زاوية بين مستقيمين نأخذها حادة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الزاوية المكمّلة لـ $130^\\circ$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$180^\\circ - 130^\\circ = 50^\\circ$ .",
+        "incorrect": "المستقيمان يتقاطعان بزاويتين متكاملتين: الحادة منهما."
+      }
+    }
+  ]
+}

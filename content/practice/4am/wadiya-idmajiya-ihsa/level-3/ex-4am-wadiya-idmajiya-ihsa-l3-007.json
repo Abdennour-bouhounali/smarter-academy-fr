@@ -1,0 +1,236 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ihsa-l3-007",
+  "lessonCode": "wadiya-idmajiya-ihsa",
+  "level": 3,
+  "metadata": {
+    "title": "أجور ورشة: المتوسط يتأثر والوسيط يبقى",
+    "estimatedMinutes": 9,
+    "tags": [
+      "المتوسط الحسابي",
+      "الوسيط",
+      "قيمة متطرفة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ihsa_P2"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أجور خمسة عمّال في ورشة تحرص على إعطاء العامل أجره كاملًا في وقته (بالدينار) هي:",
+    "formulas": [
+      "30000 \\; ; \\; 32000 \\; ; \\; 35000 \\; ; \\; 38000 \\; ; \\; 40000"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب ما يلي:",
+      "statement": "متوسط الأجور.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "35000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع الأجور الخمسة ثم اقسم على 5 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{175000}{5} = 35000$ DA .",
+        "incorrect": "المتوسط = مجموع الأجور ÷ 5 ."
+      },
+      "solution": {
+        "lines": [
+          "$30000 + 32000 + 35000 + 38000 + 40000 = 175000$",
+          "$\\dfrac{175000}{5} = 35000$"
+        ],
+        "result": "35000\\,\\mathrm{DA}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "وسيط الأجور.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الوسيط بـ DA",
+      "expectedAnswer": "35000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الأجور مرتبة: الوسيط الأجر ذو الرتبة 3 ."
+        }
+      ],
+      "feedback": {
+        "correct": "الأجر الثالث: 35000 DA .",
+        "incorrect": "السلسلة مرتبة وعدد قيمها 5 : خذ القيمة ذات الرتبة 3 ."
+      },
+      "solution": {
+        "lines": [
+          "الأجور مرتبة تصاعديا، وعددها 5 .",
+          "القيمة ذات الرتبة 3 هي 35000 ."
+        ],
+        "result": "35000\\,\\mathrm{DA}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "عُوّض أكبر أجر بالأجر 90000DA (أجر صاحب الورشة). احسب من جديد:",
+      "statement": "متوسط الأجور.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "45000",
+      "misconceptionSignatures": [
+        {
+          "value": "35000",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المجموع الجديد = المجموع القديم − 40000 + 90000 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{225000}{5} = 45000$ DA .",
+        "incorrect": "أعد حساب المجموع بعد التعويض ثم اقسم على 5 ."
+      },
+      "solution": {
+        "lines": [
+          "$30000 + 32000 + 35000 + 38000 + 90000 = 225000$",
+          "$\\dfrac{225000}{5} = 45000$"
+        ],
+        "result": "45000\\,\\mathrm{DA}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "وسيط الأجور.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الوسيط بـ DA",
+      "expectedAnswer": "35000",
+      "misconceptionSignatures": [
+        {
+          "value": "45000",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل تغيّر ترتيب الأجور أو الأجر الثالث؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الأجر الثالث لم يتغيّر: 35000 DA .",
+        "incorrect": "الوسيط هو القيمة ذات الرتبة 3 في السلسلة الجديدة المرتبة."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة الجديدة مرتبة: 30000 ، 32000 ، 35000 ، 38000 ، 90000 .",
+          "القيمة ذات الرتبة 3 هي 35000 ."
+        ],
+        "result": "35000\\,\\mathrm{DA}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "أيّ المؤشرين يعبّر أفضل عن أجر عامل في هذه الورشة بعد التعويض؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الوسيط، لأنه لم يتأثر بالأجر الكبير 90000DA",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "المتوسط، لأنه يأخذ كل الأجور في الحساب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المتوسط الجديد بأجور العمّال الأربعة."
+        }
+      ],
+      "feedback": {
+        "correct": "المتوسط 45000 DA أكبر من أجر كل عامل، أما الوسيط فبقي 35000 DA .",
+        "incorrect": "قيمة متطرفة واحدة تحرّك المتوسط ولا تحرّك الوسيط."
+      },
+      "solution": {
+        "lines": [
+          "المتوسط الجديد 45000 DA يفوق أجر كل عامل من العمّال الأربعة.",
+          "الوسيط بقي 35000 DA : هو الذي يعبّر عن أجر عامل نموذجي."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

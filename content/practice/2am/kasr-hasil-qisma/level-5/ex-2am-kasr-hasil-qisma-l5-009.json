@@ -1,0 +1,283 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l5-009",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 5,
+  "metadata": {
+    "title": "ثمن الكتاب وكتلة العلبة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "كسر",
+      "قيمة مضبوطة",
+      "قيم مقرّبة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-3",
+      "page": 24,
+      "section": "أنشطة",
+      "number": 3
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: اشترت جمعية $9$ كتب متماثلة بمبلغ $400$ دج.\nالجزء الثاني: تزن $16$ علبة متماثلة $5$ kg ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ثمن الكتاب الواحد بالدينار هو:",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{9}{400}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-RATIOFLIP"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{400}{9}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$400 \\times 9$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$400 - 9$",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثمن الكتاب الواحد هو المبلغ مقسومًا على عدد الكتب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{400}{9}$ : المبلغ على عدد الكتب.",
+        "incorrect": "الثمن الواحد = المبلغ ÷ العدد."
+      },
+      "solution": {
+        "lines": [
+          "ثمن الكتاب $= 400 \\div 9 = \\dfrac{400}{9}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}01$ بالنقصان لثمن الكتاب الواحد.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "44.44",
+      "misconceptionSignatures": [
+        {
+          "value": "44.45",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "44.444",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالنقصان لا تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة دون أن تزيد شيئًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب القيمة في المقسوم عليه: يجب ألاّ يتجاوز الجداء المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$44{,}44 < \\frac{400}{9} < 44{,}45$.",
+        "incorrect": "بالنقصان: نحتفظ بالأرقام حتى الرتبة المطلوبة ونُهمل ما بعدها دون تغيير الرقم الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$9 \\times 44{,}44 = 399{,}96$",
+          "$9 \\times 44{,}45 = 400{,}05$",
+          "$399{,}96 < 400 < 400{,}05$"
+        ],
+        "result": "44{,}44"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}01$ بالزيادة لثمن الكتاب الواحد.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "44.45",
+      "misconceptionSignatures": [
+        {
+          "value": "44.44",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "44.445",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالزيادة هي أصغر قيمة من هذه الرتبة تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من القيمة بالنقصان ثم أضف وحدة واحدة من الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$44{,}44 < \\frac{400}{9} < 44{,}45$.",
+        "incorrect": "بالزيادة: هي القيمة التي تلي القيمة بالنقصان مباشرة في الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$9 \\times 44{,}45 = 400{,}05$",
+          "$400{,}05 > 400$",
+          "القيمة بالزيادة هي $44{,}45$"
+        ],
+        "result": "44{,}45"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "هل ثمن الكتاب الواحد عدد عشري (له كتابة عشرية مضبوطة)؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-EXACTAPPROX"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أو قارن بدقّة قبل أن تجيب."
+        }
+      ],
+      "feedback": {
+        "correct": "لا: $400 \\div 9 = 44{,}44\\ldots$ لا تنتهي.",
+        "incorrect": "جرّب إنجاز القسمة $400 \\div 9$ : هل تنتهي؟"
+      },
+      "solution": {
+        "lines": [
+          "$400 \\div 9 = 44{,}44\\ldots$",
+          "القسمة لا تنتهي: ليس عددًا عشريًا"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "lead": "الجزء الثاني:",
+      "statement": "اكتب كتلة العلبة الواحدة (بالكيلوغرام) على شكل عدد عشري مضبوط.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "0.3125",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكسر هو حاصل قسمة بسطه على مقامه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وواصلها بعد الفاصلة حتى ينعدم الباقي."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{5}{16} = 5 \\div 16 = 0{,}3125$.",
+        "incorrect": "خط الكسر هو علامة القسمة: أنجز قسمة البسط على المقام وواصلها بعد الفاصلة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{16} = 5 \\div 16$",
+          "$16 \\times 0{,}3125 = 5$"
+        ],
+        "result": "0{,}3125"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

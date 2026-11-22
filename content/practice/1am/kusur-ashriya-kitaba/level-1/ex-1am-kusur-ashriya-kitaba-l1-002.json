@@ -1,0 +1,221 @@
+{
+  "id": "ex-1am-kusur-ashriya-kitaba-l1-002",
+  "lessonCode": "kusur-ashriya-kitaba",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — من الكتابة العشرية إلى الكسر العشري وبالعكس",
+    "estimatedMinutes": 5,
+    "tags": [
+      "كسر عشري",
+      "كتابة عشرية"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 2,
+      "file": "1am-s2-64",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أنجز ما يلي."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أتمم: $4{,}8 = \\dfrac{\\ldots}{10}$",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "48",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم رقمًا بعد الفاصلة في هذا العدد العشري؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن ذلك بعدد الأصفار في المقام المعطى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "البسط هو العدد العشري مضروبًا في المقام."
+        }
+      ],
+      "feedback": {
+        "correct": "$4{,}8 \\times 10 = 48$ ، إذن $4{,}8 = \\dfrac{48}{10}$.",
+        "incorrect": "في الكسر العشري عدد أصفار المقام يرتبط بعدد الأرقام بعد الفاصلة: نضرب العدد العشري في المقام فنحصل على البسط، وهو عدد طبيعي."
+      },
+      "solution": {
+        "lines": [
+          "$4{,}8 \\times 10 = 48$",
+          "$4{,}8 = \\dfrac{48}{10}$ : رقم واحد بعد الفاصلة، وفي المقام صفر واحد."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب بالكتابة العشرية (بالفاصلة) الكسر العشري $\\dfrac{637}{100}$",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة)",
+      "expectedAnswer": "6,37",
+      "misconceptionSignatures": [
+        {
+          "value": "63,7",
+          "id": "MISC-KUSUR-DEN-DIGITS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم صفرًا في المقام؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هذا العدد هو عدد الأرقام التي تأتي بعد الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عُدّ من يمين البسط بقدر ذلك العدد، وإن نقصت الأرقام فاكتب أصفارًا قبلها."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{637}{100} = 6{,}37$ : صفران في المقام، فنضع الفاصلة بعد رقمين من اليمين.",
+        "incorrect": "عدد الأرقام بعد الفاصلة يساوي عدد أصفار المقام، وإذا كان البسط أقصر من ذلك نكتب أصفارًا بين الفاصلة والبسط."
+      },
+      "solution": {
+        "lines": [
+          "المقام 100 فيه صفران، إذن رقمان بعد الفاصلة.",
+          "$\\dfrac{637}{100} = 6{,}37$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أتمم: $0{,}36 \\times \\ldots = 36$",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "قوة للعشرة (بالكتابة العشرية عند اللزوم)",
+      "expectedAnswer": "100",
+      "misconceptionSignatures": [
+        {
+          "value": "0,01",
+          "id": "MISC-KUSUR-COMMA-LEFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن موضع الفاصلة في العددين المعطيين: كم مرتبة انتقلت، وفي أيّ اتجاه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا صار العدد أكبر فالانتقال نحو اليمين، وإذا صار أصغر فنحو اليسار."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد المراتب المنقولة يعطي عدد أصفار العدد المطلوب أو عدد الأرقام بعد الفاصلة فيه."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}36 \\times 100 = 36$ : انتقلت الفاصلة مرتبتين نحو اليمين.",
+        "incorrect": "نقارن موضع الفاصلة في العددين: عدد المراتب المنقولة يحدّد العدد المطلوب، واتجاه النقل يحدّد هل هو أكبر من 1 أم أصغر منه."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة انتقلت مرتبتين نحو اليمين من $0{,}36$ إلى $36$.",
+          "إذن $0{,}36 \\times 100 = 36$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "أتمم: $25 \\div \\ldots = 0{,}025$",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "قوة للعشرة (بالكتابة العشرية عند اللزوم)",
+      "expectedAnswer": "1000",
+      "misconceptionSignatures": [
+        {
+          "value": "0,001",
+          "id": "MISC-KUSUR-COMMA-LEFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن موضع الفاصلة في العددين المعطيين: كم مرتبة انتقلت، وفي أيّ اتجاه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا صار العدد أكبر فالانتقال نحو اليمين، وإذا صار أصغر فنحو اليسار."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد المراتب المنقولة يعطي عدد أصفار العدد المطلوب أو عدد الأرقام بعد الفاصلة فيه."
+        }
+      ],
+      "feedback": {
+        "correct": "$25 \\div 1000 = 0{,}025$ : انتقلت الفاصلة ثلاث مراتب نحو اليسار.",
+        "incorrect": "نقارن موضع الفاصلة في العددين: عدد المراتب المنقولة يحدّد العدد المطلوب، واتجاه النقل يحدّد هل هو أكبر من 1 أم أصغر منه."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة انتقلت ثلاث مراتب نحو اليسار من $25$ إلى $0{,}025$.",
+          "إذن $25 \\div 1000 = 0{,}025$"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

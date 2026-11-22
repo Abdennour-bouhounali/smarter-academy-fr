@@ -1,0 +1,60 @@
+{
+  "id": "ex-4am-majmu-shuaayn-l4-001",
+  "lessonCode": "majmu-shuaayn",
+  "level": 4,
+  "metadata": {
+    "title": "أؤكّد تعلّماتي — طول مجموع",
+    "estimatedMinutes": 3,
+    "tags": [
+      "قاعدة متوازي الأضلاع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 136,
+      "section": "أؤكّد تعلّماتي",
+      "number": 5
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (أؤكّد تعلّماتي، السؤال 5): ABC مثلث قائم في A حيث $AB = 4$ و $AC = 3$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "طول الشعاع $\\overrightarrow{AB} + \\overrightarrow{AC}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للشعاعين نفس المبدأ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "شعاعان لهما نفس المبدأ يُجمعان بقاعدة متوازي الأضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع هو القطر الصادر من المبدأ المشترك، لا القطر الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AB} + \\overrightarrow{AC} = \\overrightarrow{AD}$ قطر المستطيل ABDC: $AD = BC = \\sqrt{4^2 + 3^2} = 5$ .",
+        "incorrect": "قاعدة متوازي الأضلاع: مجموع شعاعين لهما نفس المبدأ هو القطر الصادر من ذلك المبدأ."
+      }
+    }
+  ]
+}

@@ -1,0 +1,253 @@
+{
+  "id": "ex-3am-muqaranat-natiqayn-l3-009",
+  "lessonCode": "muqaranat-natiqayn",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — اختيار الإجابة الصحيحة",
+    "estimatedMinutes": 11,
+    "tags": [
+      "عبارتان",
+      "اختيار من متعدد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اختر الإجابة الصحيحة في كلّ سؤال."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "من أجل $A = 6x + 1$ و $B = 5x + 4$ ، تكون $A > B$ :",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما هو الفرق المبسَّط؟ ومتى يكون موجبًا ومتى يكون سالبًا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن القيمة التي ينعدم عندها الفرق، ثم انظر إلى جهتيها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر قيمة من كل جهة للتأكّد من الإشارة."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "عندما $x < 3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-ORDER-SUB"
+        },
+        {
+          "id": "B",
+          "content": "دائمًا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-COEF"
+        },
+        {
+          "id": "C",
+          "content": "عندما $x > 3$",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "$A - B = x - 3$ .",
+        "incorrect": "ادرس إشارة الفرق المبسَّط على جهتي القيمة التي ينعدم عندها."
+      },
+      "solution": {
+        "lines": [
+          "$A - B = 6x + 1 - (5x + 4) = x - 3$ موجب عندما $x > 3$ ."
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "من أجل $A = 2x + 9$ و $B = 3x + 9$ ، تكون $A > B$ :",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما هو الفرق المبسَّط؟ ومتى يكون موجبًا ومتى يكون سالبًا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن القيمة التي ينعدم عندها الفرق، ثم انظر إلى جهتيها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر قيمة من كل جهة للتأكّد من الإشارة."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "عندما $x < 0$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "عندما $x > 0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-ORDER-SUB"
+        },
+        {
+          "id": "C",
+          "content": "دائمًا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-COEF"
+        }
+      ],
+      "feedback": {
+        "correct": "$A - B = -x$ .",
+        "incorrect": "ادرس إشارة الفرق المبسَّط على جهتي القيمة التي ينعدم عندها."
+      },
+      "solution": {
+        "lines": [
+          "$A - B = 2x + 9 - (3x + 9) = -x$ موجب عندما $x < 0$ ."
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "من أجل $A = x^2 + 1$ و $B = x^2 - 2$ :",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما هو الفرق المبسَّط؟ ومتى يكون موجبًا ومتى يكون سالبًا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن القيمة التي ينعدم عندها الفرق، ثم انظر إلى جهتيها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر قيمة من كل جهة للتأكّد من الإشارة."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "إشارة $A - B$ تتغيّر حسب قيمة $x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-NEED-VALUES"
+        },
+        {
+          "id": "B",
+          "content": "$A > B$ مهما كانت قيمة $x$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$A < B$ مهما كانت قيمة $x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-ORDER-SUB"
+        }
+      ],
+      "feedback": {
+        "correct": "$A - B = 3$ .",
+        "incorrect": "ادرس إشارة الفرق المبسَّط على جهتي القيمة التي ينعدم عندها."
+      },
+      "solution": {
+        "lines": [
+          "$A - B = x^2 + 1 - (x^2 - 2) = x^2 + 1 - x^2 + 2 = 3 > 0$ ."
+        ]
+      }
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "علّل اختيارك في السؤال الأول (ا).",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي تريد تبريره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الفرق أوّلًا ثم إشارته ثم الخلاصة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة واحدة تربط إشارة الفرق بالمقارنة."
+        }
+      ],
+      "timeSeconds": 180,
+      "feedback": {
+        "correct": "نقرأ إشارة الفرق $x - 3$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثمّ قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "$A - B = x - 3$ .",
+          "$x - 3 > 0$ عندما $x > 3$ ، إذن $A > B$ عندما $x > 3$ ."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,908 @@
+/*
+ * An integration mission over the 3D depot (missions/MissionRunner.jsx): one screen at 1366×768, nothing scrolls.
+ * NOTHING IS READ BY LEANING TOWARD THE SCREEN (owner, 2026-11-20): no text of a mission is under 18 px (1.125rem).
+ */
+.ms-root {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 0.6rem;
+  padding: 4.3rem 1rem 0.8rem;
+  color: #eef5ff;
+  font-family: Cairo, system-ui, sans-serif;
+  font-size: 1.125rem;
+  overflow: hidden;
+  pointer-events: none;
+}
+.ms-root > * {
+  pointer-events: auto;
+}
+/* the mission card and the message before the clock: over everything, in the middle */
+.ms-root--card {
+  display: grid;
+  place-items: center;
+  grid-template-rows: none;
+  background: rgba(5, 14, 36, 0.72);
+  pointer-events: auto;
+}
+.ms-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  width: min(92%, 38rem);
+  padding: 1.8rem 2.2rem;
+  border-radius: 1.4rem;
+  border: 1px solid rgba(165, 243, 252, 0.4);
+  background: #0b1b3f;
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+.ms-root .ms-card h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+}
+.ms-root .ms-card p {
+  margin: 0;
+  color: #eef5ff;
+  font-size: 1.3rem;
+  line-height: 1.8;
+}
+.ms-root .ms-card .ms-card__session {
+  color: #a5f3fc;
+  font-weight: 800;
+}
+.ms-root .ms-card .ms-card__need {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.3rem 1.2rem;
+  border-radius: 999px;
+  background: rgba(255, 244, 214, 0.96);
+  color: #3b2a06;
+  font-weight: 800;
+}
+.ms-card .ms-btn {
+  font-size: 1.3rem;
+  padding: 0.6rem 1.6rem;
+}
+.ms-root .ms-card--warn p,
+.ms-root .ms-card--warn h2,
+.ms-root .ms-card--warn {
+  color: #fde9b0;
+}
+.ms-card__count {
+  display: grid;
+  place-items: center;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: #fbbf24;
+  color: #072042;
+  font-size: 2.6rem;
+}
+.ms-head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.35rem 0.5rem 0.35rem 0.9rem;
+  border-radius: 1.1rem;
+  background: rgba(7, 22, 54, 0.94);
+  border: 1px solid rgba(165, 243, 252, 0.35);
+}
+.ms-root .ms-head h2 {
+  flex: 1 1 auto;
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 800;
+  line-height: 1.5;
+  color: #fff;
+  text-align: center;
+}
+.ms-count,
+.ms-clock,
+.ms-coins {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex: none;
+  padding: 0.15rem 0.8rem;
+  border-radius: 999px;
+  font-size: 1.125rem;
+  font-weight: 800;
+}
+.ms-count {
+  background: #a5f3fc;
+  color: #072042;
+}
+.ms-clock {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+.ms-clock.is-over {
+  background: #fecaca;
+  color: #7a1212;
+}
+.ms-coins {
+  background: rgba(255, 244, 214, 0.96);
+  color: #3b2a06;
+}
+.ms-x {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  cursor: pointer;
+}
+.ms-body {
+  display: grid;
+  grid-template-columns: 22rem minmax(0, 1fr) 19rem;
+  gap: 0.8rem;
+  min-height: 0;
+  pointer-events: none;
+}
+.ms-body > * {
+  pointer-events: auto;
+  min-height: 0;
+}
+.ms-paper {
+  align-self: start;
+  padding: 0.7rem 1rem 0.8rem;
+  border-radius: 0.5rem;
+  background: #fdfbf3;
+  color: #1c2437;
+  box-shadow: 0 10px 26px rgba(3, 10, 30, 0.35);
+}
+.ms-paper h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1.125rem;
+  text-align: center;
+  color: #1e4fa8;
+}
+.ms-root .ms-paper p {
+  margin: 0;
+  color: #1c2437;
+  font-size: 1.2rem;
+  line-height: 1.85;
+}
+.ms-num {
+  padding: 0 0.35rem;
+  border: 0;
+  border-radius: 0.4rem;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-weight: 800;
+}
+.ms-num.is-ask {
+  background: #fde68a;
+  box-shadow: 0 0 0 2px #f59e0b;
+  cursor: pointer;
+}
+.ms-num.is-goal {
+  background: #bfdbfe;
+  box-shadow: 0 0 0 2px #2563eb;
+  cursor: pointer;
+  text-align: start;
+}
+.ms-num.is-known {
+  background: #bbf7d0;
+}
+.ms-phrase {
+  padding: 0 0.15rem;
+  border-radius: 0.3rem;
+  background: none;
+  color: inherit;
+  transition: background 0.3s;
+}
+.ms-phrase.is-on {
+  background: #bbf7d0;
+  font-weight: 800;
+}
+.ms-phrase.is-red {
+  background: #fecaca;
+  font-weight: 800;
+}
+.ms-phrase.is-goal {
+  background: #bfdbfe;
+  font-weight: 800;
+}
+/* what to touch now shows itself; after eight idle seconds it insists */
+@keyframes ms-pulse {
+  50% {
+    box-shadow: 0 0 0 7px rgba(251, 191, 36, 0.55);
+  }
+}
+.ms-root.is-idle .ms-target:not(:disabled) {
+  animation: ms-pulse 1s ease-in-out infinite;
+}
+.ms-stage {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+.ms-stage > * {
+  pointer-events: auto;
+}
+.ms-root .ms-fact {
+  margin: 0;
+  padding: 0.45rem 1rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(251, 191, 36, 0.6);
+  background: rgba(7, 22, 54, 0.94);
+  color: #fde9b0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+}
+.ms-root .ms-fact--calm {
+  border-color: rgba(165, 243, 252, 0.45);
+  color: #cfe0ff;
+  font-size: 1.125rem;
+}
+.ms-act {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  min-height: 3.6rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1.1rem;
+  background: rgba(7, 22, 54, 0.94);
+  border: 1px solid rgba(165, 243, 252, 0.35);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.ms-act > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.ms-sheet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+.ms-root .ms-sheet p {
+  margin: 0;
+  padding: 0.35rem 0.9rem;
+  border-radius: 0.6rem;
+  background: #fdfbf3;
+  color: #1c2437;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: center;
+}
+.ms-sheet p svg {
+  display: inline;
+  margin-inline-end: 0.4rem;
+  vertical-align: -0.2rem;
+  color: #1e4fa8;
+}
+.ms-sentence {
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 0.4rem;
+}
+.ms-shape {
+  font-size: 1.35rem;
+}
+.ms-hint {
+  color: #cfe0ff;
+}
+.ms-in {
+  height: 2.5rem;
+  border-radius: 0.6rem;
+  border: 2px solid #a5f3fc;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font: inherit;
+  font-size: 1.3rem;
+  font-weight: 800;
+  text-align: center;
+}
+.ms-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.4rem 1.1rem;
+  border: 0;
+  border-radius: 0.9rem;
+  background: #a5f3fc;
+  color: #072042;
+  font: inherit;
+  font-size: 1.2rem;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.ms-btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.ms-btn--go {
+  background: #fbbf24;
+}
+.ms-btn--ghost {
+  background: transparent;
+  border: 1.5px solid #a5f3fc;
+  color: #a5f3fc;
+}
+/* « ورقتي »: a ruled sheet, laid out as an exam copy */
+.ms-book {
+  display: flex;
+  flex-direction: column;
+  padding: 0.6rem 0.9rem 0.8rem;
+  border-radius: 0.5rem;
+  background: repeating-linear-gradient(#fdfbf3, #fdfbf3 2.05rem, #dbe7ff 2.05rem, #dbe7ff calc(2.05rem + 1px));
+  color: #1c2437;
+  box-shadow: 0 10px 26px rgba(3, 10, 30, 0.35);
+  overflow: hidden;
+}
+.ms-book h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #1e4fa8;
+}
+.ms-book h4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.35rem 0 0;
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: #b4231f;
+  text-decoration: underline;
+}
+.ms-book ul,
+.ms-book ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.ms-root .ms-book li {
+  color: #1c2437;
+  font-size: 1.125rem;
+  line-height: 2.05rem;
+  white-space: nowrap;
+}
+.ms-root .ms-book ul li {
+  white-space: normal;
+}
+.ms-book ul li::before {
+  content: '— ';
+}
+.ms-root .ms-book li.is-ok {
+  color: #166534;
+}
+.ms-root .ms-book li.is-left {
+  color: #b45309;
+}
+.ms-root .ms-book li.is-key {
+  font-weight: 800;
+  color: #1e4fa8;
+}
+.ms-fold {
+  border: 0;
+  background: none;
+  color: #1e4fa8;
+  font: inherit;
+  font-size: 1.125rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+/* « أربط »: the question, the lines of his copy, and the lines he draws between them */
+.ms-connect {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: auto;
+  padding: 0.8rem 1rem;
+  border-radius: 1rem;
+  background: rgba(7, 22, 54, 0.94);
+  border: 1px solid rgba(165, 243, 252, 0.35);
+}
+.ms-root .ms-connect__goal {
+  align-self: center;
+  margin: 0;
+  padding: 0.35rem 1.1rem;
+  border-radius: 0.7rem;
+  background: #bfdbfe;
+  color: #10244a;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+.ms-connect svg {
+  width: 100%;
+  height: 5.5rem;
+}
+.ms-connect line {
+  stroke: #fbbf24;
+  stroke-width: 0.6;
+  vector-effect: non-scaling-stroke;
+  stroke-width: 3px;
+}
+.ms-connect__items {
+  display: flex;
+  gap: 0.4rem;
+}
+.ms-chip {
+  flex: 1 1 0;
+  padding: 0.4rem 0.3rem;
+  border-radius: 0.6rem;
+  border: 2px solid #a5f3fc;
+  background: #fdfbf3;
+  color: #1c2437;
+  font: inherit;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.45;
+  cursor: pointer;
+}
+.ms-chip.is-on {
+  border-color: #fbbf24;
+  background: #fde68a;
+}
+.ms-model {
+  align-self: center;
+  width: min(100%, 36rem);
+  margin-bottom: auto;
+  padding: 0.7rem 1.2rem;
+  border-radius: 0.5rem;
+  background: #fdfbf3;
+  color: #1c2437;
+  box-shadow: 0 10px 26px rgba(3, 10, 30, 0.35);
+}
+.ms-model h3 {
+  margin: 0 0 0.2rem;
+  font-size: 1.125rem;
+  text-align: center;
+  color: #1e4fa8;
+}
+.ms-root .ms-model p {
+  margin: 0.1rem 0;
+  color: #1c2437;
+  font-size: 1.125rem;
+  line-height: 1.65;
+}
+.ms-marker {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  width: 100%;
+}
+.ms-marker label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.125rem;
+  cursor: pointer;
+}
+.ms-marker input {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+/* THE FIRST STEP IS TO READ: the paper stands out, everything else waits, and a call moves toward the text */
+.ms-root.is-reading .ms-paper {
+  box-shadow:
+    0 0 0 4px #fbbf24,
+    0 10px 30px rgba(3, 10, 30, 0.45);
+}
+.ms-root.is-reading .ms-book {
+  opacity: 0.35;
+}
+/* the student's pen */
+.ms-tool {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex: none;
+  padding: 0.15rem 0.8rem;
+  border-radius: 999px;
+  border: 1.5px solid #a5f3fc;
+  background: transparent;
+  color: #a5f3fc;
+  font: inherit;
+  font-size: 1.125rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+.ms-tool.is-on {
+  background: #a5f3fc;
+  color: #072042;
+}
+.ms-ink {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+}
+.ms-ink > svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.ms-ink.is-open {
+  pointer-events: auto;
+  cursor: crosshair;
+  touch-action: none;
+}
+.ms-inkbar {
+  position: absolute;
+  bottom: 0.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: 1.1rem;
+  background: #0b1b3f;
+  border: 1px solid rgba(165, 243, 252, 0.5);
+  box-shadow: 0 10px 26px rgba(3, 10, 30, 0.45);
+}
+.ms-pen {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  background: var(--pen);
+  cursor: pointer;
+}
+.ms-pen.is-on {
+  box-shadow: 0 0 0 3px #fbbf24;
+}
+
+/* A RIGHT ANSWER IS CELEBRATED: a word and its coins rise and fade; the end of the mission gets the big one */
+@keyframes ms-rise {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 20px) scale(0.6);
+  }
+  18% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1.12);
+  }
+  30% {
+    transform: translate(-50%, 0) scale(1);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -46px) scale(1);
+  }
+}
+.ms-win {
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  z-index: 45;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 1.6rem;
+  border-radius: 1.2rem;
+  background: #fbbf24;
+  color: #072042;
+  box-shadow: 0 14px 34px rgba(3, 10, 30, 0.45);
+  pointer-events: none;
+  animation: ms-rise 1.5s ease-out both;
+}
+.ms-win b {
+  font-size: 2rem;
+}
+.ms-win span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+.ms-finale {
+  position: absolute;
+  inset: 0;
+  z-index: 46;
+  display: grid;
+  place-items: center;
+  background: rgba(5, 14, 36, 0.7);
+  overflow: hidden;
+}
+@keyframes ms-pop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.ms-finale__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  width: min(92%, 36rem);
+  padding: 1.6rem 2rem;
+  border-radius: 1.4rem;
+  border: 2px solid #fbbf24;
+  background: #0b1b3f;
+  text-align: center;
+  animation: ms-pop 0.5s ease-out both;
+}
+.ms-finale__card > svg {
+  color: #fbbf24;
+}
+.ms-root .ms-finale__card h2 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #fff;
+}
+.ms-root .ms-finale__card p {
+  margin: 0;
+  color: #eef5ff;
+  font-size: 1.3rem;
+  line-height: 1.7;
+}
+.ms-finale__stars {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+}
+.ms-finale__stars svg {
+  color: rgba(255, 255, 255, 0.25);
+}
+@keyframes ms-star {
+  0% {
+    transform: scale(0) rotate(-40deg);
+  }
+  70% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.ms-finale__stars svg.is-on {
+  color: #fbbf24;
+  fill: #fbbf24;
+  animation: ms-star 0.5s ease-out both;
+}
+.ms-finale__stars svg.is-on:nth-child(2) {
+  animation-delay: 0.25s;
+}
+.ms-finale__stars svg.is-on:nth-child(3) {
+  animation-delay: 0.5s;
+}
+.ms-root .ms-finale__card .ms-finale__coins {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.3rem 1.2rem;
+  border-radius: 999px;
+  background: rgba(255, 244, 214, 0.96);
+  color: #3b2a06;
+  font-weight: 800;
+}
+.ms-finale__card .ms-btn {
+  font-size: 1.3rem;
+  padding: 0.6rem 1.6rem;
+}
+@keyframes ms-fall {
+  0% {
+    transform: translateY(-10vh) rotate(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(540deg);
+    opacity: 0.9;
+  }
+}
+.ms-confetti i {
+  position: absolute;
+  top: 0;
+  left: var(--x);
+  width: 0.7rem;
+  height: 1.1rem;
+  border-radius: 0.15rem;
+  background: var(--c);
+  animation: ms-fall 2.6s linear var(--d) infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ms-win,
+  .ms-finale__card,
+  .ms-finale__stars svg.is-on,
+  .ms-confetti i {
+    animation: none;
+  }
+  .ms-win {
+    transform: translate(-50%, 0);
+  }
+}
+
+/* « اضغط هنا » (owner, 2026-11-20): what must be TAPPED and does not look like a button — a number or a question in the
+   exam text, a datum to connect, a number to try again — carries a flashing sign, from the first second */
+@keyframes ms-flash {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.94);
+  }
+}
+.ms-paper .ms-num.ms-target::after,
+.ms-connect__items:not(:has(.is-on)) .ms-chip:first-child::after,
+[data-ms-test]:first-of-type::after {
+  content: '👆 اضغط هنا';
+  display: inline-block;
+  padding: 0 0.6rem;
+  border-radius: 999px;
+  background: #dc2626;
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 800;
+  line-height: 1.7;
+  white-space: nowrap;
+  animation: ms-flash 0.9s ease-in-out infinite;
+}
+.ms-paper .ms-num.ms-target::after {
+  margin-inline-start: 0.4rem;
+}
+.ms-connect__items .ms-chip,
+[data-ms-test] {
+  position: relative;
+}
+.ms-connect__items:not(:has(.is-on)) .ms-chip:first-child::after,
+[data-ms-test]:first-of-type::after {
+  position: absolute;
+  bottom: calc(100% + 0.3rem);
+  left: 50%;
+  translate: -50% 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ms-paper .ms-num.ms-target::after,
+  .ms-connect__items .ms-chip::after,
+  [data-ms-test]::after {
+    animation: none;
+  }
+}
+/* on a question (a long phrase) the sign is pinned to its corner: it never adds a line to the exam text */
+.ms-paper .ms-num.is-goal.ms-target {
+  position: relative;
+}
+.ms-paper .ms-num.is-goal.ms-target::after {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% - 0.5rem);
+  margin: 0;
+}
+
+/* THE CALL TO READ SITS ON THE EXERCISE ITSELF (owner, 2026-11-20): a flashing band at the top of the exam text, and
+   the border of the text flashes */
+@keyframes ms-border-flash {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 5px #dc2626,
+      0 10px 30px rgba(3, 10, 30, 0.45);
+  }
+  50% {
+    box-shadow:
+      0 0 0 5px #fbbf24,
+      0 10px 30px rgba(3, 10, 30, 0.45);
+  }
+}
+.ms-root.is-reading .ms-paper {
+  animation: ms-border-flash 0.9s ease-in-out infinite;
+}
+.ms-root.is-reading .ms-paper::before {
+  content: '📖 اقرأ التمرين كلّه';
+  display: block;
+  margin-bottom: 0.3rem;
+  padding: 0.1rem 0.6rem;
+  border-radius: 0.5rem;
+  background: #dc2626;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-align: center;
+  animation: ms-flash 0.9s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ms-root.is-reading .ms-paper,
+  .ms-root.is-reading .ms-paper::before {
+    animation: none;
+  }
+}
+
+/* A LONG EXAM TEXT (a situation with a list of offers and a budget) gets a wider paper and tighter lines, so that the
+   whole text stays on the screen at a reading size; the notebook gives the room */
+.ms-root--long .ms-body {
+  grid-template-columns: 28.5rem 1fr 16.5rem;
+}
+.ms-root.ms-root--long .ms-paper p {
+  font-size: 1.125rem;
+  line-height: 1.62;
+}
+.ms-fold--title {
+  font: inherit;
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+}
+.ms-connect__items--plan {
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2.6rem; /* room for « اضغط هنا » above the first step */
+}
+
+/* a classmate's copy: its lines are tapped; the faulty one turns red once found */
+.ms-review ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.ms-review__line {
+  width: 100%;
+  padding: 0.2rem 0.8rem;
+  border: 2px solid transparent;
+  border-radius: 0.6rem;
+  background: #f4efe0;
+  color: #1c2437;
+  font: inherit;
+  font-size: 1.2rem;
+  text-align: start;
+  cursor: pointer;
+}
+.ms-review__line:hover:not(:disabled) {
+  border-color: #f59e0b;
+}
+.ms-review__line.is-wrong {
+  border-color: #dc2626;
+  background: #fee2e2;
+  text-decoration: line-through;
+  text-decoration-color: #dc2626;
+}
+/* a sentence of his solution (not a formula) wraps inside the notebook */
+.ms-root .ms-book ol li[dir='rtl'] {
+  white-space: normal;
+  line-height: 1.6;
+}

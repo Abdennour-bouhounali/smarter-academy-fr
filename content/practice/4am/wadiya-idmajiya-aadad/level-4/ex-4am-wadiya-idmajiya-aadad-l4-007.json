@@ -1,0 +1,173 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-aadad-l4-007",
+  "lessonCode": "wadiya-idmajiya-aadad",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2021 — العددان 1938 و 1428",
+    "estimatedMinutes": 9,
+    "tags": [
+      "القاسم المشترك الأكبر",
+      "كسر غير قابل للاختزال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-aadad_P1",
+      "modelledOn": "BEM 2021 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 1938 و 1428.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "102",
+      "misconceptionSignatures": [
+        {
+          "value": "51",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 1938 على 1428: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (1938 ; 1428) بالزوج (1428 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 102.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$1938 = 1428 \\times 1 + 510$",
+          "$1428 = 510 \\times 2 + 408$",
+          "$510 = 408 \\times 1 + 102$",
+          "$408 = 102 \\times 4 + 0$",
+          "آخر باقٍ غير معدوم هو 102، إذن:"
+        ],
+        "result": "PGCD(1938 ; 1428) = 102"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب الكسر $\\dfrac{1938}{1428}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "19/14",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "969/714",
+          "id": "MISC-IKHTIZAL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 102: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال 01.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1938}{1428} = \\dfrac{1938 \\div 102}{1428 \\div 102}$"
+        ],
+        "result": "\\dfrac{1938}{1428} = \\dfrac{19}{14}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "جد أصغر عدد طبيعي غير معدوم n بحيث يكون $n \\times \\dfrac{1938}{1428}$ عددًا طبيعيًا.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "14",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الكتابة غير القابلة للاختزال للكسر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "البسط والمقام أوليان فيما بينهما: يجب أن يقسم المقامُ العددَ n."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1938}{1428} = \\dfrac{19}{14}$ و 19 و 14 أوليان فيما بينهما، إذن n مضاعف للعدد 14، وأصغرها 14.",
+        "incorrect": "اكتب الكسر على شكل غير قابل للاختزال، ثم ابحث عن أصغر n يجعل المقام يقسم الجداء."
+      },
+      "solution": {
+        "lines": [
+          "$n \\times \\dfrac{1938}{1428} = \\dfrac{19 \\times n}{14}$",
+          "العددان 19 و 14 أوليان فيما بينهما، فيجب أن يقسم 14 العدد n.",
+          "أصغر عدد طبيعي غير معدوم يقبل القسمة على 14 هو 14: $14 \\times \\dfrac{19}{14} = 19$"
+        ],
+        "result": "n = 14"
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

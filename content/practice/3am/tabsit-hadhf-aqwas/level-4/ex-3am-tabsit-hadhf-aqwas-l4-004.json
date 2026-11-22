@@ -1,0 +1,227 @@
+{
+  "id": "ex-3am-tabsit-hadhf-aqwas-l4-004",
+  "lessonCode": "tabsit-hadhf-aqwas",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — تبسيط ثم تعويض بأعداد نسبية",
+    "estimatedMinutes": 8,
+    "tags": [
+      "حذف الأقواس",
+      "أعداد نسبية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $E$ حيث:",
+    "formulas": [
+      "E = 7x - (2x - 3) + (x - 8)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "بسّط العبارة $E$ .",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $ax + b$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-TABSIT-MINUS-KEPT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالأقواس: ما الإشارة التي تسبق كل زوج منها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسبوقان بـ $+$ يُحذفان كما هما، والمسبوقان بـ $-$ تتغيّر معهما إشارة كل حدّ بينهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد حذف الأقواس اجمع الحدود المتشابهة، ثم تحقّق بتعويض $x$ بعدد صغير."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 6x - 5$ إذن $a = 6$.",
+        "incorrect": "اجمع الحدود المتشابهة بإشاراتها بعد حذف الأقواس، ثم اقرأ العدد المطلوب في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$E = 7x - 2x + 3 + x - 8$",
+          "$E = 6x - 5$"
+        ],
+        "result": "a = 6"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $ax + b$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "-5",
+      "misconceptionSignatures": [
+        {
+          "value": "-11",
+          "id": "MISC-TABSIT-MINUS-FIRST-ONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالأقواس: ما الإشارة التي تسبق كل زوج منها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسبوقان بـ $+$ يُحذفان كما هما، والمسبوقان بـ $-$ تتغيّر معهما إشارة كل حدّ بينهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد حذف الأقواس اجمع الحدود المتشابهة، ثم تحقّق بتعويض $x$ بعدد صغير."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 6x - 5$ إذن $b = -5$.",
+        "incorrect": "اجمع الحدود المتشابهة بإشاراتها بعد حذف الأقواس، ثم اقرأ العدد المطلوب في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$E = 6x - 5$"
+        ],
+        "result": "b = -5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "احسب قيمة $E$ من أجل:",
+      "statement": "$x = -2$",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "-17",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى، ويُستحسن أن تعوّض في الشكل المبسّط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويات العمليات: القوى، ثم الضرب، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالتعويض في العبارة قبل تبسيطها: القيمة لا تتغيّر."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل $x = -2$ نجد $E = -17$.",
+        "incorrect": "عوّض $x$ بالعدد المعطى في الشكل المبسّط واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$E = 6x - 5$",
+          "من أجل $x = -2$ : $E = 6(-2) - 5 = -17$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "$x = 1{,}5$",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى، ويُستحسن أن تعوّض في الشكل المبسّط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويات العمليات: القوى، ثم الضرب، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالتعويض في العبارة قبل تبسيطها: القيمة لا تتغيّر."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل $x = 1{,}5$ نجد $E = 4$.",
+        "incorrect": "عوّض $x$ بالعدد المعطى في الشكل المبسّط واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$E = 6x - 5$",
+          "من أجل $x = 1{,}5$ : $E = 6(1{,}5) - 5 = 4$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

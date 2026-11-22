@@ -1,0 +1,168 @@
+{
+  "id": "ex-4am-tafsir-bayani-jumla-l4-007",
+  "lessonCode": "tafsir-bayani-jumla",
+  "level": 4,
+  "metadata": {
+    "title": "وسيطان: منطبقان أم متوازيان",
+    "estimatedMinutes": 10,
+    "tags": [
+      "منطبقان",
+      "متوازيان",
+      "وسيط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tafsir-bayani-jumla_P3",
+      "modelledOn": "act-5"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$b$ و $k$ عددان حقيقيان."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن العدد $b$ حتى يكون المستقيمان اللذان معادلتاهما $y = 2x + b$ و $4x - 2y = 6$ منطبقين.",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-JUMLA-ISHARA-Y"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المعادلة $4x - 2y = 6$ على الشكل $y = ax + b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مستقيمان منطبقان لهما نفس $a$ ونفس $b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$4x - 2y = 6$ تُكتب $y = 2x - 3$ .",
+        "incorrect": "اعزل $y$ في $4x - 2y = 6$ (انتبه للقسمة على عدد سالب)، ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "$4x - 2y = 6$",
+          "$-2y = -4x + 6$",
+          "$y = 2x - 3$",
+          "المستقيمان منطبقان إذا كان $b = -3$ ."
+        ],
+        "result": "b = -3"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "من أجل $b = 1$ ، ما عدد حلول الجملة $\\begin{cases} y = 2x + 1 \\\\ 4x - 2y = 6 \\end{cases}$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لها حل وحيد",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-HALAT"
+        },
+        {
+          "id": "B",
+          "content": "ليس لها حل",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لها عدد غير منته من الحلول",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-HALAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الكتابتين $y = ax + b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "نفس معامل التوجيه وترتيبان مختلفان.",
+        "incorrect": "نفس $a$ و $b$ مختلف: مستقيمان متوازيان."
+      },
+      "solution": {
+        "lines": [
+          "المعادلة الثانية تُكتب $y = 2x - 3$ : نفس معامل التوجيه $2$ وترتيبان مختلفان عند المبدأ ($1 \\neq -3$) .",
+          "المستقيمان متوازيان، إذن الجملة ليس لها حل."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "نعتبر الجملة $\\begin{cases} 2x + 3y = 7 \\\\ 4x + ky = 14 \\end{cases}$ . عيّن العدد $k$ حتى يكون للجملة عدد غير منته من الحلول.",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $k$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الطرفين الثانيين: 14 هو ضعف 7."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المعادلة الثانية يجب أن تكون الأولى مضروبة في العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$4x + 6y = 14$ هي المعادلة الأولى مضروبة في 2.",
+        "incorrect": "اضرب طرفي المعادلة الأولى في 2 ثم قارن معامل $y$ ."
+      },
+      "solution": {
+        "lines": [
+          "نضرب طرفي المعادلة الأولى في 2: $4x + 6y = 14$ .",
+          "المعادلتان تمثلان المستقيم نفسه إذا كان $k = 6$ .",
+          "عندئذ المستقيمان منطبقان وللجملة عدد غير منته من الحلول."
+        ],
+        "result": "k = 6"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

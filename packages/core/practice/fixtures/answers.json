@@ -1,0 +1,6139 @@
+[
+  {
+    "name": "choice-correct",
+    "question": {
+      "id": "q-choice",
+      "answerType": "choice",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "choices": [
+        {
+          "id": "A",
+          "content": "x < 4",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "x > 4",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AFF-SIGNE-COTE-INVERSE"
+        },
+        {
+          "id": "C",
+          "content": "x < -4",
+          "isCorrect": false
+        }
+      ]
+    },
+    "answer": {
+      "choiceId": "A"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "A",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "choice-distractor-with-misconception",
+    "question": {
+      "id": "q-choice",
+      "answerType": "choice",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "choices": [
+        {
+          "id": "A",
+          "content": "x < 4",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "x > 4",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AFF-SIGNE-COTE-INVERSE"
+        },
+        {
+          "id": "C",
+          "content": "x < -4",
+          "isCorrect": false
+        }
+      ]
+    },
+    "answer": {
+      "choiceId": "B"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": "MISC-AFF-SIGNE-COTE-INVERSE",
+      "normalized": "B",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "choice-distractor-without-misconception",
+    "question": {
+      "id": "q-choice",
+      "answerType": "choice",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "choices": [
+        {
+          "id": "A",
+          "content": "x < 4",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "x > 4",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AFF-SIGNE-COTE-INVERSE"
+        },
+        {
+          "id": "C",
+          "content": "x < -4",
+          "isCorrect": false
+        }
+      ]
+    },
+    "answer": {
+      "choiceId": "C"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "C",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "choice-unknown-id",
+    "question": {
+      "id": "q-choice",
+      "answerType": "choice",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "choices": [
+        {
+          "id": "A",
+          "content": "x < 4",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "x > 4",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AFF-SIGNE-COTE-INVERSE"
+        },
+        {
+          "id": "C",
+          "content": "x < -4",
+          "isCorrect": false
+        }
+      ]
+    },
+    "answer": {
+      "choiceId": "Z"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "Z",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "choice-missing-choiceId",
+    "question": {
+      "id": "q-choice",
+      "answerType": "choice",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "choices": [
+        {
+          "id": "A",
+          "content": "x < 4",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "x > 4",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AFF-SIGNE-COTE-INVERSE"
+        },
+        {
+          "id": "C",
+          "content": "x < -4",
+          "isCorrect": false
+        }
+      ]
+    },
+    "answer": {},
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "choice-numeric-id-is-not-string-id",
+    "question": {
+      "id": "q-choice",
+      "answerType": "choice",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "choices": [
+        {
+          "id": "A",
+          "content": "x < 4",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "x > 4",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AFF-SIGNE-COTE-INVERSE"
+        },
+        {
+          "id": "C",
+          "content": "x < -4",
+          "isCorrect": false
+        }
+      ]
+    },
+    "answer": {
+      "choiceId": 1
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "1",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "multi-exact-selection",
+    "question": {
+      "id": "q-multi",
+      "answerType": "multiChoice",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "choices": [
+        {
+          "id": "A",
+          "content": "a",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "b",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "c",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AFF-ZERO-EST-B"
+        },
+        {
+          "id": "D",
+          "content": "d",
+          "isCorrect": false
+        }
+      ]
+    },
+    "answer": {
+      "choiceIds": [
+        "A",
+        "B"
+      ]
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "A,B",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "multi-exact-unordered",
+    "question": {
+      "id": "q-multi",
+      "answerType": "multiChoice",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "choices": [
+        {
+          "id": "A",
+          "content": "a",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "b",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "c",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AFF-ZERO-EST-B"
+        },
+        {
+          "id": "D",
+          "content": "d",
+          "isCorrect": false
+        }
+      ]
+    },
+    "answer": {
+      "choiceIds": [
+        "B",
+        "A"
+      ]
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "A,B",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "multi-duplicates-collapse",
+    "question": {
+      "id": "q-multi",
+      "answerType": "multiChoice",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "choices": [
+        {
+          "id": "A",
+          "content": "a",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "b",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "c",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AFF-ZERO-EST-B"
+        },
+        {
+          "id": "D",
+          "content": "d",
+          "isCorrect": false
+        }
+      ]
+    },
+    "answer": {
+      "choiceIds": [
+        "A",
+        "A",
+        "B"
+      ]
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "A,B",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "multi-strict-subset-is-partial",
+    "question": {
+      "id": "q-multi",
+      "answerType": "multiChoice",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "choices": [
+        {
+          "id": "A",
+          "content": "a",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "b",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "c",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AFF-ZERO-EST-B"
+        },
+        {
+          "id": "D",
+          "content": "d",
+          "isCorrect": false
+        }
+      ]
+    },
+    "answer": {
+      "choiceIds": [
+        "A"
+      ]
+    },
+    "expected": {
+      "outcome": "partially_correct",
+      "misconceptionId": null,
+      "normalized": "A",
+      "isCorrect": false,
+      "feedbackKey": "partial"
+    }
+  },
+  {
+    "name": "multi-wrong-pick-with-misconception",
+    "question": {
+      "id": "q-multi",
+      "answerType": "multiChoice",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "choices": [
+        {
+          "id": "A",
+          "content": "a",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "b",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "c",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AFF-ZERO-EST-B"
+        },
+        {
+          "id": "D",
+          "content": "d",
+          "isCorrect": false
+        }
+      ]
+    },
+    "answer": {
+      "choiceIds": [
+        "A",
+        "C"
+      ]
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": "MISC-AFF-ZERO-EST-B",
+      "normalized": "A,C",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "multi-superset-is-incorrect",
+    "question": {
+      "id": "q-multi",
+      "answerType": "multiChoice",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "choices": [
+        {
+          "id": "A",
+          "content": "a",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "b",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "c",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AFF-ZERO-EST-B"
+        },
+        {
+          "id": "D",
+          "content": "d",
+          "isCorrect": false
+        }
+      ]
+    },
+    "answer": {
+      "choiceIds": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": "MISC-AFF-ZERO-EST-B",
+      "normalized": "A,B,C",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "multi-wrong-pick-without-misconception",
+    "question": {
+      "id": "q-multi",
+      "answerType": "multiChoice",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "choices": [
+        {
+          "id": "A",
+          "content": "a",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "b",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "c",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AFF-ZERO-EST-B"
+        },
+        {
+          "id": "D",
+          "content": "d",
+          "isCorrect": false
+        }
+      ]
+    },
+    "answer": {
+      "choiceIds": [
+        "A",
+        "D"
+      ]
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "A,D",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "multi-empty-selection-is-incorrect",
+    "question": {
+      "id": "q-multi",
+      "answerType": "multiChoice",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "choices": [
+        {
+          "id": "A",
+          "content": "a",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "b",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "c",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AFF-ZERO-EST-B"
+        },
+        {
+          "id": "D",
+          "content": "d",
+          "isCorrect": false
+        }
+      ]
+    },
+    "answer": {
+      "choiceIds": []
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "multi-missing-choiceIds",
+    "question": {
+      "id": "q-multi",
+      "answerType": "multiChoice",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "choices": [
+        {
+          "id": "A",
+          "content": "a",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "b",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "c",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AFF-ZERO-EST-B"
+        },
+        {
+          "id": "D",
+          "content": "d",
+          "isCorrect": false
+        }
+      ]
+    },
+    "answer": {},
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "multi-unknown-id-only",
+    "question": {
+      "id": "q-multi",
+      "answerType": "multiChoice",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "choices": [
+        {
+          "id": "A",
+          "content": "a",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "b",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "c",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AFF-ZERO-EST-B"
+        },
+        {
+          "id": "D",
+          "content": "d",
+          "isCorrect": false
+        }
+      ]
+    },
+    "answer": {
+      "choiceIds": [
+        "Z"
+      ]
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "Z",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "rational-correct-integer",
+    "question": {
+      "id": "q-rat",
+      "answerType": "rational",
+      "answerFormat": "… par minute",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "-8",
+          "id": "MISC-AFF-DIFF-SEULE"
+        }
+      ]
+    },
+    "answer": {
+      "value": "-2"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "-2",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-typographic-minus-u2212",
+    "question": {
+      "id": "q-rat",
+      "answerType": "rational",
+      "answerFormat": "… par minute",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "-8",
+          "id": "MISC-AFF-DIFF-SEULE"
+        }
+      ]
+    },
+    "answer": {
+      "value": "−2"
+    },
+    "expected": {
+      "outcome": "equivalent_correct",
+      "misconceptionId": null,
+      "normalized": "-2",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-equivalent-fraction",
+    "question": {
+      "id": "q-rat",
+      "answerType": "rational",
+      "answerFormat": "… par minute",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "-8",
+          "id": "MISC-AFF-DIFF-SEULE"
+        }
+      ]
+    },
+    "answer": {
+      "value": "-4/2"
+    },
+    "expected": {
+      "outcome": "equivalent_correct",
+      "misconceptionId": null,
+      "normalized": "-2",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-frac-latex",
+    "question": {
+      "id": "q-rat",
+      "answerType": "rational",
+      "answerFormat": "… par minute",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "-8",
+          "id": "MISC-AFF-DIFF-SEULE"
+        }
+      ]
+    },
+    "answer": {
+      "value": "\\frac{-4}{2}"
+    },
+    "expected": {
+      "outcome": "equivalent_correct",
+      "misconceptionId": null,
+      "normalized": "-2",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-misconception-signature",
+    "question": {
+      "id": "q-rat",
+      "answerType": "rational",
+      "answerFormat": "… par minute",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "-8",
+          "id": "MISC-AFF-DIFF-SEULE"
+        }
+      ]
+    },
+    "answer": {
+      "value": "-8"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": "MISC-AFF-DIFF-SEULE",
+      "normalized": "-8",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "rational-wrong-without-signature",
+    "question": {
+      "id": "q-rat",
+      "answerType": "rational",
+      "answerFormat": "… par minute",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "-8",
+          "id": "MISC-AFF-DIFF-SEULE"
+        }
+      ]
+    },
+    "answer": {
+      "value": "-5"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "-5",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "rational-syntax-word",
+    "question": {
+      "id": "q-rat",
+      "answerType": "rational",
+      "answerFormat": "… par minute",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "-8",
+          "id": "MISC-AFF-DIFF-SEULE"
+        }
+      ]
+    },
+    "answer": {
+      "value": "deux"
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "deux",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "rational-empty-string-is-syntax-error",
+    "question": {
+      "id": "q-rat",
+      "answerType": "rational",
+      "answerFormat": "… par minute",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "-8",
+          "id": "MISC-AFF-DIFF-SEULE"
+        }
+      ]
+    },
+    "answer": {
+      "value": ""
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "rational-missing-value",
+    "question": {
+      "id": "q-rat",
+      "answerType": "rational",
+      "answerFormat": "… par minute",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "-8",
+          "id": "MISC-AFF-DIFF-SEULE"
+        }
+      ]
+    },
+    "answer": {},
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "rational-value-boolean",
+    "question": {
+      "id": "q-rat",
+      "answerType": "rational",
+      "answerFormat": "… par minute",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "-8",
+          "id": "MISC-AFF-DIFF-SEULE"
+        }
+      ]
+    },
+    "answer": {
+      "value": true
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "true",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "rational-dollar-wrapped",
+    "question": {
+      "id": "q-rat",
+      "answerType": "rational",
+      "answerFormat": "… par minute",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "-8",
+          "id": "MISC-AFF-DIFF-SEULE"
+        }
+      ]
+    },
+    "answer": {
+      "value": "$-2$"
+    },
+    "expected": {
+      "outcome": "equivalent_correct",
+      "misconceptionId": null,
+      "normalized": "-2",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-decimal-comma-same-text",
+    "question": {
+      "id": "q-rat-dec",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "2,5"
+    },
+    "answer": {
+      "value": "2,5"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "5/2",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-decimal-dot-same-writing",
+    "question": {
+      "id": "q-rat-dec",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "2,5"
+    },
+    "answer": {
+      "value": "2.5"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "5/2",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-decimal-as-fraction",
+    "question": {
+      "id": "q-rat-dec",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "2,5"
+    },
+    "answer": {
+      "value": "5/2"
+    },
+    "expected": {
+      "outcome": "equivalent_correct",
+      "misconceptionId": null,
+      "normalized": "5/2",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-decimal-as-percent",
+    "question": {
+      "id": "q-rat-dec",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "2,5"
+    },
+    "answer": {
+      "value": "250%"
+    },
+    "expected": {
+      "outcome": "equivalent_correct",
+      "misconceptionId": null,
+      "normalized": "5/2",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-decimal-as-json-number",
+    "question": {
+      "id": "q-rat-dec",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "2,5"
+    },
+    "answer": {
+      "value": 2.5
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "5/2",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-percent-half",
+    "question": {
+      "id": "q-rat-half",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "1/2"
+    },
+    "answer": {
+      "value": "50%"
+    },
+    "expected": {
+      "outcome": "equivalent_correct",
+      "misconceptionId": null,
+      "normalized": "1/2",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-percent-decimal",
+    "question": {
+      "id": "q-rat-half",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "1/2"
+    },
+    "answer": {
+      "value": "50,0%"
+    },
+    "expected": {
+      "outcome": "equivalent_correct",
+      "misconceptionId": null,
+      "normalized": "1/2",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-leading-dot",
+    "question": {
+      "id": "q-rat-half",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "1/2"
+    },
+    "answer": {
+      "value": ".5"
+    },
+    "expected": {
+      "outcome": "equivalent_correct",
+      "misconceptionId": null,
+      "normalized": "1/2",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-trailing-dot-is-syntax-error",
+    "question": {
+      "id": "q-rat-half",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "1/2"
+    },
+    "answer": {
+      "value": "5."
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "5.",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "rational-plus-sign-is-equivalent",
+    "question": {
+      "id": "q-rat-3",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "3"
+    },
+    "answer": {
+      "value": "+3"
+    },
+    "expected": {
+      "outcome": "equivalent_correct",
+      "misconceptionId": null,
+      "normalized": "3",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-narrow-nbsp-thousands",
+    "question": {
+      "id": "q-rat-1250",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "1250"
+    },
+    "answer": {
+      "value": "1 250"
+    },
+    "expected": {
+      "outcome": "equivalent_correct",
+      "misconceptionId": null,
+      "normalized": "1250",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-nbsp-thousands",
+    "question": {
+      "id": "q-rat-1250",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "1250"
+    },
+    "answer": {
+      "value": "1 250"
+    },
+    "expected": {
+      "outcome": "equivalent_correct",
+      "misconceptionId": null,
+      "normalized": "1250",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-inner-spaces",
+    "question": {
+      "id": "q-rat-1250",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "1250"
+    },
+    "answer": {
+      "value": " 1 250 "
+    },
+    "expected": {
+      "outcome": "equivalent_correct",
+      "misconceptionId": null,
+      "normalized": "1250",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-semicolon-is-stripped-quirk",
+    "question": {
+      "id": "q-rat-15",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "15"
+    },
+    "answer": {
+      "value": "1;5"
+    },
+    "expected": {
+      "outcome": "equivalent_correct",
+      "misconceptionId": null,
+      "normalized": "15",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-eight-decimals-read-exactly",
+    "question": {
+      "id": "q-rat-tenth",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "1/10"
+    },
+    "answer": {
+      "value": "0.12345678"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "6172839/50000000",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "rational-seven-decimals-ok",
+    "question": {
+      "id": "q-rat-7dec",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "0,1234567"
+    },
+    "answer": {
+      "value": "0.1234567"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "1234567/10000000",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-integer-above-old-cap-is-read",
+    "question": {
+      "id": "q-rat-3",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "3"
+    },
+    "answer": {
+      "value": "100000000"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "100000000",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "rational-expected-json-number-same-text",
+    "question": {
+      "id": "q-rat-num",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": 2
+    },
+    "answer": {
+      "value": "2"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "2",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-expected-json-number-json-answer",
+    "question": {
+      "id": "q-rat-num",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": 2
+    },
+    "answer": {
+      "value": 2
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "2",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-expected-json-number-equivalent",
+    "question": {
+      "id": "q-rat-num",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": 2
+    },
+    "answer": {
+      "value": "4/2"
+    },
+    "expected": {
+      "outcome": "equivalent_correct",
+      "misconceptionId": null,
+      "normalized": "2",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-json-float-tenth",
+    "question": {
+      "id": "q-rat-tenth",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "1/10"
+    },
+    "answer": {
+      "value": 0.1
+    },
+    "expected": {
+      "outcome": "equivalent_correct",
+      "misconceptionId": null,
+      "normalized": "1/10",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-json-float-third-read-at-twelve-decimals",
+    "question": {
+      "id": "q-rat-tenth",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "1/10"
+    },
+    "answer": {
+      "value": 0.3333333333333333
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "333333333333/1000000000000",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "rational-minus-zero",
+    "question": {
+      "id": "q-rat-zero",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "0"
+    },
+    "answer": {
+      "value": "-0"
+    },
+    "expected": {
+      "outcome": "equivalent_correct",
+      "misconceptionId": null,
+      "normalized": "0",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-tolerance-exact",
+    "question": {
+      "id": "q-rat-tol",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "3,14",
+      "evaluationPolicy": {
+        "tolerance": "0,01"
+      }
+    },
+    "answer": {
+      "value": "3,14"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "157/50",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-tolerance-within",
+    "question": {
+      "id": "q-rat-tol",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "3,14",
+      "evaluationPolicy": {
+        "tolerance": "0,01"
+      }
+    },
+    "answer": {
+      "value": "3,15"
+    },
+    "expected": {
+      "outcome": "equivalent_correct",
+      "misconceptionId": null,
+      "normalized": "63/20",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-tolerance-within-dot",
+    "question": {
+      "id": "q-rat-tol",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "3,14",
+      "evaluationPolicy": {
+        "tolerance": "0,01"
+      }
+    },
+    "answer": {
+      "value": "3.13"
+    },
+    "expected": {
+      "outcome": "equivalent_correct",
+      "misconceptionId": null,
+      "normalized": "313/100",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-tolerance-outside",
+    "question": {
+      "id": "q-rat-tol",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "3,14",
+      "evaluationPolicy": {
+        "tolerance": "0,01"
+      }
+    },
+    "answer": {
+      "value": "3,16"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "79/25",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "rational-tolerance-string-zero-is-exact",
+    "question": {
+      "id": "q-rat-tol-zero",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "3,14",
+      "evaluationPolicy": {
+        "tolerance": "0"
+      }
+    },
+    "answer": {
+      "value": "3,14"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "157/50",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-tolerance-string-zero-rejects-near",
+    "question": {
+      "id": "q-rat-tol-zero",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "3,14",
+      "evaluationPolicy": {
+        "tolerance": "0"
+      }
+    },
+    "answer": {
+      "value": "3,15"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "63/20",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "irreducible-correct",
+    "question": {
+      "id": "q-irr",
+      "answerType": "rational",
+      "expectedAnswer": "7/4",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque.",
+        "notIrreducible": "اختزل أكثر."
+      },
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "14/8",
+          "id": "MISC-IKHTIZAL-ARRET-EN-CHEMIN"
+        }
+      ]
+    },
+    "answer": {
+      "value": "7/4"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "7/4",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "irreducible-decimal-comma-is-not-a-fraction",
+    "question": {
+      "id": "q-irr",
+      "answerType": "rational",
+      "expectedAnswer": "7/4",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque.",
+        "notIrreducible": "اختزل أكثر."
+      },
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "14/8",
+          "id": "MISC-IKHTIZAL-ARRET-EN-CHEMIN"
+        }
+      ]
+    },
+    "answer": {
+      "value": "1,75"
+    },
+    "expected": {
+      "outcome": "partially_correct",
+      "misconceptionId": null,
+      "normalized": "7/4",
+      "isCorrect": false,
+      "feedbackKey": "notIrreducible"
+    }
+  },
+  {
+    "name": "irreducible-decimal-dot-is-not-a-fraction",
+    "question": {
+      "id": "q-irr",
+      "answerType": "rational",
+      "expectedAnswer": "7/4",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque.",
+        "notIrreducible": "اختزل أكثر."
+      },
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "14/8",
+          "id": "MISC-IKHTIZAL-ARRET-EN-CHEMIN"
+        }
+      ]
+    },
+    "answer": {
+      "value": "1.75"
+    },
+    "expected": {
+      "outcome": "partially_correct",
+      "misconceptionId": null,
+      "normalized": "7/4",
+      "isCorrect": false,
+      "feedbackKey": "notIrreducible"
+    }
+  },
+  {
+    "name": "irreducible-not-reduced-21-12",
+    "question": {
+      "id": "q-irr",
+      "answerType": "rational",
+      "expectedAnswer": "7/4",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque.",
+        "notIrreducible": "اختزل أكثر."
+      },
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "14/8",
+          "id": "MISC-IKHTIZAL-ARRET-EN-CHEMIN"
+        }
+      ]
+    },
+    "answer": {
+      "value": "21/12"
+    },
+    "expected": {
+      "outcome": "partially_correct",
+      "misconceptionId": null,
+      "normalized": "7/4",
+      "isCorrect": false,
+      "feedbackKey": "notIrreducible"
+    }
+  },
+  {
+    "name": "irreducible-not-reduced-84-48",
+    "question": {
+      "id": "q-irr",
+      "answerType": "rational",
+      "expectedAnswer": "7/4",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque.",
+        "notIrreducible": "اختزل أكثر."
+      },
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "14/8",
+          "id": "MISC-IKHTIZAL-ARRET-EN-CHEMIN"
+        }
+      ]
+    },
+    "answer": {
+      "value": "84/48"
+    },
+    "expected": {
+      "outcome": "partially_correct",
+      "misconceptionId": null,
+      "normalized": "7/4",
+      "isCorrect": false,
+      "feedbackKey": "notIrreducible"
+    }
+  },
+  {
+    "name": "irreducible-not-reduced-with-signature",
+    "question": {
+      "id": "q-irr",
+      "answerType": "rational",
+      "expectedAnswer": "7/4",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque.",
+        "notIrreducible": "اختزل أكثر."
+      },
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "14/8",
+          "id": "MISC-IKHTIZAL-ARRET-EN-CHEMIN"
+        }
+      ]
+    },
+    "answer": {
+      "value": "14/8"
+    },
+    "expected": {
+      "outcome": "partially_correct",
+      "misconceptionId": "MISC-IKHTIZAL-ARRET-EN-CHEMIN",
+      "normalized": "7/4",
+      "isCorrect": false,
+      "feedbackKey": "notIrreducible"
+    }
+  },
+  {
+    "name": "irreducible-not-reduced-frac-latex-with-signature",
+    "question": {
+      "id": "q-irr",
+      "answerType": "rational",
+      "expectedAnswer": "7/4",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque.",
+        "notIrreducible": "اختزل أكثر."
+      },
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "14/8",
+          "id": "MISC-IKHTIZAL-ARRET-EN-CHEMIN"
+        }
+      ]
+    },
+    "answer": {
+      "value": "\\frac{14}{8}"
+    },
+    "expected": {
+      "outcome": "partially_correct",
+      "misconceptionId": "MISC-IKHTIZAL-ARRET-EN-CHEMIN",
+      "normalized": "7/4",
+      "isCorrect": false,
+      "feedbackKey": "notIrreducible"
+    }
+  },
+  {
+    "name": "irreducible-negative-over-negative-not-reduced",
+    "question": {
+      "id": "q-irr",
+      "answerType": "rational",
+      "expectedAnswer": "7/4",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque.",
+        "notIrreducible": "اختزل أكثر."
+      },
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "14/8",
+          "id": "MISC-IKHTIZAL-ARRET-EN-CHEMIN"
+        }
+      ]
+    },
+    "answer": {
+      "value": "-21/-12"
+    },
+    "expected": {
+      "outcome": "partially_correct",
+      "misconceptionId": null,
+      "normalized": "7/4",
+      "isCorrect": false,
+      "feedbackKey": "notIrreducible"
+    }
+  },
+  {
+    "name": "irreducible-decimal-equivalent",
+    "question": {
+      "id": "q-irr",
+      "answerType": "rational",
+      "expectedAnswer": "7/4",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque.",
+        "notIrreducible": "اختزل أكثر."
+      },
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "14/8",
+          "id": "MISC-IKHTIZAL-ARRET-EN-CHEMIN"
+        }
+      ]
+    },
+    "answer": {
+      "value": "1,75"
+    },
+    "expected": {
+      "outcome": "partially_correct",
+      "misconceptionId": null,
+      "normalized": "7/4",
+      "isCorrect": false,
+      "feedbackKey": "notIrreducible"
+    }
+  },
+  {
+    "name": "irreducible-percent-equivalent",
+    "question": {
+      "id": "q-irr",
+      "answerType": "rational",
+      "expectedAnswer": "7/4",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque.",
+        "notIrreducible": "اختزل أكثر."
+      },
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "14/8",
+          "id": "MISC-IKHTIZAL-ARRET-EN-CHEMIN"
+        }
+      ]
+    },
+    "answer": {
+      "value": "175%"
+    },
+    "expected": {
+      "outcome": "partially_correct",
+      "misconceptionId": null,
+      "normalized": "7/4",
+      "isCorrect": false,
+      "feedbackKey": "notIrreducible"
+    }
+  },
+  {
+    "name": "irreducible-wrong-value",
+    "question": {
+      "id": "q-irr",
+      "answerType": "rational",
+      "expectedAnswer": "7/4",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque.",
+        "notIrreducible": "اختزل أكثر."
+      },
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "14/8",
+          "id": "MISC-IKHTIZAL-ARRET-EN-CHEMIN"
+        }
+      ]
+    },
+    "answer": {
+      "value": "3/2"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "3/2",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "irreducible-without-policy-is-equivalent",
+    "question": {
+      "id": "q-irr-none",
+      "answerType": "rational",
+      "expectedAnswer": "7/4",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque.",
+        "notIrreducible": "اختزل أكثر."
+      },
+      "evaluationPolicy": {},
+      "misconceptionSignatures": [
+        {
+          "value": "14/8",
+          "id": "MISC-IKHTIZAL-ARRET-EN-CHEMIN"
+        }
+      ]
+    },
+    "answer": {
+      "value": "21/12"
+    },
+    "expected": {
+      "outcome": "equivalent_correct",
+      "misconceptionId": null,
+      "normalized": "7/4",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "irreducible-zero-over-five-is-not-reduced",
+    "question": {
+      "id": "q-irr-zero",
+      "answerType": "rational",
+      "expectedAnswer": "0",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      }
+    },
+    "answer": {
+      "value": "0/5"
+    },
+    "expected": {
+      "outcome": "partially_correct",
+      "misconceptionId": null,
+      "normalized": "0",
+      "isCorrect": false,
+      "feedbackKey": "notIrreducible"
+    }
+  },
+  {
+    "name": "irreducible-zero-correct",
+    "question": {
+      "id": "q-irr-zero",
+      "answerType": "rational",
+      "expectedAnswer": "0",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      }
+    },
+    "answer": {
+      "value": "0"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "0",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "iset-free-order-and-duplicates",
+    "question": {
+      "id": "q-set",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12
+      ],
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6
+          ],
+          "id": "MISC-QAWASIM-OUBLI-1-ET-N"
+        }
+      ]
+    },
+    "answer": {
+      "value": "12, 6, 4, 3, 2, 1, 1"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "1;2;3;4;6;12",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "iset-arabic-indic-digits-semicolon",
+    "question": {
+      "id": "q-set",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12
+      ],
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6
+          ],
+          "id": "MISC-QAWASIM-OUBLI-1-ET-N"
+        }
+      ]
+    },
+    "answer": {
+      "value": "١؛ ٢؛ ٣؛ ٤؛ ٦؛ ١٢"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "1;2;3;4;6;12",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "iset-persian-digits-arabic-comma",
+    "question": {
+      "id": "q-set",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12
+      ],
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6
+          ],
+          "id": "MISC-QAWASIM-OUBLI-1-ET-N"
+        }
+      ]
+    },
+    "answer": {
+      "value": "۱، ۲، ۳، ۴، ۶، ۱۲"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "1;2;3;4;6;12",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "iset-space-separated",
+    "question": {
+      "id": "q-set",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12
+      ],
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6
+          ],
+          "id": "MISC-QAWASIM-OUBLI-1-ET-N"
+        }
+      ]
+    },
+    "answer": {
+      "value": "1 2 3 4 6 12"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "1;2;3;4;6;12",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "iset-newline-separated",
+    "question": {
+      "id": "q-set",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12
+      ],
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6
+          ],
+          "id": "MISC-QAWASIM-OUBLI-1-ET-N"
+        }
+      ]
+    },
+    "answer": {
+      "value": "1\n2\n3\n4\n6\n12"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "1;2;3;4;6;12",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "iset-mixed-separators",
+    "question": {
+      "id": "q-set",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12
+      ],
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6
+          ],
+          "id": "MISC-QAWASIM-OUBLI-1-ET-N"
+        }
+      ]
+    },
+    "answer": {
+      "value": "1;2,3،4؛6 12"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "1;2;3;4;6;12",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "iset-nbsp-separated",
+    "question": {
+      "id": "q-set",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12
+      ],
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6
+          ],
+          "id": "MISC-QAWASIM-OUBLI-1-ET-N"
+        }
+      ]
+    },
+    "answer": {
+      "value": "1 2 3 4 6 12"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "1;2;3;4;6;12",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "iset-leading-zeros",
+    "question": {
+      "id": "q-set",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12
+      ],
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6
+          ],
+          "id": "MISC-QAWASIM-OUBLI-1-ET-N"
+        }
+      ]
+    },
+    "answer": {
+      "value": "01, 2, 3, 4, 6, 012"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "1;2;3;4;6;12",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "iset-trailing-separator",
+    "question": {
+      "id": "q-set",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12
+      ],
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6
+          ],
+          "id": "MISC-QAWASIM-OUBLI-1-ET-N"
+        }
+      ]
+    },
+    "answer": {
+      "value": "1, 2, 3, 4, 6, 12,"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "1;2;3;4;6;12",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "iset-strict-subset-is-partial",
+    "question": {
+      "id": "q-set",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12
+      ],
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6
+          ],
+          "id": "MISC-QAWASIM-OUBLI-1-ET-N"
+        }
+      ]
+    },
+    "answer": {
+      "value": "1, 2, 3"
+    },
+    "expected": {
+      "outcome": "partially_correct",
+      "misconceptionId": null,
+      "normalized": "1;2;3",
+      "isCorrect": false,
+      "feedbackKey": "partial"
+    }
+  },
+  {
+    "name": "iset-misconception-signature",
+    "question": {
+      "id": "q-set",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12
+      ],
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6
+          ],
+          "id": "MISC-QAWASIM-OUBLI-1-ET-N"
+        }
+      ]
+    },
+    "answer": {
+      "value": "2, 3, 4, 6"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": "MISC-QAWASIM-OUBLI-1-ET-N",
+      "normalized": "2;3;4;6",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "iset-superset-is-incorrect",
+    "question": {
+      "id": "q-set",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12
+      ],
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6
+          ],
+          "id": "MISC-QAWASIM-OUBLI-1-ET-N"
+        }
+      ]
+    },
+    "answer": {
+      "value": "1, 2, 3, 4, 5, 6, 12"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "1;2;3;4;5;6;12",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "iset-disjoint-is-incorrect",
+    "question": {
+      "id": "q-set",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12
+      ],
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6
+          ],
+          "id": "MISC-QAWASIM-OUBLI-1-ET-N"
+        }
+      ]
+    },
+    "answer": {
+      "value": "5, 7"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "5;7",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "iset-word-token-is-syntax-error",
+    "question": {
+      "id": "q-set",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12
+      ],
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6
+          ],
+          "id": "MISC-QAWASIM-OUBLI-1-ET-N"
+        }
+      ]
+    },
+    "answer": {
+      "value": "1, deux"
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "1, deux",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "iset-empty-string-is-syntax-error",
+    "question": {
+      "id": "q-set",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12
+      ],
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6
+          ],
+          "id": "MISC-QAWASIM-OUBLI-1-ET-N"
+        }
+      ]
+    },
+    "answer": {
+      "value": ""
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "iset-negative-is-syntax-error",
+    "question": {
+      "id": "q-set",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12
+      ],
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6
+          ],
+          "id": "MISC-QAWASIM-OUBLI-1-ET-N"
+        }
+      ]
+    },
+    "answer": {
+      "value": "-1, 2"
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "-1, 2",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "iset-decimal-is-syntax-error",
+    "question": {
+      "id": "q-set",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12
+      ],
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6
+          ],
+          "id": "MISC-QAWASIM-OUBLI-1-ET-N"
+        }
+      ]
+    },
+    "answer": {
+      "value": "1.5"
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "1.5",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "iset-array-answer",
+    "question": {
+      "id": "q-set",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12
+      ],
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6
+          ],
+          "id": "MISC-QAWASIM-OUBLI-1-ET-N"
+        }
+      ]
+    },
+    "answer": {
+      "value": [
+        12,
+        1,
+        2,
+        3,
+        4,
+        6
+      ]
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "1;2;3;4;6;12",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "iset-array-with-bad-token",
+    "question": {
+      "id": "q-set",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12
+      ],
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6
+          ],
+          "id": "MISC-QAWASIM-OUBLI-1-ET-N"
+        }
+      ]
+    },
+    "answer": {
+      "value": [
+        1,
+        "deux"
+      ]
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "1,deux",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "iset-expected-as-string",
+    "question": {
+      "id": "q-set-str",
+      "answerType": "integerSet",
+      "expectedAnswer": "1, 2, 4",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      }
+    },
+    "answer": {
+      "value": "4 2 1"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "1;2;4",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "affine-pair-correct",
+    "question": {
+      "id": "q-aff",
+      "answerType": "affine",
+      "answerFormat": "ax + b",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "0,30",
+        "b": "4"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "a": "4",
+            "b": "0,30"
+          },
+          "id": "MISC-AFF-A-B-ECHANGES"
+        }
+      ]
+    },
+    "answer": {
+      "a": "0,30",
+      "b": "4"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "a=3/10;b=4",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "affine-latex-equivalent",
+    "question": {
+      "id": "q-aff",
+      "answerType": "affine",
+      "answerFormat": "ax + b",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "0,30",
+        "b": "4"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "a": "4",
+            "b": "0,30"
+          },
+          "id": "MISC-AFF-A-B-ECHANGES"
+        }
+      ]
+    },
+    "answer": {
+      "latex": "0,3x+4"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "a=3/10;b=4",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "affine-swapped-signature",
+    "question": {
+      "id": "q-aff",
+      "answerType": "affine",
+      "answerFormat": "ax + b",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "0,30",
+        "b": "4"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "a": "4",
+            "b": "0,30"
+          },
+          "id": "MISC-AFF-A-B-ECHANGES"
+        }
+      ]
+    },
+    "answer": {
+      "a": "4",
+      "b": "0,30"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": "MISC-AFF-A-B-ECHANGES",
+      "normalized": "a=4;b=3/10",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "affine-partial-b-wrong",
+    "question": {
+      "id": "q-aff",
+      "answerType": "affine",
+      "answerFormat": "ax + b",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "0,30",
+        "b": "4"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "a": "4",
+            "b": "0,30"
+          },
+          "id": "MISC-AFF-A-B-ECHANGES"
+        }
+      ]
+    },
+    "answer": {
+      "a": "0,30",
+      "b": "9"
+    },
+    "expected": {
+      "outcome": "partially_correct",
+      "misconceptionId": null,
+      "normalized": "a=3/10;b=9",
+      "isCorrect": false,
+      "feedbackKey": "partial"
+    }
+  },
+  {
+    "name": "affine-partial-a-wrong",
+    "question": {
+      "id": "q-aff",
+      "answerType": "affine",
+      "answerFormat": "ax + b",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "0,30",
+        "b": "4"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "a": "4",
+            "b": "0,30"
+          },
+          "id": "MISC-AFF-A-B-ECHANGES"
+        }
+      ]
+    },
+    "answer": {
+      "a": "1",
+      "b": "4"
+    },
+    "expected": {
+      "outcome": "partially_correct",
+      "misconceptionId": null,
+      "normalized": "a=1;b=4",
+      "isCorrect": false,
+      "feedbackKey": "partial"
+    }
+  },
+  {
+    "name": "affine-both-wrong",
+    "question": {
+      "id": "q-aff",
+      "answerType": "affine",
+      "answerFormat": "ax + b",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "0,30",
+        "b": "4"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "a": "4",
+            "b": "0,30"
+          },
+          "id": "MISC-AFF-A-B-ECHANGES"
+        }
+      ]
+    },
+    "answer": {
+      "a": "1",
+      "b": "9"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "a=1;b=9",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "affine-rejects-parentheses",
+    "question": {
+      "id": "q-aff",
+      "answerType": "affine",
+      "answerFormat": "ax + b",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "0,30",
+        "b": "4"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "a": "4",
+            "b": "0,30"
+          },
+          "id": "MISC-AFF-A-B-ECHANGES"
+        }
+      ]
+    },
+    "answer": {
+      "latex": "2(x+3)"
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "2(x+3)",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "affine-rejects-power",
+    "question": {
+      "id": "q-aff",
+      "answerType": "affine",
+      "answerFormat": "ax + b",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "0,30",
+        "b": "4"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "a": "4",
+            "b": "0,30"
+          },
+          "id": "MISC-AFF-A-B-ECHANGES"
+        }
+      ]
+    },
+    "answer": {
+      "latex": "x^2+1"
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "x^2+1",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "affine-rejects-xy",
+    "question": {
+      "id": "q-aff-2",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "2",
+        "b": "-3"
+      }
+    },
+    "answer": {
+      "latex": "2xy"
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "2xy",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "affine-rejects-x-over-2",
+    "question": {
+      "id": "q-aff-2",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "2",
+        "b": "-3"
+      }
+    },
+    "answer": {
+      "latex": "x/2"
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "x/2",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "affine-rejects-1-over-x",
+    "question": {
+      "id": "q-aff-2",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "2",
+        "b": "-3"
+      }
+    },
+    "answer": {
+      "latex": "1/x"
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "1/x",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "affine-rejects-uppercase-x",
+    "question": {
+      "id": "q-aff-2",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "2",
+        "b": "-3"
+      }
+    },
+    "answer": {
+      "latex": "2X-3"
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "2X-3",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "affine-latex-f-of-x",
+    "question": {
+      "id": "q-aff-2",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "2",
+        "b": "-3"
+      }
+    },
+    "answer": {
+      "latex": "f(x)=2x-3"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "a=2;b=-3",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "affine-latex-y-equals",
+    "question": {
+      "id": "q-aff-2",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "2",
+        "b": "-3"
+      }
+    },
+    "answer": {
+      "latex": "y=2x-3"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "a=2;b=-3",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "affine-latex-reordered-terms",
+    "question": {
+      "id": "q-aff-2",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "2",
+        "b": "-3"
+      }
+    },
+    "answer": {
+      "latex": "-3+2x"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "a=2;b=-3",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "affine-latex-typographic-minus",
+    "question": {
+      "id": "q-aff-2",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "2",
+        "b": "-3"
+      }
+    },
+    "answer": {
+      "latex": "2x−3"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "a=2;b=-3",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "affine-latex-cdot",
+    "question": {
+      "id": "q-aff-2",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "2",
+        "b": "-3"
+      }
+    },
+    "answer": {
+      "latex": "2\\cdot x-3"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "a=2;b=-3",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "affine-latex-frac-coefficient",
+    "question": {
+      "id": "q-aff-2",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "2",
+        "b": "-3"
+      }
+    },
+    "answer": {
+      "latex": "\\frac{4}{2}x-3"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "a=2;b=-3",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "affine-latex-with-spaces",
+    "question": {
+      "id": "q-aff-2",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "2",
+        "b": "-3"
+      }
+    },
+    "answer": {
+      "latex": "2x - 3"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "a=2;b=-3",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "affine-latex-double-minus-quirk",
+    "question": {
+      "id": "q-aff-2",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "2",
+        "b": "-3"
+      }
+    },
+    "answer": {
+      "latex": "2x--3"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "a=2;b=-3",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "affine-latex-plus-minus-drops-leading-plus-quirk",
+    "question": {
+      "id": "q-aff-2",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "2",
+        "b": "-3"
+      }
+    },
+    "answer": {
+      "latex": "+-2x-3"
+    },
+    "expected": {
+      "outcome": "partially_correct",
+      "misconceptionId": null,
+      "normalized": "a=-2;b=-3",
+      "isCorrect": false,
+      "feedbackKey": "partial"
+    }
+  },
+  {
+    "name": "affine-latex-negative-x",
+    "question": {
+      "id": "q-aff-3",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "-1",
+        "b": "1"
+      }
+    },
+    "answer": {
+      "latex": "y=-x+1"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "a=-1;b=1",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "affine-latex-negative-x-only-is-partial",
+    "question": {
+      "id": "q-aff-3",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "-1",
+        "b": "1"
+      }
+    },
+    "answer": {
+      "latex": "-x"
+    },
+    "expected": {
+      "outcome": "partially_correct",
+      "misconceptionId": null,
+      "normalized": "a=-1;b=0",
+      "isCorrect": false,
+      "feedbackKey": "partial"
+    }
+  },
+  {
+    "name": "affine-latex-x-alone-is-incorrect",
+    "question": {
+      "id": "q-aff-3",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "-1",
+        "b": "1"
+      }
+    },
+    "answer": {
+      "latex": "x"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "a=1;b=0",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "affine-pair-typographic-minus",
+    "question": {
+      "id": "q-aff-3",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "-1",
+        "b": "1"
+      }
+    },
+    "answer": {
+      "a": "−1",
+      "b": "1"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "a=-1;b=1",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "affine-latex-constant-only",
+    "question": {
+      "id": "q-aff-4",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "0",
+        "b": "5"
+      }
+    },
+    "answer": {
+      "latex": "5"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "a=0;b=5",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "affine-latex-zero-x-plus-5",
+    "question": {
+      "id": "q-aff-4",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "0",
+        "b": "5"
+      }
+    },
+    "answer": {
+      "latex": "0x+5"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "a=0;b=5",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "affine-latex-plus-2x-is-incorrect",
+    "question": {
+      "id": "q-aff-4",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "0",
+        "b": "5"
+      }
+    },
+    "answer": {
+      "latex": "+2x"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "a=2;b=0",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "affine-latex-x-alone-correct",
+    "question": {
+      "id": "q-aff-5",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "1",
+        "b": "0"
+      }
+    },
+    "answer": {
+      "latex": "x"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "a=1;b=0",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "affine-latex-plus-x-correct",
+    "question": {
+      "id": "q-aff-5",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "1",
+        "b": "0"
+      }
+    },
+    "answer": {
+      "latex": "+x"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "a=1;b=0",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "affine-latex-2x-is-partial",
+    "question": {
+      "id": "q-aff-5",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "1",
+        "b": "0"
+      }
+    },
+    "answer": {
+      "latex": "2x"
+    },
+    "expected": {
+      "outcome": "partially_correct",
+      "misconceptionId": null,
+      "normalized": "a=2;b=0",
+      "isCorrect": false,
+      "feedbackKey": "partial"
+    }
+  },
+  {
+    "name": "affine-latex-half-x-plus-1",
+    "question": {
+      "id": "q-aff-half",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "1/2",
+        "b": "1"
+      }
+    },
+    "answer": {
+      "latex": "\\frac{1}{2}x+1"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "a=1/2;b=1",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "affine-empty-latex",
+    "question": {
+      "id": "q-aff-2",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "2",
+        "b": "-3"
+      }
+    },
+    "answer": {
+      "latex": ""
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "affine-latex-not-a-string-falls-to-pair",
+    "question": {
+      "id": "q-aff-2",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "2",
+        "b": "-3"
+      }
+    },
+    "answer": {
+      "latex": 5
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "{\"latex\":5}",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "affine-pair-unreadable",
+    "question": {
+      "id": "q-aff-2",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "2",
+        "b": "-3"
+      }
+    },
+    "answer": {
+      "a": "deux",
+      "b": "3"
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "{\"a\":\"deux\",\"b\":\"3\"}",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "affine-string-answer",
+    "question": {
+      "id": "q-aff-2",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "2",
+        "b": "-3"
+      }
+    },
+    "answer": "2x-3",
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "a=2;b=-3",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "affine-string-answer-rejected",
+    "question": {
+      "id": "q-aff-2",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "2",
+        "b": "-3"
+      }
+    },
+    "answer": "2(x+3)",
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "\"2(x+3)\"",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "affine-list-answer",
+    "question": {
+      "id": "q-aff-2",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "2",
+        "b": "-3"
+      }
+    },
+    "answer": [
+      2,
+      -3
+    ],
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "[2,-3]",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "affine-number-answer",
+    "question": {
+      "id": "q-aff-2",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "a": "2",
+        "b": "-3"
+      }
+    },
+    "answer": 5,
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "5",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "affine-expected-as-latex",
+    "question": {
+      "id": "q-aff-latex",
+      "answerType": "affine",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "f(x)=2x-3"
+    },
+    "answer": {
+      "a": "2",
+      "b": "-3"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "a=2;b=-3",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "interval-correct-exact",
+    "question": {
+      "id": "q-int",
+      "answerType": "interval",
+      "answerFormat": "]… ; …[",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "lo": null,
+        "loOpen": true,
+        "hi": "3",
+        "hiOpen": true
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "lo": "3",
+            "loOpen": true,
+            "hi": null,
+            "hiOpen": true
+          },
+          "id": "MISC-AFF-INEQ-SENS-NON-INVERSE"
+        }
+      ]
+    },
+    "answer": {
+      "lo": null,
+      "loOpen": true,
+      "hi": "3",
+      "hiOpen": true
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "]-∞ ; 3[",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "interval-correct-bound-written-otherwise",
+    "question": {
+      "id": "q-int",
+      "answerType": "interval",
+      "answerFormat": "]… ; …[",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "lo": null,
+        "loOpen": true,
+        "hi": "3",
+        "hiOpen": true
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "lo": "3",
+            "loOpen": true,
+            "hi": null,
+            "hiOpen": true
+          },
+          "id": "MISC-AFF-INEQ-SENS-NON-INVERSE"
+        }
+      ]
+    },
+    "answer": {
+      "lo": null,
+      "loOpen": true,
+      "hi": "6/2",
+      "hiOpen": true
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "]-∞ ; 3[",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "interval-empty-string-bound-is-infinity",
+    "question": {
+      "id": "q-int",
+      "answerType": "interval",
+      "answerFormat": "]… ; …[",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "lo": null,
+        "loOpen": true,
+        "hi": "3",
+        "hiOpen": true
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "lo": "3",
+            "loOpen": true,
+            "hi": null,
+            "hiOpen": true
+          },
+          "id": "MISC-AFF-INEQ-SENS-NON-INVERSE"
+        }
+      ]
+    },
+    "answer": {
+      "lo": "",
+      "hi": "3",
+      "hiOpen": true
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "]-∞ ; 3[",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "interval-wrong-direction-signature",
+    "question": {
+      "id": "q-int",
+      "answerType": "interval",
+      "answerFormat": "]… ; …[",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "lo": null,
+        "loOpen": true,
+        "hi": "3",
+        "hiOpen": true
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "lo": "3",
+            "loOpen": true,
+            "hi": null,
+            "hiOpen": true
+          },
+          "id": "MISC-AFF-INEQ-SENS-NON-INVERSE"
+        }
+      ]
+    },
+    "answer": {
+      "lo": "3",
+      "loOpen": true,
+      "hi": null,
+      "hiOpen": true
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": "MISC-AFF-INEQ-SENS-NON-INVERSE",
+      "normalized": "]3 ; +∞[",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "interval-closed-vs-open",
+    "question": {
+      "id": "q-int",
+      "answerType": "interval",
+      "answerFormat": "]… ; …[",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "lo": null,
+        "loOpen": true,
+        "hi": "3",
+        "hiOpen": true
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "lo": "3",
+            "loOpen": true,
+            "hi": null,
+            "hiOpen": true
+          },
+          "id": "MISC-AFF-INEQ-SENS-NON-INVERSE"
+        }
+      ]
+    },
+    "answer": {
+      "lo": null,
+      "loOpen": true,
+      "hi": "3",
+      "hiOpen": false
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "]-∞ ; 3]",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "interval-closed-toward-minus-infinity-is-syntax-error",
+    "question": {
+      "id": "q-int",
+      "answerType": "interval",
+      "answerFormat": "]… ; …[",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "lo": null,
+        "loOpen": true,
+        "hi": "3",
+        "hiOpen": true
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "lo": "3",
+            "loOpen": true,
+            "hi": null,
+            "hiOpen": true
+          },
+          "id": "MISC-AFF-INEQ-SENS-NON-INVERSE"
+        }
+      ]
+    },
+    "answer": {
+      "lo": null,
+      "loOpen": false,
+      "hi": "3",
+      "hiOpen": true
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "{\"lo\":null,\"loOpen\":false,\"hi\":\"3\",\"hiOpen\":true}",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "interval-closed-toward-plus-infinity-is-syntax-error",
+    "question": {
+      "id": "q-int",
+      "answerType": "interval",
+      "answerFormat": "]… ; …[",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "lo": null,
+        "loOpen": true,
+        "hi": "3",
+        "hiOpen": true
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "lo": "3",
+            "loOpen": true,
+            "hi": null,
+            "hiOpen": true
+          },
+          "id": "MISC-AFF-INEQ-SENS-NON-INVERSE"
+        }
+      ]
+    },
+    "answer": {
+      "lo": "3",
+      "loOpen": true,
+      "hi": null,
+      "hiOpen": false
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "{\"lo\":\"3\",\"loOpen\":true,\"hi\":null,\"hiOpen\":false}",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "interval-unreadable-bound",
+    "question": {
+      "id": "q-int",
+      "answerType": "interval",
+      "answerFormat": "]… ; …[",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "lo": null,
+        "loOpen": true,
+        "hi": "3",
+        "hiOpen": true
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "lo": "3",
+            "loOpen": true,
+            "hi": null,
+            "hiOpen": true
+          },
+          "id": "MISC-AFF-INEQ-SENS-NON-INVERSE"
+        }
+      ]
+    },
+    "answer": {
+      "lo": "a",
+      "loOpen": true,
+      "hi": "3",
+      "hiOpen": true
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "{\"lo\":\"a\",\"loOpen\":true,\"hi\":\"3\",\"hiOpen\":true}",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "interval-whole-line-from-empty-object",
+    "question": {
+      "id": "q-int",
+      "answerType": "interval",
+      "answerFormat": "]… ; …[",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "lo": null,
+        "loOpen": true,
+        "hi": "3",
+        "hiOpen": true
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "lo": "3",
+            "loOpen": true,
+            "hi": null,
+            "hiOpen": true
+          },
+          "id": "MISC-AFF-INEQ-SENS-NON-INVERSE"
+        }
+      ]
+    },
+    "answer": {},
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "]-∞ ; +∞[",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "interval-both-infinite-explicit",
+    "question": {
+      "id": "q-int",
+      "answerType": "interval",
+      "answerFormat": "]… ; …[",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "lo": null,
+        "loOpen": true,
+        "hi": "3",
+        "hiOpen": true
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "lo": "3",
+            "loOpen": true,
+            "hi": null,
+            "hiOpen": true
+          },
+          "id": "MISC-AFF-INEQ-SENS-NON-INVERSE"
+        }
+      ]
+    },
+    "answer": {
+      "lo": null,
+      "hi": null
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "]-∞ ; +∞[",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "interval-string-answer-is-syntax-error",
+    "question": {
+      "id": "q-int",
+      "answerType": "interval",
+      "answerFormat": "]… ; …[",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "lo": null,
+        "loOpen": true,
+        "hi": "3",
+        "hiOpen": true
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "lo": "3",
+            "loOpen": true,
+            "hi": null,
+            "hiOpen": true
+          },
+          "id": "MISC-AFF-INEQ-SENS-NON-INVERSE"
+        }
+      ]
+    },
+    "answer": "]0;3[",
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "\"]0;3[\"",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "interval-number-answer-is-syntax-error",
+    "question": {
+      "id": "q-int",
+      "answerType": "interval",
+      "answerFormat": "]… ; …[",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "lo": null,
+        "loOpen": true,
+        "hi": "3",
+        "hiOpen": true
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "lo": "3",
+            "loOpen": true,
+            "hi": null,
+            "hiOpen": true
+          },
+          "id": "MISC-AFF-INEQ-SENS-NON-INVERSE"
+        }
+      ]
+    },
+    "answer": 3,
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "3",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "interval-closed-correct",
+    "question": {
+      "id": "q-int-2",
+      "answerType": "interval",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "lo": "1",
+        "loOpen": false,
+        "hi": "4",
+        "hiOpen": false
+      }
+    },
+    "answer": {
+      "lo": "1",
+      "loOpen": false,
+      "hi": "4",
+      "hiOpen": false
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "[1 ; 4]",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "interval-closed-decimal-bounds",
+    "question": {
+      "id": "q-int-2",
+      "answerType": "interval",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "lo": "1",
+        "loOpen": false,
+        "hi": "4",
+        "hiOpen": false
+      }
+    },
+    "answer": {
+      "lo": "1,0",
+      "loOpen": false,
+      "hi": "8/2",
+      "hiOpen": false
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "[1 ; 4]",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "interval-reversed-is-incorrect",
+    "question": {
+      "id": "q-int-2",
+      "answerType": "interval",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "lo": "1",
+        "loOpen": false,
+        "hi": "4",
+        "hiOpen": false
+      }
+    },
+    "answer": {
+      "lo": "4",
+      "loOpen": false,
+      "hi": "1",
+      "hiOpen": false
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "[4 ; 1]",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "interval-degenerate-is-incorrect",
+    "question": {
+      "id": "q-int-2",
+      "answerType": "interval",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "lo": "1",
+        "loOpen": false,
+        "hi": "4",
+        "hiOpen": false
+      }
+    },
+    "answer": {
+      "lo": "3",
+      "loOpen": false,
+      "hi": "3",
+      "hiOpen": false
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "[3 ; 3]",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "interval-missing-open-flags-default-open",
+    "question": {
+      "id": "q-int-2",
+      "answerType": "interval",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "lo": "1",
+        "loOpen": false,
+        "hi": "4",
+        "hiOpen": false
+      }
+    },
+    "answer": {
+      "lo": "1",
+      "hi": "4"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "]1 ; 4[",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "interval-open-flag-as-string-is-not-false",
+    "question": {
+      "id": "q-int-2",
+      "answerType": "interval",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "lo": "1",
+        "loOpen": false,
+        "hi": "4",
+        "hiOpen": false
+      }
+    },
+    "answer": {
+      "lo": "1",
+      "loOpen": "false",
+      "hi": "4",
+      "hiOpen": false
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "]1 ; 4]",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "point-correct",
+    "question": {
+      "id": "q-pt",
+      "answerType": "point",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "x": "2",
+        "y": "-3"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-3",
+            "y": "2"
+          },
+          "id": "MISC-POINT-COORD-ECHANGEES"
+        },
+        {
+          "value": {
+            "x": "2",
+            "y": "3"
+          },
+          "id": "MISC-POINT-SIGNE-Y"
+        }
+      ]
+    },
+    "answer": {
+      "x": "2",
+      "y": "-3"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "(2;-3)",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "point-equivalent-writings-are-correct",
+    "question": {
+      "id": "q-pt",
+      "answerType": "point",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "x": "2",
+        "y": "-3"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-3",
+            "y": "2"
+          },
+          "id": "MISC-POINT-COORD-ECHANGEES"
+        },
+        {
+          "value": {
+            "x": "2",
+            "y": "3"
+          },
+          "id": "MISC-POINT-SIGNE-Y"
+        }
+      ]
+    },
+    "answer": {
+      "x": "4/2",
+      "y": "-3,0"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "(2;-3)",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "point-json-numbers",
+    "question": {
+      "id": "q-pt",
+      "answerType": "point",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "x": "2",
+        "y": "-3"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-3",
+            "y": "2"
+          },
+          "id": "MISC-POINT-COORD-ECHANGEES"
+        },
+        {
+          "value": {
+            "x": "2",
+            "y": "3"
+          },
+          "id": "MISC-POINT-SIGNE-Y"
+        }
+      ]
+    },
+    "answer": {
+      "x": 2,
+      "y": -3
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "(2;-3)",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "point-partial-y-wrong",
+    "question": {
+      "id": "q-pt",
+      "answerType": "point",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "x": "2",
+        "y": "-3"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-3",
+            "y": "2"
+          },
+          "id": "MISC-POINT-COORD-ECHANGEES"
+        },
+        {
+          "value": {
+            "x": "2",
+            "y": "3"
+          },
+          "id": "MISC-POINT-SIGNE-Y"
+        }
+      ]
+    },
+    "answer": {
+      "x": "2",
+      "y": "-4"
+    },
+    "expected": {
+      "outcome": "partially_correct",
+      "misconceptionId": null,
+      "normalized": "(2;-4)",
+      "isCorrect": false,
+      "feedbackKey": "partial"
+    }
+  },
+  {
+    "name": "point-partial-x-wrong",
+    "question": {
+      "id": "q-pt",
+      "answerType": "point",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "x": "2",
+        "y": "-3"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-3",
+            "y": "2"
+          },
+          "id": "MISC-POINT-COORD-ECHANGEES"
+        },
+        {
+          "value": {
+            "x": "2",
+            "y": "3"
+          },
+          "id": "MISC-POINT-SIGNE-Y"
+        }
+      ]
+    },
+    "answer": {
+      "x": "-2",
+      "y": "-3"
+    },
+    "expected": {
+      "outcome": "partially_correct",
+      "misconceptionId": null,
+      "normalized": "(-2;-3)",
+      "isCorrect": false,
+      "feedbackKey": "partial"
+    }
+  },
+  {
+    "name": "point-swapped-signature",
+    "question": {
+      "id": "q-pt",
+      "answerType": "point",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "x": "2",
+        "y": "-3"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-3",
+            "y": "2"
+          },
+          "id": "MISC-POINT-COORD-ECHANGEES"
+        },
+        {
+          "value": {
+            "x": "2",
+            "y": "3"
+          },
+          "id": "MISC-POINT-SIGNE-Y"
+        }
+      ]
+    },
+    "answer": {
+      "x": "-3",
+      "y": "2"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": "MISC-POINT-COORD-ECHANGEES",
+      "normalized": "(-3;2)",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "point-signature-beats-partial",
+    "question": {
+      "id": "q-pt",
+      "answerType": "point",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "x": "2",
+        "y": "-3"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-3",
+            "y": "2"
+          },
+          "id": "MISC-POINT-COORD-ECHANGEES"
+        },
+        {
+          "value": {
+            "x": "2",
+            "y": "3"
+          },
+          "id": "MISC-POINT-SIGNE-Y"
+        }
+      ]
+    },
+    "answer": {
+      "x": "2",
+      "y": "3"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": "MISC-POINT-SIGNE-Y",
+      "normalized": "(2;3)",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "point-both-wrong",
+    "question": {
+      "id": "q-pt",
+      "answerType": "point",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "x": "2",
+        "y": "-3"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-3",
+            "y": "2"
+          },
+          "id": "MISC-POINT-COORD-ECHANGEES"
+        },
+        {
+          "value": {
+            "x": "2",
+            "y": "3"
+          },
+          "id": "MISC-POINT-SIGNE-Y"
+        }
+      ]
+    },
+    "answer": {
+      "x": "5",
+      "y": "5"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "(5;5)",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "point-unreadable-x",
+    "question": {
+      "id": "q-pt",
+      "answerType": "point",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "x": "2",
+        "y": "-3"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-3",
+            "y": "2"
+          },
+          "id": "MISC-POINT-COORD-ECHANGEES"
+        },
+        {
+          "value": {
+            "x": "2",
+            "y": "3"
+          },
+          "id": "MISC-POINT-SIGNE-Y"
+        }
+      ]
+    },
+    "answer": {
+      "x": "a",
+      "y": "-3"
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "a;-3",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "point-missing-y",
+    "question": {
+      "id": "q-pt",
+      "answerType": "point",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "x": "2",
+        "y": "-3"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-3",
+            "y": "2"
+          },
+          "id": "MISC-POINT-COORD-ECHANGEES"
+        },
+        {
+          "value": {
+            "x": "2",
+            "y": "3"
+          },
+          "id": "MISC-POINT-SIGNE-Y"
+        }
+      ]
+    },
+    "answer": {
+      "x": "2"
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "2;",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "point-float-x-unreadable-y",
+    "question": {
+      "id": "q-pt",
+      "answerType": "point",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "x": "2",
+        "y": "-3"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-3",
+            "y": "2"
+          },
+          "id": "MISC-POINT-COORD-ECHANGEES"
+        },
+        {
+          "value": {
+            "x": "2",
+            "y": "3"
+          },
+          "id": "MISC-POINT-SIGNE-Y"
+        }
+      ]
+    },
+    "answer": {
+      "x": 1.5,
+      "y": "a"
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "1.5;a",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "point-expected-json-numbers-minus-zero",
+    "question": {
+      "id": "q-pt-num",
+      "answerType": "point",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "answer": {
+      "x": "0",
+      "y": "-0"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "(0;0)",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "abandoned-null-answer",
+    "question": {
+      "id": "q-rat",
+      "answerType": "rational",
+      "answerFormat": "… par minute",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "-8",
+          "id": "MISC-AFF-DIFF-SEULE"
+        }
+      ]
+    },
+    "answer": null,
+    "expected": {
+      "outcome": "abandoned",
+      "misconceptionId": null,
+      "normalized": "",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "throws-unknown-answerType",
+    "question": {
+      "id": "q",
+      "answerType": "quantique"
+    },
+    "answer": {
+      "value": "1"
+    },
+    "expected": {
+      "throws": "answerType inconnu"
+    }
+  },
+  {
+    "name": "throws-missing-answerType",
+    "question": {
+      "id": "q"
+    },
+    "answer": {
+      "value": "1"
+    },
+    "expected": {
+      "throws": "answerType inconnu"
+    }
+  },
+  {
+    "name": "throws-unreadable-expected-rational",
+    "question": {
+      "id": "q-bad-rat",
+      "answerType": "rational",
+      "expectedAnswer": "abc"
+    },
+    "answer": {
+      "value": "1"
+    },
+    "expected": {
+      "throws": "expectedAnswer illisible"
+    }
+  },
+  {
+    "name": "throws-unreadable-expected-integerSet",
+    "question": {
+      "id": "q-bad-set",
+      "answerType": "integerSet",
+      "expectedAnswer": "abc"
+    },
+    "answer": {
+      "value": "1"
+    },
+    "expected": {
+      "throws": "expectedAnswer illisible"
+    }
+  },
+  {
+    "name": "throws-unreadable-expected-affine",
+    "question": {
+      "id": "q-bad-aff",
+      "answerType": "affine",
+      "expectedAnswer": {
+        "a": "x"
+      }
+    },
+    "answer": {
+      "a": "1",
+      "b": "2"
+    },
+    "expected": {
+      "throws": "expectedAnswer illisible"
+    }
+  },
+  {
+    "name": "throws-unreadable-expected-interval",
+    "question": {
+      "id": "q-bad-int",
+      "answerType": "interval",
+      "expectedAnswer": {
+        "lo": "a"
+      }
+    },
+    "answer": {
+      "lo": "1",
+      "hi": "2"
+    },
+    "expected": {
+      "throws": "expectedAnswer illisible"
+    }
+  },
+  {
+    "name": "throws-unreadable-expected-point",
+    "question": {
+      "id": "q-bad-pt",
+      "answerType": "point",
+      "expectedAnswer": {
+        "x": "a",
+        "y": "1"
+      }
+    },
+    "answer": {
+      "x": "1",
+      "y": "2"
+    },
+    "expected": {
+      "throws": "expectedAnswer illisible"
+    }
+  },
+  {
+    "name": "integerSet-braces-2026-09-29",
+    "question": {
+      "id": "q-set",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12
+      ],
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6
+          ],
+          "id": "MISC-QAWASIM-OUBLI-1-ET-N"
+        }
+      ]
+    },
+    "answer": {
+      "value": "{1, 2, 3, 4, 6, 12}"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "1;2;3;4;6;12",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "integerSet-latex-braces-2026-09-29",
+    "question": {
+      "id": "q-set",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12
+      ],
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6
+          ],
+          "id": "MISC-QAWASIM-OUBLI-1-ET-N"
+        }
+      ]
+    },
+    "answer": {
+      "value": "\\{1 ; 2 ; 3 ; 4 ; 6 ; 12\\}"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "1;2;3;4;6;12",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "integerSet-wa-conjunction-2026-09-29",
+    "question": {
+      "id": "q-set",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12
+      ],
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6
+          ],
+          "id": "MISC-QAWASIM-OUBLI-1-ET-N"
+        }
+      ]
+    },
+    "answer": {
+      "value": "1 و 2 و 3 و 4 و 6 و 12"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "1;2;3;4;6;12",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "integerSet-trailing-dot-2026-09-29",
+    "question": {
+      "id": "q-set",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12
+      ],
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6
+          ],
+          "id": "MISC-QAWASIM-OUBLI-1-ET-N"
+        }
+      ]
+    },
+    "answer": {
+      "value": "1, 2, 3, 4, 6, 12."
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "1;2;3;4;6;12",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "integerSet-inner-dot-still-syntax-2026-09-29",
+    "question": {
+      "id": "q-set",
+      "answerType": "integerSet",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12
+      ],
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6
+          ],
+          "id": "MISC-QAWASIM-OUBLI-1-ET-N"
+        }
+      ]
+    },
+    "answer": {
+      "value": "1.5"
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "1.5",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "rational-arabic-indic-digits-2026-09-29",
+    "question": {
+      "id": "q-irr",
+      "answerType": "rational",
+      "expectedAnswer": "7/4",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque.",
+        "notIrreducible": "اختزل أكثر."
+      },
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "14/8",
+          "id": "MISC-IKHTIZAL-ARRET-EN-CHEMIN"
+        }
+      ]
+    },
+    "answer": {
+      "value": "٣/٤"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "3/4",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "rational-persian-digits-2026-09-29",
+    "question": {
+      "id": "q-irr",
+      "answerType": "rational",
+      "expectedAnswer": "7/4",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque.",
+        "notIrreducible": "اختزل أكثر."
+      },
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "14/8",
+          "id": "MISC-IKHTIZAL-ARRET-EN-CHEMIN"
+        }
+      ]
+    },
+    "answer": {
+      "value": "۳/۴"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "3/4",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "rational-division-slash-2026-09-29",
+    "question": {
+      "id": "q-irr",
+      "answerType": "rational",
+      "expectedAnswer": "7/4",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque.",
+        "notIrreducible": "اختزل أكثر."
+      },
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "14/8",
+          "id": "MISC-IKHTIZAL-ARRET-EN-CHEMIN"
+        }
+      ]
+    },
+    "answer": {
+      "value": "3∕4"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "3/4",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "rational-arabic-decimal-separator-2026-09-29",
+    "question": {
+      "id": "q-irr",
+      "answerType": "rational",
+      "expectedAnswer": "7/4",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque.",
+        "notIrreducible": "اختزل أكثر."
+      },
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "14/8",
+          "id": "MISC-IKHTIZAL-ARRET-EN-CHEMIN"
+        }
+      ]
+    },
+    "answer": {
+      "value": "٠٫٧٥"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "3/4",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "rational-arabic-indic-correct-2026-09-29",
+    "question": {
+      "id": "q-irr",
+      "answerType": "rational",
+      "expectedAnswer": "7/4",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque.",
+        "notIrreducible": "اختزل أكثر."
+      },
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "14/8",
+          "id": "MISC-IKHTIZAL-ARRET-EN-CHEMIN"
+        }
+      ]
+    },
+    "answer": {
+      "value": "٧/٤"
+    },
+    "expected": {
+      "outcome": "equivalent_correct",
+      "misconceptionId": null,
+      "normalized": "7/4",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-arabic-indic-not-irreducible-2026-09-29",
+    "question": {
+      "id": "q-irr",
+      "answerType": "rational",
+      "expectedAnswer": "7/4",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque.",
+        "notIrreducible": "اختزل أكثر."
+      },
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "14/8",
+          "id": "MISC-IKHTIZAL-ARRET-EN-CHEMIN"
+        }
+      ]
+    },
+    "answer": {
+      "value": "١٤/٨"
+    },
+    "expected": {
+      "outcome": "partially_correct",
+      "misconceptionId": "MISC-IKHTIZAL-ARRET-EN-CHEMIN",
+      "normalized": "7/4",
+      "isCorrect": false,
+      "feedbackKey": "notIrreducible"
+    }
+  },
+  {
+    "name": "rational-large-integer-typed-is-correct",
+    "question": {
+      "id": "q-rat-big",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "132000000"
+    },
+    "answer": {
+      "value": "132000000"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "132000000",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-large-integer-grouped-is-equivalent",
+    "question": {
+      "id": "q-rat-big",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "132000000"
+    },
+    "answer": {
+      "value": "132 000 000"
+    },
+    "expected": {
+      "outcome": "equivalent_correct",
+      "misconceptionId": null,
+      "normalized": "132000000",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-large-integer-arabic-digits",
+    "question": {
+      "id": "q-rat-big",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "132000000"
+    },
+    "answer": {
+      "value": "١٣٢٠٠٠٠٠٠"
+    },
+    "expected": {
+      "outcome": "equivalent_correct",
+      "misconceptionId": null,
+      "normalized": "132000000",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "rational-large-integer-off-by-one-is-incorrect",
+    "question": {
+      "id": "q-rat-big",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "132000000"
+    },
+    "answer": {
+      "value": "132000001"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "132000001",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "rational-above-max-safe-integer-is-syntax-error",
+    "question": {
+      "id": "q-rat-big",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "132000000"
+    },
+    "answer": {
+      "value": "9007199254740992"
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "9007199254740992",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "rational-max-safe-integer-is-read",
+    "question": {
+      "id": "q-rat-big",
+      "answerType": "rational",
+      "feedback": {
+        "correct": "Oui.",
+        "incorrect": "Non.",
+        "partial": "Presque."
+      },
+      "expectedAnswer": "9007199254740991"
+    },
+    "answer": {
+      "value": "9007199254740991"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "9007199254740991",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "selfCheck-correct",
+    "question": {
+      "id": "q-self",
+      "answerType": "selfCheck",
+      "feedback": {
+        "correct": "Bien.",
+        "incorrect": "Relis le corrigé."
+      },
+      "solution": {
+        "lines": [
+          "…"
+        ]
+      }
+    },
+    "answer": {
+      "selfMark": "correct"
+    },
+    "expected": {
+      "outcome": "correct",
+      "misconceptionId": null,
+      "normalized": "self:correct",
+      "isCorrect": true,
+      "feedbackKey": "correct"
+    }
+  },
+  {
+    "name": "selfCheck-incorrect",
+    "question": {
+      "id": "q-self",
+      "answerType": "selfCheck",
+      "feedback": {
+        "correct": "Bien.",
+        "incorrect": "Relis le corrigé."
+      },
+      "solution": {
+        "lines": [
+          "…"
+        ]
+      }
+    },
+    "answer": {
+      "selfMark": "incorrect"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "self:incorrect",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "selfCheck-unknown-mark",
+    "question": {
+      "id": "q-self",
+      "answerType": "selfCheck",
+      "feedback": {
+        "correct": "Bien.",
+        "incorrect": "Relis le corrigé."
+      },
+      "solution": {
+        "lines": [
+          "…"
+        ]
+      }
+    },
+    "answer": {
+      "selfMark": "maybe"
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "maybe",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "selfCheck-empty-object",
+    "question": {
+      "id": "q-self",
+      "answerType": "selfCheck",
+      "feedback": {
+        "correct": "Bien.",
+        "incorrect": "Relis le corrigé."
+      },
+      "solution": {
+        "lines": [
+          "…"
+        ]
+      }
+    },
+    "answer": {},
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "selfCheck-text-pending",
+    "question": {
+      "id": "q-self",
+      "answerType": "selfCheck",
+      "feedback": {
+        "correct": "Bien.",
+        "incorrect": "Relis le corrigé."
+      },
+      "solution": {
+        "lines": [
+          "…"
+        ]
+      }
+    },
+    "answer": {
+      "text": "PGCD(21 ; 14) = PGCD(14 ; 7) لأن 21 − 14 = 7"
+    },
+    "expected": {
+      "outcome": "abandoned",
+      "misconceptionId": null,
+      "normalized": "self:pending",
+      "isCorrect": false,
+      "feedbackKey": "pending"
+    }
+  },
+  {
+    "name": "selfCheck-blank-text",
+    "question": {
+      "id": "q-self",
+      "answerType": "selfCheck",
+      "feedback": {
+        "correct": "Bien.",
+        "incorrect": "Relis le corrigé."
+      },
+      "solution": {
+        "lines": [
+          "…"
+        ]
+      }
+    },
+    "answer": {
+      "text": "   "
+    },
+    "expected": {
+      "outcome": "syntax_error",
+      "misconceptionId": null,
+      "normalized": "",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  },
+  {
+    "name": "selfCheck-text-and-mark",
+    "question": {
+      "id": "q-self",
+      "answerType": "selfCheck",
+      "feedback": {
+        "correct": "Bien.",
+        "incorrect": "Relis le corrigé."
+      },
+      "solution": {
+        "lines": [
+          "…"
+        ]
+      }
+    },
+    "answer": {
+      "text": "برهان",
+      "selfMark": "incorrect"
+    },
+    "expected": {
+      "outcome": "incorrect",
+      "misconceptionId": null,
+      "normalized": "self:incorrect",
+      "isCorrect": false,
+      "feedbackKey": "incorrect"
+    }
+  }
+]

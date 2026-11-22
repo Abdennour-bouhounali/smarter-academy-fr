@@ -1,0 +1,319 @@
+{
+  "id": "ex-3am-qismat-nisbiyayn-l5-006",
+  "lessonCode": "qismat-nisbiyayn",
+  "level": 5,
+  "metadata": {
+    "title": "عامل مجهول وسلسلتا حساب",
+    "estimatedMinutes": 6,
+    "tags": [
+      "عامل مجهول",
+      "سلسلة حسابات",
+      "عدد طبيعي"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 1,
+      "file": "1am-s1-100",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن الأعداد الآتية، و $x$ عدد نسبي:",
+    "formulas": [
+      "E = (−5) \\times (−2) \\times 3 \\times (−2{,}4) \\times (−1) \\times x",
+      "F = 3 \\times [(−12) + (+8) \\times (−2)] \\div (−5)",
+      "G = \\dfrac{7 + 3 \\times (−5)}{−10 \\div 2 + 3}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب $x$ .",
+      "statement": "احسب جداء العوامل المعلومة في $E$ ، أي $(−5) \\times (−2) \\times 3 \\times (−2{,}4) \\times (−1)$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "72",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تُنجز أولًا؟ ابدأ بما بين القوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد الأقواس: الضرب والقسمة معًا من اليسار إلى اليمين، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل خطوة في سطر، وانتبه إلى طرح عدد سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "الجداء هو $72$ .",
+        "incorrect": "راجع أولوية العمليات: الأقواس، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "أربعة عوامل سالبة (عدد زوجي)، فالجداء موجب.",
+          "$5 \\times 2 \\times 3 \\times 2{,}4 \\times 1 = 72$"
+        ],
+        "result": "72"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "علمًا أنّ $E = −36$ ، أوجد قيمة $x$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-0.5",
+      "misconceptionSignatures": [
+        {
+          "value": "0.5",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "-2",
+          "id": "MISC-QISMA-ORDER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المساواة: المطلوب عدد ناقص في عملية ضرب أو قسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الناقص في جداء هو حاصل قسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعملية: ضع العدد في مكان الفراغ وتأكّد من صحة المساواة."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = −0{,}5$ .",
+        "incorrect": "راجع الربط بين الضرب والقسمة: العدد الناقص هو حاصل قسمة، ثم تحقّق بالضرب."
+      },
+      "solution": {
+        "lines": [
+          "$E = 72 \\times x$ ، و $E = −36$ ، إذن $72 \\times x = −36$ .",
+          "$x = (−36) \\div 72 = −0{,}5$",
+          "تحقّق: $72 \\times (−0{,}5) = −36$ ."
+        ],
+        "result": "−0{,}5"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب $F$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "16.8",
+      "misconceptionSignatures": [
+        {
+          "value": "-16.8",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "5/84",
+          "id": "MISC-QISMA-ORDER"
+        },
+        {
+          "value": "-79",
+          "id": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تُنجز أولًا؟ ابدأ بما بين القوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد الأقواس: الضرب والقسمة معًا من اليسار إلى اليمين، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل خطوة في سطر، وانتبه إلى طرح عدد سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "$F = 16{,}8$ .",
+        "incorrect": "راجع أولوية العمليات: الأقواس، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$F = 3 \\times [(−12) + (+8) \\times (−2)] \\div (−5)$",
+          "$F = 3 \\times [(−12) + (−16)] \\div (−5)$",
+          "$F = 3 \\times (−28) \\div (−5)$",
+          "$F = −84 \\div (−5)$",
+          "$F = 16{,}8$"
+        ],
+        "result": "16{,}8"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "لننظر في $G$ .",
+      "statement": "احسب $G$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "-4",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "0.25",
+          "id": "MISC-QISMA-ORDER"
+        },
+        {
+          "value": "-6",
+          "id": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تُنجز أولًا؟ ابدأ بما بين القوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد الأقواس: الضرب والقسمة معًا من اليسار إلى اليمين، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل خطوة في سطر، وانتبه إلى طرح عدد سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "$G = 4$ .",
+        "incorrect": "راجع أولوية العمليات: الأقواس، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$G = (7 + 3 \\times (−5)) \\div (−10 \\div 2 + 3)$",
+          "$G = (7 + (−15)) \\div (−5 + 3)$",
+          "$G = −8 \\div (−2)$",
+          "$G = 4$"
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "هل $G$ عدد طبيعي؟",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QISMA-SIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب كل طرف من طرفي المقارنة على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن الإشارة أولًا ثم قارن القيمتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب أن تتحقّق بعملية عكسية."
+        }
+      ],
+      "feedback": {
+        "correct": "$G = 4$ وهو عدد صحيح موجب، إذن هو عدد طبيعي.",
+        "incorrect": "راجع أولوية العمليات: الأقواس، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$G = 4$ وهو عدد صحيح موجب، إذن هو عدد طبيعي."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-judhur-l2-009",
+  "lessonCode": "wadiya-idmajiya-judhur",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2013 — التمرين الأول",
+    "estimatedMinutes": 7,
+    "tags": [
+      "نشر",
+      "جداء عدد طبيعي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-judhur_P1",
+      "modelledOn": "BEM 2013 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2013",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد الحقيقي $A$ حيث:",
+    "formulas": [
+      "A = \\sqrt{2}(\\sqrt{2} + 3) - \\sqrt{8} + 1"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن: $A = 3 + \\sqrt{2}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر $\\sqrt{2}(\\sqrt{2} + 3)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $\\sqrt{8}$ على الشكل $k\\sqrt{2}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك سطرًا بسطر بالحل النموذجي."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\sqrt{2} \\times \\sqrt{2} + 3\\sqrt{2} - \\sqrt{4 \\times 2} + 1$",
+          "$A = 2 + 3\\sqrt{2} - 2\\sqrt{2} + 1$"
+        ],
+        "result": "A = 3 + \\sqrt{2}"
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ليكن العدد الحقيقي $B$ حيث: $B = 3 - \\sqrt{2}$ . بيّن أن $A \\times B$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة الجداء $A \\times B$ (عدد طبيعي)",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "11",
+          "id": "MISC-JIDHR-FI-JIDHR"
+        },
+        {
+          "value": "1",
+          "id": "MISC-TARBI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$A \\times B = (3 + \\sqrt{2})(3 - \\sqrt{2})$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$(x + y)(x - y) = x^2 - y^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$A \\times B = 3^2 - (\\sqrt{2})^2 = 9 - 2 = 7$ : عدد طبيعي.",
+        "incorrect": "استعمل $(x + y)(x - y) = x^2 - y^2$ و $(\\sqrt{2})^2 = 2$ ."
+      },
+      "solution": {
+        "lines": [
+          "$A \\times B = (3 + \\sqrt{2})(3 - \\sqrt{2})$",
+          "$= 3^2 - (\\sqrt{2})^2 = 9 - 2$"
+        ],
+        "result": "A \\times B = 7"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

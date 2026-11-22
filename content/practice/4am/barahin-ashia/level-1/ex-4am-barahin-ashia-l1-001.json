@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-barahin-ashia-l1-001",
+  "lessonCode": "barahin-ashia",
+  "level": 1,
+  "metadata": {
+    "title": "طرائق (ص 133) — تساوي شعاعين ومتوازي الأضلاع",
+    "estimatedMinutes": 3,
+    "tags": [
+      "طرائق",
+      "تساوي شعاعين"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-proof",
+      "page": 133,
+      "section": "طرائق"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 133): لإثبات أن شعاعين $\\overrightarrow{AB}$ و $\\overrightarrow{CD}$ متساويان، نُثبت أن رباعيا متوازي أضلاع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المساواة $\\overrightarrow{AB} = \\overrightarrow{CD}$ تعني أن الرباعي:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "ABDC متوازي أضلاع",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "ABCD متوازي أضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        },
+        {
+          "id": "C",
+          "content": "ACBD متوازي أضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{AB} = \\overrightarrow{CD}$ : الانتقال من A إلى B هو نفسه من C إلى D."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في متوازي أضلاع نقرأ الرؤوس بالترتيب على محيطه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارسم A و B ثم C و D حيث [CD] يوازي [AB] وفي نفس الاتجاه، ثم دُر حول الشكل."
+        }
+      ],
+      "feedback": {
+        "correct": "من A إلى B كما من C إلى D: الرؤوس بالترتيب A ، B ، D ، C — الرباعي ABDC متوازي أضلاع.",
+        "incorrect": "ارسم الشكل: [AB] و [CD] متوازيان وفي نفس الاتجاه، فيكون الضلع الرابع [BD] لا [BC]."
+      }
+    }
+  ]
+}

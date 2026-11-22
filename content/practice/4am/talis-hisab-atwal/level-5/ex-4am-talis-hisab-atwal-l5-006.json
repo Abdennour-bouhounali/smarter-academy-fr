@@ -1,0 +1,279 @@
+{
+  "id": "ex-4am-talis-hisab-atwal-l5-006",
+  "lessonCode": "talis-hisab-atwal",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2017 — الطاولة القابلة للطيّ",
+    "estimatedMinutes": 22,
+    "tags": [
+      "وضعية إدماجية",
+      "وضعية الفراشة",
+      "معامل التكبير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_talis-hisab-atwal_P2",
+      "modelledOn": "BEM 2017 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2017",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "طاولة قابلة للطيّ صنعها نجّار يتقن عمله، رجلاها $[AD]$ و $[BC]$ متقاطعتان في النقطة $O$ (محور الطيّ)، والسطح العلوي $(AB)$ يوازي الأرض $(DC)$ ، كما في الشكل (منظر جانبي). $OA = 45\\,\\mathrm{cm}$ ، $OD = 75\\,\\mathrm{cm}$ ، $OC = 70\\,\\mathrm{cm}$ و $AB = 48\\,\\mathrm{cm}$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0.0,
+          0.0
+        ],
+        "A": [
+          -2.25,
+          3.89711431703
+        ],
+        "D": [
+          3.75,
+          -6.495190528383
+        ],
+        "B": [
+          1.566045976337,
+          3.89711431703
+        ],
+        "C": [
+          -2.610076627228,
+          -6.495190528383
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "D"
+        },
+        {
+          "from": "B",
+          "to": "C"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "label": "48",
+          "arrows": 1
+        },
+        {
+          "from": "D",
+          "to": "C",
+          "arrows": 1
+        }
+      ],
+      "labels": {
+        "O": "w"
+      },
+      "ariaLabel": "رجلا الطاولة [AD] و [BC] متقاطعتان في O، والسطح (AB) يوازي الأرض (DC)؛ OA = 45 و OD = 75 و OC = 70 و AB = 48",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب المسافة $DC$ بين طرفي الرجلين على الأرض.",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "80",
+      "misconceptionSignatures": [
+        {
+          "value": "28,8",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقط $O$ ، $A$ ، $D$ على استقامة والنقط $O$ ، $B$ ، $C$ على استقامة، و $(AB) \\parallel (DC)$ : المثلثان $OAB$ و $ODC$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب النسب الثلاث المتساوية $\\dfrac{OA}{OD} = \\dfrac{OB}{OC} = \\dfrac{AB}{DC}$ ، واحتفظ بالمساواة التي فيها $DC$ وثلاثة أطوال معلومة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الطول المجهول بالجداء المتصالب (الرابع المتناسب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$DC = \\dfrac{48 \\times 75}{45} = 80\\,\\mathrm{cm}$ .",
+        "incorrect": "راجع المساواة المختارة: في كل نسبة طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "النقط $A$ ، $O$ ، $D$ على استقامة والنقط $B$ ، $O$ ، $C$ على استقامة، و $(AB) \\parallel (DC)$ ،",
+          "حسب خاصية طالس: $\\dfrac{OA}{OD} = \\dfrac{OB}{OC} = \\dfrac{AB}{DC}$",
+          "$\\dfrac{45}{75} = \\dfrac{48}{DC}$",
+          "$DC = \\dfrac{75 \\times 48}{45}$"
+        ],
+        "result": "DC = 80\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب الطول $OB$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "42",
+      "misconceptionSignatures": [
+        {
+          "value": "350/3",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقط $O$ ، $A$ ، $D$ على استقامة والنقط $O$ ، $B$ ، $C$ على استقامة، و $(AB) \\parallel (DC)$ : المثلثان $OAB$ و $ODC$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب النسب الثلاث المتساوية $\\dfrac{OA}{OD} = \\dfrac{OB}{OC} = \\dfrac{AB}{DC}$ ، واحتفظ بالمساواة التي فيها $OB$ وثلاثة أطوال معلومة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الطول المجهول بالجداء المتصالب (الرابع المتناسب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$OB = \\dfrac{70 \\times 45}{75} = 42\\,\\mathrm{cm}$ .",
+        "incorrect": "راجع المساواة المختارة: في كل نسبة طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{OA}{OD} = \\dfrac{OB}{OC}$ أي $\\dfrac{45}{75} = \\dfrac{OB}{70}$",
+          "$OB = \\dfrac{70 \\times 45}{75}$"
+        ],
+        "result": "OB = 42\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "المثلث $ODC$ تكبير للمثلث $OAB$ . احسب معامل التكبير.",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال مثل 7/4",
+      "expectedAnswer": "5/3",
+      "misconceptionSignatures": [
+        {
+          "value": "0,6",
+          "id": "MISC-TALIS-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$k$ = طول من $ODC$ ÷ الطول الموافق له في $OAB$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$k = \\dfrac{OD}{OA} = \\dfrac{75}{45} = \\dfrac{5}{3}$ .",
+        "incorrect": "معامل التناسبية k = (طول في المثلث الناتج) ÷ (الطول الموافق له في المثلث الأصلي)؛ راجع أي المثلثين هو الأصلي."
+      },
+      "solution": {
+        "lines": [
+          "$k = \\dfrac{OD}{OA} = \\dfrac{75}{45}$"
+        ],
+        "result": "k = \\dfrac{5}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "☜ يصنع نجّار 25 طاولة من هذا النوع. ما طول الخشب اللازم لأرجلها بالمتر؟",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "58",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول الرجل $[AD]$ = $OA + OD$ ، وطول $[BC]$ = $OB + OC$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب طول رجلي الطاولة الواحدة في 25، ثم حوّل إلى المتر."
+        }
+      ],
+      "feedback": {
+        "correct": "$AD + BC = 120 + 112 = 232\\,\\mathrm{cm}$ ، و $232 \\times 25 = 5800\\,\\mathrm{cm} = 58\\,\\mathrm{m}$ .",
+        "incorrect": "احسب طول الرجلين لطاولة واحدة، ثم اضرب في 25، وحوّل السنتيمترات إلى أمتار."
+      },
+      "solution": {
+        "lines": [
+          "$AD = 45 + 75 = 120\\,\\mathrm{cm}$ و $BC = 42 + 70 = 112\\,\\mathrm{cm}$",
+          "لطاولة واحدة: $120 + 112 = 232\\,\\mathrm{cm}$",
+          "لـ 25 طاولة: $232 \\times 25 = 5800\\,\\mathrm{cm}$"
+        ],
+        "result": "58\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    }
+  ]
+}

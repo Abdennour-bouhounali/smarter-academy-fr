@@ -1,0 +1,123 @@
+{
+  "id": "ex-4am-tayin-pgcd-l2-009",
+  "lessonCode": "tayin-pgcd",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2023 — A = 144/48",
+    "estimatedMinutes": 4,
+    "tags": [
+      "PGCD",
+      "قاسم للعدد الآخر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tayin-pgcd_P3",
+      "modelledOn": "BEM 2023 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد A حيث:",
+    "formulas": [
+      "A = \\dfrac{144}{48}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب PGCD(144 ; 48).",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "48",
+      "misconceptionSignatures": [
+        {
+          "value": "24",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العددين: هل العدد الأصغر قاسم للعدد الأكبر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد الأكبر على العدد الأصغر وانظر إلى الباقي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان $b$ قاسمًا للعدد $a$ فإن PGCD$(a ; b) = b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$144 = 48 \\times 3$ : العدد 48 قاسم للعدد 144، فهو قاسمهما المشترك الأكبر.",
+        "incorrect": "لا داعي لقائمتين طويلتين: تحقّق أولًا هل أحد العددين قاسم للآخر."
+      },
+      "solution": {
+        "lines": [
+          "$144 = 48 \\times 3$ ، إذن العدد 48 قاسم للعدد 144.",
+          "وبما أن 48 قاسم للعدد 144 فإن:"
+        ],
+        "result": "PGCD(144 ; 48) = 48"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب العدد A على أبسط شكل ممكن.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال السابق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 48.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال السابق."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{144}{48} = \\dfrac{144 \\div 48}{48 \\div 48}$"
+        ],
+        "result": "A = \\dfrac{144}{48} = 3"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

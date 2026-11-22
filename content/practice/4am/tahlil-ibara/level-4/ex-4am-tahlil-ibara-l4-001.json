@@ -1,0 +1,208 @@
+{
+  "id": "ex-4am-tahlil-ibara-l4-001",
+  "lessonCode": "tahlil-ibara",
+  "level": 4,
+  "metadata": {
+    "title": "عامل مشترك بمعاملات كسرية وعشرية",
+    "estimatedMinutes": 12,
+    "tags": [
+      "عامل مشترك",
+      "كسور",
+      "أعداد عشرية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-25",
+      "page": 38,
+      "section": "أوظّف تعلّماتي",
+      "number": 25
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارتان $F$ و $G$ حيث:",
+    "formulas": [
+      "F = 2x\\left(\\dfrac{2}{7} - x\\right) + \\left(\\dfrac{2}{7} - x\\right)\\left(\\dfrac{5x - 4}{3}\\right)",
+      "G = (1{,}2x - 3{,}5)(3{,}7 + x) - (0{,}2x - 6{,}5)(3{,}7 + x) + (3{,}7 + x)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "حلّل العبارة $F$ .",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $F$ على الشكل $\\dfrac{1}{3}\\left(\\dfrac{2}{7} - x\\right)(mx + n)$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "11",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العامل $\\left(\\dfrac{2}{7} - x\\right)$ مشترك بين الحدّين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل $ka + kb = k(a + b)$ : أخرج العامل المشترك، واكتب ما يبقى من كل حد بين قوسين كبيرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "وحّد المقامات داخل القوس الكبير: $2x = \\dfrac{6x}{3}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$F = \\dfrac{1}{3}\\left(\\dfrac{2}{7} - x\\right)(11x - 4)$ إذن $m = 11$ .",
+        "incorrect": "أخرج العامل المشترك من كل حد، ثم بسّط ما بين القوسين الكبيرين بإشاراته (حدّ وحده يعني $1$)."
+      },
+      "solution": {
+        "lines": [
+          "$F = \\left(\\dfrac{2}{7} - x\\right)\\left(2x + \\dfrac{5x - 4}{3}\\right)$",
+          "$F = \\left(\\dfrac{2}{7} - x\\right)\\left(\\dfrac{6x}{3} + \\dfrac{5x - 4}{3}\\right)$",
+          "$F = \\left(\\dfrac{2}{7} - x\\right)\\left(\\dfrac{11x - 4}{3}\\right)$"
+        ],
+        "result": "F = \\dfrac{1}{3}\\left(\\dfrac{2}{7} - x\\right)(11x - 4)"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $F$ على الشكل $\\dfrac{1}{3}\\left(\\dfrac{2}{7} - x\\right)(mx + n)$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "-4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العدد المطلوب في الشكل المحلّل، بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$F = \\dfrac{1}{3}\\left(\\dfrac{2}{7} - x\\right)(11x - 4)$ إذن $n = -4$ .",
+        "incorrect": "أخرج العامل المشترك من كل حد، ثم بسّط ما بين القوسين الكبيرين بإشاراته (حدّ وحده يعني $1$)."
+      },
+      "solution": {
+        "lines": [
+          "$F = \\dfrac{1}{3}\\left(\\dfrac{2}{7} - x\\right)(11x - 4)$"
+        ],
+        "result": "n = -4"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "حلّل العبارة $G$ .",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $G$ على الشكل $(3{,}7 + x)(x + m)$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-TAHLIL-NISYAN-1"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العامل $(3{,}7 + x)$ مشترك بين الحدود الثلاثة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحد الأخير $(3{,}7 + x)$ يساوي $1 \\times (3{,}7 + x)$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى «−» أمام $(0{,}2x - 6{,}5)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$G = (3{,}7 + x)(x + 4)$ إذن $m = 4$ .",
+        "incorrect": "أخرج العامل المشترك من كل حد، ثم بسّط ما بين القوسين الكبيرين بإشاراته (حدّ وحده يعني $1$)."
+      },
+      "solution": {
+        "lines": [
+          "$G = (3{,}7 + x)[(1{,}2x - 3{,}5) - (0{,}2x - 6{,}5) + 1]$",
+          "$G = (3{,}7 + x)(1{,}2x - 3{,}5 - 0{,}2x + 6{,}5 + 1)$"
+        ],
+        "result": "G = (3{,}7 + x)(x + 4)"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب $G$ من أجل $x = 6{,}3$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (عشري بالفاصلة أو طبيعي)",
+      "expectedAnswer": "103",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى في الشكل المحلّل: الحساب أسهل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب قيمة كل عامل، ثم اضرب."
+        }
+      ],
+      "feedback": {
+        "correct": "$G = 103$ .",
+        "incorrect": "عوّض $x$ في كل عامل، واحترم الإشارات وأولويات العمليات."
+      },
+      "solution": {
+        "lines": [
+          "نستعمل الشكل المحلّل: $G = (3{,}7 + x)(x + 4)$",
+          "$G = (3{,}7 + 6{,}3)(6{,}3 + 4) = 10 \\times 10{,}3$"
+        ],
+        "result": "G = 103"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

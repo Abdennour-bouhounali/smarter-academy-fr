@@ -1,0 +1,263 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-khattiya-l3-007",
+  "lessonCode": "wadiya-idmajiya-khattiya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2014 — بطاقة الحافلة بتلمسان",
+    "estimatedMinutes": 9,
+    "tags": [
+      "جدول",
+      "نسبة مئوية",
+      "دالة خطية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-khattiya_P1",
+      "modelledOn": "BEM 2014 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2014",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يقترح مسيّر النقل الحضري بتلمسان صيغتين لدفع ثمن الرحلات:\n– الصيغة الأولى: 30DA للرحلة الواحدة.\n– الصيغة الثانية (للطلبة): تخفيض قدره 20% على سعر الرحلة الواحدة.\nانقل الجدول وأكمله:",
+    "table": {
+      "head": [
+        "عدد الرحلات",
+        "10",
+        "…",
+        "…"
+      ],
+      "rows": [
+        [
+          "المبلغ حسب الصيغة الأولى (DA)",
+          "…",
+          "450",
+          "…"
+        ],
+        [
+          "المبلغ حسب الصيغة الثانية (DA)",
+          "…",
+          "…",
+          "600"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "انقل الجدول وأكمله (نكتفي بالخانات الآتية).",
+      "statement": "المبلغ حسب الصيغة الأولى من أجل 10 رحلات:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "300",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ متناسب مع عدد الرحلات."
+        }
+      ],
+      "feedback": {
+        "correct": "$30 \\times 10 = 300$ DA.",
+        "incorrect": "اضرب عدد الرحلات في ثمن الرحلة الواحدة."
+      },
+      "solution": {
+        "lines": [
+          "$30 \\times 10 = 300$"
+        ],
+        "result": "300DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "عدد الرحلات الموافق لمبلغ 450DA حسب الصيغة الأولى:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الرحلات",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "13500",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم المبلغ على ثمن الرحلة الواحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$450 \\div 30 = 15$ رحلة.",
+        "incorrect": "المطلوب عدد الرحلات: اقسم ولا تضرب."
+      },
+      "solution": {
+        "lines": [
+          "$450 \\div 30 = 15$"
+        ],
+        "result": "15"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "عدد الرحلات الموافق لمبلغ 600DA حسب الصيغة الثانية:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الرحلات",
+      "expectedAnswer": "25",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-TAKHFID-NISBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولا ثمن الرحلة الواحدة بعد التخفيض."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن الرحلة للطالب $30 \\times 0{,}8 = 24$ DA، و $600 \\div 24 = 25$ رحلة.",
+        "incorrect": "استعمل سعر الطالب بعد التخفيض."
+      },
+      "solution": {
+        "lines": [
+          "ثمن الرحلة للطالب: $30 \\times (1 - 0{,}2) = 24$ DA.",
+          "$600 \\div 24 = 25$"
+        ],
+        "result": "25"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "ليكن $x$ عدد الرحلات و $y_2$ المبلغ حسب الصيغة الثانية. عبّر عن $y_2$ بدلالة $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "24",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-TAKHFID-NISBA"
+        },
+        {
+          "value": "10",
+          "id": "MISC-NISBA-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ متناسب مع عدد الرحلات: المعامل هو ثمن الرحلة للطالب."
+        }
+      ],
+      "feedback": {
+        "correct": "$y_2 = 24x$ .",
+        "incorrect": "المعامل هو $30 \\times 0{,}8$ ."
+      },
+      "solution": {
+        "lines": [
+          "$y_2 = 30 \\times 0{,}8 \\times x = 24x$"
+        ],
+        "result": "y_2 = 24x"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "يركب طالب الحافلة 46 مرة في الشهر. كم يوفّر بالصيغة الثانية مقارنة بالصيغة الأولى؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "276",
+      "misconceptionSignatures": [
+        {
+          "value": "1104",
+          "id": "MISC-TARRID-TAFSIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المبلغ حسب كل صيغة ثم الفرق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أو: يوفّر 6DA في كل رحلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$30 \\times 46 - 24 \\times 46 = 1380 - 1104 = 276$ DA.",
+        "incorrect": "التوفير هو الفرق بين المبلغين."
+      },
+      "solution": {
+        "lines": [
+          "الصيغة الأولى: $30 \\times 46 = 1380$ DA.",
+          "الصيغة الثانية: $24 \\times 46 = 1104$ DA.",
+          "$1380 - 1104 = 276$ ، يوفّر الطالب 276DA."
+        ],
+        "result": "276DA"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

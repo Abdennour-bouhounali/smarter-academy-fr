@@ -1,0 +1,2389 @@
+{
+  "_comment": [
+    "EXTRACTION CANONIQUE du manuel scolaire officiel — 4AM, الجيل الثاني, unité 2 « الحساب على الجذور ».",
+    "Source : « وحدة الحساب على الجذور .pdf » (12 pages PDF = pages 19 à 30 du manuel), scan CamScanner sans couche texte.",
+    "Ce fichier est LA source de vérité pédagogique de l'unité dans le dépôt. Tout contenu de leçon,",
+    "toute manipulation, tout exercice de pratique cite un `id` d'ici via `source.elementId`.",
+    "Transcription VISUELLE (pages rendues à 220 dpi, zooms sur les passages douteux) ; la formulation arabe est",
+    "celle du manuel, au mot près. Les réponses (`answer`) NE viennent PAS du manuel (il n'a pas de corrigé) :",
+    "elles sont calculées et marquées `answerSource: computed`.",
+    "`verified: true` = relu sur la page zoomée. `needsReview` = lecture plausible mais non certaine.",
+    "Les `destinations` sont le plan de couverture : chaque élément a UNE destination (ou une répartition `items`),",
+    "une seconde utilisation est déclarée dans `duplicatedIn`. scripts/check-textbook-coverage.mjs le vérifie.",
+    "La synthèse « أدمج تعلّماتي » (wadiya-idmajiya-judhur) porte la « وضعية » ; depuis le 2026-10-13 (décision du propriétaire)",
+    "le QCM « أؤكّد تعلّماتي » n'y figure plus : chaque question du QCM vit dans le test de la leçon qu'elle renvoie.",
+    "CORRECTIONS (décision du propriétaire, 2026-09-30) : les coquilles du manuel restent transcrites telles quelles",
+    "dans `text`, et leur correction vit dans `correction` (texte corrigé + note) ; les leçons affichent la version corrigée."
+  ],
+  "unitCode": "hisab-judhur",
+  "textbook": {
+    "title": "كتاب الرياضيات — السنة الرابعة من التعليم المتوسط",
+    "generation": "الجيل الثاني",
+    "unitNumber": 2,
+    "unitTitle": "الحساب على الجذور",
+    "pages": {
+      "first": 19,
+      "last": 30
+    },
+    "pdfPageOffset": 18,
+    "sections": [
+      "سأتعلّم في هذا الباب",
+      "تحدّ",
+      "أستعدّ",
+      "أنشطة",
+      "معارف",
+      "طرائق",
+      "دوري الآن",
+      "أوظّف تعلّماتي",
+      "أؤكّد تعلّماتي",
+      "أدمج تعلّماتي",
+      "أتعمّق",
+      "أوظّف تكنولوجيات الإعلام والاتصال"
+    ]
+  },
+  "frozenAt": "2026-09-30",
+  "terminology": {
+    "note": "Le manuel écrit « الجذر التربيعي » (symbole √), « عدد ناطق / غير ناطق », « مربع », « معاكس », « نسبة مقامها عدد ناطق », « القيمة المضبوطة / المقربة », « بالنقصان / بالزيادة », « المدوّر ».",
+    "terms": [
+      "الجذر التربيعي",
+      "مربع عدد",
+      "عدد موجب",
+      "عدد ناطق",
+      "عدد غير ناطق",
+      "القيمة المضبوطة",
+      "القيمة المقربة",
+      "بالنقصان",
+      "بالزيادة",
+      "المدوّر",
+      "عددان متعاكسان",
+      "حل معادلة",
+      "الخاصية التوزيعية",
+      "نسبة مقامها عدد ناطق",
+      "أصغر ما يمكن"
+    ]
+  },
+  "elements": [
+    {
+      "id": "objectives",
+      "kind": "objectives",
+      "page": 19,
+      "section": "سأتعلّم في هذا الباب",
+      "verified": true,
+      "items": [
+        "تعريف الجذر التربيعي لعدد موجب.",
+        "معرفة قواعد الحساب على الجذور التربيعية واستعمالها لتبسيط عبارات تتضمن جذورا تربيعية."
+      ]
+    },
+    {
+      "id": "history-golden",
+      "kind": "aside",
+      "page": 19,
+      "section": "أسرار العدد الذهبي",
+      "verified": true,
+      "text": "أسرار العدد الذهبي: العدد الذهبي الذي يرمز له عادة بالرمز $\\varphi$، يساوي $\\dfrac{1 + \\sqrt{5}}{2}$ وقيمته بالتقريب إلى الجزء من 1000 هي 1,618. لتفسير هذا العدد هندسيا، نعتبر مستطيلا طوله L وعرضه $\\ell$، حيث يتميز هذا المستطيل بتناسب ضلعيه وفق العدد الذهبي. يستعمل هذا التناسب في اللوحات الفنية التشكيلية مما يضفي عليها طابعا جماليا مميزا. يعتقد أن الإغريق قد اكتشفوا هذا العدد في القرن السادس عشر قبل الميلاد، حيث نجد أن المبنى العريق المسمى «البرتينيون» (Parthénon) الذي أنجزه المهندس المعماري Phidias في القرن الخامس قبل الميلاد، يتشكل من مستطيلات بعداها L و $\\ell$ يحققان $\\dfrac{L}{\\ell} = \\varphi$.",
+      "caption": "البرتينيون في أثينا"
+    },
+    {
+      "id": "challenge",
+      "kind": "challenge",
+      "page": 19,
+      "section": "تحدّ",
+      "verified": true,
+      "text": "أراد فلاح بناء خزان ماء على شكل متوازي مستطيلات قاعدته مربعة، ارتفاعه 1,80m وسعته $36\\,m^3$. ساعد هذا الفلاح على إيجاد طول ضلع قاعدة الخزان. (تعطى النتيجة مدورة إلى 1cm)",
+      "answer": {
+        "baseArea": 20,
+        "side": "√20 ≈ 4,47 m",
+        "rounded_cm": 447
+      }
+    },
+    {
+      "id": "prep",
+      "kind": "prerequisites",
+      "page": 19,
+      "section": "أستعدّ",
+      "instruction": "أصحيح أم خاطئ؟ برّر إجابتك.",
+      "verified": true,
+      "items": [
+        {
+          "n": 1,
+          "text": "مربع العدد 4 هو 8.",
+          "answer": false,
+          "why": "$4^2 = 4 \\times 4 = 16$"
+        },
+        {
+          "n": 2,
+          "text": "مربع العدد $-5$ هو $-25$.",
+          "answer": false,
+          "why": "$(-5)^2 = (-5) \\times (-5) = 25$"
+        },
+        {
+          "n": 3,
+          "text": "العدد 36 هو مربع العدد الوحيد 6.",
+          "answer": false,
+          "why": "$6^2 = 36$ و $(-6)^2 = 36$"
+        },
+        {
+          "n": 4,
+          "text": "إذا حجزنا على الآلة الحاسبة: $\\sqrt{\\;}$ 9، يظهر على الشاشة العدد 81.",
+          "answer": false,
+          "why": "يظهر 3، لأن 3 هو العدد الموجب الذي مربعه 9."
+        },
+        {
+          "n": 5,
+          "text": "$a$ و $b$ عددان. العدد $(ab)^2$ يساوي $a^2 \\times b^2$.",
+          "answer": true,
+          "why": "$(ab)^2 = ab \\times ab = a^2 \\times b^2$"
+        },
+        {
+          "n": 6,
+          "text": "$a$ و $b$ عددان حيث $b \\neq 0$. العدد $\\left(\\dfrac{a}{b}\\right)^2$ يساوي $\\dfrac{a^2}{b}$.",
+          "answer": false,
+          "why": "$\\left(\\dfrac{a}{b}\\right)^2 = \\dfrac{a^2}{b^2}$"
+        },
+        {
+          "n": 7,
+          "text": "$a$ و $b$ عددان. العدد $(a + b)(a + b)$ يُنشر على الشكل $a^2 + b^2$.",
+          "answer": false,
+          "why": "$(a + b)(a + b) = a^2 + 2ab + b^2$"
+        },
+        {
+          "n": 8,
+          "text": "$a$ و $b$ عددان. العدد $(a - b)(a - b)$ ينشر على الشكل $a^2 - 2ab + b^2$.",
+          "answer": true,
+          "why": "$(a - b)(a - b) = a^2 - ab - ab + b^2 = a^2 - 2ab + b^2$"
+        },
+        {
+          "n": 9,
+          "text": "$a$ و $b$ عددان. العدد $(a + b)(a - b)$ ينشر على الشكل $a^2 - b^2$.",
+          "answer": true,
+          "why": "$(a + b)(a - b) = a^2 - ab + ab - b^2 = a^2 - b^2$"
+        },
+        {
+          "n": 10,
+          "text": "ABC مثلث حيث AB = 4cm ، AC = 3cm و BC = 5cm إذن المثلث ABC قائم في A.",
+          "answer": true,
+          "why": "$AB^2 + AC^2 = 16 + 9 = 25 = BC^2$، حسب الخاصية العكسية لفيثاغورس."
+        }
+      ]
+    },
+    {
+      "id": "act-1",
+      "kind": "activity",
+      "number": 1,
+      "page": 20,
+      "section": "أنشطة",
+      "title": "الجذر التربيعي لعدد موجب",
+      "verified": true,
+      "text": "وحدة الطول هي السنتيمتر. والشكل ليس بالأطوال الحقيقية.",
+      "figure": "مثلث ABC قائم في A حيث AB = 1 و AC = 2.",
+      "questions": [
+        "1) أ) أحسب، باستعمال خاصية فيثاغورس، $BC^2$.",
+        "ب) انقل وأكمل: الطول BC هو العدد الموجب الذي مربعه .... .",
+        "2) تعطي اللمسة $\\sqrt{\\;}$ في الحاسبة القيمة المضبوطة أو قيمة مقربة لعدد عُلِمَ مربّعه.",
+        "أ) تأكد أنه عند استعمال الحاسبة لإيجاد الطول BC تظهر على الشاشة القيمة 2,236067978.",
+        "ب) تقول إيمان: « إنّ 2,236067978 ليست القيمة المضبوطة للعدد الذي مربعه 5». هل توافقها؟ اشرح.",
+        "3) أكتب، باستعمال الرمز $\\sqrt{\\;}$، الجذر التربيعي لكل من الأعداد 36، 81، 0,49، أعط الناتج ذهنيا.",
+        "4) أنقل وأتمم ما يلي: أ) $\\sqrt{2^2} = \\ldots$ ، $\\sqrt{3^2} = \\ldots$ ، $\\sqrt{5^2} = \\ldots$ ، $(\\sqrt{5})^2 = \\ldots$ .",
+        "ب) $\\sqrt{a^2} = \\ldots$ و $(\\sqrt{a})^2 = \\ldots$ (علما أنّ $a$ عدد موجب)."
+      ],
+      "box": "نرمز بـ $\\sqrt{5}$ للقيمة المضبوطة للعدد الموجب الذي مربعه 5، ونقرأ: الجذر التربيعي للعدد 5.",
+      "answer": {
+        "BC2": 5,
+        "calculatorSquare": "2,236067978² = 5,000000002237008484 ≠ 5",
+        "roots": {
+          "36": 6,
+          "81": 9,
+          "0,49": 0.7
+        },
+        "q4": [
+          2,
+          3,
+          5,
+          5,
+          "a",
+          "a"
+        ]
+      }
+    },
+    {
+      "id": "act-2",
+      "kind": "activity",
+      "number": 2,
+      "page": 20,
+      "section": "أنشطة",
+      "title": "الأعداد الناطقة والأعداد غير الناطقة",
+      "verified": true,
+      "text": "تم تصنيف الأعداد $\\sqrt{100}$ ، $\\sqrt{7}$ ، $\\sqrt{13}$ ، $\\sqrt{9}$ ، $\\sqrt{\\dfrac{25}{9}}$ ، $\\sqrt{\\dfrac{16}{13}}$ ، $\\sqrt{0,25}$ ، $\\sqrt{6}$ كما يلي:",
+      "classes": {
+        "first": [
+          "$\\sqrt{100}$",
+          "$\\sqrt{9}$",
+          "$\\sqrt{\\dfrac{16}{9}}$",
+          "$\\sqrt{0,25}$"
+        ],
+        "second": [
+          "$\\sqrt{7}$",
+          "$\\sqrt{13}$",
+          "$\\sqrt{\\dfrac{25}{13}}$",
+          "$\\sqrt{6}$"
+        ]
+      },
+      "questions": [
+        "أ) إلى أي الصنفين ينتمي العدد $\\sqrt{169}$ ؟ برّر إجابتك.",
+        "ب) ما هي معايير التصنيف السابق؟"
+      ],
+      "answer": {
+        "169": "first (√169 = 13)",
+        "criterion": "الصنف الأول: جذور مربعات أعداد ناطقة (جذرها ناطق)؛ الصنف الثاني: جذور ليست ناطقة"
+      },
+      "correction": {
+        "decidedBy": "owner",
+        "decidedOn": "2026-09-30",
+        "text": "تم تصنيف الأعداد $\\sqrt{100}$ ، $\\sqrt{7}$ ، $\\sqrt{13}$ ، $\\sqrt{9}$ ، $\\sqrt{\\dfrac{16}{9}}$ ، $\\sqrt{\\dfrac{25}{13}}$ ، $\\sqrt{0,25}$ ، $\\sqrt{6}$ كما يلي:",
+        "note": "La liste est alignée sur le classement imprimé (√(16/9) et √(25/13))."
+      }
+    },
+    {
+      "id": "act-3",
+      "kind": "activity",
+      "number": 3,
+      "page": 20,
+      "section": "أنشطة",
+      "title": "المعادلات من الشكل $x^2 = a$",
+      "verified": true,
+      "questions": [
+        "1) أ) أنقل وأتمم الجدول الآتي: $x$ : $-\\dfrac{3}{2}$ ، $-1$ ، $0$ ، $1$ ، $\\dfrac{3}{2}$ ، $2$ ؛ $x^2$ : … .",
+        "ب) ضع تخمينا حول مربعي عددين متعاكسين.",
+        "جـ) أثبت صحة التخمين الذي وضعته من أجل كل عددين $b$ و $-b$.",
+        "2) أ) لحل المعادلة $x^2 = 9$، قال مراد: «إنّ حل المعادلة $x^2 = 9$ هو 3، لأنّ $3^2 = 9$». وقال عمر: «لقد نسي مراد حلا آخر». هل توافقه؟ اشرح.",
+        "ب) حل، إن أمكن، كلا من المعادلات الآتية: $x^2 = 25$ ، $x^2 = 3$ ، $x^2 = 0$ ، $x^2 = 0,04$ ، $x^2 = -9$ .",
+        "3) أكتب معادلة من الشكل $x^2 = a$ في كل حالة مما يلي: أ) حلاّها هما: 7 و $-7$. ب) حلاّها هما: $\\dfrac{2}{3}$ و $-\\dfrac{2}{3}$. جـ) حلاّها هما: 0,5 و $-0,5$. ماذا تستنتج؟"
+      ],
+      "answer": {
+        "table": {
+          "-3/2": "9/4",
+          "-1": 1,
+          "0": 0,
+          "1": 1,
+          "3/2": "9/4",
+          "2": 4
+        },
+        "x2=9": [
+          -3,
+          3
+        ],
+        "x2=25": [
+          -5,
+          5
+        ],
+        "x2=3": [
+          "-√3",
+          "√3"
+        ],
+        "x2=0": [
+          0
+        ],
+        "x2=0,04": [
+          -0.2,
+          0.2
+        ],
+        "x2=-9": "لا حل",
+        "q3": [
+          "x² = 49",
+          "x² = 4/9",
+          "x² = 0,25"
+        ]
+      }
+    },
+    {
+      "id": "act-4a",
+      "kind": "activity",
+      "number": 4,
+      "part": "جداء",
+      "page": 21,
+      "section": "أنشطة",
+      "title": "العمليات على الجذور التربيعية",
+      "subtitle": "جداء جذرين تربيعيين",
+      "verified": true,
+      "table": {
+        "columns": [
+          "a",
+          "b",
+          "√a",
+          "√b",
+          "√a × √b",
+          "a × b",
+          "√(a × b)"
+        ],
+        "rows": [
+          [
+            4,
+            36
+          ],
+          [
+            9,
+            25
+          ],
+          [
+            "0,16",
+            49
+          ]
+        ]
+      },
+      "questions": [
+        "1) انقل وأكمل الجدول الآتي.",
+        "2) ضع تخمينا حول العلاقة بين $\\sqrt{a} \\times \\sqrt{b}$ و $\\sqrt{a \\times b}$.",
+        "3) لإثبات صحة التخمين الذي وجدناه في السؤال (2) من أجل كل عددين موجبين $a$ و $b$:",
+        "أ) برّر أنّ كلا من العددين $\\sqrt{a} \\times \\sqrt{b}$ و $\\sqrt{a \\times b}$ موجب.",
+        "ب) انقل وأتمم ما يلي: $(\\sqrt{a \\times b})^2 = \\ldots$ و $(\\sqrt{a} \\times \\sqrt{b})^2 = (\\ldots)^2 \\times (\\ldots)^2 = \\ldots \\times \\ldots$ .",
+        "جـ) استنتج العلاقة بين $\\sqrt{a} \\times \\sqrt{b}$ و $\\sqrt{a \\times b}$."
+      ],
+      "answer": {
+        "rows": [
+          [
+            2,
+            6,
+            12,
+            144,
+            12
+          ],
+          [
+            3,
+            5,
+            15,
+            225,
+            15
+          ],
+          [
+            0.4,
+            7,
+            2.8,
+            7.84,
+            2.8
+          ]
+        ]
+      }
+    },
+    {
+      "id": "act-4b",
+      "kind": "activity",
+      "number": 4,
+      "part": "قسمة",
+      "page": 21,
+      "section": "أنشطة",
+      "title": "العمليات على الجذور التربيعية",
+      "subtitle": "حاصل قسمة جذرين تربيعيين",
+      "verified": true,
+      "table": {
+        "columns": [
+          "a",
+          "b",
+          "√a",
+          "√b",
+          "√a / √b",
+          "a / b",
+          "√(a / b)"
+        ],
+        "rows": [
+          [
+            36,
+            4
+          ],
+          [
+            25,
+            100
+          ],
+          [
+            "0,09",
+            "0,81"
+          ],
+          [
+            -25,
+            -100
+          ]
+        ]
+      },
+      "questions": [
+        "1) انقل وأكمل الجدول الآتي.",
+        "2) ضع تخمينا حول العلاقة بين $\\dfrac{\\sqrt{a}}{\\sqrt{b}}$ و $\\sqrt{\\dfrac{a}{b}}$.",
+        "3) لإثبات صحة التخمين الذي وجدناه في السؤال (2) من أجل كل عددين موجبين $a$ و $b$ و $b \\neq 0$:",
+        "أ) برّر أنّ كلا من العددين $\\dfrac{\\sqrt{a}}{\\sqrt{b}}$ و $\\sqrt{\\dfrac{a}{b}}$ موجب.",
+        "ب) انقل وأتمم ما يلي: $\\left(\\sqrt{\\dfrac{a}{b}}\\right)^2 = \\ldots$ و $\\left(\\dfrac{\\sqrt{a}}{\\sqrt{b}}\\right)^2 = \\dfrac{(\\ldots)^2}{(\\ldots)^2} = \\ldots$ . جـ) استنتج العلاقة بين $\\dfrac{\\sqrt{a}}{\\sqrt{b}}$ و $\\sqrt{\\dfrac{a}{b}}$."
+      ],
+      "answer": {
+        "rows": [
+          [
+            6,
+            2,
+            3,
+            9,
+            3
+          ],
+          [
+            5,
+            10,
+            0.5,
+            0.25,
+            0.5
+          ],
+          [
+            0.3,
+            0.9,
+            "1/3",
+            "1/9",
+            "1/3"
+          ],
+          [
+            "لا معنى له",
+            "لا معنى له",
+            "لا معنى له",
+            0.25,
+            0.5
+          ]
+        ]
+      }
+    },
+    {
+      "id": "act-4c",
+      "kind": "activity",
+      "number": 4,
+      "part": "مجموع وفرق",
+      "page": 21,
+      "section": "أنشطة",
+      "title": "العمليات على الجذور التربيعية",
+      "subtitle": "مجموع جذرين تربيعيين وفرقهما",
+      "verified": true,
+      "questions": [
+        "أ) احسب كلا من العددين $\\sqrt{16 + 9}$ و $\\sqrt{16} + \\sqrt{9}$ . ماذا تستنتج ؟",
+        "احسب كلا من العددين $\\sqrt{100 - 36}$ و $\\sqrt{100} - \\sqrt{36}$ . ماذا تستنتج؟",
+        "ب) $a$ و $b$ عددان موجبان حيث $a \\geq b$ هل يمكن أن يكون $\\sqrt{a + b} = \\sqrt{a} + \\sqrt{b}$ علّل إجابتك. نفس السؤال بالنسبة إلى العددين $\\sqrt{a - b}$ و $\\sqrt{a} - \\sqrt{b}$ ؟"
+      ],
+      "answer": {
+        "sum": [
+          5,
+          7
+        ],
+        "difference": [
+          8,
+          4
+        ],
+        "b": "المجموع: تتحقق المساواة فقط إذا كان a = 0 أو b = 0 ؛ الفرق (a ≥ b): فقط إذا كان b = 0 أو a = b"
+      }
+    },
+    {
+      "id": "know-1",
+      "kind": "knowledge",
+      "number": 1,
+      "page": 22,
+      "section": "معارف",
+      "title": "الجذر التربيعي لعدد موجب",
+      "verified": true,
+      "definitions": [
+        {
+          "id": "def-root",
+          "text": "$a$ عدد موجب. الجذر التربيعي للعدد $a$ هو العدد الموجب الذي مربعه يساوي $a$. نرمز للجذر التربيعي للعدد $a$ بالرمز $\\sqrt{a}$ ونقرأ: «الجذر التربيعي لـ $a$»."
+        }
+      ],
+      "examples": [
+        "$\\sqrt{4} = 2$ لأن 4 عدد موجب و $2^2 = 4$.",
+        "كذلك $\\sqrt{25} = 5$ ، $\\sqrt{0} = 0$ ، $\\sqrt{1} = 1$ .",
+        "$\\sqrt{\\dfrac{25}{9}} = \\dfrac{5}{3}$ لأن $\\dfrac{5}{3}$ عدد موجب و $\\left(\\dfrac{5}{3}\\right)^2 = \\dfrac{25}{9}$ .",
+        "$\\sqrt{0,04} = 0,2$ لأن 0,2 عدد موجب و $(0,2)^2 = 0,04$ .",
+        "$\\sqrt{7}$ هو العدد الموجب الذي مربعه 7.",
+        "$\\sqrt{7}$ ليس عددا ناطقا، لأنه لا يوجد عدد ناطق مربعه 7."
+      ],
+      "properties": [
+        {
+          "id": "prop-square-of-root",
+          "text": "$a$ عدد موجب. $\\sqrt{a}$ هو العدد الموجب الذي مربعه $a$. أي $(\\sqrt{a})^2 = a$."
+        },
+        {
+          "id": "prop-root-of-square",
+          "text": "$a$ عدد موجب. $\\sqrt{a^2}$ هو العدد الموجب الذي مربعه $a^2$. أي $\\sqrt{a^2} = a$."
+        }
+      ],
+      "propertyExamples": [
+        "$(\\sqrt{5})^2 = 5$ ، $(\\sqrt{1,7})^2 = 1,7$ ، $\\left(\\sqrt{\\dfrac{1}{3}}\\right)^2 = \\dfrac{1}{3}$ .",
+        "$\\sqrt{3^2} = 3$ ، $\\sqrt{21,6^2} = 21,6$ ، $\\left(\\sqrt{\\dfrac{4}{7}}\\right)^2 = \\dfrac{4}{7}$ ."
+      ]
+    },
+    {
+      "id": "know-2",
+      "kind": "knowledge",
+      "number": 2,
+      "page": 22,
+      "section": "معارف",
+      "title": "الأعداد الناطقة والأعداد غير الناطقة",
+      "verified": true,
+      "text": "$a$ عدد ناطق موجب.",
+      "results": [
+        "في حالة $a$ مربعا لعدد ناطق، يكون $\\sqrt{a}$ عددا ناطقا.",
+        "في حالة $a$ ليس مربعا لعدد ناطق، فإنّ $\\sqrt{a}$ ليس عددا ناطقا."
+      ],
+      "examples": [
+        "نعلم أنّ $\\dfrac{25}{9} = \\left(\\dfrac{5}{3}\\right)^2$ إذن $\\sqrt{\\dfrac{25}{9}}$ عدد ناطق، ولدينا $\\sqrt{\\dfrac{25}{9}} = \\dfrac{5}{3}$ .",
+        "نعلم أنّه لا يوجد عدد ناطق مربعه 6. إذن $\\sqrt{6}$ عدد غير ناطق."
+      ]
+    },
+    {
+      "id": "know-3",
+      "kind": "knowledge",
+      "number": 3,
+      "page": 22,
+      "section": "معارف",
+      "title": "المعادلات من الشكل $x^2 = a$",
+      "verified": true,
+      "properties": [
+        {
+          "id": "prop-two-opposites",
+          "title": "خاصية 1",
+          "text": "$a$ عدد موجب. يوجد عددان متعاكسان هما $\\sqrt{a}$ و $-\\sqrt{a}$ مربع كل منهما يساوي $a$.",
+          "note": "مربع أي عدد هو دائما عدد موجب.",
+          "aside": [
+            "$\\sqrt{a} \\times \\sqrt{a} = (\\sqrt{a})^2 = a$",
+            "$(-\\sqrt{a}) \\times (-\\sqrt{a}) = (-\\sqrt{a})^2 = a$",
+            "العدد $-\\sqrt{a}$ هو معاكس العدد الموجب $\\sqrt{a}$"
+          ],
+          "examples": [
+            "$5^2 = 5 \\times 5 = 25$",
+            "$\\left(-\\dfrac{2}{3}\\right)^2 = \\left(-\\dfrac{2}{3}\\right) \\times \\left(-\\dfrac{2}{3}\\right) = \\dfrac{4}{9}$"
+          ]
+        },
+        {
+          "id": "prop-solutions",
+          "title": "خاصية 2",
+          "text": "$a$ عدد كيفي.",
+          "cases": [
+            "إذا كان $a > 0$ فإنّ المعادلة $x^2 = a$ تقبل حلين متعاكسين هما $\\sqrt{a}$ و $-\\sqrt{a}$.",
+            "إذا كان $a = 0$ فإنّ المعادلة $x^2 = a$ تقبل حلا واحدا وهو العدد 0.",
+            "إذا كان $a < 0$ فإنّ المعادلة $x^2 = a$ لا تقبل أي حل."
+          ],
+          "examples": [
+            "المعادلة $x^2 = 9$ تقبل حلين هما $-3$ و 3.",
+            "المعادلة $x^2 = 5$ تقبل حلين هما $\\sqrt{5}$ و $-\\sqrt{5}$.",
+            "المعادلة $x^2 = -1$ لا تقبل أي حل."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "method-equation",
+      "kind": "method",
+      "page": 23,
+      "section": "طرائق",
+      "title": "حل معادلة من الشكل $x^2 = a$ حيث $a$ عدد معطى",
+      "verified": true,
+      "exercise": "حل كل معادلة من المعادلات الآتية: أ) $x^2 = 5$ . ب) $x^2 = \\dfrac{1}{4}$ . جـ) $x^2 = -9$ .",
+      "solution": [
+        "أ) حل المعادلة $x^2 = 5$ : $x^2 = 5$ يعني $x^2 = (\\sqrt{5})^2$ بالتالي $x = \\sqrt{5}$ أو $x = -\\sqrt{5}$ .",
+        "ب) حل المعادلة $x^2 = \\dfrac{1}{4}$ : $x^2 = \\dfrac{1}{4}$ يعني $x^2 = \\left(\\dfrac{1}{2}\\right)^2$ بالتالي $x = \\dfrac{1}{2}$ أو $x = -\\dfrac{1}{2}$ .",
+        "جـ) حل المعادلة $x^2 = -9$ : من أجل كل عدد $x$، $x^2 \\geq 0$ و $-9 < 0$ بالتالي لا يوجد أي عدد $x$ يحقق $x^2 = -9$ . إذن المعادلة $x^2 = -9$ لا تقبل أي حل."
+      ],
+      "method": "لحل معادلة من الشكل $x^2 = a$ حيث $a$ عدد معطى، نحدد إشارة العدد $a$. إذا كان $a > 0$، نكتب المعادلة $x^2 = a$ على الشكل $x^2 = (\\sqrt{a})^2$ ثم نعيّن حلّي المعادلة $x^2 = a$."
+    },
+    {
+      "id": "method-compute",
+      "kind": "method",
+      "page": 23,
+      "section": "طرائق",
+      "title": "استعمال تعريف الجذر التربيعي لإنجاز حساب",
+      "verified": true,
+      "exercise": "احسب ما يلي: أ) $1 - 4b^2 + \\sqrt{16b^4}$ ($b$ عدد كيفي) ب) $\\sqrt{0,81} \\times \\sqrt{(-0,03)^2}$ جـ) $\\sqrt{(1 - \\sqrt{2})^2} + 1$",
+      "solution": [
+        "أ) لدينا $\\sqrt{16b^4} = \\sqrt{(4b^2)^2} = 4b^2$ لأنّ $4b^2$ هو دائما عدد موجب. إذن $1 - 4b^2 + \\sqrt{16b^4} = 1 - 4b^2 + 4b^2 = 1$ .",
+        "ب) لدينا $0,81 = 0,9^2$ و $(-0,03)^2 = (0,03)^2$ . إذن $\\sqrt{0,81} \\times \\sqrt{(-0,03)^2} = \\sqrt{0,9^2} \\times \\sqrt{0,03^2} = 0,9 \\times 0,03 = 0,027$ .",
+        "جـ) لاحظ أنّ $\\sqrt{(1 - \\sqrt{2})^2}$ لا يساوي $1 - \\sqrt{2}$ لأنّ العدد $1 - \\sqrt{2}$ سالب. لدينا $1 - \\sqrt{2} = -(\\sqrt{2} - 1)$ و $(1 - \\sqrt{2})^2 = [-(\\sqrt{2} - 1)]^2$ . إذن $\\sqrt{(1 - \\sqrt{2})^2} = \\sqrt{(\\sqrt{2} - 1)^2} = \\sqrt{2} - 1$ لأنّ العدد $\\sqrt{2} - 1$ موجب. ونستنتج أنّ $\\sqrt{(1 - \\sqrt{2})^2} + 1 = (\\sqrt{2} - 1) + 1 = \\sqrt{2}$ ."
+      ],
+      "asides": [
+        "$\\sqrt{a^2} = a$ عندما $a \\geq 0$.",
+        "$b^2 = (-b)^2$ من أجل كل عدد $b$."
+      ]
+    },
+    {
+      "id": "now-23-1",
+      "kind": "try-now",
+      "page": 23,
+      "section": "دوري الآن",
+      "number": 1,
+      "verified": true,
+      "text": "احسب ما يلي: $\\sqrt{(3,301 - \\pi)^2} + \\sqrt{(3,141 - \\pi)^2}$ .",
+      "answer": 0.16,
+      "answerSource": "computed",
+      "note": "3,301 − π > 0 و 3,141 − π < 0: المجموع (3,301 − π) + (π − 3,141) = 0,16"
+    },
+    {
+      "id": "now-23-2",
+      "kind": "try-now",
+      "page": 23,
+      "section": "دوري الآن",
+      "number": 2,
+      "verified": true,
+      "text": "حل كل معادلة مما يلي: $-x^2 = 2$ ، $2x^2 - 6 = 0$ ، $x + 1 - x^2 = x$ .",
+      "answer": {
+        "-x²=2": "لا حل",
+        "2x²-6=0": [
+          "-√3",
+          "√3"
+        ],
+        "x+1-x²=x": [
+          -1,
+          1
+        ]
+      },
+      "answerSource": "computed"
+    },
+    {
+      "id": "know-4",
+      "kind": "knowledge",
+      "number": 4,
+      "page": 24,
+      "section": "معارف",
+      "title": "العمليات على الجذور التربيعية",
+      "verified": true,
+      "properties": [
+        {
+          "id": "prop-product",
+          "title": "خاصية 1",
+          "text": "من أجل كل عددين موجبين $a$ و $b$ . $\\sqrt{a} \\times \\sqrt{b} = \\sqrt{a \\times b}$ .",
+          "remarks": [
+            "تسمح الخاصية 1 بالانتقال من الكتابة $\\sqrt{a \\times b}$ إلى الكتابة $\\sqrt{a} \\times \\sqrt{b}$ والعكس.",
+            "من أجل كل عددين موجبين $a$ و $b$ : $\\sqrt{a^2 b} = \\sqrt{a^2} \\times \\sqrt{b} = a\\sqrt{b}$",
+            "في حالة $a$ و $b$ عددين سالبين فإنّ $\\sqrt{a \\times b}$ موجود مع أنّ كلا من $\\sqrt{a}$ و $\\sqrt{b}$ لا معنى له."
+          ],
+          "examples": [
+            "$\\sqrt{12} \\times \\sqrt{3} = \\sqrt{12 \\times 3} = \\sqrt{36} = 6$ .",
+            "$\\sqrt{28} = \\sqrt{4 \\times 7} = \\sqrt{4} \\times \\sqrt{7} = 2\\sqrt{7}$ .",
+            "$\\sqrt{0,9} \\times \\sqrt{0,4} = \\sqrt{0,9 \\times 0,4} = \\sqrt{0,36} = 0,6$ .",
+            "لدينا $63 = 9 \\times 7 = 3^2 \\times 7$ إذن $\\sqrt{63} = \\sqrt{9 \\times 7} = \\sqrt{3^2 \\times 7} = 3\\sqrt{7}$ .",
+            "لدينا $\\sqrt{(-9) \\times (-4)} = \\sqrt{36} = 6$"
+          ]
+        },
+        {
+          "id": "prop-quotient",
+          "title": "خاصية 2",
+          "text": "من أجل كل عددين موجبين $a$ و $b$ حيث $b \\neq 0$. $\\dfrac{\\sqrt{a}}{\\sqrt{b}} = \\sqrt{\\dfrac{a}{b}}$ .",
+          "remarks": [
+            "في حالة $a$ و $b$ عددين سالبين فإنّ $\\sqrt{\\dfrac{a}{b}}$ موجود مع أنّ كلا من $\\sqrt{a}$ و $\\sqrt{b}$ لا معنى له."
+          ],
+          "examples": [
+            "$\\dfrac{\\sqrt{60}}{\\sqrt{15}} = \\sqrt{\\dfrac{60}{15}} = \\sqrt{4} = 2$ .",
+            "$\\sqrt{\\dfrac{25}{9}} = \\dfrac{\\sqrt{25}}{\\sqrt{9}} = \\dfrac{5}{3}$ .",
+            "$\\sqrt{\\dfrac{7}{36}} = \\dfrac{\\sqrt{7}}{\\sqrt{36}} = \\dfrac{\\sqrt{7}}{6}$ .",
+            "لدينا $\\sqrt{\\dfrac{-36}{-4}} = \\sqrt{9} = 3$"
+          ]
+        },
+        {
+          "id": "remark-sum",
+          "title": "ملاحظة 3",
+          "text": "المساواة غير محقّقة في كل من الجمع والطرح على الجذور التربيعية، أي: $a$ و $b$ عددان موجبان تماما. $\\sqrt{a + b} \\neq \\sqrt{a} + \\sqrt{b}$ . $\\sqrt{a - b} \\neq \\sqrt{a} - \\sqrt{b}$ حيث $(a > b)$.",
+          "examples": [
+            "$\\sqrt{16 + 9} \\neq \\sqrt{16} + \\sqrt{9}$ لأنّ $\\sqrt{16 + 9} = \\sqrt{25} = 5$ و $\\sqrt{16} + \\sqrt{9} = 4 + 3 = 7$",
+            "$\\sqrt{100 - 36} \\neq \\sqrt{100} - \\sqrt{36}$ لأنّ $\\sqrt{100 - 36} = \\sqrt{64} = 8$ و $\\sqrt{100} - \\sqrt{36} = 10 - 6 = 4$"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "method-simplify",
+      "kind": "method",
+      "page": 25,
+      "section": "طرائق",
+      "title": "توظيف خواص الجذور التربيعية",
+      "verified": true,
+      "exercise": "تمرين 1: 1) أُكتب كلا من الأعداد $\\sqrt{8}$ ، $\\sqrt{18}$ و $\\sqrt{50}$ على الشكل $a\\sqrt{b}$ حيث $a$ و $b$ عددان طبيعيان و $b$ أصغر ما يمكن. 2) استنتج عبارة مبسطة للعدد A حيث $A = \\sqrt{8} - 3\\sqrt{18} + 2\\sqrt{50} - 7\\sqrt{2}$ .",
+      "solution": [
+        "1) لدينا $\\sqrt{8} = \\sqrt{4 \\times 2} = \\sqrt{2^2 \\times 2} = 2\\sqrt{2}$ ، $\\sqrt{18} = \\sqrt{9 \\times 2} = \\sqrt{3^2 \\times 2} = 3\\sqrt{2}$ و $\\sqrt{50} = \\sqrt{25 \\times 2} = \\sqrt{5^2 \\times 2} = 5\\sqrt{2}$ .",
+        "2) تبسيط A: نستنتج من 1) أنّ $A = 2\\sqrt{2} - 3(3\\sqrt{2}) + 2(5\\sqrt{2}) - 7\\sqrt{2}$ أي $A = 2\\sqrt{2} - 9\\sqrt{2} + 10\\sqrt{2} - 7\\sqrt{2}$ ثم نطبق الخاصية التوزيعية ونجد: $A = (2 - 9 + 10 - 7)\\sqrt{2}$ أي $A = -4 \\times \\sqrt{2}$ أي $A = -4\\sqrt{2}$ ."
+      ],
+      "method": [
+        "لكتابة الجذر التربيعي لعدد طبيعي n على الشكل $a\\sqrt{b}$، حيث $a$ و $b$ عددان طبيعيان و $b$ أصغر ما يمكن. نبحث عن أكبر مربع $a^2$ يقسم $n$، $n = a^2 \\times b$.",
+        "لتبسيط العبارة $x\\sqrt{b} + y\\sqrt{b} + z\\sqrt{b}$ نطبق الخاصية التوزيعية: $x\\sqrt{b} + y\\sqrt{b} + z\\sqrt{b} = (x + y + z)\\sqrt{b}$ ."
+      ]
+    },
+    {
+      "id": "method-product",
+      "kind": "method",
+      "page": 25,
+      "section": "طرائق",
+      "title": "توظيف خواص الجذور التربيعية — تمرين 2",
+      "verified": true,
+      "exercise": "تمرين 2: احسب $A = \\sqrt{\\dfrac{50}{3}} \\times \\sqrt{2} \\times \\sqrt{12}$",
+      "solution": [
+        "لدينا $A = \\dfrac{\\sqrt{50}}{\\sqrt{3}} \\times \\sqrt{2} \\times \\sqrt{12} = \\dfrac{\\sqrt{50} \\times \\sqrt{2} \\times \\sqrt{12}}{\\sqrt{3}}$",
+        "وبما أنّ $\\sqrt{50} \\times \\sqrt{2} = \\sqrt{50 \\times 2} = \\sqrt{100} = 10$ و $\\sqrt{12} = \\sqrt{4 \\times 3} = 2\\sqrt{3}$ فإنّ $A = \\dfrac{10 \\times 2 \\times \\sqrt{3}}{\\sqrt{3}} = 20$"
+      ],
+      "answer": 20
+    },
+    {
+      "id": "method-rationalize",
+      "kind": "method",
+      "page": 25,
+      "section": "طرائق",
+      "title": "نسبة مقامها عدد غير ناطق",
+      "verified": true,
+      "exercise": "اكتب على شكل نسبة مقامها عدد ناطق كلا من $\\dfrac{2}{\\sqrt{11}}$ و $\\dfrac{\\sqrt{7}}{2\\sqrt{5}}$ .",
+      "solution": [
+        "لدينا $\\dfrac{2}{\\sqrt{11}} = \\dfrac{2 \\times \\sqrt{11}}{\\sqrt{11} \\times \\sqrt{11}} = \\dfrac{2\\sqrt{11}}{11}$ و $\\dfrac{\\sqrt{7}}{2\\sqrt{5}} = \\dfrac{\\sqrt{7} \\times \\sqrt{5}}{2\\sqrt{5} \\times \\sqrt{5}} = \\dfrac{\\sqrt{35}}{2 \\times 5} = \\dfrac{\\sqrt{35}}{10}$ ."
+      ],
+      "method": "لتحويل نسبة $\\dfrac{a}{\\sqrt{b}}$ مقامها عدد غير ناطق إلى نسبة تساويها مقامها عدد ناطق، نضرب كلا من البسط والمقام في نفس العدد $\\sqrt{b}$."
+    },
+    {
+      "id": "now-25-1",
+      "kind": "try-now",
+      "page": 25,
+      "section": "دوري الآن",
+      "number": 1,
+      "verified": true,
+      "text": "نضع: $B = \\sqrt{250} - \\sqrt{490} + 2\\sqrt{81}$ . اكتب B على الشكل $a + b\\sqrt{c}$ حيث $a$ و $b$ عددان صحيحان و $c$ عدد طبيعي أصغر ما يمكن.",
+      "answer": "18 − 2√10",
+      "answerSource": "computed"
+    },
+    {
+      "id": "now-25-2",
+      "kind": "try-now",
+      "page": 25,
+      "section": "دوري الآن",
+      "number": 2,
+      "verified": true,
+      "text": "أكتب كل عدد مما يلي على شكل نسبة مقامها عدد ناطق. $\\dfrac{4}{\\sqrt{7}}$ ، $\\dfrac{\\sqrt{3}}{2\\sqrt{2}}$ و $\\dfrac{8}{5\\sqrt{2}} - \\dfrac{5}{\\sqrt{8}}$ .",
+      "answer": [
+        "4√7/7",
+        "√6/4",
+        "−9√2/20"
+      ],
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-1",
+      "kind": "exercise",
+      "number": 1,
+      "page": 26,
+      "section": "أوظّف تعلّماتي",
+      "group": "استعمال تعريف الجذر التربيعي",
+      "verified": true,
+      "text": "انقل وأتمم الجمل الآتية:",
+      "items": [
+        "144 هو مربع العدد ...",
+        "13 هو الجذر التربيعي للعدد ...",
+        "100 هو مربع العدد ...",
+        "2,5 هو الجذر التربيعي للعدد ...",
+        "... هو مربع العدد 25.",
+        "... هو الجذر التربيعي للعدد 25."
+      ],
+      "answer": [
+        "12 (أو −12)",
+        169,
+        "10 (أو −10)",
+        6.25,
+        625,
+        5
+      ],
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-2",
+      "kind": "exercise",
+      "number": 2,
+      "page": 26,
+      "section": "أوظّف تعلّماتي",
+      "group": "استعمال تعريف الجذر التربيعي",
+      "verified": true,
+      "text": "اكتب العبارة المناسبة : «هو مربع العدد» أو «هو الجذر التربيعي للعدد» مكان النقط.",
+      "items": [
+        "$(-1)^2 \\ldots 1$",
+        "$\\dfrac{1}{49} \\ldots \\dfrac{1}{7}$",
+        "$64 \\ldots 8$",
+        "$0,8 \\ldots 0,64$",
+        "$0,09 \\ldots 0,3$",
+        "$0,0001 \\ldots 0,01$"
+      ],
+      "answer": [
+        "هو مربع العدد",
+        "هو مربع العدد",
+        "هو مربع العدد",
+        "هو الجذر التربيعي للعدد",
+        "هو مربع العدد",
+        "هو مربع العدد"
+      ],
+      "answerSource": "computed",
+      "needsReview": "ordre de lecture de chaque paire (le nombre de gauche est le sujet de la phrase) — voir discrepancies"
+    },
+    {
+      "id": "ex-3",
+      "kind": "exercise",
+      "number": 3,
+      "page": 26,
+      "section": "أوظّف تعلّماتي",
+      "group": "استعمال تعريف الجذر التربيعي",
+      "verified": true,
+      "text": "اكتب كل عدد من الأعداد التالية كتابة عشرية.",
+      "items": [
+        "$\\sqrt{81}$",
+        "$\\sqrt{289}$",
+        "$\\sqrt{0,04}$",
+        "$\\sqrt{1,44}$",
+        "$\\sqrt{1,21}$",
+        "$\\sqrt{6,25}$",
+        "$\\sqrt{0,0001}$"
+      ],
+      "answer": [
+        9,
+        17,
+        0.2,
+        1.2,
+        1.1,
+        2.5,
+        0.01
+      ],
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-4",
+      "kind": "exercise",
+      "number": 4,
+      "page": 26,
+      "section": "أوظّف تعلّماتي",
+      "group": "استعمال تعريف الجذر التربيعي",
+      "verified": true,
+      "text": "اكتب كل عدد من الأعداد التالية على شكل عدد طبيعي.",
+      "items": [
+        "$\\sqrt{(-1)^2}$",
+        "$\\sqrt{0}$",
+        "$\\sqrt{(-1)^6}$",
+        "$\\sqrt{-(-49)}$"
+      ],
+      "answer": [
+        1,
+        0,
+        1,
+        7
+      ],
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-5",
+      "kind": "exercise",
+      "number": 5,
+      "page": 26,
+      "section": "أوظّف تعلّماتي",
+      "group": "استعمال تعريف الجذر التربيعي",
+      "verified": true,
+      "text": "اكتب كل عدد من الأعداد التالية على شكل قوة للعدد 10",
+      "items": [
+        "$\\sqrt{10^2}$",
+        "$\\sqrt{10^4}$",
+        "$\\sqrt{10^6}$",
+        "$\\sqrt{10^{-6}}$",
+        "$\\sqrt{10^{10}}$",
+        "$\\sqrt{10^{-20}}$",
+        "$\\sqrt{10^{-100}}$"
+      ],
+      "answer": [
+        "10",
+        "10²",
+        "10³",
+        "10⁻³",
+        "10⁵",
+        "10⁻¹⁰",
+        "10⁻⁵⁰"
+      ],
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-6",
+      "kind": "exercise",
+      "number": 6,
+      "page": 26,
+      "section": "أوظّف تعلّماتي",
+      "group": "استعمال تعريف الجذر التربيعي",
+      "verified": true,
+      "text": "احسب مربع كل عدد مما يلي:",
+      "items": [
+        "$\\sqrt{0,01}$",
+        "$\\sqrt{14}$",
+        "$\\sqrt{25}$",
+        "$\\sqrt{400}$",
+        "$\\sqrt{909}$",
+        "$\\sqrt{2019}$"
+      ],
+      "answer": [
+        0.01,
+        14,
+        25,
+        400,
+        909,
+        2019
+      ],
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-7",
+      "kind": "exercise",
+      "number": 7,
+      "page": 26,
+      "section": "أوظّف تعلّماتي",
+      "group": "استعمال تعريف الجذر التربيعي",
+      "verified": true,
+      "text": "احسب مربع كل عدد مما يلي:",
+      "items": [
+        "$\\sqrt{\\dfrac{1}{9}}$",
+        "$\\sqrt{\\dfrac{100}{49}}$",
+        "$\\sqrt{\\dfrac{1}{25}}$",
+        "$-\\sqrt{17}$"
+      ],
+      "answer": [
+        "1/9",
+        "100/49",
+        "1/25",
+        17
+      ],
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-8",
+      "kind": "exercise",
+      "number": 8,
+      "page": 26,
+      "section": "أوظّف تعلّماتي",
+      "group": "استعمال تعريف الجذر التربيعي",
+      "verified": true,
+      "text": "اكتب الأعداد الآتية دون استعمال الرمز $\\sqrt{\\;}$",
+      "items": [
+        "$\\sqrt{(14,2)^2}$",
+        "$\\sqrt{(-3,5)^2}$",
+        "$\\sqrt{\\pi^2}$",
+        "$\\sqrt{(3 - \\pi)^2}$",
+        "$\\sqrt{(\\pi - 5)^2}$",
+        "$\\sqrt{(\\pi - 2)^2}$"
+      ],
+      "answer": [
+        "14,2",
+        "3,5",
+        "π",
+        "π − 3",
+        "5 − π",
+        "π − 2"
+      ],
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-9",
+      "kind": "exercise",
+      "number": 9,
+      "page": 26,
+      "section": "أوظّف تعلّماتي",
+      "group": "حساب قيم تقريبية",
+      "verified": true,
+      "text": "عين القيمة المقربة إلى الجزء من 10 بالنقصان والقيمة المقربة إلى الجزء من 10 بالزيادة لكل عدد مما يلي:",
+      "items": [
+        "$\\sqrt{43}$",
+        "$\\sqrt{16,5}$",
+        "$\\sqrt{8}$",
+        "$13 + \\sqrt{7}$",
+        "$13 - \\sqrt{7}$",
+        "$\\dfrac{1}{\\sqrt{5}}$",
+        "$2\\sqrt{3} - 2$"
+      ],
+      "answer": [
+        [
+          6.5,
+          6.6
+        ],
+        [
+          4.0,
+          4.1
+        ],
+        [
+          2.8,
+          2.9
+        ],
+        [
+          15.6,
+          15.7
+        ],
+        [
+          10.3,
+          10.4
+        ],
+        [
+          0.4,
+          0.5
+        ],
+        [
+          1.4,
+          1.5
+        ]
+      ],
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-10",
+      "kind": "exercise",
+      "number": 10,
+      "page": 26,
+      "section": "أوظّف تعلّماتي",
+      "group": "حساب قيم تقريبية",
+      "verified": true,
+      "text": "مساحة مربع هي $12cm^2$. احسب المدوّر إلى الجزء من 10 لطول ضلع هذا المربع.",
+      "answer": 3.5,
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-11",
+      "kind": "exercise",
+      "number": 11,
+      "page": 26,
+      "section": "أوظّف تعلّماتي",
+      "group": "حل معادلات من الشكل $x^2 = a$",
+      "verified": true,
+      "text": "حل كل معادلة مما يلي:",
+      "items": [
+        "$x^2 = 81$",
+        "$x^2 = 2,89$",
+        "$x^2 = 361$",
+        "$x^2 = 0$",
+        "$x^2 = -16$"
+      ],
+      "answer": [
+        [
+          -9,
+          9
+        ],
+        [
+          -1.7,
+          1.7
+        ],
+        [
+          -19,
+          19
+        ],
+        [
+          0
+        ],
+        "لا حل"
+      ],
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-12",
+      "kind": "exercise",
+      "number": 12,
+      "page": 26,
+      "section": "أوظّف تعلّماتي",
+      "group": "حل معادلات من الشكل $x^2 = a$",
+      "verified": true,
+      "text": "حل كل معادلة مما يلي:",
+      "items": [
+        "$x^2 = 2$",
+        "$x^2 = 1$",
+        "$x^2 = -1$",
+        "$x^2 = (-1)^2$",
+        "$x^2 = \\dfrac{1}{4}$",
+        "$x^2 = \\dfrac{48}{49}$"
+      ],
+      "answer": [
+        [
+          "-√2",
+          "√2"
+        ],
+        [
+          -1,
+          1
+        ],
+        "لا حل",
+        [
+          -1,
+          1
+        ],
+        [
+          "-1/2",
+          "1/2"
+        ],
+        [
+          "-4√3/7",
+          "4√3/7"
+        ]
+      ],
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-13",
+      "kind": "exercise",
+      "number": 13,
+      "page": 26,
+      "section": "أوظّف تعلّماتي",
+      "group": "حل معادلات من الشكل $x^2 = a$",
+      "verified": true,
+      "text": "حل كل معادلة مما يلي:",
+      "items": [
+        "$3 - x^2 = 0$",
+        "$3 + x^2 = 0$",
+        "$1 - 9x^2 = 0$"
+      ],
+      "answer": [
+        [
+          "-√3",
+          "√3"
+        ],
+        "لا حل",
+        [
+          "-1/3",
+          "1/3"
+        ]
+      ],
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-14",
+      "kind": "exercise",
+      "number": 14,
+      "page": 26,
+      "section": "أوظّف تعلّماتي",
+      "group": "حل معادلات من الشكل $x^2 = a$",
+      "verified": true,
+      "items": [
+        "1) لتكن العبارة $A = x(x - 5) + 5(x + 2) + 6$. أ) انشر العبارة A وبسّطها. ب) عيّن قيم $x$ التي تكون من أجلها $A = 0$.",
+        "2) أجب عن السؤالين السابقين نفسهما من أجل العبارة $A = (x - 7)(x + 4) + 3x + 21$."
+      ],
+      "answer": {
+        "1": {
+          "A": "x² + 16",
+          "solutions": "لا حل"
+        },
+        "2": {
+          "A": "x² − 7",
+          "solutions": [
+            "-√7",
+            "√7"
+          ]
+        }
+      },
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-15",
+      "kind": "exercise",
+      "number": 15,
+      "page": 26,
+      "section": "أوظّف تعلّماتي",
+      "group": "استعمال المساواة $\\sqrt{a \\cdot b} = \\sqrt{a} \\cdot \\sqrt{b}$",
+      "verified": true,
+      "text": "احسب ما يلي:",
+      "items": [
+        "$\\sqrt{9 \\times 81}$",
+        "$\\sqrt{121 \\times 100}$",
+        "$\\sqrt{16 \\times 900}$",
+        "$\\sqrt{10^2 \\times 10^4}$",
+        "$\\sqrt{\\dfrac{1}{4} \\times 10^6}$",
+        "$\\sqrt{1,44 \\times 0,25}$"
+      ],
+      "answer": [
+        27,
+        110,
+        120,
+        1000,
+        500,
+        0.6
+      ],
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-16",
+      "kind": "exercise",
+      "number": 16,
+      "page": 26,
+      "section": "أوظّف تعلّماتي",
+      "group": "استعمال المساواة $\\sqrt{a \\cdot b} = \\sqrt{a} \\cdot \\sqrt{b}$",
+      "verified": true,
+      "text": "احسب ما يلي:",
+      "items": [
+        "$\\sqrt{0,01 \\times 64}$",
+        "$\\sqrt{0,81 \\times 0,0001}$",
+        "$\\sqrt{2,56 \\times 0,16}$",
+        "$\\sqrt{5,76 \\times 0,0144}$"
+      ],
+      "answer": [
+        0.8,
+        0.009,
+        0.64,
+        0.288
+      ],
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-17",
+      "kind": "exercise",
+      "number": 17,
+      "page": 27,
+      "section": "أوظّف تعلّماتي",
+      "group": "استعمال المساواة $\\sqrt{a \\cdot b} = \\sqrt{a} \\cdot \\sqrt{b}$",
+      "verified": true,
+      "text": "احسب ما يلي:",
+      "items": [
+        "$\\sqrt{2} \\times \\sqrt{50}$",
+        "$\\sqrt{32} \\times \\sqrt{2}$",
+        "$\\sqrt{3} \\times \\sqrt{48}$",
+        "$\\sqrt{125} \\times \\sqrt{5}$",
+        "$\\sqrt{0,04 \\times 0,09}$"
+      ],
+      "answer": [
+        10,
+        8,
+        12,
+        25,
+        0.06
+      ],
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-18",
+      "kind": "exercise",
+      "number": 18,
+      "page": 27,
+      "section": "أوظّف تعلّماتي",
+      "group": "استعمال المساواة $\\sqrt{a^2 b} = a\\sqrt{b}$",
+      "verified": true,
+      "text": "اكتب كل عدد مما يلي على الشكل $a\\sqrt{b}$ حيث $a$ و $b$ عددان طبيعيان و $b$ أصغر ما يمكن.",
+      "items": [
+        "$\\sqrt{8}$",
+        "$\\sqrt{32}$",
+        "$\\sqrt{75}$",
+        "$\\sqrt{288}$",
+        "$\\sqrt{300}$",
+        "$\\sqrt{363}$",
+        "$\\sqrt{6250}$"
+      ],
+      "answer": [
+        "2√2",
+        "4√2",
+        "5√3",
+        "12√2",
+        "10√3",
+        "11√3",
+        "25√10"
+      ],
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-19",
+      "kind": "exercise",
+      "number": 19,
+      "page": 27,
+      "section": "أوظّف تعلّماتي",
+      "group": "استعمال المساواة $\\sqrt{a^2 b} = a\\sqrt{b}$",
+      "verified": true,
+      "text": "اكتب كل عدد مما يلي على الشكل $\\sqrt{n}$ حيث $n$ عدد طبيعي.",
+      "items": [
+        "$4\\sqrt{3}$",
+        "$2\\sqrt{5}$",
+        "$7\\sqrt{2}$",
+        "$5\\sqrt{5}$",
+        "$2\\sqrt{7}$",
+        "$3\\sqrt{27}$",
+        "$4\\sqrt{0,25}$",
+        "$0,9\\sqrt{100}$"
+      ],
+      "answer": [
+        "√48",
+        "√20",
+        "√98",
+        "√125",
+        "√28",
+        "√243",
+        "√4",
+        "√81"
+      ],
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-20",
+      "kind": "exercise",
+      "number": 20,
+      "page": 27,
+      "section": "أوظّف تعلّماتي",
+      "group": "استعمال المساواة $\\sqrt{\\dfrac{a}{b}} = \\dfrac{\\sqrt{a}}{\\sqrt{b}}$",
+      "verified": true,
+      "text": "اكتب كل عدد مما يلي على شكل كسر.",
+      "items": [
+        "$\\sqrt{\\dfrac{49}{16}}$",
+        "$\\sqrt{\\dfrac{36}{81}}$",
+        "$\\sqrt{\\dfrac{1}{324}}$",
+        "$\\sqrt{\\dfrac{12100}{900}}$",
+        "$\\sqrt{\\dfrac{1}{2500}}$",
+        "$\\sqrt{\\dfrac{4900}{32400}}$"
+      ],
+      "answer": [
+        "7/4",
+        "2/3",
+        "1/18",
+        "11/3",
+        "1/50",
+        "7/18"
+      ],
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-21",
+      "kind": "exercise",
+      "number": 21,
+      "page": 27,
+      "section": "أوظّف تعلّماتي",
+      "group": "استعمال المساواة $\\sqrt{\\dfrac{a}{b}} = \\dfrac{\\sqrt{a}}{\\sqrt{b}}$",
+      "verified": true,
+      "text": "بسّط كل عدد مما يلي واعط النتيجة على شكل كسر.",
+      "items": [
+        "$\\dfrac{\\sqrt{2}}{\\sqrt{18}}$",
+        "$\\dfrac{\\sqrt{3}}{\\sqrt{48}}$",
+        "$\\dfrac{\\sqrt{2}}{\\sqrt{32}}$",
+        "$\\dfrac{\\sqrt{400}}{\\sqrt{900}}$",
+        "$\\dfrac{\\sqrt{6875}}{\\sqrt{1100}}$",
+        "$\\dfrac{\\sqrt{7}}{\\sqrt{448}}$"
+      ],
+      "answer": [
+        "1/3",
+        "1/4",
+        "1/4",
+        "2/3",
+        "5/2",
+        "1/8"
+      ],
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-22",
+      "kind": "exercise",
+      "number": 22,
+      "page": 27,
+      "section": "أوظّف تعلّماتي",
+      "group": "استعمال المساواة $\\sqrt{\\dfrac{a}{b}} = \\dfrac{\\sqrt{a}}{\\sqrt{b}}$",
+      "verified": true,
+      "text": "اكتب كل عدد مما يلي على شكل نسبة مقامها عدد ناطق.",
+      "items": [
+        "$\\dfrac{2}{\\sqrt{3}}$",
+        "$\\dfrac{1}{\\sqrt{5}}$",
+        "$\\dfrac{\\sqrt{3}}{\\sqrt{2}}$",
+        "$\\dfrac{\\sqrt{6}}{\\sqrt{42}}$"
+      ],
+      "answer": [
+        "2√3/3",
+        "√5/5",
+        "√6/2",
+        "√7/7"
+      ],
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-23",
+      "kind": "exercise",
+      "number": 23,
+      "page": 27,
+      "section": "أوظّف تعلّماتي",
+      "group": "استعمال المساواة $\\sqrt{\\dfrac{a}{b}} = \\dfrac{\\sqrt{a}}{\\sqrt{b}}$",
+      "verified": true,
+      "text": "اكتب كل عدد مما يلي على شكل نسبة مقامها عدد ناطق.",
+      "items": [
+        "$\\dfrac{2 + \\sqrt{3}}{\\sqrt{3}}$",
+        "$\\dfrac{\\sqrt{5} - 3}{\\sqrt{5}}$",
+        "$\\dfrac{2\\sqrt{5} - 2}{3\\sqrt{7}}$",
+        "$\\dfrac{2\\sqrt{3} - 6}{\\sqrt{6}}$"
+      ],
+      "answer": [
+        "(2√3 + 3)/3",
+        "(5 − 3√5)/5",
+        "(2√35 − 2√7)/21",
+        "√2 − √6"
+      ],
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-24",
+      "kind": "exercise",
+      "number": 24,
+      "page": 27,
+      "section": "أوظّف تعلّماتي",
+      "group": "استعمال المساواة $\\sqrt{\\dfrac{a}{b}} = \\dfrac{\\sqrt{a}}{\\sqrt{b}}$",
+      "verified": true,
+      "text": "عيّن العدد $a$ في كل حالة مما يلي:",
+      "items": [
+        "$\\sqrt{3}\\,a = \\dfrac{\\sqrt{2}}{2}$",
+        "$\\dfrac{1}{\\sqrt{5}} = \\dfrac{\\sqrt{2}}{a}$",
+        "$\\dfrac{a}{\\sqrt{11}} = 2 - \\sqrt{11}$",
+        "$\\dfrac{\\sqrt{8}}{a} = \\dfrac{-3\\sqrt{15}}{\\sqrt{3}}$"
+      ],
+      "answer": [
+        "√6/6",
+        "√10",
+        "2√11 − 11",
+        "−2√10/15"
+      ],
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-25",
+      "kind": "exercise",
+      "number": 25,
+      "page": 27,
+      "section": "أوظّف تعلّماتي",
+      "group": "تمارين عامة",
+      "verified": true,
+      "text": "ABC مثلث متقايس الأضلاع طول ضلعه 2cm، [AH] هو الإرتفاع المتعلق بالضلع [BC]. عيّن القيمة المقربة إلى الجزء من 10 بالزيادة لمساحة المثلث ABC.",
+      "answer": {
+        "AH": "√3",
+        "area": "√3 ≈ 1,73",
+        "byExcess": 1.8
+      },
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-26",
+      "kind": "exercise",
+      "number": 26,
+      "page": 27,
+      "section": "أوظّف تعلّماتي",
+      "group": "تمارين عامة",
+      "verified": true,
+      "items": [
+        "1) اكتب كل عدد مما يلي على الشكل $a\\sqrt{3}$ حيث $a$ عدد طبيعي: $\\sqrt{12}$ ، $\\sqrt{75}$ ، $\\sqrt{147}$ .",
+        "2) استنتج كتابة مبسطة للعدد A حيث $A = 2\\sqrt{12} - 4\\sqrt{3} + \\sqrt{75} - \\sqrt{147}$ ."
+      ],
+      "answer": {
+        "1": [
+          "2√3",
+          "5√3",
+          "7√3"
+        ],
+        "A": "−2√3"
+      },
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-27",
+      "kind": "exercise",
+      "number": 27,
+      "page": 27,
+      "section": "أوظّف تعلّماتي",
+      "group": "تمارين عامة",
+      "verified": true,
+      "text": "اكتب كلا من العددين A و B على الشكل $a\\sqrt{b}$ حيث $a$ و $b$ عددان طبيعيان و $b$ أصغر ما يمكن.",
+      "items": [
+        "$A = \\sqrt{20} - 3\\sqrt{125} + 4\\sqrt{45}$",
+        "$B = 5\\sqrt{24} + \\sqrt{54} - 3\\sqrt{216} + 2\\sqrt{6}$"
+      ],
+      "answer": {
+        "A": "−√5",
+        "B": "−3√6"
+      },
+      "answerSource": "computed",
+      "correction": {
+        "decidedBy": "owner",
+        "decidedOn": "2026-09-30",
+        "text": "اكتب كلا من العددين A و B على الشكل $a\\sqrt{b}$ حيث $a$ عدد صحيح و $b$ عدد طبيعي أصغر ما يمكن.",
+        "note": "a est négatif dans les deux résultats : « عددان طبيعيان » devient « a عدد صحيح و b عدد طبيعي »."
+      }
+    },
+    {
+      "id": "ex-28",
+      "kind": "exercise",
+      "number": 28,
+      "page": 27,
+      "section": "أوظّف تعلّماتي",
+      "group": "تمارين عامة",
+      "verified": true,
+      "text": "انشر وبسّط كلا مما يأتي:",
+      "items": [
+        "أ) $\\sqrt{3}(\\sqrt{3} + 2)$",
+        "ب) $(5 + \\sqrt{7})(\\sqrt{7} - 4)$",
+        "ج) $(2\\sqrt{3} - \\sqrt{5})(\\sqrt{5} + \\sqrt{3})$"
+      ],
+      "answer": [
+        "3 + 2√3",
+        "√7 − 13",
+        "1 + √15"
+      ],
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-29",
+      "kind": "exercise",
+      "number": 29,
+      "page": 27,
+      "section": "أوظّف تعلّماتي",
+      "group": "تمارين عامة",
+      "verified": true,
+      "text": "انشر كلا مما يأتي وبسّطه:",
+      "items": [
+        "أ) $(\\sqrt{5} + \\sqrt{3})^2$",
+        "ب) $(\\sqrt{7} + \\sqrt{3})^2$",
+        "ج) $(\\sqrt{25} - 4)(\\sqrt{25} + 4)$",
+        "د) $(2\\sqrt{3} + 3\\sqrt{2})^2 - 5(6 + \\sqrt{6})$"
+      ],
+      "answer": [
+        "8 + 2√15",
+        "10 + 2√21",
+        "9",
+        "7√6"
+      ],
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-30",
+      "kind": "exercise",
+      "number": 30,
+      "page": 27,
+      "section": "أوظّف تعلّماتي",
+      "group": "تمارين عامة",
+      "verified": true,
+      "text": "نعتبر العددين A و B حيث $A = 7 + \\sqrt{32}$ و $B = 7 - 4\\sqrt{2}$ .",
+      "items": [
+        "1) احسب ما يلي: $A + B$ ، $A - B$ ، $A \\times B$ .",
+        "2) اكتب $\\dfrac{A}{B}$ على شكل نسبة مقامها عدد ناطق."
+      ],
+      "answer": {
+        "A+B": 14,
+        "A-B": "8√2",
+        "AxB": 17,
+        "A/B": "(81 + 56√2)/17"
+      },
+      "answerSource": "computed"
+    },
+    {
+      "id": "qcm",
+      "kind": "qcm",
+      "page": 28,
+      "section": "أؤكّد تعلّماتي",
+      "instruction": "في كل حالة مما يلي اختر الإجابة أو الإجابات الصحيحة، وبرّر اختيارك.",
+      "verified": true,
+      "items": [
+        {
+          "n": 1,
+          "text": "الجذر التربيعي للعدد 0,25 هو .......",
+          "options": [
+            "0,5",
+            "-0,5",
+            "0,05"
+          ],
+          "correct": [
+            0
+          ],
+          "backToPage": [
+            22
+          ]
+        },
+        {
+          "n": 2,
+          "text": "$\\sqrt{3^2}$ يساوي ........",
+          "options": [
+            "$\\sqrt{3}$",
+            "3",
+            "$2\\sqrt{3}$"
+          ],
+          "correct": [
+            1
+          ],
+          "backToPage": [
+            22
+          ]
+        },
+        {
+          "n": 3,
+          "text": "$\\sqrt{(-2)^2}$ يساوي ........",
+          "options": [
+            "-2",
+            "2",
+            "4"
+          ],
+          "correct": [
+            1
+          ],
+          "backToPage": [
+            22
+          ]
+        },
+        {
+          "n": 4,
+          "text": "المعادلة $x^2 = 0,25$ ........",
+          "options": [
+            "تقبل حلين هما -0,5 و 0,5",
+            "تقبل حلين هما -5 و 5",
+            "لا تقبل أي حل"
+          ],
+          "correct": [
+            0
+          ],
+          "backToPage": [
+            22,
+            23
+          ]
+        },
+        {
+          "n": 5,
+          "text": "المعادلة $x^2 = (-1)^2$ ........",
+          "options": [
+            "تقبل حلين هما -1 و 1",
+            "تقبل حلا واحدا هو 1",
+            "لا تقبل أي حل"
+          ],
+          "correct": [
+            0
+          ],
+          "backToPage": [
+            22,
+            23
+          ]
+        },
+        {
+          "n": 6,
+          "text": "المعادلة $x^2 = -\\sqrt{3}$ ........",
+          "options": [
+            "تقبل حلين هما -3 و 3",
+            "تقبل حلا واحدا هو 3",
+            "لا تقبل أي حل"
+          ],
+          "correct": [
+            2
+          ],
+          "backToPage": [
+            22,
+            23
+          ]
+        },
+        {
+          "n": 7,
+          "text": "العدد $\\sqrt{3^2 \\times 7}$ يكتب على الشكل .....",
+          "options": [
+            "$3\\sqrt{7}$",
+            "$3 \\times 7$",
+            "$3^2 \\times 7^2$"
+          ],
+          "correct": [
+            0
+          ],
+          "backToPage": [
+            24,
+            25
+          ]
+        },
+        {
+          "n": 8,
+          "text": "العدد $\\sqrt{\\dfrac{9}{25}}$ يبسط على الشكل......",
+          "options": [
+            "$\\dfrac{81}{625}$",
+            "$\\dfrac{3}{5}$",
+            "$\\dfrac{5}{3}$"
+          ],
+          "correct": [
+            1
+          ],
+          "backToPage": [
+            24,
+            25
+          ]
+        },
+        {
+          "n": 9,
+          "text": "العدد $\\sqrt{\\dfrac{1}{28}}$ يكتب ........",
+          "options": [
+            "$\\dfrac{1}{\\sqrt{28}}$",
+            "$\\sqrt{28}$",
+            "$\\dfrac{1}{2\\sqrt{7}}$"
+          ],
+          "correct": [
+            0,
+            2
+          ],
+          "backToPage": [
+            24,
+            25
+          ]
+        },
+        {
+          "n": 10,
+          "text": "المعادلة $x^2 - 7 = 0$ ..........",
+          "options": [
+            "تقبل حلا واحدا هو $\\dfrac{7}{2}$",
+            "تقبل حلين هما $\\sqrt{7}$ و $-\\sqrt{7}$",
+            "تقبل حلا واحدا هو 14"
+          ],
+          "correct": [
+            1
+          ],
+          "backToPage": [
+            22,
+            23
+          ]
+        },
+        {
+          "n": 11,
+          "text": "المعادلة $-x^2 - 16 = 0$ ..........",
+          "options": [
+            "تقبل حلا واحدا هو 4",
+            "تقبل حلين هما -4 و 4",
+            "لا تقبل أي حل"
+          ],
+          "correct": [
+            2
+          ],
+          "backToPage": [
+            22,
+            23
+          ]
+        }
+      ]
+    },
+    {
+      "id": "situation",
+      "kind": "situation",
+      "page": 28,
+      "section": "أدمج تعلّماتي",
+      "title": "وضعية",
+      "verified": true,
+      "text": "أرادت أم شراء زربية مستطيلة الشكل لوضعها على أرضية غرفة الاستقبال. عندما طلبت من البائع سعر الزربية وبعديها أجاب التاجر بالعبارات التالية: سعر الزربية هو 12000DA ومساحتها $24m^2$ وطولها ضعف عرضها. ساعد هذه الأم على معرفة طول هذه الزربية وعرضها. (تدوّر النتائج إلى cm)",
+      "caption": "زربية وادي سوف",
+      "analysis": [
+        "قراءة الوضعية وفهمها: المطلوب البحث عن بُعدي الزربية علما أنّ: الزربية مستطيلة الشكل، طولها ضعف عرضها، مساحتها $24m^2$، ثمنها 12000DA.",
+        "تحليل التعليمة واختيار إستراتيجية حل مناسبة: إذا كان L طول الزربية و $\\ell$ عرضها فإنّ $L = 2\\ell$، العلاقة الموجودة بين المساحة والبعدين. استبعاد المعطيات المُشوّشة $24m^2$.",
+        "تنفيذ استراتيجية الحل: كتابة عبارة المساحة بدلالة $\\ell$ ، القيام بالعمليات المناسبة ( التبسيط، حل معادلة ، ...)"
+      ],
+      "correction": {
+        "decidedBy": "owner",
+        "decidedOn": "2026-09-30",
+        "analysis1": "تحليل التعليمة واختيار إستراتيجية حل مناسبة: إذا كان L طول الزربية و $\\ell$ عرضها فإنّ $L = 2\\ell$، العلاقة الموجودة بين المساحة والبعدين. استبعاد المعطيات المُشوّشة: 12000DA.",
+        "note": "La donnée parasite est le prix 12000DA ; l aire 24m² est nécessaire au calcul."
+      },
+      "answer": {
+        "equation": "2ℓ² = 24 ⇔ ℓ² = 12",
+        "width": "ℓ = √12 = 2√3 ≈ 3,46 m = 346 cm",
+        "length": "L = 4√3 ≈ 6,93 m = 693 cm"
+      },
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-31",
+      "kind": "exercise",
+      "number": 31,
+      "page": 29,
+      "section": "أتعمّق",
+      "group": "أتعمّق",
+      "verified": true,
+      "items": [
+        "1) يعطى $x = 1,414\\,213\\,562\\,373\\,095$ و $y = \\sqrt{2}$ . استعمل حاسبة لتعيين $x - y$. هل $x = y$؟ علّل.",
+        "2) يعطى $a = 1 \\div (\\sqrt{3} + \\sqrt{2})$ و $b = \\sqrt{3} - \\sqrt{2}$ . استعمل حاسبة لتحسب $a$ و $b$. هل $a = b$؟ علّل."
+      ],
+      "answer": {
+        "1": "x ≠ y: √2 ليس عددا ناطقا بينما x عدد عشري",
+        "2": "a = b لأنّ (√3 + √2)(√3 − √2) = 3 − 2 = 1"
+      },
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-32",
+      "kind": "exercise",
+      "number": 32,
+      "page": 29,
+      "section": "أتعمّق",
+      "group": "أتعمّق",
+      "verified": true,
+      "text": "ABCDEFGH مكعّب طول حرفه 5cm.",
+      "items": [
+        "1) ما طبيعة كل من المثلثين BCF و EFC؟",
+        "2) احسب القيمة المضبوطة لكل من الطولين CF و CE. (أعط الناتج على الشكل $a\\sqrt{b}$ حيث $b$ أصغر ما يمكن)."
+      ],
+      "answer": {
+        "triangles": "قائمان (BCF قائم في B و EFC قائم في F)",
+        "CF": "5√2",
+        "CE": "5√3"
+      },
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-33",
+      "kind": "exercise",
+      "number": 33,
+      "page": 29,
+      "section": "أتعمّق",
+      "group": "أتعمّق",
+      "verified": true,
+      "text": "طريقة لإنشاء العدد $\\dfrac{1 + \\sqrt{5}}{2}$ الذي يسمّى العدد الذهبي. AED مثلث قائم في A حيث $AE = \\dfrac{1}{2}AD$ .",
+      "items": [
+        "1) احسب القيمة المضبوطة للطول ED.",
+        "2) أنشئ على نصف المستقيم [AE) النقطة B حيث EB = ED، ثم النقطة C حيث ABCD مستطيل.",
+        "3) تحقّق أنّ القيمة المضبوطة للطول AB هي $\\dfrac{1 + \\sqrt{5}}{2}$ .",
+        "4) اعط ملخصا لطريقة إنشاء العدد الذهبي باستعمال المسطرة والمدور."
+      ],
+      "answer": {
+        "ED": "√5/2 (AD = 1)",
+        "AB": "1/2 + √5/2"
+      },
+      "answerSource": "computed",
+      "figure": "AD = 1 ، AE = 1/2"
+    },
+    {
+      "id": "ex-34",
+      "kind": "exercise",
+      "number": 34,
+      "page": 29,
+      "section": "أتعمّق",
+      "group": "أتعمّق",
+      "verified": true,
+      "text": "نعتبر المثلث ABC القائم في A والمتساوي الساقين حيث AC = x.",
+      "items": [
+        "1) احسب الطول BC بدلالة $x$. (تعطى النتيجة على الشكل $a\\sqrt{b}$)",
+        "2) عبّر عن P محيط المثلث ABC بدلالة $x$.",
+        "3) احسب المدوّر إلى جزء من مئة لـ P في كل من الحالتين: الحالة 1: x = 3cm الحالة 2: x = 5cm"
+      ],
+      "answer": {
+        "BC": "x√2",
+        "P": "(2 + √2)x",
+        "x=3": 10.24,
+        "x=5": 17.07
+      },
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-35",
+      "kind": "exercise",
+      "number": 35,
+      "page": 29,
+      "section": "أتعمّق",
+      "group": "أتعمّق",
+      "verified": true,
+      "items": [
+        "1) احصر كلا من العددين $\\sqrt{41}$ و $\\sqrt{113}$ بين عددين طبيعيين متتاليين.",
+        "2) استعمل حاسبة لإعطاء المدوّر إلى الجزء من 100 لكل عدد من الأعداد الآتية: $\\dfrac{15}{3 + \\sqrt{2}}$ ، $\\sqrt{7} + 3$ ، $\\sqrt{54}$ ، $\\sqrt{7} + \\sqrt{11}$"
+      ],
+      "answer": {
+        "√41": [
+          6,
+          7
+        ],
+        "√113": [
+          10,
+          11
+        ],
+        "rounded": [
+          3.4,
+          5.65,
+          7.35,
+          5.96
+        ]
+      },
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-36",
+      "kind": "exercise",
+      "number": 36,
+      "page": 29,
+      "section": "أتعمّق",
+      "group": "أتعمّق",
+      "verified": true,
+      "text": "$x$ ، $y$ ، $z$ أطوال أضلاع مثلث حيث $x = \\sqrt{3 + \\sqrt{27}}$ ، $y = \\sqrt{-3 + \\sqrt{12}}$ و $z = \\sqrt{\\sqrt{75}}$",
+      "items": [
+        "1) أ) اكتب كلا من العددين $x^2$ و $y^2$ على الشكل $a + b\\sqrt{3}$ حيث $a$ و $b$ عددان صحيحان نسبيان. ب) اكتب العدد $z^2$ على الشكل $a\\sqrt{3}$ حيث $a$ عدد طبيعي.",
+        "2) بيّن أنّ هذا المثلث قائم."
+      ],
+      "answer": {
+        "x²": "3 + 3√3",
+        "y²": "−3 + 2√3",
+        "z²": "5√3",
+        "right": "x² + y² = 5√3 = z²"
+      },
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-37",
+      "kind": "exercise",
+      "number": 37,
+      "page": 29,
+      "section": "أتعمّق",
+      "group": "أتعمّق",
+      "verified": true,
+      "text": "من امتحان شهادة التعليم المتوسط. A و B عددان حيث: $A = 3\\sqrt{8} \\times \\sqrt{2}$ ؛ $B = 2\\sqrt{27} - 2\\sqrt{3} + \\sqrt{12}$",
+      "items": [
+        "1) بيّن أنّ A عدد طبيعي.",
+        "2) اكتب العدد B على الشكل $a\\sqrt{3}$، حيث $a$ عدد طبيعي.",
+        "3) بيّن أنّ $\\dfrac{A}{B} = \\dfrac{2\\sqrt{3}}{3}$ ."
+      ],
+      "answer": {
+        "A": 12,
+        "B": "6√3",
+        "A/B": "2√3/3"
+      },
+      "answerSource": "computed"
+    },
+    {
+      "id": "ex-38",
+      "kind": "exercise",
+      "number": 38,
+      "page": 29,
+      "section": "أتعمّق",
+      "group": "أتعمّق",
+      "verified": true,
+      "text": "من امتحان شهادة التعليم المتوسط. إليك الأعداد A، B، C حيث: $A = \\dfrac{3}{5} + \\dfrac{2}{5} \\times \\dfrac{7}{4}$ ، $B = \\dfrac{1,2 \\times 10^{-2} \\times 7}{12,5 \\times 10^{3}}$ ، $C = \\sqrt{175} - \\sqrt{112} + 6\\sqrt{7}$ .",
+      "items": [
+        "1) احسب A واكتبه على الشكل العشري.",
+        "2) أعط الكتابة العلمية للعدد B",
+        "3) اكتب C على أبسط شكل ممكن."
+      ],
+      "answer": {
+        "A": 1.3,
+        "B": "6,72 × 10⁻⁶",
+        "C": "7√7"
+      },
+      "answerSource": "computed"
+    },
+    {
+      "id": "ict-construct",
+      "kind": "ict",
+      "page": 30,
+      "section": "أوظّف تكنولوجيات الإعلام والاتصال",
+      "title": "إنشاء قطعة مستقيم طولها $\\sqrt{n}$ حيث $n$ عدد طبيعي باستعمال برمجية جيوجبرا.",
+      "verified": true,
+      "steps": [
+        "1) حالة $n$ صغير نسبيا $n = 7$",
+        "افتح ورقة عمل في برمجية جيوجبرا، وانتق الهندسة.",
+        "ضع نقطة A ثمّ انقر على … وعلى النقطة A لتعيين قطعة مستقيم بالطول 1، سمّ طرفها الآخر B.",
+        "ارسم، باستعمال …، المستقيم العمودي على (AB) في A، وباستعمال … الدائرة ذات المركز A ونصف القطر 1. تتقاطع الدائرة مع المستقيم في نقطتين سمّ C النقطة الواقعة أعلى (AB).",
+        "ما هي القيمة المضبوطة للطول BC؟",
+        "واصل بنفس الطريقة وعيّن النقط D، E، F، G، H كما في الشكل.",
+        "ما هي القيمة المضبوطة للطول BH؟",
+        "عيّن باستعمال … المدوّر إلى $10^{-9}$ للطول BH وباستعمال حاسبة المدوّر إلى $10^{-9}$ للعدد $\\sqrt{7}$.",
+        "2) حالة $n$ كبير نسبيا $n = 23$ (استعمل الطريقة الواردة في التمرين 37)."
+      ],
+      "answer": {
+        "BC": "√2",
+        "BH": "√7"
+      },
+      "answerSource": "computed"
+    },
+    {
+      "id": "ict-sqrt2",
+      "kind": "ict",
+      "page": 30,
+      "section": "أوظّف تكنولوجيات الإعلام والاتصال",
+      "title": "قيمة العدد $\\sqrt{2}$ المخزنة في ذاكرة حاسبة وقيمة مقرّبة له.",
+      "verified": true,
+      "steps": [
+        "عند استعمال اللمسة $\\sqrt{\\;}$ لحساب $\\sqrt{2}$ تظهر الحاسبة قيمة $a = 1,414213562$",
+        "أُحسب باستعمال حاسبة الفرق $\\sqrt{2} - a$ . كيف تفسّر النتيجة؟"
+      ],
+      "answer": "الفرق ليس معدوما: الحاسبة تخزّن أرقاما أكثر مما تعرض، و 1,414213562 قيمة مقرّبة فقط لـ √2",
+      "answerSource": "computed"
+    },
+    {
+      "id": "now-30",
+      "kind": "try-now",
+      "page": 30,
+      "section": "دوري الآن",
+      "verified": true,
+      "text": "استعمل المجدول إكسال أو المجدول جيوجبرا لتقارن بين العددين: $2a - 4$ و $\\sqrt{a + \\sqrt{4a - 1}} + \\sqrt{a - \\sqrt{4a - 1}}$ إذا علمت أنّ $a \\geq 2$ .",
+      "needsReview": "expression imprimée indéfinie pour 2 ≤ a < 2 + √3 (a − √(4a − 1) < 0) — voir discrepancies",
+      "answer": null,
+      "answerSource": "not_computed",
+      "correction": {
+        "decidedBy": "owner",
+        "decidedOn": "2026-09-30",
+        "text": "استعمل المجدول إكسال أو المجدول جيوجبرا لتقارن بين العددين: $2\\sqrt{a - 1}$ و $\\sqrt{a + \\sqrt{4a - 4}} + \\sqrt{a - \\sqrt{4a - 4}}$ إذا علمت أنّ $a \\geq 2$ .",
+        "answer": "العددان متساويان: $(\\sqrt{a - 1} + 1)^2 = a + 2\\sqrt{a - 1} = a + \\sqrt{4a - 4}$ و $(\\sqrt{a - 1} - 1)^2 = a - \\sqrt{4a - 4}$ مع $\\sqrt{a - 1} - 1 \\geq 0$ لما $a \\geq 2$، إذن المجموع يساوي $(\\sqrt{a - 1} + 1) + (\\sqrt{a - 1} - 1) = 2\\sqrt{a - 1}$.",
+        "note": "Reconstruction de la plateforme : 4a − 1 → 4a − 4 (seule lecture pour laquelle « a ≥ 2 » rend les deux radicandes positifs), 2a − 4 → 2√(a − 1) (la valeur de la somme). Vérifiée pour a = 2 (2 = 2), a = 5 (4 = 4), a = 10 (6 = 6)."
+      }
+    }
+  ],
+  "discrepancies": [
+    {
+      "elementId": "act-2",
+      "resolution": "corrected_in_lessons (owner, 2026-09-30) — see element.correction",
+      "kind": "misprint",
+      "text": "La liste imprimée porte √(25/9) et √(16/13) ; le classement imprimé porte √(16/9) (1er) et √(25/13) (2e). Le critère du classement est le même dans les deux lectures. La leçon affiche le classement tel qu'imprimé et le signale."
+    },
+    {
+      "elementId": "ex-2",
+      "kind": "ambiguous-layout",
+      "text": "Chaque paire « X … Y » est lue avec X (nombre de gauche) comme sujet de la phrase : « 64 هو مربع العدد 8 », « 0,8 هو الجذر التربيعي للعدد 0,64 ». Toutes les paires ont une réponse dans cette lecture."
+    },
+    {
+      "elementId": "ex-1",
+      "kind": "two-answers",
+      "text": "« 144 هو مربع العدد ... » et « 100 هو مربع العدد ... » admettent 12/−12 et 10/−10 ; les deux sont acceptés (règle EXERCISE_CONTRACT : toute réponse vraie est acceptée)."
+    },
+    {
+      "elementId": "ex-27",
+      "resolution": "corrected_in_lessons (owner, 2026-09-30) — see element.correction",
+      "kind": "statement-vs-result",
+      "text": "L'énoncé demande a et b « طبيعيان » mais A = −√5 et B = −3√6 : a est un entier négatif. La leçon garde l'énoncé et affiche le résultat exact."
+    },
+    {
+      "elementId": "situation",
+      "resolution": "corrected_in_lessons (owner, 2026-09-30) — see element.correction",
+      "kind": "misprint",
+      "text": "« استبعاد المعطيات المُشوّشة 24m² » : la donnée parasite de la situation est le prix 12000DA, pas l'aire 24m² (nécessaire au calcul). Transcrit tel quel ; la leçon signale la donnée parasite réelle."
+    },
+    {
+      "elementId": "now-30",
+      "resolution": "corrected_in_lessons (owner, 2026-09-30) — see element.correction",
+      "kind": "misprint",
+      "text": "Pour a = 2, a − √(4a − 1) = 2 − √7 < 0 : l'expression imprimée n'a pas de sens pour 2 ≤ a < 2 + √3. Rendue comme telle, sans corrigé ; la leçon 5 la présente comme remarque « انتبه » sur le domaine d'un radical."
+    },
+    {
+      "elementId": "unit",
+      "kind": "missing-label",
+      "text": "Le PDF n'imprime pas le nom du ميدان ; le catalogue conserve l'intitulé du programme (ميدان أنساب الأعداد والحساب)."
+    }
+  ],
+  "destinations": {
+    "_comment": "elementId → { lesson, module } ; `duplicatedIn` autorise une seconde utilisation déclarée ; `items` répartit un élément à plusieurs sous-éléments. Vérifié par scripts/check-textbook-coverage.mjs.",
+    "objectives": {
+      "lesson": "unit",
+      "module": "page"
+    },
+    "history-golden": {
+      "lesson": "unit",
+      "module": "page"
+    },
+    "challenge": {
+      "lesson": "unit",
+      "module": "page",
+      "duplicatedIn": [
+        {
+          "lesson": "jidhr-tarbii",
+          "module": 1,
+          "note": "le côté d'une base carrée d'aire 20 : l'accroche REAL de la leçon 1"
+        }
+      ]
+    },
+    "prep": {
+      "lesson": "jidhr-tarbii",
+      "module": 0,
+      "items": {
+        "1-2": {
+          "lesson": "jidhr-tarbii",
+          "module": 0
+        },
+        "3": {
+          "lesson": "muadalat-x-murabba",
+          "module": 0
+        },
+        "4": {
+          "lesson": "jidhr-tarbii",
+          "module": 0
+        },
+        "5-6": {
+          "lesson": "amaliyat-judhur",
+          "module": 0
+        },
+        "7-9": {
+          "lesson": "tawzif-khawass-judhur",
+          "module": 0
+        },
+        "10": {
+          "lesson": "jidhr-tarbii",
+          "module": 0
+        }
+      }
+    },
+    "act-1": {
+      "lesson": "jidhr-tarbii",
+      "module": 1
+    },
+    "ict-construct": {
+      "lesson": "jidhr-tarbii",
+      "module": 1,
+      "notIntegrated": "قرار المالك 2026-11-19: الدرس « jidhr-tarbii » أُعيد بناؤه من الصفر (v2) بأعداد المنصّة الخاصّة؛ نسخته القديمة التي كانت تستشهد بهذا العنصر حُذفت في 2026-11-21."
+    },
+    "know-1": {
+      "lesson": "jidhr-tarbii",
+      "module": 2
+    },
+    "method-compute": {
+      "lesson": "jidhr-tarbii",
+      "module": 3,
+      "notIntegrated": "قرار المالك 2026-11-19: الدرس « jidhr-tarbii » أُعيد بناؤه من الصفر (v2) بأعداد المنصّة الخاصّة؛ نسخته القديمة التي كانت تستشهد بهذا العنصر حُذفت في 2026-11-21."
+    },
+    "now-23-1": {
+      "lesson": "jidhr-tarbii",
+      "module": 3,
+      "notIntegrated": "قرار المالك 2026-11-19: الدرس « jidhr-tarbii » أُعيد بناؤه من الصفر (v2) بأعداد المنصّة الخاصّة؛ نسخته القديمة التي كانت تستشهد بهذا العنصر حُذفت في 2026-11-21."
+    },
+    "ex-1": {
+      "lesson": "jidhr-tarbii",
+      "module": 3
+    },
+    "ex-2": {
+      "lesson": "jidhr-tarbii",
+      "module": 3,
+      "notIntegrated": "قرار المالك 2026-11-19: الدرس « jidhr-tarbii » أُعيد بناؤه من الصفر (v2) بأعداد المنصّة الخاصّة؛ نسخته القديمة التي كانت تستشهد بهذا العنصر حُذفت في 2026-11-21."
+    },
+    "ex-3": {
+      "lesson": "jidhr-tarbii",
+      "module": 3
+    },
+    "ex-4": {
+      "lesson": "jidhr-tarbii",
+      "module": 3
+    },
+    "ex-5": {
+      "lesson": "jidhr-tarbii",
+      "module": 3,
+      "notIntegrated": "قرار المالك 2026-11-19: الدرس « jidhr-tarbii » أُعيد بناؤه من الصفر (v2) بأعداد المنصّة الخاصّة؛ نسخته القديمة التي كانت تستشهد بهذا العنصر حُذفت في 2026-11-21."
+    },
+    "ex-6": {
+      "lesson": "jidhr-tarbii",
+      "module": 3,
+      "notIntegrated": "قرار المالك 2026-11-19: الدرس « jidhr-tarbii » أُعيد بناؤه من الصفر (v2) بأعداد المنصّة الخاصّة؛ نسخته القديمة التي كانت تستشهد بهذا العنصر حُذفت في 2026-11-21."
+    },
+    "ex-7": {
+      "lesson": "jidhr-tarbii",
+      "module": 3
+    },
+    "ex-8": {
+      "lesson": "jidhr-tarbii",
+      "module": 3
+    },
+    "act-2": {
+      "lesson": "natiqa-ghayr-natiqa",
+      "module": 1
+    },
+    "know-2": {
+      "lesson": "natiqa-ghayr-natiqa",
+      "module": 2
+    },
+    "ict-sqrt2": {
+      "lesson": "natiqa-ghayr-natiqa",
+      "module": 2,
+      "notIntegrated": "قرار المالك 2026-11-19: الدرس « natiqa-ghayr-natiqa » أُعيد بناؤه من الصفر (v2) بأعداد المنصّة الخاصّة؛ نسخته القديمة التي كانت تستشهد بهذا العنصر حُذفت في 2026-11-21."
+    },
+    "ex-9": {
+      "lesson": "natiqa-ghayr-natiqa",
+      "module": 3
+    },
+    "ex-10": {
+      "lesson": "natiqa-ghayr-natiqa",
+      "module": 3
+    },
+    "ex-25": {
+      "lesson": "natiqa-ghayr-natiqa",
+      "module": 3
+    },
+    "ex-35": {
+      "lesson": "natiqa-ghayr-natiqa",
+      "module": 3
+    },
+    "ex-31": {
+      "lesson": "natiqa-ghayr-natiqa",
+      "module": 3,
+      "items": {
+        "1": {
+          "lesson": "natiqa-ghayr-natiqa",
+          "module": 3
+        },
+        "2": {
+          "lesson": "tawzif-khawass-judhur",
+          "module": 4
+        }
+      }
+    },
+    "act-3": {
+      "lesson": "muadalat-x-murabba",
+      "module": 1
+    },
+    "know-3": {
+      "lesson": "muadalat-x-murabba",
+      "module": 2
+    },
+    "method-equation": {
+      "lesson": "muadalat-x-murabba",
+      "module": 3
+    },
+    "now-23-2": {
+      "lesson": "muadalat-x-murabba",
+      "module": 3
+    },
+    "ex-11": {
+      "lesson": "muadalat-x-murabba",
+      "module": 3
+    },
+    "ex-12": {
+      "lesson": "muadalat-x-murabba",
+      "module": 3
+    },
+    "ex-13": {
+      "lesson": "muadalat-x-murabba",
+      "module": 3
+    },
+    "ex-14": {
+      "lesson": "muadalat-x-murabba",
+      "module": 3
+    },
+    "situation": {
+      "lesson": "wadiya-idmajiya-judhur",
+      "module": 7,
+      "duplicatedIn": [
+        {
+          "lesson": "wadiya-idmajiya-judhur",
+          "module": 8
+        }
+      ]
+    },
+    "act-4a": {
+      "lesson": "amaliyat-judhur",
+      "module": 1
+    },
+    "act-4b": {
+      "lesson": "amaliyat-judhur",
+      "module": 1
+    },
+    "act-4c": {
+      "lesson": "amaliyat-judhur",
+      "module": 2
+    },
+    "know-4": {
+      "lesson": "amaliyat-judhur",
+      "module": 3
+    },
+    "ex-15": {
+      "lesson": "amaliyat-judhur",
+      "module": 4
+    },
+    "ex-16": {
+      "lesson": "amaliyat-judhur",
+      "module": 4
+    },
+    "ex-17": {
+      "lesson": "amaliyat-judhur",
+      "module": 4
+    },
+    "ex-20": {
+      "lesson": "amaliyat-judhur",
+      "module": 4
+    },
+    "ex-21": {
+      "lesson": "amaliyat-judhur",
+      "module": 4
+    },
+    "ex-33": {
+      "lesson": "amaliyat-judhur",
+      "module": 4
+    },
+    "method-simplify": {
+      "lesson": "tawzif-khawass-judhur",
+      "module": 2
+    },
+    "method-product": {
+      "lesson": "tawzif-khawass-judhur",
+      "module": 2
+    },
+    "method-rationalize": {
+      "lesson": "tawzif-khawass-judhur",
+      "module": 3
+    },
+    "now-25-1": {
+      "lesson": "tawzif-khawass-judhur",
+      "module": 2
+    },
+    "now-25-2": {
+      "lesson": "tawzif-khawass-judhur",
+      "module": 3
+    },
+    "ex-18": {
+      "lesson": "tawzif-khawass-judhur",
+      "module": 4
+    },
+    "ex-19": {
+      "lesson": "tawzif-khawass-judhur",
+      "module": 4
+    },
+    "ex-22": {
+      "lesson": "tawzif-khawass-judhur",
+      "module": 4
+    },
+    "ex-23": {
+      "lesson": "tawzif-khawass-judhur",
+      "module": 4
+    },
+    "ex-24": {
+      "lesson": "tawzif-khawass-judhur",
+      "module": 4
+    },
+    "ex-26": {
+      "lesson": "tawzif-khawass-judhur",
+      "module": 4
+    },
+    "ex-27": {
+      "lesson": "tawzif-khawass-judhur",
+      "module": 4
+    },
+    "ex-28": {
+      "lesson": "tawzif-khawass-judhur",
+      "module": 5
+    },
+    "ex-29": {
+      "lesson": "tawzif-khawass-judhur",
+      "module": 5
+    },
+    "ex-30": {
+      "lesson": "tawzif-khawass-judhur",
+      "module": 5
+    },
+    "ex-32": {
+      "lesson": "tawzif-khawass-judhur",
+      "module": 5
+    },
+    "ex-34": {
+      "lesson": "tawzif-khawass-judhur",
+      "module": 5
+    },
+    "ex-36": {
+      "lesson": "tawzif-khawass-judhur",
+      "module": 5
+    },
+    "ex-37": {
+      "lesson": "tawzif-khawass-judhur",
+      "module": 5
+    },
+    "ex-38": {
+      "lesson": "tawzif-khawass-judhur",
+      "module": 5
+    },
+    "now-30": {
+      "lesson": "tawzif-khawass-judhur",
+      "module": 5
+    },
+    "qcm": {
+      "lesson": "jidhr-tarbii",
+      "module": 4,
+      "items": [
+        1,
+        2,
+        3
+      ],
+      "duplicatedIn": [
+        {
+          "lesson": "muadalat-x-murabba",
+          "module": 4,
+          "items": [
+            4,
+            5,
+            6,
+            10,
+            11
+          ]
+        },
+        {
+          "lesson": "amaliyat-judhur",
+          "module": 5,
+          "items": [
+            8,
+            9
+          ]
+        },
+        {
+          "lesson": "tawzif-khawass-judhur",
+          "module": 6,
+          "items": [
+            7
+          ]
+        }
+      ]
+    }
+  }
+}

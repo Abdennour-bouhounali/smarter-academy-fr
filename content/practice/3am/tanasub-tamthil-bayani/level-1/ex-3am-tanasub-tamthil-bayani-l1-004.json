@@ -1,0 +1,229 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l1-004",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — قراءة نقطة والمربع يمثّل خمس وحدات",
+    "estimatedMinutes": 4,
+    "tags": [
+      "معلم",
+      "تدريج"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "جمعت جمعية خيرية كراريس لتوزيعها على تلاميذ القرى النائية. تمثّل النقطتان $A$ و $B$ في المعلم المتعامد والمتجانس التالي عمليتي جمع: الفاصلة عدد الصناديق، والترتيب عدد الكراريس. كل مربّع من الشبكة يمثّل 5 وحدات على كل محور.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          10,
+          15
+        ],
+        "B": [
+          20,
+          5
+        ]
+      },
+      "grid": {
+        "step": 5
+      },
+      "axes": {
+        "every": 5
+      },
+      "labels": {
+        "O": "sw",
+        "A": "ne",
+        "B": "ne"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس كل مربع فيه يمثل خمس وحدات: النقطة A فاصلتها 10 وترتيبها 15، والنقطة B فاصلتها 20 وترتيبها 5",
+      "maxWidth": 340,
+      "caption": "كل مربّع من الشبكة يمثّل 5 وحدات على كل محور"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما فاصلة النقطة $A$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد: فاصلة النقطة",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-TAMTHIL-SWAP-XY"
+        },
+        {
+          "value": "2",
+          "id": "MISC-TAMTHIL-SCALE-READ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفاصلة هي العدد الأوّل في زوج الإحداثيين، وتُقرأ على المحور الأفقي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انزل من النقطة عموديا إلى المحور الأفقي واقرأ العدد الذي تقع عليه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قبل أن تقرأ، احسب كم وحدة يمثّل المربع الواحد من الشبكة."
+        }
+      ],
+      "feedback": {
+        "correct": "فاصلة $A$ هي $10$.",
+        "incorrect": "الفاصلة تُقرأ على المحور الأفقي لا العمودي، ويجب أن تحترم قيمة المربع."
+      },
+      "solution": {
+        "lines": [
+          "ننزل من $A$ عموديا إلى محور الفواصل فنقرأ $10$ ."
+        ],
+        "result": "10"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما ترتيب النقطة $A$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد: ترتيب النقطة",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-TAMTHIL-SWAP-XY"
+        },
+        {
+          "value": "3",
+          "id": "MISC-TAMTHIL-SCALE-READ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الترتيب هو العدد الثاني في زوج الإحداثيين، وتُقرأ على المحور العمودي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اذهب من النقطة أفقيا إلى المحور العمودي واقرأ العدد الذي تقع عليه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قبل أن تقرأ، احسب كم وحدة يمثّل المربع الواحد من الشبكة."
+        }
+      ],
+      "feedback": {
+        "correct": "ترتيب $A$ هي $15$.",
+        "incorrect": "الترتيب يُقرأ على المحور العمودي لا الأفقي، ويجب أن تحترم قيمة المربع."
+      },
+      "solution": {
+        "lines": [
+          "نمشي من $A$ أفقيا إلى محور التراتيب فنقرأ $15$ ."
+        ],
+        "result": "15"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما هي إحداثيا النقطة $B$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$B(20\\,;\\,5)$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$B(4\\,;\\,1)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-SCALE-READ"
+        },
+        {
+          "id": "C",
+          "content": "$B(5\\,;\\,20)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-SWAP-XY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الفاصلة والترتيب بالأعداد المكتوبة على المحورين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل مربع يساوي 5 وحدات."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة $B$ على بعد 4 مربعات أفقيا ومربع واحد عموديا، أي $B(20\\,;\\,5)$ .",
+        "incorrect": "كل مربع يمثّل 5 وحدات، والفاصلة تُكتب قبل الترتيب."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $B$ هي $20$ وترتيبها $5$ .",
+          "إذن $B(20\\,;\\,5)$ ."
+        ],
+        "result": "B(20\\,;\\,5)"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

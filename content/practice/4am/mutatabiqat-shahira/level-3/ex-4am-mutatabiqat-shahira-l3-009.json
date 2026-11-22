@@ -1,0 +1,280 @@
+{
+  "id": "ex-4am-mutatabiqat-shahira-l3-009",
+  "lessonCode": "mutatabiqat-shahira",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2020 — نشر وتحليل ومعادلة",
+    "estimatedMinutes": 13,
+    "tags": [
+      "مربع مجموع",
+      "تحليل",
+      "معادلة جداء معدوم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mutatabiqat-shahira_P1",
+      "modelledOn": "BEM 2020 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2020",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$E$ عبارة جبرية حيث :",
+    "formulas": [
+      "E = (2x + 3)^2 - (x + 1)^2"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انشر و بسّط العبارة $E$ .",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $mx^2 + nx + p$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-MUTATABIQA-MURABBA-MUAMIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على مربع مجموع: $(a + b)^2 = a^2 + 2ab + b^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن الحدّين $a$ و $b$ ، ولا تنسَ الحد المضاعف $2ab$ ولا تربيع المعامل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع النشر بين قوسين عندما تسبقه إشارة $-$ ، ثم غيّر إشارة كل حد عند حذفهما، واجمع الحدود المتشابهة."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 3x^2 + 10x + 8$ إذن $m = 3$ .",
+        "incorrect": "طبّق المتطابقة الشهيرة حدًّا حدًّا (مربع كل حد والحد المضاعف)، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$E = (2x + 3)^2 - (x + 1)^2$",
+          "$E = (2x)^2 + 2 \\times 2x \\times 3 + 3^2 - \\left[x^2 + 2 \\times x \\times 1 + 1^2\\right]$",
+          "$E = 4x^2 + 12x + 9 - (x^2 + 2x + 1)$",
+          "$E = 4x^2 + 12x + 9 - x^2 - 2x - 1$"
+        ],
+        "result": "E = 3x^2 + 10x + 8"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $mx^2 + nx + p$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-MURABBA-MAJMU-BILA-2AB"
+        },
+        {
+          "value": "5",
+          "id": "MISC-MUTATABIQA-2AB-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل $x$ يأتي من الحد المضاعف $2ab$ ومن الحدود الأخرى في $x$ ، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 3x^2 + 10x + 8$ إذن $n = 10$ .",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $n$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$E = 3x^2 + 10x + 8$"
+        ],
+        "result": "n = 10"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "العدد $p$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $mx^2 + nx + p$ : اكتب العدد $p$ فقط",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 3x^2 + 10x + 8$ إذن $p = 8$ .",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $p$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$E = 3x^2 + 10x + 8$"
+        ],
+        "result": "p = 8"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "حلّل العبارة $E$ إلى جداء عاملين من الدرجة الأولى.",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$E$ فرق مربعين: $a^2 - b^2$ مع $a = 2x + 3$ و $b = x + 1$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل $a^2 - b^2 = (a + b)(a - b)$ ، وانتبه إلى القوسين عند الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك سطرًا بسطر بالحل النموذجي، وانتبه إلى الإشارات عند النشر."
+      },
+      "solution": {
+        "lines": [
+          "$E = (2x + 3)^2 - (x + 1)^2$",
+          "$E = [(2x + 3) + (x + 1)][(2x + 3) - (x + 1)]$",
+          "$E = (2x + 3 + x + 1)(2x + 3 - x - 1)$"
+        ],
+        "result": "E = (3x + 4)(x + 2)"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "lead": "حل المعادلة : $(3x + 4)(x + 2) = 0$ .",
+      "statement": "الحلّ الأصغر:",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "-2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يكون جداء معدومًا إذا كان أحد عامليه على الأقل معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلتين من الدرجة الأولى، ثم حلّ كل واحدة منهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = -2$.",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة من الدرجة الأولى، ثم رتّب الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "$(3x + 4)(x + 2) = 0$ يعني أنّ: $3x + 4 = 0$ أو $x + 2 = 0$",
+          "أي: $x = -\\dfrac{4}{3}$ أو $x = -2$",
+          "إذن للمعادلة حلّان هما $-\\dfrac{4}{3}$ و $-2$"
+        ],
+        "result": "x = -2"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "statement": "الحلّ الأكبر:",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "-4/3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة الثانية من الدرجة الأولى، ثم قارن الحلّين."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = -\\dfrac{4}{3}$.",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة من الدرجة الأولى، ثم رتّب الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "إذن للمعادلة حلّان هما $-\\dfrac{4}{3}$ و $-2$"
+        ],
+        "result": "x = -\\dfrac{4}{3}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

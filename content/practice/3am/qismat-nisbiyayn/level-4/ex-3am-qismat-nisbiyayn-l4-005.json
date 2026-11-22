@@ -1,0 +1,210 @@
+{
+  "id": "ex-3am-qismat-nisbiyayn-l4-005",
+  "lessonCode": "qismat-nisbiyayn",
+  "level": 4,
+  "metadata": {
+    "title": "أقواس متداخلة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "أقواس متداخلة",
+      "سلسلة حسابات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "احسب كل عدد من الأعداد الآتية، وابدأ بأعمق قوسين.",
+    "formulas": [
+      "A = 30 − [4 \\times (7 − 2 \\times 5) − 6] \\div (−3)",
+      "B = −2 \\times [8 − (5 − 3 \\times 4)] \\div (−5)",
+      "C = [(−3{,}5) \\times 4 + 2] \\div (−8) + 1{,}5"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $A$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "24",
+      "misconceptionSignatures": [
+        {
+          "value": "36",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "64/3",
+          "id": "MISC-QISMA-PRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تُنجز أولًا؟ ابدأ بما بين القوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد الأقواس: الضرب والقسمة معًا من اليسار إلى اليمين، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل خطوة في سطر، وانتبه إلى طرح عدد سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 24$ .",
+        "incorrect": "راجع أولوية العمليات: الأقواس، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$A = 30 − [4 \\times (7 − 2 \\times 5) − 6] \\div (−3)$",
+          "$A = 30 − [4 \\times (7 − 10) − 6] \\div (−3)$",
+          "$A = 30 − [4 \\times (−3) − 6] \\div (−3)$",
+          "$A = 30 − [−12 − 6] \\div (−3)$",
+          "$A = 30 − (−18) \\div (−3)$",
+          "$A = 30 − 6$",
+          "$A = 24$"
+        ],
+        "result": "24"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $B$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "-6",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "1/6",
+          "id": "MISC-QISMA-ORDER"
+        },
+        {
+          "value": "-25",
+          "id": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تُنجز أولًا؟ ابدأ بما بين القوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد الأقواس: الضرب والقسمة معًا من اليسار إلى اليمين، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل خطوة في سطر، وانتبه إلى طرح عدد سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 6$ .",
+        "incorrect": "راجع أولوية العمليات: الأقواس، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$B = −2 \\times [8 − (5 − 3 \\times 4)] \\div (−5)$",
+          "$B = −2 \\times [8 − (5 − 12)] \\div (−5)$",
+          "$B = −2 \\times [8 − (−7)] \\div (−5)$",
+          "$B = −2 \\times 15 \\div (−5)$",
+          "$B = −30 \\div (−5)$",
+          "$B = 6$"
+        ],
+        "result": "6"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب $C$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-QISMA-SIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تُنجز أولًا؟ ابدأ بما بين القوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد الأقواس: الضرب والقسمة معًا من اليسار إلى اليمين، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل خطوة في سطر، وانتبه إلى طرح عدد سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = 3$ .",
+        "incorrect": "راجع أولوية العمليات: الأقواس، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$C = [(−3{,}5) \\times 4 + 2] \\div (−8) + 1{,}5$",
+          "$C = [−14 + 2] \\div (−8) + 1{,}5$",
+          "$C = −12 \\div (−8) + 1{,}5$",
+          "$C = 1{,}5 + 1{,}5$",
+          "$C = 3$"
+        ],
+        "result": "3"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

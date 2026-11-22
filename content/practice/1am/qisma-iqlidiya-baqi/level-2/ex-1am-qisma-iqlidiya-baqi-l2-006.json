@@ -1,0 +1,186 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l2-006",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — هل يمكن أن يكون الحاصل 24؟",
+    "estimatedMinutes": 6,
+    "tags": [
+      "حصر",
+      "برهان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نريد إنجاز القسمة الإقليدية للعدد 400 على 17."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ حصر للعدد 400 بين مضاعفين متتاليين للعدد 17 صحيح؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$17 \\times 23 \\le 400 < 17 \\times 24$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$17 \\times 22 \\le 400 < 17 \\times 23$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "id": "C",
+          "content": "$17 \\times 24 \\le 400 < 17 \\times 25$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الجداءات المقترحة وقارنها بـ 400."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الجداء الأول لا يتجاوز 400، والثاني يتجاوزه."
+        }
+      ],
+      "feedback": {
+        "correct": "$17 \\times 23 = 391$ و $17 \\times 24 = 408$ ، و $391 \\le 400 < 408$.",
+        "incorrect": "احسب كل جداء: يجب أن يكون الأول أصغر من 400 أو يساويه، والثاني أكبر منه."
+      },
+      "solution": {
+        "lines": [
+          "$17 \\times 23 = 391$ و $17 \\times 24 = 408$",
+          "$391 \\le 400 < 408$"
+        ],
+        "result": "17 \\times 23 \\le 400 < 17 \\times 24"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب باقي القسمة الإقليدية للعدد 400 على 17.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "23",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "26",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 400."
+        }
+      ],
+      "feedback": {
+        "correct": "$400 - 17 \\times 23 = 400 - 391 = 9$ ، و $9 < 17$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 17."
+      },
+      "solution": {
+        "lines": [
+          "$400 = 17 \\times 23 + 9$",
+          "$9 < 17$ ، إذن الباقي هو 9."
+        ],
+        "result": "r = 9"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "قال أنس: « الحاصل 24 لأن $17 \\times 24$ قريب من 400 ». هل توافقه؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-LA-BAQI"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $17 \\times 24$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يمكن أن يتجاوز الجداء المقسوم؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$17 \\times 24 = 408 > 400$: تنقص 8 لتكوين المجموعة الأخيرة.",
+        "incorrect": "الجداء المقسوم عليه × الحاصل لا يتجاوز المقسوم أبدًا."
+      },
+      "solution": {
+        "lines": [
+          "$17 \\times 24 = 408$ و $408 > 400$.",
+          "الحاصل هو أكبر عدد لا يتجاوز جداؤه في 17 العدد 400 ، وهو $23$."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

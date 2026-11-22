@@ -1,0 +1,228 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l5-001",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2022 — قفف رمضان",
+    "estimatedMinutes": 11,
+    "tags": [
+      "قاسم",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-adad-tabii_P1",
+      "modelledOn": "BEM 2022 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تحضّر جمعية خيرية بباتنة قففًا لشهر رمضان لفائدة العائلات المعوزة، تكافلًا وتراحمًا بين أفراد المجتمع. استلمت الجمعية 1440kg من السميد، وتريد توزيعها كلها في أكياس متماثلة دون أن يبقى سميد، على أن تحتوي كل قفة على كيس واحد."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "هل يمكن أن تكون كتلة كل كيس 25kg؟ 16kg؟ برّر إجابتك.",
+      "statement": "كتلة كل كيس 25kg.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 1440 على 25."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "25 قاسم للعدد 1440 إذا وفقط إذا كان باقي هذه القسمة معدومًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$1440 = 25 \\times 57 + 15$: الباقي غير معدوم.",
+        "incorrect": "أجرِ القسمة الإقليدية للعدد 1440 على 25، وانظر هل الباقي معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$1440 = 25 \\times 57 + 15$ مع $15 < 25$",
+          "الباقي 15 غير معدوم، إذن 25 ليس قاسمًا للعدد 1440: يبقى 15kg من السميد، فلا يمكن ذلك."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كتلة كل كيس 16kg.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 1440 على 16."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "16 قاسم للعدد 1440 إذا وفقط إذا كان باقي هذه القسمة معدومًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$1440 = 16 \\times 90$: الباقي معدوم.",
+        "incorrect": "أجرِ القسمة الإقليدية للعدد 1440 على 16، وانظر هل الباقي معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$1440 = 16 \\times 90$ (الباقي معدوم).",
+          "إذن 16 قاسم للعدد 1440: يمكن ذلك."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "اختارت الجمعية أكياسًا من 16kg. أوجد عدد القفف التي يمكن تحضيرها.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "90",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نبحث عن عدد طبيعي $q$ حيث $1440 = 16 \\times q$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أجرِ القسمة الإقليدية للعدد 1440 على 16."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان الباقي معدومًا فإن حاصل القسمة هو العدد المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$1440 = 16 \\times 90$.",
+        "incorrect": "اقسم 1440 على 16: حاصل القسمة هو العدد $q$ إذا كان الباقي معدومًا."
+      },
+      "solution": {
+        "lines": [
+          "$16 \\times 90 = 1440$",
+          "إذن $1440 = 16 \\times 90$",
+          "كل قفة تحتوي على كيس واحد: تحضّر الجمعية 90 قفة."
+        ],
+        "result": "1440 = 16 \\times 90"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "lead": "تضيف الجمعية إلى كل قفة 3 لترات من الزيت، ثمن اللتر الواحد 270DA، و 2kg من السكر، ثمن الكيلوغرام الواحد 110DA. خصّصت الجمعية لذلك مبلغ 95000DA.",
+      "statement": "☜ أوجد المبلغ الذي يبقى للجمعية بعد شراء الزيت والسكر لكل القفف.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (DA)",
+      "expectedAnswer": "2300",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب تكلفة الزيت والسكر لقفة واحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب هذه التكلفة في عدد القفف الذي وجدته في السؤال 02."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح المجموع من المبلغ المخصص."
+        }
+      ],
+      "feedback": {
+        "correct": "تكلفة القفة $3 \\times 270 + 2 \\times 110 = 1030$DA، ولـ 90 قفة $92700$DA، فيبقى $2300$DA.",
+        "incorrect": "احسب تكلفة قفة واحدة (الزيت والسكر)، ثم تكلفة كل القفف، ثم اطرحها من 95000DA."
+      },
+      "solution": {
+        "lines": [
+          "تكلفة الزيت والسكر لقفة واحدة: $3 \\times 270 + 2 \\times 110 = 810 + 220 = 1030$ أي 1030DA.",
+          "تكلفة 90 قفة: $90 \\times 1030 = 92700$ أي 92700DA.",
+          "$92700 < 95000$: المبلغ يكفي.",
+          "المبلغ المتبقي: $95000 - 92700$"
+        ],
+        "result": "2300 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

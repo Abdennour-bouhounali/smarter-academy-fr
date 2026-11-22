@@ -1,0 +1,155 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-judhur-l3-008",
+  "lessonCode": "wadiya-idmajiya-judhur",
+  "level": 3,
+  "metadata": {
+    "title": "مربع مساحته الضعف",
+    "estimatedMinutes": 9,
+    "tags": [
+      "مربع جذر",
+      "a√3",
+      "نسبة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-judhur_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "مربع طول ضلعه $c_1 = 2\\sqrt{6}cm$ ، و مربع ثان مساحته ضعف مساحة الأول، طول ضلعه $c_2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب مساحة المربع الأول.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المساحة بـ $cm^2$",
+      "expectedAnswer": "24",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-MUAMIL-DUN-TARBI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(2\\sqrt{6})^2 = 2^2 \\times (\\sqrt{6})^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$(2\\sqrt{6})^2 = 4 \\times 6 = 24cm^2$",
+        "incorrect": "ربّع المعامل 2 و الجذر معًا."
+      },
+      "solution": {
+        "lines": [
+          "$c_1^2 = (2\\sqrt{6})^2 = 2^2 \\times (\\sqrt{6})^2 = 4 \\times 6$"
+        ],
+        "result": "24cm^2"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب $c_2$ على الشكل $a\\sqrt{3}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "16",
+          "id": "MISC-JIDHR-MURABBA-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة المربع الثاني ضعف 24: حل المعادلة $c_2^2 = 48$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $48 = 16 \\times 3$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$c_2 = \\sqrt{48} = 4\\sqrt{3}\\,cm$",
+        "incorrect": "احسب مساحة المربع الثاني، ثم اكتب جذرها على الشكل $a\\sqrt{3}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$c_2^2 = 2 \\times 24 = 48$ و $c_2 > 0$",
+          "$c_2 = \\sqrt{48} = \\sqrt{16 \\times 3}$"
+        ],
+        "result": "c_2 = 4\\sqrt{3}\\,cm"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "بيّن أن $\\dfrac{c_2}{c_1} = \\sqrt{2}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $\\sqrt{6} = \\sqrt{2} \\times \\sqrt{3}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بسّط ثم اجعل المقام ناطقًا."
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك سطرًا بسطر بالحل النموذجي."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{c_2}{c_1} = \\dfrac{4\\sqrt{3}}{2\\sqrt{6}} = \\dfrac{2\\sqrt{3}}{\\sqrt{2} \\times \\sqrt{3}} = \\dfrac{2}{\\sqrt{2}}$",
+          "$= \\dfrac{2\\sqrt{2}}{\\sqrt{2} \\times \\sqrt{2}} = \\dfrac{2\\sqrt{2}}{2}$"
+        ],
+        "result": "\\dfrac{c_2}{c_1} = \\sqrt{2}"
+      },
+      "timeSeconds": 240
+    }
+  ]
+}

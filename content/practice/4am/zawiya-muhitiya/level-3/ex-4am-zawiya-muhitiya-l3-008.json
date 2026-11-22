@@ -1,0 +1,109 @@
+{
+  "id": "ex-4am-zawiya-muhitiya-l3-008",
+  "lessonCode": "zawiya-muhitiya",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — راميان على نفس القوس",
+    "estimatedMinutes": 3,
+    "tags": [
+      "زاوية التسديد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_zawiya-muhitiya_P3",
+      "modelledOn": "act-4"
+    }
+  },
+  "statement": {
+    "content": "القائمان A و B على دائرة مرسومة في منطقة الجزاء مركزها O. كريم عند M ويوسف عند N، وكلاهما على القوس الكبير. كريم يرى المرمى بزاوية $\\widehat{AMB} = 28^\\circ$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "بأي زاوية $\\widehat{ANB}$ يرى يوسف المرمى؟",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "28",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل الزاويتان محيطيتان (رأساهما على الدائرة)؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل تحصران نفس القوس، أي رأساهما في نفس الجهة من الوتر؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زاويتان محيطيتان تحصران نفس القوس متقايستان."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{ANB} = \\widehat{AMB} = 28^\\circ$ .",
+        "incorrect": "الزاويتان محيطيتان تحصران القوس AB نفسه."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-MUTASAWIYA",
+          "value": "56"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "statement": "ما قيس الزاوية المركزية $\\widehat{AOB}$ بالدرجة؟",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "56",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوس الذي تحصره كل زاوية: هل هو نفس القوس؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الزاويتين: أيهما أكبر، المركزية أم المحيطية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قيس الزاوية المحيطية نصف قيس الزاوية المركزية التي تحصر معها نفس القوس."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{AOB} = 2 \\times 28^\\circ = 56^\\circ$ .",
+        "incorrect": "المركزية ضعف المحيطية."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-DIF",
+          "value": "14"
+        },
+        {
+          "id": "MISC-MUHITIYA-MUSAWIYA",
+          "value": "28"
+        }
+      ]
+    }
+  ]
+}

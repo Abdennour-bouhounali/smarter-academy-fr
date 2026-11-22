@@ -1,0 +1,400 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l5-005",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 5,
+  "metadata": {
+    "title": "سقي الحديقة",
+    "estimatedMinutes": 15,
+    "tags": [
+      "وضعية إدماجية",
+      "تمثيل بياني",
+      "تناسبية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-33",
+      "page": 98,
+      "section": "أتعمّق",
+      "number": 33
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تسقي البلدية حديقة الحيّ المشتركة وتحرص على عدم تبذير الماء. تمثّل النقط $A$ و $B$ و $C$ و $D$ فواتير أربعة أشهر (الفاصلة حجم الماء بالأمتار المكعبة والترتيب المبلغ بمئات الدنانير).\nالجزء الأول: التمثيل البياني.\nالجزء الثاني: حسابات وقرار.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          4,
+          2
+        ],
+        "B": [
+          8,
+          4
+        ],
+        "C": [
+          12,
+          6
+        ],
+        "D": [
+          16,
+          8
+        ]
+      },
+      "lines": [
+        {
+          "through": [
+            "O",
+            "D"
+          ],
+          "name": "(D)",
+          "tone": "indigo",
+          "extend": [
+            0,
+            0.15
+          ]
+        }
+      ],
+      "grid": true,
+      "axes": {
+        "every": 5
+      },
+      "labels": {
+        "O": "sw",
+        "A": "se",
+        "B": "se",
+        "C": "se",
+        "D": "se"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس: النقط A(4;2) و B(8;4) و C(12;6) و D(16;8) على المستقيم (D) الذي يشمل المبدأ",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: الحجم بالأمتار المكعبة — محور التراتيب: الثمن بمئات الدنانير"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول:",
+      "statement": "هل ثمن الماء متناسب مع حجمه؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لأنّ الترتيب لا يساوي الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-EQUAL-ONLY"
+        },
+        {
+          "id": "B",
+          "content": "لا، لأنّ المبدأ $O$ ليس من النقط المعلَّمة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-ORIGIN-DROP"
+        },
+        {
+          "id": "C",
+          "content": "نعم، النقط على استقامة واحدة مع المبدأ $O$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط على استقامة واحدة مع المبدأ $O$ ، فهي تمثّل وضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "النقط على المستقيم $(D)$ الذي يشمل المبدأ $O$ .",
+          "إذن ثمن الماء متناسب مع حجمه."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "علّل جوابك.",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تعليلك ثم قارنه بالتصحيح النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اذكر الخاصية التي تستعملها: ما شرط التناسبية على النقط؟"
+        }
+      ],
+      "feedback": {
+        "correct": "التعليل يذكر استقامة النقط ومرور المستقيم بالمبدأ $O$ .",
+        "incorrect": "قارن تعليلك بالتصحيح النموذجي، وتأكد أنك ذكرت الشرطين معا."
+      },
+      "solution": {
+        "lines": [
+          "النقط على استقامة واحدة.",
+          "والمستقيم الذي يشملها يمرّ بالمبدأ $O$ ، فالوضعية تناسبية."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "الجزء الثاني:",
+      "statement": "ما معامل التناسبية $a$ (ثمن الماء لكل متر مكعب بمئات الدنانير)؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: معامل التناسبية",
+      "expectedAnswer": "0.5",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        },
+        {
+          "value": "-8",
+          "id": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل التناسبية هو ترتيب النقطة الذي فاصلته $1$ ، أو ناتج قسمة الترتيب على الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ إحداثيي النقطة $D$ ثم اقسم الترتيب على الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تقسم الفاصلة على الترتيب ولا تطرح أحد العددين من الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{8}{16} = 0{,}5$ .",
+        "incorrect": "المعامل هو ناتج قسمة الترتيب على الفاصلة (وليس العكس) لنقطة من المستقيم."
+      },
+      "solution": {
+        "lines": [
+          "النقطة $D(16\\,;\\,8)$ من المستقيم.",
+          "$a = \\dfrac{8}{16} = 0{,}5$"
+        ],
+        "result": "a = 0{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "statement": "احسب ثمن الماء (بالدينار) من أجل $10$ متر مكعب.",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: بالدينار",
+      "expectedAnswer": "500",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-TAMTHIL-UNIT-AXIS"
+        },
+        {
+          "value": "800",
+          "id": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل $y = a\\,x$ مع المعامل الذي وجدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الناتج بمئات الدنانير ثم حوّله."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}5 \\times 10 = 5$ مئة دج، أي $500$ دج.",
+        "incorrect": "اضرب في المعامل (لا تضف فرقا) ثم حوّل المئات إلى دنانير."
+      },
+      "solution": {
+        "lines": [
+          "$y = 0{,}5 \\times 10 = 5$ مئة دج.",
+          "$5 \\times 100 = 500$ دج."
+        ],
+        "result": "500\\ \\text{دج}"
+      },
+      "work": "optional",
+      "timeSeconds": 110
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "ما عدد متر مكعب الذي يمكن الحصول عليه بمبلغ $900$ دج؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: متر مكعب",
+      "expectedAnswer": "18",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-TAMTHIL-UNIT-AXIS"
+        },
+        {
+          "value": "4.5",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل المبلغ إلى مئات الدنانير."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اقسم على معامل التناسبية."
+        }
+      ],
+      "feedback": {
+        "correct": "$9 \\div 0{,}5 = 18$ متر مكعب.",
+        "incorrect": "لإيجاد الفاصلة نقسم الترتيب على المعامل ولا نضربه فيه."
+      },
+      "solution": {
+        "lines": [
+          "$900$ دج $= 9$ مئة دج.",
+          "$x = 9 \\div 0{,}5 = 18$ متر مكعب."
+        ],
+        "result": "18"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "يملك المشتري $1400$ دج ويريد $30$ متر مكعب. هل يكفيه مبلغه؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لا يكفي: الثمن $1500$ دج يتجاوز $1400$ دج",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم، يكفي: لأنّ المبلغ يكاد يساوي الثمن",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-APPROX-DECISION"
+        },
+        {
+          "id": "C",
+          "content": "نعم، يكفي: لأنّ الفرق بين المبلغ والثمن صغير",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الثمن المطلوب بدقّة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارنه بالمبلغ المتوفّر: هل يتجاوزه؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الثمن $1500$ دج يتجاوز $1400$ دج.",
+        "incorrect": "قارن الثمن المحسوب بالمبلغ بدقّة، لا بالتقريب."
+      },
+      "solution": {
+        "lines": [
+          "ثمن $30$ متر مكعب: $0{,}5 \\times 30 \\times 100 = 1500$ دج.",
+          "$1500 > 1400$ : لا يكفيه مبلغه."
+        ]
+      },
+      "timeSeconds": 130
+    }
+  ]
+}

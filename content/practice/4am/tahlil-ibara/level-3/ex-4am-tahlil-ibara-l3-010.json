@@ -1,0 +1,314 @@
+{
+  "id": "ex-4am-tahlil-ibara-l3-010",
+  "lessonCode": "tahlil-ibara",
+  "level": 3,
+  "metadata": {
+    "title": "BEM 2021 — التمرين الثاني",
+    "estimatedMinutes": 13,
+    "tags": [
+      "نشر",
+      "تحليل",
+      "معادلة جداء معدوم"
+    ],
+    "source": {
+      "type": "bem",
+      "year": 2021,
+      "part": 1,
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "official",
+      "badge": "BEM 2021",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة الجبرية :",
+    "formulas": [
+      "E = (x - 3)(x - 10) + 3(x - 3)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انشر و بسّط العبارة $E$ .",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $ax^2 + bx + c$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب كل حد من القوس الأول في كل حد من القوس الثاني، وطبّق المتطابقة الشهيرة على المربع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى الإشارة «−» أمام قوس: تغيّر إشارة كل حد داخله."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = x^2 - 10x + 21$ إذن $a = 1$ .",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$E = (x - 3)(x - 10) + 3(x - 3)$",
+          "$E = x^2 - 10x - 3x + 30 + 3x - 9$",
+          "$E = x^2 + (-10x - 3x + 3x) + (30 - 9)$"
+        ],
+        "result": "E = x^2 - 10x + 21"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "-10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العدد المطلوب في الشكل المبسّط، بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = x^2 - 10x + 21$ إذن $b = -10$ .",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$E = x^2 - 10x + 21$"
+        ],
+        "result": "b = -10"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "العدد $c$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $ax^2 + bx + c$ : اكتب العدد $c$ فقط",
+      "expectedAnswer": "21",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العدد المطلوب في الشكل المبسّط، بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = x^2 - 10x + 21$ إذن $c = 21$ .",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$E = x^2 - 10x + 21$"
+        ],
+        "result": "c = 21"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "lead": "حلّل إلى جداء عاملين العبارة $E$ .",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $(x - 3)(x + m)$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "-7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن عامل مشترك بين حدود العبارة (قد يكون عبارة كاملة بين قوسين)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل $ka + kb = k(a + b)$ : أخرج العامل المشترك، واكتب ما يبقى من كل حد بين قوسين كبيرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بسّط ما بين القوسين الكبيرين بإشاراته، ثم قارن بالشكل المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = (x - 3)(x - 7)$ إذن $m = -7$ .",
+        "incorrect": "أخرج العامل المشترك من كل حد، ثم بسّط ما بين القوسين الكبيرين بإشاراته (حدّ وحده يعني $1$)."
+      },
+      "solution": {
+        "lines": [
+          "$E = (x - 3)(x - 10) + 3(x - 3)$",
+          "$E = (x - 3)[(x - 10) + 3]$",
+          "$E = (x - 3)(x - 10 + 3)$"
+        ],
+        "result": "E = (x - 3)(x - 7)"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "lead": "حل المعادلة : $(x - 3)(x - 7) = 0$ .",
+      "statement": "الحلّ الأصغر:",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يكون جداء معدومًا إذا كان أحد عامليه على الأقل معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلتين من الدرجة الأولى، ثم حلّ كل واحدة منهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 3$ .",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة من الدرجة الأولى، ثم رتّب الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "$(x - 3)(x - 7) = 0$ معناه: $x - 3 = 0$ أو $x - 7 = 0$",
+          "معناه: $x = 3$ أو $x = 7$",
+          "إذن للمعادلة حلّان هما $3$ و $7$"
+        ],
+        "result": "x = 3"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "الحلّ الأكبر:",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة الثانية من الدرجة الأولى، ثم قارن الحلّين."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 7$ .",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة من الدرجة الأولى، ثم رتّب الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "إذن للمعادلة حلّان هما $3$ و $7$"
+        ],
+        "result": "x = 7"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "statement": "احسب $E$ من أجل $x = 50$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2021",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $50$ في الشكل المحلّل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كل عامل، ثم اضرب."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 2021$ .",
+        "incorrect": "عوّض $x$ في كل عامل، واحترم الإشارات وأولويات العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$E = (50 - 3)(50 - 7)$",
+          "$E = 47 \\times 43$"
+        ],
+        "result": "E = 2021"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

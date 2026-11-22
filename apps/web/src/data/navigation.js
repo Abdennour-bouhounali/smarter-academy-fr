@@ -1,11 +1,13 @@
 // Single source of truth for the visitor-facing primary navigation —
-// consumed by Navbar, Footer, and CommandPalette so the IA can't drift
-// between the three.
+// consumed by Navbar and Footer so the IA can't drift between the two.
+// No catalogue link: /courses requires an account (RequireAccount).
+// `labelKey` resolves through i18n's `nav` namespace at render time
+// (src/i18n/locales/ar/nav.json) — data files carry keys, never copy.
 export const navLinks = [
-  { label: 'Accueil', path: '/' },
-  { label: 'Notre méthode', path: '/methode' },
-  { label: 'Cours', path: '/courses' },
-  { label: 'Tarifs', path: '/tarifs' },
-  { label: 'À propos', path: '/about' },
-  { label: 'FAQ', path: '/faq' },
+  { labelKey: 'home', path: '/' },
+  { labelKey: 'method', path: '/methode' },
+  { labelKey: 'about', path: '/about' },
+  { labelKey: 'books', path: '/books' },
+  { labelKey: 'faq', path: '/faq' },
+  { labelKey: 'contact', path: '/contact' },
 ];

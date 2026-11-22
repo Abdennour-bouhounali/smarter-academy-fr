@@ -1,0 +1,183 @@
+{
+  "id": "ex-4am-dala-khattiya-l4-007",
+  "lessonCode": "dala-khattiya",
+  "level": 4,
+  "metadata": {
+    "title": "معامل سالب من عدد كسري",
+    "estimatedMinutes": 6,
+    "tags": [
+      "تعيين دالة خطية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "adaptedFrom": "ex-4am-dala-khattiya-l4-007"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$f$ دالة خطية حيث:",
+    "formulas": [
+      "f\\left(\\dfrac{4}{5}\\right) = -2"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن الدالة الخطية $f$ ، أي معاملها $a$ حيث $f(x) = ax$ .",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-2,5",
+      "misconceptionSignatures": [
+        {
+          "value": "-0,4",
+          "id": "MISC-KHATTIYA-MUAMIL-MAQLUB"
+        },
+        {
+          "value": "2,5",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$f$ دالة خطية: $f(x) = ax$ ، و $f(0{,}8) = -2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب المعادلة $a \\times 0{,}8 = -2$ ثم حلّها."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{-2}{0{,}8} = -2{,}5$ ، إذن $f(x) = -2{,}5x$ .",
+        "incorrect": "المعامل هو الصورة مقسومة على العدد (وليس العكس)، مع الانتباه إلى الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "$f$ دالة خطية، إذن $f(x) = ax$ .",
+          "$f(0{,}8) = -2$ معناه $a \\times 0{,}8 = -2$",
+          "$a = \\dfrac{-2}{0{,}8} = -2{,}5$"
+        ],
+        "result": "f(x) = -2{,}5x"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "جد العدد الذي صورته $10$ بالدالة $f$ .",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "value": "-25",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "4",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد المطلوب $x$ يحقق $f(x) = 10$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المعادلة $-2{,}5x = 10$ : اقسم الطرفين على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{10}{-2{,}5} = -4$ .",
+        "incorrect": "لا تحسب صورة العدد المعطى: ابحث عن العدد $x$ الذي صورته هذا العدد."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 10$ معناه $-2{,}5x = 10$",
+          "$x = \\dfrac{10}{-2{,}5} = -4$"
+        ],
+        "result": "x = -4"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب $f(-1{,}2)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "0,48",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "-3",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "صورة العدد $x$ بالدالة الخطية $f$ هي $f(x) = -2{,}5 \\times x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $x$ بالعدد $-1{,}2$ ثم احسب الجداء، وانتبه إلى الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(-1{,}2) = \\left(-2{,}5\\right) \\times \\left(-1{,}2\\right) = 3$ .",
+        "incorrect": "الصورة جداء المعامل في العدد: $f(x) = -2{,}5 \\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(-1{,}2) = \\left(-2{,}5\\right) \\times \\left(-1{,}2\\right)$",
+          "$f(-1{,}2) = 3$"
+        ],
+        "result": "f(-1{,}2) = 3"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

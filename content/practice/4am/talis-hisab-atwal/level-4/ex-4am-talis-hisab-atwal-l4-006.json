@@ -1,0 +1,254 @@
+{
+  "id": "ex-4am-talis-hisab-atwal-l4-006",
+  "lessonCode": "talis-hisab-atwal",
+  "level": 4,
+  "metadata": {
+    "title": "BEM 2008 — التمرين الثالث",
+    "estimatedMinutes": 12,
+    "tags": [
+      "فيثاغورس",
+      "خاصية طالس",
+      "جيب التمام"
+    ],
+    "source": {
+      "type": "bem",
+      "year": 2008,
+      "part": 1,
+      "exercise": 3
+    },
+    "exam": {
+      "kind": "official",
+      "badge": "BEM 2008",
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "وحدة الطول المختارة هي السنتيمتر. $ABC$ مثلث قائم في $A$ حيث : $AB = 3$ و $BC = 5$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أنشئ الشكل ثم حدد الطول $AC$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "أعط الطول $AC$ (عدد)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث قائم في $A$ : الوتر هو $[BC]$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خاصية فيثاغورس: $AB^2 + AC^2 = BC^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC^2 = 25 - 9 = 16$ ومنه $AC = 4\\,cm$ .",
+        "incorrect": "الوتر هو الضلع المقابل للزاوية القائمة: $AC^2 = BC^2 - AB^2$ ، ثم الجذر التربيعي."
+      },
+      "solution": {
+        "lines": [
+          "إنشاء المثلث $ABC$ (قائم في $A$ ، $AB = 3$ و $BC = 5$).",
+          "حساب الطول $AC$ :",
+          "بما أن المثلث $ABC$ قائم في $A$ فإنّ: $AB^2 + AC^2 = BC^2$ حسب خاصية فيثاغورس.",
+          "لدينا: $AB^2 + AC^2 = BC^2$",
+          "$AC^2 = BC^2 - AB^2$",
+          "$AC^2 = 5^2 - 3^2$",
+          "$AC^2 = 25 - 9 = 16$",
+          "$AC = \\sqrt{16} = 4cm$"
+        ],
+        "result": "AC = 4\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "$E$ نقطة من $[AB]$ حيث : $AE = 1$ ، المستقيم الذي يشمل $E$ و يعامد $(AB)$ يقطع $(BC)$ في النقطة $M$ .",
+      "statement": "جد الطول $BM$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "القيمة المضبوطة: كسر مثل 7/9",
+      "expectedAnswer": "10/3",
+      "misconceptionSignatures": [
+        {
+          "value": "5/3",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        },
+        {
+          "value": "7,5",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(EM)$ و $(AC)$ كلاهما عمودي على $(AB)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $BE$ ، والمثلثان $BEM$ و $BAC$ في وضعية طالس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب $\\dfrac{BE}{BA} = \\dfrac{BM}{BC}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$BE = 2$ و $BM = \\dfrac{5 \\times 2}{3} = \\dfrac{10}{3}\\,cm$ .",
+        "incorrect": "هل استعملت ضلعًا من المثلث الكبير أم قطعة منه؟ النسب تُكتب بأطوال تُقاس من الرأس المشترك؛ اطرح أو اجمع بعد ذلك إن كان المطلوب طول قطعة."
+      },
+      "solution": {
+        "lines": [
+          "إثبات أن المستقيمين $(EM)$ و $(AC)$ متوازيان.",
+          "بما أن $(AC) \\perp (AB)$ (لأن المثلث $ABC$ قائم في $A$).",
+          "و بما أن $(EM) \\perp (AB)$ (من المعطيات).",
+          "فإن المستقيمين $(EM)$ و $(AC)$ متوازيان. (المستقيمان العموديان على نفس المستقيم متوازيان).",
+          "حساب الطول $BM$ :",
+          "بما أن المستقيمين $(EM)$ و $(AC)$ متوازيان و $E \\in (AB)$ و $M \\in (BC)$ فإنّ: $\\dfrac{BE}{BA} = \\dfrac{BM}{BC} = \\dfrac{EM}{AC}$ حسب خاصية طالس.",
+          "( $BE = AB - AE = 3 - 1 = 2$ )",
+          "لدينا: $\\dfrac{BE}{BA} = \\dfrac{BM}{BC}$",
+          "و منه: $BM = \\dfrac{BC \\times BE}{BA}$",
+          "و بالتعويض نجد: $BM = \\dfrac{5 \\times 2}{3}$"
+        ],
+        "result": "BM = \\dfrac{10}{3}\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب $\\cos\\widehat{ABC}$ ثم استنتج قيس الزاوية $\\widehat{EMB}$ (تدور النتيجة إلى الدرجة).",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "أعط أولا قيمة $\\cos\\widehat{ABC}$ (عدد عشري)",
+      "expectedAnswer": "0,6",
+      "misconceptionSignatures": [
+        {
+          "value": "0,8",
+          "id": "MISC-MUTH-MUQABIL-MUJAWIR"
+        },
+        {
+          "value": "5/3",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $ABC$ القائم في $A$ : $\\cos\\widehat{ABC} = \\dfrac{\\text{المجاور}}{\\text{الوتر}}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\cos\\widehat{ABC} = \\dfrac{AB}{BC} = \\dfrac{3}{5} = 0{,}6$ .",
+        "incorrect": "الضلع المجاور للزاوية $\\widehat{ABC}$ هو $[AB]$ والوتر $[BC]$ ."
+      },
+      "solution": {
+        "lines": [
+          "حساب $\\cos\\widehat{ABC}$ :",
+          "$\\cos\\widehat{ABC} = \\dfrac{AB}{BC} = \\dfrac{3}{5}$"
+        ],
+        "result": "\\cos\\widehat{ABC} = 0{,}6"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "قيس الزاوية $\\widehat{EMB}$ بالتدوير إلى الدرجة:",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الدرجات فقط (عدد طبيعي)",
+      "expectedAnswer": "37",
+      "misconceptionSignatures": [
+        {
+          "value": "53",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولا قيس $\\widehat{ABC}$ بالآلة الحاسبة ( $\\cos^{-1}$ )."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المثلث $BEM$ قائم في $E$ : مجموع زواياه $180^{\\circ}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{ABC} \\approx 53^{\\circ}$ و $\\widehat{EMB} = 180 - (90 + 53) = 37^{\\circ}$ .",
+        "incorrect": "في المثلث $BEM$ القائم في $E$ : $\\widehat{EMB} = 90^{\\circ} - \\widehat{EBM}$ ، و $\\widehat{EBM} = \\widehat{ABC}$ ."
+      },
+      "solution": {
+        "lines": [
+          "استنتاج قيس الزاوية $\\widehat{EMB}$",
+          "1. قيس الزاوية $\\widehat{ABC}$ هو: $53^{\\circ}$ بالتدوير إلى الوحدة (تظهر على الشاشة: 53,130102354156).",
+          "2. قيس الزاوية $\\widehat{EMB}$ هو: $37^{\\circ}$ (المثلث $BEM$ قائم في $E$)",
+          "$180 - (90 + 53) = 37$"
+        ],
+        "result": "\\widehat{EMB} = 37^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "id": "ex-3am-muadalat-darajat-ula-l3-006",
+  "lessonCode": "muadalat-darajat-ula",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — عرضان للطباعة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "ترييض",
+      "عرضان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يريد فوج من التلاميذ طباعة بحثهم الجماعي. تطلب المطبعة الأولى $8$ دج للصفحة مع اشتراك قدره $120$ دج، وتطلب الثانية $12$ دج للصفحة دون اشتراك. نسمّي $n$ عدد الصفحات."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما المعادلة التي تعبّر عن تساوي ثمني المطبعتين؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$8n + 120 = 12n$ .",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$8 + 120n = 12n$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        },
+        {
+          "id": "B",
+          "content": "$8n + 120 = 12 + n$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        },
+        {
+          "id": "C",
+          "content": "$8n + 120 = 12n$",
+          "isCorrect": true
+        }
+      ],
+      "solution": {
+        "lines": [
+          "ثمن المطبعة الأولى $8n + 120$ وثمن الثانية $12n$ ، ويتساويان: $8n + 120 = 12n$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "من أجل أيّ عدد من الصفحات يتساوى الثمنان؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "يتساوى الثمنان عند $30$ صفحة.",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "عدد الصفحات",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-MUADALA-SIGN-KEPT"
+        },
+        {
+          "value": "-30",
+          "id": "MISC-MUADALA-NEG-COEF"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "لدينا: $8n + 120 = 12n$ .",
+          "نضيف $-12n$ إلى الطرفين (معاكس الحدّ $12n$) فنجد: $-4n + 120 = 0$ .",
+          "نضيف $-120$ إلى الطرفين (معاكس $120$) فنجد: $-4n = -120$ .",
+          "نقسم الطرفين على $-4$ فنجد: $n = 30$ .",
+          "التحقّق: من أجل $n = 30$ نجد الطرف الأيسر $360$ والطرف الأيمن $360$ ، فهما متساويان."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما الثمن المشترك بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "الثمن المشترك $360$ دج.",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "الثمن بالدينار",
+      "expectedAnswer": "360",
+      "solution": {
+        "lines": [
+          "عند $30$ صفحة: $8 \\times 30 + 120 = 360$ و $12 \\times 30 = 360$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "تحقّق في القصة أنّ الثمنين يتساويان فعلًا عند هذا العدد.",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "كلّ من الثمنين $360$ دج.",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب إجابتك ثم قارنها بالتصحيح النموذجي",
+      "solution": {
+        "lines": [
+          "الأولى: $8 \\times 30 + 120 = 240 + 120 = 360$ دج.",
+          "الثانية: $12 \\times 30 = 360$ دج.",
+          "الثمنان متساويان."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

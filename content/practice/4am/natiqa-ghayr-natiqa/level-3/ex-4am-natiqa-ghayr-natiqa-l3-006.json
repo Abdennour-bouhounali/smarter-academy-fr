@@ -1,0 +1,194 @@
+{
+  "id": "ex-4am-natiqa-ghayr-natiqa-l3-006",
+  "lessonCode": "natiqa-ghayr-natiqa",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2012 — التمرين الأول",
+    "estimatedMinutes": 8,
+    "tags": [
+      "عدد ناطق",
+      "جداء"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_natiqa-ghayr-natiqa_P2",
+      "modelledOn": "BEM 2012 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2012",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان الحقيقيان $m$ و $n$ حيث:",
+    "formulas": [
+      "m = \\sqrt{1{,}69} - \\sqrt{0{,}49} \\quad ; \\quad n = \\sqrt{\\dfrac{9}{4}} + \\sqrt{\\dfrac{1}{4}}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "اكتب كلا من العددين $m$ و $n$ على أبسط شكل.",
+      "statement": "$m$",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "0.6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $\\sqrt{1{,}69}$ ثم $\\sqrt{0{,}49}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جذر الفرق لا يساوي فرق الجذرين."
+        }
+      ],
+      "feedback": {
+        "correct": "$m = 1{,}3 - 0{,}7 = 0{,}6$ .",
+        "incorrect": "احسب جذر كل حد منفردًا، ثم اطرح."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}3^2 = 1{,}69$ و $0{,}7^2 = 0{,}49$",
+          "$m = 1{,}3 - 0{,}7$"
+        ],
+        "result": "m = 0{,}6"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$n$",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $\\sqrt{\\dfrac{9}{4}}$ ثم $\\sqrt{\\dfrac{1}{4}}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$n = \\dfrac{3}{2} + \\dfrac{1}{2} = 2$ .",
+        "incorrect": "احسب جذر كل كسر (جذر البسط وجذر المقام)، ثم اجمع."
+      },
+      "solution": {
+        "lines": [
+          "$\\sqrt{\\dfrac{9}{4}} = \\dfrac{3}{2}$ و $\\sqrt{\\dfrac{1}{4}} = \\dfrac{1}{2}$",
+          "$n = \\dfrac{3}{2} + \\dfrac{1}{2}$"
+        ],
+        "result": "n = 2"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "بيّن أن الجداء $m \\times n$ عدد ناطق.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة الجداء $m \\times n$ (عدد عشري أو كسر)",
+      "expectedAnswer": "6/5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتائج السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "$m \\times n = 0{,}6 \\times 2 = 1{,}2 = \\dfrac{6}{5}$ : عدد ناطق.",
+        "incorrect": "عوّض $m$ و $n$ بقيمتيهما ثم اضرب."
+      },
+      "solution": {
+        "lines": [
+          "$m \\times n = 0{,}6 \\times 2 = 1{,}2 = \\dfrac{6}{5}$",
+          "إذن $m \\times n$ عدد ناطق."
+        ],
+        "result": "m \\times n = 1{,}2"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "هل $\\sqrt{m \\times n}$ عدد ناطق؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-TABII-FAQAT"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر جوابك، ثم قارن تبريرك بالحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $m \\times n$ على شكل كسر غير قابل للاختزال."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل البسط والمقام مربعان؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$m \\times n = \\dfrac{6}{5}$ ليس مربعًا لعدد ناطق، فـ $\\sqrt{m \\times n}$ ليس ناطقًا.",
+        "incorrect": "تحقّق: هل يوجد عدد عشري مربعه 1,2؟ ($1{,}1^2 = 1{,}21$)"
+      },
+      "solution": {
+        "lines": [
+          "$m \\times n = 1{,}2 = \\dfrac{6}{5}$ (كسر غير قابل للاختزال)",
+          "6 و 5 ليسا مربعين لعددين طبيعيين، فالعدد $\\dfrac{6}{5}$ ليس مربعًا لعدد ناطق.",
+          "إذن $\\sqrt{m \\times n} = \\sqrt{1{,}2}$ ليس عددًا ناطقًا."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

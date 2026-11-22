@@ -1,0 +1,278 @@
+{
+  "id": "ex-4am-tahlil-ibara-l3-009",
+  "lessonCode": "tahlil-ibara",
+  "level": 3,
+  "metadata": {
+    "title": "BEM 2019 — التمرين الثاني",
+    "estimatedMinutes": 12,
+    "tags": [
+      "نشر",
+      "تحليل",
+      "متراجحة"
+    ],
+    "source": {
+      "type": "bem",
+      "year": 2019,
+      "part": 1,
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "official",
+      "badge": "BEM 2019",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $E$ حيث :",
+    "formulas": [
+      "E = (x + 1)^2 - (x + 1)(2x - 3)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انشر و بسّط العبارة $E$ .",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $ax^2 + bx + c$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "-1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب كل حد من القوس الأول في كل حد من القوس الثاني، وطبّق المتطابقة الشهيرة على المربع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى الإشارة «−» أمام قوس: تغيّر إشارة كل حد داخله."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = -x^2 + 3x + 4$ إذن $a = -1$ .",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$E = (x + 1)^2 - (x + 1)(2x - 3)$",
+          "$= x^2 + 1 + 2 \\times x \\times 1 - [2x^2 - 3x + 2x - 3]$",
+          "$= x^2 + 1 + 2x - 2x^2 + x + 3$"
+        ],
+        "result": "E = -x^2 + 3x + 4"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العدد المطلوب في الشكل المبسّط، بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = -x^2 + 3x + 4$ إذن $b = 3$ .",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$E = -x^2 + 3x + 4$"
+        ],
+        "result": "b = 3"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "العدد $c$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $ax^2 + bx + c$ : اكتب العدد $c$ فقط",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العدد المطلوب في الشكل المبسّط، بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = -x^2 + 3x + 4$ إذن $c = 4$ .",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$E = -x^2 + 3x + 4$"
+        ],
+        "result": "c = 4"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "lead": "حلّل العبارة $E$ إلى عاملين من الدرجة الأولى.",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $(x + 1)(mx + n)$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "-1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لاحظ أن $(x + 1)^2 = (x + 1)(x + 1)$ : العامل $(x + 1)$ مشترك."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل $ka + kb = k(a + b)$ : أخرج العامل المشترك، واكتب ما يبقى من كل حد بين قوسين كبيرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى «−» أمام $(x + 1)(2x - 3)$ : تتغيّر إشارة كل حد من $(2x - 3)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = (x + 1)(-x + 4)$ إذن $m = -1$ .",
+        "incorrect": "أخرج العامل المشترك من كل حد، ثم بسّط ما بين القوسين الكبيرين بإشاراته (حدّ وحده يعني $1$)."
+      },
+      "solution": {
+        "lines": [
+          "$E = (x + 1)^2 - (x + 1)(2x - 3)$",
+          "$= (x + 1)(x + 1 - 2x + 3)$"
+        ],
+        "result": "E = (x + 1)(-x + 4)"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $(x + 1)(mx + n)$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "-2",
+          "id": "MISC-TAHLIL-ISHARA-QAWS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العدد المطلوب في الشكل المحلّل، بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = (x + 1)(-x + 4)$ إذن $n = 4$ .",
+        "incorrect": "أخرج العامل المشترك من كل حد، ثم بسّط ما بين القوسين الكبيرين بإشاراته (حدّ وحده يعني $1$)."
+      },
+      "solution": {
+        "lines": [
+          "$E = (x + 1)(-x + 4)$"
+        ],
+        "result": "n = 4"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "حل المتراجحة $3x + 4 \\geqslant 6x - 2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة هي الأعداد $x$ حيث $x \\leq k$ أو $x \\geq k$ (أو بمتباينة تامة) : اكتب العدد الحدّي $k$ فقط",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر ثم اجمع حدود $x$ في طرف والأعداد في الطرف الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد سالب تعكس اتجاه المتباينة."
+        }
+      ],
+      "feedback": {
+        "correct": "$x \\leqslant 2$ .",
+        "incorrect": "انقل الحدود بإشاراتها، وعند القسمة على عدد سالب اعكس اتجاه المتباينة."
+      },
+      "solution": {
+        "lines": [
+          "$3x - 6x \\geqslant -2 - 4$",
+          "$-3x \\geqslant -6$",
+          "$\\dfrac{-3x}{-3} \\leqslant \\dfrac{-6}{-3}$",
+          "إذا حلول المتراجحة $3x + 4 \\geqslant 6x - 2$ هي كل قيم $x$ الأصغر أو تساوي $2$ ."
+        ],
+        "result": "x \\leqslant 2"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

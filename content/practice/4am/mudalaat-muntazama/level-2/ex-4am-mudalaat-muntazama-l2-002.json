@@ -1,0 +1,171 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l2-002",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 2,
+  "metadata": {
+    "title": "نشاط 5 — الدوران الذي يحوّل P إلى M",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الدوران",
+      "المثلث المتقايس الأضلاع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-5",
+      "page": 153,
+      "section": "أنشطة",
+      "number": 5
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 153): MPN مثلث متقايس الأضلاع مركز دائرته O، رؤوسه M ثم N ثم P في الاتجاه المباشر.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "M": [
+          0,
+          2
+        ],
+        "N": [
+          -1.732,
+          -1
+        ],
+        "P": [
+          1.732,
+          -1
+        ]
+      },
+      "circles": [
+        {
+          "center": "O",
+          "radius": 2
+        }
+      ],
+      "segments": [
+        [
+          "M",
+          "N"
+        ],
+        [
+          "N",
+          "P"
+        ],
+        [
+          "P",
+          "M"
+        ]
+      ],
+      "ariaLabel": "دائرة مركزها O ومثلث متقايس الأضلاع MPN مرسوم داخلها: M في الأعلى، N في الأسفل على اليسار، P في الأسفل على اليمين",
+      "maxWidth": 340
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الدوران الذي يحوّل P إلى M:",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مركزه O وزاويته $120^\\circ$ في الاتجاه المباشر",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "مركزه O وزاويته $120^\\circ$ في الاتجاه غير المباشر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ITTIJAH"
+        },
+        {
+          "id": "C",
+          "content": "مركزه M وزاويته $60^\\circ$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MARKAZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "OP = OM: من هو المركز؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $\\widehat{POM}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "من P إلى M: هل ندور عكس عقارب الساعة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "OP = OM و $\\widehat{POM} = 120^\\circ$ ، ومن P إلى M ندور في الاتجاه المباشر (الترتيب M ثم N ثم P).",
+        "incorrect": "الترتيب M ثم N ثم P في الاتجاه المباشر يعني أن P يسبق M في هذا الاتجاه."
+      },
+      "difficulty": 2
+    },
+    {
+      "id": "q2",
+      "statement": "صورة N بهذا الدوران:",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "P",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "M",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ITTIJAH"
+        },
+        {
+          "id": "C",
+          "content": "N",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MASAFA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدوران نفسه يحوّل كل رأس إلى الذي يليه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "P ← M، ثم M ← N."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "فما صورة N؟"
+        }
+      ],
+      "feedback": {
+        "correct": "P ↦ M ↦ N ↦ P: المثلث صورة نفسه.",
+        "incorrect": "N ليست المركز، فهي تتحرك؛ وفي الاتجاه المباشر تنتقل إلى الرأس الذي يليها."
+      },
+      "difficulty": 2
+    }
+  ]
+}

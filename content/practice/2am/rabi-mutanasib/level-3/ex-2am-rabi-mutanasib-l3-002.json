@@ -1,0 +1,212 @@
+{
+  "id": "ex-2am-rabi-mutanasib-l3-002",
+  "lessonCode": "rabi-mutanasib",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — جدول تناسبية: معامل التناسبية والرابع المتناسب",
+    "estimatedMinutes": 10,
+    "tags": [
+      "معامل التناسبية",
+      "الرابع المتناسب"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 3,
+      "file": "2am-s3-41",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "إليك الجدول التالي الذي يمثّل وضعية تناسبية:",
+    "table": {
+      "head": [
+        "",
+        "10",
+        "35",
+        "$y$",
+        "15"
+      ],
+      "rows": [
+        [
+          "",
+          "50",
+          "$x$",
+          "35",
+          "75"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما هو معامل التناسبية؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "0,2",
+          "id": "MISC-RABI-INV"
+        },
+        {
+          "value": "500",
+          "id": "MISC-RABI-MULROW"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في الجدول عمودًا يحوي العددين المعلومين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "معامل التناسبية هو العدد الذي نضرب فيه كل عدد من السطر الأول لنحصل على مقابله في السطر الثاني."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم عددًا من السطر الثاني على مقابله في السطر الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "معامل التناسبية $5$ .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$50 \\div 10 = 5$"
+        ],
+        "result": "5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $x$ اعتمادًا على معامل التناسبية.",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "175",
+      "misconceptionSignatures": [
+        {
+          "value": "75",
+          "id": "MISC-RABI-ADD"
+        },
+        {
+          "value": "7",
+          "id": "MISC-RABI-INV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 175$ .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$x = 35 \\times 5 = 175$"
+        ],
+        "result": "175"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب $y$ اعتمادًا على الرابع المتناسب.",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "-25",
+          "id": "MISC-RABI-ADD"
+        },
+        {
+          "value": "175",
+          "id": "MISC-RABI-CROSS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العدد المجهول في خانته من الجدول واقرأ العددين على كل قطر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في جدول تناسبية: جداء العددين على أحد القطرين يساوي جداء العددين على القطر الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثم اقسم طرفيها على العدد المعلوم الذي يضرب المجهول."
+        }
+      ],
+      "feedback": {
+        "correct": "$y = 7$ .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$75 \\times y = 15 \\times 35$",
+          "$y = 525 \\div 75 = 7$"
+        ],
+        "result": "7"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

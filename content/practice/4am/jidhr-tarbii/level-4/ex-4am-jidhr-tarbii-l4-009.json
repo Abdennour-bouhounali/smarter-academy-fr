@@ -1,0 +1,177 @@
+{
+  "id": "ex-4am-jidhr-tarbii-l4-009",
+  "lessonCode": "jidhr-tarbii",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2010 — قطر المربع",
+    "estimatedMinutes": 8,
+    "tags": [
+      "تعريف الجذر التربيعي",
+      "قيمة مقربة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_jidhr-tarbii_P1",
+      "modelledOn": "BEM 2010 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2010",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$ABCD$ مربع طول ضلعه $5cm$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $AC^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "50",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-MURABBA-DIF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طبّق خاصية فيثاغورس في المثلث $ABC$ القائم في $B$."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC^2 = 5^2 + 5^2 = 50$.",
+        "incorrect": "مربع القطر يساوي مجموع مربعي الضلعين."
+      },
+      "solution": {
+        "lines": [
+          "حسب خاصية فيثاغورس في المثلث $ABC$ القائم في $B$:",
+          "$AC^2 = AB^2 + BC^2 = 25 + 25$"
+        ],
+        "result": "AC^2 = 50"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط القيمة المضبوطة للطول $AC$ ، ثم قيمته المقربة إلى $10^{-1}$ بالنقصان.",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب القيمة المقربة (عدد عشري برقم واحد بعد الفاصلة)",
+      "expectedAnswer": "7.0",
+      "misconceptionSignatures": [
+        {
+          "value": "7.1",
+          "id": "MISC-TAQRIB-NAQS-ZIYADA"
+        },
+        {
+          "value": "25",
+          "id": "MISC-JIDHR-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AC$ هو العدد الموجب الذي مربعه 50: $AC = \\sqrt{50}$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $\\sqrt{50}$ بالحاسبة واحتفظ برقم واحد بعد الفاصلة دون تدوير."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC = \\sqrt{50} = 7{,}07\\ldots$: القيمة المقربة بالنقصان $7{,}0$ cm.",
+        "incorrect": "القيمة المقربة بالنقصان لا تتجاوز العدد."
+      },
+      "solution": {
+        "lines": [
+          "$AC^2 = 50$ و $AC$ موجب إذن $AC = \\sqrt{50}$ (القيمة المضبوطة)",
+          "بالحاسبة: $\\sqrt{50} = 7{,}071\\ldots$",
+          "$7{,}0 \\leqslant \\sqrt{50} < 7{,}1$"
+        ],
+        "result": "AC \\approx 7{,}0cm"
+      },
+      "timeSeconds": 90,
+      "counted": false
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "$EFGH$ مربع آخر طول قطره $EG = \\sqrt{72}cm$ . احسب طول ضلعه.",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_jidhr-tarbii_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالسنتيمتر (cm)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "36",
+          "id": "MISC-TARBI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$EG^2 = (\\sqrt{72})^2 = 72$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في المثلث $EFG$ القائم في $F$: $EG^2 = EF^2 + FG^2 = 2EF^2$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استنتج $EF^2$ ثم $EF$."
+        }
+      ],
+      "feedback": {
+        "correct": "$2EF^2 = 72$ إذن $EF^2 = 36$ و $EF = 6$ cm.",
+        "incorrect": "احسب $EF^2$ من $EG^2 = 2EF^2$، ثم خذ العدد الموجب الذي مربعه $EF^2$."
+      },
+      "solution": {
+        "lines": [
+          "$EG^2 = (\\sqrt{72})^2 = 72$",
+          "حسب خاصية فيثاغورس: $EG^2 = EF^2 + FG^2 = 2EF^2$",
+          "$EF^2 = 36$ و $EF$ موجب إذن $EF = \\sqrt{36}$"
+        ],
+        "result": "EF = 6cm"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "id": "ex-3am-quwat-adad-nisbi-l3-009",
+  "lessonCode": "quwat-adad-nisbi",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — كتابة على شكل قوة لعدد",
+    "estimatedMinutes": 9,
+    "tags": [
+      "قواعد الحساب على القوى"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 3,
+      "file": "3am-s3-51",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اكتب كل عدد على شكل قوة للعدد المذكور في السؤال.",
+    "formulas": [
+      "T = \\dfrac{2^{7}}{2 \\times 4^{2}}",
+      "U = \\dfrac{9^{4}}{3 \\times 27}",
+      "V = 25^{2} \\times 5^{-3}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب $T$ على الشكل $2^n$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-QUWA-FORGET-EXPONENT-ONE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب كل عدد على شكل قوة للأساس نفسه (مثلًا العدد 8 قوة للعدد 2)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تنسَ أن $a = a^1$ ، ثم طبّق قواعد الحساب على القوى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أس البسط ثم أس المقام، ثم اطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$T = \\dfrac{2^7}{2^1 \\times 2^4} = \\dfrac{2^7}{2^5} = 2^2$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$4^{2} = (2^{2})^{2} = 2^{4}$ و $2 = 2^{1}$",
+          "$T = \\dfrac{2^{7}}{2^{5}} = 2^{2}$"
+        ],
+        "result": "T = 2^{2}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب $U$ على الشكل $3^n$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-QUWA-FORGET-EXPONENT-ONE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب كل عدد على شكل قوة للأساس نفسه (مثلًا العدد 8 قوة للعدد 2)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تنسَ أن $a = a^1$ ، ثم طبّق قواعد الحساب على القوى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أس البسط ثم أس المقام، ثم اطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$U = \\dfrac{3^8}{3^4} = 3^4$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$9^{4} = (3^{2})^{4} = 3^{8}$ و $3 \\times 27 = 3^{1} \\times 3^{3} = 3^{4}$",
+          "$U = \\dfrac{3^{8}}{3^{4}} = 3^{4}$"
+        ],
+        "result": "U = 3^{4}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اكتب $V$ على الشكل $5^n$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-QUWA-EXP-SIGN-SLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب كل عدد على شكل قوة للأساس نفسه (مثلًا العدد 8 قوة للعدد 2)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تنسَ أن $a = a^1$ ، ثم طبّق قواعد الحساب على القوى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أس البسط ثم أس المقام، ثم اطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$V = 5^4 \\times 5^{-3} = 5^1$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$25^{2} = (5^{2})^{2} = 5^{4}$",
+          "$V = 5^{4} \\times 5^{-3} = 5^{4-3} = 5^{1}$"
+        ],
+        "result": "V = 5^{1}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

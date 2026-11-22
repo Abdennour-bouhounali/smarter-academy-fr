@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-takbir-tasghir-l5-003",
+  "lessonCode": "takbir-tasghir",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — جذع الهرم",
+    "estimatedMinutes": 4,
+    "tags": [
+      "مقطع هرم",
+      "الحجم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takbir-tasghir_P2",
+      "modelledOn": "act-5"
+    }
+  },
+  "statement": {
+    "content": "هرم حجمه $270\\,\\mathrm{cm}^3$ ، يقطعه مستو يوازي قاعدته على ثلث الارتفاع انطلاقا من الرأس. نزيل الهرم الصغير الذي له نفس الرأس."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "احسب حجم الجزء الباقي (جذع الهرم) بالسنتيمتر المكعب.",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة مثل 1,25 ، أو كسر مثل 4/7)",
+      "expectedAnswer": "260",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAKBIR-HAJM-K",
+          "value": "180"
+        },
+        {
+          "id": "MISC-TAKBIR-HAJM-K",
+          "value": "240"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الهرم الصغير تصغير للهرم الأصلي بالنسبة $\\dfrac{1}{3}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حجم الهرم الصغير $\\left(\\dfrac{1}{3}\\right)^3 \\times 270$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح حجم الهرم الصغير من حجم الهرم الأصلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$270 - \\dfrac{270}{27} = 270 - 10 = 260\\,\\mathrm{cm}^3$ .",
+        "incorrect": "الهرم الصغير حجمه $\\dfrac{1}{27}$ من الأصلي، لا الثلث."
+      }
+    }
+  ]
+}

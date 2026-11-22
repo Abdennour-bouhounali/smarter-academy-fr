@@ -1,0 +1,143 @@
+{
+  "id": "ex-4am-misaha-hajm-kura-l2-004",
+  "lessonCode": "misaha-hajm-kura",
+  "level": 2,
+  "metadata": {
+    "title": "أرخميدس — الحجم",
+    "estimatedMinutes": 2,
+    "tags": [
+      "أرخميدس",
+      "حجم الجلة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "intro-archimedes",
+      "page": 163,
+      "section": "مدخل الباب"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 163): وُضعت كرة نصف قطرها R داخل أسطوانة ارتفاعها 2R ونصف قطر قاعدتها R (الشكل).",
+    "figure": {
+      "kind": "space",
+      "view": {
+        "azimuth": -62,
+        "elevation": 16
+      },
+      "points": {
+        "O": [
+          0,
+          0,
+          0
+        ],
+        "N": [
+          0,
+          0,
+          1
+        ],
+        "S": [
+          0,
+          0,
+          -1
+        ],
+        "M": [
+          1,
+          0,
+          0
+        ]
+      },
+      "hidden": [
+        "N",
+        "S",
+        "M"
+      ],
+      "solids": [
+        {
+          "type": "cylinder",
+          "base": "S",
+          "top": "N",
+          "radius": 1,
+          "tone": "sky"
+        },
+        {
+          "type": "sphere",
+          "center": "O",
+          "radius": 1,
+          "tone": "rose"
+        }
+      ],
+      "segments": [
+        {
+          "from": "O",
+          "to": "M",
+          "label": "R",
+          "dashed": true
+        },
+        {
+          "from": "S",
+          "to": "N",
+          "dashed": true
+        }
+      ],
+      "labels": {
+        "O": "nw"
+      },
+      "ariaLabel": "كرة نصف قطرها R داخل أسطوانة دوران نصف قطر قاعدتها R وارتفاعها 2R: الكرة تمسّ القاعدتين والسطح الجانبي",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "حجم الجلّة يساوي:",
+      "learningPoints": [
+        {
+          "code": "4am_misaha-hajm-kura_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "ثلثي حجم الأسطوانة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نصف حجم الأسطوانة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HAJM-MUAMIL"
+        },
+        {
+          "id": "C",
+          "content": "حجم الأسطوانة كلّه",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HAJM-MUAMIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تذكّر العصير في الكأس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حجم الأسطوانة $2\\pi R^3$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن مع $\\frac{4}{3}\\pi R^3$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\frac{4}{3}\\pi R^3 = \\frac{2}{3} \\times 2\\pi R^3$ : ثلثا حجم الأسطوانة.",
+        "incorrect": "العصير توقّف عند ثلثي الكأس."
+      },
+      "difficulty": 2
+    }
+  ]
+}

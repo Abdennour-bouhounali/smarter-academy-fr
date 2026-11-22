@@ -1,0 +1,212 @@
+{
+  "id": "ex-4am-tafsir-bayani-jumla-l3-009",
+  "lessonCode": "tafsir-bayani-jumla",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2012 — صيغتا مصبنة بالبليدة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "وضعية",
+      "نقطة التقاطع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tafsir-bayani-jumla_P2",
+      "modelledOn": "BEM 2012 II (04)"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2012",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تقترح مصبنة بالبليدة تحرص على النظافة على زبائنها صيغتين لغسل الملابس:\n- الصيغة الأولى: 120DA للقطعة الواحدة.\n- الصيغة الثانية: 90DA للقطعة الواحدة مع اشتراك شهري قدره 600DA.\nنسمّي $x$ عدد القطع المغسولة في الشهر، و $f(x)$ ، $g(x)$ المبلغين المدفوعين بالصيغتين الأولى والثانية حيث: $f(x) = 120x$ و $g(x) = 90x + 600$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "احسب المبلغ المدفوع لغسل 15 قطعة في الشهر بكل صيغة.",
+      "statement": "المبلغ حسب الصيغة الأولى:",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "1800",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $f(15)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$120 \\times 15$ .",
+        "incorrect": "اضرب ثمن القطعة في عدد القطع."
+      },
+      "solution": {
+        "lines": [
+          "$f(15) = 120 \\times 15 = 1800$",
+          "المبلغ حسب الصيغة الأولى: 1800DA."
+        ],
+        "result": "1800DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "المبلغ حسب الصيغة الثانية:",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "1950",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $g(15)$ ولا تنس الاشتراك."
+        }
+      ],
+      "feedback": {
+        "correct": "$90 \\times 15 + 600$ .",
+        "incorrect": "اضرب 90 في عدد القطع ثم أضف الاشتراك."
+      },
+      "solution": {
+        "lines": [
+          "$g(15) = 90 \\times 15 + 600 = 1350 + 600 = 1950$",
+          "المبلغ حسب الصيغة الثانية: 1950DA."
+        ],
+        "result": "1950DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "حل المعادلة $f(x) = g(x)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب حل المعادلة فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "20",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع الحدود التي فيها $x$ في طرف والأعداد في الطرف الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل كل حد بتغيير إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم اقسم الطرفين على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "هذه هي فاصلة نقطة تقاطع المستقيمين.",
+        "incorrect": "اجمع حدود $x$ في طرف واحد (بتغيير الإشارة عند النقل)، ثم اقسم على معامل $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$120x = 90x + 600$",
+          "$30x = 600$",
+          "$x = \\dfrac{600}{30}$",
+          "$x = 20$",
+          "حل المعادلة هو عدد القطع الذي يتساوى من أجله المبلغان بالصيغتين."
+        ],
+        "result": "x = 20"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "استنتج إحداثيي نقطة تقاطع التمثيلين البيانيين للدالتين $f$ و $g$ ، ثم فسّر النتيجة.",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": {
+        "x": "20",
+        "y": "2400"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "2400",
+            "y": "20"
+          },
+          "id": "MISC-JUMLA-BAYANI-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "فاصلة نقطة التقاطع تجعل العبارتين متساويتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حل المعادلة التي تساوي بين العبارتين، ثم عوّض الحل في إحدى العبارتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الثنائية $(x ; y)$ : الفاصلة أولا ثم الترتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "هي إحداثيات نقطة تقاطع المستقيمين، أي حل الجملة.",
+        "incorrect": "ساوِ بين العبارتين لإيجاد الفاصلة، ثم احسب الترتيب بالتعويض؛ واكتب الفاصلة أولا."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة نقطة التقاطع تحقق: $120x = 90x + 600$",
+          "$30x = 600$",
+          "$x = 20$",
+          "نعوّض: $y = 120 \\times 20 = 2400$",
+          "تحقق: $90 \\times 20 + 600 = 2400$",
+          "إذن نقطة التقاطع هي $(20 ; 2400)$ ، وهي حل الجملة.",
+          "التفسير: من أجل 20 قطعة في الشهر يدفع الزبون المبلغ نفسه 2400DA بالصيغتين."
+        ],
+        "result": "(20 ; 2400)"
+      },
+      "timeSeconds": 210
+    }
+  ]
+}

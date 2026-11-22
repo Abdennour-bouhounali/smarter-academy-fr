@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Domain\Identity\PersonName;
 use App\Models\User;
 
 /**
@@ -27,6 +28,11 @@ final class UserPresenter
             'id' => $user->id,
             'firstName' => $user->first_name,
             'lastName' => $user->last_name,
+            // Faux tant que « الاسم و اللقب » ne sont pas TOUS DEUX renseignés
+            // ET écrits en lettres arabes (comptes antérieurs à leur collecte,
+            // ou nom latin) : le frontend fait alors passer l'élève ou
+            // l'enseignant par l'étape qui les demande.
+            'nameComplete' => PersonName::isComplete($user->first_name, $user->last_name),
             'email' => $user->email,
             'role' => $user->role,
             'grade' => $user->grade,
@@ -35,14 +41,20 @@ final class UserPresenter
             // « vérifiez votre adresse ». La décision reste serveur (le
             // middleware refuse), ceci ne fait qu'éviter un aller-retour.
             'emailVerified' => $user->hasVerifiedEmail(),
-            // Un compte Google n'a pas de mot de passe : l'interface ne doit
-            // pas lui proposer d'en changer un.
+            // Un compte Google créé avant le 2026-10-22 n'a pas de mot de
+            // passe : l'interface ne doit pas lui proposer d'en changer un.
             'hasPassword' => $user->hasPassword(),
             // Le consentement tel qu'il a été donné. `null` pour les comptes
             // antérieurs à sa mise en place — jamais une date fabriquée.
             'legalConsentAt' => optional($user->legal_consent_at)->toIso8601String(),
             'termsAcceptedVersion' => $user->terms_accepted_version,
             'privacyPolicyAcceptedVersion' => $user->privacy_policy_accepted_version,
+            // Ambassadeur (« سفير ») : un enseignant désigné par
+            // l'administrateur. `canReviewContent` couvre aussi l'admin :
+            // c'est lui que l'interface lit pour montrer l'état de
+            // publication et le bouton de signalement. Le serveur décide.
+            'isAmbassador' => $user->isAmbassador(),
+            'canReviewContent' => $user->canReviewAllContent(),
         ];
     }
 }

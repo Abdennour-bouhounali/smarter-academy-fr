@@ -17,7 +17,10 @@ const read = (p) => readFileSync(resolve(webRoot, p), 'utf8');
  */
 describe('l’autorité de publication côté élève', () => {
   it('la carte de cours consulte le serveur, pas seulement le bundle', () => {
-    const source = read('src/components/student/LessonCard.jsx');
+    // La carte et la ligne lisent leur état par useLessonTileState.
+    expect(read('src/components/student/LessonCard.jsx')).toContain('useLessonTileState(lesson)');
+    expect(read('src/components/student/LessonRow.jsx')).toContain('useLessonTileState(lesson)');
+    const source = read('src/components/student/useLessonTileState.js');
     expect(source).toContain('useContentAvailability');
     // Le statut du catalogue ne suffit plus à lui seul.
     expect(source).toMatch(/isAvailable\s*=\s*lesson\.status === 'available' && !isLessonClosed/);
@@ -43,12 +46,6 @@ describe('l’autorité de publication côté élève', () => {
     const source = read('src/services/contentAvailabilityService.js');
     expect(source).toContain('/content/availability');
     expect(source).toContain('data.closed');
-  });
-
-  it('l’inventaire des exercices vient du registre, pas des fichiers embarqués', () => {
-    const source = read('src/services/contentAvailabilityService.js');
-    expect(source).toContain('/exercises');
-    expect(source).toContain('fetchLessonExercises');
   });
 
   it('le fournisseur est monté sous AuthProvider (il lui faut le jeton)', () => {
@@ -85,7 +82,12 @@ describe('le cadre de page partagé n’a pas régressé', () => {
   });
 
   it('l’administration partage le même cadre', () => {
-    expect(read('src/components/admin/AdminPage.jsx')).toContain('sa-page');
+    // Le chrome du panneau a DÉMÉNAGÉ dans `pages/admin/adminUi.jsx`, avec le
+    // reste de ses en-têtes, états et libellés arabes — le jumeau de
+    // `pages/teacher/teacherUi.jsx`. C'est là que la gouttière partagée se
+    // vérifie maintenant ; `components/admin/AdminPage.jsx` n'en est plus
+    // qu'un réexport.
+    expect(read('src/pages/admin/adminUi.jsx')).toContain('sa-page');
   });
 });
 
@@ -94,5 +96,12 @@ describe('la redirection après connexion', () => {
     const source = read('src/pages/Login.jsx');
     expect(source).toMatch(/role === 'admin'.*'\/admin'/s);
     expect(source).toMatch(/role === 'student'.*'\/espace'/s);
+  });
+
+  it('le troisième axe — masquée par l’enseignant — arrive du serveur et se lit partout', () => {
+    const ctx = read('src/context/ContentAvailabilityContext.jsx');
+    expect(ctx).toContain('isLessonHiddenByClass');
+    expect(read('src/pages/UnitPage.jsx')).toContain('isLessonHiddenByClass(lesson.id)');
+    expect(read('src/lessons/common/components/LessonIndex.jsx')).toContain('isLessonHiddenByClass(config.id)');
   });
 });

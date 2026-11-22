@@ -55,7 +55,7 @@ export function median(values) {
  * Quartile d'ordre k/4 (k = 1 ou 3) : la valeur de rang ⌈kn/4⌉ dans la série
  * ordonnée. Renvoie une VALEUR DE LA SÉRIE, jamais une interpolation.
  */
-export function quartile(values, k) {
+function quartile(values, k) {
   if (!values || values.length === 0) return null;
   const s = sorted(values);
   const rank = Math.ceil((k * s.length) / 4);
@@ -113,7 +113,7 @@ export function standardDeviation(values) {
 }
 
 /** Variance pondérée par des effectifs (diviseur Σnᵢ). */
-export function weightedVariance(pairs) {
+function weightedVariance(pairs) {
   const total = sum(pairs.map((p) => p.count));
   if (total === 0) return null;
   const m = weightedMean(pairs);

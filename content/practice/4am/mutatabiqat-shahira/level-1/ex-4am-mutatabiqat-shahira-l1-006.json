@@ -1,0 +1,133 @@
+{
+  "id": "ex-4am-mutatabiqat-shahira-l1-006",
+  "lessonCode": "mutatabiqat-shahira",
+  "level": 1,
+  "metadata": {
+    "title": "جداء مجموع وفرق، وحساب ذهني",
+    "estimatedMinutes": 4,
+    "tags": [
+      "جداء مجموع وفرق",
+      "حساب ذهني"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-2c",
+      "page": 33,
+      "section": "أنشطة",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $A$ حيث:",
+    "formulas": [
+      "A = (x - 3)(x + 3)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انشر ثم بسّط العبارة $A$ .",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $x^2 + m$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "-9",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-JIDAA-MAJMU-FARQ-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على جداء مجموع حدّين وفرقهما: $(a + b)(a - b) = a^2 - b^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن الحدّين $a$ و $b$ ، ثم احسب مربع كل منهما: إذا كان $a = 3x$ فإن $a^2 = 9x^2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = x^2 - 9$ إذن $m = -9$ .",
+        "incorrect": "طبّق المتطابقة الشهيرة حدًّا حدًّا (مربع كل حد والحد المضاعف)، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$A = (x - 3)(x + 3)$",
+          "$A = x^2 - 3^2$"
+        ],
+        "result": "A = x^2 - 9"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب ذهنيا (دون وضع العملية) العدد $105 \\times 95$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "9975",
+      "misconceptionSignatures": [
+        {
+          "value": "10025",
+          "id": "MISC-JIDAA-MAJMU-FARQ-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العددان متناظران حول عدد مدوّر: اكتبهما على الشكل $a + b$ و $a - b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق $(a + b)(a - b) = a^2 - b^2$ : مربعان سهلا الحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "$105 \\times 95 = 9975$ .",
+        "incorrect": "اكتب العدد بدلالة عدد مدوّر، ثم طبّق المتطابقة الشهيرة المناسبة حدًّا حدًّا."
+      },
+      "solution": {
+        "lines": [
+          "$105 \\times 95 = (100 + 5)(100 - 5)$",
+          "$= 100^2 - 5^2$",
+          "$= 10000 - 25$"
+        ],
+        "result": "105 \\times 95 = 9975"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

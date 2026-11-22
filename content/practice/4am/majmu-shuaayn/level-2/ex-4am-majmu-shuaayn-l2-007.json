@@ -1,0 +1,63 @@
+{
+  "id": "ex-4am-majmu-shuaayn-l2-007",
+  "lessonCode": "majmu-shuaayn",
+  "level": 2,
+  "generator": {
+    "tool": "unit11-majmu-gen.py",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — ذهاب ثم إياب على مستقيم",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الشعاعان المتعاكسان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_majmu-shuaayn_P4",
+      "modelledOn": "know-5"
+    }
+  },
+  "statement": {
+    "content": "R و S و T ثلاث نقط على مستقيم بهذا الترتيب حيث $RS = 4\\,\\mathrm{cm}$ و $ST = 2\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "طول الشعاع $\\overrightarrow{RS} + \\overrightarrow{ST} + \\overrightarrow{TS}$ بالسنتيمتر:",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر)",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المنحى والاتجاه والطول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "شعاعان متعاكسان لهما نفس المنحى ونفس الطول واتجاهان متعاكسان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الذهاب ثم العودة إلى نفس النقطة يعطي الشعاع المعدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{ST} + \\overrightarrow{TS} = \\vec{0}$ ، فالمجموع $\\overrightarrow{RS}$ وطوله $4\\,\\mathrm{cm}$ .",
+        "incorrect": "الشعاعان المتعاكسان مجموعهما الشعاع المعدوم؛ لا نجمع الأطوال."
+      }
+    }
+  ]
+}

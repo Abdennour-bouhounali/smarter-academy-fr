@@ -1,0 +1,186 @@
+{
+  "id": "ex-1am-muqaranat-adad-ashriya-l2-007",
+  "lessonCode": "muqaranat-adad-ashriya",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — ترتيب كتل الفاكهة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "ترتيب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يزن البائع ثمار أربعة أكياس من الفاكهة بالكيلوغرام، ويكتب الأوزان بدقة وأمانة: $2{,}4$ ، $2{,}04$ ، $2{,}39$ ، $2{,}5$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "رتّب أوزان الأكياس تصاعديًا (من الأصغر إلى الأكبر): $2{,}4$ ، $2{,}04$ ، $2{,}39$ ، $2{,}5$. أيّ السلاسل الآتية صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2{,}04 < 2{,}39 < 2{,}4 < 2{,}5$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$2{,}4 < 2{,}04 < 2{,}5 < 2{,}39$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-DIGITS-AS-NATURAL"
+        },
+        {
+          "id": "C",
+          "content": "$2{,}4 < 2{,}5 < 2{,}04 < 2{,}39$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-LONGER-BIGGER"
+        },
+        {
+          "id": "D",
+          "content": "$2{,}5 < 2{,}4 < 2{,}39 < 2{,}04$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-ORDER-DIRECTION"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن عددين عددين، وابحث عن الأصغر (أو الأكبر) أولًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ بالجزء الصحيح، فهو يفرز الأعداد إلى مجموعات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "داخل المجموعة الواحدة قارن الأعشار ثم الأجزاء من مائة، ثم تحقق من الترتيب كاملًا."
+        }
+      ],
+      "feedback": {
+        "correct": "الترتيب التصاعدي : $2{,}04 < 2{,}39 < 2{,}4 < 2{,}5$",
+        "incorrect": "نقارن العددين اثنين اثنين، ونبدأ بالجزء الصحيح ثم الأعشار فالأجزاء من مائة، ثم نكتب السلسلة كاملة ونتحقق من كل رمز."
+      },
+      "solution": {
+        "lines": [
+          "نقارن الأعداد اثنين اثنين ونرتّبها: $2{,}04 < 2{,}39 < 2{,}4 < 2{,}5$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هو أخفّ كيس (الوزن بالكيلوغرام)؟",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "2,04",
+      "misconceptionSignatures": [
+        {
+          "value": "2,4",
+          "id": "MISC-MUQARANA-DIGITS-AS-NATURAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الأعداد عددين عددين، واحتفظ في كل مرة بالأكبر (أو الأصغر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الجزء الصحيح أولًا، ثم الأعشار، ثم الأجزاء من مائة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يكفي أن يكون في العدد أرقام كثيرة بعد الفاصلة ليكون أكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "أصغر عدد هو $2{,}04$ ؛ الترتيب: $2{,}04 < 2{,}39 < 2{,}4 < 2{,}5$.",
+        "incorrect": "نقارن الأعداد الواحد بالآخر رتبةً رتبةً؛ وليس العدد الأطول (أرقامه أكثر بعد الفاصلة) هو الأكبر دائمًا."
+      },
+      "solution": {
+        "lines": [
+          "نرتّب الأعداد: $2{,}04 < 2{,}39 < 2{,}4 < 2{,}5$",
+          "إذن أصغر عدد هو $2{,}04$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كيف قارنت $2{,}4$ و $2{,}39$؟ اشرح الطريقة التي استعملتها.",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اذكر الرتبة التي حسمت المقارنة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أو أتمم العددين بأصفار ثم قارن عددين طبيعيين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تامة تتضمن العددين والرمز."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي.",
+        "incorrect": "راجع التبرير وأعد صياغته: اذكر الرتبة أو الأصفار."
+      },
+      "solution": {
+        "lines": [
+          "الجزآن الصحيحان متساويان (2).",
+          "نتمم: $2{,}4 = 2{,}40$ فنقارن 40 مع 39 جزءًا من مائة: 40 أكبر.",
+          "إذن $2{,}39 < 2{,}4$."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "id": "ex-4am-majmu-shuaayn-l3-008",
+  "lessonCode": "majmu-shuaayn",
+  "level": 3,
+  "generator": {
+    "tool": "unit11-majmu-gen.py",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — القطر الصحيح",
+    "estimatedMinutes": 3,
+    "tags": [
+      "قاعدة متوازي الأضلاع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_majmu-shuaayn_P3",
+      "modelledOn": "know-6"
+    }
+  },
+  "statement": {
+    "content": "EFGH متوازي أضلاع (الرؤوس بهذا الترتيب)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "$\\overrightarrow{FE} + \\overrightarrow{FG} =$",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{FH}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{EG}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-QAIDA-QUTR"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{HF}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-AKS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للشعاعين نفس المبدأ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "شعاعان لهما نفس المبدأ يُجمعان بقاعدة متوازي الأضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع هو القطر الصادر من المبدأ المشترك، لا القطر الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "نفس المبدأ F ، والرأس المقابل لـ F هو H : المجموع $\\overrightarrow{FH}$ .",
+        "incorrect": "قاعدة متوازي الأضلاع: مجموع شعاعين لهما نفس المبدأ هو القطر الصادر من ذلك المبدأ."
+      }
+    }
+  ]
+}

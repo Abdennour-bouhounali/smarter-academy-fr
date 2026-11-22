@@ -1,0 +1,215 @@
+{
+  "id": "ex-1am-hasil-qisma-kasr-l3-002",
+  "lessonCode": "hasil-qisma-kasr",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — انقل وأتمم",
+    "estimatedMinutes": 9,
+    "tags": [
+      "العدد الناقص",
+      "كسر"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 2,
+      "file": "1am-s2-78",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "انقل وأتمم كل مساواة، وعبّر عن العدد الناقص بكسر عند الحاجة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "$\\dfrac{23}{5} \\times 5 = \\ldots$",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (طبيعي أو كسر)",
+      "expectedAnswer": "23",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي ضربنا الكسر فيه؟ وما مقام الكسر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكسر $\\dfrac{a}{b}$ هو العدد الذي إذا ضُرب في $b$ أعطى $a$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن العامل المضروب فيه بمقام الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{23}{5} \\times 5 = 23$",
+        "incorrect": "العدد الذي نضربه في $b$ لنحصل على $a$ هو حاصل قسمة $a$ على $b$ ، أي $\\dfrac{a}{b}$ ؛ لا نطرح العددين ولا نضربهما."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{23}{5} \\times 5 = 23$ : الكسر مضروب في مقامه يعطي بسطه."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "$\\ldots \\times 9 = 5$",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b (أو عدد)",
+      "expectedAnswer": "5/9",
+      "misconceptionSignatures": [
+        {
+          "value": "45",
+          "id": "MISC-HASIL-DARB"
+        },
+        {
+          "value": "9/5",
+          "id": "MISC-HASIL-QALB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد الناقص هو الذي نضربه في العامل المعروف لنحصل على الجداء المعطى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كيف نجد أحد عاملي جداء إذا عرفنا الجداء والعامل الآخر؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العدد الناقص على شكل حاصل قسمة، ثم على شكل كسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$9 \\times \\dfrac{5}{9} = 5$ : العدد الناقص هو $\\dfrac{5}{9}$.",
+        "incorrect": "العدد الذي نضربه في $b$ لنحصل على $a$ هو حاصل قسمة $a$ على $b$ ، أي $\\dfrac{a}{b}$ ؛ لا نطرح العددين ولا نضربهما."
+      },
+      "solution": {
+        "lines": [
+          "العدد الناقص هو حاصل القسمة $5 \\div 9 = \\dfrac{5}{9}$",
+          "تحقّق : $9 \\times \\dfrac{5}{9} = 5$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "$\\dfrac{18}{11} \\times \\ldots = 18$",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-HASIL-QALB"
+        },
+        {
+          "value": "198",
+          "id": "MISC-HASIL-DARB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما مقام الكسر ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كسر مضروب في مقامه يعطي بسطه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن العدد المضروب فيه بمقام الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{18}{11} \\times 11 = 18$",
+        "incorrect": "العدد الذي نضربه في $b$ لنحصل على $a$ هو حاصل قسمة $a$ على $b$ ، أي $\\dfrac{a}{b}$ ؛ لا نطرح العددين ولا نضربهما."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{18}{11} \\times 11 = 18$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "اشرح لماذا يكون $\\dfrac{5}{9}$ هو العدد الذي إذا ضُرب في 9 أعطى 5.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما معنى الكسر $\\dfrac{5}{9}$ بالنسبة إلى قسمة 5 على 9 ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب حاصل القسمة في المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي.",
+        "incorrect": "راجع التعريف وأعد صياغة التبرير."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{9} = 5 \\div 9$ ، أي أنّ تسعة أمثاله تساوي 5.",
+          "إذن $9 \\times \\dfrac{5}{9} = 5$."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

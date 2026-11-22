@@ -1,0 +1,121 @@
+{
+  "id": "ex-4am-ikhtizal-kasr-l2-005",
+  "lessonCode": "ikhtizal-kasr",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2008 — الكسر 360/840 على مراحل",
+    "estimatedMinutes": 6,
+    "tags": [
+      "كسر غير قابل للاختزال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_ikhtizal-kasr_P1",
+      "modelledOn": "BEM 2008 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2008",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الكسر $\\dfrac{360}{840}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن 10 قاسم مشترك للعددين 360 و 840، ثم اقسم بسط الكسر $\\dfrac{360}{840}$ ومقامه على 10.",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "36/84",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رقم آحاد كل من العددين 360 و 840 هو 0."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط على 10 ثم المقام على 10."
+        }
+      ],
+      "feedback": {
+        "correct": "رقم آحاد العددين 0، فكلاهما يقبل القسمة على 10.",
+        "incorrect": "اقسم البسط والمقام كليهما على 10."
+      },
+      "solution": {
+        "lines": [
+          "رقم آحاد كل من 360 و 840 هو 0، إذن 10 قاسم مشترك لهما.",
+          "$\\dfrac{360}{840} = \\dfrac{360 \\div 10}{840 \\div 10}$"
+        ],
+        "result": "\\dfrac{360}{840} = \\dfrac{36}{84}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل الكسر الناتج غير قابل للاختزال؟ إن لم يكن، واصل الاختزال إلى أن تحصل على كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "3/7",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "18/42",
+          "id": "MISC-IKHTIZAL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العددان 36 و 84 زوجيان، ومجموع أرقام كل منهما مضاعف للعدد 3."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم على قاسم مشترك، ثم أعد السؤال إلى أن يصير البسط والمقام أوليين فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 12: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على قاسمهما المشترك الأكبر، لا على قاسم مشترك آخر.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$84 = 36 \\times 2 + 12$",
+          "$36 = 12 \\times 3 + 0$",
+          "آخر باقٍ غير معدوم هو 12، إذن PGCD(36 ; 84) = 12 .",
+          "$\\dfrac{36}{84} = \\dfrac{36 \\div 12}{84 \\div 12}$",
+          "العددان 3 و 7 أوليان فيما بينهما: لا يمكن مواصلة الاختزال."
+        ],
+        "result": "\\dfrac{36}{84} = \\dfrac{3}{7}"
+      },
+      "timeSeconds": 240
+    }
+  ]
+}

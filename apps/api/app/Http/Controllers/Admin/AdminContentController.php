@@ -21,6 +21,8 @@ class AdminContentController extends Controller
         return response()->json([
             'success' => true,
             'lessons' => $lessons->through(fn (Lesson $lesson) => $this->serializeLesson($lesson)),
+            // Les options du filtre « الوحدة », lues en base.
+            'units' => $this->content->lessonUnits($request->query()),
         ]);
     }
 
@@ -68,31 +70,6 @@ class AdminContentController extends Controller
         ]);
     }
 
-    /** Tous les modules, toutes leçons confondues. */
-    public function modules(Request $request)
-    {
-        $modules = $this->content->modules($request->query());
-
-        return response()->json([
-            'success' => true,
-            'modules' => $modules->through(fn ($module) => [
-                'id' => $module->id,
-                'code' => $module->code,
-                'number' => $module->number,
-                'title' => $module->title,
-                'stage' => $module->stage,
-                'estimatedMin' => $module->estimated_min,
-                'difficulty' => $module->difficulty,
-                'learningPointCount' => count($module->teaches_learning_point_codes ?? []),
-                'publicationStatus' => $module->publication_status,
-                'lessonCode' => $module->lesson?->code,
-                'lessonTitle' => $module->lesson?->title,
-                'grade' => $module->lesson?->chapter?->grade?->code,
-                'chapterTitle' => $module->lesson?->chapter?->title,
-            ]),
-        ]);
-    }
-
     /** Tous les exercices, toutes leçons confondues. */
     public function exercises(Request $request)
     {
@@ -124,6 +101,7 @@ class AdminContentController extends Controller
     /**
      * Publier / masquer / archiver. Un seul point d'entrée pour les trois
      * niveaux de contenu, donc une seule validation et un seul journal.
+     * Sur une leçon, l'état est recopié sur tous ses modules ET ses exercices.
      */
     public function changeStatus(Request $request, string $type, int $id)
     {
@@ -144,7 +122,32 @@ class AdminContentController extends Controller
             'changed' => $result['changed'],
             'id' => $result['model']->id,
             'publicationStatus' => $result['model']->publication_status,
+            // Leçon seulement : les modules et les exercices qui ont suivi.
+            ...(isset($result['modules']) ? ['modules' => $result['modules']] : []),
+            ...(isset($result['exercises']) ? ['exercises' => $result['exercises']] : []),
         ]);
+    }
+
+    /**
+     * L'état de TOUTE la banque d'exercices d'une leçon, d'un seul geste.
+     * Même forme de réponse que bulkChangeStatus (applied / unchanged /
+     * failed) : chaque exercice est traité comme à l'unité.
+     */
+    public function changeLessonExercisesStatus(Request $request, int $id)
+    {
+        $validated = $request->validate([
+            'status' => ['required', Rule::in(Lesson::PUBLICATION_STATUSES)],
+        ], [
+            'status.in' => 'État de publication inconnu.',
+        ]);
+
+        try {
+            $result = $this->content->changeLessonExercisesStatus($request->user(), $id, $validated['status']);
+        } catch (DomainException $e) {
+            return response()->json(['success' => false, 'message' => $e->getMessage()], 422);
+        }
+
+        return response()->json(['success' => true] + $result);
     }
 
     /**
@@ -250,6 +253,9 @@ class AdminContentController extends Controller
             'gradeName' => $lesson->chapter?->grade?->name,
             'chapter' => $lesson->chapter?->code,
             'chapterTitle' => $lesson->chapter?->title,
+            // الوحدة du manuel (null pour une leçon hors unité).
+            'unit' => $lesson->unit?->code,
+            'unitTitle' => $lesson->unit?->title,
             'publicationStatus' => $lesson->publication_status,
             'catalogueStatus' => $lesson->status,
             'tier' => $lesson->tier,
@@ -259,6 +265,13 @@ class AdminContentController extends Controller
             'updatedAt' => $lesson->updated_at,
             'modulesCount' => $lesson->modules_count,
             'exercisesCount' => $lesson->exercises_count,
+            // Présent dans la LISTE seulement (withCount) : la banque par état.
+            'exerciseStatusCounts' => $lesson->exercises_published_count === null ? null : [
+                'published' => (int) $lesson->exercises_published_count,
+                'hidden' => (int) $lesson->exercises_hidden_count,
+                'draft' => (int) $lesson->exercises_draft_count,
+                'archived' => (int) $lesson->exercises_archived_count,
+            ],
             'openReportsCount' => $lesson->open_reports_count,
             'studentsCount' => $lesson->students_count,
         ];

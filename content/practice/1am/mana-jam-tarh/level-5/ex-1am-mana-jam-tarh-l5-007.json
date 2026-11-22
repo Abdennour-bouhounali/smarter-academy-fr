@@ -1,0 +1,337 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l5-007",
+  "lessonCode": "mana-jam-tarh",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — زيارة الجدّة",
+    "estimatedMinutes": 20,
+    "tags": [
+      "مسافات",
+      "مخطط بأقواس",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "سافرت عائلة لزيارة الجدّة، والتزم الأب بنصائح السلامة المرورية. على طريق وطني تقع المدن A و B و C و D بهذا الترتيب: AB = $245{,}5\\,\\mathrm{km}$ ، AC = $403\\,\\mathrm{km}$ ، AD = $652{,}8\\,\\mathrm{km}$. تسكن الجدّة في D.\nالجزء الأول: المسافات بين المدن.\nالجزء الثاني: قطعت العائلة في اليوم الأول انطلاقًا من A مسافة $318{,}6\\,\\mathrm{km}$ ثم استراحت، وتريد أن تقطع في اليوم الثاني أقل من $350\\,\\mathrm{km}$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "في مخطط بأقواس تمثّل فيه AC الكل، الجزآن هما:",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "AB و BC",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "AB و AD",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        },
+        {
+          "id": "C",
+          "content": "AC و CD",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "B تقع بين A و C."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC = AB + BC$.",
+        "incorrect": "الجزآن يُكوّنان معًا المسافة من A إلى C."
+      },
+      "solution": {
+        "lines": [
+          "B بين A و C ، إذن $AC = AB + BC$."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب المسافة BC.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالكيلومتر (km)",
+      "expectedAnswer": "157.5",
+      "misconceptionSignatures": [
+        {
+          "value": "648.5",
+          "id": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "BC جزء من AC."
+        }
+      ],
+      "feedback": {
+        "correct": "$403 - 245{,}5 = 157{,}5\\,\\mathrm{km}$.",
+        "incorrect": "BC جزء من AC: اطرح AB."
+      },
+      "solution": {
+        "lines": [
+          "$BC = 403 - 245{,}5 = 157{,}5$"
+        ],
+        "result": "BC = 157{,}5 \\text{ km}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب المسافة CD.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالكيلومتر (km)",
+      "expectedAnswer": "249.8",
+      "misconceptionSignatures": [
+        {
+          "value": "1055.8",
+          "id": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "CD جزء من AD."
+        }
+      ],
+      "feedback": {
+        "correct": "$652{,}8 - 403 = 249{,}8\\,\\mathrm{km}$.",
+        "incorrect": "CD جزء من AD: اطرح AC."
+      },
+      "solution": {
+        "lines": [
+          "$CD = 652{,}8 - 403 = 249{,}8$"
+        ],
+        "result": "CD = 249{,}8 \\text{ km}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "كم بقي للعائلة بعد اليوم الأول لتصل إلى الجدّة؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالكيلومتر (km)",
+      "expectedAnswer": "334.2",
+      "misconceptionSignatures": [
+        {
+          "value": "971.4",
+          "id": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "AD هو الكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما قطعته + ما بقي = AD."
+        }
+      ],
+      "feedback": {
+        "correct": "$652{,}8 - 318{,}6 = 334{,}2\\,\\mathrm{km}$.",
+        "incorrect": "ما بقي جزء من AD: اطرح ما قطعته."
+      },
+      "solution": {
+        "lines": [
+          "$652{,}8 - 318{,}6 = 334{,}2$"
+        ],
+        "result": "334{,}2 \\text{ km}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "هل تجاوزت العائلة المدينة B في اليوم الأول؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-MUQARANA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن ما قطعته بالمسافة AB."
+        }
+      ],
+      "feedback": {
+        "correct": "$318{,}6 > 245{,}5$: تجاوزت B.",
+        "incorrect": "قارن 318,6 بـ 245,5."
+      },
+      "solution": {
+        "lines": [
+          "$318{,}6 > 245{,}5$ ، إذن العائلة تجاوزت المدينة B."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "كم يفصل العائلة عن المدينة C في نهاية اليوم الأول؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالكيلومتر (km)",
+      "expectedAnswer": "84.4",
+      "misconceptionSignatures": [
+        {
+          "value": "73.1",
+          "id": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "AC هو الكل: ما قطعته + ما بقي حتى C."
+        }
+      ],
+      "feedback": {
+        "correct": "$403 - 318{,}6 = 84{,}4\\,\\mathrm{km}$.",
+        "incorrect": "ما بقي حتى C جزء من AC: اطرح ما قطعته."
+      },
+      "solution": {
+        "lines": [
+          "$403 - 318{,}6 = 84{,}4$"
+        ],
+        "result": "84{,}4 \\text{ km}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "06",
+      "statement": "هل تستطيع العائلة الوصول إلى الجدّة في اليوم الثاني بقطع أقل من $350\\,\\mathrm{km}$؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب ما بقي بعد اليوم الأول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارنه بـ 350."
+        }
+      ],
+      "feedback": {
+        "correct": "$334{,}2 < 350$: نعم.",
+        "incorrect": "احسب ما بقي حتى D ثم قارنه بـ $350\\,\\mathrm{km}$."
+      },
+      "solution": {
+        "lines": [
+          "بقي $334{,}2\\,\\mathrm{km}$.",
+          "$334{,}2 < 350$ ، إذن تستطيع."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

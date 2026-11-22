@@ -1,0 +1,192 @@
+{
+  "id": "ex-1am-qawaid-qabiliyat-qisma-l3-007",
+  "lessonCode": "qawaid-qabiliyat-qisma",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — قراءة مساواة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "مساواة",
+      "باقٍ"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 2,
+      "file": "1am-s2-80",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أنجزت ليلى القسمة الإقليدية للعدد 1350 على 4، وعبّرت عنها بالمساواة $1350 = 4 \\times 337 + 2$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هذه المساواة تبيّن أن 1350 لا يقبل القسمة على 4.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-BAQI"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل المساواة قسمة إقليدية على 4؟ قارن 2 بالعدد 4."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما هو الباقي؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$2 < 4$: هي القسمة الإقليدية على 4، وباقيها 2 غير معدوم.",
+        "incorrect": "نحكم بالباقي إذا كانت المساواة قسمة إقليدية."
+      },
+      "solution": {
+        "lines": [
+          "$4 \\times 337 = 1348$ و $1348 + 2 = 1350$ ، و $2 < 4$.",
+          "الباقي 2 غير معدوم، إذن 1350 لا يقبل القسمة على 4."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "تحقّق بقاعدة القسمة على 4: هل يقبل العدد 1350 القسمة على 4؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-ZAWJI-4"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى العدد المشكّل من رقمي الآحاد والعشرات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل هذا العدد المكوّن من رقمين يقبل القسمة على 4؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يكفي أن يكون العدد زوجيًا."
+        }
+      ],
+      "feedback": {
+        "correct": "العدد المشكّل من رقمي آحاد وعشرات 1350 هو 50، و 50 لا يقبل القسمة على 4.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 4 إذا كان العدد المشكّل من رقمي آحاده وعشراته يقبل القسمة على 4."
+      },
+      "solution": {
+        "lines": [
+          "العدد المشكّل من رقمي آحاد وعشرات 1350 هو 50، و 50 لا يقبل القسمة على 4.",
+          "$1350 = 4 \\times 337 + 2$ ، الباقي 2 غير معدوم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اختر المساواة التي تبيّن أن العدد 1350 يقبل القسمة على 9.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$1350 = 9 \\times 149 + 9$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-BAQI"
+        },
+        {
+          "id": "B",
+          "content": "$1350 = 9 \\times 148 + 18$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-BAQI"
+        },
+        {
+          "id": "C",
+          "content": "$1350 = 9 \\times 150 + 0$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل المساويات صحيحة حسابيًا: أيّها قسمة إقليدية على 9؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في القسمة الإقليدية على 9 يكون الباقي أصغر من 9."
+        }
+      ],
+      "feedback": {
+        "correct": "$1350 = 9 \\times 150$: الباقي معدوم، إذن 1350 يقبل القسمة على 9.",
+        "incorrect": "المساواة المطلوبة هي القسمة الإقليدية على 9 (باقٍ أصغر من 9)، وباقيها معدوم."
+      },
+      "solution": {
+        "lines": [
+          "في المساويات الأخرى العدد المضاف لا يقل عن 9: ليست قسمة إقليدية على 9.",
+          "$1350 = 9 \\times 150 + 0$ ، الباقي معدوم."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,240 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-quwa-nisbiya-l3-007",
+  "lessonCode": "wadiya-idmajiya-quwa-nisbiya",
+  "level": 3,
+  "metadata": {
+    "title": "رتبة قدر وحصر قوى",
+    "estimatedMinutes": 8,
+    "tags": [
+      "رتبة القدر",
+      "الحصر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "استعمل الآلة الحاسبة لحساب القيمة ثمّ أعط الحصر أو رتبة القدر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "العدد $(-2)^{10}$ محصور بين:",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$10^{2}$ و $10^{3}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WQ-BRACKET"
+        },
+        {
+          "id": "B",
+          "content": "$10^{4}$ و $10^{5}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WQ-DIGITS"
+        },
+        {
+          "id": "C",
+          "content": "$10^{-4}$ و $10^{-3}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WQ-BRACKET"
+        },
+        {
+          "id": "D",
+          "content": "$10^{3}$ و $10^{4}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل تستطيع حساب كل خيار على حدة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الخيارات بعد تحويلها إلى الكتابة العلمية أو إلى قوة العدد $10$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استبعد الخيارات التي تخالف قاعدة تعرفها."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $10^{3}$ و $10^{4}$ .",
+        "incorrect": "قارن الخيارات بعد تحويلها إلى شكل مشترك، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$(-2)^{10}$ = $1{,}024 \\times 10^{3}$ .",
+          "$10^{3} \\le (-2)^{10} < 10^{4}$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "رتبة قدر $3^{7}$ هي $a' \\times 10^{n}$ : ما قيمة $a'$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "العدد الصحيح $a'$ (من 1 إلى 9)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-WQ-ROUND"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أوّلًا الكتابة العلمية للعدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ندوّر $a$ إلى الوحدة ونُبقي القوة $10^{n}$ ؛ إذا صار المدوّر $10$ فهو $1 \\times 10^{n+1}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ المدوّر عدد صحيح من $1$ إلى $9$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $2$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الكتابة العلمية $3^{7}$ = $2{,}187 \\times 10^{3}$ .",
+          "مدوّر $2{,}187$ إلى الوحدة هو $2$ ، فرتبة القدر $2 \\times 10^{3}$ ."
+        ],
+        "result": "2"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "رتبة قدر $2^{-8}$ هي $a' \\times 10^{n}$ : ما قيمة الأسّ $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "-3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أوّلًا الكتابة العلمية للعدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ندوّر $a$ إلى الوحدة ونُبقي القوة $10^{n}$ ؛ إذا صار المدوّر $10$ فهو $1 \\times 10^{n+1}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ المدوّر عدد صحيح من $1$ إلى $9$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $-3$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الكتابة العلمية $2^{-8}$ = $3{,}90625 \\times 10^{-3}$ .",
+          "بعد التدوير: $4 \\times 10^{-3}$ ، إذن $n = -3$ ."
+        ],
+        "result": "-3"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "رتبة قدر $5^{6}$ هي $a' \\times 10^{n}$ : ما قيمة $a'$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "العدد الصحيح $a'$ (من 1 إلى 9)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-WQ-ROUND"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أوّلًا الكتابة العلمية للعدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ندوّر $a$ إلى الوحدة ونُبقي القوة $10^{n}$ ؛ إذا صار المدوّر $10$ فهو $1 \\times 10^{n+1}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ المدوّر عدد صحيح من $1$ إلى $9$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $2$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الكتابة العلمية $5^{6}$ = $1{,}5625 \\times 10^{4}$ .",
+          "مدوّر $1{,}5625$ إلى الوحدة هو $2$ ، فرتبة القدر $2 \\times 10^{4}$ ."
+        ],
+        "result": "2"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

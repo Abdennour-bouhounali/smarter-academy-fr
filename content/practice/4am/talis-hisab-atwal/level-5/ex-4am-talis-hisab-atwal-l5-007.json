@@ -1,0 +1,308 @@
+{
+  "id": "ex-4am-talis-hisab-atwal-l5-007",
+  "lessonCode": "talis-hisab-atwal",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2019 — العامل على السلّم",
+    "estimatedMinutes": 20,
+    "tags": [
+      "وضعية إدماجية",
+      "فيثاغورس",
+      "خاصية طالس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_talis-hisab-atwal_P2",
+      "modelledOn": "BEM 2019 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2019",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "سلّم $[AC]$ مسنود إلى جدار شاقولي، قدمه $A$ على أرض أفقية على بعد $AB = 2{,}1\\,\\mathrm{m}$ من أسفل الجدار $B$ ، ويلمس الجدار في $C$ على ارتفاع $BC = 7{,}2\\,\\mathrm{m}$ . صعد عامل على السلم، بعد أن ثبّته بحرص حفاظًا على سلامته، إلى النقطة $N$ حيث $AN = 5\\,\\mathrm{m}$ ، و $M$ هي المسقط العمودي للنقطة $N$ على الأرض ( الشكل غير مرسوم بالأبعاد الحقيقية).",
+    "figure": {
+      "points": {
+        "A": [
+          0.0,
+          0.0
+        ],
+        "B": [
+          5.25,
+          0.0
+        ],
+        "C": [
+          5.25,
+          7.2
+        ],
+        "N": [
+          3.5,
+          4.8
+        ],
+        "M": [
+          3.5,
+          0.0
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "M"
+        },
+        {
+          "from": "M",
+          "to": "B"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "7,2"
+        },
+        {
+          "from": "A",
+          "to": "C"
+        },
+        {
+          "from": "M",
+          "to": "N"
+        }
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "B",
+          "C"
+        ],
+        [
+          "A",
+          "M",
+          "N"
+        ]
+      ],
+      "labels": {
+        "N": "nw"
+      },
+      "ariaLabel": "السلم [AC] مسنود إلى الجدار [BC] الشاقولي، والأرض [AB] أفقية؛ N على السلم و M مسقطها العمودي على الأرض؛ AB = 2,1 و BC = 7,2 و AN = 5",
+      "caption": "الشكل غير مرسوم بالأبعاد الحقيقية",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب طول السلّم $AC$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "7,5",
+      "misconceptionSignatures": [
+        {
+          "value": "9,3",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $ABC$ قائم في $B$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خاصية فيثاغورس: $AC^2 = AB^2 + BC^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC^2 = 4{,}41 + 51{,}84 = 56{,}25$ ومنه $AC = 7{,}5\\,\\mathrm{m}$ .",
+        "incorrect": "مربع الوتر يساوي مجموع مربعي الضلعين الآخرين، ثم الجذر التربيعي."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $B$ ، حسب خاصية فيثاغورس: $AC^2 = AB^2 + BC^2$",
+          "$AC^2 = 2{,}1^2 + 7{,}2^2 = 4{,}41 + 51{,}84 = 56{,}25$",
+          "$AC = \\sqrt{56{,}25}$"
+        ],
+        "result": "AC = 7{,}5\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب ارتفاع العامل عن الأرض، أي $MN$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "4,8",
+      "misconceptionSignatures": [
+        {
+          "value": "11,25",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(MN)$ و $(BC)$ عموديان على الأرض: هما متوازيان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المثلثان $AMN$ و $ABC$ في وضعية طالس: $\\dfrac{AN}{AC} = \\dfrac{MN}{BC}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$MN = \\dfrac{7{,}2 \\times 5}{7{,}5} = 4{,}8\\,\\mathrm{m}$ .",
+        "incorrect": "راجع المساواة المختارة: في كل نسبة طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "$(MN) \\perp (AB)$ و $(BC) \\perp (AB)$ إذن $(MN) \\parallel (BC)$ ،",
+          "حسب خاصية طالس: $\\dfrac{AM}{AB} = \\dfrac{AN}{AC} = \\dfrac{MN}{BC}$",
+          "$\\dfrac{5}{7{,}5} = \\dfrac{MN}{7{,}2}$",
+          "$MN = \\dfrac{7{,}2 \\times 5}{7{,}5}$"
+        ],
+        "result": "MN = 4{,}8\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب المسافة $AM$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "1,4",
+      "misconceptionSignatures": [
+        {
+          "value": "3,15",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقط $A$ ، $M$ ، $B$ على استقامة والنقط $A$ ، $N$ ، $C$ على استقامة، و $(MN) \\parallel (BC)$ : المثلثان $AMN$ و $ABC$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب النسب الثلاث المتساوية $\\dfrac{AM}{AB} = \\dfrac{AN}{AC} = \\dfrac{MN}{BC}$ ، واحتفظ بالمساواة التي فيها $AM$ وثلاثة أطوال معلومة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الطول المجهول بالجداء المتصالب (الرابع المتناسب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$AM = \\dfrac{2{,}1 \\times 5}{7{,}5} = 1{,}4\\,\\mathrm{m}$ .",
+        "incorrect": "راجع المساواة المختارة: في كل نسبة طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AM}{AB} = \\dfrac{AN}{AC}$ أي $\\dfrac{AM}{2{,}1} = \\dfrac{5}{7{,}5}$",
+          "$AM = \\dfrac{2{,}1 \\times 5}{7{,}5}$"
+        ],
+        "result": "AM = 1{,}4\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "يريد العامل أن يصل إلى ارتفاع $6\\,\\mathrm{m}$ عن الأرض. ما المسافة التي يقطعها على السلّم انطلاقا من $A$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المسافة بـ m",
+      "expectedAnswer": "6,25",
+      "misconceptionSignatures": [
+        {
+          "value": "7,2",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطة الجديدة $N'$ على السلّم ومسقطها $M'$ : المثلثان $AM'N'$ و $ABC$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $\\dfrac{AN'}{AC} = \\dfrac{M'N'}{BC}$ مع $M'N' = 6$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AN' = \\dfrac{7{,}5 \\times 6}{7{,}2} = 6{,}25\\,\\mathrm{m}$ .",
+        "incorrect": "راجع المساواة المختارة: في كل نسبة طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "ليكن $N'$ موضع العامل و $M'$ مسقطه على الأرض: $\\dfrac{AN'}{AC} = \\dfrac{M'N'}{BC}$",
+          "$\\dfrac{AN'}{7{,}5} = \\dfrac{6}{7{,}2}$",
+          "$AN' = \\dfrac{7{,}5 \\times 6}{7{,}2}$"
+        ],
+        "result": "AN' = 6{,}25\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    }
+  ]
+}

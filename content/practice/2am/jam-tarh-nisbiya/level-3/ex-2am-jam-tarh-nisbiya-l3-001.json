@@ -1,0 +1,201 @@
+{
+  "id": "ex-2am-jam-tarh-nisbiya-l3-001",
+  "lessonCode": "jam-tarh-nisbiya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مجاميع وفروق أعداد نسبية معطاة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جمع",
+      "طرح"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 2,
+      "file": "2am-s2-69",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أعداد نسبية حيث : $A=(+2{,}4)$ ؛ $B=(-5)$ ؛ $C=(-3{,}6)$ ؛ $D=(-1{,}6)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $B+C$ .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-8.6",
+      "misconceptionSignatures": [
+        {
+          "value": "8.6",
+          "id": "MISC-JAMNISB-SIGNLOST"
+        },
+        {
+          "value": "-1.4",
+          "id": "MISC-JAMNISB-SUBDIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن إشارتي العددين : هل هما متماثلتان؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عند تماثل الإشارتين نجمع المسافتين إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثمّ نكتب الإشارة المشتركة أمام ناتج الجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$(-5)+(-3{,}6)=(-8{,}6)$ : العددان لهما الإشارة نفسها فنجمع المسافتين ونحتفظ بالإشارة.",
+        "incorrect": "راجع قاعدة الحساب المناسبة (الجمع، أو الطرح بإضافة المعاكس)، ثمّ أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "العددان لهما الإشارة نفسها (السالبة) : نجمع المسافتين إلى الصفر ، $5+3{,}6=8{,}6$",
+          "نحتفظ بالإشارة المشتركة (السالبة)",
+          "$(-5)+(-3{,}6)=(-8{,}6)$"
+        ],
+        "result": "-8{,}6"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $A-D$ .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "0.8",
+          "id": "MISC-JAMNISB-SUBNOFLIP"
+        },
+        {
+          "value": "-4",
+          "id": "MISC-JAMNISB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الطرح يعني إضافة المعاكس : اكتب معاكس العدد المطروح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حوّل الفرق إلى مجموع بإبدال العدد المطروح بمعاكسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثمّ طبّق قاعدة الجمع المناسبة : إشارتان متماثلتان أم مختلفتان؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$(+2{,}4)-(-1{,}6)=(+4)$ : الطرح إضافة للمعاكس ثمّ نطبّق قاعدة الجمع.",
+        "incorrect": "راجع قاعدة الحساب المناسبة (الجمع، أو الطرح بإضافة المعاكس)، ثمّ أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الطرح يعني إضافة المعاكس : معاكس $(-1{,}6)$ هو $(+1{,}6)$",
+          "$(+2{,}4)-(-1{,}6)=(+2{,}4)+(+1{,}6)$",
+          "العددان لهما الإشارة نفسها (الموجبة) : نجمع المسافتين إلى الصفر ، $2{,}4+1{,}6=4$",
+          "نحتفظ بالإشارة المشتركة (الموجبة)",
+          "$(+2{,}4)-(-1{,}6)=(+4)$"
+        ],
+        "result": "4"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب $D+A$ .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "0.8",
+      "misconceptionSignatures": [
+        {
+          "value": "-0.8",
+          "id": "MISC-JAMNISB-SIGNFIRST"
+        },
+        {
+          "value": "4",
+          "id": "MISC-JAMNISB-ADDDIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن إشارتي العددين ثمّ قارن مسافتيهما إلى الصفر : أيّهما أبعد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عند اختلاف الإشارتين نطرح المسافة الصغرى من المسافة الكبرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "النتيجة تأخذ إشارة العدد الأبعد عن الصفر ؛ وإذا تساوت المسافتان فالنتيجة معدومة."
+        }
+      ],
+      "feedback": {
+        "correct": "$(-1{,}6)+(+2{,}4)=(+0{,}8)$ : العددان من إشارتين مختلفتين فنطرح المسافتين ونأخذ إشارة الأبعد عن الصفر.",
+        "incorrect": "راجع قاعدة الحساب المناسبة (الجمع، أو الطرح بإضافة المعاكس)، ثمّ أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "العددان من إشارتين مختلفتين : المسافتان إلى الصفر $1{,}6$ و $2{,}4$ ؛ نطرح الصغرى من الكبرى : $2{,}4-1{,}6=0{,}8$",
+          "نأخذ إشارة العدد الأبعد عن الصفر وهو $(+2{,}4)$ (الموجبة)",
+          "$(-1{,}6)+(+2{,}4)=(+0{,}8)$"
+        ],
+        "result": "0{,}8"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

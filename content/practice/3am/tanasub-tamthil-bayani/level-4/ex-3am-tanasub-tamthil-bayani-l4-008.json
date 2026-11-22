@@ -1,0 +1,284 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l4-008",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — المبلغ المتبقي",
+    "estimatedMinutes": 10,
+    "tags": [
+      "تمثيل بياني",
+      "حساب عشري"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الرابع",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يشتري فريق الكشافة أقلاما لتجهيز حملة نظافة الحيّ، ومعه $2000$ دج، أي $20$ مئة دج. يمثّل المستقيم $(D)$ في المعلم التالي ثمن الأقلام (بمئات الدنانير) بدلالة عددها، وسعر قبّعة الفريق ثابت في $3{,}75$ مئة دج.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          4,
+          6
+        ],
+        "B": [
+          8,
+          12
+        ]
+      },
+      "lines": [
+        {
+          "through": [
+            "O",
+            "B"
+          ],
+          "name": "(D)",
+          "tone": "indigo",
+          "extend": [
+            0,
+            0.2
+          ]
+        }
+      ],
+      "grid": true,
+      "axes": {
+        "every": 2
+      },
+      "labels": {
+        "O": "sw",
+        "A": "se",
+        "B": "se"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس: المستقيم (D) يشمل المبدأ O والنقطتين A(4;6) و B(8;12)",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: عدد الأقلام (بالعشرات) — محور التراتيب: الثمن بمئات الدنانير"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما معامل التناسبية $a$ (ثمن كل عشرة أقلام بمئات الدنانير)؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: معامل التناسبية",
+      "expectedAnswer": "1.5",
+      "misconceptionSignatures": [
+        {
+          "value": "2/3",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        },
+        {
+          "value": "2",
+          "id": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل التناسبية هو ترتيب النقطة الذي فاصلته $1$ ، أو ناتج قسمة الترتيب على الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ إحداثيي النقطة $A$ ثم اقسم الترتيب على الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تقسم الفاصلة على الترتيب ولا تطرح أحد العددين من الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{6}{4} = 1{,}5$ .",
+        "incorrect": "المعامل هو ناتج قسمة الترتيب على الفاصلة (وليس العكس) لنقطة من المستقيم."
+      },
+      "solution": {
+        "lines": [
+          "النقطة $A(4\\,;\\,6)$ من المستقيم.",
+          "$a = \\dfrac{6}{4} = 1{,}5$"
+        ],
+        "result": "a = 1{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما ثمن $30$ قلما (أي ثلاث عشرات) بمئات الدنانير؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الثمن بمئات الدنانير",
+      "expectedAnswer": "4.5",
+      "misconceptionSignatures": [
+        {
+          "value": "30",
+          "id": "MISC-TAMTHIL-UNIT-AXIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفاصلة بالعشرات: $30$ قلما تعني $3$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل $y = a\\,x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$30$ قلما هي $3$ عشرات، و $1{,}5 \\times 3 = 4{,}5$ مئة دج.",
+        "incorrect": "الفاصلة بالعشرات، فحوّل عدد الأقلام أولا."
+      },
+      "solution": {
+        "lines": [
+          "$30$ قلما $= 3$ عشرات.",
+          "$y = 1{,}5 \\times 3 = 4{,}5$ مئة دج."
+        ],
+        "result": "4{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 100
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما المبلغ المتبقي (بمئات الدنانير) بعد شراء الأقلام والقبّعة؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ المتبقي",
+      "expectedAnswer": "11.75",
+      "misconceptionSignatures": [
+        {
+          "value": "15.5",
+          "id": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع ثمن الأقلام وثمن القبّعة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح المجموع من $20$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$4{,}5 + 3{,}75 = 8{,}25$ و $20 - 8{,}25 = 11{,}75$ مئة دج.",
+        "incorrect": "اجمع الأثمان أوّلا ثم اطرح المجموع من المبلغ الذي مع الفريق."
+      },
+      "solution": {
+        "lines": [
+          "$4{,}5 + 3{,}75 = 8{,}25$ مئة دج.",
+          "$20 - 8{,}25 = 11{,}75$ مئة دج."
+        ],
+        "result": "11{,}75"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "هل ثمن الأقلام متناسب مع عددها؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لأنّ الترتيب لا يساوي الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-EQUAL-ONLY"
+        },
+        {
+          "id": "B",
+          "content": "لا، لأنّ المبدأ $O$ ليس من النقط المعلَّمة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-ORIGIN-DROP"
+        },
+        {
+          "id": "C",
+          "content": "نعم، النقط على استقامة واحدة مع المبدأ $O$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط على استقامة واحدة مع المبدأ $O$ ، فهي تمثّل وضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "$A$ و $B$ على المستقيم $(D)$ الذي يشمل $O$ .",
+          "إذن الثمن متناسب مع عدد الأقلام."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

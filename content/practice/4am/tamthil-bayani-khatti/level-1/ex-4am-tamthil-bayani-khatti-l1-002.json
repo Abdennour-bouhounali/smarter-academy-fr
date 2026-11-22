@@ -1,0 +1,121 @@
+{
+  "id": "ex-4am-tamthil-bayani-khatti-l1-002",
+  "lessonCode": "tamthil-bayani-khatti",
+  "level": 1,
+  "metadata": {
+    "title": "التمثيل يشمل المبدأ",
+    "estimatedMinutes": 4,
+    "tags": [
+      "تمثيل بياني",
+      "المبدأ O"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tamthil-bayani-khatti_P1",
+      "modelledOn": "know-3",
+      "adaptedFrom": "ex-4am-tamthil-bayani-khatti-l1-002"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الدالة الخطية $f$ حيث: $f(x) = 3x$ ، و $(D)$ تمثيلها البياني في معلم متعامد ومتجانس."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $f(0)$ ، ثم استنتج نقطة يشملها المستقيم $(D)$ مهما كان معامل الدالة.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $f(0)$ (عدد فقط)",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد 0 في العبارة $f(x) = 3x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء أي عدد في 0 ..."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(0) = 3 \\times 0 = 0$ : المستقيم $(D)$ يشمل المبدأ $O(0 ; 0)$ .",
+        "incorrect": "عوّض $x$ بالعدد 0: الجداء في 0 معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$f(0) = 3 \\times 0 = 0$",
+          "إذن النقطة $O(0 ; 0)$ ، مبدأ المعلم، تنتمي إلى $(D)$ : تمثيل كل دالة خطية يشمل المبدأ."
+        ],
+        "result": "f(0) = 0"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب ترتيب النقطة $B$ من $(D)$ التي فاصلتها $-2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-6",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-KHATTIYA-ISHARA"
+        },
+        {
+          "value": "-2/3",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ترتيب النقطة $B$ هو صورة فاصلتها بالدالة $f$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $3 \\times \\left(-2\\right)$ مع الانتباه إلى قاعدة الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(-2) = 3 \\times \\left(-2\\right) = -6$ ، إذن $B(-2 ; -6)$ .",
+        "incorrect": "جداء عدد موجب في عدد سالب عدد سالب."
+      },
+      "solution": {
+        "lines": [
+          "$f(-2) = 3 \\times \\left(-2\\right) = -6$",
+          "إذن $B(-2 ; -6)$ ."
+        ],
+        "result": "B(-2 ; -6)"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,400 @@
+{
+  "id": "ex-3am-musawiyat-amaliyat-l5-009",
+  "lessonCode": "musawiyat-amaliyat",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — هديّة لأمّ العائلة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "برّ الوالدين",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: تقسم أمّ مبلغ $1200$ دج بالتساوي على أبنائها الأربعة، لكلّ منهم $a$ دج.\nالجزء الثاني: يضيف أحمد إلى حصّته $150$ دج كسبها من عمل بسيط، ثم يشتري بـ $400$ دج هديّة لأمّه برًّا بها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "ما المساواة التي تعبّر عن التقسيم؟",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$a + 4 = 1200$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-ADD-MULT-MIX"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{a}{4} = 1200$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-CONVERSE"
+        },
+        {
+          "id": "C",
+          "content": "$4a = 1200$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجهله المسألة؟ سمِّه بحرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم الجملة إلى مساواة بين عبارتين، ثم طبّق العمليّات نفسها على طرفيها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الجواب بالتعويض في نصّ المسألة."
+        }
+      ],
+      "feedback": {
+        "correct": "$4a = 1200$ .",
+        "incorrect": "استعمل خواص المساواة والعمليّات: عملية واحدة على الطرفين معًا تنقلك من مساواة إلى أخرى؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "أربع حصص متساوية قيمة كلّ منها $a$ : $4 \\times a = 1200$ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "نعلم أنّ $4a = 1200$ ، إذن $a = \\ldots$ .",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "300",
+      "misconceptionSignatures": [
+        {
+          "value": "1200",
+          "id": "MISC-MUSAWIYA-ONE-SIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نضرب فيه (أو نقسم عليه)؟ وهل هو معدوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نضرب (أو نقسم) الطرفين معًا، وكلّ حدّ من الطرف يتأثّر بالعملية؛ والقسمة على صفر ممنوعة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع الطرف كاملًا بين قوسين قبل أن تضرب، وانتبه لإشارة العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 300$ .",
+        "incorrect": "لا تتغيّر المساواة عندما نضرب طرفيها في العدد نفسه أو نقسمهما على عدد غير معدوم؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $4a = 1200$ .",
+          "بقسمة طرفي المساواة على $4$ نجد: $\\dfrac{4a}{4} = \\dfrac{1200}{4}$ ، أي $a = 300$ ."
+        ],
+        "result": "a = 300"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "كم دينارًا يأخذ ابنان معًا؟",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "المبلغ بالدينار",
+      "expectedAnswer": "600",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجهله المسألة؟ سمِّه بحرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم الجملة إلى مساواة بين عبارتين، ثم طبّق العمليّات نفسها على طرفيها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الجواب بالتعويض في نصّ المسألة."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 300 = 600$ .",
+        "incorrect": "استعمل خواص المساواة والعمليّات: عملية واحدة على الطرفين معًا تنقلك من مساواة إلى أخرى؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$a = 300$ ، وحصّة ابنين $2a = 600$ ."
+        ],
+        "result": "600"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "نعلم أنّ $a + 150 = 450$ ، إذن $a = \\ldots$ .",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "300",
+      "misconceptionSignatures": [
+        {
+          "value": "450",
+          "id": "MISC-MUSAWIYA-ONE-SIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نضيفه (أو نطرحه)؟ وعلى أيّ طرف نطبّقه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تتغيّر المساواة إلا إذا أضفنا العدد نفسه (أو طرحناه) إلى طرفيها معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الطرف الأيمن والطرف الأيسر في سطر واحد ثم طبّق العملية على كلٍّ منهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 300$ .",
+        "incorrect": "لا تتغيّر المساواة عندما نضيف إلى طرفيها معًا (أو نطرح منهما) العدد نفسه؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $a + 150 = 450$ .",
+          "بطرح $150$ من طرفي المساواة نجد: $a = 300$ ."
+        ],
+        "result": "a = 300"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "إذا كان $a = 300$ فإنّ $a + 150 - 400 = \\ldots$ .",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "50",
+      "misconceptionSignatures": [
+        {
+          "value": "450",
+          "id": "MISC-MUSAWIYA-ONE-SIDE"
+        },
+        {
+          "value": "300",
+          "id": "MISC-MUSAWIYA-ONE-SIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العلاقة بين المساواة المعطاة والمساواة المطلوبة؟ أيّ عملية تنقلك من الأولى إلى الثانية؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا أمكن الانتقال من المساواة المعطاة إلى المساواة المقترحة بعملية واحدة على الطرفين فهي صحيحة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب عمليّة واحدة على الطرفين، ثم قارن النتيجة بالمساواة المقترحة حدًّا بحدّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$a + 150 - 400 = 50$ .",
+        "incorrect": "استعمل خواص المساواة والعمليّات: عملية واحدة على الطرفين معًا تنقلك من مساواة إلى أخرى؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $a = 300$ .",
+          "بإضافة $150$ إلى طرفي المساواة نجد: $a + 150 = 450$ .",
+          "بطرح $400$ من طرفي المساواة نجد: $a - 250 = 50$ ."
+        ],
+        "result": "a + 150 - 400 = 50"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ا",
+      "statement": "هل يبقى مع أحمد ما يكفي لشراء دفتر ثمنه $40$ دج؟",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، يبقى معه $35$ دج فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-DECISION"
+        },
+        {
+          "id": "B",
+          "content": "نعم، يبقى معه $50$ دج وهو يكفي لدفتر ثمنه $40$ دج",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لا، لم يبقَ معه شيء",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-DECISION"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجهله المسألة؟ سمِّه بحرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم الجملة إلى مساواة بين عبارتين، ثم طبّق العمليّات نفسها على طرفيها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الجواب بالتعويض في نصّ المسألة."
+        }
+      ],
+      "feedback": {
+        "correct": "$300 + 150 - 400 = 50$ .",
+        "incorrect": "استعمل خواص المساواة والعمليّات: عملية واحدة على الطرفين معًا تنقلك من مساواة إلى أخرى؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "بعد الإضافة والشراء: $a + 150 - 400$ مع $a = 300$ يساوي $50$ دج.",
+          "$50 \\geq 40$ ، إذن نعم."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "sub": "ب",
+      "statement": "اشرح كيف حصلت على $a + 150 - 400 = 50$ انطلاقًا من $a = 300$ .",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا تفعل العمليّة بكل طرف من أطراف المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر: لا نغيّر مساواة إلا بعملية نجريها على طرفيها معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب خطوتك بعبارة «بإضافة… / بضرب… إلى/في الطرفين» ثم استنتج."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "بإضافة $150$ إلى طرفي $a = 300$ نجد $a + 150 = 450$ .",
+          "بطرح $400$ من الطرفين نجد $a + 150 - 400 = 50$ ."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

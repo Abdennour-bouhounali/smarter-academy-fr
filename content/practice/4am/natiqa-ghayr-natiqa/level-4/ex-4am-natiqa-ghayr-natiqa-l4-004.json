@@ -1,0 +1,207 @@
+{
+  "id": "ex-4am-natiqa-ghayr-natiqa-l4-004",
+  "lessonCode": "natiqa-ghayr-natiqa",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2009 — التمرين الأول",
+    "estimatedMinutes": 10,
+    "tags": [
+      "عدد طبيعي",
+      "مدوّر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_natiqa-ghayr-natiqa_P1",
+      "modelledOn": "BEM 2009 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان $A$ و $B$ حيث:",
+    "formulas": [
+      "A = \\sqrt{12} \\quad ; \\quad B = \\sqrt{27}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب $A + B$ على الشكل $a\\sqrt{3}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$12 = 4 \\times 3$ و $27 = 9 \\times 3$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\sqrt{4 \\times 3} = \\sqrt{4} \\times \\sqrt{3}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$A + B = 2\\sqrt{3} + 3\\sqrt{3} = 5\\sqrt{3}$ .",
+        "incorrect": "اكتب كل جذر على الشكل $k\\sqrt{3}$ ثم اجمع؛ لا تجمع ما تحت الجذرين."
+      },
+      "solution": {
+        "lines": [
+          "$A + B = \\sqrt{4 \\times 3} + \\sqrt{9 \\times 3}$",
+          "$= 2\\sqrt{3} + 3\\sqrt{3}$",
+          "$= (2 + 3)\\sqrt{3}$"
+        ],
+        "result": "A + B = 5\\sqrt{3}"
+      },
+      "work": "required",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بيّن أن $A \\times B$ هو عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة الجداء $A \\times B$",
+      "expectedAnswer": "18",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\sqrt{a} \\times \\sqrt{b} = \\sqrt{a \\times b}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل $12 \\times 27$ مربع تام؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$A \\times B = \\sqrt{324} = 18$ .",
+        "incorrect": "جداء جذرين هو جذر الجداء، وليس جذر المجموع."
+      },
+      "solution": {
+        "lines": [
+          "$A \\times B = \\sqrt{12} \\times \\sqrt{27}$",
+          "$= 2\\sqrt{3} \\times 3\\sqrt{3}$",
+          "$= 6 \\times 3$"
+        ],
+        "result": "A \\times B = 18"
+      },
+      "work": "required",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "هل $A$ عدد ناطق؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-KULL-JIDHR"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر جوابك، ثم قارن تبريرك بالحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل 12 مربع لعدد ناطق؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$3^2 < 12 < 4^2$ : $A = \\sqrt{12}$ ليس عددًا ناطقًا.",
+        "incorrect": "قارن 12 بالمربعين التامين 9 و 16."
+      },
+      "solution": {
+        "lines": [
+          "$9 < 12 < 16$ : 12 ليس مربعًا لعدد ناطق، إذن $A$ ليس عددًا ناطقًا (رغم أن $A \\times B$ عدد طبيعي)."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "أعط المدوّر إلى $10^{-2}$ للعدد $A$ .",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري برقمين بعد الفاصلة",
+      "expectedAnswer": "3.46",
+      "misconceptionSignatures": [
+        {
+          "value": "3.47",
+          "id": "MISC-TAQRIB-NAQS-ZIYADA"
+        },
+        {
+          "value": "6",
+          "id": "MISC-JIDHR-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الحاسبة، وانظر إلى الرقم الثالث بعد الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sqrt{12} \\approx 3{,}4641$ : الرقم الثالث بعد الفاصلة 4 < 5.",
+        "incorrect": "إذا كان الرقم الثالث بعد الفاصلة أصغر من 5 نحذفه دون تغيير."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\sqrt{12} \\approx 3{,}4641$",
+          "الرقم الثالث بعد الفاصلة 4 (أصغر من 5)، إذن:"
+        ],
+        "result": "A \\approx 3{,}46"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

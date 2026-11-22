@@ -1,0 +1,179 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l3-008",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2021 — قواسم العدد 256",
+    "estimatedMinutes": 9,
+    "tags": [
+      "قواسم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qawasim-adad-tabii_P2",
+      "modelledOn": "BEM 2021 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب كل قواسم العدد 256.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            4,
+            8,
+            16,
+            32,
+            64,
+            128
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 256 بمربعات الأعداد: إلى أي عدد يكفي أن تختبر قابلية القسمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل قسمة باقيها معدوم تعطي قاسمين: $d$ و $256 \\div d$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$256 = 1 \\times 256$ ، $256 = 2 \\times 128$ ، $256 = 4 \\times 64$ ، $256 = 8 \\times 32$ ، $256 = 16 \\times 16$.",
+        "incorrect": "اختبر الأعداد التي مربعها أصغر من العدد أو يساويه، وخذ من كل قسمة باقيها معدوم القاسمين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$16^2 = 256 \\leq 256 < 289 = 17^2$ ومنه نختبر قابلية قسمة 256 على الأعداد من 1 إلى 16.",
+          "نجد أن 256 يقبل القسمة على كل من الأعداد: 1 ، 2 ، 4 ، 8 ، 16.",
+          "ومن المساويات: $256 = 1 \\times 256$ ، $256 = 2 \\times 128$ ، $256 = 4 \\times 64$ ، $256 = 8 \\times 32$ ، $256 = 16 \\times 16$",
+          "إذن قواسم العدد 256 هي: 1 ، 2 ، 4 ، 8 ، 16 ، 32 ، 64 ، 128 ، 256."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 285
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هو عدد قواسم العدد 256؟",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل قائمة القواسم التي وجدتها في السؤال السابق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل جداء عاملين مختلفين يعطي قاسمين."
+        }
+      ],
+      "feedback": {
+        "correct": "قواسم 256 هي 1 ، 2 ، 4 ، 8 ، 16 ، 32 ، 64 ، 128 ، 256.",
+        "incorrect": "عُدّ القواسم في القائمة التي وجدتها، ولا تنسَ 1 والعدد نفسه."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 256 هي: 1 ، 2 ، 4 ، 8 ، 16 ، 32 ، 64 ، 128 ، 256.",
+          "إذن عدد قواسم العدد 256 هو 9."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما هي قيم العدد الطبيعي $a$ التي من أجلها يكون $\\dfrac{256}{a}$ عددا طبيعيا فرديا؟",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        256
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يجب أن يكون $a$ قاسما للعدد 256."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $\\dfrac{256}{a}$ من أجل كل قاسم وانظر متى يكون فرديا."
+        }
+      ],
+      "feedback": {
+        "correct": "حاصل قسمة 256 على أي قاسم آخر عدد زوجي؛ الحاصل الفردي الوحيد هو 1.",
+        "incorrect": "احسب حاصل قسمة 256 على كل قاسم من قواسمه، ولاحظ متى يكون هذا الحاصل فرديا."
+      },
+      "solution": {
+        "lines": [
+          "يجب أن يكون $a$ قاسما للعدد 256.",
+          "$\\dfrac{256}{1} = 256$ ، $\\dfrac{256}{2} = 128$ ، … ، $\\dfrac{256}{128} = 2$ : كلها أعداد زوجية.",
+          "$\\dfrac{256}{256} = 1$ عدد فردي.",
+          "إذن القيمة الوحيدة هي $a = 256$."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

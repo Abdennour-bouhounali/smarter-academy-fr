@@ -1,0 +1,250 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-aadad-nisbiya-l2-003",
+  "lessonCode": "wadiya-idmajiya-aadad-nisbiya",
+  "level": 2,
+  "metadata": {
+    "title": "درجات الحرارة الصغرى خلال خمسة أيام",
+    "estimatedMinutes": 6,
+    "tags": [
+      "متوسط",
+      "مجموع جبري",
+      "سعة حرارية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "سجّلت محطة الأرصاد بخنشلة أدنى درجات الحرارة (بالدرجة المئوية) خلال خمسة أيام متتالية: $−6$ ، $2$ ، $−1$ ، $−9$ ، $4$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب مجموع هذه الدرجات.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ النص وحدّد الأعداد المعطاة وما يعبّر عنه كل منها: ارتفاع أم انخفاض، ربح أم خسارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر عن الانخفاض أو الخسارة أو الدَّين بعدد سالب، ثم اختر العملية التي تناسب السؤال."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العملية بأعداد نسبية ثم أنجزها بقاعدة الإشارات وبأولوية العمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $−10$ .",
+        "incorrect": "راجع ترجمة النص إلى عملية بين أعداد نسبية: أيّ عدد سالب وأيّ عملية تناسب السؤال؟"
+      },
+      "solution": {
+        "lines": [
+          "$(−6) + 2 + (−1) + (−9) + 4$",
+          "$= (−4) + (−1) + (−9) + 4$",
+          "$= (−5) + (−9) + 4$",
+          "$= (−14) + 4$",
+          "$= −10$"
+        ],
+        "result": "−10"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب متوسّط هذه الدرجات الخمس.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "-0.5",
+          "id": "MISC-QISMA-ORDER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العددين اللذين نقسم أحدهما على الآخر وعيّن إشارة كل منهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عاملان مجهولان فالعامل الناقص هو حاصل قسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعملية العكسية: اضرب نتيجتك في العامل المعلوم."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $−2$ .",
+        "incorrect": "راجع الربط بين الضرب والقسمة وقاعدة إشارات الحاصل، ثم تحقّق بالضرب."
+      },
+      "solution": {
+        "lines": [
+          "$((−6) + 2 + (−1) + (−9) + 4) \\div 5$",
+          "$= ((−4) + (−1) + (−9) + 4) \\div 5$",
+          "$= ((−5) + (−9) + 4) \\div 5$",
+          "$= ((−14) + 4) \\div 5$",
+          "$= (−10) \\div 5$",
+          "$= −2$"
+        ],
+        "result": "−2"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب الفارق بين أعلى درجة وأدنى درجة.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "value": "-5",
+          "id": "MISC-QISMA-SUBNEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ النص وحدّد الأعداد المعطاة وما يعبّر عنه كل منها: ارتفاع أم انخفاض، ربح أم خسارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر عن الانخفاض أو الخسارة أو الدَّين بعدد سالب، ثم اختر العملية التي تناسب السؤال."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العملية بأعداد نسبية ثم أنجزها بقاعدة الإشارات وبأولوية العمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $13$ .",
+        "incorrect": "راجع ترجمة النص إلى عملية بين أعداد نسبية: أيّ عدد سالب وأيّ عملية تناسب السؤال؟"
+      },
+      "solution": {
+        "lines": [
+          "أعلى درجة $4$ وأدنى درجة $−9$ :",
+          "$4 − (−9) = 4 + 9 = 13$"
+        ],
+        "result": "13"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "سُجّلت في اليوم السادس الدرجة $−8$ . ما المتوسّط الجديد للأيام الستة؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "-24",
+          "id": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العددين اللذين نقسم أحدهما على الآخر وعيّن إشارة كل منهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عاملان مجهولان فالعامل الناقص هو حاصل قسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعملية العكسية: اضرب نتيجتك في العامل المعلوم."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $−3$ .",
+        "incorrect": "راجع الربط بين الضرب والقسمة وقاعدة إشارات الحاصل، ثم تحقّق بالضرب."
+      },
+      "solution": {
+        "lines": [
+          "$((−6) + 2 + (−1) + (−9) + 4 + (−8)) \\div 6$",
+          "$= ((−4) + (−1) + (−9) + 4 + (−8)) \\div 6$",
+          "$= ((−5) + (−9) + 4 + (−8)) \\div 6$",
+          "$= ((−14) + 4 + (−8)) \\div 6$",
+          "$= ((−10) + (−8)) \\div 6$",
+          "$= (−18) \\div 6$",
+          "$= −3$"
+        ],
+        "result": "−3"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

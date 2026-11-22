@@ -1,0 +1,343 @@
+{
+  "id": "ex-3am-kitaba-ilmiya-rutba-l3-006",
+  "lessonCode": "kitaba-ilmiya-rutba",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — رتبة القدر",
+    "estimatedMinutes": 9,
+    "tags": [
+      "رتبة قدر",
+      "تدوير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أعط رتبة قدر كلّ من الأعداد التالية على الشكل $a'\\times10^{n}$ حيث $a'$ عدد صحيح من 1 إلى 9 (مدوّر $a$ إلى الوحدة).",
+    "formulas": [
+      "A = 4\\,710\\,000",
+      "B = 0{,}0000362",
+      "C = 7\\,340\\,000\\,000",
+      "D = 0{,}00096"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "رتبة قدر العدد $A$ هي $a'\\times10^{n}$ حيث $a'$ عدد صحيح من 1 إلى 9 : ما قيمة $a'$ ؟",
+      "answerType": "rational",
+      "answerFormat": "العدد الصحيح $a'$ (من 1 إلى 9)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العدد كتابة علمية $a\\times10^{n}$ أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتبة القدر هي $a'\\times10^{n}$ حيث $a'$ هو العدد $a$ مدوّرًا إلى الوحدة (نصف فما فوق يُرفع)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحذف ما بعد الفاصلة: قرّب $a$ إلى أقرب عدد صحيح."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-ILMIYA-BATR"
+        }
+      ],
+      "feedback": {
+        "correct": "رتبة قدر $A$ هي $5\\times10^{6}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الكتابة العلمية: $A = 4{,}71\\times10^{6}$ .",
+          "تدوير $4{,}71$ إلى الوحدة يعطي 5 .",
+          "رتبة قدر $A$ هي $5\\times10^{6}$ ، فـ $a' = 5$ ."
+        ],
+        "result": "a' = 5"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "رتبة قدر العدد $A$ هي $a'\\times10^{n}$ حيث $a'$ عدد صحيح من 1 إلى 9 : ما قيمة الأسّ $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العدد كتابة علمية $a\\times10^{n}$ ثمّ دوّر $a$ إلى الوحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان تدوير $a$ يعطي 10 فإنّ $10\\times10^{n}=1\\times10^{n+1}$ فيتغيّر الأسّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن رتبة القدر بالعدد نفسه: يجب أن تكون قريبة منه، لا أكبر منه بعشر مرّات."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-ILMIYA-QUWA"
+        }
+      ],
+      "feedback": {
+        "correct": "رتبة قدر $A$ هي $5\\times10^{6}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الكتابة العلمية: $A = 4{,}71\\times10^{6}$ .",
+          "تدوير $4{,}71$ إلى الوحدة يعطي 5 .",
+          "رتبة قدر $A$ هي $5\\times10^{6}$ ، فـ $n = 6$ ."
+        ],
+        "result": "n = 6"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "رتبة قدر العدد $B$ هي $a'\\times10^{n}$ حيث $a'$ عدد صحيح من 1 إلى 9 : ما قيمة $a'$ ؟",
+      "answerType": "rational",
+      "answerFormat": "العدد الصحيح $a'$ (من 1 إلى 9)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العدد كتابة علمية $a\\times10^{n}$ أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتبة القدر هي $a'\\times10^{n}$ حيث $a'$ هو العدد $a$ مدوّرًا إلى الوحدة (نصف فما فوق يُرفع)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحذف ما بعد الفاصلة: قرّب $a$ إلى أقرب عدد صحيح."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-ILMIYA-BATR"
+        }
+      ],
+      "feedback": {
+        "correct": "رتبة قدر $B$ هي $4\\times10^{-5}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الكتابة العلمية: $B = 3{,}62\\times10^{-5}$ .",
+          "تدوير $3{,}62$ إلى الوحدة يعطي 4 .",
+          "رتبة قدر $B$ هي $4\\times10^{-5}$ ، فـ $a' = 4$ ."
+        ],
+        "result": "a' = 4"
+      }
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "رتبة قدر العدد $C$ هي $a'\\times10^{n}$ حيث $a'$ عدد صحيح من 1 إلى 9 : ما قيمة $a'$ ؟",
+      "answerType": "rational",
+      "answerFormat": "العدد الصحيح $a'$ (من 1 إلى 9)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العدد كتابة علمية $a\\times10^{n}$ أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتبة القدر هي $a'\\times10^{n}$ حيث $a'$ هو العدد $a$ مدوّرًا إلى الوحدة (نصف فما فوق يُرفع)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحذف ما بعد الفاصلة: قرّب $a$ إلى أقرب عدد صحيح."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "7",
+      "feedback": {
+        "correct": "رتبة قدر $C$ هي $7\\times10^{9}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الكتابة العلمية: $C = 7{,}34\\times10^{9}$ .",
+          "تدوير $7{,}34$ إلى الوحدة يعطي 7 .",
+          "رتبة قدر $C$ هي $7\\times10^{9}$ ، فـ $a' = 7$ ."
+        ],
+        "result": "a' = 7"
+      }
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "sub": "ا",
+      "statement": "رتبة قدر العدد $D$ هي $a'\\times10^{n}$ حيث $a'$ عدد صحيح من 1 إلى 9 : ما قيمة $a'$ ؟",
+      "answerType": "rational",
+      "answerFormat": "العدد الصحيح $a'$ (من 1 إلى 9)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العدد كتابة علمية $a\\times10^{n}$ أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتبة القدر هي $a'\\times10^{n}$ حيث $a'$ هو العدد $a$ مدوّرًا إلى الوحدة (نصف فما فوق يُرفع)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحذف ما بعد الفاصلة: قرّب $a$ إلى أقرب عدد صحيح."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-ILMIYA-BATR"
+        },
+        {
+          "value": "10",
+          "id": "MISC-ILMIYA-K"
+        }
+      ],
+      "feedback": {
+        "correct": "رتبة قدر $D$ هي $1\\times10^{-3}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الكتابة العلمية: $D = 9{,}6\\times10^{-4}$ .",
+          "تدوير $9{,}6$ إلى الوحدة يعطي 10 ، و $10\\times10^{-4} = 1\\times10^{-3}$ .",
+          "رتبة قدر $D$ هي $1\\times10^{-3}$ ، فـ $a' = 1$ ."
+        ],
+        "result": "a' = 1"
+      }
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "sub": "ب",
+      "statement": "رتبة قدر العدد $D$ هي $a'\\times10^{n}$ حيث $a'$ عدد صحيح من 1 إلى 9 : ما قيمة الأسّ $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العدد كتابة علمية $a\\times10^{n}$ ثمّ دوّر $a$ إلى الوحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان تدوير $a$ يعطي 10 فإنّ $10\\times10^{n}=1\\times10^{n+1}$ فيتغيّر الأسّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن رتبة القدر بالعدد نفسه: يجب أن تكون قريبة منه، لا أكبر منه بعشر مرّات."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "value": "-4",
+          "id": "MISC-ILMIYA-BATR"
+        }
+      ],
+      "feedback": {
+        "correct": "رتبة قدر $D$ هي $1\\times10^{-3}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الكتابة العلمية: $D = 9{,}6\\times10^{-4}$ .",
+          "تدوير $9{,}6$ إلى الوحدة يعطي 10 ، و $10\\times10^{-4} = 1\\times10^{-3}$ .",
+          "رتبة قدر $D$ هي $1\\times10^{-3}$ ، فـ $n = -3$ ."
+        ],
+        "result": "n = -3"
+      }
+    }
+  ]
+}

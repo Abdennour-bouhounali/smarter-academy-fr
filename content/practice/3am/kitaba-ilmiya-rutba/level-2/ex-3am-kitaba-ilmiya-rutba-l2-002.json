@@ -1,0 +1,442 @@
+{
+  "id": "ex-3am-kitaba-ilmiya-rutba-l2-002",
+  "lessonCode": "kitaba-ilmiya-rutba",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — كتابة علمية وحصر وجداء",
+    "estimatedMinutes": 12,
+    "tags": [
+      "كتابة علمية",
+      "حصر",
+      "رتبة قدر"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "2am-s2-65",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$F$ و $G$ عددان حيث:",
+    "formulas": [
+      "F = \\dfrac{24\\times10^{8}\\times15}{30\\times10^{-4}}",
+      "G = 3\\,150\\times10^{-18}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "اكتب $F$ على الشكل $k\\times10^{12}$ : ما قيمة $k$ ؟",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع (أو اطرح) الأسّين وحوّل العدد المضروب في القوة إلى عدد واحد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العبارة على الشكل $k\\times10^{p}$ حيث $p$ معطى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب $k$ في $10^{p}$ ."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "120",
+          "id": "MISC-ILMIYA-K"
+        }
+      ],
+      "feedback": {
+        "correct": "$F = 12\\times10^{12}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "البسط: $24\\times15\\times10^{8} = 360\\times10^{8}$ ، والمقام $30\\times10^{-4}$ .",
+          "$\\dfrac{360}{30}\\times10^{8-(-4)} = 12\\times10^{12}$ ، إذن $k = 12$ ."
+        ],
+        "result": "k = 12"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "الكتابة العلمية للعدد $F$ هي $a\\times10^{n}$ حيث $1\\le a<10$ : ما قيمة $a$ ؟",
+      "answerType": "rational",
+      "answerFormat": "العدد $a$ (عدد عشري)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد أوّل رقم غير معدوم في العدد وانظر أين تقع الفاصلة بالنسبة إليه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في الكتابة العلمية $a\\times10^{n}$ يكون $a$ من 1 إلى أقلّ تمامًا من 10: ضع الفاصلة بعد أوّل رقم غير معدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: ضرب $a$ في $10^{n}$ يجب أن يعيد العدد المعطى."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "1.2",
+      "feedback": {
+        "correct": "$F = 1{,}2\\times10^{13}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $F$ على الشكل $a\\times10^{n}$ مع $1\\le a<10$ .",
+          "$F = 1{,}2\\times10^{13}$ ، إذن $a = 1{,}2$ ."
+        ],
+        "result": "a = 1.2"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "الكتابة العلمية للعدد $F$ هي $a\\times10^{n}$ حيث $1\\le a<10$ : ما قيمة الأسّ $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العدد بـ 1 وبـ 10: هل هو كبير جدًّا أم صغير جدًّا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد المراتب التي تنقل بها الفاصلة هو $|n|$ ؛ الأسّ موجب إن كان العدد كبيرًا وسالب إن كان العدد أصغر من 1."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: $10^{n}$ هي أكبر قوة للعدد 10 لا تتجاوز العدد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-ILMIYA-K"
+        }
+      ],
+      "feedback": {
+        "correct": "$F = 1{,}2\\times10^{13}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $F$ على الشكل $a\\times10^{n}$ مع $1\\le a<10$ .",
+          "$F = 1{,}2\\times10^{13}$ ، إذن $n = 13$ ."
+        ],
+        "result": "n = 13"
+      }
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "statement": "الكتابة العلمية للعدد $G$ هي $a\\times10^{n}$ حيث $1\\le a<10$ : ما قيمة $a$ ؟",
+      "answerType": "rational",
+      "answerFormat": "العدد $a$ (عدد عشري)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد أوّل رقم غير معدوم في العدد وانظر أين تقع الفاصلة بالنسبة إليه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في الكتابة العلمية $a\\times10^{n}$ يكون $a$ من 1 إلى أقلّ تمامًا من 10: ضع الفاصلة بعد أوّل رقم غير معدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: ضرب $a$ في $10^{n}$ يجب أن يعيد العدد المعطى."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "3.15",
+      "feedback": {
+        "correct": "$G = 3{,}15\\times10^{-15}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $G$ على الشكل $a\\times10^{n}$ مع $1\\le a<10$ .",
+          "$G = 3{,}15\\times10^{-15}$ ، إذن $a = 3{,}15$ ."
+        ],
+        "result": "a = 3.15"
+      }
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "الكتابة العلمية للعدد $G$ هي $a\\times10^{n}$ حيث $1\\le a<10$ : ما قيمة الأسّ $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العدد بـ 1 وبـ 10: هل هو كبير جدًّا أم صغير جدًّا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد المراتب التي تنقل بها الفاصلة هو $|n|$ ؛ الأسّ موجب إن كان العدد كبيرًا وسالب إن كان العدد أصغر من 1."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: $10^{n}$ هي أكبر قوة للعدد 10 لا تتجاوز العدد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-15",
+      "misconceptionSignatures": [
+        {
+          "value": "-18",
+          "id": "MISC-ILMIYA-K"
+        },
+        {
+          "value": "-21",
+          "id": "MISC-ILMIYA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "$G = 3{,}15\\times10^{-15}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $G$ على الشكل $a\\times10^{n}$ مع $1\\le a<10$ .",
+          "$G = 3{,}15\\times10^{-15}$ ، إذن $n = -15$ ."
+        ],
+        "result": "n = -15"
+      }
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "نحصر العدد $F\\times G$ بين قوتين متتاليتين للعدد 10 : $10^{n}\\le F\\times G<10^{n+1}$ . ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العدد كتابة علمية $a\\times10^{n}$ أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما دام $1\\le a<10$ فإنّ $10^{n}\\le a\\times10^{n}<10^{n+1}$ : الأسّ $n$ هو نفسه أسّ الكتابة العلمية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ العدد أكبر من أو يساوي $10^{n}$ وأصغر تمامًا من $10^{n+1}$ ."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "-1",
+          "id": "MISC-ILMIYA-HASR"
+        },
+        {
+          "value": "-3",
+          "id": "MISC-ILMIYA-HASR"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{-2}\\le F\\times G<10^{-1}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$F\\times G = 3{,}78\\times10^{-2}$ مع $1\\le 3{,}78<10$ .",
+          "إذن $10^{-2}\\le F\\times G<10^{-1}$ ، فـ $n = -2$ ."
+        ],
+        "result": "n = -2"
+      }
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "sub": "ا",
+      "statement": "رتبة قدر العدد $\\dfrac{G}{F}$ هي $a'\\times10^{n}$ حيث $a'$ عدد صحيح من 1 إلى 9 : ما قيمة $a'$ ؟",
+      "answerType": "rational",
+      "answerFormat": "العدد الصحيح $a'$ (من 1 إلى 9)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العدد كتابة علمية $a\\times10^{n}$ أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتبة القدر هي $a'\\times10^{n}$ حيث $a'$ هو العدد $a$ مدوّرًا إلى الوحدة (نصف فما فوق يُرفع)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحذف ما بعد الفاصلة: قرّب $a$ إلى أقرب عدد صحيح."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-ILMIYA-BATR"
+        }
+      ],
+      "feedback": {
+        "correct": "رتبة قدر $\\dfrac{G}{F}$ هي $3\\times10^{-28}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الكتابة العلمية: $\\dfrac{G}{F} = 2{,}625\\times10^{-28}$ .",
+          "تدوير $2{,}625$ إلى الوحدة يعطي 3 .",
+          "رتبة قدر $\\dfrac{G}{F}$ هي $3\\times10^{-28}$ ، فـ $a' = 3$ ."
+        ],
+        "result": "a' = 3"
+      }
+    },
+    {
+      "id": "q8",
+      "step": "04",
+      "sub": "ب",
+      "statement": "رتبة قدر العدد $\\dfrac{G}{F}$ هي $a'\\times10^{n}$ حيث $a'$ عدد صحيح من 1 إلى 9 : ما قيمة الأسّ $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العدد كتابة علمية $a\\times10^{n}$ ثمّ دوّر $a$ إلى الوحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان تدوير $a$ يعطي 10 فإنّ $10\\times10^{n}=1\\times10^{n+1}$ فيتغيّر الأسّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن رتبة القدر بالعدد نفسه: يجب أن تكون قريبة منه، لا أكبر منه بعشر مرّات."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-28",
+      "misconceptionSignatures": [
+        {
+          "value": "-27",
+          "id": "MISC-ILMIYA-QUWA"
+        }
+      ],
+      "feedback": {
+        "correct": "رتبة قدر $\\dfrac{G}{F}$ هي $3\\times10^{-28}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الكتابة العلمية: $\\dfrac{G}{F} = 2{,}625\\times10^{-28}$ .",
+          "تدوير $2{,}625$ إلى الوحدة يعطي 3 .",
+          "رتبة قدر $\\dfrac{G}{F}$ هي $3\\times10^{-28}$ ، فـ $n = -28$ ."
+        ],
+        "result": "n = -28"
+      }
+    }
+  ]
+}

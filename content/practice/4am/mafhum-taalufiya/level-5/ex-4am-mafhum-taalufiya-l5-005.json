@@ -1,0 +1,376 @@
+{
+  "id": "ex-4am-mafhum-taalufiya-l5-005",
+  "lessonCode": "mafhum-taalufiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2009 — شمعتان أثناء انقطاع الكهرباء",
+    "estimatedMinutes": 25,
+    "tags": [
+      "وضعية إدماجية",
+      "معامل سالب",
+      "العدد الذي صورته معلومة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mafhum-taalufiya_P3",
+      "modelledOn": "BEM 2009 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "أثناء انقطاع للتيار الكهربائي في بيت بتيسمسيلت، أشعل محمد، حريصًا على مراجعة دروسه، شمعة طولها 24cm تنقص 1,5cm كل ساعة، وأشعل أخوه في اللحظة نفسها شمعة ثانية طولها 18cm تنقص 0,9cm كل ساعة.\nنسمّي $t$ عدد الساعات منذ إشعال الشمعتين، و $L_1(t)$ ، $L_2(t)$ طولي الشمعتين الأولى والثانية بـ cm ، حيث:",
+    "formulas": [
+      "L_1(t) = -1{,}5t + 24",
+      "L_2(t) = -0{,}9t + 18"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب طول كل شمعة بعد 4 ساعات من إشعالها.",
+      "statement": "طول الشمعة الأولى:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "18",
+      "misconceptionSignatures": [
+        {
+          "value": "-6",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $L_1(4)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$L_1(4) = -1{,}5 \\times 4 + 24 = 18$ .",
+        "incorrect": "اضرب 4 في $-1{,}5$ ، ثم أضف الطول الأصلي."
+      },
+      "solution": {
+        "lines": [
+          "$L_1(4) = -1{,}5 \\times 4 + 24$",
+          "$L_1(4) = -6 + 24$",
+          "$L_1(4) = 18$ أي $18cm$ ."
+        ],
+        "result": "L_1(4) = 18\\,cm"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "طول الشمعة الثانية:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm (عشري بالفاصلة)",
+      "expectedAnswer": "14,4",
+      "misconceptionSignatures": [
+        {
+          "value": "-3,6",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $L_2(4)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$L_2(4) = -0{,}9 \\times 4 + 18 = 14{,}4$ .",
+        "incorrect": "اضرب 4 في $-0{,}9$ ، ثم أضف الطول الأصلي."
+      },
+      "solution": {
+        "lines": [
+          "$L_2(4) = -0{,}9 \\times 4 + 18$",
+          "$L_2(4) = -3{,}6 + 18$",
+          "$L_2(4) = 14{,}4$ أي $14{,}4cm$ ."
+        ],
+        "result": "L_2(4) = 14{,}4\\,cm"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "الدالة $L_1$ دالة تآلفية. عيّن معامليها $a$ و $b$ ، ثم فسّر كلا منهما في هذه الوضعية.",
+      "statement": "المعامل $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-1,5",
+      "misconceptionSignatures": [
+        {
+          "value": "24",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعامل $a$ هو العدد المضروب في $t$ ، بإشارته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الشمعة تنقص: ما إشارة المعامل؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$a = -1{,}5$ : هو معامل $t$ .",
+        "incorrect": "المعامل $a$ هو العدد المضروب في $t$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$L_1(t) = -1{,}5t + 24$",
+          "$a = -1{,}5$ : الشمعة تنقص 1,5cm كل ساعة.",
+          "$b = 24$ : طول الشمعة عند إشعالها ( $L_1(0) = 24$ ).",
+          "$L_1(t) = -1{,}5t + 24$ من الشكل $at + b$ حيث: $a = -1{,}5$ و $b = 24$ ."
+        ],
+        "result": "a = -1{,}5"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "المعامل $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "24",
+      "misconceptionSignatures": [
+        {
+          "value": "-1,5",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحدّ الثابت هو طول الشمعة عند إشعالها ( $t = 0$ )."
+        }
+      ],
+      "feedback": {
+        "correct": "$b = 24$ ، إذن $L_1(t) = -1{,}5t + 24$ .",
+        "incorrect": "$b$ هو الحدّ الذي لا يحتوي على $t$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$L_1(t) = -1{,}5t + 24$",
+          "$a = -1{,}5$ : الشمعة تنقص 1,5cm كل ساعة.",
+          "$b = 24$ : طول الشمعة عند إشعالها ( $L_1(0) = 24$ ).",
+          "$L_1(t) = -1{,}5t + 24$ من الشكل $at + b$ حيث: $a = -1{,}5$ و $b = 24$ ."
+        ],
+        "result": "b = 24"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ا",
+      "statement": "بعد كم ساعة تنطفئ الشمعة الأولى (يصبح طولها 0)؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الساعات",
+      "expectedAnswer": "16",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-TAALUFI-SABIQ-QISMA"
+        },
+        {
+          "value": "-24",
+          "id": "MISC-TAALUFI-SABIQ-TARTIB"
+        },
+        {
+          "value": "24",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة $L_1(t) = 0$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح 24 من الطرفين، ثم اقسم على $-1{,}5$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$-1{,}5t + 24 = 0$ تعطي $t = 16$ .",
+        "incorrect": "اطرح 24 من الطرفين أولا، ثم اقسم على $-1{,}5$ (انتبه إلى الإشارة)."
+      },
+      "solution": {
+        "lines": [
+          "$L_1(t) = 0$ معناه $-1{,}5t + 24 = 0$",
+          "$-1{,}5t = -24$",
+          "$t = -24 \\div (-1{,}5)$",
+          "$t = 16$ أي $16h$ ."
+        ],
+        "result": "t = 16\\,h"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ب",
+      "statement": "بعد كم ساعة يصبح طول الشمعة الثانية 13,5cm ؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الساعات",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "-15",
+          "id": "MISC-TAALUFI-SABIQ-QISMA"
+        },
+        {
+          "value": "-33",
+          "id": "MISC-TAALUFI-SABIQ-TARTIB"
+        },
+        {
+          "value": "5,85",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة $L_2(t) = 13{,}5$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح 18 من الطرفين، ثم اقسم على $-0{,}9$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$-0{,}9t + 18 = 13{,}5$ تعطي $t = 5$ .",
+        "incorrect": "اطرح 18 من الطرفين أولا، ثم اقسم على $-0{,}9$ ."
+      },
+      "solution": {
+        "lines": [
+          "$L_2(t) = 13{,}5$ معناه $-0{,}9t + 18 = 13{,}5$",
+          "$-0{,}9t = 13{,}5 - 18$",
+          "$-0{,}9t = -4{,}5$",
+          "$t = -4{,}5 \\div (-0{,}9)$",
+          "$t = 5$ أي $5h$ ."
+        ],
+        "result": "t = 5\\,h"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "statement": "☜ بعد كم ساعة يصبح للشمعتين الطول نفسه؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الساعات",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المعادلة $L_1(t) = L_2(t)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الحدود التي فيها $t$ في طرف واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$-1{,}5t + 24 = -0{,}9t + 18$ يعطي $0{,}6t = 6$ .",
+        "incorrect": "حلّ المعادلة $-1{,}5t + 24 = -0{,}9t + 18$ ."
+      },
+      "solution": {
+        "lines": [
+          "$L_1(t) = L_2(t)$ معناه $-1{,}5t + 24 = -0{,}9t + 18$",
+          "$24 - 18 = 1{,}5t - 0{,}9t$",
+          "$6 = 0{,}6t$",
+          "$t = 10$",
+          "بعد 10 ساعات يكون للشمعتين الطول نفسه: $L_1(10) = L_2(10) = 9$ أي $9cm$ ."
+        ],
+        "result": "t = 10\\,h"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

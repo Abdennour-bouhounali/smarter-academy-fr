@@ -1,0 +1,233 @@
+{
+  "id": "ex-3am-quwat-adad-nisbi-l4-010",
+  "lessonCode": "quwat-adad-nisbi",
+  "level": 4,
+  "metadata": {
+    "title": "جداءات قوى 2 و 5",
+    "estimatedMinutes": 9,
+    "tags": [
+      "قوة جداء",
+      "قوى العدد 10"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-49",
+      "page": 50,
+      "section": "أتعمّق",
+      "number": 49
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "احسب كل عدد، ثم اكتبه على شكل جداء عدد طبيعي في قوة للعدد 10.",
+    "formulas": [
+      "P = 2^{6} \\times 5^{6}",
+      "Q = 2^{7} \\times 5^{5}",
+      "R = 0{,}5 \\times 2^{5} \\times 5^{5}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "$P = 10^n$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-QUWA-MIXED-BASES"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للقوتين الأساس نفسه أم الأس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء قوتين لهما الأس نفسه: $a^n \\times b^n = (ab)^n$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا نجمع أسس قوى أساساتها مختلفة."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^6 \\times 5^6 = (2 \\times 5)^6 = 10^6$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "للقوتين الأس نفسه: $P = (2 \\times 5)^{6} = 10^{6}$"
+        ],
+        "result": "P = 10^{6}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $Q$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "400000",
+      "misconceptionSignatures": [
+        {
+          "value": "10000000",
+          "id": "MISC-QUWA-MIXED-BASES"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الأسّان مختلفان: اكتب $2^{7}$ على شكل جداء قوتين للعدد 2."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجعل للعدد 2 وللعدد 5 الأس نفسه 5."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$a^n \\times b^n = (ab)^n$"
+        }
+      ],
+      "feedback": {
+        "correct": "$Q = 2^2 \\times (2 \\times 5)^5 = 4 \\times 100000 = 400000$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$2^{7} = 2^{2} \\times 2^{5}$",
+          "$Q = 2^{2} \\times 2^{5} \\times 5^{5} = 4 \\times 10^{5}$",
+          "$Q = 400000$"
+        ],
+        "result": "Q = 400000"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "$Q = k \\times 10^{5}$ : ما قيمة العدد الطبيعي $k$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هذه المرحلة على قوى العدد 10 (درس آخر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القواعد نفسها: نجمع الأسس في الجداء، ونطرحها في القسمة، ونضربها في قوة القوة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من إشارة كل أس."
+        }
+      ],
+      "feedback": {
+        "correct": "$Q = 4 \\times 10^5$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$Q = 2^{2} \\times 10^{5} = 4 \\times 10^{5}$"
+        ],
+        "result": "k = 4"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "احسب $R$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "50000",
+      "misconceptionSignatures": [
+        {
+          "value": "100000",
+          "id": "MISC-QUWA-PRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للقوتين الأساس نفسه أم الأس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء قوتين لهما الأس نفسه: $a^n \\times b^n = (ab)^n$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا نجمع أسس قوى أساساتها مختلفة."
+        }
+      ],
+      "feedback": {
+        "correct": "$R = 0{,}5 \\times 10^5 = 50000$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$2^{5} \\times 5^{5} = 10^{5}$",
+          "$R = 0{,}5 \\times 100000 = 50000$"
+        ],
+        "result": "R = 50000"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

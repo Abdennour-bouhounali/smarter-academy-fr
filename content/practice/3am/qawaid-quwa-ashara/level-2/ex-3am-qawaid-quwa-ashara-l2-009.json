@@ -1,0 +1,191 @@
+{
+  "id": "ex-3am-qawaid-quwa-ashara-l2-009",
+  "lessonCode": "qawaid-quwa-ashara",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — وحدات المساحة الصغيرة",
+    "estimatedMinutes": 7,
+    "tags": [
+      "مسألة",
+      "وحدات",
+      "قوة لقوة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعلم أنّ $1\\ \\mathrm{mm} = 10^{-3}\\ \\mathrm{m}$ وأنّ $1\\ \\mathrm{\\mu m} = 10^{-6}\\ \\mathrm{m}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "مربّع ضلعه $1\\ \\mathrm{mm}$ مساحته $1\\ \\mathrm{mm}^{2} = (10^{-3})^{2}\\ \\mathrm{m}^{2}$ . اكتب $(10^{-3})^{2} = 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوة الداخلية وأسّها، ثمّ الأسّ الخارجي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في قوة لقوة للعدد 10 نجري عملية واحدة على الأسّين: هل هي الجمع أم غيره؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر أنّ $(10^{2})^{3}$ جداء ثلاثة عوامل كلّ عامل منها $10^{2}$ ."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-6",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-QAWAID-ITTIJAH"
+        },
+        {
+          "value": "-1",
+          "id": "MISC-QAWAID-QUWA-JAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$(10^{-3})^{2} = 10^{-6}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضرب الأسّين: $(-3) \\times 2 = -6$ .",
+          "$1\\ \\mathrm{mm}^{2} = 10^{-6}\\ \\mathrm{m}^{2}$ : وحدة أصغر فأسّها سالب."
+        ],
+        "result": "n = -6"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل المساواة $1\\ \\mathrm{mm}^{2} = 10^{6}\\ \\mathrm{m}^{2}$ صحيحة؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل كلّ اقتراح إلى قوة واحدة للعدد 10 مستعملًا القاعدة المناسبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر اقتراحًا واحدًا في كلّ مرّة، وانتبه إلى أنّ القواعد الثلاث لا تخصّ الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا شككت في قاعدة فجرّبها على قوة صغيرة تعرف قيمتها العشرية."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QAWAID-ITTIJAH"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "المساواة خاطئة: المليمتر المربّع أصغر من المتر المربّع، فأسّه سالب: $10^{-6}$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب قيمته أو بتطبيق القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$1\\ \\mathrm{mm}^{2} = (10^{-3})^{2}\\ \\mathrm{m}^{2} = 10^{-6}\\ \\mathrm{m}^{2}$ .",
+          "المليمتر وحدة أصغر من المتر، فلا يكون الأسّ موجبًا: المساواة خاطئة."
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "كم ميكرومترًا في $1\\ \\mathrm{mm}$ ؟ نكتب $\\dfrac{10^{-3}}{10^{-6}} = 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد البسط والمقام وأسّ كلّ منهما (انتبه إلى إشارة الأسّ)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في حاصل قسمة قوتين للعدد 10 نجري عملية واحدة على الأسّين: ما هي، وبأيّ ترتيب؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر أنّ $\\dfrac{10^{2}}{10^{1}}$ هو $\\dfrac{10\\times10}{10}$ ، وأنّ طرح أسّ سالب يعني جمع عدد موجب."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "-9",
+          "id": "MISC-QAWAID-ISHARA"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{10^{-3}}{10^{-6}} = 10^{3}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نطرح الأسّين: $-3 - (-6) = -3 + 6 = 3$ .",
+          "$1\\ \\mathrm{mm} = 10^{3}\\ \\mathrm{\\mu m}$ ."
+        ],
+        "result": "n = 3"
+      }
+    }
+  ]
+}

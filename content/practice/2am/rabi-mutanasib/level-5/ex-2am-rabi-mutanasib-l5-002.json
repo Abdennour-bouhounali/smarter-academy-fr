@@ -1,0 +1,370 @@
+{
+  "id": "ex-2am-rabi-mutanasib-l5-002",
+  "lessonCode": "rabi-mutanasib",
+  "level": 5,
+  "metadata": {
+    "title": "أنواع الشكولاطة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "تركيب",
+      "جدول تناسبية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-34",
+      "page": 82,
+      "section": "أتعمّق",
+      "number": 34
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يصنع حلواني أنواعًا من الشكولاطة. الجدول يعطي مكوّنات $100$ g من كل نوع، وكتلة كل مكوّن تتناسب مع الكتلة الكلية المحضّرة.\nالجزء الأول: تحضير $250$ g.\nالجزء الثاني: الكاكاو المتوفّر.",
+    "table": {
+      "head": [
+        "النوع",
+        "حليب (g)",
+        "كاكاو (g)",
+        "بندق (g)"
+      ],
+      "rows": [
+        [
+          "سوداء",
+          "15",
+          "85",
+          "0"
+        ],
+        [
+          "بالحليب",
+          "45",
+          "55",
+          "0"
+        ],
+        [
+          "بالبندق",
+          "30",
+          "30",
+          "40"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "ما كتلة الحليب اللازمة لتحضير $250$ g من الشكولاطة السوداء؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "37,5",
+      "misconceptionSignatures": [
+        {
+          "value": "165",
+          "id": "MISC-RABI-ADD"
+        },
+        {
+          "value": "3750",
+          "id": "MISC-RABI-MULROW"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتلة $37{,}5$ g .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$250 = 100 \\times 2{,}5$",
+          "$15 \\times 2{,}5 = 37{,}5$"
+        ],
+        "result": "37{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما كتلة الكاكاو اللازمة لتحضير $250$ g من الشكولاطة السوداء؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "212,5",
+      "misconceptionSignatures": [
+        {
+          "value": "235",
+          "id": "MISC-RABI-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتلة $212{,}5$ g .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$85 \\times 2{,}5 = 212{,}5$"
+        ],
+        "result": "212{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما كتلة البندق اللازمة لتحضير $250$ g من الشكولاطة بالبندق؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "100",
+      "misconceptionSignatures": [
+        {
+          "value": "190",
+          "id": "MISC-RABI-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتلة $100$ g .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$40 \\times 2{,}5 = 100$"
+        ],
+        "result": "100"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "يملك الحلواني $330$ g من الكاكاو. ما كتلة الشكولاطة بالحليب التي يصنعها بها بالتمام؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "600",
+      "misconceptionSignatures": [
+        {
+          "value": "181,5",
+          "id": "MISC-RABI-INV"
+        },
+        {
+          "value": "375",
+          "id": "MISC-RABI-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب أولًا: قيمة الوحدة الواحدة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قيمة الوحدة الواحدة تُحسب بقسمة العدد الموجود في السطر الثاني على مقابله في السطر الأول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد ذلك اضرب قيمة الوحدة في الكمية المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتلة $600$ g .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$100 \\times 330 = 55 \\times m$",
+          "$m = 33000 \\div 55 = 600$"
+        ],
+        "result": "600"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما كتلة الحليب اللازمة لهذه الكمية؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "270",
+      "misconceptionSignatures": [
+        {
+          "value": "545",
+          "id": "MISC-RABI-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتلة $270$ g .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$45 \\times 6 = 270$"
+        ],
+        "result": "270"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ج",
+      "statement": "تحقّق أنّ كتلتي الكاكاو والحليب تعطيان معًا كتلة الشكولاطة المحضّرة.",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارجع إلى الحسابات التي أنجزتها في الأسئلة السابقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اذكر الطريقة المستعملة والعددين اللذين اعتمدت عليهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل خطوة مع عبارة تبرّرها."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$330 + 270 = 600$",
+          "وهي الكتلة المحضّرة نفسها، فالنتائج متسقة."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

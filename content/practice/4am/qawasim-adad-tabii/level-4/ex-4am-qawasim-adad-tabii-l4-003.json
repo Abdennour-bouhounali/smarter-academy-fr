@@ -1,0 +1,211 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l4-003",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2016 — العدد 2x4",
+    "estimatedMinutes": 12,
+    "tags": [
+      "قواعد قابلية القسمة",
+      "قواسم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qawasim-adad-tabii_P4",
+      "modelledOn": "BEM 2016 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "ليكن $N$ عددا طبيعيا مكتوبا على الشكل $\\overline{2x4}$ حيث $x$ رقم."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن قيم $x$ التي من أجلها يقبل $N$ القسمة على 3.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        0,
+        3,
+        6,
+        9
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            3
+          ],
+          "id": "MISC-QAWAID-HALA-WAHIDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يقبل العدد القسمة على 3 إذا كان مجموع أرقامه مضاعفا للعدد 3."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مجموع الأرقام $2 + x + 4 = 6 + x$ ، و $x$ رقم من 0 إلى 9."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 + x$ مضاعف للعدد 3 من أجل $x = 0$ أو 3 أو 6 أو 9.",
+        "incorrect": "اكتب مجموع الأرقام بدلالة $x$، ثم جرّب كل الأرقام من 0 إلى 9."
+      },
+      "solution": {
+        "lines": [
+          "مجموع أرقام $N$ هو $2 + x + 4 = 6 + x$.",
+          "$6 + x$ مضاعف للعدد 3 يعني $6 + x \\in \\{6 ; 9 ; 12 ; 15\\}$ لأن $0 \\leq x \\leq 9$.",
+          "إذن $x = 0$ أو $x = 3$ أو $x = 6$ أو $x = 9$."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "من بين هذه القيم، عيّن تلك التي من أجلها يقبل $N$ القسمة على 4 أيضا.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        0,
+        6
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يقبل العدد القسمة على 4 إذا كان العدد المكوّن من رقميه الأخيرين يقبل القسمة على 4."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر الأعداد $\\overline{x4}$ من أجل القيم التي وجدتها في السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "04 و 64 يقبلان القسمة على 4، أما 34 و 94 فلا.",
+        "incorrect": "طبّق قاعدة القسمة على 4 على العدد المكوّن من الرقمين الأخيرين $\\overline{x4}$."
+      },
+      "solution": {
+        "lines": [
+          "$x = 0$: $4 = 4 \\times 1$ ، يقبل القسمة على 4.",
+          "$x = 3$: $34 = 4 \\times 8 + 2$ ، لا يقبل.",
+          "$x = 6$: $64 = 4 \\times 16$ ، يقبل القسمة على 4.",
+          "$x = 9$: $94 = 4 \\times 23 + 2$ ، لا يقبل.",
+          "إذن $x = 0$ أو $x = 6$."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "من أجل $x = 6$ ، عيّن كل قواسم العدد $N$.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        8,
+        11,
+        12,
+        22,
+        24,
+        33,
+        44,
+        66,
+        88,
+        132,
+        264
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6,
+            8,
+            11,
+            12,
+            22,
+            24,
+            33,
+            44,
+            66,
+            88,
+            132
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 264 بمربعات الأعداد: إلى أي عدد يكفي أن تختبر قابلية القسمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل قسمة باقيها معدوم تعطي قاسمين: $d$ و $264 \\div d$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$264 = 1 \\times 264$ ، $264 = 2 \\times 132$ ، $264 = 3 \\times 88$ ، $264 = 4 \\times 66$ ، $264 = 6 \\times 44$ ، $264 = 8 \\times 33$ ، $264 = 11 \\times 24$ ، $264 = 12 \\times 22$.",
+        "incorrect": "اختبر الأعداد التي مربعها أصغر من العدد أو يساويه، وخذ من كل قسمة باقيها معدوم القاسمين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$16^2 = 256 \\leq 264 < 289 = 17^2$ ومنه نختبر قابلية قسمة 264 على الأعداد من 1 إلى 16.",
+          "نجد أن 264 يقبل القسمة على كل من الأعداد: 1 ، 2 ، 3 ، 4 ، 6 ، 8 ، 11 ، 12.",
+          "ومن المساويات: $264 = 1 \\times 264$ ، $264 = 2 \\times 132$ ، $264 = 3 \\times 88$ ، $264 = 4 \\times 66$ ، $264 = 6 \\times 44$ ، $264 = 8 \\times 33$ ، $264 = 11 \\times 24$ ، $264 = 12 \\times 22$",
+          "إذن قواسم العدد 264 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 8 ، 11 ، 12 ، 22 ، 24 ، 33 ، 44 ، 66 ، 88 ، 132 ، 264."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 360
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-kura-julla-l2-002",
+  "lessonCode": "kura-julla",
+  "level": 2,
+  "metadata": {
+    "title": "نشاط 1 — الدائرة والقرص",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الدائرة",
+      "القرص"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-1",
+      "page": 164,
+      "section": "أنشطة",
+      "number": 1
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 164): ميّز بين نقاط دائرة و نقاط قرص لهما نفس المركز O و نصف قطر كل منهما $4\\,\\mathrm{cm}$ . النقطة E تحقّق $OE = 3\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "النقطة E:",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "من القرص وليست من الدائرة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "من الدائرة ومن القرص",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-JULLA"
+        },
+        {
+          "id": "C",
+          "content": "ليست من القرص",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-MASAFA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدائرة هي الحافة وحدها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نقط الدائرة تحقّق $OM = 4$ ، ونقط القرص تحقّق $OM \\le 4$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن $OE$ بالعدد 4."
+        }
+      ],
+      "feedback": {
+        "correct": "$OE = 3 < 4$ : E داخل الدائرة، أي من القرص لا من الدائرة — كما الجلة والكرة في الفضاء.",
+        "incorrect": "النقطة ليست على الحافة، لكنها داخلها."
+      }
+    }
+  ]
+}

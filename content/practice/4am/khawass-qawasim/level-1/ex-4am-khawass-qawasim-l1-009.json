@@ -1,0 +1,115 @@
+{
+  "id": "ex-4am-khawass-qawasim-l1-009",
+  "lessonCode": "khawass-qawasim",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2023 — A = 13 × 254 − 13 × 79",
+    "estimatedMinutes": 4,
+    "tags": [
+      "خاصية 1"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_khawass-qawasim_P1",
+      "modelledOn": "BEM 2023 I-1 01"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد A حيث:",
+    "formulas": [
+      "A = 13 \\times 254 - 13 \\times 79"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب العدد A على الشكل $13 \\times k$ حيث $k$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k$ فقط (عدد طبيعي)",
+      "expectedAnswer": "175",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "13 عامل مشترك في الجداءين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل الخاصية التوزيعية: $13 \\times a - 13 \\times b = 13 \\times (a - b)$."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 13 \\times (254 - 79) = 13 \\times 175$.",
+        "incorrect": "أخرج 13 عاملًا مشتركًا ثم احسب ما بين القوسين."
+      },
+      "solution": {
+        "lines": [
+          "$A = 13 \\times 254 - 13 \\times 79$",
+          "$A = 13 \\times (254 - 79)$",
+          "$A = 13 \\times 175$",
+          "إذن 13 يقسم A."
+        ],
+        "result": "A = 13 \\times 175"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج أن العدد $A + 26$ يقبل القسمة على 13، واكتبه على الشكل $13 \\times K$ حيث $K$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $K$ فقط (عدد طبيعي)",
+      "expectedAnswer": "177",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$26 = 13 \\times 2$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "13 قاسم مشترك للعددين A و 26، فهو يقسم مجموعهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$A + 26 = 13 \\times 175 + 13 \\times 2 = 13 \\times 177$.",
+        "incorrect": "اكتب كلا من A و 26 على الشكل $13 \\times q$ ثم أخرج 13 عاملًا مشتركًا."
+      },
+      "solution": {
+        "lines": [
+          "$A + 26 = 13 \\times 175 + 13 \\times 2$",
+          "$A + 26 = 13 \\times (175 + 2)$",
+          "$A + 26 = 13 \\times 177$"
+        ],
+        "result": "A + 26 = 13 \\times 177"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+/* The loading screen of a game world (WorldLoading.jsx): one calm screen from the click to the world's title.
+   Everything that moves is transform / opacity — it keeps moving while the page is busy. `--gw-t` (a negative time) is
+   the phase the animations start at, so a new instance of the screen goes on where the last one was. */
+.gw-loading {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  overflow: hidden;
+  color: #e8f6ff;
+  font-family: 'Cairo', 'Tajawal', system-ui, sans-serif;
+  background: radial-gradient(900px 500px at 75% -10%, #1d4f8f 0%, transparent 60%),
+    radial-gradient(700px 500px at 10% 110%, #2b2a78 0%, transparent 60%), linear-gradient(165deg, #0a1a3a, #0d2552);
+}
+.gw-loading--over {
+  position: absolute;
+  z-index: 60;
+}
+.gw-loading--leaving {
+  pointer-events: none;
+  animation: gw-leave 0.45s ease forwards;
+}
+.gw-loading__sky {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(2px 2px at 12% 22%, #fff 50%, transparent 51%),
+    radial-gradient(2px 2px at 31% 71%, #bfe6ff 50%, transparent 51%),
+    radial-gradient(3px 3px at 58% 14%, #fff 50%, transparent 51%),
+    radial-gradient(2px 2px at 77% 63%, #bfe6ff 50%, transparent 51%),
+    radial-gradient(3px 3px at 90% 28%, #fff 50%, transparent 51%),
+    radial-gradient(2px 2px at 44% 88%, #fff 50%, transparent 51%),
+    radial-gradient(2px 2px at 6% 60%, #bfe6ff 50%, transparent 51%);
+  animation: gw-twinkle 4.8s ease-in-out var(--gw-t, 0s) infinite;
+}
+.gw-loading__box {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 0.85rem;
+  width: min(38rem, 100%);
+  text-align: center;
+}
+.gw-loading__art {
+  width: 13rem;
+  height: 13rem;
+  overflow: visible;
+}
+.gw-loading__halo {
+  fill: #7dfcff;
+  opacity: 0.12;
+  transform-origin: 100px 100px;
+  animation: gw-breathe 3.2s ease-in-out var(--gw-t, 0s) infinite;
+}
+.gw-loading__orbit {
+  fill: #ffe27a;
+  transform-origin: 100px 100px;
+  animation: gw-turn 9s linear var(--gw-t, 0s) infinite;
+}
+.gw-loading__gem {
+  transform-origin: 100px 100px;
+  animation: gw-float 3.2s ease-in-out var(--gw-t, 0s) infinite;
+}
+.gw-loading__gem-top {
+  fill: #b9fbff;
+}
+.gw-loading__gem-left {
+  fill: #4fd8f0;
+}
+.gw-loading__gem-right {
+  fill: #2aa9d6;
+}
+.gw-loading__gem-shine {
+  fill: #fff;
+  opacity: 0.55;
+}
+.gw-loading__lesson {
+  min-height: 2.25rem;
+  font-size: 1.5rem;
+  font-weight: 900;
+  line-height: 1.5;
+}
+.gw-loading__text {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.7;
+  color: #b9dcff;
+}
+.gw-loading__note {
+  min-height: 1.9rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.7;
+  color: #ffe9a8;
+}
+.gw-loading__bar {
+  position: relative;
+  width: 100%;
+  height: 0.75rem;
+  border-radius: 99px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.12);
+}
+.gw-loading__bar i {
+  display: block;
+  height: 100%;
+  border-radius: 99px;
+  background: #7dfcff;
+  transition: width 0.3s linear;
+}
+/* a light that keeps crossing the bar: between two real steps the screen is never still */
+.gw-loading__bar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: 0;
+  right: auto;
+  width: 35%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  animation: gw-sweep 1.8s linear var(--gw-t, 0s) infinite;
+}
+.gw-loading__retry {
+  min-height: 3rem;
+  padding: 0 1.6rem;
+  border: 0;
+  border-radius: 1rem;
+  background: #7dfcff;
+  color: #06122c;
+  font:
+    900 1.125rem 'Cairo',
+    sans-serif;
+  cursor: pointer;
+}
+.gw-loading__retry:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+@keyframes gw-float {
+  0%,
+  100% {
+    transform: translateY(5px);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+@keyframes gw-breathe {
+  0%,
+  100% {
+    transform: scale(0.92);
+    opacity: 0.1;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.2;
+  }
+}
+@keyframes gw-turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes gw-twinkle {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+@keyframes gw-sweep {
+  from {
+    transform: translateX(320%);
+  }
+  to {
+    transform: translateX(-120%);
+  }
+}
+@keyframes gw-leave {
+  to {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gw-loading__sky,
+  .gw-loading__halo,
+  .gw-loading__orbit,
+  .gw-loading__gem,
+  .gw-loading__bar::after {
+    animation: none;
+  }
+  .gw-loading__bar i {
+    transition: none;
+  }
+}

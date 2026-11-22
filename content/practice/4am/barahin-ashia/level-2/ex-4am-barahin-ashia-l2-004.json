@@ -1,0 +1,80 @@
+{
+  "id": "ex-4am-barahin-ashia-l2-004",
+  "lessonCode": "barahin-ashia",
+  "level": 2,
+  "generator": {
+    "tool": "gen-barahin.mjs",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — ترتيب رؤوس متوازي الأضلاع",
+    "estimatedMinutes": 3,
+    "tags": [
+      "متوازي أضلاع",
+      "برهان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_barahin-ashia_P2",
+      "modelledOn": "method-proof"
+    }
+  },
+  "statement": {
+    "content": "E و F و G و H أربع نقط حيث $\\overrightarrow{EF} = \\overrightarrow{HG}$ ، والنقط E و F و G ليست على استقامة واحدة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "نستنتج أن:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "EFGH متوازي أضلاع",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "EFHG متوازي أضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        },
+        {
+          "id": "C",
+          "content": "(EF) و (HG) متعامدان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MANHA-MUSTAQIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{EF} = \\overrightarrow{HG}$ : من E إلى F كما من H إلى G ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ارسم [EF] ثم [HG] موازيا له وفي نفس الاتجاه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقرأ الرؤوس بالترتيب حول الشكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{EF} = \\overrightarrow{HG}$ : الرباعي EFGH متوازي أضلاع.",
+        "incorrect": "ارسم الشكل: الضلع الرابع يصل F بـ G ، و H بـ E ."
+      }
+    }
+  ]
+}

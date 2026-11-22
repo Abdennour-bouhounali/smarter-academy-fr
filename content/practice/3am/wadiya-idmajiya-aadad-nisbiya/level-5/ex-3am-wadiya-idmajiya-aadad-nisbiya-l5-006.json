@@ -1,0 +1,193 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-aadad-nisbiya-l5-006",
+  "lessonCode": "wadiya-idmajiya-aadad-nisbiya",
+  "level": 5,
+  "metadata": {
+    "title": "انخفاض منتظم بالفهرنهايت",
+    "estimatedMinutes": 8,
+    "tags": [
+      "وضعية إدماجية",
+      "تحويل",
+      "جداء"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في مخزن بمدينة بشار تنخفض الحرارة بانتظام بمقدار $3{,}6$ °F في كل ساعة، وكانت $41$ °F عند الساعة $0$ . نرمز بـ $t$ إلى عدد الساعات منذ ذلك الوقت. للمرور من $T_F$ إلى $T_C$ نطرح $32$ ثم نقسم على $1{,}8$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما الحرارة بعد $5$ ساعات بالفهرنهايت؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "23",
+      "misconceptionSignatures": [
+        {
+          "value": "187",
+          "id": "MISC-QISMA-PRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ النص وحدّد الأعداد المعطاة وما يعبّر عنه كل منها: ارتفاع أم انخفاض، ربح أم خسارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر عن الانخفاض أو الخسارة أو الدَّين بعدد سالب، ثم اختر العملية التي تناسب السؤال."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العملية بأعداد نسبية ثم أنجزها بقاعدة الإشارات وبأولوية العمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $23$ °F .",
+        "incorrect": "راجع ترجمة النص إلى عملية بين أعداد نسبية: أيّ عدد سالب وأيّ عملية تناسب السؤال؟"
+      },
+      "solution": {
+        "lines": [
+          "$41 + (−3{,}6) \\times 5$",
+          "$= 41 + (−18)$",
+          "$= 23$"
+        ],
+        "result": "23"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "عبّر عن هذه الحرارة ($23$ °F) بالدرجة سيلسيوس.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-5",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "-0.2",
+          "id": "MISC-QISMA-ORDER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القاعدة المعطاة وما تربطه بين الدرجتين، وأيّ الدرجتين معلومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "للتحويل من سيلسيوس إلى فهرنهايت نضرب ثم نضيف؛ وللعكس نُجري العمليتين بترتيب معاكس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة التحويل في الاتجاه المعاكس: يجب أن تجد العدد الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $−5$ °C .",
+        "incorrect": "راجع قاعدة التحويل وترتيب العمليتين، ثم تحقّق بالعملية المعاكسة."
+      },
+      "solution": {
+        "lines": [
+          "$(23 − 32) \\div 1{,}8$",
+          "$= (−9) \\div 1{,}8$",
+          "$= −5$"
+        ],
+        "result": "−5"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "بعد كم ساعة تبلغ الحرارة $32$ °F ؟ احسب $(32 − 41) \\div (−3{,}6)$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "2.5",
+      "misconceptionSignatures": [
+        {
+          "value": "-2.5",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "0.4",
+          "id": "MISC-QISMA-ORDER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العددين اللذين نقسم أحدهما على الآخر وعيّن إشارة كل منهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عاملان مجهولان فالعامل الناقص هو حاصل قسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعملية العكسية: اضرب نتيجتك في العامل المعلوم."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $2{,}5$ ساعة .",
+        "incorrect": "راجع الربط بين الضرب والقسمة وقاعدة إشارات الحاصل، ثم تحقّق بالضرب."
+      },
+      "solution": {
+        "lines": [
+          "$(32 − 41) \\div (−3{,}6)$",
+          "$= (−9) \\div (−3{,}6)$",
+          "$= 2{,}5$"
+        ],
+        "result": "2{,}5"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

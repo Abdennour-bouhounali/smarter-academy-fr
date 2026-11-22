@@ -1,0 +1,240 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muthallathat-l4-007",
+  "lessonCode": "wadiya-idmajiya-muthallathat",
+  "level": 4,
+  "metadata": {
+    "title": "حلّ المثلث القائم LIE: ضلعان وزاوية",
+    "estimatedMinutes": 10,
+    "tags": [
+      "الظل",
+      "جيب التمام",
+      "الزاوية المتممة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-muthallathat_P1",
+      "modelledOn": "qcm"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل: $LIE$ مثلث قائم في $I$ حيث $IL = 8\\,\\mathrm{cm}$ و $\\widehat{L} = 35^{\\circ}$ .",
+    "figure": {
+      "points": {
+        "L": [
+          0,
+          8
+        ],
+        "I": [
+          0,
+          0
+        ],
+        "E": [
+          5.6017,
+          0
+        ]
+      },
+      "segments": [
+        {
+          "from": "L",
+          "to": "I",
+          "label": "8 cm"
+        },
+        [
+          "I",
+          "E"
+        ],
+        [
+          "L",
+          "E"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "L",
+          "I",
+          "E"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "L",
+          "from": "I",
+          "to": "E",
+          "label": "35°"
+        }
+      ],
+      "labels": {
+        "L": "nw",
+        "I": "sw",
+        "E": "se"
+      },
+      "ariaLabel": "مثلث LIE قائم في I: L فوق I و E على اليمين؛ IL = 8 cm وقيس الزاوية L يساوي 35 درجة",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب الطول $IE$ بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm مدوّرا إلى 0,1",
+      "expectedAnswer": "5.6",
+      "misconceptionSignatures": [
+        {
+          "value": "11.4",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        },
+        {
+          "value": "4.6",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بالنسبة إلى $\\widehat{L}$ : $[IL]$ مجاور و $[IE]$ مقابل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الظل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالآلة الحاسبة مبرمجة على الدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$IE = 8 \\times \\tan 35^{\\circ} \\approx 5{,}6\\,\\mathrm{cm}$ .",
+        "incorrect": "المقابل = المجاور × الظل."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan\\widehat{L} = \\dfrac{IE}{IL}$ ومنه $IE = 8 \\times \\tan 35^{\\circ}$",
+          "باستعمال الآلة الحاسبة: $IE \\approx 5{,}6017$"
+        ],
+        "result": "IE \\approx 5{,}6\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب الطول $EL$ بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm مدوّرا إلى 0,1",
+      "expectedAnswer": "9.8",
+      "misconceptionSignatures": [
+        {
+          "value": "6.6",
+          "id": "MISC-MUTH-DARB-BADAL-QISMA"
+        },
+        {
+          "value": "13.9",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$[EL]$ وتر و $[IL]$ مجاور للزاوية $\\widehat{L}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جيب التمام: المجهول في المقام."
+        }
+      ],
+      "feedback": {
+        "correct": "$EL = \\dfrac{8}{\\cos 35^{\\circ}} \\approx 9{,}8\\,\\mathrm{cm}$ .",
+        "incorrect": "الوتر في مقام جيب التمام: نقسم."
+      },
+      "solution": {
+        "lines": [
+          "$\\cos\\widehat{L} = \\dfrac{IL}{EL}$ ومنه $EL = \\dfrac{8}{\\cos 35^{\\circ}}$",
+          "باستعمال الآلة الحاسبة: $EL \\approx 9{,}7662$"
+        ],
+        "result": "EL \\approx 9{,}8\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب قيس الزاوية $\\widehat{E}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: القيس بالدرجة",
+      "expectedAnswer": "55",
+      "misconceptionSignatures": [
+        {
+          "value": "35",
+          "id": "MISC-MUTH-ZAWIYA-KHATI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مجموع زوايا المثلث $180^{\\circ}$ ، والزاوية $\\widehat{I}$ قائمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{E} = 90^{\\circ} - 35^{\\circ} = 55^{\\circ}$ .",
+        "incorrect": "الزاويتان الحادتان في مثلث قائم متتامّتان."
+      },
+      "solution": {
+        "lines": [
+          "$\\widehat{E} = 180^{\\circ} - 90^{\\circ} - 35^{\\circ}$"
+        ],
+        "result": "\\widehat{E} = 55^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

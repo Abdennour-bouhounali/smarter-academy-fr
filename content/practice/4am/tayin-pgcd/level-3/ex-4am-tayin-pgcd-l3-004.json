@@ -1,0 +1,174 @@
+{
+  "id": "ex-4am-tayin-pgcd-l3-004",
+  "lessonCode": "tayin-pgcd",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2010 — PGCD(150 ; 90) — لوح خشبي",
+    "estimatedMinutes": 12,
+    "tags": [
+      "PGCD",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tayin-pgcd_P1",
+      "modelledOn": "BEM 2010 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2010",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 150 و 90.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قائمة قواسم كل من العددين 150 و 90، مثنى مثنى (1 مع العدد نفسه، ثم 2 …) حتى لا يفوتك قاسم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استخرج القواسم المشتركة: الأعداد الموجودة في القائمتين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاسم المشترك الأكبر هو أكبر القواسم المشتركة، لا أيّ واحد منها."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 150 و 90 هي 1 ، 2 ، 3 ، 5 ، 6 ، 10 ، 15 ، 30، وأكبرها 30.",
+        "incorrect": "اكتب قائمتي القواسم كاملتين، ثم خذ أكبر عدد يظهر في القائمتين معًا."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 150 هي: 1 ، 2 ، 3 ، 5 ، 6 ، 10 ، 15 ، 25 ، 30 ، 50 ، 75 ، 150",
+          "قواسم العدد 90 هي: 1 ، 2 ، 3 ، 5 ، 6 ، 9 ، 10 ، 15 ، 18 ، 30 ، 45 ، 90",
+          "القواسم المشتركة للعددين 150 و 90 هي: 1 ، 2 ، 3 ، 5 ، 6 ، 10 ، 15 ، 30",
+          "أكبرها هو 30، إذن:"
+        ],
+        "result": "PGCD(150 ; 90) = 30"
+      },
+      "work": "optional",
+      "timeSeconds": 450
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "لوح خشبي مستطيل الشكل بعداه 1,5m و 0,9m جُزّئ إلى مربعات متساوية بأكبر ضلع دون ضياع.",
+      "statement": "ما هو طول ضلع كل مربع ؟",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (الطول بالـ cm)",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول ضلع المربع يجب أن يقسم البعدين معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "والمطلوب أكبر ضلع ممكن: هذا هو القاسم المشترك الأكبر للبعدين (بالـ cm)."
+        }
+      ],
+      "feedback": {
+        "correct": "طول الضلع هو PGCD(150 ; 90) = 30، أي 30cm.",
+        "incorrect": "حوّل البعدين إلى cm، ثم خذ القاسم المشترك الأكبر لهما."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}5m = 150cm$ و $0{,}9m = 90cm$",
+          "طول ضلع المربع يجب أن يقسم البعدين 150cm و 90cm معًا حتى لا يبقى ضياع، فهو قاسم مشترك للعددين 150 و 90.",
+          "وهو أكبر ما يمكن: إذن طول الضلع هو القاسم المشترك الأكبر للعددين 150 و 90.",
+          "PGCD(150 ; 90) = 30، أي أن طول ضلع كل مربع هو 30cm."
+        ],
+        "result": "30cm"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما هو عدد المربعات الناتجة ؟",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد المربعات)",
+      "expectedAnswer": "15",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب عدد المربعات على طول البعد الأول، ثم على طول البعد الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم كل بعد على طول ضلع المربع، ثم اضرب الناتجين."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 \\times 3 = 15$",
+        "incorrect": "عدد المربعات هو جداء عدد المربعات في الطول بعدد المربعات في العرض، وليس حاصل قسمة واحدًا."
+      },
+      "solution": {
+        "lines": [
+          "على طول البعد 150cm: $150 \\div 30 = 5$ مربعات.",
+          "على طول البعد 90cm: $90 \\div 30 = 3$ مربعات.",
+          "عدد المربعات: $5 \\times 3 = 15$"
+        ],
+        "result": "15"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

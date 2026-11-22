@@ -1,0 +1,175 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l1-001",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — قسمة عدد على عدد عشري: أكمل",
+    "estimatedMinutes": 5,
+    "tags": [
+      "كتابة كسرية",
+      "قسمة عشرية"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-75",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لإجراء قسمة العدد $13{,}05$ على العدد العشري $0{,}8$ نُتمّ الكتابة التالية:",
+    "formulas": [
+      "13{,}05 \\div 0{,}8 = \\dfrac{13{,}05}{0{,}8} = \\dfrac{13{,}05 \\times \\ldots}{0{,}8 \\times \\ldots} = \\dfrac{\\ldots}{8}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما العدد الذي نضرب فيه حدّي الكتابة الكسرية $\\dfrac{13{,}05}{0{,}8}$ ليصير المقام طبيعيًا؟ (أصغر قوّة للعدد $10$ تفي بالغرض)",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "قوّة للعدد 10",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عُدّ الأرقام التي تأتي بعد الفاصلة في المقسوم عليه وحده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كلّ رقم بعد الفاصلة يزول بالضرب في قوّة مناسبة للعدد $10$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحدّان يُضربان في العدد نفسه حتى لا يتغيّر حاصل القسمة."
+        }
+      ],
+      "feedback": {
+        "correct": "المقسوم عليه $0{,}8$ فيه رقم واحد بعد الفاصلة، فنضربه في $10$ فيصير $8$.",
+        "incorrect": "المقسوم عليه هو الذي يحدّد القوّة: عدد الأرقام التي تأتي بعد فاصلته، لا بعد فاصلة المقسوم."
+      },
+      "solution": {
+        "lines": [
+          "المقسوم عليه $0{,}8$ فيه رقم واحد بعد الفاصلة",
+          "$0{,}8 \\times 10 = 8$"
+        ],
+        "result": "10"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أكمل: $\\dfrac{13{,}05}{0{,}8} = \\dfrac{\\ldots}{8}$ . ما البسط؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "130.5",
+      "misconceptionSignatures": [
+        {
+          "value": "13.05",
+          "id": "MISC-QARIBA-ONETERM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "البسط يُضرب في العدد نفسه الذي ضُرب فيه المقام."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما تفعله بالفاصلة في المقام تفعله بالفاصلة في البسط."
+        }
+      ],
+      "feedback": {
+        "correct": "$13{,}05 \\times 10 = 130{,}5$ ، إذن $\\frac{13{,}05}{0{,}8} = \\frac{130{,}5}{8}$.",
+        "incorrect": "لا يتغيّر الحاصل إلاّ إذا ضُرب البسط والمقام في العدد نفسه: ما فعلناه بالمقام نفعله بالبسط."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}8 \\times 10 = 8$",
+          "$13{,}05 \\times 10 = 130{,}5$"
+        ],
+        "result": "130{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أنجز القسمة $13{,}05 \\div 0{,}8$ وأعط الحاصل كاملًا.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "16.3125",
+      "misconceptionSignatures": [
+        {
+          "value": "163.125",
+          "id": "MISC-QARIBA-ONETERM"
+        },
+        {
+          "value": "1.63125",
+          "id": "MISC-QARIBA-ONETERM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل المقسوم عليه إلى عدد طبيعي بضرب الحدّين في العدد نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة على العدد الطبيعي، واضبط الفاصلة في الحاصل عند الوصول إلى الأرقام التي بعد فاصلة المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$13{,}05 \\div 0{,}8 = 130{,}5 \\div 8 = 16{,}3125$.",
+        "incorrect": "اضرب الحدّين في العدد نفسه ثم أنجز القسمة على العدد الطبيعي، وتحقّق بضرب الحاصل في المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$13{,}05 \\div 0{,}8 = 130{,}5 \\div 8$",
+          "$0{,}8 \\times 16{,}3125 = 13{,}05$"
+        ],
+        "result": "16{,}3125"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

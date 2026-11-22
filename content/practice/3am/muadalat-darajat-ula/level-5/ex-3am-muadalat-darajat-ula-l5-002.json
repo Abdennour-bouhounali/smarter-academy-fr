@@ -1,0 +1,443 @@
+{
+  "id": "ex-3am-muadalat-darajat-ula-l5-002",
+  "lessonCode": "muadalat-darajat-ula",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — سور ملعب جماعي",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "محيط",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 3,
+      "file": "3am-s3-59",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: يتعاون سكّان حيّ على بناء ملعب جماعي لأطفالهم فوق قطعة أرض مستطيلة بعداها $(4x + 7)$ و $(2x - 2)$ بالمتر (الأطوال غير حقيقية)، ومحيطها $154\\,\\mathrm{m}$ .\nالجزء الثاني: يُبنى سور حول القطعة كلّها، وتُرصد له ميزانية $231\\,000$ دج.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          4.4,
+          0
+        ],
+        "C": [
+          4.4,
+          2.8
+        ],
+        "D": [
+          0,
+          2.8
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "4x + 7"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "2x - 2"
+        },
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "A"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "D",
+          "A",
+          "B"
+        ]
+      ],
+      "ariaLabel": "مستطيل ABCD طول AB يساوي 4x + 7 وطول BC يساوي 2x - 2",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "ما عبارة محيط القطعة مبسّطة؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "$12x + 10$ .",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$12x + 10$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$12x + 5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-PREREQ"
+        },
+        {
+          "id": "C",
+          "content": "$6x + 10$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-PREREQ"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "المحيط ضعف مجموع البعدين: $2[(4x + 7) + (2x - 2)] = 2(6x + 5)$ .",
+          "أي $12x + 10$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "جد قيمة $x$ علمًا أنّ المحيط $154\\,\\mathrm{m}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 12$ .",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر أو عدد عشري)",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-MUADALA-SIGN-KEPT"
+        },
+        {
+          "value": "-12",
+          "id": "MISC-MUADALA-NEG-COEF"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "نكتب: $12x + 10 = 154$ .",
+          "نضيف $-10$ إلى الطرفين (معاكس $10$) فنجد: $12x = 144$ .",
+          "نقسم الطرفين على $12$ فنجد: $x = 12$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما طول القطعة (البعد الأكبر) بالمتر؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "الطول $55\\,\\mathrm{m}$ .",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "الطول بالمتر",
+      "expectedAnswer": "55",
+      "solution": {
+        "lines": [
+          "$4 \\times 12 + 7 = 55$ م."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "ما عرض القطعة بالمتر؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "العرض $22\\,\\mathrm{m}$ .",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "العرض بالمتر",
+      "expectedAnswer": "22",
+      "solution": {
+        "lines": [
+          "$2 \\times 12 - 2 = 22$ م.",
+          "التحقّق: $2(55 + 22) = 154$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما ثمن المتر الواحد من السور $c$ بالدينار علمًا أنّ الميزانية تغطّي المحيط كلّه ($154\\,\\mathrm{m}$)؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن المتر $1\\,500$ دج.",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "الثمن بالدينار",
+      "expectedAnswer": "1500",
+      "misconceptionSignatures": [
+        {
+          "value": "230846",
+          "id": "MISC-MUADALA-SIGN-KEPT"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "نسمّي $c$ ثمن المتر الواحد بالدينار: $154c = 231\\,000$ .",
+          "نقسم على $154$ : $c = 1\\,500$ ."
+        ]
+      },
+      "timeSeconds": 105
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ج",
+      "statement": "يقدّم مقاول عرضًا آخر: $1\\,400$ دج للمتر الواحد مع $15\\,000$ دج للتركيب. ما القرار الصحيح؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "العرض الثاني يكلّف $230\\,600$ دج، أي أرخص بـ $400$ دج.",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "العرض الأوّل أرخص لأنّ سعر المتر فيه أكبر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-DECISION"
+        },
+        {
+          "id": "B",
+          "content": "العرض الثاني أرخص بـ $400$ دج",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "العرضان متساويان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-DECISION"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "العرض الثاني: $154 \\times 1\\,400 + 15\\,000 = 215\\,600 + 15\\,000 = 230\\,600$ دج.",
+          "العرض الأوّل $231\\,000$ دج، والفرق $231\\,000 - 230\\,600 = 400$ دج."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "02",
+      "sub": "د",
+      "statement": "اشرح قرارك بحساب ثمن كلّ عرض.",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "نختار العرض الثاني.",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب إجابتك ثم قارنها بالتصحيح النموذجي",
+      "solution": {
+        "lines": [
+          "$154 \\times 1\\,500 = 231\\,000$ دج للعرض الأوّل.",
+          "$154 \\times 1\\,400 + 15\\,000 = 230\\,600$ دج للعرض الثاني، فهو الأقلّ ثمنًا بـ $400$ دج."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

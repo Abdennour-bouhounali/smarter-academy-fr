@@ -1,0 +1,119 @@
+{
+  "id": "ex-4am-mafhum-taalufiya-l1-003",
+  "lessonCode": "mafhum-taalufiya",
+  "level": 1,
+  "metadata": {
+    "title": "أجرة عامل — عبارة S(x)",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الدستور f(x) = ax + b"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-1",
+      "page": 78,
+      "section": "أنشطة",
+      "number": 1,
+      "adaptedFrom": "ex-4am-mafhum-taalufiya-l1-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "عامل يتعاون مع زملائه في الورشة؛ أجرته الشهرية: أجرة قاعدية قدرها 35000DA ، يضاف إليها 185DA عن كل ساعة إضافية. نسمّي $x$ عدد الساعات الإضافية و $S(x)$ الأجرة الشهرية بـ DA ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عبّر عن $S(x)$ بدلالة $x$ على الشكل $S(x) = ax + b$ .",
+      "statement": "أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "185",
+      "misconceptionSignatures": [
+        {
+          "value": "35000",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المبلغ الذي يُضاف مرة عن كل ساعة إضافية؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الجزء الذي يتغيّر مع $x$ هو $a \\times x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 185$ : هو معامل $x$ .",
+        "incorrect": "المعامل $a$ هو العدد المضروب في $x$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "الأجرة = (185 × عدد الساعات الإضافية) + الأجرة القاعدية.",
+          "$S(x) = 185x + 35000$ من الشكل $ax + b$ حيث: $a = 185$ و $b = 35000$ ."
+        ],
+        "result": "a = 185"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "35000",
+      "misconceptionSignatures": [
+        {
+          "value": "185",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المبلغ الذي يُدفع مهما كان عدد الساعات الإضافية؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$b = 35000$ ، إذن $S(x) = 185x + 35000$ .",
+        "incorrect": "$b$ هو الحدّ الذي لا يحتوي على $x$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "الأجرة = (185 × عدد الساعات الإضافية) + الأجرة القاعدية.",
+          "$S(x) = 185x + 35000$ من الشكل $ax + b$ حيث: $a = 185$ و $b = 35000$ ."
+        ],
+        "result": "b = 35000"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

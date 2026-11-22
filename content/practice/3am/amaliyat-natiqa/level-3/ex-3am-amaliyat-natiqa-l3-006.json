@@ -1,0 +1,193 @@
+{
+  "id": "ex-3am-amaliyat-natiqa-l3-006",
+  "lessonCode": "amaliyat-natiqa",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — كسور مركّبة",
+    "estimatedMinutes": 11,
+    "tags": [
+      "العمليات على الأعداد الناطقة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تتضمّن الأعداد التالية كسورًا بسطها أو مقامها عبارة، فاكتب كلّ نتيجة على أبسط شكل ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $A = \\dfrac{\\dfrac{3}{4} - \\dfrac{1}{6}}{\\dfrac{5}{8} + \\dfrac{1}{3}}$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "14/23",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليات الموجودة؟ وهل توجد أقواس أو كسر مركّب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح، ومع كلّ عملية نحدّد الإشارة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز عملية واحدة في كلّ سطر، ثمّ اكتب النتيجة غير القابلة للاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = \\dfrac{14}{23}$ .",
+        "incorrect": "احترم الأولويّة: الأقواس ثمّ الضرب والقسمة ثمّ الجمع والطرح، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{4} - \\dfrac{1}{6} = \\dfrac{3}{4} + \\left(-\\dfrac{1}{6}\\right)$ (طرح عدد هو جمع معاكسه).",
+          "العددان $\\dfrac{3}{4}$ و $-\\dfrac{1}{6}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $\\dfrac{3}{4}$ ، فإشارة المجموع موجبة.",
+          "$\\dfrac{3}{4} + \\left(-\\dfrac{1}{6}\\right) = \\dfrac{9}{12} - \\dfrac{2}{12} = \\dfrac{9 - 2}{12} = \\dfrac{7}{12}$ .",
+          "العددان $\\dfrac{5}{8}$ و $\\dfrac{1}{3}$ موجبان، فمجموعهما موجب.",
+          "$\\dfrac{5}{8} + \\dfrac{1}{3} = \\dfrac{15}{24} + \\dfrac{8}{24} = \\dfrac{15 + 8}{24} = \\dfrac{23}{24}$ .",
+          "الكسر المركّب هو قسمة بسطه على مقامه: $\\dfrac{\\dfrac{7}{12}}{\\dfrac{23}{24}} = \\dfrac{7}{12} \\div \\dfrac{23}{24}$ .",
+          "القسمة على $\\dfrac{23}{24}$ هي الضرب في مقلوبه، ومقلوب $\\dfrac{23}{24}$ هو $\\dfrac{24}{23}$ (يحتفظ بالإشارة نفسها).",
+          "$\\dfrac{7}{12} \\div \\dfrac{23}{24} = \\dfrac{7}{12} \\times \\dfrac{24}{23}$ .",
+          "العاملان موجبان: الجداء موجب.",
+          "$\\dfrac{7}{12} \\times \\dfrac{24}{23} = \\dfrac{7 \\times 24}{12 \\times 23} = \\dfrac{168}{276} = \\dfrac{14}{23}$ ."
+        ],
+        "result": "A = \\dfrac{14}{23}"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $B = 2 + \\dfrac{3}{\\dfrac{1}{2} + \\dfrac{5}{4}}$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "26/7",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليات الموجودة؟ وهل توجد أقواس أو كسر مركّب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح، ومع كلّ عملية نحدّد الإشارة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز عملية واحدة في كلّ سطر، ثمّ اكتب النتيجة غير القابلة للاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = \\dfrac{26}{7}$ .",
+        "incorrect": "احترم الأولويّة: الأقواس ثمّ الضرب والقسمة ثمّ الجمع والطرح، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "العددان $\\dfrac{1}{2}$ و $\\dfrac{5}{4}$ موجبان، فمجموعهما موجب.",
+          "$\\dfrac{1}{2} + \\dfrac{5}{4} = \\dfrac{2}{4} + \\dfrac{5}{4} = \\dfrac{2 + 5}{4} = \\dfrac{7}{4}$ .",
+          "الكسر المركّب هو قسمة بسطه على مقامه: $\\dfrac{3}{\\dfrac{7}{4}} = 3 \\div \\dfrac{7}{4}$ .",
+          "القسمة على $\\dfrac{7}{4}$ هي الضرب في مقلوبه، ومقلوب $\\dfrac{7}{4}$ هو $\\dfrac{4}{7}$ (يحتفظ بالإشارة نفسها).",
+          "$3 \\div \\dfrac{7}{4} = 3 \\times \\dfrac{4}{7}$ .",
+          "العاملان موجبان: الجداء موجب.",
+          "$3 \\times \\dfrac{4}{7} = \\dfrac{3 \\times 4}{7} = \\dfrac{12}{7}$ .",
+          "العددان $2$ و $\\dfrac{12}{7}$ موجبان، فمجموعهما موجب.",
+          "$2 + \\dfrac{12}{7} = \\dfrac{14}{7} + \\dfrac{12}{7} = \\dfrac{14 + 12}{7} = \\dfrac{26}{7}$ ."
+        ],
+        "result": "B = \\dfrac{26}{7}"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب $C = \\dfrac{-\\dfrac{5}{6} + \\dfrac{1}{3}}{-\\dfrac{3}{4} \\div \\dfrac{9}{2}}$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليات الموجودة؟ وهل توجد أقواس أو كسر مركّب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح، ومع كلّ عملية نحدّد الإشارة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز عملية واحدة في كلّ سطر، ثمّ اكتب النتيجة غير القابلة للاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = 3$ .",
+        "incorrect": "احترم الأولويّة: الأقواس ثمّ الضرب والقسمة ثمّ الجمع والطرح، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "العددان $-\\dfrac{5}{6}$ و $\\dfrac{1}{3}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $-\\dfrac{5}{6}$ ، فإشارة المجموع سالبة.",
+          "$-\\dfrac{5}{6} + \\dfrac{1}{3} = -\\dfrac{5}{6} + \\dfrac{2}{6} = \\dfrac{-5 + 2}{6} = -\\dfrac{1}{2}$ .",
+          "القسمة على $\\dfrac{9}{2}$ هي الضرب في مقلوبه، ومقلوب $\\dfrac{9}{2}$ هو $\\dfrac{2}{9}$ (يحتفظ بالإشارة نفسها).",
+          "$-\\dfrac{3}{4} \\div \\dfrac{9}{2} = -\\dfrac{3}{4} \\times \\dfrac{2}{9}$ .",
+          "العاملان من إشارتين مختلفتين: الجداء سالب.",
+          "$-\\dfrac{3}{4} \\times \\dfrac{2}{9} = -\\dfrac{3 \\times 2}{4 \\times 9} = -\\dfrac{6}{36} = -\\dfrac{1}{6}$ .",
+          "الكسر المركّب هو قسمة بسطه على مقامه: $\\dfrac{-\\dfrac{1}{2}}{-\\dfrac{1}{6}} = -\\dfrac{1}{2} \\div \\left(-\\dfrac{1}{6}\\right)$ .",
+          "القسمة على $-\\dfrac{1}{6}$ هي الضرب في مقلوبه، ومقلوب $-\\dfrac{1}{6}$ هو $-6$ (يحتفظ بالإشارة نفسها).",
+          "$-\\dfrac{1}{2} \\div \\left(-\\dfrac{1}{6}\\right) = -\\dfrac{1}{2} \\times \\left(-6\\right)$ .",
+          "العاملان سالبان: الجداء موجب.",
+          "$-\\dfrac{1}{2} \\times \\left(-6\\right) = \\dfrac{1 \\times 6}{2} = \\dfrac{6}{2} = 3$ ."
+        ],
+        "result": "C = 3"
+      }
+    }
+  ]
+}

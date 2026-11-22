@@ -1,0 +1,285 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muadalat-l3-010",
+  "lessonCode": "wadiya-idmajiya-muadalat",
+  "level": 3,
+  "metadata": {
+    "title": "محيط مثلث ومحيط مستطيل",
+    "estimatedMinutes": 10,
+    "tags": [
+      "ترييض",
+      "متراجحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-muadalat_P2",
+      "modelledOn": "ex-36"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "مثلث متقايس الأضلاع طول ضلعه $x$ cm ، ومستطيل بُعداه $(x + 3)$ cm و $5$ cm ، حيث $x$ عدد موجب."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "عبّر بدلالة $x$ عن:",
+      "statement": "محيط المثلث — العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب محيط المثلث على الشكل $ax$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "للمثلث المتقايس الأضلاع ثلاثة أضلاع متساوية."
+        }
+      ],
+      "feedback": {
+        "correct": "$3$ .",
+        "incorrect": "المحيط هو مجموع أطوال الأضلاع."
+      },
+      "solution": {
+        "lines": [
+          "محيط المثلث: $x + x + x = 3x$"
+        ],
+        "result": "3x"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "محيط المستطيل — العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب محيط المستطيل على الشكل $ax + b$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "محيط المستطيل = 2 × (الطول + العرض)."
+        }
+      ],
+      "feedback": {
+        "correct": "$2$ .",
+        "incorrect": "المحيط هو ضعف مجموع البعدين: انشر ثم بسّط."
+      },
+      "solution": {
+        "lines": [
+          "محيط المستطيل: $2\\left[(x + 3) + 5\\right]$ ، ومعامل $x$ بعد النشر هو $2$ ."
+        ],
+        "result": "a = 2"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ب",
+      "statement": "محيط المستطيل — العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب محيط المستطيل على الشكل $ax + b$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "16",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر $2(x + 8)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$16$ .",
+        "incorrect": "المحيط هو ضعف مجموع البعدين: انشر ثم بسّط."
+      },
+      "solution": {
+        "lines": [
+          "$2\\left[(x + 3) + 5\\right] = 2(x + 8) = 2x + 16$"
+        ],
+        "result": "2x + 16"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "lead": "تُترجَم العبارة «محيط المثلث أكبر من محيط المستطيل» بالمتراجحة $3x > 2x + 16$ . حلّها.",
+      "statement": "حدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x < k$ أو $x \\leqslant k$ أو $x > k$ أو $x \\geqslant k$ : اكتب العدد $k$ فقط (عدد صحيح أو كسر a/b، قد يكون سالبًا)",
+      "expectedAnswer": "16",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر، كما في حل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إضافة عدد إلى الطرفين أو طرحه منهما لا تغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحدّ هو العدد الذي يحقّق المعادلة المرفقة (نضع «=» مكان رمز المتباينة): اقسم في الأخير على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "حدّ الحلول هو $k = 16$ .",
+        "incorrect": "أعد الحل سطرًا سطرًا: العملية نفسها على الطرفين، ثم القسمة على معامل $x$ في الأخير."
+      },
+      "solution": {
+        "lines": [
+          "حدّ الحلول هو حلّ المعادلة المرفقة: $3x = 2x + 16$",
+          "$3x - 2x = 16$",
+          "$x = 16$",
+          "إذن حدّ الحلول هو $16$ ."
+        ],
+        "result": "k = 16"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < 16$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QALB-ZAID"
+        },
+        {
+          "id": "B",
+          "content": "$x \\leqslant 16$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QALB-ZAID"
+        },
+        {
+          "id": "C",
+          "content": "$x > 16$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$x \\geqslant 16$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارة معامل $x$ في آخر سطر قبل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد موجب تحافظ على الاتجاه، والقسمة على عدد سالب تغيّره."
+        }
+      ],
+      "feedback": {
+        "correct": "$x > 16$ .",
+        "incorrect": "تتبّع سطور الحل: الاتجاه يتغيّر فقط عند الضرب أو القسمة على عدد سالب، ونوع المتباينة (تامة أو غير تامة) لا يتغيّر أبدًا."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $3x > 2x + 16$",
+          "$3x - 2x > 16$",
+          "$x > 16$",
+          "إذن حلول المتراجحة هي كل قيم $x$ الأكبر تماما من $16$ ."
+        ],
+        "result": "x > 16"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "ما هو أصغر عدد طبيعي $x$ يكون من أجله محيط المثلث أكبر من محيط المستطيل؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "17",
+      "misconceptionSignatures": [
+        {
+          "value": "16",
+          "id": "MISC-MUTARAJIHA-QAWS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل حلول المتراجحة: هل الحدّ نفسه حلّ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$17$ .",
+        "incorrect": "الحدّ ليس حلًّا لأن المتباينة تامة: خذ العدد الطبيعي الذي يليه."
+      },
+      "solution": {
+        "lines": [
+          "حلول المتراجحة هي الأعداد $x > 16$ .",
+          "أصغر عدد طبيعي أكبر تماما من 16 هو 17 ."
+        ],
+        "result": "17"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

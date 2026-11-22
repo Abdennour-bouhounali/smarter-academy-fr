@@ -1,0 +1,190 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l1-006",
+  "lessonCode": "mana-jam-tarh",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — حدّا الفرق",
+    "estimatedMinutes": 4,
+    "tags": [
+      "فرق",
+      "حدّا الفرق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر المساواة:",
+    "formulas": [
+      "72{,}4 - 19{,}35 = 53{,}05"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما اسم العدد 53,05 في هذه المساواة؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "فرق العددين 72,4 و 19,35",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "مجموع العددين 72,4 و 19,35",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-MAJMU-FARQ"
+        },
+        {
+          "id": "C",
+          "content": "حدّ من حدّي الفرق",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-HUDUD"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية المكتوبة في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نتيجة الطرح تحمل اسمًا خاصًا."
+        }
+      ],
+      "feedback": {
+        "correct": "53,05 نتيجة طرح 19,35 من 72,4: هو فرقهما.",
+        "incorrect": "العملية المكتوبة طرح، والعدد المطلوب هو نتيجتها."
+      },
+      "solution": {
+        "lines": [
+          "$72{,}4 - 19{,}35 = 53{,}05$ عملية طرح.",
+          "نتيجة الطرح 53,05 تسمّى فرق العددين 72,4 و 19,35."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هما حدّا الفرق في هذه المساواة؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "72,4 و 19,35",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "72,4 و 53,05",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-HUDUD"
+        },
+        {
+          "id": "C",
+          "content": "19,35 و 53,05",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-HUDUD"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّا الفرق هما العددان اللذان نطرح أحدهما من الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النتيجة ليست حدًّا."
+        }
+      ],
+      "feedback": {
+        "correct": "نطرح 19,35 من 72,4: هما حدّا الفرق.",
+        "incorrect": "حدّا الفرق هما العددان اللذان تجري عليهما عملية الطرح، لا نتيجتها."
+      },
+      "solution": {
+        "lines": [
+          "في $72{,}4 - 19{,}35 = 53{,}05$ نطرح 19,35 من 72,4.",
+          "إذن حدّا الفرق هما 72,4 و 19,35."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "تحقّق من المساواة: احسب مجموع العددين 53,05 و 19,35.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "72.4",
+      "misconceptionSignatures": [
+        {
+          "value": "33.7",
+          "id": "MISC-JAMTARH-MAJMU-FARQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المجموع ناتج جمع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مجموع الفرق والحدّ الثاني يعطي حدًّا من حدّي الفرق."
+        }
+      ],
+      "feedback": {
+        "correct": "$53{,}05 + 19{,}35 = 72{,}4$: نجد الحدّ الأول، فالمساواة صحيحة.",
+        "incorrect": "اجمع العددين (لا تطرح)، بعد محاذاة الفاصلتين."
+      },
+      "solution": {
+        "lines": [
+          "$53{,}05 + 19{,}35 = 72{,}4$",
+          "نجد الحدّ الأول 72,4: المساواة صحيحة."
+        ],
+        "result": "72{,}4"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-natiqa-ghayr-natiqa-l1-002",
+  "lessonCode": "natiqa-ghayr-natiqa",
+  "level": 1,
+  "metadata": {
+    "title": "جذر مربع عدد ناطق",
+    "estimatedMinutes": 3,
+    "tags": [
+      "عدد ناطق",
+      "جذر كسر"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-2",
+      "page": 22,
+      "section": "معارف",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب العدد $\\sqrt{\\dfrac{25}{9}}$ على شكل كسر.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "5/3",
+      "misconceptionSignatures": [
+        {
+          "value": "25/18",
+          "id": "MISC-JIDHR-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن عدد طبيعي مربعه 25، وعن عدد طبيعي مربعه 9."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن كسر موجب مربعه $\\dfrac{25}{9}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\left(\\dfrac{5}{3}\\right)^2 = \\dfrac{25}{9}$ ، إذن $\\sqrt{\\dfrac{25}{9}} = \\dfrac{5}{3}$ : عدد ناطق.",
+        "incorrect": "لا تقسم على 2: ابحث عن الكسر الموجب الذي مربعه $\\dfrac{25}{9}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$5^2 = 25$ و $3^2 = 9$ ، إذن $\\left(\\dfrac{5}{3}\\right)^2 = \\dfrac{25}{9}$ و $\\dfrac{5}{3} > 0$"
+        ],
+        "result": "\\sqrt{\\dfrac{25}{9}} = \\dfrac{5}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

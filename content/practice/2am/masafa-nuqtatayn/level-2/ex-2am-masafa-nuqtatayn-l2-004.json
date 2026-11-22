@@ -1,0 +1,179 @@
+{
+  "id": "ex-2am-masafa-nuqtatayn-l2-004",
+  "lessonCode": "masafa-nuqtatayn",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — النقطتان اللتان تبعدان $3$ عن نقطة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "نقطة على بعد معلوم",
+      "حلّان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نبحث على مستقيم مدرّج عن النقط التي تبعد بمسافة معلومة عن نقطة معلومة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما فاصلات النقط التي تبعد $3$ عن النقطة $M(-1)$ على المستقيم المدرّج ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-2$ و $+4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MASAFA2-SIGNSWAP"
+        },
+        {
+          "id": "B",
+          "content": "$+2$ فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MASAFA2-ONEANSWER"
+        },
+        {
+          "id": "C",
+          "content": "$-4$ و $+2$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$-4$ فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MASAFA2-ONEANSWER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم المستقيم وعيّن النقطة المعلومة، ثمّ تحرّك بالمسافة المعطاة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اسأل نفسك: في أيّ الجهتين يمكن أن تتحرّك انطلاقًا من النقطة المعلومة؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب المسافة بين كلّ نقطة وجدتها والنقطة المعلومة."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطتان المطلوبتان فاصلتاهما $-4$ و $+2$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "نضيف المسافة إلى الفاصلة: $-1+3=+2$",
+          "ونطرحها منها: $-1-3=-4$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "النقطة $N$ تنتمي إلى المستقيم المدرّج نفسه، $MN=5$ ، وهي على يسار النقطة $M(+2)$ . ما فاصلة $N$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SIGNSWAP",
+          "value": "3"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة المعطاة هي المسافة بين النقطتين: النقطة المطلوبة تبعد بها عن النقطة المعلومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كانت على اليمين أضفنا المسافة إلى الفاصلة المعلومة، وإذا كانت على اليسار طرحناها منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب المسافة بين النقطتين انطلاقًا من فاصلتيهما."
+        }
+      ],
+      "feedback": {
+        "correct": "فاصلة $N$ هي $-3$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "النقطة على اليسار فنطرح المسافة من فاصلة $M$",
+          "$+2-5=-3$"
+        ],
+        "result": "-3"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "برّر : لماذا نجد نقطتين لا نقطة واحدة ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب جملة أو جملتين: الفكرة ثمّ الحساب الذي يدعمها."
+        }
+      ],
+      "feedback": {
+        "correct": "الجهتان ممكنتان معًا، فهناك نقطتان تبعدان المسافة نفسها عن $M$ ",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "النقطة المعلومة $M(+2)$ ، ونبتعد عنها بـ $5$ إلى اليمين فنصل إلى $+7$ ، وبـ $5$ إلى اليسار فنصل إلى $-3$",
+          "الجهتان ممكنتان معًا، فهناك نقطتان تبعدان المسافة نفسها عن $M$ "
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

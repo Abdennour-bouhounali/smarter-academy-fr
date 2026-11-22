@@ -1,0 +1,131 @@
+{
+  "id": "ex-4am-alaqat-muthallathiya-l1-010",
+  "lessonCode": "alaqat-muthallathiya",
+  "level": 1,
+  "metadata": {
+    "title": "جيب التمام √3/2: المربع ثم الجيب",
+    "estimatedMinutes": 4,
+    "tags": [
+      "العلاقات المثلثية",
+      "القيمة المضبوطة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_alaqat-muthallathiya_P2",
+      "modelledOn": "method-relations"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "$x$ قيس زاوية حادة حيث $\\cos x = \\dfrac{\\sqrt{3}}{2}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $\\cos^2 x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "3/4",
+      "misconceptionSignatures": [
+        {
+          "value": "3/2",
+          "id": "MISC-MUTH-TARBI-BASTI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ربّع البسط وربّع المقام."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$(\\sqrt{3})^2 = 3$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\cos^2 x = \\dfrac{(\\sqrt{3})^2}{2^2} = \\dfrac{3}{4}$ .",
+        "incorrect": "مربع كسر هو مربع البسط على مربع المقام: لا تنس المقام."
+      },
+      "solution": {
+        "lines": [
+          "$\\cos^2 x = \\left(\\dfrac{\\sqrt{3}}{2}\\right)^2 = \\dfrac{(\\sqrt{3})^2}{2^2}$"
+        ],
+        "result": "\\cos^2 x = \\dfrac{3}{4}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج القيمة المضبوطة لـ $\\sin x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "1/2",
+      "misconceptionSignatures": [
+        {
+          "value": "1/4",
+          "id": "MISC-MUTH-JADHR-NASI"
+        },
+        {
+          "value": "-1/2",
+          "id": "MISC-MUTH-AKBAR-MIN-WAHID"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العلاقة التي تربط جيب الزاوية وجيب تمامها هي $\\cos^2 x + \\sin^2 x = 1$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اعزل $\\sin^2 x$ ثم عوّض جيب التمام بقيمته، ولا تنس تربيع البسط والمقام معا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\sin x$ عدد موجب تماما: خذ الجذر التربيعي الموجب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin^2 x = 1 - \\dfrac{3}{4} = \\dfrac{1}{4}$ ، و $\\sin x > 0$ ، إذن $\\sin x = \\dfrac{1}{2}$ .",
+        "incorrect": "بعد حساب $\\sin^2 x$ لا تنس الجذر التربيعي الموجب."
+      },
+      "solution": {
+        "lines": [
+          "$\\sin^2 x = 1 - \\cos^2 x = 1 - \\dfrac{3}{4} = \\dfrac{1}{4}$",
+          "$\\sin x$ عدد موجب، إذن $\\sin x = \\sqrt{\\dfrac{1}{4}}$"
+        ],
+        "result": "\\sin x = \\dfrac{1}{2}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

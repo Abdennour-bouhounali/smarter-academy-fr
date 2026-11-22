@@ -1,0 +1,293 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l5-008",
+  "lessonCode": "mana-jam-tarh",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — دراجة الأخوين",
+    "estimatedMinutes": 18,
+    "tags": [
+      "أقل",
+      "مجموع",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يدّخر الأخوان زكريا وإسحاق لشراء دراجة يتشاركانها.\nالجزء الأول: ثمن الدراجة في المحل الأول 18500 دج. ادّخر زكريا 7850,5 دج، وادّخر إسحاق أقل منه بـ 1275,75 دج، ووعدهما الأب بإكمال الباقي.\nالجزء الثاني: وجدا في محل ثانٍ دراجة مماثلة ثمنها أقل بـ 1450 دج، ويريدان معها خوذة ثمنها 1200 دج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "كم ادّخر إسحاق؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "6574.75",
+      "misconceptionSignatures": [
+        {
+          "value": "9126.25",
+          "id": "MISC-JAMTARH-KALIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "إسحاق ادّخر أقل من زكريا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما ادّخره زكريا هو الكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$7850{,}5 - 1275{,}75 = 6574{,}75$ دج.",
+        "incorrect": "إسحاق ادّخر أقل: النتيجة أصغر من 7850,5 دج."
+      },
+      "solution": {
+        "lines": [
+          "$7850{,}5 - 1275{,}75 = 6574{,}75$"
+        ],
+        "result": "6574{,}75 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب مجموع ما ادّخره الأخوان.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "14425.25",
+      "misconceptionSignatures": [
+        {
+          "value": "1275.75",
+          "id": "MISC-JAMTARH-MAJMU-FARQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المجموع ناتج جمع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حدّا المجموع: ما ادّخره كل منهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$7850{,}5 + 6574{,}75 = 14425{,}25$ دج.",
+        "incorrect": "اجمع ما ادّخره زكريا وما ادّخره إسحاق."
+      },
+      "solution": {
+        "lines": [
+          "$7850{,}5 + 6574{,}75 = 14425{,}25$"
+        ],
+        "result": "14425{,}25 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "في المخطط بأقواس للجزء الأول، ثمن الدراجة 18500 هو:",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الكل (القوس تحت الخط)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "جزء (قوس فوق الخط)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثمن الدراجة = ما ادّخراه + ما يدفعه الأب."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن الدراجة هو الكل.",
+        "incorrect": "أيّ المبالغ يضمّ الأخرى؟"
+      },
+      "solution": {
+        "lines": [
+          "ما ادّخره الأخوان + ما يدفعه الأب = ثمن الدراجة: هو الكل."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "كم يدفع الأب في المحل الأول؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "4074.75",
+      "misconceptionSignatures": [
+        {
+          "value": "32925.25",
+          "id": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما يدفعه الأب جزء."
+        }
+      ],
+      "feedback": {
+        "correct": "$18500 - 14425{,}25 = 4074{,}75$ دج.",
+        "incorrect": "ما يدفعه الأب جزء من ثمن الدراجة: اطرح ما ادّخراه."
+      },
+      "solution": {
+        "lines": [
+          "$18500 - 14425{,}25 = 4074{,}75$"
+        ],
+        "result": "4074{,}75 \\text{ DA}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "احسب ثمن الدراجة في المحل الثاني.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "17050",
+      "misconceptionSignatures": [
+        {
+          "value": "19950",
+          "id": "MISC-JAMTARH-KALIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدراجة الثانية أرخص."
+        }
+      ],
+      "feedback": {
+        "correct": "$18500 - 1450 = 17050$ دج.",
+        "incorrect": "الثمن الثاني أقل من الأول: اطرح."
+      },
+      "solution": {
+        "lines": [
+          "$18500 - 1450 = 17050$"
+        ],
+        "result": "17050 \\text{ DA}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "06",
+      "statement": "إذا اشتريا الدراجة الثانية مع الخوذة، هل يدفع الأب أقل مما كان سيدفعه في المحل الأول؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-JUZ-NAQIS"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب ما يدفعه الأب في المحل الثاني: (ثمن الدراجة + الخوذة) − ما ادّخراه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن بما كان سيدفعه في المحل الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "$3824{,}75 < 4074{,}75$: نعم، يدفع أقل.",
+        "incorrect": "لا تنسَ ثمن الخوذة، ثم قارن المبلغين اللذين يدفعهما الأب."
+      },
+      "solution": {
+        "lines": [
+          "المحل الثاني: $17050 + 1200 = 18250$ ، ويدفع الأب $18250 - 14425{,}25 = 3824{,}75$",
+          "المحل الأول: يدفع الأب 4074,75 دج.",
+          "$3824{,}75 < 4074{,}75$ ، إذن يدفع أقل في المحل الثاني."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

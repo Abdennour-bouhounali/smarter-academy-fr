@@ -1,0 +1,147 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l3-002",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 3,
+  "metadata": {
+    "title": "طرائق — إثبات تساوي شعاعين",
+    "estimatedMinutes": 3,
+    "tags": [
+      "طرائق",
+      "برهان"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-equal",
+      "page": 131,
+      "section": "طرائق"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 131): OAB مثلث كيفي. C نظيرة O بالنسبة إلى A، و D النقطة حيث $\\overrightarrow{AD} = \\overrightarrow{BA}$ (الشكل).",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          4,
+          0
+        ],
+        "C": [
+          8,
+          0
+        ],
+        "B": [
+          2,
+          3
+        ],
+        "D": [
+          6,
+          -3
+        ]
+      },
+      "segments": [
+        [
+          "O",
+          "B"
+        ],
+        {
+          "from": "O",
+          "to": "A",
+          "ticks": 3
+        },
+        {
+          "from": "A",
+          "to": "C",
+          "ticks": 3
+        },
+        {
+          "from": "B",
+          "to": "A",
+          "ticks": 2
+        },
+        {
+          "from": "A",
+          "to": "D",
+          "ticks": 2
+        },
+        {
+          "from": "O",
+          "to": "D",
+          "tone": "amber",
+          "bold": true
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "tone": "amber",
+          "bold": true
+        }
+      ],
+      "labels": {
+        "O": "w",
+        "A": "s",
+        "C": "e",
+        "B": "n",
+        "D": "s"
+      },
+      "ariaLabel": "O و A و C على استقامة مع OA = AC، و B و A و D على استقامة مع BA = AD، والقطعتان [OD] و [BC]",
+      "maxWidth": 440
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "لماذا $\\overrightarrow{OD} = \\overrightarrow{BC}$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لأن OBDC متوازي أضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        },
+        {
+          "id": "B",
+          "content": "A منتصف [OC] و [BD]، فالرباعي OBCD متوازي أضلاع قطراه متناصفان",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لأن OD = BC في الطول",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TUL-FAQAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا تمثّل A بالنسبة إلى [OC]؟ وبالنسبة إلى [BD]؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قطعتان لهما نفس المنتصف هما قطرا متوازي أضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "رتّب الرؤوس بحيث يكون [OC] و [BD] قطرين."
+        }
+      ],
+      "feedback": {
+        "correct": "A منتصف القطرين [OC] و [BD]: OBCD متوازي أضلاع، والضلعان المتقابلان [OD] و [BC] يعطيان شعاعين متساويين.",
+        "incorrect": "ابحث عن متوازي أضلاع قطراه [OC] و [BD]."
+      }
+    }
+  ]
+}

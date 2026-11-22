@@ -1,0 +1,370 @@
+{
+  "id": "ex-4am-majdulat-ihsaiya-l5-005",
+  "lessonCode": "majdulat-ihsaiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2023 — صيد السردين بميناء بني صاف",
+    "estimatedMinutes": 14,
+    "tags": [
+      "وضعية إدماجية",
+      "دستور",
+      "منوال",
+      "متوسط",
+      "وسيط",
+      "ربح"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_majdulat-ihsaiya_P2",
+      "modelledOn": "BEM 2023 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "حجز صاحب قارب صيد، الحريص على حماية الثروة السمكية، بميناء بني صاف (عين تموشنت) في مجدول كمية السردين (بالكيلوغرام) التي اصطادها في كل رحلة من رحلاته العشر الأخيرة:",
+    "table": {
+      "head": [
+        "",
+        "A",
+        "B"
+      ],
+      "rows": [
+        [
+          "1",
+          "الرحلة",
+          "الكمية (kg)"
+        ],
+        [
+          "2",
+          "1",
+          "320"
+        ],
+        [
+          "3",
+          "2",
+          "450"
+        ],
+        [
+          "4",
+          "3",
+          "280"
+        ],
+        [
+          "5",
+          "4",
+          "450"
+        ],
+        [
+          "6",
+          "5",
+          "510"
+        ],
+        [
+          "7",
+          "6",
+          "390"
+        ],
+        [
+          "8",
+          "7",
+          "450"
+        ],
+        [
+          "9",
+          "8",
+          "300"
+        ],
+        [
+          "10",
+          "9",
+          "420"
+        ],
+        [
+          "11",
+          "10",
+          "430"
+        ]
+      ],
+      "sheet": true
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن الدستور الذي يُظهر الكمية الأكثر تكرارا في هذه الرحلات.",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "⁦=MAX(B2:B11)⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-DUSTUR-KHATI"
+        },
+        {
+          "id": "B",
+          "content": "⁦=MODE(B2:B11)⁩",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "⁦=MODE(A2:A11)⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MAJAL-KHALIYA"
+        },
+        {
+          "id": "D",
+          "content": "⁦=MEDIANE(B2:B11)⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-DUSTUR-KHATI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل دستور يبدأ بالإشارة « ⁦=⁩ »، ثم اسم الدالة، ثم المجال بين قوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حدّد أولا المجال الذي يضمّ كل القيم المطلوبة، ولا شيئا غيرها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم اختر الدالة: MAX و MIN للمدى، MEDIANE للوسيط، MOYENNE للمتوسط، MODE للمنوال."
+        }
+      ],
+      "feedback": {
+        "correct": "⁦=MODE(B2:B11)⁩ يُظهر 450 .",
+        "incorrect": "راجع ثلاثة أشياء: الإشارة « ⁦=⁩ » في البداية، الدالة المناسبة للمؤشّر، والمجال الذي يضمّ كل القيم."
+      },
+      "solution": {
+        "lines": [
+          "الكمية الأكثر تكرارا هي منوال السلسلة، والكميات في العمود B من B2 إلى B11 .",
+          "الدستور: ⁦=MODE(B2:B11)⁩ ، ويُظهر 450 (ثلاث رحلات)."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "ما هو العدد الذي يُظهره الدستور ⁦=MOYENNE(B2:B11)⁩ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة إن لزم)",
+      "expectedAnswer": "400",
+      "misconceptionSignatures": [
+        {
+          "value": "425",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MOYENNE(…)⁩ يقسم مجموع القيم العددية في المجال على عددها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع القيم العددية الموجودة في المجال، وعُدّها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المتوسط = مجموع القيم ÷ عددها."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{4000}{10} = 400$ .",
+        "incorrect": "اجمع كل القيم العددية التي في المجال، ثم اقسم المجموع على عددها (لا على عدد آخر)."
+      },
+      "solution": {
+        "lines": [
+          "مجموع القيم: $4000$ ، وعددها 10 .",
+          "$\\dfrac{4000}{10} = 400$",
+          "إذن يُظهر الدستور العدد 400 ."
+        ],
+        "result": "400"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما هو العدد الذي يُظهره الدستور ⁦=MEDIANE(B2:B11)⁩ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة إن لزم)",
+      "expectedAnswer": "425",
+      "misconceptionSignatures": [
+        {
+          "value": "450",
+          "id": "MISC-IHSA-WASIT-BILA-TARTIB"
+        },
+        {
+          "value": "400",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MEDIANE(…)⁩ يُظهر وسيط القيم: يرتّبها المجدول أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب القيم الـ 10 تصاعديا، ثم عيّن القيمتين اللتين تقعان في الوسط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لعدد زوجيّ من القيم، الوسيط نصف مجموع القيمتين الوسطيين."
+        }
+      ],
+      "feedback": {
+        "correct": "القيم مرتّبة: 280 ، 300 ، 320 ، 390 ، 420 ، 430 ، 450 ، 450 ، 450 ، 510 ، والوسيط 425 .",
+        "incorrect": "لا يُقرأ الوسيط إلا بعد ترتيب القيم تصاعديا، ثم نأخذ القيمة الوسطى (أو نصف مجموع القيمتين الوسطيين)."
+      },
+      "solution": {
+        "lines": [
+          "نرتّب القيم تصاعديا: 280 ، 300 ، 320 ، 390 ، 420 ، 430 ، 450 ، 450 ، 450 ، 510 .",
+          "عدد القيم 10 زوجيّ: الوسيط نصف مجموع القيمتين ذواتي الرتبتين 5 و 6 ، أي 420 و 430 .",
+          "$\\dfrac{420 + 430}{2} = 425$",
+          "إذن يُظهر الدستور العدد 425 ."
+        ],
+        "result": "425"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "يبيع الصياد الكيلوغرام من السردين بـ 250DA ، وتمثّل مصاريف الرحلات (الوقود والصيانة وأجور البحّارة) 20% من ثمن البيع. ☜ أعط ربح الصياد من هذه الرحلات العشر.",
+      "statement": "ما هي الكمية الكلية التي اصطادها في الرحلات العشر؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الكمية بـ kg",
+      "expectedAnswer": "4000",
+      "misconceptionSignatures": [
+        {
+          "value": "4250",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكمية الكلية مجموع الكميات العشر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مجموع القيم = المتوسط × عددها."
+        }
+      ],
+      "feedback": {
+        "correct": "$400 \\times 10 = 4000$ ، أي $4000\\,\\mathrm{kg}$ .",
+        "incorrect": "المجموع = المتوسط × عدد الرحلات."
+      },
+      "solution": {
+        "lines": [
+          "$400 \\times 10 = 4000$"
+        ],
+        "result": "4000"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "ما هو ربح الصياد؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "counted": false,
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "800000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثمن البيع = الكمية الكلية × 250 ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الربح = ثمن البيع − المصاريف، والمصاريف 20% من ثمن البيع."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن البيع $4000 \\times 250 = 1000000$ ، والمصاريف $200000$ ، والربح $800000$ ، أي 800000DA .",
+        "incorrect": "احسب ثمن البيع، ثم المصاريف (20% منه)، ثم اطرح."
+      },
+      "solution": {
+        "lines": [
+          "ثمن البيع: $4000 \\times 250 = 1000000$",
+          "المصاريف: $1000000 \\times 0{,}2 = 200000$",
+          "الربح: $1000000 - 200000 = 800000$"
+        ],
+        "result": "800000\\,\\mathrm{DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

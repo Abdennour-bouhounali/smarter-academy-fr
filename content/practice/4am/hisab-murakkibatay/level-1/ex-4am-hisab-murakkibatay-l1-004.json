@@ -1,0 +1,139 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l1-004",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — بوابتان في لعبة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مركبتا شعاع",
+      "لعبة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hisab-murakkibatay_P1",
+      "modelledOn": "act-2"
+    }
+  },
+  "statement": {
+    "content": "في خريطة لعبة تعليمية على الهاتف صمّمها تلاميذ بإتقان، البطل يدخل البوابة $A(2\\,;\\,1)$ فيخرج من البوابة $B(6\\,;\\,4)$ . رمز القفزة هو مركبتا الشعاع $\\overrightarrow{AB}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "رمز القفزة $\\overrightarrow{AB}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "point",
+      "answerFormat": "المركبتان: الأولى ثم الثانية — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "4",
+        "y": "3"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-4",
+            "y": "-3"
+          },
+          "id": "MISC-MAALAM-TARH-MAQLUB"
+        },
+        {
+          "value": {
+            "x": "6",
+            "y": "4"
+          },
+          "id": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        },
+        {
+          "value": {
+            "x": "3",
+            "y": "4"
+          },
+          "id": "MISC-MAALAM-TABDIL-X-Y"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبدأ A والنهاية B."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المركبة الأولى: فاصلة B ناقص فاصلة A."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المركبة الثانية: ترتيب B ناقص ترتيب A، وانتبه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 - 2 = 4$ و $4 - 1 = 3$ : 4 وحدات نحو اليمين ثم 3 نحو الأعلى.",
+        "incorrect": "فاصلة B ناقص فاصلة A، ثم ترتيب B ناقص ترتيب A."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "رمز قفزة العودة $\\overrightarrow{BA}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "point",
+      "answerFormat": "المركبتان: الأولى ثم الثانية — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "-4",
+        "y": "-3"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "4",
+            "y": "3"
+          },
+          "id": "MISC-MAALAM-TARH-MAQLUB"
+        },
+        {
+          "value": {
+            "x": "2",
+            "y": "1"
+          },
+          "id": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبدأ B والنهاية A."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المركبة الأولى: فاصلة A ناقص فاصلة B."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المركبة الثانية: ترتيب A ناقص ترتيب B، وانتبه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "العودة: $2 - 6 = -4$ و $1 - 4 = -3$ ، مركبتا BA معاكستا مركبتي AB.",
+        "incorrect": "في BA المبدأ هو B: النتيجة إشارتا AB معكوستان."
+      }
+    }
+  ]
+}

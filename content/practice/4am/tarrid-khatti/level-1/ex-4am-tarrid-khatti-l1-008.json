@@ -1,0 +1,107 @@
+{
+  "id": "ex-4am-tarrid-khatti-l1-008",
+  "lessonCode": "tarrid-khatti",
+  "level": 1,
+  "metadata": {
+    "title": "ثمن الطماطم — معنى المعامل",
+    "estimatedMinutes": 4,
+    "tags": [
+      "تفسير المعامل",
+      "دالة خطية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-khatti_P3",
+      "modelledOn": "act-4",
+      "adaptedFrom": "ex-4am-tarrid-khatti-l1-008"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "ثمن $x$ كيلوغرام من الطماطم بالدينار هو $f(x)$ حيث:",
+    "formulas": [
+      "f(x) = 80x"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب ثمن 2,5kg من الطماطم.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الثمن بـ DA",
+      "expectedAnswer": "200",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الثمن هو صورة 2,5 بالدالة $f$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(2{,}5) = 80 \\times 2{,}5 = 200$ : الثمن 200DA.",
+        "incorrect": "عوّض $x$ بالكتلة في عبارة $f(x)$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(2{,}5) = 80 \\times 2{,}5 = 200$",
+          "ثمن 2,5kg من الطماطم هو 200DA."
+        ],
+        "result": "200DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "فسّر العدد 80 في سياق هذه الوضعية.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $f(1)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ماذا تمثّل الكتلة $x = 1$ ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "$f(1) = 80 \\times 1 = 80$",
+          "العدد 80 هو ثمن كيلوغرام واحد من الطماطم: 80DA للكيلوغرام."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

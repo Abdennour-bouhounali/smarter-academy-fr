@@ -1,0 +1,243 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l3-003",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 3,
+  "metadata": {
+    "title": "طريقة الكتاب — AB و DC",
+    "estimatedMinutes": 4,
+    "tags": [
+      "تساوي شعاعين",
+      "طريقة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-equal",
+      "page": 143,
+      "section": "طرائق"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 143): $A(1\\,;\\,0)$ ، $B(0\\,;\\,3)$ ، $C(-3\\,;\\,0)$ ، $D(-2\\,;\\,-3)$ (الشكل).",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          1,
+          0
+        ],
+        "B": [
+          0,
+          3
+        ],
+        "C": [
+          -3,
+          0
+        ],
+        "D": [
+          -2,
+          -3
+        ]
+      },
+      "segments": [
+        {
+          "from": "B",
+          "to": "C",
+          "tone": "amber"
+        },
+        {
+          "from": "A",
+          "to": "D",
+          "tone": "amber"
+        }
+      ],
+      "vectors": [
+        {
+          "from": "A",
+          "to": "B",
+          "tone": "rose"
+        },
+        {
+          "from": "D",
+          "to": "C",
+          "tone": "rose"
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw",
+        "A": "se",
+        "B": "ne",
+        "C": "nw",
+        "D": "sw"
+      },
+      "ariaLabel": "متوازي الأضلاع ABCD في معلم: A على محور الفواصل يمين O، و B على محور التراتيب، و C على محور الفواصل يسار O، و D في الأسفل يسارا؛ الشعاعان AB و DC متساويان",
+      "caption": "أعادت المنصّة رسم شكل الكتاب بوضوح أكبر، بنفس المعطيات"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مركبتا $\\overrightarrow{AB}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "point",
+      "answerFormat": "المركبتان: الأولى ثم الثانية — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "-1",
+        "y": "3"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "1",
+            "y": "-3"
+          },
+          "id": "MISC-MAALAM-TARH-MAQLUB"
+        },
+        {
+          "value": {
+            "x": "0",
+            "y": "3"
+          },
+          "id": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبدأ A والنهاية B."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المركبة الأولى: فاصلة B ناقص فاصلة A."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المركبة الثانية: ترتيب B ناقص ترتيب A، وانتبه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$0 - 1 = -1$ و $3 - 0 = 3$ .",
+        "incorrect": "النهاية B ناقص المبدأ A."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "مركبتا $\\overrightarrow{DC}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "point",
+      "answerFormat": "المركبتان: الأولى ثم الثانية — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "-1",
+        "y": "3"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "1",
+            "y": "-3"
+          },
+          "id": "MISC-MAALAM-TARH-MAQLUB"
+        },
+        {
+          "value": {
+            "x": "-3",
+            "y": "0"
+          },
+          "id": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبدأ D والنهاية C."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المركبة الأولى: فاصلة C ناقص فاصلة D."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المركبة الثانية: ترتيب C ناقص ترتيب D، وانتبه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$-3 - (-2) = -1$ و $0 - (-3) = 3$ .",
+        "incorrect": "المبدأ D والنهاية C."
+      }
+    },
+    {
+      "id": "q3",
+      "statement": "ماذا تلاحظ؟",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{AB} = \\overrightarrow{CD}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-TARTIB-NUQAT"
+        },
+        {
+          "id": "B",
+          "content": "الشعاعان غير متساويين لأن A و D مختلفتان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MABDA"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{AB} = \\overrightarrow{DC}$ ، فالرباعي ABCD متوازي أضلاع",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مركبتي كل شعاع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن المركبة الأولى بالأولى والثانية بالثانية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يتساوى الشعاعان إذا تساوت المركبتان معا."
+        }
+      ],
+      "feedback": {
+        "correct": "نفس المركبتين $(-1\\,;\\,3)$ : AB = DC (صحّحت المنصّة خطأً مطبعيًا في الكتاب: «AB = CD»).",
+        "incorrect": "CD مركبتاه $(1\\,;\\,-3)$ : هو المعاكس."
+      }
+    }
+  ]
+}

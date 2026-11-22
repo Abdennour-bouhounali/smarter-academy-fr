@@ -1,0 +1,80 @@
+{
+  "id": "ex-4am-barahin-ashia-l3-010",
+  "lessonCode": "barahin-ashia",
+  "level": 3,
+  "generator": {
+    "tool": "gen-barahin.mjs",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — هل تثبت علاقة شال الاستقامية؟",
+    "estimatedMinutes": 3,
+    "tags": [
+      "علاقة شال",
+      "استقامية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_barahin-ashia_P2",
+      "modelledOn": "method-proof"
+    }
+  },
+  "statement": {
+    "content": "كتب سمير: «لدينا $\\overrightarrow{AB} + \\overrightarrow{BC} = \\overrightarrow{AC}$ ، إذن النقطة B تقع على القطعة [AC]»."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "استنتاج سمير:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "خاطئ: علاقة شال صحيحة مهما كانت B",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "صحيح: المساواة تثبت أن B على [AC]",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-ISTIQAMA"
+        },
+        {
+          "id": "C",
+          "content": "صحيح فقط إذا كان ABC مثلثا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-ISTIQAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جرّب نقطة B خارج المستقيم (AC)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل تبقى علاقة شال صحيحة؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ما يصحّ لكل نقطة لا يثبت خاصية لنقطة معيّنة."
+        }
+      ],
+      "feedback": {
+        "correct": "علاقة شال صحيحة لكل النقط، فهي لا تثبت أن B على [AC].",
+        "incorrect": "ارسم مثلثا ABC : $\\overrightarrow{AB} + \\overrightarrow{BC} = \\overrightarrow{AC}$ دائما، و B ليست على [AC]."
+      }
+    }
+  ]
+}

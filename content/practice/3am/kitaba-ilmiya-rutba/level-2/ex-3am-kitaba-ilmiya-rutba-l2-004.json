@@ -1,0 +1,284 @@
+{
+  "id": "ex-3am-kitaba-ilmiya-rutba-l2-004",
+  "lessonCode": "kitaba-ilmiya-rutba",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — من $k\\times10^{p}$ إلى الكتابة العلمية",
+    "estimatedMinutes": 8,
+    "tags": [
+      "كتابة علمية",
+      "قوى العدد 10"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أعط الكتابة العلمية $a\\times10^{n}$ لكلّ عدد من الأعداد التالية.",
+    "formulas": [
+      "A = 48{,}7\\times10^{3}",
+      "B = 0{,}063\\times10^{-2}",
+      "C = 520\\times10^{-6}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "الكتابة العلمية للعدد $A$ هي $a\\times10^{n}$ حيث $1\\le a<10$ : ما قيمة $a$ ؟",
+      "answerType": "rational",
+      "answerFormat": "العدد $a$ (عدد عشري)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد أوّل رقم غير معدوم في العدد وانظر أين تقع الفاصلة بالنسبة إليه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في الكتابة العلمية $a\\times10^{n}$ يكون $a$ من 1 إلى أقلّ تمامًا من 10: ضع الفاصلة بعد أوّل رقم غير معدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: ضرب $a$ في $10^{n}$ يجب أن يعيد العدد المعطى."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "4.87",
+      "feedback": {
+        "correct": "$A = 4{,}87\\times10^{4}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $A$ على الشكل $a\\times10^{n}$ مع $1\\le a<10$ .",
+          "$A = 4{,}87\\times10^{4}$ ، إذن $a = 4{,}87$ ."
+        ],
+        "result": "a = 4.87"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "الكتابة العلمية للعدد $A$ هي $a\\times10^{n}$ حيث $1\\le a<10$ : ما قيمة الأسّ $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العدد بـ 1 وبـ 10: هل هو كبير جدًّا أم صغير جدًّا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد المراتب التي تنقل بها الفاصلة هو $|n|$ ؛ الأسّ موجب إن كان العدد كبيرًا وسالب إن كان العدد أصغر من 1."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: $10^{n}$ هي أكبر قوة للعدد 10 لا تتجاوز العدد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-ILMIYA-K"
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 4{,}87\\times10^{4}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $A$ على الشكل $a\\times10^{n}$ مع $1\\le a<10$ .",
+          "$A = 4{,}87\\times10^{4}$ ، إذن $n = 4$ ."
+        ],
+        "result": "n = 4"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "الكتابة العلمية للعدد $B$ هي $a\\times10^{n}$ حيث $1\\le a<10$ : ما قيمة الأسّ $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العدد بـ 1 وبـ 10: هل هو كبير جدًّا أم صغير جدًّا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد المراتب التي تنقل بها الفاصلة هو $|n|$ ؛ الأسّ موجب إن كان العدد كبيرًا وسالب إن كان العدد أصغر من 1."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: $10^{n}$ هي أكبر قوة للعدد 10 لا تتجاوز العدد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "value": "-2",
+          "id": "MISC-ILMIYA-K"
+        },
+        {
+          "value": "0",
+          "id": "MISC-ILMIYA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 6{,}3\\times10^{-4}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $B$ على الشكل $a\\times10^{n}$ مع $1\\le a<10$ .",
+          "$B = 6{,}3\\times10^{-4}$ ، إذن $n = -4$ ."
+        ],
+        "result": "n = -4"
+      }
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "statement": "الكتابة العلمية للعدد $C$ هي $a\\times10^{n}$ حيث $1\\le a<10$ : ما قيمة $a$ ؟",
+      "answerType": "rational",
+      "answerFormat": "العدد $a$ (عدد عشري)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد أوّل رقم غير معدوم في العدد وانظر أين تقع الفاصلة بالنسبة إليه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في الكتابة العلمية $a\\times10^{n}$ يكون $a$ من 1 إلى أقلّ تمامًا من 10: ضع الفاصلة بعد أوّل رقم غير معدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: ضرب $a$ في $10^{n}$ يجب أن يعيد العدد المعطى."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "5.2",
+      "feedback": {
+        "correct": "$C = 5{,}2\\times10^{-4}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $C$ على الشكل $a\\times10^{n}$ مع $1\\le a<10$ .",
+          "$C = 5{,}2\\times10^{-4}$ ، إذن $a = 5{,}2$ ."
+        ],
+        "result": "a = 5.2"
+      }
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "الكتابة العلمية للعدد $C$ هي $a\\times10^{n}$ حيث $1\\le a<10$ : ما قيمة الأسّ $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العدد بـ 1 وبـ 10: هل هو كبير جدًّا أم صغير جدًّا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد المراتب التي تنقل بها الفاصلة هو $|n|$ ؛ الأسّ موجب إن كان العدد كبيرًا وسالب إن كان العدد أصغر من 1."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: $10^{n}$ هي أكبر قوة للعدد 10 لا تتجاوز العدد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "value": "-6",
+          "id": "MISC-ILMIYA-K"
+        },
+        {
+          "value": "-8",
+          "id": "MISC-ILMIYA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "$C = 5{,}2\\times10^{-4}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $C$ على الشكل $a\\times10^{n}$ مع $1\\le a<10$ .",
+          "$C = 5{,}2\\times10^{-4}$ ، إذن $n = -4$ ."
+        ],
+        "result": "n = -4"
+      }
+    }
+  ]
+}

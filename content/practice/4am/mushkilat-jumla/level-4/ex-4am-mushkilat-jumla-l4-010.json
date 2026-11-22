@@ -1,0 +1,240 @@
+{
+  "id": "ex-4am-mushkilat-jumla-l4-010",
+  "lessonCode": "mushkilat-jumla",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2018 — دروس الإعلام الآلي بالبيض",
+    "estimatedMinutes": 14,
+    "tags": [
+      "جملة",
+      "ترييض",
+      "عرضان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mushkilat-jumla_P2",
+      "modelledOn": "BEM 2018 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2018",
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "يقترح مركز للتكوين المهني بولاية البيض، يعلّم الشباب إتقان الحرفة، دروسا في الإعلام الآلي وفق صيغتين:\n• الصيغة الأولى: 700DA للحصة الواحدة.\n• الصيغة الثانية: 4000DA حقوق التسجيل، و 450DA للحصة الواحدة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "احسب المبلغ الذي يدفعه متربص يحضر 10 حصص حسب كل صيغة.",
+      "statement": "المبلغ حسب الصيغة الأولى:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "7000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثمن الحصة × عدد الحصص."
+        }
+      ],
+      "feedback": {
+        "correct": "$10 \\times 700 = 7000DA$ .",
+        "incorrect": "اضرب ثمن الحصة في عدد الحصص."
+      },
+      "solution": {
+        "lines": [
+          "الصيغة الأولى: $10 \\times 700 = 7000$ أي $7000DA$",
+          "الصيغة الثانية: $4000 + 10 \\times 450 = 4000 + 4500 = 8500$ أي $8500DA$"
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "المبلغ حسب الصيغة الثانية:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "8500",
+      "misconceptionSignatures": [
+        {
+          "value": "44500",
+          "id": "MISC-WADIYA-TARJAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا تنس حقوق التسجيل، تُدفع مرة واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$4000 + 10 \\times 450 = 8500DA$ .",
+        "incorrect": "حقوق التسجيل + ثمن الحصص العشر."
+      },
+      "solution": {
+        "lines": [
+          "الصيغة الأولى: $10 \\times 700 = 7000$ أي $7000DA$",
+          "الصيغة الثانية: $4000 + 10 \\times 450 = 4000 + 4500 = 8500$ أي $8500DA$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "ليكن $x$ عدد الحصص و $y$ المبلغ المدفوع (بالدينار).",
+      "statement": "بيّن أنه إذا تساوى المبلغان حسب الصيغتين من أجل $x$ حصة، فإن الثنائية $(x ; y)$ حل للجملة: $\\begin{cases} 700x - y = 0 \\\\ 450x - y = -4000 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عبّر عن المبلغ حسب كل صيغة بدلالة $x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المبلغان متساويان ويساويان $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "المبلغ حسب الصيغة الأولى: $700x$ ، والمبلغ حسب الصيغة الثانية: $450x + 4000$ .",
+          "إذا تساوى المبلغان وكان كل منهما $y$ : $y = 700x$ و $y = 450x + 4000$ .",
+          "أي: $700x - y = 0$ و $450x - y = -4000$ ، ومنه $(x ; y)$ حل للجملة."
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "lead": "جد عدد الحصص الذي يتساوى من أجله المبلغان حسب الصيغتين، ثم أعط هذا المبلغ.",
+      "statement": "عدد الحصص:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط",
+      "expectedAnswer": "16",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل $y$ هو نفسه في المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح المعادلة الثانية من الأولى طرفا لطرف."
+        }
+      ],
+      "feedback": {
+        "correct": "يتساوى المبلغان من أجل 16 حصة.",
+        "incorrect": "بالطرح طرفا لطرف: $250x = 4000$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} 700x - y = 0 & ...(1) \\\\ 450x - y = -4000 & ...(2) \\end{cases}$",
+          "بطرح المعادلة (2) من المعادلة (1) طرفا لطرف نجد: $250x = 4000$ ومنه $x = 16$",
+          "بالتعويض في المعادلة (1): $y = 700 \\times 16 = 11200$",
+          "التحقق: $4000 + 450 \\times 16 = 4000 + 7200 = 11200$ .",
+          "إذن يتساوى المبلغان من أجل 16 حصة، ويكون المبلغ $11200DA$ ."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "المبلغ:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "11200",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض عدد الحصص في $y = 700x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "المبلغ $11200DA$ في الصيغتين: $700 \\times 16 = 4000 + 450 \\times 16$ .",
+        "incorrect": "احسب $700 \\times x$ بعدد الحصص الذي وجدته."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} 700x - y = 0 & ...(1) \\\\ 450x - y = -4000 & ...(2) \\end{cases}$",
+          "بطرح المعادلة (2) من المعادلة (1) طرفا لطرف نجد: $250x = 4000$ ومنه $x = 16$",
+          "بالتعويض في المعادلة (1): $y = 700 \\times 16 = 11200$",
+          "التحقق: $4000 + 450 \\times 16 = 4000 + 7200 = 11200$ .",
+          "إذن يتساوى المبلغان من أجل 16 حصة، ويكون المبلغ $11200DA$ ."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

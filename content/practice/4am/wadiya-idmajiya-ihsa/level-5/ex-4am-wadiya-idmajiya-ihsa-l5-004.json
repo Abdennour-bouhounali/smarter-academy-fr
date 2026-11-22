@@ -1,0 +1,324 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ihsa-l5-004",
+  "lessonCode": "wadiya-idmajiya-ihsa",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2012 — الامتحان التجريبي في متوسطة بتندوف",
+    "estimatedMinutes": 20,
+    "tags": [
+      "وضعية إدماجية",
+      "مدرّج تكراري",
+      "التكرار المجمع الصاعد",
+      "مراكز الفئات",
+      "اتخاذ قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-ihsa_P1",
+      "modelledOn": "BEM 2012 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2012",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في متوسطة بتندوف يجتهد تلاميذها في طلب العلم، يمثّل المدرّج التكراري الآتي علامات 40 تلميذا من السنة الرابعة في الامتحان التجريبي لشهادة التعليم المتوسط (الفئة الأخيرة $15 \\le t \\le 20$)، ويعطي الجدول بعض التكرارات المجمعة الصاعدة (التكرار المجمع الصاعد لفئة = عدد التلاميذ الذين علاماتهم أقل من حدّها الأعلى):",
+    "table": {
+      "head": [
+        "فئة العلامات",
+        "التكرار المجمع الصاعد"
+      ],
+      "rows": [
+        [
+          "$0 \\le t < 5$",
+          "4"
+        ],
+        [
+          "$5 \\le t < 10$",
+          "…"
+        ],
+        [
+          "$10 \\le t < 15$",
+          "…"
+        ],
+        [
+          "$15 \\le t \\le 20$",
+          "40"
+        ]
+      ]
+    },
+    "figure": {
+      "kind": "chart",
+      "type": "histogram",
+      "ariaLabel": "مدرّج تكراري لعلامات 40 تلميذا في الامتحان التجريبي بأربع فئات من 0 إلى 20",
+      "xTitle": "العلامة",
+      "yTitle": "عدد التلاميذ",
+      "edges": [
+        0,
+        5,
+        10,
+        15,
+        20
+      ],
+      "values": [
+        4,
+        12,
+        16,
+        8
+      ],
+      "y": {
+        "max": 16,
+        "step": 4,
+        "minor": 2
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "انقل الجدول وأكمله.",
+      "statement": "الخانة الموافقة للفئة $5 \\le t < 10$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "16",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        },
+        {
+          "value": "36",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ ارتفاع كل مستطيل (الأعداد مكتوبة كل 4 والتدريجة الرفيعة 2)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الصاعد يجمع تكرار الفئة وتكرارات الفئات التي قبلها."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 + 12 = 16$ .",
+        "incorrect": "اجمع تكرار الفئة وتكرارات الفئات التي علاماتها أصغر فقط."
+      },
+      "solution": {
+        "lines": [
+          "القراءة: 4 ، 12 ، 16 ، 8 .",
+          "$4 + 12 = 16$"
+        ],
+        "result": "16"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "الخانة الموافقة للفئة $10 \\le t < 15$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "32",
+      "misconceptionSignatures": [
+        {
+          "value": "16",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        },
+        {
+          "value": "24",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أضف تكرار هذه الفئة إلى الخانة السابقة."
+        }
+      ],
+      "feedback": {
+        "correct": "$16 + 16 = 32$ .",
+        "incorrect": "التكرار المجمع الصاعد = الخانة السابقة + تكرار هذه الفئة."
+      },
+      "solution": {
+        "lines": [
+          "$16 + 16 = 32$",
+          "الجدول المكتمل: 4 ، 16 ، 32 ، 40 ."
+        ],
+        "result": "32"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب النسبة المئوية للتلاميذ الذين علاماتهم أقل من 10 .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: النسبة المئوية دون الرمز %",
+      "expectedAnswer": "40",
+      "misconceptionSignatures": [
+        {
+          "value": "16",
+          "id": "MISC-IHSA-TAWATUR-BILA-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد هؤلاء التلاميذ خانة من الجدول: الفئات التي حدّها الأعلى 10 على الأكثر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم على التكرار الكلي ثم اضرب في 100 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{16}{40} \\times 100 = 40$ .",
+        "incorrect": "استعمل التكرار المجمع الصاعد المناسب، ثم احسب النسبة من التكرار الكلي."
+      },
+      "solution": {
+        "lines": [
+          "عدد التلاميذ الذين علاماتهم أقل من 10 : 16 .",
+          "$\\dfrac{16}{40} \\times 100 = 40$"
+        ],
+        "result": "40\\%"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "باستعمال مراكز الفئات، احسب متوسط علامات هؤلاء التلاميذ.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة إن لزم)",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "value": "8,5",
+          "id": "MISC-IHSA-MARKAZ-FIA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مراكز الفئات: $2{,}5$ ، $7{,}5$ ، $12{,}5$ ، $17{,}5$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب كل مركز في تكرار فئته ثم اقسم على 40 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2{,}5 \\times 4 + 7{,}5 \\times 12 + 12{,}5 \\times 16 + 17{,}5 \\times 8}{40} = 11$ .",
+        "incorrect": "استعمل مركز كل فئة (لا حدّها الأدنى) ثم المتوسط المتوازن."
+      },
+      "solution": {
+        "lines": [
+          "$2{,}5 \\times 4 + 7{,}5 \\times 12 + 12{,}5 \\times 16 + 17{,}5 \\times 8 = 440$",
+          "$\\dfrac{440}{40} = 11$"
+        ],
+        "result": "11"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "يبرمج المدير حصص معالجة للسنة الرابعة إذا تجاوزت نسبة التلاميذ الذين علاماتهم أقل من 10 النسبة 35% ، أو كان متوسط العلامات أقل من 10 . هل يبرمج المدير هذه الحصص؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأن 40% من التلاميذ علاماتهم أقل من 10 ، وهي نسبة تتجاوز 35%",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا، لأن متوسط العلامات 11 ليس أقل من 10",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MUQARANA-MUTAWASSIT-FAQAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يكفي أن يتحقّق أحد الشرطين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تحكم بالمتوسط وحده."
+        }
+      ],
+      "feedback": {
+        "correct": "$40\\% > 35\\%$ : الشرط الأول محقّق.",
+        "incorrect": "تحقّق من الشرطين كليهما: المتوسط وحده لا يكفي للحكم."
+      },
+      "solution": {
+        "lines": [
+          "المتوسط 11 ليس أقل من 10 : الشرط الثاني غير محقّق.",
+          "لكن $40\\% > 35\\%$ : الشرط الأول محقّق.",
+          "إذن يبرمج المدير حصص المعالجة."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

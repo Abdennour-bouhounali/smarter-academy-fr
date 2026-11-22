@@ -1,0 +1,85 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l1-007",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — على الدائرة أم لا؟",
+    "estimatedMinutes": 2,
+    "tags": [
+      "دائرة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_ithbat-khawas-maalam_P3",
+      "modelledOn": "now-145"
+    }
+  },
+  "generator": {
+    "tool": "u1x-ithbat-khawas-maalam/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "دائرة مركزها O ونصف قطرها 4 ، و M نقطة حيث $OM = 4$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "النقطة M :",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "داخل الدائرة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-DAIRA-QUTR"
+        },
+        {
+          "id": "B",
+          "content": "تنتمي إلى الدائرة لأن بعدها عن المركز يساوي نصف القطر",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لا تنتمي إلى الدائرة لأن القطر 8",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-DAIRA-QUTR"
+        },
+        {
+          "id": "D",
+          "content": "هي مركز الدائرة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-DAIRA-QUTR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما شرط انتماء نقطة إلى دائرة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نقارن بعد النقطة عن المركز بنصف القطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القطر ضعف نصف القطر: لا نقارن به."
+        }
+      ],
+      "feedback": {
+        "correct": "$OM = 4 = r$ : M على الدائرة.",
+        "incorrect": "نقارن OM بنصف القطر r لا بالقطر."
+      }
+    }
+  ]
+}

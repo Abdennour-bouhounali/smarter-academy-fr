@@ -1,0 +1,127 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-khattiya-l2-004",
+  "lessonCode": "wadiya-idmajiya-khattiya",
+  "level": 2,
+  "metadata": {
+    "title": "تمرين 39 — عصير البرتقال",
+    "estimatedMinutes": 6,
+    "tags": [
+      "مقادير مركبة",
+      "تركيز"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-39",
+      "page": 75,
+      "section": "الوضعيات",
+      "number": 39,
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-khattiya-l2-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "500mL من عصير البرتقال تحتوي على 40cg من السكر. وجد عبد الحميد هذا المشروب حلوًا جدًّا فأضاف له 40mL من الماء."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب حجم المشروب الجديد باللتر.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة: الحجم باللتر",
+      "expectedAnswer": "0,54",
+      "misconceptionSignatures": [
+        {
+          "value": "540",
+          "id": "MISC-MAQADIR-WIHDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع الحجمين بالمليلتر ثم حوّل: $1L = 1000mL$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$500 + 40 = 540mL = 0{,}54L$ .",
+        "incorrect": "الحجم الجديد هو مجموع الحجمين، باللتر."
+      },
+      "solution": {
+        "lines": [
+          "$500mL + 40mL = 540mL = 0{,}54L$"
+        ],
+        "result": "V = 0{,}54L"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب تركيز السكر في المشروب الجديد بـ g/L (بالتدوير إلى $0{,}01$).",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة: التركيز بـ g/L",
+      "expectedAnswer": "0,74",
+      "evaluationPolicy": {
+        "tolerance": "0.01"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "0.8",
+          "id": "MISC-MAQADIR-WIHDA"
+        },
+        {
+          "value": "74.07",
+          "id": "MISC-MAQADIR-WIHDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل 40cg إلى غرامات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التركيز = كتلة السكر ÷ الحجم الجديد."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}4 \\div 0{,}54 \\approx 0{,}74$ g/L.",
+        "incorrect": "40cg = 0,4g، والحجم هو الحجم الجديد."
+      },
+      "solution": {
+        "lines": [
+          "$40cg = 0{,}4g$",
+          "$\\dfrac{0{,}4}{0{,}54} \\approx 0{,}74$",
+          "تركيز السكر في المشروب الجديد $0{,}74g/L$ تقريبا."
+        ],
+        "result": "\\approx 0{,}74g/L"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

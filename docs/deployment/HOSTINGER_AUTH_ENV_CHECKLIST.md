@@ -3,6 +3,13 @@
 Ce document liste ce que le fichier `.env` de production doit contenir pour que
 le chantier légal/authentification fonctionne.
 
+> **Écrit pour le produit français** (`smarter-academy.fr`, Stripe). Pour la
+> plateforme algérienne, le domaine est **`smarter-academy.com`** partout où
+> ce document écrit `.fr` (`APP_URL`, `FRONTEND_URL`, `GOOGLE_REDIRECT_URI`,
+> lien de vérification) ; le modèle `.env` DZ et ses valeurs sont dans
+> `DZ_FIRST_DEPLOYMENT.md`. Les pièges décrits ici (`APP_URL`,
+> `MAIL_MAILER=log`) valent à l'identique.
+
 > **Aucune valeur secrète ne figure ici, et aucune ne doit y figurer.**
 > Ce fichier est versionné ; `.env` ne l'est pas (`.gitignore`). Les secrets
 > se saisissent directement dans le `.env` du serveur, via le File Manager.
@@ -49,7 +56,9 @@ inexistante renvoie `{"message": ...}` sans trace d'exécution). Le laisser ains
 d'adresse sont construits par `URL::temporarySignedRoute()`, qui part de
 `APP_URL`. Une valeur erronée (`http://`, un `www.` en trop, une barre oblique
 finale) produit des liens dont la signature ne correspondra pas, et **toute
-vérification d'adresse échouera** avec « lien invalide ». La valeur attendue,
+vérification d'adresse échouera** : l'élève est renvoyé vers
+`/verification-email?statut=invalide` (« لم يعد هذا الرابط صالحًا »), comme
+pour un lien expiré. La valeur attendue,
 vérifiée contre la structure réelle du serveur, produit :
 
 ```
@@ -68,8 +77,8 @@ c'est la **dernière** qui gagne : n'en garder qu'une.
 ### 3.1 Documents légaux
 
 ```dotenv
-LEGAL_TERMS_VERSION=2026-09-12
-LEGAL_PRIVACY_VERSION=2026-09-12
+LEGAL_TERMS_VERSION=2026-10-04
+LEGAL_PRIVACY_VERSION=2026-10-04
 ```
 
 Ces deux valeurs ont un défaut identique dans `config/legal.php` : si elles sont
@@ -101,14 +110,25 @@ GOOGLE_REDIRECT_URI=https://smarter-academy.fr/api/v1/auth/google/callback
 
 ```dotenv
 MAIL_MAILER=smtp
-MAIL_HOST=<serveur SMTP du fournisseur>
-MAIL_PORT=<465 ou 587 selon le chiffrement>
-MAIL_USERNAME=contact@smarter-academy.fr
+MAIL_HOST=smtp.hostinger.com
+MAIL_PORT=465
+MAIL_SCHEME=smtps
+MAIL_USERNAME=contact@smarter-academy.com
 MAIL_PASSWORD=<mot de passe de la boîte>
-MAIL_ENCRYPTION=<ssl si port 465, tls si port 587>
-MAIL_FROM_ADDRESS=contact@smarter-academy.fr
+MAIL_FROM_ADDRESS=contact@smarter-academy.com
 MAIL_FROM_NAME="Smarter Academy"
 ```
+
+- **`MAIL_ENCRYPTION` n'existe plus** : ce Laravel (13) lit `MAIL_SCHEME`
+  (`config/mail.php`). Sans lui, le port 465 suffit à choisir `smtps`
+  (`MailManager`), mais l'écrire évite toute ambiguïté.
+- **`MAIL_FROM_ADDRESS` = `MAIL_USERNAME`** : Hostinger refuse un expéditeur
+  qui n'est pas la boîte authentifiée.
+- Le mot de passe est celui de la boîte (hPanel › E-mails › la boîte ›
+  « Changer le mot de passe » s'il est inconnu). S'il contient `#`, un espace
+  ou `"`, l'écrire entre guillemets.
+- La configuration n'est jamais mise en cache par le déploiement : une
+  modification du `.env` s'applique à la requête suivante.
 
 Voir le § SMTP du guide de déploiement pour ce qu'il faut récupérer chez
 l'hébergeur. **Aucune de ces valeurs n'est inventée ici** : elles viennent du
@@ -119,6 +139,12 @@ Si la variable est absente du `.env` de production, **aucun courriel ne part** :
 les messages sont écrits dans `storage/logs/laravel.log` et l'élève n'en reçoit
 jamais aucun, sans la moindre erreur visible. C'est le piège principal de ce
 déploiement.
+
+À l'inverse, des identifiants SMTP **faux** produisent une vraie erreur — elle
+est journalisée dans le même fichier, mais n'interrompt plus l'inscription
+(réponse `verificationEmailSent: false`, renvoi en `503`, depuis le
+2026-10-07). Dans les deux cas, l'élève ne reçoit rien : seul le journal le
+dit.
 
 ---
 
@@ -151,7 +177,7 @@ d'environnement, `VITE_API_URL`. Aucun secret n'y transite.
 - [ ] `STRIPE_WEBHOOK_TOLERANCE=300` **inchangée**
 - [ ] `DB_*` inchangées
 - [ ] `LEGAL_TERMS_VERSION` / `LEGAL_PRIVACY_VERSION` présentes
-- [ ] `MAIL_MAILER=smtp` (surtout pas `log`)
+- [ ] `MAIL_MAILER=smtp` (surtout pas `log`), `MAIL_SCHEME=smtps`, port 465
 - [ ] `MAIL_FROM_ADDRESS=contact@smarter-academy.fr`
 - [ ] `GOOGLE_*` présentes, ou volontairement laissées vides pour plus tard
 - [ ] aucune variable `VITE_*` secrète

@@ -1,0 +1,230 @@
+{
+  "id": "ex-4am-aksiya-talis-l1-002",
+  "lessonCode": "aksiya-talis",
+  "level": 1,
+  "metadata": {
+    "title": "تمرين 10 — وضعية الفراشة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "تمرين 10",
+      "وضعية الفراشة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-10",
+      "page": 111,
+      "section": "أوظّف تعلّماتي",
+      "number": 10
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل: النقط $A$ ، $C$ ، $E$ في استقامية، والنقط $B$ ، $C$ ، $F$ في استقامية، حيث: $CA = 2$ ، $CE = 3$ ، $CB = 4$ و $CF = 6$ .",
+    "figure": {
+      "points": {
+        "C": [
+          0.0,
+          0.0
+        ],
+        "A": [
+          -1.732050807569,
+          1.0
+        ],
+        "E": [
+          2.598076211353,
+          -1.5
+        ],
+        "B": [
+          1.690473046963,
+          3.625231148147
+        ],
+        "F": [
+          -2.535709570444,
+          -5.43784672222
+        ]
+      },
+      "segments": [
+        {
+          "from": "C",
+          "to": "A",
+          "label": "2"
+        },
+        {
+          "from": "C",
+          "to": "E",
+          "label": "3"
+        },
+        {
+          "from": "C",
+          "to": "B",
+          "label": "4"
+        },
+        {
+          "from": "C",
+          "to": "F",
+          "label": "6"
+        },
+        [
+          "A",
+          "B"
+        ],
+        [
+          "E",
+          "F"
+        ]
+      ],
+      "ariaLabel": "A و C و E على استقامة، B و C و F على استقامة، و C بين النقطتين في كل مرة؛ CA = 2 و CE = 3 و CB = 4 و CF = 6",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب النسبة $\\dfrac{CA}{CE}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "2/3",
+      "misconceptionSignatures": [
+        {
+          "value": "3/2",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$CA$ و $CE$ طولان يُقاسان من النقطة $C$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $CA$ على $CE$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{CA}{CE} = \\dfrac{2}{3}$ .",
+        "incorrect": "النسبة $\\dfrac{CA}{CE}$ : الطول $CA$ على الطول $CE$ ، وكلاهما من النقطة $C$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{CA}{CE} = \\dfrac{2}{3}$"
+        ],
+        "result": "\\dfrac{CA}{CE} = \\dfrac{2}{3}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب النسبة $\\dfrac{CB}{CF}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "2/3",
+      "misconceptionSignatures": [
+        {
+          "value": "3/2",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$CB$ و $CF$ طولان يُقاسان من النقطة $C$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $CB$ على $CF$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{CB}{CF} = \\dfrac{4}{6} = \\dfrac{2}{3}$ .",
+        "incorrect": "النسبة $\\dfrac{CB}{CF}$ : الطول $CB$ على الطول $CF$ ، وكلاهما من النقطة $C$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{CB}{CF} = \\dfrac{4}{6} = \\dfrac{2}{3}$"
+        ],
+        "result": "\\dfrac{CB}{CF} = \\dfrac{2}{3}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل المستقيمان $(AB)$ و $(EF)$ متوازيان؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-BAYN-FAQAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النسبتين بقيمهما المضبوطة (الجداء المتصالب)، لا بقيم مقرّبة ولا بمظهر الشكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق أيضا من ترتيب النقط على المستقيمين المتقاطعين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{CA}{CE} = \\dfrac{CB}{CF}$ والنقط بنفس الترتيب ( $C$ بين النقطتين في كل مرة): $(AB) \\parallel (EF)$ .",
+        "incorrect": "الخاصية العكسية تتطلب شرطين معا: تساوي النسبتين بقيم مضبوطة، وترتيب النقط نفسه على المستقيمين."
+      },
+      "solution": {
+        "lines": [
+          "بما أن النقط $A$ ، $C$ ، $E$ و $B$ ، $C$ ، $F$ في استقامية وبنفس الترتيب،",
+          "و بما أن: $\\dfrac{CA}{CE} = \\dfrac{CB}{CF} = \\dfrac{2}{3}$",
+          "فإن المستقيمين $(AB)$ و $(EF)$ متوازيان حسب خاصية طالس العكسية."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

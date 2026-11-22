@@ -1,0 +1,249 @@
+{
+  "id": "ex-3am-qismat-nisbiyayn-l5-009",
+  "lessonCode": "qismat-nisbiyayn",
+  "level": 5,
+  "metadata": {
+    "title": "إشارة حاصل قسمة وقيمته",
+    "estimatedMinutes": 5,
+    "tags": [
+      "مجموع جبري",
+      "جداء",
+      "حاصل قسمة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 1,
+      "file": "3am-s1-109",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان $A$ و $B$ حيث:",
+    "formulas": [
+      "A = [−6 − (4 − 9) + (−12)] + (−2)",
+      "B = (−5) \\times (−6) \\times (+2{,}5)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب $A$ و $B$ .",
+      "statement": "احسب $A$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-15",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تُنجز أولًا؟ ابدأ بما بين القوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد الأقواس: الضرب والقسمة معًا من اليسار إلى اليمين، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل خطوة في سطر، وانتبه إلى طرح عدد سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = −15$ .",
+        "incorrect": "راجع أولوية العمليات: الأقواس، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$A = [−6 − (4 − 9) + (−12)] + (−2)$",
+          "$A = [−6 − (−5) + (−12)] + (−2)$",
+          "$A = [−1 + (−12)] + (−2)$",
+          "$A = −13 + (−2)$",
+          "$A = −15$"
+        ],
+        "result": "−15"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $B$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "75",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تُنجز أولًا؟ ابدأ بما بين القوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد الأقواس: الضرب والقسمة معًا من اليسار إلى اليمين، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل خطوة في سطر، وانتبه إلى طرح عدد سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 75$ .",
+        "incorrect": "راجع أولوية العمليات: الأقواس، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$B = (−5) \\times (−6) \\times (+2{,}5)$",
+          "$B = 30 \\times (+2{,}5)$",
+          "$B = 75$"
+        ],
+        "result": "75"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "لنعتبر حاصل القسمة $A \\div B$ .",
+      "statement": "ما إشارة $A \\div B$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "موجب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QISMA-SIGN"
+        },
+        {
+          "id": "B",
+          "content": "سالب",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة كل من العددين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن إشارتي العددين: أمتماثلتان أم مختلفتان؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق قاعدة الإشارات: هي نفسها في الضرب وفي القسمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = −15$ سالب و $B = 75$ موجب: إشارتاهما مختلفتان، فـ $A \\div B$ سالب.",
+        "incorrect": "راجع قاعدة الإشارات: لهما الإشارة نفسها أم إشارتان مختلفتان؟"
+      },
+      "solution": {
+        "lines": [
+          "$A = −15$ سالب و $B = 75$ موجب: إشارتاهما مختلفتان، فـ $A \\div B$ سالب."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب $A \\div B$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-0.2",
+      "misconceptionSignatures": [
+        {
+          "value": "0.2",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "-5",
+          "id": "MISC-QISMA-ORDER"
+        },
+        {
+          "value": "-90",
+          "id": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن إشارة حاصل القسمة قبل أن تحسب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم المسافة إلى الصفر للمقسوم على المسافة إلى الصفر للمقسوم عليه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالضرب: حاصل القسمة مضروبًا في المقسوم عليه يعطي المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−15) \\div 75 = −0{,}2$ .",
+        "incorrect": "راجع قاعدة قسمة عددين نسبيين: الإشارة أولًا، ثم قسمة المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "المقسوم سالب والمقسوم عليه موجب: إشارتاهما مختلفتان، إذن الحاصل سالب.",
+          "$15 \\div 75 = 0{,}2$",
+          "$−15 \\div 75 = −0{,}2$"
+        ],
+        "result": "−0{,}2"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

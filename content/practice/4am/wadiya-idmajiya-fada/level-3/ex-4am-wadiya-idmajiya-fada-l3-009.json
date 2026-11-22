@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-fada-l3-009",
+  "lessonCode": "wadiya-idmajiya-fada",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — من نسبة الحجمين إلى الارتفاع",
+    "estimatedMinutes": 5,
+    "tags": [
+      "التكبير والتصغير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-fada_P1",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "مخروط صغير له نفس رأس مخروط كبير ونفس محوره، وحجمه $\\dfrac{1}{27}$ حجم الكبير. ارتفاع الكبير $18\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ارتفاع المخروط الصغير (بالسنتيمتر):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-fada_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر)",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الصغير تصغير للكبير نسبته k."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$k^3 = \\dfrac{1}{27}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ابحث عن عدد مكعبه $\\dfrac{1}{27}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$k = \\dfrac{1}{3}$ لأنّ $\\left(\\dfrac{1}{3}\\right)^3 = \\dfrac{1}{27}$ ، فالارتفاع $18 \\times \\dfrac{1}{3} = 6\\,\\mathrm{cm}$ .",
+        "incorrect": "من نسبة الحجمين نأخذ الجذر التكعيبي لنجد نسبة الأطوال."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "2/3",
+          "id": "MISC-TAKBIR-HAJM-K"
+        },
+        {
+          "value": "2",
+          "id": "MISC-TAKBIR-MISAHA-K"
+        }
+      ],
+      "difficulty": 3
+    }
+  ]
+}

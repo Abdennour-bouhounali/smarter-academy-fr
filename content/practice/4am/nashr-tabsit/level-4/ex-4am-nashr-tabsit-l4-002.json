@@ -1,0 +1,297 @@
+{
+  "id": "ex-4am-nashr-tabsit-l4-002",
+  "lessonCode": "nashr-tabsit",
+  "level": 4,
+  "metadata": {
+    "title": "جداء قوسين بالكسور",
+    "estimatedMinutes": 12,
+    "tags": [
+      "جداء قوسين",
+      "كسور"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-5",
+      "page": 37,
+      "section": "أوظّف تعلّماتي",
+      "number": 5
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "انشر وبسّط كلا من العبارتين:",
+    "formulas": [
+      "B = \\left(2x + \\dfrac{1}{5}\\right)\\left(x + \\dfrac{2}{5}\\right)",
+      "C = \\left(\\dfrac{4}{3}x - 2\\right)\\left(\\dfrac{3}{2}x - \\dfrac{1}{4}\\right)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انشر وبسّط العبارة $B$ .",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P4",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $B$ على الشكل $ax^2 + bx + c$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب كل حد من القوس الأول في كل حد من القوس الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى إشارة كل حد عند كتابة الجداءات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 2x^2 + x + \\dfrac{2}{25}$ إذن $a = 2$.",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$B = \\left(2x + \\dfrac{1}{5}\\right)\\left(x + \\dfrac{2}{5}\\right)$",
+          "$B = 2x \\times x + 2x \\times \\dfrac{2}{5} + \\dfrac{1}{5} \\times x + \\dfrac{1}{5} \\times \\dfrac{2}{5}$",
+          "$B = 2x^2 + \\dfrac{4}{5}x + \\dfrac{1}{5}x + \\dfrac{2}{25}$"
+        ],
+        "result": "B = 2x^2 + x + \\dfrac{2}{25}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P4",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $B$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-NASHR-AWWAL-AKHIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع معاملات حدود $x$ بإشاراتها بعد النشر."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 2x^2 + x + \\dfrac{2}{25}$ إذن $b = 1$.",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $b$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$B = 2x^2 + x + \\dfrac{2}{25}$"
+        ],
+        "result": "b = 1"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "العدد $c$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P4",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $B$ على الشكل $ax^2 + bx + c$ : اكتب العدد $c$ فقط",
+      "expectedAnswer": "2/25",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 2x^2 + x + \\dfrac{2}{25}$ إذن $c = \\dfrac{2}{25}$.",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $c$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$B = 2x^2 + x + \\dfrac{2}{25}$"
+        ],
+        "result": "c = \\dfrac{2}{25}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "lead": "انشر وبسّط العبارة $C$ .",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P4",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $C$ على الشكل $ax^2 + bx + c$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب كل حد من القوس الأول في كل حد من القوس الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى إشارة كل حد عند كتابة الجداءات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = 2x^2 - \\dfrac{10}{3}x + \\dfrac{1}{2}$ إذن $a = 2$.",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$C = \\left(\\dfrac{4}{3}x - 2\\right)\\left(\\dfrac{3}{2}x - \\dfrac{1}{4}\\right)$",
+          "$C = \\dfrac{4}{3}x \\times \\dfrac{3}{2}x - \\dfrac{4}{3}x \\times \\dfrac{1}{4} - 2 \\times \\dfrac{3}{2}x + 2 \\times \\dfrac{1}{4}$",
+          "$C = 2x^2 - \\dfrac{1}{3}x - 3x + \\dfrac{1}{2}$"
+        ],
+        "result": "C = 2x^2 - \\dfrac{10}{3}x + \\dfrac{1}{2}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P4",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $C$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "-10/3",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-NASHR-AWWAL-AKHIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع معاملات حدود $x$ بإشاراتها بعد النشر."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = 2x^2 - \\dfrac{10}{3}x + \\dfrac{1}{2}$ إذن $b = -\\dfrac{10}{3}$.",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $b$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$C = 2x^2 - \\dfrac{10}{3}x + \\dfrac{1}{2}$"
+        ],
+        "result": "b = -\\dfrac{10}{3}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "statement": "العدد $c$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P4",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $C$ على الشكل $ax^2 + bx + c$ : اكتب العدد $c$ فقط",
+      "expectedAnswer": "1/2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = 2x^2 - \\dfrac{10}{3}x + \\dfrac{1}{2}$ إذن $c = \\dfrac{1}{2}$.",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $c$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$C = 2x^2 - \\dfrac{10}{3}x + \\dfrac{1}{2}$"
+        ],
+        "result": "c = \\dfrac{1}{2}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

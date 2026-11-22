@@ -1,0 +1,293 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-kusur-natiqa-l5-002",
+  "lessonCode": "wadiya-idmajiya-kusur-natiqa",
+  "level": 5,
+  "metadata": {
+    "title": "ثلاثة إخوة يشترون جهاز كمبيوتر",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جمع كسور",
+      "جزء باقٍ",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 1,
+      "file": "3am-s1-108",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "07"
+    }
+  },
+  "statement": {
+    "content": "اشترك ثلاثة إخوة في شراء جهاز كمبيوتر ثمنه $150000$ DA : دفع الأوّل $\\dfrac{2}{5}$ من الثمن، ودفع الثاني $\\dfrac{1}{6}$ منه، ودفع الثالث ضعف ما دفعه الثاني ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأوّل :",
+      "statement": "من دفع أصغر مبلغ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الأوّل",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-EYE"
+        },
+        {
+          "id": "B",
+          "content": "الثاني",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "الثالث",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-EYE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للكسرين المقام نفسه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "وحّد المقامات ثمّ قارن البسطين، فالكسر الأكبر له البسط الأكبر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحكم بنظرة إلى البسط وحده أو المقام وحده."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: الثاني .",
+        "incorrect": "وحّد المقامات قبل المقارنة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الثالث دفع $2 \\times \\dfrac{1}{6} = \\dfrac{1}{3}$ .",
+          "بالمقام $30$ : $\\dfrac{12}{30}$ و $\\dfrac{5}{30}$ و $\\dfrac{10}{30}$ ، فأصغر مبلغ دفعه الثاني."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما الكسر الذي يمثّل المبلغ الناقص لشراء الجهاز ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "1/10",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "9/10",
+          "id": "MISC-JAMTARH-MAJMU-FARQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكلّ الذي نقارن به ؟ وما الأجزاء المأخوذة منه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما بقي هو الكلّ ناقص مجموع الأجزاء المأخوذة، أي واحد ناقص مجموع الكسور."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الباقي موجب وأنّه أصغر من الكلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{1}{10}$ .",
+        "incorrect": "وحّد المقامات قبل الجمع أو الطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "المجموع $\\dfrac{12}{30} + \\dfrac{5}{30} + \\dfrac{10}{30} = \\dfrac{27}{30} = \\dfrac{9}{10}$ .",
+          "$1 - \\dfrac{9}{10} = \\dfrac{1}{10}$ ."
+        ],
+        "result": "\\dfrac{1}{10}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما المبلغ الناقص بالدينار ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "15000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من أيّ كمّية يُؤخذ الكسر في هذه الوضعية ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كسر من كمّية يعني جداء الكسر في الكمّية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ النتيجة أصغر من الكمّية الأصلية، ثمّ اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $15000$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{10} \\times 150000 = 15000$ DA ."
+        ],
+        "result": "15000"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "الجزء الثاني :",
+      "statement": "قرّر الأخ الثالث أن يدفع المبلغ الناقص وحده. كم يصبح مجموع ما دفعه بالدينار ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "65000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من أيّ كمّية يُؤخذ الكسر في هذه الوضعية ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كسر من كمّية يعني جداء الكسر في الكمّية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ النتيجة أصغر من الكمّية الأصلية، ثمّ اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $65000$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "حصّته الأولى $\\dfrac{1}{3} \\times 150000 = 50000$ DA .",
+          "$50000 + 15000 = 65000$ DA ."
+        ],
+        "result": "65000"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "هل يصبح الثالث أكبر المساهمين مبلغًا ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المقداران اللذان نقارن بينهما لاتّخاذ القرار ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ مقدار بدقّة ثمّ قارن بوحدة واحدة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب القرار بجملة تذكر العددين اللذين اعتمدت عليهما."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "ما دفعه الأوّل: $\\dfrac{2}{5} \\times 150000 = 60000$ DA .",
+          "$65000 > 60000$ ، فنعم."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

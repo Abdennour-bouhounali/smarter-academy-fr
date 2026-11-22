@@ -1,0 +1,259 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-quwa-nisbiya-l5-007",
+  "lessonCode": "wadiya-idmajiya-quwa-nisbiya",
+  "level": 5,
+  "metadata": {
+    "title": "تضاعف الكائنات",
+    "estimatedMinutes": 12,
+    "tags": [
+      "قوى العدد 10",
+      "الكتابة العلمية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في مخبر يصير عدد الكائنات الدقيقة في عيّنة $10^{2}$ أمثاله كل ساعة. عند بداية الملاحظة كان عددها $5 \\times 10^{3}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بعد $5$ ساعات يصير العدد $a \\times 10^{n}$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "value": "30",
+          "id": "MISC-WQ-MULEXP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين تضع الفاصلة ليبقى رقم واحد غير معدوم قبلها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $a$ من $1$ إلى أقل من $10$ ، والأسّ $n$ هو عدد رتب إزاحة الفاصلة (موجب للأعداد الكبيرة وسالب للصغيرة)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة الضرب في $10^{n}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $13$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الأسّ هو عدد رتب إزاحة الفاصلة: موجب لأنّ العدد كبير .",
+          "$5 \\times 10^{3} \\times 10^{10}$ = $5 \\times 10^{13}$ ، إذن $n = 13$ ."
+        ],
+        "result": "13"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "وما قيمة العدد $a$ في الكتابة العلمية نفسها ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "العدد $a$ (عدد عشري)",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين تضع الفاصلة ليبقى رقم واحد غير معدوم قبلها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $a$ من $1$ إلى أقل من $10$ ، والأسّ $n$ هو عدد رتب إزاحة الفاصلة (موجب للأعداد الكبيرة وسالب للصغيرة)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة الضرب في $10^{n}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $5$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نُزيح الفاصلة حتى يبقى رقم واحد غير معدوم قبلها: $a = 5$ .",
+          "$5 \\times 10^{3} \\times 10^{10}$ = $5 \\times 10^{13}$ ."
+        ],
+        "result": "5"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما أوّل عدد صحيح من الساعات يبلغ فيه العدد $10^{15}$ على الأقل ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الساعات",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-WQ-FIRST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين تضع الفاصلة ليبقى رقم واحد غير معدوم قبلها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $a$ من $1$ إلى أقل من $10$ ، والأسّ $n$ هو عدد رتب إزاحة الفاصلة (موجب للأعداد الكبيرة وسالب للصغيرة)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة الضرب في $10^{n}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $6$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "بعد $5$ ساعات: العدد أصغر من $10^{15}$ ، وبعد $6$ ساعات: العدد $5 \\times 10^{3} \\times 10^{12} \\ge 10^{15}$ ."
+        ],
+        "result": "6"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "كم مرّة العدد بعد $5$ ساعات أكبر منه بعد $2$ ساعات ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "1000000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة النتيجة، وكم عاملًا في الجداء ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد العوامل السالبة الزوجي يعطي ناتجًا موجبًا؛ والأسّ السالب يعني مقلوب القوة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الإشارة ثمّ احسب القيمة."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $1\\,000\\,000$ .",
+        "incorrect": "انتبه إلى إشارة القوة وإلى الأسّ السالب، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$(5 \\times 10^{3} \\times 10^{10}) \\div (5 \\times 10^{3} \\times 10^{4})$ = $1\\,000\\,000$ ."
+        ],
+        "result": "1\\,000\\,000"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "رتبة قدر العدد بعد الساعات المذكورة هي $a' \\times 10^{n}$ : ما قيمة $a'$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "العدد الصحيح $a'$ (من 1 إلى 9)",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أوّلًا الكتابة العلمية للعدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ندوّر $a$ إلى الوحدة ونُبقي القوة $10^{n}$ ؛ إذا صار المدوّر $10$ فهو $1 \\times 10^{n+1}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ المدوّر عدد صحيح من $1$ إلى $9$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $5$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الكتابة العلمية $5 \\times 10^{3} \\times 10^{10}$ = $5 \\times 10^{13}$ .",
+          "مدوّر $5$ إلى الوحدة هو $5$ ، فرتبة القدر $5 \\times 10^{13}$ ."
+        ],
+        "result": "5"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+{
+  "id": "ex-4am-tayin-pgcd-l2-004",
+  "lessonCode": "tayin-pgcd",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2024 — ورقة مقوّاة 48cm × 72cm",
+    "estimatedMinutes": 8,
+    "tags": [
+      "PGCD",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tayin-pgcd_P1",
+      "modelledOn": "BEM 2024 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يحرص حرفي على إتقان عمله وعدم تبذير المواد، فيريد تجزئة ورقة مقوّاة مستطيلة الشكل عرضها 48cm وطولها 72cm إلى مربعات متقايسة دون ضياع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "برّر إجابتك في كل حالة:",
+      "statement": "هل يمكن أن يكون طول ضلع كل مربع 8cm ؟",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول الضلع يجب أن يقسم البعدين معًا حتى لا يبقى ضياع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم كلا من 48 و 72 على 8، وانظر إلى الباقي."
+        }
+      ],
+      "feedback": {
+        "correct": "8 قاسم مشترك للعددين 48 و 72.",
+        "incorrect": "يكون ذلك ممكنًا فقط إذا كان طول الضلع قاسمًا مشتركًا للبعدين."
+      },
+      "solution": {
+        "lines": [
+          "$48 = 8 \\times 6$",
+          "$72 = 8 \\times 9$",
+          "العدد 8 قاسم مشترك للعددين 48 و 72، إذن يمكن ذلك."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل يمكن أن يكون طول ضلع كل مربع 16cm ؟",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول الضلع يجب أن يقسم البعدين معًا حتى لا يبقى ضياع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم كلا من 48 و 72 على 16، وانظر إلى الباقي."
+        }
+      ],
+      "feedback": {
+        "correct": "16 ليس قاسمًا مشتركًا للعددين 48 و 72.",
+        "incorrect": "يكون ذلك ممكنًا فقط إذا كان طول الضلع قاسمًا مشتركًا للبعدين."
+      },
+      "solution": {
+        "lines": [
+          "$48 = 16 \\times 3$",
+          "$72 = 16 \\times 4 + 8$",
+          "العدد 16 ليس قاسمًا مشتركًا للعددين 48 و 72، إذن لا يمكن ذلك."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "أوجد عدد المربعات التي يمكن الحصول عليها بحيث يكون طول ضلع كل مربع أكبر ما يمكن.",
+      "statement": "ما هو أكبر طول ممكن لضلع المربع ؟",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (الطول بالـ cm)",
+      "expectedAnswer": "24",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول ضلع المربع يجب أن يقسم البعدين معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "والمطلوب أكبر ضلع ممكن: هذا هو القاسم المشترك الأكبر للبعدين (بالـ cm)."
+        }
+      ],
+      "feedback": {
+        "correct": "طول الضلع هو PGCD(48 ; 72) = 24، أي 24cm.",
+        "incorrect": "حوّل البعدين إلى cm، ثم خذ القاسم المشترك الأكبر لهما."
+      },
+      "solution": {
+        "lines": [
+          "طول ضلع المربع يجب أن يقسم البعدين 48cm و 72cm معًا حتى لا يبقى ضياع، فهو قاسم مشترك للعددين 48 و 72.",
+          "وهو أكبر ما يمكن: إذن طول الضلع هو القاسم المشترك الأكبر للعددين 48 و 72.",
+          "PGCD(48 ; 72) = 24، أي أن طول ضلع كل مربع هو 24cm."
+        ],
+        "result": "24cm"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "استنتج عدد المربعات.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد المربعات)",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب عدد المربعات على طول البعد الأول، ثم على طول البعد الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم كل بعد على طول ضلع المربع، ثم اضرب الناتجين."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 3 = 6$",
+        "incorrect": "عدد المربعات هو جداء عدد المربعات في الطول بعدد المربعات في العرض، وليس حاصل قسمة واحدًا."
+      },
+      "solution": {
+        "lines": [
+          "على طول البعد 48cm: $48 \\div 24 = 2$ مربعات.",
+          "على طول البعد 72cm: $72 \\div 24 = 3$ مربعات.",
+          "عدد المربعات: $2 \\times 3 = 6$"
+        ],
+        "result": "6"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

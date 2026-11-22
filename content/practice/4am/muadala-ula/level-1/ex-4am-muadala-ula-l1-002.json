@@ -1,0 +1,130 @@
+{
+  "id": "ex-4am-muadala-ula-l1-002",
+  "lessonCode": "muadala-ula",
+  "level": 1,
+  "metadata": {
+    "title": "معاملات عشرية ومقام",
+    "estimatedMinutes": 4,
+    "tags": [
+      "ax = b",
+      "أعداد عشرية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-1",
+      "page": 50,
+      "section": "أوظّف تعلّماتي",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "حل كلا من المعادلتين الآتيتين:",
+      "statement": "$2{,}8x = 5{,}6$",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب حل المعادلة: عدد صحيح أو كسر على الشكل a/b (يُقبل العدد العشري)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "1/2",
+          "id": "MISC-MUADALA-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعادلة من الشكل $ax = b$ : عيّن معامل $x$ والعدد الذي في الطرف الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم الطرفين على معامل $x$ مع إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحل هو العدد الذي في الطرف الآخر مقسومًا على معامل $x$ ، لا العكس، ثم اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 2$ .",
+        "incorrect": "الحل هو حاصل قسمة العدد الذي في الطرف الآخر على معامل $x$ بإشارته. تحقّق بالتعويض."
+      },
+      "solution": {
+        "lines": [
+          "$x = \\dfrac{5{,}6}{2{,}8}$"
+        ],
+        "result": "x = 2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$\\dfrac{x}{4} = 7$",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب حل المعادلة: عدد صحيح أو كسر على الشكل a/b (يُقبل العدد العشري)",
+      "expectedAnswer": "28",
+      "misconceptionSignatures": [
+        {
+          "value": "1/28",
+          "id": "MISC-MUADALA-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المجهول $x$ مقسوم على عدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب الطرفين في هذا العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 28$ .",
+        "incorrect": "القسمة على 4 تُلغى بالضرب في 4 في الطرفين معًا."
+      },
+      "solution": {
+        "lines": [
+          "نضرب الطرفين في $4$ :",
+          "$x = 7 \\times 4$"
+        ],
+        "result": "x = 28"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

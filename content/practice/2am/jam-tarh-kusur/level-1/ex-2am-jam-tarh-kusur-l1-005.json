@@ -1,0 +1,173 @@
+{
+  "id": "ex-2am-jam-tarh-kusur-l1-005",
+  "lessonCode": "jam-tarh-kusur",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — توحيد المقامين ثمّ الجمع",
+    "estimatedMinutes": 6,
+    "tags": [
+      "توحيد المقامات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نريد جمع الكسرين $\\dfrac{5}{6}$ و $\\dfrac{7}{18}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما العدد الذي نضرب فيه حدّي الكسر $\\dfrac{5}{6}$ ليصير مقامه $18$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "للانتقال من مقام صغير إلى مقام أكبر نضرب الحدّين في العدد نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما العدد الذي ينقل المقام الأوّل إلى المقام المطلوب؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$18 \\div 6 = 3$ .",
+        "incorrect": "اضرب حدّي الكسر في العدد نفسه حتى يتغيّر المقام ولا تتغيّر قيمة الكسر."
+      },
+      "solution": {
+        "lines": [
+          "$18 \\div 6 = 3$",
+          "$6 \\times 3 = 18$"
+        ],
+        "result": "3"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب $\\dfrac{5}{6}$ بالمقام $18$ : $\\dfrac{5}{6} = \\dfrac{\\ldots}{18}$ . ما هو البسط الجديد؟",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-JAMKASR-NOSCALE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "للانتقال من مقام صغير إلى مقام أكبر نضرب الحدّين في العدد نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما العدد الذي ينقل المقام الأوّل إلى المقام المطلوب؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{5}{6} = \\dfrac{5 \\times 3}{6 \\times 3} = \\dfrac{15}{18}$ .",
+        "incorrect": "اضرب حدّي الكسر في العدد نفسه حتى يتغيّر المقام ولا تتغيّر قيمة الكسر."
+      },
+      "solution": {
+        "lines": [
+          "$18 = 6 \\times 3$",
+          "$\\dfrac{5}{6} = \\dfrac{5 \\times 3}{6 \\times 3} = \\dfrac{15}{18}$"
+        ],
+        "result": "15"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب $S = \\dfrac{5}{6} + \\dfrac{7}{18}$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "11/9",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1/2",
+          "id": "MISC-JAMKASR-ACROSS"
+        },
+        {
+          "value": "2/3",
+          "id": "MISC-JAMKASR-NOSCALE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليّة المطلوبة؟ وهل المقامان متساويان، أم أنّ أحدهما مضاعف للآخر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا اختلف المقامان فاكتب الكسر ذا المقام الأصغر بالمقام الأكبر: اضرب حدّيه في العدد نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع (أو اطرح) البسطين وأبقِ المقام كما هو، ثمّ اختزل الناتج إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = \\dfrac{11}{9}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{6} = \\dfrac{5 \\times 3}{6 \\times 3} = \\dfrac{15}{18}$ .",
+          "$S = \\dfrac{5}{6} + \\dfrac{7}{18} = \\dfrac{15 + 7}{18} = \\dfrac{22}{18}$ .",
+          "نختزل بالقسمة على $2$ : $\\dfrac{22}{18} = \\dfrac{11}{9}$ ."
+        ],
+        "result": "S = \\dfrac{11}{9}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

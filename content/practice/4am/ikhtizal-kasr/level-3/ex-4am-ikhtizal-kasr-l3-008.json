@@ -1,0 +1,180 @@
+{
+  "id": "ex-4am-ikhtizal-kasr-l3-008",
+  "lessonCode": "ikhtizal-kasr",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2016 — العددان 2210 و 1326",
+    "estimatedMinutes": 8,
+    "tags": [
+      "كسر غير قابل للاختزال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_ikhtizal-kasr_P3",
+      "modelledOn": "BEM 2016 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 2210 و 1326.",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "442",
+      "misconceptionSignatures": [
+        {
+          "value": "221",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 2210 على 1326: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (2210 ; 1326) بالزوج (1326 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 442.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$2210 = 1326 \\times 1 + 884$",
+          "$1326 = 884 \\times 1 + 442$",
+          "$884 = 442 \\times 2 + 0$",
+          "آخر باقٍ غير معدوم هو 442، إذن:"
+        ],
+        "result": "PGCD(2210 ; 1326) = 442"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب الكسر $\\dfrac{2210}{1326}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "5/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1105/663",
+          "id": "MISC-IKHTIZAL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 442: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال 01.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2210}{1326} = \\dfrac{2210 \\div 442}{1326 \\div 442}$"
+        ],
+        "result": "\\dfrac{2210}{1326} = \\dfrac{5}{3}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "استنتج الكسر غير القابل للاختزال الذي يساوي $\\dfrac{1326}{2210}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "3/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "663/1105",
+          "id": "MISC-IKHTIZAL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\dfrac{1326}{2210}$ هو مقلوب الكسر $\\dfrac{2210}{1326}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لعددين أوليين فيما بينهما، المقلوب يبقى غير قابل للاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 442: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال 01.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1326}{2210} = \\dfrac{1326 \\div 442}{2210 \\div 442}$"
+        ],
+        "result": "\\dfrac{1326}{2210} = \\dfrac{3}{5}"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

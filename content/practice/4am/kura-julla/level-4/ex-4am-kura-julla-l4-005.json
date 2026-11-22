@@ -1,0 +1,74 @@
+{
+  "id": "ex-4am-kura-julla-l4-005",
+  "lessonCode": "kura-julla",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — نصف قطر دائرة صغرى",
+    "estimatedMinutes": 5,
+    "tags": [
+      "الدائرة الصغرى"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_kura-julla_P2",
+      "modelledOn": "know-1"
+    }
+  },
+  "statement": {
+    "content": "كرة مركزها O ونصف قطرها $5\\,\\mathrm{cm}$ ، و $(\\mathcal{C})$ دائرة صغرى منها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "نصف قطر $(\\mathcal{C})$ يمكن أن يكون:",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3\\,\\mathrm{cm}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$5\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-DAIRA-KUBRA"
+        },
+        {
+          "id": "C",
+          "content": "$7\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-DAIRA-KUBRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الفرق بين الدائرة الكبرى والصغرى؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الصغرى نصف قطرها أصغر من نصف قطر الكرة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استبعد ما يساوي R أو يتجاوزه."
+        }
+      ],
+      "feedback": {
+        "correct": "نصف قطر الدائرة الصغرى أصغر تماما من R: $3 < 5$ .",
+        "incorrect": "نصف قطر يساوي R لدائرة كبرى، ولا دائرة على الكرة نصف قطرها أكبر من R."
+      }
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "id": "ex-4am-tarrid-taalufi-l2-009",
+  "lessonCode": "tarrid-taalufi",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2014 — عرضا شحن رصيد المكالمات",
+    "estimatedMinutes": 8,
+    "tags": [
+      "عرضان",
+      "معادلة",
+      "عدد عشري"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tarrid-taalufi_P2",
+      "modelledOn": "BEM 2014 II (01، 02)"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2014",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "تقترح مؤسسة للهاتف النقال، تيسيرًا لصلة الأرحام، على زبائنها عرضين للمكالمات:\n- العرض الأول: 4DA للدقيقة الواحدة.\n- العرض الثاني: 2,5DA للدقيقة الواحدة مع اقتطاع مبلغ جزافي قدره 60DA من الرصيد."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "احسب تكلفة 30 دقيقة من المكالمات حسب كل عرض.",
+      "statement": "العرض الأول:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "120",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العرض الأول: ثمن الدقائق فقط."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 30$ .",
+        "incorrect": "اضرب عدد الدقائق في ثمن الدقيقة."
+      },
+      "solution": {
+        "lines": [
+          "$4 \\times 30 = 120DA$"
+        ],
+        "result": "120DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العرض الثاني:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "135",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAALUFI-NISYAN-B",
+          "value": "75"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثمن الدقائق ثم المبلغ الجزافي."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}5 \\times 30 + 60$ .",
+        "incorrect": "لا تنس المبلغ الجزافي المقتطع."
+      },
+      "solution": {
+        "lines": [
+          "$2{,}5 \\times 30 + 60 = 75 + 60 = 135DA$"
+        ],
+        "result": "135DA"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "عيّن عدد الدقائق الذي تتساوى من أجله تكلفتا العرضين.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الدقائق",
+      "expectedAnswer": "40",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "سمّ $x$ عدد الدقائق واكتب تكلفة كل عرض بدلالة $x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم حل المعادلة $4x = 2{,}5x + 60$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "هو عدد الدقائق الذي يتساوى عنده المبلغان.",
+        "incorrect": "اجمع حدود $x$ في طرف ثم اقسم على معامل $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$4x = 2{,}5x + 60$",
+          "$4x - 2{,}5x = 60$",
+          "$1{,}5x = 60$",
+          "$x = \\dfrac{60}{1{,}5} = 40$",
+          "من أجل 40 دقيقة تتساوى تكلفتا العرضين."
+        ],
+        "result": "x = 40"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

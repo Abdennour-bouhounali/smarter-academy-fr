@@ -1,0 +1,177 @@
+{
+  "id": "ex-4am-awwaliyan-fima-baynahuma-l3-007",
+  "lessonCode": "awwaliyan-fima-baynahuma",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2023 — A = 805/1265",
+    "estimatedMinutes": 10,
+    "tags": [
+      "نفي",
+      "كسر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_awwaliyan-fima-baynahuma_P3",
+      "modelledOn": "BEM 2023 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد A حيث:",
+    "formulas": [
+      "A = \\dfrac{805}{1265}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن، دون حساب، أن العددين 805 و 1265 ليسا أوليين فيما بينهما: أعط أصغر قاسم مشترك لهما يختلف عن 1.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي أكبر من 1",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى رقم آحاد كل من العددين 805 و 1265، وإلى مجموع أرقام كل منهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جرّب القواسم بالترتيب: 2 ثم 3 ثم 4 ثم 5 …، مستعملًا قواعد قابلية القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أول عدد يقسم العددين معًا هو المطلوب، ويكفي لنفي أنهما أوليان فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "5 يقسم 805 و 1265 معًا: العددان ليسا أوليين فيما بينهما.",
+        "incorrect": "طبّق قواعد قابلية القسمة على العددين معًا، بدءًا من أصغر القواسم الممكنة."
+      },
+      "solution": {
+        "lines": [
+          "805 عدد فردي، إذن 2 لا يقسمه (ولا يقسم أيّ قاسم زوجي العددين معًا).",
+          "مجموع أرقام 805 هو 13، وهو ليس مضاعفًا للعدد 3، إذن 3 لا يقسم 805.",
+          "رقم آحاد كل من 805 و 1265 هو 0 أو 5، إذن 5 يقسم العددين معًا.",
+          "5 قاسم مشترك للعددين يختلف عن 1، إذن العددان 805 و 1265 ليسا أوليين فيما بينهما."
+        ],
+        "result": "5"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب: PGCD(805 ; 1265).",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "115",
+      "misconceptionSignatures": [
+        {
+          "value": "23",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 1265 على 805: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (1265 ; 805) بالزوج (805 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 115.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$1265 = 805 \\times 1 + 460$",
+          "$805 = 460 \\times 1 + 345$",
+          "$460 = 345 \\times 1 + 115$",
+          "$345 = 115 \\times 3 + 0$",
+          "آخر باقٍ غير معدوم هو 115، إذن:"
+        ],
+        "result": "PGCD(805 ; 1265) = 115"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اكتب العدد A على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "7/11",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 115: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال 02.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{805}{1265} = \\dfrac{805 \\div 115}{1265 \\div 115}$"
+        ],
+        "result": "\\dfrac{805}{1265} = \\dfrac{7}{11}"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

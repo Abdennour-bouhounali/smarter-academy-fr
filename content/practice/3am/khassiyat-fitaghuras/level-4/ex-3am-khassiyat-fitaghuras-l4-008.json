@@ -1,0 +1,219 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l4-008",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — الطريق الجديد بين القريتين",
+    "estimatedMinutes": 8,
+    "tags": [
+      "خاصية فيثاغورس",
+      "قوى العدد 10"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تربط طريقان متعامدان في القرية $A$ القريتين $B$ و $C$ ، حيث $AB = 1{,}2 \\times 10^3\\,\\mathrm{m}$ و $AC = 1{,}6 \\times 10^3\\,\\mathrm{m}$ . قرّر سكان القرى التعاون مع البلدية لشقّ طريق مستقيم $[BC]$ يختصر المسافة على التلاميذ والمرضى.",
+    "figure": {
+      "points": {
+        "A": [
+          0.0,
+          0.0
+        ],
+        "B": [
+          1.2,
+          0.0
+        ],
+        "C": [
+          0.0,
+          1.6
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "1,2 × 10³ m"
+        },
+        {
+          "from": "A",
+          "to": "C",
+          "label": "1,6 × 10³ m"
+        },
+        {
+          "from": "B",
+          "to": "C"
+        }
+      ],
+      "rightAngles": [
+        [
+          "B",
+          "A",
+          "C"
+        ]
+      ],
+      "ariaLabel": "ثلاث قرى A و B و C، الطريقان [AB] و [AC] متعامدان في A حيث AB = 1,2 × 10³ m و AC = 1,6 × 10³ m",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $BC^2$ (بـ $\\mathrm{m^2}$).",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي أو كتابة عشرية: قيمة $BC^2$ بـ m²",
+      "expectedAnswer": "4000000",
+      "misconceptionSignatures": [
+        {
+          "value": "5600",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        },
+        {
+          "value": "2800",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(a \\times 10^3)^2 = a^2 \\times 10^6$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ربّع كل طول بقوّته، ثم اجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC^2 = 1{,}44 \\times 10^6 + 2{,}56 \\times 10^6 = 4 \\times 10^6$ .",
+        "incorrect": "مربع $1{,}2 \\times 10^3$ هو $1{,}2^2 \\times 10^6$ : ربّع العدد والقوّة معا."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $A$ ، حسب خاصية فيثاغورس: $BC^2 = AB^2 + AC^2$",
+          "$BC^2 = (1{,}2 \\times 10^3)^2 + (1{,}6 \\times 10^3)^2 = 1{,}44 \\times 10^6 + 2{,}56 \\times 10^6$",
+          "$BC^2 = 4 \\times 10^6 = 4\\,000\\,000\\,\\mathrm{m^2}$"
+        ],
+        "result": "BC^2 = 4 \\times 10^6\\,\\mathrm{m^2}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج طول الطريق الجديد $BC$ بالمتر.",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بـ m",
+      "expectedAnswer": "2000",
+      "misconceptionSignatures": [
+        {
+          "value": "4000000",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        },
+        {
+          "value": "2800",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن العدد الموجب الذي مربعه $4 \\times 10^6$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$(2 \\times 10^3)^2 = 4 \\times 10^6$ ؟ تحقّق."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC = 2 \\times 10^3\\,\\mathrm{m}$ .",
+        "incorrect": "الطول هو الجذر التربيعي لـ $BC^2$ ."
+      },
+      "solution": {
+        "lines": [
+          "$BC = \\sqrt{4 \\times 10^6} = 2 \\times 10^3 = 2\\,000\\,\\mathrm{m}$"
+        ],
+        "result": "BC = 2 \\times 10^3\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كم مترا يختصر الطريق الجديد مقارنة بالمرور عبر القرية $A$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المسافة بـ m",
+      "expectedAnswer": "800",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسار القديم $B \\to A \\to C$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح طول الطريق الجديد من طول المسار القديم."
+        }
+      ],
+      "feedback": {
+        "correct": "$2\\,800 - 2\\,000 = 800\\,\\mathrm{m}$ .",
+        "incorrect": "المسار القديم مجموع الطولين $AB$ و $AC$ ."
+      },
+      "solution": {
+        "lines": [
+          "المرور عبر $A$ : $1\\,200 + 1\\,600 = 2\\,800\\,\\mathrm{m}$",
+          "الفرق: $2\\,800 - 2\\,000 = 800\\,\\mathrm{m}$"
+        ],
+        "result": "800\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

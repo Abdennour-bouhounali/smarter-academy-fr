@@ -1,0 +1,242 @@
+{
+  "id": "ex-3am-quwat-adad-nisbi-l1-003",
+  "lessonCode": "quwat-adad-nisbi",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — الكتابة على الشكل a^n",
+    "estimatedMinutes": 6,
+    "tags": [
+      "قواعد الحساب على القوى"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اكتب كل عدد على الشكل $a^n$ ، حيث $a$ عدد طبيعي و $n$ عدد صحيح نسبي، ثم أعط الأس $n$ .",
+    "formulas": [
+      "A = 5^{3} \\times 5^{4}",
+      "B = \\dfrac{7^{9}}{7^{4}}",
+      "C = (2^{3})^{4}",
+      "D = 3^{-2} \\times 3^{5}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "$A = 5^n$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-QUWA-PRODUCT-MULTIPLY-EXP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القوى لها الأساس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء قوتين لهما الأساس نفسه: نجمع الأسس ولا نضربها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه لإشارة كل أس عند الجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$5^3 \\times 5^4 = 5^{3+4} = 5^7$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$A = 5^{3} \\times 5^{4} = 5^{3+4}$",
+          "$A = 5^{7}$"
+        ],
+        "result": "n = 7"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$B = 7^n$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-QUWA-QUOTIENT-EXP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "البسط والمقام قوتان للأساس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل قسمة قوتين لهما الأساس نفسه: نطرح أس المقام من أس البسط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طرح أسّ سالب يعني إضافة معاكسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{7^9}{7^4} = 7^{9-4} = 7^5$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$B = \\dfrac{7^{9}}{7^{4}} = 7^{9-4}$",
+          "$B = 7^{5}$"
+        ],
+        "result": "n = 5"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "$C = 2^n$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-QUWA-POWER-ADD-EXP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قوة مرفوعة إلى قوة: ماذا نفعل بالأسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في $(a^m)^n$ نضرب الأسين، ولا نجمعهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه لإشارة الجداء إذا كان أحد الأسين سالبًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$(2^3)^4 = 2^{3 \\times 4} = 2^{12}$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$C = (2^{3})^{4} = 2^{3 \\times 4}$",
+          "$C = 2^{12}$"
+        ],
+        "result": "n = 12"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "$D = 3^n$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "-10",
+          "id": "MISC-QUWA-PRODUCT-MULTIPLY-EXP"
+        },
+        {
+          "value": "-7",
+          "id": "MISC-QUWA-EXP-SIGN-SLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القوى لها الأساس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء قوتين لهما الأساس نفسه: نجمع الأسس ولا نضربها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه لإشارة كل أس عند الجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$3^{-2} \\times 3^5 = 3^{-2+5} = 3^3$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$D = 3^{-2} \\times 3^{5} = 3^{-2+5}$",
+          "$D = 3^{3}$"
+        ],
+        "result": "n = 3"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

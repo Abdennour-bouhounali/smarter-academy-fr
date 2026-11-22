@@ -1,0 +1,140 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ihsa-l1-005",
+  "lessonCode": "wadiya-idmajiya-ihsa",
+  "level": 1,
+  "metadata": {
+    "title": "دورة ألعاب إلكترونية: عدد اللاعبين ومتوسط الانتصارات",
+    "estimatedMinutes": 4,
+    "tags": [
+      "التكرار الكلي",
+      "المتوسط المتوازن"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ihsa_P2"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "يلخّص الجدول الآتي نتائج دورة ألعاب إلكترونية بين أصدقاء لم يلعبوا إلا بعد أن أتمّوا واجباتهم أولًا (عدد الانتصارات لكل لاعب):",
+    "table": {
+      "head": [
+        "عدد الانتصارات",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "rows": [
+        [
+          "عدد اللاعبين",
+          "3",
+          "4",
+          "2",
+          "1"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما هو عدد اللاعبين الذين شاركوا في الدورة؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "14",
+          "id": "MISC-IHSA-MADA-TAKRAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد اللاعبين هو التكرار الكلي للسلسلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع أعداد السطر الثاني (التكرارات)، لا القيم."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 + 4 + 2 + 1 = 10$ لاعبين.",
+        "incorrect": "التكرار الكلي هو مجموع التكرارات (السطر الثاني)."
+      },
+      "solution": {
+        "lines": [
+          "عدد اللاعبين هو التكرار الكلي:",
+          "$3 + 4 + 2 + 1 = 10$"
+        ],
+        "result": "10"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب متوسط عدد الانتصارات لكل لاعب.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة",
+      "expectedAnswer": "3,1",
+      "misconceptionSignatures": [
+        {
+          "value": "3,5",
+          "id": "MISC-IHSA-MUTAWASSIT-BILA-TARJIH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب كل قيمة في تكرارها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم مجموع الجداءات على التكرار الكلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2 \\times 3 + 3 \\times 4 + 4 \\times 2 + 5 \\times 1}{10} = 3{,}1$ .",
+        "incorrect": "المتوسط المتوازن: مجموع (القيمة × التكرار) ÷ التكرار الكلي، لا متوسط القيم الأربع."
+      },
+      "solution": {
+        "lines": [
+          "$2 \\times 3 + 3 \\times 4 + 4 \\times 2 + 5 \\times 1 = 31$",
+          "$\\dfrac{31}{10} = 3{,}1$"
+        ],
+        "result": "3{,}1"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

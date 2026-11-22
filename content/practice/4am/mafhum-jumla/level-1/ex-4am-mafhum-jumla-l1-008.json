@@ -1,0 +1,141 @@
+{
+  "id": "ex-4am-mafhum-jumla-l1-008",
+  "lessonCode": "mafhum-jumla",
+  "level": 1,
+  "metadata": {
+    "title": "الترتيب في الثنائية",
+    "estimatedMinutes": 3,
+    "tags": [
+      "ثنائية",
+      "الترتيب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mafhum-jumla_P2",
+      "modelledOn": "know-2",
+      "adaptedFrom": "ex-4am-mafhum-jumla-l1-008"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعتبر المعادلة ذات المجهولين $x$ و $y$ التالية:",
+    "formulas": [
+      "2x + y = 17"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل الثنائية $(4 ; 9)$ حل لهذه المعادلة؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $4$ و $y$ بـ $9$ في المعادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن قيمة الطرف الأول بالطرف الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 4 + 9 = 17$ : الثنائية حل للمعادلة.",
+        "incorrect": "العدد الأول في الثنائية قيمة $x$ والثاني قيمة $y$ ؛ عوّض ثم قارن بالطرف الثاني."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $x$ بـ $4$ و $y$ بـ $9$ :",
+          "$2 \\times 4 + 9 = 17$",
+          "ومنه الثنائية $(4 ; 9)$ حل للمعادلة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل الثنائية $(9 ; 4)$ حل لهذه المعادلة؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-TARTIB"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $9$ و $y$ بـ $4$ في المعادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن قيمة الطرف الأول بالطرف الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 9 + 4 = 22 \\neq 17$ : الثنائية ليست حلا للمعادلة.",
+        "incorrect": "العدد الأول في الثنائية قيمة $x$ والثاني قيمة $y$ ؛ عوّض ثم قارن بالطرف الثاني."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $x$ بـ $9$ و $y$ بـ $4$ :",
+          "$2 \\times 9 + 4 = 22 \\neq 17$",
+          "ومنه الثنائية $(9 ; 4)$ ليست حلا للمعادلة."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

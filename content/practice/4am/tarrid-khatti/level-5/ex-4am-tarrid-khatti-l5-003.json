@@ -1,0 +1,403 @@
+{
+  "id": "ex-4am-tarrid-khatti-l5-003",
+  "lessonCode": "tarrid-khatti",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2014 — موقف السيارات بمطار قسنطينة",
+    "estimatedMinutes": 22,
+    "tags": [
+      "وضعية إدماجية",
+      "عرضان",
+      "قراءة بيانية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tarrid-khatti_P2",
+      "modelledOn": "BEM 2014 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2014",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يقترح موقف السيارات بمطار قسنطينة عرضين:\n– العرض الأول: 60DA للساعة الواحدة.\n– العرض الثاني: 30DA للساعة الواحدة مع دفع مبلغ 240DA عند الدخول.\nيمثّل $(D_1)$ و $(D_2)$ في المعلم التالي المبلغ المدفوع حسب العرضين الأول والثاني على الترتيب، بدلالة مدة الركن.",
+    "table": {
+      "head": [
+        "المدة (h)",
+        "3",
+        "…",
+        "…"
+      ],
+      "rows": [
+        [
+          "المبلغ حسب العرض الأول (DA)",
+          "…",
+          "600",
+          "…"
+        ],
+        [
+          "المبلغ حسب العرض الثاني (DA)",
+          "…",
+          "…",
+          "600"
+        ]
+      ]
+    },
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "P": [
+          7,
+          7
+        ],
+        "B": [
+          0,
+          2
+        ],
+        "Q": [
+          7,
+          5.5
+        ]
+      },
+      "rays": [
+        {
+          "from": "O",
+          "through": "P",
+          "name": "(D₁)",
+          "tone": "indigo",
+          "extend": 0.04
+        },
+        {
+          "from": "B",
+          "through": "Q",
+          "name": "(D₂)",
+          "tone": "rose",
+          "extend": 0.04
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw"
+      },
+      "hidden": [
+        "P",
+        "B",
+        "Q"
+      ],
+      "ariaLabel": "معلم على ورقة مرصوفة: المستقيم (D1) ينطلق من المبدأ، والمستقيم (D2) ينطلق من محور التراتيب، ويتقاطعان",
+      "caption": "محور الفواصل: كل وحدة تمثّل ساعتين — محور التراتيب: كل وحدة تمثّل 120DA"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "انقل الجدول وأكمله (نكتفي بالخانات الآتية).",
+      "statement": "المبلغ حسب العرض الأول من أجل 3 ساعات:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "180",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ = 60 × المدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$60 \\times 3 = 180$ .",
+        "incorrect": "اضرب المدة في ثمن الساعة."
+      },
+      "solution": {
+        "lines": [
+          "$60 \\times 3 = 180$"
+        ],
+        "result": "180DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "المدة التي توافق 600DA حسب العرض الأول:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدة بالساعة",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هنا المبلغ معلوم: اقسم على ثمن الساعة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{600}{60} = 10$ .",
+        "incorrect": "اقسم المبلغ على 60."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{600}{60} = 10$"
+        ],
+        "result": "10h"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "المدة التي توافق 600DA حسب العرض الثاني:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدة بالساعة",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-TANASUB-MABLAGH-THABIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح مبلغ الدخول أولا."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{600 - 240}{30} = 12$ .",
+        "incorrect": "لا تنس مبلغ الدخول قبل القسمة."
+      },
+      "solution": {
+        "lines": [
+          "$600 - 240 = 360$",
+          "$\\dfrac{360}{30} = 12$"
+        ],
+        "result": "12h"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "lead": "ليكن $x$ مدة الركن بالساعات، و $y_1$ و $y_2$ المبلغين (بـ DA) حسب العرضين الأول والثاني، حيث $y_2 = 30x + 240$ .",
+      "statement": "عبّر عن $y_1$ بدلالة $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "60",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العرض الأول بلا مبلغ دخول: المبلغ متناسب مع المدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$y_1 = 60x$ : تمثيلها $(D_1)$ يشمل المبدأ.",
+        "incorrect": "المعامل هو ثمن ساعة واحدة في العرض الأول."
+      },
+      "solution": {
+        "lines": [
+          "$y_1 = 60x$ (دالة خطية)، و $y_2 = 30x + 240$ ."
+        ],
+        "result": "y_1 = 60x"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ا",
+      "statement": "بقراءة بيانية، دفع سائق 360DA حسب العرض الأول. كم ساعة ركن سيارته؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدة بالساعة",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-BAYANI-FASILA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "360DA توافق 3 وحدات على محور التراتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اتجه أفقيا حتى $(D_1)$ ثم عموديا حتى محور الفواصل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كل وحدة على محور الفواصل تمثّل ساعتين."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة من $(D_1)$ التي ترتيبها 3 فاصلتها 3 وحدات، أي 6 ساعات.",
+        "incorrect": "انتبه إلى الوحدات: وحدة الفواصل ساعتان ووحدة التراتيب 120DA."
+      },
+      "solution": {
+        "lines": [
+          "النقطة من $(D_1)$ التي ترتيبها 3 (أي 360DA) فاصلتها 3 وحدات.",
+          "$3 \\times 2 = 6$ : ركن سيارته 6 ساعات.",
+          "التحقق: $60 \\times 6 = 360$ ."
+        ],
+        "result": "6h"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ب",
+      "statement": "بقراءة بيانية، عيّن المدة التي يتساوى من أجلها المبلغان.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدة بالساعة",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-BAYANI-FASILA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن نقطة تقاطع المستقيمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ فاصلتها، وانتبه إلى وحدة محور الفواصل."
+        }
+      ],
+      "feedback": {
+        "correct": "نقطة التقاطع فاصلتها 4 وحدات، أي 8 ساعات (480DA).",
+        "incorrect": "المبلغان متساويان عند نقطة التقاطع: اقرأ فاصلتها."
+      },
+      "solution": {
+        "lines": [
+          "$(D_1)$ و $(D_2)$ يتقاطعان في النقطة ذات الإحداثيين (4 وحدات ؛ 4 وحدات).",
+          "أي 8 ساعات بمبلغ 480DA في العرضين."
+        ],
+        "result": "8h"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "statement": "☜ يسافر رضا ويريد ركن سيارته في المطار مدة 11 ساعة. ما هو العرض الأنسب له؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "العرض الأول",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        },
+        {
+          "id": "B",
+          "content": "العرض الثاني",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 11 بفاصلة نقطة التقاطع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أو احسب المبلغين."
+        }
+      ],
+      "feedback": {
+        "correct": "$11 > 8$ : $y_1 = 660$ DA و $y_2 = 570$ DA.",
+        "incorrect": "بعد نقطة التقاطع، أيّ المستقيمين تحت الآخر؟"
+      },
+      "solution": {
+        "lines": [
+          "$11 > 8$ : بعد نقطة التقاطع يكون $(D_2)$ تحت $(D_1)$ .",
+          "التحقق: $y_1 = 60 \\times 11 = 660$ و $y_2 = 30 \\times 11 + 240 = 570$ .",
+          "العرض الثاني أنسب لرضا."
+        ],
+        "result": "العرض الثاني"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

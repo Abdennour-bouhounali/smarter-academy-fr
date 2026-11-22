@@ -1,0 +1,228 @@
+{
+  "id": "ex-3am-muadalat-darajat-ula-l4-006",
+  "lessonCode": "muadalat-darajat-ula",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — توزيع مبلغ خيري",
+    "estimatedMinutes": 12,
+    "tags": [
+      "كسور",
+      "العطاء"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "جمعت جمعية خيرية مبلغًا قدره $x$ دج، فخصّصت $\\dfrac{1}{3}$ منه لكفالة الأيتام و $\\dfrac{1}{2}$ منه لعلاج المرضى، وبقي $2\\,000$ دج لإعانات أخرى."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما الكسر الذي يمثّل الجزء المتبقّي من المبلغ؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "المتبقّي $\\dfrac{1}{6}$ من المبلغ.",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "كسر",
+      "expectedAnswer": "1/6",
+      "solution": {
+        "lines": [
+          "$1 - \\dfrac{1}{3} - \\dfrac{1}{2} = \\dfrac{6 - 2 - 3}{6} = \\dfrac{1}{6}$ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما المعادلة التي تترجم الوضعية؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "المتبقّي بعد الحصّتين يساوي $2\\,000$ دج.",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x - \\dfrac{x}{3} - \\dfrac{x}{2} = 2000$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{x}{3} + \\dfrac{x}{2} = 2000$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        },
+        {
+          "id": "C",
+          "content": "$x - \\dfrac{1}{3} - \\dfrac{1}{2} = 2000$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "ما بقي $x - \\dfrac{x}{3} - \\dfrac{x}{2}$ ويساوي $2\\,000$ : $x - \\dfrac{x}{3} - \\dfrac{x}{2} = 2\\,000$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما المبلغ الذي جمعته الجمعية بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "جمعت الجمعية $12\\,000$ دج.",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "المبلغ بالدينار",
+      "expectedAnswer": "12000",
+      "misconceptionSignatures": [
+        {
+          "value": "2000",
+          "id": "MISC-MUADALA-PARTIAL-SOLVE"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "نبسّط: $\\dfrac{x}{6} = 2\\,000$ .",
+          "نضرب الطرفين في $6$ : $x = 12\\,000$ ."
+        ]
+      },
+      "timeSeconds": 105
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "ما المبلغ المخصّص لكفالة الأيتام بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "خصّص $4\\,000$ دج للأيتام.",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "المبلغ بالدينار",
+      "expectedAnswer": "4000",
+      "solution": {
+        "lines": [
+          "$\\dfrac{12\\,000}{3} = 4\\,000$ دج.",
+          "التحقّق: $4\\,000 + 6\\,000 + 2\\,000 = 12\\,000$ ."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

@@ -24,19 +24,44 @@
 import { readFileSync, writeFileSync, existsSync, readdirSync, statSync } from 'node:fs';
 import { join, relative, basename } from 'node:path';
 import { buildLessonIndex, repoRoot } from './lib/lessonAst.mjs';
+import { examProvenanceErrors } from './lib/examProvenance.mjs';
 import { Rational } from '../packages/core/practice/rational.js';
 import { parseAffineAnswer } from '../packages/core/practice/affineCanonical.js';
 import { parseInterval } from '../packages/core/practice/intervalCompare.js';
-import { SUPPORTED_ANSWER_TYPES } from '../packages/core/practice/answerEvaluator.js';
+import { SUPPORTED_ANSWER_TYPES, parseIntegerSet, evaluateAnswer, isSuccessOutcome } from '../packages/core/practice/answerEvaluator.js';
+import { validateStatementFigure } from '../apps/web/src/lessons/common/components/statementFigure.js';
+import { figureQuality } from '../apps/web/src/lessons/common/components/geoFigure.js';
 
 const argv = process.argv.slice(2);
 const STRICT = argv.includes('--strict');
+/** Feuilles par niveau d'une leçon au format examen (norme du déploiement BEM, 2026-10-06). */
+const EXAM_PER_LEVEL = 10;
 const AS_JSON = argv.includes('--json');
 
-const CONTENT_ROOT = join(repoRoot, 'content/practice');
+// SMARTER_PRACTICE_ROOT : une autre racine de contenu — pour les essais de
+// charge (banque synthétique de 500 exercices par niveau), jamais en CI.
+const CONTENT_ROOT = process.env.SMARTER_PRACTICE_ROOT || join(repoRoot, 'content/practice');
 const INDEX_PATH = join(CONTENT_ROOT, 'index.generated.json');
 const LEVELS = [1, 2, 3, 4, 5];
 const MIN_PER_LEVEL = 3;
+
+/**
+ * Politique de couverture par leçon (content/practice/policy.json).
+ *
+ * L'invariant 12 (3 exercices × 5 niveaux) est le défaut. Une leçon dont les
+ * exercices viennent d'un MANUEL scolaire ne peut pas l'atteindre sans
+ * inventer des énoncés — ce que le projet interdit (docs/sources/…). Elle
+ * déclare alors ici un minimum plus bas, avec sa source : l'exception est
+ * VISIBLE et nominative, jamais un abaissement général du contrat.
+ */
+function readPolicy() {
+  const read = readJson(join(CONTENT_ROOT, 'policy.json'));
+  if (!read.ok) return { defaultMinPerLevel: MIN_PER_LEVEL, lessons: {} };
+  return {
+    defaultMinPerLevel: Number.isInteger(read.data.defaultMinPerLevel) ? read.data.defaultMinPerLevel : MIN_PER_LEVEL,
+    lessons: read.data.lessons ?? {},
+  };
+}
 
 /**
  * Props réellement acceptées par CoordPlane
@@ -53,14 +78,152 @@ const COORDPLANE_PROPS = new Set([
 ]);
 
 /** Registre FERMÉ de laboratoires réutilisables. Jamais du code arbitraire. */
-const SUPPORT_LABS = new Set(['TankLab', 'RateProbes']);
+// Vide depuis le 2026-09-25 (voir apps/web/src/features/practice/PracticeLab.jsx).
+const SUPPORT_LABS = new Set([]);
 
 const HINT_ORDER = ['look', 'direction', 'strategy'];
+
+/**
+ * Mastery V2 — la demande cognitive d'une question (métadonnée d'explication,
+ * jamais un poids dans le moteur) et le gabarit d'exercice partagé par ses
+ * variantes (templateId). Un exercice généré arrive avec ces champs ; il n'a
+ * besoin de rien d'autre pour être « prêt pour la maîtrise ».
+ */
+const COGNITIVE_DEMANDS = new Set(['recall', 'apply', 'transfer', 'reason']);
+const TEMPLATE_ID_PATTERN = /^tpl-[a-z0-9]+(-[a-z0-9]+)*$/;
+
+/* ── Présentation « ورقة امتحان » (BEM, 2026-10-06) ─────────────────────
+   Un exercice qui porte `metadata.exam` est rendu comme une feuille de
+   شهادة التعليم المتوسط (ExamSheet.jsx). Contrat : EXERCISE_CONTRACT.md § BEM. */
+const EXAM_KINDS = new Set(['official', 'excerpt', 'modelled', 'adapted']);
+const EXAM_POINTS = /^\d{2}(,\d{1,2})?$/; // « 03 »، « 02,5 »، « 08 » — l'écriture du sujet
+const EXAM_STEP = /^0[1-6]$/;
+const EXAM_SUBS = new Set(['ا', 'ب', 'ج', 'د']);
+const BEM_YEARS = [2007, 2025];
+// Le corpus des examens de فصل 1AM–3AM (phase 1 du cycle moyen) — la source citée par `term_exam`.
+const EXAMS_INDEX = JSON.parse(readFileSync(join(repoRoot, 'docs/sources/moyen/exams/exams-index.json'), 'utf-8'));
+
+function validateExamPresentation(data, where) {
+  const exam = data.metadata?.exam;
+  const source = data.metadata?.source;
+  if (source?.type === 'bem') {
+    if (!Number.isInteger(source.year) || source.year < BEM_YEARS[0] || source.year > BEM_YEARS[1]) {
+      err(where, `metadata.source.year doit être une session du BEM ${BEM_YEARS.join('–')} (reçu ${JSON.stringify(source.year)})`);
+    }
+    if (![1, 2].includes(source.part)) err(where, 'metadata.source.part vaut 1 (الجزء الأول) ou 2 (الجزء الثاني)');
+  }
+  // Provenance BEM (4AM) / examen de فصل (1AM–3AM), badge « على منوال … » : scripts/lib/examProvenance.mjs.
+  for (const e of examProvenanceErrors(data, EXAMS_INDEX)) err(where, e);
+  if (exam === undefined) return;
+  if (!exam || typeof exam !== 'object') { err(where, 'metadata.exam doit être un objet'); return; }
+  // La feuille d'examen (ExamSheet) ne dessine PAS `statement.visual` (CoordPlane des cartes classiques) :
+  // un repère ou une figure d'énoncé passe par `statement.figure` (GeoFigure), sinon il disparaît.
+  if (data.statement?.visual) err(where, 'statement.visual n\'est pas affiché sur une feuille d\'examen — utiliser statement.figure (GeoFigure)');
+  if (!EXAM_KINDS.has(exam.kind)) err(where, `metadata.exam.kind « ${exam.kind} » inconnu (attendus : ${[...EXAM_KINDS].join(', ')})`);
+  if (typeof exam.heading !== 'string' || !exam.heading.trim()) err(where, 'metadata.exam.heading est obligatoire (« التمرين الأول »، « الوضعية الإدماجية »…)');
+  if (typeof exam.points !== 'string' || !EXAM_POINTS.test(exam.points)) err(where, `metadata.exam.points s'écrit comme sur le sujet : « 03 »، « 02,5 » (reçu ${JSON.stringify(exam.points)})`);
+  if (exam.kind === 'official' || exam.kind === 'excerpt') {
+    if (source?.type !== 'bem') err(where, `un exercice « ${exam.kind} » cite sa session : metadata.source.type = "bem"`);
+    else if (exam.badge !== `BEM ${source.year}`) err(where, `metadata.exam.badge doit valoir « BEM ${source.year} » (reçu ${JSON.stringify(exam.badge)})`);
+  }
+  if (exam.kind === 'adapted' && exam.badge != null) err(where, 'un exercice « adapted » ne porte pas de badge BEM : il ne vient pas d\'un sujet');
+
+  const formulas = data.statement?.formulas;
+  if (formulas !== undefined && (!Array.isArray(formulas) || formulas.some((f) => typeof f !== 'string' || !f.trim()))) {
+    err(where, 'statement.formulas est une liste de formules LaTeX non vides');
+  }
+  const table = data.statement?.table;
+  if (table !== undefined) {
+    if (!Array.isArray(table?.head) || !Array.isArray(table?.rows)) err(where, 'statement.table = { head: [...], rows: [[...]] }');
+    else for (const [i, r] of table.rows.entries()) {
+      if (!Array.isArray(r) || r.length !== table.head.length) err(where, `statement.table.rows[${i}] doit avoir ${table.head.length} cellules`);
+    }
+    // Une grille de tableur (`sheet: true`) : ['', 'A', 'B', …] puis des numéros de ligne consécutifs — « الخلية C3 » doit se lire.
+    if (table.sheet && Array.isArray(table.head) && Array.isArray(table.rows)) {
+      const letters = table.head.slice(1).every((h, i) => h === String.fromCharCode(65 + i));
+      if (table.head[0] !== '' || !letters) err(where, 'statement.table.sheet : head = [\'\', \'A\', \'B\', …]');
+      const nums = table.rows.map((r) => Number(r?.[0]));
+      if (!nums.every((n, i) => Number.isInteger(n) && n >= 1 && (i === 0 || n === nums[i - 1] + 1))) err(where, 'statement.table.sheet : première colonne = numéros de ligne consécutifs');
+    } else if (Array.isArray(table?.head) && table.head[0] === '' && table.head[1] === 'A' && table.head[2] === 'B') {
+      err(where, 'statement.table ressemble à une grille de tableur : poser sheet: true (lecture de gauche à droite)');
+    }
+  }
+
+  let lastStep = '00';
+  for (const q of data.questions ?? []) {
+    const qw = `${where} · ${q.id}`;
+    if (!EXAM_STEP.test(q.step ?? '')) err(qw, `step « ${q.step} » : une étape de sujet s'écrit 01 … 06`);
+    else if (q.step < lastStep) err(qw, `step « ${q.step} » recule après « ${lastStep} »`);
+    else lastStep = q.step;
+    if (q.sub !== undefined && !EXAM_SUBS.has(q.sub)) err(qw, `sub « ${q.sub} » : (ا) (ب) (ج) (د) seulement`);
+    if (q.lead !== undefined && (typeof q.lead !== 'string' || !q.lead.trim())) err(qw, 'lead est un texte non vide');
+    // Le chrono de l'étape (propriétaire, 2026-10-06) : un temps en secondes, de 30 s à 1 h.
+    if (q.timeSeconds !== undefined && !(Number.isInteger(q.timeSeconds) && q.timeSeconds >= 30 && q.timeSeconds <= 3600)) {
+      err(qw, `timeSeconds doit être un entier de 30 à 3600 (reçu ${JSON.stringify(q.timeSeconds)})`);
+    }
+    // « مراحل الحساب » : une zone de brouillon réglée au-dessus du champ (requise ou facultative).
+    if (q.work !== undefined && !['required', 'optional'].includes(q.work)) err(qw, `work « ${q.work} » : "required" ou "optional"`);
+    if (q.work !== undefined && ['selfCheck', 'choice', 'multiChoice'].includes(q.answerType)) err(qw, 'work n\'a de sens que pour une réponse construite');
+    const sol = q.solution;
+    if (!sol || !Array.isArray(sol.lines) || sol.lines.length === 0 || sol.lines.some((l) => typeof l !== 'string' || !l.trim())) {
+      err(qw, 'solution.lines est obligatoire sur une feuille d\'examen : le corrigé type, ligne par ligne');
+    }
+    if (sol?.result !== undefined && (typeof sol.result !== 'string' || !sol.result.trim())) err(qw, 'solution.result est une formule LaTeX non vide (encadrée)');
+  }
+}
 
 const errors = [];
 const warnings = [];
 const err = (where, msg) => errors.push(`${where}: ${msg}`);
 const warn = (where, msg) => warnings.push(`${where}: ${msg}`);
+
+/**
+ * La réponse qu'un élève donnerait s'il recopiait exactement la clé — dans la
+ * forme que l'évaluateur reçoit du client (inputs/*.jsx).
+ */
+function answerFromKey(q) {
+  switch (q.answerType) {
+    case 'choice': return { choiceId: (q.choices ?? []).find((c) => c.isCorrect)?.id };
+    case 'multiChoice': return { choiceIds: (q.choices ?? []).filter((c) => c.isCorrect).map((c) => c.id) };
+    case 'rational':
+    case 'integerSet': return { value: Array.isArray(q.expectedAnswer) ? q.expectedAnswer.join(', ') : q.expectedAnswer };
+    case 'selfCheck': return { selfMark: 'correct' };
+    default: return q.expectedAnswer; // affine {a,b}, interval {lo,…}, point {x,y}
+  }
+}
+
+function checkAnswerKeyRoundTrip(q, qw) {
+  if (!SUPPORTED_ANSWER_TYPES.includes(q.answerType)) return;
+  let verdict;
+  try {
+    verdict = evaluateAnswer(answerFromKey(q), q);
+  } catch (e) {
+    err(qw, `la clé fait lever l'évaluateur : ${e.message}`);
+    return;
+  }
+  if (!isSuccessOutcome(verdict.outcome)) {
+    err(qw, `la clé déclarée n'est PAS acceptée par l'évaluateur (issue « ${verdict.outcome} ») — la question serait insoluble`);
+  }
+  if (q.answerType === 'choice') {
+    for (const c of q.choices ?? []) {
+      if (c.isCorrect) continue;
+      const v = evaluateAnswer({ choiceId: c.id }, q);
+      if (isSuccessOutcome(v.outcome)) err(qw, `le distracteur « ${c.id} » est accepté comme juste`);
+    }
+  }
+  // Une signature d'erreur égale à la bonne réponse ne se déclencherait
+  // jamais — ou pire, étiquetterait une réponse juste comme une misconception.
+  for (const sig of q.misconceptionSignatures ?? []) {
+    const probe = q.answerType === 'rational' || q.answerType === 'integerSet'
+      ? { value: Array.isArray(sig.value) ? sig.value.join(', ') : sig.value }
+      : sig.value;
+    try {
+      if (isSuccessOutcome(evaluateAnswer(probe, q).outcome)) {
+        err(qw, `la signature « ${sig.id} » (${JSON.stringify(sig.value)}) est une réponse JUSTE`);
+      }
+    } catch { /* signature illisible : signalée plus bas */ }
+  }
+}
 
 /* ── Lecture du contenu ──────────────────────────────────────────────── */
 
@@ -94,7 +257,7 @@ const flatten = (s) =>
   String(s)
     .toLowerCase()
     .replace(/[−‒–—―]/g, '-')
-    .replace(/\\left|\\right|\\,|\;|\\!|\\dfrac|\\frac|\\text|[{}$\s]/g, '')
+    .replace(/\\left|\\right|\\,|\\?;|\\!|\\dfrac|\\frac|\\text|[{}$\s]/g, '')
     .replace(/,/g, '.');
 
 /** Les écritures d'une réponse attendue qu'un indice ne doit pas contenir. */
@@ -142,6 +305,10 @@ function expectedAnswerParses(question) {
       return parseInterval(ea) !== null;
     case 'point':
       return !!(ea && Rational.parse(ea.x) && Rational.parse(ea.y));
+    case 'integerSet':
+      return parseIntegerSet(ea) !== null;
+    case 'selfCheck':
+      return true; // pas de clé : l'élève se note après le corrigé type
     default:
       return false;
   }
@@ -155,6 +322,7 @@ function signatureParses(answerType, value) {
     case 'affine': return parseAffineAnswer(value) !== null;
     case 'interval': return parseInterval(value) !== null;
     case 'point': return !!(value && Rational.parse(value.x) && Rational.parse(value.y));
+    case 'integerSet': return parseIntegerSet(value) !== null;
     default: return false;
   }
 }
@@ -229,9 +397,35 @@ function validateExercise(file, data, ctx) {
     return;
   }
   const [lessonKey, lesson] = lessonEntry;
-  const gradeSegment = rel.split('/')[2]; // content/practice/<grade>/…
+  const gradeSegment = relative(CONTENT_ROOT, file).split('/')[0]; // <racine>/<grade>/…
   if (!lessonKey.startsWith(`${gradeSegment}:`)) {
     err(where, `le dossier annonce le niveau « ${gradeSegment} » mais la leçon appartient à « ${lessonKey.split(':')[0]} »`);
+  }
+
+  /* Mastery V2 — gabarit et provenance (exercices générés, §20 du plan) */
+  if (data.templateId !== undefined) {
+    if (typeof data.templateId !== 'string' || !TEMPLATE_ID_PATTERN.test(data.templateId)) {
+      err(rel, `templateId « ${data.templateId} » doit suivre tpl-<mots-en-kebab>`);
+    } else {
+      // Les variantes d'un gabarit testent la MÊME compétence de la même
+      // façon : même learning point principal, même answerType. Sinon ce
+      // n'est pas une variante, c'est un autre exercice.
+      const primary = (data.questions ?? []).map((q) => (q.learningPoints ?? []).find((lp) => lp.role === 'primary')?.code ?? null);
+      const types = (data.questions ?? []).map((q) => q.answerType ?? null);
+      const signature = JSON.stringify({ lesson: data.lessonCode, primary, types });
+      const seen = ctx.templates.get(data.templateId);
+      if (seen && seen.signature !== signature) {
+        err(rel, `templateId « ${data.templateId} » : les variantes doivent partager learning point principal et answerType par question (voir ${seen.rel})`);
+      } else if (!seen) {
+        ctx.templates.set(data.templateId, { rel, signature });
+      }
+    }
+  }
+  if (data.variantOf !== undefined && (typeof data.variantOf !== 'string' || !/^ex-[a-z0-9]+(-[a-z0-9]+)*-l[1-5]-[0-9]{3}$/.test(data.variantOf))) {
+    err(rel, `variantOf doit être l'identifiant d'un exercice existant (reçu ${JSON.stringify(data.variantOf)})`);
+  }
+  if (data.generator !== undefined && (typeof data.generator !== 'object' || data.generator === null || typeof data.generator.tool !== 'string')) {
+    err(rel, 'generator doit être un objet { tool, version?, seed? } — la provenance d\'un exercice généré');
   }
 
   /* Questions */
@@ -255,6 +449,16 @@ function validateExercise(file, data, ctx) {
       } else if (lp.role === 'primary') {
         ctx.primaryCoverage.get(lessonKey)?.add(lp.code);
       }
+    }
+
+    if (q.counted !== undefined && typeof q.counted !== 'boolean') err(qw, 'counted est un booléen (false = jugée mais hors maîtrise)');
+
+    /* Mastery V2 — métadonnées du registre d'items (facultatives, typées) */
+    if (q.difficulty !== undefined && !(Number.isInteger(q.difficulty) && q.difficulty >= 1 && q.difficulty <= 5)) {
+      err(qw, `difficulty doit être un entier de 1 à 5 (reçu ${JSON.stringify(q.difficulty)})`);
+    }
+    if (q.cognitiveDemand !== undefined && !COGNITIVE_DEMANDS.has(q.cognitiveDemand)) {
+      err(qw, `cognitiveDemand « ${q.cognitiveDemand} » inconnu (attendus : ${[...COGNITIVE_DEMANDS].join(', ')})`);
     }
 
     /* Type de réponse */
@@ -287,6 +491,11 @@ function validateExercise(file, data, ctx) {
       if (wrongWithout.length) {
         warn(qw, `distracteurs sans misconception : ${wrongWithout.map((c) => c.id).join(', ')} — la cible §25 les veut porteurs de sens`);
       }
+    } else if (q.answerType === 'selfCheck') {
+      /* Auto-évaluation : pas de clé, un corrigé type obligatoire */
+      if (q.expectedAnswer !== undefined) err(qw, 'une question selfCheck n\'a pas d\'expectedAnswer : l\'élève se note sur le corrigé type');
+      if (!Array.isArray(q.solution?.lines) || q.solution.lines.length === 0) err(qw, 'une question selfCheck exige solution.lines (le corrigé type)');
+      if (q.counted === true) err(qw, 'une question selfCheck ne compte jamais pour la maîtrise : retirer counted: true');
     } else {
       /* Réponse construite */
       if (q.expectedAnswer === undefined || q.expectedAnswer === null) {
@@ -298,6 +507,13 @@ function validateExercise(file, data, ctx) {
         err(qw, 'answerFormat est obligatoire : l\'élève doit savoir COMMENT saisir (invariant 7)');
       }
     }
+
+    /* Aller-retour de la clé (intégrité du contenu, 2026-09-24).
+       La clé déclarée doit être ACCEPTÉE par l'évaluateur réel, et toute
+       autre option refusée. C'est ce qui garantit qu'une question n'est
+       jamais insoluble — « aucun choix n'est accepté » — et qu'aucune
+       mauvaise réponse n'est comptée juste par construction. */
+    checkAnswerKeyRoundTrip(q, qw);
 
     /* Signatures de misconception */
     for (const sig of q.misconceptionSignatures ?? []) {
@@ -347,6 +563,16 @@ function validateExercise(file, data, ctx) {
     if (!COORDPLANE_PROPS.has(key)) err(where, `statement.visual.${key} n'est pas une prop de CoordPlane`);
   }
   checkVisualSize(data.statement?.visual, where);
+  if (data.statement?.figure !== undefined) {
+    for (const e of validateStatementFigure(data.statement.figure)) err(where, `statement.figure : ${e}`);
+    // Une feuille d'EXAMEN (2026-10-08, avant la géométrie : unités 9–13) : la figure plane doit être LISIBLE —
+    // pas de bande étroite, pas d'étiquette sur une autre (« figures du manuel : analyser puis redessiner »).
+    const fig = data.statement.figure;
+    if (data.metadata?.exam && fig && !fig.kind && validateStatementFigure(fig).length === 0) {
+      for (const e of figureQuality(fig)) err(where, `statement.figure illisible : ${e} — redessiner (même concept, réponses recalculées)`);
+    }
+  }
+  validateExamPresentation(data, where);
   if (data.statement?.support && !SUPPORT_LABS.has(data.statement.support.lab)) {
     err(where, `statement.support.lab « ${data.statement.support.lab} » hors du registre fermé`);
   }
@@ -389,9 +615,10 @@ function main() {
     else primaryCoverage.set(entry[0], new Set());
   }
 
-  const ctx = { seenIds: new Map(), lessonIndex, misconceptions, primaryCoverage };
+  const ctx = { seenIds: new Map(), lessonIndex, misconceptions, primaryCoverage, templates: new Map() };
   const files = walkExerciseFiles(CONTENT_ROOT);
   const byLessonLevel = new Map();
+  const examCount = new Map();
 
   for (const file of files) {
     const read = readJson(file);
@@ -402,16 +629,24 @@ function main() {
     const levels = byLessonLevel.get(key);
     if (!levels.has(read.data.level)) levels.set(read.data.level, []);
     levels.get(read.data.level).push(read.data.id);
+    if (read.data.metadata?.exam) examCount.set(key, (examCount.get(key) ?? 0) + 1);
   }
 
   /* Minimum de contenu et couverture — mode strict seulement, pour que le tout
      premier exercice écrit ne fasse pas rougir la CI. */
+  const policy = readPolicy();
+  for (const [lessonCode, rule] of Object.entries(policy.lessons)) {
+    if (!active.includes(lessonCode)) warn('policy.json', `« ${lessonCode} » a une politique mais n'est pas activée`);
+    if (!Number.isInteger(rule.minPerLevel) || rule.minPerLevel < 1) err('policy.json', `« ${lessonCode} » : minPerLevel doit être un entier ≥ 1`);
+    if (typeof rule.source !== 'string' || !rule.source) err('policy.json', `« ${lessonCode} » : une politique dérogatoire nomme sa source (manuel, pages)`);
+  }
   for (const lessonCode of active) {
     const levels = byLessonLevel.get(lessonCode) ?? new Map();
+    const minPerLevel = policy.lessons[lessonCode]?.minPerLevel ?? policy.defaultMinPerLevel;
     for (const level of LEVELS) {
       const n = (levels.get(level) ?? []).length;
-      if (n < MIN_PER_LEVEL) {
-        const msg = `leçon « ${lessonCode} » : niveau ${level} n'a que ${n} exercice(s), il en faut ${MIN_PER_LEVEL} (invariant 12)`;
+      if (n < minPerLevel) {
+        const msg = `leçon « ${lessonCode} » : niveau ${level} n'a que ${n} exercice(s), il en faut ${minPerLevel} (invariant 12${policy.lessons[lessonCode] ? ', politique dérogatoire' : ''})`;
         STRICT ? err('couverture', msg) : warn('couverture', msg);
       }
     }
@@ -423,6 +658,35 @@ function main() {
         const msg = `leçon « ${lessonCode} » : learning points sans exercice « primary » — ${missing.join(', ')}`;
         STRICT ? err('couverture', msg) : warn('couverture', msg);
       }
+    }
+  }
+
+  /* Feuille d'examen BEM (content/practice/exam-style.json) : la bascule d'une
+     leçon vers la page des niveaux « examen ». Une leçon listée est activée et
+     TOUS ses exercices portent `metadata.exam` (sinon la page des niveaux
+     examen ouvrirait un exercice classique) ; en strict, 10 par niveau, la
+     norme du déploiement. Une leçon non listée dont la banque est déjà
+     convertie (en partie ou en totalité) n'est qu'avertie : elle garde la page
+     classique jusqu'à sa bascule. */
+  const examRead = existsSync(join(CONTENT_ROOT, 'exam-style.json')) ? readJson(join(CONTENT_ROOT, 'exam-style.json')) : { ok: true, data: [] };
+  const examStyle = examRead.ok && Array.isArray(examRead.data) ? examRead.data : null;
+  if (examStyle === null) err('exam-style.json', 'doit être un tableau de codes de leçon');
+  for (const lessonCode of examStyle ?? []) {
+    if (typeof lessonCode !== 'string') { err('exam-style.json', `entrée invalide ${JSON.stringify(lessonCode)}`); continue; }
+    if (!active.includes(lessonCode)) err('exam-style.json', `« ${lessonCode} » est au format examen mais sa pratique n'est pas activée (active.json)`);
+    const levels = byLessonLevel.get(lessonCode) ?? new Map();
+    const total = [...levels.values()].reduce((n, ids) => n + ids.length, 0);
+    const exam = examCount.get(lessonCode) ?? 0;
+    if (exam !== total) err('exam-style.json', `« ${lessonCode} » : ${total - exam} exercice(s) sur ${total} sans metadata.exam — convertir toute la banque avant la bascule`);
+    for (const level of LEVELS) {
+      const n = (levels.get(level) ?? []).length;
+      if (STRICT && n < EXAM_PER_LEVEL) err('exam-style.json', `« ${lessonCode} » : niveau ${level} n'a que ${n} feuille(s), il en faut ${EXAM_PER_LEVEL}`);
+    }
+  }
+  for (const [lessonCode, n] of examCount) {
+    if (!(examStyle ?? []).includes(lessonCode)) {
+      const total = [...(byLessonLevel.get(lessonCode) ?? new Map()).values()].reduce((m, ids) => m + ids.length, 0);
+      warn('exam-style.json', `« ${lessonCode} » : ${n}/${total} exercice(s) au format examen, leçon pas encore basculée (page classique)`);
     }
   }
 

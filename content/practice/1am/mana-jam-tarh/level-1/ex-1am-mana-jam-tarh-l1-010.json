@@ -1,0 +1,129 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l1-010",
+  "lessonCode": "mana-jam-tarh",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — ادّخار أنس",
+    "estimatedMinutes": 3,
+    "tags": [
+      "أكثر",
+      "اختيار العملية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "ادّخر أنس من مصروفه 1350 دج ليشتري كتابًا للمطالعة، وبذلك ادّخر أكثر من أخته مريم بـ 275 دج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "في المخطط بأقواس الذي يمثّل هذه الوضعية، العدد 1350 هو:",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الكل (القوس تحت الخط)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "جزء (قوس فوق الخط)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من ادّخر أكثر: أنس أم مريم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأكبر هو الذي يتكوّن من الجزأين: ما ادّخرته مريم والفرق."
+        }
+      ],
+      "feedback": {
+        "correct": "ادّخار أنس = ادّخار مريم + 275: هو الكل.",
+        "incorrect": "أنس ادّخر أكثر من مريم: مبلغه يضمّ مبلغ مريم والفرق معًا."
+      },
+      "solution": {
+        "lines": [
+          "أنس ادّخر أكثر من مريم بـ 275 دج، إذن: ادّخار مريم + $275 = 1350$.",
+          "1350 هو الكل (القوس تحت الخط)."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم ادّخرت مريم؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "1075",
+      "misconceptionSignatures": [
+        {
+          "value": "1625",
+          "id": "MISC-JAMTARH-KALIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مريم ادّخرت أقل من أنس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نطرح الفرق من الكل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كلمة « أكثر » لا تعني دائمًا الجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$1350 - 275 = 1075$ دج.",
+        "incorrect": "مريم ادّخرت أقل من أنس: النتيجة أصغر من 1350 دج."
+      },
+      "solution": {
+        "lines": [
+          "ادّخار مريم جزء من الكل 1350:",
+          "$1350 - 275 = 1075$"
+        ],
+        "result": "1075 \\text{ DA}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

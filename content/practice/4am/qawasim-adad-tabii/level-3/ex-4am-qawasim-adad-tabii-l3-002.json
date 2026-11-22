@@ -1,0 +1,263 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l3-002",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 3,
+  "metadata": {
+    "title": "قواسم 5 × 11 و 910 و 1000",
+    "estimatedMinutes": 16,
+    "tags": [
+      "قواسم",
+      "قواعد قابلية القسمة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-4",
+      "page": 14,
+      "section": "أوظّف تعلّماتي",
+      "number": 4
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "عيّن جميع قواسم كل من الأعداد التالية:",
+    "formulas": [
+      "5 \\times 11 \\quad ; \\quad 910 \\quad ; \\quad 1000"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "قواسم العدد $5 \\times 11$:",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        5,
+        11,
+        55
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            5,
+            11
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $5 \\times 11$ أولًا، ثم قارن العدد الناتج بمربعات الأعداد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل قسمة باقيها معدوم تعطي قاسمين: $d$ و $55 \\div d$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$55 = 1 \\times 55$ ، $55 = 5 \\times 11$.",
+        "incorrect": "اختبر الأعداد التي مربعها أصغر من العدد أو يساويه، وخذ من كل قسمة باقيها معدوم القاسمين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$5 \\times 11 = 55$",
+          "$7^2 = 49 \\leq 55 < 64 = 8^2$ ومنه نختبر قابلية قسمة 55 على الأعداد من 1 إلى 7.",
+          "نجد أن 55 يقبل القسمة على كل من الأعداد: 1 ، 5.",
+          "ومن المساويات: $55 = 1 \\times 55$ ، $55 = 5 \\times 11$",
+          "إذن قواسم العدد 55 هي: 1 ، 5 ، 11 ، 55."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "قواسم العدد 910:",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        2,
+        5,
+        7,
+        10,
+        13,
+        14,
+        26,
+        35,
+        65,
+        70,
+        91,
+        130,
+        182,
+        455,
+        910
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            5,
+            7,
+            10,
+            13,
+            14,
+            26,
+            35,
+            65,
+            70,
+            91,
+            130,
+            182,
+            455
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 910 بمربعات الأعداد: إلى أي عدد يكفي أن تختبر قابلية القسمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "910 يقبل القسمة على 2 و 5 و 10 (رقم آحاده 0)؛ اختبر أيضا 7 و 13."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$910 = 1 \\times 910$ ، $910 = 2 \\times 455$ ، $910 = 5 \\times 182$ ، $910 = 7 \\times 130$ ، $910 = 10 \\times 91$ ، $910 = 13 \\times 70$ ، $910 = 14 \\times 65$ ، $910 = 26 \\times 35$.",
+        "incorrect": "اختبر الأعداد التي مربعها أصغر من العدد أو يساويه، وخذ من كل قسمة باقيها معدوم القاسمين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$30^2 = 900 \\leq 910 < 961 = 31^2$ ومنه نختبر قابلية قسمة 910 على الأعداد من 1 إلى 30.",
+          "نجد أن 910 يقبل القسمة على كل من الأعداد: 1 ، 2 ، 5 ، 7 ، 10 ، 13 ، 14 ، 26.",
+          "ومن المساويات: $910 = 1 \\times 910$ ، $910 = 2 \\times 455$ ، $910 = 5 \\times 182$ ، $910 = 7 \\times 130$ ، $910 = 10 \\times 91$ ، $910 = 13 \\times 70$ ، $910 = 14 \\times 65$ ، $910 = 26 \\times 35$",
+          "إذن قواسم العدد 910 هي: 1 ، 2 ، 5 ، 7 ، 10 ، 13 ، 14 ، 26 ، 35 ، 65 ، 70 ، 91 ، 130 ، 182 ، 455 ، 910."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 420
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "قواسم العدد 1000:",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        2,
+        4,
+        5,
+        8,
+        10,
+        20,
+        25,
+        40,
+        50,
+        100,
+        125,
+        200,
+        250,
+        500,
+        1000
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            4,
+            5,
+            8,
+            10,
+            20,
+            25,
+            40,
+            50,
+            100,
+            125,
+            200,
+            250,
+            500
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 1000 بمربعات الأعداد: إلى أي عدد يكفي أن تختبر قابلية القسمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل قواعد قابلية القسمة على 2 و 4 و 5؛ و 3 و 9 لا يقسمان 1000 لأن مجموع أرقامه 1."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$1000 = 1 \\times 1000$ ، $1000 = 2 \\times 500$ ، $1000 = 4 \\times 250$ ، $1000 = 5 \\times 200$ ، $1000 = 8 \\times 125$ ، $1000 = 10 \\times 100$ ، $1000 = 20 \\times 50$ ، $1000 = 25 \\times 40$.",
+        "incorrect": "اختبر الأعداد التي مربعها أصغر من العدد أو يساويه، وخذ من كل قسمة باقيها معدوم القاسمين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$31^2 = 961 \\leq 1000 < 1024 = 32^2$ ومنه نختبر قابلية قسمة 1000 على الأعداد من 1 إلى 31.",
+          "نجد أن 1000 يقبل القسمة على كل من الأعداد: 1 ، 2 ، 4 ، 5 ، 8 ، 10 ، 20 ، 25.",
+          "ومن المساويات: $1000 = 1 \\times 1000$ ، $1000 = 2 \\times 500$ ، $1000 = 4 \\times 250$ ، $1000 = 5 \\times 200$ ، $1000 = 8 \\times 125$ ، $1000 = 10 \\times 100$ ، $1000 = 20 \\times 50$ ، $1000 = 25 \\times 40$",
+          "إذن قواسم العدد 1000 هي: 1 ، 2 ، 4 ، 5 ، 8 ، 10 ، 20 ، 25 ، 40 ، 50 ، 100 ، 125 ، 200 ، 250 ، 500 ، 1000."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 420
+    }
+  ]
+}

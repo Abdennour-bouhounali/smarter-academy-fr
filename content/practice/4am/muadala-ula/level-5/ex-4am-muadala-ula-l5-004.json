@@ -1,0 +1,216 @@
+{
+  "id": "ex-4am-muadala-ula-l5-004",
+  "lessonCode": "muadala-ula",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2017 — قطعة أرض مربعة لأخوين",
+    "estimatedMinutes": 16,
+    "tags": [
+      "مساحة",
+      "معادلة",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_muadala-ula_P2",
+      "modelledOn": "BEM 2017 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2017",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "قطعة أرض مربعة الشكل $ABCD$ مساحتها $576\\,m^2$ ملك للأخوين ياسين وأمين، اتّفقا بالتراضي على اقتسامها. $E$ نقطة من الضلع $[AB]$ حيث $BE = 16\\,m$ ، و $M$ نقطة من الضلع $[BC]$ حيث $BM = x$ . الجزء المثلث $EBM$ ملك لياسين، والجزء $AEMCD$ ملك لأمين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب طول ضلع القطعة.",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "24",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة المربع = الضلع × الضلع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن العدد الموجب الذي مربعه 576."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = 24\\,m$ .",
+        "incorrect": "أعد الحساب خطوة خطوة، مع احترام أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$AB^2 = 576$ و $AB > 0$",
+          "$AB = \\sqrt{576}$"
+        ],
+        "result": "AB = 24\\,m"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "ليكن $S_1$ مساحة الجزء $EBM$ و $S_2$ مساحة الجزء $AEMCD$ .",
+      "statement": "اكتب $S_1$ بدلالة $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $S_1$ على الشكل $mx$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $EBM$ قائم في $B$ ، ضلعاه القائمان $BE$ و $BM$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحته نصف جداء ضلعيه القائمين."
+        }
+      ],
+      "feedback": {
+        "correct": "$S_1 = 8x$ .",
+        "incorrect": "أعد الحساب خطوة خطوة، مع احترام أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$S_1 = \\dfrac{16 \\times x}{2}$"
+        ],
+        "result": "S_1 = 8x"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "اكتب $S_2$ بدلالة $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $S_2$ على الشكل $p + mx$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "-8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$S_2$ = مساحة المربع − $S_1$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$S_2 = 576 - 8x$ .",
+        "incorrect": "أعد الحساب خطوة خطوة، مع احترام أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$S_2 = 576 - 8x$"
+        ],
+        "result": "S_2 = 576 - 8x"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "☜ ساعد الأخوين على تحديد موضع النقطة $M$ بحيث تكون مساحة قطعة أمين خمسة أضعاف مساحة قطعة ياسين.",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول $BM$ بـ m",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "1/12",
+          "id": "MISC-MUADALA-QISMA-MAQLUBA"
+        },
+        {
+          "value": "-12",
+          "id": "MISC-MUADALA-ISHARA-SALIBA"
+        },
+        {
+          "value": "-18",
+          "id": "MISC-MUADALA-NAQL-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خمسة أضعاف مساحة قطعة ياسين: $5S_1$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب المعادلة $S_2 = 5S_1$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انقل حدود $x$ إلى طرف والأعداد إلى الطرف الآخر، ثم اقسم على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$BM = 12\\,m$ : $M$ منتصف $[BC]$ .",
+        "incorrect": "انقل كل حدّ بإشارة معاكسة، وجمّع الحدود المتشابهة، ثم اقسم على معامل $x$ بإشارته. تحقّق بالتعويض."
+      },
+      "solution": {
+        "lines": [
+          "$S_2 = 5S_1$ تعني $576 - 8x = 5 \\times 8x$",
+          "$576 - 8x = 40x$",
+          "$-8x - 40x = -576$",
+          "$-48x = -576$",
+          "$x = \\dfrac{-576}{-48}$"
+        ],
+        "result": "x = 12"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "id": "ex-4am-bahth-pgcd-l2-008",
+  "lessonCode": "bahth-pgcd",
+  "level": 2,
+  "metadata": {
+    "title": "الكسر 210/301",
+    "estimatedMinutes": 6,
+    "tags": [
+      "خوارزمية إقليدس",
+      "حساب على الكسور"
+    ],
+    "source": {
+      "type": "worksheet",
+      "worksheetId": "tafawwuq-01",
+      "elementId": "ws01-ex-15",
+      "section": "التمارين",
+      "number": 15,
+      "adaptedFrom": "ex-4am-ikhtizal-kasr-l3-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الكسر $\\dfrac{210}{301}$ والعدد A حيث:",
+    "formulas": [
+      "A = \\dfrac{17}{86} - \\dfrac{210}{301}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $PGCD(301 ; 210)$.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-PGCD-SIFR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 301 على 210: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (301 ; 210) بالزوج (210 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 7.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم، لا الباقي المعدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$301 = 210 \\times 1 + 91$",
+          "$210 = 91 \\times 2 + 28$",
+          "$91 = 28 \\times 3 + 7$",
+          "$28 = 7 \\times 4 + 0$",
+          "آخر باقٍ غير معدوم هو 7، إذن:"
+        ],
+        "result": "PGCD(301 ; 210) = 7"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب الكسر $\\dfrac{210}{301}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "30/43",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 7: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال 01.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم البسط والمقام على القاسم المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{210}{301} = \\dfrac{210 \\div 7}{301 \\div 7}$"
+        ],
+        "result": "\\dfrac{210}{301} = \\dfrac{30}{43}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب العدد A ثم اكتبه على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "-1/2",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $\\dfrac{210}{301}$ بالكسر الذي وجدته في السؤال 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لاحظ أن $86 = 43 \\times 2$: وحّد المقامين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح البسطين ثم اختزل النتيجة."
+        }
+      ],
+      "feedback": {
+        "correct": "A سالب، وبعد الاختزال نحصل على كسر غير قابل للاختزال.",
+        "incorrect": "استعمل الشكل المختزل للكسر $\\dfrac{210}{301}$ ووحّد المقامين قبل الطرح.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم البسط والمقام على القاسم المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{17}{86} - \\dfrac{30}{43}$",
+          "$A = \\dfrac{17}{86} - \\dfrac{60}{86}$",
+          "$A = \\dfrac{-43}{86}$"
+        ],
+        "result": "A = -\\dfrac{1}{2}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

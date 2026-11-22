@@ -1,0 +1,128 @@
+{
+  "id": "ex-4am-bahth-pgcd-l4-002",
+  "lessonCode": "bahth-pgcd",
+  "level": 4,
+  "metadata": {
+    "title": "5858 و 6767",
+    "estimatedMinutes": 5,
+    "tags": [
+      "خوارزمية إقليدس"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-20",
+      "page": 14,
+      "section": "أوظّف تعلّماتي",
+      "number": 20
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان الطبيعيان 5858 و 6767."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 5858 و 6767 مع كتابة مراحل الحساب.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "101",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-PGCD-SIFR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالقسمة الإقليدية للعدد 6767 على 5858."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (6767 ; 5858) بالزوج (5858 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$6767 = 5858 \\times 1 + 909$ ، $5858 = 909 \\times 6 + 404$ ، $909 = 404 \\times 2 + 101$ ، $404 = 101 \\times 4 + 0$.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$6767 = 5858 \\times 1 + 909$",
+          "$5858 = 909 \\times 6 + 404$",
+          "$909 = 404 \\times 2 + 101$",
+          "$404 = 101 \\times 4 + 0$",
+          "آخر باقٍ غير معدوم هو 101، إذن:"
+        ],
+        "result": "\\text{PGCD}(5858 ; 6767) = 101"
+      },
+      "work": "required",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب الكسر $\\dfrac{5858}{6767}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "58/67",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل القاسم المشترك الأكبر الذي حسبته في السؤال السابق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على هذا القاسم المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 101: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال السابق.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5858}{6767} = \\dfrac{5858 \\div 101}{6767 \\div 101}$"
+        ],
+        "result": "\\dfrac{5858}{6767} = \\dfrac{58}{67}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "id": "ex-4am-tamthil-bayani-khatti-l4-003",
+  "lessonCode": "tamthil-bayani-khatti",
+  "level": 4,
+  "metadata": {
+    "title": "دوري الآن — نقطة بإحداثيين جذريين",
+    "estimatedMinutes": 10,
+    "tags": [
+      "معامل كسري",
+      "جذور",
+      "منحى المستقيم"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "now-69",
+      "page": 69,
+      "section": "دوري الآن",
+      "adaptedFrom": "ex-4am-tamthil-bayani-khatti-l4-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$(D)$ التمثيل البياني لدالة خطية $f$ ، وهو يشمل النقطة $A\\left(-\\dfrac{2}{3} ; -\\dfrac{3}{2}\\right)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن الدالة الخطية $f$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "9/4",
+      "misconceptionSignatures": [
+        {
+          "value": "4/9",
+          "id": "MISC-KHATTIYA-MUAMIL-MAQLUB"
+        },
+        {
+          "value": "-9/4",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$f$ دالة خطية: $f(x) = ax$ ، وتمثيلها يشمل النقطة ذات الإحداثيين $(-\\dfrac{2}{3} ; -\\dfrac{3}{2})$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب المعادلة $a \\times \\left(-\\dfrac{2}{3}\\right) = -\\dfrac{3}{2}$ ثم حلّها: الترتيب على الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = -\\dfrac{3}{2} \\times \\left(-\\dfrac{3}{2}\\right) = \\dfrac{9}{4}$ ، إذن $f(x) = \\dfrac{9}{4}x$ .",
+        "incorrect": "المعامل هو الترتيب مقسوما على الفاصلة (وليس العكس)، مع الانتباه إلى الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "$f$ دالة خطية، إذن $f(x) = ax$ .",
+          "$f(-\\dfrac{2}{3}) = -\\dfrac{3}{2}$ معناه $a \\times \\left(-\\dfrac{2}{3}\\right) = -\\dfrac{3}{2}$",
+          "$a = -\\dfrac{3}{2} \\times \\left(-\\dfrac{3}{2}\\right) = \\dfrac{9}{4}$"
+        ],
+        "result": "f(x) = \\dfrac{9}{4}x"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل النقطة $B\\left(\\sqrt{32} ; \\sqrt{162}\\right)$ تنتمي إلى $(D)$ ؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDHR-MURABBA-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $\\sqrt{32}$ و $\\sqrt{162}$ على الشكل $a\\sqrt{2}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $f\\left(\\sqrt{32}\\right)$ وقارنه بترتيب $B$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f\\left(\\sqrt{32}\\right) = 9\\sqrt{2} = \\sqrt{162}$ : $B$ تنتمي إلى $(D)$ .",
+        "incorrect": "بسّط الجذرين أولا: $32 = 16 \\times 2$ و $162 = 81 \\times 2$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\sqrt{32} = 4\\sqrt{2}$ و $\\sqrt{162} = 9\\sqrt{2}$",
+          "$f\\left(\\sqrt{32}\\right) = \\dfrac{9}{4} \\times 4\\sqrt{2} = 9\\sqrt{2} = \\sqrt{162}$",
+          "إذن النقطة $B$ تنتمي إلى $(D)$ ."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل المستقيم $(D)$ يصعد أم ينزل من اليسار إلى اليمين؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "يصعد من اليسار إلى اليمين",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "ينزل من اليسار إلى اليمين",
+          "isCorrect": false,
+          "misconceptionId": "MISC-BAYANI-MUNHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارة معامل الدالة الخطية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان المعامل موجبا فالمستقيم يصعد، وإذا كان سالبا فهو ينزل."
+        }
+      ],
+      "feedback": {
+        "correct": "المعامل $\\dfrac{9}{4}$ موجب: المستقيم يصعد.",
+        "incorrect": "منحى المستقيم تعيّنه إشارة المعامل: موجب ← يصعد، سالب ← ينزل."
+      },
+      "solution": {
+        "lines": [
+          "معامل الدالة الخطية هو $\\dfrac{9}{4}$ ، وهو عدد موجب.",
+          "إذن المستقيم $(D)$ يصعد من اليسار إلى اليمين."
+        ],
+        "result": "يصعد"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

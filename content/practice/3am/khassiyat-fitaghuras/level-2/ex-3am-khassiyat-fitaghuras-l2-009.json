@@ -1,0 +1,227 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l2-009",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — سلسلة على الآلة الحاسبة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "خاصية فيثاغورس",
+      "اللمسة √"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$MNP$ مثلث قائم في $N$ حيث $MN = 4{,}5\\,\\mathrm{cm}$ و $MP = 5{,}3\\,\\mathrm{cm}$ . كتبت سارة على آلتها الحاسبة السلسلة: $\\sqrt{\\ }\\ (\\ 5{,}3\\ x^2\\ -\\ 4{,}5\\ x^2\\ )\\ =$",
+    "figure": {
+      "points": {
+        "N": [
+          0.0,
+          0.0
+        ],
+        "P": [
+          2.8,
+          0.0
+        ],
+        "M": [
+          0.0,
+          4.5
+        ]
+      },
+      "segments": [
+        {
+          "from": "N",
+          "to": "P"
+        },
+        {
+          "from": "N",
+          "to": "M",
+          "label": "4,5 cm"
+        },
+        {
+          "from": "P",
+          "to": "M",
+          "label": "5,3 cm"
+        }
+      ],
+      "rightAngles": [
+        [
+          "P",
+          "N",
+          "M"
+        ]
+      ],
+      "ariaLabel": "مثلث MNP قائم في N حيث MN = 4,5 cm و MP = 5,3 cm",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ماذا تحسب سارة بالسلسلة السابقة؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مربع الطول $NP$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-NO-ROOT"
+        },
+        {
+          "id": "B",
+          "content": "الطول $NP$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "الطول $MP$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-HYP-WRONG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اللمسة $\\sqrt{\\ }$ في بداية السلسلة تطبّق على كل ما بين القوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "داخل القوسين: مربع الوتر ناقص مربع ضلع قائم."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sqrt{MP^2 - MN^2} = NP$ : السلسلة تعطي الضلع القائم الثالث.",
+        "incorrect": "السلسلة تبدأ بالجذر: النتيجة طول وليست مربعا. والطول $MP$ معلوم أصلا."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $MNP$ قائم في $N$ ، وتره $[MP]$ : $MP^2 = MN^2 + NP^2$ .",
+          "ومنه $NP^2 = MP^2 - MN^2$ و $NP = \\sqrt{MP^2 - MN^2}$ .",
+          "السلسلة تحسب $\\sqrt{5{,}3^2 - 4{,}5^2}$ ، أي الطول $NP$ ."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما العدد الذي تظهره الآلة الحاسبة؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "2.8",
+      "misconceptionSignatures": [
+        {
+          "value": "7.84",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        },
+        {
+          "value": "0.8",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "6.95",
+          "id": "MISC-FITAGHURAS-LEG-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب ما بين القوسين أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم الجذر التربيعي للنتيجة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: هل مربع العدد الذي وجدته يساوي ما بين القوسين؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sqrt{28{,}09 - 20{,}25} = \\sqrt{7{,}84} = 2{,}8$ .",
+        "incorrect": "ربّع كل عدد قبل الطرح، ثم خذ جذر الفرق."
+      },
+      "solution": {
+        "lines": [
+          "$5{,}3^2 - 4{,}5^2 = 28{,}09 - 20{,}25 = 7{,}84$",
+          "$\\sqrt{7{,}84} = 2{,}8$ لأن $2{,}8^2 = 7{,}84$"
+        ],
+        "result": "NP = 2{,}8\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "برّر لماذا تستعمل سارة الطرح داخل الجذر وليس الجمع.",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل $[NP]$ وتر أم ضلع قائم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اعزل $NP^2$ في مساواة فيثاغورس."
+        }
+      ],
+      "feedback": {
+        "correct": "الضلع القائم يُحسب بطرح مربعين.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "الوتر $[MP]$ يقابل الزاوية القائمة في $N$ .",
+          "حسب خاصية فيثاغورس: $MP^2 = MN^2 + NP^2$ .",
+          "الطول المطلوب $NP$ ضلع قائم، فنعزله: $NP^2 = MP^2 - MN^2$ ، ومن هنا الطرح."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

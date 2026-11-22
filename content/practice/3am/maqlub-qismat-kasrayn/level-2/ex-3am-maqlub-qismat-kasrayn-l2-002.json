@@ -1,0 +1,224 @@
+{
+  "id": "ex-3am-maqlub-qismat-kasrayn-l2-002",
+  "lessonCode": "maqlub-qismat-kasrayn",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — هل $0{,}33$ مقلوب $3$ ؟",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مقلوب عدد",
+      "تعليل",
+      "قيمة تقريبية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "تقول أمينة إنّ $0{,}33$ هو مقلوب العدد $3$ .",
+      "statement": "هل تقول أمينة الصواب؟",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأنّ $0{,}33$ هو $\\dfrac{1}{3}$ تقريبًا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQLUB-APPROX"
+        },
+        {
+          "id": "B",
+          "content": "لا، لأنّ جداء $0{,}33$ في $3$ لا يساوي $1$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الخيارات واحسب كلاّ منها بدل أن تخمّن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ خيار على الأعداد الواردة فيه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حوّل القسمة إلى جداء بمقلوب القاسم، ثمّ قارن."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}33 \\times 3 = 0{,}99$ وهو لا يساوي $1$ ، إذن ليس مقلوبًا.",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}33 \\times 3 = 0{,}99 \\neq 1$ ، فـ $0{,}33$ ليس مقلوب $3$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب الجداء $0{,}33 \\times 3$ .",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "99/100",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كل سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}99$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}33 \\times 3 = 0{,}99$ ."
+        ],
+        "result": "0{,}99"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "ما هو المقلوب الصحيح؟",
+      "statement": "اكتب مقلوب العدد $3$ على شكل كسر.",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "1/3",
+      "misconceptionSignatures": [
+        {
+          "value": "33/100",
+          "id": "MISC-MAQLUB-APPROX"
+        },
+        {
+          "value": "-3",
+          "id": "MISC-MAQLUB-OPPOSITE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي يُطلب مقلوبه؟ وهل هو عدد طبيعي أم عشري أم كسر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مقلوب عدد غير معدوم هو العدد الذي جداؤه معه يساوي $1$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العدد على شكل كسر ثمّ بدّل بسطه ومقامه، وتحقّق من ذلك بإجراء الجداء."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{3}$ لأنّ جداء العدد ومقلوبه يساوي $1$ .",
+        "incorrect": "جداء العدد ومقلوبه يساوي العدد الذي هو عنصر محايد للضرب؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times \\dfrac{1}{3} = 1$ ، إذن مقلوب $3$ هو $\\dfrac{1}{3}$ ."
+        ],
+        "result": "\\dfrac{1}{3}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "برّر لماذا لا يوجد عدد عشري يساوي $\\dfrac{1}{3}$ تمامًا.",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجب أن تبرّره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل تعريف المقلوب (جداء العدد ومقلوبه) أو القسمة بالضرب في المقلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "مقلوب $3$ هو الكسر $\\dfrac{1}{3}$ ولا يمكن كتابته بعدد منته من الأرقام بعد الفاصلة.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "مقلوب $3$ هو $\\dfrac{1}{3}$ .",
+          "كتابة $\\dfrac{1}{3}$ بالفاصلة لا تنتهي ($0{,}333\\ldots$) ، وأيّ عدد عشري مكتوب بعدد منته من الأرقام يعطي جداءً غير $1$ عند ضربه في $3$ ."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

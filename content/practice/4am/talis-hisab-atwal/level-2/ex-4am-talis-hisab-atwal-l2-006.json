@@ -1,0 +1,143 @@
+{
+  "id": "ex-4am-talis-hisab-atwal-l2-006",
+  "lessonCode": "talis-hisab-atwal",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2019 — الطول MN",
+    "estimatedMinutes": 8,
+    "tags": [
+      "فيثاغورس",
+      "خاصية طالس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_talis-hisab-atwal_P2",
+      "modelledOn": "BEM 2019 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2019",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$RST$ مثلث قائم في $R$ حيث: $RS = 6\\,\\mathrm{cm}$ و $TR = 8\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب الطول $ST$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "14",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $RST$ قائم في $R$ : الوتر هو $[ST]$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق خاصية فيثاغورس: $ST^2 = RS^2 + RT^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$ST^2 = 36 + 64 = 100$ ومنه $ST = 10\\,\\mathrm{cm}$ .",
+        "incorrect": "مربع الوتر يساوي مجموع مربعي الضلعين الآخرين، ثم خذ الجذر التربيعي."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $RST$ قائم في $R$ ، حسب خاصية فيثاغورس: $ST^2 = RS^2 + RT^2$",
+          "$ST^2 = 6^2 + 8^2 = 36 + 64 = 100$",
+          "$ST = \\sqrt{100}$"
+        ],
+        "result": "ST = 10\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "لتكن $M$ نقطة من $[TR]$ حيث: $TM = 2\\,\\mathrm{cm}$ . المستقيم $(\\Delta)$ العمودي على $(TR)$ في $M$ يقطع $(TS)$ في النقطة $N$ .",
+      "statement": "احسب الطول $MN$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (عشري بالفاصلة مثل 2,75 أو كسر مثل 7/9)",
+      "expectedAnswer": "1,5",
+      "misconceptionSignatures": [
+        {
+          "value": "24",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "4,5",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المستقيمان $(RS)$ و $(\\Delta)$ عموديان على المستقيم نفسه $(TR)$ : ماذا تستنتج؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المثلثان $TMN$ و $TRS$ في وضعية طالس: $\\dfrac{TM}{TR} = \\dfrac{TN}{TS} = \\dfrac{MN}{RS}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احتفظ بالمساواة التي فيها $MN$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$(MN) \\parallel (RS)$ و $MN = \\dfrac{6 \\times 2}{8} = 1{,}5\\,\\mathrm{cm}$ .",
+        "incorrect": "راجع المساواة المختارة: في كل نسبة طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "$(RS) \\perp (TR)$ (لأن المثلث $RST$ قائم في $R$) و $(MN) \\perp (TR)$ (من المعطيات)،",
+          "إذن $(MN) \\parallel (RS)$ (مستقيمان عموديان على نفس المستقيم متوازيان).",
+          "$M \\in [TR]$ و $N \\in [TS]$ ، حسب خاصية طالس: $\\dfrac{TM}{TR} = \\dfrac{TN}{TS} = \\dfrac{MN}{RS}$",
+          "$\\dfrac{2}{8} = \\dfrac{MN}{6}$",
+          "$MN = \\dfrac{6 \\times 2}{8}$"
+        ],
+        "result": "MN = 1{,}5\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

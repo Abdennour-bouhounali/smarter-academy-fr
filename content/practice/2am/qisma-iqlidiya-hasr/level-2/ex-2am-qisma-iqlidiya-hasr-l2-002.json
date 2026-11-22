@@ -1,0 +1,230 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l2-002",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 2,
+  "metadata": {
+    "title": "حصر حاصل القسمة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "حصر",
+      "قيمة مقرّبة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-1b",
+      "page": 26,
+      "section": "معارف",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "عندما نجري القسمة الإقليدية للعدد 180 على 8 نجد الحاصل 22 والباقي 4."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أعط القيمة المقرّبة إلى الوحدة بالنقصان لحاصل القسمة $\\frac{180}{8}$.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "22",
+      "misconceptionSignatures": [
+        {
+          "value": "23",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "value": "4",
+          "id": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احصر $\\frac{180}{8}$ بين عددين طبيعيين متتاليين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمة المقرّبة إلى الوحدة بالنقصان هي أصغر طرفي الحصر."
+        }
+      ],
+      "feedback": {
+        "correct": "$22 < \\frac{180}{8} < 23$ ، فالقيمة بالنقصان 22.",
+        "incorrect": "بالنقصان: أصغر طرفي الحصر بين عددين طبيعيين متتاليين؛ بالزيادة: أكبرهما."
+      },
+      "solution": {
+        "lines": [
+          "$180 = 8 \\times 22 + 4$",
+          "$22 < \\frac{180}{8} < 23$",
+          "القيمة المقرّبة إلى الوحدة بالنقصان هي 22."
+        ],
+        "result": "22"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "أعط القيمة المقرّبة إلى الوحدة بالزيادة لحاصل القسمة $\\frac{180}{8}$.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "23",
+      "misconceptionSignatures": [
+        {
+          "value": "22",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "value": "24",
+          "id": "MISC-HASR-IZAHA"
+        },
+        {
+          "value": "4",
+          "id": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احصر $\\frac{180}{8}$ بين عددين طبيعيين متتاليين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمة المقرّبة إلى الوحدة بالزيادة هي أكبر طرفي الحصر."
+        }
+      ],
+      "feedback": {
+        "correct": "$22 < \\frac{180}{8} < 23$ ، فالقيمة بالزيادة 23.",
+        "incorrect": "بالزيادة: أكبر طرفي الحصر بين عددين طبيعيين متتاليين؛ بالنقصان: أصغرهما."
+      },
+      "solution": {
+        "lines": [
+          "$180 = 8 \\times 22 + 4$",
+          "$22 < \\frac{180}{8} < 23$",
+          "القيمة المقرّبة إلى الوحدة بالزيادة هي 23."
+        ],
+        "result": "23"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "اختر الكتابة الصحيحة التي تحصر حاصل القسمة $\\frac{180}{8}$ بين عددين طبيعيين متتاليين (أو تعطيه إذا كان عددًا طبيعيًا).",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$21 < \\frac{180}{8} < 22$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        },
+        {
+          "id": "B",
+          "content": "$4 < \\frac{180}{8} < 5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "id": "C",
+          "content": "$22 < \\frac{180}{8} < 23$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 180 على 8."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من $8 \\times q \\le 180 < 8 \\times (q + 1)$ نقسم الأطراف على 8."
+        }
+      ],
+      "feedback": {
+        "correct": "$180 = 8 \\times 22 + 4$ والباقي غير معدوم، فـ $\\frac{180}{8}$ يقع تمامًا بين 22 و 23.",
+        "incorrect": "احصر 180 بين مضاعفين متتاليين للعدد 8 ثم اقسم على 8؛ وإذا كان الباقي معدومًا فحاصل القسمة عدد طبيعي."
+      },
+      "solution": {
+        "lines": [
+          "$180 = 8 \\times 22 + 4$",
+          "$8 \\times 22 < 180 < 8 \\times 23$ ، نقسم على 8: $22 < \\frac{180}{8} < 23$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "برّر أنّ $\\frac{180}{8}$ ليس عددًا طبيعيًا.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى باقي القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لو كان عددًا طبيعيًا لكان الباقي معدومًا."
+        }
+      ],
+      "feedback": {
+        "correct": "الباقي 4 غير معدوم.",
+        "incorrect": "قارن باقي القسمة بالصفر."
+      },
+      "solution": {
+        "lines": [
+          "$180 = 8 \\times 22 + 4$ والباقي $4 \\ne 0$.",
+          "إذن 180 لا يقبل القسمة على 8، و $22 < \\frac{180}{8} < 23$: ليس عددًا طبيعيًا."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l5-007",
+  "lessonCode": "mafhum-dawaran",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — صمام عجلة الدراجة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "صورة نقطة",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mafhum-dawaran_P2",
+      "modelledOn": "know-2"
+    }
+  },
+  "statement": {
+    "content": "صمام عجلة دراجة على بعد $33\\,\\mathrm{cm}$ من محورها O. تدور العجلة حول O بزاوية $180^\\circ$ فينتقل الصمام من V إلى V′."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما هو البعد VV′ بالسنتيمتر؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر)",
+      "expectedAnswer": "66",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-MASAFA",
+          "value": "33"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نصف دورة حول O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "O منتصف [VV′]."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "VV′ = OV + OV′."
+        }
+      ],
+      "feedback": {
+        "correct": "V و O و V′ في استقامية و OV′ = OV: $VV' = 2 \\times 33 = 66\\,\\mathrm{cm}$ .",
+        "incorrect": "نصف دورة: V′ في الجهة المقابلة من O، على نفس البعد."
+      },
+      "difficulty": 4
+    }
+  ]
+}

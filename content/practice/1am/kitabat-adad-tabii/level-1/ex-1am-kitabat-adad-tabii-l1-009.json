@@ -1,0 +1,139 @@
+{
+  "id": "ex-1am-kitabat-adad-tabii-l1-009",
+  "lessonCode": "kitabat-adad-tabii",
+  "level": 1,
+  "metadata": {
+    "title": "ثلاثة آلاف وخمسة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "كتابة بالأرقام",
+      "عدد العشرات"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "self-1",
+      "page": 19,
+      "section": "أقوّم تعلّماتي",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العدد « أربعة آلاف وثمانية »."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب بالأرقام العدد: « أربعة آلاف وثمانية ».",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي بالأرقام (يمكنك ترك فراغ بين الفئات)",
+      "expectedAnswer": "4008",
+      "misconceptionSignatures": [
+        {
+          "value": "48",
+          "id": "MISC-KITABA-ZERO-PLACE"
+        },
+        {
+          "value": "408",
+          "id": "MISC-KITABA-ZERO-PLACE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما أسماء الفئات التي تسمعها في العدد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل فئة على يمين الفئة الأولى تُكتب بثلاثة أرقام بالضبط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب 0 في كل مرتبة فارغة."
+        }
+      ],
+      "feedback": {
+        "correct": "« أربعة آلاف وثمانية » يكتب بالأرقام 4008.",
+        "incorrect": "كل فئة بعد الفئة الأولى تُكتب بثلاثة أرقام: المرتبة الفارغة يحفظها الرقم 0."
+      },
+      "solution": {
+        "lines": [
+          "نكتب كل فئة بثلاثة أرقام: 4 في فئة الآلاف، 008 في فئة الوحدات.",
+          "إذن العدد هو 4008."
+        ],
+        "result": "4008"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هو عدد العشرات في العدد « أربعة آلاف وثمانية »؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "400",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-KITABA-DIGIT-COUNT"
+        },
+        {
+          "value": "40",
+          "id": "MISC-KITABA-RANKSHIFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد العشرات هو عدد المجموعات من 10 التي نكوّنها من العدد كله، لا الرقم وحده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احذف الأرقام التي على يمين مرتبة العشرات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: اضرب جوابك في 10 ثم أضف ما بقي."
+        }
+      ],
+      "feedback": {
+        "correct": "$4008 = 400 \\times 10 + 8$: عدد العشرات هو 400، أمّا رقم العشرات فهو 0.",
+        "incorrect": "رقم المرتبة هو ما يبقى فيها وحدها؛ أمّا عدد وحداتها فنحسب فيه كل ما يمكن تجميعه منها في العدد كله."
+      },
+      "solution": {
+        "lines": [
+          "$4008 = 400 \\times 10 + 8$",
+          "إذن عدد العشرات في العدد 4008 هو 400، ورقم العشرات هو 0."
+        ],
+        "result": "400"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

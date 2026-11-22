@@ -1,0 +1,64 @@
+{
+  "id": "ex-4am-insihab-shuaa-l2-010",
+  "lessonCode": "insihab-shuaa",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — طول سهم مائل",
+    "estimatedMinutes": 2,
+    "tags": [
+      "الطول"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_insihab-shuaa_P2",
+      "modelledOn": "know-1"
+    }
+  },
+  "statement": {
+    "content": "على المرصوفة، سهم ينتقل 3 مربعات نحو اليمين و 4 مربعات نحو الأعلى."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما طول هذا السهم بضلع المربع وحدةً؟",
+      "learningPoints": [
+        {
+          "code": "4am_insihab-shuaa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الطول لا يتعلق بالجهة: نعدّ المربعات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "سهم مائل: الحركة الأفقية والحركة الشاقولية ضلعا مثلث قائم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق خاصية فيثاغورس: الطول² = (الأفقي)² + (الشاقولي)²."
+        }
+      ],
+      "feedback": {
+        "correct": "الحركتان ضلعا مثلث قائم: الطول² = 3² + 4² = 25، فالطول 5.",
+        "incorrect": "الطول ليس 3 + 4: استعمل خاصية فيثاغورس."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SHUAA-JAM-ATWAL",
+          "value": "7"
+        }
+      ]
+    }
+  ]
+}

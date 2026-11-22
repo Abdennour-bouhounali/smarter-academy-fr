@@ -1,0 +1,150 @@
+{
+  "id": "ex-4am-muadalat-x-murabba-l3-007",
+  "lessonCode": "muadalat-x-murabba",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2015 — بُعدا قطعة أرض",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مساحة",
+      "مستطيل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_muadalat-x-murabba_P2",
+      "modelledOn": "BEM 2015 II ☜"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لِعمّي سعيد، الذي يتقاسم غلّة أرضه مع إخوته، قطعة أرض مستطيلة الشكل مساحتها $1440m^2$ و عرضها خُمسا $\\left(\\dfrac{2}{5}\\right)$ طولها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نسمّي $x$ طول هذه القطعة. بيّن أن: $x^2 = 3600$",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عبّر عن العرض بدلالة $x$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب أن جداء الطول في العرض يساوي المساحة، ثم اعزل $x^2$."
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك سطرًا بسطر بالحل النموذجي."
+      },
+      "solution": {
+        "lines": [
+          "عرض القطعة خمسا طولها معناه: العرض $= \\dfrac{2}{5}x$",
+          "المساحة: $x \\times \\dfrac{2}{5}x = 1440$",
+          "$\\dfrac{2}{5}x^2 = 1440$",
+          "$x^2 = \\dfrac{1440 \\times 5}{2}$"
+        ],
+        "result": "x^2 = 3600"
+      },
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "جِد بُعدي هذه القطعة.",
+      "statement": "الطول:",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بالمتر (m)",
+      "expectedAnswer": "60",
+      "misconceptionSignatures": [
+        {
+          "value": "1800",
+          "id": "MISC-HALL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الطول عدد موجب: احتفظ بالحل الموجب فقط."
+        }
+      ],
+      "feedback": {
+        "correct": "من $x^2 = 3600$ و $x > 0$ نجد $x = 60m$.",
+        "incorrect": "حل المعادلة $x^2 = 3600$ ثم احتفظ بالحل الموجب لأن الطول موجب."
+      },
+      "solution": {
+        "lines": [
+          "$x^2 = 3600$ يعني $x = \\sqrt{3600}$ أو $x = -\\sqrt{3600}$",
+          "وبما أن الطول موجب: $x = \\sqrt{3600}$"
+        ],
+        "result": "x = 60m"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "العرض:",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: العرض بالمتر (m)",
+      "expectedAnswer": "24",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العرض يساوي خمسي الطول."
+        }
+      ],
+      "feedback": {
+        "correct": "العرض $\\dfrac{2}{5} \\times 60 = 24m$.",
+        "incorrect": "العرض هو $\\dfrac{2}{5}$ الطول الذي وجدته."
+      },
+      "solution": {
+        "lines": [
+          "العرض $= \\dfrac{2}{5} \\times 60$"
+        ],
+        "result": "24m"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

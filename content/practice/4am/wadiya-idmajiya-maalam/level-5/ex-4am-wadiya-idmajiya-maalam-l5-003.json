@@ -1,0 +1,161 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-maalam-l5-003",
+  "lessonCode": "wadiya-idmajiya-maalam",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — ثلاثة مسارات",
+    "estimatedMinutes": 4,
+    "tags": [
+      "مقارنة مسارين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-maalam_P1",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "مسابقة للدراجات من $S(0\\,;\\,0)$ إلى $F(6\\,;\\,0)$ (معلم متعامد ومتجانس، الوحدة $1\\,\\mathrm{km}$). ثلاثة مسارات مقترحة: (أ) نصف دائرة قطرها $[SF]$ ، (ب) مرورا بـ $K(3\\,;\\,4)$ ، (ج) مرورا بـ $U(2\\,;\\,-2)$ ثم $V(4\\,;\\,-2)$ .",
+    "figure": {
+      "points": {
+        "S": [
+          0,
+          0
+        ],
+        "F": [
+          6,
+          0
+        ],
+        "K": [
+          3,
+          4
+        ],
+        "U": [
+          2,
+          -2
+        ],
+        "V": [
+          4,
+          -2
+        ]
+      },
+      "arcs": [
+        {
+          "from": "S",
+          "to": "F",
+          "sweep": "ccw",
+          "tone": "rose",
+          "bold": true
+        }
+      ],
+      "segments": [
+        {
+          "from": "S",
+          "to": "K",
+          "tone": "amber",
+          "bold": true
+        },
+        {
+          "from": "K",
+          "to": "F",
+          "tone": "amber",
+          "bold": true
+        },
+        {
+          "from": "S",
+          "to": "U",
+          "tone": "sky",
+          "bold": true
+        },
+        {
+          "from": "U",
+          "to": "V",
+          "tone": "sky",
+          "bold": true
+        },
+        {
+          "from": "V",
+          "to": "F",
+          "tone": "sky",
+          "bold": true
+        }
+      ],
+      "labels": {
+        "S": "nw",
+        "F": "ne",
+        "K": "n",
+        "U": "sw",
+        "V": "se"
+      },
+      "grid": true,
+      "axes": true,
+      "ariaLabel": "معلم متعامد ومتجانس: من S إلى F ثلاثة مسارات: نصف دائرة قطرها [SF] تحت محور الفواصل، وقطعتان مرورا بـ K، وثلاث قطع مرورا بـ U ثم V"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أقصر المسارات:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "(أ): $3\\pi \\approx 9{,}42\\,\\mathrm{km}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUQARANA-AYN"
+        },
+        {
+          "id": "B",
+          "content": "(ج): $2 + 4\\sqrt{2} \\approx 7{,}66\\,\\mathrm{km}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "(ج): $\\sqrt{8} + 2 + \\sqrt{8} = \\sqrt{18} \\approx 4{,}24\\,\\mathrm{km}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDHR-JAMA"
+        },
+        {
+          "id": "D",
+          "content": "(ب): $10\\,\\mathrm{km}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUQARANA-AYN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "(أ) $\\pi \\times 3$"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "(ب) $5 + 5$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "(ج) $\\sqrt{8} + 2 + \\sqrt{8}$"
+        }
+      ],
+      "feedback": {
+        "correct": "(أ) $\\approx 9{,}42$ ، (ب) $10$ ، (ج) $2 + 4\\sqrt{2} \\approx 7{,}66$ : الأقصر (ج).",
+        "incorrect": "احسب الأطوال الثلاثة ثم قارن."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 5
+    }
+  ]
+}

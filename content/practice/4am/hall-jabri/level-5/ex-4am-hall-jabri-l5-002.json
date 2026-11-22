@@ -1,0 +1,206 @@
+{
+  "id": "ex-4am-hall-jabri-l5-002",
+  "lessonCode": "hall-jabri",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2018 — فاتورة الكهرباء بالمسيلة",
+    "estimatedMinutes": 16,
+    "tags": [
+      "جملة",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_hall-jabri_P2",
+      "modelledOn": "BEM 2018 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2018",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تحرص عائلة بالمسيلة على ترشيد استهلاك الكهرباء وتسديد فاتورتها في وقتها. يُحسب مبلغ الفاتورة كما يلي: مبلغ ثابت (حقوق الاشتراك) يضاف إليه ثمن الكيلوواط ساعي ( $kWh$ ) المستهلك.\n• في الفصل الأول استهلكت العائلة $300\\,kWh$ ودفعت 2350DA.\n• في الفصل الثاني استهلكت $450\\,kWh$ ودفعت 3250DA.\nنسمّي $x$ ثمن الكيلوواط ساعي و $y$ المبلغ الثابت (بالدينار)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن $x$ و $y$ يحققان الجملة: $\\begin{cases} 300x + y = 2350 \\\\ 450x + y = 3250 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب معادلة لكل معلومة من النص."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "الفصل الأول: ثمن $300\\,kWh$ هو $300x$ ، يضاف إليه المبلغ الثابت: $300x + y = 2350$",
+          "الفصل الثاني: $450x + y = 3250$",
+          "ومنه الجملة: $\\begin{cases} 300x + y = 2350 \\\\ 450x + y = 3250 \\end{cases}$"
+        ],
+        "result": "\\begin{cases} 300x + y = 2350 \\\\ 450x + y = 3250 \\end{cases}"
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حل هذه الجملة.",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hall-jabri_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": {
+        "x": "6",
+        "y": "550"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "550",
+            "y": "6"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن معاملي $y$ في المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "معاملا $y$ متساويان: اضرب إحدى المعادلتين في $-1$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع المعادلتين طرفا لطرف، ثم عوّض القيمة في إحدى المعادلتين لتجد المجهول الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "الثنائية $(6 ; 550)$ تحقق المعادلتين معا: هي حل الجملة.",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "نضرب طرفي المعادلة (1) في $-1$ :",
+          "$\\begin{cases} -300x - y = -2350 \\\\ 450x + y = 3250 \\end{cases}$",
+          "بجمع المعادلتين طرفا لطرف نجد: $150x = 900$",
+          "ومنه $x = 6$",
+          "نعوّض $x$ بـ $6$ في المعادلة (1): $300 \\times 6 + y = 2350$",
+          "ومنه $y = 550$",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(6 ; 550)"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب مبلغ فاتورة فصل استهلكت فيه العائلة $520\\,kWh$ .",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "3670",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ = ثمن الكيلوواط ساعي × الاستهلاك + المبلغ الثابت."
+        }
+      ],
+      "feedback": {
+        "correct": "$520 \\times 6 + 550 = 3670$ .",
+        "incorrect": "استعمل قيمتي $x$ و $y$ من السؤال 02."
+      },
+      "solution": {
+        "lines": [
+          "$520 \\times 6 + 550 = 3120 + 550 = 3670$",
+          "مبلغ الفاتورة $3670DA$ ."
+        ],
+        "result": "3670\\,DA"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "☜ خصّصت العائلة 4000DA لفاتورة الفصل الرابع. ما هو أكبر استهلاك (بالكيلوواط ساعي) يمكنها أن تبلغه دون أن تتجاوز هذا المبلغ؟",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب الاستهلاك بـ kWh (عدد فقط)",
+      "expectedAnswer": "575",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح المبلغ الثابت أولا من 4000DA."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم الباقي على ثمن الكيلوواط ساعي."
+        }
+      ],
+      "feedback": {
+        "correct": "$(4000 - 550) \\div 6 = 575$ .",
+        "incorrect": "المبلغ المتبقي بعد المبلغ الثابت يُقسم على ثمن الكيلوواط ساعي."
+      },
+      "solution": {
+        "lines": [
+          "نبحث عن الاستهلاك $c$ بحيث: $6c + 550 = 4000$",
+          "$6c = 3450$ ومنه $c = 575$",
+          "أكبر استهلاك ممكن هو $575\\,kWh$ ."
+        ],
+        "result": "575\\,kWh"
+      },
+      "timeSeconds": 240
+    }
+  ]
+}

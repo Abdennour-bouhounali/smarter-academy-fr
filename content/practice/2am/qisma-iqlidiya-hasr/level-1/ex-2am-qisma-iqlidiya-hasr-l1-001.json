@@ -1,0 +1,203 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l1-001",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 1,
+  "metadata": {
+    "title": "أقلام لتلاميذ القسم",
+    "estimatedMinutes": 5,
+    "tags": [
+      "قسمة إقليدية",
+      "حاصل",
+      "باقٍ"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-1a",
+      "page": 26,
+      "section": "معارف",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "وزّع معلّم 180 قلمًا على تلاميذه، ونصيب كل تلميذ 8 أقلام، وحرص على أن يكون التوزيع عادلًا."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "كم تلميذًا يستفيد من هذه الحصة؟ (حاصل القسمة الإقليدية للعدد 180 على 8)",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد التلاميذ",
+      "expectedAnswer": "22",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "21",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "value": "23",
+          "id": "MISC-HASR-IZAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 180 من 8 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 8 دون أن نتجاوز 180."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من 8."
+        }
+      ],
+      "feedback": {
+        "correct": "$180 = 8 \\times 22 + 4$ و $4 < 8$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 8 فلا يتجاوز الجداء 180، والباقي عندئذ أصغر من 8."
+      },
+      "solution": {
+        "lines": [
+          "$8 \\times 22 = 176$ و $8 \\times 23 = 184$",
+          "$176 \\le 180 < 184$ ، إذن الحاصل هو 22."
+        ],
+        "result": "q = 22"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم قلمًا يبقى؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الأقلام",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "22",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "12",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 180."
+        }
+      ],
+      "feedback": {
+        "correct": "$180 - 8 \\times 22 = 180 - 176 = 4$ ، و $4 < 8$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 8."
+      },
+      "solution": {
+        "lines": [
+          "$180 = 8 \\times 22 + 4$",
+          "$4 < 8$ ، إذن الباقي هو 4."
+        ],
+        "result": "r = 4"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اختر المساواة التي تعبّر عن القسمة الإقليدية للعدد 180 على 8.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$180 = 8 \\times 21 + 12$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "id": "B",
+          "content": "$180 = 8 \\times 4 + 22$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "id": "C",
+          "content": "$180 = 8 \\times 22 + 4$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$180 = 8 \\times 23 + 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-HISAB"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق من صحة كل مساواة بالحساب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في القسمة الإقليدية على 8 يكون الباقي أصغر من 8."
+        }
+      ],
+      "feedback": {
+        "correct": "$8 \\times 22 + 4 = 180$ و $4 < 8$.",
+        "incorrect": "ابحث عن المساواة الصحيحة التي باقيها أصغر من 8."
+      },
+      "solution": {
+        "lines": [
+          "$8 \\times 22 = 176$ و $176 + 4 = 180$",
+          "$4 < 8$ ، إذن $180 = 8 \\times 22 + 4$ هي القسمة الإقليدية للعدد 180 على 8."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

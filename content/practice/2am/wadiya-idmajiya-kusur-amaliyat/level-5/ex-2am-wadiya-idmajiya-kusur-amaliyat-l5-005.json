@@ -1,0 +1,401 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-kusur-amaliyat-l5-005",
+  "lessonCode": "wadiya-idmajiya-kusur-amaliyat",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — وضعيّة إدماجيّة : رحلة مدرسيّة والحافلات",
+    "estimatedMinutes": 14,
+    "tags": [
+      "كسر من عدد",
+      "القسمة الإقليدية",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في متوسّطة $520$ تلميذًا ، شارك $\\dfrac{5}{8}$ منهم في رحلة مدرسيّة . سعة الحافلة الواحدة $48$ مقعدًا وكراؤها $12000$ DA ، وميزانية النقل $80000$ DA ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "الجزء الأوّل :",
+      "statement": "ما عدد التلاميذ المشاركين في الرحلة ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "325",
+      "misconceptionSignatures": [
+        {
+          "value": "832",
+          "id": "MISC-JIDAKASR-FLIP"
+        },
+        {
+          "value": "65",
+          "id": "MISC-JIDAKASR-HALFWAY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزء من عدد يعني جداء الكسر في العدد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي ما دام الكسر أصغر من 1 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$325$ .",
+        "incorrect": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ، ولا تقلب الكسر ."
+      },
+      "solution": {
+        "lines": [
+          "$520 \\div 8 = 65$ .",
+          "$65 \\times 5 = 325$ ."
+        ],
+        "result": "325"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما الكسر الذي يمثّل التلاميذ الذين لم يشاركوا ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "3/8",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "5/8",
+          "id": "MISC-JAMKASR-PART"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكلّ يساوي كسرًا بسطه ومقامه عدد واحد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الأجزاء المأخوذة أوّلًا ثمّ اطرحها من الكلّ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الجزء الباقي هو الكلّ ناقص ما أُخذ ، وهو أصغر من الكلّ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{8}$ .",
+        "incorrect": "اجمع ما أُخذ أوّلًا ثمّ اطرحه من الكلّ ، ولا تُعطِ ما أُخذ بدل الباقي ."
+      },
+      "solution": {
+        "lines": [
+          "$1 = \\dfrac{8}{8}$ .",
+          "ما أُخذ : $\\dfrac{5}{8} = \\dfrac{5}{8} = \\dfrac{5}{8}$ .",
+          "الباقي : $1 - \\dfrac{5}{8} = \\dfrac{8}{8} - \\dfrac{5}{8} = \\dfrac{3}{8}$ ."
+        ],
+        "result": "\\dfrac{3}{8}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "lead": "الجزء الثاني :",
+      "statement": "كم حافلة تمتلئ تمامًا بالمشاركين ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "37",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "5",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "value": "7",
+          "id": "MISC-HASR-IZAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المقسوم هو العدد الذي نقسمه والمقسوم عليه هو العدد الذي نقسم به : كم مرّة يدخل الثاني تمامًا في الأوّل ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي أصغر تمامًا من المقسوم عليه ، والمساواة المميّزة : المقسوم = المقسوم عليه × الحاصل + الباقي ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالضرب ثمّ الجمع قبل أن تجيب ."
+        }
+      ],
+      "feedback": {
+        "correct": "$6$ .",
+        "incorrect": "المقسوم عليه × الحاصل + الباقي = المقسوم ، والباقي أصغر من المقسوم عليه . تحقّق ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$325 = 48 \\times 6 + 37$ ، و $37 < 48$ .",
+          "$48 \\times 6 = 288$ و $325 - 288 = 37$ .",
+          "حاصل القسمة الإقليدية : $6$ ."
+        ],
+        "result": "6"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "كم تلميذًا يبقى بعد امتلاء الحافلات ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "37",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "85",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المقسوم هو العدد الذي نقسمه والمقسوم عليه هو العدد الذي نقسم به : كم مرّة يدخل الثاني تمامًا في الأوّل ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي أصغر تمامًا من المقسوم عليه ، والمساواة المميّزة : المقسوم = المقسوم عليه × الحاصل + الباقي ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالضرب ثمّ الجمع قبل أن تجيب ."
+        }
+      ],
+      "feedback": {
+        "correct": "$37$ .",
+        "incorrect": "المقسوم عليه × الحاصل + الباقي = المقسوم ، والباقي أصغر من المقسوم عليه . تحقّق ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$325 = 48 \\times 6 + 37$ ، و $37 < 48$ .",
+          "$48 \\times 6 = 288$ و $325 - 288 = 37$ .",
+          "باقي القسمة الإقليدية : $37$ ."
+        ],
+        "result": "37"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "ما عدد الحافلات اللازمة لنقل جميع المشاركين ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "value": "37",
+          "id": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما عدد المجموعات الكاملة (صناديق ، حافلات ، أكياس ، شرائح …) ؟ وهل يبقى شيء يحتاج إلى مجموعة إضافية ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القسمة الإقليدية : إذا بقي شيء فلا بدّ من مجموعة إضافية ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد اللازم هو الحاصل زائد واحد عندما لا يكون الباقي معدومًا ."
+        }
+      ],
+      "feedback": {
+        "correct": "$7$ .",
+        "incorrect": "المقسوم عليه × الحاصل + الباقي = المقسوم ، والباقي أصغر من المقسوم عليه . تحقّق ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$325 = 48 \\times 6 + 37$ ، و $37 < 48$ .",
+          "$48 \\times 6 = 288$ و $325 - 288 = 37$ .",
+          "يبقى $37$ ولا يكفي لمجموعة كاملة ، فنحتاج إلى $6 + 1 = 7$ ."
+        ],
+        "result": "7"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "احسب تكلفة كراء الحافلات اللازمة بالدينار .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "84000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكلفة = عدد الحافلات × كراء الحافلة الواحدة ."
+        }
+      ],
+      "feedback": {
+        "correct": "$84000$ .",
+        "incorrect": "احسب ثمّ قارن بدقّة قبل أن تجيب ."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 12000 = 84000$ DA ."
+        ],
+        "result": "84000"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "06",
+      "statement": "هل تكفي ميزانية النقل لكراء الحافلات اللازمة ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا ثمّ تحقّق منها بحساب بسيط ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أو قارن بدقّة ثمّ قارن بما قيل ."
+        }
+      ],
+      "feedback": {
+        "correct": "لا .",
+        "incorrect": "احسب ثمّ قارن بدقّة قبل أن تجيب ."
+      },
+      "solution": {
+        "lines": [
+          "الحافلات اللازمة $7$ ، وتكلفتها $84000$ DA .",
+          "$84000 > 80000$ : لا تكفي ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

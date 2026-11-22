@@ -1,0 +1,122 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l4-002",
+  "lessonCode": "mafhum-dawaran",
+  "level": 4,
+  "metadata": {
+    "title": "دوري الآن — صورة زاوية",
+    "estimatedMinutes": 2,
+    "tags": [
+      "صورة زاوية",
+      "إنشاء"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "now-155",
+      "page": 155,
+      "section": "دوري الآن",
+      "number": 1
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 155): $\\widehat{AOB}$ زاوية قيسها $45^\\circ$ . نريد إنشاء صورتها بالدوران الذي مركزه K و زاويته $60^\\circ$ في الاتجاه المباشر.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          2.1213,
+          2.1213
+        ],
+        "B": [
+          4,
+          0
+        ],
+        "K": [
+          1.5,
+          -1.2
+        ]
+      },
+      "segments": [
+        [
+          "O",
+          "A"
+        ],
+        [
+          "O",
+          "B"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "O",
+          "from": "B",
+          "to": "A",
+          "label": "45°",
+          "radius": 28
+        }
+      ],
+      "labels": {
+        "K": "s",
+        "O": "w"
+      },
+      "ariaLabel": "زاوية AOB قيسها 45 درجة، [OB] أفقي، والنقطة K تحت [OB] قرب O",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "لإنشاء صورة الزاوية $\\widehat{AOB}$ ننشئ صور:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "النقط O و A و B، فالصورة $\\widehat{A'O'B'}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "النقطتين A و B فقط، فالصورة $\\widehat{A'OB'}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MARKAZ"
+        },
+        {
+          "id": "C",
+          "content": "النقط K و A و B، فالصورة $\\widehat{A'K'B'}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MARKAZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مركز الدوران هنا K لا O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رأس الزاوية O يتحرّك أيضا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "صورة زاوية: صورة رأسها وصورتا نقطتين من ضلعيها."
+        }
+      ],
+      "feedback": {
+        "correct": "O ليست المركز فتدور هي أيضا: الصورة $\\widehat{A'O'B'}$ .",
+        "incorrect": "المركز هو K: رأس الزاوية O ليس ثابتا."
+      },
+      "difficulty": 3
+    }
+  ]
+}

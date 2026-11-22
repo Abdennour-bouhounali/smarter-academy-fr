@@ -1,0 +1,138 @@
+{
+  "id": "ex-4am-tafsir-bayani-jumla-l1-006",
+  "lessonCode": "tafsir-bayani-jumla",
+  "level": 1,
+  "metadata": {
+    "title": "مستقيمان لهما نفس معامل التوجيه",
+    "estimatedMinutes": 4,
+    "tags": [
+      "الحالات الثلاث",
+      "متوازيان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tafsir-bayani-jumla_P3",
+      "modelledOn": "act-5"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الجملة:",
+    "formulas": [
+      "\\begin{cases} y = 2x + 1 \\\\ y = 2x + 4 \\end{cases}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما هو الوضع النسبي للمستقيمين الممثلين لمعادلتي الجملة؟",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "متقاطعان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-HALAT"
+        },
+        {
+          "id": "B",
+          "content": "متوازيان",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "منطبقان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-BAYANI-TAWAZI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن معاملي توجيه المستقيمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم قارن الترتيبين عند المبدأ."
+        }
+      ],
+      "feedback": {
+        "correct": "لهما نفس معامل التوجيه 2 وترتيبان مختلفان عند المبدأ.",
+        "incorrect": "مستقيمان لهما نفس معامل التوجيه وترتيبان مختلفان عند المبدأ لا يلتقيان أبدا."
+      },
+      "solution": {
+        "lines": [
+          "للمستقيمين نفس معامل التوجيه $2$ ، وترتيبان مختلفان عند المبدأ: $1 \\neq 4$ .",
+          "إذن المستقيمان متوازيان (ليسا منطبقين)."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج عدد حلول الجملة.",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لها حل وحيد",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-HALAT"
+        },
+        {
+          "id": "B",
+          "content": "ليس لها حل",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لها عدد غير منته من الحلول",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-HALAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حل الجملة هو إحداثيا نقطة مشتركة بين المستقيمين."
+        }
+      ],
+      "feedback": {
+        "correct": "مستقيمان متوازيان ليس لهما أي نقطة مشتركة.",
+        "incorrect": "كل حل للجملة نقطة مشتركة بين المستقيمين: كم نقطة مشتركة لمستقيمين متوازيين؟"
+      },
+      "solution": {
+        "lines": [
+          "المستقيمان متوازيان فليست لهما أي نقطة مشتركة.",
+          "إذن الجملة ليس لها حل."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

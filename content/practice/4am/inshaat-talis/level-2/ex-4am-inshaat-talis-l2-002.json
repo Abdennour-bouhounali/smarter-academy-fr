@@ -1,0 +1,325 @@
+{
+  "id": "ex-4am-inshaat-talis-l2-002",
+  "lessonCode": "inshaat-talis",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2015 — اقرأ الإنشاء: ثماني قطع متقايسة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "قراءة إنشاء",
+      "نقطة بنسبة معلومة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_inshaat-talis_P1",
+      "modelledOn": "BEM 2015 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$[AB]$ قطعة مستقيم طولها $12\\,\\mathrm{cm}$ . في الشكل المقابل عُيّنت على نصف المستقيم $[Ax)$ ثماني قطع متقايسة ابتداءً من $A$ تنتهي عند $P_8$ ، والموازي للمستقيم $(P_8B)$ المارّ بالعلامة الخامسة $P_5$ يقطع $[AB]$ في $M$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0.0,
+          0.0
+        ],
+        "B": [
+          12.0,
+          0.0
+        ],
+        "P₁": [
+          0.54,
+          0.72
+        ],
+        "P₂": [
+          1.08,
+          1.44
+        ],
+        "P₃": [
+          1.62,
+          2.16
+        ],
+        "P₄": [
+          2.16,
+          2.88
+        ],
+        "P₅": [
+          2.7,
+          3.6
+        ],
+        "P₆": [
+          3.24,
+          4.32
+        ],
+        "P₇": [
+          3.78,
+          5.04
+        ],
+        "P₈": [
+          4.32,
+          5.76
+        ],
+        "M": [
+          7.5,
+          0.0
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "bold": true
+        },
+        {
+          "from": "A",
+          "to": "P₁",
+          "ticks": 1
+        },
+        {
+          "from": "P₁",
+          "to": "P₂",
+          "ticks": 1
+        },
+        {
+          "from": "P₂",
+          "to": "P₃",
+          "ticks": 1
+        },
+        {
+          "from": "P₃",
+          "to": "P₄",
+          "ticks": 1
+        },
+        {
+          "from": "P₄",
+          "to": "P₅",
+          "ticks": 1
+        },
+        {
+          "from": "P₅",
+          "to": "P₆",
+          "ticks": 1
+        },
+        {
+          "from": "P₆",
+          "to": "P₇",
+          "ticks": 1
+        },
+        {
+          "from": "P₇",
+          "to": "P₈",
+          "ticks": 1
+        },
+        {
+          "from": "P₈",
+          "to": "B",
+          "arrows": 1,
+          "tone": "indigo"
+        },
+        {
+          "from": "P₅",
+          "to": "M",
+          "arrows": 1,
+          "tone": "emerald"
+        }
+      ],
+      "rays": [
+        {
+          "from": "A",
+          "through": "P₈",
+          "name": "x",
+          "extend": 0.18
+        }
+      ],
+      "hidden": [
+        "P₁",
+        "P₂",
+        "P₃",
+        "P₄",
+        "P₆",
+        "P₇"
+      ],
+      "labels": {
+        "A": "sw",
+        "B": "se",
+        "M": "s",
+        "P₅": "nw",
+        "P₈": "nw"
+      },
+      "ariaLabel": "قطعة [AB] ونصف مستقيم [Ax) عليه ثماني قطع متقايسة ابتداءً من A تنتهي عند P8، والمستقيم (P8B) والموازي له المارّ بالعلامة الخامسة P5 يقطع [AB] في M",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب النسبة $\\dfrac{AM}{AB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "0,625",
+      "misconceptionSignatures": [
+        {
+          "value": "5/3",
+          "id": "MISC-TALIS-NISBA-JUZ-KULL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(P_5M) \\parallel (P_8B)$ : المثلثان $AP_5M$ و $AP_8B$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر عن $AP_5$ و $AP_8$ بعدد القطع المتقايسة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AM}{AB} = \\dfrac{AP_5}{AP_8} = \\dfrac{5}{8}$ .",
+        "incorrect": "النسبة تُقرأ على نصف المستقيم: رتبة العلامة التي يمرّ بها الموازي على رتبة العلامة الموصولة بـ $B$ ."
+      },
+      "solution": {
+        "lines": [
+          "النقط $A$ ، $M$ ، $B$ في استقامية والنقط $A$ ، $P_5$ ، $P_8$ في استقامية، و $(P_5M) \\parallel (P_8B)$ ،",
+          "حسب خاصية طالس: $\\dfrac{AM}{AB} = \\dfrac{AP_5}{AP_8}$"
+        ],
+        "result": "\\dfrac{AM}{AB} = \\dfrac{5}{8}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج النسبة $\\dfrac{MA}{MB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "5/3",
+      "misconceptionSignatures": [
+        {
+          "value": "0,625",
+          "id": "MISC-TALIS-NISBA-JUZ-KULL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$M$ بين $A$ و $B$ : $MB = AB - AM$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان $AB$ ثمانية أجزاء و $AM$ خمسة منها، فكم جزءا في $MB$ ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$MA = 5u$ و $MB = 3u$ : $\\dfrac{MA}{MB} = \\dfrac{5}{3}$ .",
+        "incorrect": "$\\dfrac{MA}{MB}$ نسبة جزأين من $[AB]$ ، وليست نسبة جزء إلى الكل."
+      },
+      "solution": {
+        "lines": [
+          "$AM = \\dfrac{5}{8}AB$ ومنه $MB = AB - AM = \\dfrac{3}{8}AB$",
+          "$\\dfrac{MA}{MB} = \\dfrac{\\frac{5}{8}AB}{\\frac{3}{8}AB}$"
+        ],
+        "result": "\\dfrac{MA}{MB} = \\dfrac{5}{3}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "lead": "احسب الطولين $AM$ و $MB$ .",
+      "statement": "الطول $AM$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "7,5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AM = \\dfrac{5}{8}AB$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AM = \\dfrac{5}{8} \\times 12 = 7{,}5\\,\\mathrm{cm}$ .",
+        "incorrect": "اضرب $\\dfrac{AM}{AB}$ في $AB$ ."
+      },
+      "solution": {
+        "lines": [
+          "$AM = \\dfrac{5}{8} \\times 12 = \\dfrac{60}{8}$"
+        ],
+        "result": "AM = 7{,}5\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "الطول $MB$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "4,5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$MB = AB - AM$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$MB = 12 - 7{,}5 = 4{,}5\\,\\mathrm{cm}$ ، وفعلا $\\dfrac{7{,}5}{4{,}5} = \\dfrac{5}{3}$ .",
+        "incorrect": "$M$ بين $A$ و $B$ : اطرح $AM$ من $AB$ ."
+      },
+      "solution": {
+        "lines": [
+          "$MB = AB - AM = 12 - 7{,}5$"
+        ],
+        "result": "MB = 4{,}5\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

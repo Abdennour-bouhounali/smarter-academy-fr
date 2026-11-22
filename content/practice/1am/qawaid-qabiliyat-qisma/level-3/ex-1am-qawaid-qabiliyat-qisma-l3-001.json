@@ -1,0 +1,504 @@
+{
+  "id": "ex-1am-qawaid-qabiliyat-qisma-l3-001",
+  "lessonCode": "qawaid-qabiliyat-qisma",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — جدول قابلية القسمة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "جدول",
+      "2، 3، 5، 9"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 2,
+      "file": "1am-s2-70",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "أكمل الجدول بـ: نعم أو لا في الخانة المناسبة.",
+    "table": {
+      "head": [
+        "العدد",
+        "يقبل القسمة على 2",
+        "يقبل القسمة على 3",
+        "يقبل القسمة على 5",
+        "يقبل القسمة على 9"
+      ],
+      "rows": [
+        [
+          "585",
+          "…",
+          "…",
+          "…",
+          "…"
+        ],
+        [
+          "3726",
+          "…",
+          "…",
+          "…",
+          "…"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "هل يقبل العدد 585 القسمة على 2؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-RAQM-AWWAL"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى رقم آحاد العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل رقم الآحاد من بين 0، 2، 4، 6، 8؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإنجاز القسمة الإقليدية على 2."
+        }
+      ],
+      "feedback": {
+        "correct": "رقم آحاد العدد 585 هو 5، إذن 585 لا يقبل القسمة على 2.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 2 إذا كان رقم آحاده 0 أو 2 أو 4 أو 6 أو 8."
+      },
+      "solution": {
+        "lines": [
+          "رقم آحاد العدد 585 هو 5، إذن 585 لا يقبل القسمة على 2.",
+          "$585 = 2 \\times 292 + 1$ ، الباقي 1 غير معدوم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل يقبل العدد 585 القسمة على 3؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-AHAD-3"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مجموع أرقام العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل هذا المجموع يقبل القسمة على 3؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "رقم الآحاد وحده لا يكفي للقسمة على 3."
+        }
+      ],
+      "feedback": {
+        "correct": "مجموع أرقام العدد 585: $5 + 8 + 5 = 18$ ، و 18 يقبل القسمة على 3.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 3 إذا كان مجموع أرقامه يقبل القسمة على 3."
+      },
+      "solution": {
+        "lines": [
+          "مجموع أرقام العدد 585: $5 + 8 + 5 = 18$ ، و 18 يقبل القسمة على 3.",
+          "$585 = 3 \\times 195 + 0$ ، الباقي معدوم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "هل يقبل العدد 585 القسمة على 5؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-SIFR"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى رقم آحاد العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما الرقمان اللذان ينتهي بهما كل مضاعف للعدد 5؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإنجاز القسمة الإقليدية على 5."
+        }
+      ],
+      "feedback": {
+        "correct": "رقم آحاد العدد 585 هو 5، إذن 585 يقبل القسمة على 5.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 5 إذا كان رقم آحاده 0 أو 5."
+      },
+      "solution": {
+        "lines": [
+          "رقم آحاد العدد 585 هو 5، إذن 585 يقبل القسمة على 5.",
+          "$585 = 5 \\times 117 + 0$ ، الباقي معدوم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "هل يقبل العدد 585 القسمة على 9؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-AHAD-3"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مجموع أرقام العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل هذا المجموع يقبل القسمة على 9؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يكفي أن يقبل المجموع القسمة على 3."
+        }
+      ],
+      "feedback": {
+        "correct": "مجموع أرقام العدد 585: $5 + 8 + 5 = 18$ ، و 18 يقبل القسمة على 9.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 9 إذا كان مجموع أرقامه يقبل القسمة على 9."
+      },
+      "solution": {
+        "lines": [
+          "مجموع أرقام العدد 585: $5 + 8 + 5 = 18$ ، و 18 يقبل القسمة على 9.",
+          "$585 = 9 \\times 65 + 0$ ، الباقي معدوم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ا",
+      "statement": "هل يقبل العدد 3726 القسمة على 2؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-RAQM-AWWAL"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى رقم آحاد العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل رقم الآحاد من بين 0، 2، 4، 6، 8؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإنجاز القسمة الإقليدية على 2."
+        }
+      ],
+      "feedback": {
+        "correct": "رقم آحاد العدد 3726 هو 6، إذن 3726 يقبل القسمة على 2.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 2 إذا كان رقم آحاده 0 أو 2 أو 4 أو 6 أو 8."
+      },
+      "solution": {
+        "lines": [
+          "رقم آحاد العدد 3726 هو 6، إذن 3726 يقبل القسمة على 2.",
+          "$3726 = 2 \\times 1863 + 0$ ، الباقي معدوم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل يقبل العدد 3726 القسمة على 3؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-AHAD-3"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مجموع أرقام العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل هذا المجموع يقبل القسمة على 3؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "رقم الآحاد وحده لا يكفي للقسمة على 3."
+        }
+      ],
+      "feedback": {
+        "correct": "مجموع أرقام العدد 3726: $3 + 7 + 2 + 6 = 18$ ، و 18 يقبل القسمة على 3.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 3 إذا كان مجموع أرقامه يقبل القسمة على 3."
+      },
+      "solution": {
+        "lines": [
+          "مجموع أرقام العدد 3726: $3 + 7 + 2 + 6 = 18$ ، و 18 يقبل القسمة على 3.",
+          "$3726 = 3 \\times 1242 + 0$ ، الباقي معدوم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q7",
+      "step": "02",
+      "sub": "ج",
+      "statement": "هل يقبل العدد 3726 القسمة على 5؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-SIFR"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى رقم آحاد العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما الرقمان اللذان ينتهي بهما كل مضاعف للعدد 5؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإنجاز القسمة الإقليدية على 5."
+        }
+      ],
+      "feedback": {
+        "correct": "رقم آحاد العدد 3726 هو 6، إذن 3726 لا يقبل القسمة على 5.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 5 إذا كان رقم آحاده 0 أو 5."
+      },
+      "solution": {
+        "lines": [
+          "رقم آحاد العدد 3726 هو 6، إذن 3726 لا يقبل القسمة على 5.",
+          "$3726 = 5 \\times 745 + 1$ ، الباقي 1 غير معدوم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q8",
+      "step": "02",
+      "sub": "د",
+      "statement": "هل يقبل العدد 3726 القسمة على 9؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-AHAD-3"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مجموع أرقام العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل هذا المجموع يقبل القسمة على 9؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يكفي أن يقبل المجموع القسمة على 3."
+        }
+      ],
+      "feedback": {
+        "correct": "مجموع أرقام العدد 3726: $3 + 7 + 2 + 6 = 18$ ، و 18 يقبل القسمة على 9.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 9 إذا كان مجموع أرقامه يقبل القسمة على 9."
+      },
+      "solution": {
+        "lines": [
+          "مجموع أرقام العدد 3726: $3 + 7 + 2 + 6 = 18$ ، و 18 يقبل القسمة على 9.",
+          "$3726 = 9 \\times 414 + 0$ ، الباقي معدوم."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

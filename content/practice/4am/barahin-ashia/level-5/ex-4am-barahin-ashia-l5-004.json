@@ -1,0 +1,81 @@
+{
+  "id": "ex-4am-barahin-ashia-l5-004",
+  "lessonCode": "barahin-ashia",
+  "level": 5,
+  "generator": {
+    "tool": "gen-barahin.mjs",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — لافتة الأنصار",
+    "estimatedMinutes": 3,
+    "tags": [
+      "منتصف",
+      "برهان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_barahin-ashia_P2",
+      "modelledOn": "ex-23"
+    }
+  },
+  "statement": {
+    "content": "في مدرجات ملعب 5 جويلية يمسك أربعة أنصار متعاونين زوايا لافتة متوازية الأضلاع ABCD. يقف خامس في النقطة I حيث $\\overrightarrow{AI} = \\overrightarrow{IC}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "لماذا يقف أيضا في منتصف القطر [BD]؟",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لأن I منتصف [AC]، وقطرا متوازي الأضلاع متناصفان",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لأن $\\overrightarrow{AI} = \\overrightarrow{IC}$ يعطي $\\overrightarrow{BI} = \\overrightarrow{ID}$ بعلاقة شال وحدها",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-ISTIQAMA"
+        },
+        {
+          "id": "C",
+          "content": "لأن الشكل يبيّن ذلك",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAKL-BURHAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{AI} = \\overrightarrow{IC}$ : ماذا تمثّل I لـ [AC]؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خاصية قطري متوازي الأضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "برهن بالمعطيات وبخاصية معروفة، لا بالشكل."
+        }
+      ],
+      "feedback": {
+        "correct": "I منتصف [AC]، وفي متوازي الأضلاع القطران متناصفان: I منتصف [BD] أيضا.",
+        "incorrect": "استعمل خاصية قطري متوازي الأضلاع، لا الشكل."
+      }
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-dawaran-l2-003",
+  "lessonCode": "wadiya-idmajiya-dawaran",
+  "level": 2,
+  "metadata": {
+    "title": "أدمج تعلّماتي — الزاوية والمسافة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الدوران",
+      "السداسي المنتظم"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "situation",
+      "page": 160,
+      "section": "أدمج تعلّماتي"
+    }
+  },
+  "statement": {
+    "content": "حيّز دائريّ نصف قطره 3m لغرس الأزهار تحيط به 6 أعمدة كهربائية متباعدة بنفس المسافة. كل عمود صورة الذي قبله بدوران مركزه مركز الحيّز."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "زاوية هذا الدوران (بالدرجة):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "60",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ستة أعمدة على دائرة مغلقة تحدّد ستة أقواس متقايسة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس تملأ دورة كاملة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نقسم $360^\\circ$ على عدد الأعمدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{360^\\circ}{6} = 60^\\circ$ .",
+        "incorrect": "على دائرة مغلقة ستة أعمدة تحدّد ستة أقواس متقايسة."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "72",
+          "id": "MISC-MUNTAZAM-AMDA"
+        },
+        {
+          "value": "30",
+          "id": "MISC-MUNTAZAM-180"
+        },
+        {
+          "value": "120",
+          "id": "MISC-MUNTAZAM-MARKAZIYA"
+        }
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "q2",
+      "statement": "المسافة بين عمودين متتاليين (بالمتر):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالمتر)",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث الذي رأسه المركز ورأساه عمودان متتاليان متساوي الساقين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "زاويته الرئيسية تساوي زاوية الدوران."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مثلث متساوي الساقين زاويته الرئيسية $60^\\circ$ متقايس الأضلاع."
+        }
+      ],
+      "feedback": {
+        "correct": "المثلث متقايس الأضلاع: المسافة = نصف القطر = $3\\,\\mathrm{m}$ .",
+        "incorrect": "زاويتا القاعدة $\\dfrac{180^\\circ - 60^\\circ}{2} = 60^\\circ$ : المثلث متقايس الأضلاع."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-MAALAM-DAIRA-QUTR"
+        }
+      ],
+      "difficulty": 2
+    }
+  ]
+}

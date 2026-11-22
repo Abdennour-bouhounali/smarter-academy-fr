@@ -1,0 +1,135 @@
+{
+  "id": "ex-4am-awwaliyan-fima-baynahuma-l2-006",
+  "lessonCode": "awwaliyan-fima-baynahuma",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2009 — العددان 625 و 128",
+    "estimatedMinutes": 6,
+    "tags": [
+      "خوارزمية إقليدس",
+      "نفي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_awwaliyan-fima-baynahuma_P2",
+      "modelledOn": "BEM 2009 I-4"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "جد القاسم المشترك الأكبر للعددين 625 و 128.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 625 على 128: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (625 ; 128) بالزوج (128 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 1. العددان 625 و 128 أوليان فيما بينهما.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$625 = 128 \\times 4 + 113$",
+          "$128 = 113 \\times 1 + 15$",
+          "$113 = 15 \\times 7 + 8$",
+          "$15 = 8 \\times 1 + 7$",
+          "$8 = 7 \\times 1 + 1$",
+          "$7 = 1 \\times 7 + 0$",
+          "آخر باقٍ غير معدوم هو 1، إذن:"
+        ],
+        "result": "PGCD(625 ; 128) = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل العددان 625 و 125 أوليان فيما بينهما؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن عدد يختلف عن 1 يقسم 625 و 125 معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قواعد قابلية القسمة قد لا تكشف كل القواسم المشتركة: احسب PGCD عند الشك."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يكفي قاسم مشترك واحد يختلف عن 1 لنفي أن العددين أوليان فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(625 ; 125) = 125: العددان ليسا أوليين فيما بينهما.",
+        "incorrect": "لا تكتفِ بقواعد قابلية القسمة: احسب القاسم المشترك الأكبر للعددين."
+      },
+      "solution": {
+        "lines": [
+          "رقم آحاد كل من 625 و 125 هو 0 أو 5، إذن 5 قاسم مشترك لهما يختلف عن 1.",
+          "الجواب: لا، العددان 625 و 125 ليسا أوليين فيما بينهما لأن لهما قاسمًا مشتركًا يختلف عن 1."
+        ],
+        "result": "PGCD(625 ; 125) = 125"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

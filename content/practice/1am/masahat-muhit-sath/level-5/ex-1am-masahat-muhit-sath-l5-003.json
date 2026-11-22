@@ -1,0 +1,366 @@
+{
+  "id": "ex-1am-masahat-muhit-sath-l5-003",
+  "lessonCode": "masahat-muhit-sath",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — تبليط شرفة المسجد",
+    "estimatedMinutes": 17,
+    "tags": [
+      "وضعية إدماجية",
+      "مساحة",
+      "محيط",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 2,
+      "file": "1am-s2-64",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تريد لجنة المسجد تبليط شرفته التي يستفيد منها المصلّون جميعًا: 9 صفوف من البلاطات، وفي كل صف 14 بلاطة. طول ضلع البلاطة 2 م.\nالجزء الأول: نقيس الشرفة.\nالجزء الثاني: عرضان للتبليط، ثم القرار. العامل الأول يأخذ 35 دج عن كل بلاطة يضعها. العامل الثاني يأخذ 1500 دج في اليوم ويعمل 3 أيام."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "كم بلاطة تغطّي الشرفة؟",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "126",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد البلاطات في الصف الواحد وعدد الصفوف معطيان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل صف يحمل العدد نفسه من البلاطات: اجمع الصفوف."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يمكن العدّ بالجمع المتكرر: عدد البلاطات في الصف مكرّرًا بعدد الصفوف."
+        }
+      ],
+      "feedback": {
+        "correct": "$9$ × $14$ = $126$.",
+        "incorrect": "عدد الصفوف مرّات عدد البلاطات في الصف."
+      },
+      "solution": {
+        "lines": [
+          "14 × 9 = 126 بلاطة."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما محيط الشرفة بوحدات الطول (أضلاع البلاطات)؟",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "46",
+      "misconceptionSignatures": [
+        {
+          "value": "126",
+          "id": "MISC-MASAHA-AREA-PERIM-CONFUSED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المحيط هو طول الحدّ الذي يحيط بالسطح: تتبّع الحافة بإصبعك."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ أضلاع البلاطات الواقعة على الحافة ضلعًا ضلعًا، دون الأضلاع الداخلية المشتركة بين بلاطتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارجع إلى نقطة البداية وتأكد أنك لم تعدّ أي ضلع مرتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$14$ + $9$ + $14$ + $9$ = $46$.",
+        "incorrect": "نجمع أطوال الأضلاع الأربعة."
+      },
+      "solution": {
+        "lines": [
+          "14 + 9 + 14 + 9 = 46 وحدة طول."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما طول حاجز الشرفة بالمتر؟",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "92",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل وحدة طول تمثّل 2 م."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب المحيط في 2."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الوحدة: المتر."
+        }
+      ],
+      "feedback": {
+        "correct": "$46$ × $2$ = $92$ م.",
+        "incorrect": "كل وحدة طول 2 م."
+      },
+      "solution": {
+        "lines": [
+          "46 × 2 = 92 م."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "ما كلفة العامل الأول بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "4410",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكلفة = عدد البلاطات × أجر البلاطة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب 126 في 35."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الجواب بتقريب."
+        }
+      ],
+      "feedback": {
+        "correct": "$126$ × $35$ = $4410$ دج.",
+        "incorrect": "البلاطات × أجر البلاطة."
+      },
+      "solution": {
+        "lines": [
+          "126 × 35 = 4410 دج."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما كلفة العامل الثاني بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "4500",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكلفة = الأيام × أجر اليوم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب 3 في 1500."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من مرتبة الجواب."
+        }
+      ],
+      "feedback": {
+        "correct": "$3$ × $1500$ = $4500$ دج.",
+        "incorrect": "الأيام × أجر اليوم."
+      },
+      "solution": {
+        "lines": [
+          "3 × 1500 = 4500 دج."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ا",
+      "lead": "القرار.",
+      "statement": "أيّ العاملين تختار اللجنة لتبليط الشرفة بأقلّ كلفة؟",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الثاني لأنّ أجره العددي (1500) أكبر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MASAHA-DECISION-INCOMPLETE"
+        },
+        {
+          "id": "B",
+          "content": "الأول، وتوفّر اللجنة 90 دج",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لا فرق بينهما",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MASAHA-DECISION-INCOMPLETE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الكلفتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر الأقل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الفرق بين الكلفتين للتحقق."
+        }
+      ],
+      "feedback": {
+        "correct": "$4410$ < $4500$: الفرق $90$ دج.",
+        "incorrect": "نقارن الكلفتين المحسوبتين."
+      },
+      "solution": {
+        "lines": [
+          "كلفة الأول: 4410 دج.",
+          "كلفة الثاني: 4500 دج.",
+          "4500 − 4410 = 90 دج."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "sub": "ب",
+      "statement": "علّل اختيارك مستعملًا عدد البلاطات وعدد الأيام.",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القياس الذي تتحدث عنه: المساحة أم المحيط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل في جوابك العددين اللذين وجدتهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تامة: \"لأن … و …\"."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي.",
+        "incorrect": "راجع التبرير وأعد صياغته: اذكر العددين اللذين قارنتهما والمقدار الذي تتحدث عنه (مساحة أم محيط)."
+      },
+      "solution": {
+        "lines": [
+          "مساحة الشرفة 126 بلاطة، فالعامل الأول يتقاضى 126 × 35 = 4410 دج.",
+          "العامل الثاني يتقاضى 3 × 1500 = 4500 دج.",
+          "الأول أقل كلفة بـ 90 دج، لذلك تختاره اللجنة."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

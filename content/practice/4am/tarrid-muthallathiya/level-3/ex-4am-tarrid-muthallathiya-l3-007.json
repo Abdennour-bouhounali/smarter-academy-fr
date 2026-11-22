@@ -1,0 +1,272 @@
+{
+  "id": "ex-4am-tarrid-muthallathiya-l3-007",
+  "lessonCode": "tarrid-muthallathiya",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 25 (ص 125) — طول المستطيل وعرضه",
+    "estimatedMinutes": 9,
+    "tags": [
+      "مستطيل",
+      "جيب التمام",
+      "الجيب"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-25",
+      "page": 125,
+      "section": "أتعمّق",
+      "number": 25
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$ABCD$ مستطيل طولا قطريه $10\\,\\mathrm{cm}$ ، يتقاطع قطراه في $O$ ، و $\\widehat{AOD} = 30^{\\circ}$ (الشكل المقابل).",
+    "figure": {
+      "points": {
+        "A": [
+          -0.1088,
+          0.5119
+        ],
+        "B": [
+          8.7154,
+          4.4407
+        ],
+        "C": [
+          9.7681,
+          2.0763
+        ],
+        "D": [
+          0.9439,
+          -1.8525
+        ],
+        "O": [
+          4.8296,
+          1.2941
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "A"
+        ],
+        {
+          "from": "A",
+          "to": "C",
+          "tone": "indigo"
+        },
+        {
+          "from": "B",
+          "to": "D",
+          "tone": "indigo"
+        }
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "B",
+          "C"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "O",
+          "from": "D",
+          "to": "A",
+          "label": "30°",
+          "radius": 26
+        }
+      ],
+      "labels": {
+        "A": "nw",
+        "B": "ne",
+        "C": "se",
+        "D": "sw",
+        "O": "s"
+      },
+      "ariaLabel": "مستطيل ABCD قطراه [AC] و [BD] يتقاطعان في O، والزاوية AOD قيسها 30 درجة",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب قيس الزاوية $\\widehat{OAB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيس الزاوية بالدرجة",
+      "expectedAnswer": "15",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قطرا المستطيل متقايسان ومتناصفان: $OA = OD$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المثلث $AOD$ متقايس الساقين: احسب $\\widehat{OAD}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الزاوية $\\widehat{DAB}$ قائمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{OAD} = \\dfrac{180^{\\circ} - 30^{\\circ}}{2} = 75^{\\circ}$ ، ومنه $\\widehat{OAB} = 90^{\\circ} - 75^{\\circ} = 15^{\\circ}$ .",
+        "incorrect": "استعمل تقايس قطري المستطيل وتناصفهما، ثم الزاوية القائمة في $A$ ."
+      },
+      "solution": {
+        "lines": [
+          "قطرا المستطيل متقايسان ومتناصفان، إذن $OA = OD = 5\\,\\mathrm{cm}$ والمثلث $AOD$ متقايس الساقين:",
+          "$\\widehat{OAD} = \\dfrac{180^{\\circ} - 30^{\\circ}}{2} = 75^{\\circ}$",
+          "$\\widehat{OAB} = 90^{\\circ} - 75^{\\circ}$"
+        ],
+        "result": "\\widehat{OAB} = 15^{\\circ}"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب طول المستطيل $AB$ بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-muthallathiya_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm مدوّرا إلى 0,01",
+      "expectedAnswer": "9.66",
+      "misconceptionSignatures": [
+        {
+          "value": "2.59",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "10.35",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختر مثلثا قائما يكون $[AB]$ أحد أضلاعه وقطر المستطيل وتره: المثلث $ABC$ القائم في $B$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في هذا المثلث $\\widehat{BAC} = \\widehat{OAB}$ ، و $[AB]$ مجاور لها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالآلة الحاسبة مبرمجة على الدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = 10 \\times \\cos 15^{\\circ} \\approx 9{,}66\\,\\mathrm{cm}$ .",
+        "incorrect": "الطول المطلوب في بسط النسبة: نضرب الطول المعلوم في النسبة المثلثية ولا نقسم عليها؛ والآلة الحاسبة مبرمجة على الدرجة."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $ABC$ القائم في $B$ : الوتر $AC = 10\\,\\mathrm{cm}$ و $\\widehat{BAC} = \\widehat{OAB} = 15^{\\circ}$ .",
+          "$\\cos\\widehat{BAC} = \\dfrac{AB}{AC}$ ومنه $AB = 10 \\times \\cos 15^{\\circ}$",
+          "باستعمال الآلة الحاسبة: $AB \\approx 9{,}6593$"
+        ],
+        "result": "AB \\approx 9{,}66\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب عرض المستطيل $BC$ بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm مدوّرا إلى 0,01",
+      "expectedAnswer": "2.59",
+      "misconceptionSignatures": [
+        {
+          "value": "9.66",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $ABC$ نفسه: $[BC]$ مقابل للزاوية $\\widehat{BAC}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة التي تجمع المقابل والوتر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالآلة الحاسبة مبرمجة على الدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC = 10 \\times \\sin 15^{\\circ} \\approx 2{,}59\\,\\mathrm{cm}$ .",
+        "incorrect": "الطول المطلوب في بسط النسبة: نضرب الطول المعلوم في النسبة المثلثية ولا نقسم عليها؛ والآلة الحاسبة مبرمجة على الدرجة."
+      },
+      "solution": {
+        "lines": [
+          "$\\sin\\widehat{BAC} = \\dfrac{BC}{AC}$ ومنه $BC = 10 \\times \\sin 15^{\\circ}$",
+          "باستعمال الآلة الحاسبة: $BC \\approx 2{,}5882$",
+          "أعادت المنصّة رسم شكل الكتاب بأبعاده الحقيقية (المعطيات نفسها، المستطيل مائل ليبقى الشكل مقروءا)."
+        ],
+        "result": "BC \\approx 2{,}59\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

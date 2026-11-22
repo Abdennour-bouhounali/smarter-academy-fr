@@ -1,0 +1,81 @@
+{
+  "id": "ex-4am-barahin-ashia-l5-005",
+  "lessonCode": "barahin-ashia",
+  "level": 5,
+  "generator": {
+    "tool": "gen-barahin.mjs",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — جسران في قسنطينة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "متوازي أضلاع",
+      "توازي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_barahin-ashia_P2",
+      "modelledOn": "ex-20"
+    }
+  },
+  "statement": {
+    "content": "فوق وادي الرمال في قسنطينة، بناهما مهندسون أتقنوا عملهم، جسران مستقيمان [MN] و [PQ] لهما نفس الطول ونفس المنحى ونفس الاتجاه من M نحو N ومن P نحو Q ، و P ليست على المستقيم (MN)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "نستنتج أن:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "MNQP متوازي أضلاع، و (MP) // (NQ)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "MNPQ متوازي أضلاع، و (MQ) // (NP)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        },
+        {
+          "id": "C",
+          "content": "الجسران على استقامة واحدة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MANHA-MUSTAQIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ترجم المعطى: $\\overrightarrow{MN} = \\overrightarrow{PQ}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طريقة الكتاب: $\\overrightarrow{AB} = \\overrightarrow{CD}$ يعني ABDC متوازي أضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "في متوازي الأضلاع الضلعان المتقابلان متوازيان."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{MN} = \\overrightarrow{PQ}$ : MNQP متوازي أضلاع، فضلعاه [MP] و [NQ] متوازيان.",
+        "incorrect": "سمِّ متوازي الأضلاع بطريقة الكتاب: الرؤوس M ثم N ثم Q ثم P ."
+      }
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-dawaran-l1-008",
+  "lessonCode": "wadiya-idmajiya-dawaran",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — طاولة مقهى مستديرة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المضلع المنتظم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-dawaran_P2",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "حول طاولة مستديرة في مقهى بباب الوادي أربعة كراسي، مراكزها على دائرة واحدة ومتباعدة بنفس المسافة. وصل الأصدقاء إلى المقهى في الموعد المحدّد، فاحترام الوقت من أدب الصداقة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مراكز الكراسي الأربعة هي رؤوس:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مربع",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "مستطيل ليس مربعا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-ADLA"
+        },
+        {
+          "id": "C",
+          "content": "معيّن ليس مربعا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-ADLA"
+        },
+        {
+          "id": "D",
+          "content": "مثلث متقايس الأضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-AMDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أربع نقط متباعدة بنفس المسافة على دائرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هي رؤوس مضلع منتظم له أربعة أضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المضلع المنتظم أضلاعه متقايسة وزواياه متقايسة."
+        }
+      ],
+      "feedback": {
+        "correct": "أربع نقط متباعدة بنفس المسافة على دائرة هي رؤوس مضلع منتظم رباعي: مربع.",
+        "incorrect": "المستطيل أضلاعه غير متقايسة والمعيّن زواياه غير متقايسة: ليسا منتظمين."
+      },
+      "cognitiveDemand": "recall",
+      "difficulty": 1
+    }
+  ]
+}

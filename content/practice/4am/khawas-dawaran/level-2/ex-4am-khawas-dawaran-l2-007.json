@@ -1,0 +1,79 @@
+{
+  "id": "ex-4am-khawas-dawaran-l2-007",
+  "lessonCode": "khawas-dawaran",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — طول ووضع",
+    "estimatedMinutes": 3,
+    "tags": [
+      "التعامد",
+      "الأطوال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_khawas-dawaran_P2",
+      "modelledOn": "method-properties"
+    }
+  },
+  "generator": {
+    "tool": "u13-khawas-dawaran/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "[A′B′] صورة [AB] بالدوران الذي مركزه O وزاويته $90^\\circ$ في الاتجاه المباشر، و $AB = 7$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إذن:",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$A'B' = 7$ و $(A'B') \\parallel (AB)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-TAWAZI"
+        },
+        {
+          "id": "B",
+          "content": "$A'B' = 14$ و $(A'B') \\perp (AB)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-KHAWAS"
+        },
+        {
+          "id": "C",
+          "content": "$A'B' = 7$ و $(A'B') \\perp (AB)$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خاصيتان: الطول، ثم الوضع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المستقيم وصورته يصنعان زاوية الدوران."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زاوية الدوران هنا قائمة."
+        }
+      ],
+      "feedback": {
+        "correct": "الدوران يحافظ على الأطوال، وصورة مستقيم بدوران زاويته $90^\\circ$ تعامده.",
+        "incorrect": "الطول محفوظ، والزاوية بين المستقيمين هي زاوية الدوران."
+      }
+    }
+  ]
+}

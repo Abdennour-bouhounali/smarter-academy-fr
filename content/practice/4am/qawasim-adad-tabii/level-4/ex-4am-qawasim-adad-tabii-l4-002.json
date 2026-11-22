@@ -1,0 +1,161 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l4-002",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 4,
+  "metadata": {
+    "title": "خزان الماء: بُعدا القاعدة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "جداء عاملين",
+      "وضعية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-7",
+      "page": 14,
+      "section": "أوظّف تعلّماتي",
+      "number": 7
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "بنى أهل الخير للحيّ خزان ماء صدقةً جارية، شكله متوازي مستطيلات ارتفاعه 1m وحجمه $30\\,m^3$ ، بُعدا قاعدته (بالمتر) عددان طبيعيان."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب مساحة قاعدة هذا الخزان.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (بالمتر المربع)",
+      "expectedAnswer": "30",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حجم متوازي المستطيلات = مساحة القاعدة × الارتفاع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الارتفاع 1m."
+        }
+      ],
+      "feedback": {
+        "correct": "$30 \\div 1 = 30$: مساحة القاعدة $30\\,m^2$.",
+        "incorrect": "اقسم الحجم على الارتفاع."
+      },
+      "solution": {
+        "lines": [
+          "الحجم = مساحة القاعدة × الارتفاع",
+          "مساحة القاعدة $= 30 \\div 1$"
+        ],
+        "result": "30\\,m^2"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "جد كل القيم الممكنة لعرض القاعدة. (العرض أصغر من الطول أو يساويه)",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العرض × الطول = مساحة القاعدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب مساحة القاعدة على شكل جداء عاملين بكل الأشكال الممكنة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العرض هو العامل الأصغر في كل كتابة."
+        }
+      ],
+      "feedback": {
+        "correct": "$30 = 1 \\times 30$ ، $30 = 2 \\times 15$ ، $30 = 3 \\times 10$ ، $30 = 5 \\times 6$.",
+        "incorrect": "اكتب 30 على شكل جداء عاملين $\\ell \\times L$ حيث $\\ell \\leq L$، وخذ العامل الأصغر."
+      },
+      "solution": {
+        "lines": [
+          "العرض × الطول = 30",
+          "$5^2 = 25 \\leq 30 < 36 = 6^2$: نجرّب العرض من 1 إلى 5.",
+          "$30 = 1 \\times 30$ ، $30 = 2 \\times 15$ ، $30 = 3 \\times 10$ ، $30 = 5 \\times 6$",
+          "القيم الممكنة للعرض (بالمتر): 1 ، 2 ، 3 ، 5."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "استنتج عدد الحالات الممكنة لبُعدي قاعدة الخزان.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل قيمة للعرض تعطي طولا واحدا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل نتيجة السؤال 02."
+        }
+      ],
+      "feedback": {
+        "correct": "1m و 30m ؛ 2m و 15m ؛ 3m و 10m ؛ 5m و 6m.",
+        "incorrect": "كل كتابة لـ 30 على شكل جداء عاملين تعطي حالة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "الحالات: 1m و 30m ؛ 2m و 15m ؛ 3m و 10m ؛ 5m و 6m.",
+          "إذن توجد 4 حالات."
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

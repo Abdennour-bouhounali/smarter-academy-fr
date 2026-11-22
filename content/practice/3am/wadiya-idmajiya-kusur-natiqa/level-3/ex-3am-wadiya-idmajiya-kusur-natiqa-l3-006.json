@@ -1,0 +1,235 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-kusur-natiqa-l3-006",
+  "lessonCode": "wadiya-idmajiya-kusur-natiqa",
+  "level": 3,
+  "metadata": {
+    "title": "طلاء جدار على ثلاثة أيّام",
+    "estimatedMinutes": 9,
+    "tags": [
+      "كسر من الباقي",
+      "الكلّ من جزئه"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الرابع",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يطلي عمّال جدارًا على ثلاثة أيّام: في اليوم الأوّل $\\dfrac{2}{7}$ منه، وفي اليوم الثاني $\\dfrac{3}{5}$ من الباقي، وفي اليوم الثالث الباقي وهو $24$ m² ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما الكسر الذي يمثّل ما طُلي في اليوم الثاني من الجدار كلّه ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "3/7",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "3/5",
+          "id": "MISC-SYN-KUSUR-WHOLE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكسر الأخير يُؤخذ من أيّ كمّية: من الكلّ أم ممّا بقي ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أوّلًا ما بقي بعد الجزء الأوّل، ثمّ خذ الكسر من هذا الباقي وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ مجموع الأجزاء والباقي يساوي الكلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{3}{7}$ .",
+        "incorrect": "تذكّر أنّ الكسر الثاني يُؤخذ ممّا بقي لا من الكلّ؛ احسب الباقي أوّلًا ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "بعد اليوم الأوّل بقي $\\dfrac{5}{7}$ .",
+          "$\\dfrac{3}{5} \\times \\dfrac{5}{7} = \\dfrac{15}{35} = \\dfrac{3}{7}$ ."
+        ],
+        "result": "\\dfrac{3}{7}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما الكسر الذي يمثّل ما طُلي في اليوم الثالث ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "2/7",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "4/35",
+          "id": "MISC-SYN-KUSUR-WHOLE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكلّ الذي نقارن به ؟ وما الأجزاء المأخوذة منه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما بقي هو الكلّ ناقص مجموع الأجزاء المأخوذة، أي واحد ناقص مجموع الكسور."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الباقي موجب وأنّه أصغر من الكلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{2}{7}$ .",
+        "incorrect": "وحّد المقامات قبل الجمع أو الطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$1 - \\dfrac{2}{7} - \\dfrac{3}{7} = \\dfrac{7}{7} - \\dfrac{5}{7} = \\dfrac{2}{7}$ ."
+        ],
+        "result": "\\dfrac{2}{7}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "ما مساحة الجدار كلّه بالمتر المربّع ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "84",
+      "misconceptionSignatures": [
+        {
+          "value": "48/7",
+          "id": "MISC-AMAL-NOFLIP"
+        },
+        {
+          "value": "56",
+          "id": "MISC-SYN-KUSUR-WRONGFRAC"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعطى جزء من الكلّ، ومعه الكسر الذي يمثّله هذا الجزء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكلّ هو الجزء مقسومًا على الكسر الذي يمثّله، أي مضروبًا في مقلوبه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بأخذ الكسر من الكلّ الذي وجدته: يجب أن تجد الجزء المعطى."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $84$ .",
+        "incorrect": "الكلّ يُحسب بقسمة الجزء على الكسر الذي يمثّله؛ تحقّق بالعملية العكسية ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الـ $24$ m² تمثّل $\\dfrac{2}{7}$ من الجدار .",
+          "$24 \\div \\dfrac{2}{7} = 24 \\times \\dfrac{7}{2} = 84$ m² ."
+        ],
+        "result": "84"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما المساحة المطلية في اليوم الثاني بالمتر المربّع ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "36",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من أيّ كمّية يُؤخذ الكسر في هذه الوضعية ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كسر من كمّية يعني جداء الكسر في الكمّية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ النتيجة أصغر من الكمّية الأصلية، ثمّ اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $36$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{7} \\times 84 = 36$ m² ."
+        ],
+        "result": "36"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

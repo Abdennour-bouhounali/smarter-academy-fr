@@ -1,0 +1,270 @@
+{
+  "id": "ex-4am-aksiya-talis-l2-003",
+  "lessonCode": "aksiya-talis",
+  "level": 2,
+  "metadata": {
+    "title": "BEM 2017 — التمرين الرابع",
+    "estimatedMinutes": 8,
+    "tags": [
+      "وضعية الفراشة",
+      "الخاصية العكسية",
+      "الظل"
+    ],
+    "source": {
+      "type": "bem",
+      "year": 2017,
+      "part": 1,
+      "exercise": 4
+    },
+    "exam": {
+      "kind": "official",
+      "badge": "BEM 2017",
+      "heading": "التمرين الرابع",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "الشكل المقابل غير مرسوم بأبعاده الحقيقية (وحدة الطول هي الميليمتر). $MA = 27$ ، $MI = 36$ ، $MO = 21$ ، $MU = 28$ .",
+    "figure": {
+      "points": {
+        "M": [
+          0.0,
+          0.0
+        ],
+        "U": [
+          -16.060140217829,
+          22.936257240092
+        ],
+        "I": [
+          20.648751708638,
+          -29.489473594404
+        ],
+        "O": [
+          17.202192930069,
+          12.045105163372
+        ],
+        "A": [
+          -22.117105195803,
+          -15.486563781478
+        ]
+      },
+      "segments": [
+        [
+          "U",
+          "I"
+        ],
+        [
+          "O",
+          "A"
+        ],
+        [
+          "U",
+          "O"
+        ],
+        [
+          "A",
+          "I"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "O",
+          "M",
+          "I"
+        ]
+      ],
+      "ariaLabel": "النقط U و M و I على استقامة، O و M و A على استقامة، والمستقيمان (UI) و (OA) متعامدان في M",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "بين أن المستقيمين $(AI)$ و $(OU)$ متوازيان.",
+      "statement": "احسب النسبة $\\dfrac{MO}{MA}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "7/9",
+      "misconceptionSignatures": [
+        {
+          "value": "9/7",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$MO$ و $MA$ طولان يُقاسان من النقطة $M$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $MO$ على $MA$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{MO}{MA} = \\dfrac{21}{27} = \\dfrac{7}{9}$ .",
+        "incorrect": "النسبة $\\dfrac{MO}{MA}$ : الطول $MO$ على الطول $MA$ ، وكلاهما من النقطة $M$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{MO}{MA} = \\dfrac{21}{27} = \\dfrac{7}{9}$"
+        ],
+        "result": "\\dfrac{MO}{MA} = \\dfrac{7}{9}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "احسب النسبة $\\dfrac{MU}{MI}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "7/9",
+      "misconceptionSignatures": [
+        {
+          "value": "9/7",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$MU$ و $MI$ طولان يُقاسان من النقطة $M$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $MU$ على $MI$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{MU}{MI} = \\dfrac{28}{36} = \\dfrac{7}{9}$ .",
+        "incorrect": "النسبة $\\dfrac{MU}{MI}$ : الطول $MU$ على الطول $MI$ ، وكلاهما من النقطة $M$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{MU}{MI} = \\dfrac{28}{36} = \\dfrac{7}{9}$"
+        ],
+        "result": "\\dfrac{MU}{MI} = \\dfrac{7}{9}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "اكتب البرهان.",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقط $U$ ، $M$ ، $I$ في استقامية، والنقط $O$ ، $M$ ، $A$ في استقامية: هل الترتيب نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل النسبتين اللتين حسبتهما: هل هما متساويتان بقيمهما المضبوطة؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختم بذكر الخاصية المستعملة: الخاصية العكسية لخاصية طالس."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{MU}{MI} = \\dfrac{MO}{MA} = \\dfrac{7}{9}$ والنقط بنفس الترتيب: $(AI) \\parallel (OU)$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي: الاستقامية، الترتيب نفسه، تساوي النسبتين، ثم ذكر الخاصية العكسية لخاصية طالس."
+      },
+      "solution": {
+        "lines": [
+          "بما أن النقط $U$ ، $M$ ، $I$ و $O$ ، $M$ ، $A$ في استقامية وبنفس الترتيب،",
+          "و بما أن: $\\dfrac{MU}{MI} = \\dfrac{28}{36} = \\dfrac{7}{9}$ و $\\dfrac{MO}{MA} = \\dfrac{21}{27} = \\dfrac{7}{9}$ أي: $\\dfrac{MU}{MI} = \\dfrac{MO}{MA}$",
+          "فإن المستقيمين $(AI)$ و $(OU)$ متوازيان حسب خاصية طالس العكسية.",
+          "ملاحظة: قيمتان مقرّبتان متساويتان ( $\\approx 0{,}7$ ) لا تكفيان للبرهان؛ نقارن القيم المضبوطة.",
+          "أعادت المنصّة رسم شكل الموضوع بوضوح أكبر، بنفس المعطيات."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "احسب قيس الزاوية $\\widehat{AIM}$ ( بالتدوير إلى الوحدة من الدرجة ).",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الدرجات فقط (عدد طبيعي)",
+      "expectedAnswer": "37",
+      "misconceptionSignatures": [
+        {
+          "value": "53",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $AIM$ قائم في $M$ : الضلع المقابل للزاوية $\\widehat{AIM}$ هو $[AM]$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\tan\\widehat{AIM} = \\dfrac{AM}{MI}$ ، ثم $\\tan^{-1}$ في الآلة الحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan\\widehat{AIM} = \\dfrac{27}{36} = 0{,}75$ ومنه $\\widehat{AIM} \\approx 37^{\\circ}$ .",
+        "incorrect": "في المثلث $AIM$ القائم في $M$ : الظل = المقابل ÷ المجاور، ثم دوّر إلى الوحدة."
+      },
+      "solution": {
+        "lines": [
+          "بما أن المثلث $AIM$ قائم في $M$ فإن:",
+          "$\\tan\\widehat{AIM} = \\dfrac{AM}{MI}$",
+          "$\\tan\\widehat{AIM} = \\dfrac{27}{36}$",
+          "$\\tan\\widehat{AIM} = 0{,}75$",
+          "باستعمال الآلة الحاسبة نجد:"
+        ],
+        "result": "\\widehat{AIM} \\approx 37^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

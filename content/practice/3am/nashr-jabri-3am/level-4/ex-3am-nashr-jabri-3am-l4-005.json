@@ -1,0 +1,244 @@
+{
+  "id": "ex-3am-nashr-jabri-3am-l4-005",
+  "lessonCode": "nashr-jabri-3am",
+  "level": 4,
+  "metadata": {
+    "title": "هل المساواة صحيحة مهما كان x؟",
+    "estimatedMinutes": 8,
+    "tags": [
+      "نشر",
+      "تبرير مساواة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-40",
+      "page": 66,
+      "section": "أتعمّق",
+      "number": 40
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$x$ عدد نسبي. نعتبر العبارتين:",
+    "formulas": [
+      "A = (2x - 3)(3x + 1)",
+      "B = (2x - 3)(2x + 1) + x(2x - 3)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "تؤكّد فاطمة أنه من أجل أي قيمة لـ $x$ فإنّ $A = B$ . انشر $A = (2x - 3)(3x + 1)$ واكتبها على الشكل $ax^2 + bx + c$ .",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "-7",
+      "misconceptionSignatures": [
+        {
+          "value": "11",
+          "id": "MISC-NASHR-SIGN-NEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني: أربعة جداءات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات الأربعة واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء الأصلي وفي النتيجة: يجب أن تجد العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 6x^2 - 7x - 3$ إذن $b = -7$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$A = (2x - 3)(3x + 1)$",
+          "$A = 2x \\times 3x + 2x \\times 1 - 3 \\times 3x - 3 \\times 1$",
+          "$A = 6x^2 - 7x - 3$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "انشر وبسّط $B = (2x - 3)(2x + 1) + x(2x - 3)$ . الشكل الصحيح هو:",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$B = 6x^2 - x - 3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-SIGN-NEG"
+        },
+        {
+          "id": "B",
+          "content": "$B = 6x^2 - 4x - 6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-FIRST-ONLY"
+        },
+        {
+          "id": "C",
+          "content": "$B = 6x^2 - 7x - 3$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر كل جداء على حدة وسجّل كل الحدود الناتجة بإشاراتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الحدود المتشابهة فقط (الجزء الحرفي نفسه)، ثم رتّب الحدود: $x^2$ ثم $x$ ثم العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في العبارة الأصلية وفي المبسّطة: يجب أن تجد القيمة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 6x^2 - 7x - 3$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$B = 4x^2 + 2x - 6x - 3 + 2x^2 - 3x$",
+          "$B = 6x^2 - 7x - 3$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل تأكيد فاطمة صحيح: $A = B$ من أجل كل قيمة لـ $x$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-DIFFERENT-LOOK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر كل جداء على حدة وسجّل كل الحدود الناتجة بإشاراتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الحدود المتشابهة فقط (الجزء الحرفي نفسه)، ثم رتّب الحدود: $x^2$ ثم $x$ ثم العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في العبارة الأصلية وفي المبسّطة: يجب أن تجد القيمة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم، الطرفان عبارتان متساويتان.",
+        "incorrect": "انشر الطرفين وقارن، أو عوّض $x$ بعددين صغيرين."
+      },
+      "solution": {
+        "lines": [
+          "بعد النشر $A = 6x^2 - 7x - 3$ و $B = 6x^2 - 7x - 3$ ، إذن $A = B$ مهما كان $x$ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "برّر صحة تأكيد فاطمة.",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر كل جداء على حدة وسجّل كل الحدود الناتجة بإشاراتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الحدود المتشابهة فقط (الجزء الحرفي نفسه)، ثم رتّب الحدود: $x^2$ ثم $x$ ثم العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في العبارة الأصلية وفي المبسّطة: يجب أن تجد القيمة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$A = (2x - 3)(3x + 1) = 6x^2 + 2x - 9x - 3 = 6x^2 - 7x - 3$ .",
+          "$B = (2x - 3)(2x + 1) + x(2x - 3) = 4x^2 - 4x - 3 + 2x^2 - 3x = 6x^2 - 7x - 3$ .",
+          "الشكلان المنشوران متطابقان، فالمساواة صحيحة من أجل كل $x$ ."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

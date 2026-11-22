@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l1-010",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — خلية النحل بالدوران",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الإنشاء بالدوران",
+      "السداسي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mudalaat-muntazama_P3",
+      "modelledOn": "challenge"
+    }
+  },
+  "statement": {
+    "content": "لرسم خلية نحل سداسية منتظمة مركزها O، نضع رأسا A على دائرة مركزها O، ثم نأخذ كل رأس جديد صورة الذي قبله بنفس الدوران الذي مركزه O."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "زاوية هذا الدوران (بالدرجات):",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح (بالدرجات)",
+      "expectedAnswer": "60",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUNTAZAM-MARKAZIYA",
+          "value": "120"
+        },
+        {
+          "id": "MISC-MUNTAZAM-180",
+          "value": "30"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم رأسا للخلية؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد ستة دورانات متساوية نعود إلى A: أكملنا دورة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم الدورة الكاملة على عدد الرؤوس."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 \\times 60^\\circ = 360^\\circ$ : الصورة السادسة هي A.",
+        "incorrect": "الدورانات الستة تملأ دورة كاملة بالضبط."
+      },
+      "difficulty": 1
+    }
+  ]
+}

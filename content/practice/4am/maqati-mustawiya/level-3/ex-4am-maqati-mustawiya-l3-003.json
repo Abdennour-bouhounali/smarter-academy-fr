@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l3-003",
+  "lessonCode": "maqati-mustawiya",
+  "level": 3,
+  "metadata": {
+    "title": "نشاط 2 — عبارة IM²",
+    "estimatedMinutes": 2,
+    "tags": [
+      "مقطع كرة",
+      "عبارة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-2",
+      "page": 164,
+      "section": "أنشطة"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 164): (d) كرة مركزها O ونصف قطرها $3$ ، I نقطة من قطرها $[NS]$ ، (P) المستوي العمودي على $(NS)$ في I، و $OI = x$ . M نقطة من مقطع الكرة بالمستوي (P)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "عبارة $IM^2$ بدلالة x:",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$IM^2 = 9 - x^2$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$IM^2 = 9 + x^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQTA-JAM"
+        },
+        {
+          "id": "C",
+          "content": "$IM^2 = (3 - x)^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQTA-TARH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث OIM قائم في I."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$OM = 3$ لأن M من الكرة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$IM^2 = OM^2 - OI^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "المثلث OIM قائم في I و $OM = 3$ : $IM^2 = 9 - x^2$ .",
+        "incorrect": "OM هو الوتر: نطرح $OI^2$ من $OM^2$ ."
+      },
+      "difficulty": 3
+    }
+  ]
+}

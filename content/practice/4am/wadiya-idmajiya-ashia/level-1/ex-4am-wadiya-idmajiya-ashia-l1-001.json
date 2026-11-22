@@ -1,0 +1,157 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ashia-l1-001",
+  "lessonCode": "wadiya-idmajiya-ashia",
+  "level": 1,
+  "metadata": {
+    "title": "سؤال الكتاب — 1",
+    "estimatedMinutes": 3,
+    "tags": [
+      "تساوي شعاعين"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 136,
+      "section": "الوضعيات",
+      "number": 1
+    }
+  },
+  "statement": {
+    "content": "على الشكل المقابل (ورقة مرصوفة) خمسة أشعة.",
+    "figure": {
+      "points": {
+        "M": [
+          4,
+          5
+        ],
+        "N": [
+          0,
+          5
+        ],
+        "A": [
+          2,
+          4
+        ],
+        "C": [
+          6,
+          4
+        ],
+        "D": [
+          6,
+          0
+        ],
+        "G": [
+          -1,
+          1
+        ],
+        "H": [
+          3,
+          1
+        ],
+        "E": [
+          0,
+          0
+        ],
+        "F": [
+          4,
+          0
+        ]
+      },
+      "vectors": [
+        {
+          "from": "M",
+          "to": "N"
+        },
+        {
+          "from": "A",
+          "to": "C"
+        },
+        {
+          "from": "A",
+          "to": "D"
+        },
+        {
+          "from": "G",
+          "to": "H"
+        },
+        {
+          "from": "E",
+          "to": "F"
+        }
+      ],
+      "labels": {
+        "M": "ne",
+        "N": "nw",
+        "A": "nw",
+        "C": "ne",
+        "D": "se",
+        "G": "w",
+        "H": "e",
+        "E": "sw",
+        "F": "se"
+      },
+      "grid": true,
+      "ariaLabel": "ورقة مرصوفة: الشعاع MN أفقي نحو اليسار، تحته الشعاع AC أفقي نحو اليمين والشعاع AD مائل نحو الأسفل، والشعاعان GH و EF أفقيان نحو اليمين؛ الأشعة الأفقية الأربعة لها نفس الطول"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أيّ أزواج الأشعة لها نفس المنحى ونفس الاتجاه ونفس الطول؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{AC}$ و $\\overrightarrow{GH}$ ، و $\\overrightarrow{GH}$ و $\\overrightarrow{EF}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{MN}$ و $\\overrightarrow{GH}$ فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{AC}$ و $\\overrightarrow{GH}$ فقط",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$\\overrightarrow{AD}$ و $\\overrightarrow{EF}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TUL-FAQAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الأشعة الأفقية الأربعة لها نفس الطول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انظر إلى رأس كل سهم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ابحث عن الأشعة المتجهة نحو اليمين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AC}$ و $\\overrightarrow{GH}$ و $\\overrightarrow{EF}$ أفقية نحو اليمين وبنفس الطول: الزوجان متساويان. $\\overrightarrow{MN}$ نحو اليسار.",
+        "incorrect": "شعاعان متساويان: نفس المنحى ونفس الاتجاه ونفس الطول."
+      },
+      "cognitiveDemand": "recall",
+      "difficulty": 1
+    }
+  ]
+}

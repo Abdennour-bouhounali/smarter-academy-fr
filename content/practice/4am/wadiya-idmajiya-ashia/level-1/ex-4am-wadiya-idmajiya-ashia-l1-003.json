@@ -1,0 +1,138 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ashia-l1-003",
+  "lessonCode": "wadiya-idmajiya-ashia",
+  "level": 1,
+  "metadata": {
+    "title": "سؤال الكتاب — 3",
+    "estimatedMinutes": 3,
+    "tags": [
+      "شعاعان متعاكسان"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 136,
+      "section": "الوضعيات",
+      "number": 3
+    }
+  },
+  "statement": {
+    "content": "على الشكل المقابل (ورقة مرصوفة) أربعة أشعة.",
+    "figure": {
+      "points": {
+        "A": [
+          7,
+          4
+        ],
+        "B": [
+          1,
+          4
+        ],
+        "C": [
+          0,
+          2
+        ],
+        "D": [
+          6,
+          2
+        ],
+        "E": [
+          9,
+          4
+        ],
+        "H": [
+          9,
+          0
+        ],
+        "G": [
+          5,
+          0
+        ]
+      },
+      "vectors": [
+        {
+          "from": "A",
+          "to": "B"
+        },
+        {
+          "from": "C",
+          "to": "D"
+        },
+        {
+          "from": "E",
+          "to": "H"
+        },
+        {
+          "from": "G",
+          "to": "H"
+        }
+      ],
+      "labels": {
+        "A": "n",
+        "B": "n",
+        "C": "w",
+        "D": "e",
+        "E": "ne",
+        "H": "se",
+        "G": "sw"
+      },
+      "grid": true,
+      "ariaLabel": "ورقة مرصوفة: الشعاع AB أفقي نحو اليسار، والشعاع CD أفقي نحو اليمين بنفس الطول تحته، والشعاع EH شاقولي نحو الأسفل، والشعاع GH أفقي نحو اليمين أقصر"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "لدينا:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الشعاعان $\\overrightarrow{AB}$ و $\\overrightarrow{CD}$ متعاكسان",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الشعاعان $\\overrightarrow{AB}$ و $\\overrightarrow{GH}$ متعاكسان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TUL-FAQAT"
+        },
+        {
+          "id": "C",
+          "content": "الشعاعان $\\overrightarrow{GH}$ و $\\overrightarrow{EH}$ متعاكسان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MANHA-MUSTAQIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "شعاعان متعاكسان: نفس المنحى ونفس الطول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لكن اتجاهان متعاكسان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الأطوال بعدّ المربعات."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AB}$ و $\\overrightarrow{CD}$ أفقيان، بنفس الطول (6 مربعات)، وفي اتجاهين متعاكسين.",
+        "incorrect": "$\\overrightarrow{GH}$ أقصر من $\\overrightarrow{AB}$ ، و $\\overrightarrow{EH}$ شاقولي."
+      },
+      "cognitiveDemand": "recall",
+      "difficulty": 1
+    }
+  ]
+}

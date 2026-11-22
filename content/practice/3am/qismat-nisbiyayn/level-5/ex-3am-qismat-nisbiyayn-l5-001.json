@@ -1,0 +1,199 @@
+{
+  "id": "ex-3am-qismat-nisbiyayn-l5-001",
+  "lessonCode": "qismat-nisbiyayn",
+  "level": 5,
+  "metadata": {
+    "title": "جداء وحاصل قسمة وإشارة جداء كثير العوامل",
+    "estimatedMinutes": 4,
+    "tags": [
+      "جداء",
+      "حاصل قسمة",
+      "إشارة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 1,
+      "file": "3am-s1-103",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الأعداد $A$ و $B$ و $C$ المعرّفة كما يلي:",
+    "formulas": [
+      "A = (−2) \\times 7 \\times (−5) \\times (−3)",
+      "B = (+24) \\times (−15) \\div (−13 + 10)",
+      "C = (−7) \\times (−5) \\times (+2) \\times \\ldots \\times (−1)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $A$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-210",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تُنجز أولًا؟ ابدأ بما بين القوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد الأقواس: الضرب والقسمة معًا من اليسار إلى اليمين، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل خطوة في سطر، وانتبه إلى طرح عدد سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = −210$ .",
+        "incorrect": "راجع أولوية العمليات: الأقواس، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$A = (−2) \\times 7 \\times (−5) \\times (−3)$",
+          "$A = −14 \\times (−5) \\times (−3)$",
+          "$A = 70 \\times (−3)$",
+          "$A = −210$"
+        ],
+        "result": "−210"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $B$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "120",
+      "misconceptionSignatures": [
+        {
+          "value": "-120",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "1/120",
+          "id": "MISC-QISMA-ORDER"
+        },
+        {
+          "value": "-357",
+          "id": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تُنجز أولًا؟ ابدأ بما بين القوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد الأقواس: الضرب والقسمة معًا من اليسار إلى اليمين، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل خطوة في سطر، وانتبه إلى طرح عدد سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 120$ .",
+        "incorrect": "راجع أولوية العمليات: الأقواس، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$B = (+24) \\times (−15) \\div (−13 + 10)$",
+          "$B = (+24) \\times (−15) \\div (−3)$",
+          "$B = −360 \\div (−3)$",
+          "$B = 120$"
+        ],
+        "result": "120"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "$C$ جداء $123$ عاملًا، منها $16$ عاملًا موجبًا. ما إشارة $C$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "سالب",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "موجب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QISMA-SIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة كل من العددين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن إشارتي العددين: أمتماثلتان أم مختلفتان؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق قاعدة الإشارات: هي نفسها في الضرب وفي القسمة."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد العوامل السالبة هو $123 - 16 = 107$ ، وهو عدد فردي، فالجداء سالب.",
+        "incorrect": "راجع قاعدة الإشارات: لهما الإشارة نفسها أم إشارتان مختلفتان؟"
+      },
+      "solution": {
+        "lines": [
+          "عدد العوامل السالبة هو $123 - 16 = 107$ ، وهو عدد فردي، فالجداء سالب."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

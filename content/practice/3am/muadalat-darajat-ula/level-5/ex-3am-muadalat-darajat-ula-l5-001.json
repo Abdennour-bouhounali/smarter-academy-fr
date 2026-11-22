@@ -1,0 +1,455 @@
+{
+  "id": "ex-3am-muadalat-darajat-ula-l5-001",
+  "lessonCode": "muadalat-darajat-ula",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — قاعة على شكل L",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "محيط",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-68",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: يبني الحرفيّون بإتقان قاعة عرض على شكل حرف $L$ كما في الشكل (وحدة الطول المتر، والأطوال غير حقيقية)، ومحيطها $74\\,\\mathrm{m}$ .\nالجزء الثاني: يغطّي العمّال أرضية القاعة بالبلاط.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          6,
+          0
+        ],
+        "C": [
+          6,
+          2.6
+        ],
+        "D": [
+          4,
+          2.6
+        ],
+        "E": [
+          4,
+          4
+        ],
+        "F": [
+          0,
+          4
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "3x + 2"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "5"
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "label": "4"
+        },
+        {
+          "from": "D",
+          "to": "E",
+          "label": "3"
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "label": "3x - 2"
+        },
+        {
+          "from": "F",
+          "to": "A",
+          "label": "8"
+        }
+      ],
+      "ariaLabel": "قاعة على شكل L محيطها ABCDEF: AB = 3x + 2 و BC = 5 و CD = 4 و DE = 3 و EF = 3x - 2 و FA = 8",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "ما عبارة محيط القاعة مبسّطة؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "$6x + 20$ .",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$6x + 24$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-PREREQ"
+        },
+        {
+          "id": "B",
+          "content": "$3x + 20$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-PREREQ"
+        },
+        {
+          "id": "C",
+          "content": "$6x + 20$",
+          "isCorrect": true
+        }
+      ],
+      "solution": {
+        "lines": [
+          "المحيط مجموع الأطوال الستّة: $(3x + 2) + 5 + 4 + 3 + (3x - 2) + 8$ .",
+          "نبسّط: $6x + 20$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "جد قيمة $x$ علمًا أنّ المحيط يساوي $74\\,\\mathrm{m}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 9$ .",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر أو عدد عشري)",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "11",
+          "id": "MISC-MUADALA-SIGN-KEPT"
+        },
+        {
+          "value": "-9",
+          "id": "MISC-MUADALA-NEG-COEF"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "نكتب: $6x + 20 = 74$ .",
+          "نضيف $-20$ إلى الطرفين (معاكس $20$) فنجد: $6x = 54$ .",
+          "نقسم الطرفين على $6$ فنجد: $x = 9$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما طول الضلع $AB$ بالمتر؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = 29\\,\\mathrm{m}$ .",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "الطول بالمتر",
+      "expectedAnswer": "29",
+      "solution": {
+        "lines": [
+          "$AB = 3x + 2 = 3 \\times 9 + 2 = 29$ م."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "احسب مساحة القاعة بالمتر المربّع (المستطيل الكبير $29 \\times 8$ ناقص الجزء المحذوف $4 \\times 3$).",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "المساحة $220\\,\\mathrm{m}^2$ .",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "المساحة بالمتر المربّع",
+      "expectedAnswer": "220",
+      "solution": {
+        "lines": [
+          "$29 \\times 8 - 4 \\times 3 = 232 - 12 = 220$ $\\mathrm{m}^2$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "دفع صاحب القاعة $528\\,000$ دج لتغطية كامل الأرضية. ما ثمن المتر المربّع الواحد $c$ بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن المتر المربّع $2\\,400$ دج.",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "الثمن بالدينار",
+      "expectedAnswer": "2400",
+      "misconceptionSignatures": [
+        {
+          "value": "527780",
+          "id": "MISC-MUADALA-SIGN-KEPT"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "نسمّي $c$ ثمن المتر المربّع الواحد بالدينار: $220c = 528\\,000$ .",
+          "نقسم الطرفين على $220$ : $c = 2\\,400$ ."
+        ]
+      },
+      "timeSeconds": 105
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ج",
+      "statement": "يريد صاحب القاعة تغطية قاعة ثانية مساحتها $250\\,\\mathrm{m}^2$ بالسعر نفسه وميزانيته $580\\,000$ دج. ما القرار الصحيح؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "يلزم $600\\,000$ دج فلا تكفي الميزانية (ينقص $20\\,000$ دج).",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا تكفي: يلزم $600\\,000$ دج",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "تكفي ويبقى $30\\,000$ دج",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-DECISION"
+        },
+        {
+          "id": "C",
+          "content": "لا تكفي: يلزم $2\\,650$ دج",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-DECISION"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "ثمن التغطية $250 \\times 2\\,400 = 600\\,000$ دج وهو أكبر من $580\\,000$ دج."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "02",
+      "sub": "د",
+      "statement": "اشرح قرارك بالحساب وبيّن المبلغ الناقص.",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "ينقص $20\\,000$ دج.",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب إجابتك ثم قارنها بالتصحيح النموذجي",
+      "solution": {
+        "lines": [
+          "$250 \\times 2\\,400 = 600\\,000$ دج.",
+          "$600\\,000 - 580\\,000 = 20\\,000$ دج، فالميزانية لا تكفي وينقصها $20\\,000$ دج."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

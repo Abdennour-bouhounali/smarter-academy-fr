@@ -1,0 +1,70 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-dawaran-l3-008",
+  "lessonCode": "wadiya-idmajiya-dawaran",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — مسافة تساوي r√2",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المربع",
+      "نمذجة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-dawaran_P2",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "أعمدة متباعدة بنفس المسافة على حافة حوض دائري نصف قطره $3\\,\\mathrm{m}$ ، والمسافة المضبوطة بين كل عمودين متتاليين $3\\sqrt{2}\\,\\mathrm{m}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "عدد الأعمدة:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن $(3\\sqrt{2})^2$ بـ $3^2 + 3^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المثلث الذي رأسه المركز قائم في المركز."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الزاوية المركزية $90^\\circ$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$(3\\sqrt{2})^2 = 18 = 3^2 + 3^2$ : الزاوية المركزية قائمة، و $\\dfrac{360^\\circ}{90^\\circ} = 4$ .",
+        "incorrect": "بعكس خاصية فيثاغورس المثلث قائم في المركز، فالزاوية المركزية $90^\\circ$ ."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-MUNTAZAM-AMDA"
+        }
+      ],
+      "difficulty": 3
+    }
+  ]
+}

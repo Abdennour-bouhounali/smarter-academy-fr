@@ -1,0 +1,194 @@
+{
+  "id": "ex-1am-adad-ashri-mustaqim-mudarraj-l2-006",
+  "lessonCode": "adad-ashri-mustaqim-mudarraj",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — كسر عشري وفاصلة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "مجموع",
+      "كسر عشري"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تُغرس الأعلام على شريط قياس وحدته مقسّمة إلى 10 أجزاء، وتُعطى أماكنها بكتابة مجموع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نريد تعليم النقطة $K\\left(2 + \\dfrac{6}{10}\\right)$ . ما فاصلتها مكتوبةً بالفاصلة ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "2,6",
+      "misconceptionSignatures": [
+        {
+          "value": "6,2",
+          "id": "MISC-ABSC-SWAP"
+        },
+        {
+          "value": "0,8",
+          "id": "MISC-ABSC-ADDALL"
+        },
+        {
+          "value": "2,06",
+          "id": "MISC-ABSC-HUNDREDTH"
+        },
+        {
+          "value": "8",
+          "id": "MISC-ABSC-TICKUNIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكسر $\\dfrac{a}{10}$ يقرأ أعشارًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسر العشري بالفاصلة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثمّ أضفه إلى الجزء الصحيح."
+        }
+      ],
+      "feedback": {
+        "correct": "$K(2{,}6)$ : الجزء الصحيح $2$ والجزء العشري $0{,}6$.",
+        "incorrect": "كسر عشري مقامه 10 يعطي رقمًا واحدًا بعد الفاصلة ؛ والعدد الصحيح يبقى قبل الفاصلة ولا يُجمع مع البسط."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{6}{10}$ = $0{,}6$",
+          "$2$ + $0{,}6$ = $2{,}6$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "نريد تعليم النقطة $K\\left(0 + \\dfrac{9}{10}\\right)$ . ما فاصلتها مكتوبةً بالفاصلة ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$9$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-SWAP"
+        },
+        {
+          "id": "B",
+          "content": "$0{,}09$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-HUNDREDTH"
+        },
+        {
+          "id": "C",
+          "content": "$0{,}9$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكسر $\\dfrac{a}{10}$ يقرأ أعشارًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسر العشري بالفاصلة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثمّ أضفه إلى الجزء الصحيح."
+        }
+      ],
+      "feedback": {
+        "correct": "$K(0{,}9)$ : الجزء الصحيح $0$ والجزء العشري $0{,}9$.",
+        "incorrect": "كسر عشري مقامه 10 يعطي رقمًا واحدًا بعد الفاصلة ؛ والعدد الصحيح يبقى قبل الفاصلة ولا يُجمع مع البسط."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{9}{10}$ = $0{,}9$",
+          "$0$ + $0{,}9$ = $0{,}9$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "فاصلة علم $E$ هي $0{,}9$ . كم تدريجة صغيرة نعدّ بعد العلامة $0$ لنصل إلى هذا الموضع ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ من العلامة المذكورة لا من المبدإ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب ما بقي من الوحدة بعد العلامة ثمّ قسّمه على قيمة التدريجة الصغيرة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد التدريجات الصغيرة عدد طبيعي."
+        }
+      ],
+      "feedback": {
+        "correct": "نعدّ $9$ تدريجات صغيرة بعد العلامة $0$ فنصل إلى الفاصلة $0{,}9$.",
+        "incorrect": "نعدّ التدريجات الصغيرة ابتداءً من العلامة المعلومة ؛ الجزء بعد الفاصلة يعطي عددها عندما تكون التدريجة جزءًا من عشرة، ولا نعدّ كلّ ما قبلها."
+      },
+      "solution": {
+        "lines": [
+          "من العلامة $0$ إلى الفاصلة $0{,}9$ نقطع $0{,}9$ من الوحدة",
+          "كلّ تدريجة صغيرة $0{,}1$ إذن العدد $0{,}9$ ÷ $0{,}1$ = $9$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

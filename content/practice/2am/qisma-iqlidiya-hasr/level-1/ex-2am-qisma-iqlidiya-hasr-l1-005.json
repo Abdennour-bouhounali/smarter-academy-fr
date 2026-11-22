@@ -1,0 +1,194 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l1-005",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — قسمة باقيها معدوم",
+    "estimatedMinutes": 5,
+    "tags": [
+      "قابلية القسمة",
+      "مضاعف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نريد معرفة هل العدد 1375 يقبل القسمة على 125."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب حاصل القسمة الإقليدية للعدد 1375 على 125.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "10",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "value": "12",
+          "id": "MISC-HASR-IZAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 1375 من 125 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 125 دون أن نتجاوز 1375."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من 125."
+        }
+      ],
+      "feedback": {
+        "correct": "$1375 = 125 \\times 11 + 0$ و $0 < 125$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 125 فلا يتجاوز الجداء 1375، والباقي عندئذ أصغر من 125."
+      },
+      "solution": {
+        "lines": [
+          "$125 \\times 11 = 1375$ و $125 \\times 12 = 1500$",
+          "$1375 \\le 1375 < 1500$ ، إذن الحاصل هو 11."
+        ],
+        "result": "q = 11"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل يقبل العدد 1375 القسمة على 125؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-HISAB"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 1375 على 125."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يقبل القسمة يعني: الباقي معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$1375 = 125 \\times 11$ والباقي معدوم.",
+        "incorrect": "انظر إلى باقي القسمة الإقليدية: هل هو معدوم؟"
+      },
+      "solution": {
+        "lines": [
+          "$1375 = 125 \\times 11 + 0$",
+          "الباقي معدوم، إذن 1375 يقبل القسمة على 125."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "علمًا أنّ $1375 = 125 \\times 11$ ، اختر الجملة الصحيحة.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "1375 يقسم 125",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-YAQSIM-AKS"
+        },
+        {
+          "id": "B",
+          "content": "125 يقبل القسمة على 1375",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-YAQSIM-AKS"
+        },
+        {
+          "id": "C",
+          "content": "1375 مضاعف لـ 125",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كل جملة: أيّ العددين هو المقسوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "125 أصغر من 1375: هل يمكن أن يقسم 1375 العدد 125؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الباقي معدوم: 125 يقسم 1375، و 1375 مضاعف لـ 125، و 1375 يقبل القسمة على 125.",
+        "incorrect": "المقسوم هو العدد الأكبر هنا؛ والعدد الذي يقسم هو المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$1375 = 125 \\times 11$ والباقي معدوم.",
+          "نقول: 1375 يقبل القسمة على 125، أو 1375 مضاعف لـ 125، أو 125 يقسم 1375."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

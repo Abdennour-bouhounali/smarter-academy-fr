@@ -1,0 +1,243 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l2-001",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 2,
+  "metadata": {
+    "title": "باقات حفل التكريم",
+    "estimatedMinutes": 6,
+    "tags": [
+      "باقات",
+      "حصر",
+      "باقٍ"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-3",
+      "page": 37,
+      "section": "اكتشف",
+      "number": 3
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لدى بائعة زهور 316 وردة، وتريد أن تشكّل منها باقات متماثلة في كل منها 15 وردة لحفل تكريم المعلّمين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "هل يمكنها تشكيل 20 باقة؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم وردة تلزم لـ 20 باقة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن هذا العدد بـ 316."
+        }
+      ],
+      "feedback": {
+        "correct": "$15 \\times 20 = 300$ و $300 < 316$.",
+        "incorrect": "احسب $15 \\times 20$ وقارنه بعدد الورود."
+      },
+      "solution": {
+        "lines": [
+          "$15 \\times 20 = 300$",
+          "$300 < 316$ ، إذن يمكنها تشكيل 20 باقة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل يمكنها تشكيل 30 باقة؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم وردة تلزم لـ 30 باقة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل تملك هذا العدد من الورود؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$15 \\times 30 = 450$ و $450 > 316$: الورود لا تكفي.",
+        "incorrect": "احسب $15 \\times 30$ وقارنه بعدد الورود."
+      },
+      "solution": {
+        "lines": [
+          "$15 \\times 30 = 450$",
+          "$450 > 316$ ، إذن لا يمكنها تشكيل 30 باقة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "استنتج أكبر عدد ممكن من الباقات.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الباقات",
+      "expectedAnswer": "21",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "20",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "22",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 316 من 15 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 15 دون أن نتجاوز 316."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$316 = 15 \\times 21 + 1$ و $1 < 15$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 15 فلا يتجاوز الجداء 316، والباقي عندئذ أصغر من 15."
+      },
+      "solution": {
+        "lines": [
+          "$15 \\times 21 = 315$ و $15 \\times 22 = 330$",
+          "$315 \\le 316 < 330$ ، إذن الحاصل هو 21."
+        ],
+        "result": "q = 21"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "هل تتبقّى ورود؟ كم عددها؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الورود",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "21",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "16",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 316."
+        }
+      ],
+      "feedback": {
+        "correct": "$316 - 15 \\times 21 = 316 - 315 = 1$ ، و $1 < 15$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 15."
+      },
+      "solution": {
+        "lines": [
+          "$316 = 15 \\times 21 + 1$",
+          "$1 < 15$ ، إذن الباقي هو 1."
+        ],
+        "result": "r = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

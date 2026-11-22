@@ -1,0 +1,342 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l5-008",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مشروع غرس الأشجار",
+    "estimatedMinutes": 18,
+    "tags": [
+      "أيام الأسبوع",
+      "الحاصل + 1",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "بدأ نادي البيئة في المتوسطة مشروعًا لغرس الأشجار يوم الأحد، ويدوم المشروع 200 يوم.\nالجزء الأول: يُختتم المشروع بحفل في اليوم الذي يلي آخر يوم منه.\nالجزء الثاني: يغرس النادي 25 شجرة في كل أسبوع كامل، وقد وعد البلدية بغرس 680 شجرة على الأقل. تصل الشجيرات في صناديق من 16 شجيرة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "كم أسبوعًا كاملًا في مدة المشروع؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الأسابيع",
+      "expectedAnswer": "28",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "27",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "29",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 200 من 7 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 7 دون أن نتجاوز 200."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$200 = 7 \\times 28 + 4$ و $4 < 7$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 7 فلا يتجاوز الجداء 200، والباقي عندئذ أصغر من 7."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 28 = 196$ و $7 \\times 29 = 203$",
+          "$196 \\le 200 < 203$ ، إذن الحاصل هو 28."
+        ],
+        "result": "q = 28"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كم يومًا يبقى بعد هذه الأسابيع؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الأيام",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "28",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "11",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 200."
+        }
+      ],
+      "feedback": {
+        "correct": "$200 - 7 \\times 28 = 200 - 196 = 4$ ، و $4 < 7$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 7."
+      },
+      "solution": {
+        "lines": [
+          "$200 = 7 \\times 28 + 4$",
+          "$4 < 7$ ، إذن الباقي هو 4."
+        ],
+        "result": "r = 4"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "في أيّ يوم من الأسبوع يُقام حفل الاختتام (200 يوم بعد يوم الانطلاق)؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الأربعاء",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        },
+        {
+          "id": "B",
+          "content": "الخميس",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "الأحد",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-LA-BAQI"
+        },
+        {
+          "id": "D",
+          "content": "الجمعة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل 7 أيام يعود اليوم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب باقي القسمة الإقليدية للعدد 200 على 7."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأسابيع الكاملة لا تغيّر اليوم: الباقي وحده يحرّكه."
+        }
+      ],
+      "feedback": {
+        "correct": "$200 = 7 \\times 28 + 4$: بعد الأسابيع الكاملة نعود إلى يوم الأحد، ثم نتقدّم بعدد أيام الباقي (4).",
+        "incorrect": "الأسابيع الكاملة تعيدنا إلى اليوم نفسه، ثم نتقدّم بعدد أيام الباقي."
+      },
+      "solution": {
+        "lines": [
+          "$200 = 7 \\times 28 + 4$",
+          "بعد 28 أسبوعًا كاملًا نعود إلى يوم الأحد.",
+          "نتقدّم بعد ذلك بعدد أيام الباقي (4): نصل إلى يوم الخميس."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب عدد الأشجار التي يغرسها النادي.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الأشجار",
+      "expectedAnswer": "700",
+      "misconceptionSignatures": [
+        {
+          "value": "5000",
+          "id": "MISC-IQLIDIYA-ADWAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الأسابيع الكاملة × 25."
+        }
+      ],
+      "feedback": {
+        "correct": "$28 \\times 25 = 700$.",
+        "incorrect": "اضرب عدد الأسابيع الكاملة في 25."
+      },
+      "solution": {
+        "lines": [
+          "$28 \\times 25 = 700$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "هل يفي النادي بوعده للبلدية؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن عدد الأشجار بالعدد الموعود."
+        }
+      ],
+      "feedback": {
+        "correct": "$700 > 680$: يفي بوعده.",
+        "incorrect": "قارن عدد الأشجار المغروسة بـ 680."
+      },
+      "solution": {
+        "lines": [
+          "$700 > 680$ ، إذن يفي النادي بوعده."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "كم صندوقًا من الشجيرات يلزم لغرس 700 شجرة؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد الصناديق",
+      "expectedAnswer": "44",
+      "misconceptionSignatures": [
+        {
+          "value": "43",
+          "id": "MISC-IQLIDIYA-NISYAN-ZIYADA"
+        },
+        {
+          "value": "12",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل تكفي المجموعات الكاملة لوضع كل شيء؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ماذا نفعل بالباقي إذا لم يكن معدومًا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$700 = 16 \\times 43 + 12$: يبقى 12 بعد المجموعات الكاملة، ويحتاج إلى صندوق آخر.",
+        "incorrect": "الحاصل يعدّ المجموعات الكاملة فقط؛ إذا بقي شيء فهو يحتاج إلى مجموعة إضافية."
+      },
+      "solution": {
+        "lines": [
+          "$700 = 16 \\times 43 + 12$",
+          "يبقى 12 بعد المجموعات الكاملة، فنحتاج إلى صندوق آخر:",
+          "$43 + 1 = 44$"
+        ],
+        "result": "44"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "id": "ex-1am-kitabat-adad-tabii-l1-005",
+  "lessonCode": "kitabat-adad-tabii",
+  "level": 1,
+  "metadata": {
+    "title": "من المفكوك إلى العدد",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مفكوك",
+      "صفر"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-12",
+      "page": 17,
+      "section": "أتمرّن",
+      "number": 12
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "أعط الكتابة بالأرقام الموافقة لكل مفكوك."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب بالأرقام العدد $A = (4 \\times 1000) + (9 \\times 100) + (3 \\times 10) + 8$.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "4938",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب قيمة كل حد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب الحدود من المرتبة الكبرى إلى الصغرى: هل غابت مرتبة؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب 0 في كل مرتبة غائبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = (4 \\times 1000) + (9 \\times 100) + (3 \\times 10) + 8 = 4938$.",
+        "incorrect": "لكل حد مرتبته: المرتبة التي لا يظهر لها حد في المفكوك نكتب فيها 0."
+      },
+      "solution": {
+        "lines": [
+          "$4 \\times 1000 = 4000$",
+          "$9 \\times 100 = 900$",
+          "$3 \\times 10 = 30$",
+          "$A = 4000 + 900 + 30 + 8 = 4938$"
+        ],
+        "result": "A = 4938"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب بالأرقام العدد $B = (6 \\times 1000) + (5 \\times 10) + 2$.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "6052",
+      "misconceptionSignatures": [
+        {
+          "value": "652",
+          "id": "MISC-KITABA-ZERO-PLACE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب قيمة كل حد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب الحدود من المرتبة الكبرى إلى الصغرى: هل غابت مرتبة؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب 0 في كل مرتبة غائبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = (6 \\times 1000) + (5 \\times 10) + 2 = 6052$.",
+        "incorrect": "لكل حد مرتبته: المرتبة التي لا يظهر لها حد في المفكوك نكتب فيها 0."
+      },
+      "solution": {
+        "lines": [
+          "$6 \\times 1000 = 6000$",
+          "$5 \\times 10 = 50$",
+          "$B = 6000 + 50 + 2 = 6052$"
+        ],
+        "result": "B = 6052"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

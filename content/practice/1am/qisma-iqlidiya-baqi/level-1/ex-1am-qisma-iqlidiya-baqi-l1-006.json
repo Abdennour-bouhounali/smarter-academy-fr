@@ -1,0 +1,179 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l1-006",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مساواة وقسمتان",
+    "estimatedMinutes": 4,
+    "tags": [
+      "شرط الباقي",
+      "قراءة المساواة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لاحظ المساواة $200 = 23 \\times 8 + 16$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل تعبّر هذه المساواة عن القسمة الإقليدية للعدد 200 على 23؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق من صحة المساواة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الباقي 16 بالمقسوم عليه 23."
+        }
+      ],
+      "feedback": {
+        "correct": "المساواة صحيحة و $16 < 23$.",
+        "incorrect": "تحقّق من الحساب، ثم قارن 16 بـ 23."
+      },
+      "solution": {
+        "lines": [
+          "$23 \\times 8 = 184$ و $184 + 16 = 200$",
+          "$16 < 23$ ، إذن تعبّر عن القسمة الإقليدية للعدد 200 على 23."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل تعبّر عن القسمة الإقليدية للعدد 200 على 8؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-QIRAA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في القسمة على 8 يصبح 8 هو المقسوم عليه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل الباقي 16 أصغر من 8؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$16 > 8$: مع 16 يمكن تشكيل مجموعتين أخريين من 8.",
+        "incorrect": "الباقي يجب أن يكون أصغر من المقسوم عليه 8."
+      },
+      "solution": {
+        "lines": [
+          "في القسمة على 8 يجب أن يكون الباقي أصغر من 8.",
+          "$16 > 8$ ، إذن لا تعبّر عن القسمة الإقليدية للعدد 200 على 8."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب باقي القسمة الإقليدية للعدد 200 على 8.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "0",
+      "misconceptionSignatures": [
+        {
+          "value": "25",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "8",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 200."
+        }
+      ],
+      "feedback": {
+        "correct": "$200 - 8 \\times 25 = 200 - 200 = 0$ ، و $0 < 8$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 8."
+      },
+      "solution": {
+        "lines": [
+          "$200 = 8 \\times 25 + 0$",
+          "$0 < 8$ ، إذن الباقي هو 0."
+        ],
+        "result": "r = 0"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,4 +1,3 @@
-import React from 'react';
 
 /**
  * Une tuile d'indicateur : une icône, un nombre, une étiquette.

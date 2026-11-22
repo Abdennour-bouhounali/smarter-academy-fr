@@ -1,0 +1,196 @@
+{
+  "id": "ex-2am-ikhtibar-musawat-mutabayina-l4-005",
+  "lessonCode": "ikhtibar-musawat-mutabayina",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — توزيع عدد على فرق",
+    "estimatedMinutes": 6,
+    "tags": [
+      "تساوي عبارتين",
+      "خاصيّة التوزيع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اختبر تساوي العبارتين في كلّ حالة :"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ العبارات الآتية تساوي $3(2x-1)$ مهما كانت قيمة $x$ ؟ اختر الإجابة الصحيحة :",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$6x-3$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$6x-1$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$5x-3$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى العبارة التي فيها قوسان : كيف نحسب جداء عدد في مجموع ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خاصيّة التوزيع : الضرب في عدد يوزّع على كلّ حدّ داخل القوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بقيمة بسيطة للحرف إن بقي لديك شكّ."
+        }
+      ],
+      "feedback": {
+        "correct": "العبارة $6x-3$ تساويها بخاصيّة التوزيع .",
+        "incorrect": "وزّع العدد على كلّ حدّ داخل القوسين، ثمّ قارن."
+      },
+      "solution": {
+        "lines": [
+          "$6x-3$ : تساويها (بخاصيّة التوزيع) .",
+          "$6x-1$ : لا تساويها .",
+          "$5x-3$ : لا تساويها ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل العبارتان $3(2x-1)$ و $6x-3$ متساويتان مهما كانت قيمة $x$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "نعم",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جرّب العبارتين بقيمة أو قيمتين للحرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا اختلفت النتيجتان عند قيمة واحدة فالعبارتان غير متساويتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا تساوتا عند عدّة قيم فتحقّق من القاعدة (التوزيع مثلا) قبل أن تحكم : التساوي عند بعض القيم لا يكفي."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم : العبارتان متساويتان مهما كانت قيمة الحرف .",
+        "incorrect": "مثال مضادّ واحد يكفي لإثبات عدم التساوي، أمّا التساوي فيبرّره قاعدة معروفة."
+      },
+      "solution": {
+        "lines": [
+          "$3(2x-1)=6x-3$ : العبارتان متساويتان مهما كانت قيمة $x$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل العبارتان $3(2x-1)$ و $6x-1$ متساويتان مهما كانت قيمة $x$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جرّب العبارتين بقيمة أو قيمتين للحرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا اختلفت النتيجتان عند قيمة واحدة فالعبارتان غير متساويتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا تساوتا عند عدّة قيم فتحقّق من القاعدة (التوزيع مثلا) قبل أن تحكم : التساوي عند بعض القيم لا يكفي."
+        }
+      ],
+      "feedback": {
+        "correct": "لا : توجد قيمة تختلف عندها العبارتان .",
+        "incorrect": "مثال مضادّ واحد يكفي لإثبات عدم التساوي، أمّا التساوي فيبرّره قاعدة معروفة."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $x=0$ : $3\\times (2\\times 0-1)=-3$ و $6\\times 0-1=-1$ .",
+          "النتيجتان مختلفتان : مثال مضادّ واحد يكفي، فالعبارتان غير متساويتين ."
+        ]
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

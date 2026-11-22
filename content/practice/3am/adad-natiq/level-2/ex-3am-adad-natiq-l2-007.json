@@ -1,0 +1,244 @@
+{
+  "id": "ex-3am-adad-natiq-l2-007",
+  "lessonCode": "adad-natiq",
+  "level": 2,
+  "metadata": {
+    "title": "أقارن عددين ناطقين",
+    "estimatedMinutes": 10,
+    "tags": [
+      "العدد الناطق"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "self-9",
+      "page": 33,
+      "section": "أؤكّد تعلّماتي",
+      "number": 9
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يعتني التلاميذ بدقّة قياساتهم، فيقارنون قيمتين ناطقتين مكتوبتين بفواصل."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عند مقارنة $\\dfrac{-7{,}2}{4{,}5}$ و $\\dfrac{4{,}2}{-3{,}5}$ نجد :",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "العددان متساويان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-WRITINGS"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{-7{,}2}{4{,}5}<\\dfrac{4{,}2}{-3{,}5}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{-7{,}2}{4{,}5}>\\dfrac{4{,}2}{-3{,}5}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-NEGORDER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العددين بالمقام الموجب نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن البسطين بقواعد مقارنة الأعداد النسبية: على يسار الصفر، الأبعد عن الصفر هو الأصغر."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $\\dfrac{-7{,}2}{4{,}5}<\\dfrac{4{,}2}{-3{,}5}$ .",
+        "incorrect": "اكتب العددين بمقام موجب مشترك قبل أن تقارن، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{-7{,}2}{4{,}5}=-\\dfrac{72}{45}=-\\dfrac{8}{5}$ .",
+          "$\\dfrac{4{,}2}{-3{,}5}=-\\dfrac{42}{35}=-\\dfrac{6}{5}$ .",
+          "$-\\dfrac{8}{5}<-\\dfrac{6}{5}$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب العدد $\\dfrac{-7{,}2}{4{,}5}$ على أبسط شكل بمقام موجب .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "-8/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "8/5",
+          "id": "MISC-NATIQ-DROPSIGN"
+        },
+        {
+          "value": "-5/8",
+          "id": "MISC-NATIQ-INVERT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة الحاصل؟ قارن إشارتي البسط والمقام."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل الإشارة إلى أمام الكسر حتى يصير المقام موجبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل بقسمة البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$-\\dfrac{8}{5}$ .",
+        "incorrect": "تذكّر أنّ المقام في الكتابة المعيارية موجب، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضرب البسط والمقام في $10$ : $\\dfrac{-72}{45}=-\\dfrac{72}{45}$ .",
+          "نختزل على $9$ : $-\\dfrac{8}{5}$ ."
+        ],
+        "result": "-\\dfrac{8}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "اكتب العدد $\\dfrac{4{,}2}{-3{,}5}$ على أبسط شكل بمقام موجب .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "-6/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "6/5",
+          "id": "MISC-NATIQ-DROPSIGN"
+        },
+        {
+          "value": "-5/6",
+          "id": "MISC-NATIQ-INVERT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة الحاصل؟ قارن إشارتي البسط والمقام."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل الإشارة إلى أمام الكسر حتى يصير المقام موجبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل بقسمة البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$-\\dfrac{6}{5}$ .",
+        "incorrect": "تذكّر أنّ المقام في الكتابة المعيارية موجب، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{4{,}2}{-3{,}5}=\\dfrac{42}{-35}=-\\dfrac{42}{35}$ .",
+          "نختزل على $7$ : $-\\dfrac{6}{5}$ ."
+        ],
+        "result": "-\\dfrac{6}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "برّر مقارنتك للعددين .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثمّ اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجب أن تبرّره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اذكر القاعدة التي تستعملها في كلّ سطر."
+        }
+      ],
+      "feedback": {
+        "correct": "تطابق تبريرك مع الحل النموذجي .",
+        "incorrect": "قارن تبريرك بالحل النموذجي سطرًا سطرًا، ثمّ قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "نكتب العددين بمقام موجب مشترك : $-\\dfrac{8}{5}$ و $-\\dfrac{6}{5}$ .",
+          "العددان سالبان وبسطاهما $-8$ و $-6$ : $-8<-6$ .",
+          "إذن الأوّل أصغر من الثاني."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

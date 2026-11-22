@@ -1,0 +1,183 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l4-006",
+  "lessonCode": "mafhum-dawaran",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — المربع ومركزه",
+    "estimatedMinutes": 3,
+    "tags": [
+      "صورة نقطة",
+      "صورة قطعة",
+      "مربع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mafhum-dawaran_P2",
+      "modelledOn": "qcm"
+    }
+  },
+  "statement": {
+    "content": "ABCD مربع مركزه O، رؤوسه A و B و C و D بهذا الترتيب عكس اتجاه عقارب الساعة. نعتبر الدوران الذي مركزه O وزاويته $90^\\circ$ في الاتجاه المباشر.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          2,
+          2
+        ],
+        "B": [
+          -2,
+          2
+        ],
+        "C": [
+          -2,
+          -2
+        ],
+        "D": [
+          2,
+          -2
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "A"
+        ],
+        {
+          "from": "A",
+          "to": "C",
+          "dashed": true
+        },
+        {
+          "from": "B",
+          "to": "D",
+          "dashed": true
+        }
+      ],
+      "ariaLabel": "مربع ABCD مركزه O ورؤوسه بهذا الترتيب عكس اتجاه عقارب الساعة",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "صورة A هي:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "B",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "D",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ITTIJAH"
+        },
+        {
+          "id": "C",
+          "content": "C",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ZAWIYA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قطرا المربع متقايسان ومتعامدان ومتناصفان في O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\widehat{AOB} = 90^\\circ$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اتبع ترتيب الرؤوس عكس عقارب الساعة."
+        }
+      ],
+      "feedback": {
+        "correct": "OA = OB و $\\widehat{AOB} = 90^\\circ$ عكس عقارب الساعة: صورة A هي B.",
+        "incorrect": "الاتجاه المباشر هو هنا اتجاه ترتيب الرؤوس."
+      },
+      "difficulty": 2
+    },
+    {
+      "id": "q2",
+      "statement": "صورة الضلع [AB] هي:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "[DA]",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ITTIJAH"
+        },
+        {
+          "id": "B",
+          "content": "[BC]",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "[CD]",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ZAWIYA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "صورة قطعة: صورتا طرفيها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "صورة A هي B؛ ما صورة B؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارسم القطعة بين الصورتين."
+        }
+      ],
+      "feedback": {
+        "correct": "A ← B و B ← C: صورة [AB] هي [BC].",
+        "incorrect": "أنشئ صورتي الطرفين بنفس الدوران."
+      },
+      "difficulty": 3
+    }
+  ]
+}

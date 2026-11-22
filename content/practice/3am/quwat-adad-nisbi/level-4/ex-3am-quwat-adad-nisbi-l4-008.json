@@ -1,0 +1,233 @@
+{
+  "id": "ex-3am-quwat-adad-nisbi-l4-008",
+  "lessonCode": "quwat-adad-nisbi",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — قوة كسر ومقلوب",
+    "estimatedMinutes": 9,
+    "tags": [
+      "سلسلة حسابات",
+      "كسور",
+      "أس سالب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد $F$ حيث:",
+    "formulas": [
+      "F = \\left(-\\dfrac{2}{3}\\right)^{2} \\times \\dfrac{9}{8} - \\left(\\dfrac{1}{2}\\right)^{-1}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $\\left(-\\dfrac{2}{3}\\right)^{2}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "4/9",
+      "misconceptionSignatures": [
+        {
+          "value": "-4/9",
+          "id": "MISC-QUWA-ODD-EVEN-SIGN"
+        },
+        {
+          "value": "4/3",
+          "id": "MISC-QUWA-FRACTION-POWER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الأس خارج القوسين يخصّ البسط والمقام معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\left(\\dfrac{a}{b}\\right)^n = \\dfrac{a^n}{b^n}$ ، ثم حدّد الإشارة حسب زوجية الأس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب قوة البسط ثم قوة المقام."
+        }
+      ],
+      "feedback": {
+        "correct": "الأس زوجي: $\\dfrac{4}{9}$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$\\left(-\\dfrac{2}{3}\\right)^{2} = \\dfrac{2^{2}}{3^{2}} = \\dfrac{4}{9}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $\\left(\\dfrac{1}{2}\\right)^{-1}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "-1/2",
+          "id": "MISC-QUWA-NEG-EXP-NEGATIVE"
+        },
+        {
+          "value": "-2",
+          "id": "MISC-QUWA-NEG-EXP-NEGATIVE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$a^{-n}$ هو مقلوب $a^n$ ، فهو لا يدلّ على عدد سالب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $a^n$ أولًا، ثم خذ مقلوبه، وحافظ على إشارة $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "من أجل $a \\neq 0$ : $a^0 = 1$ و $a^1 = a$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "مقلوب $\\dfrac{1}{2}$ هو 2.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$\\left(\\dfrac{1}{2}\\right)^{-1} = \\dfrac{2}{1} = 2$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب $\\dfrac{4}{9} \\times \\dfrac{9}{8}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "1/2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هذه المرحلة حساب على الكسور (درس سابق)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لضرب كسرين نضرب البسطين ونضرب المقامين، ولقسمة كسر على كسر نضربه في مقلوبه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل النتيجة حتى لا يبقى قاسم مشترك."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{36}{72} = \\dfrac{1}{2}$ .",
+        "incorrect": "اضرب البسطين معًا والمقامين معًا، ثم اختزل."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{4}{9} \\times \\dfrac{9}{8} = \\dfrac{36}{72} = \\dfrac{1}{2}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "استنتج قيمة $F$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "-3/2",
+      "misconceptionSignatures": [
+        {
+          "value": "5/2",
+          "id": "MISC-QUWA-NEG-EXP-NEGATIVE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما أول عملية تُنجز في هذه العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأولوية: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب مرحلة واحدة في كل سطر، وتحقّق من إشارة كل حدّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$F = \\dfrac{1}{2} - 2 = -\\dfrac{3}{2}$ .",
+        "incorrect": "احترم أولوية العمليات: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$F = \\dfrac{1}{2} - 2$",
+          "$F = \\dfrac{1}{2} - \\dfrac{4}{2} = -\\dfrac{3}{2}$"
+        ],
+        "result": "F = -\\dfrac{3}{2}"
+      },
+      "work": "required",
+      "timeSeconds": 90
+    }
+  ]
+}

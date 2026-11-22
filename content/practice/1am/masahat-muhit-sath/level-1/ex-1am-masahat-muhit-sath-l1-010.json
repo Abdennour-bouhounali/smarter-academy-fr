@@ -1,0 +1,181 @@
+{
+  "id": "ex-1am-masahat-muhit-sath-l1-010",
+  "lessonCode": "masahat-muhit-sath",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — محيط بستان الجمعية",
+    "estimatedMinutes": 5,
+    "tags": [
+      "محيط",
+      "جمع أطوال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تعتني جمعية الحيّ ببستان مشترك على شكل مضلّع خماسي، أطوال أضلاعه بالمتر: $12{,}5$ ، $8{,}25$ ، $9$ ، $6{,}75$ ، $10$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب محيط البستان بالمتر.",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "46,5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المحيط هو مجموع أطوال الأضلاع كلها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الأطوال بالتدريج وانتبه إلى مواضع الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة الجمع بترتيب آخر."
+        }
+      ],
+      "feedback": {
+        "correct": "المحيط $46{,}5\\,\\mathrm{m}$.",
+        "incorrect": "المحيط هو مجموع أطوال الأضلاع الخمسة."
+      },
+      "solution": {
+        "lines": [
+          "$12{,}5 + 8{,}25 + 9 + 6{,}75 + 10 = 46{,}5$",
+          "المحيط $46{,}5\\,\\mathrm{m}$."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "تقرّر ترك مدخل عرضه $3{,}5\\,\\mathrm{m}$ دون سياج. ما طول السياج بالمتر؟",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "43",
+      "misconceptionSignatures": [
+        {
+          "value": "46,5",
+          "id": "MISC-MASAHA-ENTRANCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المدخل جزء من الحدّ لا يوضع فيه سياج."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح عرض المدخل من محيط الأرض."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الطول الذي يُسيَّج هو ما يبقى بعد حذف المدخل."
+        }
+      ],
+      "feedback": {
+        "correct": "$46{,}5$ − $3{,}5$ = $43$.",
+        "incorrect": "المدخل لا يُسيَّج: نطرح عرضه من المحيط."
+      },
+      "solution": {
+        "lines": [
+          "$46{,}5 - 3{,}5 = 43$",
+          "طول السياج $43\\,\\mathrm{m}$."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما الوحدة المناسبة لقياس محيط البستان؟",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "عدد البلاطات التي تغطّي البستان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MASAHA-AREA-PERIM-CONFUSED"
+        },
+        {
+          "id": "B",
+          "content": "وحدة طول، كالمتر",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "وحدة مساحة، كبلاطة واحدة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MASAHA-AREA-PERIM-CONFUSED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القياس الذي تتحدث عنه: المساحة أم المحيط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل في جوابك العددين اللذين وجدتهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تامة: \"لأن … و …\"."
+        }
+      ],
+      "feedback": {
+        "correct": "المحيط طول، فيُقاس بوحدة طول.",
+        "incorrect": "المحيط هو طول الحدّ، ولذلك يُقاس بوحدة طول."
+      },
+      "solution": {
+        "lines": [
+          "المحيط طول حدّ، إذن وحدته وحدة طول كالمتر."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,237 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-talis-l2-009",
+  "lessonCode": "wadiya-idmajiya-talis",
+  "level": 2,
+  "metadata": {
+    "title": "السلّم المزدوج والرفّ",
+    "estimatedMinutes": 6,
+    "tags": [
+      "الخاصية العكسية",
+      "عدم التوازي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-talis_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "يصنع نجّار يحرص على إتقان عمله سلّمًا مزدوجًا. في الشكل المقابل: سلّم مزدوج ساقاه $[AB]$ و $[AC]$ طول كل منهما $2\\,\\mathrm{m}$ ، ورفّ $[MN]$ حيث $M$ من $[AB]$ و $N$ من $[AC]$ ، و $AM = 1{,}2\\,\\mathrm{m}$ و $AN = 1{,}3\\,\\mathrm{m}$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0.6,
+          1.907878402834
+        ],
+        "B": [
+          0.0,
+          0.0
+        ],
+        "C": [
+          1.2,
+          0.0
+        ],
+        "M": [
+          0.24,
+          0.763151361134
+        ],
+        "N": [
+          0.99,
+          0.667757440992
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "M",
+          "label": "1,2"
+        },
+        [
+          "M",
+          "B"
+        ],
+        {
+          "from": "A",
+          "to": "N",
+          "label": "1,3"
+        },
+        [
+          "N",
+          "C"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        {
+          "from": "M",
+          "to": "N",
+          "bold": true,
+          "tone": "amber"
+        }
+      ],
+      "ariaLabel": "سلّم مزدوج: الساقان [AB] و [AC] طول كل منهما 2، والرفّ [MN] حيث M من [AB] و N من [AC]؛ AM = 1,2 و AN = 1,3",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب النسبة $\\dfrac{AM}{AB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "3/5",
+      "misconceptionSignatures": [
+        {
+          "value": "5/3",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "3/2",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AM$ و $AB$ طولان يُقاسان من النقطة $A$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $AM$ على $AB$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AM}{AB} = \\dfrac{1{,}2}{2} = \\dfrac{3}{5}$ .",
+        "incorrect": "النسبة $\\dfrac{AM}{AB}$ : الطول $AM$ على الطول $AB$ ، وكلاهما من النقطة $A$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AM}{AB} = \\dfrac{1{,}2}{2} = \\dfrac{3}{5}$"
+        ],
+        "result": "\\dfrac{AM}{AB} = \\dfrac{3}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب النسبة $\\dfrac{AN}{AC}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "13/20",
+      "misconceptionSignatures": [
+        {
+          "value": "20/13",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "13/7",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AN$ و $AC$ طولان يُقاسان من النقطة $A$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $AN$ على $AC$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AN}{AC} = \\dfrac{1{,}3}{2} = \\dfrac{13}{20}$ .",
+        "incorrect": "النسبة $\\dfrac{AN}{AC}$ : الطول $AN$ على الطول $AC$ ، وكلاهما من النقطة $A$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AN}{AC} = \\dfrac{1{,}3}{2} = \\dfrac{13}{20}$"
+        ],
+        "result": "\\dfrac{AN}{AC} = \\dfrac{13}{20}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل الرفّ $(MN)$ يوازي $(BC)$ ؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-SHAKL-BURHAN"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النسبتين بقيمهما المضبوطة (الجداء المتصالب)، لا بقيم مقرّبة ولا بمظهر الشكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق أيضا من ترتيب النقط على المستقيمين المتقاطعين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AM}{AB} = 0{,}6$ و $\\dfrac{AN}{AC} = 0{,}65$ : الرفّ لا يوازي $(BC)$ .",
+        "incorrect": "الخاصية العكسية تتطلب شرطين معا: تساوي النسبتين بقيم مضبوطة، وترتيب النقط نفسه على المستقيمين."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}2 \\times 2 = 2{,}4$ و $2 \\times 1{,}3 = 2{,}6$ ، إذن $\\dfrac{AM}{AB} \\neq \\dfrac{AN}{AC}$ .",
+          "لو كان $(MN) \\parallel (BC)$ لكانت النسبتان متساويتين حسب خاصية طالس،",
+          "إذن المستقيمان $(MN)$ و $(BC)$ غير متوازيين."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

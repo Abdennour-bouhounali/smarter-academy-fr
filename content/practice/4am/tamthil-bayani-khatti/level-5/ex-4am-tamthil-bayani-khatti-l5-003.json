@@ -1,0 +1,429 @@
+{
+  "id": "ex-4am-tamthil-bayani-khatti-l5-003",
+  "lessonCode": "tamthil-bayani-khatti",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2014 — عرضا مصبنة بالأغواط",
+    "estimatedMinutes": 20,
+    "tags": [
+      "وضعية إدماجية",
+      "عرضان",
+      "قراءة بيانية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tamthil-bayani-khatti_P2",
+      "modelledOn": "BEM 2014 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2014",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تقترح مصبنة بالأغواط، أمينة على أغراض زبائنها، على زبائنها عرضين لغسل الأغطية والأفرشة:\n– العرض الأول: 200DA للكيلوغرام الواحد.\n– العرض الثاني: 50DA للكيلوغرام الواحد مع اشتراك شهري قدره 300DA.\nفي المعلم التالي، نصف المستقيم $(D)$ يمثّل المبلغ المدفوع حسب العرض الأول بدلالة الكتلة $x$ (بالكيلوغرام)، ووحدة محور التراتيب تمثّل 100DA.",
+    "table": {
+      "head": [
+        "الكتلة (kg)",
+        "4",
+        "10"
+      ],
+      "rows": [
+        [
+          "المبلغ حسب العرض الأول (DA)",
+          "…",
+          "2000"
+        ],
+        [
+          "المبلغ حسب العرض الثاني (DA)",
+          "…",
+          "800"
+        ]
+      ]
+    },
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "H": [
+          5,
+          10
+        ]
+      },
+      "rays": [
+        {
+          "from": "O",
+          "through": "H",
+          "name": "(D)",
+          "tone": "violet",
+          "extend": 0.04
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw"
+      },
+      "hidden": [
+        "H"
+      ],
+      "ariaLabel": "معلم على ورقة مرصوفة: نصف المستقيم (D) ينطلق من المبدأ O ويمثّل المبلغ حسب العرض الأول",
+      "caption": "محور الفواصل: الكتلة بـ kg — محور التراتيب: المبلغ بمئات الدنانير"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "انقل الجدول وأكمله.",
+      "statement": "المبلغ حسب العرض الأول من أجل $4kg$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "800",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ = الثمن الوحدوي × العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$200 \\times 4 = 800$ .",
+        "incorrect": "أعد الحساب حسب الصيغة المطلوبة، ولا تنس المبلغ الثابت إن وُجد."
+      },
+      "solution": {
+        "lines": [
+          "$200 \\times 4 = 800$"
+        ],
+        "result": "800"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "المبلغ حسب العرض الثاني من أجل $4kg$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "500",
+      "misconceptionSignatures": [
+        {
+          "value": "200",
+          "id": "MISC-TANASUB-MABLAGH-THABIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ = ثمن الكيلوغرام × الكتلة + الاشتراك."
+        }
+      ],
+      "feedback": {
+        "correct": "$50 \\times 4 + 300 = 500$ .",
+        "incorrect": "أعد الحساب حسب الصيغة المطلوبة، ولا تنس المبلغ الثابت إن وُجد."
+      },
+      "solution": {
+        "lines": [
+          "$50 \\times 4 + 300 = 500$"
+        ],
+        "result": "500"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "بقراءة بيانية:",
+      "statement": "عيّن المبلغ المدفوع حسب العرض الأول لغسل $3kg$ ، بالدينار.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "600",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ من العدد المعطى على محور الفواصل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اتجه عموديا حتى المستقيم $(D)$ ، ثم أفقيا حتى محور التراتيب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الصورة هي ترتيب نقطة المستقيم التي فاصلتها هذا العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة من $(D)$ التي فاصلتها $3$ ترتيبها $6$ .",
+        "incorrect": "الصورة تُقرأ على محور التراتيب: ترتيب نقطة المستقيم، لا فاصلتها."
+      },
+      "solution": {
+        "lines": [
+          "النقطة من المستقيم $(D)$ التي فاصلتها $3$ ترتيبها $6$ .",
+          "وحدة محور التراتيب 100DA : المبلغ $6 \\times 100 = 600$ ، أي 600DA ."
+        ],
+        "result": "f(3) = 6"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "عيّن الكتلة التي يُدفع مقابل غسلها 1000DA حسب العرض الأول.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الكتلة بـ kg",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ من العدد المعطى على محور التراتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اتجه أفقيا حتى المستقيم $(D)$ ، ثم عموديا حتى محور الفواصل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد المطلوب هو فاصلة نقطة المستقيم التي ترتيبها الصورة المعطاة."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة من $(D)$ التي ترتيبها $10$ فاصلتها $5$ .",
+        "incorrect": "العدد الذي علمت صورته يُقرأ على محور الفواصل: فاصلة نقطة المستقيم التي ترتيبها الصورة المعطاة."
+      },
+      "solution": {
+        "lines": [
+          "النقطة من المستقيم $(D)$ التي ترتيبها $10$ فاصلتها $5$ .",
+          "1000DA توافق 10 وحدات على محور التراتيب: الكتلة $5kg$ ."
+        ],
+        "result": "f(5) = 10"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ج",
+      "statement": "$(D)$ تمثيل دالة خطية $f$ (المبلغ بمئات الدنانير). استنتج عبارة $f(x)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "0,5",
+          "id": "MISC-KHATTIYA-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$f$ دالة خطية: $f(x) = ax$ ، وتمثيلها يشمل النقطة ذات الإحداثيين $(5 ; 10)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب المعادلة $a \\times 5 = 10$ ثم حلّها: الترتيب على الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{10}{5} = 2$ ، إذن $f(x) = 2x$ .",
+        "incorrect": "المعامل هو الترتيب مقسوما على الفاصلة (وليس العكس)، مع الانتباه إلى الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "$f$ دالة خطية، إذن $f(x) = ax$ .",
+          "$f(5) = 10$ معناه $a \\times 5 = 10$",
+          "$a = \\dfrac{10}{5} = 2$"
+        ],
+        "result": "f(x) = 2x"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ا",
+      "lead": "ليكن $g(x)$ المبلغ بمئات الدنانير حسب العرض الثاني، حيث $g(x) = 0{,}5x + 3$ .",
+      "statement": "مثّل بيانيا الدالة $g$ في المعلم نفسه.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$g$ دالة تآلفية: تمثيلها مستقيم لا يشمل المبدأ؛ عيّن نقطتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مثلا $g(0) = 3$ و $g(4) = 5$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "تمثيل $g$ نصف مستقيم ينطلق من النقطة $(0 ; 3)$ ويشمل النقطة $(4 ; 5)$ .",
+          "يقطع $(D)$ في النقطة $(2 ; 4)$ ."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "sub": "ب",
+      "statement": "حلّ المعادلة $2x = 0{,}5x + 3$ ، ثم فسّر الحل.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الحل $x$ (عدد فقط)",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}5x = 3$ ، إذن $x = 2$ : من أجل $2kg$ يتساوى المبلغان.",
+        "incorrect": "انقل $0{,}5x$ إلى الطرف الأيسر ثم اقسم."
+      },
+      "solution": {
+        "lines": [
+          "$2x - 0{,}5x = 3$",
+          "$1{,}5x = 3$ ، إذن $x = 2$",
+          "من أجل $2kg$ يدفع الزبون 400DA في العرضين: هي فاصلة نقطة تقاطع التمثيلين."
+        ],
+        "result": "x = 2"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q8",
+      "step": "04",
+      "statement": "☜ تريد سعاد غسل $7kg$ من الأغطية في هذا الشهر. أيّ العرضين تختار؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "العرض الأول",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TANASUB-MABLAGH-THABIT"
+        },
+        {
+          "id": "B",
+          "content": "العرض الثاني",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المبلغين من أجل $7kg$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "العرض الثاني: 650DA بدل 1400DA .",
+        "incorrect": "احسب المبلغ حسب كل عرض، ولا تنس الاشتراك في العرض الثاني."
+      },
+      "solution": {
+        "lines": [
+          "العرض الأول: $200 \\times 7 = 1400$ ، أي 1400DA .",
+          "العرض الثاني: $50 \\times 7 + 300 = 650$ ، أي 650DA .",
+          "إذن تختار سعاد العرض الثاني."
+        ],
+        "result": "العرض الثاني"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

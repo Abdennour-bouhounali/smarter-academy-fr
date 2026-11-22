@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-takbir-tasghir-l5-009",
+  "lessonCode": "takbir-tasghir",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — مقطع على بعد من الرأس",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مقطع هرم",
+      "المساحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takbir-tasghir_P2",
+      "modelledOn": "act-5"
+    }
+  },
+  "statement": {
+    "content": "هرم ارتفاعه $6\\,\\mathrm{cm}$ ومساحة قاعدته $36\\,\\mathrm{cm}^2$ ، يقطعه مستو يوازي قاعدته على بعد $4\\,\\mathrm{cm}$ من رأسه."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مساحة المقطع:",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$24\\,\\mathrm{cm}^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-MISAHA-K"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{32}{3}\\,\\mathrm{cm}^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-BUUD"
+        },
+        {
+          "id": "C",
+          "content": "$16\\,\\mathrm{cm}^2$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المقطع تصغير للقاعدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة $k = \\dfrac{4}{6} = \\dfrac{2}{3}$ ، والمساحة تُضرب في $k^2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\dfrac{4}{9} \\times 36$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\left(\\dfrac{2}{3}\\right)^2 \\times 36 = 16\\,\\mathrm{cm}^2$ .",
+        "incorrect": "المساحة تُضرب في $k^2$ لا في $k$ ."
+      }
+    }
+  ]
+}

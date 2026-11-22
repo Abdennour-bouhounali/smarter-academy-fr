@@ -1,0 +1,190 @@
+{
+  "id": "ex-4am-dala-khattiya-l3-010",
+  "lessonCode": "dala-khattiya",
+  "level": 3,
+  "metadata": {
+    "title": "تمييز دالة خطية ثم استعمالها",
+    "estimatedMinutes": 5,
+    "tags": [
+      "تمييز دالة خطية",
+      "صورة عدد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "adaptedFrom": "ex-4am-dala-khattiya-l3-010"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الدوال $f$ ، $g$ ، $h$ المعرّفة كما يلي:",
+    "formulas": [
+      "f : x \\longmapsto x - 0{,}5",
+      "g : x \\longmapsto x^2 + 1",
+      "h : x \\longmapsto -0{,}5x"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن من بين هذه الدوال الدالة الخطية. برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$f$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KHATTIYA-AFFINE"
+        },
+        {
+          "id": "B",
+          "content": "$g$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$h$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدالة الخطية من الشكل $x \\longmapsto ax$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب صورة 0 بكل دالة."
+        }
+      ],
+      "feedback": {
+        "correct": "$h(x) = -0{,}5 \\times x$ من الشكل $ax$ .",
+        "incorrect": "دالة صورة 0 بها غير معدومة ليست خطية."
+      },
+      "solution": {
+        "lines": [
+          "$f(0) = -0{,}5 \\neq 0$ و $g(0) = 1 \\neq 0$ : $f$ و $g$ ليستا خطيتين.",
+          "$h(x) = -0{,}5x$ من الشكل $ax$ : $h$ دالة خطية."
+        ],
+        "result": "h"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب صورة العدد $-12$ بالدالة الخطية.",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "24",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "-6",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "صورة العدد $x$ بالدالة الخطية $h$ هي $h(x) = -0{,}5 \\times x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $x$ بالعدد $-12$ ثم احسب الجداء، وانتبه إلى الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$h(-12) = \\left(-0{,}5\\right) \\times \\left(-12\\right) = 6$ .",
+        "incorrect": "الصورة جداء المعامل في العدد: $h(x) = -0{,}5 \\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$h(-12) = \\left(-0{,}5\\right) \\times \\left(-12\\right)$",
+          "$h(-12) = 6$"
+        ],
+        "result": "h(-12) = 6"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "جد العدد الذي صورته $-4$ بالدالة الخطية.",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "-8",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد المطلوب $x$ يحقق $h(x) = -4$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المعادلة $-0{,}5x = -4$ : اقسم الطرفين على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{-4}{-0{,}5} = 8$ .",
+        "incorrect": "لا تحسب صورة العدد المعطى: ابحث عن العدد $x$ الذي صورته هذا العدد."
+      },
+      "solution": {
+        "lines": [
+          "$h(x) = -4$ معناه $-0{,}5x = -4$",
+          "$x = \\dfrac{-4}{-0{,}5} = 8$"
+        ],
+        "result": "x = 8"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

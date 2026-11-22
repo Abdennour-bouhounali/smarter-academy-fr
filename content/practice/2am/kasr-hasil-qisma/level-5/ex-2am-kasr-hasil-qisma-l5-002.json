@@ -1,0 +1,268 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l5-002",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — حليب لعائلات الحيّ",
+    "estimatedMinutes": 12,
+    "tags": [
+      "قيم مقرّبة",
+      "قرار",
+      "برّر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: يريد مزارع أن يوزّع $45$ L من الحليب بالتساوي على $7$ عائلات محتاجة في الحيّ.\nالجزء الثاني: لدى كلّ عائلة قارورة، ويريد المزارع أن يعرف سعة القارورة التي تكفي لحصّة العائلة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}01$ بالنقصان لحصّة العائلة (باللتر).",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "6.42",
+      "misconceptionSignatures": [
+        {
+          "value": "6.43",
+          "id": "MISC-QARIBA-ROUNDED"
+        },
+        {
+          "value": "6.428",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالنقصان لا تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة دون أن تزيد شيئًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب القيمة في المقسوم عليه: يجب ألاّ يتجاوز الجداء المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$6{,}42 < \\frac{45}{7} < 6{,}43$.",
+        "incorrect": "بالنقصان: نحتفظ بالأرقام حتى الرتبة المطلوبة ونُهمل ما بعدها دون تغيير الرقم الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 6{,}42 = 44{,}94$",
+          "$7 \\times 6{,}43 = 45{,}01$",
+          "$44{,}94 < 45 < 45{,}01$"
+        ],
+        "result": "6{,}42"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "وأعط القيمة المقرّبة إلى $0{,}01$ بالزيادة.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "6.43",
+      "misconceptionSignatures": [
+        {
+          "value": "6.42",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "6.429",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالزيادة هي أصغر قيمة من هذه الرتبة تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من القيمة بالنقصان ثم أضف وحدة واحدة من الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$6{,}42 < \\frac{45}{7} < 6{,}43$.",
+        "incorrect": "بالزيادة: هي القيمة التي تلي القيمة بالنقصان مباشرة في الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 6{,}43 = 45{,}01$",
+          "$45{,}01 > 45$",
+          "القيمة بالزيادة هي $6{,}43$"
+        ],
+        "result": "6{,}43"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "الجزء الثاني: هل تكفي القارورة؟",
+      "statement": "هل تكفي قارورة سعتها $6{,}4$ L لحصّة عائلة؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أو قارن بدقّة قبل أن تجيب."
+        }
+      ],
+      "feedback": {
+        "correct": "لا: $7 \\times 6{,}4 = 44{,}8 < 45$ ، فلا تكفي.",
+        "incorrect": "اضرب سعة القارورة في $7$ وقارن بـ $45$."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 6{,}4 = 44{,}8$",
+          "$44{,}8 < 45$ : لا تكفي"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "ما أصغر سعة بالعُشر $0{,}1$ تكفي حتمًا لحصّة العائلة؟ (القيمة المقرّبة إلى $0{,}1$ بالزيادة)",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "6.5",
+      "misconceptionSignatures": [
+        {
+          "value": "6.4",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "6.43",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالزيادة هي أصغر قيمة من هذه الرتبة تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من القيمة بالنقصان ثم أضف وحدة واحدة من الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$6{,}4 < \\frac{45}{7} < 6{,}5$.",
+        "incorrect": "بالزيادة: هي القيمة التي تلي القيمة بالنقصان مباشرة في الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 6{,}5 = 45{,}5$",
+          "$45{,}5 > 45$",
+          "القيمة بالزيادة هي $6{,}5$"
+        ],
+        "result": "6{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "اختر قارورة سعتها $6{,}5$ L لكلّ عائلة. برّر أنّها تكفي دون أن نعرف حصّة العائلة بالضبط.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب جملة أو جملتين: الفكرة ثم الحساب الذي يدعمها."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة بالزيادة تتجاوز الحصّة: $\\dfrac{45}{7} < 6{,}5$ ، فالقارورة تكفي.",
+        "incorrect": "قارن تبريرك بالحلّ النموذجي: الفكرة ثم الحساب الذي يدعمها."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 6{,}5 = 45{,}5 \\ge 45$",
+          "القيمة بالزيادة تتجاوز الحصّة: $\\dfrac{45}{7} < 6{,}5$ ، فالقارورة تكفي."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

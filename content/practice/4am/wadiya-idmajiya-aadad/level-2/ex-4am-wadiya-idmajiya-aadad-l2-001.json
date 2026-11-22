@@ -1,0 +1,126 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-aadad-l2-001",
+  "lessonCode": "wadiya-idmajiya-aadad",
+  "level": 2,
+  "metadata": {
+    "title": "سلسلة التفوق، الوضعية 6 — البيوت البلاستيكية 165m و 88m",
+    "estimatedMinutes": 6,
+    "tags": [
+      "القاسم المشترك الأكبر",
+      "تبليط"
+    ],
+    "source": {
+      "type": "worksheet",
+      "worksheetId": "tafawwuq-01",
+      "elementId": "ws01-sit-06",
+      "section": "الوضعيات",
+      "number": 6
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "يملك عبد الرحيم قطعة أرض مستطيلة الشكل بُعداها 165m و 88m، وهو يرى أنّ إتقان العمل واستغلال الأرض كلها من الأمانة، فيريد أن يقيم عليها بيوتًا بلاستيكية ذات قواعد مربعة الشكل متقايسة، طول ضلع كل قاعدة d (عدد طبيعي بالمتر)، تغطي الأرض كلها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أوجد قيمة d حتى يكون عدد البيوت البلاستيكية أقل ما يمكن.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (بالمتر)",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 165 على 88: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (165 ; 88) بالزوج (88 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 11.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$165 = 88 \\times 1 + 77$",
+          "$88 = 77 \\times 1 + 11$",
+          "$77 = 11 \\times 7 + 0$",
+          "آخر باقٍ غير معدوم هو 11، إذن:",
+          "d يقسم 165 و 88، وأقل عدد من البيوت يوافق أكبر قيمة للعدد d."
+        ],
+        "result": "d = 11\\,m"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هو عندئذ عدد البيوت البلاستيكية؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "120",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب عدد القواعد على طول الأرض، ثم على عرضها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد البيوت = (عدد القواعد على الطول) × (عدد القواعد على العرض)."
+        }
+      ],
+      "feedback": {
+        "correct": "$15 \\times 8 = 120$ بيتًا بلاستيكيًا.",
+        "incorrect": "اقسم كل بُعد على قيمة d التي وجدتها، ثم اضرب الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "على الطول: $165 \\div 11 = 15$",
+          "على العرض: $88 \\div 11 = 8$",
+          "عدد البيوت: $15 \\times 8 = 120$"
+        ],
+        "result": "120"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

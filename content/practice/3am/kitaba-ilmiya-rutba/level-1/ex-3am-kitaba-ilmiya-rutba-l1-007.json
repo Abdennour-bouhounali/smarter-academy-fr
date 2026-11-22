@@ -1,0 +1,281 @@
+{
+  "id": "ex-3am-kitaba-ilmiya-rutba-l1-007",
+  "lessonCode": "kitaba-ilmiya-rutba",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — كتابة علمية لأعداد متنوّعة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "كتابة علمية",
+      "أسّ معدوم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أعط الكتابة العلمية $a\\times10^{n}$ للأعداد التالية.",
+    "formulas": [
+      "G = 1\\,250\\,000\\,000",
+      "H = 14{,}6",
+      "I = 0{,}5",
+      "J = 9"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "الكتابة العلمية للعدد $G$ هي $a\\times10^{n}$ حيث $1\\le a<10$ : ما قيمة الأسّ $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العدد بـ 1 وبـ 10: هل هو كبير جدًّا أم صغير جدًّا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد المراتب التي تنقل بها الفاصلة هو $|n|$ ؛ الأسّ موجب إن كان العدد كبيرًا وسالب إن كان العدد أصغر من 1."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: $10^{n}$ هي أكبر قوة للعدد 10 لا تتجاوز العدد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-ILMIYA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$G = 1{,}25\\times10^{9}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $G$ على الشكل $a\\times10^{n}$ مع $1\\le a<10$ .",
+          "$G = 1{,}25\\times10^{9}$ ، إذن $n = 9$ ."
+        ],
+        "result": "n = 9"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "الكتابة العلمية للعدد $H$ هي $a\\times10^{n}$ حيث $1\\le a<10$ : ما قيمة $a$ ؟",
+      "answerType": "rational",
+      "answerFormat": "العدد $a$ (عدد عشري)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد أوّل رقم غير معدوم في العدد وانظر أين تقع الفاصلة بالنسبة إليه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في الكتابة العلمية $a\\times10^{n}$ يكون $a$ من 1 إلى أقلّ تمامًا من 10: ضع الفاصلة بعد أوّل رقم غير معدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: ضرب $a$ في $10^{n}$ يجب أن يعيد العدد المعطى."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "1.46",
+      "feedback": {
+        "correct": "$H = 1{,}46\\times10^{1}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $H$ على الشكل $a\\times10^{n}$ مع $1\\le a<10$ .",
+          "$H = 1{,}46\\times10^{1}$ ، إذن $a = 1{,}46$ ."
+        ],
+        "result": "a = 1.46"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "الكتابة العلمية للعدد $H$ هي $a\\times10^{n}$ حيث $1\\le a<10$ : ما قيمة الأسّ $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العدد بـ 1 وبـ 10: هل هو كبير جدًّا أم صغير جدًّا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد المراتب التي تنقل بها الفاصلة هو $|n|$ ؛ الأسّ موجب إن كان العدد كبيرًا وسالب إن كان العدد أصغر من 1."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: $10^{n}$ هي أكبر قوة للعدد 10 لا تتجاوز العدد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-ILMIYA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$H = 1{,}46\\times10^{1}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $H$ على الشكل $a\\times10^{n}$ مع $1\\le a<10$ .",
+          "$H = 1{,}46\\times10^{1}$ ، إذن $n = 1$ ."
+        ],
+        "result": "n = 1"
+      }
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "الكتابة العلمية للعدد $I$ هي $a\\times10^{n}$ حيث $1\\le a<10$ : ما قيمة الأسّ $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العدد بـ 1 وبـ 10: هل هو كبير جدًّا أم صغير جدًّا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد المراتب التي تنقل بها الفاصلة هو $|n|$ ؛ الأسّ موجب إن كان العدد كبيرًا وسالب إن كان العدد أصغر من 1."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: $10^{n}$ هي أكبر قوة للعدد 10 لا تتجاوز العدد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-1",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-ILMIYA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "$I = 5\\times10^{-1}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $I$ على الشكل $a\\times10^{n}$ مع $1\\le a<10$ .",
+          "$I = 5\\times10^{-1}$ ، إذن $n = -1$ ."
+        ],
+        "result": "n = -1"
+      }
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "الكتابة العلمية للعدد $J$ هي $a\\times10^{n}$ حيث $1\\le a<10$ : ما قيمة الأسّ $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العدد بـ 1 وبـ 10: هل هو كبير جدًّا أم صغير جدًّا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد المراتب التي تنقل بها الفاصلة هو $|n|$ ؛ الأسّ موجب إن كان العدد كبيرًا وسالب إن كان العدد أصغر من 1."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: $10^{n}$ هي أكبر قوة للعدد 10 لا تتجاوز العدد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "0",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-ILMIYA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$J = 9\\times10^{0}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $J$ على الشكل $a\\times10^{n}$ مع $1\\le a<10$ .",
+          "$J = 9\\times10^{0}$ ، إذن $n = 0$ ."
+        ],
+        "result": "n = 0"
+      }
+    }
+  ]
+}

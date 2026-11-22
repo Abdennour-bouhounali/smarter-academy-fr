@@ -1,0 +1,255 @@
+{
+  "id": "ex-3am-maqlub-qismat-kasrayn-l2-004",
+  "lessonCode": "maqlub-qismat-kasrayn",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — القسمة تُكبّر أحيانًا",
+    "estimatedMinutes": 8,
+    "tags": [
+      "قسمة",
+      "كسر",
+      "تعليل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "نقسم العدد $6$ على $\\dfrac{3}{4}$ .",
+      "statement": "احسب $6 \\div \\dfrac{3}{4}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "8",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "9/2",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "1/8",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "2/9",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ الكسرين هو المقسوم وأيّهما المقسوم عليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني: نقلب المقسوم عليه وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء، اختزل العوامل المشتركة قبل الضرب، ثمّ اكتب الناتج على أبسط شكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 \\div \\dfrac{3}{4} = 8$ لأنّ قسمة كسر على كسر هي ضرب الأوّل في مقلوب الثاني.",
+        "incorrect": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني فقط، ثمّ نختزل؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $6 \\div \\dfrac{3}{4} = 6 \\times \\dfrac{4}{3}$ .",
+          "$= \\dfrac{6 \\times 4}{1 \\times 3} = 8$ ."
+        ],
+        "result": "8"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "الناتج الذي وجدته، مقارنةً بالعدد $6$ ، هو:",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "أكبر من $6$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "أصغر من $6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQLUB-DIVSMALLER"
+        },
+        {
+          "id": "C",
+          "content": "يساوي $6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQLUB-DIVSMALLER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الخيارات واحسب كلاّ منها بدل أن تخمّن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ خيار على الأعداد الواردة فيه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حوّل القسمة إلى جداء بمقلوب القاسم، ثمّ قارن."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 \\div \\dfrac{3}{4} = 8 > 6$ .",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$6 \\div \\dfrac{3}{4} = 8$ و $8 > 6$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "برّر لماذا يمكن أن يكون ناتج القسمة أكبر من المقسوم.",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجب أن تبرّره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل تعريف المقلوب (جداء العدد ومقلوبه) أو القسمة بالضرب في المقلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "القسمة على عدد أصغر من $1$ هي الضرب في مقلوبه الأكبر من $1$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "$6 \\div \\dfrac{3}{4} = 6 \\times \\dfrac{4}{3}$ .",
+          "مقلوب $\\dfrac{3}{4}$ هو $\\dfrac{4}{3}$ وهو أكبر من $1$ ، فالضرب فيه يُكبّر العدد."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "lead": "احسب.",
+      "statement": "احسب $\\dfrac{5}{2} \\div 0{,}5$ .",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "5/4",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "1/5",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "4/5",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المقسوم؟ وما العدد المقسوم عليه؟ وما مقلوب هذا الأخير؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد غير معدوم هي الضرب في مقلوبه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حوّل القسمة إلى جداء، واختزل قبل أن تضرب كلّما أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{5}{2} \\div 0{,}5 = 5$ لأنّ القسمة على عدد هي الضرب في مقلوبه.",
+        "incorrect": "القسمة على عدد غير معدوم هي الضرب في مقلوبه؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}5 = \\dfrac{5}{10} = \\dfrac{1}{2}$ .",
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $\\dfrac{5}{2} \\div \\dfrac{1}{2} = \\dfrac{5}{2} \\times 2$ .",
+          "$= \\dfrac{5 \\times 2}{2 \\times 1} = 5$ ."
+        ],
+        "result": "5"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

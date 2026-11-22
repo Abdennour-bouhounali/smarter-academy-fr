@@ -1,0 +1,73 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l3-008",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — منتصف واحد",
+    "estimatedMinutes": 3,
+    "tags": [
+      "المنتصف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_shuaayn-mutasawiyayn_P1",
+      "modelledOn": "know-3"
+    }
+  },
+  "statement": {
+    "content": "A و B نقطتان، M و N نقطتان حيث $\\overrightarrow{AM} = \\overrightarrow{MB}$ و $\\overrightarrow{AN} = \\overrightarrow{NB}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ماذا تستنتج؟",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "M و N مختلفتان لأن لهما اسمين مختلفين",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "M و N منطبقتان: كلتاهما منتصف [AB]",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "M و N متناظرتان بالنسبة إلى (AB)",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا تمثّل كل نقطة بالنسبة إلى [AB]؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "معارف 3: تساوي الشعاعين يعطي المنتصف."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لقطعة واحدة منتصف واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "M منتصف [AB] و N منتصف [AB]، ولقطعة منتصف واحد: M = N.",
+        "incorrect": "طبّق معارف 3 على كل مساواة."
+      }
+    }
+  ]
+}

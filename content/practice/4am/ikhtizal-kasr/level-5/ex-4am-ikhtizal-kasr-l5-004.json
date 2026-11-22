@@ -1,0 +1,372 @@
+{
+  "id": "ex-4am-ikhtizal-kasr-l5-004",
+  "lessonCode": "ikhtizal-kasr",
+  "level": 5,
+  "metadata": {
+    "title": "سلسلة التفوق، تمرين 12 — صهريج ماء لمدرسة ابتدائية",
+    "estimatedMinutes": 17,
+    "tags": [
+      "كسر غير قابل للاختزال",
+      "وضعية"
+    ],
+    "source": {
+      "type": "worksheet",
+      "worksheetId": "tafawwuq-01",
+      "elementId": "ws01-ex-12",
+      "section": "التمارين",
+      "number": 12
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تتكفّل جمعية خيرية، ابتغاء مرضاة الله، بتزويد مدرسة ابتدائية بالجلفة بالماء بواسطة شاحنة صهريج سعته 1044 L، ليحافظ التلاميذ على نظافة مدرستهم دون تبذير.\n• في الأسبوع الأول استهلكت المدرسة 2175 L.\n• في الأسبوع الثاني استهلكت ما يعادل $\\dfrac{5}{6}$ من سعة الصهريج.\nنسمّي $E$ عدد الصهاريج المستهلكة في الأسبوعين، حيث: $E = \\dfrac{2175}{1044} + \\dfrac{5}{6}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 2175 و 1044.",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "87",
+      "misconceptionSignatures": [
+        {
+          "value": "29",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 2175 على 1044: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (2175 ; 1044) بالزوج (1044 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 87.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$2175 = 1044 \\times 2 + 87$",
+          "$1044 = 87 \\times 12 + 0$",
+          "آخر باقٍ غير معدوم هو 87، إذن:"
+        ],
+        "result": "PGCD(2175 ; 1044) = 87"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل العددان 2175 و 1044 أوليان فيما بينهما؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة (ا)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددان أوليان فيما بينهما: قاسمهما المشترك الأكبر يساوي 1."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(2175 ; 1044) = 87 ≠ 1: العددان ليسا أوليين فيما بينهما.",
+        "incorrect": "قارن القاسم المشترك الأكبر الذي وجدته بالعدد 1."
+      },
+      "solution": {
+        "lines": [
+          "PGCD(2175 ; 1044) = 87 ≠ 1، إذن العددان ليسا أوليين فيما بينهما."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "اكتب الكسر $\\dfrac{2175}{1044}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "25/12",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "725/348",
+          "id": "MISC-IKHTIZAL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 87: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال 01.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2175}{1044} = \\dfrac{2175 \\div 87}{1044 \\div 87}$"
+        ],
+        "result": "\\dfrac{2175}{1044} = \\dfrac{25}{12}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب $E$ ، ثم اكتبه على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "35/12",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "وحّد المقامين 12 و 6."
+        }
+      ],
+      "feedback": {
+        "correct": "حساب صحيح، والنتيجة على شكل كسر غير قابل للاختزال.",
+        "incorrect": "احترم أولوية العمليات، ثم اختزل الناتج إلى أن يصير البسط والمقام أوليين فيما بينهما.",
+        "notIrreducible": "القيمة صحيحة لكن الكسر ما زال قابلًا للاختزال: اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "$E = \\dfrac{25}{12} + \\dfrac{5}{6}$",
+          "$E = \\dfrac{25}{12} + \\dfrac{10}{12}$"
+        ],
+        "result": "E = \\dfrac{35}{12}"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "sub": "ا",
+      "lead": "نكتب $E$ على الشكل $a + \\dfrac{b}{c}$ حيث $a$ عدد طبيعي و $\\dfrac{b}{c}$ كسر غير قابل للاختزال أصغر من 1.",
+      "statement": "$a = ?$",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم مرة يحتوي البسط 35 على المقام 12؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$35 = 12 \\times 2 + 11$",
+        "incorrect": "اقسم البسط على المقام قسمة إقليدية: $a$ هو حاصل القسمة."
+      },
+      "solution": {
+        "lines": [
+          "$35 = 12 \\times 2 + 11$",
+          "$E = 2 + \\dfrac{11}{12}$"
+        ],
+        "result": "a = 2"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "sub": "ب",
+      "statement": "$\\dfrac{b}{c} = ?$",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "11/12",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "البسط $b$ هو باقي قسمة 35 على 12."
+        }
+      ],
+      "feedback": {
+        "correct": "11 و 12 أوليان فيما بينهما.",
+        "incorrect": "اكتب باقي القسمة الإقليدية للبسط على المقام فوق المقام 12.",
+        "notIrreducible": "القيمة صحيحة لكن الكسر ما زال قابلًا للاختزال: اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "$35 = 12 \\times 2 + 11$ ، والعددان 11 و 12 أوليان فيما بينهما."
+        ],
+        "result": "\\dfrac{b}{c} = \\dfrac{11}{12}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "05",
+      "sub": "ا",
+      "lead": "ينقل الصهريج في كل رحلة سعته كاملة، إلا الرحلة الأخيرة.",
+      "statement": "ما هو أقل عدد من الرحلات يلزم لنقل ما استهلكته المدرسة في الأسبوعين؟",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الكتابة $E = a + \\dfrac{b}{c}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "صهريجان كاملان وجزء من صهريج ثالث.",
+        "incorrect": "الجزء $\\dfrac{b}{c}$ من الصهريج يحتاج إلى رحلة كاملة أيضًا."
+      },
+      "solution": {
+        "lines": [
+          "$E = 2 + \\dfrac{11}{12}$ : رحلتان بصهريج مملوء، ورحلة ثالثة بـ $\\dfrac{11}{12}$ من الصهريج."
+        ],
+        "result": "3"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q8",
+      "step": "05",
+      "sub": "ب",
+      "statement": "ما هي كمية الماء المنقولة في الرحلة الأخيرة (باللتر)؟",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (باللتر)",
+      "expectedAnswer": "957",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الجزء $\\dfrac{b}{c}$ من سعة الصهريج 1044 L."
+        }
+      ],
+      "feedback": {
+        "correct": "$1044 \\times \\dfrac{11}{12} = 87 \\times 11 = 957$",
+        "incorrect": "اضرب سعة الصهريج في الكسر $\\dfrac{b}{c}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$1044 \\times \\dfrac{11}{12} = 87 \\times 11 = 957$",
+          "تحقق: $2175 + 870 = 3045$ و $2 \\times 1044 + 957 = 3045$ ."
+        ],
+        "result": "957\\,L"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

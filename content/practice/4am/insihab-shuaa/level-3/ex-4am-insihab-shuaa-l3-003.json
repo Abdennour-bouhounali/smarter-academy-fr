@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-insihab-shuaa-l3-003",
+  "lessonCode": "insihab-shuaa",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 3 — ممثّل مبدؤه K",
+    "estimatedMinutes": 2,
+    "tags": [
+      "الممثّلات"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-3",
+      "page": 134,
+      "section": "الأشعة والمساواة الشعاعية",
+      "number": 3
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 134): ABC مثلث كيفي. K هي منتصف [BC]."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الممثّل الذي مبدؤه K للشعاع $\\overrightarrow{AK}$ هو $\\overrightarrow{KA'}$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_insihab-shuaa_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "A′ نظيرة A بالنسبة إلى K",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "A′ = A",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        },
+        {
+          "id": "C",
+          "content": "A′ منتصف [AK]",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TUL-FAQAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{AB} = \\overrightarrow{DC}$ يعني ABCD متوازي أضلاع: اقرأ A ثم B ثم نهاية الشعاع الثاني ثم مبدأه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في متوازي الأضلاع، كل ضلعين متقابلين يعطيان شعاعين متساويين إذا قرأناهما في نفس الجهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارسم الرباعي على ورقة وضع السهمين لتتحقق من الجهة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AK}$ = $\\overrightarrow{KA'}$ : نتابع من K بنفس الحركة، فـ K منتصف [AA′].",
+        "incorrect": "$\\overrightarrow{KA}$ له اتجاه معاكس للشعاع $\\overrightarrow{AK}$ ."
+      },
+      "difficulty": 3
+    }
+  ]
+}

@@ -13,15 +13,17 @@ use Illuminate\Testing\TestResponse;
 use Tests\TestCase;
 
 /**
- * La chaîne complète : un élève signale un problème → le serveur reconstruit
- * le contexte tout seul → l'administrateur le voit, l'ouvre, le résout → la
- * décision est journalisée.
- *
- * C'est le test qui dit si le panneau d'administration sert à quelque chose.
+ * La chaîne complète : un RELECTEUR (ambassadeur « سفير » ou administrateur)
+ * signale un problème en UN envoi → le serveur reconstruit le contexte tout
+ * seul → l'administrateur le voit, l'ouvre, le résout → la décision est
+ * journalisée. Depuis 2026-10-05, l'élève et l'enseignant ordinaire ne
+ * signalent plus (403 not_a_reviewer).
  */
 class StudentReportFlowTest extends TestCase
 {
     use RefreshDatabase;
+
+    private User $ambassador;
 
     private User $student;
 
@@ -46,24 +48,17 @@ class StudentReportFlowTest extends TestCase
             'title' => 'Comparer des fractions', 'stage' => 'discovery',
         ]);
 
+        $this->ambassador = $this->makeAmbassador();
         $this->student = User::factory()->create(['role' => User::ROLE_STUDENT, 'grade' => '6e']);
         $this->admin = User::factory()->create(['role' => User::ROLE_ADMIN]);
     }
 
-    /**
-     * `actingAs` plutôt qu'un en-tête Bearer : Laravel MÉMORISE l'utilisateur
-     * résolu pour toute la durée du cas de test, si bien qu'après un premier
-     * appel authentifié en élève, reposer l'en-tête avec le jeton de l'admin
-     * continue de résoudre l'élève — et la porte can:admin répond 403 sur un
-     * jeton pourtant valide. `actingAs` réinitialise l'utilisateur courant à
-     * chaque appel, ce dont ce test a besoin puisqu'il alterne les deux rôles.
-     *
-     * La suite couvre par ailleurs le chemin par vrai jeton dans
-     * AdminAuthorizationTest, où chaque cas n'utilise qu'un seul rôle.
-     */
-    private function asStudent(): self
+    private function makeAmbassador(): User
     {
-        return $this->actingAs($this->student, 'sanctum');
+        $user = User::factory()->create(['role' => User::ROLE_TEACHER]);
+        $user->forceFill(['is_ambassador' => true])->save();
+
+        return $user;
     }
 
     private function asAdmin(): self
@@ -71,88 +66,89 @@ class StudentReportFlowTest extends TestCase
         return $this->actingAs($this->admin, 'sanctum');
     }
 
-    /**
-     * Le parcours réel, en deux temps : le clic pose le signal, l'envoi le
-     * complète. Les tests passent par là plutôt que d'écrire deux appels à
-     * chaque fois — c'est ce que fait le bouton.
-     *
-     * @return array{0: TestResponse, 1: int|null}
-     */
-    private function report(array $context, ?array $details = null, ?User $as = null): array
+    /** UN envoi : le contexte et les détails ensemble. */
+    private function report(array $payload, ?User $as = null): TestResponse
     {
-        $actor = $as ?? $this->student;
+        // Message obligatoire : un texte par défaut, sauf si le test en fournit un.
+        $payload += ['note' => 'Le problème est décrit ici.'];
 
-        $signal = $this->actingAs($actor, 'sanctum')->postJson('/api/v1/reports', $context);
-
-        if ($signal->status() !== 201 || $details === null) {
-            return [$signal, $signal->json('report.id')];
-        }
-
-        $id = $signal->json('report.id');
-
-        return [
-            $this->actingAs($actor, 'sanctum')->patchJson("/api/v1/reports/{$id}", $details),
-            $id,
-        ];
+        return $this->actingAs($as ?? $this->ambassador, 'sanctum')->postJson('/api/v1/reports', $payload);
     }
 
     /**
-     * L'élève n'envoie que des CODES. Le serveur retrouve seul la leçon et le
-     * module, et c'est ce qui garantit qu'un signalement pointe vers le bon
-     * contenu même si l'élève n'a rien identifié.
+     * Le relecteur n'envoie que des CODES. Le serveur retrouve seul la leçon et le
+     * module.
      */
     public function test_le_serveur_reconstruit_le_contexte_a_partir_des_codes(): void
     {
-        [$response] = $this->report([
+        $this->report([
             'source' => 'module',
             'lessonCode' => 'fractions',
             'grade' => '6e',
             'moduleNumber' => 3,
             'step' => 'etape-2',
             'route' => '/courses/college/6e/nombres_calculs/fractions/comparer',
-        ], [
             'category' => 'answer_correction_problem',
             'note' => 'La correction dit 3/4 mais je trouve 2/4.',
-        ]);
-
-        $response->assertStatus(200)->assertJsonPath('success', true);
+        ])->assertStatus(201)->assertJsonPath('success', true)->assertJsonPath('report.hasScreenshot', false);
 
         $report = StudentReport::first();
 
-        $this->assertSame($this->student->id, $report->user_id);
+        $this->assertSame($this->ambassador->id, $report->user_id);
         $this->assertSame($this->lesson->id, $report->lesson_id, 'la leçon doit être résolue côté serveur');
         $this->assertSame($this->module->id, $report->lesson_module_id, 'le module doit être résolu côté serveur');
         $this->assertSame('etape-2', $report->step);
+        $this->assertSame('answer_correction_problem', $report->category);
         $this->assertSame(StudentReport::STATUS_NEW, $report->status);
+        $this->assertNotNull($report->details_completed_at, 'un signalement est toujours complet à la création');
         $this->assertNotEmpty($report->fingerprint);
     }
 
-    /** La note est facultative : exiger un texte ferait taire les élèves. */
-    public function test_un_signalement_sans_note_est_accepte(): void
+    public function test_l_administrateur_peut_aussi_signaler(): void
     {
-        [$response] = $this->report(
-            ['source' => 'module', 'lessonCode' => 'fractions', 'moduleNumber' => 3],
-            ['category' => 'display_problem'],
-        );
-
-        $response->assertStatus(200);
-        $this->assertNull(StudentReport::first()->note);
+        $this->report(['source' => 'lesson', 'lessonCode' => 'fractions', 'category' => 'typo'], $this->admin)
+            ->assertStatus(201);
+        $this->assertSame($this->admin->id, StudentReport::first()->user_id);
     }
 
-    public function test_une_categorie_inconnue_est_refusee(): void
+    public function test_eleve_enseignant_et_visiteur_ne_signalent_plus(): void
     {
-        [$response] = $this->report(
-            ['source' => 'lesson', 'lessonCode' => 'fractions'],
-            ['category' => 'je_fais_ce_que_je_veux'],
-        );
+        $payload = ['source' => 'lesson', 'lessonCode' => 'fractions', 'category' => 'typo'];
 
-        $response->assertStatus(422)->assertJsonValidationErrors('category');
+        $this->report($payload, $this->student)->assertStatus(403)->assertJsonPath('reason', 'not_a_reviewer');
+        $this->report($payload, User::factory()->create(['role' => User::ROLE_TEACHER]))
+            ->assertStatus(403)->assertJsonPath('reason', 'not_a_reviewer');
+        $this->app['auth']->forgetGuards();
+        $this->postJson('/api/v1/reports', $payload)->assertStatus(401);
+
+        $this->assertSame(0, StudentReport::count());
     }
 
-    /**
-     * Un client qui poste un lesson_id n'obtient rien : le champ n'est pas
-     * validé, donc jamais lu. Le contexte vient des codes, point.
-     */
+    public function test_un_ambassadeur_retire_ne_signale_plus(): void
+    {
+        $this->ambassador->forceFill(['is_ambassador' => false])->save();
+        $this->report(['source' => 'lesson', 'lessonCode' => 'fractions', 'category' => 'typo'], $this->ambassador->fresh())
+            ->assertStatus(403);
+    }
+
+    /** Le message est obligatoire (2026-10-08) : sans lui, rien n'est créé. */
+    public function test_un_signalement_sans_note_est_refuse(): void
+    {
+        $this->report(['source' => 'module', 'lessonCode' => 'fractions', 'moduleNumber' => 3, 'category' => 'display_problem', 'note' => ''])
+            ->assertStatus(422)->assertJsonValidationErrors('note');
+        $this->assertSame(0, StudentReport::count());
+    }
+
+    public function test_la_categorie_est_obligatoire_et_fermee(): void
+    {
+        $this->report(['source' => 'lesson', 'lessonCode' => 'fractions'])
+            ->assertStatus(422)->assertJsonValidationErrors('category');
+        $this->report(['source' => 'lesson', 'lessonCode' => 'fractions', 'category' => 'je_fais_ce_que_je_veux'])
+            ->assertStatus(422)->assertJsonValidationErrors('category');
+        $this->assertSame(0, StudentReport::count());
+    }
+
+    /** Un client qui poste un lesson_id n'obtient rien. */
     public function test_un_identifiant_envoye_par_le_client_est_ignore(): void
     {
         $autre = Lesson::create([
@@ -160,110 +156,97 @@ class StudentReportFlowTest extends TestCase
             'title' => 'Autre', 'status' => 'available', 'order' => 1,
         ]);
 
-        [$response] = $this->report([
+        $this->report([
             'source' => 'lesson',
             'lessonCode' => 'fractions',
             'lesson_id' => $autre->id,
             'user_id' => $this->admin->id,
             'status' => StudentReport::STATUS_RESOLVED,
             'priority' => 'critical',
-        ], ['category' => 'typo']);
-
-        $response->assertStatus(200);
+            'screenshot_path' => '../../.env',
+            'category' => 'typo',
+        ])->assertStatus(201);
 
         $report = StudentReport::first();
         $this->assertSame($this->lesson->id, $report->lesson_id);
-        $this->assertSame($this->student->id, $report->user_id);
+        $this->assertSame($this->ambassador->id, $report->user_id);
         $this->assertSame(StudentReport::STATUS_NEW, $report->status);
         $this->assertSame('low', $report->priority, 'une coquille entre en priorité basse, pas critique');
+        $this->assertNull($report->screenshot_path, 'un chemin de fichier ne vient jamais du client');
     }
 
     /** Le contexte machine n'est gardé que pour les pannes. */
     public function test_le_contexte_technique_n_est_garde_que_pour_un_probleme_technique(): void
     {
         $payload = [
-            'source' => 'module',
-            'lessonCode' => 'fractions',
-            'browser' => 'Firefox 130',
-            'os' => 'Linux',
-            'screen' => '1920x1080',
+            'source' => 'module', 'lessonCode' => 'fractions',
+            'browser' => 'Firefox 130', 'os' => 'Linux', 'screen' => '1920x1080',
         ];
 
-        $this->report($payload + ['moduleNumber' => 1], ['category' => 'manipulation_not_working']);
-        $this->report($payload + ['moduleNumber' => 2], ['category' => 'typo']);
+        $this->report($payload + ['moduleNumber' => 1, 'category' => 'manipulation_not_working'])->assertStatus(201);
+        $this->report($payload + ['moduleNumber' => 2, 'category' => 'typo'])->assertStatus(201);
 
-        $technical = StudentReport::where('category', 'manipulation_not_working')->first();
-        $typo = StudentReport::where('category', 'typo')->first();
-
-        $this->assertSame('Firefox 130', $technical->browser);
-        $this->assertNull($typo->browser, 'une coquille n\'a pas besoin du navigateur de l\'élève');
+        $this->assertSame('Firefox 130', StudentReport::where('category', 'manipulation_not_working')->first()->browser);
+        $this->assertNull(StudentReport::where('category', 'typo')->first()->browser);
     }
 
-    /**
-     * §17 : vingt-cinq élèves qui butent sur la même question forment UN
-     * problème. Le regroupement est déterministe, sans classification floue.
-     */
+    /** §17 : le même problème signalé par plusieurs relecteurs forme UN groupe. */
     public function test_les_signalements_identiques_se_regroupent(): void
     {
         foreach (range(1, 5) as $i) {
-            $peer = User::factory()->create(['role' => User::ROLE_STUDENT, 'grade' => '6e']);
             $this->report([
-                'source' => 'module',
-                'lessonCode' => 'fractions',
-                'moduleNumber' => 3,
-                'questionId' => 'q4',
-            ], [
-                'category' => 'math_error',
-                'note' => "Message différent numéro {$i}",
-            ], $peer)[0]->assertStatus(200);
+                'source' => 'module', 'lessonCode' => 'fractions', 'moduleNumber' => 3, 'questionId' => 'q4',
+                'category' => 'math_error', 'note' => "Message différent numéro {$i}",
+            ], $this->makeAmbassador())->assertStatus(201);
         }
 
-        // Un problème différent sur la même leçon ne doit PAS rejoindre le groupe.
         $this->report([
-            'source' => 'module', 'lessonCode' => 'fractions',
-            'moduleNumber' => 3, 'questionId' => 'q4',
-        ], ['category' => 'typo'])[0]->assertStatus(200);
+            'source' => 'module', 'lessonCode' => 'fractions', 'moduleNumber' => 3, 'questionId' => 'q4', 'category' => 'typo',
+        ])->assertStatus(201);
 
         $this->assertSame(1, StudentReport::distinct('fingerprint')->where('category', 'math_error')->count('fingerprint'));
 
         $first = StudentReport::where('category', 'math_error')->first();
-        $detail = $this->asAdmin()->getJson("/api/v1/admin/reports/{$first->id}")->assertStatus(200);
-        $detail->assertJsonPath('report.related.total', 5);
+        $this->asAdmin()->getJson("/api/v1/admin/reports/{$first->id}")->assertStatus(200)
+            ->assertJsonPath('report.related.total', 5);
     }
 
-    /**
-     * Le parcours complet côté administration : voir, ouvrir, annoter,
-     * résoudre — et laisser une trace.
-     */
+    /** Deux envois = deux signalements : il n'y a plus de brouillon réutilisé. */
+    public function test_chaque_envoi_cree_un_signalement(): void
+    {
+        $payload = ['source' => 'module', 'lessonCode' => 'fractions', 'moduleNumber' => 3, 'category' => 'math_error'];
+        $this->report($payload)->assertStatus(201);
+        $this->report($payload)->assertStatus(201);
+        $this->assertSame(2, StudentReport::count());
+    }
+
     public function test_l_admin_voit_ouvre_annote_et_resout(): void
     {
-        [$response, $id] = $this->report([
-            'source' => 'module',
-            'lessonCode' => 'fractions',
-            'moduleNumber' => 3,
-        ], [
-            'category' => 'math_error',
-            'note' => 'Le schéma ne correspond pas à l\'énoncé.',
-        ]);
-        $response->assertStatus(200);
+        $id = $this->report([
+            'source' => 'module', 'lessonCode' => 'fractions', 'moduleNumber' => 3,
+            'category' => 'math_error', 'note' => 'Le schéma ne correspond pas à l\'énoncé.',
+        ])->assertStatus(201)->json('report.id');
 
         $this->asAdmin()->getJson('/api/v1/admin/reports')
             ->assertStatus(200)
             ->assertJsonPath('counts.new', 1)
-            ->assertJsonPath('reports.data.0.lessonCode', 'fractions');
+            ->assertJsonPath('counts.withScreenshot', 0)
+            ->assertJsonPath('reports.data.0.lessonCode', 'fractions')
+            ->assertJsonPath('reports.data.0.hasScreenshot', false);
 
         $this->asAdmin()->getJson("/api/v1/admin/reports/{$id}")
             ->assertStatus(200)
             ->assertJsonPath('report.context.moduleTitle', 'Comparer des fractions')
-            ->assertJsonPath('report.student.email', $this->student->email);
+            ->assertJsonPath('report.student.email', $this->ambassador->email)
+            ->assertJsonPath('report.student.role', User::ROLE_TEACHER)
+            ->assertJsonPath('report.student.isAmbassador', true);
 
         $this->asAdmin()->postJson("/api/v1/admin/reports/{$id}/notes", [
             'body' => 'Vérifié : le schéma est bien faux, corrigé en contenu.',
         ])->assertStatus(201);
 
         $this->asAdmin()->patchJson("/api/v1/admin/reports/{$id}", [
-            'status' => StudentReport::STATUS_RESOLVED,
-            'priority' => 'high',
+            'status' => StudentReport::STATUS_RESOLVED, 'priority' => 'high',
         ])->assertStatus(200)->assertJsonPath('report.status', StudentReport::STATUS_RESOLVED);
 
         $report = StudentReport::find($id);
@@ -271,24 +254,26 @@ class StudentReportFlowTest extends TestCase
         $this->assertSame($this->admin->id, $report->resolved_by);
 
         $this->assertDatabaseHas('admin_activity_logs', [
-            'user_id' => $this->admin->id,
-            'action' => 'report.updated',
-            'entity_id' => (string) $id,
+            'user_id' => $this->admin->id, 'action' => 'report.updated', 'entity_id' => (string) $id,
         ]);
     }
 
-    /** Les notes internes ne sortent d'aucun point d'entrée élève. */
-    public function test_un_eleve_ne_voit_jamais_les_notes_internes(): void
+    /** Les notes internes ne sortent d'aucun point d'entrée non-admin. */
+    public function test_un_ambassadeur_ne_lit_pas_l_administration_des_signalements(): void
     {
-        [, $id] = $this->report(
-            ['source' => 'lesson', 'lessonCode' => 'fractions'],
-            ['category' => 'other'],
-        );
-        $this->asAdmin()->postJson("/api/v1/admin/reports/{$id}/notes", ['body' => 'Note interne confidentielle'])
-            ->assertStatus(201);
+        $id = $this->report(['source' => 'lesson', 'lessonCode' => 'fractions', 'category' => 'other'])->json('report.id');
+        $this->asAdmin()->postJson("/api/v1/admin/reports/{$id}/notes", ['body' => 'Note interne confidentielle'])->assertStatus(201);
 
-        // Il n'existe aucune route élève qui lise un signalement — et celle
-        // de l'administration lui est fermée.
-        $this->asStudent()->getJson("/api/v1/admin/reports/{$id}")->assertStatus(403);
+        $this->actingAs($this->ambassador, 'sanctum')->getJson("/api/v1/admin/reports/{$id}")->assertStatus(403);
+        $this->actingAs($this->ambassador, 'sanctum')->getJson('/api/v1/admin/reports')->assertStatus(403);
+    }
+
+    /** L'ancienne complétion en deux temps n'existe plus. */
+    public function test_la_route_de_completion_n_existe_plus(): void
+    {
+        $id = $this->report(['source' => 'lesson', 'lessonCode' => 'fractions', 'category' => 'other'])->json('report.id');
+        $status = $this->actingAs($this->ambassador, 'sanctum')->patchJson("/api/v1/reports/{$id}", ['category' => 'typo'])->status();
+        $this->assertContains($status, [404, 405]);
+        $this->assertSame('other', StudentReport::find($id)->category);
     }
 }

@@ -1,0 +1,313 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l5-010",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 5,
+  "metadata": {
+    "title": "جدول قوى العدد 10",
+    "estimatedMinutes": 8,
+    "tags": [
+      "قوى العدد 10",
+      "جدول"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-2",
+      "page": 40,
+      "section": "أنشطة",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في الجدول التالي ننتقل من خانة إلى الخانة التي بعدها بقسمة العدد على 10.",
+    "table": {
+      "head": [
+        "القوة",
+        "$10^{3}$",
+        "$10^{2}$",
+        "$10^{1}$",
+        "$10^{0}$",
+        "$10^{-1}$",
+        "$10^{-2}$",
+        "$10^{-3}$"
+      ],
+      "rows": [
+        [
+          "الكتابة العشرية",
+          "1 000",
+          "100",
+          "10",
+          "…",
+          "…",
+          "…",
+          "…"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما العدد الذي يُكتب في خانة $10^{0}$ ؟",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نقسم العدد في الخانة السابقة على 10."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$10 \\div 10$ يعطي عددًا صغيرًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من أنّه يوافق القوة ذات الأسّ المعدوم."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-ASHARA-SIFR"
+        },
+        {
+          "value": "10",
+          "id": "MISC-ASHARA-SIFR"
+        }
+      ],
+      "feedback": {
+        "correct": "$10 \\div 10 = 1$ ، إذن $10^{0} = 1$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الخانة السابقة هي $10^{1} = 10$ .",
+          "$10 \\div 10 = 1$ ."
+        ],
+        "result": "1"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما العدد الذي يُكتب في خانة $10^{-1}$ ؟",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نقسم العدد في الخانة السابقة على 10."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 1 على 10: أزح الفاصلة رتبة نحو اليسار."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد موجب أصغر من 1."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "0.1",
+      "misconceptionSignatures": [
+        {
+          "value": "-0.1",
+          "id": "MISC-ASHARA-SALIB"
+        },
+        {
+          "value": "0.01",
+          "id": "MISC-ASHARA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "$1 \\div 10 = 0{,}1$ ، إذن $10^{-1} = 0{,}1$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الخانة السابقة هي $10^{0} = 1$ .",
+          "$1 \\div 10 = 0{,}1$ ."
+        ],
+        "result": "0{,}1"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما العدد الذي يُكتب في خانة $10^{-3}$ ؟",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نقسم العدد في الخانة السابقة على 10 في كلّ مرّة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم على 10 ثلاث مرّات انطلاقًا من 1."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد موجب والرقم 1 في الرتبة الثالثة."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "0.001",
+      "misconceptionSignatures": [
+        {
+          "value": "-1000",
+          "id": "MISC-ASHARA-SALIB"
+        },
+        {
+          "value": "0.0001",
+          "id": "MISC-ASHARA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{-3} = 0{,}001$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$1 \\div 10 = 0{,}1$ ثمّ $0{,}1 \\div 10 = 0{,}01$ ثمّ $0{,}01 \\div 10 = 0{,}001$ ."
+        ],
+        "result": "0{,}001"
+      }
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "statement": "$10^{-2} = \\dfrac{1}{N}$ : ما قيمة العدد الطبيعي $N$ ؟",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$10^{-2} = 0{,}01$ . كم مرّة يدخل $0{,}01$ في العدد 1؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة $\\dfrac{1}{N}$ تساوي $0{,}01$ : ما العدد $N$ ؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$10^{-n}$ هو مقلوب $10^{n}$ ."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "100",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-ASHARA-DARB"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{-2} = \\dfrac{1}{100}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10^{-2} = 0{,}01 = \\dfrac{1}{100}$ ."
+        ],
+        "result": "N = 100"
+      }
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما قيمة $10^{1}$ ؟",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم عاملًا في الجداء $10^{1}$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء عامل واحد يساوي هذا العامل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "هو الخانة الأولى على يسار الواحد في الجدول."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "10",
+      "feedback": {
+        "correct": "$10^{1} = 10$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10^{1} = 10$ ."
+        ],
+        "result": "10"
+      }
+    }
+  ]
+}

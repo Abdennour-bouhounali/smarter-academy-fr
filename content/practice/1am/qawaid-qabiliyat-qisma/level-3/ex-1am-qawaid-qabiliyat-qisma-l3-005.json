@@ -1,0 +1,172 @@
+{
+  "id": "ex-1am-qawaid-qabiliyat-qisma-l3-005",
+  "lessonCode": "qawaid-qabiliyat-qisma",
+  "level": 3,
+  "metadata": {
+    "title": "خرز الأساور",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مسألة",
+      "باقٍ"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-32",
+      "page": 46,
+      "section": "أتمرّن",
+      "number": 32
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "لدى أمينة عدد من الخرز أقل من 100 تصنع منه أساور تهديها لصديقاتها. إذا وضعت في كل سوار 2 أو 3 أو 5 خرزات لم تبق أيّ خرزة، وإذا وضعت في كل سوار 7 خرزات بقيت 4 خرزات."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب كل الأعداد الأصغر من 100 التي تقبل القسمة على 2 و 3 و 5 في آن واحد.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        30,
+        60,
+        90
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            10,
+            20,
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90
+          ],
+          "id": "MISC-QABILIYA-SIFR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد يقبل القسمة على 2 و 5 معًا رقم آحاده 0."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من بين 10، 20، …، 90 اختر التي يقبل مجموع أرقامها القسمة على 3."
+        }
+      ],
+      "feedback": {
+        "correct": "30 ، 60 ، 90: رقم آحادها 0 ومجموع أرقامها 3 أو 6 أو 9.",
+        "incorrect": "اختر أولًا الأعداد التي رقم آحادها 0، ثم طبّق قاعدة القسمة على 3."
+      },
+      "solution": {
+        "lines": [
+          "تقبل القسمة على 2 و 5: 10، 20، 30، 40، 50، 60، 70، 80، 90.",
+          "من بينها تقبل القسمة على 3: 30 ($3$)، 60 ($6$)، 90 ($9$)."
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هو عدد الخرز لدى أمينة؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "60",
+      "misconceptionSignatures": [
+        {
+          "value": "30",
+          "id": "MISC-QABILIYA-BAQI"
+        },
+        {
+          "value": "90",
+          "id": "MISC-QABILIYA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب باقي قسمة كل عدد وجدته على 7."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد المطلوب باقي قسمته على 7 يساوي 4."
+        }
+      ],
+      "feedback": {
+        "correct": "$60 = 7 \\times 8 + 4$.",
+        "incorrect": "جرّب كل عدد من الأعداد الثلاثة في القسمة على 7."
+      },
+      "solution": {
+        "lines": [
+          "$30 = 7 \\times 4 + 2$",
+          "$60 = 7 \\times 8 + 4$",
+          "$90 = 7 \\times 12 + 6$",
+          "إذن عدد الخرز 60."
+        ],
+        "result": "60"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "برّر أن العدد 60 يحقّق كل شروط المسألة.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب القسمة الإقليدية للعدد 60 على 2 ثم 3 ثم 5 ثم 7."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي.",
+        "incorrect": "راجع القاعدة وأعد صياغة التبرير."
+      },
+      "solution": {
+        "lines": [
+          "$60 = 2 \\times 30 + 0$ ، $60 = 3 \\times 20 + 0$ ، $60 = 5 \\times 12 + 0$: لا تبقى أيّ خرزة.",
+          "$60 = 7 \\times 8 + 4$: تبقى 4 خرزات، و $60 < 100$."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

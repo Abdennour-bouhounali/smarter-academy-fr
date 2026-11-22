@@ -27,6 +27,7 @@ class EmailVerificationTest extends TestCase
     private function registerStudent(string $email = 'eleve@example.com'): array
     {
         $response = $this->postJson('/api/v1/auth/register', [
+            'firstName' => 'أمين', 'lastName' => 'بن علي',
             'email' => $email,
             'password' => 'password123',
             'accept_legal' => true,
@@ -35,6 +36,29 @@ class EmailVerificationTest extends TestCase
         $response->assertStatus(201);
 
         return [User::where('email', $email)->firstOrFail(), $response->json('token')];
+    }
+
+    /**
+     * Un lien refusé (non signé, altéré, expiré) renvoie vers l'écran du
+     * frontend qui explique — jamais un 403 JSON brut dans le navigateur.
+     */
+    private function invalide(): string
+    {
+        return config('app.frontend_url').'/verification-email?statut=invalide';
+    }
+
+    /**
+     * Un serveur SMTP qui refuse la connexion : l'envoi lève une exception,
+     * exactement comme en production avec de mauvais identifiants MAIL_*.
+     */
+    private function smtpEnPanne(): void
+    {
+        config([
+            'mail.default' => 'smtp',
+            'mail.mailers.smtp.host' => '127.0.0.1',
+            'mail.mailers.smtp.port' => 1,
+            'mail.mailers.smtp.timeout' => 1,
+        ]);
     }
 
     public function test_l_inscription_envoie_le_courriel_de_verification(): void
@@ -66,7 +90,7 @@ class EmailVerificationTest extends TestCase
 
         $nu = '/api/v1/auth/email/verify/'.$user->id.'/'.EmailVerificationLink::hashFor($user);
 
-        $this->get($nu)->assertStatus(403);
+        $this->get($nu)->assertRedirect($this->invalide());
         $this->assertNull($user->fresh()->email_verified_at);
     }
 
@@ -91,7 +115,7 @@ class EmailVerificationTest extends TestCase
 
         $this->assertNotSame($url, $altere, 'la signature doit réellement différer');
 
-        $this->get($altere)->assertStatus(403);
+        $this->get($altere)->assertRedirect($this->invalide());
         $this->assertNull($user->fresh()->email_verified_at);
     }
 
@@ -111,7 +135,7 @@ class EmailVerificationTest extends TestCase
             $url
         );
 
-        $this->get($detourne)->assertStatus(403);
+        $this->get($detourne)->assertRedirect($this->invalide());
         $this->assertNull($victime->fresh()->email_verified_at);
     }
 
@@ -123,7 +147,7 @@ class EmailVerificationTest extends TestCase
 
         $this->travel(EmailVerificationLink::EXPIRES_AFTER_MINUTES + 1)->minutes();
 
-        $this->get($url)->assertStatus(403);
+        $this->get($url)->assertRedirect($this->invalide());
         $this->assertNull($user->fresh()->email_verified_at);
     }
 
@@ -306,5 +330,89 @@ class EmailVerificationTest extends TestCase
         }
 
         $this->get($nu)->assertStatus(429);
+    }
+
+    // ── LES PANNES D'ENVOI ──────────────────────────────────────────────
+
+    /**
+     * Avant : 500 après création du compte — l'élève sans jeton, et sa
+     * nouvelle tentative refusée (« adresse déjà utilisée »).
+     */
+    public function test_une_panne_smtp_n_empeche_pas_l_inscription(): void
+    {
+        $this->smtpEnPanne();
+
+        $response = $this->postJson('/api/v1/auth/register', [
+            'firstName' => 'أمين', 'lastName' => 'بن علي',
+            'email' => 'panne@example.com',
+            'password' => 'password123',
+            'accept_legal' => true,
+        ]);
+
+        $response->assertStatus(201)
+            ->assertJsonPath('verificationEmailSent', false)
+            ->assertJsonPath('user.emailVerified', false);
+        $this->assertNotEmpty($response->json('token'));
+    }
+
+    public function test_un_envoi_reussi_le_dit(): void
+    {
+        Notification::fake();
+
+        $this->postJson('/api/v1/auth/register', [
+            'firstName' => 'أمين', 'lastName' => 'بن علي',
+            'email' => 'ok@example.com',
+            'password' => 'password123',
+            'accept_legal' => true,
+        ])->assertStatus(201)->assertJsonPath('verificationEmailSent', true);
+    }
+
+    public function test_une_panne_smtp_au_renvoi_repond_503(): void
+    {
+        $user = User::factory()->unverified()->create(['role' => 'student']);
+        $token = $user->createToken('student-token')->plainTextToken;
+
+        $this->smtpEnPanne();
+
+        $this->withHeader('Authorization', "Bearer {$token}")
+            ->postJson('/api/v1/auth/email/resend')
+            ->assertStatus(503)
+            ->assertJsonPath('success', false);
+    }
+
+    // ── LE COURRIEL LUI-MÊME ────────────────────────────────────────────
+
+    /**
+     * Arabe, RTL, au gabarit de marque (logo PNG du frontend), sans phrase
+     * anglaise du gabarit de Laravel, avec une version texte.
+     */
+    public function test_le_courriel_est_en_arabe_et_en_rtl(): void
+    {
+        Notification::fake();
+
+        [$user] = $this->registerStudent();
+
+        Notification::assertSentTo($user, VerifyEmailAddress::class, function (VerifyEmailAddress $n, array $channels, object $notifiable, ?string $locale) use ($user) {
+            $this->assertSame('ar', $locale);
+
+            // Ce que fait le canal mail : rendre sous la locale du destinataire.
+            app()->setLocale($locale);
+            $html = (string) $n->toMail($user)->render();
+
+            $this->assertStringContainsString('dir="rtl"', $html);
+            $this->assertStringContainsString('تأكيد بريدي', $html);
+            $this->assertStringContainsString('انسخ هذا الرابط', $html);
+            $this->assertStringContainsString(rtrim(config('app.frontend_url'), '/').'/email/logo.png', $html);
+            $this->assertStringContainsString('family=Amiri', $html);
+            $this->assertStringContainsString('السلام عليكم أمين', $html, 'la salutation islamique et le prénom');
+            $this->assertStringNotContainsString('مرحبًا', $html);
+            $this->assertStringContainsString('جميع الحقوق محفوظة', $html);
+            $this->assertStringNotContainsString("If you're having trouble", $html);
+            $this->assertStringNotContainsString('All rights reserved', $html);
+            $this->assertStringContainsString('/api/v1/auth/email/verify/'.$user->id.'/', $html);
+            $this->assertSame('emails.verify-email-text', $n->toMail($user)->view['text']);
+
+            return true;
+        });
     }
 }

@@ -1,0 +1,126 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l3-003",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 3,
+  "metadata": {
+    "title": "دوري الآن — (EG) و (FK)",
+    "estimatedMinutes": 4,
+    "tags": [
+      "دوري الآن",
+      "برهان"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "now-131",
+      "page": 131,
+      "section": "دوري الآن"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 131): FHG مثلث. E حيث $\\overrightarrow{FH} = \\overrightarrow{HE}$ ، و K حيث $\\overrightarrow{KH} = \\overrightarrow{HG}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "طبيعة الرباعي FGEK:",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "متوازي أضلاع لأن قطريه [FE] و [GK] متناصفان",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "FEGK متوازي أضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        },
+        {
+          "id": "C",
+          "content": "مستطيل لأن قطريه متناصفان",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا تمثّل H بالنسبة إلى [FE]؟ وبالنسبة إلى [KG]؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رباعي قطراه متناصفان متوازي أضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القطران يصلان رأسين متقابلين."
+        }
+      ],
+      "feedback": {
+        "correct": "H منتصف [FE] و [KG]: الرباعي FGEK قطراه متناصفان فهو متوازي أضلاع.",
+        "incorrect": "حدّد أولا المنتصفين."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "إذن:",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{GE} = \\overrightarrow{FK}$ ، فالمستقيمان (EG) و (FK) متوازيان",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{GE} = \\overrightarrow{KF}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        },
+        {
+          "id": "C",
+          "content": "المستقيمان (EG) و (FK) متقاطعان في H",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في متوازي الأضلاع FGEK: ما الضلع المقابل لـ [GE]؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ الضلعين المتقابلين في الاتجاه نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "شعاعان متساويان يحملهما مستقيمان متوازيان."
+        }
+      ],
+      "feedback": {
+        "correct": "في متوازي الأضلاع FGEK الضلع [GE] يقابله [KF]: الشعاع GE يساوي الشعاع FK، فالحاملان متوازيان.",
+        "incorrect": "تتبّع الرباعي FGEK: ضلع [FG] يقابله [KE]، وضلع [GE] يقابله [FK]."
+      }
+    }
+  ]
+}

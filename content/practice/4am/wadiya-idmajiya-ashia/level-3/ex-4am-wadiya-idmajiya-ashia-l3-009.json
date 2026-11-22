@@ -1,0 +1,153 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ashia-l3-009",
+  "lessonCode": "wadiya-idmajiya-ashia",
+  "level": 3,
+  "metadata": {
+    "title": "التمرين 22 — علاقة شال",
+    "estimatedMinutes": 3,
+    "tags": [
+      "علاقة شال"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-22",
+      "page": 137,
+      "section": "الوضعيات",
+      "number": 22
+    }
+  },
+  "statement": {
+    "content": "ABCD رباعي و M، N، P، Q منتصفات [DA]، [AB]، [BC]، [CD] على الترتيب (الشكل).",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          3
+        ],
+        "B": [
+          2,
+          0
+        ],
+        "C": [
+          8,
+          0
+        ],
+        "D": [
+          4,
+          5
+        ],
+        "M": [
+          2,
+          4
+        ],
+        "N": [
+          1,
+          1.5
+        ],
+        "P": [
+          5,
+          0
+        ],
+        "Q": [
+          6,
+          2.5
+        ]
+      },
+      "polygons": [
+        {
+          "points": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "tone": "indigo"
+        }
+      ],
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "A"
+        ]
+      ],
+      "labels": {
+        "A": "w",
+        "B": "s",
+        "C": "e",
+        "D": "n",
+        "M": "nw",
+        "N": "sw",
+        "P": "s",
+        "Q": "ne"
+      },
+      "ariaLabel": "رباعي كيفي ABCD: A على اليسار و D في الأعلى و C على اليمين و B في الأسفل؛ M و N و P و Q منتصفات [DA] و [AB] و [BC] و [CD]"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "لإثبات $\\overrightarrow{AD} + \\overrightarrow{BC} = \\overrightarrow{AC} + \\overrightarrow{BD}$ نكتب:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{AD} = \\overrightarrow{AC} + \\overrightarrow{CD}$ و $\\overrightarrow{BC} = \\overrightarrow{BD} + \\overrightarrow{DC}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{AD} + \\overrightarrow{BC} = \\overrightarrow{AC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-RABT"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{AD} = \\overrightarrow{BC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "علاقة شال تُدخل نقطة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أدخل C في الأول و D في الثاني."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\overrightarrow{CD} + \\overrightarrow{DC} = \\overrightarrow{0}$"
+        }
+      ],
+      "feedback": {
+        "correct": "بعد الإدخال: $\\overrightarrow{AC} + \\overrightarrow{BD} + \\overrightarrow{CD} + \\overrightarrow{DC} = \\overrightarrow{AC} + \\overrightarrow{BD}$ .",
+        "incorrect": "علاقة شال لا تختصر شعاعين غير متعاقبين."
+      },
+      "cognitiveDemand": "reason",
+      "difficulty": 3
+    }
+  ]
+}

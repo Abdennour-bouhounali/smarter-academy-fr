@@ -1,0 +1,277 @@
+{
+  "id": "ex-3am-muadalat-darajat-ula-l3-008",
+  "lessonCode": "muadalat-darajat-ula",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — ملعب الحيّ",
+    "estimatedMinutes": 10,
+    "tags": [
+      "ترييض",
+      "محيط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نظّف متطوّعو الحيّ ملعبًا مستطيلًا $ABCD$ بعداه $AB = (2x + 3)\\,\\mathrm{m}$ و $BC = (x + 5)\\,\\mathrm{m}$ (الأطوال غير حقيقية)، ومحيطه $70\\,\\mathrm{m}$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          4.4,
+          0
+        ],
+        "C": [
+          4.4,
+          2.8
+        ],
+        "D": [
+          0,
+          2.8
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "2x + 3"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "x + 5"
+        },
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "A"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "D",
+          "A",
+          "B"
+        ]
+      ],
+      "ariaLabel": "مستطيل ABCD طول AB يساوي 2x + 3 وطول BC يساوي x + 5",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما المعادلة التي تترجم المحيط؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "المحيط $= 2[(2x+3)+(x+5)]$ .",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(2x + 3) + (x + 5) = 70$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        },
+        {
+          "id": "B",
+          "content": "$2(2x + 3) + (x + 5) = 70$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        },
+        {
+          "id": "C",
+          "content": "$2((2x + 3) + (x + 5)) = 70$",
+          "isCorrect": true
+        }
+      ],
+      "solution": {
+        "lines": [
+          "المحيط ضعف مجموع البعدين: $2[(2x + 3) + (x + 5)] = 70$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "جد قيمة $x$ .",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 9$ .",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر أو عدد عشري)",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "62/3",
+          "id": "MISC-MUADALA-TRANSLATE"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "نبسّط: $6x + 16 = 70$ .",
+          "نضيف $-16$ إلى الطرفين (معاكس $16$) فنجد: $6x = 54$ .",
+          "نقسم الطرفين على $6$ فنجد: $x = 9$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما طول الملعب $AB$ بالمتر؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = 21\\,\\mathrm{m}$ .",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "الطول بالمتر",
+      "expectedAnswer": "21",
+      "solution": {
+        "lines": [
+          "$AB = 2 \\times 9 + 3 = 21$ م."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "ما عرض الملعب $BC$ بالمتر؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC = 14\\,\\mathrm{m}$ .",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "العرض بالمتر",
+      "expectedAnswer": "14",
+      "solution": {
+        "lines": [
+          "$BC = 9 + 5 = 14$ م.",
+          "التحقّق: $2(21 + 14) = 70$ ."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

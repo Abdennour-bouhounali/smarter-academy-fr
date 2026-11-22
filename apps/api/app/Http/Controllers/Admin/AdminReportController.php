@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Domain\Admin\ReportScreenshotStore;
 use App\Domain\Admin\ReportService;
 use App\Http\Controllers\Controller;
 use App\Models\StudentReport;
@@ -11,7 +12,10 @@ use Illuminate\Validation\Rule;
 
 class AdminReportController extends Controller
 {
-    public function __construct(private ReportService $reports) {}
+    public function __construct(
+        private ReportService $reports,
+        private ReportScreenshotStore $screenshots,
+    ) {}
 
     public function index(Request $request)
     {
@@ -53,9 +57,10 @@ class AdminReportController extends Controller
                     'lastName' => $report->student?->last_name,
                     'grade' => $report->student?->grade,
                     'accountStatus' => $report->student?->account_status,
+                    'role' => $report->student?->role,
+                    'isAmbassador' => (bool) $report->student?->isAmbassador(),
                 ],
                 'source' => $report->source,
-                'detailsCompleted' => $report->hasDetails(),
                 'context' => [
                     'source' => $report->source,
                     // Un signalement parti du sommaire n'a PAS de module :
@@ -118,6 +123,24 @@ class AdminReportController extends Controller
         ]);
     }
 
+    /**
+     * La capture d'écran jointe — servie aux seuls administrateurs (la route
+     * est derrière can:admin), jamais par une URL publique.
+     */
+    public function screenshot(int $id)
+    {
+        $report = StudentReport::find($id);
+        if (! $report || ! $this->screenshots->exists($report->screenshot_path)) {
+            abort(404);
+        }
+
+        return response()->file($this->screenshots->absolutePath($report->screenshot_path), [
+            'Content-Type' => $this->screenshots->mimeOf($report->screenshot_path),
+            'X-Content-Type-Options' => 'nosniff',
+            'Cache-Control' => 'private, max-age=0',
+        ]);
+    }
+
     public function update(Request $request, int $id)
     {
         $validated = $request->validate([
@@ -165,9 +188,7 @@ class AdminReportController extends Controller
 
         return [
             'all' => (int) $byStatus->sum(),
-            // Les signaux ouverts sans jamais être décrits. Un nombre qui
-            // monte sur un même module dit quelque chose, même sans un mot.
-            'incomplete' => StudentReport::whereNull('details_completed_at')->count(),
+            'withScreenshot' => StudentReport::whereNotNull('screenshot_path')->count(),
             'new' => (int) ($byStatus[StudentReport::STATUS_NEW] ?? 0),
             'inReview' => (int) ($byStatus[StudentReport::STATUS_IN_REVIEW] ?? 0),
             'resolved' => (int) ($byStatus[StudentReport::STATUS_RESOLVED] ?? 0),
@@ -183,10 +204,7 @@ class AdminReportController extends Controller
             'category' => $r->category,
             'note' => $r->note,
             'source' => $r->source,
-            // Distingue « l'élève a cliqué » de « l'élève a décrit » : sans
-            // ça, un signal sans catégorie ressemble à une donnée manquante.
-            'detailsCompleted' => $r->hasDetails(),
-            'detailsCompletedAt' => $r->details_completed_at,
+            'hasScreenshot' => $r->screenshot_path !== null,
             'status' => $r->status,
             'priority' => $r->priority,
             'lessonCode' => $r->lesson_code,

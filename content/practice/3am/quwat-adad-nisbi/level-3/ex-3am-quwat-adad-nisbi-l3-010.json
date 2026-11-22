@@ -1,0 +1,237 @@
+{
+  "id": "ex-3am-quwat-adad-nisbi-l3-010",
+  "lessonCode": "quwat-adad-nisbi",
+  "level": 3,
+  "metadata": {
+    "title": "قوة واحدة",
+    "estimatedMinutes": 9,
+    "tags": [
+      "قواعد الحساب على القوى"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-43",
+      "page": 48,
+      "section": "أوظّف تعلّماتي",
+      "number": 43
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اكتب كل عدد على شكل قوة واحدة لأساسه.",
+    "formulas": [
+      "A = \\dfrac{2^{5} \\times 4}{2 \\times 2^{3}}",
+      "B = \\dfrac{3^{4} \\times 27}{3^{9}}",
+      "C = \\dfrac{5^{2} \\times 125}{5 \\times 5^{3}}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "$A = 2^n$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-QUWA-FORGET-EXPONENT-ONE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب كل عدد على شكل قوة للأساس نفسه (مثلًا العدد 8 قوة للعدد 2)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تنسَ أن $a = a^1$ ، ثم طبّق قواعد الحساب على القوى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أس البسط ثم أس المقام، ثم اطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = \\dfrac{2^7}{2^4} = 2^3$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$2^{5} \\times 4 = 2^{5} \\times 2^{2} = 2^{7}$ و $2 \\times 2^{3} = 2^{4}$",
+          "$A = 2^{7-4} = 2^{3}$"
+        ],
+        "result": "A = 2^{3}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$B = 3^n$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-QUWA-EXP-SIGN-SLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب كل عدد على شكل قوة للأساس نفسه (مثلًا العدد 8 قوة للعدد 2)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تنسَ أن $a = a^1$ ، ثم طبّق قواعد الحساب على القوى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أس البسط ثم أس المقام، ثم اطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = \\dfrac{3^7}{3^9} = 3^{-2}$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$3^{4} \\times 27 = 3^{4} \\times 3^{3} = 3^{7}$",
+          "$B = 3^{7-9} = 3^{-2}$"
+        ],
+        "result": "B = 3^{-2}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "$C = 5^n$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-QUWA-FORGET-EXPONENT-ONE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب كل عدد على شكل قوة للأساس نفسه (مثلًا العدد 8 قوة للعدد 2)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تنسَ أن $a = a^1$ ، ثم طبّق قواعد الحساب على القوى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أس البسط ثم أس المقام، ثم اطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = \\dfrac{5^5}{5^4} = 5^1$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$5^{2} \\times 125 = 5^{2} \\times 5^{3} = 5^{5}$ و $5 \\times 5^{3} = 5^{4}$",
+          "$C = 5^{5-4} = 5^{1}$"
+        ],
+        "result": "C = 5^{1}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "احسب قيمة $A$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-QUWA-POWER-AS-PRODUCT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$a^n$ جداء $n$ عاملًا كلها مساوية للعدد $a$ ، وليس $a \\times n$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوة عدد سالب موجبة إذا كان الأس زوجيًا، وسالبة إذا كان الأس فرديًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه للأقواس: في $-a^n$ يخصّ الأس العدد $a$ وحده، ثم نأخذ المعاكس."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^3 = 8$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$A = 2^{3} = 2 \\times 2 \\times 2 = 8$"
+        ],
+        "result": "A = 8"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

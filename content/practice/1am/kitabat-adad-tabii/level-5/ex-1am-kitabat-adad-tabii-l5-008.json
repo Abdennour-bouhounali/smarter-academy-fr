@@ -1,0 +1,351 @@
+{
+  "id": "ex-1am-kitabat-adad-tabii-l5-008",
+  "lessonCode": "kitabat-adad-tabii",
+  "level": 5,
+  "metadata": {
+    "title": "رحلة في المجموعة الشمسية",
+    "estimatedMinutes": 18,
+    "tags": [
+      "أعداد كبيرة",
+      "ملايين",
+      "ملايير"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-2",
+      "page": 20,
+      "section": "أتعمّق",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يحضّر نادي علم الفلك معرضا عن المجموعة الشمسية (القيم كما في الكتاب).\nالجزء الأول: المسافة بين الشمس والمشتري $778\\,300\\,000$ km، وبين الشمس وعطارد 57900000 km.\nالجزء الثاني: المسافة بين الشمس ونبتون طُبعت « 4 467070 000 km »."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "كيف تُقرأ المسافة بين الشمس والمشتري؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "سبعة وسبعون مليونا وثمانمائة وثلاثون ألفا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-ZERO-PLACE"
+        },
+        {
+          "id": "B",
+          "content": "سبعمائة وثمانية وسبعون ألفا وثلاثمائة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-CLASS-WORD"
+        },
+        {
+          "id": "C",
+          "content": "سبعمائة وثمانية وسبعون مليونا وثلاثمائة ألف",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزّئ العدد إلى فئات من ثلاثة أرقام انطلاقا من اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ كل فئة كعدد أصغر من 1000 ثم اذكر اسم فئتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى المراتب الفارغة (الأصفار)."
+        }
+      ],
+      "feedback": {
+        "correct": "$778\\,300\\,000$ يُقرأ « سبعمائة وثمانية وسبعون مليونا وثلاثمائة ألف ».",
+        "incorrect": "نجزّئ العدد إلى فئات من ثلاثة أرقام انطلاقا من اليمين، ثم نقرأ الفئات من اليسار، كل فئة باسمها."
+      },
+      "solution": {
+        "lines": [
+          "$778\\,|\\,300\\,|\\,000$",
+          "نقرأ فئة فئة: « سبعمائة وثمانية وسبعون مليونا وثلاثمائة ألف »."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كم مليون كيلومتر كاملة في المسافة بين الشمس والمشتري؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "778",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-KITABA-DIGIT-COUNT"
+        },
+        {
+          "value": "77",
+          "id": "MISC-KITABA-RANKSHIFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الملايين هو عدد المجموعات من 1 000 000 التي نكوّنها من العدد كله، لا الرقم وحده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احذف الأرقام التي على يمين مرتبة الملايين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: اضرب جوابك في 1 000 000 ثم أضف ما بقي."
+        }
+      ],
+      "feedback": {
+        "correct": "$778\\,300\\,000 = 778 \\times 1\\,000\\,000 + 300\\,000$: عدد الملايين هو 778، أمّا رقم الملايين فهو 8.",
+        "incorrect": "رقم المرتبة هو ما يبقى فيها وحدها؛ أمّا عدد وحداتها فنحسب فيه كل ما يمكن تجميعه منها في العدد كله."
+      },
+      "solution": {
+        "lines": [
+          "$778\\,300\\,000 = 778 \\times 1\\,000\\,000 + 300\\,000$",
+          "إذن عدد الملايين في العدد $778\\,300\\,000$ هو 778، ورقم الملايين هو 8."
+        ],
+        "result": "778"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "أعد كتابة المسافة بين الشمس وعطارد 57900000 بفئات من ثلاثة أرقام.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$579\\,000\\,00$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-CLASS-LEFT"
+        },
+        {
+          "id": "B",
+          "content": "$57\\,90\\,00\\,00$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-CLASS-LEFT"
+        },
+        {
+          "id": "C",
+          "content": "$57\\,900\\,000$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من أين نبدأ تجزئة العدد إلى فئات؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ من رقم الآحاد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الفئة الأخيرة على اليسار قد تحوي رقما أو رقمين فقط."
+        }
+      ],
+      "feedback": {
+        "correct": "نجزّئ انطلاقا من اليمين: $57\\,900\\,000$.",
+        "incorrect": "نترك فراغا عقب كل ثلاثة أرقام مبتدئين من اليمين (من رقم الآحاد)، لا من اليسار."
+      },
+      "solution": {
+        "lines": [
+          "نعدّ ثلاثة أرقام انطلاقا من رقم الآحاد: $57\\,900\\,000$.",
+          "الفئة الأولى على اليسار هي 57."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أعد كتابة مسافة نبتون 4467070000 بفئات صحيحة من ثلاثة أرقام.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$4\\,467\\,070\\,000$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$44\\,67\\,07\\,00\\,00$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-CLASS-LEFT"
+        },
+        {
+          "id": "C",
+          "content": "$446\\,707\\,000\\,0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-CLASS-LEFT"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من أين نبدأ تجزئة العدد إلى فئات؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ من رقم الآحاد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الفئة الأخيرة على اليسار قد تحوي رقما أو رقمين فقط."
+        }
+      ],
+      "feedback": {
+        "correct": "نجزّئ انطلاقا من اليمين: $4\\,467\\,070\\,000$.",
+        "incorrect": "نترك فراغا عقب كل ثلاثة أرقام مبتدئين من اليمين (من رقم الآحاد)، لا من اليسار."
+      },
+      "solution": {
+        "lines": [
+          "نعدّ ثلاثة أرقام انطلاقا من رقم الآحاد: $4\\,467\\,070\\,000$.",
+          "الفئة الأولى على اليسار هي 4."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "كم مليار كيلومتر كاملة في المسافة بين الشمس ونبتون؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الملايير هو عدد المجموعات من 1 000 000 000 التي نكوّنها من العدد كله، لا الرقم وحده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احذف الأرقام التي على يمين مرتبة الملايير."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: اضرب جوابك في 1 000 000 000 ثم أضف ما بقي."
+        }
+      ],
+      "feedback": {
+        "correct": "$4\\,467\\,070\\,000 = 4 \\times 1\\,000\\,000\\,000 + 467\\,070\\,000$: عدد الملايير هو 4، أمّا رقم الملايير فهو 4.",
+        "incorrect": "رقم المرتبة هو ما يبقى فيها وحدها؛ أمّا عدد وحداتها فنحسب فيه كل ما يمكن تجميعه منها في العدد كله."
+      },
+      "solution": {
+        "lines": [
+          "$4\\,467\\,070\\,000 = 4 \\times 1\\,000\\,000\\,000 + 467\\,070\\,000$",
+          "إذن عدد الملايير في العدد $4\\,467\\,070\\,000$ هو 4، ورقم الملايير هو 4."
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "يقول أحد الأعضاء: « المسافة بين الشمس ونبتون تتجاوز أربعة ملايير كيلومتر ». برّر صحة قوله.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الرقم في فئة الملايير؟"
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك بالحل النموذجي سطرا بسطر."
+      },
+      "solution": {
+        "lines": [
+          "بالفئات: $4\\,467\\,070\\,000$، وفئة الملايير هي 4.",
+          "بعد 4 ملايير يبقى $467\\,070\\,000$ km، وهو عدد غير معدوم.",
+          "إذن المسافة تتجاوز أربعة ملايير كيلومتر."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

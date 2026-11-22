@@ -1,0 +1,85 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l3-009",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — نقطة على المسار الدائري",
+    "estimatedMinutes": 2,
+    "tags": [
+      "دائرة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_ithbat-khawas-maalam_P3",
+      "modelledOn": "ex-19"
+    }
+  },
+  "generator": {
+    "tool": "u1x-ithbat-khawas-maalam/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "مسار دائري للدرّاجات مركزه $\\Omega(1\\,;\\,-2)$ ونصف قطره 5 في معلم متعامد ومتجانس."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أيّ نقطة على المسار؟",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(4\\,;\\,1)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SHAKL-DALIL"
+        },
+        {
+          "id": "B",
+          "content": "$(1\\,;\\,8)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-DAIRA-QUTR"
+        },
+        {
+          "id": "C",
+          "content": "$(3\\,;\\,1)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-JAM"
+        },
+        {
+          "id": "D",
+          "content": "$(-2\\,;\\,2)$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مربع بعد كل نقطة عن $\\Omega$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن بـ 25."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تجمع الفرقين دون تربيع."
+        }
+      ],
+      "feedback": {
+        "correct": "$9 + 16 = 25$ : $(-2\\,;\\,2)$ على المسار؛ الأخرى 18 و 100 و 13.",
+        "incorrect": "نقارن بـ $r^2 = 25$ ."
+      }
+    }
+  ]
+}

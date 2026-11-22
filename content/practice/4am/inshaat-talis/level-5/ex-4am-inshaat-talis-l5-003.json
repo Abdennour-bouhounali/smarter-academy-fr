@@ -1,0 +1,197 @@
+{
+  "id": "ex-4am-inshaat-talis-l5-003",
+  "lessonCode": "inshaat-talis",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2017 — الخريطة السياحية",
+    "estimatedMinutes": 22,
+    "tags": [
+      "وضعية إدماجية",
+      "الرابع المتناسب",
+      "خريطة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_inshaat-talis_P2",
+      "modelledOn": "BEM 2017 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2017",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "على خريطة سياحية لإحدى الولايات، المسافة بين المدينتين $A$ و $B$ هي $3\\,\\mathrm{cm}$ وتمثّل $45\\,\\mathrm{km}$ في الواقع، والمسافة بين المدينتين $B$ و $C$ هي $4{,}2\\,\\mathrm{cm}$ . تعريفًا بجمال الوطن، يحضّر مرشد سياحي لافتة بنفس مقياس الخريطة، ولا يملك إلا مسطرة غير مدرّجة ومدورا والقطعة $[AB]$ المرسومة.\n• سيارة المرشد تستهلك $7$ لترات من الوقود لكل $100\\,\\mathrm{km}$ ، وثمن اللتر $45DA$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب المسافة الحقيقية بين $B$ و $C$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المسافة بـ km",
+      "expectedAnswer": "63",
+      "misconceptionSignatures": [
+        {
+          "value": "2,8",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافات على الخريطة متناسبة مع المسافات الحقيقية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\dfrac{3}{45} = \\dfrac{4{,}2}{d}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$d = \\dfrac{45 \\times 4{,}2}{3} = 63\\,\\mathrm{km}$ .",
+        "incorrect": "اكتب التناسب بين الخريطة والواقع ثم الجداء المتصالب."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{45} = \\dfrac{4{,}2}{d}$",
+          "$d = \\dfrac{45 \\times 4{,}2}{3}$"
+        ],
+        "result": "d = 63\\,\\mathrm{km}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب الطول $x$ على اللافتة لقطعة تمثّل $75\\,\\mathrm{km}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\dfrac{45}{75} = \\dfrac{3}{x}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{75 \\times 3}{45} = 5\\,\\mathrm{cm}$ ، أي $x = \\dfrac{5}{3}AB$ .",
+        "incorrect": "$x$ يقابل $75\\,\\mathrm{km}$ كما يقابل $3\\,\\mathrm{cm}$ مسافة $45\\,\\mathrm{km}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{45}{75} = \\dfrac{3}{x}$ أي $\\dfrac{3}{5} = \\dfrac{AB}{x}$",
+          "$x = \\dfrac{5 \\times 3}{3}$"
+        ],
+        "result": "x = 5\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أنشئ القطعة التي طولها $x$ انطلاقا من $[AB]$ ، دون أي قياس.",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب خطوات الإنشاء مرقّمة (أو صوّر ورقتك)، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\dfrac{3}{5} = \\dfrac{AB}{x}$ : على نصف مستقيم مساعد عيّن 3 ثم 5 وحدات متقايسة بالمدور."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل $[AB]$ على نصف المستقيم الآخر ثم ارسم الموازي."
+        }
+      ],
+      "feedback": {
+        "correct": "$OC = 3$ و $OD = 5$ وحدات على $[Ox)$ ، $OE = AB$ على $[Oy)$ ، والموازي لـ $(CE)$ المارّ بـ $D$ يعيّن $F$ : $OF = \\dfrac{5}{3}AB = x$ .",
+        "incorrect": "قارن إنشاءك بالحل النموذجي خطوة خطوة، ثم صحّح الخطوة التي تختلف."
+      },
+      "solution": {
+        "lines": [
+          "1) نرسم نصفي مستقيمين $[Ox)$ و $[Oy)$ مبدؤهما $O$ .",
+          "2) نعيّن على $[Ox)$ بفتحة مدور ثابتة 5 وحدات متقايسة، ونسمّي $C$ العلامة الثالثة و $D$ العلامة الخامسة.",
+          "3) ننقل بالمدور القطعة $[AB]$ على $[Oy)$ : $OE = AB$ .",
+          "4) نصل $C$ بـ $E$ ، والموازي للمستقيم $(CE)$ المارّ بـ $D$ يقطع $[Oy)$ في $F$ .",
+          "التبرير: $(CE) \\parallel (DF)$ ، حسب خاصية طالس: $\\dfrac{OC}{OD} = \\dfrac{OE}{OF}$ أي $\\dfrac{3}{5} = \\dfrac{AB}{OF}$ ومنه $OF = \\dfrac{5}{3}AB = x$ ."
+        ]
+      },
+      "timeSeconds": 420
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "☜ ينطلق المرشد من $A$ إلى $B$ ثم إلى $C$ . ما ثمن الوقود الذي يستهلكه؟",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الثمن بـ DA",
+      "expectedAnswer": "340,2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة الكلية: $AB + BC$ بالكيلومتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الاستهلاك: $\\dfrac{7}{100}$ لتر لكل كيلومتر."
+        }
+      ],
+      "feedback": {
+        "correct": "$45 + 63 = 108\\,\\mathrm{km}$ ، $108 \\times \\dfrac{7}{100} = 7{,}56$ لترا، و $7{,}56 \\times 45 = 340{,}2DA$ .",
+        "incorrect": "احسب المسافة الحقيقية كلها، ثم كمية الوقود، ثم ثمنها."
+      },
+      "solution": {
+        "lines": [
+          "المسافة: $45 + 63 = 108\\,\\mathrm{km}$",
+          "الوقود: $108 \\times \\dfrac{7}{100} = 7{,}56$ لترا",
+          "الثمن: $7{,}56 \\times 45$"
+        ],
+        "result": "340{,}2DA"
+      },
+      "timeSeconds": 240,
+      "counted": false
+    }
+  ]
+}

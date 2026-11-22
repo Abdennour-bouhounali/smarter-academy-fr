@@ -1,0 +1,198 @@
+{
+  "id": "ex-1am-tatbiq-qaida-harfiya-l2-009",
+  "lessonCode": "tatbiq-qaida-harfiya",
+  "level": 2,
+  "metadata": {
+    "title": "صيغة في المجدول",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مجدول",
+      "صيغة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ict",
+      "page": 88,
+      "section": "استعمل تكنولوجيات الإعلام والاتصال"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في مجدول نحسب قيم العبارة $7x-3$ ، وقيم $x$ مكتوبة في العمود A انطلاقًا من الخانة A2 ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما الصيغة التي تُكتب في الخانة B2 لحساب قيمة العبارة؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$=7A2-3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-NOSIGN"
+        },
+        {
+          "id": "B",
+          "content": "$=7*A2-3$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$=7+A2-3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-PLUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة المحذوفة بين العدد والحرف أو بين حرفين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حذف الإشارة يعني ضربًا، ونكتب العدد قبل الحرف."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب قيمة صغيرة للحرف في كلّ اقتراح وقارن مع العبارة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "في المجدول نكتب إشارة الضرب دائمًا.",
+        "incorrect": "في المجدول لا تُحذف إشارة الضرب: نكتب $7*A2$ لا $7A2$ ، وإلّا لم يفهم المجدول الصيغة."
+      },
+      "solution": {
+        "lines": [
+          "في المجدول تُكتب إشارة الضرب بنجمة: $=7*A2-3$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "يظهر في B2 قيمة العبارة من أجل $x=2$ . ما هي؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "value": "69",
+          "id": "MISC-TATBIQ-GLUED"
+        },
+        {
+          "value": "6",
+          "id": "MISC-TATBIQ-PLUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما قيمة كلّ حرف؟ وفي كم موضع يظهر كلّ حرف في العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع القيمة في كلّ موضع يظهر فيه الحرف، وأعد إشارة الضرب بين العددين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب بالأولويات: ما بين القوسين، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: النتيجة $11$ .",
+        "incorrect": "بين العدد والحرف إشارة ضرب لا تُكتب: عند التعويض نُعيدها، فنحسب جداءً لا عددًا من رقمين."
+      },
+      "solution": {
+        "lines": [
+          "نكتب العبارة: $7\\times x-3$ .",
+          "نضع قيمة كلّ حرف في كلّ موضع يظهر فيه: $7\\times 2-3$ .",
+          "نحسب: $14-3$ .",
+          "نحسب: $11$ .",
+          "الجواب: $11$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما القيمة التي تظهر في الخانة المقابلة لـ $x=6$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "39",
+      "misconceptionSignatures": [
+        {
+          "value": "73",
+          "id": "MISC-TATBIQ-GLUED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما قيمة كلّ حرف؟ وفي كم موضع يظهر كلّ حرف في العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع القيمة في كلّ موضع يظهر فيه الحرف، وأعد إشارة الضرب بين العددين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب بالأولويات: ما بين القوسين، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: النتيجة $39$ .",
+        "incorrect": "بين العدد والحرف إشارة ضرب لا تُكتب: عند التعويض نُعيدها، فنحسب جداءً لا عددًا من رقمين."
+      },
+      "solution": {
+        "lines": [
+          "نكتب العبارة: $7\\times x-3$ .",
+          "نضع قيمة كلّ حرف في كلّ موضع يظهر فيه: $7\\times 6-3$ .",
+          "نحسب: $42-3$ .",
+          "نحسب: $39$ .",
+          "الجواب: $39$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

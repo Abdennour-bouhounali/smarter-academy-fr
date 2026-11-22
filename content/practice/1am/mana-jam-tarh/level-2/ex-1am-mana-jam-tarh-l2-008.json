@@ -1,0 +1,185 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l2-008",
+  "lessonCode": "mana-jam-tarh",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — تحقّق من فرق",
+    "estimatedMinutes": 4,
+    "tags": [
+      "فرق",
+      "تحقّق",
+      "تبرير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "كتب طارق في كرّاسه:",
+    "formulas": [
+      "0{,}93 - 0{,}08 = 0{,}13"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل هذا الناتج صحيح؟ برّر باستعمال الجمع.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-FASILA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "للتحقق من فرق: الفرق + الحدّ الثاني = الحدّ الأول؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $0{,}13 + 0{,}08$."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}13 + 0{,}08 = 0{,}21 \\neq 0{,}93$: الناتج خطأ.",
+        "incorrect": "اجمع الناتج المقترح والحدّ الثاني، وقارن بالحدّ الأول."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}13 + 0{,}08 = 0{,}21$",
+          "$0{,}21 \\neq 0{,}93$ ، إذن الناتج خطأ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب الفرق الصحيح.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "0.85",
+      "misconceptionSignatures": [
+        {
+          "value": "0.13",
+          "id": "MISC-JAMTARH-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "0,08 هي 8 أجزاء من مئة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح الأجزاء من مئة من الأجزاء من مئة."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}93 - 0{,}08 = 0{,}85$، والتحقق: $0{,}85 + 0{,}08 = 0{,}93$.",
+        "incorrect": "انتبه إلى المنازل: 0,08 ليست 0,8."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}93 - 0{,}08 = 0{,}85$",
+          "التحقق: $0{,}85 + 0{,}08 = 0{,}93$"
+        ],
+        "result": "0{,}85"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "للتحقق من صحة فرق، نجمع:",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الفرق والحدّ الثاني، فنجد الحدّ الأول",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "حدّي الفرق، فنجد الفرق",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-MAJMU-FARQ"
+        },
+        {
+          "id": "C",
+          "content": "الفرق والحدّ الأول، فنجد الحدّ الثاني",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-FARQ-MAQLUB"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المخطط بأقواس، الحدّ الأول هو الكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكل = مجموع الجزأين."
+        }
+      ],
+      "feedback": {
+        "correct": "الحدّ الأول هو الكل، والفرق والحدّ الثاني جزآه.",
+        "incorrect": "ارسم المخطط بأقواس لعملية طرح: ما الكل وما الجزآن؟"
+      },
+      "solution": {
+        "lines": [
+          "في $a - b = c$ ، العدد a هو الكل، و b و c جزآه.",
+          "إذن $c + b = a$: نجمع الفرق والحدّ الثاني فنجد الحدّ الأول."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

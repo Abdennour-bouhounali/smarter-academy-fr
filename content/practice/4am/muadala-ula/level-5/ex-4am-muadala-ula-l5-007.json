@@ -1,0 +1,225 @@
+{
+  "id": "ex-4am-muadala-ula-l5-007",
+  "lessonCode": "muadala-ula",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2009 — خزان وحوض للسقي",
+    "estimatedMinutes": 15,
+    "tags": [
+      "معادلة",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_muadala-ula_P2",
+      "modelledOn": "BEM 2009 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في مزرعة بأدرار، يحرص صاحبها على عدم تبذير الماء، خزان مائي سعته $450\\,m^3$ مملوء تمامًا، وحوض للسقي فارغ تمامًا. نفتح الصنبور فيتدفّق الماء من الخزان إلى الحوض بانتظام بمعدل $15\\,m^3$ في الساعة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب بعد مرور 4 ساعات:",
+      "statement": "كمية الماء المتبقية في الخزان.",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الحجم بـ m³",
+      "expectedAnswer": "390",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في 4 ساعات يخرج من الخزان $4 \\times 15$ متر مكعب."
+        }
+      ],
+      "feedback": {
+        "correct": "$390\\,m^3$ .",
+        "incorrect": "أعد الحساب خطوة خطوة، مع احترام أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$450 - 15 \\times 4 = 450 - 60$"
+        ],
+        "result": "390\\,m^3"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كمية الماء المتدفقة في الحوض.",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الحجم بـ m³",
+      "expectedAnswer": "60",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يدخل الحوض 15 متر مكعب في كل ساعة."
+        }
+      ],
+      "feedback": {
+        "correct": "$60\\,m^3$ .",
+        "incorrect": "أعد الحساب خطوة خطوة، مع احترام أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$15 \\times 4 = 60$"
+        ],
+        "result": "60\\,m^3"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ليكن $x$ عدد الساعات. بعد كم ساعة تتساوى كمية الماء في الخزان وفي الحوض؟",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدة بالساعات",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "1/15",
+          "id": "MISC-MUADALA-QISMA-MAQLUBA"
+        },
+        {
+          "value": "-15",
+          "id": "MISC-MUADALA-ISHARA-SALIBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عبّر بدلالة $x$ عن كمية الماء في الخزان وفي الحوض."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب أن الكميتين متساويتان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انقل حدود $x$ إلى طرف والأعداد إلى الطرف الآخر، ثم اقسم على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "بعد 15 ساعة.",
+        "incorrect": "انقل كل حدّ بإشارة معاكسة، وجمّع الحدود المتشابهة، ثم اقسم على معامل $x$ بإشارته. تحقّق بالتعويض."
+      },
+      "solution": {
+        "lines": [
+          "بعد $x$ ساعة: في الخزان $450 - 15x$ و في الحوض $15x$",
+          "$450 - 15x = 15x$",
+          "$-15x - 15x = -450$",
+          "$-30x = -450$",
+          "$x = \\dfrac{-450}{-30}$"
+        ],
+        "result": "x = 15"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "☜ بعد كم ساعة تصبح كمية الماء في الحوض ضعف كمية الماء المتبقية في الخزان؟",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدة بالساعات",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "1/20",
+          "id": "MISC-MUADALA-QISMA-MAQLUBA"
+        },
+        {
+          "value": "-60",
+          "id": "MISC-MUADALA-NAQL-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضعف كمية الماء المتبقية في الخزان: $2(450 - 15x)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب المعادلة ثم انشر طرفها الثاني."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انقل حدود $x$ إلى طرف والأعداد إلى الطرف الآخر، ثم اقسم على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "بعد 20 ساعة.",
+        "incorrect": "أعد النشر حدًّا حدًّا مع الإشارات، ثم انقل وجمّع واقسم على معامل $x$ . تحقّق بالتعويض في المعادلة الأولى."
+      },
+      "solution": {
+        "lines": [
+          "$15x = 2(450 - 15x)$",
+          "$15x = 900 - 30x$",
+          "$15x + 30x = 900$",
+          "$45x = 900$",
+          "$x = \\dfrac{900}{45}$"
+        ],
+        "result": "x = 20"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

@@ -1,0 +1,245 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-amaliyat-tabiiya-ushriya-l4-001",
+  "lessonCode": "wadiya-idmajiya-amaliyat-tabiiya-ushriya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — حجز سلسلة بخطّ كسر على الآلة الحاسبة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "آلة حاسبة",
+      "خطّ الكسر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "الآلة الحاسبة تنفّذ العمليات بترتيبها الصحيح، لكنّها لا ترى خطّ الكسر: يجب أن نعوّضه بالقوسين المناسبين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب بالقلم قيمة السلسلة $\\dfrac{48 + 27}{12 - 7}$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "43.25",
+          "id": "MISC-AQWAS-BARSPLIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعية جملة جملة: كلّ جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب سلسلة عمليات تترجمها، وضع بين قوسين ما يجب حسابه أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب السلسلة بالترتيب الصحيح للعمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{48 + 27}{12 - 7} = 15$ .",
+        "incorrect": "خطّ الكسر يقسم البسط كلّه على المقام كلّه، فنحسب البسط والمقام أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $\\dfrac{48 + 27}{12 - 7}$",
+          "$A = \\dfrac{48 + 27}{12 - 7}$",
+          "$A = \\dfrac{75}{5}$",
+          "$A = 15$"
+        ],
+        "result": "15"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أيّ حجز على الآلة يعطي قيمة السلسلة $\\dfrac{48 + 27}{12 - 7}$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$48 + 27 \\div 12 - 7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-CALCNOBRACKET"
+        },
+        {
+          "id": "B",
+          "content": "$(48 + 27) \\div (12 - 7)$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$48 + 27 \\div (12 - 7)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-MISPLACED"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المطلوب جيّدًا: ما العملية التي تُنجز في الأخير، وما الذي يُحسب قبلها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ سلسلة مقترحة بالحساب أو بالقاعدة المناسبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الجواب هو السلسلة التي تترجم المطلوب وتعطي القيمة المنتظرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$(48 + 27) \\div (12 - 7) = 15$ .",
+        "incorrect": "اختبر كلّ سلسلة بالحساب: الصحيحة هي التي تترجم المطلوب وتعطي القيمة المنتظرة، وانتبه إلى القوسين."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة الصحيحة: $(48 + 27) \\div (12 - 7)$",
+          "$A = (48 + 27) \\div (12 - 7)$",
+          "$A = 75 \\div 5$",
+          "$A = 15$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما اسم السلسلة $\\dfrac{48 + 27}{12 - 7}$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "choices": [
+        {
+          "id": "A",
+          "content": "حاصل قسمة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "مجموع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-FIRSTOP"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب مرحلة مرحلة وتتبّع آخر عملية بقيت لك."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع خطًّا تحت العملية التي تُنجز في الأخير."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العملية الأخيرة هي التي تسمّي السلسلة."
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة عبارة عن حاصل قسمة: آخر عملية تُنجز فيها هي القسمة.",
+        "incorrect": "لا تسمِّ السلسلة بأوّل عملية تُنجز ولا بأوّل رمز تراه: سمِّها بآخر عملية تُنجز فيها."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{48 + 27}{12 - 7}$",
+          "$A = \\dfrac{75}{5}$",
+          "$A = 15$",
+          "آخر عملية تُنجز هي القسمة ، فالسلسلة عبارة عن حاصل قسمة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "حجز تلميذ $48 + 27 \\div 12 - 7 =$ فظهر $43{,}25$ . فسّر ما فعلته الآلة.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب على ورقتك مرحلة مرحلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اسأل: أيّ حساب يثبت ما تقول؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تذكر القاعدة المستعملة."
+        }
+      ],
+      "feedback": {
+        "correct": "$75 \\div 5 = 15$ .",
+        "incorrect": "قارن تبريرك بالحلّ النموذجي: الفكرة ثم الحساب الذي يدعمها."
+      },
+      "solution": {
+        "lines": [
+          "الآلة تقسم $27$ وحده على $12$ قبل الجمع والطرح: $48 + 2{,}25 - 7 = 43{,}25$ .",
+          "لتقسيم المجموع كلّه على الفرق كلّه نضع قوسين على البسط وعلى المقام: $(48 + 27) \\div (12 - 7)$ .",
+          "$75 \\div 5 = 15$ ."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

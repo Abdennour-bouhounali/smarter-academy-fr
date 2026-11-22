@@ -1,0 +1,123 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l3-005",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — الرأس الرابع على الشبكة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "إنشاء",
+      "ورقة مرصوفة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_shuaayn-mutasawiyayn_P3",
+      "modelledOn": "method-image"
+    }
+  },
+  "statement": {
+    "content": "على الورقة المرصوفة (الشكل)، النقط A و B و C، وثلاث نقط مقترحة X و Y و Z.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          4,
+          1
+        ],
+        "C": [
+          5,
+          4
+        ],
+        "X": [
+          1,
+          3
+        ],
+        "Y": [
+          9,
+          5
+        ],
+        "Z": [
+          -1,
+          -3
+        ]
+      },
+      "grid": true,
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ]
+      ],
+      "labels": {
+        "A": "sw",
+        "B": "se",
+        "C": "ne",
+        "X": "nw",
+        "Y": "ne",
+        "Z": "sw"
+      },
+      "ariaLabel": "ورقة مرصوفة: النقط A و B و C، وثلاث نقط مقترحة X و Y و Z"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "النقطة D حيث ABCD متوازي أضلاع هي:",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "X",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "Y",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        },
+        {
+          "id": "C",
+          "content": "Z",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ABCD متوازي أضلاع: اكتب المساواة الشعاعية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الشعاع DC يساوي الشعاع AB: من D إلى C كما من A إلى B."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انطلق من C وتحرّك عكس الحركة من A إلى B."
+        }
+      ],
+      "feedback": {
+        "correct": "من A إلى B: 4 مربعات نحو اليمين ومربع نحو الأعلى. نرجع من C بالحركة المعاكسة فنصل إلى X.",
+        "incorrect": "لا تخلط بين ABCD و ABDC: الضلع المقابل لـ [AB] هو [DC]."
+      }
+    }
+  ]
+}

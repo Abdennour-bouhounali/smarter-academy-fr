@@ -1,0 +1,77 @@
+{
+  "id": "ex-4am-tayin-pgcd-l1-005",
+  "lessonCode": "tayin-pgcd",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2021 — PGCD(63 ; 49)",
+    "estimatedMinutes": 4,
+    "tags": [
+      "PGCD",
+      "حصر القواسم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tayin-pgcd_P1",
+      "modelledOn": "BEM 2021 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 63 و 49.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قائمة قواسم كل من العددين 63 و 49، مثنى مثنى (1 مع العدد نفسه، ثم 2 …) حتى لا يفوتك قاسم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استخرج القواسم المشتركة: الأعداد الموجودة في القائمتين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاسم المشترك الأكبر هو أكبر القواسم المشتركة، لا أيّ واحد منها."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 63 و 49 هي 1 ، 7، وأكبرها 7.",
+        "incorrect": "اكتب قائمتي القواسم كاملتين، ثم خذ أكبر عدد يظهر في القائمتين معًا."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 63 هي: 1 ، 3 ، 7 ، 9 ، 21 ، 63",
+          "قواسم العدد 49 هي: 1 ، 7 ، 49",
+          "القواسم المشتركة للعددين 63 و 49 هي: 1 ، 7",
+          "أكبرها هو 7، إذن:"
+        ],
+        "result": "PGCD(63 ; 49) = 7"
+      },
+      "work": "optional",
+      "timeSeconds": 225
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "id": "ex-4am-khawass-qawasim-l2-008",
+  "lessonCode": "khawass-qawasim",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2021 — n + 23 و n + 3",
+    "estimatedMinutes": 6,
+    "tags": [
+      "خاصية 1",
+      "حرفي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_khawass-qawasim_P1",
+      "modelledOn": "BEM 2021 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "$n$ عدد طبيعي، و $d$ قاسم مشترك للعددين $a$ و $b$ حيث $a = n + 23$ و $b = n + 3$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $a - b$.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "20",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $a - b = (n + 23) - (n + 3)$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احذف القوسين: الحد $n$ يختفي."
+        }
+      ],
+      "feedback": {
+        "correct": "$a - b = n + 23 - n - 3 = 20$.",
+        "incorrect": "احذف القوسين مع الانتباه إلى الإشارة أمام القوس الثاني."
+      },
+      "solution": {
+        "lines": [
+          "$a - b = (n + 23) - (n + 3)$",
+          "$a - b = n + 23 - n - 3$",
+          "$a - b = 20$"
+        ],
+        "result": "a - b = 20"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عيّن كل الأعداد الطبيعية التي يمكن أن تكون قواسم مشتركة للعددين $a$ و $b$.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        2,
+        4,
+        5,
+        10,
+        20
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$d$ يقسم $a$ و $b$، فماذا يقسم أيضًا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القاسم المشترك يقسم الفرق $a - b$ (الخاصية 1)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جد كل قواسم العدد الذي وجدته في السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "$d$ يقسم $a - b = 20$، فهو من قواسم 20: 1 ، 2 ، 4 ، 5 ، 10 ، 20.",
+        "incorrect": "القاسم المشترك للعددين يقسم فرقهما: ابحث عن كل قواسم هذا الفرق."
+      },
+      "solution": {
+        "lines": [
+          "$d$ يقسم كلا من $a$ و $b$ ، إذن $d$ يقسم $a - b$ (الخاصية 1)، أي $d$ يقسم 20.",
+          "قواسم 20 هي: 1 ، 2 ، 4 ، 5 ، 10 ، 20.",
+          "وكلها ممكنة: من أجل $n = 17$ يكون $a = 40$ و $b = 20$ ، وقواسمهما المشتركة هي قواسم 20.",
+          "إذن القواسم المشتركة الممكنة هي: 1 ، 2 ، 4 ، 5 ، 10 ، 20."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

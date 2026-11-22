@@ -1,0 +1,193 @@
+{
+  "id": "ex-2am-hall-mushkil-muadala-l3-002",
+  "lessonCode": "hall-mushkil-muadala",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — قطعة أرض مستطيلة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "ترجمة وضعيّة",
+      "معادلة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "قطعة أرض مستطيلة عرضها $12\\,\\mathrm{m}$ وطولها $x$ ومساحتها $480\\,\\mathrm{m}^{2}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "المساحة جداء الطول في العرض. أيّ معادلة تترجم الوضعيّة ؟ اختر الإجابة الصحيحة :",
+      "learningPoints": [
+        {
+          "code": "2am_hall-mushkil-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{x}{12}=480$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAJHUL-ROLE"
+        },
+        {
+          "id": "B",
+          "content": "$480\\times x=12$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAJHUL-SWAP"
+        },
+        {
+          "id": "C",
+          "content": "$12\\times x=480$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعيّة وسمِّ المجهول بحرف، ثمّ حدّد ما يُعطى وما يُطلب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العملية التي تربط الأعداد بالمجهول كما تحدث في الوضعيّة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر كلّ معادلة : هل تصف الوضعيّة، وهل يجعلها العدد المتوقّع صحيحة ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "المعادلة الصحيحة هي $12\\times x=480$ .",
+        "incorrect": "عبّر عن الوضعيّة بعملية بين العدد المعلوم والمجهول، ثمّ اختبر الخيارات بقيمة مقبولة."
+      },
+      "solution": {
+        "lines": [
+          "$12\\times x=480$ : هذه المعادلة تصف الوضعيّة.",
+          "وحلّها $x=40$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حلّ المعادلة : $12\\times x=480$ .",
+      "learningPoints": [
+        {
+          "code": "2am_hall-mushkil-muadala_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "40",
+      "misconceptionSignatures": [
+        {
+          "value": "5760",
+          "id": "MISC-MAJHUL-MULTDIV"
+        },
+        {
+          "value": "0.025",
+          "id": "MISC-MAJHUL-FLIP"
+        },
+        {
+          "value": "468",
+          "id": "MISC-MAJHUL-SUBFORM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في المعادلة ما يُفعل بالمجهول : ضرب أو قسمة أو جمع أو طرح، وما هي آخر عملية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العامل الناقص في جداء يُحسب بقسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من حلّك : عوّض المجهول بقيمته وأنجز العملية، فإن وجدت الطرف الآخر فالحلّ صحيح."
+        }
+      ],
+      "feedback": {
+        "correct": "$x=40$ .",
+        "incorrect": "ابحث عن العدد الذي يجعل المساواة صحيحة بالعملية العكسية، ثمّ تحقّق منه بإنجاز العملية."
+      },
+      "solution": {
+        "lines": [
+          "$x=480\\div 12=40$ .",
+          "التحقّق : $12\\times 40=480$ ."
+        ],
+        "result": "40"
+      },
+      "work": "optional",
+      "timeSeconds": 70
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب محيط الأرض بالمتر : $2\\times(x+12)$ .",
+      "learningPoints": [
+        {
+          "code": "2am_hall-mushkil-muadala_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "104",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بقيمته المعلومة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات : الضرب والقسمة قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة."
+        }
+      ],
+      "feedback": {
+        "correct": "النتيجة $104$ .",
+        "incorrect": "عوّض بالقيم المعلومة واحسب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$2\\times(40+12)=104$ ."
+        ],
+        "result": "104"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

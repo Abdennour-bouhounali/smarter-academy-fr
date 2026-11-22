@@ -1,0 +1,84 @@
+{
+  "id": "ex-4am-jidhr-tarbii-l5-008",
+  "lessonCode": "jidhr-tarbii",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2020 — أشجار حول ساحة",
+    "estimatedMinutes": 15,
+    "tags": [
+      "تعريف الجذر التربيعي",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_jidhr-tarbii_P1",
+      "modelledOn": "BEM 2020 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2020",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "ساحة متوسطة مربعة الشكل مساحتها $1024m^2$ . يريد المدير، حبًّا للوطن وحرصًا على جمال بيئته، غرس أشجار حولها بحيث تكون المسافة بين كل شجرتين متتاليتين $4m$ ، مع شجرة في كل ركن.\n• ثمن الشجيرة الواحدة 750DA .\n• تكلفة غرس كل شجيرة تمثل 20% من ثمنها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "☜ احسب التكلفة الإجمالية لشراء الشجيرات وغرسها.",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (DA)",
+      "expectedAnswer": "28800",
+      "misconceptionSignatures": [
+        {
+          "value": "24000",
+          "id": "MISC-MURABBA-DIF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول ضلع الساحة هو العدد الموجب الذي مربعه 1024."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب المحيط ثم اقسمه على 4 لتحصل على عدد الشجيرات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تكلفة الشجيرة الواحدة مع غرسها: ثمنها + 20% من ثمنها."
+        }
+      ],
+      "feedback": {
+        "correct": "الضلع 32 m، المحيط 128 m، 32 شجيرة، كلفة الواحدة $750 + 150 = 900$ DA، المجموع $28800$ DA.",
+        "incorrect": "لا تنس تكلفة الغرس (20%)، وأن عدد الشجيرات على مسار مغلق يساوي المحيط مقسوما على المسافة."
+      },
+      "solution": {
+        "lines": [
+          "طول الضلع: $\\sqrt{1024} = 32$ لأن $32^2 = 1024$",
+          "المحيط: $4 \\times 32 = 128$",
+          "عدد الشجيرات: $128 \\div 4 = 32$",
+          "كلفة الشجيرة مع غرسها: $750 + 750 \\times \\dfrac{20}{100} = 900$",
+          "التكلفة الإجمالية: $32 \\times 900 = 28800$"
+        ],
+        "result": "28800DA"
+      },
+      "work": "optional",
+      "timeSeconds": 900
+    }
+  ]
+}

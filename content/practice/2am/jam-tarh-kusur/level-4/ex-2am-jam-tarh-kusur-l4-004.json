@@ -1,0 +1,188 @@
+{
+  "id": "ex-2am-jam-tarh-kusur-l4-004",
+  "lessonCode": "jam-tarh-kusur",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مجموع أكبر من الواحد ثمّ حصره",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جمع كسرين",
+      "كتابة عشرية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نريد حساب $\\dfrac{5}{6} + \\dfrac{1}{3}$ ثمّ كتابة الناتج بالفاصلة ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $S = \\dfrac{5}{6} + \\dfrac{1}{3}$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "7/6",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2/3",
+          "id": "MISC-JAMKASR-ACROSS"
+        },
+        {
+          "value": "1",
+          "id": "MISC-JAMKASR-NOSCALE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليّة المطلوبة؟ وهل المقامان متساويان، أم أنّ أحدهما مضاعف للآخر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا اختلف المقامان فاكتب الكسر ذا المقام الأصغر بالمقام الأكبر: اضرب حدّيه في العدد نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع (أو اطرح) البسطين وأبقِ المقام كما هو، ثمّ اختزل الناتج إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = \\dfrac{7}{6}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{3} = \\dfrac{1 \\times 2}{3 \\times 2} = \\dfrac{2}{6}$ .",
+          "$S = \\dfrac{5}{6} + \\dfrac{1}{3} = \\dfrac{5 + 2}{6} = \\dfrac{7}{6}$ ."
+        ],
+        "result": "S = \\dfrac{7}{6}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط القيمة المقرّبة بالنقصان إلى 0{,}01 للعدد $\\dfrac{7}{6}$ .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "1.16",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكسر هو حاصل قسمة بسطه على مقامه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}16$ .",
+        "incorrect": "أنجز القسمة بعد الفاصلة وتوقّف عند الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{7}{6} = 7 \\div 6$",
+          "بالنقصان: نتوقّف عند الرتبة المطلوبة دون تغيير الرقم الأخير."
+        ],
+        "result": "1{,}16"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اختر الحصر الصحيح للعدد $\\dfrac{7}{6}$ إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$1{,}16 < \\dfrac{7}{6} < 1{,}17$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$1{,}17 < \\dfrac{7}{6} < 1{,}18$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$1{,}15 < \\dfrac{7}{6} < 1{,}16$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$1{,}66 < \\dfrac{7}{6} < 1{,}67$",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكسر هو حاصل قسمة بسطه على مقامه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}16 < \\dfrac{7}{6} < 1{,}17$ .",
+        "incorrect": "أنجز القسمة بعد الفاصلة وتوقّف عند الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{7}{6} = 7 \\div 6$",
+          "$1{,}16 < \\dfrac{7}{6} < 1{,}17$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

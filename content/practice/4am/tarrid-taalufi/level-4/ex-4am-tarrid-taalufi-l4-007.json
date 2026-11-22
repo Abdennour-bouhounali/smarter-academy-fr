@@ -1,0 +1,200 @@
+{
+  "id": "ex-4am-tarrid-taalufi-l4-007",
+  "lessonCode": "tarrid-taalufi",
+  "level": 4,
+  "metadata": {
+    "title": "قاعة رياضة — ميزانية الشهر",
+    "estimatedMinutes": 12,
+    "tags": [
+      "نمذجة",
+      "عدد صورته معلومة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-taalufi_P1",
+      "modelledOn": "act-4",
+      "adaptedFrom": "ex-4am-tarrid-taalufi-l4-007"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "قاعة رياضة: اشتراك شهري 1500DA ثم 250DA للحصة.\nنسمّي $x$ عدد الحصص في الشهر و $f(x)$ المبلغ بـ DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عبّر عن $f(x)$ بدلالة $x$ .",
+      "statement": "أعط العددين $a$ و $b$ حيث: $f(x) = ax + b$ ، ابدأ بالعدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "250",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "1500"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع عن كل حصة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هو ما يُدفع $x$ مرّة: معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "ما يُدفع عن كل حصة هو معامل $x$ .",
+        "incorrect": "معامل $x$ هو المبلغ الذي يتكرّر مع كل وحدة، لا المبلغ الذي يُدفع مرّة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 250x + 1500$"
+        ],
+        "result": "f(x) = 250x + 1500"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "ثم العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "1500",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "250"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع مرّة واحدة (الاشتراك الشهري)؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الاشتراك الشهري يُدفع مرّة واحدة: هو الحدّ الثابت $b$ .",
+        "incorrect": "الحدّ الثابت لا يتعلّق بعدد الوحدات $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 250x + 1500$"
+        ],
+        "result": "f(x) = 250x + 1500"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "لدى إيناس 5000DA للشهر. كم حصة يمكنها أن تحضر بهذا المبلغ بالضبط؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الحصص",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAALUFI-NISYAN-B",
+          "value": "20"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حل المعادلة $f(x) = 5000$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح الاشتراك أولا."
+        }
+      ],
+      "feedback": {
+        "correct": "$(5000 - 1500) \\div 250$ .",
+        "incorrect": "اكتب $250x + 1500 = 5000$ ثم اعزل $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$250x + 1500 = 5000$",
+          "$250x = 3500$",
+          "$x = 14$",
+          "تحضر إيناس 14 حصة."
+        ],
+        "result": "x = 14"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "دفعت أختها 4500DA . كم حصة حضرت؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الحصص",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حل المعادلة $f(x) = 4500$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$(4500 - 1500) \\div 250$ .",
+        "incorrect": "اكتب $250x + 1500 = 4500$ ثم اعزل $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$250x + 1500 = 4500$",
+          "$250x = 3000$",
+          "$x = 12$",
+          "حضرت أختها 12 حصة."
+        ],
+        "result": "x = 12"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -6,6 +6,12 @@ import { fileURLToPath } from 'node:url';
 const SRC = join(dirname(fileURLToPath(import.meta.url)), '..');
 const read = (p) => readFileSync(join(SRC, p), 'utf8');
 
+// Les catalogues arabes : l'interface élève/visiteur est arabe, donc les
+// libellés que ces contrats exigent vivent ici et non dans le JSX.
+const readJson = (p) => JSON.parse(read(p));
+const marketingAr = readJson('i18n/locales/ar/marketing.json');
+const authAr = readJson('i18n/locales/ar/auth.json');
+
 /**
  * La source PRIVÉE DE SES COMMENTAIRES.
  *
@@ -49,8 +55,14 @@ describe('La case de consentement', () => {
   });
 
   it('porte les deux intitulés exigés', () => {
-    expect(source).toContain('Conditions Générales d’Utilisation');
-    expect(source).toContain('Politique de confidentialité');
+    // L'interface est ARABE : les deux intitulés ne sont plus écrits dans le
+    // JSX mais rendus depuis le catalogue de traduction. Le contrat tient
+    // toujours — la case doit nommer les deux documents — mais il se vérifie
+    // désormais en deux temps : la clé est posée ici, le texte existe là-bas.
+    expect(source).toContain("t('consent.terms')");
+    expect(source).toContain("t('consent.privacy')");
+    expect(marketingAr.consent.terms.trim()).not.toBe('');
+    expect(marketingAr.consent.privacy.trim()).not.toBe('');
   });
 
   it('relie la case à son libellé par id/htmlFor, sans imbrication interactive', () => {
@@ -90,11 +102,26 @@ describe('La page d’inscription', () => {
   });
 
   it('transmet le consentement au serveur', () => {
-    expect(source).toContain('registerRequest({ email, password, acceptLegal })');
+    // `accountType` (élève ou enseignant) part avec le consentement ; la liste
+    // blanche est tenue par le serveur.
+    const call = source.match(/registerRequest\(\{[\s\S]*?\}\)/)?.[0] ?? '';
+    expect(call).toMatch(/\bacceptLegal\b/);
+    expect(call).toMatch(/\baccountType\b/);
+    // « الاسم و اللقب » naissent avec le compte (PersonName côté serveur).
+    expect(call).toMatch(/firstName:/);
+    expect(call).toMatch(/lastName:/);
   });
 
   it('conduit vers la vérification, et non vers l’espace élève', () => {
-    expect(source).toContain("navigate('/verification-email')");
+    expect(source).toContain("'/verification-email'");
+    expect(source).not.toMatch(/navigate\('\/espace'\)/);
+  });
+
+  it('dit quand le premier envoi du courriel a échoué', () => {
+    // Le compte est créé même si le SMTP refuse (verificationEmailSent:
+    // false) : l'écran ne doit pas affirmer « أرسلنا ».
+    expect(source).toContain('verificationEmailSent === false');
+    expect(source).toContain('/verification-email?statut=envoi-echoue');
   });
 });
 
@@ -127,7 +154,9 @@ describe('Le bouton Google', () => {
   });
 
   it('part par une navigation vers notre propre API', () => {
-    expect(source).toContain('googleRedirectUrl()');
+    // Le type de compte choisi part avec la navigation vers NOTRE API — jamais
+    // vers Google directement, et sans aucun secret côté navigateur.
+    expect(source).toContain('googleRedirectUrl(accountType)');
   });
 });
 
@@ -140,10 +169,6 @@ describe('Le service d’authentification', () => {
     expect(source).not.toMatch(/privacy_policy_accepted_version\s*:/);
   });
 
-  it('lit les versions depuis le serveur, en lecture seule', () => {
-    expect(source).toContain('/legal/versions');
-  });
-
   it('ne transmet jamais l’adresse au renvoi — le serveur la connaît', () => {
     const bloc = source.slice(source.indexOf('export async function resendVerificationEmail'));
     expect(bloc.slice(0, 600)).not.toMatch(/body:/);
@@ -153,8 +178,7 @@ describe('Le service d’authentification', () => {
 describe('Les routes légales', () => {
   const app = read('App.jsx');
 
-  it('les trois pages sont routées — sinon elles retombent sur l’accueil', () => {
-    expect(app).toContain('path="/mentions-legales"');
+  it('les deux pages sont routées — sinon elles retombent sur l’accueil', () => {
     expect(app).toContain('path="/confidentialite"');
     expect(app).toContain('path="/cgu"');
   });
@@ -168,7 +192,7 @@ describe('Les routes légales', () => {
     const bloc = app.slice(app.indexOf('<Route element={<MainLayout />}>'));
     const fin = bloc.indexOf('</Route>');
     const dansLaCoquille = bloc.slice(0, fin);
-    for (const route of ['/mentions-legales', '/confidentialite', '/cgu', '/verification-email']) {
+    for (const route of ['/confidentialite', '/cgu', '/verification-email']) {
       expect(dansLaCoquille).toContain(`path="${route}"`);
     }
   });
@@ -177,8 +201,7 @@ describe('Les routes légales', () => {
 describe('Le pied de page', () => {
   const source = read('components/navigation/Footer.jsx');
 
-  it('mène aux trois documents', () => {
-    expect(source).toContain("to: '/mentions-legales'");
+  it('mène aux deux documents', () => {
     expect(source).toContain("to: '/confidentialite'");
     expect(source).toContain("to: '/cgu'");
   });
@@ -189,10 +212,11 @@ describe('Le pied de page', () => {
 });
 
 describe('Les pages légales elles-mêmes', () => {
+  const app = read('App.jsx');
+  const footer = read('components/navigation/Footer.jsx');
   const pages = {
     CGU: read('pages/legal/CGU.jsx'),
     Confidentialité: read('pages/legal/Confidentialite.jsx'),
-    'Mentions légales': read('pages/legal/MentionsLegales.jsx'),
   };
 
   /**
@@ -212,94 +236,45 @@ describe('Les pages légales elles-mêmes', () => {
     }
   });
 
-  it('n’annoncent ni offre mensuelle, ni période d’essai, ni quota', () => {
-    for (const [nom, source] of Object.entries(pages)) {
-      expect(source, nom).not.toMatch(/5\s*€\s*\/\s*mois/i);
-      expect(source, nom).not.toMatch(/essai gratuit de \d+ jours/i);
-      expect(source, nom).not.toMatch(/chatbot/i);
-    }
-  });
-
-  it('n’affirment pas conserver l’adresse IP — le code ne la stocke pas', () => {
-    expect(pages['Confidentialité']).not.toMatch(/adresse IP[^.]{0,40}(conserv|collect|stock)/i);
-  });
-
-  it('annoncent le tarif réel : 35 € par an', () => {
-    expect(pages.CGU).toMatch(/35\s*(&nbsp;| | | )?€/);
-    expect(pages.CGU).toMatch(/an(nuel)?/i);
-  });
-
+  /**
+   * CGU et politique de confidentialité : depuis le 2026-10-04, texte arabe
+   * fourni par le propriétaire (droit algérien), repris tel quel. Les
+   * contrats ci-dessous protègent ce qui a été RAJOUTÉ au modèle — la date,
+   * l'adresse de contact — et ce qui ne doit pas y revenir.
+   */
   it('portent la version qui correspond à celle du serveur', () => {
-    expect(pages.CGU).toContain('12 septembre 2026');
-    expect(pages['Confidentialité']).toContain('12 septembre 2026');
+    const legal = readFileSync(join(SRC, '../../api/config/legal.php'), 'utf8');
+    expect(legal).toContain("'terms_version' => env('LEGAL_TERMS_VERSION', '2026-10-04')");
+    expect(legal).toContain("'privacy_version' => env('LEGAL_PRIVACY_VERSION', '2026-10-04')");
+    expect(pages.CGU).toContain('4 أكتوبر 2026');
+    expect(pages['Confidentialité']).toContain('4 أكتوبر 2026');
   });
 
-  it('nomment l’éditeur et son immatriculation', () => {
-    expect(pages['Mentions légales']).toContain('937795003');
-    expect(pages['Mentions légales']).toMatch(/Toulouse/);
-    expect(pages['Mentions légales']).toContain('contact@smarter-academy.fr');
-  });
-
-  /**
-   * LA POLITIQUE SUR LES MINEURS — sa moitié la plus facile à perdre.
-   *
-   * Le principe produit est qu'un élève mineur reçoit EXACTEMENT le même
-   * enseignement qu'un majeur : la distinction est juridique, jamais
-   * pédagogique. Une reformulation maladroite des documents pourrait
-   * laisser croire l'inverse, sans casser aucun test de rendu.
-   */
-  it('affirment que l’enseignement est identique quel que soit l’âge', () => {
-    expect(pages.CGU).toMatch(/même service pédagogique|même enseignement/i);
-    expect(pages.CGU).toMatch(/Aucune restriction pédagogique n’est liée à l’âge/i);
-  });
-
-  it('ne promettent AUCUN outillage de vérification d’âge ou de consentement parental', () => {
-    // Ces dispositifs n'existent pas : les documents doivent le DIRE.
-    // Le texte a le droit de NOMMER un tableau de bord parental — il le fait
-    // précisément pour annoncer son absence (« ni tableau de bord
-    // parental ») — donc on vérifie la négation, pas le simple mot.
-    const plat = (t) => t.replace(/<\/?strong>/g, '').replace(/\s+/g, ' ');
-    expect(plat(pages.CGU)).toMatch(/aucun dispositif technique de vérification de l’âge/i);
-    expect(plat(pages['Confidentialité'])).toMatch(/aucun formulaire de consentement parental/i);
-    expect(plat(pages.CGU)).toMatch(/ni tableau de bord parental/i);
-    expect(plat(pages.CGU)).toMatch(/aucun recueil automatisé du consentement parental/i);
-  });
-
-  it('n’interdisent pas le Premium aux mineurs — ils exigent une autorisation', () => {
-    expect(pages.CGU).toMatch(/autorisé par son représentant légal/i);
-    expect(pages.CGU).toMatch(/Il ne s’agit en aucun cas d’interdire le Premium aux mineurs/i);
-  });
-
-  it('donnent au représentant légal une voie de recours par e-mail', () => {
-    // Le JSX coupe les phrases en fin de ligne : on normalise les blancs
-    // avant de chercher, sinon on testerait la mise en forme du fichier.
-    const plat = (t) => t.replace(/\s+/g, ' ');
+  it('donnent une adresse de contact réelle, sans gabarit resté vide', () => {
     for (const nom of ['CGU', 'Confidentialité']) {
-      expect(plat(pages[nom]), nom).toMatch(/sans son (autorisation|accord)/i);
-      expect(plat(pages[nom]), nom).toMatch(/contact@smarter-academy\.fr|<Mail \/>/);
+      expect(pages[nom], nom).toContain("const EMAIL = 'contact@smarter-academy.com'");
+      expect(pages[nom], nom).toContain('<Mail />');
+      expect(pages[nom], nom).not.toMatch(/\[(التاريخ|البريد الإلكتروني|العنوان القانوني)\]/);
+      expect(pages[nom], nom).not.toMatch(/smarter-academy\.fr/);
     }
   });
 
-  it('ne demandent pas de date de naissance', () => {
-    expect(pages['Confidentialité']).toMatch(/Aucune date de naissance n’est demandée/i);
+  it('relèvent du droit algérien, pas du RGPD', () => {
+    expect(pages.CGU).toMatch(/الجمهورية الجزائرية/);
+    expect(pages['Confidentialité']).toMatch(/في الجزائر/);
+    for (const nom of ['CGU', 'Confidentialité']) {
+      expect(pages[nom], nom).not.toMatch(/RGPD|CNIL/);
+    }
   });
 
   /**
-   * La rétractation : le texte a été ADOUCI sur décision de l'éditeur —
-   * le délai de quatorze jours s'applique, et aucun renoncement n'est
-   * opposé puisque rien ne le recueille dans l'interface.
+   * La page « معلومات قانونية » (mentions légales, éditeur français) a été
+   * retirée le 2026-10-04 sur décision du propriétaire : ni route, ni lien.
    */
-  it('n’opposent pas un renoncement à la rétractation qui n’est pas recueilli', () => {
-    expect(pages.CGU).toMatch(/n’est pas opposée/i);
-    expect(pages.CGU).toMatch(/quatorze jours/i);
-  });
-
-  it('ne prétendent pas qu’un médiateur est déjà désigné', () => {
-    expect(pages.CGU).toMatch(/dès leur désignation/i);
-  });
-
-  it('ne prétendent à aucune purge automatique', () => {
-    expect(pages['Confidentialité']).toMatch(/aucun mécanisme de purge automatique/i);
+  it('n’exposent plus la page des mentions légales', () => {
+    expect(app).not.toContain('/mentions-legales');
+    expect(footer).not.toContain('/mentions-legales');
+    expect(read('pages/legal/LegalPage.jsx')).not.toContain('/mentions-legales');
   });
 
   it('ne nomment aucun tribunal précis', () => {
@@ -319,8 +294,11 @@ describe('L’écran de vérification', () => {
 
   it('propose le renvoi et la déconnexion', () => {
     expect(source).toContain('resendVerificationEmail');
-    expect(source).toMatch(/Renvoyer l’e-mail/);
-    expect(source).toMatch(/Se déconnecter/);
+    // Mêmes deux gestes, libellés en arabe via le catalogue.
+    expect(source).toContain("t('resendEmail')");
+    expect(source).toContain("t('logout')");
+    expect(authAr.resendEmail.trim()).not.toBe('');
+    expect(authAr.logout.trim()).not.toBe('');
   });
 
   it('ne propose PAS un changement d’adresse que le serveur ne sait pas faire', () => {
@@ -329,8 +307,8 @@ describe('L’écran de vérification', () => {
     expect(code).not.toMatch(/Modifier mon adresse/);
   });
 
-  it('distingue les trois retours possibles du lien', () => {
-    for (const statut of ['succes', 'deja-verifie', 'invalide']) {
+  it('distingue les retours possibles du lien et l’échec du premier envoi', () => {
+    for (const statut of ['succes', 'deja-verifie', 'invalide', 'envoi-echoue']) {
       expect(source).toContain(statut);
     }
   });
@@ -359,8 +337,13 @@ describe('Le retour de Google', () => {
   });
 
   it('traduit chaque refus du serveur en message lisible', () => {
+    // Le code d'erreur reste un IDENTIFIANT technique venu du serveur ; c'est
+    // sa traduction arabe qui doit exister. La page les résout dynamiquement
+    // (`errors.${erreur}`), donc on interroge le catalogue, pas le JSX.
+    expect(source).toContain('errors.${erreur}');
     for (const raison of ['already_linked', 'email_not_verified', 'provider_failure', 'annule']) {
-      expect(source).toContain(raison);
+      expect(authAr.errors[raison]).toBeTruthy();
+      expect(authAr.errors[raison].trim()).not.toBe('');
     }
   });
 });

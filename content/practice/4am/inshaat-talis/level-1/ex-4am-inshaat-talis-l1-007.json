@@ -1,0 +1,119 @@
+{
+  "id": "ex-4am-inshaat-talis-l1-007",
+  "lessonCode": "inshaat-talis",
+  "level": 1,
+  "metadata": {
+    "title": "طرائق ص 107 — قطعة طولها 14 على 3",
+    "estimatedMinutes": 7,
+    "tags": [
+      "طرائق",
+      "الرابع المتناسب"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-construct-length",
+      "page": 107,
+      "section": "طرائق",
+      "adaptedFrom": "ex-4am-inshaat-talis-l1-007"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "(وحدة الأطوال هي السنتيمتر)"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أنشئ قطعة مستقيم $[AB]$ بحيث يكون $AB = \\dfrac{14}{3}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب خطوات الإنشاء مرقّمة (أو صوّر ورقتك)، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $AB = \\dfrac{14}{3}$ على الشكل $3 \\times AB = 7 \\times 2$ ثم على شكل تناسب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التناسب $\\dfrac{3}{7} = \\dfrac{2}{AB}$ يُنشأ بنصفي مستقيمين مبدؤهما $A$ وموازٍ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{7} = \\dfrac{2}{AB}$ : $AC = 3$ و $AD = 7$ على $[Ax)$ ، $AE = 2$ على $[Ay)$ ، والموازي لـ $(CE)$ المارّ بـ $D$ يعيّن $B$ .",
+        "incorrect": "قارن إنشاءك بالحل النموذجي خطوة خطوة، ثم صحّح الخطوة التي تختلف."
+      },
+      "solution": {
+        "lines": [
+          "ملاحظة: يمكن كتابة $AB = \\dfrac{14}{3}$ على الشكل $3 \\times AB = 7 \\times 2$ ثم على شكل تناسب $\\dfrac{3}{7} = \\dfrac{2}{AB}$ وتوظيف خاصية طالس.",
+          "1) نرسم نصفي مستقيمين $[Ax)$ و $[Ay)$ مبدؤهما $A$ .",
+          "2) نعيّن على $[Ax)$ النقطتين $C$ و $D$ حيث $AC = 3$ و $AD = 7$ ، وعلى $[Ay)$ النقطة $E$ حيث $AE = 2$ .",
+          "3) نصل $C$ بـ $E$ ، ثم نرسم الموازي للمستقيم $(CE)$ المارّ بـ $D$ : يقطع $[Ay)$ في $B$ .",
+          "التبرير: $(CE) \\parallel (DB)$ ، فحسب خاصية طالس: $\\dfrac{AC}{AD} = \\dfrac{AE}{AB}$ أي $\\dfrac{3}{7} = \\dfrac{2}{AB}$ ، ومنه $AB = \\dfrac{7 \\times 2}{3} = \\dfrac{14}{3}$ ."
+        ]
+      },
+      "timeSeconds": 420
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بنفس الإنشاء، لو عيّنا على $[Ay)$ النقطة $E$ حيث $AE = 5$ بدل $2$ ، فما طول القطعة $[AB]$ الناتجة؟",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "35/3",
+      "misconceptionSignatures": [
+        {
+          "value": "15/7",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(CE) \\parallel (DB)$ : $\\dfrac{AC}{AD} = \\dfrac{AE}{AB}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $AC = 3$ و $AD = 7$ و $AE = 5$ ثم استعمل الجداء المتصالب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{7} = \\dfrac{5}{AB}$ ومنه $AB = \\dfrac{7 \\times 5}{3} = \\dfrac{35}{3}$ .",
+        "incorrect": "في التناسب $\\dfrac{AC}{AD} = \\dfrac{AE}{AB}$ يقابل $AE$ الطول $AC$ ، ويقابل $AB$ الطول $AD$ ."
+      },
+      "solution": {
+        "lines": [
+          "$(CE) \\parallel (DB)$ و $C \\in [AD]$ و $E \\in [AB]$ ، حسب خاصية طالس: $\\dfrac{AC}{AD} = \\dfrac{AE}{AB}$",
+          "$\\dfrac{3}{7} = \\dfrac{5}{AB}$",
+          "$AB = \\dfrac{7 \\times 5}{3}$"
+        ],
+        "result": "AB = \\dfrac{35}{3}"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

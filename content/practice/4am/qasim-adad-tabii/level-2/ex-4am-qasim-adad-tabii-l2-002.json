@@ -1,0 +1,219 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l2-002",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 2,
+  "metadata": {
+    "title": "القسمة الإقليدية للعدد 1512 على 21",
+    "estimatedMinutes": 6,
+    "tags": [
+      "قسمة إقليدية",
+      "قاسم"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-1",
+      "page": 14,
+      "section": "أوظّف تعلّماتي",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "اكتب المساواة التي تعبّر عن القسمة الإقليدية للعدد 1512 على العدد 21، ثم حدّد حاصل وباقي هذه القسمة.",
+      "statement": "حاصل القسمة:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "72",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أكبر مضاعف للعدد 21 لا يتجاوز 1512."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل القسمة هو أكبر عدد طبيعي $q$ يحقق $21 \\times q \\leq 1512$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الباقي أصغر تمامًا من 21."
+        }
+      ],
+      "feedback": {
+        "correct": "$1512 = 21 \\times 72 + 0$ مع $0 < 21$.",
+        "incorrect": "ابحث عن أكبر مضاعف للعدد 21 لا يتجاوز 1512، ثم اطرحه من 1512."
+      },
+      "solution": {
+        "lines": [
+          "$21 \\times 72 = 1512$ و $21 \\times 73 = 1533$ أكبر من 1512.",
+          "$1512 - 1512 = 0$ و $0 < 21$",
+          "إذن المساواة التي تعبّر عن القسمة الإقليدية هي:"
+        ],
+        "result": "1512 = 21 \\times 72 + 0"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "الباقي:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى من 1512 بعد طرح أكبر مضاعف للعدد 21 لا يتجاوزه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي عدد طبيعي أصغر تمامًا من 21."
+        }
+      ],
+      "feedback": {
+        "correct": "$1512 = 21 \\times 72 + 0$: الباقي 0، فهو معدوم.",
+        "incorrect": "اطرح من 1512 أكبر مضاعف للعدد 21 لا يتجاوزه."
+      },
+      "solution": {
+        "lines": [
+          "$1512 - 21 \\times 72 = 0$"
+        ],
+        "result": "r = 0"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "استنتج:",
+      "statement": "هل 21 قاسم للعدد 1512؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 1512 على 21."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "21 قاسم للعدد 1512 إذا وفقط إذا كان باقي هذه القسمة معدومًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$1512 = 21 \\times 72$: الباقي معدوم.",
+        "incorrect": "أجرِ القسمة الإقليدية للعدد 1512 على 21، وانظر هل الباقي معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$1512 = 21 \\times 72$ (الباقي معدوم).",
+          "إذن 21 قاسم للعدد 1512."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل 72 قاسم للعدد 1512؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل المساواة التي وجدتها في السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المساواة $a = b \\times q$ تُقرأ في الاتجاهين."
+        }
+      ],
+      "feedback": {
+        "correct": "$1512 = 21 \\times 72 = 72 \\times 21$: 72 قاسم للعدد 1512.",
+        "incorrect": "اقرأ المساواة $1512 = 21 \\times q$ من اليمين إلى اليسار."
+      },
+      "solution": {
+        "lines": [
+          "$1512 = 21 \\times 72 = 72 \\times 21$",
+          "إذن 72 قاسم للعدد 1512."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

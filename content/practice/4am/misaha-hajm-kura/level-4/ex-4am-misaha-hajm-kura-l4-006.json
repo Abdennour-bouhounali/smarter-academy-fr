@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-misaha-hajm-kura-l4-006",
+  "lessonCode": "misaha-hajm-kura",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — قشرة برتقالة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مساحة الكرة",
+      "نصف القطر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_misaha-hajm-kura_P1",
+      "modelledOn": "intro-archimedes"
+    }
+  },
+  "statement": {
+    "content": "قشرة برتقالة من بوفاريك، مفرودة على الطاولة، تغطي $100\\pi\\,\\mathrm{cm}^2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما نصف قطر البرتقالة بالـ $\\mathrm{cm}$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_misaha-hajm-kura_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر)",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القشرة = مساحة الكرة $4\\pi R^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$R^2 = 100 \\div 4$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خذ الجذر التربيعي."
+        }
+      ],
+      "feedback": {
+        "correct": "$R^2 = 25$ و $R = 5\\,\\mathrm{cm}$ .",
+        "incorrect": "$25$ هو $R^2$ ، و $10 = \\sqrt{100}$ نسي القسمة على 4."
+      },
+      "difficulty": 4,
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MISAHA-JADHR",
+          "value": "25"
+        },
+        {
+          "id": "MISC-MISAHA-RUB",
+          "value": "10"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l2-003",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 2,
+  "metadata": {
+    "title": "أين الخطأ؟",
+    "estimatedMinutes": 6,
+    "tags": [
+      "صفر في الحاصل",
+      "التحقق"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-19",
+      "page": 46,
+      "section": "أتمرّن",
+      "number": 19
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أنجز سامي القسمة الإقليدية للعدد 824 على 4 فوجد الحاصل 26 والباقي 0، ثم قرّر أن يراجع عمله بنفسه قبل تسليمه."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل نتيجة سامي صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-SIFR"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق بحساب $4 \\times 26$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل نحصل على 824؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 26 = 104$ ، وليس 824.",
+        "incorrect": "احسب $4 \\times 26 + 0$ وقارن بالمقسوم."
+      },
+      "solution": {
+        "lines": [
+          "$4 \\times 26 + 0 = 104$",
+          "$104 \\ne 824$ ، إذن النتيجة خاطئة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "صحّح: احسب حاصل القسمة الإقليدية للعدد 824 على 4.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "206",
+      "misconceptionSignatures": [
+        {
+          "value": "26",
+          "id": "MISC-IQLIDIYA-SIFR"
+        },
+        {
+          "value": "0",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "205",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "207",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 824 من 4 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 4 دون أن نتجاوز 824."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$824 = 4 \\times 206 + 0$ و $0 < 4$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 4 فلا يتجاوز الجداء 824، والباقي عندئذ أصغر من 4."
+      },
+      "solution": {
+        "lines": [
+          "$4 \\times 206 = 824$ و $4 \\times 207 = 828$",
+          "$824 \\le 824 < 828$ ، إذن الحاصل هو 206."
+        ],
+        "result": "q = 206"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اشرح الخطأ الذي وقع فيه سامي.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة خطوة بخطوة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ماذا يحدث عندما يكون الرقم المنزَّل أصغر من 4؟"
+        }
+      ],
+      "feedback": {
+        "correct": "عند تنزيل 2 (أصغر من 4) نكتب 0 في الحاصل.",
+        "incorrect": "راجع الخطوة التي يكون فيها الرقم المنزَّل أصغر من المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$8 \\div 4$: نكتب 2 ، ثم ننزّل 2: $2 < 4$ فنكتب 0 في الحاصل.",
+          "ثم ننزّل 4: العدد 24 ، و $24 \\div 4$ يعطي 6.",
+          "الحاصل 206 والباقي 0: نسي سامي الصفر في الحاصل."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

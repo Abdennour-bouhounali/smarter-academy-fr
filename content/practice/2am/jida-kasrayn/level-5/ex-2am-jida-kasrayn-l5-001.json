@@ -1,0 +1,292 @@
+{
+  "id": "ex-2am-jida-kasrayn-l5-001",
+  "lessonCode": "jida-kasrayn",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — وضعيّة إدماجيّة : تقاسم مبلغ",
+    "estimatedMinutes": 12,
+    "tags": [
+      "كسر من مبلغ",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-68",
+      "exercise": 4
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "06"
+    }
+  },
+  "statement": {
+    "content": "وزّع أب على أبنائه الثلاثة مبلغًا ماليًّا قدره $36000$ دج : حصّة ياسين $\\dfrac{1}{4}$ منه ، وحصّة أنيس $\\dfrac{5}{12}$ منه ، والباقي لوليد ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما الكسر الذي يمثّل حصّة وليد ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "1/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط؟ جمع، طرح، أم مقارنة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{3}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$1 - \\dfrac{1}{4} - \\dfrac{5}{12} = \\dfrac{12}{12} - \\dfrac{3}{12} - \\dfrac{5}{12} = \\dfrac{4}{12} = \\dfrac{1}{3}$ ."
+        ],
+        "result": "\\dfrac{1}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "ما حصّة ياسين بالدينار ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "9000",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "144000",
+          "id": "MISC-JIDAKASR-FLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كلمة «من» بعد كسر تعني الضرب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\dfrac{a}{b}$ من $x$ هو $x \\times \\dfrac{a}{b}$ : اقسم $x$ على $b$ ثمّ اضرب في $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي إذا كان الكسر أصغر من 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$9000$ .",
+        "incorrect": "الكسر «من» عدد يعني الضرب: اقسم على المقام ثمّ اضرب في البسط، ولا تقلب الكسر."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{4}$ من $36000$ هو $36000 \\times \\dfrac{1}{4}$ .",
+          "$36000 \\div 4 = 9000$ ثمّ $9000 \\times 1 = 9000$ ."
+        ],
+        "result": "9000"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما حصّة أنيس بالدينار ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "15000",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "86400",
+          "id": "MISC-JIDAKASR-FLIP"
+        },
+        {
+          "value": "3000",
+          "id": "MISC-JIDAKASR-HALFWAY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كلمة «من» بعد كسر تعني الضرب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\dfrac{a}{b}$ من $x$ هو $x \\times \\dfrac{a}{b}$ : اقسم $x$ على $b$ ثمّ اضرب في $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي إذا كان الكسر أصغر من 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$15000$ .",
+        "incorrect": "الكسر «من» عدد يعني الضرب: اقسم على المقام ثمّ اضرب في البسط، ولا تقلب الكسر."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{12}$ من $36000$ هو $36000 \\times \\dfrac{5}{12}$ .",
+          "$36000 \\div 12 = 3000$ ثمّ $3000 \\times 5 = 15000$ ."
+        ],
+        "result": "15000"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "ما حصّة وليد بالدينار ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "12000",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "108000",
+          "id": "MISC-JIDAKASR-FLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كلمة «من» بعد كسر تعني الضرب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\dfrac{a}{b}$ من $x$ هو $x \\times \\dfrac{a}{b}$ : اقسم $x$ على $b$ ثمّ اضرب في $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي إذا كان الكسر أصغر من 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$12000$ .",
+        "incorrect": "الكسر «من» عدد يعني الضرب: اقسم على المقام ثمّ اضرب في البسط، ولا تقلب الكسر."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{3}$ من $36000$ هو $36000 \\times \\dfrac{1}{3}$ .",
+          "$36000 \\div 3 = 12000$ ثمّ $12000 \\times 1 = 12000$ ."
+        ],
+        "result": "12000"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "هل تكفي حصّة وليد لشراء حاسوب لوحيّ ثمنه $13500$ دج ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا ثمّ تحقّق منها بحساب بسيط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الناتج بمقام مشترك ثمّ قارنه بما قيل."
+        }
+      ],
+      "feedback": {
+        "correct": "لا : حصّته $12000$ دج وهي أقلّ من $13500$ دج .",
+        "incorrect": "احسب ثمّ قارن بدقّة قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "$12000 < 13500$ : لا تكفي ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

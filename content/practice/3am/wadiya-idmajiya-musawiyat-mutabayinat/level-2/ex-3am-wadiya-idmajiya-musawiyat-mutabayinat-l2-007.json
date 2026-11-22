@@ -1,0 +1,250 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-musawiyat-mutabayinat-l2-007",
+  "lessonCode": "wadiya-idmajiya-musawiyat-mutabayinat",
+  "level": 2,
+  "metadata": {
+    "title": "ترجمة وضعية بمعادلة (2)",
+    "estimatedMinutes": 10,
+    "tags": [
+      "ترجمة وضعية",
+      "حلّ معادلة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثاني",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يعرض ناد رياضي اشتراكين: الأول ثمنه $100 + 3n$ دينارًا، والثاني ثمنه $84 + 7n$ دينارًا، حيث $n$ عدد الحصص."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نرمز بـ $n$ إلى عدد الحصص التي يتساوى عندها الثمنان. أيّ المعادلات التالية تترجم الوضعية ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$10n = 184$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        },
+        {
+          "id": "B",
+          "content": "$100n + 3 = 84n + 7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        },
+        {
+          "id": "C",
+          "content": "$3n + 100 = 7n + 84$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$3n + 84 = 7n + 100$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول وما الذي يتساوى في الوضعية ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلة من كمّيتين متساويتين ثمّ حلّها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الحلّ يناسب الوضعية."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $3n + 100 = 7n + 84$ .",
+        "incorrect": "راجع الترجمة إلى معادلة ثمّ الحلّ، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب الكمّيتين المتساويتين بدلالة $n$ ثمّ نساوي بينهما: $3n + 100 = 7n + 84$ .",
+          "الخيارات الأخرى تجمع الكمّيتين أو تبدّل ثوابتهما أو تخلط الأعداد."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "المعادلة المترجمة هي $3n + 100 = 7n + 84$ . احسب قيمة المجهول.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "-46",
+          "id": "MISC-MUADALA-SIGN-KEPT"
+        },
+        {
+          "value": "-16",
+          "id": "MISC-MUADALA-PARTIAL-SOLVE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين المجهول وأين الأعداد ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المجهول في طرف والأعداد في الطرف الآخر، ثمّ اقسم على معامل المجهول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض النتيجة في الطرفين لتتأكّد من تساويهما."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $4$ .",
+        "incorrect": "راجع نقل الحدود وإشاراتها ثمّ القسمة على المعامل، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نجمع المجهول في طرف والأعداد في الآخر: $-4n = -16$ .",
+          "نقسم على $-4$ : $n = 4$ ."
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما مدوّر العدد $1{,}398$ إلى $0{,}1$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "1.4",
+      "misconceptionSignatures": [
+        {
+          "value": "1.3",
+          "id": "MISC-TADWIR-TRUNC"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ الأرقام يلي رتبة التدوير ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد المدوّر على بعد نصف رتبة منه من الجهتين: الحدّ الأدنى مضمّن والأعلى مستبعد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارجع من الحصر إلى المدوّر للتأكّد."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $1{,}4$ .",
+        "incorrect": "انتبه إلى نصف الرتبة وإلى الطرف الأعلى المستبعد، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الرقم الذي يلي رتبة التدوير في $1{,}398$ هو $9$ ، وهو أكبر من $4$ أو يساويه.",
+          "فنرفع آخر رقم نحتفظ به: المدوّر $1{,}4$ ."
+        ],
+        "result": "1{,}4"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "إذا كان $-2 \\le x \\le 1$ فما أكبر قيمة ممكنة للعبارة $3x - 3$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "0",
+      "misconceptionSignatures": [
+        {
+          "value": "-2",
+          "id": "MISC-MUTABAYINA-COEF-LOST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل العدد الذي نضرب فيه موجب أم سالب ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في عدد موجب يحفظ الاتجاه، وفي عدد سالب يعكسه؛ والجمع والطرح يحفظانه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بين الطرفين الأصغر والأكبر بعد كل عملية."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $0$ .",
+        "incorrect": "انتبه إلى اتجاه المتباينة عند الضرب في عدد سالب، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضرب أطراف الحصر في $3$ (عدد موجب فيبقى الاتجاه) ثم نضيف $-3$ .",
+          "نجد $-9 \\le 3x - 3 \\le 0$ ، فالقيمة المطلوبة $0$ ."
+        ],
+        "result": "0"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

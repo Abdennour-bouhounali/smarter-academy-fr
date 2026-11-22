@@ -1,0 +1,199 @@
+{
+  "id": "ex-2am-hall-mushkil-muadala-l2-008",
+  "lessonCode": "hall-mushkil-muadala",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — قوارير زيت الزيتون",
+    "estimatedMinutes": 6,
+    "tags": [
+      "ترجمة وضعيّة",
+      "معادلة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تملأ تعاونية لزيت الزيتون $200$ قارورة متماثلة بـ $150\\,\\mathrm{L}$ من الزيت دون أن يبقى منه شيء. نسمّي $x$ سعة القارورة الواحدة باللتر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ معادلة تترجم هذه الوضعيّة ؟ اختر الإجابة الصحيحة :",
+      "learningPoints": [
+        {
+          "code": "2am_hall-mushkil-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{200}{x}=150$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAJHUL-SWAP"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{150}{x}=200$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{x}{150}=200$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAJHUL-ROLE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعيّة وسمِّ المجهول بحرف، ثمّ حدّد ما يُعطى وما يُطلب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العملية التي تربط الأعداد بالمجهول كما تحدث في الوضعيّة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر كلّ معادلة : هل تصف الوضعيّة، وهل يجعلها العدد المتوقّع صحيحة ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "المعادلة الصحيحة هي $\\dfrac{150}{x}=200$ .",
+        "incorrect": "عبّر عن الوضعيّة بعملية بين العدد المعلوم والمجهول، ثمّ اختبر الخيارات بقيمة مقبولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{150}{x}=200$ : هذه المعادلة تصف الوضعيّة.",
+          "وحلّها $x=0{,}75$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حلّ المعادلة التي اخترتها : $\\dfrac{150}{x}=200$ .",
+      "learningPoints": [
+        {
+          "code": "2am_hall-mushkil-muadala_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "0.75",
+      "misconceptionSignatures": [
+        {
+          "value": "30000",
+          "id": "MISC-MAJHUL-MULTDIV"
+        },
+        {
+          "value": "7.5",
+          "id": "MISC-MAJHUL-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في المعادلة ما يُفعل بالمجهول : ضرب أو قسمة أو جمع أو طرح، وما هي آخر عملية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القاسم الناقص يُحسب بقسمة المقسوم على حاصل القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من حلّك : عوّض المجهول بقيمته وأنجز العملية، فإن وجدت الطرف الآخر فالحلّ صحيح."
+        }
+      ],
+      "feedback": {
+        "correct": "$x=0{,}75$ .",
+        "incorrect": "ابحث عن العدد الذي يجعل المساواة صحيحة بالعملية العكسية، ثمّ تحقّق منه بإنجاز العملية."
+      },
+      "solution": {
+        "lines": [
+          "$x=150\\div 200=0{,}75$ .",
+          "التحقّق : $150\\div 0{,}75=200$ ."
+        ],
+        "result": "0{,}75"
+      },
+      "work": "optional",
+      "timeSeconds": 70
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل العدد $1{,}5$ حلّ للمعادلة $\\dfrac{150}{x}=200$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_hall-mushkil-muadala_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض المجهول بالعدد المقترح في المعادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز العملية الواحدة المكتوبة في المعادلة وحدها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الناتج بالطرف الآخر : إذا تساويا فالعدد حلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "لا : المساواة غير صحيحة.",
+        "incorrect": "أنجز العملية بهذا العدد وقارن الناتج بالطرف الآخر."
+      },
+      "solution": {
+        "lines": [
+          "$150\\div 1{,}5=100$ وهو يخالف $200$ .",
+          "المساواة غير صحيحة، فالعدد ليس حلًّا للمعادلة."
+        ]
+      },
+      "timeSeconds": 70
+    }
+  ]
+}

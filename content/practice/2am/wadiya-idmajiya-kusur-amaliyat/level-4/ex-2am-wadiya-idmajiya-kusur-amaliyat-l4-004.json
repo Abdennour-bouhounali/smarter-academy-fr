@@ -1,0 +1,309 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-kusur-amaliyat-l4-004",
+  "lessonCode": "wadiya-idmajiya-kusur-amaliyat",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مردود حقل قمح",
+    "estimatedMinutes": 10,
+    "tags": [
+      "كسر من مساحة",
+      "المردود",
+      "حصر حاصل قسمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "06"
+    }
+  },
+  "statement": {
+    "content": "حقل مستطيل طوله $80$ m وعرضه $60$ m ، زُرع قمحًا في $\\dfrac{3}{4}$ منه ، وأنتج الجزء المزروع $1500$ kg من القمح ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب مساحة الحقل بالمتر المربّع .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "4800",
+      "misconceptionSignatures": [
+        {
+          "value": "280",
+          "id": "MISC-SYN-KASR2-PERIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المستطيل : ما العمليّة التي تعطي مساحته ؟ وما التي تعطي محيطه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المساحة = الطول × العرض ، والمحيط = 2 × (الطول + العرض) ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى الوحدة : المساحة بالمتر المربّع والمحيط بالمتر ."
+        }
+      ],
+      "feedback": {
+        "correct": "$4800\\,\\mathrm{m}^2$ .",
+        "incorrect": "المساحة جداء البعدين والمحيط مجموع الأضلاع الأربعة : لا تخلط بينهما وانتبه إلى الوحدة ."
+      },
+      "solution": {
+        "lines": [
+          "$80 \\times 60 = 4800$ ، أي $4800\\,\\mathrm{m}^2$ ."
+        ],
+        "result": "4800\\,\\mathrm{m}^2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب مساحة الجزء المزروع بالمتر المربّع .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3600",
+      "misconceptionSignatures": [
+        {
+          "value": "6400",
+          "id": "MISC-JIDAKASR-FLIP"
+        },
+        {
+          "value": "1200",
+          "id": "MISC-JIDAKASR-HALFWAY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزء من عدد يعني جداء الكسر في العدد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي ما دام الكسر أصغر من 1 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$3600$ .",
+        "incorrect": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ، ولا تقلب الكسر ."
+      },
+      "solution": {
+        "lines": [
+          "$4800 \\div 4 = 1200$ .",
+          "$1200 \\times 3 = 3600$ ."
+        ],
+        "result": "3600"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "مردود المتر المربّع هو $\\dfrac{1500}{3600}$ kg . أعط القيمة المقرّبة إلى $0{,}01$ بالنقصان لهذا المردود .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "0.41",
+      "misconceptionSignatures": [
+        {
+          "value": "0.42",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "0.416",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم العدد على المقسوم عليه حتى الرتبة المطلوبة بعد الفاصلة ثمّ ما يليها ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أوقف القسمة عند الرتبة المطلوبة : بالنقصان نُبقي الأرقام كما هي ، وبالزيادة نزيد وحدة على آخر رقم ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا نقرّب إلى الأقرب : القيمة بالنقصان لا تتجاوز الحاصل والقيمة بالزيادة تتجاوزه ."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}41$ .",
+        "incorrect": "أنجز القسمة بعد الفاصلة وتوقّف عند الرتبة المطلوبة : بالنقصان دون تغيير آخر رقم ، وبالزيادة بإضافة وحدة إلى آخر رقم ."
+      },
+      "solution": {
+        "lines": [
+          "بإنجاز القسمة حتى رقمين بعد الفاصلة ثمّ ما يليه : $1500 \\div 3600 = 0{,}416\\ldots$ .",
+          "القيمة المقرّبة إلى $0{,}01$ بالنقصان : $0{,}41$ ."
+        ],
+        "result": "0{,}41"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "وأعط القيمة المقرّبة إلى $0{,}01$ بالزيادة .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "0.42",
+      "misconceptionSignatures": [
+        {
+          "value": "0.41",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "0.417",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم العدد على المقسوم عليه حتى الرتبة المطلوبة بعد الفاصلة ثمّ ما يليها ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أوقف القسمة عند الرتبة المطلوبة : بالنقصان نُبقي الأرقام كما هي ، وبالزيادة نزيد وحدة على آخر رقم ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا نقرّب إلى الأقرب : القيمة بالنقصان لا تتجاوز الحاصل والقيمة بالزيادة تتجاوزه ."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}42$ .",
+        "incorrect": "أنجز القسمة بعد الفاصلة وتوقّف عند الرتبة المطلوبة : بالنقصان دون تغيير آخر رقم ، وبالزيادة بإضافة وحدة إلى آخر رقم ."
+      },
+      "solution": {
+        "lines": [
+          "بإنجاز القسمة حتى رقمين بعد الفاصلة ثمّ ما يليه : $1500 \\div 3600 = 0{,}416\\ldots$ .",
+          "القيمة المقرّبة إلى $0{,}01$ بالزيادة : $0{,}42$ ."
+        ],
+        "result": "0{,}42"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "اختر الحصر الصحيح للحاصل $\\dfrac{1500}{3600}$ إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$0{,}42 < \\dfrac{1500}{3600} < 0{,}43$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        },
+        {
+          "id": "B",
+          "content": "$0{,}4 < \\dfrac{1500}{3600} < 0{,}41$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        },
+        {
+          "id": "C",
+          "content": "$0{,}41 < \\dfrac{1500}{3600} < 0{,}42$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحصر إلى الرتبة المطلوبة : عددان متتاليان في هذه الرتبة ، الأوّل لا يتجاوز الحاصل والثاني يتجاوزه ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة حتى الرتبة المطلوبة ثمّ ابدأ بالقيمة بالنقصان ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب طرفي الحصر في المقسوم عليه وقارن بالمقسوم للتأكّد ."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}41 < \\dfrac{1500}{3600} < 0{,}42$ .",
+        "incorrect": "أنجز القسمة بعد الفاصلة وتوقّف عند الرتبة المطلوبة : بالنقصان دون تغيير آخر رقم ، وبالزيادة بإضافة وحدة إلى آخر رقم ."
+      },
+      "solution": {
+        "lines": [
+          "$1500 \\div 3600 = 0{,}416\\ldots$ .",
+          "$0{,}41 < \\dfrac{1500}{3600} < 0{,}42$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

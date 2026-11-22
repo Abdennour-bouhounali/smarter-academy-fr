@@ -1,0 +1,249 @@
+{
+  "id": "ex-4am-dala-khattiya-l3-003",
+  "lessonCode": "dala-khattiya",
+  "level": 3,
+  "metadata": {
+    "title": "نشاط 1 — جدول أسعار التخفيض",
+    "estimatedMinutes": 6,
+    "tags": [
+      "جدول قيم",
+      "تخفيض"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-1",
+      "page": 66,
+      "section": "أنشطة",
+      "number": 1,
+      "adaptedFrom": "ex-4am-dala-khattiya-l3-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "الدالة الخطية $f$ حيث $f(x) = 0{,}8x$ ترفق بسعر سلعة $x$ قبل التخفيض سعرها بعده (بـ DA).",
+    "table": {
+      "head": [
+        "السعر قبل التخفيض $x$",
+        "50",
+        "…",
+        "2500"
+      ],
+      "rows": [
+        [
+          "السعر بعد التخفيض $f(x)$",
+          "…",
+          "$1{,}4$",
+          "…"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انقل الجدول وأكمله.",
+      "statement": "$f(50)$ :",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "40",
+      "misconceptionSignatures": [
+        {
+          "value": "62,5",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "-40",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "صورة العدد $x$ بالدالة الخطية $f$ هي $f(x) = 0{,}8 \\times x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $x$ بالعدد $50$ ثم احسب الجداء، وانتبه إلى الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(50) = 0{,}8 \\times 50 = 40$ .",
+        "incorrect": "الصورة جداء المعامل في العدد: $f(x) = 0{,}8 \\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(50) = 0{,}8 \\times 50$",
+          "$f(50) = 40$"
+        ],
+        "result": "f(50) = 40"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد الذي صورته $1{,}4$ :",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "1,75",
+      "misconceptionSignatures": [
+        {
+          "value": "1,12",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "-1,75",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد المطلوب $x$ يحقق $f(x) = 1{,}4$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المعادلة $0{,}8x = 1{,}4$ : اقسم الطرفين على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{1{,}4}{0{,}8} = 1{,}75$ .",
+        "incorrect": "لا تحسب صورة العدد المعطى: ابحث عن العدد $x$ الذي صورته هذا العدد."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 1{,}4$ معناه $0{,}8x = 1{,}4$",
+          "$x = \\dfrac{1{,}4}{0{,}8} = 1{,}75$"
+        ],
+        "result": "x = 1{,}75"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "$f(2500)$ :",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "2000",
+      "misconceptionSignatures": [
+        {
+          "value": "3125",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "-2000",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "صورة العدد $x$ بالدالة الخطية $f$ هي $f(x) = 0{,}8 \\times x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $x$ بالعدد $2500$ ثم احسب الجداء، وانتبه إلى الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(2500) = 0{,}8 \\times 2500 = 2000$ .",
+        "incorrect": "الصورة جداء المعامل في العدد: $f(x) = 0{,}8 \\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(2500) = 0{,}8 \\times 2500$",
+          "$f(2500) = 2000$"
+        ],
+        "result": "f(2500) = 2000"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "اشترى أحمد قميصا بـ 1440DA بعد التخفيض. جد سعره قبل التخفيض.",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "1800",
+      "misconceptionSignatures": [
+        {
+          "value": "1152",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "-1800",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد المطلوب $x$ يحقق $f(x) = 1440$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المعادلة $0{,}8x = 1440$ : اقسم الطرفين على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{1440}{0{,}8} = 1800$ .",
+        "incorrect": "لا تحسب صورة العدد المعطى: ابحث عن العدد $x$ الذي صورته هذا العدد."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 1440$ معناه $0{,}8x = 1440$",
+          "$x = \\dfrac{1440}{0{,}8} = 1800$"
+        ],
+        "result": "x = 1800DA"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

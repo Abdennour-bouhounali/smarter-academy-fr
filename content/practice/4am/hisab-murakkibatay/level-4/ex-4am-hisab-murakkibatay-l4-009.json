@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l4-009",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — رباعي متقاطع",
+    "estimatedMinutes": 3,
+    "tags": [
+      "متوازي أضلاع",
+      "خطأ شائع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hisab-murakkibatay_P3",
+      "modelledOn": "ex-14"
+    }
+  },
+  "statement": {
+    "content": "$A(0\\,;\\,1)$ ، $B(4\\,;\\,2)$ ، $C(5\\,;\\,5)$ . لإيجاد D حيث ABCD متوازي أضلاع كتبت سارة $\\overrightarrow{AB} = \\overrightarrow{CD}$ فوجدت $D(9\\,;\\,6)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما رأيك؟",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح: AB = CD تعطي متوازي الأضلاع ABCD",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-TARTIB-NUQAT"
+        },
+        {
+          "id": "B",
+          "content": "خطأ في الحساب فقط: $D(9\\,;\\,-6)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-ISHARA"
+        },
+        {
+          "id": "C",
+          "content": "خطأ في الترتيب: ABCD متوازي أضلاع يعني AB = DC، و $D(1\\,;\\,4)$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المساواة الشعاعية لمتوازي الأضلاع ABCD بترتيب رؤوسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع الأول ومقابله في الاتجاه نفسه: $\\overrightarrow{AB} = \\overrightarrow{DC}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب معادلتين (للفاصلة وللترتيب) وحلّهما."
+        }
+      ],
+      "feedback": {
+        "correct": "AB = CD تجعل ABDC متوازي أضلاع و ABCD متقاطعا. الصحيح $5 - x_D = 4$ و $5 - y_D = 1$ : $D(1\\,;\\,4)$ .",
+        "incorrect": "الضلع AB ومقابله DC في الاتجاه نفسه."
+      }
+    }
+  ]
+}

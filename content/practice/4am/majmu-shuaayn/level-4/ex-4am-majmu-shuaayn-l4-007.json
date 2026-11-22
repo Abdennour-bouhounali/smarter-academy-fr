@@ -1,0 +1,196 @@
+{
+  "id": "ex-4am-majmu-shuaayn-l4-007",
+  "lessonCode": "majmu-shuaayn",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 11 — انسحابان متتابعان",
+    "estimatedMinutes": 4,
+    "tags": [
+      "انسحابان متتابعان"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-11",
+      "page": 135,
+      "section": "مجموع شعاعين - علاقة شال",
+      "number": 11
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (تمرين 11): ABCD متوازي أضلاع (الشكل)، N نظيرة B بالنسبة إلى C و M نظيرة A بالنسبة إلى D.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          -1,
+          5
+        ],
+        "C": [
+          3,
+          5
+        ],
+        "D": [
+          4,
+          0
+        ],
+        "N": [
+          7,
+          5
+        ],
+        "M": [
+          8,
+          0
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "A"
+        ],
+        {
+          "from": "C",
+          "to": "N",
+          "dashed": true
+        },
+        {
+          "from": "D",
+          "to": "M",
+          "dashed": true
+        }
+      ],
+      "labels": {
+        "A": "s",
+        "B": "nw",
+        "C": "n",
+        "D": "s",
+        "N": "ne",
+        "M": "se"
+      },
+      "ariaLabel": "متوازي الأضلاع ABCD، و N نظيرة B بالنسبة إلى C ، و M نظيرة A بالنسبة إلى D",
+      "caption": "أعادت المنصّة رسم شكل الكتاب بوضوح أكبر، بنفس المعطيات"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "صورة B بالانسحاب الذي شعاعه $\\overrightarrow{CD}$ متبوعًا بالانسحاب الذي شعاعه $\\overrightarrow{AM}$",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "M",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "D",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSIHAB-NISYAN"
+        },
+        {
+          "id": "C",
+          "content": "N",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم الانتقالين واحدا بعد الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انسحابان متتابعان يعطيان انسحابا واحدا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "شعاع الانسحاب الناتج يذهب من نقطة البداية إلى نقطة الوصول النهائية."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{CD} = \\overrightarrow{BA}$ ، فـ $\\overrightarrow{BA} + \\overrightarrow{AM} = \\overrightarrow{BM}$ : الصورة M.",
+        "incorrect": "انسحابان متتابعان = انسحاب واحد شعاعه مجموع الشعاعين: من نقطة البداية إلى نقطة الوصول."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "صورة N بالانسحاب الذي شعاعه $\\overrightarrow{MA}$ متبوعًا بالانسحاب الذي شعاعه $\\overrightarrow{BC}$",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "B",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSIHAB-NISYAN"
+        },
+        {
+          "id": "B",
+          "content": "C",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "A",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-AKS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم الانتقالين واحدا بعد الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انسحابان متتابعان يعطيان انسحابا واحدا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "شعاع الانسحاب الناتج يذهب من نقطة البداية إلى نقطة الوصول النهائية."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{MA} = \\overrightarrow{NB}$ ، فـ $\\overrightarrow{NB} + \\overrightarrow{BC} = \\overrightarrow{NC}$ : الصورة C.",
+        "incorrect": "انسحابان متتابعان = انسحاب واحد شعاعه مجموع الشعاعين: من نقطة البداية إلى نقطة الوصول."
+      }
+    }
+  ]
+}

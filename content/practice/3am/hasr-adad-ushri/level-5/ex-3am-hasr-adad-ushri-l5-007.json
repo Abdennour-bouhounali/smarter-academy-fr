@@ -1,0 +1,245 @@
+{
+  "id": "ex-3am-hasr-adad-ushri-l5-007",
+  "lessonCode": "hasr-adad-ushri",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — بلاط غرفة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "مساحة",
+      "تدوير",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "غرفة مستطيلة عرضها $3\\,\\mathrm{m}$ بالضبط وطولها $x$ مدوّره إلى $0{,}1$ هو $5{,}2\\,\\mathrm{m}$ . مساحتها $A=3x$ . يغطّي الصندوق الواحد من البلاط $8\\,\\mathrm{m}^2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أيّ حصر للمساحة $A$ بالمتر المربّع هو الصحيح؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$15{,}45< A\\le 15{,}75$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-UPPER-INCLUDED"
+        },
+        {
+          "id": "B",
+          "content": "$5{,}15\\le A< 5{,}25$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-COEF-LOST"
+        },
+        {
+          "id": "C",
+          "content": "$15{,}45\\le A< 15{,}75$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أوّلاً حصر الكمية التي دُوِّرت، ثم اكتب العبارة المطلوبة بدلالتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نضرب أطراف الحصر في العدد الموجب نفسه (فلا يتغيّر اتجاه المتباينة) ثم نضيف الثابت إن وُجد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الطرف الأدنى يبقى مشمولًا والأعلى مستبعدًا؛ تحقّق من ذلك بقراءة الحصر بعد الحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "$5{,}15\\le x<5{,}25$ ؛ نضرب في $3$ : $15{,}45\\le A<15{,}75$ .",
+        "incorrect": "راجع: نرجع نصف وحدة من الرتبة ونتقدّم نصف وحدة، ثم نضرب الأطراف في العدد الموجب نفسه دون تغيير اتجاه المتباينة؛ الطرف الأعلى مستبعد. أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$5{,}15\\le x<5{,}25$ ؛ نضرب في $3$ : $15{,}45\\le A<15{,}75$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "هل يكفي صندوقان من البلاط حتمًا؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-UPPER-INCLUDED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع الحصر الذي وجدته إلى جانب العدد المطلوب مقارنته به."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل العدد أكبر من الطرف الأعلى، أم أصغر من الطرف الأدنى، أم يقع بينهما؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إن وقع العدد بين الطرفين فلا يمكن الجزم؛ وإلاّ فالقرار مؤكّد."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: نعم.",
+        "incorrect": "راجع: قارن العدد بطرفَي الحصر؛ إن وقع بينهما فلا يمكن الجزم، والطرف الأعلى لا يبلغه العدد. أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "صندوقان يغطّيان $16\\,\\mathrm{m}^2$ ، و $A<15{,}75<16$ .",
+          "الجواب: نعم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل يكفي صندوق واحد حتمًا؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-CENTER-EXACT"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع الحصر الذي وجدته إلى جانب العدد المطلوب مقارنته به."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل العدد أكبر من الطرف الأعلى، أم أصغر من الطرف الأدنى، أم يقع بينهما؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إن وقع العدد بين الطرفين فلا يمكن الجزم؛ وإلاّ فالقرار مؤكّد."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: لا.",
+        "incorrect": "راجع: قارن العدد بطرفَي الحصر؛ إن وقع بينهما فلا يمكن الجزم، والطرف الأعلى لا يبلغه العدد. أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "صندوق واحد يغطّي $8\\,\\mathrm{m}^2$ فقط، و $A\\ge15{,}45$ .",
+          "الجواب: لا."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "statement": "علّل لماذا لا نحتاج إلى ثلاثة صناديق.",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع الحصر الذي وجدته إلى جانب العدد المطلوب مقارنته به."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل العدد أكبر من الطرف الأعلى، أم أصغر من الطرف الأدنى، أم يقع بينهما؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إن وقع العدد بين الطرفين فلا يمكن الجزم؛ وإلاّ فالقرار مؤكّد."
+        }
+      ],
+      "feedback": {
+        "correct": "$A<15{,}75<16=2\\times8$ ؛ فصندوقان يزيدان على المساحة المطلوبة في كلّ الحالات.",
+        "incorrect": "راجع: قارن العدد بطرفَي الحصر؛ إن وقع بينهما فلا يمكن الجزم، والطرف الأعلى لا يبلغه العدد. أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$A<15{,}75<16=2\\times8$ ؛ فصندوقان يزيدان على المساحة المطلوبة في كلّ الحالات."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

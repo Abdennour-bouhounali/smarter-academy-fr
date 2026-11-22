@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l5-008",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — تيفو نجمة صغيرة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "نجمة العلم",
+      "نصف القطر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mudalaat-muntazama_P3",
+      "modelledOn": "challenge"
+    }
+  },
+  "statement": {
+    "content": "لتيفو نجمة العلم في ملعب 5 جويلية، يرسم المشجعون متعاونين نموذجا صغيرا: المسافة بين رأسين متتاليين من رؤوس النجمة الخمسة $6\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "نصف قطر الدائرة التي تشمل رؤوس النجمة، مدوّرا إلى 0,01 بالسنتيمتر:",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "5.10",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUNTAZAM-DIL",
+          "value": "6.00"
+        },
+        {
+          "id": "MISC-MUTH-NISBA-UKHRA",
+          "value": "3.71"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الرؤوس الخمسة رؤوس خماسي منتظم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في المثلث القائم، الزاوية في المركز $36^\\circ$ والضلع المقابل لها نصف المسافة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الوتر = الضلع المقابل ÷ الجيب."
+        }
+      ],
+      "feedback": {
+        "correct": "$R = \\dfrac{3}{\\sin 36^\\circ} \\approx 5{,}10$ .",
+        "incorrect": "نصف المسافة هو الضلع المقابل للزاوية $36^\\circ$ ، والوتر نصف القطر."
+      },
+      "difficulty": 5
+    }
+  ]
+}

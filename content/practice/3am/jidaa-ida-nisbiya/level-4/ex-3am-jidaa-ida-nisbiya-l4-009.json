@@ -1,0 +1,130 @@
+{
+  "id": "ex-3am-jidaa-ida-nisbiya-l4-009",
+  "lessonCode": "jidaa-ida-nisbiya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — معامل x في جداء",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جداء عدة أعداد",
+      "معامل",
+      "إشارة الجداء"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 1,
+      "file": "1am-s1-100",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد $E$ حيث: $E = (−5) \\times (−2) \\times 3 \\times (−2{,}4) \\times (−1) \\times x$ ، و $x$ عدد نسبي."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "بسّط كتابة $E$ .",
+      "statement": "اكتب $E$ على الشكل $a \\times x$ . ما قيمة العدد $a$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "72",
+      "misconceptionSignatures": [
+        {
+          "value": "-72",
+          "id": "MISC-IDA-MORENEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ العوامل السالبة أولًا، فهي التي تعيّن إشارة الجداء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عدد العوامل السالبة زوجيًا فالجداء موجب، وإذا كان فرديًا فهو سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب المسافات إلى الصفر، ويمكنك تغيير ترتيب العوامل لتجمع ما يسهّل الحساب (مثل $4 \\times 25$)."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 \\times 2 \\times 3 \\times 2{,}4 \\times 1 = 72$ ، إذن $a = 72$ .",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "$a$ هو جداء العوامل العددية: $(−5) \\times (−2) \\times 3 \\times (−2{,}4) \\times (−1)$ .",
+          "عدد العوامل السالبة $4$ ، وهو عدد زوجي، إذن $a$ موجب.",
+          "$5 \\times 2 \\times 3 \\times 2{,}4 \\times 1 = 72$ ، إذن $a = 72$ ."
+        ],
+        "result": "72"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أوجد قيمة $x$ علمًا أنّ $E = −36$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-0.5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $E$ على الشكل $72 \\times x$ ثم استعمل $E = −36$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نبحث عن العدد الذي إذا ضربناه في $72$ أعطى $−36$ : إشارته سالبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة المطلوبة هي نصف $1$ لأنّ $72 \\times 0{,}5 = 36$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = −0{,}5$ لأنّ $72 \\times (−0{,}5) = −36$ .",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "$E = 72 \\times x$ و $E = −36$ ، إذن $72 \\times x = −36$ .",
+          "الإشارة سالبة لأنّ $72$ موجب و $−36$ سالب، والمسافة $0{,}5$ لأنّ $72 \\times 0{,}5 = 36$ .",
+          "$x = −0{,}5$"
+        ],
+        "result": "x = −0{,}5"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

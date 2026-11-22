@@ -1,0 +1,336 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l5-006",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — قطع القماش لعباءات الجمعية",
+    "estimatedMinutes": 12,
+    "tags": [
+      "قسمة على عشري",
+      "حصر",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: تحتاج جمعية نسائية إلى قطع قماش طول كلّ منها $0{,}45$ m ، وعندها قماش طوله $11{,}6$ m .\nالجزء الثاني: تريد الجمعية أن تعرف عدد القطع التي تحصل عليها وهل يكفيها طلب ثلاثين قطعة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "لتحويل القسمة $11{,}6 \\div 0{,}45$ إلى قسمة على عدد طبيعي نضرب الحدّين في العدد نفسه. ما أصغر قوّة للعدد $10$ تجعل المقسوم عليه عددًا طبيعيًا؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "قوّة للعدد 10",
+      "expectedAnswer": "100",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عُدّ الأرقام التي تأتي بعد الفاصلة في المقسوم عليه وحده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كلّ رقم بعد الفاصلة يزول بالضرب في قوّة مناسبة للعدد $10$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحدّان يُضربان في العدد نفسه حتى لا يتغيّر حاصل القسمة."
+        }
+      ],
+      "feedback": {
+        "correct": "المقسوم عليه $0{,}45$ فيه رقمان بعد الفاصلة، فنضربه في $100$ فيصير $45$.",
+        "incorrect": "المقسوم عليه هو الذي يحدّد القوّة: عدد الأرقام التي تأتي بعد فاصلته، لا بعد فاصلة المقسوم."
+      },
+      "solution": {
+        "lines": [
+          "المقسوم عليه $0{,}45$ فيه رقمان بعد الفاصلة",
+          "$0{,}45 \\times 100 = 45$"
+        ],
+        "result": "100"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "بعد ضرب الحدّين في القوّة المناسبة للعدد $10$ نجد: $\\frac{11{,}6}{0{,}45} = \\frac{\\ldots}{45}$ . ما بسط الكتابة الجديدة؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "1160",
+      "misconceptionSignatures": [
+        {
+          "value": "11.6",
+          "id": "MISC-QARIBA-ONETERM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "البسط يُضرب في العدد نفسه الذي ضُرب فيه المقام."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما تفعله بالفاصلة في المقام تفعله بالفاصلة في البسط."
+        }
+      ],
+      "feedback": {
+        "correct": "$11{,}6 \\times 100 = 1160$ ، إذن $\\frac{11{,}6}{0{,}45} = \\frac{1160}{45}$.",
+        "incorrect": "لا يتغيّر الحاصل إلاّ إذا ضُرب البسط والمقام في العدد نفسه: ما فعلناه بالمقام نفعله بالبسط."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}45 \\times 100 = 45$",
+          "$11{,}6 \\times 100 = 1160$"
+        ],
+        "result": "1160"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "القيم المقرّبة:",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}1$ بالنقصان لحاصل القسمة $11{,}6 \\div 0{,}45$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "25.7",
+      "misconceptionSignatures": [
+        {
+          "value": "25.8",
+          "id": "MISC-QARIBA-ROUNDED"
+        },
+        {
+          "value": "25.77",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالنقصان لا تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة دون أن تزيد شيئًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب القيمة في المقسوم عليه: يجب ألاّ يتجاوز الجداء المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$25{,}7 < \\frac{11{,}6}{0{,}45} < 25{,}8$.",
+        "incorrect": "بالنقصان: نحتفظ بالأرقام حتى الرتبة المطلوبة ونُهمل ما بعدها دون تغيير الرقم الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}45 \\times 25{,}7 = 11{,}565$",
+          "$0{,}45 \\times 25{,}8 = 11{,}61$",
+          "$11{,}565 < 11{,}6 < 11{,}61$"
+        ],
+        "result": "25{,}7"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}1$ بالزيادة لحاصل القسمة $11{,}6 \\div 0{,}45$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "25.8",
+      "misconceptionSignatures": [
+        {
+          "value": "25.7",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "25.78",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالزيادة هي أصغر قيمة من هذه الرتبة تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من القيمة بالنقصان ثم أضف وحدة واحدة من الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$25{,}7 < \\frac{11{,}6}{0{,}45} < 25{,}8$.",
+        "incorrect": "بالزيادة: هي القيمة التي تلي القيمة بالنقصان مباشرة في الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}45 \\times 25{,}8 = 11{,}61$",
+          "$11{,}61 > 11{,}6$",
+          "القيمة بالزيادة هي $25{,}8$"
+        ],
+        "result": "25{,}8"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "lead": "الجزء الثاني:",
+      "statement": "كم قطعة كاملة تحصل عليها الجمعية؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$26$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        },
+        {
+          "id": "B",
+          "content": "$30$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$25$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$24$",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القطعة الناقصة لا تُحسب."
+        }
+      ],
+      "feedback": {
+        "correct": "بالنقصان إلى الوحدة: $25$ قطعة كاملة.",
+        "incorrect": "نحسب القطع الكاملة فقط: القيمة بالنقصان إلى الوحدة."
+      },
+      "solution": {
+        "lines": [
+          "$25 < \\dfrac{11{,}6}{0{,}45} < 26$",
+          "$25$ قطعة كاملة"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "هل يكفي القماش للحصول على ثلاثين قطعة؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أو قارن بدقّة قبل أن تجيب."
+        }
+      ],
+      "feedback": {
+        "correct": "لا: $30 \\times 0{,}45 = 13{,}5 > 11{,}6$.",
+        "incorrect": "اضرب عدد القطع في طول القطعة وقارن بطول القماش."
+      },
+      "solution": {
+        "lines": [
+          "$30 \\times 0{,}45 = 13{,}5$",
+          "$13{,}5 > 11{,}6$ : لا يكفي"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

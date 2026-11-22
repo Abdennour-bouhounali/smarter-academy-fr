@@ -1,0 +1,200 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l1-006",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — حصر حواصل",
+    "estimatedMinutes": 5,
+    "tags": [
+      "حصر",
+      "حاصل القسمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أحصر كل حاصل قسمة بين عددين طبيعيين متتاليين، أو أعطه إذا كان عددًا طبيعيًا."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "اختر الكتابة الصحيحة التي تحصر حاصل القسمة $\\frac{250}{7}$ بين عددين طبيعيين متتاليين (أو تعطيه إذا كان عددًا طبيعيًا).",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$34 < \\frac{250}{7} < 35$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        },
+        {
+          "id": "B",
+          "content": "$5 < \\frac{250}{7} < 6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "id": "C",
+          "content": "$35 < \\frac{250}{7} < 36$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 250 على 7."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من $7 \\times q \\le 250 < 7 \\times (q + 1)$ نقسم الأطراف على 7."
+        }
+      ],
+      "feedback": {
+        "correct": "$250 = 7 \\times 35 + 5$ والباقي غير معدوم، فـ $\\frac{250}{7}$ يقع تمامًا بين 35 و 36.",
+        "incorrect": "احصر 250 بين مضاعفين متتاليين للعدد 7 ثم اقسم على 7؛ وإذا كان الباقي معدومًا فحاصل القسمة عدد طبيعي."
+      },
+      "solution": {
+        "lines": [
+          "$250 = 7 \\times 35 + 5$",
+          "$7 \\times 35 < 250 < 7 \\times 36$ ، نقسم على 7: $35 < \\frac{250}{7} < 36$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اختر الكتابة الصحيحة التي تحصر حاصل القسمة $\\frac{396}{12}$ بين عددين طبيعيين متتاليين (أو تعطيه إذا كان عددًا طبيعيًا).",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$33 < \\frac{396}{12} < 34$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-SIFR-SARIM"
+        },
+        {
+          "id": "B",
+          "content": "$\\frac{396}{12} = 33$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$32 < \\frac{396}{12} < 33$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-SIFR-SARIM"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 396 على 12."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من $12 \\times q \\le 396 < 12 \\times (q + 1)$ نقسم الأطراف على 12."
+        }
+      ],
+      "feedback": {
+        "correct": "$396 = 12 \\times 33$ والباقي معدوم، فـ $\\frac{396}{12}$ عدد طبيعي.",
+        "incorrect": "احصر 396 بين مضاعفين متتاليين للعدد 12 ثم اقسم على 12؛ وإذا كان الباقي معدومًا فحاصل القسمة عدد طبيعي."
+      },
+      "solution": {
+        "lines": [
+          "$396 = 12 \\times 33 + 0$",
+          "الباقي معدوم: $396 = 12 \\times 33$ ، إذن $\\frac{396}{12} = 33$ عدد طبيعي."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "اختر الكتابة الصحيحة التي تحصر حاصل القسمة $\\frac{1000}{45}$ بين عددين طبيعيين متتاليين (أو تعطيه إذا كان عددًا طبيعيًا).",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$22 < \\frac{1000}{45} < 23$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$21 < \\frac{1000}{45} < 22$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        },
+        {
+          "id": "C",
+          "content": "$10 < \\frac{1000}{45} < 11$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 1000 على 45."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من $45 \\times q \\le 1000 < 45 \\times (q + 1)$ نقسم الأطراف على 45."
+        }
+      ],
+      "feedback": {
+        "correct": "$1000 = 45 \\times 22 + 10$ والباقي غير معدوم، فـ $\\frac{1000}{45}$ يقع تمامًا بين 22 و 23.",
+        "incorrect": "احصر 1000 بين مضاعفين متتاليين للعدد 45 ثم اقسم على 45؛ وإذا كان الباقي معدومًا فحاصل القسمة عدد طبيعي."
+      },
+      "solution": {
+        "lines": [
+          "$1000 = 45 \\times 22 + 10$",
+          "$45 \\times 22 < 1000 < 45 \\times 23$ ، نقسم على 45: $22 < \\frac{1000}{45} < 23$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

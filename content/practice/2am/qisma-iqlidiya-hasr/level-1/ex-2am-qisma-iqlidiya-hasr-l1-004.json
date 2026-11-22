@@ -1,0 +1,138 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l1-004",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — قسمة على عدد من رقمين",
+    "estimatedMinutes": 4,
+    "tags": [
+      "قسمة إقليدية",
+      "صفر في الحاصل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "أنجز القسمة الإقليدية للعدد 4567 على 38."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب حاصل القسمة الإقليدية للعدد 4567 على 38.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "120",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "119",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "value": "121",
+          "id": "MISC-HASR-IZAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 4567 من 38 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 38 دون أن نتجاوز 4567."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من 38."
+        }
+      ],
+      "feedback": {
+        "correct": "$4567 = 38 \\times 120 + 7$ و $7 < 38$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 38 فلا يتجاوز الجداء 4567، والباقي عندئذ أصغر من 38."
+      },
+      "solution": {
+        "lines": [
+          "$38 \\times 120 = 4560$ و $38 \\times 121 = 4598$",
+          "$4560 \\le 4567 < 4598$ ، إذن الحاصل هو 120."
+        ],
+        "result": "q = 120"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب باقي القسمة الإقليدية للعدد 4567 على 38.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "120",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "45",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 4567."
+        }
+      ],
+      "feedback": {
+        "correct": "$4567 - 38 \\times 120 = 4567 - 4560 = 7$ ، و $7 < 38$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 38."
+      },
+      "solution": {
+        "lines": [
+          "$4567 = 38 \\times 120 + 7$",
+          "$7 < 38$ ، إذن الباقي هو 7."
+        ],
+        "result": "r = 7"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "id": "ex-4am-tatbiqat-tanasub-l1-004",
+  "lessonCode": "tatbiqat-tanasub",
+  "level": 1,
+  "metadata": {
+    "title": "نقاط اللعبة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "أخذ نسبة مئوية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tatbiqat-tanasub_P1",
+      "modelledOn": "know-4",
+      "adaptedFrom": "ex-4am-tatbiqat-tanasub-l1-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في لعبة إلكترونية جمع لاعب 640 نقطة، واستعمل 25% منها لشراء زيّ جديد لشخصيته."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب عدد النقاط التي استعملها.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "160",
+      "misconceptionSignatures": [
+        {
+          "value": "800",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        },
+        {
+          "value": "480",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أخذ $t\\%$ من مقدار يعني ضربه في $\\dfrac{t}{100}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $640 \\times \\dfrac{25}{100}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$640 \\times \\dfrac{25}{100} = 160$ نقطة.",
+        "incorrect": "أخذ 25% من 640 ليس زيادة 640 بـ 25%."
+      },
+      "solution": {
+        "lines": [
+          "$640 \\times \\dfrac{25}{100} = 160$",
+          "استعمل اللاعب 160 نقطة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج عدد النقاط التي بقيت له.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "480",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح عدد النقاط المستعملة من العدد الكلي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أو: بقي له $100\\% - 25\\%$ من النقاط."
+        }
+      ],
+      "feedback": {
+        "correct": "$640 - 160 = 480$ نقطة.",
+        "incorrect": "اطرح ما استعمله من العدد الكلي للنقاط."
+      },
+      "solution": {
+        "lines": [
+          "$640 - 160 = 480$",
+          "(أو: $640 \\times 0{,}75 = 480$ )",
+          "بقيت للاعب 480 نقطة."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

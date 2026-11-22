@@ -1,0 +1,263 @@
+{
+  "id": "ex-3am-muadalat-darajat-ula-l3-009",
+  "lessonCode": "muadalat-darajat-ula",
+  "level": 3,
+  "metadata": {
+    "title": "محيط مثلث",
+    "estimatedMinutes": 10,
+    "tags": [
+      "ترييض",
+      "محيط"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-45",
+      "page": 80,
+      "section": "ترييض مشكلات",
+      "number": 45
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ورشة لصناعة لافتات تعاونية تقصّ لافتة مثلثة $ABC$ أطوال أضلاعها (بالسنتيمتر) $AB = x + 2$ و $BC = 2x - 1$ و $CA = x + 5$ ، ومحيطها $58\\,\\mathrm{cm}$ (الشكل غير حقيقي).",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          5,
+          0
+        ],
+        "C": [
+          1.9,
+          3.3
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "x + 2"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "2x - 1"
+        },
+        {
+          "from": "C",
+          "to": "A",
+          "label": "x + 5"
+        }
+      ],
+      "ariaLabel": "مثلث ABC أطوال أضلاعه AB = x + 2 و BC = 2x - 1 و CA = x + 5",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما المعادلة التي تترجم المحيط؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "المحيط يساوي مجموع أطوال الأضلاع الثلاثة.",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(x + 2) + (2x - 1) + (x + 5) = 58$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$(x + 2)(2x - 1)(x + 5) = 58$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        },
+        {
+          "id": "C",
+          "content": "$x + 2 + 2x - 1 = 58$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "المحيط مجموع الأضلاع: $(x + 2) + (2x - 1) + (x + 5) = 58$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "جد قيمة $x$ .",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 13$ .",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر أو عدد عشري)",
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "value": "16",
+          "id": "MISC-MUADALA-SIGN-KEPT"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "نبسّط: $4x + 6 = 58$ .",
+          "نضيف $-6$ إلى الطرفين (معاكس $6$) فنجد: $4x = 52$ .",
+          "نقسم الطرفين على $4$ فنجد: $x = 13$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما طول أكبر ضلع بالسنتيمتر؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "أكبر ضلع $BC = 25\\,\\mathrm{cm}$ .",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "الطول بالسنتيمتر",
+      "expectedAnswer": "25",
+      "solution": {
+        "lines": [
+          "الأضلاع: $15$ و $25$ و $18$ سم، وأكبرها $BC = 2 \\times 13 - 1 = 25$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "تحقّق أنّ محيط المثلث يساوي $58\\,\\mathrm{cm}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$15 + 25 + 18 = 58$ .",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب إجابتك ثم قارنها بالتصحيح النموذجي",
+      "solution": {
+        "lines": [
+          "$15 + 25 + 18 = 58$ ، فالمحيط صحيح."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

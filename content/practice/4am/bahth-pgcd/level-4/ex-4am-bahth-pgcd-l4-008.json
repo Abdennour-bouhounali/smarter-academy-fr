@@ -1,0 +1,129 @@
+{
+  "id": "ex-4am-bahth-pgcd-l4-008",
+  "lessonCode": "bahth-pgcd",
+  "level": 4,
+  "metadata": {
+    "title": "خوارزمية إقليدس — 22816 و 19251",
+    "estimatedMinutes": 6,
+    "tags": [
+      "خوارزمية إقليدس"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-40",
+      "page": 15,
+      "section": "أوظّف تعلّماتي",
+      "number": 40,
+      "adaptedFrom": "ex-4am-ikhtizal-kasr-l5-002"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان 22816 و 19251."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $PGCD(22816 ; 19251)$ باستعمال خوارزمية إقليدس.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "713",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-PGCD-SIFR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 22816 على 19251: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (22816 ; 19251) بالزوج (19251 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 713.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم، لا الباقي المعدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$22816 = 19251 \\times 1 + 3565$",
+          "$19251 = 3565 \\times 5 + 1426$",
+          "$3565 = 1426 \\times 2 + 713$",
+          "$1426 = 713 \\times 2 + 0$",
+          "آخر باقٍ غير معدوم هو 713، إذن:"
+        ],
+        "result": "PGCD(22816 ; 19251) = 713"
+      },
+      "work": "required",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب الكسر $\\dfrac{22816}{19251}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "32/27",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 713: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال 01.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم البسط والمقام على القاسم المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{22816}{19251} = \\dfrac{22816 \\div 713}{19251 \\div 713}$"
+        ],
+        "result": "\\dfrac{22816}{19251} = \\dfrac{32}{27}"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,411 @@
+{
+  "id": "ex-1am-qawaid-qabiliyat-qisma-l1-006",
+  "lessonCode": "qawaid-qabiliyat-qisma",
+  "level": 1,
+  "metadata": {
+    "title": "أتمم الجدول",
+    "estimatedMinutes": 5,
+    "tags": [
+      "جدول",
+      "نعم أو لا"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "self-12",
+      "page": 47,
+      "section": "أقوّم تعلّماتي",
+      "number": 12
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أتمم الجدول الآتي بإحدى الكلمتين: نعم أو لا.",
+    "table": {
+      "head": [
+        "العدد",
+        "يقبل القسمة على 2",
+        "يقبل القسمة على 3",
+        "يقبل القسمة على 4",
+        "يقبل القسمة على 5",
+        "يقبل القسمة على 9"
+      ],
+      "rows": [
+        [
+          "612",
+          "…",
+          "…",
+          "…",
+          "…",
+          "…"
+        ],
+        [
+          "2405",
+          "…",
+          "…",
+          "…",
+          "…",
+          "…"
+        ],
+        [
+          "180",
+          "…",
+          "…",
+          "…",
+          "…",
+          "…"
+        ],
+        [
+          "3124",
+          "…",
+          "…",
+          "…",
+          "…",
+          "…"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "هل يقبل العدد 612 القسمة على 9؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-AHAD-3"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مجموع أرقام العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل هذا المجموع يقبل القسمة على 9؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يكفي أن يقبل المجموع القسمة على 3."
+        }
+      ],
+      "feedback": {
+        "correct": "مجموع أرقام العدد 612: $6 + 1 + 2 = 9$ ، و 9 يقبل القسمة على 9.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 9 إذا كان مجموع أرقامه يقبل القسمة على 9."
+      },
+      "solution": {
+        "lines": [
+          "مجموع أرقام العدد 612: $6 + 1 + 2 = 9$ ، و 9 يقبل القسمة على 9.",
+          "$612 = 9 \\times 68 + 0$ ، الباقي معدوم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل يقبل العدد 2405 القسمة على 5؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-SIFR"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى رقم آحاد العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما الرقمان اللذان ينتهي بهما كل مضاعف للعدد 5؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإنجاز القسمة الإقليدية على 5."
+        }
+      ],
+      "feedback": {
+        "correct": "رقم آحاد العدد 2405 هو 5، إذن 2405 يقبل القسمة على 5.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 5 إذا كان رقم آحاده 0 أو 5."
+      },
+      "solution": {
+        "lines": [
+          "رقم آحاد العدد 2405 هو 5، إذن 2405 يقبل القسمة على 5.",
+          "$2405 = 5 \\times 481 + 0$ ، الباقي معدوم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "هل يقبل العدد 2405 القسمة على 3؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-AHAD-3"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مجموع أرقام العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل هذا المجموع يقبل القسمة على 3؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "رقم الآحاد وحده لا يكفي للقسمة على 3."
+        }
+      ],
+      "feedback": {
+        "correct": "مجموع أرقام العدد 2405: $2 + 4 + 0 + 5 = 11$ ، و 11 لا يقبل القسمة على 3.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 3 إذا كان مجموع أرقامه يقبل القسمة على 3."
+      },
+      "solution": {
+        "lines": [
+          "مجموع أرقام العدد 2405: $2 + 4 + 0 + 5 = 11$ ، و 11 لا يقبل القسمة على 3.",
+          "$2405 = 3 \\times 801 + 2$ ، الباقي 2 غير معدوم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "هل يقبل العدد 180 القسمة على 4؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-ZAWJI-4"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى العدد المشكّل من رقمي الآحاد والعشرات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل هذا العدد المكوّن من رقمين يقبل القسمة على 4؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يكفي أن يكون العدد زوجيًا."
+        }
+      ],
+      "feedback": {
+        "correct": "العدد المشكّل من رقمي آحاد وعشرات 180 هو 80، و 80 يقبل القسمة على 4.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 4 إذا كان العدد المشكّل من رقمي آحاده وعشراته يقبل القسمة على 4."
+      },
+      "solution": {
+        "lines": [
+          "العدد المشكّل من رقمي آحاد وعشرات 180 هو 80، و 80 يقبل القسمة على 4.",
+          "$180 = 4 \\times 45 + 0$ ، الباقي معدوم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ا",
+      "statement": "هل يقبل العدد 3124 القسمة على 3؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-AHAD-3"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مجموع أرقام العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل هذا المجموع يقبل القسمة على 3؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "رقم الآحاد وحده لا يكفي للقسمة على 3."
+        }
+      ],
+      "feedback": {
+        "correct": "مجموع أرقام العدد 3124: $3 + 1 + 2 + 4 = 10$ ، و 10 لا يقبل القسمة على 3.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 3 إذا كان مجموع أرقامه يقبل القسمة على 3."
+      },
+      "solution": {
+        "lines": [
+          "مجموع أرقام العدد 3124: $3 + 1 + 2 + 4 = 10$ ، و 10 لا يقبل القسمة على 3.",
+          "$3124 = 3 \\times 1041 + 1$ ، الباقي 1 غير معدوم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل يقبل العدد 3124 القسمة على 4؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-ZAWJI-4"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى العدد المشكّل من رقمي الآحاد والعشرات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل هذا العدد المكوّن من رقمين يقبل القسمة على 4؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يكفي أن يكون العدد زوجيًا."
+        }
+      ],
+      "feedback": {
+        "correct": "العدد المشكّل من رقمي آحاد وعشرات 3124 هو 24، و 24 يقبل القسمة على 4.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 4 إذا كان العدد المشكّل من رقمي آحاده وعشراته يقبل القسمة على 4."
+      },
+      "solution": {
+        "lines": [
+          "العدد المشكّل من رقمي آحاد وعشرات 3124 هو 24، و 24 يقبل القسمة على 4.",
+          "$3124 = 4 \\times 781 + 0$ ، الباقي معدوم."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

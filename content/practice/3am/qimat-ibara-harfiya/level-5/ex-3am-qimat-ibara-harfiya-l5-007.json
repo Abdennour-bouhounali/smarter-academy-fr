@@ -1,0 +1,472 @@
+{
+  "id": "ex-3am-qimat-ibara-harfiya-l5-007",
+  "lessonCode": "qimat-ibara-harfiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — حساب تلميذين: محيط ومساحة",
+    "estimatedMinutes": 16,
+    "tags": [
+      "وضعية إدماجية",
+      "مثال مضاد",
+      "نشر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "ملعب مستطيل بعداه $x + 6$ و $x + 4$ (وحدة الطول: المتر). كتب أمين محيطه $P_A = 2(x + 6) + 2(x + 4)$ وكتب ياسين $P_Y = 4x + 20$ ؛ وكتب أمين مساحته $S_A = (x + 6)(x + 4)$ وكتب ياسين $S_Y = x^2 + 24$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول. احسب محيط الملعب بكل صيغة من أجل $x = 5$ .",
+      "statement": "احسب $P_A$ من أجل $x = 5$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "40",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = 5$ هي $40$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$P_A = 2 \\times (5 + 6) + 2 \\times (5 + 4)$",
+          "$P_A = 2 \\times 11 + 2 \\times 9$",
+          "$P_A = 22 + 18$",
+          "$P_A = 40$"
+        ],
+        "result": "P_A = 40"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $P_Y$ من أجل $x = 5$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "40",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = 5$ هي $40$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$P_Y = 4 \\times 5 + 20$",
+          "$P_Y = 20 + 20$",
+          "$P_Y = 40$"
+        ],
+        "result": "P_Y = 40"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما الذي يثبت أنّ $P_A = P_Y$ مهما كان $x$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "تساوي القيمتين من أجل $x = 5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QIMA-ONE-VALUE"
+        },
+        {
+          "id": "B",
+          "content": "نشر $P_A$ : $2x + 12 + 2x + 8 = 4x + 20$",
+          "isCorrect": true
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن القيمتين اللتين حسبتهما: هل اختلفتا عند قيمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قيمة واحدة تختلف عندها العبارتان تكفي لإثبات أنهما غير متساويتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أمّا تساوي القيمتين من أجل قيمة أو قيمتين فلا يثبت التساوي: لإثباته ننشر ونقارن الشكلين."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب الصحيح: نشر $P_A$ : $2x + 12 + 2x + 8 = 4x + 20$",
+        "incorrect": "قيمة مختلفة تكفي لإثبات عدم التساوي، أمّا القيم المتساوية فلا تكفي لإثبات التساوي."
+      },
+      "solution": {
+        "lines": [
+          "نشر $P_A$ : $2x + 12 + 2x + 8 = 4x + 20$"
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "الجزء الثاني. احسب مساحة الملعب بكل صيغة.",
+      "statement": "احسب $S_A$ من أجل $x = 0$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "24",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = 0$ هي $24$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$S_A = (0 + 6) \\times (0 + 4)$",
+          "$S_A = 6 \\times 4$",
+          "$S_A = 24$"
+        ],
+        "result": "S_A = 24"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "احسب $S_Y$ من أجل $x = 0$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "24",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = 0$ هي $24$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$S_Y = 0^2 + 24$",
+          "$S_Y = 0 + 24$",
+          "$S_Y = 24$"
+        ],
+        "result": "S_Y = 24"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "sub": "ا",
+      "statement": "احسب $S_A$ من أجل $x = 3$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "63",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = 3$ هي $63$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$S_A = (3 + 6) \\times (3 + 4)$",
+          "$S_A = 9 \\times 7$",
+          "$S_A = 63$"
+        ],
+        "result": "S_A = 63"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "sub": "ب",
+      "statement": "احسب $S_Y$ من أجل $x = 3$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "33",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = 3$ هي $33$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$S_Y = 3^2 + 24$",
+          "$S_Y = 9 + 24$",
+          "$S_Y = 33$"
+        ],
+        "result": "S_Y = 33"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q8",
+      "step": "05",
+      "statement": "هل $S_A = S_Y$ مهما كان $x$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا: من أجل $x = 3$ نجد $63$ و $33$ ، وهذا مثال مضاد",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم: القيمتان متساويتان من أجل $x = 0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QIMA-ONE-VALUE"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن القيمتين اللتين حسبتهما: هل اختلفتا عند قيمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قيمة واحدة تختلف عندها العبارتان تكفي لإثبات أنهما غير متساويتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أمّا تساوي القيمتين من أجل قيمة أو قيمتين فلا يثبت التساوي: لإثباته ننشر ونقارن الشكلين."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب الصحيح: لا: من أجل $x = 3$ نجد $63$ و $33$ ، وهذا مثال مضاد",
+        "incorrect": "قيمة مختلفة تكفي لإثبات عدم التساوي، أمّا القيم المتساوية فلا تكفي لإثبات التساوي."
+      },
+      "solution": {
+        "lines": [
+          "لا: من أجل $x = 3$ نجد $63$ و $33$ ، وهذا مثال مضاد"
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q9",
+      "step": "06",
+      "statement": "يشترط دفتر الشروط ألّا تقلّ المساحة عن $60\\ \\mathrm{m}^2$ . هل يحقّق تصميم أمين الشرط من أجل $x = 3$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، يحقّقه",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا، لا يحقّقه",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QIMA-PARTIAL"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد ما تطلبه كل خطوة: عبارة، أم قيمة من أجل عدد، أم قرار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بالعدد المعطى في كل مكان منه، واحترم الأقواس وأولوية العمليات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الأعداد التي حسبتها قبل أن تقرّر، وتحقّق من الوحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$S_A = 63 \\geq 60$ .",
+        "incorrect": "راجع خطوات الحل: عوّض ثم احسب، وقارن الأعداد قبل أن تقرّر."
+      },
+      "solution": {
+        "lines": [
+          "$S_A = (3 + 6)(3 + 4) = 9 \\times 7 = 63$ ، وهي أكبر من $60$ ."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

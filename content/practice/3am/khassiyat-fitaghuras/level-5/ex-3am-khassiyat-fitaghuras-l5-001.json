@@ -1,0 +1,458 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l5-001",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — ساحة المتوسطة وشجرتها",
+    "estimatedMinutes": 25,
+    "tags": [
+      "وضعية إدماجية",
+      "خاصية فيثاغورس",
+      "مثلث غير قائم",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-82",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "ساحة المتوسطة مستطيلة الشكل $ABCD$ حيث $AB = 32\\,\\mathrm{m}$ و $BC = 24\\,\\mathrm{m}$ (الأطوال غير حقيقية). في إطار حملة تشجير تطوّع فيها التلاميذ، غرس أستاذ الرياضة شجرة في الساحة وثبّتها بحبل مشدود من النقطة $E$ من جذعها إلى وتد $G$ على الأرض الأفقية. قاس البستاني: $EF = 2\\,\\mathrm{m}$ (حيث $F$ أسفل الجذع)، $FG = 1{,}5\\,\\mathrm{m}$ و $EG = 2{,}6\\,\\mathrm{m}$ ، ثم قال إن الشجرة ليست شاقولية.",
+    "figure": {
+      "points": {
+        "F": [
+          0.0,
+          0.0
+        ],
+        "G": [
+          1.5,
+          0.0
+        ],
+        "E": [
+          -0.17,
+          1.9928
+        ]
+      },
+      "segments": [
+        {
+          "from": "F",
+          "to": "G",
+          "label": "1,5 m"
+        },
+        {
+          "from": "F",
+          "to": "E",
+          "label": "2 m"
+        },
+        {
+          "from": "G",
+          "to": "E",
+          "label": "2,6 m"
+        }
+      ],
+      "ariaLabel": "جذع شجرة [FE] حيث EF = 2 m (يبدو عموديا على الأرض)، ووتد G على الأرض حيث FG = 1,5 m، وحبل [EG] طوله 2,6 m",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "الجزء الأول:",
+      "statement": "احسب طول الممر القطري $[AC]$ للساحة.",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m",
+      "expectedAnswer": "40",
+      "misconceptionSignatures": [
+        {
+          "value": "56",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "1600",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولا مربع الطول، ثم خذ جذره التربيعي بالآلة الحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC^2 = 32^2 + 24^2 = 1600$ ، إذن $AC = 40\\,\\mathrm{m}$ .",
+        "incorrect": "ابدأ بتحديد الوتر، ثم اكتب مساواة فيثاغورس، وتذكّر أن ما تحسبه أولا هو مربع الطول لا الطول نفسه."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $B$ ، حسب خاصية فيثاغورس: $AC^2 = AB^2 + BC^2$",
+          "$AC^2 = 32^2 + 24^2$",
+          "$AC^2 = 1024 + 576 = 1600$",
+          "$AC = \\sqrt{1600} = 40\\,\\mathrm{m}$"
+        ],
+        "result": "AC = 40\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني:",
+      "statement": "احسب $EG^2$ ، مربع طول أطول أضلاع المثلث $EFG$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: قيمة $EG^2$",
+      "expectedAnswer": "6.76",
+      "misconceptionSignatures": [
+        {
+          "value": "5.2",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        },
+        {
+          "value": "4",
+          "id": "MISC-FITAGHURAS-NOT-LONGEST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رتّب أطوال الأضلاع الثلاثة: الضلع الأطول هو الوحيد الذي يمكن أن يكون وترا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع العدد هو جداؤه في نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "أطول الأضلاع هو $[EG]$ و $EG^2 = 2{,}6^2 = 6{,}76$ .",
+        "incorrect": "تأكّد أنك اخترت الضلع الأطول، وأنك ضربت طوله في نفسه."
+      },
+      "solution": {
+        "lines": [
+          "أطول أضلاع المثلث $EFG$ هو $[EG]$ .",
+          "$EG^2 = 2{,}6^2 = 6{,}76$"
+        ],
+        "result": "EG^2 = 6{,}76"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب $FG^2 + EF^2$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: مجموع المربعين",
+      "expectedAnswer": "6.25",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        },
+        {
+          "value": "3.5",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ربّع طول كل ضلع من الضلعين الأقصرين على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المربعين ولا تجمع الطولين."
+        }
+      ],
+      "feedback": {
+        "correct": "$FG^2 + EF^2 = 1{,}5^2 + 2^2 = 2{,}25 + 4 = 6{,}25$ .",
+        "incorrect": "احسب مربع كل طول أولا، ثم اجمع المربعين."
+      },
+      "solution": {
+        "lines": [
+          "$FG^2 + EF^2 = 1{,}5^2 + 2^2$",
+          "$FG^2 + EF^2 = 2{,}25 + 4 = 6{,}25$"
+        ],
+        "result": "FG^2 + EF^2 = 6{,}25"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "هل الشجرة شاقولية (أي جذعها $[FE]$ عمودي على الأرض)؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأن الفرق بين $6{,}76$ و $6{,}25$ صغير",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-LOOKS-RIGHT"
+        },
+        {
+          "id": "B",
+          "content": "نعم، لأن $EG^2 = EF^2 + FG^2$ حسب خاصية فيثاغورس",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-NON-RIGHT-APPLIED"
+        },
+        {
+          "id": "C",
+          "content": "لا، الشجرة ليست شاقولية",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العددين اللذين حسبتهما: هل هما متساويان تماما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لو كان المثلث قائما لكان مربع طول أطول أضلاعه مساويا تماما لمجموع مربعي الضلعين الآخرين (خاصية فيثاغورس)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "التقارب لا يكفي: المساواة يجب أن تكون تامة."
+        }
+      ],
+      "feedback": {
+        "correct": "$6{,}76 \\neq 6{,}25$ : لو كان المثلث قائما لتساوى العددان حسب خاصية فيثاغورس، إذن هو ليس قائما.",
+        "incorrect": "الشكل أو تقارب العددين لا يكفيان: انظر هل المساواة محقّقة تماما أم لا."
+      },
+      "solution": {
+        "lines": [
+          "أطول الأضلاع هو $[EG]$ : $EG^2 = 6{,}76$ و $FG^2 + EF^2 = 6{,}25$ .",
+          "بما أن $EG^2 \\neq FG^2 + EF^2$ ، فحسب خاصية فيثاغورس المثلث $EFG$ ليس قائما."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "بيّن أن حكم البستاني صحيح، بكتابة الاستدلال كاملا.",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بتعيين أطول الأضلاع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن مربعه بمجموع مربعي الضلعين الآخرين، ثم استند إلى خاصية فيثاغورس."
+        }
+      ],
+      "feedback": {
+        "correct": "استدلال كامل: أطول ضلع، المقارنة، ثم الاستنتاج بخاصية فيثاغورس.",
+        "incorrect": "قارن استدلالك بالحل النموذجي: هل عيّنت أطول الأضلاع؟ هل ذكرت خاصية فيثاغورس في الاستنتاج؟"
+      },
+      "solution": {
+        "lines": [
+          "أطول الأضلاع هو $[EG]$ : $EG^2 = 6{,}76$ و $FG^2 + EF^2 = 6{,}25$ .",
+          "بما أن $EG^2 \\neq FG^2 + EF^2$ ، فحسب خاصية فيثاغورس المثلث $EFG$ ليس قائما."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "لكي تصبح الشجرة شاقولية مع بقاء الحبل والنقطة $E$ كما هما، كم يجب أن تكون المسافة $FG$ ؟ أعط قيمة مقرّبة إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m مدوّرا إلى 0,1",
+      "expectedAnswer": "1.7",
+      "misconceptionSignatures": [
+        {
+          "value": "1.6",
+          "id": "MISC-FITAGHURAS-ROUND-TRUNC"
+        },
+        {
+          "value": "3.3",
+          "id": "MISC-FITAGHURAS-LEG-ADD"
+        },
+        {
+          "value": "0.6",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "2.76",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع المطلوب ليس الوتر: مربعه يساوي مربع الوتر ناقص مربع الضلع الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مربع الطول، ثم استعمل اللمسة $\\sqrt{\\ }$ ، ولا تدوّر إلا النتيجة الأخيرة (انظر إلى الرقم الموالي للرقم المطلوب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$FG^2 = 2{,}6^2 - 2^2 = 2{,}76$ ، إذن $FG \\approx 1{,}7\\,\\mathrm{m}$ .",
+        "incorrect": "الطول المطلوب ضلع قائم وليس وترا: نطرح مربع الضلع المعلوم من مربع الوتر، ولا نجمع."
+      },
+      "solution": {
+        "lines": [
+          "إذا كانت الشجرة شاقولية فالمثلث $EFG$ قائم في $F$ ووتره الحبل $[EG]$ .",
+          "المثلث $EFG$ قائم في $F$ ، حسب خاصية فيثاغورس: $EG^2 = FG^2 + EF^2$",
+          "ومنه: $FG^2 = EG^2 - EF^2$",
+          "$FG^2 = 2{,}6^2 - 2^2 = 6{,}76 - 4 = 2{,}76$",
+          "$FG = \\sqrt{2{,}76}$ (القيمة المضبوطة)",
+          "باستعمال اللمسة $\\sqrt{\\ }$ للآلة الحاسبة: $\\sqrt{2{,}76} \\approx 1{,}661324772$",
+          "المدوّر إلى $0{,}1$ : $FG \\approx 1{,}7\\,\\mathrm{m}$"
+        ],
+        "result": "FG \\approx 1{,}7\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q7",
+      "step": "06",
+      "statement": "ماذا يفعل البستاني بالوتد $G$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "يقرّبه من الشجرة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-LEG-ADD"
+        },
+        {
+          "id": "B",
+          "content": "يبعده عن الشجرة",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "يتركه مكانه، فالفرق لا يُرى بالعين",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-LOOKS-RIGHT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المسافة المطلوبة بالمسافة الحالية $FG = 1{,}5\\,\\mathrm{m}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة المطلوبة هي التي حسبتها في السؤال السابق."
+        }
+      ],
+      "feedback": {
+        "correct": "المسافة المطلوبة أكبر من $1{,}5\\,\\mathrm{m}$ : يُبعد الوتد.",
+        "incorrect": "استعمل قيمة $FG$ التي تجعل المثلث قائما وقارنها بـ $1{,}5$ ."
+      },
+      "solution": {
+        "lines": [
+          "المسافة المطلوبة $FG = \\sqrt{2{,}76} \\approx 1{,}66\\,\\mathrm{m}$ ، والمسافة الحالية $1{,}5\\,\\mathrm{m}$ .",
+          "$1{,}66 > 1{,}5$ : يبعد البستاني الوتد عن الشجرة بحوالي $0{,}16\\,\\mathrm{m}$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "id": "ex-3am-jam-tarh-kasrayn-l2-008",
+  "lessonCode": "jam-tarh-kasrayn",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — ساعات الدراسة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جمع كسرين",
+      "تعليل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "درست هبة $\\dfrac{3}{4}$ ساعة في الصباح و $\\dfrac{2}{5}$ ساعة في المساء."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما مدّة دراستها في المجموع ؟ (بالساعات)",
+      "learningPoints": [
+        {
+          "code": "3am_jam-tarh-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "23/20",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "5/9",
+          "id": "MISC-JAMTARH-ACROSS"
+        },
+        {
+          "value": "1/4",
+          "id": "MISC-JAMTARH-NOSCALE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليّة المطلوبة؟ وهل المقامات متساوية أو أحدها مضاعف لغيره؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب مضاعفات المقام الأكبر حتى تجد أوّل مضاعف يقبل القسمة على المقام الآخر، فهو مقامك المشترك."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ حدّ بالمقام المشترك، ثمّ اجمع البسوط أو اطرحها، ثمّ اختزل إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{23}{20}$ .",
+        "incorrect": "اكتب الكسرين بمقام مشترك قبل أن تجمع أو تطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نبحث عن أصغر مضاعف مشترك للمقامات $4$ و $5$ : إنّه $20$ .",
+          "$\\dfrac{3}{4} = \\dfrac{3 \\times 5}{4 \\times 5} = \\dfrac{15}{20}$ .",
+          "$\\dfrac{2}{5} = \\dfrac{2 \\times 4}{5 \\times 4} = \\dfrac{8}{20}$ .",
+          "$\\dfrac{15 + 8}{20} = \\dfrac{23}{20}$ ."
+        ],
+        "result": "\\dfrac{23}{20}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل درست أكثر من ساعة ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jam-tarh-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{3}{4} + \\dfrac{2}{5} > 1$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{3}{4} + \\dfrac{2}{5} < 1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-ACROSS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ خيار بحساب بالمقام المشترك بدل التخمين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استبعد الخيارات التي تجمع المقامات أو تترك البسوط دون تغيير."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{4} + \\dfrac{2}{5} > 1$ .",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{4} + \\dfrac{2}{5} = \\dfrac{15}{20} + \\dfrac{8}{20} = \\dfrac{23}{20}$ .",
+          "$\\dfrac{23}{20} > 1$ لأنّ $23 > 20$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل يمكن أن يكون المجموع $\\dfrac{5}{9}$ ساعة ؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "3am_jam-tarh-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثمّ اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجب أن تبرّره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اذكر المقام الذي اخترته ولماذا يصلح، ثمّ اكتب خطوات الحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "تطابق برهانك مع الحل النموذجي .",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثمّ قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "لا: $\\dfrac{5}{9}$ أصغر من $\\dfrac{3}{4}$ ، أي أصغر من مدّة الصباح وحدها.",
+          "جمع البسطين والمقامين ($\\dfrac{3+2}{4+5}$) خطأ: لا نجمع إلا أجزاءً بنفس المقام."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

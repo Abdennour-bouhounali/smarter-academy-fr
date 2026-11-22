@@ -1,0 +1,87 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-dawaran-l4-006",
+  "lessonCode": "wadiya-idmajiya-dawaran",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — دائرة تمرّ برؤوس مربع",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المربع",
+      "نمذجة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-dawaran_P2",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "أربعة أعمدة في رؤوس مربع طول ضلعه $4\\,\\mathrm{m}$ ، ونريد حوضا دائريا تكون الأعمدة على حافته."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "نصف قطر الحوض (القيمة المضبوطة):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-NISF-ZAWIYA"
+        },
+        {
+          "id": "B",
+          "content": "$2\\sqrt{2}\\,\\mathrm{m}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$4\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-DIL"
+        },
+        {
+          "id": "D",
+          "content": "$4\\sqrt{2}\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-DAIRA-QUTR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مركز الحوض مركز المربع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نصف القطر نصف قطر المربع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قطر المربع $4\\sqrt{2}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "قطر المربع $\\sqrt{4^2 + 4^2} = 4\\sqrt{2}$ ونصفه $2\\sqrt{2}\\,\\mathrm{m}$ .",
+        "incorrect": "الضلع لا يساوي نصف القطر إلا في السداسي، وقطر المربع هو قطر الحوض."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 4
+    }
+  ]
+}

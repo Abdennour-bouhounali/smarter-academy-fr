@@ -1,0 +1,230 @@
+{
+  "id": "ex-2am-silsila-bi-aqwas-l4-004",
+  "lessonCode": "silsila-bi-aqwas",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — ثلاثة مستويات من الحساب",
+    "estimatedMinutes": 12,
+    "tags": [
+      "أقواس متداخلة",
+      "قسمة عشرية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $B = 95 - [(4{,}8 \\div 0{,}4 + 5) \\times 2]$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القسمة العشرية: $4{,}8 \\div 0{,}4$ .",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع إطارًا حول القوسين: ما بداخلهما يُحسب أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب ما بين القوسين وفق أولوية العمليات، ثم أعد كتابة العبارة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك عملية بعد عملية إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 4{,}8 \\div 0{,}4 = 12$",
+        "incorrect": "ما بين القوسين يُحسب أوّلًا، ثم نكمل العمليات باحترام أولوية الضرب والقسمة على الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$A = 4{,}8 \\div 0{,}4$",
+          "$A = 12$"
+        ],
+        "result": "A = 12"
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $B = 95 - [(4{,}8 \\div 0{,}4 + 5) \\times 2]$ .",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "61",
+      "misconceptionSignatures": [
+        {
+          "value": "93",
+          "id": "MISC-AQWAS-IGNORED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع خطًّا تحت أعمق القوسين: هما أوّل ما يُحسب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القوسين الداخليين ثم المعقوفين، ثم أكمل بقية العبارة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أعد كتابة العبارة بعد كل مرحلة بما بقي منها."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 95 - [(4{,}8 \\div 0{,}4 + 5) \\times 2] = 61$",
+        "incorrect": "نبدأ بأعمق القوسين ثم نخرج إلى المعقوفين، وفي كل مستوى نحترم أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$B = 95 - [(4{,}8 \\div 0{,}4 + 5) \\times 2]$",
+          "$B = 95 - [(12 + 5) \\times 2]$",
+          "$B = 95 - (17 \\times 2)$",
+          "$B = 95 - 34$",
+          "$B = 61$"
+        ],
+        "result": "B = 61"
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل المعقوفان $[\\ \\ ]$ ضروريان في العبارة $B = 95 - [(4{,}8 \\div 0{,}4 + 5) \\times 2]$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-ALLNEEDED"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النتيجتين بدقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كل عبارة بالترتيب الصحيح قبل أن تحكم."
+        }
+      ],
+      "feedback": {
+        "correct": "تحقّقت من ذلك بالحساب.",
+        "incorrect": "احسب كل عبارة مرحلة مرحلة وقارن النتيجتين قبل أن تحكم."
+      },
+      "solution": {
+        "lines": [
+          "$B = 95 - [(12 + 5) \\times 2] = 95 - 34 = 61$",
+          "وبدون المعقوفين: $95 - (12 + 5) \\times 2 = 95 - 34 = 61$ ."
+        ]
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "احسب $C = [(9{,}6 \\div 1{,}2 - 3) \\times 5] \\div 2$ .",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "12.5",
+      "misconceptionSignatures": [
+        {
+          "value": "0.5",
+          "id": "MISC-AQWAS-IGNORED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع خطًّا تحت أعمق القوسين: هما أوّل ما يُحسب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القوسين الداخليين ثم المعقوفين، ثم أكمل بقية العبارة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أعد كتابة العبارة بعد كل مرحلة بما بقي منها."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = [(9{,}6 \\div 1{,}2 - 3) \\times 5] \\div 2 = 12{,}5$",
+        "incorrect": "نبدأ بأعمق القوسين ثم نخرج إلى المعقوفين، وفي كل مستوى نحترم أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$C = [(9{,}6 \\div 1{,}2 - 3) \\times 5] \\div 2$",
+          "$C = [(8 - 3) \\times 5] \\div 2$",
+          "$C = (5 \\times 5) \\div 2$",
+          "$C = 25 \\div 2$",
+          "$C = 12{,}5$"
+        ],
+        "result": "C = 12{,}5"
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

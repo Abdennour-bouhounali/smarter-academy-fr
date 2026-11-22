@@ -1,0 +1,225 @@
+{
+  "id": "ex-3am-musawiyat-amaliyat-l4-009",
+  "lessonCode": "musawiyat-amaliyat",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — سياج حديقة قائمة الزاوية",
+    "estimatedMinutes": 9,
+    "tags": [
+      "خاصية فيثاغورس",
+      "المساويات والضرب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يتعاون جيران لسياجة قطعة أرض شكلها مثلث $ABC$ قائم في $A$ حيث $AB = 6\\,\\mathrm{m}$ و $AC = 8\\,\\mathrm{m}$ . ثمن المتر الواحد من السياج $c$ دج، وقد دفعوا $3600$ دج في المجموع، أي $24c = 3600$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب الطول $BC$ بالمتر.",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الطول بالمتر",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العلاقة بين المساواة المعطاة والمساواة المطلوبة؟ أيّ عملية تنقلك من الأولى إلى الثانية؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا أمكن الانتقال من المساواة المعطاة إلى المساواة المقترحة بعملية واحدة على الطرفين فهي صحيحة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب عمليّة واحدة على الطرفين، ثم قارن النتيجة بالمساواة المقترحة حدًّا بحدّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC^{2} = 100$ ، أي $BC = 10$ .",
+        "incorrect": "استعمل خواص المساواة والعمليّات: عملية واحدة على الطرفين معًا تنقلك من مساواة إلى أخرى؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $A$ ، حسب خاصية فيثاغورس: $BC^{2} = AB^{2} + AC^{2} = 36 + 64 = 100$ .",
+          "إذن $BC = 10\\,\\mathrm{m}$ ."
+        ],
+        "result": "10"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "نعلم أنّ $24c = 3600$ ، إذن $c = \\ldots$ .",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "150",
+      "misconceptionSignatures": [
+        {
+          "value": "3600",
+          "id": "MISC-MUSAWIYA-ONE-SIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نضرب فيه (أو نقسم عليه)؟ وهل هو معدوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نضرب (أو نقسم) الطرفين معًا، وكلّ حدّ من الطرف يتأثّر بالعملية؛ والقسمة على صفر ممنوعة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع الطرف كاملًا بين قوسين قبل أن تضرب، وانتبه لإشارة العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$c = 150$ .",
+        "incorrect": "لا تتغيّر المساواة عندما نضرب طرفيها في العدد نفسه أو نقسمهما على عدد غير معدوم؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $24c = 3600$ .",
+          "بقسمة طرفي المساواة على $24$ نجد: $\\dfrac{24c}{24} = \\dfrac{3600}{24}$ ، أي $c = 150$ ."
+        ],
+        "result": "c = 150"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "إذا كان $24c = 3600$ فإنّ $12c = 1800$ . هل هذه المساواة صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيحة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خاطئة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-DOUBT-OP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العلاقة بين المساواة المعطاة والمساواة المطلوبة؟ أيّ عملية تنقلك من الأولى إلى الثانية؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا أمكن الانتقال من المساواة المعطاة إلى المساواة المقترحة بعملية واحدة على الطرفين فهي صحيحة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب عمليّة واحدة على الطرفين، ثم قارن النتيجة بالمساواة المقترحة حدًّا بحدّ."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا طرفي $24c = 3600$ على $2$ .",
+        "incorrect": "استعمل خواص المساواة والعمليّات: عملية واحدة على الطرفين معًا تنقلك من مساواة إلى أخرى؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $24c = 3600$ .",
+          "بقسمة طرفي المساواة على $2$ نجد: $\\dfrac{24c}{2} = \\dfrac{3600}{2}$ ، أي $12c = 1800$ .",
+          "قسمنا طرفي $24c = 3600$ على $2$ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "لماذا يجب أن نقسم الطرفين على $24$ معًا للحصول على $c$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا تفعل العمليّة بكل طرف من أطراف المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر: لا نغيّر مساواة إلا بعملية نجريها على طرفيها معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب خطوتك بعبارة «بإضافة… / بضرب… إلى/في الطرفين» ثم استنتج."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "القسمة على $24$ تُطبَّق على الطرفين: $\\dfrac{24c}{24} = \\dfrac{3600}{24}$ .",
+          "أمّا القسمة على طرف واحد فتكسر المساواة."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

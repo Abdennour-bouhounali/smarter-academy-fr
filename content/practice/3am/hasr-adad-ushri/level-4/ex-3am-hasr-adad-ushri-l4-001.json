@@ -1,0 +1,229 @@
+{
+  "id": "ex-3am-hasr-adad-ushri-l4-001",
+  "lessonCode": "hasr-adad-ushri",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — معادلة ثم نسبة ربح مدوّرة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "معادلة",
+      "نسبة مئوية",
+      "تدوير"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 3,
+      "file": "3am-s3-51",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يتكوّن هذا التمرين من جزأين مستقلّين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "حلّ المعادلة $\\dfrac{8x+2}{4}=\\dfrac{2}{5}$ ؛ ما قيمة $x$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "-1/20",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب طرفي المعادلة في $4$ لتتخلّص من المقام."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحصل على $8x+2=\\dfrac{8}{5}$ ؛ انقل الحدّ $2$ إلى الطرف الثاني."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم الطرفين على $8$ ، ثم تحقّق بالتعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "$8x=\\dfrac{8}{5}-2=-\\dfrac{2}{5}$ ، إذن $x=-\\dfrac{1}{20}$ .",
+        "incorrect": "راجع حلّ المعادلة خطوة بخطوة: اضرب في $4$ ثم انقل الحدّ المعلوم ثم اقسم على معامل $x$ ؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضرب الطرفين في $4$ : $8x+2=\\dfrac{8}{5}$ .",
+          "$8x=\\dfrac{8}{5}-2=-\\dfrac{2}{5}$ ، إذن $x=-\\dfrac{1}{20}$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "اشترت رقية هاتفًا نقّالًا بمبلغ $39000\\,\\mathrm{DA}$ ، وبعد مدّة باعته بمبلغ $42500\\,\\mathrm{DA}$ .",
+      "statement": "ما المبلغ الذي ربحته بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "3500",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ ما تعرضه شاشة الآلة الحاسبة، ولا تعدّه قيمة مضبوطة للحاصل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احصر الحاصل بين قيمتين مقرّبتين متتاليتين في الرتبة المطلوبة، ثم حدّد الرقم الذي يلي تلك الرتبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الحاصل بقيمتيه المقرّبتين: الأولى أصغر منه أو تساويه والثانية أكبر منه."
+        }
+      ],
+      "feedback": {
+        "correct": "ربحت $3500\\,\\mathrm{DA}$ .",
+        "incorrect": "لا تعدّ ما تعرضه شاشة الآلة قيمة مضبوطة للحاصل: احصره بين قيمتين مقرّبتين متتاليتين؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$42500-39000=3500$ .",
+          "ربحت $3500\\,\\mathrm{DA}$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "النسبة المئوية للربح هي $\\dfrac{3500}{39000}\\times100=\\dfrac{350000}{39000}$ . ما مدوّرها إلى الوحدة؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-TADWIR-TRUNC"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى الرقم الذي يلي الرتبة المطلوبة مباشرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إن كان هذا الرقم خمسة أو أكبر زدنا الرقم الأخير بواحد، وإلاّ تركناه كما هو."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لحصر عدد علمنا مدوّره: ارجع نصف وحدة من الرتبة إلى الخلف وتقدّم نصف وحدة إلى الأمام؛ الطرف الأدنى مشمول والطرف الأعلى مستبعد."
+        }
+      ],
+      "feedback": {
+        "correct": "النسبة المئوية للربح مدوّرة إلى الوحدة هي $9\\%$ .",
+        "incorrect": "راجع التدوير: انظر إلى الرقم الذي يلي الرتبة المطلوبة مباشرة؛ ولحصر عدد علمنا مدوّره نرجع نصف وحدة ونتقدّم نصف وحدة، والطرف الأعلى مستبعد."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{350000}{39000}=8{,}97\\ldots$ ؛ الرقم الذي يلي الوحدة هو $9$ ، فنزيد رقم الوحدات بواحد: $9$ .",
+          "النسبة المئوية للربح مدوّرة إلى الوحدة هي $9\\%$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "statement": "هل النسبة المئوية المضبوطة للربح تساوي $9\\%$ بالضبط؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-CENTER-EXACT"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع الحصر الذي وجدته إلى جانب العدد المطلوب مقارنته به."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل العدد أكبر من الطرف الأعلى، أم أصغر من الطرف الأدنى، أم يقع بينهما؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إن وقع العدد بين الطرفين فلا يمكن الجزم؛ وإلاّ فالقرار مؤكّد."
+        }
+      ],
+      "feedback": {
+        "correct": "$9$ مدوّر لا قيمة مضبوطة؛ الجواب: لا.",
+        "incorrect": "راجع: قارن العدد بطرفَي الحصر؛ إن وقع بينهما فلا يمكن الجزم، والطرف الأعلى لا يبلغه العدد. أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{350000}{39000}=8{,}974\\ldots$ وليس $9$ .",
+          "$9$ مدوّر لا قيمة مضبوطة؛ الجواب: لا."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "id": "ex-3am-tasawi-muqaranat-kasrayn-l1-005",
+  "lessonCode": "tasawi-muqaranat-kasrayn",
+  "level": 1,
+  "metadata": {
+    "title": "أدرس تساوي كسرين",
+    "estimatedMinutes": 8,
+    "tags": [
+      "تساوي كسرين",
+      "الحدّ المجهول"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-15",
+      "page": 30,
+      "section": "أوظّف تعلّماتي",
+      "number": 15
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ادرس في كلّ حالة إن كان العددان متساويين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "هل $\\dfrac{7}{19} = \\dfrac{21}{19}$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأنّ $21 = 7 \\times 3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-HALFTOP"
+        },
+        {
+          "id": "B",
+          "content": "لا، لأنّ $7 \\times 19 \\neq 19 \\times 21$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نعم، لأنّ الكسرين متقاربان جدًّا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-EYE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكسران اللذان نختبر تساويهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الجداءين المتصالبين ثمّ قارنهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كسران متساويان إذا وفقط إذا تساوى جداءاهما المتصالبان؛ لا نحكم من الفروق ولا من البسطين وحدهما."
+        }
+      ],
+      "feedback": {
+        "correct": "لا، لأنّ $7 \\times 19 = 133$ يختلف عن $19 \\times 21 = 399$ .",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 19 = 133$ و $19 \\times 21 = 399$ .",
+          "الجداءان المتصالبان مختلفان، إذن الكسران غير متساويين."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل $\\dfrac{3}{8} = \\dfrac{15}{40}$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لأنّ $3 \\neq 15$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-NUMERATORS"
+        },
+        {
+          "id": "B",
+          "content": "لا، لأنّ $40 - 8 \\neq 15 - 3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-ADDSAME"
+        },
+        {
+          "id": "C",
+          "content": "نعم، لأنّ $3 \\times 40 = 8 \\times 15$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكسران اللذان نختبر تساويهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الجداءين المتصالبين ثمّ قارنهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كسران متساويان إذا وفقط إذا تساوى جداءاهما المتصالبان؛ لا نحكم من الفروق ولا من البسطين وحدهما."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم، لأنّ $3 \\times 40 = 8 \\times 15 = 120$ .",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 40 = 120$ و $8 \\times 15 = 120$ .",
+          "الجداءان المتصالبان متساويان، إذن $\\dfrac{3}{8} = \\dfrac{15}{40}$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "هل $\\dfrac{5}{9} = \\dfrac{14}{25}$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لأنّ $5 \\times 25 \\neq 9 \\times 14$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم، لأنّ الكسرين متقاربان جدًّا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-EYE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكسران اللذان نختبر تساويهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الجداءين المتصالبين ثمّ قارنهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كسران متساويان إذا وفقط إذا تساوى جداءاهما المتصالبان؛ لا نحكم من الفروق ولا من البسطين وحدهما."
+        }
+      ],
+      "feedback": {
+        "correct": "لا، لأنّ $5 \\times 25 = 125$ يختلف عن $9 \\times 14 = 126$ .",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$5 \\times 25 = 125$ و $9 \\times 14 = 126$ .",
+          "الجداءان المتصالبان مختلفان، إذن الكسران غير متساويين."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "جد العدد $x$ حيث $\\dfrac{5}{x} = \\dfrac{15}{21}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "11",
+          "id": "MISC-TASAWI-ADDSAME"
+        },
+        {
+          "value": "25/7",
+          "id": "MISC-TASAWI-CROSSWRONG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في أيّ موضع يوجد العدد المجهول؟ وما الكسر الآخر في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كسران متساويان جداءاهما المتصالبان متساويان: اكتب المعادلة المناسبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة كتابة المساواة بعد التعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 7$ لأنّ $5 \\times 21 = x \\times 15$ .",
+        "incorrect": "كسران متساويان جداءاهما المتصالبان متساويان: اكتب المعادلة بدقّة وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{x} = \\dfrac{15}{21}$ ، إذن $5 \\times 21 = x \\times 15$ .",
+          "$x = 7$ ."
+        ],
+        "result": "x = 7"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

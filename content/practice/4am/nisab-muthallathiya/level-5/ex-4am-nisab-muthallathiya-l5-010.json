@@ -1,0 +1,228 @@
+{
+  "id": "ex-4am-nisab-muthallathiya-l5-010",
+  "lessonCode": "nisab-muthallathiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2012 — لافتة «منحدر 12%» على طريق جبلي",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "الظل",
+      "الجيب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_nisab-muthallathiya_P1",
+      "modelledOn": "BEM 2012 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2012",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "على طريق جبلي بولاية تيزي وزو لافتة كُتب عليها «منحدر 12%»، أي أن الطريق ينخفض بـ $12\\,\\mathrm{m}$ كلما تقدّمنا أفقيا بـ $100\\,\\mathrm{m}$ . نسمي $\\alpha$ زاوية ميل الطريق عن الأفق. وكثير من السائقين يتقيّد باللافتات احترامًا لسلامة الآخرين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب $\\tan\\alpha$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "3/25",
+      "misconceptionSignatures": [
+        {
+          "value": "25/3",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث القائم: الانخفاض مقابل للزاوية $\\alpha$ والتقدّم الأفقي مجاور لها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الظل = المقابل على المجاور."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan\\alpha = \\dfrac{12}{100} = \\dfrac{3}{25}$ .",
+        "incorrect": "الظل = الانخفاض على المسافة الأفقية، ثم اختزل الكسر."
+      },
+      "solution": {
+        "lines": [
+          "الانخفاض $12\\,\\mathrm{m}$ مقابل للزاوية $\\alpha$ ، والتقدّم الأفقي $100\\,\\mathrm{m}$ مجاور لها:",
+          "$\\tan\\alpha = \\dfrac{12}{100}$"
+        ],
+        "result": "\\tan\\alpha = \\dfrac{3}{25}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "يقطع جزء مستقيم من هذا الطريق مسافة أفقية $2{,}5\\,\\mathrm{km}$ . احسب انخفاضه بالمتر.",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الانخفاض بـ m",
+      "expectedAnswer": "300",
+      "misconceptionSignatures": [
+        {
+          "value": "62500/3",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل $2{,}5\\,\\mathrm{km}$ إلى المتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الانخفاض مقابل والمسافة الأفقية مجاور: الانخفاض = المسافة الأفقية × $\\tan\\alpha$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$2500 \\times \\dfrac{3}{25} = 300\\,\\mathrm{m}$ .",
+        "incorrect": "الانخفاض في بسط الظل: اضرب المسافة الأفقية (بالمتر) في الظل."
+      },
+      "solution": {
+        "lines": [
+          "$2{,}5\\,\\mathrm{km} = 2500\\,\\mathrm{m}$",
+          "$\\tan\\alpha = \\dfrac{h}{2500}$ ومنه $h = 2500 \\times \\dfrac{3}{25}$"
+        ],
+        "result": "h = 300\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب طول هذا الجزء من الطريق بالتدوير إلى المتر.",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بـ m مدوّرا إلى الوحدة",
+      "expectedAnswer": "2518",
+      "misconceptionSignatures": [
+        {
+          "value": "2800",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الطريق وتر المثلث القائم: خاصية فيثاغورس."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sqrt{2500^2 + 300^2} \\approx 2517{,}94$ ، أي $2518\\,\\mathrm{m}$ .",
+        "incorrect": "مربع الوتر يساوي مجموع مربعي الضلعين الآخرين."
+      },
+      "solution": {
+        "lines": [
+          "بتطبيق خاصية فيثاغورس: $L^2 = 2500^2 + 300^2 = 6340000$",
+          "$L = \\sqrt{6340000} \\approx 2517{,}94$"
+        ],
+        "result": "L \\approx 2518\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "☜ تُنصب لافتة «منحدر» حين يكون جيب زاوية الميل أكبر من $0{,}1$ . احسب $\\sin\\alpha$ بالتدوير إلى $0{,}001$ .",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nisab-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري مدوّر إلى 0,001",
+      "expectedAnswer": "0.119",
+      "misconceptionSignatures": [
+        {
+          "value": "8.393",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        },
+        {
+          "value": "0.12",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الجيب = المقابل (الانخفاض) على الوتر (طول الطريق)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل الطول غير المدوّر للطريق."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin\\alpha = \\dfrac{300}{\\sqrt{6340000}} \\approx 0{,}119$ ، وهو أكبر من $0{,}1$ : اللافتة في مكانها.",
+        "incorrect": "الجيب يستعمل الوتر (طول الطريق) لا المسافة الأفقية: لا تخلط بينه وبين الظل."
+      },
+      "solution": {
+        "lines": [
+          "$\\sin\\alpha = \\dfrac{300}{L} = \\dfrac{300}{\\sqrt{6340000}}$",
+          "باستعمال الآلة الحاسبة: $\\sin\\alpha \\approx 0{,}11915$",
+          "و $0{,}119 > 0{,}1$ : اللافتة مبرّرة."
+        ],
+        "result": "\\sin\\alpha \\approx 0{,}119"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

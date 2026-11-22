@@ -1,0 +1,247 @@
+{
+  "id": "ex-3am-hasr-adad-ushri-l5-010",
+  "lessonCode": "hasr-adad-ushri",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — تتابع 2 × 100 م",
+    "estimatedMinutes": 18,
+    "tags": [
+      "زمن",
+      "تدوير",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "في سباق تتابع قطع عدّاءان المسافة بالتناوب. كتب الميقاتي، مدوّرًا إلى $0{,}01\\,\\mathrm{s}$ ، زمن الأوّل $11{,}84$ وزمن الثاني $12{,}06$ . الزمن الكلّي $T=t_1+t_2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أيّ جواب صحيح للزمن الكلّي $T$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$23{,}88\\le T<23{,}9$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-BOUND-SHIFT"
+        },
+        {
+          "id": "B",
+          "content": "$23{,}89\\le T<23{,}91$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$T=23{,}9$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-CENTER-EXACT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أوّلاً حصر الكمية التي دُوِّرت، ثم اكتب العبارة المطلوبة بدلالتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نضرب أطراف الحصر في العدد الموجب نفسه (فلا يتغيّر اتجاه المتباينة) ثم نضيف الثابت إن وُجد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الطرف الأدنى يبقى مشمولًا والأعلى مستبعدًا؛ تحقّق من ذلك بقراءة الحصر بعد الحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "$23{,}89\\le T<23{,}91$ .",
+        "incorrect": "راجع: نرجع نصف وحدة من الرتبة ونتقدّم نصف وحدة، ثم نضرب الأطراف في العدد الموجب نفسه دون تغيير اتجاه المتباينة؛ الطرف الأعلى مستبعد. أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$11{,}835\\le t_1<11{,}845$ و $12{,}055\\le t_2<12{,}065$ ؛ نجمع الأطراف المتناظرة.",
+          "$23{,}89\\le T<23{,}91$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "هل الزمن الكلّي أقلّ من $24\\,\\mathrm{s}$ حتمًا؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-UPPER-INCLUDED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع الحصر الذي وجدته إلى جانب العدد المطلوب مقارنته به."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل العدد أكبر من الطرف الأعلى، أم أصغر من الطرف الأدنى، أم يقع بينهما؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إن وقع العدد بين الطرفين فلا يمكن الجزم؛ وإلاّ فالقرار مؤكّد."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: نعم.",
+        "incorrect": "راجع: قارن العدد بطرفَي الحصر؛ إن وقع بينهما فلا يمكن الجزم، والطرف الأعلى لا يبلغه العدد. أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$T<23{,}91<24$ .",
+          "الجواب: نعم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل يمكن الجزم أنّ الزمن الكلّي أقلّ من $23{,}9\\,\\mathrm{s}$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-CENTER-EXACT"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع الحصر الذي وجدته إلى جانب العدد المطلوب مقارنته به."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل العدد أكبر من الطرف الأعلى، أم أصغر من الطرف الأدنى، أم يقع بينهما؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إن وقع العدد بين الطرفين فلا يمكن الجزم؛ وإلاّ فالقرار مؤكّد."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: لا.",
+        "incorrect": "راجع: قارن العدد بطرفَي الحصر؛ إن وقع بينهما فلا يمكن الجزم، والطرف الأعلى لا يبلغه العدد. أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$23{,}9$ تقع بين $23{,}89$ و $23{,}91$ ؛ فقد يفوقها الزمن.",
+          "الجواب: لا."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "statement": "علّل: لماذا لا نقول إنّ $T=11{,}84+12{,}06=23{,}9$ بالضبط؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع الحصر الذي وجدته إلى جانب العدد المطلوب مقارنته به."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل العدد أكبر من الطرف الأعلى، أم أصغر من الطرف الأدنى، أم يقع بينهما؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إن وقع العدد بين الطرفين فلا يمكن الجزم؛ وإلاّ فالقرار مؤكّد."
+        }
+      ],
+      "feedback": {
+        "correct": "مجموع الحصرين يعطي $[23{,}89 ; 23{,}91[$ ، و $23{,}9$ إحدى قيمه الممكنة لا قيمته الوحيدة.",
+        "incorrect": "راجع: قارن العدد بطرفَي الحصر؛ إن وقع بينهما فلا يمكن الجزم، والطرف الأعلى لا يبلغه العدد. أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "القراءتان مدوّرتان، فكلّ منهما تحمل عدم دقّة قدره نصف مئويّة من الثانية.",
+          "مجموع الحصرين يعطي $[23{,}89 ; 23{,}91[$ ، و $23{,}9$ إحدى قيمه الممكنة لا قيمته الوحيدة."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

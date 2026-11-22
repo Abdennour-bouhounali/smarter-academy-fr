@@ -1,0 +1,291 @@
+{
+  "id": "ex-3am-quwat-adad-nisbi-l4-006",
+  "lessonCode": "quwat-adad-nisbi",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — من القوى إلى سلسلة الحسابات",
+    "estimatedMinutes": 9,
+    "tags": [
+      "قواعد الحساب على القوى",
+      "سلسلة حسابات"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "2am-s2-65",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "1) اكتب كل عدد على الشكل $a^n$ ، حيث $a$ عدد طبيعي و $n$ عدد صحيح نسبي.\n2) احسب موضّحًا مراحل الحساب العدد $E$ .",
+    "formulas": [
+      "A = 10^{2} \\times 10^{-5} \\times 1000^{2}",
+      "B = (5^{-2})^{3}",
+      "C = \\dfrac{9}{9^{-3}}",
+      "D = (2^{4})^{3} \\times (5^{6})^{2}",
+      "E = 12{,}5 \\times 10^{2} - 2 \\times 5^{2} + \\left[1 + (-2)^{3}\\right]^{2}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "$A = 10^n$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هذه المرحلة على قوى العدد 10 (درس آخر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القواعد نفسها: نجمع الأسس في الجداء، ونطرحها في القسمة، ونضربها في قوة القوة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من إشارة كل أس."
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{2-5+6} = 10^3$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$1000^{2} = (10^{3})^{2} = 10^{6}$",
+          "$A = 10^{2+(-5)+6} = 10^{3}$"
+        ],
+        "result": "A = 10^{3}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$B = 5^n$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "-6",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-QUWA-POWER-ADD-EXP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قوة مرفوعة إلى قوة: ماذا نفعل بالأسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في $(a^m)^n$ نضرب الأسين، ولا نجمعهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه لإشارة الجداء إذا كان أحد الأسين سالبًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$(5^{-2})^3 = 5^{-6}$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$B = 5^{(-2) \\times 3} = 5^{-6}$"
+        ],
+        "result": "B = 5^{-6}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "$C = 9^n$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "-2",
+          "id": "MISC-QUWA-EXP-SIGN-SLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "البسط والمقام قوتان للأساس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل قسمة قوتين لهما الأساس نفسه: نطرح أس المقام من أس البسط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طرح أسّ سالب يعني إضافة معاكسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9^1}{9^{-3}} = 9^4$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$C = \\dfrac{9^{1}}{9^{-3}} = 9^{1-(-3)} = 9^{4}$"
+        ],
+        "result": "C = 9^{4}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "$D = 10^n$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "24",
+          "id": "MISC-QUWA-MIXED-BASES"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للقوتين الأساس نفسه أم الأس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء قوتين لهما الأس نفسه: $a^n \\times b^n = (ab)^n$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا نجمع أسس قوى أساساتها مختلفة."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^{12} \\times 5^{12} = (2 \\times 5)^{12} = 10^{12}$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$(2^{4})^{3} = 2^{12}$ و $(5^{6})^{2} = 5^{12}$",
+          "$D = (2 \\times 5)^{12} = 10^{12}$"
+        ],
+        "result": "D = 10^{12}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "statement": "احسب العدد $E$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "1249",
+      "misconceptionSignatures": [
+        {
+          "value": "1281",
+          "id": "MISC-QUWA-ODD-EVEN-SIGN"
+        },
+        {
+          "value": "1199",
+          "id": "MISC-QUWA-PRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما أول عملية تُنجز في هذه العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأولوية: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب مرحلة واحدة في كل سطر، وتحقّق من إشارة كل حدّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 1250 - 50 + 49 = 1249$ .",
+        "incorrect": "احترم أولوية العمليات: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$E = 12{,}5 \\times 100 - 2 \\times 25 + \\left[1 - 8\\right]^{2}$",
+          "$E = 1250 - 50 + (-7)^{2}$",
+          "$E = 1250 - 50 + 49 = 1249$"
+        ],
+        "result": "E = 1249"
+      },
+      "work": "required",
+      "timeSeconds": 180
+    }
+  ]
+}

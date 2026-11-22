@@ -1,0 +1,438 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l5-007",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — جدار الإدارة وعشب الساحة",
+    "estimatedMinutes": 25,
+    "tags": [
+      "وضعية إدماجية",
+      "خاصية فيثاغورس",
+      "مساحات",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 3,
+      "file": "3am-s3-59",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يُراد تهيئة متوسطة جديدة على أرض مستطيلة $ABCD$ حيث $AB = DC = 64\\,\\mathrm{m}$ . خُصّص المثلث $AEG$ القائم في $A$ للإدارة ($AE = 16\\,\\mathrm{m}$ ، $AG = 12\\,\\mathrm{m}$)، والرباعي $EBFG$ للساحة حيث $BF = 12\\,\\mathrm{m}$ و $(GF) \\parallel (AB)$ . يفصل جدار $[EG]$ بين الإدارة والساحة.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          4
+        ],
+        "B": [
+          6.4,
+          4
+        ],
+        "C": [
+          6.4,
+          0
+        ],
+        "D": [
+          0,
+          0
+        ],
+        "E": [
+          1.6,
+          4
+        ],
+        "G": [
+          0,
+          2.8
+        ],
+        "F": [
+          6.4,
+          2.8
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "E",
+          "label": "16 m"
+        },
+        {
+          "from": "E",
+          "to": "B"
+        },
+        {
+          "from": "B",
+          "to": "F",
+          "label": "12 m"
+        },
+        {
+          "from": "F",
+          "to": "C"
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "label": "64 m"
+        },
+        {
+          "from": "D",
+          "to": "G"
+        },
+        {
+          "from": "G",
+          "to": "A",
+          "label": "12 m"
+        },
+        {
+          "from": "E",
+          "to": "G",
+          "tone": "amber",
+          "bold": true
+        },
+        {
+          "from": "G",
+          "to": "F",
+          "dashed": true
+        }
+      ],
+      "rightAngles": [
+        [
+          "E",
+          "A",
+          "G"
+        ]
+      ],
+      "labels": {
+        "A": "nw",
+        "E": "n",
+        "G": "w",
+        "F": "e"
+      },
+      "ariaLabel": "أرض مستطيلة ABCD حيث DC = 64 m، الإدارة المثلث AEG حيث AE = 16 m و AG = 12 m، والساحة الرباعي EBFG حيث BF = 12 m",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "الجدار:",
+      "statement": "احسب $EG^2$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: قيمة $EG^2$ (بـ $m^2$)",
+      "expectedAnswer": "400",
+      "misconceptionSignatures": [
+        {
+          "value": "56",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        },
+        {
+          "value": "112",
+          "id": "MISC-FITAGHURAS-HYP-WRONG"
+        },
+        {
+          "value": "28",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مربع العدد هو جداؤه في نفسه: $a^2 = a \\times a$ وليس $2 \\times a$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$EG^2 = 16^2 + 12^2 = 400$ .",
+        "incorrect": "اكتب مساواة فيثاغورس بالوتر وحده في طرف، ثم ربّع كل طول (اضربه في نفسه) قبل الجمع."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $AEG$ قائم في $A$ ، حسب خاصية فيثاغورس: $EG^2 = AE^2 + AG^2$",
+          "$EG^2 = 16^2 + 12^2$",
+          "$EG^2 = 256 + 144 = 400$"
+        ],
+        "result": "EG^2 = 400"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج طول الجدار $EG$ الفاصل بين الإدارة والساحة.",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "28",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "400",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولا مربع الطول، ثم خذ جذره التربيعي بالآلة الحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$EG^2 = 16^2 + 12^2 = 400$ ، إذن $EG = 20\\,\\mathrm{m}$ .",
+        "incorrect": "ابدأ بتحديد الوتر، ثم اكتب مساواة فيثاغورس، وتذكّر أن ما تحسبه أولا هو مربع الطول لا الطول نفسه."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $AEG$ قائم في $A$ ، حسب خاصية فيثاغورس: $EG^2 = AE^2 + AG^2$",
+          "$EG^2 = 16^2 + 12^2$",
+          "$EG^2 = 256 + 144 = 400$",
+          "$EG = \\sqrt{400} = 20\\,\\mathrm{m}$"
+        ],
+        "result": "EG = 20\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "lead": "مساحة الساحة:",
+      "statement": "الطريقة الأولى: احسب مساحة الساحة $EBFG$ بطرح مساحة المثلث $AEG$ من مساحة المستطيل $ABFG$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المساحة بـ m²",
+      "expectedAnswer": "672",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$ABFG$ مستطيل بعداه $AB = 64\\,\\mathrm{m}$ و $AG = 12\\,\\mathrm{m}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المثلث $AEG$ قائم في $A$ : مساحته نصف جداء ضلعيه القائمين."
+        }
+      ],
+      "feedback": {
+        "correct": "$768 - 96 = 672\\,\\mathrm{m^2}$ .",
+        "incorrect": "مساحة المستطيل ناقص مساحة المثلث القائم."
+      },
+      "solution": {
+        "lines": [
+          "$\\mathcal{A}_{ABFG} = 64 \\times 12 = 768\\,\\mathrm{m^2}$",
+          "$\\mathcal{A}_{AEG} = \\dfrac{16 \\times 12}{2} = 96\\,\\mathrm{m^2}$",
+          "$\\mathcal{A}_{EBFG} = 768 - 96 = 672\\,\\mathrm{m^2}$"
+        ],
+        "result": "672\\,\\mathrm{m^2}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "الطريقة الثانية: $EBFG$ شبه منحرف قاعدتاه $[EB]$ و $[GF]$ وارتفاعه $BF$ . احسب مساحته.",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المساحة بـ m²",
+      "expectedAnswer": "672",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$EB = AB - AE$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحة شبه المنحرف = (القاعدة الكبرى + القاعدة الصغرى) × الارتفاع ÷ 2."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{(48 + 64) \\times 12}{2} = 672\\,\\mathrm{m^2}$ : النتيجتان متطابقتان.",
+        "incorrect": "احسب أولا القاعدة الصغرى $EB$ ."
+      },
+      "solution": {
+        "lines": [
+          "$EB = 64 - 16 = 48\\,\\mathrm{m}$ و $GF = 64\\,\\mathrm{m}$",
+          "$\\mathcal{A} = \\dfrac{(48 + 64) \\times 12}{2} = 672\\,\\mathrm{m^2}$"
+        ],
+        "result": "672\\,\\mathrm{m^2}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "تكلفة بناء المتر الواحد من الجدار $4\\,500$ دج. احسب تكلفة الجدار $EG$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المبلغ بالدينار",
+      "expectedAnswer": "90000",
+      "misconceptionSignatures": [
+        {
+          "value": "126000",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل طول الجدار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب الطول في تكلفة المتر."
+        }
+      ],
+      "feedback": {
+        "correct": "$20 \\times 4\\,500 = 90\\,000$ دج.",
+        "incorrect": "طول الجدار هو الوتر $EG$ ، لا $AE + AG$ ."
+      },
+      "solution": {
+        "lines": [
+          "$20 \\times 4\\,500 = 90\\,000$ دج"
+        ],
+        "result": "90\\,000"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "لزرع الساحة بالعشب تكلّف كل $1\\,\\mathrm{m^2}$ مبلغ $120$ دج، وتملك المؤسسة $80\\,000$ دج لذلك. هل يكفي المبلغ؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأن $80\\,640$ قريب جدا من $80\\,000$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-LOOKS-RIGHT"
+        },
+        {
+          "id": "B",
+          "content": "لا، تحتاج المؤسسة $80\\,640$ دج",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نعم، لأن $672 < 80\\,000$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WAHDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب تكلفة زرع الساحة كلها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحة الساحة × تكلفة المتر المربع، ثم قارن."
+        }
+      ],
+      "feedback": {
+        "correct": "$80\\,640 > 80\\,000$ : ينقص $640$ دج.",
+        "incorrect": "استعمل مساحة الساحة $EBFG$ لا مساحة المستطيل كلّه."
+      },
+      "solution": {
+        "lines": [
+          "تكلفة العشب: $672 \\times 120 = 80\\,640$ دج.",
+          "$80\\,640 > 80\\,000$ : المبلغ لا يكفي، ينقصه $640$ دج."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

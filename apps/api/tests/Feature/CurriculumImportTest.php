@@ -41,7 +41,6 @@ class CurriculumImportTest extends TestCase
                                     'description' => 'Démarche complète de résolution.',
                                     'status' => 'available',
                                     'durationMinutes' => 45,
-                                    'tier' => 'free',
                                     'order' => 0,
                                     'learningPoints' => [
                                         ['code' => '6e_resolution-problemes_P1', 'title' => 'Comprendre une situation', 'order' => 1],
@@ -84,21 +83,15 @@ class CurriculumImportTest extends TestCase
     }
 
     /**
-     * Un palier absent du catalogue donne une leçon GRATUITE.
-     *
-     * Ce test affirmait l'inverse tant que le palier ne bloquait rien : la
-     * valeur du défaut n'avait alors aucune conséquence. Depuis que
-     * EntitlementService le lit, un défaut « premium » fermerait au premier
-     * oubli une leçon aux élèves — et l'oubli ne se verrait qu'en production.
-     * Le contenu payant se DÉCLARE ; il ne s'obtient pas par distraction.
+     * Une leçon NOUVELLE naît gratuite — défaut de création, pas
+     * classification. Le catalogue ne porte plus de palier ; un export ancien
+     * qui en porterait un est ignoré, dans les deux sens.
      */
     public function test_missing_catalogue_fields_fall_back_to_null_duration_and_free_tier(): void
     {
         $export = $this->sampleExport();
-        unset(
-            $export['grades'][0]['chapters'][0]['lessons'][0]['durationMinutes'],
-            $export['grades'][0]['chapters'][0]['lessons'][0]['tier']
-        );
+        unset($export['grades'][0]['chapters'][0]['lessons'][0]['durationMinutes']);
+        $export['grades'][0]['chapters'][0]['lessons'][0]['tier'] = 'premium';
         (new CurriculumImporter)->import($export);
 
         $this->assertDatabaseHas('lessons', [
@@ -106,6 +99,30 @@ class CurriculumImportTest extends TestCase
             'duration_minutes' => null,
             'tier' => 'free',
         ]);
+    }
+
+    /**
+     * `lessons.tier` appartient à l'administrateur : une réimportation met à
+     * jour le contenu de la leçon et ne touche JAMAIS son palier — ni premium
+     * vers gratuit, ni gratuit vers premium.
+     */
+    public function test_reimport_never_overwrites_an_existing_tier(): void
+    {
+        $importer = new CurriculumImporter;
+        $importer->import($this->sampleExport());
+
+        foreach (['premium', 'free'] as $adminTier) {
+            Lesson::where('code', 'resolution-problemes')->update(['tier' => $adminTier]);
+
+            $export = $this->sampleExport();
+            $export['grades'][0]['chapters'][0]['lessons'][0]['title'] = "Titre revu ({$adminTier})";
+            $export['grades'][0]['chapters'][0]['lessons'][0]['tier'] = $adminTier === 'premium' ? 'free' : 'premium';
+            $importer->import($export);
+
+            $lesson = Lesson::where('code', 'resolution-problemes')->first();
+            $this->assertSame($adminTier, $lesson->tier);
+            $this->assertSame("Titre revu ({$adminTier})", $lesson->title, 'le contenu, lui, suit le catalogue');
+        }
     }
 
     public function test_a_lesson_code_rename_creates_the_new_lesson_and_leaves_the_old_row_for_pruning(): void

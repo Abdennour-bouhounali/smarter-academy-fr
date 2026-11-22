@@ -1,0 +1,192 @@
+{
+  "id": "ex-2am-muqarana-nisbiya-l2-009",
+  "lessonCode": "muqarana-nisbiya",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — أعداد سالبة متساوية وأخرى مختلفة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "مقارنة",
+      "أعداد عشرية سالبة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "دوّنت متطوّعة في جمعية حماية البيئة بأمانة القياسات الآتية لمستوى مياه بئر بالنسبة إلى سطح الأرض: $-1{,}2$ m و $-1{,}20$ m و $-1{,}02$ m و $-1{,}200$ m."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اختر العبارة الصحيحة.",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-1{,}2 = -1{,}20$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$-1{,}2 < -1{,}20$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-DAN"
+        },
+        {
+          "id": "C",
+          "content": "$-1{,}2 > -1{,}20$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-DAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج: أيّهما أبعد عن الصفر؟ وفي أيّ جهة منه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددان سالبان: الأصغر هو الذي له أكبر مسافة إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن المسافتين إلى الصفر (العددين دون إشارتيهما) ثم اعكس الحكم لأن العددين سالبان."
+        }
+      ],
+      "feedback": {
+        "correct": "الأصفار على يمين الجزء العشري لا تغيّر قيمة العدد.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}2 = 1{,}20$",
+          "$-1{,}2 = -1{,}20$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم عددًا مختلفًا في القيمة تضمّ القياسات الأربعة؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-MUQARANA-NISBIYA-DAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الجزأين الصحيحين أولًا، ثم الأعشار، ثم الأجزاء من مائة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددان موجبان: الأكبر هو الذي له أكبر مسافة إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ساوِ عدد الأرقام بعد الفاصلة بإضافة أصفار قبل المقارنة."
+        }
+      ],
+      "feedback": {
+        "correct": "$-1{,}2 = -1{,}20 = -1{,}200$ والعدد $-1{,}02$ مختلف، فهناك قيمتان.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$-1{,}2 = -1{,}20 = -1{,}200$",
+          "القيمتان: $-1{,}2$ و $-1{,}02$"
+        ],
+        "result": "2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما أكبر العددين $-1{,}02$ و $-1{,}2$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "-1,02",
+      "misconceptionSignatures": [
+        {
+          "value": "-1,2",
+          "id": "MISC-MUQARANA-NISBIYA-BDG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج: أيّهما أبعد عن الصفر؟ وفي أيّ جهة منه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددان سالبان: الأصغر هو الذي له أكبر مسافة إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن المسافتين إلى الصفر (العددين دون إشارتيهما) ثم اعكس الحكم لأن العددين سالبان."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}02 < 1{,}20$ والعددان سالبان، فالأكبر هو $-1{,}02$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}02 < 1{,}20$",
+          "الأكبر هو $-1{,}02$"
+        ],
+        "result": "-1{,}02"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

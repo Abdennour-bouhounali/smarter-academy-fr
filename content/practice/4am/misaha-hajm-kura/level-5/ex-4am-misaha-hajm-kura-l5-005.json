@@ -1,0 +1,65 @@
+{
+  "id": "ex-4am-misaha-hajm-kura-l5-005",
+  "lessonCode": "misaha-hajm-kura",
+  "level": 5,
+  "metadata": {
+    "title": "وضعية — فانوس رمضان",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مساحة الكرة",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_misaha-hajm-kura_P1",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "فانوس رمضان زجاجي على شكل كرة نصف قطرها $10\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "كم $\\mathrm{cm}^2$ من الزجاج يغطي سطحه؟ (مدوّرا إلى الوحدة)",
+      "learningPoints": [
+        {
+          "code": "4am_misaha-hajm-kura_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1257",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\mathcal{A} = 4\\pi \\times 10^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$400\\pi$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب في $\\pi$ ثم دوّر."
+        }
+      ],
+      "feedback": {
+        "correct": "$400\\pi = 1256{,}6\\ldots \\approx 1257\\,\\mathrm{cm}^2$ .",
+        "incorrect": "أربعة أقراص كبرى: $4\\pi R^2$ ."
+      },
+      "difficulty": 5,
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MISAHA-DAIRA",
+          "value": "314"
+        }
+      ]
+    }
+  ]
+}

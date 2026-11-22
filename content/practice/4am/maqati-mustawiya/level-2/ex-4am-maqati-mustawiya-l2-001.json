@@ -1,0 +1,65 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l2-001",
+  "lessonCode": "maqati-mustawiya",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — نصف قطر مقطع كرة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "فيثاغورس",
+      "نصف قطر المقطع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_maqati-mustawiya_P1",
+      "modelledOn": "method-section-radius"
+    }
+  },
+  "statement": {
+    "content": "كرة نصف قطرها $10\\,\\mathrm{cm}$ يقطعها مستو يبعد عن مركزها بـ $6\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما نصف قطر المقطع (بـ $\\mathrm{cm}$)؟",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر)",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAQTA-TARH",
+          "value": "4"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم المثلث OAM: أين الزاوية القائمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$OM = 10$ وتر، و $OA = 6$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$AM^2 = OM^2 - OA^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AM^2 = 10^2 - 6^2 = 100 - 36 = 64$ ، إذن $AM = 8\\,\\mathrm{cm}$ .",
+        "incorrect": "نطرح المربعين ثم نأخذ الجذر، لا نطرح الطولين."
+      },
+      "difficulty": 2
+    }
+  ]
+}

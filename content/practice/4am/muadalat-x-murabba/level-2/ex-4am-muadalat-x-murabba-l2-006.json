@@ -1,0 +1,112 @@
+{
+  "id": "ex-4am-muadalat-x-murabba-l2-006",
+  "lessonCode": "muadalat-x-murabba",
+  "level": 2,
+  "metadata": {
+    "title": "العدد −√13 والمعادلة x² = 13",
+    "estimatedMinutes": 4,
+    "tags": [
+      "عددان متعاكسان",
+      "جذر تربيعي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_muadalat-x-murabba_P1",
+      "modelledOn": "know-3"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $(-\\sqrt{13})^2$.",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "value": "-13",
+          "id": "MISC-JIDHR-SALIB"
+        },
+        {
+          "value": "169",
+          "id": "MISC-TARBI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(-\\sqrt{13})^2 = (-\\sqrt{13}) \\times (-\\sqrt{13})$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء عددين سالبين موجب، و $(\\sqrt{a})^2 = a$."
+        }
+      ],
+      "feedback": {
+        "correct": "$(-\\sqrt{13})^2 = (\\sqrt{13})^2 = 13$.",
+        "incorrect": "جداء عددين سالبين موجب، ومربع $\\sqrt{a}$ هو $a$."
+      },
+      "solution": {
+        "lines": [
+          "$(-\\sqrt{13})^2 = (-\\sqrt{13}) \\times (-\\sqrt{13}) = \\sqrt{13} \\times \\sqrt{13}$"
+        ],
+        "result": "(-\\sqrt{13})^2 = 13"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج حلي المعادلة $x^2 = 13$.",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01 مع $(\\sqrt{13})^2 = 13$."
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك سطرًا بسطر بالحل النموذجي."
+      },
+      "solution": {
+        "lines": [
+          "$(\\sqrt{13})^2 = 13$ و $(-\\sqrt{13})^2 = 13$",
+          "$13 > 0$، إذن المعادلة $x^2 = 13$ تقبل حلين متعاكسين:",
+          "$x = \\sqrt{13}$ أو $x = -\\sqrt{13}$"
+        ],
+        "result": "x = -\\sqrt{13} \\quad ; \\quad x = \\sqrt{13}"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,217 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l2-004",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 2,
+  "metadata": {
+    "title": "يوم عيد الميلاد",
+    "estimatedMinutes": 6,
+    "tags": [
+      "أيام الأسبوع",
+      "باقٍ"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-21",
+      "page": 46,
+      "section": "أتمرّن",
+      "number": 21
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يصادف عيد ميلاد ريم هذه السنة يوم الخميس، وهي تحرص فيه كل سنة على زيارة جدّتها. السنة العادية فيها 365 يومًا."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب باقي القسمة الإقليدية للعدد 365 على 7.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "52",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "8",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 365."
+        }
+      ],
+      "feedback": {
+        "correct": "$365 - 7 \\times 52 = 365 - 364 = 1$ ، و $1 < 7$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 7."
+      },
+      "solution": {
+        "lines": [
+          "$365 = 7 \\times 52 + 1$",
+          "$1 < 7$ ، إذن الباقي هو 1."
+        ],
+        "result": "r = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما اليوم الذي يصادف عيد ميلادها في السنة المقبلة (سنة عادية)؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الأحد",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        },
+        {
+          "id": "B",
+          "content": "الجمعة",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "الخميس",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-LA-BAQI"
+        },
+        {
+          "id": "D",
+          "content": "السبت",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل 7 أيام يعود اليوم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب باقي القسمة الإقليدية للعدد 365 على 7."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأسابيع الكاملة لا تغيّر اليوم: الباقي وحده يحرّكه."
+        }
+      ],
+      "feedback": {
+        "correct": "$365 = 7 \\times 52 + 1$: بعد الأسابيع الكاملة نعود إلى يوم الخميس، ثم نتقدّم بعدد أيام الباقي (1).",
+        "incorrect": "الأسابيع الكاملة تعيدنا إلى اليوم نفسه، ثم نتقدّم بعدد أيام الباقي."
+      },
+      "solution": {
+        "lines": [
+          "$365 = 7 \\times 52 + 1$",
+          "بعد 52 أسبوعًا كاملًا نعود إلى يوم الخميس.",
+          "نتقدّم بعد ذلك بعدد أيام الباقي (1): نصل إلى يوم الجمعة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "وإذا كانت بين التاريخين 366 يومًا، فما اليوم؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "السبت",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الخميس",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-LA-BAQI"
+        },
+        {
+          "id": "C",
+          "content": "الأحد",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        },
+        {
+          "id": "D",
+          "content": "الجمعة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل 7 أيام يعود اليوم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب باقي القسمة الإقليدية للعدد 366 على 7."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأسابيع الكاملة لا تغيّر اليوم: الباقي وحده يحرّكه."
+        }
+      ],
+      "feedback": {
+        "correct": "$366 = 7 \\times 52 + 2$: بعد الأسابيع الكاملة نعود إلى يوم الخميس، ثم نتقدّم بعدد أيام الباقي (2).",
+        "incorrect": "الأسابيع الكاملة تعيدنا إلى اليوم نفسه، ثم نتقدّم بعدد أيام الباقي."
+      },
+      "solution": {
+        "lines": [
+          "$366 = 7 \\times 52 + 2$",
+          "بعد 52 أسبوعًا كاملًا نعود إلى يوم الخميس.",
+          "نتقدّم بعد ذلك بعدد أيام الباقي (2): نصل إلى يوم السبت."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

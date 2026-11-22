@@ -1,0 +1,246 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-musawiyat-mutabayinat-l1-003",
+  "lessonCode": "wadiya-idmajiya-musawiyat-mutabayinat",
+  "level": 1,
+  "metadata": {
+    "title": "المتباينات والعمليات (1)",
+    "estimatedMinutes": 8,
+    "tags": [
+      "المتباينات",
+      "الضرب في عدد سالب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "أجب عن الأسئلة التالية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "إذا كان $1 \\le x \\le 9$ فما أصغر قيمة ممكنة للعبارة $-3x + 2$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "-25",
+      "misconceptionSignatures": [
+        {
+          "value": "-1",
+          "id": "MISC-MUTABAYINA-NEG-NOFLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل العدد الذي نضرب فيه موجب أم سالب ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في عدد موجب يحفظ الاتجاه، وفي عدد سالب يعكسه؛ والجمع والطرح يحفظانه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بين الطرفين الأصغر والأكبر بعد كل عملية."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $-25$ .",
+        "incorrect": "انتبه إلى اتجاه المتباينة عند الضرب في عدد سالب، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضرب أطراف الحصر في $-3$ (عدد سالب فينعكس الاتجاه) ثم نضيف $2$ .",
+          "نجد $-25 \\le -3x + 2 \\le -1$ ، فالقيمة المطلوبة $-25$ ."
+        ],
+        "result": "-25"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "إذا كان $1 \\le x \\le 7$ فما أكبر قيمة ممكنة للعبارة $-x + 5$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "-2",
+          "id": "MISC-MUTABAYINA-NEG-NOFLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل العدد الذي نضرب فيه موجب أم سالب ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في عدد موجب يحفظ الاتجاه، وفي عدد سالب يعكسه؛ والجمع والطرح يحفظانه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بين الطرفين الأصغر والأكبر بعد كل عملية."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $4$ .",
+        "incorrect": "انتبه إلى اتجاه المتباينة عند الضرب في عدد سالب، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضرب أطراف الحصر في $-1$ (عدد سالب فينعكس الاتجاه) ثم نضيف $5$ .",
+          "نجد $-2 \\le -x + 5 \\le 4$ ، فالقيمة المطلوبة $4$ ."
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "إذا كان $x \\le 3$ فأيّ الاستنتاجات التالية صحيح ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-x - 4 \\ge 1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-DIFF-CONST"
+        },
+        {
+          "id": "B",
+          "content": "$-x - 4 \\ge -1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-COEF-LOST"
+        },
+        {
+          "id": "C",
+          "content": "$-x - 4 \\le -7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-NEG-NOFLIP"
+        },
+        {
+          "id": "D",
+          "content": "$-x - 4 \\ge -7$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل العدد الذي نضرب فيه موجب أم سالب ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في عدد موجب يحفظ الاتجاه، وفي عدد سالب يعكسه؛ والجمع والطرح يحفظانه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بين الطرفين الأصغر والأكبر بعد كل عملية."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $-x - 4 \\ge -7$ .",
+        "incorrect": "انتبه إلى اتجاه المتباينة عند الضرب في عدد سالب، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضرب طرفي $x \\le 3$ في $-1$ : الاتجاه ينعكس لأنّ العدد سالب.",
+          "ثم نضيف $-4$ فنجد $-x - 4 \\ge -7$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "إذا كان $2 \\le x \\le 5$ فما أكبر قيمة ممكنة للعبارة $-2x - 4$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "-8",
+      "misconceptionSignatures": [
+        {
+          "value": "-14",
+          "id": "MISC-MUTABAYINA-NEG-NOFLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل العدد الذي نضرب فيه موجب أم سالب ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في عدد موجب يحفظ الاتجاه، وفي عدد سالب يعكسه؛ والجمع والطرح يحفظانه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بين الطرفين الأصغر والأكبر بعد كل عملية."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $-8$ .",
+        "incorrect": "انتبه إلى اتجاه المتباينة عند الضرب في عدد سالب، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضرب أطراف الحصر في $-2$ (عدد سالب فينعكس الاتجاه) ثم نضيف $-4$ .",
+          "نجد $-14 \\le -2x - 4 \\le -8$ ، فالقيمة المطلوبة $-8$ ."
+        ],
+        "result": "-8"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

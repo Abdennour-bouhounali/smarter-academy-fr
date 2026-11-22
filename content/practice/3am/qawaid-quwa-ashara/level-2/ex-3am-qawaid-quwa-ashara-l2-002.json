@@ -1,0 +1,261 @@
+{
+  "id": "ex-3am-qawaid-quwa-ashara-l2-002",
+  "lessonCode": "qawaid-quwa-ashara",
+  "level": 2,
+  "metadata": {
+    "title": "دفتر رياض",
+    "estimatedMinutes": 8,
+    "tags": [
+      "القواعد الثلاث",
+      "تصحيح"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-4",
+      "page": 41,
+      "section": "أنشطة",
+      "number": 4
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "صحّح الأستاذ دفتر رياض فوضع علامة على بعض الأسطر. هذه الأسطر الستّة:",
+    "formulas": [
+      "(1)\\ 10^{4}\\times10^{5} = 10^{9}",
+      "(2)\\ 10^{6}\\times10^{2} = 10^{12}",
+      "(3)\\ \\dfrac{10^{8}}{10^{3}} = 10^{5}",
+      "(4)\\ 10^{-6}\\times10^{4} = 10^{10}",
+      "(5)\\ \\dfrac{10^{4}}{10^{-3}} = 10^{1}",
+      "(6)\\ (10^{2})^{5} = 10^{7}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ السطرين التاليين صحيح؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل كلّ اقتراح إلى قوة واحدة للعدد 10 مستعملًا القاعدة المناسبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر اقتراحًا واحدًا في كلّ مرّة، وانتبه إلى أنّ القواعد الثلاث لا تخصّ الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا شككت في قاعدة فجرّبها على قوة صغيرة تعرف قيمتها العشرية."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "السطر الثاني: $10^{6}\\times10^{2} = 10^{12}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QAWAID-DARB-ASS"
+        },
+        {
+          "id": "B",
+          "content": "السطر الثالث: $\\dfrac{10^{8}}{10^{3}} = 10^{5}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "السطر الخامس: $\\dfrac{10^{4}}{10^{-3}} = 10^{1}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QAWAID-ISHARA"
+        }
+      ],
+      "feedback": {
+        "correct": "السطر (3) صحيح: $\\dfrac{10^{8}}{10^{3}} = 10^{5}$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب قيمته أو بتطبيق القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "السطر (2) خاطئ: في الجداء نجمع الأسّين ($6 + 2 = 8$) ولا نضربهما.",
+          "السطر (3) صحيح: $8 - 3 = 5$ .",
+          "السطر (5) خاطئ: $4 - (-3) = 7$ لا $1$ ."
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "صحّح السطر (4): $10^{-6}\\times10^{4} = 10^{n}$ ، ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوتين المضروبتين وأسّ كلّ منهما (انتبه إلى إشارته)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في جداء قوتين للعدد 10 نجري عملية واحدة على الأسّين: ما هي؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب القاعدة على مثال صغير: $10^{2}\\times10^{1}$ هو $10\\times10\\times10$ ، فكم عاملًا 10 في الجداء؟"
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-QAWAID-ISHARA"
+        },
+        {
+          "value": "-24",
+          "id": "MISC-QAWAID-DARB-ASS"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{-6}\\times10^{4} = 10^{-2}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نجمع الأسّين مع احترام إشارتيهما: $-6 + 4 = -2$ .",
+          "$10^{-6}\\times10^{4} = 10^{-2}$ ."
+        ],
+        "result": "n = -2"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "صحّح السطر الخامس: $\\dfrac{10^{4}}{10^{-3}} = 10^{n}$ ، ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد البسط والمقام وأسّ كلّ منهما (انتبه إلى إشارة الأسّ)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في حاصل قسمة قوتين للعدد 10 نجري عملية واحدة على الأسّين: ما هي، وبأيّ ترتيب؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر أنّ $\\dfrac{10^{2}}{10^{1}}$ هو $\\dfrac{10\\times10}{10}$ ، وأنّ طرح أسّ سالب يعني جمع عدد موجب."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-QAWAID-ISHARA"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{10^{4}}{10^{-3}} = 10^{7}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نطرح الأسّين: $4 - (-3) = 4 + 3 = 7$ .",
+          "$\\dfrac{10^{4}}{10^{-3}} = 10^{7}$ ."
+        ],
+        "result": "n = 7"
+      }
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "صحّح السطر (6): $(10^{2})^{5} = 10^{n}$ ، ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوة الداخلية وأسّها، ثمّ الأسّ الخارجي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في قوة لقوة للعدد 10 نجري عملية واحدة على الأسّين: هل هي الجمع أم غيره؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر أنّ $(10^{2})^{3}$ جداء ثلاثة عوامل كلّ عامل منها $10^{2}$ ."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-QAWAID-QUWA-JAM"
+        },
+        {
+          "value": "32",
+          "id": "MISC-QAWAID-QUWA-ASS"
+        }
+      ],
+      "feedback": {
+        "correct": "$(10^{2})^{5} = 10^{10}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "في قوة لقوة نضرب الأسّين: $2 \\times 5 = 10$ .",
+          "$(10^{2})^{5} = 10^{10}$ ."
+        ],
+        "result": "n = 10"
+      }
+    }
+  ]
+}

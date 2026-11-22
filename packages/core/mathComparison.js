@@ -52,15 +52,3 @@ export function compareMathExpressions(expr1, expr2) {
   }
 }
 
-/**
- * Normalize a LaTeX mathematical expression.
- */
-export function normalizeMathAnswer(expr) {
-  if (!expr) return "";
-  try {
-    const e = engine().parse(expr);
-    return e.latex; // Returns canonical latex
-  } catch (err) {
-    return expr;
-  }
-}

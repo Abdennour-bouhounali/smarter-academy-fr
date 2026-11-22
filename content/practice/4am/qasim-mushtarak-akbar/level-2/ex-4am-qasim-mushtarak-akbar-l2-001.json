@@ -1,0 +1,241 @@
+{
+  "id": "ex-4am-qasim-mushtarak-akbar-l2-001",
+  "lessonCode": "qasim-mushtarak-akbar",
+  "level": 2,
+  "metadata": {
+    "title": "نشاط 4 — 90 زهرة حمراء و 54 زهرة بيضاء",
+    "estimatedMinutes": 8,
+    "tags": [
+      "وضعية",
+      "باقات"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-4",
+      "page": 8,
+      "section": "أنشطة",
+      "number": 4
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اقتنى بائع الزهور 90 زهرة حمراء و 54 زهرة بيضاء بغرض استعمالها كلّها في تشكيل باقات متماثلة في النوع والعدد."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل يمكنه تشكيل 9 باقات؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_qasim-mushtarak-akbar_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ليكون ذلك ممكنًا، يجب أن يقسم 9 عدد الزهور الحمراء وعدد الزهور البيضاء معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 90 على 9 ثم 54 على 9، وانظر إلى الباقي."
+        }
+      ],
+      "feedback": {
+        "correct": "$90 = 9 \\times 10$ و $54 = 9 \\times 6$: العدد 9 قاسم مشترك للعددين 90 و 54.",
+        "incorrect": "تحقّق: هل يقسم 9 العددين 90 و 54 معًا؟"
+      },
+      "solution": {
+        "lines": [
+          "$90 = 9 \\times 10$ و $54 = 9 \\times 6$",
+          "العدد 9 قاسم مشترك للعددين 90 و 54، إذن يمكنه تشكيل 9 باقات،",
+          "في كل باقة 10 زهرات حمراء و 6 زهرات بيضاء."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "ما هو أكبر عدد ممكن من الباقات المتماثلة التي يمكنه تشكيلها؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "18",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        },
+        {
+          "value": "3",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        },
+        {
+          "value": "9",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الباقات قاسم مشترك للعددين 90 و 54."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب قواسم 90 ثم قواسم 54، واستخرج المشتركة منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أكبر عدد من الباقات هو القاسم المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 90 و 54: 1 ، 2 ، 3 ، 6 ، 9 ، 18؛ أكبرها 18.",
+        "incorrect": "عدد الباقات قاسم مشترك للعددين؛ ابحث عن أكبرها."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 90 هي: 1 ، 2 ، 3 ، 5 ، 6 ، 9 ، 10 ، 15 ، 18 ، 30 ، 45 ، 90",
+          "قواسم العدد 54 هي: 1 ، 2 ، 3 ، 6 ، 9 ، 18 ، 27 ، 54",
+          "القواسم المشتركة للعددين 90 و 54 هي: 1 ، 2 ، 3 ، 6 ، 9 ، 18",
+          "أكبرها هو 18، إذن أكبر عدد من الباقات هو PGCD(90 ; 54) = 18."
+        ],
+        "result": "PGCD(90 ; 54) = 18"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "حدّد عندئذ عدد الزهور الحمراء في الباقة الواحدة.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "18",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع الزهور الحمراء كلها على الباقات بالتساوي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم عدد الزهور الحمراء على عدد الباقات."
+        }
+      ],
+      "feedback": {
+        "correct": "$90 \\div 18 = 5$",
+        "incorrect": "اقسم 90 على أكبر عدد من الباقات."
+      },
+      "solution": {
+        "lines": [
+          "$90 \\div 18 = 5$",
+          "في كل باقة 5 زهرات حمراء."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "حدّد عندئذ عدد الزهور البيضاء في الباقة الواحدة.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "18",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع الزهور البيضاء كلها على الباقات بالتساوي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم عدد الزهور البيضاء على عدد الباقات."
+        }
+      ],
+      "feedback": {
+        "correct": "$54 \\div 18 = 3$",
+        "incorrect": "اقسم 54 على أكبر عدد من الباقات."
+      },
+      "solution": {
+        "lines": [
+          "$54 \\div 18 = 3$",
+          "في كل باقة 3 زهرات بيضاء."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

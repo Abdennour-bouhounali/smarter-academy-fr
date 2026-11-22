@@ -1,0 +1,217 @@
+{
+  "id": "ex-2am-muqarana-nisbiya-l4-007",
+  "lessonCode": "muqarana-nisbiya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — أيّ عدد يحقق الحصر؟",
+    "estimatedMinutes": 9,
+    "tags": [
+      "عدد محصور",
+      "متباينة صارمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يسجّل متطوّع في ورشة الإصلاح قياسات سمك أنبوب بالنسبة إلى قياس مرجعي، ويحرص على الدقة في كل مرة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أيّ العدد الآتي يحقق $-2 < x < 1$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-EI"
+        },
+        {
+          "id": "B",
+          "content": "$-1{,}9$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-EI"
+        },
+        {
+          "id": "D",
+          "content": "$1{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-SI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج وحدّد الجزء الواقع بينهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد محصور بين عددين: أكبر من أحدهما وأصغر من الآخر في الوقت نفسه، دون أن يساوي أيًّا منهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب كل عدد مقترح: هل يحقق المتباينتين معًا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$-2 < -1{,}9 < 1$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}9 < 2$ والعدد سالب، فـ $-2 < -1{,}9$",
+          "$-1{,}9 < 1$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "أيّ العدد الآتي يحقق $-0{,}5 < x < 0{,}5$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-0{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-EI"
+        },
+        {
+          "id": "B",
+          "content": "$0{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-EI"
+        },
+        {
+          "id": "C",
+          "content": "$0$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$-0{,}55$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-BDG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج وحدّد الجزء الواقع بينهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد محصور بين عددين: أكبر من أحدهما وأصغر من الآخر في الوقت نفسه، دون أن يساوي أيًّا منهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب كل عدد مقترح: هل يحقق المتباينتين معًا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$-0{,}5 < 0 < 0{,}5$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$0$ أكبر من $-0{,}5$ وأصغر من $0{,}5$",
+          "$-0{,}5 < 0 < 0{,}5$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما أصغر عدد صحيح $x$ يحقق $-4{,}2 < x < 1$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "value": "-5",
+          "id": "MISC-MUQARANA-NISBIYA-IBS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العدد على المستقيم المدرّج بين عددين صحيحين متتاليين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأكبر والأصغر يُحدَّدان بالموضع على المستقيم المدرّج، وليس بالقيمة دون إشارة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بترتيب العدد الصحيح الذي وجدته مع العدد المعطى."
+        }
+      ],
+      "feedback": {
+        "correct": "$-4{,}2 < -4$ بينما $-5 < -4{,}2$ ، فالأصغر هو $-4$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$x > -4{,}2$",
+          "أصغر عدد صحيح أكبر من $-4{,}2$ هو $-4$"
+        ],
+        "result": "-4"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

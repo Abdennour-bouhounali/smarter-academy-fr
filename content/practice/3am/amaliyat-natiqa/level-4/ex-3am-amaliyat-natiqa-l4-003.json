@@ -1,0 +1,194 @@
+{
+  "id": "ex-3am-amaliyat-natiqa-l4-003",
+  "lessonCode": "amaliyat-natiqa",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — بيّن أنّ العدد طبيعي",
+    "estimatedMinutes": 11,
+    "tags": [
+      "العمليات على الأعداد الناطقة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-75",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن $D = \\left( -\\dfrac{2}{3} \\right)^{2} \\div \\dfrac{4}{9} + (-3)^{2} \\times \\dfrac{1}{3}$ و $E = \\left( \\dfrac{5}{6} - \\dfrac{3}{4} \\right) \\times (-36)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أنّ العدد $D = \\left(-\\dfrac{2}{3}\\right)^{2} \\div \\left(\\dfrac{4}{9}\\right) + \\left(-3\\right)^{2} \\times \\left(\\dfrac{1}{3}\\right)$ عدد طبيعي .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "timeSeconds": 180,
+      "answerFormat": "اكتب برهانك هنا، ثمّ اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اذكر ما تريد إثباته بالضبط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب العبارة خطوة خطوة مع اتّباع الأولويّة."
+        }
+      ],
+      "feedback": {
+        "correct": "تطابق برهانك مع الحل النموذجي .",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثمّ قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "$\\left(-\\dfrac{2}{3}\\right)^{2} = \\dfrac{4}{9}$ (أسّ زوجي وأساس سالب، فالناتج موجب) .",
+          "القسمة على $\\dfrac{4}{9}$ هي الضرب في مقلوبه، ومقلوب $\\dfrac{4}{9}$ هو $\\dfrac{9}{4}$ (يحتفظ بالإشارة نفسها).",
+          "$\\dfrac{4}{9} \\div \\dfrac{4}{9} = \\dfrac{4}{9} \\times \\dfrac{9}{4}$ .",
+          "العاملان موجبان: الجداء موجب.",
+          "$\\dfrac{4}{9} \\times \\dfrac{9}{4} = \\dfrac{4 \\times 9}{9 \\times 4} = \\dfrac{36}{36} = 1$ .",
+          "$\\left(-3\\right)^{2} = 9$ (أسّ زوجي وأساس سالب، فالناتج موجب) .",
+          "العاملان موجبان: الجداء موجب.",
+          "$9 \\times \\dfrac{1}{3} = \\dfrac{9 \\times 1}{3} = \\dfrac{9}{3} = 3$ .",
+          "العددان $1$ و $3$ موجبان، فمجموعهما موجب.",
+          "$1 + 3 = \\dfrac{1 + 3}{1} = 4$ .",
+          "إذن $D = 4$ ، وهو عدد طبيعي لأنّ مقامه يساوي الواحد وإشارته موجبة."
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب $E = \\left(\\dfrac{5}{6} - \\dfrac{3}{4}\\right) \\times \\left(-36\\right)$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-AMAL-PRODSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليات الموجودة؟ وهل توجد أقواس أو كسر مركّب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح، ومع كلّ عملية نحدّد الإشارة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز عملية واحدة في كلّ سطر، ثمّ اكتب النتيجة غير القابلة للاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = -3$ .",
+        "incorrect": "احترم الأولويّة: الأقواس ثمّ الضرب والقسمة ثمّ الجمع والطرح، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "$\\dfrac{5}{6} - \\dfrac{3}{4} = \\dfrac{5}{6} + \\left(-\\dfrac{3}{4}\\right)$ (طرح عدد هو جمع معاكسه).",
+          "العددان $\\dfrac{5}{6}$ و $-\\dfrac{3}{4}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $\\dfrac{5}{6}$ ، فإشارة المجموع موجبة.",
+          "$\\dfrac{5}{6} + \\left(-\\dfrac{3}{4}\\right) = \\dfrac{10}{12} - \\dfrac{9}{12} = \\dfrac{10 - 9}{12} = \\dfrac{1}{12}$ .",
+          "العاملان من إشارتين مختلفتين: الجداء سالب.",
+          "$\\dfrac{1}{12} \\times \\left(-36\\right) = -\\dfrac{1 \\times 36}{12} = -\\dfrac{36}{12} = -3$ ."
+        ],
+        "result": "E = -3"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل العدد $E = \\left(\\dfrac{5}{6} - \\dfrac{3}{4}\\right) \\times \\left(-36\\right)$ عدد طبيعي ؟",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "timeSeconds": 90,
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AMAL-PRODSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب العبارة بخطوات قصيرة قبل أن تحكم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب النتيجة على أبسط شكل ثمّ انظر إلى مقامها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد ناطق هو عدد صحيح نسبي إذا كان مقام كتابته المختزلة يساوي الواحد."
+        }
+      ],
+      "feedback": {
+        "correct": "الإجابة الصحيحة: لا .",
+        "incorrect": "أنهِ الحساب واختزل ثمّ انظر إلى المقام، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "$\\dfrac{5}{6} - \\dfrac{3}{4} = \\dfrac{5}{6} + \\left(-\\dfrac{3}{4}\\right)$ (طرح عدد هو جمع معاكسه).",
+          "العددان $\\dfrac{5}{6}$ و $-\\dfrac{3}{4}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $\\dfrac{5}{6}$ ، فإشارة المجموع موجبة.",
+          "$\\dfrac{5}{6} + \\left(-\\dfrac{3}{4}\\right) = \\dfrac{10}{12} - \\dfrac{9}{12} = \\dfrac{10 - 9}{12} = \\dfrac{1}{12}$ .",
+          "العاملان من إشارتين مختلفتين: الجداء سالب.",
+          "$\\dfrac{1}{12} \\times \\left(-36\\right) = -\\dfrac{1 \\times 36}{12} = -\\dfrac{36}{12} = -3$ .",
+          "$E = -3$ ، وهذا العدد لا يمثّل عددًا طبيعي."
+        ],
+        "result": "E = -3"
+      }
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "id": "ex-4am-mafhum-taalufiya-l4-003",
+  "lessonCode": "mafhum-taalufiya",
+  "level": 4,
+  "metadata": {
+    "title": "معامل كسري سالب",
+    "estimatedMinutes": 8,
+    "tags": [
+      "صورة عدد",
+      "العدد الذي صورته معلومة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "adaptedFrom": "ex-4am-mafhum-taalufiya-l4-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$f$ دالة تآلفية حيث:",
+    "formulas": [
+      "f(x) = -\\dfrac{x}{3} + 2"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب $f(-6)$ و $f(9)$ .",
+      "statement": "$f(-6)$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$-\\dfrac{-6}{3}$ : انتبه إلى إشارتي الناقص."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(-6) = -\\dfrac{1}{3} \\times (-6) + 2 = 4$ .",
+        "incorrect": "اضرب العدد في المعامل $a$ ، ثم أضف الحدّ الثابت $b$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(-6) = -\\dfrac{1}{3} \\times (-6) + 2$",
+          "$f(-6) = 2 + 2$",
+          "$f(-6) = 4$"
+        ],
+        "result": "f(-6) = 4"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$f(9)$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-1",
+      "misconceptionSignatures": [
+        {
+          "value": "-3",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $9$ في العبارة $f(x) = -\\dfrac{1}{3}x + 2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب في المعامل أولا، ثم أضف الحدّ الثابت، مع الانتباه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(9) = -\\dfrac{1}{3} \\times 9 + 2 = -1$ .",
+        "incorrect": "اضرب العدد في المعامل $a$ ، ثم أضف الحدّ الثابت $b$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(9) = -\\dfrac{1}{3} \\times 9 + 2$",
+          "$f(9) = -3 + 2$",
+          "$f(9) = -1$"
+        ],
+        "result": "f(9) = -1"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "عيّن العدد الذي صورته $0$ بالدالة $f$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-TAALUFI-SABIQ-QISMA"
+        },
+        {
+          "value": "-2",
+          "id": "MISC-TAALUFI-SABIQ-TARTIB"
+        },
+        {
+          "value": "2",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن $x$ الذي يحقق $-\\dfrac{x}{3} + 2 = 0$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح 2 من الطرفين، ثم اضرب في $-3$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$-\\dfrac{1}{3}x + 2 = 0$ تعطي $x = 6$ .",
+        "incorrect": "اطرح 2 من الطرفين أولا، ثم اضرب في $-3$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 0$ معناه $-\\dfrac{1}{3}x + 2 = 0$",
+          "$-\\dfrac{1}{3}x = -2$",
+          "$x = -2 \\div (-\\dfrac{1}{3})$",
+          "$x = 6$"
+        ],
+        "result": "x = 6"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "عيّن العدد الذي صورته $5$ بالدالة $f$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-9",
+      "misconceptionSignatures": [
+        {
+          "value": "-15",
+          "id": "MISC-TAALUFI-SABIQ-QISMA"
+        },
+        {
+          "value": "-17",
+          "id": "MISC-TAALUFI-SABIQ-TARTIB"
+        },
+        {
+          "value": "1/3",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ $-\\dfrac{x}{3} + 2 = 5$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح 2 من الطرفين، ثم اضرب في $-3$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$-\\dfrac{1}{3}x + 2 = 5$ تعطي $x = -9$ .",
+        "incorrect": "اطرح 2 من الطرفين أولا، ثم اضرب في $-3$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 5$ معناه $-\\dfrac{1}{3}x + 2 = 5$",
+          "$-\\dfrac{1}{3}x = 5 - 2$",
+          "$-\\dfrac{1}{3}x = 3$",
+          "$x = 3 \\div (-\\dfrac{1}{3})$",
+          "$x = -9$"
+        ],
+        "result": "x = -9"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

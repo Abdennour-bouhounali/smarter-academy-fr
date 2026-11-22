@@ -1,0 +1,71 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l4-008",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — صورة نقطة بانسحاب",
+    "estimatedMinutes": 2,
+    "tags": [
+      "انسحاب",
+      "نقطة مجهولة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hisab-murakkibatay_P3",
+      "modelledOn": "act-2"
+    }
+  },
+  "statement": {
+    "content": "$A(1\\,;\\,2)$ ، $B(4\\,;\\,-1)$ ، $N(-2\\,;\\,-3)$ . M صورة N بالانسحاب الذي شعاعه $\\overrightarrow{AB}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا M:",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "point",
+      "answerFormat": "الإحداثيتان (x ; y) — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "1",
+        "y": "-6"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-5",
+            "y": "0"
+          },
+          "id": "MISC-SHUAA-INSIHAB-SURA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "M صورة N يعني $\\overrightarrow{NM} = \\overrightarrow{AB}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب مركبتي AB."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضفهما إلى إحداثيتي N."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AB}\\begin{pmatrix} 3 \\\\ -3 \\end{pmatrix}$ : $M(-2 + 3\\,;\\,-3 - 3) = (1\\,;\\,-6)$ .",
+        "incorrect": "الشعاع من N إلى صورتها M يساوي AB."
+      }
+    }
+  ]
+}

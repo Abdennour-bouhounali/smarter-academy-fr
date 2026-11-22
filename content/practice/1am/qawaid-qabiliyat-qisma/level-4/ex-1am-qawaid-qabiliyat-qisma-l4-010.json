@@ -1,0 +1,234 @@
+{
+  "id": "ex-1am-qawaid-qabiliyat-qisma-l4-010",
+  "lessonCode": "qawaid-qabiliyat-qisma",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — خيام المخيّم الصيفي",
+    "estimatedMinutes": 10,
+    "tags": [
+      "مخيّم",
+      "باقٍ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثالث",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "سجّل 540 تلميذًا في مخيّم صيفي يعلّمهم التعاون والنظام، ويريد المنظّمون خيامًا متساوية لا يبقى فيها أحد دون مكان."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "هل يمكن وضع 4 تلاميذ في كل خيمة دون أن يبقى أحد؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-ZAWJI-4"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى العدد المشكّل من رقمي الآحاد والعشرات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل هذا العدد المكوّن من رقمين يقبل القسمة على 4؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يكفي أن يكون العدد زوجيًا."
+        }
+      ],
+      "feedback": {
+        "correct": "العدد المشكّل من رقمي آحاد وعشرات 540 هو 40، و 40 يقبل القسمة على 4.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 4 إذا كان العدد المشكّل من رقمي آحاده وعشراته يقبل القسمة على 4."
+      },
+      "solution": {
+        "lines": [
+          "العدد المشكّل من رقمي آحاد وعشرات 540 هو 40، و 40 يقبل القسمة على 4.",
+          "$540 = 4 \\times 135 + 0$ ، الباقي معدوم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "وهل يمكن وضع 9 تلاميذ في كل خيمة؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-AHAD-3"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مجموع أرقام العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل هذا المجموع يقبل القسمة على 9؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يكفي أن يقبل المجموع القسمة على 3."
+        }
+      ],
+      "feedback": {
+        "correct": "مجموع أرقام العدد 540: $5 + 4 + 0 = 9$ ، و 9 يقبل القسمة على 9.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 9 إذا كان مجموع أرقامه يقبل القسمة على 9."
+      },
+      "solution": {
+        "lines": [
+          "مجموع أرقام العدد 540: $5 + 4 + 0 = 9$ ، و 9 يقبل القسمة على 9.",
+          "$540 = 9 \\times 60 + 0$ ، الباقي معدوم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "إذا وُضع 7 تلاميذ في كل خيمة، فكم تلميذًا يبقى؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد التلاميذ",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "77",
+          "id": "MISC-QABILIYA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية عموديًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي عدد طبيعي أصغر من 7."
+        }
+      ],
+      "feedback": {
+        "correct": "$540 = 7 \\times 77 + 1$ و $1 < 7$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 7."
+      },
+      "solution": {
+        "lines": [
+          "$540 = 7 \\times 77 + 1$",
+          "$1 < 7$ ، إذن الباقي هو 1، و 540 لا يقبل القسمة على 7."
+        ],
+        "result": "r = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب عدد الخيام إذا وُضع 9 تلاميذ في كل خيمة.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الخيام",
+      "expectedAnswer": "60",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-QABILIYA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية عموديًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق بضرب الحاصل في 9."
+        }
+      ],
+      "feedback": {
+        "correct": "$540 = 9 \\times 60 + 0$.",
+        "incorrect": "ابحث عن أكبر عدد طبيعي نضربه في 9 دون أن نتجاوز 540."
+      },
+      "solution": {
+        "lines": [
+          "$540 = 9 \\times 60 + 0$",
+          "الحاصل هو 60."
+        ],
+        "result": "60"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

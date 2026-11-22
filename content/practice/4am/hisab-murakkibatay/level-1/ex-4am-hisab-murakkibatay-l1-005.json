@@ -1,0 +1,78 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l1-005",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — الشعاع OM",
+    "estimatedMinutes": 2,
+    "tags": [
+      "مركبتا شعاع",
+      "المبدأ O"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hisab-murakkibatay_P1",
+      "modelledOn": "ex-7"
+    }
+  },
+  "statement": {
+    "content": "O مبدأ المعلم، و $M(-3\\,;\\,5)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مركبتا الشعاع $\\overrightarrow{OM}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "point",
+      "answerFormat": "المركبتان: الأولى ثم الثانية — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "-3",
+        "y": "5"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "3",
+            "y": "-5"
+          },
+          "id": "MISC-MAALAM-TARH-MAQLUB"
+        },
+        {
+          "value": {
+            "x": "5",
+            "y": "-3"
+          },
+          "id": "MISC-MAALAM-TABDIL-X-Y"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$O(0\\,;\\,0)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $x_M - 0$ و $y_M - 0$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مركبتا OM هما إحداثيتا M."
+        }
+      ],
+      "feedback": {
+        "correct": "$-3 - 0 = -3$ و $5 - 0 = 5$ : مركبتا OM هما إحداثيتا M.",
+        "incorrect": "المبدأ O إحداثيتاه $(0\\,;\\,0)$ : النهاية ناقص المبدأ."
+      }
+    }
+  ]
+}

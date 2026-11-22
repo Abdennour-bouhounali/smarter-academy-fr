@@ -1,0 +1,215 @@
+{
+  "id": "ex-2am-wasf-silsila-hisab-l1-005",
+  "lessonCode": "wasf-silsila-hisab",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أسمّي سلاسل بأعداد عشرية",
+    "estimatedMinutes": 8,
+    "tags": [
+      "عدد عشري",
+      "تسمية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "سمِّ كلّ سلسلة بآخر عملية تُنجز فيها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما اسم السلسلة $A = 2{,}5 \\times 4 + 1{,}5$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "جداء",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-FIRSTOP"
+        },
+        {
+          "id": "B",
+          "content": "مجموع",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "فرق",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع خطًّا تحت العملية التي تُنجز في الأخير، بعد انتهاء كل ما بين القوسين وكل ضرب أو قسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب السلسلة مرحلة مرحلة وتتبّع آخر عملية بقيت لك."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يبقى في الأخير عددان تربط بينهما عملية واحدة: هي التي تعطي اسم السلسلة."
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة عبارة عن مجموع: آخر عملية تُنجز فيها هي الجمع.",
+        "incorrect": "لا تسمِّ السلسلة بأوّل عملية تُنجز ولا بأوّل رمز تراه: سمِّها بآخر عملية تُنجز فيها."
+      },
+      "solution": {
+        "lines": [
+          "$A = 2{,}5 \\times 4 + 1{,}5$",
+          "$A = 10 + 1{,}5$",
+          "$A = 11{,}5$",
+          "آخر عملية تُنجز هي الجمع، فالسلسلة عبارة عن مجموع."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما اسم السلسلة $B = 2{,}5 \\times (4 + 1{,}5)$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مجموع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-FIRSTOP"
+        },
+        {
+          "id": "B",
+          "content": "فرق",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "جداء",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع خطًّا تحت العملية التي تُنجز في الأخير، بعد انتهاء كل ما بين القوسين وكل ضرب أو قسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب السلسلة مرحلة مرحلة وتتبّع آخر عملية بقيت لك."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يبقى في الأخير عددان تربط بينهما عملية واحدة: هي التي تعطي اسم السلسلة."
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة عبارة عن جداء: آخر عملية تُنجز فيها هي الضرب.",
+        "incorrect": "لا تسمِّ السلسلة بأوّل عملية تُنجز ولا بأوّل رمز تراه: سمِّها بآخر عملية تُنجز فيها."
+      },
+      "solution": {
+        "lines": [
+          "$B = 2{,}5 \\times (4 + 1{,}5)$",
+          "$B = 2{,}5 \\times 5{,}5$",
+          "$B = 13{,}75$",
+          "آخر عملية تُنجز هي الضرب، فالسلسلة عبارة عن جداء."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما اسم السلسلة $C = 9 - 1{,}5 \\times 4$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "فرق",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "جداء",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-FIRSTOP"
+        },
+        {
+          "id": "C",
+          "content": "مجموع",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع خطًّا تحت العملية التي تُنجز في الأخير، بعد انتهاء كل ما بين القوسين وكل ضرب أو قسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب السلسلة مرحلة مرحلة وتتبّع آخر عملية بقيت لك."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يبقى في الأخير عددان تربط بينهما عملية واحدة: هي التي تعطي اسم السلسلة."
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة عبارة عن فرق: آخر عملية تُنجز فيها هي الطرح.",
+        "incorrect": "لا تسمِّ السلسلة بأوّل عملية تُنجز ولا بأوّل رمز تراه: سمِّها بآخر عملية تُنجز فيها."
+      },
+      "solution": {
+        "lines": [
+          "$C = 9 - 1{,}5 \\times 4$",
+          "$C = 9 - 6$",
+          "$C = 3$",
+          "آخر عملية تُنجز هي الطرح، فالسلسلة عبارة عن فرق."
+        ]
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

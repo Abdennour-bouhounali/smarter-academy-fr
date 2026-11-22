@@ -1,0 +1,251 @@
+{
+  "id": "ex-3am-mutabayinat-amaliyat-l1-005",
+  "lessonCode": "mutabayinat-amaliyat",
+  "level": 1,
+  "metadata": {
+    "title": "عدد أصغر من 450 ماذا نقول عمّا يليه؟",
+    "estimatedMinutes": 5,
+    "tags": [
+      "إضافة",
+      "طرح"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-11",
+      "page": 78,
+      "section": "أوظّف تعلّماتي",
+      "number": 11
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "$n$ عدد ناطق أصغر من $450$ ، أي $n<450$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ماذا يمكن القول عن العدد $n+25$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$n+25<450$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-ONE-SIDE"
+        },
+        {
+          "id": "B",
+          "content": "$n+25>475$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-SUB-FLIP"
+        },
+        {
+          "id": "C",
+          "content": "$n+25<475$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية المطبّقة على طرفي المتباينة؟ وما العدد المستعمل؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إضافة عدد إلى الطرفين (أو طرحه منهما) لا تغيّر اتجاه المتباينة، موجبًا كان ذلك العدد أو سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الطرفين بعد العملية ثم ضع الرمز نفسه الذي في المتباينة المعطاة."
+        }
+      ],
+      "feedback": {
+        "correct": "نضيف $25$ إلى طرفي $n<450$ : $n+25<475$ .",
+        "incorrect": "لا يتغيّر اتجاه المتباينة عندما نضيف إلى طرفيها (أو نطرح منهما) العدد نفسه؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضيف $25$ إلى طرفي $n<450$ : $n+25<475$ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "أكمل: $n-30<\\ldots$",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "420",
+      "misconceptionSignatures": [
+        {
+          "value": "450",
+          "id": "MISC-MUTABAYINA-ONE-SIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية المطبّقة على طرفي المتباينة؟ وما العدد المستعمل؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إضافة عدد إلى الطرفين (أو طرحه منهما) لا تغيّر اتجاه المتباينة، موجبًا كان ذلك العدد أو سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الطرفين بعد العملية ثم ضع الرمز نفسه الذي في المتباينة المعطاة."
+        }
+      ],
+      "feedback": {
+        "correct": "نطرح $30$ من الطرفين: $n-30<450-30$ ، أي $n-30<420$ .",
+        "incorrect": "لا يتغيّر اتجاه المتباينة عندما نضيف إلى طرفيها (أو نطرح منهما) العدد نفسه؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نطرح $30$ من الطرفين: $n-30<450-30$ ، أي $n-30<420$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "إذا كان $n<450$ فإنّ $n+25>475$ .",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيحة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-SUB-FLIP"
+        },
+        {
+          "id": "B",
+          "content": "خاطئة",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية المطبّقة على طرفي المتباينة؟ وما العدد المستعمل؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إضافة عدد إلى الطرفين (أو طرحه منهما) لا تغيّر اتجاه المتباينة، موجبًا كان ذلك العدد أو سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الطرفين بعد العملية ثم ضع الرمز نفسه الذي في المتباينة المعطاة."
+        }
+      ],
+      "feedback": {
+        "correct": "نضيف $25$ إلى طرفي $n<450$ فنجد $n+25<475$ ؛ فالجملة خاطئة.",
+        "incorrect": "لا يتغيّر اتجاه المتباينة عندما نضيف إلى طرفيها (أو نطرح منهما) العدد نفسه؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضيف $25$ إلى طرفي $n<450$ فنجد $n+25<475$ ؛ فالجملة خاطئة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "أكمل بالرمز المناسب: $n+10\\ \\square \\ 460$",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$<$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$>$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-SUB-FLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية المطبّقة على طرفي المتباينة؟ وما العدد المستعمل؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إضافة عدد إلى الطرفين (أو طرحه منهما) لا تغيّر اتجاه المتباينة، موجبًا كان ذلك العدد أو سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الطرفين بعد العملية ثم ضع الرمز نفسه الذي في المتباينة المعطاة."
+        }
+      ],
+      "feedback": {
+        "correct": "$n<450$ فـ $n+10<460$ .",
+        "incorrect": "لا يتغيّر اتجاه المتباينة عندما نضيف إلى طرفيها (أو نطرح منهما) العدد نفسه؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$n<450$ فـ $n+10<460$ ."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

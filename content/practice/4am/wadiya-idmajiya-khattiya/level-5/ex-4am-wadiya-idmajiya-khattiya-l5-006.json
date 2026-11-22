@@ -1,0 +1,401 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-khattiya-l5-006",
+  "lessonCode": "wadiya-idmajiya-khattiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2007 — كراء معدات التخييم بالقالة",
+    "estimatedMinutes": 25,
+    "tags": [
+      "وضعية إدماجية",
+      "جدول",
+      "قراءة بيانية",
+      "مقارنة صيغتين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-khattiya_P3",
+      "modelledOn": "BEM 2007 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2007",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تؤجّر وكالة سياحية بالقالة معدات التخييم (خيمة وأفرشة) وفق صيغتين:\n– الصيغة الأولى: 600DA لليوم الواحد.\n– الصيغة الثانية: 400DA لليوم الواحد مع دفع مبلغ تأمين قدره 1200DA.\nيمثّل $(D_1)$ و $(D_2)$ في المعلم التالي المبلغ المدفوع حسب الصيغتين الأولى والثانية على الترتيب، بدلالة عدد الأيام.",
+    "table": {
+      "head": [
+        "عدد الأيام",
+        "2",
+        "…",
+        "…"
+      ],
+      "rows": [
+        [
+          "المبلغ حسب الصيغة الأولى (DA)",
+          "…",
+          "3000",
+          "…"
+        ],
+        [
+          "المبلغ حسب الصيغة الثانية (DA)",
+          "…",
+          "…",
+          "4400"
+        ]
+      ]
+    },
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "P": [
+          8,
+          12
+        ],
+        "B": [
+          0,
+          3
+        ],
+        "Q": [
+          8,
+          11
+        ]
+      },
+      "rays": [
+        {
+          "from": "O",
+          "through": "P",
+          "name": "(D₁)",
+          "tone": "indigo",
+          "extend": 0.03
+        },
+        {
+          "from": "B",
+          "through": "Q",
+          "name": "(D₂)",
+          "tone": "rose",
+          "extend": 0.03
+        }
+      ],
+      "grid": true,
+      "axes": {
+        "every": 2
+      },
+      "labels": {
+        "O": "sw"
+      },
+      "hidden": [
+        "P",
+        "B",
+        "Q"
+      ],
+      "ariaLabel": "معلم على ورقة مرصوفة: المستقيم (D1) ينطلق من المبدأ، والمستقيم (D2) ينطلق من محور التراتيب، ويتقاطعان",
+      "caption": "محور الفواصل: كل وحدة تمثّل يوما واحدا — محور التراتيب: كل وحدة تمثّل 400DA"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "انقل الجدول وأكمله (نكتفي بالخانات الآتية).",
+      "statement": "المبلغ حسب الصيغة الأولى من أجل يومين:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "1200",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ حسب الصيغة الأولى متناسب مع عدد الأيام."
+        }
+      ],
+      "feedback": {
+        "correct": "$600 \\times 2 = 1200$ DA.",
+        "incorrect": "اضرب عدد الأيام في 600."
+      },
+      "solution": {
+        "lines": [
+          "$600 \\times 2 = 1200$"
+        ],
+        "result": "1200DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "عدد الأيام الموافق لمبلغ 3000DA حسب الصيغة الأولى:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الأيام",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "1800000",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم المبلغ على ثمن اليوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$3000 \\div 600 = 5$ أيام.",
+        "incorrect": "المطلوب عدد الأيام: اقسم على 600."
+      },
+      "solution": {
+        "lines": [
+          "$3000 \\div 600 = 5$"
+        ],
+        "result": "5"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "عدد الأيام الموافق لمبلغ 4400DA حسب الصيغة الثانية:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الأيام",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "11",
+          "id": "MISC-TANASUB-MABLAGH-THABIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح أولا مبلغ التأمين."
+        }
+      ],
+      "feedback": {
+        "correct": "$(4400 - 1200) \\div 400 = 8$ أيام.",
+        "incorrect": "التأمين يُدفع مرة واحدة: اطرحه قبل القسمة."
+      },
+      "solution": {
+        "lines": [
+          "$4400 - 1200 = 3200$",
+          "$3200 \\div 400 = 8$"
+        ],
+        "result": "8"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "lead": "ليكن $x$ عدد الأيام، و $y_1$ و $y_2$ المبلغين (بـ DA) حسب الصيغتين الأولى والثانية على الترتيب، حيث $y_2 = 400x + 1200$ .",
+      "statement": "عبّر عن $y_1$ بدلالة $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المعامل $a$ فقط في $y_1 = ax$",
+      "expectedAnswer": "600",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الصيغة الأولى دون تأمين: المبلغ متناسب مع عدد الأيام."
+        }
+      ],
+      "feedback": {
+        "correct": "$y_1 = 600x$ (دالة خطية).",
+        "incorrect": "المعامل هو ثمن اليوم في الصيغة الأولى."
+      },
+      "solution": {
+        "lines": [
+          "$y_1 = 600x$ : دالة خطية، تمثيلها $(D_1)$ يشمل المبدأ."
+        ],
+        "result": "y_1 = 600x"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ا",
+      "statement": "بقراءة بيانية، عيّن عدد الأيام الذي يتساوى من أجله المبلغان حسب الصيغتين.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الأيام",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-BAYANI-FASILA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن نقطة تقاطع $(D_1)$ و $(D_2)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ فاصلتها على محور الفواصل."
+        }
+      ],
+      "feedback": {
+        "correct": "نقطة التقاطع فاصلتها 6: يتساوى المبلغان من أجل 6 أيام.",
+        "incorrect": "عدد الأيام يُقرأ على محور الفواصل، لا التراتيب."
+      },
+      "solution": {
+        "lines": [
+          "نقطة تقاطع $(D_1)$ و $(D_2)$ فاصلتها 6 وترتيبها 9 وحدات ($3600$ DA).",
+          "التحقق: $600 \\times 6 = 3600$ و $400 \\times 6 + 1200 = 3600$ ."
+        ],
+        "result": "6 أيام"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ب",
+      "statement": "بقراءة بيانية، عيّن المبلغ المدفوع حسب الصيغة الأولى من أجل 4 أيام.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "2400",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-MAQADIR-WIHDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اصعد من الفاصلة 4 حتى $(D_1)$ ، ثم اقرأ الترتيب وحوّله: كل وحدة 400DA."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة من $(D_1)$ التي فاصلتها 4 ترتيبها 6 وحدات: $6 \\times 400 = 2400$ DA.",
+        "incorrect": "حوّل عدد الوحدات بسلّم محور التراتيب."
+      },
+      "solution": {
+        "lines": [
+          "النقطة من $(D_1)$ التي فاصلتها 4 ترتيبها 6 وحدات، أي $6 \\times 400 = 2400$ DA.",
+          "التحقق: $y_1 = 600 \\times 4 = 2400$ ."
+        ],
+        "result": "2400DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "statement": "☜ تريد عائلة نسيم التخييم 4 أيام. ما هي الصيغة الأنسب لها؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الصيغة الأولى",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الصيغة الثانية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-TAFSIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 4 بفاصلة نقطة التقاطع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أو احسب المبلغين من أجل 4 أيام."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 < 6$ : $y_1 = 2400$ DA و $y_2 = 2800$ DA.",
+        "incorrect": "قبل نقطة التقاطع، أيّ المستقيمين تحت الآخر؟"
+      },
+      "solution": {
+        "lines": [
+          "$4 < 6$ : قبل نقطة التقاطع يكون $(D_1)$ تحت $(D_2)$ .",
+          "التحقق: $y_1 = 2400$ و $y_2 = 400 \\times 4 + 1200 = 2800$ .",
+          "الصيغة الأولى أنسب لعائلة نسيم."
+        ],
+        "result": "الصيغة الأولى"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

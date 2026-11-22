@@ -1,0 +1,446 @@
+{
+  "id": "ex-3am-muadalat-darajat-ula-l5-004",
+  "lessonCode": "muadalat-darajat-ula",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — حديقة ودرّاج",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "سرعة",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 3,
+      "file": "3am-s3-57",
+      "exercise": 4
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: حديقة عمومية مستطيلة الشكل يهتمّ بنظافتها شباب المدينة، طولها يزيد عن ضعف عرضها بـ $6\\,\\mathrm{m}$ ، ومحيطها $156\\,\\mathrm{m}$ . نسمّي $w$ عرضها بالمتر (الأطوال غير حقيقية).\nالجزء الثاني: يقصد درّاج الحديقة بمثابرة، وقد قطع $12\\,\\mathrm{km}$ في $40\\,\\mathrm{min}$ بسرعة ثابتة.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          4.4,
+          0
+        ],
+        "C": [
+          4.4,
+          2.8
+        ],
+        "D": [
+          0,
+          2.8
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "2w + 6"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "w"
+        },
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "A"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "D",
+          "A",
+          "B"
+        ]
+      ],
+      "ariaLabel": "مستطيل ABCD طول AB يساوي 2w + 6 وعرض BC يساوي w",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "ما المعادلة التي تترجم محيط الحديقة؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "المحيط $= 2[w + (2w + 6)] = 156$ .",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2w + (2w + 6) = 156$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        },
+        {
+          "id": "B",
+          "content": "$2(w + (2w + 6)) = 156$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$w + (2w + 6) = 156$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "الطول $2w + 6$ والمحيط ضعف مجموع البعدين: $2[w + (2w + 6)] = 156$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما عرض الحديقة $w$ بالمتر؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "$w = 24$ .",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "العرض بالمتر",
+      "expectedAnswer": "24",
+      "misconceptionSignatures": [
+        {
+          "value": "48",
+          "id": "MISC-MUADALA-DIV-PART"
+        },
+        {
+          "value": "-24",
+          "id": "MISC-MUADALA-NEG-COEF"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "نبسّط: $6w + 12 = 156$ .",
+          "نضيف $-12$ إلى الطرفين (معاكس $12$) فنجد: $6w = 144$ .",
+          "نقسم الطرفين على $6$ فنجد: $w = 24$ ."
+        ]
+      },
+      "timeSeconds": 105
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما طول الحديقة بالمتر؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "الطول $54\\,\\mathrm{m}$ .",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "الطول بالمتر",
+      "expectedAnswer": "54",
+      "solution": {
+        "lines": [
+          "$2 \\times 24 + 6 = 54$ م.",
+          "التحقّق: $2(24 + 54) = 156$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "ما سرعة الدرّاج بالكيلومتر في الساعة؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "السرعة $18\\,\\mathrm{km/h}$ .",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "السرعة بكم/سا",
+      "expectedAnswer": "18",
+      "solution": {
+        "lines": [
+          "$40$ دقيقة تساوي $\\dfrac{2}{3}$ ساعة: $v = \\dfrac{12}{\\dfrac{2}{3}} = 18$ كم/سا."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "يقطع الدرّاج بالسرعة نفسها مسافة $21\\,\\mathrm{km}$ في مدّة $t$ ساعة. جد $t$ بالساعات.",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "$t = \\dfrac{7}{6}\\,\\mathrm{h}$ .",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "المدّة بالساعات",
+      "expectedAnswer": "7/6",
+      "misconceptionSignatures": [
+        {
+          "value": "-7",
+          "id": "MISC-MUADALA-NEG-COEF"
+        },
+        {
+          "value": "3",
+          "id": "MISC-MUADALA-DIV-WRONG"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "المسافة $= 18 \\times t$ : $18t = 21$ .",
+          "نقسم على $18$ : $t = \\dfrac{21}{18} = \\dfrac{7}{6}$ ساعة، أي ساعة و $10$ دقائق."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ج",
+      "statement": "ينطلق الدرّاج على الساعة $7\\,\\mathrm{h}\\,15$ ويريد الوصول قبل الساعة $8\\,\\mathrm{h}\\,30$ . ما القرار الصحيح؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "يصل على الساعة $8\\,\\mathrm{h}\\,25$ أي قبل $8\\,\\mathrm{h}\\,30$ .",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، يصل على الساعة $8\\,\\mathrm{h}\\,35$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-DECISION"
+        },
+        {
+          "id": "B",
+          "content": "لا، يصل على الساعة $8\\,\\mathrm{h}\\,45$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-DECISION"
+        },
+        {
+          "id": "C",
+          "content": "نعم، يصل على الساعة $8\\,\\mathrm{h}\\,25$",
+          "isCorrect": true
+        }
+      ],
+      "solution": {
+        "lines": [
+          "مدّة الرحلة ساعة و $10$ دقائق: $7\\,\\mathrm{h}\\,15 + 1\\,\\mathrm{h}\\,10 = 8\\,\\mathrm{h}\\,25$ .",
+          "وهي قبل $8\\,\\mathrm{h}\\,30$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "02",
+      "sub": "د",
+      "statement": "اشرح قرارك بالحساب.",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "يصل قبل $8\\,\\mathrm{h}\\,30$ .",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب إجابتك ثم قارنها بالتصحيح النموذجي",
+      "solution": {
+        "lines": [
+          "المدّة $\\dfrac{21}{18} = \\dfrac{7}{6}$ ساعة، أي $70$ دقيقة.",
+          "$7\\,\\mathrm{h}\\,15 + 70\\,\\mathrm{min} = 8\\,\\mathrm{h}\\,25$ ، وهي قبل $8\\,\\mathrm{h}\\,30$ ، فيصل في الوقت."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

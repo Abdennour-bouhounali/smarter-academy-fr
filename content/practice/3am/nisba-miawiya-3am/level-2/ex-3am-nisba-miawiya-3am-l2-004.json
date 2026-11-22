@@ -1,0 +1,184 @@
+{
+  "id": "ex-3am-nisba-miawiya-3am-l2-004",
+  "lessonCode": "nisba-miawiya-3am",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — بطارية الهاتف",
+    "estimatedMinutes": 7,
+    "tags": [
+      "نسبة مئوية",
+      "جزء وكلّ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تحرص مروة على ترشيد استهلاك الكهرباء، فتراقب شحن بطارية هاتفها التي سعتها $5\\,000$ mAh ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "شُحنت البطارية بنسبة $40\\,\\%$ . ما كمية الشحن بوحدة mAh؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "2000",
+      "misconceptionSignatures": [
+        {
+          "value": "50",
+          "id": "MISC-NISBA3-DIV100-ONLY"
+        },
+        {
+          "value": "200000",
+          "id": "MISC-NISBA3-MULT-T"
+        },
+        {
+          "value": "5040",
+          "id": "MISC-NISBA3-ADD-T"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نأخذ منه النسبة؟ وما هي هذه النسبة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نسبة مئوية من عدد: نضرب هذا العدد في النسبة مقسومة على مئة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب النسبة على شكل كسر مقامه مئة، ثم احسب جداء العدد في هذا الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$2\\,000$ .",
+        "incorrect": "لحساب نسبة مئوية من عدد نضرب العدد في النسبة مقسومة على مئة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$40\\,\\%$ من $5\\,000$ هي $5\\,000 \\times \\dfrac{40}{100} = 2\\,000$ ."
+        ],
+        "result": "5\\,000 \\times \\dfrac{40}{100} = 2\\,000"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "بعد ساعة صار في البطارية $1\\,800$ mAh . ما نسبة الشحن المئوية؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "النسبة المئوية (بدون الرمز %)",
+      "expectedAnswer": "36",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الجزء؟ وما الكلّ الذي نقارن به؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نبحث عن العدد الذي يجعل الكسر «الجزء على الكلّ» مساويا للكسر «هذا العدد على مئة»."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع الكلّ تحت مئة في جدول تناسبية وضع الجزء تحت العدد المجهول، ثم أتمّم."
+        }
+      ],
+      "feedback": {
+        "correct": "$36$ .",
+        "incorrect": "النسبة المئوية هي العدد الذي يساوي الكسر «الجزء على الكلّ» حين نكتبه مقامه مئة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $\\dfrac{1\\,800}{5\\,000} = \\dfrac{t}{100}$ ، فنجد $t = \\dfrac{100 \\times 1\\,800}{5\\,000} = 36$ .",
+          "إذن النسبة المئوية هي $36\\,\\%$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "بطارية أخرى فيها $1\\,200$ mAh وهي تمثّل $30\\,\\%$ من سعتها. ما سعتها بوحدة mAh؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "4000",
+      "misconceptionSignatures": [
+        {
+          "value": "360",
+          "id": "MISC-NISBA3-MULT-T"
+        },
+        {
+          "value": "1560",
+          "id": "MISC-NISBA3-COEF-INC"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الجزء المعطى يمثّل أيّ نسبة من الكلّ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الجزء يساوي الكلّ مضروبا في النسبة؛ فالكلّ هو الجزء مقسوما على النسبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب مساواة مجهولها الكلّ، ثم حلّها بالقسمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$4\\,000$ .",
+        "incorrect": "الجزء معروف والنسبة معروفة: الكلّ هو الجزء مقسوما على معامل النسبة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الجزء $1\\,200$ يمثّل $30\\,\\%$ من الكلّ ، أي $W \\times \\dfrac{30}{100} = 1\\,200$ .",
+          "إذن $W = 1\\,200 \\div \\dfrac{30}{100} = 4\\,000$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

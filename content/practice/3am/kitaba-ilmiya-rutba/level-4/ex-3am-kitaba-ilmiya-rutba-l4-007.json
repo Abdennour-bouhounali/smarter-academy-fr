@@ -1,0 +1,152 @@
+{
+  "id": "ex-3am-kitaba-ilmiya-rutba-l4-007",
+  "lessonCode": "kitaba-ilmiya-rutba",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — ترتيب أعداد",
+    "estimatedMinutes": 9,
+    "tags": [
+      "ترتيب",
+      "كتابة علمية",
+      "اختيار من متعدد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "رتّب الأعداد ترتيبًا تصاعديًا بعد كتابتها كتابة علمية. أجب باختيار الترتيب الصحيح."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "رتّب ترتيبًا تصاعديًا: $A = 7{,}3\\times10^{-4}$ ، $B = 85\\times10^{-6}$ ، $C = 0{,}04\\times10^{-1}$ .",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل كلّ اقتراح إلى عدد عشري أو إلى الكتابة العلمية لتقارنه بالمعطى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكتابة العلمية $a\\times10^{n}$ تشترط $1\\le a<10$ ؛ وفي المقارنة تُقارَن الأسّ أوّلًا ثمّ العدد $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر كلّ اقتراح على حدة وأسقط الخاطئ منها."
+        }
+      ],
+      "timeSeconds": 100,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$B<A<C$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$A<B<C$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ILMIYA-MUQARANA"
+        },
+        {
+          "id": "C",
+          "content": "$C<A<B$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ILMIYA-MUQARANA"
+        }
+      ],
+      "feedback": {
+        "correct": "$B<A<C$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب قيمته أو بتطبيق القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$B = 8{,}5\\times10^{-5}$ و $A = 7{,}3\\times10^{-4}$ و $C = 4\\times10^{-3}$ .",
+          "نرتّب الأسّين: $-5<-4<-3$ ."
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "رتّب ترتيبًا تصاعديًا: $D = 6{,}2\\times10^{5}$ ، $E = 0{,}9\\times10^{6}$ ، $F = 41\\times10^{4}$ .",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل كلّ اقتراح إلى عدد عشري أو إلى الكتابة العلمية لتقارنه بالمعطى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكتابة العلمية $a\\times10^{n}$ تشترط $1\\le a<10$ ؛ وفي المقارنة تُقارَن الأسّ أوّلًا ثمّ العدد $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر كلّ اقتراح على حدة وأسقط الخاطئ منها."
+        }
+      ],
+      "timeSeconds": 100,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$D<F<E$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ILMIYA-MUQARANA"
+        },
+        {
+          "id": "B",
+          "content": "$F<D<E$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$E<D<F$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ILMIYA-MUQARANA"
+        }
+      ],
+      "feedback": {
+        "correct": "$F<D<E$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب قيمته أو بتطبيق القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$F = 4{,}1\\times10^{5}$ و $D = 6{,}2\\times10^{5}$ و $E = 9\\times10^{5}$ .",
+          "الأسّ واحد (5) فنقارن الأعداد $4{,}1<6{,}2<9$ ."
+        ]
+      }
+    }
+  ]
+}

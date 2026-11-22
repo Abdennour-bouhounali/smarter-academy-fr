@@ -1,0 +1,180 @@
+{
+  "id": "ex-3am-tabsit-hadhf-aqwas-l1-006",
+  "lessonCode": "tabsit-hadhf-aqwas",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — تبسيط عبارة بثلاثة أنواع من الحدود",
+    "estimatedMinutes": 5,
+    "tags": [
+      "حدود متشابهة",
+      "تبسيط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $E$ حيث:",
+    "formulas": [
+      "E = 2x^2 + 3x - x^2 + 5x - 4"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "بسّط العبارة $E$ .",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $ax^2 + bx + c$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-TABSIT-SIGN-LOST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود المتشابهة: الحدود التي لها الجزء الحرفي نفسه ($x^2$ مع $x^2$، و $x$ مع $x$، والأعداد مع الأعداد)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع معاملات كل نوع بإشاراتها، ولا تجمع حدًّا في $x$ مع حدّ في $x^2$ أو مع عدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في العبارة قبل التبسيط وبعده: يجب أن تعطيا القيمة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = x^2 + 8x - 4$ إذن $a = 1$.",
+        "incorrect": "اجمع الحدود المتشابهة بإشاراتها بعد حذف الأقواس، ثم اقرأ العدد المطلوب في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$E = 2x^2 + 3x - x^2 + 5x - 4$",
+          "$E = x^2 + 8x - 4$"
+        ],
+        "result": "a = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود المتشابهة: الحدود التي لها الجزء الحرفي نفسه ($x^2$ مع $x^2$، و $x$ مع $x$، والأعداد مع الأعداد)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع معاملات كل نوع بإشاراتها، ولا تجمع حدًّا في $x$ مع حدّ في $x^2$ أو مع عدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في العبارة قبل التبسيط وبعده: يجب أن تعطيا القيمة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = x^2 + 8x - 4$ إذن $b = 8$.",
+        "incorrect": "اجمع الحدود المتشابهة بإشاراتها بعد حذف الأقواس، ثم اقرأ العدد المطلوب في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$E = 2x^2 + 3x - x^2 + 5x - 4$",
+          "$E = x^2 + 8x - 4$"
+        ],
+        "result": "b = 8"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "العدد $c$ :",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $ax^2 + bx + c$ : اكتب العدد $c$ فقط",
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-TABSIT-SIGN-LOST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود المتشابهة: الحدود التي لها الجزء الحرفي نفسه ($x^2$ مع $x^2$، و $x$ مع $x$، والأعداد مع الأعداد)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع معاملات كل نوع بإشاراتها، ولا تجمع حدًّا في $x$ مع حدّ في $x^2$ أو مع عدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في العبارة قبل التبسيط وبعده: يجب أن تعطيا القيمة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = x^2 + 8x - 4$ إذن $c = -4$.",
+        "incorrect": "اجمع الحدود المتشابهة بإشاراتها بعد حذف الأقواس، ثم اقرأ العدد المطلوب في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$E = 2x^2 + 3x - x^2 + 5x - 4$",
+          "$E = x^2 + 8x - 4$"
+        ],
+        "result": "c = -4"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

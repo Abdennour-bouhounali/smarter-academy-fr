@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l5-009",
+  "lessonCode": "maqati-mustawiya",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — مخروط المثلّجات",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مخروط",
+      "بدلالة π"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_maqati-mustawiya_P4",
+      "modelledOn": "act-5"
+    }
+  },
+  "statement": {
+    "content": "مخروط بسكويت للمثلّجات رأسه S إلى الأسفل، نصف قطر فتحته $3\\,\\mathrm{cm}$ . تملؤه المثلّجات حتى مستو أفقي يقطع المحور $[SO]$ في O′ حيث $SO' = \\dfrac{2}{3}SO$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مساحة سطح المثلّجات (المقطع) على الشكل $k\\pi\\,\\mathrm{cm}^2$ : أعط k.",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P4",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (المعامل k)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAKBIR-MISAHA-K",
+          "value": "6"
+        },
+        {
+          "id": "MISC-MAQTA-NISBA",
+          "value": "1"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المقطع دائرة، تصغير للفتحة بنسبة $\\dfrac{2}{3}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نصف قطره $\\dfrac{2}{3} \\times 3 = 2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المساحة $\\pi r^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "نصف قطر المقطع $2$ ، مساحته $4\\pi\\,\\mathrm{cm}^2$ : $k = 4$ .",
+        "incorrect": "$\\dfrac{2}{3} \\times 9 = 6$ يضرب المساحة في k، و $\\dfrac{1}{3} \\times 3 = 1$ يأخذ النسبة من القاعدة."
+      },
+      "difficulty": 5
+    }
+  ]
+}

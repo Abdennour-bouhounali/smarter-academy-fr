@@ -1,0 +1,369 @@
+{
+  "id": "ex-3am-mutabayinat-amaliyat-l5-001",
+  "lessonCode": "mutabayinat-amaliyat",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — الأرض الموهوبة للتوأمين",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "مساحة",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-80",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: يتقاسم توأمان بالعدل قطعة أرض مربّعة محيطها $96\\,\\mathrm{m}$ وهبها لهما جدّهما. النقطة $M$ على الضلع $[BC]$ حيث $BM=x\\,\\mathrm{m}$ مع $0\\le x\\le 24$ ، والنقطة $E$ على $[AB]$ حيث $BE=10\\,\\mathrm{m}$ . الجزء $EBM$ مثلث قائم في $B$ يملكه الأوّل، ومساحته $S_1=5x$ ، والباقي يملكه الثاني.\nالجزء الثاني: مساحة نصيب الثاني $S_2=576-5x$ بالمتر المربّع. نختبر المتباينة $5x<576-5x$ ، أي $S_1<S_2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب طول ضلع القطعة $a$ من $4a=96$ .",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "24",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المعطى بالضبط؟ وما العبارة المطلوب استنتاج متباينة لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابنِ المتباينة المطلوبة عملية بعد عملية، وانتبه إلى إشارة العدد عند كلّ ضرب أو قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر، وأعد كتابة الحصر من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$a=\\dfrac{96}{4}=24$ .",
+        "incorrect": "استنتج المتباينة خطوة بخطوة، وانتبه إلى اتجاهها بعد كلّ ضرب أو قسمة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$a=\\dfrac{96}{4}=24$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما مساحة القطعة كلّها؟",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$96\\,\\mathrm{m^2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-PREREQ"
+        },
+        {
+          "id": "B",
+          "content": "$576\\,\\mathrm{m^2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$48\\,\\mathrm{m^2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-PREREQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المعطى بالضبط؟ وما العبارة المطلوب استنتاج متباينة لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابنِ المتباينة المطلوبة عملية بعد عملية، وانتبه إلى إشارة العدد عند كلّ ضرب أو قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر، وأعد كتابة الحصر من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$24\\times 24=576$ .",
+        "incorrect": "استنتج المتباينة خطوة بخطوة، وانتبه إلى اتجاهها بعد كلّ ضرب أو قسمة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$24\\times 24=576$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "هل المتباينة $5x<576-5x$ صحيحة من أجل $x=24$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيحة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خاطئة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-PREREQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المعطى بالضبط؟ وما العبارة المطلوب استنتاج متباينة لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابنِ المتباينة المطلوبة عملية بعد عملية، وانتبه إلى إشارة العدد عند كلّ ضرب أو قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر، وأعد كتابة الحصر من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$120<456$ ؛ إذن صحيحة.",
+        "incorrect": "استنتج المتباينة خطوة بخطوة، وانتبه إلى اتجاهها بعد كلّ ضرب أو قسمة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $x=24$ : $5x=120$ و $576-5x=456$ .",
+          "$120<456$ ؛ إذن صحيحة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "وهل هي صحيحة من أجل $x=60$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيحة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-PREREQ"
+        },
+        {
+          "id": "B",
+          "content": "خاطئة",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المعطى بالضبط؟ وما العبارة المطلوب استنتاج متباينة لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابنِ المتباينة المطلوبة عملية بعد عملية، وانتبه إلى إشارة العدد عند كلّ ضرب أو قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر، وأعد كتابة الحصر من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$300>276$ ؛ إذن خاطئة.",
+        "incorrect": "استنتج المتباينة خطوة بخطوة، وانتبه إلى اتجاهها بعد كلّ ضرب أو قسمة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $x=60$ : $5x=300$ و $576-5x=276$ .",
+          "$300>276$ ؛ إذن خاطئة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ج",
+      "statement": "استنتج من $5x<576-5x$ متباينة طرفها الأوّل $x$ .",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x<57{,}6$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$x<5{,}76$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-COEF-LOST"
+        },
+        {
+          "id": "C",
+          "content": "$x>57{,}6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-POS-FLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل العدد الذي نضرب فيه (أو نقسم عليه) موجب أم سالب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في عدد موجب تمامًا (أو القسمة عليه) لا يغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق العملية على كلّ طرف ثم احتفظ بالرمز كما هو."
+        }
+      ],
+      "feedback": {
+        "correct": "نقسم على $10$ (موجب): $x<57{,}6$ .",
+        "incorrect": "الضرب في عدد موجب تمامًا (أو القسمة عليه) يحفظ اتجاه المتباينة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضيف $5x$ إلى الطرفين: $10x<576$ .",
+          "نقسم على $10$ (موجب): $x<57{,}6$ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ا",
+      "statement": "هل يمكن أن يكون نصيب التوأم الأوّل أكبر من نصيب الثاني؟",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لأنّ $x\\le 24<57{,}6$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم، من أجل بعض قيم $x$ في المجال",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-DECISION"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المعطى بالضبط؟ وما العبارة المطلوب استنتاج متباينة لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابنِ المتباينة المطلوبة عملية بعد عملية، وانتبه إلى إشارة العدد عند كلّ ضرب أو قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر، وأعد كتابة الحصر من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "يكون $S_1<S_2$ كلّما كان $x<57{,}6$ ، و $x\\le 24$ ؛ فنصيب الأوّل أصغر دائمًا.",
+        "incorrect": "استنتج المتباينة خطوة بخطوة، وانتبه إلى اتجاهها بعد كلّ ضرب أو قسمة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "يكون $S_1<S_2$ كلّما كان $x<57{,}6$ ، و $x\\le 24$ ؛ فنصيب الأوّل أصغر دائمًا."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

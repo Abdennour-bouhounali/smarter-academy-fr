@@ -1,0 +1,180 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l2-005",
+  "lessonCode": "mana-jam-tarh",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — ما كتبه رامي وسارة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "مجموع",
+      "فرق",
+      "تبرير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "كتب رامي: « 15,6 هو مجموع العددين 9,2 و 6,4 »، وكتبت سارة: « 3,8 هو فرق العددين 9,2 و 6,4 »."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل ما كتبه رامي صحيح؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-MAJMU-FARQ"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المجموع ناتج الجمع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $9{,}2 + 6{,}4$."
+        }
+      ],
+      "feedback": {
+        "correct": "$9{,}2 + 6{,}4 = 15{,}6$: ما كتبه رامي صحيح.",
+        "incorrect": "احسب ناتج جمع العددين وقارنه بما كتبه رامي."
+      },
+      "solution": {
+        "lines": [
+          "$9{,}2 + 6{,}4 = 15{,}6$",
+          "إذن 15,6 هو فعلًا مجموع العددين: ما كتبه رامي صحيح."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل ما كتبته سارة صحيح؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-FASILA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفرق ناتج الطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الفرق ثم قارنه بما كتبته سارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$9{,}2 - 6{,}4 = 2{,}8$ وليس 3,8.",
+        "incorrect": "احسب فرق العددين بدقة، مع الانتباه إلى الأجزاء من عشرة."
+      },
+      "solution": {
+        "lines": [
+          "$9{,}2 - 6{,}4 = 2{,}8$",
+          "و $2{,}8 \\neq 3{,}8$ ، إذن ما كتبته سارة خطأ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب فرق العددين 9,2 و 6,4.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "2.8",
+      "misconceptionSignatures": [
+        {
+          "value": "15.6",
+          "id": "MISC-JAMTARH-MAJMU-FARQ"
+        },
+        {
+          "value": "3.8",
+          "id": "MISC-JAMTARH-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفرق ناتج طرح الأصغر من الأكبر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التحقق: الفرق + العدد الأصغر = العدد الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$9{,}2 - 6{,}4 = 2{,}8$ و $2{,}8 + 6{,}4 = 9{,}2$.",
+        "incorrect": "اطرح 6,4 من 9,2 ثم تحقّق بالجمع."
+      },
+      "solution": {
+        "lines": [
+          "$9{,}2 - 6{,}4 = 2{,}8$",
+          "التحقق: $2{,}8 + 6{,}4 = 9{,}2$"
+        ],
+        "result": "2{,}8"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

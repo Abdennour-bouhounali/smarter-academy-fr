@@ -1,0 +1,189 @@
+{
+  "id": "ex-2am-silsila-bi-aqwas-l3-004",
+  "lessonCode": "silsila-bi-aqwas",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — قوسان ضروريان وقوسان لا",
+    "estimatedMinutes": 12,
+    "tags": [
+      "أقواس متداخلة",
+      "أقواس غير ضرورية"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-79",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "لنحسب العبارتين $D$ و $E$ ، ثم نتحقّق من ضرورة المعقوفين في $D$ :"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $D = 9 + [(10 - 4) \\times 6] \\div 4 - 5$ .",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-AQWAS-IGNORED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع خطًّا تحت أعمق القوسين: هما أوّل ما يُحسب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القوسين الداخليين ثم المعقوفين، ثم أكمل بقية العبارة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أعد كتابة العبارة بعد كل مرحلة بما بقي منها."
+        }
+      ],
+      "feedback": {
+        "correct": "$D = 9 + [(10 - 4) \\times 6] \\div 4 - 5 = 13$",
+        "incorrect": "نبدأ بأعمق القوسين ثم نخرج إلى المعقوفين، وفي كل مستوى نحترم أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$D = 9 + [(10 - 4) \\times 6] \\div 4 - 5$",
+          "$D = 9 + (6 \\times 6) \\div 4 - 5$",
+          "$D = 9 + 36 \\div 4 - 5$",
+          "$D = 9 + 9 - 5$",
+          "$D = 18 - 5$",
+          "$D = 13$"
+        ],
+        "result": "D = 13"
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل المعقوفان $[\\ \\ ]$ ضروريان في العبارة $D = 9 + [(10 - 4) \\times 6] \\div 4 - 5$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-ALLNEEDED"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النتيجتين بدقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كل عبارة بالترتيب الصحيح قبل أن تحكم."
+        }
+      ],
+      "feedback": {
+        "correct": "تحقّقت من ذلك بالحساب.",
+        "incorrect": "احسب كل عبارة مرحلة مرحلة وقارن النتيجتين قبل أن تحكم."
+      },
+      "solution": {
+        "lines": [
+          "$D = 9 + (6 \\times 6) \\div 4 - 5 = 9 + 36 \\div 4 - 5 = 13$",
+          "وبدون المعقوفين: $9 + (10 - 4) \\times 6 \\div 4 - 5 = 9 + 36 \\div 4 - 5 = 13$ : النتيجة نفسها."
+        ]
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب $E = 50 - [(8 + 4) \\times 3] \\div 4 + 6$ .",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "47",
+      "misconceptionSignatures": [
+        {
+          "value": "51",
+          "id": "MISC-AQWAS-IGNORED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع خطًّا تحت أعمق القوسين: هما أوّل ما يُحسب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القوسين الداخليين ثم المعقوفين، ثم أكمل بقية العبارة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أعد كتابة العبارة بعد كل مرحلة بما بقي منها."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 50 - [(8 + 4) \\times 3] \\div 4 + 6 = 47$",
+        "incorrect": "نبدأ بأعمق القوسين ثم نخرج إلى المعقوفين، وفي كل مستوى نحترم أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$E = 50 - [(8 + 4) \\times 3] \\div 4 + 6$",
+          "$E = 50 - (12 \\times 3) \\div 4 + 6$",
+          "$E = 50 - 36 \\div 4 + 6$",
+          "$E = 50 - 9 + 6$",
+          "$E = 41 + 6$",
+          "$E = 47$"
+        ],
+        "result": "E = 47"
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

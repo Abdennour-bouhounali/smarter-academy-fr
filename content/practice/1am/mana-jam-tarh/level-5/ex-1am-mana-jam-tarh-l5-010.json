@@ -1,0 +1,287 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l5-010",
+  "lessonCode": "mana-jam-tarh",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — سباق التتابع",
+    "estimatedMinutes": 18,
+    "tags": [
+      "مجموع",
+      "أكثر",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "نظّمت المتوسطة يومًا رياضيًا، وتنافس الفريقان بروح رياضية.\nالجزء الأول: أزمنة عدّائي فريق القسم أ الأربعة: $13{,}8\\,\\mathrm{s}$ و $14{,}25\\,\\mathrm{s}$ و $13{,}6\\,\\mathrm{s}$ و $14{,}05\\,\\mathrm{s}$. زمن فريق القسم ب الكلي أكثر من زمن فريق القسم أ بـ $0{,}85\\,\\mathrm{s}$.\nالجزء الثاني: الرقم القياسي للمتوسطة في هذا السباق $55{,}9\\,\\mathrm{s}$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب الزمن الكلي لفريق القسم أ.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالثانية (s)",
+      "expectedAnswer": "55.7",
+      "misconceptionSignatures": [
+        {
+          "value": "41.65",
+          "id": "MISC-JAMTARH-JUZ-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدود المجموع أربعة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاذِ الفواصل."
+        }
+      ],
+      "feedback": {
+        "correct": "$13{,}8 + 14{,}25 + 13{,}6 + 14{,}05 = 55{,}7\\,\\mathrm{s}$.",
+        "incorrect": "اجمع الأزمنة الأربعة كلها."
+      },
+      "solution": {
+        "lines": [
+          "$13{,}8 + 14{,}25 = 28{,}05$",
+          "$13{,}6 + 14{,}05 = 27{,}65$",
+          "$28{,}05 + 27{,}65 = 55{,}7$"
+        ],
+        "result": "55{,}7 \\text{ s}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "في المخطط بأقواس الذي يقارن زمني الفريقين، زمن فريق القسم ب هو:",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الكل (القوس تحت الخط)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "جزء (قوس فوق الخط)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ الزمنين أطول؟"
+        }
+      ],
+      "feedback": {
+        "correct": "زمن الفريق ب = زمن الفريق أ + 0,85: هو الكل.",
+        "incorrect": "الزمن الأطول يضمّ الأقصر والفرق."
+      },
+      "solution": {
+        "lines": [
+          "زمن الفريق ب أكثر من زمن الفريق أ بـ $0{,}85\\,\\mathrm{s}$، إذن هو الكل."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب الزمن الكلي لفريق القسم ب.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالثانية (s)",
+      "expectedAnswer": "56.55",
+      "misconceptionSignatures": [
+        {
+          "value": "54.85",
+          "id": "MISC-JAMTARH-KALIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "زمن الفريق ب أطول."
+        }
+      ],
+      "feedback": {
+        "correct": "$55{,}7 + 0{,}85 = 56{,}55\\,\\mathrm{s}$.",
+        "incorrect": "زمن الفريق ب أكثر: النتيجة أكبر من زمن الفريق أ."
+      },
+      "solution": {
+        "lines": [
+          "$55{,}7 + 0{,}85 = 56{,}55$"
+        ],
+        "result": "56{,}55 \\text{ s}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "أيّ الفريقين فاز بالسباق؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "فريق القسم أ",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "فريق القسم ب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KALIMA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في السباق يفوز صاحب الزمن الأقل."
+        }
+      ],
+      "feedback": {
+        "correct": "زمن الفريق أ أقل: فاز الفريق أ.",
+        "incorrect": "الزمن الأكبر ليس الأفضل في السباق."
+      },
+      "solution": {
+        "lines": [
+          "$55{,}7 < 56{,}55$ ، والفائز هو صاحب الزمن الأقل: فريق القسم أ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "هل حطّم فريق القسم أ الرقم القياسي للمتوسطة؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KALIMA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحطيم الرقم = زمن أقل منه."
+        }
+      ],
+      "feedback": {
+        "correct": "$55{,}7 < 55{,}9$: نعم.",
+        "incorrect": "قارن زمن الفريق أ بالرقم القياسي: الأقل هو الأفضل."
+      },
+      "solution": {
+        "lines": [
+          "$55{,}7 < 55{,}9$ ، إذن حطّم الفريق أ الرقم القياسي."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "06",
+      "statement": "بكم ثانية حطّمه؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالثانية (s)",
+      "expectedAnswer": "0.2",
+      "misconceptionSignatures": [
+        {
+          "value": "111.6",
+          "id": "MISC-JAMTARH-MAJMU-FARQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الرقم القياسي هو الكل: زمن الفريق أ + الفرق."
+        }
+      ],
+      "feedback": {
+        "correct": "$55{,}9 - 55{,}7 = 0{,}2\\,\\mathrm{s}$.",
+        "incorrect": "الفرق جزء: اطرح الأصغر من الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "$55{,}9 - 55{,}7 = 0{,}2$"
+        ],
+        "result": "0{,}2 \\text{ s}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

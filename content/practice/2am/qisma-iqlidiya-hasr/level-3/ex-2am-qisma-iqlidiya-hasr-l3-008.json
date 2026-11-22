@@ -1,0 +1,285 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l3-008",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أكمل الجدول",
+    "estimatedMinutes": 8,
+    "tags": [
+      "قسمة إقليدية",
+      "حصر",
+      "جدول"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "أكمل الجدول التالي.",
+    "table": {
+      "head": [
+        "المقسوم $a$",
+        "المقسوم عليه $b$",
+        "الحاصل $q$",
+        "الباقي $r$",
+        "حصر $\\frac{a}{b}$"
+      ],
+      "rows": [
+        [
+          "1234",
+          "56",
+          "…",
+          "…",
+          "…"
+        ],
+        [
+          "2016",
+          "42",
+          "…",
+          "…",
+          "…"
+        ],
+        [
+          "999",
+          "100",
+          "…",
+          "…",
+          "…"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب حاصل القسمة الإقليدية للعدد 1234 على 56.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "22",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "21",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "value": "23",
+          "id": "MISC-HASR-IZAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 1234 من 56 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 56 دون أن نتجاوز 1234."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من 56."
+        }
+      ],
+      "feedback": {
+        "correct": "$1234 = 56 \\times 22 + 2$ و $2 < 56$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 56 فلا يتجاوز الجداء 1234، والباقي عندئذ أصغر من 56."
+      },
+      "solution": {
+        "lines": [
+          "$56 \\times 22 = 1232$ و $56 \\times 23 = 1288$",
+          "$1232 \\le 1234 < 1288$ ، إذن الحاصل هو 22."
+        ],
+        "result": "q = 22"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب باقي القسمة الإقليدية للعدد 1234 على 56.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "22",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "58",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 1234."
+        }
+      ],
+      "feedback": {
+        "correct": "$1234 - 56 \\times 22 = 1234 - 1232 = 2$ ، و $2 < 56$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 56."
+      },
+      "solution": {
+        "lines": [
+          "$1234 = 56 \\times 22 + 2$",
+          "$2 < 56$ ، إذن الباقي هو 2."
+        ],
+        "result": "r = 2"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "اختر الكتابة الصحيحة التي تحصر حاصل القسمة $\\frac{2016}{42}$ بين عددين طبيعيين متتاليين (أو تعطيه إذا كان عددًا طبيعيًا).",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$48 < \\frac{2016}{42} < 49$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-SIFR-SARIM"
+        },
+        {
+          "id": "B",
+          "content": "$47 < \\frac{2016}{42} < 48$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-SIFR-SARIM"
+        },
+        {
+          "id": "C",
+          "content": "$\\frac{2016}{42} = 48$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 2016 على 42."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من $42 \\times q \\le 2016 < 42 \\times (q + 1)$ نقسم الأطراف على 42."
+        }
+      ],
+      "feedback": {
+        "correct": "$2016 = 42 \\times 48$ والباقي معدوم، فـ $\\frac{2016}{42}$ عدد طبيعي.",
+        "incorrect": "احصر 2016 بين مضاعفين متتاليين للعدد 42 ثم اقسم على 42؛ وإذا كان الباقي معدومًا فحاصل القسمة عدد طبيعي."
+      },
+      "solution": {
+        "lines": [
+          "$2016 = 42 \\times 48 + 0$",
+          "الباقي معدوم: $2016 = 42 \\times 48$ ، إذن $\\frac{2016}{42} = 48$ عدد طبيعي."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "اختر الكتابة الصحيحة التي تحصر حاصل القسمة $\\frac{999}{100}$ بين عددين طبيعيين متتاليين (أو تعطيه إذا كان عددًا طبيعيًا).",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$8 < \\frac{999}{100} < 9$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        },
+        {
+          "id": "B",
+          "content": "$9 < \\frac{999}{100} < 10$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$99 < \\frac{999}{100} < 100$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 999 على 100."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من $100 \\times q \\le 999 < 100 \\times (q + 1)$ نقسم الأطراف على 100."
+        }
+      ],
+      "feedback": {
+        "correct": "$999 = 100 \\times 9 + 99$ والباقي غير معدوم، فـ $\\frac{999}{100}$ يقع تمامًا بين 9 و 10.",
+        "incorrect": "احصر 999 بين مضاعفين متتاليين للعدد 100 ثم اقسم على 100؛ وإذا كان الباقي معدومًا فحاصل القسمة عدد طبيعي."
+      },
+      "solution": {
+        "lines": [
+          "$999 = 100 \\times 9 + 99$",
+          "$100 \\times 9 < 999 < 100 \\times 10$ ، نقسم على 100: $9 < \\frac{999}{100} < 10$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

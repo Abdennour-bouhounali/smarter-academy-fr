@@ -1,0 +1,199 @@
+{
+  "id": "ex-4am-mafhum-jumla-l3-005",
+  "lessonCode": "mafhum-jumla",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2022 — ثنائيتان وثلاث جمل",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جملة",
+      "ثنائية",
+      "حالات خاصة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mafhum-jumla_P3",
+      "modelledOn": "BEM 2022 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "لتكن الثنائيتان $(6 ; 10)$ و $(10 ; 6)$ .",
+      "statement": "أيهما حل لهذه الجملة: $\\begin{cases} x + y = 16 \\\\ \\dfrac{1}{2}x + 3y = 23 \\end{cases}$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mafhum-jumla_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية التي هي حل للجملة: قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر)",
+      "expectedAnswer": {
+        "x": "10",
+        "y": "6"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "6",
+            "y": "10"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جرّب كل ثنائية في المعادلتين معا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الأول في الثنائية قيمة $x$ والثاني قيمة $y$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استبعد كل ثنائية لا تحقق إحدى المعادلتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$10 + 6 = 16$ ؛ $\\dfrac{1}{2} \\times 10 + 3 \\times 6 = 23$.",
+        "incorrect": "الحل يحقق المعادلتين في آن واحد، والترتيب في الثنائية مهم: عوّض كل ثنائية في المعادلتين."
+      },
+      "solution": {
+        "lines": [
+          "التحقق من الثنائية $(6 ; 10)$ :",
+          "$6 + 10 = 16$",
+          "$\\dfrac{1}{2} \\times 6 + 3 \\times 10 = 33 \\neq 23$",
+          "ومنه الثنائية $(6 ; 10)$ ليست حلا للجملة.",
+          "التحقق من الثنائية $(10 ; 6)$ :",
+          "$10 + 6 = 16$",
+          "$\\dfrac{1}{2} \\times 10 + 3 \\times 6 = 23$",
+          "ومنه الثنائية $(10 ; 6)$ حل للجملة."
+        ],
+        "result": "(10 ; 6)"
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حل الجملة التالية: $\\begin{cases} x + y = 16 \\ldots\\ldots (1) \\\\ x + 6y = 46 \\ldots\\ldots (2) \\end{cases}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 2/5)",
+      "expectedAnswer": {
+        "x": "10",
+        "y": "6"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المعادلة (2) بالمعادلة الثانية في جملة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم طرفي المعادلة (2) على 2."
+        }
+      ],
+      "feedback": {
+        "correct": "$10 + 6 = 16$ ؛ $10 + 6 \\times 6 = 46$.",
+        "incorrect": "لاحظ أن الجملة تؤول إلى جملة السؤال 01 بقسمة المعادلة (2) على 2، أو حلّها بالتعويض."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} x + y = 16 \\ldots (1) \\\\ x + 6y = 46 \\ldots (2) \\end{cases}$",
+          "بقسمة المعادلة (2) على 2 نجد: $\\begin{cases} x + y = 16 \\\\ \\dfrac{1}{2}x + 3y = 23 \\end{cases}$",
+          "وهي جملة السؤال 01، ومنه الثنائية $(10 ; 6)$ حل للجملة."
+        ],
+        "result": "(10 ; 6)"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "نعتبر الجملة $\\begin{cases} x + y = 16 \\\\ 2x + 2y = 30 \\end{cases}$ . هل لهذه الجملة حل وحيد، أم ليس لها حل، أم لها عدد غير منته من الحلول؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لها حل وحيد",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-HALAT"
+        },
+        {
+          "id": "B",
+          "content": "ليس لها حل",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لها عدد غير منته من الحلول",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-HALAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم طرفي المعادلة الثانية على 2."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن بالمعادلة الأولى."
+        }
+      ],
+      "feedback": {
+        "correct": "ومنه الجملة ليس لها حل.",
+        "incorrect": "قارن المعادلتين بعد ضرب إحداهما أو قسمتها على عدد مناسب: هل تؤولان إلى معادلة واحدة، أم إلى معادلتين طرفاهما الأولان متساويان وطرفاهما الثانيان مختلفان؟"
+      },
+      "solution": {
+        "lines": [
+          "بقسمة طرفي المعادلة الثانية على 2 نجد: $x + y = 15$ .",
+          "لا يمكن أن يساوي العدد $x + y$ في آن واحد 16 و 15.",
+          "ومنه الجملة ليس لها حل."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

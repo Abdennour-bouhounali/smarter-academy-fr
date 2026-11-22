@@ -1,0 +1,299 @@
+{
+  "id": "ex-4am-tarrid-khatti-l4-004",
+  "lessonCode": "tarrid-khatti",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2009 — صهريج يُفرَغ في خزان",
+    "estimatedMinutes": 12,
+    "tags": [
+      "تدفق ثابت",
+      "نمذجة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tarrid-khatti_P1",
+      "modelledOn": "BEM 2009 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "صهريج على شكل متوازي مستطيلات أبعاده $4m$ و $2{,}5m$ و $2m$ ، مملوء تماما بالماء. يُنقل ماؤه إلى خزان كان فارغا بمضخة تدفقها ثابت قدره $4m^3$ في الساعة ( $4m^3/h$ )."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب سعة الصهريج.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: السعة بـ $m^3$",
+      "expectedAnswer": "20",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حجم متوازي المستطيلات = الطول × العرض × الارتفاع."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 2{,}5 \\times 2 = 20$ $m^3$ .",
+        "incorrect": "اضرب الأبعاد الثلاثة."
+      },
+      "solution": {
+        "lines": [
+          "$V = 4 \\times 2{,}5 \\times 2 = 20$",
+          "سعة الصهريج $20m^3$ ."
+        ],
+        "result": "20m^3"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب كمية الماء المتدفّقة في الخزان بعد ثلاث ساعات.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الحجم بـ $m^3$",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في كل ساعة يتدفّق $4m^3$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 3 = 12$ $m^3$ .",
+        "incorrect": "اضرب التدفق في المدة."
+      },
+      "solution": {
+        "lines": [
+          "$4 \\times 3 = 12$",
+          "بعد ثلاث ساعات يحتوي الخزان على $12m^3$ ."
+        ],
+        "result": "12m^3"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب كمية الماء المتبقية في الصهريج بعد ثلاث ساعات.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الحجم بـ $m^3$",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح ما تدفّق من سعة الصهريج."
+        }
+      ],
+      "feedback": {
+        "correct": "يبقى في الصهريج $8m^3$ .",
+        "incorrect": "ما بقي = السعة − ما تدفّق."
+      },
+      "solution": {
+        "lines": [
+          "$20 - 12 = 8$",
+          "يبقى في الصهريج $8m^3$ ."
+        ],
+        "result": "8m^3"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "lead": "نسمّي $g(x)$ كمية الماء (بـ $m^3$ ) في الخزان و $f(x)$ كمية الماء المتبقية في الصهريج بعد $x$ ساعة، حيث $f(x) = 20 - 4x$ .",
+      "statement": "جد العبارة $g(x)$ بدلالة $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الخزان كان فارغا والتدفق ثابت."
+        }
+      ],
+      "feedback": {
+        "correct": "$g(x) = 4x$ : دالة خطية.",
+        "incorrect": "المعامل هو التدفق (الحجم في ساعة واحدة)."
+      },
+      "solution": {
+        "lines": [
+          "$g(x) = 4x$ ، و $f(x) = 20 - 4x$ ."
+        ],
+        "result": "g(x) = 4x"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "sub": "ا",
+      "statement": "حلّ المعادلة $f(x) = g(x)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (عشري بالفاصلة)",
+      "expectedAnswer": "2,5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$20 - 4x = 4x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع حدود $x$ في طرف واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$20 = 8x$ ، إذن $x = 2{,}5$ .",
+        "incorrect": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر."
+      },
+      "solution": {
+        "lines": [
+          "$20 - 4x = 4x$",
+          "$20 = 8x$",
+          "$x = 2{,}5$"
+        ],
+        "result": "x = 2{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "sub": "ب",
+      "statement": "ماذا يمثّل حلّ هذه المعادلة في سياق الوضعية؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا يعني تساوي كمية الماء في الصهريج وفي الخزان؟"
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "بعد ساعتين ونصف يحتوي الصهريج والخزان على الكمية نفسها من الماء:",
+          "$g(2{,}5) = 4 \\times 2{,}5 = 10$ ، أي $10m^3$ في كل منهما (نصف سعة الصهريج)."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "sub": "ج",
+      "statement": "بعد كم ساعة يفرغ الصهريج تماما؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدة بالساعة",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "80",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يفرغ الصهريج عندما يصل كل مائه إلى الخزان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المعادلة $g(x) = 20$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$4x = 20$ ، إذن بعد 5 ساعات.",
+        "incorrect": "يفرغ الصهريج عندما تصبح كمية الماء في الخزان مساوية لسعته."
+      },
+      "solution": {
+        "lines": [
+          "$g(x) = 20$ معناه $4x = 20$",
+          "$x = 5$ : يفرغ الصهريج بعد 5 ساعات."
+        ],
+        "result": "x = 5"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

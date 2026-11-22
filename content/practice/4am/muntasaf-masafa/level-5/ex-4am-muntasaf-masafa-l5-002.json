@@ -1,0 +1,77 @@
+{
+  "id": "ex-4am-muntasaf-masafa-l5-002",
+  "lessonCode": "muntasaf-masafa",
+  "level": 5,
+  "metadata": {
+    "title": "تحدّ — القيمة المضبوطة للمسافة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "المسافة",
+      "قيمة مضبوطة",
+      "كسور"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "challenge",
+      "page": 139,
+      "section": "تحدّ"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 139): المستوي مزوّد بمعلم متعامد ومتجانس مبدؤه O (الوحدة $1\\,\\mathrm{cm}$). $A\\left(\\dfrac{2}{3}\\,;\\,-2\\right)$ و $B\\left(-4\\,;\\,\\dfrac{7}{3}\\right)$ نقطتان من المستوي."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "القيمة المضبوطة للمسافة AB:",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{\\sqrt{365}}{3}\\,\\mathrm{cm}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$9\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-JAM"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{365}{9}\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-NASI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الفرقين: فرق الفاصلتين وفرق الترتيبين (النهاية ناقص المبدأ)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ربّع كل فرق ثم اجمع المربعين: هذا مربع المسافة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خذ الجذر التربيعي في الأخير، وبسّطه إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB^2 = \\left(-\\dfrac{14}{3}\\right)^2 + \\left(\\dfrac{13}{3}\\right)^2 = \\dfrac{365}{9}$ ، إذن $AB = \\dfrac{\\sqrt{365}}{3}\\,\\mathrm{cm}$ .",
+        "incorrect": "المسطرة تعطي قيمة تقريبية؛ القانون يعطي القيمة المضبوطة."
+      }
+    }
+  ]
+}

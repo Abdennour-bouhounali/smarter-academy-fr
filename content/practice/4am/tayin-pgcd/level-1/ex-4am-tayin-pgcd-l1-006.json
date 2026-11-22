@@ -1,0 +1,127 @@
+{
+  "id": "ex-4am-tayin-pgcd-l1-006",
+  "lessonCode": "tayin-pgcd",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2025 — PGCD(91 ; 91) و PGCD(91 ; 0)",
+    "estimatedMinutes": 3,
+    "tags": [
+      "PGCD",
+      "نتائج مباشرة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tayin-pgcd_P2",
+      "modelledOn": "BEM 2025 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب:",
+      "statement": "PGCD(91 ; 91)",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "91",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما هي القواسم المشتركة لعدد ونفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القواسم المشتركة هي قواسم العدد نفسه، وأكبر قاسم لعدد غير معدوم هو العدد نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "PGCD$(a ; a) = a$"
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(91 ; 91) = 91 لأن أكبر قاسم للعدد 91 هو 91 نفسه.",
+        "incorrect": "القواسم المشتركة لعدد ونفسه هي كل قواسمه: خذ أكبرها."
+      },
+      "solution": {
+        "lines": [
+          "القواسم المشتركة للعددين 91 و 91 هي قواسم العدد 91، وأكبرها 91 نفسه.",
+          "نطبّق النتيجة: PGCD$(a ; a) = a$"
+        ],
+        "result": "PGCD(91 ; 91) = 91"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "PGCD(91 ; 0)",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "91",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-PGCD-SIFR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل عدد طبيعي غير معدوم يقسم 0 لأن $0 = n \\times 0$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القواسم المشتركة للعددين هي إذن قواسم العدد غير المعدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "PGCD$(a ; 0) = a$"
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(91 ; 0) = 91: كل قاسم للعدد 91 يقسم 0.",
+        "incorrect": "العدد 0 يقبل القسمة على كل عدد غير معدوم: القواسم المشتركة هي قواسم العدد الآخر."
+      },
+      "solution": {
+        "lines": [
+          "$0 = 91 \\times 0$ ، إذن العدد 91 يقسم 0، وكل قاسم للعدد 91 يقسم 0.",
+          "القواسم المشتركة للعددين 91 و 0 هي إذن قواسم العدد 91، وأكبرها 91."
+        ],
+        "result": "PGCD(91 ; 0) = 91"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

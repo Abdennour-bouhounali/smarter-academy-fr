@@ -1,0 +1,202 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l1-008",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — حبل الميناء: القيمتان إلى 0,1",
+    "estimatedMinutes": 5,
+    "tags": [
+      "قيم مقرّبة",
+      "حصر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "قطع عمّال الميناء حبلًا طوله $17$ m إلى $6$ قطع متساوية الطول، فكان طول القطعة الواحدة $\\dfrac{17}{6}$ m ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}1$ بالنقصان لحاصل القسمة $17 \\div 6$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "2.8",
+      "misconceptionSignatures": [
+        {
+          "value": "2.9",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "2.83",
+          "id": "MISC-QARIBA-RANK"
+        },
+        {
+          "value": "2.5",
+          "id": "MISC-QARIBA-REMCOMMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالنقصان لا تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة دون أن تزيد شيئًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب القيمة في المقسوم عليه: يجب ألاّ يتجاوز الجداء المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}8 < \\frac{17}{6} < 2{,}9$.",
+        "incorrect": "بالنقصان: نحتفظ بالأرقام حتى الرتبة المطلوبة ونُهمل ما بعدها دون تغيير الرقم الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$6 \\times 2{,}8 = 16{,}8$",
+          "$6 \\times 2{,}9 = 17{,}4$",
+          "$16{,}8 < 17 < 17{,}4$"
+        ],
+        "result": "2{,}8"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}1$ بالزيادة لحاصل القسمة $17 \\div 6$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "2.9",
+      "misconceptionSignatures": [
+        {
+          "value": "2.8",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "2.84",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالزيادة هي أصغر قيمة من هذه الرتبة تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من القيمة بالنقصان ثم أضف وحدة واحدة من الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}8 < \\frac{17}{6} < 2{,}9$.",
+        "incorrect": "بالزيادة: هي القيمة التي تلي القيمة بالنقصان مباشرة في الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$6 \\times 2{,}9 = 17{,}4$",
+          "$17{,}4 > 17$",
+          "القيمة بالزيادة هي $2{,}9$"
+        ],
+        "result": "2{,}9"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اختر الحصر الصحيح للحاصل $\\dfrac{17}{6}$ إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2{,}9 < \\dfrac{17}{6} < 3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        },
+        {
+          "id": "B",
+          "content": "$2{,}5 < \\dfrac{17}{6} < 2{,}6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-REMCOMMA"
+        },
+        {
+          "id": "C",
+          "content": "$2{,}8 < \\dfrac{17}{6} < 2{,}9$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$2{,}7 < \\dfrac{17}{6} < 2{,}8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحصر الصحيح: عددان متتاليان في الرتبة المطلوبة، الأوّل لا يتجاوز الحاصل والثاني يتجاوزه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ حصر بضرب طرفيه في المقسوم عليه ثم قارن بالمقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}8 < \\dfrac{17}{6} < 2{,}9$.",
+        "incorrect": "تحقّق من الطرفين: الأصغر لا يتجاوز الحاصل والأكبر يتجاوزه، وبينهما وحدة واحدة من الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$6 \\times 2{,}8 = 16{,}8 \\text{ و } 6 \\times 2{,}9 = 17{,}4$",
+          "$16{,}8 < 17 < 17{,}4$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

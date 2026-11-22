@@ -1,0 +1,258 @@
+{
+  "id": "ex-1am-tatbiq-qaida-harfiya-l3-009",
+  "lessonCode": "tatbiq-qaida-harfiya",
+  "level": 3,
+  "metadata": {
+    "title": "ثلاث قواعد مقترحة",
+    "estimatedMinutes": 11,
+    "tags": [
+      "تعميم",
+      "مثال مضادّ"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-5",
+      "page": 86,
+      "section": "التدريب على التعميم والاستدلال",
+      "number": 5
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين الرابع",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "اقترح تلاميذ قواعد على أعداد طبيعية. نختبر كلّ قاعدة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "القاعدة $x+x=x\\times x$ . صحّت من أجل $x=2$ . هل يكفي هذا ليثبت أنّها صحيحة دائمًا؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لا يكفي",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم، يكفي",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-ONEOK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي أثبته المثال المقدّم: هل تساوت الجهتان أم اختلفتا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مثال تصحّ فيه القاعدة لا يثبت أنّها صحيحة دائمًا، ومثال تخطئ فيه يكفي لإبطالها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الجهتين من أجل القيمة المعطاة ثمّ احكم."
+        }
+      ],
+      "feedback": {
+        "correct": "الأمثلة التي تصحّ فيها القاعدة لا تثبت شيئًا.",
+        "incorrect": "مثال تصحّ فيه المساواة لا يثبت أنّها صحيحة دائمًا: نبحث عن قيمة تختلف عندها الجهتان."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $x=2$ : $2+2=4$ و $2\\times 2=4$ : الجهتان متساويتان.",
+          "مثال تصحّ فيه المساواة لا يثبت أنّها صحيحة دائمًا."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "القاعدة $x\\times x=4\\times x$ . أيّ القيم الآتية تُبطلها؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x=0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-ONEOK"
+        },
+        {
+          "id": "B",
+          "content": "$x=4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-ONEOK"
+        },
+        {
+          "id": "C",
+          "content": "$x=6$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الطرفين الأيمن والأيسر من أجل كلّ قيمة مقترحة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نبحث عن قيمة تختلف عندها الجهتان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القيمة التي تتساوى عندها الجهتان لا تُبطل القاعدة."
+        }
+      ],
+      "feedback": {
+        "correct": "مثال مضادّ واحد يكفي.",
+        "incorrect": "مثال تصحّ فيه المساواة لا يثبت أنّها صحيحة دائمًا: نبحث عن قيمة تختلف عندها الجهتان."
+      },
+      "solution": {
+        "lines": [
+          "نحسب الجهتين من أجل كلّ قيمة: $0\\times 0=0$ و $4\\times 0=0$ ؛ $4\\times 4=16$ و $4\\times 4=16$ ؛ $6\\times 6=36$ و $4\\times 6=24$ .",
+          "الجهتان تختلفان عند $x=6$ فقط: هذا مثال مضادّ."
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما أصغر عدد طبيعي $n$ أكبر من $2$ لا تصحّ عنده المساواة $n\\times n=2\\times n$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-TATBIQ-ONEOK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ من أصغر قيمة مسموح بها واحسب الجهتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتقل إلى القيمة التي تليها إن تساوت الجهتان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أوّل قيمة تختلف عندها الجهتان هي المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل $3$ تختلف الجهتان.",
+        "incorrect": "مثال تصحّ فيه المساواة لا يثبت أنّها صحيحة دائمًا: نبحث عن قيمة تختلف عندها الجهتان."
+      },
+      "solution": {
+        "lines": [
+          "نختبر القيم بالترتيب بدءًا من $3$ .",
+          "من أجل $n=3$ : $3\\times 3=9$ بينما $2\\times 3=6$ .",
+          "إذن أصغر قيمة هي $3$ ."
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "من أجل $n=3$ نجد $9$ و $6$ . كم مثالًا مضادًّا يلزم لإبطال القاعدة $n\\times n=2\\times n$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مثال مضادّ واحد",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "مثالان مضادّان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-MANYNEED"
+        },
+        {
+          "id": "C",
+          "content": "عدّة أمثلة مضادّة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-MANYNEED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي أثبته المثال المقدّم: هل تساوت الجهتان أم اختلفتا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مثال تصحّ فيه القاعدة لا يثبت أنّها صحيحة دائمًا، ومثال تخطئ فيه يكفي لإبطالها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الجهتين من أجل القيمة المعطاة ثمّ احكم."
+        }
+      ],
+      "feedback": {
+        "correct": "مثال واحد يكفي.",
+        "incorrect": "مثال مضادّ واحد يكفي لإبطال القاعدة، ولا نحتاج إلى أمثلة أخرى."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $n=3$ : $3\\times 3=9$ بينما $2\\times 3=6$ .",
+          "مثال مضادّ واحد يكفي لنقول إنّ القاعدة ليست صحيحة دائمًا."
+        ]
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

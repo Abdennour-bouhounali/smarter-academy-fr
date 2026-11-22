@@ -1,0 +1,120 @@
+{
+  "id": "ex-4am-tayin-pgcd-l2-005",
+  "lessonCode": "tayin-pgcd",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2008 — PGCD(39 ; 65) وكسر",
+    "estimatedMinutes": 5,
+    "tags": [
+      "PGCD",
+      "حصر القواسم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tayin-pgcd_P1",
+      "modelledOn": "BEM 2008 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2008",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "جد القاسم المشترك الأكبر للعددين 39 و 65.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "13",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قائمة قواسم كل من العددين 39 و 65، مثنى مثنى (1 مع العدد نفسه، ثم 2 …) حتى لا يفوتك قاسم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استخرج القواسم المشتركة: الأعداد الموجودة في القائمتين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاسم المشترك الأكبر هو أكبر القواسم المشتركة، لا أيّ واحد منها."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 39 و 65 هي 1 ، 13، وأكبرها 13.",
+        "incorrect": "اكتب قائمتي القواسم كاملتين، ثم خذ أكبر عدد يظهر في القائمتين معًا."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 39 هي: 1 ، 3 ، 13 ، 39",
+          "قواسم العدد 65 هي: 1 ، 5 ، 13 ، 65",
+          "القواسم المشتركة للعددين 39 و 65 هي: 1 ، 13",
+          "أكبرها هو 13، إذن:"
+        ],
+        "result": "PGCD(39 ; 65) = 13"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب الكسر $\\dfrac{39}{65}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "3/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال السابق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 13.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال السابق.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{39}{65} = \\dfrac{39 \\div 13}{65 \\div 13}$"
+        ],
+        "result": "\\dfrac{39}{65} = \\dfrac{3}{5}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

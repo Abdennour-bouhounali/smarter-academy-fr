@@ -1,0 +1,78 @@
+{
+  "id": "ex-4am-murakkibata-shuaa-l1-003",
+  "lessonCode": "murakkibata-shuaa",
+  "level": 1,
+  "metadata": {
+    "title": "معارف 1 — مركبتا OB",
+    "estimatedMinutes": 2,
+    "tags": [
+      "OM",
+      "إحداثيات"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-1",
+      "page": 142,
+      "section": "معارف",
+      "number": 1
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 142): المستوي مُزوّد بمعلم مبدؤه النقطة O. إحداثيتا النقطة B هما $-3$ و 4 نكتب $B(-3\\,;\\,4)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما مركبتا الشعاع $\\overrightarrow{OB}$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_murakkibata-shuaa_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "مركبتا الشعاع (x ; y): الأفقية ثم العمودية — عددان مثل −3 أو 2,5",
+      "expectedAnswer": {
+        "x": "-3",
+        "y": "4"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مبدأ هذا الشعاع هو مبدأ المعلم O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من O، الإزاحة الأفقية هي الفاصلة والإزاحة العمودية هي الترتيب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مركبتا $\\overrightarrow{OM}$ هما إحداثيتا M بنفس الترتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "مركبتا $\\overrightarrow{OB}$ هما إحداثيتا B: $\\overrightarrow{OB}\\begin{pmatrix} -3 \\\\ 4 \\end{pmatrix}$ .",
+        "incorrect": "من O الكود هو العنوان: نفس العددين بنفس الترتيب."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "4",
+            "y": "-3"
+          },
+          "id": "MISC-MAALAM-TABDIL-X-Y"
+        },
+        {
+          "value": {
+            "x": "3",
+            "y": "4"
+          },
+          "id": "MISC-MAALAM-ISHARA"
+        }
+      ]
+    }
+  ]
+}

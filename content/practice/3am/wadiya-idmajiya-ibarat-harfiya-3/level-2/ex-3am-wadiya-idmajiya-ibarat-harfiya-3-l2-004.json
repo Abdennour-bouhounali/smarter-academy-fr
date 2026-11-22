@@ -1,0 +1,230 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-ibarat-harfiya-3-l2-004",
+  "lessonCode": "wadiya-idmajiya-ibarat-harfiya-3",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — برنامجا حساب: هل هما متساويان؟",
+    "estimatedMinutes": 8,
+    "tags": [
+      "برنامج حساب",
+      "نشر",
+      "تساوي عبارتين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "برنامجا حساب: البرنامج 1: اختر عددًا، أضف إليه $3$ ، ثم اضرب الناتج في العدد مطروحًا منه $1$ ؛ البرنامج 2: اختر عددًا، ربّعه، أضف إليه $2$ أضعاف العدد، ثم اطرح $3$ . نرمز بـ $x$ إلى العدد المختار:",
+    "formulas": [
+      "E_1 = (x + 3)(x - 1)",
+      "E_2 = x^2 + 2x - 3"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "نجرّب العدد $x = 2$ .",
+      "statement": "نتيجة البرنامج 1 :",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "5",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "نتيجة البرنامج 1 هي $5$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$E_1 = (2 + 3)(2 - 1)$",
+          "$E_1 = 5$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "نتيجة البرنامج 2 :",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "5",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "نتيجة البرنامج 2 هي $5$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$E_2 = 2^2 + 4 - 3$",
+          "$E_2 = 5$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "انشر العبارة $E_1$ .",
+      "statement": "اكتب $E_1$ على الشكل $x^2 + ux + w$ : العدد $u$ :",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $u$ فقط",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-SYN-HARF-CROSS"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض الحرف بعدد صغير في العبارة الأصلية وفي النتيجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$u = 2$ .",
+        "incorrect": "وزّع كل حدّ على كل حدّ مع الانتباه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$E_1 = x^2 - 1x + 3x - 3$",
+          "$E_1 = x^2 + 2x - 3$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل البرنامجان متساويان من أجل كل عدد؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، متساويان من أجل كل عدد",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا، غير متساويين",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SYN-HARF-NOEXPAND"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل تكفي قيمة واحدة لإثبات التساوي؟ وهل تكفي لنفيه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض بعدد: إذا اختلفت القيمتان فالعبارتان غير متساويتين، وإذا اتفقتا فانشر ثم قارن الشكلين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قيمة واحدة مختلفة تكفي لنفي التساوي، أمّا لإثباته فلا بدّ من النشر والمقارنة."
+        }
+      ],
+      "feedback": {
+        "correct": "البرنامجان متساويان: بعد النشر نجد الشكل نفسه.",
+        "incorrect": "قيمة واحدة مختلفة تنفي التساوي، أمّا لإثباته فلا بدّ من النشر ثم مقارنة الشكلين."
+      },
+      "solution": {
+        "lines": [
+          "$E_1 = x^2 + 2x - 3$ ، وهذا هو $E_2$ بعينه.",
+          "بعد النشر نجد الشكل نفسه: البرنامجان متساويان من أجل كل عدد."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

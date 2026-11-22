@@ -1,0 +1,179 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l4-007",
+  "lessonCode": "mafhum-dawaran",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — المثلث المتقايس الأضلاع",
+    "estimatedMinutes": 3,
+    "tags": [
+      "صورة نقطة",
+      "مثلث متقايس الأضلاع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mafhum-dawaran_P2",
+      "modelledOn": "know-2"
+    }
+  },
+  "statement": {
+    "content": "ABC مثلث متقايس الأضلاع مركزه O (OA = OB = OC)، ورؤوسه A و B و C بهذا الترتيب عكس اتجاه عقارب الساعة، و $\\widehat{AOB} = \\widehat{BOC} = \\widehat{COA} = 120^\\circ$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          0,
+          2
+        ],
+        "B": [
+          -1.7321,
+          -1
+        ],
+        "C": [
+          1.7321,
+          -1
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "A"
+        ],
+        {
+          "from": "O",
+          "to": "A",
+          "dashed": true
+        },
+        {
+          "from": "O",
+          "to": "B",
+          "dashed": true
+        },
+        {
+          "from": "O",
+          "to": "C",
+          "dashed": true
+        }
+      ],
+      "ariaLabel": "مثلث متقايس الأضلاع ABC مركزه O ورؤوسه بهذا الترتيب عكس اتجاه عقارب الساعة",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "صورة A بالدوران الذي مركزه O وزاويته $120^\\circ$ في الاتجاه المباشر هي:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "C",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ITTIJAH"
+        },
+        {
+          "id": "B",
+          "content": "A",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ZAWIYA-UKHRA"
+        },
+        {
+          "id": "C",
+          "content": "B",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "OA = OB = OC."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اتبع ترتيب الرؤوس عكس عقارب الساعة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الرأس الموالي بزاوية الدوران."
+        }
+      ],
+      "feedback": {
+        "correct": "OB = OA و $\\widehat{AOB} = 120^\\circ$ عكس عقارب الساعة: B.",
+        "incorrect": "الاتجاه المباشر يتبع ترتيب الرؤوس هنا."
+      },
+      "difficulty": 2
+    },
+    {
+      "id": "q2",
+      "statement": "صورة A بالدوران الذي مركزه O وزاويته $120^\\circ$ في الاتجاه غير المباشر هي:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "C",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "B",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ITTIJAH"
+        },
+        {
+          "id": "C",
+          "content": "O",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MARKAZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نفس الزاوية في الاتجاه الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الاتجاه المباشر هو عكس اتجاه حركة عقارب الساعة ↺، وغير المباشر في اتجاهها ↻."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الرأس السابق."
+        }
+      ],
+      "feedback": {
+        "correct": "مع عقارب الساعة: من A إلى C.",
+        "incorrect": "الاتجاه غير المباشر يعكس ترتيب الرؤوس."
+      },
+      "difficulty": 2
+    }
+  ]
+}

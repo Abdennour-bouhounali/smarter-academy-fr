@@ -1,0 +1,150 @@
+{
+  "id": "ex-4am-majdulat-ihsaiya-l2-005",
+  "lessonCode": "majdulat-ihsaiya",
+  "level": 2,
+  "metadata": {
+    "title": "أمطار سنة بمحطة سكيكدة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "مجال",
+      "مدى"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_majdulat-ihsaiya_P1",
+      "modelledOn": "ex-7",
+      "adaptedFrom": "ex-4am-majdulat-ihsaiya-l2-005"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "حجزت ريم المهتمّة بالعلوم في السطر الأول من مجدول، بدءا من الخلية A1 ، كمية الأمطار (بالمليمتر) المسجّلة في كل شهر من أشهر السنة بمحطة أرصاد سكيكدة، قيمة في كل خلية: 98 ، 75 ، 70 ، 55 ، 30 ، 12 ، 3 ، 6 ، 34 ، 80 ، 102 ، 115 ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن المجال الذي تشغله هذه القيم.",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "⁦A1:M1⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MAJAL-KHALIYA"
+        },
+        {
+          "id": "B",
+          "content": "⁦A1:A12⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MAJAL-KHALIYA"
+        },
+        {
+          "id": "C",
+          "content": "⁦A1:L1⁩",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "⁦A1:K1⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MAJAL-KHALIYA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المجال يُكتب: الخلية الأولى ثم « ⁦:⁩ » ثم الخلية الأخيرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حدّد الخلية التي فيها أول قيمة والخلية التي فيها آخر قيمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تُدخل في المجال خلية عنوان، ولا تنس آخر خلية."
+        }
+      ],
+      "feedback": {
+        "correct": "اثنتا عشرة قيمة في السطر 1 من العمود A إلى العمود الثاني عشر L .",
+        "incorrect": "المجال يبدأ بخلية أول قيمة وينتهي بخلية آخر قيمة، ولا يضمّ خلايا العناوين."
+      },
+      "solution": {
+        "lines": [
+          "الأعمدة الاثنا عشر الأولى هي A ، B ، C ، D ، E ، F ، G ، H ، I ، J ، K ، L .",
+          "القيم في السطر 1 من A1 إلى L1 : المجال ⁦A1:L1⁩ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب العدد الذي يُظهره الدستور ⁦=MAX(A1:L1)-MIN(A1:L1)⁩ .",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "112",
+      "misconceptionSignatures": [
+        {
+          "value": "115",
+          "id": "MISC-IHSA-MADA-AKBAR-QIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MAX(…)-MIN(…)⁩ يحسب مدى القيم: أكبر قيمة ناقص أصغر قيمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر قيمة وأصغر قيمة في المجال ⁦A1:L1⁩."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح أصغر قيمة من أكبر قيمة، ولا تكتف بأكبر قيمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$115 - 3 = 112$ .",
+        "incorrect": "المدى فرق: أكبر قيمة في المجال ناقص أصغر قيمة فيه، والدستور يحسب هذا الفرق."
+      },
+      "solution": {
+        "lines": [
+          "أكبر قيمة في المجال ⁦A1:L1⁩: 115 ، وأصغر قيمة: 3 .",
+          "$115 - 3 = 112$",
+          "إذن يُظهر الدستور العدد 112 ."
+        ],
+        "result": "112"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

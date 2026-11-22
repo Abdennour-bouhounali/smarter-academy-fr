@@ -1,0 +1,139 @@
+{
+  "id": "ex-4am-hasiba-muthallathiya-l1-007",
+  "lessonCode": "hasiba-muthallathiya",
+  "level": 1,
+  "metadata": {
+    "title": "ظل 45° ثم جيب تمام 62°",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الظل",
+      "جيب التمام"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hasiba-muthallathiya_P1",
+      "modelledOn": "act-4",
+      "adaptedFrom": "ex-4am-hasiba-muthallathiya-l1-007"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "حاسبة علمية مبرمجة بالدرجة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نضغط ⁦ON tan 45 =⁩ . ما العدد الذي يظهر على الشاشة؟",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد كما يظهر على الشاشة",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "1.619775191",
+          "id": "MISC-MUTH-HASIBA-RAD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق أن الحاسبة مبرمجة بالدرجة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اللمسة المباشرة ⁦tan⁩ ثم ⁦45⁩ ثم ⁦=⁩."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan 45^{\\circ} = 1$ (قيمة مضبوطة).",
+        "incorrect": "بحاسبة مبرمجة بالدرجة تعطي اللمسة المباشرة ظل الزاوية؛ تحقّق من وضع الدرجة."
+      },
+      "solution": {
+        "lines": [
+          "الحاسبة مبرمجة بالدرجة: ⁦ON tan 45 =⁩ يظهر على الشاشة $1$ ."
+        ],
+        "result": "\\tan 45^{\\circ} = 1"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كاميرا درون تميل بزاوية $62^{\\circ}$ عن الأفق. احسب $\\cos 62^{\\circ}$ بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري مدوّر إلى 0,01",
+      "expectedAnswer": "0.47",
+      "misconceptionSignatures": [
+        {
+          "value": "0.46",
+          "id": "MISC-MUTH-TADWIR-BATR"
+        },
+        {
+          "value": "0.67",
+          "id": "MISC-MUTH-HASIBA-RAD"
+        },
+        {
+          "value": "0.88",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق أن الحاسبة مبرمجة بالدرجة: الحرف ⁦D⁩ في أعلى الشاشة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اللمسة المباشرة: ⁦cos⁩ ثم قيس الزاوية ثم ⁦=⁩ (دون ⁦2nd⁩)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتدوير إلى الجزء من 100: انظر إلى الرقم الموالي؛ إذا كان 5 أو أكبر نضيف 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\cos 62^{\\circ} = 0{,}4694715628 \\approx 0{,}47$ .",
+        "incorrect": "احسب باللمسة المباشرة والحاسبة مبرمجة بالدرجة، ثم دوّر (لا تبتر) إلى الجزء من 100."
+      },
+      "solution": {
+        "lines": [
+          "الحاسبة مبرمجة بالدرجة: ⁦ON cos 62 =⁩ يظهر على الشاشة $0{,}4694715628$ .",
+          "الرقم الذي يلي رقم الأجزاء من 100 هو 9، وهو أكبر من 5: نضيف 1 إلى رقم الأجزاء من 100."
+        ],
+        "result": "\\cos 62^{\\circ} \\approx 0{,}47"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

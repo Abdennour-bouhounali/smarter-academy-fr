@@ -1,0 +1,262 @@
+{
+  "id": "ex-4am-tanasub-taghayyurat-l3-010",
+  "lessonCode": "tanasub-taghayyurat",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2016 — نقط ليست في استقامية",
+    "estimatedMinutes": 8,
+    "tags": [
+      "نقطتان من التمثيل",
+      "تعيين دالة تآلفية",
+      "استقامية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tanasub-taghayyurat_P2",
+      "modelledOn": "BEM 2016 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "$f$ دالة تآلفية تمثيلها البياني في مستو منسوب إلى معلم متعامد و متجانس $(O , \\vec{i} , \\vec{j})$ يشمل النقطتين $A(-2 ; -7)$ و $B(3 ; 3)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "بيّن أن العبارة الجبرية للدالة التآلفية $f$ هي: $f(x) = 2x - 3$ .",
+      "statement": "احسب العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-TAGHAYYUR-BIDUN-QISMA"
+        },
+        {
+          "value": "-2",
+          "id": "MISC-TAGHAYYUR-TARTIB"
+        },
+        {
+          "value": "0,5",
+          "id": "MISC-BAYANI-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خاصية تناسب التغيّرات: المعامل $a$ هو حاصل قسمة فرق الصورتين على فرق العددين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $\\dfrac{f(3) - f(-2)}{3 - (-2)}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح بالترتيب نفسه في البسط والمقام، وانتبه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{10}{5} = 2$ .",
+        "incorrect": "اقسم فرق الصورتين على فرق العددين، واطرح بالترتيب نفسه في البسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "العبارة الجبرية للدالة التآلفية $f$ هي: $f(x) = ax + b$ .",
+          "إيجاد العدد $a$ (خاصية تناسب التغيّرات):",
+          "$a = \\dfrac{f(x_2) - f(x_1)}{x_2 - x_1}$",
+          "$a = \\dfrac{3 - (-7)}{3 - (-2)}$",
+          "$a = \\dfrac{10}{5}$",
+          "$a = 2$"
+        ],
+        "result": "a = 2"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "احسب العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-TAGHAYYUR-B-NISBA"
+        },
+        {
+          "value": "2",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$f(3) = 3$ و $f(x) = ax + b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $a$ بقيمته و $x$ بالعدد $3$ ، ثم حلّ المعادلة التي مجهولها $b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$b = 3 - 6 = -3$ .",
+        "incorrect": "بعد حساب $a$ : $b = f(x_1) - a x_1$ ، وليس حاصل قسمة الصورة على العدد."
+      },
+      "solution": {
+        "lines": [
+          "إيجاد العدد $b$ (الترتيب إلى المبدأ):",
+          "لدينا: $f(3) = 3$",
+          "أي: $2 \\times 3 + b = 3$",
+          "$6 + b = 3$",
+          "$b = 3 - 6$",
+          "$b = -3$",
+          "ومنه العبارة الجبرية للدالة $f$ هي: $f(x) = 2x - 3$"
+        ],
+        "result": "f(x) = 2x - 3"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "لتكن النقطة $C(5 ; 8)$ من المستوي.",
+      "statement": "هل النقط $A$ ، $B$ ، $C$ على استقامة واحدة ؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAALUFI-NISYAN-B"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقط في استقامية إذا انتمت $C$ إلى المستقيم الذي يشمل $A$ و $B$ ، أي إلى التمثيل البياني للدالة $f$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب صورة فاصلة $C$ بالدالة $f$ وقارنها بترتيبها."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(5) = 7$ .",
+        "incorrect": "قارن $f(5)$ بترتيب النقطة $C$ ."
+      },
+      "solution": {
+        "lines": [
+          "النقط $A$ ، $B$ ، $C$ في استقامية معناه أن النقطة $C$ تنتمي إلى التمثيل البياني للدالة $f$ ، أي أن: $f(5) = 8$ .",
+          "$f(5) = 2 \\times 5 - 3$",
+          "$f(5) = 7$",
+          "$7 \\neq 8$ ، و منه النقط $A$ ، $B$ ، $C$ ليست في استقامية."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "جد العدد الذي صورته 12 بالدالة $f$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "7,5",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-TAALUFI-SABIQ-QISMA"
+        },
+        {
+          "value": "9",
+          "id": "MISC-TAALUFI-SABIQ-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة $f(x) = 12$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل الحدّ الثابت إلى الطرف الآخر أولا، ثم اقسم على المعامل."
+        }
+      ],
+      "feedback": {
+        "correct": "$2x = 15$ ، إذن $x = \\dfrac{15}{2}$ .",
+        "incorrect": "اطرح الحدّ الثابت من الطرفين أولا، ثم اقسم على المعامل."
+      },
+      "solution": {
+        "lines": [
+          "نحلّ المعادلة: $f(x) = 12$",
+          "$2x - 3 = 12$",
+          "$2x = 12 - (-3)$",
+          "$2x = 15$",
+          "$x = \\dfrac{15}{2}$",
+          "$x = 7{,}5$"
+        ],
+        "result": "x = 7{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

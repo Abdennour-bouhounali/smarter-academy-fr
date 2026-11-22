@@ -1,0 +1,257 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-amaliyat-tabiiya-ushriya-l1-010",
+  "lessonCode": "wadiya-idmajiya-amaliyat-tabiiya-ushriya",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — جمع وطرح، بسط جداء، اسم حاصل قسمة، تحليل مجموع",
+    "estimatedMinutes": 6,
+    "tags": [
+      "جمع وطرح",
+      "خطّ الكسر",
+      "تحليل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "سلاسل عمليات على أعداد طبيعية وعشرية: أجب عن الأسئلة الأربعة، ولا تنسَ أنّ كلّ سلسلة تُحسب بالترتيب الصحيح للعمليات."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب قيمة السلسلة $200 - 45 - 30 + 25$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "150",
+      "misconceptionSignatures": [
+        {
+          "value": "100",
+          "id": "MISC-SILSILA-ADDFIRST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين وخطّ الكسر يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$200 - 45 - 30 + 25 = 150$ .",
+        "incorrect": "في سلسلة جمع وطرح نحسب من اليسار نحو اليمين، فلا نجمع قبل أن نطرح."
+      },
+      "solution": {
+        "lines": [
+          "$A = 200 - 45 - 30 + 25$",
+          "$A = 155 - 30 + 25$",
+          "$A = 125 + 25$",
+          "$A = 150$"
+        ],
+        "result": "150"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب قيمة السلسلة $\\dfrac{35 + 7}{2 \\times 3}$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "45.5",
+          "id": "MISC-AQWAS-BARSPLIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين وخطّ الكسر يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{35 + 7}{2 \\times 3} = 7$ .",
+        "incorrect": "خطّ الكسر يقسم البسط كلّه على المقام كلّه، فنحسب البسط والمقام أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{35 + 7}{2 \\times 3}$",
+          "$A = \\dfrac{42}{6}$",
+          "$A = 7$"
+        ],
+        "result": "7"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما اسم السلسلة $[(8 + 2) \\times 5 - 6] \\div 4$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مجموع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-FIRSTOP"
+        },
+        {
+          "id": "B",
+          "content": "حاصل قسمة",
+          "isCorrect": true
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب مرحلة مرحلة وتتبّع آخر عملية بقيت لك."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع خطًّا تحت العملية التي تُنجز في الأخير."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العملية الأخيرة هي التي تسمّي السلسلة."
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة عبارة عن حاصل قسمة: آخر عملية تُنجز فيها هي القسمة.",
+        "incorrect": "لا تسمِّ السلسلة بأوّل عملية تُنجز ولا بأوّل رمز تراه: سمِّها بآخر عملية تُنجز فيها."
+      },
+      "solution": {
+        "lines": [
+          "$A = [(8 + 2) \\times 5 - 6] \\div 4$",
+          "$A = [10 \\times 5 - 6] \\div 4$",
+          "$A = [50 - 6] \\div 4$",
+          "$A = 44 \\div 4$",
+          "$A = 11$",
+          "آخر عملية تُنجز هي القسمة ، فالسلسلة عبارة عن حاصل قسمة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "أيّ سلسلة تساوي $7 \\times 15 + 7 \\times 5$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$7 \\times 15 \\times 5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-FACTORMULT"
+        },
+        {
+          "id": "B",
+          "content": "$7 \\times (15 + 5)$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$7 \\times (15 + 7)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-FACTORWRONG"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المطلوب جيّدًا: ما العملية التي تُنجز في الأخير، وما الذي يُحسب قبلها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ سلسلة مقترحة بالحساب أو بالقاعدة المناسبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الجواب هو السلسلة التي تترجم المطلوب وتعطي القيمة المنتظرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$7 \\times (15 + 5) = 140$ .",
+        "incorrect": "اختبر كلّ سلسلة بالحساب: الصحيحة هي التي تترجم المطلوب وتعطي القيمة المنتظرة، وانتبه إلى القوسين."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة الصحيحة: $7 \\times (15 + 5)$",
+          "$A = 7 \\times (15 + 5)$",
+          "$A = 7 \\times 20$",
+          "$A = 140$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

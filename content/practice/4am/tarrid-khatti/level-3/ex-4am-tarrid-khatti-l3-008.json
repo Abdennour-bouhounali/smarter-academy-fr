@@ -1,0 +1,170 @@
+{
+  "id": "ex-4am-tarrid-khatti-l3-008",
+  "lessonCode": "tarrid-khatti",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2025 — عدّاء في سباق 5 جويلية",
+    "estimatedMinutes": 8,
+    "tags": [
+      "سرعة ثابتة",
+      "نمذجة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tarrid-khatti_P3",
+      "modelledOn": "BEM 2025 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "بمناسبة عيد الاستقلال، شارك يونس في سباق للجري. يقطع يونس مسافة 9km في 45 دقيقة بسرعة ثابتة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما هي المدة (بالدقائق) التي يستغرقها يونس لقطع مسافة 6km بنفس السرعة؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدة بالدقائق",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "1,2",
+          "id": "MISC-TANASUB-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المدة متناسبة مع المسافة لأن السرعة ثابتة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب المدة اللازمة لقطع 1km أولا."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{45}{9} \\times 6 = 30$ دقيقة.",
+        "incorrect": "استعمل التناسب: كم دقيقة لكل كيلومتر؟"
+      },
+      "solution": {
+        "lines": [
+          "لقطع 1km يلزم $\\dfrac{45}{9} = 5$ دقائق.",
+          "لقطع 6km يلزم $5 \\times 6 = 30$ دقيقة."
+        ],
+        "result": "30min"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "نسمّي $d(t)$ المسافة (بـ km) التي يقطعها يونس بعد $t$ دقيقة. عبّر عن $d(t)$ بدلالة $t$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "0,2",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-TANASUB-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$d(45) = 9$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$a$ هو المسافة المقطوعة في دقيقة واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{9}{45} = 0{,}2$ ، إذن $d(t) = 0{,}2t$ .",
+        "incorrect": "المعامل هو المسافة على المدة (بالدقائق)."
+      },
+      "solution": {
+        "lines": [
+          "$d(45) = 9$ معناه $45a = 9$",
+          "$a = \\dfrac{9}{45} = 0{,}2$",
+          "إذن $d(t) = 0{,}2t$ ."
+        ],
+        "result": "d(t) = 0{,}2t"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما هي سرعة يونس بالكيلومتر في الساعة؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: السرعة بـ km/h",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "0,2",
+          "id": "MISC-MAQADIR-WIHDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في ساعة واحدة 60 دقيقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $d(60)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$d(60) = 0{,}2 \\times 60 = 12$ : سرعته 12km/h.",
+        "incorrect": "حوّل المدة إلى ساعات: 60 دقيقة في الساعة."
+      },
+      "solution": {
+        "lines": [
+          "$d(60) = 0{,}2 \\times 60 = 12$",
+          "يقطع يونس 12km في الساعة: سرعته 12km/h."
+        ],
+        "result": "12km/h"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

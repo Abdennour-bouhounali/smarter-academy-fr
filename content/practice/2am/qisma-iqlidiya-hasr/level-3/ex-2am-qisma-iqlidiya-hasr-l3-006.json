@@ -1,0 +1,240 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l3-006",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — حصر عددين",
+    "estimatedMinutes": 8,
+    "tags": [
+      "حصر",
+      "قابلية القسمة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-68",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العددين $M = 23{,}4 \\div 6$ و $N = 4752 \\div 36$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $M$.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "3.9",
+      "misconceptionSignatures": [
+        {
+          "value": "39",
+          "id": "MISC-HASR-HISAB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة العشرية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع الفاصلة في الحاصل عند تجاوز فاصلة المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$23{,}4 \\div 6 = 3{,}9$.",
+        "incorrect": "تحقّق: $6 \\times M$ يجب أن يساوي $23{,}4$."
+      },
+      "solution": {
+        "lines": [
+          "$6 \\times 3{,}9 = 23{,}4$",
+          "إذن $M = 3{,}9$."
+        ],
+        "result": "M = 3{,}9"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أحصر $M$ بين عددين طبيعيين متتاليين.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2 < M < 3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        },
+        {
+          "id": "B",
+          "content": "$4 < M < 5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        },
+        {
+          "id": "C",
+          "content": "$3 < M < 4$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل يساوي $3{,}9$: انظر إلى جزئه الصحيح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العددان الطبيعيان المتتاليان هما الجزء الصحيح والعدد الذي يليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 < 3{,}9 < 4$.",
+        "incorrect": "الحصر بين عددين طبيعيين متتاليين: الجزء الصحيح للحاصل والعدد الذي يليه."
+      },
+      "solution": {
+        "lines": [
+          "$M = 3{,}9$",
+          "$3 < 3{,}9 < 4$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل يقبل العدد 4752 القسمة على 36؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-HISAB"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 4752 على 36."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يقبل القسمة يعني: الباقي معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$4752 = 36 \\times 132$ والباقي معدوم.",
+        "incorrect": "انظر إلى باقي القسمة الإقليدية: هل هو معدوم؟"
+      },
+      "solution": {
+        "lines": [
+          "$4752 = 36 \\times 132 + 0$",
+          "الباقي معدوم، إذن 4752 يقبل القسمة على 36."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "اختر الكتابة الصحيحة للعدد $N$.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\frac{4752}{36} = 132$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$132 < \\frac{4752}{36} < 133$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-SIFR-SARIM"
+        },
+        {
+          "id": "C",
+          "content": "$131 < \\frac{4752}{36} < 132$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-SIFR-SARIM"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 4752 على 36."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من $36 \\times q \\le 4752 < 36 \\times (q + 1)$ نقسم الأطراف على 36."
+        }
+      ],
+      "feedback": {
+        "correct": "$4752 = 36 \\times 132$ والباقي معدوم، فـ $\\frac{4752}{36}$ عدد طبيعي.",
+        "incorrect": "احصر 4752 بين مضاعفين متتاليين للعدد 36 ثم اقسم على 36؛ وإذا كان الباقي معدومًا فحاصل القسمة عدد طبيعي."
+      },
+      "solution": {
+        "lines": [
+          "$4752 = 36 \\times 132 + 0$",
+          "الباقي معدوم: $4752 = 36 \\times 132$ ، إذن $\\frac{4752}{36} = 132$ عدد طبيعي."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-khattiya-l1-006",
+  "lessonCode": "wadiya-idmajiya-khattiya",
+  "level": 1,
+  "metadata": {
+    "title": "المعامل من جدول",
+    "estimatedMinutes": 4,
+    "tags": [
+      "جدول قيم",
+      "معامل"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 74,
+      "section": "الوضعيات",
+      "number": 6,
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-khattiya-l1-006"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "الجدول التالي هو جدول قيم دالة خطية $f$ :",
+    "table": {
+      "head": [
+        "$x$",
+        "$-5$",
+        "$25$",
+        "$10$"
+      ],
+      "rows": [
+        [
+          "$f(x)$",
+          "$2$",
+          "$-10$",
+          "$-4$"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن معامل الدالة $f$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-0,4",
+      "misconceptionSignatures": [
+        {
+          "value": "-5/2",
+          "id": "MISC-KHATTIYA-MUAMIL-MAQLUB"
+        },
+        {
+          "value": "0.4",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختر عمودا من الجدول: المعامل = الصورة ÷ العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق أن النسبة نفسها في كل الأعمدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{2}{-5} = -0{,}4$ ، وكذلك $\\dfrac{-10}{25}$ و $\\dfrac{-4}{10}$ .",
+        "incorrect": "اقسم السطر الثاني على السطر الأول (الصورة على العدد)."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2}{-5} = \\dfrac{-10}{25} = \\dfrac{-4}{10} = -0{,}4$",
+          "إذن $f(x) = -0{,}4x$ ."
+        ],
+        "result": "f(x) = -0{,}4x"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب صورة العدد $15$ بالدالة $f$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-6",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$f(15) = a \\times 15$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(15) = -0{,}4 \\times 15 = -6$ .",
+        "incorrect": "اضرب المعامل في 15 مع الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "$f(15) = -0{,}4 \\times 15 = -6$"
+        ],
+        "result": "f(15) = -6"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

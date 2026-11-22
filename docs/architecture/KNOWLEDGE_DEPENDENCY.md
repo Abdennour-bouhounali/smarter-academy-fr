@@ -13,7 +13,8 @@
 ## Le problème que ceci résout
 
 Une leçon peut être mathématiquement juste et pédagogiquement impossible. Exemple réel, corrigé
-depuis, dans `fonctions-3e` module 2 :
+depuis, dans `fonctions-3e` module 2 *(historique — leçon française supprimée le 2026-09-25 ;
+à lire dans l'historique git)* :
 
 ```text
 étape 1   « Que vaut f(6) ? »                    ← f(x) n'a jamais été introduit
@@ -35,7 +36,7 @@ Avant chaque demande, chaque connaissance requise est dans l'un de ces états :
 
 | État | Sens | Déclaration dans le code |
 | --- | --- | --- |
-| **A — acquis** | vient des années précédentes | `priorKnowledge: [...]` dans `lesson.config.js`, diagnostiqué par le module 0 |
+| **A — acquis** | vient des années précédentes **ou** d'une leçon antérieure de la même unité | `priorKnowledge: [...]` dans `lesson.config.js` (diagnostiqué par le module 0 quand la leçon en a un). **D'où vient-il dans le programme ?** Le réseau des الكفاءات le dit au grain du programme officiel : `reviewLinksForLesson(code)` (`LEARNING_NET.md`), affiché sous le résultat du module 0 (« راجع قبل أن تنطلق »). Les slugs `priorKnowledge` restent le vocabulaire de l'audit ; ils ne sont pas (encore) reliés aux items du réseau. |
 | **B — vient d'être enseigné** | posé juste avant, en position d'enseignement | `<KnowledgeBrick id variant="new">` plus haut dans le flux |
 | **C — juste à temps** | montré à l'instant parce que la demande l'exige | `<KnowledgeBrick variant="rappel">` |
 | **D — enrichissement** | signalé comme facultatif, jamais requis | `<KnowledgeBrick variant="enrichment">`, jamais dans un `requires` |
@@ -101,8 +102,14 @@ l'exemple anticipe un module ultérieur est signalé comme n'importe quelle expo
 priorKnowledge: ['abscisse', 'ordonnee', 'coordonnees', 'calcul-litteral'],
 ```
 
-Des ids du lexique, venus des années précédentes. Le module 0 doit les diagnostiquer — et **rien
-d'autre** : un diagnostic mesure les prérequis, il n'enseigne pas la matière de la leçon.
+Des ids de connaissances établies **soit** dans les années précédentes, **soit** dans une leçon
+antérieure de la même unité (ex. `qasim-adad-tabii` : `priorKnowledge: ['qisma-iqlidiya',
+'qawaid-qabiliyat-al-qisma']`). Les 9 leçons 4AM ont un module 0 depuis le 2026-09-30 ; il diagnostique ces prérequis — et **rien d'autre** : un
+diagnostic mesure les prérequis, il n'enseigne pas la matière de la leçon. Un `priorKnowledge`
+qu'aucune question de module 0 ne mesure lève `W_PRIOR_NOT_DIAGNOSED`, un avertissement `medium`
+(non bloquant, `high` seulement en `--strict`). L'audit lit les `questions` du module 0
+statiquement : un tableau construit par `.map()` lui est invisible, d'où des objets littéraux
+`{ ...prepQuestion(item), id, requires: [...] }` (LESSON_DEVELOPMENT_GUIDE §4).
 
 ### 2. `<KnowledgeBrick id>` — ce que la leçon établit
 
@@ -133,6 +140,63 @@ question, et comme clé sur les objets `QUESTIONS` (module 0) et `EPREUVES` (tes
 
 ---
 
+## « أتوقّع القاعدة » — l'élève écrit la règle AVANT de la lire (2026-10-06)
+
+**Décision du propriétaire, toutes les leçons, présentes et futures.** L'élève doit
+TROUVER la règle lui-même : après la manipulation et les questions guidées, avant
+qu'une règle ne s'affiche, il l'écrit avec ses mots ; dès qu'il a écrit un minimum,
+la règle complète apparaît, sa prédiction au-dessus pour comparer. **Rien n'est
+validé, noté ni envoyé** (stockage local de l'élève : `smarter_predictions_<leçon>`).
+
+**Où, sans rien écrire dans la leçon.** `KnowledgeBrick` l'applique d'office
+(`kit/PredictRule.jsx`, décision pure `kit/predictRule.js › shouldPredict`) :
+- seulement une brique `variant="new"` dont l'item est d'une sorte qu'on peut
+  CONCLURE : `concepts`, `regles`, `methodes`, `memoriser`, `formules` — jamais
+  `vocabulaire` (un nom ne se devine pas) ;
+- jamais pour un enseignant / administrateur (`freeNavigation`), jamais pour une
+  règle déjà acquise (module validé, ou établie ailleurs dans la page) ni déjà
+  prédite (la revisite rappelle « توقّعك » et ne redemande rien) ;
+- pendant l'attente, NI titre, NI `lead`, NI corps (ils diraient la règle), et la
+  carte ne reçoit l'item qu'à la révélation (`unlockItem` différé) ;
+- ce qui SUIT la brique dans le même conteneur (la question d'application) reste
+  masqué (`.sa-predict-pending ~ *`, `index.css`) : on ne répond pas avant d'avoir
+  vu la règle.
+
+**Le bouton** « أظهر القاعدة » s'active après `PREDICT_MIN_CHARS` (8) caractères
+écrits. **La zone** est `components/MathTextArea.jsx` (partagée avec la rédaction
+des مسائل) : RTL, calculs isolés en LTR au fil de la frappe (`isolateMath`), et une
+palette des **seuls symboles qu'utilise la règle**, déduits de son texte
+(`components/mathSymbols.js › symbolsFor` : titre, résumé, corps de l'item, ou la
+boîte du manuel enveloppée ; LaTeX `$…$` compris ; parenthèses de prose arabe
+ignorées ; les sigles PGCD / PPCM restent des mots, jamais éclatés en lettres P, G, C, D — corrigé le 2026-10-06). Une règle sans mathématiques n'a pas de palette.
+
+**Ce que l'auteur écrit (leçon nouvelle ou reprise) :**
+1. `predictPrompt` sur chaque item prédictible de `knowledge.jsx` — la question qui
+   fait conclure la règle à partir de ce que l'élève VIENT de faire (nombres de la
+   manipulation), sans donner la réponse. Sans lui, un texte générique s'affiche
+   (`predict.prompt`) : acceptable, jamais aussi bon.
+2. Une règle posée par un `TextbookBox kind="definition|property"` SANS brique
+   avant elle s'enveloppe : `<PredictRule id="<item>" prompt="…"><TextbookBox …/></PredictRule>`.
+   Une boîte qui ne fait que reformuler une règle déjà posée par une brique
+   antérieure, ou qui ne donne qu'un nom, reste telle quelle.
+3. **Jamais une boîte qui énonce la règle juste AVANT sa brique** (elle la
+   dévoilerait) : envelopper la boîte avec l'id de la brique — une seule
+   prédiction, puis boîte et brique, une seule « توقّعك ».
+   Même règle pour une QUESTION dont la bonne option énonce la règle (« ما هو معيار التصنيف؟ ») :
+   `<PredictRule id="<item>"><TapQuestion …/></PredictRule>` — l'élève écrit d'abord, puis la question et la
+   brique suivent, une seule « توقّعك » (`natiqa-ghayr-natiqa`, module 1, 2026-10-06).
+4. `predict={false}` (brique, item, PredictRule) quand prédire n'a pas de sens ;
+   `predict` (vrai) pour forcer un vocabulaire qu'on peut raisonnablement conclure.
+
+**Couverture au 2026-10-06 :** ~417 briques nouvelles (toutes les leçons) par
+défaut ; 12 boîtes du manuel enveloppées après audit des 34 boîtes sans brique
+(22 reformulent une règle déjà posée ou ne donnent qu'un nom) ; prompts précis
+écrits pour `qasim-adad-tabii` (prototype) et les 12 boîtes — les autres leçons
+utilisent le texte générique jusqu'à ce que leurs `predictPrompt` soient écrits.
+Suivi : `npm run audit:predict` (15 / 410 au 2026-10-06 avant la reprise ; 296 / 296 le 2026-10-07 : toutes les règles demandées ont leur prompt, et `check:lessons` exécute `audit-predict-prompts.mjs --strict`). **Écrire les prompts :
+[`../lessons/PREDICT_PROMPT_GUIDE.md`](../lessons/PREDICT_PROMPT_GUIDE.md).**
+Vérification navigateur : `apps/web/e2e/lesson-kit/predict-rule.mjs`.
+
 ## L'audit
 
 ```bash
@@ -140,7 +204,7 @@ npm run audit:knowledge            # rapport complet + contrats JSON
 npm run audit:knowledge:gate       # sortie 1 si un contrat est violé
 npm run check:lessons              # validate:lessons && audit:knowledge:gate
 
-node scripts/audit-knowledge-dependencies.mjs --lesson fonctions-3e --strict
+node scripts/audit-knowledge-dependencies.mjs --lesson qasim-adad-tabii --strict
 ```
 
 ### Contrôle 1 — le contrat déclaré (exact, bloquant)
@@ -156,11 +220,16 @@ node scripts/audit-knowledge-dependencies.mjs --lesson fonctions-3e --strict
 | `E_PRIOR_KNOWLEDGE_NOT_LITERAL` | `priorKnowledge` n'est pas un tableau littéral |
 | `E_QUESTION_WITHOUT_REQUIRES` | *(--strict)* une question ne déclare pas ses dépendances |
 | `W_PRIOR_NOT_DIAGNOSED` | un prérequis déclaré qu'aucune question du module 0 ne mesure |
-| `W_BRICK_MODULE_MISMATCH` | la brique et `knowledge.jsx` ne s'accordent pas sur le module |
+| `W_BRICK_MODULE_MISMATCH` | la brique et `knowledge.jsx` ne s'accordent pas sur le module (ignoré pour une brique `variant="rappel"`, posée exprès hors de son module d'origine) |
 | `W_ITEM_WITHOUT_BRICK` | un item n'apparaît que dans l'« À retenir » de fin de module |
 | `W_UNPARSEABLE_STEPS` | les étapes ne se résolvent pas en tableau littéral : le module est invisible à l'audit |
 
 ### Contrôle 2 — le lexique (détecteur, non juge)
+
+> **Limite actuelle :** `scripts/audit/lexicon.json` ne contient **que des termes français**. Pour
+> les leçons arabes de l'unité 4AM, le contrôle lexical ne trouve donc rien — son silence n'est
+> pas une preuve. Un lexique arabe : *Not yet implemented*. Pour le 4AM, seul le contrôle 1 (le
+> contrat déclaré) et la lecture manuelle comptent.
 
 `scripts/audit/lexicon.json` liste des termes et notations mathématiques avec le niveau où ils
 deviennent la matière de l'élève. Un terme dont la **première** apparition est une demande ou un
@@ -187,9 +256,9 @@ faire taire un constat.
 
 ### Sorties
 
-- `docs/reports/KNOWLEDGE_DEPENDENCY_AUDIT.md` — le rapport : 6e, 3e et 2nde dans le périmètre
-  courant, 4e relevée hors périmètre. (La 6e y est entrée le 2026-09-07 ; voir
-  `KNOWLEDGE_MAP_REFONTE_6E.md`.)
+- `docs/reports/KNOWLEDGE_DEPENDENCY_AUDIT.md` — le rapport, régénéré par `npm run audit:knowledge` ;
+  son périmètre courant est celui des classes actives (`ACTIVE_GRADE_IDS` de
+  `packages/core/curriculum/activeGrades.js`), soit aujourd'hui les 9 leçons 4AM.
 - `docs/reports/knowledge-contracts/<niveau>_<leçon>.json` — le contrat par leçon : connaissances
   introduites, et pour chaque question ses `requires`, l'état de chacun (`prior`,
   `established@M2`, `later@M5`, `missing`, `enrichment`) et `pedagogicallyValid`.
@@ -217,16 +286,20 @@ notation.
 
 ## Exemple de référence
 
-`fonctions-3e` module 2 est l'implémentation de référence :
+`apps/web/src/lessons/moyen/4am/ansab_al_aadad_wal_hisab/aadad-tabiiya-natiqa/qasim-mushtarak-akbar/modules/Module02Maarif.jsx`
+est l'implémentation de référence (chaque question déclare `requires={[…]}`) :
 
 ```text
-étape 1  manipuler la machine  →  brique « image »        →  essai « image de 3 »
-étape 2                           brique « notation-fx »  →  essai « f(6) »
-étape 3  remonter la machine   →  brique « antécédent »   →  essai « antécédent de 11 »
-étape 4  les trois mots ensemble (la question d'origine, désormais légitime)
-étape 5  deux entrées, une sortie → brique « à mémoriser »
+module 1  ranger les livres (manipulation)  →  brique « qasim-baqi » (après le geste)
+module 2
+étape 1  manipulation  →  essai « تعريف بالباقي »            requires qasim-baqi (établi au module 1)
+étape 2  brique « qasim-jidaa »  →  essai « تعريف بالجداء »  requires qasim-jidaa
+étape 3  briques « siyagh-mutakafia », « wahid-wa-nafsuh »  →  essai  requires siyagh-mutakafia
 ```
 
-Vérifié par `apps/web/e2e/lesson-kit/3e-fonctions-carte.mjs` : la brique n'existe pas avant le
-geste, la carte grandit à l'instant où la brique paraît — sans attendre la fin du module —, et
-aucune connaissance d'un module ultérieur ne fuite.
+Vérifié par `npm run audit:knowledge:gate` (sortie 1 si un contrat est violé ; inclus dans
+`npm run check:lessons`). Le moment d'apparition de la brique sur la carte est couvert par les
+tests vitest de `apps/web/src/lessons/common/knowledge/*.test.js` ; aucune suite e2e 4AM ne le
+vérifie dans le navigateur (`4am-aadad-tabiiya-natiqa.mjs` garde la page d'unité et le laboratoire
+d'ouverture). *(Historique : l'ancienne référence `fonctions-3e` module 2
+et sa suite `3e-fonctions-carte.mjs` ont été supprimées le 2026-09-25.)*

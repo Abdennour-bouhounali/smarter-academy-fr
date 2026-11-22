@@ -1,0 +1,121 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l5-002",
+  "lessonCode": "mafhum-dawaran",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — ساعة البريد المركزي",
+    "estimatedMinutes": 4,
+    "tags": [
+      "الدوران",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mafhum-dawaran_P1",
+      "modelledOn": "ex-1"
+    }
+  },
+  "statement": {
+    "content": "عقرب الدقائق في ساعة البريد المركزي بالجزائر العاصمة يدور 35 دقيقة انطلاقا من الرقم 12."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما هي زاوية هذا الدوران حول محور الساعة (بالدرجات)؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجات)",
+      "expectedAnswer": "210",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-ZAWIYA-UKHRA",
+          "value": "35"
+        },
+        {
+          "id": "MISC-DAWARAN-MUKAMMIL",
+          "value": "150"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في 60 دقيقة دورة كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كم درجة في دقيقة واحدة؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب في عدد الدقائق."
+        }
+      ],
+      "feedback": {
+        "correct": "$35 \\times 6^\\circ = 210^\\circ$ في الاتجاه غير المباشر.",
+        "incorrect": "كل دقيقة $6^\\circ$ لأن الدورة 60 دقيقة."
+      },
+      "difficulty": 4
+    },
+    {
+      "id": "q2",
+      "statement": "هذا الدوران هو نفسه الدوران حول محور الساعة الذي زاويته:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$210^\\circ$ في الاتجاه المباشر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MUKAMMIL"
+        },
+        {
+          "id": "B",
+          "content": "$150^\\circ$ في الاتجاه غير المباشر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MUKAMMIL"
+        },
+        {
+          "id": "C",
+          "content": "$150^\\circ$ في الاتجاه المباشر",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العقرب يدور في الاتجاه غير المباشر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما ينقص لتكتمل الدورة؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الطريق الآخر في الاتجاه الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$360^\\circ - 210^\\circ = 150^\\circ$ في الاتجاه المباشر.",
+        "incorrect": "α في اتجاه = (360° − α) في الاتجاه الآخر."
+      },
+      "difficulty": 4
+    }
+  ]
+}

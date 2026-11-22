@@ -1,0 +1,160 @@
+{
+  "id": "ex-4am-insihab-shuaa-l1-001",
+  "lessonCode": "insihab-shuaa",
+  "level": 1,
+  "metadata": {
+    "title": "تمرين 2 — على المرصوفة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "تساوي شعاعين",
+      "المرصوفة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-2",
+      "page": 134,
+      "section": "الأشعة والمساواة الشعاعية",
+      "number": 2
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 134): لاحظ الشكل.",
+    "figure": {
+      "points": {
+        "A": [
+          1,
+          -2
+        ],
+        "B": [
+          5,
+          -2
+        ],
+        "E": [
+          7,
+          -3
+        ],
+        "C": [
+          2,
+          -5
+        ],
+        "D": [
+          6,
+          -5
+        ],
+        "F": [
+          8,
+          -6
+        ]
+      },
+      "grid": true,
+      "ariaLabel": "ورقة مرصوفة عليها النقط A و B و E و C و D و F على عقد الرصف",
+      "maxWidth": 420
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "هل المساواة $\\overrightarrow{AC}$ = $\\overrightarrow{BD}$ صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "4am_insihab-shuaa_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيحة: من A إلى C ومن B إلى D نفس الحركة (مربع يمينا وثلاثة نحو الأسفل)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خاطئة: النقطتان A و B مختلفتان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MABDA"
+        },
+        {
+          "id": "C",
+          "content": "خاطئة: الطولان AC و BD مختلفان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TUL-FAQAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "على المرصوفة، عُدّ المربعات أفقيا ثم شاقوليا لكل سهم، مع الجهة (يمين / يسار، أعلى / أسفل)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "سهمان متساويان يعني نفس العدّ ونفس الجهة في الاتجاهين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب لكل سهم «كذا يمينا وكذا نحو الأعلى» ثم قارن."
+        }
+      ],
+      "feedback": {
+        "correct": "من A إلى C ومن B إلى D: مربع يمينا وثلاثة نحو الأسفل، فـ $\\overrightarrow{AC}$ = $\\overrightarrow{BD}$ .",
+        "incorrect": "عُدّ حركة كل سهم: شعاعان متساويان لا يحتاجان نفس المبدأ."
+      },
+      "difficulty": 1
+    },
+    {
+      "id": "q2",
+      "statement": "هل المساواة $\\overrightarrow{AE}$ = $\\overrightarrow{CF}$ صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "4am_insihab-shuaa_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيحة: ستة مربعات يمينا ومربع نحو الأسفل في السهمين",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خاطئة: السهمان ليسا على مستقيم واحد",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MANHA-MUSTAQIM"
+        },
+        {
+          "id": "C",
+          "content": "خاطئة: $\\overrightarrow{AE}$ = $\\overrightarrow{FC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "على المرصوفة، عُدّ المربعات أفقيا ثم شاقوليا لكل سهم، مع الجهة (يمين / يسار، أعلى / أسفل)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "سهمان متساويان يعني نفس العدّ ونفس الجهة في الاتجاهين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب لكل سهم «كذا يمينا وكذا نحو الأعلى» ثم قارن."
+        }
+      ],
+      "feedback": {
+        "correct": "ACFE متوازي أضلاع: $\\overrightarrow{AE}$ = $\\overrightarrow{CF}$ .",
+        "incorrect": "نفس المنحى يعني مستقيمين متوازيين، لا مستقيما واحدا."
+      },
+      "difficulty": 1
+    }
+  ]
+}

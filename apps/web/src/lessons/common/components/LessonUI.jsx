@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CheckCircle2, XCircle, Lightbulb, Info, Timer as TimerIcon, Volume2, VolumeX, Flame } from 'lucide-react';
+import { CheckCircle2, XCircle, Lightbulb, Info, Timer as TimerIcon, Volume2, VolumeX, Flame, BookOpen } from 'lucide-react';
 import { useLessonChrome } from '../hooks/useLessonChrome';
+import MathLabel from './MathLabel';
+import { withoutBookRef } from '../textbook/bookRef';
 
 /**
  * Briques d'interface partagées par les leçons Smarter Academy.
@@ -30,22 +33,22 @@ const FEEDBACK_TONES = {
   ok: {
     wrap: 'bg-emerald-50 border-emerald-200 text-emerald-800',
     Icon: CheckCircle2,
-    prefix: 'Correct',
+    prefixKey: 'feedback.correct',
   },
   ko: {
     wrap: 'bg-rose-50 border-rose-200 text-rose-800',
     Icon: XCircle,
-    prefix: 'À revoir',
+    prefixKey: 'feedback.toReview',
   },
   hint: {
     wrap: 'bg-amber-50 border-amber-200 text-amber-900',
     Icon: Lightbulb,
-    prefix: 'Indice',
+    prefixKey: 'feedback.hint',
   },
   info: {
     wrap: 'bg-slate-50 border-slate-200 text-slate-700',
     Icon: Info,
-    prefix: 'Info',
+    prefixKey: 'feedback.info',
   },
 };
 
@@ -53,18 +56,19 @@ const FEEDBACK_TONES = {
  * Le retour ne repose jamais sur la seule couleur : icône + mot-clé explicite.
  */
 export function Feedback({ tone = 'info', children, className = '' }) {
-  const t = FEEDBACK_TONES[tone] || FEEDBACK_TONES.info;
-  const { Icon } = t;
+  const { t } = useTranslation('lesson');
+  const toneSpec = FEEDBACK_TONES[tone] || FEEDBACK_TONES.info;
+  const { Icon } = toneSpec;
   return (
     <motion.div
       initial={{ opacity: 0, y: 6 }}
       animate={{ opacity: 1, y: 0 }}
       role="status"
-      className={`flex items-start gap-2.5 rounded-xl border px-4 py-3 text-sm leading-relaxed ${t.wrap} ${className}`}
+      className={`flex items-start gap-2.5 rounded-xl border px-4 py-3 text-sm leading-relaxed ${toneSpec.wrap} ${className}`}
     >
       <Icon className="w-4 h-4 mt-0.5 shrink-0" aria-hidden="true" />
       <div>
-        <span className="sr-only">{t.prefix} : </span>
+        <span className="sr-only">{t(toneSpec.prefixKey)} : </span>
         {children}
       </div>
     </motion.div>
@@ -81,12 +85,16 @@ export function ChoiceGrid({
   cols = 2,
   disabled = false,
   renderOption,
+  order,          // optionnel : ordre d'AFFICHAGE (indices d'options) ; `selected`,
+                  // `correctIndex` et `onSelect` restent dans l'indexation de l'auteur
 }) {
-  const grid = cols === 1 ? 'grid-cols-1' : cols === 3 ? 'grid-cols-1 sm:grid-cols-3' : 'grid-cols-1 sm:grid-cols-2';
+  const grid = cols === 1 ? 'grid-cols-1' : cols === 3 ? 'grid-cols-3' : 'grid-cols-2';
+  const shown = order && order.length === options.length ? order : options.map((_, i) => i);
 
   return (
     <div className={`grid ${grid} gap-2`} role="group">
-      {options.map((opt, i) => {
+      {shown.map((i) => {
+        const opt = options[i];
         const isSel = selected === i;
         const isRight = revealed && i === correctIndex;
         const isWrongPick = revealed && isSel && i !== correctIndex;
@@ -108,12 +116,12 @@ export function ChoiceGrid({
             onClick={() => !revealed && !disabled && onSelect(i)}
             disabled={revealed || disabled}
             aria-pressed={isSel}
-            className={`text-left px-4 py-3 rounded-xl border-2 text-sm font-medium transition-all min-h-[48px] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${tone}`}
+            className={`text-start px-4 py-3 rounded-xl border-2 text-sm font-medium transition-all min-h-[48px] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${tone}`}
           >
             <span className="flex items-center gap-2">
               {isRight && <CheckCircle2 className="w-4 h-4 shrink-0" aria-hidden="true" />}
               {isWrongPick && <XCircle className="w-4 h-4 shrink-0" aria-hidden="true" />}
-              <span>{renderOption ? renderOption(opt) : opt}</span>
+              <span>{renderOption ? renderOption(opt) : (typeof opt === 'string' ? <MathLabel>{opt}</MathLabel> : opt)}</span>
             </span>
           </button>
         );
@@ -123,7 +131,8 @@ export function ChoiceGrid({
 }
 
 /* ── Bouton de validation ─────────────────────────────────────────── */
-export function ValidateButton({ onClick, disabled, children = 'Valider', tone = 'blue' }) {
+export function ValidateButton({ onClick, disabled, children, tone = 'blue' }) {
+  const { t } = useTranslation('lesson');
   const tones = {
     blue: 'bg-blue-600 hover:bg-blue-700',
     indigo: 'bg-indigo-600 hover:bg-indigo-700',
@@ -142,13 +151,14 @@ export function ValidateButton({ onClick, disabled, children = 'Valider', tone =
         disabled ? 'bg-slate-200 text-slate-400 cursor-not-allowed shadow-none' : tones[tone]
       }`}
     >
-      {children}
+      {children ?? t('question.validate')}
     </button>
   );
 }
 
 /* ── Étape d'un module ────────────────────────────────────────────── */
-export function StepCard({ num, title, subtitle, done, locked, children, tone = 'slate' }) {
+export function StepCard({ num, title, subtitle, done, locked, children, tone = 'slate', collapsible = false, collapsed = false, onToggle }) {
+  const { t } = useTranslation('lesson');
   const badgeTone = done
     ? 'bg-emerald-500 text-white'
     : locked
@@ -168,7 +178,7 @@ export function StepCard({ num, title, subtitle, done, locked, children, tone = 
           {num}
         </span>
         <div className="text-sm text-slate-400">
-          {title} — <span className="font-mono text-xs">termine l'étape précédente</span>
+          <MathLabel>{title}</MathLabel> — <span className="font-mono text-xs">{t('step.finishPreviousStep')}</span>
         </div>
       </div>
     );
@@ -179,7 +189,8 @@ export function StepCard({ num, title, subtitle, done, locked, children, tone = 
       id={anchorId}
       initial={{ opacity: 0, y: 14 }}
       animate={{ opacity: 1, y: 0 }}
-      className={`border-2 rounded-2xl p-5 sm:p-6 space-y-4 scroll-mt-24 ${
+      data-step-collapsed={collapsible ? String(collapsed) : undefined}
+      className={`border-2 rounded-2xl space-y-4 scroll-mt-24 ${collapsed ? 'px-5 py-3' : 'p-6'} ${
         done ? 'border-emerald-300 bg-emerald-50/40' : 'border-slate-200 bg-white'
       }`}
     >
@@ -187,33 +198,127 @@ export function StepCard({ num, title, subtitle, done, locked, children, tone = 
         <span className={`w-8 h-8 rounded-lg ${badgeTone} font-mono font-bold text-xs flex items-center justify-center shrink-0`}>
           {done ? '✓' : num}
         </span>
-        <div>
-          <h3 className="font-space font-bold text-slate-800 leading-snug">{title}</h3>
-          {subtitle && <p className="text-xs sm:text-sm text-slate-500 mt-0.5 leading-relaxed">{subtitle}</p>}
+        <div className="flex-1">
+          <h3 className="font-space font-bold text-slate-800 leading-snug"><MathLabel>{title}</MathLabel></h3>
+          {subtitle && !collapsed && <p className="text-slate-500 mt-0.5 leading-relaxed text-sm"><MathLabel>{subtitle}</MathLabel></p>}
         </div>
+        {collapsible && collapsed && (
+          <button type="button" onClick={onToggle} aria-expanded={false} className="min-h-[44px] shrink-0 rounded-lg px-3 text-sm font-bold text-indigo-600 hover:bg-indigo-50">
+            {t('focus.reopen')} <span aria-hidden="true">▾</span>
+          </button>
+        )}
       </div>
-      {children}
+      {/* Repliable (regard « focus ») : le contenu reste MONTÉ dans le même nœud — replier ne remet rien à zéro. */}
+      {collapsible ? <div className="space-y-4" hidden={collapsed}>{children}</div> : children}
     </motion.section>
   );
 }
 
-/* ── Bandeau narratif ─────────────────────────────────────────────── */
-export function MissionBrief({ tag, title, children, tone = 'slate' }) {
-  const bg =
-    tone === 'amber'
-      ? 'bg-gradient-to-br from-amber-900 to-amber-700'
-      : tone === 'indigo'
-      ? 'bg-gradient-to-br from-indigo-700 to-violet-700'
-      : 'bg-slate-900';
-  const accent = tone === 'amber' ? 'text-amber-300' : tone === 'indigo' ? 'text-indigo-200' : 'text-amber-400';
-  const body = tone === 'amber' ? 'text-amber-100' : tone === 'indigo' ? 'text-indigo-100' : 'text-slate-300';
+/* ── La CARTE D'ACTIVITÉ d'un module ──────────────────────────────── */
+
+/**
+ * Les TEINTES de la carte. Une seule couleur d'accent par teinte, posée sur
+ * un fond clair : la carte doit être lisible avant d'être décorative, et le
+ * texte mathématique doit rester la chose la plus contrastée de l'écran.
+ *
+ * Les huit teintes existantes sont toutes servies. Avant, `MissionBrief` n'en
+ * connaissait que trois et rendait les cinq autres en gris ardoise sans le
+ * dire : la moitié des modules de l'unité demandaient une couleur qu'ils
+ * n'obtenaient pas.
+ */
+const BRIEF_TONES = {
+  indigo:  { ring: 'border-indigo-200',  wash: 'from-indigo-50',  accent: 'text-indigo-700',  chip: 'bg-indigo-600',  glyph: 'text-indigo-200' },
+  violet:  { ring: 'border-violet-200',  wash: 'from-violet-50',  accent: 'text-violet-700',  chip: 'bg-violet-600',  glyph: 'text-violet-200' },
+  amber:   { ring: 'border-amber-200',   wash: 'from-amber-50',   accent: 'text-amber-800',   chip: 'bg-amber-600',   glyph: 'text-amber-200' },
+  emerald: { ring: 'border-emerald-200', wash: 'from-emerald-50', accent: 'text-emerald-700', chip: 'bg-emerald-600', glyph: 'text-emerald-200' },
+  teal:    { ring: 'border-teal-200',    wash: 'from-teal-50',    accent: 'text-teal-700',    chip: 'bg-teal-600',    glyph: 'text-teal-200' },
+  sky:     { ring: 'border-sky-200',     wash: 'from-sky-50',     accent: 'text-sky-700',     chip: 'bg-sky-600',     glyph: 'text-sky-200' },
+  rose:    { ring: 'border-rose-200',    wash: 'from-rose-50',    accent: 'text-rose-700',    chip: 'bg-rose-600',    glyph: 'text-rose-200' },
+  slate:   { ring: 'border-slate-200',   wash: 'from-slate-50',   accent: 'text-slate-700',   chip: 'bg-slate-700',   glyph: 'text-slate-200' },
+};
+
+/**
+ * LA CARTE D'ACTIVITÉ — ce que l'élève lit avant de commencer un module.
+ *
+ * Elle répond à quatre questions, dans cet ordre visuel :
+ *   1. d'où vient cette activité ?        → `tag` (pastille, en haut)
+ *   2. qu'est-ce qu'on fait ?             → `headline` (l'accroche, optionnelle)
+ *   3. quelle idée va-t-on découvrir ?    → `title` (l'objectif mathématique)
+ *   4. quelle est la situation concrète ? → `children` (l'énoncé, mot pour mot)
+ *   5. sur quelle source s'appuie-t-elle ?→ `footer` (SourceTag, optionnel)
+ *
+ * ELLE EST DIRIGÉE PAR LES DONNÉES, jamais par la leçon. Aucun contexte
+ * particulier n'est codé ici : le football, la bibliothèque ou les fleurs
+ * arrivent par `visual` et par le texte. Un module qui ne fournit ni accroche
+ * ni visuel obtient la même carte, en plus sobre — c'est le cas des 40
+ * modules existants, qui n'ont rien à changer.
+ *
+ * `visual` est OPTIONNEL et n'est affiché que s'il ajoute quelque chose :
+ *   visual={{ src, alt }}            une illustration de contexte
+ *   visual={<PitchBackdrop … />}     ou n'importe quel nœud déjà dessiné
+ * Sans lui, le texte prend toute la largeur au lieu de laisser un trou.
+ *
+ * FOND CLAIR, PAS BLOC SOMBRE. L'ancienne carte était un rectangle sombre à
+ * dégradé : l'énoncé du manuel y perdait en lisibilité, et trois teintes sur
+ * huit seulement étaient honorées. Ici, un fond clair, une seule couleur
+ * d'accent, une bordure fine et un lavis discret — la hiérarchie vient de la
+ * typographie, pas de la saturation.
+ */
+export function MissionBrief({ tag: rawTag, title, headline, children, footer, visual, emoji, tone = 'slate' }) {
+  const T = BRIEF_TONES[tone] ?? BRIEF_TONES.slate;
+  // jamais de renvoi au manuel à l'écran (« الكتاب ص 55 ») — indépendance vis-à-vis du livre, textbook/bookRef.js
+  const tag = withoutBookRef(rawTag);
+  const hasVisual = Boolean(visual);
 
   return (
-    <div className={`${bg} text-white rounded-2xl p-6 space-y-2`}>
-      {tag && <div className={`${accent} font-mono text-xs font-bold uppercase tracking-widest`}>{tag}</div>}
-      <h2 className="text-lg sm:text-xl font-space font-bold leading-snug">{title}</h2>
-      <div className={`${body} text-sm leading-relaxed space-y-2`}>{children}</div>
-    </div>
+    <section
+      className={`relative overflow-hidden rounded-3xl border-2 bg-white shadow-sm ${T.ring}`}
+      data-module-brief={tone}
+    >
+      {/* Le lavis : une profondeur légère, qui ne touche jamais au texte. */}
+      <div className={`pointer-events-none absolute inset-0 bg-gradient-to-bl ${T.wash} to-white`} aria-hidden="true" />
+
+      <div className={`relative flex p-6 ${hasVisual ? 'flex-row-reverse items-start gap-6' : 'flex-col gap-4'}`}>
+        {hasVisual && (
+          // Le visuel de CONTEXTE. Décoratif au sens strict : il aide à se
+          // projeter, il ne porte aucune information mathématique — donc
+          // `aria-hidden` quand il n'a pas de texte alternatif propre.
+          <div className="w-44 shrink-0">
+            <div className="mx-auto w-full overflow-hidden rounded-2xl border border-white/70 bg-white/70 shadow-sm h-36 max-w-none">
+              {visual?.src
+                ? <img src={visual.src} alt={visual.alt ?? ''} aria-hidden={visual.alt ? undefined : 'true'} loading="lazy" className="block h-full w-full object-cover" />
+                : <div className="h-full w-full" aria-hidden="true">{visual}</div>}
+            </div>
+          </div>
+        )}
+
+        <div className="min-w-0 flex-1 space-y-2.5">
+          {tag && (
+            <span className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-extrabold text-white ${T.chip}`}>
+              <BookOpen className="h-3.5 w-3.5" aria-hidden="true" />
+              {tag}
+            </span>
+          )}
+
+          {headline && (
+            <p className="flex items-center gap-2 font-extrabold leading-tight text-slate-900 text-2xl">
+              {emoji && <span aria-hidden="true">{emoji}</span>}
+              {headline}
+            </p>
+          )}
+
+          {title && (
+            <h2 className={`font-space font-extrabold leading-snug text-lg ${headline ? T.accent : 'text-slate-900'}`}>
+              <MathLabel>{title}</MathLabel>
+            </h2>
+          )}
+
+          <div className="space-y-2 leading-relaxed text-slate-700 text-base">{children}</div>
+
+          {footer && <div className="pt-1">{footer}</div>}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -245,7 +350,7 @@ export function QuantityCard({ emoji, label, value, unit, selected, onClick, dis
       type={onClick ? 'button' : undefined}
       onClick={onClick}
       disabled={disabled}
-      className={`w-full text-left rounded-2xl border-2 p-4 transition-all ${
+      className={`w-full text-start rounded-2xl border-2 p-4 transition-all ${
         selected
           ? 'border-blue-500 bg-blue-50 ring-2 ring-blue-200'
           : 'border-slate-200 bg-white'
@@ -255,7 +360,7 @@ export function QuantityCard({ emoji, label, value, unit, selected, onClick, dis
         <span className="text-2xl shrink-0" aria-hidden="true">{emoji}</span>
         <div className="min-w-0">
           <div className="text-[11px] font-mono text-slate-500 uppercase tracking-wide truncate">{label}</div>
-          <div className="font-mono font-extrabold text-lg sm:text-xl text-slate-800 tabular-nums">
+          <div className="font-mono font-extrabold text-slate-800 tabular-nums text-xl">
             {value} {unit && <span className="text-xs font-semibold text-slate-500">{unit}</span>}
           </div>
         </div>
@@ -272,18 +377,20 @@ export function QuantityCard({ emoji, label, value, unit, selected, onClick, dis
  * du test, qui se déroule à l'identique dans les deux cas.
  */
 export function TimerToggle({ enabled, onChange, durationLabel, disabled = false }) {
+  const { t } = useTranslation('lesson');
   return (
     <div className="flex items-center justify-between gap-3 rounded-xl border-2 border-slate-200 bg-slate-50 px-4 py-3">
       <div className="flex items-center gap-2.5 text-sm text-slate-700">
         <TimerIcon className="w-4 h-4 shrink-0" aria-hidden="true" />
         <span>
-          Chronomètre ({durationLabel}) <span className="text-slate-400">— facultatif</span>
+          {t('timer.label')} ({durationLabel}) <span className="text-slate-400">{t('timer.optional')}</span>
         </span>
       </div>
       <button
         type="button"
         role="switch"
         aria-checked={enabled}
+        aria-label={t('timer.label')}
         disabled={disabled}
         onClick={() => onChange(!enabled)}
         className={`relative inline-flex h-7 w-12 shrink-0 items-center rounded-full transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 ${
@@ -292,7 +399,7 @@ export function TimerToggle({ enabled, onChange, durationLabel, disabled = false
       >
         <span
           className={`inline-block h-5 w-5 transform rounded-full bg-white transition-transform shadow ${
-            enabled ? 'translate-x-6' : 'translate-x-1'
+            enabled ? 'translate-x-6 rtl:-translate-x-6' : 'translate-x-1 rtl:-translate-x-1'
           }`}
         />
       </button>
@@ -341,7 +448,7 @@ export function XPBurst({ amount, tick }) {
           animate={{ opacity: 1, y: -22, scale: 1 }}
           exit={{ opacity: 0, y: -34 }}
           transition={{ duration: 0.7, ease: 'easeOut' }}
-          className="pointer-events-none absolute -top-1 right-3 font-mono font-extrabold text-sm text-emerald-500 drop-shadow-sm"
+          className="pointer-events-none absolute -top-1 end-3 font-mono font-extrabold text-sm text-emerald-500 drop-shadow-sm"
           aria-hidden="true"
         >
           +{amount} XP
@@ -364,7 +471,7 @@ export function StepProgressBar({ doneCount, total }) {
   if (!total) return null;
   const pct = Math.round((doneCount / total) * 100);
   return (
-    <div className={`sticky ${stickyTopClass} z-10 -mx-4 px-4 py-2 bg-slate-50/90 backdrop-blur-sm border-b border-slate-200 sm:rounded-xl sm:border sm:mx-0`}>
+    <div className={`sticky ${stickyTopClass} z-10 px-4 py-2 bg-slate-50/90 backdrop-blur-sm border border-slate-200 rounded-xl`}>
       <div className="flex items-center gap-2.5">
         <div className="flex-1 h-1.5 bg-slate-200 rounded-full overflow-hidden">
           <motion.div
@@ -373,8 +480,8 @@ export function StepProgressBar({ doneCount, total }) {
             transition={{ duration: 0.4 }}
           />
         </div>
-        <span className="text-[10px] font-mono font-bold text-slate-400 tabular-nums shrink-0">
-          {doneCount} / {total}
+        <span dir="ltr" className="text-[10px] font-mono font-bold text-slate-400 tabular-nums shrink-0">
+          {doneCount}{'\u00A0/\u00A0'}{total}
         </span>
       </div>
     </div>
@@ -383,6 +490,7 @@ export function StepProgressBar({ doneCount, total }) {
 
 /* ── Chip de série de bonnes réponses (session, non persistée) ───── */
 export function StreakChip({ count }) {
+  const { t } = useTranslation('lesson');
   if (count < 2) return null;
   return (
     <motion.div
@@ -392,23 +500,24 @@ export function StreakChip({ count }) {
       className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-orange-700 font-mono text-xs font-bold"
     >
       <Flame className="w-3.5 h-3.5" aria-hidden="true" />
-      {count} d’affilée
+      {count} {t('streak')}
     </motion.div>
   );
 }
 
 /* ── Interrupteur son + vibrations (préférence appareil) ──────────── */
 export function EffectsToggle({ enabled, onToggle }) {
+  const { t } = useTranslation('lesson');
   return (
     <button
       type="button"
       onClick={onToggle}
       aria-pressed={enabled}
-      aria-label={enabled ? 'Désactiver les effets sonores' : 'Activer les effets sonores'}
+      aria-label={enabled ? t('effects.disable') : t('effects.enable')}
       className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border-2 border-slate-200 bg-white text-slate-500 hover:border-slate-400 transition-colors text-xs font-mono font-bold min-h-[40px] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
     >
       {enabled ? <Volume2 className="w-3.5 h-3.5" aria-hidden="true" /> : <VolumeX className="w-3.5 h-3.5" aria-hidden="true" />}
-      <span className="hidden sm:inline">{enabled ? 'Sons activés' : 'Sons coupés'}</span>
+      <span className="inline">{enabled ? t('effects.on') : t('effects.off')}</span>
     </button>
   );
 }
@@ -419,7 +528,8 @@ export function EffectsToggle({ enabled, onToggle }) {
  * doit naviguer immédiatement ; le composant appelle `onGo()` seul une fois
  * les `seconds` écoulées, sauf annulation.
  */
-export function AutoAdvance({ seconds = 5, label = 'Module suivant', onGo }) {
+export function AutoAdvance({ seconds = 5, label, onGo }) {
+  const { t } = useTranslation('lesson');
   const [remaining, setRemaining] = useState(seconds);
   const [cancelled, setCancelled] = useState(false);
 
@@ -439,14 +549,14 @@ export function AutoAdvance({ seconds = 5, label = 'Module suivant', onGo }) {
   return (
     <div className="flex items-center justify-center gap-3 text-xs font-mono text-slate-400">
       <span>
-        {label} dans {remaining}s…
+        {label ?? t('nav.nextModule')} {t('autoAdvance.in')} {remaining}s…
       </span>
       <button
         type="button"
         onClick={() => setCancelled(true)}
         className="underline font-semibold text-slate-500 hover:text-slate-700"
       >
-        Rester ici
+        {t('autoAdvance.stayHere')}
       </button>
     </div>
   );

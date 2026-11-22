@@ -1,0 +1,225 @@
+{
+  "id": "ex-4am-majdulat-ihsaiya-l3-010",
+  "lessonCode": "majdulat-ihsaiya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2016 — زوار متحف سيرتا بقسنطينة",
+    "estimatedMinutes": 7,
+    "tags": [
+      "دستور",
+      "أسماء الدوال",
+      "متوسط",
+      "وسيط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_majdulat-ihsaiya_P2",
+      "modelledOn": "BEM 2016 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "حجز موظّف، المعتزّ بتراث وطنه، في السطر الأول من مجدول عدد زوار متحف سيرتا بقسنطينة (بالعشرات) خلال ثمانية أيام. فتح يونس الملف في مجدول باللغة الإنجليزية فوجد في الخلية A2 الدستور ⁦=AVERAGE(A1:H1)⁩ وفي الخلية A3 الدستور ⁦=MEDIAN(A1:H1)⁩ :",
+    "table": {
+      "head": [
+        "",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "rows": [
+        [
+          "1",
+          "12",
+          "15",
+          "9",
+          "21",
+          "14",
+          "10",
+          "17",
+          "22"
+        ]
+      ],
+      "sheet": true
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن الدستور الذي يقابل ⁦=AVERAGE(A1:H1)⁩ في مجدول باللغة الفرنسية (كما في الكتاب).",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "⁦=MEDIANE(A1:H1)⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-DUSTUR-KHATI"
+        },
+        {
+          "id": "B",
+          "content": "⁦=MOYENNE(A1:H1)⁩",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "⁦=MODE(A1:H1)⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-DUSTUR-KHATI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدالة AVERAGE بالإنجليزية تحسب المؤشّر نفسه الذي تحسبه دالة من دوال الكتاب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "AVERAGE تعني «المعدّل»، أي المتوسط."
+        }
+      ],
+      "feedback": {
+        "correct": "⁦=MOYENNE(A1:H1)⁩ يُظهر 15 .",
+        "incorrect": "راجع ثلاثة أشياء: الإشارة « ⁦=⁩ » في البداية، الدالة المناسبة للمؤشّر، والمجال الذي يضمّ كل القيم."
+      },
+      "solution": {
+        "lines": [
+          "⁦AVERAGE⁩ بالإنجليزية تقابل ⁦MOYENNE⁩ بالفرنسية (المتوسط)، و ⁦MEDIAN⁩ تقابل ⁦MEDIANE⁩ (الوسيط).",
+          "الدستور المقابل: ⁦=MOYENNE(A1:H1)⁩ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هو العدد الذي يظهر في الخلية A2 ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة إن لزم)",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "14,5",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MOYENNE(…)⁩ يقسم مجموع القيم العددية في المجال على عددها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع القيم العددية الموجودة في المجال، وعُدّها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المتوسط = مجموع القيم ÷ عددها."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{120}{8} = 15$ .",
+        "incorrect": "اجمع كل القيم العددية التي في المجال، ثم اقسم المجموع على عددها (لا على عدد آخر)."
+      },
+      "solution": {
+        "lines": [
+          "مجموع القيم: $12 + 15 + 9 + 21 + 14 + 10 + 17 + 22 = 120$ ، وعددها 8 .",
+          "$\\dfrac{120}{8} = 15$",
+          "إذن يُظهر الدستور العدد 15 ."
+        ],
+        "result": "15"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما هو العدد الذي يظهر في الخلية A3 ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة إن لزم)",
+      "expectedAnswer": "14,5",
+      "misconceptionSignatures": [
+        {
+          "value": "17,5",
+          "id": "MISC-IHSA-WASIT-BILA-TARTIB"
+        },
+        {
+          "value": "15",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MEDIANE(…)⁩ يُظهر وسيط القيم: يرتّبها المجدول أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب القيم الـ 8 تصاعديا، ثم عيّن القيمتين اللتين تقعان في الوسط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لعدد زوجيّ من القيم، الوسيط نصف مجموع القيمتين الوسطيين."
+        }
+      ],
+      "feedback": {
+        "correct": "القيم مرتّبة: 9 ، 10 ، 12 ، 14 ، 15 ، 17 ، 21 ، 22 ، والوسيط 14,5 .",
+        "incorrect": "لا يُقرأ الوسيط إلا بعد ترتيب القيم تصاعديا، ثم نأخذ القيمة الوسطى (أو نصف مجموع القيمتين الوسطيين)."
+      },
+      "solution": {
+        "lines": [
+          "نرتّب القيم تصاعديا: 9 ، 10 ، 12 ، 14 ، 15 ، 17 ، 21 ، 22 .",
+          "عدد القيم 8 زوجيّ: الوسيط نصف مجموع القيمتين ذواتي الرتبتين 4 و 5 ، أي 14 و 15 .",
+          "$\\dfrac{14 + 15}{2} = 14{,}5$",
+          "إذن يُظهر الدستور العدد 14,5 ."
+        ],
+        "result": "14{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

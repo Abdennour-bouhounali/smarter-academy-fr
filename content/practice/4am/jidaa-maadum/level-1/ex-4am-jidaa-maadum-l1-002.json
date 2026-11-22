@@ -1,0 +1,124 @@
+{
+  "id": "ex-4am-jidaa-maadum-l1-002",
+  "lessonCode": "jidaa-maadum",
+  "level": 1,
+  "metadata": {
+    "title": "جداء عددين معدوم",
+    "estimatedMinutes": 4,
+    "tags": [
+      "خاصية الجداء المعدوم"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-2a",
+      "page": 44,
+      "section": "أنشطة",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "$a$ و $b$ عددان حقيقيان حيث:",
+    "formulas": [
+      "a \\times b = 0"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "إذا كان $a = -\\dfrac{3}{7}$ ، فجد العدد $b$ .",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد $a$ المعطى غير معدوم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان جداء عددين معدومًا فإن أحدهما على الأقل معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$b = 0$ لأن $a \\neq 0$ .",
+        "incorrect": "الجداء معدوم وأحد العاملين غير معدوم: ماذا تستنتج عن العامل الآخر؟"
+      },
+      "solution": {
+        "lines": [
+          "$a \\times b = 0$ و $a = -\\dfrac{3}{7} \\neq 0$",
+          "إذن العامل الآخر معدوم"
+        ],
+        "result": "b = 0"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "إذا كان $a = 4$ و $b = 2x - 9$ ، فجد العدد $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $x$: عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "9/2",
+      "misconceptionSignatures": [
+        {
+          "value": "-9/2",
+          "id": "MISC-JIDAA-ISHARA-JADHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $a$ و $b$ في المساواة $a \\times b = 0$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العامل $4$ لا ينعدم، إذن العامل الآخر معدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة من الدرجة الأولى التي تحصّلت عليها."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{9}{2}$ .",
+        "incorrect": "اكتب أن العامل غير الثابت معدوم، ثم حلّ المعادلة من الدرجة الأولى بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$4(2x - 9) = 0$ و $4 \\neq 0$",
+          "إذن: $2x - 9 = 0$",
+          "أي: $2x = 9$"
+        ],
+        "result": "x = \\dfrac{9}{2}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

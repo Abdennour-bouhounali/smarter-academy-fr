@@ -1,0 +1,79 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l2-008",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — جدار تسلّق دائري",
+    "estimatedMinutes": 2,
+    "tags": [
+      "دائرة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_ithbat-khawas-maalam_P3",
+      "modelledOn": "now-145"
+    }
+  },
+  "generator": {
+    "tool": "u1x-ithbat-khawas-maalam/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "دائرة مركزها $\\Omega(2\\,;\\,1)$ ونصف قطرها $\\sqrt{10}$ في معلم متعامد ومتجانس، و $M(5\\,;\\,2)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "النقطة M :",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "تنتمي إلى الدائرة لأن $\\Omega M^2 = 10$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا تنتمي لأن $\\Omega M^2 = 10 \\neq \\sqrt{10}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-NASI"
+        },
+        {
+          "id": "C",
+          "content": "لا تنتمي لأن $|3| + |1| = 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $\\Omega M^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن بـ $r^2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$(\\sqrt{10})^2 = 10$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\Omega M^2 = 9 + 1 = 10 = r^2$ : M على الدائرة.",
+        "incorrect": "نقارن المربع بالمربع: $r^2 = 10$ ."
+      }
+    }
+  ]
+}

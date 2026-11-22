@@ -1,0 +1,228 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muthallathat-l4-004",
+  "lessonCode": "wadiya-idmajiya-muthallathat",
+  "level": 4,
+  "metadata": {
+    "title": "ارتفاع عمارة بخط النظر وطول خط النظر",
+    "estimatedMinutes": 14,
+    "tags": [
+      "الظل",
+      "ترييض",
+      "خاصية فيثاغورس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-muthallathat_P1",
+      "modelledOn": "situation"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يقف أنس في النقطة $A$ من الأرض الأفقية على بعد $1{,}6\\,\\mathrm{m}$ من عمود شاقولي $[PQ]$ طوله $2\\,\\mathrm{m}$ ، والعمود على بعد $46{,}4\\,\\mathrm{m}$ من قاعدة $M$ عمارة شاقولية $[MS]$ ، ويرى قمتي العمود $Q$ والعمارة $S$ على استقامة واحدة (نهمل طوله، و $P$ بين $A$ و $M$ ). جاء أنس إلى المكان في الموعد المحدّد تماما، فهو يحترم وقت زملائه."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $\\tan\\widehat{PAQ}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري",
+      "expectedAnswer": "5/4",
+      "misconceptionSignatures": [
+        {
+          "value": "4/5",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $APQ$ قائم في $P$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الظل = المقابل على المجاور."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan\\widehat{PAQ} = \\dfrac{2}{1{,}6} = \\dfrac{5}{4}$ .",
+        "incorrect": "المقابل للزاوية هو العمود، والمجاور هو المسافة على الأرض."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $APQ$ القائم في $P$ : $\\tan\\widehat{PAQ} = \\dfrac{PQ}{AP} = \\dfrac{2}{1{,}6}$"
+        ],
+        "result": "\\tan\\widehat{PAQ} = \\dfrac{5}{4} = 1{,}25"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط المدوّر إلى الوحدة من الدرجة لقيس الزاوية $\\widehat{PAQ}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: القيس بالدرجة مدوّرا إلى الوحدة",
+      "expectedAnswer": "51",
+      "misconceptionSignatures": [
+        {
+          "value": "39",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        },
+        {
+          "value": "1.25",
+          "id": "MISC-MUTH-NISBA-BADAL-QAYS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل اللمسة العكسية للنسبة في آلة حاسبة مبرمجة على الدرجة، ثم دوّر في آخر الحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{PAQ} \\approx 51{,}34^{\\circ}$ ، أي $51^{\\circ}$ .",
+        "incorrect": "اللمسة العكسية للظل بالدرجة، ثم التدوير."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال الآلة الحاسبة: $\\widehat{PAQ} \\approx 51{,}3402^{\\circ}$"
+        ],
+        "result": "\\widehat{PAQ} \\approx 51^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب ارتفاع العمارة $MS$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الارتفاع بـ m (القيمة المضبوطة)",
+      "expectedAnswer": "60",
+      "misconceptionSignatures": [
+        {
+          "value": "58",
+          "id": "MISC-MUTH-TALIS-NAZAR"
+        },
+        {
+          "value": "59.28",
+          "id": "MISC-MUTH-TADWIR-MUBAKKIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الزاوية $\\widehat{MAS}$ هي $\\widehat{PAQ}$ ، و $AM = 1{,}6 + 46{,}4$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل الظل المضبوط $\\dfrac{5}{4}$ لا القيس المدوّر."
+        }
+      ],
+      "feedback": {
+        "correct": "$MS = 48 \\times \\dfrac{5}{4} = 60\\,\\mathrm{m}$ .",
+        "incorrect": "المسافة المجاورة هي $AM$ كلها، والظل يُستعمل بقيمته المضبوطة."
+      },
+      "solution": {
+        "lines": [
+          "$AM = 1{,}6 + 46{,}4 = 48$ و $\\widehat{MAS} = \\widehat{PAQ}$",
+          "في المثلث $AMS$ القائم في $M$ : $MS = AM \\times \\tan\\widehat{MAS} = 48 \\times \\dfrac{5}{4}$"
+        ],
+        "result": "MS = 60\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "احسب طول خط النظر $AS$ بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m مدوّرا إلى 0,1",
+      "expectedAnswer": "76.8",
+      "misconceptionSignatures": [
+        {
+          "value": "108",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$[AS]$ وتر المثلث $AMS$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خاصية فيثاغورس."
+        }
+      ],
+      "feedback": {
+        "correct": "$AS = \\sqrt{48^2 + 60^2} = \\sqrt{5904} \\approx 76{,}8\\,\\mathrm{m}$ .",
+        "incorrect": "نجمع المربعين ثم نأخذ الجذر."
+      },
+      "solution": {
+        "lines": [
+          "حسب خاصية فيثاغورس: $AS^2 = AM^2 + MS^2 = 2304 + 3600 = 5904$",
+          "$AS = \\sqrt{5904} \\approx 76{,}8375$"
+        ],
+        "result": "AS \\approx 76{,}8\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

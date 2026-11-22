@@ -1,0 +1,228 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ihsa-l4-002",
+  "lessonCode": "wadiya-idmajiya-ihsa",
+  "level": 4,
+  "metadata": {
+    "title": "أدمج تعلّماتي — الدول التي لم تفز بالذهب",
+    "estimatedMinutes": 9,
+    "tags": [
+      "وضعية",
+      "المدى",
+      "أخذ نسبة من عدد"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "situation",
+      "page": 100,
+      "section": "أدمج تعلّماتي"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "بعد إيجاد القيمتين المخفيتين ($x = 3$ و $y = 28$) صار جدول الميداليات الذهبية كما يلي. ونعلم أن 69% من الدول الفائزة بميداليات (ذهبية أو فضية أو برونزية) تحصّلت على الأقل على ميدالية ذهبية.",
+    "table": {
+      "head": [
+        "عدد الميداليات الذهبية",
+        "التكرار (عدد الدول)"
+      ],
+      "rows": [
+        [
+          "1",
+          "11"
+        ],
+        [
+          "2",
+          "3"
+        ],
+        [
+          "3",
+          "2"
+        ],
+        [
+          "4",
+          "1"
+        ],
+        [
+          "5",
+          "2"
+        ],
+        [
+          "6",
+          "2"
+        ],
+        [
+          "7",
+          "1"
+        ],
+        [
+          "11",
+          "1"
+        ],
+        [
+          "13",
+          "1"
+        ],
+        [
+          "14",
+          "2"
+        ],
+        [
+          "16",
+          "1"
+        ],
+        [
+          "26",
+          "1"
+        ],
+        [
+          "28",
+          "1"
+        ],
+        [
+          "32",
+          "1"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب مدى هذه السلسلة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "31",
+      "misconceptionSignatures": [
+        {
+          "value": "32",
+          "id": "MISC-IHSA-MADA-AKBAR-QIMA"
+        },
+        {
+          "value": "10",
+          "id": "MISC-IHSA-MADA-TAKRAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المدى يُحسب على القيم، لا على التكرارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$32 - 1 = 31$ .",
+        "incorrect": "المدى = أكبر قيمة − أصغر قيمة في عمود الميداليات."
+      },
+      "solution": {
+        "lines": [
+          "$32 - 1 = 31$"
+        ],
+        "result": "31"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "نعطي النتائج بقيم مقرّبة إلى الوحدة.",
+      "statement": "ما هو عدد الدول الفائزة بميداليات؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "43",
+      "misconceptionSignatures": [
+        {
+          "value": "21",
+          "id": "MISC-IHSA-NISBA-MIN-ADAD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدول الفائزة بالذهب (30 دولة) تمثّل 69% من الدول الفائزة بميداليات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب: $0{,}69 \\times T = 30$ ثم حلّ المعادلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$T = \\dfrac{30}{0{,}69} \\approx 43{,}48$ ، أي 43 دولة تقريبا.",
+        "incorrect": "إذا كان 69% من $T$ يساوي 30 فإن $T = \\dfrac{30}{0{,}69}$ ، وليس $0{,}69 \\times 30$ ."
+      },
+      "solution": {
+        "lines": [
+          "عدد الدول الفائزة بالذهب: 30 (التكرار الكلي للجدول).",
+          "$0{,}69 \\times T = 30$",
+          "$T = \\dfrac{30}{0{,}69} \\approx 43{,}48$",
+          "إذن $T \\approx 43$ دولة."
+        ],
+        "result": "T \\approx 43"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما هو عدد الدول التي تحصّلت فقط على ميداليات فضية أو برونزية؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "13",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هذه الدول فازت بميداليات ولم تفز بأيّ ميدالية ذهبية."
+        }
+      ],
+      "feedback": {
+        "correct": "$43 - 30 = 13$ دولة.",
+        "incorrect": "اطرح عدد الدول الفائزة بالذهب من عدد الدول الفائزة بميداليات."
+      },
+      "solution": {
+        "lines": [
+          "$43 - 30 = 13$",
+          "13 دولة تحصّلت فقط على ميداليات فضية أو برونزية."
+        ],
+        "result": "13"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

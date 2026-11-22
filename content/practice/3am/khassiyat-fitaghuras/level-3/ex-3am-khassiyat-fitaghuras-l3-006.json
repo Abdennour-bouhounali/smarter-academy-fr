@@ -1,0 +1,238 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l3-006",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — زينة المعرض المدرسي",
+    "estimatedMinutes": 7,
+    "tags": [
+      "خاصية فيثاغورس",
+      "المعين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تتعاون أفواج القسم في تزيين المعرض المدرسي بمعيّنات ملوّنة. $ABCD$ معين مركزه $O$ حيث $OA = 2{,}8\\,\\mathrm{cm}$ و $OB = 2{,}1\\,\\mathrm{cm}$ (قطرا المعين متعامدان ومتناصفان).",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          2.8,
+          0
+        ],
+        "C": [
+          -2.8,
+          0
+        ],
+        "B": [
+          0,
+          2.1
+        ],
+        "D": [
+          0,
+          -2.1
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "A",
+          "label": "2,8 cm"
+        },
+        {
+          "from": "O",
+          "to": "B",
+          "label": "2,1 cm"
+        },
+        [
+          "O",
+          "C"
+        ],
+        [
+          "O",
+          "D"
+        ],
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "A"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "O",
+          "B"
+        ]
+      ],
+      "labels": {
+        "O": "sw"
+      },
+      "ariaLabel": "معين ABCD مركزه O، قطراه متعامدان في O، حيث OA = 2,8 cm و OB = 2,1 cm",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "برّر أن المثلث $AOB$ قائم في $O$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما خاصية قطري المعين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الزاوية $\\widehat{AOB}$ محصورة بين القطرين."
+        }
+      ],
+      "feedback": {
+        "correct": "قطرا المعين متعامدان.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "قطرا المعين متعامدان، إذن $(AC) \\perp (BD)$ في $O$ .",
+          "ومنه المثلث $AOB$ قائم في $O$ ، ووتره $[AB]$ ."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب طول ضلع المعين $AB$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm",
+      "expectedAnswer": "3.5",
+      "misconceptionSignatures": [
+        {
+          "value": "4.9",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "12.25",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولا مربع الطول، ثم خذ جذره التربيعي بالآلة الحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB^2 = 2{,}8^2 + 2{,}1^2 = 12{,}25$ ، إذن $AB = 3{,}5\\,\\mathrm{cm}$ .",
+        "incorrect": "ابدأ بتحديد الوتر، ثم اكتب مساواة فيثاغورس، وتذكّر أن ما تحسبه أولا هو مربع الطول لا الطول نفسه."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $AOB$ قائم في $O$ ، حسب خاصية فيثاغورس: $AB^2 = OA^2 + OB^2$",
+          "$AB^2 = 2{,}8^2 + 2{,}1^2$",
+          "$AB^2 = 7{,}84 + 4{,}41 = 12{,}25$",
+          "$AB = \\sqrt{12{,}25} = 3{,}5\\,\\mathrm{cm}$"
+        ],
+        "result": "AB = 3{,}5\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب محيط المعين $ABCD$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: المحيط بـ cm",
+      "expectedAnswer": "14",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أضلاع المعين متقايسة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المحيط = 4 × طول الضلع."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 3{,}5 = 14\\,\\mathrm{cm}$ .",
+        "incorrect": "للمعين أربعة أضلاع لها الطول نفسه."
+      },
+      "solution": {
+        "lines": [
+          "أضلاع المعين الأربعة متقايسة: $P = 4 \\times AB = 4 \\times 3{,}5 = 14\\,\\mathrm{cm}$"
+        ],
+        "result": "P = 14\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

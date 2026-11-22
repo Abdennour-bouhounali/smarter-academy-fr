@@ -1,0 +1,454 @@
+{
+  "id": "ex-3am-muadalat-darajat-ula-l5-009",
+  "lessonCode": "muadalat-darajat-ula",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — إطاران بالمحيط نفسه",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "محيط",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: يصنع فريق من التلاميذ بإتقان إطارين من الأسلاك لمجسّم علمي: إطار مستطيل $ABCD$ بعداه $(x + 4)$ و $6$ ، وإطار مثلث متقايس الأضلاع $EFG$ ضلعه $(x + 2)$ ، ولهما المحيط نفسه (الأطوال بالمتر وغير حقيقية).\nالجزء الثاني: يشترون الأسلاك بسعر $85$ دج للمتر ولهم ميزانية $8\\,000$ دج.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          5.6
+        ],
+        "B": [
+          4,
+          5.6
+        ],
+        "C": [
+          4,
+          3.4
+        ],
+        "D": [
+          0,
+          3.4
+        ],
+        "E": [
+          0.3,
+          0
+        ],
+        "F": [
+          3.7,
+          0
+        ],
+        "G": [
+          2,
+          2.6
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "x + 4"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "6"
+        },
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "A"
+        ],
+        {
+          "from": "E",
+          "to": "F",
+          "label": "x + 2",
+          "ticks": 1
+        },
+        {
+          "from": "F",
+          "to": "G",
+          "ticks": 1
+        },
+        {
+          "from": "G",
+          "to": "E",
+          "ticks": 1
+        }
+      ],
+      "ariaLabel": "مستطيل ABCD بعداه x + 4 و 6 ومثلث متقايس الأضلاع EFG ضلعه x + 2 ولهما المحيط نفسه",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "ما المعادلة التي تترجم تساوي المحيطين؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "محيط المستطيل = محيط المثلث.",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2((x + 4) + 6) = 3(x + 2)$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$(x + 4) + 6 = x + 2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        },
+        {
+          "id": "C",
+          "content": "$2((x + 4) + 6) = x + 2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "محيط المستطيل $2[(x + 4) + 6]$ ومحيط المثلث $3(x + 2)$ : $2[(x + 4) + 6] = 3(x + 2)$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "جد قيمة $x$ .",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 14$ .",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "قيمة x",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "value": "-14",
+          "id": "MISC-MUADALA-NEG-COEF"
+        },
+        {
+          "value": "26",
+          "id": "MISC-MUADALA-SIGN-KEPT"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "ننشر ونبسّط: $2x + 20 = 3x + 6$ .",
+          "نضيف $-3x$ إلى الطرفين (معاكس الحدّ $3x$) فنجد: $-x + 20 = 6$ .",
+          "نضيف $-20$ إلى الطرفين (معاكس $20$) فنجد: $-x = -14$ .",
+          "نقسم الطرفين على $-1$ فنجد: $x = 14$ ."
+        ]
+      },
+      "timeSeconds": 105
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما طول المستطيل $AB$ بالمتر؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = 18\\,\\mathrm{m}$ .",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "الطول بالمتر",
+      "expectedAnswer": "18",
+      "solution": {
+        "lines": [
+          "$AB = x + 4 = 18$ م.",
+          "وضلع المثلث $14 + 2 = 16$ م."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "ما محيط كلّ من الإطارين بالمتر؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "محيط كلّ منهما $48\\,\\mathrm{m}$ .",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "المحيط بالمتر",
+      "expectedAnswer": "48",
+      "solution": {
+        "lines": [
+          "المستطيل: $2(18 + 6) = 48$ م.",
+          "المثلث: $3 \\times 16 = 48$ م."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما طول السلك اللازم للإطارين معًا بالمتر؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "يلزم $96$ مترًا.",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "الطول بالمتر",
+      "expectedAnswer": "96",
+      "solution": {
+        "lines": [
+          "$48 + 48 = 96$ م."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ج",
+      "statement": "هل تكفي الميزانية $8\\,000$ دج لشراء السلك اللازم؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن السلك $8\\,160$ دج فينقصهم $160$ دج.",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، ويبقى $160$ دج",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-DECISION"
+        },
+        {
+          "id": "B",
+          "content": "لا، ينقصهم $8\\,160$ دج",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-DECISION"
+        },
+        {
+          "id": "C",
+          "content": "لا، ينقصهم $160$ دج",
+          "isCorrect": true
+        }
+      ],
+      "solution": {
+        "lines": [
+          "$96 \\times 85 = 8\\,160$ دج و $8\\,160 - 8\\,000 = 160$ ، فلا تكفي الميزانية."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "02",
+      "sub": "د",
+      "statement": "اشرح قرارك بالحساب.",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "ينقصهم $160$ دج.",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب إجابتك ثم قارنها بالتصحيح النموذجي",
+      "solution": {
+        "lines": [
+          "$96 \\times 85 = 8\\,160$ دج.",
+          "وهو أكبر من $8\\,000$ دج بـ $160$ دج، فلا تكفي الميزانية."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

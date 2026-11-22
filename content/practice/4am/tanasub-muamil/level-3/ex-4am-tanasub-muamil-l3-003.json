@@ -1,0 +1,217 @@
+{
+  "id": "ex-4am-tanasub-muamil-l3-003",
+  "lessonCode": "tanasub-muamil",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 18 — مستقيمان في معلم",
+    "estimatedMinutes": 4,
+    "tags": [
+      "تمثيل بياني",
+      "وضعية تناسبية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-18",
+      "page": 73,
+      "section": "أوظّف تعلّماتي",
+      "number": 18,
+      "adaptedFrom": "ex-4am-tanasub-muamil-l3-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في المعلم الآتي، المستقيم (1) يشمل المبدأ $O$ والنقطة $A(2 ; 3)$ ، والمستقيم (2) يشمل النقطتين $B(0 ; 1)$ و $C(4 ; 3)$ . يمثّل كل مستقيم وضعية تربط مقدارين $x$ (الفاصلة) و $y$ (الترتيب).",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          2,
+          3
+        ],
+        "B": [
+          0,
+          1
+        ],
+        "C": [
+          4,
+          3
+        ]
+      },
+      "lines": [
+        {
+          "through": [
+            "O",
+            "A"
+          ],
+          "name": "(1)",
+          "tone": "indigo"
+        },
+        {
+          "through": [
+            "B",
+            "C"
+          ],
+          "name": "(2)",
+          "tone": "rose"
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw",
+        "A": "nw",
+        "B": "w",
+        "C": "se"
+      },
+      "ariaLabel": "معلم على ورقة مرصوفة: المستقيم (1) يشمل المبدأ O والنقطة A(2 ; 3)، والمستقيم (2) يقطع محور التراتيب في B(0 ; 1) ويشمل C(4 ; 3)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ المستقيمين يمثّل وضعية تناسبية؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "المستقيم (1)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "المستقيم (2)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TANASUB-MABLAGH-THABIT"
+        },
+        {
+          "id": "C",
+          "content": "المستقيمان كلاهما",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TANASUB-MABLAGH-THABIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في وضعية تناسبية، إذا كان $x = 0$ فإن $y = 0$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أيّ المستقيمين يشمل المبدأ $O$ ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "تمثيل وضعية تناسبية مستقيم يشمل المبدأ.",
+        "incorrect": "انظر أين يقطع كل مستقيم محور التراتيب."
+      },
+      "solution": {
+        "lines": [
+          "المستقيم (2) يشمل النقطة $B(0 ; 1)$ : من أجل $x = 0$ يكون $y = 1 \\neq 0$ ، فهو لا يمثّل وضعية تناسبية.",
+          "المستقيم (1) يشمل المبدأ $O$ : يمثّل وضعية تناسبية."
+        ],
+        "result": "المستقيم (1)"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب معامل التناسبية لهذه الوضعية.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "1,5",
+      "misconceptionSignatures": [
+        {
+          "value": "2/3",
+          "id": "MISC-TANASUB-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل إحداثيي النقطة $A$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المعامل $= \\dfrac{y}{x}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{2} = 1{,}5$ .",
+        "incorrect": "معامل التناسبية هو $\\dfrac{y}{x}$ : السطر الثاني على السطر الأول، وليس العكس."
+      },
+      "solution": {
+        "lines": [
+          "النقطة $A(2 ; 3)$ من المستقيم (1):",
+          "$a = \\dfrac{3}{2} = 1{,}5$"
+        ],
+        "result": "a = 1{,}5"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب $y$ من أجل $x = 6$ في هذه الوضعية التناسبية.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر من الشكل a/b)",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العلاقة $y = a \\times x$ بالمعامل الذي وجدته."
+        }
+      ],
+      "feedback": {
+        "correct": "$y = 1{,}5 \\times 6 = 9$ .",
+        "incorrect": "عوّض $x$ في $y = a \\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$y = 1{,}5 \\times x$",
+          "$y = 1{,}5 \\times 6 = 9$"
+        ],
+        "result": "y = 9"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

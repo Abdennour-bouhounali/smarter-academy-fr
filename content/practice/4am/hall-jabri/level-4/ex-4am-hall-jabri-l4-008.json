@@ -1,0 +1,329 @@
+{
+  "id": "ex-4am-hall-jabri-l4-008",
+  "lessonCode": "hall-jabri",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2024 — جملة وخاصية طالس",
+    "estimatedMinutes": 12,
+    "tags": [
+      "جملة",
+      "التعويض",
+      "خاصية طالس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_hall-jabri_P1",
+      "modelledOn": "BEM 2024 I-4"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "",
+    "figure": {
+      "points": {
+        "K": [
+          0,
+          0
+        ],
+        "E": [
+          -5.66,
+          2.767
+        ],
+        "F": [
+          3.144,
+          -1.537
+        ],
+        "G": [
+          -4.32,
+          -3.24
+        ],
+        "H": [
+          2.4,
+          1.8
+        ]
+      },
+      "lines": [
+        {
+          "through": [
+            "E",
+            "F"
+          ],
+          "extend": [
+            0.1,
+            0.18
+          ]
+        },
+        {
+          "through": [
+            "G",
+            "H"
+          ],
+          "extend": [
+            0.08,
+            0.2
+          ]
+        },
+        {
+          "through": [
+            "E",
+            "G"
+          ],
+          "extend": [
+            0.3,
+            0.3
+          ]
+        },
+        {
+          "through": [
+            "F",
+            "H"
+          ],
+          "extend": [
+            0.45,
+            0.45
+          ]
+        }
+      ],
+      "labels": {
+        "E": "nw",
+        "G": "sw",
+        "H": "ne",
+        "F": "se",
+        "K": "n"
+      },
+      "ariaLabel": "المستقيمان (EF) و (GH) متقاطعان في K، والمستقيمان (EG) و (FH) متوازيان؛ الشكل مرسوم بأطوال غير حقيقية",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "حل الجملة التالية: $\\begin{cases} x + y = 98 \\\\ x - 1{,}8y = 0 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hall-jabri_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": {
+        "x": "63",
+        "y": "35"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "35",
+            "y": "63"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المعادلة (2) يمكن التعبير بسهولة عن $x$ بدلالة المجهول الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر عن $x$ بدلالة المجهول الآخر، ثم عوّض العبارة في المعادلة الأخرى (لا في المعادلة نفسها)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حل المعادلة ذات المجهول الواحد، ثم عوّض القيمة لتجد المجهول الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "الثنائية $(63 ; 35)$ تحقق المعادلتين معا: هي حل الجملة.",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "من المعادلة (2) نجد: $x = 1{,}8y$",
+          "نعوّض في المعادلة (1): $1{,}8y + y = 98$",
+          "$2{,}8y = 98$",
+          "ومنه $y = 35$",
+          "نعوّض قيمة $y$ في عبارة $x$: $x = 1{,}8 \\times 35 = 63$",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(63 ; 35)"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "الشكل المقابل مرسوم بأطوال غير حقيقية. المستقيمان $(EF)$ و $(GH)$ متقاطعان في النقطة $K$ ، والمستقيمان $(EG)$ و $(FH)$ متوازيان. تعطى الأطوال: $EF = 98\\,mm$ ، $KG = 54\\,mm$ و $KH = 30\\,mm$ .",
+      "statement": "أوجد $KE + KF$ و $\\dfrac{KE}{KF}$ ثم استنتج الطولين $KE$ و $KF$ (يمكنك الاستعانة بالسؤال 01).",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "أعط أولا $KE + KF$ بـ mm (عدد فقط)",
+      "expectedAnswer": "98",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين تقع النقطة $K$ بالنسبة إلى النقطتين $E$ و $F$ ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$K$ بين $E$ و $F$ : $KE + KF = EF = 98\\,mm$ .",
+        "incorrect": "النقط $E$ ، $K$ ، $F$ في استقامية و $K$ بينهما: استعمل الطول $EF$ ."
+      },
+      "solution": {
+        "lines": [
+          "النقط $E$ ، $K$ ، $F$ في استقامية و $K$ بين $E$ و $F$ : $KE + KF = EF = 98\\,mm$ ...(1)",
+          "النقط $E$ ، $K$ ، $F$ والنقط $G$ ، $K$ ، $H$ في استقامية وبنفس الترتيب، و $(EG) \\parallel (FH)$ ،",
+          "وحسب خاصية طالس: $\\dfrac{KE}{KF} = \\dfrac{KG}{KH} = \\dfrac{EG}{FH}$",
+          "ومنه $\\dfrac{KE}{KF} = \\dfrac{54}{30} = 1{,}8$ أي $KE = 1{,}8\\,KF$ ، أي $KE - 1{,}8\\,KF = 0$ ...(2)",
+          "من (1) و (2): $\\begin{cases} KE + KF = 98 \\\\ KE - 1{,}8\\,KF = 0 \\end{cases}$ ، وهي جملة السؤال 01،",
+          "ومنه $KE = 63\\,mm$ و $KF = 35\\,mm$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "النسبة $\\dfrac{KE}{KF}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب النسبة على شكل عدد عشري أو كسر",
+      "expectedAnswer": "9/5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(EG) \\parallel (FH)$ : طبّق خاصية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسب المتساوية: $\\dfrac{KE}{KF} = \\dfrac{KG}{KH} = \\dfrac{EG}{FH}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{KE}{KF} = \\dfrac{KG}{KH} = \\dfrac{54}{30} = 1{,}8$ .",
+        "incorrect": "استعمل النسبة $\\dfrac{KG}{KH}$ ، المعطاة بطوليها."
+      },
+      "solution": {
+        "lines": [
+          "النقط $E$ ، $K$ ، $F$ في استقامية و $K$ بين $E$ و $F$ : $KE + KF = EF = 98\\,mm$ ...(1)",
+          "النقط $E$ ، $K$ ، $F$ والنقط $G$ ، $K$ ، $H$ في استقامية وبنفس الترتيب، و $(EG) \\parallel (FH)$ ،",
+          "وحسب خاصية طالس: $\\dfrac{KE}{KF} = \\dfrac{KG}{KH} = \\dfrac{EG}{FH}$",
+          "ومنه $\\dfrac{KE}{KF} = \\dfrac{54}{30} = 1{,}8$ أي $KE = 1{,}8\\,KF$ ، أي $KE - 1{,}8\\,KF = 0$ ...(2)",
+          "من (1) و (2): $\\begin{cases} KE + KF = 98 \\\\ KE - 1{,}8\\,KF = 0 \\end{cases}$ ، وهي جملة السؤال 01،",
+          "ومنه $KE = 63\\,mm$ و $KF = 35\\,mm$ ."
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "الطول $KE$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب الطول $KE$ بـ mm (عدد فقط)",
+      "expectedAnswer": "63",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب جملة مجهولاها $KE$ و $KF$ ، ثم قارنها بجملة السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "$KE = 63\\,mm$ .",
+        "incorrect": "$KE + KF = 98$ و $KE - 1{,}8\\,KF = 0$ : هي جملة السؤال 01."
+      },
+      "solution": {
+        "lines": [
+          "النقط $E$ ، $K$ ، $F$ في استقامية و $K$ بين $E$ و $F$ : $KE + KF = EF = 98\\,mm$ ...(1)",
+          "النقط $E$ ، $K$ ، $F$ والنقط $G$ ، $K$ ، $H$ في استقامية وبنفس الترتيب، و $(EG) \\parallel (FH)$ ،",
+          "وحسب خاصية طالس: $\\dfrac{KE}{KF} = \\dfrac{KG}{KH} = \\dfrac{EG}{FH}$",
+          "ومنه $\\dfrac{KE}{KF} = \\dfrac{54}{30} = 1{,}8$ أي $KE = 1{,}8\\,KF$ ، أي $KE - 1{,}8\\,KF = 0$ ...(2)",
+          "من (1) و (2): $\\begin{cases} KE + KF = 98 \\\\ KE - 1{,}8\\,KF = 0 \\end{cases}$ ، وهي جملة السؤال 01،",
+          "ومنه $KE = 63\\,mm$ و $KF = 35\\,mm$ ."
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "statement": "الطول $KF$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب الطول $KF$ بـ mm (عدد فقط)",
+      "expectedAnswer": "35",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$KF$ هو المجهول الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "$KF = 35\\,mm$ ، ونتحقق: $63 + 35 = 98$ .",
+        "incorrect": "$KF$ هو العدد الثاني في الثنائية حل جملة السؤال 01."
+      },
+      "solution": {
+        "lines": [
+          "النقط $E$ ، $K$ ، $F$ في استقامية و $K$ بين $E$ و $F$ : $KE + KF = EF = 98\\,mm$ ...(1)",
+          "النقط $E$ ، $K$ ، $F$ والنقط $G$ ، $K$ ، $H$ في استقامية وبنفس الترتيب، و $(EG) \\parallel (FH)$ ،",
+          "وحسب خاصية طالس: $\\dfrac{KE}{KF} = \\dfrac{KG}{KH} = \\dfrac{EG}{FH}$",
+          "ومنه $\\dfrac{KE}{KF} = \\dfrac{54}{30} = 1{,}8$ أي $KE = 1{,}8\\,KF$ ، أي $KE - 1{,}8\\,KF = 0$ ...(2)",
+          "من (1) و (2): $\\begin{cases} KE + KF = 98 \\\\ KE - 1{,}8\\,KF = 0 \\end{cases}$ ، وهي جملة السؤال 01،",
+          "ومنه $KE = 63\\,mm$ و $KF = 35\\,mm$ ."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,307 @@
+{
+  "id": "ex-3am-jam-tarh-kasrayn-l5-002",
+  "lessonCode": "jam-tarh-kasrayn",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — قطاف الزيتون على ثلاثة أيّام",
+    "estimatedMinutes": 14,
+    "tags": [
+      "جمع كسور",
+      "جزء باقٍ"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 1,
+      "file": "3am-s1-103",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "قطف عمّال حقل زيتون على ثلاثة أيّام: $\\dfrac{3}{5}$ من الحقل في اليوم الأوّل و $\\dfrac{1}{10}$ منه في اليوم الثاني و $\\dfrac{1}{4}$ منه في اليوم الثالث."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما الجزء المقطوف في الأيّام الثلاثة ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jam-tarh-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "19/20",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "5/19",
+          "id": "MISC-JAMTARH-ACROSS"
+        },
+        {
+          "value": "1/4",
+          "id": "MISC-JAMTARH-NOSCALE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليّة المطلوبة؟ وهل المقامات متساوية أو أحدها مضاعف لغيره؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب مضاعفات المقام الأكبر حتى تجد أوّل مضاعف يقبل القسمة على المقام الآخر، فهو مقامك المشترك."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ حدّ بالمقام المشترك، ثمّ اجمع البسوط أو اطرحها، ثمّ اختزل إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{19}{20}$ .",
+        "incorrect": "اكتب الكسرين بمقام مشترك قبل أن تجمع أو تطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نبحث عن أصغر مضاعف مشترك للمقامات $5$ و $10$ و $4$ : إنّه $20$ .",
+          "$\\dfrac{3}{5} = \\dfrac{3 \\times 4}{5 \\times 4} = \\dfrac{12}{20}$ .",
+          "$\\dfrac{1}{10} = \\dfrac{1 \\times 2}{10 \\times 2} = \\dfrac{2}{20}$ .",
+          "$\\dfrac{1}{4} = \\dfrac{1 \\times 5}{4 \\times 5} = \\dfrac{5}{20}$ .",
+          "$\\dfrac{12 + 2 + 5}{20} = \\dfrac{19}{20}$ ."
+        ],
+        "result": "\\dfrac{19}{20}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل كانت الأيّام الثلاثة كافية لقطف الحقل كلّه ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jam-tarh-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كلّ سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "لا .",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "المقام المشترك $20$ : $\\dfrac{12}{20} + \\dfrac{2}{20} + \\dfrac{5}{20} = \\dfrac{19}{20}$ .",
+          "$\\dfrac{19}{20} < 1$ ، فلم يُقطف الحقل كلّه."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "ما الجزء الذي بقي دون قطف ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jam-tarh-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "1/20",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "-9/10",
+          "id": "MISC-JAMTARH-INTEGER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليّة المطلوبة؟ وهل المقامات متساوية أو أحدها مضاعف لغيره؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب مضاعفات المقام الأكبر حتى تجد أوّل مضاعف يقبل القسمة على المقام الآخر، فهو مقامك المشترك."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ حدّ بالمقام المشترك، ثمّ اجمع البسوط أو اطرحها، ثمّ اختزل إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{20}$ .",
+        "incorrect": "اكتب الكسرين بمقام مشترك قبل أن تجمع أو تطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "المقامات متساوية: المقام المشترك هو $20$ .",
+          "$1 = \\dfrac{20}{20}$ .",
+          "$\\dfrac{20 - 19}{20} = \\dfrac{1}{20}$ ."
+        ],
+        "result": "\\dfrac{1}{20}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "في أيّ يوم قطفوا أكبر جزء ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jam-tarh-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "اليوم الأوّل",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "اليوم الثاني",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "اليوم الثالث",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كلّ سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "اليوم الأوّل .",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{5} > \\dfrac{1}{4} > \\dfrac{1}{10}$ ، فأكبر جزء في اليوم الأوّل."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "يضمّ الحقل $400$ شجرة. كم شجرة قُطفت في اليوم الأوّل ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jam-tarh-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "240",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كلّ سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$240$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{5} \\times 400 = 240$ ."
+        ],
+        "result": "240"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

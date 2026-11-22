@@ -1,0 +1,302 @@
+{
+  "id": "ex-4am-insihab-shuaa-l2-002",
+  "lessonCode": "insihab-shuaa",
+  "level": 2,
+  "metadata": {
+    "title": "نشاط 1 — صورة المثلث ABC",
+    "estimatedMinutes": 2,
+    "tags": [
+      "الانسحاب"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-1",
+      "page": 128,
+      "section": "أنشطة",
+      "number": 1
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 128، الشكل أعادت المنصّة رسمه): المثلث ABC وصوره على المرصوفة.",
+    "figure": {
+      "points": {
+        "A": [
+          8,
+          4
+        ],
+        "B": [
+          10,
+          1
+        ],
+        "C": [
+          10,
+          3
+        ],
+        "K": [
+          7,
+          7
+        ],
+        "H": [
+          4,
+          7
+        ],
+        "G": [
+          2,
+          4
+        ],
+        "Q": [
+          4,
+          1
+        ],
+        "E": [
+          4,
+          3
+        ],
+        "F": [
+          4,
+          5
+        ],
+        "L": [
+          0,
+          4
+        ],
+        "S": [
+          10,
+          8
+        ],
+        "P": [
+          12,
+          5
+        ],
+        "R": [
+          12,
+          7
+        ],
+        "M": [
+          11,
+          4
+        ],
+        "N": [
+          13,
+          1
+        ],
+        "T": [
+          13,
+          3
+        ],
+        "A'": [
+          5,
+          4
+        ],
+        "C'": [
+          7,
+          1
+        ],
+        "D": [
+          7,
+          3
+        ]
+      },
+      "grid": true,
+      "polygons": [
+        {
+          "points": [
+            "A",
+            "B",
+            "C"
+          ],
+          "tone": "slate"
+        },
+        {
+          "points": [
+            "G",
+            "Q",
+            "E"
+          ],
+          "tone": "emerald"
+        },
+        {
+          "points": [
+            "S",
+            "P",
+            "R"
+          ],
+          "tone": "sky"
+        },
+        {
+          "points": [
+            "M",
+            "N",
+            "T"
+          ],
+          "tone": "amber"
+        },
+        {
+          "points": [
+            "A'",
+            "C'",
+            "D"
+          ],
+          "tone": "violet"
+        }
+      ],
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "tone": "slate",
+          "bold": true
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "tone": "slate",
+          "bold": true
+        },
+        {
+          "from": "C",
+          "to": "A",
+          "tone": "slate",
+          "bold": true
+        },
+        {
+          "from": "G",
+          "to": "Q",
+          "tone": "emerald",
+          "bold": true
+        },
+        {
+          "from": "Q",
+          "to": "E",
+          "tone": "emerald",
+          "bold": true
+        },
+        {
+          "from": "E",
+          "to": "G",
+          "tone": "emerald",
+          "bold": true
+        },
+        {
+          "from": "S",
+          "to": "P",
+          "tone": "sky",
+          "bold": true
+        },
+        {
+          "from": "P",
+          "to": "R",
+          "tone": "sky",
+          "bold": true
+        },
+        {
+          "from": "R",
+          "to": "S",
+          "tone": "sky",
+          "bold": true
+        },
+        {
+          "from": "M",
+          "to": "N",
+          "tone": "amber",
+          "bold": true
+        },
+        {
+          "from": "N",
+          "to": "T",
+          "tone": "amber",
+          "bold": true
+        },
+        {
+          "from": "T",
+          "to": "M",
+          "tone": "amber",
+          "bold": true
+        },
+        {
+          "from": "A'",
+          "to": "C'",
+          "tone": "violet",
+          "bold": true
+        },
+        {
+          "from": "C'",
+          "to": "D",
+          "tone": "violet",
+          "bold": true
+        },
+        {
+          "from": "D",
+          "to": "A'",
+          "tone": "violet",
+          "bold": true
+        },
+        {
+          "from": "K",
+          "to": "H"
+        },
+        {
+          "from": "E",
+          "to": "F"
+        }
+      ],
+      "ariaLabel": "ورقة مرصوفة: المثلث ABC وصوره الأربع GQE و SPR و MNT و A′C′D متباعدة، والقطع [KH] و [EF] والنقطة L",
+      "caption": "أعادت المنصّة رسم شكل الكتاب بوضوح أكبر، بنفس المعطيات",
+      "maxWidth": 600
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "صورة المثلث ABC بالانسحاب الذي يحوّل C إلى R هي:",
+      "learningPoints": [
+        {
+          "code": "4am_insihab-shuaa_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "SPR",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "GQE",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-HARAKA-UKHRA"
+        },
+        {
+          "id": "C",
+          "content": "MNT",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-HARAKA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "صورة نقطة بالانسحاب: نحرّكها بنفس حركة النقطة المعطاة نحو صورتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ حركة السهم المعطى (أفقيا ثم شاقوليا) وطبّقها انطلاقا من النقطة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: للسهم من النقطة نحو صورتها نفس المنحى ونفس الاتجاه ونفس الطول."
+        }
+      ],
+      "feedback": {
+        "correct": "من C إلى R: مربعان يمينا وأربعة نحو الأعلى؛ A ↦ S و B ↦ P.",
+        "incorrect": "طبّق حركة C نحو R على A وعلى B."
+      },
+      "difficulty": 2
+    }
+  ]
+}

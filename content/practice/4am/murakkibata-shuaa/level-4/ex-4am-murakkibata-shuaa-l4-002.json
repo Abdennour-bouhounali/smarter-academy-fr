@@ -1,0 +1,77 @@
+{
+  "id": "ex-4am-murakkibata-shuaa-l4-002",
+  "lessonCode": "murakkibata-shuaa",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — المبدأ المجهول",
+    "estimatedMinutes": 2,
+    "tags": [
+      "تمثيل شعاع",
+      "عكس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_murakkibata-shuaa_P3",
+      "modelledOn": "method-draw"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس، $\\overrightarrow{AB}\\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix}$ و $B(1\\,;\\,4)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما إحداثيتا A؟",
+      "learningPoints": [
+        {
+          "code": "4am_murakkibata-shuaa_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "إحداثيتا النقطة (x ; y) — عددان مثل −3 أو 2,5",
+      "expectedAnswer": {
+        "x": "-2",
+        "y": "6"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الشعاع ينطلق من النقطة المجهولة وينتهي عند النقطة المعلومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ارجع من النهاية عكس الحركة: اطرح كل مركبة من الإحداثية الموافقة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: من النقطة التي وجدتها، هل تعيدك الحركة إلى النقطة المعلومة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "نرجع من B عكس الحركة: 3 نحو اليسار و 2 نحو الأعلى: $A(-2\\,;\\,6)$ .",
+        "incorrect": "A هي المبدأ: من A نصل إلى B."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "4",
+            "y": "2"
+          },
+          "id": "MISC-MAALAM-ISHARA"
+        },
+        {
+          "value": {
+            "x": "3",
+            "y": "-2"
+          },
+          "id": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        }
+      ]
+    }
+  ]
+}

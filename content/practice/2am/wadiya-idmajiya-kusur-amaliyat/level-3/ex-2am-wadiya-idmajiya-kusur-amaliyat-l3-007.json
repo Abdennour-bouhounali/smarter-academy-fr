@@ -1,0 +1,300 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-kusur-amaliyat-l3-007",
+  "lessonCode": "wadiya-idmajiya-kusur-amaliyat",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مساهمات المستويات في رحلة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "الجزء الباقي",
+      "ترتيب كسور",
+      "المقارنة بالنصف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثالث",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "جمعت أربعة مستويات مبلغ $3200$ DA لرحلة : مساهمة السنة الأولى $\\dfrac{7}{16}$ ، والثانية $\\dfrac{1}{4}$ ، والثالثة $\\dfrac{3}{16}$ ، والرابعة الباقي ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما الكسر الذي يمثّل مساهمة السنة الرابعة ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "1/8",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "7/8",
+          "id": "MISC-JAMKASR-PART"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكلّ يساوي كسرًا بسطه ومقامه عدد واحد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الأجزاء المأخوذة أوّلًا ثمّ اطرحها من الكلّ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الجزء الباقي هو الكلّ ناقص ما أُخذ ، وهو أصغر من الكلّ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{8}$ .",
+        "incorrect": "اجمع ما أُخذ أوّلًا ثمّ اطرحه من الكلّ ، ولا تُعطِ ما أُخذ بدل الباقي ."
+      },
+      "solution": {
+        "lines": [
+          "$1 = \\dfrac{16}{16}$ .",
+          "$\\dfrac{1}{4} = \\dfrac{1 \\times 4}{4 \\times 4} = \\dfrac{4}{16}$ .",
+          "ما أُخذ : $\\dfrac{7}{16} + \\dfrac{1}{4} + \\dfrac{3}{16} = \\dfrac{7 + 4 + 3}{16} = \\dfrac{14}{16}$ .",
+          "الباقي : $1 - \\dfrac{14}{16} = \\dfrac{16}{16} - \\dfrac{14}{16} = \\dfrac{2}{16}$ .",
+          "نختزل : $\\dfrac{1}{8}$ ."
+        ],
+        "result": "\\dfrac{1}{8}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اختر ترتيب المساهمات الأربع تنازليًّا (الأكبر أوّلًا) .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{7}{16} > \\dfrac{1}{4} > \\dfrac{3}{16} > \\dfrac{1}{8}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{1}{8} > \\dfrac{3}{16} > \\dfrac{1}{4} > \\dfrac{7}{16}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-REVERSED"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المقامان ؟ وما البسطان ؟ وأيّة حالة من حالات المقارنة هي ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مقاما الكسرين متساويان : قارن البسطين . بسطاهما متساويان : الأكبر هو الأصغر مقامًا . أحد المقامين مضاعف للآخر : وحّد المقامين ثمّ قارن البسطين ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يمكنك أيضًا مقارنة كلّ كسر بالعدد 1 أو بالنصف ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{7}{16} > \\dfrac{1}{4} > \\dfrac{3}{16} > \\dfrac{1}{8}$ .",
+        "incorrect": "اختر طريقة المقارنة المناسبة للحالة (توحيد المقامين ، أو البسطان المتساويان ، أو المقارنة بالعدد 1) ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "نكتب الكسور بمقام مشترك : $\\dfrac{7}{16}$ ، $\\dfrac{4}{16}$ ، $\\dfrac{3}{16}$ ، $\\dfrac{2}{16}$ .",
+          "الترتيب التنازلي : $\\dfrac{7}{16} > \\dfrac{1}{4} > \\dfrac{3}{16} > \\dfrac{1}{8}$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما الكسر الذي يمثّل مساهمة السنتين الأولى والثانية معًا ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "11/16",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2/5",
+          "id": "MISC-JAMKASR-ACROSS"
+        },
+        {
+          "value": "1/2",
+          "id": "MISC-JAMKASR-NOSCALE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليّة المطلوبة ؟ وهل المقامان متساويان ، أم أنّ أحدهما مضاعف للآخر ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا اختلف المقامان فاكتب الكسر ذا المقام الأصغر بالمقام الأكبر : اضرب حدّيه في العدد نفسه ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع (أو اطرح) البسطين وأبقِ المقام كما هو ، ثمّ اختزل الناتج إن أمكن ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{11}{16}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح ، ثمّ اختزل الناتج وأعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{4} = \\dfrac{1 \\times 4}{4 \\times 4} = \\dfrac{4}{16}$ .",
+          "$\\dfrac{7}{16} + \\dfrac{1}{4} = \\dfrac{7 + 4}{16} = \\dfrac{11}{16}$ ."
+        ],
+        "result": "\\dfrac{11}{16}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "هل ساهمت السنتان الأولى والثانية معًا بأكثر من نصف المبلغ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMKASR-ACROSS"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا ثمّ تحقّق منها بحساب بسيط ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أو قارن بدقّة ثمّ قارن بما قيل ."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم .",
+        "incorrect": "احسب ثمّ قارن بدقّة قبل أن تجيب ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{7}{16} + \\dfrac{4}{16} = \\dfrac{11}{16}$ .",
+          "$\\dfrac{11}{16} > \\dfrac{8}{16}$ : نعم ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "كم دينارًا ساهمت به السنة الرابعة ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "400",
+      "misconceptionSignatures": [
+        {
+          "value": "25600",
+          "id": "MISC-JIDAKASR-FLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزء من عدد يعني جداء الكسر في العدد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي ما دام الكسر أصغر من 1 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$400$ .",
+        "incorrect": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ، ولا تقلب الكسر ."
+      },
+      "solution": {
+        "lines": [
+          "$3200 \\div 8 = 400$ ."
+        ],
+        "result": "400"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

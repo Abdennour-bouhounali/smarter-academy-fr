@@ -1,0 +1,189 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-aadad-nisbiya-l2-006",
+  "lessonCode": "wadiya-idmajiya-aadad-nisbiya",
+  "level": 2,
+  "metadata": {
+    "title": "مجمّد ينقطع عنه التيار",
+    "estimatedMinutes": 6,
+    "tags": [
+      "درجة الحرارة",
+      "جداء",
+      "ما قبل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "درجة حرارة مجمّد في محلّ تجاري $−18$ °C . عند انقطاع التيار الكهربائي ترتفع حرارته بانتظام بمقدار $2{,}4$ °C في كل ساعة. نرمز بـ $t$ إلى عدد الساعات منذ لحظة الانقطاع، و $t$ سالب قبلها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما درجة حرارة المجمّد بعد $5$ ساعات من الانقطاع؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-6",
+      "misconceptionSignatures": [
+        {
+          "value": "-78",
+          "id": "MISC-QISMA-PRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ النص وحدّد الأعداد المعطاة وما يعبّر عنه كل منها: ارتفاع أم انخفاض، ربح أم خسارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر عن الانخفاض أو الخسارة أو الدَّين بعدد سالب، ثم اختر العملية التي تناسب السؤال."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العملية بأعداد نسبية ثم أنجزها بقاعدة الإشارات وبأولوية العمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $−6$ °C .",
+        "incorrect": "راجع ترجمة النص إلى عملية بين أعداد نسبية: أيّ عدد سالب وأيّ عملية تناسب السؤال؟"
+      },
+      "solution": {
+        "lines": [
+          "$(−18) + 2{,}4 \\times 5$",
+          "$= (−18) + 12$",
+          "$= −6$"
+        ],
+        "result": "−6"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "بعد كم ساعة تبلغ الحرارة $0$ °C ؟ احسب $\\big(0 − (−18)\\big) \\div 2{,}4$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "7.5",
+      "misconceptionSignatures": [
+        {
+          "value": "-7.5",
+          "id": "MISC-QISMA-SUBNEG"
+        },
+        {
+          "value": "15.6",
+          "id": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العددين اللذين نقسم أحدهما على الآخر وعيّن إشارة كل منهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عاملان مجهولان فالعامل الناقص هو حاصل قسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعملية العكسية: اضرب نتيجتك في العامل المعلوم."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $7{,}5$ ساعات .",
+        "incorrect": "راجع الربط بين الضرب والقسمة وقاعدة إشارات الحاصل، ثم تحقّق بالضرب."
+      },
+      "solution": {
+        "lines": [
+          "$(0 − (−18)) \\div 2{,}4$",
+          "$= 18 \\div 2{,}4$",
+          "$= 7{,}5$"
+        ],
+        "result": "7{,}5"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "كانت الحرارة قبل الانقطاع بساعتين ($t = −2$) مساوية لـ:",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-22.8",
+      "misconceptionSignatures": [
+        {
+          "value": "31.2",
+          "id": "MISC-QISMA-PRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ النص وحدّد الأعداد المعطاة وما يعبّر عنه كل منها: ارتفاع أم انخفاض، ربح أم خسارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر عن الانخفاض أو الخسارة أو الدَّين بعدد سالب، ثم اختر العملية التي تناسب السؤال."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العملية بأعداد نسبية ثم أنجزها بقاعدة الإشارات وبأولوية العمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $−22{,}8$ °C .",
+        "incorrect": "راجع ترجمة النص إلى عملية بين أعداد نسبية: أيّ عدد سالب وأيّ عملية تناسب السؤال؟"
+      },
+      "solution": {
+        "lines": [
+          "$(−18) + 2{,}4 \\times (−2)$",
+          "$= (−18) + (−4{,}8)$",
+          "$= −22{,}8$"
+        ],
+        "result": "−22{,}8"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "id": "ex-3am-qismat-nisbiyayn-l4-008",
+  "lessonCode": "qismat-nisbiyayn",
+  "level": 4,
+  "metadata": {
+    "title": "مربع سحري ضربي",
+    "estimatedMinutes": 4,
+    "tags": [
+      "مربع سحري",
+      "حاصل القسمة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-47",
+      "page": 19,
+      "section": "أتعمّق",
+      "number": 47
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "هذا مربع سحري « ضربي »: جداء الأعداد الثلاثة في كل سطر وفي كل عمود وفي كل قطر يساوي $64$ . أكمل الخانات التي تحمل علامة « ؟ ».",
+    "table": {
+      "head": [
+        "",
+        "العمود 1",
+        "العمود 2",
+        "العمود 3"
+      ],
+      "rows": [
+        [
+          "السطر 1",
+          "$−8$",
+          "؟",
+          "$−32$"
+        ],
+        [
+          "السطر 2",
+          "$16$",
+          "$4$",
+          "؟"
+        ],
+        [
+          "السطر 3",
+          "؟",
+          "$64$",
+          "$−2$"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما العدد في الخانة الثانية من السطر الأول؟",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "0.25",
+      "misconceptionSignatures": [
+        {
+          "value": "-0.25",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "4",
+          "id": "MISC-QISMA-ORDER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المربع السحري الضربي يكون جداء كل سطر وكل عمود وكل قطر العدد نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر سطرًا أو عمودًا فيه خانتان معلومتان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الخانة الناقصة هي حاصل قسمة الجداء المعلوم على جداء الخانتين المعلومتين."
+        }
+      ],
+      "feedback": {
+        "correct": "الخانة تحمل العدد $0{,}25$ .",
+        "incorrect": "راجع قاعدة المربع السحري الضربي، ثم استعمل القسمة على جداء الخانتين المعلومتين."
+      },
+      "solution": {
+        "lines": [
+          "جداء الخانتين المعلومتين في السطر الأول: $(−8) \\times (−32) = 256$ .",
+          "الخانة الناقصة هي $64 \\div 256 = 0{,}25$ ."
+        ],
+        "result": "0{,}25"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما العدد في الخانة الثالثة من السطر الثاني؟",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "-1",
+          "id": "MISC-QISMA-SIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المربع السحري الضربي يكون جداء كل سطر وكل عمود وكل قطر العدد نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر سطرًا أو عمودًا فيه خانتان معلومتان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الخانة الناقصة هي حاصل قسمة الجداء المعلوم على جداء الخانتين المعلومتين."
+        }
+      ],
+      "feedback": {
+        "correct": "الخانة تحمل العدد $1$ .",
+        "incorrect": "راجع قاعدة المربع السحري الضربي، ثم استعمل القسمة على جداء الخانتين المعلومتين."
+      },
+      "solution": {
+        "lines": [
+          "جداء الخانتين المعلومتين في السطر الثاني: $16 \\times 4 = 64$ .",
+          "الخانة الناقصة هي $64 \\div 64 = 1$ ."
+        ],
+        "result": "1"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما العدد في الخانة الأولى من السطر الثالث؟",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-0.5",
+      "misconceptionSignatures": [
+        {
+          "value": "0.5",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "-2",
+          "id": "MISC-QISMA-ORDER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المربع السحري الضربي يكون جداء كل سطر وكل عمود وكل قطر العدد نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر سطرًا أو عمودًا فيه خانتان معلومتان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الخانة الناقصة هي حاصل قسمة الجداء المعلوم على جداء الخانتين المعلومتين."
+        }
+      ],
+      "feedback": {
+        "correct": "الخانة تحمل العدد $−0{,}5$ .",
+        "incorrect": "راجع قاعدة المربع السحري الضربي، ثم استعمل القسمة على جداء الخانتين المعلومتين."
+      },
+      "solution": {
+        "lines": [
+          "جداء الخانتين المعلومتين في السطر الثالث: $64 \\times (−2) = −128$ .",
+          "الخانة الناقصة هي $64 \\div (−128) = −0{,}5$ ."
+        ],
+        "result": "−0{,}5"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

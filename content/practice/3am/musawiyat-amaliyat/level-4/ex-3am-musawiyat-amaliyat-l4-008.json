@@ -1,0 +1,239 @@
+{
+  "id": "ex-3am-musawiyat-amaliyat-l4-008",
+  "lessonCode": "musawiyat-amaliyat",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — إضافة كسر إلى طرفي مساواة",
+    "estimatedMinutes": 9,
+    "tags": [
+      "حساب على الكسور",
+      "المساويات والجمع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$x$ عدد ناطق حيث $x = \\dfrac{3}{4}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $\\dfrac{3}{4} - \\dfrac{5}{6}$ على الشكل الكسري غير القابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b لا يقبل الاختزال",
+      "expectedAnswer": "-1/12",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العلاقة بين المساواة المعطاة والمساواة المطلوبة؟ أيّ عملية تنقلك من الأولى إلى الثانية؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا أمكن الانتقال من المساواة المعطاة إلى المساواة المقترحة بعملية واحدة على الطرفين فهي صحيحة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب عمليّة واحدة على الطرفين، ثم قارن النتيجة بالمساواة المقترحة حدًّا بحدّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$-\\dfrac{1}{12}$ .",
+        "incorrect": "استعمل خواص المساواة والعمليّات: عملية واحدة على الطرفين معًا تنقلك من مساواة إلى أخرى؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{9}{12} - \\dfrac{10}{12} = -\\dfrac{1}{12}$ ."
+        ],
+        "result": "-\\dfrac{1}{12}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "إذا كان $x = \\dfrac{3}{4}$ فإنّ $x - \\dfrac{5}{6} = \\ldots$ .",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "-1/12",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "3/4",
+          "id": "MISC-MUSAWIYA-ONE-SIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نضيفه (أو نطرحه)؟ وعلى أيّ طرف نطبّقه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تتغيّر المساواة إلا إذا أضفنا العدد نفسه (أو طرحناه) إلى طرفيها معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الطرف الأيمن والطرف الأيسر في سطر واحد ثم طبّق العملية على كلٍّ منهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$x - \\dfrac{5}{6} = -\\dfrac{1}{12}$ .",
+        "incorrect": "لا تتغيّر المساواة عندما نضيف إلى طرفيها معًا (أو نطرح منهما) العدد نفسه؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $x = \\dfrac{3}{4}$ .",
+          "بطرح $\\dfrac{5}{6}$ من طرفي المساواة نجد: $x - \\dfrac{5}{6} = -\\dfrac{1}{12}$ ."
+        ],
+        "result": "x - \\dfrac{5}{6} = -\\dfrac{1}{12}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "إذا كان $x = \\dfrac{3}{4}$ فإنّ $-\\dfrac{4}{3}x = \\ldots$ .",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "-1",
+      "misconceptionSignatures": [
+        {
+          "value": "3/4",
+          "id": "MISC-MUSAWIYA-ONE-SIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نضرب فيه (أو نقسم عليه)؟ وهل هو معدوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نضرب (أو نقسم) الطرفين معًا، وكلّ حدّ من الطرف يتأثّر بالعملية؛ والقسمة على صفر ممنوعة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع الطرف كاملًا بين قوسين قبل أن تضرب، وانتبه لإشارة العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$-\\dfrac{4}{3}x = -1$ .",
+        "incorrect": "لا تتغيّر المساواة عندما نضرب طرفيها في العدد نفسه أو نقسمهما على عدد غير معدوم؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $x = \\dfrac{3}{4}$ .",
+          "بضرب طرفي المساواة في $-\\dfrac{4}{3}$ نجد: $-\\dfrac{4}{3} \\times x = -\\dfrac{4}{3} \\times \\dfrac{3}{4}$ ، أي $-\\dfrac{4}{3}x = -1$ ."
+        ],
+        "result": "-\\dfrac{4}{3}x = -1"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "إذا كان $x = \\dfrac{3}{4}$ فإنّ $4x = 3$ . هل هذه المساواة صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيحة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خاطئة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-DOUBT-OP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العلاقة بين المساواة المعطاة والمساواة المطلوبة؟ أيّ عملية تنقلك من الأولى إلى الثانية؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا أمكن الانتقال من المساواة المعطاة إلى المساواة المقترحة بعملية واحدة على الطرفين فهي صحيحة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب عمليّة واحدة على الطرفين، ثم قارن النتيجة بالمساواة المقترحة حدًّا بحدّ."
+        }
+      ],
+      "feedback": {
+        "correct": "ضربنا طرفي $x = \\dfrac{3}{4}$ في $4$ .",
+        "incorrect": "استعمل خواص المساواة والعمليّات: عملية واحدة على الطرفين معًا تنقلك من مساواة إلى أخرى؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $x = \\dfrac{3}{4}$ .",
+          "بضرب طرفي المساواة في $4$ نجد: $4 \\times x = 4 \\times \\dfrac{3}{4}$ ، أي $4x = 3$ .",
+          "ضربنا طرفي $x = \\dfrac{3}{4}$ في $4$ ."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

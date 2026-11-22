@@ -1,0 +1,218 @@
+{
+  "id": "ex-3am-tasawi-muqaranat-kasrayn-l2-006",
+  "lessonCode": "tasawi-muqaranat-kasrayn",
+  "level": 2,
+  "metadata": {
+    "title": "الحاسبة تقول إنّهما متساويان",
+    "estimatedMinutes": 10,
+    "tags": [
+      "تساوي كسرين",
+      "الجداءان المتصالبان"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-55",
+      "page": 34,
+      "section": "أتعمّق",
+      "number": 55
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تعرض حاسبة صغيرة ثماني منازل عشرية، فتعطي للكسرين $\\dfrac{123456789}{987654321}$ و $\\dfrac{12345679}{98765432}$ العدد نفسه $0{,}12500000$ . فهل هما متساويان؟"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "ننظر إلى رقم آحاد كلّ جداء متصالب.",
+      "statement": "ما رقم آحاد الجداء $123456789 \\times 98765432$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كل سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$8$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "رقم آحاد $123456789 \\times 98765432$ هو رقم آحاد $9 \\times 2 = 18$ أي $8$ ."
+        ],
+        "result": "8"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما رقم آحاد الجداء $987654321 \\times 12345679$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كل سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$9$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "رقم آحاد $987654321 \\times 12345679$ هو رقم آحاد $1 \\times 9 = 9$ أي $9$ ."
+        ],
+        "result": "9"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما رأيك في ما تعرضه الحاسبة؟",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الكسران متساويان لأنّ الحاسبة تعرض النتيجة نفسها",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-CALC"
+        },
+        {
+          "id": "B",
+          "content": "الكسران متساويان لأنّ بسطيهما ومقاميهما متقاربة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-EYE"
+        },
+        {
+          "id": "C",
+          "content": "الكسران مختلفان لأنّ رقمي آحاد الجداءين المتصالبين مختلفان",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الخيارات واحسب كلاّ منها بدل أن تخمّن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ خيار على الأعداد الواردة فيه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بالجداءين المتصالبين أو بمقام مشترك، ثمّ قرّر."
+        }
+      ],
+      "feedback": {
+        "correct": "رقما آحاد الجداءين المتصالبين مختلفان، إذن الكسران مختلفان.",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الجداءان المتصالبان ينتهيان برقمين مختلفين، فهما مختلفان.",
+          "إذن الكسران مختلفان، والحاسبة تقرّب فلا تُثبت التساوي."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "برّر لماذا لا تكفي الحاسبة لإثبات تساوي كسرين.",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجب أن تبرّره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل الجداءين المتصالبين أو مقامًا مشتركًا، وسمِّ الطريقة التي اخترتها."
+        }
+      ],
+      "feedback": {
+        "correct": "أمّا الجداءان المتصالبان فيحسمان التساوي: هنا ينتهيان برقمين مختلفين، فالكسران مختلفان.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "الحاسبة تعرض عددًا محدودًا من المنازل العشرية، فتعطي النتيجة نفسها لعددين مختلفين.",
+          "أمّا الجداءان المتصالبان فيحسمان التساوي: هنا ينتهيان برقمين مختلفين، فالكسران مختلفان."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

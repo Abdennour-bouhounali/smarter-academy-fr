@@ -1,0 +1,114 @@
+{
+  "id": "ex-4am-muntasaf-masafa-l1-009",
+  "lessonCode": "muntasaf-masafa",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — منتصف على المرصوفة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المنتصف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_muntasaf-masafa_P1",
+      "modelledOn": "act-3"
+    }
+  },
+  "statement": {
+    "content": "لاحظ الشكل: النقطتان A و B على عقد الرصف في معلم.",
+    "figure": {
+      "points": {
+        "A": [
+          -3,
+          2
+        ],
+        "B": [
+          1,
+          -2
+        ],
+        "O": [
+          0,
+          0
+        ],
+        "Z0": [
+          -4,
+          -3
+        ],
+        "Z1": [
+          2,
+          3
+        ]
+      },
+      "grid": true,
+      "axes": true,
+      "hidden": [
+        "Z0",
+        "Z1"
+      ],
+      "labels": {
+        "A": "nw",
+        "B": "se",
+        "O": "sw"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس على ورقة مرصوفة: النقطة A في الأعلى على اليسار والنقطة B في الأسفل على اليمين، كلتاهما على عقدة",
+      "maxWidth": 480
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "اقرأ إحداثيتي A و B، ثم أوجد إحداثيتي I منتصف [AB]:",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح أو كسر مثل 1/2)",
+      "expectedAnswer": {
+        "x": "-1",
+        "y": "0"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MUNTASAF-NISF",
+          "value": {
+            "x": "-2",
+            "y": "0"
+          }
+        },
+        {
+          "id": "MISC-MAALAM-TABDIL-X-Y",
+          "value": {
+            "x": "0",
+            "y": "-1"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المنتصف يقع في منتصف الطريق أفقيا وفي منتصف الطريق عموديا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الفاصلتين ثم اقسم على 2، وافعل الشيء نفسه مع الترتيبين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى الإشارات: جمع عدد سالب يعني طرح قيمته."
+        }
+      ],
+      "feedback": {
+        "correct": "$A(-3\\,;\\,2)$ و $B(1\\,;\\,-2)$ إذن $I\\left(\\dfrac{-3 + 1}{2}\\,;\\,\\dfrac{2 + (-2)}{2}\\right) = (-1\\,;\\,0)$ .",
+        "incorrect": "اقرأ الفاصلة على محور الفواصل أولا."
+      }
+    }
+  ]
+}

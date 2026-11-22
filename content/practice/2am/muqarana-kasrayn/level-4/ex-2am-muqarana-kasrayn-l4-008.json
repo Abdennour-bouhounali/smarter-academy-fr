@@ -1,0 +1,233 @@
+{
+  "id": "ex-2am-muqarana-kasrayn-l4-008",
+  "lessonCode": "muqarana-kasrayn",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مدرّجات الملعب",
+    "estimatedMinutes": 10,
+    "tags": [
+      "مقارنة كسور",
+      "الباقي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "06"
+    }
+  },
+  "statement": {
+    "content": "بيعت $2000$ تذكرة لمباراة في ثلاثة مدرّجات : $\\dfrac{3}{10}$ منها في المدرّج الشمالي ، و $\\dfrac{1}{5}$ في الجنوبي ، والباقي في الشرقي ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما الكسر الذي يمثّل تذاكر المدرّج الشرقي ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "1/2",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط ؟ وما الكسور المعطاة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد قبل الجمع أو الطرح ثمّ اختزل ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{2}$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{5} = \\dfrac{2}{10}$ .",
+          "$1 - \\dfrac{3}{10} - \\dfrac{2}{10} = \\dfrac{5}{10} = \\dfrac{1}{2}$ ."
+        ],
+        "result": "\\dfrac{1}{2}"
+      },
+      "work": "optional",
+      "timeSeconds": 90,
+      "counted": false
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أيّ المدرّجات بيعت فيه أكبر حصّة من التذاكر ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الشمالي",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-NUMONLY"
+        },
+        {
+          "id": "B",
+          "content": "الجنوبي",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "الشرقي",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكسر الخاصّ بكلّ حالة ؟ وهل مقاماتها متساوية أو يقسم بعضها بعضًا ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور كلّها بالمقام نفسه إن اختلفت المقامات ثمّ قارن بين البسوط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحكم من البسط وحده ولا من المقام وحده ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب : الشرقي .",
+        "incorrect": "وحّد المقامات قبل أن تحكم ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "نكتب الكسور بالمقام $10$ : $\\dfrac{3}{10}$ ، $\\dfrac{1}{5} = \\dfrac{2}{10}$ ، $\\dfrac{1}{2} = \\dfrac{5}{10}$ .",
+          "أكبر بسط هو $5$ .",
+          "الجواب : الشرقي ($\\dfrac{1}{2}$) ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل بيع في المدرّج الشمالي أكثر من نصف التذاكر ؟ قارن بين $\\dfrac{3}{10}$ و $\\dfrac{1}{2}$ :",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{3}{10} > \\dfrac{1}{2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-NUMONLY"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{3}{10} < \\dfrac{1}{2}$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن بين المقامين : هل أحدهما مضاعف للآخر ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسرين بالمقام الأكبر ثمّ قارن بين البسطين ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب بسط الكسر الأصغر مقامًا ومقامه في العدد نفسه حتّى يصير مقامه مساويًا للمقام الآخر ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{10} < \\dfrac{1}{2}$ .",
+        "incorrect": "اختر طريقة المقارنة المناسبة للحالة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$10$ مضاعف للعدد $2$ : $10 = 2 \\times 5$ .",
+          "$\\dfrac{1}{2} = \\dfrac{1 \\times 5}{2 \\times 5} = \\dfrac{5}{10}$ .",
+          "نقارن بين البسطين : $3 < 5$ ، إذن $\\dfrac{3}{10} < \\dfrac{1}{2}$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "كم تذكرة بيعت في المدرّج الجنوبي ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "400",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط ؟ وما الكسور المعطاة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد قبل الجمع أو الطرح ثمّ اختزل ."
+        }
+      ],
+      "feedback": {
+        "correct": "$400$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$2000 \\div 5 = 400$ ."
+        ],
+        "result": "400"
+      },
+      "work": "optional",
+      "timeSeconds": 90,
+      "counted": false
+    }
+  ]
+}

@@ -1,0 +1,284 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-kusur-natiqa-l4-001",
+  "lessonCode": "wadiya-idmajiya-kusur-natiqa",
+  "level": 4,
+  "metadata": {
+    "title": "حقل مستطيل يحرثه فلّاح",
+    "estimatedMinutes": 11,
+    "tags": [
+      "مساحة مستطيل",
+      "جزء باقٍ",
+      "كسر من كمّية"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 1,
+      "file": "1am-s1-100",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الرابع",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يملك فلّاح حقلًا مستطيلًا بُعداه $\\dfrac{5}{2}$ hm و $\\dfrac{6}{5}$ hm . حرث في اليوم الأوّل $\\dfrac{1}{3}$ من مساحته، وفي اليوم الثاني $\\dfrac{1}{4}$ منها، وفي اليوم الثالث نصف ما حرثه في اليوم الأوّل ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب مساحة الحقل بـ hm² .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "37/5",
+          "id": "MISC-MASAHA-AREA-PERIM-CONFUSED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم الشكل واكتب بُعديه عليه بالوحدة نفسها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحة المستطيل جداء بُعديه، ومساحة المثلث نصف جداء قاعدته في ارتفاعه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل النتيجة واذكر الوحدة المناسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $3$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "مساحة المستطيل جداء بُعديه:",
+          "$\\dfrac{5}{2} \\times \\dfrac{6}{5} = \\dfrac{30}{10} = 3$ hm² ."
+        ],
+        "result": "3"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "ما الكسر الذي يمثّل ما حُرث في اليوم الثالث من مساحة الحقل ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "1/6",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من أيّ كمّية يُؤخذ الكسر في هذه الوضعية ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كسر من كمّية يعني جداء الكسر في الكمّية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ النتيجة أصغر من الكمّية الأصلية، ثمّ اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{1}{6}$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نصف $\\dfrac{1}{3}$ هو $\\dfrac{1}{2} \\times \\dfrac{1}{3} = \\dfrac{1}{6}$ ."
+        ],
+        "result": "\\dfrac{1}{6}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما الكسر الذي يمثّل الجزء غير المحروث من الحقل ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "1/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "3/4",
+          "id": "MISC-JAMTARH-MAJMU-FARQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكلّ الذي نقارن به ؟ وما الأجزاء المأخوذة منه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما بقي هو الكلّ ناقص مجموع الأجزاء المأخوذة، أي واحد ناقص مجموع الكسور."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الباقي موجب وأنّه أصغر من الكلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{1}{4}$ .",
+        "incorrect": "وحّد المقامات قبل الجمع أو الطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "المقام المشترك $12$ : $\\dfrac{4}{12} + \\dfrac{3}{12} + \\dfrac{2}{12} = \\dfrac{9}{12}$ .",
+          "$1 - \\dfrac{9}{12} = \\dfrac{3}{12} = \\dfrac{1}{4}$ ."
+        ],
+        "result": "\\dfrac{1}{4}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "statement": "هل أنهى الفلّاح حرث الحقل في الأيّام الثلاثة ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تعبّر عن الوضعية: جمع أجزاء أم طرح جزء من الكلّ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "وحّد المقامات بأصغر مقام مشترك ثمّ اجمع أو اطرح البسطين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل النتيجة، وتحقّق بمقارنتها بالواحد."
+        }
+      ],
+      "feedback": {
+        "correct": "لا .",
+        "incorrect": "وحّد المقامات قبل الجمع أو الطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "المجموع $\\dfrac{9}{12} = \\dfrac{3}{4}$ أصغر من $1$ ، فلم ينهِ الحرث."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "ما مساحة الجزء غير المحروث بـ hm² ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "3/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من أيّ كمّية يُؤخذ الكسر في هذه الوضعية ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كسر من كمّية يعني جداء الكسر في الكمّية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ النتيجة أصغر من الكمّية الأصلية، ثمّ اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{3}{4}$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{4} \\times 3 = \\dfrac{3}{4}$ hm² ."
+        ],
+        "result": "\\dfrac{3}{4}"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

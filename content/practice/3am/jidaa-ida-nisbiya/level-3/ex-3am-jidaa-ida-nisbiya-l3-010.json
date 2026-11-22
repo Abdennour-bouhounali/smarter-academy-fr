@@ -1,0 +1,310 @@
+{
+  "id": "ex-3am-jidaa-ida-nisbiya-l3-010",
+  "lessonCode": "jidaa-ida-nisbiya",
+  "level": 3,
+  "metadata": {
+    "title": "نقط على مستقيم مدرّج",
+    "estimatedMinutes": 8,
+    "tags": [
+      "الضرب في (−1)",
+      "تناظر",
+      "مستقيم مدرّج"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-51",
+      "page": 19,
+      "section": "أتعمّق",
+      "number": 51
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "على مستقيم مدرّج مبدؤه $O$ ، فواصل النقط $A$ و $B$ و $C$ و $D$ و $E$ مبيّنة في الجدول. نضرب كل فاصلة في $(−1)$ فنحصل على فواصل النقط $A'$ و $B'$ و $C'$ و $D'$ و $E'$ على الترتيب.",
+    "table": {
+      "head": [
+        "النقطة",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "rows": [
+        [
+          "الفاصلة",
+          "$−4$",
+          "$−2{,}5$",
+          "$0$",
+          "$1{,}5$",
+          "$3$"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب فاصلة كل نقطة من النقط الآتية.",
+      "statement": "ما فاصلة النقطة $A'$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "-4",
+          "id": "MISC-IDA-MINUSA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضرب عدد في $(-1)$ لا يغيّر بعده عن الصفر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$(-1) \\times a$ هو معاكس العدد $a$ : العدد نفسه بإشارة معاكسة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مثال: معاكس $5$ هو $-5$ ومعاكس $-5$ هو $5$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "ضرب عدد في $(−1)$ يعطي معاكسه: $4$ .",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $A'$ هي $(−4) \\times (−1)$ .",
+          "ضرب عدد في $(−1)$ يعطي معاكسه: $4$ ."
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما فاصلة النقطة $B'$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "2.5",
+      "misconceptionSignatures": [
+        {
+          "value": "-2.5",
+          "id": "MISC-IDA-MINUSA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضرب عدد في $(-1)$ لا يغيّر بعده عن الصفر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$(-1) \\times a$ هو معاكس العدد $a$ : العدد نفسه بإشارة معاكسة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مثال: معاكس $5$ هو $-5$ ومعاكس $-5$ هو $5$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "ضرب عدد في $(−1)$ يعطي معاكسه: $2{,}5$ .",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $B'$ هي $(−2{,}5) \\times (−1)$ .",
+          "ضرب عدد في $(−1)$ يعطي معاكسه: $2{,}5$ ."
+        ],
+        "result": "2{,}5"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما فاصلة النقطة $D'$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-1.5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضرب عدد في $(-1)$ لا يغيّر بعده عن الصفر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$(-1) \\times a$ هو معاكس العدد $a$ : العدد نفسه بإشارة معاكسة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مثال: معاكس $5$ هو $-5$ ومعاكس $-5$ هو $5$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "ضرب عدد في $(−1)$ يعطي معاكسه: $−1{,}5$ .",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $D'$ هي $(1{,}5) \\times (−1)$ .",
+          "ضرب عدد في $(−1)$ يعطي معاكسه: $−1{,}5$ ."
+        ],
+        "result": "−1{,}5"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "ما فاصلة النقطة $E'$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضرب عدد في $(-1)$ لا يغيّر بعده عن الصفر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$(-1) \\times a$ هو معاكس العدد $a$ : العدد نفسه بإشارة معاكسة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مثال: معاكس $5$ هو $-5$ ومعاكس $-5$ هو $5$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "ضرب عدد في $(−1)$ يعطي معاكسه: $−3$ .",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $E'$ هي $(3) \\times (−1)$ .",
+          "ضرب عدد في $(−1)$ يعطي معاكسه: $−3$ ."
+        ],
+        "result": "−3"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "lead": "ماذا نلاحظ ؟",
+      "statement": "ما موضع كل نقطة $M'$ بالنسبة إلى النقطة $M$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$M'$ هي $M$ مزاحة بمقدار $1$ نحو اليمين",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "متناظرتان بالنسبة إلى المبدأ $O$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "متناظرتان بالنسبة إلى النقطة التي فاصلتها $1$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$M'$ هي $M$ نفسها",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضرب عدد في $(-1)$ لا يغيّر بعده عن الصفر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$(-1) \\times a$ هو معاكس العدد $a$ : العدد نفسه بإشارة معاكسة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مثال: معاكس $5$ هو $-5$ ومعاكس $-5$ هو $5$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "كل نقطة ونظيرتها متناظرتان بالنسبة إلى المبدأ.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "كل نقطة $M'$ لها فاصلة معاكسة لفاصلة $M$ : نفس البعد عن $O$ وفي جهتين متقابلتين.",
+          "إذن $M$ و $M'$ متناظرتان بالنسبة إلى المبدأ $O$ ، والنقطة $C$ التي فاصلتها $0$ تبقى في مكانها."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

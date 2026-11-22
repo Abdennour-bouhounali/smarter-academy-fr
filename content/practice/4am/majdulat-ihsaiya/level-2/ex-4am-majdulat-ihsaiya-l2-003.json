@@ -1,0 +1,161 @@
+{
+  "id": "ex-4am-majdulat-ihsaiya-l2-003",
+  "lessonCode": "majdulat-ihsaiya",
+  "level": 2,
+  "metadata": {
+    "title": "الوسيط لا تجذبه القيمة الكبيرة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "دستور",
+      "وسيط",
+      "إعادة الحساب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_majdulat-ihsaiya_P2",
+      "modelledOn": "ex-7"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "حجز يونس في السطر الأول من مجدول الزمن (بالدقائق) الذي قضاه ستة أصدقاء في لعبة على الهاتف، ليحرصوا على تنظيم وقتهم، ثم حجز في الخلية A2 الدستور ⁦=MEDIANE(A1:F1)⁩ :",
+    "table": {
+      "head": [
+        "",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "rows": [
+        [
+          "1",
+          "12",
+          "7",
+          "9",
+          "15",
+          "10",
+          "8"
+        ]
+      ],
+      "sheet": true
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما هو العدد الذي يظهر في الخلية A2 ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة إن لزم)",
+      "expectedAnswer": "9,5",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-IHSA-WASIT-BILA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MEDIANE(…)⁩ يُظهر وسيط القيم: يرتّبها المجدول أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب القيم الـ 6 تصاعديا، ثم عيّن القيمتين اللتين تقعان في الوسط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لعدد زوجيّ من القيم، الوسيط نصف مجموع القيمتين الوسطيين."
+        }
+      ],
+      "feedback": {
+        "correct": "القيم مرتّبة: 7 ، 8 ، 9 ، 10 ، 12 ، 15 ، والوسيط 9,5 .",
+        "incorrect": "لا يُقرأ الوسيط إلا بعد ترتيب القيم تصاعديا، ثم نأخذ القيمة الوسطى (أو نصف مجموع القيمتين الوسطيين)."
+      },
+      "solution": {
+        "lines": [
+          "نرتّب القيم تصاعديا: 7 ، 8 ، 9 ، 10 ، 12 ، 15 .",
+          "عدد القيم 6 زوجيّ: الوسيط نصف مجموع القيمتين ذواتي الرتبتين 3 و 4 ، أي 9 و 10 .",
+          "$\\dfrac{9 + 10}{2} = 9{,}5$",
+          "إذن يُظهر الدستور العدد 9,5 ."
+        ],
+        "result": "9{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عوّض يونس القيمة 15 في الخلية D1 بالعدد 45 دون أن يلمس الدستور. ما هو العدد الذي يظهر الآن في الخلية A2 ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة إن لزم)",
+      "expectedAnswer": "9,5",
+      "misconceptionSignatures": [
+        {
+          "value": "27",
+          "id": "MISC-IHSA-WASIT-BILA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MEDIANE(…)⁩ يُظهر وسيط القيم: يرتّبها المجدول أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب القيم الـ 6 تصاعديا، ثم عيّن القيمتين اللتين تقعان في الوسط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لعدد زوجيّ من القيم، الوسيط نصف مجموع القيمتين الوسطيين."
+        }
+      ],
+      "feedback": {
+        "correct": "المجدول يعيد الحساب: القيم مرتّبة 7 ، 8 ، 9 ، 10 ، 12 ، 45 ، والقيمتان الوسطيان لم تتغيّرا، فالوسيط هو نفسه.",
+        "incorrect": "لا يُقرأ الوسيط إلا بعد ترتيب القيم تصاعديا، ثم نأخذ القيمة الوسطى (أو نصف مجموع القيمتين الوسطيين)."
+      },
+      "solution": {
+        "lines": [
+          "نرتّب القيم تصاعديا: 7 ، 8 ، 9 ، 10 ، 12 ، 45 .",
+          "عدد القيم 6 زوجيّ: الوسيط نصف مجموع القيمتين ذواتي الرتبتين 3 و 4 ، أي 9 و 10 .",
+          "$\\dfrac{9 + 10}{2} = 9{,}5$",
+          "إذن يُظهر الدستور العدد 9,5 ."
+        ],
+        "result": "9{,}5"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

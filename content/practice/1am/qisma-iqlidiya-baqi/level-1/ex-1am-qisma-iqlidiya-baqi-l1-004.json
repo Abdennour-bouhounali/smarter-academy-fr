@@ -1,0 +1,137 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l1-004",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — قسمة على عدد من رقمين",
+    "estimatedMinutes": 4,
+    "tags": [
+      "قسمة عمودية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "أنجز القسمة الإقليدية للعدد 315 على 24."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب حاصل القسمة الإقليدية للعدد 315 على 24.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "12",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "14",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 315 من 24 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 24 دون أن نتجاوز 315."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$315 = 24 \\times 13 + 3$ و $3 < 24$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 24 فلا يتجاوز الجداء 315، والباقي عندئذ أصغر من 24."
+      },
+      "solution": {
+        "lines": [
+          "$24 \\times 13 = 312$ و $24 \\times 14 = 336$",
+          "$312 \\le 315 < 336$ ، إذن الحاصل هو 13."
+        ],
+        "result": "q = 13"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب باقي القسمة الإقليدية للعدد 315 على 24.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "27",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 315."
+        }
+      ],
+      "feedback": {
+        "correct": "$315 - 24 \\times 13 = 315 - 312 = 3$ ، و $3 < 24$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 24."
+      },
+      "solution": {
+        "lines": [
+          "$315 = 24 \\times 13 + 3$",
+          "$3 < 24$ ، إذن الباقي هو 3."
+        ],
+        "result": "r = 3"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

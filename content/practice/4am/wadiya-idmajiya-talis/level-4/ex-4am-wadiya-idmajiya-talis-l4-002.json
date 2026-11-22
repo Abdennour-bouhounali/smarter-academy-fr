@@ -1,0 +1,173 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-talis-l4-002",
+  "lessonCode": "wadiya-idmajiya-talis",
+  "level": 4,
+  "metadata": {
+    "title": "علبة المثلجات في الكورنيه",
+    "estimatedMinutes": 12,
+    "tags": [
+      "أسطوانة",
+      "مخروط",
+      "حجم",
+      "التحقق من النتيجة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-talis_P2",
+      "modelledOn": "situation"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "برًّا بوالده، اشترى سمير كورنيه مثلجات على شكل مخروط دوران ارتفاعه $12\\,\\mathrm{cm}$ ونصف قطر قاعدته $4\\,\\mathrm{cm}$ ، فيه علبة أسطوانية محاطة به (قاعدتها على قاعدة المخروط ودائرتها العليا على سطحه)، ارتفاعها يساوي نصف قطرها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب نصف قطر الأسطوانة $r$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-TALIS-HALL-MUADALA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في نصف المقطع المحوري: $\\dfrac{r}{4} = \\dfrac{12 - h}{12}$ (خاصية طالس)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $h$ بـ $r$ ، ثم اضرب الطرفين في $12$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود التي فيها $r$ في طرف واحد، ثم اقسم."
+        }
+      ],
+      "feedback": {
+        "correct": "$12r = 48 - 4r$ ، أي $16r = 48$ ومنه $r = 3\\,\\mathrm{cm}$ .",
+        "incorrect": "عند نقل الحدّ الذي فيه $r$ من طرف إلى آخر تتغيّر إشارته."
+      },
+      "solution": {
+        "lines": [
+          "حسب خاصية طالس في نصف المقطع المحوري: $\\dfrac{r}{4} = \\dfrac{12 - h}{12}$",
+          "بما أن $h = r$ : $\\dfrac{r}{4} = \\dfrac{12 - r}{12}$",
+          "$12r = 4(12 - r)$",
+          "$12r = 48 - 4r$",
+          "$16r = 48$",
+          "$r = \\dfrac{48}{16}$"
+        ],
+        "result": "r = 3\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "نكتب حجم الأسطوانة على الشكل $V = k\\pi\\,\\mathrm{cm}^3$ . أعط العدد $k$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $k$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "27",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-TALIS-TARBI-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$V = \\pi \\times r^2 \\times h$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$V = \\pi \\times 3^2 \\times 3 = 27\\pi\\,\\mathrm{cm}^3$ .",
+        "incorrect": "في $V = \\pi r^2 h$ يُربَّع نصف القطر وحده، ولا نستعمل القطر."
+      },
+      "solution": {
+        "lines": [
+          "$V = \\pi \\times r^2 \\times h$",
+          "$V = \\pi \\times 3^2 \\times 3$"
+        ],
+        "result": "V = 27\\pi\\,\\mathrm{cm}^3"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل تتّسع العلبة لـ $80\\,\\mathrm{cm}^3$ من المثلجات؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-HAJM-BIDUN-PI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحجم هو $27\\pi$ لا $27$ : احسب قيمة مقرّبة له."
+        }
+      ],
+      "feedback": {
+        "correct": "$27\\pi \\approx 84{,}8\\,\\mathrm{cm}^3$ أكبر من $80\\,\\mathrm{cm}^3$ .",
+        "incorrect": "قارن القيمة المقرّبة للحجم ( $k \\times \\pi$ ) بالكمية المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$V = 27\\pi \\approx 84{,}8\\,\\mathrm{cm}^3$ ، و $84{,}8 > 80$ : العلبة تتّسع لـ $80\\,\\mathrm{cm}^3$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

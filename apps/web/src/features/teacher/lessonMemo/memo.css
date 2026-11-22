@@ -1,0 +1,132 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   « مذكرة الدرس » — pages/teacher/LessonMemoPage.jsx.
+   Tailwind porte la mise en page ; ici : le papier du cahier et l'impression.
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* Le cahier : un papier crème à lignes, comme « كرّاسي ». */
+.sa-memo-notebook {
+  background: linear-gradient(180deg, #FFFBEB 0%, #FEF3C7 100%);
+}
+
+.sa-memo-lined {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent calc(2rem - 1px),
+    rgba(217, 119, 6, 0.18) calc(2rem - 1px),
+    rgba(217, 119, 6, 0.18) 2rem
+  );
+  background-attachment: local;
+}
+
+/* ── Impression : une fiche de préparation, sans le chrome de l'application ── */
+@media print {
+  @page { margin: 12mm; }
+
+  body:has([data-lesson-memo]) aside,
+  body:has([data-lesson-memo]) header.fixed,
+  body:has([data-lesson-memo]) nav.fixed,
+  [data-lesson-memo] .sa-memo-no-print,
+  [data-memo-toolbar] {
+    display: none !important;
+  }
+
+  body:has([data-lesson-memo]) main {
+    padding: 0 !important;
+  }
+
+  [data-lesson-memo] {
+    padding: 0 !important;
+  }
+
+  [data-lesson-memo] .sa-memo-phase,
+  [data-lesson-memo] [data-memo-note] {
+    break-inside: avoid;
+    box-shadow: none !important;
+  }
+
+  [data-lesson-memo] * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* The memo, ONE part at a time (LessonMemoPage.jsx): a rail in the order of the hour, the part asked for, a step bar.
+   Calm palette of the teacher's screens. Printed, the whole memo comes out, as before. */
+.sa-memo-work { display: grid; grid-template-columns: 13rem minmax(0, 1fr); gap: 1.2rem; align-items: start; }
+.sa-memo-rail { position: sticky; top: 7.5rem; display: grid; gap: .8rem; padding: .8rem; border-radius: 1.2rem; border: 1px solid #e2e8f0; background: #fff; }
+.sa-memo-rail > div { display: grid; gap: .15rem; } .sa-memo-rail p { margin: 0 0 .15rem; padding-inline: .6rem; font-size: .72rem; font-weight: 800; color: #94a3b8; }
+.sa-memo-rail button { min-height: 2.4rem; padding: 0 .6rem; border: 0; border-radius: .7rem; background: none; font: inherit; font-size: .92rem; font-weight: 700; color: #334155; text-align: start; cursor: pointer; } .sa-memo-rail button:hover { background: #f1f5f9; }
+.sa-memo-rail button.is-on { background: #3b5bdb; color: #fff; } .sa-memo-rail__all { border-top: 1px dashed #e2e8f0 !important; border-radius: 0 0 .7rem .7rem !important; color: #64748b !important; } .sa-memo-rail__all.is-on { color: #fff !important; }
+.sa-memo-phases { display: flex; flex-wrap: wrap; gap: .4rem; } .sa-memo-phases button, .sa-memo-step button { min-height: 2.6rem; padding: 0 .9rem; border-radius: .8rem; border: 1.5px solid #e2e8f0; background: #fff; font: inherit; font-size: .9rem; font-weight: 800; color: #334155; cursor: pointer; }
+.sa-memo-phases button:hover, .sa-memo-step button:hover:not(:disabled) { border-color: #3b5bdb; } .sa-memo-phases button.is-on, .sa-memo-step button.is-main { background: #3b5bdb; border-color: #3b5bdb; color: #fff; }
+.sa-memo-step { display: flex; align-items: center; justify-content: space-between; gap: .8rem; } .sa-memo-step span { font-size: .85rem; font-weight: 800; color: #64748b; } .sa-memo-step button:disabled { opacity: .35; cursor: not-allowed; }
+@media (max-width: 1023px) { .sa-memo-work { grid-template-columns: minmax(0, 1fr); } .sa-memo-rail { position: static; grid-auto-flow: column; overflow-x: auto; } }
+@media print { .sa-memo-work { display: block; } [data-memo-pane] { display: block !important; margin-bottom: 5mm; } [data-memo-timeline] > li { display: list-item !important; } }
+/* one phase at a time: the phase tabs replace the timeline's own frieze (the same information twice otherwise) */
+@media screen { .sa-memo-work:not([data-memo-view='all']) [data-memo-timeline] { border-inline-start: 0; padding-inline-start: 0; } .sa-memo-work:not([data-memo-view='all']) [data-memo-section='timeline'] ol[aria-hidden='true'] { display: none; } }
+
+/* The top of the memo: one calm line — back, where he is, and what he does from here (BoardMemo.jsx). */
+.sa-memo-top { position: sticky; top: 0; z-index: 30; display: flex; align-items: center; gap: .6rem; margin-bottom: 1.2rem; padding: .7rem 0; background: rgba(250, 250, 250, .96); backdrop-filter: blur(6px); border-bottom: 1px solid #e2e8f0; }
+.sa-memo-top a, .sa-memo-top button { display: inline-flex; align-items: center; gap: .4rem; min-height: 2.75rem; padding: 0 .9rem; border-radius: .8rem; font: inherit; font-size: .92rem; font-weight: 800; white-space: nowrap; cursor: pointer; text-decoration: none; }
+.sa-memo-top__back, .sa-memo-top__ghost { border: 1px solid #e2e8f0; background: #fff; color: #0f172a; } .sa-memo-top__back:hover, .sa-memo-top__ghost:hover { border-color: #3b5bdb; }
+.sa-memo-top__main { border: 1px solid #3b5bdb; background: #3b5bdb; color: #fff !important; } .sa-memo-top__main:hover { background: #334155; }
+.sa-memo-top__title { display: grid; min-width: 0; margin-inline-end: auto; padding-inline-start: .3rem; } .sa-memo-top__title small { font-size: .72rem; font-weight: 800; color: #64748b; } .sa-memo-top__title strong { font-size: 1.15rem; font-weight: 900; line-height: 1.4; color: #0f172a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sa-memo-top__fact { display: inline-flex; align-items: center; gap: .3rem; padding: .25rem .7rem; border-radius: 99px; background: #f1f5f9; font-size: .82rem; font-weight: 800; color: #475569; white-space: nowrap; }
+[data-board-memo] .sa-memo-rail { top: 5.2rem; } .mf { display: block; width: 100%; height: auto; }
+@media (max-width: 900px) { .sa-memo-top__fact, .sa-memo-top__ghost { display: none !important; } }
+@media print { .sa-memo-top a, .sa-memo-top button, .sa-memo-top__fact { display: none !important; } .sa-memo-top { position: static; border: 0; } [data-board-memo] [data-memo-pane] { break-inside: avoid-page; } }
+
+/* The written memo is READ, often from a step back: its text is one size up everywhere (owner: « the font size is small in
+   the entire مذكرة »). The stage is drawn 16 % larger as a whole, so that every part keeps its proportions. */
+@media screen { [data-board-memo] .sa-memo-stage { zoom: 1.16; } [data-board-memo] .sa-memo-work { grid-template-columns: 14.5rem minmax(0, 1fr); } [data-board-memo] .sa-memo-rail button { min-height: 2.7rem; font-size: 1.02rem; } [data-board-memo] .sa-memo-rail p { font-size: .8rem; } [data-board-memo] .sa-memo-top__title strong { font-size: 1.3rem; } [data-board-memo] .sa-memo-top a, [data-board-memo] .sa-memo-top button { font-size: 1rem; } }
+
+/* The written memo on PAPER: two A4 pages at most (owner, 2026-11-18). Everything is drawn smaller and denser: the four
+   opening situations share one row, the lists run in columns, nothing keeps a screen-size margin. Checked by the walk,
+   which prints the real PDF and counts its pages. */
+@media print {
+  @page { size: A4; margin: 8mm; }
+  body:has([data-board-memo]) aside, body:has([data-board-memo]) header.fixed, body:has([data-board-memo]) nav.fixed, [data-background-layer] { display: none !important; }
+  body:has([data-board-memo]) main, body:has([data-board-memo]) #root, body:has([data-board-memo]) #root > div { margin: 0 !important; padding: 0 !important; min-height: 0 !important; background: #fff !important; }
+  [data-board-memo] { padding: 0 !important; } [data-board-memo] .sa-memo-stage { zoom: .61; } [data-board-memo], body:has([data-board-memo]) { background: #fff !important; } .sa-memo-printtitle { display: block !important; margin: 0 0 2mm; font-size: 13pt; font-weight: 900; color: #000; } [data-board-memo] .sa-memo-stage > * + * { margin-top: .5rem !important; }
+  [data-board-memo] [data-memo-pane] { display: block !important; margin-bottom: .35rem !important; break-inside: auto; } [data-board-memo] [data-memo-pane] > header { margin-bottom: .25rem !important; } [data-board-memo] [data-memo-pane] h2 { font-size: 1.15rem !important; }
+  [data-board-memo] [data-memo-pane] section, [data-board-memo] [data-memo-pane] article, [data-board-memo] [data-memo-pane] li { padding: .35rem .55rem !important; break-inside: avoid; } [data-board-memo] [data-memo-pane] p { line-height: 1.5 !important; }
+  [data-board-memo] [data-memo-pane='glance'] .grid, [data-board-memo] [data-memo-pane='phases'] ol { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: .4rem !important; margin-top: .4rem !important; }
+  [data-board-memo] [data-memo-pane='glance'] .grid + .grid { grid-template-columns: 1.2fr 1fr !important; } [data-board-memo] [data-memo-pane='phases'] ol { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; } [data-board-memo] [data-memo-pane='phases'] li > div { grid-template-columns: 1fr !important; } [data-board-memo] [data-memo-pane='phases'] li a { display: none !important; }
+  [data-board-memo] [data-memo-pane='openings'] .grid { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; gap: .4rem !important; } [data-board-memo] [data-memo-pane='openings'] article p { font-size: .8rem !important; } [data-board-memo] [data-memo-pane='openings'] h3 { font-size: 1rem !important; }
+  [data-board-memo] [data-memo-pane='anticipated'] ul { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: .4rem !important; } [data-board-memo] [data-memo-pane='anticipated'] li > div { grid-template-columns: 1fr !important; gap: .2rem !important; }
+  [data-board-memo] [data-memo-pane='sequence'], [data-board-memo] [data-memo-pane='written'], [data-board-memo] [data-memo-pane='exit'], [data-board-memo] [data-memo-pane='tiers'] { display: inline-block !important; vertical-align: top; width: 49.5%; } [data-board-memo] [data-memo-pane='exit'] ol { display: grid !important; gap: .3rem !important; }
+  [data-board-memo] * { box-shadow: none !important; }
+}
+
+.sa-memo-printtitle { display: none; }
+
+[data-board-memo] .sa-memo-rail { top: 6.5rem; } .sa-memo-rail button[data-memo-print] { display: inline-flex; align-items: center; gap: .35rem; color: #64748b; }
+@media print { .ltp { padding: 0 !important; } }
+
+/* THE MEMO ON A PHONE (owner, 2026-11-16: the teacher reads it there). One column, no zoom; the parts are ONE line that
+   slides, in the order of the hour; every grid of a part becomes a list. Print is untouched. */
+@media screen and (max-width: 767px), screen and (max-height: 500px) and (pointer: coarse) {
+  [data-board-memo] .sa-memo-stage { zoom: 1; }
+  [data-board-memo] .sa-memo-work { grid-template-columns: minmax(0, 1fr); gap: .8rem; }
+  [data-board-memo] .sa-memo-rail { position: static; display: flex; gap: .35rem; padding: .4rem; overflow-x: auto; scrollbar-width: none; }
+  [data-board-memo] .sa-memo-rail::-webkit-scrollbar { display: none; }
+  [data-board-memo] .sa-memo-rail > div { display: flex; flex: none; gap: .25rem; }
+  [data-board-memo] .sa-memo-rail p { display: none; }
+  [data-board-memo] .sa-memo-rail button { flex: none; min-height: 2.3rem; font-size: .9rem; white-space: nowrap; border-radius: .7rem !important; border-top: 0 !important; }
+  [data-board-memo] [data-memo-pane] .grid, [data-board-memo] [data-memo-pane] ol.grid { grid-template-columns: minmax(0, 1fr) !important; }
+  [data-board-memo] [data-memo-pane='phases'] ol, [data-board-memo] [data-memo-pane='glance'] ol { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  [data-board-memo] h1 { font-size: 1.5rem !important; line-height: 1.4 !important; }
+  [data-board-memo] [data-memo-pane] { min-width: 0; }
+}
+.sa-memo-step button i { font-style: normal; }
+@media screen and (max-width: 767px), screen and (max-height: 500px) and (pointer: coarse) {
+  /* the step bar stays at the thumb, above the teacher space's tabs; the names of the neighbours are in the sliding line */
+  [data-board-memo] .sa-memo-step { position: sticky; bottom: 5.4rem; z-index: 5; padding: .45rem; border-radius: 1rem; border: 1px solid #e2e8f0; background: rgba(255,255,255,.97); box-shadow: 0 6px 18px rgba(15,23,42,.08); }
+  [data-board-memo] .sa-memo-step button { flex: 1; min-height: 2.9rem; } [data-board-memo] .sa-memo-step button i { display: none; }
+  /* « حصّة القسم » does not open on a phone: its mark on an opening is a label there, not a link */
+  [data-board-memo] [data-memo-opening-board] { pointer-events: none; }
+  [data-board-memo] .mf { max-height: 11rem; }
+}
+/* a phone held sideways: the step bar is not pinned (it would take a fifth of the screen), the title is one line */
+@media screen and (max-height: 500px) and (pointer: coarse) { [data-board-memo] .sa-memo-step { position: static; box-shadow: none; } [data-board-memo] h1 { font-size: 1.25rem !important; margin: 0 !important; } [data-board-memo] .sa-memo-rail { padding: .25rem; } }

@@ -1,0 +1,118 @@
+{
+  "id": "ex-4am-khawass-qawasim-l2-006",
+  "lessonCode": "khawass-qawasim",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2015 — 2717 و 494",
+    "estimatedMinutes": 6,
+    "tags": [
+      "خاصية 2",
+      "قسمة إقليدية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_khawass-qawasim_P3",
+      "modelledOn": "BEM 2015 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان 2717 و 494."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أجرِ القسمة الإقليدية للعدد 2717 على 494 مع كتابة مراحل الحساب.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الباقي فقط (عدد طبيعي)",
+      "expectedAnswer": "247",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أكبر مضاعف للعدد 494 لا يتجاوز 2717."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي هو الفرق بين 2717 وهذا المضاعف، ويجب أن يكون أصغر تمامًا من 494."
+        }
+      ],
+      "feedback": {
+        "correct": "$2717 = 494 \\times 5 + 247$ مع $247 < 494$.",
+        "incorrect": "في القسمة الإقليدية $2717 = 494 \\times q + r$ يكون الباقي $r$ أصغر تمامًا من 494."
+      },
+      "solution": {
+        "lines": [
+          "$494 \\times 5 = 2470$ و $494 \\times 6 = 2964 > 2717$",
+          "$2717 - 2470 = 247$",
+          "إذن $2717 = 494 \\times 5 + 247$ مع $247 < 494$."
+        ],
+        "result": "2717 = 494 \\times 5 + 247"
+      },
+      "work": "required",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "علمًا أن 13 يقسم كلا من 2717 و 494، استنتج دون إجراء القسمة على 13 أن 13 يقسم الباقي 247، ثم اكتبه على الشكل $13 \\times k$ حيث $k$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k$ فقط (عدد طبيعي)",
+      "expectedAnswer": "19",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الباقي على الشكل $r = 2717 - 494 \\times 5$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "13 يقسم 494 فهو يقسم $494 \\times 5$؛ وهو يقسم 2717، فيقسم الفرق (الخاصية 2)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم الباقي على 13 للحصول على $k$."
+        }
+      ],
+      "feedback": {
+        "correct": "$247 = 13 \\times 19$: 13 يقسم باقي القسمة الإقليدية للعدد 2717 على 494.",
+        "incorrect": "القاسم المشترك لعددين يقسم باقي القسمة الإقليدية لأحدهما على الآخر: اقسم الباقي على 13."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $2717 = 494 \\times 5 + 247$ ومنه $247 = 2717 - 494 \\times 5$.",
+          "13 يقسم 494 فهو يقسم مضاعفه $494 \\times 5$ ، و 13 يقسم 2717.",
+          "إذن 13 يقسم الفرق $2717 - 494 \\times 5$ أي يقسم 247 (الخاصية 2).",
+          "$247 = 13 \\times 19$"
+        ],
+        "result": "247 = 13 \\times 19"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

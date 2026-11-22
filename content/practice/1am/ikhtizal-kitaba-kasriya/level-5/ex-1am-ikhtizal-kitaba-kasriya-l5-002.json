@@ -1,0 +1,437 @@
+{
+  "id": "ex-1am-ikhtizal-kitaba-kasriya-l5-002",
+  "lessonCode": "ikhtizal-kitaba-kasriya",
+  "level": 5,
+  "metadata": {
+    "title": "هدية الجدّ لفاطمة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "كتابات متساوية",
+      "اختزال",
+      "كسر عشري"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-4",
+      "page": 54,
+      "section": "اكتشف",
+      "number": 4
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "قال الجدّ لحفيدته فاطمة بمناسبة نجاحها: «أعطيك $\\dfrac{4}{9}$ من 4500 دج، أو $\\dfrac{28}{63}$ من 4500 دج». أرادت فاطمة أن تختار دون أن تحسب، ثم قرّرت أن تتصدّق بجزء من هديّتها.\nالجزء الأول: تختار فاطمة دون حساب.\nالجزء الثاني: الصدقة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أتمم: $\\dfrac{28}{63} = \\dfrac{4}{\\ldots}$",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "39",
+          "id": "MISC-KASRIYA-JAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الحدّين المعروفين اللذين في نفس الموضع (بسطين أو مقامين)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بأيّ عدد نضرب (أو نقسم) أحدهما لنحصل على الآخر؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق نفس العملية على الحدّ الآخر من الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{28}{63} = \\dfrac{28 \\div 7}{63 \\div 7} = \\dfrac{4}{9}$ : قسمنا البسط والمقام على نفس العدد.",
+        "incorrect": "الكسر لا يتغيّر إذا ضربنا البسط والمقام في نفس العدد غير المعدوم أو قسمناهما عليه، أمّا إضافة نفس العدد إليهما فتغيّره."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{28}{63} = \\dfrac{28 \\div 7}{63 \\div 7} = \\dfrac{4}{9}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اختزل الكسر $\\dfrac{28}{63}$ إلى أبسط شكل ممكن.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b لا يقبل الاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "4/9",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن قاسم مشترك للبسط والمقام بقواعد قابلية القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على هذا القاسم، ثم أعد البحث في الكسر الجديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا لم تنفع القواعد، جرّب جداول الضرب (7، 11، 13…)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{28}{63} = \\dfrac{4}{9}$ ولا يقبل البسط والمقام قاسمًا مشتركًا غير 1.",
+        "incorrect": "نقسم البسط والمقام على قاسم مشترك لهما، ونعيد ذلك حتى لا يبقى قاسم مشترك غير 1.",
+        "notIrreducible": "الكتابة تساوي الكسر لكنها ما زالت قابلة للاختزال: ابحث عن قاسم مشترك آخر للبسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "$28 = 7 \\times 4$ و $63 = 7 \\times 9$ ، إذن $\\dfrac{28}{63} = \\dfrac{28 \\div 7}{63 \\div 7} = \\dfrac{4}{9}$",
+          "العددان 4 و 9 لا يقبلان قاسمًا مشتركًا غير 1: $\\dfrac{4}{9}$ في أبسط شكل ممكن."
+        ],
+        "result": "\\dfrac{28}{63} = \\dfrac{4}{9}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ماذا تختار فاطمة؟",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{28}{63}$ لأنّ حدّيه أكبر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KASRIYA-AKBAR-ARQAM"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{4}{9}$ لأنّ مقامه أصغر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KASRIYA-AKBAR-ARQAM"
+        },
+        {
+          "id": "C",
+          "content": "لا فرق: الحصّتان متساويتان",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل جوابك عن السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كسران متساويان من نفس المبلغ يعطيان…"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{28}{63} = \\dfrac{4}{9}$ : نفس الحصّة من نفس المبلغ.",
+        "incorrect": "اختزل الكسر ذا الحدّين الكبيرين ثم قارن، دون حساب المبلغين."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{28}{63} = \\dfrac{28 \\div 7}{63 \\div 7} = \\dfrac{4}{9}$",
+          "الحصّتان من نفس المبلغ متساويتان: لا فرق."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "statement": "احسب مبلغ الهدية.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب تُسع 4500."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اضربه في 4."
+        }
+      ],
+      "feedback": {
+        "correct": "$4500 \\div 9 \\times 4 = 2000$ ، الهدية 2000 دج.",
+        "incorrect": "لأخذ كسر من عدد نقسم العدد على المقام ثم نضرب في البسط."
+      },
+      "solution": {
+        "lines": [
+          "$4500 \\div 9 \\times 4 = 2000$ ، الهدية 2000 دج."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "تصدّقت فاطمة بـ 500 دج من 2000 دج. عبّر بكسر في أبسط شكل ممكن عن الجزء الذي تصدّقت به.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b لا يقبل الاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "1/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "250/1000",
+          "id": "MISC-KASRIYA-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن قاسم مشترك للبسط والمقام بقواعد قابلية القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على هذا القاسم، ثم أعد البحث في الكسر الجديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا لم تنفع القواعد، جرّب جداول الضرب (7، 11، 13…)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{500}{2000} = \\dfrac{1}{4}$ ولا يقبل البسط والمقام قاسمًا مشتركًا غير 1.",
+        "incorrect": "نقسم البسط والمقام على قاسم مشترك لهما، ونعيد ذلك حتى لا يبقى قاسم مشترك غير 1.",
+        "notIrreducible": "الكتابة تساوي الكسر لكنها ما زالت قابلة للاختزال: ابحث عن قاسم مشترك آخر للبسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "$500 = 4 \\times 125$ و $2000 = 4 \\times 500$ ، إذن $\\dfrac{500}{2000} = \\dfrac{500 \\div 4}{2000 \\div 4} = \\dfrac{125}{500}$",
+          "$125 = 125 \\times 1$ و $500 = 125 \\times 4$ ، إذن $\\dfrac{125}{500} = \\dfrac{125 \\div 125}{500 \\div 125} = \\dfrac{1}{4}$",
+          "العددان 1 و 4 لا يقبلان قاسمًا مشتركًا غير 1: $\\dfrac{1}{4}$ في أبسط شكل ممكن."
+        ],
+        "result": "\\dfrac{500}{2000} = \\dfrac{1}{4}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "sub": "ا",
+      "statement": "أتمم: $\\dfrac{1}{4} = \\dfrac{\\ldots}{100}$",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "25",
+      "misconceptionSignatures": [
+        {
+          "value": "97",
+          "id": "MISC-KASRIYA-JAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الحدّين المعروفين اللذين في نفس الموضع (بسطين أو مقامين)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بأيّ عدد نضرب (أو نقسم) أحدهما لنحصل على الآخر؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق نفس العملية على الحدّ الآخر من الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{4} = \\dfrac{1 \\times 25}{4 \\times 25} = \\dfrac{25}{100}$ : ضربنا البسط والمقام في نفس العدد.",
+        "incorrect": "الكسر لا يتغيّر إذا ضربنا البسط والمقام في نفس العدد غير المعدوم أو قسمناهما عليه، أمّا إضافة نفس العدد إليهما فتغيّره."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{4} = \\dfrac{1 \\times 25}{4 \\times 25} = \\dfrac{25}{100}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "sub": "ب",
+      "statement": "اكتب هذا الجزء على الشكل العشري.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة)",
+      "expectedAnswer": "0,25",
+      "misconceptionSignatures": [
+        {
+          "value": "2,5",
+          "id": "MISC-KASRIYA-FASILA"
+        },
+        {
+          "value": "1,4",
+          "id": "MISC-KASRIYA-ARQAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل المقام 10 أو 100 أو 1000؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إن لم يكن كذلك، اضرب البسط والمقام في نفس العدد لتحصل على مقام 10 أو 100 أو 1000."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد أصفار المقام هو عدد الأرقام بعد الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{4} = 0{,}25$.",
+        "incorrect": "في كسر عشري، عدد أصفار المقام هو عدد الأرقام بعد الفاصلة؛ وإن لم يكن المقام 10 أو 100 أو 1000 نحوّله أولًا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{4} = \\dfrac{1 \\times 25}{4 \\times 25} = \\dfrac{25}{100}$",
+          "$\\dfrac{25}{100} = 0{,}25$"
+        ],
+        "result": "\\dfrac{1}{4} = 0{,}25"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q8",
+      "step": "05",
+      "statement": "هل يمكن كتابة $\\dfrac{4}{9}$ على شكل كسر عشري؟",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KASRIYA-KULL-ASHRI"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب مضاعفات المقام."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يصل أحدها إلى 10 أو 100 أو 1000…؟"
+        }
+      ],
+      "feedback": {
+        "correct": "لا يوجد عدد نضرب فيه 9 لنجد 10 أو 100 أو 1000…",
+        "incorrect": "لا يُكتب كسر على شكل كسر عشري إلا إذا وُجد عدد نضرب فيه مقامه (بعد الاختزال) لنجد 10 أو 100 أو 1000…"
+      },
+      "solution": {
+        "lines": [
+          "مجموع أرقام 10، 100، 1000… هو 1: لا تقبل القسمة على 9.",
+          "إذن لا يمكن كتابة $\\dfrac{4}{9}$ بمقام 10 أو 100 أو 1000."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

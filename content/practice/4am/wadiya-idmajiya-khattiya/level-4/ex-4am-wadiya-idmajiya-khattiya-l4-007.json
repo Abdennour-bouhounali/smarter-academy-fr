@@ -1,0 +1,334 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-khattiya-l4-007",
+  "lessonCode": "wadiya-idmajiya-khattiya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2017 — الورود والخضر في قطعة أرض مستطيلة",
+    "estimatedMinutes": 14,
+    "tags": [
+      "مساحة",
+      "دالة خطية",
+      "نسبة مئوية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-khattiya_P2",
+      "modelledOn": "BEM 2017 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2017",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "$ABCD$ قطعة أرض مستطيلة الشكل حيث $AB = 30m$ و $BC = 16m$ . $E$ نقطة من $[AB]$ حيث $BE = 10m$ ، و $M$ نقطة متحركة على $[BC]$ حيث $BM = x$ (بالمتر، $0 \\leqslant x \\leqslant 16$). يخصّص صاحب القطعة المثلث $EBM$ لغرس الورود، والباقي لغرس الخضر (الشكل التالي).",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          8
+        ],
+        "B": [
+          15,
+          8
+        ],
+        "C": [
+          15,
+          0
+        ],
+        "D": [
+          0,
+          0
+        ],
+        "E": [
+          10,
+          8
+        ],
+        "M": [
+          15,
+          5
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "E"
+        ],
+        {
+          "from": "E",
+          "to": "B",
+          "label": "10m"
+        },
+        {
+          "from": "B",
+          "to": "M",
+          "label": "x"
+        },
+        [
+          "M",
+          "C"
+        ],
+        {
+          "from": "C",
+          "to": "D",
+          "label": "30m"
+        },
+        {
+          "from": "D",
+          "to": "A",
+          "label": "16m"
+        },
+        {
+          "from": "E",
+          "to": "M",
+          "tone": "rose"
+        }
+      ],
+      "polygons": [
+        {
+          "points": [
+            "E",
+            "B",
+            "M"
+          ],
+          "tone": "rose"
+        }
+      ],
+      "labels": {
+        "A": "nw",
+        "B": "ne",
+        "C": "se",
+        "D": "sw",
+        "E": "n",
+        "M": "e"
+      },
+      "ariaLabel": "مستطيل ABCD طوله 30m وعرضه 16m، والمثلث EBM الملوّن حيث BE = 10m و BM = x"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب مساحة القطعة $ABCD$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المساحة بـ m²",
+      "expectedAnswer": "480",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة المستطيل = الطول × العرض."
+        }
+      ],
+      "feedback": {
+        "correct": "$30 \\times 16 = 480m^2$ .",
+        "incorrect": "اضرب الطول في العرض."
+      },
+      "solution": {
+        "lines": [
+          "$30 \\times 16 = 480$",
+          "مساحة القطعة $480m^2$ ."
+        ],
+        "result": "480m^2"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عبّر بدلالة $x$ عن مساحة المثلث $EBM$ ، ولتكن $S_1(x)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المعامل $a$ فقط في $S_1(x) = ax$",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-TARRID-NAMUDHAJ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $EBM$ قائم في $B$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحته = نصف جداء ضلعيه القائمين $BE$ و $BM$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$S_1(x) = \\dfrac{10 \\times x}{2} = 5x$ .",
+        "incorrect": "لا تنسَ القسمة على 2 في مساحة المثلث."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $EBM$ قائم في $B$ :",
+          "$S_1(x) = \\dfrac{BE \\times BM}{2} = \\dfrac{10x}{2} = 5x$",
+          "$S_1$ دالة خطية."
+        ],
+        "result": "S_1(x) = 5x"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "عيّن $x$ حتى تكون مساحة الجزء المخصص للورود $45m^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول $BM$ بالمتر",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "225",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جد العدد الذي صورته 45 بالدالة $S_1$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$5x = 45$ ومنه $x = 9$ m.",
+        "incorrect": "$x$ هو العدد الذي صورته 45: اقسم على المعامل."
+      },
+      "solution": {
+        "lines": [
+          "$S_1(x) = 45$ معناه $5x = 45$",
+          "$x = 9$ ، أي $BM = 9m$ ."
+        ],
+        "result": "x = 9"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "يريد صاحب القطعة أن تكون مساحة الورود 12,5% من مساحة القطعة. عيّن عندئذ $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول $BM$ بالمتر",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "60",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولا 12,5% من مساحة القطعة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم جد العدد الذي صورته هذه المساحة بالدالة $S_1$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}125 \\times 480 = 60m^2$ ، و $5x = 60$ ومنه $x = 12$ m.",
+        "incorrect": "12,5% من 480 أولا، ثم القسمة على المعامل."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{12{,}5}{100} \\times 480 = 60$ ، مساحة الورود $60m^2$ .",
+          "$5x = 60$ ومنه $x = 12$ .",
+          "$12 \\leqslant 16$ : هذا ممكن، و $BM = 12m$ ."
+        ],
+        "result": "x = 12"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "عندما تنطبق $M$ على $C$ ، ما هي النسبة المئوية لمساحة الورود من مساحة القطعة؟ (بالتدوير إلى $0{,}01$)",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة: النسبة دون الرمز %",
+      "expectedAnswer": "16,67",
+      "evaluationPolicy": {
+        "tolerance": "0.01"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "80",
+          "id": "MISC-IHSA-NISBA-MIN-ADAD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$M$ في $C$ معناه $x = 16$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة المئوية = (مساحة الورود ÷ مساحة القطعة) × 100."
+        }
+      ],
+      "feedback": {
+        "correct": "$S_1(16) = 80$ و $\\dfrac{80}{480} \\times 100 \\approx 16{,}67\\%$ .",
+        "incorrect": "احسب $S_1(16)$ ثم حوّل الكسر إلى نسبة مئوية."
+      },
+      "solution": {
+        "lines": [
+          "$S_1(16) = 5 \\times 16 = 80m^2$",
+          "$\\dfrac{80}{480} \\times 100 = \\dfrac{50}{3} \\approx 16{,}67$"
+        ],
+        "result": "\\approx 16{,}67\\%"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

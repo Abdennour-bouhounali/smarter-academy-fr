@@ -1,0 +1,118 @@
+{
+  "id": "ex-4am-khawas-dawaran-l4-003",
+  "lessonCode": "khawas-dawaran",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — أضواء دوّار وهران",
+    "estimatedMinutes": 3,
+    "tags": [
+      "متقايس الأضلاع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_khawas-dawaran_P2",
+      "modelledOn": "method-properties"
+    }
+  },
+  "generator": {
+    "tool": "u13-khawas-dawaran/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "ثلاثة أعمدة إنارة A و B و C على دائرة مركزها O في دوّار بوهران: B صورة A و C صورة B بالدوران الذي مركزه O وزاويته $120^\\circ$ في الاتجاه المباشر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المثلث ABC:",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "متقايس الأضلاع",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "قائم في B",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-KHAWAS"
+        },
+        {
+          "id": "C",
+          "content": "متساوي الساقين فقط ($AB = BC$ ، و CA مختلف)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-KHAWAS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما صورة [AB]؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "وصورة C بالدوران نفسه؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثلاث دورات تعيد A."
+        }
+      ],
+      "feedback": {
+        "correct": "[BC] صورة [AB] و [CA] صورة [BC]: $AB = BC = CA$ .",
+        "incorrect": "الدوران يحافظ على الأطوال: كل ضلع صورة الذي قبله."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "ما قيس الزاوية $\\widehat{AOC}$ (الأصغر) بالدرجات؟",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "120",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-KHAWAS",
+          "value": "240"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "C صورة A بدورانين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "دورة كاملة $360^\\circ$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الزاوية الأصغر بين [OA) و [OC)."
+        }
+      ],
+      "feedback": {
+        "correct": "$360^\\circ - 2 \\times 120^\\circ = 120^\\circ$ .",
+        "incorrect": "خذ الزاوية الأصغر من $180^\\circ$ ."
+      }
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l3-002",
+  "lessonCode": "mafhum-dawaran",
+  "level": 3,
+  "metadata": {
+    "title": "طرائق 2 — صورة قطعة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "صورة قطعة",
+      "إنشاء"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-segment",
+      "page": 155,
+      "section": "طرائق",
+      "number": 2
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 155): نريد إنشاء صورة القطعة [AB] بالدوران الذي مركزه O وزاويته $40^\\circ$ في الاتجاه غير المباشر، حيث $AB = 4\\,\\mathrm{cm}$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          3,
+          3
+        ],
+        "B": [
+          7,
+          3
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "B"
+        ]
+      ],
+      "labels": {
+        "O": "s"
+      },
+      "ariaLabel": "القطعة [AB] أفقية والنقطة O تحتها على اليسار",
+      "maxWidth": 340
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "صورة القطعة [AB] هي:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "القطعة [A′B′] حيث A′ و B′ صورتا A و B",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "القطعة الموازية لـ [AB] التي تبدأ من A′",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-TAWAZI"
+        },
+        {
+          "id": "C",
+          "content": "القطعة [A′B] حيث A′ صورة A فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MARKAZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الطريقة في طرائق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "صورة قطعة تتعيّن بطرفيها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ننشئ صورتي الطرفين ثم نرسم."
+        }
+      ],
+      "feedback": {
+        "correct": "يكفي إنشاء صورتي الطرفين ورسم القطعة [A′B′].",
+        "incorrect": "الدوران يدير كل نقطة: الطرفان معا، والقطعة لا تبقى موازية."
+      },
+      "difficulty": 2
+    },
+    {
+      "id": "q2",
+      "statement": "ما هو الطول $A'B'$ بالسنتيمتر؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-KHAWAS",
+          "value": "8"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تذكّر نشاط 3: قِس القطعة وصورتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الدوران يحرّك الشكل دون أن يمدّه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بالقطعة [AB]."
+        }
+      ],
+      "feedback": {
+        "correct": "$A'B' = AB = 4\\,\\mathrm{cm}$ .",
+        "incorrect": "الدوران لا يغيّر أطوال القطع."
+      },
+      "difficulty": 2
+    }
+  ]
+}

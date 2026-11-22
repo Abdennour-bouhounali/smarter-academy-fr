@@ -40,6 +40,13 @@ class LearningPoint extends Model
      * (student_learning_point_progress, tenu par ProgressEngine) : cette
      * relation ne fait que l'exposer, elle n'en calcule pas un second.
      */
+    /** Les points que celui-ci suppose acquis, avec le seuil de maîtrise attendu (pivot required_mastery). */
+    public function prerequisites(): BelongsToMany
+    {
+        return $this->belongsToMany(LearningPoint::class, 'learning_point_prerequisites', 'learning_point_id', 'prerequisite_learning_point_id')
+            ->withPivot('required_mastery')->withTimestamps();
+    }
+
     public function progress(): HasMany
     {
         return $this->hasMany(StudentLearningPointProgress::class);

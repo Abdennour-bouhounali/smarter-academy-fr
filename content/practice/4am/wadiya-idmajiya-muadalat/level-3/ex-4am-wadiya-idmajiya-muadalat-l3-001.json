@@ -1,0 +1,365 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muadalat-l3-001",
+  "lessonCode": "wadiya-idmajiya-muadalat",
+  "level": 3,
+  "metadata": {
+    "title": "نشر، تحليل، معادلة وقيمة عددية",
+    "estimatedMinutes": 16,
+    "tags": [
+      "نشر",
+      "تحليل",
+      "معادلة جداء معدوم"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-34",
+      "page": 53,
+      "section": "أتعمّق",
+      "number": 34
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $E$ حيث:",
+    "formulas": [
+      "E = (5x - 1)^2 - (2x + 3)(5x - 1)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انشر وبسّط العبارة $E$ .",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $ax^2 + bx + c$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "15",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طبّق المتطابقات الشهيرة، ثم انشر الجداءات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى الإشارة «−» أمام قوس: تتغيّر إشارة كل حد من نشره."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 15$ .",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$E = (5x - 1)^2 - (2x + 3)(5x - 1)$",
+          "ننشر كل جداء (أو مربع)، ثم نجمع الحدود المتشابهة: حدود $x^2$ تعطي $15x^2$"
+        ],
+        "result": "a = 15"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "-23",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العدد المطلوب في الشكل المبسّط، بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$b = -23$ .",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "نجمع حدود $x$ من النشر السابق: $-23x$"
+        ],
+        "result": "b = -23"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "العدد $c$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $ax^2 + bx + c$ : اكتب العدد $c$ فقط",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العدد المطلوب في الشكل المبسّط، بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$c = 4$ .",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$E = (5x - 1)^2 - (2x + 3)(5x - 1)$",
+          "$E = 25x^2 - 10x + 1 - (10x^2 - 2x + 15x - 3)$",
+          "$E = 25x^2 - 10x + 1 - 10x^2 - 13x + 3$",
+          "إذن $E = 15x^2 - 23x + 4$"
+        ],
+        "result": "E = 15x^2 - 23x + 4"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "lead": "حلّل العبارة $E$ إلى جداء عاملين من الدرجة الأولى.",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب على الشكل $(5x - 1)(mx + n)$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن العامل المشترك $(5x - 1)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرج العامل المشترك، ثم بسّط ما بين القوسين الكبيرين بإشاراته."
+        }
+      ],
+      "feedback": {
+        "correct": "$m = 3$ .",
+        "incorrect": "أخرج العامل المشترك من كل حد، ثم بسّط ما بين القوسين الكبيرين بإشاراته."
+      },
+      "solution": {
+        "lines": [
+          "$E = (5x - 1)\\left[(5x - 1) - (2x + 3)\\right]$",
+          "$E = (5x - 1)(5x - 1 - 2x - 3)$",
+          "معامل $x$ في القوس الثاني: $3$"
+        ],
+        "result": "m = 3"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب على الشكل $(5x - 1)(mx + n)$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "-4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العدد المطلوب في الشكل المحلّل، بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$n = -4$ .",
+        "incorrect": "أخرج العامل المشترك من كل حد، ثم بسّط ما بين القوسين الكبيرين بإشاراته."
+      },
+      "solution": {
+        "lines": [
+          "$E = (5x - 1)\\left[(5x - 1) - (2x + 3)\\right]$",
+          "$E = (5x - 1)(5x - 1 - 2x - 3)$",
+          "إذن $E = (5x - 1)(3x - 4)$"
+        ],
+        "result": "E = (5x - 1)(3x - 4)"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "lead": "حلّ المعادلة: $E = 0$ .",
+      "statement": "الحلّ الأصغر:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "1/5",
+      "misconceptionSignatures": [
+        {
+          "value": "-1/5",
+          "id": "MISC-JIDAA-ISHARA-JADHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يكون جداء معدومًا إذا كان أحد عامليه على الأقل معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلتين من الدرجة الأولى، ثم حلّ كل واحدة منهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الحلّين، ثم اكتب الأصغر منهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{1}{5}$ .",
+        "incorrect": "كل عامل معدوم يعطي معادلة من الدرجة الأولى: انقل العدد ثم اقسم على معامل $x$ بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $(5x - 1)(3x - 4) = 0$",
+          "يكون جداء معدومًا إذا كان أحد عامليه على الأقل معدومًا.",
+          "من العامل الذي يعطي الحل الأصغر:",
+          "$5x - 1 = 0$",
+          "$5x = 1$",
+          "$x = \\dfrac{1}{5}$"
+        ],
+        "result": "x = \\dfrac{1}{5}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "statement": "الحلّ الأكبر:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "4/3",
+      "misconceptionSignatures": [
+        {
+          "value": "-4/3",
+          "id": "MISC-JIDAA-ISHARA-JADHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة الثانية من الدرجة الأولى، ثم قارن الحلّين."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{4}{3}$ .",
+        "incorrect": "كل عامل معدوم يعطي معادلة من الدرجة الأولى: انقل العدد ثم اقسم على معامل $x$ بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $(5x - 1)(3x - 4) = 0$",
+          "يعني أنّ: $5x - 1 = 0$ أو $3x - 4 = 0$",
+          "أي: $x = \\dfrac{1}{5}$ أو $x = \\dfrac{4}{3}$",
+          "إذن للمعادلة حلّان هما $\\dfrac{1}{5}$ و $\\dfrac{4}{3}$ ."
+        ],
+        "result": "x = \\dfrac{4}{3}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q8",
+      "step": "04",
+      "statement": "احسب قيمة العبارة $E$ من أجل $x = -1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "42",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الشكل المحلّل للعبارة $E$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $x$ بالعدد $-1$ في كل عامل."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 42$ .",
+        "incorrect": "عوّض $x$ بالعدد $-1$ في الشكل المحلّل، وانتبه إلى الإشارات."
+      },
+      "solution": {
+        "lines": [
+          "نستعمل الشكل المحلّل: $E = (5x - 1)(3x - 4)$",
+          "$E = (5 \\times (-1) - 1)(3 \\times (-1) - 4)$",
+          "$E = (-6) \\times (-7)$"
+        ],
+        "result": "E = 42"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

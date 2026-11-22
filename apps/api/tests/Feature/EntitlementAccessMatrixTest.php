@@ -86,8 +86,10 @@ class EntitlementAccessMatrixTest extends TestCase
             'payant, dérogation' => ['active',    'override',            'premium',   'published', 'published', true],
             // Les deux lignes qui comptent : le droit n'est PAS un passe-droit.
             'dérogation + leçon masquée' => ['active',    'override',            'hidden',    'published', 'published', false],
-            'dérogation + module masqué' => ['active',    'override',            'premium',   'hidden',    'published', false],
-            'abonnement + module masqué' => ['active',    'subscription',        'free',      'hidden',    'published', false],
+            // Un module n'a pas d'état propre (2026-11-11) : sa colonne est
+            // ignorée, il suit sa leçon publiée.
+            'dérogation + colonne module masquée' => ['active',    'override',            'premium',   'hidden',    'published', true],
+            'abonnement + colonne module masquée' => ['active',    'subscription',        'free',      'hidden',    'published', true],
             // Le statut de compte domine tout.
             'suspendu + abonnement' => ['suspended', 'subscription',        'free',      'published', 'published', false],
             'suspendu + gratuit' => ['suspended', null,                  'free',      'published', 'published', false],

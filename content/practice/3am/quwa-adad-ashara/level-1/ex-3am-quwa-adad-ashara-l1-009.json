@@ -1,0 +1,140 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l1-009",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 1,
+  "metadata": {
+    "title": "أختبر نفسي: كتابة قوة موجبة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "قوى العدد 10",
+      "اختيار من متعدد"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "self-1",
+      "page": 49,
+      "section": "أؤكّد تعلّماتي",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اختر الإجابة الصحيحة في السؤال الأول ثمّ أجب عن السؤال الثاني."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "$10^{6} =$ ",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما معنى $10^{6}$ ؟ جداء كم عاملًا كلّها 10؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كلّ عامل 10 يُضيف صفرًا واحدًا بعد الرقم 1."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن عدد أصفار الأعداد المقترحة مع الأسّ."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$100\\,000$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-RAQAM"
+        },
+        {
+          "id": "B",
+          "content": "$60$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-DARB"
+        },
+        {
+          "id": "C",
+          "content": "$1\\,000\\,000$",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{6}$ هو الرقم 1 متبوعًا بستّة أصفار.",
+        "incorrect": "اختبر كلّ اقتراح بحساب الكتابة العشرية للقوة المعنية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10^{6} = 1\\,000\\,000$ ."
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم صفرًا في الكتابة العشرية للعدد $10^{15}$ ؟",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القوة $10^{15}$ جداء كم عاملًا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد الأصفار هو الأسّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا حاجة إلى كتابة العدد كلّه: القاعدة تكفي."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "16",
+          "id": "MISC-ASHARA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{15}$ يحوي 15 صفرًا.",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10^{15}$ هو الرقم 1 متبوعًا بـ 15 صفرًا."
+        ],
+        "result": "15"
+      }
+    }
+  ]
+}

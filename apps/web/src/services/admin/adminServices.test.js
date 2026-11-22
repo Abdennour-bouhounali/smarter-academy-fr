@@ -1,10 +1,11 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 import { query } from './adminClient';
 import { REPORT_CATEGORIES } from '../reportService';
-import { adminNavSections, adminNavLinks } from '../../data/adminNavigation';
+import { adminNavSections, adminNavLinks, adminNavSectionsFor } from '../../data/adminNavigation';
+import adminCatalogue from '../../i18n/locales/ar/admin.json';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const webRoot = resolve(here, '../../..');
@@ -50,8 +51,7 @@ describe('signalement côté élève', () => {
     // Le serveur re-résout tout : un lesson_id envoyé par le client ne serait
     // même pas validé. Le service ne doit donc pas prétendre en fournir.
     expect(source).not.toMatch(/lesson_id|lessonId\s*[:,]/);
-    expect(source).toContain('lessonCode');
-    expect(source).toContain('initiateReport');
+    expect(source).toContain('submitReport');
   });
 
   it('ne collecte aucune donnée personnelle dans le contexte technique', () => {
@@ -64,11 +64,31 @@ describe('signalement côté élève', () => {
 
 describe('navigation d’administration', () => {
   it('couvre toutes les sections de la spécification', () => {
-    const labels = adminNavSections.map((s) => s.label);
-    expect(labels).toEqual([
-      null, 'Statistiques', 'Contenu', 'Signalements',
-      'Élèves', 'Abonnements', 'Compte', 'Système',
+    // La navigation ne porte plus de TEXTE : depuis que le panneau est arabe,
+    // chaque entrée porte une CLÉ du catalogue `admin` (admin.json). Le test
+    // vérifie donc les clés — il ne casse plus quand on reformule un libellé,
+    // et il interdit qu'une entrée reparte avec du français en dur.
+    const keys = adminNavSections.map((s) => s.labelKey);
+    // « Enseignants » et « Offres » : le modèle commercial configuré depuis
+    // le panneau — activation MANUELLE, jamais un paiement en ligne.
+    // « Accès » reste : les codes d'activation, liés ou non à une offre
+    // (master spec §17/§18). « الكتب » : la librairie (BOOKS_STORE.md).
+    expect(keys).toEqual([
+      null, 'nav.analytics', 'nav.content', 'nav.reports',
+      'nav.students', 'nav.teachers', 'nav.plans', 'nav.access',
+      'nav.books', 'nav.account', 'nav.system',
     ]);
+  });
+
+  it('chaque entrée de navigation a une clé, et cette clé existe dans le catalogue', () => {
+    for (const link of adminNavLinks) {
+      expect(link.labelKey, `${link.path} n’a pas de clé`).toBeTruthy();
+      // La clé doit RÉSOUDRE : une entrée pointant sur une clé absente
+      // afficherait « nav.foo » dans la barre latérale.
+      const path = link.labelKey.split('.');
+      const value = path.reduce((node, part) => (node ?? {})[part], adminCatalogue);
+      expect(typeof value, `${link.labelKey} manque dans admin.json`).toBe('string');
+    }
   });
 
   it('ne pointe que vers des routes /admin', () => {
@@ -128,7 +148,20 @@ describe('chaque lien de la barre latérale mène quelque part', () => {
 describe('la porte du panneau d’administration', () => {
   it('protège /admin par un rôle explicite', () => {
     const app = read('src/App.jsx');
-    expect(app).toMatch(/path="\/admin" element=\{<ProtectedRoute allowedRoles=\{\['admin'\]\} \/>\}/);
+    expect(app).toMatch(/path="\/admin" element=\{<ProtectedRoute allowedRoles=\{\['admin', 'book_manager'\]\} \/>\}/);
+    // Le gestionnaire de la librairie partage le panneau : tout ce qui n'est
+    // pas la librairie ni « حسابي » est derrière AdminOnlyOutlet.
+    expect(app).toMatch(/<Route element=\{<AdminOnlyOutlet \/>\}>/);
+  });
+
+  it('le gestionnaire de la librairie ne voit que « الكتب » et son compte', () => {
+    const sections = adminNavSectionsFor('book_manager');
+    expect(sections.map((s) => s.labelKey)).toEqual(['nav.books', 'nav.account']);
+    const paths = sections.flatMap((s) => s.links.map((l) => l.path));
+    expect(paths).toEqual(['/admin/livres/commandes', '/admin/livres', '/admin/livres/messages', '/admin/compte', '/admin/compte/securite']);
+    // L'administrateur, lui, voit tout — y compris « مسيّرو المكتبة ».
+    expect(adminNavSectionsFor('admin').flatMap((s) => s.links)).toHaveLength(adminNavLinks.length);
+    expect(adminNavSectionsFor('student')).toEqual([]);
   });
 
   it('n’expose aucune route /admin en dehors de cette porte', () => {
@@ -157,14 +190,24 @@ describe('les états d’écran', () => {
       'src/pages/admin/students/StudentList.jsx',
       'src/pages/admin/students/StudentDetail.jsx',
       'src/pages/admin/subscriptions/Subscriptions.jsx',
+      // Les codes d'activation : l'écran par lequel l'accès payant est
+      // administré dans le produit algérien (master spec §17).
+      'src/pages/admin/activation/ActivationCodes.jsx',
+      'src/pages/admin/activation/ActivationBatches.jsx',
+      'src/pages/admin/activation/ActivationCodeDetail.jsx',
       'src/pages/admin/system/ActivityLog.jsx',
     ];
 
     for (const screen of SCREENS) {
       const source = read(screen);
-      const handles = source.includes('LoadingState') || source.includes('loading={');
+      // `Loading` / `ErrorBox` sont les équivalents arabes de `adminUi` :
+      // même rôle que `LoadingState` / `ErrorState`, mais traduits par le
+      // catalogue. Un écran converti reste tenu de rendre les deux états.
+      const handles = source.includes('LoadingState') || source.includes('<Loading')
+        || source.includes('loading={');
       expect(handles, `${screen} doit gérer le chargement`).toBe(true);
-      const errors = source.includes('ErrorState') || source.includes('error={');
+      const errors = source.includes('ErrorState') || source.includes('<ErrorBox')
+        || source.includes('error={');
       expect(errors, `${screen} doit gérer l’erreur`).toBe(true);
     }
   });

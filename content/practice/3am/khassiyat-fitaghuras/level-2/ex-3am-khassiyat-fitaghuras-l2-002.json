@@ -1,0 +1,232 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l2-002",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 2,
+  "metadata": {
+    "title": "تصويب حساب زميل",
+    "estimatedMinutes": 6,
+    "tags": [
+      "خاصية فيثاغورس",
+      "تصويب خطأ"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-9",
+      "page": 175,
+      "section": "أوظّف تعلّماتي",
+      "number": 9
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "طلب الأستاذ حساب الطول $QR$ في المثلث $PQR$ القائم في $Q$ حيث $PQ = 12\\,\\mathrm{cm}$ و $PR = 13\\,\\mathrm{cm}$ . كتب كريم: $QR^2 = PR^2 + PQ^2 = 13^2 + 12^2 = 313$ ، إذن $QR \\approx 17{,}69\\,\\mathrm{cm}$ . أرادت زميلته أن تساعده بلطف على اكتشاف خطئه.",
+    "figure": {
+      "points": {
+        "Q": [
+          0.0,
+          0.0
+        ],
+        "R": [
+          6.5,
+          0.0
+        ],
+        "P": [
+          0.0,
+          12.0
+        ]
+      },
+      "segments": [
+        {
+          "from": "Q",
+          "to": "R"
+        },
+        {
+          "from": "Q",
+          "to": "P",
+          "label": "12 cm"
+        },
+        {
+          "from": "R",
+          "to": "P",
+          "label": "13 cm"
+        }
+      ],
+      "rightAngles": [
+        [
+          "R",
+          "Q",
+          "P"
+        ]
+      ],
+      "ariaLabel": "مثلث PQR قائم في Q حيث PQ = 12 cm و PR = 13 cm",
+      "maxWidth": 320,
+      "caption": "(الأطوال غير حقيقية)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل حساب كريم صحيح؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، الحساب صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-HYP-WRONG"
+        },
+        {
+          "id": "B",
+          "content": "لا: الوتر هو $[PR]$ ، فيجب أن نكتب $QR^2 = PR^2 - PQ^2$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لا: كان يجب أن يكتب $QR = PR + PQ$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الضلع المقابل للزاوية القائمة في $Q$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع الوتر وحده يساوي مجموع مربعين."
+        }
+      ],
+      "feedback": {
+        "correct": "الوتر هو $[PR]$ : الضلع القائم $[QR]$ يُحسب بالطرح.",
+        "incorrect": "حدّد الوتر أولا: هو الضلع المقابل للزاوية القائمة، ثم قارنه بما كتبه كريم."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $PQR$ قائم في $Q$ ، فوتره $[PR]$ وليس $[QR]$ .",
+          "حسب خاصية فيثاغورس: $PR^2 = PQ^2 + QR^2$ ، ومنه $QR^2 = PR^2 - PQ^2$ .",
+          "كتب كريم $QR^2 = PR^2 + PQ^2$ كأن $[QR]$ هو الوتر: الحساب خاطئ."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب الطول الصحيح لـ $QR$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "17.69",
+          "id": "MISC-FITAGHURAS-LEG-ADD"
+        },
+        {
+          "value": "1",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "25",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع المطلوب ليس الوتر: مربعه يساوي مربع الوتر ناقص مربع الضلع الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولا مربع الطول، ثم خذ جذره التربيعي بالآلة الحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$QR^2 = 13^2 - 12^2 = 25$ ، إذن $QR = 5\\,\\mathrm{cm}$ .",
+        "incorrect": "الطول المطلوب ضلع قائم وليس وترا: نطرح مربع الضلع المعلوم من مربع الوتر، ولا نجمع."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $PQR$ قائم في $Q$ ، حسب خاصية فيثاغورس: $PR^2 = QR^2 + PQ^2$",
+          "ومنه: $QR^2 = PR^2 - PQ^2$",
+          "$QR^2 = 13^2 - 12^2 = 169 - 144 = 25$",
+          "$QR = \\sqrt{25} = 5\\,\\mathrm{cm}$"
+        ],
+        "result": "QR = 5\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "دون حساب، برّر لماذا كان على كريم أن يشكّ في النتيجة $17{,}69\\,\\mathrm{cm}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن $17{,}69$ بطول الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أطول أضلاع المثلث القائم هو وتره."
+        }
+      ],
+      "feedback": {
+        "correct": "ضلع قائم لا يمكن أن يكون أطول من الوتر.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث القائم، الوتر هو أطول الأضلاع.",
+          "الضلع القائم $[QR]$ أقصر من الوتر $[PR]$ الذي طوله $13\\,\\mathrm{cm}$ .",
+          "والنتيجة $17{,}69\\,\\mathrm{cm}$ أكبر من $13\\,\\mathrm{cm}$ : هي مستحيلة."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

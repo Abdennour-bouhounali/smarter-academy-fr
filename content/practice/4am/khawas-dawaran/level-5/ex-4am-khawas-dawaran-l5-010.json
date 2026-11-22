@@ -1,0 +1,67 @@
+{
+  "id": "ex-4am-khawas-dawaran-l5-010",
+  "lessonCode": "khawas-dawaran",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — صمّام عجلة دراجة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "المساحات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_khawas-dawaran_P2",
+      "modelledOn": "method-properties"
+    }
+  },
+  "generator": {
+    "tool": "u13-khawas-dawaran/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "صمّام عجلة دراجة في النقطة V على بعد $0{,}35\\,\\mathrm{m}$ من محورها O. تدور العجلة بزاوية $90^\\circ$ فيصل الصمّام إلى V′."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما مساحة المثلث OVV′ بالمتر المربع، مدوّرة إلى 0,001؟",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري مدوّر إلى 0,001",
+      "expectedAnswer": "0.061",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-KHAWAS",
+          "value": "0.123"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$OV' = OV$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الزاوية $\\widehat{VOV'}$ قائمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نصف جداء الضلعين القائمين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{0{,}35 \\times 0{,}35}{2} = 0{,}06125 \\approx 0{,}061\\,\\mathrm{m^2}$ .",
+        "incorrect": "المثلث قائم في O ومتساوي الساقين: لا تنس القسمة على 2."
+      }
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "id": "ex-4am-dala-khattiya-l3-004",
+  "lessonCode": "dala-khattiya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2016 — دالة خطية من عدد وصورته",
+    "estimatedMinutes": 6,
+    "tags": [
+      "تعيين دالة خطية",
+      "العدد الذي صورته معلومة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_dala-khattiya_P3",
+      "modelledOn": "BEM 2016 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "$f$ دالة خطية حيث:",
+    "formulas": [
+      "f(8) = 3"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "جد العبارة الجبرية للدالة $f$ ، أي العدد $a$ حيث $f(x) = ax$ .",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "0,375",
+      "misconceptionSignatures": [
+        {
+          "value": "8/3",
+          "id": "MISC-KHATTIYA-MUAMIL-MAQLUB"
+        },
+        {
+          "value": "-0,375",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$f$ دالة خطية: $f(x) = ax$ ، و $f(8) = 3$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب المعادلة $a \\times 8 = 3$ ثم حلّها."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{3}{8} = 0{,}375$ ، إذن $f(x) = 0{,}375x$ .",
+        "incorrect": "المعامل هو الصورة مقسومة على العدد (وليس العكس)، مع الانتباه إلى الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "$f$ دالة خطية، إذن $f(x) = ax$ .",
+          "$f(8) = 3$ معناه $a \\times 8 = 3$",
+          "$a = \\dfrac{3}{8} = 0{,}375$"
+        ],
+        "result": "f(x) = 0{,}375x"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل العدد 10 هو صورة العدد 26 بالدالة $f$ ؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب صورة العدد 26 بالدالة $f$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن النتيجة بالعدد 10 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(26) = 9{,}75 \\neq 10$ .",
+        "incorrect": "احسب $f(26)$ بعبارة $f(x)$ ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "$f(26) = 0{,}375 \\times 26 = 9{,}75$",
+          "$9{,}75 \\neq 10$ ، إذن العدد 10 ليس صورة العدد 26 بالدالة $f$ ."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "جد العدد الذي صورته 6 بالدالة $f$ .",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "16",
+      "misconceptionSignatures": [
+        {
+          "value": "2,25",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "-16",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد المطلوب $x$ يحقق $f(x) = 6$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المعادلة $0{,}375x = 6$ : اقسم الطرفين على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{6}{0{,}375} = 16$ .",
+        "incorrect": "لا تحسب صورة العدد المعطى: ابحث عن العدد $x$ الذي صورته هذا العدد."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 6$ معناه $0{,}375x = 6$",
+          "$x = \\dfrac{6}{0{,}375} = 16$"
+        ],
+        "result": "x = 16"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

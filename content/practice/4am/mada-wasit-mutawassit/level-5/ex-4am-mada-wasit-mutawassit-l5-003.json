@@ -1,0 +1,440 @@
+{
+  "id": "ex-4am-mada-wasit-mutawassit-l5-003",
+  "lessonCode": "mada-wasit-mutawassit",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2013 — اختيار رامي الجلّة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "وضعية إدماجية",
+      "المتوسط",
+      "المدى",
+      "التشتت",
+      "مقارنة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mada-wasit-mutawassit_P1",
+      "modelledOn": "BEM 2013 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2013",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يريد أستاذ التربية البدنية، بكل عدل، اختيار تلميذ واحد لتمثيل المتوسطة في مسابقة رمي الجلّة. سجّل نتائج (بالمتر m) خمس رميات لكل تلميذ من ثلاثة تلاميذ:",
+    "table": {
+      "head": [
+        "الرمية",
+        "سمير",
+        "كريم",
+        "أنيس"
+      ],
+      "rows": [
+        [
+          "الرمية 1",
+          "8,2",
+          "6,9",
+          "8,0"
+        ],
+        [
+          "الرمية 2",
+          "9,0",
+          "9,8",
+          "8,6"
+        ],
+        [
+          "الرمية 3",
+          "7,6",
+          "8,1",
+          "8,3"
+        ],
+        [
+          "الرمية 4",
+          "8,8",
+          "9,5",
+          "8,7"
+        ],
+        [
+          "الرمية 5",
+          "8,4",
+          "7,7",
+          "8,4"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب متوسط رميات كل تلميذ.",
+      "statement": "متوسط رميات سمير:",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المتوسط بـ m",
+      "expectedAnswer": "8,4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المتوسط هو مجموع القيم مقسوما على عددها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع كل قيم السلسلة، ثم عُدّ هذه القيم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم المجموع على عدد القيم (التكرار الكلي)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{42}{5} = 8{,}4$ .",
+        "incorrect": "اجمع كل القيم ثم اقسم المجموع على عدد القيم؛ تأكّد من أنك لم تنس أي قيمة."
+      },
+      "solution": {
+        "lines": [
+          "مجموع القيم:",
+          "$8{,}2 + 9 + 7{,}6 + 8{,}8 + 8{,}4 = 42$",
+          "عدد القيم: 5",
+          "$m = \\dfrac{42}{5} = 8{,}4$"
+        ],
+        "result": "m = 8{,}4"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "متوسط رميات كريم:",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المتوسط بـ m",
+      "expectedAnswer": "8,4",
+      "misconceptionSignatures": [
+        {
+          "value": "8,1",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المتوسط هو مجموع القيم مقسوما على عددها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع كل قيم السلسلة، ثم عُدّ هذه القيم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم المجموع على عدد القيم (التكرار الكلي)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{42}{5} = 8{,}4$ .",
+        "incorrect": "اجمع كل القيم ثم اقسم المجموع على عدد القيم؛ تأكّد من أنك لم تنس أي قيمة."
+      },
+      "solution": {
+        "lines": [
+          "مجموع القيم:",
+          "$6{,}9 + 9{,}8 + 8{,}1 + 9{,}5 + 7{,}7 = 42$",
+          "عدد القيم: 5",
+          "$m = \\dfrac{42}{5} = 8{,}4$"
+        ],
+        "result": "m = 8{,}4"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "متوسط رميات أنيس:",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المتوسط بـ m",
+      "expectedAnswer": "8,4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المتوسط هو مجموع القيم مقسوما على عددها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع كل قيم السلسلة، ثم عُدّ هذه القيم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم المجموع على عدد القيم (التكرار الكلي)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{42}{5} = 8{,}4$ .",
+        "incorrect": "اجمع كل القيم ثم اقسم المجموع على عدد القيم؛ تأكّد من أنك لم تنس أي قيمة."
+      },
+      "solution": {
+        "lines": [
+          "مجموع القيم:",
+          "$8 + 8{,}6 + 8{,}3 + 8{,}7 + 8{,}4 = 42$",
+          "عدد القيم: 5",
+          "$m = \\dfrac{42}{5} = 8{,}4$"
+        ],
+        "result": "m = 8{,}4"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "احسب مدى رميات كل تلميذ.",
+      "statement": "مدى رميات سمير:",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدى بـ m",
+      "expectedAnswer": "1,4",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-IHSA-MADA-AKBAR-QIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المدى هو الفرق بين أكبر قيمة وأصغر قيمة في السلسلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن أكبر قيمة وأصغر قيمة من قيم السلسلة (لا من التكرارات)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح أصغر قيمة من أكبر قيمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$9 - 7{,}6 = 1{,}4$ .",
+        "incorrect": "المدى فرق بين قيمتين من قيم السلسلة: أكبر قيمة ناقص أصغر قيمة، ولا تُستعمل التكرارات."
+      },
+      "solution": {
+        "lines": [
+          "أكبر قيمة: 9m ، وأصغر قيمة: 7,6m",
+          "$9 - 7{,}6 = 1{,}4$"
+        ],
+        "result": "1{,}4"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "مدى رميات كريم:",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدى بـ m",
+      "expectedAnswer": "2,9",
+      "misconceptionSignatures": [
+        {
+          "value": "9,8",
+          "id": "MISC-IHSA-MADA-AKBAR-QIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المدى هو الفرق بين أكبر قيمة وأصغر قيمة في السلسلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن أكبر قيمة وأصغر قيمة من قيم السلسلة (لا من التكرارات)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح أصغر قيمة من أكبر قيمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$9{,}8 - 6{,}9 = 2{,}9$ .",
+        "incorrect": "المدى فرق بين قيمتين من قيم السلسلة: أكبر قيمة ناقص أصغر قيمة، ولا تُستعمل التكرارات."
+      },
+      "solution": {
+        "lines": [
+          "أكبر قيمة: 9,8m ، وأصغر قيمة: 6,9m",
+          "$9{,}8 - 6{,}9 = 2{,}9$"
+        ],
+        "result": "2{,}9"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ج",
+      "statement": "مدى رميات أنيس:",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدى بـ m",
+      "expectedAnswer": "0,7",
+      "misconceptionSignatures": [
+        {
+          "value": "8,7",
+          "id": "MISC-IHSA-MADA-AKBAR-QIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المدى هو الفرق بين أكبر قيمة وأصغر قيمة في السلسلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن أكبر قيمة وأصغر قيمة من قيم السلسلة (لا من التكرارات)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح أصغر قيمة من أكبر قيمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$8{,}7 - 8 = 0{,}7$ .",
+        "incorrect": "المدى فرق بين قيمتين من قيم السلسلة: أكبر قيمة ناقص أصغر قيمة، ولا تُستعمل التكرارات."
+      },
+      "solution": {
+        "lines": [
+          "أكبر قيمة: 8,7m ، وأصغر قيمة: 8m",
+          "$8{,}7 - 8 = 0{,}7$"
+        ],
+        "result": "0{,}7"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "statement": "يختار الأستاذ التلميذ الذي له أكبر متوسط، وعند تساوي المتوسطات يختار صاحب النتائج الأكثر انتظاما (الأقل تشتّتا). من يختار؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "سمير",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MUQARANA-MUTAWASSIT-FAQAT"
+        },
+        {
+          "id": "B",
+          "content": "كريم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MADA-AKBAR-QIMA"
+        },
+        {
+          "id": "C",
+          "content": "أنيس",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن أولا المتوسطات الثلاثة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المتوسطات متساوية: قارن المديات، فالمدى يقيس التشتّت."
+        }
+      ],
+      "feedback": {
+        "correct": "المتوسطات متساوية (8,4 m)، وأصغر مدى هو 0,7 m.",
+        "incorrect": "المتوسطات متساوية، فلا تحسم وحدها: قارن تشتّت النتائج بالمدى، ولا تختر صاحب أطول رمية."
+      },
+      "solution": {
+        "lines": [
+          "المتوسطات الثلاثة متساوية: 8,4 m .",
+          "المديات: سمير 1,4 m ، كريم 2,9 m ، أنيس 0,7 m .",
+          "أصغر مدى لأنيس: نتائجه الأكثر انتظاما، فيختاره الأستاذ."
+        ],
+        "result": "أنيس"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

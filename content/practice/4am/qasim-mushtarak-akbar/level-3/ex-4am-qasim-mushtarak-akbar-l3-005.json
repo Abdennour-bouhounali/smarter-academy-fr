@@ -1,0 +1,169 @@
+{
+  "id": "ex-4am-qasim-mushtarak-akbar-l3-005",
+  "lessonCode": "qasim-mushtarak-akbar",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2015 — مراحل الحساب — 126 و 168",
+    "estimatedMinutes": 10,
+    "tags": [
+      "PGCD",
+      "كسر",
+      "حساب كسري"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-mushtarak-akbar_P2",
+      "modelledOn": "BEM 2015 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 126 و 168 مع كتابة مراحل الحساب.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "42",
+      "misconceptionSignatures": [
+        {
+          "value": "21",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قائمة قواسم كل من العددين 126 و 168."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استخرج القواسم المشتركة: الأعداد الموجودة في القائمتين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاسم المشترك الأكبر هو أكبر القواسم المشتركة، لا أيّ واحد منها."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 126 و 168 هي 1 ، 2 ، 3 ، 6 ، 7 ، 14 ، 21 ، 42، وأكبرها 42.",
+        "incorrect": "اكتب قائمتي القواسم كاملتين، ثم خذ أكبر عدد يظهر في القائمتين معًا."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 126 هي: 1 ، 2 ، 3 ، 6 ، 7 ، 9 ، 14 ، 18 ، 21 ، 42 ، 63 ، 126",
+          "قواسم العدد 168 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 7 ، 8 ، 12 ، 14 ، 21 ، 24 ، 28 ، 42 ، 56 ، 84 ، 168",
+          "القواسم المشتركة للعددين 126 و 168 هي: 1 ، 2 ، 3 ، 6 ، 7 ، 14 ، 21 ، 42",
+          "أكبرها هو 42، إذن:"
+        ],
+        "result": "PGCD(126 ; 168) = 42"
+      },
+      "work": "required",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب $\\dfrac{126}{168}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "3/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 42: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال 01.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{126}{168} = \\dfrac{126 \\div 42}{168 \\div 42}$"
+        ],
+        "result": "\\dfrac{126}{168} = \\dfrac{3}{4}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب العدد P حيث: $P = \\dfrac{126}{168} + \\dfrac{5}{4} \\times \\dfrac{2}{5}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b أو عدد",
+      "expectedAnswer": "5/4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $\\dfrac{126}{168}$ بالكسر غير القابل للاختزال الذي وجدته في السؤال 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ بالضرب قبل الجمع، ثم وحّد المقامات."
+        }
+      ],
+      "feedback": {
+        "correct": "$P = \\dfrac{3}{4} + \\dfrac{1}{2} = \\dfrac{5}{4}$",
+        "incorrect": "الضرب أولوي على الجمع: احسب الجداء ثم اجمع بعد توحيد المقامات."
+      },
+      "solution": {
+        "lines": [
+          "$P = \\dfrac{3}{4} + \\dfrac{5 \\times 2}{4 \\times 5}$",
+          "$P = \\dfrac{3}{4} + \\dfrac{1}{2}$",
+          "$P = \\dfrac{3}{4} + \\dfrac{2}{4}$"
+        ],
+        "result": "P = \\dfrac{5}{4}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

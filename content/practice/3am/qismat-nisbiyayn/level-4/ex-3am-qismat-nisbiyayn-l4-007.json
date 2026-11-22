@@ -1,0 +1,247 @@
+{
+  "id": "ex-3am-qismat-nisbiyayn-l4-007",
+  "lessonCode": "qismat-nisbiyayn",
+  "level": 4,
+  "metadata": {
+    "title": "متتاليات بقسمة ثابتة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "متتالية",
+      "حاصل القسمة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-45",
+      "page": 19,
+      "section": "أتعمّق",
+      "number": 45
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في كل متتالية يُنتقل من حدّ إلى الذي يليه بقسمة على عدد ثابت.",
+    "formulas": [
+      "A = 1458 ; \\; −486 ; \\; \\ldots ; \\; −54 ; \\; 18",
+      "B = −640 ; \\; 160 ; \\; \\ldots ; \\; 10 ; \\; −2{,}5"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما العدد الذي نقسم عليه حدًّا من المتتالية $A$ لنجد الحدّ الذي يليه؟",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "-1/3",
+          "id": "MISC-QISMA-ORDER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن بين حدّين متتاليين: ما العملية التي تنقل من الأول إلى الثاني؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المرور من حدّ إلى الذي يليه يتمّ بالقسمة على العدد نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من العدد الذي وجدته على حدّين آخرين."
+        }
+      ],
+      "feedback": {
+        "correct": "العدد هو $−3$ .",
+        "incorrect": "راجع العملية التي تنقل من حدّ إلى الذي يليه، وتحقّق على حدّين متتاليين."
+      },
+      "solution": {
+        "lines": [
+          "$1458 \\div (−486) = −3$ : عددان مختلفا الإشارة، وحاصل قسمة مسافتيهما $3$ .",
+          "نتحقّق: $(−486) \\div (−3) = 162$ ثم $162 \\div (−3) = −54$ ."
+        ],
+        "result": "−3"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "أوجد الحدّ الناقص في المتتالية $A$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "162",
+      "misconceptionSignatures": [
+        {
+          "value": "-162",
+          "id": "MISC-QISMA-SIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن بين حدّين متتاليين: ما العملية التي تنقل من الأول إلى الثاني؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المرور من حدّ إلى الذي يليه يتمّ بالقسمة على العدد نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من العدد الذي وجدته على حدّين آخرين."
+        }
+      ],
+      "feedback": {
+        "correct": "العدد هو $162$ .",
+        "incorrect": "راجع العملية التي تنقل من حدّ إلى الذي يليه، وتحقّق على حدّين متتاليين."
+      },
+      "solution": {
+        "lines": [
+          "الحدّ الناقص هو $(−486) \\div (−3) = 162$ .",
+          "تحقّق: $162 \\div (−3) = −54$ ."
+        ],
+        "result": "162"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما العدد الذي نقسم عليه حدًّا من المتتالية $B$ لنجد الحدّ الذي يليه؟",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "-1/4",
+          "id": "MISC-QISMA-ORDER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن بين حدّين متتاليين: ما العملية التي تنقل من الأول إلى الثاني؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المرور من حدّ إلى الذي يليه يتمّ بالقسمة على العدد نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من العدد الذي وجدته على حدّين آخرين."
+        }
+      ],
+      "feedback": {
+        "correct": "العدد هو $−4$ .",
+        "incorrect": "راجع العملية التي تنقل من حدّ إلى الذي يليه، وتحقّق على حدّين متتاليين."
+      },
+      "solution": {
+        "lines": [
+          "$(−640) \\div 160 = −4$ : عددان مختلفا الإشارة.",
+          "نتحقّق: $160 \\div (−4) = −40$ ثم $(−40) \\div (−4) = 10$ ."
+        ],
+        "result": "−4"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "أوجد الحدّ الناقص في المتتالية $B$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-40",
+      "misconceptionSignatures": [
+        {
+          "value": "40",
+          "id": "MISC-QISMA-SIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن بين حدّين متتاليين: ما العملية التي تنقل من الأول إلى الثاني؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المرور من حدّ إلى الذي يليه يتمّ بالقسمة على العدد نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من العدد الذي وجدته على حدّين آخرين."
+        }
+      ],
+      "feedback": {
+        "correct": "العدد هو $−40$ .",
+        "incorrect": "راجع العملية التي تنقل من حدّ إلى الذي يليه، وتحقّق على حدّين متتاليين."
+      },
+      "solution": {
+        "lines": [
+          "الحدّ الناقص هو $160 \\div (−4) = −40$ .",
+          "تحقّق: $(−40) \\div (−4) = 10$ ."
+        ],
+        "result": "−40"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

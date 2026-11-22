@@ -1,0 +1,196 @@
+{
+  "id": "ex-4am-mada-wasit-mutawassit-l3-007",
+  "lessonCode": "mada-wasit-mutawassit",
+  "level": 3,
+  "metadata": {
+    "title": "الفئة الوسيطية لقامات 25 شخصا",
+    "estimatedMinutes": 4,
+    "tags": [
+      "الوسيط",
+      "الفئة الوسيطية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-4",
+      "page": 96,
+      "section": "معارف",
+      "number": 4,
+      "adaptedFrom": "ex-4am-mada-wasit-mutawassit-l4-006"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "يبيّن الجدول الآتي توزيع 25 شخصا حسب أطوال قاماتهم t بالسنتيمتر:",
+    "table": {
+      "head": [
+        "القامة t (cm)",
+        "$165 \\le t < 170$",
+        "$170 \\le t < 175$",
+        "$175 \\le t \\le 180$"
+      ],
+      "rows": [
+        [
+          "التكرار",
+          "5",
+          "6",
+          "14"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما هي رتبة القيمة التي تمثّل وسيط سلسلة القامات المرتّبة؟",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الرتبة",
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "value": "12,5",
+          "id": "MISC-IHSA-WASIT-RUTBA"
+        },
+        {
+          "value": "12",
+          "id": "MISC-IHSA-WASIT-RUTBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الأشخاص يحدّد رتبة الوسيط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل التكرار الكلي فردي أم زوجي؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "N فردي: الرتبة $\\dfrac{N + 1}{2}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{25 + 1}{2} = 13$ .",
+        "incorrect": "التكرار الكلي فردي: الوسيط هو القيمة المركزية."
+      },
+      "solution": {
+        "lines": [
+          "التكرار الكلي 25 عدد فردي، فالوسيط هو القيمة ذات الرتبة $\\dfrac{25 + 1}{2} = 13$ ."
+        ],
+        "result": "13"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب التكرار المجمع الصاعد للفئة $170 \\le t < 175$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "11",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكرار المجمع الصاعد لفئة = تكرارها + تكرارات الفئات التي قبلها."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 + 6 = 11$ .",
+        "incorrect": "اجمع تكرار الفئة وتكرارات الفئات التي قبلها."
+      },
+      "solution": {
+        "lines": [
+          "$5 + 6 = 11$"
+        ],
+        "result": "11"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "استنتج الفئة الوسيطية.",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$165 \\le t < 170$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-WASIT-RUTBA"
+        },
+        {
+          "id": "B",
+          "content": "$170 \\le t < 175$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-WASIT-QIMA-WUSTA-JADWAL"
+        },
+        {
+          "id": "C",
+          "content": "$175 \\le t \\le 180$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الرتبة التي وجدتها في 01 بالتكرارات المجمعة الصاعدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفئة الوسيطية هي التي تشمل القيمة ذات رتبة الوسيط."
+        }
+      ],
+      "feedback": {
+        "correct": "الرتبة 13 تقع بعد الرتبة 11، فهي في الفئة الأخيرة.",
+        "incorrect": "لا تختر فئة الوسط في الجدول: ابحث عن الفئة التي تحتوي الرتبة 13."
+      },
+      "solution": {
+        "lines": [
+          "أول فئتين تضمّان 11 شخصا فقط، والرتبة 13 تقع في الفئة الثالثة (من الرتبة 12 إلى الرتبة 25).",
+          "الفئة الوسيطية هي $175 \\le t \\le 180$ ."
+        ],
+        "result": "175 \\le t \\le 180"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

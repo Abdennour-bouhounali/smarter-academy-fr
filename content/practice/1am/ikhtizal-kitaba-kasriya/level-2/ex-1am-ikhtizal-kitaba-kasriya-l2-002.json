@@ -1,0 +1,185 @@
+{
+  "id": "ex-1am-ikhtizal-kitaba-kasriya-l2-002",
+  "lessonCode": "ikhtizal-kitaba-kasriya",
+  "level": 2,
+  "metadata": {
+    "title": "الكسر الدخيل",
+    "estimatedMinutes": 6,
+    "tags": [
+      "كتابات متساوية",
+      "اختزال"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-18",
+      "page": 58,
+      "section": "أتمرّن",
+      "number": 18
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "إليك الكسور: $\\dfrac{6}{10}$ ؛ $\\dfrac{9}{15}$ ؛ $\\dfrac{24}{40}$ ؛ $\\dfrac{12}{20}$ ؛ $\\dfrac{27}{35}$. كسر واحد منها لا يساوي الكسور الأخرى."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اختزل الكسر $\\dfrac{24}{40}$ إلى أبسط شكل ممكن.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b لا يقبل الاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "3/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "12/20",
+          "id": "MISC-KASRIYA-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن قاسم مشترك للبسط والمقام بقواعد قابلية القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على هذا القاسم، ثم أعد البحث في الكسر الجديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا لم تنفع القواعد، جرّب جداول الضرب (7، 11، 13…)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{24}{40} = \\dfrac{3}{5}$ ولا يقبل البسط والمقام قاسمًا مشتركًا غير 1.",
+        "incorrect": "نقسم البسط والمقام على قاسم مشترك لهما، ونعيد ذلك حتى لا يبقى قاسم مشترك غير 1.",
+        "notIrreducible": "الكتابة تساوي الكسر لكنها ما زالت قابلة للاختزال: ابحث عن قاسم مشترك آخر للبسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "$24 = 8 \\times 3$ و $40 = 8 \\times 5$ ، إذن $\\dfrac{24}{40} = \\dfrac{24 \\div 8}{40 \\div 8} = \\dfrac{3}{5}$",
+          "العددان 3 و 5 لا يقبلان قاسمًا مشتركًا غير 1: $\\dfrac{3}{5}$ في أبسط شكل ممكن."
+        ],
+        "result": "\\dfrac{24}{40} = \\dfrac{3}{5}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هو الكسر الذي لا يساوي الكسور الأخرى؟",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{9}{15}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KASRIYA-AKBAR-ARQAM"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{27}{35}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{24}{40}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KASRIYA-AKBAR-ARQAM"
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{12}{20}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KASRIYA-AKBAR-ARQAM"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختزل كل كسر إلى أبسط شكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أيّها لا يعطي نفس الكسر البسيط؟"
+        }
+      ],
+      "feedback": {
+        "correct": "كل الكسور تساوي $\\dfrac{3}{5}$ إلا $\\dfrac{27}{35}$.",
+        "incorrect": "اختزل كل كسر، ثم قارن الكسور البسيطة التي تحصل عليها."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{6}{10} = \\dfrac{9}{15} = \\dfrac{24}{40} = \\dfrac{12}{20} = \\dfrac{3}{5}$",
+          "$27 = 3 \\times 9$ لكن $35 = 5 \\times 7$ : $\\dfrac{27}{35}$ هو الكسر الدخيل."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "برّر أنّ $\\dfrac{27}{35}$ لا يساوي $\\dfrac{3}{5}$.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بأيّ عدد نضرب 3 لنجد 27؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل نجد 35 إذا ضربنا 5 في نفس العدد؟"
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي.",
+        "incorrect": "راجع الخاصية وأعد صياغة التبرير."
+      },
+      "solution": {
+        "lines": [
+          "لو كان $\\dfrac{27}{35} = \\dfrac{3}{5}$ لضربنا 3 في 9 لنجد 27، فيجب أن نضرب 5 في 9 أيضًا: $5 \\times 9 = 45$ وليس 35.",
+          "إذن $\\dfrac{27}{35} \\neq \\dfrac{3}{5}$."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

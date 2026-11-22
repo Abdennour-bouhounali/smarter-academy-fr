@@ -1,0 +1,282 @@
+{
+  "id": "ex-4am-zawiya-muhitiya-l4-001",
+  "lessonCode": "zawiya-muhitiya",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 16 — زوايا المثلث AEC",
+    "estimatedMinutes": 5,
+    "tags": [
+      "خاصية 1",
+      "خاصية 2"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-16",
+      "page": 161,
+      "section": "أتعمّق",
+      "number": 16
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 161): لاحظ الشكل التالي. على الشكل: $\\widehat{EOC} = 140^\\circ$ ، $\\widehat{BDC} = 40^\\circ$ و $\\widehat{DOB} = 40^\\circ$ . نريد أقياس زوايا المثلث AEC.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "E": [
+          -0.3473,
+          1.9696
+        ],
+        "C": [
+          1.5321,
+          -1.2856
+        ],
+        "B": [
+          -1.0,
+          -1.7321
+        ],
+        "D": [
+          -1.8794,
+          -0.684
+        ],
+        "A": [
+          -2.6528,
+          -2.0235
+        ]
+      },
+      "circles": [
+        {
+          "center": "O",
+          "radius": 2
+        }
+      ],
+      "segments": [
+        [
+          "E",
+          "B"
+        ],
+        {
+          "from": "E",
+          "to": "O",
+          "tone": "indigo"
+        },
+        {
+          "from": "O",
+          "to": "C",
+          "tone": "indigo"
+        },
+        [
+          "E",
+          "C"
+        ],
+        [
+          "D",
+          "C"
+        ],
+        [
+          "D",
+          "B"
+        ],
+        [
+          "E",
+          "A"
+        ],
+        [
+          "A",
+          "C"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "O",
+          "from": "C",
+          "to": "E",
+          "tone": "indigo",
+          "label": "140°"
+        },
+        {
+          "at": "D",
+          "from": "B",
+          "to": "C",
+          "tone": "amber",
+          "label": "40°",
+          "radius": 26
+        }
+      ],
+      "ariaLabel": "دائرة مركزها O، المستقيمان (ED) و (CB) يتقاطعان في A خارج الدائرة، الزاوية EOC قيسها 140 درجة والزاوية BDC قيسها 40 درجة",
+      "maxWidth": 480
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قيس $\\widehat{EBC}$ بالدرجة؟",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "70",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوس الذي تحصره كل زاوية: هل هو نفس القوس؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الزاويتين: أيهما أكبر، المركزية أم المحيطية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قيس الزاوية المحيطية نصف قيس الزاوية المركزية التي تحصر معها نفس القوس."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{EBC} = \\dfrac{140^\\circ}{2} = 70^\\circ$ .",
+        "incorrect": "EBC و EOC تحصران القوس EC."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-DIF",
+          "value": "280"
+        },
+        {
+          "id": "MISC-MUHITIYA-MUSAWIYA",
+          "value": "140"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "statement": "ما قيس $\\widehat{BEC}$ بالدرجة؟",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "40",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل الزاويتان محيطيتان (رأساهما على الدائرة)؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل تحصران نفس القوس، أي رأساهما في نفس الجهة من الوتر؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زاويتان محيطيتان تحصران نفس القوس متقايستان."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{BEC} = \\widehat{BDC} = 40^\\circ$ .",
+        "incorrect": "BEC و BDC محيطيتان تحصران القوس BC."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-MUTASAWIYA",
+          "value": "80"
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "statement": "ما قيس $\\widehat{AEC}$ بالدرجة؟",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "60",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوس الذي تحصره كل زاوية: هل هو نفس القوس؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الزاويتين: أيهما أكبر، المركزية أم المحيطية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قيس الزاوية المحيطية نصف قيس الزاوية المركزية التي تحصر معها نفس القوس."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{DOC} = 40^\\circ + 80^\\circ = 120^\\circ$ فـ $\\widehat{AEC} = \\widehat{DEC} = 60^\\circ$ .",
+        "incorrect": "AEC = DEC تحصر القوس DC."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-JUZ",
+          "value": "40"
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "statement": "ما قيس $\\widehat{EAC}$ بالدرجة؟",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "50",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالزوايا التي تعطيها خاصيتا الزاوية المحيطية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم استعمل مجموع أقياس زوايا المثلث، أو الزاوية المستقيمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل زاوية بدلالة القوس الذي تحصره قبل أن تحسب."
+        }
+      ],
+      "feedback": {
+        "correct": "$180^\\circ - 70^\\circ - 60^\\circ = 50^\\circ$ .",
+        "incorrect": "في المثلث AEC: $\\widehat{ACE} = \\widehat{BCE} = 70^\\circ$ ."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-JUZ",
+          "value": "70"
+        }
+      ]
+    }
+  ]
+}

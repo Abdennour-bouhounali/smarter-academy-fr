@@ -1,0 +1,86 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-maalam-l2-009",
+  "lessonCode": "wadiya-idmajiya-maalam",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — مقارنة طولين",
+    "estimatedMinutes": 2,
+    "tags": [
+      "مقارنة مسارين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-maalam_P1",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "من نقطة الانطلاق إلى خط الوصول: مسار أول نصف دائرة نصف قطرها $2\\,\\mathrm{km}$ ، ومسار ثان قطعتان مستقيمتان طولهما $3\\,\\mathrm{km}$ و $3\\,\\mathrm{km}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أيّ المسارين أطول؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الثاني لأنّ $4\\pi \\approx 12{,}57$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-NISF-DAIRA-MUHIT"
+        },
+        {
+          "id": "B",
+          "content": "الثاني: $6 > 2\\pi$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUQARANA-AYN"
+        },
+        {
+          "id": "C",
+          "content": "متساويان لأنّ $2\\pi = 6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUQARANA-AYN"
+        },
+        {
+          "id": "D",
+          "content": "الأول: $2\\pi \\approx 6{,}28 > 6$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول نصف الدائرة $\\pi r$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$2\\pi \\approx 6{,}28$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن $6{,}28$ و $6$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الأول طوله $2\\pi \\approx 6{,}28\\,\\mathrm{km}$ ، والثاني $6\\,\\mathrm{km}$ : الأول أطول قليلا.",
+        "incorrect": "احسب كل طول بالقيمة المقرّبة ثم قارن."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 2
+    }
+  ]
+}

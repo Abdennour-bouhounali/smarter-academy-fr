@@ -1,0 +1,266 @@
+{
+  "id": "ex-2am-ikhtibar-musawat-mutabayina-l5-008",
+  "lessonCode": "ikhtibar-musawat-mutabayina",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — حافلة مدرسيّة على الجسر",
+    "estimatedMinutes": 8,
+    "tags": [
+      "وضعيّة إدماجيّة",
+      "مجهولان",
+      "متباينة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تزن حافلة مدرسيّة فارغة $3600\\,\\mathrm{kg}$ وتحمل $x$ تلميذا كتلة كلّ منهم $45\\,\\mathrm{kg}$ و $y$ صندوقا كتلة كلّ منها $30\\,\\mathrm{kg}$ . لافتة الجسر : الكتلة الكلّيّة أقلّ من $5250\\,\\mathrm{kg}$ ، فتترجم الوضعيّة بالمتباينة $3600+45x+30y<5250$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ماذا يمثّل كلّ من الحرفين $x$ و $y$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x$ عدد الصناديق و $y$ عدد التلاميذ",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$x$ كتلة التلاميذ و $y$ كتلة الصناديق",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$x$ عدد التلاميذ و $y$ عدد الصناديق",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارجع إلى نصّ الوضعيّة : ماذا يُحمَّل على الشاحنة أو يُشترى ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اربط كلّ حرف بالكمّية التي يُضرب فيها العدد المقابل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد الذي يُضرب في الحرف هو كتلة (أو ثمن) الوحدة الواحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "اخترت الجواب الصحيح .",
+        "incorrect": "اربط كلّ حرف بالكمّية التي يتكرّر عددها في الوضعيّة."
+      },
+      "solution": {
+        "lines": [
+          "الحرف يرمز إلى عدد الوحدات : هو العدد الذي يُضرب في كتلة (أو ثمن) الوحدة الواحدة ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل المتباينة $3600+45x+30y<5250$ صحيحة من أجل $x=30$ و $y=10$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بالقيمة المعطاة في الطرف الأوّل ثمّ في الطرف الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة، مع إنجاز الضرب قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الناتجين بالرمز المكتوب، وانتبه إلى حالة التساوي : هل يقبلها الرمز ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "لا : المتباينة خاطئة .",
+        "incorrect": "عوّض الحرف في الطرفين، احسب كلّ طرف ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل : $3600+45\\times 30+30\\times 10=5250$ .",
+          "الطرف الثاني : $5250$ .",
+          "$5250<5250$ : المقارنة خاطئة، فالمتباينة خاطئة ."
+        ]
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل المتباينة $3600+45x+30y<5250$ صحيحة من أجل $x=26$ و $y=15$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بالقيمة المعطاة في الطرف الأوّل ثمّ في الطرف الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة، مع إنجاز الضرب قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الناتجين بالرمز المكتوب، وانتبه إلى حالة التساوي : هل يقبلها الرمز ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "نعم : المتباينة صحيحة .",
+        "incorrect": "عوّض الحرف في الطرفين، احسب كلّ طرف ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل : $3600+45\\times 26+30\\times 15=5220$ .",
+          "الطرف الثاني : $5250$ .",
+          "$5220<5250$ : المقارنة صحيحة، فالمتباينة صحيحة ."
+        ]
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "الحالة $1$ : $x=30$ و $y=10$ ؛ الحالة $2$ : $x=26$ و $y=15$ ؛ الحالة $3$ : $x=32$ و $y=12$ . في أيّ حالة تعبر الحافلة الجسر ؟ اختر الإجابة الصحيحة :",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "في الحالتين $1$ و $2$ فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IKHTIBAR-BOUNDARY"
+        },
+        {
+          "id": "B",
+          "content": "في الحالة $1$ فقط",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "في الحالة $3$ فقط",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "في الحالة $2$ فقط",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختبر كلّ حالة بتعويض قيمتي الحرفين في الطرفين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الطرفين ثمّ قارن بالرمز المكتوب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما يكون الطرفان متساويين انظر هل يقبل الرمز التساوي."
+        }
+      ],
+      "feedback": {
+        "correct": "في الحالة $2$ فقط .",
+        "incorrect": "اختبر كلّ حالة على حدة وانتبه إلى حالة تساوي الطرفين."
+      },
+      "solution": {
+        "lines": [
+          "الحالة $1$ : $5250<5250$ ← خاطئة ، فلا مرور .",
+          "الحالة $2$ : $5220<5250$ ← صحيحة ، فالمرور ممكن .",
+          "الحالة $3$ : $5400<5250$ ← خاطئة ، فلا مرور .",
+          "الجواب : في الحالة $2$ فقط ."
+        ]
+      },
+      "timeSeconds": 100
+    }
+  ]
+}

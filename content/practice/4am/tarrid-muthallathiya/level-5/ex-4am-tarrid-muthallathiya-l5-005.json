@@ -1,0 +1,239 @@
+{
+  "id": "ex-4am-tarrid-muthallathiya-l5-005",
+  "lessonCode": "tarrid-muthallathiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2009 — إقلاع طائرة من مطار عنابة",
+    "estimatedMinutes": 20,
+    "tags": [
+      "وضعية إدماجية",
+      "الظل",
+      "جيب التمام"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tarrid-muthallathiya_P1",
+      "modelledOn": "BEM 2009 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تقلع طائرة من مطار رابح بيطاط بعنابة، فتصعد في خط مستقيم يصنع مع الأفق زاوية قيسها $12^{\\circ}$ انطلاقا من النقطة $A$ نهاية المدرج. على بعد أفقي $2\\,\\mathrm{km}$ من $A$ يوجد هوائي اتصالات شاقولي ارتفاعه $60\\,\\mathrm{m}$ ، قاعدته في المستوى الأفقي للمدرج. وينضبط الطيّار بالمواعيد وبقواعد السلامة حفاظًا على أرواح المسافرين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب ارتفاع الطائرة لحظة مرورها فوق الهوائي بالتدوير إلى الوحدة (بالمتر).",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الارتفاع بـ m مدوّرا إلى الوحدة",
+      "expectedAnswer": "425",
+      "misconceptionSignatures": [
+        {
+          "value": "416",
+          "id": "MISC-MUTH-NISBA-GHAYR-MUNASIBA"
+        },
+        {
+          "value": "9409",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم المثلث القائم: $A$ ، قاعدة الهوائي، والطائرة فوقها شاقوليا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة الأفقية ( $2000\\,\\mathrm{m}$ ) مجاورة للزاوية $12^{\\circ}$ والارتفاع مقابل لها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالآلة الحاسبة مبرمجة على الدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "الارتفاع $= 2000 \\times \\tan 12^{\\circ} \\approx 425\\,\\mathrm{m}$ .",
+        "incorrect": "المعلوم مجاور والمطلوب مقابل: الظل؛ وحوّل $2\\,\\mathrm{km}$ إلى متر."
+      },
+      "solution": {
+        "lines": [
+          "نسمّي $h$ ارتفاع الطائرة فوق قاعدة الهوائي. في المثلث القائم: $\\tan 12^{\\circ} = \\dfrac{h}{2000}$",
+          "ومنه $h = 2000 \\times \\tan 12^{\\circ}$",
+          "باستعمال الآلة الحاسبة: $h \\approx 425{,}1131$"
+        ],
+        "result": "h \\approx 425\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب المسافة بين الطائرة وقمة الهوائي لحظة مرورها فوقه، بالتدوير إلى الوحدة.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المسافة بـ m مدوّرة إلى الوحدة",
+      "expectedAnswer": "365",
+      "misconceptionSignatures": [
+        {
+          "value": "425",
+          "id": "MISC-MUTH-IRTIFA3-AYN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الهوائي نفسه يرتفع $60\\,\\mathrm{m}$ عن الأرض."
+        }
+      ],
+      "feedback": {
+        "correct": "$425{,}1... - 60 \\approx 365\\,\\mathrm{m}$ .",
+        "incorrect": "اطرح ارتفاع الهوائي من ارتفاع الطائرة."
+      },
+      "solution": {
+        "lines": [
+          "المسافة $= h - 60 \\approx 425{,}1131 - 60 = 365{,}1131$"
+        ],
+        "result": "\\approx 365\\,\\mathrm{m}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب المسافة التي قطعتها الطائرة على مسارها المستقيم من $A$ إلى أن مرّت فوق الهوائي، بالتدوير إلى الوحدة (بالمتر).",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بـ m مدوّرا إلى الوحدة",
+      "expectedAnswer": "2045",
+      "misconceptionSignatures": [
+        {
+          "value": "1956",
+          "id": "MISC-MUTH-DARB-BADAL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسار المستقيم هو وتر المثلث."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المعلوم مجاور والمطلوب وتر: جيب التمام، والمجهول في المقام."
+        }
+      ],
+      "feedback": {
+        "correct": "المسار $= \\dfrac{2000}{\\cos 12^{\\circ}} \\approx 2045\\,\\mathrm{m}$ .",
+        "incorrect": "الطول المطلوب في مقام النسبة: نقسم الطول المعلوم على النسبة المثلثية ولا نضرب فيها؛ والآلة الحاسبة مبرمجة على الدرجة."
+      },
+      "solution": {
+        "lines": [
+          "نسمّي $d$ طول المسار: $\\cos 12^{\\circ} = \\dfrac{2000}{d}$ ومنه $d = \\dfrac{2000}{\\cos 12^{\\circ}}$",
+          "باستعمال الآلة الحاسبة: $d \\approx 2044{,}6812$"
+        ],
+        "result": "d \\approx 2045\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "☜ تواصل الطائرة الصعود بالزاوية نفسها حتى ارتفاع $3000\\,\\mathrm{m}$ ثم تطير أفقيا. احسب المسافة الأفقية بين $A$ والنقطة التي تحت بداية الطيران الأفقي، بالتدوير إلى $0{,}1\\,\\mathrm{km}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: المسافة بـ km مدوّرة إلى 0,1",
+      "expectedAnswer": "14.1",
+      "misconceptionSignatures": [
+        {
+          "value": "14.4",
+          "id": "MISC-MUTH-NISBA-GHAYR-MUNASIBA"
+        },
+        {
+          "value": "0.6",
+          "id": "MISC-MUTH-DARB-BADAL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مثلث قائم جديد: الارتفاع $3000\\,\\mathrm{m}$ مقابل للزاوية $12^{\\circ}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة الأفقية مجاورة: المجهول في مقام الظل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حوّل النتيجة إلى km."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3000}{\\tan 12^{\\circ}} \\approx 14114\\,\\mathrm{m} \\approx 14{,}1\\,\\mathrm{km}$ .",
+        "incorrect": "الطول المطلوب في مقام النسبة: نقسم الطول المعلوم على النسبة المثلثية ولا نضرب فيها؛ والآلة الحاسبة مبرمجة على الدرجة."
+      },
+      "solution": {
+        "lines": [
+          "نسمّي $x$ المسافة الأفقية: $\\tan 12^{\\circ} = \\dfrac{3000}{x}$ ومنه $x = \\dfrac{3000}{\\tan 12^{\\circ}}$",
+          "باستعمال الآلة الحاسبة: $x \\approx 14113{,}9\\,\\mathrm{m}$"
+        ],
+        "result": "x \\approx 14{,}1\\,\\mathrm{km}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "id": "ex-4am-mada-wasit-mutawassit-l3-006",
+  "lessonCode": "mada-wasit-mutawassit",
+  "level": 3,
+  "metadata": {
+    "title": "الوسيط Med ثم 3Med",
+    "estimatedMinutes": 8,
+    "tags": [
+      "الوسيط"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-12",
+      "page": 99,
+      "section": "أوظّف تعلّماتي",
+      "number": 12
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "إليك سلسلة إحصائية وسيطها Med: 12 ، 8 ، 6 ، 10 ، 2 ، 4 ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن الوسيط Med.",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة العشرية إن لزم)",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-IHSA-WASIT-BILA-TARTIB"
+        },
+        {
+          "value": "6",
+          "id": "MISC-IHSA-WASIT-RUTBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا يُقرأ الوسيط إلا بعد ترتيب قيم السلسلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب القيم تصاعديا، ثم عُدّها: هل عددها N فردي أم زوجي؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان N فرديا فالوسيط هو القيمة ذات الرتبة $\\dfrac{N + 1}{2}$ ، وإذا كان زوجيا فهو نصف مجموع القيمتين ذواتي الرتبتين $\\dfrac{N}{2}$ و $\\dfrac{N}{2} + 1$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$Med = 7$ .",
+        "incorrect": "رتّب القيم أولا، ثم عيّن الرتبة الوسطى (أو الرتبتين الوسطيين إذا كان عدد القيم زوجيا)."
+      },
+      "solution": {
+        "lines": [
+          "الترتيب التصاعدي: 2 ، 4 ، 6 ، 8 ، 10 ، 12",
+          "عدد القيم 6 عدد زوجي، فالوسيط هو نصف مجموع القيمتين ذواتي الرتبتين 3 و 4 (6 و 8):",
+          "$Med = \\dfrac{6 + 8}{2} = 7$"
+        ],
+        "result": "Med = 7"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "نضرب كل قيمة من قيم هذه السلسلة في 3. عيّن وسيط السلسلة الناتجة.",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة العشرية إن لزم)",
+      "expectedAnswer": "21",
+      "misconceptionSignatures": [
+        {
+          "value": "24",
+          "id": "MISC-IHSA-WASIT-BILA-TARTIB"
+        },
+        {
+          "value": "18",
+          "id": "MISC-IHSA-WASIT-RUTBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا يُقرأ الوسيط إلا بعد ترتيب قيم السلسلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب القيم تصاعديا، ثم عُدّها: هل عددها N فردي أم زوجي؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان N فرديا فالوسيط هو القيمة ذات الرتبة $\\dfrac{N + 1}{2}$ ، وإذا كان زوجيا فهو نصف مجموع القيمتين ذواتي الرتبتين $\\dfrac{N}{2}$ و $\\dfrac{N}{2} + 1$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$Med = 21$ .",
+        "incorrect": "رتّب القيم أولا، ثم عيّن الرتبة الوسطى (أو الرتبتين الوسطيين إذا كان عدد القيم زوجيا)."
+      },
+      "solution": {
+        "lines": [
+          "الترتيب التصاعدي: 6 ، 12 ، 18 ، 24 ، 30 ، 36",
+          "عدد القيم 6 عدد زوجي، فالوسيط هو نصف مجموع القيمتين ذواتي الرتبتين 3 و 4 (18 و 24):",
+          "$Med = \\dfrac{18 + 24}{2} = 21$"
+        ],
+        "result": "Med = 21"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اقترح سلسلة أخرى لها نفس التكرار الكلي ووسيطها 3Med، وبرّر اختيارك.",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الضرب في عدد موجب يحافظ على ترتيب القيم."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "نضرب كل قيمة من السلسلة في 3: 36 ، 24 ، 18 ، 30 ، 6 ، 12 .",
+          "الترتيب التصاعدي: 6 ، 12 ، 18 ، 24 ، 30 ، 36 (ست قيم، التكرار الكلي نفسه).",
+          "الوسيط: $\\dfrac{18 + 24}{2} = 21 = 3 \\times 7$ .",
+          "ضرب كل القيم في 3 لا يغيّر ترتيبها، فيُضرب الوسيط في 3."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

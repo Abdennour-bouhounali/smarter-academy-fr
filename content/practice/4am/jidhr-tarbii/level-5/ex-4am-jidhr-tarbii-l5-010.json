@@ -1,0 +1,191 @@
+{
+  "id": "ex-4am-jidhr-tarbii-l5-010",
+  "lessonCode": "jidhr-tarbii",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2010 — قاعة حفلات",
+    "estimatedMinutes": 16,
+    "tags": [
+      "تعريف الجذر التربيعي",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_jidhr-tarbii_P1",
+      "modelledOn": "BEM 2010 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2010",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "أرضية قاعة حفلات مكوّنة من جزأين: مربع $ABCD$ مساحته $144m^2$ ، ومستطيل $BEFC$ يشترك معه في الضلع $[BC]$ ، حيث $BE = 16m$ .\nيريد صاحبها، الذي يُعير القاعة مجّانًا لجمعية الحيّ الخيرية، تبليطها ببلاط سعر المتر المربع الواحد 800DA ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب طول ضلع المربع $ABCD$ .",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالمتر (m)",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "72",
+          "id": "MISC-JIDHR-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AB^2 = 144$ و $AB$ موجب."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = \\sqrt{144} = 12$ m.",
+        "incorrect": "طول الضلع هو العدد الموجب الذي مربعه 144."
+      },
+      "solution": {
+        "lines": [
+          "$AB^2 = 144$ و $AB$ موجب",
+          "$AB = \\sqrt{144}$"
+        ],
+        "result": "AB = 12m"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب طول قطر المستطيل $[BF]$ .",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالمتر (m)",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "28",
+          "id": "MISC-JIDHR-JAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $BEF$ قائم في $E$ و $EF = BC$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $BF^2$ بخاصية فيثاغورس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$BF$ هو العدد الموجب الذي مربعه $BF^2$."
+        }
+      ],
+      "feedback": {
+        "correct": "$BF^2 = 16^2 + 12^2 = 400$ و $BF = 20$ m.",
+        "incorrect": "احسب $BF^2$ بخاصية فيثاغورس ثم خذ العدد الموجب الذي مربعه $BF^2$."
+      },
+      "solution": {
+        "lines": [
+          "$EF = BC = 12$",
+          "حسب خاصية فيثاغورس: $BF^2 = BE^2 + EF^2 = 256 + 144 = 400$",
+          "$BF = \\sqrt{400}$"
+        ],
+        "result": "BF = 20m"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب مساحة أرضية القاعة.",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالمتر المربع (m²)",
+      "expectedAnswer": "336",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة القاعة = مساحة المربع + مساحة المستطيل."
+        }
+      ],
+      "feedback": {
+        "correct": "$144 + 16 \\times 12 = 336 m^2$.",
+        "incorrect": "اجمع مساحة المربع ومساحة المستطيل (بعداه 16m وطول ضلع المربع)."
+      },
+      "solution": {
+        "lines": [
+          "مساحة المستطيل: $16 \\times 12 = 192$",
+          "مساحة القاعة: $144 + 192 = 336$"
+        ],
+        "result": "336m^2"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "احسب السعر الإجمالي للبلاط.",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (DA)",
+      "expectedAnswer": "268800",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب المساحة في سعر المتر المربع."
+        }
+      ],
+      "feedback": {
+        "correct": "$336 \\times 800 = 268800$ DA.",
+        "incorrect": "استعمل مساحة القاعة كلها."
+      },
+      "solution": {
+        "lines": [
+          "$336 \\times 800 = 268800$"
+        ],
+        "result": "268800DA"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

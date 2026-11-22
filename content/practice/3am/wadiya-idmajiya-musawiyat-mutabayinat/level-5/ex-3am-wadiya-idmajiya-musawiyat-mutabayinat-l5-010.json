@@ -1,0 +1,291 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-musawiyat-mutabayinat-l5-010",
+  "lessonCode": "wadiya-idmajiya-musawiyat-mutabayinat",
+  "level": 5,
+  "metadata": {
+    "title": "وضعية: مكافأة الأبناء الثلاثة",
+    "estimatedMinutes": 14,
+    "tags": [
+      "وضعية إدماجية",
+      "معادلة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "challenge",
+      "page": 70,
+      "section": "تحدّي"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "وزّع أبٌ $31\\,000$ DA كلّها على أبنائه الثلاثة: يأخذ الأكبر مبلغًا $T$ ، ويأخذ الثاني ربع هذا المبلغ، ويأخذ الثالث ثلاثة أعشاره."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ المعادلات التالية تترجم الوضعية ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$T + 4T + \\frac{10T}{3} = 31\\,000$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        },
+        {
+          "id": "B",
+          "content": "$\\frac{T}{4} + \\frac{3T}{10} = 31\\,000$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        },
+        {
+          "id": "C",
+          "content": "$T + \\frac{T}{4} + \\frac{3T}{10} = 31\\,000$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$T \\times \\frac{1}{4} \\times \\frac{3}{10} = 31\\,000$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول وما الذي يتساوى في الوضعية ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلة من كمّيتين متساويتين ثمّ حلّها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الحلّ يناسب الوضعية."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $T + \\frac{T}{4} + \\frac{3T}{10} = 31\\,000$ .",
+        "incorrect": "راجع الترجمة إلى معادلة ثمّ الحلّ، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "مجموع الحصص الثلاث هو المبلغ الموزّع: $T + \\frac{T}{4} + \\frac{3T}{10} = 31\\,000$ .",
+          "الخيارات الأخرى تنسى حصّة أو تعدّ كسرًا خاطئًا."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "نبسّط الطرف الأيسر إلى $c\\,T$ . ما قيمة $c$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "1.55",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين المجهول وأين الأعداد ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المجهول في طرف والأعداد في الطرف الآخر، ثمّ اقسم على معامل المجهول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض النتيجة في الطرفين لتتأكّد من تساويهما."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $1{,}55$ .",
+        "incorrect": "راجع نقل الحدود وإشاراتها ثمّ القسمة على المعامل، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$1 + \\frac{1}{4} + \\frac{3}{10} = 1{,}55$ .",
+          "فالمعادلة $1{,}55\\,T = 31\\,000$ ."
+        ],
+        "result": "1{,}55"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب $T$ بالدينار.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "20000",
+      "misconceptionSignatures": [
+        {
+          "value": "48050",
+          "id": "MISC-MUADALA-DIV-WRONG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين المجهول وأين الأعداد ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المجهول في طرف والأعداد في الطرف الآخر، ثمّ اقسم على معامل المجهول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض النتيجة في الطرفين لتتأكّد من تساويهما."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $20000$ .",
+        "incorrect": "راجع نقل الحدود وإشاراتها ثمّ القسمة على المعامل، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$T = \\frac{31\\,000}{1{,}55}$ .",
+          "فنجد $T = 20\\,000$ DA ."
+        ],
+        "result": "20000"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "احسب حصّة الابن الثالث بالدينار.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "6000",
+      "misconceptionSignatures": [
+        {
+          "value": "5000",
+          "id": "MISC-MUADALA-TRANSLATE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول وما الذي يتساوى في الوضعية ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلة من كمّيتين متساويتين ثمّ حلّها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الحلّ يناسب الوضعية."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $6000$ .",
+        "incorrect": "راجع الترجمة إلى معادلة ثمّ الحلّ، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "حصّة الثالث $\\frac{3T}{10} = \\frac{3 \\times 20\\,000}{10}$ .",
+          "فهي $6\\,000$ DA ."
+        ],
+        "result": "6000"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "نقص المبلغ الموزّع فصار $29\\,000$ DA . احسب $T$ مدوّرًا إلى الدينار.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "18710",
+      "misconceptionSignatures": [
+        {
+          "value": "18709",
+          "id": "MISC-TADWIR-TRUNC"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول وما الذي يتساوى في الوضعية ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلة من كمّيتين متساويتين ثمّ حلّها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الحلّ يناسب الوضعية."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $18710$ .",
+        "incorrect": "راجع الترجمة إلى معادلة ثمّ الحلّ، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$T = \\frac{29\\,000}{1{,}55} = 18\\,709{,}67\\ldots$ .",
+          "المدوّر إلى الدينار $18\\,710$ ."
+        ],
+        "result": "18710"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

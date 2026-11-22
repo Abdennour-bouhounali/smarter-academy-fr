@@ -1,0 +1,184 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l3-006",
+  "lessonCode": "mafhum-dawaran",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — صورة قطعة على المرصوفة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "صورة قطعة",
+      "المرصوفة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mafhum-dawaran_P3",
+      "modelledOn": "act-3"
+    }
+  },
+  "statement": {
+    "content": "على المرصوفة: $O(0\\,;\\,0)$ و $A(2\\,;\\,1)$ و $B(4\\,;\\,1)$ . نعتبر الدوران الذي مركزه O وزاويته $90^\\circ$ في الاتجاه المباشر.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          2,
+          1
+        ],
+        "B": [
+          4,
+          1
+        ]
+      },
+      "grid": true,
+      "maxWidth": 420,
+      "segments": [
+        [
+          "A",
+          "B"
+        ]
+      ],
+      "ariaLabel": "ورقة مرصوفة عليها O والقطعة [AB]"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما هما إحداثيتا A′ صورة A؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الإحداثيتان (x ; y) — عددان صحيحان",
+      "expectedAnswer": {
+        "x": "-1",
+        "y": "2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-ITTIJAH",
+          "value": {
+            "x": "1",
+            "y": "-2"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من O إلى A: 2 يمينا و 1 أعلى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ربع دورة مباشر: (a ; b) تصبح (−b ; a)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق على A."
+        }
+      ],
+      "feedback": {
+        "correct": "$A'(-1\\,;\\,2)$ .",
+        "incorrect": "ربع دورة عكس عقارب الساعة: اليمين يصبح أعلى."
+      },
+      "difficulty": 2
+    },
+    {
+      "id": "q2",
+      "statement": "ما هما إحداثيتا B′ صورة B؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الإحداثيتان (x ; y) — عددان صحيحان",
+      "expectedAnswer": {
+        "x": "-1",
+        "y": "4"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-ITTIJAH",
+          "value": {
+            "x": "1",
+            "y": "-4"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من O إلى B: 4 يمينا و 1 أعلى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نفس القاعدة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق على B."
+        }
+      ],
+      "feedback": {
+        "correct": "$B'(-1\\,;\\,4)$ .",
+        "incorrect": "دوّر الإزاحة من O إلى B ربع دورة مباشرة."
+      },
+      "difficulty": 2
+    },
+    {
+      "id": "q3",
+      "statement": "ما هو الطول $A'B'$ (بضلع المربع وحدةً)؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-KHAWAS",
+          "value": "4"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "[A′B′] على خط شاقولي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ المربعات بين A′ و B′."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بـ AB."
+        }
+      ],
+      "feedback": {
+        "correct": "$A'B' = AB = 2$ .",
+        "incorrect": "الدوران يحفظ طول القطعة."
+      },
+      "difficulty": 2
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "id": "ex-4am-mafhum-taalufiya-l1-002",
+  "lessonCode": "mafhum-taalufiya",
+  "level": 1,
+  "metadata": {
+    "title": "أجرة عامل — انقل وأكمل الجدول",
+    "estimatedMinutes": 4,
+    "tags": [
+      "صورة عدد",
+      "جدول"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-1",
+      "page": 78,
+      "section": "أنشطة",
+      "number": 1,
+      "adaptedFrom": "ex-4am-mafhum-taalufiya-l1-002"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "عامل يحترم مواعيد عمله ويدّخر لوالديه؛ أجرته الشهرية: أجرة قاعدية قدرها 35000DA ، يضاف إليها 185DA عن كل ساعة إضافية. نسمّي $x$ عدد الساعات الإضافية و $S(x)$ الأجرة الشهرية بـ DA .",
+    "table": {
+      "head": [
+        "عدد الساعات الإضافية $x$",
+        "5",
+        "8"
+      ],
+      "rows": [
+        [
+          "الأجرة $S(x)$ (DA)",
+          "…",
+          "…"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انقل الجدول وأكمله.",
+      "statement": "الأجرة من أجل 5 ساعات إضافية:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الأجرة بـ DA",
+      "expectedAnswer": "35925",
+      "misconceptionSignatures": [
+        {
+          "value": "925",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الأجرة = 185 × عدد الساعات الإضافية + الأجرة القاعدية."
+        }
+      ],
+      "feedback": {
+        "correct": "$S(5) = 185 \\times 5 + 35000 = 35925$ .",
+        "incorrect": "اضرب عدد الساعات في 185 ثم أضف الأجرة القاعدية."
+      },
+      "solution": {
+        "lines": [
+          "الأجرة = الأجرة القاعدية + 185DA عن كل ساعة إضافية.",
+          "$S(5) = 185 \\times 5 + 35000$",
+          "$S(5) = 925 + 35000$",
+          "$S(5) = 35925$ أي $35925DA$ ."
+        ],
+        "result": "S(5) = 35925\\,DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "الأجرة من أجل 8 ساعات إضافية:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الأجرة بـ DA",
+      "expectedAnswer": "36480",
+      "misconceptionSignatures": [
+        {
+          "value": "1480",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الطريقة نفسها: اضرب ثم أضف الأجرة القاعدية."
+        }
+      ],
+      "feedback": {
+        "correct": "$S(8) = 185 \\times 8 + 35000 = 36480$ .",
+        "incorrect": "اضرب عدد الساعات في 185 ثم أضف الأجرة القاعدية."
+      },
+      "solution": {
+        "lines": [
+          "$S(8) = 185 \\times 8 + 35000$",
+          "$S(8) = 1480 + 35000$",
+          "$S(8) = 36480$ أي $36480DA$ ."
+        ],
+        "result": "S(8) = 36480\\,DA"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

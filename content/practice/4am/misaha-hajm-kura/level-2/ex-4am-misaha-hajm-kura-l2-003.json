@@ -1,0 +1,143 @@
+{
+  "id": "ex-4am-misaha-hajm-kura-l2-003",
+  "lessonCode": "misaha-hajm-kura",
+  "level": 2,
+  "metadata": {
+    "title": "أرخميدس — المساحة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "أرخميدس",
+      "مساحة الكرة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "intro-archimedes",
+      "page": 163,
+      "section": "مدخل الباب"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 163): وُضعت كرة نصف قطرها R داخل أسطوانة ارتفاعها 2R ونصف قطر قاعدتها R (الشكل).",
+    "figure": {
+      "kind": "space",
+      "view": {
+        "azimuth": -62,
+        "elevation": 16
+      },
+      "points": {
+        "O": [
+          0,
+          0,
+          0
+        ],
+        "N": [
+          0,
+          0,
+          1
+        ],
+        "S": [
+          0,
+          0,
+          -1
+        ],
+        "M": [
+          1,
+          0,
+          0
+        ]
+      },
+      "hidden": [
+        "N",
+        "S",
+        "M"
+      ],
+      "solids": [
+        {
+          "type": "cylinder",
+          "base": "S",
+          "top": "N",
+          "radius": 1,
+          "tone": "sky"
+        },
+        {
+          "type": "sphere",
+          "center": "O",
+          "radius": 1,
+          "tone": "rose"
+        }
+      ],
+      "segments": [
+        {
+          "from": "O",
+          "to": "M",
+          "label": "R",
+          "dashed": true
+        },
+        {
+          "from": "S",
+          "to": "N",
+          "dashed": true
+        }
+      ],
+      "labels": {
+        "O": "nw"
+      },
+      "ariaLabel": "كرة نصف قطرها R داخل أسطوانة دوران نصف قطر قاعدتها R وارتفاعها 2R: الكرة تمسّ القاعدتين والسطح الجانبي",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "توصّل أرخميدس إلى أنّ مساحة الكرة تساوي:",
+      "learningPoints": [
+        {
+          "code": "4am_misaha-hajm-kura_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "حجم الأسطوانة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WAHDA"
+        },
+        {
+          "id": "B",
+          "content": "المساحة الجانبية للأسطوانة",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "مساحة قاعدة الأسطوانة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MISAHA-DAIRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المساحة الجانبية: محيط القاعدة × الارتفاع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$2\\pi R \\times 2R$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن مع $4\\pi R^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$2\\pi R \\times 2R = 4\\pi R^2$ : مساحة الكرة.",
+        "incorrect": "القاعدة $\\pi R^2$ قرص واحد، والحجم ليس مساحة."
+      },
+      "difficulty": 2
+    }
+  ]
+}

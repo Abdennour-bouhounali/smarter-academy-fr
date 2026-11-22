@@ -1,0 +1,313 @@
+{
+  "id": "ex-3am-qimat-ibara-harfiya-l5-004",
+  "lessonCode": "qimat-ibara-harfiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — سلم وملعب كرة السلة",
+    "estimatedMinutes": 15,
+    "tags": [
+      "وضعية إدماجية",
+      "مساحة",
+      "مطابقة معطيات"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "2am-s2-65",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "طلب أستاذ من تلاميذه إصلاح طوق كرة السلة وتجهيز ملعبها (وحدة الطول: المتر)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول. يبلغ ارتفاع الطوق $2{,}4\\ \\mathrm{m}$ وتبعد قاعدة السلّم $0{,}7\\ \\mathrm{m}$ عن الحامل، فيلزم سلّم طوله $L$ حيث $L^2 = 2{,}4^2 + 0{,}7^2$ .",
+      "statement": "جد الطول $L$ للسلّم بالمتر.",
+      "answerType": "rational",
+      "answerFormat": "عدد موجب (صحيح أو عشري)",
+      "expectedAnswer": "2.5",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد ما تطلبه كل خطوة: عبارة، أم قيمة من أجل عدد، أم قرار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بالعدد المعطى في كل مكان منه، واحترم الأقواس وأولوية العمليات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الأعداد التي حسبتها قبل أن تقرّر، وتحقّق من الوحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$L = 2{,}5$ .",
+        "incorrect": "راجع خطوات الحل: عوّض ثم احسب، وقارن الأعداد قبل أن تقرّر."
+      },
+      "solution": {
+        "lines": [
+          "$L^2 = 5{,}76 + 0{,}49 = 6{,}25$ و $2{,}5^2 = 6{,}25$ ، إذن $L = 2{,}5$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني. طول ملعب الكرة $x + 10$ وعرضه $x - 2$ . انشر ثم بسّط مساحته $S = (x + 10)(x - 2)$ .",
+      "statement": "العدد $b$ :",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $S$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "8",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض الحرف بعدد صغير في العبارة الأصلية وفي النتيجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = x^2 + 8x - 20$ إذن $b = 8$ .",
+        "incorrect": "وزّع كل حدّ على كل حدّ مع الانتباه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$S = x^2 - 2x + 10x - 20 = x^2 + 8x - 20$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "احسب الطول $x + 10$ من أجل $x = 16$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "26",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = 16$ هي $26$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$L = 16 + 10$",
+          "$L = 26$"
+        ],
+        "result": "L = 26"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "احسب العرض $x - 2$ من أجل $x = 16$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "14",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = 16$ هي $14$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$l = 16 - 2$",
+          "$l = 14$"
+        ],
+        "result": "l = 14"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ج",
+      "statement": "احسب المساحة $S = (x + 10)(x - 2)$ من أجل $x = 16$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "364",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = 16$ هي $364$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$S = (16 + 10) \\times (16 - 2)$",
+          "$S = 26 \\times 14$",
+          "$S = 364$"
+        ],
+        "result": "S = 364"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "تعطي البطاقة التقنية للملعب المساحة $364\\ \\mathrm{m}^2$ . هل تطابق المعطيات المحسوبة من أجل $x = 16$ البطاقة؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، تطابقها",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا، لا تطابقها",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QIMA-PARTIAL"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد ما تطلبه كل خطوة: عبارة، أم قيمة من أجل عدد، أم قرار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بالعدد المعطى في كل مكان منه، واحترم الأقواس وأولوية العمليات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الأعداد التي حسبتها قبل أن تقرّر، وتحقّق من الوحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "المساحة المحسوبة $364\\ \\mathrm{m}^2$ كما في البطاقة.",
+        "incorrect": "راجع خطوات الحل: عوّض ثم احسب، وقارن الأعداد قبل أن تقرّر."
+      },
+      "solution": {
+        "lines": [
+          "$S = 26 \\times 14 = 364\\ \\mathrm{m}^2$ ، وهي المساحة المكتوبة في البطاقة، فالمعطيات مطابقة."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l3-010",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2024 — 240 بيضة في علب",
+    "estimatedMinutes": 9,
+    "tags": [
+      "قواسم",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qawasim-adad-tabii_P2",
+      "modelledOn": "BEM 2024 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يحرص مربّي دواجن على نظافة منتوجه وجودته، فيريد تعبئة 240 بيضة في علب متماثلة تحتوي كلها على نفس العدد من البيض، دون أن تبقى أي بيضة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "هل يمكن أن تحتوي كل علبة على 18 بيضة؟ على 16 بيضة؟ برّر إجابتك.",
+      "statement": "18 بيضة في كل علبة:",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QISMA-6-ZAWJI-FAQAT"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 240 على 18."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يكون ذلك ممكنا إذا كان 18 قاسما للعدد 240، أي إذا كان الباقي معدوما."
+        }
+      ],
+      "feedback": {
+        "correct": "$240 = 18 \\times 13 + 6$: الباقي غير معدوم.",
+        "incorrect": "احسب باقي قسمة 240 على 18 قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "$240 = 18 \\times 13 + 6$",
+          "الباقي 6 غير معدوم، إذن 18 ليس قاسما للعدد 240: هذا غير ممكن."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "16 بيضة في كل علبة:",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 240 على 16."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يكون ذلك ممكنا إذا كان 16 قاسما للعدد 240، أي إذا كان الباقي معدوما."
+        }
+      ],
+      "feedback": {
+        "correct": "$240 = 16 \\times 15$: الباقي معدوم.",
+        "incorrect": "احسب باقي قسمة 240 على 16 قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "$240 = 16 \\times 15$",
+          "الباقي معدوم، إذن 16 قاسم للعدد 240: هذا ممكن."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "أوجد كل الأعداد الممكنة لعدد البيض في كل علبة، علما أن العلبة تتسع لـ 6 بيضات على الأقل و 30 بيضة على الأكثر.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        6,
+        8,
+        10,
+        12,
+        15,
+        16,
+        20,
+        24,
+        30
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد البيض في كل علبة قاسم للعدد 240."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب 240 على شكل جداء عاملين بكل الأشكال الممكنة، ثم احتفظ بالقواسم من 6 إلى 30."
+        }
+      ],
+      "feedback": {
+        "correct": "$240 = 1 \\times 240$ ، $240 = 2 \\times 120$ ، $240 = 3 \\times 80$ ، $240 = 4 \\times 60$ ، $240 = 5 \\times 48$ ، $240 = 6 \\times 40$ ، $240 = 8 \\times 30$ ، $240 = 10 \\times 24$ ، $240 = 12 \\times 20$ ، $240 = 15 \\times 16$.",
+        "incorrect": "عيّن كل قواسم 240، ثم احتفظ فقط بالتي تقع من 6 إلى 30."
+      },
+      "solution": {
+        "lines": [
+          "عدد البيض في كل علبة قاسم للعدد 240.",
+          "$15^2 = 225 \\leq 240 < 256 = 16^2$: نختبر الأعداد من 1 إلى 15.",
+          "$240 = 1 \\times 240$ ، $240 = 2 \\times 120$ ، $240 = 3 \\times 80$ ، $240 = 4 \\times 60$ ، $240 = 5 \\times 48$ ، $240 = 6 \\times 40$ ، $240 = 8 \\times 30$ ، $240 = 10 \\times 24$ ، $240 = 12 \\times 20$ ، $240 = 15 \\times 16$",
+          "قواسم 240: 1 ، 2 ، 3 ، 4 ، 5 ، 6 ، 8 ، 10 ، 12 ، 15 ، 16 ، 20 ، 24 ، 30 ، 40 ، 48 ، 60 ، 80 ، 120 ، 240.",
+          "التي تقع من 6 إلى 30 هي: 6 ، 8 ، 10 ، 12 ، 15 ، 16 ، 20 ، 24 ، 30."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 360
+    }
+  ]
+}

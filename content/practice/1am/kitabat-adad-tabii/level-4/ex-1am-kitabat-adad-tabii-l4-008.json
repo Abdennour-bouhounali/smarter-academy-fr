@@ -1,0 +1,249 @@
+{
+  "id": "ex-1am-kitabat-adad-tabii-l4-008",
+  "lessonCode": "kitabat-adad-tabii",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — قواميس مكتبة المتوسطة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "ضرب في 100",
+      "عدد الآلاف",
+      "كتابة بالحروف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثالث",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "ثمن القاموس الواحد 126,5 دج. يريد مجلس التلاميذ شراء 100 قاموس لمكتبة المتوسطة، ويدفع الثمن بأوراق نقدية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب ثمن 100 قاموس.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "12650",
+      "misconceptionSignatures": [
+        {
+          "value": "1265",
+          "id": "MISC-KITABA-COMMA-SHIFT"
+        },
+        {
+          "value": "126500",
+          "id": "MISC-KITABA-ZERO-PLACE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الضرب في 100 ينقل كل رقم مرتبتين نحو اليسار."
+        }
+      ],
+      "feedback": {
+        "correct": "$126{,}5 \\times 100 = 12\\,650$ دج.",
+        "incorrect": "عند الضرب في 100 ننقل الفاصلة رتبتين نحو اليمين."
+      },
+      "solution": {
+        "lines": [
+          "$126{,}5 \\times 100 = 12\\,650$",
+          "الثمن $12\\,650$ دج."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم ورقة من فئة 1000 دج يدفع المجلس على الأكثر دون أن يتجاوز $12\\,650$ دج؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-KITABA-DIGIT-COUNT"
+        },
+        {
+          "value": "1",
+          "id": "MISC-KITABA-RANKSHIFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الآلاف هو عدد المجموعات من 1000 التي نكوّنها من العدد كله، لا الرقم وحده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احذف الأرقام التي على يمين مرتبة الآلاف."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: اضرب جوابك في 1000 ثم أضف ما بقي."
+        }
+      ],
+      "feedback": {
+        "correct": "$12\\,650 = 12 \\times 1000 + 650$: عدد الآلاف هو 12، أمّا رقم الآلاف فهو 2.",
+        "incorrect": "رقم المرتبة هو ما يبقى فيها وحدها؛ أمّا عدد وحداتها فنحسب فيه كل ما يمكن تجميعه منها في العدد كله."
+      },
+      "solution": {
+        "lines": [
+          "$12\\,650 = 12 \\times 1000 + 650$",
+          "إذن عدد الآلاف في العدد $12\\,650$ هو 12، ورقم الآلاف هو 2."
+        ],
+        "result": "12"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "لو دفع المجلس بأوراق من فئة 100 دج فقط، فكم ورقة يدفع على الأكثر دون أن يتجاوز $12\\,650$ دج؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "126",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-KITABA-DIGIT-COUNT"
+        },
+        {
+          "value": "12",
+          "id": "MISC-KITABA-RANKSHIFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد المئات هو عدد المجموعات من 100 التي نكوّنها من العدد كله، لا الرقم وحده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احذف الأرقام التي على يمين مرتبة المئات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: اضرب جوابك في 100 ثم أضف ما بقي."
+        }
+      ],
+      "feedback": {
+        "correct": "$12\\,650 = 126 \\times 100 + 50$: عدد المئات هو 126، أمّا رقم المئات فهو 6.",
+        "incorrect": "رقم المرتبة هو ما يبقى فيها وحدها؛ أمّا عدد وحداتها فنحسب فيه كل ما يمكن تجميعه منها في العدد كله."
+      },
+      "solution": {
+        "lines": [
+          "$12\\,650 = 126 \\times 100 + 50$",
+          "إذن عدد المئات في العدد $12\\,650$ هو 126، ورقم المئات هو 6."
+        ],
+        "result": "126"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "كيف يُكتب المبلغ $12\\,650$ دج بالحروف على الفاتورة؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "اثنا عشر ألفا وستمائة وخمسون",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "واحد اثنان ستة خمسة صفر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-DIGIT-BY-DIGIT"
+        },
+        {
+          "id": "C",
+          "content": "ألف ومائتان وخمسة وستون",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-ZERO-PLACE"
+        },
+        {
+          "id": "D",
+          "content": "مائة وعشرون ألفا وستمائة وخمسون",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-ZERO-PLACE"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزّئ العدد إلى فئات من ثلاثة أرقام انطلاقا من اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ كل فئة كعدد أصغر من 1000 ثم اذكر اسم فئتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى المراتب الفارغة (الأصفار)."
+        }
+      ],
+      "feedback": {
+        "correct": "$12\\,650$ يُقرأ « اثنا عشر ألفا وستمائة وخمسون ».",
+        "incorrect": "نجزّئ العدد إلى فئات من ثلاثة أرقام انطلاقا من اليمين، ثم نقرأ الفئات من اليسار، كل فئة باسمها."
+      },
+      "solution": {
+        "lines": [
+          "$12\\,|\\,650$",
+          "نقرأ فئة فئة: « اثنا عشر ألفا وستمائة وخمسون »."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

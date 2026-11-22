@@ -1,0 +1,200 @@
+{
+  "id": "ex-2am-talim-mustaqim-mudarraj-2-l3-003",
+  "lessonCode": "talim-mustaqim-mudarraj-2",
+  "level": 3,
+  "metadata": {
+    "title": "خطّ زمن مكتبة البلدية",
+    "estimatedMinutes": 10,
+    "tags": [
+      "وضع نقط",
+      "تغيير المبدأ"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-1",
+      "page": 40,
+      "section": "أنشطة",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نمثّل على مستقيم مدرّج تاريخ أحداث مكتبة البلدية: المبدأ سنة $1990$ (افتتاح المكتبة) والتدريجة الواحدة $5$ سنوات. الأحداث سنوات $1970$ و $1985$ و $2005$ و $2020$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نتّخذ سنة $1990$ مبدأً بدل المبدأ القديم (والتدريجة نفسها). السنة $1970$ كانت فاصلتها $1970$ في المبدأ القديم. ما فاصلتها الجديدة؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-20",
+      "misconceptionSignatures": [
+        {
+          "value": "1970",
+          "id": "MISC-TALIM2-ORIGINFIXED"
+        },
+        {
+          "value": "3960",
+          "id": "MISC-TALIM2-ADDORIGIN"
+        },
+        {
+          "value": "20",
+          "id": "MISC-TALIM2-SIGNSIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا تتغيّر النقطة، بل يتغيّر المبدأ الذي نبدأ منه العدّ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفاصلة الجديدة = الفاصلة القديمة − فاصلة المبدأ الجديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعدّ من المبدأ الجديد إلى النقطة."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة الجديدة $1970 - (1990) = -20$ : النقطة هي نفسها والمبدأ تغيّر.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "النقطة لم تتحرّك، وإنّما المبدأ هو الذي تحرّك",
+          "الفاصلة الجديدة = $1970 - (1990) = -20$"
+        ],
+        "result": "-20"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "نريد وضع النقطة $A(-20)$ على مستقيم مدرّج، وقيمة التدريجة الواحدة $5$ سنوات. كم تدريجة تعدّ من المبدأ؟ اكتب العدد سالبًا إذا كانت النقطة على يسار المبدأ.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "value": "-20",
+          "id": "MISC-TALIM2-UNITIGNORED"
+        },
+        {
+          "value": "4",
+          "id": "MISC-TALIM2-SIGNSIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد التدريجات = الفاصلة ÷ قيمة التدريجة الواحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أمّا الجهة فتحدّدها الإشارة: سالبة على اليسار، موجبة على اليمين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب عدد التدريجات في قيمة التدريجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$-20 \\div 5 = -4$ : عدد التدريجات مسبوق بالإشارة.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$-20 \\div 5 = -4$",
+          "$4$ تدريجات إلى يسار المبدأ"
+        ],
+        "result": "-4"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "نريد وضع النقطة $D(30)$ على مستقيم مدرّج، وقيمة التدريجة الواحدة $5$ سنوات. كم تدريجة تعدّ من المبدأ؟ اكتب العدد سالبًا إذا كانت النقطة على يسار المبدأ.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "30",
+          "id": "MISC-TALIM2-UNITIGNORED"
+        },
+        {
+          "value": "-6",
+          "id": "MISC-TALIM2-SIGNSIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد التدريجات = الفاصلة ÷ قيمة التدريجة الواحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أمّا الجهة فتحدّدها الإشارة: سالبة على اليسار، موجبة على اليمين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب عدد التدريجات في قيمة التدريجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$30 \\div 5 = 6$ : عدد التدريجات مسبوق بالإشارة.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$30 \\div 5 = 6$",
+          "$6$ تدريجات إلى يمين المبدأ"
+        ],
+        "result": "6"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

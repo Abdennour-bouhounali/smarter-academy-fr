@@ -1,0 +1,188 @@
+{
+  "id": "ex-2am-ikhtibar-musawat-mutabayina-l3-008",
+  "lessonCode": "ikhtibar-musawat-mutabayina",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — عدّ الثنائيّات التي تحقّق مساواة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "مجهولان",
+      "اختبار مساواة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر المساواة $x+2y=8$ :"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل المساواة $x+2y=8$ صحيحة من أجل $x=2$ و $y=3$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "نعم",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بالقيمة المعطاة في الطرف الأوّل ثمّ في الطرف الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة، مع إنجاز الضرب قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الناتجين : إذا تساويا فالمساواة صحيحة، وإلاّ فهي خاطئة."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم : المساواة صحيحة .",
+        "incorrect": "عوّض الحرف في الطرفين، احسب كلّ طرف ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل : $2+2\\times 3=8$ .",
+          "الطرف الثاني : $8$ .",
+          "$8=8$ : الطرفان متساويان، فالمساواة صحيحة ."
+        ]
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل المساواة $x+2y=8$ صحيحة من أجل $x=3$ و $y=3$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بالقيمة المعطاة في الطرف الأوّل ثمّ في الطرف الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة، مع إنجاز الضرب قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الناتجين : إذا تساويا فالمساواة صحيحة، وإلاّ فهي خاطئة."
+        }
+      ],
+      "feedback": {
+        "correct": "لا : المساواة خاطئة .",
+        "incorrect": "عوّض الحرف في الطرفين، احسب كلّ طرف ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل : $3+2\\times 3=9$ .",
+          "الطرف الثاني : $8$ .",
+          "$9\\ne 8$ : الطرفان مختلفان، فالمساواة خاطئة ."
+        ]
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "من بين الثنائيّات $(x;y)$ $(2;3)$ ، $(4;2)$ ، $(3;3)$ ، $(8;0)$ ، $(1;4)$ : كم ثنائيّة تجعل المساواة $x+2y=8$ صحيحة ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختبر الخيارات واحدا بعد الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لكلّ خيار احسب الطرفين ثمّ قارنهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدّ الخيارات التي تكون عندها المقارنة صحيحة."
+        }
+      ],
+      "feedback": {
+        "correct": "العدد هو $3$ .",
+        "incorrect": "اختبر كلّ خيار على حدة ثمّ عدّ الخيارات الصحيحة."
+      },
+      "solution": {
+        "lines": [
+          "$(2;3)$ : $8=8$ ← صحيحة .",
+          "$(4;2)$ : $8=8$ ← صحيحة .",
+          "$(3;3)$ : $9\\ne 8$ ← خاطئة .",
+          "$(8;0)$ : $8=8$ ← صحيحة .",
+          "$(1;4)$ : $9\\ne 8$ ← خاطئة .",
+          "العدد : $3$ ."
+        ],
+        "result": "3"
+      },
+      "work": "optional",
+      "timeSeconds": 100
+    }
+  ]
+}

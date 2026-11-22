@@ -1,0 +1,169 @@
+{
+  "id": "ex-2am-jam-tarh-kusur-l4-008",
+  "lessonCode": "jam-tarh-kusur",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مجموع ثمّ مقرّبته",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جمع كسرين",
+      "كتابة عشرية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نريد حساب $\\dfrac{4}{9} + \\dfrac{5}{18}$ ثمّ كتابة الناتج بالفاصلة ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $S = \\dfrac{4}{9} + \\dfrac{5}{18}$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "13/18",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1/3",
+          "id": "MISC-JAMKASR-ACROSS"
+        },
+        {
+          "value": "1/2",
+          "id": "MISC-JAMKASR-NOSCALE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليّة المطلوبة؟ وهل المقامان متساويان، أم أنّ أحدهما مضاعف للآخر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا اختلف المقامان فاكتب الكسر ذا المقام الأصغر بالمقام الأكبر: اضرب حدّيه في العدد نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع (أو اطرح) البسطين وأبقِ المقام كما هو، ثمّ اختزل الناتج إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = \\dfrac{13}{18}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{4}{9} = \\dfrac{4 \\times 2}{9 \\times 2} = \\dfrac{8}{18}$ .",
+          "$S = \\dfrac{4}{9} + \\dfrac{5}{18} = \\dfrac{8 + 5}{18} = \\dfrac{13}{18}$ ."
+        ],
+        "result": "S = \\dfrac{13}{18}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط القيمة المقرّبة بالنقصان إلى 0{,}01 للعدد $\\dfrac{13}{18}$ .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "0.72",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكسر هو حاصل قسمة بسطه على مقامه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}72$ .",
+        "incorrect": "أنجز القسمة بعد الفاصلة وتوقّف عند الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{13}{18} = 13 \\div 18$",
+          "بالنقصان: نتوقّف عند الرتبة المطلوبة دون تغيير الرقم الأخير."
+        ],
+        "result": "0{,}72"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أعط القيمة المقرّبة بالزيادة إلى 0{,}01 للعدد $\\dfrac{13}{18}$ .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "0.73",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكسر هو حاصل قسمة بسطه على مقامه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}73$ .",
+        "incorrect": "أنجز القسمة بعد الفاصلة وتوقّف عند الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{13}{18} = 13 \\div 18$",
+          "بالزيادة: نضيف وحدة واحدة من الرتبة المطلوبة إلى القيمة بالنقصان."
+        ],
+        "result": "0{,}73"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

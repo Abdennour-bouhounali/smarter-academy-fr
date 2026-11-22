@@ -1,0 +1,252 @@
+{
+  "id": "ex-3am-mutabayinat-amaliyat-l1-002",
+  "lessonCode": "mutabayinat-amaliyat",
+  "level": 1,
+  "metadata": {
+    "title": "قارن ثم استنتج دون حساب",
+    "estimatedMinutes": 5,
+    "tags": [
+      "مقارنة",
+      "استنتاج"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-8",
+      "page": 78,
+      "section": "أوظّف تعلّماتي",
+      "number": 8
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعلم أنّ $a=\\dfrac{3}{4}$ و $b=\\dfrac{4}{5}$ وأنّ $a<b$ لأنّ $\\dfrac{15}{20}<\\dfrac{16}{20}$ . دون حساب الطرفين، أكمل بالرمز المناسب."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "$a-2\\ \\square \\ b-2$",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$<$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$>$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-SUB-FLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية المطبّقة على طرفي المتباينة؟ وما العدد المستعمل؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إضافة عدد إلى الطرفين (أو طرحه منهما) لا تغيّر اتجاه المتباينة، موجبًا كان ذلك العدد أو سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الطرفين بعد العملية ثم ضع الرمز نفسه الذي في المتباينة المعطاة."
+        }
+      ],
+      "feedback": {
+        "correct": "نطرح $2$ من طرفي $a<b$ فلا يتغيّر الاتجاه: $a-2<b-2$ .",
+        "incorrect": "لا يتغيّر اتجاه المتباينة عندما نضيف إلى طرفيها (أو نطرح منهما) العدد نفسه؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نطرح $2$ من طرفي $a<b$ فلا يتغيّر الاتجاه: $a-2<b-2$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$4a\\ \\square \\ 4b$",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$>$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-POS-FLIP"
+        },
+        {
+          "id": "B",
+          "content": "$<$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل العدد الذي نضرب فيه (أو نقسم عليه) موجب أم سالب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في عدد موجب تمامًا (أو القسمة عليه) لا يغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق العملية على كلّ طرف ثم احتفظ بالرمز كما هو."
+        }
+      ],
+      "feedback": {
+        "correct": "نضرب طرفي $a<b$ في $4$ (موجب) فيبقى الاتجاه: $4a<4b$ .",
+        "incorrect": "الضرب في عدد موجب تمامًا (أو القسمة عليه) يحفظ اتجاه المتباينة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضرب طرفي $a<b$ في $4$ (موجب) فيبقى الاتجاه: $4a<4b$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "$-5a\\ \\square \\ -5b$",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$>$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$<$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-NEG-NOFLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد إشارة العدد الذي نضرب فيه (أو نقسم عليه)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في عدد سالب تمامًا (أو القسمة عليه) يغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب عددين يحقّقان الشرط، وانظر أيّهما صار الأكبر بعد العملية."
+        }
+      ],
+      "feedback": {
+        "correct": "نضرب طرفي $a<b$ في $-5$ (سالب) فيتغيّر الاتجاه: $-5a>-5b$ .",
+        "incorrect": "الضرب في عدد سالب تمامًا (أو القسمة عليه) يغيّر اتجاه المتباينة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضرب طرفي $a<b$ في $-5$ (سالب) فيتغيّر الاتجاه: $-5a>-5b$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "$\\dfrac{a}{-2}+1\\ \\square \\ \\dfrac{b}{-2}+1$",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$<$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-NEG-NOFLIP"
+        },
+        {
+          "id": "B",
+          "content": "$>$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المعطى بالضبط؟ وما العبارة المطلوب استنتاج متباينة لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابنِ المتباينة المطلوبة عملية بعد عملية، وانتبه إلى إشارة العدد عند كلّ ضرب أو قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر، وأعد كتابة الحصر من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "الإضافة لا تغيّره: $\\dfrac{a}{-2}+1>\\dfrac{b}{-2}+1$ .",
+        "incorrect": "استنتج المتباينة خطوة بخطوة، وانتبه إلى اتجاهها بعد كلّ ضرب أو قسمة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "القسمة على $-2$ تغيّر الاتجاه: $\\dfrac{a}{-2}>\\dfrac{b}{-2}$ .",
+          "الإضافة لا تغيّره: $\\dfrac{a}{-2}+1>\\dfrac{b}{-2}+1$ ."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

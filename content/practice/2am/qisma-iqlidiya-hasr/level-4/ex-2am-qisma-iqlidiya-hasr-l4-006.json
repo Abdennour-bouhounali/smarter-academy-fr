@@ -1,0 +1,237 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l4-006",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — سلسلة عمليات ثم قسمة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "أولويات العمليات",
+      "قسمة إقليدية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العدد $N = 25 \\times 48 + 17$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $N$.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1217",
+      "misconceptionSignatures": [
+        {
+          "value": "2425",
+          "id": "MISC-HASR-HISAB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الضرب قبل الجمع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $25 \\times 48$ أولًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$25 \\times 48 + 17 = 1200 + 17 = 1217$.",
+        "incorrect": "أولوية الضرب على الجمع."
+      },
+      "solution": {
+        "lines": [
+          "$25 \\times 48 = 1200$",
+          "$N = 1200 + 17 = 1217$"
+        ],
+        "result": "N = 1217"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "استنتج دون إنجاز القسمة حاصل القسمة الإقليدية للعدد $N$ على 25.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "48",
+      "misconceptionSignatures": [
+        {
+          "value": "17",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "47",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "value": "49",
+          "id": "MISC-HASR-IZAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 1217 من 25 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 25 دون أن نتجاوز 1217."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من 25."
+        }
+      ],
+      "feedback": {
+        "correct": "$1217 = 25 \\times 48 + 17$ و $17 < 25$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 25 فلا يتجاوز الجداء 1217، والباقي عندئذ أصغر من 25."
+      },
+      "solution": {
+        "lines": [
+          "$25 \\times 48 = 1200$ و $25 \\times 49 = 1225$",
+          "$1200 \\le 1217 < 1225$ ، إذن الحاصل هو 48."
+        ],
+        "result": "q = 48"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "واستنتج باقيها.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "17",
+      "misconceptionSignatures": [
+        {
+          "value": "48",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "42",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 1217."
+        }
+      ],
+      "feedback": {
+        "correct": "$1217 - 25 \\times 48 = 1217 - 1200 = 17$ ، و $17 < 25$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 25."
+      },
+      "solution": {
+        "lines": [
+          "$1217 = 25 \\times 48 + 17$",
+          "$17 < 25$ ، إذن الباقي هو 17."
+        ],
+        "result": "r = 17"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "هل المساواة $1217 = 48 \\times 25 + 17$ تعبّر أيضًا عن القسمة الإقليدية للعدد 1217 على 48؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-HISAB"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق أولًا من صحة المساواة بالحساب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم قارن العدد المضاف بالمقسوم عليه 48."
+        }
+      ],
+      "feedback": {
+        "correct": "المساواة صحيحة و $17 < 48$.",
+        "incorrect": "القسمة الإقليدية على 48: مساواة صحيحة وباقٍ أصغر من 48."
+      },
+      "solution": {
+        "lines": [
+          "$48 \\times 25 + 17 = 1217$",
+          "المساواة صحيحة و $17 < 48$."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

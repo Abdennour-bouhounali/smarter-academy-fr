@@ -1,0 +1,273 @@
+{
+  "id": "ex-2am-talim-nuqta-mustawi-l1-003",
+  "lessonCode": "talim-nuqta-mustawi",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — لُقى الحفرية",
+    "estimatedMinutes": 6,
+    "tags": [
+      "قراءة إحداثيتين",
+      "معلم متعامد ومتجانس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في حفرية أثرية قرب جميلة قُسِّمت الأرض إلى مربّعات ضلع كلّ منها $1\\,\\mathrm{m}$ ، وثُبِّت وتد المبدأ $O$ مع حبلين متعامدين. يبيّن الشكل مواضع أربع لُقى $A$ و $B$ و $C$ و $D$ في معلم متعامد ومتجانس مبدؤه $O$ .",
+    "figure": {
+      "grid": true,
+      "axes": true,
+      "points": {
+        "A": [
+          2,
+          3
+        ],
+        "B": [
+          -3,
+          1
+        ],
+        "C": [
+          -1,
+          -2
+        ],
+        "D": [
+          4,
+          -3
+        ],
+        "O": [
+          0,
+          0
+        ]
+      },
+      "ariaLabel": "معلم متعامد ومتجانس تظهر فيه أربع نقط A و B و C و D",
+      "maxWidth": 420,
+      "labels": {
+        "O": "sw"
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اقرأ إحداثيتي النقطة $A$ في الشكل.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "2",
+        "y": "3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "3",
+            "y": "2"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNAXIS",
+          "value": {
+            "x": "2",
+            "y": "-3"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNLEFT",
+          "value": {
+            "x": "-2",
+            "y": "3"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الفاصلة على محور الفواصل أوّلًا، بالنزول من النقطة أو الصعود منها عموديًّا إلى هذا المحور."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اقرأ الترتيب على محور التراتيب بالسير أفقيًّا من النقطة إلى هذا المحور؛ العدد الأوّل في الثنائية هو الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "راقب الإشارة: النقط التي على يسار محور التراتيب أو تحت محور الفواصل تأخذ عددًا سالبًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$A(2\\,;\\,3)$ .",
+        "incorrect": "راجع قراءة الإحداثيتين: الفاصلة أوّلًا على محور الفواصل ثم الترتيب على محور التراتيب."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $A$ هي $2$ وترتيبها $3$",
+          "$A(2\\,;\\,3)$"
+        ],
+        "result": "A(2\\,;\\,3)"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اقرأ إحداثيتي النقطة $B$ في الشكل.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-3",
+        "y": "1"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "1",
+            "y": "-3"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNAXIS",
+          "value": {
+            "x": "-3",
+            "y": "-1"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNLEFT",
+          "value": {
+            "x": "3",
+            "y": "1"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الفاصلة على محور الفواصل أوّلًا، بالنزول من النقطة أو الصعود منها عموديًّا إلى هذا المحور."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اقرأ الترتيب على محور التراتيب بالسير أفقيًّا من النقطة إلى هذا المحور؛ العدد الأوّل في الثنائية هو الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "راقب الإشارة: النقط التي على يسار محور التراتيب أو تحت محور الفواصل تأخذ عددًا سالبًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$B(-3\\,;\\,1)$ .",
+        "incorrect": "راجع قراءة الإحداثيتين: الفاصلة أوّلًا على محور الفواصل ثم الترتيب على محور التراتيب."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $B$ هي $-3$ وترتيبها $1$",
+          "$B(-3\\,;\\,1)$"
+        ],
+        "result": "B(-3\\,;\\,1)"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اقرأ إحداثيتي النقطة $D$ في الشكل.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "4",
+        "y": "-3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "-3",
+            "y": "4"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNAXIS",
+          "value": {
+            "x": "4",
+            "y": "3"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNLEFT",
+          "value": {
+            "x": "-4",
+            "y": "-3"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الفاصلة على محور الفواصل أوّلًا، بالنزول من النقطة أو الصعود منها عموديًّا إلى هذا المحور."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اقرأ الترتيب على محور التراتيب بالسير أفقيًّا من النقطة إلى هذا المحور؛ العدد الأوّل في الثنائية هو الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "راقب الإشارة: النقط التي على يسار محور التراتيب أو تحت محور الفواصل تأخذ عددًا سالبًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$D(4\\,;\\,-3)$ .",
+        "incorrect": "راجع قراءة الإحداثيتين: الفاصلة أوّلًا على محور الفواصل ثم الترتيب على محور التراتيب."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $D$ هي $4$ وترتيبها $-3$",
+          "$D(4\\,;\\,-3)$"
+        ],
+        "result": "D(4\\,;\\,-3)"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

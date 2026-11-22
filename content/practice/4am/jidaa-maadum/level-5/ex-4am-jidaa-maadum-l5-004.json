@@ -1,0 +1,278 @@
+{
+  "id": "ex-4am-jidaa-maadum-l5-004",
+  "lessonCode": "jidaa-maadum",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2015 — لافتة الألعاب المدرسية بوهران",
+    "estimatedMinutes": 18,
+    "tags": [
+      "مساحة",
+      "معادلة جداء معدوم",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_jidaa-maadum_P3",
+      "modelledOn": "BEM 2015 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تريد بلدية وهران تثبيت لافتة إشهارية مستطيلة الشكل بمناسبة الألعاب المدرسية، ترحيبًا بالضيوف وإكرامًا لهم، عرضها $x$ متر وطولها يزيد على ضعف عرضها بـ $3\\,m$ ، ومساحتها $54\\,m^2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عبّر بدلالة $x$ عن مساحة اللافتة.",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "تُكتب مساحة اللافتة على الشكل $2x^2 + bx$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عبّر أولًا عن طول اللافتة بدلالة $x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحة المستطيل = الطول × العرض، ثم انشر."
+        }
+      ],
+      "feedback": {
+        "correct": "المساحة: $x(2x + 3) = 2x^2 + 3x$ إذن $b = 3$ .",
+        "incorrect": "اكتب الطول بدلالة $x$ ، ثم اضربه في العرض وانشر."
+      },
+      "solution": {
+        "lines": [
+          "طول اللافتة: $2x + 3$",
+          "مساحتها: $x(2x + 3) = 2x^2 + 3x$"
+        ],
+        "result": "x(2x + 3) = 2x^2 + 3x"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "تحقّق أن: $2x^2 + 3x - 54 = (2x - 9)(x + 6)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر الجداء $(2x - 9)(x + 6)$ واجمع الحدود المتشابهة."
+        }
+      ],
+      "feedback": {
+        "correct": "أحسنت: برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "$(2x - 9)(x + 6) = 2x^2 + 12x - 9x - 54$",
+          "$= 2x^2 + 3x - 54$"
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "حل المعادلة: $2x^2 + 3x - 54 = 0$ .",
+      "statement": "الحلّ الأصغر:",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "-6",
+      "misconceptionSignatures": [
+        {
+          "value": "-9/2",
+          "id": "MISC-JIDAA-ISHARA-JADHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا تنشر الطرف الأول: استعمل تحليله إلى جداء عاملين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد التحليل تصير المعادلة معادلة جداء معدوم: أحد العاملين على الأقل معدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ كل معادلة من الدرجة الأولى، ثم رتّب الحلّين من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = -6$ .",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة من الدرجة الأولى بإشاراتها، ثم رتّب الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "$2x^2 + 3x = 54$ يعني $2x^2 + 3x - 54 = 0$ ، وحسب السؤال 02:",
+          "المعادلة تُكتب: $(2x - 9)(x + 6) = 0$",
+          "يعني أنّ: $2x - 9 = 0$ أو $x + 6 = 0$",
+          "أي: $2x = 9$ أو $x = -6$",
+          "ومنه: $x = \\dfrac{9}{2}$ أو $x = -6$",
+          "إذن للمعادلة حلّان هما $-6$ و $\\dfrac{9}{2}$"
+        ],
+        "result": "x = -6"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "الحلّ الأكبر:",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "9/2",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-JIDAA-ISHARA-JADHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة الثانية من الدرجة الأولى، ثم قارن الحلّين."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{9}{2}$ .",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة من الدرجة الأولى بإشاراتها، ثم رتّب الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "إذن للمعادلة حلّان هما $-6$ و $\\dfrac{9}{2}$"
+        ],
+        "result": "x = \\dfrac{9}{2}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "sub": "ا",
+      "lead": "استنتج بُعدي اللافتة.",
+      "statement": "عرض اللافتة بـ $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بالمتر (يُقبل العدد العشري)",
+      "expectedAnswer": "9/2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المجهول $x$ يمثّل طولًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احتفظ بحلّ المعادلة الذي يناسب الوضعية، وارفض الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "العرض $4{,}5\\,m$ (الحل السالب مرفوض).",
+        "incorrect": "الطول عدد موجب تمامًا: أيّ حلّي المعادلة يصلح؟"
+      },
+      "solution": {
+        "lines": [
+          "$x$ طول، إذن الحل $-6$ مرفوض",
+          "$x = \\dfrac{9}{2} = 4{,}5$"
+        ],
+        "result": "x = 4{,}5\\,m"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "sub": "ب",
+      "statement": "طول اللافتة بـ $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بالمتر",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الطول يساوي ضعف العرض زائد $3$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الطول $12\\,m$ ، و $4{,}5 \\times 12 = 54$ .",
+        "incorrect": "عوّض $x$ بالعرض الذي وجدته في عبارة الطول."
+      },
+      "solution": {
+        "lines": [
+          "$2x + 3 = 2 \\times 4{,}5 + 3$",
+          "تحقّق: $4{,}5 \\times 12 = 54$"
+        ],
+        "result": "2x + 3 = 12\\,m"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "id": "ex-4am-kura-julla-l3-008",
+  "lessonCode": "kura-julla",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — اقرأ الشكل",
+    "estimatedMinutes": 4,
+    "tags": [
+      "التمثيل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_kura-julla_P3",
+      "modelledOn": "method-sphere-draw"
+    }
+  },
+  "statement": {
+    "content": "لاحظ الشكل: كرة مركزها O ممثّلة بالكفاف والدائرة الكبرى الأفقية.",
+    "figure": {
+      "kind": "space",
+      "view": {
+        "azimuth": -62,
+        "elevation": 18
+      },
+      "points": {
+        "O": [
+          0,
+          0,
+          0
+        ]
+      },
+      "solids": [
+        {
+          "type": "sphere",
+          "center": "O",
+          "radius": 2,
+          "tone": "indigo"
+        }
+      ],
+      "labels": {
+        "O": "n"
+      },
+      "ariaLabel": "تمثيل كرة مركزها O: الكفاف، والدائرة الكبرى الأفقية جزؤها الأمامي مستمر والخلفي متقطّع",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الجزء المتقطّع من الدائرة الكبرى الأفقية هو:",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الجزء الذي يختفي خلف الكرة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الجزء الأقرب إلينا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-TAMTHIL"
+        },
+        {
+          "id": "C",
+          "content": "جزء غير موجود من الدائرة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-TAMTHIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل يمكن رؤية كل الدائرة من مكانك؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما يختفي خلف المجسّم نرسمه بطريقة مختلفة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقرأ خطوة «ب)» من طريقة تمثيل كرة."
+        }
+      ],
+      "feedback": {
+        "correct": "الجزء المتقطّع هو الخلفي: موجود لكنه لا يُرى.",
+        "incorrect": "الخط المتقطّع لا يعني أن الدائرة ناقصة، ولا يعني الجزء الأمامي."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "الدائرة الكفاف (الخارجية) في هذا التمثيل هي:",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "دائرة كبرى مركزها O ونصف قطرها نصف قطر الكرة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "دائرة صغرى أصغر من الكرة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-DAIRA-KUBRA"
+        },
+        {
+          "id": "C",
+          "content": "قرص مملوء يمثّل الجلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-TAMTHIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا رسمنا أولا بالمدور في طريقة الكتاب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الخطوة «أ)»: دائرة مركزها O."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ما نصف قطرها؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الكفاف دائرة كبرى: مركزها O ونصف قطرها R، نرسمها بالمدور في الخطوة الأولى.",
+        "incorrect": "الكفاف ليس أصغر من الكرة، وليس قرصا: إنه خط."
+      }
+    }
+  ]
+}

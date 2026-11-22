@@ -1,0 +1,90 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-mafhum-muadala-l1-006",
+  "lessonCode": "wadiya-idmajiya-mafhum-muadala",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — ترجمة وضعيّة بمعادلة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "معادلة",
+      "ترجمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اشترت أمينة $x$ علبة متماثلة بمبلغ $720$ DA ، وثمن العلبة الواحدة $45$ DA ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اختر المعادلة التي تترجم هذه الوضعيّة .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$45x = 720$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{x}{45} = 720$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAJHUL-ROLE"
+        },
+        {
+          "id": "C",
+          "content": "$x+45 = 720$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAJHUL-ADDFORM"
+        }
+      ],
+      "feedback": {
+        "correct": "$45x = 720$ .",
+        "incorrect": "اكتب الجزء الثابت مرّة واحدة والجزء المتكرّر مضروبًا في عدده، ثمّ اختبر عبارتك على عدد صغير."
+      },
+      "solution": {
+        "lines": [
+          "ثمن $x$ علبة هو جداء $45$ في $x$ .",
+          "المعادلة : $45x = 720$ ."
+        ]
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في الوضعيّة ما يتغيّر (وهو الحرف) وما يبقى ثابتًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب ما يُدفع أو يُحسب مرّة واحدة، ثمّ ما يتكرّر مضروبًا في عدد مرّاته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر العبارة على عدد صغير مثل اثنين قبل أن تختار."
+        }
+      ],
+      "timeSeconds": 80
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-fada-l5-002",
+  "lessonCode": "wadiya-idmajiya-fada",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — جرّة زيت",
+    "estimatedMinutes": 7,
+    "tags": [
+      "المخروط المبتور",
+      "اللتر",
+      "خاصية طالس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-fada_P3",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "يبيع تاجر أمين جرّة زيت زيتون على شكل مخروط مبتور قاعها في الأسفل: نصف قطر قاعها $10\\,\\mathrm{cm}$ ونصف قطر فتحتها $15\\,\\mathrm{cm}$ وارتفاعها $30\\,\\mathrm{cm}$ ، فيها زيت حتى عمق $18\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "نصف قطر سطح الزيت (بالسنتيمتر):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-fada_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر)",
+      "expectedAnswer": "13",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الجدار خط مستقيم: نصف القطر يزيد بـ $5\\,\\mathrm{cm}$ على $30\\,\\mathrm{cm}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "على عمق $18\\,\\mathrm{cm}$ يزيد بـ $5 \\times \\dfrac{18}{30}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف هذه الزيادة إلى نصف قطر القاع."
+        }
+      ],
+      "feedback": {
+        "correct": "$10 + 5 \\times \\dfrac{18}{30} = 10 + 3 = 13\\,\\mathrm{cm}$ .",
+        "incorrect": "الزيت ليس في منتصف الجرة: المتوسط $12{,}5$ لا يصحّ."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "12.5",
+          "id": "MISC-MABTUR-TALIS"
+        },
+        {
+          "value": "15",
+          "id": "MISC-MABTUR-QIRAA"
+        }
+      ],
+      "difficulty": 4
+    },
+    {
+      "id": "q2",
+      "statement": "حجم الزيت باللتر، مدوّرا إلى $0{,}01$ (نكمل الجرة إلى مخروط رأسه على بعد $60\\,\\mathrm{cm}$ تحت القاع):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-fada_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (باللتر، مدوّر إلى 0,01)",
+      "expectedAnswer": "7.52",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حجم الزيت = حجم المخروط الكبير − حجم الصغير."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكبير: نصف القطر 13 والارتفاع $60 + 18$ ؛ الصغير: 10 و 60."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الفرق بدلالة π ثم قسّم على 1000."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{3}\\pi(169 \\times 78 - 100 \\times 60) = 2394\\pi \\approx 7521\\,\\mathrm{cm}^3 \\approx 7{,}52\\,\\mathrm{L}$ .",
+        "incorrect": "الفرق بين حجمي مخروطين، ثم $1\\,\\mathrm{L} = 1000\\,\\mathrm{cm}^3$ ، والتدوير في الأخير."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "75.21",
+          "id": "MISC-SAA-WAHDA"
+        },
+        {
+          "value": "7.35",
+          "id": "MISC-MABTUR-TALIS"
+        }
+      ],
+      "difficulty": 5
+    }
+  ]
+}

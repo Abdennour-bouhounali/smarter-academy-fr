@@ -42,3 +42,21 @@ export async function apiRequest(path, options = {}) {
 
   return { ok: response.ok, status: response.status, data };
 }
+
+/**
+ * Une ressource BINAIRE authentifiée (image, fichier) : rend un Blob, ou lève
+ * une ApiError. Pour ce qu'une balise <img> ne peut pas charger seule, faute
+ * d'en-tête Authorization.
+ */
+export async function apiBlob(path, options = {}) {
+  let response;
+  try {
+    response = await fetch(`${API_URL}${path}`, options);
+  } catch {
+    throw new ApiError('Impossible de joindre le serveur.', 'NETWORK_ERROR');
+  }
+  if (!response.ok) {
+    throw new ApiError('Ressource indisponible.', classifyStatus(response.status), response.status);
+  }
+  return response.blob();
+}

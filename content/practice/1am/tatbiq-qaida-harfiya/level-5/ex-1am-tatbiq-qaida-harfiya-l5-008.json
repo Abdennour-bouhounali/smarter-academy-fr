@@ -1,0 +1,241 @@
+{
+  "id": "ex-1am-tatbiq-qaida-harfiya-l5-008",
+  "lessonCode": "tatbiq-qaida-harfiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — فاتورتان للماء",
+    "estimatedMinutes": 14,
+    "tags": [
+      "وضعية إدماجية",
+      "عدد عشري",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تحسب مؤسّسة المياه فاتورة أسرة بالدينار: $W=12{,}5\\times n+40$ حيث $n$ عدد الأمتار المكعّبة، وعند أسرة ثانية $V=18\\times n$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "الجزء الأول — الأسرة الأولى",
+      "statement": "احسب $W$ من أجل $n=8$ .",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "140",
+      "misconceptionSignatures": [
+        {
+          "value": "60.5",
+          "id": "MISC-TATBIQ-PLUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما قيمة كلّ حرف؟ وفي كم موضع يظهر كلّ حرف في العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع القيمة في كلّ موضع يظهر فيه الحرف، وأعد إشارة الضرب بين العددين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب بالأولويات: ما بين القوسين، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: النتيجة $140$ .",
+        "incorrect": "حذف إشارة الضرب لا يعني الجمع: $3x$ تعني $3\\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "نكتب القاعدة: $W=12{,}5\\times n+40$ .",
+          "نضع قيمة كلّ حرف في كلّ موضع يظهر فيه: $W=12{,}5\\times 8+40$ .",
+          "نحسب: $W=100+40$ .",
+          "نحسب: $W=140$ .",
+          "الجواب: $W=140$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "دفعت الأسرة $200$ دج وكانت فاتورتها $140$ دج. كم الباقي لها؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "60",
+      "misconceptionSignatures": [],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما قيمة كلّ حرف؟ وفي كم موضع يظهر كلّ حرف في العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع القيمة في كلّ موضع يظهر فيه الحرف، وأعد إشارة الضرب بين العددين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب بالأولويات: ما بين القوسين، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: النتيجة $60$ .",
+        "incorrect": "نضع القيمة في كلّ موضع ثمّ نحسب بالأولويات."
+      },
+      "solution": {
+        "lines": [
+          "نكتب العبارة: $200-140$ .",
+          "نحسب: $60$ .",
+          "الجواب: $60$ ."
+        ]
+      },
+      "timeSeconds": 90,
+      "counted": false
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "الجزء الثاني — المقارنة",
+      "statement": "أيّ الفاتورتين أقلّ من أجل $8$ أمتار مكعّبة: $W$ أم $V$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الفاتورة الأولى",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الفاتورة الثانية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-PLUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما القاعدة في كلّ حالة؟ وما القيم المعطاة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القيمتين كلتيهما بالقاعدة المناسبة لكلّ حالة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن النتيجتين ثمّ أجب عن السؤال."
+        }
+      ],
+      "feedback": {
+        "correct": "قارنّا القيمتين المحسوبتين بالقاعدتين.",
+        "incorrect": "حذف إشارة الضرب لا يعني الجمع: $3x$ تعني $3\\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "الفاتورة الأولى: $12{,}5\\times 8+40=140$ .",
+          "الفاتورة الثانية: $18\\times 8=144$ .",
+          "نقارن: الأقلّ هو الفاتورة الأولى ."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "قالت الأسرة الأولى: « فاتورتنا أقلّ دائمًا ». جرّبنا $n=20$ فوجدنا $W=290$ و $V=360$ . وجرّبنا $n=2$ . هل قولها صحيح؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، قوله صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-ONEOK"
+        },
+        {
+          "id": "B",
+          "content": "لا، قوله غير صحيح",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي أثبته المثال المقدّم: هل تساوت الجهتان أم اختلفتا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مثال تصحّ فيه القاعدة لا يثبت أنّها صحيحة دائمًا، ومثال تخطئ فيه يكفي لإبطالها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الجهتين من أجل القيمة المعطاة ثمّ احكم."
+        }
+      ],
+      "feedback": {
+        "correct": "مثال مضادّ واحد يكفي.",
+        "incorrect": "مثال تصحّ فيه المساواة لا يثبت أنّها صحيحة دائمًا: نبحث عن قيمة تختلف عندها الجهتان."
+      },
+      "solution": {
+        "lines": [
+          "من أجل هذه القيمة: $12{,}5\\times 2+40=65$ و $18\\times 2=36$ .",
+          "الأولى أغلى هنا: مثال مضادّ واحد يكفي لإبطال قوله."
+        ]
+      },
+      "timeSeconds": 100
+    }
+  ]
+}

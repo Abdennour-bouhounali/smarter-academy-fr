@@ -1,0 +1,202 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l3-006",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — نقطة خارج المستقيم",
+    "estimatedMinutes": 8,
+    "tags": [
+      "تناسبية",
+      "استقامة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يسجّل مسؤول المطعم المدرسي عدد الوجبات (بالعشرات) المقدّمة لفقراء الحيّ وتكلفتها (بمئات الدنانير) على ثلاثة أيام. تمثّل النقط $A$ و $B$ و $C$ هذه الأيام الثلاثة في المعلم المتعامد والمتجانس التالي.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          2,
+          3
+        ],
+        "B": [
+          4,
+          6
+        ],
+        "C": [
+          6,
+          8
+        ]
+      },
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw",
+        "A": "se",
+        "B": "se",
+        "C": "se"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس: النقط O و A(2;3) و B(4;6) على استقامة واحدة، والنقطة C(6;8) خارجها",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: عدد الوجبات بالعشرات — محور التراتيب: التكلفة بمئات الدنانير"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل التكلفة متناسبة مع عدد الوجبات؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأنّ $O$ والنقطتين الأوليين على استقامة واحدة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-TWO-POINTS"
+        },
+        {
+          "id": "B",
+          "content": "نعم، لأنّ الترتيب يكبر كلما كبرت الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-RISING"
+        },
+        {
+          "id": "C",
+          "content": "لا، النقطة الثالثة ليست على المستقيم الذي يشمل $O$ وأولى النقطتين",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "يجب أن تكون كل النقط على المستقيم نفسه الذي يشمل $O$ ؛ نقطة واحدة خارجه تكفي لرفض التناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "$O$ و $A$ و $B$ على استقامة واحدة، لكنّ $C$ ليست على المستقيم $(OA)$ (ناتج القسمة $\\frac{8}{6} \\neq \\frac{3}{2}$).",
+          "نقطة واحدة خارج المستقيم تكفي لرفض التناسبية."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما الترتيب الذي كان يجب أن تكون عليه النقطة $C$ لتصبح الوضعية تناسبية؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الترتيب المطلوب",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل المستقيم الذي يشمل $O$ و $A$ و $B$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "معامل التناسبية هو ناتج قسمة ترتيب $A$ على فاصلتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}5 \\times 6 = 9$ : كان يجب أن تكون $C$ في $(6\\,;\\,9)$ .",
+        "incorrect": "احسب معامل التناسبية من $A$ أو $B$ ثم اضربه في $6$ ."
+      },
+      "solution": {
+        "lines": [
+          "معامل التناسبية $a = \\dfrac{3}{2} = 1{,}5$ .",
+          "$y = 1{,}5 \\times 6 = 9$ ."
+        ],
+        "result": "9"
+      },
+      "work": "optional",
+      "timeSeconds": 100
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "علّل لماذا لا تكفي نقطتان على المستقيم المارّ بـ $O$ للحكم بالتناسبية.",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تعليلك ثم قارنه بالتصحيح النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اذكر الخاصية التي تستعملها: ما شرط التناسبية على النقط؟"
+        }
+      ],
+      "feedback": {
+        "correct": "التعليل يذكر استقامة النقط ومرور المستقيم بالمبدأ $O$ .",
+        "incorrect": "قارن تعليلك بالتصحيح النموذجي، وتأكد أنك ذكرت الشرطين معا."
+      },
+      "solution": {
+        "lines": [
+          "$O$ و $A$ و $B$ على استقامة واحدة، أمّا $C$ فليست على المستقيم الذي يشملها.",
+          "التناسبية تتطلب أن تكون كل النقط على المستقيم نفسه، إذن الوضعية ليست تناسبية."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

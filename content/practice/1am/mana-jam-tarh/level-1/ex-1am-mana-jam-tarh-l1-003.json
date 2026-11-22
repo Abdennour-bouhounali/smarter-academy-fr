@@ -1,0 +1,125 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l1-003",
+  "lessonCode": "mana-jam-tarh",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مجموع عددين وفرقهما",
+    "estimatedMinutes": 4,
+    "tags": [
+      "مجموع",
+      "فرق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان 38,25 و 14,8."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب مجموع العددين.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "53.05",
+      "misconceptionSignatures": [
+        {
+          "value": "39.73",
+          "id": "MISC-JAMTARH-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المجموع ناتج عملية جمع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع الفاصلة تحت الفاصلة، والأجزاء من مئة تحت الأجزاء من مئة."
+        }
+      ],
+      "feedback": {
+        "correct": "$38{,}25 + 14{,}8 = 53{,}05$.",
+        "incorrect": "اجمع العددين بعد محاذاة الفاصلتين ($14{,}8 = 14{,}80$)."
+      },
+      "solution": {
+        "lines": [
+          "$38{,}25 + 14{,}8 = 38{,}25 + 14{,}80$",
+          "$= 53{,}05$"
+        ],
+        "result": "38{,}25 + 14{,}8 = 53{,}05"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب فرق العددين.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "23.45",
+      "misconceptionSignatures": [
+        {
+          "value": "53.05",
+          "id": "MISC-JAMTARH-MAJMU-FARQ"
+        },
+        {
+          "value": "-23.45",
+          "id": "MISC-JAMTARH-FARQ-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفرق ناتج عملية طرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نطرح العدد الأصغر من العدد الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$38{,}25 - 14{,}8 = 23{,}45$، وللتحقق: $23{,}45 + 14{,}8 = 38{,}25$.",
+        "incorrect": "الفرق ناتج طرح الأصغر من الأكبر، وليس ناتج جمع."
+      },
+      "solution": {
+        "lines": [
+          "$38{,}25 > 14{,}8$ ، إذن نطرح 14,8 من 38,25:",
+          "$38{,}25 - 14{,}8 = 23{,}45$"
+        ],
+        "result": "38{,}25 - 14{,}8 = 23{,}45"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

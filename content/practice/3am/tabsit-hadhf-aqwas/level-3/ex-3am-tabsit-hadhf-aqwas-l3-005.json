@@ -1,0 +1,231 @@
+{
+  "id": "ex-3am-tabsit-hadhf-aqwas-l3-005",
+  "lessonCode": "tabsit-hadhf-aqwas",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — استنتاج تبسيط عبارة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "حذف الأقواس",
+      "تبسيط"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-70",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$A$ عبارة حرفية حيث $A = 3(x + 2) + (x + 4)(x + 1)$ ، ونعلم أن:",
+    "formulas": [
+      "3(x + 2) = 3x + 6",
+      "(x + 4)(x + 1) = x^2 + 5x + 4"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب $A = (3x + 6) + (x^2 + 5x + 4)$ بدون أقواس.",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$A = 3x + 6 - x^2 - 5x - 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-PLUS-CHANGED"
+        },
+        {
+          "id": "B",
+          "content": "$A = 3x + 6 + x^2 + 5x + 4$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$A = 3x - 6 + x^2 + 5x - 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-PLUS-CHANGED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة التي تسبق القوسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوسان مسبوقان بالإشارة $+$ (وغير متبوعين بـ $\\times$ أو $\\div$) يُحذفان دون تغيير أي إشارة بينهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العبارة بدون أقواس حدًّا حدًّا، ثم اجمع الحدود المتشابهة."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 3x + 6 + x^2 + 5x + 4$.",
+        "incorrect": "راجع إشارة كل حدّ وما يسبق القوسين، ثم اجمع الحدود المتشابهة فقط."
+      },
+      "solution": {
+        "lines": [
+          "القوسان مسبوقان بـ $+$ : نحذفهما دون تغيير الإشارات.",
+          "$A = 3x + 6 + x^2 + 5x + 4$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "استنتج تبسيطًا للعبارة $A$ .",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $x^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة التي تسبق القوسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوسان مسبوقان بالإشارة $+$ (وغير متبوعين بـ $\\times$ أو $\\div$) يُحذفان دون تغيير أي إشارة بينهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العبارة بدون أقواس حدًّا حدًّا، ثم اجمع الحدود المتشابهة."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = x^2 + 8x + 10$ إذن $b = 8$.",
+        "incorrect": "اجمع الحدود المتشابهة بإشاراتها بعد حذف الأقواس، ثم اقرأ العدد المطلوب في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$A = x^2 + (3 + 5)x + (6 + 4)$",
+          "$A = x^2 + 8x + 10$"
+        ],
+        "result": "b = 8"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "العدد $c$ :",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $x^2 + bx + c$ : اكتب العدد $c$ فقط",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة التي تسبق القوسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوسان مسبوقان بالإشارة $+$ (وغير متبوعين بـ $\\times$ أو $\\div$) يُحذفان دون تغيير أي إشارة بينهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العبارة بدون أقواس حدًّا حدًّا، ثم اجمع الحدود المتشابهة."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = x^2 + 8x + 10$ إذن $c = 10$.",
+        "incorrect": "اجمع الحدود المتشابهة بإشاراتها بعد حذف الأقواس، ثم اقرأ العدد المطلوب في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$A = x^2 + 8x + 10$"
+        ],
+        "result": "c = 10"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب قيمة العبارة $A$ من أجل $x = 1$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "19",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى، ويُستحسن أن تعوّض في الشكل المبسّط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويات العمليات: القوى، ثم الضرب، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالتعويض في العبارة قبل تبسيطها: القيمة لا تتغيّر."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل $x = 1$ نجد $A = 19$.",
+        "incorrect": "عوّض $x$ بالعدد المعطى في الشكل المبسّط واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$A = x^2 + 8x + 10$",
+          "من أجل $x = 1$ : $A = (1)^2 + 8(1) + 10 = 19$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

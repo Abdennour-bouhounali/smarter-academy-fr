@@ -1,0 +1,319 @@
+{
+  "id": "ex-3am-kitaba-ilmiya-rutba-l5-004",
+  "lessonCode": "kitaba-ilmiya-rutba",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — طول الساحل الجزائري",
+    "estimatedMinutes": 9,
+    "tags": [
+      "مقادير حقيقية",
+      "كتابة علمية",
+      "حصر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "طول الساحل الجزائري حوالي 1 200 كم، علمًا أنّ 1 كم = 1 000 م. نعبّر عن هذا الطول بالمتر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما قيمة هذا الطول بالمتر؟",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العمليّات المطلوبة واحسبها بترتيب مناسب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب أو اقسم الأعداد العشرية مباشرة أو استعمل قواعد قوى العدد 10."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قدّر النتيجة بتقريب سريع للتحقّق من رتبة قدرها."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "1200000",
+      "feedback": {
+        "correct": "حوالي $1\\,200\\,000$ م .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,200\\times1\\,000 = 1\\,200\\,000$ م ."
+        ],
+        "result": "1 200 000 م"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "الكتابة العلمية للعدد $1\\,200\\,000$ هي $a\\times10^{n}$ حيث $1\\le a<10$ : ما قيمة $a$ ؟",
+      "answerType": "rational",
+      "answerFormat": "العدد $a$ (عدد عشري)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد أوّل رقم غير معدوم في العدد وانظر أين تقع الفاصلة بالنسبة إليه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في الكتابة العلمية $a\\times10^{n}$ يكون $a$ من 1 إلى أقلّ تمامًا من 10: ضع الفاصلة بعد أوّل رقم غير معدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: ضرب $a$ في $10^{n}$ يجب أن يعيد العدد المعطى."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "1.2",
+      "feedback": {
+        "correct": "$1\\,200\\,000 = 1{,}2\\times10^{6}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $1\\,200\\,000$ على الشكل $a\\times10^{n}$ مع $1\\le a<10$ .",
+          "$1\\,200\\,000 = 1{,}2\\times10^{6}$ ، إذن $a = 1{,}2$ ."
+        ],
+        "result": "a = 1.2"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "الكتابة العلمية للعدد $1\\,200\\,000$ هي $a\\times10^{n}$ حيث $1\\le a<10$ : ما قيمة الأسّ $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العدد بـ 1 وبـ 10: هل هو كبير جدًّا أم صغير جدًّا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد المراتب التي تنقل بها الفاصلة هو $|n|$ ؛ الأسّ موجب إن كان العدد كبيرًا وسالب إن كان العدد أصغر من 1."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: $10^{n}$ هي أكبر قوة للعدد 10 لا تتجاوز العدد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-ILMIYA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\,200\\,000 = 1{,}2\\times10^{6}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $1\\,200\\,000$ على الشكل $a\\times10^{n}$ مع $1\\le a<10$ .",
+          "$1\\,200\\,000 = 1{,}2\\times10^{6}$ ، إذن $n = 6$ ."
+        ],
+        "result": "n = 6"
+      }
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "نحصر العدد $1\\,200\\,000$ بين قوتين متتاليتين للعدد 10 : $10^{n}\\le 1\\,200\\,000<10^{n+1}$ . ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العدد كتابة علمية $a\\times10^{n}$ أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما دام $1\\le a<10$ فإنّ $10^{n}\\le a\\times10^{n}<10^{n+1}$ : الأسّ $n$ هو نفسه أسّ الكتابة العلمية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ العدد أكبر من أو يساوي $10^{n}$ وأصغر تمامًا من $10^{n+1}$ ."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-ILMIYA-HASR"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{6}\\le 1\\,200\\,000<10^{7}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,200\\,000 = 1{,}2\\times10^{6}$ مع $1\\le 1{,}2<10$ .",
+          "إذن $10^{6}\\le 1\\,200\\,000<10^{7}$ ، فـ $n = 6$ ."
+        ],
+        "result": "n = 6"
+      }
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ا",
+      "statement": "رتبة قدر العدد $1\\,200\\,000$ هي $a'\\times10^{n}$ حيث $a'$ عدد صحيح من 1 إلى 9 : ما قيمة $a'$ ؟",
+      "answerType": "rational",
+      "answerFormat": "العدد الصحيح $a'$ (من 1 إلى 9)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العدد كتابة علمية $a\\times10^{n}$ أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتبة القدر هي $a'\\times10^{n}$ حيث $a'$ هو العدد $a$ مدوّرًا إلى الوحدة (نصف فما فوق يُرفع)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحذف ما بعد الفاصلة: قرّب $a$ إلى أقرب عدد صحيح."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "1",
+      "feedback": {
+        "correct": "رتبة قدر $1\\,200\\,000$ هي $1\\times10^{6}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الكتابة العلمية: $1\\,200\\,000 = 1{,}2\\times10^{6}$ .",
+          "تدوير $1{,}2$ إلى الوحدة يعطي 1 .",
+          "رتبة قدر $1\\,200\\,000$ هي $1\\times10^{6}$ ، فـ $a' = 1$ ."
+        ],
+        "result": "a' = 1"
+      }
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ب",
+      "statement": "رتبة قدر العدد $1\\,200\\,000$ هي $a'\\times10^{n}$ حيث $a'$ عدد صحيح من 1 إلى 9 : ما قيمة الأسّ $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العدد كتابة علمية $a\\times10^{n}$ ثمّ دوّر $a$ إلى الوحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان تدوير $a$ يعطي 10 فإنّ $10\\times10^{n}=1\\times10^{n+1}$ فيتغيّر الأسّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن رتبة القدر بالعدد نفسه: يجب أن تكون قريبة منه، لا أكبر منه بعشر مرّات."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-ILMIYA-QUWA"
+        }
+      ],
+      "feedback": {
+        "correct": "رتبة قدر $1\\,200\\,000$ هي $1\\times10^{6}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الكتابة العلمية: $1\\,200\\,000 = 1{,}2\\times10^{6}$ .",
+          "تدوير $1{,}2$ إلى الوحدة يعطي 1 .",
+          "رتبة قدر $1\\,200\\,000$ هي $1\\times10^{6}$ ، فـ $n = 6$ ."
+        ],
+        "result": "n = 6"
+      }
+    }
+  ]
+}

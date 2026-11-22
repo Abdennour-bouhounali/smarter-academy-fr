@@ -1,0 +1,295 @@
+{
+  "id": "ex-4am-talis-hisab-atwal-l5-009",
+  "lessonCode": "talis-hisab-atwal",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2023 — ظلّ الطاولة والزربية",
+    "estimatedMinutes": 20,
+    "tags": [
+      "وضعية إدماجية",
+      "خاصية طالس",
+      "معامل التكبير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_talis-hisab-atwal_P2",
+      "modelledOn": "BEM 2023 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في مكتبة الحيّ، مصباح صغير $S$ معلّق فوق طاولة دائرية أفقية مركز سطحها $I$ ونصف قطره $IM = 0{,}6\\,\\mathrm{m}$ . النقطة $H$ من الأرض تقع شاقوليا تحت $S$ ، والنقطة $I$ من $[SH]$ . ضوء المصباح يرسم على الأرض ظلّ الطاولة: $M'$ ظلّ النقطة $M$ ، أي $S$ ، $M$ ، $M'$ على استقامة، و $(IM) \\parallel (HM')$ . نعلم أن $SH = 2{,}4\\,\\mathrm{m}$ وأن ارتفاع الطاولة $IH = 0{,}8\\,\\mathrm{m}$ (مقطع شاقولي في الشكل).",
+    "figure": {
+      "points": {
+        "S": [
+          0.0,
+          2.4
+        ],
+        "I": [
+          0.0,
+          0.8
+        ],
+        "H": [
+          0.0,
+          0.0
+        ],
+        "M": [
+          0.6,
+          0.8
+        ],
+        "M'": [
+          0.9,
+          0.0
+        ],
+        "K": [
+          -0.6,
+          0.8
+        ],
+        "K'": [
+          -0.9,
+          0.0
+        ]
+      },
+      "segments": [
+        {
+          "from": "S",
+          "to": "H"
+        },
+        {
+          "from": "K",
+          "to": "M",
+          "arrows": 1
+        },
+        {
+          "from": "K'",
+          "to": "M'",
+          "arrows": 1
+        },
+        {
+          "from": "S",
+          "to": "M'"
+        },
+        {
+          "from": "S",
+          "to": "K'"
+        }
+      ],
+      "rightAngles": [
+        [
+          "S",
+          "H",
+          "M'"
+        ]
+      ],
+      "labels": {
+        "I": "nw",
+        "H": "s",
+        "S": "n"
+      },
+      "ariaLabel": "مقطع شاقولي: المصباح S فوق الطاولة، I مركز سطحها و H تحتها على الأرض؛ S و M و M′ على استقامة، و (IM) يوازي (HM′)؛ SH = 2,4 و IH = 0,8 و IM = 0,6",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب المسافة $SI$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "1,6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$I$ بين $S$ و $H$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$SI = 2{,}4 - 0{,}8 = 1{,}6\\,\\mathrm{m}$ .",
+        "incorrect": "$I$ بين $S$ و $H$ : اطرح ارتفاع الطاولة."
+      },
+      "solution": {
+        "lines": [
+          "$SI = SH - IH = 2{,}4 - 0{,}8$"
+        ],
+        "result": "SI = 1{,}6\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب نصف قطر الظلّ $HM'$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "0,9",
+      "misconceptionSignatures": [
+        {
+          "value": "0,4",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "1,8",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$S$ ، $I$ ، $H$ و $S$ ، $M$ ، $M'$ على استقامة، و $(IM) \\parallel (HM')$ : المثلثان $SIM$ و $SHM'$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $\\dfrac{SI}{SH} = \\dfrac{IM}{HM'}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أكمل بالجداء المتصالب."
+        }
+      ],
+      "feedback": {
+        "correct": "$HM' = \\dfrac{2{,}4 \\times 0{,}6}{1{,}6} = 0{,}9\\,\\mathrm{m}$ .",
+        "incorrect": "راجع المساواة المختارة: في كل نسبة طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: النقط $S$ ، $I$ ، $H$ على استقامة واحدة، والنقط $S$ ، $M$ ، $M'$ على استقامة واحدة، و $(IM) \\parallel (HM')$ .",
+          "حسب خاصية طالس: $\\dfrac{SI}{SH} = \\dfrac{SM}{SM'} = \\dfrac{IM}{HM'}$",
+          "$\\dfrac{1{,}6}{2{,}4} = \\dfrac{0{,}6}{HM'}$",
+          "$HM' = \\dfrac{2{,}4 \\times 0{,}6}{1{,}6}$"
+        ],
+        "result": "HM' = 0{,}9\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب معامل التكبير الذي يحوّل المثلث $SIM$ إلى المثلث $SHM'$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري أو كسر",
+      "expectedAnswer": "1,5",
+      "misconceptionSignatures": [
+        {
+          "value": "2/3",
+          "id": "MISC-TALIS-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$k = \\dfrac{SH}{SI}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$k = \\dfrac{2{,}4}{1{,}6} = 1{,}5$ .",
+        "incorrect": "معامل التناسبية k = (طول في المثلث الناتج) ÷ (الطول الموافق له في المثلث الأصلي)؛ راجع أي المثلثين هو الأصلي."
+      },
+      "solution": {
+        "lines": [
+          "$k = \\dfrac{SH}{SI} = \\dfrac{2{,}4}{1{,}6}$"
+        ],
+        "result": "k = 1{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "☜ تريد الأم وضع زربية دائرية تغطي ظلّ الطاولة على الأرض تماما. ما هو قطر هذه الزربية؟",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: القطر بـ m",
+      "expectedAnswer": "1,8",
+      "misconceptionSignatures": [
+        {
+          "value": "1,2",
+          "id": "MISC-TALIS-MUAMIL-MAQLUB"
+        },
+        {
+          "value": "0,9",
+          "id": "MISC-TALIS-QUTR-BADAL-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الظل دائرة مركزها $H$ ونصف قطرها $HM'$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القطر ضعف نصف القطر."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 0{,}9 = 1{,}8\\,\\mathrm{m}$ .",
+        "incorrect": "القطر = $2 \\times HM'$ ، لا قطر الطاولة."
+      },
+      "solution": {
+        "lines": [
+          "ظلّ سطح الطاولة دائرة مركزها $H$ ونصف قطرها $HM' = 0{,}9\\,\\mathrm{m}$ .",
+          "قطر الزربية: $2 \\times 0{,}9$"
+        ],
+        "result": "1{,}8\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

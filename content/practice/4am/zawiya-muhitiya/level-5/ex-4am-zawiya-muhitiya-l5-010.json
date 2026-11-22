@@ -1,0 +1,111 @@
+{
+  "id": "ex-4am-zawiya-muhitiya-l5-010",
+  "lessonCode": "zawiya-muhitiya",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — معادلة ثم زاوية مركزية",
+    "estimatedMinutes": 5,
+    "tags": [
+      "خاصية 2",
+      "خاصية 1",
+      "معادلة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_zawiya-muhitiya_P3",
+      "modelledOn": "know-4"
+    }
+  },
+  "statement": {
+    "content": "$\\widehat{ACB}$ و $\\widehat{ADB}$ زاويتان محيطيتان في دائرة مركزها O تحصران نفس القوس، حيث $\\widehat{ACB} = (3x)^\\circ$ و $\\widehat{ADB} = (x + 24)^\\circ$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قيمة x؟",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الزاويتان تحصران نفس القوس: اكتب العلاقة بينهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض كل زاوية بعبارتها بدلالة x، تحصل على معادلة من الدرجة الأولى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة ثم تحقّق بالتعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "$3x = x + 24$ ومنه $x = 12$ .",
+        "incorrect": "الزاويتان متقايستان."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-MUTASAWIYA",
+          "value": "6"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "statement": "ما قيس الزاوية المركزية $\\widehat{AOB}$ بالدرجة؟",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "72",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوس الذي تحصره كل زاوية: هل هو نفس القوس؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الزاويتين: أيهما أكبر، المركزية أم المحيطية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قيس الزاوية المحيطية نصف قيس الزاوية المركزية التي تحصر معها نفس القوس."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{ACB} = 36^\\circ$ فـ $\\widehat{AOB} = 72^\\circ$ .",
+        "incorrect": "المركزية ضعف المحيطية."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-DIF",
+          "value": "18"
+        },
+        {
+          "id": "MISC-MUHITIYA-MUSAWIYA",
+          "value": "36"
+        }
+      ]
+    }
+  ]
+}

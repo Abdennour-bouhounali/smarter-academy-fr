@@ -1,0 +1,123 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l5-008",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 5,
+  "metadata": {
+    "title": "وضعية — جسور قسنطينة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "متوازي أضلاع",
+      "أعداد عشرية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hisab-murakkibatay_P3",
+      "modelledOn": "ex-12"
+    }
+  },
+  "statement": {
+    "content": "مهندس يتقن عمله يرسم على مخطط قسنطينة (الوحدة 100 m) منصّة على شكل متوازي أضلاع ABCD، حيث $A(-1{,}5\\,;\\,2{,}5)$ ، $B(3{,}5\\,;\\,4)$ ، $C(2\\,;\\,-0{,}5)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا D:",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "point",
+      "answerFormat": "الإحداثيتان (x ; y) — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "-3",
+        "y": "-2"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "7",
+            "y": "1"
+          },
+          "id": "MISC-MAALAM-TARTIB-NUQAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المساواة الشعاعية لمتوازي الأضلاع ABCD بترتيب رؤوسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع الأول ومقابله في الاتجاه نفسه: $\\overrightarrow{AB} = \\overrightarrow{DC}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب معادلتين (للفاصلة وللترتيب) وحلّهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AB}\\begin{pmatrix} 5 \\\\ 1{,}5 \\end{pmatrix}$ ؛ $D(2 - 5\\,;\\,-0{,}5 - 1{,}5) = (-3\\,;\\,-2)$ .",
+        "incorrect": "AB = DC: D = C ناقص مركبتي AB."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "مركبتا $\\overrightarrow{AD}$ و $\\overrightarrow{BC}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "متعاكستان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        },
+        {
+          "id": "B",
+          "content": "مختلفتان، فـ ABCD ليس متوازي أضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-TASAWI-MURAKKABA"
+        },
+        {
+          "id": "C",
+          "content": "متساويتان: $\\begin{pmatrix} -1{,}5 \\\\ -4{,}5 \\end{pmatrix}$ ، وهذا يؤكّد أن ABCD متوازي أضلاع",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مركبتي كل شعاع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن المركبة الأولى بالأولى والثانية بالثانية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يتساوى الشعاعان إذا تساوت المركبتان معا."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AD}\\begin{pmatrix} -3 + 1{,}5 \\\\ -2 - 2{,}5 \\end{pmatrix}$ و $\\overrightarrow{BC}\\begin{pmatrix} 2 - 3{,}5 \\\\ -0{,}5 - 4 \\end{pmatrix}$ : متساويان.",
+        "incorrect": "احسب المركبتين بعناية مع الفاصلة العشرية."
+      }
+    }
+  ]
+}

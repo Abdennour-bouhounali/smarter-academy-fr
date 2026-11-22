@@ -1,0 +1,166 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l3-009",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2025 — 5040 و 48",
+    "estimatedMinutes": 6,
+    "tags": [
+      "الباقي المعدوم",
+      "مضاعف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-adad-tabii_P1",
+      "modelledOn": "BEM 2025 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب باقي القسمة الإقليدية للعدد 5040 على 48.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $48 \\times 100$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كم يبقى من 5040 بعد طرح هذا الجداء؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الباقي أصغر تمامًا من 48."
+        }
+      ],
+      "feedback": {
+        "correct": "$5040 = 48 \\times 105 + 0$: الباقي معدوم.",
+        "incorrect": "اطرح من 5040 أكبر مضاعف للعدد 48 لا يتجاوزه."
+      },
+      "solution": {
+        "lines": [
+          "$48 \\times 100 = 4800$ و $5040 - 4800 = 240 = 48 \\times 5$",
+          "إذن $5040 = 48 \\times 105 + 0$"
+        ],
+        "result": "r = 0"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل 105 قاسم للعدد 5040؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل المساواة التي وجدتها في السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المساواة $a = b \\times q$ تُقرأ في الاتجاهين."
+        }
+      ],
+      "feedback": {
+        "correct": "$5040 = 105 \\times 48$: 105 قاسم للعدد 5040.",
+        "incorrect": "اكتب 5040 على شكل جداء أحد عامليه 105."
+      },
+      "solution": {
+        "lines": [
+          "$5040 = 48 \\times 105 = 105 \\times 48$",
+          "إذن 105 قاسم للعدد 5040."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "جد أصغر عدد طبيعي غير معدوم يجب إضافته إلى 5040 ليكون المجموع مضاعفًا للعدد 48.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "48",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "5040 نفسه مضاعف للعدد 48: ما هو مضاعف العدد 48 الذي يليه مباشرة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $48 \\times 106$."
+        }
+      ],
+      "feedback": {
+        "correct": "$5040 + 48 = 5088 = 48 \\times 106$.",
+        "incorrect": "ابحث عن مضاعف العدد 48 الذي يلي 5040 مباشرة، ثم احسب الفرق."
+      },
+      "solution": {
+        "lines": [
+          "$5040 = 48 \\times 105$",
+          "مضاعف العدد 48 الذي يليه هو $48 \\times 106 = 5088$",
+          "$5088 - 5040 = 48$"
+        ],
+        "result": "48"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "ex-4am-muntasaf-masafa-l1-003",
+  "lessonCode": "muntasaf-masafa",
+  "level": 1,
+  "metadata": {
+    "title": "معارف — مثال المنتصف",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المنتصف"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-mid",
+      "page": 144,
+      "section": "معارف",
+      "number": 3
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 144): $A(3\\,;\\,-4)$ ، $B(-4\\,;\\,3)$ نقطتان من المستوي، و I منتصف القطعة [AB]."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا I:",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح أو كسر مثل 1/2)",
+      "expectedAnswer": {
+        "x": "-1/2",
+        "y": "-1/2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MUNTASAF-TARH",
+          "value": {
+            "x": "-7/2",
+            "y": "7/2"
+          }
+        },
+        {
+          "id": "MISC-MAALAM-MUNTASAF-NISF",
+          "value": {
+            "x": "-1",
+            "y": "-1"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المنتصف يقع في منتصف الطريق أفقيا وفي منتصف الطريق عموديا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الفاصلتين ثم اقسم على 2، وافعل الشيء نفسه مع الترتيبين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى الإشارات: جمع عدد سالب يعني طرح قيمته."
+        }
+      ],
+      "feedback": {
+        "correct": "$x_I = \\dfrac{3 + (-4)}{2} = -\\dfrac{1}{2}$ و $y_I = \\dfrac{-4 + 3}{2} = -\\dfrac{1}{2}$ .",
+        "incorrect": "نجمع الفاصلتين ونقسم على 2، ثم الترتيبين."
+      }
+    }
+  ]
+}

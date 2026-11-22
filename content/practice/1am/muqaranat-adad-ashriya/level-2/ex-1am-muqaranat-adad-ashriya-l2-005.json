@@ -1,0 +1,220 @@
+{
+  "id": "ex-1am-muqaranat-adad-ashriya-l2-005",
+  "lessonCode": "muqaranat-adad-ashriya",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — من الكسر إلى المقارنة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "كسر عشري",
+      "مقارنة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 1,
+      "file": "1am-s1-91",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الكسرين العشريين: $A = \\dfrac{345}{100}$ و $B = \\dfrac{35}{10}$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب الكسر $A = \\dfrac{345}{100}$ بالكتابة العشرية.",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "3,45",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب كل كسر عشري بالفاصلة قبل أن تقارن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد الأصفار في المقام هو عدد الأرقام بعد الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بعدها العددين العشريين رتبةً رتبةً، من اليسار إلى اليمين."
+        }
+      ],
+      "feedback": {
+        "correct": "$3{,}45$",
+        "incorrect": "نكتب كل كسر عشري بالفاصلة (عدد أصفار المقام = عدد الأرقام بعد الفاصلة) ثم نقارن العددين العشريين رتبةً رتبةً؛ لا نقارن البسطين وحدهما."
+      },
+      "solution": {
+        "lines": [
+          "$345\\div 100 = 3{,}45$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب الكسر $B = \\dfrac{35}{10}$ بالكتابة العشرية.",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "3,5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب كل كسر عشري بالفاصلة قبل أن تقارن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد الأصفار في المقام هو عدد الأرقام بعد الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بعدها العددين العشريين رتبةً رتبةً، من اليسار إلى اليمين."
+        }
+      ],
+      "feedback": {
+        "correct": "$3{,}5$",
+        "incorrect": "نكتب كل كسر عشري بالفاصلة (عدد أصفار المقام = عدد الأرقام بعد الفاصلة) ثم نقارن العددين العشريين رتبةً رتبةً؛ لا نقارن البسطين وحدهما."
+      },
+      "solution": {
+        "lines": [
+          "$35\\div 10 = 3{,}5$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ضع الرمز المناسب ($<$ أو $=$ أو $>$) مكان النقط: $A \\ldots B$",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الرمز المناسب",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$<$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$=$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-ZERO-PLACE"
+        },
+        {
+          "id": "C",
+          "content": "$>$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-DIGITS-AS-NATURAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا تقرأ الأرقام بعد الفاصلة على أنها عدد طبيعي منفصل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أتمم الأرقام بأصفار غير ضرورية لتتساوى عدد الأرقام بعد الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الأعشار أولًا: الرتبة الأعلى تحسم قبل الرتب الأدنى."
+        }
+      ],
+      "feedback": {
+        "correct": "الجزآن الصحيحان متساويان؛ نقارن عددَي أجزاء من مائة: $45$ و $50$، إذن $3{,}45 < 3{,}5$.",
+        "incorrect": "عدد الأرقام بعد الفاصلة لا يحدّد كِبَر العدد: نقارن الأعشار قبل الأجزاء من مائة. مثال: $3{,}2 = 3{,}20$ أكبر من $3{,}14$ لأنّ 20 جزءًا من مائة أكثر من 14."
+      },
+      "solution": {
+        "lines": [
+          "نتمم بأصفار لنساوي عدد الأرقام بعد الفاصلة: $3{,}45$ و $3{,}50$.",
+          "الجزآن الصحيحان متساويان؛ نقارن عددَي أجزاء من مائة: $45$ و $50$، إذن $3{,}45 < 3{,}5$."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "علّل جوابك على السؤال السابق.",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اذكر الرتبة التي حسمت المقارنة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أو أتمم العددين بأصفار ثم قارن عددين طبيعيين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تامة تتضمن العددين والرمز."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي.",
+        "incorrect": "راجع التبرير وأعد صياغته: اذكر الرتبة أو الأصفار."
+      },
+      "solution": {
+        "lines": [
+          "$A = 3{,}45$ و $B = 3{,}5 = 3{,}50$.",
+          "الجزآن الصحيحان متساويان، وفي رتبة الأعشار 4 < 5، إذن $A < B$."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

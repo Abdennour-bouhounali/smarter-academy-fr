@@ -1,0 +1,171 @@
+{
+  "id": "ex-4am-mushkilat-jumla-l4-002",
+  "lessonCode": "mushkilat-jumla",
+  "level": 4,
+  "metadata": {
+    "title": "زوايا مثلث متقايس الساقين",
+    "estimatedMinutes": 11,
+    "tags": [
+      "ترييض",
+      "زوايا"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-19",
+      "page": 61,
+      "section": "أوظّف تعلّماتي",
+      "number": 19
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$ABC$ مثلث متقايس الساقين رأسه $A$ . المنصّف $(d)$ للزاوية $\\widehat{ACB}$ يقطع $[AB]$ في النقطة $D$ بحيث $AD = DC$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "نسمّي $x$ قيس الزاوية $\\widehat{BAC}$ و $y$ قيس الزاوية $\\widehat{ABC}$ (بالدرجات).",
+      "statement": "بيّن أن $x$ و $y$ يحققان الجملة: $\\begin{cases} x + 2y = 180 \\\\ 2x - y = 0 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في مثلث متقايس الساقين زاويتا القاعدة متقايستان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المثلث $ADC$ متقايس الساقين أيضا."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ متقايس الساقين رأسه $A$ : $\\widehat{ACB} = \\widehat{ABC} = y$",
+          "مجموع أقياس زوايا المثلث: $x + y + y = 180$ أي $x + 2y = 180$",
+          "$(d)$ منصف الزاوية $\\widehat{ACB}$ : $\\widehat{ACD} = \\dfrac{y}{2}$",
+          "$AD = DC$ : المثلث $ADC$ متقايس الساقين رأسه $D$ ، ومنه $\\widehat{DAC} = \\widehat{DCA}$ أي $x = \\dfrac{y}{2}$",
+          "ومنه $2x - y = 0$ ، و $x$ و $y$ يحققان الجملة: $\\begin{cases} x + 2y = 180 \\\\ 2x - y = 0 \\end{cases}$"
+        ]
+      },
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "جد قيس الزاوية $\\widehat{BAC}$ وقيس الزاوية $\\widehat{ABC}$ .",
+      "statement": "قيس الزاوية $\\widehat{BAC}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب القيس بالدرجات (عدد فقط)",
+      "expectedAnswer": "36",
+      "misconceptionSignatures": [
+        {
+          "value": "72",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من المعادلة الثانية: $y = 2x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $y$ بـ $2x$ في المعادلة الأولى."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{BAC} = 36°$ .",
+        "incorrect": "عوّض $y = 2x$ في $x + 2y = 180$ : $5x = 180$ ."
+      },
+      "solution": {
+        "lines": [
+          "من المعادلة الثانية: $y = 2x$",
+          "بالتعويض في المعادلة الأولى: $x + 4x = 180$ أي $5x = 180$ ومنه $x = 36$",
+          "ومنه: $y = 2 \\times 36 = 72$",
+          "التحقق: $36 + 72 + 72 = 180$ و $\\widehat{ACD} = 36 = \\widehat{BAC}$ .",
+          "إذن $\\widehat{BAC} = 36°$ و $\\widehat{ABC} = \\widehat{ACB} = 72°$ ."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "قيس الزاوية $\\widehat{ABC}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب القيس بالدرجات (عدد فقط)",
+      "expectedAnswer": "72",
+      "misconceptionSignatures": [
+        {
+          "value": "36",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$y$ ضعف $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{ABC} = 72°$ ، ونتحقق: $36 + 72 + 72 = 180$ .",
+        "incorrect": "من $2x - y = 0$ : $y = 2x$ ."
+      },
+      "solution": {
+        "lines": [
+          "من المعادلة الثانية: $y = 2x$",
+          "بالتعويض في المعادلة الأولى: $x + 4x = 180$ أي $5x = 180$ ومنه $x = 36$",
+          "ومنه: $y = 2 \\times 36 = 72$",
+          "التحقق: $36 + 72 + 72 = 180$ و $\\widehat{ACD} = 36 = \\widehat{BAC}$ .",
+          "إذن $\\widehat{BAC} = 36°$ و $\\widehat{ABC} = \\widehat{ACB} = 72°$ ."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

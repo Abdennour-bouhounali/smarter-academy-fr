@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l5-005",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 5,
+  "metadata": {
+    "title": "وضعية — قيمة وسيط",
+    "estimatedMinutes": 4,
+    "tags": [
+      "تساوي شعاعين",
+      "معادلة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hisab-murakkibatay_P2",
+      "modelledOn": "ex-9"
+    }
+  },
+  "statement": {
+    "content": "$A(2\\,;\\,-1)$ ، $B(m\\,;\\,3)$ ، $C(-1\\,;\\,0)$ ، $D(4\\,;\\,4)$ حيث m عدد حقيقي."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "قيمة m التي يكون من أجلها $\\overrightarrow{AB} = \\overrightarrow{CD}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$m = -3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-TARH-MAQLUB"
+        },
+        {
+          "id": "B",
+          "content": "لا توجد قيمة لأن المركبتين الثانيتين مختلفتان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-TASAWI-MURAKKABA"
+        },
+        {
+          "id": "C",
+          "content": "$m = 7$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مركبتا AB: $m - 2$ و $3 - (-1) = 4$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مركبتا CD: 5 و 4."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المركبتان الثانيتان متساويتان؛ حلّ $m - 2 = 5$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$m - 2 = 5$ ومنه $m = 7$ ، والمركبتان الثانيتان 4 و 4.",
+        "incorrect": "المركبة الأولى لـ AB هي $m - 2$ (النهاية ناقص المبدأ)."
+      }
+    }
+  ]
+}

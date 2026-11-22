@@ -1,0 +1,231 @@
+{
+  "id": "ex-3am-muadalat-darajat-ula-l3-004",
+  "lessonCode": "muadalat-darajat-ula",
+  "level": 3,
+  "metadata": {
+    "title": "عمر الأب وعمر ابنه",
+    "estimatedMinutes": 10,
+    "tags": [
+      "ترييض",
+      "الأعمار"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "now-77-2",
+      "page": 77,
+      "section": "دوري الآن",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "عمر أب هو $38$ سنة وعمر ابنه الذي يحفظ معه القرآن كلّ مساء هو $10$ سنوات. نريد معرفة بعد كم سنة يصبح عمر الأب ثلاثة أضعاف عمر ابنه."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "نسمّي $x$ عدد السنوات المطلوبة. ما المعادلة التي تترجم الوضعية؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "الأب: $38 + x$ ، الابن: $10 + x$ ، والأب ثلاثة أضعاف الابن.",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$38 + x = 30 + x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        },
+        {
+          "id": "B",
+          "content": "$38 + x = 3(10 + x)$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$38 = 3(10 + x)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "بعد $x$ سنة يصبح عمر الأب $38 + x$ وعمر الابن $10 + x$ : $38 + x = 3(10 + x)$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "بعد كم سنة يحدث ذلك؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "بعد $4$ سنوات.",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "عدد السنوات",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "-4",
+          "id": "MISC-MUADALA-NEG-COEF"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "ننشر: $38 + x = 30 + 3x$ .",
+          "نضيف $-3x$ إلى الطرفين (معاكس الحدّ $3x$) فنجد: $-2x + 38 = 30$ .",
+          "نضيف $-38$ إلى الطرفين (معاكس $38$) فنجد: $-2x = -8$ .",
+          "نقسم الطرفين على $-2$ فنجد: $x = 4$ .",
+          "التحقّق: من أجل $x = 4$ نجد الطرف الأيسر $42$ والطرف الأيمن $42$ ، فهما متساويان."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما عمر الابن حينئذ بالسنوات؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "عمر الابن حينئذ $14$ سنة.",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "العمر بالسنوات",
+      "expectedAnswer": "14",
+      "solution": {
+        "lines": [
+          "عمر الابن $10 + 4 = 14$ سنة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "تحقّق من النتيجة في نصّ المسألة.",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$42 = 3 \\times 14$ .",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب إجابتك ثم قارنها بالتصحيح النموذجي",
+      "solution": {
+        "lines": [
+          "بعد $4$ سنوات يكون عمر الأب $38 + 4 = 42$ وعمر الابن $10 + 4 = 14$ .",
+          "و $3 \\times 14 = 42$ ، فالأب ثلاثة أضعاف ابنه."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "id": "ex-4am-tarrid-muthallathiya-l2-001",
+  "lessonCode": "tarrid-muthallathiya",
+  "level": 2,
+  "metadata": {
+    "title": "تحدّ الوحدة — السلّم في وضعين",
+    "estimatedMinutes": 6,
+    "tags": [
+      "تحدّ الوحدة",
+      "مثلثان قائمان",
+      "التدوير المبكّر"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "challenge",
+      "page": 115,
+      "section": "تحدّ",
+      "adaptedFrom": "ex-4am-tarrid-muthallathiya-l2-001"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "سلّم مستند إلى جدار شاقولي والأرض أفقية (الشكل المقابل). رأس السلّم $T$ على الجدار على ارتفاع $WT = 1{,}60\\,\\mathrm{m}$ من الأرض، والسلّم $[FT]$ يصنع مع الأرض زاوية قيسها $59^{\\circ}$ . ويتعاون عاملان على تثبيته: أحدهما يسنده والآخر يصعد.",
+    "figure": {
+      "points": {
+        "W": [
+          0.0,
+          0.0
+        ],
+        "T": [
+          0.0,
+          1.6
+        ],
+        "F": [
+          0.9614,
+          0.0
+        ]
+      },
+      "segments": [
+        {
+          "from": "W",
+          "to": "T",
+          "label": "1,60 m"
+        },
+        [
+          "W",
+          "F"
+        ],
+        [
+          "F",
+          "T"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "F",
+          "W",
+          "T"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "F",
+          "from": "T",
+          "to": "W",
+          "label": "59°"
+        }
+      ],
+      "labels": {
+        "W": "sw",
+        "T": "nw",
+        "F": "se"
+      },
+      "ariaLabel": "سلّم [FT] مستند إلى جدار شاقولي [WT]: رأسه T على ارتفاع 1,60 m من الأرض، والسلّم يصنع مع الأرض الأفقية زاوية قيسها 59 درجة في F",
+      "maxWidth": 260
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب البعد $FW$ بين قاعدة السلّم والجدار بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-muthallathiya_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m مدوّرا إلى 0,01",
+      "expectedAnswer": "0.96",
+      "misconceptionSignatures": [
+        {
+          "value": "2.66",
+          "id": "MISC-MUTH-DARB-BADAL-QISMA"
+        },
+        {
+          "value": "1.87",
+          "id": "MISC-MUTH-NISBA-GHAYR-MUNASIBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $FWT$ القائم في $W$ ، حدّد موقع الضلع المعلوم والضلع المطلوب بالنسبة إلى الزاوية $\\widehat{TFW}$ (مجاور، مقابل أو وتر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة التي تجمع هذين الضلعين هي ظل الزاوية $\\widehat{TFW}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالآلة الحاسبة مبرمجة على الدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$FW = \\dfrac{1{,}6}{\\tan 59^{\\circ}} \\approx 0{,}96\\,\\mathrm{m}$ .",
+        "incorrect": "الطول المطلوب في مقام النسبة: نقسم الطول المعلوم على النسبة المثلثية ولا نضرب فيها؛ والآلة الحاسبة مبرمجة على الدرجة."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $FWT$ القائم في $W$ لدينا: $\\tan\\,\\widehat{TFW} = \\dfrac{WT}{FW}$",
+          "ومنه: $FW = \\dfrac{WT}{\\tan\\,\\widehat{TFW}}$",
+          "$FW = \\dfrac{1{,}6}{\\tan 59^{\\circ}}$",
+          "باستعمال الآلة الحاسبة: $FW \\approx 0{,}9614$"
+        ],
+        "result": "FW \\approx 0{,}96\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "نُبعد قاعدة السلّم عن الجدار، دون تغيير طوله، حتى يصير قيس الزاوية التي يصنعها مع الأرض $50^{\\circ}$ .",
+      "statement": "احسب الارتفاع الجديد لرأس السلّم على الجدار بالتدوير إلى $0{,}01$ (لا تدوّر طول السلّم).",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-muthallathiya_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الارتفاع بـ m مدوّرا إلى 0,01",
+      "expectedAnswer": "1.43",
+      "misconceptionSignatures": [
+        {
+          "value": "1.46",
+          "id": "MISC-MUTH-TADWIR-MUBAKKIR"
+        },
+        {
+          "value": "1.20",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول السلّم لم يتغيّر: احسبه أولا في المثلث الأول بالجيب، واحتفظ بكل أرقام الحاسبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في الوضع الجديد: مثلث قائم آخر، وتره السلّم نفسه، والارتفاع الجديد مقابل للزاوية $50^{\\circ}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تستعمل القيمة المدوّرة لطول السلّم: الخطأ يتراكم."
+        }
+      ],
+      "feedback": {
+        "correct": "$FT = \\dfrac{1{,}6}{\\sin 59^{\\circ}}$ ثم الارتفاع الجديد $= FT \\times \\sin 50^{\\circ} \\approx 1{,}43\\,\\mathrm{m}$ .",
+        "incorrect": "المثلث الجديد له الوتر نفسه (طول السلّم بقيمته غير المدوّرة)، والارتفاع مقابل للزاوية الجديدة."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $FWT$ : $\\sin 59^{\\circ} = \\dfrac{1{,}6}{FT}$ ومنه $FT = \\dfrac{1{,}6}{\\sin 59^{\\circ}}$ (نحتفظ بها في الحاسبة: $1{,}8666...$ ).",
+          "في الوضع الجديد، نسمّي $h$ الارتفاع الجديد: المثلث قائم، وتره السلّم و $h$ مقابل للزاوية $50^{\\circ}$ :",
+          "$\\sin 50^{\\circ} = \\dfrac{h}{FT}$ ومنه: $h = \\dfrac{1{,}6}{\\sin 59^{\\circ}} \\times \\sin 50^{\\circ}$",
+          "باستعمال الآلة الحاسبة: $h \\approx 1{,}4299$",
+          "تنبيه: باستعمال القيمة المدوّرة $FT \\approx 1{,}9$ نجد $1{,}9 \\times \\sin 50^{\\circ} \\approx 1{,}46$ : التدوير المبكّر يغيّر النتيجة."
+        ],
+        "result": "h \\approx 1{,}43\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

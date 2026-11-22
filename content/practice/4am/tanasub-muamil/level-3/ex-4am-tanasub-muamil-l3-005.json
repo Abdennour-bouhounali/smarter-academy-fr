@@ -1,0 +1,222 @@
+{
+  "id": "ex-4am-tanasub-muamil-l3-005",
+  "lessonCode": "tanasub-muamil",
+  "level": 3,
+  "metadata": {
+    "title": "معامل سالب",
+    "estimatedMinutes": 4,
+    "tags": [
+      "معامل التناسبية",
+      "أعداد نسبية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tanasub-muamil_P1",
+      "modelledOn": "prep",
+      "adaptedFrom": "ex-4am-tanasub-muamil-l3-005"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "الجدول الآتي جدول تناسبية:",
+    "table": {
+      "head": [
+        "$x$",
+        "$-2$",
+        "4",
+        "6",
+        "3",
+        "…"
+      ],
+      "rows": [
+        [
+          "$y$",
+          "5",
+          "$-10$",
+          "$-15$",
+          "…",
+          "20"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب معامل التناسبية.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-2,5",
+      "misconceptionSignatures": [
+        {
+          "value": "-2/5",
+          "id": "MISC-TANASUB-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل التناسبية هو العدد الذي نضرب فيه أعداد السطر الأول لنحصل على أعداد السطر الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم عددا من السطر الثاني على العدد المقابل له من السطر الأول: $\\dfrac{y}{x}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن حاصل القسمة هو نفسه في عمود آخر."
+        }
+      ],
+      "feedback": {
+        "correct": "حواصل القسمة كلها تساوي $-2{,}5$ .",
+        "incorrect": "معامل التناسبية هو $\\dfrac{y}{x}$ : السطر الثاني على السطر الأول، وليس العكس. وانتبه إلى الإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{-2} = \\dfrac{-10}{4} = \\dfrac{-15}{6} = -2{,}5$"
+        ],
+        "result": "a = -2{,}5"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "انقل الجدول وأكمله.",
+      "statement": "العدد المقابل لـ $x = 3$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر من الشكل a/b)",
+      "expectedAnswer": "-7,5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في جدول تناسبية نضرب في المعامل، ولا نضيف الفرق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب معامل التناسبية من عمود كامل."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 \\times (-2{,}5) = -7{,}5$ .",
+        "incorrect": "أعد الحساب: في جدول تناسبية حاصل القسمة ثابت، فتحقّق من جوابك بالضرب في المعامل."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times (-2{,}5) = -7{,}5$"
+        ],
+        "result": "-7{,}5"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "العدد $x$ الذي يقابل $y = 20$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر من الشكل a/b)",
+      "expectedAnswer": "-8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد المعلوم هنا في السطر الثاني: نبحث عن العدد المقابل له في السطر الأول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السطر الأول = السطر الثاني ÷ معامل التناسبية."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{20}{-2{,}5} = -8$ .",
+        "incorrect": "اقسم $y$ على المعامل، وانتبه إلى الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "$x = \\dfrac{20}{-2{,}5} = -8$"
+        ],
+        "result": "x = -8"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "اكتب العلاقة بين $y$ و $x$ على الشكل $y = a \\times x$ ، ثم احسب $y$ من أجل $x = -10$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر من الشكل a/b)",
+      "expectedAnswer": "25",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في وضعية تناسبية: المقدار الثاني = معامل التناسبية × المقدار الأول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء عددين سالبين موجب."
+        }
+      ],
+      "feedback": {
+        "correct": "$y = -2{,}5 \\times (-10) = 25$ .",
+        "incorrect": "عوّض $x$ بـ $-10$ وانتبه إلى الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "$y = -2{,}5 \\times x$",
+          "$y = -2{,}5 \\times (-10) = 25$"
+        ],
+        "result": "y = 25"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

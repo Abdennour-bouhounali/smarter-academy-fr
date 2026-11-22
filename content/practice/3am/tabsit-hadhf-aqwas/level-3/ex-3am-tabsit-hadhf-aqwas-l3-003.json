@@ -1,0 +1,224 @@
+{
+  "id": "ex-3am-tabsit-hadhf-aqwas-l3-003",
+  "lessonCode": "tabsit-hadhf-aqwas",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — تبسيط ثم حساب",
+    "estimatedMinutes": 8,
+    "tags": [
+      "حذف الأقواس",
+      "تبسيط"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-82",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "إليك العبارة الجبرية التالية:",
+    "formulas": [
+      "A = 3x^2 - 5x - (6x + 1) + 4"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "بسّط العبارة الجبرية $A$ .",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "-11",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-TABSIT-MINUS-KEPT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة التي تسبق القوسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوسان مسبوقان بالإشارة $-$ يُحذفان مع تغيير إشارة كل حدّ بينهما، لا الحدّ الأول وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العبارة بدون أقواس حدًّا حدًّا، ثم اجمع الحدود المتشابهة، وتحقّق بتعويض $x$ بعدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 3x^2 - 11x + 3$ إذن $b = -11$.",
+        "incorrect": "اجمع الحدود المتشابهة بإشاراتها بعد حذف الأقواس، ثم اقرأ العدد المطلوب في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$A = 3x^2 - 5x - 6x - 1 + 4$",
+          "$A = 3x^2 - 11x + 3$"
+        ],
+        "result": "b = -11"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $c$ :",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $ax^2 + bx + c$ : اكتب العدد $c$ فقط",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-TABSIT-MINUS-FIRST-ONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة التي تسبق القوسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوسان مسبوقان بالإشارة $-$ يُحذفان مع تغيير إشارة كل حدّ بينهما، لا الحدّ الأول وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العبارة بدون أقواس حدًّا حدًّا، ثم اجمع الحدود المتشابهة، وتحقّق بتعويض $x$ بعدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 3x^2 - 11x + 3$ إذن $c = 3$.",
+        "incorrect": "اجمع الحدود المتشابهة بإشاراتها بعد حذف الأقواس، ثم اقرأ العدد المطلوب في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$A = 3x^2 - 11x + 3$"
+        ],
+        "result": "c = 3"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب قيمة العبارة $A$ من أجل $x = 2$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "-7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى، ويُستحسن أن تعوّض في الشكل المبسّط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويات العمليات: القوى، ثم الضرب، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالتعويض في العبارة قبل تبسيطها: القيمة لا تتغيّر."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل $x = 2$ نجد $A = -7$.",
+        "incorrect": "عوّض $x$ بالعدد المعطى في الشكل المبسّط واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$A = 3x^2 - 11x + 3$",
+          "من أجل $x = 2$ : $A = 3(2)^2 - 11(2) + 3 = -7$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "بيّن أن $(x + 3)(2x + 1) = 2x^2 + 7x + 3$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر حدًّا حدًّا: اضرب كل حدّ من القوس الأول في كل حدّ من القوس الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الحدود المتشابهة في النتيجة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بالعبارة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$(x + 3)(2x + 1) = 2x^2 + x + 6x + 3$",
+          "$= 2x^2 + 7x + 3$"
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

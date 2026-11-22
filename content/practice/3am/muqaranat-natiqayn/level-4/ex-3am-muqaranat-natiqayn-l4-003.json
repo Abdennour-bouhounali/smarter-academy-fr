@@ -1,0 +1,275 @@
+{
+  "id": "ex-3am-muqaranat-natiqayn-l4-003",
+  "lessonCode": "muqaranat-natiqayn",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — قوى العدد 10 والمقارنة",
+    "estimatedMinutes": 13,
+    "tags": [
+      "قوى العدد 10",
+      "عشري",
+      "فرق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "قارن في كلّ جزء بين عددين بحساب فرقهما. الجزء الأول: $a = 3{,}7 \\times 10^{-2}$ و $b = \\dfrac{36}{1000}$ . الجزء الثاني: $c = 7 \\times 10^{-2}$ و $d = \\dfrac{5}{80}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "الجزء الأول: اكتب $a$ في شكل عشري.",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر مختزل)",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط؟ وما العمليات التي تحتاجها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب خطوة خطوة مع الانتباه إلى الإشارات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "راجع النتيجة بطريقة ثانية قبل أن تجيب."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "0.037",
+      "feedback": {
+        "correct": "$a = 0{,}037$ .",
+        "incorrect": "أعد الحساب بالترتيب مع الانتباه إلى الإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$a = 3{,}7 \\times 10^{-2} = 0{,}037$"
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $a - b$ .",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العددان؟ وأيّهما يُطرح من الآخر في هذا الفرق؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح العدد الثاني من الأول واختزل النتيجة، فالإشارة هي التي تهمّنا في النهاية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد الحساب اقرأ إشارة الناتج وانتبه إلى ترتيب الطرح."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "1/1000",
+      "feedback": {
+        "correct": "$a - b = \\dfrac{1}{1000}$ .",
+        "incorrect": "اطرح العدد الثاني من الأول بتوحيد المقامين، واختزل، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$a = \\dfrac{37}{1000}$ و $b = \\dfrac{36}{1000}$",
+          "$a - b = \\dfrac{37 - 36}{1000} = \\dfrac{1}{1000}$"
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما المقارنة الصحيحة بين $a$ و $b$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا تعلّمنا إشارة الفرق عن ترتيب العددين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اربط إشارة الفرق بالمقارنة بين العددين، وانتبه إلى أيّ العددين هو الأول في الفرق."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا انعكس ترتيب الطرح فإنّ إشارة الفرق تنعكس أيضًا."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$a < b$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-NUMERATOR"
+        },
+        {
+          "id": "B",
+          "content": "$a > b$",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "$a > b$ لأنّ $a - b > 0$ .",
+        "incorrect": "اربط إشارة الفرق بالترتيب، وانتبه إلى ترتيب الطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$a - b > 0$ ، إذن $a > b$ ."
+        ]
+      }
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "الجزء الثاني: احسب $c - d$ .",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العددان؟ وأيّهما يُطرح من الآخر في هذا الفرق؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح العدد الثاني من الأول واختزل النتيجة، فالإشارة هي التي تهمّنا في النهاية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد الحساب اقرأ إشارة الناتج وانتبه إلى ترتيب الطرح."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "3/400",
+      "misconceptionSignatures": [
+        {
+          "value": "-3/400",
+          "id": "MISC-MUQ-ORDER-SUB"
+        }
+      ],
+      "feedback": {
+        "correct": "$c - d = \\dfrac{3}{400}$ .",
+        "incorrect": "اطرح العدد الثاني من الأول بتوحيد المقامين، واختزل، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$c = 0{,}07 = \\dfrac{7}{100}$ و $d = \\dfrac{5}{80} = \\dfrac{1}{16}$",
+          "$c - d = \\dfrac{28}{400} - \\dfrac{25}{400} = \\dfrac{3}{400}$"
+        ]
+      }
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "ما المقارنة الصحيحة بين $c$ و $d$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا تعلّمنا إشارة الفرق عن ترتيب العددين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اربط إشارة الفرق بالمقارنة بين العددين، وانتبه إلى أيّ العددين هو الأول في الفرق."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا انعكس ترتيب الطرح فإنّ إشارة الفرق تنعكس أيضًا."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$c > d$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$c < d$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-ORDER-SUB"
+        }
+      ],
+      "feedback": {
+        "correct": "$c > d$ لأنّ $c - d > 0$ .",
+        "incorrect": "اربط إشارة الفرق بالترتيب، وانتبه إلى ترتيب الطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$c - d > 0$ ، إذن $c > d$ ."
+        ]
+      }
+    }
+  ]
+}

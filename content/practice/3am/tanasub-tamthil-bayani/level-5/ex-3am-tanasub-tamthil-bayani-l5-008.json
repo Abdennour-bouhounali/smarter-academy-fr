@@ -1,0 +1,334 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l5-008",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — اشتراك مكتبة الحيّ",
+    "estimatedMinutes": 15,
+    "tags": [
+      "وضعية إدماجية",
+      "رسم ثابت",
+      "تمثيل بياني"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تأخذ مكتبة الحيّ اشتراكا ثابتا من كل أسرة وتعير بعده الكتب بثمن رمزي، حفاظا على المكان المشترك. تمثّل النقط $A$ و $B$ و $C$ في المعلم التالي المبلغ المدفوع بدلالة عدد الكتب المعارة.\nالجزء الأول: التمثيل البياني.\nالجزء الثاني: حسابات وقرار.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          2,
+          5
+        ],
+        "B": [
+          4,
+          6
+        ],
+        "C": [
+          8,
+          8
+        ]
+      },
+      "lines": [
+        {
+          "through": [
+            "A",
+            "C"
+          ],
+          "name": "(d)",
+          "tone": "indigo",
+          "extend": [
+            0.9,
+            0.15
+          ]
+        }
+      ],
+      "grid": true,
+      "axes": {
+        "every": 2
+      },
+      "labels": {
+        "O": "sw",
+        "A": "se",
+        "B": "se",
+        "C": "se"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس: النقط A(2;5) و B(4;6) و C(8;8) على المستقيم (d) الذي يقطع محور التراتيب في 4",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: عدد الكتب — محور التراتيب: المبلغ بمئات الدنانير"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول:",
+      "statement": "هل المبلغ المدفوع متناسب مع الكمية؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأنّ النقط على استقامة واحدة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-LINE-ANY"
+        },
+        {
+          "id": "B",
+          "content": "نعم، لأنّ الترتيب يكبر كلما كبرت الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-RISING"
+        },
+        {
+          "id": "C",
+          "content": "لا، المستقيم الذي يشمل النقط لا يشمل المبدأ $O$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط على استقامة واحدة لكنّ المستقيم لا يشمل المبدأ $O$ ، فليست الوضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "النقط على استقامة واحدة لكنّ المستقيم $(d)$ لا يشمل $O$ .",
+          "إذن المبلغ ليس متناسبا مع الكمية."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "علّل جوابك.",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تعليلك ثم قارنه بالتصحيح النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اذكر الخاصية التي تستعملها: ما شرط التناسبية على النقط؟"
+        }
+      ],
+      "feedback": {
+        "correct": "التعليل يذكر استقامة النقط ومرور المستقيم بالمبدأ $O$ .",
+        "incorrect": "قارن تعليلك بالتصحيح النموذجي، وتأكد أنك ذكرت الشرطين معا."
+      },
+      "solution": {
+        "lines": [
+          "المستقيم $(d)$ يقطع محور التراتيب في النقطة $(0\\,;\\,4)$ وليس في $O$ .",
+          "لو كانت الوضعية تناسبية لكانت الكمية $0$ بمبلغ $0$ ، إذن ليست تناسبية."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "الجزء الثاني:",
+      "statement": "ما المبلغ الثابت المدفوع حتى قبل أخذ أي كمية، بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بالدينار",
+      "expectedAnswer": "400",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-TAMTHIL-ORIGIN-DROP"
+        },
+        {
+          "value": "4",
+          "id": "MISC-TAMTHIL-UNIT-AXIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكمية $0$ تعني الفاصلة $0$ : محور التراتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اتبع المستقيم نحو اليسار ثم حوّل إلى دنانير."
+        }
+      ],
+      "feedback": {
+        "correct": "المستقيم يقطع محور التراتيب عند $4$ مئة دج، أي $400$ دج.",
+        "incorrect": "المستقيم لا يمرّ بالمبدأ: اقرأ الترتيب الحقيقي ثم حوّله إلى دنانير."
+      },
+      "solution": {
+        "lines": [
+          "ترتيب نقطة التقاطع مع محور التراتيب: $4$ مئة دج $= 400$ دج."
+        ],
+        "result": "400\\ \\text{دج}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "ما المبلغ المدفوع (بالدينار) من أجل $10$ كتب؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بالدينار",
+      "expectedAnswer": "900",
+      "misconceptionSignatures": [
+        {
+          "value": "500",
+          "id": "MISC-TAMTHIL-ORIGIN-DROP"
+        },
+        {
+          "value": "9",
+          "id": "MISC-TAMTHIL-UNIT-AXIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ من الفاصلة المعطاة على المحور الأفقي ثم اصعد إلى $(d)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تنس المبلغ الثابت ووحدة المحور."
+        }
+      ],
+      "feedback": {
+        "correct": "الترتيب $9$ مئة دج، أي $900$ دج.",
+        "incorrect": "اقرأ الترتيب على المستقيم نفسه (ولا تتجاهل الرسم الثابت) ثم حوّله إلى دنانير."
+      },
+      "solution": {
+        "lines": [
+          "النقطة من $(d)$ التي فاصلتها $10$ ترتيبها $9$ .",
+          "$9 \\times 100 = 900$ دج."
+        ],
+        "result": "900\\ \\text{دج}"
+      },
+      "work": "optional",
+      "timeSeconds": 100
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "يملك المتبرّع $800$ دج ويريد $8$ كتب. هل يكفيه مبلغه؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لا يكفي: لأنّ الوضعية ليست تناسبية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-EQUAL-ONLY"
+        },
+        {
+          "id": "B",
+          "content": "نعم، يكفي: المبلغ المطلوب $800$ دج لا يتجاوز $800$ دج",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لا، لا يكفي: لأنّ المبلغ يبدو أصغر من الثمن",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-APPROX-DECISION"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الثمن المطلوب بدقّة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارنه بالمبلغ المتوفّر: هل يتجاوزه؟"
+        }
+      ],
+      "feedback": {
+        "correct": "المبلغ المطلوب $800$ دج لا يتجاوز $800$ دج.",
+        "incorrect": "قارن الثمن المحسوب بالمبلغ بدقّة، لا بالتقريب."
+      },
+      "solution": {
+        "lines": [
+          "المبلغ المطلوب: $(0{,}5 \\times 8 + 4) \\times 100 = 800$ دج.",
+          "$800 \\leq 800$ : يكفيه."
+        ]
+      },
+      "timeSeconds": 130
+    }
+  ]
+}

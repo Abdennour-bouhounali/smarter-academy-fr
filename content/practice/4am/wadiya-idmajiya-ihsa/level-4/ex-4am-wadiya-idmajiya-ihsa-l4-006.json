@@ -1,0 +1,184 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ihsa-l4-006",
+  "lessonCode": "wadiya-idmajiya-ihsa",
+  "level": 4,
+  "metadata": {
+    "title": "نصف القسم على الأقل؟",
+    "estimatedMinutes": 9,
+    "tags": [
+      "الوسيط",
+      "التكرار المجمع النازل",
+      "المتوسط المتوازن"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ihsa_P2"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يعطي الجدول الآتي علامات 20 تلميذا في فرض الرياضيات راجعوه معًا بالتعاون:",
+    "table": {
+      "head": [
+        "العلامة",
+        "8",
+        "10",
+        "12",
+        "14",
+        "16"
+      ],
+      "rows": [
+        [
+          "عدد التلاميذ",
+          "3",
+          "4",
+          "6",
+          "5",
+          "2"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن وسيط هذه السلسلة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة إن لزم)",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "11,9",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الرتبتان الوسطيان 10 و 11 ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التكرارات المجمعة الصاعدة: 3 ، 7 ، …"
+        }
+      ],
+      "feedback": {
+        "correct": "الرتبتان 10 و 11 تقعان في العلامة 12 ، فالوسيط 12 .",
+        "incorrect": "حدّد بالتكرارات المجمعة الصاعدة العلامة التي تقع فيها الرتبتان 10 و 11 ."
+      },
+      "solution": {
+        "lines": [
+          "التكرارات المجمعة الصاعدة: 3 ، 7 ، 13 ، 18 ، 20 .",
+          "الرتب من 8 إلى 13 للعلامة 12 .",
+          "$\\dfrac{12 + 12}{2} = 12$"
+        ],
+        "result": "12"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب عدد التلاميذ الذين تحصّلوا على 12 على الأقل. هل يمثّلون نصف القسم على الأقل؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-IHSA-SARAMA"
+        },
+        {
+          "value": "6",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«12 على الأقل» تعني 12 أو 14 أو 16 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 + 5 + 2 = 13$ ، وهو أكبر من 10 : أكثر من نصف القسم.",
+        "incorrect": "اجمع تكرار العلامة 12 وتكرارات العلامات الأكبر منها."
+      },
+      "solution": {
+        "lines": [
+          "$6 + 5 + 2 = 13$",
+          "$13 > 10$ ، أي أكثر من نصف القسم (وهذا متوقّع لأن الوسيط 12)."
+        ],
+        "result": "13"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب متوسط علامات القسم.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة",
+      "expectedAnswer": "11,9",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-IHSA-MUTAWASSIT-BILA-TARJIH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب كل علامة في عدد التلاميذ الموافق."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{8 \\times 3 + 10 \\times 4 + 12 \\times 6 + 14 \\times 5 + 16 \\times 2}{20} = 11{,}9$ .",
+        "incorrect": "المتوسط المتوازن: مجموع (العلامة × التكرار) ÷ 20 ."
+      },
+      "solution": {
+        "lines": [
+          "$8 \\times 3 + 10 \\times 4 + 12 \\times 6 + 14 \\times 5 + 16 \\times 2 = 238$",
+          "$\\dfrac{238}{20} = 11{,}9$"
+        ],
+        "result": "11{,}9"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

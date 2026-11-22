@@ -1,0 +1,159 @@
+{
+  "id": "ex-4am-hasiba-muthallathiya-l4-009",
+  "lessonCode": "hasiba-muthallathiya",
+  "level": 4,
+  "metadata": {
+    "title": "التدوير المبكّر: سارة ويونس",
+    "estimatedMinutes": 8,
+    "tags": [
+      "تدوير مبكّر",
+      "اللمسات العكسية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hasiba-muthallathiya_P3",
+      "modelledOn": "ex-23"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$x$ زاوية حادة حيث $\\cos x = \\dfrac{5}{9}$ . حسبت سارة $\\dfrac{5}{9} \\approx 0{,}56$ ثم ضغطت ⁦ON 2nd cos⁻¹ 0,56 =⁩ ، وضغط يونس ⁦ON 2nd cos⁻¹ ( 5 ÷ 9 ) =⁩ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب قيس $x$ بالتدوير إلى $0{,}1$ (دون تدوير مبكّر).",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: قيس الزاوية بالدرجة، مدوّرا إلى 0,1",
+      "expectedAnswer": "56.3",
+      "misconceptionSignatures": [
+        {
+          "value": "56.2",
+          "id": "MISC-MUTH-TADWIR-BATR"
+        },
+        {
+          "value": "33.7",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "1.0",
+          "id": "MISC-MUTH-HASIBA-RAD"
+        },
+        {
+          "value": "0.6",
+          "id": "MISC-MUTH-NISBA-BADAL-QAYS"
+        },
+        {
+          "value": "55.9",
+          "id": "MISC-MUTH-TADWIR-MUBAKKIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لدينا $\\cos\\,x = \\dfrac{5}{9}$ : نعرف النسبة ونبحث عن القيس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اللمسة العكسية: ⁦2nd⁩ ثم ⁦cos⁻¹⁩ ثم النسبة ثم ⁦=⁩."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الحرف ⁦D⁩ (الدرجة)، ثم دوّر إلى الجزء من 10: انظر إلى الرقم الموالي للرقم الأخير الذي تحتفظ به."
+        }
+      ],
+      "feedback": {
+        "correct": "$x \\approx 56{,}2510114^{\\circ} \\approx 56{,}3^{\\circ}$ .",
+        "incorrect": "النسبة ليست القيس: القيس يُعيَّن باللمسة العكسية المناسبة والحاسبة مبرمجة بالدرجة، ثم يُدوَّر (لا يُبتر) إلى الجزء من 10."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال الحاسبة المبرمجة بالدرجة: ⁦ON 2nd cos⁻¹ ( 5 ÷ 9 ) =⁩ يظهر على الشاشة $56{,}2510114$ .",
+          "الرقم الذي يلي رقم الأجزاء من 10 هو 5، وهو يساوي 5: نضيف 1 إلى رقم الأجزاء من 10."
+        ],
+        "result": "x \\approx 56{,}3^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أيّ الجوابين هو مدوّر $x$ إلى الجزء من 10؟",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "جواب يونس",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "جواب سارة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-TADWIR-MUBAKKIR"
+        },
+        {
+          "id": "C",
+          "content": "الجوابان صحيحان لأن $0{,}56$ مدوّر $\\dfrac{5}{9}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-TADWIR-MUBAKKIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن ما أدخله كل منهما في الحاسبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ماذا يحدث إذا دوّرنا قبل نهاية الحساب؟"
+        }
+      ],
+      "feedback": {
+        "correct": "نحتفظ بالقيمة المضبوطة $\\dfrac{5}{9}$ ولا ندوّر إلا النتيجة النهائية.",
+        "incorrect": "التدوير قبل نهاية الحساب يغيّر النتيجة؛ قارن الطريقتين."
+      },
+      "solution": {
+        "lines": [
+          "يونس أدخل القيمة المضبوطة $\\dfrac{5}{9}$ ودوّر النتيجة النهائية فقط.",
+          "سارة دوّرت $\\dfrac{5}{9}$ إلى $0{,}56$ قبل اللمسة العكسية فوجدت $55{,}94420226$ ، أي $55{,}9^{\\circ}$ بدل $56{,}3^{\\circ}$ .",
+          "التدوير المبكّر يراكم الخطأ: الجواب الصحيح هو جواب يونس."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

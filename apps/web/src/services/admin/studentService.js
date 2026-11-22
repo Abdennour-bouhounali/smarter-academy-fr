@@ -17,3 +17,14 @@ export function changeStudentStatus(token, id, status) {
     'Impossible de changer le statut du compte.',
   ).then((data) => data.student);
 }
+
+/**
+ * Un compte élève créé par l'administrateur. Les noms sont ARABES (le serveur valide, PersonName) ; sans `email`, le
+ * serveur fabrique un identifiant (`login`). Le `password` n'existe QUE dans cette réponse : il se montre une fois.
+ *
+ * @param {{ firstName: string, lastName: string, email?: string, grade?: string }} body
+ * @returns {Promise<{ student: object, login: string, password: string }>}
+ */
+export function createStudent(token, body) {
+  return call('/admin/students', send('POST', token, body), 'Impossible de créer le compte.');
+}

@@ -1,0 +1,185 @@
+{
+  "id": "ex-2am-ibara-harfiya-intaj-l2-010",
+  "lessonCode": "ibara-harfiya-intaj",
+  "level": 2,
+  "metadata": {
+    "title": "أجمع حدّين متشابهين",
+    "estimatedMinutes": 6,
+    "tags": [
+      "حدّان متشابهان",
+      "كتابة مبسّطة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "self-7",
+      "page": 65,
+      "section": "أؤكّد تعلّماتي",
+      "number": 7
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العبارة $E = 38x + 62x$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما الكتابة المبسّطة للعبارة $E = 38x + 62x$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$100x$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$100x^{2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-ADDPOWERS"
+        },
+        {
+          "id": "C",
+          "content": "$2356x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-MULTCOEF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى كلّ حدّ : أيّ علامة × يمكن حذفها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر : $a \\times a = a^{2}$ ، و $1 \\times a = a$ ، و $0 \\times a = 0$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر الكتابة التي اخترتها بقيمة بسيطة للحرف : يجب أن تعطي العدد نفسه الذي تعطيه العبارة الأصليّة."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتابة الصحيحة هي $100x$ .",
+        "incorrect": "جرّب كلّ خيار على قيمة بسيطة للحرف وقارن بالعدّ المباشر قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "$100x$ : $38x + 62x = (38 + 62)x = 100x$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب قيمة $E = 38x + 62x$ من أجل $x = 2{,}5$ .",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "250",
+      "misconceptionSignatures": [
+        {
+          "value": "1005",
+          "id": "MISC-IBARA2-JUXTA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بالقيمة المعطاة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ احترم أولويّة العمليّات : الضرب قبل الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة قبل أن تجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 250$ .",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ أعد الحساب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$38 \\times 2{,}5 + 62 \\times 2{,}5 = 250$ ."
+        ],
+        "result": "250"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب قيمة $E = 38x + 62x$ من أجل $x = 7$ .",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "700",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بالقيمة المعطاة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ احترم أولويّة العمليّات : الضرب قبل الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة قبل أن تجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 700$ .",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ أعد الحساب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$38 \\times 7 + 62 \\times 7 = 700$ ."
+        ],
+        "result": "700"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

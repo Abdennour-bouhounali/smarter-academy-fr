@@ -1,0 +1,136 @@
+{
+  "id": "ex-4am-mafhum-taalufiya-l1-010",
+  "lessonCode": "mafhum-taalufiya",
+  "level": 1,
+  "metadata": {
+    "title": "دالة ثابتة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "دالة ثابتة",
+      "حالة خاصة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "adaptedFrom": "ex-4am-mafhum-taalufiya-l1-010"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الدالة $g$ المعرّفة كما يلي:",
+    "formulas": [
+      "g : x \\longmapsto 9"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما نوع الدالة $g$ ؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "دالة خطية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAALUFI-KHATTIYA-KHALT"
+        },
+        {
+          "id": "B",
+          "content": "دالة ثابتة",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "دالة تآلفية ليست خطية وليست ثابتة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAALUFI-KHATTIYA-KHALT"
+        },
+        {
+          "id": "D",
+          "content": "ليست دالة تآلفية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAALUFI-THABITA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب عبارة الدالة على الشكل $ax + b$ إن أمكن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الدالة الخطية: $b = 0$ ؛ الدالة الثابتة: $a = 0$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$g(x) = 0 \\times x + 9$ : المعامل $a$ معدوم.",
+        "incorrect": "قارن المعاملين $a$ و $b$ بالعدد 0."
+      },
+      "solution": {
+        "lines": [
+          "$g(x) = 9 = 0 \\times x + 9$ من الشكل $ax + b$ حيث $a = 0$ و $b = 9$ .",
+          "إذن $g$ دالة تآلفية، وهي دالة ثابتة ( $a = 0$ )."
+        ],
+        "result": "دالة ثابتة"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $g(-4)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "-36",
+          "id": "MISC-TAALUFI-KHATTIYA-KHALT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عبارة $g(x)$ لا تحتوي على $x$ : ماذا يتغيّر عندما يتغيّر $x$ ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$g(-4) = 9$ : كل الأعداد لها الصورة نفسها.",
+        "incorrect": "عبارة $g(x)$ لا تتعلق بـ $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$g(x) = 9$ مهما كان العدد $x$ .",
+          "$g(-4) = 9$"
+        ],
+        "result": "g(-4) = 9"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

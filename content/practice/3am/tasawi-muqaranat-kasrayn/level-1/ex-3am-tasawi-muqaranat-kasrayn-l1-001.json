@@ -1,0 +1,239 @@
+{
+  "id": "ex-3am-tasawi-muqaranat-kasrayn-l1-001",
+  "lessonCode": "tasawi-muqaranat-kasrayn",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — اختيار الإجابة مع التعليل",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مقارنة عددين",
+      "تعليل"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 3,
+      "file": "3am-s3-47",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اختر الإجابة الصحيحة مع التعليل. إذا كان $a = \\dfrac{3}{2}$ و $b = \\dfrac{4}{3}$ فإنّ :"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ العبارات التالية صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$a - b > 0$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$a - b < 0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-NUMERATORS"
+        },
+        {
+          "id": "C",
+          "content": "$a - b = 0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-ADDSAME"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الخيارات واحسب كلاّ منها بدل أن تخمّن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ خيار على الأعداد الواردة فيه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بالجداءين المتصالبين أو بمقام مشترك، ثمّ قرّر."
+        }
+      ],
+      "feedback": {
+        "correct": "$a - b > 0$ لأنّ $\\dfrac{3}{2} > \\dfrac{4}{3}$ .",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$a = \\dfrac{3}{2} = \\dfrac{9}{6}$ و $b = \\dfrac{4}{3} = \\dfrac{8}{6}$ .",
+          "$\\dfrac{9}{6} > \\dfrac{8}{6}$ ، إذن $a > b$ أي $a - b > 0$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "علّل جوابك.",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجب أن تبرّره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل الجداءين المتصالبين أو مقامًا مشتركًا، وسمِّ الطريقة التي اخترتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$9 > 8$ ، إذن $\\dfrac{3}{2} > \\dfrac{4}{3}$ أي $a - b > 0$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "نقارن الجداءين المتصالبين: $3 \\times 3 = 9$ و $2 \\times 4 = 8$ .",
+          "$9 > 8$ ، إذن $\\dfrac{3}{2} > \\dfrac{4}{3}$ أي $a - b > 0$ ."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "جد العدد $x$ حيث $\\dfrac{3}{2} = \\dfrac{x}{6}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-TASAWI-ADDSAME"
+        },
+        {
+          "value": "4",
+          "id": "MISC-TASAWI-CROSSWRONG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في أيّ موضع يوجد العدد المجهول؟ وما الكسر الآخر في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كسران متساويان جداءاهما المتصالبان متساويان: اكتب المعادلة المناسبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة كتابة المساواة بعد التعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 9$ لأنّ $3 \\times 6 = 2 \\times x$ .",
+        "incorrect": "كسران متساويان جداءاهما المتصالبان متساويان: اكتب المعادلة بدقّة وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{2} = \\dfrac{x}{6}$ ، إذن $3 \\times 6 = 2 \\times x$ .",
+          "$x = 9$ ."
+        ],
+        "result": "x = 9"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "جد العدد $x$ حيث $\\dfrac{4}{3} = \\dfrac{x}{6}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-TASAWI-ADDSAME"
+        },
+        {
+          "value": "9/2",
+          "id": "MISC-TASAWI-CROSSWRONG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في أيّ موضع يوجد العدد المجهول؟ وما الكسر الآخر في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كسران متساويان جداءاهما المتصالبان متساويان: اكتب المعادلة المناسبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة كتابة المساواة بعد التعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 8$ لأنّ $4 \\times 6 = 3 \\times x$ .",
+        "incorrect": "كسران متساويان جداءاهما المتصالبان متساويان: اكتب المعادلة بدقّة وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{4}{3} = \\dfrac{x}{6}$ ، إذن $4 \\times 6 = 3 \\times x$ .",
+          "$x = 8$ ."
+        ],
+        "result": "x = 8"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

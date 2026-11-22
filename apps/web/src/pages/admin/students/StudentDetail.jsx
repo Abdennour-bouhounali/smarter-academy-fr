@@ -1,28 +1,30 @@
-import React, { useCallback, useContext, useState } from 'react';
+import { useCallback, useContext, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link, useParams } from 'react-router-dom';
-import { ArrowLeft, CircleCheckBig, Dumbbell, Target, Percent } from 'lucide-react';
-import AdminPage from '../../../components/admin/AdminPage';
+import { CircleCheckBig, Dumbbell, Target, Percent } from 'lucide-react';
+import { ArrowBack } from '../../../components/common/DirectionalIcons';
+import { AdminPage, useAdminLabels, formatDate, Num, btnSecondary, btnGhost } from '../adminUi';
 import StatTile from '../../../components/common/StatTile';
 import StatusBadge from '../../../components/admin/ui/StatusBadge';
 import DataTable from '../../../components/admin/ui/DataTable';
 import { LoadingState, ErrorState, EmptyState, MetricUnavailable } from '../../../components/admin/ui/states';
 import { ConfirmDialog } from '../../../components/admin/ui/Modal';
+import CommercialPanel from '../../../components/admin/commercial/CommercialPanel';
+import FeatureUsagePanel from '../../../components/admin/commercial/FeatureUsagePanel';
+import DeleteUserSection from '../../../components/admin/DeleteUserSection';
 import { AuthContext } from '../../../context/AuthContext';
 import { useAdminResource } from '../../../hooks/useAdminResource';
 import { fetchStudent, changeStudentStatus } from '../../../services/admin/studentService';
 import { useDocumentMeta } from '../../../hooks/useDocumentMeta';
 
-const dateFormat = new Intl.DateTimeFormat('fr-FR', { dateStyle: 'medium', timeStyle: 'short' });
-const formatDate = (value) => (value ? dateFormat.format(new Date(value)) : '—');
-
-const MASTERY_LABELS = { mastered: 'Maîtrisé', reinforce: 'À consolider', gap: 'En difficulté', unassessed: 'Non évalué' };
-
 export default function AdminStudentDetail() {
+  const { t } = useTranslation('admin');
+  const L = useAdminLabels();
   const { id } = useParams();
-  useDocumentMeta(`Élève #${id} — Administration`);
+  useDocumentMeta(t('students.detailMetaTitle', { id }));
 
   const { token } = useContext(AuthContext);
-  const loader = useCallback((t) => fetchStudent(t, id), [id]);
+  const loader = useCallback((tok) => fetchStudent(tok, id), [id]);
   const { data: student, loading, error, reload, setData } = useAdminResource(loader, [loader]);
 
   const [pendingStatus, setPendingStatus] = useState(null);
@@ -43,43 +45,48 @@ export default function AdminStudentDetail() {
   const strong = student?.mastery?.filter((m) => m.status === 'mastered') ?? [];
   const weak = student?.mastery?.filter((m) => m.status === 'gap') ?? [];
 
+  // Le libellé du bouton d'état ET celui du dialogue viennent du même endroit :
+  // deux vocabulaires pour la même action sèmeraient le doute.
+  const statusActionLabel = (value) => (
+    value === 'active' ? t('students.reactivate')
+      : value === 'suspended' ? t('students.suspend')
+        : t('students.disable')
+  );
+
   return (
     <AdminPage
-      eyebrow="Élève"
-      title={student ? ([student.firstName, student.lastName].filter(Boolean).join(' ') || student.email) : `Élève #${id}`}
+      eyebrow={t('students.detailEyebrow')}
+      title={student ? ([student.firstName, student.lastName].filter(Boolean).join(' ') || student.email) : t('students.detailTitleFallback', { id })}
       subtitle={student?.email}
       actions={(
-        <Link
-          to="/admin/eleves"
-          className="inline-flex items-center gap-1.5 rounded-lg border border-slate-300 bg-white px-3 py-2 font-inter text-xs font-semibold text-slate-700 hover:bg-slate-50"
-        >
-          <ArrowLeft size={14} /> Tous les élèves
+        <Link to="/admin/eleves" className={btnSecondary}>
+          <ArrowBack size={14} /> {t('students.backToList')}
         </Link>
       )}
     >
-      {loading && <LoadingState label="Chargement du dossier…" />}
-      {error && <ErrorState message={error} onRetry={reload} />}
+      {loading && <LoadingState label={t('common.loadingData')} />}
+      {error && <ErrorState message={error} onRetry={reload} retryLabel={L.table.retry} />}
 
       {student && (
         <div className="space-y-6">
           <section className="grid gap-5 lg:grid-cols-3">
             <div className="rounded-xl border border-slate-200 bg-white p-4 lg:col-span-2">
-              <h2 className="mb-3 font-space text-sm font-bold text-slate-900">Compte</h2>
+              <h2 className="mb-3 font-space text-sm font-bold text-slate-900">{t('students.accountSection')}</h2>
               <dl className="grid grid-cols-2 gap-3 font-inter text-sm">
-                <Info label="Email">{student.email}</Info>
-                <Info label="Classe">{student.grade ?? '—'}</Info>
-                <Info label="Inscrit le">{formatDate(student.createdAt)}</Info>
-                <Info label="Dernière activité">{formatDate(student.lastActivityAt)}</Info>
-                <Info label="État"><StatusBadge status={student.accountStatus} /></Info>
-                <Info label="Abonnement">
+                <Info label={t('common.email')}><span dir="ltr">{student.email}</span></Info>
+                <Info label={t('students.columnGrade')}>{student.grade ?? t('common.dash')}</Info>
+                <Info label={t('students.columnRegistered')}>{formatDate(student.createdAt)}</Info>
+                <Info label={t('students.columnLastActivity')}>{formatDate(student.lastActivityAt)}</Info>
+                <Info label={t('common.status')}><StatusBadge status={student.accountStatus} /></Info>
+                <Info label={t('students.columnSubscription')}>
                   {student.subscription
                     ? <StatusBadge status={student.subscription.status} />
-                    : <span className="text-slate-400">Aucun</span>}
+                    : <span className="text-slate-400">{t('common.none')}</span>}
                 </Info>
               </dl>
 
               <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-slate-100 pt-3">
-                <span className="font-inter text-xs text-slate-500">Changer l’état du compte :</span>
+                <span className="font-inter text-xs text-slate-500">{t('students.changeStatus')}</span>
                 {['active', 'suspended', 'disabled']
                   .filter((value) => value !== student.accountStatus)
                   .map((value) => (
@@ -87,58 +94,65 @@ export default function AdminStudentDetail() {
                       key={value}
                       type="button"
                       onClick={() => setPendingStatus(value)}
-                      className="rounded-lg border border-slate-300 px-3 py-1.5 font-inter text-xs font-semibold text-slate-700 hover:bg-slate-50"
+                      className={btnGhost}
                     >
-                      {value === 'active' ? 'Réactiver' : value === 'suspended' ? 'Suspendre' : 'Désactiver'}
+                      {statusActionLabel(value)}
                     </button>
                   ))}
               </div>
             </div>
 
             <div className="rounded-xl border border-slate-200 bg-white p-4">
-              <h2 className="mb-3 font-space text-sm font-bold text-slate-900">Abonnement</h2>
+              <h2 className="mb-3 font-space text-sm font-bold text-slate-900">{t('students.columnSubscription')}</h2>
               {student.subscription ? (
                 <dl className="space-y-2 font-inter text-sm">
-                  <Info label="Formule">{student.subscription.plan}</Info>
-                  <Info label="Début">{formatDate(student.subscription.startedAt)}</Info>
-                  <Info label="Fin">{formatDate(student.subscription.endsAt)}</Info>
-                  <Info label="Fournisseur">{student.subscription.provider ?? '—'}</Info>
+                  <Info label={t('students.planLabel')}>{student.subscription.plan}</Info>
+                  <Info label={t('students.startsAt')}>{formatDate(student.subscription.startedAt)}</Info>
+                  <Info label={t('students.endsAt')}>{formatDate(student.subscription.endsAt)}</Info>
                 </dl>
               ) : (
                 <p className="font-inter text-xs text-slate-500">
-                  Aucun abonnement. Aucun système de paiement n’est intégré pour l’instant :
-                  ces informations apparaîtront quand il le sera.
+                  {t('students.noSubscriptionHint')}
                 </p>
               )}
             </div>
           </section>
 
+          {/* L'état COMMERCIAL, partagé avec la fiche enseignant : activer une
+              offre après règlement hors plateforme, envoyer un code, traiter
+              une demande, piloter l'abonnement. */}
           <section>
-            <h2 className="mb-3 font-space text-lg font-bold text-slate-900">Apprentissage</h2>
+            <h2 className="mb-3 font-space text-lg font-bold text-slate-900">{t('students.offerSection')}</h2>
+            <CommercialPanel role="students" userId={id} planType="student" onChanged={reload} />
+            <FeatureUsagePanel userId={id} />
+          </section>
+
+          <section>
+            <h2 className="mb-3 font-space text-lg font-bold text-slate-900">{t('students.progressSection')}</h2>
             <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-              <StatTile icon={CircleCheckBig} value={learning.lessonsCompleted} label="Leçons terminées" accent="bg-emerald-50 text-emerald-600" hint={`${learning.lessonsStarted} commencée(s)`} />
-              <StatTile icon={Target} value={learning.modulesCompleted} label="Modules terminés" accent="bg-blue-50 text-blue-600" />
-              <StatTile icon={Dumbbell} value={learning.questionsAnswered} label="Questions répondues" accent="bg-violet-50 text-violet-600" hint={`${learning.hintsUsed} indice(s)`} />
+              <StatTile icon={CircleCheckBig} value={learning.lessonsCompleted} label={t('students.lessonsCompleted')} accent="bg-emerald-50 text-emerald-600" hint={t('students.lessonsStartedHint', { count: learning.lessonsStarted })} />
+              <StatTile icon={Target} value={learning.modulesCompleted} label={t('students.modulesCompleted')} accent="bg-blue-50 text-blue-600" />
+              <StatTile icon={Dumbbell} value={learning.questionsAnswered} label={t('students.questionsAnswered')} accent="bg-violet-50 text-violet-600" hint={t('students.hintsUsedHint', { count: learning.hintsUsed })} />
               {learning.successRate === null ? (
-                <MetricUnavailable label="Taux de réussite" reason="no_data" />
+                <MetricUnavailable label={t('students.successRate')} reason="no_data" />
               ) : (
-                <StatTile icon={Percent} value={`${learning.successRate}%`} label="Taux de réussite" accent="bg-amber-50 text-amber-600" />
+                <StatTile icon={Percent} value={`${learning.successRate}%`} label={t('students.successRate')} accent="bg-amber-50 text-amber-600" />
               )}
             </div>
           </section>
 
           <section className="grid gap-5 lg:grid-cols-2">
             <div className="rounded-xl border border-slate-200 bg-white p-4">
-              <h2 className="mb-2 font-space text-sm font-bold text-slate-900">Points en difficulté</h2>
-              <p className="mb-3 font-inter text-xs text-slate-500">Dérivé de la maîtrise déjà calculée, jamais saisi à la main.</p>
+              <h2 className="mb-2 font-space text-sm font-bold text-slate-900">{t('students.gapsTitle')}</h2>
+              <p className="mb-3 font-inter text-xs text-slate-500">{t('students.gapsHint')}</p>
               {weak.length === 0 ? (
-                <p className="py-3 font-inter text-xs text-slate-400">Aucun point en difficulté identifié.</p>
+                <p className="py-3 font-inter text-xs text-slate-400">{t('students.gapsEmpty')}</p>
               ) : (
                 <ul className="divide-y divide-slate-100">
                   {weak.slice(0, 10).map((m) => (
                     <li key={m.code} className="flex items-center justify-between gap-3 py-2">
                       <span className="min-w-0 flex-1 truncate font-inter text-xs text-slate-700">{m.title}</span>
-                      <span className="shrink-0 font-inter text-xs tabular-nums text-slate-400">{m.correctCount}/{m.attempts}</span>
+                      <Num className="shrink-0 font-inter text-xs tabular-nums text-slate-400">{m.correctCount}/{m.attempts}</Num>
                     </li>
                   ))}
                 </ul>
@@ -146,16 +160,16 @@ export default function AdminStudentDetail() {
             </div>
 
             <div className="rounded-xl border border-slate-200 bg-white p-4">
-              <h2 className="mb-2 font-space text-sm font-bold text-slate-900">Points maîtrisés</h2>
-              <p className="mb-3 font-inter text-xs text-slate-500">{strong.length} point(s) au total.</p>
+              <h2 className="mb-2 font-space text-sm font-bold text-slate-900">{t('students.masteredTitle')}</h2>
+              <p className="mb-3 font-inter text-xs text-slate-500">{t('students.masteredCount', { count: strong.length })}</p>
               {strong.length === 0 ? (
-                <p className="py-3 font-inter text-xs text-slate-400">Aucun point maîtrisé pour l’instant.</p>
+                <p className="py-3 font-inter text-xs text-slate-400">{t('students.masteredEmpty')}</p>
               ) : (
                 <ul className="divide-y divide-slate-100">
                   {strong.slice(0, 10).map((m) => (
                     <li key={m.code} className="flex items-center justify-between gap-3 py-2">
                       <span className="min-w-0 flex-1 truncate font-inter text-xs text-slate-700">{m.title}</span>
-                      <StatusBadge status="published" label={MASTERY_LABELS.mastered} />
+                      <StatusBadge status="published" label={t('students.masteryMastered')} />
                     </li>
                   ))}
                 </ul>
@@ -164,39 +178,43 @@ export default function AdminStudentDetail() {
           </section>
 
           <section>
-            <h2 className="mb-3 font-space text-lg font-bold text-slate-900">Progression par leçon</h2>
+            <h2 className="mb-3 font-space text-lg font-bold text-slate-900">{t('students.perLessonSection')}</h2>
             <DataTable
               rows={student.progress ?? []}
               rowKey={(row) => row.lessonCode}
-              empty={<EmptyState title="Aucune leçon commencée" />}
+              labels={L.table}
+              selectionLabel={(row) => L.selectRow(row.lessonTitle ?? row.lessonCode)}
+              empty={<EmptyState title={t('students.noLessonStarted')} />}
               columns={[
-                { key: 'lessonTitle', label: 'Leçon', render: (p) => p.lessonTitle ?? p.lessonCode },
-                { key: 'status', label: 'État', render: (p) => <StatusBadge status={p.status === 'completed' ? 'resolved' : 'in_review'} label={p.status === 'completed' ? 'Terminée' : 'En cours'} /> },
-                { key: 'completedModules', label: 'Modules faits', render: (p) => (p.completedModules?.length ?? 0) },
-                { key: 'lastActivityAt', label: 'Dernière activité', render: (p) => formatDate(p.lastActivityAt) },
+                { key: 'lessonTitle', label: t('students.columnLesson'), render: (p) => p.lessonTitle ?? p.lessonCode },
+                { key: 'status', label: t('common.status'), render: (p) => <StatusBadge status={p.status === 'completed' ? 'resolved' : 'in_review'} label={p.status === 'completed' ? t('students.lessonDone') : t('students.lessonOngoing')} /> },
+                { key: 'completedModules', label: t('students.columnModulesDone'), render: (p) => <Num>{p.completedModules?.length ?? 0}</Num> },
+                { key: 'lastActivityAt', label: t('students.columnLastActivity'), render: (p) => formatDate(p.lastActivityAt) },
               ]}
             />
           </section>
 
           <section>
-            <h2 className="mb-3 font-space text-lg font-bold text-slate-900">Chronologie</h2>
+            <h2 className="mb-3 font-space text-lg font-bold text-slate-900">{t('students.timelineSection')}</h2>
             {student.timeline?.length === 0 ? (
-              <EmptyState title="Aucun événement" hint="Cet élève n’a pas encore d’activité enregistrée." />
+              <EmptyState title={t('students.timelineEmptyTitle')} hint={t('students.timelineEmptyHint')} />
             ) : (
               <ol className="space-y-2">
                 {student.timeline.map((event, index) => (
                   <li key={index} className="flex items-start gap-3 rounded-xl border border-slate-200 bg-white p-3">
                     <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-500" />
                     <div className="min-w-0 flex-1">
-                      <p className="font-inter text-xs font-semibold text-slate-800">{event.lesson ?? '—'}</p>
+                      <p className="font-inter text-xs font-semibold text-slate-800">{event.lesson ?? t('common.dash')}</p>
                       <p className="font-inter text-xs text-slate-500">{event.detail}</p>
                     </div>
-                    <span className="shrink-0 font-inter text-xs text-slate-400">{formatDate(event.at)}</span>
+                    <span className="shrink-0 font-inter text-xs text-slate-400">{formatDate(event.at, { withTime: true })}</span>
                   </li>
                 ))}
               </ol>
             )}
           </section>
+
+          <DeleteUserSection user={student} role="student" backTo="/admin/eleves" />
         </div>
       )}
 
@@ -206,20 +224,25 @@ export default function AdminStudentDetail() {
         onConfirm={applyStatus}
         busy={busy}
         tone={pendingStatus === 'active' ? 'default' : 'danger'}
+        cancelLabel={L.dialog.cancelLabel}
+        busyLabel={L.dialog.busyLabel}
+        closeLabel={L.dialog.closeLabel}
         title={
-          pendingStatus === 'active' ? 'Réactiver ce compte ?'
-            : pendingStatus === 'suspended' ? 'Suspendre ce compte ?'
-              : 'Désactiver ce compte ?'
+          pendingStatus === 'active' ? t('students.confirmReactivateTitle')
+            : pendingStatus === 'suspended' ? t('students.confirmSuspendTitle')
+              : t('students.confirmDisableTitle')
         }
-        confirmLabel={pendingStatus === 'active' ? 'Réactiver' : pendingStatus === 'suspended' ? 'Suspendre' : 'Désactiver'}
+        confirmLabel={statusActionLabel(pendingStatus)}
         message={
           pendingStatus === 'active'
-            ? <p>L’élève retrouvera immédiatement l’accès à la plateforme.</p>
+            ? <p>{t('students.confirmReactivateMessage')}</p>
             : (
               <p>
-                L’élève ne pourra plus se connecter{pendingStatus === 'disabled' ? ', et ses sessions en cours seront fermées' : ''}.
-                {' '}<strong>Aucune donnée d’apprentissage n’est supprimée</strong> : sa progression, ses tentatives et sa maîtrise
-                sont conservées et lui reviendront intactes si le compte est réactivé.
+                {pendingStatus === 'disabled'
+                  ? t('students.confirmDisableMessage')
+                  : t('students.confirmSuspendMessage')}
+                {' '}<strong>{t('students.confirmDataKeptStrong')}</strong>{' '}
+                {t('students.confirmDataKeptRest')}
               </p>
             )
         }

@@ -1,0 +1,383 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-harfi-l5-002",
+  "lessonCode": "wadiya-idmajiya-harfi",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2015 — مساحة خضراء وساحة مبلّطة",
+    "estimatedMinutes": 19,
+    "tags": [
+      "نمذجة",
+      "عامل مشترك",
+      "نشر",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-harfi_P2",
+      "modelledOn": "BEM 2015 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "حرصًا على نظافة المدينة وجمالها، تهيّئ بلدية بمدينة سكيكدة قطعة أرض مستطيلة الشكل $ABCD$ حيث $AB = (x + 10)$ m و $AD = (x + 2)$ m ، مع $x$ عدد موجب. $M$ نقطة من الضلع $[DC]$ حيث $DM = x$ m . يُهيّأ الجزء $ABMD$ مساحةً خضراء (مساحته $f$)، والجزء المثلث $BCM$ ساحةً مبلّطة (مساحته $g$)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "عبّر بدلالة $x$ عن المساحة $g$ للساحة المبلّطة.",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $g$ على الشكل $mx + n$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-NAMDHAJA-MISAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$MC = DC - DM$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المثلث $BCM$ قائم في $C$ : مساحته نصف جداء ضلعيه القائمين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انشر وبسّط."
+        }
+      ],
+      "feedback": {
+        "correct": "$g = 5x + 10$ إذن $m = 5$ .",
+        "incorrect": "عبّر عن الأطوال بدلالة $x$ أولا، ثم طبّق قاعدة المساحة أو المحيط، وانشر وبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$MC = (x + 10) - x = 10$ و $BC = x + 2$",
+          "$g = \\dfrac{10(x + 2)}{2} = 5(x + 2)$"
+        ],
+        "result": "g = 5x + 10"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ا",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $g$ على الشكل $mx + n$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-NAMDHAJA-MISAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بعد الحساب، اقرأ العدد $n$ في الشكل المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$g = 5x + 10$ إذن $n = 10$ .",
+        "incorrect": "عبّر عن الأطوال بدلالة $x$ أولا، ثم طبّق قاعدة المساحة أو المحيط، وانشر وبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$g = 5x + 10$"
+        ],
+        "result": "n = 10"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ب",
+      "statement": "بيّن أنّ: $f = (x + 10)(x + 2) - 5(x + 2)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$f$ = مساحة المستطيل $ABCD$ − مساحة المثلث $BCM$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك سطرًا بسطر بالحل النموذجي، وانتبه إلى الإشارات عند النشر."
+      },
+      "solution": {
+        "lines": [
+          "مساحة المستطيل $ABCD$ : $(x + 10)(x + 2)$",
+          "$f = (x + 10)(x + 2) - g = (x + 10)(x + 2) - 5(x + 2)$"
+        ],
+        "result": "f = (x + 10)(x + 2) - 5(x + 2)"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "statement": "حلّل العبارة $f$ — العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $f$ على الشكل $(x + 2)(x + m)$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-TAHLIL-ISHARA-QAWS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن العامل المشترك بين حدّي العبارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرجه، واكتب ما تبقّى من كل حد بين قوسين مع إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بسّط ما بداخل القوس الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "$f = (x + 2)(x + 5)$ إذن $m = 5$ .",
+        "incorrect": "تحقّق من تحليلك بنشر الجداء: يجب أن تجد العبارة الأصلية."
+      },
+      "solution": {
+        "lines": [
+          "$f = (x + 2)[(x + 10) - 5]$"
+        ],
+        "result": "f = (x + 2)(x + 5)"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "انشر و بسّط العبارة $f$ — العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $f$ على الشكل $x^2 + mx + n$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب كل حد من القوس الأول في كل حد من القوس الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى الإشارات، ولا تنسَ تغيير الإشارات عند حذف قوسين مسبوقين بالإشارة −."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$f = x^2 + 7x + 10$ إذن $m = 7$ .",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$f = (x + 2)(x + 5) = x^2 + 5x + 2x + 10$"
+        ],
+        "result": "f = x^2 + 7x + 10"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ب",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $f$ على الشكل $x^2 + mx + n$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-TABSIT-GHAYR-MUTASHABIH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بعد الحساب، اقرأ العدد $n$ في الشكل المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$f = x^2 + 7x + 10$ إذن $n = 10$ .",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$f = x^2 + 7x + 10$"
+        ],
+        "result": "n = 10"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "lead": "مساعدة: $x^2 - 8x - 20 = (x - 10)(x + 2)$ .",
+      "statement": "جد قيمة $x$ التي تكون من أجلها مساحة المساحة الخضراء ثلاثة أضعاف مساحة الساحة المبلّطة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المعادلة $f = 3g$ مستعملا الشكلين المنشورين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل كل الحدود إلى طرف واحد، ثم استعمل المساعدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 10$ .",
+        "incorrect": "اكتب المعادلة $f = 3g$ ، ثم اجعل طرفها الثاني معدوما واستعمل المساعدة؛ احتفظ بالحلّ الموجب."
+      },
+      "solution": {
+        "lines": [
+          "$f = 3g$ يعني $x^2 + 7x + 10 = 15x + 30$",
+          "أي $x^2 - 8x - 20 = 0$ ، أي $(x - 10)(x + 2) = 0$",
+          "$x = 10$ أو $x = -2$ ، و $x$ موجب"
+        ],
+        "result": "x = 10"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q8",
+      "step": "04",
+      "statement": "☜ ثمن المتر المربع من العشب الطبيعي 950DA . ما تكلفة تعشيب المساحة الخضراء في هذه الحالة؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المبلغ بـ DA",
+      "expectedAnswer": "171000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $f$ من أجل القيمة التي وجدتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الشكل المحلّل يُسهّل الحساب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب المساحة في ثمن المتر المربع."
+        }
+      ],
+      "feedback": {
+        "correct": "$171000DA$ .",
+        "incorrect": "أعد قراءة المعطيات، واحسب كل كمية على حدة ثم اجمع."
+      },
+      "solution": {
+        "lines": [
+          "$f = (10 + 2)(10 + 5) = 12 \\times 15 = 180\\,m^2$",
+          "التكلفة $= 180 \\times 950$"
+        ],
+        "result": "171000DA"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    }
+  ]
+}

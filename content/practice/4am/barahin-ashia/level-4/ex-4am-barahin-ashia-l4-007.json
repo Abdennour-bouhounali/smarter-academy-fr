@@ -1,0 +1,79 @@
+{
+  "id": "ex-4am-barahin-ashia-l4-007",
+  "lessonCode": "barahin-ashia",
+  "level": 4,
+  "generator": {
+    "tool": "gen-barahin.mjs",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — ثلاثة حدود بترتيب آخر",
+    "estimatedMinutes": 3,
+    "tags": [
+      "علاقة شال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_barahin-ashia_P1",
+      "modelledOn": "ex-20"
+    }
+  },
+  "statement": {
+    "content": "A و B و C و D أربع نقط."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "$\\overrightarrow{AB}$ + $\\overrightarrow{DC}$ + $\\overrightarrow{BD}$ يساوي:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{AC}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{CA}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-AKS"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{AD}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-RABT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أي حدّ يبدأ من B ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب الحدود لتتتابع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\overrightarrow{AB} + \\overrightarrow{BD} + \\overrightarrow{DC}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AB} + \\overrightarrow{BD} + \\overrightarrow{DC} = \\overrightarrow{AC}$ .",
+        "incorrect": "رتّب الحدود: من A إلى B ثم إلى D ثم إلى C ."
+      }
+    }
+  ]
+}

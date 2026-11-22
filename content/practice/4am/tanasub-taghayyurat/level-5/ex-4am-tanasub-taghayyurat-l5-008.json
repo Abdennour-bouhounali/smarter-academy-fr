@@ -1,0 +1,349 @@
+{
+  "id": "ex-4am-tanasub-taghayyurat-l5-008",
+  "lessonCode": "tanasub-taghayyurat",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2017 — امتلاء سد بولاية ميلة",
+    "estimatedMinutes": 14,
+    "tags": [
+      "وضعية إدماجية",
+      "سد",
+      "تعيين دالة تآلفية",
+      "تناسب التغيّرات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tanasub-taghayyurat_P2",
+      "modelledOn": "BEM 2017 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2017",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "بعد تساقط أمطار غزيرة على ولاية ميلة، ارتفع حجم الماء في أحد سدودها بانتظام. في اليوم الثالث من بداية التساقط بلغ حجم الماء في السد 41 مليون $m^3$ ، وفي اليوم العاشر بلغ 62 مليون $m^3$ .\nنرمز بـ $V(x)$ إلى حجم الماء (بملايين $m^3$) في اليوم $x$ ، و $V$ دالة تآلفية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عيّن العبارة الجبرية للدالة $V$ .",
+      "statement": "أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "21",
+          "id": "MISC-TAGHAYYUR-BIDUN-QISMA"
+        },
+        {
+          "value": "-3",
+          "id": "MISC-TAGHAYYUR-TARTIB"
+        },
+        {
+          "value": "1/3",
+          "id": "MISC-BAYANI-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خاصية تناسب التغيّرات: المعامل $a$ هو حاصل قسمة فرق الصورتين على فرق العددين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $\\dfrac{V(10) - V(3)}{10 - 3}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح بالترتيب نفسه في البسط والمقام، وانتبه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{21}{7} = 3$ .",
+        "incorrect": "اقسم فرق الصورتين على فرق العددين، واطرح بالترتيب نفسه في البسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "العبارة الجبرية للدالة التآلفية $V$ هي: $V(x) = ax + b$ .",
+          "إيجاد العدد $a$ (خاصية تناسب التغيّرات):",
+          "$a = \\dfrac{V(x_2) - V(x_1)}{x_2 - x_1}$",
+          "$a = \\dfrac{62 - 41}{10 - 3}$",
+          "$a = \\dfrac{21}{7}$",
+          "$a = 3$"
+        ],
+        "result": "a = 3"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "32",
+      "misconceptionSignatures": [
+        {
+          "value": "41/3",
+          "id": "MISC-TAGHAYYUR-B-NISBA"
+        },
+        {
+          "value": "3",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$V(3) = 41$ و $V(x) = ax + b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $a$ بقيمته و $x$ بالعدد $3$ ، ثم حلّ المعادلة التي مجهولها $b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$b = 41 - 9 = 32$ .",
+        "incorrect": "بعد حساب $a$ : $b = V(x_1) - a x_1$ ، وليس حاصل قسمة الصورة على العدد."
+      },
+      "solution": {
+        "lines": [
+          "إيجاد العدد $b$ (الترتيب إلى المبدأ):",
+          "لدينا: $V(3) = 41$",
+          "أي: $3 \\times 3 + b = 41$",
+          "$9 + b = 41$",
+          "$b = 41 - 9$",
+          "$b = 32$",
+          "ومنه العبارة الجبرية للدالة $V$ هي: $V(x) = 3x + 32$"
+        ],
+        "result": "V(x) = 3x + 32"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "ماذا يمثّل المعامل $a$ في هذه الوضعية؟",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الزيادة اليومية لحجم الماء في السد",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "حجم الماء في السد قبل بداية التساقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $V(x + 1) - V(x)$ بخاصية تناسب التغيّرات."
+        }
+      ],
+      "feedback": {
+        "correct": "$V(x + 1) - V(x) = a$ : ما يُضاف كل يوم.",
+        "incorrect": "فرق الحجمين بين يومين متتاليين يساوي $a$ ."
+      },
+      "solution": {
+        "lines": [
+          "حسب خاصية تناسب التغيّرات: $V(x + 1) - V(x) = a \\times 1 = a$",
+          "إذن $a$ هو الزيادة اليومية لحجم الماء (بملايين $m^3$)."
+        ],
+        "result": "الزيادة اليومية لحجم الماء في السد"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "بكم يزداد حجم الماء خلال 5 أيام؟",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الزيادة بملايين $m^3$",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-TAGHAYYUR-BIDUN-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خاصية تناسب التغيّرات: فرق صورتين يساوي $a$ مضروبا في فرق العددين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الفرق بين العددين، ثم اضربه في المعامل $a$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 \\times 5 = 15$ .",
+        "incorrect": "فرق الصورتين يساوي المعامل $a$ مضروبا في فرق العددين، لا المعامل وحده."
+      },
+      "solution": {
+        "lines": [
+          "حسب خاصية تناسب التغيّرات: $V(x_2) - V(x_1) = a(x_2 - x_1)$",
+          "$V(15) - V(10) = 3 \\times (15 - 10)$",
+          "$V(15) - V(10) = 3 \\times 5 = 15$"
+        ],
+        "result": "15"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "في أي يوم يبلغ حجم الماء في السد 80 مليون $m^3$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: رقم اليوم",
+      "expectedAnswer": "16",
+      "misconceptionSignatures": [
+        {
+          "value": "80/3",
+          "id": "MISC-TAALUFI-SABIQ-QISMA"
+        },
+        {
+          "value": "-16/3",
+          "id": "MISC-TAALUFI-SABIQ-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة $V(x) = 80$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل الحدّ الثابت إلى الطرف الآخر أولا، ثم اقسم على المعامل."
+        }
+      ],
+      "feedback": {
+        "correct": "$3x = 48$ ، إذن $x = \\dfrac{48}{3}$ .",
+        "incorrect": "اطرح الحدّ الثابت من الطرفين أولا، ثم اقسم على المعامل."
+      },
+      "solution": {
+        "lines": [
+          "نحلّ المعادلة: $V(x) = 80$",
+          "$3x + 32 = 80$",
+          "$3x = 80 - 32$",
+          "$3x = 48$",
+          "$x = \\dfrac{48}{3}$",
+          "$x = 16$"
+        ],
+        "result": "x = 16"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "lead": "سعة السد 100 مليون $m^3$ ، وتُفتح بوابات التفريغ عندما يبلغ حجم الماء 95% من السعة.",
+      "statement": "☜ في أي يوم تُفتح بوابات التفريغ؟",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: رقم اليوم",
+      "expectedAnswer": "21",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب 95% من السعة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المعادلة $V(x) = 95$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$95\\%$ من 100 هو 95، و $3x + 32 = 95$ .",
+        "incorrect": "احسب 95% من السعة ثم حلّ $V(x) = $ هذا الحجم."
+      },
+      "solution": {
+        "lines": [
+          "$100 \\times \\dfrac{95}{100} = 95$ أي 95 مليون $m^3$ .",
+          "$3x + 32 = 95$",
+          "$3x = 63$",
+          "$x = 21$",
+          "تُفتح البوابات في اليوم 21."
+        ],
+        "result": "اليوم 21"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

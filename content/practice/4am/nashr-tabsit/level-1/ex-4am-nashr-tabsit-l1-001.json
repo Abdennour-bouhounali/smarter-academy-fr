@@ -1,0 +1,387 @@
+{
+  "id": "ex-4am-nashr-tabsit-l1-001",
+  "lessonCode": "nashr-tabsit",
+  "level": 1,
+  "metadata": {
+    "title": "انشر وبسّط — عدد في مجموع أو فرق",
+    "estimatedMinutes": 14,
+    "tags": [
+      "الخاصية التوزيعية",
+      "k(a + b)"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-1",
+      "page": 37,
+      "section": "أوظّف تعلّماتي",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارات $D$ ، $C$ ، $B$ ، $A$ حيث:",
+    "formulas": [
+      "A = 2(5x - 1)",
+      "B = -3(3 - x)",
+      "C = \\dfrac{2}{5}\\left(-20x + \\dfrac{15}{2}\\right)",
+      "D = -4\\left(7 - \\dfrac{3}{2}x\\right)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انشر ثم بسّط العبارة $A$.",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $ax + b$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب العامل الذي أمام القوس في كل حد من حدود القوس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى إشارة كل حد عند كتابة الجداءات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x$ معًا، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 10x - 2$ إذن $a = 10$.",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$A = 2(5x - 1)$",
+          "$A = 2 \\times 5x - 2 \\times 1$"
+        ],
+        "result": "A = 10x - 2"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $ax + b$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "-1",
+          "id": "MISC-NASHR-HAD-WAHID"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 10x - 2$ إذن $b = -2$.",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $b$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$A = 10x - 2$"
+        ],
+        "result": "b = -2"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "انشر ثم بسّط العبارة $B$.",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $B$ على الشكل $ax + b$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "-1",
+          "id": "MISC-NASHR-HAD-WAHID"
+        },
+        {
+          "value": "-3",
+          "id": "MISC-NASHR-ISHARA-SALIBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب العامل الذي أمام القوس في كل حد من حدود القوس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى الإشارات: جداء عددين مختلفين في الإشارة سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x$ معًا، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 3x - 9$ إذن $a = 3$.",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$B = -3(3 - x)$",
+          "$B = -3 \\times 3 + 3 \\times x$",
+          "$B = -9 + 3x$"
+        ],
+        "result": "B = 3x - 9"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $B$ على الشكل $ax + b$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "-9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 3x - 9$ إذن $b = -9$.",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $b$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$B = 3x - 9$"
+        ],
+        "result": "b = -9"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "lead": "انشر ثم بسّط العبارة $C$.",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $C$ على الشكل $ax + b$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "-8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب العامل الذي أمام القوس في كل حد من حدود القوس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى إشارة كل حد عند كتابة الجداءات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x$ معًا، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = -8x + 3$ إذن $a = -8$.",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$C = \\dfrac{2}{5}\\left(-20x + \\dfrac{15}{2}\\right)$",
+          "$C = -\\dfrac{2}{5} \\times 20x + \\dfrac{2}{5} \\times \\dfrac{15}{2}$"
+        ],
+        "result": "C = -8x + 3"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $C$ على الشكل $ax + b$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "15/2",
+          "id": "MISC-NASHR-HAD-WAHID"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = -8x + 3$ إذن $b = 3$.",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $b$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$C = -8x + 3$"
+        ],
+        "result": "b = 3"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "lead": "انشر ثم بسّط العبارة $D$.",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $D$ على الشكل $ax + b$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "-3/2",
+          "id": "MISC-NASHR-HAD-WAHID"
+        },
+        {
+          "value": "-6",
+          "id": "MISC-NASHR-ISHARA-SALIBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب العامل الذي أمام القوس في كل حد من حدود القوس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى الإشارات: جداء عددين مختلفين في الإشارة سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x$ معًا، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$D = 6x - 28$ إذن $a = 6$.",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$D = -4\\left(7 - \\dfrac{3}{2}x\\right)$",
+          "$D = -4 \\times 7 + 4 \\times \\dfrac{3}{2}x$",
+          "$D = -28 + 6x$"
+        ],
+        "result": "D = 6x - 28"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q8",
+      "step": "04",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $D$ على الشكل $ax + b$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "-28",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$D = 6x - 28$ إذن $b = -28$.",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $b$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$D = 6x - 28$"
+        ],
+        "result": "b = -28"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

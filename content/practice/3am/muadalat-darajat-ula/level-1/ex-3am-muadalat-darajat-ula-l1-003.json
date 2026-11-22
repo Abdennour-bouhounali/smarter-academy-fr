@@ -1,0 +1,260 @@
+{
+  "id": "ex-3am-muadalat-darajat-ula-l1-003",
+  "lessonCode": "muadalat-darajat-ula",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — هل هذا العدد حلّ؟",
+    "estimatedMinutes": 5,
+    "tags": [
+      "التحقّق بالتعويض"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "في كلّ حالة، قارن قيمتي الطرفين ثمّ أجب."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "هل العدد $3$ حلّ للمعادلة $4x - 7 = x + 2$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد المراد اختباره؟ عوّضه مكان المجهول في الطرف الأيسر ثم في الطرف الأيمن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة بدقّة (انتبه إلى الإشارات)، ثم قارن النتيجتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا تساوى الطرفان فالعدد حلّ للمعادلة، وإذا اختلفا فليس حلًّا لها."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم: الطرفان متساويان عند هذا العدد.",
+        "incorrect": "للتحقّق من أنّ عددًا حلّ نعوّضه في الطرفين ونقارن القيمتين؛ أعد المحاولة."
+      },
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-CHECK-ONE-SIDE"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "نعوّض $x = 3$ في كلّ طرف على حدة.",
+          "الطرف الأيسر: $4 \\times 3 - 7$ ، أي $5$ .",
+          "الطرف الأيمن: $3 + 2$ ، أي $5$ .",
+          "الطرفان متساويان، إذن العدد $3$ حلّ للمعادلة."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل العدد $3$ حلّ للمعادلة $5x - 4 = 2x + 8$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد المراد اختباره؟ عوّضه مكان المجهول في الطرف الأيسر ثم في الطرف الأيمن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة بدقّة (انتبه إلى الإشارات)، ثم قارن النتيجتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا تساوى الطرفان فالعدد حلّ للمعادلة، وإذا اختلفا فليس حلًّا لها."
+        }
+      ],
+      "feedback": {
+        "correct": "لا: الطرفان غير متساويين عند هذا العدد.",
+        "incorrect": "للتحقّق من أنّ عددًا حلّ نعوّضه في الطرفين ونقارن القيمتين؛ أعد المحاولة."
+      },
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-CHECK-ONE-SIDE"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "solution": {
+        "lines": [
+          "نعوّض $x = 3$ في كلّ طرف على حدة.",
+          "الطرف الأيسر: $5 \\times 3 - 4$ ، أي $11$ .",
+          "الطرف الأيمن: $2 \\times 3 + 8$ ، أي $14$ .",
+          "الطرفان غير متساويين، إذن العدد $3$ ليس حلًّا للمعادلة."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "هل العدد $-2$ حلّ للمعادلة $-m + 3 = 2m + 9$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد المراد اختباره؟ عوّضه مكان المجهول في الطرف الأيسر ثم في الطرف الأيمن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة بدقّة (انتبه إلى الإشارات)، ثم قارن النتيجتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا تساوى الطرفان فالعدد حلّ للمعادلة، وإذا اختلفا فليس حلًّا لها."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم: الطرفان متساويان عند هذا العدد.",
+        "incorrect": "للتحقّق من أنّ عددًا حلّ نعوّضه في الطرفين ونقارن القيمتين؛ أعد المحاولة."
+      },
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-CHECK-ONE-SIDE"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "نعوّض $m = -2$ في كلّ طرف على حدة.",
+          "الطرف الأيسر: $-(-2) + 3$ ، أي $5$ .",
+          "الطرف الأيمن: $2 \\times (-2) + 9$ ، أي $5$ .",
+          "الطرفان متساويان، إذن العدد $-2$ حلّ للمعادلة."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "هل العدد $4$ حلّ للمعادلة $\\dfrac{x}{2} + 1 = \\dfrac{x}{4} + 3$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد المراد اختباره؟ عوّضه مكان المجهول في الطرف الأيسر ثم في الطرف الأيمن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة بدقّة (انتبه إلى الإشارات)، ثم قارن النتيجتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا تساوى الطرفان فالعدد حلّ للمعادلة، وإذا اختلفا فليس حلًّا لها."
+        }
+      ],
+      "feedback": {
+        "correct": "لا: الطرفان غير متساويين عند هذا العدد.",
+        "incorrect": "للتحقّق من أنّ عددًا حلّ نعوّضه في الطرفين ونقارن القيمتين؛ أعد المحاولة."
+      },
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-CHECK-ONE-SIDE"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "solution": {
+        "lines": [
+          "نعوّض $x = 4$ في كلّ طرف على حدة.",
+          "الطرف الأيسر: $\\dfrac{4}{2} + 1$ ، أي $3$ .",
+          "الطرف الأيمن: $\\dfrac{4}{4} + 3$ ، أي $4$ .",
+          "الطرفان غير متساويين، إذن العدد $4$ ليس حلًّا للمعادلة."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

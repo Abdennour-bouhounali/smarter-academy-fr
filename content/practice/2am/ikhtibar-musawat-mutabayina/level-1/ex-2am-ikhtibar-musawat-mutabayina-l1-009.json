@@ -1,0 +1,186 @@
+{
+  "id": "ex-2am-ikhtibar-musawat-mutabayina-l1-009",
+  "lessonCode": "ikhtibar-musawat-mutabayina",
+  "level": 1,
+  "metadata": {
+    "title": "حساب الطرفين واختبار المساواة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "اختبار مساواة",
+      "حساب الطرفين"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-27",
+      "page": 64,
+      "section": "اختبار تساوي عبارتين حرفيتين",
+      "number": 27
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نريد معرفة إن كانت المساواة $35+3x=8x-5$ صحيحة من أجل $x=8$ :"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب قيمة الطرف الأوّل $35+3x$ من أجل $x=8$ .",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "59",
+      "misconceptionSignatures": [
+        {
+          "value": "73",
+          "id": "MISC-IKHTIBAR-JUXTA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بقيمته، وضع الأعداد السالبة بين قوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الضرب صراحة : العدد المكتوب قبل الحرف يضرب قيمته، ولا يُكتب بجانبها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز الضرب أوّلا ثمّ الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة هي $59$ .",
+        "incorrect": "عوّض الحرف بقيمته ثمّ أنجز العمليّات بحسب الأولويّة."
+      },
+      "solution": {
+        "lines": [
+          "$35+3\\times 8=59$ ."
+        ],
+        "result": "59"
+      },
+      "work": "optional",
+      "timeSeconds": 70
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب قيمة الطرف الثاني $8x-5$ من أجل $x=8$ .",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "59",
+      "misconceptionSignatures": [
+        {
+          "value": "83",
+          "id": "MISC-IKHTIBAR-JUXTA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بقيمته، وضع الأعداد السالبة بين قوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الضرب صراحة : العدد المكتوب قبل الحرف يضرب قيمته، ولا يُكتب بجانبها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز الضرب أوّلا ثمّ الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة هي $59$ .",
+        "incorrect": "عوّض الحرف بقيمته ثمّ أنجز العمليّات بحسب الأولويّة."
+      },
+      "solution": {
+        "lines": [
+          "$8\\times 8-5=59$ ."
+        ],
+        "result": "59"
+      },
+      "work": "optional",
+      "timeSeconds": 70
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل المساواة $35+3x=8x-5$ صحيحة من أجل $x=8$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بالقيمة المعطاة في الطرف الأوّل ثمّ في الطرف الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة، مع إنجاز الضرب قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الناتجين : إذا تساويا فالمساواة صحيحة، وإلاّ فهي خاطئة."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم : المساواة صحيحة .",
+        "incorrect": "عوّض الحرف في الطرفين، احسب كلّ طرف ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل : $35+3\\times 8=59$ .",
+          "الطرف الثاني : $8\\times 8-5=59$ .",
+          "$59=59$ : الطرفان متساويان، فالمساواة صحيحة ."
+        ]
+      },
+      "timeSeconds": 70
+    }
+  ]
+}

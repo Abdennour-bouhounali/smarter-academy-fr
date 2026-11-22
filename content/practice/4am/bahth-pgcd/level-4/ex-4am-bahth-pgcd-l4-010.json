@@ -1,0 +1,190 @@
+{
+  "id": "ex-4am-bahth-pgcd-l4-010",
+  "lessonCode": "bahth-pgcd",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2024 — قطعة قماش ومربعات متقايسة",
+    "estimatedMinutes": 7,
+    "tags": [
+      "خوارزمية إقليدس",
+      "توظيف PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_bahth-pgcd_P5",
+      "modelledOn": "BEM 2024 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يملك خياط متقن لعمله قطعة قماش مستطيلة الشكل عرضها 336cm وطولها 480cm، يريد تجزئة هذه القطعة إلى مربعات متقايسة دون ضياع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل يمكن أن يكون طول ضلع كل مربع 20cm ؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P5",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضلع المربع يجب أن يقسم العرض والطول معًا دون باقٍ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يقبل 336 القسمة على 20 ؟ وهل يقبل 480 القسمة على 20 ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "336 لا يقبل القسمة على 20 (336 = 20 × 16 + 16)، فلا يمكن.",
+        "incorrect": "تحقّق من قابلية قسمة البعدين كليهما على 20 قبل الإجابة."
+      },
+      "solution": {
+        "lines": [
+          "$480 = 20 \\times 24$ لكن $336 = 20 \\times 16 + 16$",
+          "20 لا يقسم 336، إذن لا يمكن أن يكون طول ضلع كل مربع 20cm."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "هل يمكن أن يكون طول ضلع كل مربع 24cm ؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P5",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضلع المربع يجب أن يقسم العرض والطول معًا دون باقٍ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب باقي قسمة 336 على 24 ثم باقي قسمة 480 على 24."
+        }
+      ],
+      "feedback": {
+        "correct": "$336 = 24 \\times 14$ و $480 = 24 \\times 20$: 24 يقسم البعدين معًا.",
+        "incorrect": "احسب باقي قسمة كل بُعد على 24: إذا كان معدومًا في الحالتين فالتجزئة ممكنة."
+      },
+      "solution": {
+        "lines": [
+          "$336 = 24 \\times 14$ و $480 = 24 \\times 20$",
+          "24 يقسم العددين 336 و 480، إذن يمكن أن يكون طول ضلع كل مربع 24cm."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "أوجد عدد المربعات التي يمكن الحصول عليها بحيث يكون طول ضلع كل مربع أكبر ما يمكن.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P5",
+          "role": "primary"
+        },
+        {
+          "code": "4am_bahth-pgcd_P4",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "70",
+      "misconceptionSignatures": [
+        {
+          "value": "48",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        },
+        {
+          "value": "17",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول ضلع المربع الأكبر ما يمكن هو القاسم المشترك الأكبر للعددين 480 و 336: احسبه بخوارزمية إقليدس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قسّم العرض ثم الطول على طول الضلع لتعرف عدد المربعات في كل اتجاه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد المربعات هو جداء العددين."
+        }
+      ],
+      "feedback": {
+        "correct": "$PGCD(480 ; 336) = 48$، و $336 \\div 48 = 7$ و $480 \\div 48 = 10$، ومنه $7 \\times 10 = 70$ مربعًا.",
+        "incorrect": "احسب أولًا طول الضلع (القاسم المشترك الأكبر)، ثم عدد المربعات على العرض وعلى الطول، واضربهما."
+      },
+      "solution": {
+        "lines": [
+          "طول ضلع المربع أكبر ما يمكن، فهو $PGCD(480 ; 336)$. باستعمال خوارزمية إقليدس:",
+          "$480 = 336 \\times 1 + 144$",
+          "$336 = 144 \\times 2 + 48$",
+          "$144 = 48 \\times 3 + 0$",
+          "إذن $PGCD(480 ; 336) = 48$، أي طول الضلع 48cm.",
+          "على العرض: $336 \\div 48 = 7$ ، على الطول: $480 \\div 48 = 10$",
+          "عدد المربعات: $7 \\times 10 = 70$"
+        ],
+        "result": "70"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

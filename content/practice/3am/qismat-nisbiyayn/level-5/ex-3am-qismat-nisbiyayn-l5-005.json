@@ -1,0 +1,195 @@
+{
+  "id": "ex-3am-qismat-nisbiyayn-l5-005",
+  "lessonCode": "qismat-nisbiyayn",
+  "level": 5,
+  "metadata": {
+    "title": "عمليات على أعداد نسبية وكتابة الناتج على شكل كسر",
+    "estimatedMinutes": 4,
+    "tags": [
+      "سلسلة حسابات",
+      "كسر"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 1,
+      "file": "3am-s1-5",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد $C$ حيث:",
+    "formulas": [
+      "C = (−3) + (−4) \\times (−21) − (−7) \\div (−2)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب الحدّ $(−7) \\div (−2)$ الذي يظهر في $C$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "3.5",
+      "misconceptionSignatures": [
+        {
+          "value": "-3.5",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "2/7",
+          "id": "MISC-QISMA-ORDER"
+        },
+        {
+          "value": "-5",
+          "id": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن إشارة حاصل القسمة قبل أن تحسب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم المسافة إلى الصفر للمقسوم على المسافة إلى الصفر للمقسوم عليه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالضرب: حاصل القسمة مضروبًا في المقسوم عليه يعطي المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−7) \\div (−2) = 3{,}5$ .",
+        "incorrect": "راجع قاعدة قسمة عددين نسبيين: الإشارة أولًا، ثم قسمة المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العددان سالبان: لهما الإشارة نفسها، إذن الحاصل موجب.",
+          "$7 \\div 2 = 3{,}5$",
+          "$−7 \\div (−2) = 3{,}5$"
+        ],
+        "result": "3{,}5"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب $C$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "77.5",
+      "misconceptionSignatures": [
+        {
+          "value": "84.5",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "-77",
+          "id": "MISC-QISMA-PRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تُنجز أولًا؟ ابدأ بما بين القوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد الأقواس: الضرب والقسمة معًا من اليسار إلى اليمين، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل خطوة في سطر، وانتبه إلى طرح عدد سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = 77{,}5$ .",
+        "incorrect": "راجع أولوية العمليات: الأقواس، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$C = (−3) + (−4) \\times (−21) − (−7) \\div (−2)$",
+          "$C = (−3) + 84 − 3{,}5$",
+          "$C = 81 − 3{,}5$",
+          "$C = 77{,}5$"
+        ],
+        "result": "77{,}5"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "اكتب $C$ على شكل كسر.",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حاصل القسمة على شكل كسر أو عدد عشري",
+      "expectedAnswer": "155/2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "إن لم يكن حاصل القسمة عشريًا فهو يُكتب على شكل كسر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن الإشارة أولًا، ثم ضع المسافتين في بسط الكسر ومقامه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب الكسر في المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = \\dfrac{155}{2}$ .",
+        "incorrect": "راجع كتابة حاصل القسمة على شكل كسر مع الانتباه إلى موضع الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "$C = 77{,}5 = \\dfrac{155}{2}$"
+        ],
+        "result": "\\dfrac{155}{2}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

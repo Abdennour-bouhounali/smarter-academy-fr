@@ -1,0 +1,364 @@
+{
+  "id": "ex-4am-tafsir-bayani-jumla-l5-005",
+  "lessonCode": "tafsir-bayani-jumla",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2009 — حوضا تربية الأسماك بورقلة",
+    "estimatedMinutes": 35,
+    "tags": [
+      "وضعية إدماجية",
+      "حوضان",
+      "تفسير بياني"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tafsir-bayani-jumla_P2",
+      "modelledOn": "BEM 2009 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في مزرعة لتربية الأسماك بورقلة تساهم في الاكتفاء الغذائي للوطن حوضان على شكل متوازي مستطيلات: الحوض الأول بعدا قاعدته 10m و 6m وارتفاعه 1,2m، والحوض الثاني قاعدته مربع طول ضلعه 6m وارتفاعه 1,5m."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "احسب سعة كل حوض.",
+      "statement": "سعة الحوض الأول:",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الحجم بـ $m^3$",
+      "expectedAnswer": "72",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حجم متوازي مستطيلات: الطول × العرض × الارتفاع."
+        }
+      ],
+      "feedback": {
+        "correct": "$10 \\times 6 \\times 1{,}2$ .",
+        "incorrect": "اضرب الأبعاد الثلاثة."
+      },
+      "solution": {
+        "lines": [
+          "$V_1 = 10 \\times 6 \\times 1{,}2 = 72m^3$"
+        ],
+        "result": "V_1 = 72m^3"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "سعة الحوض الثاني:",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الحجم بـ $m^3$",
+      "expectedAnswer": "54",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة القاعدة المربعة: الضلع × الضلع."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 \\times 6 \\times 1{,}5$ .",
+        "incorrect": "مساحة القاعدة × الارتفاع."
+      },
+      "solution": {
+        "lines": [
+          "$V_2 = 6 \\times 6 \\times 1{,}5 = 54m^3$"
+        ],
+        "result": "V_2 = 54m^3"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "الحوض الأول مملوء تماما والحوض الثاني فارغ تماما. تنقل مضخة الماء من الحوض الأول إلى الحوض الثاني بتدفق $6m^3$ في الساعة.\nاحسب كمية الماء في كل حوض بعد مرور ساعتين.",
+      "statement": "كمية الماء في الحوض الأول بعد ساعتين:",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الحجم بـ $m^3$",
+      "expectedAnswer": "60",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في ساعتين تنقل المضخة $2 \\times 6$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$72 - 2 \\times 6$ .",
+        "incorrect": "اطرح الكمية المنقولة من سعة الحوض الأول."
+      },
+      "solution": {
+        "lines": [
+          "الكمية المنقولة في ساعتين: $6 \\times 2 = 12m^3$ .",
+          "في الحوض الأول: $72 - 12 = 60m^3$ ."
+        ],
+        "result": "60m^3"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "كمية الماء في الحوض الثاني بعد ساعتين:",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الحجم بـ $m^3$",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحوض الثاني كان فارغا."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 6$ .",
+        "incorrect": "الحوض الثاني يحوي ما نقلته المضخة فقط."
+      },
+      "solution": {
+        "lines": [
+          "في الحوض الثاني: $6 \\times 2 = 12m^3$ ."
+        ],
+        "result": "12m^3"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "lead": "نسمّي $f(x)$ كمية الماء في الحوض الأول و $g(x)$ كمية الماء في الحوض الثاني (بـ $m^3$) بعد مرور $x$ ساعة.\nجد العبارة $g(x)$ ، ثم استنتج العبارة $f(x)$ بدلالة $x$ .",
+      "statement": "أعط العدد $a$ حيث: $g(x) = ax$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكمية في الحوض الثاني تتناسب مع عدد الساعات."
+        }
+      ],
+      "feedback": {
+        "correct": "$g(x) = 6x$ .",
+        "incorrect": "معامل $x$ هو التدفق في الساعة."
+      },
+      "solution": {
+        "lines": [
+          "$g(x) = 6x$ (يتدفق $6m^3$ في كل ساعة).",
+          "$f(x) = 72 - 6x$ (الحوض الأول يفقد ما يتدفق في الثاني)."
+        ],
+        "result": "g(x) = 6x"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "أعط العدد $a$ حيث: $f(x) = ax + 72$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحوض الأول ينقص في كل ساعة."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(x) = 72 - 6x$ .",
+        "incorrect": "$f(x) = 72 - g(x)$ : انتبه للإشارة."
+      },
+      "solution": {
+        "lines": [
+          "$g(x) = 6x$ (يتدفق $6m^3$ في كل ساعة).",
+          "$f(x) = 72 - 6x$ (الحوض الأول يفقد ما يتدفق في الثاني)."
+        ],
+        "result": "f(x) = 72 - 6x"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "sub": "ا",
+      "lead": "نعتبر الدالتين $f$ و $g$ حيث: $f(x) = 72 - 6x$ و $g(x) = 6x$ ، من أجل $0 \\leqslant x \\leqslant 9$ .",
+      "statement": "مثّل بيانيا الدالتين $f$ و $g$ في معلم متعامد ومتجانس.\n(نأخذ 1cm يمثل 1h على محور الفواصل و 1cm يمثل $12m^3$ على محور التراتيب).",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن نقطتين من كل مستقيم مستعملا وحدتي المحورين المعطاتين."
+        }
+      ],
+      "feedback": {
+        "correct": "تمثيل كل دالة قطعة مستقيم.",
+        "incorrect": "احسب صورتي 0 و 4 مثلا بكل دالة."
+      },
+      "solution": {
+        "lines": [
+          "تمثيل $f$ قطعة مستقيم تشمل النقطتين $(0 ; 72)$ و $(4 ; 48)$ .",
+          "تمثيل $g$ قطعة مستقيم تشمل المبدأ والنقطة $(4 ; 24)$ ."
+        ]
+      },
+      "timeSeconds": 360
+    },
+    {
+      "id": "q8",
+      "step": "04",
+      "sub": "ب",
+      "statement": "بقراءة بيانية، جد الوقت اللازم لملء الحوض الثاني.",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدة بالساعات",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث على تمثيل $g$ عن النقطة التي ترتيبها سعة الحوض الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "$g(x) = 54$ .",
+        "incorrect": "الحوض الثاني يمتلئ عندما $g(x)$ يساوي سعته."
+      },
+      "solution": {
+        "lines": [
+          "المستقيم الأفقي الذي ترتيبه 54 يقطع تمثيل $g$ في نقطة فاصلتها 9.",
+          "حسابيا: $6x = 54$ ، أي $x = 9$ : يمتلئ الحوض الثاني بعد 9 ساعات."
+        ],
+        "result": "9h"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q9",
+      "step": "04",
+      "sub": "ج",
+      "statement": "بقراءة بيانية، عيّن إحداثيي نقطة تقاطع التمثيلين البيانيين للدالتين $f$ و $g$ ، ثم فسّر النتيجة.",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": {
+        "x": "6",
+        "y": "36"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "36",
+            "y": "6"
+          },
+          "id": "MISC-JUMLA-BAYANI-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الفاصلة والترتيب مستعملا وحدتي المحورين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عند نقطة التقاطع $f(x) = g(x)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "التمثيلان يتقاطعان في هذه النقطة.",
+        "incorrect": "الفاصلة المدة بالساعات والترتيب كمية الماء بـ $m^3$ ؛ الفاصلة أولا."
+      },
+      "solution": {
+        "lines": [
+          "التمثيلان يتقاطعان في النقطة التي فاصلتها 6 وترتيبها 3 وحدات $(3 \\times 12 = 36)$ ، أي $(6 ; 36)$ .",
+          "تحقق: $72 - 6 \\times 6 = 36$ و $6 \\times 6 = 36$ .",
+          "التفسير: بعد 6 ساعات تكون كمية الماء في الحوضين متساوية، وهي $36m^3$ في كل حوض."
+        ],
+        "result": "(6 ; 36)"
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

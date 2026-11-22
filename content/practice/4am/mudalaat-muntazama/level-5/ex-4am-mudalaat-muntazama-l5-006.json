@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l5-006",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — عجلة دوّارة في بن عكنون",
+    "estimatedMinutes": 3,
+    "tags": [
+      "طول الضلع",
+      "العشاري"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mudalaat-muntazama_P3",
+      "modelledOn": "method-side"
+    }
+  },
+  "statement": {
+    "content": "عجلة دوّارة في حديقة التسلية ببن عكنون نصف قطرها $8\\,\\mathrm{m}$ ، عليها 10 مقصورات موزّعة بانتظام."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المسافة المستقيمة بين مقصورتين متتاليتين مدوّرة إلى 0,01 بالمتر:",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "4.94",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUNTAZAM-DIL",
+          "value": "8.00"
+        },
+        {
+          "id": "MISC-MUNTAZAM-180",
+          "value": "2.50"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم المثلث الذي رأسه المركز وقاعدته ضلع، ثم الارتفاع النازل من المركز."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في المثلث القائم، الزاوية في المركز نصف الزاوية المركزية، والوتر نصف القطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نصف الضلع = نصف القطر × جيب نصف الزاوية المركزية، ثم نضاعف."
+        }
+      ],
+      "feedback": {
+        "correct": "الزاوية المركزية $36^\\circ$ ، ونصفها $18^\\circ$ : $2 \\times 8 \\times \\sin 18^\\circ \\approx 4{,}94$ .",
+        "incorrect": "استعمل نصف الزاوية المركزية في المثلث القائم."
+      },
+      "difficulty": 5
+    }
+  ]
+}

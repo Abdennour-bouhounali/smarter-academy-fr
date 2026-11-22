@@ -1,0 +1,347 @@
+{
+  "id": "ex-3am-tabsit-hadhf-aqwas-l5-008",
+  "lessonCode": "tabsit-hadhf-aqwas",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — راية اليوم الرياضي",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "حذف الأقواس",
+      "مجموع",
+      "جداء"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يصمّم فريق القسم معًا راية مثلثة $ABC$ لليوم الرياضي، أقياس زواياها بالدرجات: $\\widehat{A} = x$ و $\\widehat{B} = 2x - 60$ ، فيكون $\\widehat{C} = 180 - x - (2x - 60)$ . طول كل ضلع من أضلاعها $(x - 35)\\,\\mathrm{cm}$ ، فمحيطها $3(x - 35)$ .\nالجزء الأول: العبارات.\nالجزء الثاني: يريد الفريق راية متقايسة الأضلاع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "اكتب $\\widehat{C}$ على أبسط شكل.",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$120 - 3x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-MINUS-FIRST-ONLY"
+        },
+        {
+          "id": "B",
+          "content": "$240 - 3x$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$120 + x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-MINUS-KEPT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة التي تسبق القوسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوسان مسبوقان بالإشارة $-$ يُحذفان مع تغيير إشارة كل حدّ بينهما، لا الحدّ الأول وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العبارة بدون أقواس حدًّا حدًّا، ثم اجمع الحدود المتشابهة، وتحقّق بتعويض $x$ بعدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$240 - 3x$.",
+        "incorrect": "راجع إشارة كل حدّ وما يسبق القوسين، ثم اجمع الحدود المتشابهة فقط."
+      },
+      "solution": {
+        "lines": [
+          "$\\widehat{C} = 180 - x - 2x + 60$",
+          "$\\widehat{C} = 240 - 3x$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل العبارة $180 - x - (2x - 60)$ مجموع أم جداء؟",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مجموع (آخر عملية فيها جمع أو طرح)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "جداء (آخر عملية فيها ضرب)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-SUM-PRODUCT-CONFUSED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تخيّل أنك تحسب العبارة من أجل عدد: ما آخر عملية تُنجزها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كانت آخر عملية جمعًا أو طرحًا فالعبارة مجموع، وإذا كانت ضربًا فهي جداء."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأقواس تُحسب أولًا، ثم الضرب قبل الجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر عملية في $C$ هي الجمع أو الطرح: $C$ مجموع.",
+        "incorrect": "ابحث عن آخر عملية تُنجز عند الحساب، بعد الأقواس وبعد الضرب."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية تُنجز في $C = 180 - x - (2x - 60)$ هي جمع أو طرح، إذن $C$ مجموع."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "هل عبارة المحيط $3(x - 35)$ مجموع أم جداء؟",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مجموع (آخر عملية فيها جمع أو طرح)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-SUM-PRODUCT-CONFUSED"
+        },
+        {
+          "id": "B",
+          "content": "جداء (آخر عملية فيها ضرب)",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تخيّل أنك تحسب العبارة من أجل عدد: ما آخر عملية تُنجزها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كانت آخر عملية جمعًا أو طرحًا فالعبارة مجموع، وإذا كانت ضربًا فهي جداء."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأقواس تُحسب أولًا، ثم الضرب قبل الجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر عملية في $P$ هي الضرب: $P$ جداء.",
+        "incorrect": "ابحث عن آخر عملية تُنجز عند الحساب، بعد الأقواس وبعد الضرب."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية تُنجز في $P = 3(x - 35)$ هي ضرب، إذن $P$ جداء."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني. نأخذ $x = 60$ .",
+      "statement": "احسب $\\widehat{C}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "60",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى، ويُستحسن أن تعوّض في الشكل المبسّط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويات العمليات: القوى، ثم الضرب، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالتعويض في العبارة قبل تبسيطها: القيمة لا تتغيّر."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل $x = 60$ : $\\widehat{C} = 60°$ .",
+        "incorrect": "عوّض $x$ بالعدد المعطى في الشكل المبسّط واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$C = -3x + 240$",
+          "من أجل $x = 60$ : $C = -3(60) + 240 = 60$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل تكون الراية متقايسة الأضلاع من أجل $x = 60$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-DECISION-UNCHECKED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب كل ما يلزم من أجل القيمة المعطاة لـ $x$ قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين اللذين حصلت عليهما."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم: الزوايا الثلاث تساوي $60°$ .",
+        "incorrect": "أنجز الحسابات من أجل القيمة المعطاة ثم قارن قبل أن تقرّر."
+      },
+      "solution": {
+        "lines": [
+          "$\\widehat{A} = 60°$ و $\\widehat{B} = 2 \\times 60 - 60 = 60°$ و $\\widehat{C} = 60°$ .",
+          "الزوايا الثلاث متقايسة: الراية متقايسة الأضلاع."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "احسب محيط الراية بالسنتيمتر من أجل $x = 60$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "75",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى، ويُستحسن أن تعوّض في الشكل المبسّط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويات العمليات: القوى، ثم الضرب، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالتعويض في العبارة قبل تبسيطها: القيمة لا تتغيّر."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل $x = 60$ : $P = 3 \\times 25 = 75\\,\\mathrm{cm}$ .",
+        "incorrect": "عوّض $x$ بالعدد المعطى في الشكل المبسّط واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$P = 3 \\times (60 - 35) = 3 \\times 25 = 75$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

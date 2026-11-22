@@ -1,0 +1,190 @@
+{
+  "id": "ex-3am-quwat-adad-nisbi-l4-002",
+  "lessonCode": "quwat-adad-nisbi",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — كسر مختزل وسلسلة بقوى",
+    "estimatedMinutes": 9,
+    "tags": [
+      "سلسلة حسابات",
+      "كسور"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-69",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الأول",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "إليك العددين $A$ و $C$ حيث:",
+    "formulas": [
+      "A = \\left(\\dfrac{1}{3} - \\dfrac{5}{6}\\right) \\div \\dfrac{3}{4}",
+      "C = 3^{5} - \\left[(2^{2})^{3} + 0{,}5 \\times 2^{4}\\right] + 9"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب نتيجة $A$ على شكل كسر مختزل.",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b لا يقبل الاختزال (يُقبل السالب)",
+      "expectedAnswer": "-2/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هذه المرحلة حساب على الكسور (درس سابق)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لجمع كسرين أو طرحهما نوحّد المقامات أولًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل النتيجة حتى لا يبقى قاسم مشترك."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = -\\dfrac{1}{2} \\times \\dfrac{4}{3} = -\\dfrac{2}{3}$ .",
+        "incorrect": "احسب ما بين القوسين أولًا، ثم اضرب في مقلوب الكسر الثاني واختزل."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{3} - \\dfrac{5}{6} = \\dfrac{2}{6} - \\dfrac{5}{6} = -\\dfrac{1}{2}$",
+          "$A = -\\dfrac{1}{2} \\times \\dfrac{4}{3} = -\\dfrac{2}{3}$"
+        ],
+        "result": "A = -\\dfrac{2}{3}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "اكتب $(2^{2})^{3}$ على الشكل $2^n$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-QUWA-POWER-ADD-EXP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قوة مرفوعة إلى قوة: ماذا نفعل بالأسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في $(a^m)^n$ نضرب الأسين، ولا نجمعهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه لإشارة الجداء إذا كان أحد الأسين سالبًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$(2^2)^3 = 2^6$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$(2^{2})^{3} = 2^{2 \\times 3} = 2^{6}$"
+        ],
+        "result": "n = 6"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب العدد $C$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "180",
+      "misconceptionSignatures": [
+        {
+          "value": "196",
+          "id": "MISC-QUWA-PRIORITY"
+        },
+        {
+          "value": "187",
+          "id": "MISC-QUWA-PRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما أول عملية تُنجز في هذه العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأولوية: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب مرحلة واحدة في كل سطر، وتحقّق من إشارة كل حدّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = 243 - 72 + 9 = 180$ .",
+        "incorrect": "احترم أولوية العمليات: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$C = 243 - \\left[64 + 0{,}5 \\times 16\\right] + 9$",
+          "$C = 243 - \\left[64 + 8\\right] + 9$",
+          "$C = 243 - 72 + 9 = 180$"
+        ],
+        "result": "C = 180"
+      },
+      "work": "required",
+      "timeSeconds": 90
+    }
+  ]
+}

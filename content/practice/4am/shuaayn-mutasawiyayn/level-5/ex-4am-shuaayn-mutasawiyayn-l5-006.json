@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l5-006",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — جولة في الطاسيلي",
+    "estimatedMinutes": 3,
+    "tags": [
+      "وضعية",
+      "المنتصف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_shuaayn-mutasawiyayn_P1",
+      "modelledOn": "know-3"
+    }
+  },
+  "statement": {
+    "content": "في جولة في الطاسيلي، يبدأ المرشد من المخيّم A ويمرّ بالصخرة B. النقطة C نظيرة A بالنسبة إلى B، والنقطة D حيث $\\overrightarrow{BD} = \\overrightarrow{AB}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ماذا تقول عن C و D؟",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "C و D منطبقتان",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "C و D متناظرتان بالنسبة إلى B",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "D منتصف [AC]",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MUNTASAF-IB-IA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا تعني «C نظيرة A بالنسبة إلى B»؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "B منتصف [AC]، فالشعاعان AB و BC متساويان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الشعاعين BC و BD."
+        }
+      ],
+      "feedback": {
+        "correct": "B منتصف [AC] فـ BC = AB (شعاعان)، و BD = AB: إذن BD = BC و D = C.",
+        "incorrect": "اكتب ما تعطيه النظيرة بالأشعة ثم قارن."
+      }
+    }
+  ]
+}

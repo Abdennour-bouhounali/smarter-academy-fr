@@ -1,0 +1,262 @@
+{
+  "id": "ex-4am-awwaliyan-fima-baynahuma-l5-008",
+  "lessonCode": "awwaliyan-fima-baynahuma",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2021 — بكرتا أسلاك كهربائية",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية",
+      "إثبات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_awwaliyan-fima-baynahuma_P2",
+      "modelledOn": "BEM 2021 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يحرص كهربائي بورشة بباتنة على احترام مواعيد زبائنه؛ يملك بكرتين من الأسلاك الكهربائية، طول الأولى 247m وطول الثانية 330m. يريد تقطيعهما إلى قطع متساوية الطول، طول كل منها عدد طبيعي بالمتر وأكبر ما يمكن، دون ضياع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "بيّن أن العددين 247 و 330 أوليان فيما بينهما.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيمة PGCD(247 ; 330) التي وجدتها",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عددان أوليان فيما بينهما: احسب قاسمهما المشترك الأكبر PGCD(247 ; 330)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 330 على 247، ثم واصل القسمات المتتابعة إلى أن تجد باقيًا معدومًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن آخر باقٍ غير معدوم بما يتطلّبه تعريف عددين أوليين فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(247 ; 330) = 1: العددان 247 و 330 أوليان فيما بينهما.",
+        "incorrect": "راجع القسمات المتتابعة باقيًا باقيًا: آخر باقٍ غير معدوم هو القاسم المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$330 = 247 \\times 1 + 83$",
+          "$247 = 83 \\times 2 + 81$",
+          "$83 = 81 \\times 1 + 2$",
+          "$81 = 2 \\times 40 + 1$",
+          "$2 = 1 \\times 2 + 0$",
+          "آخر باقٍ غير معدوم هو 1، إذن PGCD(247 ; 330) = 1 .",
+          "ومنه العددان 247 و 330 أوليان فيما بينهما."
+        ],
+        "result": "PGCD(247 ; 330) = 1"
+      },
+      "work": "required",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "استنتج عدد القطع الناتجة.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد القطع)",
+      "expectedAnswer": "577",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول القطعة يقسم 247 و 330 معًا وهو أكبر ما يمكن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم طول كل بكرة على طول القطعة، ثم اجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "طول القطعة 1m، وعدد القطع $247 + 330 = 577$ .",
+        "incorrect": "طول القطعة هو PGCD(247 ; 330)؛ ثم احسب عدد القطع من البكرتين معًا."
+      },
+      "solution": {
+        "lines": [
+          "طول القطعة: PGCD(247 ; 330) = 1 ، أي 1m.",
+          "عدد القطع: $247 \\div 1 + 330 \\div 1 = 577$"
+        ],
+        "result": "577"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "تبيّن أن 7m من البكرة الأولى تالفة، فقصّها الكهربائي وأبعدها.",
+      "statement": "أوجد طول كل قطعة الآن.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 330 على 240: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (330 ; 240) بالزوج (240 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 30.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$330 = 240 \\times 1 + 90$",
+          "$240 = 90 \\times 2 + 60$",
+          "$90 = 60 \\times 1 + 30$",
+          "$60 = 30 \\times 2 + 0$",
+          "آخر باقٍ غير معدوم هو 30، إذن:"
+        ],
+        "result": "PGCD(240 ; 330) = 30"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أوجد عدد القطع الناتجة.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد القطع)",
+      "expectedAnswer": "19",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم طول كل بكرة على طول القطعة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع النتيجتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$240 \\div 30 + 330 \\div 30 = 8 + 11 = 19$",
+        "incorrect": "استعمل الطول الجديد للبكرة الأولى (240m)، ثم اجمع عدد قطع البكرتين."
+      },
+      "solution": {
+        "lines": [
+          "$240 \\div 30 = 8$ و $330 \\div 30 = 11$",
+          "$8 + 11 = 19$"
+        ],
+        "result": "19"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "☜ يركّب الكهربائي في طرف كل قطعة مقبسًا، ويتقاضى 2500DA أجرة عن تركيب كل قطعة. خصّص صاحب الورشة لهذا العمل 76000DA. أعط أكبر ثمن ممكن للمقبس الواحد.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (الثمن بالدينار)",
+      "expectedAnswer": "1500",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عبّر عن تكلفة القطعة الواحدة بدلالة ثمن المقبس $p$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التكلفة الكلية للقطع لا تتجاوز 76000DA: حلّ المتراجحة."
+        }
+      ],
+      "feedback": {
+        "correct": "$19(p + 2500) \\leq 76000$ تعطي $p \\leq 1500$ .",
+        "incorrect": "تكلفة القطعة = ثمن المقبس + الأجرة؛ اضرب في عدد القطع الذي وجدته في 02."
+      },
+      "solution": {
+        "lines": [
+          "$19 \\times (p + 2500) \\leq 76000$",
+          "$p + 2500 \\leq 4000$",
+          "$p \\leq 1500$"
+        ],
+        "result": "1500DA"
+      },
+      "timeSeconds": 360
+    }
+  ]
+}

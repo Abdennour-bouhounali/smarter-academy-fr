@@ -1,0 +1,235 @@
+{
+  "id": "ex-1am-hasil-qisma-kasr-l4-001",
+  "lessonCode": "hasil-qisma-kasr",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — العدد الناقص ثم الاختزال",
+    "estimatedMinutes": 11,
+    "tags": [
+      "العدد الناقص",
+      "اختزال"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 2,
+      "file": "1am-s2-72",
+      "exercise": 3
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثالث",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "اكتب العدد الناقص على شكل كسر في كل حالة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "$12 \\times \\ldots = 9$",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b (أو عدد)",
+      "expectedAnswer": "3/4",
+      "misconceptionSignatures": [
+        {
+          "value": "108",
+          "id": "MISC-HASIL-DARB"
+        },
+        {
+          "value": "12/9",
+          "id": "MISC-HASIL-QALB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد الناقص هو الذي نضربه في العامل المعروف لنحصل على الجداء المعطى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كيف نجد أحد عاملي جداء إذا عرفنا الجداء والعامل الآخر؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العدد الناقص على شكل حاصل قسمة، ثم على شكل كسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$12 \\times \\dfrac{9}{12} = 9$ : العدد الناقص هو $\\dfrac{9}{12}$.",
+        "incorrect": "العدد الذي نضربه في $b$ لنحصل على $a$ هو حاصل قسمة $a$ على $b$ ، أي $\\dfrac{a}{b}$ ؛ لا نطرح العددين ولا نضربهما."
+      },
+      "solution": {
+        "lines": [
+          "العدد الناقص هو حاصل القسمة $9 \\div 12 = \\dfrac{9}{12}$",
+          "تحقّق : $12 \\times \\dfrac{9}{12} = 9$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "$10 \\times \\ldots = 7$",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b (أو عدد)",
+      "expectedAnswer": "7/10",
+      "misconceptionSignatures": [
+        {
+          "value": "70",
+          "id": "MISC-HASIL-DARB"
+        },
+        {
+          "value": "10/7",
+          "id": "MISC-HASIL-QALB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد الناقص هو الذي نضربه في العامل المعروف لنحصل على الجداء المعطى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كيف نجد أحد عاملي جداء إذا عرفنا الجداء والعامل الآخر؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العدد الناقص على شكل حاصل قسمة، ثم على شكل كسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$10 \\times \\dfrac{7}{10} = 7$ : العدد الناقص هو $\\dfrac{7}{10}$.",
+        "incorrect": "العدد الذي نضربه في $b$ لنحصل على $a$ هو حاصل قسمة $a$ على $b$ ، أي $\\dfrac{a}{b}$ ؛ لا نطرح العددين ولا نضربهما."
+      },
+      "solution": {
+        "lines": [
+          "العدد الناقص هو حاصل القسمة $7 \\div 10 = \\dfrac{7}{10}$",
+          "تحقّق : $10 \\times \\dfrac{7}{10} = 7$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اختزل الكسر الذي وجدته في السؤال الأول إلى أبسط شكل ممكن.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b لا يقبل الاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "3/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن قاسم مشترك للبسط والمقام بقواعد قابلية القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على هذا القاسم، ثم أعد البحث في الكسر الجديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما لا يبقى قاسم مشترك غير 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9}{12}$ = $\\dfrac{3}{4}$ ولا يقبل البسط والمقام قاسمًا مشتركًا غير 1.",
+        "incorrect": "نقسم البسط والمقام على قاسم مشترك لهما، ونعيد ذلك حتى لا يبقى قاسم مشترك غير 1.",
+        "notIrreducible": "الكتابة تساوي الكسر لكنها ما زالت قابلة للاختزال: ابحث عن قاسم مشترك آخر للبسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "$9 = 3 \\times 3$ و $12 = 3 \\times 4$ ، إذن $\\dfrac{9}{12} = \\dfrac{9 \\div 3}{12 \\div 3} = \\dfrac{3}{4}$",
+          "العددان 3 و 4 لا يقبلان قاسمًا مشتركًا غير 1."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "اكتب الكسر الذي وجدته في السؤال الأول على شكل عدد عشري.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة)",
+      "expectedAnswer": "0,75",
+      "misconceptionSignatures": [
+        {
+          "value": "9,12",
+          "id": "MISC-HASIL-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجعل المقام 10 أو 100 أو 1000 بالضرب في عدد مناسب، أو أجرِ القسمة العشرية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل تتوقّف الأرقام بعد الفاصلة أم تتكرّر بلا نهاية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نتحدّث عن عدد عشري عندما تتوقّف الأرقام بعد الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9}{12}$ = $0{,}75$",
+        "incorrect": "حاصل القسمة عدد عشري إذا انتهت أرقامه بعد الفاصلة ؛ وإلاّ فالكسر هو الكتابة المضبوطة له."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{9}{12}$ = $\\dfrac{3}{4}$",
+          "$\\dfrac{3}{4} = \\dfrac{3 \\times 25}{4 \\times 25} = \\dfrac{75}{100}$ (نضرب الحدّين في العدد نفسه)",
+          "$\\dfrac{75}{100}$ = $0{,}75$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

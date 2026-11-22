@@ -1,0 +1,216 @@
+{
+  "id": "ex-1am-talim-fi-mustawi-l4-001",
+  "lessonCode": "talim-fi-mustawi",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — نقط ونظائر",
+    "estimatedMinutes": 6,
+    "tags": [
+      "نظيرة",
+      "محور التراتيب"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 3,
+      "file": "1am-s3-45",
+      "exercise": 4
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الرابع",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "نعلّم في معلم متعامد النقطتين $M(3\\,;\\,-1)$ و $N(0\\,;\\,2)$ ، ثمّ النقطة $S$ نظيرة $M$ بالنسبة إلى محور الفواصل (فاصلتها $3$ ). نرسم نظير المثلث $MSN$ بالنسبة إلى محور التراتيب."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "النقطة $M'$ نظيرة $M(3\\,;\\,-1)$ بالنسبة إلى محور الفواصل. ما إحداثيا $M'$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "3",
+        "y": "1"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SYMMIX",
+          "value": {
+            "x": "-3",
+            "y": "-1"
+          }
+        },
+        {
+          "id": "MISC-MUSTAWI-SYMBOTH",
+          "value": {
+            "x": "-3",
+            "y": "1"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النظيرة بالنسبة إلى محور الفواصل تقع على الجهة الأخرى منه بالبعد نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "محور الفواصل أفقي: النظيرة فوقه أو تحته على الخط الشاقولي نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الفاصلة تبقى والترتيب يعاكسه."
+        }
+      ],
+      "feedback": {
+        "correct": "إحداثيا $M'$ هما $(3\\,;\\,1)$ .",
+        "incorrect": "بالنسبة إلى محور الفواصل تتغيّر إشارة الترتيب وحده."
+      },
+      "solution": {
+        "lines": [
+          "النظيرة بالنسبة إلى محور الفواصل: الفاصلة نفسها والترتيب معاكس",
+          "$M'(3\\,;\\,1)$"
+        ],
+        "result": "M'(3\\,;\\,1)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "النقطة $M'$ نظيرة $M(3\\,;\\,1)$ بالنسبة إلى محور التراتيب. ما إحداثيا $M'$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-3",
+        "y": "1"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SYMMIX",
+          "value": {
+            "x": "3",
+            "y": "-1"
+          }
+        },
+        {
+          "id": "MISC-MUSTAWI-SYMBOTH",
+          "value": {
+            "x": "-3",
+            "y": "-1"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النظيرة بالنسبة إلى محور التراتيب تقع على الجهة الأخرى منه بالبعد نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "محور التراتيب شاقولي: النظيرة على يمينه أو يساره على الخط الأفقي نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الترتيب يبقى والفاصلة تعاكسها."
+        }
+      ],
+      "feedback": {
+        "correct": "إحداثيا $M'$ هما $(-3\\,;\\,1)$ .",
+        "incorrect": "بالنسبة إلى محور التراتيب تتغيّر إشارة الفاصلة وحدها."
+      },
+      "solution": {
+        "lines": [
+          "النظيرة بالنسبة إلى محور التراتيب: الترتيب نفسه والفاصلة معاكسة",
+          "$M'(-3\\,;\\,1)$"
+        ],
+        "result": "M'(-3\\,;\\,1)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "النقطة $M'$ نظيرة $M(0\\,;\\,2)$ بالنسبة إلى محور التراتيب. ما إحداثيا $M'$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "0",
+        "y": "2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SYMMIX",
+          "value": {
+            "x": "0",
+            "y": "-2"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النظيرة بالنسبة إلى محور التراتيب تقع على الجهة الأخرى منه بالبعد نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "محور التراتيب شاقولي: النظيرة على يمينه أو يساره على الخط الأفقي نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الترتيب يبقى والفاصلة تعاكسها."
+        }
+      ],
+      "feedback": {
+        "correct": "إحداثيا $M'$ هما $(0\\,;\\,2)$ .",
+        "incorrect": "بالنسبة إلى محور التراتيب تتغيّر إشارة الفاصلة وحدها."
+      },
+      "solution": {
+        "lines": [
+          "النظيرة بالنسبة إلى محور التراتيب: الترتيب نفسه والفاصلة معاكسة",
+          "$M'(0\\,;\\,2)$"
+        ],
+        "result": "M'(0\\,;\\,2)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

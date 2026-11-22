@@ -1,0 +1,65 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l3-008",
+  "lessonCode": "mafhum-dawaran",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — دورانان في اتجاهين متعاكسين",
+    "estimatedMinutes": 2,
+    "tags": [
+      "صورة نقطة",
+      "زوايا"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mafhum-dawaran_P2",
+      "modelledOn": "ex-3"
+    }
+  },
+  "statement": {
+    "content": "C صورة B بالدوران الذي مركزه A وزاويته $35^\\circ$ في الاتجاه المباشر، و D صورة B بالدوران الذي مركزه A وزاويته $50^\\circ$ في الاتجاه غير المباشر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما هو قيس الزاوية $\\widehat{CAD}$ بالدرجات؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجات)",
+      "expectedAnswer": "85",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-JAM-ZAWAYA",
+          "value": "15"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "C و D على جهتين مختلفتين من [AB)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ارسم [AB) ثم الصورتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الزاويتان تتجاوران."
+        }
+      ],
+      "feedback": {
+        "correct": "في اتجاهين متعاكسين: $\\widehat{CAD} = 35^\\circ + 50^\\circ = 85^\\circ$ .",
+        "incorrect": "الصورتان على جهتي [AB): الزاويتان متجاورتان."
+      },
+      "difficulty": 3
+    }
+  ]
+}

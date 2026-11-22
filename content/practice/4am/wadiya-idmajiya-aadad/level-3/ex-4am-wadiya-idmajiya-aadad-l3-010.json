@@ -1,0 +1,167 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-aadad-l3-010",
+  "lessonCode": "wadiya-idmajiya-aadad",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2015 — العددان 1517 و 1147",
+    "estimatedMinutes": 8,
+    "tags": [
+      "القاسم المشترك الأكبر",
+      "كسر غير قابل للاختزال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-aadad_P1",
+      "modelledOn": "BEM 2015 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 1517 و 1147.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "37",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 1517 على 1147: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (1517 ; 1147) بالزوج (1147 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 37.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$1517 = 1147 \\times 1 + 370$",
+          "$1147 = 370 \\times 3 + 37$",
+          "$370 = 37 \\times 10 + 0$",
+          "آخر باقٍ غير معدوم هو 37، إذن:"
+        ],
+        "result": "PGCD(1517 ; 1147) = 37"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب الكسر $\\dfrac{1147}{1517}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "31/41",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 37: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال 01.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1147}{1517} = \\dfrac{1147 \\div 37}{1517 \\div 37}$"
+        ],
+        "result": "\\dfrac{1147}{1517} = \\dfrac{31}{41}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "بيّن أن العدد P عدد طبيعي، ثم أعط قيمته، حيث: $P = \\dfrac{1147}{1517} + \\dfrac{10}{41}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "للكسرين المقام نفسه بعد الاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "$P = \\dfrac{31}{41} + \\dfrac{10}{41} = \\dfrac{41}{41} = 1$",
+        "incorrect": "عوّض الكسر الأول بكتابته غير القابلة للاختزال، ثم اجمع."
+      },
+      "solution": {
+        "lines": [
+          "$P = \\dfrac{31}{41} + \\dfrac{10}{41}$",
+          "$P = \\dfrac{41}{41}$",
+          "إذن P عدد طبيعي."
+        ],
+        "result": "P = 1"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

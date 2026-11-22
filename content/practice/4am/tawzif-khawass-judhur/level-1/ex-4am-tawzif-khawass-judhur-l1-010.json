@@ -1,0 +1,84 @@
+{
+  "id": "ex-4am-tawzif-khawass-judhur-l1-010",
+  "lessonCode": "tawzif-khawass-judhur",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2017 — نسبة مقامها عدد ناطق",
+    "estimatedMinutes": 3,
+    "tags": [
+      "نسبة مقامها عدد ناطق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tawzif-khawass-judhur_P3",
+      "modelledOn": "BEM 2017 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2017",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد B حيث:",
+    "formulas": [
+      "B = \\dfrac{5}{2\\sqrt{5}}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب العدد B على شكل نسبة مقامها عدد ناطق.",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "بسّط النتيجة واكتبها على الشكل $\\dfrac{\\sqrt{5}}{c}$، ثم أعط العدد الطبيعي $c$ فقط",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-JIDHR-FI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المقام $2\\sqrt{5}$ غير ناطق بسبب $\\sqrt{5}$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب البسط والمقام في $\\sqrt{5}$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد الضرب اختزل الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = \\dfrac{5\\sqrt{5}}{10} = \\dfrac{\\sqrt{5}}{2}$.",
+        "incorrect": "اضرب البسط والمقام في $\\sqrt{5}$، ثم اختزل البسط والمقام على العدد نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$B = \\dfrac{5}{2\\sqrt{5}}$",
+          "$B = \\dfrac{5 \\times \\sqrt{5}}{2\\sqrt{5} \\times \\sqrt{5}}$",
+          "$B = \\dfrac{5\\sqrt{5}}{10}$"
+        ],
+        "result": "B = \\dfrac{\\sqrt{5}}{2}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

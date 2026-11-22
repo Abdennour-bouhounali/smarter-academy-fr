@@ -1,0 +1,199 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-kusur-natiqa-l1-004",
+  "lessonCode": "wadiya-idmajiya-kusur-natiqa",
+  "level": 1,
+  "metadata": {
+    "title": "مقلوب عدد ناطق وقسمة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مقلوب",
+      "قسمة كسرين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الأعداد الناطقة $A$ و $B$ و $C$ .",
+    "formulas": [
+      "A = -\\dfrac{7}{3}",
+      "B = \\dfrac{5}{-8}",
+      "C = \\dfrac{5}{6} \\div \\left(\\dfrac{1}{4} + \\dfrac{1}{6}\\right)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما مقلوب العدد $A$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "-3/7",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "3/7",
+          "id": "MISC-AMAL-RECIPSIGN"
+        },
+        {
+          "value": "7/3",
+          "id": "MISC-MAQLUB-OPPOSITE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي إذا ضُرب فيه هذا العدد كان الجداء واحدًا ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مقلوب عدد ناطق غير معدوم يقلب بسطه ومقامه ويحتفظ بإشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: جداء العدد في مقلوبه يساوي واحدًا."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $-\\dfrac{3}{7}$ .",
+        "incorrect": "انتبه إلى الإشارات ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "مقلوب عدد سالب سالب أيضًا: $-\\dfrac{7}{3} \\times \\left(-\\dfrac{3}{7}\\right) = 1$ ."
+        ],
+        "result": "-\\dfrac{3}{7}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما مقلوب العدد $B$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "-8/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "8/5",
+          "id": "MISC-AMAL-RECIPSIGN"
+        },
+        {
+          "value": "5/8",
+          "id": "MISC-MAQLUB-OPPOSITE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي إذا ضُرب فيه هذا العدد كان الجداء واحدًا ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مقلوب عدد ناطق غير معدوم يقلب بسطه ومقامه ويحتفظ بإشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: جداء العدد في مقلوبه يساوي واحدًا."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $-\\dfrac{8}{5}$ .",
+        "incorrect": "انتبه إلى الإشارات ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$B = \\dfrac{5}{-8} = -\\dfrac{5}{8}$ ، ومقلوبه $-\\dfrac{8}{5}$ .",
+          "$-\\dfrac{5}{8} \\times \\left(-\\dfrac{8}{5}\\right) = 1$ ."
+        ],
+        "result": "-\\dfrac{8}{5}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب $C$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "25/72",
+          "id": "MISC-AMAL-NOFLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العمليات في العبارة وما يُنجز منها أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر واختزل في نهايتها."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $2$ .",
+        "incorrect": "احترم أولوية العمليات واحسب سطرًا بسطر، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نحسب ما بين القوسين أوّلًا: $\\dfrac{1}{4} + \\dfrac{1}{6} = \\dfrac{3}{12} + \\dfrac{2}{12} = \\dfrac{5}{12}$ .",
+          "$\\dfrac{5}{6} \\div \\dfrac{5}{12} = \\dfrac{5}{6} \\times \\dfrac{12}{5} = \\dfrac{60}{30} = 2$ ."
+        ],
+        "result": "2"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

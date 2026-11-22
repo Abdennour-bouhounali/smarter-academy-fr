@@ -1,0 +1,208 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muthallathat-l1-003",
+  "lessonCode": "wadiya-idmajiya-muthallathat",
+  "level": 1,
+  "metadata": {
+    "title": "الوتر AC ثم الضلع BC",
+    "estimatedMinutes": 6,
+    "tags": [
+      "الجيب",
+      "الظل",
+      "المجهول في المقام"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 124,
+      "section": "الوضعيات",
+      "number": 3,
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-muthallathat-l1-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل: $ABC$ مثلث قائم في $B$ حيث $AB = 7\\,\\mathrm{cm}$ و $\\widehat{C} = 35^{\\circ}$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          7
+        ],
+        "B": [
+          0,
+          0
+        ],
+        "C": [
+          9.997,
+          0
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "7 cm"
+        },
+        [
+          "B",
+          "C"
+        ],
+        [
+          "A",
+          "C"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "B",
+          "C"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "C",
+          "from": "B",
+          "to": "A",
+          "label": "35°"
+        }
+      ],
+      "labels": {
+        "A": "nw",
+        "B": "sw",
+        "C": "se"
+      },
+      "ariaLabel": "مثلث ABC قائم في B: A فوق B و C على اليمين؛ AB = 7 cm وقيس الزاوية C يساوي 35 درجة",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب الطول $AC$ بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm مدوّرا إلى 0,1",
+      "expectedAnswer": "12.2",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-MUTH-DARB-BADAL-QISMA"
+        },
+        {
+          "value": "8.5",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بالنسبة إلى الزاوية $\\widehat{C}$ : $[AB]$ هو الضلع المقابل و $[AC]$ هو الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة التي تربط المقابل والوتر هي الجيب: $\\sin 35^{\\circ} = \\dfrac{7}{AC}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالآلة الحاسبة مبرمجة على الدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC = \\dfrac{7}{\\sin 35^{\\circ}} \\approx 12{,}2\\,\\mathrm{cm}$ .",
+        "incorrect": "المجهول $AC$ في المقام: نقسم $7$ على $\\sin 35^{\\circ}$ ولا نضرب."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $ABC$ القائم في $B$ : $\\sin\\widehat{C} = \\dfrac{AB}{AC}$ أي $\\sin 35^{\\circ} = \\dfrac{7}{AC}$",
+          "ومنه: $AC = \\dfrac{7}{\\sin 35^{\\circ}}$",
+          "باستعمال الآلة الحاسبة: $AC \\approx 12{,}2041$"
+        ],
+        "result": "AC \\approx 12{,}2\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب الطول $BC$ بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm مدوّرا إلى 0,1",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "4.9",
+          "id": "MISC-MUTH-DARB-BADAL-QISMA"
+        },
+        {
+          "value": "5.7",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بالنسبة إلى الزاوية $\\widehat{C}$ : $[BC]$ هو الضلع المجاور."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة التي تربط المقابل والمجاور هي الظل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالآلة الحاسبة مبرمجة على الدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC = \\dfrac{7}{\\tan 35^{\\circ}} \\approx 10\\,\\mathrm{cm}$ .",
+        "incorrect": "في $\\tan 35^{\\circ} = \\dfrac{7}{BC}$ المجهول في المقام: نقسم على الظل."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan\\widehat{C} = \\dfrac{AB}{BC}$ أي $\\tan 35^{\\circ} = \\dfrac{7}{BC}$",
+          "ومنه: $BC = \\dfrac{7}{\\tan 35^{\\circ}}$",
+          "باستعمال الآلة الحاسبة: $BC \\approx 9{,}997$"
+        ],
+        "result": "BC \\approx 10\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

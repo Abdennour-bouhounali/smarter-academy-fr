@@ -1,0 +1,163 @@
+{
+  "id": "ex-4am-tarrid-khatti-l3-005",
+  "lessonCode": "tarrid-khatti",
+  "level": 3,
+  "metadata": {
+    "title": "المصعد الهوائي",
+    "estimatedMinutes": 8,
+    "tags": [
+      "سرعة ثابتة",
+      "تحويل الوحدات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-khatti_P3",
+      "modelledOn": "challenge",
+      "adaptedFrom": "ex-4am-tarrid-khatti-l3-005"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تسير مقصورة مصعد هوائي بسرعة ثابتة قدرها 5m في الثانية، على حبل طوله 2,4km. نسمّي $d(t)$ المسافة (بالمتر) التي تقطعها المقصورة بعد $t$ ثانية من انطلاقها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عبّر عن $d(t)$ بدلالة $t$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "السرعة ثابتة: المسافة متناسبة مع المدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$d(t) = 5t$ .",
+        "incorrect": "المعامل هو المسافة المقطوعة في ثانية واحدة."
+      },
+      "solution": {
+        "lines": [
+          "$d(t) = 5t$ ($d$ بالمتر و $t$ بالثانية)."
+        ],
+        "result": "d(t) = 5t"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم دقيقة تستغرق الرحلة كلها؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدة بالدقائق",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "480",
+          "id": "MISC-MAQADIR-WIHDA"
+        },
+        {
+          "value": "0,48",
+          "id": "MISC-MAQADIR-WIHDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل طول الحبل إلى أمتار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ $d(t) = 2400$ ثم حوّل الثواني إلى دقائق."
+        }
+      ],
+      "feedback": {
+        "correct": "$5t = 2400$ ، $t = 480$ s ، أي 8 دقائق.",
+        "incorrect": "انتبه إلى الوحدات: $d$ بالمتر و $t$ بالثانية، والجواب بالدقائق."
+      },
+      "solution": {
+        "lines": [
+          "$2{,}4km = 2400m$",
+          "$5t = 2400$ ، إذن $t = 480$ s",
+          "$480 \\div 60 = 8$ : تستغرق الرحلة 8 دقائق."
+        ],
+        "result": "8min"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما المسافة التي قطعتها المقصورة بعد 3 دقائق ونصف من انطلاقها؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المسافة بالمتر",
+      "expectedAnswer": "1050",
+      "misconceptionSignatures": [
+        {
+          "value": "17,5",
+          "id": "MISC-MAQADIR-WIHDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل المدة إلى ثوان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب صورة هذه المدة بالدالة $d$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$3{,}5 \\times 60 = 210$ s ، و $d(210) = 1050$ m.",
+        "incorrect": "حوّل المدة إلى ثوان قبل التعويض."
+      },
+      "solution": {
+        "lines": [
+          "$3{,}5min = 210s$",
+          "$d(210) = 5 \\times 210 = 1050$",
+          "قطعت المقصورة 1050m."
+        ],
+        "result": "1050m"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l2-005",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أسماء القوى السالبة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "أسماء الأعداد",
+      "أسّ سالب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "الأسماء «جزء من ألف» و«جزء من مليون» و«جزء من مليار» تدلّ على قوى سالبة للعدد 10."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "نكتب «جزء من مليون» على الشكل $10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين يقع الرقم 1 بعد الفاصلة؟ حدّد رتبته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في $10^{-n}$ يكون الرقم 1 في الرتبة $n$ بعد الفاصلة (الأعشار هي الرتبة الأولى)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأسّ سالب وقيمته المطلقة هي رتبة الرقم 1، أمّا عدد الأصفار بين الفاصلة والرقم 1 فأقلّ منها بواحد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-6",
+      "misconceptionSignatures": [
+        {
+          "value": "-5",
+          "id": "MISC-ASHARA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "«جزء من مليون» $= \\dfrac{1}{1\\,000\\,000} = 10^{-6}$ .",
+        "incorrect": "عدّ الأصفار (أو رتبة الرقم 1 بعد الفاصلة) بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "«جزء من مليون» $= \\dfrac{1}{1\\,000\\,000} = 0{,}000001$ .",
+          "الرقم 1 في الرتبة السادسة بعد الفاصلة: $10^{-6}$ ."
+        ],
+        "result": "n = -6"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "نكتب «جزء من ألف» على الشكل $10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين يقع الرقم 1 بعد الفاصلة؟ حدّد رتبته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في $10^{-n}$ يكون الرقم 1 في الرتبة $n$ بعد الفاصلة (الأعشار هي الرتبة الأولى)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأسّ سالب وقيمته المطلقة هي رتبة الرقم 1، أمّا عدد الأصفار بين الفاصلة والرقم 1 فأقلّ منها بواحد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "value": "-2",
+          "id": "MISC-ASHARA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "«جزء من ألف» $= \\dfrac{1}{1\\,000} = 10^{-3}$ .",
+        "incorrect": "عدّ الأصفار (أو رتبة الرقم 1 بعد الفاصلة) بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "«جزء من ألف» $= \\dfrac{1}{1\\,000} = 0{,}001$ .",
+          "الرقم 1 في الرتبة الثالثة بعد الفاصلة: $10^{-3}$ ."
+        ],
+        "result": "n = -3"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما الكتابة العشرية لـ «جزء من مليار» ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«مليار» هو 1 متبوع بتسعة أصفار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "«جزء من مليار» هو مقلوب «مليار»: الرقم 1 في الرتبة التاسعة بعد الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد موجب دائمًا؛ تحقّق من رتبة الرقم 1."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$0{,}0000000001$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-FASILA"
+        },
+        {
+          "id": "B",
+          "content": "$-1\\,000\\,000\\,000$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-SALIB"
+        },
+        {
+          "id": "C",
+          "content": "$0{,}000000001$",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "«جزء من مليار» $= 10^{-9} = 0{,}000000001$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب الكتابة العشرية للقوة المعنية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "«مليار» $= 10^{9}$ .",
+          "مقلوبه $10^{-9} = 0{,}000000001$ : الرقم 1 في الرتبة التاسعة."
+        ]
+      }
+    }
+  ]
+}

@@ -142,6 +142,7 @@ class StudentReport extends Model
         'question_attempt_id',
         'category',
         'note',
+        'screenshot_path',
         'source',
         'details_completed_at',
         'status',

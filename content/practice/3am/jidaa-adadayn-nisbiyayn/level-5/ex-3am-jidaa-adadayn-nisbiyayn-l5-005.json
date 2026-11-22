@@ -1,0 +1,345 @@
+{
+  "id": "ex-3am-jidaa-adadayn-nisbiyayn-l5-005",
+  "lessonCode": "jidaa-adadayn-nisbiyayn",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — رصيد الهاتف",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "رصيد",
+      "أعداد عشرية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: يخصم متعامل الهاتف 15 دج كل يوم من رصيد خط أحد التلاميذ. نعتبر رصيده اليوم مرجعًا (0)، فيكون تغيّر الرصيد بعد $n$ يومًا هو $(−15) \\times n$ دج، و $n$ سالب للأيام الماضية.\nالجزء الثاني: تُخصم 7,5 دج عن كل مكالمة قصيرة (تغيّر $−7{,}5$ دج للمكالمة)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "ما تغيّر الرصيد بعد 8 أيام، أي $n = 8$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-120",
+      "misconceptionSignatures": [
+        {
+          "value": "-7",
+          "id": "MISC-JIDAA-ADD"
+        },
+        {
+          "value": "7",
+          "id": "MISC-JIDAA-SUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في النص العددين اللذين يُضربان، وأعطِ كلًّا منهما إشارته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السرعة أو التغيّر بالنقصان عدد سالب، والزمن قبل اللحظة المرجعية عدد سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء بالإشارتين، ثم طبّق قاعدة الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−15) \\times 8 = −120$ : العاملان مختلفا الإشارة (سالب وموجب)، إذن الجداء سالب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العاملان مختلفا الإشارة (سالب وموجب)، إذن الجداء سالب.",
+          "$15 \\times 8 = 120$",
+          "$(−15) \\times 8 = −120$"
+        ],
+        "result": "−120"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما تغيّر الرصيد قبل 6 أيام، أي $n = −6$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "90",
+      "misconceptionSignatures": [
+        {
+          "value": "-90",
+          "id": "MISC-JIDAA-TIME"
+        },
+        {
+          "value": "-21",
+          "id": "MISC-JIDAA-ADD"
+        },
+        {
+          "value": "9",
+          "id": "MISC-JIDAA-SUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في النص العددين اللذين يُضربان، وأعطِ كلًّا منهما إشارته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السرعة أو التغيّر بالنقصان عدد سالب، والزمن قبل اللحظة المرجعية عدد سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء بالإشارتين، ثم طبّق قاعدة الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−15) \\times (−6) = 90$ : العاملان سالبان، إذن الجداء موجب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العاملان سالبان، إذن الجداء موجب.",
+          "$15 \\times 6 = 90$",
+          "$(−15) \\times (−6) = 90$"
+        ],
+        "result": "90"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "بعد كم يومًا يصبح تغيّر الرصيد $−105$ دج؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$−7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDAA-NEGNEG"
+        },
+        {
+          "id": "B",
+          "content": "$7$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$0{,}7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDAA-DECIMAL"
+        },
+        {
+          "id": "D",
+          "content": "$70$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDAA-DECIMAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في النص العددين اللذين يُضربان، وأعطِ كلًّا منهما إشارته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السرعة أو التغيّر بالنقصان عدد سالب، والزمن قبل اللحظة المرجعية عدد سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء بالإشارتين، ثم طبّق قاعدة الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−15) \\times 7 = −105$ .",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "$(−15) \\times 7 = −105$",
+          "$(−15) \\times (−7) = 105$ وليس $−105$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "ما تغيّر الرصيد بعد 4 مكالمات؟ احسب $(−7{,}5) \\times 4$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-30",
+      "misconceptionSignatures": [
+        {
+          "value": "-3.5",
+          "id": "MISC-JIDAA-ADD"
+        },
+        {
+          "value": "3.5",
+          "id": "MISC-JIDAA-SUB"
+        },
+        {
+          "value": "-300",
+          "id": "MISC-JIDAA-DECIMAL"
+        },
+        {
+          "value": "-3",
+          "id": "MISC-JIDAA-DECIMAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب أولًا كأنّ العددين طبيعيان، ثم أرجع الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد الأرقام بعد الفاصلة في الجداء هو مجموع عدد الأرقام بعد الفاصلة في العاملين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عيّن الإشارة أولًا، ثم اضرب المسافتين إلى الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−7{,}5) \\times 4 = −30$ : العاملان مختلفا الإشارة (سالب وموجب)، إذن الجداء سالب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العاملان مختلفا الإشارة (سالب وموجب)، إذن الجداء سالب.",
+          "$7{,}5 \\times 4 = 30$",
+          "$(−7{,}5) \\times 4 = −30$"
+        ],
+        "result": "−30"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما تغيّر الرصيد لو ألغيت 4 مكالمات خصمت خطأً؟ احسب $(−7{,}5) \\times (−4)$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "-30",
+          "id": "MISC-JIDAA-TIME"
+        },
+        {
+          "value": "-11.5",
+          "id": "MISC-JIDAA-ADD"
+        },
+        {
+          "value": "3.5",
+          "id": "MISC-JIDAA-SUB"
+        },
+        {
+          "value": "300",
+          "id": "MISC-JIDAA-DECIMAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب أولًا كأنّ العددين طبيعيان، ثم أرجع الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد الأرقام بعد الفاصلة في الجداء هو مجموع عدد الأرقام بعد الفاصلة في العاملين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عيّن الإشارة أولًا، ثم اضرب المسافتين إلى الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−7{,}5) \\times (−4) = 30$ : العاملان سالبان، إذن الجداء موجب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "إلغاء خصم هو عكس إضافته.",
+          "العاملان سالبان، إذن الجداء موجب.",
+          "$7{,}5 \\times 4 = 30$",
+          "$(−7{,}5) \\times (−4) = 30$"
+        ],
+        "result": "30"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

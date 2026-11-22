@@ -1,0 +1,196 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-aadad-nisbiya-l5-005",
+  "lessonCode": "wadiya-idmajiya-aadad-nisbiya",
+  "level": 5,
+  "metadata": {
+    "title": "متوسط ثلاث درجات صغرى بالفهرنهايت",
+    "estimatedMinutes": 8,
+    "tags": [
+      "وضعية إدماجية",
+      "متوسط",
+      "تحويل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "سجّلت محطة أرصاد أمريكية أدنى درجة حرارة (بالفهرنهايت) خلال ثلاثة أيام: $10{,}4$ ، $−4$ ، $14$ . للمرور من $T_F$ إلى $T_C$ نطرح $32$ من $T_F$ ثم نقسم على $1{,}8$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب مجموع الدرجات الثلاث.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "20.4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ النص وحدّد الأعداد المعطاة وما يعبّر عنه كل منها: ارتفاع أم انخفاض، ربح أم خسارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر عن الانخفاض أو الخسارة أو الدَّين بعدد سالب، ثم اختر العملية التي تناسب السؤال."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العملية بأعداد نسبية ثم أنجزها بقاعدة الإشارات وبأولوية العمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $20{,}4$ °F .",
+        "incorrect": "راجع ترجمة النص إلى عملية بين أعداد نسبية: أيّ عدد سالب وأيّ عملية تناسب السؤال؟"
+      },
+      "solution": {
+        "lines": [
+          "$10{,}4 + (−4) + 14$",
+          "$= 6{,}4 + 14$",
+          "$= 20{,}4$"
+        ],
+        "result": "20{,}4"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب متوسّط الدرجات الثلاث بالفهرنهايت.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "6.8",
+      "misconceptionSignatures": [
+        {
+          "value": "-6.8",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "17.4",
+          "id": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العددين اللذين نقسم أحدهما على الآخر وعيّن إشارة كل منهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عاملان مجهولان فالعامل الناقص هو حاصل قسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعملية العكسية: اضرب نتيجتك في العامل المعلوم."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $6{,}8$ °F .",
+        "incorrect": "راجع الربط بين الضرب والقسمة وقاعدة إشارات الحاصل، ثم تحقّق بالضرب."
+      },
+      "solution": {
+        "lines": [
+          "$(10{,}4 + (−4) + 14) \\div 3$",
+          "$= (6{,}4 + 14) \\div 3$",
+          "$= 20{,}4 \\div 3$",
+          "$= 6{,}8$"
+        ],
+        "result": "6{,}8"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "عبّر عن هذا المتوسّط ($6{,}8$ °F) بالدرجة سيلسيوس.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$−27$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QISMA-DIST"
+        },
+        {
+          "id": "B",
+          "content": "$14$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QISMA-SIGN"
+        },
+        {
+          "id": "C",
+          "content": "$−14$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القاعدة المعطاة وما تربطه بين الدرجتين، وأيّ الدرجتين معلومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "للتحويل من سيلسيوس إلى فهرنهايت نضرب ثم نضيف؛ وللعكس نُجري العمليتين بترتيب معاكس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة التحويل في الاتجاه المعاكس: يجب أن تجد العدد الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة الصحيحة هي $−14$ .",
+        "incorrect": "راجع قاعدة التحويل وترتيب العمليتين، ثم تحقّق بالعملية المعاكسة."
+      },
+      "solution": {
+        "lines": [
+          "$(6{,}8 − 32) \\div 1{,}8$",
+          "$= (−25{,}2) \\div 1{,}8$",
+          "$= −14$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,256 @@
+{
+  "id": "ex-1am-kitabat-adad-tabii-l5-006",
+  "lessonCode": "kitabat-adad-tabii",
+  "level": 5,
+  "metadata": {
+    "title": "دكّان العمّ أحمد",
+    "estimatedMinutes": 18,
+    "tags": [
+      "مفكوك",
+      "نقود",
+      "قرار"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-2",
+      "page": 17,
+      "section": "أتمرّن",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "اشترت أمّ يوسف أدوات مدرسية من دكّان العمّ أحمد بمبلغ 3475 دج. في الدكّان أوراق من فئة 1000 دج و 100 دج، وقطع من فئة 10 دج و 1 دج.\nالجزء الأول: يريد العمّ أحمد أن يُدفع له المبلغ بالضبط بأقل عدد من الأوراق والقطع.\nالجزء الثاني: لا تملك أمّ يوسف إلا أوراقا من فئة 100 دج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما هو المفكوك النموذجي للعدد 3475؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3 \\times 100 + 4 \\times 10 + 7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-RANK-NAME"
+        },
+        {
+          "id": "B",
+          "content": "$3 \\times 1000 + 4 \\times 100 + 5 \\times 10 + 7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-RANK-NAME"
+        },
+        {
+          "id": "C",
+          "content": "$3 \\times 1000 + 4 \\times 100 + 7 \\times 10 + 5$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العدد في جدول المراتب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل رقم غير معدوم يُضرب في قيمة مرتبته (1، 10، 100، 1000…)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الرقم 0 لا يظهر في المفكوك، لكنه يحفظ مراتب الأرقام الأخرى."
+        }
+      ],
+      "feedback": {
+        "correct": "$3475 = 3 \\times 1000 + 4 \\times 100 + 7 \\times 10 + 5$.",
+        "incorrect": "في المفكوك النموذجي يُضرب كل رقم في قيمة مرتبته؛ تحقّق بحساب المجموع."
+      },
+      "solution": {
+        "lines": [
+          "في العدد 3475: 3 رقم الآلاف، 4 رقم المئات، 7 رقم العشرات، 5 رقم الآحاد.",
+          "$3475 = 3 \\times 1000 + 4 \\times 100 + 7 \\times 10 + 5$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كم ورقة وقطعة نقدية على الأقل تُدفع ليكون المبلغ 3475 دج بالضبط؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "19",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-KITABA-SUMCOUNTS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل المفكوك النموذجي: كم ورقة من كل فئة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الأعداد التي تضرب 1000 و 100 و 10 و 1."
+        }
+      ],
+      "feedback": {
+        "correct": "3 أوراق من 1000، و 4 من 100، و 7 قطع من 10، و 5 قطع من 1: $3 + 4 + 7 + 5 = 19$.",
+        "incorrect": "كل رقم من أرقام المبلغ يعطي عدد الأوراق أو القطع من فئته."
+      },
+      "solution": {
+        "lines": [
+          "$3475 = 3 \\times 1000 + 4 \\times 100 + 7 \\times 10 + 5$",
+          "$3 + 4 + 7 + 5 = 19$ ورقة وقطعة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "كم ورقة من فئة 100 دج تعطي أمّ يوسف على الأقل لتدفع ثمن مشترياتها؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "35",
+      "misconceptionSignatures": [
+        {
+          "value": "34",
+          "id": "MISC-KITABA-DIGIT-COUNT"
+        },
+        {
+          "value": "4",
+          "id": "MISC-KITABA-DIGIT-COUNT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما عدد المئات في 3475؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل تكفي هذه الأوراق لدفع ما بقي؟"
+        }
+      ],
+      "feedback": {
+        "correct": "34 ورقة تساوي 3400 دج < 3475 دج، فتلزم ورقة أخرى: 35 ورقة.",
+        "incorrect": "عدد المئات وحده لا يغطّي الدنانير الباقية: نحتاج ورقة إضافية."
+      },
+      "solution": {
+        "lines": [
+          "$3475 = 34 \\times 100 + 75$",
+          "34 ورقة لا تكفي (يبقى 75 دج)، إذن تعطي 35 ورقة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "كم يُعيد لها العمّ أحمد؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "25",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المبلغ الذي تمثّله الأوراق المدفوعة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$3500 - 3475 = 25$ دج.",
+        "incorrect": "المبلغ المعاد = المبلغ المدفوع − الثمن."
+      },
+      "solution": {
+        "lines": [
+          "$35 \\times 100 = 3500$",
+          "$3500 - 3475 = 25$ دج."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "برّر جوابك عن عدد الأوراق من فئة 100 دج.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل 34 ورقة تكفي؟"
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك بالحل النموذجي سطرا بسطر."
+      },
+      "solution": {
+        "lines": [
+          "عدد المئات في 3475 هو 34، لأن $3475 = 34 \\times 100 + 75$.",
+          "34 ورقة تعطي 3400 دج فقط، فيبقى 75 دج غير مدفوعة.",
+          "إذن تلزم 35 ورقة، ويُعيد العمّ أحمد 25 دج."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,250 @@
+{
+  "id": "ex-1am-tatbiq-qaida-harfiya-l5-006",
+  "lessonCode": "tatbiq-qaida-harfiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — عمود الأثمنة في المجدول",
+    "estimatedMinutes": 14,
+    "tags": [
+      "وضعية إدماجية",
+      "مجدول",
+      "مثال مضادّ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يحسب تاجر ثمن $x$ متر من الحبل بالقاعدة $3\\times x+5$ دج في مجدول، حيث $x$ في الخانة A2 ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "الجزء الأول — الصيغة",
+      "statement": "ما الصيغة التي تُكتب في الخانة B2 ؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$=3A2+5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-NOSIGN"
+        },
+        {
+          "id": "B",
+          "content": "$=3*A2+5$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$=3+A2+5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-PLUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة المحذوفة بين العدد والحرف أو بين حرفين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حذف الإشارة يعني ضربًا، ونكتب العدد قبل الحرف."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب قيمة صغيرة للحرف في كلّ اقتراح وقارن مع العبارة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "في المجدول نكتب إشارة الضرب دائمًا.",
+        "incorrect": "في المجدول لا تُحذف إشارة الضرب: نكتب $7*A2$ لا $7A2$ ، وإلّا لم يفهم المجدول الصيغة."
+      },
+      "solution": {
+        "lines": [
+          "في المجدول تُكتب إشارة الضرب بنجمة: $=3*A2+5$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما القيمة التي تظهر من أجل $x=9$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "32",
+      "misconceptionSignatures": [
+        {
+          "value": "44",
+          "id": "MISC-TATBIQ-GLUED"
+        },
+        {
+          "value": "17",
+          "id": "MISC-TATBIQ-PLUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما قيمة كلّ حرف؟ وفي كم موضع يظهر كلّ حرف في العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع القيمة في كلّ موضع يظهر فيه الحرف، وأعد إشارة الضرب بين العددين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب بالأولويات: ما بين القوسين، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: النتيجة $32$ .",
+        "incorrect": "بين العدد والحرف إشارة ضرب لا تُكتب: عند التعويض نُعيدها، فنحسب جداءً لا عددًا من رقمين."
+      },
+      "solution": {
+        "lines": [
+          "نكتب العبارة: $3\\times x+5$ .",
+          "نضع قيمة كلّ حرف في كلّ موضع يظهر فيه: $3\\times 9+5$ .",
+          "نحسب: $27+5$ .",
+          "نحسب: $32$ .",
+          "الجواب: $32$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "الجزء الثاني — قول التاجر",
+      "statement": "قال التاجر: « العبارتان $2\\times x+5$ و $3\\times x$ متساويتان دائمًا ». احسب $2\\times x+5$ من أجل $x=5$ .",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما قيمة كلّ حرف؟ وفي كم موضع يظهر كلّ حرف في العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع القيمة في كلّ موضع يظهر فيه الحرف، وأعد إشارة الضرب بين العددين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب بالأولويات: ما بين القوسين، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: النتيجة $15$ .",
+        "incorrect": "نضع القيمة في كلّ موضع ثمّ نحسب بالأولويات."
+      },
+      "solution": {
+        "lines": [
+          "نكتب العبارة: $2\\times x+5$ .",
+          "نضع قيمة كلّ حرف في كلّ موضع يظهر فيه: $2\\times 5+5$ .",
+          "نحسب: $10+5$ .",
+          "نحسب: $15$ .",
+          "الجواب: $15$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "أيّ القيمتين الآتيتين تُبطل قول التاجر؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x=5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-ONEOK"
+        },
+        {
+          "id": "B",
+          "content": "$x=8$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الطرفين الأيمن والأيسر من أجل كلّ قيمة مقترحة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نبحث عن قيمة تختلف عندها الجهتان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القيمة التي تتساوى عندها الجهتان لا تُبطل القاعدة."
+        }
+      ],
+      "feedback": {
+        "correct": "مثال مضادّ واحد يكفي.",
+        "incorrect": "مثال تصحّ فيه المساواة لا يثبت أنّها صحيحة دائمًا: نبحث عن قيمة تختلف عندها الجهتان."
+      },
+      "solution": {
+        "lines": [
+          "نحسب الجهتين من أجل كلّ قيمة: $2\\times 5+5=15$ و $3\\times 5=15$ ؛ $2\\times 8+5=21$ و $3\\times 8=24$ .",
+          "الجهتان تختلفان عند $x=8$ فقط: هذا مثال مضادّ."
+        ]
+      },
+      "timeSeconds": 100
+    }
+  ]
+}

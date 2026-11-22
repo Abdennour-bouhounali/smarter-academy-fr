@@ -1,0 +1,236 @@
+{
+  "id": "ex-2am-ibara-harfiya-intaj-l4-001",
+  "lessonCode": "ibara-harfiya-intaj",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مسار شاحنة التوصيل",
+    "estimatedMinutes": 6,
+    "tags": [
+      "مسار",
+      "عبارة حرفيّة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 2,
+      "file": "2am-s2-72",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "تسلك شاحنة توصيل المسار الممثّل في الشكل المقابل ، حيث $b$ عدد بالكيلومتر. القطعتان الأفقيّتان في المسار متساويتان في الطول.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          3,
+          0
+        ],
+        "C": [
+          5,
+          7
+        ],
+        "D": [
+          9,
+          7
+        ],
+        "E": [
+          12,
+          0
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "ticks": 1
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "b+2"
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "label": "6",
+          "ticks": 1
+        },
+        {
+          "from": "D",
+          "to": "E",
+          "label": "2b+3"
+        }
+      ],
+      "ariaLabel": "مسار شاحنة من أربع قطع : قطعة أفقيّة أولى ، ثمّ قطعة مائلة طولها b+2 ، ثمّ قطعة أفقيّة طولها 6 تساوي الأولى ، ثمّ قطعة مائلة طولها 2b+3 (الأطوال بالكيلومتر)",
+      "maxWidth": 340,
+      "caption": "(الأطوال غير حقيقية)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عبّر عن طول المسار كلّه بالكيلومتر بدلالة $b$ وبأبسط شكل :",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3b + 23$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-PERCELL"
+        },
+        {
+          "id": "B",
+          "content": "$3b + 11$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-NOFIRST"
+        },
+        {
+          "id": "C",
+          "content": "$3b + 17$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعيّة وحدّد ما يتغيّر (الحرف) وما يبقى ثابتًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ خيار بقيمة بسيطة للحرف ثمّ قارن بالعدّ المباشر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاعدة الصحيحة تعطي العدد نفسه الذي تجده بالعدّ في كلّ مرّة تجرّبها."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتابة الصحيحة هي $3b + 17$ .",
+        "incorrect": "جرّب كلّ خيار على قيمة بسيطة للحرف وقارن بالعدّ المباشر قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "$3b + 17$ : القطعتان الأفقيّتان متساويتان وطول كلّ منهما $6$ ، ثمّ $(b+2) + (2b+3)$ .",
+          "عند $b = 4$ : $3 \\times 4 + 17 = 29$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "إذا كان $b = 4$ km ، فما طول المسار ؟ احسب $L = 3b + 17$ .",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "29",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بالقيمة المعطاة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ احترم أولويّة العمليّات : الضرب قبل الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة قبل أن تجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$L = 29$ .",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ أعد الحساب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 4 + 17 = 29$ ."
+        ],
+        "result": "29"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب $L = 3b + 17$ من أجل $b = 10$ .",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "47",
+      "misconceptionSignatures": [
+        {
+          "value": "327",
+          "id": "MISC-IBARA2-JUXTA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بالقيمة المعطاة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ احترم أولويّة العمليّات : الضرب قبل الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة قبل أن تجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$L = 47$ .",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ أعد الحساب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 10 + 17 = 47$ ."
+        ],
+        "result": "47"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

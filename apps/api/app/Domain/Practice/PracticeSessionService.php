@@ -122,6 +122,23 @@ class PracticeSessionService
             ['level' => $session->level, 'status' => 'in_progress', 'started_at' => now()],
         );
 
+        // FEUILLE D'EXAMEN (BEM, 2026-10-06) : une étape se répond UNE fois,
+        // comme le jour de l'examen. Si elle a déjà une réponse enregistrée dans
+        // cette séance, on rend CETTE tentative (réponse comprise) au lieu d'en
+        // ouvrir une nouvelle : revenir en arrière ou recharger la page ne
+        // rouvre jamais une étape déjà répondue — le corrigé type vu entre-temps
+        // ne peut pas servir à la refaire.
+        if (($this->exercises->find($lessonCode, $exerciseId)['metadata']['exam'] ?? null) !== null) {
+            $answered = QuestionAttempt::where('exercise_attempt_id', $exerciseAttempt->id)
+                ->where('question_id', $questionId)
+                ->whereNotNull('submitted_at')
+                ->orderBy('attempt_number')
+                ->first();
+            if ($answered !== null) {
+                return $answered;
+            }
+        }
+
         $previous = QuestionAttempt::where('exercise_attempt_id', $exerciseAttempt->id)
             ->where('question_id', $questionId)->count();
 

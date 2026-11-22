@@ -1,0 +1,191 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-kusur-natiqa-l2-006",
+  "lessonCode": "wadiya-idmajiya-kusur-natiqa",
+  "level": 2,
+  "metadata": {
+    "title": "مخزون التمر",
+    "estimatedMinutes": 8,
+    "tags": [
+      "كسر من الباقي",
+      "الكلّ من جزئه"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "باع تاجر تمر $\\dfrac{2}{9}$ من مخزونه في الأسبوع الأوّل، ثمّ $\\dfrac{3}{7}$ من الباقي في الأسبوع الثاني ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما الكسر الذي يمثّل ما باعه في الأسبوع الثاني من المخزون كلّه ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "1/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "3/7",
+          "id": "MISC-SYN-KUSUR-WHOLE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكسر الأخير يُؤخذ من أيّ كمّية: من الكلّ أم ممّا بقي ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أوّلًا ما بقي بعد الجزء الأوّل، ثمّ خذ الكسر من هذا الباقي وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ مجموع الأجزاء والباقي يساوي الكلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{1}{3}$ .",
+        "incorrect": "تذكّر أنّ الكسر الثاني يُؤخذ ممّا بقي لا من الكلّ؛ احسب الباقي أوّلًا ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "بعد الأسبوع الأوّل بقي $\\dfrac{7}{9}$ .",
+          "$\\dfrac{3}{7} \\times \\dfrac{7}{9} = \\dfrac{21}{63} = \\dfrac{1}{3}$ ."
+        ],
+        "result": "\\dfrac{1}{3}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما الكسر الذي يمثّل ما بقي من المخزون بعد الأسبوعين ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "4/9",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "22/63",
+          "id": "MISC-SYN-KUSUR-WHOLE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكلّ الذي نقارن به ؟ وما الأجزاء المأخوذة منه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما بقي هو الكلّ ناقص مجموع الأجزاء المأخوذة، أي واحد ناقص مجموع الكسور."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الباقي موجب وأنّه أصغر من الكلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{4}{9}$ .",
+        "incorrect": "تذكّر أنّ الكسر الثاني يُؤخذ ممّا بقي لا من الكلّ؛ احسب الباقي أوّلًا ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "المباع: $\\dfrac{2}{9} + \\dfrac{1}{3} = \\dfrac{2}{9} + \\dfrac{3}{9} = \\dfrac{5}{9}$ .",
+          "$1 - \\dfrac{5}{9} = \\dfrac{4}{9}$ ."
+        ],
+        "result": "\\dfrac{4}{9}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "إذا بقي $120$ kg من التمر، فما كتلة المخزون الأصلي ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "270",
+      "misconceptionSignatures": [
+        {
+          "value": "160/3",
+          "id": "MISC-AMAL-NOFLIP"
+        },
+        {
+          "value": "360",
+          "id": "MISC-SYN-KUSUR-WRONGFRAC"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعطى جزء من الكلّ، ومعه الكسر الذي يمثّله هذا الجزء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكلّ هو الجزء مقسومًا على الكسر الذي يمثّله، أي مضروبًا في مقلوبه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بأخذ الكسر من الكلّ الذي وجدته: يجب أن تجد الجزء المعطى."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $270$ .",
+        "incorrect": "الكلّ يُحسب بقسمة الجزء على الكسر الذي يمثّله؛ تحقّق بالعملية العكسية ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الـ $120$ kg تمثّل $\\dfrac{4}{9}$ من المخزون .",
+          "$120 \\div \\dfrac{4}{9} = 120 \\times \\dfrac{9}{4} = 270$ kg ."
+        ],
+        "result": "270"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

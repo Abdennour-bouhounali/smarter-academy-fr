@@ -1,0 +1,294 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muadalat-l4-009",
+  "lessonCode": "wadiya-idmajiya-muadalat",
+  "level": 4,
+  "metadata": {
+    "title": "مساحة مستطيل ومساحة مربع",
+    "estimatedMinutes": 10,
+    "tags": [
+      "ترييض",
+      "متراجحة",
+      "معادلة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-muadalat_P2",
+      "modelledOn": "ex-35"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "مستطيل بُعداه $(x + 6)$ cm و $x$ cm ، ومربع طول ضلعه $(x + 2)$ cm ، حيث $x$ عدد موجب."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "عبّر بدلالة $x$ عن مساحة كل من الشكلين على شكل مجموع مبسّط.",
+      "statement": "مساحة المستطيل — العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "تُكتب مساحة المستطيل على الشكل $x^2 + mx$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة المستطيل = الطول × العرض، ثم انشر."
+        }
+      ],
+      "feedback": {
+        "correct": "$6$ .",
+        "incorrect": "انشر الجداء $x(x + 6)$ ."
+      },
+      "solution": {
+        "lines": [
+          "مساحة المستطيل: $x(x + 6) = x^2 + 6x$"
+        ],
+        "result": "x^2 + 6x"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "مساحة المربع — العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "تُكتب مساحة المربع على الشكل $x^2 + mx + p$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طبّق المتطابقة $(a + b)^2 = a^2 + 2ab + b^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$4$ .",
+        "incorrect": "انشر $(x + 2)^2$ بالمتطابقة الشهيرة."
+      },
+      "solution": {
+        "lines": [
+          "حدّ $x$ في نشر $(x + 2)^2$ هو $2 \\times x \\times 2$ ."
+        ],
+        "result": "m = 4"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ب",
+      "statement": "مساحة المربع — العدد $p$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "تُكتب مساحة المربع على الشكل $x^2 + mx + p$ : اكتب العدد $p$ فقط",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الحد الثابت في النشر."
+        }
+      ],
+      "feedback": {
+        "correct": "$4$ .",
+        "incorrect": "انشر $(x + 2)^2$ بالمتطابقة الشهيرة."
+      },
+      "solution": {
+        "lines": [
+          "مساحة المربع: $(x + 2)^2 = x^2 + 4x + 4$"
+        ],
+        "result": "x^2 + 4x + 4"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "lead": "تُترجَم العبارة «مساحة المستطيل أكبر من مساحة المربع» بالمتراجحة $x(x + 6) > (x + 2)^2$ . حلّها.",
+      "statement": "حدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x < k$ أو $x \\leqslant k$ أو $x > k$ أو $x \\geqslant k$ : اكتب العدد $k$ فقط (عدد صحيح أو كسر a/b، قد يكون سالبًا)",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر، كما في حل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إضافة عدد إلى الطرفين أو طرحه منهما لا تغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحدّ هو العدد الذي يحقّق المعادلة المرفقة (نضع «=» مكان رمز المتباينة): اقسم في الأخير على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "حدّ الحلول هو $k = 2$ .",
+        "incorrect": "أعد الحل سطرًا سطرًا: العملية نفسها على الطرفين، ثم القسمة على معامل $x$ في الأخير."
+      },
+      "solution": {
+        "lines": [
+          "حدّ الحلول هو حلّ المعادلة المرفقة: $x(x + 6) = (x + 2)^2$",
+          "$x^2 + 6x = x^2 + 4x + 4$",
+          "$6x - 4x = 4$",
+          "$2x = 4$",
+          "$x = \\dfrac{4}{2}$",
+          "إذن حدّ الحلول هو $2$ ."
+        ],
+        "result": "k = 2"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < 2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QALB-ZAID"
+        },
+        {
+          "id": "B",
+          "content": "$x \\leqslant 2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QALB-ZAID"
+        },
+        {
+          "id": "C",
+          "content": "$x > 2$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$x \\geqslant 2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارة معامل $x$ في آخر سطر قبل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد موجب تحافظ على الاتجاه، والقسمة على عدد سالب تغيّره."
+        }
+      ],
+      "feedback": {
+        "correct": "$x > 2$ .",
+        "incorrect": "تتبّع سطور الحل: الاتجاه يتغيّر فقط عند الضرب أو القسمة على عدد سالب، ونوع المتباينة (تامة أو غير تامة) لا يتغيّر أبدًا."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $x(x + 6) > (x + 2)^2$",
+          "$x^2 + 6x > x^2 + 4x + 4$",
+          "$6x - 4x > 4$",
+          "$2x > 4$",
+          "$\\dfrac{2x}{2} > \\dfrac{4}{2}$",
+          "إذن حلول المتراجحة هي كل قيم $x$ الأكبر تماما من $2$ ."
+        ],
+        "result": "x > 2"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "جد $x$ حتى يكون الفرق بين مساحة المستطيل ومساحة المربع $20\\,cm^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بـ cm",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أن الفرق بين المساحتين يساوي 20، ثم انشر وبسّط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حدود $x^2$ تختفي: تبقى معادلة من الدرجة الأولى."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 12$ .",
+        "incorrect": "انقل حدود $x$ إلى طرف والأعداد إلى الطرف الآخر مع تغيير الإشارة، ثم اقسم على معامل $x$ . تحقّق بالتعويض."
+      },
+      "solution": {
+        "lines": [
+          "$2x - 4 = 20$",
+          "$2x = 20 + 4$",
+          "$2x = 24$",
+          "$x = \\dfrac{24}{2}$"
+        ],
+        "result": "x = 12"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

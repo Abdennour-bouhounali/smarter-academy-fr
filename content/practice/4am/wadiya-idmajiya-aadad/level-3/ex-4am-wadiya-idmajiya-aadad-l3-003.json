@@ -1,0 +1,179 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-aadad-l3-003",
+  "lessonCode": "wadiya-idmajiya-aadad",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2015 — العددان 1274 و 1078",
+    "estimatedMinutes": 10,
+    "tags": [
+      "القاسم المشترك الأكبر",
+      "كسر غير قابل للاختزال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-aadad_P1",
+      "modelledOn": "BEM 2015 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 1274 و 1078 مع كتابة مراحل الحساب.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "98",
+      "misconceptionSignatures": [
+        {
+          "value": "49",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 1274 على 1078: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (1274 ; 1078) بالزوج (1078 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 98.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$1274 = 1078 \\times 1 + 196$",
+          "$1078 = 196 \\times 5 + 98$",
+          "$196 = 98 \\times 2 + 0$",
+          "آخر باقٍ غير معدوم هو 98، إذن:"
+        ],
+        "result": "PGCD(1274 ; 1078) = 98"
+      },
+      "work": "required",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب $\\dfrac{1274}{1078}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "13/11",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "637/539",
+          "id": "MISC-IKHTIZAL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 98: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال 01.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1274}{1078} = \\dfrac{1274 \\div 98}{1078 \\div 98}$"
+        ],
+        "result": "\\dfrac{1274}{1078} = \\dfrac{13}{11}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب العدد P حيث: $P = \\dfrac{1274}{1078} - \\dfrac{2}{11} \\times \\dfrac{11}{4}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال على الشكل a/b",
+      "expectedAnswer": "15/22",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ بالضرب قبل الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "وحّد المقامين قبل الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$P = \\dfrac{13}{11} - \\dfrac{1}{2} = \\dfrac{26 - 11}{22} = \\dfrac{15}{22}$",
+        "incorrect": "احسب الجداء أولًا، ثم وحّد المقامات واطرح، واختزل الناتج."
+      },
+      "solution": {
+        "lines": [
+          "$P = \\dfrac{13}{11} - \\dfrac{2 \\times 11}{11 \\times 4}$",
+          "$P = \\dfrac{13}{11} - \\dfrac{1}{2}$",
+          "$P = \\dfrac{26}{22} - \\dfrac{11}{22}$"
+        ],
+        "result": "P = \\dfrac{15}{22}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

@@ -1,0 +1,259 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-amaliyat-tabiiya-ushriya-l4-003",
+  "lessonCode": "wadiya-idmajiya-amaliyat-tabiiya-ushriya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مصروف تلميذ في أربعة أسابيع",
+    "estimatedMinutes": 12,
+    "tags": [
+      "معدّل",
+      "آلة حاسبة",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "صرف تلميذ في أربعة أسابيع متتالية: ⁦35,5 DA⁩ ثم ⁦42,25 DA⁩ ثم ⁦18,75 DA⁩ ثم ⁦23,5 DA⁩ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما معدّل ما يصرفه في الأسبوع؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "مبلغ بالدينار",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "102.375",
+          "id": "MISC-AQWAS-BARSPLIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعية جملة جملة: كلّ جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب سلسلة عمليات تترجمها، وضع بين قوسين ما يجب حسابه أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب السلسلة بالترتيب الصحيح للعمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{35{,}5 + 42{,}25 + 18{,}75 + 23{,}5}{4} = 30$ .",
+        "incorrect": "خطّ الكسر يقسم البسط كلّه على المقام كلّه، فنحسب البسط والمقام أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $\\dfrac{35{,}5 + 42{,}25 + 18{,}75 + 23{,}5}{4}$",
+          "$A = \\dfrac{35{,}5 + 42{,}25 + 18{,}75 + 23{,}5}{4}$",
+          "$A = \\dfrac{77{,}75 + 18{,}75 + 23{,}5}{4}$",
+          "$A = \\dfrac{96{,}5 + 23{,}5}{4}$",
+          "$A = \\dfrac{120}{4}$",
+          "$A = 30$"
+        ],
+        "result": "30 \\text{ DA }"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أيّ حجز على الآلة يعطي هذا المعدّل؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(35{,}5 + 42{,}25 + 18{,}75 + 23{,}5) \\div 4$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$35{,}5 + 42{,}25 + 18{,}75 + 23{,}5 \\div 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-CALCNOBRACKET"
+        },
+        {
+          "id": "C",
+          "content": "$(35{,}5 + 42{,}25) + (18{,}75 + 23{,}5) \\div 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-MISPLACED"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المطلوب جيّدًا: ما العملية التي تُنجز في الأخير، وما الذي يُحسب قبلها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ سلسلة مقترحة بالحساب أو بالقاعدة المناسبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الجواب هو السلسلة التي تترجم المطلوب وتعطي القيمة المنتظرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$(35{,}5 + 42{,}25 + 18{,}75 + 23{,}5) \\div 4 = 30$ .",
+        "incorrect": "اختبر كلّ سلسلة بالحساب: الصحيحة هي التي تترجم المطلوب وتعطي القيمة المنتظرة، وانتبه إلى القوسين."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة الصحيحة: $(35{,}5 + 42{,}25 + 18{,}75 + 23{,}5) \\div 4$",
+          "$A = (35{,}5 + 42{,}25 + 18{,}75 + 23{,}5) \\div 4$",
+          "$A = (77{,}75 + 18{,}75 + 23{,}5) \\div 4$",
+          "$A = (96{,}5 + 23{,}5) \\div 4$",
+          "$A = 120 \\div 4$",
+          "$A = 30$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل يزيد المعدّل الأسبوعي على $28$ دينارًا؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب كلّ طرف من الطرفين على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين الناتجين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحكم قبل أن تحسب: اختبر بالأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم، تحقّق بالحساب.",
+        "incorrect": "احسب الطرفين كلّا على حدة قبل أن تحكم."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{35{,}5 + 42{,}25 + 18{,}75 + 23{,}5}{4}$",
+          "$A = \\dfrac{77{,}75 + 18{,}75 + 23{,}5}{4}$",
+          "$A = \\dfrac{96{,}5 + 23{,}5}{4}$",
+          "$A = \\dfrac{120}{4}$",
+          "$A = 30$",
+          "$A = 28$",
+          "النتيجتان تحقّقان ما قيل: الجواب نعم."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "لو بقي المعدّل نفسه، فكم يصرف في $8$ أسابيع؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "مبلغ بالدينار",
+      "expectedAnswer": "240",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعية جملة جملة: كلّ جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب سلسلة عمليات تترجمها، وضع بين قوسين ما يجب حسابه أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب السلسلة بالترتيب الصحيح للعمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{35{,}5 + 42{,}25 + 18{,}75 + 23{,}5}{4} \\times 8 = 240$ .",
+        "incorrect": "اكتب سلسلة تترجم الوضعية جملة جملة، ثم احسبها بالترتيب الصحيح للعمليات."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $\\dfrac{35{,}5 + 42{,}25 + 18{,}75 + 23{,}5}{4} \\times 8$",
+          "$A = \\dfrac{35{,}5 + 42{,}25 + 18{,}75 + 23{,}5}{4} \\times 8$",
+          "$A = \\dfrac{77{,}75 + 18{,}75 + 23{,}5}{4} \\times 8$",
+          "$A = \\dfrac{96{,}5 + 23{,}5}{4} \\times 8$",
+          "$A = \\dfrac{120}{4} \\times 8$",
+          "$A = 30 \\times 8$",
+          "$A = 240$"
+        ],
+        "result": "240 \\text{ DA }"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

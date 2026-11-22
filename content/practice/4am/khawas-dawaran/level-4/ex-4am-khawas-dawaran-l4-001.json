@@ -1,0 +1,171 @@
+{
+  "id": "ex-4am-khawas-dawaran-l4-001",
+  "lessonCode": "khawas-dawaran",
+  "level": 4,
+  "metadata": {
+    "title": "من الكتاب — التمرين 17 (ص 161، شهادة التعليم المتوسط)",
+    "estimatedMinutes": 5,
+    "tags": [
+      "معلم",
+      "المستطيل"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-17",
+      "page": 161,
+      "section": "أتعمّق",
+      "number": 17
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 161): المستوي مزود بمعلم متعامد ومتجانس. $A(0\\,;\\,4)$ ، $B(-3\\,;\\,1)$ ، $C(5\\,;\\,-1)$ . E منتصف القطعة [BC]، و D صورة A بالدوران الذي مركزه E وزاويته $180^\\circ$ . (صحّحت المنصّة: المستطيل هو ABDC.)",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          4
+        ],
+        "B": [
+          -3,
+          1
+        ],
+        "C": [
+          5,
+          -1
+        ]
+      },
+      "grid": true,
+      "axes": true,
+      "ariaLabel": "معلم فيه النقط A و B و C",
+      "maxWidth": 440
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا E:",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x\\,;\\,y)$ : الفاصلة ثم الترتيبة (عدد صحيح أو كسر مثل 3/2)",
+      "expectedAnswer": {
+        "x": "1",
+        "y": "0"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "منتصف قطعة: نصف مجموع الفاصلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم نصف مجموع الترتيبتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "B و C."
+        }
+      ],
+      "feedback": {
+        "correct": "$E(1\\,;\\,0)$ .",
+        "incorrect": "نجمع ثم نقسم على 2."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "إحداثيتا D:",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x\\,;\\,y)$ : الفاصلة ثم الترتيبة (عدد صحيح أو كسر مثل 3/2)",
+      "expectedAnswer": {
+        "x": "2",
+        "y": "-4"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدوران الذي زاويته $180^\\circ$ : E منتصف [AD]."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من A إلى E كم وحدة؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّرها من E."
+        }
+      ],
+      "feedback": {
+        "correct": "$D(2\\,;\\,-4)$ .",
+        "incorrect": "E منتصف [AD]."
+      }
+    },
+    {
+      "id": "q3",
+      "statement": "الرباعي ABDC:",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "متوازي أضلاع ليس مستطيلا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-TANAZUR"
+        },
+        {
+          "id": "B",
+          "content": "مستطيل",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "مربع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-KHAWAS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "E منتصف القطرين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن $AD^2$ و $BC^2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم قارن $AB^2$ و $AC^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "قطراه متناصفان ومتقايسان ($AD^2 = BC^2 = 68$)، وضلعاه $AB^2 = 18 \\neq AC^2 = 50$ .",
+        "incorrect": "قطران متناصفان ومتقايسان، وضلعان متتاليان غير متقايسين: ما الرباعي؟"
+      }
+    }
+  ]
+}

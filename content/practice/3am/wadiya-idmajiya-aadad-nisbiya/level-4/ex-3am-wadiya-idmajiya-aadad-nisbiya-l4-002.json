@@ -1,0 +1,187 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-aadad-nisbiya-l4-002",
+  "lessonCode": "wadiya-idmajiya-aadad-nisbiya",
+  "level": 4,
+  "metadata": {
+    "title": "ضرب إحداثيتي نقطة في عدد",
+    "estimatedMinutes": 6,
+    "tags": [
+      "إحداثيات",
+      "جداء",
+      "حاصل قسمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد، $K(−2{,}5\\,;\\,4)$ و $L(8\\,;\\,−10)$ نقطتان."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "نضرب فاصلة $K$ وترتيبها في $−2$ فنحصل على النقطة $K_1$ . أوجد إحداثيتيها.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "5",
+        "y": "-8"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-JIDAA-NEGNEG",
+          "value": {
+            "x": "-5",
+            "y": "-8"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الإحداثيتين المعلومتين: الفاصلة أولًا ثم الترتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر بعملية على كل إحداثية على حدة، ثم اجمع النتيجتين في ثنائية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من النتيجة بالنظر إلى موضع النقطة بالنسبة إلى محوري المعلم."
+        }
+      ],
+      "feedback": {
+        "correct": "الإحداثيتان هما $(5 ; −8)$ .",
+        "incorrect": "راجع قراءة الإحداثيات وأثر الضرب في عدد سالب على كل إحداثية."
+      },
+      "solution": {
+        "lines": [
+          "$(−2{,}5) \\times (−2) = 5$ و $4 \\times (−2) = −8$"
+        ],
+        "result": "(5 ; −8)"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "نقسم فاصلة $L$ وترتيبها على $−2$ فنحصل على النقطة $L_1$ . أوجد إحداثيتيها.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-4",
+        "y": "5"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الإحداثيتين المعلومتين: الفاصلة أولًا ثم الترتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر بعملية على كل إحداثية على حدة، ثم اجمع النتيجتين في ثنائية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من النتيجة بالنظر إلى موضع النقطة بالنسبة إلى محوري المعلم."
+        }
+      ],
+      "feedback": {
+        "correct": "الإحداثيتان هما $(−4 ; 5)$ .",
+        "incorrect": "راجع قراءة الإحداثيات وأثر الضرب في عدد سالب على كل إحداثية."
+      },
+      "solution": {
+        "lines": [
+          "$8 \\div (−2) = −4$ و $(−10) \\div (−2) = 5$"
+        ],
+        "result": "(−4 ; 5)"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "أوجد العدد الذي نضرب فيه الفاصلة $9$ لنحصل على $−27$ . احسب $(−27) \\div 9$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "-36",
+          "id": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العددين اللذين نقسم أحدهما على الآخر وعيّن إشارة كل منهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عاملان مجهولان فالعامل الناقص هو حاصل قسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعملية العكسية: اضرب نتيجتك في العامل المعلوم."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $−3$ .",
+        "incorrect": "راجع الربط بين الضرب والقسمة وقاعدة إشارات الحاصل، ثم تحقّق بالضرب."
+      },
+      "solution": {
+        "lines": [
+          "$(−27) \\div 9$",
+          "$= −3$"
+        ],
+        "result": "−3"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

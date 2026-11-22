@@ -1,0 +1,125 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-khattiya-l2-007",
+  "lessonCode": "wadiya-idmajiya-khattiya",
+  "level": 2,
+  "metadata": {
+    "title": "زيادة الموسم الصيفي",
+    "estimatedMinutes": 5,
+    "tags": [
+      "نسبة مئوية",
+      "زيادة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-khattiya_P2",
+      "modelledOn": "method-percent",
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-khattiya-l2-007"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في فصل الصيف يرفع مسيّر مصعد هوائي سعر التذكرة بـ 20%، ويعلن ذلك بصدق على لوحة الأسعار. نسمّي $x$ السعر قبل الزيادة (بـ DA) و $f(x)$ السعر بعد الزيادة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عبّر عن $f(x)$ بدلالة $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المعامل $a$ فقط في $f(x) = ax$ (عشري بالفاصلة)",
+      "expectedAnswer": "1,2",
+      "misconceptionSignatures": [
+        {
+          "value": "0.2",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        },
+        {
+          "value": "0.8",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "السعر الجديد = السعر القديم + الزيادة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "زيادة مقدار بـ $t\\%$ هي ضربه في $1 + \\dfrac{t}{100}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(x) = x + 0{,}2x = 1{,}2x$ .",
+        "incorrect": "المعامل يضمّ السعر القديم والزيادة معا."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = x + \\dfrac{20}{100}x = (1 + 0{,}2)x = 1{,}2x$"
+        ],
+        "result": "f(x) = 1{,}2x"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب السعر في الصيف إذا كان السعر قبل الزيادة 350DA.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: السعر بـ DA",
+      "expectedAnswer": "420",
+      "misconceptionSignatures": [
+        {
+          "value": "70",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        },
+        {
+          "value": "370",
+          "id": "MISC-NISBA-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $f(350)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(350) = 1{,}2 \\times 350 = 420$ DA.",
+        "incorrect": "السعر الجديد هو صورة 350 بالدالة $f$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(350) = 1{,}2 \\times 350 = 420$",
+          "سعر التذكرة في الصيف 420DA."
+        ],
+        "result": "f(350) = 420"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "ex-4am-khawas-dawaran-l3-003",
+  "lessonCode": "khawas-dawaran",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — مربعان على ضلعي مثلث",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الإثبات بدوران"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_khawas-dawaran_P2",
+      "modelledOn": "method-properties"
+    }
+  },
+  "generator": {
+    "tool": "u13-khawas-dawaran/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "ABC مثلث. ABDE و ACFG مربعان مرسومان خارجه، بحيث يحوّل الدوران الذي مركزه A وزاويته $90^\\circ$ في الاتجاه المباشر النقطة D إلى B، والنقطة C إلى G."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "نستنتج:",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$DC = 2BG$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-KHAWAS"
+        },
+        {
+          "id": "B",
+          "content": "$DC = BG$ و $(DC) \\perp (BG)$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$DC = BG$ و $(DC) \\parallel (BG)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-TAWAZI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما صورة القطعة [DC]؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "D ↦ B و C ↦ G."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خاصيتان: الأطوال، وزاوية الدوران."
+        }
+      ],
+      "feedback": {
+        "correct": "[BG] صورة [DC] بدوران زاويته $90^\\circ$ : متساويتان ومتعامدتان.",
+        "incorrect": "[BG] صورة [DC]: الطول محفوظ والزاوية بين المستقيمين قائمة."
+      }
+    }
+  ]
+}

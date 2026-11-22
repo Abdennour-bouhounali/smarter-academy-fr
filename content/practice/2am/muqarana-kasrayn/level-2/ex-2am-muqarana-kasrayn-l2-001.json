@@ -1,0 +1,229 @@
+{
+  "id": "ex-2am-muqarana-kasrayn-l2-001",
+  "lessonCode": "muqarana-kasrayn",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مقارنة كسور ومجموع",
+    "estimatedMinutes": 10,
+    "tags": [
+      "مقارنة كسرين",
+      "مجموع كسرين"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-84",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أنجز ما يلي :"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $A = \\dfrac{4}{9} + \\dfrac{14}{36}$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "5/6",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط ؟ وما الكسور المعطاة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد قبل الجمع أو الطرح ثمّ اختزل ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{5}{6}$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$36 = 9 \\times 4$ ، إذن $\\dfrac{4}{9} = \\dfrac{16}{36}$ .",
+          "$A = \\dfrac{16}{36} + \\dfrac{14}{36} = \\dfrac{30}{36} = \\dfrac{5}{6}$ ."
+        ],
+        "result": "\\dfrac{5}{6}"
+      },
+      "work": "optional",
+      "timeSeconds": 90,
+      "counted": false
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "قارن بين $\\dfrac{5}{14}$ و $\\dfrac{5}{11}$ مع التعليل :",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{5}{14} < \\dfrac{5}{11}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{5}{14} = \\dfrac{5}{11}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-NUMONLY"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{5}{14} > \\dfrac{5}{11}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-BIGDEN"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما البسطان في الكسرين ؟ هل هما متساويان ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا تساوى البسطان فالأكبر هو الكسر الذي مقامه أصغر ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بين المقامين ثمّ تذكّر : كلّما كبر المقام صغرت الحصّة ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{5}{14} < \\dfrac{5}{11}$ .",
+        "incorrect": "اختر طريقة المقارنة المناسبة للحالة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "البسطان متساويان ($5$) ، إذن الأكبر هو الكسر الذي مقامه أصغر (قطعه أكبر) .",
+          "$14 > 11$ ، ومنه $\\dfrac{5}{14} < \\dfrac{5}{11}$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "قارن بين $\\dfrac{10}{9}$ و $\\dfrac{417}{421}$ مع التعليل :",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{10}{9} > \\dfrac{417}{421}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{10}{9} < \\dfrac{417}{421}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-NUMONLY"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع كلاّ من الكسرين أمام العدد $1$ : أيّ البسطين أصغر من مقامه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكسر الذي بسطه أصغر من مقامه أصغر من $1$ ، والذي بسطه أكبر من مقامه أكبر من $1$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل $1$ وسيطًا : إذا كان أحدهما أصغر من $1$ والآخر أكبر منه فقد انتهت المقارنة ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{10}{9} > \\dfrac{417}{421}$ .",
+        "incorrect": "اختر طريقة المقارنة المناسبة للحالة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{417}{421}$ : البسط أصغر من المقام ، فالكسر أصغر من $1$ .",
+          "$\\dfrac{10}{9}$ : البسط أكبر من المقام ، فالكسر أكبر من $1$ .",
+          "إذن $\\dfrac{417}{421} < 1 < \\dfrac{10}{9}$ ، ومنه $\\dfrac{10}{9} > \\dfrac{417}{421}$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "علّل جوابك في المقارنة الأخيرة دون أن تحسب أيّ قيمة عشرية .",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا ، ثمّ اضغط «سجّل إجابتي» لتطّلع على الحلّ النموذجي .",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب جملة أو جملتين : الطريقة المستعملة ثمّ المقارنة التي تدعمها ."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحلّ النموذجي .",
+        "incorrect": "قارن تبريرك بالحلّ النموذجي : الطريقة ثمّ المقارنة التي تدعمها ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{10}{9}$ : البسط أكبر من المقام ، فهو أكبر من $1$ .",
+          "$\\dfrac{417}{421}$ : البسط أصغر من المقام ، فهو أصغر من $1$ .",
+          "إذن $\\dfrac{417}{421} < 1 < \\dfrac{10}{9}$ ."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

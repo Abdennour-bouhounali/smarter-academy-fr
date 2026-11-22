@@ -1,0 +1,71 @@
+{
+  "id": "ex-4am-muntasaf-masafa-l4-001",
+  "lessonCode": "muntasaf-masafa",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 10 — النقطة J",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المنتصف"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-10",
+      "page": 147,
+      "section": "إحداثيتا منتصف قطعة - المسافة بين نقطتين",
+      "number": 10
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 147): المستوي مزوّد بمعلم مبدؤه O، و $B(-6\\,;\\,-3)$ . J نقطة بحيث $\\overrightarrow{JB} = \\overrightarrow{OJ}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا J:",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح أو كسر مثل 1/2)",
+      "expectedAnswer": {
+        "x": "-3",
+        "y": "-3/2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MUNTASAF-NISF",
+          "value": {
+            "x": "-6",
+            "y": "-3"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المنتصف يقع في منتصف الطريق أفقيا وفي منتصف الطريق عموديا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الفاصلتين ثم اقسم على 2، وافعل الشيء نفسه مع الترتيبين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى الإشارات: جمع عدد سالب يعني طرح قيمته."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{OJ} = \\overrightarrow{JB}$ يعني J منتصف [OB]: $J\\left(-3\\,;\\,-\\dfrac{3}{2}\\right)$ .",
+        "incorrect": "التساوي الشعاعي يعني أن J منتصف [OB]."
+      }
+    }
+  ]
+}

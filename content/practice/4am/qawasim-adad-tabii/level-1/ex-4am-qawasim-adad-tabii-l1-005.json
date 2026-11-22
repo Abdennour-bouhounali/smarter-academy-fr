@@ -1,0 +1,132 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l1-005",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2015 — قواسم العدد 98",
+    "estimatedMinutes": 5,
+    "tags": [
+      "قواسم",
+      "مراحل الحساب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qawasim-adad-tabii_P3",
+      "modelledOn": "BEM 2015 I-1 01"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن كل قواسم العدد 98 مع كتابة مراحل الحساب.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        2,
+        7,
+        14,
+        49,
+        98
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            7,
+            14,
+            49
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 98 بمربعات الأعداد: إلى أي عدد يكفي أن تختبر قابلية القسمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل قسمة باقيها معدوم تعطي قاسمين: $d$ و $98 \\div d$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$98 = 1 \\times 98$ ، $98 = 2 \\times 49$ ، $98 = 7 \\times 14$.",
+        "incorrect": "اختبر الأعداد التي مربعها أصغر من العدد أو يساويه، وخذ من كل قسمة باقيها معدوم القاسمين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$9^2 = 81 \\leq 98 < 100 = 10^2$ ومنه نختبر قابلية قسمة 98 على الأعداد من 1 إلى 9.",
+          "نجد أن 98 يقبل القسمة على كل من الأعداد: 1 ، 2 ، 7.",
+          "ومن المساويات: $98 = 1 \\times 98$ ، $98 = 2 \\times 49$ ، $98 = 7 \\times 14$",
+          "إذن قواسم العدد 98 هي: 1 ، 2 ، 7 ، 14 ، 49 ، 98."
+        ]
+      },
+      "work": "required",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هو عدد قواسم العدد 98؟",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل قائمة القواسم التي وجدتها في السؤال السابق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل جداء عاملين مختلفين يعطي قاسمين."
+        }
+      ],
+      "feedback": {
+        "correct": "قواسم 98 هي 1 ، 2 ، 7 ، 14 ، 49 ، 98.",
+        "incorrect": "عُدّ القواسم في القائمة التي وجدتها، ولا تنسَ 1 والعدد نفسه."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 98 هي: 1 ، 2 ، 7 ، 14 ، 49 ، 98.",
+          "إذن عدد قواسم العدد 98 هو 6."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

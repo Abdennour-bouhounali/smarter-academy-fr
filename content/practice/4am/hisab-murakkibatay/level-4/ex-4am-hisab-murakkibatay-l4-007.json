@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l4-007",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — تحقّق من رأس",
+    "estimatedMinutes": 3,
+    "tags": [
+      "متوازي أضلاع",
+      "تساوي شعاعين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hisab-murakkibatay_P2",
+      "modelledOn": "method-equal"
+    }
+  },
+  "statement": {
+    "content": "اقترح ياسين $D(6\\,;\\,1)$ ليكون ABCD متوازي أضلاع، حيث $A(0\\,;\\,0)$ ، $B(3\\,;\\,2)$ ، $C(9\\,;\\,3)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "هل اقتراح ياسين صحيح؟",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا: لأن D ليست على محور",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAKL-BURHAN"
+        },
+        {
+          "id": "B",
+          "content": "نعم: $\\overrightarrow{AB}\\begin{pmatrix} 3 \\\\ 2 \\end{pmatrix} = \\overrightarrow{DC}$ ، و A، B، C ليست على استقامة",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لا: لأن $\\overrightarrow{AB} \\neq \\overrightarrow{CD}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-TARTIB-NUQAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المساواة الشعاعية لمتوازي الأضلاع ABCD بترتيب رؤوسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع الأول ومقابله في الاتجاه نفسه: $\\overrightarrow{AB} = \\overrightarrow{DC}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب معادلتين (للفاصلة وللترتيب) وحلّهما."
+        }
+      ],
+      "feedback": {
+        "correct": "DC مركبتاه $9 - 6 = 3$ و $3 - 1 = 2$ : AB = DC، فـ ABCD متوازي أضلاع.",
+        "incorrect": "نقارن AB بـ DC، لا بـ CD."
+      }
+    }
+  ]
+}

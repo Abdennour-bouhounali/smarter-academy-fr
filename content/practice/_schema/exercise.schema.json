@@ -19,6 +19,27 @@
       "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
     },
     "level": { "type": "integer", "minimum": 1, "maximum": 5 },
+    "templateId": {
+      "description": "Mastery V2 — le gabarit partagé par les VARIANTES d'un exercice (mêmes learning points principaux et answerType par question, autres nombres/contexte). Le moteur de maîtrise classe une réussite sur une variante comme une démonstration partielle de généralisation. Facultatif.",
+      "type": "string",
+      "pattern": "^tpl-[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "variantOf": {
+      "description": "Provenance : l'exercice dont celui-ci est une variante. Informatif.",
+      "type": "string",
+      "pattern": "^ex-[a-z0-9]+(-[a-z0-9]+)*-l[1-5]-[0-9]{3}$"
+    },
+    "generator": {
+      "description": "Provenance d'un exercice GÉNÉRÉ : l'outil, sa version, la graine. Informatif ; jamais lu par le moteur.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tool"],
+      "properties": {
+        "tool": { "type": "string" },
+        "version": { "type": "string" },
+        "seed": { "type": ["string", "integer"] }
+      }
+    },
     "metadata": {
       "type": "object",
       "additionalProperties": false,
@@ -71,7 +92,15 @@
             }
           }
         },
-        "answerType": { "enum": ["choice", "multiChoice", "rational", "affine", "interval", "point"] },
+        "difficulty": {
+          "description": "Mastery V2 — la difficulté 1..5 de CETTE question, quand elle diffère du niveau de l'exercice (défaut : le niveau). Lue par le registre d'items et le moteur de maîtrise.",
+          "type": "integer", "minimum": 1, "maximum": 5
+        },
+        "cognitiveDemand": {
+          "description": "Mastery V2 — la demande cognitive, pour l'EXPLICATION de la maîtrise (« réussi sur une question de transfert »). Jamais un poids.",
+          "enum": ["recall", "apply", "transfer", "reason"]
+        },
+        "answerType": { "enum": ["choice", "multiChoice", "rational", "affine", "interval", "point", "integerSet"] },
         "answerFormat": {
           "description": "Visible par l'élève : COMMENT saisir. Ne doit jamais révéler la réponse (invariant 8).",
           "type": "string"
@@ -136,7 +165,8 @@
           "properties": {
             "correct": { "type": "string", "minLength": 3 },
             "incorrect": { "type": "string", "minLength": 3 },
-            "partial": { "type": "string" }
+            "partial": { "type": "string" },
+            "notIrreducible": { "type": "string" }
           }
         },
         "visual": { "$ref": "#/$defs/visual" },

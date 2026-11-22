@@ -1,0 +1,80 @@
+{
+  "id": "ex-4am-insihab-shuaa-l1-008",
+  "lessonCode": "insihab-shuaa",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — طول شعاع على المرصوفة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "الطول"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_insihab-shuaa_P2",
+      "modelledOn": "know-1"
+    }
+  },
+  "statement": {
+    "content": "على المرصوفة (الشكل)، السهم $\\overrightarrow{MN}$ أفقي.",
+    "figure": {
+      "points": {
+        "M": [
+          1,
+          2
+        ],
+        "N": [
+          6,
+          2
+        ]
+      },
+      "grid": true,
+      "vectors": [
+        {
+          "from": "M",
+          "to": "N",
+          "tone": "indigo"
+        }
+      ],
+      "ariaLabel": "ورقة مرصوفة: السهم من M نحو N أفقي نحو اليمين",
+      "maxWidth": 420
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما طول الشعاع $\\overrightarrow{MN}$ بضلع المربع وحدةً؟",
+      "learningPoints": [
+        {
+          "code": "4am_insihab-shuaa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الطول لا يتعلق بالجهة: نعدّ المربعات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "سهم مائل: الحركة الأفقية والحركة الشاقولية ضلعا مثلث قائم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق خاصية فيثاغورس: الطول² = (الأفقي)² + (الشاقولي)²."
+        }
+      ],
+      "feedback": {
+        "correct": "من M إلى N خمسة مربعات أفقيا: الطول 5.",
+        "incorrect": "عُدّ المربعات بين M و N على الخط الأفقي."
+      }
+    }
+  ]
+}

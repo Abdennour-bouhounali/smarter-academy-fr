@@ -1,0 +1,144 @@
+{
+  "id": "ex-4am-mada-wasit-mutawassit-l2-003",
+  "lessonCode": "mada-wasit-mutawassit",
+  "level": 2,
+  "metadata": {
+    "title": "رواتب 11 عاملا",
+    "estimatedMinutes": 4,
+    "tags": [
+      "الوسيط",
+      "المدى"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-4",
+      "page": 93,
+      "section": "أنشطة",
+      "number": 4
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "إليك الرواتب الشهرية بالدينار لـ 11 عاملا بإحدى المؤسسات الخاصة التي تحترم حقوق عمّالها:",
+    "formulas": [
+      "42000 \\; ; \\; 35000 \\; ; \\; 55000 \\; ; \\; 42000",
+      "60000 \\; ; \\; 50000 \\; ; \\; 35000 \\; ; \\; 42000",
+      "50000 \\; ; \\; 65000 \\; ; \\; 35000"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "رتّب هذه السلسلة ترتيبا تصاعديا، ثم عيّن الراتب الذي يجزئها إلى سلسلتين لهما نفس التكرار (وسيط السلسلة Med).",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الوسيط بـ DA",
+      "expectedAnswer": "42000",
+      "misconceptionSignatures": [
+        {
+          "value": "50000",
+          "id": "MISC-IHSA-WASIT-BILA-TARTIB"
+        },
+        {
+          "value": "511000/11",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا يُقرأ الوسيط إلا بعد ترتيب قيم السلسلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب القيم تصاعديا، ثم عُدّها: هل عددها N فردي أم زوجي؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان N فرديا فالوسيط هو القيمة ذات الرتبة $\\dfrac{N + 1}{2}$ ، وإذا كان زوجيا فهو نصف مجموع القيمتين ذواتي الرتبتين $\\dfrac{N}{2}$ و $\\dfrac{N}{2} + 1$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$Med = 42000$ .",
+        "incorrect": "رتّب القيم أولا، ثم عيّن الرتبة الوسطى (أو الرتبتين الوسطيين إذا كان عدد القيم زوجيا)."
+      },
+      "solution": {
+        "lines": [
+          "الترتيب التصاعدي: 35000 ، 35000 ، 35000 ، 42000 ، 42000 ، 42000 ، 50000 ، 50000 ، 55000 ، 60000 ، 65000",
+          "عدد القيم 11 عدد فردي، فالوسيط هو القيمة ذات الرتبة $\\dfrac{11 + 1}{2} = 6$ :",
+          "$Med = 42000$"
+        ],
+        "result": "Med = 42000"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب مدى سلسلة الرواتب.",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدى بـ DA",
+      "expectedAnswer": "30000",
+      "misconceptionSignatures": [
+        {
+          "value": "65000",
+          "id": "MISC-IHSA-MADA-AKBAR-QIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المدى هو الفرق بين أكبر قيمة وأصغر قيمة في السلسلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن أكبر قيمة وأصغر قيمة من قيم السلسلة (لا من التكرارات)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح أصغر قيمة من أكبر قيمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$65000 - 35000 = 30000$ .",
+        "incorrect": "المدى فرق بين قيمتين من قيم السلسلة: أكبر قيمة ناقص أصغر قيمة، ولا تُستعمل التكرارات."
+      },
+      "solution": {
+        "lines": [
+          "أكبر قيمة: 65000DA ، وأصغر قيمة: 35000DA",
+          "$65000 - 35000 = 30000$"
+        ],
+        "result": "30000"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

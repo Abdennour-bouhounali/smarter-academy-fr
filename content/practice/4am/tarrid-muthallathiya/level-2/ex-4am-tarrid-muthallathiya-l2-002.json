@@ -1,0 +1,182 @@
+{
+  "id": "ex-4am-tarrid-muthallathiya-l2-002",
+  "lessonCode": "tarrid-muthallathiya",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2013 — جسر الصعود إلى السفينة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "ترييض وضعية",
+      "الظل",
+      "زاوية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tarrid-muthallathiya_P2",
+      "modelledOn": "BEM 2013 I-3 (02)"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2013",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في ميناء الجزائر، يصل جسر الصعود $[PQ]$ رصيف الميناء $P$ بباب سفينة $Q$ . الباب على ارتفاع $QH = 2{,}4\\,\\mathrm{m}$ فوق مستوى الرصيف الأفقي، حيث $H$ نقطة من الرصيف تقع شاقوليا تحت $Q$ ، و $PH = 5{,}6\\,\\mathrm{m}$ (الشكل المقابل). ويساعد عمال الميناء المسافرين المسنّين على الصعود بصبر وتعاون.",
+    "figure": {
+      "points": {
+        "P": [
+          0.0,
+          0.0
+        ],
+        "H": [
+          5.6,
+          0.0
+        ],
+        "Q": [
+          5.6,
+          2.4
+        ]
+      },
+      "segments": [
+        {
+          "from": "P",
+          "to": "H",
+          "label": "5,6 m"
+        },
+        {
+          "from": "H",
+          "to": "Q",
+          "label": "2,4 m"
+        },
+        [
+          "P",
+          "Q"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "P",
+          "H",
+          "Q"
+        ]
+      ],
+      "labels": {
+        "P": "sw",
+        "H": "se",
+        "Q": "ne"
+      },
+      "ariaLabel": "جسر الصعود [PQ] من الرصيف P إلى باب السفينة Q، و H على الرصيف تحت Q شاقوليا؛ PH = 5,6 m و QH = 2,4 m",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $\\tan\\widehat{QPH}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-muthallathiya_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "3/7",
+      "misconceptionSignatures": [
+        {
+          "value": "7/3",
+          "id": "MISC-MUTH-MUQABIL-MUJAWIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $PHQ$ القائم في $H$ : حدّد المقابل والمجاور للزاوية $\\widehat{QPH}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الظل = المقابل على المجاور، ثم اختزل الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan\\widehat{QPH} = \\dfrac{QH}{PH} = \\dfrac{2{,}4}{5{,}6} = \\dfrac{3}{7}$ .",
+        "incorrect": "المقابل للزاوية $P$ هو $[QH]$ (لا يمرّ بـ $P$)، والمجاور هو $[PH]$ ."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $PHQ$ قائم في $H$ ، لدينا: $\\tan\\widehat{QPH} = \\dfrac{QH}{PH}$",
+          "$\\tan\\widehat{QPH} = \\dfrac{2{,}4}{5{,}6} = \\dfrac{24}{56}$"
+        ],
+        "result": "\\tan\\widehat{QPH} = \\dfrac{3}{7}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج قيس الزاوية $\\widehat{QPH}$ بالتدوير إلى الوحدة من الدرجة.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيس الزاوية بالدرجة مدوّرا إلى الوحدة",
+      "expectedAnswer": "23",
+      "misconceptionSignatures": [
+        {
+          "value": "67",
+          "id": "MISC-MUTH-ZAWIYA-KHATI"
+        },
+        {
+          "value": "0.43",
+          "id": "MISC-MUTH-NISBA-BADAL-QAYS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النسبة معلومة والقيس مطلوب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اللمسة العكسية: ⁦2nd⁩ ثم ⁦tan⁻¹⁩ ثم $(3 \\div 7)$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "دوّر النتيجة النهائية إلى الوحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{QPH} \\approx 23^{\\circ}$ (الشاشة: $23{,}198...$).",
+        "incorrect": "النسبة ليست القيس: استعمل ⁦tan⁻¹⁩ والحاسبة مبرمجة على الدرجة."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال الآلة الحاسبة: ⁦2nd tan⁻¹ ( 3 ÷ 7 ) =⁩ يظهر $\\widehat{QPH} \\approx 23{,}199^{\\circ}$"
+        ],
+        "result": "\\widehat{QPH} \\approx 23^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

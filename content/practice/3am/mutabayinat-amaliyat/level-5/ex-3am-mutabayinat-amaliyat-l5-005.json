@@ -1,0 +1,294 @@
+{
+  "id": "ex-3am-mutabayinat-amaliyat-l5-005",
+  "lessonCode": "mutabayinat-amaliyat",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — ميزانية رحلة علمية",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "حصر",
+      "ميزانية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: تنظّم المتوسطة رحلة علمية: تكلفة الحافلة ثابتة $6000$ دج، ويدفع كلّ تلميذ $250$ دج لوجبة الغداء. عدد التلاميذ $n$ حيث $20\\le n\\le 40$ ، والمصاريف $C=6000+250n$ .\nالجزء الثاني: ميزانية الصندوق التعاوني للمتوسطة $15\\,000$ دج، وتحتفظ الإدارة بسجلّ دقيق لها أمانةً."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "اختر الحصر الصحيح للعبارة $250n$ .",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$10000\\le 250n\\le 5000$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-BOUND-ORDER"
+        },
+        {
+          "id": "B",
+          "content": "$20\\le 250n\\le 40$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-COEF-LOST"
+        },
+        {
+          "id": "C",
+          "content": "$5000\\le 250n\\le 10000$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المعطى بالضبط؟ وما العبارة المطلوب استنتاج متباينة لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابنِ المتباينة المطلوبة عملية بعد عملية، وانتبه إلى إشارة العدد عند كلّ ضرب أو قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر، وأعد كتابة الحصر من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "نضرب في $250$ (موجب): $5000\\le 250n\\le 10000$ .",
+        "incorrect": "استنتج المتباينة خطوة بخطوة، وانتبه إلى اتجاهها بعد كلّ ضرب أو قسمة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضرب في $250$ (موجب): $5000\\le 250n\\le 10000$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "أكمل: $\\ldots\\le C$",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "11000",
+      "misconceptionSignatures": [
+        {
+          "value": "5000",
+          "id": "MISC-MUTABAYINA-ONE-SIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المعطى بالضبط؟ وما العبارة المطلوب استنتاج متباينة لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابنِ المتباينة المطلوبة عملية بعد عملية، وانتبه إلى إشارة العدد عند كلّ ضرب أو قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر، وأعد كتابة الحصر من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "نضيف $6000$ : $11000\\le C\\le 16000$ .",
+        "incorrect": "استنتج المتباينة خطوة بخطوة، وانتبه إلى اتجاهها بعد كلّ ضرب أو قسمة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضيف $6000$ : $11000\\le C\\le 16000$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "أكمل: $C\\le\\ldots$",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "16000",
+      "misconceptionSignatures": [
+        {
+          "value": "10000",
+          "id": "MISC-MUTABAYINA-ONE-SIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المعطى بالضبط؟ وما العبارة المطلوب استنتاج متباينة لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابنِ المتباينة المطلوبة عملية بعد عملية، وانتبه إلى إشارة العدد عند كلّ ضرب أو قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر، وأعد كتابة الحصر من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$C\\le 16000$ .",
+        "incorrect": "استنتج المتباينة خطوة بخطوة، وانتبه إلى اتجاهها بعد كلّ ضرب أو قسمة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$C\\le 16000$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "statement": "هل تكفي ميزانية الصندوق مهما كان عدد التلاميذ؟",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لأنّ $C$ قد تبلغ $16000>15000$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم، لأنّ $11000<15000$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-DECISION"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المعطى بالضبط؟ وما العبارة المطلوب استنتاج متباينة لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابنِ المتباينة المطلوبة عملية بعد عملية، وانتبه إلى إشارة العدد عند كلّ ضرب أو قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر، وأعد كتابة الحصر من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$C\\le 16000$ و $16000>15000$ ؛ قد لا تكفي.",
+        "incorrect": "استنتج المتباينة خطوة بخطوة، وانتبه إلى اتجاهها بعد كلّ ضرب أو قسمة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$C\\le 16000$ و $16000>15000$ ؛ قد لا تكفي."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما أكبر عدد من التلاميذ تكفيهم الميزانية؟ أكمل من $6000+250n\\le 15000$ : $n\\le\\ldots$",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "36",
+      "misconceptionSignatures": [
+        {
+          "value": "9000",
+          "id": "MISC-MUTABAYINA-COEF-LOST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل العدد الذي نضرب فيه (أو نقسم عليه) موجب أم سالب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في عدد موجب تمامًا (أو القسمة عليه) لا يغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق العملية على كلّ طرف ثم احتفظ بالرمز كما هو."
+        }
+      ],
+      "feedback": {
+        "correct": "نقسم على $250$ (موجب): $n\\le 36$ .",
+        "incorrect": "الضرب في عدد موجب تمامًا (أو القسمة عليه) يحفظ اتجاه المتباينة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نطرح $6000$ : $250n\\le 9000$ .",
+          "نقسم على $250$ (موجب): $n\\le 36$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

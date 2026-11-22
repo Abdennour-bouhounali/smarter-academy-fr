@@ -1,0 +1,126 @@
+{
+  "id": "ex-4am-mafhum-jumla-l1-010",
+  "lessonCode": "mafhum-jumla",
+  "level": 1,
+  "metadata": {
+    "title": "مساواة بحرفين",
+    "estimatedMinutes": 3,
+    "tags": [
+      "تعويض",
+      "ثنائية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "prep",
+      "page": 55,
+      "section": "أستعدّ",
+      "number": 5
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعتبر المساواة:",
+    "formulas": [
+      "2x - y = 0"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل هذه المساواة محققة من أجل $x = 1$ و $y = 0$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $1$ و $y$ بـ $0$ في الطرف الأول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن النتيجة بالطرف الثاني $0$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 1 - 0 = 2 \\neq 0$ : الثنائية ليست حلا للمعادلة.",
+        "incorrect": "العدد الأول في الثنائية قيمة $x$ والثاني قيمة $y$ ؛ عوّض ثم قارن بالطرف الثاني."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $x$ بـ $1$ و $y$ بـ $0$ :",
+          "$2 \\times 1 - 0 = 2 \\neq 0$",
+          "ومنه الثنائية $(1 ; 0)$ ليست حلا للمعادلة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عيّن العدد $y$ الذي تكون من أجله الثنائية $(1 ; y)$ حلا للمعادلة $2x - y = 0$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $y$ فقط",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $1$ في المعادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحصل على معادلة مجهولها $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 1 - y = 0$ أي $y = 2$ : الثنائية $(1 ; 2)$ .",
+        "incorrect": "عوّض $x$ بـ $1$ ثم حلّ المعادلة التي مجهولها $y$ ."
+      },
+      "solution": {
+        "lines": [
+          "$2 \\times 1 - y = 0$",
+          "$2 - y = 0$"
+        ],
+        "result": "y = 2"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

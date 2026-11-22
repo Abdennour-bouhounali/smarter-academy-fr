@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l3-010",
+  "lessonCode": "mafhum-dawaran",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — النقطة وصورتها على دائرة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "صورة نقطة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mafhum-dawaran_P2",
+      "modelledOn": "know-2"
+    }
+  },
+  "statement": {
+    "content": "(𝒞) دائرة مركزها O ونصف قطرها $5\\,\\mathrm{cm}$ ، و M نقطة من (𝒞)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "صورة M بأي دوران مركزه O:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا تنتمي إلى (𝒞) إلا إذا كانت الزاوية $180^\\circ$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MASAFA"
+        },
+        {
+          "id": "B",
+          "content": "تنتمي إلى (𝒞)",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "تنتمي إلى الدائرة التي مركزها M",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MARKAZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "OM = 5 cm."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما هو البعد OM′؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كل نقطة على بعد 5 cm من O تنتمي إلى (𝒞)."
+        }
+      ],
+      "feedback": {
+        "correct": "OM′ = OM = 5 cm: M′ على (𝒞) مهما كانت الزاوية.",
+        "incorrect": "الدوران الذي مركزه O يحرّك النقط على دوائر مركزها O."
+      },
+      "difficulty": 2
+    }
+  ]
+}

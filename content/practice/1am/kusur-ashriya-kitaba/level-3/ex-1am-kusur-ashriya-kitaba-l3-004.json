@@ -1,0 +1,235 @@
+{
+  "id": "ex-1am-kusur-ashriya-kitaba-l3-004",
+  "lessonCode": "kusur-ashriya-kitaba",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مفكوك عدد عشري والقسمة على 10 000",
+    "estimatedMinutes": 5,
+    "tags": [
+      "مفكوك",
+      "القسمة",
+      "إزاحة الفاصلة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 1,
+      "file": "1am-s1-96",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العدد $A = 3472{,}58$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أتمم المفكوك: $3472{,}58 = 3 \\times 1000 + 4 \\times 100 + \\ldots \\times 10 + 2 + 5 \\times 0{,}1 + 8 \\times 0{,}01$",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "رقم",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد مرتبة الحدّ الناقص في الكتابة العشرية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الرقم المطلوب هو رقم هذه المرتبة في العدد العشري."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحدود الصفرية تُحذف من المفكوك."
+        }
+      ],
+      "feedback": {
+        "correct": "$3472{,}58 = 3 \\times 1000 + 4 \\times 100 + 7 \\times 10 + 2 + 5 \\times 0{,}1 + 8 \\times 0{,}01$ : الحدّ الناقص يوافق مرتبة العشرات.",
+        "incorrect": "كل رقم في الكتابة العشرية يضرب في قيمة مرتبته: 100 للمئات، 10 للعشرات، 1 للآحاد، $0{,}1$ للأعشار (أو $\\dfrac{1}{10}$)، $0{,}01$ للأجزاء من مائة…"
+      },
+      "solution": {
+        "lines": [
+          "الحدّ الناقص يوافق مرتبة العشرات في $3472{,}58$.",
+          "$3472{,}58 = 3 \\times 1000 + 4 \\times 100 + 7 \\times 10 + 2 + 5 \\times 0{,}1 + 8 \\times 0{,}01$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "نريد أن يصبح الرقم $7$ رقم الأجزاء من ألف في العدد $A = 3472{,}58$. أيّ عملية نجريها على $A$؟",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$A \\div 10\\,000$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$A \\div 1000$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KUSUR-RANK-NAMES"
+        },
+        {
+          "id": "C",
+          "content": "$A \\times 10\\,000$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KUSUR-COMMA-LEFT"
+        },
+        {
+          "id": "D",
+          "content": "$A \\div 100$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KUSUR-RANK-NAMES"
+        }
+      ],
+      "answerFormat": "اختر إجابة واحدة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في أيّ مرتبة يوجد الرقم 7 الآن؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كم مرتبة يجب أن يتحرّك نحو اليمين؟ وماذا يفعل نقل الفاصلة نحو اليسار؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$3472{,}58 \\div 10\\,000 = 0{,}347258$ : الرقم 7 أصبح في مرتبة الأجزاء من ألف.",
+        "incorrect": "يتحرّك الرقم نحو اليمين إذا قسمنا: نحسب عدد المراتب بين مرتبته الحالية ومرتبة الأجزاء من ألف."
+      },
+      "solution": {
+        "lines": [
+          "الرقم 7 في مرتبة العشرات، ويجب أن يصير في مرتبة الأجزاء من ألف.",
+          "بين العشرات والأجزاء من ألف أربع مراتب، فنقسم على $10\\,000$."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب ذهنيًا: $3472{,}58 \\div 10\\,000$",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "0,347258",
+      "misconceptionSignatures": [
+        {
+          "value": "34725800",
+          "id": "MISC-KUSUR-COMMA-RIGHT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل العدد الذي نضرب فيه (أو نقسم عليه) أكبر من 1 أم أصغر منه؟ وكم صفرًا أو كم رقمًا بعد الفاصلة فيه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في 10 أو 100 أو 1000 والقسمة على $0{,}1$ أو $0{,}01$ أو $0{,}001$ تكبّر العدد، وما عدا ذلك يصغّره."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انقل الفاصلة بعدد المراتب المناسب، واكتب أصفارًا إن لم تكفِ الأرقام."
+        }
+      ],
+      "feedback": {
+        "correct": "$3472{,}58 \\div 10\\,000 = 0{,}347258$ : انتقلت الفاصلة أربع مراتب نحو اليسار وكتبنا أصفارًا لملء المراتب الفارغة.",
+        "incorrect": "نزيح الفاصلة نحو اليمين عند الضرب في 10 أو 100 أو 1000 (وعند القسمة على $0{,}1$ أو $0{,}01$ أو $0{,}001$) ونحو اليسار في الحالات الأخرى، بعدد مراتب يساوي عدد أصفار العدد 10 أو 100 أو 1000 (أو عدد الأرقام بعد الفاصلة في $0{,}1$ أو $0{,}01$ أو $0{,}001$)."
+      },
+      "solution": {
+        "lines": [
+          "$3472{,}58 \\div 10\\,000 = 0{,}347258$",
+          "تنتقل الفاصلة أربع مراتب نحو اليسار، ونكتب أصفارًا في المراتب الفارغة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "احسب ذهنيًا: $86{,}4 \\div 1000$",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "0,0864",
+      "misconceptionSignatures": [
+        {
+          "value": "86400",
+          "id": "MISC-KUSUR-COMMA-RIGHT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل العدد الذي نضرب فيه (أو نقسم عليه) أكبر من 1 أم أصغر منه؟ وكم صفرًا أو كم رقمًا بعد الفاصلة فيه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في 10 أو 100 أو 1000 والقسمة على $0{,}1$ أو $0{,}01$ أو $0{,}001$ تكبّر العدد، وما عدا ذلك يصغّره."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انقل الفاصلة بعدد المراتب المناسب، واكتب أصفارًا إن لم تكفِ الأرقام."
+        }
+      ],
+      "feedback": {
+        "correct": "$86{,}4 \\div 1000 = 0{,}0864$ : انتقلت الفاصلة ثلاث مراتب نحو اليسار وكتبنا أصفارًا لملء المراتب الفارغة.",
+        "incorrect": "نزيح الفاصلة نحو اليمين عند الضرب في 10 أو 100 أو 1000 (وعند القسمة على $0{,}1$ أو $0{,}01$ أو $0{,}001$) ونحو اليسار في الحالات الأخرى، بعدد مراتب يساوي عدد أصفار العدد 10 أو 100 أو 1000 (أو عدد الأرقام بعد الفاصلة في $0{,}1$ أو $0{,}01$ أو $0{,}001$)."
+      },
+      "solution": {
+        "lines": [
+          "$86{,}4 \\div 1000 = 0{,}0864$",
+          "تنتقل الفاصلة ثلاث مراتب نحو اليسار، ونكتب أصفارًا في المراتب الفارغة."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

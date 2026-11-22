@@ -1,0 +1,307 @@
+{
+  "id": "ex-2am-rabi-mutanasib-l5-005",
+  "lessonCode": "rabi-mutanasib",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — ستائر القاعة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "قماش",
+      "ميزانية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تخيط ورشة $3$ ستائر من $7{,}5$ m من القماش، وطول القماش يتناسب مع عدد الستائر. ثمن $4{,}5$ m من هذا القماش هو $1260$ DA.\nالجزء الأول: طول القماش.\nالجزء الثاني: الثمن.",
+    "table": {
+      "head": [
+        "عدد الستائر",
+        "3",
+        "8",
+        "14"
+      ],
+      "rows": [
+        [
+          "طول القماش (m)",
+          "7,5",
+          "…",
+          "…"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "ما طول القماش اللازم لـ $8$ ستائر؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "12,5",
+          "id": "MISC-RABI-ADD"
+        },
+        {
+          "value": "60",
+          "id": "MISC-RABI-MULROW"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "الطول $20$ m .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$7{,}5 \\div 3 = 2{,}5$",
+          "$2{,}5 \\times 8 = 20$"
+        ],
+        "result": "20"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما طول القماش اللازم لـ $14$ ستارة؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "35",
+      "misconceptionSignatures": [
+        {
+          "value": "18,5",
+          "id": "MISC-RABI-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "الطول $35$ m .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$2{,}5 \\times 14 = 35$"
+        ],
+        "result": "35"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "ما ثمن المتر الواحد من القماش؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "280",
+      "misconceptionSignatures": [
+        {
+          "value": "5670",
+          "id": "MISC-RABI-MULROW"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب أولًا: قيمة الوحدة الواحدة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قيمة الوحدة الواحدة تُحسب بقسمة العدد الموجود في السطر الثاني على مقابله في السطر الأول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد ذلك اضرب قيمة الوحدة في الكمية المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن المتر $280$ DA .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$1260 \\div 4{,}5 = 280$"
+        ],
+        "result": "280"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما ثمن القماش اللازم لـ $8$ ستائر؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "5600",
+      "misconceptionSignatures": [
+        {
+          "value": "280",
+          "id": "MISC-RABI-UNITONLY"
+        },
+        {
+          "value": "1275,5",
+          "id": "MISC-RABI-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "الثمن $5600$ DA .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$280 \\times 20 = 5600$"
+        ],
+        "result": "5600"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ج",
+      "statement": "تملك الورشة $9800$ DA : ما أكبر عدد من الستائر يمكن خياطته؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "14",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد الستائر $14$ .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "طول القماش الذي ثمنه $9800$ DA : $9800 \\div 280 = 35$ m",
+          "$35 \\div 2{,}5 = 14$ ستارة."
+        ],
+        "result": "14"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

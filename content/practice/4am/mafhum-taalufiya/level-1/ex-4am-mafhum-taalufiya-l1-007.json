@@ -1,0 +1,152 @@
+{
+  "id": "ex-4am-mafhum-taalufiya-l1-007",
+  "lessonCode": "mafhum-taalufiya",
+  "level": 1,
+  "metadata": {
+    "title": "رحلة بسيارة أجرة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "صورة عدد",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "adaptedFrom": "ex-4am-mafhum-taalufiya-l1-007"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "سائق سيارة أجرة أمين يلتزم بتسعيرة تطبيقه الهاتفي: يدفع الراكب 100DA عند الركوب، و 40DA عن كل كيلومتر. نسمّي $x$ المسافة المقطوعة بالكيلومتر و $f(x)$ المبلغ المدفوع بـ DA ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "اكتب $f(x)$ على الشكل $f(x) = ax + b$ .",
+      "statement": "أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "40",
+      "misconceptionSignatures": [
+        {
+          "value": "100",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المبلغ الذي يُدفع عن كل كيلومتر؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 40$ : هو معامل $x$ .",
+        "incorrect": "المعامل $a$ هو العدد المضروب في $x$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 40x + 100$ من الشكل $ax + b$ حيث: $a = 40$ و $b = 100$ ."
+        ],
+        "result": "a = 40"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "100",
+      "misconceptionSignatures": [
+        {
+          "value": "40",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المبلغ الذي يُدفع مرة واحدة مهما كانت المسافة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$b = 100$ ، إذن $f(x) = 40x + 100$ .",
+        "incorrect": "$b$ هو الحدّ الذي لا يحتوي على $x$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 40x + 100$ من الشكل $ax + b$ حيث: $a = 40$ و $b = 100$ ."
+        ],
+        "result": "b = 100"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب المبلغ المدفوع لرحلة طولها 5km .",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "300",
+      "misconceptionSignatures": [
+        {
+          "value": "200",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $f(5)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(5) = 40 \\times 5 + 100 = 300$ .",
+        "incorrect": "اضرب المسافة في ثمن الكيلومتر، ثم أضف مبلغ الركوب."
+      },
+      "solution": {
+        "lines": [
+          "$f(5) = 40 \\times 5 + 100$",
+          "$f(5) = 200 + 100$",
+          "$f(5) = 300$ أي $300DA$ ."
+        ],
+        "result": "f(5) = 300\\,DA"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

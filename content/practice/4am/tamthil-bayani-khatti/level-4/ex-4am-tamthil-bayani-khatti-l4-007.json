@@ -1,0 +1,325 @@
+{
+  "id": "ex-4am-tamthil-bayani-khatti-l4-007",
+  "lessonCode": "tamthil-bayani-khatti",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2017 — حوض يُملأ وحوض يُفرغ",
+    "estimatedMinutes": 12,
+    "tags": [
+      "وضعية",
+      "قراءة بيانية",
+      "دالة خطية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tamthil-bayani-khatti_P2",
+      "modelledOn": "BEM 2017 II II-02"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2017",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يحتوي حوض قديم على $9m^3$ من الماء، ويحرص صاحبه على عدم تبذيره. في اللحظة نفسها، فُتح صنبور تفريغه وبدأت مضخة ملء حوض جديد كان فارغا. يمثّل $(D_1)$ و $(D_2)$ في المعلم التالي حجم الماء (بالمتر المكعب) في كل من الحوضين بدلالة المدة $x$ (بالساعات).",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "H": [
+          4.5,
+          9
+        ],
+        "B": [
+          0,
+          9
+        ],
+        "C": [
+          8,
+          1
+        ]
+      },
+      "rays": [
+        {
+          "from": "O",
+          "through": "H",
+          "name": "(D₁)",
+          "tone": "indigo",
+          "extend": 0
+        },
+        {
+          "from": "B",
+          "through": "C",
+          "name": "(D₂)",
+          "tone": "rose",
+          "extend": 0
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw"
+      },
+      "hidden": [
+        "H",
+        "B",
+        "C"
+      ],
+      "ariaLabel": "معلم على ورقة مرصوفة: نصف المستقيم (D1) ينطلق من المبدأ O ويصعد، والقطعة (D2) تنزل من محور التراتيب إلى محور الفواصل",
+      "caption": "محور الفواصل: المدة بالساعات — محور التراتيب: الحجم بـ m³"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أيّ المستقيمين يمثّل حجم الماء في الحوض الجديد؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(D_1)$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$(D_2)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-BAYANI-MUNHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحوض الجديد كان فارغا عند $x = 0$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أيّ التمثيلين يشمل المبدأ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الحوض الجديد فارغ في البداية: تمثيله يشمل المبدأ.",
+        "incorrect": "عند $x = 0$ يكون حجم الماء في الحوض الجديد معدوما."
+      },
+      "solution": {
+        "lines": [
+          "عند $x = 0$ يكون الحوض الجديد فارغا: حجم الماء 0، فتمثيله يشمل المبدأ $O$ .",
+          "إذن $(D_1)$ يمثّل الحوض الجديد، و $(D_2)$ يمثّل الحوض القديم (يبدأ من $9m^3$ وينزل)."
+        ],
+        "result": "(D_1)"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "بقراءة بيانية، عيّن حجم الماء في الحوض الجديد بعد ساعة واحدة.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الحجم بـ m³",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ من العدد المعطى على محور الفواصل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اتجه عموديا حتى تمثيل الحوض الجديد، ثم أفقيا حتى محور التراتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة من $(D_1)$ التي فاصلتها $1$ ترتيبها $2$ .",
+        "incorrect": "الصورة تُقرأ على محور التراتيب: ترتيب نقطة المستقيم، لا فاصلتها."
+      },
+      "solution": {
+        "lines": [
+          "النقطة من المستقيم $(D_1)$ التي فاصلتها $1$ ترتيبها $2$ .",
+          "إذن بعد ساعة واحدة يحتوي الحوض الجديد على $2m^3$ ."
+        ],
+        "result": "f(1) = 2"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "بقراءة بيانية، عيّن المدة اللازمة ليصبح في الحوض الجديد $8m^3$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدة بالساعات",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "16",
+          "id": "MISC-BAYANI-FASILA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ من العدد المعطى على محور التراتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اتجه أفقيا حتى المستقيم $(D_1)$ ، ثم عموديا حتى محور الفواصل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد المطلوب هو فاصلة نقطة المستقيم التي ترتيبها الصورة المعطاة."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة من $(D_1)$ التي ترتيبها $8$ فاصلتها $4$ .",
+        "incorrect": "العدد الذي علمت صورته يُقرأ على محور الفواصل: فاصلة نقطة المستقيم التي ترتيبها الصورة المعطاة."
+      },
+      "solution": {
+        "lines": [
+          "النقطة من المستقيم $(D_1)$ التي ترتيبها $8$ فاصلتها $4$ .",
+          "إذن يصبح في الحوض الجديد $8m^3$ بعد 4 ساعات."
+        ],
+        "result": "f(4) = 8"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "حجم الماء في الحوض الجديد $f(x)$ حيث $f$ دالة خطية. عيّن عبارة $f(x)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "0,5",
+          "id": "MISC-KHATTIYA-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$f$ دالة خطية: $f(x) = ax$ ، وتمثيلها يشمل النقطة ذات الإحداثيين $(4 ; 8)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب المعادلة $a \\times 4 = 8$ ثم حلّها: الترتيب على الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{8}{4} = 2$ ، إذن $f(x) = 2x$ .",
+        "incorrect": "المعامل هو الترتيب مقسوما على الفاصلة (وليس العكس)، مع الانتباه إلى الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "$f$ دالة خطية، إذن $f(x) = ax$ .",
+          "$f(4) = 8$ معناه $a \\times 4 = 8$",
+          "$a = \\dfrac{8}{4} = 2$"
+        ],
+        "result": "f(x) = 2x"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "بقراءة بيانية، عيّن المدة التي يتساوى بعدها حجما الماء في الحوضين، وحجم الماء حينئذ.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية (المدة ; الحجم): المدة بالساعات ثم الحجم بـ m³",
+      "expectedAnswer": {
+        "x": "3",
+        "y": "6"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "6",
+            "y": "3"
+          },
+          "id": "MISC-BAYANI-FASILA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن نقطة تقاطع التمثيلين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "فاصلتها هي المدة، وترتيبها هو الحجم."
+        }
+      ],
+      "feedback": {
+        "correct": "يتقاطع التمثيلان في النقطة $(3 ; 6)$ : بعد 3 ساعات يحتوي كل حوض على $6m^3$ .",
+        "incorrect": "اقرأ إحداثيي نقطة التقاطع: الفاصلة (المدة) أولا ثم الترتيب (الحجم)."
+      },
+      "solution": {
+        "lines": [
+          "التمثيلان يتقاطعان في النقطة $(3 ; 6)$ .",
+          "بعد 3 ساعات يتساوى الحجمان: $6m^3$ في كل حوض."
+        ],
+        "result": "(3 ; 6)"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

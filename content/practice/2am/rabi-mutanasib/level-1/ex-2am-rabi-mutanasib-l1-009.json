@@ -1,0 +1,196 @@
+{
+  "id": "ex-2am-rabi-mutanasib-l1-009",
+  "lessonCode": "rabi-mutanasib",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — تذاكر المسرح",
+    "estimatedMinutes": 6,
+    "tags": [
+      "المرور بالوحدة",
+      "الرابع المتناسب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اشترت جمعية $3$ تذاكر لدخول المسرح بـ $450$ DA. سعر التذكرة ثابت."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما ثمن تذكرة واحدة؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$1350$ DA",
+          "isCorrect": false,
+          "misconceptionId": "MISC-RABI-MULROW"
+        },
+        {
+          "id": "B",
+          "content": "$150$ DA",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{1}{150}$ DA",
+          "isCorrect": false,
+          "misconceptionId": "MISC-RABI-INV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب أولًا: قيمة الوحدة الواحدة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قيمة الوحدة الواحدة تُحسب بقسمة العدد الموجود في السطر الثاني على مقابله في السطر الأول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد ذلك اضرب قيمة الوحدة في الكمية المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن التذكرة $150$ DA .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$450 \\div 3 = 150$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما ثمن $8$ تذاكر؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "1200",
+      "misconceptionSignatures": [
+        {
+          "value": "455",
+          "id": "MISC-RABI-ADD"
+        },
+        {
+          "value": "150",
+          "id": "MISC-RABI-UNITONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "الثمن $1200$ DA .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$150 \\times 8 = 1200$"
+        ],
+        "result": "1200"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "كم تذكرة تُشترى بـ $2100$ DA؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "value": "315000",
+          "id": "MISC-RABI-INV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد التذاكر $14$ .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$2100 \\div 150 = 14$"
+        ],
+        "result": "14"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "id": "ex-2am-muqarana-nisbiya-l4-008",
+  "lessonCode": "muqarana-nisbiya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — هل يوجد عدد بين عددين متقاربين؟",
+    "estimatedMinutes": 9,
+    "tags": [
+      "عدد محصور",
+      "أعداد عشرية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لاحظ أحد التلاميذ في قسم التعاون أن عددين متتاليين في سلسلة من القراءات يبدوان متلاصقين: $-3$ و $-2$ ثم $-0{,}3$ و $-0{,}2$ ، فسأل هل يوجد عدد بينهما."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "هل يوجد عدد نسبي محصور بين $-3$ و $-2$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، مثل $-2{,}5$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا، لأنهما متتاليان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-NNB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج وحدّد الجزء الواقع بينهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد محصور بين عددين: أكبر من أحدهما وأصغر من الآخر في الوقت نفسه، دون أن يساوي أيًّا منهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب كل عدد مقترح: هل يحقق المتباينتين معًا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$-3 < -2{,}5 < -2$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$-3 < -2{,}5 < -2$",
+          "نعم يوجد"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل يوجد عدد نسبي محصور بين $-0{,}3$ و $-0{,}2$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، مثل $-0{,}25$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا، لأنهما متلاصقان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-NNB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج وحدّد الجزء الواقع بينهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد محصور بين عددين: أكبر من أحدهما وأصغر من الآخر في الوقت نفسه، دون أن يساوي أيًّا منهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب كل عدد مقترح: هل يحقق المتباينتين معًا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$-0{,}3 < -0{,}25 < -0{,}2$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$-0{,}30 < -0{,}25 < -0{,}20$",
+          "نعم يوجد"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "أيّ العدد الآتي محصور بين $-0{,}3$ و $-0{,}2$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-0{,}3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-EI"
+        },
+        {
+          "id": "B",
+          "content": "$-0{,}25$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$-0{,}2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-EI"
+        },
+        {
+          "id": "D",
+          "content": "$-0{,}35$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-BDG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج وحدّد الجزء الواقع بينهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد محصور بين عددين: أكبر من أحدهما وأصغر من الآخر في الوقت نفسه، دون أن يساوي أيًّا منهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب كل عدد مقترح: هل يحقق المتباينتين معًا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$-0{,}3 < -0{,}25 < -0{,}2$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}20 < 0{,}25 < 0{,}30$ والأعداد سالبة",
+          "$-0{,}3 < -0{,}25 < -0{,}2$"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

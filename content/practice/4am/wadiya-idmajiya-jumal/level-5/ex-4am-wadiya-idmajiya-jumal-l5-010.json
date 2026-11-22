@@ -1,0 +1,273 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-jumal-l5-010",
+  "lessonCode": "wadiya-idmajiya-jumal",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2023 — مطعم مدرسي بالنعامة",
+    "estimatedMinutes": 16,
+    "tags": [
+      "جملة",
+      "وضعية",
+      "تكاليف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-jumal_P1",
+      "modelledOn": "BEM 2023 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "خصّصت مديرية التربية، تكافلا مع التلاميذ المحتاجين، مبلغا قدره 600000DA لتجهيز مطعم مدرسي بمتوسطة في النعامة بـ 30 طاولة و 180 كرسيا.\nإذا علمت أن:\n• ثمن طاولتين و 8 كراسي معا يقدّر بـ 30400DA\n• ثمن 3 طاولات و 10 كراسي معا يقدّر بـ 42000DA"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "نسمّي $x$ ثمن الطاولة الواحدة و $y$ ثمن الكرسي الواحد (بالدينار).",
+      "statement": "بيّن أن $x$ و $y$ يحققان الجملة: $\\begin{cases} x + 4y = 15200 \\\\ 3x + 10y = 42000 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب معادلة لكل معلومة عن الثمن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بسّط المعادلة الأولى بقسمة طرفيها على 2."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "المعلومة الأولى: $2x + 8y = 30400$ ، وبقسمة الطرفين على 2: $x + 4y = 15200$",
+          "المعلومة الثانية: $3x + 10y = 42000$",
+          "ومنه: $\\begin{cases} x + 4y = 15200 \\\\ 3x + 10y = 42000 \\end{cases}$"
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حل هذه الجملة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": {
+        "x": "8000",
+        "y": "1800"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "1800",
+            "y": "8000"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن معاملات $x$ ومعاملات $y$ في المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة التعويض أو طريقة الجمع (بعد ضرب المعادلتين في عددين مناسبين) لحذف أحد المجهولين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد إيجاد أحد المجهولين، عوّضه في إحدى المعادلتين لتجد الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "الطاولة بـ $8000DA$ والكرسي بـ $1800DA$ .",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} x + 4y = 15200 & ...(1) \\\\ 3x + 10y = 42000 & ...(2) \\end{cases}$",
+          "بضرب طرفي المعادلة (1) في العدد $(-5)$ ، وبضرب طرفي المعادلة (2) في العدد $2$ نجد:",
+          "$\\begin{cases} -5x - 20y = -76000 & ...(3) \\\\ 6x + 20y = 84000 & ...(4) \\end{cases}$",
+          "بجمع (3) و (4) طرفا لطرف نجد:",
+          "$x = 8000$",
+          "بتعويض $x$ بـ $8000$ في المعادلة (1) نجد: $8000 + 4y = 15200$",
+          "$4y = 7200$",
+          "$y = 1800$",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(8000 ; 1800)"
+      },
+      "work": "optional",
+      "timeSeconds": 360
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب ثمن تجهيز المطعم بالطاولات والكراسي.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "564000",
+      "misconceptionSignatures": [
+        {
+          "value": "1494000",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الثمنين اللذين وجدتهما في السؤال 02."
+        }
+      ],
+      "feedback": {
+        "correct": "$30 \\times 8000 + 180 \\times 1800 = 564000$ .",
+        "incorrect": "اضرب عدد الطاولات في ثمن الطاولة وعدد الكراسي في ثمن الكرسي ثم اجمع."
+      },
+      "solution": {
+        "lines": [
+          "$30 \\times 8000 + 180 \\times 1800 = 240000 + 324000 = 564000$ أي $564000DA$"
+        ],
+        "result": "564000\\,DA"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "lead": "☜ مصاريف النقل تمثل 5% من ثمن التجهيز. هل يكفي المبلغ المخصص؟ برّر، ثم أعط المبلغ المتبقي.",
+      "statement": "هل يكفي المبلغ المخصص؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "counted": false,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKHFID-NISBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أضف مصاريف النقل إلى ثمن التجهيز."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن التكلفة الكلية بالمبلغ المخصص."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم: المبلغ يكفي.",
+        "incorrect": "احسب $5\\%$ من ثمن التجهيز وأضفها، ثم قارن بالمبلغ المخصص."
+      },
+      "solution": {
+        "lines": [
+          "ثمن التجهيز: $564000DA$",
+          "مصاريف النقل: $\\dfrac{5}{100} \\times 564000 = 28200$ أي $28200DA$",
+          "التكلفة الكلية: $564000 + 28200 = 592200$ أي $592200DA$",
+          "$592200 < 600000$ : المبلغ المخصص يكفي، ويبقى $600000 - 592200 = 7800$ أي $7800DA$ ."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "المبلغ المتبقي:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "7800",
+      "misconceptionSignatures": [
+        {
+          "value": "36000",
+          "id": "MISC-TAKHFID-NISBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ المخصص − التكلفة الكلية."
+        }
+      ],
+      "feedback": {
+        "correct": "يبقى $7800DA$ .",
+        "incorrect": "اطرح التكلفة الكلية (مع النقل) من المبلغ المخصص."
+      },
+      "solution": {
+        "lines": [
+          "ثمن التجهيز: $564000DA$",
+          "مصاريف النقل: $\\dfrac{5}{100} \\times 564000 = 28200$ أي $28200DA$",
+          "التكلفة الكلية: $564000 + 28200 = 592200$ أي $592200DA$",
+          "$592200 < 600000$ : المبلغ المخصص يكفي، ويبقى $600000 - 592200 = 7800$ أي $7800DA$ ."
+        ],
+        "result": "7800\\,DA"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

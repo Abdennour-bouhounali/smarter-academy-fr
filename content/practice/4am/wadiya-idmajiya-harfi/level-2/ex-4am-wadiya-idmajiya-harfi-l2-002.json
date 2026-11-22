@@ -1,0 +1,236 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-harfi-l2-002",
+  "lessonCode": "wadiya-idmajiya-harfi",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2011 — تحقّق، تحليل، معادلة",
+    "estimatedMinutes": 11,
+    "tags": [
+      "تحقق بالنشر",
+      "عامل مشترك",
+      "معادلة جداء معدوم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-harfi_P1",
+      "modelledOn": "BEM 2011 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2011",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "تحقّق بالنشر أنّ: $(2x + 3)(x - 5) = 2x^2 - 7x - 15$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر الجداء حدًّا حدًّا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الحدود المتشابهة وقارن بالطرف الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك سطرًا بسطر بالحل النموذجي، وانتبه إلى الإشارات عند النشر."
+      },
+      "solution": {
+        "lines": [
+          "$(2x + 3)(x - 5) = 2x^2 - 10x + 3x - 15$",
+          "$= 2x^2 - 7x - 15$"
+        ],
+        "result": "(2x + 3)(x - 5) = 2x^2 - 7x - 15"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "لتكن العبارة $A$ حيث: $A = 2x^2 - 7x - 15 + (2x + 3)(x + 2)$ . حلّل العبارة $A$ إلى جداء عاملين من الدرجة الأولى.",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $(2x + 3)(mx + n)$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-TAHLIL-ISHARA-QAWS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01 لتكتب $2x^2 - 7x - 15$ على شكل جداء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العامل $(2x + 3)$ مشترك بين الحدّين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أخرجه وبسّط ما بداخل القوس الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = (2x + 3)(2x - 3)$ إذن $m = 2$ .",
+        "incorrect": "تحقّق من تحليلك بنشر الجداء: يجب أن تجد العبارة الأصلية."
+      },
+      "solution": {
+        "lines": [
+          "$A = (2x + 3)(x - 5) + (2x + 3)(x + 2)$",
+          "$A = (2x + 3)[(x - 5) + (x + 2)]$"
+        ],
+        "result": "A = (2x + 3)(2x - 3)"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $(2x + 3)(mx + n)$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "value": "-7",
+          "id": "MISC-TAHLIL-ISHARA-QAWS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بعد الحساب، اقرأ العدد $n$ في الشكل المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = (2x + 3)(2x - 3)$ إذن $n = -3$ .",
+        "incorrect": "تحقّق من تحليلك بنشر الجداء: يجب أن تجد العبارة الأصلية."
+      },
+      "solution": {
+        "lines": [
+          "$A = (2x + 3)(2x - 3)$"
+        ],
+        "result": "n = -3"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "lead": "حل المعادلة: $(2x + 3)(2x - 3) = 0$ .",
+      "statement": "الحلّ الأصغر:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "-3/2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يكون جداء معدومًا إذا كان أحد عامليه على الأقل معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلتين من الدرجة الأولى، ثم حلّ كل واحدة منهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = -\\dfrac{3}{2}$ .",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة من الدرجة الأولى، ثم رتّب الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "$(2x + 3)(2x - 3) = 0$ يعني أنّ: $2x + 3 = 0$ أو $2x - 3 = 0$",
+          "أي: $x = -\\dfrac{3}{2}$ أو $x = \\dfrac{3}{2}$",
+          "إذن للمعادلة حلّان هما $-\\dfrac{3}{2}$ و $\\dfrac{3}{2}$"
+        ],
+        "result": "x = -\\dfrac{3}{2}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "الحلّ الأكبر:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "3/2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة الثانية من الدرجة الأولى، ثم قارن الحلّين."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{3}{2}$ .",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة من الدرجة الأولى، ثم رتّب الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "إذن للمعادلة حلّان هما $-\\dfrac{3}{2}$ و $\\dfrac{3}{2}$"
+        ],
+        "result": "x = \\dfrac{3}{2}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

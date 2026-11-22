@@ -1,0 +1,209 @@
+{
+  "id": "ex-4am-majdulat-ihsaiya-l4-010",
+  "lessonCode": "majdulat-ihsaiya",
+  "level": 4,
+  "metadata": {
+    "title": "سلسلة في عمود تبدأ من A2",
+    "estimatedMinutes": 7,
+    "tags": [
+      "مجال",
+      "دستور"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_majdulat-ihsaiya_P1",
+      "modelledOn": "ex-24"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "حجز أستاذ في العمود A من مجدول 25 قيمة، قيمة في كل خلية بدءا من الخلية A2 (في الخلية A1 عنوان العمود)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن مجال القيم.",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "⁦A1:A26⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MAJAL-KHALIYA"
+        },
+        {
+          "id": "B",
+          "content": "⁦A2:A26⁩",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "⁦A2:A25⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MAJAL-KHALIYA"
+        },
+        {
+          "id": "D",
+          "content": "⁦A1:A25⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MAJAL-KHALIYA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المجال يُكتب: الخلية الأولى ثم « ⁦:⁩ » ثم الخلية الأخيرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حدّد الخلية التي فيها أول قيمة والخلية التي فيها آخر قيمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تُدخل في المجال خلية عنوان، ولا تنس آخر خلية."
+        }
+      ],
+      "feedback": {
+        "correct": "من A2 إلى A26 خمس وعشرون خلية: $26 - 2 + 1 = 25$ .",
+        "incorrect": "المجال يبدأ بخلية أول قيمة وينتهي بخلية آخر قيمة، ولا يضمّ خلايا العناوين."
+      },
+      "solution": {
+        "lines": [
+          "أول قيمة في الخلية A2 ، والقيمة الخامسة والعشرون في الخلية رقم $2 + 25 - 1 = 26$ .",
+          "المجال: ⁦A2:A26⁩ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عيّن الدستور الذي يُظهر مدى هذه السلسلة.",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "⁦=MAX(A2:A25)-MIN(A2:A25)⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MAJAL-KHALIYA"
+        },
+        {
+          "id": "B",
+          "content": "⁦=MAX(A2:A26)⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MADA-AKBAR-QIMA"
+        },
+        {
+          "id": "C",
+          "content": "⁦=MAX(A2:A26)-MIN(A2:A26)⁩",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "⁦=MIN(A2:A26)-MAX(A2:A26)⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-DUSTUR-KHATI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المدى = أكبر قيمة − أصغر قيمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل المجال الذي وجدته في السؤال 01 في الدالتين."
+        }
+      ],
+      "feedback": {
+        "correct": "المدى = MAX ناقص MIN على مجال القيم وحده.",
+        "incorrect": "المدى فرق: أكبر قيمة ناقص أصغر قيمة، على مجال القيم دون خلية العنوان."
+      },
+      "solution": {
+        "lines": [
+          "المدى = أكبر قيمة − أصغر قيمة، على المجال A2:A26 كله (المجال A2:A25 ينسى القيمة الأخيرة).",
+          "الدستور: ⁦=MAX(A2:A26)-MIN(A2:A26)⁩ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أضاف الأستاذ قيمة جديدة في الخلية A27 . كم خلية يجب أن يضمّ مجال الدستور الآن؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "26",
+      "misconceptionSignatures": [
+        {
+          "value": "27",
+          "id": "MISC-IHSA-MAJAL-KHALIYA"
+        },
+        {
+          "value": "25",
+          "id": "MISC-IHSA-MAJAL-KHALIYA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المجال الجديد يبدأ من الخلية نفسها وينتهي عند A27 ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ الخلايا من A2 إلى A27 مع الخليتين نفسيهما."
+        }
+      ],
+      "feedback": {
+        "correct": "المجال الجديد ⁦A2:A27⁩ يضمّ $27 - 2 + 1 = 26$ خلية.",
+        "incorrect": "عُدّ الخلايا من A2 إلى A27 مع الخليتين الأولى والأخيرة، ولا تُدخل خلية العنوان A1 ."
+      },
+      "solution": {
+        "lines": [
+          "المجال الجديد: ⁦A2:A27⁩ .",
+          "$27 - 2 + 1 = 26$ خلية."
+        ],
+        "result": "26"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

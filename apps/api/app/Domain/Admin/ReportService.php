@@ -2,6 +2,7 @@
 
 namespace App\Domain\Admin;
 
+use App\Domain\Push\AdminPush;
 use App\Models\Lesson;
 use App\Models\LessonModule;
 use App\Models\QuestionAttempt;
@@ -10,6 +11,7 @@ use App\Models\StudentReport;
 use App\Models\User;
 use DomainException;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\DB;
 
 /**
@@ -22,114 +24,60 @@ use Illuminate\Support\Facades\DB;
  */
 class ReportService
 {
-    /**
-     * Fenêtre de réutilisation d'un signal encore incomplet. Assez longue
-     * pour couvrir une hésitation ou une fermeture accidentelle, assez courte
-     * pour qu'un problème rencontré à nouveau une heure plus tard compte
-     * comme un nouveau signalement.
-     */
-    private const DRAFT_REUSE_MINUTES = 30;
-
-    public function __construct(private ActivityLogger $log) {}
+    public function __construct(
+        private ActivityLogger $log,
+        private ReportScreenshotStore $screenshots,
+    ) {}
 
     /**
-     * Le SIGNAL : un élève a buté ici.
+     * Le SIGNALEMENT, en un envoi : contexte, catégorie, note facultative, et
+     * capture d'écran facultative.
      *
-     * Créé au CLIC, avant toute saisie. « Un élève a rencontré un problème sur
-     * ce module » est déjà une information exploitable, même s'il referme la
-     * fenêtre sans rien écrire — et c'est précisément l'information qu'un
-     * formulaire abandonné fait perdre aujourd'hui.
-     *
-     * `category` reste NULL jusqu'à ce que l'élève choisisse. Poser 'other'
-     * par défaut inventerait une réponse qu'il n'a pas donnée et fausserait
-     * durablement le comptage par catégorie.
-     *
-     * DÉDUPLICATION : un signal encore incomplet, du même élève, sur le même
-     * contexte, et récent, est RENVOYÉ au lieu d'être recréé. Ouvrir et
-     * refermer la fenêtre cinq fois ne fabrique pas cinq signalements. En
-     * revanche, un signal DÉJÀ complété n'est jamais réutilisé : signaler une
-     * erreur de maths puis, plus tard, une manipulation cassée sur le même
-     * module sont deux problèmes distincts (§15).
+     * Depuis 2026-10-05, seuls l'administrateur et les ambassadeurs
+     * signalent (middleware `reviewer`), et le clic n'ouvre plus qu'un
+     * formulaire : l'ancien « signal posé au clic » produisait des lignes
+     * sans contenu, que des relecteurs n'ont aucune raison de laisser.
      *
      * @param  array<string, mixed>  $payload  déjà validé par le contrôleur
      */
-    public function initiate(User $student, array $payload): StudentReport
+    public function submit(User $reporter, array $payload, ?UploadedFile $screenshot = null): StudentReport
     {
-        $context = $this->resolveContext($student, $payload);
-
-        // Empreinte SANS catégorie à ce stade : elle n'existe pas encore. Elle
-        // est recalculée à la complétion, quand la catégorie est connue.
-        $fingerprint = StudentReport::fingerprintFor($context['fingerprintParts'] + ['category' => '']);
-
-        $existing = StudentReport::where('user_id', $student->id)
-            ->where('fingerprint', $fingerprint)
-            ->whereNull('details_completed_at')
-            ->where('created_at', '>=', now()->subMinutes(self::DRAFT_REUSE_MINUTES))
-            ->latest()
-            ->first();
-
-        if ($existing) {
-            return $existing;
-        }
-
-        return StudentReport::create($context['attributes'] + [
-            'user_id' => $student->id,
-            'category' => null,
-            'note' => null,
-            'status' => StudentReport::STATUS_NEW,
-            // Sans catégorie, aucune priorité ne peut être déduite : on part
-            // du milieu, et la complétion la réévalue.
-            'priority' => 'medium',
-            'fingerprint' => $fingerprint,
-        ]);
-    }
-
-    /**
-     * La COMPLÉTION : l'élève a choisi une catégorie et, peut-être, écrit.
-     *
-     * Le propriétaire seul peut compléter son signalement, et seulement tant
-     * qu'il est incomplet — un signalement déjà envoyé ne se réécrit pas.
-     */
-    public function complete(User $student, int $reportId, array $payload): StudentReport
-    {
-        $report = StudentReport::where('id', $reportId)->first();
-
-        if ($report === null || $report->user_id !== $student->id) {
-            // Ne révèle pas qu'il existe : un signalement d'un autre élève et
-            // un signalement inexistant doivent être indiscernables.
-            throw new DomainException('Signalement introuvable.');
-        }
-
-        if ($report->hasDetails()) {
-            throw new DomainException('Ce signalement a déjà été envoyé.');
-        }
-
+        $context = $this->resolveContext($reporter, $payload);
         $category = $payload['category'];
         $isTechnical = in_array($category, StudentReport::TECHNICAL_CATEGORIES, true);
 
-        $report->fill([
-            'category' => $category,
-            'note' => $payload['note'] ?? null,
-            'priority' => $this->initialPriority($category),
-            'details_completed_at' => now(),
-            // L'empreinte intègre enfin la catégorie : c'est ce qui permet de
-            // regrouper « 25 élèves, même question, même problème » (§17).
-            'fingerprint' => StudentReport::fingerprintFor([
-                'lesson_code' => $report->lesson_code,
-                'module_number' => $report->module_number,
-                'exercise_code' => $report->exercise_code,
-                'question_id' => $report->question_id,
-                'category' => $category,
-            ]),
-        ]);
-
+        $attributes = $context['attributes'];
         // Le contexte machine ne se garde que pour ce qui décrit une panne :
-        // une faute de frappe n'a pas besoin du navigateur de l'élève.
+        // une faute de frappe n'a pas besoin du navigateur.
         if (! $isTechnical) {
-            $report->fill(['browser' => null, 'os' => null, 'screen' => null]);
+            $attributes = array_merge($attributes, ['browser' => null, 'os' => null, 'screen' => null]);
         }
 
-        $report->save();
+        $report = DB::transaction(fn () => StudentReport::create($attributes + [
+            'user_id' => $reporter->id,
+            'category' => $category,
+            'note' => $payload['note'] ?? null,
+            'status' => StudentReport::STATUS_NEW,
+            'priority' => $this->initialPriority($category),
+            'details_completed_at' => now(),
+            // L'empreinte intègre la catégorie : c'est ce qui regroupe « même
+            // question, même problème » (§17).
+            'fingerprint' => StudentReport::fingerprintFor($context['fingerprintParts'] + ['category' => $category]),
+        ]));
+
+        if ($screenshot !== null) {
+            try {
+                $report->screenshot_path = $this->screenshots->store($report, $screenshot);
+                $report->save();
+            } catch (DomainException $e) {
+                // Pas de signalement à moitié : l'image refusée annule l'envoi.
+                $report->delete();
+                throw $e;
+            }
+        }
+
+        // « بلاغ جديد » sur le téléphone de l'administrateur (AdminPush), après la réponse.
+        AdminPush::later('student_report', $report->id);
 
         return $report;
     }
@@ -264,23 +212,9 @@ class ReportService
                 ->orWhere('exercise_code', 'like', "%{$search}%"));
         }
 
-        // Les signaux SANS description sont VISIBLES par défaut.
-        //
-        // Ils étaient masqués au départ, par crainte qu'ils noient les
-        // signalements décrits. Mais un signal caché derrière une case à
-        // cocher est un signal que personne ne regarde — et « douze élèves ont
-        // ouvert la fenêtre sur ce module sans rien écrire » est justement ce
-        // qu'on veut voir. Ils sont donc listés, et clairement étiquetés comme
-        // incomplets plutôt que confondus avec un signalement abouti.
-        //
-        // `completion=incomplete` isole les signaux non décrits,
-        // `completion=complete` les signalements aboutis.
-        $completion = $filters['completion'] ?? null;
-
-        if ($completion === 'incomplete') {
-            $query->whereNull('details_completed_at');
-        } elseif ($completion === 'complete') {
-            $query->whereNotNull('details_completed_at');
+        // `screenshot=1` : seulement les signalements accompagnés d'une capture.
+        if (in_array((string) ($filters['screenshot'] ?? ''), ['1', 'true'], true)) {
+            $query->whereNotNull('screenshot_path');
         }
 
         if ($from = ($filters['from'] ?? null)) {

@@ -1,0 +1,17 @@
+{
+  "_comment": "Fixture PARTAGÉE : itemProgress (engine.js) et ItemBand (apps/api/app/Domain/Compass/ItemBand.php) doivent donner la même chose. band null = pas fini.",
+  "cases": [
+    { "answers": [], "done": false, "band": null, "nextLevel": 1 },
+    { "answers": [{ "correct": true }], "done": false, "band": null, "nextLevel": 2 },
+    { "answers": [{ "correct": true }, { "correct": true }], "done": true, "band": "solid", "nextLevel": null },
+    { "answers": [{ "correct": true }, { "correct": false }], "done": true, "band": "consolidate", "nextLevel": null },
+    { "answers": [{ "correct": true }, { "correct": true, "unsure": true }], "done": true, "band": "consolidate", "nextLevel": null },
+    { "answers": [{ "correct": false }], "done": false, "band": null, "nextLevel": 1 },
+    { "answers": [{ "correct": false, "unsure": true }], "done": false, "band": null, "nextLevel": 1 },
+    { "answers": [{ "correct": false }, { "correct": false }], "done": true, "band": "start", "nextLevel": null },
+    { "answers": [{ "correct": false }, { "correct": true }], "done": false, "band": null, "nextLevel": 2 },
+    { "answers": [{ "correct": false }, { "correct": true }, { "correct": true }], "done": true, "band": "consolidate", "nextLevel": null },
+    { "answers": [{ "correct": false }, { "correct": true }, { "correct": false }], "done": true, "band": "consolidate", "nextLevel": null },
+    { "answers": [{ "correct": null }, { "correct": null }], "done": true, "band": "start", "nextLevel": null }
+  ]
+}

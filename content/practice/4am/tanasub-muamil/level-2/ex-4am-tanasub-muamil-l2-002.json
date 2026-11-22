@@ -1,0 +1,146 @@
+{
+  "id": "ex-4am-tanasub-muamil-l2-002",
+  "lessonCode": "tanasub-muamil",
+  "level": 2,
+  "metadata": {
+    "title": "خاصية الجمع في جدول تناسبية",
+    "estimatedMinutes": 2,
+    "tags": [
+      "خواص الجدول"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tanasub-muamil_P1",
+      "modelledOn": "act-1"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "الجدول الآتي جدول تناسبية:",
+    "table": {
+      "head": [
+        "$x$",
+        "4",
+        "6",
+        "10"
+      ],
+      "rows": [
+        [
+          "$y$",
+          "6",
+          "9",
+          "…"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب معامل التناسبية.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر من الشكل a/b)",
+      "expectedAnswer": "1,5",
+      "misconceptionSignatures": [
+        {
+          "value": "2/3",
+          "id": "MISC-TANASUB-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل التناسبية هو العدد الذي نضرب فيه أعداد السطر الأول لنحصل على أعداد السطر الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم عددا من السطر الثاني على العدد المقابل له من السطر الأول: $\\dfrac{y}{x}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن حاصل القسمة هو نفسه في عمود آخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{6}{4} = \\dfrac{9}{6} = 1{,}5$ .",
+        "incorrect": "معامل التناسبية هو $\\dfrac{y}{x}$ : السطر الثاني على السطر الأول، وليس العكس."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{6}{4} = \\dfrac{9}{6} = 1{,}5$"
+        ],
+        "result": "a = 1{,}5"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أكمل الجدول، ثم تحقّق من النتيجة بخاصية الجمع ( $10 = 4 + 6$ ).",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر من الشكل a/b)",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-TANASUB-RABI-JAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في جدول تناسبية نضرب في المعامل، ولا نضيف الفرق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب معامل التناسبية من عمود كامل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب العدد المعلوم في المعامل، أو استعمل تساوي الجداءين المتصالبين."
+        }
+      ],
+      "feedback": {
+        "correct": "$10 \\times 1{,}5 = 15$ ، و $6 + 9 = 15$ .",
+        "incorrect": "أعد الحساب: في جدول تناسبية حاصل القسمة ثابت، فتحقّق من جوابك بالضرب في المعامل."
+      },
+      "solution": {
+        "lines": [
+          "$10 \\times 1{,}5 = 15$",
+          "التحقق: العمود الثالث مجموع العمودين الأولين، $4 + 6 = 10$ و $6 + 9 = 15$ ."
+        ],
+        "result": "15"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

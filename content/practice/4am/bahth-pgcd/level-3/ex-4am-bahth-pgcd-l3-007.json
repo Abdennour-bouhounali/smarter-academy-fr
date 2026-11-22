@@ -1,0 +1,183 @@
+{
+  "id": "ex-4am-bahth-pgcd-l3-007",
+  "lessonCode": "bahth-pgcd",
+  "level": 3,
+  "metadata": {
+    "title": "الكراريس والكتب — 1392 و 812",
+    "estimatedMinutes": 6,
+    "tags": [
+      "خوارزمية إقليدس",
+      "توزيع"
+    ],
+    "source": {
+      "type": "worksheet",
+      "worksheetId": "tafawwuq-01",
+      "elementId": "ws01-sit-01",
+      "section": "الوضعيات",
+      "number": 1,
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-aadad-l3-001"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اشترى عمي سعيد 1392 كرّاسًا و 812 كتابًا ليوزّعها بالتساوي على أكبر عدد ممكن من التلاميذ المحتاجين، بحيث يحصل كل تلميذ على نفس عدد الكراريس ونفس عدد الكتب."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $PGCD(1392 ; 812)$ مع كتابة مراحل الحساب.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "116",
+      "misconceptionSignatures": [
+        {
+          "value": "58",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        },
+        {
+          "value": "0",
+          "id": "MISC-PGCD-SIFR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 1392 على 812: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (1392 ; 812) بالزوج (812 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 116.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم، لا الباقي المعدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$1392 = 812 \\times 1 + 580$",
+          "$812 = 580 \\times 1 + 232$",
+          "$580 = 232 \\times 2 + 116$",
+          "$232 = 116 \\times 2 + 0$",
+          "آخر باقٍ غير معدوم هو 116، إذن:"
+        ],
+        "result": "PGCD(1392 ; 812) = 116"
+      },
+      "work": "required",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "استنتج:",
+      "statement": "كم كرّاسًا يحصل عليه كل تلميذ؟",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P5",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "116",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد التلاميذ أكبر ما يمكن: استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم عدد الكراريس على عدد التلاميذ."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد التلاميذ 116، و $1392 \\div 116 = 12$ كرّاسًا.",
+        "incorrect": "عدد التلاميذ هو القاسم المشترك الأكبر؛ حصة التلميذ هي حاصل القسمة عليه."
+      },
+      "solution": {
+        "lines": [
+          "عدد التلاميذ أكبر ما يمكن، فهو $PGCD(1392 ; 812) = 116$.",
+          "$1392 \\div 116 = 12$"
+        ],
+        "result": "12"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "كم كتابًا يحصل عليه كل تلميذ؟",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P5",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "116",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد التلاميذ أكبر ما يمكن: استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم عدد الكتب على عدد التلاميذ."
+        }
+      ],
+      "feedback": {
+        "correct": "$812 \\div 116 = 7$ كتب لكل تلميذ.",
+        "incorrect": "اقسم عدد الكتب على عدد التلاميذ."
+      },
+      "solution": {
+        "lines": [
+          "$812 \\div 116 = 7$"
+        ],
+        "result": "7"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

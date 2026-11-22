@@ -1,0 +1,373 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-maalam-l3-001",
+  "lessonCode": "wadiya-idmajiya-maalam",
+  "level": 3,
+  "metadata": {
+    "title": "أدمج تعلّماتي — وضعية العدّاءين",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مقارنة مسارين",
+      "نصف دائرة",
+      "المسافة بين نقطتين"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "situation",
+      "page": 148,
+      "section": "أدمج تعلّماتي"
+    }
+  },
+  "statement": {
+    "content": "يتدرّب عدّاءان استعدادا لمنافسة دولية على مسارين ممثّلين بالمنحنيين (1) و (2) في الشكل المقابل: (1) بالوردي من A إلى B، و (2) بالأزرق من M إلى N. $1\\,\\mathrm{cm}$ على المعلم يمثّل $1\\,\\mathrm{km}$ في الواقع.",
+    "figure": {
+      "points": {
+        "A": [
+          -2,
+          0
+        ],
+        "O": [
+          0,
+          0
+        ],
+        "E": [
+          2,
+          0
+        ],
+        "B": [
+          4,
+          0
+        ],
+        "M": [
+          -2,
+          3
+        ],
+        "P": [
+          1,
+          1
+        ],
+        "Q": [
+          3,
+          2
+        ],
+        "N": [
+          4,
+          -2
+        ],
+        "I": [
+          -1,
+          0
+        ],
+        "J": [
+          1,
+          0
+        ],
+        "K": [
+          3,
+          0
+        ]
+      },
+      "hidden": [
+        "I",
+        "J",
+        "K"
+      ],
+      "circles": [
+        {
+          "center": "I",
+          "through": "A",
+          "dashed": true
+        },
+        {
+          "center": "J",
+          "through": "O",
+          "dashed": true
+        },
+        {
+          "center": "K",
+          "through": "E",
+          "dashed": true
+        }
+      ],
+      "arcs": [
+        {
+          "from": "A",
+          "to": "O",
+          "sweep": "cw",
+          "tone": "rose",
+          "bold": true
+        },
+        {
+          "from": "O",
+          "to": "E",
+          "sweep": "ccw",
+          "tone": "rose",
+          "bold": true
+        },
+        {
+          "from": "E",
+          "to": "B",
+          "sweep": "cw",
+          "tone": "rose",
+          "bold": true
+        }
+      ],
+      "segments": [
+        {
+          "from": "M",
+          "to": "P",
+          "tone": "sky",
+          "bold": true
+        },
+        {
+          "from": "P",
+          "to": "Q",
+          "tone": "sky",
+          "bold": true
+        },
+        {
+          "from": "Q",
+          "to": "N",
+          "tone": "sky",
+          "bold": true
+        }
+      ],
+      "labels": {
+        "A": "nw",
+        "O": "nw",
+        "E": "se",
+        "B": "ne",
+        "M": "n",
+        "P": "sw",
+        "Q": "ne",
+        "N": "e"
+      },
+      "grid": true,
+      "axes": true,
+      "caption": "أعادت المنصّة رسم شكل الكتاب بوضوح أكبر، بنفس المعطيات",
+      "ariaLabel": "معلم متعامد ومتجانس: المسار (1) من A إلى B ثلاثة أنصاف دوائر متتابعة أطرافها O و E على محور الفواصل (والدوائر الكاملة بخط متقطع)، والمسار (2) خط منكسر من M إلى P ثم Q ثم N"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "النقط التي يلتقي فيها المسار (1) بمحور الفواصل هي:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(-1\\,;\\,0)$ و $(1\\,;\\,0)$ و $(3\\,;\\,0)$ فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUNTASAF-TARH"
+        },
+        {
+          "id": "B",
+          "content": "$A(0\\,;\\,-2)$ و $O(0\\,;\\,0)$ و $E(0\\,;\\,2)$ و $B(0\\,;\\,4)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-TABDIL-X-Y"
+        },
+        {
+          "id": "C",
+          "content": "$A(-2\\,;\\,0)$ و $O(0\\,;\\,0)$ و $E(2\\,;\\,0)$ و $B(4\\,;\\,0)$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "على محور الفواصل الترتيب 0."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسار (1) يقطع المحور عند أطراف أنصاف الدوائر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المراكز لا ينتمي إليها المسار."
+        }
+      ],
+      "feedback": {
+        "correct": "أطراف أنصاف الدوائر: $A(-2\\,;\\,0)$ ، $O$ ، $E(2\\,;\\,0)$ ، $B(4\\,;\\,0)$ .",
+        "incorrect": "المسار يمرّ بأطراف أنصاف الدوائر، لا بمراكزها."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 3
+    },
+    {
+      "id": "q2",
+      "statement": "طول المسار (1):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3\\pi\\,\\mathrm{km}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$6\\,\\mathrm{km}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-IKHTISAR"
+        },
+        {
+          "id": "C",
+          "content": "$6\\pi\\,\\mathrm{km}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-NISF-DAIRA-MUHIT"
+        },
+        {
+          "id": "D",
+          "content": "$3\\,\\mathrm{km}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-PI-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثلاثة أنصاف دوائر متساوية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قطر كل منها 2، فنصف القطر 1."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كل نصف دائرة طوله $\\pi \\times 1$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 \\times \\pi \\times 1 = 3\\pi \\approx 9{,}42\\,\\mathrm{km}$ .",
+        "incorrect": "طول نصف الدائرة $\\pi r$ ، ثم نجمع الثلاثة."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 3
+    },
+    {
+      "id": "q3",
+      "statement": "طول المسار (2) مدوّرا إلى $0{,}01$ (بالكيلومتر):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة (مدوّر إلى 0,01)",
+      "expectedAnswer": "9.96",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$M(-2\\,;\\,3)$ ، $P(1\\,;\\,1)$ ، $Q(3\\,;\\,2)$ ، $N(4\\,;\\,-2)$"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$MP = \\sqrt{13}$ ، $PQ = \\sqrt{5}$ ، $QN = \\sqrt{17}$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع ثم دوّر في الأخير."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sqrt{13} + \\sqrt{5} + \\sqrt{17} \\approx 9{,}9647$ ، أي $9{,}96\\,\\mathrm{km}$ .",
+        "incorrect": "احسب كل قطعة بالمسافة بين نقطتين، اجمع، ثم دوّر."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "9.97",
+          "id": "MISC-WADIYA-TADWIR-MUBAKKIR"
+        },
+        {
+          "value": "5.92",
+          "id": "MISC-JIDHR-JAMA"
+        },
+        {
+          "value": "7.81",
+          "id": "MISC-MAALAM-IKHTISAR"
+        }
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "q4",
+      "statement": "أقصر المسارين:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "(2)، لأنّ قطعه مستقيمة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUQARANA-AYN"
+        },
+        {
+          "id": "B",
+          "content": "لا يمكن الحسم: الطولان متقاربان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUQARANA-AYN"
+        },
+        {
+          "id": "C",
+          "content": "(1)، لأنّ $9{,}42 < 9{,}96$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "(2)، لأنّ $\\sqrt{35} \\approx 5{,}92$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDHR-JAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن القيمتين المقرّبتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$3\\pi \\approx 9{,}42$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\sqrt{13} + \\sqrt{5} + \\sqrt{17} \\approx 9{,}96$"
+        }
+      ],
+      "feedback": {
+        "correct": "المسار (1) أقصر بحوالي $0{,}54\\,\\mathrm{km}$ : الحساب يفصل بين طولين متقاربين.",
+        "incorrect": "لا تحكم بالعين: احسب الطولين وقارن."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 3
+    }
+  ]
+}

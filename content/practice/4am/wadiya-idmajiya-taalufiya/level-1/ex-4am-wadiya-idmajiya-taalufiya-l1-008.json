@@ -1,0 +1,118 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-taalufiya-l1-008",
+  "lessonCode": "wadiya-idmajiya-taalufiya",
+  "level": 1,
+  "metadata": {
+    "title": "باقة إنترنت في حدود المبلغ",
+    "estimatedMinutes": 6,
+    "tags": [
+      "صورة عدد",
+      "في حدود مبلغ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-taalufiya_P2",
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-taalufiya-l1-008"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "يحتاج تلميذ إلى الإنترنت للبحث ومراجعة دروسه، فتقترح شركة اتصالات باقة إنترنت: اشتراك 200DA ، ثم 150DA عن كل جيغابايت.\nنسمّي $x$ عدد الجيغابايت و $f(x)$ المبلغ المدفوع بـ DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب المبلغ الذي تدفعه ريم لشراء 4 جيغابايت.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "800",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAALUFI-NISYAN-B",
+          "value": "600"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$f(x) = 150x + 200$ : احسب $f(4)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(4) = 150 \\times 4 + 200$ .",
+        "incorrect": "اضرب 4 في 150 ثم أضف الاشتراك."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 150x + 200$",
+          "$f(4) = 150 \\times 4 + 200 = 600 + 200 = 800$"
+        ],
+        "result": "800DA"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "تملك ريم 1000DA . ما هو أكبر عدد طبيعي من الجيغابايت تستطيع شراءه؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الجيغابايت",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يجب أن يكون $f(x) \\leqslant 1000$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح الاشتراك من المبلغ ثم اقسم على ثمن الجيغابايت."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خذ أكبر عدد طبيعي لا يتجاوز حاصل القسمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$150x + 200 \\leqslant 1000$ .",
+        "incorrect": "حلّ $150x + 200 \\leqslant 1000$ ثم خذ أكبر عدد طبيعي يحقّقها."
+      },
+      "solution": {
+        "lines": [
+          "$150x + 200 \\leqslant 1000$",
+          "$150x \\leqslant 800$",
+          "$x \\leqslant \\dfrac{16}{3}$ ، و $\\dfrac{16}{3} \\approx 5{,}33$",
+          "تحقق: $f(5) = 950 \\leqslant 1000$ و $f(6) = 1100 > 1000$ .",
+          "إذن أكبر عدد هو 5 جيغابايت."
+        ],
+        "result": "5"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

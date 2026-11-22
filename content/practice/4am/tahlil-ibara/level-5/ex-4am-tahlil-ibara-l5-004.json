@@ -1,0 +1,230 @@
+{
+  "id": "ex-4am-tahlil-ibara-l5-004",
+  "lessonCode": "tahlil-ibara",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2009 — خزان مائي للسقي",
+    "estimatedMinutes": 18,
+    "tags": [
+      "فرق مربعين",
+      "حجم",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tahlil-ibara_P2",
+      "modelledOn": "BEM 2009 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "خزان مائي للسقي بمستثمرة فلاحية في ولاية المدية يحرص صاحبها على ترشيد استعمال الماء، قاعدته مربعة الشكل طول ضلعها $(x + 5)$ m ، يتوسّطه عمود إسمنتي قاعدته مربعة طول ضلعها $1$ m . ارتفاع الماء في الخزان $2$ m ، حيث $x$ عدد موجب."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "بيّن أن مساحة سطح الماء هي $A = (x + 5)^2 - 1$ ، ثم حلّل $A$ إلى جداء عاملين من الدرجة الأولى.",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $(x + m)(x + n)$ حيث $m < n$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على الشكل $a^2 - b^2$ : عيّن $a$ و $b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل المتطابقة $a^2 - b^2 = (a + b)(a - b)$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بسّط كل قوس، وانتبه إلى الإشارات عند فتح الأقواس."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = (x + 4)(x + 6)$ إذن $m = 4$ .",
+        "incorrect": "تعرّف على المتطابقة الشهيرة المناسبة، وعيّن $a$ و $b$ بدقّة قبل التحليل."
+      },
+      "solution": {
+        "lines": [
+          "مساحة سطح الماء = مساحة القاعدة − مساحة قاعدة العمود",
+          "$A = (x + 5)^2 - 1^2$",
+          "$A = (x + 5 - 1)(x + 5 + 1)$"
+        ],
+        "result": "A = (x + 4)(x + 6)"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $(x + m)(x + n)$ حيث $m < n$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العدد المطلوب في الشكل المحلّل، بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = (x + 4)(x + 6)$ إذن $n = 6$ .",
+        "incorrect": "تعرّف على المتطابقة الشهيرة المناسبة، وعيّن $a$ و $b$ بدقّة قبل التحليل."
+      },
+      "solution": {
+        "lines": [
+          "$A = (x + 4)(x + 6)$"
+        ],
+        "result": "n = 6"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "عبّر عن حجم الماء $V$ (بالمتر المكعب) بدلالة $x$ .",
+      "statement": "العدد $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $V$ على الشكل $k(x + 4)(x + 6)$ : اكتب العدد $k$ فقط",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حجم الماء يساوي مساحة سطحه مضروبة في ارتفاعه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل الشكل المحلّل للمساحة $A$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$V = 2(x + 4)(x + 6)$ إذن $k = 2$ .",
+        "incorrect": "الحجم = المساحة × الارتفاع؛ لا تنسَ ارتفاع الماء."
+      },
+      "solution": {
+        "lines": [
+          "حجم الماء = مساحة سطح الماء × الارتفاع",
+          "$V = 2(x + 4)(x + 6)$"
+        ],
+        "result": "V = 2(x + 4)(x + 6)"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "نأخذ $x = 3$ . احسب حجم الماء في الخزان.",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (بالمتر المكعب)",
+      "expectedAnswer": "126",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى في الشكل المحلّل: الحساب أسهل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب قيمة كل عامل، ثم اضرب."
+        }
+      ],
+      "feedback": {
+        "correct": "$V = 126\\ m^3$ .",
+        "incorrect": "عوّض $x$ في كل عامل، واحترم الإشارات وأولويات العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$V = 2(3 + 4)(3 + 6) = 2 \\times 7 \\times 9$"
+        ],
+        "result": "V = 126\\ m^3"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "☜ تضخّ مضخة في الخزان $9\\ m^3$ في الساعة. كم ساعة يلزم لملء الخزان إلى هذا الارتفاع انطلاقًا من خزان فارغ؟",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالساعات)",
+      "expectedAnswer": "14",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المدة = الحجم ÷ التدفق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل حجم الماء الذي حسبته."
+        }
+      ],
+      "feedback": {
+        "correct": "$14\\ h$ .",
+        "incorrect": "اقسم حجم الماء على كمية الماء التي تضخّها المضخة في الساعة."
+      },
+      "solution": {
+        "lines": [
+          "المدة: $126 \\div 9 = 14$ ساعة"
+        ],
+        "result": "14\\ h"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

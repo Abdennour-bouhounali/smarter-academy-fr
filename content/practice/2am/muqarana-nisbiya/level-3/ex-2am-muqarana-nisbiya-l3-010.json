@@ -1,0 +1,206 @@
+{
+  "id": "ex-2am-muqarana-nisbiya-l3-010",
+  "lessonCode": "muqarana-nisbiya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — ترتيب أعداد متقابلة تقريبًا",
+    "estimatedMinutes": 9,
+    "tags": [
+      "ترتيب تنازلي",
+      "أعداد سالبة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في مقياس حرارة مدرّج يقرأ المتطوّع الذي يعتني بأزهار حديقة الحيّ القراءات: $3{,}5$ و $-3{,}5$ و $3{,}05$ و $-3{,}05$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "اختر الترتيب التنازلي الصحيح.",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3{,}5 > 3{,}05 > -3{,}5 > -3{,}05$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-BDG"
+        },
+        {
+          "id": "B",
+          "content": "$3{,}5 > 3{,}05 > -3{,}05 > -3{,}5$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$-3{,}5 > -3{,}05 > 3{,}05 > 3{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-OD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بفرز الأعداد حسب إشاراتها: السالبة، ثم الصفر، ثم الموجبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب الأعداد السالبة فيما بينها حسب مسافاتها إلى الصفر: الأكبر مسافة هو الأصغر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب السلسلة كاملة بالرمز نفسه، ثم تحقّق من كل زوج متجاور."
+        }
+      ],
+      "feedback": {
+        "correct": "$3{,}5 > 3{,}05 > -3{,}05 > -3{,}5$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الموجبة: $3{,}50 > 3{,}05$",
+          "السالبة: $-3{,}05 > -3{,}5$",
+          "$3{,}5 > 3{,}05 > -3{,}05 > -3{,}5$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما أصغر هذه القراءات؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "-3,5",
+      "misconceptionSignatures": [
+        {
+          "value": "-3,05",
+          "id": "MISC-MUQARANA-NISBIYA-BDG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج: أيّهما أبعد عن الصفر؟ وفي أيّ جهة منه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددان سالبان: الأصغر هو الذي له أكبر مسافة إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن المسافتين إلى الصفر (العددين دون إشارتيهما) ثم اعكس الحكم لأن العددين سالبان."
+        }
+      ],
+      "feedback": {
+        "correct": "الأصغر هو $-3{,}5$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$3{,}50 > 3{,}05$ والعددان سالبان",
+          "الأصغر هو $-3{,}5$"
+        ],
+        "result": "-3{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "اختر العبارة الصحيحة.",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-3{,}5 < -3{,}05$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$-3{,}5 > -3{,}05$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-BDG"
+        },
+        {
+          "id": "C",
+          "content": "$-3{,}05 < -3{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-BDG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج: أيّهما أبعد عن الصفر؟ وفي أيّ جهة منه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددان سالبان: الأصغر هو الذي له أكبر مسافة إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن المسافتين إلى الصفر (العددين دون إشارتيهما) ثم اعكس الحكم لأن العددين سالبان."
+        }
+      ],
+      "feedback": {
+        "correct": "$-3{,}5 < -3{,}05$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$3{,}50 > 3{,}05$",
+          "$-3{,}5 < -3{,}05$"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

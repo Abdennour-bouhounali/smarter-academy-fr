@@ -1,0 +1,135 @@
+{
+  "id": "ex-1am-qawaid-qabiliyat-qisma-l1-007",
+  "lessonCode": "qawaid-qabiliyat-qisma",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — الرقم الناقص",
+    "estimatedMinutes": 4,
+    "tags": [
+      "الرقم الناقص",
+      "مجموع الأرقام"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العدد $47\\square$ حيث □ رقم آحاده."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما أصغر رقم يمكن وضعه مكان □ ليقبل العدد $47\\square$ القسمة على 3؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "رقم واحد (من 0 إلى 9)",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-QABILIYA-SIFR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جرّب الأرقام مكان □ واحدًا بعد الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق القاعدة المناسبة لكل قاسم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنس الرقم 0."
+        }
+      ],
+      "feedback": {
+        "correct": "الأرقام الممكنة: 1 ، 4 ، 7، وأصغرها 1.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 3 إذا كان مجموع أرقامه يقبل القسمة على 3."
+      },
+      "solution": {
+        "lines": [
+          "نجرّب الأرقام من 0 إلى 9 مكان □ ونطبّق قاعدة القسمة على 3.",
+          "□ = 1: مجموع أرقامه 12 ، و $471 = 3 \\times 157$.",
+          "□ = 4: مجموع أرقامه 15 ، و $474 = 3 \\times 158$.",
+          "□ = 7: مجموع أرقامه 18 ، و $477 = 3 \\times 159$."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما كل الأرقام التي يمكن وضعها مكان □ ليقبل العدد $47\\square$ القسمة على 9؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "integerSet",
+      "answerFormat": "الأرقام مفصولة بفاصلة",
+      "expectedAnswer": [
+        7
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            1,
+            4,
+            7
+          ],
+          "id": "MISC-QABILIYA-3-9"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جرّب الأرقام مكان □ واحدًا بعد الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق القاعدة المناسبة لكل قاسم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنس الرقم 0."
+        }
+      ],
+      "feedback": {
+        "correct": "الأرقام الممكنة: 7.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 9 إذا كان مجموع أرقامه يقبل القسمة على 9."
+      },
+      "solution": {
+        "lines": [
+          "نجرّب الأرقام من 0 إلى 9 مكان □ ونطبّق قاعدة القسمة على 9.",
+          "□ = 7: مجموع أرقامه 18 ، و $477 = 9 \\times 53$."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

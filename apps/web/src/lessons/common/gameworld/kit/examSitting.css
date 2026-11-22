@@ -1,0 +1,801 @@
+/* « الامتحان الأبيض » — the exam sitting. Paper, three colours: black (subject), blue (the student), red (the corrector). Prefix xs-. */
+.xs-root {
+  position: absolute;
+  inset: 0;
+  z-index: 14;
+  background: #d9d2c3;
+  color: #111827;
+  font-family: 'Amiri', 'Scheherazade New', 'Cairo', serif;
+  overflow: hidden;
+  user-select: text;
+  animation: di-fade 0.3s;
+}
+.xs-root *,
+.xs-root *::before {
+  box-sizing: border-box;
+}
+.xs-fit {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0.9rem 1.2rem 1rem;
+}
+.xs-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1.1rem;
+  background: #fffdf6;
+  border: 1.5px solid #111827;
+  border-radius: 0.3rem;
+}
+.xs-head > div {
+  flex: 1;
+  text-align: center;
+}
+.xs-head h2 {
+  margin: 0;
+  font-size: max(var(--di-min-font, 12px), 1.55rem);
+  font-weight: 900;
+  color: #111827;
+}
+.xs-head p {
+  margin: 0;
+  font-size: max(var(--di-min-font, 12px), 1rem);
+  color: #374151;
+}
+.xs-seat {
+  font-size: max(var(--di-min-font, 12px), 1.05rem);
+  border: 1.5px solid #111827;
+  padding: 0.1rem 0.8rem;
+  border-radius: 0.2rem;
+}
+.xs-seat b {
+  font-size: max(var(--di-min-font, 12px), 1.25rem);
+}
+.xs-clock {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: max(var(--di-min-font, 12px), 1.05rem);
+}
+.xs-clock b {
+  font:
+    800 max(var(--di-min-font, 12px), 1.5rem) 'JetBrains Mono',
+    ui-monospace,
+    monospace;
+}
+.xs-quiet {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font:
+    700 max(var(--di-min-font, 12px), 0.85rem) 'Cairo',
+    sans-serif;
+  color: #4b5563;
+}
+.xs-total {
+  display: inline-grid;
+  place-items: center;
+  min-width: 5.4rem;
+  height: 5.4rem;
+  margin: -0.9rem 0;
+  border: 3px solid #c81e1e;
+  border-radius: 50%;
+  color: #c81e1e;
+  transform: rotate(-7deg);
+  background: #fffdf6;
+  animation: di-pop 0.6s cubic-bezier(0.2, 1.6, 0.4, 1);
+}
+.xs-total b {
+  font:
+    900 max(var(--di-min-font, 12px), 1.9rem) 'Cairo',
+    sans-serif;
+  line-height: 1;
+}
+.xs-total i {
+  font:
+    700 max(var(--di-min-font, 12px), 0.95rem) 'Cairo',
+    sans-serif;
+  font-style: normal;
+  margin-top: -0.9rem;
+}
+.xs-tip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0;
+  font:
+    700 max(var(--di-min-font, 12px), 1rem) 'Cairo',
+    sans-serif;
+  color: #374151;
+}
+.xs-tip--in {
+  justify-content: flex-start;
+  font-size: max(var(--di-min-font, 12px), 0.85rem);
+  margin-bottom: 0.4rem;
+  color: #1d3fae;
+}
+.xs-body {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 0.9rem;
+}
+/* the padding is on the fitted content, not on the box that measures the room */
+.xs-paper > .di-fitbox__in,
+.xs-sheet > .di-fitbox__in {
+  padding: 1.1rem 1.5rem;
+}
+.xs-paper,
+.xs-sheet {
+  min-height: 0;
+  background: #fffdf6;
+  border: 1px solid #b9b19f;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+}
+.xs-paper--read {
+  flex: 1;
+}
+.xs-paper--read > .xs-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+} /* the parent is named: `.di-fitbox__in { display: flow-root }` has the same weight and is loaded later */
+.xs-sheet {
+  background-image: repeating-linear-gradient(#fffdf6 0 2.55rem, #cfdcf2 2.55rem calc(2.55rem + 1px));
+}
+.xs-ex h3,
+.xs-sheet h3 {
+  margin: 0 0 0.4rem;
+  font-size: max(var(--di-min-font, 12px), 1.35rem);
+  font-weight: 900;
+  color: #111827;
+  border-bottom: 2px solid #111827;
+  padding-bottom: 0.15rem;
+}
+.xs-ex h3 i,
+.xs-ex li i {
+  font-style: normal;
+  /* the sheet is zoomed to fit (×0.7 at 1024×768): 1.2rem still reads 12 px there */
+  font:
+    700 max(var(--di-min-font, 12px), 1.2rem) 'Cairo',
+    sans-serif;
+  color: #4b5563;
+}
+.xs-statement {
+  margin: 0 0 0.5rem;
+  font-size: max(var(--di-min-font, 12px), 1.3rem);
+  line-height: 2;
+  /* the bank writes its lists line by line (« • … ») inside one paragraph: each stays on its own line */
+  white-space: pre-line;
+}
+/* A TABLE of the bank on the paper (`problems/ProblemTable`): drawn as the bank wrote it, but on the paper's rules — its
+   text keeps the 12 px floor while the sheet shrinks (it was a fixed `text-sm`: 10.5 px once fitted, l5-005 of
+   qawasim-adad-tabii), and a long header wraps inside its column so the table is never wider than the paper (it slid
+   sideways in its own scrolling frame: l1-006, l3-001, l4-001 of qawaid-qabiliyat-qisma). Nothing scrolls. */
+.xs-root [data-problem-table] > div {
+  overflow: visible;
+}
+.xs-root [data-problem-table] table {
+  width: 100%;
+  font-size: max(var(--di-min-font, 12px), 0.95rem);
+  line-height: 1.35;
+}
+.xs-root [data-problem-table] th {
+  white-space: normal;
+}
+.xs-ex ol {
+  margin: 0;
+  padding-inline-start: 1.4rem;
+  display: grid;
+  gap: 0.35rem;
+  font-size: max(var(--di-min-font, 12px), 1.25rem);
+  line-height: 1.9;
+}
+.xs-ex .katex {
+  font-size: 1em;
+  white-space: nowrap;
+}
+.xs-word {
+  cursor: pointer;
+  border-radius: 2px;
+}
+.xs-word:hover {
+  background: #f1ead8;
+}
+.xs-word.is-marked {
+  text-decoration: underline;
+  text-decoration-color: #6b7280;
+  text-decoration-thickness: 2.5px;
+  text-underline-offset: 0.28em;
+  background: #f6f1e3;
+}
+.xs-sheet ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.2rem;
+}
+.xs-sheet li {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 5.1rem;
+  padding: 0 0.2rem;
+}
+.xs-sheet li.is-flagged {
+  background: rgba(253, 230, 138, 0.45);
+}
+.xs-n {
+  font:
+    800 max(var(--di-min-font, 12px), 1.2rem) 'Cairo',
+    sans-serif;
+}
+.xs-step {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  gap: 0.35rem;
+  font-family: 'Cairo', sans-serif;
+}
+.xs-step__ask {
+  font-size: max(var(--di-min-font, 12px), 1.05rem);
+  font-weight: 700;
+  color: #374151;
+}
+/* the practice space's own widgets (ChoiceInput, TemplateInput, IntegerSetInput) in blue ink on the answer sheet */
+.xs-field {
+  color: #1d3fae;
+  font-size: max(var(--di-min-font, 12px), 1rem);
+}
+/* their Tailwind sizes keep the 12 px floor of the sheet's zoom too (Fit floor): the sheet is zoomed down to fit, and a
+   « text-xs » line or a choice label drawn at 0.6 of 16 px is under 12 px (walks of 2026-11-19, 1366 × 768 and 1024 × 768) */
+.xs-field .text-xs {
+  font-size: max(var(--di-min-font, 12px), 0.75rem);
+}
+.xs-field .text-sm {
+  font-size: max(var(--di-min-font, 12px), 0.875rem);
+}
+.xs-field .text-lg {
+  font-size: max(var(--di-min-font, 12px), 1.125rem);
+}
+.xs-field .text-xl,
+.xs-field .sm\:text-xl {
+  font-size: max(var(--di-min-font, 12px), 1.25rem);
+}
+.xs-field .text-2xl {
+  font-size: max(var(--di-min-font, 12px), 1.5rem);
+}
+/* a choice takes the width of its words, side by side: « نعم » and « لا » stand on one line, seven weekdays on two — not one
+   per half-row 48 px high (ChoiceInput's own grid), which made the sheet zoom down to ~0.6 */
+.xs-field[data-xs-type='choice'] .grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.xs-field[data-xs-type='choice'] .grid > button {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 2.5rem;
+  padding: 0.3rem 0.9rem;
+  border-radius: 0.6rem;
+}
+.xs-field input,
+.xs-field textarea {
+  color: #1d3fae;
+}
+.xs-onpaper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #6b7280;
+  font:
+    700 max(var(--di-min-font, 12px), 0.95rem) 'Cairo',
+    sans-serif;
+}
+.xs-formulas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem 2.2rem;
+  margin: 0.3rem 0;
+  font-size: max(var(--di-min-font, 12px), 1.1rem);
+  white-space: nowrap;
+}
+.xs-lead {
+  font-weight: 700;
+}
+.xs-wait {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 1rem;
+  font:
+    700 max(var(--di-min-font, 12px), 1.2rem) 'Cairo',
+    sans-serif;
+  color: #374151;
+}
+.xs-body[hidden] {
+  display: none;
+}
+.xs-flag {
+  flex: none;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  border: 1.5px solid #9ca3af;
+  background: none;
+  color: #9ca3af;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+.xs-flag.is-on {
+  border-color: #b45309;
+  background: #fde68a;
+  color: #92400e;
+}
+.xs-foot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.xs-foot--sit {
+  justify-content: space-between;
+}
+.xs-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.7rem;
+  padding: 0 1.2rem;
+  border: 1.5px solid #111827;
+  background: #fffdf6;
+  color: #111827;
+  font:
+    800 max(var(--di-min-font, 12px), 1rem) 'Cairo',
+    sans-serif;
+  cursor: pointer;
+  border-radius: 0.3rem;
+}
+.xs-btn--main,
+.xs-btn.is-on {
+  background: #111827;
+  color: #fffdf6;
+}
+.xs-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.xs-pages {
+  display: flex;
+  gap: 0.4rem;
+}
+.xs-pages button {
+  padding: 0.3rem 0.9rem;
+  border: 1.5px solid #111827;
+  background: #fffdf6;
+  font:
+    800 max(var(--di-min-font, 12px), 0.95rem) 'Cairo',
+    sans-serif;
+  cursor: pointer;
+  border-radius: 0.3rem;
+}
+.xs-pages button.is-on {
+  background: #111827;
+  color: #fffdf6;
+}
+.xs-pages i {
+  font-style: normal;
+  opacity: 0.7;
+  margin-inline-start: 0.3rem;
+}
+.xs-pace {
+  position: relative;
+  flex: 1;
+  max-width: 22rem;
+  height: 0.55rem;
+  display: flex;
+  gap: 3px;
+}
+.xs-pace span {
+  background: #b9b19f;
+  border-radius: 2px;
+}
+.xs-pace i {
+  position: absolute;
+  top: -0.35rem;
+  width: 3px;
+  height: 1.25rem;
+  background: #111827;
+  border-radius: 2px;
+  transition: left 1s linear;
+}
+.xs-confirm {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font:
+    700 max(var(--di-min-font, 12px), 0.95rem) 'Cairo',
+    sans-serif;
+}
+.xs-confirm--forgot {
+  background: #fde68a;
+  padding: 0.3rem 0.4rem 0.3rem 0.8rem;
+  border-radius: 0.35rem;
+  font-weight: 800;
+  animation: di-pop 0.4s;
+  white-space: nowrap;
+}
+.xs-pages button.is-forgot:not(.is-on) {
+  background: #fde68a;
+}
+.xs-sheet.is-forgot {
+  box-shadow: 0 0 0 4px #f59e0b;
+}
+.xs-btn--quit {
+  min-height: 2.3rem;
+  padding: 0 0.8rem;
+  font-size: max(var(--di-min-font, 12px), 0.9rem);
+  border-color: #9ca3af;
+  color: #374151;
+}
+.xs-quitbox {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  background: rgba(17, 24, 39, 0.55);
+}
+.xs-quitbox > div {
+  width: min(34rem, 88%);
+  padding: 1.4rem 1.6rem;
+  background: #fffdf6;
+  border: 2px solid #111827;
+  border-radius: 0.4rem;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  text-align: center;
+  animation: di-pop 0.25s;
+}
+.xs-quitbox h3 {
+  margin: 0 0 0.5rem;
+  font:
+    900 max(var(--di-min-font, 12px), 1.45rem) 'Cairo',
+    sans-serif;
+  color: #111827;
+}
+.xs-quitbox p {
+  margin: 0 0 1.1rem;
+  font:
+    700 max(var(--di-min-font, 12px), 1.08rem) / 1.8 'Cairo',
+    sans-serif;
+  color: #374151;
+}
+.xs-quitbox span {
+  display: inline-flex;
+  gap: 0.7rem;
+}
+.xs-last {
+  margin: 0;
+  text-align: center;
+  font:
+    800 max(var(--di-min-font, 12px), 1.05rem) 'Cairo',
+    sans-serif;
+  color: #111827;
+  background: #fde68a;
+  padding: 0.25rem;
+  border-radius: 0.3rem;
+  animation: di-pop 0.4s;
+}
+.xs-envelope {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 1rem;
+  font:
+    800 max(var(--di-min-font, 12px), 1.3rem) 'Cairo',
+    sans-serif;
+  color: #374151;
+}
+.xs-envelope__sheet {
+  width: 15rem;
+  height: 10rem;
+  background: #fffdf6;
+  border: 1px solid #b9b19f;
+  animation: xs-slide 1.6s ease-in forwards;
+}
+.xs-envelope__flap {
+  width: 18rem;
+  height: 11rem;
+  margin-top: -9rem;
+  background: #c9a56a;
+  border: 2px solid #8a6a36;
+  border-radius: 0.3rem;
+  clip-path: polygon(0 0, 50% 45%, 100% 0, 100% 100%, 0 100%);
+}
+@keyframes xs-slide {
+  from {
+    transform: translateY(-9rem);
+  }
+  to {
+    transform: translateY(4rem);
+    opacity: 0.2;
+  }
+}
+.xs-appreciation {
+  margin: -0.2rem 0 0;
+  text-align: center;
+  font-size: max(var(--di-min-font, 12px), 1.5rem);
+  font-weight: 700;
+  color: #c81e1e;
+  transform: rotate(-1.5deg);
+}
+.xs-red {
+  color: #c81e1e !important;
+}
+.xs-ink {
+  color: #1d3fae;
+  font:
+    800 max(var(--di-min-font, 12px), 1.1rem) 'Cairo',
+    sans-serif;
+  white-space: nowrap;
+}
+.xs-ink u {
+  text-decoration: none;
+  border-bottom: 2px solid #1d3fae;
+  padding: 0 0.25rem;
+}
+.xs-none {
+  color: #9ca3af;
+  font:
+    700 max(var(--di-min-font, 12px), 1rem) 'Cairo',
+    sans-serif;
+}
+.xs-paper--back .xs-ex {
+  margin-bottom: 0.6rem;
+}
+.xs-paper--back ol {
+  list-style: none;
+  padding: 0;
+  font-size: max(var(--di-min-font, 12px), 1rem);
+  gap: 0.15rem;
+}
+.xs-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  border: 1.5px solid transparent;
+  background: none;
+  font-family: inherit;
+  text-align: start;
+  cursor: pointer;
+  border-radius: 0.3rem;
+  color: #111827;
+}
+.xs-row:hover,
+.xs-row.is-open {
+  border-color: #111827;
+  background: #f6f1e3;
+}
+.xs-row__q {
+  font-size: max(var(--di-min-font, 12px), 1.05rem);
+  line-height: 1.6;
+}
+.xs-pen {
+  color: #c81e1e;
+  font:
+    900 max(var(--di-min-font, 12px), 1.25rem) 'Cairo',
+    sans-serif;
+  white-space: nowrap;
+}
+.xs-pen i {
+  font-style: normal;
+  font-size: max(var(--di-min-font, 12px), 0.9rem);
+}
+.xs-pen.is-ok {
+  color: #c81e1e;
+}
+.xs-pen.is-paper {
+  color: #6b7280;
+}
+.xs-sheet--back {
+  background-image: none;
+  font-family: 'Cairo', sans-serif;
+}
+.xs-pick,
+.xs-notebook {
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: max(var(--di-min-font, 12px), 1.15rem);
+}
+.xs-notebook ol {
+  text-align: start;
+  display: grid;
+  gap: 0.5rem;
+  font-size: max(var(--di-min-font, 12px), 1.1rem);
+  line-height: 1.8;
+  padding-inline-start: 1.2rem;
+  list-style: decimal;
+}
+.xs-notebook li {
+  min-height: 0;
+  display: list-item;
+}
+.xs-detail {
+  display: grid;
+  gap: 0.6rem;
+}
+.xs-detail h3 {
+  font-size: max(var(--di-min-font, 12px), 1.15rem);
+  border: 0;
+  line-height: 1.7;
+}
+.xs-detail__mine {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.xs-detail small,
+.xs-help small,
+.xs-scheme small {
+  display: block;
+  font-size: max(var(--di-min-font, 12px), 0.78rem);
+  font-weight: 800;
+  color: #6b7280;
+}
+.xs-scheme {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.6rem 0.8rem;
+  background: #f6f1e3;
+  border-radius: 0.4rem;
+}
+.xs-scheme label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: max(var(--di-min-font, 12px), 1rem);
+  font-weight: 600;
+  cursor: pointer;
+}
+.xs-scheme input {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: #111827;
+}
+.xs-helps {
+  display: flex;
+  gap: 0.5rem;
+}
+.xs-help {
+  padding: 0.6rem 0.9rem;
+  border: 1.5px dashed #111827;
+  border-radius: 0.4rem;
+}
+.xs-help p {
+  margin: 0.2rem 0;
+  font-size: max(var(--di-min-font, 12px), 1.05rem);
+  line-height: 1.8;
+}
+.xs-help--model {
+  border: 1.5px solid #c81e1e;
+}
+.xs-help--model p {
+  color: #c81e1e;
+  font-weight: 700;
+}
+.xs-redo {
+  font-weight: 800;
+  color: #1d3fae;
+}
+@media (max-width: 1100px) {
+  .xs-paper--read > .xs-cols {
+    gap: 0.9rem;
+  }
+  .xs-statement,
+  .xs-ex ol {
+    font-size: max(var(--di-min-font, 12px), 1.08rem);
+  }
+  .xs-step__ask {
+    font-size: max(var(--di-min-font, 12px), 1.1rem);
+  }
+  .xs-head h2 {
+    font-size: max(var(--di-min-font, 12px), 1.25rem);
+  }
+}
+
+/* reading time: the whole subject at once — the situation (third exercise) is the longest and gets the widest column */
+.xs-paper--read > .xs-cols {
+  grid-template-columns: 1fr 1fr 1.5fr;
+}
+.xs-paper--read .xs-statement,
+.xs-paper--read .xs-ex ol {
+  font-size: max(var(--di-min-font, 12px), 1.12rem);
+  line-height: 1.85;
+}
+.xs-paper--read .xs-ex h3 {
+  font-size: max(var(--di-min-font, 12px), 1.2rem);
+}
+.xs-root .xs-help--model,
+.xs-root .xs-help--model p {
+  color: #c81e1e;
+}
+
+.xs-paper--read > .xs-cols--1 {
+  grid-template-columns: minmax(0, 46rem);
+  justify-content: center;
+}
+.xs-paper--read > .xs-cols--2 {
+  grid-template-columns: 1fr 1.3fr;
+}
+.xs-cols--1 .xs-statement,
+.xs-cols--1 ol,
+.xs-cols--2 .xs-statement,
+.xs-cols--2 ol {
+  font-size: max(var(--di-min-font, 12px), 1.3rem) !important;
+}
+
+/* ───────── the answer sheet in LEAVES (ExamSittingLeaves.jsx): never cut, never scrolled ───────── */
+.xs-leafcol {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.xs-leafcol > .di-fitbox {
+  flex: 1;
+}
+/* every answer stays mounted (it keeps what he typed); the answers of the other leaves are not drawn */
+.xs-leafcol li[hidden] {
+  display: none !important;
+}
+/* the line a fraction box writes under itself is said once per leaf (ExamSitting › quietKey) */
+.xs-sheet li[data-xs-quiet] [data-template='fraction'] + span {
+  display: none;
+}
+.xs-leafnav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.3rem 0.5rem;
+  background: #fffdf6;
+  border: 1px solid #b9b19f;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+}
+.xs-leafnav .xs-btn {
+  min-height: 2.3rem;
+}
+.xs-leafnav__count {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font:
+    800 max(var(--di-min-font, 12px), 1.05rem) 'Cairo',
+    sans-serif;
+}
+.xs-leafnav__count small {
+  font-size: max(var(--di-min-font, 12px), 0.85rem);
+  font-weight: 700;
+  color: #1d3fae;
+}

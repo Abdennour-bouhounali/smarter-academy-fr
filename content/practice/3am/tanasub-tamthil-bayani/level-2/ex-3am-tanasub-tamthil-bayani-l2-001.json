@@ -1,0 +1,351 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l2-001",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — مبيعات الطماطم",
+    "estimatedMinutes": 9,
+    "tags": [
+      "تمثيل بياني",
+      "تناسبية",
+      "جدول"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 3,
+      "file": "3am-s3-56",
+      "exercise": 3
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يبيع فلاح محصول الطماطم لأهل الحيّ بأمانة، ويضبط الميزان أمام كل زبون. يلخّص الجدول التالي مبيعات اليوم، وقد مثّلنا معطياته في المعلم المتعامد والمتجانس الموالي: الفاصلة هي الكتلة بالكيلوغرام، والترتيب هو الثمن بمئات الدنانير.",
+    "table": {
+      "head": [
+        "الكتلة (kg)",
+        "5",
+        "10",
+        "15",
+        "20"
+      ],
+      "rows": [
+        [
+          "الثمن (دج)",
+          "600",
+          "1200",
+          "1800",
+          "2400"
+        ]
+      ]
+    },
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          5,
+          6
+        ],
+        "B": [
+          10,
+          12
+        ],
+        "C": [
+          15,
+          18
+        ],
+        "D": [
+          20,
+          24
+        ]
+      },
+      "grid": true,
+      "axes": {
+        "every": 5
+      },
+      "labels": {
+        "O": "sw",
+        "A": "nw",
+        "B": "nw",
+        "C": "nw",
+        "D": "nw"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس: أربع نقط A(5;6) و B(10;12) و C(15;18) و D(20;24) تمثل مبيعات الطماطم",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: الكتلة بالكيلوغرام — محور التراتيب: الثمن بمئات الدنانير"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما إحداثيا النقطة $C$ التي تمثّل العمود الثالث من الجدول؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$C(18\\,;\\,15)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-SWAP-XY"
+        },
+        {
+          "id": "B",
+          "content": "$C(15\\,;\\,1800)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-UNIT-AXIS"
+        },
+        {
+          "id": "C",
+          "content": "$C(15\\,;\\,18)$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل عمود من الجدول يعطي نقطة: الكتلة هي الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لاحظ وحدة المحور العمودي: مئات الدنانير."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة $15$ وترتيبها $18$ (أي $1800$ دج).",
+        "incorrect": "الفاصلة هي الكتلة، والترتيب هو الثمن مقدّرا بمئات الدنانير."
+      },
+      "solution": {
+        "lines": [
+          "العمود الثالث: $15$ kg و $1800$ دج، أي $18$ مئة دج.",
+          "إذن $C(15\\,;\\,18)$ ."
+        ],
+        "result": "C(15\\,;\\,18)"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "هل الثمن متناسب مع كتلة الطماطم؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لأنّ المبدأ $O$ ليس من النقط المعلَّمة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-ORIGIN-DROP"
+        },
+        {
+          "id": "B",
+          "content": "نعم، النقط على استقامة واحدة مع المبدأ $O$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لا، لأنّ الترتيب لا يساوي الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-EQUAL-ONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط على استقامة واحدة مع المبدأ $O$ ، فهي تمثّل وضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "النقط $A$ و $B$ و $C$ و $D$ على استقامة واحدة تشمل المبدأ $O$ .",
+          "إذن الثمن متناسب مع الكتلة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "علّل جوابك.",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تعليلك ثم قارنه بالتصحيح النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اذكر الخاصية التي تستعملها: ما شرط التناسبية على النقط؟"
+        }
+      ],
+      "feedback": {
+        "correct": "التعليل يذكر استقامة النقط ومرور المستقيم بالمبدأ $O$ .",
+        "incorrect": "قارن تعليلك بالتصحيح النموذجي، وتأكد أنك ذكرت الشرطين معا."
+      },
+      "solution": {
+        "lines": [
+          "النقط $O$ و $A$ و $B$ و $C$ و $D$ على استقامة واحدة.",
+          "وهذا المستقيم يشمل مبدأ المعلم $O$ ، إذن الوضعية تناسبية."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "بقراءة بيانية:",
+      "statement": "حدّد على البيان ثمن $10$ kg من الطماطم بالدينار.",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الثمن بالدينار",
+      "expectedAnswer": "1200",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-TAMTHIL-UNIT-AXIS"
+        },
+        {
+          "value": "10",
+          "id": "MISC-TAMTHIL-SWAP-XY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ من العدد $10$ على المحور الأفقي واصعد إلى النقطة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ الترتيب ثم تذكّر وحدة المحور العمودي."
+        }
+      ],
+      "feedback": {
+        "correct": "ترتيب النقطة $B$ هو $12$ أي $1200$ دج.",
+        "incorrect": "الترتيب المقروء مقدّر بمئات الدنانير: حوّله إلى دنانير."
+      },
+      "solution": {
+        "lines": [
+          "النقطة التي فاصلتها $10$ ترتيبها $12$ ، أي $12 \\times 100 = 1200$ دج."
+        ],
+        "result": "1200\\ \\text{دج}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "تأكّد حسابيا: ما معامل التناسبية $a$ (ثمن الكيلوغرام بمئات الدنانير) انطلاقا من النقطة $B$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: معامل التناسبية",
+      "expectedAnswer": "1.2",
+      "misconceptionSignatures": [
+        {
+          "value": "5/6",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        },
+        {
+          "value": "2",
+          "id": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل التناسبية هو ترتيب النقطة الذي فاصلته $1$ ، أو ناتج قسمة الترتيب على الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ إحداثيي النقطة $B$ ثم اقسم الترتيب على الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تقسم الفاصلة على الترتيب ولا تطرح أحد العددين من الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{12}{10} = 1{,}2$ .",
+        "incorrect": "المعامل هو ناتج قسمة الترتيب على الفاصلة (وليس العكس) لنقطة من المستقيم."
+      },
+      "solution": {
+        "lines": [
+          "النقطة $B(10\\,;\\,12)$ من المستقيم.",
+          "$a = \\dfrac{12}{10} = 1{,}2$"
+        ],
+        "result": "a = 1{,}2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

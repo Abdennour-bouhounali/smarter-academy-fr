@@ -1,0 +1,204 @@
+/* « بنك تمارين الدرس » — the teacher's exercise bank (TeacherExerciseBank.jsx). The screen is Tailwind; this file holds the
+   body of an exercise (read on screen and printed) and what the printer gets. */
+.tb-body {
+  display: grid;
+  gap: 0.9rem;
+}
+.tb-questions {
+  display: grid;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tb-lead {
+  margin: 0 0 0.35rem;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.8;
+  color: #0f172a;
+}
+.tb-q {
+  display: grid;
+  grid-template-columns: 1.9rem minmax(0, 1fr);
+  gap: 0.6rem;
+  align-items: start;
+}
+.tb-q > b {
+  display: grid;
+  place-items: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 50%;
+  background: #0f172a;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 900;
+}
+.tb-q p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.9;
+  color: #1e293b;
+}
+.tb-body .katex {
+  white-space: nowrap;
+}
+.tb-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.4rem;
+}
+.tb-choices span {
+  font-weight: 700;
+}
+.tb-choices span.is-right {
+  padding: 0 0.5rem;
+  border-radius: 0.5rem;
+  background: #ecfdf5;
+  color: #065f46;
+  box-shadow: inset 0 0 0 1px #6ee7b7;
+}
+.tb-key {
+  margin-top: 0.45rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.8rem;
+  background: #f8fafc;
+  border-inline-start: 4px solid #059669;
+}
+.tb-key strong {
+  color: #065f46;
+  font-weight: 900;
+}
+.tb-key__result {
+  text-align: center;
+  font-size: 1.05rem;
+}
+.tb-paper {
+  display: none;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+  body:has([data-teacher-bank]) aside,
+  body:has([data-teacher-bank]) header.fixed,
+  body:has([data-teacher-bank]) nav.fixed,
+  .tb-screen {
+    display: none !important;
+  }
+  /* paper is white: the decorative background of the platform (BackgroundLayer, a FIXED layer the printer repeats on every
+     page) and every tinted surface around the sheet are removed */
+  [data-background-layer] {
+    display: none !important;
+  }
+  html:has([data-teacher-bank]),
+  body:has([data-teacher-bank]),
+  body:has([data-teacher-bank]) #root,
+  body:has([data-teacher-bank]) #root * {
+    background: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+  html:has([data-teacher-bank]),
+  body:has([data-teacher-bank]) {
+    background: #fff !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+  body:has([data-teacher-bank]) #root,
+  body:has([data-teacher-bank]) #root > div,
+  body:has([data-teacher-bank]) main {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+  body:has([data-teacher-bank]) [class*='fixed'],
+  body:has([data-teacher-bank]) [style*='position: fixed'] {
+    display: none !important;
+  }
+  body:has([data-teacher-bank]) main,
+  body:has([data-teacher-bank]) #root,
+  body:has([data-teacher-bank]) #root > div {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+  }
+  .tb-page {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+  .tb-paper {
+    display: block;
+    color: #000;
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+  }
+  .tb-paper > header h1,
+  .tb-paper__key > h1 {
+    margin: 0 0 3mm;
+    font-size: 17pt;
+    font-weight: 900;
+    text-align: center;
+  }
+  .tb-paper > header p {
+    display: flex;
+    justify-content: space-between;
+    gap: 6mm;
+    margin: 0 0 5mm;
+    padding-bottom: 3mm;
+    border-bottom: 1.5pt solid #000;
+    font-size: 11pt;
+    font-weight: 700;
+  }
+  .tb-paper section {
+    margin-bottom: 6mm;
+    break-inside: avoid;
+  }
+  .tb-paper h2 {
+    margin: 0 0 2mm;
+    font-size: 13pt;
+    font-weight: 900;
+  }
+  .tb-paper .tb-q p,
+  .tb-paper .tb-lead,
+  .tb-paper .prose p {
+    font-size: 11.5pt !important;
+    line-height: 1.75;
+    color: #000;
+  }
+  .tb-paper .tb-q > b {
+    background: #fff !important;
+    color: #000;
+    border: 1.2pt solid #000;
+  }
+  .tb-paper .tb-key {
+    background: #fff;
+    border-inline-start: 2pt solid #000;
+  }
+  .tb-paper .tb-key strong,
+  .tb-paper .tb-choices span.is-right {
+    color: #000;
+    background: #fff;
+    box-shadow: none;
+    text-decoration: underline;
+  }
+  .tb-paper__key {
+    break-before: page;
+  }
+}
+
+/* a formula never gets a scrollbar in the teacher's bank: on paper it printed as a small vertical bar beside the equality */
+.tb-body .overflow-x-auto,
+.tb-body [data-statement-formulas] span {
+  overflow: visible !important;
+}
+@media print {
+  .tb-paper * {
+    scrollbar-width: none;
+  }
+  .tb-paper *::-webkit-scrollbar {
+    display: none;
+  }
+}

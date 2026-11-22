@@ -1,0 +1,120 @@
+{
+  "id": "ex-4am-zawiya-muhitiya-l5-006",
+  "lessonCode": "zawiya-muhitiya",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — قوس زاوية التسديد",
+    "estimatedMinutes": 4,
+    "tags": [
+      "زاوية التسديد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_zawiya-muhitiya_P3",
+      "modelledOn": "act-4"
+    }
+  },
+  "statement": {
+    "content": "المدرّب رسم على عشب ملعب 5 جويلية دائرة تمر بالقائمين A و B، مركزها O. من النقطة M على القوس الكبير زاوية التسديد $\\widehat{AMB} = 32^\\circ$ . يقول المدرّب: «من كل نقطة على هذا القوس ترون المرمى بنفس الزاوية»."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "قول المدرّب:",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "خاطئ: كلما اقترب الرامي من المرمى كبرت الزاوية على القوس",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-MUTASAWIYA"
+        },
+        {
+          "id": "B",
+          "content": "صحيح: كل الزوايا المحيطية التي تحصر القوس AB متقايسة",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "صحيح فقط إذا كان [AM] قطرا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-QAWS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل الزاويتان محيطيتان (رأساهما على الدائرة)؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل تحصران نفس القوس، أي رأساهما في نفس الجهة من الوتر؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زاويتان محيطيتان تحصران نفس القوس متقايستان."
+        }
+      ],
+      "feedback": {
+        "correct": "الخاصية 2: على نفس القوس نفس الزاوية المحيطية.",
+        "incorrect": "الزاوية لا تتغير على القوس، وتتغير فقط إذا خرج الرامي عنه."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "ما قيس الزاوية المركزية $\\widehat{AOB}$ بالدرجة؟",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "64",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوس الذي تحصره كل زاوية: هل هو نفس القوس؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الزاويتين: أيهما أكبر، المركزية أم المحيطية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قيس الزاوية المحيطية نصف قيس الزاوية المركزية التي تحصر معها نفس القوس."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{AOB} = 2 \\times 32^\\circ = 64^\\circ$ .",
+        "incorrect": "المركزية ضعف المحيطية."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-DIF",
+          "value": "16"
+        },
+        {
+          "id": "MISC-MUHITIYA-MUSAWIYA",
+          "value": "32"
+        }
+      ]
+    }
+  ]
+}

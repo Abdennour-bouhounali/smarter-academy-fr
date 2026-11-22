@@ -1,0 +1,180 @@
+{
+  "id": "ex-2am-silsila-bi-aqwas-l4-002",
+  "lessonCode": "silsila-bi-aqwas",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — معقوفان لا يغيّران شيئًا",
+    "estimatedMinutes": 12,
+    "tags": [
+      "أقواس متداخلة",
+      "أقواس غير ضرورية"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-78",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "احسب العبارتين $B$ و $C$ ، ثم تحقّق من ضرورة المعقوفين في $B$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $B = 30 - [(14 - 9) \\times 4]$ .",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع خطًّا تحت أعمق القوسين: هما أوّل ما يُحسب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القوسين الداخليين ثم المعقوفين، ثم أكمل بقية العبارة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أعد كتابة العبارة بعد كل مرحلة بما بقي منها."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 30 - [(14 - 9) \\times 4] = 10$",
+        "incorrect": "نبدأ بأعمق القوسين ثم نخرج إلى المعقوفين، وفي كل مستوى نحترم أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$B = 30 - [(14 - 9) \\times 4]$",
+          "$B = 30 - (5 \\times 4)$",
+          "$B = 30 - 20$",
+          "$B = 10$"
+        ],
+        "result": "B = 10"
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل المعقوفان $[\\ \\ ]$ ضروريان في العبارة $B = 30 - [(14 - 9) \\times 4]$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-ALLNEEDED"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النتيجتين بدقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كل عبارة بالترتيب الصحيح قبل أن تحكم."
+        }
+      ],
+      "feedback": {
+        "correct": "تحقّقت من ذلك بالحساب.",
+        "incorrect": "احسب كل عبارة مرحلة مرحلة وقارن النتيجتين قبل أن تحكم."
+      },
+      "solution": {
+        "lines": [
+          "$B = 30 - (5 \\times 4) = 30 - 20 = 10$",
+          "وبدون المعقوفين: $30 - (14 - 9) \\times 4 = 30 - 20 = 10$ : النتيجة نفسها."
+        ]
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب $C = [(14 - 9) \\times 4] \\div 5 + 6$ .",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "12.8",
+          "id": "MISC-AQWAS-IGNORED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع خطًّا تحت أعمق القوسين: هما أوّل ما يُحسب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القوسين الداخليين ثم المعقوفين، ثم أكمل بقية العبارة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أعد كتابة العبارة بعد كل مرحلة بما بقي منها."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = [(14 - 9) \\times 4] \\div 5 + 6 = 10$",
+        "incorrect": "نبدأ بأعمق القوسين ثم نخرج إلى المعقوفين، وفي كل مستوى نحترم أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$C = [(14 - 9) \\times 4] \\div 5 + 6$",
+          "$C = (5 \\times 4) \\div 5 + 6$",
+          "$C = 20 \\div 5 + 6$",
+          "$C = 4 + 6$",
+          "$C = 10$"
+        ],
+        "result": "C = 10"
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-fada-l5-009",
+  "lessonCode": "wadiya-idmajiya-fada",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — دلو رمل صغير",
+    "estimatedMinutes": 7,
+    "tags": [
+      "المخروط المبتور",
+      "التكبير والتصغير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-fada_P3",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "يلعب الأطفال بالشاطئ ويحافظون على نظافته. دلو رمل صغير على شكل مخروط مبتور ممتلئ ماء: نصف قطر قاعه $3\\,\\mathrm{cm}$ ونصف قطر حافته $4\\,\\mathrm{cm}$ وارتفاعه $6\\,\\mathrm{cm}$ . نكمله إلى مخروط رأسه S على بعد $18\\,\\mathrm{cm}$ تحت القاع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "اكتب حجم الماء على الشكل $k\\pi$ (بالسنتيمتر المكعب) ثم أعط $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-fada_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد k (الحجم kπ cm³)",
+      "expectedAnswer": "74",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المخروط الكبير: نصف القطر 4 والارتفاع $18 + 6$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المخروط الصغير تصغير له نسبته $\\dfrac{18}{24} = \\dfrac{3}{4}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب $V_1\\left(1 - \\left(\\dfrac{3}{4}\\right)^3\\right)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$V_1 = \\dfrac{1}{3}\\pi \\times 16 \\times 24 = 128\\pi$ و $V = 128\\pi \\times \\left(1 - \\dfrac{27}{64}\\right) = 74\\pi\\,\\mathrm{cm}^3$ .",
+        "incorrect": "الحجوم تُضرب في $k^3$ : بـ k نجد $32\\pi$ فقط."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "32",
+          "id": "MISC-MABTUR-FARQ"
+        },
+        {
+          "value": "128",
+          "id": "MISC-MABTUR-QIRAA"
+        }
+      ],
+      "difficulty": 5
+    }
+  ]
+}

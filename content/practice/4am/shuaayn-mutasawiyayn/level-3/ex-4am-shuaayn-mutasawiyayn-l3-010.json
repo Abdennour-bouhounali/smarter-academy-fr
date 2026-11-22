@@ -1,0 +1,59 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l3-010",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — نقط على مستقيم",
+    "estimatedMinutes": 3,
+    "tags": [
+      "منتصف مشترك",
+      "طول"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_shuaayn-mutasawiyayn_P1",
+      "modelledOn": "act-2"
+    }
+  },
+  "statement": {
+    "content": "A، B، C، D نقط من مستقيم بهذا الترتيب، حيث للقطعتين [AD] و [BC] نفس المنتصف O، و AB = 3 cm و BC = 4 cm."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "احسب الطول AD (بالسنتيمتر).",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر)",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "O منتصف [AD] ومنتصف [BC]."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "منتصف مشترك يعطي الشعاعين AB و CD متساويين، فالطولان AB و CD متساويان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "AD = AB + BC + CD."
+        }
+      ],
+      "feedback": {
+        "correct": "AB = CD = 3 cm، إذن AD = 3 + 4 + 3 = 10 cm.",
+        "incorrect": "للقطعتين نفس المنتصف: AB = CD."
+      }
+    }
+  ]
+}

@@ -1,0 +1,257 @@
+{
+  "id": "ex-4am-mushkilat-jumla-l5-005",
+  "lessonCode": "mushkilat-jumla",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2009 — حمّاص للبن بالبليدة",
+    "estimatedMinutes": 19,
+    "tags": [
+      "جملة",
+      "ترييض",
+      "وحدات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mushkilat-jumla_P2",
+      "modelledOn": "BEM 2009 I-4"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "التمرين",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يعبّئ حمّاص للبن بالبليدة، المعروف بإتقان حرفته، البن المطحون في علب من صنفين: علب سعة كل منها $250g$ وعلب سعة كل منها $500g$ .\nفي أحد الأيام عبّأ $9kg$ من البن في 30 علبة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "نسمّي $x$ عدد العلب ذات $250g$ و $y$ عدد العلب ذات $500g$ .",
+      "statement": "بيّن أن $x$ و $y$ يحققان الجملة: $\\begin{cases} x + y = 30 \\\\ x + 2y = 36 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المعادلة الواحدة وحدة واحدة: حوّل $9kg$ إلى الغرام."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم طرفي معادلة الكتلة على 250."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "عدد العلب: $x + y = 30$",
+          "الكتلة بالغرام: $9kg = 9000g$ ومنه $250x + 500y = 9000$",
+          "بقسمة طرفي هذه المعادلة على 250 نجد: $x + 2y = 36$",
+          "ومنه $x$ و $y$ يحققان الجملة: $\\begin{cases} x + y = 30 \\\\ x + 2y = 36 \\end{cases}$"
+        ]
+      },
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "جِد عدد العلب من كل صنف.",
+      "statement": "عدد العلب ذات $250g$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط",
+      "expectedAnswer": "24",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل $x$ هو نفسه في المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح المعادلة الأولى من الثانية لتجد $y$ أولا، ثم عوّض."
+        }
+      ],
+      "feedback": {
+        "correct": "عبّأ 24 علبة ذات $250g$ .",
+        "incorrect": "اطرح $x + y = 30$ من $x + 2y = 36$ طرفا لطرف، ثم عوّض."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} x + y = 30 & ...(1) \\\\ x + 2y = 36 & ...(2) \\end{cases}$",
+          "بطرح المعادلة (1) من المعادلة (2) طرفا لطرف نجد: $y = 6$",
+          "بالتعويض في المعادلة (1): $x + 6 = 30$ ومنه $x = 24$",
+          "التحقق في النص: $24 + 6 = 30$ علبة و $250 \\times 24 + 500 \\times 6 = 6000 + 3000 = 9000g = 9kg$ .",
+          "إذن عبّأ 24 علبة ذات $250g$ و 6 علب ذات $500g$ ."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 420
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "عدد العلب ذات $500g$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "24",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بطرح المعادلتين يختفي $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "عبّأ 6 علب ذات $500g$ ، ونتحقق: $6000 + 3000 = 9000g$ .",
+        "incorrect": "من الطرح طرفا لطرف: $y = 36 - 30$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} x + y = 30 & ...(1) \\\\ x + 2y = 36 & ...(2) \\end{cases}$",
+          "بطرح المعادلة (1) من المعادلة (2) طرفا لطرف نجد: $y = 6$",
+          "بالتعويض في المعادلة (1): $x + 6 = 30$ ومنه $x = 24$",
+          "التحقق في النص: $24 + 6 = 30$ علبة و $250 \\times 24 + 500 \\times 6 = 6000 + 3000 = 9000g = 9kg$ .",
+          "إذن عبّأ 24 علبة ذات $250g$ و 6 علب ذات $500g$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "يبيع الحمّاص العلبة ذات $250g$ بـ 450DA والعلبة ذات $500g$ بـ 850DA.",
+      "statement": "احسب المبلغ الذي يتحصل عليه إذا باع كل علب ذلك اليوم.",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "15900",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل عدد العلب من كل صنف (السؤال 02)."
+        }
+      ],
+      "feedback": {
+        "correct": "$10800 + 5100 = 15900DA$ .",
+        "incorrect": "اضرب عدد علب كل صنف في ثمنها ثم اجمع."
+      },
+      "solution": {
+        "lines": [
+          "العلب ذات $250g$ : $24 \\times 450 = 10800$",
+          "العلب ذات $500g$ : $6 \\times 850 = 5100$",
+          "المبلغ: $10800 + 5100 = 15900$ أي $15900DA$ ."
+        ],
+        "result": "15900\\,DA"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "☜ تكلفة الكيلوغرام الواحد من البن (مع التعبئة) 1300DA. احسب ربح الحمّاص في ذلك اليوم.",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب الربح بـ DA (عدد فقط)",
+      "expectedAnswer": "4200",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب تكلفة $9kg$ من البن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الربح = المبلغ المتحصل عليه − التكلفة."
+        }
+      ],
+      "feedback": {
+        "correct": "التكلفة $11700DA$ ، والربح $4200DA$ .",
+        "incorrect": "اضرب 1300 في عدد الكيلوغرامات، ثم اطرح من المبلغ المتحصل عليه."
+      },
+      "solution": {
+        "lines": [
+          "التكلفة: $9 \\times 1300 = 11700$",
+          "الربح: $15900 - 11700 = 4200$ أي $4200DA$ ."
+        ],
+        "result": "4200\\,DA"
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

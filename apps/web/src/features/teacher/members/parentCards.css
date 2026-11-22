@@ -1,0 +1,45 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   « بطاقات الأولياء » — features/teacher/members/ParentCardsDialog.jsx.
+   Une carte par élève : le texte pour le parent, et le QR de son رابط الوليّ.
+   ───────────────────────────────────────────────────────────────────────── */
+
+.sa-pcard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.sa-pcard {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1.5px dashed #94a3b8;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  break-inside: avoid;
+  background: #fff;
+}
+
+.sa-pcard-text { flex: 1; min-width: 0; }
+.sa-pcard-class { font-size: 0.7rem; color: #64748b; }
+.sa-pcard-name { font-weight: 700; font-size: 1rem; color: #0f172a; }
+.sa-pcard-title { font-weight: 700; font-size: 0.8rem; color: #4338ca; margin: 0.25rem 0; }
+.sa-pcard ol { list-style: decimal; padding-inline-start: 1rem; font-size: 0.7rem; line-height: 1.45; color: #334155; }
+.sa-pcard-footer { margin-top: 0.3rem; font-size: 0.62rem; color: #94a3b8; }
+.sa-pcard svg { flex-shrink: 0; }
+
+/* La copie d'impression n'existe pas à l'écran. */
+[data-parent-cards-print] { display: none; }
+
+@media print {
+  @page { margin: 10mm; }
+
+  body:has([data-parent-cards-print]) > *:not([data-parent-cards-print]) {
+    display: none !important;
+  }
+
+  [data-parent-cards-print] { display: block; }
+
+  .sa-pcard-grid { gap: 6mm; }
+  .sa-pcard { padding: 4mm; }
+}

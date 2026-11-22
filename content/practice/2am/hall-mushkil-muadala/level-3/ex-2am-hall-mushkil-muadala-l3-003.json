@@ -1,0 +1,193 @@
+{
+  "id": "ex-2am-hall-mushkil-muadala-l3-003",
+  "lessonCode": "hall-mushkil-muadala",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — دفاتر المدرسة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "ترجمة وضعيّة",
+      "معادلة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اشترت مكتبة المدرسة $15$ دفترًا متماثلًا بمبلغ $825$ DA . نسمّي $x$ ثمن الدفتر الواحد بالدينار."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ معادلة تترجم الوضعيّة ؟ اختر الإجابة الصحيحة :",
+      "learningPoints": [
+        {
+          "code": "2am_hall-mushkil-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$825\\times x=15$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAJHUL-SWAP"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{x}{15}=825$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAJHUL-ROLE"
+        },
+        {
+          "id": "C",
+          "content": "$15\\times x=825$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعيّة وسمِّ المجهول بحرف، ثمّ حدّد ما يُعطى وما يُطلب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العملية التي تربط الأعداد بالمجهول كما تحدث في الوضعيّة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر كلّ معادلة : هل تصف الوضعيّة، وهل يجعلها العدد المتوقّع صحيحة ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "المعادلة الصحيحة هي $15\\times x=825$ .",
+        "incorrect": "عبّر عن الوضعيّة بعملية بين العدد المعلوم والمجهول، ثمّ اختبر الخيارات بقيمة مقبولة."
+      },
+      "solution": {
+        "lines": [
+          "$15\\times x=825$ : هذه المعادلة تصف الوضعيّة.",
+          "وحلّها $x=55$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حلّ المعادلة : $15\\times x=825$ .",
+      "learningPoints": [
+        {
+          "code": "2am_hall-mushkil-muadala_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "55",
+      "misconceptionSignatures": [
+        {
+          "value": "12375",
+          "id": "MISC-MAJHUL-MULTDIV"
+        },
+        {
+          "value": "810",
+          "id": "MISC-MAJHUL-SUBFORM"
+        },
+        {
+          "value": "840",
+          "id": "MISC-MAJHUL-ADDFORM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في المعادلة ما يُفعل بالمجهول : ضرب أو قسمة أو جمع أو طرح، وما هي آخر عملية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العامل الناقص في جداء يُحسب بقسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من حلّك : عوّض المجهول بقيمته وأنجز العملية، فإن وجدت الطرف الآخر فالحلّ صحيح."
+        }
+      ],
+      "feedback": {
+        "correct": "$x=55$ .",
+        "incorrect": "ابحث عن العدد الذي يجعل المساواة صحيحة بالعملية العكسية، ثمّ تحقّق منه بإنجاز العملية."
+      },
+      "solution": {
+        "lines": [
+          "$x=825\\div 15=55$ .",
+          "التحقّق : $15\\times 55=825$ ."
+        ],
+        "result": "55"
+      },
+      "work": "optional",
+      "timeSeconds": 70
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كم دينارًا ثمن $9$ دفاتر من النوع نفسه ؟ احسب $9\\times x$ .",
+      "learningPoints": [
+        {
+          "code": "2am_hall-mushkil-muadala_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "495",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بقيمته المعلومة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات : الضرب والقسمة قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة."
+        }
+      ],
+      "feedback": {
+        "correct": "النتيجة $495$ .",
+        "incorrect": "عوّض بالقيم المعلومة واحسب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$9\\times 55=495$ ."
+        ],
+        "result": "495"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

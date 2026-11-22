@@ -1,0 +1,266 @@
+{
+  "id": "ex-4am-tarrid-muthallathiya-l3-001",
+  "lessonCode": "tarrid-muthallathiya",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 26 (ص 125) — AC ثم AB بطريقتين",
+    "estimatedMinutes": 8,
+    "tags": [
+      "طرق متعددة",
+      "الجيب",
+      "جيب التمام"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-26",
+      "page": 125,
+      "section": "أتعمّق",
+      "number": 26
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$ABC$ مثلث قائم في $A$ حيث $\\widehat{ABC} = 18^{\\circ}$ و $BC = 6\\,\\mathrm{cm}$ (الشكل المقابل).",
+    "figure": {
+      "points": {
+        "A": [
+          0.0,
+          0.0
+        ],
+        "B": [
+          4.8393,
+          3.0239
+        ],
+        "C": [
+          -0.9825,
+          1.5724
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "A",
+          "C"
+        ],
+        {
+          "from": "B",
+          "to": "C",
+          "label": "6 cm"
+        }
+      ],
+      "rightAngles": [
+        [
+          "B",
+          "A",
+          "C"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "B",
+          "from": "C",
+          "to": "A",
+          "label": "18°",
+          "radius": 40
+        }
+      ],
+      "labels": {
+        "A": "w",
+        "B": "e",
+        "C": "n"
+      },
+      "ariaLabel": "مثلث ABC قائم في A، قيس الزاوية ABC يساوي 18 درجة، والوتر BC طوله 6 cm",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $AC$ بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm مدوّرا إلى 0,1",
+      "expectedAnswer": "1.9",
+      "misconceptionSignatures": [
+        {
+          "value": "5.7",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "19.4",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $ABC$ القائم في $A$ ، حدّد موقع الضلع المعلوم والضلع المطلوب بالنسبة إلى الزاوية $\\widehat{ABC}$ (مجاور، مقابل أو وتر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة التي تجمع هذين الضلعين هي جيب الزاوية $\\widehat{ABC}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالآلة الحاسبة مبرمجة على الدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC = 6 \\times \\sin 18^{\\circ} \\approx 1{,}9\\,\\mathrm{cm}$ .",
+        "incorrect": "الطول المطلوب في بسط النسبة: نضرب الطول المعلوم في النسبة المثلثية ولا نقسم عليها؛ والآلة الحاسبة مبرمجة على الدرجة."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $ABC$ القائم في $A$ لدينا: $\\sin\\,\\widehat{ABC} = \\dfrac{AC}{BC}$",
+          "ومنه: $AC = BC \\times \\sin\\,\\widehat{ABC}$",
+          "$AC = 6 \\times \\sin 18^{\\circ}$",
+          "باستعمال الآلة الحاسبة: $AC \\approx 1{,}8541$",
+          "أعادت المنصّة رسم شكل الكتاب بالمعطيات نفسها (المثلث مائل ليبقى مقروءا، والزاوية $18^{\\circ}$ مرسومة بقيسها الحقيقي)."
+        ],
+        "result": "AC \\approx 1{,}9\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب $AB$ باستعمال $\\cos\\widehat{ABC}$ ، بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm مدوّرا إلى 0,1",
+      "expectedAnswer": "5.7",
+      "misconceptionSignatures": [
+        {
+          "value": "6.3",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        },
+        {
+          "value": "1.9",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $ABC$ القائم في $A$ ، حدّد موقع الضلع المعلوم والضلع المطلوب بالنسبة إلى الزاوية $\\widehat{ABC}$ (مجاور، مقابل أو وتر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة التي تجمع هذين الضلعين هي جيب تمام الزاوية $\\widehat{ABC}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالآلة الحاسبة مبرمجة على الدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = 6 \\times \\cos 18^{\\circ} \\approx 5{,}7\\,\\mathrm{cm}$ .",
+        "incorrect": "الطول المطلوب في بسط النسبة: نضرب الطول المعلوم في النسبة المثلثية ولا نقسم عليها؛ والآلة الحاسبة مبرمجة على الدرجة."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $ABC$ القائم في $A$ لدينا: $\\cos\\,\\widehat{ABC} = \\dfrac{AB}{BC}$",
+          "ومنه: $AB = BC \\times \\cos\\,\\widehat{ABC}$",
+          "$AB = 6 \\times \\cos 18^{\\circ}$",
+          "باستعمال الآلة الحاسبة: $AB \\approx 5{,}7063$"
+        ],
+        "result": "AB \\approx 5{,}7\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب $AB$ باستعمال $\\sin\\widehat{ACB}$ ، بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm مدوّرا إلى 0,1",
+      "expectedAnswer": "5.7",
+      "misconceptionSignatures": [
+        {
+          "value": "1.9",
+          "id": "MISC-MUTH-ZAWIYA-KHATI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولا $\\widehat{ACB}$ : الزاويتان الحادتان متتامتان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$[AB]$ مقابل للزاوية $\\widehat{ACB}$ و $[BC]$ وتر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالآلة الحاسبة مبرمجة على الدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{ACB} = 72^{\\circ}$ و $AB = 6 \\times \\sin 72^{\\circ} \\approx 5{,}7\\,\\mathrm{cm}$ : النتيجة نفسها.",
+        "incorrect": "المقابل والمجاور يُعيَّنان بالنسبة إلى الزاوية $C$ هذه المرة."
+      },
+      "solution": {
+        "lines": [
+          "$\\widehat{ACB} = 90^{\\circ} - 18^{\\circ} = 72^{\\circ}$",
+          "في المثلث $ABC$ : $\\sin\\widehat{ACB} = \\dfrac{AB}{BC}$ ومنه $AB = 6 \\times \\sin 72^{\\circ}$",
+          "باستعمال الآلة الحاسبة: $AB \\approx 5{,}7063$ : الطريقتان تعطيان النتيجة نفسها."
+        ],
+        "result": "AB \\approx 5{,}7\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

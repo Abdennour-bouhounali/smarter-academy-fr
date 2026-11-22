@@ -1,0 +1,178 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l4-005",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — ساحة جامع الجزائر",
+    "estimatedMinutes": 2,
+    "tags": [
+      "مربّع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_ithbat-khawas-maalam_P2",
+      "modelledOn": "now-145"
+    }
+  },
+  "generator": {
+    "tool": "u1x-ithbat-khawas-maalam/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "مربّع رخامي أتقن الحرفيون صنعه في ساحة جامع الجزائر رؤوسه $A(-2\\,;\\,-1)$ ، $B(1\\,;\\,-3)$ ، $C(3\\,;\\,0)$ ، $D(0\\,;\\,2)$ في معلم متعامد ومتجانس (النقط معلّمة على المرصوفة). لدينا $\\overrightarrow{AB} = \\overrightarrow{DC}$ و $AB^2 = BC^2 = 13$ .",
+    "figure": {
+      "grid": true,
+      "axes": true,
+      "points": {
+        "A": [
+          -2,
+          -1
+        ],
+        "B": [
+          1,
+          -3
+        ],
+        "C": [
+          3,
+          0
+        ],
+        "D": [
+          0,
+          2
+        ]
+      },
+      "ariaLabel": "الرباعي ABCD على مرصوفة",
+      "maxWidth": 420,
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "A"
+        ]
+      ],
+      "labels": {
+        "A": "w",
+        "B": "s",
+        "C": "e",
+        "D": "n"
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "احسب $BD^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "26",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MASAFA-JADHR-JAM",
+          "value": "6"
+        },
+        {
+          "id": "MISC-MAALAM-MASAFA-TARBI",
+          "value": "24"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مركبتا $\\overrightarrow{BD}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$-1$ و $5$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ربّع ثم اجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$BD^2 = 1 + 25 = 26$ ، و $AC^2 = 25 + 1 = 26$ .",
+        "incorrect": "ربّع كل مركبة."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "الرباعي ABCD :",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "متوازي أضلاع فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "B",
+          "content": "مربّع: متوازي أضلاع ومعيّن وقطراه متقايسان",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "معيّن وليس مربّعا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "D",
+          "content": "مستطيل وليس مربّعا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{AB} = \\overrightarrow{DC}$ : أوّلا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$AB = BC$ : ماذا؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$AC = BD$ : ماذا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الأدلة الثلاثة: مربّع.",
+        "incorrect": "اجمع الأدلة الثلاثة."
+      }
+    }
+  ]
+}

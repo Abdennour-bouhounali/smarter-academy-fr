@@ -1,0 +1,208 @@
+{
+  "id": "ex-2am-ikhtibar-musawat-mutabayina-l2-002",
+  "lessonCode": "ikhtibar-musawat-mutabayina",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — مساواة ومتباينة ثمّ القيم الصحيحة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "اختبار مساواة",
+      "متباينة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 3,
+      "file": "2am-s3-41",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اختبر صحّة كلّ مساواة أو متباينة من أجل القيمة المعطاة :"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل المساواة $6x+2=7x-3$ صحيحة من أجل $x=5$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "نعم",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بالقيمة المعطاة في الطرف الأوّل ثمّ في الطرف الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة، مع إنجاز الضرب قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الناتجين : إذا تساويا فالمساواة صحيحة، وإلاّ فهي خاطئة."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم : المساواة صحيحة .",
+        "incorrect": "عوّض الحرف في الطرفين، احسب كلّ طرف ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل : $6\\times 5+2=32$ .",
+          "الطرف الثاني : $7\\times 5-3=32$ .",
+          "$32=32$ : الطرفان متساويان، فالمساواة صحيحة ."
+        ]
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل المتباينة $20-3y<8$ صحيحة من أجل $y=5{,}5$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بالقيمة المعطاة في الطرف الأوّل ثمّ في الطرف الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة، مع إنجاز الضرب قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الناتجين بالرمز المكتوب، وانتبه إلى حالة التساوي : هل يقبلها الرمز ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "نعم : المتباينة صحيحة .",
+        "incorrect": "عوّض الحرف في الطرفين، احسب كلّ طرف ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل : $20-3\\times 5{,}5=3{,}5$ .",
+          "الطرف الثاني : $8$ .",
+          "$3{,}5<8$ : المقارنة صحيحة، فالمتباينة صحيحة ."
+        ]
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "من بين القيم $3$ ، $4$ ، $5$ و $6$ : ما هي القيم التي تجعل المتباينة $20-3y<8$ صحيحة ؟ اختر الإجابة الصحيحة :",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$4$ ، $5$ و $6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IKHTIBAR-BOUNDARY"
+        },
+        {
+          "id": "B",
+          "content": "$5$ فقط",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$6$ فقط",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$5$ و $6$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختبر القيم المعطاة واحدة بعد الأخرى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لكلّ قيمة احسب الطرفين ثمّ قارنهما بالرمز المكتوب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى القيمة التي يتساوى عندها الطرفان : هل يقبلها الرمز ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "القيم المطلوبة : $5$ و $6$ .",
+        "incorrect": "اختبر كلّ قيمة على حدة، وانتبه إلى حالة تساوي الطرفين."
+      },
+      "solution": {
+        "lines": [
+          "$y=3$ : $11<8$ ← خاطئة .",
+          "$y=4$ : $8<8$ ← خاطئة .",
+          "$y=5$ : $5<8$ ← صحيحة .",
+          "$y=6$ : $2<8$ ← صحيحة ."
+        ]
+      },
+      "timeSeconds": 100
+    }
+  ]
+}

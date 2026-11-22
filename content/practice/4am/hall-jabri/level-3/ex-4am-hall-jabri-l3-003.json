@@ -1,0 +1,132 @@
+{
+  "id": "ex-4am-hall-jabri-l3-003",
+  "lessonCode": "hall-jabri",
+  "level": 3,
+  "metadata": {
+    "title": "نضرب المعادلتين معا",
+    "estimatedMinutes": 6,
+    "tags": [
+      "الجمع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-7",
+      "page": 60,
+      "section": "أوظّف تعلّماتي",
+      "number": 7
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر جملة المعادلتين التالية:",
+    "formulas": [
+      "\\begin{cases} 5x + 4y = 16 & ...(1) \\\\ 3x + 6y = 15 & ...(2) \\end{cases}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اضرب طرفي المعادلة (1) في $3$ وطرفي المعادلة (2) في $-2$ ، ثم اجمع طرفا لطرف واحسب قيمة $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $x$ فقط (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بعد الضرب يصير معاملا $y$ هما $12y$ و $-12y$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب كل طرف من الطرفين، ثم اجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$15x + 12y = 48$ و $-6x - 12y = -30$ ، بالجمع: $9x = 18$ ومنه $x = 2$ .",
+        "incorrect": "اضرب الطرفين معا (والطرف الثاني أيضا)، ثم اجمع المعادلتين الناتجتين."
+      },
+      "solution": {
+        "lines": [
+          "نضرب طرفي المعادلة (1) في $3$ وطرفي المعادلة (2) في $-2$ :",
+          "$\\begin{cases} 15x + 12y = 48 \\\\ -6x - 12y = -30 \\end{cases}$",
+          "بجمع المعادلتين طرفا لطرف نجد: $9x = 18$",
+          "ومنه $x = 2$"
+        ],
+        "result": "x = 2"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج حل الجملة.",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": {
+        "x": "2",
+        "y": "3/2"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "3/2",
+            "y": "2"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض قيمة $x$ في المعادلة (1) لتجد $y$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قد تكون قيمة $y$ كسرا."
+        }
+      ],
+      "feedback": {
+        "correct": "الثنائية $\\left(2 ; \\dfrac{3}{2}\\right)$ تحقق المعادلتين معا: هي حل الجملة.",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "نضرب طرفي المعادلة (1) في $3$ وطرفي المعادلة (2) في $-2$ :",
+          "$\\begin{cases} 15x + 12y = 48 \\\\ -6x - 12y = -30 \\end{cases}$",
+          "بجمع المعادلتين طرفا لطرف نجد: $9x = 18$",
+          "ومنه $x = 2$",
+          "نعوّض $x$ بـ $2$ في المعادلة (1): $5 \\times 2 + 4y = 16$",
+          "$4y = 6$",
+          "ومنه $y = \\dfrac{3}{2}$",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "\\left(2 ; \\dfrac{3}{2}\\right)"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "id": "ex-4am-natiqa-ghayr-natiqa-l4-003",
+  "lessonCode": "natiqa-ghayr-natiqa",
+  "level": 4,
+  "metadata": {
+    "title": "كتب أمين",
+    "estimatedMinutes": 7,
+    "tags": [
+      "عدد ناطق",
+      "الحاسبة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_natiqa-ghayr-natiqa_P1",
+      "modelledOn": "ict-sqrt2"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "كتب أمين: «العدد $\\sqrt{\\dfrac{1}{9}}$ ليس عددًا ناطقًا، لأن الحاسبة تعرض له 0,333333333 وأرقامه لا تنتهي»."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب العدد $\\sqrt{\\dfrac{1}{9}}$ على شكل كسر.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "1/3",
+      "misconceptionSignatures": [
+        {
+          "value": "1/18",
+          "id": "MISC-JIDHR-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن كسر موجب مربعه $\\dfrac{1}{9}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\left(\\dfrac{1}{3}\\right)^2 = \\dfrac{1}{9}$ .",
+        "incorrect": "خذ جذر البسط وجذر المقام."
+      },
+      "solution": {
+        "lines": [
+          "$1^2 = 1$ و $3^2 = 9$ ، إذن $\\left(\\dfrac{1}{3}\\right)^2 = \\dfrac{1}{9}$"
+        ],
+        "result": "\\sqrt{\\dfrac{1}{9}} = \\dfrac{1}{3}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل ما كتبه أمين صحيح؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASIBA-MUDBUTA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر جوابك، ثم قارن تبريرك بالحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الناطق هو حاصل قسمة عددين صحيحين، ولو كانت كتابته العشرية لا تنتهي."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sqrt{\\dfrac{1}{9}} = \\dfrac{1}{3}$ عدد ناطق: كون أرقامه لا تنتهي لا يمنع أن يكون ناطقًا.",
+        "incorrect": "لا تحكم من شاشة الحاسبة: هل $\\dfrac{1}{9}$ مربع لعدد ناطق؟"
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{9} = \\left(\\dfrac{1}{3}\\right)^2$ مربع لعدد ناطق، إذن $\\sqrt{\\dfrac{1}{9}} = \\dfrac{1}{3}$ عدد ناطق.",
+          "العدد $\\dfrac{1}{3}$ كتابته العشرية لا تنتهي، لكنه حاصل قسمة عددين طبيعيين: إنه عدد ناطق.",
+          "إذن ما كتبه أمين خطأ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "تعرض الحاسبة للعدد $\\sqrt{\\dfrac{1}{7}}$ القيمة 0,377964473. هل $\\sqrt{\\dfrac{1}{7}}$ عدد ناطق؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-TABII-FAQAT"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر جوابك، ثم قارن تبريرك بالحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعيار ليس ما تعرضه الحاسبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل 7 مربع لعدد طبيعي؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{7}$ ليس مربعًا لعدد ناطق (7 ليس مربعًا)، فـ $\\sqrt{\\dfrac{1}{7}}$ ليس ناطقًا؛ والحاسبة تعرض قيمة مقرّبة.",
+        "incorrect": "طبّق المعيار: هل $\\dfrac{1}{7}$ مربع لعدد ناطق؟"
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{7}$ كسر غير قابل للاختزال، ومقامه 7 ليس مربعًا لعدد طبيعي،",
+          "فالعدد $\\dfrac{1}{7}$ ليس مربعًا لعدد ناطق، و $\\sqrt{\\dfrac{1}{7}}$ ليس عددًا ناطقًا.",
+          "العدد 0,377964473 قيمة مقرّبة له فقط."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

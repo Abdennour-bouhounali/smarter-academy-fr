@@ -1,0 +1,196 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l3-001",
+  "lessonCode": "maqati-mustawiya",
+  "level": 3,
+  "metadata": {
+    "title": "نشاط 2 — المقطع عند x = 1,25",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مقطع كرة",
+      "جذر"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-2",
+      "page": 164,
+      "section": "أنشطة"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 164): (d) كرة مركزها O ونصف قطرها $3$ ، والمستوي (P) عمودي على $[NS]$ في I حيث $OI = x$ (الشكل). نضع $x = 1{,}25$ .",
+    "figure": {
+      "kind": "space",
+      "view": {
+        "azimuth": -62,
+        "elevation": 22
+      },
+      "points": {
+        "O": [
+          0,
+          0,
+          0
+        ],
+        "N": [
+          0,
+          0,
+          3
+        ],
+        "S": [
+          0,
+          0,
+          -3
+        ],
+        "I": [
+          0,
+          0,
+          2
+        ],
+        "M": [
+          -2.102,
+          -0.765,
+          2
+        ],
+        "P1": [
+          -3.6,
+          -3.6,
+          2
+        ],
+        "P2": [
+          3.6,
+          -3.6,
+          2
+        ],
+        "P3": [
+          3.6,
+          3.6,
+          2
+        ],
+        "P4": [
+          -3.6,
+          3.6,
+          2
+        ]
+      },
+      "solids": [
+        {
+          "type": "sphere",
+          "center": "O",
+          "radius": 3
+        }
+      ],
+      "circles": [
+        {
+          "center": "I",
+          "radius": 2.236,
+          "normal": "z",
+          "on": 0,
+          "tone": "rose",
+          "bold": true
+        }
+      ],
+      "planes": [
+        {
+          "points": [
+            "P1",
+            "P2",
+            "P3",
+            "P4"
+          ],
+          "tone": "sky",
+          "label": "(P)"
+        }
+      ],
+      "segments": [
+        {
+          "from": "N",
+          "to": "S",
+          "dashed": true
+        },
+        {
+          "from": "I",
+          "to": "M",
+          "tone": "rose"
+        },
+        {
+          "from": "O",
+          "to": "M",
+          "label": "3"
+        }
+      ],
+      "rightAngles": [
+        [
+          "O",
+          "I",
+          "M"
+        ]
+      ],
+      "labels": {
+        "N": "nw",
+        "I": "ne",
+        "S": "sw"
+      },
+      "hidden": [
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ],
+      "ariaLabel": "كرة (d) مركزها O ونصف قطرها 3، قطرها [NS] شاقولي، يقطعها المستوي (P) العمودي على (NS) في I وفق دائرة عليها النقطة M، والمثلث OIM قائم في I",
+      "maxWidth": 420
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "نصف قطر المقطع $IM$ هو:",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$1{,}75$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQTA-TARH"
+        },
+        {
+          "id": "B",
+          "content": "$3{,}25$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQTA-JAM"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{\\sqrt{119}}{4}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$IM^2 = 9 - x^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$1{,}25^2 = 1{,}5625$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$9 - 1{,}5625 = 7{,}4375 = \\dfrac{119}{16}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$IM^2 = 9 - 1{,}5625 = \\dfrac{119}{16}$ ، إذن $IM = \\dfrac{\\sqrt{119}}{4} \\approx 2{,}73$ .",
+        "incorrect": "$3 - 1{,}25$ يطرح الطولين، و $3{,}25$ يجمع المربعين."
+      },
+      "difficulty": 3
+    }
+  ]
+}

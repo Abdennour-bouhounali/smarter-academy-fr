@@ -1,0 +1,256 @@
+{
+  "id": "ex-4am-hasiba-muthallathiya-l3-004",
+  "lessonCode": "hasiba-muthallathiya",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 11 — الزاويتان الحادّتان في المثلث TRI",
+    "estimatedMinutes": 8,
+    "tags": [
+      "الظل",
+      "اللمسات العكسية",
+      "تدوير"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-11",
+      "page": 123,
+      "section": "النسب المثلثية - استعمال حاسبة",
+      "number": 11
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$TRI$ مثلث قائم في $I$ حيث $IT = 2\\,\\mathrm{cm}$ و $IR = 5\\,\\mathrm{cm}$ (الشكل المقابل).",
+    "figure": {
+      "points": {
+        "I": [
+          0,
+          0
+        ],
+        "R": [
+          5,
+          0
+        ],
+        "T": [
+          0,
+          2
+        ]
+      },
+      "segments": [
+        {
+          "from": "I",
+          "to": "R",
+          "label": "5 cm"
+        },
+        {
+          "from": "I",
+          "to": "T",
+          "label": "2 cm"
+        },
+        [
+          "T",
+          "R"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "R",
+          "I",
+          "T"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "R",
+          "from": "I",
+          "to": "T",
+          "label": "?"
+        }
+      ],
+      "ariaLabel": "المثلث TRI قائم في I، الضلع IT طوله 2 سم والضلع IR طوله 5 سم، والزاوية المطلوبة عند R",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $\\tan\\widehat{R}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري أو كسر (القيمة المضبوطة)",
+      "expectedAnswer": "0.4",
+      "misconceptionSignatures": [
+        {
+          "value": "2.5",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بالنسبة إلى الزاوية $\\widehat{R}$ : $[IT]$ مقابل لها و $[IR]$ مجاور لها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الظل = المقابل على المجاور."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan\\widehat{R} = \\dfrac{IT}{IR} = \\dfrac{2}{5} = 0{,}4$ .",
+        "incorrect": "ظل زاوية حادة = طول الضلع المقابل لها على طول الضلع المجاور لها."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $TRI$ القائم في $I$ : $\\tan\\widehat{R} = \\dfrac{IT}{IR} = \\dfrac{2}{5}$"
+        ],
+        "result": "\\tan\\widehat{R} = 0{,}4"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب قيس الزاوية $\\widehat{R}$ . تدوّر النتيجة إلى الجزء من 10.",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: قيس الزاوية بالدرجة، مدوّرا إلى 0,1",
+      "expectedAnswer": "21.8",
+      "misconceptionSignatures": [
+        {
+          "value": "68.2",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        },
+        {
+          "value": "66.4",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "0.4",
+          "id": "MISC-MUTH-HASIBA-RAD"
+        },
+        {
+          "value": "0.0",
+          "id": "MISC-MUTH-AKS-BADAL-MUBASHIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لدينا $\\tan\\,\\widehat{R} = 0{,}4$ : نعرف النسبة ونبحث عن القيس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اللمسة العكسية: ⁦2nd⁩ ثم ⁦tan⁻¹⁩ ثم النسبة ثم ⁦=⁩."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الحرف ⁦D⁩ (الدرجة)، ثم دوّر إلى الجزء من 10: انظر إلى الرقم الموالي للرقم الأخير الذي تحتفظ به."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{R} \\approx 21{,}80140949^{\\circ} \\approx 21{,}8^{\\circ}$ .",
+        "incorrect": "النسبة ليست القيس: القيس يُعيَّن باللمسة العكسية المناسبة والحاسبة مبرمجة بالدرجة، ثم يُدوَّر (لا يُبتر) إلى الجزء من 10."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال الحاسبة المبرمجة بالدرجة: ⁦ON 2nd tan⁻¹ 0,4 =⁩ يظهر على الشاشة $21{,}80140949$ .",
+          "الرقم الذي يلي رقم الأجزاء من 10 هو 0، وهو أصغر من 5: نُبقي رقم الأجزاء من 10 كما هو."
+        ],
+        "result": "\\widehat{R} \\approx 21{,}8^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "استنتج قيس الزاوية $\\widehat{T}$ بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: قيس الزاوية بالدرجة، مدوّرا إلى 0,1",
+      "expectedAnswer": "68.2",
+      "misconceptionSignatures": [
+        {
+          "value": "21.8",
+          "id": "MISC-MUTH-ZAWIYA-KHATI"
+        },
+        {
+          "value": "68.1",
+          "id": "MISC-MUTH-TADWIR-BATR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مجموع أقياس زوايا المثلث $180^{\\circ}$ ، والزاوية $\\widehat{I}$ قائمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الزاويتان الحادّتان في مثلث قائم متتامّتان، أو استعمل $\\tan\\widehat{T} = \\dfrac{IR}{IT}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب بكل أرقام الشاشة ثم دوّر في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{T} = 90^{\\circ} - \\widehat{R} \\approx 68{,}19859051^{\\circ} \\approx 68{,}2^{\\circ}$ .",
+        "incorrect": "الزاويتان الحادّتان في المثلث القائم متتامّتان؛ احسب انطلاقا من القيمة غير المدوّرة."
+      },
+      "solution": {
+        "lines": [
+          "الزاويتان الحادّتان في المثلث القائم متتامّتان: $\\widehat{T} = 90^{\\circ} - \\widehat{R}$",
+          "$\\widehat{T} \\approx 90 - 21{,}80140949 = 68{,}19859051$ (أو ⁦ON 2nd tan⁻¹ ( 5 ÷ 2 ) =⁩).",
+          "الرقم الذي يلي رقم الأجزاء من 10 هو 9، وهو أكبر من 5: نضيف 1 إلى رقم الأجزاء من 10."
+        ],
+        "result": "\\widehat{T} \\approx 68{,}2^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

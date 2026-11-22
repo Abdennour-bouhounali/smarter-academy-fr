@@ -1,0 +1,285 @@
+{
+  "id": "ex-3am-quwat-adad-nisbi-l2-004",
+  "lessonCode": "quwat-adad-nisbi",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — الأعداد نفسها والنتائج مختلفة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "أولوية العمليات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "احسب الأعداد الآتية مع احترام أولويات العمليات.",
+    "formulas": [
+      "A = (9 - 2 \\times 3)^{2}",
+      "B = 9 - 2 \\times 3^{2}",
+      "C = (9 - 2) \\times 3^{2}",
+      "D = 9 - (2 \\times 3)^{2}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $A$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "441",
+          "id": "MISC-QUWA-PRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما أول عملية تُنجز في هذه العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأولوية: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب مرحلة واحدة في كل سطر، وتحقّق من إشارة كل حدّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$(9 - 6)^2 = 3^2 = 9$ .",
+        "incorrect": "احترم أولوية العمليات: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$A = (9 - 6)^{2} = 3^{2}$",
+          "$A = 9$"
+        ],
+        "result": "A = 9"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $B$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "-9",
+      "misconceptionSignatures": [
+        {
+          "value": "63",
+          "id": "MISC-QUWA-PRIORITY"
+        },
+        {
+          "value": "-27",
+          "id": "MISC-QUWA-PRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما أول عملية تُنجز في هذه العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأولوية: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب مرحلة واحدة في كل سطر، وتحقّق من إشارة كل حدّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$9 - 2 \\times 9 = 9 - 18 = -9$ .",
+        "incorrect": "احترم أولوية العمليات: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$B = 9 - 2 \\times 9$",
+          "$B = 9 - 18 = -9$"
+        ],
+        "result": "B = -9"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "احسب $C$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "63",
+      "misconceptionSignatures": [
+        {
+          "value": "441",
+          "id": "MISC-QUWA-PRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما أول عملية تُنجز في هذه العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأولوية: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب مرحلة واحدة في كل سطر، وتحقّق من إشارة كل حدّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$7 \\times 9 = 63$ .",
+        "incorrect": "احترم أولوية العمليات: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$C = 7 \\times 3^{2} = 7 \\times 9$",
+          "$C = 63$"
+        ],
+        "result": "C = 63"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "احسب $D$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "-27",
+      "misconceptionSignatures": [
+        {
+          "value": "-9",
+          "id": "MISC-QUWA-PRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما أول عملية تُنجز في هذه العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأولوية: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب مرحلة واحدة في كل سطر، وتحقّق من إشارة كل حدّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$9 - 6^2 = 9 - 36 = -27$ .",
+        "incorrect": "احترم أولوية العمليات: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$D = 9 - 6^{2} = 9 - 36$",
+          "$D = -27$"
+        ],
+        "result": "D = -27"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "statement": "لماذا تختلف النتائج رغم أن الأعداد والعمليات هي نفسها؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما أول عملية تُنجز في هذه العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأولوية: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب مرحلة واحدة في كل سطر، وتحقّق من إشارة كل حدّ."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الأقواس تغيّر ترتيب العمليات.",
+          "بدون أقواس تُحسب القوة قبل الضرب، والضرب قبل الطرح.",
+          "لذلك $A$ و $B$ و $C$ و $D$ أعداد مختلفة."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-taalufiya-l3-007",
+  "lessonCode": "wadiya-idmajiya-taalufiya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2025 — دالتان ونقطة تقاطعهما",
+    "estimatedMinutes": 10,
+    "tags": [
+      "تناسب التغيّرات",
+      "صورة عدد",
+      "نقطة التقاطع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-taalufiya_P1",
+      "modelledOn": "BEM 2025 I-4"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$f$ دالة تآلفية ، تمثيلها البياني يشمل النقطتين : $H(-1 ; 7)$ و $K(2 ; -2)$"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "أوجد العبارة الجبرية للدالة $f$ .",
+      "statement": "أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAGHAYYUR-BIDUN-QISMA",
+          "value": "-9"
+        },
+        {
+          "id": "MISC-TAGHAYYUR-TARTIB",
+          "value": "3"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خاصية تناسب التغيّرات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $\\dfrac{f(2) - f(-1)}{2 - (-1)}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{-9}{3}$ .",
+        "incorrect": "اطرح بالترتيب نفسه في البسط والمقام، وانتبه إلى الإشارات."
+      },
+      "solution": {
+        "lines": [
+          "العبارة الجبرية للدالة التآلفية $f$ هي: $f(x) = ax + b$ .",
+          "$a = \\dfrac{f(2) - f(-1)}{2 - (-1)} = \\dfrac{-2 - 7}{3} = \\dfrac{-9}{3} = -3$",
+          "$f(-1) = 7$ أي: $-3 \\times (-1) + b = 7$ ، $3 + b = 7$ ، $b = 4$ .",
+          "ومنه: $f(x) = -3x + 4$"
+        ],
+        "result": "f(x) = -3x + 4"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAGHAYYUR-B-NISBA",
+          "value": "-7"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل $f(-1) = 7$ بعد حساب $a$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$-3 \\times (-1) + b = 7$ .",
+        "incorrect": "$b = f(-1) - a \\times (-1)$ ."
+      },
+      "solution": {
+        "lines": [
+          "العبارة الجبرية للدالة التآلفية $f$ هي: $f(x) = ax + b$ .",
+          "$a = \\dfrac{f(2) - f(-1)}{2 - (-1)} = \\dfrac{-2 - 7}{3} = \\dfrac{-9}{3} = -3$",
+          "$f(-1) = 7$ أي: $-3 \\times (-1) + b = 7$ ، $3 + b = 7$ ، $b = 4$ .",
+          "ومنه: $f(x) = -3x + 4$"
+        ],
+        "result": "f(x) = -3x + 4"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "لتكن الدالة $g$ المعرفة بالعبارة : $g(x) = 2x - 11$ .",
+      "statement": "احسب $g(-1)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-13",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAALUFI-NISYAN-B",
+          "value": "-2"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد $-1$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$g(-1) = 2 \\times (-1) - 11$ .",
+        "incorrect": "اضرب $-1$ في 2 ثم أضف $-11$ ."
+      },
+      "solution": {
+        "lines": [
+          "$g(-1) = 2 \\times (-1) - 11 = -2 - 11 = -13$"
+        ],
+        "result": "g(-1) = -13"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "بيّن حسابيا أن التمثيلين البيانيين للدالتين $f$ و $g$ يتقاطعان في نقطة يطلب تعيين إحداثيتيها.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": {
+        "x": "3",
+        "y": "-5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-JUMLA-BAYANI-MAQLUB",
+          "value": {
+            "x": "-5",
+            "y": "3"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "فاصلة نقطة التقاطع حل المعادلة $f(x) = g(x)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم احسب الترتيب بإحدى الدالتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$-3x + 4 = 2x - 11$ .",
+        "incorrect": "حلّ $f(x) = g(x)$ ، ثم اكتب الفاصلة أولا والترتيب ثانيا."
+      },
+      "solution": {
+        "lines": [
+          "معاملا التوجيه $-3$ و $2$ مختلفان: المستقيمان متقاطعان.",
+          "$f(x) = g(x)$",
+          "$-3x + 4 = 2x - 11$",
+          "$-5x = -15$",
+          "$x = 3$",
+          "$g(3) = 2 \\times 3 - 11 = -5$",
+          "إذن نقطة التقاطع هي $(3 ; -5)$ ."
+        ],
+        "result": "(3 ; -5)"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    }
+  ]
+}

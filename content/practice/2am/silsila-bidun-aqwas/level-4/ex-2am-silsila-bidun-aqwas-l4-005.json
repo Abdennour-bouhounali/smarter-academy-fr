@@ -1,0 +1,244 @@
+{
+  "id": "ex-2am-silsila-bidun-aqwas-l4-005",
+  "lessonCode": "silsila-bidun-aqwas",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مكتبة المدرسة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "زيادة ونقصان",
+      "سلسلة عمليات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "في مكتبة المدرسة 320 قصة. أعارت المكتبة 45 قصة، ثم وصلتها 6 علب، في كلّ علبة 12 قصة، وضاعت منها 9 قصص."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ سلسلة عمليات تعطي عدد قصص المكتبة في نهاية الأسبوع؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bidun-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$320 - 45 + 6 \\times 12 - 9$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$320 + 45 + 6 \\times 12 - 9$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SILSILA-STORYSIGN"
+        },
+        {
+          "id": "C",
+          "content": "$320 - 45 - 6 \\times 12 - 9$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SILSILA-STORYSIGN"
+        },
+        {
+          "id": "D",
+          "content": "$320 - 45 + 12 \\times 9 - 6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SILSILA-STORYORDER"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: كل جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل جملة بعملية، بالترتيب الذي جاءت به في القصة."
+        }
+      ],
+      "feedback": {
+        "correct": "$320 - 45 + 6 \\times 12 - 9 = 338$ .",
+        "incorrect": "اكتب جمل القصة بعمليات بالترتيب نفسه، واحرص على إشارة كل عملية: ما يُدفع أو ينقص يُطرح."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة الصحيحة: $320 - 45 + 6 \\times 12 - 9$",
+          "$320 - 45 + 72 - 9$",
+          "$275 + 72 - 9$",
+          "$347 - 9$",
+          "$338$"
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم قصة في المكتبة في نهاية الأسبوع؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bidun-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "338",
+      "misconceptionSignatures": [
+        {
+          "value": "3363",
+          "id": "MISC-SILSILA-NOPRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: كل جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل جملة بعملية، بالترتيب الذي جاءت به في القصة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب السلسلة مراعيًا أولوية الضرب والقسمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$320 - 45 + 6 \\times 12 - 9 = 338$ .",
+        "incorrect": "نترجم كل جملة من القصة بعملية بالترتيب نفسه، ثم نحسب السلسلة: الضرب والقسمة أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $320 - 45 + 6 \\times 12 - 9$",
+          "$320 - 45 + 72 - 9$",
+          "$275 + 72 - 9$",
+          "$347 - 9$",
+          "$338$"
+        ],
+        "result": "338"
+      },
+      "work": "optional",
+      "timeSeconds": 100
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كم قصة وصلت إلى المكتبة هذا الأسبوع؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bidun-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "72",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: كل جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل جملة بعملية، بالترتيب الذي جاءت به في القصة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب السلسلة مراعيًا أولوية الضرب والقسمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 \\times 12 = 72$ .",
+        "incorrect": "نترجم كل جملة من القصة بعملية بالترتيب نفسه، ثم نحسب السلسلة: الضرب والقسمة أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $6 \\times 12$",
+          "$72$"
+        ],
+        "result": "72"
+      },
+      "work": "optional",
+      "timeSeconds": 100
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "هل أصبح في المكتبة أكثر من 330 قصة؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bidun-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العددين المحسوبين بدقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل ما حسبته في الأسئلة السابقة."
+        }
+      ],
+      "feedback": {
+        "correct": "تحقّقت من ذلك بالحساب.",
+        "incorrect": "قارن العددين المحسوبين بدقة قبل أن تحكم."
+      },
+      "solution": {
+        "lines": [
+          "في المكتبة $342$ قصة.",
+          "$342 > 330$ ، إذن نعم."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

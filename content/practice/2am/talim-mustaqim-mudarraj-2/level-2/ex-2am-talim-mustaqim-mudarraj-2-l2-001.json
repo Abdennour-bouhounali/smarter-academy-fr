@@ -1,0 +1,212 @@
+{
+  "id": "ex-2am-talim-mustaqim-mudarraj-2-l2-001",
+  "lessonCode": "talim-mustaqim-mudarraj-2",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — وضع نقط على مستقيم مدرّج",
+    "estimatedMinutes": 8,
+    "tags": [
+      "وضع نقط",
+      "تدريجة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 2,
+      "file": "2am-s2-63",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "مستقيم مدرّج مبدؤه $O$ وقيمة تدريجته الواحدة $1$ cm . نريد وضع النقط $A(+3{,}5)$ ، $B(-4)$ ، $C(-1{,}5)$ عليه."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نريد وضع النقطة $B(-4)$ على مستقيم مدرّج، وقيمة التدريجة الواحدة $1$ cm. كم تدريجة تعدّ من المبدأ؟ اكتب العدد سالبًا إذا كانت النقطة على يسار المبدأ.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-TALIM2-SIGNSIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد التدريجات = الفاصلة ÷ قيمة التدريجة الواحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أمّا الجهة فتحدّدها الإشارة: سالبة على اليسار، موجبة على اليمين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب عدد التدريجات في قيمة التدريجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$-4 \\div 1 = -4$ : عدد التدريجات مسبوق بالإشارة.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$-4 \\div 1 = -4$",
+          "$4$ تدريجات إلى يسار المبدأ"
+        ],
+        "result": "-4"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "النقطة $A(3{,}5)$ تقع على مستقيم قيمة تدريجته الواحدة $1$ cm. بين أيّ تدريجتين متتاليتين تقع؟ (اختر فاصلتي التدريجتين)",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$4$ و $5$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$-4$ و $-3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM2-SIGNSIDE"
+        },
+        {
+          "id": "C",
+          "content": "$2$ و $3$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$3$ و $4$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قسّم الفاصلة على قيمة التدريجة لترى بين أيّ عددين صحيحين من التدريجات تقع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التدريجتان المجاورتان فاصلتاهما من مضاعفات قيمة التدريجة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى الإشارة: النقطة السالبة بين تدريجتين على اليسار."
+        }
+      ],
+      "feedback": {
+        "correct": "$3{,}5$ تقع بين $3$ و $4$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$3{,}5 \\div 1 = 3{,}5$ : بين $3$ و $4$ تدريجة",
+          "بين التدريجتين $3$ و $4$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "النقطة $C(-1{,}5)$ تقع على مستقيم قيمة تدريجته الواحدة $1$ cm. بين أيّ تدريجتين متتاليتين تقع؟ (اختر فاصلتي التدريجتين)",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-3$ و $-2$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$1$ و $2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM2-SIGNSIDE"
+        },
+        {
+          "id": "C",
+          "content": "$-2$ و $-1$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$-1$ و $0$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قسّم الفاصلة على قيمة التدريجة لترى بين أيّ عددين صحيحين من التدريجات تقع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التدريجتان المجاورتان فاصلتاهما من مضاعفات قيمة التدريجة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى الإشارة: النقطة السالبة بين تدريجتين على اليسار."
+        }
+      ],
+      "feedback": {
+        "correct": "$-1{,}5$ تقع بين $-2$ و $-1$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$-1{,}5 \\div 1 = -1{,}5$ : بين $-2$ و $-1$ تدريجة",
+          "بين التدريجتين $-2$ و $-1$"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l2-009",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — حافلات الرحلة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "حافلات",
+      "الحاصل + 1"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تنظّم المتوسطة رحلة لـ 287 تلميذًا، وفي كل حافلة 45 مقعدًا. يحرص المنظّمون على ألّا يبقى أيّ تلميذ دون مقعد."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب حاصل القسمة الإقليدية للعدد 287 على 45.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "17",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "5",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "7",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 287 من 45 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 45 دون أن نتجاوز 287."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$287 = 45 \\times 6 + 17$ و $17 < 45$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 45 فلا يتجاوز الجداء 287، والباقي عندئذ أصغر من 45."
+      },
+      "solution": {
+        "lines": [
+          "$45 \\times 6 = 270$ و $45 \\times 7 = 315$",
+          "$270 \\le 287 < 315$ ، إذن الحاصل هو 6."
+        ],
+        "result": "q = 6"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم حافلة يلزم كراؤها؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد الحافلات",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-IQLIDIYA-NISYAN-ZIYADA"
+        },
+        {
+          "value": "17",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل تكفي المجموعات الكاملة لوضع كل شيء؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ماذا نفعل بالباقي إذا لم يكن معدومًا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$287 = 45 \\times 6 + 17$: يبقى 17 بعد المجموعات الكاملة، ويحتاج إلى حافلة أخرى.",
+        "incorrect": "الحاصل يعدّ المجموعات الكاملة فقط؛ إذا بقي شيء فهو يحتاج إلى مجموعة إضافية."
+      },
+      "solution": {
+        "lines": [
+          "$287 = 45 \\times 6 + 17$",
+          "يبقى 17 بعد المجموعات الكاملة، فنحتاج إلى حافلة أخرى:",
+          "$6 + 1 = 7$"
+        ],
+        "result": "7"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "برّر لماذا لا يكفي عدد الحافلات الذي وجدته في السؤال الأول.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم تلميذًا يبقى بعد ملء الحافلات الكاملة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "يبقى 17 تلميذًا يحتاجون إلى حافلة أخرى.",
+        "incorrect": "انظر إلى الباقي."
+      },
+      "solution": {
+        "lines": [
+          "$287 = 45 \\times 6 + 17$",
+          "6 حافلات تنقل 270 تلميذًا فقط، ويبقى 17 تلميذًا.",
+          "يلزم إذن حافلة سابعة، ولو لم تمتلئ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

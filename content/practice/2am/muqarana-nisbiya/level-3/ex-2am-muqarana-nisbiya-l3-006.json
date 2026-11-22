@@ -1,0 +1,199 @@
+{
+  "id": "ex-2am-muqarana-nisbiya-l3-006",
+  "lessonCode": "muqarana-nisbiya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — درجات حرارة خمس مدن",
+    "estimatedMinutes": 9,
+    "tags": [
+      "ترتيب",
+      "درجة الحرارة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "في ليلة شتوية سجّلت الأرصاد درجات الحرارة بخمس مدن: الجلفة $-2{,}4$ °C ، باتنة $-3{,}15$ °C ، سطيف $-3{,}5$ °C ، تمنراست $6$ °C ، بجاية $3{,}2$ °C. تنشر جمعية الإغاثة هذه الأرقام لتوزّع أغطية على الأبرد فالأبرد، تحقيقًا للتكافل."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "رتّب الدرجات من الأبرد إلى الأدفأ (ترتيب تصاعدي): اختر السلسلة الصحيحة.",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-3{,}5 < -3{,}15 < -2{,}4 < 3{,}2 < 6$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$-2{,}4 < -3{,}15 < -3{,}5 < 3{,}2 < 6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-BDG"
+        },
+        {
+          "id": "C",
+          "content": "$6 > 3{,}2 > -2{,}4 > -3{,}15 > -3{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-OD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بفرز الأعداد حسب إشاراتها: السالبة، ثم الصفر، ثم الموجبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب الأعداد السالبة فيما بينها حسب مسافاتها إلى الصفر: الأكبر مسافة هو الأصغر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب السلسلة كاملة بالرمز نفسه، ثم تحقّق من كل زوج متجاور."
+        }
+      ],
+      "feedback": {
+        "correct": "سطيف ثم باتنة ثم الجلفة ثم بجاية ثم تمنراست.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "السالبة: $3{,}5 > 3{,}15 > 2{,}4$ ، فـ $-3{,}5 < -3{,}15 < -2{,}4$",
+          "الموجبتان: $3{,}2 < 6$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "أيّ المدن أبرد؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الجلفة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-BDG"
+        },
+        {
+          "id": "B",
+          "content": "سطيف",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "باتنة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-DAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج: أيّهما أبعد عن الصفر؟ وفي أيّ جهة منه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددان سالبان: الأصغر هو الذي له أكبر مسافة إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن المسافتين إلى الصفر (العددين دون إشارتيهما) ثم اعكس الحكم لأن العددين سالبان."
+        }
+      ],
+      "feedback": {
+        "correct": "$-3{,}5$ هي أصغر درجة، فسطيف أبرد.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$-3{,}5 < -3{,}15 < -2{,}4$",
+          "سطيف هي الأبرد"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "كم مدينة درجة حرارتها أصغر من الصفر؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارتي العددين قبل أي شيء آخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد السالب أصغر من الصفر، والصفر أصغر من كل عدد موجب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عند اختلاف الإشارتين لا حاجة إلى مقارنة المسافتين إلى الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "ثلاث مدن: سطيف وباتنة والجلفة.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الدرجات السالبة: $-3{,}5$ ، $-3{,}15$ ، $-2{,}4$",
+          "ثلاث مدن"
+        ],
+        "result": "3"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

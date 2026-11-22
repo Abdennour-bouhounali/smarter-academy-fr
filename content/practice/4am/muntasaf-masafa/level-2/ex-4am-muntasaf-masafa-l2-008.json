@@ -1,0 +1,72 @@
+{
+  "id": "ex-4am-muntasaf-masafa-l2-008",
+  "lessonCode": "muntasaf-masafa",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — مسافة بإحداثيات سالبة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المسافة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_muntasaf-masafa_P2",
+      "modelledOn": "know-dist"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس: $A(-3\\,;\\,-2)$ و $B(3\\,;\\,6)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المسافة AB:",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري بالفاصلة (مثل 2,5)",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MASAFA-JADHR-JAM",
+          "value": "14"
+        },
+        {
+          "id": "MISC-MAALAM-MASAFA-JADHR-NASI",
+          "value": "100"
+        },
+        {
+          "id": "MISC-MAALAM-ISHARA",
+          "value": "0"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الفرقين: فرق الفاصلتين وفرق الترتيبين (النهاية ناقص المبدأ)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ربّع كل فرق ثم اجمع المربعين: هذا مربع المسافة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خذ الجذر التربيعي في الأخير، وبسّطه إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$x_B - x_A = 3 - (-3) = 6$ و $y_B - y_A = 6 - (-2) = 8$ ، $AB = \\sqrt{36 + 64} = 10$ .",
+        "incorrect": "طرح عدد سالب يعني جمع قيمته."
+      }
+    }
+  ]
+}

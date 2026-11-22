@@ -1,0 +1,142 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-aadad-nisbiya-l4-003",
+  "lessonCode": "wadiya-idmajiya-aadad-nisbiya",
+  "level": 4,
+  "metadata": {
+    "title": "منتصف قطعة بإحداثيات",
+    "estimatedMinutes": 7,
+    "tags": [
+      "إحداثيات",
+      "منتصف",
+      "متوسط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد، $C(−6\\,;\\,−4)$ و $D(2\\,;\\,−8)$ نقطتان. إحداثيتا منتصف قطعة هما متوسّطا إحداثيتي طرفيها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أوجد إحداثيتي $I$ منتصف $[CD]$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-2",
+        "y": "-6"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-WIDMAJ-MEANDIFF",
+          "value": {
+            "x": "-4",
+            "y": "2"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الإحداثيتين المعلومتين: الفاصلة أولًا ثم الترتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر بعملية على كل إحداثية على حدة، ثم اجمع النتيجتين في ثنائية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من النتيجة بالنظر إلى موضع النقطة بالنسبة إلى محوري المعلم."
+        }
+      ],
+      "feedback": {
+        "correct": "الإحداثيتان هما $(−2 ; −6)$ .",
+        "incorrect": "راجع قراءة الإحداثيات وأثر الضرب في عدد سالب على كل إحداثية."
+      },
+      "solution": {
+        "lines": [
+          "$x = \\dfrac{−6 + 2}{2} = −2$",
+          "$y = \\dfrac{−4 + (−8)}{2} = −6$"
+        ],
+        "result": "(−2 ; −6)"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أوجد إحداثيتي $J$ منتصف $[CF]$ حيث $F(8\\,;\\,−12)$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "1",
+        "y": "-8"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-WIDMAJ-MEANDIFF",
+          "value": {
+            "x": "-7",
+            "y": "4"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الإحداثيتين المعلومتين: الفاصلة أولًا ثم الترتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر بعملية على كل إحداثية على حدة، ثم اجمع النتيجتين في ثنائية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من النتيجة بالنظر إلى موضع النقطة بالنسبة إلى محوري المعلم."
+        }
+      ],
+      "feedback": {
+        "correct": "الإحداثيتان هما $(1 ; −8)$ .",
+        "incorrect": "راجع قراءة الإحداثيات وأثر الضرب في عدد سالب على كل إحداثية."
+      },
+      "solution": {
+        "lines": [
+          "$x = \\dfrac{−6 + 8}{2} = 1$",
+          "$y = \\dfrac{−4 + (−12)}{2} = −8$"
+        ],
+        "result": "(1 ; −8)"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

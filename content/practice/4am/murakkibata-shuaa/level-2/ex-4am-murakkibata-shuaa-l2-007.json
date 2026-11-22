@@ -1,0 +1,77 @@
+{
+  "id": "ex-4am-murakkibata-shuaa-l2-007",
+  "lessonCode": "murakkibata-shuaa",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — ترتيب عشري",
+    "estimatedMinutes": 2,
+    "tags": [
+      "OM",
+      "عدد عشري"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_murakkibata-shuaa_P2",
+      "modelledOn": "know-origin"
+    }
+  },
+  "statement": {
+    "content": "في معلم مبدؤه O، $M(0\\,;\\,-3{,}5)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما مركبتا الشعاع $\\overrightarrow{OM}$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_murakkibata-shuaa_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "مركبتا الشعاع (x ; y): الأفقية ثم العمودية — عددان مثل −3 أو 2,5",
+      "expectedAnswer": {
+        "x": "0",
+        "y": "-7/2"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مبدأ هذا الشعاع هو مبدأ المعلم O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من O، الإزاحة الأفقية هي الفاصلة والإزاحة العمودية هي الترتيب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مركبتا $\\overrightarrow{OM}$ هما إحداثيتا M بنفس الترتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "M على محور التراتيب تحت O: $\\overrightarrow{OM}\\begin{pmatrix} 0 \\\\ -3{,}5 \\end{pmatrix}$ .",
+        "incorrect": "لا إزاحة أفقية: المركبة الأولى 0."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-7/2",
+            "y": "0"
+          },
+          "id": "MISC-MAALAM-TABDIL-X-Y"
+        },
+        {
+          "value": {
+            "x": "0",
+            "y": "7/2"
+          },
+          "id": "MISC-MAALAM-ISHARA"
+        }
+      ]
+    }
+  ]
+}

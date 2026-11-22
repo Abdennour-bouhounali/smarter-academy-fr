@@ -1,0 +1,227 @@
+{
+  "id": "ex-1am-ikhtizal-kitaba-kasriya-l3-010",
+  "lessonCode": "ikhtizal-kitaba-kasriya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — كسر لا يشبه إخوته",
+    "estimatedMinutes": 9,
+    "tags": [
+      "كتابات متساوية",
+      "اختزال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "إليك الكسور: $\\dfrac{14}{21}$ ؛ $\\dfrac{10}{15}$ ؛ $\\dfrac{22}{33}$ ؛ $\\dfrac{18}{24}$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اختزل الكسر $\\dfrac{14}{21}$ إلى أبسط شكل ممكن.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b لا يقبل الاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "2/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن قاسم مشترك للبسط والمقام بقواعد قابلية القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على هذا القاسم، ثم أعد البحث في الكسر الجديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا لم تنفع القواعد، جرّب جداول الضرب (7، 11، 13…)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{14}{21} = \\dfrac{2}{3}$ ولا يقبل البسط والمقام قاسمًا مشتركًا غير 1.",
+        "incorrect": "نقسم البسط والمقام على قاسم مشترك لهما، ونعيد ذلك حتى لا يبقى قاسم مشترك غير 1.",
+        "notIrreducible": "الكتابة تساوي الكسر لكنها ما زالت قابلة للاختزال: ابحث عن قاسم مشترك آخر للبسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "$14 = 7 \\times 2$ و $21 = 7 \\times 3$ ، إذن $\\dfrac{14}{21} = \\dfrac{14 \\div 7}{21 \\div 7} = \\dfrac{2}{3}$",
+          "العددان 2 و 3 لا يقبلان قاسمًا مشتركًا غير 1: $\\dfrac{2}{3}$ في أبسط شكل ممكن."
+        ],
+        "result": "\\dfrac{14}{21} = \\dfrac{2}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هو الكسر الذي لا يساوي الكسور الأخرى؟",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{10}{15}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KASRIYA-AKBAR-ARQAM"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{22}{33}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KASRIYA-AKBAR-ARQAM"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{18}{24}$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختزل كل كسر إلى أبسط شكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أيّها لا يعطي نفس الكسر البسيط؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{18}{24} = \\dfrac{3}{4}$ بينما الكسور الأخرى تساوي $\\dfrac{2}{3}$.",
+        "incorrect": "اختزل كل كسر ثم قارن الكسور البسيطة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{14}{21} = \\dfrac{10}{15} = \\dfrac{22}{33} = \\dfrac{2}{3}$",
+          "$\\dfrac{18}{24} = \\dfrac{3}{4}$ : هو الكسر الدخيل."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اختزل الكسر $\\dfrac{18}{24}$ إلى أبسط شكل ممكن.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b لا يقبل الاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "3/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "9/12",
+          "id": "MISC-KASRIYA-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن قاسم مشترك للبسط والمقام بقواعد قابلية القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على هذا القاسم، ثم أعد البحث في الكسر الجديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا لم تنفع القواعد، جرّب جداول الضرب (7، 11، 13…)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{18}{24} = \\dfrac{3}{4}$ ولا يقبل البسط والمقام قاسمًا مشتركًا غير 1.",
+        "incorrect": "نقسم البسط والمقام على قاسم مشترك لهما، ونعيد ذلك حتى لا يبقى قاسم مشترك غير 1.",
+        "notIrreducible": "الكتابة تساوي الكسر لكنها ما زالت قابلة للاختزال: ابحث عن قاسم مشترك آخر للبسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "$18 = 2 \\times 9$ و $24 = 2 \\times 12$ ، إذن $\\dfrac{18}{24} = \\dfrac{18 \\div 2}{24 \\div 2} = \\dfrac{9}{12}$",
+          "$9 = 3 \\times 3$ و $12 = 3 \\times 4$ ، إذن $\\dfrac{9}{12} = \\dfrac{9 \\div 3}{12 \\div 3} = \\dfrac{3}{4}$",
+          "العددان 3 و 4 لا يقبلان قاسمًا مشتركًا غير 1: $\\dfrac{3}{4}$ في أبسط شكل ممكن."
+        ],
+        "result": "\\dfrac{18}{24} = \\dfrac{3}{4}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "برّر جوابك عن السؤال 02 دون اختزال، بالبحث عن العدد الذي نضرب فيه الحدّين.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بأيّ عدد نضرب 2 و 3 لنجد كل كسر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جرّب ذلك مع الكسر الذي اخترته."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي.",
+        "incorrect": "راجع الخاصية وأعد صياغة التبرير."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2}{3} = \\dfrac{2 \\times 5}{3 \\times 5} = \\dfrac{10}{15}$ و $\\dfrac{2}{3} = \\dfrac{2 \\times 11}{3 \\times 11} = \\dfrac{22}{33}$ و $\\dfrac{2}{3} = \\dfrac{2 \\times 7}{3 \\times 7} = \\dfrac{14}{21}$.",
+          "لو كان $\\dfrac{18}{24} = \\dfrac{2}{3}$ لضربنا 2 في 9 لنجد 18، فيجب أن نجد $3 \\times 9 = 27$ في المقام وليس 24."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

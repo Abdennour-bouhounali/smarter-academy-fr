@@ -1,0 +1,77 @@
+{
+  "id": "ex-4am-insihab-shuaa-l3-006",
+  "lessonCode": "insihab-shuaa",
+  "level": 3,
+  "metadata": {
+    "title": "معارف 2 — القطران",
+    "estimatedMinutes": 2,
+    "tags": [
+      "متوازي الأضلاع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-2",
+      "page": 130,
+      "section": "معارف",
+      "number": 2
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 130): من أجل كل أربع نقط A، B، C، D لدينا: $\\overrightarrow{AB}$ = $\\overrightarrow{DC}$ معناه …"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أكمل:",
+      "learningPoints": [
+        {
+          "code": "4am_insihab-shuaa_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "للقطعتين [AC] و [BD] نفس المنتصف",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "للقطعتين [AB] و [DC] نفس المنتصف",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        },
+        {
+          "id": "C",
+          "content": "للقطعتين [AD] و [BC] نفس المنتصف",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{AB} = \\overrightarrow{DC}$ يعني ABCD متوازي أضلاع: اقرأ A ثم B ثم نهاية الشعاع الثاني ثم مبدأه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في متوازي الأضلاع، كل ضلعين متقابلين يعطيان شعاعين متساويين إذا قرأناهما في نفس الجهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارسم الرباعي على ورقة وضع السهمين لتتحقق من الجهة."
+        }
+      ],
+      "feedback": {
+        "correct": "القطران [AC] و [BD] متناصفان.",
+        "incorrect": "القطران يصلان رأسين غير متتاليين في ABCD."
+      },
+      "difficulty": 3,
+      "cognitiveDemand": "recall"
+    }
+  ]
+}

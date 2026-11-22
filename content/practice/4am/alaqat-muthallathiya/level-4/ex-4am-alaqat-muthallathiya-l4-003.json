@@ -1,0 +1,189 @@
+{
+  "id": "ex-4am-alaqat-muthallathiya-l4-003",
+  "lessonCode": "alaqat-muthallathiya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2022 — الظل 2: الجيب ثم تبسيط عبارة",
+    "estimatedMinutes": 9,
+    "tags": [
+      "العلاقات المثلثية",
+      "تبسيط عبارة",
+      "جذور"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_alaqat-muthallathiya_P1",
+      "modelledOn": "BEM 2022 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$x$ قيس زاوية حادة حيث: $\\tan x = 2$ و $\\cos x = \\dfrac{\\sqrt{5}}{5}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "استنتج $\\sin x$ واكتبه على الشكل $\\dfrac{a\\sqrt{5}}{5}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من $\\tan x = \\dfrac{\\sin x}{\\cos x}$ نستنتج $\\sin x = \\tan x \\times \\cos x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin x = 2 \\times \\dfrac{\\sqrt{5}}{5} = \\dfrac{2\\sqrt{5}}{5}$ .",
+        "incorrect": "الجيب = الظل × جيب التمام (ضرب لا قسمة)."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan x = \\dfrac{\\sin x}{\\cos x}$ ، إذن $\\sin x = \\tan x \\times \\cos x = 2 \\times \\dfrac{\\sqrt{5}}{5}$"
+        ],
+        "result": "\\sin x = \\dfrac{2\\sqrt{5}}{5}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "تحقّق أن: $\\cos^2 x + \\sin^2 x = 1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\left(\\dfrac{\\sqrt{5}}{5}\\right)^2 = \\dfrac{5}{25}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ربّع أيضا $\\dfrac{2\\sqrt{5}}{5}$ : $(2\\sqrt{5})^2 = 4 \\times 5$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{5}{25} + \\dfrac{20}{25} = 1$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "$\\cos^2 x = \\dfrac{5}{25}$ و $\\sin^2 x = \\dfrac{(2\\sqrt{5})^2}{25} = \\dfrac{20}{25}$",
+          "$\\cos^2 x + \\sin^2 x = \\dfrac{5}{25} + \\dfrac{20}{25} = \\dfrac{25}{25} = 1$"
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "lead": "نعتبر العبارة $E = (\\cos x + \\sin x)^2 - 2\\sin x \\cos x$ .",
+      "statement": "احسب $E$ .",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $E$",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر $(\\cos x + \\sin x)^2$ بالمتطابقة الشهيرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحدّان $2\\sin x\\cos x$ يتعادمان."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = \\cos^2 x + 2\\sin x\\cos x + \\sin^2 x - 2\\sin x\\cos x = \\cos^2 x + \\sin^2 x = 1$ .",
+        "incorrect": "انشر المربع (لا تكتب $(\\cos x + \\sin x)^2 = \\cos^2 x + \\sin^2 x$)، ثم بسّط."
+      },
+      "solution": {
+        "lines": [
+          "$(\\cos x + \\sin x)^2 = \\cos^2 x + 2\\sin x\\cos x + \\sin^2 x$",
+          "$E = \\cos^2 x + 2\\sin x\\cos x + \\sin^2 x - 2\\sin x\\cos x = \\cos^2 x + \\sin^2 x$",
+          "تحقّق عددي: $\\cos x + \\sin x = \\dfrac{3\\sqrt{5}}{5}$ ، مربعه $\\dfrac{45}{25}$ ، و $2\\sin x\\cos x = \\dfrac{20}{25}$ ، والفرق $\\dfrac{25}{25}$ ."
+        ],
+        "result": "E = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "بيّن أن $E = 1$ مهما كانت الزاوية الحادة $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا تعوّض بالأعداد: انشر وبسّط ثم استعمل العلاقة $\\cos^2 x + \\sin^2 x = 1$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "بالنشر يبقى $\\cos^2 x + \\sin^2 x$ ، وهو يساوي 1 لكل زاوية حادة.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "$E = (\\cos x + \\sin x)^2 - 2\\sin x\\cos x$",
+          "$E = \\cos^2 x + 2\\sin x\\cos x + \\sin^2 x - 2\\sin x\\cos x$",
+          "$E = \\cos^2 x + \\sin^2 x$",
+          "وحسب العلاقة المثلثية $\\cos^2 x + \\sin^2 x = 1$ ، إذن $E = 1$ لكل زاوية حادة $x$ ."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

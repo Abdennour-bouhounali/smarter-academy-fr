@@ -1,0 +1,293 @@
+{
+  "id": "ex-4am-majdulat-ihsaiya-l5-010",
+  "lessonCode": "majdulat-ihsaiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2018 — كتل المواليد بمستشفى أدرار",
+    "estimatedMinutes": 13,
+    "tags": [
+      "وضعية إدماجية",
+      "مدرّج تكراري",
+      "جيوجيبرا",
+      "الفئة الوسيطية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_majdulat-ihsaiya_P3",
+      "modelledOn": "BEM 2018 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2018",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "جمّعت قابلة بمستشفى أدرار كتل m (بالكيلوغرام) المواليد الذين وُلدوا خلال شهر في فئات متساوية السعة، ثم رسمت بالبرمجية جيوجيبرا المدرّج التكراري الآتي:",
+    "figure": {
+      "kind": "chart",
+      "type": "histogram",
+      "ariaLabel": "مدرّج تكراري لكتل المواليد: من 2 إلى 4,5 كيلوغرام بسعة 0,5",
+      "xTitle": "الكتلة m (kg)",
+      "yTitle": "عدد المواليد",
+      "y": {
+        "max": 24,
+        "step": 4,
+        "minor": 2
+      },
+      "edges": [
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ],
+      "values": [
+        6,
+        14,
+        22,
+        12,
+        6
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن الطلبية التي حجزتها القابلة في جيوجيبرا.",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "⁦Histogramme({2,2.5,3,3.5,4,4.5},{6,14,22,12,6})⁩",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "⁦Histogramme({2,2.5,3,3.5,4},{6,14,22,12,6})⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-TALABIYA-HISTOGRAMME"
+        },
+        {
+          "id": "C",
+          "content": "⁦Histogramme({6,14,22,12,6},{2,2.5,3,3.5,4,4.5})⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-TALABIYA-HISTOGRAMME"
+        },
+        {
+          "id": "D",
+          "content": "⁦Histogramme({2,2.5,3,3.5,4,4.5},{6,12,22,14,6})⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-TALABIYA-HISTOGRAMME"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في الطلبية Histogramme القائمة الأولى بين حاضنتين حدود الفئات، والثانية التكرارات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ الفئات: عدد الحدود يزيد بواحد على عدد الفئات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "رتّب التكرارات بترتيب الفئات نفسه، من الفئة الأولى إلى الأخيرة."
+        }
+      ],
+      "feedback": {
+        "correct": "القائمة الأولى حدود الفئات والثانية تكراراتها بالترتيب.",
+        "incorrect": "القائمة الأولى حدود الفئات كلها (عددها = عدد الفئات + 1)، والثانية تكرارات الفئات بالترتيب نفسه."
+      },
+      "solution": {
+        "lines": [
+          "خمس فئات حدودها 2 ، 2,5 ، 3 ، 3,5 ، 4 ، 4,5 (ستة أعداد؛ في الطلبية تُكتب الفاصلة العشرية نقطة)، وارتفاعات المستطيلات بالترتيب 6 ، 14 ، 22 ، 12 ، 6 .",
+          "الطلبية: ⁦Histogramme({2,2.5,3,3.5,4,4.5},{6,14,22,12,6})⁩ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هو عدد المواليد خلال هذا الشهر؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "60",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-IHSA-QIRAA-MUKHATTAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارتفاع كل مستطيل هو عدد المواليد في فئته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ الارتفاعات الخمسة على المحور العمودي واجمعها."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 + 14 + 22 + 12 + 6 = 60$ مولودا.",
+        "incorrect": "اقرأ ارتفاع كل مستطيل بدقة (خطوة التدريج 2)، ثم اجمع."
+      },
+      "solution": {
+        "lines": [
+          "الارتفاعات: 6 ، 14 ، 22 ، 12 ، 6 .",
+          "$6 + 14 + 22 + 12 + 6 = 60$"
+        ],
+        "result": "60"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "عيّن الفئة التي تشمل الوسيط.",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2 \\le m < 2{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-WASIT-RUTBA"
+        },
+        {
+          "id": "B",
+          "content": "$2{,}5 \\le m < 3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-WASIT-RUTBA"
+        },
+        {
+          "id": "C",
+          "content": "$3 \\le m < 3{,}5$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$3{,}5 \\le m < 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-WASIT-RUTBA"
+        },
+        {
+          "id": "E",
+          "content": "$4 \\le m < 4{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-WASIT-RUTBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفئة التي تشمل الوسيط هي الفئة التي تقع فيها الرتبة الوسطى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب التكرار الكلي ثم الرتبة الوسطى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب التكرارات المجمعة الصاعدة، وابحث عن أول فئة يبلغ تكرارها المجمع هذه الرتبة."
+        }
+      ],
+      "feedback": {
+        "correct": "الرتبة الوسطى تقع في هذه الفئة حسب التكرارات المجمعة الصاعدة.",
+        "incorrect": "لا تختر الفئة الوسطى في الجدول ولا الفئة ذات أكبر تكرار: ابحث عن الرتبة الوسطى بالتكرارات المجمعة الصاعدة."
+      },
+      "solution": {
+        "lines": [
+          "التكرار الكلي 60 زوجيّ: الوسيط بين القيمتين ذواتي الرتبتين 30 و 31 .",
+          "التكرارات المجمعة الصاعدة: 6 ، 20 ، 42 ، 54 ، 60 .",
+          "الرتبة الوسطى تقع في الفئة $3 \\le m < 3{,}5$ ."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "ما هي النسبة المئوية للمواليد الذين كتلتهم أقل من 2,5kg ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "counted": false,
+      "answerFormat": "عدد: النسبة المئوية دون الرمز %",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-IHSA-TAWATUR-BILA-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المواليد الذين كتلتهم أقل من 2,5kg هم مواليد الفئة الأولى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة المئوية = (عددهم ÷ عدد المواليد) × 100 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{6}{60} \\times 100 = 10$ ، أي $10\\%$ .",
+        "incorrect": "اقسم عدد مواليد الفئة الأولى على عدد المواليد كلهم، ثم اضرب في 100 ."
+      },
+      "solution": {
+        "lines": [
+          "مواليد الفئة $2 \\le m < 2{,}5$ : 6 .",
+          "$\\dfrac{6}{60} \\times 100 = 10$"
+        ],
+        "result": "10\\%"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

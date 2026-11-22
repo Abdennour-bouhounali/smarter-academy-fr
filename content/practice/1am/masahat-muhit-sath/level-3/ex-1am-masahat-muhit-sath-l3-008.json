@@ -1,0 +1,205 @@
+{
+  "id": "ex-1am-masahat-muhit-sath-l3-008",
+  "lessonCode": "masahat-muhit-sath",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أرضية ورشة الجمعية",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مساحة",
+      "محيط",
+      "صفوف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثاني",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "تبلّط جمعية الحيّ أرضية ورشة صغيرة بالتعاون بين أعضائها. رتّب الأعضاء البلاطات في 5 صفوف، وفي كل صف 8 بلاطات، ويملكون 46 بلاطة. ضلع البلاطة هو وحدة الطول."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "كم بلاطة تغطّي الأرضية المرتّبة؟",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "40",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد البلاطات في الصف الواحد وعدد الصفوف معطيان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل صف يحمل العدد نفسه من البلاطات: اجمع الصفوف."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يمكن العدّ بالجمع المتكرر: عدد البلاطات في الصف مكرّرًا بعدد الصفوف."
+        }
+      ],
+      "feedback": {
+        "correct": "$5$ × $8$ = $40$.",
+        "incorrect": "عدد الصفوف مرّات عدد البلاطات في الصف."
+      },
+      "solution": {
+        "lines": [
+          "8 + 8 + 8 + 8 + 8 = 40."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم بلاطة تبقى لديهم؟",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المتبقي = ما يملكونه − ما استعملوه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح مساحة الأرضية من 46."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بجمع المتبقي إلى ما استعملوه."
+        }
+      ],
+      "feedback": {
+        "correct": "$46$ − $40$ = $6$.",
+        "incorrect": "نطرح البلاطات المستعملة من المجموع."
+      },
+      "solution": {
+        "lines": [
+          "46 − 40 = 6 بلاطات."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما محيط الأرضية بوحدات الطول؟",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "26",
+      "misconceptionSignatures": [
+        {
+          "value": "40",
+          "id": "MISC-MASAHA-AREA-PERIM-CONFUSED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المحيط هو طول الحدّ الذي يحيط بالسطح: تتبّع الحافة بإصبعك."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ أضلاع البلاطات الواقعة على الحافة ضلعًا ضلعًا، دون الأضلاع الداخلية المشتركة بين بلاطتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارجع إلى نقطة البداية وتأكد أنك لم تعدّ أي ضلع مرتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$8$ + $5$ + $8$ + $5$ = $26$.",
+        "incorrect": "نجمع أطوال الأضلاع الأربعة: 8 و 5 و 8 و 5."
+      },
+      "solution": {
+        "lines": [
+          "8 + 5 + 8 + 5 = 26 وحدة طول."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "كم بلاطة ينقصهم ليبلّطوا ورشة مربعة صفوفها ثمانية وفي كل صف ثماني بلاطات؟",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "18",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولًا ما تحتاجه الورشة المربعة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثماني صفوف في كل صف ثماني بلاطات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح ما يملكونه من المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$64$ − $46$ = $18$.",
+        "incorrect": "نحسب بلاطات الورشة المربعة ثم نطرح ما يملكونه."
+      },
+      "solution": {
+        "lines": [
+          "الورشة المربعة تحتاج 8 × 8 = 64 بلاطة.",
+          "64 − 46 = 18 بلاطة."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

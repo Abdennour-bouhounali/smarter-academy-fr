@@ -1,0 +1,243 @@
+{
+  "id": "ex-4am-dala-khattiya-l2-003",
+  "lessonCode": "dala-khattiya",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2014 — طباعة الوثائق في مكتبة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "جدول",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_dala-khattiya_P1",
+      "modelledOn": "BEM 2014 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2014",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تطبع مكتبة بالمدية الوثائق بسعر 5DA للصفحة الواحدة، وتحرص على إتقان الطباعة. نسمّي $x$ عدد الصفحات المطبوعة و $f(x)$ المبلغ المدفوع بـ DA .",
+    "table": {
+      "head": [
+        "عدد الصفحات",
+        "12",
+        "…",
+        "45"
+      ],
+      "rows": [
+        [
+          "المبلغ (DA)",
+          "…",
+          "140",
+          "…"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انقل الجدول وأكمله.",
+      "statement": "المبلغ المدفوع لطباعة 12 صفحة:",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "60",
+      "misconceptionSignatures": [
+        {
+          "value": "2,4",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "-60",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "صورة العدد $x$ بالدالة الخطية $f$ هي $f(x) = 5 \\times x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $x$ بالعدد $12$ ثم احسب الجداء، وانتبه إلى الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(12) = 5 \\times 12 = 60$ .",
+        "incorrect": "الصورة جداء المعامل في العدد: $f(x) = 5 \\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(12) = 5 \\times 12$",
+          "$f(12) = 60$"
+        ],
+        "result": "f(12) = 60DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "عدد الصفحات التي يكون مبلغ طباعتها 140DA :",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الصفحات (عدد فقط)",
+      "expectedAnswer": "28",
+      "misconceptionSignatures": [
+        {
+          "value": "700",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "-28",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد المطلوب $x$ يحقق $f(x) = 140$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المعادلة $5x = 140$ : اقسم الطرفين على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{140}{5} = 28$ .",
+        "incorrect": "لا تحسب صورة العدد المعطى: ابحث عن العدد $x$ الذي صورته هذا العدد."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 140$ معناه $5x = 140$",
+          "$x = \\dfrac{140}{5} = 28$"
+        ],
+        "result": "x = 28"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "المبلغ المدفوع لطباعة 45 صفحة:",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "225",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "-225",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "صورة العدد $x$ بالدالة الخطية $f$ هي $f(x) = 5 \\times x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $x$ بالعدد $45$ ثم احسب الجداء، وانتبه إلى الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(45) = 5 \\times 45 = 225$ .",
+        "incorrect": "الصورة جداء المعامل في العدد: $f(x) = 5 \\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(45) = 5 \\times 45$",
+          "$f(45) = 225$"
+        ],
+        "result": "f(45) = 225DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "اكتب $f(x)$ بدلالة $x$ على الشكل $f(x) = ax$ .",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "0,2",
+          "id": "MISC-KHATTIYA-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ = ثمن الصفحة × عدد الصفحات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $a$ هو المبلغ مقسوما على عدد الصفحات المقابل له في الجدول."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(x) = 5x$ : $f$ دالة خطية معاملها 5 .",
+        "incorrect": "المعامل هو ثمن صفحة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "المبلغ = ثمن الصفحة × عدد الصفحات",
+          "$f(x) = 5 \\times x$ أي $f(x) = 5x$ : $f$ دالة خطية."
+        ],
+        "result": "f(x) = 5x"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

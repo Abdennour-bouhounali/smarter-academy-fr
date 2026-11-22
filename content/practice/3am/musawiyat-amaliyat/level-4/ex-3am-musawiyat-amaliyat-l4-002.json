@@ -1,0 +1,247 @@
+{
+  "id": "ex-3am-musawiyat-amaliyat-l4-002",
+  "lessonCode": "musawiyat-amaliyat",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — كراء قاعة لإفطار الأيتام",
+    "estimatedMinutes": 9,
+    "tags": [
+      "نسبة مئوية",
+      "المساويات والضرب"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 3,
+      "file": "3am-s3-49",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تكتري جمعية خيرية قاعة لإفطار جماعي لفائدة الأيتام. ارتفع كراء القاعة في الموسم بـ $20\\,\\%$ ، فصار $90\\,000$ دج. نرمز بـ $p$ إلى الكراء الأصلي، فنكتب $\\dfrac{6}{5}p = 90\\,000$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "لو كان الكراء الأصلي $75\\,000$ دج، فما مقدار الزيادة بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الزيادة بالدينار",
+      "expectedAnswer": "15000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العلاقة بين المساواة المعطاة والمساواة المطلوبة؟ أيّ عملية تنقلك من الأولى إلى الثانية؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا أمكن الانتقال من المساواة المعطاة إلى المساواة المقترحة بعملية واحدة على الطرفين فهي صحيحة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب عمليّة واحدة على الطرفين، ثم قارن النتيجة بالمساواة المقترحة حدًّا بحدّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$75\\,000 \\times 0{,}2 = 15\\,000$ .",
+        "incorrect": "استعمل خواص المساواة والعمليّات: عملية واحدة على الطرفين معًا تنقلك من مساواة إلى أخرى؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$75\\,000 \\times \\dfrac{20}{100} = 15\\,000$ دج."
+        ],
+        "result": "15000"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "اكتب المساواة التي نحصل عليها من $(\\dfrac{6}{5})p = 90000$ بضرب طرفيها في العدد $5$.",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$6p + 5 = 90005$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-ADD-MULT-MIX"
+        },
+        {
+          "id": "B",
+          "content": "$6p = 90000$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-ONE-SIDE"
+        },
+        {
+          "id": "C",
+          "content": "$6p = 450000$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نضرب فيه (أو نقسم عليه)؟ وهل هو معدوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نضرب (أو نقسم) الطرفين معًا، وكلّ حدّ من الطرف يتأثّر بالعملية؛ والقسمة على صفر ممنوعة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع الطرف كاملًا بين قوسين قبل أن تضرب، وانتبه لإشارة العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$6p = 450000$ .",
+        "incorrect": "لا تتغيّر المساواة عندما نضرب طرفيها في العدد نفسه أو نقسمهما على عدد غير معدوم؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $\\dfrac{6}{5}p = 90000$ .",
+          "بضرب طرفي المساواة في $5$ نجد: $5 \\times \\dfrac{6}{5}p = 5 \\times 90000$ ، أي $6p = 450000$ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "نعلم أنّ $6p = 450000$ ، إذن $p = \\ldots$ .",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "75000",
+      "misconceptionSignatures": [
+        {
+          "value": "450000",
+          "id": "MISC-MUSAWIYA-ONE-SIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نضرب فيه (أو نقسم عليه)؟ وهل هو معدوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نضرب (أو نقسم) الطرفين معًا، وكلّ حدّ من الطرف يتأثّر بالعملية؛ والقسمة على صفر ممنوعة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع الطرف كاملًا بين قوسين قبل أن تضرب، وانتبه لإشارة العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$p = 75000$ .",
+        "incorrect": "لا تتغيّر المساواة عندما نضرب طرفيها في العدد نفسه أو نقسمهما على عدد غير معدوم؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $6p = 450000$ .",
+          "بقسمة طرفي المساواة على $6$ نجد: $\\dfrac{6p}{6} = \\dfrac{450000}{6}$ ، أي $p = 75000$ ."
+        ],
+        "result": "p = 75000"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "إذا كان $(\\dfrac{6}{5})p = 90000$ فإنّ $p = 75000$ . هل هذه المساواة صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيحة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خاطئة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-DOUBT-OP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العلاقة بين المساواة المعطاة والمساواة المطلوبة؟ أيّ عملية تنقلك من الأولى إلى الثانية؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا أمكن الانتقال من المساواة المعطاة إلى المساواة المقترحة بعملية واحدة على الطرفين فهي صحيحة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب عمليّة واحدة على الطرفين، ثم قارن النتيجة بالمساواة المقترحة حدًّا بحدّ."
+        }
+      ],
+      "feedback": {
+        "correct": "ضربنا الطرفين في $5$ ثمّ قسمناهما على $6$ .",
+        "incorrect": "استعمل خواص المساواة والعمليّات: عملية واحدة على الطرفين معًا تنقلك من مساواة إلى أخرى؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $\\dfrac{6}{5}p = 90000$ .",
+          "بضرب طرفي المساواة في $5$ نجد: $5 \\times \\dfrac{6}{5}p = 5 \\times 90000$ ، أي $6p = 450000$ .",
+          "بقسمة طرفي المساواة على $6$ نجد: $\\dfrac{6p}{6} = \\dfrac{450000}{6}$ ، أي $p = 75000$ .",
+          "ضربنا الطرفين في $5$ ثمّ قسمناهما على $6$ ."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

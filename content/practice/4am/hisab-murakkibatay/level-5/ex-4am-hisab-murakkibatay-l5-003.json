@@ -1,0 +1,129 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l5-003",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 5,
+  "metadata": {
+    "title": "تمرين 6 — الحالة 4 (جذور)",
+    "estimatedMinutes": 4,
+    "tags": [
+      "مركبتا شعاع",
+      "جذور"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-6",
+      "page": 146,
+      "section": "مركبتا شعاع علمت إحداثيات مبدئه ونهايته",
+      "number": 6
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 146، تمرين 6، الحالة 4): $M(\\sqrt{3}\\,;\\,2)$ ، $N(6\\,;\\,\\sqrt{3})$ ، $P\\left(\\dfrac{\\sqrt{3}}{3}\\,;\\,4\\right)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مركبتا $\\overrightarrow{MN}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\begin{pmatrix} 6 \\\\ \\sqrt{3} \\end{pmatrix}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        },
+        {
+          "id": "B",
+          "content": "$\\begin{pmatrix} 6 - \\sqrt{3} \\\\ \\sqrt{3} - 2 \\end{pmatrix}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\begin{pmatrix} \\sqrt{3} - 6 \\\\ 2 - \\sqrt{3} \\end{pmatrix}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-TARH-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبدأ M والنهاية N."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المركبة الأولى: فاصلة N ناقص فاصلة M."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المركبة الثانية: ترتيب N ناقص ترتيب M، وانتبه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$x_N - x_M = 6 - \\sqrt{3}$ و $y_N - y_M = \\sqrt{3} - 2$ .",
+        "incorrect": "النهاية N ناقص المبدأ M، في كل مركبة."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "مركبتا $\\overrightarrow{MP}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\begin{pmatrix} -\\dfrac{2\\sqrt{3}}{3} \\\\ 2 \\end{pmatrix}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\begin{pmatrix} \\dfrac{2\\sqrt{3}}{3} \\\\ -2 \\end{pmatrix}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-TARH-MAQLUB"
+        },
+        {
+          "id": "C",
+          "content": "$\\begin{pmatrix} -\\dfrac{\\sqrt{3}}{2} \\\\ 2 \\end{pmatrix}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-KUSUR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبدأ M والنهاية P."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\dfrac{\\sqrt{3}}{3} - \\sqrt{3} = \\dfrac{\\sqrt{3} - 3\\sqrt{3}}{3}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بسّط: $-\\dfrac{2\\sqrt{3}}{3}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{\\sqrt{3}}{3} - \\sqrt{3} = -\\dfrac{2\\sqrt{3}}{3}$ و $4 - 2 = 2$ .",
+        "incorrect": "وحّد المقام 3: $\\sqrt{3} = \\dfrac{3\\sqrt{3}}{3}$ ."
+      }
+    }
+  ]
+}

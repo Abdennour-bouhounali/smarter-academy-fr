@@ -1,0 +1,374 @@
+{
+  "id": "ex-4am-nashr-tabsit-l5-009",
+  "lessonCode": "nashr-tabsit",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2009 — معصرة زيت الزيتون",
+    "estimatedMinutes": 19,
+    "tags": [
+      "جداء قوسين",
+      "k(a + b)",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_nashr-tabsit_P3",
+      "modelledOn": "BEM 2009 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يعبّئ صاحب معصرة لزيت الزيتون بولاية بجاية، يحرص على نظافتها وجودة زيته، إنتاجه في $(3x + 2)$ صندوقًا، في كل صندوق $(x + 4)$ قارورات، وسعة كل قارورة 2 L ، حيث $x$ عدد طبيعي."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عبّر بدلالة $x$ عن العدد $N$ للقارورات على شكل مجموع مبسّط.",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $N$ على الشكل $ax^2 + bx + c$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب كل حد من القوس الأول في كل حد من القوس الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى إشارة كل حد عند كتابة الجداءات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$N = 3x^2 + 14x + 8$ إذن $a = 3$.",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$N = (3x + 2)(x + 4)$",
+          "$N = 3x \\times x + 3x \\times 4 + 2 \\times x + 2 \\times 4$",
+          "$N = 3x^2 + 12x + 2x + 8$"
+        ],
+        "result": "N = 3x^2 + 14x + 8"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $N$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-NASHR-AWWAL-AKHIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع معاملات حدود $x$ بإشاراتها بعد النشر."
+        }
+      ],
+      "feedback": {
+        "correct": "$N = 3x^2 + 14x + 8$ إذن $b = 14$.",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $b$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$N = 3x^2 + 14x + 8$"
+        ],
+        "result": "b = 14"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "العدد $c$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $N$ على الشكل $ax^2 + bx + c$ : اكتب العدد $c$ فقط",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$N = 3x^2 + 14x + 8$ إذن $c = 8$.",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $c$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$N = 3x^2 + 14x + 8$"
+        ],
+        "result": "c = 8"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "lead": "استنتج بدلالة $x$ كمية الزيت $V$ (باللتر) على شكل مجموع مبسّط.",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $V$ على الشكل $ax^2 + bx + c$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب كل حد من القوس الأول في كل حد من القوس الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى إشارة كل حد عند كتابة الجداءات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$V = 6x^2 + 28x + 16$ إذن $a = 6$.",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$V = 2 \\times N$",
+          "$V = 2(3x + 2)(x + 4)$",
+          "$V = 2(3x \\times x + 3x \\times 4 + 2 \\times x + 2 \\times 4)$",
+          "$V = 2(3x^2 + 12x + 2x + 8)$",
+          "$V = 6x^2 + 24x + 4x + 16$"
+        ],
+        "result": "V = 6x^2 + 28x + 16"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $V$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "28",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-NASHR-AWWAL-AKHIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع معاملات حدود $x$ بإشاراتها بعد النشر."
+        }
+      ],
+      "feedback": {
+        "correct": "$V = 6x^2 + 28x + 16$ إذن $b = 28$.",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $b$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$V = 6x^2 + 28x + 16$"
+        ],
+        "result": "b = 28"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "statement": "العدد $c$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $V$ على الشكل $ax^2 + bx + c$ : اكتب العدد $c$ فقط",
+      "expectedAnswer": "16",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$V = 6x^2 + 28x + 16$ إذن $c = 16$.",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $c$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$V = 6x^2 + 28x + 16$"
+        ],
+        "result": "c = 16"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "statement": "احسب كمية الزيت من أجل $x = 6$ .",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (باللتر)",
+      "expectedAnswer": "400",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى في الشكل المبسّط الذي وجدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$V = 400$.",
+        "incorrect": "عوّض $x$ في كل حد، واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$V = 6 \\times 6^2 + 28 \\times 6 + 16 = 216 + 168 + 16$",
+          "تحقّق: $20$ صندوقًا × $10$ قارورات × $2\\ L = 400\\ L$"
+        ],
+        "result": "V = 400\\ L"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q8",
+      "step": "04",
+      "statement": "☜ يبيع صاحب المعصرة اللتر الواحد بـ 1200DA . ما مدخوله من بيع كل الإنتاج (من أجل $x = 6$)؟",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدينار DA)",
+      "expectedAnswer": "480000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل كمية الزيت باللتر التي وجدتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب في ثمن اللتر."
+        }
+      ],
+      "feedback": {
+        "correct": "$400 \\times 1200 = 480000$ DA .",
+        "incorrect": "اضرب كمية الزيت باللتر (لا عدد القارورات) في ثمن اللتر."
+      },
+      "solution": {
+        "lines": [
+          "$400 \\times 1200 = 480000$ DA"
+        ],
+        "result": "480000\\ DA"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

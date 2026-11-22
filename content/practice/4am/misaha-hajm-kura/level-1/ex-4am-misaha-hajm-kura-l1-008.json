@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-misaha-hajm-kura-l1-008",
+  "lessonCode": "misaha-hajm-kura",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — جلة نصف قطرها 3",
+    "estimatedMinutes": 2,
+    "tags": [
+      "حجم الجلة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_misaha-hajm-kura_P2",
+      "modelledOn": "know-2"
+    }
+  },
+  "statement": {
+    "content": "جلة نصف قطرها $3\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "القيمة المضبوطة لحجمها هي:",
+      "learningPoints": [
+        {
+          "code": "4am_misaha-hajm-kura_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\frac{81}{4}\\pi\\,\\mathrm{cm}^3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HAJM-MUAMIL"
+        },
+        {
+          "id": "B",
+          "content": "$36\\pi\\,\\mathrm{cm}^3$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$12\\pi\\,\\mathrm{cm}^3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HAJM-QUWA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القانون $\\mathcal{V} = \\frac{4}{3}\\pi R^3$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$3^3 = 27$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب $\\frac{4}{3} \\times 27$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\mathcal{V} = \\frac{4}{3}\\pi \\times 27 = 36\\pi\\,\\mathrm{cm}^3$ .",
+        "incorrect": "$12\\pi$ يستعمل $3^2$ ، و $\\frac{81}{4}\\pi$ يستعمل $\\frac{3}{4}$ ."
+      },
+      "difficulty": 1
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "id": "ex-4am-tamthil-bayani-taalufi-l1-002",
+  "lessonCode": "tamthil-bayani-taalufi",
+  "level": 1,
+  "metadata": {
+    "title": "نشاط 3 — النقطة $(0 ; 1)$",
+    "estimatedMinutes": 4,
+    "tags": [
+      "نشاط 3",
+      "الترتيب عند المبدأ"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-3",
+      "page": 78,
+      "section": "أنشطة",
+      "number": 3,
+      "adaptedFrom": "ex-4am-tamthil-bayani-taalufi-l1-002"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الدالة التآلفية $f$ حيث: $f(x) = \\dfrac{3}{2}x + 1$ ، و $(d')$ تمثيلها البياني في معلم متعامد ومتجانس."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن إحداثيي نقطة تقاطع $(d')$ مع محور التراتيب.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": {
+        "x": "0",
+        "y": "1"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "1",
+            "y": "0"
+          },
+          "id": "MISC-BAYANI-FASILA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل نقطة من محور التراتيب فاصلتها 0."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب صورة العدد 0 بالدالة $f$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(0) = 1$ : النقطة $(0 ; 1)$ .",
+        "incorrect": "نقطة محور التراتيب فاصلتها 0، وترتيبها صورة 0: اكتب الفاصلة أولا ثم الترتيب."
+      },
+      "solution": {
+        "lines": [
+          "نقطة تقاطع $(d')$ مع محور التراتيب فاصلتها 0.",
+          "$f(0) = \\dfrac{3}{2} \\times 0 + 1 = 1$",
+          "إذن النقطة هي $(0 ; 1)$ ، و $1$ هو الترتيب عند المبدأ."
+        ],
+        "result": "(0 ; 1)"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل النقطة $E(4 ; 7)$ تنتمي إلى $(d')$؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تنتمي النقطة إلى $(d')$ إذا كان ترتيبها يساوي صورة فاصلتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب صورة فاصلة النقطة بالدالة $f$ ، ثم قارنها بترتيبها."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(4) = \\dfrac{3}{2} \\times 4 + 1 = 7$ ، وهو ترتيب النقطة.",
+        "incorrect": "احسب صورة الفاصلة بالدالة ثم قارنها بالترتيب."
+      },
+      "solution": {
+        "lines": [
+          "$f(4) = \\dfrac{3}{2} \\times 4 + 1 = 7$",
+          "$f(4) = 7$ ، إذن النقطة $E$ تنتمي إلى $(d')$ ."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

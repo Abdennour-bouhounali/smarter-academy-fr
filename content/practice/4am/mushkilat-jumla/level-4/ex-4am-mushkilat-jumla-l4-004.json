@@ -1,0 +1,186 @@
+{
+  "id": "ex-4am-mushkilat-jumla-l4-004",
+  "lessonCode": "mushkilat-jumla",
+  "level": 4,
+  "metadata": {
+    "title": "تفاحات وإجاصات",
+    "estimatedMinutes": 8,
+    "tags": [
+      "ترييض",
+      "وحدات"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-27",
+      "page": 63,
+      "section": "أتعمّق",
+      "number": 27
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تبرّعت أسرة بفاكهة لجيرانها المحتاجين: تزن 5 تفاحات و 3 إجاصات معا 1kg 50g. التفاحات متماثلة والإجاصات متماثلة، ووزن الإجاصة الواحدة يساوي $\\dfrac{2}{3}$ وزن التفاحة الواحدة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "نسمّي $x$ وزن التفاحة الواحدة و $y$ وزن الإجاصة الواحدة (بالغرام).",
+      "statement": "ترجم المعلومة الأولى بمعادلة على الشكل $5x + 3y = c$ (بالغرام). أعط العدد $c$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $c$ بالغرام (عدد فقط)",
+      "expectedAnswer": "1050",
+      "misconceptionSignatures": [
+        {
+          "value": "21/20",
+          "id": "MISC-JUMLA-WIHDA"
+        },
+        {
+          "value": "1500",
+          "id": "MISC-JUMLA-WIHDA"
+        },
+        {
+          "value": "150",
+          "id": "MISC-JUMLA-WIHDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المعادلة الواحدة وحدة واحدة: حوّل الكتلة كلها إلى الغرام."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$1kg = 1000g$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$1kg\\ 50g = 1050g$ ، والمعادلة $5x + 3y = 1050$ .",
+        "incorrect": "حوّل $1kg\\ 50g$ كلها إلى الغرام قبل كتابة المعادلة."
+      },
+      "solution": {
+        "lines": [
+          "الكتلة: $1kg\\ 50g = 1000g + 50g = 1050g$",
+          "ومنه: $5x + 3y = 1050$"
+        ],
+        "result": "c = 1050"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "اكتب جملة معادلتين مجهولاها $x$ و $y$ ، ثم جد وزن التفاحة الواحدة ووزن الإجاصة الواحدة.",
+      "statement": "وزن التفاحة الواحدة:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الوزن بالغرام (عدد فقط)",
+      "expectedAnswer": "150",
+      "misconceptionSignatures": [
+        {
+          "value": "100",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعلومة الثانية: $y = \\dfrac{2}{3}x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $y$ في معادلة السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "وزن التفاحة الواحدة $150g$ .",
+        "incorrect": "بالتعويض: $5x + 3 \\times \\dfrac{2}{3}x = 1050$ أي $7x = 1050$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} 5x + 3y = 1050 & ...(1) \\\\ y = \\dfrac{2}{3}x & ...(2) \\end{cases}$",
+          "بتعويض $y$ في المعادلة (1): $5x + 3 \\times \\dfrac{2}{3}x = 1050$",
+          "$5x + 2x = 1050$ أي $7x = 1050$ ومنه $x = 150$",
+          "ومنه: $y = \\dfrac{2}{3} \\times 150 = 100$",
+          "التحقق: $5 \\times 150 + 3 \\times 100 = 750 + 300 = 1050g = 1kg\\ 50g$ .",
+          "إذن وزن التفاحة الواحدة $150g$ ووزن الإجاصة الواحدة $100g$ ."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "وزن الإجاصة الواحدة:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الوزن بالغرام (عدد فقط)",
+      "expectedAnswer": "100",
+      "misconceptionSignatures": [
+        {
+          "value": "150",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الإجاصة تزن ثلثي التفاحة."
+        }
+      ],
+      "feedback": {
+        "correct": "وزن الإجاصة الواحدة $100g$ ، ونتحقق: $750 + 300 = 1050$ .",
+        "incorrect": "احسب $\\dfrac{2}{3}$ من وزن التفاحة."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} 5x + 3y = 1050 & ...(1) \\\\ y = \\dfrac{2}{3}x & ...(2) \\end{cases}$",
+          "بتعويض $y$ في المعادلة (1): $5x + 3 \\times \\dfrac{2}{3}x = 1050$",
+          "$5x + 2x = 1050$ أي $7x = 1050$ ومنه $x = 150$",
+          "ومنه: $y = \\dfrac{2}{3} \\times 150 = 100$",
+          "التحقق: $5 \\times 150 + 3 \\times 100 = 750 + 300 = 1050g = 1kg\\ 50g$ .",
+          "إذن وزن التفاحة الواحدة $150g$ ووزن الإجاصة الواحدة $100g$ ."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

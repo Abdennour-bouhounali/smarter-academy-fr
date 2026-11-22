@@ -1,0 +1,188 @@
+{
+  "id": "ex-4am-zawiya-muhitiya-l1-003",
+  "lessonCode": "zawiya-muhitiya",
+  "level": 1,
+  "metadata": {
+    "title": "نشاط 4 — رأسا الزاويتين",
+    "estimatedMinutes": 2,
+    "tags": [
+      "الزاوية المركزية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-4",
+      "page": 153,
+      "section": "أنشطة",
+      "number": 4
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 153): (𝒞) دائرة مركزها O، و A و B نقطتان منها، و D نقطة من (𝒞) خارج القوس الملوّنة $\\overset{\\frown}{AB}$ (الشكل).",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -1.5321,
+          1.2856
+        ],
+        "B": [
+          1.5321,
+          1.2856
+        ],
+        "D": [
+          0.0,
+          -2.0
+        ]
+      },
+      "circles": [
+        {
+          "center": "O",
+          "radius": 2
+        }
+      ],
+      "arcs": [
+        {
+          "center": "O",
+          "from": "B",
+          "to": "A",
+          "sweep": "ccw",
+          "tone": "rose",
+          "bold": true
+        }
+      ],
+      "segments": [
+        {
+          "from": "O",
+          "to": "A",
+          "tone": "indigo"
+        },
+        {
+          "from": "O",
+          "to": "B",
+          "tone": "indigo"
+        },
+        {
+          "from": "D",
+          "to": "A",
+          "tone": "amber"
+        },
+        {
+          "from": "D",
+          "to": "B",
+          "tone": "amber"
+        }
+      ],
+      "ariaLabel": "دائرة مركزها O، القوس AB الصغير ملوّن، الزاوية المركزية AOB والزاوية المحيطية ADB",
+      "maxWidth": 380
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "رأس الزاوية $\\widehat{AOB}$ هو:",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نقطة من الدائرة: زاوية محيطية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-RAS"
+        },
+        {
+          "id": "B",
+          "content": "مركز الدائرة: زاوية مركزية",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نقطة خارج الدائرة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-RAS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر أولا إلى رأس الزاوية: أين يقع؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الزاوية المركزية رأسها مركز الدائرة؛ والمحيطية رأسها على الدائرة وضلعاها يقطعانها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زاوية رأسها داخل الدائرة أو خارجها ليست محيطية، ولو كان طرفا ضلعيها على الدائرة."
+        }
+      ],
+      "feedback": {
+        "correct": "O مركز (𝒞): الزاوية AOB مركزية.",
+        "incorrect": "انظر إلى الحرف الأوسط في اسم الزاوية: هو رأسها."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "الزاوية $\\widehat{ADB}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مركزية لأنها تحصر نفس القوس",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-RAS"
+        },
+        {
+          "id": "B",
+          "content": "ليست زاوية في الدائرة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-RAS"
+        },
+        {
+          "id": "C",
+          "content": "محيطية: رأسها D من الدائرة وضلعاها وتران",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر أولا إلى رأس الزاوية: أين يقع؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الزاوية المركزية رأسها مركز الدائرة؛ والمحيطية رأسها على الدائرة وضلعاها يقطعانها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زاوية رأسها داخل الدائرة أو خارجها ليست محيطية، ولو كان طرفا ضلعيها على الدائرة."
+        }
+      ],
+      "feedback": {
+        "correct": "رأسها D على الدائرة وضلعاها [DA] و [DB] وتران: زاوية محيطية تحصر القوس AB مع AOB.",
+        "incorrect": "زاويتان تحصران نفس القوس قد تكون إحداهما مركزية والأخرى محيطية."
+      }
+    }
+  ]
+}

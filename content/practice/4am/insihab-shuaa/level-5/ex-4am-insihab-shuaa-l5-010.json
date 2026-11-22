@@ -1,0 +1,110 @@
+{
+  "id": "ex-4am-insihab-shuaa-l5-010",
+  "lessonCode": "insihab-shuaa",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — ألعاب نارية في عنابة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الطول"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_insihab-shuaa_P2",
+      "modelledOn": "act-1"
+    }
+  },
+  "statement": {
+    "content": "في احتفال على كورنيش عنابة، صاروخان ضوئيان ينطلقان شاقوليا نحو الأعلى (الشكل): الأول من A إلى B والثاني من C إلى D.",
+    "figure": {
+      "points": {
+        "A": [
+          1,
+          1
+        ],
+        "B": [
+          1,
+          3
+        ],
+        "C": [
+          4,
+          0
+        ],
+        "D": [
+          4,
+          3
+        ]
+      },
+      "grid": true,
+      "vectors": [
+        {
+          "from": "A",
+          "to": "B",
+          "tone": "indigo"
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "tone": "amber"
+        }
+      ],
+      "ariaLabel": "ورقة مرصوفة: السهم من A نحو B شاقولي نحو الأعلى بطول 2، والسهم من C نحو D شاقولي نحو الأعلى بطول 3",
+      "maxWidth": 420
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "لماذا $\\overrightarrow{AB}$ و $\\overrightarrow{CD}$ غير متساويين؟",
+      "learningPoints": [
+        {
+          "code": "4am_insihab-shuaa_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نفس المنحى ونفس الاتجاه، لكن الطولين مختلفان (2 و 3)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "المنحى مختلف",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MANHA-MUSTAQIM"
+        },
+        {
+          "id": "C",
+          "content": "الاتجاه معاكس",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن العناصر الثلاثة للشعاع: المنحى (المستقيم الحامل)، الاتجاه (من المبدأ نحو النهاية)، والطول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المنحى يخص المستقيمات: مستقيمان متوازيان لهما نفس المنحى؛ الاتجاه هو جهة السير عليه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن العناصر الثلاثة واحدا واحدا قبل أن تختار."
+        }
+      ],
+      "feedback": {
+        "correct": "السهمان شاقوليان نحو الأعلى: نفس المنحى ونفس الاتجاه، لكن AB = 2 و CD = 3.",
+        "incorrect": "قارن العناصر الثلاثة: المستقيمان الحاملان، الجهة، ثم عدد المربعات."
+      },
+      "difficulty": 5
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "id": "ex-4am-awwaliyan-fima-baynahuma-l1-006",
+  "lessonCode": "awwaliyan-fima-baynahuma",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2009 — العددان 256 و 81",
+    "estimatedMinutes": 4,
+    "tags": [
+      "خوارزمية إقليدس",
+      "إثبات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_awwaliyan-fima-baynahuma_P2",
+      "modelledOn": "BEM 2009 I-4"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "جد القاسم المشترك الأكبر للعددين 256 و 81، ثم استنتج أن العددين أوليان فيما بينهما.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيمة PGCD(256 ; 81) التي وجدتها",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عددان أوليان فيما بينهما: احسب قاسمهما المشترك الأكبر PGCD(256 ; 81)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 256 على 81، ثم واصل القسمات المتتابعة إلى أن تجد باقيًا معدومًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن آخر باقٍ غير معدوم بما يتطلّبه تعريف عددين أوليين فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(256 ; 81) = 1: العددان 256 و 81 أوليان فيما بينهما.",
+        "incorrect": "راجع القسمات المتتابعة باقيًا باقيًا: آخر باقٍ غير معدوم هو القاسم المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$256 = 81 \\times 3 + 13$",
+          "$81 = 13 \\times 6 + 3$",
+          "$13 = 3 \\times 4 + 1$",
+          "$3 = 1 \\times 3 + 0$",
+          "آخر باقٍ غير معدوم هو 1، إذن PGCD(256 ; 81) = 1 .",
+          "ومنه العددان 256 و 81 أوليان فيما بينهما."
+        ],
+        "result": "PGCD(256 ; 81) = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    }
+  ]
+}

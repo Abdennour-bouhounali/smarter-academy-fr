@@ -1,0 +1,145 @@
+{
+  "id": "ex-4am-mada-wasit-mutawassit-l3-008",
+  "lessonCode": "mada-wasit-mutawassit",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2010 — المعدّل الفصلي في مادة العلوم",
+    "estimatedMinutes": 6,
+    "tags": [
+      "المتوسط المتوازن",
+      "معاملات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mada-wasit-mutawassit_P2",
+      "modelledOn": "BEM 2010 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2010",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يُحسب المعدّل الفصلي m لتلميذ في مادة العلوم الطبيعية بالعلاقة الآتية، حيث t علامة التقويم المستمر و f علامة الفرض و e علامة الاختبار:",
+    "formulas": [
+      "m = \\dfrac{t + f + 2e}{4}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "تحصّل ياسين على: t = 15 ، f = 11 ، e = 12 . احسب معدّله الفصلي.",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة العشرية إن لزم)",
+      "expectedAnswer": "12,5",
+      "misconceptionSignatures": [
+        {
+          "value": "12,67",
+          "id": "MISC-IHSA-MUTAWASSIT-BILA-TARJIH"
+        },
+        {
+          "value": "50/3",
+          "id": "MISC-IHSA-MUTAWASSIT-QISMA-QIYAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "علامة الاختبار لها المعامل 2."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض t و f و e في العلاقة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم المجموع على مجموع المعاملات 4."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{15 + 11 + 2 \\times 12}{4} = \\dfrac{50}{4} = 12{,}5$ .",
+        "incorrect": "علامة الاختبار تُحسب مرتين (المعامل 2)، ثم نقسم على مجموع المعاملات 4."
+      },
+      "solution": {
+        "lines": [
+          "$m = \\dfrac{15 + 11 + 2 \\times 12}{4}$",
+          "$m = \\dfrac{50}{4} = 12{,}5$"
+        ],
+        "result": "m = 12{,}5"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "تحصّلت مريم على: t = 16 ، f = 12 . جد علامة الاختبار e التي تجعل معدّلها الفصلي 15.",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة العشرية إن لزم)",
+      "expectedAnswer": "16",
+      "misconceptionSignatures": [
+        {
+          "value": "17",
+          "id": "MISC-IHSA-MUTAWASSIT-BILA-TARJIH"
+        },
+        {
+          "value": "32",
+          "id": "MISC-IHSA-MUTAWASSIT-QISMA-QIYAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العلاقة بعد التعويض: المعدّل معلوم و e مجهولة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب المعدّل في مجموع المعاملات لتحصل على المجموع المطلوب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح علامتي التقويم والفرض، ثم اقسم على معامل الاختبار."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{15 \\times 4 - 16 - 12}{2} = 16$ .",
+        "incorrect": "لا تهمل المعامل 2: مجموع العلامات بمعاملاتها = المعدّل × 4."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{16 + 12 + 2e}{4} = 15$",
+          "$28 + 2e = 60$",
+          "$2e = 32$ ، إذن $e = 16$"
+        ],
+        "result": "e = 16"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    }
+  ]
+}

@@ -1,0 +1,370 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l3-001",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — مبيعات الحليب",
+    "estimatedMinutes": 10,
+    "tags": [
+      "تمثيل بياني",
+      "تناسبية",
+      "جدول"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 3,
+      "file": "3am-s3-56",
+      "exercise": 3
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تبيع تعاونية الحيّ الحليب الطازج بسعر موحّد، وتسجّل مبيعات اليوم في الجدول التالي. مثّلنا معطيات الجدول في المعلم المتعامد والمتجانس الموالي: الفاصلة هي الحجم باللتر، والترتيب هو الثمن بمئات الدنانير.",
+    "table": {
+      "head": [
+        "الحجم (L)",
+        "2",
+        "4",
+        "6",
+        "8"
+      ],
+      "rows": [
+        [
+          "الثمن (دج)",
+          "300",
+          "600",
+          "900",
+          "1200"
+        ]
+      ]
+    },
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          2,
+          3
+        ],
+        "B": [
+          4,
+          6
+        ],
+        "C": [
+          6,
+          9
+        ],
+        "D": [
+          8,
+          12
+        ],
+        "M": [
+          12,
+          18
+        ]
+      },
+      "lines": [
+        {
+          "through": [
+            "O",
+            "M"
+          ],
+          "name": "(D)",
+          "tone": "indigo",
+          "extend": [
+            0,
+            0
+          ]
+        }
+      ],
+      "grid": true,
+      "axes": {
+        "every": 2
+      },
+      "labels": {
+        "O": "sw",
+        "A": "se",
+        "B": "se",
+        "C": "se",
+        "D": "se"
+      },
+      "hidden": [
+        "M"
+      ],
+      "ariaLabel": "معلم متعامد ومتجانس: النقط A(2;3) و B(4;6) و C(6;9) و D(8;12) على المستقيم (D) الذي يشمل المبدأ O ويمتد حتى النقطة (12;18)",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: الحجم باللتر — محور التراتيب: الثمن بمئات الدنانير"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما إحداثيا النقطة $B$ التي تمثّل العمود الثاني من الجدول؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$B(6\\,;\\,4)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-SWAP-XY"
+        },
+        {
+          "id": "B",
+          "content": "$B(4\\,;\\,600)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-UNIT-AXIS"
+        },
+        {
+          "id": "C",
+          "content": "$B(4\\,;\\,6)$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحجم هو الفاصلة والثمن هو الترتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى وحدة المحور العمودي."
+        }
+      ],
+      "feedback": {
+        "correct": "$4$ لترات و $600$ دج أي $6$ مئات: $B(4\\,;\\,6)$ .",
+        "incorrect": "اكتب الفاصلة (الحجم) أوّلا ثم الترتيب (الثمن بمئات الدنانير)."
+      },
+      "solution": {
+        "lines": [
+          "العمود الثاني: $4$ L و $600$ دج $= 6$ مئات دج.",
+          "إذن $B(4\\,;\\,6)$ ."
+        ],
+        "result": "B(4\\,;\\,6)"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "هل ثمن الحليب متناسب مع حجمه؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لأنّ المبدأ $O$ ليس من النقط المعلَّمة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-ORIGIN-DROP"
+        },
+        {
+          "id": "B",
+          "content": "نعم، النقط على استقامة واحدة مع المبدأ $O$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لا، لأنّ الترتيب لا يساوي الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-EQUAL-ONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط على استقامة واحدة مع المبدأ $O$ ، فهي تمثّل وضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "النقط $A$ و $B$ و $C$ و $D$ على المستقيم $(D)$ الذي يشمل المبدأ $O$ .",
+          "إذن الثمن متناسب مع الحجم."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "علّل جوابك.",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تعليلك ثم قارنه بالتصحيح النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اذكر الخاصية التي تستعملها: ما شرط التناسبية على النقط؟"
+        }
+      ],
+      "feedback": {
+        "correct": "التعليل يذكر استقامة النقط ومرور المستقيم بالمبدأ $O$ .",
+        "incorrect": "قارن تعليلك بالتصحيح النموذجي، وتأكد أنك ذكرت الشرطين معا."
+      },
+      "solution": {
+        "lines": [
+          "النقط $A$ و $B$ و $C$ و $D$ على استقامة واحدة.",
+          "والمستقيم الذي يشملها يمرّ بالمبدأ $O$ ، فالوضعية تناسبية."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "بقراءة بيانية:",
+      "statement": "ما الحجم (باللتر) الذي ثمنه $1800$ دج؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الحجم باللتر",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "18",
+          "id": "MISC-TAMTHIL-UNIT-AXIS"
+        },
+        {
+          "value": "27",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل أولا $1800$ دج إلى مئات الدنانير."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ من هذا العدد على المحور العمودي ثم اذهب أفقيا إلى المستقيم."
+        }
+      ],
+      "feedback": {
+        "correct": "$1800$ دج هي $18$ مئة دج، والنقطة التي ترتيبها $18$ فاصلتها $12$ .",
+        "incorrect": "الترتيب مقدّر بمئات الدنانير: لا تقرأ $1800$ ولا $18$ على المحور الأفقي."
+      },
+      "solution": {
+        "lines": [
+          "$1800$ دج $= 18$ مئة دج.",
+          "النقطة من $(D)$ التي ترتيبها $18$ فاصلتها $12$ : الحجم $12$ L."
+        ],
+        "result": "12\\ \\text{L}"
+      },
+      "work": "optional",
+      "timeSeconds": 100
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "lead": "تأكّد حسابيا:",
+      "statement": "احسب ثمن $15$ L من هذا الحليب بالدينار.",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الثمن بالدينار",
+      "expectedAnswer": "2250",
+      "misconceptionSignatures": [
+        {
+          "value": "1.5",
+          "id": "MISC-TAMTHIL-UNIT-AXIS"
+        },
+        {
+          "value": "2000",
+          "id": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب ثمن اللتر الواحد من الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب في $15$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن اللتر $150$ دج، و $150 \\times 15 = 2250$ دج.",
+        "incorrect": "ثمن اللتر هو $300 \\div 2$ ، ثم اضرب في عدد اللترات."
+      },
+      "solution": {
+        "lines": [
+          "ثمن اللتر الواحد: $300 \\div 2 = 150$ دج.",
+          "$150 \\times 15 = 2250$ دج."
+        ],
+        "result": "2250\\ \\text{دج}"
+      },
+      "work": "optional",
+      "timeSeconds": 100
+    }
+  ]
+}

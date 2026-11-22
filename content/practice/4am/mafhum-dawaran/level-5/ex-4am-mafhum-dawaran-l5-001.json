@@ -1,0 +1,106 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l5-001",
+  "lessonCode": "mafhum-dawaran",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — العجلة الكبرى: 24 مقصورة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "الدوران",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mafhum-dawaran_P1",
+      "modelledOn": "act-2"
+    }
+  },
+  "statement": {
+    "content": "عجلة دوّارة كبيرة في حديقة التسلية ببن عكنون عليها 24 مقصورة موزّعة بانتظام حول محورها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما هي زاوية الدوران الذي ينقل كل مقصورة إلى مكان المقصورة الموالية (بالدرجات)؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجات)",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-ZAWIYA-UKHRA",
+          "value": "24"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "دورة كاملة حول المحور."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مقسّمة بالتساوي بين المقصورات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم الدورة على عدد المقصورات."
+        }
+      ],
+      "feedback": {
+        "correct": "$360^\\circ \\div 24 = 15^\\circ$ .",
+        "incorrect": "الدورة الكاملة على 24 جزءا متساويا."
+      },
+      "difficulty": 3
+    },
+    {
+      "id": "q2",
+      "statement": "تدور العجلة بزاوية $75^\\circ$ في الاتجاه المباشر. بكم مكانا تتقدّم كل مقصورة؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-ZAWIYA-UKHRA",
+          "value": "75"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل مكان يقابل زاوية واحدة بين مقصورتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كم مرة تحتوي $75^\\circ$ تلك الزاوية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم زاوية الدوران على الزاوية بين مقصورتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$75^\\circ \\div 15^\\circ = 5$ أماكن.",
+        "incorrect": "الزاوية بين مقصورتين متجاورتين هي الوحدة."
+      },
+      "difficulty": 4
+    }
+  ]
+}

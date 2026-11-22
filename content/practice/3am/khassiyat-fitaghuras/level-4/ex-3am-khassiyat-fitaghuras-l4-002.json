@@ -1,0 +1,254 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l4-002",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مثلث في نصف دائرة",
+    "estimatedMinutes": 9,
+    "tags": [
+      "خاصية فيثاغورس",
+      "الدائرة المحيطة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-82",
+      "exercise": 3
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$(\\mathcal{C})$ دائرة مركزها $O$ ، و $[AB]$ قطر لها حيث $AB = 8{,}5\\,\\mathrm{cm}$ . $M$ نقطة من الدائرة $(\\mathcal{C})$ حيث $BM = 4\\,\\mathrm{cm}$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -4.25,
+          0
+        ],
+        "B": [
+          4.25,
+          0
+        ],
+        "M": [
+          2.3676,
+          3.5294
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "O"
+        },
+        {
+          "from": "O",
+          "to": "B"
+        },
+        [
+          "A",
+          "M"
+        ],
+        {
+          "from": "M",
+          "to": "B",
+          "label": "4 cm"
+        },
+        {
+          "from": "M",
+          "to": "O",
+          "dashed": true
+        }
+      ],
+      "labels": {
+        "O": "s"
+      },
+      "circles": [
+        {
+          "center": "O",
+          "through": "A"
+        }
+      ],
+      "ariaLabel": "دائرة مركزها O وقطرها [AB] حيث AB = 8,5 cm، و M نقطة منها حيث BM = 4 cm",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما نوع المثلث $AMB$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "قائم في $A$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-HYP-WRONG"
+        },
+        {
+          "id": "B",
+          "content": "قائم في $M$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "متساوي الساقين رأسه $M$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-LOOKS-RIGHT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$[AB]$ قطر للدائرة، و $M$ نقطة منها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مثلث محاط بدائرة أحد أضلاعه قطر لها: ما نوعه؟ وأين رأس زاويته القائمة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$[AB]$ قطر، فالمثلث قائم في الرأس الثالث $M$ .",
+        "incorrect": "الزاوية القائمة تقابل القطر: رأسها هو النقطة الواقعة على الدائرة."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $AMB$ محاط بالدائرة $(\\mathcal{C})$ وضلعه $[AB]$ قطر لها.",
+          "إذن المثلث $AMB$ قائم في $M$ ، ووتره القطر $[AB]$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب الطول $AM$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm",
+      "expectedAnswer": "7.5",
+      "misconceptionSignatures": [
+        {
+          "value": "9.39",
+          "id": "MISC-FITAGHURAS-LEG-ADD"
+        },
+        {
+          "value": "4.5",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "56.25",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع المطلوب ليس الوتر: مربعه يساوي مربع الوتر ناقص مربع الضلع الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولا مربع الطول، ثم خذ جذره التربيعي بالآلة الحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$AM^2 = 8{,}5^2 - 4^2 = 56{,}25$ ، إذن $AM = 7{,}5\\,\\mathrm{cm}$ .",
+        "incorrect": "الطول المطلوب ضلع قائم وليس وترا: نطرح مربع الضلع المعلوم من مربع الوتر، ولا نجمع."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $AMB$ قائم في $M$ ، حسب خاصية فيثاغورس: $AB^2 = AM^2 + BM^2$",
+          "ومنه: $AM^2 = AB^2 - BM^2$",
+          "$AM^2 = 8{,}5^2 - 4^2 = 72{,}25 - 16 = 56{,}25$",
+          "$AM = \\sqrt{56{,}25} = 7{,}5\\,\\mathrm{cm}$"
+        ],
+        "result": "AM = 7{,}5\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "استنتج الطول $MO$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm",
+      "expectedAnswer": "4.25",
+      "misconceptionSignatures": [
+        {
+          "value": "8.5",
+          "id": "MISC-MAALAM-DAIRA-QUTR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$M$ و $A$ و $B$ نقط من الدائرة نفسها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة بين المركز ونقطة من الدائرة هي نصف القطر."
+        }
+      ],
+      "feedback": {
+        "correct": "$MO = OA = \\dfrac{8{,}5}{2} = 4{,}25\\,\\mathrm{cm}$ .",
+        "incorrect": "$[MO]$ نصف قطر، وليس قطرا."
+      },
+      "solution": {
+        "lines": [
+          "$O$ مركز الدائرة و $M$ نقطة منها، إذن $MO$ نصف قطرها.",
+          "$MO = \\dfrac{AB}{2} = \\dfrac{8{,}5}{2} = 4{,}25\\,\\mathrm{cm}$"
+        ],
+        "result": "MO = 4{,}25\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

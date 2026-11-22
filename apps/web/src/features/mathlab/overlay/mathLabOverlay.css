@@ -1,0 +1,186 @@
+/* ── LE مختبر POSÉ SUR LA LEÇON ────────────────────────────────────────────
+   Le calque (MathLabOverlay) : une barre, puis l'instrument ou le sélecteur.
+   La leçon reste montée DESSOUS — ce fichier ne fait que la couvrir.
+
+   Les conventions sont celles de la coquille du مختبر (mathlab.css) : mêmes
+   teintes d'ardoise, mêmes rayons, mêmes familles. Le calque doit avoir
+   l'air du même instrument, qu'on l'ouvre depuis /espace/atelier ou depuis
+   une leçon. */
+
+.sa-mlo {
+  position: fixed;
+  inset: 0;
+  /* Au-dessus de tout ce que la plateforme empile : le chrome flottant de
+     la leçon (« كرّاسي », « بطاقتي », « عرض » : 40) et la racine de وضع
+     القسم (70), DANS laquelle le calque est portalisé pendant une séance —
+     il doit couvrir la présentation, pas se glisser dessous. */
+  z-index: 80;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  /* Le calque prend l'écran : en plein écran NATIF c'est lui l'élément
+     plein écran, en repli applicatif il l'occupe déjà. Les deux états
+     partagent donc la même boîte — rien à recalculer d'un cas à l'autre. */
+}
+
+.sa-mlo:focus { outline: none; }
+
+/* ── La barre ──────────────────────────────────────────────────────────── */
+
+.sa-mlo__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+.sa-mlo__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+  margin: 0;
+  font-family: 'Space Grotesk', 'Cairo', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.sa-mlo__titletext {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sa-mlo__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+/* Le titre prend le VIDE, les commandes restent groupées à chaque bout.
+   Sans cela, « اختر أداة » se collait au bord opposé de l'écran et la barre
+   n'avait plus qu'un grand trou au milieu. */
+.sa-mlo__title--lead { margin-inline-start: auto; }
+
+.sa-mlo__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  /* 44 px : la cible tactile minimale, ici comme partout ailleurs. */
+  min-height: 2.75rem;
+  min-width: 2.75rem;
+  padding: 0 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  background: #ffffff;
+  color: #0f172a;
+  font-family: 'Inter', 'Cairo', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 120ms ease, background-color 120ms ease;
+}
+
+.sa-mlo__btn:hover { border-color: #93c5fd; background: #f8fafc; }
+.sa-mlo__btn:focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; }
+.sa-mlo__btn--icon { padding: 0; }
+.sa-mlo__btn[aria-pressed="true"] { border-color: #2563eb; background: #eff6ff; color: #1d4ed8; }
+
+.sa-mlo__btn--close { border-color: #fecaca; color: #b91c1c; }
+.sa-mlo__btn--close:hover { border-color: #f87171; background: #fef2f2; }
+
+/* ── Le corps ──────────────────────────────────────────────────────────── */
+
+.sa-mlo__body {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+}
+
+/* Un instrument se pose en `position: absolute; inset: 0` dans son parent
+   (voir .sa-ml-vec et ses pareils) : le corps doit donc être un bloc
+   positionné de hauteur connue, et ne pas défiler lui-même quand il porte
+   un instrument — c'est l'instrument qui gère sa place. */
+.sa-mlo[data-ml-overlay]:not([data-ml-overlay="picker"]) .sa-mlo__body {
+  overflow: hidden;
+}
+
+.sa-mlo__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 100%;
+  color: #64748b;
+  font-family: 'Inter', 'Cairo', sans-serif;
+  font-size: 0.875rem;
+}
+
+/* ── Le sélecteur ──────────────────────────────────────────────────────────
+   Il n'a PAS de styles de mise en page ici : il porte `.sa-page` et
+   `py-8 sm:py-10`, exactement comme l'accueil du مختبر
+   (home/MathLabHome.jsx), et ses cartes sont celles de `.sa-ml-cards`
+   (mathlab.css). Un rembourrage propre au calque s'ajouterait à celui de
+   `.sa-page` et rétrécirait les cartes : le sélecteur doit être
+   indiscernable de la vraie page. */
+
+/* ── Petits écrans ─────────────────────────────────────────────────────────
+   On ne rétrécit pas tout : on retire le LIBELLÉ du bouton de fermeture
+   (qui garde son aria-label et sa cible de 44 px) et on resserre les
+   marges, pour rendre la place à l'instrument. */
+@media (max-width: 640px) {
+  .sa-mlo__btnlabel { display: none; }
+  .sa-mlo__btn--close { padding: 0; }
+  .sa-mlo__bar { padding: 0.5rem; }
+  .sa-mlo__title { font-size: 0.9375rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sa-mlo__btn { transition: none; }
+}
+
+@media print {
+  .sa-mlo { display: none; }
+}
+
+/* ── « 🧪 المختبر », LE DÉCLENCHEUR ────────────────────────────────────────
+   Il n'a PAS de styles ici : c'est une pastille de la rangée de repères du
+   module (et du héros de la leçon), habillée en Tailwind comme sa voisine
+   « Signaler », dans MathLabEntryButton.jsx.
+
+   Il a d'abord été une pastille FLOTTANTE, en bas à gauche, sous « كرّاسي ».
+   Retiré : cette colonne en portait déjà trois, une quatrième la faisait
+   monter à 17 rem et, sur un écran court, elle recouvrait la leçon. Un
+   outil qu'on ouvre pour lire ne doit pas commencer par cacher ce qu'on
+   lit. La rangée du haut est `sticky` — toujours atteignable — et dans le
+   flux : elle ne recouvre rien. */
+
+/* ── LE CALQUE PENDANT UNE SÉANCE DE وضع القسم ─────────────────────────────
+   Pendant une présentation, le calque est portalisé DANS la racine de la
+   séance (`.sa-classroom-root--active`) : en plein écran natif le navigateur
+   ne peint que cet élément, donc un calque laissé dans <body> s'ouvrirait
+   invisible.
+
+   Mais cette racine est une COLONNE FLEX avec `overflow: hidden`. Un enfant
+   `position: fixed` y est alors :
+     · rangé comme un élément de la colonne (il pousse la barre d'outils),
+     · et surtout CLIPPÉ par son `overflow: hidden`.
+   Résultat : le calque s'ouvrait « sous » la présentation.
+
+   On le sort donc du flux et on le recolle sur toute la racine. `absolute`
+   plutôt que `fixed` : la racine est elle-même `position: fixed; inset: 0`,
+   donc elle EST le bloc conteneur — inset 0 couvre exactement l'écran, et
+   un positionnement absolu n'est pas clippé par un ancêtre qui n'a pas de
+   `clip-path`. Le z-index le pose au-dessus de la barre d'outils, de la
+   scène et de la barre de navigation, tous enfants de la même racine. */
+.sa-classroom-root--active > .sa-mlo {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+}

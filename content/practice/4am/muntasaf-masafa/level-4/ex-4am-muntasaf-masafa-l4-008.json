@@ -1,0 +1,68 @@
+{
+  "id": "ex-4am-muntasaf-masafa-l4-008",
+  "lessonCode": "muntasaf-masafa",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — التلفريك بقسنطينة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المسافة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_muntasaf-masafa_P2",
+      "modelledOn": "know-dist"
+    }
+  },
+  "statement": {
+    "content": "على مخطط (معلم متعامد ومتجانس، الوحدة $100\\,\\mathrm{m}$) محطتا تلفريك قسنطينة اللتان يصونهما العمّال بإتقان في $A(-2\\,;\\,1)$ و $B(3\\,;\\,4)$ ، والكابل مستقيم بينهما."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "طول الكابل AB بالوحدات، مدوّرا إلى 0,1:",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري بالفاصلة (مثل 2,5)",
+      "expectedAnswer": "5.8",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MASAFA-JADHR-JAM",
+          "value": "8"
+        },
+        {
+          "id": "MISC-MAALAM-MASAFA-JADHR-NASI",
+          "value": "34"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الفرقين: فرق الفاصلتين وفرق الترتيبين (النهاية ناقص المبدأ)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ربّع كل فرق ثم اجمع المربعين: هذا مربع المسافة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خذ الجذر التربيعي في الأخير، وبسّطه إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = \\sqrt{5^2 + 3^2} = \\sqrt{34} \\approx 5{,}8$ وحدة (حوالي $583\\,\\mathrm{m}$).",
+        "incorrect": "دوّر في الأخير فقط."
+      }
+    }
+  ]
+}

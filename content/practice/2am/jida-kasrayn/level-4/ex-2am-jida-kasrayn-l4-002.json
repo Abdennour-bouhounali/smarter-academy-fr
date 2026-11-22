@@ -1,0 +1,175 @@
+{
+  "id": "ex-2am-jida-kasrayn-l4-002",
+  "lessonCode": "jida-kasrayn",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — فرق ثمّ جداء",
+    "estimatedMinutes": 8,
+    "tags": [
+      "فرق",
+      "جداء كسرين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العدد $B = \\dfrac{5}{4} \\times \\left( \\dfrac{7}{10} - \\dfrac{1}{5} \\right)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب الفرق $\\dfrac{7}{10} - \\dfrac{1}{5}$ .",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "1/2",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط؟ جمع، طرح، أم مقارنة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{2}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{5} = \\dfrac{2}{10}$ ثمّ $\\dfrac{7}{10} - \\dfrac{2}{10} = \\dfrac{5}{10} = \\dfrac{1}{2}$ ."
+        ],
+        "result": "\\dfrac{1}{2}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $B$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "5/8",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-JIDAKASR-SUMACROSS"
+        },
+        {
+          "value": "5/6",
+          "id": "MISC-JIDAKASR-DENSUM"
+        },
+        {
+          "value": "5/2",
+          "id": "MISC-JIDAKASR-CROSS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليّة بين الكسرين؟ وماذا يمثّل كلّ منهما من الكلّ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في ضرب كسرين لا نبحث عن مقام مشترك: نضرب البسطين معًا ونضرب المقامين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء على شكل كسر واحد ثمّ اختزله إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{5}{8}$ .",
+        "incorrect": "ضرب كسرين: بسط × بسط فوق مقام × مقام، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{4} \\times \\dfrac{1}{2} = \\dfrac{5 \\times 1}{4 \\times 2} = \\dfrac{5}{8}$ ."
+        ],
+        "result": "\\dfrac{5}{8}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "اكتب العدد $B = \\dfrac{5}{8}$ على شكل عدد عشري .",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "0.625",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المعطيات ثمّ حدّد العملية المناسبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب خطوة بخطوة وراجع الوحدة في الناتج."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}625$ .",
+        "incorrect": "راجع المعطيات والعمليّة ثمّ أعد الحساب."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{8} = 5 \\div 8 = 0{,}625$ ."
+        ],
+        "result": "0{,}625"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

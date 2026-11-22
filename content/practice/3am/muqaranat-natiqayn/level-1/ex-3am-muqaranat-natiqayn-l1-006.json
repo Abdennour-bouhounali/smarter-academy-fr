@@ -1,0 +1,196 @@
+{
+  "id": "ex-3am-muqaranat-natiqayn-l1-006",
+  "lessonCode": "muqaranat-natiqayn",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — اختيار مع التعليل",
+    "estimatedMinutes": 7,
+    "tags": [
+      "فرق",
+      "ترتيب",
+      "اختيار من متعدد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الأول",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "اختر الإجابة الصحيحة مع التعليل."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "إذا كان $a = \\dfrac{5}{12}$ و $b = \\dfrac{3}{8}$ فإنّ:",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا تعلّمنا إشارة الفرق عن ترتيب العددين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اربط إشارة الفرق بالمقارنة بين العددين، وانتبه إلى أيّ العددين هو الأول في الفرق."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا انعكس ترتيب الطرح فإنّ إشارة الفرق تنعكس أيضًا."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$b - a > 0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-ORDER-SUB"
+        },
+        {
+          "id": "B",
+          "content": "$a - b > 0$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$a - b < 0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-NUMERATOR"
+        }
+      ],
+      "feedback": {
+        "correct": "$a - b = \\dfrac{1}{24} > 0$ .",
+        "incorrect": "اربط إشارة الفرق بالترتيب، وانتبه إلى ترتيب الطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$a - b = \\dfrac{5}{12} - \\dfrac{3}{8}$",
+          "$a - b = \\dfrac{10}{24} - \\dfrac{9}{24} = \\dfrac{10 - 9}{24}$",
+          "$a - b = \\dfrac{1}{24}$"
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "إذا كان $a - b = -\\dfrac{2}{7}$ فإنّ:",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا تعلّمنا إشارة الفرق عن ترتيب العددين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اربط إشارة الفرق بالمقارنة بين العددين، وانتبه إلى أيّ العددين هو الأول في الفرق."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا انعكس ترتيب الطرح فإنّ إشارة الفرق تنعكس أيضًا."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$a > b$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-ABS-DIFF"
+        },
+        {
+          "id": "B",
+          "content": "$b < a$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-ORDER-SUB"
+        },
+        {
+          "id": "C",
+          "content": "$a < b$",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "$a - b < 0$ إذن $a < b$ .",
+        "incorrect": "اربط إشارة الفرق بالترتيب، وانتبه إلى ترتيب الطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$a - b < 0$ ، إذن $a < b$ ."
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "علّل: لماذا يكفي أن نعرف إشارة $a - b$ لنقارن $a$ و $b$ ؟",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي تريد تبريره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الفرق أوّلًا ثم إشارته ثم الخلاصة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة واحدة تربط إشارة الفرق بالمقارنة."
+        }
+      ],
+      "timeSeconds": 180,
+      "feedback": {
+        "correct": "إشارة الفرق تحدّد الترتيب.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثمّ قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "$a - b > 0$ تعني أنّ $a$ أكبر من $b$ ، و $a - b < 0$ تعني أنّ $a$ أصغر من $b$ ، و $a - b = 0$ تعني أنّهما متساويان.",
+          "إشارة الفرق تحدّد إذن ترتيب العددين دون الحاجة إلى معرفة قيمتيهما."
+        ]
+      }
+    }
+  ]
+}

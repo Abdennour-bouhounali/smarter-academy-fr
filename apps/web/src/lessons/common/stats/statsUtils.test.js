@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import {
-  mean, weightedMean, median, q1, q3, quartile, range, interquartileRange,
+  mean, weightedMean, median, q1, q3, range, interquartileRange,
   fiveNumberSummary, variance, standardDeviation, weightedStandardDeviation,
   frequencyTable, groupIntoClasses, classMean, medianClass, interpolatedMedian,
   crossTable, marginalFrequency, conditionalFrequency, jointFrequency,

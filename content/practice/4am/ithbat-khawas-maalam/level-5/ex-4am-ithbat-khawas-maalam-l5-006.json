@@ -1,0 +1,127 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l5-006",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — جسر معلّق في قسنطينة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "مجهول",
+      "معيّن"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_ithbat-khawas-maalam_P2",
+      "modelledOn": "ex-13"
+    }
+  },
+  "generator": {
+    "tool": "u1x-ithbat-khawas-maalam/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "مخطط هيكل جسر في قسنطينة يتقن مهندسوه حسابه: $A(0\\,;\\,0)$ ، $B(4\\,;\\,3)$ ، $C(9\\,;\\,3)$ ، $D(x\\,;\\,0)$ في معلم متعامد ومتجانس."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "عيّن x حتى يكون $\\overrightarrow{AB} = \\overrightarrow{DC}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-TARH-MAQLUB",
+          "value": "13"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{AB}\\begin{pmatrix} 4 \\\\ 3 \\end{pmatrix}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\overrightarrow{DC}\\begin{pmatrix} 9 - x \\\\ 3 \\end{pmatrix}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ساوِ المركبتين الأوليين."
+        }
+      ],
+      "feedback": {
+        "correct": "$9 - x = 4$ : $x = 5$ .",
+        "incorrect": "النهاية ناقص المبدأ: $9 - x$ ."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "مع $AB^2 = BC^2 = 25$ و $AC^2 = 90$ ، $BD^2 = 10$ ، الرباعي ABCD :",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "معيّن وليس مربّعا",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "مربّع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "C",
+          "content": "مستطيل",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "D",
+          "content": "متوازي أضلاع ليس معيّنا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الضلعان المتتاليان؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القطران؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المربّع يحتاج الاثنين."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = BC$ : معيّن؛ $90 \\neq 10$ : ليس مربّعا.",
+        "incorrect": "الضلعان متقايسان والقطران لا."
+      }
+    }
+  ]
+}

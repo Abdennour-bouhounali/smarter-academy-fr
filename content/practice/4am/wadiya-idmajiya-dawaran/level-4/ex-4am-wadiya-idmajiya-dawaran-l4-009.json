@@ -1,0 +1,85 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-dawaran-l4-009",
+  "lessonCode": "wadiya-idmajiya-dawaran",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — ربع دورة في الاتجاه غير المباشر",
+    "estimatedMinutes": 2,
+    "tags": [
+      "صورة نقطة بدوران"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-dawaran_P1",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "على مخطط مرصوف، مركز دوّار في $O(1\\,;\\,0)$ وعمود في $A(-2\\,;\\,3)$ . نريد عمودا آخر هو صورة A بالدوران الذي مركزه O وزاويته $90^\\circ$ في الاتجاه غير المباشر (اتجاه حركة عقارب الساعة).",
+    "figure": {
+      "points": {
+        "O": [
+          1,
+          0
+        ],
+        "A": [
+          -2,
+          3
+        ]
+      },
+      "labels": {
+        "O": "se",
+        "A": "nw"
+      },
+      "grid": true,
+      "axes": true,
+      "ariaLabel": "معلم على ورقة مرصوفة: مركز الدوّار O على محور الفواصل والعمود A أعلى اليسار"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا العمود الجديد:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الثنائية (x ; y)",
+      "expectedAnswer": {
+        "x": "4",
+        "y": "3"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الانتقال من O إلى A: ثلاثة نحو اليسار وثلاثة نحو الأعلى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ربع دورة مع عقارب الساعة: $(u\\,;\\,v) \\mapsto (v\\,;\\,-u)$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف الانتقال الجديد إلى إحداثيتي O."
+        }
+      ],
+      "feedback": {
+        "correct": "الانتقال $(-3\\,;\\,3)$ يصير $(3\\,;\\,3)$ ، والصورة $(1 + 3\\,;\\,0 + 3) = (4\\,;\\,3)$ .",
+        "incorrect": "انتبه إلى الاتجاه: غير المباشر مع عقارب الساعة."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 4
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l4-007",
+  "lessonCode": "maqati-mustawiya",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — مساحة مقطع أسطوانة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "أسطوانة",
+      "مساحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_maqati-mustawiya_P3",
+      "modelledOn": "now-169"
+    }
+  },
+  "statement": {
+    "content": "أسطوانة دوران نصف قطر قاعدتها $6{,}5\\,\\mathrm{cm}$ وارتفاعها $4\\,\\mathrm{cm}$ ، يقطعها مستو موازٍ لمحورها يبعد عنه بـ $2{,}5\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما مساحة المقطع (بـ $\\mathrm{cm}^2$)؟",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر المربع)",
+      "expectedAnswer": "48",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAQTA-TARH",
+          "value": "32"
+        },
+        {
+          "id": "MISC-MAQTA-NISF",
+          "value": "24"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نصف العرض $\\sqrt{6{,}5^2 - 2{,}5^2}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$42{,}25 - 6{,}25 = 36$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العرض $2 \\times 6$ ، والبعد الآخر الارتفاع."
+        }
+      ],
+      "feedback": {
+        "correct": "نصف العرض $6$ ، العرض $12$ ، المساحة $12 \\times 4 = 48\\,\\mathrm{cm}^2$ .",
+        "incorrect": "استعمل العرض كاملا وخاصية فيثاغورس."
+      },
+      "difficulty": 4
+    }
+  ]
+}

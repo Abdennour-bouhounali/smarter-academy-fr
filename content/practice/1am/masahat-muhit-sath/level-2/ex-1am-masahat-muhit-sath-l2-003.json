@@ -1,0 +1,213 @@
+{
+  "id": "ex-1am-masahat-muhit-sath-l2-003",
+  "lessonCode": "masahat-muhit-sath",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — سياج حديقة المدرسة",
+    "estimatedMinutes": 7,
+    "tags": [
+      "محيط",
+      "مدخل",
+      "ثمن سياج"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تعتني مدرسة الأمل بحديقتها التي يستمتع بها الجميع، وتريد إحاطتها بسياج. أطوال أضلاع الحديقة بالمتر على التوالي: $14$ ، $9{,}5$ ، $14$ ، $9{,}5$. تترك المدرسة مدخلًا عرضه $2{,}5\\,\\mathrm{m}$ دون سياج، وثمن المتر الواحد من السياج $120$ دج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب محيط الحديقة بالمتر.",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "47",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المحيط هو مجموع أطوال الأضلاع كلها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الأطوال بالتدريج وانتبه إلى مواضع الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة الجمع بترتيب آخر."
+        }
+      ],
+      "feedback": {
+        "correct": "المحيط $47\\,\\mathrm{m}$.",
+        "incorrect": "المحيط هو مجموع أطوال الأضلاع الأربعة."
+      },
+      "solution": {
+        "lines": [
+          "$14 + 9{,}5 + 14 + 9{,}5 = 47$",
+          "المحيط $47\\,\\mathrm{m}$."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما طول السياج اللازم بعد ترك المدخل؟ (بالمتر)",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "44,5",
+      "misconceptionSignatures": [
+        {
+          "value": "47",
+          "id": "MISC-MASAHA-ENTRANCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المدخل جزء من الحدّ لا يوضع فيه سياج."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح عرض المدخل من محيط الأرض."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الطول الذي يُسيَّج هو ما يبقى بعد حذف المدخل."
+        }
+      ],
+      "feedback": {
+        "correct": "$47$ − $2{,}5$ = $44{,}5$.",
+        "incorrect": "المدخل بلا سياج، فنطرح عرضه من المحيط."
+      },
+      "solution": {
+        "lines": [
+          "$47 - 2{,}5 = 44{,}5$",
+          "طول السياج $44{,}5\\,\\mathrm{m}$."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب ثمن السياج بالدينار الجزائري.",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "5340",
+      "misconceptionSignatures": [
+        {
+          "value": "5640",
+          "id": "MISC-MASAHA-ENTRANCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الثمن = طول السياج × ثمن المتر الواحد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أولًا الطول الذي ستسيّجه فعلًا، ثم اضرب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من أنك ضربت في طول السياج الجديد لا في المحيط الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "$44{,}5$ × $120$ = $5340$ دج.",
+        "incorrect": "الثمن = طول السياج الجديد × ثمن المتر."
+      },
+      "solution": {
+        "lines": [
+          "$44{,}5 \\times 120 = 5340$",
+          "الثمن $5340$ دج."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "لماذا نطرح عرض المدخل من المحيط قبل أن نحسب الثمن؟",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القياس الذي تتحدث عنه: المساحة أم المحيط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل في جوابك العددين اللذين وجدتهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تامة: \"لأن … و …\"."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي.",
+        "incorrect": "راجع التبرير وأعد صياغته: اذكر العددين اللذين قارنتهما والمقدار الذي تتحدث عنه (مساحة أم محيط)."
+      },
+      "solution": {
+        "lines": [
+          "السياج لا يُنصب عند المدخل.",
+          "فالطول الذي نشتريه هو المحيط ناقص عرض المدخل، وبه نحسب الثمن."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

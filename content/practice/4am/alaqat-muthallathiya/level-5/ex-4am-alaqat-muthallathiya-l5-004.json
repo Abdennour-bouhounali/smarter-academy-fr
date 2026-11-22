@@ -1,0 +1,398 @@
+{
+  "id": "ex-4am-alaqat-muthallathiya-l5-004",
+  "lessonCode": "alaqat-muthallathiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2019 — قارب صيد يعبر مدخل ميناء قوراية",
+    "estimatedMinutes": 20,
+    "tags": [
+      "الوضعية الإدماجية",
+      "العلاقات المثلثية",
+      "حساب الأطوال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_alaqat-muthallathiya_P2",
+      "modelledOn": "BEM 2019 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2019",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "مدخل ميناء صغير بقوراية (تيبازة) قناة مستقيمة عرضها $90\\,\\mathrm{m}$ بين رصيفين متوازيين. ينطلق قارب صيد من النقطة $A$ على الرصيف الأول متّجها نحو النقطة $B$ المقابلة لها على الرصيف الثاني ($(AB)$ عمودي على الرصيفين)، لكن التيار يحرفه فيسير في خط مستقيم $[AC]$ ويرسو في النقطة $C$ من الرصيف الثاني (الشكل المقابل). يسجّل جهاز القارب $\\cos x = \\dfrac{12}{13}$ حيث $x = \\widehat{BAC}$ . على الرصيف الثاني يمتدّ رصيف الرسوّ المخصّص للقوارب الصغيرة على $40\\,\\mathrm{m}$ ابتداء من $B$ في جهة $C$ . ويتعاون الصيّادون على إبقاء الميناء نظيفًا من الشباك والنفايات.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          0,
+          90
+        ],
+        "C": [
+          37.5,
+          90
+        ],
+        "P": [
+          -30,
+          0
+        ],
+        "Q": [
+          75,
+          0
+        ],
+        "R": [
+          -30,
+          90
+        ],
+        "S": [
+          75,
+          90
+        ]
+      },
+      "segments": [
+        {
+          "from": "P",
+          "to": "Q",
+          "tone": "slate"
+        },
+        {
+          "from": "R",
+          "to": "S",
+          "tone": "slate"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "label": "90 m"
+        },
+        {
+          "from": "A",
+          "to": "C",
+          "tone": "indigo"
+        }
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "B",
+          "C"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "A",
+          "from": "B",
+          "to": "C",
+          "label": "x"
+        }
+      ],
+      "hidden": [
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "labels": {
+        "A": "s",
+        "B": "n",
+        "C": "n"
+      },
+      "ariaLabel": "رصيفان متوازيان بينهما 90 م: القارب ينطلق من A على الرصيف الأول نحو B المقابلة على الرصيف الثاني، فيسير على [AC] ويرسو في C، و x الزاوية BAC",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب القيمتين المضبوطتين لـ $\\sin x$ و $\\tan x$ .",
+      "statement": "$\\sin x$ :",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "5/13",
+      "misconceptionSignatures": [
+        {
+          "value": "1/13",
+          "id": "MISC-MUTH-JAMA-NISAB"
+        },
+        {
+          "value": "25/169",
+          "id": "MISC-MUTH-JADHR-NASI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العلاقة التي تربط جيب الزاوية وجيب تمامها هي $\\cos^2 x + \\sin^2 x = 1$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اعزل $\\sin^2 x$ ثم عوّض جيب التمام بقيمته، ولا تنس تربيع البسط والمقام معا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\sin x$ عدد موجب تماما: خذ الجذر التربيعي الموجب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin^2 x = 1 - \\dfrac{144}{169} = \\dfrac{25}{169}$ ، إذن $\\sin x = \\dfrac{5}{13}$ .",
+        "incorrect": "استعمل العلاقة $\\cos^2 x + \\sin^2 x = 1$ (بين المربعين)، ثم خذ الجذر التربيعي الموجب."
+      },
+      "solution": {
+        "lines": [
+          "$\\sin^2 x + \\cos^2 x = 1$ ، إذن $\\sin^2 x = 1 - \\left(\\dfrac{12}{13}\\right)^2 = 1 - \\dfrac{144}{169} = \\dfrac{25}{169}$",
+          "$\\sin x$ عدد موجب، إذن $\\sin x = \\sqrt{\\dfrac{25}{169}}$"
+        ],
+        "result": "\\sin x = \\dfrac{5}{13}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$\\tan x$ :",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "5/12",
+      "misconceptionSignatures": [
+        {
+          "value": "12/5",
+          "id": "MISC-MUTH-TAN-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الظل هو حاصل قسمة الجيب على جيب التمام: $\\tan x = \\dfrac{\\sin x}{\\cos x}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على كسر هي الضرب في مقلوبه، ثم اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan x = \\dfrac{5}{13} \\div \\dfrac{12}{13} = \\dfrac{5}{12}$ .",
+        "incorrect": "الظل = الجيب ÷ جيب التمام؛ القسمة على كسر هي الضرب في مقلوبه."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan x = \\dfrac{\\sin x}{\\cos x} = \\dfrac{5}{13} \\div \\dfrac{12}{13}$"
+        ],
+        "result": "\\tan x = \\dfrac{5}{12}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب المسافة $BC$ التي انحرف بها القارب.",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المسافة بـ m",
+      "expectedAnswer": "37.5",
+      "misconceptionSignatures": [
+        {
+          "value": "216",
+          "id": "MISC-MUTH-TAN-QISMA-MAQLUBA"
+        },
+        {
+          "value": "450/13",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $ABC$ القائم في $B$ : بالنسبة إلى الزاوية $x$ ، $[AB]$ مجاور و $[BC]$ مقابل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل الظل."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC = AB \\times \\tan x = 90 \\times \\dfrac{5}{12} = 37{,}5\\,\\mathrm{m}$ .",
+        "incorrect": "المعلوم المجاور (عرض القناة) والمطلوب المقابل: الظل."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $ABC$ القائم في $B$ : $\\tan x = \\dfrac{BC}{AB}$",
+          "$BC = 90 \\times \\dfrac{5}{12}$"
+        ],
+        "result": "BC = 37{,}5\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "هل رسا القارب على رصيف الرسوّ المخصّص للقوارب الصغيرة؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-TAN-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن $BC$ بطول رصيف الرسوّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$37{,}5\\,\\mathrm{m} \\leqslant 40\\,\\mathrm{m}$ : $C$ على رصيف الرسوّ.",
+        "incorrect": "قارن المسافة $BC$ بـ $40\\,\\mathrm{m}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$BC = 37{,}5\\,\\mathrm{m}$ و $37{,}5 < 40$ .",
+          "إذن النقطة $C$ تقع على رصيف الرسوّ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "sub": "ا",
+      "lead": "☜ سرعة القارب على مساره $1{,}5\\,\\mathrm{m/s}$ . ما طول مساره $AC$ ، وما المدة التي استغرقها العبور؟",
+      "statement": "طول المسار $AC$ :",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "97.5",
+      "misconceptionSignatures": [
+        {
+          "value": "1080/13",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$[AC]$ هو الوتر و $[AB]$ مجاور للزاوية $x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المجهول في مقام جيب التمام."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC = \\dfrac{AB}{\\cos x} = 90 \\times \\dfrac{13}{12} = 97{,}5\\,\\mathrm{m}$ .",
+        "incorrect": "الوتر = المجاور ÷ جيب التمام."
+      },
+      "solution": {
+        "lines": [
+          "$\\cos x = \\dfrac{AB}{AC}$ ، إذن $AC = \\dfrac{AB}{\\cos x} = 90 \\times \\dfrac{13}{12}$"
+        ],
+        "result": "AC = 97{,}5\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "sub": "ب",
+      "statement": "مدة العبور بالثانية:",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدة بـ s",
+      "expectedAnswer": "65",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المدة = المسافة ÷ السرعة."
+        }
+      ],
+      "feedback": {
+        "correct": "$t = \\dfrac{97{,}5}{1{,}5} = 65\\,\\mathrm{s}$ .",
+        "incorrect": "اقسم طول المسار على السرعة."
+      },
+      "solution": {
+        "lines": [
+          "$t = \\dfrac{AC}{v} = \\dfrac{97{,}5}{1{,}5}$"
+        ],
+        "result": "t = 65\\,\\mathrm{s}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

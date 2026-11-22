@@ -1,0 +1,249 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-musawiyat-mutabayinat-l1-010",
+  "lessonCode": "wadiya-idmajiya-musawiyat-mutabayinat",
+  "level": 1,
+  "metadata": {
+    "title": "مراجعة الوحدة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مراجعة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الأوّل",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "أجب عن الأسئلة التالية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "إذا كان $7x - 8 = 27$ فاحسب $7x$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "35",
+      "misconceptionSignatures": [
+        {
+          "value": "19",
+          "id": "MISC-MUADALA-SIGN-KEPT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تُجرى على الطرفين معًا ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نفس العدد يُضاف أو يُطرح أو يُضرب فيه الطرفان، فتبقى المساواة صحيحة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل سطر من الحساب ثمّ تحقّق منه بالتعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $35$ .",
+        "incorrect": "انتبه: العملية تُجرى على الطرفين معًا، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضيف $8$ إلى الطرفين: $7x = 27 - (-8)$ .",
+          "فنجد $7x = 35$ ."
+        ],
+        "result": "35"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "إذا كان $x \\le 3$ فأيّ الاستنتاجات التالية صحيح ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-2x - 6 \\le -12$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-NEG-NOFLIP"
+        },
+        {
+          "id": "B",
+          "content": "$-2x - 6 \\ge -3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-COEF-LOST"
+        },
+        {
+          "id": "C",
+          "content": "$-2x - 6 \\ge -12$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$-2x - 6 \\ge 0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-DIFF-CONST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل العدد الذي نضرب فيه موجب أم سالب ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في عدد موجب يحفظ الاتجاه، وفي عدد سالب يعكسه؛ والجمع والطرح يحفظانه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بين الطرفين الأصغر والأكبر بعد كل عملية."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $-2x - 6 \\ge -12$ .",
+        "incorrect": "انتبه إلى اتجاه المتباينة عند الضرب في عدد سالب، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضرب طرفي $x \\le 3$ في $-2$ : الاتجاه ينعكس لأنّ العدد سالب.",
+          "ثم نضيف $-6$ فنجد $-2x - 6 \\ge -12$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما مدوّر العدد $1{,}036$ إلى $0{,}01$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "1.04",
+      "misconceptionSignatures": [
+        {
+          "value": "1.03",
+          "id": "MISC-TADWIR-TRUNC"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ الأرقام يلي رتبة التدوير ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد المدوّر على بعد نصف رتبة منه من الجهتين: الحدّ الأدنى مضمّن والأعلى مستبعد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارجع من الحصر إلى المدوّر للتأكّد."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $1{,}04$ .",
+        "incorrect": "انتبه إلى نصف الرتبة وإلى الطرف الأعلى المستبعد، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الرقم الذي يلي رتبة التدوير في $1{,}036$ هو $6$ ، وهو أكبر من $4$ أو يساويه.",
+          "فنرفع آخر رقم نحتفظ به: المدوّر $1{,}04$ ."
+        ],
+        "result": "1{,}04"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "حلّ المعادلة $4x + 11 = 3x + 6$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "-5",
+      "misconceptionSignatures": [
+        {
+          "value": "17",
+          "id": "MISC-MUADALA-SIGN-KEPT"
+        },
+        {
+          "value": "-5/7",
+          "id": "MISC-MUADALA-DIV-WRONG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين المجهول وأين الأعداد ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المجهول في طرف والأعداد في الطرف الآخر، ثمّ اقسم على معامل المجهول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض النتيجة في الطرفين لتتأكّد من تساويهما."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $-5$ .",
+        "incorrect": "راجع نقل الحدود وإشاراتها ثمّ القسمة على المعامل، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نجمع المجهول في طرف: $x = 6 - (11)$ ، أي $x = -5$ .",
+          "نقسم على $1$ : $x = -5$ ."
+        ],
+        "result": "-5"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

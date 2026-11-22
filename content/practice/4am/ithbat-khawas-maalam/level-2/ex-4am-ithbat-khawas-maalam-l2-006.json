@@ -1,0 +1,171 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l2-006",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — حديقة الحامة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "متوازي أضلاع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_ithbat-khawas-maalam_P2",
+      "modelledOn": "ex-13"
+    }
+  },
+  "generator": {
+    "tool": "u1x-ithbat-khawas-maalam/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "مربّع أزهار يعتني تلاميذ بنظافته في حديقة التجارب بالحامة رؤوسه $A(0\\,;\\,0)$ ، $B(4\\,;\\,1)$ ، $C(6\\,;\\,4)$ ، $D(2\\,;\\,3)$ في معلم متعامد ومتجانس (النقط معلّمة على المرصوفة).",
+    "figure": {
+      "grid": true,
+      "axes": true,
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          4,
+          1
+        ],
+        "C": [
+          6,
+          4
+        ],
+        "D": [
+          2,
+          3
+        ]
+      },
+      "ariaLabel": "الرباعي ABCD على مرصوفة",
+      "maxWidth": 420,
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "A"
+        ]
+      ],
+      "labels": {
+        "A": "sw",
+        "B": "se",
+        "C": "ne",
+        "D": "nw"
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مركبتا $\\overrightarrow{DC}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x\\,;\\,y)$ : الأولى ثم الثانية (عدد صحيح أو كسر مثل 5/2)",
+      "expectedAnswer": {
+        "x": "4",
+        "y": "1"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النهاية C ناقص المبدأ D."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفاصلة أولا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بعدها بـ $\\overrightarrow{AB}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{DC}\\begin{pmatrix} 4 \\\\ 1 \\end{pmatrix} = \\overrightarrow{AB}$ .",
+        "incorrect": "النهاية ناقص المبدأ."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "مع $AC^2 = 52$ ، $BD^2 = 8$ ، $AB^2 = 17$ ، $BC^2 = 13$ ، الرباعي ABCD :",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مربّع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "B",
+          "content": "متوازي أضلاع ليس مستطيلا ولا معيّنا",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "مستطيل",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "D",
+          "content": "معيّن",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{AB} = \\overrightarrow{DC}$ : ما النتيجة الأولى؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل القطران متقايسان؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "هل الضلعان المتتاليان متقايسان؟"
+        }
+      ],
+      "feedback": {
+        "correct": "متوازي أضلاع؛ $52 \\neq 8$ : ليس مستطيلا؛ $17 \\neq 13$ : ليس معيّنا.",
+        "incorrect": "كل نتيجة تحتاج دليلها؛ هنا القطران والضلعان غير متقايسين."
+      }
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "id": "ex-4am-tawzif-khawass-judhur-l5-005",
+  "lessonCode": "tawzif-khawass-judhur",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2010 — تبليط قاعة حفلات",
+    "estimatedMinutes": 10,
+    "tags": [
+      "a√b",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tawzif-khawass-judhur_P1",
+      "modelledOn": "BEM 2010 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2010",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "أرضية قاعة حفلات بوهران مكوّنة من جزأين متلاصقين: جزء مربع الشكل مساحته $50\\,m^2$، وجزء مستطيل الشكل عرضه يساوي ضلع المربع وطوله $\\sqrt{98}\\,m$. الجزآن متلاصقان على طول ضلع المربع، فطول القاعة هو مجموع ضلع المربع وطول المستطيل.\nيريد صاحب القاعة، حرصًا على إتمام العمل في وقته، تبليطها ببلاط سعر المتر المربع الواحد منه 900DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب طول ضلع الجزء المربع واكتبه على الشكل $a\\sqrt{2}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (بالمتر)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "25",
+          "id": "MISC-JIDHR-MURABBA-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول الضلع هو العدد الموجب الذي مربعه 50."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر مربع تامّ يقسم 50."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sqrt{50} = \\sqrt{25} \\times \\sqrt{2} = 5\\sqrt{2}\\,m$.",
+        "incorrect": "اكتب 50 على شكل (مربع تامّ) × 2."
+      },
+      "solution": {
+        "lines": [
+          "$c = \\sqrt{50} = \\sqrt{25} \\times \\sqrt{2}$"
+        ],
+        "result": "c = 5\\sqrt{2}\\,m"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب طول القاعة على الشكل $a\\sqrt{2}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tawzif-khawass-judhur_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (بالمتر)",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $\\sqrt{98}$ على الشكل $x\\sqrt{2}$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع بالخاصية التوزيعية."
+        }
+      ],
+      "feedback": {
+        "correct": "طول القاعة $5\\sqrt{2} + 7\\sqrt{2} = 12\\sqrt{2}\\,m$.",
+        "incorrect": "الجذر لا يتوزّع على الجمع: اكتب $\\sqrt{98}$ على الشكل $x\\sqrt{2}$ ثم اجمع."
+      },
+      "solution": {
+        "lines": [
+          "$\\sqrt{98} = \\sqrt{49} \\times \\sqrt{2} = 7\\sqrt{2}$",
+          "طول القاعة: $5\\sqrt{2} + 7\\sqrt{2} = (5 + 7)\\sqrt{2}$"
+        ],
+        "result": "12\\sqrt{2}\\,m"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب مساحة الجزء المستطيل.",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tawzif-khawass-judhur_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (بالمتر المربع)",
+      "expectedAnswer": "70",
+      "misconceptionSignatures": [
+        {
+          "value": "140",
+          "id": "MISC-JIDHR-FI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة المستطيل = الطول × العرض."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب المعاملين معًا والجذرين معًا: $\\sqrt{2} \\times \\sqrt{2} = 2$."
+        }
+      ],
+      "feedback": {
+        "correct": "$5\\sqrt{2} \\times 7\\sqrt{2} = 35 \\times 2 = 70\\,m^2$.",
+        "incorrect": "اضرب المعاملين ثم استعمل $\\sqrt{2} \\times \\sqrt{2} = 2$."
+      },
+      "solution": {
+        "lines": [
+          "$S = 7\\sqrt{2} \\times 5\\sqrt{2}$",
+          "$S = 35 \\times \\sqrt{2} \\times \\sqrt{2} = 35 \\times 2$"
+        ],
+        "result": "S = 70\\,m^2"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "☜ احسب السعر الإجمالي للبلاط.",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (DA)",
+      "expectedAnswer": "108000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المساحة الكلية = مساحة المربع + مساحة المستطيل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب المساحة الكلية في سعر المتر المربع."
+        }
+      ],
+      "feedback": {
+        "correct": "$(50 + 70) \\times 900$ DA.",
+        "incorrect": "اجمع مساحتي الجزأين ثم اضرب في سعر المتر المربع."
+      },
+      "solution": {
+        "lines": [
+          "المساحة الكلية: $50 + 70 = 120\\,m^2$",
+          "السعر: $120 \\times 900$"
+        ],
+        "result": "108000\\,DA"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

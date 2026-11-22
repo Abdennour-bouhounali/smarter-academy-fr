@@ -1,0 +1,186 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l4-004",
+  "lessonCode": "mana-jam-tarh",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — القفز الطويل",
+    "estimatedMinutes": 7,
+    "tags": [
+      "ترتيب",
+      "فرق",
+      "يزيد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في حصة التربية البدنية، شجّع التلاميذ بعضهم بعضًا: قفز أمين $3{,}48\\,\\mathrm{m}$، وقفز إلياس $3{,}5\\,\\mathrm{m}$، وقفز يونس $3{,}085\\,\\mathrm{m}$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "رتّب أطوال القفزات ترتيبًا تنازليًا.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3{,}5 > 3{,}48 > 3{,}085$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$3{,}085 > 3{,}48 > 3{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-MUQARANA"
+        },
+        {
+          "id": "C",
+          "content": "$3{,}48 > 3{,}5 > 3{,}085$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-MUQARANA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الأجزاء العشرية رقمًا برقم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الأعداد بنفس عدد الأرقام بعد الفاصلة: 3,500 و 3,480 و 3,085."
+        }
+      ],
+      "feedback": {
+        "correct": "$3{,}500 > 3{,}480 > 3{,}085$.",
+        "incorrect": "عدد الأرقام بعد الفاصلة لا يحدّد العدد الأكبر: قارن الأجزاء من عشرة أولًا."
+      },
+      "solution": {
+        "lines": [
+          "$3{,}5 = 3{,}500$ و $3{,}48 = 3{,}480$",
+          "$3{,}500 > 3{,}480 > 3{,}085$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب فرق أطول قفزة وأقصر قفزة.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالمتر (m)",
+      "expectedAnswer": "0.415",
+      "misconceptionSignatures": [
+        {
+          "value": "6.585",
+          "id": "MISC-JAMTARH-MAJMU-FARQ"
+        },
+        {
+          "value": "-0.415",
+          "id": "MISC-JAMTARH-FARQ-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد أطول قفزة وأقصر قفزة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب 3,5 على الشكل 3,500 قبل الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$3{,}5 - 3{,}085 = 0{,}415\\,\\mathrm{m}$.",
+        "incorrect": "الفرق: نطرح الأقصر من الأطول، بعد محاذاة الفاصلتين."
+      },
+      "solution": {
+        "lines": [
+          "أطول قفزة $3{,}5\\,\\mathrm{m}$ وأقصرها $3{,}085\\,\\mathrm{m}$.",
+          "$3{,}500 - 3{,}085 = 0{,}415$"
+        ],
+        "result": "0{,}415 \\text{ m}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "بكم تزيد قفزة إلياس عن قفزة أمين؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالمتر (m)",
+      "expectedAnswer": "0.02",
+      "misconceptionSignatures": [
+        {
+          "value": "6.98",
+          "id": "MISC-JAMTARH-KALIMA"
+        },
+        {
+          "value": "0.2",
+          "id": "MISC-JAMTARH-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قفزة إلياس هي الكل: قفزة أمين + الزيادة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب 3,5 على الشكل 3,50."
+        }
+      ],
+      "feedback": {
+        "correct": "$3{,}5 - 3{,}48 = 0{,}02\\,\\mathrm{m}$.",
+        "incorrect": "الزيادة جزء: اطرح قفزة أمين من قفزة إلياس، بعد محاذاة الفاصلتين."
+      },
+      "solution": {
+        "lines": [
+          "$3{,}50 - 3{,}48 = 0{,}02$"
+        ],
+        "result": "0{,}02 \\text{ m}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

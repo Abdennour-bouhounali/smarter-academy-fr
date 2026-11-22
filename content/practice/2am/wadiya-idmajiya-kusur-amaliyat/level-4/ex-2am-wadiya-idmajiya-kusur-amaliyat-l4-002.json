@@ -1,0 +1,369 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-kusur-amaliyat-l4-002",
+  "lessonCode": "wadiya-idmajiya-kusur-amaliyat",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — وضعيّة إدماجيّة : أرض لبناء مجمّع سكني",
+    "estimatedMinutes": 12,
+    "tags": [
+      "أكبر مساحة",
+      "جمع كسور",
+      "الجزء الباقي",
+      "المساحة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-87",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "07"
+    }
+  },
+  "statement": {
+    "content": "خصّصت وكالة عقاريّة قطعة أرض مستطيلة الشكل طولها $240$ m وعرضها $150$ m لبناء مجمّع سكني : $\\dfrac{2}{5}$ من المساحة للسكنات ، وعُشر المساحة لمدرسة ، و $\\dfrac{3}{20}$ منها مساحة خضراء ، و $\\dfrac{1}{20}$ منها للألعاب ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عبّر عن مساحة المدرسة بكسر مقامه $20$ : $\\dfrac{1}{10} = \\dfrac{\\ldots}{20}$ . ما البسط ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-JAMKASR-NOSCALE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "للانتقال من مقام صغير إلى مقام أكبر نضرب الحدّين في العدد نفسه ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما العدد الذي ينقل المقام الأوّل إلى المقام المطلوب ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{10} = \\dfrac{1 \\times 2}{10 \\times 2} = \\dfrac{2}{20}$ .",
+        "incorrect": "اضرب حدّي الكسر في العدد نفسه حتى يتغيّر المقام ولا تتغيّر قيمة الكسر ."
+      },
+      "solution": {
+        "lines": [
+          "$20 = 10 \\times 2$",
+          "$\\dfrac{1}{10} = \\dfrac{1 \\times 2}{10 \\times 2} = \\dfrac{2}{20}$"
+        ],
+        "result": "2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما أكبر مساحة من هذه المساحات الثلاث : السكنات والمدرسة والمساحة الخضراء ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "السكنات",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "المدرسة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-REVERSED"
+        },
+        {
+          "id": "C",
+          "content": "المساحة الخضراء",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-NUMONLY"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المقامان ؟ وما البسطان ؟ وأيّة حالة من حالات المقارنة هي ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مقاما الكسرين متساويان : قارن البسطين . بسطاهما متساويان : الأكبر هو الأصغر مقامًا . أحد المقامين مضاعف للآخر : وحّد المقامين ثمّ قارن البسطين ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يمكنك أيضًا مقارنة كلّ كسر بالعدد 1 أو بالنصف ."
+        }
+      ],
+      "feedback": {
+        "correct": "السكنات .",
+        "incorrect": "اختر طريقة المقارنة المناسبة للحالة (توحيد المقامين ، أو البسطان المتساويان ، أو المقارنة بالعدد 1) ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "نكتب الكسور بمقام مشترك لمقارنتها (أو نقارنها بطريقة مناسبة) :",
+          "السكنات : $\\dfrac{2}{5} = \\dfrac{8}{20}$ ، المدرسة : $\\dfrac{1}{10} = \\dfrac{2}{20}$ ، المساحة الخضراء : $\\dfrac{3}{20} = \\dfrac{3}{20}$ .",
+          "الجواب : السكنات ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "ما الكسر الذي يمثّل مجموع مساحات السكنات والمدرسة والمساحة الخضراء والألعاب ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "7/10",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "7/55",
+          "id": "MISC-JAMKASR-ACROSS"
+        },
+        {
+          "value": "7/20",
+          "id": "MISC-JAMKASR-NOSCALE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليّة المطلوبة ؟ وهل المقامان متساويان ، أم أنّ أحدهما مضاعف للآخر ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا اختلف المقامان فاكتب الكسر ذا المقام الأصغر بالمقام الأكبر : اضرب حدّيه في العدد نفسه ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع (أو اطرح) البسطين وأبقِ المقام كما هو ، ثمّ اختزل الناتج إن أمكن ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{7}{10}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح ، ثمّ اختزل الناتج وأعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2}{5} = \\dfrac{2 \\times 4}{5 \\times 4} = \\dfrac{8}{20}$ .",
+          "$\\dfrac{1}{10} = \\dfrac{1 \\times 2}{10 \\times 2} = \\dfrac{2}{20}$ .",
+          "$\\dfrac{2}{5} + \\dfrac{1}{10} + \\dfrac{3}{20} + \\dfrac{1}{20} = \\dfrac{8 + 2 + 3 + 1}{20} = \\dfrac{14}{20}$ .",
+          "نختزل بالقسمة على $2$ : $\\dfrac{14}{20} = \\dfrac{7}{10}$ ."
+        ],
+        "result": "\\dfrac{7}{10}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "ما الكسر الذي يمثّل المساحة المتبقية ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "3/10",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "7/10",
+          "id": "MISC-JAMKASR-PART"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكلّ يساوي كسرًا بسطه ومقامه عدد واحد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الأجزاء المأخوذة أوّلًا ثمّ اطرحها من الكلّ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الجزء الباقي هو الكلّ ناقص ما أُخذ ، وهو أصغر من الكلّ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{10}$ .",
+        "incorrect": "اجمع ما أُخذ أوّلًا ثمّ اطرحه من الكلّ ، ولا تُعطِ ما أُخذ بدل الباقي ."
+      },
+      "solution": {
+        "lines": [
+          "$1 = \\dfrac{20}{20}$ .",
+          "$\\dfrac{2}{5} = \\dfrac{2 \\times 4}{5 \\times 4} = \\dfrac{8}{20}$ .",
+          "$\\dfrac{1}{10} = \\dfrac{1 \\times 2}{10 \\times 2} = \\dfrac{2}{20}$ .",
+          "ما أُخذ : $\\dfrac{2}{5} + \\dfrac{1}{10} + \\dfrac{3}{20} + \\dfrac{1}{20} = \\dfrac{8 + 2 + 3 + 1}{20} = \\dfrac{14}{20}$ .",
+          "الباقي : $1 - \\dfrac{14}{20} = \\dfrac{20}{20} - \\dfrac{14}{20} = \\dfrac{6}{20}$ .",
+          "نختزل : $\\dfrac{3}{10}$ ."
+        ],
+        "result": "\\dfrac{3}{10}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "sub": "ا",
+      "statement": "احسب مساحة القطعة بالمتر المربّع .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "36000",
+      "misconceptionSignatures": [
+        {
+          "value": "780",
+          "id": "MISC-SYN-KASR2-PERIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المستطيل : ما العمليّة التي تعطي مساحته ؟ وما التي تعطي محيطه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المساحة = الطول × العرض ، والمحيط = 2 × (الطول + العرض) ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى الوحدة : المساحة بالمتر المربّع والمحيط بالمتر ."
+        }
+      ],
+      "feedback": {
+        "correct": "$36000\\,\\mathrm{m}^2$ .",
+        "incorrect": "المساحة جداء البعدين والمحيط مجموع الأضلاع الأربعة : لا تخلط بينهما وانتبه إلى الوحدة ."
+      },
+      "solution": {
+        "lines": [
+          "$240 \\times 150 = 36000$ ، أي $36000\\,\\mathrm{m}^2$ ."
+        ],
+        "result": "36000\\,\\mathrm{m}^2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "sub": "ب",
+      "statement": "احسب المساحة المخصّصة للسكنات بالمتر المربّع .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "14400",
+      "misconceptionSignatures": [
+        {
+          "value": "90000",
+          "id": "MISC-JIDAKASR-FLIP"
+        },
+        {
+          "value": "7200",
+          "id": "MISC-JIDAKASR-HALFWAY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزء من عدد يعني جداء الكسر في العدد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي ما دام الكسر أصغر من 1 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$14400$ .",
+        "incorrect": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ، ولا تقلب الكسر ."
+      },
+      "solution": {
+        "lines": [
+          "$36000 \\div 5 = 7200$ .",
+          "$7200 \\times 2 = 14400$ ."
+        ],
+        "result": "14400"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

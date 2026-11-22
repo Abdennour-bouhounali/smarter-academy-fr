@@ -1,0 +1,128 @@
+{
+  "id": "ex-4am-hall-jabri-l2-002",
+  "lessonCode": "hall-jabri",
+  "level": 2,
+  "metadata": {
+    "title": "جملة من أؤكّد تعلّماتي",
+    "estimatedMinutes": 6,
+    "tags": [
+      "الجمع",
+      "التحقق"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 62,
+      "section": "أؤكّد تعلّماتي",
+      "number": 5
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "إليك الجملة الآتية:",
+    "formulas": [
+      "\\begin{cases} 3x - y = -1 \\\\ 3x + y = 5 \\end{cases}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "حل الجملة بطريقة الجمع.",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": {
+        "x": "2/3",
+        "y": "3"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "3",
+            "y": "2/3"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن معاملي $y$ في المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "معاملا $y$ متعاكسان: اجمع المعادلتين مباشرة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع المعادلتين طرفا لطرف، ثم عوّض القيمة في إحدى المعادلتين لتجد المجهول الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "الثنائية $\\left(\\dfrac{2}{3} ; 3\\right)$ تحقق المعادلتين معا: هي حل الجملة.",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "بجمع المعادلتين طرفا لطرف نجد: $6x = 4$",
+          "ومنه $x = \\dfrac{2}{3}$",
+          "نعوّض $x$ بـ $\\dfrac{2}{3}$ في المعادلة (1): $3 \\times \\dfrac{2}{3} - y = -1$",
+          "$-y = -3$",
+          "ومنه $y = 3$",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "\\left(\\dfrac{2}{3} ; 3\\right)"
+      },
+      "work": "required",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "تحقّق أن الثنائية التي وجدتها تحقق المعادلتين.",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ و $y$ بقيمتيهما في كل معادلة."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times \\dfrac{2}{3} - 3 = 2 - 3 = -1$ : المعادلة الأولى محققة.",
+          "$3 \\times \\dfrac{2}{3} + 3 = 2 + 3 = 5$ : المعادلة الثانية محققة.",
+          "ومنه الثنائية $\\left(\\dfrac{2}{3} ; 3\\right)$ حل للجملة."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

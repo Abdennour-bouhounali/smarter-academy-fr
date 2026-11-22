@@ -1,0 +1,226 @@
+{
+  "id": "ex-3am-tabsit-hadhf-aqwas-l4-005",
+  "lessonCode": "tabsit-hadhf-aqwas",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — اختبار صحة مساواة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "حذف الأقواس",
+      "اختبار مساواة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر المساواة:",
+    "formulas": [
+      "5x - (2x - 4) = 3x + 4"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب الطرف الأول $5x - (2x - 4)$ من أجل:",
+      "statement": "$x = 2$",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-TABSIT-MINUS-FIRST-ONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى، ويُستحسن أن تعوّض في الشكل المبسّط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويات العمليات: القوى، ثم الضرب، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالتعويض في العبارة قبل تبسيطها: القيمة لا تتغيّر."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل $x = 2$ الطرف الأول يساوي $10$ .",
+        "incorrect": "عوّض $x$ بالعدد المعطى في الشكل المبسّط واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$5 \\times 2 - (2 \\times 2 - 4) = 10 - 0 = 10$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$x = -1$",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى، ويُستحسن أن تعوّض في الشكل المبسّط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويات العمليات: القوى، ثم الضرب، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالتعويض في العبارة قبل تبسيطها: القيمة لا تتغيّر."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل $x = -1$ الطرف الأول يساوي $1$ .",
+        "incorrect": "عوّض $x$ بالعدد المعطى في الشكل المبسّط واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$5 \\times (-1) - (2 \\times (-1) - 4) = -5 - (-6) = -5 + 6 = 1$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل المساواة صحيحة من أجل كل قيم $x$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-MINUS-FIRST-ONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة التي تسبق القوسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوسان مسبوقان بالإشارة $-$ يُحذفان مع تغيير إشارة كل حدّ بينهما، لا الحدّ الأول وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العبارة بدون أقواس حدًّا حدًّا، ثم اجمع الحدود المتشابهة، وتحقّق بتعويض $x$ بعدد."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم، المساواة صحيحة من أجل كل قيم $x$.",
+        "incorrect": "بسّط الطرف الأول ثم قارن، أو عوّض $x$ بعدد صغير في الطرفين."
+      },
+      "solution": {
+        "lines": [
+          "$5x - (2x - 4) = 5x - 2x + 4 = 3x + 4$ .",
+          "الطرفان متساويان بعد التبسيط، إذن المساواة صحيحة من أجل كل قيم $x$ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "برّر جوابك دون تعويض.",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة التي تسبق القوسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوسان مسبوقان بالإشارة $-$ يُحذفان مع تغيير إشارة كل حدّ بينهما، لا الحدّ الأول وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العبارة بدون أقواس حدًّا حدًّا، ثم اجمع الحدود المتشابهة، وتحقّق بتعويض $x$ بعدد."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "نحذف القوسين المسبوقين بـ $-$ بتغيير إشارة كل حدّ: $5x - (2x - 4) = 5x - 2x + 4$ .",
+          "نجمع الحدود المتشابهة: $5x - 2x + 4 = 3x + 4$ : وهو الطرف الثاني."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

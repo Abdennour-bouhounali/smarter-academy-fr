@@ -1,0 +1,59 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l4-009",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — نظيرة ومنتصف",
+    "estimatedMinutes": 3,
+    "tags": [
+      "المنتصف",
+      "طول"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_shuaayn-mutasawiyayn_P1",
+      "modelledOn": "know-3"
+    }
+  },
+  "statement": {
+    "content": "[AB] قطعة طولها 7,5 cm. M نقطة حيث $\\overrightarrow{AM} = \\overrightarrow{MB}$ ، و N النقطة حيث $\\overrightarrow{AB} = \\overrightarrow{BN}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "احسب الطول MN (بالسنتيمتر).",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالسنتيمتر)",
+      "expectedAnswer": "11.25",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "M منتصف [AB]، و B منتصف [AN]."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب MB ثم BN."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "MN = MB + BN."
+        }
+      ],
+      "feedback": {
+        "correct": "MB = 3,75 cm و BN = AB = 7,5 cm، إذن MN = 3,75 + 7,5 = 11,25 cm.",
+        "incorrect": "المساواة الثانية تجعل B منتصف [AN]: BN = AB."
+      }
+    }
+  ]
+}

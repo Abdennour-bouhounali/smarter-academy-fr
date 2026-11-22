@@ -1,0 +1,250 @@
+{
+  "id": "ex-1am-ikhtizal-kitaba-kasriya-l3-009",
+  "lessonCode": "ikhtizal-kitaba-kasriya",
+  "level": 3,
+  "metadata": {
+    "title": "الاختزال بقواعد قابلية القسمة",
+    "estimatedMinutes": 9,
+    "tags": [
+      "اختزال",
+      "قابلية القسمة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-25",
+      "page": 58,
+      "section": "أتمرّن",
+      "number": 25
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "باستعمال قواعد قابلية القسمة، اختزل الكسور الآتية إلى أبسط شكل ممكن."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "العددان 198 و 495 يقبلان القسمة على نفس العدد.",
+      "statement": "أتمم: $\\dfrac{198}{495} = \\dfrac{22}{\\ldots}$",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "55",
+      "misconceptionSignatures": [
+        {
+          "value": "319",
+          "id": "MISC-KASRIYA-JAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الحدّين المعروفين اللذين في نفس الموضع (بسطين أو مقامين)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بأيّ عدد نضرب (أو نقسم) أحدهما لنحصل على الآخر؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق نفس العملية على الحدّ الآخر من الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{198}{495} = \\dfrac{198 \\div 9}{495 \\div 9} = \\dfrac{22}{55}$ : قسمنا البسط والمقام على نفس العدد.",
+        "incorrect": "الكسر لا يتغيّر إذا ضربنا البسط والمقام في نفس العدد غير المعدوم أو قسمناهما عليه، أمّا إضافة نفس العدد إليهما فتغيّره."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{198}{495} = \\dfrac{198 \\div 9}{495 \\div 9} = \\dfrac{22}{55}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اختزل الكسر $\\dfrac{198}{495}$ إلى أبسط شكل ممكن.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b لا يقبل الاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "2/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "66/165",
+          "id": "MISC-KASRIYA-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن قاسم مشترك للبسط والمقام بقواعد قابلية القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على هذا القاسم، ثم أعد البحث في الكسر الجديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا لم تنفع القواعد، جرّب جداول الضرب (7، 11، 13…)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{198}{495} = \\dfrac{2}{5}$ ولا يقبل البسط والمقام قاسمًا مشتركًا غير 1.",
+        "incorrect": "نقسم البسط والمقام على قاسم مشترك لهما، ونعيد ذلك حتى لا يبقى قاسم مشترك غير 1.",
+        "notIrreducible": "الكتابة تساوي الكسر لكنها ما زالت قابلة للاختزال: ابحث عن قاسم مشترك آخر للبسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "$198 = 9 \\times 22$ و $495 = 9 \\times 55$ ، إذن $\\dfrac{198}{495} = \\dfrac{198 \\div 9}{495 \\div 9} = \\dfrac{22}{55}$",
+          "$22 = 11 \\times 2$ و $55 = 11 \\times 5$ ، إذن $\\dfrac{22}{55} = \\dfrac{22 \\div 11}{55 \\div 11} = \\dfrac{2}{5}$",
+          "العددان 2 و 5 لا يقبلان قاسمًا مشتركًا غير 1: $\\dfrac{2}{5}$ في أبسط شكل ممكن."
+        ],
+        "result": "\\dfrac{198}{495} = \\dfrac{2}{5}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "اختزل الكسر $\\dfrac{135}{105}$ إلى أبسط شكل ممكن.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b لا يقبل الاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "9/7",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "45/35",
+          "id": "MISC-KASRIYA-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن قاسم مشترك للبسط والمقام بقواعد قابلية القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على هذا القاسم، ثم أعد البحث في الكسر الجديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا لم تنفع القواعد، جرّب جداول الضرب (7، 11، 13…)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{135}{105} = \\dfrac{9}{7}$ ولا يقبل البسط والمقام قاسمًا مشتركًا غير 1.",
+        "incorrect": "نقسم البسط والمقام على قاسم مشترك لهما، ونعيد ذلك حتى لا يبقى قاسم مشترك غير 1.",
+        "notIrreducible": "الكتابة تساوي الكسر لكنها ما زالت قابلة للاختزال: ابحث عن قاسم مشترك آخر للبسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "$135 = 3 \\times 45$ و $105 = 3 \\times 35$ ، إذن $\\dfrac{135}{105} = \\dfrac{135 \\div 3}{105 \\div 3} = \\dfrac{45}{35}$",
+          "$45 = 5 \\times 9$ و $35 = 5 \\times 7$ ، إذن $\\dfrac{45}{35} = \\dfrac{45 \\div 5}{35 \\div 5} = \\dfrac{9}{7}$",
+          "العددان 9 و 7 لا يقبلان قاسمًا مشتركًا غير 1: $\\dfrac{9}{7}$ في أبسط شكل ممكن."
+        ],
+        "result": "\\dfrac{135}{105} = \\dfrac{9}{7}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "اختزل الكسر $\\dfrac{84}{63}$ إلى أبسط شكل ممكن.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b لا يقبل الاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "4/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "28/21",
+          "id": "MISC-KASRIYA-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن قاسم مشترك للبسط والمقام بقواعد قابلية القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على هذا القاسم، ثم أعد البحث في الكسر الجديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا لم تنفع القواعد، جرّب جداول الضرب (7، 11، 13…)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{84}{63} = \\dfrac{4}{3}$ ولا يقبل البسط والمقام قاسمًا مشتركًا غير 1.",
+        "incorrect": "نقسم البسط والمقام على قاسم مشترك لهما، ونعيد ذلك حتى لا يبقى قاسم مشترك غير 1.",
+        "notIrreducible": "الكتابة تساوي الكسر لكنها ما زالت قابلة للاختزال: ابحث عن قاسم مشترك آخر للبسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "$84 = 3 \\times 28$ و $63 = 3 \\times 21$ ، إذن $\\dfrac{84}{63} = \\dfrac{84 \\div 3}{63 \\div 3} = \\dfrac{28}{21}$",
+          "$28 = 7 \\times 4$ و $21 = 7 \\times 3$ ، إذن $\\dfrac{28}{21} = \\dfrac{28 \\div 7}{21 \\div 7} = \\dfrac{4}{3}$",
+          "العددان 4 و 3 لا يقبلان قاسمًا مشتركًا غير 1: $\\dfrac{4}{3}$ في أبسط شكل ممكن."
+        ],
+        "result": "\\dfrac{84}{63} = \\dfrac{4}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

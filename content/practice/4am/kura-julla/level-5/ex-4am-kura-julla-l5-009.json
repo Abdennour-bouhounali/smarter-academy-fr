@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-kura-julla-l5-009",
+  "lessonCode": "kura-julla",
+  "level": 5,
+  "metadata": {
+    "title": "وضعية — الدوائر الكبرى عبر القطبين",
+    "estimatedMinutes": 5,
+    "tags": [
+      "الدائرة الكبرى",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_kura-julla_P2",
+      "modelledOn": "know-1"
+    }
+  },
+  "statement": {
+    "content": "على مجسّم الكرة الأرضية، N و S القطبان، و $[NS]$ قطر. نرسم دوائر الطول: دوائر من الكرة تمر بـ N و S."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "كم دائرة كبرى تمر بـ N و S؟",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "عدد لا نهائي منها",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "دائرة واحدة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-DAIRA-KUBRA"
+        },
+        {
+          "id": "C",
+          "content": "دائرتان فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-DAIRA-KUBRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل مستو يشمل المستقيم $(NS)$ يشمل O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل مستو يشمل O يقطع الكرة وفق دائرة كبرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كم مستويا يشمل مستقيما معلوما؟"
+        }
+      ],
+      "feedback": {
+        "correct": "لا نهاية لعدد المستويات التي تشمل $(NS)$ ، وكلها تقطع الكرة وفق دوائر كبرى تمر بـ N و S.",
+        "incorrect": "دوائر الطول كثيرة: كل مستو يدور حول المحور يعطي واحدة."
+      }
+    }
+  ]
+}

@@ -1,0 +1,367 @@
+{
+  "id": "ex-2am-muqarana-nisbiya-l5-010",
+  "lessonCode": "muqarana-nisbiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — أروقة المنجم الأثري",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "أعماق",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في منجم أثري يتعاون فريق من الحرفيين على تدعيم أروقته بإتقان. مستويات أربعة أروقة بالنسبة إلى سطح الأرض (الصفر): $A$ عند $-12{,}5$ m و $B$ عند $-12{,}45$ m و $C$ عند $-12{,}05$ m و $D$ عند $-12{,}4$ m. يُعتبر الرواق آمنًا إذا كان مستواه أكبر تمامًا من $-12{,}3$ m.\nالجزء الأول: مقارنة المستويات.\nالجزء الثاني: الأمان."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "رتّب المستويات ترتيبًا تصاعديًّا (من الأعمق): اختر السلسلة الصحيحة.",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-12{,}05 < -12{,}4 < -12{,}45 < -12{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-BDG"
+        },
+        {
+          "id": "B",
+          "content": "$-12{,}5 < -12{,}45 < -12{,}4 < -12{,}05$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$-12{,}05 > -12{,}4 > -12{,}45 > -12{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-OD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بفرز الأعداد حسب إشاراتها: السالبة، ثم الصفر، ثم الموجبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب الأعداد السالبة فيما بينها حسب مسافاتها إلى الصفر: الأكبر مسافة هو الأصغر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب السلسلة كاملة بالرمز نفسه، ثم تحقّق من كل زوج متجاور."
+        }
+      ],
+      "feedback": {
+        "correct": "$-12{,}5 < -12{,}45 < -12{,}4 < -12{,}05$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "المسافات: $12{,}50 > 12{,}45 > 12{,}40 > 12{,}05$",
+          "والأعداد سالبة، فنعكس الترتيب"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما مستوى أعمق رواق؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "-12,5",
+      "misconceptionSignatures": [
+        {
+          "value": "-12,05",
+          "id": "MISC-MUQARANA-NISBIYA-BDG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج: أيّهما أبعد عن الصفر؟ وفي أيّ جهة منه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددان سالبان: الأصغر هو الذي له أكبر مسافة إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن المسافتين إلى الصفر (العددين دون إشارتيهما) ثم اعكس الحكم لأن العددين سالبان."
+        }
+      ],
+      "feedback": {
+        "correct": "الأعمق هو $A$ عند $-12{,}5$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$-12{,}5 < -12{,}45 < -12{,}4 < -12{,}05$",
+          "الأعمق $-12{,}5$"
+        ],
+        "result": "-12{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "قارن $-12{,}45$ و $-12{,}4$ : اختر العبارة الصحيحة.",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-12{,}45 < -12{,}4$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$-12{,}45 > -12{,}4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-BDG"
+        },
+        {
+          "id": "C",
+          "content": "$-12{,}4 < -12{,}45$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-DAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج: أيّهما أبعد عن الصفر؟ وفي أيّ جهة منه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددان سالبان: الأصغر هو الذي له أكبر مسافة إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن المسافتين إلى الصفر (العددين دون إشارتيهما) ثم اعكس الحكم لأن العددين سالبان."
+        }
+      ],
+      "feedback": {
+        "correct": "$12{,}45 > 12{,}40$ والعددان سالبان، فـ $-12{,}45 < -12{,}4$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$12{,}45 > 12{,}40$",
+          "$-12{,}45 < -12{,}4$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "كم رواقًا آمنًا (مستواه أكبر تمامًا من $-12{,}3$) ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-MUQARANA-NISBIYA-BDG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج: أيّهما أبعد عن الصفر؟ وفي أيّ جهة منه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددان سالبان: الأصغر هو الذي له أكبر مسافة إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن المسافتين إلى الصفر (العددين دون إشارتيهما) ثم اعكس الحكم لأن العددين سالبان."
+        }
+      ],
+      "feedback": {
+        "correct": "الرواق $C$ فقط: $-12{,}05 > -12{,}3$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$-12{,}05 > -12{,}3$ لأن $12{,}05 < 12{,}30$",
+          "والأروقة الأخرى مستوياتها أصغر",
+          "رواق واحد"
+        ],
+        "result": "1"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "الرواق $D$ ($-12{,}4$ m) : ما القرار؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "آمن لأن $-12{,}4 > -12{,}3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-BDG"
+        },
+        {
+          "id": "B",
+          "content": "آمن لأن $-12{,}4 = -12{,}3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-DAN"
+        },
+        {
+          "id": "C",
+          "content": "غير آمن لأن $-12{,}4 < -12{,}3$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارجع إلى القيم التي رتّبتها في الأسئلة السابقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين المعنيّين قبل أن تقرّر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القرار الصحيح يُبنى على مقارنة، لا على تخمين."
+        }
+      ],
+      "feedback": {
+        "correct": "$12{,}4 > 12{,}3$ والعددان سالبان، فـ $-12{,}4 < -12{,}3$ والرواق غير آمن.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$12{,}4 > 12{,}3$ والعددان سالبان",
+          "$-12{,}4 < -12{,}3$ ، فهو غير آمن"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ج",
+      "statement": "برّر أن الرواق $C$ آمن.",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارجع إلى القيم التي رتّبتها في الأسئلة السابقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين المعنيّين قبل أن تقرّر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القرار الصحيح يُبنى على مقارنة، لا على تخمين."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "شرط الأمان: المستوى أكبر تمامًا من $-12{,}3$",
+          "$12{,}05 < 12{,}30$ والعددان سالبان، فـ $-12{,}05 > -12{,}3$",
+          "إذن الرواق $C$ آمن"
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

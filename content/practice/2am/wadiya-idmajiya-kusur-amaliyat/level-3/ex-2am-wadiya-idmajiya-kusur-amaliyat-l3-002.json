@@ -1,0 +1,362 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-kusur-amaliyat-l3-002",
+  "lessonCode": "wadiya-idmajiya-kusur-amaliyat",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مسألة : مساهمات ثلاث جمعيّات",
+    "estimatedMinutes": 12,
+    "tags": [
+      "من يساهم بأكبر نسبة",
+      "الجزء الباقي",
+      "كسر من مبلغ",
+      "القسمة الإقليدية"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-91",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الجزء الثاني : مسألة",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "جمعت ثلاث جمعيّات خيريّة من الحيّ مبلغًا لتجهيز أقسام المدرسة بحقائب مدرسيّة : ساهمت جمعيّة النور بـ $\\dfrac{3}{10}$ من المبلغ ، وجمعيّة الأمل بـ $\\dfrac{1}{2}$ منه ، والباقي من جمعيّة الإحسان . بلغ المبلغ الكلّي $450000$ DA ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عبّر بكسر عن مساهمة جمعيّة الإحسان .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "1/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "4/5",
+          "id": "MISC-JAMKASR-PART"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكلّ يساوي كسرًا بسطه ومقامه عدد واحد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الأجزاء المأخوذة أوّلًا ثمّ اطرحها من الكلّ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الجزء الباقي هو الكلّ ناقص ما أُخذ ، وهو أصغر من الكلّ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{5}$ .",
+        "incorrect": "اجمع ما أُخذ أوّلًا ثمّ اطرحه من الكلّ ، ولا تُعطِ ما أُخذ بدل الباقي ."
+      },
+      "solution": {
+        "lines": [
+          "$1 = \\dfrac{10}{10}$ .",
+          "$\\dfrac{1}{2} = \\dfrac{1 \\times 5}{2 \\times 5} = \\dfrac{5}{10}$ .",
+          "ما أُخذ : $\\dfrac{3}{10} + \\dfrac{1}{2} = \\dfrac{3 + 5}{10} = \\dfrac{8}{10}$ .",
+          "الباقي : $1 - \\dfrac{8}{10} = \\dfrac{10}{10} - \\dfrac{8}{10} = \\dfrac{2}{10}$ .",
+          "نختزل : $\\dfrac{1}{5}$ ."
+        ],
+        "result": "\\dfrac{1}{5}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما الجمعيّة التي ساهمت بأكبر نسبة ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "جمعيّة النور",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-NUMONLY"
+        },
+        {
+          "id": "B",
+          "content": "جمعيّة الأمل",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "جمعيّة الإحسان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-REVERSED"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المقامان ؟ وما البسطان ؟ وأيّة حالة من حالات المقارنة هي ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مقاما الكسرين متساويان : قارن البسطين . بسطاهما متساويان : الأكبر هو الأصغر مقامًا . أحد المقامين مضاعف للآخر : وحّد المقامين ثمّ قارن البسطين ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يمكنك أيضًا مقارنة كلّ كسر بالعدد 1 أو بالنصف ."
+        }
+      ],
+      "feedback": {
+        "correct": "جمعيّة الأمل .",
+        "incorrect": "اختر طريقة المقارنة المناسبة للحالة (توحيد المقامين ، أو البسطان المتساويان ، أو المقارنة بالعدد 1) ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "نكتب الكسور بمقام مشترك لمقارنتها (أو نقارنها بطريقة مناسبة) :",
+          "جمعيّة النور : $\\dfrac{3}{10} = \\dfrac{3}{10}$ ، جمعيّة الأمل : $\\dfrac{1}{2} = \\dfrac{5}{10}$ ، جمعيّة الإحسان : $\\dfrac{1}{5} = \\dfrac{2}{10}$ .",
+          "الجواب : جمعيّة الأمل ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "احسب المبلغ الذي ساهمت به جمعيّة النور بالدينار .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "135000",
+      "misconceptionSignatures": [
+        {
+          "value": "1500000",
+          "id": "MISC-JIDAKASR-FLIP"
+        },
+        {
+          "value": "45000",
+          "id": "MISC-JIDAKASR-HALFWAY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزء من عدد يعني جداء الكسر في العدد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي ما دام الكسر أصغر من 1 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$135000$ .",
+        "incorrect": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ، ولا تقلب الكسر ."
+      },
+      "solution": {
+        "lines": [
+          "$450000 \\div 10 = 45000$ .",
+          "$45000 \\times 3 = 135000$ ."
+        ],
+        "result": "135000"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "احسب المبلغ الذي ساهمت به جمعيّة الأمل بالدينار .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "225000",
+      "misconceptionSignatures": [
+        {
+          "value": "900000",
+          "id": "MISC-JIDAKASR-FLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزء من عدد يعني جداء الكسر في العدد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي ما دام الكسر أصغر من 1 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$225000$ .",
+        "incorrect": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ، ولا تقلب الكسر ."
+      },
+      "solution": {
+        "lines": [
+          "$450000 \\div 2 = 225000$ ."
+        ],
+        "result": "225000"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ج",
+      "statement": "احسب المبلغ الذي ساهمت به جمعيّة الإحسان بالدينار .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "90000",
+      "misconceptionSignatures": [
+        {
+          "value": "2250000",
+          "id": "MISC-JIDAKASR-FLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزء من عدد يعني جداء الكسر في العدد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي ما دام الكسر أصغر من 1 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$90000$ .",
+        "incorrect": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ، ولا تقلب الكسر ."
+      },
+      "solution": {
+        "lines": [
+          "$450000 \\div 5 = 90000$ ."
+        ],
+        "result": "90000"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "خصّصت جمعيّة الإحسان مبلغها لشراء حقائب ثمن الحقيبة الواحدة $1500$ DA . كم حقيبة تشتري ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "60",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المقسوم هو العدد الذي نقسمه والمقسوم عليه هو العدد الذي نقسم به : كم مرّة يدخل الثاني تمامًا في الأوّل ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي أصغر تمامًا من المقسوم عليه ، والمساواة المميّزة : المقسوم = المقسوم عليه × الحاصل + الباقي ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالضرب ثمّ الجمع قبل أن تجيب ."
+        }
+      ],
+      "feedback": {
+        "correct": "$60$ .",
+        "incorrect": "المقسوم عليه × الحاصل + الباقي = المقسوم ، والباقي أصغر من المقسوم عليه . تحقّق ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$90000 = 1500 \\times 60 + 0$ ، و $0 < 1500$ .",
+          "$1500 \\times 60 = 90000$ و $90000 - 90000 = 0$ .",
+          "حاصل القسمة الإقليدية : $60$ ."
+        ],
+        "result": "60"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

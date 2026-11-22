@@ -1,0 +1,340 @@
+{
+  "id": "ex-3am-tabsit-hadhf-aqwas-l5-003",
+  "lessonCode": "tabsit-hadhf-aqwas",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — ساحة المتوسطة",
+    "estimatedMinutes": 20,
+    "tags": [
+      "وضعية إدماجية",
+      "حذف الأقواس",
+      "جداء",
+      "فيثاغورس"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-82",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "أرض متوسطة مستطيلة طولها $(2x + 10)$ وعرضها $x$ (الأطوال غير حقيقية، $x$ عدد موجب، وحدة الطول هي المتر). الجزء (1) مربع ضلعه $x$ مخصّص لساحة الرياضة، والجزء (2) مستطيل عرضه $x$ مخصّص للأقسام.\nالجزء الأول: حسابات المخطط.\nالجزء الثاني: يغرس أستاذ الرياضة مع تلاميذه شجرة يثبّتها بحبل طوله $2\\,\\mathrm{m}$ ، مربوط بالجذع على ارتفاع $1{,}6\\,\\mathrm{m}$ ، ومثبّت في الأرض على بعد $1{,}2\\,\\mathrm{m}$ من قاعدة الجذع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "مساحة الجزء (1) بدلالة $x$ هي:",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-PRODUCT-COEF-ADDED"
+        },
+        {
+          "id": "B",
+          "content": "$x^2$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$2x^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-PRODUCT-COEF-ADDED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في جداء حدّين نضرب الأعداد معًا والحروف معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أن $x \\times x$ يُكتب $x^2$، وطبّق قاعدة إشارة الجداء."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء وفي النتيجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$x^2$.",
+        "incorrect": "راجع إشارة كل حدّ وما يسبق القوسين، ثم اجمع الحدود المتشابهة فقط."
+      },
+      "solution": {
+        "lines": [
+          "مساحة المربع $= x \\times x = x^2$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "طول الجزء (2) هو $(2x + 10) - x$ . اكتبه على أبسط شكل.",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x + 10$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$3x + 10$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-SIGN-LOST"
+        },
+        {
+          "id": "C",
+          "content": "$11x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-UNLIKE-MERGED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود المتشابهة: الحدود التي لها الجزء الحرفي نفسه ($x^2$ مع $x^2$، و $x$ مع $x$، والأعداد مع الأعداد)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع معاملات كل نوع بإشاراتها، ولا تجمع حدًّا في $x$ مع حدّ في $x^2$ أو مع عدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في العبارة قبل التبسيط وبعده: يجب أن تعطيا القيمة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$x + 10$.",
+        "incorrect": "راجع إشارة كل حدّ وما يسبق القوسين، ثم اجمع الحدود المتشابهة فقط."
+      },
+      "solution": {
+        "lines": [
+          "$(2x + 10) - x = 2x + 10 - x$",
+          "$= x + 10$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "محيط الجزء (2) يُكتب على الشكل $ax + b$ . العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $P_2$ على الشكل $ax + b$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "20",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة التي تسبق القوسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوسان مسبوقان بالإشارة $+$ (وغير متبوعين بـ $\\times$ أو $\\div$) يُحذفان دون تغيير أي إشارة بينهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العبارة بدون أقواس حدًّا حدًّا، ثم اجمع الحدود المتشابهة."
+        }
+      ],
+      "feedback": {
+        "correct": "$P_2 = 4x + 20$ إذن $b = 20$.",
+        "incorrect": "اجمع الحدود المتشابهة بإشاراتها بعد حذف الأقواس، ثم اقرأ العدد المطلوب في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$P_2 = (x + 10) + x + (x + 10) + x$",
+          "$P_2 = 4x + 20$"
+        ],
+        "result": "b = 20"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "احسب محيط الجزء (2) من أجل $x = 30$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "140",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى، ويُستحسن أن تعوّض في الشكل المبسّط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويات العمليات: القوى، ثم الضرب، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالتعويض في العبارة قبل تبسيطها: القيمة لا تتغيّر."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل $x = 30$ : $P_2 = 140$ م.",
+        "incorrect": "عوّض $x$ بالعدد المعطى في الشكل المبسّط واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$P_2 = 4x + 20$",
+          "من أجل $x = 30$ : $P_2 = 4(30) + 20 = 140$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "lead": "الجزء الثاني.",
+      "statement": "هل الشجرة شاقولية (عمودية على الأرض)؟",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-DECISION-UNCHECKED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في مثلث قائم: مربع الوتر يساوي مجموع مربعي الضلعين الآخرين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب مربع أطول ضلع، ثم مجموع مربعي الضلعين الآخرين، وقارن."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}6^2 + 1{,}2^2 = 2^2$ : الشجرة شاقولية.",
+        "incorrect": "قارن مربع طول الحبل بمجموع مربعي البعدين الآخرين."
+      },
+      "solution": {
+        "lines": [
+          "$2^2 = 4$ و $1{,}6^2 + 1{,}2^2 = 2{,}56 + 1{,}44 = 4$ .",
+          "المساواة محققة، إذن المثلث قائم والشجرة شاقولية (الخاصية العكسية لفيثاغورس)."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "statement": "برّر جوابك بالحساب.",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في مثلث قائم: مربع الوتر يساوي مجموع مربعي الضلعين الآخرين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب مربع أطول ضلع، ثم مجموع مربعي الضلعين الآخرين، وقارن."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الجذع والأرض والحبل يشكّلون مثلثًا أطواله $1{,}6$ و $1{,}2$ و $2$ .",
+          "$1{,}6^2 + 1{,}2^2 = 2{,}56 + 1{,}44 = 4 = 2^2$",
+          "حسب الخاصية العكسية لفيثاغورس المثلث قائم: الجذع عمودي على الأرض."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "id": "ex-3am-muadalat-darajat-ula-l3-002",
+  "lessonCode": "muadalat-darajat-ula",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — معدّلا الثلاثيين",
+    "estimatedMinutes": 10,
+    "tags": [
+      "ترييض",
+      "معدّل"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 3,
+      "file": "3am-s3-51",
+      "exercise": 3
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يراجع أمين دروسه بإتقان كلّ مساء. مجموع معدّليه في الثلاثي الأوّل والثاني هو $25{,}6$ ، ومعدّله في الثلاثي الثاني يقلّ عن معدّله في الثلاثي الأوّل بـ $1{,}4$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "نسمّي $x$ معدّل أمين في الثلاثي الأوّل. ما المعادلة التي تترجم الوضعية؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "الثاني يقلّ عن الأوّل: $x - 1{,}4$ ، فالمجموع $x + (x - 1{,}4) = 25{,}6$ .",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x + (x + 1{,}4) = 25{,}6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        },
+        {
+          "id": "B",
+          "content": "$x - 1{,}4 = 25{,}6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        },
+        {
+          "id": "C",
+          "content": "$x + (x - 1{,}4) = 25{,}6$",
+          "isCorrect": true
+        }
+      ],
+      "solution": {
+        "lines": [
+          "معدّل الثلاثي الثاني $x - 1{,}4$ (لأنّه يقلّ بـ $1{,}4$) ومجموع المعدّلين $x + (x - 1{,}4) = 25{,}6$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما معدّله في الثلاثي الأوّل؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "معدّله في الثلاثي الأوّل $13{,}5$ .",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "المعدّل على 20",
+      "expectedAnswer": "27/2",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-MUADALA-PARTIAL-SOLVE"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "نبسّط: $2x - 1{,}4 = 25{,}6$ ثمّ $2x = 27$ .",
+          "نقسم على $2$ : $x = 13{,}5$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما معدّله في الثلاثي الثاني؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "معدّله في الثلاثي الثاني $12{,}1$ .",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "المعدّل على 20",
+      "expectedAnswer": "121/10",
+      "solution": {
+        "lines": [
+          "المعدّل الثاني $13{,}5 - 1{,}4 = 12{,}1$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "ما أدنى معدّل $y$ يجب أن يحصل عليه في الثلاثي الثالث ليكون معدّله السنوي $\\dfrac{25{,}6 + y}{3} = 12$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "يجب ألّا يقلّ معدّله عن $10{,}4$ .",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "المعدّل على 20",
+      "expectedAnswer": "52/5",
+      "misconceptionSignatures": [
+        {
+          "value": "36",
+          "id": "MISC-MUADALA-PARTIAL-SOLVE"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "نضرب الطرفين في $3$ : $25{,}6 + y = 36$ .",
+          "نضيف $-25{,}6$ إلى الطرفين: $y = 10{,}4$ ."
+        ]
+      },
+      "timeSeconds": 105
+    }
+  ]
+}

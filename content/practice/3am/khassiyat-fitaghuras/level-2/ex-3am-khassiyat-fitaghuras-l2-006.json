@@ -1,0 +1,307 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l2-006",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 2,
+  "metadata": {
+    "title": "قطر المربع",
+    "estimatedMinutes": 8,
+    "tags": [
+      "خاصية فيثاغورس",
+      "قطر مربع",
+      "القيمة المضبوطة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-12",
+      "page": 175,
+      "section": "أوظّف تعلّماتي",
+      "number": 12
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$EFGH$ مربع طول ضلعه $5\\,\\mathrm{cm}$ ، وهو نموذج مصغّر لبلاطة يريد البنّاء أن يقطعها قطريا بإتقان دون تبذير.",
+    "figure": {
+      "points": {
+        "E": [
+          0,
+          0
+        ],
+        "F": [
+          5,
+          0
+        ],
+        "G": [
+          5,
+          5
+        ],
+        "H": [
+          0,
+          5
+        ]
+      },
+      "segments": [
+        {
+          "from": "E",
+          "to": "F",
+          "label": "5 cm"
+        },
+        [
+          "F",
+          "G"
+        ],
+        [
+          "G",
+          "H"
+        ],
+        [
+          "H",
+          "E"
+        ],
+        {
+          "from": "E",
+          "to": "G",
+          "tone": "indigo",
+          "bold": true
+        }
+      ],
+      "rightAngles": [
+        [
+          "E",
+          "F",
+          "G"
+        ]
+      ],
+      "ariaLabel": "مربع EFGH طول ضلعه 5 cm وقطره [EG]",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $EG^2$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: قيمة $EG^2$ (بـ $cm^2$)",
+      "expectedAnswer": "50",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        },
+        {
+          "value": "10",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مربع العدد هو جداؤه في نفسه: $a^2 = a \\times a$ وليس $2 \\times a$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$EG^2 = 5^2 + 5^2 = 50$ .",
+        "incorrect": "اكتب مساواة فيثاغورس بالوتر وحده في طرف، ثم ربّع كل طول (اضربه في نفسه) قبل الجمع."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $EFG$ قائم في $F$ ، حسب خاصية فيثاغورس: $EG^2 = EF^2 + FG^2$",
+          "$EG^2 = 5^2 + 5^2$",
+          "$EG^2 = 25 + 25 = 50$"
+        ],
+        "result": "EG^2 = 50"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما القيمة المضبوطة للطول $EG$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$50\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-NO-ROOT"
+        },
+        {
+          "id": "B",
+          "content": "$10\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-ROOT-SPLIT"
+        },
+        {
+          "id": "C",
+          "content": "$\\sqrt{50}\\,\\mathrm{cm}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولا $EG^2$ بخاصية فيثاغورس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الطول هو العدد الموجب الذي مربعه يساوي القيمة التي حسبتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القيمة المضبوطة تُكتب بالرمز $\\sqrt{\\ }$ إذا لم يكن العدد مربعا تاما."
+        }
+      ],
+      "feedback": {
+        "correct": "$EG^2 = 50$ ، إذن $EG = \\sqrt{50}$ (قيمة مضبوطة).",
+        "incorrect": "لا تخلط بين مربع الطول والطول نفسه، ولا تجمع الأطوال: احسب المربع ثم خذ جذره."
+      },
+      "solution": {
+        "lines": [
+          "$EG^2 = 50$ ، ومنه القيمة المضبوطة: $EG = \\sqrt{50}\\,\\mathrm{cm}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أعط قيمة مقرّبة للطول $EG$ بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm مدوّرا إلى 0,1",
+      "expectedAnswer": "7.1",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-FITAGHURAS-ROUND-TRUNC"
+        },
+        {
+          "value": "10",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "50",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مربع الطول، ثم استعمل اللمسة $\\sqrt{\\ }$ ، ولا تدوّر إلا النتيجة الأخيرة (انظر إلى الرقم الموالي للرقم المطلوب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$EG^2 = 5^2 + 5^2 = 50$ ، إذن $EG \\approx 7{,}1\\,\\mathrm{cm}$ .",
+        "incorrect": "ابدأ بتحديد الوتر، ثم اكتب مساواة فيثاغورس، وتذكّر أن ما تحسبه أولا هو مربع الطول لا الطول نفسه."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $EFG$ قائم في $F$ ، حسب خاصية فيثاغورس: $EG^2 = EF^2 + FG^2$",
+          "$EG^2 = 5^2 + 5^2$",
+          "$EG^2 = 25 + 25 = 50$",
+          "$EG = \\sqrt{50}$ (القيمة المضبوطة)",
+          "باستعمال اللمسة $\\sqrt{\\ }$ للآلة الحاسبة: $\\sqrt{50} \\approx 7{,}071067811$",
+          "المدوّر إلى $0{,}1$ : $EG \\approx 7{,}1\\,\\mathrm{cm}$"
+        ],
+        "result": "EG \\approx 7{,}1\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "برّر لماذا لا يمكن أن تكون $7{,}1\\,\\mathrm{cm}$ هي القيمة المضبوطة للطول $EG$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مربع العدد $7{,}1$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمة المضبوطة للطول $EG$ هي العدد الموجب الذي مربعه يساوي $EG^2$ تماما."
+        }
+      ],
+      "feedback": {
+        "correct": "مربع $7{,}1$ لا يساوي $50$ تماما.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "$7{,}1^2 = 50{,}41$ ، و $50{,}41 \\neq 50$ .",
+          "إذن $7{,}1$ ليس العدد الذي مربعه $50$ : هو قيمة مقرّبة فقط.",
+          "القيمة المضبوطة هي $EG = \\sqrt{50}\\,\\mathrm{cm}$ ."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

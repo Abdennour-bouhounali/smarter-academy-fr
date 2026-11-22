@@ -1,0 +1,106 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l5-004",
+  "lessonCode": "mafhum-dawaran",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — محوّل في وهران",
+    "estimatedMinutes": 4,
+    "tags": [
+      "صورة نقطة",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mafhum-dawaran_P2",
+      "modelledOn": "know-2"
+    }
+  },
+  "statement": {
+    "content": "سيارة تسير بحذر في محوّل دائري بوهران مركزه O، فسائقها يحترم قواعد المرور. تنطلق من A حيث $OA = 12\\,\\mathrm{m}$ وتدور حول O بزاوية $60^\\circ$ في الاتجاه المباشر فتصل إلى B."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما هو البعد OB بالمتر؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالمتر)",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-MASAFA",
+          "value": "24"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "B صورة A بالدوران الذي مركزه O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تعريف صورة نقطة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "البعد عن المركز لا يتغيّر."
+        }
+      ],
+      "feedback": {
+        "correct": "OB = OA = 12 m.",
+        "incorrect": "السيارة تبقى على نفس البعد من مركز المحوّل."
+      },
+      "difficulty": 3
+    },
+    {
+      "id": "q2",
+      "statement": "ما هو البعد AB بالمتر؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالمتر)",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-ZAWIYA-UKHRA",
+          "value": "6"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث OAB: OA = OB."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "وزاويته في O قيسها $60^\\circ$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مثلث متساوي الساقين زاوية رأسه $60^\\circ$ … ما طبيعته؟"
+        }
+      ],
+      "feedback": {
+        "correct": "OA = OB و $\\widehat{AOB} = 60^\\circ$ : المثلث OAB متقايس الأضلاع، فـ AB = 12 m.",
+        "incorrect": "المثلث OAB متساوي الساقين وزاويتا قاعدته متقايستان."
+      },
+      "difficulty": 5
+    }
+  ]
+}

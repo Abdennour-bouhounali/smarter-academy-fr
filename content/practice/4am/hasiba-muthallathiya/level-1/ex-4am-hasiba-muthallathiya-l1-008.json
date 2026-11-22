@@ -1,0 +1,149 @@
+{
+  "id": "ex-4am-hasiba-muthallathiya-l1-008",
+  "lessonCode": "hasiba-muthallathiya",
+  "level": 1,
+  "metadata": {
+    "title": "اللمسة العكسية: زاوية جيبها 0,7",
+    "estimatedMinutes": 3,
+    "tags": [
+      "اللمسات العكسية",
+      "الجيب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hasiba-muthallathiya_P2",
+      "modelledOn": "know-3"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "$x$ زاوية حادة حيث $\\sin x = 0{,}7$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب البرنامج الذي تنفّذه (من اليسار إلى اليمين) لإيجاد قيس $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "⁦ON sin 0,7 =⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-AKS-BADAL-MUBASHIR"
+        },
+        {
+          "id": "B",
+          "content": "⁦ON 2nd cos⁻¹ 0,7 =⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "id": "C",
+          "content": "⁦ON 2nd sin⁻¹ 0,7 =⁩",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النسبة معلومة والزاوية هي المطلوبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر اللمسة العكسية للنسبة المعطاة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "زاوية من جيبها: ⁦2nd⁩ ثم ⁦sin⁻¹⁩ ثم النسبة ثم ⁦=⁩.",
+        "incorrect": "لإيجاد زاوية من نسبتها نستعمل اللمسة العكسية للنسبة المعطاة نفسها، لا اللمسة المباشرة."
+      },
+      "solution": {
+        "lines": [
+          "نعرف $\\sin x = 0{,}7$ ونبحث عن $x$ : اللمسة العكسية ⁦2nd⁩ ثم ⁦sin⁻¹⁩ .",
+          "⁦ON sin 0,7 =⁩ يحسب جيب زاوية قيسها $0{,}7^{\\circ}$ ، و ⁦cos⁻¹⁩ يعطي الزاوية التي جيب تمامها $0{,}7$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب قيس $x$ بالتدوير إلى الوحدة من الدرجة.",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيس الزاوية بالدرجة، مدوّرا إلى الوحدة",
+      "expectedAnswer": "44",
+      "misconceptionSignatures": [
+        {
+          "value": "46",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "1",
+          "id": "MISC-MUTH-HASIBA-RAD"
+        },
+        {
+          "value": "0",
+          "id": "MISC-MUTH-AKS-BADAL-MUBASHIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لدينا $\\sin\\,x = 0{,}7$ : نعرف النسبة ونبحث عن القيس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اللمسة العكسية: ⁦2nd⁩ ثم ⁦sin⁻¹⁩ ثم النسبة ثم ⁦=⁩."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الحرف ⁦D⁩ (الدرجة)، ثم دوّر إلى الوحدة: انظر إلى الرقم الموالي للرقم الأخير الذي تحتفظ به."
+        }
+      ],
+      "feedback": {
+        "correct": "$x \\approx 44{,}427004^{\\circ} \\approx 44^{\\circ}$ .",
+        "incorrect": "النسبة ليست القيس: القيس يُعيَّن باللمسة العكسية المناسبة والحاسبة مبرمجة بالدرجة، ثم يُدوَّر (لا يُبتر) إلى الوحدة."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال الحاسبة المبرمجة بالدرجة: ⁦ON 2nd sin⁻¹ 0,7 =⁩ يظهر على الشاشة $44{,}427004$ .",
+          "الرقم الذي يلي رقم الوحدات هو 4، وهو أصغر من 5: نُبقي رقم الوحدات كما هو."
+        ],
+        "result": "x \\approx 44^{\\circ}"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

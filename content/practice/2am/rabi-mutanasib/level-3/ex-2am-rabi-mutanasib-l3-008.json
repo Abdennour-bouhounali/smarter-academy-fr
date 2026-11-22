@@ -1,0 +1,214 @@
+{
+  "id": "ex-2am-rabi-mutanasib-l3-008",
+  "lessonCode": "rabi-mutanasib",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — عجين الخبز",
+    "estimatedMinutes": 10,
+    "tags": [
+      "الجداءان المتصالبان",
+      "الرابع المتناسب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "تنتج مخبزة $15$ رغيفًا من $9$ kg من العجين، وعدد الأرغفة يتناسب مع كتلة العجين.",
+    "table": {
+      "head": [
+        "العجين (kg)",
+        "9",
+        "24"
+      ],
+      "rows": [
+        [
+          "عدد الأرغفة",
+          "15",
+          "$x$"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اختر مساواة الجداءين المتصالبين التي تسمح بحساب $x$ .",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$9 \\times 15 = 24 \\times x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-RABI-CROSS"
+        },
+        {
+          "id": "B",
+          "content": "$9 \\times 24 = 15 \\times x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-RABI-CROSS"
+        },
+        {
+          "id": "C",
+          "content": "$9 \\times x = 15 \\times 24$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العدد المجهول في خانته من الجدول واقرأ العددين على كل قطر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في جدول تناسبية: جداء العددين على أحد القطرين يساوي جداء العددين على القطر الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثم اقسم طرفيها على العدد المعلوم الذي يضرب المجهول."
+        }
+      ],
+      "feedback": {
+        "correct": "$9 \\times x = 15 \\times 24$ .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الجداءان المتصالبان: $9 \\times x = 15 \\times 24$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $x$ .",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "40",
+      "misconceptionSignatures": [
+        {
+          "value": "5,625",
+          "id": "MISC-RABI-CROSS"
+        },
+        {
+          "value": "30",
+          "id": "MISC-RABI-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العدد المجهول في خانته من الجدول واقرأ العددين على كل قطر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في جدول تناسبية: جداء العددين على أحد القطرين يساوي جداء العددين على القطر الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثم اقسم طرفيها على العدد المعلوم الذي يضرب المجهول."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 40$ .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$9x = 360$",
+          "$x = 360 \\div 9 = 40$"
+        ],
+        "result": "40"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "جدول ثانٍ: نريد معرفة كتلة العجين $y$ التي تنتج [[28]] رغيفًا علمًا أنّ [[12]] kg منه تنتج [[21]] رغيفًا.",
+      "statement": "احسب $y$ (كتلة العجين التي تنتج $28$ رغيفًا) بمساواة الجداءين المتصالبين.",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "16",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-RABI-CROSS"
+        },
+        {
+          "value": "19",
+          "id": "MISC-RABI-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العدد المجهول في خانته من الجدول واقرأ العددين على كل قطر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في جدول تناسبية: جداء العددين على أحد القطرين يساوي جداء العددين على القطر الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثم اقسم طرفيها على العدد المعلوم الذي يضرب المجهول."
+        }
+      ],
+      "feedback": {
+        "correct": "$y = 16$ .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$21 \\times y = 12 \\times 28$",
+          "$y = 336 \\div 21 = 16$"
+        ],
+        "result": "16"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

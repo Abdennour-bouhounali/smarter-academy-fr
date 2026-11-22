@@ -1,0 +1,157 @@
+{
+  "id": "ex-4am-tarrid-taalufi-l1-003",
+  "lessonCode": "tarrid-taalufi",
+  "level": 1,
+  "metadata": {
+    "title": "تطبيق نقل في المدينة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "نمذجة",
+      "صورة عدد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-taalufi_P1",
+      "modelledOn": "act-4",
+      "adaptedFrom": "ex-4am-tarrid-taalufi-l1-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "تطبيق نقل في المدينة يلتزم سائقوه بالأمانة: يدفع الزبون 100DA عند انطلاق الرحلة، ثم 40DA لكل كيلومتر.\nنسمّي $x$ طول الرحلة بالكيلومتر و $f(x)$ ثمنها بـ DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عبّر عن $f(x)$ بدلالة $x$ .",
+      "statement": "أعط العددين $a$ و $b$ حيث: $f(x) = ax + b$ ، ابدأ بالعدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "40",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "100"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع عن كل كيلومتر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هو ما يُدفع $x$ مرّة: معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "ما يُدفع عن كل كيلومتر هو معامل $x$ .",
+        "incorrect": "معامل $x$ هو المبلغ الذي يتكرّر مع كل وحدة، لا المبلغ الذي يُدفع مرّة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "100DA تُدفع مرّة واحدة عند الانطلاق، و 40DA عن كل كيلومتر:",
+          "$f(x) = 40x + 100$"
+        ],
+        "result": "f(x) = 40x + 100"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "ثم العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "100",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "40"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع مرّة واحدة (ثمن الانطلاق)؟"
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن الانطلاق يُدفع مرّة واحدة: هو الحدّ الثابت $b$ .",
+        "incorrect": "الحدّ الثابت لا يتعلّق بعدد الوحدات $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "100DA تُدفع مرّة واحدة عند الانطلاق، و 40DA عن كل كيلومتر:",
+          "$f(x) = 40x + 100$"
+        ],
+        "result": "f(x) = 40x + 100"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب ثمن رحلة طولها 9km .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "460",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAALUFI-NISYAN-B",
+          "value": "360"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد 9 في عبارة $f(x)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$40 \\times 9 + 100$ .",
+        "incorrect": "احسب ثمن الكيلومترات ثم أضف ثمن الانطلاق."
+      },
+      "solution": {
+        "lines": [
+          "$f(9) = 40 \\times 9 + 100 = 360 + 100 = 460$",
+          "ثمن الرحلة 460DA ."
+        ],
+        "result": "460DA"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

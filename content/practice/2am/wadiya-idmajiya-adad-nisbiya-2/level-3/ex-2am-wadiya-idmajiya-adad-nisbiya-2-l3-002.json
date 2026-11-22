@@ -1,0 +1,258 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-adad-nisbiya-2-l3-002",
+  "lessonCode": "wadiya-idmajiya-adad-nisbiya-2",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — ارتفاعات رحلة جبلية",
+    "estimatedMinutes": 10,
+    "tags": [
+      "ارتفاع",
+      "مسافة",
+      "مجموع جبري"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "ينطلق متسلّق من واد ارتفاعه $-120\\,\\mathrm{m}$ بالنسبة إلى مستوى سطح البحر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ينطلق متسلّق من الارتفاع $-120$ ويصل إلى الارتفاع $+480$ بالمتر. كم مترًا صعد ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "600",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "360"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-600"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطتان على جهة واحدة من المبدأ أم على جهتين مختلفتين ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى ناقص الفاصلة الصغرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا : تحقّق من الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB=600$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى $+480$ والفاصلة الصغرى $-120$",
+          "$AB=(+480)-(-120)=600$"
+        ],
+        "result": "600"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "من الارتفاع $-120$ صعد المتسلّق $600$ أمتار ثمّ نزل $250$ . احسب ارتفاعه الجديد : $(-120)+(+600)-(+250)$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "230",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-JABRI-NOTURN",
+          "value": "730"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نحوّل كلّ طرح إلى جمع لمعاكس العدد المطروح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نجمع الموجبة فيما بينها والسالبة فيما بينها، ونحسب ما بين الأقواس أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "في الأخير نجمع عددين من إشارتين مختلفتين : نأخذ إشارة الأبعد عن الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "$(-120)+(+600)-(+250)=(+230)$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "نحوّل كلّ طرح إلى جمع للمعاكس : $(-120)+(+600)+(-250)$",
+          "نجمع الموجبة معًا والسالبة معًا : $(+600)+(-370)$",
+          "المجموع الجبري : $(+230)$"
+        ],
+        "result": "230"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ارتفاعات أربع محطّات: $-120$ ، $+480$ ، $-45$ ، $+230$ . رتّبها تنازليًا.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$480 > 230 > -120 > -45$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-SBD"
+        },
+        {
+          "id": "B",
+          "content": "$-120 > -45 > 230 > 480$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-OD"
+        },
+        {
+          "id": "C",
+          "content": "$480 > -45 > 230 > -120$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$480 > 230 > -45 > -120$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "السالب أصغر من الصفر وكلّ موجب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بين عددين سالبين الأصغر هو الأبعد عن الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الأعداد من الأصغر إلى الأكبر، ثمّ عكس الترتيب إن طُلب التنازلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$480 > 230 > -45 > -120$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "السالبة أصغر من الصفر ومن الموجبة، وبين السالبة الأصغر هو الأبعد عن الصفر",
+          "الترتيب التنازلي : $480 > 230 > -45 > -120$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "محطّتان ارتفاعاهما $-120$ و $-45$ . ما فرق ارتفاعيهما ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "75",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-ADDSAME",
+          "value": "165"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-75"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطتان على جهة واحدة من المبدأ أم على جهتين مختلفتين ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى ناقص الفاصلة الصغرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا : تحقّق من الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$CD=75$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى $-45$ والفاصلة الصغرى $-120$",
+          "$CD=(-45)-(-120)=75$"
+        ],
+        "result": "75"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

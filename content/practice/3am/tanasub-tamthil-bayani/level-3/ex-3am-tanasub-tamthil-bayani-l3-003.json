@@ -1,0 +1,377 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l3-003",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 3,
+  "metadata": {
+    "title": "ثلاثة جداول وثلاثة بيانات",
+    "estimatedMinutes": 10,
+    "tags": [
+      "تمثيل بياني",
+      "جداول"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-1",
+      "page": 94,
+      "section": "أوظّف تعلّماتي",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين الثالث",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "تقارن ثلاث تعاونيات فلاحية أسعار قفّة الخضر. يعطي كل جدول سعر القفّة (بمئات الدنانير) بدلالة عدد القفف. ومثّلنا في المعلم التالي الجداول الثلاثة بثلاثة بيانات $(G_1)$ و $(G_2)$ و $(G_3)$ .\nالجدول ①: عدد القفف $2\\ ;\\ 4\\ ;\\ 6$ والسعر $3\\ ;\\ 6\\ ;\\ 9$ .\nالجدول ②: عدد القفف $2\\ ;\\ 4\\ ;\\ 6$ والسعر $3\\ ;\\ 5\\ ;\\ 7$ .\nالجدول ③: عدد القفف $1\\ ;\\ 4\\ ;\\ 9$ والسعر $2\\ ;\\ 4\\ ;\\ 6$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "H": [
+          6,
+          9
+        ],
+        "R": [
+          0,
+          1
+        ],
+        "S": [
+          6,
+          7
+        ],
+        "P1": [
+          1,
+          2
+        ],
+        "P2": [
+          2.25,
+          3
+        ],
+        "P3": [
+          4,
+          4
+        ],
+        "P4": [
+          6.25,
+          5
+        ],
+        "G₃": [
+          9,
+          6
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "P1",
+          "tone": "emerald"
+        },
+        {
+          "from": "P1",
+          "to": "P2",
+          "tone": "emerald"
+        },
+        {
+          "from": "P2",
+          "to": "P3",
+          "tone": "emerald"
+        },
+        {
+          "from": "P3",
+          "to": "P4",
+          "tone": "emerald"
+        },
+        {
+          "from": "P4",
+          "to": "G₃",
+          "tone": "emerald"
+        }
+      ],
+      "lines": [
+        {
+          "through": [
+            "O",
+            "H"
+          ],
+          "name": "(G₁)",
+          "tone": "indigo",
+          "extend": [
+            0,
+            0
+          ]
+        },
+        {
+          "through": [
+            "R",
+            "S"
+          ],
+          "name": "(G₂)",
+          "tone": "rose",
+          "extend": [
+            0,
+            0
+          ]
+        }
+      ],
+      "grid": true,
+      "axes": {
+        "every": 2
+      },
+      "labels": {
+        "O": "sw"
+      },
+      "hidden": [
+        "H",
+        "R",
+        "S",
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ],
+      "ariaLabel": "معلم متعامد ومتجانس: ثلاثة بيانات، (G1) مستقيم يشمل المبدأ ويمرّ بالنقطة (6;9)، و(G2) مستقيم يقطع محور التراتيب في 1 ويمرّ بالنقطة (6;7)، و(G3) منحن ينطلق من المبدأ ويمرّ بالنقط (1;2) و(4;4) و(9;6)",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: عدد القفف — محور التراتيب: السعر بمئات الدنانير"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ بيان يمثّل الجدول ② ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(G_1)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-ORIGIN-DROP"
+        },
+        {
+          "id": "B",
+          "content": "$(G_3)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-JOIN-DOTS"
+        },
+        {
+          "id": "C",
+          "content": "$(G_2)$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خذ نقطة من الجدول ②، مثل $(2\\,;\\,3)$ ، وابحث أيّ بيان يمرّ بها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم تحقّق بنقطة أخرى مثل $(6\\,;\\,7)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطتان $(2\\,;\\,3)$ و $(6\\,;\\,7)$ تقعان على $(G_2)$ .",
+        "incorrect": "تحقّق بنقطتين على الأقل من الجدول قبل أن تختار البيان."
+      },
+      "solution": {
+        "lines": [
+          "من الجدول ②: النقط $(2\\,;\\,3)$ و $(4\\,;\\,5)$ و $(6\\,;\\,7)$ .",
+          "هذه النقط على المستقيم $(G_2)$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أيّ هذه الجداول يمثّل وضعية تناسبية؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الجدول ③: لأنّ بيانه ينطلق من المبدأ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-THROUGH-O-ANY"
+        },
+        {
+          "id": "B",
+          "content": "الجدول ① فقط",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "الجدول ②: لأنّ نقطه على استقامة واحدة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-LINE-ANY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن البيان الذي هو مستقيم يشمل المبدأ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق بالحساب: ناتج قسمة السعر على العدد ثابت في الجدول التناسبي."
+        }
+      ],
+      "feedback": {
+        "correct": "في الجدول ①: $\\dfrac{3}{2} = \\dfrac{6}{4} = \\dfrac{9}{6} = 1{,}5$ وبيانه $(G_1)$ مستقيم يشمل $O$ .",
+        "incorrect": "يجب أن يكون البيان مستقيما ويشمل المبدأ في آن واحد."
+      },
+      "solution": {
+        "lines": [
+          "$(G_1)$ مستقيم يشمل $O$ : الجدول ① تناسبي ($\\frac{3}{2} = \\frac{6}{4} = \\frac{9}{6}$).",
+          "$(G_2)$ لا يشمل $O$ ، و $(G_3)$ ليس مستقيما."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "هل يمثّل $(G_3)$ وضعية تناسبية؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، النقط ليست على مستقيم: الرسم منحنٍ",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم، لأنّ المنحنى يمرّ بالمبدأ $O$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-THROUGH-O-ANY"
+        },
+        {
+          "id": "C",
+          "content": "نعم، لأنّ الترتيب يكبر كلما كبرت الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-RISING"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط ليست على مستقيم، فليست الوضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "$(G_3)$ ينطلق من $O$ لكنّه منحنٍ، أي نقطه ليست على استقامة واحدة.",
+          "إذن لا يمثّل وضعية تناسبية."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "ما معامل التناسبية للجدول ① (سعر القفة بمئات الدنانير)؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: معامل التناسبية",
+      "expectedAnswer": "1.5",
+      "misconceptionSignatures": [
+        {
+          "value": "2/3",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        },
+        {
+          "value": "3",
+          "id": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل التناسبية هو ترتيب النقطة الذي فاصلته $1$ ، أو ناتج قسمة الترتيب على الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ إحداثيي النقطة $H$ ثم اقسم الترتيب على الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تقسم الفاصلة على الترتيب ولا تطرح أحد العددين من الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{9}{6} = 1{,}5$ .",
+        "incorrect": "المعامل هو ناتج قسمة الترتيب على الفاصلة (وليس العكس) لنقطة من المستقيم."
+      },
+      "solution": {
+        "lines": [
+          "النقطة $H(6\\,;\\,9)$ من المستقيم.",
+          "$a = \\dfrac{9}{6} = 1{,}5$"
+        ],
+        "result": "a = 1{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

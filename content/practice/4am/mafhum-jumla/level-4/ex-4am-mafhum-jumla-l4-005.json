@@ -1,0 +1,225 @@
+{
+  "id": "ex-4am-mafhum-jumla-l4-005",
+  "lessonCode": "mafhum-jumla",
+  "level": 4,
+  "metadata": {
+    "title": "رحلة مدرسية",
+    "estimatedMinutes": 10,
+    "tags": [
+      "حالات خاصة",
+      "جملة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mafhum-jumla_P4",
+      "modelledOn": "know-cases"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في رحلة مدرسية لزيارة أحد معالم الوطن 40 مشاركا: $x$ تلميذا و $y$ مرافقا. أخذ كل مشارك وجبتين، فكان عدد الوجبات 80. كتب ياسين الجملة:",
+    "formulas": [
+      "\\begin{cases} x + y = 40 \\\\ 2x + 2y = 80 \\end{cases}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "بيّن إن كانت كل ثنائية حلا لهذه الجملة:",
+      "statement": "هل الثنائية $(35 ; 5)$ حل لهذه الجملة؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $35$ و $y$ بـ $5$ في كل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الثنائية حل للجملة إذا حققت المعادلتين في آن واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$35 + 5 = 40$ ؛ $2 \\times 35 + 2 \\times 5 = 80$ : الثنائية حل للجملة.",
+        "incorrect": "العدد الأول في الثنائية قيمة $x$ والثاني قيمة $y$ ؛ عوّض في المعادلتين معا وقارن كل نتيجة بالطرف الثاني."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $x$ بـ $35$ و $y$ بـ $5$ :",
+          "$35 + 5 = 40$",
+          "$2 \\times 35 + 2 \\times 5 = 80$",
+          "ومنه الثنائية $(35 ; 5)$ حل للجملة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل الثنائية $(30 ; 10)$ حل لهذه الجملة؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $30$ و $y$ بـ $10$ في كل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الثنائية حل للجملة إذا حققت المعادلتين في آن واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$30 + 10 = 40$ ؛ $2 \\times 30 + 2 \\times 10 = 80$ : الثنائية حل للجملة.",
+        "incorrect": "العدد الأول في الثنائية قيمة $x$ والثاني قيمة $y$ ؛ عوّض في المعادلتين معا وقارن كل نتيجة بالطرف الثاني."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $x$ بـ $30$ و $y$ بـ $10$ :",
+          "$30 + 10 = 40$",
+          "$2 \\times 30 + 2 \\times 10 = 80$",
+          "ومنه الثنائية $(30 ; 10)$ حل للجملة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل لهذه الجملة حل وحيد، أم ليس لها حل، أم لها عدد غير منته من الحلول؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لها حل وحيد",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-HALAT"
+        },
+        {
+          "id": "B",
+          "content": "ليس لها حل",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-HALAT"
+        },
+        {
+          "id": "C",
+          "content": "لها عدد غير منته من الحلول",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم طرفي المعادلة الثانية على 2."
+        }
+      ],
+      "feedback": {
+        "correct": "ومنه للجملة عدد غير منته من الحلول.",
+        "incorrect": "قارن المعادلتين بعد ضرب إحداهما أو قسمتها على عدد مناسب: هل تؤولان إلى معادلة واحدة، أم إلى معادلتين طرفاهما الأولان متساويان وطرفاهما الثانيان مختلفان؟"
+      },
+      "solution": {
+        "lines": [
+          "بقسمة طرفي المعادلة الثانية على 2 نجد: $x + y = 40$ ، وهي المعادلة الأولى.",
+          "الجملة تؤول إلى معادلة واحدة: كل ثنائية تحققها حل للجملة.",
+          "ومنه للجملة عدد غير منته من الحلول."
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "برّر لماذا لا تكفي معطيات ياسين لمعرفة عدد التلاميذ.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المعلومة الثانية بالأولى."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "المعلومة الثانية (وجبتان لكل مشارك) لا تضيف شيئا: $2x + 2y = 80$ هي $x + y = 40$ مضروبة في 2.",
+          "للجملة عدد غير منته من الحلول (مثل $(35 ; 5)$ و $(30 ; 10)$)، فلا نستطيع تعيين عدد التلاميذ.",
+          "يلزم شرط ثانٍ مختلف (مثلا: مرافق واحد لكل 7 تلاميذ)."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

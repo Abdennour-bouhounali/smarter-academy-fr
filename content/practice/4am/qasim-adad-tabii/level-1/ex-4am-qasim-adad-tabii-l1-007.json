@@ -1,0 +1,165 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l1-007",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2015 — 1891 و 31",
+    "estimatedMinutes": 4,
+    "tags": [
+      "قسمة إقليدية",
+      "مراحل الحساب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-adad-tabii_P1",
+      "modelledOn": "BEM 2015 I-1 01"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "اكتب المساواة التي تعبّر عن القسمة الإقليدية للعدد 1891 على 31 مع كتابة مراحل الحساب.",
+      "statement": "حاصل القسمة:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "61",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أكبر مضاعف للعدد 31 لا يتجاوز 1891."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل القسمة هو أكبر عدد طبيعي $q$ يحقق $31 \\times q \\leq 1891$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الباقي أصغر تمامًا من 31."
+        }
+      ],
+      "feedback": {
+        "correct": "$1891 = 31 \\times 61 + 0$ مع $0 < 31$.",
+        "incorrect": "ابحث عن أكبر مضاعف للعدد 31 لا يتجاوز 1891، ثم اطرحه من 1891."
+      },
+      "solution": {
+        "lines": [
+          "$31 \\times 61 = 1891$ و $31 \\times 62 = 1922$ أكبر من 1891.",
+          "$1891 - 1891 = 0$ و $0 < 31$",
+          "إذن المساواة التي تعبّر عن القسمة الإقليدية هي:"
+        ],
+        "result": "1891 = 31 \\times 61 + 0"
+      },
+      "work": "required",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "الباقي:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى من 1891 بعد طرح أكبر مضاعف للعدد 31 لا يتجاوزه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي عدد طبيعي أصغر تمامًا من 31."
+        }
+      ],
+      "feedback": {
+        "correct": "$1891 = 31 \\times 61 + 0$: الباقي 0، فهو معدوم.",
+        "incorrect": "اطرح من 1891 أكبر مضاعف للعدد 31 لا يتجاوزه."
+      },
+      "solution": {
+        "lines": [
+          "$1891 - 31 \\times 61 = 0$"
+        ],
+        "result": "r = 0"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل 31 قاسم للعدد 1891؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 1891 على 31."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "31 قاسم للعدد 1891 إذا وفقط إذا كان باقي هذه القسمة معدومًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$1891 = 31 \\times 61$: الباقي معدوم.",
+        "incorrect": "أجرِ القسمة الإقليدية للعدد 1891 على 31، وانظر هل الباقي معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$1891 = 31 \\times 61$ (الباقي معدوم).",
+          "إذن 31 قاسم للعدد 1891."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

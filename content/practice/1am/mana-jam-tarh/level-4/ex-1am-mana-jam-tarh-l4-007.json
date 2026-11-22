@@ -1,0 +1,211 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l4-007",
+  "lessonCode": "mana-jam-tarh",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — تجهيز قاعة المطالعة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "ميزانية",
+      "باقٍ",
+      "هل يكفي المبلغ"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 1,
+      "file": "1am-s1-98",
+      "exercise": 4
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الرابع",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "منحت البلدية لمتوسطة الحيّ مبلغ 60000 دج لتجهيز قاعة المطالعة، فقرّر المقتصد شراء: خزانة بـ 7250,85 دج، و 12 طاولة سعر الواحدة 2640,5 دج، وسبورة بـ 8975,5 دج. ثم أراد شراء كتب بـ 12500 دج من المبلغ المتبقي."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب سعر كل الطاولات.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "31686",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الطاولات × سعر الطاولة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$12 \\times 2640{,}5 = 10 \\times 2640{,}5 + 2 \\times 2640{,}5$"
+        }
+      ],
+      "feedback": {
+        "correct": "$12 \\times 2640{,}5 = 31686$ دج.",
+        "incorrect": "سعر الطاولات = عدد الطاولات × سعر الطاولة الواحدة."
+      },
+      "solution": {
+        "lines": [
+          "$12 \\times 2640{,}5 = 31686$"
+        ],
+        "result": "31686 \\text{ DA}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب التكلفة الإجمالية للتجهيزات.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "47912.35",
+      "misconceptionSignatures": [
+        {
+          "value": "18866.85",
+          "id": "MISC-JAMTARH-JUZ-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكلفة الإجمالية مجموع ثلاثة حدود."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل سعر كل الطاولات، لا سعر طاولة واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$7250{,}85 + 31686 + 8975{,}5 = 47912{,}35$ دج.",
+        "incorrect": "اجمع سعر الخزانة وسعر كل الطاولات وسعر السبورة."
+      },
+      "solution": {
+        "lines": [
+          "$7250{,}85 + 31686 + 8975{,}5 = 47912{,}35$"
+        ],
+        "result": "47912{,}35 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب المبلغ المتبقي بعد شراء التجهيزات.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "12087.65",
+      "misconceptionSignatures": [
+        {
+          "value": "107912.35",
+          "id": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ الممنوح هو الكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المتبقي جزء: نطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$60000 - 47912{,}35 = 12087{,}65$ دج.",
+        "incorrect": "المتبقي جزء من المبلغ الممنوح: اطرح التكلفة الإجمالية."
+      },
+      "solution": {
+        "lines": [
+          "$60000 - 47912{,}35 = 12087{,}65$"
+        ],
+        "result": "12087{,}65 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "هل يستطيع المقتصد شراء الكتب من المبلغ المتبقي؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-TAQDIR"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المبلغ المتبقي بثمن الكتب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الأجزاء الصحيحة أولًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$12087{,}65 < 12500$: لا يستطيع.",
+        "incorrect": "احسب المبلغ المتبقي بدقة، ثم قارنه بثمن الكتب."
+      },
+      "solution": {
+        "lines": [
+          "المبلغ المتبقي 12087,65 دج.",
+          "$12087{,}65 < 12500$ ، إذن لا يستطيع شراء الكتب."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

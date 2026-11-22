@@ -1,0 +1,93 @@
+{
+  "id": "ex-4am-hall-jabri-l2-004",
+  "lessonCode": "hall-jabri",
+  "level": 2,
+  "metadata": {
+    "title": "نضرب ثم نجمع",
+    "estimatedMinutes": 5,
+    "tags": [
+      "الجمع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-8",
+      "page": 60,
+      "section": "أوظّف تعلّماتي",
+      "number": 8
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "حل الجملة التالية بطريقة الجمع والتعويض: $\\begin{cases} 2x - y = 1 & ...(1) \\\\ 3x + 5y = 21 & ...(2) \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": {
+        "x": "2",
+        "y": "3"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "3",
+            "y": "2"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن معاملي $y$ في المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب طرفي المعادلة (1) في عدد مناسب ليصير معامل $y$ فيها معاكسا لمعامله في (2)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع المعادلتين طرفا لطرف، ثم عوّض القيمة في إحدى المعادلتين لتجد المجهول الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "الثنائية $(2 ; 3)$ تحقق المعادلتين معا: هي حل الجملة.",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "نضرب طرفي المعادلة (1) في $5$ :",
+          "$\\begin{cases} 10x - 5y = 5 \\\\ 3x + 5y = 21 \\end{cases}$",
+          "بجمع المعادلتين طرفا لطرف نجد: $13x = 26$",
+          "ومنه $x = 2$",
+          "نعوّض $x$ بـ $2$ في المعادلة (1): $2 \\times 2 - y = 1$",
+          "$-y = -3$",
+          "ومنه $y = 3$",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(2 ; 3)"
+      },
+      "work": "required",
+      "timeSeconds": 300
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+/* Le lecteur de mission (MissionPlayer.jsx). Mouvement COURT et porteur de sens ; rien quand l'élève réduit les animations. */
+
+/* L'unité courante entre : une animation CSS rejoue chaque fois que `hidden` est retiré (display none → visible). */
+[data-mission-player] .sa-classroom-module__unit:not([hidden]),
+[data-mission-player] [data-classroom-paged] > * > *:not([data-classroom-page-hidden]) {
+  animation: sa-mission-in 260ms ease-out;
+}
+
+@keyframes sa-mission-in {
+  from { opacity: 0; transform: translateX(-18px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* « التالي » s'éveille quand l'étape est faite : l'élève voit qu'il peut avancer. */
+.sa-mission-ready {
+  animation: sa-mission-ready 1.6s ease-in-out 2;
+}
+
+@keyframes sa-mission-ready {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.45); }
+  50% { box-shadow: 0 0 0 10px rgba(79, 70, 229, 0); }
+}
+
+/* L'outil qui vient d'être gagné brille dans la barre (seul effet quand le mouvement est réduit). */
+.sa-mission-earned {
+  animation: sa-mission-earned 1.2s ease-out 1.1s 2;
+}
+
+@keyframes sa-mission-earned {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.9); }
+  50% { box-shadow: 0 0 0 12px rgba(251, 191, 36, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sa-mission-earned { animation-delay: 0s; }
+
+  [data-mission-player] .sa-classroom-module__unit:not([hidden]),
+  [data-mission-player] [data-classroom-paged] > * > *:not([data-classroom-page-hidden]),
+  .sa-mission-ready {
+    animation: none;
+  }
+}
+
+/* « TimedNotice » : la barre de compte à rebours se vide (5 s) — information, donc animée même en mouvement réduit */
+.sa-timed-notice-bar {
+  animation-name: sa-timed-notice;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+@keyframes sa-timed-notice {
+  from { transform: scaleX(1); }
+  to { transform: scaleX(0); }
+}
+
+/* le signal « أحسنت » / « سنعود إليه » de « أستعدّ » et du اختبار أولي : un tampon qui se pose PAR-DESSUS la carte (2026-11-09) */
+.sa-play-signal {
+  animation: sa-play-signal-in 220ms cubic-bezier(0.2, 0.9, 0.3, 1.3) both;
+}
+@keyframes sa-play-signal-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.92); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sa-play-signal { animation: none; }
+}
+
+/* Une FIGURE et la question qui la suit, sur le même écran : la figure à côté (début de ligne), la question prend le reste
+   (ClassroomPaged › pairFigures, propriétaire 2026-11-11). Un élément ajouté ensuite repasse sous les deux. */
+[data-mission-player] [data-paging-pair="figure"]:not([data-classroom-page-hidden]),
+[data-mission-player] [data-paging-pair="statement"]:not([data-classroom-page-hidden]) {
+  float: inline-start;
+  width: min(42%, 440px);
+  margin-inline-end: 1.5rem;
+  margin-top: 0;
+}
+/* un énoncé qui porte sa figure : la moitié de l'écran */
+[data-mission-player] [data-paging-pair="statement"]:not([data-classroom-page-hidden]) {
+  width: 50%;
+}
+[data-mission-player] [data-paging-pair="side"],
+[data-mission-player] [data-paging-pair="question"] {
+  display: flow-root;
+}
+[data-mission-player] [data-paging-pair="question"] ~ * {
+  clear: both;
+}
+/* à côté d'une figure, une ligne de choix (BatchChoiceQuestion) ne réserve plus 14rem à son étiquette : ses choix restent sur une ligne
+   au lieu de s'empiler un par ligne (aksiya-talis, 1024 × 768 : l'écran tombait à 66 %) */
+[data-mission-player] [data-paging-pair="question"] [data-batch-cols] > div > div:first-child {
+  min-width: 4.5rem;
+}
+/* le conteneur CONTIENT la figure flottante : elle ne déborde jamais sous la carte de l'étape */
+[data-mission-player] :has(> [data-paging-pair="figure"]:not([data-classroom-page-hidden])),
+[data-mission-player] :has(> [data-paging-pair="statement"]:not([data-classroom-page-hidden])) {
+  display: flow-root;
+}

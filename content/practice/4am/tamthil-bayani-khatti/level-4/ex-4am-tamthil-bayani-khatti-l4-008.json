@@ -1,0 +1,396 @@
+{
+  "id": "ex-4am-tamthil-bayani-khatti-l4-008",
+  "lessonCode": "tamthil-bayani-khatti",
+  "level": 4,
+  "metadata": {
+    "title": "إشارتا معاملين ومستقيمان",
+    "estimatedMinutes": 12,
+    "tags": [
+      "إشارة المعامل",
+      "قراءة بيانية",
+      "معامل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tamthil-bayani-khatti_P3",
+      "modelledOn": "tech-76",
+      "adaptedFrom": "ex-4am-tamthil-bayani-khatti-l4-008"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "في المعلم المتعامد والمتجانس التالي، $(D)$ و $(\\Delta)$ هما التمثيلان البيانيان للدالتين الخطيتين $f : x \\longmapsto ax$ و $g : x \\longmapsto bx$ على الترتيب.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "K1": [
+          -3,
+          -2
+        ],
+        "H1": [
+          3,
+          2
+        ],
+        "K2": [
+          -2,
+          3
+        ],
+        "H2": [
+          2,
+          -3
+        ]
+      },
+      "lines": [
+        {
+          "through": [
+            "K1",
+            "H1"
+          ],
+          "name": "(D)",
+          "tone": "indigo",
+          "extend": [
+            0.1,
+            0.1
+          ]
+        },
+        {
+          "through": [
+            "K2",
+            "H2"
+          ],
+          "name": "(Δ)",
+          "tone": "rose",
+          "extend": [
+            0.1,
+            0.1
+          ]
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw"
+      },
+      "hidden": [
+        "K1",
+        "H1",
+        "K2",
+        "H2"
+      ],
+      "ariaLabel": "معلم متعامد ومتجانس على ورقة مرصوفة: المستقيم (D) يشمل المبدأ ويصعد، والمستقيم (Δ) يشمل المبدأ وينزل"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "عيّن إشارة كل من العددين $a$ و $b$ ، مع التعليل.",
+      "statement": "إشارة $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "موجب",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "سالب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-BAYANI-MUNHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى منحى المستقيم $(D)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مستقيم يصعد يمثّل دالة خطية معاملها موجب."
+        }
+      ],
+      "feedback": {
+        "correct": "$(D)$ يصعد من اليسار إلى اليمين: $a > 0$ .",
+        "incorrect": "إذا صعد المستقيم من اليسار إلى اليمين كان المعامل موجبا."
+      },
+      "solution": {
+        "lines": [
+          "$(D)$ يصعد من اليسار إلى اليمين، إذن $a > 0$ ."
+        ],
+        "result": "a > 0"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "إشارة $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "موجب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-BAYANI-MUNHA"
+        },
+        {
+          "id": "B",
+          "content": "سالب",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى منحى المستقيم $(\\Delta)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$(\\Delta)$ ينزل من اليسار إلى اليمين: $b < 0$ .",
+        "incorrect": "إذا نزل المستقيم من اليسار إلى اليمين كان المعامل سالبا."
+      },
+      "solution": {
+        "lines": [
+          "$(\\Delta)$ ينزل من اليسار إلى اليمين، إذن $b < 0$ ."
+        ],
+        "result": "b < 0"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "بقراءة بيانية:",
+      "statement": "عيّن صورة العدد 3 بالدالة $f$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "4,5",
+          "id": "MISC-BAYANI-FASILA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ من العدد المعطى على محور الفواصل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اتجه عموديا حتى المستقيم $(D)$ ، ثم أفقيا حتى محور التراتيب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الصورة هي ترتيب نقطة المستقيم التي فاصلتها هذا العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة من $(D)$ التي فاصلتها $3$ ترتيبها $2$ .",
+        "incorrect": "الصورة تُقرأ على محور التراتيب: ترتيب نقطة المستقيم، لا فاصلتها."
+      },
+      "solution": {
+        "lines": [
+          "النقطة من المستقيم $(D)$ التي فاصلتها $3$ ترتيبها $2$ .",
+          "إذن صورة العدد $3$ بالدالة $f$ هي $2$ ."
+        ],
+        "result": "f(3) = 2"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "عيّن العدد الذي صورته 3 بالدالة $g$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "-4,5",
+          "id": "MISC-BAYANI-FASILA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ من العدد المعطى على محور التراتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اتجه أفقيا حتى المستقيم $(\\Delta)$ ، ثم عموديا حتى محور الفواصل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد المطلوب هو فاصلة نقطة المستقيم التي ترتيبها الصورة المعطاة."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة من $(\\Delta)$ التي ترتيبها $3$ فاصلتها $-2$ .",
+        "incorrect": "العدد الذي علمت صورته يُقرأ على محور الفواصل: فاصلة نقطة المستقيم التي ترتيبها الصورة المعطاة."
+      },
+      "solution": {
+        "lines": [
+          "النقطة من المستقيم $(\\Delta)$ التي ترتيبها $3$ فاصلتها $-2$ .",
+          "إذن العدد الذي صورته $3$ بالدالة $g$ هو $-2$ ."
+        ],
+        "result": "g(-2) = 3"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ا",
+      "lead": "استنتج قيمة كل من العددين $a$ و $b$ .",
+      "statement": "قيمة $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "2/3",
+      "misconceptionSignatures": [
+        {
+          "value": "3/2",
+          "id": "MISC-KHATTIYA-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$f$ دالة خطية: $f(x) = ax$ ، وتمثيلها يشمل النقطة ذات الإحداثيين $(3 ; 2)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب المعادلة $a \\times 3 = 2$ ثم حلّها: الترتيب على الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{2}{3} = \\dfrac{2}{3}$ ، إذن $f(x) = \\dfrac{2}{3}x$ .",
+        "incorrect": "المعامل هو الترتيب مقسوما على الفاصلة (وليس العكس)، مع الانتباه إلى الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "$f$ دالة خطية، إذن $f(x) = ax$ .",
+          "$f(3) = 2$ معناه $a \\times 3 = 2$",
+          "$a = \\dfrac{2}{3} = \\dfrac{2}{3}$"
+        ],
+        "result": "f(x) = \\dfrac{2}{3}x"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ب",
+      "statement": "قيمة $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-3/2",
+      "misconceptionSignatures": [
+        {
+          "value": "-2/3",
+          "id": "MISC-KHATTIYA-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$g$ دالة خطية: $g(x) = ax$ ، وتمثيلها يشمل النقطة ذات الإحداثيين $(-2 ; 3)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب المعادلة $a \\times \\left(-2\\right) = 3$ ثم حلّها: الترتيب على الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{3}{-2} = -\\dfrac{3}{2}$ ، إذن $g(x) = -\\dfrac{3}{2}x$ .",
+        "incorrect": "المعامل هو الترتيب مقسوما على الفاصلة (وليس العكس)، مع الانتباه إلى الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "$g$ دالة خطية، إذن $g(x) = ax$ .",
+          "$g(-2) = 3$ معناه $a \\times \\left(-2\\right) = 3$",
+          "$a = \\dfrac{3}{-2} = -\\dfrac{3}{2}$"
+        ],
+        "result": "g(x) = -\\dfrac{3}{2}x"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-maalam-l2-010",
+  "lessonCode": "wadiya-idmajiya-maalam",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — نصف دائرة قطرها مائل",
+    "estimatedMinutes": 3,
+    "tags": [
+      "نصف دائرة",
+      "المسافة بين نقطتين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-maalam_P3",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "مسار لطائرة مسيّرة في عرض ضوئي: نصف دائرة قطرها $[OQ]$ حيث $O(0\\,;\\,0)$ و $Q(4\\,;\\,2)$ (معلم متعامد ومتجانس، الوحدة $1\\,\\mathrm{km}$)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "طول نصف الدائرة بالقيمة المضبوطة:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3\\pi\\,\\mathrm{km}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-JAM"
+        },
+        {
+          "id": "B",
+          "content": "$5\\pi\\,\\mathrm{km}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-NASI"
+        },
+        {
+          "id": "C",
+          "content": "$\\sqrt{5}\\,\\pi\\,\\mathrm{km}$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$2\\sqrt{5}\\,\\pi\\,\\mathrm{km}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-NISF-DAIRA-MUHIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القطر $OQ = \\sqrt{4^2 + 2^2}$"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$OQ = \\sqrt{20} = 2\\sqrt{5}$ ، فنصف القطر $\\sqrt{5}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الطول $\\pi r$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$OQ = \\sqrt{20} = 2\\sqrt{5}$ ، $r = \\sqrt{5}$ ، والطول $\\sqrt{5}\\,\\pi \\approx 7{,}02\\,\\mathrm{km}$ .",
+        "incorrect": "احسب القطر بالمسافة بين نقطتين، ثم نصفه، ثم اضرب في π."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 2
+    }
+  ]
+}

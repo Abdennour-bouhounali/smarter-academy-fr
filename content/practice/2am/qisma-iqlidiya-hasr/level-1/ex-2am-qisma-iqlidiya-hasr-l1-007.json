@@ -1,0 +1,184 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l1-007",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أيّ المساواة قسمة إقليدية؟",
+    "estimatedMinutes": 5,
+    "tags": [
+      "قسمة إقليدية",
+      "الباقي أصغر من المقسوم عليه"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "كتب ثلاثة تلاميذ مساواة لقسمة العدد 500 على 23. هل تعبّر كل مساواة عن القسمة الإقليدية للعدد 500 على 23؟"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "مساواة أنس: $500 = 23 \\times 20 + 40$",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق أولًا من صحة المساواة بالحساب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم قارن العدد المضاف بالمقسوم عليه 23."
+        }
+      ],
+      "feedback": {
+        "correct": "المساواة صحيحة لكن $40 \\ge 23$: يمكن أخذ 23 مرّة أخرى.",
+        "incorrect": "القسمة الإقليدية على 23: مساواة صحيحة وباقٍ أصغر من 23."
+      },
+      "solution": {
+        "lines": [
+          "$23 \\times 20 + 40 = 500$",
+          "المساواة صحيحة لكن $40 \\ge 23$: يمكن أخذ 23 مرّة أخرى.",
+          "القسمة الإقليدية هي $500 = 23 \\times 21 + 17$."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "مساواة سلمى: $500 = 23 \\times 21 + 17$",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-HISAB"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق أولًا من صحة المساواة بالحساب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم قارن العدد المضاف بالمقسوم عليه 23."
+        }
+      ],
+      "feedback": {
+        "correct": "المساواة صحيحة و $17 < 23$.",
+        "incorrect": "القسمة الإقليدية على 23: مساواة صحيحة وباقٍ أصغر من 23."
+      },
+      "solution": {
+        "lines": [
+          "$23 \\times 21 + 17 = 500$",
+          "المساواة صحيحة و $17 < 23$."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "مساواة يحيى: $500 = 23 \\times 22 + 6$",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-HISAB"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق أولًا من صحة المساواة بالحساب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم قارن العدد المضاف بالمقسوم عليه 23."
+        }
+      ],
+      "feedback": {
+        "correct": "$23 \\times 22 + 6 = 512$ وهذا لا يساوي 500: المساواة خاطئة.",
+        "incorrect": "القسمة الإقليدية على 23: مساواة صحيحة وباقٍ أصغر من 23."
+      },
+      "solution": {
+        "lines": [
+          "$23 \\times 22 + 6 = 512$",
+          "$23 \\times 22 + 6 = 512$ وهذا لا يساوي 500: المساواة خاطئة.",
+          "القسمة الإقليدية هي $500 = 23 \\times 21 + 17$."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l5-003",
+  "lessonCode": "maqati-mustawiya",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — قبة الفلك",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مقطع كرة",
+      "بدلالة π"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_maqati-mustawiya_P1",
+      "modelledOn": "act-2"
+    }
+  },
+  "statement": {
+    "content": "كرة القبة الفلكية نصف قطرها $5\\,\\mathrm{m}$ ، يمسحها شعاع ليزر أفقي في مستو يبعد عن مركزها بـ $3\\,\\mathrm{m}$ ويضيء القرص المقطع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مساحة القرص المضيء على الشكل $k\\pi\\,\\mathrm{m}^2$ : أعط k.",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (المعامل k)",
+      "expectedAnswer": "16",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAQTA-TARH",
+          "value": "4"
+        },
+        {
+          "id": "MISC-MAQTA-JAM",
+          "value": "34"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب نصف قطر المقطع أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$r^2 = 5^2 - 3^2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مساحة القرص $\\pi r^2$ ، و $r^2$ محسوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$r^2 = 25 - 9 = 16$ ، المساحة $16\\pi\\,\\mathrm{m}^2$ : $k = 16$ .",
+        "incorrect": "$(5 - 3)^2 = 4$ يطرح الطولين، و $34$ يجمع المربعين."
+      },
+      "difficulty": 5
+    }
+  ]
+}

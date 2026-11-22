@@ -1,0 +1,356 @@
+{
+  "id": "ex-1am-hasil-qisma-kasr-l5-008",
+  "lessonCode": "hasil-qisma-kasr",
+  "level": 5,
+  "metadata": {
+    "title": "التحقّق من قسمة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "العدد الناقص",
+      "قيمة مقرّبة",
+      "تحقّق"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-2",
+      "page": 60,
+      "section": "أتعمّق",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "أجرت ليلى القسمة العشرية للعدد 38 على 7 فوجدت $5{,}42$، ثم أرادت أن تتحقّق من نتيجتها بالضرب بأمانة علمية.\nالجزء الأول: نتحقّق ونكتب الكسر.\nالجزء الثاني: نقرّب ونقرّر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $7 \\times 5{,}42$.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة)",
+      "expectedAnswer": "1897/50",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب 5,42 في 7 كما تضرب عددين طبيعيين ثم ضع الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كم رقمًا بعد الفاصلة في 5,42 ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$7 \\times 5{,}42 = 37{,}94$",
+        "incorrect": "نضرب دون النظر إلى الفاصلة، ثم نضع في الناتج عدد الأرقام بعد الفاصلة نفسه الموجود في العامل العشري."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 542 = 3794$",
+          "$7 \\times 5{,}42 = 37{,}94$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$7 \\times 5{,}42 = 38$",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASIL-QIMA"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل جوابك عن السؤال السابق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل القسمة المضبوط إذا ضُرب في 7 أعطى 38 تمامًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$7 \\times 5{,}42 = 37{,}94 \\neq 38$.",
+        "incorrect": "العدد الذي نضربه في $b$ لنحصل على $a$ هو حاصل قسمة $a$ على $b$ ، أي $\\dfrac{a}{b}$ ؛ لا نطرح العددين ولا نضربهما."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 5{,}42 = 37{,}94$ ولا يساوي 38 : العبارة خاطئة."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "اكتب حاصل قسمة 38 على 7 على شكل كسر.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "38/7",
+      "misconceptionSignatures": [
+        {
+          "value": "7/38",
+          "id": "MISC-HASIL-QALB"
+        },
+        {
+          "value": "38,7",
+          "id": "MISC-HASIL-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العدد الذي نقسمه والعدد الذي نقسم عليه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في الكتابة الكسرية يوضع المقسوم فوق الشرطة والمقسوم عليه تحتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب القسمة أولًا ثم حوّلها إلى كسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$38 \\div 7$ = $\\dfrac{38}{7}$ : المقسوم بسط والمقسوم عليه مقام.",
+        "incorrect": "الكسر $\\dfrac{a}{b}$ هو حاصل قسمة $a$ على $b$ : البسط هو المقسوم والمقام هو المقسوم عليه، والشرطة لا تتحوّل إلى فاصلة."
+      },
+      "solution": {
+        "lines": [
+          "$38 \\div 7$ = $\\dfrac{38}{7}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "statement": "$\\dfrac{38}{7} \\times 7 = \\ldots$",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (طبيعي أو كسر)",
+      "expectedAnswer": "38",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي ضربنا الكسر فيه؟ وما مقام الكسر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكسر $\\dfrac{a}{b}$ هو العدد الذي إذا ضُرب في $b$ أعطى $a$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن العامل المضروب فيه بمقام الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{38}{7} \\times 7 = 38$",
+        "incorrect": "العدد الذي نضربه في $b$ لنحصل على $a$ هو حاصل قسمة $a$ على $b$ ، أي $\\dfrac{a}{b}$ ؛ لا نطرح العددين ولا نضربهما."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{38}{7} \\times 7 = 38$ : الكسر مضروب في مقامه يعطي بسطه."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أعط القيمة المقرّبة بالنقصان إلى 0,01 لحاصل قسمة 38 على 7.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بـ رقمين بعد الفاصلة",
+      "expectedAnswer": "5,42",
+      "misconceptionSignatures": [
+        {
+          "value": "5,43",
+          "id": "MISC-HASIL-TAQRIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أرقام حاصل القسمة بعد الفاصلة حتى المرتبة المطلوبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمة المقرّبة بالنقصان أصغر من الحاصل، والقيمة المقرّبة بالزيادة أكبر منه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زِد وحدة واحدة على آخر رقم محتفَظ به عند التقريب بالزيادة."
+        }
+      ],
+      "feedback": {
+        "correct": "$38 \\div 7$ = $5{,}4285$…، إذن القيمة المقرّبة بالنقصان هي $5{,}42$.",
+        "incorrect": "القيمة المقرّبة ليست قيمة مضبوطة : بالنقصان نحذف ما بعد المرتبة المطلوبة، وبالزيادة نزيد وحدة على آخر رقم محتفَظ به."
+      },
+      "solution": {
+        "lines": [
+          "$38 \\div 7$ = $5{,}4285$… (الأرقام لا تتوقّف)",
+          "$5{,}42$ < $\\dfrac{38}{7}$ < $5{,}43$ : بالنقصان نأخذ $5{,}42$."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ج",
+      "statement": "أعط القيمة المقرّبة بالزيادة إلى 0,01 لحاصل قسمة 38 على 7.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بـ رقمين بعد الفاصلة",
+      "expectedAnswer": "5,43",
+      "misconceptionSignatures": [
+        {
+          "value": "5,42",
+          "id": "MISC-HASIL-TAQRIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أرقام حاصل القسمة بعد الفاصلة حتى المرتبة المطلوبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمة المقرّبة بالنقصان أصغر من الحاصل، والقيمة المقرّبة بالزيادة أكبر منه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زِد وحدة واحدة على آخر رقم محتفَظ به عند التقريب بالزيادة."
+        }
+      ],
+      "feedback": {
+        "correct": "$38 \\div 7$ = $5{,}4285$…، إذن القيمة المقرّبة بالزيادة هي $5{,}43$.",
+        "incorrect": "القيمة المقرّبة ليست قيمة مضبوطة : بالنقصان نحذف ما بعد المرتبة المطلوبة، وبالزيادة نزيد وحدة على آخر رقم محتفَظ به."
+      },
+      "solution": {
+        "lines": [
+          "$38 \\div 7$ = $5{,}4285$… (الأرقام لا تتوقّف)",
+          "$5{,}42$ < $\\dfrac{38}{7}$ < $5{,}43$ : بالزيادة نأخذ $5{,}43$."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "02",
+      "sub": "د",
+      "statement": "اشرح لليلى لماذا لم تجد 38 عند التحقّق، وبمَ تنصحها لتكتب حاصل القسمة بدقّة.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن ما وجدته بالضرب بالعدد 38."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل الكتابة $5{,}42$ مضبوطة أم مقرّبة ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي.",
+        "incorrect": "راجع التعريف وأعد صياغة التبرير."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 5{,}42 = 37{,}94 \\neq 38$ : العدد $5{,}42$ ليس حاصل القسمة المضبوط بل قيمة مقرّبة بالنقصان.",
+          "تنصحها بأن تكتب الكسر $\\dfrac{38}{7}$ لأنّه يحقّق $\\dfrac{38}{7} \\times 7 = 38$ بالضبط، أو أن تقول : « قيمة مقرّبة بالنقصان إلى 0,01 هي $5{,}42$ »."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

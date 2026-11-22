@@ -1,0 +1,164 @@
+{
+  "id": "ex-4am-tarrid-taalufi-l4-008",
+  "lessonCode": "tarrid-taalufi",
+  "level": 4,
+  "metadata": {
+    "title": "كراء درّاجة — حدّ عشري",
+    "estimatedMinutes": 12,
+    "tags": [
+      "متراجحة",
+      "عدد طبيعي",
+      "عدد عشري"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-taalufi_P2",
+      "modelledOn": "act-4",
+      "adaptedFrom": "ex-4am-tarrid-taalufi-l4-008"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "كراء درّاجة: الصيغة A $f(x) = 120x + 500$ ، والصيغة B $g(x) = 200x$ (بـ DA)، حيث $x$ عدد الساعات الكاملة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "نبحث متى تكون الصيغة A أقل تكلفة تماما.",
+      "statement": "حل المتراجحة: $120x + 500 < 200x$ .\nحدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x < k$ أو $x > k$ : اكتب العدد $k$ فقط",
+      "expectedAnswer": "6,25",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحدّ هو حل المعادلة المرفقة $120x + 500 = 200x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "حدّ الحلول هو حل المعادلة المرفقة.",
+        "incorrect": "انقل حدود $x$ إلى طرف واحد ثم اقسم على معامل $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$120x + 500 < 200x$",
+          "$500 < 80x$",
+          "$\\dfrac{500}{80} < x$",
+          "$6{,}25 < x$ ، أي $x > 6{,}25$"
+        ],
+        "result": "x > 6{,}25"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < 6{,}25$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QALB-ZAID"
+        },
+        {
+          "id": "B",
+          "content": "$x > 6{,}25$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قسمنا في آخر سطر على عدد موجب."
+        }
+      ],
+      "feedback": {
+        "correct": "الصيغة A أقل تكلفة تماما عندما يتجاوز عدد الساعات هذا الحدّ.",
+        "incorrect": "القسمة على عدد موجب لا تغيّر اتجاه المتباينة."
+      },
+      "solution": {
+        "lines": [
+          "$120x + 500 < 200x$",
+          "$500 < 80x$",
+          "$\\dfrac{500}{80} < x$",
+          "$6{,}25 < x$ ، أي $x > 6{,}25$"
+        ],
+        "result": "x > 6{,}25"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ابتداء من كم ساعة كاملة تكون الصيغة A أقل تكلفة تماما؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الساعات",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحدّ ليس عددا طبيعيا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خذ أول عدد طبيعي أكبر منه."
+        }
+      ],
+      "feedback": {
+        "correct": "هو أول عدد طبيعي أكبر تماما من الحدّ.",
+        "incorrect": "لا تقرّب الحدّ إلى الأسفل: العدد الطبيعي الأصغر منه لا يحقّق المتراجحة."
+      },
+      "solution": {
+        "lines": [
+          "$120x + 500 < 200x$",
+          "$500 < 80x$",
+          "$\\dfrac{500}{80} < x$",
+          "$6{,}25 < x$ ، أي $x > 6{,}25$",
+          "أصغر عدد طبيعي أكبر تماما من 6,25 هو 7: $f(7) = 1340DA$ و $g(7) = 1400DA$ ، بينما $f(6) = 1220DA$ و $g(6) = 1200DA$ ."
+        ],
+        "result": "7"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

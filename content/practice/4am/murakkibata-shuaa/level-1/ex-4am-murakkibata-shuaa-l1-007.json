@@ -1,0 +1,80 @@
+{
+  "id": "ex-4am-murakkibata-shuaa-l1-007",
+  "lessonCode": "murakkibata-shuaa",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — ماذا تعني المركبة الأولى؟",
+    "estimatedMinutes": 2,
+    "tags": [
+      "مفردات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_murakkibata-shuaa_P1",
+      "modelledOn": "act-1"
+    }
+  },
+  "statement": {
+    "content": "الشعاع $\\overrightarrow{AB}$ في معلم متعامد ومتجانس، ونكتب مركبتيه $\\begin{pmatrix} a \\\\ b \\end{pmatrix}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "العدد a هو:",
+      "learningPoints": [
+        {
+          "code": "4am_murakkibata-shuaa_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الإزاحة من A إلى B بموازاة محور الفواصل، بإشارتها",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "فاصلة النقطة B",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        },
+        {
+          "id": "C",
+          "content": "الإزاحة من A إلى B بموازاة محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-TABDIL-X-Y"
+        },
+        {
+          "id": "D",
+          "content": "عدد المربعات الأفقية دون إشارة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انطلق من مبدأ الشعاع وعُدّ المربعات بموازاة محور الفواصل، ثم بموازاة محور التراتيب، حتى نهايته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نحو اليمين أو نحو الأعلى العدد موجب، ونحو اليسار أو نحو الأسفل العدد سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب أولا الإزاحة الأفقية ثم الإزاحة العمودية، كل واحدة بإشارتها."
+        }
+      ],
+      "feedback": {
+        "correct": "a هي الإزاحة الأفقية من المبدأ إلى النهاية، و b هي الإزاحة العمودية.",
+        "incorrect": "المركبة الأولى أفقية وتحمل إشارتها."
+      }
+    }
+  ]
+}

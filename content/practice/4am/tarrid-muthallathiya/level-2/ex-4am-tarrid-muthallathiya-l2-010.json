@@ -1,0 +1,201 @@
+{
+  "id": "ex-4am-tarrid-muthallathiya-l2-010",
+  "lessonCode": "tarrid-muthallathiya",
+  "level": 2,
+  "metadata": {
+    "title": "الوتر ثم الضلع المجاور من ضلع مقابل",
+    "estimatedMinutes": 6,
+    "tags": [
+      "الجيب",
+      "الظل",
+      "حل المثلث القائم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-muthallathiya_P2",
+      "modelledOn": "method-sin",
+      "adaptedFrom": "ex-4am-tarrid-muthallathiya-l3-006"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$DEF$ مثلث قائم في $D$ حيث $\\widehat{DEF} = 28^{\\circ}$ و $DF = 5\\,\\mathrm{cm}$ (الشكل المقابل).",
+    "figure": {
+      "points": {
+        "D": [
+          0.0,
+          0.0
+        ],
+        "E": [
+          9.4036,
+          0.0
+        ],
+        "F": [
+          0.0,
+          5.0
+        ]
+      },
+      "segments": [
+        [
+          "D",
+          "E"
+        ],
+        {
+          "from": "D",
+          "to": "F",
+          "label": "5 cm"
+        },
+        [
+          "E",
+          "F"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "E",
+          "D",
+          "F"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "E",
+          "from": "F",
+          "to": "D",
+          "label": "28°"
+        }
+      ],
+      "labels": {
+        "D": "sw",
+        "E": "se",
+        "F": "nw"
+      },
+      "ariaLabel": "مثلث DEF قائم في D، الزاوية DEF قيسها 28 درجة، و DF = 5 cm",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $EF$ بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm مدوّرا إلى 0,01",
+      "expectedAnswer": "10.65",
+      "misconceptionSignatures": [
+        {
+          "value": "2.35",
+          "id": "MISC-MUTH-DARB-BADAL-QISMA"
+        },
+        {
+          "value": "5.66",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $DEF$ القائم في $D$ ، حدّد موقع الضلع المعلوم والضلع المطلوب بالنسبة إلى الزاوية $\\widehat{DEF}$ (مجاور، مقابل أو وتر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة التي تجمع هذين الضلعين هي جيب الزاوية $\\widehat{DEF}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالآلة الحاسبة مبرمجة على الدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$EF = \\dfrac{5}{\\sin 28^{\\circ}} \\approx 10{,}65\\,\\mathrm{cm}$ .",
+        "incorrect": "الطول المطلوب في مقام النسبة: نقسم الطول المعلوم على النسبة المثلثية ولا نضرب فيها؛ والآلة الحاسبة مبرمجة على الدرجة."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $DEF$ القائم في $D$ لدينا: $\\sin\\,\\widehat{DEF} = \\dfrac{DF}{EF}$",
+          "ومنه: $EF = \\dfrac{DF}{\\sin\\,\\widehat{DEF}}$",
+          "$EF = \\dfrac{5}{\\sin 28^{\\circ}}$",
+          "باستعمال الآلة الحاسبة: $EF \\approx 10{,}6503$"
+        ],
+        "result": "EF \\approx 10{,}65\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $DE$ بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm مدوّرا إلى 0,01",
+      "expectedAnswer": "9.40",
+      "misconceptionSignatures": [
+        {
+          "value": "2.66",
+          "id": "MISC-MUTH-DARB-BADAL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $DEF$ القائم في $D$ ، حدّد موقع الضلع المعلوم والضلع المطلوب بالنسبة إلى الزاوية $\\widehat{DEF}$ (مجاور، مقابل أو وتر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة التي تجمع هذين الضلعين هي ظل الزاوية $\\widehat{DEF}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالآلة الحاسبة مبرمجة على الدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$DE = \\dfrac{5}{\\tan 28^{\\circ}} \\approx 9{,}40\\,\\mathrm{cm}$ .",
+        "incorrect": "الطول المطلوب في مقام النسبة: نقسم الطول المعلوم على النسبة المثلثية ولا نضرب فيها؛ والآلة الحاسبة مبرمجة على الدرجة."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $DEF$ القائم في $D$ لدينا: $\\tan\\,\\widehat{DEF} = \\dfrac{DF}{DE}$",
+          "ومنه: $DE = \\dfrac{DF}{\\tan\\,\\widehat{DEF}}$",
+          "$DE = \\dfrac{5}{\\tan 28^{\\circ}}$",
+          "باستعمال الآلة الحاسبة: $DE \\approx 9{,}4036$"
+        ],
+        "result": "DE \\approx 9{,}40\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

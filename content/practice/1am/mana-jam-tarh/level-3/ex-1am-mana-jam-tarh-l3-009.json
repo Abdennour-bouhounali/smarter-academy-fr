@@ -1,0 +1,173 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l3-009",
+  "lessonCode": "mana-jam-tarh",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — سباق المدرسة",
+    "estimatedMinutes": 7,
+    "tags": [
+      "أسرع",
+      "مخطط بأقواس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في سباق المدرسة، وبروح رياضية عالية، قطع خالد المسافة في $14{,}36\\,\\mathrm{s}$، فكان أسرع من زميله فارس بـ $0{,}9\\,\\mathrm{s}$. وقطع ياسين المسافة نفسها في $15{,}1\\,\\mathrm{s}$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "في المخطط بأقواس الذي يقارن زمني خالد وفارس، زمن فارس هو:",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الكل (القوس تحت الخط)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "جزء (قوس فوق الخط)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الأسرع يستغرق زمنًا أقل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من استغرق زمنًا أطول: خالد أم فارس؟"
+        }
+      ],
+      "feedback": {
+        "correct": "خالد أسرع، إذن زمن فارس = زمن خالد + 0,9: هو الكل.",
+        "incorrect": "الأسرع يقطع المسافة في زمن أقل: زمن فارس أطول من زمن خالد."
+      },
+      "solution": {
+        "lines": [
+          "خالد أسرع من فارس، إذن زمن خالد أقل من زمن فارس.",
+          "زمن فارس = زمن خالد + $0{,}9\\,\\mathrm{s}$: هو الكل."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب زمن فارس.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالثانية (s)",
+      "expectedAnswer": "15.26",
+      "misconceptionSignatures": [
+        {
+          "value": "13.46",
+          "id": "MISC-JAMTARH-KALIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "فارس أبطأ من خالد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "زمن فارس هو الكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$14{,}36 + 0{,}9 = 15{,}26\\,\\mathrm{s}$.",
+        "incorrect": "فارس أبطأ: زمنه أطول من $14{,}36\\,\\mathrm{s}$."
+      },
+      "solution": {
+        "lines": [
+          "$14{,}36 + 0{,}9 = 14{,}36 + 0{,}90 = 15{,}26$"
+        ],
+        "result": "15{,}26 \\text{ s}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "بكم يزيد زمن ياسين عن زمن خالد؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالثانية (s)",
+      "expectedAnswer": "0.74",
+      "misconceptionSignatures": [
+        {
+          "value": "29.46",
+          "id": "MISC-JAMTARH-MAJMU-FARQ"
+        },
+        {
+          "value": "-0.74",
+          "id": "MISC-JAMTARH-FARQ-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "زمن ياسين هو الكل: زمن خالد + الزيادة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح زمن خالد من زمن ياسين."
+        }
+      ],
+      "feedback": {
+        "correct": "$15{,}1 - 14{,}36 = 0{,}74\\,\\mathrm{s}$.",
+        "incorrect": "الزيادة جزء: اطرح الزمن الأصغر من الزمن الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "$15{,}1 - 14{,}36 = 15{,}10 - 14{,}36 = 0{,}74$"
+        ],
+        "result": "0{,}74 \\text{ s}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

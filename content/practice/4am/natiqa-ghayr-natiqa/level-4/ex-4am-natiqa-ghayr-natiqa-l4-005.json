@@ -1,0 +1,207 @@
+{
+  "id": "ex-4am-natiqa-ghayr-natiqa-l4-005",
+  "lessonCode": "natiqa-ghayr-natiqa",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2012 — التمرين الأول",
+    "estimatedMinutes": 10,
+    "tags": [
+      "عدد ناطق",
+      "قيمة مقربة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_natiqa-ghayr-natiqa_P3",
+      "modelledOn": "BEM 2012 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2012",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان الحقيقيان $m$ و $n$ حيث:",
+    "formulas": [
+      "m = \\sqrt{63} - 2\\sqrt{7} + 3 \\quad ; \\quad n = 3 - \\sqrt{7}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "اكتب العدد $m$ على الشكل $a\\sqrt{7} + b$ حيث $a$ و $b$ عددان نسبيان.",
+      "statement": "العدد $a$",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-JIDHR-MURABBA-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$63 = 9 \\times 7$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\sqrt{63} = 3\\sqrt{7}$ ، ثم اجمع الحدود التي فيها $\\sqrt{7}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$m = 3\\sqrt{7} - 2\\sqrt{7} + 3 = \\sqrt{7} + 3$ .",
+        "incorrect": "اكتب $\\sqrt{63}$ على الشكل $k\\sqrt{7}$ ثم اجمع معاملات $\\sqrt{7}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$m = \\sqrt{9 \\times 7} - 2\\sqrt{7} + 3$",
+          "$= 3\\sqrt{7} - 2\\sqrt{7} + 3$",
+          "$= \\sqrt{7} + 3$"
+        ],
+        "result": "m = \\sqrt{7} + 3"
+      },
+      "work": "required",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "العدد $b$",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الذي لا يحتوي على جذر."
+        }
+      ],
+      "feedback": {
+        "correct": "$m = \\sqrt{7} + 3$ ، إذن $b = 3$ .",
+        "incorrect": "استعمل الكتابة التي وجدتها في (ا)."
+      },
+      "solution": {
+        "lines": [
+          "$m = 1 \\times \\sqrt{7} + 3$"
+        ],
+        "result": "b = 3"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "بيّن أن الجداء $m \\times n$ عدد ناطق.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة الجداء $m \\times n$",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "-40",
+          "id": "MISC-TARBI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(3 + \\sqrt{7})(3 - \\sqrt{7}) = 3^2 - (\\sqrt{7})^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$m \\times n = 9 - 7 = 2$ .",
+        "incorrect": "استعمل المتطابقة $(a + b)(a - b) = a^2 - b^2$ ، و $(\\sqrt{7})^2 = 7$ ."
+      },
+      "solution": {
+        "lines": [
+          "$m \\times n = (3 + \\sqrt{7})(3 - \\sqrt{7})$",
+          "$= 3^2 - (\\sqrt{7})^2$",
+          "$= 9 - 7$"
+        ],
+        "result": "m \\times n = 2"
+      },
+      "work": "required",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "أعط القيمة المقربة إلى $10^{-1}$ بالنقصان للعدد $m$ .",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري برقم واحد بعد الفاصلة",
+      "expectedAnswer": "5.6",
+      "misconceptionSignatures": [
+        {
+          "value": "5.7",
+          "id": "MISC-TAQRIB-NAQS-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احصر $\\sqrt{7}$ بين عددين عشريين متتاليين لهما رقم واحد بعد الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أضف 3 إلى أطراف الحصر."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}6 < \\sqrt{7} < 2{,}7$ ، إذن $5{,}6 < m < 5{,}7$ .",
+        "incorrect": "احصر $\\sqrt{7}$ أولًا ثم أضف 3؛ القيمة بالنقصان هي الأصغر."
+      },
+      "solution": {
+        "lines": [
+          "$2{,}6^2 = 6{,}76$ و $2{,}7^2 = 7{,}29$ ، إذن $2{,}6 < \\sqrt{7} < 2{,}7$",
+          "$5{,}6 < \\sqrt{7} + 3 < 5{,}7$"
+        ],
+        "result": "5{,}6 < m"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

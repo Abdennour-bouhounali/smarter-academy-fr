@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-barahin-ashia-l2-005",
+  "lessonCode": "barahin-ashia",
+  "level": 2,
+  "generator": {
+    "tool": "gen-barahin.mjs",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — طول من مساواة شعاعية",
+    "estimatedMinutes": 3,
+    "tags": [
+      "منتصف",
+      "طول"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_barahin-ashia_P2",
+      "modelledOn": "ex-23"
+    }
+  },
+  "statement": {
+    "content": "A و B نقطتان حيث $AB = 10\\,\\mathrm{cm}$ ، و M نقطة حيث $\\overrightarrow{AM} = \\overrightarrow{MB}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الطول AM بالسنتيمتر:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SHUAA-MUNTASAF-IB-IA",
+          "value": "10"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{AM} = \\overrightarrow{MB}$ : ماذا تمثّل M للقطعة [AB]؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المنتصف يقسم القطعة إلى قطعتين متقايستين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم طول [AB] على عدد القطع."
+        }
+      ],
+      "feedback": {
+        "correct": "M منتصف [AB]، فـ $AM = \\dfrac{10}{2} = 5\\,\\mathrm{cm}$ .",
+        "incorrect": "M منتصف [AB] : AM نصف AB ."
+      }
+    }
+  ]
+}

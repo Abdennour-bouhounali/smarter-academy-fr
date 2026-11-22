@@ -1,0 +1,149 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l5-003",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 5,
+  "metadata": {
+    "title": "تمرين 15 — مساحة الدائرة المحيطة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الدائرة المحيطة",
+      "المساحة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-15",
+      "page": 161,
+      "section": "أتعمّق",
+      "number": 15
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 161، بعد التصحيح): BCDEF خماسي منتظم مركزه A حيث AB = 4cm.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          4,
+          0
+        ],
+        "C": [
+          1.236,
+          3.804
+        ],
+        "D": [
+          -3.236,
+          2.351
+        ],
+        "E": [
+          -3.236,
+          -2.351
+        ],
+        "F": [
+          1.236,
+          -3.804
+        ]
+      },
+      "circles": [
+        {
+          "center": "A",
+          "radius": 4
+        }
+      ],
+      "segments": [
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "E"
+        ],
+        [
+          "E",
+          "F"
+        ],
+        [
+          "F",
+          "B"
+        ],
+        {
+          "from": "A",
+          "to": "B",
+          "dashed": true
+        },
+        {
+          "from": "A",
+          "to": "C",
+          "dashed": true
+        }
+      ],
+      "arcs": [
+        {
+          "center": "A",
+          "from": "B",
+          "to": "C",
+          "sweep": "ccw",
+          "arrow": true,
+          "label": "72°",
+          "tone": "emerald"
+        }
+      ],
+      "ariaLabel": "نقطة A مركز دائرة نصف قطرها 4، و B عليها، و C و D و E و F صور متتالية بالدوران الذي مركزه A وزاويته 72 درجة في الاتجاه المباشر: الخماسي BCDEF",
+      "maxWidth": 420
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مساحة الدائرة المحيطة بـ BCDEF مدوّرة إلى 0,01 بالسنتيمتر المربع:",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "50.27",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUNTAZAM-DIL",
+          "value": "69.40"
+        },
+        {
+          "id": "MISC-MUTH-JADHR-NASI",
+          "value": "25.13"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما مركز الدائرة المحيطة؟ وما نصف قطرها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نصف قطرها AB."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مساحة القرص $\\pi r^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\pi \\times 4^2 = 16\\pi \\approx 50{,}27$ .",
+        "incorrect": "نصف قطر الدائرة المحيطة AB = 4، وليس ضلع الخماسي."
+      },
+      "difficulty": 5
+    }
+  ]
+}

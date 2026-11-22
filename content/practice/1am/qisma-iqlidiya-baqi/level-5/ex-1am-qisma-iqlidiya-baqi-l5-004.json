@@ -1,0 +1,299 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l5-004",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — جدار مطعم المدرسة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "علب",
+      "الحاصل + 1",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 1,
+      "file": "1am-s1-101",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تطوّع أولياء التلاميذ لتبليط جدار مطعم المدرسة.\nالجزء الأول: يلزم 318 بلاطة، وتحتوي العلبة على 25 بلاطة وثمنها 1450 دج.\nالجزء الثاني: جمع الأولياء 20000 دج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب حاصل القسمة الإقليدية للعدد 318 على 25.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "18",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "11",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "13",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 318 من 25 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 25 دون أن نتجاوز 318."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$318 = 25 \\times 12 + 18$ و $18 < 25$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 25 فلا يتجاوز الجداء 318، والباقي عندئذ أصغر من 25."
+      },
+      "solution": {
+        "lines": [
+          "$25 \\times 12 = 300$ و $25 \\times 13 = 325$",
+          "$300 \\le 318 < 325$ ، إذن الحاصل هو 12."
+        ],
+        "result": "q = 12"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم علبة يلزم شراؤها؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد العلب",
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-IQLIDIYA-NISYAN-ZIYADA"
+        },
+        {
+          "value": "18",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل تكفي المجموعات الكاملة لوضع كل شيء؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ماذا نفعل بالباقي إذا لم يكن معدومًا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$318 = 25 \\times 12 + 18$: يبقى 18 بعد المجموعات الكاملة، ويحتاج إلى علبة أخرى.",
+        "incorrect": "الحاصل يعدّ المجموعات الكاملة فقط؛ إذا بقي شيء فهو يحتاج إلى مجموعة إضافية."
+      },
+      "solution": {
+        "lines": [
+          "$318 = 25 \\times 12 + 18$",
+          "يبقى 18 بعد المجموعات الكاملة، فنحتاج إلى علبة أخرى:",
+          "$12 + 1 = 13$"
+        ],
+        "result": "13"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب ثمن العلب.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "18850",
+      "misconceptionSignatures": [
+        {
+          "value": "17400",
+          "id": "MISC-IQLIDIYA-NISYAN-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد العلب × ثمن العلبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$13 \\times 1450 = 18850$ دج.",
+        "incorrect": "اضرب عدد العلب اللازمة في ثمن العلبة."
+      },
+      "solution": {
+        "lines": [
+          "$13 \\times 1450 = 18850$"
+        ],
+        "result": "18850 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "هل يكفي المبلغ الذي جمعه الأولياء؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن ثمن العلب بالمبلغ المجموع."
+        }
+      ],
+      "feedback": {
+        "correct": "$18850 < 20000$.",
+        "incorrect": "قارن ثمن العلب بـ 20000 دج."
+      },
+      "solution": {
+        "lines": [
+          "$18850 < 20000$ ، إذن المبلغ يكفي."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "كم يبقى من المبلغ بعد الشراء؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "1150",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ المجموع − ثمن العلب."
+        }
+      ],
+      "feedback": {
+        "correct": "$20000 - 18850 = 1150$ دج.",
+        "incorrect": "اطرح ثمن العلب من المبلغ المجموع."
+      },
+      "solution": {
+        "lines": [
+          "$20000 - 18850 = 1150$"
+        ],
+        "result": "1150 \\text{ DA}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "06",
+      "statement": "كم بلاطة تبقى بعد التبليط؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "18",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم بلاطة في العلب المشتراة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$13 \\times 25 = 325$ و $325 - 318 = 7$.",
+        "incorrect": "احسب عدد البلاطات في كل العلب، ثم اطرح 318."
+      },
+      "solution": {
+        "lines": [
+          "$13 \\times 25 = 325$",
+          "$325 - 318 = 7$"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

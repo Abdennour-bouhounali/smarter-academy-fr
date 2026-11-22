@@ -1,0 +1,212 @@
+{
+  "id": "ex-4am-mushkilat-jumla-l4-001",
+  "lessonCode": "mushkilat-jumla",
+  "level": 4,
+  "metadata": {
+    "title": "حقل محيطه 220m",
+    "estimatedMinutes": 13,
+    "tags": [
+      "ترييض",
+      "مساحة",
+      "محيط"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-18",
+      "page": 61,
+      "section": "أوظّف تعلّماتي",
+      "number": 18
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "حقل مستطيل الشكل يرعاه صاحبه بإتقان، محيطه يساوي $220m$ . عند إنقاص $2m$ من طوله وزيادة $2m$ إلى عرضه، تزداد مساحته بـ $16m^2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "نسمّي $x$ طول الحقل و $y$ عرضه (بالمتر).",
+      "statement": "بيّن أن $x$ و $y$ يحققان الجملة: $\\begin{cases} x + y = 110 \\\\ x - y = 10 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الطول الجديد $x - 2$ والعرض الجديد $y + 2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انشر $(x - 2)(y + 2)$ ثم بسّط."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "المحيط: $2(x + y) = 220$ ومنه $x + y = 110$",
+          "المساحة الجديدة: $(x - 2)(y + 2) = xy + 16$",
+          "$xy + 2x - 2y - 4 = xy + 16$",
+          "$2x - 2y = 20$ أي $x - y = 10$",
+          "ومنه $x$ و $y$ يحققان الجملة: $\\begin{cases} x + y = 110 \\\\ x - y = 10 \\end{cases}$"
+        ]
+      },
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "جد بُعدي الحقل.",
+      "statement": "الطول:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الطول بـ m (عدد فقط)",
+      "expectedAnswer": "60",
+      "misconceptionSignatures": [
+        {
+          "value": "50",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معاملا $y$ متعاكسان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المعادلتين طرفا لطرف."
+        }
+      ],
+      "feedback": {
+        "correct": "طول الحقل $60m$ .",
+        "incorrect": "بجمع المعادلتين طرفا لطرف: $2x = 120$ ."
+      },
+      "solution": {
+        "lines": [
+          "بجمع المعادلتين طرفا لطرف نجد: $2x = 120$ ومنه $x = 60$",
+          "بالتعويض في المعادلة الأولى: $60 + y = 110$ ومنه $y = 50$",
+          "إذن طول الحقل $60m$ وعرضه $50m$ ."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "العرض:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العرض بـ m (عدد فقط)",
+      "expectedAnswer": "50",
+      "misconceptionSignatures": [
+        {
+          "value": "60",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نصف المحيط $110m$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "عرض الحقل $50m$ .",
+        "incorrect": "من $x + y = 110$ : $y = 110 - x$ ."
+      },
+      "solution": {
+        "lines": [
+          "بجمع المعادلتين طرفا لطرف نجد: $2x = 120$ ومنه $x = 60$",
+          "بالتعويض في المعادلة الأولى: $60 + y = 110$ ومنه $y = 50$",
+          "إذن طول الحقل $60m$ وعرضه $50m$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب مساحة الحقل بعد التغيير، ثم تحقّق أنها تزيد بـ $16m^2$ عن مساحته الأولى.",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المساحة الجديدة بـ $m^2$ (عدد فقط)",
+      "expectedAnswer": "3016",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الطول الجديد $x - 2$ والعرض الجديد $y + 2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل البعدين اللذين وجدتهما في السؤال 02."
+        }
+      ],
+      "feedback": {
+        "correct": "المساحة الجديدة $58 \\times 52 = 3016m^2$ ، والأولى $60 \\times 50 = 3000m^2$ : الزيادة $16m^2$ .",
+        "incorrect": "أنقص 2 من الطول وأضف 2 إلى العرض، ثم اضرب."
+      },
+      "solution": {
+        "lines": [
+          "البعدان الجديدان: $60 - 2 = 58$ و $50 + 2 = 52$",
+          "المساحة الجديدة: $58 \\times 52 = 3016$ أي $3016m^2$",
+          "المساحة الأولى: $60 \\times 50 = 3000$ ، و $3016 - 3000 = 16$ : النتيجة تتحقق في النص."
+        ],
+        "result": "3016\\,m^2"
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

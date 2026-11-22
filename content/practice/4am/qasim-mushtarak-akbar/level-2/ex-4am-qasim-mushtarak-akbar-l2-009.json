@@ -1,0 +1,129 @@
+{
+  "id": "ex-4am-qasim-mushtarak-akbar-l2-009",
+  "lessonCode": "qasim-mushtarak-akbar",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2023 — A = 135/225",
+    "estimatedMinutes": 6,
+    "tags": [
+      "PGCD",
+      "كسر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-mushtarak-akbar_P2",
+      "modelledOn": "BEM 2023 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد A حيث:",
+    "formulas": [
+      "A = \\dfrac{135}{225}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب PGCD(135 ; 225).",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "45",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قائمة قواسم كل من العددين 135 و 225."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استخرج القواسم المشتركة: الأعداد الموجودة في القائمتين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاسم المشترك الأكبر هو أكبر القواسم المشتركة، لا أيّ واحد منها."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 135 و 225 هي 1 ، 3 ، 5 ، 9 ، 15 ، 45، وأكبرها 45.",
+        "incorrect": "اكتب قائمتي القواسم كاملتين، ثم خذ أكبر عدد يظهر في القائمتين معًا."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 135 هي: 1 ، 3 ، 5 ، 9 ، 15 ، 27 ، 45 ، 135",
+          "قواسم العدد 225 هي: 1 ، 3 ، 5 ، 9 ، 15 ، 25 ، 45 ، 75 ، 225",
+          "القواسم المشتركة للعددين 135 و 225 هي: 1 ، 3 ، 5 ، 9 ، 15 ، 45",
+          "أكبرها هو 45، إذن:"
+        ],
+        "result": "PGCD(135 ; 225) = 45"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب العدد A على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "3/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 45: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال 01.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{135}{225} = \\dfrac{135 \\div 45}{225 \\div 45}$"
+        ],
+        "result": "\\dfrac{135}{225} = \\dfrac{3}{5}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

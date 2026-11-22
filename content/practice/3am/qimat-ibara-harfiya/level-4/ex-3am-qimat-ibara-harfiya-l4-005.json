@@ -1,0 +1,175 @@
+{
+  "id": "ex-3am-qimat-ibara-harfiya-l4-005",
+  "lessonCode": "qimat-ibara-harfiya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — التعويض بعدد مكتوب كتابة علمية",
+    "estimatedMinutes": 10,
+    "tags": [
+      "كتابة علمية",
+      "قيمة عبارة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارتان $B = x^2$ و $C = x^2 + 2x$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب العدد $0{,}0009$ كتابة علمية $a \\times 10^{-4}$ : العدد $a$ :",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "0.0009",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل  هي $0{,}0009$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}0009 = 9 \\times 10^{-4}$"
+        ],
+        "result": "E = 0{,}0009"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب قيمة $B$ من أجل $x = 3 \\times 10^{-2}$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "0.0009",
+      "misconceptionSignatures": [
+        {
+          "value": "0.0003",
+          "id": "MISC-QIMA-COEF-IN-POWER"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = 3 \\times 10^{-2}$ هي $0{,}0009$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$B = (3 \\times 10^{-2})^2$",
+          "$B = 0{,}0009$"
+        ],
+        "result": "B = 0{,}0009"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب قيمة $C$ من أجل $x = 2 \\times 10^{-1}$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "0.44",
+      "misconceptionSignatures": [
+        {
+          "value": "0.42",
+          "id": "MISC-QIMA-COEF-IN-POWER"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = 2 \\times 10^{-1}$ هي $0{,}44$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$C = (2 \\times 10^{-1})^2 + 2 \\times 2 \\times 10^{-1}$",
+          "$C = 0{,}04 + 2 \\times 2 \\times 10^{-1}$",
+          "$C = 0{,}04 + 0{,}4$",
+          "$C = 0{,}44$"
+        ],
+        "result": "C = 0{,}44"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

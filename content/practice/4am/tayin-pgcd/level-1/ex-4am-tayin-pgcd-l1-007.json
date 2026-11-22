@@ -1,0 +1,83 @@
+{
+  "id": "ex-4am-tayin-pgcd-l1-007",
+  "lessonCode": "tayin-pgcd",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2015 — PGCD(98 ; 42) مع مراحل الحساب",
+    "estimatedMinutes": 5,
+    "tags": [
+      "PGCD",
+      "حصر القواسم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tayin-pgcd_P1",
+      "modelledOn": "BEM 2015 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 98 و 42 مع كتابة مراحل الحساب.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قائمة قواسم كل من العددين 98 و 42، مثنى مثنى (1 مع العدد نفسه، ثم 2 …) حتى لا يفوتك قاسم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استخرج القواسم المشتركة: الأعداد الموجودة في القائمتين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاسم المشترك الأكبر هو أكبر القواسم المشتركة، لا أيّ واحد منها."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 98 و 42 هي 1 ، 2 ، 7 ، 14، وأكبرها 14.",
+        "incorrect": "اكتب قائمتي القواسم كاملتين، ثم خذ أكبر عدد يظهر في القائمتين معًا."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 98 هي: 1 ، 2 ، 7 ، 14 ، 49 ، 98",
+          "قواسم العدد 42 هي: 1 ، 2 ، 3 ، 6 ، 7 ، 14 ، 21 ، 42",
+          "القواسم المشتركة للعددين 98 و 42 هي: 1 ، 2 ، 7 ، 14",
+          "أكبرها هو 14، إذن:"
+        ],
+        "result": "PGCD(98 ; 42) = 14"
+      },
+      "work": "required",
+      "timeSeconds": 300
+    }
+  ]
+}

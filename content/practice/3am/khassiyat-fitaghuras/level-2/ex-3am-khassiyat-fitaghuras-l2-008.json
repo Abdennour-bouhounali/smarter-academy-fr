@@ -1,0 +1,233 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l2-008",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — منحدر مدخل المدرسة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "خاصية فيثاغورس",
+      "حساب ضلع قائم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تهيّئ البلدية منحدرا لمدخل المدرسة حتى يدخلها زملاؤنا على الكراسي المتحرّكة بسهولة. المنحدر $[AB]$ طوله $5\\,\\mathrm{m}$ ، والنقطة $H$ على الأرض الأفقية تحت $B$ مباشرة حيث $AH = 4{,}8\\,\\mathrm{m}$ .",
+    "figure": {
+      "points": {
+        "H": [
+          0.0,
+          0.0
+        ],
+        "A": [
+          -4.8,
+          0.0
+        ],
+        "B": [
+          0.0,
+          2.6
+        ]
+      },
+      "segments": [
+        {
+          "from": "H",
+          "to": "A",
+          "label": "4,8 m"
+        },
+        {
+          "from": "H",
+          "to": "B"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "label": "5 m"
+        }
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "H",
+          "B"
+        ]
+      ],
+      "ariaLabel": "منحدر [AB] طوله 5 m، و H مسقط B على الأرض حيث AH = 4,8 m، والارتفاع [BH] عمودي على الأرض",
+      "maxWidth": 320,
+      "caption": "(الأطوال غير حقيقية)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $BH^2$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: قيمة $BH^2$ (بـ $m^2$)",
+      "expectedAnswer": "1.96",
+      "misconceptionSignatures": [
+        {
+          "value": "48.04",
+          "id": "MISC-FITAGHURAS-LEG-ADD"
+        },
+        {
+          "value": "0.4",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        },
+        {
+          "value": "0.2",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع المطلوب ليس الوتر: مربعه يساوي مربع الوتر ناقص مربع الضلع الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ربّع كل طول (اضربه في نفسه) ثم اطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$BH^2 = 5^2 - 4{,}8^2 = 1{,}96$ .",
+        "incorrect": "الضلع المطلوب ضلع قائم: اعزله في مساواة فيثاغورس ثم اطرح مربع الضلع المعلوم من مربع الوتر."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABH$ قائم في $H$ ، حسب خاصية فيثاغورس: $AB^2 = BH^2 + AH^2$",
+          "ومنه: $BH^2 = AB^2 - AH^2$",
+          "$BH^2 = 5^2 - 4{,}8^2 = 25 - 23{,}04 = 1{,}96$"
+        ],
+        "result": "BH^2 = 1{,}96"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب ارتفاع المنحدر $BH$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m",
+      "expectedAnswer": "1.4",
+      "misconceptionSignatures": [
+        {
+          "value": "6.93",
+          "id": "MISC-FITAGHURAS-LEG-ADD"
+        },
+        {
+          "value": "0.2",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "1.96",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع المطلوب ليس الوتر: مربعه يساوي مربع الوتر ناقص مربع الضلع الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولا مربع الطول، ثم خذ جذره التربيعي بالآلة الحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$BH^2 = 5^2 - 4{,}8^2 = 1{,}96$ ، إذن $BH = 1{,}4\\,\\mathrm{m}$ .",
+        "incorrect": "الطول المطلوب ضلع قائم وليس وترا: نطرح مربع الضلع المعلوم من مربع الوتر، ولا نجمع."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABH$ قائم في $H$ ، حسب خاصية فيثاغورس: $AB^2 = BH^2 + AH^2$",
+          "ومنه: $BH^2 = AB^2 - AH^2$",
+          "$BH^2 = 5^2 - 4{,}8^2 = 25 - 23{,}04 = 1{,}96$",
+          "$BH = \\sqrt{1{,}96} = 1{,}4\\,\\mathrm{m}$"
+        ],
+        "result": "BH = 1{,}4\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "برّر لماذا طبّقنا خاصية فيثاغورس في المثلث $ABH$ ، ولماذا طرحنا ولم نجمع.",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين الزاوية القائمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المجهول وتر أم ضلع قائم؟"
+        }
+      ],
+      "feedback": {
+        "correct": "المنحدر هو الوتر، والارتفاع ضلع قائم يُحسب بالطرح.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "الارتفاع $[BH]$ عمودي على الأرض الأفقية، فالمثلث $ABH$ قائم في $H$ .",
+          "الوتر هو $[AB]$ (المنحدر) لأنه يقابل الزاوية القائمة.",
+          "حسب خاصية فيثاغورس: $AB^2 = AH^2 + BH^2$ ، والمجهول ضلع قائم، ومنه $BH^2 = AB^2 - AH^2$ ."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

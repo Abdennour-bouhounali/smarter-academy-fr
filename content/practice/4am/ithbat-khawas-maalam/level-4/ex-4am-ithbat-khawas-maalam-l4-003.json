@@ -1,0 +1,162 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l4-003",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 4,
+  "metadata": {
+    "title": "من الكتاب — التمرين 26 (ص 149)",
+    "estimatedMinutes": 5,
+    "tags": [
+      "معيّن",
+      "مساحة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-26",
+      "page": 149,
+      "section": "أتعمّق",
+      "number": 26
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 149، مصحّح: الرباعي ACBD): المستوي منسوب إلى معلم متعامد ومتجانس مبدؤه O. (الوحدة 1cm). $A(2\\,;\\,-2)$ ، $B(-3\\,;\\,3)$ ، $C(-4\\,;\\,-3)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "نوع المثلث ABC ( $AB^2 = 50$ ، $BC^2 = 37$ ، $AC^2 = 37$ ):",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "متساوي الساقين رأسه C وليس قائما",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "قائم في C",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SAQAYN-QAIM"
+        },
+        {
+          "id": "C",
+          "content": "قائم ومتساوي الساقين",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SAQAYN-QAIM"
+        },
+        {
+          "id": "D",
+          "content": "متقايس الأضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SAQAYN-QAIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المربعات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$37 + 37$ و 50 ؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الرأس: النقطة المشتركة بين الضلعين المتقايسين."
+        }
+      ],
+      "feedback": {
+        "correct": "$CA = CB$ ، و $37 + 37 = 74 \\neq 50$ : ليس قائما.",
+        "incorrect": "ضلعان متقايسان لا يعطيان زاوية قائمة."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "إحداثيتا D حيث $\\overrightarrow{CA} = \\overrightarrow{BD}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x\\,;\\,y)$ : الأولى ثم الثانية (عدد صحيح أو كسر مثل 5/2)",
+      "expectedAnswer": {
+        "x": "3",
+        "y": "4"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مركبتا $\\overrightarrow{CA}$ أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "D = B مزاحة بهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\overrightarrow{CA}$ : النهاية A ناقص المبدأ C."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{CA}\\begin{pmatrix} 6 \\\\ 1 \\end{pmatrix}$ ، $D(3\\,;\\,4)$ .",
+        "incorrect": "انتبه إلى ترتيب الطرح."
+      }
+    },
+    {
+      "id": "q3",
+      "statement": "مساحة المعيّن ACBD هي $\\dfrac{1}{2} \\times AB \\times CD$ . احسبها (بـ $\\mathrm{cm^2}$ ).",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "35",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MASAFA-JADHR-NASI",
+          "value": "70"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AB = 5\\sqrt{2}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب CD من مركبتي $\\overrightarrow{CD}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\sqrt{2} \\times \\sqrt{2} = 2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$CD = 7\\sqrt{2}$ و $\\dfrac{1}{2} \\times 5\\sqrt{2} \\times 7\\sqrt{2} = 35$ .",
+        "incorrect": "نصف جداء القطرين."
+      }
+    }
+  ]
+}

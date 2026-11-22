@@ -1,0 +1,133 @@
+{
+  "id": "ex-4am-zawiya-muhitiya-l2-007",
+  "lessonCode": "zawiya-muhitiya",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — أي زاوية تحصر القوس؟",
+    "estimatedMinutes": 2,
+    "tags": [
+      "الزاوية المحيطية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_zawiya-muhitiya_P1",
+      "modelledOn": "know-4"
+    }
+  },
+  "statement": {
+    "content": "في الشكل: A و B و C و D نقط من دائرة مركزها O، و D على القوس الصغير $\\overset{\\frown}{AB}$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -1.8794,
+          -0.684
+        ],
+        "B": [
+          1.5321,
+          -1.2856
+        ],
+        "C": [
+          0.3473,
+          1.9696
+        ],
+        "D": [
+          -0.684,
+          -1.8794
+        ]
+      },
+      "circles": [
+        {
+          "center": "O",
+          "radius": 2
+        }
+      ],
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "C",
+          "A"
+        ],
+        [
+          "C",
+          "B"
+        ],
+        [
+          "O",
+          "A"
+        ],
+        [
+          "O",
+          "B"
+        ],
+        [
+          "D",
+          "A"
+        ]
+      ],
+      "ariaLabel": "دائرة مركزها O، النقط A و B و C و D عليها، و D على القوس الصغير AB",
+      "maxWidth": 380
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الزاوية المحيطية التي تحصر القوس $\\overset{\\frown}{AB}$ الذي لا يحوي C هي:",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\widehat{AOB}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-RAS"
+        },
+        {
+          "id": "B",
+          "content": "$\\widehat{CAB}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-QAWS"
+        },
+        {
+          "id": "C",
+          "content": "$\\widehat{ACB}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر أولا إلى رأس الزاوية: أين يقع؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الزاوية المركزية رأسها مركز الدائرة؛ والمحيطية رأسها على الدائرة وضلعاها يقطعانها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زاوية رأسها داخل الدائرة أو خارجها ليست محيطية، ولو كان طرفا ضلعيها على الدائرة."
+        }
+      ],
+      "feedback": {
+        "correct": "رأسها C على الدائرة وضلعاها يمران بـ A و B.",
+        "incorrect": "AOB مركزية، و CAB تحصر القوس CB."
+      }
+    }
+  ]
+}

@@ -1,0 +1,259 @@
+{
+  "id": "ex-4am-hasiba-muthallathiya-l3-005",
+  "lessonCode": "hasiba-muthallathiya",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 23 — تصويب إجابتي ليلى ورضا",
+    "estimatedMinutes": 9,
+    "tags": [
+      "اللمسات العكسية",
+      "جيب التمام",
+      "تصويب"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-23",
+      "page": 123,
+      "section": "إنشاءات هندسية",
+      "number": 23
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "طلب أستاذ الرياضيات من تلاميذه حساب قيمة مقربة إلى الوحدة لقيس الزاوية $\\widehat{KML}$ اعتمادا على الشكل المقابل ( $KLM$ قائم في $K$ ). كتبت ليلى: $\\cos\\widehat{KML} = \\dfrac{MK}{ML}$ ، $\\cos\\widehat{KML} = \\dfrac{5}{9}$ ، $\\widehat{KML} = 0{,}6$ . وكتب رضا: $\\tan\\widehat{KML} = \\dfrac{MK}{ML}$ ، $\\tan\\widehat{KML} = \\dfrac{5}{9}$ ، $\\widehat{KML} = 29$ .",
+    "figure": {
+      "points": {
+        "M": [
+          0,
+          0
+        ],
+        "K": [
+          5,
+          0
+        ],
+        "L": [
+          5,
+          7.4833
+        ]
+      },
+      "segments": [
+        {
+          "from": "M",
+          "to": "L",
+          "label": "9 cm"
+        },
+        {
+          "from": "M",
+          "to": "K",
+          "label": "5 cm"
+        },
+        [
+          "K",
+          "L"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "M",
+          "K",
+          "L"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "M",
+          "from": "K",
+          "to": "L",
+          "label": "?"
+        }
+      ],
+      "ariaLabel": "المثلث KLM قائم في K، الوتر ML طوله 9 سم والضلع MK طوله 5 سم، والزاوية المطلوبة عند M",
+      "maxWidth": 280
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "صوّب الخطأ المرتكب في إجابة ليلى.",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "اختيار جيب التمام صحيح، لكن $0{,}6$ هو مدوّر $\\cos\\widehat{KML}$ وليس قيس الزاوية: القيس يُعيَّن باللمسة ⁦2nd⁩ ثم ⁦cos⁻¹⁩",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "كان عليها أن تستعمل الظل لأن الزاوية $\\widehat{K}$ قائمة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "id": "C",
+          "content": "النسبة $\\dfrac{5}{9}$ خاطئة، والصواب $\\dfrac{9}{5}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$[MK]$ مجاور للزاوية $\\widehat{KML}$ و $[ML]$ هو الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل $0{,}6$ قيس زاوية بالدرجة أم نسبة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "النسبة صحيحة، والخطأ في الخطوة الأخيرة: النسبة كُتبت مكان القيس.",
+        "incorrect": "تحقّق من النسبة ثم من الخطوة الأخيرة: هل يُكتب القيس بالدرجة؟"
+      },
+      "solution": {
+        "lines": [
+          "$\\cos\\widehat{KML} = \\dfrac{MK}{ML} = \\dfrac{5}{9}$ صحيح (المجاور على الوتر).",
+          "لكن $\\dfrac{5}{9} \\approx 0{,}56$ هو جيب تمام الزاوية، وليلى كتبته (مدوّرا) مكان قيسها.",
+          "القيس يُعيَّن باللمسة العكسية ⁦2nd⁩ ثم ⁦cos⁻¹⁩ ، و $\\dfrac{9}{5} > 1$ لا يكون جيب تمام زاوية حادة."
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "صوّب الخطأ المرتكب في إجابة رضا.",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{MK}{ML}$ هو المجاور على الوتر، أي جيب التمام وليس الظل (الظل هو $\\dfrac{KL}{MK}$ )",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا خطأ في النسبة، نسي فقط وحدة الدرجة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "id": "C",
+          "content": "كان عليه أن يكتب $\\tan\\widehat{KML} = \\dfrac{ML}{MK}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الظل يربط ضلعي الزاوية القائمة فقط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل $[ML]$ ضلع للزاوية القائمة أم الوتر؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الظل = المقابل على المجاور، والوتر لا يدخل فيه.",
+        "incorrect": "الوتر لا يدخل في الظل: راجع النسبة التي كتبها رضا."
+      },
+      "solution": {
+        "lines": [
+          "الظل = المقابل على المجاور: $\\tan\\widehat{KML} = \\dfrac{KL}{MK}$ ، والطول $KL$ غير معطى.",
+          "أما $\\dfrac{MK}{ML}$ فهو $\\cos\\widehat{KML}$ ، والعدد 29 جاء من ⁦tan⁻¹⁩ بنسبة خاطئة."
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب القيمة المقربة إلى الوحدة لقيس الزاوية $\\widehat{KML}$ (المدوّر).",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيس الزاوية بالدرجة، مدوّرا إلى الوحدة",
+      "expectedAnswer": "56",
+      "misconceptionSignatures": [
+        {
+          "value": "34",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "1",
+          "id": "MISC-MUTH-HASIBA-RAD"
+        },
+        {
+          "value": "29",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لدينا $\\cos\\,\\widehat{KML} = \\dfrac{5}{9}$ : نعرف النسبة ونبحث عن القيس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اللمسة العكسية: ⁦2nd⁩ ثم ⁦cos⁻¹⁩ ثم النسبة ثم ⁦=⁩."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الحرف ⁦D⁩ (الدرجة)، ثم دوّر إلى الوحدة: انظر إلى الرقم الموالي للرقم الأخير الذي تحتفظ به."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{KML} \\approx 56{,}2510114^{\\circ} \\approx 56^{\\circ}$ .",
+        "incorrect": "النسبة ليست القيس: القيس يُعيَّن باللمسة العكسية المناسبة والحاسبة مبرمجة بالدرجة، ثم يُدوَّر (لا يُبتر) إلى الوحدة."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $KLM$ القائم في $K$ : $\\cos\\widehat{KML} = \\dfrac{MK}{ML} = \\dfrac{5}{9}$",
+          "باستعمال الحاسبة المبرمجة بالدرجة: ⁦ON 2nd cos⁻¹ ( 5 ÷ 9 ) =⁩ يظهر على الشاشة $56{,}2510114$ .",
+          "الرقم الذي يلي رقم الوحدات هو 2، وهو أصغر من 5: نُبقي رقم الوحدات كما هو."
+        ],
+        "result": "\\widehat{KML} \\approx 56^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

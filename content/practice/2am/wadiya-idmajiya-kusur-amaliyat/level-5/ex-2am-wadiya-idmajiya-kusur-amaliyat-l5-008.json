@@ -1,0 +1,376 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-kusur-amaliyat-l5-008",
+  "lessonCode": "wadiya-idmajiya-kusur-amaliyat",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — وضعيّة إدماجيّة : بيع جزء من أرض",
+    "estimatedMinutes": 14,
+    "tags": [
+      "كسر من مساحة",
+      "ثمن المتر المربّع",
+      "حصر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "قطعة أرض مستطيلة طولها $32$ m وعرضها $25$ m ، بيع $\\dfrac{3}{5}$ منها بمبلغ $1250000$ DA ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "الجزء الأوّل :",
+      "statement": "احسب مساحة القطعة بالمتر المربّع .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "800",
+      "misconceptionSignatures": [
+        {
+          "value": "114",
+          "id": "MISC-SYN-KASR2-PERIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المستطيل : ما العمليّة التي تعطي مساحته ؟ وما التي تعطي محيطه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المساحة = الطول × العرض ، والمحيط = 2 × (الطول + العرض) ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى الوحدة : المساحة بالمتر المربّع والمحيط بالمتر ."
+        }
+      ],
+      "feedback": {
+        "correct": "$800\\,\\mathrm{m}^2$ .",
+        "incorrect": "المساحة جداء البعدين والمحيط مجموع الأضلاع الأربعة : لا تخلط بينهما وانتبه إلى الوحدة ."
+      },
+      "solution": {
+        "lines": [
+          "$32 \\times 25 = 800$ ، أي $800\\,\\mathrm{m}^2$ ."
+        ],
+        "result": "800\\,\\mathrm{m}^2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما الكسر الذي بقي دون بيع ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "2/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "3/5",
+          "id": "MISC-JAMKASR-PART"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكلّ يساوي كسرًا بسطه ومقامه عدد واحد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الأجزاء المأخوذة أوّلًا ثمّ اطرحها من الكلّ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الجزء الباقي هو الكلّ ناقص ما أُخذ ، وهو أصغر من الكلّ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2}{5}$ .",
+        "incorrect": "اجمع ما أُخذ أوّلًا ثمّ اطرحه من الكلّ ، ولا تُعطِ ما أُخذ بدل الباقي ."
+      },
+      "solution": {
+        "lines": [
+          "$1 = \\dfrac{5}{5}$ .",
+          "ما أُخذ : $\\dfrac{3}{5} = \\dfrac{3}{5} = \\dfrac{3}{5}$ .",
+          "الباقي : $1 - \\dfrac{3}{5} = \\dfrac{5}{5} - \\dfrac{3}{5} = \\dfrac{2}{5}$ ."
+        ],
+        "result": "\\dfrac{2}{5}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما مساحة الجزء المباع بالمتر المربّع ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "480",
+      "misconceptionSignatures": [
+        {
+          "value": "4000/3",
+          "id": "MISC-JIDAKASR-FLIP"
+        },
+        {
+          "value": "160",
+          "id": "MISC-JIDAKASR-HALFWAY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزء من عدد يعني جداء الكسر في العدد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي ما دام الكسر أصغر من 1 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$480$ .",
+        "incorrect": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ، ولا تقلب الكسر ."
+      },
+      "solution": {
+        "lines": [
+          "$800 \\div 5 = 160$ .",
+          "$160 \\times 3 = 480$ ."
+        ],
+        "result": "480"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "sub": "ا",
+      "lead": "الجزء الثاني :",
+      "statement": "ثمن المتر المربّع من الجزء المباع هو $\\dfrac{1250000}{480}$ DA . أعط القيمة المقرّبة إلى $0{,}1$ بالنقصان لهذا الثمن .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "2604.1",
+      "misconceptionSignatures": [
+        {
+          "value": "2604.2",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "2604.16",
+          "id": "MISC-QARIBA-RANK"
+        },
+        {
+          "value": "2604.80",
+          "id": "MISC-QARIBA-REMCOMMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم العدد على المقسوم عليه حتى الرتبة المطلوبة بعد الفاصلة ثمّ ما يليها ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أوقف القسمة عند الرتبة المطلوبة : بالنقصان نُبقي الأرقام كما هي ، وبالزيادة نزيد وحدة على آخر رقم ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا نقرّب إلى الأقرب : القيمة بالنقصان لا تتجاوز الحاصل والقيمة بالزيادة تتجاوزه ."
+        }
+      ],
+      "feedback": {
+        "correct": "$2604{,}1$ .",
+        "incorrect": "أنجز القسمة بعد الفاصلة وتوقّف عند الرتبة المطلوبة : بالنقصان دون تغيير آخر رقم ، وبالزيادة بإضافة وحدة إلى آخر رقم ."
+      },
+      "solution": {
+        "lines": [
+          "بإنجاز القسمة حتى رقم بعد الفاصلة ثمّ ما يليه : $1250000 \\div 480 = 2604{,}16\\ldots$ .",
+          "القيمة المقرّبة إلى $0{,}1$ بالنقصان : $2604{,}1$ ."
+        ],
+        "result": "2604{,}1"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "sub": "ب",
+      "statement": "وأعط القيمة المقرّبة إلى $0{,}1$ بالزيادة .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "2604.2",
+      "misconceptionSignatures": [
+        {
+          "value": "2604.1",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "2604.17",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم العدد على المقسوم عليه حتى الرتبة المطلوبة بعد الفاصلة ثمّ ما يليها ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أوقف القسمة عند الرتبة المطلوبة : بالنقصان نُبقي الأرقام كما هي ، وبالزيادة نزيد وحدة على آخر رقم ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا نقرّب إلى الأقرب : القيمة بالنقصان لا تتجاوز الحاصل والقيمة بالزيادة تتجاوزه ."
+        }
+      ],
+      "feedback": {
+        "correct": "$2604{,}2$ .",
+        "incorrect": "أنجز القسمة بعد الفاصلة وتوقّف عند الرتبة المطلوبة : بالنقصان دون تغيير آخر رقم ، وبالزيادة بإضافة وحدة إلى آخر رقم ."
+      },
+      "solution": {
+        "lines": [
+          "بإنجاز القسمة حتى رقم بعد الفاصلة ثمّ ما يليه : $1250000 \\div 480 = 2604{,}16\\ldots$ .",
+          "القيمة المقرّبة إلى $0{,}1$ بالزيادة : $2604{,}2$ ."
+        ],
+        "result": "2604{,}2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "اختر الحصر الصحيح للحاصل $\\dfrac{1250000}{480}$ إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2604{,}2 < \\dfrac{1250000}{480} < 2604{,}3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        },
+        {
+          "id": "B",
+          "content": "$2604 < \\dfrac{1250000}{480} < 2604{,}1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        },
+        {
+          "id": "C",
+          "content": "$2604{,}8 < \\dfrac{1250000}{480} < 2604{,}9$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-REMCOMMA"
+        },
+        {
+          "id": "D",
+          "content": "$2604{,}1 < \\dfrac{1250000}{480} < 2604{,}2$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحصر إلى الرتبة المطلوبة : عددان متتاليان في هذه الرتبة ، الأوّل لا يتجاوز الحاصل والثاني يتجاوزه ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة حتى الرتبة المطلوبة ثمّ ابدأ بالقيمة بالنقصان ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب طرفي الحصر في المقسوم عليه وقارن بالمقسوم للتأكّد ."
+        }
+      ],
+      "feedback": {
+        "correct": "$2604{,}1 < \\dfrac{1250000}{480} < 2604{,}2$ .",
+        "incorrect": "أنجز القسمة بعد الفاصلة وتوقّف عند الرتبة المطلوبة : بالنقصان دون تغيير آخر رقم ، وبالزيادة بإضافة وحدة إلى آخر رقم ."
+      },
+      "solution": {
+        "lines": [
+          "$1250000 \\div 480 = 2604{,}16\\ldots$ .",
+          "$2604{,}1 < \\dfrac{1250000}{480} < 2604{,}2$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

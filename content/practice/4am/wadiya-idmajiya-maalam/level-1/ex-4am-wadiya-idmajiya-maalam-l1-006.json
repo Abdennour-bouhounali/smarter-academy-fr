@@ -1,0 +1,67 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-maalam-l1-006",
+  "lessonCode": "wadiya-idmajiya-maalam",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — مركز نصف دائرة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "منتصف قطعة",
+      "نصف دائرة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-maalam_P3",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس، مسار جري على شكل نصف دائرة قطرها $[UV]$ حيث $U(-5\\,;\\,0)$ و $V(1\\,;\\,0)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا مركز نصف الدائرة هما:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الثنائية (x ; y)",
+      "expectedAnswer": {
+        "x": "-2",
+        "y": "0"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مركز نصف الدائرة نقطة من قطرها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هو منتصف القطر $[UV]$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\left(\\dfrac{x_U + x_V}{2}\\,;\\,\\dfrac{y_U + y_V}{2}\\right)$"
+        }
+      ],
+      "feedback": {
+        "correct": "المركز منتصف $[UV]$ : $\\left(\\dfrac{-5 + 1}{2}\\,;\\,0\\right) = (-2\\,;\\,0)$ .",
+        "incorrect": "نصف المجموع، لا نصف الفرق."
+      },
+      "cognitiveDemand": "recall",
+      "difficulty": 1
+    }
+  ]
+}

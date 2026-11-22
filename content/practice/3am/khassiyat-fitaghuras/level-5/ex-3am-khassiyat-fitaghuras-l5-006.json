@@ -1,0 +1,382 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l5-006",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — قنوات الماء للمتوسطة الجديدة",
+    "estimatedMinutes": 25,
+    "tags": [
+      "وضعية إدماجية",
+      "خاصية فيثاغورس",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 3,
+      "file": "3am-s3-47",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "لتخفيف الاكتظاظ، بُنيت متوسطة جديدة في الحيّ على قطعة أرض مستطيلة $ABCD$ . لتزويدها بالماء يوضع أنبوب أول بين النقطتين $E$ و $G$ ، وأنبوب ثان بين $G$ و $F$ ، حيث المثلث $AEG$ قائم في $A$ ، $AE = 18\\,\\mathrm{m}$ ، $AG = 24\\,\\mathrm{m}$ و $DC = 52\\,\\mathrm{m}$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          4
+        ],
+        "B": [
+          5.2,
+          4
+        ],
+        "C": [
+          5.2,
+          0
+        ],
+        "D": [
+          0,
+          0
+        ],
+        "E": [
+          1.8,
+          4
+        ],
+        "G": [
+          0,
+          1.6
+        ],
+        "F": [
+          5.2,
+          1.6
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "E",
+          "label": "18 m"
+        },
+        {
+          "from": "E",
+          "to": "B"
+        },
+        [
+          "B",
+          "C"
+        ],
+        {
+          "from": "C",
+          "to": "D",
+          "label": "52 m"
+        },
+        [
+          "D",
+          "G"
+        ],
+        {
+          "from": "G",
+          "to": "A",
+          "label": "24 m"
+        },
+        {
+          "from": "E",
+          "to": "G",
+          "tone": "sky",
+          "bold": true
+        },
+        {
+          "from": "G",
+          "to": "F",
+          "tone": "sky",
+          "bold": true
+        }
+      ],
+      "rightAngles": [
+        [
+          "E",
+          "A",
+          "G"
+        ]
+      ],
+      "labels": {
+        "A": "nw",
+        "E": "n",
+        "G": "w",
+        "F": "e"
+      },
+      "ariaLabel": "قطعة أرض مستطيلة ABCD حيث DC = 52 m، و E على [AB] حيث AE = 18 m، و G على [AD] حيث AG = 24 m، وأنبوبان [EG] و [GF] حيث F على [BC] و (GF) يوازي (AB)",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "الأنبوب الأول:",
+      "statement": "احسب $EG^2$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: قيمة $EG^2$ (بـ $m^2$)",
+      "expectedAnswer": "900",
+      "misconceptionSignatures": [
+        {
+          "value": "84",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        },
+        {
+          "value": "252",
+          "id": "MISC-FITAGHURAS-HYP-WRONG"
+        },
+        {
+          "value": "42",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مربع العدد هو جداؤه في نفسه: $a^2 = a \\times a$ وليس $2 \\times a$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$EG^2 = 18^2 + 24^2 = 900$ .",
+        "incorrect": "اكتب مساواة فيثاغورس بالوتر وحده في طرف، ثم ربّع كل طول (اضربه في نفسه) قبل الجمع."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $AEG$ قائم في $A$ ، حسب خاصية فيثاغورس: $EG^2 = AE^2 + AG^2$",
+          "$EG^2 = 18^2 + 24^2$",
+          "$EG^2 = 324 + 576 = 900$"
+        ],
+        "result": "EG^2 = 900"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج طول الأنبوب $EG$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "42",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "900",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولا مربع الطول، ثم خذ جذره التربيعي بالآلة الحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$EG^2 = 18^2 + 24^2 = 900$ ، إذن $EG = 30\\,\\mathrm{m}$ .",
+        "incorrect": "ابدأ بتحديد الوتر، ثم اكتب مساواة فيثاغورس، وتذكّر أن ما تحسبه أولا هو مربع الطول لا الطول نفسه."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $AEG$ قائم في $A$ ، حسب خاصية فيثاغورس: $EG^2 = AE^2 + AG^2$",
+          "$EG^2 = 18^2 + 24^2$",
+          "$EG^2 = 324 + 576 = 900$",
+          "$EG = \\sqrt{900} = 30\\,\\mathrm{m}$"
+        ],
+        "result": "EG = 30\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "الأنبوب الثاني:",
+      "statement": "طول الأنبوب الثاني $GF$ يساوي $DC$ . احسب الطول الكلي للأنبوبين.",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بـ m",
+      "expectedAnswer": "82",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$GF = 52\\,\\mathrm{m}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع طولي الأنبوبين."
+        }
+      ],
+      "feedback": {
+        "correct": "$30 + 52 = 82\\,\\mathrm{m}$ .",
+        "incorrect": "استعمل طول $EG$ الذي حسبته."
+      },
+      "solution": {
+        "lines": [
+          "$GF = DC = 52\\,\\mathrm{m}$ ($ABFG$ مستطيل)",
+          "$EG + GF = 30 + 52 = 82\\,\\mathrm{m}$"
+        ],
+        "result": "82\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "ثمن المتر الواحد من الأنبوب $750$ دج. احسب ثمن الأنبوبين.",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المبلغ بالدينار",
+      "expectedAnswer": "61500",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الثمن يتناسب مع الطول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب الطول الكلي في ثمن المتر."
+        }
+      ],
+      "feedback": {
+        "correct": "$82 \\times 750 = 61\\,500$ دج.",
+        "incorrect": "الطول الكلي × ثمن المتر."
+      },
+      "solution": {
+        "lines": [
+          "$82 \\times 750 = 61\\,500$ دج"
+        ],
+        "result": "61\\,500"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "خصّصت جمعية أولياء التلاميذ $60\\,000$ دج لشراء الأنبوبين. هل يكفي المبلغ؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، ينقصه $10\\,500$ دج لأن $EG = 18 + 24 = 42\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "id": "B",
+          "content": "لا، ينقصه $1\\,500$ دج",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نعم، لأن $61\\,500$ قريب من $60\\,000$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-LOOKS-RIGHT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الثمن بالمبلغ المخصّص."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الفرق."
+        }
+      ],
+      "feedback": {
+        "correct": "ينقص $1\\,500$ دج.",
+        "incorrect": "قارن $61\\,500$ بـ $60\\,000$ ."
+      },
+      "solution": {
+        "lines": [
+          "ثمن الأنبوبين $61\\,500$ دج و $61\\,500 > 60\\,000$ .",
+          "الفرق: $61\\,500 - 60\\,000 = 1\\,500$ دج ، فالمبلغ لا يكفي."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,404 @@
+{
+  "id": "ex-4am-tarrid-khatti-l4-006",
+  "lessonCode": "tarrid-khatti",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2014 — عرضا مكتبة رقمية",
+    "estimatedMinutes": 14,
+    "tags": [
+      "عرضان",
+      "جدول",
+      "قراءة بيانية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tarrid-khatti_P2",
+      "modelledOn": "BEM 2014 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2014",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "تقترح مكتبة رقمية تشجّع على القراءة على قرّائها عرضين شهريين لاستئجار الكتب الإلكترونية:\n– العرض الأول: 50DA للكتاب الواحد.\n– العرض الثاني: 25DA للكتاب الواحد مع اشتراك شهري قدره 250DA.\nيمثّل $(D_1)$ و $(D_2)$ في المعلم التالي المبلغ المدفوع حسب العرضين الأول والثاني على الترتيب، بدلالة عدد الكتب المستأجرة.",
+    "table": {
+      "head": [
+        "عدد الكتب",
+        "5",
+        "…",
+        "…"
+      ],
+      "rows": [
+        [
+          "المبلغ حسب العرض الأول (DA)",
+          "…",
+          "450",
+          "…"
+        ],
+        [
+          "المبلغ حسب العرض الثاني (DA)",
+          "…",
+          "…",
+          "550"
+        ]
+      ]
+    },
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "P": [
+          8,
+          8
+        ],
+        "B": [
+          0,
+          2.5
+        ],
+        "Q": [
+          8,
+          6.5
+        ]
+      },
+      "rays": [
+        {
+          "from": "O",
+          "through": "P",
+          "name": "(D₁)",
+          "tone": "indigo",
+          "extend": 0.04
+        },
+        {
+          "from": "B",
+          "through": "Q",
+          "name": "(D₂)",
+          "tone": "rose",
+          "extend": 0.04
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw"
+      },
+      "hidden": [
+        "P",
+        "B",
+        "Q"
+      ],
+      "ariaLabel": "معلم على ورقة مرصوفة: المستقيم (D1) ينطلق من المبدأ، والمستقيم (D2) ينطلق من محور التراتيب، ويتقاطعان",
+      "caption": "محور الفواصل: كل وحدة تمثّل كتابين — محور التراتيب: كل وحدة تمثّل 100DA"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "انقل الجدول وأكمله (نكتفي بالخانات الآتية).",
+      "statement": "المبلغ حسب العرض الأول من أجل 5 كتب:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "250",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ = 50 × عدد الكتب."
+        }
+      ],
+      "feedback": {
+        "correct": "$50 \\times 5 = 250$ .",
+        "incorrect": "اضرب عدد الكتب في ثمن الكتاب."
+      },
+      "solution": {
+        "lines": [
+          "$50 \\times 5 = 250$"
+        ],
+        "result": "250DA"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "عدد الكتب الذي يوافق 450DA حسب العرض الأول:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الكتب",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هنا المبلغ معلوم: اقسم على ثمن الكتاب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{450}{50} = 9$ .",
+        "incorrect": "اقسم المبلغ على 50."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{450}{50} = 9$"
+        ],
+        "result": "9"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "عدد الكتب الذي يوافق 550DA حسب العرض الثاني:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الكتب",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "22",
+          "id": "MISC-TANASUB-MABLAGH-THABIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح الاشتراك أولا، ثم اقسم على ثمن الكتاب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{550 - 250}{25} = 12$ .",
+        "incorrect": "لا تنس الاشتراك الشهري قبل القسمة."
+      },
+      "solution": {
+        "lines": [
+          "$550 - 250 = 300$",
+          "$\\dfrac{300}{25} = 12$"
+        ],
+        "result": "12"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "lead": "ليكن $x$ عدد الكتب المستأجرة في الشهر، و $y_1$ و $y_2$ المبلغين (بـ DA) حسب العرضين الأول والثاني، حيث $y_2 = 25x + 250$ .",
+      "statement": "عبّر عن $y_1$ بدلالة $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "50",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العرض الأول بلا اشتراك: المبلغ متناسب مع عدد الكتب."
+        }
+      ],
+      "feedback": {
+        "correct": "$y_1 = 50x$ : دالة خطية، تمثيلها $(D_1)$ يشمل المبدأ.",
+        "incorrect": "المعامل هو ثمن الكتاب الواحد في العرض الأول."
+      },
+      "solution": {
+        "lines": [
+          "$y_1 = 50x$ ، و $y_2 = 25x + 250$ .",
+          "$y_1$ دالة خطية: تمثيلها $(D_1)$ يشمل المبدأ $O$ ."
+        ],
+        "result": "y_1 = 50x"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ا",
+      "statement": "بقراءة بيانية، كم كتابا تستأجر أمينة بمبلغ 300DA حسب العرض الأول؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الكتب",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-BAYANI-FASILA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "300DA توافق 3 وحدات على محور التراتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اتجه أفقيا حتى $(D_1)$ ثم عموديا حتى محور الفواصل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كل وحدة على محور الفواصل تمثّل كتابين."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة من $(D_1)$ التي ترتيبها 3 فاصلتها 3 وحدات، أي 6 كتب.",
+        "incorrect": "انتبه إلى وحدة محور الفواصل: الوحدة تمثّل كتابين."
+      },
+      "solution": {
+        "lines": [
+          "النقطة من $(D_1)$ التي ترتيبها 3 (أي 300DA) فاصلتها 3 وحدات.",
+          "$3 \\times 2 = 6$ : تستأجر أمينة 6 كتب.",
+          "التحقق: $50 \\times 6 = 300$ ."
+        ],
+        "result": "6"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ب",
+      "statement": "بقراءة بيانية، عيّن عدد الكتب الذي يتساوى من أجله المبلغان.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الكتب",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-BAYANI-FASILA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن نقطة تقاطع المستقيمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ فاصلتها، وانتبه إلى وحدة محور الفواصل."
+        }
+      ],
+      "feedback": {
+        "correct": "يتقاطع المستقيمان في النقطة التي فاصلتها 5 وحدات، أي 10 كتب (500DA).",
+        "incorrect": "المبلغان متساويان عند نقطة التقاطع: اقرأ فاصلتها."
+      },
+      "solution": {
+        "lines": [
+          "$(D_1)$ و $(D_2)$ يتقاطعان في النقطة ذات الإحداثيين (5 وحدات ؛ 5 وحدات).",
+          "أي 10 كتب بمبلغ 500DA في العرضين."
+        ],
+        "result": "10"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "statement": "☜ يريد سمير استئجار 14 كتابا هذا الشهر. ما هو العرض الأنسب له؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "العرض الأول",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        },
+        {
+          "id": "B",
+          "content": "العرض الثاني",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 14 بفاصلة نقطة التقاطع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد نقطة التقاطع، أيّ المستقيمين تحت الآخر؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$14 > 10$ : $(D_2)$ تحت $(D_1)$ ، و $y_2 = 600 < y_1 = 700$ .",
+        "incorrect": "استعمل الوضع النسبي للمستقيمين بعد نقطة التقاطع، أو احسب المبلغين."
+      },
+      "solution": {
+        "lines": [
+          "$14 > 10$ : بعد نقطة التقاطع يكون $(D_2)$ تحت $(D_1)$ .",
+          "التحقق: $y_1 = 50 \\times 14 = 700$ و $y_2 = 25 \\times 14 + 250 = 600$ .",
+          "العرض الثاني أنسب لسمير."
+        ],
+        "result": "العرض الثاني"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

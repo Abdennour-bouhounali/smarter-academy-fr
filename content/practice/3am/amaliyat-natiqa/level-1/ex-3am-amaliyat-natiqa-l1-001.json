@@ -1,0 +1,269 @@
+{
+  "id": "ex-3am-amaliyat-natiqa-l1-001",
+  "lessonCode": "amaliyat-natiqa",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مجموع وفرق وجداء وحاصل قسمة",
+    "estimatedMinutes": 14,
+    "tags": [
+      "العمليات على الأعداد الناطقة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 1,
+      "file": "3am-s1-110",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نعرّف أربعة أعداد ناطقة $A$ و $B$ و $C$ و $D$ ، ونريد حساب كلّ منها على أبسط شكل ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $A = -\\dfrac{7}{12} + \\dfrac{3}{8}$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "-5/24",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "5/24",
+          "id": "MISC-AMAL-SUMSIGN"
+        },
+        {
+          "value": "-23/24",
+          "id": "MISC-AMAL-ADDDIST"
+        },
+        {
+          "value": "-1/5",
+          "id": "MISC-AMAL-ACROSS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة كلّ من العددين؟ وهل المقامان متساويان؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حدّد إشارة الناتج أوّلًا بمقارنة بعدَي العددين عن الصفر، ثمّ وحّد المقامين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع البسطين أو اطرحهما بعد توحيد المقامين، ثمّ اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = -\\dfrac{5}{24}$ .",
+        "incorrect": "حدّد إشارة الناتج بمقارنة بعدَي العددين عن الصفر، ثمّ وحّد المقامين قبل الجمع أو الطرح، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "العددان $-\\dfrac{7}{12}$ و $\\dfrac{3}{8}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $-\\dfrac{7}{12}$ ، فإشارة المجموع سالبة.",
+          "$-\\dfrac{7}{12} + \\dfrac{3}{8} = -\\dfrac{14}{24} + \\dfrac{9}{24} = \\dfrac{-14 + 9}{24} = -\\dfrac{5}{24}$ ."
+        ],
+        "result": "A = -\\dfrac{5}{24}"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $B = \\dfrac{5}{6} - \\dfrac{9}{10}$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "-1/15",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1/15",
+          "id": "MISC-AMAL-SUMSIGN"
+        },
+        {
+          "value": "-1/4",
+          "id": "MISC-AMAL-ACROSS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة كلّ من العددين؟ وهل المقامان متساويان؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حدّد إشارة الناتج أوّلًا بمقارنة بعدَي العددين عن الصفر، ثمّ وحّد المقامين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع البسطين أو اطرحهما بعد توحيد المقامين، ثمّ اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = -\\dfrac{1}{15}$ .",
+        "incorrect": "حدّد إشارة الناتج بمقارنة بعدَي العددين عن الصفر، ثمّ وحّد المقامين قبل الجمع أو الطرح، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{6} - \\dfrac{9}{10} = \\dfrac{5}{6} + \\left(-\\dfrac{9}{10}\\right)$ (طرح عدد هو جمع معاكسه).",
+          "العددان $\\dfrac{5}{6}$ و $-\\dfrac{9}{10}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $-\\dfrac{9}{10}$ ، فإشارة المجموع سالبة.",
+          "$\\dfrac{5}{6} + \\left(-\\dfrac{9}{10}\\right) = \\dfrac{25}{30} - \\dfrac{27}{30} = \\dfrac{25 - 27}{30} = -\\dfrac{1}{15}$ ."
+        ],
+        "result": "B = -\\dfrac{1}{15}"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب $C = \\dfrac{4}{9} \\times \\left(-\\dfrac{3}{10}\\right)$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "-2/15",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2/15",
+          "id": "MISC-AMAL-PRODSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليات الموجودة؟ وهل توجد أقواس أو كسر مركّب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح، ومع كلّ عملية نحدّد الإشارة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز عملية واحدة في كلّ سطر، ثمّ اكتب النتيجة غير القابلة للاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = -\\dfrac{2}{15}$ .",
+        "incorrect": "احترم الأولويّة: الأقواس ثمّ الضرب والقسمة ثمّ الجمع والطرح، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "العاملان من إشارتين مختلفتين: الجداء سالب.",
+          "$\\dfrac{4}{9} \\times \\left(-\\dfrac{3}{10}\\right) = -\\dfrac{4 \\times 3}{9 \\times 10} = -\\dfrac{12}{90} = -\\dfrac{2}{15}$ ."
+        ],
+        "result": "C = -\\dfrac{2}{15}"
+      }
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب $D = \\dfrac{4}{15} \\div \\left(-\\dfrac{8}{9}\\right)$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "-3/10",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "3/10",
+          "id": "MISC-AMAL-PRODSIGN"
+        },
+        {
+          "value": "-32/135",
+          "id": "MISC-AMAL-NOFLIP"
+        },
+        {
+          "value": "-10/3",
+          "id": "MISC-AMAL-FLIPFIRST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليات الموجودة؟ وهل توجد أقواس أو كسر مركّب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح، ومع كلّ عملية نحدّد الإشارة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز عملية واحدة في كلّ سطر، ثمّ اكتب النتيجة غير القابلة للاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "$D = -\\dfrac{3}{10}$ .",
+        "incorrect": "احترم الأولويّة: الأقواس ثمّ الضرب والقسمة ثمّ الجمع والطرح، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "القسمة على $-\\dfrac{8}{9}$ هي الضرب في مقلوبه، ومقلوب $-\\dfrac{8}{9}$ هو $-\\dfrac{9}{8}$ (يحتفظ بالإشارة نفسها).",
+          "$\\dfrac{4}{15} \\div \\left(-\\dfrac{8}{9}\\right) = \\dfrac{4}{15} \\times \\left(-\\dfrac{9}{8}\\right)$ .",
+          "العاملان من إشارتين مختلفتين: الجداء سالب.",
+          "$\\dfrac{4}{15} \\times \\left(-\\dfrac{9}{8}\\right) = -\\dfrac{4 \\times 9}{15 \\times 8} = -\\dfrac{36}{120} = -\\dfrac{3}{10}$ ."
+        ],
+        "result": "D = -\\dfrac{3}{10}"
+      }
+    }
+  ]
+}

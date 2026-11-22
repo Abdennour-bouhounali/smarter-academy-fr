@@ -1,0 +1,191 @@
+{
+  "id": "ex-2am-ikhtibar-musawat-mutabayina-l4-007",
+  "lessonCode": "ikhtibar-musawat-mutabayina",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مساواة تبدو صحيحة دائما",
+    "estimatedMinutes": 6,
+    "tags": [
+      "تساوي عبارتين",
+      "خاصيّة التوزيع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اختبر تساوي العبارتين في كلّ حالة :"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل العبارتان $5(x+2)+5$ و $5(x+3)$ متساويتان مهما كانت قيمة $x$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "نعم",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جرّب العبارتين بقيمة أو قيمتين للحرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا اختلفت النتيجتان عند قيمة واحدة فالعبارتان غير متساويتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا تساوتا عند عدّة قيم فتحقّق من القاعدة (التوزيع مثلا) قبل أن تحكم : التساوي عند بعض القيم لا يكفي."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم : العبارتان متساويتان مهما كانت قيمة الحرف .",
+        "incorrect": "مثال مضادّ واحد يكفي لإثبات عدم التساوي، أمّا التساوي فيبرّره قاعدة معروفة."
+      },
+      "solution": {
+        "lines": [
+          "$5(x+2)+5=5(x+3)$ : العبارتان متساويتان مهما كانت قيمة $x$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل العبارتان $5(x+2)+5$ و $5(x+3)+5$ متساويتان مهما كانت قيمة $x$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جرّب العبارتين بقيمة أو قيمتين للحرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا اختلفت النتيجتان عند قيمة واحدة فالعبارتان غير متساويتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا تساوتا عند عدّة قيم فتحقّق من القاعدة (التوزيع مثلا) قبل أن تحكم : التساوي عند بعض القيم لا يكفي."
+        }
+      ],
+      "feedback": {
+        "correct": "لا : توجد قيمة تختلف عندها العبارتان .",
+        "incorrect": "مثال مضادّ واحد يكفي لإثبات عدم التساوي، أمّا التساوي فيبرّره قاعدة معروفة."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $x=0$ : $5\\times (0+2)+5=15$ و $5\\times (0+3)+5=20$ .",
+          "النتيجتان مختلفتان : مثال مضادّ واحد يكفي، فالعبارتان غير متساويتين ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل المساواة $5(x+2)+5=5(x+3)$ صحيحة من أجل $x=4$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "نعم",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بالقيمة المعطاة في الطرف الأوّل ثمّ في الطرف الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة، مع إنجاز الضرب قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الناتجين : إذا تساويا فالمساواة صحيحة، وإلاّ فهي خاطئة."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم : المساواة صحيحة .",
+        "incorrect": "عوّض الحرف في الطرفين، احسب كلّ طرف ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل : $5\\times (4+2)+5=35$ .",
+          "الطرف الثاني : $5\\times (4+3)=35$ .",
+          "$35=35$ : الطرفان متساويان، فالمساواة صحيحة ."
+        ]
+      },
+      "timeSeconds": 70
+    }
+  ]
+}

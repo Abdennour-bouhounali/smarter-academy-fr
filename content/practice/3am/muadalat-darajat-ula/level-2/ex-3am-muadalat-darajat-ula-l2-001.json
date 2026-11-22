@@ -1,0 +1,191 @@
+{
+  "id": "ex-3am-muadalat-darajat-ula-l2-001",
+  "lessonCode": "muadalat-darajat-ula",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — معادلة كسرية",
+    "estimatedMinutes": 7,
+    "tags": [
+      "معادلة كسرية",
+      "التحقّق"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-81",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر المعادلة $\\dfrac{x}{2} - 3 = \\dfrac{x}{4} - 2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "هل العدد $6$ حلّ للمعادلة $\\dfrac{x}{2} - 3 = \\dfrac{x}{4} - 2$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد المراد اختباره؟ عوّضه مكان المجهول في الطرف الأيسر ثم في الطرف الأيمن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة بدقّة (انتبه إلى الإشارات)، ثم قارن النتيجتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا تساوى الطرفان فالعدد حلّ للمعادلة، وإذا اختلفا فليس حلًّا لها."
+        }
+      ],
+      "feedback": {
+        "correct": "لا: الطرفان غير متساويين عند هذا العدد.",
+        "incorrect": "للتحقّق من أنّ عددًا حلّ نعوّضه في الطرفين ونقارن القيمتين؛ أعد المحاولة."
+      },
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-CHECK-ONE-SIDE"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "solution": {
+        "lines": [
+          "نعوّض $x = 6$ في كلّ طرف على حدة.",
+          "الطرف الأيسر: $\\dfrac{6}{2} - 3$ ، أي $0$ .",
+          "الطرف الأيمن: $\\dfrac{6}{4} - 2$ ، أي $-\\dfrac{1}{2}$ .",
+          "الطرفان غير متساويين، إذن العدد $6$ ليس حلًّا للمعادلة."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "حلّ المعادلة $\\dfrac{x}{2} - 3 = \\dfrac{x}{4} - 2$ .",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 4$ .",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر أو عدد عشري)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "4/3",
+          "id": "MISC-MUADALA-SIGN-KEPT"
+        },
+        {
+          "value": "1",
+          "id": "MISC-MUADALA-PARTIAL-SOLVE"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "لدينا: $\\dfrac{x}{2} - 3 = \\dfrac{x}{4} - 2$ .",
+          "نضيف $-\\dfrac{1}{4}x$ إلى الطرفين (معاكس الحدّ $\\dfrac{1}{4}x$) فنجد: $\\dfrac{1}{4}x - 3 = -2$ .",
+          "نضيف $3$ إلى الطرفين (معاكس $-3$) فنجد: $\\dfrac{1}{4}x = 1$ .",
+          "نقسم الطرفين على $\\dfrac{1}{4}$ فنجد: $x = 4$ .",
+          "التحقّق: من أجل $x = 4$ نجد الطرف الأيسر $-1$ والطرف الأيمن $-1$ ، فهما متساويان."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "برّر أنّ العدد الذي وجدته حلّ للمعادلة بتعويضه في الطرفين.",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد المراد اختباره؟ عوّضه مكان المجهول في الطرف الأيسر ثم في الطرف الأيمن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة بدقّة (انتبه إلى الإشارات)، ثم قارن النتيجتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا تساوى الطرفان فالعدد حلّ للمعادلة، وإذا اختلفا فليس حلًّا لها."
+        }
+      ],
+      "feedback": {
+        "correct": "عند $x = 4$ يساوي كلّ طرف $-1$ .",
+        "incorrect": "للتحقّق من أنّ عددًا حلّ نعوّضه في الطرفين ونقارن القيمتين؛ أعد المحاولة."
+      },
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب إجابتك ثم قارنها بالتصحيح النموذجي",
+      "solution": {
+        "lines": [
+          "نعوّض $x = 4$ في كلّ طرف على حدة.",
+          "الطرف الأيسر: $\\dfrac{4}{2} - 3$ ، أي $-1$ .",
+          "الطرف الأيمن: $\\dfrac{4}{4} - 2$ ، أي $-1$ .",
+          "الطرفان متساويان، إذن العدد $4$ حلّ للمعادلة."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

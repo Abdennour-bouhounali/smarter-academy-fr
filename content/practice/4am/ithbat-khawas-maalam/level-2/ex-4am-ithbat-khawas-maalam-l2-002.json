@@ -1,0 +1,120 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l2-002",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 2,
+  "metadata": {
+    "title": "من الكتاب — دوري الآن 1 (ص 145)",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مربّع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "now-145",
+      "page": 145,
+      "section": "دوري الآن",
+      "number": 1
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 145): $A(2\\,;\\,2)$ ، $B(2\\,;\\,-2)$ ، $C(-2\\,;\\,-2)$ ، $D(-2\\,;\\,2)$ نقط من المستوي المزوّد بمعلم متعامد ومتجانس. برهن أن الرباعي ABCD مربع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مركبتا $\\overrightarrow{AB}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x\\,;\\,y)$ : الأولى ثم الثانية (عدد صحيح أو كسر مثل 5/2)",
+      "expectedAnswer": {
+        "x": "0",
+        "y": "-4"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النهاية B ناقص المبدأ A."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "للفاصلتين نفس القيمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الترتيب ينزل من 2 إلى −2."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AB}\\begin{pmatrix} 0 \\\\ -4 \\end{pmatrix}$ ، وهي أيضا مركبتا $\\overrightarrow{DC}$ .",
+        "incorrect": "النهاية ناقص المبدأ، المركبة الأفقية أولا."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "بعد $\\overrightarrow{AB} = \\overrightarrow{DC}$ و $AB = BC = 4$ و $AC = BD = 4\\sqrt{2}$ ، الرباعي ABCD :",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "متوازي أضلاع فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "B",
+          "content": "مربّع: متوازي أضلاع ومستطيل ومعيّن معا",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "مستطيل وليس مربّعا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "D",
+          "content": "معيّن وليس مربّعا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا يثبت كل دليل؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القطران المتقايسان: مستطيل؛ الضلعان المتتاليان: معيّن."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الدليلان معا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "متوازي أضلاع + قطران متقايسان + ضلعان متتاليان متقايسان: مربّع.",
+        "incorrect": "الأدلة الثلاثة متوفرة: لا نتوقف عند أحدها."
+      }
+    }
+  ]
+}

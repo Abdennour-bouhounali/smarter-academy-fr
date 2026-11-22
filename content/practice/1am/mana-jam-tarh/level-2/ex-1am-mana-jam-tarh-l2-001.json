@@ -1,0 +1,128 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l2-001",
+  "lessonCode": "mana-jam-tarh",
+  "level": 2,
+  "metadata": {
+    "title": "ثمن القصّة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "ينقص",
+      "اختيار العملية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-1",
+      "page": 25,
+      "section": "اكتشف",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "جمع ياسر بصبر مبلغ 145,5 دج، وينقصه 64,5 دج ليشتري قصّة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب ثمن القصّة.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "210",
+      "misconceptionSignatures": [
+        {
+          "value": "81",
+          "id": "MISC-JAMTARH-KALIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل ثمن القصّة أكبر أم أصغر مما يملكه ياسر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثمن القصّة = ما يملكه + ما ينقصه."
+        }
+      ],
+      "feedback": {
+        "correct": "$145{,}5 + 64{,}5 = 210$ دج.",
+        "incorrect": "ياسر لا يملك ثمن القصّة كاملًا: ثمنها أكبر مما يملكه."
+      },
+      "solution": {
+        "lines": [
+          "ثمن القصّة هو الكل: ما يملكه ياسر 145,5 دج وما ينقصه 64,5 دج.",
+          "$145{,}5 + 64{,}5 = 210$"
+        ],
+        "result": "210 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "قال زميله: « في النص كلمة ينقصه، إذن نطرح ». هل هذا صحيح؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KALIMA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم مخططًا بأقواس: أين ثمن القصّة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكلمة وحدها لا تقرّر العملية، البنية هي التي تقرّرها."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن القصّة هو الكل، والمجهول هو الكل: نجمع رغم كلمة « ينقصه ».",
+        "incorrect": "المجهول هنا هو الكل (ثمن القصّة)، فكيف نحصل على الكل من جزأيه؟"
+      },
+      "solution": {
+        "lines": [
+          "لا، ليس صحيحًا.",
+          "ثمن القصّة هو الكل، وجزآه ما يملكه ياسر (145,5 دج) وما ينقصه (64,5 دج).",
+          "المجهول هو الكل، إذن نجمع الجزأين: كلمة « ينقصه » لا تعني الطرح هنا."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

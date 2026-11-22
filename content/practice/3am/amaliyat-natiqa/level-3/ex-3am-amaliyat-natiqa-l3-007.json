@@ -1,0 +1,206 @@
+{
+  "id": "ex-3am-amaliyat-natiqa-l3-007",
+  "lessonCode": "amaliyat-natiqa",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أقواس وأولويّة العمليات",
+    "estimatedMinutes": 11,
+    "tags": [
+      "العمليات على الأعداد الناطقة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "احترم الأولويّة في كلّ عبارة، واكتب النتيجة على أبسط شكل ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $A = \\left(-\\dfrac{3}{4} + \\dfrac{5}{6}\\right) \\times \\left(\\dfrac{7}{10} - \\dfrac{1}{2}\\right) \\div \\left(-\\dfrac{1}{9}\\right)$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "-3/20",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليات الموجودة؟ وهل توجد أقواس أو كسر مركّب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح، ومع كلّ عملية نحدّد الإشارة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز عملية واحدة في كلّ سطر، ثمّ اكتب النتيجة غير القابلة للاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = -\\dfrac{3}{20}$ .",
+        "incorrect": "احترم الأولويّة: الأقواس ثمّ الضرب والقسمة ثمّ الجمع والطرح، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "العددان $-\\dfrac{3}{4}$ و $\\dfrac{5}{6}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $\\dfrac{5}{6}$ ، فإشارة المجموع موجبة.",
+          "$-\\dfrac{3}{4} + \\dfrac{5}{6} = -\\dfrac{9}{12} + \\dfrac{10}{12} = \\dfrac{-9 + 10}{12} = \\dfrac{1}{12}$ .",
+          "$\\dfrac{7}{10} - \\dfrac{1}{2} = \\dfrac{7}{10} + \\left(-\\dfrac{1}{2}\\right)$ (طرح عدد هو جمع معاكسه).",
+          "العددان $\\dfrac{7}{10}$ و $-\\dfrac{1}{2}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $\\dfrac{7}{10}$ ، فإشارة المجموع موجبة.",
+          "$\\dfrac{7}{10} + \\left(-\\dfrac{1}{2}\\right) = \\dfrac{7}{10} - \\dfrac{5}{10} = \\dfrac{7 - 5}{10} = \\dfrac{1}{5}$ .",
+          "العاملان موجبان: الجداء موجب.",
+          "$\\dfrac{1}{12} \\times \\dfrac{1}{5} = \\dfrac{1 \\times 1}{12 \\times 5} = \\dfrac{1}{60}$ .",
+          "القسمة على $-\\dfrac{1}{9}$ هي الضرب في مقلوبه، ومقلوب $-\\dfrac{1}{9}$ هو $-9$ (يحتفظ بالإشارة نفسها).",
+          "$\\dfrac{1}{60} \\div \\left(-\\dfrac{1}{9}\\right) = \\dfrac{1}{60} \\times \\left(-9\\right)$ .",
+          "العاملان من إشارتين مختلفتين: الجداء سالب.",
+          "$\\dfrac{1}{60} \\times \\left(-9\\right) = -\\dfrac{1 \\times 9}{60} = -\\dfrac{9}{60} = -\\dfrac{3}{20}$ ."
+        ],
+        "result": "A = -\\dfrac{3}{20}"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $B = -\\dfrac{2}{5} - \\left(\\dfrac{1}{3} - \\dfrac{3}{4}\\right) \\times \\left(-6\\right)$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "-29/10",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "-1/10",
+          "id": "MISC-AMAL-PRIORITY"
+        },
+        {
+          "value": "29/10",
+          "id": "MISC-AMAL-SUMSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليات الموجودة؟ وهل توجد أقواس أو كسر مركّب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح، ومع كلّ عملية نحدّد الإشارة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز عملية واحدة في كلّ سطر، ثمّ اكتب النتيجة غير القابلة للاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = -\\dfrac{29}{10}$ .",
+        "incorrect": "احترم الأولويّة: الأقواس ثمّ الضرب والقسمة ثمّ الجمع والطرح، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "$\\dfrac{1}{3} - \\dfrac{3}{4} = \\dfrac{1}{3} + \\left(-\\dfrac{3}{4}\\right)$ (طرح عدد هو جمع معاكسه).",
+          "العددان $\\dfrac{1}{3}$ و $-\\dfrac{3}{4}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $-\\dfrac{3}{4}$ ، فإشارة المجموع سالبة.",
+          "$\\dfrac{1}{3} + \\left(-\\dfrac{3}{4}\\right) = \\dfrac{4}{12} - \\dfrac{9}{12} = \\dfrac{4 - 9}{12} = -\\dfrac{5}{12}$ .",
+          "العاملان سالبان: الجداء موجب.",
+          "$-\\dfrac{5}{12} \\times \\left(-6\\right) = \\dfrac{5 \\times 6}{12} = \\dfrac{30}{12} = \\dfrac{5}{2}$ .",
+          "$-\\dfrac{2}{5} - \\dfrac{5}{2} = -\\dfrac{2}{5} + \\left(-\\dfrac{5}{2}\\right)$ (طرح عدد هو جمع معاكسه).",
+          "العددان $-\\dfrac{2}{5}$ و $-\\dfrac{5}{2}$ سالبان، فنجمع بعديهما عن الصفر ونكتب الإشارة $-$.",
+          "$-\\dfrac{2}{5} + \\left(-\\dfrac{5}{2}\\right) = -\\dfrac{4}{10} - \\dfrac{25}{10} = \\dfrac{-4 - 25}{10} = -\\dfrac{29}{10}$ ."
+        ],
+        "result": "B = -\\dfrac{29}{10}"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب $C = \\dfrac{\\dfrac{1}{2} - \\dfrac{1}{3}}{\\dfrac{1}{6}} \\div \\left(-\\dfrac{1}{3}\\right)$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "-3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليات الموجودة؟ وهل توجد أقواس أو كسر مركّب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح، ومع كلّ عملية نحدّد الإشارة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز عملية واحدة في كلّ سطر، ثمّ اكتب النتيجة غير القابلة للاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = -3$ .",
+        "incorrect": "احترم الأولويّة: الأقواس ثمّ الضرب والقسمة ثمّ الجمع والطرح، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "$\\dfrac{1}{2} - \\dfrac{1}{3} = \\dfrac{1}{2} + \\left(-\\dfrac{1}{3}\\right)$ (طرح عدد هو جمع معاكسه).",
+          "العددان $\\dfrac{1}{2}$ و $-\\dfrac{1}{3}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $\\dfrac{1}{2}$ ، فإشارة المجموع موجبة.",
+          "$\\dfrac{1}{2} + \\left(-\\dfrac{1}{3}\\right) = \\dfrac{3}{6} - \\dfrac{2}{6} = \\dfrac{3 - 2}{6} = \\dfrac{1}{6}$ .",
+          "الكسر المركّب هو قسمة بسطه على مقامه: $\\dfrac{\\dfrac{1}{6}}{\\dfrac{1}{6}} = \\dfrac{1}{6} \\div \\dfrac{1}{6}$ .",
+          "القسمة على $\\dfrac{1}{6}$ هي الضرب في مقلوبه، ومقلوب $\\dfrac{1}{6}$ هو $6$ (يحتفظ بالإشارة نفسها).",
+          "$\\dfrac{1}{6} \\div \\dfrac{1}{6} = \\dfrac{1}{6} \\times 6$ .",
+          "العاملان موجبان: الجداء موجب.",
+          "$\\dfrac{1}{6} \\times 6 = \\dfrac{1 \\times 6}{6} = \\dfrac{6}{6} = 1$ .",
+          "القسمة على $-\\dfrac{1}{3}$ هي الضرب في مقلوبه، ومقلوب $-\\dfrac{1}{3}$ هو $-3$ (يحتفظ بالإشارة نفسها).",
+          "$1 \\div \\left(-\\dfrac{1}{3}\\right) = 1 \\times \\left(-3\\right)$ .",
+          "العاملان من إشارتين مختلفتين: الجداء سالب.",
+          "$1 \\times \\left(-3\\right) = -3$ ."
+        ],
+        "result": "C = -3"
+      }
+    }
+  ]
+}

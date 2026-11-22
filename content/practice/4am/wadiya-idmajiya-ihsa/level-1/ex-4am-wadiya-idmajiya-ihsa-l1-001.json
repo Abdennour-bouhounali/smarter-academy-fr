@@ -1,0 +1,154 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ihsa-l1-001",
+  "lessonCode": "wadiya-idmajiya-ihsa",
+  "level": 1,
+  "metadata": {
+    "title": "التكرار المجمع الصاعد والوسيط",
+    "estimatedMinutes": 4,
+    "tags": [
+      "التكرار المجمع الصاعد",
+      "الوسيط"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 100,
+      "section": "الوضعيات",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "إليك جدول قيم سلسلة إحصائية وتكراراتها:",
+    "table": {
+      "head": [
+        "القيمة",
+        "7",
+        "9",
+        "14",
+        "28"
+      ],
+      "rows": [
+        [
+          "التكرار",
+          "6",
+          "10",
+          "3",
+          "1"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب التكرار المجمع الصاعد للقيمة 14.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "19",
+      "misconceptionSignatures": [
+        {
+          "value": "16",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        },
+        {
+          "value": "3",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        },
+        {
+          "value": "4",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكرار المجمع الصاعد لقيمة هو مجموع تكرارها وتكرارات القيم الأصغر منها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ من أول عمود في الجدول واجمع التكرارات حتى العمود 14 مع تكراره."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 + 10 + 3 = 19$ .",
+        "incorrect": "اجمع تكرار القيمة 14 وتكرارات القيم الأصغر منها فقط، ولا تنس تكرار القيمة نفسها."
+      },
+      "solution": {
+        "lines": [
+          "التكرار المجمع الصاعد للقيمة 14 هو مجموع تكرار القيمة 14 وتكرارات القيم الأصغر منها:",
+          "$6 + 10 + 3 = 19$"
+        ],
+        "result": "19"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عيّن وسيط هذه السلسلة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "11,5",
+          "id": "MISC-IHSA-WASIT-QIMA-WUSTA-JADWAL"
+        },
+        {
+          "value": "10,1",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولا التكرار الكلي، ثم رتبتي القيمتين الوسطيين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل التكرارات المجمعة الصاعدة لتعرف القيمة التي تقع فيها كل رتبة."
+        }
+      ],
+      "feedback": {
+        "correct": "الرتبتان 10 و 11 تقعان في القيمة 9 ، فالوسيط 9 .",
+        "incorrect": "الوسيط لا يُقرأ من موضع القيمة في سطر الجدول: حدّد الرتبتين الوسطيين بالتكرارات المجمعة."
+      },
+      "solution": {
+        "lines": [
+          "التكرار الكلي: $6 + 10 + 3 + 1 = 20$ (عدد زوجي)، فالوسيط نصف مجموع القيمتين ذواتي الرتبتين 10 و 11 .",
+          "التكرارات المجمعة الصاعدة: 6 ، 16 ، 19 ، 20 ؛ الرتب من 7 إلى 16 كلها للقيمة 9 .",
+          "$\\dfrac{9 + 9}{2} = 9$"
+        ],
+        "result": "9"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

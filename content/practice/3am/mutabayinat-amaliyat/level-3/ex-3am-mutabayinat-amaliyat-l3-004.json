@@ -1,0 +1,251 @@
+{
+  "id": "ex-3am-mutabayinat-amaliyat-l3-004",
+  "lessonCode": "mutabayinat-amaliyat",
+  "level": 3,
+  "metadata": {
+    "title": "الضرب في عدد موجب أو سالب مع $\\le$ و $\\ge$",
+    "estimatedMinutes": 10,
+    "tags": [
+      "ضرب",
+      "≤ و ≥"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-18",
+      "page": 79,
+      "section": "أوظّف تعلّماتي",
+      "number": 18
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$a$ و $b$ عددان ناطقان. أكمل بالرمز المناسب."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "إذا كان $a\\ge b$ فإنّ $5a\\ \\square \\ 5b$",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\ge$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\le$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-POS-FLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل العدد الذي نضرب فيه (أو نقسم عليه) موجب أم سالب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في عدد موجب تمامًا (أو القسمة عليه) لا يغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق العملية على كلّ طرف ثم احتفظ بالرمز كما هو."
+        }
+      ],
+      "feedback": {
+        "correct": "الضرب في $5$ (موجب) يحفظ الاتجاه: $5a\\ge 5b$ .",
+        "incorrect": "الضرب في عدد موجب تمامًا (أو القسمة عليه) يحفظ اتجاه المتباينة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الضرب في $5$ (موجب) يحفظ الاتجاه: $5a\\ge 5b$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "إذا كان $a>b$ فإنّ $-\\dfrac{3}{4}a\\ \\square \\ -\\dfrac{3}{4}b$",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$>$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-NEG-NOFLIP"
+        },
+        {
+          "id": "B",
+          "content": "$<$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد إشارة العدد الذي نضرب فيه (أو نقسم عليه)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في عدد سالب تمامًا (أو القسمة عليه) يغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب عددين يحقّقان الشرط، وانظر أيّهما صار الأكبر بعد العملية."
+        }
+      ],
+      "feedback": {
+        "correct": "الضرب في $-\\dfrac{3}{4}$ (سالب) يغيّر الاتجاه: $-\\dfrac{3}{4}a<-\\dfrac{3}{4}b$ .",
+        "incorrect": "الضرب في عدد سالب تمامًا (أو القسمة عليه) يغيّر اتجاه المتباينة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الضرب في $-\\dfrac{3}{4}$ (سالب) يغيّر الاتجاه: $-\\dfrac{3}{4}a<-\\dfrac{3}{4}b$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "إذا كان $a\\le b$ فإنّ $2a-1\\ \\square \\ 2b-1$",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\le$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\ge$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-POS-FLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل العدد الذي نضرب فيه (أو نقسم عليه) موجب أم سالب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في عدد موجب تمامًا (أو القسمة عليه) لا يغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق العملية على كلّ طرف ثم احتفظ بالرمز كما هو."
+        }
+      ],
+      "feedback": {
+        "correct": "$2a\\le 2b$ ثم نطرح $1$ : $2a-1\\le 2b-1$ .",
+        "incorrect": "الضرب في عدد موجب تمامًا (أو القسمة عليه) يحفظ اتجاه المتباينة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$2a\\le 2b$ ثم نطرح $1$ : $2a-1\\le 2b-1$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "إذا كان $a<b$ فإنّ $-a+4\\ \\square \\ -b+4$",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$<$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-NEG-NOFLIP"
+        },
+        {
+          "id": "B",
+          "content": "$>$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد إشارة العدد الذي نضرب فيه (أو نقسم عليه)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في عدد سالب تمامًا (أو القسمة عليه) يغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب عددين يحقّقان الشرط، وانظر أيّهما صار الأكبر بعد العملية."
+        }
+      ],
+      "feedback": {
+        "correct": "$-a>-b$ (ضرب في $-1$) ثم نضيف $4$ : $-a+4>-b+4$ .",
+        "incorrect": "الضرب في عدد سالب تمامًا (أو القسمة عليه) يغيّر اتجاه المتباينة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$-a>-b$ (ضرب في $-1$) ثم نضيف $4$ : $-a+4>-b+4$ ."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

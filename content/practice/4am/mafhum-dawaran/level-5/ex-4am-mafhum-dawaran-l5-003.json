@@ -1,0 +1,117 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l5-003",
+  "lessonCode": "mafhum-dawaran",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — عنفة رياح في أدرار",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الدوران",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mafhum-dawaran_P1",
+      "modelledOn": "act-2"
+    }
+  },
+  "statement": {
+    "content": "لعنفة رياح في حظيرة أدرار ثلاث ريشات متقايسة، أطرافها U و V و W موزّعة بانتظام حول المحور O بهذا الترتيب عكس اتجاه عقارب الساعة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما هو قيس الزاوية $\\widehat{UOV}$ بالدرجات؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجات)",
+      "expectedAnswer": "120",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-ZAWIYA-UKHRA",
+          "value": "60"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثلاث ريشات موزّعة بانتظام."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الدورة الكاملة مقسّمة إلى ثلاثة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم."
+        }
+      ],
+      "feedback": {
+        "correct": "$360^\\circ \\div 3 = 120^\\circ$ .",
+        "incorrect": "الدورة على ثلاثة أجزاء متساوية."
+      },
+      "difficulty": 3
+    },
+    {
+      "id": "q2",
+      "statement": "صورة U بالدوران الذي مركزه O وزاويته $120^\\circ$ في الاتجاه المباشر هي:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "V",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "W",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ITTIJAH"
+        },
+        {
+          "id": "C",
+          "content": "U",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ZAWIYA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "OU = OV = OW."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الاتجاه المباشر يتبع الترتيب U ثم V ثم W."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الطرف الموالي."
+        }
+      ],
+      "feedback": {
+        "correct": "OV = OU و $\\widehat{UOV} = 120^\\circ$ عكس عقارب الساعة: V.",
+        "incorrect": "الاتجاه المباشر هنا هو اتجاه الترتيب U ← V ← W."
+      },
+      "difficulty": 3
+    }
+  ]
+}

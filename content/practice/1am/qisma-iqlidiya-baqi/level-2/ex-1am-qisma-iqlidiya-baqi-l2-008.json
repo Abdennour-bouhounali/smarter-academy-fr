@@ -1,0 +1,235 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l2-008",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — ما كتبه يوسف",
+    "estimatedMinutes": 6,
+    "tags": [
+      "شرط الباقي",
+      "تصحيح"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "كتب يوسف $94 = 8 \\times 10 + 14$، وقال: « حاصل القسمة الإقليدية للعدد 94 على 8 هو 10 وباقيها 14 »."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "هل المساواة التي كتبها يوسف صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $8 \\times 10 + 14$."
+        }
+      ],
+      "feedback": {
+        "correct": "$80 + 14 = 94$.",
+        "incorrect": "احسب الطرف الثاني وقارنه بـ 94."
+      },
+      "solution": {
+        "lines": [
+          "$8 \\times 10 = 80$ و $80 + 14 = 94$: المساواة صحيحة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل تعبّر عن القسمة الإقليدية للعدد 94 على 8؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 14 بالعدد 8."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يكفي 14 لمجموعة أخرى من 8؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$14 > 8$: يكفي الباقي لمجموعة أخرى.",
+        "incorrect": "الباقي يجب أن يكون أصغر من المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$14 > 8$ ، إذن لا تعبّر عن القسمة الإقليدية للعدد 94 على 8."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "صحّح: احسب الحاصل الصحيح.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "6",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "12",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 94 من 8 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 8 دون أن نتجاوز 94."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$94 = 8 \\times 11 + 6$ و $6 < 8$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 8 فلا يتجاوز الجداء 94، والباقي عندئذ أصغر من 8."
+      },
+      "solution": {
+        "lines": [
+          "$8 \\times 11 = 88$ و $8 \\times 12 = 96$",
+          "$88 \\le 94 < 96$ ، إذن الحاصل هو 11."
+        ],
+        "result": "q = 11"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "واحسب الباقي الصحيح.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "11",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "14",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 94."
+        }
+      ],
+      "feedback": {
+        "correct": "$94 - 8 \\times 11 = 94 - 88 = 6$ ، و $6 < 8$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 8."
+      },
+      "solution": {
+        "lines": [
+          "$94 = 8 \\times 11 + 6$",
+          "$6 < 8$ ، إذن الباقي هو 6."
+        ],
+        "result": "r = 6"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

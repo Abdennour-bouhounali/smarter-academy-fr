@@ -1,0 +1,237 @@
+{
+  "id": "ex-3am-quwat-adad-nisbi-l2-001",
+  "lessonCode": "quwat-adad-nisbi",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — قوى قوى وأسس سالبة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "قواعد الحساب على القوى"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اكتب كل عدد على الشكل $a^n$ ، حيث $a$ عدد طبيعي و $n$ عدد صحيح نسبي.",
+    "formulas": [
+      "B = (3^{-2})^{-3}",
+      "C = \\dfrac{7}{7^{-2}}",
+      "D = (2^{5})^{2} \\times (3^{2})^{5}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "$B = 3^n$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "-5",
+          "id": "MISC-QUWA-POWER-ADD-EXP"
+        },
+        {
+          "value": "-6",
+          "id": "MISC-QUWA-EXP-SIGN-SLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قوة مرفوعة إلى قوة: ماذا نفعل بالأسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في $(a^m)^n$ نضرب الأسين، ولا نجمعهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه لإشارة الجداء إذا كان أحد الأسين سالبًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$(3^{-2})^{-3} = 3^{(-2) \\times (-3)} = 3^6$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$B = 3^{(-2) \\times (-3)}$",
+          "$B = 3^{6}$"
+        ],
+        "result": "n = 6"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "$C = 7^n$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "-1",
+          "id": "MISC-QUWA-EXP-SIGN-SLIP"
+        },
+        {
+          "value": "2",
+          "id": "MISC-QUWA-FORGET-EXPONENT-ONE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "البسط والمقام قوتان للأساس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل قسمة قوتين لهما الأساس نفسه: نطرح أس المقام من أس البسط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طرح أسّ سالب يعني إضافة معاكسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{7^1}{7^{-2}} = 7^{1-(-2)} = 7^3$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$C = \\dfrac{7^{1}}{7^{-2}} = 7^{1-(-2)}$",
+          "$C = 7^{3}$"
+        ],
+        "result": "n = 3"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "$D = 6^n$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-QUWA-MIXED-BASES"
+        },
+        {
+          "value": "7",
+          "id": "MISC-QUWA-POWER-ADD-EXP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للقوتين الأساس نفسه أم الأس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء قوتين لهما الأس نفسه: $a^n \\times b^n = (ab)^n$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا نجمع أسس قوى أساساتها مختلفة."
+        }
+      ],
+      "feedback": {
+        "correct": "$D = 2^{10} \\times 3^{10} = (2 \\times 3)^{10} = 6^{10}$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$(2^{5})^{2} = 2^{10}$ و $(3^{2})^{5} = 3^{10}$",
+          "$D = 2^{10} \\times 3^{10} = 6^{10}$"
+        ],
+        "result": "n = 10"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "برّر الكتابة التي وجدتها للعدد $D$ بذكر القاعدتين المستعملتين.",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما القاعدة التي تحوّل $(a^m)^n$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "وما القاعدة التي تجمع قوتين لهما الأس نفسه؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الخطوتين في سطرين."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "قوة قوة: $(2^{5})^{2} = 2^{5 \\times 2} = 2^{10}$ و $(3^{2})^{5} = 3^{2 \\times 5} = 3^{10}$",
+          "الأس نفسه: $2^{10} \\times 3^{10} = (2 \\times 3)^{10} = 6^{10}$"
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

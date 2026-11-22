@@ -1,0 +1,420 @@
+{
+  "id": "ex-4am-mutatabiqat-shahira-l2-003",
+  "lessonCode": "mutatabiqat-shahira",
+  "level": 2,
+  "metadata": {
+    "title": "مربع مجموع بمعاملات",
+    "estimatedMinutes": 14,
+    "tags": [
+      "مربع مجموع",
+      "معاملات عشرية وكسرية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-10",
+      "page": 37,
+      "section": "أوظّف تعلّماتي",
+      "number": 10
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارات $C$ ، $B$ ، $A$ حيث:",
+    "formulas": [
+      "A = (4x + 1)^2",
+      "B = (2x + 0{,}5)^2",
+      "C = \\left(3x + \\dfrac{5}{3}\\right)^2"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انشر ثم بسّط العبارة $A$ .",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $mx^2 + nx + p$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "16",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-MUTATABIQA-MURABBA-MUAMIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على مربع مجموع: $(a + b)^2 = a^2 + 2ab + b^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن الحدّين $a$ و $b$ ، ولا تنسَ الحد المضاعف $2ab$ ولا تربيع المعامل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 16x^2 + 8x + 1$ إذن $m = 16$ .",
+        "incorrect": "طبّق المتطابقة الشهيرة حدًّا حدًّا (مربع كل حد والحد المضاعف)، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$A = (4x + 1)^2$",
+          "$A = (4x)^2 + 2 \\times 4x \\times 1 + 1^2$"
+        ],
+        "result": "A = 16x^2 + 8x + 1"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $mx^2 + nx + p$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-MURABBA-MAJMU-BILA-2AB"
+        },
+        {
+          "value": "4",
+          "id": "MISC-MUTATABIQA-2AB-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل $x$ يأتي من الحد المضاعف $2ab$ ومن الحدود الأخرى في $x$ ، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 16x^2 + 8x + 1$ إذن $n = 8$ .",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $n$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$A = 16x^2 + 8x + 1$"
+        ],
+        "result": "n = 8"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "العدد $p$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $mx^2 + nx + p$ : اكتب العدد $p$ فقط",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 16x^2 + 8x + 1$ إذن $p = 1$ .",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $p$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$A = 16x^2 + 8x + 1$"
+        ],
+        "result": "p = 1"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "lead": "انشر ثم بسّط العبارة $B$ .",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $B$ على الشكل $mx^2 + nx + p$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-MUTATABIQA-MURABBA-MUAMIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على مربع مجموع: $(a + b)^2 = a^2 + 2ab + b^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن الحدّين $a$ و $b$ ، ولا تنسَ الحد المضاعف $2ab$ ولا تربيع المعامل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 4x^2 + 2x + 0{,}25$ إذن $m = 4$ .",
+        "incorrect": "طبّق المتطابقة الشهيرة حدًّا حدًّا (مربع كل حد والحد المضاعف)، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$B = (2x + 0{,}5)^2$",
+          "$B = (2x)^2 + 2 \\times 2x \\times 0{,}5 + (0{,}5)^2$"
+        ],
+        "result": "B = 4x^2 + 2x + 0{,}25"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $B$ على الشكل $mx^2 + nx + p$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-MURABBA-MAJMU-BILA-2AB"
+        },
+        {
+          "value": "1",
+          "id": "MISC-MUTATABIQA-2AB-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل $x$ يأتي من الحد المضاعف $2ab$ ومن الحدود الأخرى في $x$ ، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 4x^2 + 2x + 0{,}25$ إذن $n = 2$ .",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $n$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$B = 4x^2 + 2x + 0{,}25$"
+        ],
+        "result": "n = 2"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "statement": "العدد $p$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $B$ على الشكل $mx^2 + nx + p$ : اكتب العدد $p$ فقط",
+      "expectedAnswer": "0.25",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 4x^2 + 2x + 0{,}25$ إذن $p = 0{,}25$ .",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $p$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$B = 4x^2 + 2x + 0{,}25$"
+        ],
+        "result": "p = 0{,}25"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "lead": "انشر ثم بسّط العبارة $C$ .",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $C$ على الشكل $mx^2 + nx + p$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-MUTATABIQA-MURABBA-MUAMIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على مربع مجموع: $(a + b)^2 = a^2 + 2ab + b^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن الحدّين $a$ و $b$ ، ولا تنسَ الحد المضاعف $2ab$ ولا تربيع المعامل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = 9x^2 + 10x + \\dfrac{25}{9}$ إذن $m = 9$ .",
+        "incorrect": "طبّق المتطابقة الشهيرة حدًّا حدًّا (مربع كل حد والحد المضاعف)، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$C = \\left(3x + \\dfrac{5}{3}\\right)^2$",
+          "$C = (3x)^2 + 2 \\times 3x \\times \\dfrac{5}{3} + \\left(\\dfrac{5}{3}\\right)^2$"
+        ],
+        "result": "C = 9x^2 + 10x + \\dfrac{25}{9}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q8",
+      "step": "03",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $C$ على الشكل $mx^2 + nx + p$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-MURABBA-MAJMU-BILA-2AB"
+        },
+        {
+          "value": "5",
+          "id": "MISC-MUTATABIQA-2AB-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل $x$ يأتي من الحد المضاعف $2ab$ ومن الحدود الأخرى في $x$ ، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = 9x^2 + 10x + \\dfrac{25}{9}$ إذن $n = 10$ .",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $n$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$C = 9x^2 + 10x + \\dfrac{25}{9}$"
+        ],
+        "result": "n = 10"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q9",
+      "step": "03",
+      "statement": "العدد $p$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $C$ على الشكل $mx^2 + nx + p$ : اكتب العدد $p$ فقط",
+      "expectedAnswer": "25/9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = 9x^2 + 10x + \\dfrac{25}{9}$ إذن $p = \\dfrac{25}{9}$ .",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $p$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$C = 9x^2 + 10x + \\dfrac{25}{9}$"
+        ],
+        "result": "p = \\dfrac{25}{9}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

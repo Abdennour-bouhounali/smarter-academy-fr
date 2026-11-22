@@ -1,0 +1,179 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l1-005",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — نقط تقع على استقامة واحدة مع المبدأ",
+    "estimatedMinutes": 4,
+    "tags": [
+      "تناسبية",
+      "تمثيل بياني"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يعدّ طباخ المطعم المدرسي الخبز لإفطار الصائمين من أبناء الحيّ. تمثّل النقط $A$ و $B$ و $C$ في المعلم التالي ثلاث وجبات: الفاصلة عدد الأرغفة، والترتيب كتلة العجين بمئات الغرامات.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          2,
+          3
+        ],
+        "B": [
+          4,
+          6
+        ],
+        "C": [
+          6,
+          9
+        ]
+      },
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw",
+        "A": "se",
+        "B": "se",
+        "C": "se"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس: النقط O و A(2;3) و B(4;6) و C(6;9) على استقامة واحدة",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: عدد الأرغفة — محور التراتيب: كتلة العجين بمئات الغرامات"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل تمثّل النقط $A$ و $B$ و $C$ وضعية تناسبية؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لأنّ الترتيب لا يساوي الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-EQUAL-ONLY"
+        },
+        {
+          "id": "B",
+          "content": "لا، لأنّ المبدأ $O$ ليس من النقط المعلَّمة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-ORIGIN-DROP"
+        },
+        {
+          "id": "C",
+          "content": "نعم، النقط على استقامة واحدة مع المبدأ $O$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط على استقامة واحدة مع المبدأ $O$ ، فهي تمثّل وضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "النقط $O$ و $A$ و $B$ و $C$ على استقامة واحدة تشمل المبدأ $O$ .",
+          "إذن الوضعية تناسبية."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كيف نتحقّق بيانيا من أنّ وضعية تناسبية؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نكتفي بالنقطتين الأوليين: إن كانتا مع $O$ على استقامة فالوضعية تناسبية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-TWO-POINTS"
+        },
+        {
+          "id": "B",
+          "content": "نضع مسطرة على المبدأ $O$ وعلى إحدى النقط، ونرى هل تقع النقط الأخرى على حافتها",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نتحقّق من أنّ ترتيب كل نقطة يساوي فاصلتها",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-EQUAL-ONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الشرطان اللذان تطلبهما التناسبية من النقط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الاختبار لا يتوقّف عند نقطتين."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق أنّ كل النقط على حافة المسطرة التي تشمل $O$ .",
+        "incorrect": "يجب اختبار كل النقط وليس بعضها، وليس شرطا أن يتساوى الترتيب والفاصلة."
+      },
+      "solution": {
+        "lines": [
+          "نضع المسطرة على $O$ وعلى $C$ مثلا.",
+          "إذا كانت كل النقط الأخرى على حافتها فالوضعية تناسبية."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

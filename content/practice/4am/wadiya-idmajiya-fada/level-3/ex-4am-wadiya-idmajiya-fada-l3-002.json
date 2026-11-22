@@ -1,0 +1,117 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-fada-l3-002",
+  "lessonCode": "wadiya-idmajiya-fada",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — فانوس رمضان",
+    "estimatedMinutes": 5,
+    "tags": [
+      "المخروط المبتور",
+      "خاصية طالس",
+      "حجم المخروط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-fada_P3",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "يتعاون تلاميذ القسم على صنع غطاء فانوس رمضان على شكل مخروط مبتور: نصف قطر قاعدته الصغرى $6\\,\\mathrm{cm}$ ونصف قطر الكبرى $9\\,\\mathrm{cm}$ وارتفاعه $9\\,\\mathrm{cm}$ . نكمله إلى مخروط رأسه S، و O مركز القاعدة الصغرى."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "بعد الرأس عن القاعدة الصغرى $SO$ (بالسنتيمتر):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-fada_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر)",
+      "expectedAnswer": "18",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\dfrac{SO}{SO + 9} = \\dfrac{6}{9}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$9\\,SO = 6\\,SO + 54$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود التي فيها SO."
+        }
+      ],
+      "feedback": {
+        "correct": "$3\\,SO = 54$ ومنه $SO = 18\\,\\mathrm{cm}$ .",
+        "incorrect": "SO بعد الرأس عن القاعدة الصغرى، ليس ارتفاع الغطاء."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-MABTUR-RAS"
+        },
+        {
+          "value": "27",
+          "id": "MISC-MABTUR-RAS"
+        }
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "q2",
+      "statement": "اكتب حجم الغطاء على الشكل $k\\pi$ (بالسنتيمتر المكعب) ثم أعط $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-fada_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد k (الحجم kπ cm³)",
+      "expectedAnswer": "513",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حجم الغطاء = حجم المخروط الكبير − حجم الصغير."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ارتفاع الكبير $SO + 9$ ونصف قطر قاعدته $9$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب $\\dfrac{1}{3} \\times 81 \\times 27 - \\dfrac{1}{3} \\times 36 \\times 18$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{3}\\pi \\times 81 \\times 27 - \\dfrac{1}{3}\\pi \\times 36 \\times 18 = 729\\pi - 216\\pi = 513\\pi\\,\\mathrm{cm}^3$ .",
+        "incorrect": "حجم المخروط المبتور فرق حجمي مخروطين لهما نفس الرأس."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "729",
+          "id": "MISC-MABTUR-FARQ"
+        },
+        {
+          "value": "1539",
+          "id": "MISC-MABTUR-THULTH"
+        }
+      ],
+      "difficulty": 3
+    }
+  ]
+}

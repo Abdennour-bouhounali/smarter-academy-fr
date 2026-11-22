@@ -1,0 +1,323 @@
+{
+  "id": "ex-4am-awwaliyan-fima-baynahuma-l5-007",
+  "lessonCode": "awwaliyan-fima-baynahuma",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2022 — سلال تعاونية معسكر",
+    "estimatedMinutes": 21,
+    "tags": [
+      "وضعية",
+      "إثبات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_awwaliyan-fima-baynahuma_P2",
+      "modelledOn": "BEM 2022 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "أنتجت تعاونية فلاحية بمعسكر، بفضل كدّ فلاحيها وتعاونهم، 1001 قارورة زيت زيتون و 768 علبة زيتون مخلّل، وتريد تجميعها كلها في سلال متماثلة (نفس عدد القارورات ونفس عدد العلب في كل سلة) لعرضها في معرض المنتجات الفلاحية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب PGCD(1001 ; 768).",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 1001 على 768: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (1001 ; 768) بالزوج (768 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 1. العددان 1001 و 768 أوليان فيما بينهما.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$1001 = 768 \\times 1 + 233$",
+          "$768 = 233 \\times 3 + 69$",
+          "$233 = 69 \\times 3 + 26$",
+          "$69 = 26 \\times 2 + 17$",
+          "$26 = 17 \\times 1 + 9$",
+          "$17 = 9 \\times 1 + 8$",
+          "$9 = 8 \\times 1 + 1$",
+          "$8 = 1 \\times 8 + 0$",
+          "آخر باقٍ غير معدوم هو 1، إذن:"
+        ],
+        "result": "PGCD(1001 ; 768) = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 270
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل يمكن للتعاونية تكوين أكثر من سلة واحدة ؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد السلال قاسم مشترك للعددين 1001 و 768."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل نتيجة (ا)."
+        }
+      ],
+      "feedback": {
+        "correct": "العددان أوليان فيما بينهما: لا يمكن تكوين إلا سلة واحدة.",
+        "incorrect": "إذا كان PGCD يساوي 1 فالقاسم المشترك الوحيد هو 1."
+      },
+      "solution": {
+        "lines": [
+          "PGCD(1001 ; 768) = 1 : العددان أوليان فيما بينهما.",
+          "عدد السلال قاسم مشترك لهما، إذن لا يمكن تكوين إلا سلة واحدة.",
+          "الجواب: لا."
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "عند الفحص، وُجدت 41 قارورة مكسورة فأُبعدت.",
+      "statement": "أوجد أكبر عدد من السلال المتماثلة التي يمكن تكوينها بالقارورات السليمة وكل علب الزيتون.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "192",
+      "misconceptionSignatures": [
+        {
+          "value": "96",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 960 على 768: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (960 ; 768) بالزوج (768 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 192.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$960 = 768 \\times 1 + 192$",
+          "$768 = 192 \\times 4 + 0$",
+          "آخر باقٍ غير معدوم هو 192، إذن:",
+          "عدد القارورات السليمة: $1001 - 41 = 960$ ، وأكبر عدد من السلال هو 192."
+        ],
+        "result": "PGCD(960 ; 768) = 192"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما هو عدد القارورات في كل سلة ؟",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "192",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع 960 قارورة على عدد الحصص الذي وجدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 960 على عدد الحصص."
+        }
+      ],
+      "feedback": {
+        "correct": "$960 \\div 192 = 5$",
+        "incorrect": "اقسم العدد الكلي (960) على عدد الحصص، لا العكس."
+      },
+      "solution": {
+        "lines": [
+          "$960 \\div 192 = 5$"
+        ],
+        "result": "5"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما هو عدد علب الزيتون في كل سلة ؟",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "192",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع 768 علبة على عدد الحصص الذي وجدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 768 على عدد الحصص."
+        }
+      ],
+      "feedback": {
+        "correct": "$768 \\div 192 = 4$",
+        "incorrect": "اقسم العدد الكلي (768) على عدد الحصص، لا العكس."
+      },
+      "solution": {
+        "lines": [
+          "$768 \\div 192 = 4$"
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "☜ ثمن القارورة 1200DA وثمن العلبة 350DA، وتمنح التعاونية تخفيضًا بنسبة 5% على ثمن السلة. ما هو المبلغ الذي تجنيه التعاونية إذا باعت كل السلال ؟",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (المبلغ بالدينار)",
+      "expectedAnswer": "1349760",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب ثمن السلة الواحدة قبل التخفيض، ثم بعده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب في عدد السلال."
+        }
+      ],
+      "feedback": {
+        "correct": "$7030 \\times 192 = 1349760$",
+        "incorrect": "ثمن السلة بعد التخفيض يمثل 95% من ثمنها، ثم اضرب في عدد السلال."
+      },
+      "solution": {
+        "lines": [
+          "ثمن السلة: $5 \\times 1200 + 4 \\times 350 = 7400$ DA",
+          "بعد التخفيض: $7400 \\times \\dfrac{95}{100} = 7030$ DA",
+          "المبلغ: $7030 \\times 192 = 1349760$ DA"
+        ],
+        "result": "1349760DA"
+      },
+      "timeSeconds": 360
+    }
+  ]
+}

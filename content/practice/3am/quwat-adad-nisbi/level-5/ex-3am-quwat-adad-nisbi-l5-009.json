@@ -1,0 +1,338 @@
+{
+  "id": "ex-3am-quwat-adad-nisbi-l5-009",
+  "lessonCode": "quwat-adad-nisbi",
+  "level": 5,
+  "metadata": {
+    "title": "علب مكعبة لنادي القراءة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "قوة حاصل قسمة",
+      "قرار"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-48",
+      "page": 50,
+      "section": "أتعمّق",
+      "number": 48
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يصنع نادي القراءة علبًا مكعبة لحفظ بطاقات الكتب المتبرَّع بها: علبة كبيرة حرفها $6\\,\\mathrm{cm}$ ، وعلبة صغيرة حرفها $3\\,\\mathrm{cm}$ ، وصندوق نقل مكعب حرفه $12\\,\\mathrm{cm}$ .\nالجزء الأول: مقارنة العلبتين.\nالجزء الثاني: يريد النادي وضع 70 علبة صغيرة في صندوق النقل."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "احسب حجم العلبة الكبيرة بـ $\\mathrm{cm^3}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الحجم بـ cm³",
+      "expectedAnswer": "216",
+      "misconceptionSignatures": [
+        {
+          "value": "18",
+          "id": "MISC-QUWA-POWER-AS-PRODUCT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$a^n$ جداء $n$ عاملًا كلها مساوية للعدد $a$ ، وليس $a \\times n$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوة عدد سالب موجبة إذا كان الأس زوجيًا، وسالبة إذا كان الأس فرديًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه للأقواس: في $-a^n$ يخصّ الأس العدد $a$ وحده، ثم نأخذ المعاكس."
+        }
+      ],
+      "feedback": {
+        "correct": "$6^3 = 216$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$6^{3} = 6 \\times 6 \\times 6 = 216$"
+        ],
+        "result": "216\\,\\mathrm{cm^3}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كم مرة يفوق حجم العلبة الكبيرة حجم العلبة الصغيرة؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-QUWA-FRACTION-POWER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الأس خارج القوسين يخصّ البسط والمقام معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\left(\\dfrac{a}{b}\\right)^n = \\dfrac{a^n}{b^n}$ ، ثم حدّد الإشارة حسب زوجية الأس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب قوة البسط ثم قوة المقام."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{6^3}{3^3} = \\left(\\dfrac{6}{3}\\right)^3 = 2^3 = 8$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{6^{3}}{3^{3}} = \\left(\\dfrac{6}{3}\\right)^{3}$",
+          "$= 2^{3} = 8$"
+        ],
+        "result": "8"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "كم مرة تفوق مساحة وجه العلبة الكبيرة مساحة وجه العلبة الصغيرة؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-QUWA-FRACTION-POWER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الأس خارج القوسين يخصّ البسط والمقام معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\left(\\dfrac{a}{b}\\right)^n = \\dfrac{a^n}{b^n}$ ، ثم حدّد الإشارة حسب زوجية الأس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب قوة البسط ثم قوة المقام."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\left(\\dfrac{6}{3}\\right)^2 = 4$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{6^{2}}{3^{2}} = \\left(\\dfrac{6}{3}\\right)^{2} = 2^{2} = 4$"
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "كم علبة صغيرة تملأ صندوق النقل تمامًا؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد العلب",
+      "expectedAnswer": "64",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-QUWA-POWER-AS-PRODUCT"
+        },
+        {
+          "value": "4",
+          "id": "MISC-QUWA-FRACTION-POWER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الأس خارج القوسين يخصّ البسط والمقام معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\left(\\dfrac{a}{b}\\right)^n = \\dfrac{a^n}{b^n}$ ، ثم حدّد الإشارة حسب زوجية الأس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب قوة البسط ثم قوة المقام."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\left(\\dfrac{12}{3}\\right)^3 = 4^3 = 64$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{12^{3}}{3^{3}} = \\left(\\dfrac{12}{3}\\right)^{3} = 4^{3}$",
+          "$4^{3} = 64$"
+        ],
+        "result": "64"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل يتّسع صندوق النقل لـ 70 علبة صغيرة؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QUWA-DECISION-UNCHECKED"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارجع إلى القيم التي حسبتها في الأسئلة السابقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين قبل أن تقرّر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القرار الصحيح يُبنى على حساب، لا على تخمين."
+        }
+      ],
+      "feedback": {
+        "correct": "يتّسع لـ 64 علبة فقط.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$64 < 70$ ، إذن لا يتّسع الصندوق لـ 70 علبة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "lead": "القرار.",
+      "statement": "برّر جوابك، واقترح عدد صناديق النقل اللازمة.",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارجع إلى القيم التي حسبتها في الأسئلة السابقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين قبل أن تقرّر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القرار الصحيح يُبنى على حساب، لا على تخمين."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "صندوق واحد يتّسع لـ $4^{3} = 64$ علبة، و $64 < 70$",
+          "يلزم صندوقان: $2 \\times 64 = 128 \\geq 70$"
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

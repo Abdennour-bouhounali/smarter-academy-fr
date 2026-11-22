@@ -1,0 +1,146 @@
+{
+  "id": "ex-4am-qasim-mushtarak-akbar-l1-004",
+  "lessonCode": "qasim-mushtarak-akbar",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2025 — PGCD(36 ; 48)",
+    "estimatedMinutes": 5,
+    "tags": [
+      "PGCD",
+      "قواسم مشتركة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-mushtarak-akbar_P2",
+      "modelledOn": "BEM 2025 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب: PGCD(36 ; 48).",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قائمة قواسم كل من العددين 36 و 48."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استخرج القواسم المشتركة: الأعداد الموجودة في القائمتين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاسم المشترك الأكبر هو أكبر القواسم المشتركة، لا أيّ واحد منها."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 36 و 48 هي 1 ، 2 ، 3 ، 4 ، 6 ، 12، وأكبرها 12.",
+        "incorrect": "اكتب قائمتي القواسم كاملتين، ثم خذ أكبر عدد يظهر في القائمتين معًا."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 36 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 9 ، 12 ، 18 ، 36",
+          "قواسم العدد 48 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 8 ، 12 ، 16 ، 24 ، 48",
+          "القواسم المشتركة للعددين 36 و 48 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 12",
+          "أكبرها هو 12، إذن:"
+        ],
+        "result": "PGCD(36 ; 48) = 12"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج القواسم المشتركة للعددين 36 و 48.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال السابق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القواسم المشتركة لعددين هي قواسم قاسمهما المشترك الأكبر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل قواسم القاسم المشترك الأكبر، ولا تنسَ 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 36 و 48 هي قواسم العدد 12: 1 ، 2 ، 3 ، 4 ، 6 ، 12.",
+        "incorrect": "مجموعة القواسم المشتركة لعددين هي مجموعة قواسم قاسمهما المشترك الأكبر: اكتب قواسمه كلها."
+      },
+      "solution": {
+        "lines": [
+          "مجموعة القواسم المشتركة لعددين هي مجموعة قواسم قاسمهما المشترك الأكبر.",
+          "$\\text{PGCD}(36 ; 48) = 12$ وقواسم العدد 12 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 12",
+          "إذن القواسم المشتركة للعددين 36 و 48 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 12."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

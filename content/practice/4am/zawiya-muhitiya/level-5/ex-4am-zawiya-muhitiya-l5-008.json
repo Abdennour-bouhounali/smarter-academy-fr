@@ -1,0 +1,128 @@
+{
+  "id": "ex-4am-zawiya-muhitiya-l5-008",
+  "lessonCode": "zawiya-muhitiya",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — وتران متقاطعان",
+    "estimatedMinutes": 4,
+    "tags": [
+      "خاصية 2",
+      "برهان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_zawiya-muhitiya_P3",
+      "modelledOn": "ex-12"
+    }
+  },
+  "statement": {
+    "content": "[AC] و [BD] وتران في دائرة يتقاطعان في I داخلها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "لماذا $\\widehat{BAC} = \\widehat{BDC}$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "محيطيتان تحصران نفس القوس BC",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "متقابلتان بالرأس في I",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-RAS"
+        },
+        {
+          "id": "C",
+          "content": "لأن I منتصف [AC]",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-QAWS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل الزاويتان محيطيتان (رأساهما على الدائرة)؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل تحصران نفس القوس، أي رأساهما في نفس الجهة من الوتر؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زاويتان محيطيتان تحصران نفس القوس متقايستان."
+        }
+      ],
+      "feedback": {
+        "correct": "رأسا BAC و BDC على الدائرة وضلعاهما يمران بـ B و C.",
+        "incorrect": "الزاويتان المتقابلتان بالرأس رأسهما I، لا A ولا D."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "إذن للمثلثين IAB و IDC:",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نفس الأطوال دائما",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-MUTASAWIYA"
+        },
+        {
+          "id": "B",
+          "content": "نفس أقياس الزوايا",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "زاوية واحدة مشتركة فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-QAWS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل الزاويتان محيطيتان (رأساهما على الدائرة)؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل تحصران نفس القوس، أي رأساهما في نفس الجهة من الوتر؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زاويتان محيطيتان تحصران نفس القوس متقايستان."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{BAI} = \\widehat{CDI}$ و $\\widehat{ABI} = \\widehat{DCI}$ و $\\widehat{AIB} = \\widehat{DIC}$ .",
+        "incorrect": "طبّق الخاصية 2 على الزاويتين ABD و ACD أيضا."
+      }
+    }
+  ]
+}

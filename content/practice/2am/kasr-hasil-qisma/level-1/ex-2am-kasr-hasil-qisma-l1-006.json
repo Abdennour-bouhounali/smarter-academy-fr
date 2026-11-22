@@ -1,0 +1,161 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l1-006",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 1,
+  "metadata": {
+    "title": "أكمل لتحصل على قسمة على عدد طبيعي",
+    "estimatedMinutes": 5,
+    "tags": [
+      "قسمة على عشري",
+      "ضرب الحدّين"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "now-27",
+      "page": 27,
+      "section": "دوري الآن"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أكمل: $48 \\div 1{,}6 = \\dfrac{48}{1{,}6} = \\dfrac{48 \\times \\ldots}{1{,}6 \\times \\ldots} = \\dfrac{\\ldots}{16}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "في أيّ عدد نضرب الحدّين لنحصل على المقام $16$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "قوّة للعدد 10",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عُدّ الأرقام التي تأتي بعد الفاصلة في المقسوم عليه وحده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كلّ رقم بعد الفاصلة يزول بالضرب في قوّة مناسبة للعدد $10$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحدّان يُضربان في العدد نفسه حتى لا يتغيّر حاصل القسمة."
+        }
+      ],
+      "feedback": {
+        "correct": "المقسوم عليه $1{,}6$ فيه رقم واحد بعد الفاصلة، فنضربه في $10$ فيصير $16$.",
+        "incorrect": "المقسوم عليه هو الذي يحدّد القوّة: عدد الأرقام التي تأتي بعد فاصلته، لا بعد فاصلة المقسوم."
+      },
+      "solution": {
+        "lines": [
+          "المقسوم عليه $1{,}6$ فيه رقم واحد بعد الفاصلة",
+          "$1{,}6 \\times 10 = 16$"
+        ],
+        "result": "10"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما البسط في الكتابة $\\dfrac{\\ldots}{16}$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "480",
+      "misconceptionSignatures": [
+        {
+          "value": "48",
+          "id": "MISC-QARIBA-ONETERM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "البسط يُضرب في العدد نفسه الذي ضُرب فيه المقام."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما تفعله بالفاصلة في المقام تفعله بالفاصلة في البسط."
+        }
+      ],
+      "feedback": {
+        "correct": "$48 \\times 10 = 480$ ، إذن $\\frac{48}{1{,}6} = \\frac{480}{16}$.",
+        "incorrect": "لا يتغيّر الحاصل إلاّ إذا ضُرب البسط والمقام في العدد نفسه: ما فعلناه بالمقام نفعله بالبسط."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}6 \\times 10 = 16$",
+          "$48 \\times 10 = 480$"
+        ],
+        "result": "480"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أنجز القسمة $48 \\div 1{,}6$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "30",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل المقسوم عليه إلى عدد طبيعي بضرب الحدّين في العدد نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة على العدد الطبيعي، واضبط الفاصلة في الحاصل عند الوصول إلى الأرقام التي بعد فاصلة المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$48 \\div 1{,}6 = 480 \\div 16 = 30$.",
+        "incorrect": "اضرب الحدّين في العدد نفسه ثم أنجز القسمة على العدد الطبيعي، وتحقّق بضرب الحاصل في المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$48 \\div 1{,}6 = 480 \\div 16$",
+          "$1{,}6 \\times 30 = 48$"
+        ],
+        "result": "30"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

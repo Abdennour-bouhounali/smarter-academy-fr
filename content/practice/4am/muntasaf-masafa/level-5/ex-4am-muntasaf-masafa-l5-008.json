@@ -1,0 +1,165 @@
+{
+  "id": "ex-4am-muntasaf-masafa-l5-008",
+  "lessonCode": "muntasaf-masafa",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — دائرة قطرها [AB]",
+    "estimatedMinutes": 6,
+    "tags": [
+      "المنتصف",
+      "المسافة",
+      "دائرة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_muntasaf-masafa_P1",
+      "modelledOn": "ex-11"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس: $A(-3\\,;\\,-2)$ و $B(5\\,;\\,4)$ ، و (𝒞) الدائرة التي قطرها [AB]، و $E(4\\,;\\,5)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا Ω مركز (𝒞):",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح أو كسر مثل 1/2)",
+      "expectedAnswer": {
+        "x": "1",
+        "y": "1"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MUNTASAF-NISF",
+          "value": {
+            "x": "2",
+            "y": "2"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المنتصف يقع في منتصف الطريق أفقيا وفي منتصف الطريق عموديا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الفاصلتين ثم اقسم على 2، وافعل الشيء نفسه مع الترتيبين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى الإشارات: جمع عدد سالب يعني طرح قيمته."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\Omega\\left(\\dfrac{-3 + 5}{2}\\,;\\,\\dfrac{-2 + 4}{2}\\right) = (1\\,;\\,1)$ .",
+        "incorrect": "المركز منتصف القطر."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "نصف قطر (𝒞):",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري بالفاصلة (مثل 2,5)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-DAIRA-QUTR",
+          "value": "10"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الفرقين: فرق الفاصلتين وفرق الترتيبين (النهاية ناقص المبدأ)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ربّع كل فرق ثم اجمع المربعين: هذا مربع المسافة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خذ الجذر التربيعي في الأخير، وبسّطه إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = \\sqrt{8^2 + 6^2} = 10$ إذن $r = 5$ .",
+        "incorrect": "نصف القطر نصف AB."
+      }
+    },
+    {
+      "id": "q3",
+      "statement": "هل E تنتمي إلى (𝒞)؟",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم: $\\Omega E = \\sqrt{3^2 + 4^2} = 5$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا: $\\Omega E = 7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-JAM"
+        },
+        {
+          "id": "C",
+          "content": "لا: $\\Omega E$ لا يساوي القطر 10",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-DAIRA-QUTR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الفرقين: فرق الفاصلتين وفرق الترتيبين (النهاية ناقص المبدأ)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ربّع كل فرق ثم اجمع المربعين: هذا مربع المسافة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خذ الجذر التربيعي في الأخير، وبسّطه إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\Omega E = 5 = r$ : E على الدائرة.",
+        "incorrect": "قارن $\\Omega E$ بنصف القطر."
+      }
+    }
+  ]
+}

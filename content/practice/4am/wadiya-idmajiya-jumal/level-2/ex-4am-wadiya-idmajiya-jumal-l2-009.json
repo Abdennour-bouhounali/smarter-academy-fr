@@ -1,0 +1,130 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-jumal-l2-009",
+  "lessonCode": "wadiya-idmajiya-jumal",
+  "level": 2,
+  "metadata": {
+    "title": "عمرا أخوين",
+    "estimatedMinutes": 6,
+    "tags": [
+      "ترييض",
+      "أعمار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-jumal_P1",
+      "modelledOn": "ex-26"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "الأخوان ياسين وريان يتعاونان في مراجعة دروسهما، ومجموع عمريهما 30 سنة، وياسين أكبر من ريان بـ 4 سنوات.\nنسمّي $x$ عمر ياسين و $y$ عمر ريان (بالسنوات)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن $x$ و $y$ يحققان الجملة: $\\begin{cases} x + y = 30 \\\\ x - y = 4 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ترجم «المجموع» بجمع و«أكبر بـ 4» بفرق."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "مجموع العمرين: $x + y = 30$",
+          "ياسين أكبر بـ 4 سنوات: $x = y + 4$ أي $x - y = 4$",
+          "ومنه: $\\begin{cases} x + y = 30 \\\\ x - y = 4 \\end{cases}$"
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج عمر كل من الأخوين.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : عمر ياسين ثم عمر ريان",
+      "expectedAnswer": {
+        "x": "17",
+        "y": "13"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "13",
+            "y": "17"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معاملا $y$ متعاكسان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المعادلتين طرفا لطرف."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض قيمة $x$ في المعادلة الأولى."
+        }
+      ],
+      "feedback": {
+        "correct": "عمر ياسين 17 سنة وعمر ريان 13 سنة.",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} x + y = 30 & ...(1) \\\\ x - y = 4 & ...(2) \\end{cases}$",
+          "بجمع المعادلتين (1) و (2) طرفا لطرف نجد:",
+          "$2x = 34$",
+          "$x = 17$",
+          "بتعويض $x$ بـ $17$ في المعادلة (1) نجد: $17 + y = 30$",
+          "$y = 13$",
+          "التحقق في النص: $17 + 13 = 30$ و $17 - 13 = 4$ .",
+          "إذن:"
+        ],
+        "result": "(17 ; 13)"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

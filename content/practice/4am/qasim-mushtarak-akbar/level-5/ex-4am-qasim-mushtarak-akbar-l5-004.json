@@ -1,0 +1,262 @@
+{
+  "id": "ex-4am-qasim-mushtarak-akbar-l5-004",
+  "lessonCode": "qasim-mushtarak-akbar",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2022 — سلال المشمش من نقاوس",
+    "estimatedMinutes": 14,
+    "tags": [
+      "PGCD",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-mushtarak-akbar_P3",
+      "modelledOn": "BEM 2022 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "عُرفت تعاونية فلاحية بنقاوس (باتنة) بإتقان فلاّحيها لعملهم وجودة منتوجاتهم، فأنتجت 336 علبة مربّى المشمش و 224 قارورة عصير المشمش، وتريد تجميعها كلها في سلال متماثلة (نفس عدد علب المربّى ونفس عدد قارورات العصير في كل سلة) لعرضها في معرض المنتوجات الفلاحية.\n• تكلفة إنتاج علبة المربّى 180DA، وتكلفة إنتاج قارورة العصير 120DA.\n• تكلفة تغليف السلة الواحدة 70DA.\n• تبيع التعاونية السلة الواحدة بـ 1200DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما هو أكبر عدد من السلال يمكن تكوينه ؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد السلال)",
+      "expectedAnswer": "112",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        },
+        {
+          "value": "56",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد السلال يجب أن يقسم 336 و 224 معًا: فهو قاسم مشترك لهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب قواسم 336 وقواسم 224، ثم استخرج القواسم المشتركة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أكبر عدد ممكن هو أكبر هذه القواسم المشتركة."
+        }
+      ],
+      "feedback": {
+        "correct": "أكبر عدد من السلال هو PGCD(336 ; 224).",
+        "incorrect": "عدد السلال قاسم مشترك للعددين 336 و 224؛ والمطلوب أكبرها، لا محتوى الواحدة منها."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 336 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 7 ، 8 ، 12 ، 14 ، 16 ، 21 ، 24 ، 28 ، 42 ، 48 ، 56 ، 84 ، 112 ، 168 ، 336",
+          "قواسم العدد 224 هي: 1 ، 2 ، 4 ، 7 ، 8 ، 14 ، 16 ، 28 ، 32 ، 56 ، 112 ، 224",
+          "القواسم المشتركة للعددين 336 و 224 هي: 1 ، 2 ، 4 ، 7 ، 8 ، 14 ، 16 ، 28 ، 56 ، 112",
+          "أكبرها هو 112، إذن أكبر عدد من السلال هو PGCD(336 ; 224) = 112."
+        ],
+        "result": "PGCD(336 ; 224) = 112"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما هو عدد علب المربّى في كل سلة ؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "112",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع علب المربّى كلها بالتساوي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 336 على العدد الذي وجدته في السؤال السابق."
+        }
+      ],
+      "feedback": {
+        "correct": "$336 \\div 112 = 3$",
+        "incorrect": "اقسم العدد الكلي (336) على أكبر عدد وجدته."
+      },
+      "solution": {
+        "lines": [
+          "$336 \\div 112 = 3$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما هو عدد قارورات العصير في كل سلة ؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "112",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع قارورات العصير كلها بالتساوي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 224 على العدد الذي وجدته في السؤال السابق."
+        }
+      ],
+      "feedback": {
+        "correct": "$224 \\div 112 = 2$",
+        "incorrect": "اقسم العدد الكلي (224) على أكبر عدد وجدته."
+      },
+      "solution": {
+        "lines": [
+          "$224 \\div 112 = 2$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "احسب تكلفة السلة الواحدة.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (بالدينار)",
+      "expectedAnswer": "850",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل محتوى السلة الذي وجدته في السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أضف تكلفة التغليف."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 \\times 180 + 2 \\times 120 + 70$",
+        "incorrect": "اضرب عدد علب المربّى في تكلفتها، وعدد القارورات في تكلفتها، ثم أضف تكلفة التغليف."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 180 + 2 \\times 120 + 70 = 540 + 240 + 70 = 850$",
+          "تكلفة السلة الواحدة 850DA."
+        ],
+        "result": "850DA"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "☜ إذا باعت التعاونية كل السلال، ما هو الربح الذي تحققه ؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (الربح بالدينار)",
+      "expectedAnswer": "39200",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب ربح السلة الواحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب ربح السلة في عدد السلال."
+        }
+      ],
+      "feedback": {
+        "correct": "ربح السلة 350DA، و $112 \\times 350$",
+        "incorrect": "الربح = (ثمن البيع − التكلفة) لسلة واحدة، مضروبًا في عدد السلال."
+      },
+      "solution": {
+        "lines": [
+          "ربح السلة الواحدة: $1200 - 850 = 350$",
+          "الربح الكلي: $112 \\times 350 = 39200$"
+        ],
+        "result": "39200DA"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

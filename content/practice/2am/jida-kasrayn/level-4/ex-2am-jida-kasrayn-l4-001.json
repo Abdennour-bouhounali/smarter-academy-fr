@@ -1,0 +1,176 @@
+{
+  "id": "ex-2am-jida-kasrayn-l4-001",
+  "lessonCode": "jida-kasrayn",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مجموع ثمّ جداء",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مجموع",
+      "جداء كسرين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العدد $A = \\left( \\dfrac{2}{3} + \\dfrac{1}{6} \\right) \\times \\dfrac{3}{10}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب المجموع $\\dfrac{2}{3} + \\dfrac{1}{6}$ .",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "5/6",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط؟ جمع، طرح، أم مقارنة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{5}{6}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2}{3} = \\dfrac{4}{6}$ ثمّ $\\dfrac{4}{6} + \\dfrac{1}{6} = \\dfrac{5}{6}$ ."
+        ],
+        "result": "\\dfrac{5}{6}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $A$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "1/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1/2",
+          "id": "MISC-JIDAKASR-SUMACROSS"
+        },
+        {
+          "value": "15/16",
+          "id": "MISC-JIDAKASR-DENSUM"
+        },
+        {
+          "value": "25/9",
+          "id": "MISC-JIDAKASR-CROSS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليّة بين الكسرين؟ وماذا يمثّل كلّ منهما من الكلّ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في ضرب كسرين لا نبحث عن مقام مشترك: نضرب البسطين معًا ونضرب المقامين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء على شكل كسر واحد ثمّ اختزله إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{4}$ .",
+        "incorrect": "ضرب كسرين: بسط × بسط فوق مقام × مقام، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{6} \\times \\dfrac{3}{10} = \\dfrac{5 \\times 3}{6 \\times 10} = \\dfrac{15}{60}$ .",
+          "نختزل بالقسمة على $15$ : $\\dfrac{15}{60} = \\dfrac{1}{4}$ ."
+        ],
+        "result": "\\dfrac{1}{4}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "اكتب العدد $A = \\dfrac{1}{4}$ على شكل عدد عشري .",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "0.25",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المعطيات ثمّ حدّد العملية المناسبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب خطوة بخطوة وراجع الوحدة في الناتج."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}25$ .",
+        "incorrect": "راجع المعطيات والعمليّة ثمّ أعد الحساب."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{4} = 1 \\div 4 = 0{,}25$ ."
+        ],
+        "result": "0{,}25"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

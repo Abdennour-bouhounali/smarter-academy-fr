@@ -1,0 +1,181 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l4-006",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2015 — قواسم العدد 527",
+    "estimatedMinutes": 12,
+    "tags": [
+      "قواسم",
+      "طريقة الاختبار",
+      "مراحل الحساب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qawasim-adad-tabii_P3",
+      "modelledOn": "BEM 2015 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "إلى أي عدد يكفي أن نختبر قابلية قسمة العدد 527 لتعيين كل قواسمه؟",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "22",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نختبر الأعداد التي مربعها أصغر من 527 أو يساويه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب مربعات بعض الأعداد وقارنها بالعدد المعطى."
+        }
+      ],
+      "feedback": {
+        "correct": "$22^2 = 484 \\leq 527 < 529 = 23^2$.",
+        "incorrect": "ابحث عن أكبر عدد طبيعي مربعه أصغر من 527 أو يساويه."
+      },
+      "solution": {
+        "lines": [
+          "$22^2 = 484$ و $23^2 = 529$",
+          "$22^2 \\leq 527 < 23^2$",
+          "إذن يكفي أن نختبر قابلية قسمة 527 على الأعداد من 1 إلى 22."
+        ],
+        "result": "22^2 \\leq 527 < 23^2"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عيّن كل قواسم العدد 527 مع كتابة مراحل الحساب.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        17,
+        31,
+        527
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            17,
+            31
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 527 بمربعات الأعداد: إلى أي عدد يكفي أن تختبر قابلية القسمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل قسمة باقيها معدوم تعطي قاسمين: $d$ و $527 \\div d$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$527 = 1 \\times 527$ ، $527 = 17 \\times 31$.",
+        "incorrect": "اختبر الأعداد التي مربعها أصغر من العدد أو يساويه، وخذ من كل قسمة باقيها معدوم القاسمين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$22^2 = 484 \\leq 527 < 529 = 23^2$ ومنه نختبر قابلية قسمة 527 على الأعداد من 1 إلى 22.",
+          "نجد أن 527 يقبل القسمة على كل من الأعداد: 1 ، 17.",
+          "ومن المساويات: $527 = 1 \\times 527$ ، $527 = 17 \\times 31$",
+          "إذن قواسم العدد 527 هي: 1 ، 17 ، 31 ، 527."
+        ]
+      },
+      "work": "required",
+      "timeSeconds": 420
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما هي قيم العدد الطبيعي $a$ التي من أجلها يكون $\\dfrac{527}{a + 4}$ عددا طبيعيا؟",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        13,
+        27,
+        523
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "متى يكون $\\dfrac{527}{a + 4}$ عددا طبيعيا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يجب أن يكون $a + 4$ قاسما للعدد 527، وأكبر من 4 أو يساويه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "من كل قاسم مناسب $d$ نستنتج $a = d - 4$."
+        }
+      ],
+      "feedback": {
+        "correct": "$a + 4$ قاسم للعدد 527 أكبر من 4: 17 ، 31 ، 527.",
+        "incorrect": "المطلوب قيم $a$ لا قيم $a + 4$: عيّن قواسم 527 التي تفوق 4 أو تساويه ثم اطرح منها 4."
+      },
+      "solution": {
+        "lines": [
+          "يكون $\\dfrac{527}{a + 4}$ عددا طبيعيا إذا كان $a + 4$ قاسما للعدد 527.",
+          "قواسم العدد 527 هي: 1 ، 17 ، 31 ، 527.",
+          "وبما أن $a + 4 \\geq 4$ فإن $a + 4$ يساوي أحد الأعداد: 17 ، 31 ، 527.",
+          "ومنه قيم $a$ هي: 13 ، 27 ، 523."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

@@ -1,0 +1,287 @@
+{
+  "id": "ex-4am-nisab-muthallathiya-l5-005",
+  "lessonCode": "nisab-muthallathiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2020 — مهرجان الطائرات الورقية",
+    "estimatedMinutes": 20,
+    "tags": [
+      "وضعية إدماجية",
+      "الجيب",
+      "تكلفة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_nisab-muthallathiya_P3",
+      "modelledOn": "BEM 2020 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2020",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في مهرجان الطائرات الورقية على شاطئ مستغانم، تطير طائرة ريم $T$ وخيطها المشدود $[RT]$ طوله $50\\,\\mathrm{m}$ ، يصنع مع الأفق زاوية $\\widehat{PRT} = 40^{\\circ}$ ، حيث يد ريم $R$ على ارتفاع $1{,}2\\,\\mathrm{m}$ من الرمل، و $P$ النقطة التي في مستوى يدها تحت الطائرة (الشكل المقابل). وبعد المهرجان، تشارك ريم صديقاتها في جمع النفايات من الشاطئ.",
+    "figure": {
+      "points": {
+        "R": [
+          0,
+          0
+        ],
+        "P": [
+          38.3022,
+          0
+        ],
+        "T": [
+          38.3022,
+          32.1394
+        ]
+      },
+      "segments": [
+        [
+          "R",
+          "P"
+        ],
+        [
+          "P",
+          "T"
+        ],
+        {
+          "from": "R",
+          "to": "T",
+          "label": "50 m"
+        }
+      ],
+      "rightAngles": [
+        [
+          "R",
+          "P",
+          "T"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "R",
+          "from": "P",
+          "to": "T",
+          "label": "40°",
+          "radius": 30
+        }
+      ],
+      "ariaLabel": "يد ريم R، الطائرة T، و P النقطة التي في مستوى اليد تحت الطائرة؛ الخيط RT طوله 50 m ويصنع مع الأفق زاوية قيسها 40 درجة",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب ارتفاع الطائرة فوق يد ريم $PT$ بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m مدوّرا إلى 0,1",
+      "expectedAnswer": "32.1",
+      "misconceptionSignatures": [
+        {
+          "value": "77.8",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        },
+        {
+          "value": "38.3",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $RPT$ القائم في $P$ ، حدّد موقع الضلع المعلوم والضلع المطلوب بالنسبة إلى الزاوية $\\widehat{PRT}$ (مجاور، مقابل أو وتر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة التي تجمع هذين الضلعين هي جيب الزاوية $\\widehat{PRT}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالآلة الحاسبة مبرمجة على الدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$PT = 50 \\times \\sin 40^{\\circ} \\approx 32{,}1\\,\\mathrm{m}$ .",
+        "incorrect": "الطول المطلوب في بسط النسبة: نضرب الطول المعلوم في النسبة المثلثية ولا نقسم عليها؛ والآلة الحاسبة مبرمجة على الدرجة."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $RPT$ القائم في $P$ لدينا: $\\sin\\,\\widehat{PRT} = \\dfrac{PT}{RT}$",
+          "ومنه: $PT = RT \\times \\sin\\,\\widehat{PRT}$",
+          "$PT = 50 \\times \\sin 40^{\\circ}$",
+          "باستعمال الآلة الحاسبة: $PT \\approx 32{,}1394$"
+        ],
+        "result": "PT \\approx 32{,}1\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "ثم ارتفاعها عن الرمل بالتدوير إلى $0{,}1$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الارتفاع بـ m مدوّرا إلى 0,1",
+      "expectedAnswer": "33.3",
+      "misconceptionSignatures": [
+        {
+          "value": "32.1",
+          "id": "MISC-MUTH-IRTIFA3-AYN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يد ريم على ارتفاع $1{,}2\\,\\mathrm{m}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$32{,}1394 + 1{,}2 \\approx 33{,}3\\,\\mathrm{m}$ .",
+        "incorrect": "أضف ارتفاع اليد فوق الرمل."
+      },
+      "solution": {
+        "lines": [
+          "الارتفاع عن الرمل $= PT + 1{,}2 = 32{,}1394 + 1{,}2$"
+        ],
+        "result": "h \\approx 33{,}3\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "☜ تشترط لجنة التحكيم أن تبلغ الطائرة ارتفاع $45\\,\\mathrm{m}$ عن الرمل بالزاوية نفسها $40^{\\circ}$ . يُباع الخيط في بكرات طول كل منها $20\\,\\mathrm{m}$ وثمن البكرة $350DA$ . كم بكرة تلزم ريم، وما ثمنها؟",
+      "statement": "طول الخيط اللازم بالتدوير إلى $0{,}01$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m مدوّرا إلى 0,01",
+      "expectedAnswer": "68.14",
+      "misconceptionSignatures": [
+        {
+          "value": "70.01",
+          "id": "MISC-MUTH-IRTIFA3-AYN"
+        },
+        {
+          "value": "28.15",
+          "id": "MISC-MUTH-DARB-BADAL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الارتفاع المطلوب فوق اليد: $45 - 1{,}2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الخيط وتر، والارتفاع فوق اليد مقابل للزاوية $40^{\\circ}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الوتر في مقام الجيب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{45 - 1{,}2}{\\sin 40^{\\circ}} = \\dfrac{43{,}8}{\\sin 40^{\\circ}} \\approx 68{,}14\\,\\mathrm{m}$ .",
+        "incorrect": "اطرح ارتفاع اليد أولا، ثم اقسم على الجيب (الخيط في المقام)."
+      },
+      "solution": {
+        "lines": [
+          "الارتفاع اللازم فوق يد ريم: $45 - 1{,}2 = 43{,}8\\,\\mathrm{m}$",
+          "$\\sin 40^{\\circ} = \\dfrac{43{,}8}{L}$ ومنه $L = \\dfrac{43{,}8}{\\sin 40^{\\circ}}$",
+          "باستعمال الآلة الحاسبة: $L \\approx 68{,}1407$"
+        ],
+        "result": "L \\approx 68{,}14\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "ثمن البكرات اللازمة:",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "1400",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد البكرات عدد طبيعي يكفي الطول كله."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب عدد البكرات في 350."
+        }
+      ],
+      "feedback": {
+        "correct": "يلزم 4 بكرات ($4 \\times 20 = 80 > 68{,}14$) ، والثمن $4 \\times 350 = 1400DA$ .",
+        "incorrect": "ثلاث بكرات لا تكفي؛ خذ أصغر عدد من البكرات يتجاوز طوله الطول اللازم."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{68{,}14}{20} \\approx 3{,}41$ : يلزم $4$ بكرات.",
+          "الثمن: $4 \\times 350$"
+        ],
+        "result": "1400\\,DA"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

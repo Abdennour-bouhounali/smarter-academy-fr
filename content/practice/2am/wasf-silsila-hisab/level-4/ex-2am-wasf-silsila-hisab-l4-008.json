@@ -1,0 +1,294 @@
+{
+  "id": "ex-2am-wasf-silsila-hisab-l4-008",
+  "lessonCode": "wasf-silsila-hisab",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أولوية القسمة",
+    "estimatedMinutes": 14,
+    "tags": [
+      "حاصل قسمة",
+      "أولوية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "أنجز الحسابين الأوّلين، ثم أجب عن بقية الأسئلة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $A = 72 \\div 8 + 6$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "15",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد كتابة السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 72 \\div 8 + 6 = 15$",
+        "incorrect": "ما بين القوسين يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح، من اليسار نحو اليمين."
+      },
+      "solution": {
+        "lines": [
+          "$A = 72 \\div 8 + 6$",
+          "$A = 9 + 6$",
+          "$A = 15$"
+        ],
+        "result": "15"
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $B = 72 \\div (8 + 4)$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد كتابة السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 72 \\div (8 + 4) = 6$",
+        "incorrect": "ما بين القوسين يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح، من اليسار نحو اليمين."
+      },
+      "solution": {
+        "lines": [
+          "$B = 72 \\div (8 + 4)$",
+          "$B = 72 \\div 12$",
+          "$B = 6$"
+        ],
+        "result": "6"
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أيّ جملة تصف السلسلة $B = 72 \\div (8 + 4)$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "حاصل قسمة 72 على مجموع العددين 8 و 4",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "مجموع حاصل قسمة 72 على 8 والعدد 4",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-FIRSTOP"
+        },
+        {
+          "id": "C",
+          "content": "حاصل قسمة مجموع العددين 8 و 4 على 72",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-ORDERDIFF"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ باسم السلسلة: هو اسم آخر عملية تُنجز فيها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم صِف كلّ قطعة من القطعتين بالطريقة نفسها، قبل آخر عملية وبعدها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اذكر القطعة المكتوبة أوّلًا أوّلًا، وانتبه إلى كلمة «على» في حاصل القسمة."
+        }
+      ],
+      "feedback": {
+        "correct": "B هي حاصل قسمة 72 على مجموع العددين 8 و 4.",
+        "incorrect": "ابدأ باسم آخر عملية، ثم صِف القطعة الأولى ثم الثانية، بالترتيب الذي تُكتبان به."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية تُنجز في $72 \\div (8 + 4)$ هي $\\div$، فالسلسلة حاصل قسمة.",
+          "نصف كلّ قطعة بالطريقة نفسها: حاصل قسمة 72 على مجموع العددين 8 و 4."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "أيّ سلسلة توافق الجملة: «فرق العدد 90 وحاصل قسمة 72 على مجموع العددين 8 و 4» ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$90 - 72 \\div 8 + 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-NOBRACKET"
+        },
+        {
+          "id": "B",
+          "content": "$90 - 72 \\div (8 + 4)$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$(90 - 72) \\div (8 + 4)$",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بآخر عملية في الجملة: هي الأخيرة التي تُكتب بين قطعتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كلّ قطعة على حدة، وضع بين قوسين كلّ قطعة يجب أن تُحسب قبل آخر عملية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر سلسلتك بحسابها: هل آخر عملية فيها هي التي في الجملة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة الصحيحة: $90 - 72 \\div (8 + 4)$ .",
+        "incorrect": "ابدأ بآخر عملية في الجملة، وضع بين قوسين كلّ قطعة تُحسب قبلها، وانتبه إلى ترتيب القطعتين."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية في الجملة هي $-$.",
+          "نكتب كلّ قطعة ثم نربط بينهما: $90 - 72 \\div (8 + 4)$ (القوسان لازمان لأنّ القطعة يجب أن تُحسب أوّلًا)."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "اكتب السلسلة الموافقة للجملة: «فرق العدد 90 وحاصل قسمة 72 على مجموع العددين 8 و 4» ثم احسبها.",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "84",
+      "misconceptionSignatures": [
+        {
+          "value": "85",
+          "id": "MISC-WASF-NOBRACKET"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد كتابة السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = 90 - 72 \\div (8 + 4) = 84$",
+        "incorrect": "اكتب السلسلة بالقوسين اللازمين ثم احسبها: ما بين القوسين أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "$C = 90 - 72 \\div (8 + 4)$",
+          "$C = 90 - 72 \\div 12$",
+          "$C = 90 - 6$",
+          "$C = 84$"
+        ],
+        "result": "84"
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l4-006",
+  "lessonCode": "mana-jam-tarh",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — من الكسر العشري إلى المجموع",
+    "estimatedMinutes": 7,
+    "tags": [
+      "كتابة عشرية",
+      "مجموع",
+      "فرق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العددين a و b حيث:",
+    "formulas": [
+      "a = \\dfrac{2475}{100}",
+      "b = \\dfrac{386}{10}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "اكتب a كتابة عشرية.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "24.75",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القسمة على 100 تزيح الفاصلة منزلتين نحو اليسار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الرقمان الأخيران هما جزءا العشرة والمئة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2475}{100} = 24{,}75$.",
+        "incorrect": "اقسم 2475 على 100: الفاصلة تنتقل منزلتين."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2475}{100} = 24{,}75$"
+        ],
+        "result": "a = 24{,}75"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اكتب b كتابة عشرية.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "38.6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القسمة على 10 تزيح الفاصلة منزلة واحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الرقم الأخير هو جزء العشرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{386}{10} = 38{,}6$.",
+        "incorrect": "اقسم 386 على 10: الفاصلة تنتقل منزلة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{386}{10} = 38{,}6$"
+        ],
+        "result": "b = 38{,}6"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب مجموع العددين a و b.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "63.35",
+      "misconceptionSignatures": [
+        {
+          "value": "28.61",
+          "id": "MISC-JAMTARH-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب a و b كتابة عشرية أولًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاذِ الفاصلتين: $38{,}6 = 38{,}60$."
+        }
+      ],
+      "feedback": {
+        "correct": "$24{,}75 + 38{,}6 = 63{,}35$.",
+        "incorrect": "اجمع بعد محاذاة الفاصلتين ($38{,}6 = 38{,}60$)."
+      },
+      "solution": {
+        "lines": [
+          "$a + b = 24{,}75 + 38{,}60 = 63{,}35$"
+        ],
+        "result": "a + b = 63{,}35"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب فرق العددين a و b.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "13.85",
+      "misconceptionSignatures": [
+        {
+          "value": "-13.85",
+          "id": "MISC-JAMTARH-FARQ-MAQLUB"
+        },
+        {
+          "value": "63.35",
+          "id": "MISC-JAMTARH-MAJMU-FARQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ العددين أكبر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفرق: الأكبر − الأصغر."
+        }
+      ],
+      "feedback": {
+        "correct": "$38{,}6 - 24{,}75 = 13{,}85$.",
+        "incorrect": "b أكبر من a: اطرح a من b."
+      },
+      "solution": {
+        "lines": [
+          "$b > a$ ، إذن الفرق هو $b - a$.",
+          "$38{,}60 - 24{,}75 = 13{,}85$"
+        ],
+        "result": "b - a = 13{,}85"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

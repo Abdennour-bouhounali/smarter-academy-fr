@@ -1,0 +1,349 @@
+{
+  "id": "ex-2am-muqarana-kasrayn-l5-008",
+  "lessonCode": "muqarana-kasrayn",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — جني التمور",
+    "estimatedMinutes": 14,
+    "tags": [
+      "مقارنة كسور",
+      "أكثر من النصف",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "جنى فلّاح $4000\\ \\mathrm{kg}$ من التمور على أربعة أسابيع : $\\dfrac{2}{5}$ منها في الأسبوع الأوّل ، و $\\dfrac{1}{10}$ في الثاني ، و $\\dfrac{3}{20}$ في الثالث ، والباقي في الرابع ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما الكسر الذي يمثّل ما جُني في الأسبوع الرابع ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "7/20",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط ؟ وما الكسور المعطاة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد قبل الجمع أو الطرح ثمّ اختزل ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{7}{20}$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{8}{20} + \\dfrac{2}{20} + \\dfrac{3}{20} = \\dfrac{13}{20}$ .",
+          "$1 - \\dfrac{13}{20} = \\dfrac{7}{20}$ ."
+        ],
+        "result": "\\dfrac{7}{20}"
+      },
+      "work": "optional",
+      "timeSeconds": 90,
+      "counted": false
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "في أيّ أسبوع جُني أكبر جزء ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الأوّل",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الثاني",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "الثالث",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "الرابع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-NUMONLY"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكسر الخاصّ بكلّ حالة ؟ وهل مقاماتها متساوية أو يقسم بعضها بعضًا ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور كلّها بالمقام نفسه إن اختلفت المقامات ثمّ قارن بين البسوط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحكم من البسط وحده ولا من المقام وحده ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب : الأوّل .",
+        "incorrect": "وحّد المقامات قبل أن تحكم ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "نكتب الكسور بالمقام $20$ : $\\dfrac{2}{5} = \\dfrac{8}{20}$ ، $\\dfrac{1}{10} = \\dfrac{2}{20}$ ، $\\dfrac{3}{20}$ ، $\\dfrac{7}{20}$ .",
+          "أكبر بسط هو $8$ .",
+          "الجواب : الأوّل ($\\dfrac{2}{5}$) ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "رتّب الكسور التالية تنازليًّا : $\\dfrac{2}{5}$ ؛ $\\dfrac{1}{10}$ ؛ $\\dfrac{3}{20}$ ؛ $\\dfrac{7}{20}$ .",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{7}{20} > \\dfrac{3}{20} > \\dfrac{2}{5} > \\dfrac{1}{10}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-NUMONLY"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{2}{5} > \\dfrac{7}{20} > \\dfrac{3}{20} > \\dfrac{1}{10}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{1}{10} > \\dfrac{3}{20} > \\dfrac{7}{20} > \\dfrac{2}{5}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-REVERSED"
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{2}{5} > \\dfrac{3}{20} > \\dfrac{7}{20} > \\dfrac{1}{10}$",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الترتيب الصحيح",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما مقامات هذه الكسور ؟ هل يقسم أحدها الآخر ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور كلّها بالمقام الأكبر ثمّ قارن بين البسوط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى جهة الترتيب المطلوبة : الأصغر أوّلًا في الترتيب التصاعدي والأكبر أوّلًا في التنازلي ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2}{5} > \\dfrac{7}{20} > \\dfrac{3}{20} > \\dfrac{1}{10}$ .",
+        "incorrect": "وحّد المقامات ثمّ رتّب البسوط في الجهة المطلوبة وأعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "نكتب الكسور بالمقام نفسه ($20$) : $\\dfrac{2}{5} = \\dfrac{8}{20}$ ، $\\dfrac{1}{10} = \\dfrac{2}{20}$ ، $\\dfrac{3}{20}$ ، $\\dfrac{7}{20}$ .",
+          "نرتّب البسوط تنازليًّا : $8 > 7 > 3 > 2$ .",
+          "إذن : $\\dfrac{2}{5} > \\dfrac{7}{20} > \\dfrac{3}{20} > \\dfrac{1}{10}$ ."
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "ما الكسر الذي يمثّل ما جُني في الأسبوعين الأوّل والثالث معًا ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "11/20",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط ؟ وما الكسور المعطاة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد قبل الجمع أو الطرح ثمّ اختزل ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{11}{20}$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{8}{20} + \\dfrac{3}{20} = \\dfrac{11}{20}$ ."
+        ],
+        "result": "\\dfrac{11}{20}"
+      },
+      "work": "optional",
+      "timeSeconds": 90,
+      "counted": false
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "هل جُني في هذين الأسبوعين أكثر من نصف المحصول ؟ قارن بين $\\dfrac{11}{20}$ و $\\dfrac{1}{2}$ :",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{11}{20} > \\dfrac{1}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{11}{20} < \\dfrac{1}{2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-REVERSED"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن بين المقامين : هل أحدهما مضاعف للآخر ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسرين بالمقام الأكبر ثمّ قارن بين البسطين ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب بسط الكسر الأصغر مقامًا ومقامه في العدد نفسه حتّى يصير مقامه مساويًا للمقام الآخر ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{11}{20} > \\dfrac{1}{2}$ .",
+        "incorrect": "اختر طريقة المقارنة المناسبة للحالة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$20$ مضاعف للعدد $2$ : $20 = 2 \\times 10$ .",
+          "$\\dfrac{1}{2} = \\dfrac{1 \\times 10}{2 \\times 10} = \\dfrac{10}{20}$ .",
+          "نقارن بين البسطين : $11 > 10$ ، إذن $\\dfrac{11}{20} > \\dfrac{1}{2}$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "06",
+      "statement": "كم كيلوغرامًا جُنيت في الأسبوع الرابع ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1400",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط ؟ وما الكسور المعطاة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد قبل الجمع أو الطرح ثمّ اختزل ."
+        }
+      ],
+      "feedback": {
+        "correct": "$1400$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$4000 \\div 20 = 200$ ثمّ $200 \\times 7 = 1400$ ، أي $1400\\ \\mathrm{kg}$ ."
+        ],
+        "result": "1400"
+      },
+      "work": "optional",
+      "timeSeconds": 90,
+      "counted": false
+    }
+  ]
+}

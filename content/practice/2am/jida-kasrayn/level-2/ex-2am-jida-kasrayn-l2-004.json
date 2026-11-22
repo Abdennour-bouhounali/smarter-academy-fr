@@ -1,0 +1,227 @@
+{
+  "id": "ex-2am-jida-kasrayn-l2-004",
+  "lessonCode": "jida-kasrayn",
+  "level": 2,
+  "metadata": {
+    "title": "نتائج اختبار الرياضيات",
+    "estimatedMinutes": 8,
+    "tags": [
+      "كسر من عدد",
+      "برّر"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-43",
+      "page": 35,
+      "section": "أتعمّق",
+      "number": 43
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في قسم من السنة الثانية متوسط $24$ تلميذًا و $15$ تلميذة . في اختبار الرياضيات تحصّل $\\dfrac{5}{8}$ من التلاميذ و $\\dfrac{4}{5}$ من التلميذات على المعدّل ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما عدد التلاميذ الذين تحصّلوا على المعدّل ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "15",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "192/5",
+          "id": "MISC-JIDAKASR-FLIP"
+        },
+        {
+          "value": "3",
+          "id": "MISC-JIDAKASR-HALFWAY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كلمة «من» بعد كسر تعني الضرب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\dfrac{a}{b}$ من $x$ هو $x \\times \\dfrac{a}{b}$ : اقسم $x$ على $b$ ثمّ اضرب في $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي إذا كان الكسر أصغر من 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$15$ .",
+        "incorrect": "الكسر «من» عدد يعني الضرب: اقسم على المقام ثمّ اضرب في البسط، ولا تقلب الكسر."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{8}$ من $24$ هو $24 \\times \\dfrac{5}{8}$ .",
+          "$24 \\div 8 = 3$ ثمّ $3 \\times 5 = 15$ ."
+        ],
+        "result": "15"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما عدد التلميذات اللواتي تحصّلن على المعدّل ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "12",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "75/4",
+          "id": "MISC-JIDAKASR-FLIP"
+        },
+        {
+          "value": "3",
+          "id": "MISC-JIDAKASR-HALFWAY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كلمة «من» بعد كسر تعني الضرب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\dfrac{a}{b}$ من $x$ هو $x \\times \\dfrac{a}{b}$ : اقسم $x$ على $b$ ثمّ اضرب في $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي إذا كان الكسر أصغر من 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$12$ .",
+        "incorrect": "الكسر «من» عدد يعني الضرب: اقسم على المقام ثمّ اضرب في البسط، ولا تقلب الكسر."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{4}{5}$ من $15$ هو $15 \\times \\dfrac{4}{5}$ .",
+          "$15 \\div 5 = 3$ ثمّ $3 \\times 4 = 12$ ."
+        ],
+        "result": "12"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما عدد المتحصّلين على المعدّل في القسم كلّه ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "27",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المعطيات ثمّ حدّد العملية المناسبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب خطوة بخطوة وراجع الوحدة في الناتج."
+        }
+      ],
+      "feedback": {
+        "correct": "$27$ .",
+        "incorrect": "راجع المعطيات والعمليّة ثمّ أعد الحساب."
+      },
+      "solution": {
+        "lines": [
+          "$15 + 12 = 27$ ."
+        ],
+        "result": "27"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "برّر : هل أكثر من نصف تلاميذ القسم تحصّل على المعدّل ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب جملة أو جملتين: الفكرة ثمّ الحساب الذي يدعمها."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم : $27 > 19{,}5$ .",
+        "incorrect": "قارن تبريرك بالحلّ النموذجي: الفكرة ثمّ الحساب الذي يدعمها."
+      },
+      "solution": {
+        "lines": [
+          "عدد تلاميذ القسم $24 + 15 = 39$ ، ونصفه $39 \\div 2 = 19{,}5$ .",
+          "وبما أنّ $27 > 19{,}5$ فأكثر من النصف تحصّل على المعدّل ."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

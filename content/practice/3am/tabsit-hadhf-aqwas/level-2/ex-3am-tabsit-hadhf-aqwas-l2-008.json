@@ -1,0 +1,190 @@
+{
+  "id": "ex-3am-tabsit-hadhf-aqwas-l2-008",
+  "lessonCode": "tabsit-hadhf-aqwas",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — آخر عملية",
+    "estimatedMinutes": 5,
+    "tags": [
+      "مجموع",
+      "جداء"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $K$ حيث:",
+    "formulas": [
+      "K = 3x + 2 \\times x"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل العبارة $K = 3x + 2 \\times x$ مجموع أم جداء؟",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مجموع (آخر عملية فيها جمع أو طرح)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "جداء (آخر عملية فيها ضرب)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-SUM-PRODUCT-CONFUSED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تخيّل أنك تحسب العبارة من أجل عدد: ما آخر عملية تُنجزها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كانت آخر عملية جمعًا أو طرحًا فالعبارة مجموع، وإذا كانت ضربًا فهي جداء."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأقواس تُحسب أولًا، ثم الضرب قبل الجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر عملية في $K$ هي الجمع أو الطرح: $K$ مجموع.",
+        "incorrect": "ابحث عن آخر عملية تُنجز عند الحساب، بعد الأقواس وبعد الضرب."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية تُنجز في $K = 3x + 2 \\times x$ هي جمع أو طرح، إذن $K$ مجموع."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "الشكل المبسّط للعبارة $K$ هو:",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$K = 3x^2 + 2x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-SUM-PRODUCT-CONFUSED"
+        },
+        {
+          "id": "B",
+          "content": "$K = 5x$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$K = 5x^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-SUM-POWER-ADDED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تخيّل أنك تحسب العبارة من أجل عدد: ما آخر عملية تُنجزها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كانت آخر عملية جمعًا أو طرحًا فالعبارة مجموع، وإذا كانت ضربًا فهي جداء."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأقواس تُحسب أولًا، ثم الضرب قبل الجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$K = 5x$.",
+        "incorrect": "راجع إشارة كل حدّ وما يسبق القوسين، ثم اجمع الحدود المتشابهة فقط."
+      },
+      "solution": {
+        "lines": [
+          "الضرب قبل الجمع: $2 \\times x = 2x$ .",
+          "$K = 3x + 2x = 5x$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كتب زميلك $K = (3x + 2) \\times x$ . برّر لماذا ليست هذه العبارة هي $K$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تخيّل أنك تحسب العبارة من أجل عدد: ما آخر عملية تُنجزها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كانت آخر عملية جمعًا أو طرحًا فالعبارة مجموع، وإذا كانت ضربًا فهي جداء."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأقواس تُحسب أولًا، ثم الضرب قبل الجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "في $K = 3x + 2 \\times x$ آخر عملية هي الجمع: $K$ مجموع.",
+          "أما $(3x + 2) \\times x$ فآخر عملية فيها الضرب: إنها جداء.",
+          "من أجل $x = 1$ : $K = 3 + 2 = 5$ بينما $(3 + 2) \\times 1 = 5$ ، ومن أجل $x = 2$ : $K = 10$ بينما $(6 + 2) \\times 2 = 16$ : العبارتان مختلفتان."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

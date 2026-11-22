@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l5-009",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — لافتة «قف» الثمانية",
+    "estimatedMinutes": 3,
+    "tags": [
+      "طول الضلع",
+      "الثماني"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mudalaat-muntazama_P3",
+      "modelledOn": "method-side"
+    }
+  },
+  "statement": {
+    "content": "لافتة «قف» في مفترق طرق بوهران على شكل ثماني منتظم، رؤوسه على دائرة نصف قطرها $40\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "طول ضلع اللافتة مدوّرا إلى 0,01 بالسنتيمتر:",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "30.61",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUNTAZAM-DIL",
+          "value": "40.00"
+        },
+        {
+          "id": "MISC-MUTH-NISBA-UKHRA",
+          "value": "73.91"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم المثلث الذي رأسه المركز وقاعدته ضلع، ثم الارتفاع النازل من المركز."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في المثلث القائم، الزاوية في المركز نصف الزاوية المركزية، والوتر نصف القطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نصف الضلع = نصف القطر × جيب نصف الزاوية المركزية، ثم نضاعف."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 40 \\times \\sin 22{,}5^\\circ \\approx 30{,}61$ .",
+        "incorrect": "الزاوية المركزية للثماني $45^\\circ$ ، ونصفها في المثلث القائم."
+      },
+      "difficulty": 5
+    }
+  ]
+}

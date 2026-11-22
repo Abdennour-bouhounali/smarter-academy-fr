@@ -1,0 +1,130 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-jumal-l2-008",
+  "lessonCode": "wadiya-idmajiya-jumal",
+  "level": 2,
+  "metadata": {
+    "title": "كشك الكرنتيكة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "ترييض",
+      "أثمان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-jumal_P1",
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-jumal-l2-008"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في كشك قرب المتوسطة يحرص صاحبه على نظافته: خبزتا كرنتيكة وقارورة قازوز بـ 170DA، و 3 خبزات كرنتيكة وقارورة قازوز بـ 225DA.\nنسمّي $x$ سعر خبزة الكرنتيكة و $y$ سعر قارورة القازوز (بالدينار)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "جد السعرين $x$ و $y$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : سعر الخبزة ثم سعر القارورة بـ DA",
+      "expectedAnswer": {
+        "x": "55",
+        "y": "60"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "60",
+            "y": "55"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل $y$ هو نفسه في المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح إحدى المعادلتين من الأخرى طرفا لطرف لتحذف $y$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض قيمة $x$ في إحدى المعادلتين لتجد $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "خبزة الكرنتيكة بـ $55DA$ وقارورة القازوز بـ $60DA$ .",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} 2x + y = 170 \\\\ 3x + y = 225 \\end{cases}$",
+          "بطرح المعادلة (1) من المعادلة (2) طرفا لطرف نجد:",
+          "$x = 55$",
+          "بتعويض $x$ بـ $55$ في المعادلة (1) نجد: $2 \\times 55 + y = 170$",
+          "$y = 60$",
+          "التحقق في النص: $2 \\times 55 + 60 = 170$ و $3 \\times 55 + 60 = 225$ .",
+          "إذن:"
+        ],
+        "result": "(55 ; 60)"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم يدفع تلميذ اشترى خبزة كرنتيكة وقارورة قازوز؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "115",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع السعرين اللذين وجدتهما في السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "$55 + 60 = 115$ .",
+        "incorrect": "اجمع سعر الخبزة وسعر القارورة."
+      },
+      "solution": {
+        "lines": [
+          "$55 + 60 = 115$",
+          "يدفع التلميذ $115DA$ ."
+        ],
+        "result": "115\\,DA"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

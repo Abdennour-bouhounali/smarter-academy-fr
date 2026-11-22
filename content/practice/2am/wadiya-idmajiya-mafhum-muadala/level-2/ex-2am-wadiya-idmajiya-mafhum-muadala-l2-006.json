@@ -1,0 +1,191 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-mafhum-muadala-l2-006",
+  "lessonCode": "wadiya-idmajiya-mafhum-muadala",
+  "level": 2,
+  "metadata": {
+    "title": "زوايا مثلّث بدلالة x",
+    "estimatedMinutes": 8,
+    "tags": [
+      "حدود متشابهة",
+      "معادلة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-58",
+      "page": 67,
+      "section": "أتعمّق",
+      "number": 58
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "قيس زوايا مثلّث بالدرجات هو $x$ و $2x$ و $3x$ . ومجموع قيس زوايا أيّ مثلّث يساوي $180$ درجة ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اختر الكتابة المبسّطة لمجموع قيس الزوايا الثلاث .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x+5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-ADDFOR"
+        },
+        {
+          "id": "B",
+          "content": "$6x$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$6x \\times x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-ADDPOWERS"
+        }
+      ],
+      "feedback": {
+        "correct": "$6x$ .",
+        "incorrect": "اكتب الجزء الثابت مرّة واحدة والجزء المتكرّر مضروبًا في عدده، ثمّ اختبر عبارتك على عدد صغير."
+      },
+      "solution": {
+        "lines": [
+          "نجمع الحدود المتشابهة : $x+2x+3x = (1+2+3)x$ .",
+          "المجموع : $6x$ ."
+        ]
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في الوضعيّة ما يتغيّر (وهو الحرف) وما يبقى ثابتًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب ما يُدفع أو يُحسب مرّة واحدة، ثمّ ما يتكرّر مضروبًا في عدد مرّاته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر العبارة على عدد صغير مثل اثنين قبل أن تختار."
+        }
+      ],
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حلّ المعادلة : $6x = 180$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "1080",
+          "id": "MISC-MAJHUL-MULTDIV"
+        },
+        {
+          "value": "174",
+          "id": "MISC-MAJHUL-SUBFORM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في المعادلة ما يُفعل بالمجهول : ضرب أو قسمة أو جمع أو طرح، وما هي آخر عملية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ألغِ آخر عملية أُجريت على المجهول أوّلًا، ثمّ ألغِ ما بقي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من حلّك : عوّض المجهول بقيمته وأنجز العملية، فإن وجدت الطرف الآخر فالحلّ صحيح."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 30$ .",
+        "incorrect": "ابحث عن العدد الذي يجعل المساواة صحيحة بالعملية العكسية، ثمّ تحقّق منه بإنجاز العملية."
+      },
+      "solution": {
+        "lines": [
+          "لإلغاء الضرب في $6$ نقسم : $x = 180 \\div 6 = 30$ .",
+          "التحقّق : $6 \\times 30 = 180$ ."
+        ],
+        "result": "30"
+      },
+      "work": "optional",
+      "timeSeconds": 85
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما قيس أكبر زاوية بالدرجات ؟ إنّه $3x$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "90",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بقيمته المعلومة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات : الضرب والقسمة قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة."
+        }
+      ],
+      "feedback": {
+        "correct": "النتيجة $90$ .",
+        "incorrect": "عوّض بالقيم المعلومة واحسب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 30 = 90$ ."
+        ],
+        "result": "90"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

@@ -1,0 +1,249 @@
+{
+  "id": "ex-2am-masafa-nuqtatayn-l5-004",
+  "lessonCode": "masafa-nuqtatayn",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — نقطة لقاء متساوية البعد",
+    "estimatedMinutes": 12,
+    "tags": [
+      "منتصف قطعة",
+      "مسافة بين نقطتين",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يسكن سمير وليلى على طريق مستقيم مدرّج بالكيلومتر: سمير عند $-3{,}4$ وليلى عند $+5{,}2$ ، ويريدان اللقاء في نقطة تبعد عنهما المسافة نفسها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "النقطتان $S(-3{,}4)$ و $L(+5{,}2)$ على مستقيم مدرّج. احسب المسافة $SL$ .",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "8.6",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "1.8"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-8.6"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن أوّلًا أيّ الفاصلتين أكبر: الأكبر هي الأبعد إلى اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى مطروحًا منها الصغرى؛ وإذا كانت الصغرى سالبة فنطرح عددًا سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا: إن وجدت ناتجًا سالبًا فقد قلبت ترتيب الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$SL=8{,}6$ : النقطتان على جهتين من المبدأ فنجمع المسافتين إلى الصفر.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى هي $+5{,}2$ والفاصلة الصغرى هي $-3{,}4$",
+          "$SL=(+5{,}2)-(-3{,}4)=(+5{,}2)+(+3{,}4)=8{,}6$"
+        ],
+        "result": "8.6"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "$S(-3{,}4)$ و $L(+5{,}2)$ نقطتان على مستقيم مدرّج، و $R$ منتصف القطعة $[SL]$ . ما فاصلة $R$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "0.9",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-HALFDIST",
+          "value": "4.3"
+        },
+        {
+          "id": "MISC-MASAFA2-SUMNOHALF",
+          "value": "1.8"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أوّلًا المسافة بين طرفي القطعة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المنتصف يبعد عن كلّ طرف بنصف هذه المسافة: انطلق من الطرف الأصغر فاصلة وتقدّم بنصف المسافة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: المسافة من المنتصف إلى كلّ طرف يجب أن تكون نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$R(+0{,}9)$ : يبعد عن كلّ طرف بـ $4{,}3$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$SL=8{,}6$ ونصفها $4{,}3$",
+          "فاصلة $R$ = الفاصلة الصغرى + نصف المسافة = $-3{,}4+4{,}3=+0{,}9$"
+        ],
+        "result": "0.9"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "النقطتان $S(-3{,}4)$ و $R(+0{,}9)$ على مستقيم مدرّج. احسب المسافة $SR$ .",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "4.3",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "2.5"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-4.3"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن أوّلًا أيّ الفاصلتين أكبر: الأكبر هي الأبعد إلى اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى مطروحًا منها الصغرى؛ وإذا كانت الصغرى سالبة فنطرح عددًا سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا: إن وجدت ناتجًا سالبًا فقد قلبت ترتيب الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$SR=4{,}3$ : النقطتان على جهتين من المبدأ فنجمع المسافتين إلى الصفر.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى هي $+0{,}9$ والفاصلة الصغرى هي $-3{,}4$",
+          "$SR=(+0{,}9)-(-3{,}4)=(+0{,}9)+(+3{,}4)=4{,}3$"
+        ],
+        "result": "4.3"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "على مستقيم مدرّج: $S(-3{,}4)$ و $R(+1)$ و $L(+5{,}2)$ . هل $R$ منتصف القطعة $[SL]$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المسافتين $RS$ و $RL$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$R$ هي المنتصف إذا كانت المسافتان متساويتين وكانت $R$ بين الطرفين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن المسافتين."
+        }
+      ],
+      "feedback": {
+        "correct": "لا: $R$ ليست منتصف $[SL]$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$RS=4{,}4$ و $RL=4{,}2$",
+          "المسافتان غير متساويتين"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

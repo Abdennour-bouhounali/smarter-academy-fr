@@ -1,0 +1,303 @@
+{
+  "id": "ex-4am-mutatabiqat-shahira-l2-004",
+  "lessonCode": "mutatabiqat-shahira",
+  "level": 2,
+  "metadata": {
+    "title": "مربع فرق بمعاملات",
+    "estimatedMinutes": 9,
+    "tags": [
+      "مربع فرق",
+      "معاملات عشرية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-14",
+      "page": 38,
+      "section": "أوظّف تعلّماتي",
+      "number": 14
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارتان $A$ و $B$ حيث:",
+    "formulas": [
+      "A = (2x - 3)^2",
+      "B = (5x - 1{,}4)^2"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انشر ثم بسّط العبارة $A$ .",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $mx^2 + nx + p$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-MUTATABIQA-MURABBA-MUAMIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على مربع فرق: $(a - b)^2 = a^2 - 2ab + b^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن الحدّين $a$ و $b$ ، ولا تنسَ الحد المضاعف $2ab$ ولا تربيع المعامل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 4x^2 - 12x + 9$ إذن $m = 4$ .",
+        "incorrect": "طبّق المتطابقة الشهيرة حدًّا حدًّا (مربع كل حد والحد المضاعف)، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$A = (2x - 3)^2$",
+          "$A = (2x)^2 - 2 \\times 2x \\times 3 + 3^2$"
+        ],
+        "result": "A = 4x^2 - 12x + 9"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $mx^2 + nx + p$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "-12",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-MURABBA-FARQ-BILA-2AB"
+        },
+        {
+          "value": "-6",
+          "id": "MISC-MUTATABIQA-2AB-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل $x$ يأتي من الحد المضاعف $2ab$ ومن الحدود الأخرى في $x$ ، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 4x^2 - 12x + 9$ إذن $n = -12$ .",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $n$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$A = 4x^2 - 12x + 9$"
+        ],
+        "result": "n = -12"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "العدد $p$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $mx^2 + nx + p$ : اكتب العدد $p$ فقط",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "-9",
+          "id": "MISC-MURABBA-FARQ-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 4x^2 - 12x + 9$ إذن $p = 9$ .",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $p$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$A = 4x^2 - 12x + 9$"
+        ],
+        "result": "p = 9"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "lead": "انشر ثم بسّط العبارة $B$ .",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $B$ على الشكل $mx^2 + nx + p$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "25",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-MUTATABIQA-MURABBA-MUAMIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على مربع فرق: $(a - b)^2 = a^2 - 2ab + b^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن الحدّين $a$ و $b$ ، ولا تنسَ الحد المضاعف $2ab$ ولا تربيع المعامل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 25x^2 - 14x + 1{,}96$ إذن $m = 25$ .",
+        "incorrect": "طبّق المتطابقة الشهيرة حدًّا حدًّا (مربع كل حد والحد المضاعف)، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$B = (5x - 1{,}4)^2$",
+          "$B = (5x)^2 - 2 \\times 5x \\times 1{,}4 + (1{,}4)^2$"
+        ],
+        "result": "B = 25x^2 - 14x + 1{,}96"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $B$ على الشكل $mx^2 + nx + p$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "-14",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-MURABBA-FARQ-BILA-2AB"
+        },
+        {
+          "value": "-7",
+          "id": "MISC-MUTATABIQA-2AB-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل $x$ يأتي من الحد المضاعف $2ab$ ومن الحدود الأخرى في $x$ ، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 25x^2 - 14x + 1{,}96$ إذن $n = -14$ .",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $n$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$B = 25x^2 - 14x + 1{,}96$"
+        ],
+        "result": "n = -14"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "statement": "العدد $p$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $B$ على الشكل $mx^2 + nx + p$ : اكتب العدد $p$ فقط",
+      "expectedAnswer": "1.96",
+      "misconceptionSignatures": [
+        {
+          "value": "-1.96",
+          "id": "MISC-MURABBA-FARQ-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 25x^2 - 14x + 1{,}96$ إذن $p = 1{,}96$ .",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $p$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$B = 25x^2 - 14x + 1{,}96$"
+        ],
+        "result": "p = 1{,}96"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

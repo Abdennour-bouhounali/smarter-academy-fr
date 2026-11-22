@@ -1,0 +1,83 @@
+{
+  "id": "ex-4am-murakkibata-shuaa-l3-009",
+  "lessonCode": "murakkibata-shuaa",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — ممثّل مبدؤه A",
+    "estimatedMinutes": 2,
+    "tags": [
+      "تمثيل شعاع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_murakkibata-shuaa_P3",
+      "modelledOn": "method-draw"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس، $\\vec{u}\\begin{pmatrix} 4 \\\\ -3 \\end{pmatrix}$ و $A(-2\\,;\\,1)$ . نرسم الممثّل $\\overrightarrow{AB}$ للشعاع $\\vec{u}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما إحداثيتا B؟",
+      "learningPoints": [
+        {
+          "code": "4am_murakkibata-shuaa_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "إحداثيتا النقطة (x ; y) — عددان مثل −3 أو 2,5",
+      "expectedAnswer": {
+        "x": "2",
+        "y": "-2"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انطلق من نقطة البداية المعطاة، لا من المبدأ O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المركبة الأولى تنقلك أفقيا والثانية عموديا، بإشارتيهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف المركبة الأولى إلى الفاصلة والمركبة الثانية إلى الترتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "من A: 4 نحو اليمين ثم 3 نحو الأسفل: $B(2\\,;\\,-2)$ .",
+        "incorrect": "أضف 4 إلى الفاصلة و $-3$ إلى الترتيب."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "4",
+            "y": "-3"
+          },
+          "id": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        },
+        {
+          "value": {
+            "x": "2",
+            "y": "4"
+          },
+          "id": "MISC-MAALAM-ISHARA"
+        },
+        {
+          "value": {
+            "x": "-5",
+            "y": "5"
+          },
+          "id": "MISC-MAALAM-TABDIL-X-Y"
+        }
+      ]
+    }
+  ]
+}

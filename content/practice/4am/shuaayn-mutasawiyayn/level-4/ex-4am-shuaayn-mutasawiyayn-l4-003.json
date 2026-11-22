@@ -1,0 +1,179 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l4-003",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 25 — أتعمّق",
+    "estimatedMinutes": 5,
+    "tags": [
+      "برهان",
+      "أتعمّق"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-25",
+      "page": 137,
+      "section": "أتعمّق",
+      "number": 25
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 137): ABC مثلث و M منتصف [BC]. E نظيرة A بالنسبة إلى M، و F صورة C بالانسحاب الذي شعاعه $\\overrightarrow{BA}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "لماذا $\\overrightarrow{EC} = \\overrightarrow{BA}$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لأن ABCE متوازي أضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        },
+        {
+          "id": "B",
+          "content": "M منتصف [BC] و [AE]: ABEC متوازي أضلاع",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لأن EC = BA في الطول",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TUL-FAQAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "M منتصف أيّ قطعتين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قطعتان لهما نفس المنتصف قطرا متوازي أضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "رتّب الرؤوس: [AE] و [BC] قطران."
+        }
+      ],
+      "feedback": {
+        "correct": "ABEC قطراه [AE] و [BC] متناصفان: الشعاعان AB و CE متساويان، أي EC و BA متساويان.",
+        "incorrect": "حدّد القطرين ثم رتّب الرؤوس."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "لماذا C منتصف [EF]؟",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{CF} = \\overrightarrow{BA}$ و $\\overrightarrow{EC} = \\overrightarrow{BA}$ ، إذن $\\overrightarrow{EC} = \\overrightarrow{CF}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{FC} = \\overrightarrow{BA}$ ، إذن $\\overrightarrow{FC} = \\overrightarrow{EC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSIHAB-SURA"
+        },
+        {
+          "id": "C",
+          "content": "لأن CE = CF في الطول",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TUL-FAQAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المساواة الشعاعية لصورة C."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من C إلى صورتها F."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بنتيجة السؤال السابق."
+        }
+      ],
+      "feedback": {
+        "correct": "الشعاعان EC و CF يساويان الشعاع BA، فهما متساويان: C منتصف [EF].",
+        "incorrect": "صورة C هي F: الشعاع يبدأ من C."
+      }
+    },
+    {
+      "id": "q3",
+      "statement": "طبيعة الرباعي ABCF:",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "متوازي أضلاع",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "مستطيل",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "رباعي كيفي",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الشعاع CF يساوي الشعاع BA."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الرباعي الذي تعطيه هذه المساواة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "C ثم F ثم A ثم B: هو نفسه ABCF."
+        }
+      ],
+      "feedback": {
+        "correct": "الشعاعان CF و BA متساويان: CFAB، أي ABCF، متوازي أضلاع. لا شيء يعطي زاوية قائمة.",
+        "incorrect": "طابق المساواة الشعاعية مع ترتيب الرؤوس."
+      }
+    }
+  ]
+}

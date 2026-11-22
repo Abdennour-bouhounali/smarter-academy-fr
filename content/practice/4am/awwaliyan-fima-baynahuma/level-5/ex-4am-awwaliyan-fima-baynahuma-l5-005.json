@@ -1,0 +1,304 @@
+{
+  "id": "ex-4am-awwaliyan-fima-baynahuma-l5-005",
+  "lessonCode": "awwaliyan-fima-baynahuma",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2024 — لوحة فسيفساء من تلمسان",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية",
+      "مربعات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_awwaliyan-fima-baynahuma_P2",
+      "modelledOn": "BEM 2024 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "طلب زبون من حرفي بتلمسان يتقن صنعته ويصدق في تعامله إنجاز لوحة فسيفساء مستطيلة الشكل بُعداها 2,21m و 1,60m، مكوّنة من بلاطات خزفية مربعة متقايسة، طول ضلع كل منها عدد طبيعي بالسنتيمتر وأكبر ما يمكن، دون قصّ أي بلاطة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن العددين 221 و 160 أوليان فيما بينهما.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيمة PGCD(221 ; 160) التي وجدتها",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عددان أوليان فيما بينهما: احسب قاسمهما المشترك الأكبر PGCD(221 ; 160)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 221 على 160، ثم واصل القسمات المتتابعة إلى أن تجد باقيًا معدومًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن آخر باقٍ غير معدوم بما يتطلّبه تعريف عددين أوليين فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(221 ; 160) = 1: العددان 221 و 160 أوليان فيما بينهما.",
+        "incorrect": "راجع القسمات المتتابعة باقيًا باقيًا: آخر باقٍ غير معدوم هو القاسم المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$221 = 160 \\times 1 + 61$",
+          "$160 = 61 \\times 2 + 38$",
+          "$61 = 38 \\times 1 + 23$",
+          "$38 = 23 \\times 1 + 15$",
+          "$23 = 15 \\times 1 + 8$",
+          "$15 = 8 \\times 1 + 7$",
+          "$8 = 7 \\times 1 + 1$",
+          "$7 = 1 \\times 7 + 0$",
+          "آخر باقٍ غير معدوم هو 1، إذن PGCD(221 ; 160) = 1 .",
+          "ومنه العددان 221 و 160 أوليان فيما بينهما."
+        ],
+        "result": "PGCD(221 ; 160) = 1"
+      },
+      "work": "required",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "استنتج طول ضلع البلاطة وعدد البلاطات اللازمة لإنجاز اللوحة بقياساتها الأولى:",
+      "statement": "طول ضلع البلاطة.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (طول الضلع بالسنتيمتر)",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل البعدين إلى السنتيمتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل نتيجة السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(221 ; 160) = 1: ضلع البلاطة 1cm.",
+        "incorrect": "طول الضلع هو القاسم المشترك الأكبر للبعدين بالسنتيمتر."
+      },
+      "solution": {
+        "lines": [
+          "$2{,}21m = 221cm$ و $1{,}60m = 160cm$",
+          "طول الضلع: PGCD(221 ; 160) = 1 ، أي 1cm."
+        ],
+        "result": "1cm"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "عدد البلاطات.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد البلاطات)",
+      "expectedAnswer": "35360",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم بلاطة على كل بعد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب العددين."
+        }
+      ],
+      "feedback": {
+        "correct": "$221 \\times 160 = 35360$ بلاطة.",
+        "incorrect": "اقسم كل بعد على طول الضلع، ثم اضرب النتيجتين."
+      },
+      "solution": {
+        "lines": [
+          "$221 \\times 160 = 35360$"
+        ],
+        "result": "35360"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "اقترح الزبون تقليص طول اللوحة إلى 2,20m.",
+      "statement": "أوجد طول ضلع أكبر بلاطة ممكنة.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 220 على 160: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (220 ; 160) بالزوج (160 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 20.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$220 = 160 \\times 1 + 60$",
+          "$160 = 60 \\times 2 + 40$",
+          "$60 = 40 \\times 1 + 20$",
+          "$40 = 20 \\times 2 + 0$",
+          "آخر باقٍ غير معدوم هو 20، إذن:"
+        ],
+        "result": "PGCD(220 ; 160) = 20"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "أوجد عدد البلاطات اللازمة.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد البلاطات)",
+      "expectedAnswer": "88",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم كل بعد على طول ضلع البلاطة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب النتيجتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$11 \\times 8 = 88$ بلاطة.",
+        "incorrect": "اقسم 220 و 160 على طول ضلع البلاطة، ثم اضرب."
+      },
+      "solution": {
+        "lines": [
+          "$220 \\div 20 = 11$ و $160 \\div 20 = 8$",
+          "$11 \\times 8 = 88$"
+        ],
+        "result": "88"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "☜ ثمن البلاطة التي طول ضلعها 1cm هو 5DA، وثمن البلاطة التي طول ضلعها 20cm هو 1500DA. ما هو المبلغ الذي يوفّره الحرفي إذا قبل اقتراح الزبون ؟",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (المبلغ بالدينار)",
+      "expectedAnswer": "44800",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب تكلفة البلاطات في الحالة الأولى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب تكلفة البلاطات في الحالة الثانية، ثم الفرق."
+        }
+      ],
+      "feedback": {
+        "correct": "$176800 - 132000 = 44800$",
+        "incorrect": "احسب تكلفة كل حالة كاملة (عدد البلاطات × ثمن البلاطة)، ثم الفرق."
+      },
+      "solution": {
+        "lines": [
+          "الحالة الأولى: $35360 \\times 5 = 176800$ DA",
+          "الحالة الثانية: $88 \\times 1500 = 132000$ DA",
+          "المبلغ الموفَّر: $176800 - 132000 = 44800$ DA"
+        ],
+        "result": "44800DA"
+      },
+      "timeSeconds": 300
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "id": "ex-4am-barahin-ashia-l3-007",
+  "lessonCode": "barahin-ashia",
+  "level": 3,
+  "generator": {
+    "tool": "gen-barahin.mjs",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — مركز صورة دائرة على المرصوفة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "إنشاء",
+      "صورة دائرة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_barahin-ashia_P3",
+      "modelledOn": "now-138"
+    }
+  },
+  "statement": {
+    "content": "على المرصوفة (الشكل): النقط A و B و C ، و (Γ) دائرة مركزها E . (Γ′) صورة (Γ) بالانسحاب الذي شعاعه $\\overrightarrow{AB} + \\overrightarrow{AC}$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          3,
+          1
+        ],
+        "C": [
+          1,
+          2
+        ],
+        "E": [
+          5,
+          2
+        ],
+        "R": [
+          9,
+          5
+        ],
+        "S": [
+          8,
+          3
+        ],
+        "T": [
+          6,
+          4
+        ]
+      },
+      "grid": true,
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "A",
+          "C"
+        ]
+      ],
+      "labels": {
+        "A": "sw",
+        "B": "se",
+        "C": "nw",
+        "E": "s",
+        "R": "ne",
+        "S": "se",
+        "T": "nw"
+      },
+      "ariaLabel": "مرصوفة عليها النقط A و B و C و E و R و S و T"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مركز (Γ′) هو النقطة:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "R",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "S",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSHA-MABDA"
+        },
+        {
+          "id": "C",
+          "content": "T",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSHA-MABDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مركز الصورة هو صورة المركز E ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ارسم من E ممثّل $\\overrightarrow{AB}$ ثم من نهايته ممثّل $\\overrightarrow{AC}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدّ المربعات: الانتقالان يُجمعان."
+        }
+      ],
+      "feedback": {
+        "correct": "من E : 3 يمينا و 1 أعلى ( $\\overrightarrow{AB}$ ) ثم 1 يمينا و 2 أعلى ( $\\overrightarrow{AC}$ ): المركز R .",
+        "incorrect": "S و T صورتا E بأحد الشعاعين فقط: المجموع يضعهما متتابعين."
+      }
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-amaliyat-tabiiya-ushriya-l1-008",
+  "lessonCode": "wadiya-idmajiya-amaliyat-tabiiya-ushriya",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أربع عمليات، قوسان وخط كسر، جداء بسط، فكّ قوسين",
+    "estimatedMinutes": 6,
+    "tags": [
+      "أولوية",
+      "أقواس",
+      "توزيع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "سلاسل عمليات على أعداد طبيعية وعشرية: أجب عن الأسئلة الأربعة، ولا تنسَ أنّ كلّ سلسلة تُحسب بالترتيب الصحيح للعمليات."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب قيمة السلسلة $8 + 6 \\times 7 - 12 \\div 4$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "47",
+      "misconceptionSignatures": [
+        {
+          "value": "21.5",
+          "id": "MISC-SILSILA-NOPRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين وخطّ الكسر يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$8 + 6 \\times 7 - 12 \\div 4 = 47$ .",
+        "incorrect": "الضرب والقسمة يُنجزان قبل الجمع والطرح حتى لو ظهر الجمع أو الطرح أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "$A = 8 + 6 \\times 7 - 12 \\div 4$",
+          "$A = 8 + 42 - 3$",
+          "$A = 50 - 3$",
+          "$A = 47$"
+        ],
+        "result": "47"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب قيمة السلسلة $(24 - 4) \\times 3 + \\dfrac{12 + 18}{5}$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "66",
+      "misconceptionSignatures": [
+        {
+          "value": "18",
+          "id": "MISC-AQWAS-IGNORED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين وخطّ الكسر يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$(24 - 4) \\times 3 + \\dfrac{12 + 18}{5} = 66$ .",
+        "incorrect": "القوسان ليسا زينة: ما بينهما يُحسب أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "$A = (24 - 4) \\times 3 + \\dfrac{12 + 18}{5}$",
+          "$A = 20 \\times 3 + \\dfrac{30}{5}$",
+          "$A = 20 \\times 3 + 6$",
+          "$A = 60 + 6$",
+          "$A = 66$"
+        ],
+        "result": "66"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما اسم السلسلة $\\dfrac{16 + 4}{5} \\times 7$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "choices": [
+        {
+          "id": "A",
+          "content": "جداء",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "مجموع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-FIRSTOP"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب مرحلة مرحلة وتتبّع آخر عملية بقيت لك."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع خطًّا تحت العملية التي تُنجز في الأخير."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العملية الأخيرة هي التي تسمّي السلسلة."
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة عبارة عن جداء: آخر عملية تُنجز فيها هي الضرب.",
+        "incorrect": "لا تسمِّ السلسلة بأوّل عملية تُنجز ولا بأوّل رمز تراه: سمِّها بآخر عملية تُنجز فيها."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{16 + 4}{5} \\times 7$",
+          "$A = \\dfrac{20}{5} \\times 7$",
+          "$A = 4 \\times 7$",
+          "$A = 28$",
+          "آخر عملية تُنجز هي الضرب ، فالسلسلة عبارة عن جداء."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "هل المساواة $5 \\times (12 - 3) = 5 \\times 12 + 5 \\times 3$ صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-SIGNCHANGE"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب كلّ طرف من الطرفين على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين الناتجين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحكم قبل أن تحسب: اختبر بالأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "لا، فالحساب يبيّن غير ذلك.",
+        "incorrect": "احسب الطرفين كلّا على حدة قبل أن تحكم."
+      },
+      "solution": {
+        "lines": [
+          "$A = 5 \\times (12 - 3)$",
+          "$A = 5 \\times 9$",
+          "$A = 45$",
+          "$A = 5 \\times 12 + 5 \\times 3$",
+          "$A = 60 + 15$",
+          "$A = 75$",
+          "النتيجتان لا تحقّقان ما قيل: الجواب لا."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

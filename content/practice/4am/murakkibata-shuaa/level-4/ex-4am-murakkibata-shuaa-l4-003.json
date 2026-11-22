@@ -1,0 +1,77 @@
+{
+  "id": "ex-4am-murakkibata-shuaa-l4-003",
+  "lessonCode": "murakkibata-shuaa",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — نحو المبدأ O",
+    "estimatedMinutes": 2,
+    "tags": [
+      "OM",
+      "عكس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_murakkibata-shuaa_P2",
+      "modelledOn": "know-origin"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس مبدؤه O، $\\overrightarrow{EO}\\begin{pmatrix} -2 \\\\ 5 \\end{pmatrix}$ (الشعاع ينتهي عند O)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما إحداثيتا E؟",
+      "learningPoints": [
+        {
+          "code": "4am_murakkibata-shuaa_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "إحداثيتا النقطة (x ; y) — عددان مثل −3 أو 2,5",
+      "expectedAnswer": {
+        "x": "2",
+        "y": "-5"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الشعاع ينطلق من النقطة المجهولة وينتهي عند النقطة المعلومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ارجع من النهاية عكس الحركة: اطرح كل مركبة من الإحداثية الموافقة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: من النقطة التي وجدتها، هل تعيدك الحركة إلى النقطة المعلومة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "من E نصل إلى O بحركة $\\begin{pmatrix} -2 \\\\ 5 \\end{pmatrix}$ : إذن $E(2\\,;\\,-5)$ ، و $\\overrightarrow{OE}\\begin{pmatrix} 2 \\\\ -5 \\end{pmatrix}$ .",
+        "incorrect": "O هي النهاية هنا، لا المبدأ."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-2",
+            "y": "5"
+          },
+          "id": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        },
+        {
+          "value": {
+            "x": "5",
+            "y": "-2"
+          },
+          "id": "MISC-MAALAM-TABDIL-X-Y"
+        }
+      ]
+    }
+  ]
+}

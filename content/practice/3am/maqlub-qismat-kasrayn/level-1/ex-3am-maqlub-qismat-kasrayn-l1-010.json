@@ -1,0 +1,280 @@
+{
+  "id": "ex-3am-maqlub-qismat-kasrayn-l1-010",
+  "lessonCode": "maqlub-qismat-kasrayn",
+  "level": 1,
+  "metadata": {
+    "title": "أكتب على شكل كسر بسيط",
+    "estimatedMinutes": 8,
+    "tags": [
+      "قسمة",
+      "كسر"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-6",
+      "page": 30,
+      "section": "أوظّف تعلّماتي",
+      "number": 6
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "اكتب كلاًّ مما يلي على شكل كسر بسيط:",
+      "statement": "احسب $ \\dfrac{16}{15} \\div 4 $ .",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "4/15",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "64/15",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "15/4",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "15/64",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المقسوم؟ وما العدد المقسوم عليه؟ وما مقلوب هذا الأخير؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد غير معدوم هي الضرب في مقلوبه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حوّل القسمة إلى جداء، واختزل قبل أن تضرب كلّما أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{16}{15} \\div 4 = \\dfrac{4}{15}$ لأنّ القسمة على عدد هي الضرب في مقلوبه.",
+        "incorrect": "القسمة على عدد غير معدوم هي الضرب في مقلوبه؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $\\dfrac{16}{15} \\div 4 = \\dfrac{16}{15} \\times \\dfrac{1}{4}$ .",
+          "$= \\dfrac{16 \\times 1}{15 \\times 4} = \\dfrac{4}{15}$ ."
+        ],
+        "result": "\\dfrac{4}{15}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $ 6 \\div \\dfrac{9}{10} $ .",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "20/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "27/5",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "3/20",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "5/27",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ الكسرين هو المقسوم وأيّهما المقسوم عليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني: نقلب المقسوم عليه وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء، اختزل العوامل المشتركة قبل الضرب، ثمّ اكتب الناتج على أبسط شكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 \\div \\dfrac{9}{10} = \\dfrac{20}{3}$ لأنّ قسمة كسر على كسر هي ضرب الأوّل في مقلوب الثاني.",
+        "incorrect": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني فقط، ثمّ نختزل؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $6 \\div \\dfrac{9}{10} = 6 \\times \\dfrac{10}{9}$ .",
+          "$= \\dfrac{6 \\times 10}{1 \\times 9} = \\dfrac{20}{3}$ ."
+        ],
+        "result": "\\dfrac{20}{3}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "احسب $ \\dfrac{26}{15} \\div \\dfrac{13}{10} $ .",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "4/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "169/75",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "3/4",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "75/169",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ الكسرين هو المقسوم وأيّهما المقسوم عليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني: نقلب المقسوم عليه وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء، اختزل العوامل المشتركة قبل الضرب، ثمّ اكتب الناتج على أبسط شكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{26}{15} \\div \\dfrac{13}{10} = \\dfrac{4}{3}$ لأنّ قسمة كسر على كسر هي ضرب الأوّل في مقلوب الثاني.",
+        "incorrect": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني فقط، ثمّ نختزل؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $\\dfrac{26}{15} \\div \\dfrac{13}{10} = \\dfrac{26}{15} \\times \\dfrac{10}{13}$ .",
+          "$= \\dfrac{26 \\times 10}{15 \\times 13} = \\dfrac{4}{3}$ ."
+        ],
+        "result": "\\dfrac{4}{3}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "احسب $ \\dfrac{35}{6} \\div 7 $ .",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "5/6",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "245/6",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "6/5",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "6/245",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المقسوم؟ وما العدد المقسوم عليه؟ وما مقلوب هذا الأخير؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد غير معدوم هي الضرب في مقلوبه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حوّل القسمة إلى جداء، واختزل قبل أن تضرب كلّما أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{35}{6} \\div 7 = \\dfrac{5}{6}$ لأنّ القسمة على عدد هي الضرب في مقلوبه.",
+        "incorrect": "القسمة على عدد غير معدوم هي الضرب في مقلوبه؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $\\dfrac{35}{6} \\div 7 = \\dfrac{35}{6} \\times \\dfrac{1}{7}$ .",
+          "$= \\dfrac{35 \\times 1}{6 \\times 7} = \\dfrac{5}{6}$ ."
+        ],
+        "result": "\\dfrac{5}{6}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

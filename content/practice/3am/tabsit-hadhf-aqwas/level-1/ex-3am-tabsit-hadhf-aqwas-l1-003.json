@@ -1,0 +1,144 @@
+{
+  "id": "ex-3am-tabsit-hadhf-aqwas-l1-003",
+  "lessonCode": "tabsit-hadhf-aqwas",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — حذف قوسين مسبوقين بالإشارة +",
+    "estimatedMinutes": 4,
+    "tags": [
+      "حذف الأقواس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $A$ حيث:",
+    "formulas": [
+      "A = 8 + (3x - 5)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب العبارة $A$ بدون أقواس.",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$A = 8 - 3x + 5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-PLUS-CHANGED"
+        },
+        {
+          "id": "B",
+          "content": "$A = 8 + 3x - 5$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$A = 8 + 3x + 5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-PLUS-CHANGED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة التي تسبق القوسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوسان مسبوقان بالإشارة $+$ (وغير متبوعين بـ $\\times$ أو $\\div$) يُحذفان دون تغيير أي إشارة بينهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العبارة بدون أقواس حدًّا حدًّا، ثم اجمع الحدود المتشابهة."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 8 + 3x - 5$.",
+        "incorrect": "راجع إشارة كل حدّ وما يسبق القوسين، ثم اجمع الحدود المتشابهة فقط."
+      },
+      "solution": {
+        "lines": [
+          "القوسان مسبوقان بالإشارة $+$ : نحذفهما دون تغيير الإشارات.",
+          "$A = 8 + 3x - 5$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "بسّط العبارة $A$ .",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $ax + b$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-TABSIT-PLUS-CHANGED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة التي تسبق القوسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوسان مسبوقان بالإشارة $+$ (وغير متبوعين بـ $\\times$ أو $\\div$) يُحذفان دون تغيير أي إشارة بينهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العبارة بدون أقواس حدًّا حدًّا، ثم اجمع الحدود المتشابهة."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 3x + 3$ إذن $b = 3$.",
+        "incorrect": "اجمع الحدود المتشابهة بإشاراتها بعد حذف الأقواس، ثم اقرأ العدد المطلوب في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$A = 8 + 3x - 5$",
+          "$A = 3x + 3$"
+        ],
+        "result": "b = 3"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

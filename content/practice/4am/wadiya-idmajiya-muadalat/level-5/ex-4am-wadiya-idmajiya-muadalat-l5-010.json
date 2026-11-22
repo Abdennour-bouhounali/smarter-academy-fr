@@ -1,0 +1,412 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muadalat-l5-010",
+  "lessonCode": "wadiya-idmajiya-muadalat",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2015 — حديقة عمومية بخنشلة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "ترييض",
+      "معادلة",
+      "متراجحة",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-muadalat_P2",
+      "modelledOn": "BEM 2015 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "حديقة عمومية بخنشلة على شكل شبه منحرف قائم $ABCD$ قاعدتاه $[AB]$ و $[DC]$ ، حيث $AB = 40\\,m$ ، $DC = 70\\,m$ ، $AD = 30\\,m$ و $(AD)$ عمودي على $(DC)$ . $M$ نقطة من القاعدة $[DC]$ حيث $DM = x$ (بالمتر، $0 \\leqslant x \\leqslant 70$). تريد البلدية، حرصًا على نظافة الحديقة وجمالها، تغطية الجزء المثلث $BCM$ بالعشب، وتخصيص الجزء $ABMD$ لألعاب الأطفال."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب مساحة الحديقة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المساحة بـ $m^2$",
+      "expectedAnswer": "1650",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة شبه المنحرف = (مجموع القاعدتين × الارتفاع) ÷ 2 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$1650\\,m^2$ .",
+        "incorrect": "أعد الحساب خطوة خطوة، مع احترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{(AB + DC) \\times AD}{2} = \\dfrac{(40 + 70) \\times 30}{2}$"
+        ],
+        "result": "1650\\,m^2"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "lead": "لتكن $f(x)$ مساحة المثلث $BCM$ و $g(x)$ مساحة الجزء $ABMD$ . عبّر عن $f(x)$ و $g(x)$ بدلالة $x$ .",
+      "statement": "مساحة المثلث $BCM$ — العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "تُكتب $f(x)$ على الشكل $mx + p$ : اكتب العدد $m$ فقط (قد يكون سالبًا)",
+      "expectedAnswer": "-15",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قاعدة المثلث $MC = 70 - x$ ، وارتفاعه هو ارتفاع شبه المنحرف."
+        }
+      ],
+      "feedback": {
+        "correct": "$-15$ .",
+        "incorrect": "مساحة المثلث = (القاعدة × الارتفاع) ÷ 2 ، ثم انشر."
+      },
+      "solution": {
+        "lines": [
+          "$MC = 70 - x$ والارتفاع $30$ ، ومعامل $x$ في $\\dfrac{30(70 - x)}{2}$ هو $-15$ ."
+        ],
+        "result": "m = -15"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ب",
+      "statement": "مساحة المثلث $BCM$ — العدد $p$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "تُكتب $f(x)$ على الشكل $mx + p$ : اكتب العدد $p$ فقط",
+      "expectedAnswer": "1050",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر $15(70 - x)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$1050$ .",
+        "incorrect": "مساحة المثلث = (القاعدة × الارتفاع) ÷ 2 ، ثم انشر."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = \\dfrac{30(70 - x)}{2} = 15(70 - x) = 1050 - 15x$"
+        ],
+        "result": "f(x) = 1050 - 15x"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "ج",
+      "statement": "مساحة الجزء $ABMD$ — العدد $p$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "تُكتب $g(x)$ على الشكل $15x + p$ : اكتب العدد $p$ فقط",
+      "expectedAnswer": "600",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$g(x)$ = مساحة الحديقة − $f(x)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$600$ .",
+        "incorrect": "اطرح مساحة المثلث من مساحة الحديقة، وانتبه إلى القوس."
+      },
+      "solution": {
+        "lines": [
+          "$g(x) = 1650 - (1050 - 15x)$",
+          "$g(x) = 1650 - 1050 + 15x$",
+          "$g(x) = 15x + 600$"
+        ],
+        "result": "g(x) = 15x + 600"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "statement": "جد $x$ حتى يكون للجزأين نفس المساحة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بـ m",
+      "expectedAnswer": "15",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $f(x) = g(x)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل حدود $x$ إلى طرف والأعداد إلى الطرف الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 15$ m .",
+        "incorrect": "انقل حدود $x$ إلى طرف والأعداد إلى الطرف الآخر مع تغيير الإشارة، ثم اقسم على معامل $x$ . تحقّق بالتعويض."
+      },
+      "solution": {
+        "lines": [
+          "$-15x - 15x = 600 - 1050$",
+          "$-30x = -450$",
+          "$x = \\dfrac{-450}{-30}$"
+        ],
+        "result": "x = 15"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ا",
+      "lead": "تريد البلدية ألّا تقل مساحة جزء الألعاب عن ضعف مساحة جزء العشب. حلّ المتراجحة: $15x + 600 \\geqslant 2(1050 - 15x)$ .",
+      "statement": "حدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x < k$ أو $x \\leqslant k$ أو $x > k$ أو $x \\geqslant k$ : اكتب العدد $k$ فقط (عدد صحيح أو كسر a/b، قد يكون سالبًا)",
+      "expectedAnswer": "100/3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر، كما في حل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إضافة عدد إلى الطرفين أو طرحه منهما لا تغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحدّ هو العدد الذي يحقّق المعادلة المرفقة (نضع «=» مكان رمز المتباينة): اقسم في الأخير على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "حدّ الحلول هو $k = \\dfrac{100}{3}$ .",
+        "incorrect": "أعد الحل سطرًا سطرًا: العملية نفسها على الطرفين، ثم القسمة على معامل $x$ في الأخير."
+      },
+      "solution": {
+        "lines": [
+          "حدّ الحلول هو حلّ المعادلة المرفقة: $15x + 600 = 2(1050 - 15x)$",
+          "$15x + 600 = -30x + 2100$",
+          "$15x + 30x = 2100 - 600$",
+          "$45x = 1500$",
+          "$x = \\dfrac{1500}{45}$",
+          "إذن حدّ الحلول هو $\\dfrac{100}{3}$ ."
+        ],
+        "result": "k = \\dfrac{100}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "sub": "ا",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < \\dfrac{100}{3}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QALB-ZAID"
+        },
+        {
+          "id": "B",
+          "content": "$x \\leqslant \\dfrac{100}{3}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QALB-ZAID"
+        },
+        {
+          "id": "C",
+          "content": "$x > \\dfrac{100}{3}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        },
+        {
+          "id": "D",
+          "content": "$x \\geqslant \\dfrac{100}{3}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارة معامل $x$ في آخر سطر قبل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد موجب تحافظ على الاتجاه، والقسمة على عدد سالب تغيّره."
+        }
+      ],
+      "feedback": {
+        "correct": "$x \\geqslant \\dfrac{100}{3}$ .",
+        "incorrect": "تتبّع سطور الحل: الاتجاه يتغيّر فقط عند الضرب أو القسمة على عدد سالب، ونوع المتباينة (تامة أو غير تامة) لا يتغيّر أبدًا."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $15x + 600 \\geqslant 2(1050 - 15x)$",
+          "$15x + 600 \\geqslant -30x + 2100$",
+          "$15x + 30x \\geqslant 2100 - 600$",
+          "$45x \\geqslant 1500$",
+          "$\\dfrac{45x}{45} \\geqslant \\dfrac{1500}{45}$",
+          "إذن حلول المتراجحة هي كل قيم $x$ الأكبر من أو تساوي $\\dfrac{100}{3}$ ."
+        ],
+        "result": "x \\geqslant \\dfrac{100}{3}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q8",
+      "step": "03",
+      "sub": "ب",
+      "statement": "ما هي أصغر قيمة طبيعية لـ $x$ تحقّق هذا الشرط؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بـ m",
+      "expectedAnswer": "34",
+      "misconceptionSignatures": [
+        {
+          "value": "33",
+          "id": "MISC-TARRID-TAHAQQUQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحدّ ليس عددًا طبيعيًا: ما هو أصغر عدد طبيعي أكبر منه؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 34$ m .",
+        "incorrect": "استعمل حلول المتراجحة، ثم ابحث عن أصغر عدد طبيعي ينتمي إليها."
+      },
+      "solution": {
+        "lines": [
+          "حلول المتراجحة هي الأعداد $x \\geqslant \\dfrac{100}{3}$ ، أي $x \\geqslant 33{,}3\\ldots$",
+          "إذن أصغر قيمة طبيعية هي 34 ."
+        ],
+        "result": "x = 34"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q9",
+      "step": "04",
+      "statement": "☜ ثمن تغطية $1\\,m^2$ بالعشب 450DA . من أجل $x = 34$ ، احسب تكلفة تغطية الجزء $BCM$ بالعشب.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المبلغ بـ DA",
+      "expectedAnswer": "243000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مساحة الجزء $BCM$ من أجل $x = 34$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب المساحة في ثمن المتر المربع."
+        }
+      ],
+      "feedback": {
+        "correct": "التكلفة $243000$DA .",
+        "incorrect": "أعد الحساب خطوة خطوة، مع احترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$f(34) = 1050 - 15 \\times 34 = 540\\,m^2$",
+          "$540 \\times 450 = 243000$"
+        ],
+        "result": "243000DA"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

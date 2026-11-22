@@ -1,0 +1,256 @@
+{
+  "id": "ex-1am-tatbiq-qaida-harfiya-l3-001",
+  "lessonCode": "tatbiq-qaida-harfiya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — مكتبتان وثمنان",
+    "estimatedMinutes": 10,
+    "tags": [
+      "قاعدتان",
+      "مقارنة",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثالث",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "تعرض مكتبتان الكرّاسات بالدينار. ثمن $n$ كرّاسة في المكتبة الأولى هو $P$ ، وفي الثانية هو $Q$ :",
+    "formulas": [
+      "P=4\\times n+30",
+      "Q=6\\times n"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $P$ من أجل $n=20$ .",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "110",
+      "misconceptionSignatures": [
+        {
+          "value": "54",
+          "id": "MISC-TATBIQ-PLUS"
+        },
+        {
+          "value": "450",
+          "id": "MISC-TATBIQ-GLUED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما قيمة كلّ حرف؟ وفي كم موضع يظهر كلّ حرف في العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع القيمة في كلّ موضع يظهر فيه الحرف، وأعد إشارة الضرب بين العددين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب بالأولويات: ما بين القوسين، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: النتيجة $110$ .",
+        "incorrect": "حذف إشارة الضرب لا يعني الجمع: $3x$ تعني $3\\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "نكتب القاعدة: $P=4\\times n+30$ .",
+          "نضع قيمة كلّ حرف في كلّ موضع يظهر فيه: $P=4\\times 20+30$ .",
+          "نحسب: $P=80+30$ .",
+          "نحسب: $P=110$ .",
+          "الجواب: $P=110$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $Q$ من أجل $n=20$ .",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "120",
+      "misconceptionSignatures": [
+        {
+          "value": "620",
+          "id": "MISC-TATBIQ-GLUED"
+        },
+        {
+          "value": "26",
+          "id": "MISC-TATBIQ-PLUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما قيمة كلّ حرف؟ وفي كم موضع يظهر كلّ حرف في العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع القيمة في كلّ موضع يظهر فيه الحرف، وأعد إشارة الضرب بين العددين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب بالأولويات: ما بين القوسين، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: النتيجة $120$ .",
+        "incorrect": "بين العدد والحرف إشارة ضرب لا تُكتب: عند التعويض نُعيدها، فنحسب جداءً لا عددًا من رقمين."
+      },
+      "solution": {
+        "lines": [
+          "نكتب القاعدة: $Q=6\\times n$ .",
+          "نضع قيمة كلّ حرف في كلّ موضع يظهر فيه: $Q=6\\times 20$ .",
+          "نحسب: $Q=120$ .",
+          "الجواب: $Q=120$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أيّ المكتبتين أرخص لشراء 20 كرّاسة؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "المكتبة الأولى",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "المكتبة الثانية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-PLUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما القاعدة في كلّ حالة؟ وما القيم المعطاة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القيمتين كلتيهما بالقاعدة المناسبة لكلّ حالة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن النتيجتين ثمّ أجب عن السؤال."
+        }
+      ],
+      "feedback": {
+        "correct": "قارنّا القيمتين المحسوبتين بالقاعدتين.",
+        "incorrect": "حذف إشارة الضرب لا يعني الجمع: $3x$ تعني $3\\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "المكتبة الأولى: $4\\times 20+30=110$ .",
+          "المكتبة الثانية: $6\\times 20=120$ .",
+          "نقارن: الأقلّ هو المكتبة الأولى ."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "يملك أمين $100$ دج. هل يكفيه لشراء $n=15$ كرّاسة من المكتبة الثانية؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-GLUED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما القاعدة في كلّ حالة؟ وما القيم المعطاة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القيمتين كلتيهما بالقاعدة المناسبة لكلّ حالة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن النتيجتين ثمّ أجب عن السؤال."
+        }
+      ],
+      "feedback": {
+        "correct": "قارنّا القيمة المحسوبة بالمبلغ المتوفّر.",
+        "incorrect": "بين العدد والحرف إشارة ضرب لا تُكتب: عند التعويض نُعيدها، فنحسب جداءً لا عددًا من رقمين."
+      },
+      "solution": {
+        "lines": [
+          "نحسب: $6\\times 15=90$ .",
+          "نقارن مع $100$ : المبلغ كافٍ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

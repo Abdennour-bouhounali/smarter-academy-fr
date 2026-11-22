@@ -1,0 +1,135 @@
+{
+  "id": "ex-4am-awwaliyan-fima-baynahuma-l1-009",
+  "lessonCode": "awwaliyan-fima-baynahuma",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2010 — العددان 189 و 160",
+    "estimatedMinutes": 6,
+    "tags": [
+      "خوارزمية إقليدس",
+      "أوليان فيما بينهما"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_awwaliyan-fima-baynahuma_P2",
+      "modelledOn": "BEM 2010 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2010",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 189 و 160.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 189 على 160: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (189 ; 160) بالزوج (160 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 1. العددان 189 و 160 أوليان فيما بينهما.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$189 = 160 \\times 1 + 29$",
+          "$160 = 29 \\times 5 + 15$",
+          "$29 = 15 \\times 1 + 14$",
+          "$15 = 14 \\times 1 + 1$",
+          "$14 = 1 \\times 14 + 0$",
+          "آخر باقٍ غير معدوم هو 1، إذن:"
+        ],
+        "result": "PGCD(189 ; 160) = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل العددان 189 و 160 أوليان فيما بينهما؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AWWALIYAN-ADAD-AWWALI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل يوجد عدد يختلف عن 1 يقسم 189 و 160 معًا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب PGCD(189 ; 160) بالقسمات المتتابعة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عددان أوليان فيما بينهما يعني أن قاسمهما المشترك الأكبر يساوي 1، ولو لم يكن أيّ منهما عددًا أوليًا."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(189 ; 160) = 1: العددان أوليان فيما بينهما.",
+        "incorrect": "احسب القاسم المشترك الأكبر بخوارزمية إقليدس قبل أن تحكم؛ لا يُشترط أن يكون أحد العددين عددًا أوليًا."
+      },
+      "solution": {
+        "lines": [
+          "وجدنا في السؤال 01: PGCD(189 ; 160) = 1 .",
+          "الجواب: نعم، العددان 189 و 160 أوليان فيما بينهما لأن قاسمهما المشترك الأكبر يساوي 1."
+        ],
+        "result": "PGCD(189 ; 160) = 1"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,266 @@
+{
+  "id": "ex-4am-tayin-pgcd-l4-005",
+  "lessonCode": "tayin-pgcd",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2024 — صفيحة ألمنيوم 168cm × 252cm",
+    "estimatedMinutes": 10,
+    "tags": [
+      "PGCD",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tayin-pgcd_P1",
+      "modelledOn": "BEM 2024 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يريد حرفي أمين في عمله، لا يرضى بتبذير المادة، تجزئة صفيحة من الألمنيوم مستطيلة الشكل عرضها 168cm وطولها 252cm إلى مربعات متقايسة دون ضياع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "برّر إجابتك في كل حالة:",
+      "statement": "هل يمكن أن يكون طول ضلع كل مربع 12cm ؟",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول الضلع يجب أن يقسم البعدين معًا حتى لا يبقى ضياع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم كلا من 168 و 252 على 12، وانظر إلى الباقي."
+        }
+      ],
+      "feedback": {
+        "correct": "12 قاسم مشترك للعددين 168 و 252.",
+        "incorrect": "يكون ذلك ممكنًا فقط إذا كان طول الضلع قاسمًا مشتركًا للبعدين."
+      },
+      "solution": {
+        "lines": [
+          "$168 = 12 \\times 14$",
+          "$252 = 12 \\times 21$",
+          "العدد 12 قاسم مشترك للعددين 168 و 252، إذن يمكن ذلك."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل يمكن أن يكون طول ضلع كل مربع 24cm ؟",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول الضلع يجب أن يقسم البعدين معًا حتى لا يبقى ضياع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم كلا من 168 و 252 على 24، وانظر إلى الباقي."
+        }
+      ],
+      "feedback": {
+        "correct": "24 ليس قاسمًا مشتركًا للعددين 168 و 252.",
+        "incorrect": "يكون ذلك ممكنًا فقط إذا كان طول الضلع قاسمًا مشتركًا للبعدين."
+      },
+      "solution": {
+        "lines": [
+          "$168 = 24 \\times 7$",
+          "$252 = 24 \\times 10 + 12$",
+          "العدد 24 ليس قاسمًا مشتركًا للعددين 168 و 252، إذن لا يمكن ذلك."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "أوجد عدد المربعات التي يمكن الحصول عليها بحيث يكون طول ضلع كل مربع أكبر ما يمكن.",
+      "statement": "ما هو أكبر طول ممكن لضلع المربع ؟",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (الطول بالـ cm)",
+      "expectedAnswer": "84",
+      "misconceptionSignatures": [
+        {
+          "value": "42",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول ضلع المربع يجب أن يقسم البعدين معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "والمطلوب أكبر ضلع ممكن: هذا هو القاسم المشترك الأكبر للبعدين (بالـ cm)."
+        }
+      ],
+      "feedback": {
+        "correct": "طول الضلع هو PGCD(168 ; 252) = 84، أي 84cm.",
+        "incorrect": "حوّل البعدين إلى cm، ثم خذ القاسم المشترك الأكبر لهما."
+      },
+      "solution": {
+        "lines": [
+          "طول ضلع المربع يجب أن يقسم البعدين 168cm و 252cm معًا حتى لا يبقى ضياع، فهو قاسم مشترك للعددين 168 و 252.",
+          "وهو أكبر ما يمكن: إذن طول الضلع هو القاسم المشترك الأكبر للعددين 168 و 252.",
+          "PGCD(168 ; 252) = 84، أي أن طول ضلع كل مربع هو 84cm."
+        ],
+        "result": "84cm"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "استنتج عدد المربعات.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد المربعات)",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب عدد المربعات على طول البعد الأول، ثم على طول البعد الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم كل بعد على طول ضلع المربع، ثم اضرب الناتجين."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 3 = 6$",
+        "incorrect": "عدد المربعات هو جداء عدد المربعات في الطول بعدد المربعات في العرض، وليس حاصل قسمة واحدًا."
+      },
+      "solution": {
+        "lines": [
+          "على طول البعد 168cm: $168 \\div 84 = 2$ مربعات.",
+          "على طول البعد 252cm: $252 \\div 84 = 3$ مربعات.",
+          "عدد المربعات: $2 \\times 3 = 6$"
+        ],
+        "result": "6"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "اختار الحرفي في الأخير مربعات طول ضلع كل منها 21cm. ما هو عدد المربعات الناتجة ؟",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد المربعات)",
+      "expectedAnswer": "96",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب عدد المربعات على طول البعد الأول، ثم على طول البعد الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم كل بعد على طول ضلع المربع، ثم اضرب الناتجين."
+        }
+      ],
+      "feedback": {
+        "correct": "$8 \\times 12 = 96$",
+        "incorrect": "عدد المربعات هو جداء عدد المربعات في الطول بعدد المربعات في العرض، وليس حاصل قسمة واحدًا."
+      },
+      "solution": {
+        "lines": [
+          "على طول البعد 168cm: $168 \\div 21 = 8$ مربعات.",
+          "على طول البعد 252cm: $252 \\div 21 = 12$ مربعات.",
+          "عدد المربعات: $8 \\times 12 = 96$"
+        ],
+        "result": "96"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

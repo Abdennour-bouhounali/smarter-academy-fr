@@ -1,0 +1,160 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l3-005",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2016 — N = 2³ × 3² × 5",
+    "estimatedMinutes": 5,
+    "tags": [
+      "جداء",
+      "قاسم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-adad-tabii_P2",
+      "modelledOn": "BEM 2016 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد الطبيعي N حيث:",
+    "formulas": [
+      "N = 2^3 \\times 3^2 \\times 5"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب N.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "360",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$2^3 = 8$ و $3^2 = 9$."
+        }
+      ],
+      "feedback": {
+        "correct": "$N = 8 \\times 9 \\times 5 = 360$.",
+        "incorrect": "احسب القوى أولًا ثم الجداء."
+      },
+      "solution": {
+        "lines": [
+          "$N = 8 \\times 9 \\times 5$",
+          "$N = 72 \\times 5$"
+        ],
+        "result": "N = 360"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "بيّن أن 15 قاسم للعدد N، ثم اكتب N على الشكل $15 \\times q$ حيث $q$ عدد طبيعي.",
+      "statement": "العدد $q$:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $q$ فقط (عدد طبيعي)",
+      "expectedAnswer": "24",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$15 = 3 \\times 5$: ابحث عن 3 و 5 في كتابة N."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جمّع العاملين 3 و 5 معًا: $N = (3 \\times 5) \\times \\ldots$"
+        }
+      ],
+      "feedback": {
+        "correct": "$N = (3 \\times 5) \\times (2^3 \\times 3) = 15 \\times 24$.",
+        "incorrect": "اكتب N على الشكل $(3 \\times 5) \\times$ (بقية العوامل)."
+      },
+      "solution": {
+        "lines": [
+          "$N = 2^3 \\times 3^2 \\times 5 = (3 \\times 5) \\times (2^3 \\times 3)$",
+          "$N = 15 \\times 24$",
+          "إذن 15 قاسم للعدد N."
+        ],
+        "result": "N = 15 \\times 24"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل N يقبل القسمة على 7؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 360 على 7."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "7 قاسم للعدد 360 إذا وفقط إذا كان باقي هذه القسمة معدومًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$360 = 7 \\times 51 + 3$: الباقي غير معدوم.",
+        "incorrect": "أجرِ القسمة الإقليدية للعدد 360 على 7، وانظر هل الباقي معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$360 = 7 \\times 51 + 3$ مع $3 < 7$",
+          "الباقي 3 غير معدوم، إذن N لا يقبل القسمة على 7."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

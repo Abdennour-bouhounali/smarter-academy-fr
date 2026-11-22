@@ -1,0 +1,203 @@
+{
+  "id": "ex-3am-qimat-ibara-harfiya-l3-009",
+  "lessonCode": "qimat-ibara-harfiya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — قيمة مضبوطة وقيمة مقرّبة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "العدد pi",
+      "قيمة مقرّبة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "حديقة دائرية نصف قطرها $r$ (بالمتر). محيطها $P = 2\\pi r$ ومساحتها $S = \\pi r^2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "اكتب القيمة المضبوطة لـ $P$ من أجل $r = 3$ على الشكل $k\\pi$ : العدد $k$ :",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "6",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة المضبوطة هي $6\\pi$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$P = 2 \\times \\pi \\times 3 = 6\\pi$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "أعط قيمة مقرّبة لـ $P$ من أجل $r = 3$ إلى $0{,}01$ بالنقصان (القيمة المقرّبة الافتراضية) .",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "18.84",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة المقرّبة هي $18{,}84$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$P = 6\\pi \\approx 18{,}84$ (بالنقصان إلى $0{,}01$ )"
+        ],
+        "result": "P \\approx 18{,}84"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "اكتب القيمة المضبوطة لـ $S$ من أجل $r = 3$ على الشكل $k\\pi$ : العدد $k$ :",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "9",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة المضبوطة هي $9\\pi$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$S = \\pi \\times 3^2 = 9\\pi$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أعط قيمة مقرّبة لـ $S$ من أجل $r = 3$ إلى $0{,}01$ بالتدوير إلى أقرب قيمة .",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "28.27",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة المقرّبة هي $28{,}27$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$S = 9\\pi \\approx 28{,}27$ (بالتدوير إلى $0{,}01$ )"
+        ],
+        "result": "S \\approx 28{,}27"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

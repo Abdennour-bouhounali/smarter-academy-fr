@@ -1,0 +1,182 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ihsa-l3-006",
+  "lessonCode": "wadiya-idmajiya-ihsa",
+  "level": 3,
+  "metadata": {
+    "title": "يوم المشي: التواتر المجمع والوسيط",
+    "estimatedMinutes": 8,
+    "tags": [
+      "التكرار المجمع الصاعد",
+      "التواتر",
+      "الوسيط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ihsa_P1"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يعطي الجدول الآتي عدد الكيلومترات التي قطعها 20 تلميذا في يوم المشي الذي نظّمته المتوسطة لاكتشاف جمال الوطن:",
+    "table": {
+      "head": [
+        "المسافة (km)",
+        "6",
+        "8",
+        "10",
+        "12",
+        "14"
+      ],
+      "rows": [
+        [
+          "عدد التلاميذ",
+          "2",
+          "5",
+          "6",
+          "4",
+          "3"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب عدد التلاميذ الذين قطعوا 10km على الأكثر.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-IHSA-SARAMA"
+        },
+        {
+          "value": "6",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«10km على الأكثر» تعني 10km أو أقل."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 + 5 + 6 = 13$ .",
+        "incorrect": "اجمع تكرار 10 وتكرارات المسافات الأصغر منها."
+      },
+      "solution": {
+        "lines": [
+          "$2 + 5 + 6 = 13$"
+        ],
+        "result": "13"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج النسبة المئوية لهؤلاء التلاميذ.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: النسبة المئوية دون الرمز %",
+      "expectedAnswer": "65",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-IHSA-TAWATUR-BILA-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التواتر = عددهم ÷ التكرار الكلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{13}{20} \\times 100 = 65$ .",
+        "incorrect": "اقسم العدد الذي وجدته على التكرار الكلي ثم اضرب في 100 ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{13}{20} = 0{,}65$",
+          "$0{,}65 \\times 100 = 65$"
+        ],
+        "result": "65\\%"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "عيّن وسيط هذه السلسلة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الوسيط بـ km",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "10,1",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الرتبتان الوسطيان 10 و 11 ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل التكرارات المجمعة الصاعدة."
+        }
+      ],
+      "feedback": {
+        "correct": "الرتبتان 10 و 11 تقعان في القيمة 10 ، فالوسيط 10 km .",
+        "incorrect": "حدّد بالتكرارات المجمعة الصاعدة القيمة التي تقع فيها الرتبتان 10 و 11 ."
+      },
+      "solution": {
+        "lines": [
+          "التكرارات المجمعة الصاعدة: 2 ، 7 ، 13 ، 17 ، 20 .",
+          "الرتب من 8 إلى 13 للقيمة 10 .",
+          "$\\dfrac{10 + 10}{2} = 10$"
+        ],
+        "result": "10\\,\\mathrm{km}"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

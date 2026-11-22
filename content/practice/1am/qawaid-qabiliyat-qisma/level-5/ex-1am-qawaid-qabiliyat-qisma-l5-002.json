@@ -1,0 +1,321 @@
+{
+  "id": "ex-1am-qawaid-qabiliyat-qisma-l5-002",
+  "lessonCode": "qawaid-qabiliyat-qisma",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — أحواض أرض ماسينيسا",
+    "estimatedMinutes": 18,
+    "tags": [
+      "مساحة",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 2,
+      "file": "1am-s2-78",
+      "exercise": 4
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "اشترى ماسينيسا قطعة أرض مستطيلة طولها $45\\,\\mathrm{m}$ وعرضها $32\\,\\mathrm{m}$ (الأطوال غير حقيقية) ليزرعها خضرًا.\nالجزء الأول: يريد تقسيم الأرض إلى أحواض متساوية المساحة دون أن يبقى جزء غير مزروع.\nالجزء الثاني: يبيع المشتل الشتلات في علب من 7 أو من 9 شتلات، ويريد ماسينيسا أن يضع شتلة في كل متر مربّع دون أن تبقى شتلة ضائعة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب مساحة القطعة.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالمتر المربع (m²)",
+      "expectedAnswer": "1440",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الجداء."
+        }
+      ],
+      "feedback": {
+        "correct": "$45 \\times 32 = 1440$.",
+        "incorrect": "أنجز الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$45 \\times 32 = 1440$"
+        ],
+        "result": "1440"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "هل يمكن تقسيمها إلى أحواض مساحة كل منها $9\\,\\mathrm{m}$²؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-AHAD-3"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مجموع أرقام العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل هذا المجموع يقبل القسمة على 9؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يكفي أن يقبل المجموع القسمة على 3."
+        }
+      ],
+      "feedback": {
+        "correct": "مجموع أرقام العدد 1440: $1 + 4 + 4 + 0 = 9$ ، و 9 يقبل القسمة على 9.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 9 إذا كان مجموع أرقامه يقبل القسمة على 9."
+      },
+      "solution": {
+        "lines": [
+          "مجموع أرقام العدد 1440: $1 + 4 + 4 + 0 = 9$ ، و 9 يقبل القسمة على 9.",
+          "$1440 = 9 \\times 160 + 0$ ، الباقي معدوم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "وأحواض مساحة كل منها $4\\,\\mathrm{m}$²؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-ZAWJI-4"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى العدد المشكّل من رقمي الآحاد والعشرات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل هذا العدد المكوّن من رقمين يقبل القسمة على 4؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يكفي أن يكون العدد زوجيًا."
+        }
+      ],
+      "feedback": {
+        "correct": "العدد المشكّل من رقمي آحاد وعشرات 1440 هو 40، و 40 يقبل القسمة على 4.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 4 إذا كان العدد المشكّل من رقمي آحاده وعشراته يقبل القسمة على 4."
+      },
+      "solution": {
+        "lines": [
+          "العدد المشكّل من رقمي آحاد وعشرات 1440 هو 40، و 40 يقبل القسمة على 4.",
+          "$1440 = 4 \\times 360 + 0$ ، الباقي معدوم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "إذا اشترى علبًا من 7 شتلات، فكم شتلة تنقصه أو تبقى؟ احسب باقي قسمة 1440 على 7.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "205",
+          "id": "MISC-QABILIYA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية عموديًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي عدد طبيعي أصغر من 7."
+        }
+      ],
+      "feedback": {
+        "correct": "$1440 = 7 \\times 205 + 5$ و $5 < 7$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 7."
+      },
+      "solution": {
+        "lines": [
+          "$1440 = 7 \\times 205 + 5$",
+          "$5 < 7$ ، إذن الباقي هو 5، و 1440 لا يقبل القسمة على 7."
+        ],
+        "result": "r = 5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "أيّ العلب يشتري ماسينيسا حتى لا تبقى أيّ شتلة؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "علب من 9 شتلات",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "علب من 7 شتلات",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-BAQI"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الشتلات 1440."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل جوابيك السابقين."
+        }
+      ],
+      "feedback": {
+        "correct": "$1 + 4 + 4 + 0 = 9$: 1440 يقبل القسمة على 9، لا على 7.",
+        "incorrect": "اختر العلبة التي باقي قسمة 1440 على عدد شتلاتها معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$1440 = 7 \\times 205 + 5$: الباقي غير معدوم.",
+          "$1440 = 9 \\times 160 + 0$: يشتري علبًا من 9 شتلات."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "احسب عدد علب الـ 9 شتلات التي يشتريها.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد العلب",
+      "expectedAnswer": "160",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-QABILIYA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية عموديًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق بضرب الحاصل في 9."
+        }
+      ],
+      "feedback": {
+        "correct": "$1440 = 9 \\times 160 + 0$.",
+        "incorrect": "ابحث عن أكبر عدد طبيعي نضربه في 9 دون أن نتجاوز 1440."
+      },
+      "solution": {
+        "lines": [
+          "$1440 = 9 \\times 160 + 0$",
+          "الحاصل هو 160."
+        ],
+        "result": "160"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

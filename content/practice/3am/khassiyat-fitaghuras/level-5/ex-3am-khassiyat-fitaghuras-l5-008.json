@@ -1,0 +1,425 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l5-008",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — سلّم لوحة النتائج",
+    "estimatedMinutes": 25,
+    "tags": [
+      "وضعية إدماجية",
+      "خاصية فيثاغورس",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "2am-s2-65",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "طلب أستاذ التربية البدنية من تلاميذه مساعدته في إصلاح لوحة النتائج في الملعب. اللوحة في النقطة $A$ على ارتفاع $AB = 2{,}8\\,\\mathrm{m}$ من الأرض الأفقية على عمود $[AB]$ عمودي عليها، ويوضع قدم السلّم في النقطة $C$ على بعد $BC = 0{,}96\\,\\mathrm{m}$ من أسفل العمود.",
+    "figure": {
+      "points": {
+        "B": [
+          0.0,
+          0.0
+        ],
+        "C": [
+          -1.6,
+          0.0
+        ],
+        "A": [
+          0.0,
+          2.8
+        ],
+        "D": [
+          2.1,
+          0
+        ]
+      },
+      "segments": [
+        {
+          "from": "B",
+          "to": "C",
+          "label": "0,96 m"
+        },
+        {
+          "from": "B",
+          "to": "A",
+          "label": "2,8 m"
+        },
+        {
+          "from": "C",
+          "to": "A"
+        },
+        {
+          "from": "B",
+          "to": "D",
+          "label": "2,1 m"
+        },
+        {
+          "from": "A",
+          "to": "D",
+          "dashed": true
+        }
+      ],
+      "rightAngles": [
+        [
+          "C",
+          "B",
+          "A"
+        ]
+      ],
+      "ariaLabel": "لوحة النتائج في A على ارتفاع AB = 2,8 m من الأرض، وقدم السلّم C على بعد BC = 0,96 m، و D وتد حيث BD = 2,1 m",
+      "maxWidth": 320,
+      "caption": "(الأطوال غير حقيقية)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "الجزء الأول:",
+      "statement": "احسب $AC^2$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: قيمة $AC^2$ (بـ $m^2$)",
+      "expectedAnswer": "8.7616",
+      "misconceptionSignatures": [
+        {
+          "value": "7.52",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        },
+        {
+          "value": "6.9184",
+          "id": "MISC-FITAGHURAS-HYP-WRONG"
+        },
+        {
+          "value": "3.76",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مربع العدد هو جداؤه في نفسه: $a^2 = a \\times a$ وليس $2 \\times a$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC^2 = 2{,}8^2 + 0{,}96^2 = 8{,}7616$ .",
+        "incorrect": "اكتب مساواة فيثاغورس بالوتر وحده في طرف، ثم ربّع كل طول (اضربه في نفسه) قبل الجمع."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $B$ ، حسب خاصية فيثاغورس: $AC^2 = AB^2 + BC^2$",
+          "$AC^2 = 2{,}8^2 + 0{,}96^2$",
+          "$AC^2 = 7{,}84 + 0{,}9216 = 8{,}7616$"
+        ],
+        "result": "AC^2 = 8{,}7616"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج الطول $AC$ الذي يجب أن يكون للسلّم.",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m",
+      "expectedAnswer": "2.96",
+      "misconceptionSignatures": [
+        {
+          "value": "3.76",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "8.7616",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولا مربع الطول، ثم خذ جذره التربيعي بالآلة الحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC^2 = 2{,}8^2 + 0{,}96^2 = 8{,}7616$ ، إذن $AC = 2{,}96\\,\\mathrm{m}$ .",
+        "incorrect": "ابدأ بتحديد الوتر، ثم اكتب مساواة فيثاغورس، وتذكّر أن ما تحسبه أولا هو مربع الطول لا الطول نفسه."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $B$ ، حسب خاصية فيثاغورس: $AC^2 = AB^2 + BC^2$",
+          "$AC^2 = 2{,}8^2 + 0{,}96^2$",
+          "$AC^2 = 7{,}84 + 0{,}9216 = 8{,}7616$",
+          "$AC = \\sqrt{8{,}7616} = 2{,}96\\,\\mathrm{m}$"
+        ],
+        "result": "AC = 2{,}96\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "عند المؤسسة ثلاثة سلالم أطوالها: $2{,}75\\,\\mathrm{m}$ ، $3{,}10\\,\\mathrm{m}$ و $3{,}80\\,\\mathrm{m}$ . ما هو أقصر سلّم يصل إلى اللوحة؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2{,}75\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-HYP-WRONG"
+        },
+        {
+          "id": "B",
+          "content": "$3{,}10\\,\\mathrm{m}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$3{,}80\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "السلّم المائل هو الوتر: أطول من الارتفاع $AB$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن أطوال السلالم بالطول $AC$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$3{,}10 > 2{,}96$ وهو أقصر سلّم يتجاوز $2{,}96\\,\\mathrm{m}$ .",
+        "incorrect": "السلّم يجب ألّا يقلّ عن الطول $AC$ ، ولا حاجة إلى $AB + BC$ ."
+      },
+      "solution": {
+        "lines": [
+          "السلّم المائل هو وتر المثلث $ABC$ ، ويجب أن يكون طوله $2{,}96\\,\\mathrm{m}$ على الأقل.",
+          "$2{,}75 < 2{,}96$ (لا يصل)، و $3{,}10 > 2{,}96$ (يصل)، فأقصر سلّم يصل هو سلّم $3{,}10\\,\\mathrm{m}$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "lead": "الجزء الثاني:",
+      "statement": "لتثبيت السلّم، يُشدّ حبل من اللوحة $A$ إلى وتد $D$ على الأرض حيث $BD = 2{,}1\\,\\mathrm{m}$ . احسب طول الحبل $AD$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m",
+      "expectedAnswer": "3.5",
+      "misconceptionSignatures": [
+        {
+          "value": "4.9",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "12.25",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولا مربع الطول، ثم خذ جذره التربيعي بالآلة الحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$AD^2 = 2{,}8^2 + 2{,}1^2 = 12{,}25$ ، إذن $AD = 3{,}5\\,\\mathrm{m}$ .",
+        "incorrect": "ابدأ بتحديد الوتر، ثم اكتب مساواة فيثاغورس، وتذكّر أن ما تحسبه أولا هو مربع الطول لا الطول نفسه."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABD$ قائم في $B$ ، حسب خاصية فيثاغورس: $AD^2 = AB^2 + BD^2$",
+          "$AD^2 = 2{,}8^2 + 2{,}1^2$",
+          "$AD^2 = 7{,}84 + 4{,}41 = 12{,}25$",
+          "$AD = \\sqrt{12{,}25} = 3{,}5\\,\\mathrm{m}$"
+        ],
+        "result": "AD = 3{,}5\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "يُستعمل حبلان مثل $[AD]$ ، ويُضاف $0{,}3\\,\\mathrm{m}$ لكل حبل من أجل العقد. ثمن المتر $45$ دج. احسب ثمن الحبلين.",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المبلغ بالدينار",
+      "expectedAnswer": "342",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حبل طوله $AD$ زائد طول العقد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الطول الكلي ثم اضربه في ثمن المتر."
+        }
+      ],
+      "feedback": {
+        "correct": "$7{,}6 \\times 45 = 342$ دج.",
+        "incorrect": "لا تنس العقد ولا الحبل الثاني."
+      },
+      "solution": {
+        "lines": [
+          "طول كل حبل: $3{,}5 + 0{,}3 = 3{,}8\\,\\mathrm{m}$",
+          "الطول الكلي: $2 \\times 3{,}8 = 7{,}6\\,\\mathrm{m}$",
+          "الثمن: $7{,}6 \\times 45 = 342$ دج"
+        ],
+        "result": "342"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "06",
+      "statement": "مع منسّق النشاطات الرياضية $350$ دج. هل يكفي لشراء الحبلين؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، ويبقى معه $8$ دج",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا، لأن طول الحبل $2{,}8 + 2{,}1 = 4{,}9\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "id": "C",
+          "content": "لا، لأن طول الحبل $AD^2 = 12{,}25\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الثمن بالمبلغ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل الثمن الذي حسبته."
+        }
+      ],
+      "feedback": {
+        "correct": "$342 < 350$ : يكفي ويبقى $8$ دج.",
+        "incorrect": "الثمن يُحسب بطول الحبل الحقيقي (الوتر)."
+      },
+      "solution": {
+        "lines": [
+          "ثمن الحبلين $342$ دج ، و $350 - 342 = 8$ دج.",
+          "إذن المبلغ يكفي."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

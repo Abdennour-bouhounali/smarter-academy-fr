@@ -1,0 +1,259 @@
+{
+  "id": "ex-3am-quwat-adad-nisbi-l1-002",
+  "lessonCode": "quwat-adad-nisbi",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — إشارة قوة عدد سالب",
+    "estimatedMinutes": 6,
+    "tags": [
+      "قوة عدد نسبي",
+      "إشارة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن الأعداد الآتية:",
+    "formulas": [
+      "E = (-7)^{6}",
+      "F = (-5)^{9}",
+      "G = (-1)^{2025}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "دون حساب قيمته، ما إشارة العدد $E$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "موجب",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "سالب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QUWA-ODD-EVEN-SIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة الأساس؟ وهل الأس زوجي أم فردي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوة عدد سالب موجبة إذا كان الأس زوجيًا، وسالبة إذا كان فرديًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إشارة جداء عددين: موجبة إذا كانت إشارتاهما متماثلتين."
+        }
+      ],
+      "feedback": {
+        "correct": "الأساس سالب والأس 6 زوجي: $E$ موجب.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$E = (-7)^{6}$ : الأساس سالب والأس زوجي.",
+          "إذن $E$ عدد موجب."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "دون حساب قيمته، ما إشارة العدد $F$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "موجب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QUWA-ODD-EVEN-SIGN"
+        },
+        {
+          "id": "B",
+          "content": "سالب",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة الأساس؟ وهل الأس زوجي أم فردي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوة عدد سالب موجبة إذا كان الأس زوجيًا، وسالبة إذا كان فرديًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إشارة جداء عددين: موجبة إذا كانت إشارتاهما متماثلتين."
+        }
+      ],
+      "feedback": {
+        "correct": "الأساس سالب والأس 9 فردي: $F$ سالب.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$F = (-5)^{9}$ : الأساس سالب والأس فردي.",
+          "إذن $F$ عدد سالب."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب $G$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "-1",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-QUWA-ODD-EVEN-SIGN"
+        },
+        {
+          "value": "-2025",
+          "id": "MISC-QUWA-POWER-AS-PRODUCT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة الأساس؟ وهل الأس زوجي أم فردي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوة عدد سالب موجبة إذا كان الأس زوجيًا، وسالبة إذا كان فرديًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إشارة جداء عددين: موجبة إذا كانت إشارتاهما متماثلتين."
+        }
+      ],
+      "feedback": {
+        "correct": "2025 فردي: $(-1)^{2025} = -1$ .",
+        "incorrect": "جداء عدد فردي من العوامل كلها مساوية لـ $-1$ : ما إشارته؟"
+      },
+      "solution": {
+        "lines": [
+          "الأس 2025 فردي والأساس سالب.",
+          "$(-1)^{2025} = -1$"
+        ],
+        "result": "G = -1"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "اختر قيمة $(-2)^{5}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-10$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QUWA-POWER-AS-PRODUCT"
+        },
+        {
+          "id": "B",
+          "content": "$-32$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$32$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QUWA-ODD-EVEN-SIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$a^n$ جداء $n$ عاملًا كلها مساوية للعدد $a$ ، وليس $a \\times n$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوة عدد سالب موجبة إذا كان الأس زوجيًا، وسالبة إذا كان الأس فرديًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه للأقواس: في $-a^n$ يخصّ الأس العدد $a$ وحده، ثم نأخذ المعاكس."
+        }
+      ],
+      "feedback": {
+        "correct": "$(-2)^5 = (-2)(-2)(-2)(-2)(-2) = -32$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$2^{5} = 32$",
+          "الأس فردي والأساس سالب: $(-2)^{5} = -32$"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

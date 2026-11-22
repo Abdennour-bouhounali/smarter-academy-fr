@@ -1,0 +1,181 @@
+{
+  "id": "ex-4am-mutatabiqat-shahira-l4-003",
+  "lessonCode": "mutatabiqat-shahira",
+  "level": 4,
+  "metadata": {
+    "title": "نشر ثم حساب ذهني",
+    "estimatedMinutes": 7,
+    "tags": [
+      "مربع مجموع",
+      "حساب ذهني"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-35",
+      "page": 41,
+      "section": "أتعمّق",
+      "number": 35
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $E$ حيث:",
+    "formulas": [
+      "E = (x + 1)(x + 9) - (x + 3)^2"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انشر و بسّط العبارة $E$ .",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $mx$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-MURABBA-MAJMU-BILA-2AB"
+        },
+        {
+          "value": "7",
+          "id": "MISC-MUTATABIQA-2AB-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على مربع مجموع: $(a + b)^2 = a^2 + 2ab + b^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن الحدّين $a$ و $b$ ، ولا تنسَ الحد المضاعف $2ab$ ولا تربيع المعامل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع النشر بين قوسين عندما تسبقه إشارة $-$ ، ثم غيّر إشارة كل حد عند حذفهما، واجمع الحدود المتشابهة."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 4x$ إذن $m = 4$ .",
+        "incorrect": "طبّق المتطابقة الشهيرة حدًّا حدًّا (مربع كل حد والحد المضاعف)، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$E = (x + 1)(x + 9) - (x + 3)^2$",
+          "$E = x \\times x + x \\times 9 + 1 \\times x + 1 \\times 9 - \\left[x^2 + 2 \\times x \\times 3 + 3^2\\right]$",
+          "$E = x^2 + 9x + x + 9 - (x^2 + 6x + 9)$",
+          "$E = x^2 + 9x + x + 9 - x^2 - 6x - 9$"
+        ],
+        "result": "E = 4x"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "استعمل نتيجة السؤال 01 لحساب كل مما يلي ذهنيا:",
+      "statement": "$101 \\times 109 - 103^2$",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P4",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "400",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن قيمة $x$ التي يكون من أجلها $x + 1 = 101$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$101 \\times 109 - 103^2 = 4 \\times 100 = 400$ .",
+        "incorrect": "عوّض $x$ في كل حد، واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $x = 100$ : $x + 1 = 101$ ، $x + 9 = 109$ ، $x + 3 = 103$",
+          "إذن $101 \\times 109 - 103^2 = E = 4 \\times 100$"
+        ],
+        "result": "101 \\times 109 - 103^2 = 400"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "$1{,}5 \\times 9{,}5 - (3{,}5)^2$",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P4",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن قيمة $x$ التي يكون من أجلها $x + 1 = 1{,}5$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}5 \\times 9{,}5 - (3{,}5)^2 = 4 \\times 0{,}5 = 2$ .",
+        "incorrect": "عوّض $x$ في كل حد، واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $x = 0{,}5$ : $x + 1 = 1{,}5$ ، $x + 9 = 9{,}5$ ، $x + 3 = 3{,}5$",
+          "إذن $1{,}5 \\times 9{,}5 - (3{,}5)^2 = E = 4 \\times 0{,}5$"
+        ],
+        "result": "1{,}5 \\times 9{,}5 - (3{,}5)^2 = 2"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

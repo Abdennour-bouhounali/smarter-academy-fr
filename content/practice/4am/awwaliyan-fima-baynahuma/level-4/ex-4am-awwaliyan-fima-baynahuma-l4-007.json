@@ -1,0 +1,217 @@
+{
+  "id": "ex-4am-awwaliyan-fima-baynahuma-l4-007",
+  "lessonCode": "awwaliyan-fima-baynahuma",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2021 — عددان طبيعيان متتاليان",
+    "estimatedMinutes": 12,
+    "tags": [
+      "استدلال",
+      "أعداد متتالية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_awwaliyan-fima-baynahuma_P1",
+      "modelledOn": "BEM 2021 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$a$ عدد طبيعي غير معدوم."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب:",
+      "statement": "PGCD(48 ; 47)",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 48 على 47: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (48 ; 47) بالزوج (47 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 1. العددان 48 و 47 أوليان فيما بينهما.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$48 = 47 \\times 1 + 1$",
+          "$47 = 1 \\times 47 + 0$",
+          "آخر باقٍ غير معدوم هو 1، إذن:"
+        ],
+        "result": "PGCD(48 ; 47) = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "PGCD(121 ; 120)",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 121 على 120: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (121 ; 120) بالزوج (120 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 1. العددان 121 و 120 أوليان فيما بينهما.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$121 = 120 \\times 1 + 1$",
+          "$120 = 1 \\times 120 + 0$",
+          "آخر باقٍ غير معدوم هو 1، إذن:"
+        ],
+        "result": "PGCD(121 ; 120) = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "بيّن أن كل قاسم مشترك للعددين $a$ و $a + 1$ يقسم الفرق بينهما، ثم استنتج أن العددين $a$ و $a + 1$ أوليان فيما بينهما.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "إذا كان $d$ يقسم $a$ و $a + 1$ فهو يقسم $(a + 1) - a$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما هي قواسم العدد 1؟"
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا."
+      },
+      "solution": {
+        "lines": [
+          "ليكن $d$ قاسمًا مشتركًا للعددين $a$ و $a + 1$ .",
+          "إذن $a = d \\times k$ و $a + 1 = d \\times k'$ حيث $k$ و $k'$ عددان طبيعيان.",
+          "ومنه $(a + 1) - a = d \\times (k' - k)$ ، أي $1 = d \\times (k' - k)$ : $d$ يقسم 1.",
+          "القاسم الوحيد للعدد 1 هو 1، إذن $d = 1$ .",
+          "القاسم المشترك الوحيد للعددين $a$ و $a + 1$ هو 1، أي $PGCD(a ; a + 1) = 1$ : العددان أوليان فيما بينهما."
+        ]
+      },
+      "timeSeconds": 360
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "هل العددان $2a$ و $2a + 2$ أوليان فيما بينهما؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل العددان $2a$ و $2a + 2$ زوجيان؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $2a + 2$ على الشكل $2 \\times (\\ldots)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "2 يقسم $2a$ و $2a + 2$ : العددان ليسا أوليين فيما بينهما.",
+        "incorrect": "ابحث عن قاسم مشترك يختلف عن 1 يقسم العددين مهما كان $a$ ."
+      },
+      "solution": {
+        "lines": [
+          "$2a = 2 \\times a$ و $2a + 2 = 2 \\times (a + 1)$",
+          "إذن 2 قاسم مشترك للعددين، و $2 \\neq 1$ .",
+          "الجواب: لا، العددان $2a$ و $2a + 2$ ليسا أوليين فيما بينهما (رغم أن $a$ و $a + 1$ أوليان فيما بينهما)."
+        ],
+        "result": "PGCD(2a ; 2a + 2) \\neq 1"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

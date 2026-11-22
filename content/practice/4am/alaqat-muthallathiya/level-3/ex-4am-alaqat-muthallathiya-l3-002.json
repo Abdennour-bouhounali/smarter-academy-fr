@@ -1,0 +1,225 @@
+{
+  "id": "ex-4am-alaqat-muthallathiya-l3-002",
+  "lessonCode": "alaqat-muthallathiya",
+  "level": 3,
+  "metadata": {
+    "title": "طرائق (ص 121) — زاوية ظلها 7/3: الإنشاء ثم جيبها",
+    "estimatedMinutes": 9,
+    "tags": [
+      "إنشاء زاوية",
+      "العلاقات المثلثية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-construct",
+      "page": 121,
+      "section": "طرائق",
+      "adaptedFrom": "ex-4am-alaqat-muthallathiya-l3-002"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$x$ هو قيس زاوية حادة حيث $\\tan x = \\dfrac{7}{3}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أنشئ، بدون استعمال منقلة، الزاوية التي قيسها $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الظل = المقابل على المجاور: الطولان ضلعا الزاوية القائمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا حاجة للمدور كي ننقل الوتر: ننقل 7 و 3 على ضلعي زاوية قائمة."
+        }
+      ],
+      "feedback": {
+        "correct": "زاوية قائمة رأسها $N$ ، $MN = 7\\,\\mathrm{cm}$ و $NP = 3\\,\\mathrm{cm}$ على الضلعين: $x = \\widehat{NPM}$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "نضع وحدة الطول هي $1\\,\\mathrm{cm}$ ، وننشئ زاوية قائمة $\\widehat{MNP}$ رأسها $N$ .",
+          "نعيّن على الضلعين النقطتين $M$ و $P$ حيث $MN = 7\\,\\mathrm{cm}$ و $NP = 3\\,\\mathrm{cm}$ (مسطرة مدرّجة أو مدور).",
+          "في المثلث $MNP$ القائم في $N$ : $\\tan\\widehat{NPM} = \\dfrac{NM}{NP} = \\dfrac{7}{3}$ ، إذن $x = \\widehat{NPM}$ ."
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "في المثلث $MNP$ القائم في $N$ ($MN = 7\\,\\mathrm{cm}$ و $NP = 3\\,\\mathrm{cm}$)، اكتب الطول $MP$ على الشكل $\\sqrt{a}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "58",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث قائم في $N$ ووتره $[MP]$ : خاصية فيثاغورس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع الوتر = مجموع مربعي ضلعي الزاوية القائمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$MP^2 = 7^2 + 3^2 = 49 + 9 = 58$ ، إذن $MP = \\sqrt{58}\\,\\mathrm{cm}$ .",
+        "incorrect": "اجمع مربعي الضلعين (لا الضلعين) لتحصل على مربع الوتر."
+      },
+      "solution": {
+        "lines": [
+          "بتطبيق خاصية فيثاغورس في المثلث $MNP$ القائم في $N$ : $MP^2 = MN^2 + NP^2 = 49 + 9$"
+        ],
+        "result": "MP = \\sqrt{58}\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "استنتج القيمة المضبوطة لـ $\\sin x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{3}{\\sqrt{58}}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-MUQABIL-MUJAWIR"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{7}{\\sqrt{58}}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{\\sqrt{58}}{7}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-NISBA-MAQLUBA"
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{7}{3}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بالنسبة إلى الزاوية $\\widehat{NPM}$ : $[NM]$ مقابل و $[MP]$ وتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الجيب = المقابل على الوتر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin x = \\dfrac{NM}{MP} = \\dfrac{7}{\\sqrt{58}}$ .",
+        "incorrect": "الجيب = طول الضلع المقابل للزاوية $\\widehat{NPM}$ على طول الوتر."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $MNP$ القائم في $N$ : $\\sin\\widehat{NPM} = \\dfrac{NM}{MP}$",
+          "$\\sin x = \\dfrac{7}{\\sqrt{58}} = \\dfrac{7\\sqrt{58}}{58}$"
+        ],
+        "result": "\\sin x = \\dfrac{7}{\\sqrt{58}}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "تحقّق بحاسبة: أعط قيس $x$ بالتدوير إلى $0{,}1$ من الدرجة.",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: القيس بالدرجة مدوّرا إلى 0,1",
+      "expectedAnswer": "66.8",
+      "misconceptionSignatures": [
+        {
+          "value": "23.2",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اللمسة العكسية للظل والحاسبة مبرمجة بالدرجة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "دوّر إلى رقم واحد بعد الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "⁦2nd tan⁻¹ ( 7 ÷ 3 ) =⁩ يعطي $66{,}80\\ldots$ ، إذن $x \\approx 66{,}8^{\\circ}$ (وبالمنقلة حوالي $67^{\\circ}$).",
+        "incorrect": "أدخل الظل 7 على 3 (لا مقلوبه) في اللمسة العكسية للظل."
+      },
+      "solution": {
+        "lines": [
+          "بالحاسبة: ⁦2nd tan⁻¹ ( 7 ÷ 3 ) =⁩ يظهر $66{,}80140949$"
+        ],
+        "result": "x \\approx 66{,}8^{\\circ}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

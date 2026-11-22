@@ -1,0 +1,178 @@
+{
+  "id": "ex-4am-tawzif-khawass-judhur-l4-008",
+  "lessonCode": "tawzif-khawass-judhur",
+  "level": 4,
+  "metadata": {
+    "title": "E = 4/√6",
+    "estimatedMinutes": 7,
+    "tags": [
+      "نسبة مقامها عدد ناطق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tawzif-khawass-judhur_P3",
+      "modelledOn": "method-rationalize",
+      "adaptedFrom": "ex-4am-tawzif-khawass-judhur-l4-005"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد E حيث:",
+    "formulas": [
+      "E = \\dfrac{4}{\\sqrt{6}}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب العدد E على شكل نسبة مقامها عدد ناطق.",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "بسّط النتيجة واكتبها على الشكل $\\dfrac{a\\sqrt{6}}{3}$، ثم أعط العدد $a$ فقط",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "1/3",
+          "id": "MISC-JIDHR-FI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب البسط والمقام في $\\sqrt{6}$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\sqrt{6} \\times \\sqrt{6} = 6$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل الكسر الناتج."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = \\dfrac{4\\sqrt{6}}{6} = \\dfrac{2\\sqrt{6}}{3}$.",
+        "incorrect": "اضرب البسط والمقام في $\\sqrt{6}$؛ تذكّر أن $\\sqrt{6} \\times \\sqrt{6} = 6$، ثم اختزل."
+      },
+      "solution": {
+        "lines": [
+          "$E = \\dfrac{4 \\times \\sqrt{6}}{\\sqrt{6} \\times \\sqrt{6}}$",
+          "$E = \\dfrac{4\\sqrt{6}}{6}$"
+        ],
+        "result": "E = \\dfrac{2\\sqrt{6}}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $E^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "8/3",
+      "misconceptionSignatures": [
+        {
+          "value": "4/9",
+          "id": "MISC-TARBI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\left(\\dfrac{x}{y}\\right)^2 = \\dfrac{x^2}{y^2}$"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$(\\sqrt{6})^2 = 6$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل الكسر الناتج."
+        }
+      ],
+      "feedback": {
+        "correct": "$E^2 = \\dfrac{16}{6}$ ثم نختزل.",
+        "incorrect": "ربّع البسط والمقام: $4^2$ و $(\\sqrt{6})^2$، ثم اختزل."
+      },
+      "solution": {
+        "lines": [
+          "$E^2 = \\left(\\dfrac{4}{\\sqrt{6}}\\right)^2 = \\dfrac{4^2}{(\\sqrt{6})^2}$",
+          "$E^2 = \\dfrac{16}{6}$"
+        ],
+        "result": "E^2 = \\dfrac{8}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "بيّن أن: $3E - \\sqrt{24} = 0$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tawzif-khawass-judhur_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الكتابة التي وجدتها في السؤال 01 لحساب $3E$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $\\sqrt{24}$ على الشكل $x\\sqrt{6}$."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك سطرًا بسطر بالحل النموذجي، وانتبه إلى كل مرحلة من مراحل الحساب."
+      },
+      "solution": {
+        "lines": [
+          "$3E = 3 \\times \\dfrac{2\\sqrt{6}}{3} = 2\\sqrt{6}$",
+          "$\\sqrt{24} = \\sqrt{4} \\times \\sqrt{6} = 2\\sqrt{6}$",
+          "$3E - \\sqrt{24} = 2\\sqrt{6} - 2\\sqrt{6}$"
+        ],
+        "result": "3E - \\sqrt{24} = 0"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

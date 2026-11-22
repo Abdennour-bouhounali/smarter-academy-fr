@@ -1,0 +1,109 @@
+{
+  "id": "ex-4am-insihab-shuaa-l2-004",
+  "lessonCode": "insihab-shuaa",
+  "level": 2,
+  "metadata": {
+    "title": "تمرين 1 — الشعاع u",
+    "estimatedMinutes": 2,
+    "tags": [
+      "عناصر الشعاع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-1",
+      "page": 134,
+      "section": "الأشعة والمساواة الشعاعية",
+      "number": 1
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 134): ABC مثلث كيفي. $\\vec{u}$ هو الشعاع الذي منحاه هو منحى المستقيم (AB)، اتجاهه من A إلى B وطوله AC.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          5,
+          0
+        ],
+        "C": [
+          7,
+          4
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "A"
+        ]
+      ],
+      "ariaLabel": "مثلث ABC: A في الأسفل على اليسار، B في الأسفل، C في الأعلى على اليمين",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أي عبارة صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "4am_insihab-shuaa_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\vec{u}$ و $\\overrightarrow{AB}$ لهما نفس المنحى ونفس الاتجاه، لكن ليس نفس الطول إلا إذا كان AB = AC",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\vec{u} = $$\\overrightarrow{AB}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TUL-FAQAT"
+        },
+        {
+          "id": "C",
+          "content": "$\\vec{u} = $$\\overrightarrow{AC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MANHA-MUSTAQIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن العناصر الثلاثة للشعاع: المنحى (المستقيم الحامل)، الاتجاه (من المبدأ نحو النهاية)، والطول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المنحى يخص المستقيمات: مستقيمان متوازيان لهما نفس المنحى؛ الاتجاه هو جهة السير عليه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن العناصر الثلاثة واحدا واحدا قبل أن تختار."
+        }
+      ],
+      "feedback": {
+        "correct": "منحى $\\vec{u}$ واتجاهه هما منحى $\\overrightarrow{AB}$ واتجاهه، أما طوله فهو AC.",
+        "incorrect": "افصل العناصر الثلاثة: من أين يأتي المنحى؟ ومن أين يأتي الطول؟"
+      },
+      "difficulty": 2,
+      "cognitiveDemand": "reason"
+    }
+  ]
+}

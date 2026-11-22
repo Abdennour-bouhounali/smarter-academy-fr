@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Domain\Progress\MasteryRecalculator;
+use App\Domain\Progress\Replay\ReplayService;
 use App\Domain\Progress\ProgressEngine;
 use App\Models\Chapter;
 use App\Models\Grade;
@@ -114,16 +114,19 @@ class PracticeEvidenceConvergenceTest extends TestCase
         }
 
         // L'état est explicable depuis l'historique (invariant 15).
-        $this->assertTrue(app(MasteryRecalculator::class)->matchesStored($user, $this->p9->id),
+        $this->assertTrue(app(ReplayService::class)->matchesStored($user->id, $this->p9->id),
             'le rejeu des preuves doit reproduire exactement l’agrégat enregistré');
     }
 
     public function test_there_is_no_second_mastery_table(): void
     {
         // Une garde bon marché contre l'ajout futur d'un `practice_mastery`.
+        // `mastery_replays` est le JOURNAL des rejeux (qui a recalculé quoi,
+        // quand) : il ne porte aucun état par élève et n'est pas une table
+        // de maîtrise — la seule reste student_learning_point_progress.
         $tables = collect(\DB::select('SHOW TABLES'))
             ->map(fn ($r) => array_values((array) $r)[0])
-            ->filter(fn ($t) => str_contains($t, 'mastery') || str_contains($t, 'maitrise'))
+            ->filter(fn ($t) => (str_contains($t, 'mastery') || str_contains($t, 'maitrise')) && $t !== 'mastery_replays')
             ->values()->all();
 
         $this->assertSame([], $tables, 'la maîtrise vit dans student_learning_point_progress, et nulle part ailleurs');

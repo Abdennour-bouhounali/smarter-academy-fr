@@ -1,0 +1,267 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-musawiyat-mutabayinat-l2-009",
+  "lessonCode": "wadiya-idmajiya-musawiyat-mutabayinat",
+  "level": 2,
+  "metadata": {
+    "title": "المساواة والمعادلة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "خواص المساويات",
+      "حلّ معادلة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثاني",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "أجب عن الأسئلة التالية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "إذا كان $4x + 5 = 29$ فأيّ المساويات التالية صحيحة ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x = 24$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-TERM-LOST"
+        },
+        {
+          "id": "B",
+          "content": "$4x = 34$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-SIGN-KEPT"
+        },
+        {
+          "id": "C",
+          "content": "$4x = 24$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$4x + 3 = 29$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-ONE-SIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تُجرى على الطرفين معًا ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نفس العدد يُضاف أو يُطرح أو يُضرب فيه الطرفان، فتبقى المساواة صحيحة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل سطر من الحساب ثمّ تحقّق منه بالتعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $4x = 24$ .",
+        "incorrect": "انتبه: العملية تُجرى على الطرفين معًا، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نطرح $5$ من الطرفين معًا: $4x = 29 - 5 = 24$ .",
+          "الخيارات الأخرى تُجري العملية على طرف واحد أو تضيف بدل أن تطرح أو تنسى القسمة على المعامل."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حلّ المعادلة $2(x + 4) = 10$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-MUSAWIYA-TERM-LOST"
+        },
+        {
+          "value": "9",
+          "id": "MISC-MUADALA-SIGN-KEPT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين المجهول وأين الأعداد ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المجهول في طرف والأعداد في الطرف الآخر، ثمّ اقسم على معامل المجهول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض النتيجة في الطرفين لتتأكّد من تساويهما."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $1$ .",
+        "incorrect": "راجع نقل الحدود وإشاراتها ثمّ القسمة على المعامل، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نفكّ: $2x + 8 = 10$ .",
+          "فنجد $2x = 2$ ثم $x = 1$ ."
+        ],
+        "result": "1"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "إذا كان $3x + 5 = 11$ فاحسب $6x + 10$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "22",
+      "misconceptionSignatures": [
+        {
+          "value": "17",
+          "id": "MISC-MUSAWIYA-TERM-LOST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تُجرى على الطرفين معًا ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نفس العدد يُضاف أو يُطرح أو يُضرب فيه الطرفان، فتبقى المساواة صحيحة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل سطر من الحساب ثمّ تحقّق منه بالتعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $22$ .",
+        "incorrect": "انتبه: العملية تُجرى على الطرفين معًا، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضرب الطرفين في $2$ : $6x + 10 = 2 \\times (11)$ .",
+          "فالقيمة هي $22$ ."
+        ],
+        "result": "22"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "أيّ الأعداد التالية حلّ للمعادلة $4x + 5 = 3x + 7$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-SUBST"
+        },
+        {
+          "id": "B",
+          "content": "$2$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$12$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-SIGN-KEPT"
+        },
+        {
+          "id": "D",
+          "content": "$3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-CHECK-ONE-SIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين المجهول وأين الأعداد ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المجهول في طرف والأعداد في الطرف الآخر، ثمّ اقسم على معامل المجهول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض النتيجة في الطرفين لتتأكّد من تساويهما."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $2$ .",
+        "incorrect": "راجع نقل الحدود وإشاراتها ثمّ القسمة على المعامل، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض في الطرفين: $4(2) + 5$ و $3(2) + 7$ .",
+          "العدد الذي يعطي طرفين متساويين هو $2$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

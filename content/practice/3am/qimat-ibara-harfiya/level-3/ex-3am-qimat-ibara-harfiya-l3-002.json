@@ -1,0 +1,225 @@
+{
+  "id": "ex-3am-qimat-ibara-harfiya-l3-002",
+  "lessonCode": "qimat-ibara-harfiya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — نشر ثم حساب قيمة عبارة",
+    "estimatedMinutes": 11,
+    "tags": [
+      "نشر",
+      "قيمة عبارة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-68",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $E$ حيث:",
+    "formulas": [
+      "E = (3x + 2)(x + 2) + 5(x - 1)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انشر $5(x - 1)$ واكتب النتيجة على الشكل $5x + b$ .",
+      "statement": "العدد $b$ :",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $5(x-1)$ على الشكل $5x + b$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "-5",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض الحرف بعدد صغير في العبارة الأصلية وفي النتيجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$5(x-1) = 5x - 5$ إذن $b = -5$ .",
+        "incorrect": "وزّع كل حدّ على كل حدّ مع الانتباه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$5(x - 1) = 5x - 5$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "انشر ثم بسّط العبارة $E$ ، واكتبها على الشكل $ax^2 + bx + c$ .",
+      "statement": "العدد $b$ :",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "13",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض الحرف بعدد صغير في العبارة الأصلية وفي النتيجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 3x^2 + 13x - 1$ إذن $b = 13$ .",
+        "incorrect": "وزّع كل حدّ على كل حدّ مع الانتباه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$E = 3x^2 + 6x + 2x + 4 + 5x - 5$",
+          "$E = 3x^2 + 13x - 1$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "احسب قيمة $E$ من أجل $x = -\\dfrac{1}{2}$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "-6.75",
+      "misconceptionSignatures": [
+        {
+          "value": "6.25",
+          "id": "MISC-QIMA-SIGN-LOST"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = -\\dfrac{1}{2}$ هي $-6{,}75$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$E = \\left(3 \\times \\left(-\\dfrac{1}{2}\\right) + 2\\right) \\times \\left(-\\dfrac{1}{2} + 2\\right) + 5 \\times \\left(-\\dfrac{1}{2} - 1\\right)$",
+          "$E = (-1{,}5 + 2) \\times \\left(-\\dfrac{1}{2} + 2\\right) + 5 \\times \\left(-\\dfrac{1}{2} - 1\\right)$",
+          "$E = 0{,}5 \\times 1{,}5 + 5 \\times (-1{,}5)$",
+          "$E = 0{,}75 + (-7{,}5)$",
+          "$E = -6{,}75$"
+        ],
+        "result": "E = -6{,}75"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "احسب قيمة $E$ من أجل $x = 10^{-1}$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "0.33",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = 10^{-1}$ هي $0{,}33$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$E = (3 \\times 10^{-1} + 2) \\times (10^{-1} + 2) + 5 \\times (10^{-1} - 1)$",
+          "$E = (0{,}3 + 2) \\times (10^{-1} + 2) + 5 \\times (10^{-1} - 1)$",
+          "$E = 2{,}3 \\times 2{,}1 + 5 \\times (-0{,}9)$",
+          "$E = 4{,}83 + (-4{,}5)$",
+          "$E = 0{,}33$"
+        ],
+        "result": "E = 0{,}33"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

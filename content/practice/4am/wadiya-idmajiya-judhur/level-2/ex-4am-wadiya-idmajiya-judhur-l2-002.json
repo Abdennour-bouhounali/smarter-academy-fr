@@ -1,0 +1,122 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-judhur-l2-002",
+  "lessonCode": "wadiya-idmajiya-judhur",
+  "level": 2,
+  "metadata": {
+    "title": "خزان قاعدته مربعة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "المعادلة x² = a",
+      "a√b"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-judhur_P1",
+      "modelledOn": "situation"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "خزان ماء على شكل متوازي مستطيلات قاعدته مربعة الشكل و ارتفاعه $2m$ ، بنته جمعية الحي ليستفيد منه الجميع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "إذا كانت سعة الخزان $18m^3$ ، احسب طول ضلع قاعدته.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بالمتر (m)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-JIDHR-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "السعة = مساحة القاعدة × الارتفاع: احسب مساحة القاعدة أولًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان $c$ طول الضلع فإن $c^2$ هو مساحة القاعدة."
+        }
+      ],
+      "feedback": {
+        "correct": "مساحة القاعدة $18 \\div 2 = 9m^2$ ، و $c^2 = 9$ مع $c > 0$ يعطي $c = 3m$ .",
+        "incorrect": "اقسم السعة على الارتفاع لتجد $c^2$ ، ثم خذ الحل الموجب."
+      },
+      "solution": {
+        "lines": [
+          "مساحة القاعدة: $18 \\div 2 = 9m^2$",
+          "$c^2 = 9$ و $c > 0$"
+        ],
+        "result": "c = 3m"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "إذا كانت سعة الخزان $24m^3$ ، اكتب طول ضلع قاعدته على الشكل $a\\sqrt{3}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-JIDHR-MURABBA-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مساحة القاعدة كما في السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حل المعادلة $c^2 = 12$ ثم اكتب $\\sqrt{12}$ على الشكل $a\\sqrt{3}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$c^2 = 12$ ، إذن $c = \\sqrt{12} = 2\\sqrt{3}\\,m$ .",
+        "incorrect": "اكتب $12 = 4 \\times 3$ و أخرج جذر المربع التام."
+      },
+      "solution": {
+        "lines": [
+          "مساحة القاعدة: $24 \\div 2 = 12m^2$",
+          "$c^2 = 12$ و $c > 0$ يعني $c = \\sqrt{12} = \\sqrt{4 \\times 3}$"
+        ],
+        "result": "c = 2\\sqrt{3}\\,m"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

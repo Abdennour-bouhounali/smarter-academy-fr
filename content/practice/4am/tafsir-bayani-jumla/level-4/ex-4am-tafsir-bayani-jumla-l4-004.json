@@ -1,0 +1,241 @@
+{
+  "id": "ex-4am-tafsir-bayani-jumla-l4-004",
+  "lessonCode": "tafsir-bayani-jumla",
+  "level": 4,
+  "metadata": {
+    "title": "قراءة بيانية غير دقيقة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "قراءة تقريبية",
+      "حساب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tafsir-bayani-jumla_P2",
+      "modelledOn": "act-5"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في المعلم التالي، المستقيمان $(d_1)$ و $(d_2)$ يمثّلان معادلتي الجملة:",
+    "formulas": [
+      "\\begin{cases} x + y = 3 \\\\ 2x - y = 1 \\end{cases}"
+    ],
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "K1": [
+          -1,
+          4
+        ],
+        "H1": [
+          4,
+          -1
+        ],
+        "K2": [
+          -1,
+          -3
+        ],
+        "H2": [
+          3,
+          5
+        ]
+      },
+      "lines": [
+        {
+          "through": [
+            "K1",
+            "H1"
+          ],
+          "name": "(d₁)",
+          "tone": "indigo",
+          "extend": [
+            0.04,
+            0.04
+          ]
+        },
+        {
+          "through": [
+            "K2",
+            "H2"
+          ],
+          "name": "(d₂)",
+          "tone": "rose",
+          "extend": [
+            0.04,
+            0.04
+          ]
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw"
+      },
+      "hidden": [
+        "K1",
+        "H1",
+        "K2",
+        "H2"
+      ],
+      "ariaLabel": "معلم متعامد ومتجانس على ورقة مرصوفة: المستقيم (d1) ينزل والمستقيم (d2) يصعد بسرعة، ويتقاطعان بين عقد الشبكة"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "قرأ تلميذ على الشكل حل الجملة: $(1 ; 2)$ . هل قراءته صحيحة؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-MUADALA-WAHIDA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقق بالتعويض في المعادلتين معا."
+        }
+      ],
+      "feedback": {
+        "correct": "الثنائية لا تحقق المعادلة الثانية.",
+        "incorrect": "عوّض $x$ بـ 1 و $y$ بـ 2 في المعادلتين معا."
+      },
+      "solution": {
+        "lines": [
+          "$1 + 2 = 3$ : المعادلة الأولى محققة.",
+          "$2 \\times 1 - 2 = 0 \\neq 1$ : المعادلة الثانية غير محققة.",
+          "إذن $(1 ; 2)$ ليست حل الجملة: نقطة التقاطع لا تقع على عقدة، والقراءة تقريبية."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب الحل المضبوط للجملة.",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": {
+        "x": "4/3",
+        "y": "5/3"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "5/3",
+            "y": "4/3"
+          },
+          "id": "MISC-JUMLA-BAYANI-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "فاصلة نقطة التقاطع تجعل العبارتين متساويتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حل المعادلة التي تساوي بين العبارتين، ثم عوّض الحل في إحدى العبارتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الثنائية $(x ; y)$ : الفاصلة أولا ثم الترتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "هي إحداثيات نقطة تقاطع المستقيمين، أي حل الجملة.",
+        "incorrect": "ساوِ بين العبارتين لإيجاد الفاصلة، ثم احسب الترتيب بالتعويض؛ واكتب الفاصلة أولا."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة نقطة التقاطع تحقق: $-x + 3 = 2x - 1$",
+          "$3x = 4$",
+          "$x = \\dfrac{4}{3}$",
+          "نعوّض: $y = -\\dfrac{4}{3} + 3 = \\dfrac{5}{3}$",
+          "تحقق: $2 \\times \\dfrac{4}{3} - 1 = \\dfrac{5}{3}$",
+          "إذن نقطة التقاطع هي $(\\dfrac{4}{3} ; \\dfrac{5}{3})$ ، وهي حل الجملة."
+        ],
+        "result": "(\\dfrac{4}{3} ; \\dfrac{5}{3})"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "عيّن ترتيب نقطة تقاطع المستقيم $(d_2)$ مع محور التراتيب.",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الترتيب",
+      "expectedAnswer": "-1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المعادلة الثانية على الشكل $y = ax + b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نقطة من محور التراتيب فاصلتها 0."
+        }
+      ],
+      "feedback": {
+        "correct": "$y = 2x - 1$ .",
+        "incorrect": "عوّض $x$ بـ 0 في المعادلة الثانية ثم احسب $y$ ."
+      },
+      "solution": {
+        "lines": [
+          "$2x - y = 1$ تُكتب $y = 2x - 1$ .",
+          "من أجل $x = 0$ : $y = -1$ .",
+          "إذن $(d_2)$ يقطع محور التراتيب في النقطة $(0 ; -1)$ ."
+        ],
+        "result": "y = -1"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

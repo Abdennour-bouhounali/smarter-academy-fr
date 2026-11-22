@@ -1,0 +1,198 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-aadad-nisbiya-l5-010",
+  "lessonCode": "wadiya-idmajiya-aadad-nisbiya",
+  "level": 5,
+  "metadata": {
+    "title": "عالم أرصاد في رحلتين",
+    "estimatedMinutes": 8,
+    "tags": [
+      "وضعية للتقويم",
+      "تحويل",
+      "متوسط"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "evaluation",
+      "page": 20,
+      "section": "وضعية للتقويم"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "الوضعية",
+      "points": "06"
+    }
+  },
+  "statement": {
+    "content": "سجّل عالم أرصاد الحرارة $−11$ °C في بلدة جبلية بالقبائل، ثم $0{,}5$ °F في محطة بحثية بكندا. للمرور من درجة سيلسيوس $T_C$ إلى درجة فهرنهايت $T_F$ نستعمل القاعدة $T_F = 1{,}8 \\times T_C + 32$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "عبّر عن حرارة البلدة الجبلية بالدرجة فهرنهايت.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "12.2",
+      "misconceptionSignatures": [
+        {
+          "value": "37.8",
+          "id": "MISC-WIDMAJ-REVCHAIN"
+        },
+        {
+          "value": "51.8",
+          "id": "MISC-WIDMAJ-DROPNEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القاعدة المعطاة وما تربطه بين الدرجتين، وأيّ الدرجتين معلومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "للتحويل من سيلسيوس إلى فهرنهايت نضرب ثم نضيف؛ وللعكس نُجري العمليتين بترتيب معاكس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة التحويل في الاتجاه المعاكس: يجب أن تجد العدد الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $12{,}2$ °F .",
+        "incorrect": "راجع قاعدة التحويل وترتيب العمليتين، ثم تحقّق بالعملية المعاكسة."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}8 \\times (−11) + 32$",
+          "$= (−19{,}8) + 32$",
+          "$= 12{,}2$"
+        ],
+        "result": "12{,}2"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "عبّر عن حرارة المحطة الكندية بالدرجة سيلسيوس.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-17.5",
+      "misconceptionSignatures": [
+        {
+          "value": "17.5",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "-33.3",
+          "id": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القاعدة المعطاة وما تربطه بين الدرجتين، وأيّ الدرجتين معلومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "للتحويل من سيلسيوس إلى فهرنهايت نضرب ثم نضيف؛ وللعكس نُجري العمليتين بترتيب معاكس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة التحويل في الاتجاه المعاكس: يجب أن تجد العدد الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $−17{,}5$ °C .",
+        "incorrect": "راجع قاعدة التحويل وترتيب العمليتين، ثم تحقّق بالعملية المعاكسة."
+      },
+      "solution": {
+        "lines": [
+          "$(0{,}5 − 32) \\div 1{,}8$",
+          "$= (−31{,}5) \\div 1{,}8$",
+          "$= −17{,}5$"
+        ],
+        "result": "−17{,}5"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب متوسّط الحرارتين بالسيلسيوس.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-14.25",
+      "misconceptionSignatures": [
+        {
+          "value": "14.25",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "-30.5",
+          "id": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العددين اللذين نقسم أحدهما على الآخر وعيّن إشارة كل منهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عاملان مجهولان فالعامل الناقص هو حاصل قسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعملية العكسية: اضرب نتيجتك في العامل المعلوم."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $−14{,}25$ °C .",
+        "incorrect": "راجع الربط بين الضرب والقسمة وقاعدة إشارات الحاصل، ثم تحقّق بالضرب."
+      },
+      "solution": {
+        "lines": [
+          "$((−11) + (−17{,}5)) \\div 2$",
+          "$= (−28{,}5) \\div 2$",
+          "$= −14{,}25$"
+        ],
+        "result": "−14{,}25"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

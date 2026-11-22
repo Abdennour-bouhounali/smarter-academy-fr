@@ -1,0 +1,252 @@
+{
+  "id": "ex-2am-masafa-nuqtatayn-l5-002",
+  "lessonCode": "masafa-nuqtatayn",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — فارق الحرارة في ثلاث مدن",
+    "estimatedMinutes": 12,
+    "tags": [
+      "مسافة بين نقطتين",
+      "درجات الحرارة",
+      "مقارنة مسافات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "في يوم شتوي سجّلت الأرصاد درجتي الحرارة الصغرى والكبرى بالدرجات (°C): الجلفة $-6$ و $+7$ ؛ تمنراست $+3$ و $+21$ ؛ سطيف $-2$ و $+9$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "الجلفة: الصغرى $-6$ والكبرى $+7$ . نمثّل الدرجتين بنقطتين $S(-6)$ و $T(+7)$ على مستقيم مدرّج. احسب الفارق $ST$ بين الدرجتين.",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "1"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-13"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن أوّلًا أيّ الفاصلتين أكبر: الأكبر هي الأبعد إلى اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى مطروحًا منها الصغرى؛ وإذا كانت الصغرى سالبة فنطرح عددًا سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا: إن وجدت ناتجًا سالبًا فقد قلبت ترتيب الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$ST=13$ : النقطتان على جهتين من المبدأ فنجمع المسافتين إلى الصفر.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى هي $+7$ والفاصلة الصغرى هي $-6$",
+          "$ST=(+7)-(-6)=(+7)+(+6)=13$"
+        ],
+        "result": "13"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "تمنراست: الصغرى $+3$ والكبرى $+21$ . نمثّل الدرجتين بنقطتين $S(+3)$ و $T(+21)$ على مستقيم مدرّج. احسب الفارق $ST$ بين الدرجتين.",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "18",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-ADDSAME",
+          "value": "24"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-18"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن أوّلًا أيّ الفاصلتين أكبر: الأكبر هي الأبعد إلى اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى مطروحًا منها الصغرى؛ وإذا كانت الصغرى سالبة فنطرح عددًا سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا: إن وجدت ناتجًا سالبًا فقد قلبت ترتيب الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$ST=18$ : نطرح الفاصلة الصغرى من الفاصلة الكبرى.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى هي $+21$ والفاصلة الصغرى هي $+3$",
+          "$ST=(+21)-(+3)=(+21)+(-3)=18$"
+        ],
+        "result": "18"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "الفارق بين الصغرى والكبرى في كلّ مدينة : الجلفة ($-6$ و $+7$) ؛ تمنراست ($+3$ و $+21$) ؛ سطيف ($-2$ و $+9$) . أيّ مدينة فارقها أكبر ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الجلفة",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "تمنراست",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "سطيف",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المسافة في كلّ زوج على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تقارن الفاصلات مباشرة: قارن المسافات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بترتيب المسافات التي حسبتها."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب : تمنراست .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الجلفة : $13$",
+          "تمنراست : $18$",
+          "سطيف : $11$",
+          "الأكبر مسافة هو الجواب"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "صغرى الجلفة $-6$ . مدينة رابعة صغراها أعلى منها وتبعد عنها $7$ درجات. نمثّل الصغريين بنقطتين $M(-6)$ و $N$ على مستقيم مدرّج. ما فاصلة $N$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SIGNSWAP",
+          "value": "-1"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة المعطاة هي المسافة بين النقطتين: النقطة المطلوبة تبعد بها عن النقطة المعلومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كانت على اليمين أضفنا المسافة إلى الفاصلة المعلومة، وإذا كانت على اليسار طرحناها منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب المسافة بين النقطتين انطلاقًا من فاصلتيهما."
+        }
+      ],
+      "feedback": {
+        "correct": "فاصلة $N$ هي $+1$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "النقطة على اليمين فنضيف المسافة إلى فاصلة $M$",
+          "$-6+7=+1$"
+        ],
+        "result": "1"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

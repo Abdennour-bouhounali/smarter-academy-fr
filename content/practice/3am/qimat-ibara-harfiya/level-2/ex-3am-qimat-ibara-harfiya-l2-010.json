@@ -1,0 +1,323 @@
+{
+  "id": "ex-3am-qimat-ibara-harfiya-l2-010",
+  "lessonCode": "qimat-ibara-harfiya",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — اختبر المساواة من أجل قيمتين",
+    "estimatedMinutes": 9,
+    "tags": [
+      "مساواة",
+      "مثال مضاد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نريد اختبار صحة المساواة $A = B$ حيث:",
+    "formulas": [
+      "A = 6x - 2x^2",
+      "B = -2x(x + 3)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب قيمة $A$ من أجل $x = 1$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "4",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = 1$ هي $4$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$A = 6 \\times 1 - 2 \\times 1^2$",
+          "$A = 6 \\times 1 - 2 \\times 1$",
+          "$A = 6 - 2$",
+          "$A = 4$"
+        ],
+        "result": "A = 4"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب قيمة $B$ من أجل $x = 1$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "-8",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = 1$ هي $-8$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$B = -2 \\times 1 \\times (1 + 3)$",
+          "$B = -2 \\times 1 \\times 4$",
+          "$B = -2 \\times 4$",
+          "$B = -8$"
+        ],
+        "result": "B = -8"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل المساواة $A = B$ صحيحة من أجل كل $x$ ؟ علّل جوابك.",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي تريد إثباته بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب قيمة العبارتين من أجل قيمة مناسبة ثم قارن النتيجتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب القيمتين صراحةً ثم الخلاصة في جملة واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمتان $4$ و $-8$ مختلفتان، إذن $x = 1$ مثال مضاد: المساواة $A = B$ غير صحيحة.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $x = 1$ : $A = 6 \\times 1 - 2 \\times 1^2 = 4$ و $B = -2 \\times 1 \\times (1 + 3) = -8$ .",
+          "القيمتان $4$ و $-8$ مختلفتان، إذن $x = 1$ مثال مضاد: المساواة $A = B$ غير صحيحة."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "statement": "احسب قيمة $A$ من أجل $x = -1$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "-8",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-QIMA-SIGN-LOST"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = -1$ هي $-8$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$A = 6 \\times (-1) - 2 \\times (-1)^2$",
+          "$A = 6 \\times (-1) - 2 \\times 1$",
+          "$A = -6 - 2$",
+          "$A = -8$"
+        ],
+        "result": "A = -8"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "احسب قيمة $B$ من أجل $x = -1$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "4",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = -1$ هي $4$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$B = -2 \\times (-1) \\times (-1 + 3)$",
+          "$B = -2 \\times (-1) \\times 2$",
+          "$B = 2 \\times 2$",
+          "$B = 4$"
+        ],
+        "result": "B = 4"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "لاحظ تلميذ أنّ $A$ و $B$ تساويان $0$ من أجل $x = 0$ فقال: المساواة صحيحة. هل هو على حق؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم: العبارتان لهما القيمة نفسها",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QIMA-ONE-VALUE"
+        },
+        {
+          "id": "B",
+          "content": "لا: قيمة متساوية واحدة لا تكفي، وقد رأينا أنّهما تختلفان من أجل $x = 1$",
+          "isCorrect": true
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن القيمتين اللتين حسبتهما: هل اختلفتا عند قيمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قيمة واحدة تختلف عندها العبارتان تكفي لإثبات أنهما غير متساويتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أمّا تساوي القيمتين من أجل قيمة أو قيمتين فلا يثبت التساوي: لإثباته ننشر ونقارن الشكلين."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب الصحيح: لا: قيمة متساوية واحدة لا تكفي، وقد رأينا أنّهما تختلفان من أجل $x = 1$",
+        "incorrect": "قيمة مختلفة تكفي لإثبات عدم التساوي، أمّا القيم المتساوية فلا تكفي لإثبات التساوي."
+      },
+      "solution": {
+        "lines": [
+          "لا: قيمة متساوية واحدة لا تكفي، وقد رأينا أنّهما تختلفان من أجل $x = 1$"
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

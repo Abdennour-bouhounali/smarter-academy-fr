@@ -1,0 +1,283 @@
+{
+  "id": "ex-2am-silsila-bi-aqwas-l5-004",
+  "lessonCode": "silsila-bi-aqwas",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مخبزة الحيّ",
+    "estimatedMinutes": 18,
+    "tags": [
+      "أقواس",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "باع مخبز 12 قطعة حلوى بسعر 20 دج للقطعة و 8 قطع بسعر 25 دج للقطعة، ثم تقاسم أربعة عمّال المبلغ كلّه بالتساوي."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ سلسلة عمليات تعطي نصيب كلّ عامل؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(12 \\times 20 + 8 \\times 25) \\div 4$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$(12 \\times 20 + 8) \\times 25 \\div 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-MISPLACED"
+        },
+        {
+          "id": "C",
+          "content": "$12 \\times 20 + 8 \\times 25 \\div 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-IGNORED"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: أيّ مقدار يجب حسابه كلّه قبل غيره؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع بين قوسين المقدار الذي يُحسب أوّلًا، ثم اختبر كل سلسلة بالحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "$(12 \\times 20 + 8 \\times 25) \\div 4 = 110$ .",
+        "incorrect": "اكتب جمل القصة بعمليات بالترتيب نفسه، وضع بين قوسين ما يجب حسابه أوّلًا، ثم اختبر السلسلة بعدد تقريبي."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة الصحيحة: $(12 \\times 20 + 8 \\times 25) \\div 4$",
+          "$A = (240 + 200) \\div 4$",
+          "$A = 440 \\div 4$",
+          "$A = 110$"
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم دينارًا ينال كلّ عامل؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار الجزائري",
+      "expectedAnswer": "110",
+      "misconceptionSignatures": [
+        {
+          "value": "290",
+          "id": "MISC-AQWAS-IGNORED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: كل جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل جملة بعملية، وضع بين قوسين ما يجب حسابه أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب بالترتيب الصحيح: القوسان أوّلًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$(12 \\times 20 + 8 \\times 25) \\div 4 = 110$ .",
+        "incorrect": "نترجم القصة بسلسلة عمليات فيها الأقواس اللازمة ثم نحسب: ما بين القوسين أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $(12 \\times 20 + 8 \\times 25) \\div 4$",
+          "$A = (240 + 200) \\div 4$",
+          "$A = 440 \\div 4$",
+          "$A = 110$"
+        ],
+        "result": "110 \\text{ DA }"
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "لو تقاسم المبلغ نفسه 5 عمّال، فكم دينارًا ينال كلّ عامل؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار الجزائري",
+      "expectedAnswer": "88",
+      "misconceptionSignatures": [
+        {
+          "value": "280",
+          "id": "MISC-AQWAS-IGNORED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: كل جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل جملة بعملية، وضع بين قوسين ما يجب حسابه أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب بالترتيب الصحيح: القوسان أوّلًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$(12 \\times 20 + 8 \\times 25) \\div 5 = 88$ .",
+        "incorrect": "نترجم القصة بسلسلة عمليات فيها الأقواس اللازمة ثم نحسب: ما بين القوسين أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $(12 \\times 20 + 8 \\times 25) \\div 5$",
+          "$A = (240 + 200) \\div 5$",
+          "$A = 440 \\div 5$",
+          "$A = 88$"
+        ],
+        "result": "88 \\text{ DA }"
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "هل يكفي نصيب العامل في الحالة الثانية لشراء كتاب ثمنه $100$ دج؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النتيجتين بدقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كل عبارة بالترتيب الصحيح قبل أن تحكم."
+        }
+      ],
+      "feedback": {
+        "correct": "تحقّقت من ذلك بالحساب.",
+        "incorrect": "احسب كل عبارة مرحلة مرحلة وقارن النتيجتين قبل أن تحكم."
+      },
+      "solution": {
+        "lines": [
+          "$(12 \\times 20 + 8 \\times 25) \\div 5 = 88$",
+          "$88 < 100$"
+        ]
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "حجز زميل اللمسات $12 \\times 20 + 8 \\times 25 \\div 4 =$ فظهر $290$ . بيّن خطأه وصحّح الحساب.",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب على ورقتك مرحلة مرحلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اسأل: أيّ عملية تُنجز أوّلًا ولماذا؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تذكر القاعدة المستعملة."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$12 \\times 20 + 8 \\times 25 \\div 4 = 290$ : لم تُراعَ الأقواس فحُسب ما لا يجب حسابه أوّلًا.",
+          "الصحيح: $(12 \\times 20 + 8 \\times 25) \\div 4 = 110$ لأنّ القوسين يُحسبان قبل القسمة أو الضرب."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,335 @@
+{
+  "id": "ex-2am-ibara-harfiya-intaj-l5-001",
+  "lessonCode": "ibara-harfiya-intaj",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — قطعة أرض من مستطيل ومثلّث",
+    "estimatedMinutes": 7,
+    "tags": [
+      "وضعيّة إدماجيّة",
+      "مساحة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 2,
+      "file": "2am-s2-50",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يملك فلّاح قطعة الأرض الممثّلة في الشكل المقابل ، وهي مؤلّفة من مستطيل ومثلّث قائم. الأطوال بالمتر.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          12,
+          0
+        ],
+        "C": [
+          12,
+          5
+        ],
+        "D": [
+          0,
+          5
+        ],
+        "E": [
+          8.4,
+          5
+        ],
+        "G": [
+          12,
+          7.2
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "80"
+        },
+        {
+          "from": "B",
+          "to": "C"
+        },
+        {
+          "from": "C",
+          "to": "D"
+        },
+        {
+          "from": "D",
+          "to": "A",
+          "label": "x"
+        },
+        {
+          "from": "E",
+          "to": "C",
+          "label": "24"
+        },
+        {
+          "from": "C",
+          "to": "G",
+          "label": "10"
+        },
+        {
+          "from": "E",
+          "to": "G"
+        }
+      ],
+      "rightAngles": [
+        [
+          "E",
+          "C",
+          "G"
+        ]
+      ],
+      "polygons": [
+        {
+          "points": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "tone": "sky"
+        },
+        {
+          "points": [
+            "E",
+            "C",
+            "G"
+          ],
+          "tone": "emerald"
+        }
+      ],
+      "ariaLabel": "قطعة أرض مؤلّفة من مستطيل ABCD طوله 80 وعرضه x ومثلّث قائم ECG فوقه ضلعاه القائمان 24 و 10",
+      "maxWidth": 340,
+      "caption": "(الأطوال غير حقيقية)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "مساحة الجزء المثلّثيّ هي نصف جداء ضلعيه القائمين. احسب بالمتر المربّع : $T = \\dfrac{24 \\times 10}{2}$ .",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "120",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بالقيمة المعطاة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ احترم أولويّة العمليّات : الضرب قبل الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة قبل أن تجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$T = 120$ .",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ أعد الحساب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{24 \\times 10}{2} = 120$ ."
+        ],
+        "result": "120"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "ما مساحة قطعة الأرض كلّها بالمتر المربّع بدلالة $x$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$200x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-PERCELL"
+        },
+        {
+          "id": "B",
+          "content": "$80x + 120$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$80x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-NOFIRST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعيّة وحدّد ما يتغيّر (الحرف) وما يبقى ثابتًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ خيار بقيمة بسيطة للحرف ثمّ قارن بالعدّ المباشر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاعدة الصحيحة تعطي العدد نفسه الذي تجده بالعدّ في كلّ مرّة تجرّبها."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتابة الصحيحة هي $80x + 120$ .",
+        "incorrect": "جرّب كلّ خيار على قيمة بسيطة للحرف وقارن بالعدّ المباشر قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "$80x + 120$ : مساحة المستطيل $80x$ ومساحة المثلّث $120$ ، ونجمعهما.",
+          "عند $x = 3$ : $80 \\times 3 + 120 = 360$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "إذا كان $x = 25$ m ، فما مساحة قطعة الأرض ؟ احسب $S = 80x + 120$ .",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "2120",
+      "misconceptionSignatures": [
+        {
+          "value": "8145",
+          "id": "MISC-IBARA2-JUXTA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بالقيمة المعطاة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ احترم أولويّة العمليّات : الضرب قبل الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة قبل أن تجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = 2120$ .",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ أعد الحساب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$80 \\times 25 + 120 = 2120$ ."
+        ],
+        "result": "2120"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "تشترط البلديّة أن تكون مساحة الأرض أقلّ من $2200\\ \\mathrm{m}^{2}$ . هل تحقّق الأرض هذا الشرط ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب كلّ عبارة بالقيمة المعطاة وحدها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات في كلّ حساب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن العددين الناتجين."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم : الشرط محقّق.",
+        "incorrect": "احسب كلّ عبارة من أجل القيمة المعطاة ثمّ قارن العددين."
+      },
+      "solution": {
+        "lines": [
+          "$80 \\times 25 + 120 = 2120$ .",
+          "الشرط محقّق."
+        ]
+      },
+      "timeSeconds": 70
+    }
+  ]
+}

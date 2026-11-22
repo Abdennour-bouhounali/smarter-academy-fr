@@ -1,0 +1,381 @@
+{
+  "id": "ex-4am-hasiba-muthallathiya-l5-002",
+  "lessonCode": "hasiba-muthallathiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2008 — ذراع رافعة في ورشة بناء",
+    "estimatedMinutes": 24,
+    "tags": [
+      "وضعية إدماجية",
+      "الجيب",
+      "جيب التمام",
+      "اللمسات العكسية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_hasiba-muthallathiya_P2",
+      "modelledOn": "BEM 2008 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2008",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في ورشة بناء بوهران، رافعة ذراعها $[OP]$ طوله $30\\,\\mathrm{m}$ ، يدور حول النقطة $O$ الواقعة على ارتفاع $24\\,\\mathrm{m}$ من الأرض، ويمكن رفعه أو خفضه. لوضع حمولة على سطح عمارة يجب أن يكون رأس الذراع $P$ على ارتفاع $45\\,\\mathrm{m}$ من الأرض. في الشكل المقابل، $H$ نقطة في مستوى $O$ تقع تحت $P$ مباشرة، فيكون $PH = 21\\,\\mathrm{m}$ ، و $\\alpha$ قيس الزاوية $\\widehat{POH}$ . ويتعاون عمال الورشة ويلتزمون قواعد السلامة.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "H": [
+          21.4243,
+          0
+        ],
+        "P": [
+          21.4243,
+          21
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "P",
+          "label": "30 m"
+        },
+        {
+          "from": "H",
+          "to": "P",
+          "label": "21 m"
+        },
+        [
+          "O",
+          "H"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "O",
+          "H",
+          "P"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "O",
+          "from": "H",
+          "to": "P",
+          "label": "α"
+        }
+      ],
+      "ariaLabel": "ذراع الرافعة OP طوله 30 m، و H في مستوى O تحت P حيث PH يساوي 21 m، والزاوية α عند O",
+      "maxWidth": 280
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $\\alpha$ بالتدوير إلى الوحدة من الدرجة.",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيس الزاوية بالدرجة، مدوّرا إلى الوحدة",
+      "expectedAnswer": "44",
+      "misconceptionSignatures": [
+        {
+          "value": "46",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "1",
+          "id": "MISC-MUTH-HASIBA-RAD"
+        },
+        {
+          "value": "0",
+          "id": "MISC-MUTH-AKS-BADAL-MUBASHIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $OHP$ قائم في $H$ : الذراع هو الوتر و $[PH]$ يقابل الزاوية $\\alpha$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اللمسة العكسية: ⁦2nd⁩ ثم ⁦sin⁻¹⁩ ثم النسبة ثم ⁦=⁩."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الحرف ⁦D⁩ (الدرجة)، ثم دوّر إلى الوحدة: انظر إلى الرقم الموالي للرقم الأخير الذي تحتفظ به."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\alpha \\approx 44{,}427004^{\\circ} \\approx 44^{\\circ}$ .",
+        "incorrect": "النسبة ليست القيس: القيس يُعيَّن باللمسة العكسية المناسبة والحاسبة مبرمجة بالدرجة، ثم يُدوَّر (لا يُبتر) إلى الوحدة."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $OHP$ القائم في $H$ : $\\sin\\alpha = \\dfrac{PH}{OP} = \\dfrac{21}{30}$",
+          "باستعمال الحاسبة المبرمجة بالدرجة: ⁦ON 2nd sin⁻¹ ( 21 ÷ 30 ) =⁩ يظهر على الشاشة $44{,}427004$ .",
+          "الرقم الذي يلي رقم الوحدات هو 4، وهو أصغر من 5: نُبقي رقم الوحدات كما هو."
+        ],
+        "result": "\\alpha \\approx 44^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب المسافة الأفقية $OH$ بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m مدوّرا إلى 0,1",
+      "expectedAnswer": "21.4",
+      "misconceptionSignatures": [
+        {
+          "value": "21.6",
+          "id": "MISC-MUTH-TADWIR-MUBAKKIR"
+        },
+        {
+          "value": "42.0",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$[OH]$ يجاور الزاوية $\\alpha$ والذراع هو الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل $\\cos\\alpha$ بالقيمة غير المدوّرة لـ $\\alpha$ (أو خاصية فيثاغورس)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تدوّر إلا النتيجة النهائية."
+        }
+      ],
+      "feedback": {
+        "correct": "$OH = 30 \\times \\cos\\alpha \\approx 21{,}42428529 \\approx 21{,}4\\,\\mathrm{m}$ .",
+        "incorrect": "المسافة الأفقية في بسط جيب التمام: نضرب طول الذراع في $\\cos\\alpha$ بكل أرقام الشاشة."
+      },
+      "solution": {
+        "lines": [
+          "$\\cos\\alpha = \\dfrac{OH}{OP}$ ومنه $OH = 30 \\times \\cos\\alpha$",
+          "بكل أرقام الشاشة: $OH \\approx 21{,}42428529$",
+          "(أو بخاصية فيثاغورس: $OH = \\sqrt{30^2 - 21^2} = \\sqrt{459}$ )."
+        ],
+        "result": "OH \\approx 21{,}4\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "lead": "مركز سطح العمارة على مسافة أفقية $24\\,\\mathrm{m}$ من $O$ . يُخفض الذراع حتى تصير المسافة الأفقية بين $O$ ورأسه $24\\,\\mathrm{m}$ .",
+      "statement": "احسب القيس الجديد $\\alpha'$ بالتدوير إلى الوحدة من الدرجة.",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيس الزاوية بالدرجة، مدوّرا إلى الوحدة",
+      "expectedAnswer": "37",
+      "misconceptionSignatures": [
+        {
+          "value": "36",
+          "id": "MISC-MUTH-TADWIR-BATR"
+        },
+        {
+          "value": "53",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "1",
+          "id": "MISC-MUTH-HASIBA-RAD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الذراع ما زال وترا طوله $30\\,\\mathrm{m}$ ، والمسافة الأفقية الجديدة تجاور الزاوية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اللمسة العكسية: ⁦2nd⁩ ثم ⁦cos⁻¹⁩ ثم النسبة ثم ⁦=⁩."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الحرف ⁦D⁩ (الدرجة)، ثم دوّر إلى الوحدة: انظر إلى الرقم الموالي للرقم الأخير الذي تحتفظ به."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\alpha' \\approx 36{,}86989765^{\\circ} \\approx 37^{\\circ}$ .",
+        "incorrect": "النسبة ليست القيس: القيس يُعيَّن باللمسة العكسية المناسبة والحاسبة مبرمجة بالدرجة، ثم يُدوَّر (لا يُبتر) إلى الوحدة."
+      },
+      "solution": {
+        "lines": [
+          "$\\cos\\alpha' = \\dfrac{24}{30} = 0{,}8$",
+          "باستعمال الحاسبة المبرمجة بالدرجة: ⁦ON 2nd cos⁻¹ ( 24 ÷ 30 ) =⁩ يظهر على الشاشة $36{,}86989765$ .",
+          "الرقم الذي يلي رقم الوحدات هو 8، وهو أكبر من 5: نضيف 1 إلى رقم الوحدات."
+        ],
+        "result": "\\alpha' \\approx 37^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "احسب ارتفاع رأس الذراع عن الأرض في هذه الوضعية بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m مدوّرا إلى 0,1",
+      "expectedAnswer": "42.0",
+      "misconceptionSignatures": [
+        {
+          "value": "42.1",
+          "id": "MISC-MUTH-TADWIR-MUBAKKIR"
+        },
+        {
+          "value": "18.0",
+          "id": "MISC-MUTH-IRTIFA3-AYN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارتفاع الرأس فوق مستوى $O$ يقابل الزاوية $\\alpha'$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تنسَ أن $O$ على ارتفاع $24\\,\\mathrm{m}$ من الأرض."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل $\\sin\\alpha'$ بكل أرقام الشاشة، لا القيس المدوّر."
+        }
+      ],
+      "feedback": {
+        "correct": "$z = 24 + 30 \\times \\sin\\alpha' = 24 + 18 \\approx 42{,}0\\,\\mathrm{m}$ .",
+        "incorrect": "أضف إلى ارتفاع $O$ الارتفاع فوق مستواه ( $30 \\times \\sin\\alpha'$ ) محسوبا بالقيمة غير المدوّرة."
+      },
+      "solution": {
+        "lines": [
+          "الارتفاع فوق مستوى $O$ : $30 \\times \\sin\\alpha'$ (أو $\\sqrt{30^2 - 24^2} = 18$ )",
+          "$z = 24 + 18$",
+          "(بالقيس المدوّر $37^{\\circ}$ نجد $42{,}05445069$ : تدوير مبكّر.)"
+        ],
+        "result": "z \\approx 42{,}0\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "هل يمكن وضع الحمولة على مركز سطح العمارة (الرأس على ارتفاع $45\\,\\mathrm{m}$ )؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-IRTIFA3-AYN"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الارتفاع الذي يبلغه الرأس عندما تكون المسافة الأفقية $24\\,\\mathrm{m}$ بالارتفاع المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "على مسافة أفقية $24\\,\\mathrm{m}$ لا يبلغ الرأس إلا $42\\,\\mathrm{m}$ تقريبا، وهو أقل من $45\\,\\mathrm{m}$ .",
+        "incorrect": "قارن الارتفاع الذي يبلغه الرأس على المسافة المطلوبة بـ $45\\,\\mathrm{m}$ ."
+      },
+      "solution": {
+        "lines": [
+          "عندما تكون المسافة الأفقية $24\\,\\mathrm{m}$ يكون الرأس على ارتفاع $42\\,\\mathrm{m}$ تقريبا.",
+          "$42 < 45$ : لا يمكن وضع الحمولة على مركز السطح؛ يجب تقريب الرافعة من العمارة."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

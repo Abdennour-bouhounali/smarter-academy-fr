@@ -1,0 +1,335 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-judhur-l5-010",
+  "lessonCode": "wadiya-idmajiya-judhur",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2008 — أعلام عيد الاستقلال",
+    "estimatedMinutes": 20,
+    "tags": [
+      "المعادلة x² = a",
+      "نسبة مقامها ناطق",
+      "a√2",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-judhur_P1",
+      "modelledOn": "BEM 2008 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2008",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "بمناسبة عيد الاستقلال (5 جويلية)، تريد بلدية خياطة أعلام وطنية مستطيلة الشكل، عرض كل علم يساوي ثلثي $\\left(\\dfrac{2}{3}\\right)$ طوله."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "علم من النوع الأول مساحته $6m^2$ .",
+      "statement": "احسب طول هذا العلم.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بالمتر (m)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-JIDHR-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "إذا كان $L$ الطول فإن المساحة $L \\times \\dfrac{2}{3}L = \\dfrac{2}{3}L^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حل المعادلة $\\dfrac{2}{3}L^2 = 6$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$L^2 = 6 \\times \\dfrac{3}{2} = 9$ ، و $L > 0$ ، إذن $L = 3m$ .",
+        "incorrect": "عبّر عن المساحة بدلالة الطول وحده، اعزل $L^2$ ، ثم خذ الحل الموجب."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2}{3}L^2 = 6$ يعني $L^2 = 9$",
+          "و $L > 0$ إذن $L = 3$"
+        ],
+        "result": "L = 3m"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب عرض هذا العلم.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: العرض بالمتر (m)",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العرض ثلثا الطول."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2}{3} \\times 3 = 2m$",
+        "incorrect": "اضرب الطول في $\\dfrac{2}{3}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\ell = \\dfrac{2}{3} \\times 3$"
+        ],
+        "result": "\\ell = 2m"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "علم من النوع الثاني مساحته $3m^2$ .",
+      "statement": "بيّن أن طوله $L$ يحقق: $L^2 = \\dfrac{9}{2}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المساحة بدلالة $L$ كما في السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك سطرًا بسطر بالحل النموذجي."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2}{3}L^2 = 3$",
+          "$L^2 = 3 \\times \\dfrac{3}{2}$"
+        ],
+        "result": "L^2 = \\dfrac{9}{2}"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "بيّن أن $L = \\dfrac{3}{\\sqrt{2}}$ ، ثم اكتبه على شكل نسبة مقامها عدد ناطق.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "النتيجة على الشكل $\\dfrac{a\\sqrt{2}}{2}$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-JIDHR-MURABBA-MANSI"
+        },
+        {
+          "value": "6",
+          "id": "MISC-MAQAM-DUN-BAST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\sqrt{\\dfrac{9}{2}} = \\dfrac{\\sqrt{9}}{\\sqrt{2}}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب البسط والمقام في $\\sqrt{2}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$L = \\dfrac{3}{\\sqrt{2}} = \\dfrac{3\\sqrt{2}}{2}\\,m$",
+        "incorrect": "جذر الكسر هو جذر البسط على جذر المقام، ثم اضرب البسط والمقام في $\\sqrt{2}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$L^2 = \\dfrac{9}{2}$ و $L > 0$ يعني $L = \\sqrt{\\dfrac{9}{2}} = \\dfrac{\\sqrt{9}}{\\sqrt{2}} = \\dfrac{3}{\\sqrt{2}}$",
+          "$L = \\dfrac{3 \\times \\sqrt{2}}{\\sqrt{2} \\times \\sqrt{2}}$"
+        ],
+        "result": "L = \\dfrac{3\\sqrt{2}}{2}\\,m"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ج",
+      "statement": "استنتج عرضه $\\ell$ على الشكل $a\\sqrt{2}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-MAQAM-DUN-BAST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\ell = \\dfrac{2}{3}L$ ، ثم بسّط."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\ell = \\dfrac{2}{3} \\times \\dfrac{3\\sqrt{2}}{2} = \\sqrt{2}\\,m$",
+        "incorrect": "اضرب $L$ في $\\dfrac{2}{3}$ ثم اختزل."
+      },
+      "solution": {
+        "lines": [
+          "$\\ell = \\dfrac{2}{3} \\times \\dfrac{3\\sqrt{2}}{2} = \\dfrac{6\\sqrt{2}}{6}$"
+        ],
+        "result": "\\ell = \\sqrt{2}\\,m"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ا",
+      "statement": "اكتب محيط العلم الثاني على الشكل $a\\sqrt{2}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-MAQAM-DUN-BAST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المحيط $2(L + \\ell)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\dfrac{3\\sqrt{2}}{2} \\times 2 = 3\\sqrt{2}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$2\\left(\\dfrac{3\\sqrt{2}}{2} + \\sqrt{2}\\right) = 3\\sqrt{2} + 2\\sqrt{2} = 5\\sqrt{2}\\,m$",
+        "incorrect": "اضرب مجموع الطول و العرض في 2، ثم اجمع معاملات $\\sqrt{2}$ ."
+      },
+      "solution": {
+        "lines": [
+          "المحيط: $2L + 2\\ell = 3\\sqrt{2} + 2\\sqrt{2}$"
+        ],
+        "result": "5\\sqrt{2}\\,m"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "statement": "☜ تُخاط على حواف كل علم من النوع الثاني شريط ثمن المتر منه 120DA، و يُحسب طوله بالمحيط المدوّر إلى $1cm$ بالزيادة. احسب ثمن الشريط اللازم لخياطة 40 علمًا من هذا النوع.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري أو طبيعي: الثمن بـ DA",
+      "expectedAnswer": "33984",
+      "misconceptionSignatures": [
+        {
+          "value": "33600",
+          "id": "MISC-WADIYA-TADWIR-MUBAKKIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب قيمة مقربة لـ $5\\sqrt{2}$ ثم دوّرها إلى $0{,}01m$ بالزيادة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب في عدد الأعلام ثم في ثمن المتر."
+        }
+      ],
+      "feedback": {
+        "correct": "$5\\sqrt{2} \\approx 7{,}0711m$ ، نأخذ $7{,}08m$ ، و $40 \\times 7{,}08 \\times 120 = 33984DA$ .",
+        "incorrect": "دوّر المحيط إلى السنتيمتر بالزيادة (لا يكفي شريط أقصر من المحيط)، ثم اضرب."
+      },
+      "solution": {
+        "lines": [
+          "$5\\sqrt{2} \\approx 7{,}0711m$ ، نأخذ $7{,}08m$ لكل علم.",
+          "طول الشريط: $40 \\times 7{,}08 = 283{,}2m$",
+          "الثمن: $283{,}2 \\times 120$"
+        ],
+        "result": "33984DA"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

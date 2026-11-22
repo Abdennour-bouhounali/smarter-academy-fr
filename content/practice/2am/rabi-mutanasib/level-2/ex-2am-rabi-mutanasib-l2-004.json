@@ -1,0 +1,190 @@
+{
+  "id": "ex-2am-rabi-mutanasib-l2-004",
+  "lessonCode": "rabi-mutanasib",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — ثمن القماش",
+    "estimatedMinutes": 8,
+    "tags": [
+      "الرابع المتناسب",
+      "أعداد عشرية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ثمن $2{,}5$ m من قماش الستائر هو $400$ DA. الثمن يتناسب مع الطول."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما ثمن المتر الواحد؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "160",
+      "misconceptionSignatures": [
+        {
+          "value": "1000",
+          "id": "MISC-RABI-MULROW"
+        },
+        {
+          "value": "0,00625",
+          "id": "MISC-RABI-INV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب أولًا: قيمة الوحدة الواحدة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قيمة الوحدة الواحدة تُحسب بقسمة العدد الموجود في السطر الثاني على مقابله في السطر الأول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد ذلك اضرب قيمة الوحدة في الكمية المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن المتر الواحد $160$ DA .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$400 \\div 2{,}5 = 160$"
+        ],
+        "result": "160"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما ثمن $6$ m؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "960",
+      "misconceptionSignatures": [
+        {
+          "value": "403,5",
+          "id": "MISC-RABI-ADD"
+        },
+        {
+          "value": "160",
+          "id": "MISC-RABI-UNITONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب أولًا: قيمة الوحدة الواحدة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قيمة الوحدة الواحدة تُحسب بقسمة العدد الموجود في السطر الثاني على مقابله في السطر الأول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد ذلك اضرب قيمة الوحدة في الكمية المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "الثمن $960$ DA .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$160 \\times 6 = 960$"
+        ],
+        "result": "960"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما طول القماش الذي ثمنه $1280$ DA؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "204800",
+          "id": "MISC-RABI-INV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "الطول $8$ m .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$1280 \\div 160 = 8$"
+        ],
+        "result": "8"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

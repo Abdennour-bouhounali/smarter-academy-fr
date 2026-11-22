@@ -1,0 +1,193 @@
+{
+  "id": "ex-2am-hall-mushkil-muadala-l4-006",
+  "lessonCode": "hall-mushkil-muadala",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — غرس أشجار",
+    "estimatedMinutes": 6,
+    "tags": [
+      "معادلة",
+      "عمليّتان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تضيف مدرسة $6$ أشجار إلى $x$ شجرة غرستها، ثمّ توزّع المجموع بالتساوي على $4$ صفوف، فيكون في كلّ صفّ $9$ شجرات. المعادلة : $\\dfrac{x+6}{4}=9$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نريد حلّ $\\dfrac{x+6}{4}=9$ . ما المعادلة التي نحصل عليها بعد إلغاء آخر عملية أُجريت على المجهول ؟",
+      "learningPoints": [
+        {
+          "code": "2am_hall-mushkil-muadala_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x+6=2{,}25$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$x+6=36$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{x}{4}=3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAJHUL-UNDOFIRST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد آخر عملية أُجريت على المجهول في الطرف الأيسر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ألغِ تلك العملية أوّلًا بالعملية العكسية، وطبّقها على العدد الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر الخيار بالحلّ المتوقّع : هل يحقّق المعادلة الجديدة ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "نحصل على $x+6=36$ .",
+        "incorrect": "ألغِ آخر عملية أوّلًا : إن كانت جمعًا فاطرح، وإن كانت قسمة فاضرب."
+      },
+      "solution": {
+        "lines": [
+          "$x+6=36$ : ألغينا آخر عملية بعكسها.",
+          "ثمّ نحلّ المعادلة الجديدة بعملية واحدة."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حلّ المعادلة : $\\dfrac{x+6}{4}=9$ .",
+      "learningPoints": [
+        {
+          "code": "2am_hall-mushkil-muadala_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-MAJHUL-UNDOFIRST"
+        },
+        {
+          "value": "3",
+          "id": "MISC-MAJHUL-SUBFORM"
+        },
+        {
+          "value": "42",
+          "id": "MISC-MAJHUL-ADDFORM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في المعادلة ما يُفعل بالمجهول : ضرب أو قسمة أو جمع أو طرح، وما هي آخر عملية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ألغِ آخر عملية أُجريت على المجهول أوّلًا، ثمّ ألغِ ما بقي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من حلّك : عوّض المجهول بقيمته وأنجز العملية، فإن وجدت الطرف الآخر فالحلّ صحيح."
+        }
+      ],
+      "feedback": {
+        "correct": "$x=30$ .",
+        "incorrect": "ابحث عن العدد الذي يجعل المساواة صحيحة بالعملية العكسية، ثمّ تحقّق منه بإنجاز العملية."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية هي $\\div 4$ : $x+6=9\\times 4=36$ .",
+          "$x=36-6=30$ .",
+          "التحقّق : $(30+6)\\div 4=9$ ."
+        ],
+        "result": "30"
+      },
+      "work": "optional",
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "تحقّق : احسب $\\dfrac{x+6}{4}$ من أجل قيمة $x$ التي وجدتها.",
+      "learningPoints": [
+        {
+          "code": "2am_hall-mushkil-muadala_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بقيمته المعلومة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات : الضرب والقسمة قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة."
+        }
+      ],
+      "feedback": {
+        "correct": "النتيجة $9$ .",
+        "incorrect": "عوّض بالقيم المعلومة واحسب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$(30+6)\\div4=9$ ."
+        ],
+        "result": "9"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

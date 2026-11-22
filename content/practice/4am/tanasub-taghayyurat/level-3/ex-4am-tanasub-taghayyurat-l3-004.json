@@ -1,0 +1,173 @@
+{
+  "id": "ex-4am-tanasub-taghayyurat-l3-004",
+  "lessonCode": "tanasub-taghayyurat",
+  "level": 3,
+  "metadata": {
+    "title": "تعيين دالة تآلفية بجملة معادلتين",
+    "estimatedMinutes": 8,
+    "tags": [
+      "جملة معادلتين",
+      "تعيين دالة تآلفية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tanasub-taghayyurat_P2",
+      "modelledOn": "act-4",
+      "adaptedFrom": "ex-4am-tanasub-taghayyurat-l3-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$f$ دالة تآلفية عبارتها $f(x) = ax + b$ حيث: $f(3) = 11$ و $f(5) = 17$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن الثنائية $(a ; b)$ حلّ للجملة: $\\begin{cases} 3a + b = 11 \\\\ 5a + b = 17 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $f(3)$ و $f(5)$ بدلالة $a$ و $b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض في المساواتين $f(3) = 11$ و $f(5) = 17$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "$f(3) = a \\times 3 + b = 3a + b$ و $f(3) = 11$ ، إذن: $3a + b = 11$",
+          "$f(5) = a \\times 5 + b = 5a + b$ و $f(5) = 17$ ، إذن: $5a + b = 17$",
+          "ومنه الثنائية $(a ; b)$ حلّ للجملة."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حلّ هذه الجملة، ثم استنتج العبارة الجبرية للدالة $f$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(a ; b)$ : المعامل $a$ ثم العدد $b$ (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": {
+        "x": "3",
+        "y": "2"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "2",
+            "y": "3"
+          },
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح المعادلة الأولى من الثانية: يختفي $b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد إيجاد $a$ ، عوّض في المعادلة الأولى لتجد $b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$2a = 6$ ثم $b = 11 - 3a$ .",
+        "incorrect": "اطرح المعادلتين طرفا لطرف ليختفي $b$ ، ثم اكتب $a$ أولا و $b$ ثانيا."
+      },
+      "solution": {
+        "lines": [
+          "بطرح المعادلة الأولى من الثانية: $(5a + b) - (3a + b) = 17 - 11$",
+          "$2a = 6$ ، إذن $a = 3$",
+          "بالتعويض في المعادلة الأولى: $3 \\times 3 + b = 11$ ، إذن $b = 2$",
+          "ومنه: $f(x) = 3x + 2$"
+        ],
+        "result": "(a ; b) = (3 ; 2)"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب $f(-2)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "value": "-6",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد $-2$ في عبارة $f(x)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب أولا في المعامل، ثم أضف الحدّ الثابت بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(-2) = -6 + 2 = -4$ .",
+        "incorrect": "اضرب العدد في المعامل ثم أضف الحدّ الثابت بإشارته، ولا تنسه."
+      },
+      "solution": {
+        "lines": [
+          "$f(-2) = 3 \\times (-2) + 2$",
+          "$f(-2) = -6 + 2$",
+          "$f(-2) = -4$"
+        ],
+        "result": "f(-2) = -4"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

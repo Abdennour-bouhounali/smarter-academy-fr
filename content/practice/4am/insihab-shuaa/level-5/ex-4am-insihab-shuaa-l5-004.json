@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-insihab-shuaa-l5-004",
+  "lessonCode": "insihab-shuaa",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — التلفريك",
+    "estimatedMinutes": 3,
+    "tags": [
+      "تساوي شعاعين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_insihab-shuaa_P3",
+      "modelledOn": "know-1"
+    }
+  },
+  "statement": {
+    "content": "في تلفريك قسنطينة الذي يصونه عمّاله بأمانة، عربتان على نفس الكابل المستقيم تتحركان في نفس الجهة، وكل منهما تقطع 200 m في الدقيقة الأولى: الأولى من A إلى B والثانية من C إلى D."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أي عبارة صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "4am_insihab-shuaa_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{AB}$ = $\\overrightarrow{CD}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{AB}$ = $\\overrightarrow{DC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        },
+        {
+          "id": "C",
+          "content": "لا يمكن أن يتساويا لأن A ≠ C",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MABDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن العناصر الثلاثة للشعاع: المنحى (المستقيم الحامل)، الاتجاه (من المبدأ نحو النهاية)، والطول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المنحى يخص المستقيمات: مستقيمان متوازيان لهما نفس المنحى؛ الاتجاه هو جهة السير عليه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن العناصر الثلاثة واحدا واحدا قبل أن تختار."
+        }
+      ],
+      "feedback": {
+        "correct": "نفس المنحى (الكابل)، نفس الاتجاه، نفس الطول (200 m): الشعاعان متساويان.",
+        "incorrect": "شعاعان متساويان لا يحتاجان نفس المبدأ."
+      },
+      "difficulty": 5,
+      "cognitiveDemand": "transfer"
+    }
+  ]
+}

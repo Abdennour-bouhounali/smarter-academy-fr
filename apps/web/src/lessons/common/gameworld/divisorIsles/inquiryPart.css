@@ -1,0 +1,59 @@
+/* THE INVESTIGATION `part` (InquiryPart.jsx) — ONE strip, the whole, a part painted in strokes, re-cut in a new unit. It
+   reuses the frame of the division screens (inquiry.css › .iq--div), the chain and the fraction template of `measure`
+   (inquiryMeasure.css). Shapes are the brand blue; the painted part is the light blue of the kit, the new cuts are drawn
+   over it (the paint never moves), what a plank leaves is amber — as everywhere in this world. SVG text is ≥ 18 units of
+   a 1000-wide scene; HTML text keeps the 12 px floor of the forge's zoom (--di-min-font). */
+.iq--part {
+  grid-template-rows: auto auto minmax(0, 1fr) auto auto auto auto;
+}
+
+/* the painted part: one stroke after the other (a second shade marks where a stroke starts) */
+.iq-part-paint {
+  fill: rgba(125, 252, 255, 0.62);
+  stroke: #7dfcff;
+  stroke-width: 1.5;
+  transform-box: fill-box;
+  transform-origin: left center;
+  animation: iq-part-stroke 0.45s ease-out backwards;
+}
+.iq-part-paint.is-alt {
+  fill: rgba(125, 252, 255, 0.42);
+}
+@keyframes iq-part-stroke {
+  from {
+    transform: scaleX(0);
+  }
+}
+/* where the painted part ends: it never moves */
+.iq-part-end {
+  stroke: #e8f6ff;
+  stroke-width: 3;
+  stroke-dasharray: 5 4;
+}
+.iq-scene text.iq-part-label {
+  font-size: 22px;
+  fill: #7dfcff;
+}
+
+/* a plank laid along the whole: outlined, so that the paint stays visible under it */
+.iq-part-plank {
+  fill: rgba(47, 125, 246, 0.28);
+  stroke: #2f7df6;
+  stroke-width: 2.5;
+}
+.iq-part-plank.is-alt {
+  fill: rgba(47, 125, 246, 0.14);
+  stroke: #7dfcff;
+}
+/* the new cuts once the strip is re-cut */
+.iq-part-cut {
+  fill: none;
+  stroke: #2f7df6;
+  stroke-width: 4;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iq-part-paint {
+    animation: none;
+  }
+}

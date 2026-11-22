@@ -1,0 +1,182 @@
+{
+  "id": "ex-1am-bahth-adad-naqisa-l3-005",
+  "lessonCode": "bahth-adad-naqisa",
+  "level": 3,
+  "metadata": {
+    "title": "برنامج حساب بخطوتين",
+    "estimatedMinutes": 8,
+    "tags": [
+      "برنامج حساب",
+      "عملية عكسية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-18",
+      "page": 84,
+      "section": "البحث عن أعداد ناقصة",
+      "number": 18
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "اخترتُ عددًا، ضربته في 4 ثمّ أضفتُ 7 إلى النتيجة، فوجدتُ 63."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما العدد الذي وجدتُه قبل أن أضيف 7؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "56",
+      "misconceptionSignatures": [
+        {
+          "value": "70",
+          "id": "MISC-NAQISA-SAMEOP"
+        },
+        {
+          "value": "-56",
+          "id": "MISC-NAQISA-REVSUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للجمع هي الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $56+7=63$ ، فالعدد الناقص هو $56$ .",
+        "incorrect": "في مجموع نطرح العدد المعلوم من الناتج: لا نجمع مرّة أخرى."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square+7=63$ .",
+          "نُرجع بالعملية العكسية: $\\square=63-7=56$ .",
+          "نتحقّق: $56+7=63$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما العدد الذي اخترته؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "value": "224",
+          "id": "MISC-NAQISA-MULAGAIN"
+        },
+        {
+          "value": "1/14",
+          "id": "MISC-NAQISA-DIVREV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للضرب هي القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $14\\times 4=56$ ، فالعدد الناقص هو $14$ .",
+        "incorrect": "في جداء نقسم الناتج على العدد المعلوم: لا نضربه فيه ولا نقسم المعلوم على الناتج."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square\\times 4=56$ .",
+          "نُرجع بالعملية العكسية: $\\square=56\\div 4=14$ .",
+          "نتحقّق: $14\\times 4=56$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "تحقّق: ابدأ بالعدد 14 واضربه في 4. ما النتيجة قبل أن نضيف 7؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "56",
+      "misconceptionSignatures": [],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تربط الأعداد المعطاة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب بالترتيب المناسب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن نتيجتك بالناتج المعلوم في الوضعية."
+        }
+      ],
+      "feedback": {
+        "correct": "$14\\times 4=56$ .",
+        "incorrect": "أعد الحساب بعناية."
+      },
+      "solution": {
+        "lines": [
+          "$14\\times 4=56$ ."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

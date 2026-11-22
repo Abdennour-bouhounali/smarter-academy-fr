@@ -1,0 +1,258 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-talis-l1-004",
+  "lessonCode": "wadiya-idmajiya-talis",
+  "level": 1,
+  "metadata": {
+    "title": "تدريج منتظم",
+    "estimatedMinutes": 6,
+    "tags": [
+      "تدريج منتظم",
+      "خاصية طالس"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 112,
+      "section": "الوضعيات",
+      "number": 4,
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-talis-l1-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل: القطعة $[AB]$ مقسّمة بتدريج منتظم إلى خمس قطع متقايسة، و $M$ النقطة الثالثة من $A$ . رُسمت من نقط التدريج مستقيمات موازية للمستقيم $(BC)$ ، و $N$ نقطة تقاطع الموازي المار بـ $M$ مع $[AC]$ ، حيث $BC = 7{,}5\\,\\mathrm{cm}$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0.0,
+          0.0
+        ],
+        "B": [
+          5.0,
+          0.0
+        ],
+        "C": [
+          7.0,
+          4.5
+        ],
+        "M": [
+          3.0,
+          0.0
+        ],
+        "N": [
+          4.2,
+          2.7
+        ],
+        "G1": [
+          1.0,
+          0.0
+        ],
+        "G2": [
+          2.0,
+          0.0
+        ],
+        "G4": [
+          4.0,
+          0.0
+        ],
+        "H1": [
+          1.4,
+          0.9
+        ],
+        "H2": [
+          2.8,
+          1.8
+        ],
+        "H4": [
+          5.6,
+          3.6
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "C"
+        ],
+        {
+          "from": "B",
+          "to": "C",
+          "label": "7,5",
+          "arrows": 1,
+          "bold": true
+        },
+        {
+          "from": "M",
+          "to": "N",
+          "arrows": 1,
+          "bold": true
+        },
+        {
+          "from": "G1",
+          "to": "H1",
+          "tone": "sky"
+        },
+        {
+          "from": "G2",
+          "to": "H2",
+          "tone": "sky"
+        },
+        {
+          "from": "G4",
+          "to": "H4",
+          "tone": "sky"
+        },
+        {
+          "from": "A",
+          "to": "G1",
+          "ticks": 1
+        },
+        {
+          "from": "G1",
+          "to": "G2",
+          "ticks": 1
+        },
+        {
+          "from": "G2",
+          "to": "M",
+          "ticks": 1
+        },
+        {
+          "from": "M",
+          "to": "G4",
+          "ticks": 1
+        },
+        {
+          "from": "G4",
+          "to": "B",
+          "ticks": 1
+        }
+      ],
+      "hidden": [
+        "G1",
+        "G2",
+        "G4",
+        "H1",
+        "H2",
+        "H4"
+      ],
+      "labels": {
+        "A": "w",
+        "B": "s",
+        "C": "n",
+        "M": "s",
+        "N": "nw"
+      },
+      "ariaLabel": "القطعة [AB] مقسمة بتدريج منتظم إلى خمس قطع متقايسة، M النقطة الثالثة من A، وموازيات للمستقيم (BC) تمر بنقاط التدريج وتقطع [AC]، و N نقطة تقاطع الموازي المار بـ M مع [AC]؛ BC = 7,5",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب النسبة $\\dfrac{AN}{AC}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "3/5",
+      "misconceptionSignatures": [
+        {
+          "value": "3/2",
+          "id": "MISC-TALIS-NISBA-JUZ-KULL"
+        },
+        {
+          "value": "5/3",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الموازيات المتساوية التباعد على $[AB]$ تقسم $[AC]$ أيضا إلى خمس قطع متقايسة، و $N$ على الموازي المار بـ $M$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $AN$ على $AC$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AN}{AC} = \\dfrac{3}{5}$ .",
+        "incorrect": "النسبة $\\dfrac{AN}{AC}$ : الطول $AN$ على الطول $AC$ ، وكلاهما من النقطة $A$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$(MN) \\parallel (BC)$ ، حسب خاصية طالس: $\\dfrac{AN}{AC} = \\dfrac{AM}{AB}$",
+          "$\\dfrac{AN}{AC} = \\dfrac{3}{5}$"
+        ],
+        "result": "\\dfrac{AN}{AC} = \\dfrac{3}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب الطول $MN$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "4,5",
+      "misconceptionSignatures": [
+        {
+          "value": "12.5",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "11.25",
+          "id": "MISC-TALIS-NISBA-JUZ-KULL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\dfrac{AM}{AB} = \\dfrac{MN}{BC}$ (خاصية طالس في المثلث $ABC$ )."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل النسبة التي حسبتها و $BC = 7{,}5\\,\\mathrm{cm}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$MN = \\dfrac{3}{5} \\times 7{,}5 = 4{,}5\\,\\mathrm{cm}$ .",
+        "incorrect": "في كل نسبة: طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "حسب خاصية طالس: $\\dfrac{AM}{AB} = \\dfrac{MN}{BC}$",
+          "$\\dfrac{3}{5} = \\dfrac{MN}{7{,}5}$",
+          "$MN = \\dfrac{3 \\times 7{,}5}{5}$"
+        ],
+        "result": "MN = 4{,}5\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

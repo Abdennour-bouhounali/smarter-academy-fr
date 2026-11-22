@@ -1,0 +1,202 @@
+{
+  "id": "ex-4am-mada-wasit-mutawassit-l4-004",
+  "lessonCode": "mada-wasit-mutawassit",
+  "level": 4,
+  "metadata": {
+    "title": "سلسلة وحيدة بثلاثة شروط",
+    "estimatedMinutes": 6,
+    "tags": [
+      "الوسيط",
+      "المدى",
+      "المتوسط"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-13",
+      "page": 99,
+      "section": "أوظّف تعلّماتي",
+      "number": 13,
+      "adaptedFrom": "ex-4am-mada-wasit-mutawassit-l5-001"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "عيّن كل السلاسل الإحصائية التي تكرارها الكلي 3 ووسيطها 13 ومداها 8 ومتوسطها يساوي وسيطها. نرمز لقيم سلسلة مرتّبة من هذا النوع بـ a ، 13 ، c حيث $a \\le 13 \\le c$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $a + c$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "26",
+      "misconceptionSignatures": [
+        {
+          "value": "39",
+          "id": "MISC-IHSA-MUTAWASSIT-QISMA-QIYAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المتوسط يساوي الوسيط 13."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مجموع القيم الثلاث = 13 × 3."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح القيمة الوسطى من المجموع."
+        }
+      ],
+      "feedback": {
+        "correct": "$39 - 13 = 26$ .",
+        "incorrect": "مجموع القيم الثلاث هو المتوسط مضروبا في 3، ثم اطرح القيمة 13."
+      },
+      "solution": {
+        "lines": [
+          "المتوسط 13، إذن $a + 13 + c = 13 \\times 3 = 39$",
+          "$a + c = 26$"
+        ],
+        "result": "a + c = 26"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $c - a$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "a أصغر قيمة و c أكبر قيمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما هو الفرق بين أكبر قيمة وأصغر قيمة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$c - a = 8$ (المدى).",
+        "incorrect": "الفرق بين أكبر قيمة وأصغر قيمة هو المدى."
+      },
+      "solution": {
+        "lines": [
+          "a أصغر قيمة و c أكبر قيمة، و $c - a$ هو المدى: $c - a = 8$"
+        ],
+        "result": "c - a = 8"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "استنتج a .",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة العشرية إن لزم)",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لديك مجموع العددين a و c والفرق بينهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح المساواتين طرفا بطرف."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{26 - 8}{2} = 9$ .",
+        "incorrect": "استعمل $a + c$ و $c - a$ معا."
+      },
+      "solution": {
+        "lines": [
+          "$(a + c) - (c - a) = 2a$",
+          "$2a = 26 - 8 = 18$ ، إذن $a = 9$"
+        ],
+        "result": "a = 9"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "استنتج c ، ثم اكتب السلسلة.",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة العشرية إن لزم)",
+      "expectedAnswer": "17",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض a في $a + c$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$26 - 9 = 17$ .",
+        "incorrect": "عوّض قيمة a في إحدى المساواتين."
+      },
+      "solution": {
+        "lines": [
+          "$c = 26 - 9 = 17$",
+          "السلسلة الوحيدة: 9 ، 13 ، 17 (تحقّق: $9 \\le 13 \\le 17$ ، $17 - 9 = 8$ ، $\\dfrac{9 + 13 + 17}{3} = 13$)."
+        ],
+        "result": "c = 17"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

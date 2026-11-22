@@ -1,0 +1,149 @@
+{
+  "id": "ex-4am-talis-hisab-atwal-l1-006",
+  "lessonCode": "talis-hisab-atwal",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2023 — احسب NK",
+    "estimatedMinutes": 4,
+    "tags": [
+      "خاصية طالس",
+      "حساب طول"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_talis-hisab-atwal_P2",
+      "modelledOn": "BEM 2023 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "إليك الشكل المقابل، حيث وحدة الطول هي cm : $K$ نقطة من $[IM]$ حيث $IK = 3$ و $KM = 2$ ، و $JM = 4$ .",
+    "figure": {
+      "points": {
+        "I": [
+          0.0,
+          0.0
+        ],
+        "K": [
+          3.0,
+          0.0
+        ],
+        "M": [
+          5.0,
+          0.0
+        ],
+        "J": [
+          3.6,
+          3.4
+        ],
+        "N": [
+          2.16,
+          2.04
+        ]
+      },
+      "segments": [
+        {
+          "from": "I",
+          "to": "K",
+          "label": "3"
+        },
+        {
+          "from": "K",
+          "to": "M",
+          "label": "2"
+        },
+        {
+          "from": "I",
+          "to": "J"
+        },
+        {
+          "from": "J",
+          "to": "M",
+          "label": "4",
+          "arrows": 1
+        },
+        {
+          "from": "K",
+          "to": "N",
+          "arrows": 1
+        }
+      ],
+      "labels": {
+        "I": "w"
+      },
+      "ariaLabel": "المثلث IJM، K من [IM] و N من [IJ]، و (KN) يوازي (JM)؛ IK = 3 و KM = 2 و JM = 4",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "المستقيم الموازي لـ $(JM)$ والذي يشمل $K$ يقطع $[IJ]$ في $N$ . احسب الطول $NK$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (عشري بالفاصلة مثل 2,75 أو كسر مثل 7/9)",
+      "expectedAnswer": "2,4",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        },
+        {
+          "value": "20/3",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقط $I$ ، $K$ ، $M$ على استقامة والنقط $I$ ، $N$ ، $J$ على استقامة، و $(KN) \\parallel (MJ)$ : المثلثان $IKN$ و $IMJ$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب النسب الثلاث المتساوية $\\dfrac{IK}{IM} = \\dfrac{IN}{IJ} = \\dfrac{KN}{MJ}$ ، واحتفظ بالمساواة التي فيها $NK$ وثلاثة أطوال معلومة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الطول المجهول بالجداء المتصالب (الرابع المتناسب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$IM = 5$ و $NK = \\dfrac{4 \\times 3}{5} = 2{,}4\\,\\mathrm{cm}$ .",
+        "incorrect": "هل استعملت ضلعًا من المثلث الكبير أم قطعة منه؟ النسب تُكتب بأطوال تُقاس من الرأس المشترك؛ اطرح أو اجمع بعد ذلك إن كان المطلوب طول قطعة."
+      },
+      "solution": {
+        "lines": [
+          "$IM = IK + KM = 3 + 2 = 5$",
+          "لدينا: النقط $I$ ، $K$ ، $M$ على استقامة واحدة، والنقط $I$ ، $N$ ، $J$ على استقامة واحدة، و $(KN) \\parallel (JM)$ .",
+          "حسب خاصية طالس: $\\dfrac{IK}{IM} = \\dfrac{IN}{IJ} = \\dfrac{KN}{MJ}$",
+          "$\\dfrac{IK}{IM} = \\dfrac{NK}{JM}$ أي $\\dfrac{3}{5} = \\dfrac{NK}{4}$",
+          "$NK = \\dfrac{4 \\times 3}{5}$"
+        ],
+        "result": "NK = 2{,}4\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    }
+  ]
+}

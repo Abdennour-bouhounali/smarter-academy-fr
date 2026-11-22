@@ -1,0 +1,370 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muadalat-l5-009",
+  "lessonCode": "wadiya-idmajiya-muadalat",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2008 — قطعة أرض للزهور والخضر بميلة",
+    "estimatedMinutes": 19,
+    "tags": [
+      "ترييض",
+      "معادلة",
+      "متراجحة",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-muadalat_P2",
+      "modelledOn": "BEM 2008 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2008",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يملك فلاح بولاية ميلة، يحبّ أرض وطنه ويتقن خدمتها، قطعة أرض مستطيلة الشكل $ABCD$ طولها $AB = 60\\,m$ وعرضها $AD = 25\\,m$ . $M$ نقطة من الضلع $[AB]$ حيث $AM = x$ (بالمتر، $0 < x < 60$)، والمستقيم الذي يشمل $M$ ويوازي $(AD)$ يقطع $[DC]$ في $N$ . يخصّص الفلاح الجزء $AMND$ (مساحته $S_1$) لغرس الزهور، والجزء $MBCN$ (مساحته $S_2$) لزراعة الخضر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "عبّر بدلالة $x$ عن المساحتين $S_1$ و $S_2$ .",
+      "statement": "$S_1$ — العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "تُكتب $S_1$ على الشكل $mx$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "25",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الجزء $AMND$ مستطيل بُعداه $x$ و $25$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$25$ .",
+        "incorrect": "مساحة المستطيل = الطول × العرض."
+      },
+      "solution": {
+        "lines": [
+          "$AMND$ مستطيل بُعداه $AM = x$ و $AD = 25$ .",
+          "$S_1 = 25x$"
+        ],
+        "result": "S_1 = 25x"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$S_2$ — العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "تُكتب $S_2$ على الشكل $mx + p$ : اكتب العدد $m$ فقط (قد يكون سالبًا)",
+      "expectedAnswer": "-25",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول الجزء $MBCN$ هو $MB = 60 - x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$-25$ .",
+        "incorrect": "مساحة المستطيل = الطول × العرض، ثم انشر."
+      },
+      "solution": {
+        "lines": [
+          "$MBCN$ مستطيل بُعداه $MB = 60 - x$ و $25$ ، ومعامل $x$ بعد النشر هو $-25$ ."
+        ],
+        "result": "m = -25"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$S_2$ — العدد $p$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "تُكتب $S_2$ على الشكل $mx + p$ : اكتب العدد $p$ فقط",
+      "expectedAnswer": "1500",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر $25(60 - x)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$1500$ .",
+        "incorrect": "مساحة المستطيل = الطول × العرض، ثم انشر."
+      },
+      "solution": {
+        "lines": [
+          "$S_2 = 25(60 - x) = 1500 - 25x$"
+        ],
+        "result": "S_2 = 1500 - 25x"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "تحتاج كل شتلة زهور إلى مساحة قدرها $2{,}5\\,m^2$ . جد $x$ حتى يتّسع الجزء $AMND$ لـ 420 شتلة بالضبط.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بـ m",
+      "expectedAnswer": "42",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المساحة اللازمة لـ 420 شتلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب أن $S_1$ تساوي هذه المساحة، ثم حلّ المعادلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 42$ m .",
+        "incorrect": "انقل حدود $x$ إلى طرف والأعداد إلى الطرف الآخر مع تغيير الإشارة، ثم اقسم على معامل $x$ . تحقّق بالتعويض."
+      },
+      "solution": {
+        "lines": [
+          "$25x = 1050$",
+          "$x = \\dfrac{1050}{25}$"
+        ],
+        "result": "x = 42"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ا",
+      "lead": "يدرّ المتر المربع من الزهور ربحًا قدره 120DA ، والمتر المربع من الخضر ربحًا قدره 80DA .",
+      "statement": "بيّن أن الربح الإجمالي $B$ (بالدينار) يُكتب: $B = 1000x + 120000$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الربح = 120 × $S_1$ + 80 × $S_2$ ، ثم انشر وبسّط."
+        }
+      ],
+      "feedback": {
+        "correct": "أحسنت: برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "$B = 120 \\times 25x + 80(1500 - 25x)$",
+          "$B = 3000x + 120000 - 2000x$",
+          "$B = 1000x + 120000$"
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ب",
+      "lead": "جد قيم $x$ التي يكون من أجلها الربح الإجمالي $150000$DA على الأقل: حلّ المتراجحة $1000x + 120000 \\geqslant 150000$ .",
+      "statement": "حدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x < k$ أو $x \\leqslant k$ أو $x > k$ أو $x \\geqslant k$ : اكتب العدد $k$ فقط (عدد صحيح أو كسر a/b، قد يكون سالبًا)",
+      "expectedAnswer": "30",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر، كما في حل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إضافة عدد إلى الطرفين أو طرحه منهما لا تغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحدّ هو العدد الذي يحقّق المعادلة المرفقة (نضع «=» مكان رمز المتباينة): اقسم في الأخير على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "حدّ الحلول هو $k = 30$ .",
+        "incorrect": "أعد الحل سطرًا سطرًا: العملية نفسها على الطرفين، ثم القسمة على معامل $x$ في الأخير."
+      },
+      "solution": {
+        "lines": [
+          "حدّ الحلول هو حلّ المعادلة المرفقة: $1000x + 120000 = 150000$",
+          "$1000x = 150000 - 120000$",
+          "$1000x = 30000$",
+          "$x = \\dfrac{30000}{1000}$",
+          "إذن حدّ الحلول هو $30$ ."
+        ],
+        "result": "k = 30"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "sub": "ب",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < 30$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QALB-ZAID"
+        },
+        {
+          "id": "B",
+          "content": "$x \\leqslant 30$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QALB-ZAID"
+        },
+        {
+          "id": "C",
+          "content": "$x > 30$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        },
+        {
+          "id": "D",
+          "content": "$x \\geqslant 30$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارة معامل $x$ في آخر سطر قبل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد موجب تحافظ على الاتجاه، والقسمة على عدد سالب تغيّره."
+        }
+      ],
+      "feedback": {
+        "correct": "$x \\geqslant 30$ .",
+        "incorrect": "تتبّع سطور الحل: الاتجاه يتغيّر فقط عند الضرب أو القسمة على عدد سالب، ونوع المتباينة (تامة أو غير تامة) لا يتغيّر أبدًا."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $1000x + 120000 \\geqslant 150000$",
+          "$1000x \\geqslant 150000 - 120000$",
+          "$1000x \\geqslant 30000$",
+          "$\\dfrac{1000x}{1000} \\geqslant \\dfrac{30000}{1000}$",
+          "إذن حلول المتراجحة هي كل قيم $x$ الأكبر من أو تساوي $30$ ."
+        ],
+        "result": "x \\geqslant 30"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q8",
+      "step": "04",
+      "statement": "☜ يريد الفلاح ربحًا لا يقل عن 150000DA ، مع مساحة للخضر لا تقل عن $600\\,m^2$ . ما هي أكبر قيمة طبيعية ممكنة لـ $x$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بـ m",
+      "expectedAnswer": "36",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب متراجحة تترجم «$S_2 \\geqslant 600$» وحلّها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يجب أن يتحقّق الشرطان معًا."
+        }
+      ],
+      "feedback": {
+        "correct": "أكبر قيمة هي $x = 36$ m .",
+        "incorrect": "حلّ المتراجحة $1500 - 25x \\geqslant 600$ ، ثم اجمعها مع شرط الربح."
+      },
+      "solution": {
+        "lines": [
+          "$1500 - 25x \\geqslant 600$",
+          "$-25x \\geqslant -900$",
+          "$x \\leqslant 36$ (قسمنا على عدد سالب فتغيّر الاتجاه)",
+          "مع شرط الربح $x \\geqslant 30$ : $30 \\leqslant x \\leqslant 36$",
+          "إذن أكبر قيمة ممكنة هي 36 ."
+        ],
+        "result": "x = 36"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

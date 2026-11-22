@@ -1,0 +1,329 @@
+{
+  "id": "ex-2am-talim-nuqta-mustawi-l5-007",
+  "lessonCode": "talim-nuqta-mustawi",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — أكشاك السوق",
+    "estimatedMinutes": 16,
+    "tags": [
+      "وضعية إدماجية",
+      "قراءة",
+      "ترتيب أعداد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يبيّن الشكل مواضع أربعة أكشاك $A$ و $B$ و $C$ و $D$ في السوق، في معلم متعامد ومتجانس مبدؤه مدخل السوق $O$ .",
+    "figure": {
+      "grid": true,
+      "axes": true,
+      "points": {
+        "A": [
+          -4,
+          2
+        ],
+        "B": [
+          1,
+          3
+        ],
+        "C": [
+          3,
+          -2
+        ],
+        "D": [
+          -2,
+          -3
+        ],
+        "O": [
+          0,
+          0
+        ]
+      },
+      "ariaLabel": "أربعة أكشاك في سوق ممثّلة في معلم متعامد ومتجانس",
+      "maxWidth": 420,
+      "labels": {
+        "O": "sw"
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اقرأ إحداثيتي النقطة $B$ في الشكل.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "1",
+        "y": "3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "3",
+            "y": "1"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNAXIS",
+          "value": {
+            "x": "1",
+            "y": "-3"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNLEFT",
+          "value": {
+            "x": "-1",
+            "y": "3"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الفاصلة على محور الفواصل أوّلًا، بالنزول من النقطة أو الصعود منها عموديًّا إلى هذا المحور."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اقرأ الترتيب على محور التراتيب بالسير أفقيًّا من النقطة إلى هذا المحور؛ العدد الأوّل في الثنائية هو الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "راقب الإشارة: النقط التي على يسار محور التراتيب أو تحت محور الفواصل تأخذ عددًا سالبًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$B(1\\,;\\,3)$ .",
+        "incorrect": "راجع قراءة الإحداثيتين: الفاصلة أوّلًا على محور الفواصل ثم الترتيب على محور التراتيب."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $B$ هي $1$ وترتيبها $3$",
+          "$B(1\\,;\\,3)$"
+        ],
+        "result": "B(1\\,;\\,3)"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "رتّب فواصل النقط $A$، $B$، $C$، $D$ ترتيبًا تصاعديًّا : اختر السلسلة الصحيحة.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3 < 1 < -2 < -4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-ORDERDEC"
+        },
+        {
+          "id": "B",
+          "content": "$1 < -2 < 3 < -4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-ORDERABS"
+        },
+        {
+          "id": "C",
+          "content": "$-4 < -2 < 1 < 3$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$-2 < -4 < 1 < 3$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العدد المطلوب لكلّ نقطة مع إشارته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مثّل الأعداد على مستقيم مدرّج في ذهنك: كلّما ذهبنا إلى اليمين زاد العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد السالب الأبعد عن الصفر هو الأصغر."
+        }
+      ],
+      "feedback": {
+        "correct": "الترتيب التصاعدي : $-4 < -2 < 1 < 3$ .",
+        "incorrect": "اقرأ العدد المطلوب لكلّ نقطة ثم ضعها على مستقيم مدرّج: الأعداد تزداد نحو اليمين."
+      },
+      "solution": {
+        "lines": [
+          "فواصل : $A$ : $-4$، $B$ : $1$، $C$ : $3$، $D$ : $-2$",
+          "الترتيب التصاعدي : $-4 < -2 < 1 < 3$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "أيّ النقط المرسومة في الشكل لها أكبر ترتيب ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$A$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$B$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$C$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$D$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العدد المطلوب لكلّ نقطة مع إشارته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأصغر هو الأبعد جهة اليسار (أو الأسفل)، والأكبر هو الأبعد جهة اليمين (أو الأعلى)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تقارن بالبعد عن المحور وحده."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة $B$ : ترتيب $3$ .",
+        "incorrect": "اقرأ ترتيب كلّ نقطة بإشارتها ثم قارن الأعداد، لا المسافات."
+      },
+      "solution": {
+        "lines": [
+          "ترتيب النقط: $A$ : $2$، $B$ : $3$، $C$ : $-2$، $D$ : $-3$",
+          "الأكبر هي $B$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "في الشكل، أيّ النقط فاصلتها سالبة وترتيبها موجب ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$A$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$B$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-SIGNLEFT"
+        },
+        {
+          "id": "C",
+          "content": "$C$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-BOTHSIGNS"
+        },
+        {
+          "id": "D",
+          "content": "$D$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-SIGNAXIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد إشارة الفاصلة وإشارة الترتيب المطلوبتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم ابحث في الشكل عن النقطة التي تحقّق الإشارتين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "النقطة التي تقع على أحد المحورين ليست في أيّ من المناطق الأربع."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة $A$ فاصلتها سالبة وترتيبها موجب .",
+        "incorrect": "ابحث عن النقطة التي تحقّق إشارتي الفاصلة والترتيب معًا."
+      },
+      "solution": {
+        "lines": [
+          "نحدّد الإشارتين المطلوبتين",
+          "النقطة هي $A$"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

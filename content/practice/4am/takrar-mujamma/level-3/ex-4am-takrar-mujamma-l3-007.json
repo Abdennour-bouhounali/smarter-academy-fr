@@ -1,0 +1,216 @@
+{
+  "id": "ex-4am-takrar-mujamma-l3-007",
+  "lessonCode": "takrar-mujamma",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2022 — الانتظار أمام شبّاك البريد",
+    "estimatedMinutes": 7,
+    "tags": [
+      "فئات",
+      "التواتر المجمع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_takrar-mujamma_P1",
+      "modelledOn": "BEM 2022 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "سُجّلت مدة انتظار (بالدقيقة) 25 زبونا أمام شبّاك مكتب البريد في صبيحة يوم واحد:",
+    "table": {
+      "head": [
+        "مدة الانتظار t (min)",
+        "عدد الزبائن"
+      ],
+      "rows": [
+        [
+          "$0 \\le t < 5$",
+          "4"
+        ],
+        [
+          "$5 \\le t < 10$",
+          "9"
+        ],
+        [
+          "$10 \\le t < 15$",
+          "6"
+        ],
+        [
+          "$15 \\le t < 20$",
+          "4"
+        ],
+        [
+          "$20 \\le t \\le 25$",
+          "2"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب التكرار المجمع الصاعد للفئة $10 \\le t < 15$ .",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "19",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        },
+        {
+          "value": "6",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        },
+        {
+          "value": "12",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكرار المجمع الصاعد لفئة هو مجموع تكرارها وتكرارات الفئات التي قبلها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ من أول عمود في الجدول واجمع التكرارات حتى $10 \\le t < 15$ مع تكرارها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: التكرار المجمع الصاعد لآخر عمود يساوي التكرار الكلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 + 9 + 6 = 19$ .",
+        "incorrect": "اجمع تكرار الفئة نفسها وتكرارات الفئات التي قبلها فقط، ولا تنس تكرار الفئة نفسها."
+      },
+      "solution": {
+        "lines": [
+          "التكرار المجمع الصاعد للفئة $10 \\le t < 15$ هو مجموع تكرار الفئة $10 \\le t < 15$ وتكرارات الفئات التي قبلها:",
+          "$4 + 9 + 6 = 19$"
+        ],
+        "result": "19"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب التواتر المجمع النازل للفئة $15 \\le t < 20$ .",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة أو كسر على الشكل a/b",
+      "expectedAnswer": "0,24",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-IHSA-TAWATUR-BILA-QISMA"
+        },
+        {
+          "value": "0,92",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        },
+        {
+          "value": "0,08",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التواتر المجمع النازل هو التكرار المجمع النازل مقسوما على التكرار الكلي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أولا التكرار المجمع النازل ثم اقسمه على التكرار الكلي للسلسلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: التواتر عدد بين 0 و 1، والتواتر المجمع الصاعد لآخر عمود يساوي 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{6}{25}$ .",
+        "incorrect": "لا تكتف بالتكرار المجمع: اقسمه على التكرار الكلي للسلسلة."
+      },
+      "solution": {
+        "lines": [
+          "التكرار المجمع النازل للفئة $15 \\le t < 20$ : $4 + 2 = 6$",
+          "التواتر المجمع النازل = التكرار المجمع النازل ÷ التكرار الكلي:",
+          "$\\dfrac{6}{25}$"
+        ],
+        "result": "0{,}24"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "بيّن أن $76\\%$ من الزبائن انتظروا أقل من 15 دقيقة.",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الزبائن الذين انتظروا أقل من 15 دقيقة هم زبائن الفئات الثلاث الأولى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل نتيجة السؤال 01، ثم اقسم على عدد الزبائن."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "عدد الزبائن الذين انتظروا أقل من 15 دقيقة هو التكرار المجمع الصاعد للفئة $10 \\le t < 15$ : 19 .",
+          "$\\dfrac{19}{25} = 0{,}76$",
+          "$0{,}76 \\times 100 = 76$ ، أي $76\\%$ من الزبائن."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

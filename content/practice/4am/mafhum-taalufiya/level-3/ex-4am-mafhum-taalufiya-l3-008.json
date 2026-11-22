@@ -1,0 +1,218 @@
+{
+  "id": "ex-4am-mafhum-taalufiya-l3-008",
+  "lessonCode": "mafhum-taalufiya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2018 — راتب عامل في ورشة أحذية",
+    "estimatedMinutes": 8,
+    "tags": [
+      "وضعية",
+      "الدستور f(x) = ax + b",
+      "العدد الذي صورته معلومة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mafhum-taalufiya_P1",
+      "modelledOn": "BEM 2018 II (I-01, I-02)"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2018",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يعمل خالد بإتقان وأمانة في ورشة لصناعة الأحذية بالعلمة، ويتقاضى راتبا شهريا ثابتا قدره 24000DA ، يضاف إليه 150DA عن كل زوج أحذية يصنعه."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما هو الراتب الشهري الذي يتقاضاه خالد إذا صنع 80 زوجا في الشهر؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الراتب بـ DA",
+      "expectedAnswer": "36000",
+      "misconceptionSignatures": [
+        {
+          "value": "12000",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولا ما يتقاضاه عن الأزواج الثمانين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم أضف الراتب الثابت."
+        }
+      ],
+      "feedback": {
+        "correct": "$150 \\times 80 + 24000 = 36000$ .",
+        "incorrect": "اضرب عدد الأزواج في 150، ثم أضف الراتب الثابت."
+      },
+      "solution": {
+        "lines": [
+          "$150 \\times 80 + 24000 = 12000 + 24000 = 36000$",
+          "الراتب الشهري هو 36000DA ."
+        ],
+        "result": "36000DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "ليكن $x$ عدد الأزواج المصنوعة في الشهر، و $y$ راتب خالد بـ DA . عبّر عن $y$ بدلالة $x$ على الشكل $y = ax + b$ .",
+      "statement": "أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "150",
+      "misconceptionSignatures": [
+        {
+          "value": "24000",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المبلغ الذي يُضاف عن كل زوج؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 150$ : هو معامل $x$ .",
+        "incorrect": "المعامل $a$ هو العدد المضروب في $x$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "الراتب = (150 × عدد الأزواج) + الراتب الثابت.",
+          "$y = 150x + 24000$ من الشكل $ax + b$ حيث: $a = 150$ و $b = 24000$ ."
+        ],
+        "result": "a = 150"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "24000",
+      "misconceptionSignatures": [
+        {
+          "value": "150",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المبلغ الذي يتقاضاه مهما كان عدد الأزواج؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$b = 24000$ ، إذن $y = 150x + 24000$ .",
+        "incorrect": "$b$ هو الحدّ الذي لا يحتوي على $x$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "الراتب = (150 × عدد الأزواج) + الراتب الثابت.",
+          "$y = 150x + 24000$ من الشكل $ax + b$ حيث: $a = 150$ و $b = 24000$ ."
+        ],
+        "result": "b = 24000"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "تقاضى خالد في شهر آخر 39000DA . كم زوجا صنع في هذا الشهر؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الأزواج",
+      "expectedAnswer": "100",
+      "misconceptionSignatures": [
+        {
+          "value": "260",
+          "id": "MISC-TAALUFI-SABIQ-QISMA"
+        },
+        {
+          "value": "-23740",
+          "id": "MISC-TAALUFI-SABIQ-TARTIB"
+        },
+        {
+          "value": "5874000",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن $x$ الذي يحقق $150x + 24000 = 39000$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح الراتب الثابت أولا، ثم اقسم على 150."
+        }
+      ],
+      "feedback": {
+        "correct": "$150x + 24000 = 39000$ تعطي $x = 100$ .",
+        "incorrect": "اطرح الراتب الثابت من 39000 أولا، ثم اقسم على 150."
+      },
+      "solution": {
+        "lines": [
+          "$y(x) = 39000$ معناه $150x + 24000 = 39000$",
+          "$150x = 39000 - 24000$",
+          "$150x = 15000$",
+          "$x = \\dfrac{15000}{150}$",
+          "$x = 100$"
+        ],
+        "result": "x = 100"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

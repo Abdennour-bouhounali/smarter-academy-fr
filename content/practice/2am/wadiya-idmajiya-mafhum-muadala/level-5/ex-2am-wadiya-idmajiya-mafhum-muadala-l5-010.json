@@ -1,0 +1,255 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-mafhum-muadala-l5-010",
+  "lessonCode": "wadiya-idmajiya-mafhum-muadala",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مخيّم الكشّافة",
+    "estimatedMinutes": 15,
+    "tags": [
+      "جزء ثابت",
+      "معادلة",
+      "متباينة",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تنظّم فرقة كشفيّة مخيّمًا : $7800$ DA ثمن الخيام ثابتًا ، و $180$ DA عن كلّ كشّاف $x$ . ميزانيّة الفرقة $15000$ DA . الجزء الأوّل : العبارة والعدد . الجزء الثاني : النصيب ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اختر عبارة ما تدفعه الفرقة بالدينار .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$7980x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SYN-MUAD2-ADDCOEF"
+        },
+        {
+          "id": "B",
+          "content": "$7800+180x$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$180+7800x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SYN-MUAD2-ROLE"
+        }
+      ],
+      "feedback": {
+        "correct": "$7800+180x$ .",
+        "incorrect": "اكتب الجزء الثابت مرّة واحدة والجزء المتكرّر مضروبًا في عدده، ثمّ اختبر عبارتك على عدد صغير."
+      },
+      "solution": {
+        "lines": [
+          "الخيام مبلغ ثابت يُدفع مرّة واحدة : $7800$ .",
+          "والكشّافة : $180x$ .",
+          "$7800+180x$ ."
+        ]
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في الوضعيّة ما يتغيّر (وهو الحرف) وما يبقى ثابتًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب ما يُدفع أو يُحسب مرّة واحدة، ثمّ ما يتكرّر مضروبًا في عدد مرّاته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر العبارة على عدد صغير مثل اثنين قبل أن تختار."
+        }
+      ],
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم كشّافًا تستوعبهم الميزانيّة كلّها ؟ حلّ المعادلة : $180x+7800 = 15000$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "40",
+      "misconceptionSignatures": [
+        {
+          "value": "7200",
+          "id": "MISC-MAJHUL-SUBFORM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في المعادلة ما يُفعل بالمجهول : ضرب أو قسمة أو جمع أو طرح، وما هي آخر عملية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ألغِ آخر عملية أُجريت على المجهول أوّلًا، ثمّ ألغِ ما بقي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من حلّك : عوّض المجهول بقيمته وأنجز العملية، فإن وجدت الطرف الآخر فالحلّ صحيح."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 40$ .",
+        "incorrect": "ابحث عن العدد الذي يجعل المساواة صحيحة بالعملية العكسية، ثمّ تحقّق منه بإنجاز العملية."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية هي جمع $7800$ : $180x = 15000-7800 = 7200$ .",
+          "$x = 7200 \\div 180 = 40$ .",
+          "التحقّق : $180 \\times 40+7800 = 15000$ ."
+        ],
+        "result": "40"
+      },
+      "work": "optional",
+      "timeSeconds": 85
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "الجزء الثاني : هل تكفي الميزانيّة لـ $45$ كشّافًا ، أي هل $7800+180x \\le 15000$ من أجل $x = 45$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "لا .",
+        "incorrect": "عوّض الحرف في الطرفين، احسب كلّ طرف ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل : $7800+180 \\times 45 = 15900$ .",
+          "الطرف الثاني : $15000 = 15000$ .",
+          "$15900 \\le 15000$ : العلاقة خاطئة ."
+        ]
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بقيمته المعطاة في الطرفين معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة ثمّ قارن الناتجين بالرمز المكتوب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الرمز « أصغر أو يساوي » يقبل التساوي، والرمز « أصغر تمامًا » لا يقبله."
+        }
+      ],
+      "timeSeconds": 70
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "يُقسّم المبلغ $15000$ DA على $40$ كشّافًا . هل النصيب $375$ DA ، أي هل $\\dfrac{15000}{x} = 375$ من أجل $x = 40$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "نعم",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "نعم .",
+        "incorrect": "عوّض الحرف في الطرفين، احسب كلّ طرف ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل : $15000 \\div 40 = 375$ .",
+          "الطرف الثاني : $375 = 375$ .",
+          "$375 = 375$ : الطرفان متساويان، فالمساواة صحيحة ."
+        ]
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بقيمته المعطاة في الطرفين معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة ثمّ قارن الناتجين بالرمز المكتوب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الرمز « أصغر أو يساوي » يقبل التساوي، والرمز « أصغر تمامًا » لا يقبله."
+        }
+      ],
+      "timeSeconds": 70
+    }
+  ]
+}

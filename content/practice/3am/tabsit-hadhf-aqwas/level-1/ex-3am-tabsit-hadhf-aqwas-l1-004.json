@@ -1,0 +1,159 @@
+{
+  "id": "ex-3am-tabsit-hadhf-aqwas-l1-004",
+  "lessonCode": "tabsit-hadhf-aqwas",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — حذف قوسين مسبوقين بالإشارة −",
+    "estimatedMinutes": 4,
+    "tags": [
+      "حذف الأقواس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $B$ حيث:",
+    "formulas": [
+      "B = 10 - (4x - 7)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب العبارة $B$ بدون أقواس.",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$B = 10 - 4x - 7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-MINUS-FIRST-ONLY"
+        },
+        {
+          "id": "B",
+          "content": "$B = 10 + 4x - 7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-MINUS-KEPT"
+        },
+        {
+          "id": "C",
+          "content": "$B = 10 - 4x + 7$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة التي تسبق القوسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوسان مسبوقان بالإشارة $-$ يُحذفان مع تغيير إشارة كل حدّ بينهما، لا الحدّ الأول وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العبارة بدون أقواس حدًّا حدًّا، ثم اجمع الحدود المتشابهة، وتحقّق بتعويض $x$ بعدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 10 - 4x + 7$.",
+        "incorrect": "راجع إشارة كل حدّ وما يسبق القوسين، ثم اجمع الحدود المتشابهة فقط."
+      },
+      "solution": {
+        "lines": [
+          "القوسان مسبوقان بالإشارة $-$ : نغيّر إشارة كل حدّ بينهما.",
+          "$B = 10 - 4x + 7$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "الشكل المبسّط للعبارة $B$ هو:",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$B = -4x + 17$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$B = -4x + 3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-MINUS-FIRST-ONLY"
+        },
+        {
+          "id": "C",
+          "content": "$B = 4x + 3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-MINUS-KEPT"
+        },
+        {
+          "id": "D",
+          "content": "$B = 13x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-UNLIKE-MERGED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة التي تسبق القوسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوسان مسبوقان بالإشارة $-$ يُحذفان مع تغيير إشارة كل حدّ بينهما، لا الحدّ الأول وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العبارة بدون أقواس حدًّا حدًّا، ثم اجمع الحدود المتشابهة، وتحقّق بتعويض $x$ بعدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = -4x + 17$.",
+        "incorrect": "راجع إشارة كل حدّ وما يسبق القوسين، ثم اجمع الحدود المتشابهة فقط."
+      },
+      "solution": {
+        "lines": [
+          "$B = 10 - 4x + 7$",
+          "$B = -4x + 17$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

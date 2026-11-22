@@ -1,0 +1,330 @@
+{
+  "id": "ex-3am-quwat-adad-nisbi-l5-006",
+  "lessonCode": "quwat-adad-nisbi",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — خزّان ماء للقرية",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "قوة قوة",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تبرّع محسنون لقرية بخزّان ماء مكعب الشكل طول حرفه $2^{3}\\,\\mathrm{dm}$ ، تضامنًا مع العائلات في فصل الصيف. ( $1\\,\\mathrm{dm^3} = 1\\,\\mathrm{L}$ )\nالجزء الأول: سعة الخزّان.\nالجزء الثاني: يتقاسم ماء الخزّان المملوء $2^{2}$ عائلات بالتساوي، وتستهلك كل عائلة $2^{7}\\,\\mathrm{L}$ في اليوم. يُملأ الخزّان مرّة كل يومين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "حجم الخزّان يكتب على الشكل $2^n\\,\\mathrm{dm^3}$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-QUWA-POWER-ADD-EXP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قوة مرفوعة إلى قوة: ماذا نفعل بالأسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في $(a^m)^n$ نضرب الأسين، ولا نجمعهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه لإشارة الجداء إذا كان أحد الأسين سالبًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$(2^3)^3 = 2^9$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "حجم مكعب = (طول الحرف)$^{3}$",
+          "$(2^{3})^{3} = 2^{3 \\times 3} = 2^{9}$"
+        ],
+        "result": "n = 9"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كم لترًا يتّسع الخزّان؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "السعة بـ L",
+      "expectedAnswer": "512",
+      "misconceptionSignatures": [
+        {
+          "value": "24",
+          "id": "MISC-QUWA-POWER-AS-PRODUCT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$a^n$ جداء $n$ عاملًا كلها مساوية للعدد $a$ ، وليس $a \\times n$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوة عدد سالب موجبة إذا كان الأس زوجيًا، وسالبة إذا كان الأس فرديًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه للأقواس: في $-a^n$ يخصّ الأس العدد $a$ وحده، ثم نأخذ المعاكس."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^9 = 512$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$2^{9} = 512$ ، و $1\\,\\mathrm{dm^3} = 1\\,\\mathrm{L}$",
+          "السعة: $512\\,\\mathrm{L}$"
+        ],
+        "result": "512\\,\\mathrm{L}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "كم لترًا نصيب كل عائلة؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الحجم بـ L",
+      "expectedAnswer": "128",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "البسط والمقام قوتان للأساس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل قسمة قوتين لهما الأساس نفسه: نطرح أس المقام من أس البسط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طرح أسّ سالب يعني إضافة معاكسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2^9}{2^2} = 2^7 = 128$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2^{9}}{2^{2}} = 2^{9-2} = 2^{7}$",
+          "$2^{7} = 128$"
+        ],
+        "result": "128\\,\\mathrm{L}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "كم يومًا يكفي نصيب كل عائلة؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-QUWA-ZERO-ONE-EXP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا تعرف عن قوة أسها 0 لعدد غير معدوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من أجل $a \\neq 0$ : $a^0 = 1$ (وليس 0)، و $a^1 = a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بقاعدة القسمة: $\\dfrac{a^n}{a^n} = 1$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2^7}{2^7} = 2^0 = 1$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2^{7}}{2^{7}} = 2^{7-7} = 2^{0}$",
+          "$2^{0} = 1$ : يوم واحد."
+        ],
+        "result": "1"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ا",
+      "lead": "القرار.",
+      "statement": "هل يكفي ماء الخزّان العائلات حتى الملء التالي؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، يكفي يومين",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QUWA-DECISION-UNCHECKED"
+        },
+        {
+          "id": "B",
+          "content": "لا، يكفي يومًا واحدًا فقط",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارجع إلى القيم التي حسبتها في الأسئلة السابقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين قبل أن تقرّر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القرار الصحيح يُبنى على حساب، لا على تخمين."
+        }
+      ],
+      "feedback": {
+        "correct": "النصيب يكفي يومًا واحدًا والملء كل يومين.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "نصيب كل عائلة يكفيها يومًا واحدًا.",
+          "الخزّان يُملأ كل يومين، إذن لا يكفي."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ب",
+      "statement": "اقترح سعة للخزّان تكفي يومين، واكتبها على شكل قوة للعدد 2، مع التبرير.",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القوى لها الأساس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء قوتين لهما الأساس نفسه: نجمع الأسس ولا نضربها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه لإشارة كل أس عند الجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "استهلاك العائلات في اليوم: $2^{2} \\times 2^{7} = 2^{9}\\,\\mathrm{L}$",
+          "في يومين: $2 \\times 2^{9} = 2^{10} = 1024\\,\\mathrm{L}$"
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

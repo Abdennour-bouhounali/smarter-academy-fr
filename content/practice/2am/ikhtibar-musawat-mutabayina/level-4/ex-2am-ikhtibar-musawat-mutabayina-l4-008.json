@@ -1,0 +1,246 @@
+{
+  "id": "ex-2am-ikhtibar-musawat-mutabayina-l4-008",
+  "lessonCode": "ikhtibar-musawat-mutabayina",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — جداء حرف في مجموع",
+    "estimatedMinutes": 6,
+    "tags": [
+      "تساوي عبارتين",
+      "خاصيّة التوزيع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اختبر تساوي العبارتين في كلّ حالة :"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل العبارتان $x(x+2)$ و $x^{2}+2x$ متساويتان مهما كانت قيمة $x$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جرّب العبارتين بقيمة أو قيمتين للحرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا اختلفت النتيجتان عند قيمة واحدة فالعبارتان غير متساويتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا تساوتا عند عدّة قيم فتحقّق من القاعدة (التوزيع مثلا) قبل أن تحكم : التساوي عند بعض القيم لا يكفي."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم : العبارتان متساويتان مهما كانت قيمة الحرف .",
+        "incorrect": "مثال مضادّ واحد يكفي لإثبات عدم التساوي، أمّا التساوي فيبرّره قاعدة معروفة."
+      },
+      "solution": {
+        "lines": [
+          "$x(x+2)=x^{2}+2x$ : العبارتان متساويتان مهما كانت قيمة $x$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل العبارتان $x(x+2)$ و $x^{2}+2$ متساويتان مهما كانت قيمة $x$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جرّب العبارتين بقيمة أو قيمتين للحرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا اختلفت النتيجتان عند قيمة واحدة فالعبارتان غير متساويتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا تساوتا عند عدّة قيم فتحقّق من القاعدة (التوزيع مثلا) قبل أن تحكم : التساوي عند بعض القيم لا يكفي."
+        }
+      ],
+      "feedback": {
+        "correct": "لا : توجد قيمة تختلف عندها العبارتان .",
+        "incorrect": "مثال مضادّ واحد يكفي لإثبات عدم التساوي، أمّا التساوي فيبرّره قاعدة معروفة."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $x=0$ : $0\\times (0+2)=0$ و $0^{2}+2=2$ .",
+          "النتيجتان مختلفتان : مثال مضادّ واحد يكفي، فالعبارتان غير متساويتين ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل المساواة $x(x+2)=x^{2}+2$ صحيحة من أجل $x=1$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بالقيمة المعطاة في الطرف الأوّل ثمّ في الطرف الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة، مع إنجاز الضرب قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الناتجين : إذا تساويا فالمساواة صحيحة، وإلاّ فهي خاطئة."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم : المساواة صحيحة .",
+        "incorrect": "عوّض الحرف في الطرفين، احسب كلّ طرف ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل : $1\\times (1+2)=3$ .",
+          "الطرف الثاني : $1^{2}+2=3$ .",
+          "$3=3$ : الطرفان متساويان، فالمساواة صحيحة ."
+        ]
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "العبارتان $x(x+2)$ و $x^{2}+2$ تعطيان العدد نفسه من أجل بعض قيم $x$ . أيّ قيمة من القيم الآتية تبيّن أنّهما ليستا متساويتين ؟ اختر الإجابة الصحيحة :",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$1$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختبر القيم المعطاة في العبارتين معا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن القيمة التي تعطي نتيجتين مختلفتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قيمة واحدة تختلف عندها العبارتان تكفي لإثبات أنّهما ليستا متساويتين."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة $2$ تبيّن ذلك .",
+        "incorrect": "القيمة المطلوبة هي التي تعطي العبارتين نتيجتين مختلفتين."
+      },
+      "solution": {
+        "lines": [
+          "$x=1$ : $3=3$ .",
+          "$x=2$ : $8\\ne 6$ .",
+          "القيمة $2$ مثال مضادّ : العبارتان ليستا متساويتين ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

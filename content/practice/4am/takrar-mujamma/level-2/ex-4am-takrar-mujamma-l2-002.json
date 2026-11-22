@@ -1,0 +1,188 @@
+{
+  "id": "ex-4am-takrar-mujamma-l2-002",
+  "lessonCode": "takrar-mujamma",
+  "level": 2,
+  "metadata": {
+    "title": "شدّة الزلازل",
+    "estimatedMinutes": 3,
+    "tags": [
+      "التكرار المجمع الصاعد",
+      "التكرار المجمع النازل"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-cumul",
+      "page": 95,
+      "section": "طرائق"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "تمثّل قيم الجدول الآتي درجات شدّة 17 زلزالا من الأكثر عنفا في العالم خلال الفترة الممتدة من سنة 1900 إلى سنة 2015، حسب مقياس ريشتر:",
+    "table": {
+      "head": [
+        "شدّة الزلزال",
+        "التكرار"
+      ],
+      "rows": [
+        [
+          "$8{,}5$",
+          "5"
+        ],
+        [
+          "$8{,}6$",
+          "3"
+        ],
+        [
+          "$8{,}7$",
+          "1"
+        ],
+        [
+          "$8{,}8$",
+          "3"
+        ],
+        [
+          "9",
+          "2"
+        ],
+        [
+          "$9{,}1$",
+          "1"
+        ],
+        [
+          "$9{,}2$",
+          "1"
+        ],
+        [
+          "$9{,}5$",
+          "1"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب التكرار المجمع الصاعد للقيمة 8,8.",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        },
+        {
+          "value": "3",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        },
+        {
+          "value": "8",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكرار المجمع الصاعد لقيمة هو مجموع تكرارها وتكرارات القيم الأصغر منها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ من أول عمود في الجدول واجمع التكرارات حتى 8,8 مع تكرارها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: التكرار المجمع الصاعد لآخر عمود يساوي التكرار الكلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 + 3 + 1 + 3 = 12$ .",
+        "incorrect": "اجمع تكرار القيمة نفسها وتكرارات القيم الأصغر منها فقط، ولا تنس تكرار القيمة نفسها."
+      },
+      "solution": {
+        "lines": [
+          "التكرار المجمع الصاعد للقيمة 8,8 هو مجموع تكرار القيمة 8,8 وتكرارات القيم الأصغر منها:",
+          "$5 + 3 + 1 + 3 = 12$"
+        ],
+        "result": "12"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب التكرار المجمع النازل للقيمة 9.",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        },
+        {
+          "value": "2",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        },
+        {
+          "value": "14",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكرار المجمع النازل هو مجموع تكرار هذه القيمة وتكرارات القيم الأكبر منها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع تكرار 9 وتكرارات ما بعدها حتى آخر عمود في الجدول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: التكرار المجمع النازل لأول عمود يساوي التكرار الكلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 + 1 + 1 + 1 = 5$ .",
+        "incorrect": "اجمع تكرار القيمة نفسها وتكرارات القيم الأكبر منها فقط: النازل يتّجه نحو نهاية الجدول."
+      },
+      "solution": {
+        "lines": [
+          "التكرار المجمع النازل للقيمة 9 هو مجموع تكرار القيمة 9 وتكرارات القيم الأكبر منها:",
+          "$2 + 1 + 1 + 1 = 5$"
+        ],
+        "result": "5"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

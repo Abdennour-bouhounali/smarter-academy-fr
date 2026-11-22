@@ -1,0 +1,289 @@
+{
+  "id": "ex-4am-tarrid-muthallathiya-l3-003",
+  "lessonCode": "tarrid-muthallathiya",
+  "level": 3,
+  "metadata": {
+    "title": "BEM 2014 — التمرين الثالث",
+    "estimatedMinutes": 8,
+    "tags": [
+      "الظل",
+      "شبه منحرف",
+      "مساحات"
+    ],
+    "source": {
+      "type": "bem",
+      "year": 2014,
+      "part": 1,
+      "exercise": 3
+    },
+    "exam": {
+      "kind": "official",
+      "badge": "BEM 2014",
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "الشّكل $ABCD$ شبه منحرف قائم في $B$ ، فيه: $\\widehat{ACB} = 25^{\\circ}$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0.0,
+          10.2588
+        ],
+        "B": [
+          0.0,
+          0.0
+        ],
+        "C": [
+          22.0,
+          0.0
+        ],
+        "D": [
+          12.0,
+          10.2588
+        ]
+      },
+      "polygons": [
+        {
+          "points": [
+            "A",
+            "C",
+            "D"
+          ],
+          "tone": "slate"
+        }
+      ],
+      "segments": [
+        {
+          "from": "A",
+          "to": "D",
+          "label": "12 cm"
+        },
+        [
+          "A",
+          "B"
+        ],
+        {
+          "from": "B",
+          "to": "C",
+          "label": "22 cm",
+          "labelSide": -1
+        },
+        [
+          "C",
+          "D"
+        ],
+        [
+          "A",
+          "C"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "B",
+          "C"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "C",
+          "from": "A",
+          "to": "B",
+          "label": "25°",
+          "radius": 40
+        }
+      ],
+      "labels": {
+        "A": "nw",
+        "B": "sw",
+        "C": "se",
+        "D": "ne"
+      },
+      "ariaLabel": "شبه منحرف ABCD قائم في B: AD = 12 cm و BC = 22 cm، والزاوية ACB قيسها 25 درجة، والجزء المظلل هو المثلث ACD",
+      "maxWidth": 340
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب الطول $AB$ بالتدوير الى الوحدة (استعن بـ: $\\tan\\widehat{ACB}$).",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بـ cm مدوّرا إلى الوحدة",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "47",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        },
+        {
+          "value": "9",
+          "id": "MISC-MUTH-NISBA-GHAYR-MUNASIBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $ABC$ القائم في $B$ ، حدّد موقع الضلع المعلوم والضلع المطلوب بالنسبة إلى الزاوية $\\widehat{ACB}$ (مجاور، مقابل أو وتر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة التي تجمع هذين الضلعين هي ظل الزاوية $\\widehat{ACB}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالآلة الحاسبة مبرمجة على الدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = \\tan 25^{\\circ} \\times 22 \\approx 10\\,\\mathrm{cm}$ .",
+        "incorrect": "الطول المطلوب في بسط النسبة: نضرب الطول المعلوم في النسبة المثلثية ولا نقسم عليها؛ والآلة الحاسبة مبرمجة على الدرجة."
+      },
+      "solution": {
+        "lines": [
+          "بما أن المثلث $ABC$ قائم فإنّ: $\\tan\\widehat{ACB} = \\dfrac{AB}{BC}$",
+          "$AB = \\tan\\widehat{ACB} \\times BC$",
+          "$AB = \\tan 25^{\\circ} \\times 22$",
+          "(الآلة الحاسبة تعطي $AB \\approx 10{,}2588$ )"
+        ],
+        "result": "AB \\approx 10\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "احسب مساحة كل من شبه المنحرف $ABCD$ و المثلث $ABC$ ثم استنتج مساحة الجزء المظلل.",
+      "statement": "احسب مساحة شبه المنحرف $ABCD$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المساحة بـ cm² (استعمل AB بالتدوير إلى الوحدة)",
+      "expectedAnswer": "170",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة شبه المنحرف: نصف مجموع القاعدتين في الارتفاع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القاعدتان $[AD]$ و $[BC]$ ، والارتفاع $[AB]$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$S_{ABCD} = \\dfrac{(12 + 22) \\times 10}{2} = 170\\,\\mathrm{cm}^2$ .",
+        "incorrect": "القاعدتان متوازيتان $[AD]$ و $[BC]$ ، والارتفاع هو $AB$ المحسوب في 01."
+      },
+      "solution": {
+        "lines": [
+          "$S_{ABCD} = \\dfrac{(AD + BC) \\times AB}{2}$",
+          "$S_{ABCD} = \\dfrac{(12 + 22) \\times 10}{2} = \\dfrac{340}{2}$"
+        ],
+        "result": "S_{ABCD} = 170\\,\\mathrm{cm}^2"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب مساحة المثلث $ABC$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المساحة بـ cm²",
+      "expectedAnswer": "110",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $ABC$ قائم في $B$ : ضلعا الزاوية القائمة هما القاعدة والارتفاع."
+        }
+      ],
+      "feedback": {
+        "correct": "$S_{ABC} = \\dfrac{10 \\times 22}{2} = 110\\,\\mathrm{cm}^2$ .",
+        "incorrect": "في المثلث القائم: نصف جداء ضلعي الزاوية القائمة."
+      },
+      "solution": {
+        "lines": [
+          "$S_{ABC} = \\dfrac{AB \\times BC}{2}$",
+          "$S_{ABC} = \\dfrac{10 \\times 22}{2} = \\dfrac{220}{2}$"
+        ],
+        "result": "S_{ABC} = 110\\,\\mathrm{cm}^2"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "استنتج مساحة الجزء المظلل.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المساحة بـ cm²",
+      "expectedAnswer": "60",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الجزء المظلل هو المثلث $ADC$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "شبه المنحرف = المثلث $ABC$ + المثلث $ADC$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$S_{ADC} = 170 - 110 = 60\\,\\mathrm{cm}^2$ .",
+        "incorrect": "اطرح مساحة المثلث من مساحة شبه المنحرف."
+      },
+      "solution": {
+        "lines": [
+          "$S_{ADC} = S_{ABCD} - S_{ABC}$",
+          "$S_{ADC} = 170 - 110$"
+        ],
+        "result": "S_{ADC} = 60\\,\\mathrm{cm}^2"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

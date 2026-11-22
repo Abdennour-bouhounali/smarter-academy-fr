@@ -1,0 +1,174 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l5-002",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 5,
+  "metadata": {
+    "title": "تمرين 19 — السداسي وقرصه",
+    "estimatedMinutes": 3,
+    "tags": [
+      "المساحة",
+      "النسبة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-19",
+      "page": 161,
+      "section": "أتعمّق",
+      "number": 19
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 161): ABCDEF سداسي منتظم ضلعه $16\\,\\mathrm{m}$ ومساحته $S = 384\\sqrt{3}\\,\\mathrm{m^2}$ ، و S′ مساحة القرص الذي مركزه O ونصف قطره OA.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "H": [
+          0,
+          13.856
+        ],
+        "A": [
+          -16,
+          0
+        ],
+        "B": [
+          -8,
+          13.856
+        ],
+        "C": [
+          8,
+          13.856
+        ],
+        "D": [
+          16,
+          0
+        ],
+        "E": [
+          8,
+          -13.856
+        ],
+        "F": [
+          -8,
+          -13.856
+        ]
+      },
+      "circles": [
+        {
+          "center": "O",
+          "radius": 16
+        }
+      ],
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "tone": "rose",
+          "bold": true
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "tone": "rose",
+          "bold": true
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "tone": "rose",
+          "bold": true
+        },
+        {
+          "from": "D",
+          "to": "E",
+          "tone": "rose",
+          "bold": true
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "tone": "rose",
+          "bold": true
+        },
+        {
+          "from": "F",
+          "to": "A",
+          "tone": "rose",
+          "bold": true
+        },
+        {
+          "from": "A",
+          "to": "D",
+          "dashed": true
+        },
+        {
+          "from": "B",
+          "to": "E",
+          "dashed": true
+        },
+        {
+          "from": "C",
+          "to": "F",
+          "dashed": true
+        },
+        [
+          "O",
+          "H"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "B",
+          "H",
+          "O"
+        ]
+      ],
+      "ariaLabel": "سداسي منتظم ABCDEF في دائرته المحيطة التي مركزها O، والأقطار [AD] و [BE] و [CF] تمر بـ O، و [OH] يعامد [BC] في H",
+      "maxWidth": 480
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "النسبة $\\dfrac{S}{S'}$ مدوّرة إلى 0,01:",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "0.83",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUTH-DARB-BADAL-QISMA",
+          "value": "1.65"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نصف قطر القرص OA يساوي ضلع السداسي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$S' = \\pi \\times OA^2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم S على S′."
+        }
+      ],
+      "feedback": {
+        "correct": "$S' = 256\\pi$ و $\\dfrac{384\\sqrt{3}}{256\\pi} = \\dfrac{3\\sqrt{3}}{2\\pi} \\approx 0{,}83$ : السداسي داخل القرص.",
+        "incorrect": "النسبة أصغر من 1 لأن السداسي داخل القرص."
+      },
+      "difficulty": 5
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "id": "ex-4am-muadalat-x-murabba-l5-007",
+  "lessonCode": "muadalat-x-murabba",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2008 — ساحة المتوسطة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "مساحة",
+      "مستطيل",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_muadalat-x-murabba_P2",
+      "modelledOn": "BEM 2008 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2008",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "ساحة متوسطة يحافظ تلاميذها على نظافتها، مستطيلة الشكل مساحتها $1200m^2$ و طولها يساوي ثلاثة أمثال عرضها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "احسب عرض و طول هذه الساحة.",
+      "statement": "العرض:",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_muadalat-x-murabba_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: العرض بالمتر (m)",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "200",
+          "id": "MISC-HALL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "سمِّ $x$ العرض: الطول إذن $3x$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب أن جداء الطول في العرض يساوي المساحة، ثم اعزل $x^2$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العرض عدد موجب: احتفظ بالحل الموجب."
+        }
+      ],
+      "feedback": {
+        "correct": "من $3x^2 = 1200$ نجد $x^2 = 400$ ومنه العرض $20m$.",
+        "incorrect": "الطول هو $3x$: ستحصل على معادلة فيها $x^2$، احتفظ بالحل الموجب."
+      },
+      "solution": {
+        "lines": [
+          "ليكن $x$ عرض الساحة، فطولها $3x$",
+          "$x \\times 3x = 1200$",
+          "$3x^2 = 1200$",
+          "$x^2 = 400$",
+          "$x = \\sqrt{400} = 20$ (العرض عدد موجب)"
+        ],
+        "result": "x = 20m"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "الطول:",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بالمتر (m)",
+      "expectedAnswer": "60",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الطول يساوي ثلاثة أمثال العرض."
+        }
+      ],
+      "feedback": {
+        "correct": "الطول $3 \\times 20 = 60m$.",
+        "incorrect": "الطول هو ثلاثة أمثال العرض الذي وجدته."
+      },
+      "solution": {
+        "lines": [
+          "الطول $= 3 \\times 20$"
+        ],
+        "result": "60m"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "قررت البلدية تزفيت الساحة، ثمن المتر المربع الواحد $1500DA$. احسب تكلفة التزفيت.",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المبلغ بالدينار (DA)",
+      "expectedAnswer": "1800000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكلفة = المساحة × ثمن المتر المربع."
+        }
+      ],
+      "feedback": {
+        "correct": "$1200 \\times 1500 = 1800000DA$.",
+        "incorrect": "اضرب مساحة الساحة في ثمن المتر المربع."
+      },
+      "solution": {
+        "lines": [
+          "التكلفة: $1200 \\times 1500$"
+        ],
+        "result": "1800000DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "تتحمل البلدية $75\\%$ من هذه التكلفة، و تتحمل مديرية التربية الباقي. احسب المبلغ الذي تتحمله مديرية التربية.",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المبلغ بالدينار (DA)",
+      "expectedAnswer": "450000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما النسبة المئوية التي تتحملها مديرية التربية؟"
+        }
+      ],
+      "feedback": {
+        "correct": "مديرية التربية تتحمل $25\\%$: $1800000 \\times \\dfrac{25}{100} = 450000DA$.",
+        "incorrect": "احسب النسبة الباقية ($100\\% - 75\\%$) من التكلفة."
+      },
+      "solution": {
+        "lines": [
+          "نسبة مديرية التربية: $100\\% - 75\\% = 25\\%$",
+          "$1800000 \\times \\dfrac{25}{100}$"
+        ],
+        "result": "450000DA"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

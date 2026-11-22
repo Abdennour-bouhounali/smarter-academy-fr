@@ -1,0 +1,170 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l2-010",
+  "lessonCode": "mana-jam-tarh",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — درجتا حرارة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "يقلّ",
+      "مخطط بأقواس"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 1,
+      "file": "1am-s1-91",
+      "exercise": 3
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "قبل أن يسافر وليد لزيارة جدّه، قرأ النشرة الجوية: درجة الحرارة في مدينة سطيف $8\\,\\mathrm{°C}$، وهي تقلّ عن درجة الحرارة في مدينة بسكرة بـ $14\\,\\mathrm{°C}$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "مثّل هذه الوضعية بمخطط بأقواس: ماذا يحمل القوس تحت الخط (الكل)؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "درجة الحرارة في بسكرة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "درجة الحرارة في سطيف",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        },
+        {
+          "id": "C",
+          "content": "الفرق 14",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ المدينتين أدفأ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأكبر هو الذي يضمّ الأصغر والفرق معًا."
+        }
+      ],
+      "feedback": {
+        "correct": "درجة الحرارة في بسكرة = درجة الحرارة في سطيف + 14: هي الكل.",
+        "incorrect": "سطيف أبرد من بسكرة: أيّ الدرجتين تضمّ الأخرى والفرق؟"
+      },
+      "solution": {
+        "lines": [
+          "درجة الحرارة في سطيف تقلّ عن درجة الحرارة في بسكرة، إذن بسكرة أدفأ.",
+          "الكل (تحت الخط): درجة الحرارة في بسكرة؛ الجزآن: 8 و 14."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هي درجة الحرارة في مدينة بسكرة؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة °C)",
+      "expectedAnswer": "22",
+      "misconceptionSignatures": [
+        {
+          "value": "-6",
+          "id": "MISC-JAMTARH-KALIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بسكرة أدفأ من سطيف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكل = مجموع الجزأين."
+        }
+      ],
+      "feedback": {
+        "correct": "$8 + 14 = 22\\,\\mathrm{°C}$.",
+        "incorrect": "درجة الحرارة في بسكرة أكبر من $8\\,\\mathrm{°C}$."
+      },
+      "solution": {
+        "lines": [
+          "$\\square = 8 + 14 = 22$",
+          "درجة الحرارة في بسكرة $22\\,\\mathrm{°C}$."
+        ],
+        "result": "22\\,°\\mathrm{C}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "برّر لماذا نجمع، رغم أن النص يقول « تقلّ ».",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين المجهول في المخطط بأقواس؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل المجهول هو الكل أم جزء؟"
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك بالحل النموذجي: المجهول هو الكل."
+      },
+      "solution": {
+        "lines": [
+          "المجهول هو درجة الحرارة في بسكرة، وهي الكل في المخطط بأقواس.",
+          "الكل يساوي مجموع جزأيه (8 و 14)، إذن نجمع.",
+          "كلمة « تقلّ » تصف سطيف بالنسبة إلى بسكرة، ولا تقرّر العملية وحدها."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

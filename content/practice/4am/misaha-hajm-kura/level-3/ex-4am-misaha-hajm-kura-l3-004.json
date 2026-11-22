@@ -1,0 +1,65 @@
+{
+  "id": "ex-4am-misaha-hajm-kura-l3-004",
+  "lessonCode": "misaha-hajm-kura",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — طاس نصف كروي",
+    "estimatedMinutes": 3,
+    "tags": [
+      "حجم الجلة",
+      "نصف كرة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_misaha-hajm-kura_P2",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "طاس (وعاء) على شكل نصف جلة نصف قطرها الداخلي $9\\,\\mathrm{cm}$ . اكتب حجم الماء الذي يملؤه على الشكل $k\\pi\\,\\mathrm{cm}^3$ ثم أعط $k$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قيمة $k$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_misaha-hajm-kura_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة (مثل 2,5) أو عدد طبيعي",
+      "expectedAnswer": "486",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نصف جلة: نصف حجم الجلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$9^3 = 729$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب $\\frac{1}{2} \\times \\frac{4}{3} \\times 729$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\frac{1}{2} \\times \\frac{4}{3}\\pi \\times 729 = 486\\pi\\,\\mathrm{cm}^3$ .",
+        "incorrect": "الطاس نصف جلة فقط."
+      },
+      "difficulty": 3,
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-HAJM-MUAMIL",
+          "value": "972"
+        }
+      ]
+    }
+  ]
+}

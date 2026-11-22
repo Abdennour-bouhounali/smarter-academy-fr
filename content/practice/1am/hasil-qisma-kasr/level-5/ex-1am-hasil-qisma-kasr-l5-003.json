@@ -1,0 +1,383 @@
+{
+  "id": "ex-1am-hasil-qisma-kasr-l5-003",
+  "lessonCode": "hasil-qisma-kasr",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — مشروع التشجير",
+    "estimatedMinutes": 18,
+    "tags": [
+      "حاصل القسمة",
+      "عدد عشري",
+      "قيمة مقرّبة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 3,
+      "file": "1am-s3-37",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تخصّص المدرسة قطعة أرض مساحتها 45 م² لمشروع التشجير، وتقسّمها بالتساوي على أقسام تتنافس في العناية بالأشجار.\nالجزء الأول: القطعة مقسّمة على 6 أقسام.\nالجزء الثاني: تُقسّم القطعة نفسها على 7 أقسام، فنقارن."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "اكتب مساحة حصّة القسم الواحد (بالمتر المربع) على شكل كسر في حالة 6 أقسام.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "15/2",
+      "misconceptionSignatures": [
+        {
+          "value": "6/45",
+          "id": "MISC-HASIL-QALB"
+        },
+        {
+          "value": "45,6",
+          "id": "MISC-HASIL-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العدد الذي نقسمه والعدد الذي نقسم عليه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في الكتابة الكسرية يوضع المقسوم فوق الشرطة والمقسوم عليه تحتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب القسمة أولًا ثم حوّلها إلى كسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$45 \\div 6$ = $\\dfrac{45}{6}$ : المقسوم بسط والمقسوم عليه مقام.",
+        "incorrect": "الكسر $\\dfrac{a}{b}$ هو حاصل قسمة $a$ على $b$ : البسط هو المقسوم والمقام هو المقسوم عليه، والشرطة لا تتحوّل إلى فاصلة."
+      },
+      "solution": {
+        "lines": [
+          "$45 \\div 6$ = $\\dfrac{45}{6}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اكتب هذه المساحة على شكل عدد عشري.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة)",
+      "expectedAnswer": "7,5",
+      "misconceptionSignatures": [
+        {
+          "value": "45,6",
+          "id": "MISC-HASIL-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجعل المقام 10 أو 100 أو 1000 بالضرب في عدد مناسب، أو أجرِ القسمة العشرية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل تتوقّف الأرقام بعد الفاصلة أم تتكرّر بلا نهاية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نتحدّث عن عدد عشري عندما تتوقّف الأرقام بعد الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{45}{6}$ = $7{,}5$",
+        "incorrect": "حاصل القسمة عدد عشري إذا انتهت أرقامه بعد الفاصلة ؛ وإلاّ فالكسر هو الكتابة المضبوطة له."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{45}{6}$ = $\\dfrac{15}{2}$",
+          "$\\dfrac{15}{2} = \\dfrac{15 \\times 5}{2 \\times 5} = \\dfrac{75}{10}$ (نضرب الحدّين في العدد نفسه)",
+          "$\\dfrac{75}{10}$ = $7{,}5$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "$\\dfrac{45}{6} \\times 6 = \\ldots$",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (طبيعي أو كسر)",
+      "expectedAnswer": "45",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي ضربنا الكسر فيه؟ وما مقام الكسر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكسر $\\dfrac{a}{b}$ هو العدد الذي إذا ضُرب في $b$ أعطى $a$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن العامل المضروب فيه بمقام الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{45}{6} \\times 6 = 45$",
+        "incorrect": "العدد الذي نضربه في $b$ لنحصل على $a$ هو حاصل قسمة $a$ على $b$ ، أي $\\dfrac{a}{b}$ ؛ لا نطرح العددين ولا نضربهما."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{45}{6} \\times 6 = 45$ : الحصص الستّ تعيد 45 م²."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "statement": "اكتب مساحة حصّة القسم الواحد في حالة 7 أقسام على شكل كسر.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "45/7",
+      "misconceptionSignatures": [
+        {
+          "value": "7/45",
+          "id": "MISC-HASIL-QALB"
+        },
+        {
+          "value": "45,7",
+          "id": "MISC-HASIL-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العدد الذي نقسمه والعدد الذي نقسم عليه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في الكتابة الكسرية يوضع المقسوم فوق الشرطة والمقسوم عليه تحتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب القسمة أولًا ثم حوّلها إلى كسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$45 \\div 7$ = $\\dfrac{45}{7}$ : المقسوم بسط والمقسوم عليه مقام.",
+        "incorrect": "الكسر $\\dfrac{a}{b}$ هو حاصل قسمة $a$ على $b$ : البسط هو المقسوم والمقام هو المقسوم عليه، والشرطة لا تتحوّل إلى فاصلة."
+      },
+      "solution": {
+        "lines": [
+          "$45 \\div 7$ = $\\dfrac{45}{7}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أعط القيمة المقرّبة بالنقصان إلى 0,01 لهذه المساحة.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بـ رقمين بعد الفاصلة",
+      "expectedAnswer": "6,42",
+      "misconceptionSignatures": [
+        {
+          "value": "6,43",
+          "id": "MISC-HASIL-TAQRIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أرقام حاصل القسمة بعد الفاصلة حتى المرتبة المطلوبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمة المقرّبة بالنقصان أصغر من الحاصل، والقيمة المقرّبة بالزيادة أكبر منه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زِد وحدة واحدة على آخر رقم محتفَظ به عند التقريب بالزيادة."
+        }
+      ],
+      "feedback": {
+        "correct": "$45 \\div 7$ = $6{,}4285$…، إذن القيمة المقرّبة بالنقصان هي $6{,}42$.",
+        "incorrect": "القيمة المقرّبة ليست قيمة مضبوطة : بالنقصان نحذف ما بعد المرتبة المطلوبة، وبالزيادة نزيد وحدة على آخر رقم محتفَظ به."
+      },
+      "solution": {
+        "lines": [
+          "$45 \\div 7$ = $6{,}4285$… (الأرقام لا تتوقّف)",
+          "$6{,}42$ < $\\dfrac{45}{7}$ < $6{,}43$ : بالنقصان نأخذ $6{,}42$."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ج",
+      "statement": "أعط القيمة المقرّبة بالزيادة إلى 0,01 لهذه المساحة.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بـ رقمين بعد الفاصلة",
+      "expectedAnswer": "6,43",
+      "misconceptionSignatures": [
+        {
+          "value": "6,42",
+          "id": "MISC-HASIL-TAQRIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أرقام حاصل القسمة بعد الفاصلة حتى المرتبة المطلوبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمة المقرّبة بالنقصان أصغر من الحاصل، والقيمة المقرّبة بالزيادة أكبر منه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زِد وحدة واحدة على آخر رقم محتفَظ به عند التقريب بالزيادة."
+        }
+      ],
+      "feedback": {
+        "correct": "$45 \\div 7$ = $6{,}4285$…، إذن القيمة المقرّبة بالزيادة هي $6{,}43$.",
+        "incorrect": "القيمة المقرّبة ليست قيمة مضبوطة : بالنقصان نحذف ما بعد المرتبة المطلوبة، وبالزيادة نزيد وحدة على آخر رقم محتفَظ به."
+      },
+      "solution": {
+        "lines": [
+          "$45 \\div 7$ = $6{,}4285$… (الأرقام لا تتوقّف)",
+          "$6{,}42$ < $\\dfrac{45}{7}$ < $6{,}43$ : بالزيادة نأخذ $6{,}43$."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "02",
+      "sub": "د",
+      "statement": "في أيّ الحالتين يمكن إعطاء مساحة الحصّة بعدد عشري مضبوط ؟",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "في حالة 6 أقسام",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "في حالة 7 أقسام",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASIL-KULL-ASHRI"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن بين الحالتين بالرجوع إلى ما وجدته في الأسئلة السابقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كل اقتراح على الأرقام."
+        }
+      ],
+      "feedback": {
+        "correct": "مع 6 أقسام : $45 \\div 6 = 7{,}5$ ؛ مع 7 أقسام تتكرّر الأرقام.",
+        "incorrect": "حاصل القسمة عدد عشري إذا انتهت أرقامه بعد الفاصلة ؛ وإلاّ فالكسر هو الكتابة المضبوطة له."
+      },
+      "solution": {
+        "lines": [
+          "$45 \\div 6 = 7{,}5$ : عدد عشري، المساحة مضبوطة.",
+          "$45 \\div 7 = 6{,}428571\\ldots$ : لا تتوقّف الأرقام، فلا نملك إلاّ قيمًا مقرّبة أو الكسر."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

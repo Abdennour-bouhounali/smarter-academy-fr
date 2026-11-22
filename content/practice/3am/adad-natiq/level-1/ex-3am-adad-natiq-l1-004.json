@@ -1,0 +1,367 @@
+{
+  "id": "ex-3am-adad-natiq-l1-004",
+  "lessonCode": "adad-natiq",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — عشري أم غير عشري، وهل هو ناطق ؟",
+    "estimatedMinutes": 12,
+    "tags": [
+      "العدد الناطق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يريد التلاميذ تصنيف أعداد ناطقة لتعليقها على الحبل في ساحة المدرسة، فيسألون عن كلّ عدد : هل هو عشري ؟ وهل هو ناطق ؟"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "هل العدد $\\dfrac{-13}{25}$ عشري ؟",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-NEGNOTDEC"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّل مقام الكسر المختزل إلى جداء عوامل أوّلية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الكسر المختزل له كتابة عشرية تامّة إذا لم يظهر في مقامه إلّا العاملان الأوّليان اللذان يقسمان العدد عشرة."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: نعم .",
+        "incorrect": "اختزل ثمّ حلّل المقام، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نختزل الكسر : $\\dfrac{-13}{25} = -\\dfrac{13}{25}$ .",
+          "مقام الكسر المختزل هو $25$ ولا يقبل القسمة إلّا على عوامل من $\\{2 ; 5\\}$ ، إذن للعدد كتابة عشرية تامّة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل العدد $\\dfrac{-13}{25}$ ناطق ؟",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-NEGNOTDEC"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ كلّ عدد صحيح نسبي وكلّ عدد عشري نسبي له كتابة كسرية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العدد على الشكل a/b ثمّ اقرأ تعريف العدد الناطق."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: نعم .",
+        "incorrect": "راجع تعريف العدد الناطق ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "العدد $\\dfrac{-13}{25}$ حاصل قسمة عددين نسبيين مقامه غير معدوم، إذن هو ناطق.",
+          "كون العدد عشريًا أو غير عشري لا يمنعه من أن يكون ناطقًا."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "هل العدد $\\dfrac{6}{15}$ عشري ؟",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-DECIMAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّل مقام الكسر المختزل إلى جداء عوامل أوّلية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الكسر المختزل له كتابة عشرية تامّة إذا لم يظهر في مقامه إلّا العاملان الأوّليان اللذان يقسمان العدد عشرة."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: نعم .",
+        "incorrect": "اختزل ثمّ حلّل المقام، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نختزل الكسر : $\\dfrac{6}{15} = \\dfrac{2}{5}$ .",
+          "مقام الكسر المختزل هو $5$ ولا يقبل القسمة إلّا على عوامل من $\\{2 ; 5\\}$ ، إذن للعدد كتابة عشرية تامّة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل العدد $\\dfrac{6}{15}$ ناطق ؟",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-NEGNOTDEC"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ كلّ عدد صحيح نسبي وكلّ عدد عشري نسبي له كتابة كسرية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العدد على الشكل a/b ثمّ اقرأ تعريف العدد الناطق."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: نعم .",
+        "incorrect": "راجع تعريف العدد الناطق ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "العدد $\\dfrac{6}{15}$ حاصل قسمة عددين نسبيين مقامه غير معدوم، إذن هو ناطق.",
+          "كون العدد عشريًا أو غير عشري لا يمنعه من أن يكون ناطقًا."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ا",
+      "statement": "هل العدد $\\dfrac{7}{18}$ عشري ؟",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-DECIMAL"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّل مقام الكسر المختزل إلى جداء عوامل أوّلية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الكسر المختزل له كتابة عشرية تامّة إذا لم يظهر في مقامه إلّا العاملان الأوّليان اللذان يقسمان العدد عشرة."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: لا .",
+        "incorrect": "اختزل ثمّ حلّل المقام، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الكسر $\\dfrac{7}{18}$ غير قابل للاختزال.",
+          "المقام $18$ يقبل القسمة على $3$ ، وليس عاملاه الأوّليان $2$ و $5$ فقط، إذن لا كتابة عشرية تامّة للعدد."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ب",
+      "statement": "هل العدد $\\dfrac{7}{18}$ ناطق ؟",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-NOTANUMBER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ كلّ عدد صحيح نسبي وكلّ عدد عشري نسبي له كتابة كسرية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العدد على الشكل a/b ثمّ اقرأ تعريف العدد الناطق."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: نعم .",
+        "incorrect": "راجع تعريف العدد الناطق ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "العدد $\\dfrac{7}{18}$ حاصل قسمة عددين نسبيين مقامه غير معدوم، إذن هو ناطق.",
+          "كون العدد عشريًا أو غير عشري لا يمنعه من أن يكون ناطقًا."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

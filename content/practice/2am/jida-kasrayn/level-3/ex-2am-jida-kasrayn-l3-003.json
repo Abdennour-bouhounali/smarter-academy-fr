@@ -1,0 +1,188 @@
+{
+  "id": "ex-2am-jida-kasrayn-l3-003",
+  "lessonCode": "jida-kasrayn",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — إناء على شكل موشور",
+    "estimatedMinutes": 8,
+    "tags": [
+      "كسر من حجم",
+      "جداء كسرين"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 3,
+      "file": "2am-s3-25",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "إناء على شكل موشور قائم قاعدته مستطيل عرضها $8$ cm وطولها $x$ cm ، وارتفاعه $6$ cm ، وحجمه $480$ $\\mathrm{cm}^3$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أوجد قيمة $x$ بالسنتيمتر .",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "10",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المعطيات ثمّ حدّد العملية المناسبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب خطوة بخطوة وراجع الوحدة في الناتج."
+        }
+      ],
+      "feedback": {
+        "correct": "$10$ .",
+        "incorrect": "راجع المعطيات والعمليّة ثمّ أعد الحساب."
+      },
+      "solution": {
+        "lines": [
+          "الحجم $= 8 \\times x \\times 6 = 48 \\times x$ ، و $48 \\times x = 480$ إذن $x = 480 \\div 48 = 10$ cm ."
+        ],
+        "result": "10"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "مُلئ هذا الإناء بالماء إلى $\\dfrac{5}{6}$ من ارتفاعه . ما حجم الماء بوحدة $\\mathrm{cm}^3$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "400",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "576",
+          "id": "MISC-JIDAKASR-FLIP"
+        },
+        {
+          "value": "80",
+          "id": "MISC-JIDAKASR-HALFWAY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كلمة «من» بعد كسر تعني الضرب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\dfrac{a}{b}$ من $x$ هو $x \\times \\dfrac{a}{b}$ : اقسم $x$ على $b$ ثمّ اضرب في $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي إذا كان الكسر أصغر من 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$400$ .",
+        "incorrect": "الكسر «من» عدد يعني الضرب: اقسم على المقام ثمّ اضرب في البسط، ولا تقلب الكسر."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{6}$ من $480$ هو $480 \\times \\dfrac{5}{6}$ .",
+          "$480 \\div 6 = 80$ ثمّ $80 \\times 5 = 400$ ."
+        ],
+        "result": "400"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما حجم الجزء الفارغ من الإناء بوحدة $\\mathrm{cm}^3$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "80",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2880",
+          "id": "MISC-JIDAKASR-FLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كلمة «من» بعد كسر تعني الضرب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\dfrac{a}{b}$ من $x$ هو $x \\times \\dfrac{a}{b}$ : اقسم $x$ على $b$ ثمّ اضرب في $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي إذا كان الكسر أصغر من 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$80$ .",
+        "incorrect": "الكسر «من» عدد يعني الضرب: اقسم على المقام ثمّ اضرب في البسط، ولا تقلب الكسر."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{6}$ من $480$ هو $480 \\times \\dfrac{1}{6}$ .",
+          "$480 \\div 6 = 80$ ثمّ $80 \\times 1 = 80$ ."
+        ],
+        "result": "80"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "id": "ex-3am-musawiyat-amaliyat-l3-010",
+  "lessonCode": "musawiyat-amaliyat",
+  "level": 3,
+  "metadata": {
+    "title": "العدد المجهول في مساواة بسيطة",
+    "estimatedMinutes": 7,
+    "tags": [
+      "المساويات والجمع",
+      "المساويات والضرب"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "prep",
+      "page": 71,
+      "section": "أستعدّ"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "جد في كلّ حالة العدد المجهول مبرّرًا بعملية على الطرفين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "إذا كان $x + 8 = 0$ فإنّ $x = \\ldots$ .",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "-8",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-MUSAWIYA-ONE-SIDE"
+        },
+        {
+          "value": "8",
+          "id": "MISC-MUSAWIYA-ONE-SIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نضيفه (أو نطرحه)؟ وعلى أيّ طرف نطبّقه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تتغيّر المساواة إلا إذا أضفنا العدد نفسه (أو طرحناه) إلى طرفيها معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الطرف الأيمن والطرف الأيسر في سطر واحد ثم طبّق العملية على كلٍّ منهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = -8$ .",
+        "incorrect": "لا تتغيّر المساواة عندما نضيف إلى طرفيها معًا (أو نطرح منهما) العدد نفسه؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $x + 8 = 0$ .",
+          "بطرح $8$ من طرفي المساواة نجد: $x = -8$ ."
+        ],
+        "result": "x = -8"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "إذا كان $5x = 1$ فإنّ $x = \\ldots$ .",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "1/5",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-MUSAWIYA-ONE-SIDE"
+        },
+        {
+          "value": "5",
+          "id": "MISC-MUSAWIYA-ONE-SIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نضرب فيه (أو نقسم عليه)؟ وهل هو معدوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نضرب (أو نقسم) الطرفين معًا، وكلّ حدّ من الطرف يتأثّر بالعملية؛ والقسمة على صفر ممنوعة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع الطرف كاملًا بين قوسين قبل أن تضرب، وانتبه لإشارة العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{1}{5}$ .",
+        "incorrect": "لا تتغيّر المساواة عندما نضرب طرفيها في العدد نفسه أو نقسمهما على عدد غير معدوم؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $5x = 1$ .",
+          "بقسمة طرفي المساواة على $5$ نجد: $\\dfrac{5x}{5} = \\dfrac{1}{5}$ ، أي $x = \\dfrac{1}{5}$ ."
+        ],
+        "result": "x = \\dfrac{1}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "إذا كان $-6x = 6$ فإنّ $x = \\ldots$ .",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "-1",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-MUSAWIYA-ONE-SIDE"
+        },
+        {
+          "value": "1",
+          "id": "MISC-MUSAWIYA-SIGN-NEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نضرب فيه (أو نقسم عليه)؟ وهل هو معدوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نضرب (أو نقسم) الطرفين معًا، وكلّ حدّ من الطرف يتأثّر بالعملية؛ والقسمة على صفر ممنوعة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع الطرف كاملًا بين قوسين قبل أن تضرب، وانتبه لإشارة العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = -1$ .",
+        "incorrect": "لا تتغيّر المساواة عندما نضرب طرفيها في العدد نفسه أو نقسمهما على عدد غير معدوم؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $-6x = 6$ .",
+          "بقسمة طرفي المساواة على $-6$ نجد: $\\dfrac{-6x}{-6} = \\dfrac{6}{-6}$ ، أي $x = -1$ ."
+        ],
+        "result": "x = -1"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "إذا كان $x = 0$ فإنّ $9 + 2x = \\ldots$ .",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-MUSAWIYA-ONE-SIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العلاقة بين المساواة المعطاة والمساواة المطلوبة؟ أيّ عملية تنقلك من الأولى إلى الثانية؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا أمكن الانتقال من المساواة المعطاة إلى المساواة المقترحة بعملية واحدة على الطرفين فهي صحيحة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب عمليّة واحدة على الطرفين، ثم قارن النتيجة بالمساواة المقترحة حدًّا بحدّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$9 + 2x = 9$ .",
+        "incorrect": "استعمل خواص المساواة والعمليّات: عملية واحدة على الطرفين معًا تنقلك من مساواة إلى أخرى؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $x = 0$ .",
+          "بضرب طرفي المساواة في $2$ نجد: $2 \\times x = 2 \\times 0$ ، أي $2x = 0$ .",
+          "بإضافة $9$ إلى طرفي المساواة نجد: $2x + 9 = 9$ ."
+        ],
+        "result": "9 + 2x = 9"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ihsa-l1-010",
+  "lessonCode": "wadiya-idmajiya-ihsa",
+  "level": 1,
+  "metadata": {
+    "title": "علامات أمين في أربعة فروض",
+    "estimatedMinutes": 4,
+    "tags": [
+      "المتوسط الحسابي",
+      "الوسيط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ihsa_P1"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "تحصّل أمين، المجتهد في مراجعة دروسه كل مساء، في أربعة فروض على العلامات الآتية:",
+    "formulas": [
+      "12 \\quad ; \\quad 15 \\quad ; \\quad 9 \\quad ; \\quad 14"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب متوسط علاماته.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة",
+      "expectedAnswer": "12,5",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع العلامات الأربع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم المجموع على 4 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{12 + 15 + 9 + 14}{4} = 12{,}5$ .",
+        "incorrect": "المتوسط = مجموع العلامات ÷ عددها."
+      },
+      "solution": {
+        "lines": [
+          "$12 + 15 + 9 + 14 = 50$",
+          "$\\dfrac{50}{4} = 12{,}5$"
+        ],
+        "result": "12{,}5"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عيّن وسيط علاماته.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-IHSA-WASIT-BILA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رتّب العلامات تصاعديا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددها زوجي: خذ نصف مجموع العلامتين الوسطيين."
+        }
+      ],
+      "feedback": {
+        "correct": "الترتيب: 9 ، 12 ، 14 ، 15 ؛ $\\dfrac{12 + 14}{2} = 13$ .",
+        "incorrect": "رتّب العلامات قبل أخذ العلامتين الوسطيين."
+      },
+      "solution": {
+        "lines": [
+          "الترتيب التصاعدي: 9 ، 12 ، 14 ، 15",
+          "$\\dfrac{12 + 14}{2} = 13$"
+        ],
+        "result": "13"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

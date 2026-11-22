@@ -1,0 +1,366 @@
+{
+  "id": "ex-4am-tamthil-bayani-khatti-l5-007",
+  "lessonCode": "tamthil-bayani-khatti",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2017 — الترامواي والحافلة بسيدي بلعباس",
+    "estimatedMinutes": 20,
+    "tags": [
+      "وضعية إدماجية",
+      "مسافة ومدة",
+      "قراءة بيانية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tamthil-bayani-khatti_P2",
+      "modelledOn": "BEM 2017 II II-02"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2017",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "ينطلق الترامواي من محطته الأولى بسيدي بلعباس في موعده تمامًا بسرعة ثابتة، وفي اللحظة نفسها تمرّ حافلة على بعد $2km$ من المحطة وتسير في الاتجاه نفسه بسرعة ثابتة. نسمّي $x$ المدة بالدقائق، و $y$ بُعد كل منهما عن المحطة (بالكيلومتر). يمثّل $(D_1)$ و $(D_2)$ في المعلم التالي بُعدي الترامواي والحافلة بدلالة $x$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "H": [
+          10,
+          5
+        ],
+        "B": [
+          0,
+          2
+        ],
+        "C": [
+          12,
+          5
+        ]
+      },
+      "rays": [
+        {
+          "from": "O",
+          "through": "H",
+          "name": "(D₁)",
+          "tone": "emerald",
+          "extend": 0
+        },
+        {
+          "from": "B",
+          "through": "C",
+          "name": "(D₂)",
+          "tone": "amber",
+          "extend": 0
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw"
+      },
+      "hidden": [
+        "H",
+        "B",
+        "C"
+      ],
+      "ariaLabel": "معلم على ورقة مرصوفة: نصف المستقيم (D1) ينطلق من المبدأ O، ونصف المستقيم (D2) ينطلق من النقطة (0 ; 2)، ويلتقيان",
+      "caption": "محور الفواصل: المدة بالدقائق — محور التراتيب: البعد عن المحطة بـ km"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أيّ المستقيمين يمثّل بُعد الترامواي عن المحطة؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(D_1)$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$(D_2)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KHATTIYA-AFFINE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التمثيل البياني لدالة خطية جزء من مستقيم يشمل المبدأ $O$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أيّ التمثيلين ينطلق من المبدأ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$(D_1)$ يشمل المبدأ $O$ : هو تمثيل الدالة الخطية.",
+        "incorrect": "دالة خطية: صورة 0 هي 0، فتمثيلها يشمل المبدأ."
+      },
+      "solution": {
+        "lines": [
+          "عند $x = 0$ يكون الترامواي في المحطة (البعد 0)، أما الحافلة فعلى بعد $2km$ : $(D_2)$ ينطلق من $(0 ; 2)$ .",
+          "إذن $(D_1)$ هو التمثيل المطلوب، لأنه يشمل المبدأ $O$ ."
+        ],
+        "result": "(D_1)"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "بقراءة بيانية، عيّن بُعد الترامواي عن المحطة بعد 6 دقائق.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: البعد بـ km",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ من العدد المعطى على محور الفواصل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اتجه عموديا حتى تمثيل الترامواي، ثم أفقيا حتى محور التراتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة من $(D)$ التي فاصلتها $6$ ترتيبها $3$ .",
+        "incorrect": "الصورة تُقرأ على محور التراتيب: ترتيب نقطة المستقيم، لا فاصلتها."
+      },
+      "solution": {
+        "lines": [
+          "النقطة من المستقيم $(D)$ التي فاصلتها $6$ ترتيبها $3$ .",
+          "إذن بعد 6 دقائق يكون الترامواي على بعد $3km$ من المحطة."
+        ],
+        "result": "f(6) = 3"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "بقراءة بيانية، عيّن المدة اللازمة ليبتعد الترامواي $2km$ عن المحطة.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدة بالدقائق",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-BAYANI-FASILA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ من العدد المعطى على محور التراتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اتجه أفقيا حتى المستقيم $(D)$ ، ثم عموديا حتى محور الفواصل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد المطلوب هو فاصلة نقطة المستقيم التي ترتيبها الصورة المعطاة."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة من $(D)$ التي ترتيبها $2$ فاصلتها $4$ .",
+        "incorrect": "العدد الذي علمت صورته يُقرأ على محور الفواصل: فاصلة نقطة المستقيم التي ترتيبها الصورة المعطاة."
+      },
+      "solution": {
+        "lines": [
+          "النقطة من المستقيم $(D)$ التي ترتيبها $2$ فاصلتها $4$ .",
+          "إذن يبتعد الترامواي $2km$ عن المحطة بعد 4 دقائق."
+        ],
+        "result": "f(4) = 2"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "بُعد الترامواي عن المحطة $f(x)$ حيث $f$ دالة خطية. عيّن عبارة $f(x)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "0,5",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-KHATTIYA-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$f$ دالة خطية: $f(x) = ax$ ، وتمثيلها يشمل النقطة ذات الإحداثيين $(4 ; 2)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب المعادلة $a \\times 4 = 2$ ثم حلّها: الترتيب على الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{2}{4} = 0{,}5$ ، إذن $f(x) = 0{,}5x$ .",
+        "incorrect": "المعامل هو الترتيب مقسوما على الفاصلة (وليس العكس)، مع الانتباه إلى الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "$f$ دالة خطية، إذن $f(x) = ax$ .",
+          "$f(4) = 2$ معناه $a \\times 4 = 2$",
+          "$a = \\dfrac{2}{4} = 0{,}5$"
+        ],
+        "result": "f(x) = 0{,}5x"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "بقراءة بيانية، عيّن متى يلحق الترامواي بالحافلة، وعلى أي بُعد من المحطة.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية (المدة ; البعد): المدة بالدقائق ثم البعد بـ km",
+      "expectedAnswer": {
+        "x": "8",
+        "y": "4"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "4",
+            "y": "8"
+          },
+          "id": "MISC-BAYANI-FASILA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن نقطة تقاطع المستقيمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "فاصلتها هي المدة وترتيبها هو البعد."
+        }
+      ],
+      "feedback": {
+        "correct": "يتقاطع المستقيمان في النقطة $(8 ; 4)$ : يلحق الترامواي بالحافلة بعد 8 دقائق على بعد $4km$ .",
+        "incorrect": "اقرأ إحداثيي نقطة التقاطع بالترتيب: الفاصلة ثم الترتيب."
+      },
+      "solution": {
+        "lines": [
+          "$(D_1)$ و $(D_2)$ يتقاطعان في النقطة $(8 ; 4)$ .",
+          "بعد 8 دقائق يلحق الترامواي بالحافلة على بعد $4km$ من المحطة."
+        ],
+        "result": "(8 ; 4)"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "☜ احسب السرعة المتوسطة للترامواي بالكيلومتر في الساعة.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: السرعة بـ km/h",
+      "expectedAnswer": "30",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يقطع الترامواي $0{,}5km$ في الدقيقة الواحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في الساعة 60 دقيقة."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}5 \\times 60 = 30$ : $30km/h$ .",
+        "incorrect": "حوّل: المسافة المقطوعة في دقيقة مضروبة في 60."
+      },
+      "solution": {
+        "lines": [
+          "معامل $f$ هو $0{,}5$ : يقطع الترامواي $0{,}5km$ في الدقيقة.",
+          "$0{,}5 \\times 60 = 30$ ، إذن سرعته المتوسطة $30km/h$ ."
+        ],
+        "result": "30km/h"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "id": "ex-3am-musawiyat-amaliyat-l2-002",
+  "lessonCode": "musawiyat-amaliyat",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — كتب لمكتبة قرية",
+    "estimatedMinutes": 7,
+    "tags": [
+      "وضعية",
+      "استعمال الخواص"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 3,
+      "file": "3am-s3-47",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثاني",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في حملة «كتاب لكلّ طفل» جمعت سلمى $s$ كتابًا، وجمعت نور أربعة أضعاف ما جمعته سلمى. وقدّمت المجموعة الصغيرة مجتمعة $35$ كتابًا لمكتبة قرية نائية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما المساواة التي تترجم عدد الكتب المقدَّمة؟",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$4 + s = 35$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-ADD-MULT-MIX"
+        },
+        {
+          "id": "B",
+          "content": "$4s = 35$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-TERM-LOST"
+        },
+        {
+          "id": "C",
+          "content": "$s + 4s = 35$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجهله المسألة؟ سمِّه بحرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم الجملة إلى مساواة بين عبارتين، ثم طبّق العمليّات نفسها على طرفيها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الجواب بالتعويض في نصّ المسألة."
+        }
+      ],
+      "feedback": {
+        "correct": "$s + 4s = 35$ .",
+        "incorrect": "استعمل خواص المساواة والعمليّات: عملية واحدة على الطرفين معًا تنقلك من مساواة إلى أخرى؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "عند سلمى $s$ وعند نور $4s$ ، ومجموعهما $35$ .",
+          "إذن $s + 4s = 35$ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "بجمع الحدّين نجد $5s = 35$ . بقسمة الطرفين على $5$ ، كم كتابًا جمعت سلمى؟",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الكتب",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "35",
+          "id": "MISC-MUSAWIYA-ONE-SIDE"
+        },
+        {
+          "value": "30",
+          "id": "MISC-MUSAWIYA-ADD-MULT-MIX"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نضرب فيه (أو نقسم عليه)؟ وهل هو معدوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نضرب (أو نقسم) الطرفين معًا، وكلّ حدّ من الطرف يتأثّر بالعملية؛ والقسمة على صفر ممنوعة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع الطرف كاملًا بين قوسين قبل أن تضرب، وانتبه لإشارة العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$s = \\dfrac{35}{5} = 7$ .",
+        "incorrect": "لا تتغيّر المساواة عندما نضرب طرفيها في العدد نفسه أو نقسمهما على عدد غير معدوم؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$5s = 35$ .",
+          "بقسمة طرفي المساواة على $5$ نجد: $\\dfrac{5s}{5} = \\dfrac{35}{5}$ ، أي $s = 7$ ."
+        ],
+        "result": "7"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "كم كتابًا جمعت نور؟",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الكتب",
+      "expectedAnswer": "28",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجهله المسألة؟ سمِّه بحرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم الجملة إلى مساواة بين عبارتين، ثم طبّق العمليّات نفسها على طرفيها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الجواب بالتعويض في نصّ المسألة."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 7 = 28$ كتابًا.",
+        "incorrect": "استعمل خواص المساواة والعمليّات: عملية واحدة على الطرفين معًا تنقلك من مساواة إلى أخرى؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نور جمعت $4s$ و $s = 7$ .",
+          "$4 \\times 7 = 28$ ."
+        ],
+        "result": "28"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "بضرب طرفي $5s = 35$ في العدد $2$ نجد $10s = 70$ . هل تبقى $s = 7$ هي الحلّ؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا تفعل العمليّة بكل طرف من أطراف المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر: لا نغيّر مساواة إلا بعملية نجريها على طرفيها معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب خطوتك بعبارة «بإضافة… / بضرب… إلى/في الطرفين» ثم استنتج."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "بضرب طرفي مساواة في عدد واحد نحصل على مساواة صحيحة.",
+          "$10 \\times 7 = 70$ ، إذن $s = 7$ تحقّق المساواة الجديدة أيضًا.",
+          "لا يتغيّر العدد المجهول عندما نجري العملية نفسها على الطرفين."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

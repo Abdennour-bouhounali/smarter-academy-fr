@@ -1,0 +1,71 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l3-005",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — مجهولان في نقطة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "تساوي شعاعين",
+      "نقطة مجهولة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hisab-murakkibatay_P2",
+      "modelledOn": "ex-9"
+    }
+  },
+  "statement": {
+    "content": "$A(2\\,;\\,-1)$ ، $B(5\\,;\\,3)$ ، $D(-1\\,;\\,4)$ و $C(x\\,;\\,y)$ حيث $\\overrightarrow{AB} = \\overrightarrow{CD}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الثنائية $(x\\,;\\,y)$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "point",
+      "answerFormat": "الإحداثيتان (x ; y) — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "-4",
+        "y": "0"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "2",
+            "y": "8"
+          },
+          "id": "MISC-MAALAM-MAJHUL-AMALIYA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مركبتي AB."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مركبتا CD هما $-1 - x$ و $4 - y$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ساو المركبتين وحلّ معادلتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AB}\\begin{pmatrix} 3 \\\\ 4 \\end{pmatrix}$ : $-1 - x = 3$ و $4 - y = 4$ ، إذن $x = -4$ و $y = 0$ .",
+        "incorrect": "C هي مبدأ CD: $x_D - x = 3$ ."
+      }
+    }
+  ]
+}

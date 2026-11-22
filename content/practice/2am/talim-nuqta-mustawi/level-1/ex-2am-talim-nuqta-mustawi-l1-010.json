@@ -1,0 +1,259 @@
+{
+  "id": "ex-2am-talim-nuqta-mustawi-l1-010",
+  "lessonCode": "talim-nuqta-mustawi",
+  "level": 1,
+  "metadata": {
+    "title": "قراءة إحداثيتين واختيار الصحيحة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "اختيار من متعدد",
+      "قراءة إحداثيتين"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "self-1",
+      "page": 49,
+      "section": "أؤكّد تعلّماتي",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل معلم متعامد ومتجانس مبدؤه $O$ ، ونقط ثلاث مرسومة فيه.",
+    "figure": {
+      "grid": true,
+      "axes": true,
+      "points": {
+        "A": [
+          -3,
+          2
+        ],
+        "B": [
+          3,
+          1
+        ],
+        "C": [
+          2,
+          -2
+        ],
+        "O": [
+          0,
+          0
+        ]
+      },
+      "ariaLabel": "معلم متعامد ومتجانس تظهر فيه ثلاث نقط A و B و C",
+      "maxWidth": 420,
+      "labels": {
+        "O": "sw"
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اقرأ إحداثيتي النقطة $A$ في الشكل.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(2\\,;\\,-3)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-SWAP"
+        },
+        {
+          "id": "B",
+          "content": "$(-3\\,;\\,2)$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$(-3\\,;\\,-2)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-SIGNAXIS"
+        },
+        {
+          "id": "D",
+          "content": "$(3\\,;\\,2)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-SIGNLEFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الفاصلة على محور الفواصل أوّلًا، بالنزول من النقطة أو الصعود منها عموديًّا إلى هذا المحور."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اقرأ الترتيب على محور التراتيب بالسير أفقيًّا من النقطة إلى هذا المحور؛ العدد الأوّل في الثنائية هو الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "راقب الإشارة: النقط التي على يسار محور التراتيب أو تحت محور الفواصل تأخذ عددًا سالبًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$A(-3\\,;\\,2)$ .",
+        "incorrect": "راجع قراءة الإحداثيتين: الفاصلة أوّلًا على محور الفواصل ثم الترتيب على محور التراتيب."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $A$ هي $-3$ وترتيبها $2$",
+          "$A(-3\\,;\\,2)$"
+        ],
+        "result": "A(-3\\,;\\,2)"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما فاصلة النقطة $B$ في الشكل؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-SIGNLEFT"
+        },
+        {
+          "id": "B",
+          "content": "$1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-SWAP"
+        },
+        {
+          "id": "C",
+          "content": "$3$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$4$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد أيّ المحورين تقرأ عليه: الفاصلة على محور الفواصل والترتيب على محور التراتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "سِر من النقطة نحو المحور المطلوب بخطّ يوازي المحور الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى الإشارة، وإلى أنّ نقطة على أحد المحورين لها إحداثية معدومة."
+        }
+      ],
+      "feedback": {
+        "correct": "فاصلة النقطة $B$ هي $3$ .",
+        "incorrect": "راجع القراءة: الفاصلة على محور الفواصل والترتيب على محور التراتيب، وانتبه إلى الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "نقرأ فاصلة النقطة $B$ على المحور المناسب",
+          "فاصلة = $3$"
+        ],
+        "result": "3"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما ترتيب النقطة $C$ في الشكل؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-2$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-SIGNAXIS"
+        },
+        {
+          "id": "C",
+          "content": "$-1$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$-3$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد أيّ المحورين تقرأ عليه: الفاصلة على محور الفواصل والترتيب على محور التراتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "سِر من النقطة نحو المحور المطلوب بخطّ يوازي المحور الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى الإشارة، وإلى أنّ نقطة على أحد المحورين لها إحداثية معدومة."
+        }
+      ],
+      "feedback": {
+        "correct": "ترتيب النقطة $C$ هي $-2$ .",
+        "incorrect": "راجع القراءة: الفاصلة على محور الفواصل والترتيب على محور التراتيب، وانتبه إلى الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "نقرأ ترتيب النقطة $C$ على المحور المناسب",
+          "ترتيب = $-2$"
+        ],
+        "result": "-2"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

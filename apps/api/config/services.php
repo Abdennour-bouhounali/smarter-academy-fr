@@ -83,4 +83,15 @@ return [
         'redirect' => env('GOOGLE_REDIRECT_URI'),
     ],
 
+    /*
+    | Web Push (notifications des nouvelles commandes de livres, BOOKS_STORE.md §6quater).
+    | Clés VAPID générées UNE fois (`php artisan books:vapid-keys`), posées dans le .env
+    | du serveur (jamais livré par le déploiement). Absentes = fonction désactivée.
+    */
+    'webpush' => [
+        'public_key' => env('VAPID_PUBLIC_KEY'),
+        'private_key' => env('VAPID_PRIVATE_KEY'),
+        'subject' => env('VAPID_SUBJECT', 'mailto:contact@smarter-academy.com'),
+    ],
+
 ];

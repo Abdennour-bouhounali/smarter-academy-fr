@@ -1,0 +1,295 @@
+{
+  "id": "ex-4am-tarrid-taalufi-l4-004",
+  "lessonCode": "tarrid-taalufi",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2013 — ثلاث وكالات لكراء جرافة",
+    "estimatedMinutes": 14,
+    "tags": [
+      "ثلاث وكالات",
+      "معادلات",
+      "أفضل عرض"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tarrid-taalufi_P2",
+      "modelledOn": "BEM 2013 II (01، 02، 04)"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2013",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يريد مقاول بالأغواط، يبني مدرسة لأبناء الحيّ، كراء جرافة لورشة بناء، فقدّمت له ثلاث وكالات العروض التالية:\n- عرض الوكالة الأولى: 10000DA لليوم الواحد.\n- عرض الوكالة الثانية: 6000DA لليوم الواحد يُضاف إليه 8000DA مصاريف نقل الجرافة.\n- عرض الوكالة الثالثة: 50000DA لمدة لا تتجاوز 10 أيام.\nنسمّي $x$ عدد أيام الكراء، و $f(x)$ ، $g(x)$ ، $h(x)$ تكلفة الكراء بـ DA حسب العروض الثلاثة على الترتيب."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عبّر عن $f(x)$ و $g(x)$ بدلالة $x$ .",
+      "statement": "أعط العدد $a$ حيث: $f(x) = ax$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "10000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع عن كل يوم في العرض الأول؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هو ما يُدفع $x$ مرّة: معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "ما يُدفع عن كل يوم في العرض الأول هو معامل $x$ .",
+        "incorrect": "معامل $x$ هو المبلغ الذي يتكرّر مع كل وحدة، لا المبلغ الذي يُدفع مرّة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "الوكالة الأولى: $f(x) = 10000x$",
+          "الوكالة الثانية: $g(x) = 6000x + 8000$",
+          "الوكالة الثالثة: $h(x) = 50000$"
+        ],
+        "result": "f(x) = 10000x"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "أعط العددين $a$ و $b$ حيث: $g(x) = ax + b$ ، ابدأ بالعدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "6000",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "8000"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع عن كل يوم في العرض الثاني؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هو ما يُدفع $x$ مرّة: معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "ما يُدفع عن كل يوم في العرض الثاني هو معامل $x$ .",
+        "incorrect": "معامل $x$ هو المبلغ الذي يتكرّر مع كل وحدة، لا المبلغ الذي يُدفع مرّة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "الوكالة الأولى: $f(x) = 10000x$",
+          "الوكالة الثانية: $g(x) = 6000x + 8000$",
+          "الوكالة الثالثة: $h(x) = 50000$"
+        ],
+        "result": "g(x) = 6000x + 8000"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "ثم العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "8000",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "6000"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع مرّة واحدة (مصاريف النقل)؟"
+        }
+      ],
+      "feedback": {
+        "correct": "مصاريف النقل يُدفع مرّة واحدة: هو الحدّ الثابت $b$ .",
+        "incorrect": "الحدّ الثابت لا يتعلّق بعدد الوحدات $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "الوكالة الأولى: $f(x) = 10000x$",
+          "الوكالة الثانية: $g(x) = 6000x + 8000$",
+          "الوكالة الثالثة: $h(x) = 50000$"
+        ],
+        "result": "g(x) = 6000x + 8000"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "lead": "حل المعادلتين الآتيتين، ثم فسّر كل حل.",
+      "statement": "$f(x) = g(x)$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب حل المعادلة فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكلفتان متساويتان: نحل معادلة من الدرجة الأولى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $10000x = 6000x + 8000$ ثم اجمع حدود $x$ في طرف واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل هذا العدد من الأيام تتساوى تكلفتا الوكالتين الأولى والثانية.",
+        "incorrect": "انقل حدود $x$ إلى طرف واحد والأعداد إلى الطرف الآخر، ثم اقسم على معامل $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = g(x)$ : $10000x = 6000x + 8000$ ، $4000x = 8000$ ، $x = 2$ .",
+          "$g(x) = h(x)$ : $6000x + 8000 = 50000$ ، $6000x = 42000$ ، $x = 7$ ."
+        ],
+        "result": "x = 2"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "statement": "$g(x) = h(x)$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب حل المعادلة فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكلفتان متساويتان: نحل معادلة من الدرجة الأولى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $6000x + 8000 = 50000$ ثم اجمع حدود $x$ في طرف واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل هذا العدد من الأيام تتساوى تكلفتا الوكالتين الثانية والثالثة.",
+        "incorrect": "انقل حدود $x$ إلى طرف واحد والأعداد إلى الطرف الآخر، ثم اقسم على معامل $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = g(x)$ : $10000x = 6000x + 8000$ ، $4000x = 8000$ ، $x = 2$ .",
+          "$g(x) = h(x)$ : $6000x + 8000 = 50000$ ، $6000x = 42000$ ، $x = 7$ ."
+        ],
+        "result": "x = 7"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "☜ تدوم الأشغال 6 أيام. ما هي الوكالة الأنسب للمقاول؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الوكالة الأولى",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        },
+        {
+          "id": "B",
+          "content": "الوكالة الثانية",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "الوكالة الثالثة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب التكاليف الثلاث من أجل 6 أيام."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أين يقع العدد 6 بالنسبة لحلول المعادلتين؟"
+        }
+      ],
+      "feedback": {
+        "correct": "لـ 6 أيام: 60000DA ، 44000DA ، 50000DA .",
+        "incorrect": "احسب التكاليف الثلاث لـ 6 أيام ثم اختر الأصغر."
+      },
+      "solution": {
+        "lines": [
+          "$f(6) = 60000DA$ ، $g(6) = 6000 \\times 6 + 8000 = 44000DA$ ، $h(6) = 50000DA$ .",
+          "إذا الوكالة الأنسب لـ 6 أيام هي الوكالة الثانية."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

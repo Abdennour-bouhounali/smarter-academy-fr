@@ -1,0 +1,173 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l2-003",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 2,
+  "metadata": {
+    "title": "تمرين 7 — AB و BA و OB",
+    "estimatedMinutes": 4,
+    "tags": [
+      "مركبتا شعاع",
+      "شعاعان متعاكسان"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-7",
+      "page": 146,
+      "section": "مركبتا شعاع علمت إحداثيات مبدئه ونهايته",
+      "number": 7
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 146، تمرين 7): المستوي مزوّد بمعلم مبدؤه O. $A(1{,}5\\,;\\,-6)$ ، $B(-3{,}5\\,;\\,-2{,}5)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مركبتا $\\overrightarrow{AB}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "point",
+      "answerFormat": "المركبتان: الأولى ثم الثانية — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "-5",
+        "y": "3.5"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "5",
+            "y": "-3.5"
+          },
+          "id": "MISC-MAALAM-TARH-MAQLUB"
+        },
+        {
+          "value": {
+            "x": "-5",
+            "y": "-8.5"
+          },
+          "id": "MISC-MAALAM-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبدأ A والنهاية B."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المركبة الأولى: فاصلة B ناقص فاصلة A."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المركبة الثانية: ترتيب B ناقص ترتيب A، وانتبه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$-3{,}5 - 1{,}5 = -5$ و $-2{,}5 - (-6) = 3{,}5$ .",
+        "incorrect": "انتبه: $-2{,}5 - (-6) = -2{,}5 + 6$ ."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "مركبتا $\\overrightarrow{BA}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "point",
+      "answerFormat": "المركبتان: الأولى ثم الثانية — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "5",
+        "y": "-3.5"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-5",
+            "y": "3.5"
+          },
+          "id": "MISC-MAALAM-TARH-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبدأ B والنهاية A."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المركبة الأولى: فاصلة A ناقص فاصلة B."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المركبة الثانية: ترتيب A ناقص ترتيب B، وانتبه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "مركبتا BA معاكستا مركبتي AB: $(5\\,;\\,-3{,}5)$ .",
+        "incorrect": "في BA المبدأ B والنهاية A."
+      }
+    },
+    {
+      "id": "q3",
+      "statement": "مركبتا $\\overrightarrow{OB}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "point",
+      "answerFormat": "المركبتان: الأولى ثم الثانية — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "-3.5",
+        "y": "-2.5"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "3.5",
+            "y": "2.5"
+          },
+          "id": "MISC-MAALAM-TARH-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$O(0\\,;\\,0)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النهاية B ناقص المبدأ O."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مركبتا OB هما إحداثيتا B."
+        }
+      ],
+      "feedback": {
+        "correct": "مركبتا OB هما إحداثيتا B: $(-3{,}5\\,;\\,-2{,}5)$ .",
+        "incorrect": "المبدأ O: مركبتا OB هما إحداثيتا B."
+      }
+    }
+  ]
+}

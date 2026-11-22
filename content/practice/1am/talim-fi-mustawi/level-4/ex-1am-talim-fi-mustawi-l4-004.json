@@ -1,0 +1,221 @@
+{
+  "id": "ex-1am-talim-fi-mustawi-l4-004",
+  "lessonCode": "talim-fi-mustawi",
+  "level": 4,
+  "metadata": {
+    "title": "رؤوس مستطيلات",
+    "estimatedMinutes": 6,
+    "tags": [
+      "مستطيل",
+      "رأس رابع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعلّم في معلم متعامد رؤوس مستطيلات أضلاعها توازي المحورين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "$ABCD$ مستطيل أضلاعه توازي المحورين، ورؤوسه $A$ و $B$ و $C$ و $D$ متتالية، حيث $A(-2\\,;\\,-1)$ و $B(3\\,;\\,-1)$ و $C(3\\,;\\,4)$ . ما إحداثيا الرأس $D$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-2",
+        "y": "4"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SWAP",
+          "value": {
+            "x": "4",
+            "y": "-2"
+          }
+        },
+        {
+          "id": "MISC-MUSTAWI-SIGNY",
+          "value": {
+            "x": "-2",
+            "y": "-4"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم الرؤوس الثلاثة على معلم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضلعان متقابلان على خطّين من الاتجاه نفسه: $D$ لها فاصلة $A$ وترتيب $C$ إن كان $AD$ شاقوليًّا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بأنّ $D$ تقع على خطّ شاقولي مع $A$ وعلى خطّ أفقي مع $C$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$D(-2\\,;\\,4)$ .",
+        "incorrect": "الرأس الرابع يأخذ فاصلته من الرأس المقابل لضلع شاقولي وترتيبه من الرأس المقابل لضلع أفقي."
+      },
+      "solution": {
+        "lines": [
+          "أضلاع المستطيل توازي المحورين: كلّ رأسين متجاورين لهما فاصلة واحدة أو ترتيب واحد",
+          "$D(-2\\,;\\,4)$"
+        ],
+        "result": "D(-2\\,;\\,4)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "$ABCD$ مستطيل أضلاعه توازي المحورين، ورؤوسه $A$ و $B$ و $C$ و $D$ متتالية، حيث $A(-5\\,;\\,3)$ و $B(1\\,;\\,3)$ و $C(1\\,;\\,-2)$ . ما إحداثيا الرأس $D$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-5",
+        "y": "-2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SWAP",
+          "value": {
+            "x": "-2",
+            "y": "-5"
+          }
+        },
+        {
+          "id": "MISC-MUSTAWI-SIGNY",
+          "value": {
+            "x": "-5",
+            "y": "2"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم الرؤوس الثلاثة على معلم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضلعان متقابلان على خطّين من الاتجاه نفسه: $D$ لها فاصلة $A$ وترتيب $C$ إن كان $AD$ شاقوليًّا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بأنّ $D$ تقع على خطّ شاقولي مع $A$ وعلى خطّ أفقي مع $C$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$D(-5\\,;\\,-2)$ .",
+        "incorrect": "الرأس الرابع يأخذ فاصلته من الرأس المقابل لضلع شاقولي وترتيبه من الرأس المقابل لضلع أفقي."
+      },
+      "solution": {
+        "lines": [
+          "أضلاع المستطيل توازي المحورين: كلّ رأسين متجاورين لهما فاصلة واحدة أو ترتيب واحد",
+          "$D(-5\\,;\\,-2)$"
+        ],
+        "result": "D(-5\\,;\\,-2)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "$ABCD$ مستطيل أضلاعه توازي المحورين، ورؤوسه $A$ و $B$ و $C$ و $D$ متتالية، حيث $A(2{,}5\\,;\\,1)$ و $B(-1{,}5\\,;\\,1)$ و $C(-1{,}5\\,;\\,-3)$ . ما إحداثيا الرأس $D$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "2.5",
+        "y": "-3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SWAP",
+          "value": {
+            "x": "-3",
+            "y": "2.5"
+          }
+        },
+        {
+          "id": "MISC-MUSTAWI-SIGNY",
+          "value": {
+            "x": "2.5",
+            "y": "3"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم الرؤوس الثلاثة على معلم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضلعان متقابلان على خطّين من الاتجاه نفسه: $D$ لها فاصلة $A$ وترتيب $C$ إن كان $AD$ شاقوليًّا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بأنّ $D$ تقع على خطّ شاقولي مع $A$ وعلى خطّ أفقي مع $C$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$D(2{,}5\\,;\\,-3)$ .",
+        "incorrect": "الرأس الرابع يأخذ فاصلته من الرأس المقابل لضلع شاقولي وترتيبه من الرأس المقابل لضلع أفقي."
+      },
+      "solution": {
+        "lines": [
+          "أضلاع المستطيل توازي المحورين: كلّ رأسين متجاورين لهما فاصلة واحدة أو ترتيب واحد",
+          "$D(2{,}5\\,;\\,-3)$"
+        ],
+        "result": "D(2{,}5\\,;\\,-3)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

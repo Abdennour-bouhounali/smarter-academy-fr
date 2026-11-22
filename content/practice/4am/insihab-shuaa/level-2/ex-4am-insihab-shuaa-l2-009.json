@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-insihab-shuaa-l2-009",
+  "lessonCode": "insihab-shuaa",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — نفس المنحى",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المنحى"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_insihab-shuaa_P2",
+      "modelledOn": "know-1"
+    }
+  },
+  "statement": {
+    "content": "A و B و C و D أربع نقط، والمستقيمان (AB) و (CD) متمايزان."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "للشعاعين $\\overrightarrow{AB}$ و $\\overrightarrow{CD}$ نفس المنحى يعني:",
+      "learningPoints": [
+        {
+          "code": "4am_insihab-shuaa_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "(AB) // (CD)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "AB = CD",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TUL-FAQAT"
+        },
+        {
+          "id": "C",
+          "content": "(AB) ⊥ (CD)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MANHA-MUSTAQIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن العناصر الثلاثة للشعاع: المنحى (المستقيم الحامل)، الاتجاه (من المبدأ نحو النهاية)، والطول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المنحى يخص المستقيمات: مستقيمان متوازيان لهما نفس المنحى؛ الاتجاه هو جهة السير عليه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن العناصر الثلاثة واحدا واحدا قبل أن تختار."
+        }
+      ],
+      "feedback": {
+        "correct": "نفس المنحى يعني مستقيمين حاملين متوازيين.",
+        "incorrect": "المنحى يخص المستقيمين، لا الطولين."
+      },
+      "difficulty": 2
+    }
+  ]
+}

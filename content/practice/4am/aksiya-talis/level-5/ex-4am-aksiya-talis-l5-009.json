@@ -1,0 +1,324 @@
+{
+  "id": "ex-4am-aksiya-talis-l5-009",
+  "lessonCode": "aksiya-talis",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2022 — هيكل الطائرة الورقية",
+    "estimatedMinutes": 22,
+    "tags": [
+      "وضعية إدماجية",
+      "الخاصية العكسية",
+      "طائرة ورقية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_aksiya-talis_P1",
+      "modelledOn": "BEM 2022 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يصنع نادي الحيّ طائرات ورقية يهديها لأطفال الحيّ المحتاجين، هيكل كل منها مثلث $ABC$ من أعواد الخيزران، حيث $AB = 60\\,\\mathrm{cm}$ ، $AC = 75\\,\\mathrm{cm}$ و $BC = 40\\,\\mathrm{cm}$ . يُثبَّت عود تقوية $[MN]$ ، حيث $M$ من $[AB]$ و $N$ من $[AC]$ ، و $AM = 48\\,\\mathrm{cm}$ و $AN = 60\\,\\mathrm{cm}$ (الشكل المقابل).",
+    "figure": {
+      "points": {
+        "A": [
+          0.0,
+          0.0
+        ],
+        "B": [
+          -20.52120859954,
+          -56.381557247155
+        ],
+        "M": [
+          -16.416966879632,
+          -45.105245797724
+        ],
+        "C": [
+          15.707548199236,
+          -73.336709290564
+        ],
+        "N": [
+          12.566038559389,
+          -58.669367432451
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "M",
+          "label": "48"
+        },
+        [
+          "M",
+          "B"
+        ],
+        {
+          "from": "A",
+          "to": "N",
+          "label": "60"
+        },
+        [
+          "N",
+          "C"
+        ],
+        {
+          "from": "B",
+          "to": "C",
+          "label": "40"
+        },
+        {
+          "from": "M",
+          "to": "N",
+          "tone": "amber"
+        }
+      ],
+      "ariaLabel": "الطائرة الورقية: المثلث ABC، وعود التقوية [MN] بين M من [AB] و N من [AC]؛ AM = 48 و AN = 60 و BC = 40",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب النسبة $\\dfrac{AM}{AB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "4/5",
+      "misconceptionSignatures": [
+        {
+          "value": "5/4",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "4",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AM$ و $AB$ طولان يُقاسان من النقطة $A$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $AM$ على $AB$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AM}{AB} = \\dfrac{48}{60} = \\dfrac{4}{5}$ .",
+        "incorrect": "النسبة $\\dfrac{AM}{AB}$ : الطول $AM$ على الطول $AB$ ، وكلاهما من النقطة $A$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AM}{AB} = \\dfrac{48}{60} = \\dfrac{4}{5}$"
+        ],
+        "result": "\\dfrac{AM}{AB} = \\dfrac{4}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب النسبة $\\dfrac{AN}{AC}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "4/5",
+      "misconceptionSignatures": [
+        {
+          "value": "5/4",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "4",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AN$ و $AC$ طولان يُقاسان من النقطة $A$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $AN$ على $AC$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AN}{AC} = \\dfrac{60}{75} = \\dfrac{4}{5}$ .",
+        "incorrect": "النسبة $\\dfrac{AN}{AC}$ : الطول $AN$ على الطول $AC$ ، وكلاهما من النقطة $A$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AN}{AC} = \\dfrac{60}{75} = \\dfrac{4}{5}$"
+        ],
+        "result": "\\dfrac{AN}{AC} = \\dfrac{4}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل عود التقوية $[MN]$ يوازي القاعدة $[BC]$ ؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النسبتين بقيمهما المضبوطة (الجداء المتصالب)، لا بقيم مقرّبة ولا بمظهر الشكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق أيضا من ترتيب النقط على المستقيمين المتقاطعين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AM}{AB} = \\dfrac{AN}{AC} = 0{,}8$ والترتيب نفسه: $(MN) \\parallel (BC)$ .",
+        "incorrect": "الخاصية العكسية تتطلب شرطين معا: تساوي النسبتين بقيم مضبوطة، وترتيب النقط نفسه على المستقيمين."
+      },
+      "solution": {
+        "lines": [
+          "بما أن النقط $A$ ، $M$ ، $B$ و $A$ ، $N$ ، $C$ في استقامية وبنفس الترتيب،",
+          "و بما أن: $\\dfrac{AM}{AB} = \\dfrac{AN}{AC} = \\dfrac{4}{5}$",
+          "فإن المستقيمين $(MN)$ و $(BC)$ متوازيان حسب خاصية طالس العكسية."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب طول عود التقوية $MN$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "32",
+      "misconceptionSignatures": [
+        {
+          "value": "50",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(MN) \\parallel (BC)$ : المثلثان $AMN$ و $ABC$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $\\dfrac{AM}{AB} = \\dfrac{MN}{BC}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$MN = \\dfrac{48 \\times 40}{60} = 32\\,\\mathrm{cm}$ .",
+        "incorrect": "في كل نسبة: طول من المثلث الصغير على الطول الموافق له في المثلث الكبير."
+      },
+      "solution": {
+        "lines": [
+          "بما أن $(MN) \\parallel (BC)$ ، حسب خاصية طالس: $\\dfrac{AM}{AB} = \\dfrac{AN}{AC} = \\dfrac{MN}{BC}$",
+          "$\\dfrac{48}{60} = \\dfrac{MN}{40}$",
+          "$MN = \\dfrac{48 \\times 40}{60}$"
+        ],
+        "result": "MN = 32\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "☜ يصنع النادي $25$ طائرة ورقية، ويحتاج هيكل كل طائرة إلى الأضلاع الثلاثة وعود التقوية. تُباع أعواد الخيزران بالمتر، وثمن المتر الواحد $80DA$ . ما ثمن الأعواد اللازمة؟",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "4140",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب طول الأعواد لطائرة واحدة (بالمتر)، ثم لـ 25 طائرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$51{,}75 \\times 80 = 4140DA$ .",
+        "incorrect": "رتّب الحساب: الكمية اللازمة أولا، ثم اضربها في سعر الوحدة، ثم أضف المصاريف الثابتة إن وُجدت."
+      },
+      "solution": {
+        "lines": [
+          "طول الأعواد لطائرة واحدة: $60 + 75 + 40 + 32 = 207\\,\\mathrm{cm} = 2{,}07\\,\\mathrm{m}$",
+          "للطائرات الـ 25: $25 \\times 2{,}07 = 51{,}75\\,\\mathrm{m}$",
+          "الثمن: $51{,}75 \\times 80$"
+        ],
+        "result": "4140\\,DA"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

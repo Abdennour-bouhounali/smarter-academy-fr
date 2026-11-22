@@ -1,0 +1,240 @@
+{
+  "id": "ex-3am-mutabayinat-amaliyat-l4-002",
+  "lessonCode": "mutabayinat-amaliyat",
+  "level": 4,
+  "metadata": {
+    "title": "حصر مساحة مستطيل بمرحلتين",
+    "estimatedMinutes": 12,
+    "tags": [
+      "حصر",
+      "جداء"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-27",
+      "page": 79,
+      "section": "أوظّف تعلّماتي",
+      "number": 27
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "ملعب مستطيل طوله $L$ وعرضه $w$ بالمتر، حيث $90\\le L\\le 100$ و $50\\le w\\le 60$ . مساحته $A=L\\times w$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أكمل: إذا كان $w\\ge 50$ فإنّ $90w\\ge\\ldots$",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "4500",
+      "misconceptionSignatures": [
+        {
+          "value": "50",
+          "id": "MISC-MUTABAYINA-ONE-SIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل العدد الذي نضرب فيه (أو نقسم عليه) موجب أم سالب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في عدد موجب تمامًا (أو القسمة عليه) لا يغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق العملية على كلّ طرف ثم احتفظ بالرمز كما هو."
+        }
+      ],
+      "feedback": {
+        "correct": "نضرب طرفي $w\\ge 50$ في $90$ (موجب): $90w\\ge 4500$ .",
+        "incorrect": "الضرب في عدد موجب تمامًا (أو القسمة عليه) يحفظ اتجاه المتباينة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضرب طرفي $w\\ge 50$ في $90$ (موجب): $90w\\ge 4500$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "بما أنّ $L\\ge 90$ و $w>0$ ، أكمل بالرمز المناسب: $L\\times w\\ \\square \\ 90\\times w$",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\ge$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\le$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-POS-FLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل العدد الذي نضرب فيه (أو نقسم عليه) موجب أم سالب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في عدد موجب تمامًا (أو القسمة عليه) لا يغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق العملية على كلّ طرف ثم احتفظ بالرمز كما هو."
+        }
+      ],
+      "feedback": {
+        "correct": "نضرب طرفي $L\\ge 90$ في العدد الموجب $w$ : $Lw\\ge 90w$ .",
+        "incorrect": "الضرب في عدد موجب تمامًا (أو القسمة عليه) يحفظ اتجاه المتباينة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضرب طرفي $L\\ge 90$ في العدد الموجب $w$ : $Lw\\ge 90w$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "أكمل: $A\\le\\ldots$ (باستعمال $L\\le 100$ ثم $w\\le 60$ )",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "6000",
+      "misconceptionSignatures": [
+        {
+          "value": "100",
+          "id": "MISC-MUTABAYINA-ONE-SIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المعطى بالضبط؟ وما العبارة المطلوب استنتاج متباينة لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابنِ المتباينة المطلوبة عملية بعد عملية، وانتبه إلى إشارة العدد عند كلّ ضرب أو قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر، وأعد كتابة الحصر من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "و $100w\\le 100\\times 60=6000$ ؛ إذن $A\\le 6000$ .",
+        "incorrect": "استنتج المتباينة خطوة بخطوة، وانتبه إلى اتجاهها بعد كلّ ضرب أو قسمة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$Lw\\le 100w$ لأنّ $w>0$ .",
+          "و $100w\\le 100\\times 60=6000$ ؛ إذن $A\\le 6000$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "هل يمكن أن تكون مساحة الملعب $4400\\,\\mathrm{m^2}$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لأنّ $A\\ge 4500$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم، لأنّ $4400$ أقلّ من $6000$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-DECISION"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المعطى بالضبط؟ وما العبارة المطلوب استنتاج متباينة لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابنِ المتباينة المطلوبة عملية بعد عملية، وانتبه إلى إشارة العدد عند كلّ ضرب أو قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر، وأعد كتابة الحصر من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$A\\ge 90\\times 50=4500$ ؛ و $4400<4500$ ، إذن لا.",
+        "incorrect": "استنتج المتباينة خطوة بخطوة، وانتبه إلى اتجاهها بعد كلّ ضرب أو قسمة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$A\\ge 90\\times 50=4500$ ؛ و $4400<4500$ ، إذن لا."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

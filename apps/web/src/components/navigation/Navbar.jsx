@@ -1,13 +1,19 @@
 import { useState, useEffect, useContext } from 'react';
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ArrowRight, LogOut, ShieldCheck, LayoutDashboard } from 'lucide-react';
+import { m, AnimatePresence } from 'framer-motion';
+import { Menu, X, LogOut, ShieldCheck, LayoutDashboard, MailCheck } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { ArrowForward } from '../common/DirectionalIcons';
 import { AuthContext } from '../../context/AuthContext';
 import { navLinks } from '../../data/navigation';
+import { IS_RTL } from '../../locale.js';
+import { needsEmailVerification } from '../../utils/emailVerification';
 
 function AuthCluster({ compact = false, onNavigate }) {
+  const { t } = useTranslation('nav');
   const { user, logout } = useContext(AuthContext);
   const navigate = useNavigate();
+  const unverified = needsEmailVerification(user);
 
   const handleLogout = async () => {
     await logout();
@@ -26,7 +32,7 @@ function AuthCluster({ compact = false, onNavigate }) {
             : 'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-inter text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 whitespace-nowrap transition-colors'}
         >
           <ShieldCheck size={15} />
-          Espace admin
+          {t('adminSpace')}
         </Link>
         <button
           onClick={handleLogout}
@@ -35,7 +41,34 @@ function AuthCluster({ compact = false, onNavigate }) {
             : 'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-inter text-xs font-medium text-slate-400 hover:text-slate-700 whitespace-nowrap transition-colors'}
         >
           <LogOut size={13} />
-          Déconnexion
+          {t('logout')}
+        </button>
+      </div>
+    );
+  }
+
+  if (user?.role === 'teacher') {
+    return (
+      <div className={compact ? 'flex flex-col gap-2 w-full' : 'flex items-center gap-3'}>
+        <Link
+          to={unverified ? '/verification-email' : '/enseignant'}
+          onClick={onNavigate}
+          className={compact
+            ? 'flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold text-white'
+            : 'inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-white whitespace-nowrap transition-all duration-300 hover:-translate-y-0.5'}
+          style={{ background: 'linear-gradient(135deg, #0F766E, #3B82F6)', boxShadow: '0 4px 14px rgba(15,118,110,0.3)' }}
+        >
+          {unverified ? <MailCheck size={14} /> : <LayoutDashboard size={14} />}
+          {unverified ? t('verifyEmail') : t('teacherSpace')}
+        </Link>
+        <button
+          onClick={handleLogout}
+          className={compact
+            ? 'flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-inter text-sm font-medium text-slate-500 hover:bg-slate-50'
+            : 'inline-flex items-center gap-1.5 px-2 py-1.5 rounded-lg font-inter text-xs font-medium text-slate-400 hover:text-slate-700 whitespace-nowrap transition-colors'}
+        >
+          <LogOut size={13} />
+          {compact ? t('logout') : ''}
         </button>
       </div>
     );
@@ -45,15 +78,15 @@ function AuthCluster({ compact = false, onNavigate }) {
     return (
       <div className={compact ? 'flex flex-col gap-2 w-full' : 'flex items-center gap-3'}>
         <Link
-          to="/espace"
+          to={unverified ? '/verification-email' : '/espace'}
           onClick={onNavigate}
           className={compact
             ? 'flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold text-white'
             : 'inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-white whitespace-nowrap transition-all duration-300 hover:-translate-y-0.5'}
           style={{ background: 'linear-gradient(135deg, #3B82F6, #8B5CF6)', boxShadow: '0 4px 14px rgba(59,130,246,0.3)' }}
         >
-          <LayoutDashboard size={14} />
-          Mon espace
+          {unverified ? <MailCheck size={14} /> : <LayoutDashboard size={14} />}
+          {unverified ? t('verifyEmail') : t('mySpace')}
         </Link>
         <button
           onClick={handleLogout}
@@ -62,7 +95,7 @@ function AuthCluster({ compact = false, onNavigate }) {
             : 'inline-flex items-center gap-1.5 px-2 py-1.5 rounded-lg font-inter text-xs font-medium text-slate-400 hover:text-slate-700 whitespace-nowrap transition-colors'}
         >
           <LogOut size={13} />
-          {compact ? 'Déconnexion' : ''}
+          {compact ? t('logout') : ''}
         </button>
       </div>
     );
@@ -77,7 +110,7 @@ function AuthCluster({ compact = false, onNavigate }) {
           ? 'flex items-center justify-center px-4 py-3 rounded-xl font-inter text-sm font-semibold text-slate-700 border border-slate-200 hover:bg-slate-50'
           : 'hidden sm:inline-flex px-3 py-1.5 rounded-lg font-inter text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 whitespace-nowrap transition-colors'}
       >
-        Se connecter
+        {t('login')}
       </Link>
       <Link
         to="/register"
@@ -87,14 +120,15 @@ function AuthCluster({ compact = false, onNavigate }) {
           : 'inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-white whitespace-nowrap transition-all duration-300 hover:-translate-y-0.5'}
         style={{ background: 'linear-gradient(135deg, #3B82F6, #8B5CF6)', boxShadow: '0 4px 14px rgba(59,130,246,0.3)' }}
       >
-        Commencer gratuitement
-        <ArrowRight size={14} />
+        {t('startFree')}
+        <ArrowForward size={14} />
       </Link>
     </div>
   );
 }
 
 export default function Navbar() {
+  const { t } = useTranslation('nav');
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
@@ -114,7 +148,7 @@ export default function Navbar() {
 
   return (
     <>
-      <motion.nav
+      <m.nav
         // `app-header` est l'ANCRE du viewport de leçon : useLessonViewport le
         // mesure pour poser le haut du tiroir « Ma carte », et un
         // ResizeObserver le suit (la barre change de hauteur au défilement).
@@ -145,7 +179,7 @@ export default function Navbar() {
               to="/"
               className="flex items-center gap-2.5 group flex-shrink-0 min-w-0"
             >
-              <img src="/smarter-academy-logo.webp" alt="Smarter Academy" className="h-10 w-auto rounded-lg object-contain flex-shrink-0" />
+              <img src="/brand/mark-color.svg" width="200" height="200" decoding="async" alt="Smarter Academy" className="h-10 w-10 flex-shrink-0" />
               <div className="hidden sm:flex flex-col min-w-0">
                 <span className="font-space font-bold text-slate-900 text-sm leading-none whitespace-nowrap">
                   Smarter Academy
@@ -173,7 +207,7 @@ export default function Navbar() {
                     }`
                   }
                 >
-                  {link.label}
+                  {t(link.labelKey)}
                 </NavLink>
               ))}
             </div>
@@ -187,7 +221,7 @@ export default function Navbar() {
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
                 className="lg:hidden w-9 h-9 flex items-center justify-center rounded-lg text-slate-600 hover:bg-slate-100 transition-colors"
-                aria-label="Ouvrir le menu"
+                aria-label={mobileOpen ? t('closeMenu') : t('openMenu')}
                 aria-expanded={mobileOpen}
                 id="mobile-menu-toggle"
               >
@@ -196,12 +230,12 @@ export default function Navbar() {
             </div>
           </div>
         </div>
-      </motion.nav>
+      </m.nav>
 
       {/* Mobile Drawer */}
       <AnimatePresence>
         {mobileOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -210,9 +244,11 @@ export default function Navbar() {
           >
             <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1">
               {navLinks.map((link, i) => (
-                <motion.div
+                <m.div
                   key={link.path}
-                  initial={{ opacity: 0, x: -20 }}
+                  // Enters from the reading-start side; `x` is physical, so the sign
+                  // follows the platform direction (src/locale.js).
+                  initial={{ opacity: 0, x: IS_RTL ? 20 : -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
                 >
@@ -220,22 +256,22 @@ export default function Navbar() {
                     to={link.path}
                     end={link.path === '/'}
                     className={({ isActive }) =>
-                      `block w-full text-left px-4 py-3 rounded-xl font-inter text-sm font-medium transition-all duration-200 ${
+                      `block w-full text-start px-4 py-3 rounded-xl font-inter text-sm font-medium transition-all duration-200 ${
                         isActive
                           ? 'text-blue-600 bg-blue-50 font-semibold'
                           : 'text-slate-700 hover:bg-slate-50'
                       }`
                     }
                   >
-                    {link.label}
+                    {t(link.labelKey)}
                   </NavLink>
-                </motion.div>
+                </m.div>
               ))}
               <div className="mt-2 pt-3 border-t border-slate-100">
                 <AuthCluster compact onNavigate={() => setMobileOpen(false)} />
               </div>
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </>

@@ -15,8 +15,36 @@
  * comparaison ; `toNumber()` n'existe que pour l'affichage.
  */
 
-/** Au-delà, un produit en croix risque de dépasser Number.MAX_SAFE_INTEGER. */
-const MAX_SAFE_COMPONENT = 94_906_265; // ⌊√(2^53 − 1)⌋
+import { toLatinDigits } from '../numberFormat.js';
+
+/**
+ * La borne d'une composante (numérateur ou dénominateur) : tout entier SÛR de JavaScript.
+ * Jusqu'au 2026-10-02 elle valait ⌊√(2^53 − 1)⌋ = 94 906 265 pour que les produits en croix
+ * restent sûrs en flottant — ce qui refusait (« syntax_error ») une réponse comme 132 000 000
+ * (un débit en L/min, unité 6, exercice 27). Les produits en croix se font désormais en
+ * BigInt : la comparaison reste EXACTE, et la borne est celle du nombre lui-même.
+ * Miroir : apps/api/app/Domain/Practice/Support/Rational.php (bcmath).
+ */
+const MAX_SAFE_COMPONENT = Number.MAX_SAFE_INTEGER; // 2^53 − 1
+
+const bigGcd = (a, b) => {
+  a = a < 0n ? -a : a;
+  b = b < 0n ? -b : b;
+  while (b) [a, b] = [b, a % b];
+  return a || 1n;
+};
+
+/** Une fraction calculée en BigInt, réduite, rendue si ses composantes restent sûres (sinon null). */
+function fromBig(n, d) {
+  if (d === 0n) return null;
+  if (d < 0n) { n = -n; d = -d; }
+  const g = bigGcd(n, d);
+  n /= g;
+  d /= g;
+  const max = BigInt(MAX_SAFE_COMPONENT);
+  if (n > max || -n > max || d > max) return null;
+  return Rational.of(Number(n), Number(d));
+}
 
 const gcd = (a, b) => {
   a = Math.abs(a);
@@ -32,10 +60,14 @@ const gcd = (a, b) => {
  * point, et les enrobages LaTeX de MathLive sont retirés.
  */
 export function normalizeNumeric(raw) {
-  return String(raw)
+  // Chiffres arabo-indiens/persans, virgule décimale arabe (٫) et barre de
+  // division (∕) : une écriture, jamais une erreur (audit du 2026-09-29).
+  return toLatinDigits(raw)
+    .replace(/\u066B/g, '.')
+    .replace(/\u2215/g, '/')
     .replace(/[−‒–—―]/g, '-')
     .replace(/[\s   ]/g, '')
-    .replace(/\\left|\\right|\\,|\;|\\!|\\ /g, '')
+    .replace(/\\left|\\right|\\,|\\?;|\\!|\\ /g, '')
     .replace(/^\$|\$$/g, '')
     .replace(/,/g, '.');
 }
@@ -50,8 +82,7 @@ export class Rational {
 
   /** Réduit et normalise le signe (porté par le numérateur). @returns {Rational|null} */
   static of(n, d = 1) {
-    if (!Number.isInteger(n) || !Number.isInteger(d) || d === 0) return null;
-    if (Math.abs(n) > MAX_SAFE_COMPONENT || Math.abs(d) > MAX_SAFE_COMPONENT) return null;
+    if (!Number.isSafeInteger(n) || !Number.isSafeInteger(d) || d === 0) return null;
     const sign = d < 0 ? -1 : 1;
     const g = gcd(n, d);
     return new Rational((sign * n) / g, (sign * d) / g);
@@ -117,15 +148,19 @@ export class Rational {
     return other instanceof Rational && this.n === other.n && this.d === other.d;
   }
 
-  /** −1, 0 ou 1. Produit en croix : exact, jamais de flottant. */
+  /** −1, 0 ou 1. Produit en croix en BigInt : exact, jamais de flottant. */
   compare(other) {
-    const left = this.n * other.d;
-    const right = other.n * this.d;
+    const left = BigInt(this.n) * BigInt(other.d);
+    const right = BigInt(other.n) * BigInt(this.d);
     return left < right ? -1 : left > right ? 1 : 0;
   }
 
-  add(other) { return Rational.of(this.n * other.d + other.n * this.d, this.d * other.d); }
-  subtract(other) { return Rational.of(this.n * other.d - other.n * this.d, this.d * other.d); }
+  add(other) {
+    return fromBig(BigInt(this.n) * BigInt(other.d) + BigInt(other.n) * BigInt(this.d), BigInt(this.d) * BigInt(other.d));
+  }
+  subtract(other) {
+    return fromBig(BigInt(this.n) * BigInt(other.d) - BigInt(other.n) * BigInt(this.d), BigInt(this.d) * BigInt(other.d));
+  }
   abs() { return Rational.of(Math.abs(this.n), this.d); }
   isZero() { return this.n === 0; }
   get sign() { return Math.sign(this.n); }

@@ -84,38 +84,30 @@ class HardeningRegressionTest extends TestCase
 
     // ----------------------------------------------------- PUBLICATION SÛRE
 
-    public function test_on_ne_publie_pas_un_module_retire_du_registre(): void
-    {
-        $module = LessonModule::create([
-            'lesson_id' => $this->lesson->id, 'code' => '01', 'number' => 1, 'title' => 'M',
-            'publication_status' => LessonModule::PUB_DRAFT, 'retired_at' => now(),
-        ]);
-
-        $this->expectException(DomainException::class);
-        $this->expectExceptionMessageMatches('/retiré du registre/');
-
-        app(ContentService::class)->changeStatus($this->admin, 'module', $module->id, LessonModule::PUB_PUBLISHED);
-    }
-
-    public function test_on_ne_publie_pas_un_module_qui_enseigne_un_point_inconnu(): void
+    /** Un module n'a pas d'état propre (2026-11-11) : il ne se publie pas seul. */
+    public function test_un_module_ne_se_publie_pas_seul(): void
     {
         $module = LessonModule::create([
             'lesson_id' => $this->lesson->id, 'code' => '01', 'number' => 1, 'title' => 'M',
             'publication_status' => LessonModule::PUB_DRAFT,
-            'teaches_learning_point_codes' => ['6e_fractions_INEXISTANT'],
         ]);
 
         $this->expectException(DomainException::class);
-        $this->expectExceptionMessageMatches('/inconnu/');
+        $this->expectExceptionMessageMatches('/suit sa leçon/');
 
         app(ContentService::class)->changeStatus($this->admin, 'module', $module->id, LessonModule::PUB_PUBLISHED);
     }
 
-    public function test_on_ne_publie_pas_une_lecon_dont_aucun_module_n_est_publie(): void
+    /**
+     * Depuis la cascade (2026-10-07), publier la leçon publie ses modules :
+     * ce qui la bloque, c'est qu'AUCUN module ne soit publiable.
+     */
+    public function test_on_ne_publie_pas_une_lecon_dont_aucun_module_n_est_publiable(): void
     {
         LessonModule::create([
             'lesson_id' => $this->lesson->id, 'code' => '01', 'number' => 1, 'title' => 'M',
             'publication_status' => LessonModule::PUB_DRAFT,
+            'teaches_learning_point_codes' => ['6e_fractions_INEXISTANT'],
         ]);
         $this->lesson->update(['publication_status' => Lesson::PUB_HIDDEN]);
 
@@ -133,21 +125,24 @@ class HardeningRegressionTest extends TestCase
             'publication_status' => LessonModule::PUB_PUBLISHED,
             'teaches_learning_point_codes' => ['INEXISTANT'],
         ]);
+        $this->lesson->update(['publication_status' => Lesson::PUB_PUBLISHED]);
 
         $result = app(ContentService::class)
-            ->changeStatus($this->admin, 'module', $module->id, LessonModule::PUB_HIDDEN);
+            ->changeStatus($this->admin, 'lesson', $this->lesson->id, Lesson::PUB_HIDDEN);
 
         $this->assertTrue($result['changed']);
+        $this->assertSame(LessonModule::PUB_HIDDEN, $module->fresh()->publication_status);
     }
 
     // ------------------------------------------- POLITIQUE DU BROUILLON
 
     /**
-     * Un contenu découvert par la synchro naît en brouillon : publier doit
-     * rester un geste, pas un effet de bord du déploiement.
+     * Pousser en production publie (propriétaire, 2026-11-11) : sous une
+     * leçon publiée, un module et un exercice découverts naissent publiés.
      */
-    public function test_un_contenu_nouvellement_decouvert_nait_en_brouillon(): void
+    public function test_un_contenu_nouvellement_decouvert_nait_publie_sous_une_lecon_publiee(): void
     {
+        $this->lesson->update(['publication_status' => Lesson::PUB_PUBLISHED]);
         app(ContentRegistryImporter::class)->import([
             'lessons' => [[
                 'code' => 'fractions', 'grade' => '6e',
@@ -163,8 +158,8 @@ class HardeningRegressionTest extends TestCase
             ]],
         ]);
 
-        $this->assertSame(LessonModule::PUB_DRAFT, LessonModule::first()->publication_status);
-        $this->assertSame(PracticeExercise::PUB_DRAFT, PracticeExercise::first()->publication_status);
+        $this->assertSame(LessonModule::PUB_PUBLISHED, LessonModule::first()->publication_status);
+        $this->assertSame(PracticeExercise::PUB_PUBLISHED, PracticeExercise::first()->publication_status);
     }
 
     /** ...mais la règle ne rétroagit pas sur le contenu déjà publié. */
@@ -206,8 +201,10 @@ class HardeningRegressionTest extends TestCase
             'teaches_learning_point_codes' => ['INEXISTANT'],
         ]);
 
+        $this->lesson->update(['publication_status' => Lesson::PUB_HIDDEN]);
+
         try {
-            app(ContentService::class)->changeStatus($this->admin, 'module', $module->id, LessonModule::PUB_PUBLISHED);
+            app(ContentService::class)->changeStatus($this->admin, 'lesson', $this->lesson->id, Lesson::PUB_PUBLISHED);
         } catch (DomainException) {
             // attendu
         }
@@ -274,17 +271,21 @@ class HardeningRegressionTest extends TestCase
     }
 
     /** Le contexte vient des CODES : un identifiant posté n'est jamais lu. */
-    public function test_un_eleve_ne_peut_pas_designer_le_contenu_d_une_autre_lecon(): void
+    public function test_un_relecteur_ne_peut_pas_designer_le_contenu_d_une_autre_lecon(): void
     {
         $autre = Lesson::create([
             'chapter_id' => $this->lesson->chapter_id, 'code' => 'autre-lecon',
             'title' => 'Autre', 'status' => 'available', 'order' => 1,
         ]);
-        $student = User::factory()->create(['role' => User::ROLE_STUDENT]);
+        // Depuis 2026-10-05 seuls les relecteurs signalent : un ambassadeur.
+        $reviewer = User::factory()->create(['role' => User::ROLE_TEACHER]);
+        $reviewer->forceFill(['is_ambassador' => true])->save();
 
-        $signal = $this->actingAs($student, 'sanctum')->postJson('/api/v1/reports', [
+        $this->actingAs($reviewer, 'sanctum')->postJson('/api/v1/reports', [
             'source' => 'lesson',
             'lessonCode' => 'fractions',
+            'category' => 'typo',
+            'note' => 'Faute de frappe dans le titre.',
             'lesson_id' => $autre->id,
             'lesson_module_id' => 999,
             'question_attempt_id' => 999,
@@ -292,13 +293,9 @@ class HardeningRegressionTest extends TestCase
             'user_id' => $this->admin->id,
         ])->assertStatus(201);
 
-        $this->actingAs($student, 'sanctum')
-            ->patchJson('/api/v1/reports/'.$signal->json('report.id'), ['category' => 'typo'])
-            ->assertStatus(200);
-
         $report = StudentReport::first();
         $this->assertSame($this->lesson->id, $report->lesson_id);
-        $this->assertSame($student->id, $report->user_id);
+        $this->assertSame($reviewer->id, $report->user_id);
         $this->assertNull($report->lesson_module_id);
         $this->assertNull($report->question_attempt_id);
         $this->assertNotSame('forge', $report->fingerprint);

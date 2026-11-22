@@ -1,0 +1,284 @@
+{
+  "id": "ex-4am-tafsir-bayani-jumla-l4-006",
+  "lessonCode": "tafsir-bayani-jumla",
+  "level": 4,
+  "metadata": {
+    "title": "متوازيان، ثم وسيط يجعلهما منطبقين",
+    "estimatedMinutes": 10,
+    "tags": [
+      "متوازيان",
+      "منطبقان",
+      "وسيط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tafsir-bayani-jumla_P3",
+      "modelledOn": "act-5"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الجملة:",
+    "formulas": [
+      "\\begin{cases} 0{,}5x + y = 2 \\\\ x + 2y = 3 \\end{cases}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "اكتب كل معادلة على الشكل $y = ax + b$ .",
+      "statement": "المعادلة الأولى: أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-0,5",
+      "misconceptionSignatures": [
+        {
+          "value": "0,5",
+          "id": "MISC-JUMLA-ISHARA-Y"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعادلة من الشكل $ax + by = c$ : نريد أن يبقى $y$ وحده في طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل حدّ $x$ إلى الطرف الثاني مع تغيير إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم اقسم كل الحدود على معامل $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = -0{,}5$ : معامل $x$ بعد عزل $y$ .",
+        "incorrect": "انقل حدّ $x$ بتغيير إشارته، ثم اقسم الطرفين على معامل $y$ (بإشارته)."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}5x + y = 2$",
+          "$y = -0{,}5x + 2$",
+          "$y = -0{,}5x + 2$",
+          "إذن: $a = -0{,}5$ و $b = 2$ ."
+        ],
+        "result": "y = -0{,}5x + 2"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ا",
+      "statement": "المعادلة الأولى: أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "-2",
+          "id": "MISC-JUMLA-ISHARA-Y"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعادلة من الشكل $ax + by = c$ : نريد أن يبقى $y$ وحده في طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $b$ هو الحد الذي لا يحوي $x$ بعد عزل $y$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم اقسم كل الحدود على معامل $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$y = -0{,}5x + 2$ .",
+        "incorrect": "العدد $b$ هو الطرف الثاني مقسوما على معامل $y$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}5x + y = 2$",
+          "$y = -0{,}5x + 2$",
+          "$y = -0{,}5x + 2$",
+          "إذن: $a = -0{,}5$ و $b = 2$ ."
+        ],
+        "result": "y = -0{,}5x + 2"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ب",
+      "statement": "المعادلة الثانية: أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "1,5",
+      "misconceptionSignatures": [
+        {
+          "value": "-1,5",
+          "id": "MISC-JUMLA-ISHARA-Y"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعادلة من الشكل $ax + by = c$ : نريد أن يبقى $y$ وحده في طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $b$ هو الحد الذي لا يحوي $x$ بعد عزل $y$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم اقسم كل الحدود على معامل $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$y = -0{,}5x + 1{,}5$ .",
+        "incorrect": "العدد $b$ هو الطرف الثاني مقسوما على معامل $y$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$x + 2y = 3$",
+          "$2y = -x + 3$",
+          "نقسم كل الحدود على $2$ :",
+          "$y = -0{,}5x + 1{,}5$",
+          "إذن: $a = -0{,}5$ و $b = 1{,}5$ ."
+        ],
+        "result": "y = -0{,}5x + 1{,}5"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "استنتج عدد حلول الجملة.",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لها حل وحيد",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-HALAT"
+        },
+        {
+          "id": "B",
+          "content": "ليس لها حل",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لها عدد غير منته من الحلول",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-BAYANI-TAWAZI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن معاملي التوجيه ثم الترتيبين عند المبدأ."
+        }
+      ],
+      "feedback": {
+        "correct": "المستقيمان متوازيان.",
+        "incorrect": "نفس $a$ و $b$ مختلف: مستقيمان متوازيان لا نقطة مشتركة لهما."
+      },
+      "solution": {
+        "lines": [
+          "للمستقيمين نفس معامل التوجيه $-0{,}5$ وترتيبان مختلفان عند المبدأ ($2 \\neq 1{,}5$) : هما متوازيان.",
+          "إذن الجملة ليس لها حل."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "نعوّض المعادلة الثانية بالمعادلة $x + 2y = c$ . عيّن العدد $c$ حتى يكون للجملة عدد غير منته من الحلول.",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $c$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "للجملة عدد غير منته من الحلول إذا كان المستقيمان منطبقين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب طرفي المعادلة الأولى في 2 وقارن."
+        }
+      ],
+      "feedback": {
+        "correct": "$x + 2y = 4$ هي المعادلة الأولى مضروبة في 2.",
+        "incorrect": "المعادلتان يجب أن تمثلا المستقيم نفسه: قارن $x + 2y = c$ بالمعادلة الأولى مضروبة في 2."
+      },
+      "solution": {
+        "lines": [
+          "نضرب طرفي المعادلة الأولى في 2: $x + 2y = 4$ .",
+          "المستقيمان منطبقان إذا كانت $x + 2y = c$ هي نفسها، أي $c = 4$ ."
+        ],
+        "result": "c = 4"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

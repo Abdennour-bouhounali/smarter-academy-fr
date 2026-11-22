@@ -1,0 +1,80 @@
+{
+  "id": "ex-4am-majmu-shuaayn-l3-010",
+  "lessonCode": "majmu-shuaayn",
+  "level": 3,
+  "generator": {
+    "tool": "unit11-majmu-gen.py",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — لافتة التيفو",
+    "estimatedMinutes": 3,
+    "tags": [
+      "قاعدة متوازي الأضلاع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_majmu-shuaayn_P3",
+      "modelledOn": "know-6"
+    }
+  },
+  "statement": {
+    "content": "لافتة تيفو مستطيلة RSTU رسمها تلاميذ بالتعاون في مدرجات ملعب 5 جويلية (الرؤوس بهذا الترتيب)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "$\\overrightarrow{RS} + \\overrightarrow{RU} =$",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{SU}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-QAIDA-QUTR"
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{TR}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-AKS"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{RT}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للشعاعين نفس المبدأ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "شعاعان لهما نفس المبدأ يُجمعان بقاعدة متوازي الأضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع هو القطر الصادر من المبدأ المشترك، لا القطر الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "نفس المبدأ R ، والمستطيل متوازي أضلاع: المجموع هو القطر $\\overrightarrow{RT}$ .",
+        "incorrect": "قاعدة متوازي الأضلاع: مجموع شعاعين لهما نفس المبدأ هو القطر الصادر من ذلك المبدأ."
+      }
+    }
+  ]
+}

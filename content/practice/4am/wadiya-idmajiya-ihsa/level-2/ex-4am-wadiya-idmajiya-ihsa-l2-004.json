@@ -1,0 +1,143 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ihsa-l2-004",
+  "lessonCode": "wadiya-idmajiya-ihsa",
+  "level": 2,
+  "metadata": {
+    "title": "سلّات فريق الحي: المتوسط والوسيط",
+    "estimatedMinutes": 5,
+    "tags": [
+      "المتوسط المتوازن",
+      "الوسيط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ihsa_P1"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "يعطي الجدول الآتي عدد السلّات التي سجّلها كل لاعب من فريق الحي لكرة السلة، الذي يلعب بروح التعاون، في مباراة:",
+    "table": {
+      "head": [
+        "عدد السلّات",
+        "1",
+        "2",
+        "3"
+      ],
+      "rows": [
+        [
+          "عدد اللاعبين",
+          "4",
+          "3",
+          "3"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب متوسط عدد السلّات لكل لاعب.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة",
+      "expectedAnswer": "1,9",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-IHSA-MUTAWASSIT-BILA-TARJIH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب كل قيمة في تكرارها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم المجموع على عدد اللاعبين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1 \\times 4 + 2 \\times 3 + 3 \\times 3}{10} = 1{,}9$ .",
+        "incorrect": "المتوسط المتوازن: مجموع (القيمة × التكرار) ÷ التكرار الكلي."
+      },
+      "solution": {
+        "lines": [
+          "$1 \\times 4 + 2 \\times 3 + 3 \\times 3 = 19$",
+          "$\\dfrac{19}{10} = 1{,}9$"
+        ],
+        "result": "1{,}9"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عيّن وسيط هذه السلسلة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "1,9",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        },
+        {
+          "value": "1,5",
+          "id": "MISC-IHSA-WASIT-RUTBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكرار الكلي 10 : الرتبتان الوسطيان 5 و 6 ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التكرارات المجمعة الصاعدة: 4 ، 7 ، 10 ."
+        }
+      ],
+      "feedback": {
+        "correct": "الرتبتان 5 و 6 تقعان في القيمة 2 ، فالوسيط 2 .",
+        "incorrect": "حدّد بالتكرارات المجمعة الصاعدة القيمة التي تقع فيها الرتبتان 5 و 6 ."
+      },
+      "solution": {
+        "lines": [
+          "التكرار الكلي 10 ، والرتبتان الوسطيان 5 و 6 .",
+          "التكرارات المجمعة الصاعدة: 4 ، 7 ، 10 ؛ الرتب من 5 إلى 7 للقيمة 2 .",
+          "$\\dfrac{2 + 2}{2} = 2$"
+        ],
+        "result": "2"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

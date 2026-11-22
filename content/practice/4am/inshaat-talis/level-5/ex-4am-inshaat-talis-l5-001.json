@@ -1,0 +1,270 @@
+{
+  "id": "ex-4am-inshaat-talis-l5-001",
+  "lessonCode": "inshaat-talis",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2016 — قطعة الأرض والشريكان",
+    "estimatedMinutes": 22,
+    "tags": [
+      "وضعية إدماجية",
+      "نقطة بنسبة معلومة",
+      "مقياس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_inshaat-talis_P1",
+      "modelledOn": "BEM 2016 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "اشترى شريكان قطعة أرض مستطيلة الشكل $ABCD$ طولها $AB = 45\\,\\mathrm{m}$ وعرضها $AD = 20\\,\\mathrm{m}$ بمبلغ $2\\,700\\,000DA$ ، ساهم الأول بـ $1\\,200\\,000DA$ والثاني بـ $1\\,500\\,000DA$ . اتّفقا، إنصافًا لكل منهما وحفظًا للحقوق، على تقسيمها بسياج مستقيم $[MN]$ يوازي $(AD)$ ، حيث $M$ من $[AB]$ و $N$ من $[DC]$ ، بحيث يكون $\\dfrac{MA}{MB}$ مساويا لنسبة المساهمتين $\\dfrac{1\\,200\\,000}{1\\,500\\,000}$ . رسم المهندس مخطّط القطعة بمقياس $\\dfrac{1}{500}$ ، فكان طول $[AB]$ على المخطّط $9\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب النسبة $\\dfrac{MA}{MB}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "0,8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختزل الكسر $\\dfrac{1\\,200\\,000}{1\\,500\\,000}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1\\,200\\,000}{1\\,500\\,000} = \\dfrac{12}{15} = \\dfrac{4}{5}$ .",
+        "incorrect": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{MA}{MB} = \\dfrac{1\\,200\\,000}{1\\,500\\,000} = \\dfrac{12}{15} = \\dfrac{4}{5}$"
+        ],
+        "result": "\\dfrac{MA}{MB} = \\dfrac{4}{5}"
+      },
+      "timeSeconds": 90,
+      "counted": false
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أنشئ على المخطّط النقطة $M$ بالمسطرة غير المدرّجة والمدور.",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب خطوات الإنشاء مرقّمة (أو صوّر ورقتك)، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم موازيين يشملان $A$ و $B$ ودرّجهما بنفس فتحة المدور."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "4 وحدات من جهة $A$ و 5 وحدات من الجهة الأخرى عند $B$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AF = 4$ و $BE = 5$ في جهتين مختلفتين للمستقيم $(AB)$ ، و $(EF)$ يقطع $[AB]$ في $M$ ، ثم نرسم الموازي لـ $(AD)$ المارّ بـ $M$ .",
+        "incorrect": "قارن إنشاءك بالحل النموذجي خطوة خطوة، ثم صحّح الخطوة التي تختلف."
+      },
+      "solution": {
+        "lines": [
+          "1) نرسم مستقيمين متوازيين $(d_1)$ و $(d_2)$ يشملان $A$ و $B$ على الترتيب.",
+          "2) بنفس فتحة المدور نعيّن على $(d_1)$ النقطة $F$ حيث $AF = 4$ وحدات، وعلى $(d_2)$ النقطة $E$ حيث $BE = 5$ وحدات، في جهتين مختلفتين للمستقيم $(AB)$ .",
+          "3) المستقيم $(EF)$ يقطع $[AB]$ في $M$ .",
+          "التبرير: $(AF) \\parallel (BE)$ ، فحسب خاصية طالس في المثلثين $MAF$ و $MBE$ : $\\dfrac{MA}{MB} = \\dfrac{AF}{BE} = \\dfrac{4}{5}$ .",
+          "نرسم الموازي للمستقيم $(AD)$ المارّ بـ $M$ فيقطع $[DC]$ في $N$ : $[MN]$ هو السياج."
+        ]
+      },
+      "timeSeconds": 480
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب النسبة $\\dfrac{AM}{AB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "4/9",
+      "misconceptionSignatures": [
+        {
+          "value": "0,8",
+          "id": "MISC-TALIS-NISBA-JUZ-KULL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$M$ بين $A$ و $B$ : $AB = MA + MB$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AM}{AB} = \\dfrac{4}{4 + 5} = \\dfrac{4}{9}$ .",
+        "incorrect": "$\\dfrac{4}{5}$ نسبة جزأين؛ المطلوب نسبة الجزء إلى الكل."
+      },
+      "solution": {
+        "lines": [
+          "$MA = 4u$ و $MB = 5u$ ومنه $AB = 9u$",
+          "$\\dfrac{AM}{AB} = \\dfrac{4u}{9u}$"
+        ],
+        "result": "\\dfrac{AM}{AB} = \\dfrac{4}{9}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "احسب الطول $AM$ على المخطّط.",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "7,2",
+          "id": "MISC-TALIS-NISBA-JUZ-KULL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AM = \\dfrac{4}{9}AB$ و $AB = 9\\,\\mathrm{cm}$ على المخطّط."
+        }
+      ],
+      "feedback": {
+        "correct": "$AM = \\dfrac{4}{9} \\times 9 = 4\\,\\mathrm{cm}$ على المخطّط.",
+        "incorrect": "استعمل نسبة الجزء إلى الكل التي حسبتها."
+      },
+      "solution": {
+        "lines": [
+          "$AM = \\dfrac{4}{9} \\times 9$"
+        ],
+        "result": "AM = 4\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ا",
+      "statement": "استنتج الطول الحقيقي $AM$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "20",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المقياس $\\dfrac{1}{500}$ : $1\\,\\mathrm{cm}$ على المخطّط يمثل $500\\,\\mathrm{cm}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 500 = 2000\\,\\mathrm{cm} = 20\\,\\mathrm{m}$ .",
+        "incorrect": "اضرب في 500 ثم حوّل إلى المتر."
+      },
+      "solution": {
+        "lines": [
+          "$AM = 4 \\times 500 = 2000\\,\\mathrm{cm}$"
+        ],
+        "result": "AM = 20\\,\\mathrm{m}"
+      },
+      "timeSeconds": 90,
+      "counted": false
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ب",
+      "statement": "☜ احسب ثمن الجزء $AMND$ بسعر المتر المربع للقطعة كلها. هل يوافق مساهمة الشريك الأول؟",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الثمن بـ DA",
+      "expectedAnswer": "1200000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "سعر المتر المربع: $\\dfrac{2\\,700\\,000}{45 \\times 20}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحة $AMND$ : $AM \\times AD$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2\\,700\\,000}{900} = 3000DA$ للمتر المربع، و $20 \\times 20 \\times 3000 = 1\\,200\\,000DA$ : يوافق مساهمة الأول.",
+        "incorrect": "احسب سعر المتر المربع أولا، ثم مساحة المستطيل $AMND$ ."
+      },
+      "solution": {
+        "lines": [
+          "سعر المتر المربع: $\\dfrac{2\\,700\\,000}{45 \\times 20} = 3000DA$",
+          "مساحة $AMND$ : $20 \\times 20 = 400\\,\\mathrm{m^2}$",
+          "ثمنه: $400 \\times 3000 = 1\\,200\\,000DA$ ، وهو مساهمة الشريك الأول."
+        ],
+        "result": "1\\,200\\,000DA"
+      },
+      "timeSeconds": 240,
+      "counted": false
+    }
+  ]
+}

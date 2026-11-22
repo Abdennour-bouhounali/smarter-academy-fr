@@ -1,0 +1,274 @@
+{
+  "id": "ex-4am-tamthil-bayani-khatti-l4-006",
+  "lessonCode": "tamthil-bayani-khatti",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 33 — حل بياني ثم جبري",
+    "estimatedMinutes": 12,
+    "tags": [
+      "تمثيل بياني",
+      "معادلة",
+      "متراجحة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-33",
+      "page": 75,
+      "section": "أتعمّق",
+      "number": 33,
+      "adaptedFrom": "ex-4am-tamthil-bayani-khatti-l4-006"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الدالة الخطية $f$ حيث $f(x) = -\\dfrac{5}{2}x$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "مثّل بيانيا الدالة $f$ في معلم متعامد ومتجانس.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التمثيل البياني لدالة خطية مستقيم يشمل المبدأ $O$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يكفي تعيين نقطة ثانية من التمثيل بحساب صورة عدد غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "تمثيل $f$ مستقيم يشمل المبدأ $O$ .",
+          "نعلّم النقطة $A(2 ; -5)$ لأن $f(2) = -5$ ، ونرسم المستقيم $(OA)$ ."
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حلّ جبريا المعادلة $-\\dfrac{5}{2}x = 4$ ، ثم فسّر الحل بيانيا.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الحل $x$ (عدد فقط)",
+      "expectedAnswer": "-1,6",
+      "misconceptionSignatures": [
+        {
+          "value": "-10",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "1,6",
+          "id": "MISC-MUADALA-ISHARA-SALIBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم الطرفين على معامل $x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على $-\\dfrac{5}{2}$ هي الضرب في $-\\dfrac{2}{5}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 4 \\times \\left(-\\dfrac{2}{5}\\right) = -1{,}6$ : فاصلة نقطة التمثيل التي ترتيبها 4.",
+        "incorrect": "اقسم على المعامل بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$-\\dfrac{5}{2}x = 4$",
+          "$x = 4 \\times \\left(-\\dfrac{2}{5}\\right) = -\\dfrac{8}{5} = -1{,}6$",
+          "بيانيا: $-1{,}6$ هي فاصلة نقطة المستقيم التي ترتيبها 4."
+        ],
+        "result": "x = -1{,}6"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "lead": "حلّ جبريا المتراجحة $-\\dfrac{5}{2}x \\leqslant 3$ .",
+      "statement": "حدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x \\geqslant k$ أو $x \\leqslant k$ : اكتب العدد $k$ فقط",
+      "expectedAnswer": "-1,2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم الطرفين على $-\\dfrac{5}{2}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "حدّ الحلول هو $k = -1{,}2$ .",
+        "incorrect": "حدّ الحلول هو حاصل قسمة 3 على المعامل."
+      },
+      "solution": {
+        "lines": [
+          "$-\\dfrac{5}{2}x \\leqslant 3$",
+          "نقسم الطرفين على $-\\dfrac{5}{2}$ (عدد سالب)، أي نضربهما في $-\\dfrac{2}{5}$ .",
+          "$3 \\times \\left(-\\dfrac{2}{5}\\right) = -1{,}2$"
+        ],
+        "result": "k = -1{,}2"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x \\leqslant -1{,}2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-SALIB-BILA-QALB"
+        },
+        {
+          "id": "B",
+          "content": "$x \\geqslant -1{,}2$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$x > -1{,}2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قسمنا الطرفين على عدد سالب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد سالب تغيّر اتجاه المتباينة."
+        }
+      ],
+      "feedback": {
+        "correct": "$x \\geqslant -1{,}2$ .",
+        "incorrect": "القسمة على عدد سالب تغيّر اتجاه المتباينة ولا تغيّر نوعها (الحد حلّ)."
+      },
+      "solution": {
+        "lines": [
+          "القسمة على عدد سالب تغيّر الاتجاه: $x \\geqslant -1{,}2$ .",
+          "بيانيا: فواصل نقط المستقيم التي ترتيبها أصغر من 3 أو يساويه."
+        ],
+        "result": "x \\geqslant -1{,}2"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "النقطة $M$ من التمثيل البياني للدالة $f$ ترتيبها 5. احسب فاصلتها.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "-12,5",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "2",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "فاصلة $M$ هي العدد الذي صورته 5."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 5 على المعامل."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 5 \\times \\left(-\\dfrac{2}{5}\\right) = -2$ ، إذن $M(-2 ; 5)$ .",
+        "incorrect": "الفاصلة هي العدد الذي صورته 5: اقسم على المعامل بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 5$ معناه $-\\dfrac{5}{2}x = 5$",
+          "$x = 5 \\times \\left(-\\dfrac{2}{5}\\right) = -2$",
+          "إذن $M(-2 ; 5)$ ."
+        ],
+        "result": "M(-2 ; 5)"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

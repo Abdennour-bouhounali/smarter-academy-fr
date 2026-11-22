@@ -1,0 +1,200 @@
+{
+  "id": "ex-4am-murakkibata-shuaa-l2-001",
+  "lessonCode": "murakkibata-shuaa",
+  "level": 2,
+  "metadata": {
+    "title": "نشاط 1 — من A إلى B ثم من B إلى D",
+    "estimatedMinutes": 3,
+    "tags": [
+      "قراءة بيانية",
+      "إشارة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-1",
+      "page": 140,
+      "section": "أنشطة",
+      "number": 1
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 140): المستوي مزوّد بمعلم متعامد ومتجانس $(O\\,;\\,I\\,,J)$ (الشكل). الانتقال من A إلى C بموازاة (OI)، ثم من C إلى B بموازاة (OJ). D نقطة إحداثياها $(3\\,;\\,-2)$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "I": [
+          1,
+          0
+        ],
+        "J": [
+          0,
+          1
+        ],
+        "A": [
+          -2,
+          4
+        ],
+        "C": [
+          6,
+          4
+        ],
+        "B": [
+          6,
+          2
+        ]
+      },
+      "grid": true,
+      "axes": true,
+      "vectors": [
+        {
+          "from": "A",
+          "to": "C",
+          "tone": "rose"
+        },
+        {
+          "from": "C",
+          "to": "B",
+          "tone": "rose"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "tone": "indigo"
+        }
+      ],
+      "labels": {
+        "O": "sw",
+        "I": "s",
+        "J": "w"
+      },
+      "ariaLabel": "معلم (O ; I , J) على المرصوفة: سهم أفقي من A إلى C ثم سهم شاقولي نازل من C إلى B، وسهم من A إلى B",
+      "maxWidth": 540
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما مركبتا الشعاع $\\overrightarrow{AB}$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_murakkibata-shuaa_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "مركبتا الشعاع (x ; y): الأفقية ثم العمودية — عددان مثل −3 أو 2,5",
+      "expectedAnswer": {
+        "x": "8",
+        "y": "-2"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انطلق من مبدأ الشعاع وعُدّ المربعات بموازاة محور الفواصل، ثم بموازاة محور التراتيب، حتى نهايته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نحو اليمين أو نحو الأعلى العدد موجب، ونحو اليسار أو نحو الأسفل العدد سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب أولا الإزاحة الأفقية ثم الإزاحة العمودية، كل واحدة بإشارتها."
+        }
+      ],
+      "feedback": {
+        "correct": "8 وحدات في الاتجاه الموجب بموازاة (OI) ثم وحدتان في الاتجاه السالب بموازاة (OJ): $\\overrightarrow{AB}\\begin{pmatrix} 8 \\\\ -2 \\end{pmatrix}$ .",
+        "incorrect": "من C إلى B ننزل: الإشارة سالبة."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "8",
+            "y": "2"
+          },
+          "id": "MISC-MAALAM-ISHARA"
+        },
+        {
+          "value": {
+            "x": "-2",
+            "y": "8"
+          },
+          "id": "MISC-MAALAM-TABDIL-X-Y"
+        },
+        {
+          "value": {
+            "x": "6",
+            "y": "2"
+          },
+          "id": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "statement": "ما مركبتا الشعاع $\\overrightarrow{BD}$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_murakkibata-shuaa_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "مركبتا الشعاع (x ; y): الأفقية ثم العمودية — عددان مثل −3 أو 2,5",
+      "expectedAnswer": {
+        "x": "-3",
+        "y": "-4"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انطلق من مبدأ الشعاع وعُدّ المربعات بموازاة محور الفواصل، ثم بموازاة محور التراتيب، حتى نهايته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نحو اليمين أو نحو الأعلى العدد موجب، ونحو اليسار أو نحو الأسفل العدد سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب أولا الإزاحة الأفقية ثم الإزاحة العمودية، كل واحدة بإشارتها."
+        }
+      ],
+      "feedback": {
+        "correct": "من $B(6\\,;\\,2)$ إلى $D(3\\,;\\,-2)$ : 3 نحو اليسار ثم 4 نحو الأسفل: $\\begin{pmatrix} -3 \\\\ -4 \\end{pmatrix}$ .",
+        "incorrect": "D ليست على الشكل: انطلق من إحداثيتي B وعُدّ."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "3",
+            "y": "-2"
+          },
+          "id": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        },
+        {
+          "value": {
+            "x": "3",
+            "y": "4"
+          },
+          "id": "MISC-MAALAM-ISHARA"
+        },
+        {
+          "value": {
+            "x": "-4",
+            "y": "-3"
+          },
+          "id": "MISC-MAALAM-TABDIL-X-Y"
+        }
+      ],
+      "difficulty": 3
+    }
+  ]
+}

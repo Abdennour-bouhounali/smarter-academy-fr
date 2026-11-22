@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-takbir-tasghir-l3-002",
+  "lessonCode": "takbir-tasghir",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — k من نسبة مساحتين",
+    "estimatedMinutes": 2,
+    "tags": [
+      "النسبة k",
+      "المساحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takbir-tasghir_P1",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "مساحة أوجه مجسّم ضُربت في $\\dfrac{9}{16}$ بعد تصغيره."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما نسبة التصغير $k$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة مثل 1,25 ، أو كسر مثل 4/7)",
+      "expectedAnswer": "0,75",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAKBIR-JADHR",
+          "value": "9/16"
+        },
+        {
+          "id": "MISC-TAKBIR-JADHR",
+          "value": "9/32"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المساحات تُضرب في $k^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$k^2 = \\dfrac{9}{16}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ابحث عن العدد الموجب الذي مربّعه $\\dfrac{9}{16}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$k = \\sqrt{\\dfrac{9}{16}} = \\dfrac{3}{4}$ .",
+        "incorrect": "نأخذ الجذر التربيعي لنسبة المساحتين، ولا نقسمها على 2."
+      }
+    }
+  ]
+}

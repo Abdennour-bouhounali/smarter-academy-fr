@@ -1,0 +1,154 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l3-006",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2021 — 1225 و 35",
+    "estimatedMinutes": 6,
+    "tags": [
+      "مضاعف",
+      "يقسم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-adad-tabii_P2",
+      "modelledOn": "BEM 2021 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب العدد 1225 على الشكل $35 \\times q$ حيث $q$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $q$ فقط (عدد طبيعي)",
+      "expectedAnswer": "35",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نبحث عن عدد طبيعي $q$ حيث $1225 = 35 \\times q$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أجرِ القسمة الإقليدية للعدد 1225 على 35."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان الباقي معدومًا فإن حاصل القسمة هو العدد المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$1225 = 35 \\times 35$.",
+        "incorrect": "اقسم 1225 على 35: حاصل القسمة هو العدد $q$ إذا كان الباقي معدومًا."
+      },
+      "solution": {
+        "lines": [
+          "$35 \\times 35 = 1225$",
+          "إذن $1225 = 35 \\times 35$"
+        ],
+        "result": "1225 = 35 \\times 35"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بيّن أن العدد 1225 مضاعف للعدد 35، وأن 35 يقسم 1225.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل المساواة التي وجدتها في السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "«$a$ مضاعف لـ $b$» و«$b$ يقسم $a$» لهما نفس معنى «$a = b \\times q$»."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك سطرًا بسطر بالحل النموذجي، وانتبه إلى كل مرحلة من مراحل الحساب."
+      },
+      "solution": {
+        "lines": [
+          "$1225 = 35 \\times 35$ و 35 عدد طبيعي.",
+          "إذن 1225 مضاعف للعدد 35،",
+          "و 35 قاسم للعدد 1225، أي 35 يقسم 1225."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب العدد A حيث: $A = \\dfrac{1225}{35} - \\dfrac{35}{7} \\times 2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "25",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01 لحساب $\\dfrac{1225}{35}$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب قبل الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 35 - 5 \\times 2 = 25$.",
+        "incorrect": "احسب كل كسر على حدة، ثم الجداء، ثم اطرح."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1225}{35} = 35$ و $\\dfrac{35}{7} = 5$",
+          "$A = 35 - 5 \\times 2 = 35 - 10$"
+        ],
+        "result": "A = 25"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "id": "ex-2am-hall-mushkil-muadala-l3-007",
+  "lessonCode": "hall-mushkil-muadala",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — حديقة المدرسة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "ترجمة وضعيّة",
+      "معادلة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "حديقة المدرسة مستطيلة عرضها $8{,}5\\,\\mathrm{m}$ وطولها $x$ ومساحتها $127{,}5\\,\\mathrm{m}^{2}$ . يُسيَّج محيطها بسياج ثمن المتر منه $120$ DA ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ معادلة تترجم الوضعيّة ؟ اختر الإجابة الصحيحة :",
+      "learningPoints": [
+        {
+          "code": "2am_hall-mushkil-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{x}{8{,}5}=127{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAJHUL-ROLE"
+        },
+        {
+          "id": "B",
+          "content": "$127{,}5\\times x=8{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAJHUL-SWAP"
+        },
+        {
+          "id": "C",
+          "content": "$8{,}5\\times x=127{,}5$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعيّة وسمِّ المجهول بحرف، ثمّ حدّد ما يُعطى وما يُطلب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العملية التي تربط الأعداد بالمجهول كما تحدث في الوضعيّة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر كلّ معادلة : هل تصف الوضعيّة، وهل يجعلها العدد المتوقّع صحيحة ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "المعادلة الصحيحة هي $8{,}5\\times x=127{,}5$ .",
+        "incorrect": "عبّر عن الوضعيّة بعملية بين العدد المعلوم والمجهول، ثمّ اختبر الخيارات بقيمة مقبولة."
+      },
+      "solution": {
+        "lines": [
+          "$8{,}5\\times x=127{,}5$ : هذه المعادلة تصف الوضعيّة.",
+          "وحلّها $x=15$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حلّ المعادلة : $8{,}5\\times x=127{,}5$ .",
+      "learningPoints": [
+        {
+          "code": "2am_hall-mushkil-muadala_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "1083.75",
+          "id": "MISC-MAJHUL-MULTDIV"
+        },
+        {
+          "value": "119",
+          "id": "MISC-MAJHUL-SUBFORM"
+        },
+        {
+          "value": "136",
+          "id": "MISC-MAJHUL-ADDFORM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في المعادلة ما يُفعل بالمجهول : ضرب أو قسمة أو جمع أو طرح، وما هي آخر عملية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العامل الناقص في جداء يُحسب بقسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من حلّك : عوّض المجهول بقيمته وأنجز العملية، فإن وجدت الطرف الآخر فالحلّ صحيح."
+        }
+      ],
+      "feedback": {
+        "correct": "$x=15$ .",
+        "incorrect": "ابحث عن العدد الذي يجعل المساواة صحيحة بالعملية العكسية، ثمّ تحقّق منه بإنجاز العملية."
+      },
+      "solution": {
+        "lines": [
+          "$x=127{,}5\\div 8{,}5=15$ .",
+          "التحقّق : $8{,}5\\times 15=127{,}5$ ."
+        ],
+        "result": "15"
+      },
+      "work": "optional",
+      "timeSeconds": 70
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما تكلفة السياج بالدينار ؟ احسب $120\\times2\\times(x+8{,}5)$ .",
+      "learningPoints": [
+        {
+          "code": "2am_hall-mushkil-muadala_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "5640",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بقيمته المعلومة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات : الضرب والقسمة قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة."
+        }
+      ],
+      "feedback": {
+        "correct": "النتيجة $5640$ .",
+        "incorrect": "عوّض بالقيم المعلومة واحسب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$120\\times2\\times(15+8{,}5)=5640$ ."
+        ],
+        "result": "5640"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

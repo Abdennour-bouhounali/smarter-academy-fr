@@ -1,0 +1,207 @@
+{
+  "id": "ex-4am-tafsir-bayani-jumla-l3-001",
+  "lessonCode": "tafsir-bayani-jumla",
+  "level": 3,
+  "metadata": {
+    "title": "نشاط 5 — الدالتان f و g ونقطة التقاطع",
+    "estimatedMinutes": 8,
+    "tags": [
+      "نشاط 5",
+      "نقطة التقاطع",
+      "حل وحيد"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-5",
+      "page": 79,
+      "section": "أنشطة",
+      "number": 5
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في صندوق القسم الذي جمعه التلاميذ للتكافل مع زملائهم المحتاجين 43 قطعة نقدية من فئتي 100DA و 200DA مبلغها 5000DA. نسمّي $x$ عدد قطع 100DA و $y$ عدد قطع 200DA.\nيُترجم الشرطان بالدالتين $f$ و $g$ حيث: $f(x) = 43 - x$ و $g(x) = 25 - \\dfrac{1}{2}x$ ، ونسمّي $(D_f)$ و $(D_g)$ تمثيليهما البيانيين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "احسب $f(36)$ و $g(36)$ .",
+      "statement": "$f(36)$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الصورة",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد 36 في عبارة $f$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(36) = 43 - 36$ .",
+        "incorrect": "عوّض $x$ بالعدد 36 ثم احسب."
+      },
+      "solution": {
+        "lines": [
+          "$f(36) = 43 - 36 = 7$"
+        ],
+        "result": "f(36) = 7"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "$g(36)$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الصورة",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد 36 في عبارة $g$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نصف 36 هو 18."
+        }
+      ],
+      "feedback": {
+        "correct": "$g(36) = 25 - 18$ .",
+        "incorrect": "احسب $\\dfrac{1}{2} \\times 36$ أولا ثم اطرحه من 25."
+      },
+      "solution": {
+        "lines": [
+          "$g(36) = 25 - \\dfrac{1}{2} \\times 36 = 25 - 18 = 7$"
+        ],
+        "result": "g(36) = 7"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "استنتج إحداثيي نقطة تقاطع المستقيمين $(D_f)$ و $(D_g)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": {
+        "x": "36",
+        "y": "7"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "7",
+            "y": "36"
+          },
+          "id": "MISC-JUMLA-BAYANI-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطة التي فاصلتها 36 على $(D_f)$ ، وعلى $(D_g)$ ، لها نفس الترتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نقطة مشتركة بين المستقيمين هي نقطة تقاطعهما."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة نفسها تنتمي إلى المستقيمين معا.",
+        "incorrect": "اكتب الثنائية $(x ; y)$ : الفاصلة (عدد قطع 100DA) أولا ثم الترتيب."
+      },
+      "solution": {
+        "lines": [
+          "$f(36) = g(36) = 7$ : النقطة التي إحداثياها $(36 ; 7)$ تنتمي إلى $(D_f)$ و إلى $(D_g)$ .",
+          "إذن $(D_f)$ و $(D_g)$ يتقاطعان في النقطة $(36 ; 7)$ .",
+          "التفسير: في الصندوق 36 قطعة من فئة 100DA و 7 قطع من فئة 200DA."
+        ],
+        "result": "(36 ; 7)"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "هل يوجد توزيع آخر للقطع يحقق الشرطين معا؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-HALAT"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن معاملي توجيه المستقيمين $(D_f)$ و $(D_g)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مستقيمان غير متوازيين: كم نقطة مشتركة لهما؟"
+        }
+      ],
+      "feedback": {
+        "correct": "مستقيمان متقاطعان لهما نقطة مشتركة واحدة.",
+        "incorrect": "معاملا التوجيه مختلفان: المستقيمان متقاطعان، ولمستقيمين متقاطعين نقطة مشتركة وحيدة."
+      },
+      "solution": {
+        "lines": [
+          "معامل توجيه $(D_f)$ هو $-1$ ومعامل توجيه $(D_g)$ هو $-\\dfrac{1}{2}$ : المستقيمان متقاطعان.",
+          "لهما نقطة مشتركة وحيدة، إذن للجملة حل وحيد: لا يوجد توزيع آخر."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

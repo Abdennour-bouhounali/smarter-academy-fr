@@ -1,0 +1,107 @@
+{
+  "id": "ex-4am-tarrid-taalufi-l2-006",
+  "lessonCode": "tarrid-taalufi",
+  "level": 2,
+  "metadata": {
+    "title": "صيغتا قاعة رياضة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "معادلة",
+      "تساوي صيغتين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-taalufi_P2",
+      "modelledOn": "act-4"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "قاعة رياضة: الصيغة الأولى $f(x) = 150x + 1200$ والصيغة الثانية $g(x) = 350x$ (بـ DA)، حيث $x$ عدد الحصص في الشهر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "حل المعادلة $f(x) = g(x)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب حل المعادلة فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكلفتان متساويتان: نحل معادلة من الدرجة الأولى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $150x + 1200 = 350x$ ثم اجمع حدود $x$ في طرف واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "هو عدد الحصص الذي تتساوى عنده تكلفتا الصيغتين.",
+        "incorrect": "انقل حدود $x$ إلى طرف واحد والأعداد إلى الطرف الآخر، ثم اقسم على معامل $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$150x + 1200 = 350x$",
+          "$1200 = 350x - 150x$",
+          "$1200 = 200x$",
+          "$x = 6$",
+          "من أجل 6 حصص تتساوى تكلفتا الصيغتين."
+        ],
+        "result": "x = 6"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب المبلغ المشترك من أجل هذا العدد من الحصص.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "2100",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض حل المعادلة في $g(x)$ أو في $f(x)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$350 \\times 6$ .",
+        "incorrect": "عوّض العدد الذي وجدته في إحدى العبارتين."
+      },
+      "solution": {
+        "lines": [
+          "$g(6) = 350 \\times 6 = 2100$ و $f(6) = 150 \\times 6 + 1200 = 2100$",
+          "المبلغ المشترك 2100DA ."
+        ],
+        "result": "2100DA"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

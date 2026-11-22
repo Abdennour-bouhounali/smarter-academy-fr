@@ -1,0 +1,307 @@
+{
+  "id": "ex-4am-nisab-muthallathiya-l4-006",
+  "lessonCode": "nisab-muthallathiya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2015 — مثلث في نصف دائرة",
+    "estimatedMinutes": 11,
+    "tags": [
+      "دائرة",
+      "جيب التمام",
+      "الجيب",
+      "حساب طول"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_nisab-muthallathiya_P3",
+      "modelledOn": "BEM 2015 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل، $(\\mathscr{C})$ دائرة مركزها $O$ وقطرها $[AB]$ حيث $AB = 10\\,\\mathrm{cm}$ ، و $C$ نقطة من الدائرة حيث $AC = 8\\,\\mathrm{cm}$ . $H$ المسقط العمودي للنقطة $C$ على $[AB]$ .",
+    "figure": {
+      "points": {
+        "A": [
+          -5,
+          0
+        ],
+        "B": [
+          5,
+          0
+        ],
+        "O": [
+          0,
+          0
+        ],
+        "C": [
+          1.4,
+          4.8
+        ],
+        "H": [
+          1.4,
+          0
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        {
+          "from": "A",
+          "to": "C",
+          "label": "8"
+        },
+        [
+          "C",
+          "B"
+        ],
+        [
+          "C",
+          "H"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "C",
+          "H",
+          "B"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "A",
+          "from": "B",
+          "to": "C",
+          "radius": 30
+        }
+      ],
+      "circles": [
+        {
+          "center": "O",
+          "radius": 5
+        }
+      ],
+      "labels": {
+        "O": "s",
+        "H": "s"
+      },
+      "ariaLabel": "دائرة مركزها O وقطرها [AB]، النقطة C على الدائرة حيث AC = 8، و H المسقط العمودي للنقطة C على [AB]",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن المثلث $ABC$ قائم في $C$ .",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$[AB]$ قطر للدائرة و $C$ نقطة منها."
+        }
+      ],
+      "feedback": {
+        "correct": "المثلث $ABC$ محاط بدائرة قطرها أحد أضلاعه $[AB]$ ، فهو قائم في $C$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "$C$ نقطة من الدائرة $(\\mathscr{C})$ التي قطرها $[AB]$ ،",
+          "وكل مثلث محاط بدائرة قطرها أحد أضلاعه يكون قائما، والزاوية القائمة تقابل القطر:",
+          "إذن المثلث $ABC$ قائم في $C$ ."
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $\\cos\\widehat{BAC}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري",
+      "expectedAnswer": "4/5",
+      "misconceptionSignatures": [
+        {
+          "value": "5/4",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        },
+        {
+          "value": "3/5",
+          "id": "MISC-MUTH-MUQABIL-MUJAWIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $ABC$ القائم في $C$ ، عيّن بالنسبة إلى الزاوية $\\widehat{BAC}$ الوتر والضلعين المجاور والمقابل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جيب تمام زاوية حادة = طول الضلع المجاور لها على طول الوتر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض بالأطوال ثم اختزل الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\cos\\widehat{BAC} = \\dfrac{AC}{AB} = \\dfrac{8}{10} = \\dfrac{4}{5}$ .",
+        "incorrect": "راجع الضلعين: جيب تمام الزاوية = طول الضلع المجاور لها على طول الوتر، ثم اختزل."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $ABC$ القائم في $C$ لدينا: $\\cos\\widehat{BAC} = \\dfrac{AC}{AB}$",
+          "$\\cos\\widehat{BAC} = \\dfrac{8}{10}$"
+        ],
+        "result": "\\cos\\widehat{BAC} = \\dfrac{4}{5}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "lead": "احسب الطولين $AH$ و $CH$ .",
+      "statement": "الطول $AH$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm",
+      "expectedAnswer": "6.4",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        },
+        {
+          "value": "4.8",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $ACH$ القائم في $H$ : $[AH]$ مجاور للزاوية $\\widehat{BAC}$ و $[AC]$ وتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل قيمة جيب التمام المحسوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$AH = AC \\times \\cos\\widehat{BAC} = 8 \\times \\dfrac{4}{5} = 6{,}4\\,\\mathrm{cm}$ .",
+        "incorrect": "في المثلث $ACH$ الوتر هو $[AC]$ ، و $[AH]$ في بسط جيب التمام: اضرب."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $ACH$ القائم في $H$ : $\\cos\\widehat{HAC} = \\dfrac{AH}{AC}$ ، و $\\widehat{HAC} = \\widehat{BAC}$ ( $H \\in [AB]$ ).",
+          "$AH = AC \\times \\cos\\widehat{BAC} = 8 \\times \\dfrac{4}{5}$"
+        ],
+        "result": "AH = 6{,}4\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "الطول $CH$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm",
+      "expectedAnswer": "4.8",
+      "misconceptionSignatures": [
+        {
+          "value": "6.4",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "8",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $ABC$ : $BC = 6$ (فيثاغورس) و $\\sin\\widehat{BAC} = \\dfrac{BC}{AB}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في المثلث $ACH$ : $[CH]$ مقابل للزاوية و $[AC]$ وتر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin\\widehat{BAC} = \\dfrac{6}{10} = \\dfrac{3}{5}$ و $CH = 8 \\times \\dfrac{3}{5} = 4{,}8\\,\\mathrm{cm}$ .",
+        "incorrect": "في المثلث $ACH$ ، $[CH]$ في بسط الجيب: اضرب الوتر $AC$ في الجيب."
+      },
+      "solution": {
+        "lines": [
+          "$BC^2 = AB^2 - AC^2 = 100 - 64 = 36$ ، إذن $BC = 6$ و $\\sin\\widehat{BAC} = \\dfrac{BC}{AB} = \\dfrac{3}{5}$ .",
+          "في المثلث $ACH$ القائم في $H$ : $\\sin\\widehat{HAC} = \\dfrac{CH}{AC}$",
+          "$CH = AC \\times \\sin\\widehat{BAC} = 8 \\times \\dfrac{3}{5}$"
+        ],
+        "result": "CH = 4{,}8\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

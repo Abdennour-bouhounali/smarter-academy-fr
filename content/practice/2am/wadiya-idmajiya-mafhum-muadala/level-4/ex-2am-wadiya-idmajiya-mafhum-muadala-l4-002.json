@@ -1,0 +1,242 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-mafhum-muadala-l4-002",
+  "lessonCode": "wadiya-idmajiya-mafhum-muadala",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — حديقة مستطيلة وسياجها",
+    "estimatedMinutes": 12,
+    "tags": [
+      "محيط بدلالة x",
+      "معادلة",
+      "مساحة",
+      "تكلفة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "حديقة مستطيلة عرضها $x$ بالمتر وطولها $x+15$ بالمتر ، ومحيطها $130\\,\\mathrm{m}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اختر عبارة محيط الحديقة مبسّطة بدلالة $x$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$4x+15$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-NOFIRST"
+        },
+        {
+          "id": "B",
+          "content": "$2x+30$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-NOFIRST"
+        },
+        {
+          "id": "C",
+          "content": "$4x+30$",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "$4x+30$ .",
+        "incorrect": "اكتب الجزء الثابت مرّة واحدة والجزء المتكرّر مضروبًا في عدده، ثمّ اختبر عبارتك على عدد صغير."
+      },
+      "solution": {
+        "lines": [
+          "$2(x+15)+2x = 2x+30+2x$ .",
+          "نجمع الحدود المتشابهة : $4x+30$ ."
+        ]
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب طول كلّ ضلع بدلالة الحرف ثمّ اجمع الأضلاع كلّها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الحدود المتشابهة : الحرف مع الحرف والعدد مع العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر العبارة على قيمة صغيرة للحرف وقارن بحساب الأضلاع مباشرة."
+        }
+      ],
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أوجد $x$ بحلّ المعادلة : $4x+30 = 130$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "25",
+      "misconceptionSignatures": [
+        {
+          "value": "2.5",
+          "id": "MISC-MAJHUL-UNDOFIRST"
+        },
+        {
+          "value": "100",
+          "id": "MISC-MAJHUL-SUBFORM"
+        },
+        {
+          "value": "40",
+          "id": "MISC-MAJHUL-ADDFORM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في المعادلة ما يُفعل بالمجهول : ضرب أو قسمة أو جمع أو طرح، وما هي آخر عملية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ألغِ آخر عملية أُجريت على المجهول أوّلًا، ثمّ ألغِ ما بقي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من حلّك : عوّض المجهول بقيمته وأنجز العملية، فإن وجدت الطرف الآخر فالحلّ صحيح."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 25$ .",
+        "incorrect": "ابحث عن العدد الذي يجعل المساواة صحيحة بالعملية العكسية، ثمّ تحقّق منه بإنجاز العملية."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية هي جمع $30$ : $4x = 130-30 = 100$ .",
+          "$x = 100 \\div 4 = 25$ .",
+          "التحقّق : $4 \\times 25+30 = 130$ ."
+        ],
+        "result": "25"
+      },
+      "work": "optional",
+      "timeSeconds": 85
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب مساحة الحديقة $(x+15)x$ بالمتر المربّع .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "1000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بقيمته المعلومة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات : الضرب والقسمة قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة."
+        }
+      ],
+      "feedback": {
+        "correct": "النتيجة $1000$ .",
+        "incorrect": "عوّض بالقيم المعلومة واحسب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$(25+15) \\times 25 = 40 \\times 25 = 1000$ متر مربّع ."
+        ],
+        "result": "1000"
+      },
+      "counted": false,
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "ثمن المتر الواحد من السياج $120$ DA . احسب تكلفة سياج المحيط كلّه بالدينار .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "15600",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بقيمته المعلومة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات : الضرب والقسمة قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة."
+        }
+      ],
+      "feedback": {
+        "correct": "النتيجة $15600$ .",
+        "incorrect": "عوّض بالقيم المعلومة واحسب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$130 \\times 120 = 15600$ ."
+        ],
+        "result": "15600"
+      },
+      "counted": false,
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

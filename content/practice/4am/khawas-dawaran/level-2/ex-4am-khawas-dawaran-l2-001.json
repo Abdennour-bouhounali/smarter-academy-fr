@@ -1,0 +1,157 @@
+{
+  "id": "ex-4am-khawas-dawaran-l2-001",
+  "lessonCode": "khawas-dawaran",
+  "level": 2,
+  "metadata": {
+    "title": "من الكتاب — التمرين 4 (ص 158)",
+    "estimatedMinutes": 3,
+    "tags": [
+      "صورة نقطة",
+      "المربع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-4",
+      "page": 158,
+      "section": "صورة شكل بدوران",
+      "number": 4
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 158): ABC مثلث قائم في A و متساوي الساقين. في معلم متعامد ومتجانس (من المنصّة): $A(0\\,;\\,0)$ ، $B(3\\,;\\,0)$ ، $C(0\\,;\\,3)$ . A′ صورة A بالدوران الذي مركزه B وزاويته $90^\\circ$ في الاتجاه غير المباشر.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          3,
+          0
+        ],
+        "C": [
+          0,
+          3
+        ]
+      },
+      "grid": true,
+      "axes": true,
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "A"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "B",
+          "A",
+          "C"
+        ]
+      ],
+      "labels": {
+        "A": "sw"
+      },
+      "ariaLabel": "مثلث ABC قائم في A ومتساوي الساقين في معلم",
+      "maxWidth": 360
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا A′:",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x\\,;\\,y)$ : الفاصلة ثم الترتيبة (عدد صحيح أو كسر مثل 3/2)",
+      "expectedAnswer": {
+        "x": "3",
+        "y": "3"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من B إلى A: ثلاث وحدات نحو اليسار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الاتجاه غير المباشر هو اتجاه عقارب الساعة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أدر هذا الانتقال ربع دورة مع عقارب الساعة حول B."
+        }
+      ],
+      "feedback": {
+        "correct": "A′ في $(3\\,;\\,3)$ : $BA' = BA = 3$ و $\\widehat{ABA'} = 90^\\circ$ .",
+        "incorrect": "مع عقارب الساعة حول B، تصعد A نحو جهة C."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "الرباعي ABA′C:",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "ليس متوازي أضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ITTIJAH"
+        },
+        {
+          "id": "B",
+          "content": "مربع",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "معين غير مربع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-KHAWAS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن BA′ و BA و AC."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما قيس $\\widehat{ABA'}$ ؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضلاع متقايسة وزوايا قائمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$BA' = BA = AC = 3$ والزوايا قائمة: مربع.",
+        "incorrect": "الدوران يحافظ على الطول BA، وزاويته قائمة."
+      }
+    }
+  ]
+}

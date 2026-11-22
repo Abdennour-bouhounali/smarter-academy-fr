@@ -1,0 +1,180 @@
+{
+  "id": "ex-1am-adad-nisbiya-siyaqat-l3-005",
+  "lessonCode": "adad-nisbiya-siyaqat",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — سنوات العلماء",
+    "estimatedMinutes": 8,
+    "tags": [
+      "تواريخ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نقارن علماء عاشوا قبل الميلاد وبعده."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "وُلد ماسينيسا سنة $-238$ ووُلد الخوارزمي سنة $780$ . من الأقدم ميلادًا؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "ماسينيسا",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الخوارزمي",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الجهة التي يقع فيها كلّ عدد من الصفر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما تحت الصفر أخفض ممّا فوقه، والأبعد تحت الصفر هو الأخفض."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن مواضع المستوى لا أحجام الأعداد المكتوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "الأقدم هو ماسينيسا لأنّ $-238$ هو الأصغر.",
+        "incorrect": "الأقدم هو الأصغر عددًا."
+      },
+      "solution": {
+        "lines": [
+          "$-238$ و $780$",
+          "الأصغر $-238$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عاش ماسينيسا من سنة $-238$ إلى سنة $-148$ (قبل الميلاد). كم سنة عاش؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "90",
+      "misconceptionSignatures": [
+        {
+          "value": "386",
+          "id": "MISC-REL-AGESUM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العمر هو عدد السنوات الفاصلة بين تاريخين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نعدّ من التاريخ الأقدم إلى الأحدث."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح الأصغر من الأكبر دون جمع."
+        }
+      ],
+      "feedback": {
+        "correct": "عاش 90 سنة.",
+        "incorrect": "نحسب الفاصل بين التاريخين لا مجموعهما."
+      },
+      "solution": {
+        "lines": [
+          "الفاصل بين $-238$ و $-148$",
+          "$238-148=90$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "وُلد ماسينيسا سنة 148 ق.م . نكتب السنة التي قبل الميلاد بعدد سالب والتي بعده بعدد موجب. ما العدد الذي يمثّل سنة ميلاده؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "-148",
+      "misconceptionSignatures": [
+        {
+          "value": "148",
+          "id": "MISC-REL-BCPOS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "فوق الصفر أم تحته؟ وكم تدريجة تبعد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما فوق الصفر عدد موجب بلا إشارة، وما تحته عدد سالب تسبقه الإشارة − ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجهة بالإشارة ثمّ المسافة بالعدد."
+        }
+      ],
+      "feedback": {
+        "correct": "تحت الصفر : عدد سالب، $-148$.",
+        "incorrect": "الجهة من الصفر تقول الإشارة، والمسافة تقول العدد."
+      },
+      "solution": {
+        "lines": [
+          "تحت الصفر (أو المرجع)",
+          "عدد سالب، مسافته $148$ : $-148$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-takbir-tasghir-l2-007",
+  "lessonCode": "takbir-tasghir",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — كم مرّة الحجم؟",
+    "estimatedMinutes": 2,
+    "tags": [
+      "التصغير",
+      "الحجم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takbir-tasghir_P1",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "صُغّر مجسّم بالنسبة $k = \\dfrac{1}{2}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "حجمه يُضرب في كم؟",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة مثل 1,25 ، أو كسر مثل 4/7)",
+      "expectedAnswer": "0,125",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAKBIR-HAJM-K",
+          "value": "1/2"
+        },
+        {
+          "id": "MISC-TAKBIR-HAJM-K",
+          "value": "1/4"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحجم ثلاثة أبعاد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأطوال تُضرب في $k$ ، والمساحات في $k^2$ ، والحجوم في $k^3$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب $\\left(\\dfrac{1}{2}\\right)^3$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\left(\\dfrac{1}{2}\\right)^3 = \\dfrac{1}{8} = 0{,}125$ .",
+        "incorrect": "الحجم يُضرب في $k^3$ ."
+      }
+    }
+  ]
+}

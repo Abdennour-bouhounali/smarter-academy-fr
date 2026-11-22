@@ -1,0 +1,228 @@
+{
+  "id": "ex-4am-tatbiqat-tanasub-l5-006",
+  "lessonCode": "tatbiqat-tanasub",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2016 — محصول البطاطا لفلاح من الوادي",
+    "estimatedMinutes": 13,
+    "tags": [
+      "وضعية إدماجية",
+      "عمولة",
+      "زيادة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tatbiqat-tanasub_P1",
+      "modelledOn": "BEM 2016 II II-02"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "باع فلاح أمين من الوادي 45 طنا من البطاطا لتاجر جملة، عن طريق وسيط اقتطع عمولة نسبتها 4% من المبلغ الإجمالي للبيع، فبقي للفلاح مبلغ $1{,}728 \\times 10^{6}DA$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب المبلغ الإجمالي للبيع.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط، دون كتابة علمية)",
+      "expectedAnswer": "1800000",
+      "misconceptionSignatures": [
+        {
+          "value": "1797120",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بعد اقتطاع العمولة يبقى $96\\%$ من المبلغ الإجمالي $x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المعادلة $0{,}96x = 1\\,728\\,000$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{1\\,728\\,000}{0{,}96} = 1\\,800\\,000DA$ .",
+        "incorrect": "المبلغ الباقي هو 96% من المبلغ الإجمالي: اقسم، ولا تضف 4% إليه."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}728 \\times 10^{6} = 1\\,728\\,000$",
+          "$0{,}96x = 1\\,728\\,000$",
+          "$x = \\dfrac{1\\,728\\,000}{0{,}96} = 1\\,800\\,000$"
+        ],
+        "result": "x = 1\\,800\\,000DA"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حدّد سعر الكيلوغرام الواحد من البطاطا، علما أن $1t = 1000kg$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب السعر بـ DA (عدد فقط)",
+      "expectedAnswer": "40",
+      "misconceptionSignatures": [
+        {
+          "value": "40000",
+          "id": "MISC-MAQADIR-WIHDA"
+        },
+        {
+          "value": "38,4",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل الكتلة إلى kg ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "سعر الكيلوغرام = المبلغ الإجمالي ÷ عدد الكيلوغرامات."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1\\,800\\,000}{45\\,000} = 40DA$ للكيلوغرام.",
+        "incorrect": "اقسم المبلغ الإجمالي على الكتلة بالكيلوغرام."
+      },
+      "solution": {
+        "lines": [
+          "$45t = 45\\,000kg$",
+          "$\\dfrac{1\\,800\\,000}{45\\,000} = 40$",
+          "سعر الكيلوغرام 40DA ."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "lead": "باع تاجر الجملة هذه البطاطا في سوق التجزئة بزيادة 35% على سعر الشراء.",
+      "statement": "احسب سعر بيع الكيلوغرام الواحد في سوق التجزئة.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "54",
+      "misconceptionSignatures": [
+        {
+          "value": "75",
+          "id": "MISC-NISBA-JAM"
+        },
+        {
+          "value": "14",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الزيادة بـ 35% ضرب في $1 + \\dfrac{35}{100}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّقها على سعر الشراء للكيلوغرام."
+        }
+      ],
+      "feedback": {
+        "correct": "$40 \\times 1{,}35 = 54DA$ .",
+        "incorrect": "اضرب سعر الشراء في مضاعف الزيادة."
+      },
+      "solution": {
+        "lines": [
+          "$40 \\times \\left(1 + \\dfrac{35}{100}\\right) = 40 \\times 1{,}35 = 54$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "احسب ربح التاجر إذا باع الكمية كلها.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "630000",
+      "misconceptionSignatures": [
+        {
+          "value": "2430000",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الربح في الكيلوغرام = سعر البيع − سعر الشراء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب في عدد الكيلوغرامات."
+        }
+      ],
+      "feedback": {
+        "correct": "$(54 - 40) \\times 45\\,000 = 630\\,000DA$ .",
+        "incorrect": "احسب الربح في الكيلوغرام الواحد ثم اضرب في 45000 ."
+      },
+      "solution": {
+        "lines": [
+          "الربح في الكيلوغرام: $54 - 40 = 14DA$",
+          "$14 \\times 45\\,000 = 630\\,000$",
+          "(أو: $35\\%$ من $1\\,800\\,000$ )",
+          "ربح التاجر 630000DA ."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

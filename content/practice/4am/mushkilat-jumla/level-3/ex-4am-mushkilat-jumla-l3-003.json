@@ -1,0 +1,195 @@
+{
+  "id": "ex-4am-mushkilat-jumla-l3-003",
+  "lessonCode": "mushkilat-jumla",
+  "level": 3,
+  "metadata": {
+    "title": "عمرا أمين وحمزة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "ترييض",
+      "أعمار"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-26",
+      "page": 63,
+      "section": "أتعمّق",
+      "number": 26
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "أمين وحمزة صديقان يتعاونان في مراجعة دروسهما. اليوم، مجموع عمرَيْ أمين وحمزة هو 34 سنة. بعد 4 سنوات، يصير عمر أمين ضعف عمر حمزة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "نسمّي $x$ عمر أمين و $y$ عمر حمزة اليوم (بالسنوات).",
+      "statement": "ترجم المعلومة «بعد 4 سنوات، يصير عمر أمين ضعف عمر حمزة» بمعادلة، ثم اكتبها على الشكل $x - 2y = c$ . أعط العدد $c$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $c$ فقط",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-JUMLA-TARJAMA"
+        },
+        {
+          "value": "-4",
+          "id": "MISC-JUMLA-TARJAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بعد 4 سنوات يصبح عمر أمين $x + 4$ ، فكم يصبح عمر حمزة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضعف يُطبّق على عمر حمزة بعد 4 سنوات كله."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انشر ثم انقل الحدود."
+        }
+      ],
+      "feedback": {
+        "correct": "المعادلة $x + 4 = 2(y + 4)$ تؤول إلى $x - 2y = 4$ .",
+        "incorrect": "العمران كلاهما يزيد بـ 4 سنوات: $x + 4 = 2(y + 4)$ ثم انشر."
+      },
+      "solution": {
+        "lines": [
+          "بعد 4 سنوات: عمر أمين $x + 4$ وعمر حمزة $y + 4$ .",
+          "$x + 4 = 2(y + 4)$",
+          "$x + 4 = 2y + 8$",
+          "ومنه: $x - 2y = 4$"
+        ],
+        "result": "c = 4"
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "جد عمر أمين وعمر حمزة اليوم.",
+      "statement": "عمر أمين:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العمر بالسنوات (عدد فقط)",
+      "expectedAnswer": "24",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الجملة: $x + y = 34$ والمعادلة التي وجدتها في السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح المعادلتين طرفا لطرف ليختفي $x$ ، ثم عوّض."
+        }
+      ],
+      "feedback": {
+        "correct": "عمر أمين اليوم 24 سنة.",
+        "incorrect": "اطرح $x - 2y = 4$ من $x + y = 34$ لتجد $y$ أولا، ثم استنتج $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} x + y = 34 & ...(1) \\\\ x - 2y = 4 & ...(2) \\end{cases}$",
+          "بضرب طرفي المعادلة (1) في العدد $2$ نجد:",
+          "$\\begin{cases} 2x + 2y = 68 \\\\ x - 2y = 4 \\end{cases}$",
+          "بجمع المعادلتين طرفا لطرف نجد: $3x = 72$",
+          "ومنه: $x = \\dfrac{72}{3} = 24$",
+          "بتعويض قيمة $x$ في المعادلة (1) نجد: $24 + y = 34$",
+          "$y = 10$",
+          "التحقق في النص: $24 + 10 = 34$ ، وبعد 4 سنوات: $28 = 2 \\times 14$ .",
+          "إذن عمر أمين اليوم 24 سنة وعمر حمزة 10 سنوات."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "عمر حمزة:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العمر بالسنوات (عدد فقط)",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "24",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مجموع العمرين 34 سنة."
+        }
+      ],
+      "feedback": {
+        "correct": "عمر حمزة اليوم 10 سنوات، ونتحقق: بعد 4 سنوات $28 = 2 \\times 14$ .",
+        "incorrect": "من $x + y = 34$ : $y = 34 - x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} x + y = 34 & ...(1) \\\\ x - 2y = 4 & ...(2) \\end{cases}$",
+          "بضرب طرفي المعادلة (1) في العدد $2$ نجد:",
+          "$\\begin{cases} 2x + 2y = 68 \\\\ x - 2y = 4 \\end{cases}$",
+          "بجمع المعادلتين طرفا لطرف نجد: $3x = 72$",
+          "ومنه: $x = \\dfrac{72}{3} = 24$",
+          "بتعويض قيمة $x$ في المعادلة (1) نجد: $24 + y = 34$",
+          "$y = 10$",
+          "التحقق في النص: $24 + 10 = 34$ ، وبعد 4 سنوات: $28 = 2 \\times 14$ .",
+          "إذن عمر أمين اليوم 24 سنة وعمر حمزة 10 سنوات."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "id": "ex-3am-quwat-adad-nisbi-l1-010",
+  "lessonCode": "quwat-adad-nisbi",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مبادرة «كتاب لكل صديق»",
+    "estimatedMinutes": 6,
+    "tags": [
+      "قوة عدد نسبي",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أطلق تلاميذ قسمٍ مبادرة «كتاب لكل صديق» لتشجيع المطالعة: كل قارئ جديد ينصح صديقين بكتاب جميل، فيصبح عدد القرّاء الجدد بعد $n$ يومًا مساويًا لـ $2^{n}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "كم قارئًا جديدًا بعد 5 أيام؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد القرّاء",
+      "expectedAnswer": "32",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-QUWA-POWER-AS-PRODUCT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$a^n$ جداء $n$ عاملًا كلها مساوية للعدد $a$ ، وليس $a \\times n$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوة عدد سالب موجبة إذا كان الأس زوجيًا، وسالبة إذا كان الأس فرديًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه للأقواس: في $-a^n$ يخصّ الأس العدد $a$ وحده، ثم نأخذ المعاكس."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^5 = 2 \\times 2 \\times 2 \\times 2 \\times 2 = 32$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$2^{5} = 2 \\times 2 \\times 2 \\times 2 \\times 2$",
+          "$2^{5} = 32$"
+        ],
+        "result": "32"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم قارئًا جديدًا بعد 8 أيام؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد القرّاء",
+      "expectedAnswer": "256",
+      "misconceptionSignatures": [
+        {
+          "value": "16",
+          "id": "MISC-QUWA-POWER-AS-PRODUCT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$a^n$ جداء $n$ عاملًا كلها مساوية للعدد $a$ ، وليس $a \\times n$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوة عدد سالب موجبة إذا كان الأس زوجيًا، وسالبة إذا كان الأس فرديًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه للأقواس: في $-a^n$ يخصّ الأس العدد $a$ وحده، ثم نأخذ المعاكس."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^8 = 256$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$2^{8} = 2^{5} \\times 2^{3} = 32 \\times 8$",
+          "$2^{8} = 256$"
+        ],
+        "result": "256"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "عدد القرّاء الجدد بعد 8 أيام هو عددهم بعد 5 أيام مضروبًا في …",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QUWA-QUOTIENT-EXP"
+        },
+        {
+          "id": "B",
+          "content": "$8$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$2^{40}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QUWA-PRODUCT-MULTIPLY-EXP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "البسط والمقام قوتان للأساس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل قسمة قوتين لهما الأساس نفسه: نطرح أس المقام من أس البسط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طرح أسّ سالب يعني إضافة معاكسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2^8}{2^5} = 2^{8-5} = 2^3 = 8$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2^{8}}{2^{5}} = 2^{8-5} = 2^{3}$",
+          "$2^{3} = 8$"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

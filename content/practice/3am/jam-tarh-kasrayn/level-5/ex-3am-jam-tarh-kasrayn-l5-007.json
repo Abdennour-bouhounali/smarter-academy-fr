@@ -1,0 +1,242 @@
+{
+  "id": "ex-3am-jam-tarh-kasrayn-l5-007",
+  "lessonCode": "jam-tarh-kasrayn",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — طريق المدرسة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "جمع كسور",
+      "عدد طبيعي وكسر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تقطع مروة طريق المدرسة على ثلاثة أجزاء طولها $\\dfrac{5}{6}$ km و $\\dfrac{3}{10}$ km و $\\dfrac{7}{15}$ km ، وطريقها كلّه يبلغ $2$ km ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما طول الأجزاء الثلاثة معًا ؟ (بالكيلومتر)",
+      "learningPoints": [
+        {
+          "code": "3am_jam-tarh-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "8/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "15/31",
+          "id": "MISC-JAMTARH-ACROSS"
+        },
+        {
+          "value": "1/2",
+          "id": "MISC-JAMTARH-NOSCALE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليّة المطلوبة؟ وهل المقامات متساوية أو أحدها مضاعف لغيره؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب مضاعفات المقام الأكبر حتى تجد أوّل مضاعف يقبل القسمة على المقام الآخر، فهو مقامك المشترك."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ حدّ بالمقام المشترك، ثمّ اجمع البسوط أو اطرحها، ثمّ اختزل إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{8}{5}$ .",
+        "incorrect": "اكتب الكسرين بمقام مشترك قبل أن تجمع أو تطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نبحث عن أصغر مضاعف مشترك للمقامات $6$ و $10$ و $15$ : إنّه $30$ .",
+          "$\\dfrac{5}{6} = \\dfrac{5 \\times 5}{6 \\times 5} = \\dfrac{25}{30}$ .",
+          "$\\dfrac{3}{10} = \\dfrac{3 \\times 3}{10 \\times 3} = \\dfrac{9}{30}$ .",
+          "$\\dfrac{7}{15} = \\dfrac{7 \\times 2}{15 \\times 2} = \\dfrac{14}{30}$ .",
+          "$\\dfrac{25 + 9 + 14}{30} = \\dfrac{48}{30} = \\dfrac{8}{5}$ (اختزلنا بالقاسم $6$) ."
+        ],
+        "result": "\\dfrac{8}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم يبقى من الطريق إلى المدرسة ؟ (بالكيلومتر)",
+      "learningPoints": [
+        {
+          "code": "3am_jam-tarh-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "2/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "-6/5",
+          "id": "MISC-JAMTARH-INTEGER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليّة المطلوبة؟ وهل المقامات متساوية أو أحدها مضاعف لغيره؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب مضاعفات المقام الأكبر حتى تجد أوّل مضاعف يقبل القسمة على المقام الآخر، فهو مقامك المشترك."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ حدّ بالمقام المشترك، ثمّ اجمع البسوط أو اطرحها، ثمّ اختزل إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2}{5}$ .",
+        "incorrect": "اكتب الكسرين بمقام مشترك قبل أن تجمع أو تطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "المقامات متساوية: المقام المشترك هو $5$ .",
+          "$2 = \\dfrac{10}{5}$ .",
+          "$\\dfrac{10 - 8}{5} = \\dfrac{2}{5}$ ."
+        ],
+        "result": "\\dfrac{2}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "أيّ الأجزاء الثلاثة أطول ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jam-tarh-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الأوّل",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الثاني",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "الثالث",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كلّ سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "الأوّل .",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "المقام المشترك $30$ : $\\dfrac{25}{30}$ و $\\dfrac{9}{30}$ و $\\dfrac{14}{30}$ .",
+          "$25$ أكبر الأعداد، فالجزء الأوّل هو الأطول."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "برّر أنّ الجزأين الأوّلين معًا أطول من كيلومتر واحد.",
+      "learningPoints": [
+        {
+          "code": "3am_jam-tarh-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثمّ اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجب أن تبرّره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اذكر المقام الذي اخترته ولماذا يصلح، ثمّ اكتب خطوات الحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "تطابق برهانك مع الحل النموذجي .",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثمّ قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{6} + \\dfrac{3}{10} = \\dfrac{25}{30} + \\dfrac{9}{30} = \\dfrac{34}{30}$ .",
+          "$34 > 30$ ، فالمجموع أكبر من $1$ km ."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

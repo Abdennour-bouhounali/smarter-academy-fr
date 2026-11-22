@@ -1,0 +1,352 @@
+{
+  "id": "ex-3am-jidaa-ida-nisbiya-l1-009",
+  "lessonCode": "jidaa-ida-nisbiya",
+  "level": 1,
+  "metadata": {
+    "title": "إشارة جداء أعداد سالبة متتالية",
+    "estimatedMinutes": 8,
+    "tags": [
+      "إشارة الجداء",
+      "عدد العوامل",
+      "جداء طويل"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-13",
+      "page": 15,
+      "section": "ضرب الأعداد النسبية",
+      "number": 13
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في كل جداء من الجداءات الآتية، العوامل أعداد صحيحة سالبة متتالية. عيّن إشارته دون أن تحسبه.",
+    "formulas": [
+      "A = (−1) \\times (−2) \\times (−3) \\times \\dots \\times (−18)",
+      "B = (−40) \\times (−41) \\times (−42) \\times \\dots \\times (−120)",
+      "C = (−30) \\times (−29) \\times (−28) \\times \\dots \\times (−10)",
+      "D = (−15) \\times (−14) \\times (−13) \\times \\dots \\times (−2)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "الجداء $A$ .",
+      "statement": "ما إشارة $A$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "موجب",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "سالب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IDA-MORENEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل عامل في هذا الجداء عدد سالب: عدد العوامل السالبة هو عدد كل العوامل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد العوامل = (آخر عدد − أول عدد) ÷ الخطوة + 1 ، أو عدّها على المستقيم المدرّج."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد زوجي من العوامل السالبة: جداء موجب. عدد فردي: جداء سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "18 عاملًا سالبًا (عدد زوجي): الجداء موجب.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العوامل هي الأعداد من $-1$ إلى $-18$ ، وعددها $18$ .",
+          "كلها سالبة، وعددها زوجي، إذن $A$ موجب."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجداء $B$ .",
+      "statement": "كم عاملًا في $B$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "81",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العوامل أعداد صحيحة متتالية: انتقل من عدد إلى الذي يليه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد الأعداد من $m$ إلى $n$ (متتالية) هو $|n - m| + 1$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ أن تحسب العدد الأول والعدد الأخير معًا."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد العوامل 81 .",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "من $-40$ إلى $-120$ المسافة بين الطرفين $80$ .",
+          "عدد العوامل $80 + 1 = 81$ ."
+        ],
+        "result": "81"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما إشارة $B$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "موجب",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "سالب",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل عامل في هذا الجداء عدد سالب: عدد العوامل السالبة هو عدد كل العوامل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد العوامل = (آخر عدد − أول عدد) ÷ الخطوة + 1 ، أو عدّها على المستقيم المدرّج."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد زوجي من العوامل السالبة: جداء موجب. عدد فردي: جداء سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "81 عاملًا سالبًا (عدد فردي): الجداء سالب.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العوامل هي الأعداد من $-40$ إلى $-120$ ، وعددها $81$ .",
+          "كلها سالبة، وعددها فردي، إذن $B$ سالب."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "الجداء $C$ .",
+      "statement": "كم عاملًا في $C$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "21",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العوامل أعداد صحيحة متتالية: انتقل من عدد إلى الذي يليه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد الأعداد من $m$ إلى $n$ (متتالية) هو $|n - m| + 1$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ أن تحسب العدد الأول والعدد الأخير معًا."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد العوامل 21 .",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "من $-30$ إلى $-10$ المسافة بين الطرفين $20$ .",
+          "عدد العوامل $20 + 1 = 21$ ."
+        ],
+        "result": "21"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "ما إشارة $C$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "سالب",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "موجب",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل عامل في هذا الجداء عدد سالب: عدد العوامل السالبة هو عدد كل العوامل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد العوامل = (آخر عدد − أول عدد) ÷ الخطوة + 1 ، أو عدّها على المستقيم المدرّج."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد زوجي من العوامل السالبة: جداء موجب. عدد فردي: جداء سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "21 عاملًا سالبًا (عدد فردي): الجداء سالب.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العوامل هي الأعداد من $-30$ إلى $-10$ ، وعددها $21$ .",
+          "كلها سالبة، وعددها فردي، إذن $C$ سالب."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "lead": "الجداء $D$ .",
+      "statement": "ما إشارة $D$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "موجب",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "سالب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IDA-MORENEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل عامل في هذا الجداء عدد سالب: عدد العوامل السالبة هو عدد كل العوامل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد العوامل = (آخر عدد − أول عدد) ÷ الخطوة + 1 ، أو عدّها على المستقيم المدرّج."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد زوجي من العوامل السالبة: جداء موجب. عدد فردي: جداء سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "14 عاملًا سالبًا (عدد زوجي): الجداء موجب.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العوامل هي الأعداد من $-15$ إلى $-2$ ، وعددها $14$ .",
+          "كلها سالبة، وعددها زوجي، إذن $D$ موجب."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

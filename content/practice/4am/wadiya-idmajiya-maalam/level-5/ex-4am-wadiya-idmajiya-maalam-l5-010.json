@@ -1,0 +1,87 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-maalam-l5-010",
+  "lessonCode": "wadiya-idmajiya-maalam",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — مساران متساويان؟",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مقارنة مسارين",
+      "المسافة بين نقطتين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-maalam_P1",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "من $O(0\\,;\\,0)$ إلى $Z(6\\,;\\,8)$ (معلم متعامد ومتجانس، الوحدة $1\\,\\mathrm{km}$): المسار (1) مستقيم مرورا بـ $K(3\\,;\\,4)$ ، والمسار (2) على شوارع متعامدة: من O إلى $H(6\\,;\\,0)$ ثم إلى Z."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مقارنة المسارين:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "متساويان: $10\\,\\mathrm{km}$ لكل منهما",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-JAM"
+        },
+        {
+          "id": "B",
+          "content": "(1) طوله $14\\,\\mathrm{km}$ ، و (2) طوله $10\\,\\mathrm{km}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-JAM"
+        },
+        {
+          "id": "C",
+          "content": "(1) طوله $10\\,\\mathrm{km}$ ، و (2) طوله $14\\,\\mathrm{km}$ : (1) أقصر",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "(2) أقصر لأنّ قطعه أفقية وشاقولية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUQARANA-AYN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$OK = 5$ و $KZ = 5$"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$OH = 6$ و $HZ = 8$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن 10 و 14."
+        }
+      ],
+      "feedback": {
+        "correct": "(1): $5 + 5 = 10$ ؛ (2): $6 + 8 = 14$ : المسار المستقيم أقصر بـ $4\\,\\mathrm{km}$ .",
+        "incorrect": "المسافة على المستقيم جذر مجموع المربعين، لا مجموع الفرقين."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 5
+    }
+  ]
+}

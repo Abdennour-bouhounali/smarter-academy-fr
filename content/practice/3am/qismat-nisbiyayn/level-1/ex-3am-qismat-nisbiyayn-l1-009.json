@@ -1,0 +1,192 @@
+{
+  "id": "ex-3am-qismat-nisbiyayn-l1-009",
+  "lessonCode": "qismat-nisbiyayn",
+  "level": 1,
+  "metadata": {
+    "title": "عدّ حواصل القسمة السالبة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "إشارة",
+      "عدّ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر حواصل القسمة الستة الآتية.",
+    "formulas": [
+      "A = (−18) \\div 6",
+      "B = (−4{,}5) \\div (−9)",
+      "C = (+20) \\div (−0{,}5)",
+      "D = (−7) \\div (+0{,}1)",
+      "E = (−0{,}3) \\div (−0{,}03)",
+      "F = (+64) \\div (+8)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "كم عددًا من هذه الحواصل سالب؟",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن إشارة كل حاصل قسمة على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن إشارتي العددين في كل حاصل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عُدَّ الحواصل التي تحقّق الشرط المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد الحواصل السالبة هو $3$ .",
+        "incorrect": "راجع إشارة كل حاصل قسمة على حدة ثم عُدَّ."
+      },
+      "solution": {
+        "lines": [
+          "نعيّن إشارة كل حاصل: $A$ سالب، $B$ موجب، $C$ سالب، $D$ سالب، $E$ موجب، $F$ موجب.",
+          "عدد الحواصل السالبة: 3."
+        ],
+        "result": "3"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما إشارة $E$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "سالب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QISMA-SIGN"
+        },
+        {
+          "id": "B",
+          "content": "موجب",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة كل من العددين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن إشارتي العددين: أمتماثلتان أم مختلفتان؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق قاعدة الإشارات: هي نفسها في الضرب وفي القسمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−0{,}3)$ و $(−0{,}03)$ سالبان: لهما الإشارة نفسها، فحاصل القسمة موجب.",
+        "incorrect": "راجع قاعدة الإشارات: لهما الإشارة نفسها أم إشارتان مختلفتان؟"
+      },
+      "solution": {
+        "lines": [
+          "$(−0{,}3)$ و $(−0{,}03)$ سالبان: لهما الإشارة نفسها، فحاصل القسمة موجب."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب $C$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-40",
+      "misconceptionSignatures": [
+        {
+          "value": "40",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "-400",
+          "id": "MISC-QISMA-DECIMAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القسمة على قوّة للعدد 10 أو على عدد عشري صغير تُزحزح الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن الإشارة أولًا، ثم اقسم المسافتين إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالضرب: حاصل القسمة مضروبًا في المقسوم عليه يعطي المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = −40$ .",
+        "incorrect": "راجع قاعدة الإشارات ثم موضع الفاصلة، وتحقّق بالضرب."
+      },
+      "solution": {
+        "lines": [
+          "المقسوم موجب والمقسوم عليه سالب: إشارتاهما مختلفتان، إذن الحاصل سالب.",
+          "$20 \\div 0{,}5 = 40$",
+          "$C = 20 \\div (−0{,}5) = −40$"
+        ],
+        "result": "−40"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

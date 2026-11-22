@@ -1,0 +1,253 @@
+{
+  "id": "ex-3am-adad-natiq-l4-008",
+  "lessonCode": "adad-natiq",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — تغيّر الحرارة في الساعة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "العدد الناطق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في ليلة باردة، سجّل نادي الأرصاد في مدرسة الحيّ بانتظام وأمانة : نزلت الحرارة من $3^{\\circ}$ إلى $-7^{\\circ}$ خلال $8$ ساعات."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب تغيّر الحرارة الكلّي : $-7-3$ .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "-10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المطلوب بدقّة قبل أن تحسب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعن بقاعدة الدرس المناسبة وطبّقها خطوة خطوة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$-10$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "التغيّر هو الفرق بين الحرارة النهائية والحرارة الابتدائية.",
+          "$-7-3=-10$ ."
+        ],
+        "result": "-10"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اكتب تغيّر الحرارة في الساعة الواحدة عددًا ناطقًا على أبسط شكل بمقام موجب (قسمة تغيّر الحرارة على عدد الساعات) .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "-5/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "5/4",
+          "id": "MISC-NATIQ-DROPSIGN"
+        },
+        {
+          "value": "-4/5",
+          "id": "MISC-NATIQ-INVERT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة الحاصل؟ قارن إشارتي البسط والمقام."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل الإشارة إلى أمام الكسر حتى يصير المقام موجبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل بقسمة البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$-\\dfrac{5}{4}$ .",
+        "incorrect": "تذكّر أنّ المقام في الكتابة المعيارية موجب، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{-10}{8}=-\\dfrac{10}{8}$ .",
+          "نختزل على $2$ : $-\\dfrac{5}{4}$ ."
+        ],
+        "result": "-\\dfrac{5}{4}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "قارن بين تغيّر الحرارة في الساعة و $-1$ .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "هو أصغر من $-1$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "هو أكبر من $-1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-NEGORDER"
+        },
+        {
+          "id": "C",
+          "content": "هو يساوي $-1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-WRITINGS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العددين بالمقام الموجب نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن البسطين بقواعد مقارنة الأعداد النسبية: على يسار الصفر، الأبعد عن الصفر هو الأصغر."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: هو أصغر من $-1$ .",
+        "incorrect": "اكتب العددين بمقام موجب مشترك قبل أن تقارن، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$-\\dfrac{5}{4}=-1{,}25$ .",
+          "$-1{,}25<-1$ لأنّه أبعد عن الصفر في الجهة السالبة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "بين أيّ عددين صحيحين متتاليين يقع تغيّر الحرارة في الساعة ؟",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-2$ و $-1$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$-1$ و $0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-NEGPLACE"
+        },
+        {
+          "id": "C",
+          "content": "$1$ و $2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-DROPSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة الإقليدية للبسط على المقام، ثمّ انتبه إلى الإشارة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارسم المستقيم المدرّج واقرأ التدريجات الصغيرة."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $-2$ و $-1$ .",
+        "incorrect": "حدّد الجهة من الصفر ثمّ العددين الصحيحين المتتاليين، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$-2<-1{,}25<-1$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

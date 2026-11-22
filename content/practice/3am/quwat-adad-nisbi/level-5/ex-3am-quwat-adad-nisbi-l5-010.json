@@ -1,0 +1,343 @@
+{
+  "id": "ex-3am-quwat-adad-nisbi-l5-010",
+  "lessonCode": "quwat-adad-nisbi",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — تبليط ساحة المتوسطة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "قواعد الحساب على القوى",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تطوّع شباب الحيّ لتبليط ساحة مربعة للمتوسطة طول ضلعها $2^{5}\\,\\mathrm{m}$ ، ببلاطات مربعة طول ضلع كل منها $2^{-1}\\,\\mathrm{m}$ . تُباع البلاطات في علب، في كل علبة $2^{4}$ بلاطة، وثمن العلبة $5^{4}$ دج.\nالجزء الأول: عدد البلاطات.\nالجزء الثاني: جمع المتطوّعون مبلغ 150000 دج لشراء البلاطات."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "مساحة الساحة تكتب على الشكل $2^n\\,\\mathrm{m^2}$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-QUWA-POWER-ADD-EXP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قوة مرفوعة إلى قوة: ماذا نفعل بالأسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في $(a^m)^n$ نضرب الأسين، ولا نجمعهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه لإشارة الجداء إذا كان أحد الأسين سالبًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$(2^5)^2 = 2^{10}$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "مساحة مربع = (طول الضلع)$^{2}$",
+          "$(2^{5})^{2} = 2^{10}$"
+        ],
+        "result": "n = 10"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كم بلاطة توضع على طول ضلع الساحة؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد البلاطات",
+      "expectedAnswer": "64",
+      "misconceptionSignatures": [
+        {
+          "value": "16",
+          "id": "MISC-QUWA-EXP-SIGN-SLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "البسط والمقام قوتان للأساس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل قسمة قوتين لهما الأساس نفسه: نطرح أس المقام من أس البسط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طرح أسّ سالب يعني إضافة معاكسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2^5}{2^{-1}} = 2^6 = 64$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2^{5}}{2^{-1}} = 2^{5-(-1)} = 2^{6}$",
+          "$2^{6} = 64$"
+        ],
+        "result": "64"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "كم بلاطة تلزم لتبليط الساحة كلها؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد البلاطات",
+      "expectedAnswer": "4096",
+      "misconceptionSignatures": [
+        {
+          "value": "256",
+          "id": "MISC-QUWA-POWER-ADD-EXP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قوة مرفوعة إلى قوة: ماذا نفعل بالأسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في $(a^m)^n$ نضرب الأسين، ولا نجمعهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه لإشارة الجداء إذا كان أحد الأسين سالبًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$(2^6)^2 = 2^{12} = 4096$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$(2^{6})^{2} = 2^{12}$",
+          "$2^{12} = 4096$"
+        ],
+        "result": "4096"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "كم علبة يجب شراؤها؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد العلب",
+      "expectedAnswer": "256",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-QUWA-QUOTIENT-EXP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "البسط والمقام قوتان للأساس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل قسمة قوتين لهما الأساس نفسه: نطرح أس المقام من أس البسط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طرح أسّ سالب يعني إضافة معاكسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2^{12}}{2^4} = 2^8 = 256$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2^{12}}{2^{4}} = 2^{12-4} = 2^{8}$",
+          "$2^{8} = 256$"
+        ],
+        "result": "256"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما ثمن العلب كلها بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "المبلغ بـ دج",
+      "expectedAnswer": "160000",
+      "misconceptionSignatures": [
+        {
+          "value": "10000",
+          "id": "MISC-QUWA-MIXED-BASES"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للقوتين الأساس نفسه أم الأس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء قوتين لهما الأس نفسه: $a^n \\times b^n = (ab)^n$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا نجمع أسس قوى أساساتها مختلفة."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^8 \\times 5^4 = 2^4 \\times 10^4 = 160000$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$2^{8} \\times 5^{4} = 2^{4} \\times 2^{4} \\times 5^{4} = 2^{4} \\times (2 \\times 5)^{4}$",
+          "$= 16 \\times 10000 = 160000$"
+        ],
+        "result": "160000"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "lead": "القرار.",
+      "statement": "هل يكفي المبلغ الذي جمعه المتطوّعون؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، ويبقى منه شيء",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QUWA-DECISION-UNCHECKED"
+        },
+        {
+          "id": "B",
+          "content": "لا، ينقص 10000 دج",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارجع إلى القيم التي حسبتها في الأسئلة السابقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين قبل أن تقرّر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القرار الصحيح يُبنى على حساب، لا على تخمين."
+        }
+      ],
+      "feedback": {
+        "correct": "$160000 - 150000 = 10000$ دج ناقصة.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الثمن 160000 دج والمبلغ 150000 دج.",
+          "$160000 - 150000 = 10000$ : المبلغ لا يكفي."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

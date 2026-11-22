@@ -1,0 +1,181 @@
+{
+  "id": "ex-3am-muqaranat-natiqayn-l4-005",
+  "lessonCode": "muqaranat-natiqayn",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مثلث قائم أضلاعه بدلالة $x$",
+    "estimatedMinutes": 12,
+    "tags": [
+      "فيثاغورس",
+      "فرق عبارتين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$ABC$ مثلث قائم في $A$ حيث $AB = 3x$ و $AC = 4x$ (بالسنتيمتر، و $x$ عدد موجب تمامًا)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نكتب $BC = kx$ . ما العدد $k$ ؟",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $k$ فقط",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط؟ وما العمليات التي تحتاجها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب خطوة خطوة مع الانتباه إلى الإشارات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "راجع النتيجة بطريقة ثانية قبل أن تجيب."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "5",
+      "feedback": {
+        "correct": "$BC = 5x$ ، إذن $k = 5$ .",
+        "incorrect": "أعد الحساب بالترتيب مع الانتباه إلى الإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$BC^2 = (3x)^2 + (4x)^2 = 9x^2 + 16x^2 = 25x^2$",
+          "$BC = 5x$"
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "نكتب $(AB + AC) - BC = kx$ . ما العدد $k$ ؟",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $k$ فقط",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العبارتان؟ وكيف يُكتب فرقهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الفرق بوضع العبارة الثانية بين قوسين ثم بسّط وانتبه إلى إشارة ما بعد الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض قيمة بسيطة للحرف في الفرق وفي النتيجة."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "-2",
+          "id": "MISC-MUQ-ORDER-SUB"
+        }
+      ],
+      "feedback": {
+        "correct": "$(AB + AC) - BC = 2x$ ، إذن $k = 2$ .",
+        "incorrect": "ضع العبارة الثانية بين قوسين قبل الطرح، ثمّ بسّط."
+      },
+      "solution": {
+        "lines": [
+          "$(AB + AC) - BC = 3x + 4x - 5x = 2x$"
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أيّ المسارين أقصر؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما هو الفرق المبسَّط؟ ومتى يكون موجبًا ومتى يكون سالبًا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن القيمة التي ينعدم عندها الفرق، ثم انظر إلى جهتيها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر قيمة من كل جهة للتأكّد من الإشارة."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا نستطيع الحكم دون معرفة $x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-NEED-VALUES"
+        },
+        {
+          "id": "B",
+          "content": "المسار المباشر $BC$ ، مهما كانت قيمة $x$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "المسار عبر $A$ ، مهما كانت قيمة $x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-ORDER-SUB"
+        }
+      ],
+      "feedback": {
+        "correct": "الفرق $2x$ موجب لأنّ $x > 0$ .",
+        "incorrect": "ادرس إشارة الفرق المبسَّط على جهتي القيمة التي ينعدم عندها."
+      },
+      "solution": {
+        "lines": [
+          "$(AB + AC) - BC = 2x > 0$ لأنّ $x > 0$ ، إذن $AB + AC > BC$ ."
+        ]
+      }
+    }
+  ]
+}

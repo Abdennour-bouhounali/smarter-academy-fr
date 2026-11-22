@@ -1,0 +1,242 @@
+{
+  "id": "ex-4am-khawass-qawasim-l5-001",
+  "lessonCode": "khawass-qawasim",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2022 — طماطم عين الدفلى",
+    "estimatedMinutes": 14,
+    "tags": [
+      "خاصية 1",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_khawass-qawasim_P1",
+      "modelledOn": "BEM 2022 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "جنى فلاح بعين الدفلى من حقلين 1764kg و 1296kg من الطماطم، وهو صادق في بيعه لا يغشّ زبائنه، ويريد تعبئة المحصول كله في صناديق يتسع كل منها لـ 12kg، دون أن تبقى أي كمية.\n• يبيع الفلاح الصندوق الواحد بـ 900DA.\n• يدفع الفلاح للناقل 18000DA مهما كان عدد الصناديق."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "بيّن أن 12 قاسم مشترك للعددين 1764 و 1296:",
+      "statement": "اكتب العدد 1764 على الشكل $12 \\times k$ حيث $k$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k$ فقط (عدد طبيعي)",
+      "expectedAnswer": "147",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 1764 على 12: يجب أن يكون الباقي معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل هذه القسمة هو العدد $k$ المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$1764 = 12 \\times 147$ ، إذن 12 يقسم 1764.",
+        "incorrect": "ابحث عن العدد الطبيعي $k$ الذي إذا ضُرب في 12 أعطى 1764."
+      },
+      "solution": {
+        "lines": [
+          "$1764 = 12 \\times 147$"
+        ],
+        "result": "1764 = 12 \\times 147"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اكتب العدد 1296 على الشكل $12 \\times k'$ حيث $k'$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k'$ فقط (عدد طبيعي)",
+      "expectedAnswer": "108",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 1296 على 12: يجب أن يكون الباقي معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل هذه القسمة هو العدد $k'$ المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$1296 = 12 \\times 108$ ، إذن 12 يقسم 1296.",
+        "incorrect": "ابحث عن العدد الطبيعي $k'$ الذي إذا ضُرب في 12 أعطى 1296."
+      },
+      "solution": {
+        "lines": [
+          "$1296 = 12 \\times 108$"
+        ],
+        "result": "1296 = 12 \\times 108"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "دون حساب الكتلة الكلية للطماطم:",
+      "statement": "استنتج العدد الكلي للصناديق.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد الصناديق)",
+      "expectedAnswer": "255",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الكتابتين $1764 = 12 \\times 147$ و $1296 = 12 \\times 108$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرج 12 عاملًا مشتركًا: $12 \\times q + 12 \\times q' = 12 \\times (q + q')$."
+        }
+      ],
+      "feedback": {
+        "correct": "$1764 + 1296 = 12 \\times (147 + 108) = 12 \\times 255$.",
+        "incorrect": "القاسم المشترك لعددين يقسم مجموعهما: اكتب كلا من العددين على الشكل $12 \\times q$ ثم أخرج 12 عاملًا مشتركًا."
+      },
+      "solution": {
+        "lines": [
+          "$1764 + 1296 = 12 \\times 147 + 12 \\times 108$",
+          "$1764 + 1296 = 12 \\times (147 + 108)$",
+          "$1764 + 1296 = 12 \\times 255$ ، إذن 12 يقسم $1764 + 1296$."
+        ],
+        "result": "1764 + 1296 = 12 \\times 255"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "بكم صندوقًا يزيد إنتاج الحقل الأول على إنتاج الحقل الثاني؟",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد الصناديق)",
+      "expectedAnswer": "39",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الكتابتين $1764 = 12 \\times 147$ و $1296 = 12 \\times 108$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرج 12 عاملًا مشتركًا: $12 \\times q - 12 \\times q' = 12 \\times (q - q')$."
+        }
+      ],
+      "feedback": {
+        "correct": "$1764 - 1296 = 12 \\times (147 - 108) = 12 \\times 39$.",
+        "incorrect": "القاسم المشترك لعددين يقسم فرقهما: اكتب كلا من العددين على الشكل $12 \\times q$ ثم أخرج 12 عاملًا مشتركًا."
+      },
+      "solution": {
+        "lines": [
+          "$1764 - 1296 = 12 \\times 147 - 12 \\times 108$",
+          "$1764 - 1296 = 12 \\times (147 - 108)$",
+          "$1764 - 1296 = 12 \\times 39$ ، إذن 12 يقسم $1764 - 1296$."
+        ],
+        "result": "1764 - 1296 = 12 \\times 39"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "☜ أعط المبلغ الذي يبقى للفلاح بعد بيع كل الصناديق ودفع مستحقات الناقل.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (DA)",
+      "expectedAnswer": "211500",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما هو العدد الكلي للصناديق؟ (السؤال 02)"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب ثمن بيع كل الصناديق."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح ما يدفعه للناقل."
+        }
+      ],
+      "feedback": {
+        "correct": "$255 \\times 900 - 18000 = 211500$: يبقى للفلاح 211 500DA.",
+        "incorrect": "اضرب العدد الكلي للصناديق في ثمن الصندوق، ثم اطرح ما يدفعه للناقل."
+      },
+      "solution": {
+        "lines": [
+          "ثمن بيع كل الصناديق: $255 \\times 900 = 229500$",
+          "المبلغ المتبقي: $229500 - 18000 = 211500$"
+        ],
+        "result": "211500 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

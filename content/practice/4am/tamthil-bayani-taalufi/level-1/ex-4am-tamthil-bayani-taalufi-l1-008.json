@@ -1,0 +1,162 @@
+{
+  "id": "ex-4am-tamthil-bayani-taalufi-l1-008",
+  "lessonCode": "tamthil-bayani-taalufi",
+  "level": 1,
+  "metadata": {
+    "title": "نقرأ $a$ ثم $b$ على مستقيم ينزل",
+    "estimatedMinutes": 4,
+    "tags": [
+      "قراءة بيانية",
+      "معامل التوجيه"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tamthil-bayani-taalufi_P2",
+      "adaptedFrom": "ex-4am-tamthil-bayani-taalufi-l1-008"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في المعلم المتعامد والمتجانس التالي، المستقيم $(D)$ هو التمثيل البياني لدالة تآلفية $f$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "K1": [
+          -1,
+          5
+        ],
+        "H1": [
+          5,
+          -1
+        ]
+      },
+      "lines": [
+        {
+          "through": [
+            "K1",
+            "H1"
+          ],
+          "name": "(D)",
+          "tone": "indigo",
+          "extend": [
+            0.04,
+            0.04
+          ]
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw"
+      },
+      "hidden": [
+        "H1",
+        "K1"
+      ],
+      "ariaLabel": "معلم متعامد ومتجانس على ورقة مرصوفة: المستقيم (D) ينزل ويقطع محور التراتيب فوق المبدأ O"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بقراءة بيانية، عيّن معامل التوجيه $a$ للمستقيم $(D)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-1",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-BAYANI-ISHARA-A"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختر نقطتين من المستقيم تقعان على عقدتين من الشبكة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من النقطة الأولى إلى الثانية: كم تزيد الفاصلة؟ وكم يصعد المستقيم أو ينزل؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "معامل التوجيه هو تغيّر الترتيب مقسوما على تغيّر الفاصلة، ويكون سالبا إذا نزل المستقيم."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = -1$ .",
+        "incorrect": "اقسم تغيّر الترتيب على تغيّر الفاصلة (وليس العكس)، وانتبه إلى الإشارة إذا نزل المستقيم."
+      },
+      "solution": {
+        "lines": [
+          "النقطتان $(0 ; 4)$ و $(1 ; 3)$ من المستقيم $(D)$ .",
+          "عندما نتقدّم $1$ وحدة إلى اليمين، ينزل المستقيم بـ $1$ وحدة.",
+          "إذن معامل التوجيه هو: $a = -1$ ."
+        ],
+        "result": "a = -1"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بقراءة بيانية، عيّن الترتيب عند المبدأ $b$ للدالة التي يمثّلها المستقيم $(D)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الترتيب عند المبدأ هو ترتيب النقطة التي يقطع فيها المستقيم محور التراتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث على المستقيم عن النقطة التي فاصلتها 0، ثم اقرأ ترتيبها على محور التراتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "المستقيم $(D)$ يقطع محور التراتيب في النقطة $(0 ; 4)$ .",
+        "incorrect": "اقرأ ترتيب نقطة تقاطع المستقيم مع محور التراتيب، لا فاصلة تقاطعه مع محور الفواصل."
+      },
+      "solution": {
+        "lines": [
+          "المستقيم $(D)$ يقطع محور التراتيب في النقطة $(0 ; 4)$ .",
+          "إذن الترتيب عند المبدأ هو: $b = 4$ ."
+        ],
+        "result": "b = 4"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

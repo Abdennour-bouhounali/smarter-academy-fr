@@ -1,0 +1,1913 @@
+/* ── Le مختبر الأعداد والحساب ────────────────────────────────────────────
+   Les conventions sont celles du grapheur, du مختبر الجبر et du مختبر
+   التحويلات (functionGrapher.css, algebra.css, transformations.css) : mêmes
+   teintes, mêmes rayons, mêmes familles — les instruments du مختبر doivent se
+   ressembler.
+
+   Deux règles traversent tout le fichier :
+
+   1. **La NOTATION est LTR** (§58). Tout ce qui porte un nombre, une
+      fraction, une opération ou une droite graduée est en `direction: ltr` :
+      `3/4` ne devient pas `4/3` sur une page arabe, et les négatifs restent à
+      gauche. Le reste — titres, boutons, explications — suit la page.
+   2. **Le doigt manipule, il ne fait pas défiler** : `touch-action: none` sur
+      tout ce qui se glisse (§57).
+
+   La palette distingue les rôles sans jamais s'y RÉDUIRE (§16, §59) : un
+   verdict porte toujours un mot ou une icône en plus de sa couleur. */
+
+.sa-ml-nb {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background: #f8fafc;
+  overflow: hidden;
+  font-family: 'Cairo', 'Inter', sans-serif;
+
+  --nb-primary: #2563eb;
+  --nb-secondary: #be123c;
+  --nb-result: #047857;
+  --nb-muted: #64748b;
+  --nb-line: #cbd5e1;
+  --nb-surface: #ffffff;
+  --nb-ink: #0f172a;
+  --nb-radius: 10px;
+}
+
+/* ── La barre des modes (§3) ──────────────────────────────────────────── */
+
+.sa-ml-nb__modes {
+  flex: 0 0 auto;
+  background: var(--nb-surface);
+  border-bottom: 1px solid #e2e8f0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sa-ml-nb__modes-list {
+  display: flex;
+  gap: 4px;
+  margin: 0;
+  padding: 8px 12px;
+  list-style: none;
+  min-width: max-content;
+}
+
+.sa-ml-nb__mode-chip {
+  appearance: none;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--nb-muted);
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 600;
+  padding: 8px 13px;
+  /* §57 : une cible tactile confortable, même sur téléphone. */
+  min-height: 40px;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.sa-ml-nb__mode-chip:hover { background: #f1f5f9; color: var(--nb-ink); }
+
+.sa-ml-nb__mode-chip.is-active {
+  background: var(--nb-primary);
+  border-color: var(--nb-primary);
+  color: #ffffff;
+}
+
+.sa-ml-nb__mode-chip:focus-visible {
+  outline: 2px solid var(--nb-primary);
+  outline-offset: 2px;
+}
+
+/* ── Le corps ─────────────────────────────────────────────────────────── */
+
+.sa-ml-nb__body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+@media (min-width: 1100px) {
+  .sa-ml-nb__body { flex-direction: row; }
+}
+
+.sa-ml-nb__stage {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-y: auto;
+  padding: 16px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sa-ml-nb__aside {
+  flex: 0 0 auto;
+  border-top: 1px solid #e2e8f0;
+  background: var(--nb-surface);
+  overflow-y: auto;
+  padding: 16px;
+  max-height: 46vh;
+}
+
+@media (min-width: 1100px) {
+  .sa-ml-nb__aside {
+    flex: 0 0 380px;
+    max-height: none;
+    border-top: none;
+    /* La page est RTL : le panneau se range sur le bord de fin. */
+    border-inline-start: 1px solid #e2e8f0;
+  }
+}
+
+.sa-ml-nb__mode { display: flex; flex-direction: column; gap: 14px; }
+
+/* ── Titres et textes ─────────────────────────────────────────────────── */
+
+.sa-ml-nb__heading {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--nb-ink);
+}
+
+.sa-ml-nb__subheading {
+  margin: 14px 0 6px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--nb-ink);
+}
+
+.sa-ml-nb__hint, .sa-ml-nb__muted {
+  margin: 0;
+  font-size: 0.86rem;
+  color: var(--nb-muted);
+  line-height: 1.6;
+}
+
+.sa-ml-nb__question {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--nb-ink);
+  line-height: 1.7;
+}
+
+.sa-ml-nb__callout {
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  background: #eff6ff;
+  border-inline-start: 3px solid var(--nb-primary);
+  border-radius: 6px;
+  font-size: 0.88rem;
+  color: #1e3a5f;
+  line-height: 1.7;
+}
+
+.sa-ml-nb__error {
+  margin: 4px 0 0;
+  font-size: 0.82rem;
+  color: var(--nb-secondary);
+  font-weight: 600;
+}
+
+/* La NOTATION : toujours LTR, en chiffres latins (§58). */
+.sa-ml-nb__formula {
+  margin: 8px 0;
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 0.98rem;
+  color: var(--nb-ink);
+  direction: ltr;
+  text-align: start;
+  line-height: 1.8;
+  overflow: visible;
+}
+
+.sa-ml-nb__formula--big { font-size: 1.24rem; font-weight: 600; }
+
+.sa-ml-nb__result-line {
+  margin: 8px 0 0;
+  font-weight: 700;
+  color: var(--nb-result);
+  direction: ltr;
+}
+
+.sa-ml-nb__verdict { margin: 4px 0; font-weight: 600; }
+.sa-ml-nb__verdict.is-prime { color: var(--nb-result); }
+
+.sa-ml-nb__status {
+  margin: 8px 0;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--nb-ink);
+  min-height: 1.4em;
+}
+
+/* Le texte réservé aux lecteurs d'écran. Chaque outil définit le sien :
+   il n'existe PAS de classe globale sur la plateforme. */
+.sa-ml-nb__sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Champs et contrôles ──────────────────────────────────────────────── */
+
+.sa-ml-nb__row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+}
+
+.sa-ml-nb__row--wrap { flex-wrap: wrap; }
+
+.sa-ml-nb__field { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+
+.sa-ml-nb__field-row { display: flex; gap: 6px; align-items: center; }
+
+.sa-ml-nb__label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--nb-muted);
+}
+
+.sa-ml-nb__input, .sa-ml-nb__select {
+  appearance: none;
+  border: 1px solid var(--nb-line);
+  border-radius: 8px;
+  background: var(--nb-surface);
+  color: var(--nb-ink);
+  font: inherit;
+  font-size: 0.94rem;
+  padding: 9px 11px;
+  min-height: 42px;
+  min-width: 0;
+  width: 100%;
+  max-width: 220px;
+}
+
+.sa-ml-nb__input { font-family: 'JetBrains Mono', 'Inter', monospace; direction: ltr; }
+.sa-ml-nb__input--answer { max-width: 260px; font-size: 1.05rem; }
+.sa-ml-nb__select { max-width: 260px; }
+
+.sa-ml-nb__input:focus-visible, .sa-ml-nb__select:focus-visible {
+  outline: 2px solid var(--nb-primary);
+  outline-offset: 1px;
+  border-color: var(--nb-primary);
+}
+
+.sa-ml-nb__field.has-error .sa-ml-nb__input { border-color: var(--nb-secondary); }
+
+.sa-ml-nb__switch {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.86rem;
+  color: var(--nb-ink);
+  cursor: pointer;
+  min-height: 42px;
+}
+
+.sa-ml-nb__switch input { width: 17px; height: 17px; accent-color: var(--nb-primary); }
+
+.sa-ml-nb__controls { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+
+.sa-ml-nb__button {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--nb-primary);
+  border-radius: 8px;
+  background: var(--nb-primary);
+  color: #ffffff;
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 600;
+  padding: 9px 14px;
+  min-height: 42px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.sa-ml-nb__button--ghost {
+  background: var(--nb-surface);
+  color: var(--nb-ink);
+  border-color: var(--nb-line);
+}
+
+.sa-ml-nb__button:disabled { opacity: 0.45; cursor: not-allowed; }
+.sa-ml-nb__button:focus-visible { outline: 2px solid var(--nb-primary); outline-offset: 2px; }
+
+.sa-ml-nb__mini {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--nb-line);
+  border-radius: 8px;
+  background: var(--nb-surface);
+  color: var(--nb-ink);
+  /* §57 : 44 px, la cible tactile minimale. */
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  font: inherit;
+  flex: 0 0 auto;
+}
+
+.sa-ml-nb__mini:disabled { opacity: 0.4; cursor: not-allowed; }
+.sa-ml-nb__mini:focus-visible { outline: 2px solid var(--nb-primary); outline-offset: 2px; }
+
+.sa-ml-nb__tiny {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid var(--nb-line);
+  border-radius: 6px;
+  background: var(--nb-surface);
+  color: var(--nb-muted);
+  font: inherit;
+  font-size: 0.76rem;
+  padding: 5px 8px;
+  min-height: 30px;
+  cursor: pointer;
+}
+
+.sa-ml-nb__tiny:disabled { opacity: 0.4; cursor: not-allowed; }
+.sa-ml-nb__tiny--remove:hover { color: var(--nb-secondary); border-color: var(--nb-secondary); }
+
+.sa-ml-nb__link {
+  appearance: none;
+  border: none;
+  background: none;
+  color: var(--nb-primary);
+  font: inherit;
+  font-size: 0.84rem;
+  font-weight: 600;
+  padding: 6px 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ── Le menu « أرسِل إلى » (§46) ───────────────────────────────────────── */
+
+.sa-ml-nb__sendto { position: relative; }
+
+.sa-ml-nb__menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  inset-inline-start: 0;
+  z-index: 20;
+  margin: 0;
+  padding: 4px;
+  list-style: none;
+  background: var(--nb-surface);
+  border: 1px solid var(--nb-line);
+  border-radius: var(--nb-radius);
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.14);
+  min-width: 210px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.sa-ml-nb__menu-item {
+  display: block;
+  width: 100%;
+  text-align: start;
+  appearance: none;
+  border: none;
+  background: none;
+  font: inherit;
+  font-size: 0.86rem;
+  color: var(--nb-ink);
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  min-height: 42px;
+}
+
+.sa-ml-nb__menu-item:hover { background: #f1f5f9; }
+
+/* ── Cartes et panneaux ───────────────────────────────────────────────── */
+
+.sa-ml-nb__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.sa-ml-nb__card, .sa-ml-nb__panel, .sa-ml-nb__section {
+  background: var(--nb-surface);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--nb-radius);
+  padding: 14px;
+}
+
+.sa-ml-nb__card--wide { grid-column: 1 / -1; }
+.sa-ml-nb__card--result, .sa-ml-nb__panel--result { border-color: #a7f3d0; background: #f0fdfa; }
+
+.sa-ml-nb__card h4, .sa-ml-nb__panel h4 {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--nb-ink);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.sa-ml-nb__panel-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.sa-ml-nb__panel-head h3, .sa-ml-nb__panel-head h4 { margin: 0; }
+
+/* §16 : hausse et baisse ne sont JAMAIS distinguées par la seule couleur —
+   il y a toujours un mot et une icône. La teinte n'est qu'un renfort. */
+.sa-ml-nb__panel--increase { border-color: #a7f3d0; background: #f0fdf4; }
+.sa-ml-nb__panel--decrease { border-color: #fecdd3; background: #fff1f2; }
+.sa-ml-nb__panel--none { border-color: var(--nb-line); }
+
+.sa-ml-nb__change-head { display: flex; align-items: center; gap: 8px; }
+
+.sa-ml-nb__count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  color: var(--nb-muted);
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+/* ── Les faits : « une valeur, plusieurs écritures » (§47) ─────────────── */
+
+.sa-ml-nb__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 8px 0 0;
+}
+
+.sa-ml-nb__facts--stack { flex-direction: column; gap: 8px; }
+.sa-ml-nb__facts > div { display: flex; flex-direction: column; gap: 2px; min-width: 76px; }
+
+.sa-ml-nb__facts dt {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--nb-muted);
+}
+
+.sa-ml-nb__facts dd {
+  margin: 0;
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 0.92rem;
+  color: var(--nb-ink);
+  direction: ltr;
+}
+
+.sa-ml-nb__rep-value {
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--nb-ink);
+  direction: ltr;
+  margin: 0;
+}
+
+.sa-ml-nb__rep-value--big { font-size: 1.5rem; }
+
+.sa-ml-nb__representations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.sa-ml-nb__card--rep.is-primary { border-inline-start: 3px solid var(--nb-primary); }
+.sa-ml-nb__card--rep.is-secondary { border-inline-start: 3px solid var(--nb-secondary); }
+
+/* ── Les pastilles ────────────────────────────────────────────────────── */
+
+.sa-ml-nb__chiplist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+  direction: ltr;
+}
+
+.sa-ml-nb__chip {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--nb-line);
+  border-radius: 6px;
+  background: var(--nb-surface);
+  color: var(--nb-ink);
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 0.84rem;
+  padding: 6px 10px;
+  min-height: 34px;
+  min-width: 34px;
+  cursor: pointer;
+}
+
+.sa-ml-nb__chip.is-current {
+  background: var(--nb-primary);
+  border-color: var(--nb-primary);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.sa-ml-nb__chip:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ── La droite graduée (§7) ───────────────────────────────────────────── */
+
+.sa-ml-nb__line {
+  position: relative;
+  background: var(--nb-surface);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--nb-radius);
+  padding: 8px;
+  /* La droite est LTR par NATURE : c'est des mathématiques (§58). */
+  direction: ltr;
+}
+
+.sa-ml-nb__line-actions {
+  position: absolute;
+  top: 8px;
+  /* Le SVG est LTR ; les boutons restent au bord droit du dessin. */
+  right: 8px;
+  display: flex;
+  gap: 4px;
+  z-index: 2;
+}
+
+.sa-ml-nb__line-svg {
+  display: block;
+  width: 100%;
+  /* §57 : le doigt MANIPULE, il ne fait pas défiler la page. */
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: grab;
+}
+
+.sa-ml-nb__axis { stroke: #475569; stroke-width: 1.6; }
+.sa-ml-nb__arrow { fill: #475569; }
+.sa-ml-nb__tick { stroke: #94a3b8; stroke-width: 1.2; }
+.sa-ml-nb__tick--minor { stroke: #e2e8f0; stroke-width: 1; }
+.sa-ml-nb__tick--zero { stroke: #334155; stroke-width: 2; }
+
+.sa-ml-nb__tick-label {
+  fill: var(--nb-muted);
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 11px;
+}
+
+.sa-ml-nb__point-stem { stroke: currentColor; stroke-width: 1.4; stroke-dasharray: 3 3; opacity: 0.55; }
+.sa-ml-nb__point-dot { fill: currentColor; stroke: #ffffff; stroke-width: 2.5; cursor: grab; }
+.sa-ml-nb__point-dot:focus-visible { outline: 2px solid var(--nb-primary); outline-offset: 3px; }
+
+.sa-ml-nb__point-label {
+  fill: currentColor;
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.sa-ml-nb__point--primary { color: var(--nb-primary); }
+.sa-ml-nb__point--secondary { color: var(--nb-secondary); }
+.sa-ml-nb__point--result { color: var(--nb-result); }
+.sa-ml-nb__point.is-active .sa-ml-nb__point-dot { cursor: grabbing; }
+.sa-ml-nb__point.is-offscreen { opacity: 0.25; }
+
+.sa-ml-nb__band { opacity: 0.16; }
+.sa-ml-nb__band--target { fill: var(--nb-primary); }
+.sa-ml-nb__band--neutral { fill: #94a3b8; }
+
+.sa-ml-nb__mark-line { stroke: currentColor; stroke-width: 1.2; stroke-dasharray: 4 3; }
+.sa-ml-nb__mark-label { fill: currentColor; font-size: 11px; font-weight: 600; }
+.sa-ml-nb__mark--neutral { color: var(--nb-muted); }
+.sa-ml-nb__mark--midpoint { color: #b45309; }
+.sa-ml-nb__mark--muted { color: #94a3b8; }
+
+.sa-ml-nb__bracket-path { stroke: var(--nb-muted); stroke-width: 1.3; fill: none; }
+.sa-ml-nb__bracket-label {
+  fill: var(--nb-muted);
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+/* ── Les fractions dessinées (§8) ─────────────────────────────────────── */
+
+.sa-ml-nb__shape { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+
+.sa-ml-nb__shape-caption {
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--nb-ink);
+  direction: ltr;
+}
+
+.sa-ml-nb__segment, .sa-ml-nb__slice {
+  fill: #f1f5f9;
+  stroke: #cbd5e1;
+  stroke-width: 1;
+  transition: fill 0.18s;
+}
+
+.sa-ml-nb__segment--primary.is-filled, .sa-ml-nb__slice--primary.is-filled { fill: var(--nb-primary); }
+.sa-ml-nb__segment--secondary.is-filled, .sa-ml-nb__slice--secondary.is-filled { fill: var(--nb-secondary); }
+.sa-ml-nb__segment--result.is-filled, .sa-ml-nb__slice--result.is-filled { fill: var(--nb-result); }
+
+/* §12 : les parts nouvellement découpées s'éclairent — on voit d'où viennent
+   les douzièmes. */
+.sa-ml-nb__segment.is-new, .sa-ml-nb__slice.is-new { stroke: #f59e0b; stroke-width: 2.2; }
+
+.sa-ml-nb__fraction-pair {
+  display: grid;
+  /* Les deux opérandes et le signe sur la première ligne ; le RÉSULTAT
+     occupe toute la largeur en dessous, pour que sa barre se compare à
+     celles du dessus part pour part. Une colonne étroite au milieu
+     l'aurait écrasé — et une barre de douzièmes large de 150 px ne se
+     compte plus. */
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-areas:
+    'left sign right'
+    'result result result';
+  gap: 12px;
+  align-items: center;
+}
+
+.sa-ml-nb__fraction-pair > .sa-ml-nb__fraction-card:nth-of-type(1) { grid-area: left; }
+.sa-ml-nb__fraction-pair > .sa-ml-nb__fraction-card:nth-of-type(2) { grid-area: right; }
+.sa-ml-nb__fraction-operator { grid-area: sign; }
+.sa-ml-nb__fraction-answer { grid-area: result; }
+
+@media (max-width: 680px) {
+  .sa-ml-nb__fraction-pair {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'left' 'sign' 'right' 'result';
+  }
+  .sa-ml-nb__fraction-operator { justify-self: center; }
+}
+
+.sa-ml-nb__fraction-card {
+  background: var(--nb-surface);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--nb-radius);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.sa-ml-nb__fraction-operator {
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--nb-muted);
+  text-align: center;
+}
+
+/* Le RÉSULTAT sous l'opérateur : la ligne se lit « 1/3 + 1/4 = 7/12 »
+   d'un seul mouvement, comme au tableau. */
+.sa-ml-nb__fraction-answer {
+  /* Trois colonnes : le « = » à gauche, la FORME au centre, le nombre à
+     droite. La forme est ainsi centrée sur la bande — et sur les deux
+     opérandes du dessus — quelle que soit la longueur des étiquettes, ce
+     qu'un simple flex ne garantissait pas. */
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: var(--nb-radius);
+  background: #f0fdfa;
+  border: 1px solid #a7f3d0;
+  direction: ltr;
+}
+
+/* La forme prend toute la place qui reste : c'est elle qu'on lit. */
+.sa-ml-nb__fraction-answer .sa-ml-nb__shape--bar,
+.sa-ml-nb__fraction-answer .sa-ml-nb__shape--line {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Le SVG porte son rapport dans son viewBox : on le laisse remplir la
+   bande, la hauteur suit. */
+.sa-ml-nb__fraction-answer .sa-ml-nb__shape--bar svg,
+.sa-ml-nb__fraction-answer .sa-ml-nb__shape--line svg {
+  width: 100%;
+  height: 58px;
+}
+
+/* Le disque, lui, ne s'étire pas : un cercle aplati n'est plus un disque.
+   Mais il garde la TAILLE de ceux du dessus — un résultat deux fois plus
+   petit que ses opérandes se compare mal. */
+.sa-ml-nb__fraction-answer .sa-ml-nb__shape--circle svg { width: 168px; height: 168px; }
+
+/* La colonne du milieu : la forme, et rien d'autre. */
+.sa-ml-nb__fraction-answer .sa-ml-nb__shape {
+  grid-column: 2;
+  justify-self: center;
+  /* La barre prend la largeur qu'on lui laisse ; le disque garde la sienne. */
+  width: min(100%, 720px);
+}
+
+.sa-ml-nb__fraction-answer .sa-ml-nb__shape--circle { width: auto; }
+
+.sa-ml-nb__fraction-equals { grid-column: 1; justify-self: start; }
+
+/* Les deux écritures se rangent à droite, l'une sous l'autre. */
+.sa-ml-nb__fraction-numbers {
+  grid-column: 3;
+  justify-self: end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1px;
+}
+
+.sa-ml-nb__fraction-equals { font-size: 1.4rem; color: var(--nb-muted); line-height: 1; flex: 0 0 auto; }
+
+.sa-ml-nb__fraction-raw {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--nb-result);
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+/* La forme réduite, sous la brute : on montre le calcul PUIS sa
+   simplification, jamais l'une à la place de l'autre (§11). */
+.sa-ml-nb__fraction-reduced {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--nb-result);
+  opacity: 0.85;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.sa-ml-nb__fraction-reduced::before { content: '= '; opacity: 0.6; }
+
+.sa-ml-nb__fraction-actions { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
+.sa-ml-nb__shapes-row { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-start; }
+
+.sa-ml-nb__steps { margin: 6px 0; padding-inline-start: 20px; direction: ltr; }
+.sa-ml-nb__steps li {
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 0.9rem;
+  line-height: 1.9;
+  color: var(--nb-ink);
+}
+.sa-ml-nb__steps li.is-final { font-weight: 700; color: var(--nb-result); }
+
+/* ── Les mраتب (§5, §6) ───────────────────────────────────────────────── */
+
+.sa-ml-nb__columns {
+  display: flex;
+  gap: 8px;
+  overflow: visible;
+  padding: 4px 2px 10px;
+  direction: ltr;
+}
+
+.sa-ml-nb__column {
+  flex: 1 0 96px;
+  background: var(--nb-surface);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--nb-radius);
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.28s, box-shadow 0.28s;
+}
+
+.sa-ml-nb__column.is-leaving { transform: translateX(6px) scale(0.97); box-shadow: 0 0 0 2px #f59e0b inset; }
+.sa-ml-nb__column.is-arriving { transform: scale(1.04); box-shadow: 0 0 0 2px var(--nb-result) inset; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sa-ml-nb__column { transition: none; }
+}
+
+.sa-ml-nb__column-head { display: flex; flex-direction: column; align-items: center; gap: 1px; }
+.sa-ml-nb__column-name { font-size: 0.72rem; font-weight: 700; color: var(--nb-muted); text-align: center; }
+.sa-ml-nb__column-power { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: #94a3b8; }
+
+.sa-ml-nb__tokens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  justify-content: center;
+  min-height: 46px;
+  align-content: flex-start;
+}
+
+.sa-ml-nb__token {
+  width: 13px;
+  height: 13px;
+  border-radius: 3px;
+  background: var(--nb-primary);
+}
+
+.sa-ml-nb__token--p3 { background: #7c3aed; }
+.sa-ml-nb__token--p2 { background: #2563eb; }
+.sa-ml-nb__token--p1 { background: #0891b2; }
+.sa-ml-nb__token--p0 { background: #059669; }
+.sa-ml-nb__token--pm1 { background: #d97706; }
+.sa-ml-nb__token--pm2 { background: #dc2626; }
+.sa-ml-nb__token--pm3 { background: #be185d; }
+.sa-ml-nb__token.is-empty { background: transparent; border: 1px dashed var(--nb-line); }
+
+.sa-ml-nb__column-digit {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--nb-ink);
+}
+
+.sa-ml-nb__column-value { margin: 0; font-size: 0.74rem; color: var(--nb-muted); font-family: 'JetBrains Mono', monospace; }
+.sa-ml-nb__column-actions { display: flex; gap: 4px; }
+.sa-ml-nb__column-regroup { display: flex; flex-direction: column; gap: 3px; width: 100%; }
+
+.sa-ml-nb__total {
+  margin: 0;
+  padding: 12px;
+  background: var(--nb-surface);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--nb-radius);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.94rem;
+  direction: ltr;
+  overflow: visible;
+}
+
+.sa-ml-nb__total-label { color: var(--nb-muted); margin-inline-end: 8px; font-family: 'Cairo', sans-serif; }
+
+.sa-ml-nb__places { display: flex; gap: 6px; flex-wrap: wrap; direction: ltr; }
+
+.sa-ml-nb__place {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 10px;
+  border: 1px solid var(--nb-line);
+  border-radius: 8px;
+  background: var(--nb-surface);
+  min-width: 56px;
+}
+
+.sa-ml-nb__place.is-filled { border-color: var(--nb-primary); background: #eff6ff; }
+.sa-ml-nb__place-digit { font-family: 'JetBrains Mono', monospace; font-size: 1.2rem; font-weight: 700; }
+.sa-ml-nb__place-name { font-size: 0.68rem; color: var(--nb-muted); }
+
+/* ── La chaîne décimal → fraction (§13) ───────────────────────────────── */
+
+.sa-ml-nb__chain {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 12px;
+  background: var(--nb-surface);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--nb-radius);
+  direction: ltr;
+}
+
+.sa-ml-nb__chain-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--nb-ink);
+}
+
+.sa-ml-nb__chain-item small { font-family: 'Cairo', sans-serif; font-size: 0.7rem; font-weight: 400; color: var(--nb-muted); }
+.sa-ml-nb__chain-item.is-result { color: var(--nb-result); }
+.sa-ml-nb__chain-arrow { color: var(--nb-muted); font-size: 1.3rem; }
+
+/* ── Les pourcentages (§14, §15) ──────────────────────────────────────── */
+
+.sa-ml-nb__tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid #e2e8f0;
+  overflow: visible;
+}
+
+.sa-ml-nb__tab {
+  appearance: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: none;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--nb-muted);
+  padding: 10px 14px;
+  min-height: 44px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.sa-ml-nb__tab.is-active { color: var(--nb-primary); border-bottom-color: var(--nb-primary); }
+
+.sa-ml-nb__slider-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+
+.sa-ml-nb__slider {
+  flex: 1 1 200px;
+  min-width: 140px;
+  accent-color: var(--nb-primary);
+  height: 30px;
+  /* §57 : on tire le curseur, on ne fait pas défiler. */
+  touch-action: none;
+}
+
+.sa-ml-nb__slider-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--nb-ink);
+  min-width: 72px;
+  direction: ltr;
+}
+
+.sa-ml-nb__percent-body { display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: start; }
+
+@media (max-width: 760px) {
+  .sa-ml-nb__percent-body { grid-template-columns: 1fr; }
+}
+
+.sa-ml-nb__grid100 { margin: 0; display: flex; flex-direction: column; gap: 6px; }
+.sa-ml-nb__grid100 figcaption { font-size: 0.8rem; color: var(--nb-muted); text-align: center; }
+
+.sa-ml-nb__cell { fill: #f1f5f9; stroke: #e2e8f0; stroke-width: 0.8; transition: fill 0.12s; }
+.sa-ml-nb__cell.is-filled { fill: var(--nb-primary); }
+
+@media (prefers-reduced-motion: reduce) {
+  .sa-ml-nb__cell, .sa-ml-nb__segment, .sa-ml-nb__slice { transition: none; }
+}
+
+.sa-ml-nb__percent-facts { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+
+.sa-ml-nb__ladder { margin: 6px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 3px; }
+
+.sa-ml-nb__ladder-row {
+  display: grid;
+  grid-template-columns: 52px 1fr 76px;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  appearance: none;
+  border: none;
+  background: none;
+  font: inherit;
+  padding: 5px 4px;
+  border-radius: 6px;
+  cursor: pointer;
+  min-height: 34px;
+  direction: ltr;
+}
+
+.sa-ml-nb__ladder-row:hover { background: #f1f5f9; }
+.sa-ml-nb__ladder-row.is-current { background: #eff6ff; font-weight: 700; }
+
+.sa-ml-nb__ladder-percent, .sa-ml-nb__ladder-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.84rem;
+  color: var(--nb-ink);
+}
+
+.sa-ml-nb__ladder-value { text-align: end; }
+
+.sa-ml-nb__ladder-bar {
+  height: 9px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.sa-ml-nb__ladder-bar::after {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--fill);
+  background: var(--nb-primary);
+  border-radius: 999px;
+}
+
+.sa-ml-nb__bars-compare { display: flex; flex-direction: column; gap: 8px; }
+.sa-ml-nb__bar-row { display: grid; grid-template-columns: 90px 1fr 84px; align-items: center; gap: 10px; }
+.sa-ml-nb__bar-label { font-size: 0.8rem; color: var(--nb-muted); font-weight: 600; }
+.sa-ml-nb__bar-track { height: 22px; background: #f1f5f9; border-radius: 6px; overflow: hidden; }
+.sa-ml-nb__bar-fill { display: block; height: 100%; border-radius: 6px; transition: width 0.2s; }
+.sa-ml-nb__bar-fill--primary { background: #94a3b8; }
+.sa-ml-nb__bar-fill--up { background: var(--nb-result); }
+.sa-ml-nb__bar-fill--down { background: var(--nb-secondary); }
+.sa-ml-nb__bar-value { font-family: 'JetBrains Mono', monospace; font-size: 0.86rem; direction: ltr; text-align: end; }
+
+/* ── Tableaux ─────────────────────────────────────────────────────────── */
+
+.sa-ml-nb__table-wrap { overflow: visible; }
+
+.sa-ml-nb__table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.86rem;
+  direction: ltr;
+}
+
+.sa-ml-nb__table th, .sa-ml-nb__table td {
+  border: 1px solid #e2e8f0;
+  padding: 7px 10px;
+  text-align: center;
+  color: var(--nb-ink);
+}
+
+.sa-ml-nb__table th { background: #f8fafc; font-weight: 700; }
+.sa-ml-nb__table tr.is-gcd { background: #f0fdf4; }
+.sa-ml-nb__table tr.is-lcm { background: #eff6ff; }
+.sa-ml-nb__table td.is-failure { background: #fff1f2; color: var(--nb-secondary); font-weight: 700; }
+.sa-ml-nb__table td.is-positive { color: var(--nb-result); font-weight: 700; }
+.sa-ml-nb__table td.is-negative { color: var(--nb-secondary); font-weight: 700; }
+
+.sa-ml-nb__cell-input {
+  width: 68px;
+  border: none;
+  background: transparent;
+  font: inherit;
+  font-family: 'JetBrains Mono', monospace;
+  text-align: center;
+  padding: 4px;
+  color: inherit;
+  min-height: 34px;
+}
+
+.sa-ml-nb__cell-input:focus-visible { outline: 2px solid var(--nb-primary); border-radius: 4px; }
+.sa-ml-nb__ratio-row td { position: relative; color: var(--nb-muted); font-size: 0.8rem; }
+.sa-ml-nb__table-actions { border: none !important; padding-inline-start: 8px !important; }
+
+/* ── Le graphique de proportionnalité (§18) ───────────────────────────── */
+
+.sa-ml-nb__graph {
+  margin: 0;
+  background: var(--nb-surface);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--nb-radius);
+  padding: 10px;
+  direction: ltr;
+}
+
+.sa-ml-nb__graph figcaption {
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.8rem;
+  color: var(--nb-muted);
+  text-align: center;
+  margin-top: 6px;
+  direction: rtl;
+}
+
+.sa-ml-nb__graph svg { touch-action: none; }
+.sa-ml-nb__graph-line { stroke: var(--nb-primary); stroke-width: 2; stroke-dasharray: 5 4; }
+.sa-ml-nb__graph-point { fill: var(--nb-primary); stroke: #ffffff; stroke-width: 2; cursor: grab; }
+.sa-ml-nb__graph-point:focus-visible { outline: 2px solid var(--nb-primary); outline-offset: 3px; }
+
+.sa-ml-nb__ratio-bars { display: flex; gap: 4px; margin: 8px 0; }
+
+.sa-ml-nb__ratio-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  border-radius: 6px;
+  color: #ffffff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.86rem;
+  font-weight: 700;
+  min-width: 34px;
+}
+
+.sa-ml-nb__ratio-bar--a { background: var(--nb-primary); }
+.sa-ml-nb__ratio-bar--b { background: var(--nb-secondary); }
+
+/* ── La divisibilité (§20) ────────────────────────────────────────────── */
+
+.sa-ml-nb__divtable { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 5px; }
+
+.sa-ml-nb__divrow {
+  background: var(--nb-surface);
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.sa-ml-nb__divrow.is-yes { border-inline-start: 3px solid var(--nb-result); }
+.sa-ml-nb__divrow.is-no { border-inline-start: 3px solid #cbd5e1; }
+
+.sa-ml-nb__divrow-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  appearance: none;
+  border: none;
+  background: none;
+  font: inherit;
+  padding: 11px 13px;
+  cursor: pointer;
+  min-height: 46px;
+  gap: 12px;
+}
+
+.sa-ml-nb__divrow-head:hover { background: #f8fafc; }
+.sa-ml-nb__divrow-by { font-weight: 600; color: var(--nb-ink); }
+
+.sa-ml-nb__divrow-verdict {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.sa-ml-nb__divrow.is-yes .sa-ml-nb__divrow-verdict { color: var(--nb-result); }
+.sa-ml-nb__divrow.is-no .sa-ml-nb__divrow-verdict { color: var(--nb-muted); }
+.sa-ml-nb__divrow-body { padding: 0 13px 13px; border-top: 1px dashed #e2e8f0; }
+
+.sa-ml-nb__reason { margin: 10px 0 0; font-size: 0.88rem; color: var(--nb-ink); line-height: 1.7; }
+.sa-ml-nb__reason-label { font-weight: 700; color: var(--nb-muted); margin-inline-end: 6px; }
+
+/* ── Groupes, grilles, rectangles (§26, §38, §39) ─────────────────────── */
+
+.sa-ml-nb__groups { display: flex; flex-wrap: wrap; gap: 10px; margin: 10px 0; direction: ltr; }
+
+.sa-ml-nb__group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  padding: 7px;
+  border: 1px dashed var(--nb-line);
+  border-radius: 8px;
+  max-width: 132px;
+}
+
+.sa-ml-nb__group.is-remainder { border-color: var(--nb-secondary); border-style: solid; }
+.sa-ml-nb__dot { width: 11px; height: 11px; border-radius: 50%; background: var(--nb-primary); }
+.sa-ml-nb__dot.is-remainder { background: var(--nb-secondary); }
+
+.sa-ml-nb__array { display: flex; flex-direction: column; gap: 3px; margin: 10px 0; direction: ltr; }
+.sa-ml-nb__array-row { display: flex; gap: 3px; }
+
+.sa-ml-nb__rectangle {
+  display: grid;
+  grid-template-columns: repeat(var(--cols), var(--cell));
+  gap: 2px;
+  margin: 10px 0;
+  justify-content: start;
+}
+
+.sa-ml-nb__rect-cell {
+  width: var(--cell);
+  height: var(--cell);
+  background: var(--nb-primary);
+  border-radius: 2px;
+  opacity: 0.82;
+}
+
+/* ── Le crible (§22) ──────────────────────────────────────────────────── */
+
+.sa-ml-nb__sieve {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(36px, 1fr));
+  gap: 3px;
+  margin: 10px 0;
+  direction: ltr;
+  /* max-height retiré : pas de défilement interne */
+  overflow: visible;
+}
+
+.sa-ml-nb__sieve.is-dense { grid-template-columns: repeat(auto-fill, minmax(26px, 1fr)); }
+
+.sa-ml-nb__sieve-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  background: #f1f5f9;
+  color: var(--nb-muted);
+  transition: background-color 0.18s, color 0.18s;
+}
+
+.sa-ml-nb__sieve.is-dense .sa-ml-nb__sieve-cell { font-size: 0.6rem; }
+.sa-ml-nb__sieve-cell.is-one { background: #e2e8f0; color: #94a3b8; text-decoration: line-through; }
+.sa-ml-nb__sieve-cell.is-prime { background: var(--nb-result); color: #ffffff; font-weight: 700; }
+/* Le composé est rayé ET pâli : deux signaux, pas seulement la couleur (§59). */
+.sa-ml-nb__sieve-cell.is-struck { background: #fee2e2; color: #b91c1c; text-decoration: line-through; opacity: 0.75; }
+.sa-ml-nb__sieve-cell.is-current { outline: 2px solid #f59e0b; outline-offset: -1px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sa-ml-nb__sieve-cell { transition: none; }
+}
+
+/* ── L'arbre de facteurs (§24) ────────────────────────────────────────── */
+
+.sa-ml-nb__tree { overflow: visible; padding: 12px 0; direction: ltr; }
+.sa-ml-nb__tree-node { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+
+.sa-ml-nb__tree-children {
+  display: flex;
+  gap: 18px;
+  position: relative;
+  padding-top: 14px;
+}
+
+.sa-ml-nb__tree-children::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 25%;
+  right: 25%;
+  height: 14px;
+  border-top: 1.5px solid var(--nb-line);
+  border-inline-start: 1.5px solid var(--nb-line);
+  border-inline-end: 1.5px solid var(--nb-line);
+  border-radius: 6px 6px 0 0;
+}
+
+.sa-ml-nb__tree-value {
+  appearance: none;
+  border: 2px solid var(--nb-line);
+  border-radius: 8px;
+  background: var(--nb-surface);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: var(--nb-ink);
+  padding: 8px 12px;
+  min-width: 46px;
+  min-height: 42px;
+  cursor: default;
+}
+
+.sa-ml-nb__tree-value.is-splittable { border-color: var(--nb-primary); color: var(--nb-primary); cursor: pointer; }
+.sa-ml-nb__tree-value.is-splittable:hover { background: #eff6ff; }
+.sa-ml-nb__tree-value.is-prime { background: var(--nb-result); border-color: var(--nb-result); color: #ffffff; }
+.sa-ml-nb__tree-value.is-picking { outline: 2px solid #f59e0b; outline-offset: 2px; }
+.sa-ml-nb__tree-value:focus-visible { outline: 2px solid var(--nb-primary); outline-offset: 2px; }
+
+/* ── Euclide en rectangles (§28) ──────────────────────────────────────── */
+
+/* §28 : un carré doit être CARRÉ. Le SVG porte son rapport dans son
+   viewBox ; sans `height: auto` la hauteur fixe l'écrase et les « carrés »
+   deviennent des rectangles — le dessin dirait alors le contraire de ce
+   qu'il démontre. */
+.sa-ml-nb__euclid { margin: 10px 0; direction: ltr; }
+.sa-ml-nb__euclid svg { height: auto; max-height: 300px; }
+.sa-ml-nb__euclid-frame { fill: #f8fafc; stroke: #475569; stroke-width: 1.5; }
+.sa-ml-nb__euclid-square { stroke: #ffffff; stroke-width: 1; }
+.sa-ml-nb__euclid-square.is-depth0 { fill: #93c5fd; }
+.sa-ml-nb__euclid-square.is-depth1 { fill: #fca5a5; }
+.sa-ml-nb__euclid-square.is-depth2 { fill: #86efac; }
+.sa-ml-nb__euclid-square.is-depth3 { fill: #fcd34d; }
+.sa-ml-nb__euclid-legend { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; }
+
+.sa-ml-nb__multiples { display: flex; flex-direction: column; gap: 8px; }
+.sa-ml-nb__multiple-row { display: flex; flex-direction: column; gap: 4px; }
+.sa-ml-nb__results { display: flex; gap: 16px; flex-wrap: wrap; }
+.sa-ml-nb__neighbours { display: flex; align-items: center; gap: 8px; justify-content: space-between; }
+
+.sa-ml-nb__neighbour-current {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--nb-ink);
+}
+
+/* ── L'entraînement (§48–§53) ─────────────────────────────────────────── */
+
+.sa-ml-nb__practice { display: flex; flex-direction: column; gap: 12px; }
+.sa-ml-nb__practice-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.sa-ml-nb__practice-meta { display: flex; gap: 12px; align-items: flex-end; flex-wrap: wrap; }
+
+.sa-ml-nb__score {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.86rem;
+  color: var(--nb-muted);
+  padding: 9px 0;
+  direction: ltr;
+}
+
+.sa-ml-nb__question-card {
+  background: var(--nb-surface);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--nb-radius);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sa-ml-nb__choices { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+
+.sa-ml-nb__choice {
+  appearance: none;
+  border: 1.5px solid var(--nb-line);
+  border-radius: 8px;
+  background: var(--nb-surface);
+  font: inherit;
+  font-size: 0.94rem;
+  color: var(--nb-ink);
+  padding: 10px 16px;
+  min-height: 46px;
+  cursor: pointer;
+  font-family: 'JetBrains Mono', 'Cairo', monospace;
+}
+
+.sa-ml-nb__choice.is-picked { border-color: var(--nb-primary); background: #eff6ff; font-weight: 700; }
+.sa-ml-nb__choice:focus-visible { outline: 2px solid var(--nb-primary); outline-offset: 2px; }
+
+.sa-ml-nb__practice-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.sa-ml-nb__hints { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
+
+.sa-ml-nb__hints li {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  font-size: 0.86rem;
+  color: #92400e;
+  background: #fffbeb;
+  border-radius: 6px;
+  padding: 8px 10px;
+  line-height: 1.6;
+}
+
+.sa-ml-nb__verdict-box { padding: 10px 12px; border-radius: 8px; }
+.sa-ml-nb__verdict-box.is-correct { background: #f0fdf4; border: 1px solid #a7f3d0; }
+.sa-ml-nb__verdict-box.is-incorrect { background: #fff7ed; border: 1px solid #fed7aa; }
+
+.sa-ml-nb__verdict-line {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0 0 6px;
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.sa-ml-nb__verdict-box.is-correct .sa-ml-nb__verdict-line { color: var(--nb-result); }
+.sa-ml-nb__verdict-box.is-incorrect .sa-ml-nb__verdict-line { color: #c2410c; }
+.sa-ml-nb__reveal { margin: 8px 0; }
+
+/* ── Les notes (§55) ──────────────────────────────────────────────────── */
+
+.sa-ml-nb__notes {
+  flex: 0 0 auto;
+  border-top: 1px solid #e2e8f0;
+  background: var(--nb-surface);
+  padding: 14px 16px;
+  max-height: 34vh;
+  overflow-y: auto;
+}
+
+.sa-ml-nb__notes-list { margin: 10px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
+
+.sa-ml-nb__notes-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 11px;
+  background: #f8fafc;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.sa-ml-nb__notes-actions { display: flex; gap: 5px; flex: 0 0 auto; }
+
+/* ── Le pied ──────────────────────────────────────────────────────────── */
+
+.sa-ml-nb__footer {
+  flex: 0 0 auto;
+  display: flex;
+  gap: 8px;
+  padding: 10px 16px;
+  border-top: 1px solid #e2e8f0;
+  background: var(--nb-surface);
+  flex-wrap: wrap;
+}
+
+/* ── Téléphone : la visualisation d'abord (§57) ───────────────────────── */
+
+@media (max-width: 640px) {
+  .sa-ml-nb__stage { padding: 12px; }
+  .sa-ml-nb__cards { grid-template-columns: 1fr; }
+  .sa-ml-nb__row { flex-wrap: wrap; }
+  .sa-ml-nb__input, .sa-ml-nb__select { max-width: none; }
+  .sa-ml-nb__formula--big { font-size: 1.05rem; }
+  .sa-ml-nb__rep-value--big { font-size: 1.24rem; }
+  .sa-ml-nb__bar-row { grid-template-columns: 68px 1fr 64px; }
+  .sa-ml-nb__ladder-row { grid-template-columns: 44px 1fr 62px; }
+  /* Le pied devient une barre pleine largeur : les deux actions restent
+     atteignables au pouce. */
+  .sa-ml-nb__footer .sa-ml-nb__button { flex: 1 1 auto; justify-content: center; }
+}
+
+/* §28 : les nombres ÉCRITS dans les rectangles d'Euclide — le côté de chaque
+   carré, et les deux dimensions du rectangle de départ. Sans eux le dessin
+   est une jolie mosaïque ; avec eux, c'est l'algorithme qu'on lit. */
+.sa-ml-nb__euclid-label {
+  fill: #0f172a;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.sa-ml-nb__euclid-dim {
+  fill: #334155;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+/* ── §28 : le calcul et la figure, LIÉS ────────────────────────────────── */
+
+.sa-ml-nb__steps--linked { list-style: none; padding-inline-start: 0; }
+
+.sa-ml-nb__step-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  appearance: none;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: none;
+  font: inherit;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  color: var(--nb-ink);
+  padding: 7px 10px;
+  min-height: 40px;
+  cursor: pointer;
+  text-align: start;
+}
+
+.sa-ml-nb__step-link:hover { background: #f1f5f9; }
+.sa-ml-nb__steps--linked li.is-active .sa-ml-nb__step-link { background: #eff6ff; border-color: var(--nb-primary); }
+.sa-ml-nb__step-link:focus-visible { outline: 2px solid var(--nb-primary); outline-offset: 1px; }
+
+/* La pastille reprend EXACTEMENT la couleur des carrés de ce pas : c'est
+   elle qui fait le lien, avant même le survol. */
+.sa-ml-nb__step-swatch {
+  flex: 0 0 auto;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  border: 1px solid rgba(15, 23, 42, 0.15);
+}
+
+.sa-ml-nb__step-swatch[data-depth='0'] { background: #93c5fd; }
+.sa-ml-nb__step-swatch[data-depth='1'] { background: #fca5a5; }
+.sa-ml-nb__step-swatch[data-depth='2'] { background: #86efac; }
+.sa-ml-nb__step-swatch[data-depth='3'] { background: #fcd34d; }
+
+.sa-ml-nb__step-note {
+  margin-inline-start: auto;
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.76rem;
+  color: var(--nb-muted);
+  white-space: nowrap;
+}
+
+.sa-ml-nb__euclid-actions {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.sa-ml-nb__euclid svg { touch-action: none; }
+
+/* Le pas MIS EN AVANT ressort ; les autres s'effacent sans disparaître —
+   on doit continuer à voir le rectangle entier. */
+.sa-ml-nb__euclid-group { transition: opacity 0.15s; }
+.sa-ml-nb__euclid-group.is-dimmed { opacity: 0.32; }
+.sa-ml-nb__euclid-group.is-active .sa-ml-nb__euclid-square { stroke: #0f172a; stroke-width: 2; }
+
+/* Le carré du DERNIER pas : celui dont le côté est le PGCD. */
+.sa-ml-nb__euclid-square.is-gcd { stroke: #047857; }
+
+/* Le RESTE : le rectangle qui passe au pas suivant. Hachuré, donc lisible
+   même sans couleur (§59). */
+.sa-ml-nb__euclid-rest {
+  fill: none;
+  stroke: #94a3b8;
+  stroke-width: 1.2;
+  stroke-dasharray: 5 4;
+}
+
+.sa-ml-nb__euclid-rest.is-active { stroke: var(--nb-primary); stroke-width: 2; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sa-ml-nb__euclid-group { transition: none; }
+}
+
+/* ══ 2026-09-30 — barre groupée, فوارق متتالية, القسمة الإقليدية, القوى والجذور, أولويات العمليات ══
+   Palette de la plateforme pour ce qui est neuf : vert #008443 (le geste,
+   ce qui reste), orange #F36D21 (ce qui VIENT de se passer : la pièce
+   soustraite, le reste d'une division, le nombre qu'on vient de calculer). */
+
+.sa-ml-nb { --nb-green: #008443; --nb-accent: #f36d21; --nb-accent-soft: #fdeee4; --nb-green-soft: #e6f4ec; }
+
+/* La barre partagée remplace la rangée de puces : elle garde le focus visible. */
+.sa-ml-nb .sa-ml-kit-nav__tab:focus-visible { outline: 2px solid var(--nb-green); outline-offset: 2px; }
+
+/* Une île LTR dans une phrase arabe : une formule ne s'y retourne jamais. */
+.sa-ml-nb__ltr {
+  direction: ltr;
+  unicode-bidi: isolate;
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  white-space: nowrap;
+}
+
+.sa-ml-nb__math-line { direction: ltr; text-align: start; overflow: visible; padding: 2px 0; max-width: 100%; }
+.sa-ml-nb__math-line--big { font-size: 1.15rem; }
+.sa-ml-nb__field--wide { flex: 1 1 100%; }
+.sa-ml-nb__input--expression { flex: 1 1 auto; min-width: 0; width: 100%; font-size: 1rem; }
+
+/* ── PGCD بالفوارق المتتالية ─────────────────────────────────────────── */
+.sa-ml-nb__diff-now { display: flex; flex-wrap: wrap; gap: 8px; }
+.sa-ml-nb__diff-cell {
+  display: flex; flex-direction: column; gap: 2px;
+  padding: 8px 12px; border: 1px solid var(--nb-line); border-radius: 10px; background: #fff;
+  min-width: 0;
+}
+.sa-ml-nb__diff-cell.is-accent { border-color: var(--nb-accent); background: var(--nb-accent-soft); }
+.sa-ml-nb__ribbons { margin: 6px 0; }
+.sa-ml-nb__ribbons svg { display: block; max-width: 640px; height: auto; }
+.sa-ml-nb__ribbon.is-big, .sa-ml-nb__ribbon.is-rest { fill: var(--nb-green); }
+.sa-ml-nb__ribbon.is-small { fill: #9ccfb3; }
+.sa-ml-nb__ribbon.is-cut { fill: var(--nb-accent); opacity: 0.45; }
+.sa-ml-nb__ribbon.is-cut.is-animated { animation: sa-ml-nb-cut 700ms ease-out forwards; }
+@keyframes sa-ml-nb-cut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0.45; transform: translateY(-5px); }
+}
+.sa-ml-nb__ribbon-value { font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 700; fill: #1a1a1a; }
+.sa-ml-nb__ribbon-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 0.8rem; color: #334155; margin-top: 4px; }
+.sa-ml-nb__ribbon-legend span { display: inline-flex; align-items: center; gap: 5px; }
+.sa-ml-nb__swatch { display: inline-block; width: 12px; height: 12px; border-radius: 3px; }
+.sa-ml-nb__swatch.is-small { background: #9ccfb3; }
+.sa-ml-nb__swatch.is-cut { background: var(--nb-accent); }
+.sa-ml-nb__swatch.is-rest { background: var(--nb-green); }
+.sa-ml-nb__diff-result {
+  padding: 10px 12px; border-radius: 10px; background: var(--nb-green-soft); border: 1px solid #b7dcc7;
+  color: #065f46; font-weight: 700;
+}
+.sa-ml-nb__diff-result p { margin: 0 0 4px; }
+.sa-ml-nb__diff-table tr.is-current td { background: var(--nb-accent-soft); font-weight: 700; }
+.sa-ml-nb__compare { list-style: none; margin: 8px 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.sa-ml-nb__compare li {
+  display: flex; flex-direction: column; gap: 2px; padding: 8px 12px;
+  border: 1px solid var(--nb-line); border-radius: 10px; background: #fff;
+}
+.sa-ml-nb__compare-steps { margin: 6px 0; padding-inline-start: 20px; }
+.sa-ml-nb__compare-steps li { margin: 3px 0; }
+.sa-ml-nb__step-note { margin-inline-start: 8px; font-size: 0.8rem; color: var(--nb-muted); }
+.sa-ml-nb__ppcm-ways { margin: 6px 0 0; padding-inline-start: 20px; line-height: 1.8; }
+.sa-ml-nb__ppcm-ways .sa-ml-nb__link { margin-inline-start: 8px; }
+
+/* ── القسمة الإقليدية ────────────────────────────────────────────────── */
+.sa-ml-nb__division-result { display: flex; flex-direction: column; gap: 6px; }
+.sa-ml-nb__division-terms { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }
+.sa-ml-nb__division-terms div { padding: 6px 12px; border: 1px solid var(--nb-line); border-radius: 10px; background: #fff; }
+.sa-ml-nb__division-terms dt { font-size: 0.78rem; color: var(--nb-muted); }
+.sa-ml-nb__division-terms dd { margin: 0; font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--nb-green); font-size: 1.1rem; }
+.sa-ml-nb__division-terms dd.is-remainder { color: var(--nb-accent); }
+.sa-ml-nb__blocks { display: flex; flex-wrap: wrap; gap: 6px; direction: ltr; }
+.sa-ml-nb__block-group { display: inline-flex; flex-wrap: wrap; gap: 2px; padding: 3px; border-radius: 6px; border: 1px dashed #b7dcc7; max-width: 100%; }
+.sa-ml-nb__block { width: 12px; height: 12px; border-radius: 2px; background: var(--nb-green); }
+.sa-ml-nb__block-group.is-tone1 .sa-ml-nb__block { background: #5fb487; }
+.sa-ml-nb__block-group.is-remainder { border-color: var(--nb-accent); border-style: solid; }
+.sa-ml-nb__block-group.is-remainder .sa-ml-nb__block { background: var(--nb-accent); }
+.sa-ml-nb__division-drawing svg { display: block; max-width: 640px; height: auto; }
+.sa-ml-nb__bar-group { stroke: #fff; stroke-width: 0.5; }
+.sa-ml-nb__bar-group.is-tone0 { fill: var(--nb-green); }
+.sa-ml-nb__bar-group.is-tone1 { fill: #5fb487; }
+.sa-ml-nb__bar-group.is-remainder { fill: var(--nb-accent); }
+
+/* ── القوى والجذور ───────────────────────────────────────────────────── */
+.sa-ml-nb__tens { list-style: none; margin: 4px 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.sa-ml-nb__root-steps { list-style: none; margin: 4px 0; padding: 0; }
+.sa-ml-nb__square-grid {
+  display: grid; gap: 2px; width: min(100%, 260px); aspect-ratio: 1 / 1; direction: ltr;
+}
+.sa-ml-nb__square-grid span { background: var(--nb-green); border-radius: 2px; }
+.sa-ml-nb__approx { margin: 6px 0 0; }
+
+/* ── أولويات العمليات ───────────────────────────────────────────────── */
+.sa-ml-nb__order-lines { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.sa-ml-nb__order-line { padding: 8px 12px; border: 1px solid var(--nb-line); border-radius: 10px; background: #fff; min-width: 0; }
+.sa-ml-nb__order-line.is-current { border-color: var(--nb-accent); box-shadow: 0 0 0 1px var(--nb-accent) inset; }
+.sa-ml-nb__order-line.is-initial { background: #f8fafc; }
+.sa-ml-nb__order-rule { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 0.88rem; color: #1a1a1a; }
+.sa-ml-nb__order-index {
+  display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px;
+  border-radius: 50%; background: var(--nb-green); color: #fff; font-size: 0.75rem; font-family: 'JetBrains Mono', monospace;
+}
+.sa-ml-nb__order-line.is-current .sa-ml-nb__order-index { background: var(--nb-accent); }
+.sa-ml-nb__order-result { padding: 10px 12px; border-radius: 10px; background: var(--nb-green-soft); border: 1px solid #b7dcc7; margin-top: 8px; }
+.sa-ml-nb__rules-list { margin: 0; padding-inline-start: 20px; line-height: 1.8; }
+.sa-ml-nb__error-caret mark { background: var(--nb-accent-soft); color: #9a3412; outline: 1px solid var(--nb-accent); border-radius: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sa-ml-nb__ribbon.is-cut.is-animated { animation: none; }
+}
+
+/* ── Les déroulés pas à pas (2026-09-30) ─────────────────────────────────
+   Le tableau (MathBoard) et les dessins qui suivent le curseur du lecteur
+   partagé. Un dessin « en vrac » (is-loose) est l'énoncé : gris neutre,
+   aucune couleur qui dirait déjà q ou r. */
+.sa-ml-nb__board { margin: 10px 0; min-width: 0; }
+.sa-ml-nb__block-group.is-loose { border-color: #cbd5e1; }
+.sa-ml-nb__block-group.is-loose .sa-ml-nb__block { background: #94a3b8; }
+.sa-ml-nb__bar-group.is-loose { fill: #cbd5e1; }
+.sa-ml-nb__division-after { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+.sa-ml-nb__block-group { transition: border-color 0.25s ease; }
+.sa-ml-nb__block { transition: background-color 0.25s ease; }
+@media (prefers-reduced-motion: reduce) {
+  .sa-ml-nb__block-group, .sa-ml-nb__block { transition: none; }
+}
+
+/* Pas de barre de défilement DANS un élément (demande de la propriétaire,
+   2026-09-30) : formules, résultats, tableaux, arbres passent à la ligne ou
+   s'étendent ; seule la scène — l'écran de l'outil — défile. */
+
+/* ── « توحيد المقامات » : les deux formes redécoupées par le PPCM ─────────── */
+
+.sa-ml-nb__grid-cut {
+  stroke: #f36d21;
+  stroke-width: 1.4;
+  stroke-dasharray: 4 3;
+  pointer-events: none;
+  animation: sa-ml-nb-cut 0.6s ease both;
+}
+
+@keyframes sa-ml-nb-cut { from { opacity: 0; } to { opacity: 1; } }
+
+.sa-ml-nb__common {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 12px 0 0;
+  padding: 14px;
+  border: 1px solid #f9c9ad;
+  border-radius: 14px;
+  background: #fffaf6;
+  animation: sa-ml-nb-cut 0.35s ease both;
+}
+
+.sa-ml-nb__common-title { display: flex; flex-direction: column; gap: 4px; font-size: 0.88rem; color: #334155; line-height: 1.7; }
+.sa-ml-nb__common-title strong { color: #c2410c; font-size: 0.95rem; }
+
+.sa-ml-nb__common-shapes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.sa-ml-nb__common-shape {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+}
+
+.sa-ml-nb__common-note { margin: 0; font-size: 0.82rem; color: #475569; text-align: center; }
+.sa-ml-nb__common-formula { font-family: 'JetBrains Mono', 'Inter', sans-serif; font-weight: 700; color: #c2410c; unicode-bidi: isolate; }
+
+.sa-ml-nb__common-multiples { display: flex; flex-direction: column; gap: 6px; }
+
+.sa-ml-nb__common-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-family: 'JetBrains Mono', 'Inter', sans-serif;
+  font-size: 0.85rem;
+}
+
+.sa-ml-nb__common-label { min-width: 7.5rem; font-family: 'Cairo', 'Inter', sans-serif; font-weight: 700; color: #64748b; }
+
+.sa-ml-nb__common-multiple {
+  min-width: 2rem;
+  padding: 2px 6px;
+  border-radius: 8px;
+  background: #f1f5f9;
+  text-align: center;
+}
+
+.sa-ml-nb__common-multiple.is-common {
+  background: #e6f4ec;
+  color: #006b36;
+  font-weight: 700;
+  outline: 2px solid #008443;
+}
+
+.sa-ml-nb__common-conclusion { margin: 0; font-size: 0.88rem; font-weight: 700; color: #006b36; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sa-ml-nb__grid-cut, .sa-ml-nb__common { animation: none; }
+}
+
+/* ── Les fractions « d'un seul regard » (MATH_LAB §3.5) ─────────────────────
+   Une ligne, lue de gauche à droite : [a] + [b] = [résultat], trois colonnes
+   égales ; dans chaque carte, la forme et, À CÔTÉ, son nom, couper / regrouper
+   et ses valeurs. Les formes et le calcul tiennent dans le même regard. */
+
+.sa-ml-nb__fraction-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: stretch;
+  gap: 10px;
+}
+
+.sa-ml-nb__fraction-row.is-compare { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); }
+
+.sa-ml-nb__fraction-row .sa-ml-nb__fraction-operator { grid-area: auto; align-self: center; font-size: 1.6rem; }
+.sa-ml-nb__fraction-row > * { grid-area: auto; }
+
+.sa-ml-nb__fraction-row .sa-ml-nb__fraction-card {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 10px;
+}
+
+.sa-ml-nb__fraction-row .sa-ml-nb__shape { flex: 1 1 auto; min-width: 0; }
+.sa-ml-nb__fraction-row .sa-ml-nb__shape--circle { flex: 0 0 auto; }
+.sa-ml-nb__fraction-row .sa-ml-nb__shape--bar svg,
+.sa-ml-nb__fraction-row .sa-ml-nb__shape--line svg { width: 100%; }
+
+.sa-ml-nb__fraction-side {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  min-width: 0;
+}
+
+.sa-ml-nb__fraction-name {
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.sa-ml-nb__fraction-name--primary { color: var(--nb-primary); }
+.sa-ml-nb__fraction-name--secondary { color: var(--nb-secondary); }
+
+.sa-ml-nb__fraction-row .sa-ml-nb__fraction-actions { display: inline-flex; gap: 4px; }
+.sa-ml-nb__fraction-row .sa-ml-nb__fraction-actions .sa-ml-nb__tiny { min-width: 32px; min-height: 32px; justify-content: center; }
+
+.sa-ml-nb__fraction-row .sa-ml-nb__facts {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 2px 8px;
+  margin: 0;
+  font-size: 0.72rem;
+}
+
+.sa-ml-nb__fraction-row .sa-ml-nb__facts > div { display: contents; }
+.sa-ml-nb__fraction-row .sa-ml-nb__facts dt { color: var(--nb-muted); }
+.sa-ml-nb__fraction-row .sa-ml-nb__facts dd { margin: 0; font-family: 'JetBrains Mono', 'Inter', monospace; white-space: nowrap; }
+.sa-ml-nb__fraction-row .sa-ml-nb__facts dt { font-family: 'Cairo', 'Inter', sans-serif; white-space: nowrap; }
+
+.sa-ml-nb__fraction-card--result { background: #f0fdfa; border-color: #a7f3d0; }
+.sa-ml-nb__fraction-card--result .sa-ml-nb__fraction-raw { font-size: 1.2rem; font-weight: 800; color: var(--nb-result); font-family: 'JetBrains Mono', 'Inter', monospace; }
+.sa-ml-nb__fraction-card--result .sa-ml-nb__fraction-reduced { font-size: 0.95rem; color: var(--nb-result); font-family: 'JetBrains Mono', 'Inter', monospace; }
+
+.sa-ml-nb__fraction-card--pending {
+  justify-content: center;
+  border-style: dashed;
+  background: #f8fafc;
+}
+
+.sa-ml-nb__fraction-unknown { font-size: 2rem; font-weight: 800; color: #cbd5e1; font-family: 'JetBrains Mono', 'Inter', monospace; }
+
+.sa-ml-nb__row--between { justify-content: space-between; align-items: center; }
+
+/* Écran étroit : les cartes s'empilent, mais chacune GARDE sa forme et ses
+   informations côte à côte — c'est là qu'on gagne la hauteur. */
+@media (max-width: 760px) {
+  .sa-ml-nb__fraction-row,
+  .sa-ml-nb__fraction-row.is-compare { grid-template-columns: minmax(0, 1fr); }
+  .sa-ml-nb__fraction-row .sa-ml-nb__fraction-operator { justify-self: center; font-size: 1.3rem; line-height: 1; }
+}
+
+/* « D'un seul regard » (MATH_LAB §3.5) — la place laissée SOUS un tableau en
+   cours (pour amener le pas courant au centre) passe à la FIN du mode : sinon
+   ce qui suit le tableau (vérification, lectures) tombait 340 px plus bas. */
+.sa-ml-nb .sa-ml-board.is-running { padding-block-end: 0; }
+.sa-ml-nb__mode:has(.sa-ml-board.is-running) { padding-block-end: min(38vh, 340px); }
+
+/* LE DUO « figure | tableau » : le dessin à GAUCHE, le calcul qui le fait
+   avancer à DROITE, dans le même regard (lecture de gauche à droite, comme
+   au tableau). La figure reste collée en haut pendant que le tableau
+   s'allonge. Sous 900 px : la figure au-dessus, le tableau dessous. */
+.sa-ml-nb__duo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.sa-ml-nb__duo > * { min-width: 0; }
+.sa-ml-nb__duo-figure { position: sticky; top: 52px; display: flex; flex-direction: column; gap: 8px; z-index: 1; }
+.sa-ml-nb__duo-board { direction: rtl; }
+
+@media (max-width: 900px) {
+  .sa-ml-nb__duo { grid-template-columns: minmax(0, 1fr); }
+  .sa-ml-nb__duo-figure { position: static; }
+}
+
+/* Les en-têtes arabes d'un tableau ne prennent jamais la police à chasse fixe
+   (elle espace les lettres arabes et les rend illisibles). */
+.sa-ml-nb__table thead th { font-family: 'Cairo', 'Inter', sans-serif; }
+
+.sa-ml-nb__line-readout { gap: 6px 16px; flex-wrap: wrap; }
+.sa-ml-nb__line-readout .sa-ml-nb__formula { margin: 0; }
+.sa-ml-nb__line-distance { margin: 0; font-family: 'Cairo', 'Inter', sans-serif; }
+.sa-ml-nb__representations .sa-ml-nb__card--rep { direction: rtl; padding: 10px 12px; }
+.sa-ml-nb__representations .sa-ml-nb__card--rep h4 { margin: 0; }
+
+/* Les critères en DEUX colonnes (la liste tient dans le regard) ; la ligne
+   ouverte prend toute la largeur, sa raison juste sous elle. */
+@media (min-width: 760px) {
+  .sa-ml-nb__divtable { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 10px; }
+  .sa-ml-nb__divtable > .sa-ml-nb__divrow:has([aria-expanded='true']) { grid-column: 1 / -1; }
+}
+
+.sa-ml-nb__duo--factors .sa-ml-nb__duo-figure { position: static; align-items: center; }
+.sa-ml-nb__factor-side { display: flex; flex-direction: column; gap: 8px; }
+.sa-ml-nb__factor-side .sa-ml-nb__formula { margin: 0; }

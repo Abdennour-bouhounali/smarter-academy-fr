@@ -1,0 +1,131 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muadalat-l1-005",
+  "lessonCode": "wadiya-idmajiya-muadalat",
+  "level": 1,
+  "metadata": {
+    "title": "صيغتان لاستعارة الكتب",
+    "estimatedMinutes": 5,
+    "tags": [
+      "ترييض",
+      "عبارة حرفية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-muadalat_P2",
+      "modelledOn": "situation"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "تشجيعًا على العلم وحبّ القراءة، تقترح مكتبة بلدية صيغتين لاستعارة الكتب:\n– الصيغة الأولى: 20DA لكل كتاب.\n– الصيغة الثانية: اشتراك قدره 300DA و 5DA لكل كتاب.\nنسمّي $x$ عدد الكتب المستعارة، و $y_2$ المبلغ المدفوع حسب الصيغة الثانية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عبّر عن $y_2$ بدلالة $x$ .",
+      "statement": "$y_2$ — العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $y_2 = ax + b$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع عن كل كتاب؟ هذا المبلغ يُضرب في $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 5$ .",
+        "incorrect": "اقرأ النص من جديد: ما الذي يُدفع مرة واحدة، وما الذي يُدفع عن كل وحدة؟"
+      },
+      "solution": {
+        "lines": [
+          "المبلغ الذي يُدفع عن كل كتاب يُضرب في $x$ ، إذن $a = 5$ ."
+        ],
+        "result": "a = 5"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "$y_2$ — العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $y_2 = ax + b$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "300",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع مرة واحدة مهما كان $x$ ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$b = 300$ .",
+        "incorrect": "اقرأ النص من جديد: ما الذي يُدفع مرة واحدة، وما الذي يُدفع عن كل وحدة؟"
+      },
+      "solution": {
+        "lines": [
+          "المبلغ الثابت لا يتعلّق بـ $x$ ، إذن $y_2 = 5x + 300$"
+        ],
+        "result": "y_2 = 5x + 300"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب المبلغ المدفوع حسب الصيغة الثانية لاستعارة 10 كتب.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المبلغ بـ DA",
+      "expectedAnswer": "350",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد 10 في عبارة $y_2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$350$DA .",
+        "incorrect": "أعد الحساب خطوة خطوة، مع احترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$y_2 = 5 \\times 10 + 300$",
+          "$y_2 = 50 + 300$"
+        ],
+        "result": "350DA"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

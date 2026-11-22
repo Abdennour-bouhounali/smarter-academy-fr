@@ -1,0 +1,161 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-aadad-l3-005",
+  "lessonCode": "wadiya-idmajiya-aadad",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2010 — لوح رخام 3,64m × 2,08m",
+    "estimatedMinutes": 6,
+    "tags": [
+      "القاسم المشترك الأكبر",
+      "تجزئة إلى مربعات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-aadad_P1",
+      "modelledOn": "BEM 2010 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2010",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 364 و 208.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "52",
+      "misconceptionSignatures": [
+        {
+          "value": "26",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 364 على 208: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (364 ; 208) بالزوج (208 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 52.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$364 = 208 \\times 1 + 156$",
+          "$208 = 156 \\times 1 + 52$",
+          "$156 = 52 \\times 3 + 0$",
+          "آخر باقٍ غير معدوم هو 52، إذن:"
+        ],
+        "result": "PGCD(364 ; 208) = 52"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "بفضل تبرّعات المحسنين لتهيئة مسجد الحيّ، جُزّئ لوح من الرخام مستطيل الشكل بُعداه 3,64m و 2,08m إلى مربعات متساوية بأكبر ضلع دون ضياع.",
+      "statement": "ما هو طول ضلع كل مربع (بالسنتيمتر)؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (بالسنتيمتر)",
+      "expectedAnswer": "52",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل البعدين إلى السنتيمتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طول الضلع يقسم البعدين معًا وهو أكبر ما يمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$PGCD(364 ; 208) = 52$ : طول ضلع كل مربع 52cm.",
+        "incorrect": "طول الضلع قاسم مشترك للبعدين بالسنتيمتر، وهو أكبرها: استعمل نتيجة السؤال 01."
+      },
+      "solution": {
+        "lines": [
+          "$3{,}64m = 364cm$ و $2{,}08m = 208cm$",
+          "طول الضلع هو $PGCD(364 ; 208)$ ."
+        ],
+        "result": "52\\,cm"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما هو عدد المربعات الناتجة؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "28",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب عدد المربعات على الطول ثم على العرض."
+        }
+      ],
+      "feedback": {
+        "correct": "$7 \\times 4 = 28$ مربعًا.",
+        "incorrect": "اقسم كل بُعد على طول الضلع، ثم اضرب الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "على الطول: $364 \\div 52 = 7$",
+          "على العرض: $208 \\div 52 = 4$",
+          "عدد المربعات: $7 \\times 4 = 28$"
+        ],
+        "result": "28"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

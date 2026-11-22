@@ -1,0 +1,323 @@
+{
+  "id": "ex-2am-wasf-silsila-hisab-l3-005",
+  "lessonCode": "wasf-silsila-hisab",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — سلسلة كاملة (5)",
+    "estimatedMinutes": 12,
+    "tags": [
+      "تسمية",
+      "وصف",
+      "كتابة",
+      "حساب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "في كلّ سؤال سلسلة عمليات: سمِّها وعيّن حدّيها وصِفها واكتب سلسلة أخرى ثم احسبها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما اسم السلسلة $A = 8 \\times (7 - 3) + 6$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "فرق",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-FIRSTOP"
+        },
+        {
+          "id": "B",
+          "content": "مجموع",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "حاصل قسمة",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع خطًّا تحت العملية التي تُنجز في الأخير، بعد انتهاء كل ما بين القوسين وكل ضرب أو قسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب السلسلة مرحلة مرحلة وتتبّع آخر عملية بقيت لك."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يبقى في الأخير عددان تربط بينهما عملية واحدة: هي التي تعطي اسم السلسلة."
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة عبارة عن مجموع: آخر عملية تُنجز فيها هي الجمع.",
+        "incorrect": "لا تسمِّ السلسلة بأوّل عملية تُنجز ولا بأوّل رمز تراه: سمِّها بآخر عملية تُنجز فيها."
+      },
+      "solution": {
+        "lines": [
+          "$A = 8 \\times (7 - 3) + 6$",
+          "$A = 8 \\times 4 + 6$",
+          "$A = 32 + 6$",
+          "$A = 38$",
+          "آخر عملية تُنجز هي الجمع، فالسلسلة عبارة عن مجموع."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "في السلسلة $A = 8 \\times (7 - 3) + 6$ ، ما الحدّ الأول ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-PIECES"
+        },
+        {
+          "id": "B",
+          "content": "$6$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$8 \\times ( 7 - 3 )$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد أوّلًا آخر عملية في السلسلة: العددان أو القطعتان اللتان تربط بينهما هما المقصودتان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ السلسلة قطعتين: ما كان قبل آخر عملية وما كان بعدها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "في الفرق وفي حاصل القسمة يهمّ الترتيب: المكتوب أوّلًا هو الحدّ الأول (المقسوم)."
+        }
+      ],
+      "feedback": {
+        "correct": "الحدّ الأول هو $8 \\times ( 7 - 3 )$ .",
+        "incorrect": "حدّد آخر عملية أوّلًا، ثم اقرأ القطعة التي تسبقها والقطعة التي تليها كاملتين."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية في $8 \\times (7 - 3) + 6$ هي $+$ فالسلسلة مجموع.",
+          "قبلها $8 \\times ( 7 - 3 )$ وبعدها $6$ .",
+          "الحدّ الأول هو $8 \\times ( 7 - 3 )$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أيّ جملة تصف السلسلة $A = 8 \\times (7 - 3) + 6$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مجموع جداء العدد 8 وفرق العددين 7 و 3 ، والعدد 6",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "فرق جداء العددين 8 و 7 ومجموع العددين 3 و 6",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-FIRSTOP"
+        },
+        {
+          "id": "C",
+          "content": "جداء العدد 8 ومجموع فرق العددين 7 و 3 والعدد 6",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-FIRSTWRITTEN"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ باسم السلسلة: هو اسم آخر عملية تُنجز فيها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم صِف كلّ قطعة من القطعتين بالطريقة نفسها، قبل آخر عملية وبعدها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اذكر القطعة المكتوبة أوّلًا أوّلًا، وانتبه إلى كلمة «على» في حاصل القسمة."
+        }
+      ],
+      "feedback": {
+        "correct": "A هي مجموع جداء العدد 8 وفرق العددين 7 و 3 ، والعدد 6.",
+        "incorrect": "ابدأ باسم آخر عملية، ثم صِف القطعة الأولى ثم الثانية، بالترتيب الذي تُكتبان به."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية تُنجز في $8 \\times (7 - 3) + 6$ هي $+$، فالسلسلة مجموع.",
+          "نصف كلّ قطعة بالطريقة نفسها: مجموع جداء العدد 8 وفرق العددين 7 و 3 ، والعدد 6."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "أيّ سلسلة توافق الجملة: «جداء مجموع العددين 2 و 6 وفرق العددين 9 و 4» ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(2 + 6) \\times (9 - 4)$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$2 + 6 \\times 9 - 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-NOBRACKET"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بآخر عملية في الجملة: هي الأخيرة التي تُكتب بين قطعتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كلّ قطعة على حدة، وضع بين قوسين كلّ قطعة يجب أن تُحسب قبل آخر عملية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر سلسلتك بحسابها: هل آخر عملية فيها هي التي في الجملة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة الصحيحة: $(2 + 6) \\times (9 - 4)$ .",
+        "incorrect": "ابدأ بآخر عملية في الجملة، وضع بين قوسين كلّ قطعة تُحسب قبلها، وانتبه إلى ترتيب القطعتين."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية في الجملة هي $\\times$.",
+          "نكتب كلّ قطعة ثم نربط بينهما: $(2 + 6) \\times (9 - 4)$ (القوسان لازمان لأنّ القطعة يجب أن تُحسب أوّلًا)."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "اكتب السلسلة الموافقة للجملة: «جداء مجموع العددين 2 و 6 وفرق العددين 9 و 4» ثم احسبها.",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "40",
+      "misconceptionSignatures": [
+        {
+          "value": "52",
+          "id": "MISC-WASF-NOBRACKET"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد كتابة السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = (2 + 6) \\times (9 - 4) = 40$",
+        "incorrect": "اكتب السلسلة بالقوسين اللازمين ثم احسبها: ما بين القوسين أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "$B = (2 + 6) \\times (9 - 4)$",
+          "$B = 8 \\times (9 - 4)$",
+          "$B = 8 \\times 5$",
+          "$B = 40$"
+        ],
+        "result": "40"
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

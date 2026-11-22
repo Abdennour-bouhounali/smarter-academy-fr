@@ -1,0 +1,354 @@
+{
+  "id": "ex-4am-mutarajiha-ula-l4-005",
+  "lessonCode": "mutarajiha-ula",
+  "level": 4,
+  "metadata": {
+    "title": "طريقة حل متراجحة",
+    "estimatedMinutes": 14,
+    "tags": [
+      "متراجحة",
+      "حل متراجحة",
+      "مقامات"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-inequality",
+      "page": 49,
+      "section": "طرائق"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "حلّ كل متراجحة مما يلي ثم مثّل بيانيًا حلولها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "حلّ المتراجحة: $-7x + 1 < x - 3$ .",
+      "statement": "حدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutarajiha-ula_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x < k$ أو $x \\leqslant k$ أو $x > k$ أو $x \\geqslant k$ : اكتب العدد $k$ فقط (عدد صحيح أو كسر a/b، قد يكون سالبًا)",
+      "expectedAnswer": "1/2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر، كما في حل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إضافة عدد إلى الطرفين أو طرحه منهما لا تغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحدّ هو العدد الذي يحقّق المعادلة المرفقة (نضع «=» مكان رمز المتباينة): اقسم في الأخير على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "حدّ الحلول هو $k = \\dfrac{1}{2}$ .",
+        "incorrect": "أعد الحل سطرًا سطرًا: العملية نفسها على الطرفين، ثم القسمة على معامل $x$ في الأخير."
+      },
+      "solution": {
+        "lines": [
+          "حدّ الحلول هو حلّ المعادلة المرفقة: $-7x + 1 = x - 3$",
+          "$-7x - x = -3 - 1$",
+          "$-8x = -4$",
+          "$\\dfrac{-8x}{-8} = \\dfrac{-4}{-8}$",
+          "إذن حدّ الحلول هو $\\dfrac{1}{2}$ ."
+        ],
+        "result": "k = \\dfrac{1}{2}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_mutarajiha-ula_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < \\dfrac{1}{2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-SALIB-BILA-QALB"
+        },
+        {
+          "id": "B",
+          "content": "$x \\leqslant \\dfrac{1}{2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-SALIB-BILA-QALB"
+        },
+        {
+          "id": "C",
+          "content": "$x > \\dfrac{1}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$x \\geqslant \\dfrac{1}{2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارة معامل $x$ في آخر سطر قبل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد موجب تحافظ على الاتجاه، والقسمة على عدد سالب تغيّره."
+        }
+      ],
+      "feedback": {
+        "correct": "$x > \\dfrac{1}{2}$ .",
+        "incorrect": "تتبّع سطور الحل: الاتجاه يتغيّر فقط عند الضرب أو القسمة على عدد سالب، ونوع المتباينة (تامة أو غير تامة) لا يتغيّر أبدًا."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $-7x + 1 < x - 3$",
+          "$-7x - x < -3 - 1$",
+          "$-8x < -4$",
+          "نقسم الطرفين على العدد السالب $-8$ فنغيّر اتجاه المتباينة:",
+          "$\\dfrac{-8x}{-8} > \\dfrac{-4}{-8}$",
+          "إذن حلول المتراجحة هي كل قيم $x$ الأكبر تماما من $\\dfrac{1}{2}$ .",
+          "قسمنا الطرفين (أو ضربناهما) في آخر خطوة على عدد سالب، فتغيّر اتجاه المتباينة وبقي نوعها."
+        ],
+        "result": "x > \\dfrac{1}{2}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "مثّل حلولها بيانيًا على مستقيم مدرّج.",
+      "learningPoints": [
+        {
+          "code": "4am_mutarajiha-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "صف تمثيلك: جهة الجزء الملوّن بالأحمر والرمز عند الحدّ (أو صوّر ورقتك)، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بحل المتراجحة لتعرف الحدّ وجهة الحلول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأعداد الأكبر من الحدّ على يمينه، والأصغر منه على يساره."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر الحدّ نفسه: إن كان حلًّا فالرمز موجّه نحو الجزء الملوّن، وإلا فهو موجّه عكسه."
+        }
+      ],
+      "feedback": {
+        "correct": "تمثيلك مطابق للحل النموذجي.",
+        "incorrect": "راجع جهة الجزء الملوّن، ثم اتجاه الرمز عند الحدّ."
+      },
+      "solution": {
+        "lines": [
+          "حلول المتراجحة هي الأعداد $x$ حيث $x > \\dfrac{1}{2}$ .",
+          "نلوّن بالأحمر جزء المستقيم المدرّج الواقع على يمين العدد $\\dfrac{1}{2}$ .",
+          "العدد $\\dfrac{1}{2}$ ليس حلًّا للمتراجحة، فنضع عنده الرمز $]$ موجّهًا عكس الجزء الملوّن."
+        ],
+        "result": "الجزء الملوّن على يمين \\dfrac{1}{2} والرمز ] عنده"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "lead": "حلّ المتراجحة: $\\dfrac{3x + 2}{6} \\geqslant \\dfrac{2x - 3}{5}$ .",
+      "statement": "حدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutarajiha-ula_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x < k$ أو $x \\leqslant k$ أو $x > k$ أو $x \\geqslant k$ : اكتب العدد $k$ فقط (عدد صحيح أو كسر a/b، قد يكون سالبًا)",
+      "expectedAnswer": "-28/3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر، كما في حل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إضافة عدد إلى الطرفين أو طرحه منهما لا تغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحدّ هو العدد الذي يحقّق المعادلة المرفقة (نضع «=» مكان رمز المتباينة): اقسم في الأخير على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "حدّ الحلول هو $k = -\\dfrac{28}{3}$ .",
+        "incorrect": "أعد الحل سطرًا سطرًا: العملية نفسها على الطرفين، ثم القسمة على معامل $x$ في الأخير."
+      },
+      "solution": {
+        "lines": [
+          "حدّ الحلول هو حلّ المعادلة المرفقة: $\\dfrac{3x + 2}{6} = \\dfrac{2x - 3}{5}$",
+          "نضرب الطرفين في العدد الموجب $30$ :",
+          "$5(3x + 2) = 6(2x - 3)$",
+          "$15x - 12x = -18 - 10$",
+          "$3x = -28$",
+          "$\\dfrac{3x}{3} = \\dfrac{-28}{3}$",
+          "إذن حدّ الحلول هو $-\\dfrac{28}{3}$ ."
+        ],
+        "result": "k = -\\dfrac{28}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_mutarajiha-ula_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < -\\dfrac{28}{3}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QALB-ZAID"
+        },
+        {
+          "id": "B",
+          "content": "$x \\leqslant -\\dfrac{28}{3}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QALB-ZAID"
+        },
+        {
+          "id": "C",
+          "content": "$x > -\\dfrac{28}{3}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        },
+        {
+          "id": "D",
+          "content": "$x \\geqslant -\\dfrac{28}{3}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارة معامل $x$ في آخر سطر قبل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد موجب تحافظ على الاتجاه، والقسمة على عدد سالب تغيّره."
+        }
+      ],
+      "feedback": {
+        "correct": "$x \\geqslant -\\dfrac{28}{3}$ .",
+        "incorrect": "تتبّع سطور الحل: الاتجاه يتغيّر فقط عند الضرب أو القسمة على عدد سالب، ونوع المتباينة (تامة أو غير تامة) لا يتغيّر أبدًا."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $\\dfrac{3x + 2}{6} \\geqslant \\dfrac{2x - 3}{5}$",
+          "نضرب الطرفين في العدد الموجب $30$ :",
+          "$5(3x + 2) \\geqslant 6(2x - 3)$",
+          "$15x - 12x \\geqslant -18 - 10$",
+          "$3x \\geqslant -28$",
+          "$\\dfrac{3x}{3} \\geqslant \\dfrac{-28}{3}$",
+          "إذن حلول المتراجحة هي كل قيم $x$ الأكبر من أو تساوي $-\\dfrac{28}{3}$ .",
+          "قسمنا الطرفين (أو ضربناهما) في آخر خطوة على عدد موجب، فبقي اتجاه المتباينة ونوعها."
+        ],
+        "result": "x \\geqslant -\\dfrac{28}{3}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "statement": "مثّل حلولها بيانيًا على مستقيم مدرّج.",
+      "learningPoints": [
+        {
+          "code": "4am_mutarajiha-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "صف تمثيلك: جهة الجزء الملوّن بالأحمر والرمز عند الحدّ (أو صوّر ورقتك)، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بحل المتراجحة لتعرف الحدّ وجهة الحلول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأعداد الأكبر من الحدّ على يمينه، والأصغر منه على يساره."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر الحدّ نفسه: إن كان حلًّا فالرمز موجّه نحو الجزء الملوّن، وإلا فهو موجّه عكسه."
+        }
+      ],
+      "feedback": {
+        "correct": "تمثيلك مطابق للحل النموذجي.",
+        "incorrect": "راجع جهة الجزء الملوّن، ثم اتجاه الرمز عند الحدّ."
+      },
+      "solution": {
+        "lines": [
+          "حلول المتراجحة هي الأعداد $x$ حيث $x \\geqslant -\\dfrac{28}{3}$ .",
+          "نلوّن بالأحمر جزء المستقيم المدرّج الواقع على يمين العدد $-\\dfrac{28}{3}$ .",
+          "العدد $-\\dfrac{28}{3}$ حلّ للمتراجحة، فنضع عنده الرمز $[$ موجّهًا نحو الجزء الملوّن."
+        ],
+        "result": "الجزء الملوّن على يمين -\\dfrac{28}{3} والرمز [ عنده"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

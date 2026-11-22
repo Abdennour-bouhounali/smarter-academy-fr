@@ -1,0 +1,198 @@
+{
+  "id": "ex-4am-mafhum-taalufiya-l3-003",
+  "lessonCode": "mafhum-taalufiya",
+  "level": 3,
+  "metadata": {
+    "title": "الدالة x ⟼ 3x² + 1",
+    "estimatedMinutes": 6,
+    "tags": [
+      "تمييز دالة تآلفية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-2",
+      "page": 78,
+      "section": "أنشطة",
+      "number": 2,
+      "adaptedFrom": "ex-4am-mafhum-taalufiya-l3-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الدالة $u$ المعرّفة كما يلي:",
+    "formulas": [
+      "u : x \\longmapsto 3x^2 + 1"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب $u(1)$ ، $u(2)$ ، $u(3)$ .",
+      "statement": "$u(1)$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ 1: احسب المربع أولا ثم اضرب في 3."
+        }
+      ],
+      "feedback": {
+        "correct": "$u(1) = 3 \\times 1^2 + 1 = 4$ .",
+        "incorrect": "احسب $1^2$ ، ثم اضرب في 3، ثم أضف 1."
+      },
+      "solution": {
+        "lines": [
+          "$u(1) = 3 \\times 1^2 + 1 = 3 + 1 = 4$"
+        ],
+        "result": "u(1) = 4"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$u(2)$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "value": "37",
+          "id": "MISC-TAALUFI-KHATTIYA-KHALT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $2^2$ أولا."
+        }
+      ],
+      "feedback": {
+        "correct": "$u(2) = 3 \\times 4 + 1 = 13$ .",
+        "incorrect": "المربع يُحسب قبل الضرب."
+      },
+      "solution": {
+        "lines": [
+          "$u(2) = 3 \\times 2^2 + 1 = 3 \\times 4 + 1 = 13$"
+        ],
+        "result": "u(2) = 13"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "$u(3)$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "28",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $3^2$ أولا."
+        }
+      ],
+      "feedback": {
+        "correct": "$u(3) = 3 \\times 9 + 1 = 28$ .",
+        "incorrect": "المربع يُحسب قبل الضرب."
+      },
+      "solution": {
+        "lines": [
+          "$u(3) = 3 \\times 3^2 + 1 = 3 \\times 9 + 1 = 28$"
+        ],
+        "result": "u(3) = 28"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "هل الدالة $u$ دالة تآلفية؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAALUFI-KHATTIYA-KHALT"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الزيادة من $u(1)$ إلى $u(2)$ بالزيادة من $u(2)$ إلى $u(3)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في دالة تآلفية، كلما زاد $x$ بـ 1 زادت الصورة بالعدد نفسه $a$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الزيادتان 9 و 15 مختلفتان.",
+        "incorrect": "احسب الزيادتين المتتاليتين وقارنهما."
+      },
+      "solution": {
+        "lines": [
+          "$u(2) - u(1) = 13 - 4 = 9$ و $u(3) - u(2) = 28 - 13 = 15$ .",
+          "في دالة تآلفية $x \\longmapsto ax + b$ ، زيادة $x$ بـ 1 تزيد الصورة دائما بـ $a$ .",
+          "الزيادتان مختلفتان، إذن $u$ ليست دالة تآلفية."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

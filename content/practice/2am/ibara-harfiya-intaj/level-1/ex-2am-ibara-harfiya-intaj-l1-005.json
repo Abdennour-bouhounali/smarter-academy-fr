@@ -1,0 +1,177 @@
+{
+  "id": "ex-2am-ibara-harfiya-intaj-l1-005",
+  "lessonCode": "ibara-harfiya-intaj",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — برنامج حساب لسلمى",
+    "estimatedMinutes": 6,
+    "tags": [
+      "برنامج حساب",
+      "عبارة حرفيّة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تقترح سلمى على زميلاتها لعبة : « اختر عددًا $n$ ، أضف إليه $5$ ، ثمّ اضرب النتيجة في $2$ » ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ عبارة تترجم هذا البرنامج ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2(n + 5)$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$2n + 5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-BRACKET"
+        },
+        {
+          "id": "C",
+          "content": "$n + 10$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعيّة وحدّد ما يتغيّر (الحرف) وما يبقى ثابتًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ خيار بقيمة بسيطة للحرف ثمّ قارن بالعدّ المباشر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاعدة الصحيحة تعطي العدد نفسه الذي تجده بالعدّ في كلّ مرّة تجرّبها."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتابة الصحيحة هي $2(n + 5)$ .",
+        "incorrect": "جرّب كلّ خيار على قيمة بسيطة للحرف وقارن بالعدّ المباشر قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "$2(n + 5)$ : الجمع يتمّ أوّلًا ثمّ الضرب ، لذلك نضع المجموع بين قوسين.",
+          "عند $n = 3$ : $2 \\times (3 + 5) = 16$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما نتيجة البرنامج إذا اختارت زميلتها العدد $7$ ؟ احسب $R = 2(n + 5)$ من أجل $n = 7$ .",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "24",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بالقيمة المعطاة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ احترم أولويّة العمليّات : الضرب قبل الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة قبل أن تجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$R = 24$ .",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ أعد الحساب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$2 \\times (7 + 5) = 24$ ."
+        ],
+        "result": "24"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب $R = 2(n + 5)$ من أجل $n = 0$ .",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بالقيمة المعطاة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ احترم أولويّة العمليّات : الضرب قبل الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة قبل أن تجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$R = 10$ .",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ أعد الحساب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$2 \\times (0 + 5) = 10$ ."
+        ],
+        "result": "10"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

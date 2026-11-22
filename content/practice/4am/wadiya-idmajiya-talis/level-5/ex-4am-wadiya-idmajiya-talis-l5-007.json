@@ -1,0 +1,319 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-talis-l5-007",
+  "lessonCode": "wadiya-idmajiya-talis",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2017 — جهاز العرض والشاشة",
+    "estimatedMinutes": 40,
+    "tags": [
+      "وضعية إدماجية",
+      "تكبير",
+      "الخاصية العكسية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-talis_P1",
+      "modelledOn": "BEM 2017 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2017",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في قاعة المحاضرات يعرض جهاز صورة شريحة $[AB]$ عرضها $AB = 3{,}6\\,\\mathrm{cm}$ على شاشة، فتتكوّن الصورة $[EF]$ . الأشعة تمرّ بالعدسة $O$ : النقط $O$ ، $A$ ، $E$ في استقامية، والنقط $O$ ، $B$ ، $F$ في استقامية ( $A$ بين $O$ و $E$ ، و $B$ بين $O$ و $F$ ). العدسة على بعد $OA = 9\\,\\mathrm{cm}$ من الشريحة، والشاشة موازية للشريحة على بعد $OE = 3{,}6\\,\\mathrm{m}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "الجزء الأول:",
+      "statement": "احسب عرض الصورة $EF$ على الشاشة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "144",
+      "misconceptionSignatures": [
+        {
+          "value": "0.09",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "1.44",
+          "id": "MISC-TALIS-MULAAMA-WAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(AB) \\parallel (EF)$ والنقط $O$ ، $A$ ، $E$ و $O$ ، $B$ ، $F$ في استقامية: المثلثان $OAB$ و $OEF$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حوّل $3{,}6\\,\\mathrm{m}$ إلى $\\mathrm{cm}$ ، ثم اكتب $\\dfrac{OA}{OE} = \\dfrac{AB}{EF}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$EF = \\dfrac{360 \\times 3{,}6}{9} = 144\\,\\mathrm{cm}$ .",
+        "incorrect": "في كل نسبة: طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "$OE = 3{,}6\\,\\mathrm{m} = 360\\,\\mathrm{cm}$",
+          "بما أن $(AB) \\parallel (EF)$ ، حسب خاصية طالس: $\\dfrac{OA}{OE} = \\dfrac{OB}{OF} = \\dfrac{AB}{EF}$",
+          "$\\dfrac{9}{360} = \\dfrac{3{,}6}{EF}$",
+          "$EF = \\dfrac{360 \\times 3{,}6}{9}$ (الصورة مكبَّرة 40 مرة)"
+        ],
+        "result": "EF = 144\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عرض الشاشة $1{,}5\\,\\mathrm{m}$ . هل تظهر الصورة كاملة على الشاشة؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-MULAAMA-WAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن عرض الصورة بعرض الشاشة بالوحدة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}44\\,\\mathrm{m} < 1{,}5\\,\\mathrm{m}$ .",
+        "incorrect": "حوّل إلى الوحدة نفسها قبل المقارنة."
+      },
+      "solution": {
+        "lines": [
+          "عرض الصورة $144\\,\\mathrm{cm} = 1{,}44\\,\\mathrm{m}$ ، و $1{,}44 < 1{,}5$ : الصورة تظهر كاملة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "الجزء الثاني:",
+      "statement": "على أي بعد $OE$ من العدسة يجب وضع الشاشة لتكون الصورة بعرض $1{,}8\\,\\mathrm{m}$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "4,5",
+      "misconceptionSignatures": [
+        {
+          "value": "450",
+          "id": "MISC-TALIS-MULAAMA-WAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\dfrac{OE}{OA} = \\dfrac{EF}{AB}$ مع $EF = 180\\,\\mathrm{cm}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$OE = \\dfrac{9 \\times 180}{3{,}6} = 450\\,\\mathrm{cm} = 4{,}5\\,\\mathrm{m}$ .",
+        "incorrect": "في كل نسبة: طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "حسب خاصية طالس: $\\dfrac{OE}{OA} = \\dfrac{EF}{AB}$",
+          "$\\dfrac{OE}{9} = \\dfrac{180}{3{,}6}$",
+          "$OE = \\dfrac{9 \\times 180}{3{,}6} = 450\\,\\mathrm{cm}$"
+        ],
+        "result": "OE = 4{,}5\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "sub": "ا",
+      "lead": "في قاعة أخرى، الشاشة على بعد $OE = 360\\,\\mathrm{cm}$ و $OF = 375\\,\\mathrm{cm}$ ، مع $OA = 9\\,\\mathrm{cm}$ و $OB = 9{,}25\\,\\mathrm{cm}$ .",
+      "statement": "احسب النسبة $\\dfrac{OA}{OE}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "1/40",
+      "misconceptionSignatures": [
+        {
+          "value": "40",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$OA$ و $OE$ طولان يُقاسان من النقطة $O$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $OA$ على $OE$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{OA}{OE} = \\dfrac{9}{360} = \\dfrac{1}{40}$ .",
+        "incorrect": "النسبة $\\dfrac{OA}{OE}$ : الطول $OA$ على الطول $OE$ ، وكلاهما من النقطة $O$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{OA}{OE} = \\dfrac{9}{360} = \\dfrac{1}{40}$"
+        ],
+        "result": "\\dfrac{OA}{OE} = \\dfrac{1}{40}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "sub": "ا",
+      "statement": "احسب النسبة $\\dfrac{OB}{OF}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "37/1500",
+      "misconceptionSignatures": [
+        {
+          "value": "1500/37",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$OB$ و $OF$ طولان يُقاسان من النقطة $O$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $OB$ على $OF$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{OB}{OF} = \\dfrac{9{,}25}{375} = \\dfrac{37}{1500}$ .",
+        "incorrect": "النسبة $\\dfrac{OB}{OF}$ : الطول $OB$ على الطول $OF$ ، وكلاهما من النقطة $O$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{OB}{OF} = \\dfrac{9{,}25}{375} = \\dfrac{37}{1500}$"
+        ],
+        "result": "\\dfrac{OB}{OF} = \\dfrac{37}{1500}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "sub": "ب",
+      "statement": "هل الشاشة موازية للشريحة؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-TAQRIB-BURHAN"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النسبتين بقيمهما المضبوطة (الجداء المتصالب)، لا بقيم مقرّبة ولا بمظهر الشكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق أيضا من ترتيب النقط على المستقيمين المتقاطعين."
+        }
+      ],
+      "feedback": {
+        "correct": "$9 \\times 375 = 3375$ و $360 \\times 9{,}25 = 3330$ : الشاشة ليست موازية للشريحة.",
+        "incorrect": "الخاصية العكسية تتطلب شرطين معا: تساوي النسبتين بقيم مضبوطة، وترتيب النقط نفسه على المستقيمين."
+      },
+      "solution": {
+        "lines": [
+          "$9 \\times 375 = 3375$ و $360 \\times 9{,}25 = 3330$ ، إذن $\\dfrac{OA}{OE} \\neq \\dfrac{OB}{OF}$ .",
+          "لو كان $(EF) \\parallel (AB)$ لكانت النسبتان متساويتين حسب خاصية طالس،",
+          "إذن المستقيمان $(EF)$ و $(AB)$ غير متوازيين.",
+          "(الشاشة مائلة: تظهر الصورة مشوّهة.)"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

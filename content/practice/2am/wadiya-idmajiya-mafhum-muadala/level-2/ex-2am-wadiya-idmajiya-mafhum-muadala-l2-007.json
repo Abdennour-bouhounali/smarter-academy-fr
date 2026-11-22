@@ -1,0 +1,142 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-mafhum-muadala-l2-007",
+  "lessonCode": "wadiya-idmajiya-mafhum-muadala",
+  "level": 2,
+  "metadata": {
+    "title": "ترجمة برنامج حساب",
+    "estimatedMinutes": 7,
+    "tags": [
+      "برنامج حساب",
+      "قوس"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "self-2",
+      "page": 65,
+      "section": "أؤكّد تعلّماتي",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "برنامج حساب : نختار عددًا $x$ ، نضيف إليه $2$ ، نضرب المجموع في $4$ ، ثمّ نطرح $3$ من النتيجة ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اختر العبارة التي تترجم هذا البرنامج .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$4x+2-3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-BRACKET"
+        },
+        {
+          "id": "B",
+          "content": "$4(x+2)-3$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$4+x+2-3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-ADDFOR"
+        }
+      ],
+      "feedback": {
+        "correct": "$4(x+2)-3$ .",
+        "incorrect": "اكتب الجزء الثابت مرّة واحدة والجزء المتكرّر مضروبًا في عدده، ثمّ اختبر عبارتك على عدد صغير."
+      },
+      "solution": {
+        "lines": [
+          "« نضيف $2$ ثمّ نضرب المجموع » : $4(x+2)$ .",
+          "ثمّ نطرح $3$ : $4(x+2)-3$ ."
+        ]
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في الوضعيّة ما يتغيّر (وهو الحرف) وما يبقى ثابتًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب ما يُدفع أو يُحسب مرّة واحدة، ثمّ ما يتكرّر مضروبًا في عدد مرّاته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر العبارة على عدد صغير مثل اثنين قبل أن تختار."
+        }
+      ],
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب نتيجة البرنامج من أجل $x = 5$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "25",
+      "misconceptionSignatures": [
+        {
+          "value": "19",
+          "id": "MISC-IBARA2-BRACKET"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بقيمته المعلومة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات : الضرب والقسمة قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة."
+        }
+      ],
+      "feedback": {
+        "correct": "النتيجة $25$ .",
+        "incorrect": "عوّض بالقيم المعلومة واحسب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$4(5+2)-3 = 25$ ."
+        ],
+        "result": "25"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

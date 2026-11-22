@@ -1,0 +1,63 @@
+{
+  "id": "ex-4am-majmu-shuaayn-l2-006",
+  "lessonCode": "majmu-shuaayn",
+  "level": 2,
+  "generator": {
+    "tool": "unit11-majmu-gen.py",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — نقطة على قطعة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "علاقة شال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_majmu-shuaayn_P2",
+      "modelledOn": "act-4"
+    }
+  },
+  "statement": {
+    "content": "B نقطة من القطعة [AC] حيث $AB = 3\\,\\mathrm{cm}$ و $BC = 5\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "طول الشعاع $\\overrightarrow{AB} + \\overrightarrow{BC}$ بالسنتيمتر:",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر)",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى نهاية الشعاع الأول ومبدأ الشعاع الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "علاقة شال تتطلب أن تكون نهاية الأول مبدأ الثاني؛ يمكن تبديل ترتيب الحدّين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع يبدأ من مبدأ الأول وينتهي عند نهاية الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AB} + \\overrightarrow{BC} = \\overrightarrow{AC}$ ، و B على [AC] فالطولان يُجمعان: $AC = 3 + 5 = 8\\,\\mathrm{cm}$ .",
+        "incorrect": "علاقة شال: نهاية الأول مبدأ الثاني، والمجموع من مبدأ الأول إلى نهاية الثاني."
+      }
+    }
+  ]
+}

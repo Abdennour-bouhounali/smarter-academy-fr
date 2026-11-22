@@ -1,36 +1,27 @@
 /**
- * Le nom du contenu, et son accord.
+ * Le nom du contenu — désormais une CLÉ, plus un nom français accordé.
  *
- * « leçon » est féminin, « module » et « exercice » sont masculins : sans cette
- * distinction, l'interface écrit « 24 leçons sélectionnés » et « 1 leçon
- * sélectionné ». Ce sont des pages d'administration françaises lues tous les
- * jours par la même personne ; une faute d'accord à chaque sélection est une
- * faute visible.
+ * L'ancienne version portait le genre grammatical (« leçon » féminin,
+ * « module » masculin) et un helper `agree()` qui recollait « e » et « s ».
+ * C'était la bonne réponse à une interface française ; c'est la mauvaise à
+ * une interface arabe, dont le nombre ne se décline pas en deux formes mais
+ * en SIX catégories (`zero`, `one`, `two`, `few`, `many`, `other`) :
  *
- * Un seul endroit décide, plutôt qu'un `count > 1 ? 's' : ''` recopié dans
- * cinq gabarits — c'est exactement la répétition qui a produit la faute.
+ *     درس واحد · درسان · 3 دروس · 11 درساً · 100 درس
+ *
+ * Aucune concaténation ne produit ça correctement. C'est i18next qui le fait,
+ * via `Intl.PluralRules('ar-DZ')` et les clés suffixées `_one`/`_two`/
+ * `_few`/`_many`/`_other` du catalogue (`admin.bulk.noun.*`). Le rôle de ce
+ * module se réduit donc à UN seul : dire de quel nom il s'agit.
+ *
+ * `CONTENT_NOUNS` garde sa forme d'objet et son nom : les trois pages de
+ * contenu passent `noun={CONTENT_NOUNS.lesson}` à `BulkActionBar`, et cette
+ * signature ne bouge pas.
  */
 
-/** Les trois types de contenu du panneau, avec leur genre. */
+/** Les trois types de contenu du panneau, et leur clé de pluralisation. */
 export const CONTENT_NOUNS = {
-  lesson: { one: 'leçon', many: 'leçons', feminine: true },
-  module: { one: 'module', many: 'modules', feminine: false },
-  exercise: { one: 'exercice', many: 'exercices', feminine: false },
+  lesson: { key: 'lesson' },
+  module: { key: 'module' },
+  exercise: { key: 'exercise' },
 };
-
-/**
- * Accorde un participe passé en genre et en nombre.
- *
- * @param {string} stem  le participe au masculin singulier — « sélectionné »
- * @param {number} count
- * @param {boolean} feminine
- * @returns {string} « sélectionnée », « sélectionnés », « sélectionnées »…
- */
-export function agree(stem, count, feminine) {
-  return `${stem}${feminine ? 'e' : ''}${count > 1 ? 's' : ''}`;
-}
-
-/** « 1 leçon » / « 24 leçons ». */
-export function countNoun(count, noun) {
-  return `${count} ${count === 1 ? noun.one : noun.many}`;
-}

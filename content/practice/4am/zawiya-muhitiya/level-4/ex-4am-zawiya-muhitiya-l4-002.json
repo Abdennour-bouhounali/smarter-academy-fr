@@ -1,0 +1,111 @@
+{
+  "id": "ex-4am-zawiya-muhitiya-l4-002",
+  "lessonCode": "zawiya-muhitiya",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 20 — من شهادة التعليم المتوسط",
+    "estimatedMinutes": 5,
+    "tags": [
+      "خاصية 1",
+      "حالة القطر"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-20",
+      "page": 161,
+      "section": "أتعمّق",
+      "number": 20
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 161، شهادة التعليم المتوسط): (T) دائرة مركزها O وقطرها $AB = 8\\,\\mathrm{cm}$ ، و C نقطة من الدائرة حيث $BC = 3\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "احسب بالتدوير إلى الوحدة من الدرجة قيس الزاوية $\\widehat{BAC}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (بالدرجة)",
+      "expectedAnswer": "22",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث المرسوم في نصف دائرة قائم: حدّد الوتر والضلع المقابل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل الجيب، ثم اللمسة العكسية في الآلة الحاسبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "دوّر في نهاية الحساب فقط، إلى الدقة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin\\widehat{BAC} = \\dfrac{3}{8}$ ، و $\\widehat{BAC} \\approx 22^\\circ$ .",
+        "incorrect": "المثلث ABC قائم في C: [BC] يقابل A و [AB] الوتر."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-JUZ",
+          "value": "68"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "statement": "استنتج قيس $\\widehat{BOC}$ مدوّرا إلى الوحدة.",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (بالدرجة)",
+      "expectedAnswer": "44",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوس الذي تحصره كل زاوية: هل هو نفس القوس؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الزاويتين: أيهما أكبر، المركزية أم المحيطية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قيس الزاوية المحيطية نصف قيس الزاوية المركزية التي تحصر معها نفس القوس."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{BOC} = 2\\widehat{BAC} \\approx 44^\\circ$ .",
+        "incorrect": "BOC مركزية و BAC محيطية تحصران القوس BC."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-DIF",
+          "value": "11"
+        },
+        {
+          "id": "MISC-MUHITIYA-MUSAWIYA",
+          "value": "22"
+        }
+      ]
+    }
+  ]
+}

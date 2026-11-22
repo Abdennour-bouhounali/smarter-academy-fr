@@ -47,7 +47,7 @@ class ImportContentRegistry extends Command
 
         $this->table(
             ['Kind', 'Created', 'Updated', 'Retired', 'Unchanged'],
-            collect(['modules', 'exercises'])->map(fn ($kind) => [
+            collect(['modules', 'exercises', 'resources', 'items'])->map(fn ($kind) => [
                 $kind,
                 count($summary[$kind]['created']),
                 count($summary[$kind]['updated']),
@@ -56,7 +56,7 @@ class ImportContentRegistry extends Command
             ])->all()
         );
 
-        foreach (['modules', 'exercises'] as $kind) {
+        foreach (['modules', 'exercises', 'resources', 'items'] as $kind) {
             foreach (['created', 'updated', 'retired'] as $change) {
                 foreach ($summary[$kind][$change] as $label) {
                     $this->line("  {$kind} {$change}: {$label}");
@@ -72,6 +72,12 @@ class ImportContentRegistry extends Command
             foreach ($unknown as $code) {
                 $this->line("  {$code}");
             }
+        }
+
+        // Un item refusé est une erreur de CONTENU (mapping de learning point
+        // faux) : dite ici, jamais importée à moitié.
+        foreach ($summary['invalidItems'] ?? [] as $invalid) {
+            $this->error("  item refusé : {$invalid}");
         }
 
         $this->info($dryRun ? 'Dry run — nothing was written.' : 'Content registry imported.');

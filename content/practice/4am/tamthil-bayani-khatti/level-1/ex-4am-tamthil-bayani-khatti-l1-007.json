@@ -1,0 +1,135 @@
+{
+  "id": "ex-4am-tamthil-bayani-khatti-l1-007",
+  "lessonCode": "tamthil-bayani-khatti",
+  "level": 1,
+  "metadata": {
+    "title": "نقطتان: تنتميان أم لا؟",
+    "estimatedMinutes": 4,
+    "tags": [
+      "انتماء نقطة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tamthil-bayani-khatti_P1",
+      "modelledOn": "know-3",
+      "adaptedFrom": "ex-4am-tamthil-bayani-khatti-l1-007"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الدالة الخطية $f$ حيث $f(x) = 2x$ ، و $(D)$ تمثيلها البياني."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "بيّن إن كانت كل نقطة من النقطتين التاليتين تنتمي إلى $(D)$ ، مع التعليل.",
+      "statement": "النقطة $P(3 ; 6)$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "تنتمي إلى $(D)$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا تنتمي إلى $(D)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-BAYANI-FASILA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب صورة فاصلة النقطة بالدالة $f$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن هذه الصورة بترتيب النقطة."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(3) = 2 \\times 3 = 6$ : الصورة تساوي الترتيب.",
+        "incorrect": "تنتمي النقطة إلى $(D)$ إذا كانت صورة فاصلتها تساوي ترتيبها."
+      },
+      "solution": {
+        "lines": [
+          "$f(3) = 2 \\times 3 = 6$ ، وترتيب $P$ هو 6.",
+          "إذن النقطة $P$ تنتمي إلى $(D)$ ."
+        ],
+        "result": "P ∈ (D)"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "النقطة $Q(6 ; 3)$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "تنتمي إلى $(D)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-BAYANI-FASILA-TARTIB"
+        },
+        {
+          "id": "B",
+          "content": "لا تنتمي إلى $(D)$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب صورة فاصلة النقطة $Q$ بالدالة $f$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن هذه الصورة بترتيب $Q$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(6) = 12$ والترتيب 3: النقطة $Q$ لا تنتمي إلى $(D)$ .",
+        "incorrect": "لا تخلط بين الفاصلة والترتيب: احسب صورة الفاصلة 6."
+      },
+      "solution": {
+        "lines": [
+          "$f(6) = 2 \\times 6 = 12$ ، وترتيب $Q$ هو 3.",
+          "$12 \\neq 3$ ، إذن النقطة $Q$ لا تنتمي إلى $(D)$ ."
+        ],
+        "result": "Q ∉ (D)"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

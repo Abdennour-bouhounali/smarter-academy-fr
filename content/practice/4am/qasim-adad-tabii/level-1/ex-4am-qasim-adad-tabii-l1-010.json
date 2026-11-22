@@ -1,0 +1,124 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l1-010",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2023 — A = 646/19",
+    "estimatedMinutes": 4,
+    "tags": [
+      "كسر",
+      "عدد طبيعي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-adad-tabii_P2",
+      "modelledOn": "BEM 2023 I-1 01"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد A حيث:",
+    "formulas": [
+      "A = \\dfrac{646}{19}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن A عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة A (عدد طبيعي)",
+      "expectedAnswer": "34",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 646 على 19."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان الباقي معدومًا فإن $646 = 19 \\times q$."
+        }
+      ],
+      "feedback": {
+        "correct": "$646 = 19 \\times 34$ إذن $A = 34$ عدد طبيعي.",
+        "incorrect": "اقسم 646 على 19 وانظر هل الباقي معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$19 \\times 34 = 646$",
+          "$A = \\dfrac{19 \\times 34}{19}$",
+          "إذن A عدد طبيعي:"
+        ],
+        "result": "A = 34"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل العدد 646 مضاعف للعدد 34؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$a$ مضاعف للعدد $b$ إذا وُجد عدد طبيعي $k$ حيث $a = b \\times k$."
+        }
+      ],
+      "feedback": {
+        "correct": "$646 = 34 \\times 19$: 646 مضاعف للعدد 34.",
+        "incorrect": "اكتب 646 على شكل جداء أحد عامليه 34."
+      },
+      "solution": {
+        "lines": [
+          "$646 = 19 \\times 34 = 34 \\times 19$",
+          "إذن 646 مضاعف للعدد 34."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

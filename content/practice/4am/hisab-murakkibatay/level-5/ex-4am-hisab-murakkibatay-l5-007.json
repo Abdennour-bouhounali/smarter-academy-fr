@@ -1,0 +1,71 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l5-007",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 5,
+  "metadata": {
+    "title": "وضعية — رأس رابع بكسور",
+    "estimatedMinutes": 4,
+    "tags": [
+      "متوازي أضلاع",
+      "كسور"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hisab-murakkibatay_P3",
+      "modelledOn": "ex-14"
+    }
+  },
+  "statement": {
+    "content": "$A(0{,}5\\,;\\,-1)$ ، $B(2{,}5\\,;\\,\\dfrac{1}{3})$ ، $D(-1\\,;\\,\\dfrac{2}{3})$ . C النقطة حيث ABCD متوازي أضلاع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا C:",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "point",
+      "answerFormat": "الإحداثيتان (x ; y) — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "1",
+        "y": "2"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-3",
+            "y": "-2/3"
+          },
+          "id": "MISC-MAALAM-TARTIB-NUQAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ABCD متوازي أضلاع: $\\overrightarrow{DC} = \\overrightarrow{AB}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب مركبتي AB (كسور)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "C = D زائد مركبتي AB."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AB}\\begin{pmatrix} 2 \\\\ \\dfrac{4}{3} \\end{pmatrix}$ : $C\\left(1\\,;\\,2\\right)$ .",
+        "incorrect": "من D نتحرّك بمركبتي AB."
+      }
+    }
+  ]
+}

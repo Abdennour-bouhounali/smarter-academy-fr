@@ -1,0 +1,156 @@
+{
+  "id": "ex-4am-tayin-pgcd-l3-010",
+  "lessonCode": "tayin-pgcd",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2025 — PGCD(204 ; 85) ومنتصف قطعة",
+    "estimatedMinutes": 9,
+    "tags": [
+      "PGCD",
+      "حصر القواسم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tayin-pgcd_P1",
+      "modelledOn": "BEM 2025 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في المستوي المزوّد بمعلم متعامد ومتجانس $(O ; \\vec{i} , \\vec{j})$ ، نعتبر النقطتين $A(2 ; 5)$ و $C(204 ; 85)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب: PGCD(204 ; 85).",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "17",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قائمة قواسم كل من العددين 204 و 85، مثنى مثنى (1 مع العدد نفسه، ثم 2 …) حتى لا يفوتك قاسم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استخرج القواسم المشتركة: الأعداد الموجودة في القائمتين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاسم المشترك الأكبر هو أكبر القواسم المشتركة، لا أيّ واحد منها."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 204 و 85 هي 1 ، 17، وأكبرها 17.",
+        "incorrect": "اكتب قائمتي القواسم كاملتين، ثم خذ أكبر عدد يظهر في القائمتين معًا."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 204 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 12 ، 17 ، 34 ، 51 ، 68 ، 102 ، 204",
+          "قواسم العدد 85 هي: 1 ، 5 ، 17 ، 85",
+          "القواسم المشتركة للعددين 204 و 85 هي: 1 ، 17",
+          "أكبرها هو 17، إذن:"
+        ],
+        "result": "PGCD(204 ; 85) = 17"
+      },
+      "work": "optional",
+      "timeSeconds": 330
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "احسب إحداثيي النقطة $M$ منتصف القطعة $[AC]$ .",
+      "statement": "فاصلة النقطة $M$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "103",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "منتصف قطعة: فاصلته نصف مجموع فاصلتي الطرفين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع فاصلتي A و C ثم اقسم على 2."
+        }
+      ],
+      "feedback": {
+        "correct": "$x_M = \\dfrac{2 + 204}{2} = 103$",
+        "incorrect": "فاصلة المنتصف هي نصف مجموع الفاصلتين، لا نصف الفرق."
+      },
+      "solution": {
+        "lines": [
+          "$x_M = \\dfrac{x_A + x_C}{2} = \\dfrac{2 + 204}{2} = 103$"
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ترتيبة النقطة $M$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "45",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ترتيبة المنتصف نصف مجموع ترتيبتي الطرفين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع ترتيبتي A و C ثم اقسم على 2."
+        }
+      ],
+      "feedback": {
+        "correct": "$y_M = \\dfrac{5 + 85}{2} = 45$",
+        "incorrect": "ترتيبة المنتصف هي نصف مجموع الترتيبتين."
+      },
+      "solution": {
+        "lines": [
+          "$y_M = \\dfrac{y_A + y_C}{2} = \\dfrac{5 + 85}{2} = 45$"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

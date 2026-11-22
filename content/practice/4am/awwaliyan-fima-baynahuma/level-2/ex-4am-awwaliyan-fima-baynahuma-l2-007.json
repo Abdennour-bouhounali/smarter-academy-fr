@@ -1,0 +1,138 @@
+{
+  "id": "ex-4am-awwaliyan-fima-baynahuma-l2-007",
+  "lessonCode": "awwaliyan-fima-baynahuma",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2025 — PGCD(1176 ; 1105)",
+    "estimatedMinutes": 10,
+    "tags": [
+      "خوارزمية إقليدس",
+      "تعرّف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_awwaliyan-fima-baynahuma_P1",
+      "modelledOn": "BEM 2025 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب: PGCD(1176 ; 1105).",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 1176 على 1105: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (1176 ; 1105) بالزوج (1105 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 1. العددان 1176 و 1105 أوليان فيما بينهما.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$1176 = 1105 \\times 1 + 71$",
+          "$1105 = 71 \\times 15 + 40$",
+          "$71 = 40 \\times 1 + 31$",
+          "$40 = 31 \\times 1 + 9$",
+          "$31 = 9 \\times 3 + 4$",
+          "$9 = 4 \\times 2 + 1$",
+          "$4 = 1 \\times 4 + 0$",
+          "آخر باقٍ غير معدوم هو 1، إذن:"
+        ],
+        "result": "PGCD(1176 ; 1105) = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عيّن كل الأعداد الطبيعية $n$ حيث $30 < n < 40$ ويكون العددان $n$ و 1176 أوليين فيما بينهما.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        31,
+        37
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قواسم العدد 1176 التي تختلف عن 1 والأصغر من 40."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يُستبعد كل عدد $n$ يقبل القسمة على قاسم من قواسم 1176 يختلف عن 1."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "افحص الأعداد $n$ واحدًا واحدًا، ولا تستبعد عددًا لمجرّد أنه ليس عددًا أوليًا."
+        }
+      ],
+      "feedback": {
+        "correct": "كل عدد من هذه الأعداد قاسمه المشترك الأكبر مع 1176 يساوي 1.",
+        "incorrect": "افحص كل عدد من المجال: هل له قاسم مشترك مع 1176 يختلف عن 1؟"
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 1176 المحصورة بين 2 و 39 هي: 2 ، 3 ، 4 ، 6 ، 7 ، 8 ، 12 ، 14 ، 21 ، 24 ، 28",
+          "31: PGCD(31 ; 1176) = 1 ✓",
+          "32: 2 قاسم مشترك للعددين 32 و 1176 ✗",
+          "33: 3 قاسم مشترك للعددين 33 و 1176 ✗",
+          "34: 2 قاسم مشترك للعددين 34 و 1176 ✗",
+          "35: 7 قاسم مشترك للعددين 35 و 1176 ✗",
+          "36: 2 قاسم مشترك للعددين 36 و 1176 ✗",
+          "37: PGCD(37 ; 1176) = 1 ✓",
+          "38: 2 قاسم مشترك للعددين 38 و 1176 ✗",
+          "39: 3 قاسم مشترك للعددين 39 و 1176 ✗",
+          "الأعداد المطلوبة هي: 31 ، 37"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 360
+    }
+  ]
+}

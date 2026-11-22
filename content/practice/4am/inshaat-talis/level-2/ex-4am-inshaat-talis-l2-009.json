@@ -1,0 +1,150 @@
+{
+  "id": "ex-4am-inshaat-talis-l2-009",
+  "lessonCode": "inshaat-talis",
+  "level": 2,
+  "metadata": {
+    "title": "أربع قطع متقايسة",
+    "estimatedMinutes": 7,
+    "tags": [
+      "تقسيم قطعة",
+      "إنشاء"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_inshaat-talis_P1",
+      "modelledOn": "method-divide"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "$[AB]$ قطعة مستقيم طولها $9\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "قسّم $[AB]$ إلى أربع قطع متقايسة باستعمال المسطرة غير المدرّجة والمدور والكوس فقط، وسمّ نقط التقسيم $M_1$ و $M_2$ و $M_3$ ابتداءً من $A$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب خطوات الإنشاء مرقّمة (أو صوّر ورقتك)، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "على نصف مستقيم مساعد مبدؤه $A$ ، عيّن أربع قطع متقايسة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "صل العلامة الرابعة بـ $B$ ثم ارسم ثلاثة موازيات."
+        }
+      ],
+      "feedback": {
+        "correct": "أربع قطع متقايسة على $[Ax)$ ، $(P_4B)$ ، والموازيات المارّة بـ $P_1$ و $P_2$ و $P_3$ تعيّن $M_1$ و $M_2$ و $M_3$ .",
+        "incorrect": "قارن إنشاءك بالحل النموذجي خطوة خطوة، ثم صحّح الخطوة التي تختلف."
+      },
+      "solution": {
+        "lines": [
+          "1) نرسم نصف مستقيم $[Ax)$ لا يحمل القطعة $[AB]$ .",
+          "2) نعيّن عليه بالمدور، ابتداءً من $A$ ، 4 قطع متقايسة متتالية (بفتحة مدور كيفية) تنتهي عند العلامة $P_{4}$ .",
+          "3) نصل العلامة $P_{4}$ بالنقطة $B$ .",
+          "4) نرسم بالمسطرة والكوس الموازي للمستقيم $(P_{4}B)$ المارّ بالعلامة $P_{1}$ : يقطع $[AB]$ في $M_1$ .",
+          "5) نرسم بالمسطرة والكوس الموازي للمستقيم $(P_{4}B)$ المارّ بالعلامة $P_{2}$ : يقطع $[AB]$ في $M_2$ .",
+          "6) نرسم بالمسطرة والكوس الموازي للمستقيم $(P_{4}B)$ المارّ بالعلامة $P_{3}$ : يقطع $[AB]$ في $M_3$ .",
+          "التبرير: $(P_{1}M_1) \\parallel (P_{4}B)$ ، فحسب خاصية طالس في المثلثين $AP_{1}M_1$ و $AP_{4}B$ : $\\dfrac{AM_1}{AB} = \\dfrac{AP_{1}}{AP_{4}} = \\dfrac{1}{4}$ .",
+          "وبنفس الطريقة $\\dfrac{AM_2}{AB} = \\dfrac{2}{4}$ و $\\dfrac{AM_3}{AB} = \\dfrac{3}{4}$ : القطع الأربع متقايسة."
+        ]
+      },
+      "timeSeconds": 360
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب طول كل قطعة.",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "2,25",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-TALIS-ADAD-AL-ALAMAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أربع قطع متقايسة مجموع أطوالها $9\\,\\mathrm{cm}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9}{4} = 2{,}25\\,\\mathrm{cm}$ .",
+        "incorrect": "اقسم $AB$ على عدد القطع."
+      },
+      "solution": {
+        "lines": [
+          "$AM_1 = \\dfrac{1}{4}AB = \\dfrac{9}{4}$"
+        ],
+        "result": "2{,}25\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب الطول $AM_3$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "6,75",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\dfrac{AM_3}{AB} = \\dfrac{3}{4}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AM_3 = \\dfrac{3}{4} \\times 9 = 6{,}75\\,\\mathrm{cm}$ .",
+        "incorrect": "$[AM_3]$ ثلاث قطع من القطع الأربع."
+      },
+      "solution": {
+        "lines": [
+          "$AM_3 = \\dfrac{3}{4}AB = \\dfrac{3 \\times 9}{4}$"
+        ],
+        "result": "AM_3 = 6{,}75\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

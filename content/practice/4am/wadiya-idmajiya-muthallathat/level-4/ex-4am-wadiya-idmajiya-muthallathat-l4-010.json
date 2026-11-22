@@ -1,0 +1,168 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muthallathat-l4-010",
+  "lessonCode": "wadiya-idmajiya-muthallathat",
+  "level": 4,
+  "metadata": {
+    "title": "شاشة هاتف: قطرها وزاويته ثم قياسها بالبوصة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "خاصية فيثاغورس",
+      "الظل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-muthallathat_P1",
+      "modelledOn": "ex-31"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "شاشة هاتف مستطيلة $ABCD$ طولها $AB = 15\\,\\mathrm{cm}$ وعرضها $BC = 7\\,\\mathrm{cm}$ . يستعمل سمير هاتفه للبحث والقراءة العلمية، لا للّهو فقط."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب طول قطر الشاشة $AC$ بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P2",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm مدوّرا إلى 0,1",
+      "expectedAnswer": "16.6",
+      "misconceptionSignatures": [
+        {
+          "value": "22",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $ABC$ قائم في $B$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خاصية فيثاغورس."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC = \\sqrt{225 + 49} = \\sqrt{274} \\approx 16{,}6\\,\\mathrm{cm}$ .",
+        "incorrect": "نجمع المربعين ثم نأخذ الجذر."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $B$ : $AC^2 = 15^2 + 7^2 = 274$",
+          "$AC = \\sqrt{274} \\approx 16{,}5529$"
+        ],
+        "result": "AC \\approx 16{,}6\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط المدوّر إلى الوحدة من الدرجة لقيس الزاوية $\\widehat{BAC}$ بين القطر والطول.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: القيس بالدرجة مدوّرا إلى الوحدة",
+      "expectedAnswer": "25",
+      "misconceptionSignatures": [
+        {
+          "value": "65",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$[BC]$ مقابل للزاوية و $[AB]$ مجاور لها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل اللمسة العكسية للنسبة في آلة حاسبة مبرمجة على الدرجة، ثم دوّر في آخر الحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan\\widehat{BAC} = \\dfrac{7}{15}$ ومنه $\\widehat{BAC} \\approx 25{,}02^{\\circ}$ ، أي $25^{\\circ}$ .",
+        "incorrect": "استعمل الطولين المضبوطين واللمسة العكسية للظل."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan\\widehat{BAC} = \\dfrac{BC}{AB} = \\dfrac{7}{15}$",
+          "باستعمال الآلة الحاسبة: $\\widehat{BAC} \\approx 25{,}0169^{\\circ}$"
+        ],
+        "result": "\\widehat{BAC} \\approx 25^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "تُقاس شاشات الهواتف بطول قطرها بالبوصة ( $1$ بوصة $= 2{,}54\\,\\mathrm{cm}$ ). أعط قياس هذه الشاشة بالبوصة بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: بالبوصة مدوّرا إلى 0,1",
+      "expectedAnswer": "6.5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم طول القطر بالسنتيمتر على $2{,}54$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sqrt{274} \\div 2{,}54 \\approx 6{,}5$ بوصة.",
+        "incorrect": "نقسم على $2{,}54$ (عدد السنتيمترات في البوصة الواحدة)."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AC}{2{,}54} = \\dfrac{\\sqrt{274}}{2{,}54} \\approx 6{,}5169$"
+        ],
+        "result": "\\approx 6{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

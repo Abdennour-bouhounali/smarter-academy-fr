@@ -1,0 +1,269 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l2-003",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — ارتفاع مثلث متساوي الساقين",
+    "estimatedMinutes": 8,
+    "tags": [
+      "خاصية فيثاغورس",
+      "متساوي الساقين",
+      "ارتفاع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$KJL$ مثلث متساوي الساقين رأسه الأساسي $K$ حيث $KJ = KL = 4\\,\\mathrm{cm}$ و $JL = 4{,}8\\,\\mathrm{cm}$ . الارتفاع $[KH]$ يقطع $[JL]$ في منتصفه $H$ .",
+    "figure": {
+      "points": {
+        "J": [
+          -2.4,
+          0
+        ],
+        "L": [
+          2.4,
+          0
+        ],
+        "H": [
+          0,
+          0
+        ],
+        "K": [
+          0,
+          3.2
+        ]
+      },
+      "segments": [
+        {
+          "from": "J",
+          "to": "H",
+          "ticks": 1
+        },
+        {
+          "from": "H",
+          "to": "L",
+          "ticks": 1
+        },
+        {
+          "from": "J",
+          "to": "K",
+          "label": "4 cm"
+        },
+        {
+          "from": "K",
+          "to": "L",
+          "label": "4 cm"
+        },
+        {
+          "from": "K",
+          "to": "H",
+          "dashed": true
+        }
+      ],
+      "rightAngles": [
+        [
+          "K",
+          "H",
+          "J"
+        ]
+      ],
+      "ariaLabel": "مثلث KJL متساوي الساقين رأسه K، KJ = KL = 4 cm و JL = 4,8 cm، وارتفاعه [KH] حيث H منتصف [JL]",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب الطول $HJ$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm",
+      "expectedAnswer": "2.4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطة $H$ منتصف القطعة $[JL]$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المنتصف يقسم القطعة إلى نصفين متقايسين."
+        }
+      ],
+      "feedback": {
+        "correct": "$HJ = 4{,}8 \\div 2 = 2{,}4\\,\\mathrm{cm}$ .",
+        "incorrect": "$H$ منتصف $[JL]$ : خذ نصف الطول $JL$ ."
+      },
+      "solution": {
+        "lines": [
+          "$H$ منتصف $[JL]$ ، إذن $HJ = \\dfrac{JL}{2} = \\dfrac{4{,}8}{2} = 2{,}4\\,\\mathrm{cm}$"
+        ],
+        "result": "HJ = 2{,}4\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "برّر لماذا يمكن تطبيق خاصية فيثاغورس في المثلث $KHJ$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما معنى أن $[KH]$ ارتفاع؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خاصية فيثاغورس تتطلّب مثلثا قائما: أين الزاوية القائمة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الارتفاع عمودي على القاعدة، فالمثلث $KHJ$ قائم في $H$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "$[KH]$ ارتفاع المثلث $KJL$ ، إذن $(KH) \\perp (JL)$ .",
+          "ومنه المثلث $KHJ$ قائم في $H$ ، ووتره $[KJ]$ .",
+          "خاصية فيثاغورس لا تُطبّق إلا في مثلث قائم، وهذا محقّق هنا."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب الطول $KH$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm",
+      "expectedAnswer": "3.2",
+      "misconceptionSignatures": [
+        {
+          "value": "4.66",
+          "id": "MISC-FITAGHURAS-LEG-ADD"
+        },
+        {
+          "value": "1.6",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "10.24",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع المطلوب ليس الوتر: مربعه يساوي مربع الوتر ناقص مربع الضلع الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولا مربع الطول، ثم خذ جذره التربيعي بالآلة الحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$KH^2 = 4^2 - 2{,}4^2 = 10{,}24$ ، إذن $KH = 3{,}2\\,\\mathrm{cm}$ .",
+        "incorrect": "الطول المطلوب ضلع قائم وليس وترا: نطرح مربع الضلع المعلوم من مربع الوتر، ولا نجمع."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $KHJ$ قائم في $H$ ، حسب خاصية فيثاغورس: $KJ^2 = KH^2 + HJ^2$",
+          "ومنه: $KH^2 = KJ^2 - HJ^2$",
+          "$KH^2 = 4^2 - 2{,}4^2 = 16 - 5{,}76 = 10{,}24$",
+          "$KH = \\sqrt{10{,}24} = 3{,}2\\,\\mathrm{cm}$"
+        ],
+        "result": "KH = 3{,}2\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "احسب مساحة المثلث $KJL$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: المساحة بـ cm²",
+      "expectedAnswer": "7.68",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القاعدة $[JL]$ والارتفاع الموافق لها $[KH]$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحة المثلث = القاعدة × الارتفاع ÷ 2."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{4{,}8 \\times 3{,}2}{2} = 7{,}68\\,\\mathrm{cm^2}$ .",
+        "incorrect": "لا تنس القسمة على 2 في مساحة المثلث."
+      },
+      "solution": {
+        "lines": [
+          "$\\mathcal{A} = \\dfrac{JL \\times KH}{2} = \\dfrac{4{,}8 \\times 3{,}2}{2} = 7{,}68\\,\\mathrm{cm^2}$"
+        ],
+        "result": "\\mathcal{A} = 7{,}68\\,\\mathrm{cm^2}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

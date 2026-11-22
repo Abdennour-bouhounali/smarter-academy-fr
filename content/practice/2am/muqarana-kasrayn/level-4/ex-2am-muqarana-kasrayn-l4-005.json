@@ -1,0 +1,233 @@
+{
+  "id": "ex-2am-muqarana-kasrayn-l4-005",
+  "lessonCode": "muqarana-kasrayn",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — ثلاث أمسيات",
+    "estimatedMinutes": 10,
+    "tags": [
+      "مقارنة كسور",
+      "مجموع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "06"
+    }
+  },
+  "statement": {
+    "content": "قرأ ياسين رواية في ثلاث أمسيات : $\\dfrac{1}{4}$ منها في الأولى ، و $\\dfrac{3}{8}$ في الثانية ، و $\\dfrac{1}{16}$ في الثالثة ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما الكسر الذي يمثّل ما قرأه في الأمسيات الثلاث ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "11/16",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط ؟ وما الكسور المعطاة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد قبل الجمع أو الطرح ثمّ اختزل ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{11}{16}$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{4} = \\dfrac{4}{16}$ و $\\dfrac{3}{8} = \\dfrac{6}{16}$ .",
+          "$\\dfrac{4}{16} + \\dfrac{6}{16} + \\dfrac{1}{16} = \\dfrac{11}{16}$ ."
+        ],
+        "result": "\\dfrac{11}{16}"
+      },
+      "work": "optional",
+      "timeSeconds": 90,
+      "counted": false
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل قرأ أكثر من نصف الرواية ؟ قارن بين $\\dfrac{11}{16}$ و $\\dfrac{1}{2}$ :",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{11}{16} > \\dfrac{1}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{11}{16} < \\dfrac{1}{2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-REVERSED"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن بين المقامين : هل أحدهما مضاعف للآخر ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسرين بالمقام الأكبر ثمّ قارن بين البسطين ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب بسط الكسر الأصغر مقامًا ومقامه في العدد نفسه حتّى يصير مقامه مساويًا للمقام الآخر ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{11}{16} > \\dfrac{1}{2}$ .",
+        "incorrect": "اختر طريقة المقارنة المناسبة للحالة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$16$ مضاعف للعدد $2$ : $16 = 2 \\times 8$ .",
+          "$\\dfrac{1}{2} = \\dfrac{1 \\times 8}{2 \\times 8} = \\dfrac{8}{16}$ .",
+          "نقارن بين البسطين : $11 > 8$ ، إذن $\\dfrac{11}{16} > \\dfrac{1}{2}$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "في أيّ أمسية قرأ الجزء الأكبر ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الأولى",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "الثانية",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "الثالثة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-BIGDEN"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكسر الخاصّ بكلّ حالة ؟ وهل مقاماتها متساوية أو يقسم بعضها بعضًا ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور كلّها بالمقام نفسه إن اختلفت المقامات ثمّ قارن بين البسوط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحكم من البسط وحده ولا من المقام وحده ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب : الثانية .",
+        "incorrect": "وحّد المقامات قبل أن تحكم ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "نكتب الكسور بالمقام $16$ : $\\dfrac{1}{4} = \\dfrac{4}{16}$ ، $\\dfrac{3}{8} = \\dfrac{6}{16}$ ، $\\dfrac{1}{16}$ .",
+          "أكبر بسط هو $6$ .",
+          "الجواب : الثانية ($\\dfrac{3}{8}$) ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "ما الكسر الذي يمثّل ما بقي من الرواية ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "5/16",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط ؟ وما الكسور المعطاة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد قبل الجمع أو الطرح ثمّ اختزل ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{5}{16}$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$1 - \\dfrac{11}{16} = \\dfrac{5}{16}$ ."
+        ],
+        "result": "\\dfrac{5}{16}"
+      },
+      "work": "optional",
+      "timeSeconds": 90,
+      "counted": false
+    }
+  ]
+}

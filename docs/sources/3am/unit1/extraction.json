@@ -1,0 +1,2801 @@
+{
+ "_comment": [
+  "EXTRACTION CANONIQUE du manuel scolaire officiel — 3AM, الجيل الثاني (الشهاب 2017), unité 1 « الأعداد النسبية ».",
+  "Source : docs/official-book-pdfs/كتاب الرياضيات للسنة الثالثة متوسط الجيل الثاني.pdf, pages imprimées 6 à 21 (PDF = imprimée + 1 dans cette unité).",
+  "Ce fichier est LA source de vérité pédagogique de l’unité ; tout contenu cite un `id` d’ici via `source.elementId`.",
+  "Transcription VISUELLE ; réponses calculées par build-extraction.py (fractions.Fraction), `answerSource: computed`.",
+  "Généré par docs/sources/3am/unit1/build-extraction.py — ne pas éditer à la main."
+ ],
+ "unitCode": "aadad-nisbiya",
+ "textbook": {
+  "title": "كتاب الرياضيات — السنة الثالثة من التعليم المتوسط",
+  "generation": "الجيل الثاني",
+  "unitNumber": 1,
+  "unitTitle": "الأعداد النسبية",
+  "pages": {
+   "first": 6,
+   "last": 21
+  },
+  "pdfPageOffset": 1,
+  "sections": [
+   "سأتعلّم في هذا الباب",
+   "تحدّي",
+   "أستعدّ",
+   "أنشطة",
+   "معارف",
+   "طرائق",
+   "دوري الآن",
+   "أوظّف تعلّماتي",
+   "أؤكّد تعلّماتي",
+   "أتعمّق",
+   "أدمج تعلّماتي",
+   "وضعية للتقويم",
+   "أوظّف تكنولوجيات الإعلام والاتصال"
+  ]
+ },
+ "frozenAt": "2026-10-25",
+ "terminology": {
+  "note": "Le manuel écrit « جداء », « حاصل قسمة », « قاعدة الإشارات », « نظير », « المسافة إلى الصفر », « العوامل السالبة », « عدد فردي / زوجي ».",
+  "terms": [
+   "جداء",
+   "حاصل قسمة",
+   "قاعدة الإشارات",
+   "نظير",
+   "المسافة إلى الصفر",
+   "العوامل السالبة",
+   "مربع عدد نسبي"
+  ]
+ },
+ "elements": [
+  {
+   "id": "objectives",
+   "kind": "objectives",
+   "page": 6,
+   "section": "سأتعلّم في هذا الباب",
+   "verified": true,
+   "items": [
+    "حساب جداء عددين نسبيين.",
+    "قاعدة الإشارات.",
+    "حساب جداء عددين نسبيين.",
+    "ضرب عدد نسبي في $(-1)$.",
+    "دور ومعنى الإشارة $(-)$.",
+    "حساب جداء عدة أعداد نسبية.",
+    "مربع عدد نسبي.",
+    "حساب حاصل قسمة عددين نسبيين.",
+    "قاعدة الإشارات.",
+    "حساب حاصل قسمة.",
+    "تنظيم وتبسيط حساب."
+   ],
+   "note": "Liste imprimée en deux rubriques : « 1. حساب جداء عددين نسبيين » (قاعدة الإشارات ; حساب جداء عددين نسبيين ; ضرب عدد نسبي في (−1) ; دور ومعنى الإشارة (−) ; حساب جداء عدة أعداد نسبية) et « 2. مربع عدد نسبي » (suivi de حساب حاصل قسمة عددين نسبيين ; قاعدة الإشارات ; حساب حاصل قسمة ; تنظيم وتبسيط حساب). Le premier titre de la rubrique 2 est « مربع عدد نسبي » telle qu’imprimée ; la rubrique mêle donc le carré et le quotient."
+  },
+  {
+   "id": "opener",
+   "kind": "aside",
+   "page": 6,
+   "section": "نص تاريخي",
+   "verified": true,
+   "text": "Grand cadre blanc sous la liste des objectifs (rose et rouge) : un texte historique — ILLISIBLE, le scan a détruit la zone en blocs de pixels ; seuls des fragments sont devinables (« …الموجبة هي… », « …نسبية… »).",
+   "figure": "à gauche de la liste des objectifs : un collage décoratif de chiffres multicolores (0–9) épinglé d’un trombone."
+  },
+  {
+   "id": "challenge",
+   "kind": "challenge",
+   "page": 6,
+   "section": "تحدّي",
+   "verified": true,
+   "items": [
+    {
+     "n": 1,
+     "text": "جمعنا 2017 عددا نسبيّا كلها متساوية فوجدنا المجموع يساوي $-2017$ ، ماذا يساوي جداء كل الأعداد؟",
+     "answer": {
+      "each": "-1",
+      "product": "-1",
+      "reasoning": "2017 nombres égaux de somme −2017 : chacun vaut −1 ; 2017 facteurs (−1), un nombre IMPAIR de négatifs : produit −1"
+     }
+    },
+    {
+     "n": 2,
+     "text": "أوجد كل حالات تفكيك العدد $-36$ إلى جداء أعداد صحيحة نسبيّة.",
+     "answer": {
+      "unordered_pairs": [
+       "(-1)x36",
+       "1x(-36)",
+       "(-2)x18",
+       "2x(-18)",
+       "(-3)x12",
+       "3x(-12)",
+       "(-4)x9",
+       "4x(-9)",
+       "(-6)x6"
+      ],
+      "reasoning": "les décompositions en DEUX facteurs entiers relatifs : un signe − exactement et un diviseur positif d de 36 ; (−6)×6 est la seule paire de deux facteurs égaux en valeur absolue ; les décompositions à plus de deux facteurs (ex. (−2)×3×6) existent aussi"
+     }
+    }
+   ],
+   "answerSource": "computed",
+   "note": "La phrase est la dernière rubrique de la page, à droite d’un bloc de pixels ; le texte lu est net."
+  },
+  {
+   "id": "prep",
+   "kind": "prerequisites",
+   "page": 7,
+   "section": "أستعدّ",
+   "verified": true,
+   "instruction": "جد الإجابة الصحيحة (أو الإجابات الصحيحة) في كل حالة، مبرّرا إياها.",
+   "items": [
+    {
+     "n": 1,
+     "question": "فاصلة النقطة A على المستقيم المدرّج",
+     "options": [
+      "$+2$",
+      "$-2$",
+      "$-1$"
+     ],
+     "correct": [
+      1
+     ],
+     "figure": "droite graduée horizontale vers la droite, repérée -4 et 0 ; 6 graduations sur la partie visible ; la flèche A est sur la 3e graduation à partir de -4, soit -2 ; une seconde flèche (non nommée) est à +1",
+     "why": "A est à 2 unités à gauche de 0 : son abscisse est $-2$",
+     "verified": false
+    },
+    {
+     "n": 2,
+     "question": "في المعلم المقابل فاصلة النقطة A هي",
+     "options": [
+      "$-3$",
+      "$+1$",
+      "$-2$"
+     ],
+     "correct": [
+      2
+     ],
+     "figure": "repère orthogonal quadrillé, unités -2…2 ; A(−2 ; 1), B(1 ; 2)",
+     "why": "$A(-2\\,;\\,1)$ : abscisse $-2$",
+     "verified": true
+    },
+    {
+     "n": 3,
+     "question": "إحداثيا A هما",
+     "options": [
+      "$(2\\,;\\,-1)$",
+      "$(-2\\,;\\,-1)$",
+      "$(-2\\,;\\,1)$"
+     ],
+     "correct": [
+      2
+     ],
+     "why": "$A(-2\\,;\\,1)$",
+     "verified": true
+    },
+    {
+     "n": 4,
+     "question": "إحداثيا B هما",
+     "options": [
+      "$(-2\\,;\\,-1)$",
+      "$(2\\,;\\,1)$",
+      "$(1\\,;\\,2)$"
+     ],
+     "correct": [
+      2
+     ],
+     "why": "$B(1\\,;\\,2)$",
+     "verified": true
+    },
+    {
+     "n": 5,
+     "question": "درجة الحرارة الأكثر انخفاضا هي",
+     "options": [
+      "$-12^\\circ C$",
+      "$-15^\\circ C$",
+      "$-9^\\circ C$"
+     ],
+     "correct": [
+      1
+     ],
+     "why": "la plus basse des trois propositions : $-15$",
+     "verified": false,
+     "note": "L’énoncé n’imprime aucune donnée à comparer (pas de thermomètre sur le scan) : lu « la plus basse des trois valeurs », $-15^\\circ C$."
+    },
+    {
+     "n": 6,
+     "question": "أكبر عدد نسبي في القائمة التالية هو : $-8{,}5$ ; $-7$ ; $-7{,}5$ ; $-8$ ; $-7{,}2$",
+     "options": [
+      "$-7{,}5$",
+      "$-8{,}5$",
+      "$-7$"
+     ],
+     "correct": [
+      2
+     ],
+     "why": "le plus proche de 0 par la gauche : $-7$",
+     "verified": false
+    },
+    {
+     "n": 7,
+     "question": "في إحدى ليالي الشتاء تغيرت درجة الحرارة من $-2^\\circ C$ إلى $-10^\\circ C$. نقول إنها",
+     "options": [
+      "ارتفعت بـ $8^\\circ C$",
+      "انخفضت بـ $12^\\circ C$",
+      "انخفضت بـ $8^\\circ C$"
+     ],
+     "correct": [
+      2
+     ],
+     "why": "$-10-(-2)=-8$ : elle a baissé de $8^\\circ C$",
+     "verified": true
+    },
+    {
+     "n": 8,
+     "question": "على مستقيم مدرّج من اليمين إلى اليسار، موقع العدد $-2{,}1$ ...",
+     "options": [
+      "على يمين 0",
+      "على يمين $-2{,}15$",
+      "على يمين $-2{,}05$"
+     ],
+     "correct": [
+      1
+     ],
+     "why": "$-2{,}15<-2{,}1<-2{,}05<0$ : $-2{,}1$ est à droite de $-2{,}15$ sur la droite graduée usuelle",
+     "verified": false,
+     "note": "La formule « من اليمين إلى اليسار » est ambiguë (sens de lecture de la droite) ; lue sur la droite usuelle croissante vers la droite."
+    },
+    {
+     "n": 9,
+     "question": "النقطتان $A(-3\\,;\\,5)$ و $B(3\\,;\\,-5)$ متناظرتان بالنسبة إلى ...",
+     "options": [
+      "محور الفواصل",
+      "محور التراتيب",
+      "مبدإ المعلم"
+     ],
+     "correct": [
+      2
+     ],
+     "why": "les coordonnées sont opposées deux à deux : symétriques par rapport à l’origine",
+     "verified": false,
+     "reading": "Imprimé « (5 ; 3-)A » et « (5- ; 3)B » (rendu RTL) : A(−3 ; 5) et B(3 ; −5)."
+    },
+    {
+     "n": 10,
+     "question": "درجة الحرارة في المطبخ $29^\\circ C$ وفي المجمدة $-18^\\circ C$ ، الفارق بين درجتي الحرارة هو",
+     "options": [
+      "$11^\\circ C$",
+      "$47^\\circ C$",
+      "$18^\\circ C$"
+     ],
+     "correct": [
+      1
+     ],
+     "why": "$29-(-18)=47$",
+     "verified": true
+    },
+    {
+     "n": 11,
+     "question": "$(-3)-(-4)$ يساوي ....",
+     "options": [
+      "$(-3)+(+4)$",
+      "$(-3)-(+4)$",
+      "$(-3)+(-4)$"
+     ],
+     "correct": [
+      0
+     ],
+     "why": "$(-3)-(-4)=(-3)+(+4)=1$",
+     "verified": true,
+     "reading": "Imprimé « (4-)-(3-) » : le rendu RTL renverse les deux opérandes — c’est (−3) − (−4) = 1 ; la lecture « (−4) − (−3) » = −1 ne correspond à aucune option imprimée."
+    },
+    {
+     "n": 12,
+     "question": "$-5+9-7+13$ يساوي ....",
+     "options": [
+      "$-12+22$",
+      "$9-12+13$",
+      "$9-12-13$"
+     ],
+     "correct": [
+      0,
+      1
+     ],
+     "why": "$-5+9-7+13=10$ ; $-12+22=10$ ; $9-12+13=10$ ; $9-12-13=-16$",
+     "verified": false,
+     "reading": "Imprimé « 13+7-9+5- » : lu à l’envers −5+9−7+13 = 10 ; les options 1 et 2 valent 10 (réponses multiples permises)."
+    },
+    {
+     "n": 13,
+     "question": "يمكن كتابة $(-3)+(-5)$ على الشكل",
+     "options": [
+      "$-3+(-5)$",
+      "$-3-5$",
+      "$-3+5$"
+     ],
+     "correct": [
+      0,
+      1
+     ],
+     "why": "$(-3)+(-5)=-8$ ; $-3-5=-8$ ; $-3+5=2$",
+     "verified": false
+    },
+    {
+     "n": 14,
+     "question": "$(-5)+(-6)$ يساوي ....",
+     "options": [
+      "$-11$",
+      "$-1$",
+      "$11$"
+     ],
+     "correct": [
+      0
+     ],
+     "why": "$(-5)+(-6)=-11$",
+     "verified": true
+    },
+    {
+     "n": 15,
+     "question": "$7-(8-11)$ يساوي .....",
+     "options": [
+      "$7-8-11$",
+      "$1-11$",
+      "$7-(-3)$"
+     ],
+     "correct": [
+      2
+     ],
+     "why": "$8-11=-3$ puis $7-(-3)=10$",
+     "verified": true,
+     "reading": "Imprimé « (11 - 8) - 7 » (rendu RTL, renversé) : 7 − (8 − 11) = 10 ; l’option 3 « 7−(−3) » est exactement l’étape intermédiaire ; la lecture littérale (11−8)−7 = −4 ne correspond à aucune option."
+    }
+   ],
+   "answerSource": "computed",
+   "reading": "Tableau « الأسئلة / الإجابات (1)(2)(3) » de 15 lignes. Items 7, 10, 11, 14, 15 (jidaa-adadayn-nisbiyayn) relus deux fois à 220–420 dpi : réponses recalculées ; 11, 12, 13, 15 sont rendus à l’envers (en-tête). Les cellules d’options sont littérales. Items 1, 2, 3, 4, 5, 6, 8, 9, 12, 13 : transcrits à 220 dpi, relus par leur leçon."
+  },
+  {
+   "id": "act-1",
+   "kind": "activity",
+   "number": 1,
+   "page": 8,
+   "section": "أنشطة",
+   "title": "جداء عددين نسبيين",
+   "verified": true,
+   "text": "لسقي أشجار مزرعته، أراد فلاح حفر بئر فلجأ إلى خبير في حفر الآبار الذي أجرى دراسة لباطن الأرض ليستكشف العمق الذي يصل فيه إلى الماء. بعد دراسة أولية، قال له الخبير يجب عليك النزول إلى عمق $6m$ ، لكن بعد الحفر تبيّن أنّ الماء مازال عميقا، فقرر الفلاح استشارة خبير ثان، فكانت نتيجة الدراسة أنه لكي يتدفق الماء بغزارة يجب عليه أن يحفر 3 أضعاف العمق الذي وصل إليه في المرة الأولى. (نصطلح على التعبير عن العمق بعدد سالب و بالتالي عمق $6m$ نكتبه $-6m$) في هذه المرحلة الثانية توصّل الفلاح إلى ما يريد. 1) ما هو العمق الذي وصل إليه حتى تدفق الماء؟ 2) أعط كتابتين ممكنتين تسمحان لك بالتوصل إلى النتيجة السابقة. 3) ما هي القاعدة التي تسمح لك بحساب جداء عددين نسبيين مختلفين في الإشارة ؟",
+   "figure": "photo (décorative) d’une margelle de puits circulaire en terre, au coucher du soleil.",
+   "answer": {
+    "1": "-18 m",
+    "2": [
+     "(-6)+(-6)+(-6) = -18",
+     "3 x (-6) = (-6) x 3 = -18"
+    ],
+    "3": "le produit de deux relatifs de signes différents est négatif : on multiplie les distances à zéro et on met le signe −"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "act-2",
+   "kind": "activity",
+   "number": 2,
+   "page": 8,
+   "section": "أنشطة",
+   "title": "جداء عدد سالب في عدد موجب",
+   "verified": true,
+   "text": "للنزول إلى الميترو، يستعمل المسافرون السُلَّم الميكانيكي للمحطة الذي يتكون من 90 درجة علو الواحدة منها $28{,}5cm$. أراد أمين حساب العمق الذي يصل إليه حتى يركب الميترو فكتب: $(-28{,}5)+(-28{,}5)+\\ldots+(-28{,}5)$ (مجموع 90 حدا). لاكتشاف طريقة تسمح لك بحساب هذا المجموع، نعتبر العبارة: $E=(-3)+(-3)+(-3)+(-3)$. 1) احسب قيمة E ؟ بالعودة إلى معنى عملية الضرب، نَعلَم أن: $7+7+7$ هو مجموع 3 حدود كل منها يساوي 7 ويمكننا كتابة هذا المجموع على شكل جداء $3\\times7$ ، ونقرأ « 7 في 3 ». 2) اكتب E على شكل جداء. 3) اكتب كل واحدة من العبارات التالية على شكل مجموع ثم احسبها: $A=(-5)\\times4$ ، $B=(-13)\\times6$ ، $C=(-8)\\times9$ ، $D=(-7{,}5)\\times7$. 4) خمن طريقة تسمح لك بحساب جداء عدد سالب في عدد موجب. 5) احسب: $90\\times(-28{,}5)$ ماذا تستنتج ؟",
+   "figure": "aucune figure ; le groupe de 90 termes est surmonté d’une accolade « 90 حدا ».",
+   "answer": {
+    "1": "E = -12",
+    "2": "E = 4 x (-3) = (-3) x 4",
+    "3": {
+     "A": "(-5)+(-5)+(-5)+(-5) = -20",
+     "B": "(-13) six fois = -78",
+     "C": "(-8) neuf fois = -72",
+     "D": "(-7,5) sept fois = -52,5"
+    },
+    "4": "on multiplie les distances à zéro et on garde le signe − du facteur négatif",
+    "5": "90 x (-28,5) = -2565 (cm) soit -25,65 m : la profondeur de la station"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "act-3",
+   "kind": "activity",
+   "number": 3,
+   "page": 9,
+   "section": "أنشطة",
+   "title": "تبرير جداء عددين نسبيين",
+   "verified": true,
+   "text": "1) احسب: $(2{,}1)\\times(-4{,}5)$. نعتبر العبارة: $S=4{,}5\\times2{,}1+(-4{,}5)\\times2{,}1$. أ) باستعمال خاصية توزيع الضرب على الجمع، اكتب العبارة S على شكل جداء أحد عامليه هو العدد $2{,}1$ ثم احسب S. ب) ماذا يمكن أن تستنتج بخصوص العددين: $4{,}5\\times2{,}1$ و $(-4{,}5)\\times2{,}1$ ؟ جـ) استنتج قيمة $(-4{,}5)\\times2{,}1$. 2) احسب الجداء $(-7)\\times(-9)$. أ) استعمل النشاط 2 لحساب الجداء: $4\\times(-7)$. ب) أكمل حساب جداءات الجدول المقابل: $(-7)\\times5=\\ldots$ ؛ $(-7)\\times4=\\ldots$ ؛ $(-7)\\times3=\\ldots$ ؛ $(-7)\\times2=\\ldots$ ؛ $(-7)\\times1=\\ldots$ ؛ $(-7)\\times0=\\ldots$. 3) حساب $(-1{,}5)\\times(-0{,}6)$. نعتبر العبارة: $A=(-1{,}5)\\times0{,}6+(-1{,}5)\\times(-0{,}6)$. استعمل الطريقة التي استعملت في الجزء 1 لحساب $(-1{,}5)\\times(-0{,}6)$.",
+   "figure": "tableau de six lignes sur fond rose : (−7)×5 = …, (−7)×4 = …, (−7)×3 = …, (−7)×2 = …, (−7)×1 = …, (−7)×0 = ….",
+   "answer": {
+    "1": {
+     "S": "S = (4,5 + (-4,5)) x 2,1 = 0 x 2,1 = 0",
+     "b": "4,5 x 2,1 et (-4,5) x 2,1 sont opposés (leur somme est 0)",
+     "(-4,5)x2,1": "-9,45"
+    },
+    "2": {
+     "4x(-7)": "-28",
+     "table": [
+      "-35",
+      "-28",
+      "-21",
+      "-14",
+      "-7",
+      "0"
+     ],
+     "step": "+7 à chaque ligne quand le 2e facteur baisse de 1",
+     "(-7)x(-9)": "63"
+    },
+    "3": {
+     "A": "0",
+     "(-1,5)x(-0,6)": "0,9"
+    }
+   },
+   "answerSource": "computed",
+   "reading": "L’énoncé 2.أ renvoie au produit 4 × (−7) (le produit est commutatif : (−7) × 4 = −28, première ligne du tableau après (−7) × 5)."
+  },
+  {
+   "id": "act-4",
+   "kind": "activity",
+   "number": 4,
+   "page": 9,
+   "section": "أنشطة",
+   "title": "حاصل قسمة أعداد نسبية",
+   "verified": true,
+   "text": "نعلم أن $20=4\\times5$ معناه: $20\\div5=4$ و $20\\div4=5$. 1) أكمل ملء الفراغ بالعدد الناقص لكل واحدة من العمليات التالية: أ) $4\\times\\ldots=32$ ، $(-5)\\times\\ldots=60$ ، $7\\times\\ldots=(-28)$ ، $\\ldots\\times(-3)=(-42)$ . ب) اكتب كل واحد من هذه الأعداد الناقصة على شكل كسر. 2) ماذا تلاحظ عن قسمة عددين نسبيين؟ 3) نعتبر العبارة: $Q=\\dfrac{(-3)\\times(-5)\\times2\\times(-1)}{(-1)\\times8\\times5\\times(-5)}$. أ) ما هي إشارة بسط العبارة Q؟ وما هي إشارة المقام؟ ب) استنتج إشارة العبارة Q.",
+   "answer": {
+    "1a": {
+     "4x?=32": "8",
+     "(-5)x?=60": "-12",
+     "7x?=-28": "-4",
+     "?x(-3)=-42": "14"
+    },
+    "1b": {
+     "8": "32/4",
+     "-12": "60/(-5)",
+     "-4": "(-28)/7",
+     "14": "(-42)/(-3)"
+    },
+    "2": "on retrouve la règle des signes du produit : mêmes signes → quotient positif ; signes différents → quotient négatif",
+    "3": {
+     "numerator": "signe − (3 facteurs négatifs) : -30",
+     "denominator": "signe + (2 facteurs négatifs) : 200",
+     "Q": "signe − : Q = -30/200 = -0,15"
+    }
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "know-1",
+   "kind": "knowledge",
+   "number": 1,
+   "page": 10,
+   "section": "معارف",
+   "title": "ضرب الأعداد النسبية — قاعدة الإشارات",
+   "verified": true,
+   "text": "قاعدة الإشارات: • جداء عددين نسبيين لهما نفس الإشارة هو عدد نسبي موجب. • جداء عددين نسبيين مختلفين في الإشارة هو عدد نسبي سالب. مثال: 1) للعددين نفس الإشارة: $(-2)\\times(-6)=12$ ، $3\\times7=21$. 2) للعددين إشارتان مختلفتان: $(-2{,}4)\\times5=-12$ ، $4\\times(-6)=-24$.",
+   "answer": {
+    "checks": [
+     "(-2)x(-6)=12",
+     "3x7=21",
+     "(-2,4)x5=-12",
+     "4x(-6)=-24"
+    ]
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "know-2",
+   "kind": "knowledge",
+   "number": 2,
+   "page": 10,
+   "section": "معارف",
+   "title": "حساب جداء عددين نسبيين",
+   "verified": true,
+   "text": "قاعدة: لحساب جداء عددين نسبيين: 1) نطبّق قاعدة الإشارات. 2) نضرب المسافتين إلى الصفر فيما بينهما. حالة خاصة: من أجل كل عدد نسبي $a$ لدينا: $a\\times0=0$ و $0\\times a=0$. أمثلة: 1) للعددين نفس الإشارة، إذن، الجداء موجب. $(-10)\\times(-3{,}8)=38$ ؛ $3\\times7=21$. 2) العددان مختلفان في الإشارة إذن، الجداء سالب. $(-6)\\times3{,}4=-20{,}4$ ؛ $13\\times-4=-52$. $-3\\times0=0$ (جداء أيّ عدد في 0 يساوي 0).",
+   "answer": {
+    "checks": [
+     "(-10)x(-3,8)=38",
+     "(-6)x3,4=-20,4",
+     "-3x0=0"
+    ]
+   },
+   "answerSource": "computed",
+   "reading": "Chaque exemple est une accolade à DEUX lignes : (−10) × (−3,8) = 38 puis 3 × 7 = 21 ; (−6) × 3,4 = −20,4 puis 13 × −4 = −52 (écrit sans parenthèses dans le manuel)."
+  },
+  {
+   "id": "know-3",
+   "kind": "knowledge",
+   "number": 3,
+   "page": 10,
+   "section": "معارف",
+   "title": "ضرب عدد نسبي في (−1)",
+   "verified": true,
+   "text": "خاصية: جداء عدد نسبي $a$ في $-1$ يعطي نظير العدد $a$. $(-1)\\times a=-a$ و $a\\times(-1)=-a$. ملاحظة: يمكن أن يكون $-a$ سالبا كما يمكن أن يكون موجبا. أمثلة: 1) $6\\times(-1)=-6$. 2) $(-4{,}2)\\times(-1)=4{,}2$. • إذا كان $a=-5$ فإن $-a=5$. • و إذا كان $a=8$ فإن $-a=-8$.",
+   "answer": {
+    "checks": [
+     "6x(-1)=-6",
+     "(-4,2)x(-1)=4,2",
+     "a=-5 => -a=5",
+     "a=8 => -a=-8"
+    ]
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "know-4",
+   "kind": "knowledge",
+   "number": 4,
+   "page": 10,
+   "section": "معارف",
+   "title": "دور ومعنى الإشارة (−)",
+   "verified": true,
+   "text": "يمكن للإشارة $(-)$ عدة معان مختلفة وبالتالي تلعب أدوارا مختلفة في الحساب. الإشارة $(-)$ يمكن أن تكون: • رمزا لعملية الطرح • إشارة لعدد نسبي سالب • الإشارة التي تعيّن نظير عدد نسبي. أمثلة: 1) $13-9$ 2) $-4$ 3) $-a$ هو نظير $a$."
+  },
+  {
+   "id": "know-5",
+   "kind": "knowledge",
+   "number": 5,
+   "page": 10,
+   "section": "معارف",
+   "title": "جداء عدة أعداد نسبية",
+   "verified": true,
+   "text": "خاصية: جداء عدة أعداد نسبية يكون: • موجبا إذا كان عدد العوامل السالبة في الجداء زوجيا. • سالبا إذا كان عدد العوامل السالبة في الجداء فرديا. أمثلة: 1) $3{,}2\\times(-5)\\times4\\times(-2{,}5)\\times(-2)=-320$ ؛ عدد العوامل السالبة هو 3 وهو عدد فردي، إذن الجداء سالب. 2) $3\\times(-2{,}3)\\times(-1{,}5)\\times(-2)\\times(-4)=82{,}8$ ؛ عدد العوامل السالبة هو 4 وهو عدد زوجي، إذن الجداء موجب.",
+   "answer": {
+    "checks": [
+     "3,2x(-5)x4x(-2,5)x(-2)=-320 (3 négatifs)",
+     "3x(-2,3)x(-1,5)x(-2)x(-4)=82,8 (4 négatifs)"
+    ]
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "know-6",
+   "kind": "knowledge",
+   "number": 6,
+   "page": 10,
+   "section": "معارف",
+   "title": "مربع عدد نسبي",
+   "verified": true,
+   "text": "قاعدة: مربع عدد نسبي هو عدد موجب دوما. أمثلة: 1) $(+1{,}2)^2=1{,}2\\times1{,}2=1{,}44$ 2) $(-1{,}2)^2=(-1{,}2)\\times(-1{,}2)=+1{,}44$.",
+   "answer": {
+    "checks": [
+     "(+1,2)^2=1,44",
+     "(-1,2)^2=+1,44"
+    ]
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "method-1",
+   "kind": "method",
+   "number": 1,
+   "page": 11,
+   "section": "طرائق",
+   "title": "ضرب الأعداد النسبية",
+   "verified": true,
+   "items": [
+    {
+     "n": 1,
+     "text": "تمرين 1: احسب $A=-3\\times7$. حل: لدينا: $A=-3\\times7=-(3\\times7)=-21$.",
+     "answer": {
+      "A": "-21"
+     },
+     "comment": "الجداء سالب لأن العددين مختلفان في الإشارة."
+    },
+    {
+     "n": 2,
+     "text": "تمرين 2: احسب $B=-6\\times(-3{,}5)$. حل: لدينا: $B=-6\\times(-3{,}5)=6\\times3{,}5=21$.",
+     "answer": {
+      "B": "21"
+     },
+     "comment": "الجداء موجب لأن للعددين نفس الإشارة."
+    },
+    {
+     "n": 3,
+     "text": "تمرين 3: ما هي إشارة الجداء: $P=(-2)\\times0{,}3\\times(-21)\\times6\\times(-11)$ ؟ حل: عدد العوامل السالبة 3، وهو عدد فردي، وعليه يكون الجداء سالبا. $P=-(2\\times0{,}3\\times21\\times6\\times11)=-831{,}6$.",
+     "answer": {
+      "sign": "-",
+      "P": "-831,6"
+     },
+     "comment": "هناك 5 عوامل، 3 منها سالبة. وبالتالي الجداء سالب. بعد تعيين الإشارة نقوم بضرب العوامل في بعضها."
+    }
+   ],
+   "text": "طريقة: لضرب عددين نسبيين: • نلاحظ إشارتي العاملين ثم نطبّق قاعدة الإشارات. • نضرب المسافتين إلى الصفر ببعضهما. • يكون الجداء موجبا إذا كان للعددين نفس الإشارة، ويكون سالبا إذا كانا مختلفين في الإشارة.",
+   "answerSource": "computed",
+   "reading": "Les exercices 1 et 2 portent sur deux relatifs (jidaa-adadayn-nisbiyayn) ; l’exercice 3 (5 facteurs) est celui de jidaa-ida-nisbiya (voir destinations)."
+  },
+  {
+   "id": "method-2",
+   "kind": "method",
+   "number": 2,
+   "page": 11,
+   "section": "طرائق",
+   "title": "حساب جداء عدة عوامل",
+   "verified": true,
+   "text": "تمرين: احسب الجداءين: $A=(+3)\\times(-7)\\times(-0{,}5)\\times(-8)$ ؛ $B=13\\times(-5)\\times(-1)\\times(-3)\\times(-2)$. حل: $A=(+3)\\times(-7)\\times(-0{,}5)\\times(-8)=-84$ ؛ $B=13\\times(-5)\\times(-1)\\times(-3)\\times(-2)=+390$. تعاليق: • نتأكد في البداية أنه لا توجد إلا جداءات. • نقوم بعدّ الإشارات $(-)$ في الجداء. • في العبارة A توجد 3 عوامل سالبة، وهو عدد فردي، إذن، فالعدد A سالب. • نحسب جداء كل المسافات إلى الصفر فنجد: $3\\times7\\times0{,}5\\times8=84$. • في العبارة B توجد 4 عوامل سالبة، وهو عدد زوجي، إذن، فالعدد B موجب. • نحسب جداء كل المسافات إلى الصفر فنجد: $13\\times5\\times1\\times3\\times2=390$. طريقة: لحساب جداء عدة عوامل، نَعُدّ العوامل السالبة، إذا كان عددها فرديا يكون الجداء سالبا و إذا كان عددها زوجيا يكون الجداء موجبا.",
+   "answer": {
+    "A": "-84",
+    "B": "390"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "method-3",
+   "kind": "method",
+   "number": 3,
+   "page": 11,
+   "section": "طرائق",
+   "title": "حالات خاصة",
+   "verified": true,
+   "text": "تمرين: احسب الجداءات التالية: $A=3\\times(-1)$ ، $B=(-1)\\times(-4)$ ، $C=3\\times0$. حل: $A=3\\times(-1)=-3$ ؛ $C=3\\times0=0$ ، $B=(-1)\\times(-4)=4$. تعاليق: • جداء أي عدد نسبي في $(-1)$ يعطي نظير هذا العدد. • جداء أي عدد نسبي في 0 يعطي 0.",
+   "answer": {
+    "A": "-3",
+    "B": "4",
+    "C": "0"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "now-11",
+   "kind": "now",
+   "page": 11,
+   "section": "دوري الآن",
+   "title": "دوري الآن",
+   "verified": true,
+   "text": "ما هي إشارة الجداء في كل حالة مما يلي ؟ أ) $P=(-2)\\times(-2)\\times\\ldots\\times(-2)$ (مجموعة تحتها العبارة « 85 عاملا ») ؛ ب) $B=3\\times(-5)\\times5\\times(-5)\\times5\\times(-5)\\times(-5)$.",
+   "answer": {
+    "a": "signe − : 85 facteurs égaux à (−2), 85 est impair (le dernier chiffre 5 est certain : le signe est − pour 85, 65 ou 05)",
+    "b": "signe + : 4 facteurs négatifs"
+   },
+   "answerSource": "computed",
+   "reading": "Le nombre de facteurs sous l’accolade est lu « 85 » à 500 dpi (relu par jidaa-ida-nisbiya, 2026-10-26) : le DERNIER chiffre est sans ambiguïté un 5, donc le nombre est IMPAIR et le signe est « − » quel que soit le premier chiffre (8, 6 ou 0) ; le plan README et le plan de jidaa-ida-nisbiya disaient « 50 » (pair, signe +) : c’était une erreur de lecture. L’ordre des facteurs de B est celui du scan (le produit est commutatif)."
+  },
+  {
+   "id": "know-7",
+   "kind": "knowledge",
+   "number": 7,
+   "page": 12,
+   "section": "معارف",
+   "title": "توزيع الضرب على الجمع أو الطرح",
+   "verified": true,
+   "text": "خواص: إذا كانت $a$ ، $b$ ، $k$ أعدادا نسبية فإنّ: • $k(a+b)=ka+kb$ ؛ $k(a-b)=ka-kb$ • $ka+kb=k(a+b)$ ؛ $ka-kb=k(a-b)$. أمثلة: • $-7(a+2)=-7a-14$ • $5b-12b=(5-12)b=-7b$ • $2(a-b)=2a-2b$ • $(-3)\\times a+(-3)\\times b=(-3)(a+b)$.",
+   "note": "Le manuel écrit ces propriétés avec des LETTRES (k, a, b) : c’est le territoire de nashr-jabri-3am pour l’écriture littérale ; jidaa-ida-nisbiya ne les emploie que sur des NOMBRES (plan README, boundaries)."
+  },
+  {
+   "id": "know-8",
+   "kind": "knowledge",
+   "number": 8,
+   "page": 12,
+   "section": "معارف",
+   "title": "حاصل قسمة عددين نسبيين — قاعدة الإشارات",
+   "verified": true,
+   "text": "قاعدة الإشارات: • حاصل قسمة عددين نسبيين لهما نفس الإشارة هو عدد موجب. • حاصل قسمة عددين نسبيين مختلفين في الإشارة هو عدد سالب. انتبه ! حاصل قسمة عددين سالبين هو عدد موجب. ملاحظة: $a$ و $b$ عددان نسبيان، حيث $b\\neq0$ . $\\dfrac{-a}{-b}=\\dfrac{a}{b}$. أمثلة: 1) احسب: $6\\div(-3)$. المقسوم والمقسوم عليه مختلفان في الإشارة، إذن حاصل القسمة سالب. ننجز عملية قسمة المسافتين إلى الصفر: $6\\div3=2$ إذن: $6\\div(-3)=-2$. 2) احسب $\\dfrac{-27}{-9}$. البسط والمقام لهما نفس الإشارة، إذن حاصل القسمة موجب. ننجز عملية قسمة المسافتين إلى الصفر: $\\dfrac{27}{9}=3$ إذن: $\\dfrac{-27}{-9}=3$.",
+   "answer": {
+    "checks": [
+     "6÷(-3)=-2",
+     "(-27)/(-9)=3"
+    ]
+   },
+   "answerSource": "computed",
+   "reading": "Les deux lignes de l’exemple 1 sont composées en bidi (« 6 ÷ 3 = 2 » s’affiche à l’envers) : lu 6 ÷ (−3) = −2 (confirmé par « mêmes distances 6 ÷ 3 = 2, signes différents »)."
+  },
+  {
+   "id": "know-9",
+   "kind": "knowledge",
+   "number": 9,
+   "page": 12,
+   "section": "معارف",
+   "title": "حساب حاصل القسمة",
+   "verified": true,
+   "text": "$a$ و $b$ عددان نسبيان، حيث $b\\neq0$ . حاصل قسمة العدد النسبي $a$ على العدد النسبي غير المعدوم $b$ هو العدد $\\dfrac{a}{b}$ الذي يحقق: $\\dfrac{a}{b}\\times b=a$. أمثلة: 1) $\\dfrac{-5}{6}\\times6=-5$ ، حاصل قسمة $-5$ على 6 هو $\\dfrac{-5}{6}$. 2) $\\dfrac{3}{-7}\\times(-7)=3$ ، حاصل قسمة 3 على $-7$ هو $\\dfrac{3}{-7}$.",
+   "answer": {
+    "checks": [
+     "(-5/6)x6=-5",
+     "(3/(-7))x(-7)=3"
+    ]
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "know-10",
+   "kind": "knowledge",
+   "number": 10,
+   "page": 12,
+   "section": "معارف",
+   "title": "تنظيم وتبسيط حساب",
+   "verified": true,
+   "text": "لإنجاز سلسلة حسابات على الأعداد النسبية بالعمليات الأربع أراعي ما يلي: • احترام قواعد الأولوية التي تعلمتها في السنة الثانية. • أطبق قواعد جمع وطرح الأعداد النسبية بطريقة صحيحة. • أطبق القواعد الجديدة حول ضرب وقسمة الأعداد النسبية. مثال: حساب $A=3-(2\\times(-5)+8)$. حل: نعيّن داخل الأقواس الحسابات التي لها أولوية. داخل الأقواس نحترم أولوية العمليات ونبدأ بالضرب. $A=3-(2\\times(-5)+8)=3-(-2\\times5+8)=3-(-10+8)=3-(-2)=3+2=+5$.",
+   "answer": {
+    "A": "5"
+   },
+   "answerSource": "computed",
+   "reading": "La deuxième ligne « = 3 − (−2 × 5 + 8) » est imprimée telle quelle par le manuel (2 × (−5) y est réécrit −2 × 5)."
+  },
+  {
+   "id": "method-4",
+   "kind": "method",
+   "number": 4,
+   "page": 13,
+   "section": "طرائق",
+   "title": "تنظيم وتبسيط حساب",
+   "verified": true,
+   "text": "تمرين: احسب الجداء التالي: $P=(-4)\\times0{,}07\\times(-25)\\times(-12)\\times3\\times(-2)$. حل: $P=4\\times0{,}07\\times25\\times12\\times3\\times2$ ؛ $P=4\\times25\\times0{,}07\\times12\\times6$ ؛ $P=100\\times0{,}07\\times72$ ؛ $P=7\\times72=504$. تعاليق: • لدينا 6 عوامل 4 منها سالبة وبالتالي فإنّ الجداء P عدد موجب. • نقوم بضرب المسافات إلى الصفر. طريقة: لحساب جداء أعداد نسبية يمكننا تغيير ترتيب العوامل دون أن يتغير الجداء.",
+   "answer": {
+    "P": "504",
+    "sign": "+ (4 négatifs sur 6 facteurs)"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "method-5",
+   "kind": "method",
+   "number": 5,
+   "page": 13,
+   "section": "طرائق",
+   "title": "تعيين إشارة حاصل قسمة",
+   "verified": true,
+   "text": "تمرين: عيّن إشارة حاصل القسمة في كل حالة: $\\dfrac{17}{4}$ ، $\\dfrac{-3}{7}$ ، $\\dfrac{5}{-9}$ ، $\\dfrac{-38}{-23}$. حل: • 17 و 4 موجبان إذن $\\dfrac{17}{4}$ موجب. • $-3$ و 7 مختلفان في الإشارة إذن $\\dfrac{-3}{7}$ سالب. • 5 و $-9$ مختلفان في الإشارة إذن $\\dfrac{5}{-9}$ سالب. • $-38$ و $-23$ سالبان إذن $\\dfrac{-38}{-23}$ موجب. تعاليق: • في كل حالة من الحالات المقابلة نلاحظ إشارتي البسط والمقام. • إذا كان لهما نفس الإشارة، فإن حاصل القسمة موجب. • إذا كانا مختلفين في الإشارة، فحاصل القسمة سالب. ملاحظة: حاصل القسمة يمكن أن يكون عددا غير عشري. مثال: $\\dfrac{-3}{7}$ ، $\\dfrac{5}{-9}$. طريقة: تعيين إشارة حاصل قسمة عددين نسبيين. • إذا كان للعددين نفس الإشارة فإنّ حاصل القسمة موجب. • إذا كان للعددين إشارتان مختلفتان فإن حاصل القسمة سالب.",
+   "answer": {
+    "17/4": "+",
+    "-3/7": "-",
+    "5/-9": "-",
+    "-38/-23": "+"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "method-6",
+   "kind": "method",
+   "number": 6,
+   "page": 13,
+   "section": "طرائق",
+   "title": "حساب حاصل القسمة",
+   "verified": true,
+   "text": "تمرين: احسب: $A=-63\\div7$ ؛ $B=-54\\div(-6)$. حل: 1) حساب $A=-63\\div7$. لدينا: A سالب و $63\\div7=9$ ومنه $A=-9$. 2) حساب $B=-54\\div(-6)$. لدينا: B موجب و $54\\div6=9$ ومنه $B=9$. تعاليق: • $(-63)$ و 7 مختلفان في الإشارة وبالتالي فحاصل القسمة سالب. حاصل قسمة المسافتين إلى الصفر هو $63\\div7=9$. • $-54$ و $-6$ سالبان وبالتالي حاصل القسمة موجب. حاصل قسمة المسافتين إلى الصفر هو $54\\div6=9$. قاعدة: لقسمة عدد نسبي على عدد نسبي غير معدوم: 1) نحدد إشارة حاصل القسمة باستعمال قاعدة الإشارات. 2) نجري عملية قسمة المسافتين إلى الصفر.",
+   "answer": {
+    "A": "-9",
+    "B": "9"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "now-13",
+   "kind": "now",
+   "page": 13,
+   "section": "دوري الآن",
+   "title": "دوري الآن",
+   "verified": true,
+   "items": [
+    {
+     "n": 1,
+     "text": "ما هي إشارة كل من: $\\dfrac{a}{b}$ ؛ $\\dfrac{-a}{b}$ ؛ $\\dfrac{a}{-b}$ ؛ $\\dfrac{-a}{-b}$ ؟",
+     "answer": {
+      "if a>0, b>0": {
+       "a/b": "+",
+       "-a/b": "-",
+       "a/-b": "-",
+       "-a/-b": "+"
+      }
+     },
+     "note": "Le manuel ne précise pas les signes de a et b ; lu avec a et b positifs (b ≠ 0)."
+    },
+    {
+     "n": 2,
+     "text": "احسب: $A=-0{,}239\\div100$ ؛ $B=+0{,}239\\div(-0{,}0001)$.",
+     "answer": {
+      "A": "-0,00239",
+      "B": "-2390"
+     }
+    }
+   ],
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-1",
+   "kind": "exercise",
+   "number": 1,
+   "page": 14,
+   "section": "ضرب الأعداد النسبية",
+   "text": "احسب ما يلي: أ) $(-3)\\times(+10)$ ؛ ب) $(+5)\\times(-5)$ ؛ جـ) $(-6)\\times(+4)$ ؛ د) $(-12)\\times(+3)$ ؛ هـ) $(+5)\\times(-10)$ ؛ و) $(-9)\\times(-8)$.",
+   "verified": true,
+   "answer": {
+    "أ": "-30",
+    "ب": "-25",
+    "جـ": "-24",
+    "د": "-36",
+    "هـ": "-50",
+    "و": "72"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-2",
+   "kind": "exercise",
+   "number": 2,
+   "page": 14,
+   "section": "ضرب الأعداد النسبية",
+   "text": "احسب ما يلي: أ) $(-2{,}5)\\times(+4)$ ؛ ب) $(+6{,}5)\\times(-4)$ ؛ جـ) $(-3{,}25)\\times(-10)$ ؛ د) $(+8{,}6)\\times(+0{,}1)$ ؛ هـ) $(-7{,}8)\\times(+100)$ ؛ و) $(-10)\\times(+5{,}25)$.",
+   "verified": true,
+   "answer": {
+    "أ": "-10",
+    "ب": "-26",
+    "جـ": "32,5",
+    "د": "0,86",
+    "هـ": "-780",
+    "و": "-52,5"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-3",
+   "kind": "exercise",
+   "number": 3,
+   "page": 14,
+   "section": "ضرب الأعداد النسبية",
+   "text": "احسب ما يلي: أ) $-7\\times(+8)$ ؛ ب) $4\\times(-16)$ ؛ جـ) $(-15)\\times6$ ؛ د) $(-7)\\times(-9)$ ؛ هـ) $-3{,}5\\times(+8)$ ؛ و) $3{,}3\\times(-100)$.",
+   "verified": true,
+   "answer": {
+    "أ": "-56",
+    "ب": "-64",
+    "جـ": "-90",
+    "د": "63",
+    "هـ": "-28",
+    "و": "-330"
+   },
+   "answerSource": "computed",
+   "reading": "Relu à 240 dpi : « -7×(+8) » et « -3,5×(+8) » sont imprimés SANS parenthèses autour du premier facteur."
+  },
+  {
+   "id": "ex-4",
+   "kind": "exercise",
+   "number": 4,
+   "page": 14,
+   "section": "ضرب الأعداد النسبية",
+   "text": "احسب ما يلي: أ) $6\\times8$ ؛ ب) $-0{,}2\\times(-14)$ ؛ جـ) $-3\\times(-8)$ ؛ د) $3{,}5\\times(-0{,}1)$ ؛ هـ) $-7\\times(-10{,}02)$ ؛ و) $-14\\times(-3{,}5)$.",
+   "verified": true,
+   "answer": {
+    "أ": "48",
+    "ب": "2,8",
+    "جـ": "24",
+    "د": "-0,35",
+    "هـ": "70,14",
+    "و": "49"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-5",
+   "kind": "exercise",
+   "number": 5,
+   "page": 14,
+   "section": "ضرب الأعداد النسبية",
+   "text": "احسب الجداءات التالية: أ) $(-4)\\times(-4)\\times(-3)\\times(-3)$ ؛ ب) $(-0{,}1)\\times(-0{,}38)$ ؛ جـ) $0{,}05\\times(-2{,}5)\\times20\\times(-4)$ ؛ د) $(-0{,}5)\\times17\\times(-2)$.",
+   "verified": true,
+   "answer": {
+    "أ": "144",
+    "ب": "0,038",
+    "جـ": "10",
+    "د": "17"
+   },
+   "answerSource": "computed",
+   "reading": "Produits de 4, 2, 4 et 3 facteurs (jidaa-ida-nisbiya). Le 0,05 de جـ est imprimé « 0.05 » avec un point sur le scan ; lu 0,05."
+  },
+  {
+   "id": "ex-6",
+   "kind": "exercise",
+   "number": 6,
+   "page": 14,
+   "section": "ضرب الأعداد النسبية",
+   "text": "اربط بين النتائج المتساوية: العمود الأول: $20\\times(-1)$ ؛ $-1{,}5\\times(-2)$ ؛ $(-12)\\times(-0{,}1)$ ؛ $(-20)\\times(-6)$. العمود الثاني: $(0{,}2)\\times(+6)$ ؛ $-12\\times(-10)$ ؛ $(+4)\\times(-5)$ ؛ $(+6)\\times(+0{,}5)$.",
+   "verified": true,
+   "figure": "deux colonnes de quatre produits, chaque élément précédé d’un point rouge ; à relier deux à deux.",
+   "answer": {
+    "pairs": [
+     [
+      "20x(-1) = -20",
+      "(+4)x(-5) = -20"
+     ],
+     [
+      "-1,5x(-2) = 3",
+      "(+6)x(+0,5) = 3"
+     ],
+     [
+      "(-12)x(-0,1) = 1,2",
+      "(0,2)x(+6) = 1,2"
+     ],
+     [
+      "(-20)x(-6) = 120",
+      "-12x(-10) = 120"
+     ]
+    ]
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-7",
+   "kind": "exercise",
+   "number": 7,
+   "page": 14,
+   "section": "ضرب الأعداد النسبية",
+   "text": "في القائمة التالية، احسب الجداءات الموجبة: أ) $(-2)\\times(+10)$ ؛ ب) $(-2)\\times(-10)$ ؛ جـ) $(-35)\\times10$ ؛ د) $2{,}5\\times(+100)$ ؛ هـ) $(-3)\\times(+4)$ ؛ و) $(-2)\\times(-6)$.",
+   "verified": true,
+   "answer": {
+    "positive": [
+     "ب",
+     "د",
+     "و"
+    ],
+    "values": {
+     "ب": "20",
+     "د": "250",
+     "و": "12"
+    }
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-8",
+   "kind": "exercise",
+   "number": 8,
+   "page": 14,
+   "section": "ضرب الأعداد النسبية",
+   "text": "فيما يلي، احسب الجداءات السالبة فقط: أ) $0{,}5\\times(-3)$ ؛ ب) $(-4{,}2)\\times(-0{,}6)$ ؛ جـ) $(-3)\\times4$ ؛ د) $(-45)\\times(+10)$ ؛ هـ) $(-0{,}5)\\times(-0{,}5)$ ؛ و) $(-125)\\times(+8)$.",
+   "verified": true,
+   "answer": {
+    "negative": [
+     "أ",
+     "جـ",
+     "د",
+     "و"
+    ],
+    "values": {
+     "أ": "-1,5",
+     "جـ": "-12",
+     "د": "-450",
+     "و": "-1000"
+    }
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-9",
+   "kind": "exercise",
+   "number": 9,
+   "page": 14,
+   "section": "ضرب الأعداد النسبية",
+   "text": "عيّن إشارة كل من الجداءات التالية، ثم أنجز الحساب: أ) $(-9)\\times(-9)$ ؛ ب) $(-3)\\times(-6)\\times(-9)$ ؛ جـ) $(-2)\\times(-2)\\times(-2)\\times(-2)$ ؛ د) $(-1)\\times(-2)\\times(-3)\\times(-4)\\times(-5)$.",
+   "verified": true,
+   "answer": {
+    "أ": "+81",
+    "ب": "-162",
+    "جـ": "+16",
+    "د": "-120"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-10",
+   "kind": "exercise",
+   "number": 10,
+   "page": 14,
+   "section": "ضرب الأعداد النسبية",
+   "text": "عيّن إشارة كل من الجداءات التالية، ثم أنجز الحساب: أ) $A=6\\times(-2)\\times4\\times(-1)\\times(-3)$ ؛ ب) $B=-5\\times(-3)\\times(-7)\\times4\\times(-0{,}5)$ ؛ جـ) $C=5\\times(-3)\\times0{,}8\\times(-9)\\times(-11)$ ؛ د) $D=-1\\times(+2)\\times(-3)\\times6\\times(-8)$ ؛ هـ) $E=(-2)\\times(-5)\\times(-1)\\times4\\times(-9)$.",
+   "verified": true,
+   "answer": {
+    "A": "-144",
+    "B": "+210",
+    "C": "-1188",
+    "D": "-288",
+    "E": "+360"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-11",
+   "kind": "exercise",
+   "number": 11,
+   "page": 15,
+   "section": "ضرب الأعداد النسبية",
+   "text": "أنجز الجداءات التالية: أ) $A=(-1)\\times2\\times(-3)\\times4\\times(-5)$ ؛ ب) $B=-1\\times(-2)\\times(-3)\\times(-4)\\times(-5)$ ؛ جـ) $C=1\\times2\\times(-3)\\times(-4)\\times5$ ؛ د) $D=1\\times(-2)\\times3\\times(-4)\\times5$.",
+   "verified": true,
+   "answer": {
+    "A": "-120",
+    "B": "-120",
+    "C": "120",
+    "D": "120"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-12",
+   "kind": "exercise",
+   "number": 12,
+   "page": 15,
+   "section": "ضرب الأعداد النسبية",
+   "text": "أكمل ملء الفراغات بما يناسب: أ) $(-2)\\times\\ldots\\times4\\times(-5)\\times6=-720$ ؛ ب) $2\\times(-3)\\times4\\times\\ldots\\times(-6)=720$ ؛ جـ) $\\ldots\\times(-3)\\times4\\times5\\times(-6)=-720$.",
+   "verified": true,
+   "answer": {
+    "أ": "-3",
+    "ب": "5",
+    "جـ": "-2"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-13",
+   "kind": "exercise",
+   "number": 13,
+   "page": 15,
+   "section": "ضرب الأعداد النسبية",
+   "text": "جد إشارة كل من الجداءات التالية: أ) $A=(-1)\\times(-2)\\times(-3)\\times\\ldots\\times(-15)$ ؛ ب) $B=(-38)\\times(-39)\\times(-40)\\times\\ldots\\times(-110)$ ؛ جـ) $C=(-25)\\times(-24)\\times(-23)\\times\\ldots\\times(-1)$ ؛ د) $D=(-20)\\times(-19)\\times(-18)\\times\\ldots\\times(-10)$.",
+   "verified": true,
+   "answer": {
+    "A": "- (15 facteurs négatifs)",
+    "B": "- (73 facteurs négatifs)",
+    "C": "- (25 facteurs négatifs)",
+    "D": "- (11 facteurs négatifs)"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-14",
+   "kind": "exercise",
+   "number": 14,
+   "page": 15,
+   "section": "ضرب الأعداد النسبية",
+   "text": "احسب الجداءات التالية: أ) $A=(-0{,}5)\\times19\\times(-2)$ ؛ ب) $B=(-0{,}1)\\times(-0{,}1)\\times(-0{,}1)\\times(-0{,}1)\\times(-0{,}1)$ ؛ جـ) $C=0{,}05\\times(-2{,}5)\\times20\\times(-4)$ ؛ د) $D=(-6)\\times(-6)\\times(-2)\\times(-2)$.",
+   "verified": true,
+   "answer": {
+    "A": "19",
+    "B": "-0,00001",
+    "C": "10",
+    "D": "144"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-15",
+   "kind": "exercise",
+   "number": 15,
+   "page": 15,
+   "section": "ضرب الأعداد النسبية",
+   "text": "في كل حالة، اكتب مكان $\\square$ العدد الذي به تتحقق المساواة: أ) $(-6)\\times\\square=-24$ ؛ ب) $(+40)=(-5)\\times\\square$ ؛ جـ) $(-5)\\times\\square=-2$ ؛ د) $(-2{,}5)\\times\\square=7{,}5$ ؛ هـ) $(-4)\\times\\square=10$ ؛ و) $(-0{,}5)\\times\\square=12$.",
+   "verified": true,
+   "answer": {
+    "أ": "4",
+    "ب": "-8",
+    "جـ": "0,4",
+    "د": "-3",
+    "هـ": "-2,5",
+    "و": "-24"
+   },
+   "answerSource": "computed",
+   "reading": "Le carré vide □ marque le nombre cherché ; ب) est imprimé « (+40) = (−5)×□ » (le résultat à gauche du signe =)."
+  },
+  {
+   "id": "ex-16",
+   "kind": "exercise",
+   "number": 16,
+   "page": 15,
+   "section": "ضرب الأعداد النسبية",
+   "text": "أكمل بالعدد المناسب: أ) $(-4)\\times\\square=20$ ؛ ب) $(-13)\\times\\square=-39$ ؛ جـ) $\\square\\times(-7)=-42$ ؛ د) $\\square\\times(-11)=121$ ؛ هـ) $\\square\\times(-3)=-99$ ؛ و) $(-2{,}9)\\times\\square=29$.",
+   "verified": true,
+   "answer": {
+    "أ": "-5",
+    "ب": "3",
+    "جـ": "6",
+    "د": "-11",
+    "هـ": "33",
+    "و": "-10"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-17",
+   "kind": "exercise",
+   "number": 17,
+   "page": 15,
+   "section": "ضرب الأعداد النسبية",
+   "text": "جد عددين نسبيين جداؤهما هما: أ) $32$ ؛ ب) $-28$ ؛ جـ) $-0{,}25$ ؛ د) $4{,}9$.",
+   "verified": true,
+   "answer": {
+    "أ": "8 et 4 (ou -8 et -4, 2 et 16, …)",
+    "ب": "7 et -4 (ou -7 et 4, …)",
+    "جـ": "0,5 et -0,5 (ou 0,25 et -1, …)",
+    "د": "7 et 0,7 (ou -7 et -0,7, 4,9 et 1, …)",
+    "note": "plusieurs couples possibles"
+   },
+   "answerSource": "computed",
+   "reading": "Cibles lues : 32 ; −28 ; −0,25 ; 4,9 (le signe de −28 et de −0,25 est à confirmer par la leçon : la ligne est courte, imprimée « 32 ، ب) -28 ، جـ) -0,25 ، د) 4,9 »)."
+  },
+  {
+   "id": "ex-18",
+   "kind": "exercise",
+   "number": 18,
+   "page": 15,
+   "section": "ضرب الأعداد النسبية",
+   "text": "دون أيّ حساب، أعط إشارة النتيجة في كل عبارة مما يلي: أ) $A=(-6)\\times(-10)\\times(+1{,}8)\\times(-2)$ ؛ ب) $B=(-4{,}5)\\times(-2)\\times(+5{,}5)\\times(-1)\\times(-8)$ ؛ جـ) $C=(+2{,}2)\\times(-0{,}6)\\times(+8)\\times(-2)\\times(-4)$.",
+   "verified": true,
+   "answer": {
+    "A": "- (3 négatifs)",
+    "B": "+ (4 négatifs)",
+    "C": "- (3 négatifs)"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-19",
+   "kind": "exercise",
+   "number": 19,
+   "page": 15,
+   "section": "ضرب الأعداد النسبية",
+   "text": "أ) احسب الجداء: $7{,}5\\times0{,}2$. ب) أنجز الجداءات التالية: $A=7{,}5\\times(-0{,}2)$ ؛ $B=(-0{,}2)\\times(-7{,}5)$ ؛ $C=(-75)\\times(+0{,}2)$ ؛ $D=(-7{,}5)\\times(-20)$.",
+   "verified": true,
+   "answer": {
+    "أ": "1,5",
+    "A": "-1,5",
+    "B": "1,5",
+    "C": "-15",
+    "D": "150"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-20",
+   "kind": "exercise",
+   "number": 20,
+   "page": 15,
+   "section": "ضرب الأعداد النسبية",
+   "text": "أهرامات الأعداد. انقل ثم أكمل ملء خانات « الهرم » في كل حالة، علما أن محتوى الخانة يساوي جداء ما في الخانتين اللتين تحتها.",
+   "verified": true,
+   "figure": "deux pyramides de 4 étages (4-3-2-1 cases) : à gauche, bleue, étage du bas -2 ; +2 ; -2 ; -2 ; à droite, verte, étage du bas -1 ; +1 ; +1 ; -1.",
+   "answer": {
+    "bleue": [
+     [
+      "-2",
+      "2",
+      "-2",
+      "-2"
+     ],
+     [
+      "-4",
+      "-4",
+      "4"
+     ],
+     [
+      "16",
+      "-16"
+     ],
+     [
+      "-256"
+     ]
+    ],
+    "verte": [
+     [
+      "-1",
+      "1",
+      "1",
+      "-1"
+     ],
+     [
+      "-1",
+      "1",
+      "-1"
+     ],
+     [
+      "-1",
+      "-1"
+     ],
+     [
+      "1"
+     ]
+    ]
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-21",
+   "kind": "exercise",
+   "number": 21,
+   "page": 15,
+   "section": "ضرب الأعداد النسبية",
+   "text": "انقل ثم أكمل ملء خانات « الهرم » في كل حالة، علما أن محتوى الخانة يساوي جداء ما في الخانتين اللتين تحتها.",
+   "verified": true,
+   "figure": "pyramide bleue (4 étages) : étage du bas  ·  -1  ·  ·  +2 ; étage 3 : ·  +3  · ; étage 2 : -3  · ; sommet vide. Pyramide verte : sommet -2160 ; étage 2 : -24  · ; étage 3 : ·  -6  · ; bas : ·  ·  ·  +5.",
+   "answer": {
+    "bleue": {
+     "bas": [
+      "1",
+      "-1",
+      "-3",
+      "2"
+     ],
+     "etage3": [
+      "-1",
+      "3",
+      "-6"
+     ],
+     "etage2": [
+      "-3",
+      "-18"
+     ],
+     "sommet": "54"
+    },
+    "verte": {
+     "bas": [
+      "2",
+      "2",
+      "-3",
+      "5"
+     ],
+     "etage3": [
+      "4",
+      "-6",
+      "-15"
+     ],
+     "etage2": [
+      "-24",
+      "90"
+     ],
+     "sommet": "-2160"
+    }
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-22",
+   "kind": "exercise",
+   "number": 22,
+   "page": 16,
+   "section": "قسمة الأعداد النسبية",
+   "text": "في كل حالة مما يلي، عيّن إشارة حاصل القسمة، دون حساب. أ) $(-3)\\div(-8)$ ؛ ب) $(-4)\\div(-5)$ ؛ جـ) $(+1)\\div(-2)$ ؛ د) $(-3{,}5)\\div(+5{,}2)$.",
+   "verified": true,
+   "answer": {
+    "أ": "+",
+    "ب": "+",
+    "جـ": "-",
+    "د": "-"
+   },
+   "answerSource": "computed",
+   "reading": "Les ordres des opérandes de أ et ب ((−3)÷(−8), (−4)÷(−5) ; les signes sont identiques dans tous les cas) sont imprimés avec le « − » parfois après le chiffre : le signe du quotient est le même quel que soit l’ordre."
+  },
+  {
+   "id": "ex-23",
+   "kind": "exercise",
+   "number": 23,
+   "page": 16,
+   "section": "قسمة الأعداد النسبية",
+   "text": "فيما يلي، انقل كل حاصل قسمة موجب. أ) $\\dfrac{-9}{+3}$ ؛ ب) $-\\dfrac{-3}{+7}$ ؛ جـ) $-\\dfrac{5}{-2}$ ؛ د) $-\\dfrac{+4}{-10}$.",
+   "verified": true,
+   "answer": {
+    "positifs": [
+     "ب",
+     "جـ",
+     "د"
+    ],
+    "values": {
+     "أ": "-3",
+     "ب": "3/7",
+     "جـ": "5/2 = 2,5",
+     "د": "2/5 = 0,4"
+    }
+   },
+   "answerSource": "computed",
+   "reading": "Le signe « − » devant les fractions ب) جـ) د) est EXTÉRIEUR à la fraction (le haut de la fraction porte son propre signe) : −(−3/+7) = 3/7 ; −(5/−2) = 5/2 ; −(+4/−10) = 2/5."
+  },
+  {
+   "id": "ex-24",
+   "kind": "exercise",
+   "number": 24,
+   "page": 16,
+   "section": "قسمة الأعداد النسبية",
+   "text": "احسب ما يلي: أ) $(-80)\\div(+4)$ ؛ ب) $(-72)\\div(-6)$ ؛ جـ) $(-32)\\div(-5)$ ؛ د) $(-21)\\div(-5)$.",
+   "verified": true,
+   "answer": {
+    "أ": "-20",
+    "ب": "12",
+    "جـ": "6,4",
+    "د": "4,2"
+   },
+   "answerSource": "computed",
+   "reading": "Imprimé « (-5)÷(-32) » et « (-5)÷(-21) » ? : l’ordre est rendu à l’envers par endroits ; lu (−32)÷(−5) et (−21)÷(−5) (quotients décimaux) — à confirmer par qismat-nisbiyayn."
+  },
+  {
+   "id": "ex-25",
+   "kind": "exercise",
+   "number": 25,
+   "page": 16,
+   "section": "قسمة الأعداد النسبية",
+   "text": "احسب ما يلي: أ) $(-8)\\div(-4)$ ؛ ب) $(-5)\\div(+10)$ ؛ جـ) $(-15)\\div(-3)$ ؛ د) $20\\div(-5)$ ؛ هـ) $(-45)\\div(-9)$ ؛ و) $(-72)\\div(+8)$.",
+   "verified": true,
+   "answer": {
+    "أ": "2",
+    "ب": "-0,5",
+    "جـ": "5",
+    "د": "-4",
+    "هـ": "5",
+    "و": "-9"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-26",
+   "kind": "exercise",
+   "number": 26,
+   "page": 16,
+   "section": "قسمة الأعداد النسبية",
+   "text": "احسب ما يلي: أ) $-121\\div11$ ؛ ب) $(-56)\\div(-7)$ ؛ جـ) $(-72)\\div(+12)$ ؛ د) $(+48)\\div(-2{,}5)$ ؛ هـ) $(+16)\\div(-0{,}1)$ ؛ و) $-16\\div(-5)$.",
+   "verified": true,
+   "answer": {
+    "أ": "-11",
+    "ب": "8",
+    "جـ": "-6",
+    "د": "-19,2",
+    "هـ": "-160",
+    "و": "3,2"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-27",
+   "kind": "exercise",
+   "number": 27,
+   "page": 16,
+   "section": "قسمة الأعداد النسبية",
+   "text": "أكمل ملء الفراغ بالعدد المناسب. أ) $(-72)\\div\\ldots=-9$ ؛ ب) $\\ldots\\div(-7)=+5$ ؛ جـ) $(+12)=\\ldots\\div(-3)$ ؛ د) $(-15)\\div\\ldots=+3$.",
+   "verified": true,
+   "answer": {
+    "أ": "8",
+    "ب": "-35",
+    "جـ": "-36",
+    "د": "-5"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-28",
+   "kind": "exercise",
+   "number": 28,
+   "page": 16,
+   "section": "قسمة الأعداد النسبية",
+   "text": "اربط بين النتائج المتساوية. العمود الأول: $-12\\div(-10)$ ؛ $(-1)\\div(+1)$ ؛ $(+2)\\div(-0{,}2)$. العمود الثاني: $(-1)\\times(+1)$ ؛ $(30)\\div(-3)$ ؛ $(-12)\\times(-0{,}1)$.",
+   "verified": true,
+   "figure": "deux colonnes de trois opérations, chaque élément précédé d’un point bleu ; à relier deux à deux.",
+   "answer": {
+    "pairs": [
+     [
+      "-12÷(-10) = 1,2",
+      "(-12)x(-0,1) = 1,2"
+     ],
+     [
+      "(-1)÷(+1) = -1",
+      "(-1)x(+1) = -1"
+     ],
+     [
+      "(+2)÷(-0,2) = -10",
+      "30÷(-3) = -10"
+     ]
+    ]
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-29",
+   "kind": "exercise",
+   "number": 29,
+   "page": 16,
+   "section": "ضرب الأعداد النسبية",
+   "text": "أكمل المتساويات بالإشارة المناسبة. أ) $-3\\times(+8)=(\\,?\\,24)$ ؛ ب) $(\\,?\\,25)=(-5)\\times5$ ؛ جـ) $(+13)\\times(\\,?\\,3)=-39$ ؛ د) $-54=-6\\times(\\,?\\,9)$.",
+   "verified": true,
+   "figure": "le point d’interrogation « ? » tient la place du signe (+ ou −) devant les chiffres 24, 25, 3, 9.",
+   "answer": {
+    "أ": "-24",
+    "ب": "-25",
+    "جـ": "-3",
+    "د": "+9"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-30",
+   "kind": "exercise",
+   "number": 30,
+   "page": 16,
+   "section": "قسمة الأعداد النسبية",
+   "text": "أكمل ملء الفراغ بما يحقق المساواة. أ) $(+48)\\div\\ldots=(+8)$ ؛ ب) $(+1)=\\ldots\\times(-1{,}6)$ ؛ جـ) $15=\\ldots\\times(-5)$ ؛ د) $(-7{,}5)\\times\\ldots=2{,}5$ ؛ هـ) $(-10)\\div\\ldots=4$ ؛ و) $(-12)\\times\\ldots=(-0{,}5)$.",
+   "verified": true,
+   "answer": {
+    "أ": "6",
+    "ب": "-0,625 (= -5/8)",
+    "جـ": "-3",
+    "د": "-1/3 (non décimal)",
+    "هـ": "-2,5",
+    "و": "1/24 (non décimal)"
+   },
+   "answerSource": "computed",
+   "reading": "Lecture de l’ordre des deux premières lignes : « (+8) = … ÷ (+48)… » est imprimé en bidi ; lu (+48) ÷ … = (+8) pour أ et (+1) = … × (−1,6) pour ب (qismat-nisbiyayn relira). د (−7,5 × … = 2,5) et و ((−12) × … = −0,5) donnent −1/3 et 1/24 : des quotients non décimaux, à écrire en fraction."
+  },
+  {
+   "id": "ex-31",
+   "kind": "exercise",
+   "number": 31,
+   "page": 16,
+   "section": "قسمة الأعداد النسبية",
+   "text": "أوجد عددين نسبيين حاصل القسمة بينهما: أ) $-2$ ؛ ب) $10$ ؛ جـ) $-0{,}5$ ؛ د) $-1$.",
+   "verified": true,
+   "answer": {
+    "أ": "6 et -3 (ou -8 et 4, …)",
+    "ب": "-20 et -2 (ou 5 et 0,5, …)",
+    "جـ": "-3 et 6 (ou 1 et -2, …)",
+    "د": "7 et -7 (ou -4 et 4, …)",
+    "note": "plusieurs couples possibles"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-32",
+   "kind": "exercise",
+   "number": 32,
+   "page": 16,
+   "section": "ضرب الأعداد النسبية",
+   "text": "على مستقيم مدرّج، عيّن: أ) باللون الأحمر، نظير $-7$ ؛ ب) بالأخضر، جداء $-3$ في $6$ ؛ جـ) بالأزرق، حاصل قسمة $-15$ على $3$ ؛ د) بالأسود، مربع $-2$.",
+   "verified": true,
+   "answer": {
+    "أ (rouge)": "7",
+    "ب (vert)": "-18",
+    "جـ (bleu)": "-5",
+    "د (noir)": "4"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-33",
+   "kind": "exercise",
+   "number": 33,
+   "page": 16,
+   "section": "أولوية العمليات",
+   "text": "أولوية العمليات. احسب ما يلي: $A=-0{,}5\\times(-2-8)\\times-1{,}7$ ؛ $B=4{,}7-(1-10{,}5)\\times4$ ؛ $C=(7-12)\\div(12-(1+8\\times2))$ ؛ $D=-20+((-3)\\times(-7-3)-16)$.",
+   "verified": true,
+   "answer": {
+    "A": "-8,5",
+    "B": "42,7",
+    "C": "1",
+    "D": "-6"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-34",
+   "kind": "exercise",
+   "number": 34,
+   "page": 16,
+   "section": "ضرب الأعداد النسبية",
+   "text": "أوجد مضاعف 6 الذي: أ) يسبق: 12 ، $-6$ ، 120 ، $-42$. ب) يلي: 18 ، $-30$ ، 48 ، $-54$.",
+   "verified": true,
+   "answer": {
+    "أ": {
+     "12": "6",
+     "-6": "-12",
+     "120": "114",
+     "-42": "-48"
+    },
+    "ب": {
+     "18": "24",
+     "-30": "-24",
+     "48": "54",
+     "-54": "-48"
+    }
+   },
+   "answerSource": "computed",
+   "reading": "« يسبق / يلي » : le multiple de 6 qui précède (le plus grand multiple de 6 strictement inférieur) / qui suit (le plus petit strictement supérieur) ; clés 6, −12, 114, −48 / 24, −24, 54, −48 (plan)."
+  },
+  {
+   "id": "self-1",
+   "kind": "self",
+   "number": 1,
+   "page": 17,
+   "section": "أؤكّد تعلّماتي",
+   "verified": true,
+   "text": "$(-3)\\times(-7)$ يساوي ...",
+   "options": {
+    "أ": "$-10$",
+    "ب": "$-21$",
+    "جـ": "$10$",
+    "د": "$21$"
+   },
+   "answer": {
+    "correct": [
+     "د"
+    ]
+   },
+   "answerSource": "computed",
+   "returnPage": "10 و 11"
+  },
+  {
+   "id": "self-2",
+   "kind": "self",
+   "number": 2,
+   "page": 17,
+   "section": "أؤكّد تعلّماتي",
+   "verified": true,
+   "text": "$3\\times(-4)$ يساوي ...",
+   "options": {
+    "أ": "$1$",
+    "ب": "$-12$",
+    "جـ": "$-7$",
+    "د": "$12$"
+   },
+   "answer": {
+    "correct": [
+     "ب"
+    ]
+   },
+   "answerSource": "computed",
+   "returnPage": "10 و 11"
+  },
+  {
+   "id": "self-3",
+   "kind": "self",
+   "number": 3,
+   "page": 17,
+   "section": "أؤكّد تعلّماتي",
+   "verified": true,
+   "text": "$(-4)\\times4$ يساوي ...",
+   "options": {
+    "أ": "$0$",
+    "ب": "$-8$",
+    "جـ": "$-16$",
+    "د": "$16$"
+   },
+   "answer": {
+    "correct": [
+     "جـ"
+    ]
+   },
+   "answerSource": "computed",
+   "returnPage": "10 و 11"
+  },
+  {
+   "id": "self-4",
+   "kind": "self",
+   "number": 4,
+   "page": 17,
+   "section": "أؤكّد تعلّماتي",
+   "verified": true,
+   "text": "$8{,}1\\times(-3{,}2)$ يساوي ...",
+   "options": {
+    "أ": "$25{,}92$",
+    "ب": "$4{,}9$",
+    "جـ": "$-25{,}92$",
+    "د": "$-4{,}9$"
+   },
+   "answer": {
+    "correct": [
+     "جـ"
+    ]
+   },
+   "answerSource": "computed",
+   "returnPage": "10 و 11",
+   "reading": "L’option أ est imprimée « 92 ، 25 » (une virgule typographique à la place du séparateur décimal, à l’envers) : lue 25,92."
+  },
+  {
+   "id": "self-5",
+   "kind": "self",
+   "number": 5,
+   "page": 17,
+   "section": "أؤكّد تعلّماتي",
+   "verified": true,
+   "text": "جداء نظير 6 في نظير 7 يساوي ...",
+   "options": {
+    "أ": "$42$",
+    "ب": "$-42$",
+    "جـ": "$-1$",
+    "د": "$\\dfrac{6}{-7}$"
+   },
+   "answer": {
+    "correct": [
+     "أ"
+    ]
+   },
+   "answerSource": "computed",
+   "returnPage": 10
+  },
+  {
+   "id": "self-6",
+   "kind": "self",
+   "number": 6,
+   "page": 17,
+   "section": "أؤكّد تعلّماتي",
+   "verified": true,
+   "text": "من أجل كلّ عدد نسبي $a$ ، العدد $-a$ هو:",
+   "options": {
+    "أ": "عدد سالب",
+    "ب": "نظير العدد $a$",
+    "جـ": "عدد سالب أو موجب حسب إشارة $a$",
+    "د": "يساوي $a\\times(-1)$"
+   },
+   "answer": {
+    "correct": [
+     "ب",
+     "جـ",
+     "د"
+    ]
+   },
+   "answerSource": "computed",
+   "returnPage": 10,
+   "reading": "Plusieurs bonnes réponses : −a est l’opposé de a (ب), de signe contraire à a (جـ), et −a = a × (−1) (د). أ est faux (−(−5) = 5)."
+  },
+  {
+   "id": "self-7",
+   "kind": "self",
+   "number": 7,
+   "page": 17,
+   "section": "أؤكّد تعلّماتي",
+   "verified": true,
+   "text": "جداء 116 عاملا كلها تساوي $(-1)$ هو:",
+   "options": {
+    "أ": "$-116$",
+    "ب": "$0$",
+    "جـ": "$-1$",
+    "د": "$1$"
+   },
+   "answer": {
+    "correct": [
+     "د"
+    ]
+   },
+   "answerSource": "computed",
+   "returnPage": "11 و 13"
+  },
+  {
+   "id": "self-8",
+   "kind": "self",
+   "number": 8,
+   "page": 17,
+   "section": "أؤكّد تعلّماتي",
+   "verified": true,
+   "text": "$(-25)\\div(-5)$ يساوي ...",
+   "options": {
+    "أ": "$5$",
+    "ب": "$-5$",
+    "جـ": "$-20$",
+    "د": "$20$"
+   },
+   "answer": {
+    "correct": [
+     "أ"
+    ]
+   },
+   "answerSource": "computed",
+   "returnPage": "12 و 13",
+   "reading": "Imprimé « (-5) ÷ (-25) » : lu (−25) ÷ (−5) = 5 (l’option أ ; (−5)÷(−25) = 0,2 ne figure pas) — rendu RTL, voir discrepancies."
+  },
+  {
+   "id": "self-9",
+   "kind": "self",
+   "number": 9,
+   "page": 17,
+   "section": "أؤكّد تعلّماتي",
+   "verified": true,
+   "text": "إذا كان $x$ عددا نسبيا يحقق: $-10=(-3)\\times x$ فإنّ:",
+   "options": {
+    "أ": "$x=-7$",
+    "ب": "$3{,}33$",
+    "جـ": "$\\dfrac{10}{3}$",
+    "د": "$\\dfrac{-10}{3}$"
+   },
+   "answer": {
+    "correct": [
+     "جـ"
+    ]
+   },
+   "answerSource": "computed",
+   "returnPage": "12 و 13"
+  },
+  {
+   "id": "self-10",
+   "kind": "self",
+   "number": 10,
+   "page": 17,
+   "section": "أؤكّد تعلّماتي",
+   "verified": true,
+   "text": "$a$ عدد نسبي سالب، إذن ...",
+   "options": {
+    "أ": "$a^2$ سالب",
+    "ب": "$-a^2$ سالب",
+    "جـ": "$(-a)^2$ سالب",
+    "د": "$\\dfrac{a}{-a}$ سالب"
+   },
+   "answer": {
+    "correct": [
+     "ب",
+     "د"
+    ]
+   },
+   "answerSource": "computed",
+   "returnPage": "10 و 12",
+   "reading": "a < 0 : a² > 0 (أ faux) ; −a² < 0 (ب vrai) ; (−a)² > 0 (جـ faux) ; a/(−a) = −1 < 0 (د vrai). Contient −a² et (−a)² : vu par jidaa-ida-nisbiya / quwat-adad-nisbi."
+  },
+  {
+   "id": "self-11",
+   "kind": "self",
+   "number": 11,
+   "page": 17,
+   "section": "أؤكّد تعلّماتي",
+   "verified": true,
+   "text": "$11\\div(-4)$ يُكتب على الشكل ...",
+   "options": {
+    "أ": "$\\dfrac{11}{-4}$",
+    "ب": "$-\\dfrac{11}{4}$",
+    "جـ": "$-2{,}75$",
+    "د": "$\\dfrac{11}{4}$"
+   },
+   "answer": {
+    "correct": [
+     "أ",
+     "ب",
+     "جـ"
+    ]
+   },
+   "answerSource": "computed",
+   "returnPage": "12 و 13",
+   "reading": "Imprimé « (-4) ÷ 11 » (rendu RTL d’un « 11 ÷ (-4) » : signe après le chiffre) ; les options (11/−4, −11/4, −2,75, 11/4) ne conviennent qu’à 11 ÷ (−4) = −2,75 : clés أ, ب, جـ."
+  },
+  {
+   "id": "self-12",
+   "kind": "self",
+   "number": 12,
+   "page": 17,
+   "section": "أؤكّد تعلّماتي",
+   "verified": true,
+   "text": "$3\\times(-4{,}7)-13\\times(-4{,}7)$ ... يُكتب على الشكل ...",
+   "options": {
+    "أ": "$(-4{,}7)\\times(13-3)$",
+    "ب": "$-4{,}7\\times13\\times3$",
+    "جـ": "$10\\times(-4{,}7)$",
+    "د": "$(-4{,}7)\\times(-10)$"
+   },
+   "answer": {
+    "correct": [
+     "أ",
+     "جـ"
+    ]
+   },
+   "answerSource": "computed",
+   "returnPage": "12 و 13",
+   "reading": "Énoncé imprimé « 3 × (4,7-) - 13 × 4,7- » (signes après les chiffres, rendu RTL) = −4,7 × 13 − (−4,7) × 3 = −47 (factorisation de −4,7) : clés أ et جـ. Lue littéralement (3×(−4,7) − 13×(−4,7) = 47) seule د conviendrait : voir discrepancies."
+  },
+  {
+   "id": "deep-35",
+   "kind": "deepen",
+   "number": 35,
+   "page": 18,
+   "section": "أتعمّق",
+   "title": "ثلاثة أعداد جداؤها معلوم",
+   "text": "جد ثلاثة أعداد نسبية جداؤها يساوي: أ) $-72$ ؛ ب) $84$ ؛ جـ) $-1$ ؛ د) $-0{,}08$.",
+   "verified": true,
+   "answer": {
+    "أ": "2 x (-6) x 6 (ou -3 x 4 x 6, …)",
+    "ب": "2 x 6 x 7 (ou -2 x -6 x 7, …)",
+    "جـ": "1 x 1 x -1 (ou -1 x -1 x -1)",
+    "د": "-0,2 x 0,2 x 2 (ou 0,1 x 0,2 x -4, …)",
+    "note": "plusieurs triplets possibles"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "deep-36",
+   "kind": "deepen",
+   "number": 36,
+   "page": 18,
+   "section": "أتعمّق",
+   "title": "أكمل الجمل",
+   "text": "أكمل الجمل التالية: أ) $-39$ هو نصف $\\ldots$ ؛ ب) $-39$ هو ثلاثة أمثال $\\ldots$ ؛ جـ) $-39$ هو نظير $\\ldots$.",
+   "verified": true,
+   "answer": {
+    "أ": "-78",
+    "ب": "-13",
+    "جـ": "39"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "deep-37",
+   "kind": "deepen",
+   "number": 37,
+   "page": 18,
+   "section": "أتعمّق",
+   "title": "أعداد مختارة",
+   "text": "أ) أعط عددين نسبيين جداؤهما موجب ومجموعهما سالب. ب) أعط عددين نسبيين جداؤهما سالب ومجموعهما موجب. جـ) أعط عددين نسبيين جداؤهما موجب ومجموعهما موجب. د) أعط عددين نسبيين جداؤهما سالب ومجموعهما سالب.",
+   "verified": true,
+   "answer": {
+    "أ": "-2 et -3 : produit 6 > 0, somme -5 < 0 (les deux négatifs)",
+    "ب": "-2 et 5 : produit -10 < 0, somme 3 > 0 (le positif a la plus grande distance)",
+    "جـ": "2 et 3 : produit 6 > 0, somme 5 > 0 (les deux positifs)",
+    "د": "2 et -5 : produit -10 < 0, somme -3 < 0 (le négatif a la plus grande distance)"
+   },
+   "answerSource": "computed",
+   "reading": "Quatre cas = produit +/− × somme +/− : le produit positif exige DEUX signes égaux (somme du signe commun) ; le produit négatif exige deux signes différents (somme du signe de la plus grande distance)."
+  },
+  {
+   "id": "deep-38",
+   "kind": "deepen",
+   "number": 38,
+   "page": 18,
+   "section": "أتعمّق",
+   "title": "مثلث سحري",
+   "text": "مجموع الأعداد على كل ضلع من أضلاع المثلث يساوي 2. املإ الخانات الفارغة بالأعداد النسبية $(-2)$ ، $(-1)$ ، $1$ ، $2$ و $3$.",
+   "verified": true,
+   "figure": "un triangle à six cases (3 sommets + 3 milieux de côtés), seule la case du MILIEU DU CÔTÉ GAUCHE est remplie : 0 (le scan est pâle ; la position de 0 est lue à 500 dpi).",
+   "answer": {
+    "solutions (A=haut, B=bas gauche, C=bas droit, BC=milieu bas, AC=milieu droit ; milieu gauche = 0)": [
+     {
+      "A": -1,
+      "B": 3,
+      "C": 1,
+      "BC": -2,
+      "AC": 2
+     },
+     {
+      "A": 3,
+      "B": -1,
+      "C": 1,
+      "BC": 2,
+      "AC": -2
+     }
+    ],
+    "note": "deux solutions symétriques (miroir droite-gauche)"
+   },
+   "answerSource": "computed",
+   "reading": "Le triangle est un dessin pâle : seules les cases entourées sont devinables, 0 est dans la case du milieu du côté gauche. Addition seule : destinée à la banque de la synthèse (plan)."
+  },
+  {
+   "id": "deep-39",
+   "kind": "deepen",
+   "number": 39,
+   "page": 18,
+   "section": "أتعمّق",
+   "title": "إشارة جداء",
+   "text": "عيّن إشارة جداء أعداد نسبية إذا علمت أن عدد العوامل السالبة هو ضعف عدد العوامل الموجبة.",
+   "verified": true,
+   "answer": {
+    "sign": "+ (si aucun facteur n’est nul)",
+    "reason": "n_neg = 2 x n_pos est PAIR"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "deep-40",
+   "kind": "deepen",
+   "number": 40,
+   "page": 18,
+   "section": "أتعمّق",
+   "title": "أقواس منسية",
+   "text": "في كل حالة مما يلي، انقل العبارة ثم أكمل وضع الأقواس حتى تصبح المساواة محققة. أ) $14-4\\times6-1=50$ ؛ ب) $-9+2\\times8\\times2-12=-70$ ؛ جـ) $27-2{,}5\\times8{,}5-4{,}5=17$ ؛ د) $15-25\\times2{,}4+7-3\\times2=-16$.",
+   "verified": true,
+   "answer": {
+    "أ": "(14 - 4) × (6 - 1)",
+    "ب": "(-9 + 2 × 8) × (2 - 12)",
+    "جـ": "27 - 2,5 × (8,5 - 4,5)",
+    "د": "(15 - 25) × 2,4 + (7 - 3) × 2"
+   },
+   "answerSource": "computed",
+   "reading": "Parenthésage unique trouvé par recherche exhaustive de tous les parenthésages (une seule solution par ligne) ; ب exige DEUX paires de parenthèses : (−9 + 2×8)×(2−12) = −70, soit 7 × (−10) (voir discrepancies)."
+  },
+  {
+   "id": "deep-41",
+   "kind": "deepen",
+   "number": 41,
+   "page": 18,
+   "section": "أتعمّق",
+   "title": "إشارة",
+   "text": "$a$ هو جداء 24 عددا نسبيا كلها غير معدومة و 23 منها سالبة. $b$ هو جداء 13 عددا نسبيا كلها غير معدومة و 11 منها سالبة. أعط، إن أمكن، إشارة كل من: أ) $a\\times b$ ؛ ب) $\\dfrac{a}{b}$ ؛ جـ) $a^2$ ؛ د) $a+b$ ؛ هـ) $a-b$.",
+   "verified": true,
+   "answer": {
+    "a": "négatif (23 négatifs, impair)",
+    "b": "négatif (11 négatifs, impair)",
+    "أ": "+",
+    "ب": "+",
+    "جـ": "+",
+    "د": "−",
+    "هـ": "impossible à dire (a − b = a + (−b) : somme d’un négatif et d’un positif)"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "deep-42",
+   "kind": "deepen",
+   "number": 42,
+   "page": 18,
+   "section": "أتعمّق",
+   "title": "برنامج حساب",
+   "text": "إليك برنامجَيْ حساب. البرنامج A: اختر عددا، أعيّن نظيره ثم أطرح 7. البرنامج B: اختر عددا، اضربه في $(-1)$ ثم أضيف $(-7)$. أ) طبّق كلا من البرنامجين على العدد $7{,}1$ ثم على العدد $-9{,}3$. ماذا تلاحظ؟ ب) هل الملاحظة السابقة صحيحة من أجل أي عدد نختاره؟ فسّر إجابتك.",
+   "verified": true,
+   "answer": {
+    "7,1": {
+     "A": "-14,1",
+     "B": "-14,1"
+    },
+    "-9,3": {
+     "A": "2,3",
+     "B": "2,3"
+    },
+    "b": "oui : A = −x − 7 et B = x × (−1) + (−7) = −x − 7 (l’opposé de x est x × (−1))"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "deep-43",
+   "kind": "deepen",
+   "number": 43,
+   "page": 18,
+   "section": "أتعمّق",
+   "title": "صحيح أم خاطئ",
+   "text": "اذكر إن كانت كل واحدة من العبارات التالية صحيحة أم خاطئة مبررا إجابتك. أ) مضاعف عدد نسبي سالب هو بالضرورة عدد نسبي سالب. ب) إذا كان مجموع عددين نسبيين معدوما فإن أحدهما نظير للآخر. جـ) إذا ضربنا عددا نسبيا في آخر فإنّ النتيجة هي بالضرورة عدد أكبر منهما.",
+   "verified": true,
+   "answer": {
+    "أ": "faux : (-3) x (-1) = 3 > 0 (et (-3) x 0 = 0) ; les multiples d’un entier relatif sont pris dans ℤ (voir ex-34)",
+    "ب": "vrai : a + b = 0 donc b = -a (2AM)",
+    "جـ": "faux : 3 x (-2) = -6 < 3 et < -2 ; ou 0,5 x 0,5 = 0,25 < 0,5"
+   },
+   "answerSource": "computed",
+   "reading": "Pas de sous-question د) sur la page. « مضاعف » : multiple k × a, k relatif (les multiples de 6 de l’ex-34 comprennent −42, −6 …)."
+  },
+  {
+   "id": "deep-44",
+   "kind": "deepen",
+   "number": 44,
+   "page": 18,
+   "section": "أتعمّق",
+   "title": "جداء ثلاثة أعداد وجداء أربعة أعداد",
+   "text": "أ) قال أيمن: «في جداء ثلاثة أعداد نسبية، إذا استبدلت كل عدد بنظيره، فإن الجداء المحصل عليه هو نظير الأول». ما رأيك في مقولة أيمن؟ اشرح. ب) هل الأمر كذلك بالنسبة إلى جداء أربعة أعداد نسبية؟ تحقق من ذلك.",
+   "verified": true,
+   "answer": {
+    "أ": "vrai : (−a)(−b)(−c) = (−1)³ abc = −abc",
+    "ب": "faux : (−a)(−b)(−c)(−d) = (−1)⁴ abcd = abcd (le produit est INCHANGÉ) ; ex. (−2)(−3)(−4)(−5) = 120 = 2·3·4·5"
+   },
+   "answerSource": "computed",
+   "reading": "Sur la page 18 le numéro 44 est précédé de « أ) » : la sous-question ب) suit."
+  },
+  {
+   "id": "deep-45",
+   "kind": "deepen",
+   "number": 45,
+   "page": 19,
+   "section": "أتعمّق",
+   "title": "انتظامات",
+   "text": "1) في كل حالة مما يلي، انقل المتتالية، لاحظ الانتظام ثم أكمل كتابة العدد الناقص. أ) $-3\\,;\\,9\\,;\\ldots;\\,81\\,;\\,-243$ ... (مكتوبة في المسطرة: $-243\\,;\\,81\\,;\\ldots\\,;\\,9\\,;\\,-3$) ؛ ب) $120000\\,;\\,-24000\\,;\\ldots\\,;\\,-960\\,;\\,192$ ؛ جـ) $-2\\,;\\,2\\,;\\,-4\\,;\\ldots\\,;\\,-48\\,;\\,240$. 2) بيّن في كل حالة كيفية المرور من عدد إلى الذي يليه.",
+   "verified": true,
+   "answer": {
+    "أ": {
+     "sequence": [
+      "-243",
+      "81",
+      "-27",
+      "9",
+      "-3"
+     ],
+     "missing": "-27",
+     "rule": "on multiplie par (-1/3), ou : on divise par (-3)"
+    },
+    "ب": {
+     "sequence": [
+      "120000",
+      "-24000",
+      "4800",
+      "-960",
+      "192"
+     ],
+     "missing": "4800",
+     "rule": "on multiplie par (-1/5), ou : on divise par (-5)"
+    },
+    "جـ": {
+     "sequence": [
+      "-2",
+      "2",
+      "-4",
+      "12",
+      "-48",
+      "240"
+     ],
+     "missing": "12",
+     "rule": "on multiplie par -1, puis -2, -3, -4, -5"
+    }
+   },
+   "answerSource": "computed",
+   "reading": "Les suites sont composées à l’envers sur le scan ; lues de gauche à droite exactement comme imprimées (premier terme à gauche) : أ) −243 ; 81 ; … ; 9 ; −3 ; ب) 120000 ; −24000 ; … ; −960 ; 192 ; جـ) −2 ; 2 ; −4 ; … ; −48 ; 240. Les raisons (−1/3, −1/5, −1·−2·−3·−4·−5) ne rendent les suites cohérentes que dans CET ordre."
+  },
+  {
+   "id": "deep-46",
+   "kind": "deepen",
+   "number": 46,
+   "page": 19,
+   "section": "أتعمّق",
+   "title": "مربع سحري « ضربي »",
+   "text": "1) ما هي القواعد التي تسمح لك بالحصول على مربع سحري « ضربي »؟ 2) أنجز كل الحسابات اللازمة لتتأكد أن المربع التالي مربع سحري « ضربي »: $-2\\,;\\,36\\,;\\,-3$ / $9\\,;\\,6\\,;\\,4$ / $-12\\,;\\,1\\,;\\,-18$.",
+   "verified": true,
+   "figure": "grille 3 × 3 : [−2, 36, −3 ; 9, 6, 4 ; −12, 1, −18] (les cases rouges sont −2, 9, 4, 1, −18 ; les autres sont noires).",
+   "answer": {
+    "constant": "216",
+    "lines": [
+     "-2x36x-3",
+     "9x6x4",
+     "-12x1x-18"
+    ],
+    "columns": [
+     "-2x9x-12",
+     "36x6x1",
+     "-3x4x-18"
+    ],
+    "diagonals": [
+     "-2x6x-18",
+     "-3x6x-12"
+    ],
+    "rule": "le produit des trois nombres de chaque ligne, de chaque colonne et de chaque diagonale est le même"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "deep-47",
+   "kind": "deepen",
+   "number": 47,
+   "page": 19,
+   "section": "أتعمّق",
+   "title": "أكمل مربعا سحريا « ضربيا »",
+   "text": "أكمل ملء الخانات الفارغة لتحصل على مربع سحري « ضربي ». $[\\ ;\\,1\\,;\\ \\ ]$ / $[4\\,;\\,-10\\,;\\,52]$ / $[5\\,;\\ ;\\,-2]$.",
+   "verified": true,
+   "figure": "grille 3 × 3 : ligne 1 [vide, 1, vide] ; ligne 2 [4, −10, 52] ; ligne 3 [5, vide, −2].",
+   "answer": {
+    "completed (with 25)": [
+     [
+      -50,
+      1,
+      20
+     ],
+     [
+      4,
+      -10,
+      25
+     ],
+     [
+      5,
+      100,
+      -2
+     ]
+    ],
+    "constant": "-1000"
+   },
+   "answerSource": "computed",
+   "reading": "Le scan imprime « 52 » ; la grille n’est multiplicativement magique qu’avec 25 (4 × (−10) × 25 = −1000 = 1 × (−10) × 100 = (−50)(−10)(−2)…) : « 52 » est le « 25 » rendu à l’envers (voir discrepancies). Avec 52 aucune complétion n’existe."
+  },
+  {
+   "id": "deep-48",
+   "kind": "deepen",
+   "number": 48,
+   "page": 19,
+   "section": "أتعمّق",
+   "title": "أكمل بالعدد المناسب",
+   "text": "في كل حالة مما يلي، انقل ثم أكمل ملء الفراغ بالعدد المناسب: أ) $(-3)\\times\\ldots=-36$ ؛ ب) $\\ldots\\times5=-16$ ؛ جـ) $(-10)\\times\\ldots=3$ ؛ د) $3\\times\\ldots=-4$ ؛ هـ) $(-6)\\times\\ldots=11$ ؛ و) $(-9)\\times\\ldots=-8$.",
+   "verified": true,
+   "answer": {
+    "أ": "12",
+    "ب": "-16/5 = -3,2",
+    "جـ": "-3/10 = -0,3",
+    "د": "-4/3 (non décimal)",
+    "هـ": "-11/6 (non décimal)",
+    "و": "8/9 (non décimal)"
+   },
+   "answerSource": "computed",
+   "reading": "Imprimé en bidi : lu comme (−3) × … = −36 ; … × 5 = −16 ; (−10) × … = 3 ; 3 × … = −4 ; (−6) × … = 11 ; (−9) × … = −8. Trois des six réponses ne sont pas décimales : quotient écrit en fraction (qismat-nisbiyayn)."
+  },
+  {
+   "id": "deep-49",
+   "kind": "deepen",
+   "number": 49,
+   "page": 19,
+   "section": "أتعمّق",
+   "title": "بطريقتين مختلفتين",
+   "text": "أنجز بطريقتين مختلفتين الحسابات التالية: أ) $A=(-3)\\times(5-7)$ ؛ ب) $B=5\\times(-4-3)$ ؛ جـ) $C=(-7-2)\\times(-3)$ ؛ د) $D=-3\\times((-4)+(-2))$.",
+   "verified": true,
+   "answer": {
+    "A": "6 = (-3)x(-2) = (-15)+21",
+    "B": "-35 = 5x(-7) = -20-15",
+    "C": "27 = (-9)x(-3) = 21+6",
+    "D": "18 = -3x(-6) = 12+6"
+   },
+   "answerSource": "computed",
+   "reading": "Les deux méthodes attendues : calculer la parenthèse puis multiplier ; ou distribuer le facteur (k(a+b) = ka + kb sur des nombres : jidaa-ida-nisbiya)."
+  },
+  {
+   "id": "deep-50",
+   "kind": "deepen",
+   "number": 50,
+   "page": 19,
+   "section": "أتعمّق",
+   "title": "متساويات عجيبة",
+   "text": "① $1-1=9\\times\\ldots$ ؛ ② $2-11=9\\times\\ldots$ ؛ ③ $3-111=9\\times\\ldots$ ؛ ④ $4-1111=9\\times\\ldots$ ؛ … ؛ ⑩ $10-1\\,111\\,111\\,111=9\\times\\ldots$. 1) ما هي الأعداد الناقصة في المتساويات ①، ②، ③، ④، ⑩؟ 2) دون إجراء أية حسابات إضافية، اكتب المتساويات: ⑤، ⑥، ⑦، ⑧، ⑨.",
+   "verified": true,
+   "answer": {
+    "1": {
+     "①": "0",
+     "②": "-1",
+     "③": "-12",
+     "④": "-123",
+     "⑩": "-123456789"
+    },
+    "2": {
+     "⑤": "5 - 11111 = 9 x (-1234)",
+     "⑥": "6 - 111111 = 9 x (-12345)",
+     "⑦": "7 - 1111111 = 9 x (-123456)",
+     "⑧": "8 - 11111111 = 9 x (-1234567)",
+     "⑨": "9 - 111111111 = 9 x (-12345678)"
+    }
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "deep-51",
+   "kind": "deepen",
+   "number": 51,
+   "page": 19,
+   "section": "أتعمّق",
+   "title": "على مستقيم مدرّج",
+   "text": "1) على مستقيم مدرّج، علّم النقط A ، B ، C ، D ، E التي فواصلها على الترتيب: $-5$ ، $-3{,}5$ ، $-0{,}5$ ، $2$ ، $4$. 2) احسب فواصل النقط $A'$ ، $B'$ ، $C'$ ، $D'$ ، $E'$ التي نحصل عليها بضرب فواصل النقط A ، B ، C ، D ، E في $(-1)$. علّم النقط $A'$ ، $B'$ ، $C'$ ، $D'$ ، $E'$ على المستقيم المدرّج. 3) ما هي الملاحظة التي يمكن تسجيلها حول تموضع هذه النقط على المستقيم المدرّج؟",
+   "verified": true,
+   "answer": {
+    "abscissae": {
+     "A": "-5",
+     "B": "-3,5",
+     "C": "-0,5",
+     "D": "2",
+     "E": "4"
+    },
+    "A'..E'": {
+     "A'": "5",
+     "B'": "3,5",
+     "C'": "0,5",
+     "D'": "-2",
+     "E'": "-4"
+    },
+    "3": "chaque point M et son image M' sont SYMÉTRIQUES par rapport à l’origine O (même distance à 0, côtés opposés)"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "deep-52",
+   "kind": "deepen",
+   "number": 52,
+   "page": 19,
+   "section": "أتعمّق",
+   "title": "مخمّنة",
+   "text": "برنامج: • اختر عددا. • أضف له العدد الصحيح الذي يليه. • اضرب الناتج في $(-2)$. • أضف 2 إلى الناتج. • قسّم الناتج على $(-4)$. 1) طبّق هذا البرنامج على الأعداد: $10$ ، $-5$ ، $-125$ على التوالي. ما هي المخمنة التي خرجت بها؟ 2) هل يمكن إثبات هذه المخمنة؟",
+   "verified": true,
+   "answer": {
+    "1": {
+     "10": "10",
+     "-5": "-5",
+     "-125": "-125"
+    },
+    "conjecture": "le programme redonne le nombre choisi",
+    "2": "oui : n + (n+1) = 2n+1 ; × (−2) → −4n − 2 ; + 2 → −4n ; ÷ (−4) → n"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "integration",
+   "kind": "integration",
+   "page": 20,
+   "section": "أدمج تعلّماتي",
+   "title": "وضعية: السعة الحرارية على القمر والزهرة والمريخ",
+   "verified": true,
+   "text": "باستعمال السندات 1 ، 2 ، 3 أدناه: 1) احسب السعة الحرارية بالدرجة سيلسيوس على سطح القمر، ثم على سطح كل من الزهرة والمريخ. 2) أعط متوسط درجة الحرارة بالكلفن على سطح الزهرة. 3) أعط متوسط درجة الحرارة بالسيلسيوس على سطح المريخ. السند 1: • الكلفن وحدة لقياس درجة الحرارة، تُستعمل كثيرا من طرف الفيزيائيين، بينما نستعمل في حياتنا اليومية درجة السيلسيوس. • يتم المرور من درجة سيلسيوس (°C) إلى درجة كلفن (K) بإضافة 273,15. • السعة الحرارية هي الفارق بين درجتي حرارة، في مكان ما، وفي فترة معطاة. السند 2: تأثير الغلاف الجوي. • يتكون الغلاف الجوي للقمر من طبقة غير سميكة، ويتسبب ذلك في سعة حرارية كبيرة بين وجهي القمر، إذ تبلغ هذه السعة مستويات قياسية: يمكن أن تنزل الحرارة إلى $(-170^\\circ C)$ على الوجه المظلم، بينما يبلغ متوسط درجة الحرارة على الوجه المقابل للشمس حوالي $(160^\\circ C)$. • يُعتبر كوكب الزهرة الأكثر تأثرا بالاحتباس الحراري نظرا لكثافة غلافه الجوي العالية جدا، ويبلغ متوسط درجة الحرارة على سطحه حوالي $(460^\\circ C)$. • يُحدثُ ضعف كثافة الغلاف الجوي لكوكب المريخ أثرا محدودا للاحتباس الحراري، وهو ما يفسر معدل درجة الحرارة على سطحه الذي يبلغ حوالي $(210K)$. السند 3: درجة الحرارة على سطح: الزهرة: • القصوى: $763K\\,(490^\\circ C)$ • الدنيا: $719K\\,(446^\\circ C)$. المريخ: • القصوى: $270K\\,(-3^\\circ C)$ • الدنيا: $140K\\,(-133^\\circ C)$. توجيهات: قراءة وتحليل الوضعية: • ماذا تُمثّل الأعداد الواردة في نص الوضعية والسندات؟ • كيف تربط بين الأعداد الواردة في هذا النص والأعداد الواردة في نص الوضعية؟ • حدِّد العمليات الحسابية التي ستنجزها في كل حالة. • حدِّد قواعد الحساب التي ستطبقها في كل حالة. تحليل التعليمة واختيار استراتيجية حل مناسبة: • ما المهمّات المطلوب إنجازها؟ • تحديد كل مهمة مطلوبة بدقّة. • إنجاز مخطط للعمل تحدد فيه مراحل التنفيذ. تنفيذ استراتيجية الحل المختارة: • تنفيذ المهمات وإنجاز الحسابات. • تحرير الحل والشرح بجُمل واضحة.",
+   "figure": "aucune figure ; deux colonnes de texte (supports 1 et 2 à droite, support 3 à gauche) et la grille de « توجيهات ».",
+   "answer": {
+    "1": {
+     "القمر": "160 - (-170) = 330 °C",
+     "الزهرة": "490 - 446 = 44 °C (763 - 719 = 44 K)",
+     "المريخ": "-3 - (-133) = 130 °C (270 - 140 = 130 K)"
+    },
+    "2": "الزهرة : 460 + 273,15 = 733,15 K",
+    "3": "المريخ : 210 - 273,15 = -63,15 °C"
+   },
+   "answerSource": "computed",
+   "reading": "Une SEULE situation pour deux boîtes (« أدمج تعلّماتي » et « وضعية للتقويم » : la seconde est la situation Fahrenheit ci-dessous). Les températures en kelvin du support 3 sont arrondies à l’unité (490 °C = 763,15 K)."
+  },
+  {
+   "id": "evaluation",
+   "kind": "integration",
+   "page": 20,
+   "section": "وضعية للتقويم",
+   "title": "درجتا الحرارة بالفهرنهايت والسيلسيوس",
+   "verified": true,
+   "text": "بعض البلدان، مثل الولايات المتحدة الأمريكية، تستعمل درجة فهرنهايت للتعبير عن درجات الحرارة. عندما غادر أحد رجال الأعمال مدينة باريس، كانت درجة الحرارة تشير إلى $-2^\\circ C$ ، وعندما وصل إلى شيكاغو كانت درجة الحرارة تشير إلى $14^\\circ F$. 1) باستعمال القاعدة التالية المتعلقة بتحويل درجة الحرارة من فهرنهايت إلى السيلسيوس: $T^\\circ F=1{,}8\\times T^\\circ C+32$. أ) عبّر عن درجة الحرارة في باريس بالدرجة $T^\\circ F$. ب) عبّر عن درجة الحرارة في شيكاغو بالدرجة $T^\\circ C$. 2) أيّ المدينتين أشد برودة؟",
+   "answer": {
+    "1a": "باريس : 1,8 x (-2) + 32 = 28,4 °F",
+    "1b": "شيكاغو : (14 - 32) / 1,8 = -10 °C",
+    "2": "شيكاغو (-10 °C < -2 °C ; 14 °F < 28,4 °F)"
+   },
+   "answerSource": "computed",
+   "reading": "Le texte dit « de fahrenheit vers le celsius » mais la formule donnée (T°F = 1,8 × T°C + 32) convertit du celsius vers le fahrenheit : la question 1b demande de l’inverser (rédaction du manuel conservée)."
+  },
+  {
+   "id": "ict",
+   "kind": "ict",
+   "page": 21,
+   "section": "أوظّف تكنولوجيات الإعلام والاتصال",
+   "title": "الحاسبة والأعداد النسبية",
+   "verified": true,
+   "text": "الحاسبة والأعداد النسبية. 1) بالحاسبة أو بدونها: لحساب قيمة العدد $A=\\dfrac{8+3\\times(-4)}{1+2\\times(-1{,}5)}$ قامت ليلى بالضغط على ملامس الحاسبة بالترتيب التالي: [8] [+] [3] [×] [(] [(-)] [4] [)] [÷] [1] [+] [2] [×] [(] [(-)] [1] [,] [5] [)]. 1) هل ستحصل ليلى على النتيجة الصحيحة؟ 2) إذا كان كذلك، حدد هذه النتيجة. وإلا فحدد الخطأ الذي ارتكبته ليلى ثم أعط النتيجة الصحيحة لهذا الحساب. 2) الحساب على الأعداد النسبية بالحاسبة. 1) لمسة الأعداد السالبة: أ) لإجراء حسابات على الأعداد النسبية السالبة نحتاج إلى لمسة جديدة، أين توجد هذه اللمسة؟ ب) لماذا لا نحتاج إلى هذه اللمسة عند إجراء حسابات على الأعداد الموجبة؟ 2) أهمية استعمال الأقواس: أ) احجز على الحاسبة برنامج الحساب الخطي التالي: $(-17)\\times(-42)+(-15)\\times18$. ب) أنجز هذا الحساب باليد. ما هو دور الأقواس في الحساب « المنجز باليد »؟ جـ) هل ترى أنه من الضروري حجز الأقواس التي تظهر في الحساب الذي « نجريه باليد » عندما ننجز هذا الحساب بالحاسبة؟ د) احجز على الحاسبة سلسلة العمليات الخطية التالية: $(-42+17)\\times(15+18)$. هـ) أنجز هذا الحساب باليد. ما هو دور الأقواس في الحساب « المنجز باليد »؟ و) هل ترى أنه من الضروري حجز الأقواس التي تظهر في الحساب الذي « نجريه باليد » عندما ننجز هذا الحساب بالحاسبة؟ ز) ما الذي يمكننا استنتاجه حول استعمال الحاسبة عند إنجاز حسابات باليد أو بالحاسبة؟",
+   "figure": "dessin d’une calculatrice ; deux rangées de touches arrondies (8 + 3 × ( (−) 4 ) ÷ puis 1 + 2 × ( (−) 1 , 5 )).",
+   "answer": {
+    "1": "non : la calculatrice calcule 8 + (3 x (-4)) / 1 + 2 x (-1,5) = -7 ; il manque les parenthèses autour du numérateur ET du dénominateur ; le résultat correct est A = (-4)/(-2) = 2",
+    "2.1": "la touche (−) (signe négatif) ; elle est inutile pour les positifs (pas de signe à saisir)",
+    "2.2.أ": "444",
+    "2.2.ب": "les parenthèses isolent le signe de chaque nombre : (−17) × (−42) + (−15) × 18 ; sur la calculatrice, la touche (−) rend ces parenthèses inutiles ici car × passe avant +",
+    "2.2.د": "-825",
+    "2.2.هـ": "les parenthèses obligent à additionner AVANT de multiplier : elles sont nécessaires aussi sur la calculatrice",
+    "2.2.ز": "la calculatrice applique les priorités : on tape les parenthèses qui changent l’ordre (numérateur, dénominateur, sommes) ; celles qui ne font que porter un signe se saisissent avec la touche (−)"
+   },
+   "answerSource": "computed",
+   "reading": "Les deux expressions de 2.2 sont imprimées avec le « − » après les chiffres ((17-)×(42-)+(15-)×18 et (18+15)×(17+42-)) : lues (−17)×(−42)+(−15)×18 = 444 et (−42+17)×(15+18) = −825."
+  }
+ ],
+ "discrepancies": [
+  {
+   "elementId": "unit",
+   "kind": "scan",
+   "text": "Pages 6–21 complètes, PDF = page imprimée + 1 (textbook-map.json). Les exercices pp. 14–16 sont sur deux colonnes ; les pages portent un filigrane « elbassair.net » inoffensif ; les 22 ex-1…34 et les 12 + 18 questions suivent la numérotation continue du manuel (ex 1–34, أؤكّد 1–12, أتعمّق 35–52)."
+  },
+  {
+   "elementId": "opener",
+   "kind": "scan",
+   "text": "Le grand cadre blanc sous la liste des objectifs (texte historique avec un titre rose et un mot rouge) est DÉTRUIT par des blocs de pixels : illisible. Seuls des bribes (« …الموجبة هي… ») se devinent. Destination : la synthèse (module None), note « illisible » : la plateforme n’en tire rien."
+  },
+  {
+   "elementId": "objectives",
+   "kind": "reading",
+   "text": "La liste est imprimée en deux rubriques numérotées « 1. حساب جداء عددين نسبيين » et « 2. مربع عدد نسبي », mais la seconde rubrique mêle le carré ET les quatre objets du quotient ; transcrite telle quelle, sans réorganiser."
+  },
+  {
+   "elementId": "prep",
+   "kind": "reading",
+   "text": "Items 11, 12, 13, 15 imprimés avec le « − » APRÈS les chiffres (« (4-)-(3-) », « 13+7-9+5- », « (5-)+(3-) », « (11 - 8) - 7 ») : rendu RTL qui renverse les opérandes ; lus (−3)−(−4) = 1, −5+9−7+13 = 10, (−3)+(−5) = −8, 7−(8−11) = 10. Chaque lecture est la SEULE qui rende au moins une option imprimée correcte (items 11 et 15 : une seule option juste ; la lecture littérale (11−8)−7 = −4 ne correspond à aucune option)."
+  },
+  {
+   "elementId": "prep",
+   "kind": "reading",
+   "text": "Item 5 (« température la plus basse ») : aucune donnée à comparer n’est imprimée ; l’item est lu « la plus basse des trois options » (−15 °C). Item 8 : « على مستقيم مدرّج من اليمين إلى اليسار » est ambigu (sens de la droite) ; lu sur la droite usuelle, croissante vers la droite. Items 1–9, 12–13 relus à 220 dpi seulement (leur leçon les relira)."
+  },
+  {
+   "elementId": "know-2",
+   "kind": "reading",
+   "text": "Chaque exemple est une accolade à DEUX lignes : l’exemple 1 est (−10) × (−3,8) = 38 puis 3 × 7 = 21 (la deuxième ligne illustre le produit de deux positifs) ; l’exemple 2 est (−6) × 3,4 = −20,4 puis 13 × −4 = −52 (écrit sans parenthèses dans le manuel)."
+  },
+  {
+   "elementId": "now-11",
+   "kind": "reading",
+   "text": "Le nombre de facteurs sous l’accolade de A = (−2) × (−2) × … × (−2) est lu « 85 » sur le scan (600 dpi, JPEG brut ×10, puis 500 dpi par jidaa-ida-nisbiya) ; le plan README et le plan de jidaa-ida-nisbiya disaient « 50 ». Confirmé : le dernier chiffre est un 5, le nombre est impair, le signe est − (le plan se trompait). La leçon n’utilise pas ce nombre (elle pose ses propres 40 et 7 facteurs)."
+  },
+  {
+   "elementId": "self-8",
+   "kind": "reading",
+   "text": "Imprimé « (-5) ÷ (-25) » avec les signes après les chiffres sur le scan (rendu RTL) : les options (5 ; −5 ; −20 ; 20) ne conviennent qu’à (−25) ÷ (−5) = 5 ; (−5) ÷ (−25) = 0,2 n’est pas proposé. Clé : أ. Contrairement à self-11 il n’est pas listé dans le plan README ; ajouté ici."
+  },
+  {
+   "elementId": "self-11",
+   "kind": "reading",
+   "text": "Imprimé « (-4) ÷ 11 » (signes après les chiffres, rendu RTL) mais les options (11/−4, −11/4, −2,75, 11/4) ne conviennent qu’à 11 ÷ (−4) = −2,75 ; (−4) ÷ 11 = −4/11 ne se trouve pas dans les options. Transcrit 11 ÷ (−4) ; clés أ, ب, جـ."
+  },
+  {
+   "elementId": "self-12",
+   "kind": "reading",
+   "text": "Énoncé imprimé « 3 × (4,7-) - 13 × 4,7- » (rendu RTL) lu −4,7 × 13 − (−4,7) × 3 = −47 ; options (−4,7)×(13−3) = −47 (أ), −4,7×13×3 (ب), 10×(−4,7) = −47 (جـ), (−4,7)×(−10) = 47 (د) : clés أ et جـ. Lecture LITTÉRALE possible : 3×(−4,7) − 13×(−4,7) = 47, seule د conviendrait ; la lecture RTL est celle du plan README et rend DEUX bonnes options (le manuel dit « الإجابة أو الإجابات »)."
+  },
+  {
+   "elementId": "self-4",
+   "kind": "reading",
+   "text": "L’option أ est imprimée « 92 ، 25 » (virgule typographique à la place du séparateur décimal, à l’envers) : lue 25,92 (la bonne réponse est −25,92, option جـ)."
+  },
+  {
+   "elementId": "deep-40",
+   "kind": "reading",
+   "text": "ب) −9 + 2 × 8 × 2 − 12 = −70 exige DEUX paires de parenthèses : (−9 + 2 × 8) × (2 − 12) = 7 × (−10) = −70 (recherche exhaustive : la seule façon). أ) (14 − 4) × (6 − 1) = 50 exige aussi deux paires ; جـ) 27 − 2,5 × (8,5 − 4,5) = 17 ; د) (15 − 25) × 2,4 + (7 − 3) × 2 = −16. Le titre « أقواس منسية » laisse entendre un seul couple : lecture du manuel inchangée."
+  },
+  {
+   "elementId": "deep-47",
+   "kind": "reading",
+   "text": "Le scan imprime « 52 » dans la case du milieu de droite ; le carré multiplicatif magique [_,1,_ / 4,−10,x / 5,_,−2] n’existe que pour x = 25 (constante (−10)³ = −1000 ; complété : −50 1 20 / 4 −10 25 / 5 100 −2). Avec 52 les lignes et les colonnes peuvent se compléter (−104 1 20 / 4 −10 52 / 5 208 −2, produit −2080) mais les diagonales échouent (20 × (−10) × 5 = −1000) : le carré n’est magique (diagonales comprises) qu’avec 25 (corrigé par qismat-nisbiyayn, 2026-10-26). « 52 » est le « 25 » rendu à l’envers (chiffres inversés, même cause que les autres)."
+  },
+  {
+   "elementId": "deep-45",
+   "kind": "reading",
+   "text": "Les trois suites sont composées en bidi ; lues de gauche à droite exactement comme imprimées (−243 ; 81 ; … ; 9 ; −3 etc.). Les raisons (−1/3, −1/5, puis ×(−1), ×(−2), ×(−3), ×(−4), ×(−5)) ne rendent les suites cohérentes que dans CET ordre."
+  },
+  {
+   "elementId": "deep-38",
+   "kind": "figure",
+   "text": "Le triangle magique est un dessin PÂLE : les six cercles sont à peine visibles ; seule la case « 0 » est lisible et se trouve au milieu du côté gauche. Avec cette position il y a deux solutions (symétriques) ; la lecture est à confirmer par la leçon qui l’emploie (banque de la synthèse)."
+  },
+  {
+   "elementId": "ex-23",
+   "kind": "reading",
+   "text": "Le signe « − » devant chaque fraction de ب) جـ) د) est extérieur à la fraction : −(−3/+7) = +3/7, −(5/−2) = +5/2, −(+4/−10) = +2/5 ; avec أ) (−9)/(+3) = −3 ce sont les trois quotients positifs (clés ب, جـ, د)."
+  },
+  {
+   "elementId": "ex-24",
+   "kind": "reading",
+   "text": "Les opérandes de جـ) et د) sont imprimés avec le « − » après le chiffre et dans les deux sens possibles ; lus (−32)÷(−5) et (−21)÷(−5) (quotients décimaux 6,4 et 4,2). Confirmé par qismat-nisbiyayn (scan relu à 130 dpi, 2026-10-26)."
+  },
+  {
+   "elementId": "ex-15",
+   "kind": "reading",
+   "text": "Dans l’énoncé le carré vide □ marque le nombre cherché ; l’ordre imprimé de ب) est « (+40) = (−5) × □ » (résultat à gauche du =)."
+  },
+  {
+   "elementId": "ex-17",
+   "kind": "reading",
+   "text": "Cibles lues : 32 ; −28 ; −0,25 ; 4,9. Le signe de −28 et de −0,25 est devant le nombre (le scan imprime « 32 ، ب) -28 ، جـ) -0,25 ، د) 4,9 »)."
+  },
+  {
+   "elementId": "ex-30",
+   "kind": "reading",
+   "text": "Les deux premiers énoncés sont composés en bidi (« (+48) ÷ … = (+8) » et « (+1) = … × (−1,6) ») ; lus ainsi. د) (−7,5) × … = 2,5 donne −1/3 et و) (−12) × … = −0,5 donne 1/24 : des quotients non décimaux (écriture en fraction)."
+  },
+  {
+   "elementId": "integration",
+   "kind": "scope",
+   "text": "Deux boîtes de la page 20 : « أدمج تعلّماتي » (amplitudes thermiques sur la Lune, Vénus, Mars ; kelvin ↔ celsius) = élément `integration` ; « وضعية للتقويم » (Fahrenheit) = élément `evaluation`."
+  },
+  {
+   "elementId": "evaluation",
+   "kind": "reading",
+   "text": "Le texte dit « de fahrenheit vers le celsius » mais la formule donnée convertit du celsius vers le fahrenheit ; la question 1b demande de l’inverser (rédaction du manuel conservée)."
+  },
+  {
+   "elementId": "method-1",
+   "kind": "scope",
+   "text": "L’élément est partagé : les exercices 1 et 2 (deux relatifs) + la طريقة → jidaa-adadayn-nisbiyayn ; l’exercice 3 (cinq facteurs, P = −831,6) → jidaa-ida-nisbiya (voir `items`)."
+  },
+  {
+   "elementId": "unit",
+   "kind": "scope",
+   "text": "Les éléments de qismat-nisbiyayn et de la synthèse sont transcrits aussi fidèlement mais marqués `verified: false` : leur leçon les relira (ceux de jidaa-ida-nisbiya ont été relus le 2026-10-26 : `verified: true`)."
+  }
+ ],
+ "destinations": {
+  "_comment": "elementId → { lesson, module } ; `items` répartit un élément ; une leçon encore coming_soon est une destination EN ATTENTE (check-textbook-coverage.mjs). Modules de jidaa-adadayn-nisbiyayn : 0 أستعدّ · 1 نشاط · 2 معارف · 3 طريقة · 4 أتمرّن · 5–7 مسائل · 8 إختبار أولي ; `None` = banque d’exercices.",
+  "objectives": {
+   "lesson": "unit",
+   "module": "page"
+  },
+  "opener": {
+   "lesson": "wadiya-idmajiya-aadad-nisbiya",
+   "module": null,
+   "note": "illisible",
+   "notIntegrated": "cadre historique détruit par des blocs de pixels sur le scan (illisible) : la plateforme n’en tire rien — décision de la synthèse, 2026-10-26"
+  },
+  "challenge": {
+   "lesson": "jidaa-ida-nisbiya",
+   "module": 5,
+   "items": {
+    "1": {
+     "lesson": "jidaa-ida-nisbiya",
+     "module": 5,
+     "note": "2017 nombres égaux de somme −2017 : chacun vaut −1, 2017 est impair : produit −1 (parité), refait avec 2025"
+    },
+    "2": {
+     "lesson": "wadiya-idmajiya-aadad-nisbiya",
+     "module": 5,
+     "note": "décompositions de −36 en produit d’entiers relatifs : situation d’entraînement 5 de la synthèse"
+    }
+   }
+  },
+  "prep": {
+   "lesson": "jidaa-adadayn-nisbiyayn",
+   "module": 0,
+   "items": {
+    "7-10-11-14-15": {
+     "lesson": "jidaa-adadayn-nisbiyayn",
+     "module": 0
+    },
+    "1-5-6-8-9": {
+     "lesson": "jidaa-ida-nisbiya",
+     "module": 0
+    },
+    "12-13": {
+     "lesson": "qismat-nisbiyayn",
+     "module": 0
+    },
+    "2-3-4": {
+     "lesson": "wadiya-idmajiya-aadad-nisbiya",
+     "module": 0
+    }
+   }
+  },
+  "act-1": {
+   "lesson": "jidaa-adadayn-nisbiyayn",
+   "module": 4,
+   "note": "APPLICATION (guide §4ter) : le puits (neg × pos comme addition répétée) est repris en أتمرّن, avec ses propres nombres"
+  },
+  "act-2": {
+   "lesson": "jidaa-adadayn-nisbiyayn",
+   "module": 4,
+   "note": "APPLICATION : l’escalator de 90 marches (somme répétée → produit) est repris en أتمرّن"
+  },
+  "act-3": {
+   "lesson": "jidaa-adadayn-nisbiyayn",
+   "module": 2,
+   "note": "le raisonnement (k × b + k × (−b) = k × 0 = 0 ; le tableau (−7) × n qui baisse de 7) devient la voie de معارف avec des nombres redessinés"
+  },
+  "act-4": {
+   "lesson": "qismat-nisbiyayn",
+   "module": 4,
+   "items": {
+    "1-2": {
+     "lesson": "qismat-nisbiyayn",
+     "module": 4
+    },
+    "3": {
+     "lesson": "qismat-nisbiyayn",
+     "module": 3
+    }
+   }
+  },
+  "know-1": {
+   "lesson": "jidaa-adadayn-nisbiyayn",
+   "module": 2
+  },
+  "know-2": {
+   "lesson": "jidaa-adadayn-nisbiyayn",
+   "module": 3
+  },
+  "know-3": {
+   "lesson": "jidaa-ida-nisbiya",
+   "module": 1
+  },
+  "know-4": {
+   "lesson": "jidaa-ida-nisbiya",
+   "module": 2
+  },
+  "know-5": {
+   "lesson": "jidaa-ida-nisbiya",
+   "module": 1
+  },
+  "know-6": {
+   "lesson": "jidaa-ida-nisbiya",
+   "module": 2
+  },
+  "method-1": {
+   "lesson": "jidaa-adadayn-nisbiyayn",
+   "module": 3,
+   "items": {
+    "1-2": {
+     "lesson": "jidaa-adadayn-nisbiyayn",
+     "module": 3
+    },
+    "3": {
+     "lesson": "jidaa-ida-nisbiya",
+     "module": 3
+    }
+   }
+  },
+  "method-2": {
+   "lesson": "jidaa-ida-nisbiya",
+   "module": 3
+  },
+  "method-3": {
+   "lesson": "jidaa-ida-nisbiya",
+   "module": 3
+  },
+  "now-11": {
+   "lesson": "jidaa-ida-nisbiya",
+   "module": 4
+  },
+  "know-7": {
+   "lesson": "jidaa-ida-nisbiya",
+   "module": 3
+  },
+  "know-8": {
+   "lesson": "qismat-nisbiyayn",
+   "module": 1
+  },
+  "know-9": {
+   "lesson": "qismat-nisbiyayn",
+   "module": 2
+  },
+  "know-10": {
+   "lesson": "qismat-nisbiyayn",
+   "module": 3
+  },
+  "method-4": {
+   "lesson": "jidaa-ida-nisbiya",
+   "module": 3
+  },
+  "method-5": {
+   "lesson": "qismat-nisbiyayn",
+   "module": 2
+  },
+  "method-6": {
+   "lesson": "qismat-nisbiyayn",
+   "module": 3
+  },
+  "now-13": {
+   "lesson": "qismat-nisbiyayn",
+   "module": 4
+  },
+  "ex-1": {
+   "lesson": "jidaa-adadayn-nisbiyayn",
+   "module": null
+  },
+  "ex-2": {
+   "lesson": "jidaa-adadayn-nisbiyayn",
+   "module": null
+  },
+  "ex-3": {
+   "lesson": "jidaa-adadayn-nisbiyayn",
+   "module": null
+  },
+  "ex-4": {
+   "lesson": "jidaa-adadayn-nisbiyayn",
+   "module": null
+  },
+  "ex-5": {
+   "lesson": "jidaa-ida-nisbiya",
+   "module": null
+  },
+  "ex-6": {
+   "lesson": "jidaa-adadayn-nisbiyayn",
+   "module": 4
+  },
+  "ex-7": {
+   "lesson": "jidaa-adadayn-nisbiyayn",
+   "module": null
+  },
+  "ex-8": {
+   "lesson": "jidaa-adadayn-nisbiyayn",
+   "module": null
+  },
+  "ex-9": {
+   "lesson": "jidaa-ida-nisbiya",
+   "module": null
+  },
+  "ex-10": {
+   "lesson": "jidaa-ida-nisbiya",
+   "module": null
+  },
+  "ex-11": {
+   "lesson": "jidaa-ida-nisbiya",
+   "module": null
+  },
+  "ex-12": {
+   "lesson": "jidaa-ida-nisbiya",
+   "module": null
+  },
+  "ex-13": {
+   "lesson": "jidaa-ida-nisbiya",
+   "module": 4
+  },
+  "ex-14": {
+   "lesson": "jidaa-ida-nisbiya",
+   "module": null
+  },
+  "ex-15": {
+   "lesson": "qismat-nisbiyayn",
+   "module": 4
+  },
+  "ex-16": {
+   "lesson": "qismat-nisbiyayn",
+   "module": 4
+  },
+  "ex-17": {
+   "lesson": "jidaa-adadayn-nisbiyayn",
+   "module": 4
+  },
+  "ex-18": {
+   "lesson": "jidaa-ida-nisbiya",
+   "module": null
+  },
+  "ex-19": {
+   "lesson": "jidaa-adadayn-nisbiyayn",
+   "module": null
+  },
+  "ex-20": {
+   "lesson": "jidaa-ida-nisbiya",
+   "module": null
+  },
+  "ex-21": {
+   "lesson": "qismat-nisbiyayn",
+   "module": null
+  },
+  "ex-22": {
+   "lesson": "qismat-nisbiyayn",
+   "module": 4
+  },
+  "ex-23": {
+   "lesson": "qismat-nisbiyayn",
+   "module": 4
+  },
+  "ex-24": {
+   "lesson": "qismat-nisbiyayn",
+   "module": 4
+  },
+  "ex-25": {
+   "lesson": "qismat-nisbiyayn",
+   "module": 4
+  },
+  "ex-26": {
+   "lesson": "qismat-nisbiyayn",
+   "module": 4
+  },
+  "ex-27": {
+   "lesson": "qismat-nisbiyayn",
+   "module": 4
+  },
+  "ex-28": {
+   "lesson": "qismat-nisbiyayn",
+   "module": null
+  },
+  "ex-29": {
+   "lesson": "jidaa-adadayn-nisbiyayn",
+   "module": 4
+  },
+  "ex-30": {
+   "lesson": "qismat-nisbiyayn",
+   "module": 4
+  },
+  "ex-31": {
+   "lesson": "qismat-nisbiyayn",
+   "module": null
+  },
+  "ex-32": {
+   "lesson": "qismat-nisbiyayn",
+   "module": null
+  },
+  "ex-33": {
+   "lesson": "qismat-nisbiyayn",
+   "module": 4
+  },
+  "ex-34": {
+   "lesson": "jidaa-adadayn-nisbiyayn",
+   "module": null
+  },
+  "self-1": {
+   "lesson": "jidaa-adadayn-nisbiyayn",
+   "module": 8,
+   "note": "items de test (module 8) ET banque (chiffres redessinés)"
+  },
+  "self-2": {
+   "lesson": "jidaa-adadayn-nisbiyayn",
+   "module": 8,
+   "note": "items de test (module 8) ET banque (chiffres redessinés)"
+  },
+  "self-3": {
+   "lesson": "jidaa-adadayn-nisbiyayn",
+   "module": 8,
+   "note": "items de test (module 8) ET banque (chiffres redessinés)"
+  },
+  "self-4": {
+   "lesson": "jidaa-adadayn-nisbiyayn",
+   "module": 8,
+   "note": "items de test (module 8) ET banque (chiffres redessinés)"
+  },
+  "self-5": {
+   "lesson": "jidaa-adadayn-nisbiyayn",
+   "module": 8,
+   "note": "items de test (module 8) ET banque (chiffres redessinés)"
+  },
+  "self-6": {
+   "lesson": "jidaa-ida-nisbiya",
+   "module": null
+  },
+  "self-7": {
+   "lesson": "jidaa-ida-nisbiya",
+   "module": null
+  },
+  "self-8": {
+   "lesson": "qismat-nisbiyayn",
+   "module": 8
+  },
+  "self-9": {
+   "lesson": "qismat-nisbiyayn",
+   "module": 8
+  },
+  "self-10": {
+   "lesson": "qismat-nisbiyayn",
+   "module": 8
+  },
+  "self-11": {
+   "lesson": "qismat-nisbiyayn",
+   "module": 8
+  },
+  "self-12": {
+   "lesson": "jidaa-ida-nisbiya",
+   "module": null
+  },
+  "deep-35": {
+   "lesson": "jidaa-ida-nisbiya",
+   "module": null
+  },
+  "deep-36": {
+   "lesson": "qismat-nisbiyayn",
+   "module": null
+  },
+  "deep-37": {
+   "lesson": "jidaa-adadayn-nisbiyayn",
+   "module": 4,
+   "note": "contraste produit/somme (4 cas) : أتمرّن de jidaa-adadayn-nisbiyayn (plan E8)"
+  },
+  "deep-38": {
+   "lesson": "wadiya-idmajiya-aadad-nisbiya",
+   "module": null,
+   "note": "addition seule (cases dont la somme sur chaque côté est 2) : banque de la synthèse (plan README)"
+  },
+  "deep-39": {
+   "lesson": "jidaa-ida-nisbiya",
+   "module": 4
+  },
+  "deep-40": {
+   "lesson": "qismat-nisbiyayn",
+   "module": 4
+  },
+  "deep-41": {
+   "lesson": "qismat-nisbiyayn",
+   "module": 4
+  },
+  "deep-42": {
+   "lesson": "jidaa-ida-nisbiya",
+   "module": 4
+  },
+  "deep-43": {
+   "lesson": "jidaa-adadayn-nisbiyayn",
+   "module": 4,
+   "note": "vrai/faux : أ et جـ seulement dans la leçon (ب est du 2AM) ; plan E6"
+  },
+  "deep-44": {
+   "lesson": "jidaa-ida-nisbiya",
+   "module": 4
+  },
+  "deep-45": {
+   "lesson": "qismat-nisbiyayn",
+   "module": 4
+  },
+  "deep-46": {
+   "lesson": "jidaa-ida-nisbiya",
+   "module": null
+  },
+  "deep-47": {
+   "lesson": "qismat-nisbiyayn",
+   "module": null
+  },
+  "deep-48": {
+   "lesson": "qismat-nisbiyayn",
+   "module": null
+  },
+  "deep-49": {
+   "lesson": "jidaa-ida-nisbiya",
+   "module": 4
+  },
+  "deep-50": {
+   "lesson": "qismat-nisbiyayn",
+   "module": null
+  },
+  "deep-51": {
+   "lesson": "jidaa-ida-nisbiya",
+   "module": 4
+  },
+  "deep-52": {
+   "lesson": "qismat-nisbiyayn",
+   "module": 6
+  },
+  "integration": {
+   "lesson": "wadiya-idmajiya-aadad-nisbiya",
+   "module": 1,
+   "note": "REDESIGNÉE : une nuit à l’Assekrem (amplitude thermique, kelvin ↔ celsius, moyenne), nombres propres : situation d’entraînement 1"
+  },
+  "evaluation": {
+   "lesson": "wadiya-idmajiya-aadad-nisbiya",
+   "module": 7,
+   "note": "REDESIGNÉE : la situation « Fahrenheit » (Sétif −3 °C, Montréal −13 °F) est analysée au module 7 et évaluée au module 8"
+  },
+  "ict": {
+   "lesson": "qismat-nisbiyayn",
+   "module": 7,
+   "note": "REDESIGNÉE en مسألة : parenthèses du numérateur et du dénominateur d’un quotient (la calculatrice n’est pas la leçon)"
+  }
+ }
+}

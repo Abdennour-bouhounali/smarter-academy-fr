@@ -1,0 +1,275 @@
+{
+  "id": "ex-2am-silsila-bidun-aqwas-l5-010",
+  "lessonCode": "silsila-bidun-aqwas",
+  "level": 5,
+  "metadata": {
+    "title": "ثمن غسّالة بأقساط",
+    "estimatedMinutes": 18,
+    "tags": [
+      "أقساط",
+      "سلسلة عمليات",
+      "قرار"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-2",
+      "page": 8,
+      "section": "أنشطة",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأوّل: اشترت أسرة غسّالة بـ 31500 دج . دفعت 5 أقساط، في كلّ قسط 4800 دج ، ثم دفعت 2700 دج .\nالجزء الثاني: يريد الأب معرفة ما بقي عليه، ويعدّ أنّ الباقي أقلّ من 5000 دج ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ سلسلة عمليات دون أقواس تعطي ما دفعته الأسرة إلى الآن؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bidun-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$4800 + 5 \\times 2700$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SILSILA-STORYORDER"
+        },
+        {
+          "id": "B",
+          "content": "$5 \\times 4800 + 2700$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$5 \\times 4800 - 2700$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SILSILA-STORYSIGN"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: كل جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل جملة بعملية، بالترتيب الذي جاءت به في القصة."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 \\times 4800 + 2700 = 26700$ .",
+        "incorrect": "اكتب جمل القصة بعمليات بالترتيب نفسه، واحرص على إشارة كل عملية: ما يُدفع أو ينقص يُطرح."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة الصحيحة: $5 \\times 4800 + 2700$",
+          "$24000 + 2700$",
+          "$26700$"
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم دينارًا دفعت الأسرة إلى الآن؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bidun-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار الجزائري",
+      "expectedAnswer": "26700",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: كل جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل جملة بعملية، بالترتيب الذي جاءت به في القصة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب السلسلة مراعيًا أولوية الضرب والقسمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 \\times 4800 + 2700 = 26700$ .",
+        "incorrect": "نترجم كل جملة من القصة بعملية بالترتيب نفسه، ثم نحسب السلسلة: الضرب والقسمة أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $5 \\times 4800 + 2700$",
+          "$24000 + 2700$",
+          "$26700$"
+        ],
+        "result": "26700 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 100
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كم دينارًا بقي على الأسرة دفعه؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bidun-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار الجزائري",
+      "expectedAnswer": "4800",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: كل جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل جملة بعملية، بالترتيب الذي جاءت به في القصة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب السلسلة مراعيًا أولوية الضرب والقسمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$31500 - 5 \\times 4800 - 2700 = 4800$ .",
+        "incorrect": "نترجم كل جملة من القصة بعملية بالترتيب نفسه، ثم نحسب السلسلة: الضرب والقسمة أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $31500 - 5 \\times 4800 - 2700$",
+          "$31500 - 24000 - 2700$",
+          "$7500 - 2700$",
+          "$4800$"
+        ],
+        "result": "4800 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 100
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "هل الباقي على الأسرة أقلّ من 5000 دج ؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bidun-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العددين المحسوبين بدقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل ما حسبته في الأسئلة السابقة."
+        }
+      ],
+      "feedback": {
+        "correct": "تحقّقت من ذلك بالحساب.",
+        "incorrect": "قارن العددين المحسوبين بدقة قبل أن تحكم."
+      },
+      "solution": {
+        "lines": [
+          "بقي $4800 \\text{ DA}$ .",
+          "$4800 < 5000$ ، إذن نعم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "كتب زميل $31500 - 5 = 31495$ ثم تابع حسابه. بيّن خطأه وصحّحه.",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bidun-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب على ورقتك مرحلة مرحلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اسأل: أيّ عملية تُنجز أوّلًا ولماذا؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تذكر القاعدة المستعملة."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "العدد $5$ هو عدد الأقساط، ولا يُطرح مباشرة من ثمن الغسّالة.",
+          "الأقساط الخمسة تكلّف $5 \\times 4800 = 24000$ دج ، والضرب يسبق الطرح.",
+          "الصحيح: $31500 - 24000 = 7500$ ثم $7500 - 2700 = 4800$ ، من اليسار نحو اليمين."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

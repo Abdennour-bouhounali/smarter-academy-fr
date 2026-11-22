@@ -1,0 +1,198 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-taalufiya-l4-006",
+  "lessonCode": "wadiya-idmajiya-taalufiya",
+  "level": 4,
+  "metadata": {
+    "title": "بطارية دراجة كهربائية",
+    "estimatedMinutes": 12,
+    "tags": [
+      "دالة متناقصة",
+      "تناسب التغيّرات",
+      "متراجحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-taalufiya_P1",
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-taalufiya-l4-006"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "يذهب عمر إلى مدرسته على دراجة كهربائية لا تلوّث هواء المدينة. بطارية دراجته مشحونة. بعد 20 دقيقة من السير بقي فيها 84% من الشحن، وبعد 45 دقيقة بقي 64% .\nنسبة الشحن $f(x)$ (بـ %) بعد $x$ دقيقة من السير دالة تآلفية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "أوجد العبارة الجبرية للدالة $f$ .",
+      "statement": "أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-4/5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-BAYANI-ISHARA-A",
+          "value": "4/5"
+        },
+        {
+          "id": "MISC-TAGHAYYUR-BIDUN-QISMA",
+          "value": "-20"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خاصية تناسب التغيّرات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة تنقص: المعامل سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{-20}{25}$ .",
+        "incorrect": "اطرح بالترتيب نفسه في البسط والمقام ثم اختزل."
+      },
+      "solution": {
+        "lines": [
+          "$a = \\dfrac{64 - 84}{45 - 20} = \\dfrac{-20}{25} = -\\dfrac{4}{5}$",
+          "$f(20) = 84$ أي: $-\\dfrac{4}{5} \\times 20 + b = 84$ ، $-16 + b = 84$ ، $b = 100$ .",
+          "$f(x) = -0{,}8x + 100$"
+        ],
+        "result": "f(x) = -0{,}8x + 100"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "100",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل $f(20) = 84$ بعد حساب $a$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$-16 + b = 84$ .",
+        "incorrect": "$b = f(20) - 20a$ ."
+      },
+      "solution": {
+        "lines": [
+          "$a = \\dfrac{64 - 84}{45 - 20} = \\dfrac{-20}{25} = -\\dfrac{4}{5}$",
+          "$f(20) = 84$ أي: $-\\dfrac{4}{5} \\times 20 + b = 84$ ، $-16 + b = 84$ ، $b = 100$ .",
+          "$f(x) = -0{,}8x + 100$"
+        ],
+        "result": "f(x) = -0{,}8x + 100"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "بعد كم دقيقة من بداية السير تفرغ البطارية تماما؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدة بالدقائق",
+      "expectedAnswer": "125",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة $f(x) = 0$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$-0{,}8x + 100 = 0$ .",
+        "incorrect": "حلّ $f(x) = 0$ : انقل 100 ثم اقسم على المعامل."
+      },
+      "solution": {
+        "lines": [
+          "$-0{,}8x + 100 = 0$",
+          "$0{,}8x = 100$",
+          "$x = 125$",
+          "تفرغ البطارية بعد 125 دقيقة (ساعتان و 5 دقائق)."
+        ],
+        "result": "125"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "يظهر تنبيه على شاشة الدراجة عندما تصبح نسبة الشحن أقل من 20% . ابتداء من كم دقيقة كاملة يظهر التنبيه؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الدقائق",
+      "expectedAnswer": "101",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المتراجحة $f(x) < 20$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه: القسمة على عدد سالب تغيّر اتجاه المتباينة."
+        }
+      ],
+      "feedback": {
+        "correct": "$-0{,}8x < -80$ .",
+        "incorrect": "عند القسمة على $-0{,}8$ يتغيّر اتجاه المتباينة؛ ثم خذ أصغر عدد طبيعي."
+      },
+      "solution": {
+        "lines": [
+          "$-0{,}8x + 100 < 20$",
+          "$-0{,}8x < -80$",
+          "$x > 100$",
+          "تحقق: $f(100) = 20$ و $f(101) = 19{,}2 < 20$ .",
+          "إذن يظهر التنبيه ابتداء من الدقيقة 101."
+        ],
+        "result": "101"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

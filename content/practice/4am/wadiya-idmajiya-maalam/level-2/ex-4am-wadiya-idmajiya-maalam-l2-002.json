@@ -1,0 +1,84 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-maalam-l2-002",
+  "lessonCode": "wadiya-idmajiya-maalam",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — طول AB بالجذور",
+    "estimatedMinutes": 3,
+    "tags": [
+      "المسافة بين نقطتين",
+      "تبسيط جذر"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 148,
+      "section": "الوضعيات",
+      "number": 5
+    }
+  },
+  "statement": {
+    "content": "$A(2\\,;\\,3)$ ، $B(4\\,;\\,1)$ نقطتان من المستوي المزوّد بمعلم متعامد ومتجانس مبدؤه O."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الطول AB يساوي (قد تصحّ أكثر من إجابة في الكتاب: اختر الجواب الكامل):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\sqrt{8}$ و $2\\sqrt{2}$ (العددان متساويان)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-JAM"
+        },
+        {
+          "id": "C",
+          "content": "$2\\sqrt{2}$ فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SHAKL-JIDHR"
+        },
+        {
+          "id": "D",
+          "content": "$\\sqrt{8}$ فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SHAKL-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{AB}\\begin{pmatrix} 2 \\\\ -2 \\end{pmatrix}$"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$AB = \\sqrt{2^2 + (-2)^2}$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\sqrt{8} = \\sqrt{4 \\times 2}$"
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = \\sqrt{4 + 4} = \\sqrt{8} = 2\\sqrt{2}$ . الصفر يأتي من جمع الفرقين $2 + (-2)$ .",
+        "incorrect": "المسافة لا تكون 0 بين نقطتين مختلفتين: ربّع كل فرق."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 2
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-takbir-tasghir-l5-005",
+  "lessonCode": "takbir-tasghir",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — تمثال أكبر",
+    "estimatedMinutes": 2,
+    "tags": [
+      "التكبير",
+      "المساحة والحجم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takbir-tasghir_P1",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "نحّات يتقن عمله يصنع تمثالا هو تكبير بالنسبة 2 لنموذج صغير. كمية الطلاء تتناسب مع المساحة، وكمية الجبس تتناسب مع الحجم."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "بالمقارنة مع النموذج:",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الطلاء والجبس يُضربان في 4",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-HAJM-K"
+        },
+        {
+          "id": "B",
+          "content": "الطلاء يُضرب في 4 والجبس في 8",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "الطلاء يُضرب في 2 والجبس في 4",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-MISAHA-K"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الطلاء يغطّي مساحة، والجبس يملأ حجما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأطوال تُضرب في $k$ ، والمساحات في $k^2$ ، والحجوم في $k^3$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب $2^2$ و $2^3$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "المساحة تُضرب في $2^2 = 4$ والحجم في $2^3 = 8$ .",
+        "incorrect": "المساحة والحجم لا يُضربان في نفس العدد."
+      }
+    }
+  ]
+}

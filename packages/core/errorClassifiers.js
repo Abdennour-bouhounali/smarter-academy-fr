@@ -32,7 +32,7 @@ export function isSignError(studentVal, expectedVal) {
 }
 
 // Example: Student calculated a + b instead of a^2 + b^2 or a * b
-export function isAdditionInsteadOfMultiplication(studentVal, expectedVal) {
+export function isAdditionInsteadOfMultiplication() {
     // This requires context of a and b, which can be passed as an options object if needed.
     return null;
 }

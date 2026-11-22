@@ -1,0 +1,181 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-aadad-l3-006",
+  "lessonCode": "wadiya-idmajiya-aadad",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2024 — أرضية غرفة 336cm × 432cm",
+    "estimatedMinutes": 7,
+    "tags": [
+      "قابلية القسمة",
+      "القاسم المشترك الأكبر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-aadad_P1",
+      "modelledOn": "BEM 2024 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "حرصًا على النظافة وإتقان العمل، يريد بنّاء تبليط أرضية غرفة مستطيلة الشكل عرضها 336cm وطولها 432cm ببلاطات مربعة متقايسة دون تقطيع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "هل يمكن أن يكون طول ضلع كل بلاطة 24cm ؟ 32cm ؟ برّر إجابتك.",
+      "statement": "طول ضلع كل بلاطة 24cm.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يجب أن يقسم طول ضلع البلاطة العرض والطول معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 336 على 24، ثم اقسم 432 على 24."
+        }
+      ],
+      "feedback": {
+        "correct": "336 = 24 × 14 و 432 = 24 × 18: يمكن أن يكون طول الضلع 24cm.",
+        "incorrect": "أجرِ القسمتين 336 ÷ 24 و 432 ÷ 24، وانظر إلى الباقي في كل منهما."
+      },
+      "solution": {
+        "lines": [
+          "$336 = 24 \\times 14$ و $432 = 24 \\times 18$",
+          "إذن يمكن أن يكون طول ضلع كل بلاطة 24cm."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "طول ضلع كل بلاطة 32cm.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يجب أن يقسم طول ضلع البلاطة العرض والطول معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 336 على 32، ثم اقسم 432 على 32."
+        }
+      ],
+      "feedback": {
+        "correct": "$432 = 32 \\times 13 + 16$ : 32 لا يقسم 432، إذن لا يمكن أن يكون طول الضلع 32cm.",
+        "incorrect": "أجرِ القسمتين 336 ÷ 32 و 432 ÷ 32، وانظر إلى الباقي في كل منهما."
+      },
+      "solution": {
+        "lines": [
+          "$336 = 32 \\times 10 + 16$ و $432 = 32 \\times 13 + 16$ : الباقي غير معدوم.",
+          "إذن لا يمكن أن يكون طول ضلع كل بلاطة 32cm."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "أوجد عدد البلاطات اللازمة بحيث يكون طول ضلع كل بلاطة أكبر ما يمكن.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "63",
+      "misconceptionSignatures": [
+        {
+          "value": "252",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول ضلع البلاطة الأكبر ما يمكن هو القاسم المشترك الأكبر للعددين 336 و 432."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم احسب عدد البلاطات على العرض وعلى الطول."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(432 ; 336) = 48، و $7 \\times 9 = 63$ بلاطة.",
+        "incorrect": "احسب القاسم المشترك الأكبر للبعدين، ثم اقسم كل بُعد عليه واضرب الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "$432 = 336 \\times 1 + 96$",
+          "$336 = 96 \\times 3 + 48$",
+          "$96 = 48 \\times 2 + 0$",
+          "إذن $PGCD(432 ; 336) = 48$ : طول ضلع البلاطة 48cm.",
+          "على العرض: $336 \\div 48 = 7$ ، على الطول: $432 \\div 48 = 9$",
+          "عدد البلاطات: $7 \\times 9 = 63$"
+        ],
+        "result": "63"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

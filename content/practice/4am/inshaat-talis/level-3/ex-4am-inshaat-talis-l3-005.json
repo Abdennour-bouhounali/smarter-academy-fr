@@ -1,0 +1,209 @@
+{
+  "id": "ex-4am-inshaat-talis-l3-005",
+  "lessonCode": "inshaat-talis",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2007 — مثلث قائم ثم النقطة E",
+    "estimatedMinutes": 12,
+    "tags": [
+      "فيثاغورس",
+      "إنشاء",
+      "خاصية طالس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_inshaat-talis_P1",
+      "modelledOn": "BEM 2007 I-4"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2007",
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "(وحدة الطول هي السنتيمتر) $ABC$ مثلث قائم في $A$ حيث: $AB = 8$ و $AC = 6$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $BC$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "14",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$[BC]$ وتر المثلث القائم في $A$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق خاصية فيثاغورس ثم خذ الجذر التربيعي."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC^2 = 64 + 36 = 100$ ومنه $BC = 10\\,\\mathrm{cm}$ .",
+        "incorrect": "مربع الوتر يساوي مجموع مربعي الضلعين القائمين."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $A$ ، حسب خاصية فيثاغورس: $BC^2 = AB^2 + AC^2 = 8^2 + 6^2 = 100$",
+          "$BC = \\sqrt{100}$"
+        ],
+        "result": "BC = 10\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 150,
+      "counted": false
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "لتكن $E$ نقطة من $[AB]$ حيث $AE = \\dfrac{2}{5}AB$ .",
+      "statement": "عيّن على الشكل النقطة $E$ دون استعمال مسطرة مدرّجة.",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب خطوات الإنشاء مرقّمة (أو صوّر ورقتك)، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AE = \\dfrac{2}{5}AB$ : قسّم $[AB]$ ذهنيا إلى خمسة أجزاء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نصف مستقيم مساعد مبدؤه $A$ ، خمس قطع متقايسة، ثم الموازي المارّ بالثانية."
+        }
+      ],
+      "feedback": {
+        "correct": "خمس قطع متقايسة على $[Ax)$ ، $(P_5B)$ ، والموازي المارّ بـ $P_2$ يعيّن $E$ .",
+        "incorrect": "قارن إنشاءك بالحل النموذجي خطوة خطوة، ثم صحّح الخطوة التي تختلف."
+      },
+      "solution": {
+        "lines": [
+          "1) نرسم نصف مستقيم $[Ax)$ لا يحمل القطعة $[AB]$ .",
+          "2) نعيّن عليه بالمدور، ابتداءً من $A$ ، 5 قطع متقايسة متتالية (بفتحة مدور كيفية) تنتهي عند العلامة $P_{5}$ .",
+          "3) نصل العلامة $P_{5}$ بالنقطة $B$ .",
+          "4) نرسم بالمسطرة والكوس الموازي للمستقيم $(P_{5}B)$ المارّ بالعلامة $P_{2}$ : يقطع $[AB]$ في $E$ .",
+          "التبرير: $(P_{2}E) \\parallel (P_{5}B)$ ، فحسب خاصية طالس في المثلثين $AP_{2}E$ و $AP_{5}B$ : $\\dfrac{AE}{AB} = \\dfrac{AP_{2}}{AP_{5}} = \\dfrac{2}{5}$ ."
+        ]
+      },
+      "timeSeconds": 360
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب $AE$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "3,2",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AE = \\dfrac{2}{5}AB$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AE = \\dfrac{2}{5} \\times 8 = 3{,}2\\,\\mathrm{cm}$ .",
+        "incorrect": "اضرب $\\dfrac{2}{5}$ في $AB$ ."
+      },
+      "solution": {
+        "lines": [
+          "$AE = \\dfrac{2}{5} \\times 8 = \\dfrac{16}{5}$"
+        ],
+        "result": "AE = 3{,}2\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "المستقيم الذي يشمل $E$ ويوازي $(BC)$ يقطع $[AC]$ في $F$ . احسب $EF$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$E \\in [AB]$ و $F \\in [AC]$ و $(EF) \\parallel (BC)$ : المثلثان $AEF$ و $ABC$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل $\\dfrac{AE}{AB} = \\dfrac{EF}{BC}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{EF}{BC} = \\dfrac{AE}{AB} = \\dfrac{2}{5}$ ومنه $EF = \\dfrac{2}{5} \\times 10 = 4\\,\\mathrm{cm}$ .",
+        "incorrect": "$EF$ يقابل $BC$ ، والنسبة هي $\\dfrac{AE}{AB}$ (من الرأس $A$ )."
+      },
+      "solution": {
+        "lines": [
+          "$E \\in [AB]$ و $F \\in [AC]$ و $(EF) \\parallel (BC)$ ، حسب خاصية طالس: $\\dfrac{AE}{AB} = \\dfrac{AF}{AC} = \\dfrac{EF}{BC}$",
+          "$\\dfrac{EF}{10} = \\dfrac{2}{5}$",
+          "$EF = \\dfrac{2 \\times 10}{5}$"
+        ],
+        "result": "EF = 4\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

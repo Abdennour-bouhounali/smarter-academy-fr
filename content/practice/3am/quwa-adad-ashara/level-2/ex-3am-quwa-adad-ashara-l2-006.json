@@ -1,0 +1,238 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l2-006",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 2,
+  "metadata": {
+    "title": "أكتب على شكل قوة للعدد 10",
+    "estimatedMinutes": 6,
+    "tags": [
+      "أسّ سالب",
+      "قوى العدد 10"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-6",
+      "page": 46,
+      "section": "أوظّف تعلّماتي",
+      "number": 6
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اكتب على شكل $10^{n}$ كلًّا من الأعداد التالية، وأعطِ الأسّ $n$ في كلّ حالة.",
+    "formulas": [
+      "A = 10\\,000\\,000",
+      "B = 0{,}000001"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "$A = 10\\,000\\,000 = 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ الأصفار الواقعة بعد الرقم 1 في هذا العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأسّ هو عدد الأصفار بعد الرقم 1، وليس عدد أرقام العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدّ الأصفار صفرًا صفرًا بدءًا من الرقم 1 حتى آخر العدد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-ASHARA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 10\\,000\\,000 = 10^{7}$ .",
+        "incorrect": "عدّ الأصفار (أو رتبة الرقم 1 بعد الفاصلة) بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "العدد 10 000 000 هو 1 متبوع بـ 7 أصفار.",
+          "$10\\,000\\,000 = 10^{7}$ ."
+        ],
+        "result": "n = 7"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$B = 0{,}000001 = 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين يقع الرقم 1 بعد الفاصلة؟ حدّد رتبته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في $10^{-n}$ يكون الرقم 1 في الرتبة $n$ بعد الفاصلة (الأعشار هي الرتبة الأولى)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأسّ سالب وقيمته المطلقة هي رتبة الرقم 1، أمّا عدد الأصفار بين الفاصلة والرقم 1 فأقلّ منها بواحد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-6",
+      "misconceptionSignatures": [
+        {
+          "value": "-5",
+          "id": "MISC-ASHARA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 0{,}000001 = 10^{-6}$ .",
+        "incorrect": "عدّ الأصفار (أو رتبة الرقم 1 بعد الفاصلة) بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الرقم 1 في الرتبة 6 بعد الفاصلة.",
+          "$0{,}000001 = \\dfrac{1}{10^{6}} = 10^{-6}$ ."
+        ],
+        "result": "n = -6"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "$C = \\dfrac{1}{10^{8}} = 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مقلوب $10^{n}$ هو $10^{-n}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "غيّر إشارة الأسّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأسّ الجديد سالب."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-8",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-ASHARA-SALIB"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{10^{8}} = 10^{-8}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{10^{8}} = 10^{-8}$ ."
+        ],
+        "result": "n = -8"
+      }
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "$D = \\dfrac{1}{10^{-6}} = 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الكتابة العشرية للعدد $10^{-6}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كم مرّة يدخل العدد $0{,}000001$ في العدد 1؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مقلوب مقلوب $10^{6}$ هو $10^{6}$ نفسه."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "-6",
+          "id": "MISC-ASHARA-SALIB"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{10^{-6}} = \\dfrac{1}{0{,}000001} = 1\\,000\\,000 = 10^{6}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10^{-6} = 0{,}000001$ .",
+          "$\\dfrac{1}{0{,}000001} = 1\\,000\\,000 = 10^{6}$ ."
+        ],
+        "result": "n = 6"
+      }
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "id": "ex-4am-khawass-qawasim-l1-007",
+  "lessonCode": "khawass-qawasim",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2016 — 19 و 133",
+    "estimatedMinutes": 4,
+    "tags": [
+      "خاصية 1",
+      "مضاعفات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_khawass-qawasim_P2",
+      "modelledOn": "BEM 2016 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن 19 من قواسم العدد 133: اكتب 133 على الشكل $19 \\times k$ حيث $k$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k$ فقط (عدد طبيعي)",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 133 على 19: يجب أن يكون الباقي معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل هذه القسمة هو العدد $k$ المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$133 = 19 \\times 7$ ، إذن 19 يقسم 133.",
+        "incorrect": "ابحث عن العدد الطبيعي $k$ الذي إذا ضُرب في 19 أعطى 133."
+      },
+      "solution": {
+        "lines": [
+          "$133 = 19 \\times 7$"
+        ],
+        "result": "133 = 19 \\times 7"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج أن 19 من قواسم العدد 13 300 000: اكتب هذا العدد على الشكل $19 \\times K$ حيث $K$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $K$ فقط (عدد طبيعي)",
+      "expectedAnswer": "700000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب 13 300 000 على شكل جداء يظهر فيه العدد 133."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قاسم عدد يقسم كل مضاعف له (الخاصية 1)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض 133 بكتابته من السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "$13\\,300\\,000 = 133 \\times 100\\,000 = 19 \\times 7 \\times 100\\,000 = 19 \\times 700\\,000$.",
+        "incorrect": "لاحظ أن 13 300 000 مضاعف للعدد 133، واستعمل كتابة 133 من السؤال 01."
+      },
+      "solution": {
+        "lines": [
+          "$13\\,300\\,000 = 133 \\times 100\\,000$",
+          "$13\\,300\\,000 = 19 \\times 7 \\times 100\\,000$",
+          "$13\\,300\\,000 = 19 \\times 700\\,000$",
+          "19 يقسم 133، فهو يقسم كل مضاعف له."
+        ],
+        "result": "13\\,300\\,000 = 19 \\times 700\\,000"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

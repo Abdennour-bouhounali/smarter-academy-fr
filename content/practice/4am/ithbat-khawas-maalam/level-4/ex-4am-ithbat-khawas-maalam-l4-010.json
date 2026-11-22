@@ -1,0 +1,131 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l4-010",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — حواجز سباق التيليفيريك",
+    "estimatedMinutes": 2,
+    "tags": [
+      "عكس فيثاغورس",
+      "تيليفيريك"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_ithbat-khawas-maalam_P1",
+      "modelledOn": "ex-18"
+    }
+  },
+  "generator": {
+    "tool": "u1x-ithbat-khawas-maalam/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "ثلاث محطات تيليفيريك، يتعاون عمّالها على صيانتها، على خريطة بمعلم متعامد ومتجانس: $A(-2\\,;\\,3)$ ، $B(2\\,;\\,5)$ ، $C(4\\,;\\,1)$ (الوحدة 100 m)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "احسب $BC^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MASAFA-JADHR-JAM",
+          "value": "6"
+        },
+        {
+          "id": "MISC-MAALAM-MASAFA-TARBI",
+          "value": "-12"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مركبتا $\\overrightarrow{BC}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$2$ و $-4$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ربّع ثم اجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC^2 = 4 + 16 = 20$ .",
+        "incorrect": "ربّع كل مركبة؛ مربع العدد السالب موجب."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "مع $AB^2 = 20$ و $AC^2 = 40$ ، المثلث ABC :",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "قائم في C",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-FITHAGHURAS-WATAR"
+        },
+        {
+          "id": "B",
+          "content": "متساوي الساقين وليس قائما",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SAQAYN-QAIM"
+        },
+        {
+          "id": "C",
+          "content": "قائم في B ومتساوي الساقين",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "قائم في A",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-FITHAGHURAS-WATAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أكبر مربع $AC^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$20 + 20$ ؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "والضلعان الصادران من B؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$20 + 20 = 40$ : قائم في B ، و $BA = BC$ .",
+        "incorrect": "الزاوية القائمة تقابل [AC]."
+      }
+    }
+  ]
+}

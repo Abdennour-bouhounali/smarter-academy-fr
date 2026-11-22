@@ -1,0 +1,179 @@
+{
+  "id": "ex-4am-talis-hisab-atwal-l3-009",
+  "lessonCode": "talis-hisab-atwal",
+  "level": 3,
+  "metadata": {
+    "title": "محيط المثلث المكبَّر",
+    "estimatedMinutes": 8,
+    "tags": [
+      "تكبير",
+      "المحيط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_talis-hisab-atwal_P3",
+      "modelledOn": "know-2"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$AMN$ مثلث أطوال أضلاعه: $AM = 2$ ، $AN = 3$ و $MN = 4$ . المثلث $ABC$ تكبير للمثلث $AMN$ بمعامل $k = \\dfrac{5}{2}$ (في وضعية طالس: $M \\in [AB]$ ، $N \\in [AC]$ و $(MN) \\parallel (BC)$ )."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $BC$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (عشري بالفاصلة مثل 2,75 أو كسر مثل 7/9)",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "1,6",
+          "id": "MISC-TALIS-MUAMIL-MAQLUB"
+        },
+        {
+          "value": "5,5",
+          "id": "MISC-TALIS-JAMA-BADAL-DARB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$BC$ هو الضلع الموافق لـ $[MN]$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$BC = k \\times MN$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC = \\dfrac{5}{2} \\times 4 = 10$ .",
+        "incorrect": "في التكبير نضرب كل طول في $k$ ، ولا نضيف العدد نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$BC = k \\times MN = \\dfrac{5}{2} \\times 4$"
+        ],
+        "result": "BC = 10"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب محيط المثلث $ABC$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (عشري بالفاصلة مثل 2,75 أو كسر مثل 7/9)",
+      "expectedAnswer": "22,5",
+      "misconceptionSignatures": [
+        {
+          "value": "16,5",
+          "id": "MISC-TALIS-JAMA-BADAL-DARB"
+        },
+        {
+          "value": "3,6",
+          "id": "MISC-TALIS-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $AB$ و $AC$ بالطريقة نفسها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المحيط مجموع أطوال الأضلاع الثلاثة."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = 5$ ، $AC = 7{,}5$ ، $BC = 10$ والمحيط $22{,}5$ .",
+        "incorrect": "احسب كل ضلع من $ABC$ بضربه في $k$ ، ثم اجمع الأضلاع الثلاثة."
+      },
+      "solution": {
+        "lines": [
+          "$AB = \\dfrac{5}{2} \\times 2 = 5$ ، $AC = \\dfrac{5}{2} \\times 3 = 7{,}5$ ، $BC = 10$",
+          "محيط $ABC$ : $5 + 7{,}5 + 10$"
+        ],
+        "result": "22{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب حاصل قسمة محيط المثلث $ABC$ على محيط المثلث $AMN$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري أو كسر",
+      "expectedAnswer": "2,5",
+      "misconceptionSignatures": [
+        {
+          "value": "0,4",
+          "id": "MISC-TALIS-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "محيط $AMN$ : $2 + 3 + 4$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الناتج بالمعامل $k$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{22{,}5}{9} = 2{,}5 = k$ : المحيط يُضرب في $k$ أيضا.",
+        "incorrect": "اقسم المحيط الكبير على المحيط الصغير (لا العكس)."
+      },
+      "solution": {
+        "lines": [
+          "محيط $AMN$ : $2 + 3 + 4 = 9$",
+          "$\\dfrac{22{,}5}{9} = 2{,}5$",
+          "نلاحظ أن المحيط يُضرب في معامل التكبير $k$ نفسه."
+        ],
+        "result": "2{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

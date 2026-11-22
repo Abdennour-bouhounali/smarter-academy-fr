@@ -1,0 +1,116 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-fada-l4-004",
+  "lessonCode": "wadiya-idmajiya-fada",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — خزان مائي ممتلئ",
+    "estimatedMinutes": 6,
+    "tags": [
+      "خاصية طالس",
+      "المخروط المبتور"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-fada_P3",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "خزان مائي على شكل مخروط مبتور قاعدته الصغرى في الأسفل: نصف قطر قاعه $2\\,\\mathrm{m}$ ونصف قطر أعلاه $4\\,\\mathrm{m}$ وارتفاعه $6\\,\\mathrm{m}$ ، وهو ممتلئ. نكمله إلى مخروط رأسه S تحت القاع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "بعد الرأس S عن القاع (بالمتر):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-fada_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالمتر)",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\dfrac{SO}{SO + 6} = \\dfrac{2}{4}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$4\\,SO = 2\\,SO + 12$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود التي فيها SO."
+        }
+      ],
+      "feedback": {
+        "correct": "$2\\,SO = 12$ ومنه $SO = 6\\,\\mathrm{m}$ .",
+        "incorrect": "SO بعد الرأس عن القاع."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-MABTUR-RAS"
+        },
+        {
+          "value": "3",
+          "id": "MISC-TAKBIR-ITTIJAH"
+        }
+      ],
+      "difficulty": 4
+    },
+    {
+      "id": "q2",
+      "statement": "اكتب حجم الماء على الشكل $k\\pi$ (بالمتر المكعب) ثم أعط $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-fada_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد k (الحجم kπ m³)",
+      "expectedAnswer": "56",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حجم الماء = حجم المخروط الكبير − حجم الصغير."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكبير: نصف القطر 4 والارتفاع $SO + 6$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب $\\dfrac{1}{3}\\left(16 \\times 12 - 4 \\times 6\\right)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{3}\\pi(192 - 24) = 56\\pi\\,\\mathrm{m}^3$ .",
+        "incorrect": "المخروط الصغير تصغير للكبير نسبته $\\dfrac{1}{2}$ ، حجمه $\\dfrac{1}{8}$ حجمه."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "64",
+          "id": "MISC-MABTUR-FARQ"
+        },
+        {
+          "value": "168",
+          "id": "MISC-MABTUR-THULTH"
+        }
+      ],
+      "difficulty": 4
+    }
+  ]
+}

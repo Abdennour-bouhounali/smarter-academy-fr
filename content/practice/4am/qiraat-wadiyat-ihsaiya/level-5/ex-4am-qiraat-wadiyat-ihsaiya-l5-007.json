@@ -1,0 +1,355 @@
+{
+  "id": "ex-4am-qiraat-wadiyat-ihsaiya-l5-007",
+  "lessonCode": "qiraat-wadiyat-ihsaiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2019 — عدّاد الخطوات لأب وابنه بغليزان",
+    "estimatedMinutes": 16,
+    "tags": [
+      "وضعية إدماجية",
+      "مدرّج تكراري",
+      "مراكز الفئات",
+      "المقارنة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qiraat-wadiyat-ihsaiya_P2",
+      "modelledOn": "BEM 2019 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2019",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "نصح طبيب أبا وابنه بغليزان بالمشي 8000 خطوة على الأقل كل يوم. سجّل كل منهما عدد خطواته اليومية خلال 30 يوما بتطبيق على الهاتف. يمثّل المدرّج التكراري الآتي نتائج الأب، ويعطي الجدول نتائج الابن:",
+    "table": {
+      "head": [
+        "عدد الخطوات في اليوم $t$",
+        "عدد أيام الابن"
+      ],
+      "rows": [
+        [
+          "$2000 \\le t < 4000$",
+          "0"
+        ],
+        [
+          "$4000 \\le t < 6000$",
+          "2"
+        ],
+        [
+          "$6000 \\le t < 8000$",
+          "6"
+        ],
+        [
+          "$8000 \\le t < 10000$",
+          "12"
+        ],
+        [
+          "$10000 \\le t < 12000$",
+          "10"
+        ]
+      ]
+    },
+    "figure": {
+      "kind": "chart",
+      "type": "histogram",
+      "ariaLabel": "مدرّج تكراري لعدد الخطوات اليومية للأب خلال 30 يوما بخمس فئات من 2000 إلى 12000",
+      "xTitle": "عدد الخطوات في اليوم",
+      "yTitle": "عدد الأيام",
+      "edges": [
+        2000,
+        4000,
+        6000,
+        8000,
+        10000,
+        12000
+      ],
+      "values": [
+        3,
+        6,
+        9,
+        8,
+        4
+      ],
+      "y": {
+        "max": 10,
+        "step": 2,
+        "minor": 2
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "عيّن عدد الأيام التي مشى فيها الأب من 6000 إلى أقل من 8000 خطوة.",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن المستطيل الذي يقع بين 6000 و 8000 ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل تدريجة رفيعة على المحور العمودي يوم واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "ارتفاع المستطيل 9 .",
+        "incorrect": "اقرأ ارتفاع المستطيل الصحيح على المحور العمودي."
+      },
+      "solution": {
+        "lines": [
+          "ارتفاع المستطيل الموافق للفئة $6000 \\le t < 8000$ هو 9 ."
+        ],
+        "result": "9"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "عيّن عدد الأيام التي احترم فيها الأب نصيحة الطبيب.",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        },
+        {
+          "value": "21",
+          "id": "MISC-IHSA-SARAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«8000 خطوة على الأقل» تجمع فئتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع ارتفاعَي المستطيلين الموافقين."
+        }
+      ],
+      "feedback": {
+        "correct": "$8 + 4 = 12$ .",
+        "incorrect": "اجمع أيام الفئتين $8000 \\le t < 10000$ و $10000 \\le t < 12000$ ."
+      },
+      "solution": {
+        "lines": [
+          "$8 + 4 = 12$"
+        ],
+        "result": "12"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "باستعمال مراكز الفئات، احسب متوسط عدد الخطوات اليومية للأب مدوّرا إلى الوحدة.",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (مدوّر إلى الوحدة)",
+      "expectedAnswer": "7267",
+      "misconceptionSignatures": [
+        {
+          "value": "6267",
+          "id": "MISC-IHSA-MARKAZ-FIA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مركز الفئة = نصف مجموع حدّيها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب كل مركز في عدد أيام فئته، ثم اقسم على 30 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{218000}{30} \\approx 7267$ .",
+        "incorrect": "استعمل مراكز الفئات (لا حدودها الدنيا)، ثم اقسم على عدد الأيام."
+      },
+      "solution": {
+        "lines": [
+          "المراكز: 3000 ، 5000 ، 7000 ، 9000 ، 11000",
+          "$3000 \\times 3 + 5000 \\times 6 + 7000 \\times 9 + 9000 \\times 8 + 11000 \\times 4 = 218000$",
+          "$\\dfrac{218000}{30} \\approx 7267$"
+        ],
+        "result": "7267"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "بالطريقة نفسها، احسب للابن:",
+      "statement": "متوسط عدد الخطوات اليومية.",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "9000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المراكز نفسها، والتكرارات من الجدول."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{270000}{30} = 9000$ .",
+        "incorrect": "استعمل مراكز الفئات وتكرارات الابن."
+      },
+      "solution": {
+        "lines": [
+          "$3000 \\times 0 + 5000 \\times 2 + 7000 \\times 6 + 9000 \\times 12 + 11000 \\times 10 = 270000$",
+          "$\\dfrac{270000}{30} = 9000$"
+        ],
+        "result": "9000"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "عدد الأيام التي احترم فيها نصيحة الطبيب.",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "22",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع أيام الفئتين الأخيرتين في الجدول."
+        }
+      ],
+      "feedback": {
+        "correct": "$12 + 10 = 22$ .",
+        "incorrect": "اجمع أيام الفئتين اللتين تبدآن من 8000 خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$12 + 10 = 22$"
+        ],
+        "result": "22"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "من منهما احترم نصيحة الطبيب أكثر؟ برّر بالمؤشرات.",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الابن: متوسطه أكبر من 8000 خطوة، وعدد الأيام التي بلغ فيها 8000 خطوة أكبر",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الأب، لأن أطول مستطيل في مدرّجه يقابل 6000 إلى 8000 خطوة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-QIRAA-MUKHATTAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المتوسطين بـ 8000 ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن عدد الأيام التي احترم فيها كل منهما النصيحة."
+        }
+      ],
+      "feedback": {
+        "correct": "$9000 > 8000 > 7267$ و $22 > 12$ .",
+        "incorrect": "استعمل المؤشرات المحسوبة في 01 و 02 و 03، لا شكل المدرّج وحده."
+      },
+      "solution": {
+        "lines": [
+          "متوسط الابن 9000 خطوة أكبر من 8000 ، ومتوسط الأب حوالي 7267 خطوة أقل منها.",
+          "احترم الابن النصيحة 22 يوما والأب 12 يوما فقط.",
+          "الابن احترم نصيحة الطبيب أكثر."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

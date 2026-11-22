@@ -1,0 +1,242 @@
+{
+  "id": "ex-3am-qawaid-quwa-ashara-l5-005",
+  "lessonCode": "qawaid-quwa-ashara",
+  "level": 5,
+  "metadata": {
+    "title": "برنامج حساب بثلاث عمليات",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مسألة",
+      "برنامج حساب"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-56",
+      "page": 50,
+      "section": "أتعمّق",
+      "number": 56
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "برنامج حساب: (1) اختر عددًا، (2) اضربه في $10^{7}$ ، (3) اضربه في $10^{-3}$ ، (4) اقسمه على $10^{2}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "الجزء الأول. نختار العدد $3$ . ما هي النتيجة؟",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أوّلًا كلّ قوة على حدة وحدّد أسّها، وانتبه إلى القوى التي بين قوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز الجداءات والقوى لتحصل على قوة واحدة في البسط وقوة واحدة في المقام، ثمّ اقسم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب أسّ البسط وأسّ المقام كلًّا على حدة قبل أن تطرح، وانتبه إلى الإشارات."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "300",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-QAWAID-ISHARA"
+        }
+      ],
+      "feedback": {
+        "correct": "$3\\times10^{7}\\times10^{-3}\\div10^{2} = 300$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10^{7}\\times10^{-3} = 10^{4}$ ، ثمّ $\\dfrac{10^{4}}{10^{2}} = 10^{2}$ .",
+          "$3\\times10^{2} = 300$ ."
+        ],
+        "result": "300"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "نختار العدد $0{,}06$ . ما هي النتيجة؟",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أوّلًا كلّ قوة على حدة وحدّد أسّها، وانتبه إلى القوى التي بين قوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز الجداءات والقوى لتحصل على قوة واحدة في البسط وقوة واحدة في المقام، ثمّ اقسم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب أسّ البسط وأسّ المقام كلًّا على حدة قبل أن تطرح، وانتبه إلى الإشارات."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "0.0006",
+          "id": "MISC-QAWAID-ISHARA"
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}06\\times10^{2} = 6$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "البرنامج يضرب في $10^{7}\\times10^{-3}\\div10^{2} = 10^{2}$ .",
+          "$0{,}06\\times100 = 6$ ."
+        ],
+        "result": "6"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "الجزء الثاني. البرنامج ضرب واحد في $10^{n}$ ، حيث $10^{n} = 10^{7}\\times10^{-3}\\div10^{2}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أوّلًا كلّ قوة على حدة وحدّد أسّها، وانتبه إلى القوى التي بين قوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز الجداءات والقوى لتحصل على قوة واحدة في البسط وقوة واحدة في المقام، ثمّ اقسم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب أسّ البسط وأسّ المقام كلًّا على حدة قبل أن تطرح، وانتبه إلى الإشارات."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "-12",
+          "id": "MISC-QAWAID-DARB-ASS"
+        },
+        {
+          "value": "6",
+          "id": "MISC-QAWAID-ISHARA"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{7}\\times10^{-3}\\div10^{2} = 10^{2}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$7 + (-3) - 2 = 2$ .",
+          "البرنامج يضرب العدد المختار في $10^{2}$ ."
+        ],
+        "result": "n = 2"
+      }
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "قالت ليلى: «هذا البرنامج يقسم العدد المختار على 100». هل هي على صواب؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل كلّ اقتراح إلى قوة واحدة للعدد 10 مستعملًا القاعدة المناسبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر اقتراحًا واحدًا في كلّ مرّة، وانتبه إلى أنّ القواعد الثلاث لا تخصّ الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا شككت في قاعدة فجرّبها على قوة صغيرة تعرف قيمتها العشرية."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QAWAID-ITTIJAH"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "ليلى مخطئة: البرنامج يضرب في $10^{2} = 100$ ولا يقسم عليه.",
+        "incorrect": "اختبر كلّ اقتراح بحساب قيمته أو بتطبيق القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الأسّ الصافي هو $+2$ ، فالبرنامج يضرب في $10^{2}$ .",
+          "إذن ليلى مخطئة: لا يقسم على 100 بل يضرب فيه."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l1-001",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 1,
+  "metadata": {
+    "title": "أؤكّد تعلّماتي 4 — مضلع أضلاعه متقايسة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "المضلع المنتظم",
+      "أؤكّد تعلّماتي"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 160,
+      "section": "أؤكّد تعلّماتي",
+      "number": 4
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 160): المضلع الآتي أضلاعه الخمسة مرمّزة متقايسة، وزاويتاه في A و E قائمتان.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          1
+        ],
+        "B": [
+          1,
+          1
+        ],
+        "C": [
+          1.866,
+          0.5
+        ],
+        "D": [
+          1,
+          0
+        ],
+        "E": [
+          0,
+          0
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "ticks": 1
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "ticks": 1
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "ticks": 1
+        },
+        {
+          "from": "D",
+          "to": "E",
+          "ticks": 1
+        },
+        {
+          "from": "E",
+          "to": "A",
+          "ticks": 1
+        }
+      ],
+      "rightAngles": [
+        [
+          "E",
+          "A",
+          "B"
+        ],
+        [
+          "D",
+          "E",
+          "A"
+        ]
+      ],
+      "ariaLabel": "خماسي ABCDE أضلاعه الخمسة مرمّزة متقايسة، والزاويتان في A و E قائمتان، و C رأس على اليمين",
+      "maxWidth": 340
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "هذا المضلع:",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "خماسي غير منتظم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خماسي منتظم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-ADLA"
+        },
+        {
+          "id": "C",
+          "content": "ليس خماسيا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-ZAWAYA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى الأضلاع ثم إلى الزوايا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المضلع المنتظم: أضلاعه متقايسة وزواياه متقايسة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن زاويته في A بزاويته في C."
+        }
+      ],
+      "feedback": {
+        "correct": "الأضلاع متقايسة لكن الزوايا لا: $90^\\circ$ في A و E، $150^\\circ$ في B و D، $60^\\circ$ في C. خماسي غير منتظم.",
+        "incorrect": "تقايس الأضلاع وحده لا يكفي: يجب أن تكون الزوايا أيضا متقايسة."
+      },
+      "difficulty": 1
+    }
+  ]
+}

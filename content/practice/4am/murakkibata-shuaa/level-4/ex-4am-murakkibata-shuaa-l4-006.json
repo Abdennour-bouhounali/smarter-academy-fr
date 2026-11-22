@@ -1,0 +1,77 @@
+{
+  "id": "ex-4am-murakkibata-shuaa-l4-006",
+  "lessonCode": "murakkibata-shuaa",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — من أين انطلقت؟",
+    "estimatedMinutes": 2,
+    "tags": [
+      "تمثيل شعاع",
+      "عكس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_murakkibata-shuaa_P3",
+      "modelledOn": "method-draw"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس، نقلنا النقطة M بالحركة $\\vec{u}\\begin{pmatrix} -2 \\\\ 3 \\end{pmatrix}$ فوصلت إلى $N(1\\,;\\,1)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما إحداثيتا M؟",
+      "learningPoints": [
+        {
+          "code": "4am_murakkibata-shuaa_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "إحداثيتا النقطة (x ; y) — عددان مثل −3 أو 2,5",
+      "expectedAnswer": {
+        "x": "3",
+        "y": "-2"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الشعاع ينطلق من النقطة المجهولة وينتهي عند النقطة المعلومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ارجع من النهاية عكس الحركة: اطرح كل مركبة من الإحداثية الموافقة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: من النقطة التي وجدتها، هل تعيدك الحركة إلى النقطة المعلومة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{MN} = \\vec{u}$ ، نرجع من N: 2 نحو اليمين و 3 نحو الأسفل: $M(3\\,;\\,-2)$ .",
+        "incorrect": "M هي المبدأ و N هي النهاية."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-1",
+            "y": "4"
+          },
+          "id": "MISC-MAALAM-ISHARA"
+        },
+        {
+          "value": {
+            "x": "-2",
+            "y": "3"
+          },
+          "id": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        }
+      ]
+    }
+  ]
+}

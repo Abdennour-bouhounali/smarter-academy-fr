@@ -1,0 +1,66 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-maalam-l1-008",
+  "lessonCode": "wadiya-idmajiya-maalam",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — مركبتا قطعة من المسار",
+    "estimatedMinutes": 2,
+    "tags": [
+      "مركبتا شعاع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-maalam_P2",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "سائق توصيل على دراجة نارية ينتقل من $S(2\\,;\\,-1)$ إلى $T(-3\\,;\\,3)$ في معلم متعامد ومتجانس. يحرص السائق على إتقان عمله وإيصال الطلبية سليمة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مركبتا الشعاع $\\overrightarrow{ST}$ هما:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "المركبتان (x ; y)",
+      "expectedAnswer": {
+        "x": "-5",
+        "y": "4"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النهاية T ناقص المبدأ S."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$x_T - x_S = -3 - 2$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$y_T - y_S = 3 - (-1)$"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{ST}\\begin{pmatrix} -3 - 2 \\\\ 3 - (-1) \\end{pmatrix} = \\begin{pmatrix} -5 \\\\ 4 \\end{pmatrix}$ .",
+        "incorrect": "نطرح إحداثيات المبدأ S من إحداثيات النهاية T."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 1
+    }
+  ]
+}

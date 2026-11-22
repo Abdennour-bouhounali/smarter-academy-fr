@@ -1,0 +1,335 @@
+{
+  "id": "ex-4am-talis-hisab-atwal-l5-005",
+  "lessonCode": "talis-hisab-atwal",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2015 — السياج في قطعة الأرض",
+    "estimatedMinutes": 22,
+    "tags": [
+      "وضعية إدماجية",
+      "خاصية طالس",
+      "معامل التصغير",
+      "تكلفة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_talis-hisab-atwal_P2",
+      "modelledOn": "BEM 2015 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "قطعة أرض مثلثة الشكل $ABC$ حيث $AB = 60\\,\\mathrm{m}$ ، $AC = 45\\,\\mathrm{m}$ و $BC = 50\\,\\mathrm{m}$ . أراد صاحبها فصل جزء منها بسياج مستقيم $[MN]$ موازٍ لـ $(BC)$ ، حيث $M$ من $[AB]$ و $N$ من $[AC]$ و $AM = 36\\,\\mathrm{m}$ ، ليغرس في المثلث $AMN$ أشجار الزيتون وفي الجزء $MBCN$ الخضر، على أن يهدي جزءًا من المحصول للمحتاجين.",
+    "figure": {
+      "points": {
+        "A": [
+          0.0,
+          0.0
+        ],
+        "B": [
+          5.638155724715,
+          -2.052120859954
+        ],
+        "C": [
+          3.702302911877,
+          2.557919691606
+        ],
+        "M": [
+          3.382893434829,
+          -1.231272515972
+        ],
+        "N": [
+          2.221381747126,
+          1.534751814964
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "M",
+          "label": "36 m"
+        },
+        {
+          "from": "M",
+          "to": "B"
+        },
+        {
+          "from": "A",
+          "to": "N"
+        },
+        {
+          "from": "N",
+          "to": "C"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "50 m",
+          "arrows": 1
+        },
+        {
+          "from": "M",
+          "to": "N",
+          "arrows": 1
+        }
+      ],
+      "ariaLabel": "قطعة الأرض ABC، والسياج [MN] يوازي (BC)، M من [AB] و N من [AC]؛ AB = 60 m و AC = 45 m و BC = 50 m و AM = 36 m",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $AN$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "27",
+      "misconceptionSignatures": [
+        {
+          "value": "75",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقط $A$ ، $M$ ، $B$ على استقامة والنقط $A$ ، $N$ ، $C$ على استقامة، و $(MN) \\parallel (BC)$ : المثلثان $AMN$ و $ABC$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب النسب الثلاث المتساوية $\\dfrac{AM}{AB} = \\dfrac{AN}{AC} = \\dfrac{MN}{BC}$ ، واحتفظ بالمساواة التي فيها $AN$ وثلاثة أطوال معلومة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الطول المجهول بالجداء المتصالب (الرابع المتناسب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$AN = \\dfrac{45 \\times 36}{60} = 27\\,\\mathrm{m}$ .",
+        "incorrect": "راجع المساواة المختارة: في كل نسبة طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: النقط $A$ ، $M$ ، $B$ على استقامة واحدة، والنقط $A$ ، $N$ ، $C$ على استقامة واحدة، و $(MN) \\parallel (BC)$ (من المعطيات) .",
+          "حسب خاصية طالس: $\\dfrac{AM}{AB} = \\dfrac{AN}{AC} = \\dfrac{MN}{BC}$",
+          "$\\dfrac{36}{60} = \\dfrac{AN}{45}$",
+          "$AN = \\dfrac{45 \\times 36}{60}$"
+        ],
+        "result": "AN = 27\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب طول السياج $MN$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "250/3",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "75",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقط $A$ ، $M$ ، $B$ على استقامة والنقط $A$ ، $N$ ، $C$ على استقامة، و $(MN) \\parallel (BC)$ : المثلثان $AMN$ و $ABC$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب النسب الثلاث المتساوية $\\dfrac{AM}{AB} = \\dfrac{AN}{AC} = \\dfrac{MN}{BC}$ ، واحتفظ بالمساواة التي فيها $MN$ وثلاثة أطوال معلومة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الطول المجهول بالجداء المتصالب (الرابع المتناسب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$MN = \\dfrac{50 \\times 36}{60} = 30\\,\\mathrm{m}$ .",
+        "incorrect": "راجع المساواة المختارة: في كل نسبة طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AM}{AB} = \\dfrac{MN}{BC}$ أي $\\dfrac{36}{60} = \\dfrac{MN}{50}$",
+          "$MN = \\dfrac{50 \\times 36}{60}$"
+        ],
+        "result": "MN = 30\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب معامل التصغير $k$ الذي يحوّل المثلث $ABC$ إلى المثلث $AMN$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري أو كسر",
+      "expectedAnswer": "0,6",
+      "misconceptionSignatures": [
+        {
+          "value": "5/3",
+          "id": "MISC-TALIS-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$k = \\dfrac{AM}{AB}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$k = \\dfrac{36}{60} = 0{,}6$ .",
+        "incorrect": "معامل التناسبية k = (طول في المثلث الناتج) ÷ (الطول الموافق له في المثلث الأصلي)؛ راجع أي المثلثين هو الأصلي."
+      },
+      "solution": {
+        "lines": [
+          "$k = \\dfrac{AM}{AB} = \\dfrac{36}{60}$"
+        ],
+        "result": "k = 0{,}6"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "☜ يريد صاحب الأرض إحاطة الجزء $MBCN$ بسياج ثمن المتر الواحد منه $1200DA$ . ما هي تكلفة هذا السياج؟",
+      "statement": "محيط الجزء $MBCN$ :",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المحيط بـ m",
+      "expectedAnswer": "122",
+      "misconceptionSignatures": [
+        {
+          "value": "152",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $MB$ و $NC$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المحيط: $MB + BC + CN + NM$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$MB = 24$ ، $CN = 18$ والمحيط $24 + 50 + 18 + 30 = 122\\,\\mathrm{m}$ .",
+        "incorrect": "المحيط مجموع أطوال الأضلاع الأربعة للجزء $MBCN$ : احسب $MB$ و $CN$ بالطرح."
+      },
+      "solution": {
+        "lines": [
+          "$MB = AB - AM = 60 - 36 = 24$ و $CN = AC - AN = 45 - 27 = 18$",
+          "محيط $MBCN$ : $MB + BC + CN + NM = 24 + 50 + 18 + 30$"
+        ],
+        "result": "122\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "تكلفة السياج:",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: التكلفة بـ DA",
+      "expectedAnswer": "146400",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب المحيط في ثمن المتر الواحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$122 \\times 1200 = 146400DA$ .",
+        "incorrect": "اضرب طول السياج (المحيط) في 1200."
+      },
+      "solution": {
+        "lines": [
+          "$122 \\times 1200$"
+        ],
+        "result": "146400\\,DA"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

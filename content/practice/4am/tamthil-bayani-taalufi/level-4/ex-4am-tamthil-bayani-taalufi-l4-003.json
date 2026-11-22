@@ -1,0 +1,219 @@
+{
+  "id": "ex-4am-tamthil-bayani-taalufi-l4-003",
+  "lessonCode": "tamthil-bayani-taalufi",
+  "level": 4,
+  "metadata": {
+    "title": "معاملات عشرية: $f(x) = -1{,}5x + 1{,}5$",
+    "estimatedMinutes": 10,
+    "tags": [
+      "نقطتان من التمثيل",
+      "انتماء نقطة",
+      "تمثيل بياني"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tamthil-bayani-taalufi_P1",
+      "adaptedFrom": "ex-4am-tamthil-bayani-taalufi-l4-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "المستوي منسوب إلى معلم متعامد ومتجانس $(O , \\vec{i} , \\vec{j})$ . نعتبر الدالة التآلفية $f$ حيث: $f(x) = -1{,}5x + 1{,}5$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن إحداثيي نقطة تقاطع التمثيل البياني للدالة $f$ مع محور التراتيب.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": {
+        "x": "0",
+        "y": "3/2"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "3/2",
+            "y": "0"
+          },
+          "id": "MISC-BAYANI-FASILA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل نقطة من محور التراتيب فاصلتها 0."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب صورة العدد 0 بالدالة $f$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(0) = 1{,}5$ : النقطة $(0 ; 1{,}5)$ .",
+        "incorrect": "نقطة محور التراتيب فاصلتها 0، وترتيبها صورة 0: اكتب الفاصلة أولا ثم الترتيب."
+      },
+      "solution": {
+        "lines": [
+          "نقطة تقاطع التمثيل البياني للدالة $f$ مع محور التراتيب فاصلتها 0.",
+          "$f(0) = -\\dfrac{3}{2} \\times 0 + 1{,}5 = 1{,}5$",
+          "إذن النقطة هي $(0 ; 1{,}5)$ ، و $1{,}5$ هو الترتيب عند المبدأ."
+        ],
+        "result": "(0 ; 1{,}5)"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب ترتيب النقطة من التمثيل البياني للدالة $f$ التي فاصلتها $1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "0",
+      "misconceptionSignatures": [
+        {
+          "value": "-3/2",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ترتيب نقطة من التمثيل البياني للدالة $f$ هو صورة فاصلتها بالدالة $f$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب الفاصلة في المعامل $a$ ، ثم أضف $b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(1) = -\\dfrac{3}{2} \\times 1 + 1{,}5 = 0$ .",
+        "incorrect": "الترتيب هو صورة الفاصلة: اضرب الفاصلة في $a$ ثم أضف $b$ بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$f(1) = -\\dfrac{3}{2} \\times 1 + 1{,}5 = 0$",
+          "إذن النقطة $(1 ; 0)$ تنتمي إلى التمثيل البياني للدالة $f$."
+        ],
+        "result": "f(1) = 0"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل النقطة $M(-1 ; 3)$ تنتمي إلى التمثيل البياني للدالة $f$؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تنتمي النقطة إلى التمثيل البياني للدالة $f$ إذا كان ترتيبها يساوي صورة فاصلتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب صورة فاصلة النقطة بالدالة $f$ ، ثم قارنها بترتيبها."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(-1) = -\\dfrac{3}{2} \\times (-1) + 1{,}5 = 3$ ، وهو ترتيب النقطة.",
+        "incorrect": "احسب صورة الفاصلة بالدالة ثم قارنها بالترتيب."
+      },
+      "solution": {
+        "lines": [
+          "$f(-1) = -\\dfrac{3}{2} \\times (-1) + 1{,}5 = 3$",
+          "$f(-1) = 3$ ، إذن النقطة $M$ تنتمي إلى التمثيل البياني للدالة $f$ ."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "أنشئ التمثيل البياني للدالة $f$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التمثيل البياني لدالة تآلفية مستقيم: تكفي نقطتان منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خذ النقطة $(0 ; b)$ من محور التراتيب، ثم احسب صورة عدد آخر."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "التمثيل البياني للدالة $f$ مستقيم يشمل النقطتين $(0 ; 1{,}5)$ و $(1 ; 0)$ ، ويشمل أيضا $M(-1 ; 3)$ .",
+          "نعلّم النقطتين $(1 ; 0)$ و $M(-1 ; 3)$ (إحداثياهما صحيحان) ثم نرسم المستقيم: إنه ينزل ( $a = -1{,}5$ )."
+        ]
+      },
+      "timeSeconds": 300
+    }
+  ]
+}

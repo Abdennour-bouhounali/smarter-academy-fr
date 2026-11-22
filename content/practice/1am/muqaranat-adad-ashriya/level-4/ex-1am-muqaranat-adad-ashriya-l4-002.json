@@ -1,0 +1,244 @@
+{
+  "id": "ex-1am-muqaranat-adad-ashriya-l4-002",
+  "lessonCode": "muqaranat-adad-ashriya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — كتابة كسرية وضرب في 100 وترتيب",
+    "estimatedMinutes": 8,
+    "tags": [
+      "كسر عشري",
+      "ترتيب تنازلي"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 1,
+      "file": "1am-s1-104",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "ننجز الأسئلة الآتية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب الكسر العشري $\\dfrac{7025}{1000}$ بالكتابة العشرية.",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "7,025",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم صفرًا في المقام؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هذا العدد هو عدد الأرقام بعد الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عُدّ من يمين البسط بقدر ذلك العدد، وإن نقصت الأرقام فاكتب أصفارًا قبلها."
+        }
+      ],
+      "feedback": {
+        "correct": "$7{,}025$",
+        "incorrect": "عدد الأرقام بعد الفاصلة يساوي عدد أصفار المقام؛ وإذا كان البسط أقصر نكتب أصفارًا بين الفاصلة والبسط."
+      },
+      "solution": {
+        "lines": [
+          "المقام 1000 فيه 3 صفر(ان): نضع الفاصلة بعد 3 رقم(ين) من اليمين."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب: $7{,}025 \\times 100$",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "702,5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن موضع الفاصلة في العددين: كم رتبة انتقلت، وفي أيّ اتجاه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا صار العدد أكبر فالانتقال نحو اليمين، وإذا صار أصغر فنحو اليسار."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد الرتب المنقولة يعطي عدد أصفار العدد المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$702{,}5$",
+        "incorrect": "الضرب في 10 أو 100 أو 1000 ينقل الفاصلة نحو اليمين، والقسمة تنقلها نحو اليسار، بعدد رتب يساوي عدد الأصفار."
+      },
+      "solution": {
+        "lines": [
+          "$7{,}025\\times 100 = 702{,}5$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "رتّب الأعداد تنازليًا (من الأكبر إلى الأصغر): $7{,}025$ ، $7{,}25$ ، $7{,}205$ ، $70{,}25$. أيّ السلاسل الآتية صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$7{,}025 > 7{,}205 > 7{,}25 > 70{,}25$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-ORDER-DIRECTION"
+        },
+        {
+          "id": "B",
+          "content": "$70{,}25 < 7{,}25 < 7{,}205 < 7{,}025$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-SYMBOL-SWAP"
+        },
+        {
+          "id": "C",
+          "content": "$70{,}25 > 7{,}25 > 7{,}205 > 7{,}025$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$70{,}25 > 7{,}205 > 7{,}025 > 7{,}25$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-DIGITS-AS-NATURAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن عددين عددين، وابحث عن الأصغر (أو الأكبر) أولًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ بالجزء الصحيح، فهو يفرز الأعداد إلى مجموعات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "داخل المجموعة الواحدة قارن الأعشار ثم الأجزاء من مائة، ثم تحقق من الترتيب كاملًا."
+        }
+      ],
+      "feedback": {
+        "correct": "الترتيب التنازلي : $70{,}25 > 7{,}25 > 7{,}205 > 7{,}025$",
+        "incorrect": "نقارن العددين اثنين اثنين، ونبدأ بالجزء الصحيح ثم الأعشار فالأجزاء من مائة، ثم نكتب السلسلة كاملة ونتحقق من كل رمز."
+      },
+      "solution": {
+        "lines": [
+          "نقارن الأعداد اثنين اثنين ونرتّبها: $70{,}25 > 7{,}25 > 7{,}205 > 7{,}025$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "ضع الرمز المناسب ($<$ أو $=$ أو $>$) مكان النقط: $7{,}205 \\ldots 7{,}25$",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الرمز المناسب",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$<$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$=$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-ZERO-PLACE"
+        },
+        {
+          "id": "C",
+          "content": "$>$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-DIGITS-AS-NATURAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا تقرأ الأرقام بعد الفاصلة على أنها عدد طبيعي منفصل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أتمم الأرقام بأصفار غير ضرورية لتتساوى عدد الأرقام بعد الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الأعشار أولًا: الرتبة الأعلى تحسم قبل الرتب الأدنى."
+        }
+      ],
+      "feedback": {
+        "correct": "الجزآن الصحيحان متساويان؛ نقارن عددَي أجزاء من ألف: $205$ و $250$، إذن $7{,}205 < 7{,}25$.",
+        "incorrect": "عدد الأرقام بعد الفاصلة لا يحدّد كِبَر العدد: نقارن الأعشار قبل الأجزاء من مائة. مثال: $3{,}2 = 3{,}20$ أكبر من $3{,}14$ لأنّ 20 جزءًا من مائة أكثر من 14."
+      },
+      "solution": {
+        "lines": [
+          "نتمم بأصفار لنساوي عدد الأرقام بعد الفاصلة: $7{,}205$ و $7{,}250$.",
+          "الجزآن الصحيحان متساويان؛ نقارن عددَي أجزاء من ألف: $205$ و $250$، إذن $7{,}205 < 7{,}25$."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,267 @@
+{
+  "id": "ex-2am-talim-nuqta-mustawi-l5-006",
+  "lessonCode": "talim-nuqta-mustawi",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — تغيير مبدأ الخريطة",
+    "estimatedMinutes": 16,
+    "tags": [
+      "وضعية إدماجية",
+      "تغيير المبدأ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "على خريطة الحيّ مبدؤها المتوسطة $O$ ، يقع مكتب البريد $T$ عند $(2\\,;\\,3)$ والمخبزة $B$ عند $(-2\\,;\\,-2)$ . يريد المرشد السياحي أن يجعل المكتبة $\\Omega(-1\\,;\\,1)$ مبدأ جديدًا، بدون تغيير الوحدة ولا الاتجاهين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "في المعلم الأوّل $T(2\\,;\\,3)$ . ننقل المبدأ إلى النقطة $\\Omega(-1\\,;\\,1)$ (الوحدة والاتجاهان لم يتغيّرا). ما إحداثيتا $T$ في المعلم الجديد؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "3",
+        "y": "2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-ORIGINFIXED2",
+          "value": {
+            "x": "2",
+            "y": "3"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-ADDORIGIN",
+          "value": {
+            "x": "1",
+            "y": "4"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "إحداثيتا النقطة تُقاسان انطلاقًا من المبدأ، فتتغيّران إذا تغيّر المبدأ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ الوحدات من المبدأ الجديد إلى النقطة على كلّ اتجاه، بإشارتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح إحداثيتي المبدأ الجديد من إحداثيتي النقطة في المعلم الأوّل ثم تحقّق على رسمك."
+        }
+      ],
+      "feedback": {
+        "correct": "$T(3\\,;\\,2)$ في المعلم الجديد.",
+        "incorrect": "إحداثيتا النقطة تُقاس من المبدأ، فتتغيّر إذا تغيّر المبدأ؛ ابدأ بعدّ الوحدات من المبدأ الجديد."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الجديدة = $2 - (-1) = 3$",
+          "الترتيب الجديد = $3 - (1) = 2$"
+        ],
+        "result": "T(3\\,;\\,2)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "في المعلم الأوّل $B(-2\\,;\\,-2)$ . ننقل المبدأ إلى النقطة $\\Omega(-1\\,;\\,1)$ (الوحدة والاتجاهان لم يتغيّرا). ما إحداثيتا $B$ في المعلم الجديد؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-1",
+        "y": "-3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-ORIGINFIXED2",
+          "value": {
+            "x": "-2",
+            "y": "-2"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-ADDORIGIN",
+          "value": {
+            "x": "-3",
+            "y": "-1"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "إحداثيتا النقطة تُقاسان انطلاقًا من المبدأ، فتتغيّران إذا تغيّر المبدأ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ الوحدات من المبدأ الجديد إلى النقطة على كلّ اتجاه، بإشارتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح إحداثيتي المبدأ الجديد من إحداثيتي النقطة في المعلم الأوّل ثم تحقّق على رسمك."
+        }
+      ],
+      "feedback": {
+        "correct": "$B(-1\\,;\\,-3)$ في المعلم الجديد.",
+        "incorrect": "إحداثيتا النقطة تُقاس من المبدأ، فتتغيّر إذا تغيّر المبدأ؛ ابدأ بعدّ الوحدات من المبدأ الجديد."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الجديدة = $-2 - (-1) = -1$",
+          "الترتيب الجديد = $-2 - (1) = -3$"
+        ],
+        "result": "B(-1\\,;\\,-3)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "في أيّ منطقة من المعلم تقع النقطة $B(-1\\,;\\,-3)$ ؟ (في المعلم الجديد)",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "على يمين محور التراتيب وفوق محور الفواصل",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-BOTHSIGNS"
+        },
+        {
+          "id": "B",
+          "content": "على يسار محور التراتيب وتحت محور الفواصل",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "على يمين محور التراتيب وتحت محور الفواصل",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-SIGNLEFT"
+        },
+        {
+          "id": "D",
+          "content": "على يسار محور التراتيب وفوق محور الفواصل",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-SIGNAXIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "إشارة الفاصلة تحدّد جهة النقطة بالنسبة إلى محور التراتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إشارة الترتيب تحدّد جهة النقطة بالنسبة إلى محور الفواصل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الجهتين لتجد المنطقة."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة $B$ على يسار محور التراتيب وتحت محور الفواصل .",
+        "incorrect": "اكتب إشارة الفاصلة ثم إشارة الترتيب، ثم ترجم كلًّا منهما إلى جهة بالنسبة إلى المحور المناسب."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $B$ $-1$ فهي على يسار محور التراتيب",
+          "ترتيبها $-3$ فهي تحت محور الفواصل"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "برّر : لماذا تتغيّر إحداثيتا مكتب البريد عندما ننقل المبدأ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب ما تعرفه عن الإحداثيتين وأيّهما تُكتب أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل كلمتي الفاصلة والترتيب في جملتك."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مثّل الوضع على شبكة صغيرة ثم صغ ملاحظتك."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن جوابك بالحل النموذجي، ثم قيّم نفسك.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به جوابك فقرة فقرة."
+      },
+      "solution": {
+        "lines": [
+          "إحداثيتا نقطة هما عدد الوحدات المقيسة انطلاقًا من المبدأ على المحورين.",
+          "إذا تغيّر المبدأ تغيّرت المسافات المقيسة منه فتغيّرت الإحداثيتان.",
+          "النقطة نفسها لم تتحرّك."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "id": "ex-4am-khawas-dawaran-l5-001",
+  "lessonCode": "khawas-dawaran",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — وردة زليج بثماني بتلات",
+    "estimatedMinutes": 4,
+    "tags": [
+      "زليج",
+      "المستقيم وصورته"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_khawas-dawaran_P2",
+      "modelledOn": "know-3"
+    }
+  },
+  "generator": {
+    "tool": "u13-khawas-dawaran/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "وردة زليج تلمسانية من ثماني بتلات: البتلة رقم k صورة البتلة 1 بالدوران الذي مركزه O وزاويته $45(k-1)^\\circ$ في الاتجاه المباشر. [AB] حافة من حواف البتلة 1، و $[A_kB_k]$ صورتها في البتلة k."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قيس الزاوية بين (AB) و $(A_3B_3)$ بالدرجات؟",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "90",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-TAWAZI",
+          "value": "0"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "البتلة 3: كم مرة $45^\\circ$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المستقيم وصورته يصنعان زاوية الدوران."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$45 \\times 2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "زاوية الدوران $90^\\circ$ : (A₃B₃) ⊥ (AB).",
+        "incorrect": "البتلة 3 صورة البتلة 1 بدوران زاويته $2 \\times 45^\\circ$ ."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "(AB) و $(A_5B_5)$ :",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "متوازيان",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "متعامدان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-TAWAZI"
+        },
+        {
+          "id": "C",
+          "content": "يتقاطعان بزاوية $45^\\circ$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-RAS-ZAWIYA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "البتلة 5: $4 \\times 45^\\circ$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نصف دورة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "صورة مستقيم بنصف دورة."
+        }
+      ],
+      "feedback": {
+        "correct": "زاوية الدوران $180^\\circ$ : المستقيم وصورته متوازيان.",
+        "incorrect": "البتلة 5 صورة البتلة 1 بنصف دورة."
+      }
+    }
+  ]
+}

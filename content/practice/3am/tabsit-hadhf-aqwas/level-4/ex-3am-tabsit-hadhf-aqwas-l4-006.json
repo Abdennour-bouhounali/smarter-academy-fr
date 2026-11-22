@@ -1,0 +1,191 @@
+{
+  "id": "ex-3am-tabsit-hadhf-aqwas-l4-006",
+  "lessonCode": "tabsit-hadhf-aqwas",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — الزاوية الثالثة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "حذف الأقواس",
+      "زوايا المثلث"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "مثلث $ABC$ فيه: $\\widehat{A} = x$ و $\\widehat{B} = x - 20$ (بالدرجات)، فيكون $\\widehat{C} = 180 - x - (x - 20)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب $\\widehat{C}$ بدلالة $x$ على أبسط شكل.",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$160 - 2x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-MINUS-FIRST-ONLY"
+        },
+        {
+          "id": "B",
+          "content": "$200 - 2x$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$160$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-MINUS-KEPT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة التي تسبق القوسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوسان مسبوقان بالإشارة $-$ يُحذفان مع تغيير إشارة كل حدّ بينهما، لا الحدّ الأول وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العبارة بدون أقواس حدًّا حدًّا، ثم اجمع الحدود المتشابهة، وتحقّق بتعويض $x$ بعدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$200 - 2x$.",
+        "incorrect": "راجع إشارة كل حدّ وما يسبق القوسين، ثم اجمع الحدود المتشابهة فقط."
+      },
+      "solution": {
+        "lines": [
+          "$\\widehat{C} = 180 - x - x + 20$",
+          "$\\widehat{C} = 200 - 2x$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $\\widehat{C}$ من أجل $x = 55$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "90",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى، ويُستحسن أن تعوّض في الشكل المبسّط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويات العمليات: القوى، ثم الضرب، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالتعويض في العبارة قبل تبسيطها: القيمة لا تتغيّر."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل $x = 55$ : $\\widehat{C} = 90°$ .",
+        "incorrect": "عوّض $x$ بالعدد المعطى في الشكل المبسّط واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$\\widehat{C} = 200 - 2 \\times 55 = 90$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما نوع المثلث $ABC$ من أجل $x = 55$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مثلث قائم في $C$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "مثلث متقايس الأضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-DECISION-UNCHECKED"
+        },
+        {
+          "id": "C",
+          "content": "مثلث متساوي الساقين رأسه $A$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-DECISION-UNCHECKED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أقياس الزوايا الثلاث من أجل $x = 55$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل بينها زاوية قائمة؟ زاويتان متقايستان؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{C} = 90°$ : المثلث قائم في $C$ .",
+        "incorrect": "احسب الزوايا الثلاث ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $x = 55$ : $\\widehat{A} = 55°$ و $\\widehat{B} = 35°$ و $\\widehat{C} = 90°$ .",
+          "إذن المثلث قائم في $C$ ."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-takbir-tasghir-l1-002",
+  "lessonCode": "takbir-tasghir",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — الحرف يُضرب في k",
+    "estimatedMinutes": 2,
+    "tags": [
+      "التكبير",
+      "الأطوال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takbir-tasghir_P1",
+      "modelledOn": "act-6"
+    }
+  },
+  "statement": {
+    "content": "في لعبة بناء على الهاتف يتعاون لاعبان، فيكبّر أحدهما مكعّبا حرفه $1\\,\\mathrm{cm}$ بالنسبة $k = 2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "طول حرف المكعّب الناتج يُضرب في:",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-BUUD"
+        },
+        {
+          "id": "B",
+          "content": "$2$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-BUUD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحرف طول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأطوال تُضرب في $k$ ، والمساحات في $k^2$ ، والحجوم في $k^3$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأطوال تُضرب في k نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "الأطوال تُضرب في $k = 2$ : الحرف يصير $2\\,\\mathrm{cm}$ .",
+        "incorrect": "الحرف طول (بعد واحد): يُضرب في k."
+      }
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "id": "ex-3am-qawaid-quwa-ashara-l5-008",
+  "lessonCode": "qawaid-quwa-ashara",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — ورق وسُمك",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مسألة",
+      "جداء قوى",
+      "حاصل القسمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "سُمك ورقة الدفتر يساوي $10^{-4}\\ \\mathrm{m}$ تقريبًا. يريد مدير المكتبة معرفة ارتفاع أكوام من الأوراق."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "الجزء الأول. كومة من $10^{4}$ ورقة ارتفاعها $10^{-4}\\times10^{4} = 10^{n}$ متر: ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوتين المضروبتين وأسّ كلّ منهما (انتبه إلى إشارته)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في جداء قوتين للعدد 10 نجري عملية واحدة على الأسّين: ما هي؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب القاعدة على مثال صغير: $10^{2}\\times10^{1}$ هو $10\\times10\\times10$ ، فكم عاملًا 10 في الجداء؟"
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "0",
+      "misconceptionSignatures": [
+        {
+          "value": "-16",
+          "id": "MISC-QAWAID-DARB-ASS"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{-4}\\times10^{4} = 10^{0} = 1$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نجمع الأسّين: $-4 + 4 = 0$ .",
+          "ارتفاع الكومة $10^{0} = 1$ متر."
+        ],
+        "result": "n = 0"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ارتفاع كومة من $10^{6}$ ورقة هو $10^{-4}\\times10^{6} = 10^{n}$ متر: ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوتين المضروبتين وأسّ كلّ منهما (انتبه إلى إشارته)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في جداء قوتين للعدد 10 نجري عملية واحدة على الأسّين: ما هي؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب القاعدة على مثال صغير: $10^{2}\\times10^{1}$ هو $10\\times10\\times10$ ، فكم عاملًا 10 في الجداء؟"
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "-24",
+          "id": "MISC-QAWAID-DARB-ASS"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{-4}\\times10^{6} = 10^{2}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نجمع الأسّين: $-4 + 6 = 2$ .",
+          "ارتفاع الكومة $10^{2} = 100$ متر."
+        ],
+        "result": "n = 2"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "الجزء الثاني. كم ورقة في كومة ارتفاعها $10^{-1}\\ \\mathrm{m}$ ؟ $\\dfrac{10^{-1}}{10^{-4}} = 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد البسط والمقام وأسّ كلّ منهما (انتبه إلى إشارة الأسّ)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في حاصل قسمة قوتين للعدد 10 نجري عملية واحدة على الأسّين: ما هي، وبأيّ ترتيب؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر أنّ $\\dfrac{10^{2}}{10^{1}}$ هو $\\dfrac{10\\times10}{10}$ ، وأنّ طرح أسّ سالب يعني جمع عدد موجب."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "-5",
+          "id": "MISC-QAWAID-ISHARA"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{10^{-1}}{10^{-4}} = 10^{3}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نطرح الأسّين: $-1 - (-4) = -1 + 4 = 3$ .",
+          "في الكومة $10^{3} = 1\\,000$ ورقة."
+        ],
+        "result": "n = 3"
+      }
+    }
+  ]
+}

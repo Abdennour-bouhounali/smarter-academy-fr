@@ -1,0 +1,198 @@
+{
+  "id": "ex-4am-tahlil-ibara-l5-003",
+  "lessonCode": "tahlil-ibara",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2015 — بستانا النخيل",
+    "estimatedMinutes": 16,
+    "tags": [
+      "عامل مشترك",
+      "ربح",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tahlil-ibara_P2",
+      "modelledOn": "BEM 2015 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يملك فلاح بواحة في ولاية ورقلة بستانين من النخيل يعتني بهما اعتناءه بأرض أجداده: في البستان الأول $(x + 3)$ صفًّا في كل صف $(x + 4)$ نخلة، وفي البستان الثاني $(x + 3)$ صفًّا في كل صف $(x + 1)$ نخلة، حيث $x$ عدد طبيعي."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "اكتب بدلالة $x$ العدد الكلي $N$ للنخلات، ثم حلّل $N$ إلى جداء عاملين من الدرجة الأولى.",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tahlil-ibara_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $N$ على الشكل $(x + 3)(mx + n)$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد نخلات بستان = عدد الصفوف × عدد النخلات في الصف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العامل $(x + 3)$ مشترك بين الجداءين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بسّط ما بين القوسين الكبيرين بإشاراته، ثم قارن بالشكل المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$N = (x + 3)(2x + 5)$ إذن $m = 2$ .",
+        "incorrect": "أخرج العامل المشترك من كل حد، ثم بسّط ما بين القوسين الكبيرين بإشاراته (حدّ وحده يعني $1$)."
+      },
+      "solution": {
+        "lines": [
+          "$N = (x + 3)(x + 4) + (x + 3)(x + 1)$",
+          "$N = (x + 3)(x + 4 + x + 1)$"
+        ],
+        "result": "N = (x + 3)(2x + 5)"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tahlil-ibara_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $N$ على الشكل $(x + 3)(mx + n)$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العدد المطلوب في الشكل المحلّل، بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$N = (x + 3)(2x + 5)$ إذن $n = 5$ .",
+        "incorrect": "أخرج العامل المشترك من كل حد، ثم بسّط ما بين القوسين الكبيرين بإشاراته (حدّ وحده يعني $1$)."
+      },
+      "solution": {
+        "lines": [
+          "$N = (x + 3)(2x + 5)$"
+        ],
+        "result": "n = 5"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "نأخذ $x = 12$ . احسب العدد الكلي للنخلات.",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "435",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى في الشكل المحلّل: الحساب أسهل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب قيمة كل عامل، ثم اضرب."
+        }
+      ],
+      "feedback": {
+        "correct": "$N = 435$ .",
+        "incorrect": "عوّض $x$ في كل عامل، واحترم الإشارات وأولويات العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$N = (12 + 3)(2 \\times 12 + 5) = 15 \\times 29$"
+        ],
+        "result": "N = 435"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "☜ تنتج النخلة الواحدة في المتوسط $60$ kg من التمر، يبيع الفلاح الكيلوغرام بـ 450DA ، وتكلّفه خدمة النخلة الواحدة في الموسم 6000DA . ما هو ربح الفلاح في هذا الموسم؟",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدينار DA)",
+      "expectedAnswer": "9135000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مدخول النخلة الواحدة ثم اطرح تكلفة خدمتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب ربح النخلة الواحدة في عدد النخلات."
+        }
+      ],
+      "feedback": {
+        "correct": "$9135000\\ DA$ .",
+        "incorrect": "الربح = المدخول − التكاليف؛ احسبه للنخلة الواحدة ثم اضرب في العدد الكلي للنخلات."
+      },
+      "solution": {
+        "lines": [
+          "مدخول النخلة الواحدة: $60 \\times 450 = 27000$ DA",
+          "ربح النخلة الواحدة: $27000 - 6000 = 21000$ DA",
+          "ربح الفلاح: $435 \\times 21000 = 9135000$ DA"
+        ],
+        "result": "9135000\\ DA"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

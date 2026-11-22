@@ -1,0 +1,306 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l5-003",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — سرعة الدرّاج",
+    "estimatedMinutes": 12,
+    "tags": [
+      "حاصل قسمة",
+      "حصر",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: قطع درّاج من نادي الحيّ $40$ km في $2{,}2$ ساعة بسرعة منتظمة.\nالجزء الثاني: يريد الدرّاج أن يعلن سرعته في لافتة النادي."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نريد إنجاز القسمة $40 \\div 2{,}2$ . في أيّ عدد نضرب الحدّين لتصير القسمة على عدد طبيعي؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "قوّة للعدد 10",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عُدّ الأرقام التي تأتي بعد الفاصلة في المقسوم عليه وحده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كلّ رقم بعد الفاصلة يزول بالضرب في قوّة مناسبة للعدد $10$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحدّان يُضربان في العدد نفسه حتى لا يتغيّر حاصل القسمة."
+        }
+      ],
+      "feedback": {
+        "correct": "المقسوم عليه $2{,}2$ فيه رقم واحد بعد الفاصلة، فنضربه في $10$ فيصير $22$.",
+        "incorrect": "المقسوم عليه هو الذي يحدّد القوّة: عدد الأرقام التي تأتي بعد فاصلته، لا بعد فاصلة المقسوم."
+      },
+      "solution": {
+        "lines": [
+          "المقسوم عليه $2{,}2$ فيه رقم واحد بعد الفاصلة",
+          "$2{,}2 \\times 10 = 22$"
+        ],
+        "result": "10"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}1$ بالنقصان لسرعته (km/h).",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "18.1",
+      "misconceptionSignatures": [
+        {
+          "value": "18.2",
+          "id": "MISC-QARIBA-ROUNDED"
+        },
+        {
+          "value": "18.18",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالنقصان لا تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة دون أن تزيد شيئًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب القيمة في المقسوم عليه: يجب ألاّ يتجاوز الجداء المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$18{,}1 < \\frac{40}{2{,}2} < 18{,}2$.",
+        "incorrect": "بالنقصان: نحتفظ بالأرقام حتى الرتبة المطلوبة ونُهمل ما بعدها دون تغيير الرقم الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$2{,}2 \\times 18{,}1 = 39{,}82$",
+          "$2{,}2 \\times 18{,}2 = 40{,}04$",
+          "$39{,}82 < 40 < 40{,}04$"
+        ],
+        "result": "18{,}1"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}1$ بالزيادة لسرعته.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "18.2",
+      "misconceptionSignatures": [
+        {
+          "value": "18.1",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "18.19",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالزيادة هي أصغر قيمة من هذه الرتبة تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من القيمة بالنقصان ثم أضف وحدة واحدة من الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$18{,}1 < \\frac{40}{2{,}2} < 18{,}2$.",
+        "incorrect": "بالزيادة: هي القيمة التي تلي القيمة بالنقصان مباشرة في الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$2{,}2 \\times 18{,}2 = 40{,}04$",
+          "$40{,}04 > 40$",
+          "القيمة بالزيادة هي $18{,}2$"
+        ],
+        "result": "18{,}2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "lead": "الجزء الثاني: ما الذي يُكتب في اللافتة؟",
+      "statement": "هل يمكن أن نكتب $\\dfrac{40}{2{,}2} = 18{,}2$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-EXACTAPPROX"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أو قارن بدقّة قبل أن تجيب."
+        }
+      ],
+      "feedback": {
+        "correct": "لا: $2{,}2 \\times 18{,}2 = 40{,}04 \\neq 40$.",
+        "incorrect": "اضرب العدد المكتوب في $2{,}2$ وقارن الجداء بـ $40$."
+      },
+      "solution": {
+        "lines": [
+          "$2{,}2 \\times 18{,}2 = 40{,}04$",
+          "$40{,}04 \\neq 40$ : المساواة خاطئة"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "هل الحصر $18{,}1 < \\dfrac{40}{2{,}2} < 18{,}2$ صحيح؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أو قارن بدقّة قبل أن تجيب."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}2 \\times 18{,}1 = 39{,}82$ و $2{,}2 \\times 18{,}2 = 40{,}04$ يحصران $40$.",
+        "incorrect": "اضرب كلّ طرف في المقسوم عليه وقارن الجداءين بالمقسوم."
+      },
+      "solution": {
+        "lines": [
+          "$2{,}2 \\times 18{,}1 = 39{,}82$ و $2{,}2 \\times 18{,}2 = 40{,}04$",
+          "$39{,}82 < 40 < 40{,}04$: الحصر صحيح"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "برّر أنّ كتابة «سرعة الدرّاج أقلّ من $18{,}2$ km/h» صحيحة، وأنّ كتابة «سرعته $18{,}2$ km/h بالضبط» خاطئة.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب جملة أو جملتين: الفكرة ثم الحساب الذي يدعمها."
+        }
+      ],
+      "feedback": {
+        "correct": "$18{,}2$ قيمة مقرّبة بالزيادة، والقيمة المضبوطة هي $\\dfrac{40}{2{,}2}$.",
+        "incorrect": "قارن تبريرك بالحلّ النموذجي: الفكرة ثم الحساب الذي يدعمها."
+      },
+      "solution": {
+        "lines": [
+          "$2{,}2 \\times 18{,}2 = 40{,}04 > 40$ : السرعة أقلّ من $18{,}2$.",
+          "$18{,}2$ قيمة مقرّبة بالزيادة، والقيمة المضبوطة هي $\\dfrac{40}{2{,}2}$."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

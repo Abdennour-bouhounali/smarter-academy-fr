@@ -1,0 +1,287 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muthallathat-l3-010",
+  "lessonCode": "wadiya-idmajiya-muthallathat",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2011 — المقطع العرضي لقناة ري",
+    "estimatedMinutes": 14,
+    "tags": [
+      "جيب التمام",
+      "برهان",
+      "خاصية فيثاغورس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-muthallathat_P1",
+      "modelledOn": "BEM 2011 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2011",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "المقطع العرضي لقناة ري بسهل الشلف مثلث $ABC$ قائم في $A$ ، ضلعه $[BC]$ على مستوى سطح الأرض، و $[AH]$ عمق القناة حيث $H$ المسقط العمودي للنقطة $A$ على $[BC]$ (الشكل المقابل). $AB = 0{,}6\\,\\mathrm{m}$ و $BC = 1\\,\\mathrm{m}$ . يشرف الفلاحون على تنظيف القناة بالتناوب وبروح التعاون.",
+    "figure": {
+      "points": {
+        "B": [
+          0,
+          0
+        ],
+        "C": [
+          1,
+          0
+        ],
+        "H": [
+          0.36,
+          0
+        ],
+        "A": [
+          0.36,
+          -0.48
+        ]
+      },
+      "segments": [
+        {
+          "from": "B",
+          "to": "C",
+          "label": "1 m"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "label": "0,6 m"
+        },
+        [
+          "A",
+          "C"
+        ],
+        {
+          "from": "A",
+          "to": "H",
+          "dashed": true
+        }
+      ],
+      "rightAngles": [
+        [
+          "B",
+          "A",
+          "C"
+        ],
+        [
+          "A",
+          "H",
+          "C"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "B",
+          "from": "C",
+          "to": "A"
+        }
+      ],
+      "labels": {
+        "B": "nw",
+        "C": "ne",
+        "H": "n",
+        "A": "s"
+      },
+      "ariaLabel": "مثلث ABC قائم في A والضلع [BC] في الأعلى على مستوى الأرض؛ H المسقط العمودي لـ A على [BC]؛ AB = 0,6 m و BC = 1 m",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $\\cos\\widehat{ABC}$ في المثلث $ABC$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P2",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري",
+      "expectedAnswer": "3/5",
+      "misconceptionSignatures": [
+        {
+          "value": "5/3",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        },
+        {
+          "value": "4/5",
+          "id": "MISC-MUTH-MUQABIL-MUJAWIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $ABC$ قائم في $A$ ووتره $[BC]$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$[AB]$ مجاور للزاوية $\\widehat{ABC}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\cos\\widehat{ABC} = \\dfrac{AB}{BC} = \\dfrac{0{,}6}{1} = \\dfrac{3}{5}$ .",
+        "incorrect": "المجاور على الوتر، والوتر يقابل الزاوية القائمة في $A$ ."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $ABC$ القائم في $A$ : $\\cos\\widehat{ABC} = \\dfrac{AB}{BC} = \\dfrac{0{,}6}{1}$"
+        ],
+        "result": "\\cos\\widehat{ABC} = \\dfrac{3}{5}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بكتابة $\\cos\\widehat{ABC}$ في المثلث $ABH$ ، بيّن أن $AB^2 = BH \\times BC$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $ABH$ قائم في $H$ ووتره $[AB]$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $\\cos\\widehat{ABH}$ بطريقتين ثم ساو بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي: كل مساواة تُكتب في مثلث قائم مسمّى، مع ذكر الضلعين المستعملين."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $ABC$ القائم في $A$ : $\\cos\\widehat{ABC} = \\dfrac{AB}{BC}$",
+          "وفي المثلث $ABH$ القائم في $H$ : $\\cos\\widehat{ABH} = \\dfrac{BH}{AB}$ ، و $\\widehat{ABH} = \\widehat{ABC}$ ( $H$ من $[BC]$ ).",
+          "إذن: $\\dfrac{AB}{BC} = \\dfrac{BH}{AB}$ ومنه $AB^2 = BH \\times BC$ ."
+        ],
+        "result": "AB^2 = BH \\times BC"
+      },
+      "timeSeconds": 300
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "استنتج الطول $BH$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m",
+      "expectedAnswer": "0.36",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض في المساواة $AB^2 = BH \\times BC$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$BH = \\dfrac{0{,}36}{1} = 0{,}36\\,\\mathrm{m}$ .",
+        "incorrect": "$AB^2 = 0{,}6^2$ ثم اقسم على $BC$ ."
+      },
+      "solution": {
+        "lines": [
+          "$BH = \\dfrac{AB^2}{BC} = \\dfrac{0{,}6^2}{1}$"
+        ],
+        "result": "BH = 0{,}36\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "احسب عمق القناة $AH$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m",
+      "expectedAnswer": "0.48",
+      "misconceptionSignatures": [
+        {
+          "value": "0.24",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $ABH$ قائم في $H$ ووتره $[AB]$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خاصية فيثاغورس: $AH^2 = AB^2 - BH^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AH^2 = 0{,}36 - 0{,}1296 = 0{,}2304$ ومنه $AH = 0{,}48\\,\\mathrm{m}$ .",
+        "incorrect": "نطرح مربع $BH$ من مربع الوتر $AB$ ."
+      },
+      "solution": {
+        "lines": [
+          "حسب خاصية فيثاغورس في المثلث $ABH$ : $AH^2 = AB^2 - BH^2 = 0{,}36 - 0{,}1296 = 0{,}2304$",
+          "$AH = \\sqrt{0{,}2304}$"
+        ],
+        "result": "AH = 0{,}48\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ashia-l5-006",
+  "lessonCode": "wadiya-idmajiya-ashia",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — شهادة: مربع آخر",
+    "estimatedMinutes": 4,
+    "tags": [
+      "الانسحاب",
+      "مربع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ashia_P1",
+      "modelledOn": "ex-19"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "EFG مثلث قائم في F حيث $EF = FG = 6\\,\\mathrm{cm}$ ؛ D صورة F بالانسحاب الذي شعاعه $\\overrightarrow{EF}$ و C صورة E بالانسحاب الذي شعاعه $\\overrightarrow{GD}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما مساحة الرباعي EGDC (بالسنتيمتر المربع)؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "72",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "EGDC مربع قطراه [ED] و [GC]."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$ED = 12$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جداء القطرين ÷ 2."
+        }
+      ],
+      "feedback": {
+        "correct": "$ED = GC = 12$ ، القطران متعامدان: مربع مساحته $\\dfrac{12 \\times 12}{2} = 72\\,\\mathrm{cm^2}$ .",
+        "incorrect": "القطر ضعف EF."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 5
+    }
+  ]
+}

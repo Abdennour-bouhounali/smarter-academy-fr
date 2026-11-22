@@ -21,6 +21,21 @@ use Illuminate\Support\Facades\Cache;
  */
 class ExerciseRepository
 {
+    /**
+     * Mémoire de la REQUÊTE (l'instance est un singleton, AppServiceProvider).
+     *
+     * Le cache Laravel vit en base en production (CACHE_STORE=database) : chaque
+     * `Cache::get` est une requête SQL, et l'index (≈ 180 Ko) se désérialise à
+     * chaque fois. Le défi du jour appelait `find()` pour chaque candidat, puis
+     * de nouveau pour le meilleur : 16 343 requêtes SQL et ≈ 7 s pour le premier
+     * appel de la journée (mesuré le 2026-10-17). Les deux tableaux ci-dessous
+     * ramènent cela à UNE lecture de l'index et une lecture par exercice.
+     * Clés préfixées par le dossier de contenu : un test qui en change relit tout.
+     */
+    private array $indexMemo = [];
+
+    private array $exerciseMemo = [];
+
     public function contentPath(): string
     {
         $path = config('practice.content_path');
@@ -43,11 +58,10 @@ class ExerciseRepository
      */
     public function indexFor(string $lessonCode): array
     {
-        $index = Cache::remember('practice:index', config('practice.cache_ttl', 3600), function () {
-            $file = $this->contentPath().'/index.generated.json';
-
-            return is_file($file) ? (json_decode((string) file_get_contents($file), true) ?: []) : [];
-        });
+        $index = $this->index();
+        if ($index === null) {
+            return [];
+        }
 
         $levels = $index[$lessonCode] ?? [];
         $out = [];
@@ -57,6 +71,29 @@ class ExerciseRepository
         ksort($out);
 
         return $out;
+    }
+
+    /** L'index généré, une fois par requête ; null s'il n'existe pas encore. */
+    private function index(): ?array
+    {
+        $path = (string) config('practice.content_path');
+        if (array_key_exists($path, $this->indexMemo)) {
+            return $this->indexMemo[$path];
+        }
+
+        $index = Cache::get('practice:index');
+        if (! is_array($index)) {
+            $file = $this->contentPath().'/index.generated.json';
+            // Index absent : on ne met rien en cache (même raison que
+            // PracticeCapability::activeLessons) — il sera relu dès qu'il existe.
+            if (! is_file($file)) {
+                return null;
+            }
+            $index = json_decode((string) file_get_contents($file), true) ?: [];
+            Cache::put('practice:index', $index, config('practice.cache_ttl', 3600));
+        }
+
+        return $this->indexMemo[$path] = $index;
     }
 
     /** Combien d'exercices par niveau, pour le Hub. */
@@ -78,23 +115,49 @@ class ExerciseRepository
      */
     public function find(string $lessonCode, string $exerciseId): ?array
     {
-        return Cache::remember(
-            "practice:exercise:{$lessonCode}:{$exerciseId}",
+        return $this->lessonExercises($lessonCode)[$exerciseId] ?? null;
+    }
+
+    /**
+     * Tous les exercices d'une leçon (identifiant → contenu), sous UNE clé de
+     * cache par leçon et une fois par requête. Une clé par exercice coûtait
+     * une requête SQL par exercice lu (cache en base) : le défi du jour en
+     * lisait plus de trois mille au premier appel de la journée.
+     *
+     * @return array<string, array>
+     */
+    private function lessonExercises(string $lessonCode): array
+    {
+        $memoKey = config('practice.content_path')."|{$lessonCode}";
+        if (array_key_exists($memoKey, $this->exerciseMemo)) {
+            return $this->exerciseMemo[$memoKey];
+        }
+
+        $levels = $this->indexFor($lessonCode);
+        if ($levels === []) {
+            return $this->exerciseMemo[$memoKey] = [];
+        }
+
+        return $this->exerciseMemo[$memoKey] = Cache::remember(
+            "practice:lesson:{$lessonCode}",
             config('practice.cache_ttl', 3600),
-            function () use ($lessonCode, $exerciseId) {
-                foreach ($this->indexFor($lessonCode) as $level => $ids) {
-                    if (! in_array($exerciseId, $ids, true)) {
-                        continue;
-                    }
-                    foreach (glob($this->contentPath()."/*/{$lessonCode}/level-{$level}/{$exerciseId}.json") ?: [] as $file) {
+            function () use ($lessonCode, $levels) {
+                $exercises = [];
+                foreach ($levels as $level => $ids) {
+                    $wanted = array_flip($ids);
+                    foreach (glob($this->contentPath()."/*/{$lessonCode}/level-{$level}/*.json") ?: [] as $file) {
+                        $id = basename($file, '.json');
+                        if (! isset($wanted[$id]) || isset($exercises[$id])) {
+                            continue;
+                        }
                         $decoded = json_decode((string) file_get_contents($file), true);
                         if (is_array($decoded)) {
-                            return $decoded;
+                            $exercises[$id] = $decoded;
                         }
                     }
                 }
 
-                return null;
+                return $exercises;
             }
         );
     }

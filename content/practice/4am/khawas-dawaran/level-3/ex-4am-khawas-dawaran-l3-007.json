@@ -1,0 +1,78 @@
+{
+  "id": "ex-4am-khawas-dawaran-l3-007",
+  "lessonCode": "khawas-dawaran",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — أين المركز؟",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مركز الدوران"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_khawas-dawaran_P2",
+      "modelledOn": "ex-18"
+    }
+  },
+  "generator": {
+    "tool": "u13-khawas-dawaran/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "A′ و B′ صورتا A و B بدوران مركزه مجهول W، و $A \\neq A'$ و $B \\neq B'$ ، ومحورا [AA′] و [BB′] متقاطعان."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "W هي:",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نقطة تقاطع محوري [AA′] و [BB′]",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "منتصف [AA′]",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MIHWAR"
+        },
+        {
+          "id": "C",
+          "content": "نقطة تقاطع المستقيمين (AA′) و (BB′)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MIHWAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المركز على نفس البعد من A و A′."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أين تقع النقط المتساوية البعد عن A و A′؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "وكذلك بالنسبة إلى B و B′."
+        }
+      ],
+      "feedback": {
+        "correct": "$WA = WA'$ و $WB = WB'$ : W على المحورين.",
+        "incorrect": "المركز على محور كل قطعة تصل نقطة بصورتها."
+      }
+    }
+  ]
+}

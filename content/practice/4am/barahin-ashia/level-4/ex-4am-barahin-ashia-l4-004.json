@@ -1,0 +1,223 @@
+{
+  "id": "ex-4am-barahin-ashia-l4-004",
+  "lessonCode": "barahin-ashia",
+  "level": 4,
+  "metadata": {
+    "title": "دوري الآن (ص 138) — صورتا دائرة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "إنشاء",
+      "صورة دائرة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "now-138",
+      "page": 138,
+      "section": "دوري الآن",
+      "number": 1
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 138): (Γ) الدائرة التي مركزها E ونصف قطرها 2. $(\\Gamma_1)$ صورة (Γ) بالانسحاب الذي شعاعه $\\overrightarrow{AB} + \\overrightarrow{AC}$ ، و $(\\Gamma_2)$ صورتها بالانسحاب الذي شعاعه $\\overrightarrow{BE} + \\overrightarrow{CA}$ . (الكتاب لا يرسم النقط: وضعتها المنصّة على مرصوفة، الشكل.)",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          4,
+          1
+        ],
+        "C": [
+          1,
+          3
+        ],
+        "E": [
+          6,
+          4
+        ],
+        "R": [
+          11,
+          8
+        ],
+        "S": [
+          10,
+          5
+        ],
+        "T": [
+          7,
+          4
+        ]
+      },
+      "grid": true,
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "A",
+          "C"
+        ]
+      ],
+      "labels": {
+        "A": "sw",
+        "B": "se",
+        "C": "nw",
+        "E": "n",
+        "R": "ne",
+        "S": "e",
+        "T": "se"
+      },
+      "ariaLabel": "مرصوفة عليها النقط A و B و C و E و R و S و T"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مركز $(\\Gamma_1)$ هو النقطة:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "R",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "S",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSHA-MABDA"
+        },
+        {
+          "id": "C",
+          "content": "T",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSHA-MABDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مركز الصورة هو صورة المركز E ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من E ممثّل $\\overrightarrow{AB}$ ، ثم من نهايته ممثّل $\\overrightarrow{AC}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدّ المربعات أفقيا ثم عموديا لكل شعاع."
+        }
+      ],
+      "feedback": {
+        "correct": "من E : 4 يمينا و 1 أعلى ثم 1 يمينا و 3 أعلى: المركز R .",
+        "incorrect": "S صورة E بالشعاع $\\overrightarrow{AB}$ وحده: أكمل بممثّل $\\overrightarrow{AC}$ من S ."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "مركز $(\\Gamma_2)$ هو النقطة:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "T",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "R",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSHA-MABDA"
+        },
+        {
+          "id": "C",
+          "content": "E",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SIFR-ADAD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{BE}$ : 2 يمينا و 3 أعلى ؛ $\\overrightarrow{CA}$ : 1 يسارا و 3 أسفل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع الممثّلين متتابعين من E ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الانتقالين الأفقيين ثم العموديين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{BE} + \\overrightarrow{CA}$ : 1 يمينا و 0 عموديا؛ من E نصل إلى T .",
+        "incorrect": "من E : ممثّل $\\overrightarrow{BE}$ ثم من نهايته ممثّل $\\overrightarrow{CA}$ ."
+      }
+    },
+    {
+      "id": "q3",
+      "statement": "نصف قطر $(\\Gamma_2)$ :",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SHUAA-DAIRA-QUTR",
+          "value": "3"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الانسحاب ينقل الدائرة كلها بالشعاع نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يتغيّر بعد نقطة من الدائرة عن مركزها؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الانسحاب يحافظ على الأطوال."
+        }
+      ],
+      "feedback": {
+        "correct": "صورة دائرة بانسحاب دائرة لها نفس نصف القطر: 2.",
+        "incorrect": "الانسحاب لا يغيّر الأطوال: نصف القطر لا يتغيّر."
+      }
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "id": "ex-4am-khawas-dawaran-l5-002",
+  "lessonCode": "khawas-dawaran",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — طرف العقرب",
+    "estimatedMinutes": 3,
+    "tags": [
+      "صورة نقطة",
+      "معلم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_khawas-dawaran_P3",
+      "modelledOn": "ex-4"
+    }
+  },
+  "generator": {
+    "tool": "u13-khawas-dawaran/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "في معلم مبدؤه O مركز ساعة، طرف العقرب في $T(0\\,;\\,1{,}5)$ (الساعة 12). بعد ربع ساعة يدور العقرب حول O بزاوية $90^\\circ$ في اتجاه عقارب الساعة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا الطرف الجديد T′:",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x\\,;\\,y)$ : الفاصلة ثم الترتيبة (عدد صحيح أو كسر مثل 3/2)",
+      "expectedAnswer": {
+        "x": "3/2",
+        "y": "0"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اتجاه عقارب الساعة هو الاتجاه غير المباشر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من الأعلى، ربع دورة مع عقارب الساعة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الطول OT لا يتغيّر."
+        }
+      ],
+      "feedback": {
+        "correct": "$T'(1{,}5\\,;\\,0)$ : الساعة 3.",
+        "incorrect": "مع عقارب الساعة يتّجه العقرب من 12 إلى 3 (نحو اليمين)."
+      }
+    }
+  ]
+}

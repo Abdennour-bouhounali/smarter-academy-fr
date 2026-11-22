@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
+import adminCatalogue from '../../i18n/locales/ar/admin.json';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const webRoot = resolve(here, '../../..');
@@ -28,8 +29,9 @@ describe('le contrôle du palier dans l’administration', () => {
   it('le contrôle est branché partout où le palier se voyait', () => {
     for (const page of [
       'src/pages/admin/content/Lessons.jsx',
+      // Le palier d'UN exercice se règle sur la fiche de sa leçon : la page
+      // « التمارين » est organisée par leçon depuis le 2026-11-11.
       'src/pages/admin/content/LessonDetail.jsx',
-      'src/pages/admin/content/Exercises.jsx',
     ]) {
       expect(read(page), page).toContain('TierControl');
     }
@@ -51,19 +53,29 @@ describe('le contrôle du palier dans l’administration', () => {
   it('fermer du contenu se confirme, l’ouvrir non', () => {
     const control = read('src/components/admin/TierControl.jsx');
     // Rendre payant retire l'accès à tous les élèves sans abonnement.
-    expect(control).toContain('Rendre ce contenu payant ?');
     expect(control).toContain("next === 'premium'");
-    // Et la confirmation dit ce qui NE se passe pas, pour lever le doute.
-    expect(control).toContain('Aucune donnée d’apprentissage n’est supprimée');
-    expect(control).toContain('L’état de publication n’est pas modifié');
+    expect(control).toContain('bulk.confirmPremiumOneTitle');
+
+    // Les PHRASES vivent dans le catalogue arabe depuis que le panneau parle
+    // la langue du produit : on les vérifie là où elles sont, ce qui interdit
+    // en plus qu'une clé soit citée sans exister.
+    for (const key of [
+      'confirmPremiumOneTitle', 'premiumOneMessageBefore', 'withoutSubscription',
+      // La confirmation dit ce qui NE se passe pas, pour lever le doute.
+      'noLearningDataLost', 'publicationUnchanged',
+    ]) {
+      expect(typeof adminCatalogue.bulk[key], `admin.bulk.${key}`).toBe('string');
+      expect(control, `TierControl rend bulk.${key}`).toContain(`bulk.${key}`);
+    }
   });
 
   it('un exercice peut hériter de sa leçon, une leçon non', () => {
     const control = read('src/components/admin/TierControl.jsx');
     // `null` = « hérite ». Une leçon est la racine de la règle : le serveur
     // refuse null pour elle, donc l'option ne lui est pas proposée.
-    expect(control).toContain('Hériter de la leçon');
     expect(control).toContain("isExercise ? [{ value: INHERIT");
+    expect(control).toContain('bulk.inherit');
+    expect(typeof adminCatalogue.bulk.inherit).toBe('string');
   });
 
   it('la pastille « Premium » ne ressemble pas à « Gratuit »', () => {
@@ -71,6 +83,10 @@ describe('le contrôle du palier dans l’administration', () => {
     // `premium` retombait sur le gris du défaut — même pastille que
     // « Gratuit » pour deux états opposés.
     expect(badge).toMatch(/premium:\s*'bg-amber/);
-    expect(badge).toContain("premium: 'Premium'");
+    // Le libellé est arabe et vient du catalogue ; `STATUS_LABELS` ne reste
+    // qu'un filet pour un statut hors vocabulaire.
+    expect(adminCatalogue.status.premium).toMatch(/[\u0600-\u06FF]/);
+    expect(adminCatalogue.status.free).toMatch(/[\u0600-\u06FF]/);
+    expect(adminCatalogue.status.premium).not.toBe(adminCatalogue.status.free);
   });
 });

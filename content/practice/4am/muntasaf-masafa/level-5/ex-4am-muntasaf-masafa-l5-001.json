@@ -1,0 +1,210 @@
+{
+  "id": "ex-4am-muntasaf-masafa-l5-001",
+  "lessonCode": "muntasaf-masafa",
+  "level": 5,
+  "metadata": {
+    "title": "تمرين 20 — نظيرتان وانسحاب",
+    "estimatedMinutes": 6,
+    "tags": [
+      "المنتصف",
+      "نظيرة",
+      "انسحاب"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-20",
+      "page": 147,
+      "section": "إحداثيتا منتصف قطعة - المسافة بين نقطتين",
+      "number": 20
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 147): في معلم متعامد ومتجانس تُعطى النقط $A(2\\,;\\,1)$ ، $B(3\\,;\\,-1)$ ، $C(-1\\,;\\,1)$ . M نظيرة C بالنسبة إلى A، N نظيرة C بالنسبة إلى B و K صورة B بالانسحاب الذي شعاعه $\\overrightarrow{CA}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا M:",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح أو كسر مثل 1/2)",
+      "expectedAnswer": {
+        "x": "5",
+        "y": "1"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MUNTASAF-NISF",
+          "value": {
+            "x": "1/2",
+            "y": "1"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطة المعلومة في الوسط هي المنتصف، والمجهولة طرف من الطرفين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب قانون المنتصف لكل إحداثية واجعل إحداثية الطرف المجهول مجهولا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة: اضرب طرفيها في 2 ثم اطرح الإحداثية المعلومة."
+        }
+      ],
+      "feedback": {
+        "correct": "A منتصف [CM]: $x_M = 2 \\times 2 - (-1) = 5$ و $y_M = 2 \\times 1 - 1 = 1$ .",
+        "incorrect": "A هي منتصف [CM]."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "إحداثيتا N:",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح أو كسر مثل 1/2)",
+      "expectedAnswer": {
+        "x": "7",
+        "y": "-3"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطة المعلومة في الوسط هي المنتصف، والمجهولة طرف من الطرفين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب قانون المنتصف لكل إحداثية واجعل إحداثية الطرف المجهول مجهولا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة: اضرب طرفيها في 2 ثم اطرح الإحداثية المعلومة."
+        }
+      ],
+      "feedback": {
+        "correct": "B منتصف [CN]: $N(7\\,;\\,-3)$ .",
+        "incorrect": "B هي منتصف [CN]."
+      }
+    },
+    {
+      "id": "q3",
+      "statement": "إحداثيتا K:",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح أو كسر مثل 1/2)",
+      "expectedAnswer": {
+        "x": "6",
+        "y": "-1"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-TARH-MAQLUB",
+          "value": {
+            "x": "0",
+            "y": "-1"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مركبتي الشعاع $\\overrightarrow{CA}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "صورة B هي النقطة K التي تحقّق $\\overrightarrow{BK} = \\overrightarrow{CA}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف مركبتي الشعاع إلى إحداثيتي B."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{CA}\\begin{pmatrix} 3 \\\\ 0 \\end{pmatrix}$ إذن $K(6\\,;\\,-1)$ .",
+        "incorrect": "$\\overrightarrow{BK} = \\overrightarrow{CA}$ ."
+      }
+    },
+    {
+      "id": "q4",
+      "statement": "هل K منتصف [MN]؟",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم: $\\left(\\dfrac{5 + 7}{2}\\,;\\,\\dfrac{1 + (-3)}{2}\\right) = (6\\,;\\,-1)$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا: منتصف [MN] هو $(1\\,;\\,-2)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUNTASAF-TARH"
+        },
+        {
+          "id": "C",
+          "content": "لا: منتصف [MN] هو $(12\\,;\\,-2)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUNTASAF-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المنتصف يقع في منتصف الطريق أفقيا وفي منتصف الطريق عموديا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الفاصلتين ثم اقسم على 2، وافعل الشيء نفسه مع الترتيبين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى الإشارات: جمع عدد سالب يعني طرح قيمته."
+        }
+      ],
+      "feedback": {
+        "correct": "منتصف [MN] هو $(6\\,;\\,-1)$ ، أي K.",
+        "incorrect": "احسب منتصف [MN] وقارنه بـ K."
+      }
+    }
+  ]
+}

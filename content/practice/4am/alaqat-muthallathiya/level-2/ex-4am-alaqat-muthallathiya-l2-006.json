@@ -1,0 +1,174 @@
+{
+  "id": "ex-4am-alaqat-muthallathiya-l2-006",
+  "lessonCode": "alaqat-muthallathiya",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2021 — الظل وجيب التمام معلومان: الجيب ثم الأطوال",
+    "estimatedMinutes": 8,
+    "tags": [
+      "العلاقات المثلثية",
+      "حساب الأطوال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_alaqat-muthallathiya_P1",
+      "modelledOn": "BEM 2021 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$EFG$ مثلث قائم في $F$ حيث: $\\tan\\widehat{FEG} = \\dfrac{8}{15}$ ، $\\cos\\widehat{FEG} = \\dfrac{15}{17}$ و $EF = 7{,}5\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "باستعمال العلاقة $\\tan x = \\dfrac{\\sin x}{\\cos x}$ ، استنتج $\\sin\\widehat{FEG}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "8/17",
+      "misconceptionSignatures": [
+        {
+          "value": "136/225",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        },
+        {
+          "value": "15/8",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من $\\tan x = \\dfrac{\\sin x}{\\cos x}$ نستنتج $\\sin x = \\tan x \\times \\cos x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب الكسرين ثم اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin\\widehat{FEG} = \\dfrac{8}{15} \\times \\dfrac{15}{17} = \\dfrac{8}{17}$ .",
+        "incorrect": "الجيب = الظل × جيب التمام (ضرب لا قسمة)."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan\\widehat{FEG} = \\dfrac{\\sin\\widehat{FEG}}{\\cos\\widehat{FEG}}$ ، إذن $\\sin\\widehat{FEG} = \\tan\\widehat{FEG} \\times \\cos\\widehat{FEG}$",
+          "$\\sin\\widehat{FEG} = \\dfrac{8}{15} \\times \\dfrac{15}{17}$"
+        ],
+        "result": "\\sin\\widehat{FEG} = \\dfrac{8}{17}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "احسب الطولين $FG$ و $EG$ .",
+      "statement": "الطول $FG$ :",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "225/16",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بالنسبة إلى الزاوية $\\widehat{FEG}$ : $[FG]$ مقابل و $[EF]$ مجاور."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الظل يربط المقابل بالمجاور."
+        }
+      ],
+      "feedback": {
+        "correct": "$FG = EF \\times \\tan\\widehat{FEG} = 7{,}5 \\times \\dfrac{8}{15} = 4\\,\\mathrm{cm}$ .",
+        "incorrect": "استعمل الظل: المقابل = المجاور × الظل."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan\\widehat{FEG} = \\dfrac{FG}{EF}$ ، إذن $FG = EF \\times \\tan\\widehat{FEG} = 7{,}5 \\times \\dfrac{8}{15}$"
+        ],
+        "result": "FG = 4\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "الطول $EG$ :",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "8.5",
+      "misconceptionSignatures": [
+        {
+          "value": "53/8",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$[EG]$ هو الوتر و $[EF]$ مجاور للزاوية $\\widehat{FEG}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المجهول في مقام جيب التمام."
+        }
+      ],
+      "feedback": {
+        "correct": "$EG = \\dfrac{EF}{\\cos\\widehat{FEG}} = 7{,}5 \\times \\dfrac{17}{15} = 8{,}5\\,\\mathrm{cm}$ .",
+        "incorrect": "الوتر في مقام جيب التمام: اقسم المجاور على جيب التمام."
+      },
+      "solution": {
+        "lines": [
+          "$\\cos\\widehat{FEG} = \\dfrac{EF}{EG}$ ، إذن $EG = \\dfrac{EF}{\\cos\\widehat{FEG}} = 7{,}5 \\div \\dfrac{15}{17} = 7{,}5 \\times \\dfrac{17}{15}$"
+        ],
+        "result": "EG = 8{,}5\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

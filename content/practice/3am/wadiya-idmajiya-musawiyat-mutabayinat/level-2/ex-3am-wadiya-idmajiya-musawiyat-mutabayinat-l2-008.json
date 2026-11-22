@@ -1,0 +1,254 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-musawiyat-mutabayinat-l2-008",
+  "lessonCode": "wadiya-idmajiya-musawiyat-mutabayinat",
+  "level": 2,
+  "metadata": {
+    "title": "المتباينة والحصر",
+    "estimatedMinutes": 10,
+    "tags": [
+      "المتباينات",
+      "الحصر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الأوّل",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "أجب عن الأسئلة التالية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "إذا كان $x \\le 4$ فأيّ الاستنتاجات التالية صحيح ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-3x - 6 \\ge -2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-COEF-LOST"
+        },
+        {
+          "id": "B",
+          "content": "$-3x - 6 \\le -18$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-NEG-NOFLIP"
+        },
+        {
+          "id": "C",
+          "content": "$-3x - 6 \\ge -6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-DIFF-CONST"
+        },
+        {
+          "id": "D",
+          "content": "$-3x - 6 \\ge -18$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل العدد الذي نضرب فيه موجب أم سالب ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في عدد موجب يحفظ الاتجاه، وفي عدد سالب يعكسه؛ والجمع والطرح يحفظانه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بين الطرفين الأصغر والأكبر بعد كل عملية."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $-3x - 6 \\ge -18$ .",
+        "incorrect": "انتبه إلى اتجاه المتباينة عند الضرب في عدد سالب، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضرب طرفي $x \\le 4$ في $-3$ : الاتجاه ينعكس لأنّ العدد سالب.",
+          "ثم نضيف $-6$ فنجد $-3x - 6 \\ge -18$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عرض حديقة قيس فكانت قراءة الأداة $5{,}6\\ \\mathrm{m}$ مدوّرة إلى $0{,}1$ . نسمّي $\\ell$ العرض الحقيقي، وقيمة العبارة $E = 3\\ell + 5$ . ما العدد الذي لا تبلغه $E$ (الحدّ الأعلى المستبعد) ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "21.95",
+      "misconceptionSignatures": [
+        {
+          "value": "21.8",
+          "id": "MISC-TADWIR-CENTER-EXACT"
+        },
+        {
+          "value": "22.1",
+          "id": "MISC-TADWIR-TRUNC"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ الأرقام يلي رتبة التدوير ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد المدوّر على بعد نصف رتبة منه من الجهتين: الحدّ الأدنى مضمّن والأعلى مستبعد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارجع من الحصر إلى المدوّر للتأكّد."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $21{,}95$ .",
+        "incorrect": "انتبه إلى نصف الرتبة وإلى الطرف الأعلى المستبعد، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "القراءة تعني $5{,}55 \\le \\ell < 5{,}65$ .",
+          "نضرب في $3$ ثم نضيف $5$ : الحدّ الأعلى المستبعد هو $21{,}95$ ."
+        ],
+        "result": "21{,}95"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "إذا كان $-3 \\le x \\le 5$ فما أصغر قيمة ممكنة للعبارة $-3x + 7$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "-8",
+      "misconceptionSignatures": [
+        {
+          "value": "16",
+          "id": "MISC-MUTABAYINA-NEG-NOFLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل العدد الذي نضرب فيه موجب أم سالب ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في عدد موجب يحفظ الاتجاه، وفي عدد سالب يعكسه؛ والجمع والطرح يحفظانه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بين الطرفين الأصغر والأكبر بعد كل عملية."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $-8$ .",
+        "incorrect": "انتبه إلى اتجاه المتباينة عند الضرب في عدد سالب، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضرب أطراف الحصر في $-3$ (عدد سالب فينعكس الاتجاه) ثم نضيف $7$ .",
+          "نجد $-8 \\le -3x + 7 \\le 16$ ، فالقيمة المطلوبة $-8$ ."
+        ],
+        "result": "-8"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "قيس كتلة صندوق فواكه فكانت قراءة الأداة $6{,}3\\ \\mathrm{kg}$ مدوّرة إلى $0{,}1\\ \\mathrm{kg}$ . ما أصغر قيمة ممكنة للقياس الحقيقي ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "6.25",
+      "misconceptionSignatures": [
+        {
+          "value": "6.3",
+          "id": "MISC-TADWIR-CENTER-EXACT"
+        },
+        {
+          "value": "6.2",
+          "id": "MISC-TADWIR-WIDTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ الأرقام يلي رتبة التدوير ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد المدوّر على بعد نصف رتبة منه من الجهتين: الحدّ الأدنى مضمّن والأعلى مستبعد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارجع من الحصر إلى المدوّر للتأكّد."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $6{,}25$ .",
+        "incorrect": "انتبه إلى نصف الرتبة وإلى الطرف الأعلى المستبعد، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "التدوير إلى $0{,}1$ يعني أنّ القياس على بعد نصف الرتبة $0{,}05$ من $6{,}3$ من كل جهة.",
+          "فالقياس بين $6{,}25$ (مضمّن) و $6{,}35$ (مستبعد)، والمطلوب $6{,}25$ ."
+        ],
+        "result": "6{,}25"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

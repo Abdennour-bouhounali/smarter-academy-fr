@@ -1,0 +1,172 @@
+{
+  "id": "ex-4am-qasim-mushtarak-akbar-l4-006",
+  "lessonCode": "qasim-mushtarak-akbar",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2023 — A = 330/462",
+    "estimatedMinutes": 10,
+    "tags": [
+      "PGCD",
+      "كسر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-mushtarak-akbar_P2",
+      "modelledOn": "BEM 2023 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن الأعداد A و B حيث:",
+    "formulas": [
+      "A = \\dfrac{330}{462}",
+      "B = A + \\dfrac{2}{7}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب PGCD(330 ; 462).",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "66",
+      "misconceptionSignatures": [
+        {
+          "value": "33",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قائمة قواسم كل من العددين 330 و 462."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استخرج القواسم المشتركة: الأعداد الموجودة في القائمتين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاسم المشترك الأكبر هو أكبر القواسم المشتركة، لا أيّ واحد منها."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 330 و 462 هي 1 ، 2 ، 3 ، 6 ، 11 ، 22 ، 33 ، 66، وأكبرها 66.",
+        "incorrect": "اكتب قائمتي القواسم كاملتين، ثم خذ أكبر عدد يظهر في القائمتين معًا."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 330 هي: 1 ، 2 ، 3 ، 5 ، 6 ، 10 ، 11 ، 15 ، 22 ، 30 ، 33 ، 55 ، 66 ، 110 ، 165 ، 330",
+          "قواسم العدد 462 هي: 1 ، 2 ، 3 ، 6 ، 7 ، 11 ، 14 ، 21 ، 22 ، 33 ، 42 ، 66 ، 77 ، 154 ، 231 ، 462",
+          "القواسم المشتركة للعددين 330 و 462 هي: 1 ، 2 ، 3 ، 6 ، 11 ، 22 ، 33 ، 66",
+          "أكبرها هو 66، إذن:"
+        ],
+        "result": "PGCD(330 ; 462) = 66"
+      },
+      "work": "optional",
+      "timeSeconds": 360
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب العدد A على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "5/7",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 66: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال 01.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{330}{462} = \\dfrac{330 \\div 66}{462 \\div 66}$"
+        ],
+        "result": "\\dfrac{330}{462} = \\dfrac{5}{7}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "بيّن أن B عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة B (عدد طبيعي)",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض A بالكسر غير القابل للاختزال الذي وجدته في السؤال 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكسران لهما المقام نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = \\dfrac{5}{7} + \\dfrac{2}{7} = \\dfrac{7}{7} = 1$",
+        "incorrect": "اجمع A و $\\dfrac{2}{7}$ بعد كتابة A على شكل كسر غير قابل للاختزال."
+      },
+      "solution": {
+        "lines": [
+          "$B = \\dfrac{5}{7} + \\dfrac{2}{7}$",
+          "$B = \\dfrac{7}{7}$",
+          "إذن B عدد طبيعي."
+        ],
+        "result": "B = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

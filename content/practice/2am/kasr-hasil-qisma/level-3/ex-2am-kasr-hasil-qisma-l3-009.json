@@ -1,0 +1,185 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l3-009",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — نسبة سبعة إلى تسعة",
+    "estimatedMinutes": 7,
+    "tags": [
+      "نسبة",
+      "قيم مقرّبة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "قطع درّاجون من النادي $7$ km من مسلك طوله $9$ km ، ونسبة ما قطعوه إلى طول المسلك هي $\\dfrac{7}{9}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نسبة ما قطعوه إلى طول المسلك هي:",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{9}{7}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-RATIOFLIP"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{2}{9}$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{7}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{7}{9}$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الجزء المقطوع في البسط وطول المسلك كلّه في المقام."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{7}{9}$ : الجزء المقطوع على المسلك كلّه.",
+        "incorrect": "ضع الجزء المقطوع في البسط والمسلك كلّه في المقام."
+      },
+      "solution": {
+        "lines": [
+          "الجزء: $7$ km ، الكلّ: $9$ km",
+          "النسبة $\\dfrac{7}{9}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}01$ بالنقصان لحاصل القسمة $7 \\div 9$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "0.77",
+      "misconceptionSignatures": [
+        {
+          "value": "0.78",
+          "id": "MISC-QARIBA-ROUNDED"
+        },
+        {
+          "value": "0.777",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالنقصان لا تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة دون أن تزيد شيئًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب القيمة في المقسوم عليه: يجب ألاّ يتجاوز الجداء المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}77 < \\frac{7}{9} < 0{,}78$.",
+        "incorrect": "بالنقصان: نحتفظ بالأرقام حتى الرتبة المطلوبة ونُهمل ما بعدها دون تغيير الرقم الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$9 \\times 0{,}77 = 6{,}93$",
+          "$9 \\times 0{,}78 = 7{,}02$",
+          "$6{,}93 < 7 < 7{,}02$"
+        ],
+        "result": "0{,}77"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل المساواة $\\dfrac{7}{9} = 0{,}77$ صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-EXACTAPPROX"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أو قارن بدقّة قبل أن تجيب."
+        }
+      ],
+      "feedback": {
+        "correct": "لا: $9 \\times 0{,}77 = 6{,}93 \\neq 7$.",
+        "incorrect": "اضرب $0{,}77$ في $9$ وقارن الجداء بـ $7$."
+      },
+      "solution": {
+        "lines": [
+          "$9 \\times 0{,}77 = 6{,}93$",
+          "$6{,}93 \\neq 7$ : المساواة خاطئة"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

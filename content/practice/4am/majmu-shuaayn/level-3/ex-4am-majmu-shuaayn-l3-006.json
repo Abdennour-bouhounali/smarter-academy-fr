@@ -1,0 +1,186 @@
+{
+  "id": "ex-4am-majmu-shuaayn-l3-006",
+  "lessonCode": "majmu-shuaayn",
+  "level": 3,
+  "metadata": {
+    "title": "دوري الآن — مستطيل",
+    "estimatedMinutes": 4,
+    "tags": [
+      "إنشاء ممثل"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "now-133",
+      "page": 133,
+      "section": "دوري الآن"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (دوري الآن 2): ABCD مستطيل (الشكل).",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          3
+        ],
+        "B": [
+          5,
+          3
+        ],
+        "C": [
+          5,
+          0
+        ],
+        "D": [
+          0,
+          0
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "A"
+        ],
+        {
+          "from": "B",
+          "to": "D",
+          "dashed": true
+        }
+      ],
+      "rightAngles": [
+        [
+          "B",
+          "A",
+          "D"
+        ]
+      ],
+      "labels": {
+        "A": "nw",
+        "B": "ne",
+        "C": "se",
+        "D": "sw"
+      },
+      "ariaLabel": "مستطيل ABCD: A في أعلى اليسار، B في أعلى اليمين، C في أسفل اليمين، D في أسفل اليسار"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ممثل للشعاع $\\overrightarrow{AB} + \\overrightarrow{BD}$",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{DA}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-AKS"
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{AD}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{AC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-QAIDA-QUTR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى نهاية الشعاع الأول ومبدأ الشعاع الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "علاقة شال تتطلب أن تكون نهاية الأول مبدأ الثاني؛ يمكن تبديل ترتيب الحدّين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع يبدأ من مبدأ الأول وينتهي عند نهاية الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "متعاقبان: $\\overrightarrow{AB} + \\overrightarrow{BD} = \\overrightarrow{AD}$ .",
+        "incorrect": "علاقة شال: نهاية الأول مبدأ الثاني، والمجموع من مبدأ الأول إلى نهاية الثاني."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "ممثل للشعاع $\\overrightarrow{DA} + \\overrightarrow{DB}$",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{DC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-QAIDA-QUTR"
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{AB}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-RABT"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{DE}$ حيث E نظيرة C بالنسبة إلى B",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للشعاعين نفس المبدأ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "شعاعان لهما نفس المبدأ يُجمعان بقاعدة متوازي الأضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع هو القطر الصادر من المبدأ المشترك، لا القطر الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "نفس المبدأ D: الرأس الرابع E لمتوازي الأضلاع DAEB ، أي نظيرة C بالنسبة إلى B.",
+        "incorrect": "قاعدة متوازي الأضلاع: مجموع شعاعين لهما نفس المبدأ هو القطر الصادر من ذلك المبدأ."
+      }
+    }
+  ]
+}

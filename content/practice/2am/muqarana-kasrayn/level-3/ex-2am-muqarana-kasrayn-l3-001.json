@@ -1,0 +1,200 @@
+{
+  "id": "ex-2am-muqarana-kasrayn-l3-001",
+  "lessonCode": "muqarana-kasrayn",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — عددان ورتبتهما",
+    "estimatedMinutes": 8,
+    "tags": [
+      "ترتيب كسور",
+      "مقارنة كسرين"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-67",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثاني",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان $E = \\dfrac{5}{6}$ و $F = \\dfrac{11}{18}$ :"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "قارن بين $E$ و $F$ :",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{5}{6} > \\dfrac{11}{18}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{5}{6} < \\dfrac{11}{18}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-NUMONLY"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن بين المقامين : هل أحدهما مضاعف للآخر ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسرين بالمقام الأكبر ثمّ قارن بين البسطين ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب بسط الكسر الأصغر مقامًا ومقامه في العدد نفسه حتّى يصير مقامه مساويًا للمقام الآخر ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{5}{6} > \\dfrac{11}{18}$ .",
+        "incorrect": "اختر طريقة المقارنة المناسبة للحالة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$18$ مضاعف للعدد $6$ : $18 = 6 \\times 3$ .",
+          "$\\dfrac{5}{6} = \\dfrac{5 \\times 3}{6 \\times 3} = \\dfrac{15}{18}$ .",
+          "نقارن بين البسطين : $15 > 11$ ، إذن $\\dfrac{5}{6} > \\dfrac{11}{18}$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $E - F$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "2/9",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط ؟ وما الكسور المعطاة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد قبل الجمع أو الطرح ثمّ اختزل ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2}{9}$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$E = \\dfrac{5}{6} = \\dfrac{15}{18}$ .",
+          "$E - F = \\dfrac{15}{18} - \\dfrac{11}{18} = \\dfrac{4}{18} = \\dfrac{2}{9}$ ."
+        ],
+        "result": "\\dfrac{2}{9}"
+      },
+      "work": "optional",
+      "timeSeconds": 90,
+      "counted": false
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "رتّب الأعداد $E$ و $F$ و $1$ ترتيبًا تصاعديًّا ، علمًا أنّ $E = \\dfrac{5}{6}$ و $F = \\dfrac{11}{18}$ .",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{11}{18} < \\dfrac{5}{6} < 1$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{5}{6} < \\dfrac{11}{18} < 1$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{11}{18} < 1 < \\dfrac{5}{6}$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$1 < \\dfrac{5}{6} < \\dfrac{11}{18}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-REVERSED"
+        }
+      ],
+      "answerFormat": "اختر الترتيب الصحيح",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما مقامات هذه الكسور ؟ هل يقسم أحدها الآخر ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور كلّها بالمقام الأكبر ثمّ قارن بين البسوط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى جهة الترتيب المطلوبة : الأصغر أوّلًا في الترتيب التصاعدي والأكبر أوّلًا في التنازلي ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{11}{18} < \\dfrac{5}{6} < 1$ .",
+        "incorrect": "وحّد المقامات ثمّ رتّب البسوط في الجهة المطلوبة وأعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "نكتب الكسور بالمقام نفسه ($18$) : $\\dfrac{5}{6} = \\dfrac{15}{18}$ ، $\\dfrac{11}{18}$ ، $1 = \\dfrac{18}{18}$ .",
+          "نرتّب البسوط تصاعديًّا : $11 < 15 < 18$ .",
+          "إذن : $\\dfrac{11}{18} < \\dfrac{5}{6} < 1$ ."
+        ]
+      },
+      "timeSeconds": 100
+    }
+  ]
+}

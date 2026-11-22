@@ -1,0 +1,466 @@
+{
+  "id": "ex-4am-tafsir-bayani-jumla-l5-006",
+  "lessonCode": "tafsir-bayani-jumla",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2015 — مزرعة نموذجية بعين الدفلى",
+    "estimatedMinutes": 35,
+    "tags": [
+      "وضعية إدماجية",
+      "مساحات",
+      "تفسير بياني"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tafsir-bayani-jumla_P2",
+      "modelledOn": "BEM 2015 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "لبلدية بعين الدفلى قطعة أرض مستطيلة الشكل مساحتها $960m^2$ وعرضها ثلاثة أخماس $\\left(\\dfrac{3}{5}\\right)$ طولها.\nاقتطعت البلدية من هذه القطعة جزءا مساحته $240m^2$ لتوسيع الطريق، وخصّصت الجزء الباقي $ABCD$ لمزرعة نموذجية قُسّمت إلى قطعتين كما في الشكل: الجزء $ABMD$ للحمضيات والجزء $BCM$ للخضر.\nنضع $DM = x$ ( $M$ نقطة من $[DC]$ مع $0 \\leqslant x \\leqslant 40$ ).\nلتكن $f(x)$ مساحة المثلث $BCM$ و $g(x)$ مساحة القطعة $ABMD$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          24
+        ],
+        "B": [
+          20,
+          24
+        ],
+        "C": [
+          40,
+          0
+        ],
+        "D": [
+          0,
+          0
+        ],
+        "M": [
+          12,
+          0
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "20m"
+        },
+        {
+          "from": "B",
+          "to": "C"
+        },
+        {
+          "from": "D",
+          "to": "M",
+          "label": "x",
+          "labelSide": -1
+        },
+        {
+          "from": "M",
+          "to": "C"
+        },
+        {
+          "from": "D",
+          "to": "C",
+          "label": "40m"
+        },
+        {
+          "from": "A",
+          "to": "D",
+          "label": "24m"
+        },
+        {
+          "from": "B",
+          "to": "M",
+          "tone": "rose"
+        }
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "D",
+          "C"
+        ]
+      ],
+      "labels": {
+        "A": "nw",
+        "B": "ne",
+        "C": "se",
+        "D": "sw",
+        "M": "s"
+      },
+      "ariaLabel": "شبه منحرف قائم ABCD: AB = 20m و AD = 24m و DC = 40m، والنقطة M على [DC] حيث DM = x، والقطعة [BM] تفصل الحمضيات (ABMD) عن الخضر (BCM)",
+      "caption": "ABMD: الحمضيات ، BCM: الخضر"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "☜ جد بُعدي القطعة الأصلية.",
+      "statement": "طول القطعة:",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "40",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "سمّ الطول $x$ : العرض هو $\\dfrac{3}{5}x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المساحة = الطول × العرض: تحصل على معادلة من الشكل $x^2 = a$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{5}x^2 = 960$ .",
+        "incorrect": "اكتب $x \\times \\dfrac{3}{5}x = 960$ ثم اعزل $x^2$ ؛ الطول عدد موجب."
+      },
+      "solution": {
+        "lines": [
+          "نسمّي $x$ طول القطعة، فعرضها $\\dfrac{3}{5}x$ .",
+          "$x \\times \\dfrac{3}{5}x = 960$",
+          "$x^2 = 960 \\times \\dfrac{5}{3} = 1600$",
+          "$x = \\sqrt{1600} = 40m$ (الطول موجب).",
+          "العرض: $\\dfrac{3}{5} \\times 40 = 24m$ ."
+        ],
+        "result": "40m"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "عرض القطعة:",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: العرض بـ m",
+      "expectedAnswer": "24",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العرض ثلاثة أخماس الطول."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{5} \\times 40$ .",
+        "incorrect": "اضرب الطول في $\\dfrac{3}{5}$ ."
+      },
+      "solution": {
+        "lines": [
+          "نسمّي $x$ طول القطعة، فعرضها $\\dfrac{3}{5}x$ .",
+          "$x \\times \\dfrac{3}{5}x = 960$",
+          "$x^2 = 960 \\times \\dfrac{5}{3} = 1600$",
+          "$x = \\sqrt{1600} = 40m$ (الطول موجب).",
+          "العرض: $\\dfrac{3}{5} \\times 40 = 24m$ ."
+        ],
+        "result": "24m"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "عبّر عن $f(x)$ و $g(x)$ بدلالة $x$ .",
+      "statement": "أعط العدد $a$ حيث: $f(x) = ax + b$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$BCM$ مثلث قاعدته $MC$ وارتفاعه $AD$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحة المثلث = (القاعدة × الارتفاع) ÷ 2."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(x) = \\dfrac{(40 - x) \\times 24}{2}$ .",
+        "incorrect": "القاعدة $MC = 40 - x$ والارتفاع $24m$ ؛ انشر ثم بسّط."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = \\dfrac{(40 - x) \\times 24}{2} = 480 - 12x$",
+          "$g(x) = \\dfrac{(20 + x) \\times 24}{2} = 240 + 12x$"
+        ],
+        "result": "f(x) = 480 - 12x"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أعط العدد $b$ حيث: $f(x) = ax + b$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "480",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر $\\dfrac{(40 - x) \\times 24}{2}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(x) = 480 - 12x$ .",
+        "incorrect": "نصف $40 \\times 24$ هو الحد الثابت."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = \\dfrac{(40 - x) \\times 24}{2} = 480 - 12x$",
+          "$g(x) = \\dfrac{(20 + x) \\times 24}{2} = 240 + 12x$"
+        ],
+        "result": "f(x) = 480 - 12x"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أعط العدد $a$ حيث: $g(x) = ax + b$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$ABMD$ شبه منحرف قاعدتاه $AB$ و $DM$ وارتفاعه $AD$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$g(x) = \\dfrac{(20 + x) \\times 24}{2}$ .",
+        "incorrect": "مساحة شبه المنحرف = (مجموع القاعدتين × الارتفاع) ÷ 2."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = \\dfrac{(40 - x) \\times 24}{2} = 480 - 12x$",
+          "$g(x) = \\dfrac{(20 + x) \\times 24}{2} = 240 + 12x$"
+        ],
+        "result": "g(x) = 240 + 12x"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أعط العدد $b$ حيث: $g(x) = ax + b$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "240",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر $\\dfrac{(20 + x) \\times 24}{2}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$g(x) = 240 + 12x$ .",
+        "incorrect": "نصف $20 \\times 24$ هو الحد الثابت."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = \\dfrac{(40 - x) \\times 24}{2} = 480 - 12x$",
+          "$g(x) = \\dfrac{(20 + x) \\times 24}{2} = 240 + 12x$"
+        ],
+        "result": "g(x) = 240 + 12x"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q7",
+      "step": "02",
+      "sub": "ب",
+      "statement": "جد الطول $DM$ الذي تكون من أجله للقطعتين نفس المساحة.",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول $DM$ بـ m",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نفس المساحة معناه $f(x) = g(x)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$480 - 12x = 240 + 12x$ .",
+        "incorrect": "اكتب $f(x) = g(x)$ ثم اجمع حدود $x$ في طرف واحد."
+      },
+      "solution": {
+        "lines": [
+          "$480 - 12x = 240 + 12x$",
+          "$240 = 24x$",
+          "$x = 10$",
+          "إذن $DM = 10m$ ."
+        ],
+        "result": "DM = 10m"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q8",
+      "step": "03",
+      "sub": "ا",
+      "lead": "في المستوي المنسوب إلى معلم متعامد ومتجانس $(O, \\vec{i} , \\vec{j})$ :",
+      "statement": "مثّل بيانيا الدالتين $f$ و $g$ .\n(نأخذ: 1cm على محور الفواصل يمثل $2m$ ، و 1cm على محور التراتيب يمثل $60m^2$).",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن نقطتين من كل مستقيم مستعملا وحدتي المحورين المعطاتين."
+        }
+      ],
+      "feedback": {
+        "correct": "تمثيل كل دالة قطعة مستقيم.",
+        "incorrect": "احسب صورتي 0 و 40 بكل دالة."
+      },
+      "solution": {
+        "lines": [
+          "تمثيل $f$ قطعة مستقيم من $(0 ; 480)$ إلى $(40 ; 0)$ .",
+          "تمثيل $g$ قطعة مستقيم من $(0 ; 240)$ إلى $(40 ; 720)$ ."
+        ]
+      },
+      "timeSeconds": 360
+    },
+    {
+      "id": "q9",
+      "step": "03",
+      "sub": "ب",
+      "statement": "فسّر بيانيا النتيجة السابقة، مع تحديد مساحة كل قطعة في هذه الحالة.\nاكتب إحداثيي نقطة تقاطع التمثيلين.",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": {
+        "x": "10",
+        "y": "360"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "360",
+            "y": "10"
+          },
+          "id": "MISC-JUMLA-BAYANI-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ إحداثيي نقطة تقاطع التمثيلين مستعملا وحدتي المحورين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "فاصلتها طول $DM$ وترتيبها مساحة كل قطعة."
+        }
+      ],
+      "feedback": {
+        "correct": "التمثيلان يتقاطعان في هذه النقطة.",
+        "incorrect": "الفاصلة هي الطول $DM$ (بـ m) والترتيب هو المساحة (بـ $m^2$) ؛ الفاصلة أولا."
+      },
+      "solution": {
+        "lines": [
+          "التمثيلان يتقاطعان في النقطة التي فاصلتها 5 وحدات $(5 \\times 2 = 10)$ وترتيبها 6 وحدات $(6 \\times 60 = 360)$ ، أي $(10 ; 360)$ .",
+          "فاصلتها: الطول $DM = 10m$ ، وترتيبها: مساحة كل قطعة $360m^2$ .",
+          "تحقق: $480 - 12 \\times 10 = 360$ و $240 + 12 \\times 10 = 360$ ."
+        ],
+        "result": "(10 ; 360)"
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

@@ -1,0 +1,367 @@
+{
+  "id": "ex-2am-muqarana-nisbiya-l5-008",
+  "lessonCode": "muqarana-nisbiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — درجات تجمّد السوائل",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "درجة الحرارة",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يدرس أعضاء نادي العلوم درجات تجمّد أربعة سوائل، مع توثيق نتائجهم بأمانة: الماء العذب $0$ °C ، ماء البحر $-1{,}9$ °C ، محلول ملحي $-1{,}91$ °C ، ماء ملح الطرق $-2{,}1$ °C. يتجمّد السائل في ليلة درجة حرارتها $-2$ °C إذا كانت درجة تجمّده أكبر تمامًا من $-2$ .\nالجزء الأول: مقارنة درجات التجمّد.\nالجزء الثاني: ليلة الصقيع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "رتّب درجات التجمّد ترتيبًا تصاعديًّا: اختر السلسلة الصحيحة.",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-1{,}9 < -1{,}91 < -2{,}1 < 0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-BDG"
+        },
+        {
+          "id": "B",
+          "content": "$0 > -1{,}9 > -1{,}91 > -2{,}1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-OD"
+        },
+        {
+          "id": "C",
+          "content": "$-2{,}1 < -1{,}91 < -1{,}9 < 0$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بفرز الأعداد حسب إشاراتها: السالبة، ثم الصفر، ثم الموجبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب الأعداد السالبة فيما بينها حسب مسافاتها إلى الصفر: الأكبر مسافة هو الأصغر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب السلسلة كاملة بالرمز نفسه، ثم تحقّق من كل زوج متجاور."
+        }
+      ],
+      "feedback": {
+        "correct": "$-2{,}1 < -1{,}91 < -1{,}9 < 0$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "السالبة: $2{,}10 > 1{,}91 > 1{,}90$ ، فـ $-2{,}1 < -1{,}91 < -1{,}9$",
+          "ثم الصفر"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما أخفض درجة تجمّد؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "-2,1",
+      "misconceptionSignatures": [
+        {
+          "value": "-1,9",
+          "id": "MISC-MUQARANA-NISBIYA-BDG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج: أيّهما أبعد عن الصفر؟ وفي أيّ جهة منه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددان سالبان: الأصغر هو الذي له أكبر مسافة إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن المسافتين إلى الصفر (العددين دون إشارتيهما) ثم اعكس الحكم لأن العددين سالبان."
+        }
+      ],
+      "feedback": {
+        "correct": "الأخفض هي $-2{,}1$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$2{,}1 > 1{,}91 > 1{,}9$",
+          "الأخفض $-2{,}1$"
+        ],
+        "result": "-2{,}1"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "قارن $-1{,}9$ و $-1{,}91$ : اختر العبارة الصحيحة.",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-1{,}91 > -1{,}9$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-BDG"
+        },
+        {
+          "id": "B",
+          "content": "$-1{,}91 < -1{,}9$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$-1{,}91 = -1{,}9$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-DAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج: أيّهما أبعد عن الصفر؟ وفي أيّ جهة منه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددان سالبان: الأصغر هو الذي له أكبر مسافة إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن المسافتين إلى الصفر (العددين دون إشارتيهما) ثم اعكس الحكم لأن العددين سالبان."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}91 > 1{,}90$ والعددان سالبان، فـ $-1{,}91 < -1{,}9$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}91 > 1{,}90$",
+          "$-1{,}91 < -1{,}9$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "في ليلة درجتها $-2$ °C ، كم سائلًا من الأربعة يتجمّد (درجة تجمّده أكبر تمامًا من $-2$) ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-MUQARANA-NISBIYA-BDG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج: أيّهما أبعد عن الصفر؟ وفي أيّ جهة منه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددان سالبان: الأصغر هو الذي له أكبر مسافة إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن المسافتين إلى الصفر (العددين دون إشارتيهما) ثم اعكس الحكم لأن العددين سالبان."
+        }
+      ],
+      "feedback": {
+        "correct": "الماء العذب وماء البحر والمحلول الملحي.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$0 > -2$ ، $-1{,}9 > -2$ ، $-1{,}91 > -2$",
+          "$-2{,}1 < -2$",
+          "ثلاثة سوائل"
+        ],
+        "result": "3"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ماء ملح الطرق ($-2{,}1$ °C) في هذه الليلة: ما القرار؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا يتجمّد لأن $-2{,}1 < -2$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "يتجمّد لأن $-2{,}1 > -2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-BDG"
+        },
+        {
+          "id": "C",
+          "content": "يتجمّد لأن $-2{,}1 = -2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-DAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارجع إلى القيم التي رتّبتها في الأسئلة السابقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين المعنيّين قبل أن تقرّر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القرار الصحيح يُبنى على مقارنة، لا على تخمين."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}1 > 2$ والعددان سالبان، فـ $-2{,}1 < -2$ ولا يتجمّد.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$2{,}1 > 2$ والعددان سالبان",
+          "$-2{,}1 < -2$ ، فلا يتجمّد"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ج",
+      "statement": "برّر أن المحلول الملحي ($-1{,}91$ °C) يتجمّد في هذه الليلة.",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارجع إلى القيم التي رتّبتها في الأسئلة السابقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين المعنيّين قبل أن تقرّر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القرار الصحيح يُبنى على مقارنة، لا على تخمين."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الشرط: درجة التجمّد أكبر تمامًا من $-2$",
+          "$1{,}91 < 2$ والعددان سالبان، فـ $-1{,}91 > -2$",
+          "إذن يتجمّد المحلول"
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

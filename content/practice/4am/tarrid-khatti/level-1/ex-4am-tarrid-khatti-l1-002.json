@@ -1,0 +1,144 @@
+{
+  "id": "ex-4am-tarrid-khatti-l1-002",
+  "lessonCode": "tarrid-khatti",
+  "level": 1,
+  "metadata": {
+    "title": "علب الياغورت — جدول تناسبية",
+    "estimatedMinutes": 4,
+    "tags": [
+      "جدول تناسبية",
+      "دستور"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-khatti_P1",
+      "modelledOn": "method-spring",
+      "adaptedFrom": "ex-4am-tarrid-khatti-l1-002"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "يبيع محل نظيف علب الياغورت بالثمن نفسه للعلبة الواحدة. يعطي الجدول الآتي الثمن $y$ (بـ DA) بدلالة عدد العلب $x$ :",
+    "table": {
+      "head": [
+        "عدد العلب $x$",
+        "2",
+        "5",
+        "8"
+      ],
+      "rows": [
+        [
+          "الثمن $y$ (DA)",
+          "70",
+          "175",
+          "280"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل الجدول جدول تناسبية؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TANASUB-FARQ-THABIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $\\dfrac{y}{x}$ في كل عمود."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جدول تناسبية: حاصل القسمة نفسه في كل الأعمدة."
+        }
+      ],
+      "feedback": {
+        "correct": "حواصل القسمة متساوية: الجدول جدول تناسبية.",
+        "incorrect": "قارن حواصل القسمة $\\dfrac{y}{x}$ ، لا الفروق بين الأعداد."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{70}{2} = \\dfrac{175}{5} = \\dfrac{280}{8} = 35$",
+          "إذن الجدول جدول تناسبية."
+        ],
+        "result": "جدول تناسبية"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب عبارة الدالة الخطية $f$ التي ترفق بعدد العلب $x$ ثمنها $f(x)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "35",
+      "misconceptionSignatures": [
+        {
+          "value": "1/35",
+          "id": "MISC-TANASUB-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدالة من الشكل $f(x) = ax$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$a$ هو ثمن علبة واحدة: حاصل قسمة الثمن على عدد العلب."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(x) = 35x$ : ثمن العلبة الواحدة 35DA.",
+        "incorrect": "المعامل هو الثمن مقسوما على عدد العلب."
+      },
+      "solution": {
+        "lines": [
+          "$a = \\dfrac{70}{2} = 35$",
+          "إذن $f(x) = 35x$ ."
+        ],
+        "result": "f(x) = 35x"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

@@ -1,0 +1,413 @@
+{
+  "id": "ex-3am-musawiyat-amaliyat-l5-004",
+  "lessonCode": "musawiyat-amaliyat",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — سقي بستان العمّ أحمد",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "كسور",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 3,
+      "file": "3am-s3-56",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: يعتني العمّ أحمد بأشجار بستانه عنايته بأمانة. في بستانه $N$ شجرة: التفاح $\\dfrac{2}{5}$ من العدد الكلي، والزيتون $\\dfrac{1}{5}$ منه، وعدد أشجار الإجاص $36$ شجرة.\nالجزء الثاني: لسقي الأشجار يستعمل خزانًا سعته $C$ لترًا، وهو مملوء إلى $\\dfrac{3}{4}$ سعته أي $4500\\,\\mathrm{L}$ ، وكلّ شجرة تحتاج $50\\,\\mathrm{L}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "ما الكسر من العدد الكلي الذي تمثّله أشجار الإجاص؟",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "2/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجهله المسألة؟ سمِّه بحرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم الجملة إلى مساواة بين عبارتين، ثم طبّق العمليّات نفسها على طرفيها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الجواب بالتعويض في نصّ المسألة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2}{5}$ .",
+        "incorrect": "استعمل خواص المساواة والعمليّات: عملية واحدة على الطرفين معًا تنقلك من مساواة إلى أخرى؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$1 - \\dfrac{2}{5} - \\dfrac{1}{5} = \\dfrac{2}{5}$ ."
+        ],
+        "result": "\\dfrac{2}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اكتب المساواة التي نحصل عليها من $(\\dfrac{2}{5})N = 36$ بضرب طرفيها في العدد $5$.",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2N = 36$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-ONE-SIDE"
+        },
+        {
+          "id": "B",
+          "content": "$2N + 5 = 41$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-ADD-MULT-MIX"
+        },
+        {
+          "id": "C",
+          "content": "$2N = 180$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نضرب فيه (أو نقسم عليه)؟ وهل هو معدوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نضرب (أو نقسم) الطرفين معًا، وكلّ حدّ من الطرف يتأثّر بالعملية؛ والقسمة على صفر ممنوعة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع الطرف كاملًا بين قوسين قبل أن تضرب، وانتبه لإشارة العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$2N = 180$ .",
+        "incorrect": "لا تتغيّر المساواة عندما نضرب طرفيها في العدد نفسه أو نقسمهما على عدد غير معدوم؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $\\dfrac{2}{5}N = 36$ .",
+          "بضرب طرفي المساواة في $5$ نجد: $5 \\times \\dfrac{2}{5}N = 5 \\times 36$ ، أي $2N = 180$ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "نعلم أنّ $2N = 180$ ، إذن $N = \\ldots$ .",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "90",
+      "misconceptionSignatures": [
+        {
+          "value": "180",
+          "id": "MISC-MUSAWIYA-ONE-SIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نضرب فيه (أو نقسم عليه)؟ وهل هو معدوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نضرب (أو نقسم) الطرفين معًا، وكلّ حدّ من الطرف يتأثّر بالعملية؛ والقسمة على صفر ممنوعة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع الطرف كاملًا بين قوسين قبل أن تضرب، وانتبه لإشارة العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$N = 90$ .",
+        "incorrect": "لا تتغيّر المساواة عندما نضرب طرفيها في العدد نفسه أو نقسمهما على عدد غير معدوم؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $2N = 180$ .",
+          "بقسمة طرفي المساواة على $2$ نجد: $\\dfrac{2N}{2} = \\dfrac{180}{2}$ ، أي $N = 90$ ."
+        ],
+        "result": "N = 90"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "اكتب المساواة التي نحصل عليها من $(\\dfrac{3}{4})C = 4500$ بضرب طرفيها في العدد $4$.",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3C = 18000$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$3C + 4 = 4504$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-ADD-MULT-MIX"
+        },
+        {
+          "id": "C",
+          "content": "$3C = 4500$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-ONE-SIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نضرب فيه (أو نقسم عليه)؟ وهل هو معدوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نضرب (أو نقسم) الطرفين معًا، وكلّ حدّ من الطرف يتأثّر بالعملية؛ والقسمة على صفر ممنوعة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع الطرف كاملًا بين قوسين قبل أن تضرب، وانتبه لإشارة العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$3C = 18000$ .",
+        "incorrect": "لا تتغيّر المساواة عندما نضرب طرفيها في العدد نفسه أو نقسمهما على عدد غير معدوم؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $\\dfrac{3}{4}C = 4500$ .",
+          "بضرب طرفي المساواة في $4$ نجد: $4 \\times \\dfrac{3}{4}C = 4 \\times 4500$ ، أي $3C = 18000$ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "نعلم أنّ $3C = 18000$ ، إذن $C = \\ldots$ .",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "6000",
+      "misconceptionSignatures": [
+        {
+          "value": "18000",
+          "id": "MISC-MUSAWIYA-ONE-SIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نضرب فيه (أو نقسم عليه)؟ وهل هو معدوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نضرب (أو نقسم) الطرفين معًا، وكلّ حدّ من الطرف يتأثّر بالعملية؛ والقسمة على صفر ممنوعة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع الطرف كاملًا بين قوسين قبل أن تضرب، وانتبه لإشارة العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = 6000$ .",
+        "incorrect": "لا تتغيّر المساواة عندما نضرب طرفيها في العدد نفسه أو نقسمهما على عدد غير معدوم؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $3C = 18000$ .",
+          "بقسمة طرفي المساواة على $3$ نجد: $\\dfrac{3C}{3} = \\dfrac{18000}{3}$ ، أي $C = 6000$ ."
+        ],
+        "result": "C = 6000"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ا",
+      "statement": "هل يكفي الماء الموجود ($4500\\,\\mathrm{L}$) لسقي كلّ الأشجار؟",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، ينقص $500\\,\\mathrm{L}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-DECISION"
+        },
+        {
+          "id": "B",
+          "content": "نعم، فالمطلوب $90 \\times 50 = 4500\\,\\mathrm{L}$ وهي الكمية الموجودة بالضبط",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نعم، ويبقى $1000\\,\\mathrm{L}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-DECISION"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجهله المسألة؟ سمِّه بحرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم الجملة إلى مساواة بين عبارتين، ثم طبّق العمليّات نفسها على طرفيها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الجواب بالتعويض في نصّ المسألة."
+        }
+      ],
+      "feedback": {
+        "correct": "$90 \\times 50 = 4500$ .",
+        "incorrect": "استعمل خواص المساواة والعمليّات: عملية واحدة على الطرفين معًا تنقلك من مساواة إلى أخرى؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "عدد الأشجار $90$ وكلّ شجرة تحتاج $50\\,\\mathrm{L}$ : $90 \\times 50 = 4500\\,\\mathrm{L}$ .",
+          "الكمية المتوفرة تساوي المطلوب بالضبط، فتكفي."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "sub": "ب",
+      "statement": "اشرح كيف انتقلت من $\\dfrac{2}{5}N = 36$ إلى $N = 90$ .",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا تفعل العمليّة بكل طرف من أطراف المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر: لا نغيّر مساواة إلا بعملية نجريها على طرفيها معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب خطوتك بعبارة «بإضافة… / بضرب… إلى/في الطرفين» ثم استنتج."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "بضرب طرفي $\\dfrac{2}{5}N = 36$ في $5$ نجد $2N = 180$ .",
+          "بقسمة الطرفين على $2$ نجد $N = 90$ ."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,331 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muadalat-l5-004",
+  "lessonCode": "wadiya-idmajiya-muadalat",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2013 — كراء شاحنة مبرّدة لنقل التمور ببسكرة",
+    "estimatedMinutes": 16,
+    "tags": [
+      "ترييض",
+      "معادلة",
+      "متراجحة",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-muadalat_P2",
+      "modelledOn": "BEM 2013 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2013",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "لنقل محصوله من التمور، ثمرة عمل متقن وصبر، قرّر فلاح من بسكرة كراء شاحنة مبرّدة، فاتصل بثلاث وكالات قدّمت له العروض الآتية:\n– عرض الوكالة الأولى: دفع مبلغ 6000DA لليوم الواحد.\n– عرض الوكالة الثانية: دفع مبلغ 4000DA لليوم الواحد يُضاف إليه ضمان غير مسترجع قدره 10000DA .\n– عرض الوكالة الثالثة: دفع مبلغ 34000DA لمدة لا تتجاوز أسبوعًا واحدًا."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما هو العرض الأقل تكلفة لكراء الشاحنة مدة 7 أيام؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "عرض الوكالة الأولى",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        },
+        {
+          "id": "B",
+          "content": "عرض الوكالة الثانية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        },
+        {
+          "id": "C",
+          "content": "عرض الوكالة الثالثة",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب تكلفة 7 أيام حسب كل عرض."
+        }
+      ],
+      "feedback": {
+        "correct": "عرض الوكالة الثالثة.",
+        "incorrect": "احسب المبالغ الثلاثة من أجل 7 أيام ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "الوكالة الأولى: $6000 \\times 7 = 42000$ DA",
+          "الوكالة الثانية: $4000 \\times 7 + 10000 = 38000$ DA",
+          "الوكالة الثالثة: $34000$ DA",
+          "إذن عرض الوكالة الثالثة هو الأقل تكلفة."
+        ],
+        "result": "عرض الوكالة الثالثة"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "ليكن $x$ عدد أيام الكراء ($x \\leqslant 7$). نسمّي $f(x)$ ، $g(x)$ ، $h(x)$ مبالغ الكراء حسب عروض الوكالات الأولى والثانية والثالثة على الترتيب، حيث $h(x) = 34000$ . عبّر عن $f(x)$ و $g(x)$ بدلالة $x$ .",
+      "statement": "$f(x)$ — العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $f(x) = ax$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "6000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع عن كل يوم؟ هذا المبلغ يُضرب في $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 6000$ .",
+        "incorrect": "اقرأ النص من جديد: ما الذي يُدفع مرة واحدة، وما الذي يُدفع عن كل وحدة؟"
+      },
+      "solution": {
+        "lines": [
+          "المبلغ الذي يُدفع عن كل يوم يُضرب في $x$ ، إذن $a = 6000$ ."
+        ],
+        "result": "a = 6000"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "$g(x)$ — العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $g(x) = ax + b$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "4000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع عن كل يوم؟ هذا المبلغ يُضرب في $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 4000$ .",
+        "incorrect": "اقرأ النص من جديد: ما الذي يُدفع مرة واحدة، وما الذي يُدفع عن كل وحدة؟"
+      },
+      "solution": {
+        "lines": [
+          "المبلغ الذي يُدفع عن كل يوم يُضرب في $x$ ، إذن $a = 4000$ ."
+        ],
+        "result": "a = 4000"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "$g(x)$ — العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $g(x) = ax + b$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "10000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع مرة واحدة مهما كان $x$ ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$b = 10000$ .",
+        "incorrect": "اقرأ النص من جديد: ما الذي يُدفع مرة واحدة، وما الذي يُدفع عن كل وحدة؟"
+      },
+      "solution": {
+        "lines": [
+          "المبلغ الثابت لا يتعلّق بـ $x$ ، إذن $g(x) = 4000x + 10000$"
+        ],
+        "result": "g(x) = 4000x + 10000"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ا",
+      "lead": "حلّ المعادلتين الآتيتين، ثم فسّر كل حل:",
+      "statement": "$f(x) = g(x)$",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب حل المعادلة: عدد طبيعي",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عند نقل حدّ من طرف إلى آخر تتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم الطرفين في الأخير على معامل $x$ بإشارته، ثم تحقّق بالتعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 5$ : من أجل 5 أيام يتساوى عرضا الوكالتين الأولى والثانية.",
+        "incorrect": "انقل حدود $x$ إلى طرف والأعداد إلى الطرف الآخر مع تغيير الإشارة، ثم اقسم على معامل $x$ . تحقّق بالتعويض."
+      },
+      "solution": {
+        "lines": [
+          "$6000x - 4000x = 10000$",
+          "$2000x = 10000$",
+          "$x = \\dfrac{10000}{2000}$"
+        ],
+        "result": "x = 5"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ب",
+      "statement": "$g(x) = h(x)$",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب حل المعادلة: عدد طبيعي",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عند نقل حدّ من طرف إلى آخر تتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم الطرفين في الأخير على معامل $x$ بإشارته، ثم تحقّق بالتعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 6$ : من أجل 6 أيام يتساوى عرضا الوكالتين الثانية والثالثة.",
+        "incorrect": "انقل حدود $x$ إلى طرف والأعداد إلى الطرف الآخر مع تغيير الإشارة، ثم اقسم على معامل $x$ . تحقّق بالتعويض."
+      },
+      "solution": {
+        "lines": [
+          "$4000x = 34000 - 10000$",
+          "$4000x = 24000$",
+          "$x = \\dfrac{24000}{4000}$"
+        ],
+        "result": "x = 6"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "statement": "ابتداءً من كم يومًا يكون عرض الوكالة الثانية أقل تكلفة من عرض الوكالة الأولى؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الأيام",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-MUTARAJIHA-QAWS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب متراجحة تترجم «$g(x) < f(x)$» ثم حلّها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل الحدّ نفسه حلّ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "ابتداءً من 6 أيام.",
+        "incorrect": "حلّ المتراجحة $4000x + 10000 < 6000x$ ، ثم خذ أصغر عدد طبيعي يحقّقها."
+      },
+      "solution": {
+        "lines": [
+          "$4000x + 10000 < 6000x$",
+          "$10000 < 2000x$",
+          "$x > 5$",
+          "إذن ابتداءً من 6 أيام."
+        ],
+        "result": "6"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

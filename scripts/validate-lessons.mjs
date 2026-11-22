@@ -21,14 +21,29 @@
 //
 // Usage: node scripts/validate-lessons.mjs [--strict]
 
-import { readFileSync } from 'node:fs';
-import { relative } from 'node:path';
+import { readFileSync, existsSync, readdirSync } from 'node:fs';
+import { relative, join } from 'node:path';
+import { pathToFileURL } from 'node:url';
+import { validateProblem } from '../apps/web/src/lessons/common/problems/guidedProblem.js';
 import {
   LESSON_STAGES,
   STAGE_ORDER,
   REQUIRED_STAGES,
   MAX_LESSON_MINUTES,
 } from '../packages/core/curriculum/lessonStages.js';
+import {
+  isManipulationType,
+  MANIPULATION_TYPE_IDS,
+  RESOURCE_KINDS,
+  LESSON_KINDS,
+  REQUIRED_STAGES_BY_KIND,
+} from '../packages/core/curriculum/manipulationTypes.js';
+import {
+  MANIPULATION_LEVEL_IDS,
+  EXPERIENCE_TYPES,
+  ADAPTATION_REASONS,
+  VISUAL_THEME_IDS,
+} from '../packages/core/curriculum/manipulationLevels.js';
 // Shared AST plumbing (also used by scripts/audit-knowledge-dependencies.mjs).
 import {
   traverse,
@@ -73,6 +88,25 @@ function extractQuestions(file) {
       const enabledNode = propOf(assessmentNode, 'enabled');
       if (enabledNode === undefined) return;
 
+      // Deux écritures du lien question → learning point : l'héritage
+      // `learningPointIds: ['…']` (tous principaux) et la forme canonique
+      // `learningPoints: [{code, role}]` (Mastery V2 — un principal, des
+      // secondaires). Les deux sont lues ; le registre les unifie.
+      const lpNode = propOf(assessmentNode, 'learningPoints');
+      let learningPoints;
+      if (lpNode !== undefined) {
+        learningPoints = 'INVALID';
+        if (lpNode.type === 'ArrayExpression' && lpNode.elements.every((el) => el?.type === 'ObjectExpression')) {
+          const read = lpNode.elements.map((el) => ({
+            code: literalValue(propOf(el, 'code')),
+            role: literalValue(propOf(el, 'role')) ?? 'primary',
+          }));
+          if (read.every((lp) => typeof lp.code === 'string' && (lp.role === 'primary' || lp.role === 'secondary'))) {
+            learningPoints = read;
+          }
+        }
+      }
+
       questions.push({
         file,
         line: path.node.loc?.start.line,
@@ -80,6 +114,11 @@ function extractQuestions(file) {
         enabled: literalValue(enabledNode),
         type: literalValue(propOf(assessmentNode, 'type')),
         learningPointIds: literalValue(propOf(assessmentNode, 'learningPointIds')),
+        learningPoints,
+        difficulty: literalValue(propOf(assessmentNode, 'difficulty')),
+        hasDifficulty: propOf(assessmentNode, 'difficulty') !== undefined,
+        correct: literalValue(propOf(path.node, 'correct')),
+        hasCorrect: propOf(path.node, 'correct') !== undefined,
       });
     },
   });
@@ -92,7 +131,7 @@ const warnings = [];
 const migratedCoverage = new Map(); // lesson code -> Set of covered LP ids
 
 for (const lessonDir of findLessonDirs(lessonsRoot)) {
-  const { id: code, modules, knowledgeMap, priorKnowledge } = parseLessonConfig(lessonDir);
+  const { id: code, modules, knowledgeMap, knowledgeMapMode, priorKnowledge, kind, unit, resources } = parseLessonConfig(lessonDir);
   const rel = relative(repoRoot, lessonDir);
   if (!code) {
     errors.push(`${rel}: lesson.config.js has no parseable literal LESSON_CONFIG.id`);
@@ -117,11 +156,161 @@ for (const lessonDir of findLessonDirs(lessonsRoot)) {
     errors.push(`${configPath}: priorKnowledge must be a literal array of concept id strings`);
   }
 
+  // ── Carte des connaissances PROGRESSIVE (KNOWLEDGE_MAP.md Part A) ──────────
+  // Une leçon qui a une carte a SA carte progressive : le drapeau littéral, un
+  // knowledgeGraph.js, et sa réexportation par knowledge.jsx (c'est par là que
+  // LazyKnowledgeProvider la reçoit). Les invariants du graphe lui-même —
+  // validité, items portés, aides, disposition — sont vérifiés par
+  // apps/web/src/lessons/common/knowledge/progressive/lessonGraphs.test.js.
+  // A v2 lesson (`retiredModules: true`, LESSON_V2.md §2) has ONE knowledge source, the file its pack names
+  // (`lesson.pack.js › knowledge: () => import('./…')`): that file must export the graph (the world's « خريطة المعارف »).
+  // It needs no root knowledge.jsx / knowledgeGraph.js — they were the deleted lesson's map.
+  const v2Lesson = existsSync(join(lessonDir, 'routes.jsx')) && /retiredModules:\s*true/.test(readFileSync(join(lessonDir, 'routes.jsx'), 'utf-8'));
+  const packFile = join(lessonDir, 'lesson.pack.js');
+  const packKnowledge = v2Lesson && existsSync(packFile)
+    ? readFileSync(packFile, 'utf-8').match(/knowledge:\s*\(\)\s*=>\s*import\('\.\/([^']+)'\)/)?.[1] ?? null
+    : null;
+  if (knowledgeMap && v2Lesson) {
+    if (knowledgeMapMode !== 'progressive') {
+      errors.push(`${configPath}: knowledgeMap: true requires knowledgeMapMode: 'progressive' (got ${JSON.stringify(knowledgeMapMode)}) — docs/architecture/KNOWLEDGE_MAP.md A.13`);
+    }
+    const file = packKnowledge && [packKnowledge, `${packKnowledge}.js`, `${packKnowledge}.jsx`].map((f) => join(lessonDir, f)).find((f) => existsSync(f));
+    if (!file) {
+      errors.push(`${rel}: a v2 lesson with knowledgeMap: true needs a pack whose \`knowledge\` names an existing file — docs/architecture/LESSON_V2.md §1`);
+    } else if (!/export\s+const\s+KNOWLEDGE_GRAPH\b|export\s*\{\s*KNOWLEDGE_GRAPH\s*\}/.test(readFileSync(file, 'utf-8'))) {
+      errors.push(`${relative(repoRoot, file)}: the pack's knowledge must export KNOWLEDGE_GRAPH (the lesson's map) — docs/architecture/LESSON_V2.md §2`);
+    }
+  } else if (knowledgeMap) {
+    if (knowledgeMapMode !== 'progressive') {
+      errors.push(`${configPath}: knowledgeMap: true requires knowledgeMapMode: 'progressive' (got ${JSON.stringify(knowledgeMapMode)}) — docs/architecture/KNOWLEDGE_MAP.md A.13`);
+    }
+    if (!existsSync(join(lessonDir, 'knowledgeGraph.js'))) {
+      errors.push(`${rel}: knowledgeMap: true requires a knowledgeGraph.js exporting KNOWLEDGE_GRAPH — docs/architecture/KNOWLEDGE_MAP.md A.9`);
+    } else if (!/export\s*\{\s*KNOWLEDGE_GRAPH\s*\}\s*from\s*'\.\/knowledgeGraph'/.test(readFileSync(join(lessonDir, 'knowledge.jsx'), 'utf-8'))) {
+      errors.push(`${rel}/knowledge.jsx: must re-export the graph — export { KNOWLEDGE_GRAPH } from './knowledgeGraph';`);
+    }
+  } else if (knowledgeMapMode === 'progressive') {
+    errors.push(`${configPath}: knowledgeMapMode: 'progressive' without knowledgeMap: true`);
+  }
+
+  // ── Nature de la leçon et rattachement à l'unité (phase 8) ─────────────────
+  if (!LESSON_KINDS.includes(kind)) {
+    errors.push(`${configPath}: kind must be one of ${LESSON_KINDS.join('/')} (got ${JSON.stringify(kind)})`);
+  }
+  if (catalogEntry.kind !== kind) {
+    errors.push(`${configPath}: kind '${kind}' but the catalogue declares '${catalogEntry.kind}' for '${code}'`);
+  }
+  if ((catalogEntry.unitId ?? null) !== (unit ?? null)) {
+    errors.push(`${configPath}: unit ${JSON.stringify(unit ?? null)} but the catalogue places '${code}' in unit ${JSON.stringify(catalogEntry.unitId ?? null)}`);
+  }
+
+  // ── Ressources déclarées : manipulations, méthodes, situation ─────────────
+  // Une manipulation est une DONNÉE (type d'un registre fermé + points
+  // d'apprentissage qu'elle rend visibles), pas un composant nommé au hasard.
+  if (resources === 'INVALID') {
+    errors.push(`${configPath}: resources must be a literal array of resource objects`);
+  } else if (Array.isArray(resources)) {
+    const seenCodes = new Set();
+    for (const r of resources) {
+      const where = `${configPath}:${r.line}`;
+      if (!RESOURCE_KINDS.includes(r.kind)) errors.push(`${where}: resource kind must be one of ${RESOURCE_KINDS.join('/')} (got ${JSON.stringify(r.kind)})`);
+      if (typeof r.code !== 'string' || r.code === '') errors.push(`${where}: resource code must be a literal string`);
+      else if (seenCodes.has(r.code)) errors.push(`${where}: duplicate resource code '${r.code}'`);
+      else seenCodes.add(r.code);
+      if (typeof r.title !== 'string' || r.title === '') errors.push(`${where}: resource title must be a literal string`);
+      if (r.kind === 'manipulation' && !isManipulationType(r.type)) {
+        errors.push(`${where}: manipulation type must be one of ${MANIPULATION_TYPE_IDS.join('/')} (got ${JSON.stringify(r.type)})`);
+      }
+      if (typeof r.module === 'number' && !modules?.some((m) => m.number === r.module)) {
+        errors.push(`${where}: resource points at module ${r.module}, which does not exist in this lesson`);
+      }
+      if (!Array.isArray(r.learningPointIds) || r.learningPointIds.length === 0) {
+        errors.push(`${where}: resource must list the learningPointIds it makes visible (literal array)`);
+      } else {
+        for (const lpId of r.learningPointIds) {
+          if (!catalogEntry.learningPointIds.has(lpId)) errors.push(`${where}: resource references '${lpId}', which does not belong to lesson '${code}'`);
+        }
+      }
+      if (r.sourceElementIds !== undefined && (!Array.isArray(r.sourceElementIds) || r.sourceElementIds.some((x) => typeof x !== 'string'))) {
+        errors.push(`${where}: sourceElementIds must be a literal array of extraction element ids`);
+      }
+
+      // ── Les DEUX NIVEAUX et la traçabilité de l'expérience ──────────────
+      // Le manuel dit CE QUE l'élève apprend ; la plateforme décide COMMENT
+      // il le vit. Un contexte réhabillé doit donc dire d'où vient la
+      // mathématique et pourquoi la situation a changé — jamais en silence
+      // (docs/architecture/MANIPULATION_CONTRACT.md §7bis-levels).
+      if (r.kind === 'manipulation') {
+        if (r.level !== undefined) {
+          if (!MANIPULATION_LEVEL_IDS.includes(r.level)) {
+            errors.push(`${where}: manipulation level must be one of ${MANIPULATION_LEVEL_IDS.join('/')} (got ${JSON.stringify(r.level)})`);
+          }
+          if (typeof r.objective !== 'string' || r.objective === '') {
+            errors.push(`${where}: a levelled manipulation must state its 'objective' — the mathematical objective, identical at both levels`);
+          }
+          if (r.level === 'advanced' && (typeof r.autonomy !== 'string' || r.autonomy === '')) {
+            errors.push(`${where}: an 'advanced' manipulation must declare its 'autonomy' — what scaffolding it removes or demands more of. 'Beginner with bigger numbers' is not an advanced level.`);
+          }
+          if (r.experience === 'INVALID' || !r.experience) {
+            errors.push(`${where}: a levelled manipulation must carry a literal 'experience' object { type, reason?, theme? }`);
+          } else {
+            if (!EXPERIENCE_TYPES.includes(r.experience.type)) {
+              errors.push(`${where}: experience.type must be one of ${EXPERIENCE_TYPES.join('/')} (got ${JSON.stringify(r.experience.type)})`);
+            } else if (r.experience.type !== 'textbook' && !ADAPTATION_REASONS.includes(r.experience.reason)) {
+              errors.push(`${where}: an adapted context must carry one of these reasons: ${ADAPTATION_REASONS.join('/')}`);
+            }
+            if (r.experience.theme !== undefined && r.experience.theme !== '' && !VISUAL_THEME_IDS.includes(r.experience.theme)) {
+              errors.push(`${where}: unknown visual theme ${JSON.stringify(r.experience.theme)} (one of ${VISUAL_THEME_IDS.join('/')})`);
+            }
+          }
+          // Une manipulation à niveaux ne cite plus le manuel ? Sa
+          // mathématique viendrait de nulle part.
+          if (!Array.isArray(r.sourceElementIds) || r.sourceElementIds.length === 0) {
+            errors.push(`${where}: a levelled manipulation must cite the textbook element its mathematics comes from (sourceElementIds)`);
+          }
+        }
+      }
+    }
+
+    // ── Un module à niveaux en a DEUX, pas un ────────────────────────────
+    // Dès qu'un module déclare un niveau, il doit déclarer les deux : un
+    // « مبتدئ » seul laisse l'élève avancé sans marche à monter, un
+    // « متقدم » seul laisse le débutant devant un mur (brief §3).
+    const levelledByModule = new Map();
+    for (const r of resources) {
+      if (r.kind !== 'manipulation' || r.level === undefined) continue;
+      if (!levelledByModule.has(r.module)) levelledByModule.set(r.module, []);
+      levelledByModule.get(r.module).push(r);
+    }
+    for (const [moduleNumber, rs] of levelledByModule) {
+      const present = new Set(rs.map((r) => r.level));
+      const missing = MANIPULATION_LEVEL_IDS.filter((id) => !present.has(id));
+      if (missing.length > 0) {
+        errors.push(`${configPath}: module ${moduleNumber} declares a levelled manipulation but is missing its '${missing.join("', '")}' level — a levelled workspace always offers both`);
+      }
+      const objectives = new Set(rs.map((r) => r.objective).filter(Boolean));
+      if (objectives.size > 1) {
+        errors.push(`${configPath}: module ${moduleNumber}: both levels must serve the SAME mathematical objective — the context may change, the objective may not`);
+      }
+    }
+    // Un module de manipulation doit déclarer AU MOINS une manipulation : le
+    // stage sans la donnée est une étiquette vide.
+    for (const m of modules ?? []) {
+      if (m.stage === 'manipulation' && !resources.some((r) => r.kind === 'manipulation' && r.module === m.number)) {
+        warnings.push(`${configPath}:${m.line}: module ${m.number} is a 'manipulation' stage but no manipulation resource points at it`);
+      }
+    }
+  }
+
   // ── Stage contract ────────────────────────────────────────────────────────
   if (!modules || modules.length === 0) {
     errors.push(`${configPath}: LESSON_CONFIG.modules must be a non-empty array of module objects`);
   } else {
     let totalMin = 0;
+    // Les « مسائل » (track: 'problem') sont un AJOUT de la plateforme : elles
+    // comptent dans le plafond de 90 min, pas dans la comparaison avec la
+    // durée que le propriétaire a déclarée au catalogue.
+    let problemMin = 0;
     let prevOrder = -1;
     const presentStages = new Set();
 
@@ -143,6 +332,47 @@ for (const lessonDir of findLessonDirs(lessonsRoot)) {
       }
       if (typeof m.slug !== 'string' || m.slug === '') {
         errors.push(`${where}: module slug must be a literal string (module files live at modules/<NN>_<slug>.jsx)`);
+      }
+      if (m.track != null && m.track !== 'problem') {
+        errors.push(`${where}: module track must be 'problem' when present (got ${JSON.stringify(m.track)})`);
+      }
+      if (m.track === 'problem') {
+        // Formatif par construction : jamais d'évaluation, toujours avant le test.
+        if (m.stage !== 'practice_lab') errors.push(`${where}: a 'problem' module must be stage 'practice_lab' (got ${JSON.stringify(m.stage)})`);
+        if (typeof m.estimatedMin === 'number') problemMin += m.estimatedMin;
+      }
+    }
+
+    // Le contenu des « مسائل » : content/problems.js, un problème par module
+    // « problem », dans l'ordre, chacun conforme au contrat GuidedProblem.
+    // A v2 lesson (`retiredModules: true` in its routes.jsx, LESSON_V2.md §2) has no module page: its « مسائل » modules are
+    // DATA (progress is stored by their numbers), and their content/problems.js is deleted with the pages.
+    const retiredPages = existsSync(join(lessonDir, 'routes.jsx')) && /retiredModules:\s*true/.test(readFileSync(join(lessonDir, 'routes.jsx'), 'utf-8'));
+    const problemModules = retiredPages ? [] : modules.filter((m) => m.track === 'problem');
+    if (problemModules.length > 0) {
+      const problemsFile = join(lessonDir, 'content', 'problems.js');
+      if (!existsSync(problemsFile)) {
+        errors.push(`${configPath}: ${problemModules.length} 'problem' module(s) but no content/problems.js`);
+      } else {
+        try {
+          const { PROBLEMS } = await import(pathToFileURL(problemsFile).href);
+          if (!Array.isArray(PROBLEMS) || PROBLEMS.length !== problemModules.length) {
+            errors.push(`${rel}/content/problems.js: PROBLEMS must list exactly ${problemModules.length} problem(s), one per 'problem' module`);
+          }
+          for (const p of PROBLEMS ?? []) {
+            for (const e of validateProblem(p)) errors.push(`${rel}/content/problems.js: ${e}`);
+          }
+          // La carte « مسألة الدرس » montre l'énoncé de la مسألة 1 : si celle-ci a un support
+          // (figure / repère / tableau), la carte doit le porter aussi — même donnée, une seule source.
+          const { LESSON_CONFIG } = await import(pathToFileURL(join(lessonDir, 'lesson.config.js')).href);
+          const lp = LESSON_CONFIG?.lessonProblem;
+          const first = PROBLEMS?.[0];
+          if (lp && first) for (const k of ['figure', 'visual', 'table']) {
+            if (first[k] && lp[k] !== first[k]) errors.push(`${configPath}: lessonProblem.${k} must be the مسألة 1 ${k} (problems.js: \`${k}: LESSON_CONFIG.lessonProblem.${k}\`) — the lesson card shows the statement, so it must show its support`);
+          }
+        } catch (err) {
+          errors.push(`${rel}/content/problems.js: cannot be loaded (${err.message})`);
+        }
       }
     }
 
@@ -199,11 +429,11 @@ for (const lessonDir of findLessonDirs(lessonsRoot)) {
     if (totalMin > MAX_LESSON_MINUTES) {
       errors.push(`${configPath}: modules total ${totalMin} min — the cap is ${MAX_LESSON_MINUTES} min per lesson; split the lesson instead`);
     }
-    if (catalogEntry.durationMinutes != null && Math.abs(totalMin - catalogEntry.durationMinutes) > 10) {
-      warnings.push(`${configPath}: modules total ${totalMin} min but the catalogue declares ${catalogEntry.durationMinutes} min — realign coursesData.js`);
+    if (catalogEntry.durationMinutes != null && Math.abs(totalMin - problemMin - catalogEntry.durationMinutes) > 10) {
+      warnings.push(`${configPath}: modules total ${totalMin - problemMin} min (without مسائل) but the catalogue declares ${catalogEntry.durationMinutes} min — realign coursesData.js`);
     }
     if (strict || catalogEntry.status === 'available') {
-      for (const required of REQUIRED_STAGES) {
+      for (const required of (REQUIRED_STAGES_BY_KIND[kind] ?? REQUIRED_STAGES)) {
         // A lesson driven by the Knowledge Map formalises continuously: no
         // « À retenir » module is expected (see LESSON_CONTRACT.md).
         if (required === 'formalization' && knowledgeMap) continue;
@@ -242,6 +472,32 @@ for (const lessonDir of findLessonDirs(lessonsRoot)) {
         }
       },
     });
+  }
+
+  // ── A v2 lesson: its assessment evidence is the world's ─────────────────────
+  // Its module pages (and the final test « إختبار أولي » with them) are deleted (`retiredModules: true`, LESSON_V2.md §2).
+  // What proves a الكفاءة is an exam-format answer of the game world, sent as a claim the SERVER re-computes (§1bis):
+  // `world/evidence.js` names, for each key, the الكفاءة it proves (`const POINTS = { <key>: 'P<n>' }`). A الكفاءة that no
+  // key proves stays uncovered below — the same error as a lesson whose final test forgets it.
+  if (existsSync(join(lessonDir, 'routes.jsx')) && /retiredModules:\s*true/.test(readFileSync(join(lessonDir, 'routes.jsx'), 'utf-8'))) {
+    // A UNIT'S LAST LESSON (world « mission-isle », docs/reports/INTEGRATION_LESSON_PLAN.md §5) forges no key: what proves
+    // its الكفاءة is its BANK in exam form (the sitting, mission 3 with it) — the server re-computes each answer from the
+    // sheet. Its coverage is read from the bank: the learning points the questions of `content/practice/` carry.
+    const packFile = join(lessonDir, 'lesson.pack.js');
+    if (existsSync(packFile) && /world:\s*\{\s*id:\s*'mission-isle'/.test(readFileSync(packFile, 'utf-8'))) {
+      const bank = join(repoRoot, 'content', 'practice', gradeId, code);
+      const codes = new Set();
+      if (existsSync(bank))
+        for (const f of readdirSync(bank, { recursive: true }))
+          if (String(f).endsWith('.json'))
+            for (const m of readFileSync(join(bank, String(f)), 'utf-8').matchAll(/"code":\s*"([^"]+)"/g)) codes.add(m[1]);
+      migratedCoverage.set(indexKey, codes);
+      continue;
+    }
+    const evidenceFile = join(lessonDir, 'world', 'evidence.js');
+    const points = existsSync(evidenceFile) ? readFileSync(evidenceFile, 'utf-8').match(/const POINTS = \{([^}]*)\}/)?.[1] ?? '' : '';
+    migratedCoverage.set(indexKey, new Set([...points.matchAll(/'(P\d+)'/g)].map((m) => `${gradeId}_${code}_${m[1]}`)));
+    continue;
   }
 
   // ── Question-level assessment metadata ────────────────────────────────────
@@ -285,19 +541,63 @@ for (const lessonDir of findLessonDirs(lessonsRoot)) {
     }
 
     if (q.enabled === true) {
-      if (!Array.isArray(q.learningPointIds) || q.learningPointIds.length === 0) {
-        errors.push(`${where}: enabled assessment question must list at least one learningPointId`);
+      // Le lien question → learning point, dans l'une des deux écritures.
+      let refs = null;
+      if (q.learningPoints !== undefined) {
+        if (q.learningPoints === 'INVALID') {
+          errors.push(`${where}: assessment.learningPoints must be a literal array of {code: string, role: 'primary'|'secondary'}`);
+        } else {
+          refs = q.learningPoints;
+          const primaries = refs.filter((lp) => lp.role === 'primary');
+          if (primaries.length !== 1) {
+            errors.push(`${where}: assessment.learningPoints must carry exactly one 'primary' learning point (got ${primaries.length})`);
+          }
+          if (refs.length > 4) {
+            errors.push(`${where}: assessment.learningPoints may list at most 4 learning points`);
+          }
+        }
+      } else if (Array.isArray(q.learningPointIds) && q.learningPointIds.length > 0) {
+        refs = q.learningPointIds.map((id) => ({ code: id, role: 'primary' }));
+        // L'écriture héritée n'a pas de rôle : avec plusieurs points, elle
+        // déclarerait plusieurs PRINCIPAUX, ce que le registre d'items refuse
+        // (Mastery V2 : exactement un principal). Bloquant pour une leçon
+        // vivante ; avertissement pour l'arbre dormant, jamais importé.
+        if (q.learningPointIds.length > 1) {
+          const dormant = /^apps\/web\/src\/lessons\/(college|lycee)\//.test(relative(repoRoot, q.file));
+          (dormant ? warnings : errors).push(`${where}: several learningPointIds without roles — use assessment.learningPoints: [{code, role: 'primary'}, {code, role: 'secondary'}] (exactly one primary)`);
+        }
+      }
+
+      if (!refs || refs.length === 0) {
+        errors.push(`${where}: enabled assessment question must list at least one learning point (learningPoints or learningPointIds)`);
       } else {
-        for (const lpId of q.learningPointIds) {
+        for (const { code: lpId } of refs) {
           if (!catalogEntry.learningPointIds.has(lpId)) {
-            errors.push(`${where}: learningPointId '${lpId}' does not belong to lesson '${code}'`);
+            errors.push(`${where}: learning point '${lpId}' does not belong to lesson '${code}'`);
           } else {
             covered.add(lpId);
           }
         }
       }
-    } else if (q.learningPointIds !== undefined && q.type !== 'assessment') {
-      errors.push(`${where}: discovery/practice questions must not carry learningPointIds`);
+
+      // La difficulté (1..5) que le registre d'items et le moteur de maîtrise
+      // liront ; facultative (défaut 3 côté serveur), littérale quand présente.
+      if (q.hasDifficulty && !(Number.isInteger(q.difficulty) && q.difficulty >= 1 && q.difficulty <= 5)) {
+        errors.push(`${where}: assessment.difficulty must be an integer literal between 1 and 5`);
+      }
+      // La clé de réponse du registre : `correct` doit être lisible. Absent,
+      // la convention BossFinal (index 0) s'applique — mais un `correct`
+      // calculé ne peut pas être exporté, donc pas jugé par le serveur.
+      if (q.hasCorrect && typeof q.correct !== 'number') {
+        // Sans clé lisible, le serveur ne peut pas juger : l'item est exporté
+        // `evaluation: client` et sa preuve pèse moins. Bloquant pour une
+        // leçon vivante ; un avertissement pour l'arbre dormant (college/,
+        // lycee/), qui n'est ni monté ni importé.
+        const dormant = /^apps\/web\/src\/lessons\/(college|lycee)\//.test(relative(repoRoot, q.file));
+        (dormant ? warnings : errors).push(`${where}: 'correct' must be a numeric literal — the assessment-item registry exports it as the answer key (computed ⇒ evaluation: client)`);
+      }
+    } else if ((q.learningPointIds !== undefined || q.learningPoints !== undefined) && q.type !== 'assessment') {
+      errors.push(`${where}: discovery/practice questions must not carry learning points`);
     }
   }
 
@@ -317,6 +617,67 @@ for (const code of coverageTargets) {
     if (!covered.has(lpId)) {
       errors.push(`lesson '${code}': learning point '${lpId}' has no assessment question`);
     }
+  }
+}
+
+// ── Answer-key integrity (2026-09-24) ─────────────────────────────────────
+// Every multiple-choice key a student can be judged against in a LIVE lesson
+// (the Algerian tree, apps/web/src/lessons/moyen/) must point to an option
+// that exists, and a question that shows options must declare its key:
+// TapQuestion compares `pick === correct` with no default (a missing key makes
+// the question unanswerable), and BossFinal would silently fall back to 0.
+// Found necessary by the content-integrity audit; the dormant tree is not
+// mounted and is not checked here.
+const liveRoot = join(lessonsRoot, 'moyen');
+const optionCount = (node) => {
+  if (!node) return null;
+  if (node.type === 'JSXExpressionContainer') return optionCount(node.expression);
+  if (node.type === 'ArrayExpression') return node.elements.length;
+  // ['…', '…'].map((o) => <MathText …/>) keeps the length of its array
+  if (node.type === 'CallExpression' && node.callee?.type === 'MemberExpression'
+      && node.callee.property?.name === 'map') return optionCount(node.callee.object);
+  return null;
+};
+const keyOf = (node) => {
+  if (node === undefined) return { present: false };
+  const n = node.type === 'JSXExpressionContainer' ? node.expression : node;
+  return { present: true, literal: n?.type === 'NumericLiteral', value: n?.type === 'NumericLiteral' ? n.value : null };
+};
+const checkKey = (where, count, key, mustDeclare) => {
+  if (!key.present) {
+    if (mustDeclare) errors.push(`${where}: question shows ${count ?? 'some'} options but declares no 'correct' key`);
+    return;
+  }
+  if (!key.literal || count === null) return; // computed key or options: not checkable statically
+  if (!Number.isInteger(key.value) || key.value < 0 || key.value >= count) {
+    errors.push(`${where}: 'correct' = ${key.value} but there are only ${count} options (valid: 0..${count - 1})`);
+  }
+};
+if (existsSync(liveRoot)) {
+  for (const file of listSourceFiles(liveRoot)) {
+    const source = readFileSync(file, 'utf-8');
+    if (!source.includes('options')) continue;
+    const ast = parseFile(file);
+    const rel = relative(repoRoot, file);
+    traverse(ast, {
+      ObjectExpression(path) {
+        const optionsNode = propOf(path.node, 'options');
+        const count = optionCount(optionsNode);
+        if (count === null) return;
+        // a question with SEVERAL right answers declares them as a set — `answer: [values]` (a world's stone) — not as
+        // one index; whether that set is the true one is the lesson's own test (its journey.test.js), not a static check
+        if (propOf(path.node, 'answer')?.type === 'ArrayExpression') return;
+        const isQuestion = propOf(path.node, 'assessment') !== undefined
+          || propOf(path.node, 'prompt') !== undefined || propOf(path.node, 'explain') !== undefined;
+        checkKey(`${rel}:${path.node.loc?.start.line}`, count, keyOf(propOf(path.node, 'correct')), isQuestion);
+      },
+      JSXOpeningElement(path) {
+        const name = path.node.name?.name;
+        if (name !== 'TapQuestion') return;
+        const attr = (n) => path.node.attributes.find((a) => a.type === 'JSXAttribute' && a.name?.name === n)?.value;
+        checkKey(`${rel}:${path.node.loc?.start.line}`, optionCount(attr('options')), keyOf(attr('correct')), true);
+      },
+    });
   }
 }
 

@@ -1,0 +1,418 @@
+{
+  "id": "ex-4am-tafsir-bayani-jumla-l5-007",
+  "lessonCode": "tafsir-bayani-jumla",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2018 — عاملان في ورشة لتعليب التمور ببسكرة",
+    "estimatedMinutes": 35,
+    "tags": [
+      "وضعية إدماجية",
+      "جملة معادلتين",
+      "تفسير بياني"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tafsir-bayani-jumla_P2",
+      "modelledOn": "BEM 2018 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2018",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "صالح و ياسين عاملان متعاونان في ورشة لتعليب التمور ببسكرة، راتبهما الشهري على النحو التالي:\n- صالح راتبه 21000DA إضافة إلى 150DA لكل صندوق يعلّبه.\n- ياسين راتبه 27000DA إضافة إلى 75DA لكل صندوق يعلّبه."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "الجزء الأول:\nما هو الراتب الشهري لكل منهما إذا علّب 60 صندوقا في الشهر؟",
+      "statement": "راتب صالح:",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "30000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الراتب = المبلغ الثابت + المبلغ عن الصناديق."
+        }
+      ],
+      "feedback": {
+        "correct": "$60 \\times 150 + 21000$ .",
+        "incorrect": "اضرب عدد الصناديق في 150 ثم أضف 21000."
+      },
+      "solution": {
+        "lines": [
+          "$60 \\times 150 + 21000 = 9000 + 21000 = 30000DA$"
+        ],
+        "result": "30000DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "راتب ياسين:",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "31500",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الراتب = المبلغ الثابت + المبلغ عن الصناديق."
+        }
+      ],
+      "feedback": {
+        "correct": "$60 \\times 75 + 27000$ .",
+        "incorrect": "اضرب عدد الصناديق في 75 ثم أضف 27000."
+      },
+      "solution": {
+        "lines": [
+          "$60 \\times 75 + 27000 = 4500 + 27000 = 31500DA$"
+        ],
+        "result": "31500DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "ليكن $x$ عدد الصناديق المعلّبة في الشهر.\n- عبّر بدلالة $x$ عن $y_1$ ، راتب صالح، و عن $y_2$ ، راتب ياسين.",
+      "statement": "أعط العددين $a$ و $b$ حيث: $y_1 = ax + b$ ، ابدأ بالعدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "150",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل $x$ هو ما يتقاضاه عن الصندوق الواحد."
+        }
+      ],
+      "feedback": {
+        "correct": "معامل $x$ هو المبلغ عن كل صندوق.",
+        "incorrect": "معامل $x$ هو المبلغ عن كل صندوق."
+      },
+      "solution": {
+        "lines": [
+          "راتب صالح: $y_1 = 150x + 21000$",
+          "راتب ياسين: $y_2 = 75x + 27000$"
+        ],
+        "result": "y_1 = 150x + 21000"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "ثم العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "21000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو الراتب دون الصناديق."
+        }
+      ],
+      "feedback": {
+        "correct": "$y_1 = 150x + 21000$ .",
+        "incorrect": "العدد $b$ هو المبلغ الثابت."
+      },
+      "solution": {
+        "lines": [
+          "راتب صالح: $y_1 = 150x + 21000$",
+          "راتب ياسين: $y_2 = 75x + 27000$"
+        ],
+        "result": "y_1 = 150x + 21000"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "statement": "أعط العددين $a$ و $b$ حيث: $y_2 = ax + b$ ، ابدأ بالعدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "75",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل $x$ هو ما يتقاضاه ياسين عن الصندوق الواحد."
+        }
+      ],
+      "feedback": {
+        "correct": "معامل $x$ هو المبلغ عن كل صندوق.",
+        "incorrect": "معامل $x$ هو المبلغ عن كل صندوق."
+      },
+      "solution": {
+        "lines": [
+          "راتب صالح: $y_1 = 150x + 21000$",
+          "راتب ياسين: $y_2 = 75x + 27000$"
+        ],
+        "result": "y_2 = 75x + 27000"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "statement": "ثم العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "27000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو الراتب دون الصناديق."
+        }
+      ],
+      "feedback": {
+        "correct": "$y_2 = 75x + 27000$ .",
+        "incorrect": "العدد $b$ هو المبلغ الثابت."
+      },
+      "solution": {
+        "lines": [
+          "راتب صالح: $y_1 = 150x + 21000$",
+          "راتب ياسين: $y_2 = 75x + 27000$"
+        ],
+        "result": "y_2 = 75x + 27000"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "lead": "الجزء الثاني:\nفي المستوي المنسوب إلى معلم متعامد ومتجانس $(O, \\vec{i} , \\vec{j})$ :",
+      "statement": "- ارسم المستقيمين $(D_1)$ و $(D_2)$ الممثلين للدالتين $g$ و $h$ على الترتيب حيث: $g(x) = 150x + 21000$ و $h(x) = 75x + 27000$ .\n(نأخذ 1cm على محور الفواصل يمثل 20 صندوقا ، و 1cm على محور التراتيب يمثل 3000DA).",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن نقطتين من كل مستقيم مستعملا وحدتي المحورين المعطاتين."
+        }
+      ],
+      "feedback": {
+        "correct": "تمثيل كل دالة مستقيم.",
+        "incorrect": "احسب صورتي 0 و 120 مثلا بكل دالة."
+      },
+      "solution": {
+        "lines": [
+          "$(D_1)$ يشمل النقطتين $(0 ; 21000)$ و $(120 ; 39000)$ .",
+          "$(D_2)$ يشمل النقطتين $(0 ; 27000)$ و $(120 ; 36000)$ ."
+        ]
+      },
+      "timeSeconds": 420
+    },
+    {
+      "id": "q8",
+      "step": "04",
+      "statement": "- حُل جملة المعادلتين $\\begin{cases} y = 150x + 21000 \\\\ y = 75x + 27000 \\end{cases}$ ، ثم أعط تفسيرا بيانيا لهذا الحل.",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": {
+        "x": "80",
+        "y": "33000"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "33000",
+            "y": "80"
+          },
+          "id": "MISC-JUMLA-BAYANI-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح المعادلتين طرفا لطرف للتخلص من $y$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض قيمة $x$ في إحدى المعادلتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحل ثنائية $(x ; y)$ : الفاصلة أولا."
+        }
+      ],
+      "feedback": {
+        "correct": "صحيح: هذه الثنائية هي حل الجملة.",
+        "incorrect": "تخلّص من $y$ ، ثم عوّض لتجد $y$ ؛ واكتب الفاصلة أولا."
+      },
+      "solution": {
+        "lines": [
+          "بطرح المعادلتين طرفا لطرف: $0 = 75x - 6000$ ، أي $75x = 6000$ ، إذن $x = 80$ .",
+          "بالتعويض: $y = 150 \\times 80 + 21000 = 33000$ .",
+          "حل الجملة هو الثنائية $(80 ; 33000)$ .",
+          "التفسير البياني: المستقيمان $(D_1)$ و $(D_2)$ يتقاطعان في النقطة $(80 ; 33000)$ : إذا علّب كل منهما 80 صندوقا يتساوى راتباهما، وهو 33000DA."
+        ],
+        "result": "(80 ; 33000)"
+      },
+      "work": "optional",
+      "timeSeconds": 360
+    },
+    {
+      "id": "q9",
+      "step": "04",
+      "lead": "- بقراءة بيانية، متى يكون راتب صالح أكبر من راتب ياسين؟",
+      "statement": "عدد الصناديق الحدّ $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "راتب صالح أكبر من راتب ياسين عندما يكون $x < k$ أو $x > k$ : اكتب العدد $k$ فقط",
+      "expectedAnswer": "80",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن الجزء الذي يكون فيه $(D_1)$ فوق $(D_2)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحدّ هو فاصلة النقطة التي يتساوى فيها الراتبان."
+        }
+      ],
+      "feedback": {
+        "correct": "الحدّ هو فاصلة نقطة تقاطع المستقيمين.",
+        "incorrect": "الحدّ هو فاصلة نقطة تقاطع $(D_1)$ و $(D_2)$ ."
+      },
+      "solution": {
+        "lines": [
+          "يكون راتب صالح أكبر من راتب ياسين عندما يكون $(D_1)$ فوق $(D_2)$ ، أي على يمين نقطة التقاطع.",
+          "الحدّ هو فاصلة نقطة التقاطع: 80 صندوقا."
+        ],
+        "result": "k = 80"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q10",
+      "step": "04",
+      "statement": "راتب صالح أكبر من راتب ياسين من أجل:",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < 80$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-JIHA"
+        },
+        {
+          "id": "B",
+          "content": "$x > 80$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "على يمين نقطة التقاطع، أيّ المستقيمين فوق الآخر؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$(D_1)$ فوق $(D_2)$ على يمين نقطة التقاطع.",
+        "incorrect": "المستقيم الأعلى يمثل الراتب الأكبر: انظر بعد نقطة التقاطع."
+      },
+      "solution": {
+        "lines": [
+          "على يمين نقطة التقاطع يكون $(D_1)$ فوق $(D_2)$ : راتب صالح أكبر إذا علّب أكثر من 80 صندوقا، أي $x > 80$ .",
+          "حسابيا: $150x + 21000 > 75x + 27000$ تعطي $75x > 6000$ ، أي $x > 80$ ."
+        ],
+        "result": "x > 80"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

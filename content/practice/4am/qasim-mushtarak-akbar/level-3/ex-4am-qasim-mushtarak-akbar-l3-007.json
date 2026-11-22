@@ -1,0 +1,180 @@
+{
+  "id": "ex-4am-qasim-mushtarak-akbar-l3-007",
+  "lessonCode": "qasim-mushtarak-akbar",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2021 — 119 و 85",
+    "estimatedMinutes": 8,
+    "tags": [
+      "PGCD",
+      "قواسم مشتركة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-mushtarak-akbar_P2",
+      "modelledOn": "BEM 2021 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 119 و 85.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "17",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قائمة قواسم كل من العددين 119 و 85."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استخرج القواسم المشتركة: الأعداد الموجودة في القائمتين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاسم المشترك الأكبر هو أكبر القواسم المشتركة، لا أيّ واحد منها."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 119 و 85 هي 1 ، 17، وأكبرها 17.",
+        "incorrect": "اكتب قائمتي القواسم كاملتين، ثم خذ أكبر عدد يظهر في القائمتين معًا."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 119 هي: 1 ، 7 ، 17 ، 119",
+          "قواسم العدد 85 هي: 1 ، 5 ، 17 ، 85",
+          "القواسم المشتركة للعددين 119 و 85 هي: 1 ، 17",
+          "أكبرها هو 17، إذن:"
+        ],
+        "result": "PGCD(119 ; 85) = 17"
+      },
+      "work": "optional",
+      "timeSeconds": 270
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج القواسم المشتركة للعددين 119 و 85.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        17
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال السابق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القواسم المشتركة لعددين هي قواسم قاسمهما المشترك الأكبر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل قواسم القاسم المشترك الأكبر، ولا تنسَ 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 119 و 85 هي قواسم العدد 17: 1 ، 17.",
+        "incorrect": "مجموعة القواسم المشتركة لعددين هي مجموعة قواسم قاسمهما المشترك الأكبر: اكتب قواسمه كلها."
+      },
+      "solution": {
+        "lines": [
+          "مجموعة القواسم المشتركة لعددين هي مجموعة قواسم قاسمهما المشترك الأكبر.",
+          "$\\text{PGCD}(119 ; 85) = 17$ وقواسم العدد 17 هي: 1 ، 17",
+          "إذن القواسم المشتركة للعددين 119 و 85 هي: 1 ، 17."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل يوجد قاسم مشترك للعددين 119 و 85 محصور بين 2 و 16 ؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل قائمة القواسم المشتركة التي وجدتها في السؤال 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل فيها عدد محصور بين 2 و 16؟"
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة هي 1 و 17 فقط: لا يوجد بينها عدد محصور بين 2 و 16.",
+        "incorrect": "القواسم المشتركة لعددين هي قواسم قاسمهما المشترك الأكبر: راجع قائمتها."
+      },
+      "solution": {
+        "lines": [
+          "القواسم المشتركة للعددين 119 و 85 هي قواسم العدد 17، أي 1 و 17 فقط.",
+          "لا يوجد بينها عدد محصور بين 2 و 16، إذن الجواب: لا."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

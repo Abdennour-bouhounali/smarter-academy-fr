@@ -1,0 +1,237 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-amaliyat-tabiiya-ushriya-l1-005",
+  "lessonCode": "wadiya-idmajiya-amaliyat-tabiiya-ushriya",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أربع عمليات، طرح خط كسر من عدد، اسم، تبرير توزيع",
+    "estimatedMinutes": 6,
+    "tags": [
+      "أولوية",
+      "خطّ الكسر",
+      "برّر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "سلاسل عمليات على أعداد طبيعية وعشرية: أجب عن الأسئلة الأربعة، ولا تنسَ أنّ كلّ سلسلة تُحسب بالترتيب الصحيح للعمليات."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب قيمة السلسلة $4 \\times 12 \\div 6 + 7 \\times 3 - 9$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "36",
+          "id": "MISC-SILSILA-NOPRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين وخطّ الكسر يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 12 \\div 6 + 7 \\times 3 - 9 = 20$ .",
+        "incorrect": "الضرب والقسمة يُنجزان قبل الجمع والطرح حتى لو ظهر الجمع أو الطرح أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "$A = 4 \\times 12 \\div 6 + 7 \\times 3 - 9$",
+          "$A = 48 \\div 6 + 21 - 9$",
+          "$A = 8 + 21 - 9$",
+          "$A = 29 - 9$",
+          "$A = 20$"
+        ],
+        "result": "20"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب قيمة السلسلة $90 - \\dfrac{18 + 27}{5}$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "81",
+      "misconceptionSignatures": [
+        {
+          "value": "77.4",
+          "id": "MISC-AQWAS-BARSPLIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين وخطّ الكسر يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$90 - \\dfrac{18 + 27}{5} = 81$ .",
+        "incorrect": "خطّ الكسر يقسم البسط كلّه على المقام كلّه، فنحسب البسط والمقام أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "$A = 90 - \\dfrac{18 + 27}{5}$",
+          "$A = 90 - \\dfrac{45}{5}$",
+          "$A = 90 - 9$",
+          "$A = 81$"
+        ],
+        "result": "81"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما اسم السلسلة $3 \\times 4 + 5 \\times 6$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "choices": [
+        {
+          "id": "A",
+          "content": "جداء",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-FIRSTOP"
+        },
+        {
+          "id": "B",
+          "content": "مجموع",
+          "isCorrect": true
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب مرحلة مرحلة وتتبّع آخر عملية بقيت لك."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع خطًّا تحت العملية التي تُنجز في الأخير."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العملية الأخيرة هي التي تسمّي السلسلة."
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة عبارة عن مجموع: آخر عملية تُنجز فيها هي الجمع.",
+        "incorrect": "لا تسمِّ السلسلة بأوّل عملية تُنجز ولا بأوّل رمز تراه: سمِّها بآخر عملية تُنجز فيها."
+      },
+      "solution": {
+        "lines": [
+          "$A = 3 \\times 4 + 5 \\times 6$",
+          "$A = 12 + 30$",
+          "$A = 42$",
+          "آخر عملية تُنجز هي الجمع ، فالسلسلة عبارة عن مجموع."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "برّر أنّ $7 \\times 98 = 7 \\times 100 - 7 \\times 2$ ثم احسب هذا الجداء.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب على ورقتك مرحلة مرحلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اسأل: أيّ حساب يثبت ما تقول؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تذكر القاعدة المستعملة."
+        }
+      ],
+      "feedback": {
+        "correct": "$7 \\times 98 = 700 - 14 = 686$",
+        "incorrect": "قارن تبريرك بالحلّ النموذجي: الفكرة ثم الحساب الذي يدعمها."
+      },
+      "solution": {
+        "lines": [
+          "$98 = 100 - 2$ ، فنوزّع الضرب على الفرق:",
+          "$7 \\times 98 = 7 \\times (100 - 2) = 7 \\times 100 - 7 \\times 2$",
+          "$7 \\times 98 = 700 - 14 = 686$"
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

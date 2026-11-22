@@ -1,0 +1,67 @@
+{
+  "id": "ex-4am-kura-julla-l1-005",
+  "lessonCode": "kura-julla",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — نصف قطر كرة القدم",
+    "estimatedMinutes": 2,
+    "tags": [
+      "نصف القطر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_kura-julla_P2",
+      "modelledOn": "know-1"
+    }
+  },
+  "statement": {
+    "content": "قطر كرة قدم المنتخب الوطني (مقيس من طرف إلى طرف مرورا بالمركز) $22\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما هو نصف قطر هذه الكرة بالسنتيمتر؟",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر)",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-KURA-QUTR",
+          "value": "22"
+        },
+        {
+          "id": "MISC-KURA-QUTR",
+          "value": "44"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القطر يمر بالمركز ويصل نقطتين من الكرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طول القطر $2R$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم طول القطر على 2."
+        }
+      ],
+      "feedback": {
+        "correct": "$2R = 22$ ، إذن $R = 11\\,\\mathrm{cm}$ .",
+        "incorrect": "نصف القطر هو المسافة من المركز إلى سطح الكرة: نصف طول القطر."
+      }
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "id": "ex-4am-tanasub-muamil-l2-004",
+  "lessonCode": "tanasub-muamil",
+  "level": 2,
+  "metadata": {
+    "title": "معامل عشري",
+    "estimatedMinutes": 2,
+    "tags": [
+      "معامل التناسبية",
+      "الرابع المتناسب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tanasub-muamil_P1",
+      "modelledOn": "act-1",
+      "adaptedFrom": "ex-4am-tanasub-muamil-l2-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "الجدول الآتي جدول تناسبية:",
+    "table": {
+      "head": [
+        "$x$",
+        "4",
+        "10",
+        "20",
+        "32"
+      ],
+      "rows": [
+        [
+          "$y$",
+          "3",
+          "$7{,}5$",
+          "15",
+          "…"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب معامل التناسبية.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر من الشكل a/b)",
+      "expectedAnswer": "0,75",
+      "misconceptionSignatures": [
+        {
+          "value": "4/3",
+          "id": "MISC-TANASUB-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل التناسبية هو العدد الذي نضرب فيه أعداد السطر الأول لنحصل على أعداد السطر الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم عددا من السطر الثاني على العدد المقابل له من السطر الأول: $\\dfrac{y}{x}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن حاصل القسمة هو نفسه في عمود آخر."
+        }
+      ],
+      "feedback": {
+        "correct": "حواصل القسمة كلها تساوي $0{,}75$ .",
+        "incorrect": "معامل التناسبية هو $\\dfrac{y}{x}$ : السطر الثاني على السطر الأول، وليس العكس."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{4} = \\dfrac{7{,}5}{10} = \\dfrac{15}{20} = 0{,}75$"
+        ],
+        "result": "a = 0{,}75"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أكمل الجدول.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر من الشكل a/b)",
+      "expectedAnswer": "24",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في جدول تناسبية نضرب في المعامل، ولا نضيف الفرق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب معامل التناسبية من عمود كامل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب العدد المعلوم في المعامل، أو استعمل تساوي الجداءين المتصالبين."
+        }
+      ],
+      "feedback": {
+        "correct": "$32 \\times 0{,}75 = 24$ .",
+        "incorrect": "أعد الحساب: في جدول تناسبية حاصل القسمة ثابت، فتحقّق من جوابك بالضرب في المعامل."
+      },
+      "solution": {
+        "lines": [
+          "$32 \\times 0{,}75 = 24$"
+        ],
+        "result": "24"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

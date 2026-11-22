@@ -1,0 +1,310 @@
+{
+  "id": "ex-4am-awwaliyan-fima-baynahuma-l5-002",
+  "lessonCode": "awwaliyan-fima-baynahuma",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2022 — قصص ومجلات جمعية بالأغواط",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية",
+      "إثبات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_awwaliyan-fima-baynahuma_P2",
+      "modelledOn": "BEM 2022 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "جمعت جمعية ثقافية بالأغواط 187 قصة و 156 مجلة علمية للأطفال، ونشرًا لحبّ القراءة والعلم، تريد تجميعها كلها في حزم متماثلة (نفس عدد القصص ونفس عدد المجلات في كل حزمة) لإهدائها إلى مكتبات المدارس الابتدائية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "بيّن أن العددين 187 و 156 أوليان فيما بينهما.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيمة PGCD(187 ; 156) التي وجدتها",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عددان أوليان فيما بينهما: احسب قاسمهما المشترك الأكبر PGCD(187 ; 156)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 187 على 156، ثم واصل القسمات المتتابعة إلى أن تجد باقيًا معدومًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن آخر باقٍ غير معدوم بما يتطلّبه تعريف عددين أوليين فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(187 ; 156) = 1: العددان 187 و 156 أوليان فيما بينهما.",
+        "incorrect": "راجع القسمات المتتابعة باقيًا باقيًا: آخر باقٍ غير معدوم هو القاسم المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$187 = 156 \\times 1 + 31$",
+          "$156 = 31 \\times 5 + 1$",
+          "$31 = 1 \\times 31 + 0$",
+          "آخر باقٍ غير معدوم هو 1، إذن PGCD(187 ; 156) = 1 .",
+          "ومنه العددان 187 و 156 أوليان فيما بينهما."
+        ],
+        "result": "PGCD(187 ; 156) = 1"
+      },
+      "work": "required",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "استنتج عدد الحزم التي يمكن تكوينها.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد الحزم)",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الحزم قاسم مشترك للعددين 187 و 156."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل نتيجة (ا)."
+        }
+      ],
+      "feedback": {
+        "correct": "القاسم المشترك الوحيد هو 1: لا يمكن تكوين إلا حزمة واحدة تضم كل الكتب.",
+        "incorrect": "عدد الحزم يقسم 187 و 156 معًا: ما هي القواسم المشتركة لعددين أوليين فيما بينهما؟"
+      },
+      "solution": {
+        "lines": [
+          "عدد الحزم قاسم مشترك للعددين 187 و 156.",
+          "العددان أوليان فيما بينهما: قاسمهما المشترك الوحيد هو 1.",
+          "إذن لا يمكن تكوين إلا حزمة واحدة."
+        ],
+        "result": "1"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "لحلّ المشكلة، اشترت الجمعية 8 قصص أخرى.",
+      "statement": "ما هو أكبر عدد من الحزم المتماثلة التي يمكن تكوينها الآن ؟",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "39",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 195 على 156: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (195 ; 156) بالزوج (156 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 39.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$195 = 156 \\times 1 + 39$",
+          "$156 = 39 \\times 4 + 0$",
+          "آخر باقٍ غير معدوم هو 39، إذن:",
+          "عدد القصص الآن: $187 + 8 = 195$ ، وأكبر عدد من الحزم هو 39."
+        ],
+        "result": "PGCD(195 ; 156) = 39"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما هو عدد القصص في كل حزمة ؟",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "39",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع 195 قصة على عدد الحصص الذي وجدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 195 على عدد الحصص."
+        }
+      ],
+      "feedback": {
+        "correct": "$195 \\div 39 = 5$",
+        "incorrect": "اقسم العدد الكلي (195) على عدد الحصص، لا العكس."
+      },
+      "solution": {
+        "lines": [
+          "$195 \\div 39 = 5$"
+        ],
+        "result": "5"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما هو عدد المجلات في كل حزمة ؟",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "39",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع 156 مجلة على عدد الحصص الذي وجدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 156 على عدد الحصص."
+        }
+      ],
+      "feedback": {
+        "correct": "$156 \\div 39 = 4$",
+        "incorrect": "اقسم العدد الكلي (156) على عدد الحصص، لا العكس."
+      },
+      "solution": {
+        "lines": [
+          "$156 \\div 39 = 4$"
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "☜ ثمن القصة الواحدة 180DA، وتكلفة تغليف الحزمة الواحدة 150DA. ما هو المبلغ الذي أنفقته الجمعية لشراء القصص الإضافية وتغليف كل الحزم ؟",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (المبلغ بالدينار)",
+      "expectedAnswer": "7290",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب ثمن القصص الثماني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أضف تكلفة تغليف كل الحزم (عددها وجدته في 02)."
+        }
+      ],
+      "feedback": {
+        "correct": "$8 \\times 180 + 39 \\times 150 = 7290$",
+        "incorrect": "اشترت الجمعية 8 قصص فقط، وغلّفت كل الحزم."
+      },
+      "solution": {
+        "lines": [
+          "ثمن القصص: $8 \\times 180 = 1440$ DA",
+          "التغليف: $39 \\times 150 = 5850$ DA",
+          "المجموع: $1440 + 5850 = 7290$ DA"
+        ],
+        "result": "7290DA"
+      },
+      "timeSeconds": 240
+    }
+  ]
+}

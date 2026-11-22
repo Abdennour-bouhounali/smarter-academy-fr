@@ -1,0 +1,261 @@
+{
+  "id": "ex-4am-tanasub-muamil-l4-009",
+  "lessonCode": "tanasub-muamil",
+  "level": 4,
+  "metadata": {
+    "title": "محيط المربع ومساحته",
+    "estimatedMinutes": 4,
+    "tags": [
+      "وضعية تناسبية",
+      "وضعية غير تناسبية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tanasub-muamil_P2",
+      "modelledOn": "ex-17",
+      "adaptedFrom": "ex-4am-tanasub-muamil-l4-009"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر مربعا طول ضلعه $c$ (بالسنتيمتر)، محيطه $P$ ومساحته $A$ .",
+    "table": {
+      "head": [
+        "$c$",
+        "1",
+        "2",
+        "5"
+      ],
+      "rows": [
+        [
+          "$P$",
+          "4",
+          "8",
+          "…"
+        ],
+        [
+          "$A$",
+          "1",
+          "4",
+          "…"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "انقل الجدول وأكمله.",
+      "statement": "المحيط من أجل $c = 5$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر من الشكل a/b)",
+      "expectedAnswer": "20",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$P = 4 \\times c$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 5 = 20$ .",
+        "incorrect": "محيط المربع = 4 × طول الضلع."
+      },
+      "solution": {
+        "lines": [
+          "$P = 4 \\times 5 = 20$"
+        ],
+        "result": "20"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "المساحة من أجل $c = 5$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر من الشكل a/b)",
+      "expectedAnswer": "25",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$A = c \\times c$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 \\times 5 = 25$ .",
+        "incorrect": "مساحة المربع = طول الضلع × طول الضلع."
+      },
+      "solution": {
+        "lines": [
+          "$A = 5 \\times 5 = 25$"
+        ],
+        "result": "25"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "هل المحيط $P$ متناسب مع $c$ ؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $\\dfrac{P}{c}$ في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "حاصل القسمة $\\dfrac{P}{c}$ ثابت.",
+        "incorrect": "احسب حاصل القسمة في كل عمود قبل أن تحكم: تزايد المقدارين معا لا يكفي."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{4}{1} = \\dfrac{8}{2} = \\dfrac{20}{5}$ : حاصل القسمة ثابت.",
+          "إذن $P$ متناسب مع $c$ ."
+        ],
+        "result": "متناسب"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما هو معامل التناسبية؟",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر من الشكل a/b)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "1/4",
+          "id": "MISC-TANASUB-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل التناسبية هو العدد الذي نضرب فيه أعداد السطر الأول لنحصل على أعداد السطر الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم عددا من السطر الثاني على العدد المقابل له من السطر الأول: $\\dfrac{y}{x}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "معامل التناسبية 4 : $P = 4 \\times c$ .",
+        "incorrect": "معامل التناسبية هو $\\dfrac{y}{x}$ : السطر الثاني على السطر الأول، وليس العكس."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{P}{c} = 4$ ، أي $P = 4 \\times c$ ."
+        ],
+        "result": "a = 4"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "هل المساحة $A$ متناسبة مع $c$ ؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $\\dfrac{A}{c}$ في عمودين."
+        }
+      ],
+      "feedback": {
+        "correct": "حاصل القسمة $\\dfrac{A}{c}$ ليس ثابتا.",
+        "incorrect": "احسب حاصل القسمة في كل عمود قبل أن تحكم: تزايد المقدارين معا لا يكفي."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{1} = 1$ و $\\dfrac{4}{2} = 2$",
+          "$1 \\neq 2$ ، إذن $A$ غير متناسبة مع $c$ ."
+        ],
+        "result": "غير متناسبة"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

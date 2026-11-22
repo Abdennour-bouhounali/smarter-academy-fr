@@ -1,0 +1,372 @@
+{
+  "id": "ex-4am-majdulat-ihsaiya-l5-004",
+  "lessonCode": "majdulat-ihsaiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2016 — وكالة كراء السيارات بتلمسان",
+    "estimatedMinutes": 14,
+    "tags": [
+      "وضعية إدماجية",
+      "دستور",
+      "متوسط",
+      "وسيط",
+      "منوال",
+      "ضريبة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_majdulat-ihsaiya_P2",
+      "modelledOn": "BEM 2016 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تملك وكالة لكراء السيارات بتلمسان 8 سيارات. حجز صاحبها الصادق في معاملاته في السطر الأول من مجدول عدد الأيام التي كُريت فيها كل سيارة خلال شهر مارس:",
+    "table": {
+      "head": [
+        "",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "rows": [
+        [
+          "1",
+          "18",
+          "22",
+          "15",
+          "25",
+          "20",
+          "12",
+          "24",
+          "24"
+        ]
+      ],
+      "sheet": true
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما هو العدد الذي يُظهره الدستور ⁦=MOYENNE(A1:H1)⁩ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة إن لزم)",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "21",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MOYENNE(…)⁩ يقسم مجموع القيم العددية في المجال على عددها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع القيم العددية الموجودة في المجال، وعُدّها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المتوسط = مجموع القيم ÷ عددها."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{160}{8} = 20$ .",
+        "incorrect": "اجمع كل القيم العددية التي في المجال، ثم اقسم المجموع على عددها (لا على عدد آخر)."
+      },
+      "solution": {
+        "lines": [
+          "مجموع القيم: $18 + 22 + 15 + 25 + 20 + 12 + 24 + 24 = 160$ ، وعددها 8 .",
+          "$\\dfrac{160}{8} = 20$",
+          "إذن يُظهر الدستور العدد 20 ."
+        ],
+        "result": "20"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما هو العدد الذي يُظهره الدستور ⁦=MEDIANE(A1:H1)⁩ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة إن لزم)",
+      "expectedAnswer": "21",
+      "misconceptionSignatures": [
+        {
+          "value": "22,5",
+          "id": "MISC-IHSA-WASIT-BILA-TARTIB"
+        },
+        {
+          "value": "20",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MEDIANE(…)⁩ يُظهر وسيط القيم: يرتّبها المجدول أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب القيم الـ 8 تصاعديا، ثم عيّن القيمتين اللتين تقعان في الوسط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لعدد زوجيّ من القيم، الوسيط نصف مجموع القيمتين الوسطيين."
+        }
+      ],
+      "feedback": {
+        "correct": "القيم مرتّبة: 12 ، 15 ، 18 ، 20 ، 22 ، 24 ، 24 ، 25 ، والوسيط 21 .",
+        "incorrect": "لا يُقرأ الوسيط إلا بعد ترتيب القيم تصاعديا، ثم نأخذ القيمة الوسطى (أو نصف مجموع القيمتين الوسطيين)."
+      },
+      "solution": {
+        "lines": [
+          "نرتّب القيم تصاعديا: 12 ، 15 ، 18 ، 20 ، 22 ، 24 ، 24 ، 25 .",
+          "عدد القيم 8 زوجيّ: الوسيط نصف مجموع القيمتين ذواتي الرتبتين 4 و 5 ، أي 20 و 22 .",
+          "$\\dfrac{20 + 22}{2} = 21$",
+          "إذن يُظهر الدستور العدد 21 ."
+        ],
+        "result": "21"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما هو العدد الذي يُظهره الدستور ⁦=MODE(A1:H1)⁩ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "24",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-IHSA-DUSTUR-KHATI"
+        },
+        {
+          "value": "25",
+          "id": "MISC-IHSA-DUSTUR-KHATI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MODE(…)⁩ يُظهر المنوال: القيمة ذات أكبر تكرار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ كم مرة تظهر كل قيمة في المجال."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المنوال قيمة من قيم السلسلة، لا عدد مرات ظهورها."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة 24 تظهر مرتين، وكل قيمة أخرى أقل من ذلك.",
+        "incorrect": "المنوال هو القيمة التي تتكرّر أكثر من غيرها في المجال: اكتب القيمة نفسها لا عدد مرات تكرارها."
+      },
+      "solution": {
+        "lines": [
+          "القيمة 24 تظهر مرتين في المجال، وكل قيمة أخرى تظهر مرة واحدة على الأكثر.",
+          "إذن يُظهر الدستور العدد 24 ."
+        ],
+        "result": "24"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "ما هو العدد الذي يُظهره الدستور ⁦=MAX(A1:H1)-MIN(A1:H1)⁩ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "value": "25",
+          "id": "MISC-IHSA-MADA-AKBAR-QIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MAX(…)-MIN(…)⁩ يحسب مدى القيم: أكبر قيمة ناقص أصغر قيمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر قيمة وأصغر قيمة في المجال ⁦A1:H1⁩."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح أصغر قيمة من أكبر قيمة، ولا تكتف بأكبر قيمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$25 - 12 = 13$ .",
+        "incorrect": "المدى فرق: أكبر قيمة في المجال ناقص أصغر قيمة فيه، والدستور يحسب هذا الفرق."
+      },
+      "solution": {
+        "lines": [
+          "أكبر قيمة في المجال ⁦A1:H1⁩: 25 ، وأصغر قيمة: 12 .",
+          "$25 - 12 = 13$",
+          "إذن يُظهر الدستور العدد 13 ."
+        ],
+        "result": "13"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ا",
+      "lead": "ثمن كراء السيارة ليوم واحد 5000DA ، ويدفع صاحب الوكالة ضريبة قدرها 20% من مداخيل الكراء. ☜ أعط ما يبقى لصاحب الوكالة من مداخيل شهر مارس بعد دفع الضريبة.",
+      "statement": "ما هو العدد الكلي لأيام الكراء خلال شهر مارس؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "160",
+      "misconceptionSignatures": [
+        {
+          "value": "168",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد أيام الكراء الكلي هو مجموع القيم الثماني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مجموع القيم = المتوسط × عددها."
+        }
+      ],
+      "feedback": {
+        "correct": "$20 \\times 8 = 160$ يوما.",
+        "incorrect": "المجموع = المتوسط × عدد السيارات؛ أو اجمع القيم الثماني."
+      },
+      "solution": {
+        "lines": [
+          "$20 \\times 8 = 160$"
+        ],
+        "result": "160"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ب",
+      "statement": "ما هو المبلغ الذي يبقى لصاحب الوكالة؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "counted": false,
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "640000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المداخيل = عدد أيام الكراء × 5000 ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضريبة 20% من المداخيل، فيبقى 80% منها."
+        }
+      ],
+      "feedback": {
+        "correct": "المداخيل $160 \\times 5000 = 800000$ ، والباقي $800000 \\times 0{,}8 = 640000$ ، أي 640000DA .",
+        "incorrect": "احسب المداخيل أولا، ثم اطرح منها 20% (أو اضربها في 0,8)."
+      },
+      "solution": {
+        "lines": [
+          "المداخيل: $160 \\times 5000 = 800000$",
+          "الضريبة: $800000 \\times 0{,}2 = 160000$",
+          "الباقي: $800000 - 160000 = 640000$"
+        ],
+        "result": "640000\\,\\mathrm{DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

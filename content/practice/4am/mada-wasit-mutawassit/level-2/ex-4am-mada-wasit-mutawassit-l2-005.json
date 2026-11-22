@@ -1,0 +1,135 @@
+{
+  "id": "ex-4am-mada-wasit-mutawassit-l2-005",
+  "lessonCode": "mada-wasit-mutawassit",
+  "level": 2,
+  "metadata": {
+    "title": "سلسلة تكرارها الكلي 7 ووسيطها 7",
+    "estimatedMinutes": 4,
+    "tags": [
+      "الوسيط",
+      "قيمة مجهولة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-9",
+      "page": 99,
+      "section": "أوظّف تعلّماتي",
+      "number": 9,
+      "adaptedFrom": "ex-4am-mada-wasit-mutawassit-l3-008"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نريد سلسلة إحصائية تكرارها الكلي 7 ووسيطها 7."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بعد ترتيب قيم هذه السلسلة تصاعديا، ما هي رتبة القيمة التي تساوي الوسيط؟",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الرتبة",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "3,5",
+          "id": "MISC-IHSA-WASIT-RUTBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد القيم يحدّد رتبة الوسيط في السلسلة المرتّبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل التكرار الكلي فردي أم زوجي؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "N فردي: الرتبة $\\dfrac{N + 1}{2}$ ؛ N زوجي: الرتبتان $\\dfrac{N}{2}$ و $\\dfrac{N}{2} + 1$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{7 + 1}{2} = 4$ .",
+        "incorrect": "عدد القيم فردي: الوسيط هو القيمة التي تترك قبلها وبعدها العدد نفسه من القيم."
+      },
+      "solution": {
+        "lines": [
+          "عدد القيم 7 عدد فردي، فالوسيط هو القيمة ذات الرتبة $\\dfrac{7 + 1}{2} = 4$ ."
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ستّ قيم من هذه السلسلة هي: 13 ، 1 ، 9 ، 3 ، 11 ، 5 . ما هي القيمة السابعة؟",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة العشرية إن لزم)",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-IHSA-WASIT-BILA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رتّب القيم الست المعطاة تصاعديا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمة الرابعة في السلسلة المرتّبة يجب أن تساوي الوسيط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب: أين تقع القيمة السابعة إذا كانت أصغر من 5؟ أكبر من 9؟ بينهما؟"
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة السابعة هي 7 .",
+        "incorrect": "رتّب القيم الست، ثم ابحث عن القيمة التي تجعل الرتبة الرابعة تساوي الوسيط."
+      },
+      "solution": {
+        "lines": [
+          "ترتيب القيم الست: 1 ، 3 ، 5 ، 9 ، 11 ، 13",
+          "إذا كانت القيمة السابعة $x \\le 5$ فإن الرتبة 4 تحمل 5، وإذا كانت $x \\ge 9$ فإن الرتبة 4 تحمل 9.",
+          "إذن $5 < x < 9$ ، والرتبة 4 تحمل $x$ نفسها: $x = 7$ .",
+          "السلسلة: 1 ، 3 ، 5 ، 7 ، 9 ، 11 ، 13"
+        ],
+        "result": "7"
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

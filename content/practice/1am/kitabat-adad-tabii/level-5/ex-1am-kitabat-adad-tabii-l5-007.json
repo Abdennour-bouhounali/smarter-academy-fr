@@ -1,0 +1,274 @@
+{
+  "id": "ex-1am-kitabat-adad-tabii-l5-007",
+  "lessonCode": "kitabat-adad-tabii",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — عدّاد سيارة الأجرة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "يلي",
+      "عدد العشرات الآلاف",
+      "صيانة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يشير عدّاد سيارة أجرة إلى $99\\,999$ km. يحرص السائق على سلامة ركّابه، فيُجري صيانة لسيارته كلما قطعت $10\\,000$ km.\nالجزء الأول: يقطع السائق كيلومترا واحدا آخر.\nالجزء الثاني: يراجع السائق دفتر الصيانة منذ أن كان العدّاد يشير إلى 0."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما العدد الذي يظهر على العدّاد بعد قطع كيلومتر واحد؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "100000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أضف وحدة واحدة إلى رقم الآحاد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عشر وحدات من مرتبة تصنع وحدة واحدة من المرتبة التي على يسارها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: الفرق بين العددين 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$99\\,999 + 1 = 100\\,000$.",
+        "incorrect": "عندما تبلغ مرتبةٌ عشرَ وحدات نربطها في وحدة واحدة من المرتبة التي على يسارها، وقد يتكرّر ذلك."
+      },
+      "solution": {
+        "lines": [
+          "$99\\,999 + 1 = 100\\,000$",
+          "إذن العدد هو $100\\,000$."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كيف يُقرأ هذا العدد؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "عشرة آلاف",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-ZERO-PLACE"
+        },
+        {
+          "id": "B",
+          "content": "مائة ألف",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "مليون",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-ZERO-PLACE"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزّئ العدد إلى فئات من ثلاثة أرقام انطلاقا من اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ كل فئة كعدد أصغر من 1000 ثم اذكر اسم فئتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى المراتب الفارغة (الأصفار)."
+        }
+      ],
+      "feedback": {
+        "correct": "$100\\,000$ يُقرأ « مائة ألف ».",
+        "incorrect": "نجزّئ العدد إلى فئات من ثلاثة أرقام انطلاقا من اليمين، ثم نقرأ الفئات من اليسار، كل فئة باسمها."
+      },
+      "solution": {
+        "lines": [
+          "$100\\,|\\,000$",
+          "نقرأ فئة فئة: « مائة ألف »."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "كم صيانة أجرى السائق منذ أن كان العدّاد يشير إلى 0؟ (صيانة كل $10\\,000$ km)",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-KITABA-DIGIT-COUNT"
+        },
+        {
+          "value": "1",
+          "id": "MISC-KITABA-RANKSHIFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد عشرات الآلاف هو عدد المجموعات من 10 000 التي نكوّنها من العدد كله، لا الرقم وحده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احذف الأرقام التي على يمين مرتبة عشرات الآلاف."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: اضرب جوابك في 10 000 ثم أضف ما بقي."
+        }
+      ],
+      "feedback": {
+        "correct": "$100\\,000 = 10 \\times 10\\,000 + 0$: عدد عشرات الآلاف هو 10، أمّا رقم عشرات الآلاف فهو 0.",
+        "incorrect": "رقم المرتبة هو ما يبقى فيها وحدها؛ أمّا عدد وحداتها فنحسب فيه كل ما يمكن تجميعه منها في العدد كله."
+      },
+      "solution": {
+        "lines": [
+          "$100\\,000 = 10 \\times 10\\,000 + 0$",
+          "إذن عدد عشرات الآلاف في العدد $100\\,000$ هو 10، ورقم عشرات الآلاف هو 0."
+        ],
+        "result": "10"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "كم ألف كيلومتر قطعت السيارة منذ أن كان العدّاد يشير إلى 0؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "100",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-KITABA-DIGIT-COUNT"
+        },
+        {
+          "value": "10",
+          "id": "MISC-KITABA-RANKSHIFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احذف من كتابة العدد فئة الوحدات (ثلاثة أرقام)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق بالضرب في ألف."
+        }
+      ],
+      "feedback": {
+        "correct": "$100\\,000 = 100 \\times 1000 + 0$: عدد الآلاف هو 100، أمّا رقم الآلاف فهو 0.",
+        "incorrect": "رقم المرتبة هو ما يبقى فيها وحدها؛ أمّا عدد وحداتها فنحسب فيه كل ما يمكن تجميعه منها في العدد كله."
+      },
+      "solution": {
+        "lines": [
+          "$100\\,000 = 100 \\times 1000 + 0$",
+          "إذن عدد الآلاف في العدد $100\\,000$ هو 100، ورقم الآلاف هو 0."
+        ],
+        "result": "100"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "برّر جوابك عن عدد الصيانات.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم مرة نجد $10\\,000$ في $100\\,000$؟"
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك بالحل النموذجي سطرا بسطر."
+      },
+      "solution": {
+        "lines": [
+          "$100\\,000 = 10 \\times 10\\,000$.",
+          "عدد عشرات الآلاف في $100\\,000$ هو 10 (مع أن رقم عشرات الآلاف 0).",
+          "إذن أجرى السائق 10 صيانات."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-kusur-natiqa-l4-010",
+  "lessonCode": "wadiya-idmajiya-kusur-natiqa",
+  "level": 4,
+  "metadata": {
+    "title": "أيّ حساب يوافق المسألة ؟",
+    "estimatedMinutes": 9,
+    "tags": [
+      "كسر من كمّية",
+      "كسر من الباقي",
+      "تحرير مسألة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-67",
+      "page": 34,
+      "section": "أتعمّق",
+      "number": 67
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين الرابع",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اشترى خيّاط $16$ m من القماش، فاستعمل $\\dfrac{3}{4}$ منها في صنع ستائر، ثمّ اشترى $\\dfrac{5}{2}$ m أخرى ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أيّ الحسابات الآتية يعطي طول القماش الذي يملكه الخيّاط الآن ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{3}{4} \\times 16 + \\dfrac{5}{2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        },
+        {
+          "id": "B",
+          "content": "$16 - \\dfrac{3}{4} + \\dfrac{5}{2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SYN-KUSUR-FRACASQTY"
+        },
+        {
+          "id": "C",
+          "content": "$16 - \\dfrac{3}{4} \\times 16 + \\dfrac{5}{2}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المقدار المعطى وما المقدار المطلوب ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حوّل المسألة إلى عملية على كسور ثمّ أنجزها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بعملية عكسية."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $16 - \\dfrac{3}{4} \\times 16 + \\dfrac{5}{2}$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الباقي بعد الاستعمال هو $16 - \\dfrac{3}{4} \\times 16$ ، ثمّ نضيف $\\dfrac{5}{2}$ .",
+          "الحساب $\\dfrac{3}{4} \\times 16 + \\dfrac{5}{2}$ يجمع المستعمل لا الباقي، و $\\dfrac{3}{4}$ كسر من الطول لا طول بالمتر."
+        ],
+        "result": "16 - \\dfrac{3}{4} \\times 16 + \\dfrac{5}{2}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب هذا الطول بالمتر .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "13/2",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "493/2",
+          "id": "MISC-AMAL-PRIORITY"
+        },
+        {
+          "value": "29/2",
+          "id": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العمليات في العبارة وما يُنجز منها أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر واختزل في نهايتها."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{13}{2}$ .",
+        "incorrect": "احترم أولوية العمليات واحسب سطرًا بسطر، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{4} \\times 16 = 12$ ، فبقي $16 - 12 = 4$ m .",
+          "$4 + \\dfrac{5}{2} = \\dfrac{13}{2}$ m ."
+        ],
+        "result": "\\dfrac{13}{2}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "اكتب مسألة من اختيارك يوافق حلّها الحساب $\\dfrac{2}{3} \\times 12 + \\dfrac{5}{6}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثمّ اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجب تبريره بالضبط ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب حساب كلّ حدّ وذكر القاعدة المستعملة في كلّ سطر."
+        }
+      ],
+      "feedback": {
+        "correct": "تطابق تبريرك مع الحل النموذجي .",
+        "incorrect": "قارن تبريرك بالحل النموذجي سطرًا سطرًا، ثمّ قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "مثال: يقطع عدّاء $\\dfrac{2}{3}$ من مسار طوله $12$ km ، ثمّ يزيد $\\dfrac{5}{6}$ km أخرى. ما المسافة التي قطعها كلّها ؟",
+          "المسافة المقطوعة في الجزء الأوّل $\\dfrac{2}{3} \\times 12 = 8$ km ، فالمسافة الكلّية $8 + \\dfrac{5}{6} = \\dfrac{53}{6}$ km .",
+          "يُقبل كلّ نصّ يكون فيه $\\dfrac{2}{3}$ كسرًا من $12$ وتُضاف إلى نتيجته كمّية $\\dfrac{5}{6}$ ."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

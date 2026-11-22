@@ -1,0 +1,193 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-taalufiya-l3-008",
+  "lessonCode": "wadiya-idmajiya-taalufiya",
+  "level": 3,
+  "metadata": {
+    "title": "تطبيق للنقل في حدود مبلغ",
+    "estimatedMinutes": 9,
+    "tags": [
+      "نمذجة",
+      "صورة عدد",
+      "في حدود مبلغ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-taalufiya_P1"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يحرص عمّار على أن يصل إلى مدرسته في الموعد، ويحسب تطبيق للنقل ثمن رحلته: 120DA عند الركوب، ثم 45DA عن كل كيلومتر.\nنسمّي $x$ عدد الكيلومترات و $f(x)$ ثمن الرحلة بـ DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عبّر عن $f(x)$ بدلالة $x$ .",
+      "statement": "أعط العددين $a$ و $b$ حيث: $f(x) = ax + b$ ، ابدأ بالعدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "45",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "120"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع عن كل كيلومتر؟"
+        }
+      ],
+      "feedback": {
+        "correct": "ما يُدفع عن كل كيلومتر هو معامل $x$ .",
+        "incorrect": "معامل $x$ هو المبلغ الذي يتكرّر مع كل كيلومتر."
+      },
+      "solution": {
+        "lines": [
+          "120DA تُدفع مرّة واحدة، و 45DA عن كل كيلومتر:",
+          "$f(x) = 45x + 120$"
+        ],
+        "result": "f(x) = 45x + 120"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "ثم العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "120",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "45"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع مرّة واحدة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "المبلغ المدفوع عند الركوب هو الحدّ الثابت.",
+        "incorrect": "الحدّ الثابت لا يتعلّق بعدد الكيلومترات."
+      },
+      "solution": {
+        "lines": [
+          "120DA تُدفع مرّة واحدة، و 45DA عن كل كيلومتر:",
+          "$f(x) = 45x + 120$"
+        ],
+        "result": "f(x) = 45x + 120"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب ثمن رحلة طولها 10km .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الثمن بـ DA",
+      "expectedAnswer": "570",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAALUFI-NISYAN-B",
+          "value": "450"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $f(10)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(10) = 45 \\times 10 + 120$ .",
+        "incorrect": "عوّض $x$ بالعدد 10 ولا تنس الحدّ الثابت."
+      },
+      "solution": {
+        "lines": [
+          "$f(10) = 45 \\times 10 + 120 = 450 + 120 = 570$"
+        ],
+        "result": "570DA"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "يملك يوسف 1000DA . ما هي أطول رحلة، بعدد طبيعي من الكيلومترات، يستطيع دفع ثمنها؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الكيلومترات",
+      "expectedAnswer": "19",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يجب أن يكون $f(x) \\leqslant 1000$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح المبلغ الثابت ثم اقسم على 45 ، وخذ أكبر عدد طبيعي."
+        }
+      ],
+      "feedback": {
+        "correct": "$45x + 120 \\leqslant 1000$ .",
+        "incorrect": "حلّ $45x + 120 \\leqslant 1000$ ثم خذ أكبر عدد طبيعي يحقّقها."
+      },
+      "solution": {
+        "lines": [
+          "$45x + 120 \\leqslant 1000$",
+          "$45x \\leqslant 880$",
+          "$x \\leqslant \\dfrac{176}{9} \\approx 19{,}6$",
+          "تحقق: $f(19) = 975 \\leqslant 1000$ و $f(20) = 1020 > 1000$ .",
+          "إذن أطول رحلة هي 19km ."
+        ],
+        "result": "19km"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

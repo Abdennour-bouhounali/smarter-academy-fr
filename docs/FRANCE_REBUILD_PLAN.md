@@ -1,0 +1,160 @@
+# France rebuild plan — the French platform rebuilt on the DZ core
+
+**Status: Stage 0 done; step 1A (baseline) partly done — unit suites run, the checks and the MySQL run of the API suite
+are still owed (2026-11-22). Nothing is committed and nothing is deployed. The progress log is §9.**
+
+This folder is the French platform being rebuilt from the Algerian one. It is the mirror image of
+`docs/ALGERIA_PLATFORM_MASTER_SPEC.md` (how DZ was made from FR in September 2026), and that spec's rule still binds:
+two products, two repositories, two deployments, two databases, no shared runtime, no country switch.
+
+| | |
+|---|---|
+| Work branch | `rebuild/dz-core` of the FR repository, in the folder `smarter-academy-fr-next` |
+| Source | DZ `dev` at `7f4cef1c9b55ac900a461cd0938fe363bd1872bf` (2026-11-22), imported with `git archive` — 14,978 files |
+| Old FR | untouched on `main` (`0ddfb98`, 2026-09-17), still in production; its files are read with `git show main:<path>` |
+| Production | LOCKED: `deploy.yml` and `publish-content.yml` are skipped unless the repository variable `FR_REBUILD_CUTOVER_APPROVED` is `yes` |
+
+## 1. What was measured before planning (2026-11-22)
+
+- DZ was copied from FR on 2026-09-14; no shared git history. DZ: 5,831 web files, 143 migrations, 383 API routes,
+  ~1,430 backend tests. FR: 2,882 web files, 49 migrations, 83 routes, ~591 backend tests.
+- **FR's database schema is a strict subset of DZ's**: all 49 FR migrations exist in DZ under the same file names (one
+  differs; reported as a MySQL guard only). DZ adds 94 migrations and about 78 tables.
+- **Stripe is still in DZ**, unchanged and unused (`Domain/Billing/*`; only `PlanCatalog.php` differs).
+- FR today: 132 lessons on the old module architecture (23 in 3e), one Stripe plan (35 €/year), Google sign-in, three
+  legal pages, no teacher, parent or school space, no exercise bank for collège, no learning net.
+- DZ's shell text: ~11,300 strings in 18 i18n files (Arabic only) plus ~1,300 hardcoded lines in ~154 files. The v2
+  lesson engine (`lessons/common/gameworld/`) has NO i18n: ~400 Arabic lines in the kit, ~600 in two worlds, Arabic
+  grammar helpers, `dir="rtl"` hardcoded in ~25 files, some SVG layouts placed right to left by hand.
+- Legacy lesson systems FR will never use: `lessons/common/manipulations/` (208,000 lines), the old module-lesson kit,
+  the mission player, `i18n/locales/ar/lesson.manipulation.json` (2 MB).
+- ~170 unit-test files and ~234 walks assert Arabic text; a few contract tests fail if French appears.
+
+### Traps if this tree ran on the French database as it is
+
+| Trap | Where | Stage that removes it |
+|---|---|---|
+| Deletes every student report, its notes and files | migration `2026_10_05_000002_reset_reports_and_add_screenshot.php` | 1G |
+| Every grade closed | `grades.is_active` default false + `curriculum.enforce_active_grades` | 2 |
+| Registration closed | `REGISTRATION_OPEN` default false | 1G |
+| A name in Latin letters is refused | `utils/personName.js`, `Domain/Identity/PersonName.php` | 1E |
+| Every e-mail in Arabic, right to left | `User::preferredLocale()`, `resources/views/emails`, `lang/ar.json` | 1E |
+| Books store reachable with no switch | `routes/api.php` books groups | 1F |
+| Dinars, Algiers time, Friday skipped | `plan_prices`, `config/{daily_challenge,madar,thinking_lab,family,classroom}.php` | 1E |
+| Old lessons, learning points and progress of real students | curriculum import + prune commands | 2E (retire, never delete) |
+| FR production has always been migrated by hand (phpMyAdmin); this deploy runs `migrate --force` | `deploy.yml` | 6 |
+
+## 2. Decisions taken with the council (2026-11-22)
+
+**How FR is rebuilt.** Three voices and the main session, on: replace and translate in place / a file boundary first /
+port feature by feature.
+- Porting features into the old FR code is rejected by all four.
+- FR takes DZ's tree and drops the legacy lesson systems on day one.
+- A FILE boundary between engine and language is drawn ONLY on the path a v2 lesson runs through: the kit, the worlds,
+  the missions, the launch kit, the lab, the class board. The rest of the shell is translated through its i18n files
+  (they already are the boundary) and its hardcoded text is moved into them.
+- The boundary is built and proven HERE first (one French lesson rendering left to right), then offered to DZ as its
+  own change, in a freeze window the owner chooses. Reason (the critic): drawn before a second user exists, it would be
+  wrong in places. Cost accepted: DZ's kit keeps moving meanwhile; the pinned commit above is the diff base.
+- It is not a multi-country architecture: no runtime switch, no shared package. Each repository holds ONE language.
+- The cutover is the dangerous part under any strategy and is its own track (§6).
+
+**How a lesson is identified and moved between the platforms.**
+- No neutral concept registry: one FR↔DZ table, kept in each repository.
+- Learning-point ids are OPAQUE and APPEND-ONLY, with a lock file and a test that fails on a reorder — before any table.
+  (Today they are positional `P<n>` on both sides; DZ's catalogue and configs already disagree for 35 lessons.)
+- The French net is built from the official French programme FIRST. Where a French teaching unit coincides with a DZ
+  lesson, the same cut is the tie-breaker — never the driver (two voices against forcing DZ's grain onto 3e).
+- What travels is the mechanics: world, forges, experiments, point mapping, with its origin, source hash and kit version.
+  The 50-exercise bank and the class test are rebuilt on each side (BEM sheets are not brevet sheets).
+- « Automatic » = an automatic DRAFT for review, never an automatic publication.
+- Two or three lessons are ported by hand before any transfer tool is written; DZ→FR first.
+- A lesson is named in ~45 files outside its folder; a manifest per lesson that generates those registrations is the
+  prerequisite of any automatic import.
+
+## 3. Stage 0 — safety (done)
+
+- [x] Work branch in its own folder; old FR checkout and `main` untouched.
+- [x] DZ tree imported at the pinned commit; no secret in the import (checked: only `.env.example` and deployment SQL docs).
+- [x] Deploy and publish workflows locked.
+- [ ] Owner: number of active subscribers (Stripe dashboard) and a real copy of the production database for §6.
+
+Never copied into this folder: `apps/api/.env*` of FR, the deploy zips, the SQL dump, `public/CV.pdf`.
+
+## 4. Stage 1 — the core (nothing about programme, grades, lessons)
+
+Order matters: each step keeps the checks runnable.
+
+| Step | What | Done when |
+|---|---|---|
+| 1A | Baseline: install, and run the suites on the imported tree AS IT IS (Arabic) — the reference every later step is compared to | core, web, scripts and API suites run; their numbers written in §9 |
+| 1B | Prune what FR never runs: the 126 legacy DZ lessons, `manipulations/`, the old lesson kit, the mission player, `lesson.manipulation.json`, DZ textbook sources and exam PDFs, DZ marketing captures. The 14 v2 DZ lessons stay parked as fixtures of the engine until §8 replaces them | `check:unreached`, lint and the suites pass on what is left |
+| 1C | The engine boundary: every sentence of `gameworld/` (kit `text.js` and the `L` tables, world `strings.js` and `cases.js`, `MissionRunner`), the grammar helpers (`authoring/numbers.js`), the direction (`dir`, CSS, canvas), the hand-placed right-to-left layouts — behind files of one folder per language | the Arabic fixtures still pass unchanged; a French fixture lesson on `rootCourts` is walked at 1366×768 and looked at |
+| 1D | The shell in French: glossary first (register: « tu » for students, « vous » for adults; the word for « الكفاءة »), then the 18 namespaces, then the hardcoded text of `classSession`, practice, unit pages moved into i18n; plural families reduced to French forms | no Arabic character left outside the parked fixtures (a check enforces it) |
+| 1E | The country layer: left to right, Latin names, euro, `fr-FR` dates and numbers, `Europe/Paris`, the school week, fonts, French e-mails, legal pages carried from `main` and updated for the new features, SEO for `smarter-academy.fr`, brand | registration, login, e-mail, profile walked in French |
+| 1F | Payment and switches: Stripe pages (`/tarifs`, `/abonnement`, `/abonnement/retour`) re-attached to DZ's plan system in EUR; books OFF in the front end AND on the server (a flag — today there is none); content-bound features hidden until their French content exists | the Stripe tests pass on the new registration and access rules; a books request is refused |
+| 1G | Backend for France: the reports migration made schema-only, registration open, `/contact` route, deploy guard inverted (refuse a DZ domain) | API suite passes |
+| 1H | Contract tests and walks rewritten for French (they must assert French and forbid Arabic) | `lint`, `check:unused`, `check:unreached`, `check:format`, `check:lessons`, `npm test`, API suite: all pass |
+| 1I | `CLAUDE.md`, `docs/README.md` and the contracts rewritten for this product; DZ-only docs deleted | a new session can start from `CLAUDE.md` alone |
+
+Culture rules for French content replace DZ's (owner to confirm, §7): neutral secular everyday French contexts, euros,
+French first names, characters in ordinary clothes; the independence from the textbook, « discover, don't be told »,
+drawn-in-code and the one screen size 1366×768 are kept as they are.
+
+## 5. Stage 2 — the curriculum
+
+| Step | What |
+|---|---|
+| 2A | Sources: the official cycle 4 programme (the text in `maths-3eme.pdf` is that programme, republished by a tutoring firm — the Bulletin officiel text is to be fetched and cited), the repères annuels de progression and attendus de fin d'année, cycle 3 for 6e, the brevet's format. FR's old `smarter_academy_programmes_maths_2026.json` is NOT a source: it adds inequations, vectors, quartiles and omits « Grandeurs et mesures » |
+| 2B | Grade ladder: `6e`, `5e`, `4e`, `3e` (ids kept — they are in the production database). `activeGrades.js`, the loader globs, `check-dormant-isolation` inverted |
+| 2C | Per grade, in DZ's data model (`packages/core/curriculum/fr/`): programme items with stable ids, domains (thèmes A–E), units, lessons, learning points (opaque ids + lock), links `requires` / `extends` / `consolidates`, weights `core` / `support` (3e first), threads |
+| 2D | The French school calendar 2026-2027 (three zones, trimestres) and the progression by week |
+| 2E | Every lesson `coming_soon`. The old FR lessons leave the tree (they stay in git on `main`); their learning points are RETIRED in the database, never deleted — a student's history stays |
+| 2F | The FR↔DZ table: a row per pair of lessons, the pairs of points inside, typed `same` / `same maths, other method` / `partial` |
+| 2G | The exercise bank's contract for France: the brevet sheet, levels, « sur le modèle du DNB », euros |
+
+First alignment (titles only, to be redone on the real net): DZ 4AM matches 3e on divisors, square roots, literal
+calculation, product-zero equations, linear and affine functions, Thales, trigonometry, statistics; DZ 3AM matches on
+Pythagoras, powers, rationals. DZ-only: PGCD algorithms, systems, vector coordinates, rotation. FR-only: probabilities,
+prime factorisation, algorithmics, ratio, homothety.
+
+Gate: the owner validates the 3e lesson list and its net.
+
+## 6. The cutover — its own track, only on the owner's word
+
+1. A copy of the production database; the 94 migrations rehearsed on it; subscriptions, payments and entitlements
+   checked row by row before and after.
+2. What subscribers see on day one decided by the owner (old lessons gone, 3e present).
+3. Backup, deploy, `FR_REBUILD_CUTOVER_APPROVED=yes`, smoke test, Stripe webhook checked with a real event.
+4. The legacy tree stays tagged on `main`'s last commit for a rollback.
+
+## 7. Open — the owner decides (defaults in use until then)
+
+| # | Question | Default in use |
+|---|---|---|
+| 1 | When does old FR leave production? | when 3e exists here |
+| 2 | May the engine boundary go into DZ, and when? | built here only |
+| 3 | Which DZ features does France get? | all, books off; thinking lab, compass, daily challenge hidden until French content exists |
+| 4 | Minors' data in France (parent link, teacher-made accounts, school space, push, answer photos) | features kept; privacy policy to be rewritten and read by a lawyer before they go live |
+| 5 | Price; « 1 mois offert » is advertised and not implemented | 35 €/year kept; the claim removed until a trial exists |
+| 6 | Lycée | not carried; « 6e à Terminale » leaves the copy |
+| 7 | Culture rules; dice, coins, urns in probabilities (brevet material) | allowed as experiments, never betting |
+| 8 | Brand: DZ's ring-and-cube or FR's current logo | DZ's mark |
+| 9 | Commits on this branch | none until the owner says |
+
+## 8. Stage 3 — the 3e lessons
+
+1. By hand: « racine carrée » from `jidhr-tarbii` on `rootCourts`, then a divisors lesson on `divisorIsles` — to learn
+   what a transfer really is.
+2. The transfer tool (export a bundle with its provenance; import as a draft; ids rewritten from the table).
+3. Every 3e lesson, in the French progression's order: the table says `same` → import and adapt; otherwise generate with
+   the lesson-v2 pipeline (`.claude/skills/lesson-v2/`, to be adapted) — the brevet bank first, then design, waves,
+   walks at 1366×768, screenshots looked at, the skill written back. A new world only when a unit needs a new mechanic.
+
+## 9. Progress log
+
+| Date | Step | What happened |
+|---|---|---|
+| 2026-11-22 | survey | five read-only surveys (RTL coupling, backend diff, curriculum model, engine portability, FR inventory), two councils |
+| 2026-11-22 | 0 | branch, import of DZ `7f4cef1c`, workflows locked; nothing committed |
+| 2026-11-22 | 1A | Baseline of the imported tree, unmodified (Arabic). `packages/core`: 76 files, 1,577 tests pass (16 s). `scripts`: 9 files, 22,641 pass (15 s). `apps/web`: 1,166 files, 19,452 pass (200 s, 4 workers). `apps/api` on the tracked `phpunit.xml` (in-memory SQLite): 1,503 tests, 1,494 pass, 1 skipped, **8 do not pass** — `DbBackupCommandTest` ×6, `MathLabFileFlowTest::test_l_ajout_verrouille…` (row lock), `PracticeEvidenceConvergenceTest::test_there_is_no_second_mastery_table` (`SHOW TABLES` is not SQLite). Read as MySQL-only tests — NOT confirmed: DZ and CI run this suite on MySQL. Checks: `check:unreached` ✅ (4,938 files reached), `check:unused` ✅ (web and API), `check:format` ✅, `check:learning-net` ✅, `check:year-calendar` ✅, `check:compass-index` ✅, `check:entry-budget` ✅ (203.9 KB gzip ≤ 212). **`check:textbook` ❌ — 3 lines on `hisab-judhur` (`prep` and `qcm` of `jidhr-tarbii`, `ex-31` of `natiqa-ghayr-natiqa`); the SAME 3 lines fail in DZ `dev` at `7f4cef1c` (run there the same day): a DZ defect carried by the import, and it stops `check:lessons` before its last five checks, which were run one by one.** `check:activation-drift` not run: it needs a local database, and this folder has none yet. **Still owed for 1A**: a local database for this folder (its own — never DZ's `smart_academy_test`), the API suite on MySQL, `check:activation-drift`, `npm run lint` (6 GB heap: not run while another session was working in DZ), and one walk |

@@ -1,0 +1,341 @@
+{
+  "id": "ex-4am-tanasub-taghayyurat-l4-008",
+  "lessonCode": "tanasub-taghayyurat",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2008 — مستقيمان ونقطتا تقاطع",
+    "estimatedMinutes": 16,
+    "tags": [
+      "مستقيم يمرّ بنقطتين",
+      "تعيين دالة تآلفية",
+      "نقطة تقاطع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tanasub-taghayyurat_P2",
+      "modelledOn": "BEM 2008 I-4"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2008",
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "المستوي منسوب إلى معلم متعامد و متجانس $(O , \\vec{i} , \\vec{j})$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "علّم النقطتين $A(0 ; -4)$ و $B(2 ; 2)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفاصلة تُقرأ على المحور الأفقي، والترتيب على المحور العمودي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نقطة فاصلتها 0 تقع على محور التراتيب، ونقطة ترتيبها 0 تقع على محور الفواصل."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "النقطة $A(0 ; -4)$ : نتقدّم $0$ على محور الفواصل ثم $4$ على محور التراتيب (حسب الإشارتين).",
+          "النقطة $B(2 ; 2)$ : بالطريقة نفسها.",
+          "نقطة فاصلتها 0 تقع على محور التراتيب، ونقطة ترتيبها 0 تقع على محور الفواصل."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "حدّد العبارة الجبرية للدالة التآلفية $f$ التي تمثيلها البياني هو المستقيم $(AB)$ .",
+      "statement": "أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-TAGHAYYUR-BIDUN-QISMA"
+        },
+        {
+          "value": "-3",
+          "id": "MISC-TAGHAYYUR-TARTIB"
+        },
+        {
+          "value": "1/3",
+          "id": "MISC-BAYANI-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خاصية تناسب التغيّرات: المعامل $a$ هو حاصل قسمة فرق الصورتين على فرق العددين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $\\dfrac{f(2) - f(0)}{2 - 0}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح بالترتيب نفسه في البسط والمقام، وانتبه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{6}{2} = 3$ .",
+        "incorrect": "اقسم فرق الصورتين على فرق العددين، واطرح بالترتيب نفسه في البسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "العبارة الجبرية للدالة التآلفية $f$ هي: $f(x) = ax + b$ .",
+          "إيجاد العدد $a$ (خاصية تناسب التغيّرات):",
+          "$a = \\dfrac{f(x_2) - f(x_1)}{x_2 - x_1}$",
+          "$a = \\dfrac{2 - (-4)}{2 - 0}$",
+          "$a = \\dfrac{6}{2}$",
+          "$a = 3$"
+        ],
+        "result": "a = 3"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$f(0) = -4$ و $f(x) = ax + b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $a$ بقيمته و $x$ بالعدد $0$ ، ثم حلّ المعادلة التي مجهولها $b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$b = -4 - 0 = -4$ .",
+        "incorrect": "بعد حساب $a$ : $b = f(x_1) - a x_1$ ، وليس حاصل قسمة الصورة على العدد."
+      },
+      "solution": {
+        "lines": [
+          "إيجاد العدد $b$ (الترتيب إلى المبدأ):",
+          "لدينا: $f(0) = -4$",
+          "و $f(0) = a \\times 0 + b = b$",
+          "$b = -4$",
+          "ومنه العبارة الجبرية للدالة $f$ هي: $f(x) = 3x - 4$"
+        ],
+        "result": "f(x) = 3x - 4"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "ليكن المستقيم $(\\Delta)$ التمثيل البياني للدالة $g$ حيث: $g(x) = -2x + 1$ .",
+      "statement": "أنشئ $(\\Delta)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التمثيل البياني لدالة تآلفية مستقيم: تكفي نقطتان منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب صورتي عددين تختارهما بالدالة $g$ ، ثم علّم النقطتين وارسم المستقيم المار بهما."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "$g(0) = 1$ و $g(2) = -3$",
+          "المستقيم $(\\Delta)$ يشمل النقطتين $(0 ; 1)$ و $(2 ; -3)$ ."
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "جد إحداثيي $M$ نقطة تقاطع المستقيمين $(AB)$ و $(\\Delta)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": {
+        "x": "1",
+        "y": "-1"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-1",
+            "y": "1"
+          },
+          "id": "MISC-JUMLA-BAYANI-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نقطة التقاطع فاصلتها حلّ المعادلة $f(x) = g(x)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر، ثم احسب الترتيب بإحدى الدالتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 1$ ثم الترتيب $f(1)$ .",
+        "incorrect": "حلّ المعادلة $f(x) = g(x)$ ، ثم اكتب الفاصلة أولا والترتيب ثانيا."
+      },
+      "solution": {
+        "lines": [
+          "التمثيلان البيانيان للدالتين $f$ و $g$ يتقاطعان معناه: $f(x) = g(x)$",
+          "$3x - 4 = -2x + 1$",
+          "$5x = 5$",
+          "$x = \\dfrac{5}{5} = 1$",
+          "$f(1) = 3 \\times 1 - 4 = -1$",
+          "إذن نقطة التقاطع هي $(1 ; -1)$ ."
+        ],
+        "result": "(1 ; -1)"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ج",
+      "statement": "جد إحداثيي نقطة تقاطع $(\\Delta)$ مع محور الفواصل.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": {
+        "x": "1/2",
+        "y": "0"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "0",
+            "y": "1"
+          },
+          "id": "MISC-BAYANI-B-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نقطة محور الفواصل ترتيبها 0."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المعادلة $g(x) = 0$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$-2x + 1 = 0$ ، إذن $x = \\dfrac{1}{2}$ .",
+        "incorrect": "نقطة محور الفواصل ترتيبها 0: حلّ $g(x) = 0$ ثم اكتب الفاصلة أولا."
+      },
+      "solution": {
+        "lines": [
+          "نقطة تقاطع $(\\Delta)$ مع محور الفواصل ترتيبها 0، وفاصلتها حلّ المعادلة $g(x) = 0$ .",
+          "$-2x + 1 = 0$",
+          "$-2x = -1$",
+          "$x = \\dfrac{1}{2}$",
+          "إذن النقطة هي $\\left(\\dfrac{1}{2} ; 0\\right)$ ."
+        ],
+        "result": "\\left(\\dfrac{1}{2} ; 0\\right)"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

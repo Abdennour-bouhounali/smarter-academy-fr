@@ -1,0 +1,507 @@
+{
+  "id": "ex-4am-tarrid-taalufi-l5-006",
+  "lessonCode": "tarrid-taalufi",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2011 — ومضات إشهارية في إذاعة محلية بتبسة",
+    "estimatedMinutes": 35,
+    "tags": [
+      "وضعية إدماجية",
+      "ثلاث صيغ",
+      "فترة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tarrid-taalufi_P2",
+      "modelledOn": "BEM 2011 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2011",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تقترح إذاعة محلية بتبسة، تلتزم بالصدق في الإشهار، على التجّار الصيغ الثلاث الآتية لبث ومضات إشهارية خلال شهر:\nالصيغة (أ) : دفع 900DA للومضة الواحدة.\nالصيغة (ب) : دفع 6000DA اشتراكا شهريا و 500DA للومضة الواحدة.\nالصيغة (ج) : دفع 15000DA اشتراكا شهريا و 200DA للومضة الواحدة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "احسب تكلفة بث 20 ومضة في الشهر حسب كل صيغة.",
+      "statement": "الصيغة (أ):",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "18000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الصيغة (أ): ثمن الومضة فقط."
+        }
+      ],
+      "feedback": {
+        "correct": "$900 \\times 20$ .",
+        "incorrect": "اضرب عدد الومضات في ثمن الومضة."
+      },
+      "solution": {
+        "lines": [
+          "تكلفة 20 ومضة بكل صيغة:",
+          "الصيغة (أ): $900 \\times 20 = 18000DA$"
+        ],
+        "result": "18000DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "الصيغة (ب):",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "16000",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAALUFI-NISYAN-B",
+          "value": "10000"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثمن الومضات ثم الاشتراك الشهري."
+        }
+      ],
+      "feedback": {
+        "correct": "$500 \\times 20 + 6000$ .",
+        "incorrect": "لا تنس الاشتراك الشهري."
+      },
+      "solution": {
+        "lines": [
+          "تكلفة 20 ومضة بكل صيغة:",
+          "الصيغة (ب): $500 \\times 20 + 6000 = 16000DA$"
+        ],
+        "result": "16000DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "الصيغة (ج):",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "19000",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAALUFI-NISYAN-B",
+          "value": "4000"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثمن الومضات ثم الاشتراك الشهري."
+        }
+      ],
+      "feedback": {
+        "correct": "$200 \\times 20 + 15000$ .",
+        "incorrect": "لا تنس الاشتراك الشهري."
+      },
+      "solution": {
+        "lines": [
+          "تكلفة 20 ومضة بكل صيغة:",
+          "الصيغة (ج): $200 \\times 20 + 15000 = 19000DA$"
+        ],
+        "result": "19000DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "lead": "نسمّي $x$ عدد الومضات في الشهر و $y$ الكلفة بـ DA.\nاكتب $y$ بدلالة $x$ في كل من الصيغ الثلاث.",
+      "statement": "الصيغة (أ): أعط العدد $a$ حيث: $y = ax$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "900",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع عن كل ومضة في الصيغة (أ)؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هو ما يُدفع $x$ مرّة: معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "ما يُدفع عن كل ومضة في الصيغة (أ) هو معامل $x$ .",
+        "incorrect": "معامل $x$ هو المبلغ الذي يتكرّر مع كل وحدة، لا المبلغ الذي يُدفع مرّة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "كتابة $y$ بدلالة $x$ في كل صيغة:",
+          "الصيغة (أ): $y = 900x$",
+          "الصيغة (ب): $y = 500x + 6000$",
+          "الصيغة (ج): $y = 200x + 15000$"
+        ],
+        "result": "y = 900x"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "statement": "الصيغة (ب): أعط العددين $a$ و $b$ حيث: $y = ax + b$ ، ابدأ بالعدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "500",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "6000"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع عن كل ومضة في الصيغة (ب)؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هو ما يُدفع $x$ مرّة: معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "ما يُدفع عن كل ومضة في الصيغة (ب) هو معامل $x$ .",
+        "incorrect": "معامل $x$ هو المبلغ الذي يتكرّر مع كل وحدة، لا المبلغ الذي يُدفع مرّة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "كتابة $y$ بدلالة $x$ في كل صيغة:",
+          "الصيغة (أ): $y = 900x$",
+          "الصيغة (ب): $y = 500x + 6000$",
+          "الصيغة (ج): $y = 200x + 15000$"
+        ],
+        "result": "y = 500x + 6000"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "statement": "ثم العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "6000",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "500"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع مرّة واحدة (الاشتراك الشهري في الصيغة (ب))؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الاشتراك الشهري في الصيغة (ب) يُدفع مرّة واحدة: هو الحدّ الثابت $b$ .",
+        "incorrect": "الحدّ الثابت لا يتعلّق بعدد الوحدات $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "كتابة $y$ بدلالة $x$ في كل صيغة:",
+          "الصيغة (أ): $y = 900x$",
+          "الصيغة (ب): $y = 500x + 6000$",
+          "الصيغة (ج): $y = 200x + 15000$"
+        ],
+        "result": "y = 500x + 6000"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q7",
+      "step": "02",
+      "statement": "الصيغة (ج): أعط العددين $a$ و $b$ حيث: $y = ax + b$ ، ابدأ بالعدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "200",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "15000"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع عن كل ومضة في الصيغة (ج)؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هو ما يُدفع $x$ مرّة: معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "ما يُدفع عن كل ومضة في الصيغة (ج) هو معامل $x$ .",
+        "incorrect": "معامل $x$ هو المبلغ الذي يتكرّر مع كل وحدة، لا المبلغ الذي يُدفع مرّة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "كتابة $y$ بدلالة $x$ في كل صيغة:",
+          "الصيغة (أ): $y = 900x$",
+          "الصيغة (ب): $y = 500x + 6000$",
+          "الصيغة (ج): $y = 200x + 15000$"
+        ],
+        "result": "y = 200x + 15000"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q8",
+      "step": "02",
+      "statement": "ثم العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "15000",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "200"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع مرّة واحدة (الاشتراك الشهري في الصيغة (ج))؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الاشتراك الشهري في الصيغة (ج) يُدفع مرّة واحدة: هو الحدّ الثابت $b$ .",
+        "incorrect": "الحدّ الثابت لا يتعلّق بعدد الوحدات $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "كتابة $y$ بدلالة $x$ في كل صيغة:",
+          "الصيغة (أ): $y = 900x$",
+          "الصيغة (ب): $y = 500x + 6000$",
+          "الصيغة (ج): $y = 200x + 15000$"
+        ],
+        "result": "y = 200x + 15000"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q9",
+      "step": "03",
+      "lead": "استنتج عدد الومضات الذي تكون من أجله الصيغة (ب) أقل تكلفة.",
+      "statement": "تكون الصيغة (ب) أقل تكلفة من الصيغتين الأخريين عندما: $m < x < M$ .\nأعط العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الومضات $m$",
+      "expectedAnswer": "15",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الصيغة (ب) بالصيغة (أ) أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حل المتراجحة $500x + 6000 < 900x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "قبل هذا العدد تكون الصيغة (أ) أقل تكلفة.",
+        "incorrect": "اكتب المتراجحة التي تعني أن الصيغة (ب) أقل تكلفة من الصيغة (أ) ثم حلّها."
+      },
+      "solution": {
+        "lines": [
+          "الصيغة (ب) أقل تكلفة من الصيغة (أ): $500x + 6000 < 900x$ ، $6000 < 400x$ ، $x > 15$ .",
+          "الصيغة (ب) أقل تكلفة من الصيغة (ج): $500x + 6000 < 200x + 15000$ ، $300x < 9000$ ، $x < 30$ .",
+          "بيانيا: مستقيم الصيغة (ب) يقع تحت المستقيمين الآخرين بين فاصلتي نقطتي التقاطع 15 و 30.",
+          "إذا تكون الصيغة (ب) أقل تكلفة عندما يكون عدد الومضات بين 15 و 30: $15 < x < 30$ ."
+        ],
+        "result": "15 < x < 30"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q10",
+      "step": "03",
+      "statement": "ثم العدد $M$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الومضات $M$",
+      "expectedAnswer": "30",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الآن الصيغة (ب) بالصيغة (ج)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حل المتراجحة $500x + 6000 < 200x + 15000$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "بعد هذا العدد تصبح الصيغة (ج) أقل تكلفة.",
+        "incorrect": "اكتب المتراجحة التي تعني أن الصيغة (ب) أقل تكلفة من الصيغة (ج) ثم حلّها."
+      },
+      "solution": {
+        "lines": [
+          "الصيغة (ب) أقل تكلفة من الصيغة (أ): $500x + 6000 < 900x$ ، $6000 < 400x$ ، $x > 15$ .",
+          "الصيغة (ب) أقل تكلفة من الصيغة (ج): $500x + 6000 < 200x + 15000$ ، $300x < 9000$ ، $x < 30$ .",
+          "بيانيا: مستقيم الصيغة (ب) يقع تحت المستقيمين الآخرين بين فاصلتي نقطتي التقاطع 15 و 30.",
+          "إذا تكون الصيغة (ب) أقل تكلفة عندما يكون عدد الومضات بين 15 و 30: $15 < x < 30$ ."
+        ],
+        "result": "15 < x < 30"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q11",
+      "step": "04",
+      "statement": "☜ يريد صاحب محل للأجهزة الكهرومنزلية بث 40 ومضة في الشهر. ما هي الصيغة الأنسب له؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الصيغة (أ)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        },
+        {
+          "id": "B",
+          "content": "الصيغة (ب)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        },
+        {
+          "id": "C",
+          "content": "الصيغة (ج)",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العدد 40 بالمجال الذي وجدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أو احسب الكلفة بكل صيغة من أجل 40 ومضة."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل 40 ومضة: 36000DA ، 26000DA ، 23000DA .",
+        "incorrect": "الأنسب هو الأقل تكلفة: احسب الكلف الثلاث."
+      },
+      "solution": {
+        "lines": [
+          "من أجل 40 ومضة: (أ) $900 \\times 40 = 36000DA$ ، (ب) $500 \\times 40 + 6000 = 26000DA$ ، (ج) $200 \\times 40 + 15000 = 23000DA$ .",
+          "أو: $40 > 30$ ، فالصيغة (ج) أقل تكلفة من (ب)، و (ب) أقل تكلفة من (أ).",
+          "إذا الصيغة الأنسب هي الصيغة (ج)."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

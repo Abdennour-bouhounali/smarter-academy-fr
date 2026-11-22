@@ -1,0 +1,112 @@
+{
+  "id": "ex-4am-majmu-shuaayn-l4-004",
+  "lessonCode": "majmu-shuaayn",
+  "level": 4,
+  "metadata": {
+    "title": "تحدّ الوحدة — السبّاح والتيار",
+    "estimatedMinutes": 4,
+    "tags": [
+      "قاعدة متوازي الأضلاع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "challenge",
+      "page": 127,
+      "section": "تحدّ"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (تحدّ ص 127): سبّاح سرعته $4\\,\\mathrm{km/h}$ يريد عبور نهر من A إلى B ، والمسار [AB] عمودي على حافتي النهر، وسرعة التيار $2\\,\\mathrm{km/h}$ موازية للحافتين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ليصل إلى B ، قيس الزاوية بين اتجاه سباحته و (AB) ، بالدرجة:",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح (بالدرجة)",
+      "expectedAnswer": "30",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للشعاعين نفس المبدأ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "شعاعان لهما نفس المبدأ يُجمعان بقاعدة متوازي الأضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع هو القطر الصادر من المبدأ المشترك، لا القطر الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "السرعة الفعلية قطر متوازي الأضلاع وتكون على (AB): $\\sin\\theta = \\dfrac{2}{4}$ ، $\\theta = 30^{\\circ}$ عكس التيار.",
+        "incorrect": "قاعدة متوازي الأضلاع: مجموع شعاعين لهما نفس المبدأ هو القطر الصادر من ذلك المبدأ."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "سرعته الفعلية حينئذ",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$6\\,\\mathrm{km/h}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-JAM-ATWAL"
+        },
+        {
+          "id": "B",
+          "content": "$2\\sqrt{3}\\,\\mathrm{km/h}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$2\\sqrt{5}\\,\\mathrm{km/h}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TIYAR-MUBASHIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للشعاعين نفس المبدأ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "شعاعان لهما نفس المبدأ يُجمعان بقاعدة متوازي الأضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع هو القطر الصادر من المبدأ المشترك، لا القطر الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sqrt{4^2 - 2^2} = \\sqrt{12} = 2\\sqrt{3} \\approx 3{,}46$ ؛ $2\\sqrt{5}$ هي سرعته لو سبح نحو B مباشرة.",
+        "incorrect": "قاعدة متوازي الأضلاع: مجموع شعاعين لهما نفس المبدأ هو القطر الصادر من ذلك المبدأ."
+      }
+    }
+  ]
+}

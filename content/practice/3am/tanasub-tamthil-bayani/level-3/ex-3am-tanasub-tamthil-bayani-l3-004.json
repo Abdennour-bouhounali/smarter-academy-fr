@@ -1,0 +1,296 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l3-004",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 3,
+  "metadata": {
+    "title": "خرسانة الورشة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "قراءة بيانية",
+      "نقط منكسرة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-31",
+      "page": 98,
+      "section": "أتعمّق",
+      "number": 31
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين الثالث",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "تنتج آلة في ورشة بناء مدرسة جديدة الخرسانة. يمثّل الخط المنكسر في المعلم التالي حجم الخرسانة المنتجة (بعشرات الأمتار المكعبة) بدلالة ساعات تشغيل الآلة. وقد توقفت الآلة مدة قصيرة لإتقان صيانتها.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          1,
+          4.5
+        ],
+        "B": [
+          2,
+          4.5
+        ],
+        "C": [
+          5,
+          11
+        ]
+      },
+      "segments": [
+        [
+          "O",
+          "A"
+        ],
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ]
+      ],
+      "grid": true,
+      "axes": {
+        "every": 1
+      },
+      "labels": {
+        "O": "sw",
+        "A": "nw",
+        "B": "se",
+        "C": "se"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس: خط منكسر يشمل O ثم A(1;4,5) ثم B(2;4,5) أفقيا ثم C(5;11)",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: ساعات التشغيل — محور التراتيب: الحجم بعشرات الأمتار المكعبة"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "بقراءة بيانية، ما حجم الخرسانة المنتجة:",
+      "statement": "خلال الساعة الأولى، بالمتر المكعب؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الحجم بالمتر المكعب",
+      "expectedAnswer": "45",
+      "misconceptionSignatures": [
+        {
+          "value": "4.5",
+          "id": "MISC-TAMTHIL-UNIT-AXIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ من العدد $1$ على المحور الأفقي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الترتيب بعشرات الأمتار المكعبة: لا تنس الوحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "عند الفاصلة $1$ الترتيب $4{,}5$ ، أي $45$ m³.",
+        "incorrect": "اضرب القراءة في $10$ لأن الوحدة العمودية عشرة أمتار مكعبة."
+      },
+      "solution": {
+        "lines": [
+          "النقطة التي فاصلتها $1$ ترتيبها $4{,}5$ ، أي $4{,}5 \\times 10 = 45$ m³."
+        ],
+        "result": "45\\ \\text{m}^3"
+      },
+      "work": "optional",
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "بين الساعة الثانية والساعة الخامسة؟ (الحجم المنتج بالمتر المكعب)",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الحجم بالمتر المكعب",
+      "expectedAnswer": "65",
+      "misconceptionSignatures": [
+        {
+          "value": "110",
+          "id": "MISC-TAMTHIL-JOIN-DOTS"
+        },
+        {
+          "value": "6.5",
+          "id": "MISC-TAMTHIL-UNIT-AXIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ ترتيب النقطة عند $5$ وترتيبها عند $2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحجم المنتج بين لحظتين هو الفرق بين الترتيبين."
+        }
+      ],
+      "feedback": {
+        "correct": "$110 - 45 = 65$ m³.",
+        "incorrect": "الحجم المنتج في المجال هو الفرق بين القراءتين لا القراءة الأخيرة وحدها."
+      },
+      "solution": {
+        "lines": [
+          "عند $2$ : $4{,}5 \\times 10 = 45$ m³. عند $5$ : $11 \\times 10 = 110$ m³.",
+          "$110 - 45 = 65$ m³."
+        ],
+        "result": "65\\ \\text{m}^3"
+      },
+      "work": "optional",
+      "timeSeconds": 100
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ماذا حدث بين الساعة الأولى والساعة الثانية؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لم تنتج الآلة شيئا: الحجم بقي ثابتا في $45$ m³",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "كانت الآلة تنتج بسرعة أكبر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-RISING"
+        },
+        {
+          "id": "C",
+          "content": "كان حجم الخرسانة ينقص",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-JOIN-DOTS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى القطعة بين $A$ و $B$ : هل ترتفع؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قطعة أفقية تعني أنّ الترتيب لم يتغير."
+        }
+      ],
+      "feedback": {
+        "correct": "القطعة $[AB]$ أفقية: الترتيب ثابت.",
+        "incorrect": "اقرأ شكل القطعة بين الساعتين: أفقية تعني ثباتا."
+      },
+      "solution": {
+        "lines": [
+          "القطعة $[AB]$ أفقية: الحجم يبقى $45$ m³ بين الساعة $1$ والساعة $2$ ، فلم تنتج الآلة شيئا."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "هل حجم الخرسانة المنتجة متناسب مع مدة التشغيل؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأنّ الرسم ينطلق من المبدأ $O$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-THROUGH-O-ANY"
+        },
+        {
+          "id": "B",
+          "content": "نعم، لأنّ الترتيب يكبر كلما كبرت الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-RISING"
+        },
+        {
+          "id": "C",
+          "content": "لا، النقط ليست على استقامة واحدة",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط ليست على استقامة واحدة، فليست الوضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "الخط ليس مستقيما: قطعة صاعدة ثم أفقية ثم صاعدة بميل آخر.",
+          "إذن النقط ليست على استقامة واحدة والوضعية ليست تناسبية."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

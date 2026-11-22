@@ -1,0 +1,162 @@
+{
+  "id": "ex-4am-tarrid-khatti-l2-010",
+  "lessonCode": "tarrid-khatti",
+  "level": 2,
+  "metadata": {
+    "title": "تخفيضات نهاية الموسم",
+    "estimatedMinutes": 7,
+    "tags": [
+      "نمذجة",
+      "تخفيض"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-khatti_P1",
+      "modelledOn": "act-4",
+      "adaptedFrom": "ex-4am-tarrid-khatti-l2-010"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في تخفيضات نهاية الموسم، ينخفض سعر كل حذاء رياضي بنسبة 15%. نسمّي $x$ سعر حذاء قبل التخفيض و $f(x)$ سعره بعد التخفيض (بـ DA)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عبّر عن $f(x)$ بدلالة $x$ ، واستنتج أن $f$ دالة خطية.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "0,85",
+      "misconceptionSignatures": [
+        {
+          "value": "0,15",
+          "id": "MISC-TAKHFID-NISBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "السعر بعد التخفيض = السعر − 15% من السعر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$x - 0{,}15x = (1 - 0{,}15)x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(x) = x - 0{,}15x = 0{,}85x$ : دالة خطية.",
+        "incorrect": "بعد تخفيض نسبته 15% يبقى للزبون أن يدفع الجزء الباقي من السعر، لا نسبة التخفيض."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = x - \\dfrac{15}{100}x = (1 - 0{,}15)x = 0{,}85x$",
+          "$f$ من الشكل $x \\longmapsto ax$ : دالة خطية."
+        ],
+        "result": "f(x) = 0{,}85x"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "سعر حذاء قبل التخفيض 3200DA. احسب سعره بعد التخفيض.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: السعر بـ DA",
+      "expectedAnswer": "2720",
+      "misconceptionSignatures": [
+        {
+          "value": "480",
+          "id": "MISC-TAKHFID-NISBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب صورة 3200 بالدالة $f$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(3200) = 0{,}85 \\times 3200 = 2720$ DA.",
+        "incorrect": "عوّض $x$ بالسعر قبل التخفيض."
+      },
+      "solution": {
+        "lines": [
+          "$f(3200) = 0{,}85 \\times 3200 = 2720$",
+          "سعر الحذاء بعد التخفيض 2720DA."
+        ],
+        "result": "2720DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "دفع كريم 2550DA ثمن حذاء بعد التخفيض. ما سعره قبل التخفيض؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: السعر بـ DA",
+      "expectedAnswer": "3000",
+      "misconceptionSignatures": [
+        {
+          "value": "2167,5",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "السعر قبل التخفيض هو العدد $x$ الذي يحقق $f(x) = 2550$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}85x = 2550$ ، إذن $x = 3000$ DA.",
+        "incorrect": "هنا السعر بعد التخفيض معلوم: اقسم على المعامل."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}85x = 2550$",
+          "$x = \\dfrac{2550}{0{,}85} = 3000$",
+          "سعر الحذاء قبل التخفيض 3000DA."
+        ],
+        "result": "3000DA"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

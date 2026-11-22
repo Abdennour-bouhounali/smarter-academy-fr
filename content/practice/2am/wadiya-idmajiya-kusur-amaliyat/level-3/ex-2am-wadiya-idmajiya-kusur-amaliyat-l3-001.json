@@ -1,0 +1,193 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-kusur-amaliyat-l3-001",
+  "lessonCode": "wadiya-idmajiya-kusur-amaliyat",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — وضعيّة إدماجيّة : أب يوزّع مبلغًا على أبنائه",
+    "estimatedMinutes": 10,
+    "tags": [
+      "الجزء الباقي",
+      "كسر من مبلغ",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-68",
+      "exercise": 4
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "06"
+    }
+  },
+  "statement": {
+    "content": "وزّع أب على أبنائه الثلاثة مبلغًا قدره $8000$ DA : نصيب يوسف $\\dfrac{2}{5}$ منه ، ونصيب أنيس $\\dfrac{3}{20}$ منه ، والباقي لعمر ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما الكسر الذي يمثّل نصيب عمر ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "9/20",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "11/20",
+          "id": "MISC-JAMKASR-PART"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكلّ يساوي كسرًا بسطه ومقامه عدد واحد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الأجزاء المأخوذة أوّلًا ثمّ اطرحها من الكلّ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الجزء الباقي هو الكلّ ناقص ما أُخذ ، وهو أصغر من الكلّ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9}{20}$ .",
+        "incorrect": "اجمع ما أُخذ أوّلًا ثمّ اطرحه من الكلّ ، ولا تُعطِ ما أُخذ بدل الباقي ."
+      },
+      "solution": {
+        "lines": [
+          "$1 = \\dfrac{20}{20}$ .",
+          "$\\dfrac{2}{5} = \\dfrac{2 \\times 4}{5 \\times 4} = \\dfrac{8}{20}$ .",
+          "ما أُخذ : $\\dfrac{2}{5} + \\dfrac{3}{20} = \\dfrac{8 + 3}{20} = \\dfrac{11}{20}$ .",
+          "الباقي : $1 - \\dfrac{11}{20} = \\dfrac{20}{20} - \\dfrac{11}{20} = \\dfrac{9}{20}$ ."
+        ],
+        "result": "\\dfrac{9}{20}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما المبلغ الذي حصل عليه عمر بالدينار ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3600",
+      "misconceptionSignatures": [
+        {
+          "value": "160000/9",
+          "id": "MISC-JIDAKASR-FLIP"
+        },
+        {
+          "value": "400",
+          "id": "MISC-JIDAKASR-HALFWAY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزء من عدد يعني جداء الكسر في العدد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي ما دام الكسر أصغر من 1 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$3600$ .",
+        "incorrect": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ، ولا تقلب الكسر ."
+      },
+      "solution": {
+        "lines": [
+          "$8000 \\div 20 = 400$ .",
+          "$400 \\times 9 = 3600$ ."
+        ],
+        "result": "3600"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "يريد عمر شراء حاسوب لوحيّ ثمنه $4000$ DA . هل يكفي نصيبه لشرائه ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDAKASR-FLIP"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا ثمّ تحقّق منها بحساب بسيط ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أو قارن بدقّة ثمّ قارن بما قيل ."
+        }
+      ],
+      "feedback": {
+        "correct": "لا .",
+        "incorrect": "احسب ثمّ قارن بدقّة قبل أن تجيب ."
+      },
+      "solution": {
+        "lines": [
+          "نصيب عمر $3600$ DA .",
+          "$3600 < 4000$ : لا يكفي ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

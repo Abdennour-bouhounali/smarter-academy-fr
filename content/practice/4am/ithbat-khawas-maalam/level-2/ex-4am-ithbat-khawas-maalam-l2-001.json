@@ -1,0 +1,170 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l2-001",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 2,
+  "metadata": {
+    "title": "من الكتاب — إنجاز برهان (ص 145)",
+    "estimatedMinutes": 3,
+    "tags": [
+      "عكس فيثاغورس"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-proof",
+      "page": 145,
+      "section": "طرائق"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 145): المستوي مزود بمعلم متعامد ومتجانس، مبدؤه O. $A(6\\,;\\,-1)$ ، $B(2\\,;\\,3)$ ، $C(2\\,;\\,-5)$ نقط من المستوي.",
+    "figure": {
+      "grid": true,
+      "axes": true,
+      "points": {
+        "A": [
+          6,
+          -1
+        ],
+        "B": [
+          2,
+          3
+        ],
+        "C": [
+          2,
+          -5
+        ],
+        "O": [
+          0,
+          0
+        ]
+      },
+      "ariaLabel": "المثلث ABC في معلم متعامد ومتجانس",
+      "maxWidth": 440,
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "A",
+          "C"
+        ],
+        [
+          "B",
+          "C"
+        ]
+      ],
+      "labels": {
+        "A": "e",
+        "B": "n",
+        "C": "s",
+        "O": "sw"
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "احسب $AB^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "32",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MASAFA-JADHR-JAM",
+          "value": "8"
+        },
+        {
+          "id": "MISC-MAALAM-MASAFA-TARBI",
+          "value": "0"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{AB}$ : $x_B - x_A$ و $y_B - y_A$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المركبتان $-4$ و $4$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ربّع كل واحدة ثم اجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB^2 = (-4)^2 + 4^2 = 16 + 16 = 32$ .",
+        "incorrect": "ربّع المركبتين (المربع موجب دائما) ثم اجمع."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "مع $AC^2 = 32$ و $BC^2 = 64$ ، المثلث ABC :",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "قائم في A ومتساوي الساقين",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "قائم في B",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-FITHAGHURAS-WATAR"
+        },
+        {
+          "id": "C",
+          "content": "متقايس الأضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SAQAYN-QAIM"
+        },
+        {
+          "id": "D",
+          "content": "متساوي الساقين وليس قائما",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SAQAYN-QAIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما أكبر المربعات؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن مجموع الآخرين به."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم قارن الضلعين الصادرين من A."
+        }
+      ],
+      "feedback": {
+        "correct": "$32 + 32 = 64$ : قائم في A ، و $AB = AC$ : متساوي الساقين.",
+        "incorrect": "الضلع [BC] وحده: الزاوية القائمة في A ، والضلعان الصادران منها متقايسان."
+      }
+    }
+  ]
+}

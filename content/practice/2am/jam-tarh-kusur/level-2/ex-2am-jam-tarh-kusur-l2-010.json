@@ -1,0 +1,169 @@
+{
+  "id": "ex-2am-jam-tarh-kusur-l2-010",
+  "lessonCode": "jam-tarh-kusur",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — شريطان وطولهما",
+    "estimatedMinutes": 6,
+    "tags": [
+      "جمع كسرين",
+      "طرح كسرين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "طول شريط أزرق $\\dfrac{3}{4}$ m وطول شريط أحمر $\\dfrac{5}{8}$ m ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما الطول الكلّي للشريطين معًا بالمتر ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "11/8",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2/3",
+          "id": "MISC-JAMKASR-ACROSS"
+        },
+        {
+          "value": "1",
+          "id": "MISC-JAMKASR-NOSCALE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الجزءان اللذان تبحث عن مجموعهما أو عن الباقي بعدهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد ثمّ اجمع، والباقي نحصل عليه بالطرح من الكلّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل الناتج إن أمكن وتحقّق أنّه يبقى أصغر من الكلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{11}{8}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{4} = \\dfrac{3 \\times 2}{4 \\times 2} = \\dfrac{6}{8}$ .",
+          "$\\dfrac{3}{4} + \\dfrac{5}{8} = \\dfrac{6 + 5}{8} = \\dfrac{11}{8}$ ."
+        ],
+        "result": "\\dfrac{11}{8}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "بكم يزيد طول الشريط الأزرق على طول الشريط الأحمر بالمتر ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "1/8",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الجزءان اللذان تبحث عن مجموعهما أو عن الباقي بعدهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد ثمّ اجمع، والباقي نحصل عليه بالطرح من الكلّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل الناتج إن أمكن وتحقّق أنّه يبقى أصغر من الكلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{8}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{4} = \\dfrac{3 \\times 2}{4 \\times 2} = \\dfrac{6}{8}$ .",
+          "$\\dfrac{3}{4} - \\dfrac{5}{8} = \\dfrac{6 - 5}{8} = \\dfrac{1}{8}$ ."
+        ],
+        "result": "\\dfrac{1}{8}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "لماذا لا يمكن جمع البسطين $3 + 5$ مباشرة ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثمّ اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب جملة أو جملتين: الفكرة ثمّ الحساب الذي يدعمها."
+        }
+      ],
+      "feedback": {
+        "correct": "نجمع أجزاء من النوع نفسه فقط .",
+        "incorrect": "قارن تبريرك بالحلّ النموذجي: الفكرة ثمّ الحساب الذي يدعمها."
+      },
+      "solution": {
+        "lines": [
+          "الشريطان لا يُقاسان بالأجزاء نفسها : ربع المتر أكبر من ثُمن المتر .",
+          "نكتب $\\dfrac{3}{4} = \\dfrac{6}{8}$ ثمّ نجمع الأثمان : $6 + 5 = 11$ أثمان ."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

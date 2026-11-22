@@ -1,0 +1,195 @@
+{
+  "id": "ex-2am-hall-mushkil-muadala-l3-001",
+  "lessonCode": "hall-mushkil-muadala",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — موشور قائم",
+    "estimatedMinutes": 6,
+    "tags": [
+      "ترجمة وضعيّة",
+      "معادلة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 3,
+      "file": "2am-s3-25",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "موشور قائم قاعدته مستطيل عرضها $6\\,\\mathrm{cm}$ وطولها $x$ ، وارتفاعه $8\\,\\mathrm{cm}$ ، وحجمه $720\\,\\mathrm{cm}^{3}$ . نريد إيجاد $x$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "حجم الموشور هو جداء مساحة القاعدة في الارتفاع. أيّ معادلة تترجم الوضعيّة ؟ اختر الإجابة الصحيحة :",
+      "learningPoints": [
+        {
+          "code": "2am_hall-mushkil-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$48\\times x=720$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$720\\times x=48$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAJHUL-SWAP"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{x}{48}=720$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAJHUL-ROLE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعيّة وسمِّ المجهول بحرف، ثمّ حدّد ما يُعطى وما يُطلب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العملية التي تربط الأعداد بالمجهول كما تحدث في الوضعيّة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر كلّ معادلة : هل تصف الوضعيّة، وهل يجعلها العدد المتوقّع صحيحة ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "المعادلة الصحيحة هي $48\\times x=720$ .",
+        "incorrect": "عبّر عن الوضعيّة بعملية بين العدد المعلوم والمجهول، ثمّ اختبر الخيارات بقيمة مقبولة."
+      },
+      "solution": {
+        "lines": [
+          "$48\\times x=720$ : هذه المعادلة تصف الوضعيّة.",
+          "وحلّها $x=15$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حلّ المعادلة : $48\\times x=720$ .",
+      "learningPoints": [
+        {
+          "code": "2am_hall-mushkil-muadala_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "34560",
+          "id": "MISC-MAJHUL-MULTDIV"
+        },
+        {
+          "value": "672",
+          "id": "MISC-MAJHUL-SUBFORM"
+        },
+        {
+          "value": "768",
+          "id": "MISC-MAJHUL-ADDFORM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في المعادلة ما يُفعل بالمجهول : ضرب أو قسمة أو جمع أو طرح، وما هي آخر عملية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العامل الناقص في جداء يُحسب بقسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من حلّك : عوّض المجهول بقيمته وأنجز العملية، فإن وجدت الطرف الآخر فالحلّ صحيح."
+        }
+      ],
+      "feedback": {
+        "correct": "$x=15$ .",
+        "incorrect": "ابحث عن العدد الذي يجعل المساواة صحيحة بالعملية العكسية، ثمّ تحقّق منه بإنجاز العملية."
+      },
+      "solution": {
+        "lines": [
+          "$x=720\\div 48=15$ .",
+          "التحقّق : $48\\times 15=720$ ."
+        ],
+        "result": "15"
+      },
+      "work": "optional",
+      "timeSeconds": 70
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب مساحة القاعدة بالسنتيمتر المربّع بعد إيجاد $x$ ، أي قيمة $6\\times x$ .",
+      "learningPoints": [
+        {
+          "code": "2am_hall-mushkil-muadala_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "90",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بقيمته المعلومة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات : الضرب والقسمة قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة."
+        }
+      ],
+      "feedback": {
+        "correct": "النتيجة $90$ .",
+        "incorrect": "عوّض بالقيم المعلومة واحسب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$6\\times 15=90$ ."
+        ],
+        "result": "90"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

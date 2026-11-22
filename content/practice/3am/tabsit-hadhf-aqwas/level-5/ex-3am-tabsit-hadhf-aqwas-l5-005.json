@@ -1,0 +1,278 @@
+{
+  "id": "ex-3am-tabsit-hadhf-aqwas-l5-005",
+  "lessonCode": "tabsit-hadhf-aqwas",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — جدار المتوسطة",
+    "estimatedMinutes": 20,
+    "tags": [
+      "وضعية إدماجية",
+      "حذف الأقواس",
+      "محيط",
+      "معادلة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 3,
+      "file": "3am-s3-59",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يُراد إنشاء متوسطة في حيّ جديد على قطعة أرض مستطيلة طولها $(5x + 4)$ وعرضها $(x - 2)$ ، تُحاط بجدار (وحدة الطول هي المتر، و $x > 2$).\nالجزء الأول: المحيط بدلالة $x$ .\nالجزء الثاني: ثمن المتر من الجدار $1500$ دج، وميزانية الجدار $450000$ دج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "عبّر بدلالة $x$ عن محيط القطعة $P$ مع تبسيط الناتج.",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$P = 12x + 4$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$P = 12x + 12$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-PLUS-CHANGED"
+        },
+        {
+          "id": "C",
+          "content": "$P = 16x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-UNLIKE-MERGED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة التي تسبق القوسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوسان مسبوقان بالإشارة $+$ (وغير متبوعين بـ $\\times$ أو $\\div$) يُحذفان دون تغيير أي إشارة بينهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العبارة بدون أقواس حدًّا حدًّا، ثم اجمع الحدود المتشابهة."
+        }
+      ],
+      "feedback": {
+        "correct": "$P = 12x + 4$.",
+        "incorrect": "راجع إشارة كل حدّ وما يسبق القوسين، ثم اجمع الحدود المتشابهة فقط."
+      },
+      "solution": {
+        "lines": [
+          "$P = (5x + 4) + (x - 2) + (5x + 4) + (x - 2)$",
+          "$P = 5x + 4 + x - 2 + 5x + 4 + x - 2$",
+          "$P = 12x + 4$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب محيط القطعة من أجل $x = 25$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "304",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى، ويُستحسن أن تعوّض في الشكل المبسّط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويات العمليات: القوى، ثم الضرب، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالتعويض في العبارة قبل تبسيطها: القيمة لا تتغيّر."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل $x = 25$ : $P = 304$ م.",
+        "incorrect": "عوّض $x$ بالعدد المعطى في الشكل المبسّط واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$P = 12x + 4$",
+          "من أجل $x = 25$ : $P = 12(25) + 4 = 304$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "عيّن قيمة $x$ حتى يكون المحيط $400\\,\\mathrm{m}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "33",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المعادلة بالشكل المبسّط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض الحل في المعادلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$12x + 4 = 400$ تعطي $x = 33$ .",
+        "incorrect": "اكتب المعادلة $12x + 4 = 400$ ثم حلّها."
+      },
+      "solution": {
+        "lines": [
+          "$12x + 4 = 400$",
+          "$12x = 396$",
+          "$x = 33$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "من أجل $x = 25$ ، احسب ثمن الجدار بالدينار.",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدينار)",
+      "expectedAnswer": "456000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الثمن = الطول × ثمن المتر."
+        }
+      ],
+      "feedback": {
+        "correct": "$304 \\times 1500 = 456000$ دج.",
+        "incorrect": "اضرب طول الجدار من أجل $x = 25$ في ثمن المتر."
+      },
+      "solution": {
+        "lines": [
+          "$304 \\times 1500 = 456000$ دج"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل تكفي الميزانية لبناء الجدار من أجل $x = 25$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، تكفي",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-DECISION-UNCHECKED"
+        },
+        {
+          "id": "B",
+          "content": "لا، لا تكفي",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب كل ما يلزم من أجل القيمة المعطاة لـ $x$ قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين اللذين حصلت عليهما."
+        }
+      ],
+      "feedback": {
+        "correct": "لا: $456000 > 450000$ .",
+        "incorrect": "أنجز الحسابات من أجل القيمة المعطاة ثم قارن قبل أن تقرّر."
+      },
+      "solution": {
+        "lines": [
+          "الثمن $456000$ دج والميزانية $450000$ دج.",
+          "$456000 > 450000$ : لا تكفي، ينقص $6000$ دج."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

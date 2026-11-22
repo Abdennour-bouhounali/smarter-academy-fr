@@ -1,0 +1,255 @@
+{
+  "id": "ex-2am-muqarana-kasrayn-l4-003",
+  "lessonCode": "muqarana-kasrayn",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — كتب المكتبة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "مقارنة كسور",
+      "الباقي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "تتكوّن مكتبة القسم من القصص وهي $\\dfrac{7}{16}$ من كتبها ، ومن كتب العلوم وهي $\\dfrac{1}{4}$ منها ، والباقي مجلّات ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما الكسر الذي يمثّل الباقي ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "5/16",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط ؟ وما الكسور المعطاة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد قبل الجمع أو الطرح ثمّ اختزل ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{5}{16}$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{4} = \\dfrac{4}{16}$ .",
+          "$1 - \\dfrac{7}{16} - \\dfrac{4}{16} = \\dfrac{16 - 7 - 4}{16} = \\dfrac{5}{16}$ ."
+        ],
+        "result": "\\dfrac{5}{16}"
+      },
+      "work": "optional",
+      "timeSeconds": 90,
+      "counted": false
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أيّ الأصناف الثلاثة هو الأكثر عددًا ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "القصص",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "العلوم",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "المجلّات",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكسر الخاصّ بكلّ حالة ؟ وهل مقاماتها متساوية أو يقسم بعضها بعضًا ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور كلّها بالمقام نفسه إن اختلفت المقامات ثمّ قارن بين البسوط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحكم من البسط وحده ولا من المقام وحده ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب : القصص .",
+        "incorrect": "وحّد المقامات قبل أن تحكم ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "نكتب الكسور بالمقام $16$ : $\\dfrac{7}{16}$ ، $\\dfrac{1}{4} = \\dfrac{4}{16}$ ، $\\dfrac{5}{16}$ .",
+          "أكبر بسط هو $7$ .",
+          "الجواب : القصص ($\\dfrac{7}{16}$) ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "رتّب أجزاء الأصناف الثلاثة ($\\dfrac{7}{16}$ ؛ $\\dfrac{1}{4}$ ؛ $\\dfrac{5}{16}$) ترتيبًا تصاعديًّا .",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{1}{4} < \\dfrac{7}{16} < \\dfrac{5}{16}$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{7}{16} < \\dfrac{5}{16} < \\dfrac{1}{4}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-REVERSED"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{1}{4} < \\dfrac{5}{16} < \\dfrac{7}{16}$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{5}{16} < \\dfrac{1}{4} < \\dfrac{7}{16}$",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الترتيب الصحيح",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما مقامات هذه الكسور ؟ هل يقسم أحدها الآخر ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور كلّها بالمقام الأكبر ثمّ قارن بين البسوط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى جهة الترتيب المطلوبة : الأصغر أوّلًا في الترتيب التصاعدي والأكبر أوّلًا في التنازلي ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{4} < \\dfrac{5}{16} < \\dfrac{7}{16}$ .",
+        "incorrect": "وحّد المقامات ثمّ رتّب البسوط في الجهة المطلوبة وأعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "نكتب الكسور بالمقام نفسه ($16$) : $\\dfrac{7}{16}$ ، $\\dfrac{1}{4} = \\dfrac{4}{16}$ ، $\\dfrac{5}{16}$ .",
+          "نرتّب البسوط تصاعديًّا : $4 < 5 < 7$ .",
+          "إذن : $\\dfrac{1}{4} < \\dfrac{5}{16} < \\dfrac{7}{16}$ ."
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "هل تمثّل القصص أكثر من نصف الكتب ؟ قارن بين $\\dfrac{7}{16}$ و $\\dfrac{1}{2}$ :",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{7}{16} < \\dfrac{1}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{7}{16} > \\dfrac{1}{2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-NUMONLY"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن بين المقامين : هل أحدهما مضاعف للآخر ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسرين بالمقام الأكبر ثمّ قارن بين البسطين ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب بسط الكسر الأصغر مقامًا ومقامه في العدد نفسه حتّى يصير مقامه مساويًا للمقام الآخر ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{7}{16} < \\dfrac{1}{2}$ .",
+        "incorrect": "اختر طريقة المقارنة المناسبة للحالة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$16$ مضاعف للعدد $2$ : $16 = 2 \\times 8$ .",
+          "$\\dfrac{1}{2} = \\dfrac{1 \\times 8}{2 \\times 8} = \\dfrac{8}{16}$ .",
+          "نقارن بين البسطين : $7 < 8$ ، إذن $\\dfrac{7}{16} < \\dfrac{1}{2}$ ."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

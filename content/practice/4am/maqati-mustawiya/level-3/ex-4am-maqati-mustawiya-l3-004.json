@@ -1,0 +1,197 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l3-004",
+  "lessonCode": "maqati-mustawiya",
+  "level": 3,
+  "metadata": {
+    "title": "نشاط 3 — الطول MN",
+    "estimatedMinutes": 3,
+    "tags": [
+      "بلاطة قائمة",
+      "فيثاغورس"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-3",
+      "page": 165,
+      "section": "أنشطة"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 165): نقطع البلاطة القائمة ABCDEFGH ($DC = 25$ ، $CB = 20$ ، $CG = 6$ بالسنتيمتر) بمستو يوازي الحرف $[CG]$ ، يقطع $[DC]$ في M و $[CB]$ في N حيث $DM = 21\\,\\mathrm{cm}$ و $BN = 17\\,\\mathrm{cm}$ (الشكل).",
+    "figure": {
+      "kind": "space",
+      "view": {
+        "azimuth": -40,
+        "elevation": 34
+      },
+      "points": {
+        "D": [
+          0,
+          0,
+          6
+        ],
+        "C": [
+          25,
+          0,
+          6
+        ],
+        "B": [
+          25,
+          20,
+          6
+        ],
+        "A": [
+          0,
+          20,
+          6
+        ],
+        "H": [
+          0,
+          0,
+          0
+        ],
+        "G": [
+          25,
+          0,
+          0
+        ],
+        "F": [
+          25,
+          20,
+          0
+        ],
+        "E": [
+          0,
+          20,
+          0
+        ],
+        "M": [
+          21,
+          0,
+          6
+        ],
+        "N": [
+          25,
+          3,
+          6
+        ],
+        "P": [
+          25,
+          3,
+          0
+        ],
+        "O": [
+          21,
+          0,
+          0
+        ]
+      },
+      "solids": [
+        {
+          "type": "polyhedron",
+          "faces": [
+            [
+              "D",
+              "C",
+              "B",
+              "A"
+            ],
+            [
+              "H",
+              "G",
+              "F",
+              "E"
+            ],
+            [
+              "D",
+              "C",
+              "G",
+              "H"
+            ],
+            [
+              "C",
+              "B",
+              "F",
+              "G"
+            ],
+            [
+              "B",
+              "A",
+              "E",
+              "F"
+            ],
+            [
+              "A",
+              "D",
+              "H",
+              "E"
+            ]
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "points": [
+            "M",
+            "N",
+            "P",
+            "O"
+          ],
+          "tone": "emerald"
+        }
+      ],
+      "labels": {
+        "M": "n",
+        "N": "e",
+        "C": "ne",
+        "O": "s",
+        "P": "se"
+      },
+      "ariaLabel": "الشكل (2): نفس البلاطة يقطعها مستو شاقولي يشمل M و N ويوازي الحرف [CG] وفق المستطيل MNPO",
+      "maxWidth": 480
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما الطول $MN$ (بـ $\\mathrm{cm}$)؟",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAQTA-MAJMU",
+          "value": "7"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب CM و CN أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$CM = 25 - 21$ و $CN = 20 - 17$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المثلث MCN قائم في C."
+        }
+      ],
+      "feedback": {
+        "correct": "$CM = 4$ ، $CN = 3$ ، $MN^2 = 16 + 9 = 25$ ، $MN = 5\\,\\mathrm{cm}$ .",
+        "incorrect": "$4 + 3 = 7$ : الوتر ليس مجموع الضلعين."
+      },
+      "difficulty": 3
+    }
+  ]
+}

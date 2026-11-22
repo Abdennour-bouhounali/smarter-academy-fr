@@ -1,0 +1,80 @@
+{
+  "id": "ex-4am-barahin-ashia-l1-009",
+  "lessonCode": "barahin-ashia",
+  "level": 1,
+  "generator": {
+    "tool": "gen-barahin.mjs",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — من المساواة إلى المنتصف",
+    "estimatedMinutes": 3,
+    "tags": [
+      "منتصف",
+      "استقامية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_barahin-ashia_P2",
+      "modelledOn": "ex-23"
+    }
+  },
+  "statement": {
+    "content": "A و B و C ثلاث نقط حيث $\\overrightarrow{AB} = \\overrightarrow{BC}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "نستنتج أن:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "B منتصف [AC]",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "A منتصف [BC]",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MUNTASAF-IB-IA"
+        },
+        {
+          "id": "C",
+          "content": "ABC مثلث متقايس الأضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TUL-FAQAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الشعاعان لهما نفس المنحى ونفس الاتجاه ونفس الطول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النقطة المشتركة B نهاية الأول ومبدأ الثاني."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارسم A ثم B ثم C بالانتقال نفسه مرتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AB} = \\overrightarrow{BC}$ : B منتصف [AC]، فالنقط الثلاث على استقامة واحدة.",
+        "incorrect": "الانتقال من A إلى B هو نفسه من B إلى C : B في الوسط."
+      }
+    }
+  ]
+}

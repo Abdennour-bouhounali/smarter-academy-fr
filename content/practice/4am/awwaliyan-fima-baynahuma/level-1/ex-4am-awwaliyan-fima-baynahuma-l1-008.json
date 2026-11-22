@@ -1,0 +1,132 @@
+{
+  "id": "ex-4am-awwaliyan-fima-baynahuma-l1-008",
+  "lessonCode": "awwaliyan-fima-baynahuma",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2016 — العددان 1240 و 735",
+    "estimatedMinutes": 8,
+    "tags": [
+      "خوارزمية إقليدس",
+      "إثبات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_awwaliyan-fima-baynahuma_P2",
+      "modelledOn": "BEM 2016 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 1240 و 735.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 1240 على 735: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (1240 ; 735) بالزوج (735 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 5.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$1240 = 735 \\times 1 + 505$",
+          "$735 = 505 \\times 1 + 230$",
+          "$505 = 230 \\times 2 + 45$",
+          "$230 = 45 \\times 5 + 5$",
+          "$45 = 5 \\times 9 + 0$",
+          "آخر باقٍ غير معدوم هو 5، إذن:"
+        ],
+        "result": "PGCD(1240 ; 735) = 5"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بيّن أن العددين 248 و 147 أوليان فيما بينهما.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيمة PGCD(248 ; 147) التي وجدتها",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عددان أوليان فيما بينهما: احسب قاسمهما المشترك الأكبر PGCD(248 ; 147)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 248 على 147، ثم واصل القسمات المتتابعة إلى أن تجد باقيًا معدومًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن آخر باقٍ غير معدوم بما يتطلّبه تعريف عددين أوليين فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(248 ; 147) = 1: العددان 248 و 147 أوليان فيما بينهما.",
+        "incorrect": "راجع القسمات المتتابعة باقيًا باقيًا: آخر باقٍ غير معدوم هو القاسم المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "لاحظ أن $1240 = 5 \\times 248$ و $735 = 5 \\times 147$ .",
+          "باستعمال خوارزمية إقليدس:",
+          "$248 = 147 \\times 1 + 101$",
+          "$147 = 101 \\times 1 + 46$",
+          "$101 = 46 \\times 2 + 9$",
+          "$46 = 9 \\times 5 + 1$",
+          "$9 = 1 \\times 9 + 0$",
+          "آخر باقٍ غير معدوم هو 1، إذن PGCD(248 ; 147) = 1 .",
+          "ومنه العددان 248 و 147 أوليان فيما بينهما."
+        ],
+        "result": "PGCD(248 ; 147) = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    }
+  ]
+}

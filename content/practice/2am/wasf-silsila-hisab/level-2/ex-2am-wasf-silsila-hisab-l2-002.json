@@ -1,0 +1,234 @@
+{
+  "id": "ex-2am-wasf-silsila-hisab-l2-002",
+  "lessonCode": "wasf-silsila-hisab",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أكتب سلسلة من جملتها",
+    "estimatedMinutes": 10,
+    "tags": [
+      "كتابة",
+      "أقواس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اكتب السلسلة الموافقة لكلّ جملة، ثم احسبها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ سلسلة توافق الجملة: «فرق العدد 70 وجداء العددين 8 و 6» ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(70 - 8) \\times 6$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$70 - 8 \\times 6$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بآخر عملية في الجملة: هي الأخيرة التي تُكتب بين قطعتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كلّ قطعة على حدة، وضع بين قوسين كلّ قطعة يجب أن تُحسب قبل آخر عملية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر سلسلتك بحسابها: هل آخر عملية فيها هي التي في الجملة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة الصحيحة: $70 - 8 \\times 6$ .",
+        "incorrect": "ابدأ بآخر عملية في الجملة، وضع بين قوسين كلّ قطعة تُحسب قبلها، وانتبه إلى ترتيب القطعتين."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية في الجملة هي $-$.",
+          "نكتب كلّ قطعة ثم نربط بينهما: $70 - 8 \\times 6$ (لا حاجة إلى قوسين: الأولوية تفرض الترتيب نفسه)."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب السلسلة الموافقة للجملة: «فرق العدد 70 وجداء العددين 8 و 6» ثم احسبها.",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "22",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد كتابة السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 70 - 8 \\times 6 = 22$",
+        "incorrect": "اكتب السلسلة بالقوسين اللازمين ثم احسبها: ما بين القوسين أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "$A = 70 - 8 \\times 6$",
+          "$A = 70 - 48$",
+          "$A = 22$"
+        ],
+        "result": "22"
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أيّ سلسلة توافق الجملة: «جداء العدد 9 ومجموع العددين 7 و 5» ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$9 \\times (7 + 5)$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$9 \\times 7 + 5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-NOBRACKET"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بآخر عملية في الجملة: هي الأخيرة التي تُكتب بين قطعتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كلّ قطعة على حدة، وضع بين قوسين كلّ قطعة يجب أن تُحسب قبل آخر عملية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر سلسلتك بحسابها: هل آخر عملية فيها هي التي في الجملة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة الصحيحة: $9 \\times (7 + 5)$ .",
+        "incorrect": "ابدأ بآخر عملية في الجملة، وضع بين قوسين كلّ قطعة تُحسب قبلها، وانتبه إلى ترتيب القطعتين."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية في الجملة هي $\\times$.",
+          "نكتب كلّ قطعة ثم نربط بينهما: $9 \\times (7 + 5)$ (القوسان لازمان لأنّ القطعة يجب أن تُحسب أوّلًا)."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "اكتب السلسلة الموافقة للجملة: «جداء العدد 9 ومجموع العددين 7 و 5» ثم احسبها.",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "108",
+      "misconceptionSignatures": [
+        {
+          "value": "68",
+          "id": "MISC-WASF-NOBRACKET"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد كتابة السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 9 \\times (7 + 5) = 108$",
+        "incorrect": "اكتب السلسلة بالقوسين اللازمين ثم احسبها: ما بين القوسين أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "$B = 9 \\times (7 + 5)$",
+          "$B = 9 \\times 12$",
+          "$B = 108$"
+        ],
+        "result": "108"
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

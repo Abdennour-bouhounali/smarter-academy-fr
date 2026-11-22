@@ -1,0 +1,196 @@
+{
+  "id": "ex-2am-masafa-nuqtatayn-l2-003",
+  "lessonCode": "masafa-nuqtatayn",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — نقطة على بعد معلوم من نقطة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "نقطة على بعد معلوم",
+      "عدد النقط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعلّم $M(-1{,}5)$ على مستقيم مدرّج ونبحث عن نقط تبعد عنها بمسافة معلومة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "النقطة $N$ تنتمي إلى المستقيم المدرّج نفسه، $MN=3$ ، وهي على يمين النقطة $M(-1{,}5)$ . ما فاصلة $N$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "1.5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SIGNSWAP",
+          "value": "-1.5"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة المعطاة هي المسافة بين النقطتين: النقطة المطلوبة تبعد بها عن النقطة المعلومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كانت على اليمين أضفنا المسافة إلى الفاصلة المعلومة، وإذا كانت على اليسار طرحناها منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب المسافة بين النقطتين انطلاقًا من فاصلتيهما."
+        }
+      ],
+      "feedback": {
+        "correct": "فاصلة $N$ هي $+1{,}5$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "النقطة على اليمين فنضيف المسافة إلى فاصلة $M$",
+          "$-1{,}5+3=+1{,}5$"
+        ],
+        "result": "1.5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "النقطة $N$ تنتمي إلى المستقيم المدرّج نفسه، $MN=3$ ، وهي على يسار النقطة $M(-1{,}5)$ . ما فاصلة $N$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-4.5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SIGNSWAP",
+          "value": "4.5"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة المعطاة هي المسافة بين النقطتين: النقطة المطلوبة تبعد بها عن النقطة المعلومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كانت على اليمين أضفنا المسافة إلى الفاصلة المعلومة، وإذا كانت على اليسار طرحناها منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب المسافة بين النقطتين انطلاقًا من فاصلتيهما."
+        }
+      ],
+      "feedback": {
+        "correct": "فاصلة $N$ هي $-4{,}5$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "النقطة على اليسار فنطرح المسافة من فاصلة $M$",
+          "$-1{,}5-3=-4{,}5$"
+        ],
+        "result": "-4.5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "نقطة معلومة $M(-1{,}5)$ على مستقيم مدرّج. كم نقطة من المستقيم تبعد $3$ عن $M$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نقطة واحدة فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MASAFA2-ONEANSWER"
+        },
+        {
+          "id": "B",
+          "content": "نقطتان",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لا توجد أيّ نقطة",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "ثلاث نقط",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تخيّل النقطة المعلومة على المستقيم وتحرّك منها بالمسافة المعطاة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اسأل نفسك: هل تغيّر الجهة المختارة موضع النقطة التي تصل إليها؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب المسافة بين النقطة المعلومة وكلّ نقطة تجدها."
+        }
+      ],
+      "feedback": {
+        "correct": "توجد نقطتان، إحداهما على يمين $M$ والأخرى على يسارها.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "نبتعد عن $M$ بالمسافة نفسها إلى اليمين وإلى اليسار",
+          "فنجد نقطتين"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

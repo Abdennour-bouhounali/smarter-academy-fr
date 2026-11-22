@@ -1,0 +1,198 @@
+{
+  "id": "ex-2am-silsila-bi-aqwas-l2-001",
+  "lessonCode": "silsila-bi-aqwas",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — اللمسات الصحيحة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "آلة حاسبة",
+      "خطّ الكسر"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-70",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "لدينا العبارتان $A = 18 + 4 \\times (3 + 2{,}5)$ و $B = \\dfrac{6 \\times 5 + 18}{12 - 4}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $A = 18 + 4 \\times (3 + 2{,}5)$ .",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "40",
+      "misconceptionSignatures": [
+        {
+          "value": "32.5",
+          "id": "MISC-AQWAS-IGNORED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع إطارًا حول القوسين: ما بداخلهما يُحسب أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب ما بين القوسين وفق أولوية العمليات، ثم أعد كتابة العبارة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك عملية بعد عملية إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 18 + 4 \\times (3 + 2{,}5) = 40$",
+        "incorrect": "ما بين القوسين يُحسب أوّلًا، ثم نكمل العمليات باحترام أولوية الضرب والقسمة على الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$A = 18 + 4 \\times (3 + 2{,}5)$",
+          "$A = 18 + 4 \\times 5{,}5$",
+          "$A = 18 + 22$",
+          "$A = 40$"
+        ],
+        "result": "A = 40"
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أراد تلميذ حساب العدد $B = \\dfrac{6 \\times 5 + 18}{12 - 4}$ بآلة حاسبة علمية. ما اللمسات التي يجب أن يحجزها؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(6 \\times 5 + 18) \\div (12 - 4) =$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$(6 \\times 5 + 18) \\div 12 - 4 =$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-CALCNOBRACKET"
+        },
+        {
+          "id": "C",
+          "content": "$6 \\times 5 + 18 \\div 12 - 4 =$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-CALCNOBRACKET"
+        },
+        {
+          "id": "D",
+          "content": "$6 \\times 5 + 18 \\div (12 - 4) =$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-CALCNOBRACKET"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجب حسابه كلّه قبل القسمة أو الضرب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جرّب في ذهنك كل اختيار: أيّ اختيار يحسب العبارة المطلوبة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$(6 \\times 5 + 18) \\div (12 - 4) =$ تعطي $6$ .",
+        "incorrect": "كل قوس نحتاجه في الحساب يجب أن نكتبه على الآلة: خطّ الكسر يصير قسمة بين قوسين."
+      },
+      "solution": {
+        "lines": [
+          "نكتب كل قوس نحتاجه: $(6 \\times 5 + 18) \\div (12 - 4) =$",
+          "فتظهر النتيجة $6$ ."
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اكتب العبارة $B = \\dfrac{6 \\times 5 + 18}{12 - 4}$ دون استعمال خطّ الكسر ثم احسب قيمتها.",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "27.5",
+          "id": "MISC-AQWAS-BARSPLIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى البسط وإلى المقام: كلٌّ منهما عبارة تُحسب وحدها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب البسط وحده والمقام وحده، ثم اقسم أحدهما على الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يمكنك أن تكتب البسط والمقام كلًّا بين قوسين ثم تضع علامة القسمة بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = \\dfrac{6 \\times 5 + 18}{12 - 4} = 6$",
+        "incorrect": "خطّ الكسر يجمع البسط ويجمع المقام: نحسب كلًّا منهما أوّلًا ثم نقسم."
+      },
+      "solution": {
+        "lines": [
+          "$B = \\dfrac{6 \\times 5 + 18}{12 - 4}$",
+          "$B = (6 \\times 5 + 18) \\div (12 - 4)$",
+          "$B = (30 + 18) \\div 8$",
+          "$B = 48 \\div 8$",
+          "$B = 6$"
+        ],
+        "result": "B = 6"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "id": "ex-4am-tarrid-taalufi-l2-004",
+  "lessonCode": "tarrid-taalufi",
+  "level": 2,
+  "metadata": {
+    "title": "كراء الدرّاجة — من المبلغ إلى المدة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "صورة عدد",
+      "عدد صورته معلومة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-taalufi_P1",
+      "modelledOn": "act-4",
+      "adaptedFrom": "ex-4am-tarrid-taalufi-l2-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "كراء درّاجة: رسم ثابت 300DA ثم 150DA للساعة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب مبلغ الكراء لمدة 4 ساعات.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "900",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAALUFI-NISYAN-B",
+          "value": "600"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثمن الساعات ثم الرسم الثابت."
+        }
+      ],
+      "feedback": {
+        "correct": "$150 \\times 4 + 300$ .",
+        "incorrect": "اضرب 4 في ثمن الساعة ثم أضف الرسم الثابت."
+      },
+      "solution": {
+        "lines": [
+          "$150 \\times 4 + 300 = 600 + 300 = 900$",
+          "المبلغ 900DA ."
+        ],
+        "result": "900DA"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "دفع أنيس 1200DA . كم ساعة اكترى الدرّاجة؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الساعات",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح الرسم الثابت من المبلغ أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اقسم الباقي على ثمن الساعة."
+        }
+      ],
+      "feedback": {
+        "correct": "$(1200 - 300) \\div 150$ .",
+        "incorrect": "المبلغ = 150 × عدد الساعات + 300: اعزل عدد الساعات."
+      },
+      "solution": {
+        "lines": [
+          "$150x + 300 = 1200$",
+          "$150x = 900$",
+          "$x = 6$",
+          "اكترى أنيس الدرّاجة 6 ساعات."
+        ],
+        "result": "6"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

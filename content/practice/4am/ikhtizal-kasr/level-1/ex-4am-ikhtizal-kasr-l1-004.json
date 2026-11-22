@@ -1,0 +1,83 @@
+{
+  "id": "ex-4am-ikhtizal-kasr-l1-004",
+  "lessonCode": "ikhtizal-kasr",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2020 — العدد A = 3/4 + 5/4 × 2/15",
+    "estimatedMinutes": 3,
+    "tags": [
+      "كسر غير قابل للاختزال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_ikhtizal-kasr_P4",
+      "modelledOn": "BEM 2020 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2020",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "إليك العدد $A$ حيث:",
+    "formulas": [
+      "A = \\dfrac{3}{4} + \\dfrac{5}{4} \\times \\dfrac{2}{15}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب $A$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "11/12",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالعملية ذات الأولوية: ما بين القوسين، ثم الضرب أو القسمة، ثم الجمع أو الطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختزل كل كسر وسيط قبل أن تواصل، ثم وحّد المقامات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "في الأخير تحقّق أن البسط والمقام أوليان فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{5}{4} \\times \\dfrac{2}{15} = \\dfrac{1}{6}$ ثم $\\dfrac{9}{12} + \\dfrac{2}{12}$ .",
+        "incorrect": "احترم أولوية العمليات، ثم اختزل الناتج إلى أن يصير البسط والمقام أوليين فيما بينهما.",
+        "notIrreducible": "القيمة صحيحة لكن الكسر ما زال قابلًا للاختزال: اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{3}{4} + \\dfrac{5 \\times 2}{4 \\times 15}$",
+          "$A = \\dfrac{3}{4} + \\dfrac{10}{60}$",
+          "$A = \\dfrac{3}{4} + \\dfrac{1}{6}$",
+          "$A = \\dfrac{9}{12} + \\dfrac{2}{12}$"
+        ],
+        "result": "A = \\dfrac{11}{12}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

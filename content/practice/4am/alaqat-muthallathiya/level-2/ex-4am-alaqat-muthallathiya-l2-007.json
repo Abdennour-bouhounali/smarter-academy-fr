@@ -1,0 +1,136 @@
+{
+  "id": "ex-4am-alaqat-muthallathiya-l2-007",
+  "lessonCode": "alaqat-muthallathiya",
+  "level": 2,
+  "metadata": {
+    "title": "جيب التمام والظل من جيب يساوي 5/13",
+    "estimatedMinutes": 5,
+    "tags": [
+      "العلاقات المثلثية",
+      "القيمة المضبوطة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_alaqat-muthallathiya_P2",
+      "modelledOn": "method-relations"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "$x$ قيس زاوية حادة حيث $\\sin x = \\dfrac{5}{13}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القيمة المضبوطة للعدد $\\cos x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "12/13",
+      "misconceptionSignatures": [
+        {
+          "value": "8/13",
+          "id": "MISC-MUTH-JAMA-NISAB"
+        },
+        {
+          "value": "144/169",
+          "id": "MISC-MUTH-JADHR-NASI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العلاقة التي تربط جيب الزاوية وجيب تمامها هي $\\cos^2 x + \\sin^2 x = 1$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اعزل $\\cos^2 x$ ثم عوّض الجيب بقيمته، ولا تنس تربيع البسط والمقام معا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\cos x$ عدد موجب تماما: خذ الجذر التربيعي الموجب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\cos^2 x = 1 - \\dfrac{25}{169} = \\dfrac{144}{169}$ ، إذن $\\cos x = \\dfrac{12}{13}$ .",
+        "incorrect": "استعمل العلاقة بين المربعين، ثم خذ الجذر الموجب."
+      },
+      "solution": {
+        "lines": [
+          "$\\cos^2 x = 1 - \\sin^2 x = 1 - \\dfrac{25}{169} = \\dfrac{144}{169}$",
+          "$\\cos x > 0$ ، إذن $\\cos x = \\sqrt{\\dfrac{144}{169}}$"
+        ],
+        "result": "\\cos x = \\dfrac{12}{13}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج القيمة المضبوطة للعدد $\\tan x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "5/12",
+      "misconceptionSignatures": [
+        {
+          "value": "12/5",
+          "id": "MISC-MUTH-TAN-QISMA-MAQLUBA"
+        },
+        {
+          "value": "60/169",
+          "id": "MISC-MUTH-DARB-BADAL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الظل هو حاصل قسمة الجيب على جيب التمام: $\\tan x = \\dfrac{\\sin x}{\\cos x}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على كسر هي الضرب في مقلوبه، ثم اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan x = \\dfrac{5}{13} \\times \\dfrac{13}{12} = \\dfrac{5}{12}$ .",
+        "incorrect": "الظل = الجيب ÷ جيب التمام، والقسمة على كسر ضرب في مقلوبه."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan x = \\dfrac{\\sin x}{\\cos x} = \\dfrac{5}{13} \\div \\dfrac{12}{13} = \\dfrac{5}{13} \\times \\dfrac{13}{12}$"
+        ],
+        "result": "\\tan x = \\dfrac{5}{12}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

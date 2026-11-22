@@ -1,0 +1,292 @@
+{
+  "id": "ex-3am-quwat-adad-nisbi-l4-005",
+  "lessonCode": "quwat-adad-nisbi",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — احسب الأعداد الآتية",
+    "estimatedMinutes": 9,
+    "tags": [
+      "قواعد الحساب على القوى",
+      "سلسلة حسابات"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-78",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الأول",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "احسب الأعداد الآتية:",
+    "formulas": [
+      "A = \\dfrac{2^{9} \\times 2^{-3}}{(2^{2})^{3}}",
+      "B = \\dfrac{3^{4} \\times 3^{3}}{(5 - 2)^{5}}",
+      "C = (2 - 6)^{3} \\div (3{,}5 \\times 2 + 9) \\times 3",
+      "D = 2^{-2} - 3^{-1}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $A$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-QUWA-ZERO-ONE-EXP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب البسط والمقام على شكل قوتين للعدد 2."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ماذا تلاحظ على الأسين؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "من أجل $a \\neq 0$ : $a^0 = 1$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = \\dfrac{2^6}{2^6} = 2^0 = 1$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$2^{9} \\times 2^{-3} = 2^{6}$ و $(2^{2})^{3} = 2^{6}$",
+          "$A = 2^{0} = 1$"
+        ],
+        "result": "A = 1"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $B$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-QUWA-POWER-AS-PRODUCT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "البسط والمقام قوتان للأساس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل قسمة قوتين لهما الأساس نفسه: نطرح أس المقام من أس البسط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طرح أسّ سالب يعني إضافة معاكسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = \\dfrac{3^7}{3^5} = 3^2 = 9$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$3^{4} \\times 3^{3} = 3^{7}$ و $(5 - 2)^{5} = 3^{5}$",
+          "$B = 3^{7-5} = 3^{2} = 9$"
+        ],
+        "result": "B = 9"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "احسب $3{,}5 \\times 2 + 9$ (القوس الثاني في $C$ ).",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة) أو كسر",
+      "expectedAnswer": "16",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هذه المرحلة حساب على الأعداد العشرية (درس سابق)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز الضرب قبل الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من موضع الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$7 + 9 = 16$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$3{,}5 \\times 2 = 7$",
+          "$7 + 9 = 16$"
+        ],
+        "result": "16"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "احسب $C$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "-12",
+      "misconceptionSignatures": [
+        {
+          "value": "-4/3",
+          "id": "MISC-QUWA-PRIORITY"
+        },
+        {
+          "value": "12",
+          "id": "MISC-QUWA-ODD-EVEN-SIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما أول عملية تُنجز في هذه العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأولوية: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب مرحلة واحدة في كل سطر، وتحقّق من إشارة كل حدّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = -64 \\div 16 \\times 3 = -12$ .",
+        "incorrect": "احترم أولوية العمليات: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$C = (-4)^{3} \\div 16 \\times 3$",
+          "$C = -64 \\div 16 \\times 3 = -4 \\times 3$",
+          "$C = -12$"
+        ],
+        "result": "C = -12"
+      },
+      "work": "required",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "statement": "احسب $D$ ، واكتب النتيجة على شكل كسر.",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "-1/12",
+      "misconceptionSignatures": [
+        {
+          "value": "-1",
+          "id": "MISC-QUWA-NEG-EXP-NEGATIVE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$a^{-n}$ هو مقلوب $a^n$ ، فهو لا يدلّ على عدد سالب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $a^n$ أولًا، ثم خذ مقلوبه، وحافظ على إشارة $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "من أجل $a \\neq 0$ : $a^0 = 1$ و $a^1 = a$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$D = \\dfrac{1}{4} - \\dfrac{1}{3} = -\\dfrac{1}{12}$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$2^{-2} = \\dfrac{1}{4}$ و $3^{-1} = \\dfrac{1}{3}$",
+          "$D = \\dfrac{3}{12} - \\dfrac{4}{12} = -\\dfrac{1}{12}$"
+        ],
+        "result": "D = -\\dfrac{1}{12}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

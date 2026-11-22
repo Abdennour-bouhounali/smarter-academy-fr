@@ -1,0 +1,187 @@
+{
+  "id": "ex-4am-inshaat-talis-l4-008",
+  "lessonCode": "inshaat-talis",
+  "level": 4,
+  "metadata": {
+    "title": "خطأ يونس: فتحة مدور تغيّرت",
+    "estimatedMinutes": 10,
+    "tags": [
+      "تحليل خطأ",
+      "تقسيم قطعة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_inshaat-talis_P1",
+      "modelledOn": "method-divide",
+      "adaptedFrom": "ex-4am-inshaat-talis-l4-008"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أراد يونس تقسيم قطعة $[AB]$ طولها $18\\,\\mathrm{cm}$ إلى أربع قطع متقايسة: عيّن على نصف مستقيم $[Ax)$ ثلاث قطع متتالية بفتحة مدور $2\\,\\mathrm{cm}$ ثم قطعة رابعة بفتحة $3\\,\\mathrm{cm}$ ، فحصل على العلامات $P_1$ ، $P_2$ ، $P_3$ ، $P_4$ . وصل $P_4$ بـ $B$ ورسم الموازيات للمستقيم $(P_4B)$ المارّة بـ $P_1$ و $P_2$ و $P_3$ ، فقطعت $[AB]$ في $M_1$ و $M_2$ و $M_3$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب الطول $AP_4$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع أطوال القطع الأربع على $[Ax)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AP_4 = 2 + 2 + 2 + 3 = 9\\,\\mathrm{cm}$ .",
+        "incorrect": "القطعة الرابعة طولها $3\\,\\mathrm{cm}$ لا $2\\,\\mathrm{cm}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$AP_4 = AP_3 + P_3P_4 = 3 \\times 2 + 3$"
+        ],
+        "result": "AP_4 = 9\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب الطول $AM_1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "4,5",
+          "id": "MISC-TALIS-ADAD-AL-ALAMAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(P_1M_1) \\parallel (P_4B)$ : $\\dfrac{AM_1}{AB} = \\dfrac{AP_1}{AP_4}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AM_1}{18} = \\dfrac{2}{9}$ ومنه $AM_1 = 4\\,\\mathrm{cm}$ .",
+        "incorrect": "طبّق خاصية طالس بالطولين الحقيقيين $AP_1$ و $AP_4$ ، لا بعدد العلامات."
+      },
+      "solution": {
+        "lines": [
+          "$(P_1M_1) \\parallel (P_4B)$ ، حسب خاصية طالس: $\\dfrac{AM_1}{AB} = \\dfrac{AP_1}{AP_4} = \\dfrac{2}{9}$",
+          "$AM_1 = \\dfrac{2}{9} \\times 18$"
+        ],
+        "result": "AM_1 = 4\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب الطول $M_3B$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "4,5",
+          "id": "MISC-TALIS-ADAD-AL-ALAMAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $AM_3$ بالطريقة نفسها: $\\dfrac{AM_3}{AB} = \\dfrac{AP_3}{AP_4}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AM_3 = \\dfrac{6}{9} \\times 18 = 12$ ومنه $M_3B = 6\\,\\mathrm{cm}$ : القطع ليست متقايسة ( $4$ و $6$ ).",
+        "incorrect": "$M_3B = AB - AM_3$ ، و $AM_3$ يُحسب بخاصية طالس."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AM_3}{AB} = \\dfrac{AP_3}{AP_4} = \\dfrac{6}{9}$ ومنه $AM_3 = 12$",
+          "$M_3B = 18 - 12$"
+        ],
+        "result": "M_3B = 6\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "اشرح خطأ يونس ثم صحّح إنشاءه.",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الشرط على القطع المعيّنة على نصف المستقيم المساعد؟"
+        }
+      ],
+      "feedback": {
+        "correct": "يجب أن تكون القطع الأربع على $[Ax)$ متقايسة: فتحة المدور نفسها في المرات الأربع.",
+        "incorrect": "قارن برهانك بالحل النموذجي: المعطيات، ثم التوازي، ثم النسب المتساوية وذكر الخاصية المستعملة."
+      },
+      "solution": {
+        "lines": [
+          "خاصية طالس تنقل نسب الأطوال: $\\dfrac{AM_k}{AB} = \\dfrac{AP_k}{AP_4}$ ، فالقطع على $[AB]$ تتقايس فقط إذا تقايست القطع على $[Ax)$ .",
+          "خطأ يونس: غيّر فتحة المدور في القطعة الرابعة، فحصل على $\\dfrac{2}{9}$ بدل $\\dfrac{1}{4}$ .",
+          "1) نرسم نصف مستقيم $[Ax)$ لا يحمل القطعة $[AB]$ .",
+          "2) نعيّن عليه بالمدور، ابتداءً من $A$ ، 4 قطع متقايسة متتالية (بفتحة مدور كيفية) تنتهي عند العلامة $P_{4}$ .",
+          "3) نصل العلامة $P_{4}$ بالنقطة $B$ .",
+          "4) نرسم بالمسطرة والكوس الموازي للمستقيم $(P_{4}B)$ المارّ بالعلامة $P_{1}$ : يقطع $[AB]$ في $M_1$ .",
+          "التبرير: $(P_{1}M_1) \\parallel (P_{4}B)$ ، فحسب خاصية طالس في المثلثين $AP_{1}M_1$ و $AP_{4}B$ : $\\dfrac{AM_1}{AB} = \\dfrac{AP_{1}}{AP_{4}} = \\dfrac{1}{4}$ ."
+        ]
+      },
+      "timeSeconds": 300
+    }
+  ]
+}

@@ -1,0 +1,391 @@
+{
+  "id": "ex-3am-muadalat-darajat-ula-l5-003",
+  "lessonCode": "muadalat-darajat-ula",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — ضيعة وخزّان ماء",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "كسور",
+      "العطاء"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 3,
+      "file": "3am-s3-56",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: يملك الحاج رشيد ضيعة فيها $x$ شجرة مثمرة يتصدّق بجزء من ثمارها على الفقراء كلّ سنة: أشجار الزيتون تمثّل $\\dfrac{1}{3}$ من العدد الكلّي، وأشجار التين $\\dfrac{2}{5}$ منه، وعدد أشجار النخيل $28$ شجرة.\nالجزء الثاني: لسقي الأشجار يستعمل خزّان ماء سعته $2\\,000$ لتر، وتحتاج كلّ شجرة إلى $18$ لترًا يوميًّا."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "ما الكسر الذي يمثّل أشجار النخيل من العدد الكلّي؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "النخيل يمثّل $\\dfrac{4}{15}$ من الأشجار.",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "كسر",
+      "expectedAnswer": "4/15",
+      "solution": {
+        "lines": [
+          "$1 - \\dfrac{1}{3} - \\dfrac{2}{5} = \\dfrac{15 - 5 - 6}{15} = \\dfrac{4}{15}$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما المعادلة التي تترجم الوضعية؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "النخيل = الكلّ − الزيتون − التين = $28$ .",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{x}{3} + \\dfrac{2}{5}x = 28$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        },
+        {
+          "id": "B",
+          "content": "$x - \\dfrac{1}{3} - \\dfrac{2}{5} = 28$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        },
+        {
+          "id": "C",
+          "content": "$x - \\dfrac{x}{3} - \\dfrac{2}{5}x = 28$",
+          "isCorrect": true
+        }
+      ],
+      "solution": {
+        "lines": [
+          "ما بقي بعد الزيتون والتين $x - \\dfrac{x}{3} - \\dfrac{2}{5}x$ ويساوي $28$ : $x - \\dfrac{x}{3} - \\dfrac{2}{5}x = 28$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما العدد الكلّي للأشجار $x$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "في الضيعة $105$ أشجار.",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "عدد الأشجار",
+      "expectedAnswer": "105",
+      "misconceptionSignatures": [
+        {
+          "value": "28",
+          "id": "MISC-MUADALA-PARTIAL-SOLVE"
+        },
+        {
+          "value": "420",
+          "id": "MISC-MUADALA-DIV-WRONG"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "نبسّط: $\\dfrac{4}{15}x = 28$ .",
+          "نضرب الطرفين في $\\dfrac{15}{4}$ : $x = 28 \\times \\dfrac{15}{4} = 105$ ."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "ما كمية الماء اللازمة يوميًّا لسقي الأشجار كلّها بالتر؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "يلزم $1\\,890$ لترًا.",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "الكمية باللتر",
+      "expectedAnswer": "1890",
+      "solution": {
+        "lines": [
+          "$105 \\times 18 = 1\\,890$ لترًا."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "يريد الحاج رشيد غرس $n$ شجرة إضافية بحيث تستهلك الأشجار كلّها $2\\,160$ لترًا يوميًّا. ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "$n = 15$ .",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "عدد الأشجار",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "270",
+          "id": "MISC-MUADALA-PARTIAL-SOLVE"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "نكتب: $18n + 1\\,890 = 2\\,160$ .",
+          "نضيف $-1890$ إلى الطرفين (معاكس $1890$) فنجد: $18n = 270$ .",
+          "نقسم الطرفين على $18$ فنجد: $n = 15$ ."
+        ]
+      },
+      "timeSeconds": 105
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ج",
+      "statement": "هل تكفي سعة الخزّان $2\\,000$ لتر لسقي الأشجار الحالية ($105$ شجرة)؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "يكفي الخزّان لأنّ $1\\,890 \\leq 2\\,000$ ، ويبقى $110$ لترات.",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، ينقص $110$ لترات",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-DECISION"
+        },
+        {
+          "id": "B",
+          "content": "نعم، ويبقى $110$ لترات",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نعم، ويبقى $90$ لترًا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-DECISION"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "$105 \\times 18 = 1\\,890$ و $2\\,000 - 1\\,890 = 110$ ، فالخزّان يكفي ويبقى $110$ لترات."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "02",
+      "sub": "د",
+      "statement": "تحقّق من عدد الأشجار $105$ في نصّ المسألة.",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$35 + 42 + 28 = 105$ .",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب إجابتك ثم قارنها بالتصحيح النموذجي",
+      "solution": {
+        "lines": [
+          "الزيتون $\\dfrac{105}{3} = 35$ والتين $\\dfrac{2}{5} \\times 105 = 42$ والنخيل $28$ .",
+          "المجموع $35 + 42 + 28 = 105$ ، فالنتيجة صحيحة."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

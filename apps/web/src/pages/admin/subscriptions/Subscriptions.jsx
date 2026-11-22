@@ -1,7 +1,7 @@
-import React, { useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { CreditCard } from 'lucide-react';
-import AdminPage from '../../../components/admin/AdminPage';
 import DataTable from '../../../components/admin/ui/DataTable';
 import StatusBadge from '../../../components/admin/ui/StatusBadge';
 import { FilterBar, SelectFilter, Pagination } from '../../../components/admin/ui/FilterBar';
@@ -9,32 +9,31 @@ import { EmptyState } from '../../../components/admin/ui/states';
 import { useAdminResource } from '../../../hooks/useAdminResource';
 import { fetchSubscriptions, fetchPayments } from '../../../services/admin/accountService';
 import { useDocumentMeta } from '../../../hooks/useDocumentMeta';
-
-const dateFormat = new Intl.DateTimeFormat('fr-FR', { dateStyle: 'medium' });
-const formatDate = (value) => (value ? dateFormat.format(new Date(value)) : '—');
+import { AdminPage, useAdminLabels, formatDate, Num } from '../adminUi';
 
 /**
- * Écran délibérément en LECTURE SEULE : aucun fournisseur de paiement n'est
- * intégré, et saisir un abonnement à la main donnerait un accès que rien n'a
- * payé. L'état vide dit pourquoi il est vide.
+ * Les abonnements — tous nés d'une ACTIVATION MANUELLE (fiche du compte) ou
+ * d'un code d'activation lié à une offre. Aucun paiement en ligne : ce
+ * tableau liste, et renvoie vers la fiche du compte pour agir.
  */
 function NoProviderNotice() {
+  const { t } = useTranslation('admin');
   return (
     <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
       <p className="font-inter text-sm text-slate-700">
-        <strong>Aucun système de paiement n’est encore intégré.</strong> Ces tableaux resteront vides
-        jusque-là — ce n’est pas une erreur de chargement.
+        <strong>{t('subscriptions.noticeTitle')}</strong> {t('subscriptions.noticeBody')}
       </p>
       <p className="mt-1 font-inter text-xs text-slate-500">
-        Le modèle est volontairement indépendant du fournisseur : brancher Stripe ou un autre
-        prestataire n’imposera pas de refonte. L’administration reste en lecture seule.
+        {t('subscriptions.noticeHint')}
       </p>
     </div>
   );
 }
 
 export function AdminSubscriptions() {
-  useDocumentMeta('Abonnements — Administration');
+  const { t } = useTranslation('admin');
+  useDocumentMeta(t('subscriptions.metaTitle'));
+  const L = useAdminLabels();
 
   const [status, setStatus] = useState();
   const [page, setPage] = useState(1);
@@ -43,21 +42,21 @@ export function AdminSubscriptions() {
 
   return (
     <AdminPage
-      eyebrow="Abonnements"
-      title="Abonnements"
-      subtitle="L’état d’abonnement est indépendant de l’état du compte : « compte actif, abonnement expiré » est valide."
+      eyebrow={t('subscriptions.eyebrow')}
+      title={t('subscriptions.title')}
+      subtitle={t('subscriptions.subtitle')}
     >
       <div className="space-y-3">
         {data?.summary?.paymentProviderIntegrated === false && <NoProviderNotice />}
 
         <FilterBar>
           <SelectFilter
-            label="Statut" allLabel="Tous les statuts" value={status}
+            label={t('common.status')} allLabel={t('subscriptions.allStatuses')} value={status}
             onChange={(v) => { setStatus(v); setPage(1); }}
             options={[
-              { value: 'active', label: 'Actif' }, { value: 'expired', label: 'Expiré' },
-              { value: 'cancelled', label: 'Annulé' }, { value: 'pending', label: 'En attente' },
-              { value: 'free', label: 'Gratuit' },
+              { value: 'active', label: t('status.active') }, { value: 'expired', label: t('status.expired') },
+              { value: 'cancelled', label: t('status.cancelled') }, { value: 'suspended', label: t('status.suspended') },
+              { value: 'trialing', label: t('status.trialing') },
             ]}
           />
         </FilterBar>
@@ -67,26 +66,37 @@ export function AdminSubscriptions() {
           loading={loading}
           error={error}
           onRetry={reload}
-          empty={<EmptyState icon={CreditCard} title="Aucun abonnement" hint="Aucun abonnement n’a encore été enregistré." />}
+          labels={L.table}
+          selectionLabel={(row) => L.selectRow(row.studentEmail ?? row.id)}
+          empty={<EmptyState icon={CreditCard} title={t('subscriptions.emptyTitle')} hint={t('subscriptions.emptyHint')} />}
           columns={[
-            { key: 'student', label: 'Élève', render: (s) => <Link to={`/admin/eleves/${s.studentId}`} className="hover:underline">{s.studentEmail}</Link> },
-            { key: 'plan', label: 'Formule', render: (s) => s.plan },
-            { key: 'status', label: 'Statut', render: (s) => <StatusBadge status={s.status} /> },
-            { key: 'startedAt', label: 'Début', render: (s) => formatDate(s.startedAt) },
-            { key: 'endsAt', label: 'Fin', render: (s) => formatDate(s.endsAt) },
-            { key: 'provider', label: 'Fournisseur', render: (s) => s.provider ?? '—' },
-            { key: 'reference', label: 'Référence', render: (s) => <code className="font-mono-jetbrains text-xs">{s.reference ?? '—'}</code> },
+            { key: 'student', label: t('subscriptions.columnUser'), render: (s) => <Link to={`/admin/${s.userRole === 'teacher' ? 'enseignants' : 'eleves'}/${s.studentId}`} className="hover:underline" dir="ltr">{s.studentEmail}</Link> },
+            { key: 'role', label: t('subscriptions.columnRole'), render: (s) => <StatusBadge status={s.userRole ?? 'student'} /> },
+            { key: 'plan', label: t('subscriptions.columnPlan'), render: (s) => <span>{s.planName ?? s.plan}{s.planVersion ? <> <Num>{`(v${s.planVersion})`}</Num></> : ''}</span> },
+            { key: 'seats', label: t('subscriptions.columnSeats'), render: (s) => (s.studentSeatLimit == null ? t('common.dash') : <Num>{s.studentSeatLimit}</Num>) },
+            { key: 'status', label: t('common.status'), render: (s) => <StatusBadge status={s.status} /> },
+            { key: 'startedAt', label: t('subscriptions.columnStart'), render: (s) => <Num>{formatDate(s.startedAt)}</Num> },
+            { key: 'endsAt', label: t('subscriptions.columnEnd'), render: (s) => <Num>{formatDate(s.endsAt)}</Num> },
+            { key: 'source', label: t('subscriptions.columnSource'), render: (s) => s.acquisitionSource ?? s.provider ?? t('common.dash') },
+            { key: 'grantedBy', label: t('subscriptions.columnGrantedBy'), render: (s) => s.grantedBy ?? t('common.dash') },
           ]}
         />
 
-        <Pagination meta={data?.subscriptions} onPage={setPage} />
+        <Pagination meta={data?.subscriptions} onPage={setPage} labels={L.pagination} />
       </div>
     </AdminPage>
   );
 }
 
+/**
+ * Le registre HISTORIQUE des règlements enregistrés à la main. Il n'est
+ * monté par aucune route aujourd'hui ; on le garde traduit pour le jour où
+ * l'administration voudra relire ce journal.
+ */
 export function AdminPayments() {
-  useDocumentMeta('Paiements — Administration');
+  const { t } = useTranslation('admin');
+  useDocumentMeta(t('subscriptions.paymentsMetaTitle'));
+  const L = useAdminLabels();
 
   const [page, setPage] = useState(1);
   const loader = useCallback((token) => fetchPayments(token, { page }), [page]);
@@ -94,9 +104,9 @@ export function AdminPayments() {
 
   return (
     <AdminPage
-      eyebrow="Abonnements"
-      title="Paiements"
-      subtitle="Aucune donnée de carte n’est stockée — il n’existe pas même de colonne pour en accueillir une."
+      eyebrow={t('subscriptions.eyebrow')}
+      title={t('subscriptions.paymentsTitle')}
+      subtitle={t('subscriptions.paymentsSubtitle')}
     >
       <div className="space-y-3">
         {data?.summary?.paymentProviderIntegrated === false && <NoProviderNotice />}
@@ -106,19 +116,21 @@ export function AdminPayments() {
           loading={loading}
           error={error}
           onRetry={reload}
-          empty={<EmptyState icon={CreditCard} title="Aucun paiement" hint="Aucune transaction enregistrée." />}
+          labels={L.table}
+          selectionLabel={(row) => L.selectRow(row.reference ?? row.id)}
+          empty={<EmptyState icon={CreditCard} title={t('subscriptions.paymentsEmptyTitle')} hint={t('subscriptions.paymentsEmptyHint')} />}
           columns={[
-            { key: 'student', label: 'Élève', render: (p) => <Link to={`/admin/eleves/${p.studentId}`} className="hover:underline">{p.studentEmail}</Link> },
-            { key: 'amount', label: 'Montant', render: (p) => `${p.amount.toFixed(2)} ${p.currency}` },
-            { key: 'plan', label: 'Formule', render: (p) => p.plan ?? '—' },
-            { key: 'status', label: 'Statut', render: (p) => <StatusBadge status={p.status} /> },
-            { key: 'provider', label: 'Fournisseur', render: (p) => p.provider ?? '—' },
-            { key: 'reference', label: 'Référence', render: (p) => <code className="font-mono-jetbrains text-xs">{p.reference ?? '—'}</code> },
-            { key: 'paidAt', label: 'Payé le', render: (p) => formatDate(p.paidAt) },
+            { key: 'student', label: t('status.student'), render: (p) => <Link to={`/admin/eleves/${p.studentId}`} className="hover:underline" dir="ltr">{p.studentEmail}</Link> },
+            { key: 'amount', label: t('plans.amount'), render: (p) => <Num>{`${p.amount.toFixed(2)} ${p.currency}`}</Num> },
+            { key: 'plan', label: t('subscriptions.columnPlan'), render: (p) => p.plan ?? t('common.dash') },
+            { key: 'status', label: t('common.status'), render: (p) => <StatusBadge status={p.status} /> },
+            { key: 'provider', label: t('subscriptions.columnSource'), render: (p) => p.provider ?? t('common.dash') },
+            { key: 'reference', label: t('subscriptions.columnReference'), render: (p) => <code dir="ltr" className="font-mono-jetbrains text-xs">{p.reference ?? t('common.dash')}</code> },
+            { key: 'paidAt', label: t('subscriptions.columnRecordedAt'), render: (p) => <Num>{formatDate(p.paidAt)}</Num> },
           ]}
         />
 
-        <Pagination meta={data?.payments} onPage={setPage} />
+        <Pagination meta={data?.payments} onPage={setPage} labels={L.pagination} />
       </div>
     </AdminPage>
   );

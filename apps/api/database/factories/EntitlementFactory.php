@@ -44,6 +44,23 @@ class EntitlementFactory extends Factory
         return $this->state(['type' => Entitlement::TYPE_ADMIN_OVERRIDE, 'source' => 'admin']);
     }
 
+    /**
+     * Le droit né d'un code d'activation.
+     *
+     * La `reference` est laissée à l'appelant quand il en a une (l'index
+     * unique (type, reference) la rend signifiante) ; sans code réel derrière,
+     * elle reste nulle — MySQL n'entre pas les NULL en collision, donc
+     * plusieurs droits de test peuvent coexister.
+     */
+    public function activationCode(?int $codeId = null): static
+    {
+        return $this->state([
+            'type' => Entitlement::TYPE_ACTIVATION_CODE,
+            'source' => 'activation_code',
+            'reference' => $codeId === null ? null : 'activation_code:'.$codeId,
+        ]);
+    }
+
     /** Terminé : la fin est DANS LE PASSÉ, statut encore « active ». */
     public function expired(): static
     {

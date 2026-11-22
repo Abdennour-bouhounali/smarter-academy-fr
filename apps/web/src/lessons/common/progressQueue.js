@@ -1,4 +1,4 @@
-import { calculateCompletionPercentage } from '@smarter-academy/core';
+import { calculateCompletionPercentage, isValidModuleNumber, migrateLessonProgress, emptyLessonProgress } from '@smarter-academy/core';
 import { scopedStorage as storage } from '../../utils/storage';
 import { putLessonProgress } from '../../services/lessonProgressService';
 import { getTotalModules } from '../registry';
@@ -25,7 +25,10 @@ const DEBOUNCE_MS = 3000;
 
 function readLessonData(lessonId) {
   try {
-    return JSON.parse(storage.getItem(`smarter_lesson_${lessonId}`)) || {};
+    // Migrée AVANT l'union avec le serveur : un « 4 » de l'ancienne
+    // disposition ne doit jamais s'y mêler (core › moduleLayoutMigrations).
+    const saved = JSON.parse(storage.getItem(`smarter_lesson_${lessonId}`));
+    return saved ? migrateLessonProgress(lessonId, saved) : emptyLessonProgress(lessonId);
   } catch {
     return {};
   }
@@ -57,7 +60,7 @@ export function snapshotLessonProgress(lessonId) {
   const completedModules = Array.isArray(data.completedModules)
     ? data.completedModules.map(String)
     : [];
-  if (completedModules.length === 0 && !data.currentModule && !data.lastVisitedAt) {
+  if (completedModules.length === 0 && !isValidModuleNumber(data.currentModule) && !data.lastVisitedAt) {
     return null; // nothing started — nothing to sync
   }
 
@@ -128,26 +131,36 @@ export async function flushProgressQueue(token, put = putLessonProgress) {
     return { flushed: 0, remaining: entries.length };
   }
 
-  const stillQueued = {};
+  const settled = new Map(); // lessonId → snapshot envoyé et réglé (accepté ou rejeté pour de bon)
   let flushed = 0;
 
   for (const [lessonId, snapshot] of entries) {
     try {
       const serverRow = await put(token, lessonId, snapshot);
       mergeServerRowIntoStorage(lessonId, serverRow);
+      settled.set(lessonId, snapshot);
       flushed += 1;
     } catch (error) {
       if (error?.status === 422 || error?.status === 404) {
+        settled.set(lessonId, snapshot);
         flushed += 1;
-      } else {
-        stillQueued[lessonId] = snapshot;
       }
     }
   }
 
-  writeProgressQueue(stillQueued);
+  // La file est RELUE avant d'être réécrite : pendant les `await`, un
+  // instantané plus récent a pu être parqué (debounce, événement `online`,
+  // un second flush concurrent). Réécrire la copie du début l'effaçait — et
+  // la complétion du dernier module d'une leçon n'atteignait jamais le
+  // serveur. On n'ôte une leçon que si son instantané est encore celui qui
+  // vient d'être réglé.
+  const current = readProgressQueue();
+  for (const [lessonId, snapshot] of settled) {
+    if (JSON.stringify(current[lessonId]) === JSON.stringify(snapshot)) delete current[lessonId];
+  }
+  writeProgressQueue(current);
 
-  return { flushed, remaining: Object.keys(stillQueued).length };
+  return { flushed, remaining: Object.keys(current).length };
 }
 
 /**

@@ -1,0 +1,243 @@
+{
+  "id": "ex-4am-jidhr-tarbii-l4-007",
+  "lessonCode": "jidhr-tarbii",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2008 — مربع فرق وجذره",
+    "estimatedMinutes": 10,
+    "tags": [
+      "(√a)² = a",
+      "√(a²) = a"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_jidhr-tarbii_P3",
+      "modelledOn": "BEM 2008 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2008",
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "ليكن $A$ عددا حيث: $A = (3 - \\sqrt{2})^2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "انشر ثم بسّط $A$ واكتبه على الشكل $a + b\\sqrt{2}$ حيث $a$ و $b$ عددان نسبيان، ثم أعط:",
+      "statement": "العدد $a$ .",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد a فقط",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-MURABBA-FARQ-BILA-2AB"
+        },
+        {
+          "value": "13",
+          "id": "MISC-TARBI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(x - y)^2 = x^2 - 2xy + y^2$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$(\\sqrt{2})^2 = 2$."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 9 - 6\\sqrt{2} + 2 = 11 - 6\\sqrt{2}$ إذن $a = 11$.",
+        "incorrect": "لا تنس الحدّ المضاعف، و $(\\sqrt{2})^2 = 2$."
+      },
+      "solution": {
+        "lines": [
+          "$A = 3^2 - 2 \\times 3 \\times \\sqrt{2} + (\\sqrt{2})^2$",
+          "$A = 9 - 6\\sqrt{2} + 2$"
+        ],
+        "result": "A = 11 - 6\\sqrt{2}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "العدد $b$ .",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد b فقط",
+      "expectedAnswer": "-6",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-MURABBA-FARQ-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل $\\sqrt{2}$ في النشر هو $-2 \\times 3$."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 11 - 6\\sqrt{2}$ إذن $b = -6$.",
+        "incorrect": "انتبه لإشارة الحدّ المضاعف في مربع فرق."
+      },
+      "solution": {
+        "lines": [
+          "$A = 11 - 6\\sqrt{2}$"
+        ],
+        "result": "b = -6"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "علما أن $3 - \\sqrt{2}$ موجب، اكتب $\\sqrt{A}$ على الشكل $c + d\\sqrt{2}$ ، ثم أعط:",
+      "statement": "العدد $c$ .",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد c فقط",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "11",
+          "id": "MISC-TARBI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\sqrt{A} = \\sqrt{(3 - \\sqrt{2})^2}$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من أجل كل عدد موجب $x$: $\\sqrt{x^2} = x$."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sqrt{A} = 3 - \\sqrt{2}$ إذن $c = 3$.",
+        "incorrect": "لا تأخذ جذر كل حد من $11 - 6\\sqrt{2}$؛ استعمل الكتابة $A = (3 - \\sqrt{2})^2$."
+      },
+      "solution": {
+        "lines": [
+          "$\\sqrt{A} = \\sqrt{(3 - \\sqrt{2})^2}$ و $3 - \\sqrt{2}$ موجب",
+          "إذن $\\sqrt{A} = 3 - \\sqrt{2}$"
+        ],
+        "result": "\\sqrt{A} = 3 - \\sqrt{2}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "العدد $d$ .",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد d فقط",
+      "expectedAnswer": "-1",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-JIDHR-MURABBA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ معامل $\\sqrt{2}$ في الكتابة التي وجدتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sqrt{A} = 3 + (-1)\\sqrt{2}$ إذن $d = -1$.",
+        "incorrect": "معامل $\\sqrt{2}$ في $3 - \\sqrt{2}$ عدد سالب."
+      },
+      "solution": {
+        "lines": [
+          "$\\sqrt{A} = 3 - \\sqrt{2} = 3 + (-1) \\times \\sqrt{2}$"
+        ],
+        "result": "d = -1"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "استنتج أن $\\sqrt{A} + \\sqrt{2}$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة √A + √2 (عدد طبيعي)",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 02."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sqrt{A} + \\sqrt{2} = 3 - \\sqrt{2} + \\sqrt{2} = 3$.",
+        "incorrect": "عوّض $\\sqrt{A}$ بالكتابة التي وجدتها في السؤال 02."
+      },
+      "solution": {
+        "lines": [
+          "$\\sqrt{A} + \\sqrt{2} = 3 - \\sqrt{2} + \\sqrt{2}$"
+        ],
+        "result": "\\sqrt{A} + \\sqrt{2} = 3"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

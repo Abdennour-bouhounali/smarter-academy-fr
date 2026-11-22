@@ -1,0 +1,251 @@
+{
+  "id": "ex-1am-tatbiq-qaida-harfiya-l5-007",
+  "lessonCode": "tatbiq-qaida-harfiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — الجمع والجداء لعددين",
+    "estimatedMinutes": 14,
+    "tags": [
+      "وضعية إدماجية",
+      "مثال مضادّ",
+      "تعميم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يقول ياسر إنّ مجموع أيّ عددين يساوي جداءهما: $a+b=a\\times b$ . وجد مثالين تصحّ فيهما القاعدة فاطمأنّ إليها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "الجزء الأول — أمثلة ياسر",
+      "statement": "تحقّق من المثال الأوّل: احسب $a\\times b$ من أجل $a=2$ و $b=2$ .",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما قيمة كلّ حرف؟ وفي كم موضع يظهر كلّ حرف في العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع القيمة في كلّ موضع يظهر فيه الحرف، وأعد إشارة الضرب بين العددين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب بالأولويات: ما بين القوسين، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: النتيجة $4$ .",
+        "incorrect": "نضع القيمة في كلّ موضع ثمّ نحسب بالأولويات."
+      },
+      "solution": {
+        "lines": [
+          "نكتب العبارة: $a\\times b$ .",
+          "نضع قيمة كلّ حرف في كلّ موضع يظهر فيه: $2\\times 2$ .",
+          "نحسب: $4$ .",
+          "الجواب: $4$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "تحقّق من المثال الثاني: احسب $a\\times b$ من أجل $a=1{,}5$ و $b=3$ .",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "4.5",
+      "misconceptionSignatures": [
+        {
+          "value": "45",
+          "id": "MISC-TATBIQ-DECIMAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما قيمة كلّ حرف؟ وفي كم موضع يظهر كلّ حرف في العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع القيمة في كلّ موضع يظهر فيه الحرف، وأعد إشارة الضرب بين العددين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب بالأولويات: ما بين القوسين، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: النتيجة $4{,}5$ .",
+        "incorrect": "الفاصلة جزء من العدد: $0{,}5$ ليس $5$ ."
+      },
+      "solution": {
+        "lines": [
+          "نكتب العبارة: $a\\times b$ .",
+          "نضع قيمة كلّ حرف في كلّ موضع يظهر فيه: $1{,}5\\times 3$ .",
+          "نحسب: $4{,}5$ .",
+          "الجواب: $4{,}5$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "الجزء الثاني — الحكم",
+      "statement": "أيّ القيم الآتية تُبطل قاعدة ياسر؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$a=2$ و $b=2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-ONEOK"
+        },
+        {
+          "id": "B",
+          "content": "$a=1{,}5$ و $b=3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-ONEOK"
+        },
+        {
+          "id": "C",
+          "content": "$a=4$ و $b=5$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الطرفين الأيمن والأيسر من أجل كلّ قيمة مقترحة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نبحث عن قيمة تختلف عندها الجهتان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القيمة التي تتساوى عندها الجهتان لا تُبطل القاعدة."
+        }
+      ],
+      "feedback": {
+        "correct": "مثال مضادّ واحد يكفي.",
+        "incorrect": "مثال تصحّ فيه المساواة لا يثبت أنّها صحيحة دائمًا: نبحث عن قيمة تختلف عندها الجهتان."
+      },
+      "solution": {
+        "lines": [
+          "نحسب الجهتين من أجل كلّ قيمة: $2+2=4$ و $2\\times 2=4$ ؛ $1{,}5+3=4{,}5$ و $1{,}5\\times 3=4{,}5$ ؛ $4+5=9$ و $4\\times 5=20$ .",
+          "الجهتان تختلفان عند $a=4$ و $b=5$ فقط: هذا مثال مضادّ."
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "من أجل $a=4$ و $b=5$ نجد $9$ و $20$ . كم مثالًا مضادًّا يلزم لإبطال القاعدة؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مثالان مضادّان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-MANYNEED"
+        },
+        {
+          "id": "B",
+          "content": "مثال مضادّ واحد",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "عدّة أمثلة مضادّة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-MANYNEED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي أثبته المثال المقدّم: هل تساوت الجهتان أم اختلفتا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مثال تصحّ فيه القاعدة لا يثبت أنّها صحيحة دائمًا، ومثال تخطئ فيه يكفي لإبطالها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الجهتين من أجل القيمة المعطاة ثمّ احكم."
+        }
+      ],
+      "feedback": {
+        "correct": "مثال واحد يكفي.",
+        "incorrect": "مثال مضادّ واحد يكفي لإبطال القاعدة، ولا نحتاج إلى أمثلة أخرى."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $a=4$ و $b=5$ : $4+5=9$ بينما $4\\times 5=20$ .",
+          "مثال مضادّ واحد يكفي لنقول إنّ القاعدة ليست صحيحة دائمًا."
+        ]
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

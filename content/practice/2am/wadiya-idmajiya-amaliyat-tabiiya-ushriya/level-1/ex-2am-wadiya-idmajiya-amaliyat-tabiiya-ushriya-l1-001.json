@@ -1,0 +1,257 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-amaliyat-tabiiya-ushriya-l1-001",
+  "lessonCode": "wadiya-idmajiya-amaliyat-tabiiya-ushriya",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أولوية العمليات، قوسان متداخلان، اسم سلسلة، حساب ذهني",
+    "estimatedMinutes": 6,
+    "tags": [
+      "أولوية",
+      "أقواس",
+      "توزيع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "سلاسل عمليات على أعداد طبيعية وعشرية: أجب عن الأسئلة الأربعة، ولا تنسَ أنّ كلّ سلسلة تُحسب بالترتيب الصحيح للعمليات."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب قيمة السلسلة $48 - 6 \\times 5 + 9$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "27",
+      "misconceptionSignatures": [
+        {
+          "value": "219",
+          "id": "MISC-SILSILA-NOPRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين وخطّ الكسر يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$48 - 6 \\times 5 + 9 = 27$ .",
+        "incorrect": "الضرب والقسمة يُنجزان قبل الجمع والطرح حتى لو ظهر الجمع أو الطرح أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "$A = 48 - 6 \\times 5 + 9$",
+          "$A = 48 - 30 + 9$",
+          "$A = 18 + 9$",
+          "$A = 27$"
+        ],
+        "result": "27"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب قيمة السلسلة $75 - [(8 + 4) \\times 5 - 20]$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "35",
+      "misconceptionSignatures": [
+        {
+          "value": "67",
+          "id": "MISC-AQWAS-IGNORED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين وخطّ الكسر يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$75 - [(8 + 4) \\times 5 - 20] = 35$ .",
+        "incorrect": "القوسان ليسا زينة: ما بينهما يُحسب أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "$A = 75 - [(8 + 4) \\times 5 - 20]$",
+          "$A = 75 - [12 \\times 5 - 20]$",
+          "$A = 75 - [60 - 20]$",
+          "$A = 75 - 40$",
+          "$A = 35$"
+        ],
+        "result": "35"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما اسم السلسلة $(17 - 5) \\times 3 + 4$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "choices": [
+        {
+          "id": "A",
+          "content": "فرق",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-FIRSTOP"
+        },
+        {
+          "id": "B",
+          "content": "مجموع",
+          "isCorrect": true
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب مرحلة مرحلة وتتبّع آخر عملية بقيت لك."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع خطًّا تحت العملية التي تُنجز في الأخير."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العملية الأخيرة هي التي تسمّي السلسلة."
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة عبارة عن مجموع: آخر عملية تُنجز فيها هي الجمع.",
+        "incorrect": "لا تسمِّ السلسلة بأوّل عملية تُنجز ولا بأوّل رمز تراه: سمِّها بآخر عملية تُنجز فيها."
+      },
+      "solution": {
+        "lines": [
+          "$A = (17 - 5) \\times 3 + 4$",
+          "$A = 12 \\times 3 + 4$",
+          "$A = 36 + 4$",
+          "$A = 40$",
+          "آخر عملية تُنجز هي الجمع ، فالسلسلة عبارة عن مجموع."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "احسب ذهنيًا $12 \\times 99$ بتفكيك $99 = 100 - 1$ : أيّ العدد يساوي $12 \\times (100 - 1)$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$1199$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-FIRSTONLY"
+        },
+        {
+          "id": "B",
+          "content": "$1188$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$111$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-ADDK"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ السلسلة وحدّد أوّل ما يُحسب فيها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز الحساب مرحلة مرحلة ولا تحسب من اليسار نحو اليمين بلا تفكير."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن نتيجتك بالأعداد المقترحة."
+        }
+      ],
+      "feedback": {
+        "correct": "$12 \\times (100 - 1) = 1188$ .",
+        "incorrect": "راجع ترتيب العمليات ثم أعد الحساب."
+      },
+      "solution": {
+        "lines": [
+          "$A = 12 \\times (100 - 1)$",
+          "$A = 12 \\times 99$",
+          "$A = 1188$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

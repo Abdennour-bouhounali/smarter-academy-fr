@@ -1,0 +1,313 @@
+{
+  "id": "ex-4am-tarrid-mushkila-l5-009",
+  "lessonCode": "tarrid-mushkila",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2010 — ساحة متوسطة بجيجل",
+    "estimatedMinutes": 18,
+    "tags": [
+      "ترييض",
+      "معادلة",
+      "متراجحة",
+      "محيط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tarrid-mushkila_P1",
+      "modelledOn": "BEM 2010 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2010",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "ساحة متوسطة بولاية جيجل، يحافظ التلاميذ على نظافتها، تتكوّن من جزأين متجاورين كما في الشكل: جزء مربع الشكل $ABCD$ طول ضلعه $x$ (بالمتر)، و جزء مستطيل الشكل $BEFC$ بُعداه $x$ و $12m$ . محيط الساحة كلها $AEFD$ هو $104m$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          5
+        ],
+        "B": [
+          5,
+          5
+        ],
+        "E": [
+          8,
+          5
+        ],
+        "F": [
+          8,
+          0
+        ],
+        "C": [
+          5,
+          0
+        ],
+        "D": [
+          0,
+          0
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "x"
+        },
+        {
+          "from": "B",
+          "to": "E",
+          "label": "12m"
+        },
+        [
+          "E",
+          "F"
+        ],
+        [
+          "F",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "A"
+        ],
+        [
+          "B",
+          "C"
+        ]
+      ],
+      "polygons": [
+        {
+          "points": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "tone": "sky"
+        },
+        {
+          "points": [
+            "B",
+            "E",
+            "F",
+            "C"
+          ],
+          "tone": "emerald"
+        }
+      ],
+      "rightAngles": [
+        [
+          "D",
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "E",
+          "F"
+        ],
+        [
+          "E",
+          "F",
+          "C"
+        ],
+        [
+          "C",
+          "D",
+          "A"
+        ]
+      ],
+      "labels": {
+        "A": "nw",
+        "B": "n",
+        "E": "ne",
+        "F": "se",
+        "C": "s",
+        "D": "sw"
+      },
+      "ariaLabel": "ساحة AEFD مكوّنة من مربع ABCD ضلعه x ومستطيل BEFC بُعداه x و 12m، متجاورين على الضلع [BC]",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب معادلة تترجم المعطيات ثم احسب $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "20",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الساحة كلها مستطيل $AEFD$ : ما هما بُعداه بدلالة $x$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المحيط = 2 × (الطول + العرض)."
+        }
+      ],
+      "feedback": {
+        "correct": "$2(x + 12) + 2x = 104$ تعطي $x = 20m$ .",
+        "incorrect": "الضلع المشترك $[BC]$ داخل الساحة لا يدخل في محيطها."
+      },
+      "solution": {
+        "lines": [
+          "الساحة مستطيل $AEFD$ بُعداه $AE = x + 12$ و $AD = x$ .",
+          "المعادلة: $2(x + 12) + 2x = 104$",
+          "$4x + 24 = 104$",
+          "$4x = 80$",
+          "$x = 20$",
+          "إذن $x = 20m$ ."
+        ],
+        "result": "x = 20\\,m"
+      },
+      "work": "required",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "احسب مساحة كل جزء.",
+      "statement": "مساحة الجزء المربع $ABCD$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المساحة بـ m²",
+      "expectedAnswer": "400",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة المربع = الضلع × الضلع."
+        }
+      ],
+      "feedback": {
+        "correct": "$400m^2$ .",
+        "incorrect": "استعمل قيمة $x$ التي وجدتها."
+      },
+      "solution": {
+        "lines": [
+          "$20 \\times 20 = 400$",
+          "مساحة الجزء المربع $400m^2$ ."
+        ],
+        "result": "400\\,m^2"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "مساحة الجزء المستطيل $BEFC$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المساحة بـ m²",
+      "expectedAnswer": "240",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة المستطيل = الطول × العرض."
+        }
+      ],
+      "feedback": {
+        "correct": "$240m^2$ .",
+        "incorrect": "استعمل قيمة $x$ التي وجدتها."
+      },
+      "solution": {
+        "lines": [
+          "$12 \\times 20 = 240$",
+          "مساحة الجزء المستطيل $240m^2$ ."
+        ],
+        "result": "240\\,m^2"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "lead": "تريد البلدية تبليط الجزء المربع بتكلفة 900DA للمتر المربع، و تغطية الجزء المستطيل بعشب اصطناعي، و خصّصت لذلك 552000DA .",
+      "statement": "☜ أعطِ أكبر ثمن ممكن للمتر المربع من العشب الاصطناعي.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد: الثمن بـ DA",
+      "expectedAnswer": "800",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب تكلفة تبليط الجزء المربع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "سمِّ $p$ ثمن المتر المربع من العشب، واكتب أن التكلفة الكلية لا تتجاوز المبلغ المخصّص."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المتراجحة."
+        }
+      ],
+      "feedback": {
+        "correct": "$360000 + 240p \\leqslant 552000$ تعطي $p \\leqslant 800$ : أكبر ثمن 800DA .",
+        "incorrect": "التكلفة الكلية = تكلفة التبليط + تكلفة العشب على مساحة الجزء المستطيل."
+      },
+      "solution": {
+        "lines": [
+          "تكلفة التبليط: $400 \\times 900 = 360000$ DA .",
+          "ليكن $p$ ثمن المتر المربع من العشب: تكلفته $240p$ .",
+          "$360000 + 240p \\leqslant 552000$",
+          "$240p \\leqslant 192000$",
+          "$p \\leqslant 800$",
+          "إذن أكبر ثمن ممكن للمتر المربع من العشب الاصطناعي هو 800DA ."
+        ],
+        "result": "p \\leqslant 800\\,DA"
+      },
+      "work": "optional",
+      "timeSeconds": 480
+    }
+  ]
+}

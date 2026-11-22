@@ -1,0 +1,124 @@
+{
+  "id": "ex-2am-silsila-bi-aqwas-l2-006",
+  "lessonCode": "silsila-bi-aqwas",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — من على صواب؟",
+    "estimatedMinutes": 10,
+    "tags": [
+      "أقواس",
+      "برّر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "حسب تلميذان العبارة $26 + (18 - 6) \\times 3$ : وجدت رانيا $62$ ووجد بلال $26$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "من منهم على صواب؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "رانيا: وجدت $62$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "بلال: وجد $26$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-IGNORED"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى القوسين: ما بداخلهما يُحسب أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز الحساب أنت أولًا مرحلة مرحلة، ثم قارنه بالعدد المقترح."
+        }
+      ],
+      "feedback": {
+        "correct": "$26 + (18 - 6) \\times 3 = 62$ .",
+        "incorrect": "احسب أنت العبارة مرحلة مرحلة ثم قارن: ما بين القوسين يُحسب أوّلًا، ثم نكمل العمليات باحترام أولوية الضرب والقسمة على الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$A = 26 + (18 - 6) \\times 3$",
+          "$A = 26 + 12 \\times 3$",
+          "$A = 26 + 36$",
+          "$A = 62$"
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "برّر اختيارك: لماذا لا يمكن حساب $18 - 6$ بعد $26 + 18$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب على ورقتك مرحلة مرحلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اسأل: أيّ عملية تُنجز أوّلًا ولماذا؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تذكر القاعدة المستعملة."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "القوسان يجعلان $18 - 6$ مقدارًا واحدًا يُحسب أوّلًا: $18 - 6 = 12$ .",
+          "ثم الضرب قبل الجمع: $12 \\times 3 = 36$ ، ثم $26 + 36 = 62$ .",
+          "أمّا $26 + 18 - 6 \\times 3$ فعبارة أخرى قيمتها $26$ ."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

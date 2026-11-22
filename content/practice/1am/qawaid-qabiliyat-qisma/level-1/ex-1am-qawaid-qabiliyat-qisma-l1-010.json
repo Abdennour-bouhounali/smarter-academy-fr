@@ -1,0 +1,141 @@
+{
+  "id": "ex-1am-qawaid-qabiliyat-qisma-l1-010",
+  "lessonCode": "qawaid-qabiliyat-qisma",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — المساواة المناسبة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "مساواة",
+      "باقٍ معدوم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "كتب تلميذ عدّة مساويات صحيحة حسابيًا للعددين 96 و 100."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اختر المساواة التي تبيّن أن العدد 96 يقبل القسمة على 8.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$96 = 8 \\times 10 + 16$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-BAQI"
+        },
+        {
+          "id": "B",
+          "content": "$96 = 8 \\times 12 + 0$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$96 = 8 \\times 11 + 8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-BAQI"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل المساويات صحيحة حسابيًا: أيّها قسمة إقليدية على 8؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في القسمة الإقليدية على 8 يكون الباقي أصغر من 8."
+        }
+      ],
+      "feedback": {
+        "correct": "$96 = 8 \\times 12$: الباقي معدوم، إذن 96 يقبل القسمة على 8.",
+        "incorrect": "المساواة المطلوبة هي القسمة الإقليدية على 8 (باقٍ أصغر من 8)، وباقيها معدوم."
+      },
+      "solution": {
+        "lines": [
+          "في المساويات الأخرى العدد المضاف لا يقل عن 8: ليست قسمة إقليدية على 8.",
+          "$96 = 8 \\times 12 + 0$ ، الباقي معدوم."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اختر المساواة التي تبيّن أن العدد 100 لا يقبل القسمة على 8.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$100 = 8 \\times 12 + 4$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$100 = 8 \\times 11 + 12$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-BAQI"
+        },
+        {
+          "id": "C",
+          "content": "$100 = 8 \\times 10 + 20$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-BAQI"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ هذه المساويات هي القسمة الإقليدية على 8؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي في القسمة الإقليدية على 8 أصغر من 8."
+        }
+      ],
+      "feedback": {
+        "correct": "$100 = 8 \\times 12 + 4$ مع $4 < 8$: الباقي غير معدوم.",
+        "incorrect": "نحكم بباقي القسمة الإقليدية على 8 نفسها، وهو أصغر من 8."
+      },
+      "solution": {
+        "lines": [
+          "القسمة الإقليدية: $100 = 8 \\times 12 + 4$ و $4 < 8$.",
+          "الباقي 4 غير معدوم، إذن 100 لا يقبل القسمة على 8."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

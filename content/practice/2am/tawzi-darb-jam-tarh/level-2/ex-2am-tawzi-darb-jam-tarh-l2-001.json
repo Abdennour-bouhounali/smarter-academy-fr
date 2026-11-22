@@ -1,0 +1,222 @@
+{
+  "id": "ex-2am-tawzi-darb-jam-tarh-l2-001",
+  "lessonCode": "tawzi-darb-jam-tarh",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أحلّل العبارتين دون حساب",
+    "estimatedMinutes": 10,
+    "tags": [
+      "تحليل",
+      "عامل مشترك"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-91",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "حلّل العبارتين الآتيتين ثم احسب قيمتيهما : $M = 6{,}5 + 6{,}5 \\times 2{,}4$ ؛ $N = 8 \\times 3{,}6 - 8 \\times 1{,}6 + 16$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ كتابة هي تحليل للعبارة $M = 6{,}5 + 6{,}5 \\times 2{,}4$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(6{,}5 + 1) \\times 2{,}4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-ADDK"
+        },
+        {
+          "id": "B",
+          "content": "$6{,}5 \\times (1 + 2{,}4)$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$6{,}5 \\times (6{,}5 + 2{,}4)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-FACTORWRONG"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "$6{,}5 + 6{,}5 \\times 2{,}4 = 6{,}5 \\times (1 + 2{,}4)$",
+          "العدد المشترك يُخرَج خارج القوسين."
+        ]
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن العدد الظاهر في الجداءين معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرج هذا العدد خارج القوسين واكتب الحدّين الآخرين بينهما بالعملية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انشر ما كتبته للتحقّق: يجب أن ترجع إلى العبارة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتابة الصحيحة هي $6{,}5 \\times (1 + 2{,}4)$ .",
+        "incorrect": "العدد الذي يضرب القوسين يضرب كلّ حدّ بالعملية نفسها التي بين الحدّين: راجع كلّ خيار بحساب الطرفين."
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $6{,}5 \\times (1 + 2{,}4)$ .",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "22.1",
+      "solution": {
+        "lines": [
+          "$6{,}5 \\times (1 + 2{,}4) = 22{,}1$"
+        ],
+        "result": "22{,}1"
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا: أين الأقواس؟ وهل يوجد عدد مشترك بين الجداءات؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر الطريقة الأسهل: وزّع الضرب على الحدّين أو أنجز ما بين القوسين أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز الحساب مرحلة مرحلة ثم تحقّق من النتيجة بطريقة ثانية."
+        }
+      ],
+      "feedback": {
+        "correct": "$6{,}5 \\times (1 + 2{,}4) = 22{,}1$",
+        "incorrect": "راجع حسابك مرحلة مرحلة، وتذكّر أنّ ما بين القوسين يُحسب أوّلًا وأنّ الضرب يتوزّع على كلّ حدّ."
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أتمم لتحلّل العبارة N : $8 \\times 3{,}6 - 8 \\times 1{,}6 + 16 = 8 \\times (3{,}6 - 1{,}6 + \\ldots)$ .",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "2",
+      "solution": {
+        "lines": [
+          "$8 \\times 3{,}6 - 8 \\times 1{,}6 + 16 = 8 \\times (3{,}6 - 1{,}6 + 2)$",
+          "$8 \\times 3{,}6 - 8 \\times 1{,}6 + 16 = 32$"
+        ],
+        "result": "2"
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي يتكرّر في الطرفين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الطرفين حدًّا بحدّ لتعرف ما ينقص."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض ما وجدته في المساواة وتحقّق من أنّ الطرفين متساويان."
+        }
+      ],
+      "feedback": {
+        "correct": "$8 \\times 3{,}6 - 8 \\times 1{,}6 + 16 = 8 \\times (3{,}6 - 1{,}6 + 2)$",
+        "incorrect": "قارن الطرفين حدًّا بحدّ ثم عوّض ما وجدته وتحقّق من تساوي الطرفين."
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "احسب $N = 8 \\times 3{,}6 - 8 \\times 1{,}6 + 16$ .",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "32",
+      "solution": {
+        "lines": [
+          "$8 \\times 3{,}6 - 8 \\times 1{,}6 + 16 = 32$"
+        ],
+        "result": "32"
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا: أين الأقواس؟ وهل يوجد عدد مشترك بين الجداءات؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر الطريقة الأسهل: وزّع الضرب على الحدّين أو أنجز ما بين القوسين أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز الحساب مرحلة مرحلة ثم تحقّق من النتيجة بطريقة ثانية."
+        }
+      ],
+      "feedback": {
+        "correct": "$8 \\times 3{,}6 - 8 \\times 1{,}6 + 16 = 32$",
+        "incorrect": "راجع حسابك مرحلة مرحلة، وتذكّر أنّ ما بين القوسين يُحسب أوّلًا وأنّ الضرب يتوزّع على كلّ حدّ."
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

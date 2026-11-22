@@ -1,0 +1,268 @@
+{
+  "id": "ex-2am-rabi-mutanasib-l5-009",
+  "lessonCode": "rabi-mutanasib",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — سقي حديقة المدرسة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "ماء",
+      "مساحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تسقي مضخّة $48$ m² من حديقة المدرسة بـ $30$ L من الماء، وحجم الماء يتناسب مع المساحة المسقيّة.\nالجزء الأول: حجم الماء.\nالجزء الثاني: المساحة.",
+    "table": {
+      "head": [
+        "المساحة (m²)",
+        "48",
+        "80",
+        "120",
+        "…"
+      ],
+      "rows": [
+        [
+          "حجم الماء (L)",
+          "30",
+          "…",
+          "…",
+          "100"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "ما حجم الماء اللازم لسقي $80$ m²؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "50",
+      "misconceptionSignatures": [
+        {
+          "value": "62",
+          "id": "MISC-RABI-ADD"
+        },
+        {
+          "value": "128",
+          "id": "MISC-RABI-INV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "الحجم $50$ L .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$30 \\div 48 = 0{,}625$",
+          "$0{,}625 \\times 80 = 50$"
+        ],
+        "result": "50"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما حجم الماء اللازم لسقي $120$ m²؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "75",
+      "misconceptionSignatures": [
+        {
+          "value": "102",
+          "id": "MISC-RABI-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "الحجم $75$ L .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}625 \\times 120 = 75$"
+        ],
+        "result": "75"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "ما المساحة التي يسقيها $100$ L من الماء؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "160",
+      "misconceptionSignatures": [
+        {
+          "value": "62,5",
+          "id": "MISC-RABI-ALIGN"
+        },
+        {
+          "value": "118",
+          "id": "MISC-RABI-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "المساحة $160$ m² .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$100 \\div 0{,}625 = 160$"
+        ],
+        "result": "160"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "خزّان الماء يسع $100$ L : هل يكفي لسقي الحديقة كلها التي مساحتها $170$ m² ؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، فالحديقة تحتاج أقل من $100$ L",
+          "isCorrect": false,
+          "misconceptionId": "MISC-RABI-ADD"
+        },
+        {
+          "id": "B",
+          "content": "لا، فالحديقة تحتاج $106{,}25$ L وهو أكبر من $100$ L",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولًا القيمة المطلوبة بدقّة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن القيمة المحسوبة بالمبلغ أو بالكمية المتاحة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القرار يُبنى على مقارنة بين عددين، لا على تقدير."
+        }
+      ],
+      "feedback": {
+        "correct": "تحتاج $106{,}25$ L ولا يكفي الخزّان.",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}625 \\times 170 = 106{,}25$",
+          "$106{,}25 > 100$"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

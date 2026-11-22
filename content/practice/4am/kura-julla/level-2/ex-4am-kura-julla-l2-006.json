@@ -1,0 +1,74 @@
+{
+  "id": "ex-4am-kura-julla-l2-006",
+  "lessonCode": "kura-julla",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — دائرة صغرى",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الدائرة الصغرى"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_kura-julla_P2",
+      "modelledOn": "know-1"
+    }
+  },
+  "statement": {
+    "content": "كرة مركزها O ونصف قطرها R، و $(\\mathcal{C})$ دائرة مرسومة على هذه الكرة مركزها $O_1$ حيث $O_1 \\neq O$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "$(\\mathcal{C})$ هي:",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "دائرة صغرى نصف قطرها أصغر من R",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "دائرة كبرى لأنها على الكرة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-DAIRA-KUBRA"
+        },
+        {
+          "id": "C",
+          "content": "دائرة صغرى نصف قطرها R",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-DAIRA-KUBRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين مركز الدائرة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الدائرة الكبرى مركزها O."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقرأ ملاحظات معارف 1 عن الدوائر الصغرى."
+        }
+      ],
+      "feedback": {
+        "correct": "مركزها يختلف عن O: دائرة صغرى، نصف قطرها أصغر من نصف قطر الكرة.",
+        "incorrect": "دائرة على الكرة ليست بالضرورة كبرى، والصغرى نصف قطرها أصغر من R."
+      }
+    }
+  ]
+}

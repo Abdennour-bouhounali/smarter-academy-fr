@@ -1,0 +1,289 @@
+{
+  "id": "ex-3am-nashr-jabri-3am-l5-009",
+  "lessonCode": "nashr-jabri-3am",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — رحلة مدرسية",
+    "estimatedMinutes": 12,
+    "tags": [
+      "وضعية إدماجية",
+      "نشر",
+      "ميزانية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تحضّر مدرسة رحلة ترفيهية لتلاميذ السنة الثالثة، ويتغيّر عدد المشاركين وثمن الرحلة بدلالة العدد الموجب $x$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "تنظّم مدرسة رحلة: عدد التلاميذ المشاركين $x + 20$ ، وثمن الرحلة للشخص الواحد $x + 30$ (بمئات الدنانير). المبلغ الذي يدفعه التلاميذ $A = (x + 20)(x + 30)$ . اكتبه على الشكل $ax^2 + bx + c$ .",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "50",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-NASHR-PRODUCT-MISSING"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني: أربعة جداءات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات الأربعة واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء الأصلي وفي النتيجة: يجب أن تجد العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = x^2 + 50x + 600$ إذن $b = 50$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$A = (x + 20)(x + 30)$",
+          "$A = x \\times x + x \\times 30 + 20 \\times x + 20 \\times 30$",
+          "$A = x^2 + 50x + 600$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "تدفع المدرسة أيضًا ثمن رحلة مرافقَين بالثمن نفسه: $2(x + 30)$ . انشر وأعط العدد الذي يُضاف إلى $2x$ .",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "60",
+      "misconceptionSignatures": [
+        {
+          "value": "30",
+          "id": "MISC-NASHR-FIRST-ONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد (أو الحرف) الذي أمام القوسين يضرب كل حدّ من الحدود التي بينهما، وليس الحدّ الأول وحده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب في كل حدّ مع إشارته: جداء عددين لهما الإشارة نفسها موجب، وجداء عددين إشارتاهما مختلفتان سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير (مثل $1$ أو $2$) في العبارة قبل النشر وبعده: يجب أن تجد العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$2(x+30) = 2x + 60$ ، إذن العدد هو $60$ .",
+        "incorrect": "عوّض $x$ بالعدد المعطى واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$2(x + 30) = 2x + 60$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "المبلغ الإجمالي $T = (x + 20)(x + 30) + 2(x + 30)$ بعد النشر والتبسيط هو:",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$T = x^2 + 52x + 660$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$T = x^2 + 52x + 630$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-FIRST-ONLY"
+        },
+        {
+          "id": "C",
+          "content": "$T = x^2 + 50x + 660$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-FIRST-ONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر كل جداء على حدة وسجّل كل الحدود الناتجة بإشاراتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الحدود المتشابهة فقط (الجزء الحرفي نفسه)، ثم رتّب الحدود: $x^2$ ثم $x$ ثم العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في العبارة الأصلية وفي المبسّطة: يجب أن تجد القيمة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$T = x^2 + 52x + 660$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$T = x^2 + 30x + 20x + 600 + 2x + 60$",
+          "$T = x^2 + 52x + 660$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "lead": "الجزء الثاني",
+      "statement": "احسب $T$ من أجل $x = 10$ (بمئات الدنانير).",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "1280",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى واحترم أولويات العمليات والإشارات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القوسين أولًا، ثم الجداءات، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يمكنك التعويض في الشكل المبسّط، ثم تحقّق بالتعويض في الشكل الأصلي."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل $x = 10$ القيمة هي $1280$ .",
+        "incorrect": "عوّض $x$ بالعدد المعطى واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$T = 100 + 520 + 660 = 1280$ أي $128000\\ \\mathrm{DA}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "ميزانية المدرسة $130000\\ \\mathrm{DA}$ . هل تكفي للرحلة من أجل $x = 10$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، تكفي",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا، لا تكفي",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-DECISION-UNCHECKED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى واحترم أولويات العمليات والإشارات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القوسين أولًا، ثم الجداءات، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يمكنك التعويض في الشكل المبسّط، ثم تحقّق بالتعويض في الشكل الأصلي."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم.",
+        "incorrect": "قارن النتيجة المحسوبة بالعدد المعطى في نصّ الوضعية."
+      },
+      "solution": {
+        "lines": [
+          "$128000 \\leq 130000$ : الميزانية تكفي."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

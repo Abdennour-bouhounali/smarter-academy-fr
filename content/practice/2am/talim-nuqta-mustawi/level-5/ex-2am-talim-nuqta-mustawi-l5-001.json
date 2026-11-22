@@ -1,0 +1,263 @@
+{
+  "id": "ex-2am-talim-nuqta-mustawi-l5-001",
+  "lessonCode": "talim-nuqta-mustawi",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — ملعب الحيّ",
+    "estimatedMinutes": 16,
+    "tags": [
+      "وضعية إدماجية",
+      "مستطيل",
+      "مساحة وكلفة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "رسم مهندس البلدية ملعب الحيّ في معلم متعامد ومتجانس وحدته $5\\,\\mathrm{m}$ . ثلاثة من رؤوس الملعب المستطيل $ABCD$ هي $A(-4\\,;\\,3)$ و $B(5\\,;\\,3)$ و $C(5\\,;\\,-2)$ . تُغطّى أرضية الملعب بعشب اصطناعي."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "عيّن النقطة $D$ بحيث يكون الرباعي $ABCD$ مستطيلًا، ثم اكتب إحداثيتيها.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-4",
+        "y": "-2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "-2",
+            "y": "-4"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNAXIS",
+          "value": {
+            "x": "-4",
+            "y": "2"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNLEFT",
+          "value": {
+            "x": "4",
+            "y": "-2"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في مستطيل أضلاعه توازي المحورين، لكلّ ضلعين متقابلين الفاصلة نفسها أو الترتيب نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الرأس الرابع يأخذ فاصلة أحد الرؤوس المعلومة وترتيب رأس آخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارسم الرؤوس المعلومة على الشبكة وأكمل الشكل ثم اقرأ الرأس الرابع."
+        }
+      ],
+      "feedback": {
+        "correct": "$D(-4\\,;\\,-2)$ .",
+        "incorrect": "في مستطيل أضلاعه توازي المحورين، الرأس الرابع يأخذ فاصلة رأس وترتيب رأس آخر من الرؤوس المعلومة."
+      },
+      "solution": {
+        "lines": [
+          "نرسم الرؤوس المعلومة على الشبكة ونكمل المستطيل",
+          "$D(-4\\,;\\,-2)$"
+        ],
+        "result": "D(-4\\,;\\,-2)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما طول القطعة $[AB]$ بالمتر ، علمًا أنّ وحدة المعلم $5\\,\\mathrm{m}$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالمتر",
+      "expectedAnswer": "45",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SCALEMISS",
+          "value": "9"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "علّم النقطتين وتأكّد أنّهما على خطّ واحد من الشبكة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ الوحدات بين النقطتين على الشبكة، مرورًا بالمحور إن كان القطعة تقطعه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب عدد الوحدات في طول الوحدة إن طُلبت النتيجة بالمتر أو السنتيمتر."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد الوحدات $9$ فالطول $45\\,\\mathrm{m}$ .",
+        "incorrect": "القطعة تقع على خطّ من الشبكة: عُدّ وحداتها واحدة واحدة، ومُرّ بالمحور إن كانت تقطعه."
+      },
+      "solution": {
+        "lines": [
+          "القطعة $[AB]$ توازي أحد المحورين",
+          "عدد وحداتها $9$",
+          "الطول $9 \\times 5 = 45\\,\\mathrm{m}$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما مساحة المستطيل $ABCD$ بالمتر المربّع، علمًا أنّ وحدة المعلم $5\\,\\mathrm{m}$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالمتر المربّع",
+      "expectedAnswer": "1125",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SCALEMISS",
+          "value": "45"
+        },
+        {
+          "id": "MISC-NUQTA2-AREASUM",
+          "value": "70"
+        },
+        {
+          "id": "MISC-NUQTA2-AREAPERIM",
+          "value": "140"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عُدّ وحدات الطول ثم وحدات العرض على الشبكة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحة المستطيل جداء الطول في العرض."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تجمع الطول مع العرض، وتذكّر الوحدة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "المساحة $1125\\,\\mathrm{m}^{2}$ .",
+        "incorrect": "عُدّ وحدات الطول ثم وحدات العرض على الشبكة، ثم اضرب أحدهما في الآخر، ولا تجمعهما."
+      },
+      "solution": {
+        "lines": [
+          "الطول $9 \\times 5 = 45\\,\\mathrm{m}$ والعرض $5 \\times 5 = 25\\,\\mathrm{m}$",
+          "المساحة $45 \\times 25 = 1125\\,\\mathrm{m}^{2}$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "يكلّف العشب الاصطناعي $40\\ \\mathrm{DA}$ للمتر المربّع الواحد. ما كلفة تغطية مساحة $1125\\,\\mathrm{m}^{2}$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار",
+      "expectedAnswer": "45000",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-COSTADD",
+          "value": "1165"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ الكلّي جداء السعر الوحدوي في المساحة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تأكّد أنّ المساحة والسعر مقيسان بالوحدة نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب المضاعف بعناية ثم اكتب الوحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "الكلفة $45000\\ \\mathrm{DA}$ .",
+        "incorrect": "اضرب السعر الوحدوي في المساحة، ولا تجمعهما."
+      },
+      "solution": {
+        "lines": [
+          "الكلفة = المساحة × السعر",
+          "$1125 \\times 40 = 45000\\ \\mathrm{DA}$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

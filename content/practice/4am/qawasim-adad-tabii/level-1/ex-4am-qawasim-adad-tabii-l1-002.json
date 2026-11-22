@@ -1,0 +1,147 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l1-002",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 1,
+  "metadata": {
+    "title": "قواسم العدد 84",
+    "estimatedMinutes": 7,
+    "tags": [
+      "قواسم",
+      "طريقة الاختبار"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-3",
+      "page": 14,
+      "section": "أوظّف تعلّماتي",
+      "number": 3
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "إلى أي عدد يكفي أن نختبر قابلية قسمة العدد 84 لتعيين كل قواسمه؟",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نختبر الأعداد التي مربعها أصغر من 84 أو يساويه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب مربعات بعض الأعداد وقارنها بالعدد المعطى."
+        }
+      ],
+      "feedback": {
+        "correct": "$9^2 = 81 \\leq 84 < 100 = 10^2$.",
+        "incorrect": "ابحث عن أكبر عدد طبيعي مربعه أصغر من 84 أو يساويه."
+      },
+      "solution": {
+        "lines": [
+          "$9^2 = 81$ و $10^2 = 100$",
+          "$9^2 \\leq 84 < 10^2$",
+          "إذن يكفي أن نختبر قابلية قسمة 84 على الأعداد من 1 إلى 9."
+        ],
+        "result": "9^2 \\leq 84 < 10^2"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عيّن كل قواسم العدد 84.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        12,
+        14,
+        21,
+        28,
+        42,
+        84
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6,
+            7,
+            12,
+            14,
+            21,
+            28,
+            42
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 84 بمربعات الأعداد: إلى أي عدد يكفي أن تختبر قابلية القسمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل قسمة باقيها معدوم تعطي قاسمين: $d$ و $84 \\div d$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$84 = 1 \\times 84$ ، $84 = 2 \\times 42$ ، $84 = 3 \\times 28$ ، $84 = 4 \\times 21$ ، $84 = 6 \\times 14$ ، $84 = 7 \\times 12$.",
+        "incorrect": "اختبر الأعداد التي مربعها أصغر من العدد أو يساويه، وخذ من كل قسمة باقيها معدوم القاسمين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$9^2 = 81 \\leq 84 < 100 = 10^2$ ومنه نختبر قابلية قسمة 84 على الأعداد من 1 إلى 9.",
+          "نجد أن 84 يقبل القسمة على كل من الأعداد: 1 ، 2 ، 3 ، 4 ، 6 ، 7.",
+          "ومن المساويات: $84 = 1 \\times 84$ ، $84 = 2 \\times 42$ ، $84 = 3 \\times 28$ ، $84 = 4 \\times 21$ ، $84 = 6 \\times 14$ ، $84 = 7 \\times 12$",
+          "إذن قواسم العدد 84 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 7 ، 12 ، 14 ، 21 ، 28 ، 42 ، 84."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 330
+    }
+  ]
+}

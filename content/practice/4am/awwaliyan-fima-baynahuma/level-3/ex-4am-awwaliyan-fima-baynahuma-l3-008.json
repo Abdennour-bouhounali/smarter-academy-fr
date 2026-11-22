@@ -1,0 +1,255 @@
+{
+  "id": "ex-4am-awwaliyan-fima-baynahuma-l3-008",
+  "lessonCode": "awwaliyan-fima-baynahuma",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2024 — قطعة جلد 65cm × 126cm",
+    "estimatedMinutes": 12,
+    "tags": [
+      "مربعات",
+      "إثبات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_awwaliyan-fima-baynahuma_P2",
+      "modelledOn": "BEM 2024 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يملك حرفي يتقن صنعته ولا يضيّع شيئًا من مادّتها قطعة جلد مستطيلة الشكل عرضها 65cm وطولها 126cm، يريد تجزئتها إلى مربعات متقايسة دون ضياع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل يمكن أن يكون طول ضلع كل مربع 5cm ؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضلع المربع يجب أن يقسم البعدين 65 و 126 معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يقبل كل من 65 و 126 القسمة على 5؟"
+        }
+      ],
+      "feedback": {
+        "correct": "5 لا يقسم 126.",
+        "incorrect": "تحقّق من قابلية قسمة كل من البعدين على طول الضلع المقترح."
+      },
+      "solution": {
+        "lines": [
+          "126 لا يقبل القسمة على 5 ($126 = 5 \\times 25 + 1$)، إذن لا يمكن ذلك."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "هل يمكن أن يكون طول ضلع كل مربع 7cm ؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضلع المربع يجب أن يقسم البعدين 65 و 126 معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يقبل كل من 65 و 126 القسمة على 7؟"
+        }
+      ],
+      "feedback": {
+        "correct": "7 لا يقسم 65.",
+        "incorrect": "تحقّق من قابلية قسمة كل من البعدين على طول الضلع المقترح."
+      },
+      "solution": {
+        "lines": [
+          "65 لا يقبل القسمة على 7 ($65 = 7 \\times 9 + 2$)، إذن لا يمكن ذلك."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "بيّن أن العددين 65 و 126 أوليان فيما بينهما.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيمة PGCD(65 ; 126) التي وجدتها",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عددان أوليان فيما بينهما: احسب قاسمهما المشترك الأكبر PGCD(65 ; 126)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 126 على 65، ثم واصل القسمات المتتابعة إلى أن تجد باقيًا معدومًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن آخر باقٍ غير معدوم بما يتطلّبه تعريف عددين أوليين فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(65 ; 126) = 1: العددان 65 و 126 أوليان فيما بينهما.",
+        "incorrect": "راجع القسمات المتتابعة باقيًا باقيًا: آخر باقٍ غير معدوم هو القاسم المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$126 = 65 \\times 1 + 61$",
+          "$65 = 61 \\times 1 + 4$",
+          "$61 = 4 \\times 15 + 1$",
+          "$4 = 1 \\times 4 + 0$",
+          "آخر باقٍ غير معدوم هو 1، إذن PGCD(65 ; 126) = 1 .",
+          "ومنه العددان 65 و 126 أوليان فيما بينهما."
+        ],
+        "result": "PGCD(65 ; 126) = 1"
+      },
+      "work": "required",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "statement": "ما هو طول ضلع كل مربع إذا أراد الحرفي أكبر ضلع ممكن ؟",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (طول الضلع بالسنتيمتر)",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول الضلع يقسم البعدين معًا وهو أكبر ما يمكن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل نتيجة السؤال 02."
+        }
+      ],
+      "feedback": {
+        "correct": "العددان 65 و 126 أوليان فيما بينهما: أكبر ضلع ممكن هو 1cm.",
+        "incorrect": "أكبر ضلع ممكن هو القاسم المشترك الأكبر للبعدين."
+      },
+      "solution": {
+        "lines": [
+          "طول الضلع هو PGCD(65 ; 126) = 1 .",
+          "إذن طول ضلع كل مربع 1cm."
+        ],
+        "result": "1cm"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "ما هو عدد المربعات الناتجة ؟",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد المربعات)",
+      "expectedAnswer": "8190",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم مربعًا على العرض؟ وكم مربعًا على الطول؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب العددين."
+        }
+      ],
+      "feedback": {
+        "correct": "$65 \\times 126 = 8190$ مربعًا.",
+        "incorrect": "اقسم كل بعد على طول الضلع، ثم اضرب النتيجتين."
+      },
+      "solution": {
+        "lines": [
+          "على العرض 65 مربعًا وعلى الطول 126 مربعًا.",
+          "$65 \\times 126 = 8190$"
+        ],
+        "result": "8190"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

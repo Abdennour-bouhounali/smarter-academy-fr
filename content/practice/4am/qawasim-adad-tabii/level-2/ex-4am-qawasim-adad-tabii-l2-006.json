@@ -1,0 +1,131 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l2-006",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2015 — قواسم العدد 221",
+    "estimatedMinutes": 6,
+    "tags": [
+      "قواسم",
+      "طريقة الاختبار",
+      "مراحل الحساب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qawasim-adad-tabii_P3",
+      "modelledOn": "BEM 2015 I-1 01"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "إلى أي عدد يكفي أن نختبر قابلية قسمة العدد 221 لتعيين كل قواسمه؟",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "14",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نختبر الأعداد التي مربعها أصغر من 221 أو يساويه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب مربعات بعض الأعداد وقارنها بالعدد المعطى."
+        }
+      ],
+      "feedback": {
+        "correct": "$14^2 = 196 \\leq 221 < 225 = 15^2$.",
+        "incorrect": "ابحث عن أكبر عدد طبيعي مربعه أصغر من 221 أو يساويه."
+      },
+      "solution": {
+        "lines": [
+          "$14^2 = 196$ و $15^2 = 225$",
+          "$14^2 \\leq 221 < 15^2$",
+          "إذن يكفي أن نختبر قابلية قسمة 221 على الأعداد من 1 إلى 14."
+        ],
+        "result": "14^2 \\leq 221 < 15^2"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عيّن كل قواسم العدد 221 مع كتابة مراحل الحساب.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        13,
+        17,
+        221
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            13,
+            17
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 221 بمربعات الأعداد: إلى أي عدد يكفي أن تختبر قابلية القسمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل قسمة باقيها معدوم تعطي قاسمين: $d$ و $221 \\div d$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$221 = 1 \\times 221$ ، $221 = 13 \\times 17$.",
+        "incorrect": "اختبر الأعداد التي مربعها أصغر من العدد أو يساويه، وخذ من كل قسمة باقيها معدوم القاسمين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$14^2 = 196 \\leq 221 < 225 = 15^2$ ومنه نختبر قابلية قسمة 221 على الأعداد من 1 إلى 14.",
+          "نجد أن 221 يقبل القسمة على كل من الأعداد: 1 ، 13.",
+          "ومن المساويات: $221 = 1 \\times 221$ ، $221 = 13 \\times 17$",
+          "إذن قواسم العدد 221 هي: 1 ، 13 ، 17 ، 221."
+        ]
+      },
+      "work": "required",
+      "timeSeconds": 300
+    }
+  ]
+}

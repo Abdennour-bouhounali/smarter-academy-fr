@@ -1,0 +1,135 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l1-004",
+  "lessonCode": "mana-jam-tarh",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — هدية سليم",
+    "estimatedMinutes": 3,
+    "tags": [
+      "يقلّ",
+      "اختيار العملية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "اشترى سليم لأخيه الصغير قصّة هديةً بمناسبة نجاحه، ثمنها 450 دج، وهو يقلّ عن ثمن قاموس بـ 280 دج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما الحساب الذي يعطي ثمن القاموس؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$450 - 280$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KALIMA"
+        },
+        {
+          "id": "B",
+          "content": "$450 + 280$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$280 - 450$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-FARQ-MAQLUB"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّهما أغلى: القصّة أم القاموس؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثمن القاموس هو الكل: ثمن القصّة جزء منه، والفرق جزء آخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كلمة « يقلّ » لا تقرّر العملية وحدها: ارسم مخططًا بأقواس."
+        }
+      ],
+      "feedback": {
+        "correct": "القاموس أغلى من القصّة بـ 280 دج: ثمنه $450 + 280$.",
+        "incorrect": "ثمن القصّة يقلّ عن ثمن القاموس، إذن القاموس هو الأغلى: هل نصل إليه بالطرح؟"
+      },
+      "solution": {
+        "lines": [
+          "ثمن القصّة يقلّ عن ثمن القاموس، إذن القاموس هو الأغلى.",
+          "في المخطط بأقواس: الجزآن 450 و 280، والكل هو ثمن القاموس."
+        ],
+        "result": "450 + 280"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب ثمن القاموس.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "730",
+      "misconceptionSignatures": [
+        {
+          "value": "170",
+          "id": "MISC-JAMTARH-KALIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثمن القاموس أكبر من ثمن القصّة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أضف إلى ثمن القصّة ما يقلّ به عن ثمن القاموس."
+        }
+      ],
+      "feedback": {
+        "correct": "$450 + 280 = 730$: ثمن القاموس 730 دج.",
+        "incorrect": "القاموس أغلى من القصّة: ثمنه أكبر من 450 دج."
+      },
+      "solution": {
+        "lines": [
+          "$450 + 280 = 730$"
+        ],
+        "result": "730 \\text{ DA}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

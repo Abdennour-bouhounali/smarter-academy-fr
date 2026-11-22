@@ -1,0 +1,194 @@
+{
+  "id": "ex-2am-muqarana-nisbiya-l3-009",
+  "lessonCode": "muqarana-nisbiya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — ترتيب أعداد وتبرير",
+    "estimatedMinutes": 9,
+    "tags": [
+      "ترتيب",
+      "تبرير"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 2,
+      "file": "2am-s2-69",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "ليكن الأعداد النسبية $A$ ، $B$ ، $C$ ، $D$ حيث:",
+    "formulas": [
+      "A = (-1{,}9) \\quad B = (-1{,}91) \\quad C = (0) \\quad D = (-1{,}09)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "رتّب الأعداد ترتيبًا تصاعديًّا: اختر السلسلة الصحيحة.",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$B < A < D < C$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$A < B < D < C$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-BDG"
+        },
+        {
+          "id": "C",
+          "content": "$C < D < A < B$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-OD"
+        },
+        {
+          "id": "D",
+          "content": "$D < A < B < C$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-DAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بفرز الأعداد حسب إشاراتها: السالبة، ثم الصفر، ثم الموجبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب الأعداد السالبة فيما بينها حسب مسافاتها إلى الصفر: الأكبر مسافة هو الأصغر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب السلسلة كاملة بالرمز نفسه، ثم تحقّق من كل زوج متجاور."
+        }
+      ],
+      "feedback": {
+        "correct": "$-1{,}91 < -1{,}9 < -1{,}09 < 0$ ، أي $B < A < D < C$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}91 > 1{,}90 > 1{,}09$ والأعداد سالبة",
+          "$-1{,}91 < -1{,}9 < -1{,}09$ ثم $C = 0$",
+          "$B < A < D < C$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كم عددًا من الأعداد الأربعة أصغر من $-1{,}5$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج: أيّهما أبعد عن الصفر؟ وفي أيّ جهة منه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددان سالبان: الأصغر هو الذي له أكبر مسافة إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن المسافتين إلى الصفر (العددين دون إشارتيهما) ثم اعكس الحكم لأن العددين سالبان."
+        }
+      ],
+      "feedback": {
+        "correct": "$A$ و $B$ فقط أصغر من $-1{,}5$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}9 > 1{,}5$ و $1{,}91 > 1{,}5$",
+          "$1{,}09 < 1{,}5$ ، و $0 > -1{,}5$",
+          "عددان"
+        ],
+        "result": "2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "برّر أن $A > B$ .",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج: أيّهما أبعد عن الصفر؟ وفي أيّ جهة منه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددان سالبان: الأصغر هو الذي له أكبر مسافة إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن المسافتين إلى الصفر (العددين دون إشارتيهما) ثم اعكس الحكم لأن العددين سالبان."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$A = -1{,}9$ و $B = -1{,}91$ سالبان",
+          "المسافتان إلى الصفر: $1{,}90 < 1{,}91$",
+          "الأقرب إلى الصفر هو الأكبر: $A > B$"
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

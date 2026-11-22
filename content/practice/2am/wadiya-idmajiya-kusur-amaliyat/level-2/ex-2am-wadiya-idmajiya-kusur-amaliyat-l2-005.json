@@ -1,0 +1,249 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-kusur-amaliyat-l2-005",
+  "lessonCode": "wadiya-idmajiya-kusur-amaliyat",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — ميزانية أسرة : الغذاء والنقل",
+    "estimatedMinutes": 6,
+    "tags": [
+      "جمع كسرين",
+      "الجزء الباقي",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ميزانية أسرة في الشهر $4000$ DA : خُصّص $\\dfrac{2}{5}$ منها للغذاء ، و $\\dfrac{3}{20}$ للنقل ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما الكسر الذي يمثّل ما خُصّص للغذاء والنقل معًا ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "11/20",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1/5",
+          "id": "MISC-JAMKASR-ACROSS"
+        },
+        {
+          "value": "1/4",
+          "id": "MISC-JAMKASR-NOSCALE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليّة المطلوبة ؟ وهل المقامان متساويان ، أم أنّ أحدهما مضاعف للآخر ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا اختلف المقامان فاكتب الكسر ذا المقام الأصغر بالمقام الأكبر : اضرب حدّيه في العدد نفسه ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع (أو اطرح) البسطين وأبقِ المقام كما هو ، ثمّ اختزل الناتج إن أمكن ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{11}{20}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح ، ثمّ اختزل الناتج وأعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2}{5} = \\dfrac{2 \\times 4}{5 \\times 4} = \\dfrac{8}{20}$ .",
+          "$\\dfrac{2}{5} + \\dfrac{3}{20} = \\dfrac{8 + 3}{20} = \\dfrac{11}{20}$ ."
+        ],
+        "result": "\\dfrac{11}{20}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما الكسر الذي يمثّل ما بقي للادّخار ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "9/20",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "11/20",
+          "id": "MISC-JAMKASR-PART"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكلّ يساوي كسرًا بسطه ومقامه عدد واحد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الأجزاء المأخوذة أوّلًا ثمّ اطرحها من الكلّ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الجزء الباقي هو الكلّ ناقص ما أُخذ ، وهو أصغر من الكلّ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9}{20}$ .",
+        "incorrect": "اجمع ما أُخذ أوّلًا ثمّ اطرحه من الكلّ ، ولا تُعطِ ما أُخذ بدل الباقي ."
+      },
+      "solution": {
+        "lines": [
+          "$1 = \\dfrac{20}{20}$ .",
+          "$\\dfrac{2}{5} = \\dfrac{2 \\times 4}{5 \\times 4} = \\dfrac{8}{20}$ .",
+          "ما أُخذ : $\\dfrac{2}{5} + \\dfrac{3}{20} = \\dfrac{8 + 3}{20} = \\dfrac{11}{20}$ .",
+          "الباقي : $1 - \\dfrac{11}{20} = \\dfrac{20}{20} - \\dfrac{11}{20} = \\dfrac{9}{20}$ ."
+        ],
+        "result": "\\dfrac{9}{20}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما المبلغ الذي بقي للادّخار بالدينار ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1800",
+      "misconceptionSignatures": [
+        {
+          "value": "80000/9",
+          "id": "MISC-JIDAKASR-FLIP"
+        },
+        {
+          "value": "200",
+          "id": "MISC-JIDAKASR-HALFWAY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزء من عدد يعني جداء الكسر في العدد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي ما دام الكسر أصغر من 1 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$1800$ .",
+        "incorrect": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ، ولا تقلب الكسر ."
+      },
+      "solution": {
+        "lines": [
+          "$4000 \\div 20 = 200$ .",
+          "$200 \\times 9 = 1800$ ."
+        ],
+        "result": "1800"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "هل يكفي المبلغ الباقي لشراء جهاز ثمنه $2000$ DA ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDAKASR-FLIP"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا ثمّ تحقّق منها بحساب بسيط ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أو قارن بدقّة ثمّ قارن بما قيل ."
+        }
+      ],
+      "feedback": {
+        "correct": "لا .",
+        "incorrect": "احسب ثمّ قارن بدقّة قبل أن تجيب ."
+      },
+      "solution": {
+        "lines": [
+          "المبلغ الباقي هو $1800$ DA .",
+          "$1800 < 2000$ : لا يكفي ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,249 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-musawiyat-mutabayinat-l4-007",
+  "lessonCode": "wadiya-idmajiya-musawiyat-mutabayinat",
+  "level": 4,
+  "metadata": {
+    "title": "حمولة شاحنتين",
+    "estimatedMinutes": 10,
+    "tags": [
+      "معادلة في وضعية هندسية أو حركية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الأوّل",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "تحمل شاحنة $9$ صناديق من التفاح و $60\\ \\mathrm{kg}$ من البصل ، وتحمل شاحنة أخرى $6$ صناديق مماثلة و $105\\ \\mathrm{kg}$ من البصل ، والشاحنتان تحملان الكتلة نفسها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نرمز بـ $x$ إلى كتلة الصندوق الواحد بالكيلوغرام. أيّ المعادلات التالية تترجم الوضعية ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$60x + 9 = 105x + 6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        },
+        {
+          "id": "B",
+          "content": "$15x = 165$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        },
+        {
+          "id": "C",
+          "content": "$9x + 60 = 6x + 105$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$9x + 105 = 6x + 60$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول وما الذي يتساوى في الوضعية ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلة من كمّيتين متساويتين ثمّ حلّها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الحلّ يناسب الوضعية."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $9x + 60 = 6x + 105$ .",
+        "incorrect": "راجع الترجمة إلى معادلة ثمّ الحلّ، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب الكمّيتين المتساويتين بدلالة $x$ ثمّ نساوي بينهما: $9x + 60 = 6x + 105$ .",
+          "الخيارات الأخرى تجمع الكمّيتين أو تبدّل ثوابتهما أو تخلط الأعداد."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "المعادلة المترجمة هي $9x + 60 = 6x + 105$ . احسب قيمة المجهول.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "55",
+          "id": "MISC-MUADALA-SIGN-KEPT"
+        },
+        {
+          "value": "45",
+          "id": "MISC-MUADALA-PARTIAL-SOLVE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين المجهول وأين الأعداد ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المجهول في طرف والأعداد في الطرف الآخر، ثمّ اقسم على معامل المجهول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض النتيجة في الطرفين لتتأكّد من تساويهما."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $15$ .",
+        "incorrect": "راجع نقل الحدود وإشاراتها ثمّ القسمة على المعامل، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نجمع المجهول في طرف والأعداد في الآخر: $3x = 45$ .",
+          "نقسم على $3$ : $x = 15$ ."
+        ],
+        "result": "15"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "الحلّ هو $x = 15$ . احسب قيمة الطرف الأيسر $9x + 60$ عند هذا الحلّ للتحقّق.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "195",
+      "misconceptionSignatures": [
+        {
+          "value": "75",
+          "id": "MISC-MUADALA-NO-CHECK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين المجهول وأين الأعداد ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المجهول في طرف والأعداد في الطرف الآخر، ثمّ اقسم على معامل المجهول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض النتيجة في الطرفين لتتأكّد من تساويهما."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $195$ .",
+        "incorrect": "راجع نقل الحدود وإشاراتها ثمّ القسمة على المعامل، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض: $9 \\times 15 + (60) = 195$ .",
+          "ونجد القيمة نفسها في الطرف الأيمن: الحلّ مقبول."
+        ],
+        "result": "195"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "إذا كان $-4 \\le x \\le -1$ فما أصغر قيمة ممكنة للعبارة $5x + 1$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "-19",
+      "misconceptionSignatures": [
+        {
+          "value": "-3",
+          "id": "MISC-MUTABAYINA-COEF-LOST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل العدد الذي نضرب فيه موجب أم سالب ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في عدد موجب يحفظ الاتجاه، وفي عدد سالب يعكسه؛ والجمع والطرح يحفظانه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بين الطرفين الأصغر والأكبر بعد كل عملية."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $-19$ .",
+        "incorrect": "انتبه إلى اتجاه المتباينة عند الضرب في عدد سالب، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضرب أطراف الحصر في $5$ (عدد موجب فيبقى الاتجاه) ثم نضيف $1$ .",
+          "نجد $-19 \\le 5x + 1 \\le -4$ ، فالقيمة المطلوبة $-19$ ."
+        ],
+        "result": "-19"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

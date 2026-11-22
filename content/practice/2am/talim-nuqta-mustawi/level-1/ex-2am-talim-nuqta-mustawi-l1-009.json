@@ -1,0 +1,265 @@
+{
+  "id": "ex-2am-talim-nuqta-mustawi-l1-009",
+  "lessonCode": "talim-nuqta-mustawi",
+  "level": 1,
+  "metadata": {
+    "title": "قراءة إحداثيات خمس نقط",
+    "estimatedMinutes": 7,
+    "tags": [
+      "قراءة إحداثيتين",
+      "نقط على المحورين"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-21",
+      "page": 47,
+      "section": "أوظّف تعلّماتي",
+      "number": 21
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في المعلم المتعامد والمتجانس الذي مبدؤه $O$ خمس نقط مرسومة.",
+    "figure": {
+      "grid": true,
+      "axes": true,
+      "points": {
+        "A": [
+          3,
+          2
+        ],
+        "B": [
+          -4,
+          1
+        ],
+        "C": [
+          -2,
+          -3
+        ],
+        "D": [
+          0,
+          -1.5
+        ],
+        "E": [
+          2.5,
+          0
+        ],
+        "O": [
+          0,
+          0
+        ]
+      },
+      "ariaLabel": "معلم متعامد ومتجانس تظهر فيه خمس نقط",
+      "maxWidth": 420,
+      "labels": {
+        "O": "sw"
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اقرأ إحداثيتي النقطة $B$ في الشكل.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-4",
+        "y": "1"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "1",
+            "y": "-4"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNAXIS",
+          "value": {
+            "x": "-4",
+            "y": "-1"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNLEFT",
+          "value": {
+            "x": "4",
+            "y": "1"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الفاصلة على محور الفواصل أوّلًا، بالنزول من النقطة أو الصعود منها عموديًّا إلى هذا المحور."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اقرأ الترتيب على محور التراتيب بالسير أفقيًّا من النقطة إلى هذا المحور؛ العدد الأوّل في الثنائية هو الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "راقب الإشارة: النقط التي على يسار محور التراتيب أو تحت محور الفواصل تأخذ عددًا سالبًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$B(-4\\,;\\,1)$ .",
+        "incorrect": "راجع قراءة الإحداثيتين: الفاصلة أوّلًا على محور الفواصل ثم الترتيب على محور التراتيب."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $B$ هي $-4$ وترتيبها $1$",
+          "$B(-4\\,;\\,1)$"
+        ],
+        "result": "B(-4\\,;\\,1)"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اقرأ إحداثيتي النقطة $D$ في الشكل.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "0",
+        "y": "-1.5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "-1.5",
+            "y": "0"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNAXIS",
+          "value": {
+            "x": "0",
+            "y": "1.5"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الفاصلة على محور الفواصل أوّلًا، بالنزول من النقطة أو الصعود منها عموديًّا إلى هذا المحور."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اقرأ الترتيب على محور التراتيب بالسير أفقيًّا من النقطة إلى هذا المحور؛ العدد الأوّل في الثنائية هو الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "راقب الإشارة: النقط التي على يسار محور التراتيب أو تحت محور الفواصل تأخذ عددًا سالبًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$D(0\\,;\\,-1{,}5)$ .",
+        "incorrect": "راجع قراءة الإحداثيتين: الفاصلة أوّلًا على محور الفواصل ثم الترتيب على محور التراتيب."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $D$ هي $0$ وترتيبها $-1{,}5$",
+          "$D(0\\,;\\,-1{,}5)$"
+        ],
+        "result": "D(0\\,;\\,-1{,}5)"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اقرأ إحداثيتي النقطة $E$ في الشكل.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "2.5",
+        "y": "0"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "0",
+            "y": "2.5"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNLEFT",
+          "value": {
+            "x": "-2.5",
+            "y": "0"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الفاصلة على محور الفواصل أوّلًا، بالنزول من النقطة أو الصعود منها عموديًّا إلى هذا المحور."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اقرأ الترتيب على محور التراتيب بالسير أفقيًّا من النقطة إلى هذا المحور؛ العدد الأوّل في الثنائية هو الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "راقب الإشارة: النقط التي على يسار محور التراتيب أو تحت محور الفواصل تأخذ عددًا سالبًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$E(2{,}5\\,;\\,0)$ .",
+        "incorrect": "راجع قراءة الإحداثيتين: الفاصلة أوّلًا على محور الفواصل ثم الترتيب على محور التراتيب."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $E$ هي $2{,}5$ وترتيبها $0$",
+          "$E(2{,}5\\,;\\,0)$"
+        ],
+        "result": "E(2{,}5\\,;\\,0)"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

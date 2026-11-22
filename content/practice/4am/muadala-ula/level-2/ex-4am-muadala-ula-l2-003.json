@@ -1,0 +1,132 @@
+{
+  "id": "ex-4am-muadala-ula-l2-003",
+  "lessonCode": "muadala-ula",
+  "level": 2,
+  "metadata": {
+    "title": "نطرح العدد نفسه من الطرفين",
+    "estimatedMinutes": 4,
+    "tags": [
+      "ax + b = c"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-4",
+      "page": 50,
+      "section": "أوظّف تعلّماتي",
+      "number": 4
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعتبر المعادلة:",
+    "formulas": [
+      "5x + 6 = 11"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اطرح العدد $6$ من طرفي المعادلة، ثم اكتبها على الشكل $5x = b$ .",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "تُكتب المعادلة على الشكل $5x = b$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "17",
+          "id": "MISC-MUADALA-NAQL-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طرح 6 من الطرف الأول يحذف $+6$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح 6 من الطرف الثاني أيضًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$5x = 5$ .",
+        "incorrect": "ما يُطرح من طرف يُطرح من الطرف الآخر."
+      },
+      "solution": {
+        "lines": [
+          "$5x + 6 - 6 = 11 - 6$"
+        ],
+        "result": "5x = 5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج حل المعادلة.",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب حل المعادلة: عدد صحيح أو كسر على الشكل a/b (يُقبل العدد العشري)",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-MUADALA-TARH-MUAMIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعادلة من الشكل $ax = b$ : عيّن معامل $x$ والعدد الذي في الطرف الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم الطرفين على معامل $x$ مع إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحل هو العدد الذي في الطرف الآخر مقسومًا على معامل $x$ ، لا العكس، ثم اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 1$ .",
+        "incorrect": "الحل هو حاصل قسمة العدد الذي في الطرف الآخر على معامل $x$ بإشارته. تحقّق بالتعويض."
+      },
+      "solution": {
+        "lines": [
+          "$5x = 5$",
+          "$x = \\dfrac{5}{5}$"
+        ],
+        "result": "x = 1"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

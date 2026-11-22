@@ -1,0 +1,286 @@
+{
+  "id": "ex-4am-majdulat-ihsaiya-l3-006",
+  "lessonCode": "majdulat-ihsaiya",
+  "level": 3,
+  "metadata": {
+    "title": "علامات فرض في عمود",
+    "estimatedMinutes": 8,
+    "tags": [
+      "دستور",
+      "مجال",
+      "متوسط",
+      "وسيط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_majdulat-ihsaiya_P1",
+      "modelledOn": "ex-24",
+      "adaptedFrom": "ex-4am-majdulat-ihsaiya-l3-006"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "حجز أستاذ، بكل عدل وأمانة، في العمود B من مجدول علامات 12 تلميذا في فرض، وفي العمود A رقم كل تلميذ:",
+    "table": {
+      "head": [
+        "",
+        "A",
+        "B"
+      ],
+      "rows": [
+        [
+          "1",
+          "التلميذ",
+          "العلامة"
+        ],
+        [
+          "2",
+          "1",
+          "12"
+        ],
+        [
+          "3",
+          "2",
+          "9"
+        ],
+        [
+          "4",
+          "3",
+          "15"
+        ],
+        [
+          "5",
+          "4",
+          "11"
+        ],
+        [
+          "6",
+          "5",
+          "8"
+        ],
+        [
+          "7",
+          "6",
+          "14"
+        ],
+        [
+          "8",
+          "7",
+          "10"
+        ],
+        [
+          "9",
+          "8",
+          "16"
+        ],
+        [
+          "10",
+          "9",
+          "13"
+        ],
+        [
+          "11",
+          "10",
+          "7"
+        ],
+        [
+          "12",
+          "11",
+          "12"
+        ],
+        [
+          "13",
+          "12",
+          "5"
+        ]
+      ],
+      "sheet": true
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن الدستور الذي يُحجز في الخلية D2 ليُظهر متوسط العلامات.",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "⁦=MOYENNE(B2:B12)⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MAJAL-KHALIYA"
+        },
+        {
+          "id": "B",
+          "content": "⁦=MOYENNE(B2;B13)⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MAJAL-KHALIYA"
+        },
+        {
+          "id": "C",
+          "content": "⁦=MOYENNE(B2:B13)⁩",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "⁦=MOYENNE(A2:B13)⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MAJAL-KHALIYA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل دستور يبدأ بالإشارة « ⁦=⁩ »، ثم اسم الدالة، ثم المجال بين قوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حدّد أولا المجال الذي يضمّ كل القيم المطلوبة، ولا شيئا غيرها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم اختر الدالة: MAX و MIN للمدى، MEDIANE للوسيط، MOYENNE للمتوسط، MODE للمنوال."
+        }
+      ],
+      "feedback": {
+        "correct": "⁦=MOYENNE(B2:B13)⁩ يُظهر 11 .",
+        "incorrect": "راجع ثلاثة أشياء: الإشارة « ⁦=⁩ » في البداية، الدالة المناسبة للمؤشّر، والمجال الذي يضمّ كل القيم."
+      },
+      "solution": {
+        "lines": [
+          "العلامات في الخلايا من B2 إلى B13 : المجال ⁦B2:B13⁩ ( ⁦B2:B12⁩ ينسى B13 ، و ⁦B2;B13⁩ خليتان فقط، و ⁦A2:B13⁩ يُدخل أرقام التلاميذ).",
+          "الدستور: ⁦=MOYENNE(B2:B13)⁩ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هو العدد الذي يظهر في الخلية D2 ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة إن لزم)",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "value": "11,5",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MOYENNE(…)⁩ يقسم مجموع القيم العددية في المجال على عددها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع القيم العددية الموجودة في المجال، وعُدّها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المتوسط = مجموع القيم ÷ عددها."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{132}{12} = 11$ .",
+        "incorrect": "اجمع كل القيم العددية التي في المجال، ثم اقسم المجموع على عددها (لا على عدد آخر)."
+      },
+      "solution": {
+        "lines": [
+          "مجموع القيم: $132$ ، وعددها 12 .",
+          "$\\dfrac{132}{12} = 11$",
+          "إذن يُظهر الدستور العدد 11 ."
+        ],
+        "result": "11"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما هو العدد الذي يُظهره الدستور ⁦=MEDIANE(B2:B13)⁩ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة إن لزم)",
+      "expectedAnswer": "11,5",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-IHSA-WASIT-BILA-TARTIB"
+        },
+        {
+          "value": "11",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MEDIANE(…)⁩ يُظهر وسيط القيم: يرتّبها المجدول أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب القيم الـ 12 تصاعديا، ثم عيّن القيمتين اللتين تقعان في الوسط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لعدد زوجيّ من القيم، الوسيط نصف مجموع القيمتين الوسطيين."
+        }
+      ],
+      "feedback": {
+        "correct": "القيم مرتّبة: 5 ، 7 ، 8 ، 9 ، 10 ، 11 ، 12 ، 12 ، 13 ، 14 ، 15 ، 16 ، والوسيط 11,5 .",
+        "incorrect": "لا يُقرأ الوسيط إلا بعد ترتيب القيم تصاعديا، ثم نأخذ القيمة الوسطى (أو نصف مجموع القيمتين الوسطيين)."
+      },
+      "solution": {
+        "lines": [
+          "نرتّب القيم تصاعديا: 5 ، 7 ، 8 ، 9 ، 10 ، 11 ، 12 ، 12 ، 13 ، 14 ، 15 ، 16 .",
+          "عدد القيم 12 زوجيّ: الوسيط نصف مجموع القيمتين ذواتي الرتبتين 6 و 7 ، أي 11 و 12 .",
+          "$\\dfrac{11 + 12}{2} = 11{,}5$",
+          "إذن يُظهر الدستور العدد 11,5 ."
+        ],
+        "result": "11{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,228 @@
+{
+  "id": "ex-3am-qismat-nisbiyayn-l2-008",
+  "lessonCode": "qismat-nisbiyayn",
+  "level": 2,
+  "metadata": {
+    "title": "متوسط أدنى درجات الحرارة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "سياق",
+      "متوسط",
+      "حاصل القسمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "سجّلت محطة الأرصاد بالجلفة أدنى درجات الحرارة (بالدرجة المئوية) خلال خمسة أيام متتالية: $−7$ ، $−4$ ، $1$ ، $−6$ ، $−2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب مجموع هذه الدرجات الخمس.",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-18",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في النص العددين اللذين نقسم أحدهما على الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن إشارة كل عدد: النقصان عدد سالب والزيادة عدد موجب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق قاعدة إشارات القسمة، ثم قسمة المسافتين إلى الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "المجموع هو $−18$ .",
+        "incorrect": "راجع قاعدة الإشارات وحدّد العددين المقسومين في النص."
+      },
+      "solution": {
+        "lines": [
+          "$(−7) + (−4) + 1 + (−6) + (−2) = −18$"
+        ],
+        "result": "−18"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "المتوسط هو حاصل قسمة المجموع على عدد الأيام. احسب متوسط درجات الحرارة.",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-3.6",
+      "misconceptionSignatures": [
+        {
+          "value": "3.6",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "-23",
+          "id": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في النص العددين اللذين نقسم أحدهما على الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن إشارة كل عدد: النقصان عدد سالب والزيادة عدد موجب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق قاعدة إشارات القسمة، ثم قسمة المسافتين إلى الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "المتوسط هو $−3{,}6$ °C .",
+        "incorrect": "راجع قاعدة الإشارات وحدّد العددين المقسومين في النص."
+      },
+      "solution": {
+        "lines": [
+          "المجموع $−18$ والأيام خمسة.",
+          "المجموع سالب وعدد الأيام موجب: إشارتاهما مختلفتان، فالمتوسط سالب.",
+          "$18 \\div 5 = 3{,}6$",
+          "$(−18) \\div 5 = −3{,}6$"
+        ],
+        "result": "−3{,}6"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "في اليوم السادس سُجّلت $−12$ درجة. احسب المتوسط الجديد للأيام الستة.",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-5",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-QISMA-SIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في النص العددين اللذين نقسم أحدهما على الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن إشارة كل عدد: النقصان عدد سالب والزيادة عدد موجب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق قاعدة إشارات القسمة، ثم قسمة المسافتين إلى الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "المتوسط الجديد هو $−5$ °C .",
+        "incorrect": "راجع قاعدة الإشارات وحدّد العددين المقسومين في النص."
+      },
+      "solution": {
+        "lines": [
+          "المجموع الجديد: $(−18) + (−12) = −30$ .",
+          "$(−30) \\div 6 = −5$"
+        ],
+        "result": "−5"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "بكم درجة انخفض المتوسط؟",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "1.4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في النص العددين اللذين نقسم أحدهما على الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن إشارة كل عدد: النقصان عدد سالب والزيادة عدد موجب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق قاعدة إشارات القسمة، ثم قسمة المسافتين إلى الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "انخفض المتوسط بمقدار $1{,}4$ درجة.",
+        "incorrect": "راجع قاعدة الإشارات وحدّد العددين المقسومين في النص."
+      },
+      "solution": {
+        "lines": [
+          "الانخفاض هو الفرق بين المتوسطين: $(−3{,}6) − (−5) = 1{,}4$ ."
+        ],
+        "result": "1{,}4"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

@@ -1,0 +1,318 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-musawiyat-mutabayinat-l5-008",
+  "lessonCode": "wadiya-idmajiya-musawiyat-mutabayinat",
+  "level": 5,
+  "metadata": {
+    "title": "وضعية: متابعة في سباق",
+    "estimatedMinutes": 14,
+    "tags": [
+      "وضعية إدماجية",
+      "معادلة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "integration",
+      "page": 84,
+      "section": "أدمج تعلّماتي — وضعية"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "ينطلق درّاج بسرعة $48\\ \\mathrm{km/h}$ خلف درّاج آخر يسبقه بـ $3\\ \\mathrm{km}$ ويسير بسرعة $42\\ \\mathrm{km/h}$ ، ونرمز بـ $t$ إلى مدّة اللحاق بالساعة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نرمز بـ $t$ إلى مدّة اللحاق بالساعة. أيّ المعادلات التالية تترجم الوضعية ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$90t = 3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        },
+        {
+          "id": "B",
+          "content": "$48 = 3t + 42$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        },
+        {
+          "id": "C",
+          "content": "$48t + 3 = 42t$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        },
+        {
+          "id": "D",
+          "content": "$48t = 42t + 3$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول وما الذي يتساوى في الوضعية ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلة من كمّيتين متساويتين ثمّ حلّها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الحلّ يناسب الوضعية."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $48t = 42t + 3$ .",
+        "incorrect": "راجع الترجمة إلى معادلة ثمّ الحلّ، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب الكمّيتين المتساويتين بدلالة $t$ ثمّ نساوي بينهما: $48t = 42t + 3$ .",
+          "الخيارات الأخرى تجمع الكمّيتين أو تبدّل ثوابتهما أو تخلط الأعداد."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "المعادلة المترجمة هي $48t = 42t + 3$ . احسب مدّة اللحاق بالساعة.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "0.5",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-MUADALA-PARTIAL-SOLVE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين المجهول وأين الأعداد ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المجهول في طرف والأعداد في الطرف الآخر، ثمّ اقسم على معامل المجهول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض النتيجة في الطرفين لتتأكّد من تساويهما."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $0{,}5$ .",
+        "incorrect": "راجع نقل الحدود وإشاراتها ثمّ القسمة على المعامل، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نجمع المجهول في طرف والأعداد في الآخر: $6t = 3$ .",
+          "نقسم على $6$ : $t = 0{,}5$ ."
+        ],
+        "result": "0{,}5"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب المسافة التي يقطعها الدرّاج الأسرع حتى يلحق بمنافسه بالكيلومتر.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "24",
+      "misconceptionSignatures": [
+        {
+          "value": "144",
+          "id": "MISC-MUADALA-NO-CHECK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول وما الذي يتساوى في الوضعية ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلة من كمّيتين متساويتين ثمّ حلّها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الحلّ يناسب الوضعية."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $24$ .",
+        "incorrect": "راجع الترجمة إلى معادلة ثمّ الحلّ، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "المسافة $48t = 48 \\times \\frac{1}{2}$ .",
+          "فالمسافة $24\\ \\mathrm{km}$ ."
+        ],
+        "result": "24"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "تكلفة حفل عائلي هي $B(n) = 80 + 15n$ بالـ DA ، حيث $n$ هو عدد المدعوّين. المتاح $216$ DA على الأكثر. ما أكبر عدد صحيح $n$ يحقّق $B(n) \\le 216$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-MUADALA-SOLUTION-CONTEXT"
+        },
+        {
+          "value": "14",
+          "id": "MISC-MUADALA-TRANSLATE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول وما الذي يتساوى في الوضعية ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلة من كمّيتين متساويتين ثمّ حلّها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الحلّ يناسب الوضعية."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $9$ .",
+        "incorrect": "راجع الترجمة إلى معادلة ثمّ الحلّ، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الشرط $80 + 15n \\le 216$ يعطي $15n \\le 136$ (الطرح يحفظ الاتجاه).",
+          "نقسم على $15$ (موجب): $n \\le 136/15$ ، فأكبر عدد صحيح هو $9$ ."
+        ],
+        "result": "9"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "كتلة علبة واحدة قُرئت $4{,}9\\ \\mathrm{kg}$ مدوّرة إلى $0{,}1$ ، ومجموع كتل $10$ علب مماثلة هو $S$ . حمولة الرفّ القصوى هي $49{,}3\\ \\mathrm{kg}$ . أيّ الاستنتاجات التالية صحيح ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$S > 49{,}3$ دائمًا: نستطيع الجزم بأنّ المجموع يتجاوز الحدّ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-DECISION"
+        },
+        {
+          "id": "B",
+          "content": "$S < 49{,}3$ دائمًا: نستطيع الجزم بأنّ المجموع لا يتجاوز الحدّ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-DECISION"
+        },
+        {
+          "id": "C",
+          "content": "لا نستطيع الجزم: الحدّ المسموح يقع داخل الحصر",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$S < 49{,}3$ دائمًا لأنّ $10 \\times 4{,}9 < 49{,}3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-CENTER-EXACT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل العدد الذي نضرب فيه موجب أم سالب ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في عدد موجب يحفظ الاتجاه، وفي عدد سالب يعكسه؛ والجمع والطرح يحفظانه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بين الطرفين الأصغر والأكبر بعد كل عملية."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: لا نستطيع الجزم: الحدّ المسموح يقع داخل الحصر .",
+        "incorrect": "انتبه إلى اتجاه المتباينة عند الضرب في عدد سالب، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "القراءة $4{,}9$ مدوّرة إلى $0{,}1$ تعني $4{,}85 \\le x < 4{,}95$ ، ومنه $48{,}5 \\le S < 49{,}5$ .",
+          "الحدّ المسموح يقع بين طرفي الحصر: لا نستطيع الجزم."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

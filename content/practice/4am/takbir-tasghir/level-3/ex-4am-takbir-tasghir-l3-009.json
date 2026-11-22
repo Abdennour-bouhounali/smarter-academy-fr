@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-takbir-tasghir-l3-009",
+  "lessonCode": "takbir-tasghir",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — مساحة علبة مكبّرة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "التكبير",
+      "المساحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takbir-tasghir_P2",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "علبة على شكل متوازي مستطيلات أبعاده $2\\,\\mathrm{cm}$ و $3\\,\\mathrm{cm}$ و $6\\,\\mathrm{cm}$ ، مساحة أوجهها الكلية $72\\,\\mathrm{cm}^2$ . نكبّرها بالنسبة $\\dfrac{3}{2}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "احسب المساحة الكلية لأوجه العلبة الناتجة بالسنتيمتر المربع.",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة مثل 1,25 ، أو كسر مثل 4/7)",
+      "expectedAnswer": "162",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAKBIR-MISAHA-K",
+          "value": "108"
+        },
+        {
+          "id": "MISC-TAKBIR-BUUD",
+          "value": "243"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المساحة بعدان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأطوال تُضرب في $k$ ، والمساحات في $k^2$ ، والحجوم في $k^3$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\left(\\dfrac{3}{2}\\right)^2 = \\dfrac{9}{4}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9}{4} \\times 72 = 162\\,\\mathrm{cm}^2$ ، وتحقّق بالأبعاد $3$ و $4{,}5$ و $9$ : $2(13{,}5 + 40{,}5 + 27) = 162$ .",
+        "incorrect": "المساحة تُضرب في $k^2$ ."
+      }
+    }
+  ]
+}

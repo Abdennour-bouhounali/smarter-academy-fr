@@ -1,0 +1,245 @@
+{
+  "id": "ex-3am-qimat-ibara-harfiya-l3-006",
+  "lessonCode": "qimat-ibara-harfiya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — قيم عبارة من أجل كسرين وعدد عشري",
+    "estimatedMinutes": 10,
+    "tags": [
+      "كسر",
+      "عدد عشري",
+      "قيمة عبارة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $M$ حيث:",
+    "formulas": [
+      "M = 2x^2 - 3x + 1"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب قيمة $M$ من أجل $x = -\\dfrac{1}{2}$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-QIMA-SIGN-LOST"
+        },
+        {
+          "value": "2",
+          "id": "MISC-QIMA-NEG-POWER"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = -\\dfrac{1}{2}$ هي $3$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$M = 2 \\times \\left(-\\dfrac{1}{2}\\right)^2 - 3 \\times \\left(-\\dfrac{1}{2}\\right) + 1$",
+          "$M = 2 \\times 0{,}25 - 3 \\times \\left(-\\dfrac{1}{2}\\right) + 1$",
+          "$M = 0{,}5 - (-1{,}5) + 1$",
+          "$M = 2 + 1$",
+          "$M = 3$"
+        ],
+        "result": "M = 3"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب قيمة $M$ من أجل $x = \\dfrac{2}{3}$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "-1/9",
+      "misconceptionSignatures": [
+        {
+          "value": "7/9",
+          "id": "MISC-QIMA-COEF-IN-POWER"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = \\dfrac{2}{3}$ هي $-\\dfrac{1}{9}$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$M = 2 \\times \\left(\\dfrac{2}{3}\\right)^2 - 3 \\times \\dfrac{2}{3} + 1$",
+          "$M = 2 \\times \\dfrac{4}{9} - 3 \\times \\dfrac{2}{3} + 1$",
+          "$M = \\dfrac{8}{9} - 2 + 1$",
+          "$M = -\\dfrac{10}{9} + 1$",
+          "$M = -\\dfrac{1}{9}$"
+        ],
+        "result": "M = -\\dfrac{1}{9}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب قيمة $M$ من أجل $x = 10^{-1}$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "0.72",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = 10^{-1}$ هي $0{,}72$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$M = 2 \\times (10^{-1})^2 - 3 \\times 10^{-1} + 1$",
+          "$M = 2 \\times 0{,}01 - 3 \\times 10^{-1} + 1$",
+          "$M = 0{,}02 - 0{,}3 + 1$",
+          "$M = -0{,}28 + 1$",
+          "$M = 0{,}72$"
+        ],
+        "result": "M = 0{,}72"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب قيمة $M$ من أجل $x = -0{,}2$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "1.68",
+      "misconceptionSignatures": [
+        {
+          "value": "1.52",
+          "id": "MISC-QIMA-NEG-POWER"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = -0{,}2$ هي $1{,}68$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$M = 2 \\times (-0{,}2)^2 - 3 \\times (-0{,}2) + 1$",
+          "$M = 2 \\times 0{,}04 - 3 \\times (-0{,}2) + 1$",
+          "$M = 0{,}08 - (-0{,}6) + 1$",
+          "$M = 0{,}68 + 1$",
+          "$M = 1{,}68$"
+        ],
+        "result": "M = 1{,}68"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,268 @@
+{
+  "id": "ex-4am-talis-hisab-atwal-l4-010",
+  "lessonCode": "talis-hisab-atwal",
+  "level": 4,
+  "metadata": {
+    "title": "منصّف الزاوية وخاصية طالس",
+    "estimatedMinutes": 14,
+    "tags": [
+      "منصف زاوية",
+      "خاصية طالس"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-26",
+      "page": 113,
+      "section": "أتعمّق",
+      "number": 26,
+      "adaptedFrom": "ex-4am-talis-hisab-atwal-l5-010"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$RST$ مثلث. منصّف الزاوية $\\widehat{SRT}$ يقطع $[ST]$ في $P$ . المستقيم الذي يشمل $T$ ويوازي $(RP)$ يقطع $(SR)$ في $E$ .",
+    "figure": {
+      "points": {
+        "S": [
+          0.0,
+          0.0
+        ],
+        "T": [
+          7.0,
+          0.0
+        ],
+        "R": [
+          2.071428571429,
+          3.421868447715
+        ],
+        "P": [
+          2.8,
+          0.0
+        ],
+        "E": [
+          5.178571428571,
+          8.554671119288
+        ]
+      },
+      "segments": [
+        {
+          "from": "S",
+          "to": "T"
+        },
+        {
+          "from": "S",
+          "to": "E"
+        },
+        {
+          "from": "R",
+          "to": "T"
+        },
+        {
+          "from": "R",
+          "to": "P",
+          "arrows": 1
+        },
+        {
+          "from": "T",
+          "to": "E",
+          "arrows": 1
+        }
+      ],
+      "angles": [
+        {
+          "at": "R",
+          "from": "S",
+          "to": "P",
+          "label": ""
+        },
+        {
+          "at": "R",
+          "from": "P",
+          "to": "T",
+          "label": ""
+        }
+      ],
+      "ariaLabel": "المثلث RST، منصف الزاوية SRT يقطع [ST] في P، والمستقيم الذي يشمل T ويوازي (RP) يقطع (SR) في E",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن: $\\dfrac{ST}{SP} = \\dfrac{SE}{SR}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المستقيمان $(SE)$ و $(ST)$ متقاطعان في $S$ ، و $(RP) \\parallel (ET)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب نسب خاصية طالس للمثلثين $SRP$ و $SET$ ثم اقلب النسبتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{SR}{SE} = \\dfrac{SP}{ST}$ ومنه $\\dfrac{ST}{SP} = \\dfrac{SE}{SR}$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي."
+      },
+      "solution": {
+        "lines": [
+          "النقط $S$ ، $R$ ، $E$ على استقامة والنقط $S$ ، $P$ ، $T$ على استقامة، و $(RP) \\parallel (ET)$ ،",
+          "حسب خاصية طالس: $\\dfrac{SR}{SE} = \\dfrac{SP}{ST} = \\dfrac{RP}{ET}$",
+          "ومنه بقلب النسبتين: $\\dfrac{ST}{SP} = \\dfrac{SE}{SR}$"
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بيّن أن المثلث $RET$ متقايس الساقين رأسه $R$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(RP) \\parallel (ET)$ : قارن الزاويتين $\\widehat{RET}$ و $\\widehat{SRP}$ ، ثم $\\widehat{RTE}$ و $\\widehat{PRT}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$[RP)$ منصّف الزاوية $\\widehat{SRT}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{RET} = \\widehat{SRP} = \\widehat{PRT} = \\widehat{RTE}$ ، إذن $RE = RT$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي."
+      },
+      "solution": {
+        "lines": [
+          "$(RP) \\parallel (ET)$ و $(SE)$ قاطع لهما: $\\widehat{RET} = \\widehat{SRP}$ (زاويتان متماثلتان).",
+          "و $(RT)$ قاطع لهما: $\\widehat{RTE} = \\widehat{PRT}$ (زاويتان متبادلتان داخليا).",
+          "و $\\widehat{SRP} = \\widehat{PRT}$ لأن $[RP)$ منصّف الزاوية $\\widehat{SRT}$ .",
+          "إذن $\\widehat{RET} = \\widehat{RTE}$ : المثلث $RET$ متقايس الساقين رأسه $R$ ، أي $RE = RT$ ."
+        ]
+      },
+      "timeSeconds": 240,
+      "counted": false
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "lead": "نعطي: $RS = 4$ ، $RT = 6$ و $ST = 7$ .",
+      "statement": "احسب $SE$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (عشري بالفاصلة مثل 2,75 أو كسر مثل 7/9)",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$R$ بين $S$ و $E$ ، و $RE = RT$ (السؤال 02)."
+        }
+      ],
+      "feedback": {
+        "correct": "$SE = SR + RE = 4 + 6 = 10$ .",
+        "incorrect": "$R$ بين $S$ و $E$ : $SE = SR + RE$ ، و $RE$ يساوي ضلعا معلوما."
+      },
+      "solution": {
+        "lines": [
+          "$RE = RT = 6$ (السؤال 02) و $R$ بين $S$ و $E$",
+          "$SE = SR + RE = 4 + 6$"
+        ],
+        "result": "SE = 10"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "احسب $SP$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (عشري بالفاصلة مثل 2,75 أو كسر مثل 7/9)",
+      "expectedAnswer": "2,8",
+      "misconceptionSignatures": [
+        {
+          "value": "17,5",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل المساواة المبيّنة في السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\dfrac{ST}{SP} = \\dfrac{SE}{SR}$ : عوّض بالأطوال المعلومة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{7}{SP} = \\dfrac{10}{4}$ ومنه $SP = 2{,}8$ .",
+        "incorrect": "راجع المساواة المختارة: في كل نسبة طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{ST}{SP} = \\dfrac{SE}{SR}$ أي $\\dfrac{7}{SP} = \\dfrac{10}{4}$",
+          "$SP = \\dfrac{7 \\times 4}{10}$",
+          "ملاحظة: $\\dfrac{PT}{SP} = \\dfrac{RT}{RS}$ : المنصّف يقسم $[ST]$ بنسبة الضلعين."
+        ],
+        "result": "SP = 2{,}8"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    }
+  ]
+}

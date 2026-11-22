@@ -1,0 +1,214 @@
+{
+  "id": "ex-1am-kitabat-adad-tabii-l2-010",
+  "lessonCode": "kitabat-adad-tabii",
+  "level": 2,
+  "metadata": {
+    "title": "المليون والمليار",
+    "estimatedMinutes": 5,
+    "tags": [
+      "أعداد كبيرة",
+      "مليون",
+      "مليار"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-2",
+      "page": 20,
+      "section": "أتعمّق",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "المليون يساوي ألف ألف، والمليار يساوي ألف مليون."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب بالأرقام: مليون.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي بالأرقام (يمكنك ترك فراغ بين الفئات)",
+      "expectedAnswer": "1000000",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-KITABA-ZERO-PLACE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما أسماء الفئات التي تسمعها في العدد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل فئة على يمين الفئة الأولى تُكتب بثلاثة أرقام بالضبط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب 0 في كل مرتبة فارغة."
+        }
+      ],
+      "feedback": {
+        "correct": "« مليون » يكتب بالأرقام $1\\,000\\,000$.",
+        "incorrect": "كل فئة بعد الفئة الأولى تُكتب بثلاثة أرقام: المرتبة الفارغة يحفظها الرقم 0."
+      },
+      "solution": {
+        "lines": [
+          "نكتب كل فئة بثلاثة أرقام: 1 في فئة الملايين، 000 في فئة الآلاف، 000 في فئة الوحدات.",
+          "إذن العدد هو $1\\,000\\,000$."
+        ],
+        "result": "1\\,000\\,000"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب بالأرقام: مليار.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي بالأرقام (يمكنك ترك فراغ بين الفئات)",
+      "expectedAnswer": "1000000000",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-KITABA-ZERO-PLACE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما أسماء الفئات التي تسمعها في العدد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل فئة على يمين الفئة الأولى تُكتب بثلاثة أرقام بالضبط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب 0 في كل مرتبة فارغة."
+        }
+      ],
+      "feedback": {
+        "correct": "« مليار » يكتب بالأرقام $1\\,000\\,000\\,000$.",
+        "incorrect": "كل فئة بعد الفئة الأولى تُكتب بثلاثة أرقام: المرتبة الفارغة يحفظها الرقم 0."
+      },
+      "solution": {
+        "lines": [
+          "نكتب كل فئة بثلاثة أرقام: 1 في فئة الملايير، 000 في فئة الملايين، 000 في فئة الآلاف، 000 في فئة الوحدات.",
+          "إذن العدد هو $1\\,000\\,000\\,000$."
+        ],
+        "result": "1\\,000\\,000\\,000"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كم مليونا في المليار؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1000",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-KITABA-DIGIT-COUNT"
+        },
+        {
+          "value": "100",
+          "id": "MISC-KITABA-RANKSHIFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المليار يساوي ألف مليون."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احذف من كتابة المليار فئتي الآلاف والوحدات."
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\,000\\,000\\,000 = 1000 \\times 1\\,000\\,000 + 0$: عدد الملايين هو 1000، أمّا رقم الملايين فهو 0.",
+        "incorrect": "رقم المرتبة هو ما يبقى فيها وحدها؛ أمّا عدد وحداتها فنحسب فيه كل ما يمكن تجميعه منها في العدد كله."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,000\\,000\\,000 = 1000 \\times 1\\,000\\,000 + 0$",
+          "إذن عدد الملايين في العدد $1\\,000\\,000\\,000$ هو 1000، ورقم الملايين هو 0."
+        ],
+        "result": "1000"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "برّر جوابك عن السؤال الثالث باستعمال الكتابة بالفئات.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم صفرا في المليون؟"
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك بالحل النموذجي سطرا بسطر."
+      },
+      "solution": {
+        "lines": [
+          "مليار يكتب $1\\,000\\,000\\,000$.",
+          "نحذف فئة الآلاف وفئة الوحدات (ستة أرقام) فيبقى عدد الملايين: 1000.",
+          "أي $1\\,000\\,000\\,000 = 1000 \\times 1\\,000\\,000$."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

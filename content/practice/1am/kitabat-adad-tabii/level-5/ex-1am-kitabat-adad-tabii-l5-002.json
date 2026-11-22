@@ -1,0 +1,261 @@
+{
+  "id": "ex-1am-kitabat-adad-tabii-l5-002",
+  "lessonCode": "kitabat-adad-tabii",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — صكّ التبرّع للمكتبة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "صك",
+      "كتابة بالأرقام",
+      "أمانة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تبرّعت جمعية الحي لمكتبة البلدية بصكّ كُتب عليه بالحروف: « مائة وخمسة وعشرون ألفا وأربعمائة دينار ».\nالجزء الأول: نقل أمين المكتبة المبلغ إلى سجلّ الهبات بالأرقام.\nالجزء الثاني: ثمن الكتاب الواحد 1000 دج، وتريد المكتبة شراء 130 كتابا."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "اكتب مبلغ الصك بالأرقام.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي بالأرقام (يمكنك ترك فراغ بين الفئات)",
+      "expectedAnswer": "125400",
+      "misconceptionSignatures": [
+        {
+          "value": "1254",
+          "id": "MISC-KITABA-ZERO-PLACE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما أسماء الفئات التي تسمعها في العدد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل فئة على يمين الفئة الأولى تُكتب بثلاثة أرقام بالضبط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب 0 في كل مرتبة فارغة."
+        }
+      ],
+      "feedback": {
+        "correct": "« مائة وخمسة وعشرون ألفا وأربعمائة » يكتب بالأرقام $125\\,400$.",
+        "incorrect": "كل فئة بعد الفئة الأولى تُكتب بثلاثة أرقام: المرتبة الفارغة يحفظها الرقم 0."
+      },
+      "solution": {
+        "lines": [
+          "نكتب كل فئة بثلاثة أرقام: 125 في فئة الآلاف، 400 في فئة الوحدات.",
+          "إذن العدد هو $125\\,400$."
+        ],
+        "result": "125\\,400"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كتب أحد المتطوّعين في السجلّ $12\\,540$ دج. هل كتابته صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-ZERO-PLACE"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الفئات: فئة الآلاف ثم فئة الوحدات."
+        }
+      ],
+      "feedback": {
+        "correct": "لا: $12\\,540$ يُقرأ « اثنا عشر ألفا وخمسمائة وأربعون »، وليس مبلغ الصك.",
+        "incorrect": "اقرأ العدد المكتوب بفئاته وقارنه بالحروف."
+      },
+      "solution": {
+        "lines": [
+          "« مائة وخمسة وعشرون ألفا » فئة الآلاف 125، و « أربعمائة » فئة الوحدات 400.",
+          "المبلغ $125\\,400$ دج، والكتابة $12\\,540$ خاطئة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "كم كتابا ثمنه 1000 دج يمكن شراؤه بمبلغ الصك على الأكثر؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "125",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-KITABA-DIGIT-COUNT"
+        },
+        {
+          "value": "12",
+          "id": "MISC-KITABA-RANKSHIFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الآلاف هو عدد المجموعات من 1000 التي نكوّنها من العدد كله، لا الرقم وحده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احذف الأرقام التي على يمين مرتبة الآلاف."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: اضرب جوابك في 1000 ثم أضف ما بقي."
+        }
+      ],
+      "feedback": {
+        "correct": "$125\\,400 = 125 \\times 1000 + 400$: عدد الآلاف هو 125، أمّا رقم الآلاف فهو 5.",
+        "incorrect": "رقم المرتبة هو ما يبقى فيها وحدها؛ أمّا عدد وحداتها فنحسب فيه كل ما يمكن تجميعه منها في العدد كله."
+      },
+      "solution": {
+        "lines": [
+          "$125\\,400 = 125 \\times 1000 + 400$",
+          "إذن عدد الآلاف في العدد $125\\,400$ هو 125، ورقم الآلاف هو 5."
+        ],
+        "result": "125"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل يكفي مبلغ الصك لشراء 130 كتابا؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-DIGIT-COUNT"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن عدد الآلاف في المبلغ بعدد الكتب."
+        }
+      ],
+      "feedback": {
+        "correct": "لا: في $125\\,400$ دج 125 ألفا فقط، أي 125 كتابا على الأكثر.",
+        "incorrect": "كل كتاب يحتاج ألفا: قارن عدد الآلاف في المبلغ بـ 130."
+      },
+      "solution": {
+        "lines": [
+          "عدد الآلاف في $125\\,400$ هو 125.",
+          "125 < 130، إذن المبلغ لا يكفي."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "برّر قرارك، واقترح عدد الكتب الذي يمكن شراؤه.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم ألفا في المبلغ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك بالحل النموذجي سطرا بسطر."
+      },
+      "solution": {
+        "lines": [
+          "$125\\,400 = 125 \\times 1000 + 400$.",
+          "يمكن شراء 125 كتابا ويبقى 400 دج، وهذا أقل من 130 كتابا.",
+          "إذن المبلغ لا يكفي لشراء 130 كتابا؛ يمكن شراء 125 كتابا."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

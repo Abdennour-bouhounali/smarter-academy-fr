@@ -1,0 +1,138 @@
+{
+  "id": "ex-4am-bahth-pgcd-l2-007",
+  "lessonCode": "bahth-pgcd",
+  "level": 2,
+  "metadata": {
+    "title": "خوارزمية إقليدس — 1005 و 315",
+    "estimatedMinutes": 5,
+    "tags": [
+      "خوارزمية إقليدس"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-34",
+      "page": 15,
+      "section": "أوظّف تعلّماتي",
+      "number": 34,
+      "adaptedFrom": "ex-4am-ikhtizal-kasr-l4-001"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان 1005 و 315."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 1005 و 315 مع كتابة مراحل الحساب.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        },
+        {
+          "value": "0",
+          "id": "MISC-PGCD-SIFR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 1005 على 315: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (1005 ; 315) بالزوج (315 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 15.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم، لا الباقي المعدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$1005 = 315 \\times 3 + 60$",
+          "$315 = 60 \\times 5 + 15$",
+          "$60 = 15 \\times 4 + 0$",
+          "آخر باقٍ غير معدوم هو 15، إذن:"
+        ],
+        "result": "PGCD(1005 ; 315) = 15"
+      },
+      "work": "required",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب الكسر $\\dfrac{1005}{315}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "67/21",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "201/63",
+          "id": "MISC-IKHTIZAL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 15: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال 01.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم البسط والمقام على القاسم المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1005}{315} = \\dfrac{1005 \\div 15}{315 \\div 15}$"
+        ],
+        "result": "\\dfrac{1005}{315} = \\dfrac{67}{21}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

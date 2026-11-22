@@ -1,0 +1,227 @@
+{
+  "id": "ex-2am-muqarana-kasrayn-l3-005",
+  "lessonCode": "muqarana-kasrayn",
+  "level": 3,
+  "metadata": {
+    "title": "أيّهما على حقّ ؟",
+    "estimatedMinutes": 12,
+    "tags": [
+      "مقارنة كسرين",
+      "برّر"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-32",
+      "page": 32,
+      "section": "أوظّف تعلّماتي",
+      "number": 32
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "اختلفت سلمى وسامي في مقارنة العددين $\\dfrac{826{,}0003}{500}$ و $\\dfrac{41{,}3}{25}$ . قالت سلمى : «قرّبتُ كلاًّ منهما إلى $0{,}001$ فوجدتهما متساويين» . وقال سامي : «كتبتُ العدد الثاني بمقام $500$ فوجدتُ أنّهما مختلفان» ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أكمل : $\\dfrac{41{,}3}{25} = \\dfrac{\\square}{500}$ .",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "826",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "41.3",
+          "id": "MISC-MUQKASR-NOSCALE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في أيّ عدد ضُرب المقام للانتقال من الكسر الأوّل إلى الثاني ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا يتغيّر الكسر إذا ضربنا بسطه ومقامه في العدد نفسه ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب البسط في العدد الذي ضُرب فيه المقام ."
+        }
+      ],
+      "feedback": {
+        "correct": "$826$ .",
+        "incorrect": "غيّرنا المقام فيجب أن نغيّر البسط بالعدد نفسه ثمّ نعيد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$500 = 25 \\times 20$ .",
+          "$\\dfrac{41{,}3}{25} = \\dfrac{41{,}3 \\times 20}{25 \\times 20} = \\dfrac{826}{500}$ ."
+        ],
+        "result": "826"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "قارن بين $\\dfrac{826{,}0003}{500}$ و $\\dfrac{41{,}3}{25}$ :",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{826{,}0003}{500} > \\dfrac{41{,}3}{25}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{826{,}0003}{500} < \\dfrac{41{,}3}{25}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-REVERSED"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن بين المقامين : هل أحدهما مضاعف للآخر ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسرين بالمقام الأكبر ثمّ قارن بين البسطين ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب بسط الكسر الأصغر مقامًا ومقامه في العدد نفسه حتّى يصير مقامه مساويًا للمقام الآخر ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{826{,}0003}{500} > \\dfrac{41{,}3}{25}$ .",
+        "incorrect": "اختر طريقة المقارنة المناسبة للحالة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$500$ مضاعف للعدد $25$ : $500 = 25 \\times 20$ .",
+          "$\\dfrac{41{,}3}{25} = \\dfrac{41{,}3 \\times 20}{25 \\times 20} = \\dfrac{826}{500}$ .",
+          "نقارن بين البسطين : $826{,}0003 > 826$ ، إذن $\\dfrac{826{,}0003}{500} > \\dfrac{41{,}3}{25}$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "من منهما على حقّ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "سلمى",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "سامي",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا تثق في قيمة مقرّبة : اكتب الكسرين بالمقام نفسه وقارن بين البسطين بدقّة ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أحد المقامين مضاعف للآخر : اكتب الكسر ذا المقام الأصغر بالمقام الأكبر ."
+        }
+      ],
+      "feedback": {
+        "correct": "سامي على حقّ .",
+        "incorrect": "اكتب الكسرين بالمقام نفسه ثمّ قارن بين البسطين بدقّة وأعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$500$ مضاعف للعدد $25$ : $500 = 25 \\times 20$ .",
+          "$\\dfrac{41{,}3}{25} = \\dfrac{41{,}3 \\times 20}{25 \\times 20} = \\dfrac{826}{500}$ .",
+          "نقارن بين البسطين : $826{,}0003 > 826$ ، إذن $\\dfrac{826{,}0003}{500} > \\dfrac{41{,}3}{25}$ ."
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "علّل جوابك : لماذا لا تكفي القيمة المقرّبة للحكم على تساوي عددين ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا ، ثمّ اضغط «سجّل إجابتي» لتطّلع على الحلّ النموذجي .",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب جملة أو جملتين : الطريقة المستعملة ثمّ المقارنة التي تدعمها ."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحلّ النموذجي .",
+        "incorrect": "قارن تبريرك بالحلّ النموذجي : الطريقة ثمّ المقارنة التي تدعمها ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{41{,}3}{25} = \\dfrac{826}{500}$ ، و $826 < 826{,}0003$ .",
+          "إذن $\\dfrac{41{,}3}{25} < \\dfrac{826{,}0003}{500}$ : الفرق صغير جدًّا فاختفى عند التقريب لكنّه موجود ."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

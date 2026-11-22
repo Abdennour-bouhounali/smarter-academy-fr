@@ -1,0 +1,240 @@
+{
+  "id": "ex-3am-jidaa-ida-nisbiya-l4-010",
+  "lessonCode": "jidaa-ida-nisbiya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — تعاونية المدرسة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "توزيع الضرب",
+      "حساب ذهني",
+      "سياق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "تخسر تعاونية المدرسة $3{,}5$ دج في كل كرّاس يُباع بسعر مخفَّض، وتخسر $12$ دج في كل علبة أقلام تُباع بسعر مخفَّض. نعبّر عن تغيّر ربحها بعدد سالب."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الكراريس.",
+      "statement": "بيع $98$ كرّاسًا بالتخفيض. احسب ذهنيًا التغيّر $(−3{,}5) \\times 98$ دج.",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-343",
+      "misconceptionSignatures": [
+        {
+          "value": "-357",
+          "id": "MISC-IDA-DISTSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن العامل المشترك في الحدّين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$k \\times a + k \\times b = k \\times (a + b)$ و $k \\times a - k \\times b = k \\times (a - b)$ ، في الاتجاهين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولًا ما بين القوسين إن كان عددًا سهلًا (مثل $10$ أو $100$) ثم اضرب."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−3{,}5) \\times 98 = −343$ .",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $98 = 100 − 2$ .",
+          "$(−3{,}5) \\times (100 − 2) = −350 − (−7) = −350 + 7$ .",
+          "$−343$"
+        ],
+        "result": "−343"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "بيع $46$ كرّاسًا في الأسبوع الأول و $54$ في الثاني. احسب ذهنيًا التغيّر $(−3{,}5) \\times 46 + (−3{,}5) \\times 54$ دج.",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-350",
+      "misconceptionSignatures": [
+        {
+          "value": "350",
+          "id": "MISC-IDA-DISTSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن العامل المشترك في الحدّين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$k \\times a + k \\times b = k \\times (a + b)$ و $k \\times a - k \\times b = k \\times (a - b)$ ، في الاتجاهين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولًا ما بين القوسين إن كان عددًا سهلًا (مثل $10$ أو $100$) ثم اضرب."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−3{,}5) \\times 46 + (−3{,}5) \\times 54 = −350$ .",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العدد $−3{,}5$ عامل مشترك.",
+          "$(−3{,}5) \\times (46 + 54) = (−3{,}5) \\times 100$ .",
+          "$−350$"
+        ],
+        "result": "−350"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "علب الأقلام.",
+      "statement": "بيعت $24$ علبة في الأسبوع الأول و $76$ في الثاني. احسب ذهنيًا التغيّر $(−12) \\times 24 + (−12) \\times 76$ دج.",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-1200",
+      "misconceptionSignatures": [
+        {
+          "value": "1200",
+          "id": "MISC-IDA-DISTSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن العامل المشترك في الحدّين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$k \\times a + k \\times b = k \\times (a + b)$ و $k \\times a - k \\times b = k \\times (a - b)$ ، في الاتجاهين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولًا ما بين القوسين إن كان عددًا سهلًا (مثل $10$ أو $100$) ثم اضرب."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−12) \\times 24 + (−12) \\times 76 = −1200$ .",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العدد $−12$ عامل مشترك.",
+          "$(−12) \\times (24 + 76) = (−12) \\times 100$ .",
+          "$−1200$"
+        ],
+        "result": "−1200"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "بيعت $205$ علب. احسب ذهنيًا التغيّر $(−12) \\times 205$ دج.",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-2460",
+      "misconceptionSignatures": [
+        {
+          "value": "-2340",
+          "id": "MISC-IDA-DISTSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن العامل المشترك في الحدّين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$k \\times a + k \\times b = k \\times (a + b)$ و $k \\times a - k \\times b = k \\times (a - b)$ ، في الاتجاهين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولًا ما بين القوسين إن كان عددًا سهلًا (مثل $10$ أو $100$) ثم اضرب."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−12) \\times 205 = −2460$ .",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $205 = 200 + 5$ .",
+          "$(−12) \\times (200 + 5) = −2400 + (−60)$ .",
+          "$−2460$"
+        ],
+        "result": "−2460"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-khattiya-l1-010",
+  "lessonCode": "wadiya-idmajiya-khattiya",
+  "level": 1,
+  "metadata": {
+    "title": "تذكرة الطفل في المصعد الهوائي",
+    "estimatedMinutes": 4,
+    "tags": [
+      "نسبة مئوية",
+      "دالة خطية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-khattiya_P2",
+      "modelledOn": "situation",
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-khattiya-l1-010"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "تشجيعًا للعائلات على التنزّه معًا، سعر تذكرة مصعد هوائي لشخص بالغ $x$ DA، ويستفيد كل طفل من تخفيض قدره 40% من سعر تذكرة البالغ. نسمّي $g(x)$ سعر تذكرة الطفل."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عبّر عن $g(x)$ بدلالة $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المعامل $a$ فقط في $g(x) = ax$ (عشري بالفاصلة)",
+      "expectedAnswer": "0,6",
+      "misconceptionSignatures": [
+        {
+          "value": "0.4",
+          "id": "MISC-TAKHFID-NISBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يدفع الطفل ما يبقى بعد طرح التخفيض."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خفض بـ 40% يعني الضرب في $1 - 0{,}4$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$g(x) = x - 0{,}4x = 0{,}6x$ .",
+        "incorrect": "المعامل هو ما يدفعه الطفل من سعر البالغ، لا نسبة التخفيض."
+      },
+      "solution": {
+        "lines": [
+          "$g(x) = x - \\dfrac{40}{100}x = 0{,}6x$"
+        ],
+        "result": "g(x) = 0{,}6x"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب سعر تذكرة الطفل إذا كان سعر تذكرة البالغ 300DA.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: السعر بـ DA",
+      "expectedAnswer": "180",
+      "misconceptionSignatures": [
+        {
+          "value": "120",
+          "id": "MISC-TAKHFID-NISBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $g(300)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$g(300) = 0{,}6 \\times 300 = 180$ DA.",
+        "incorrect": "السعر هو صورة 300 بالدالة $g$ ، لا قيمة التخفيض."
+      },
+      "solution": {
+        "lines": [
+          "$g(300) = 0{,}6 \\times 300 = 180$",
+          "يدفع الطفل 180DA."
+        ],
+        "result": "g(300) = 180"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

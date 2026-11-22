@@ -1,0 +1,264 @@
+{
+  "id": "ex-4am-mutatabiqat-shahira-l2-002",
+  "lessonCode": "mutatabiqat-shahira",
+  "level": 2,
+  "metadata": {
+    "title": "مربع فرق وحساب ذهني",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مربع فرق",
+      "حساب ذهني"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-2b",
+      "page": 32,
+      "section": "أنشطة",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $A$ حيث:",
+    "formulas": [
+      "A = (5 - 2x)^2"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انشر ثم بسّط العبارة $A$ .",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $mx^2 + nx + p$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-MUTATABIQA-MURABBA-MUAMIL"
+        },
+        {
+          "value": "-4",
+          "id": "MISC-MURABBA-FARQ-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على مربع فرق: $(a - b)^2 = a^2 - 2ab + b^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن الحدّين $a$ و $b$ ، ولا تنسَ الحد المضاعف $2ab$ ولا تربيع المعامل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 4x^2 - 20x + 25$ إذن $m = 4$ .",
+        "incorrect": "طبّق المتطابقة الشهيرة حدًّا حدًّا (مربع كل حد والحد المضاعف)، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$A = (5 - 2x)^2$",
+          "$A = 5^2 - 2 \\times 5 \\times 2x + (2x)^2$",
+          "$A = 25 - 20x + 4x^2$"
+        ],
+        "result": "A = 4x^2 - 20x + 25"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $mx^2 + nx + p$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "-20",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-MURABBA-FARQ-BILA-2AB"
+        },
+        {
+          "value": "-10",
+          "id": "MISC-MUTATABIQA-2AB-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل $x$ يأتي من الحد المضاعف $2ab$ ومن الحدود الأخرى في $x$ ، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 4x^2 - 20x + 25$ إذن $n = -20$ .",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $n$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$A = 4x^2 - 20x + 25$"
+        ],
+        "result": "n = -20"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "العدد $p$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $mx^2 + nx + p$ : اكتب العدد $p$ فقط",
+      "expectedAnswer": "25",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 4x^2 - 20x + 25$ إذن $p = 25$ .",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $p$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$A = 4x^2 - 20x + 25$"
+        ],
+        "result": "p = 25"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "احسب ذهنيا (دون وضع العملية) كلا من العددين:",
+      "statement": "$19^2$",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "361",
+      "misconceptionSignatures": [
+        {
+          "value": "401",
+          "id": "MISC-HISAB-DHIHNI-MURABBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العدد على شكل فرق عدد مدوّر وعدد صغير."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق $(a - b)^2 = a^2 - 2ab + b^2$ ، ولا تنسَ الحد المضاعف $2ab$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$19^2 = 361$ .",
+        "incorrect": "اكتب العدد بدلالة عدد مدوّر، ثم طبّق المتطابقة الشهيرة المناسبة حدًّا حدًّا."
+      },
+      "solution": {
+        "lines": [
+          "$19^2 = (20 - 1)^2$",
+          "$= 20^2 - 2 \\times 20 \\times 1 + 1^2$",
+          "$= 400 - 40 + 1$"
+        ],
+        "result": "19^2 = 361"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "$37^2$",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1369",
+      "misconceptionSignatures": [
+        {
+          "value": "1609",
+          "id": "MISC-HISAB-DHIHNI-MURABBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العدد على شكل فرق عدد مدوّر وعدد صغير."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق $(a - b)^2 = a^2 - 2ab + b^2$ ، ولا تنسَ الحد المضاعف $2ab$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$37^2 = 1369$ .",
+        "incorrect": "اكتب العدد بدلالة عدد مدوّر، ثم طبّق المتطابقة الشهيرة المناسبة حدًّا حدًّا."
+      },
+      "solution": {
+        "lines": [
+          "$37^2 = (40 - 3)^2$",
+          "$= 40^2 - 2 \\times 40 \\times 3 + 3^2$",
+          "$= 1600 - 240 + 9$"
+        ],
+        "result": "37^2 = 1369"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

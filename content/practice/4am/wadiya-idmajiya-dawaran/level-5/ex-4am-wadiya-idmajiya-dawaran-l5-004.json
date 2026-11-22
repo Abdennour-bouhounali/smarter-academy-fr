@@ -1,0 +1,120 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-dawaran-l5-004",
+  "lessonCode": "wadiya-idmajiya-dawaran",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — نصف القطر المطلوب",
+    "estimatedMinutes": 3,
+    "tags": [
+      "نمذجة",
+      "المسافة في المثلث القائم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-dawaran_P2",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "تريد بلدية بجاية أعمدة إنارة حول حوض دائري بحيث تكون المسافة المستقيمة بين كل عمودين متتاليين $3\\,\\mathrm{m}$ بالضبط."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "بستة أعمدة، نصف قطر الحوض (بالمتر):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالمتر)",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ستة أعمدة: سداسي منتظم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المثلث الذي رأسه المركز متقايس الأضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الضلع يساوي نصف القطر."
+        }
+      ],
+      "feedback": {
+        "correct": "في السداسي المنتظم: نصف القطر = الضلع = $3\\,\\mathrm{m}$ .",
+        "incorrect": "المثلث متقايس الأضلاع."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "1.5",
+          "id": "MISC-MAALAM-DAIRA-QUTR"
+        },
+        {
+          "value": "6",
+          "id": "MISC-MAALAM-DAIRA-QUTR"
+        }
+      ],
+      "difficulty": 5
+    },
+    {
+      "id": "q2",
+      "statement": "بأربعة أعمدة فقط، نصف قطر الحوض بالمتر، مدوّرا إلى $0{,}01$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة (مدوّر إلى 0,01)",
+      "expectedAnswer": "2.12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أربعة أعمدة: مربع ضلعه $3\\,\\mathrm{m}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في المثلث القائم: $\\sin 45^\\circ = \\dfrac{1{,}5}{r}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أو: قطر المربع $3\\sqrt{2}$ ونصفه نصف القطر."
+        }
+      ],
+      "feedback": {
+        "correct": "$r = \\dfrac{1{,}5}{\\sin 45^\\circ} = \\dfrac{3\\sqrt{2}}{2} \\approx 2{,}12\\,\\mathrm{m}$ .",
+        "incorrect": "الضلع لا يساوي نصف القطر في المربع: $r = \\dfrac{3}{2\\sin 45^\\circ}$ ."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-MUNTAZAM-DIL"
+        },
+        {
+          "value": "4.24",
+          "id": "MISC-MAALAM-DAIRA-QUTR"
+        }
+      ],
+      "difficulty": 5
+    }
+  ]
+}

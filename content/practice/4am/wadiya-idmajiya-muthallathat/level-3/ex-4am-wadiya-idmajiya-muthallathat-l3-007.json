@@ -1,0 +1,202 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muthallathat-l3-007",
+  "lessonCode": "wadiya-idmajiya-muthallathat",
+  "level": 3,
+  "metadata": {
+    "title": "تيليفيريك قسنطينة: مقطعان من الكابل",
+    "estimatedMinutes": 10,
+    "tags": [
+      "الجيب",
+      "جيب التمام",
+      "الظل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-muthallathat_P1",
+      "modelledOn": "situation",
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-muthallathat-l3-007"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "مقطع مستقيم من كابل تيليفيريك قسنطينة طوله $750\\,\\mathrm{m}$ ويصنع زاوية قيسها $12^{\\circ}$ مع الأفق. يوفّر التلفريك على الركّاب الوقت ويتيح لكبار السنّ الوصول بسهولة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب الارتفاع الذي تصعده العربة على هذا المقطع بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P2",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الارتفاع بـ m مدوّرا إلى 0,1",
+      "expectedAnswer": "155.9",
+      "misconceptionSignatures": [
+        {
+          "value": "159.4",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "733.6",
+          "id": "MISC-MUTH-MUQABIL-MUJAWIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم مثلثا قائما وتره الكابل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الارتفاع مقابل للزاوية $12^{\\circ}$ : الجيب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالآلة الحاسبة مبرمجة على الدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$750 \\times \\sin 12^{\\circ} \\approx 155{,}9\\,\\mathrm{m}$ .",
+        "incorrect": "الكابل وتر والارتفاع مقابل: نستعمل الجيب ونضرب."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث القائم الذي وتره الكابل: $\\sin 12^{\\circ} = \\dfrac{h}{750}$ ومنه $h = 750 \\times \\sin 12^{\\circ}$",
+          "باستعمال الآلة الحاسبة: $h \\approx 155{,}9338$"
+        ],
+        "result": "h \\approx 155{,}9\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب المسافة الأفقية التي يقطعها هذا المقطع بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: المسافة بـ m مدوّرة إلى 0,1",
+      "expectedAnswer": "733.6",
+      "misconceptionSignatures": [
+        {
+          "value": "155.9",
+          "id": "MISC-MUTH-MUQABIL-MUJAWIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة الأفقية مجاورة للزاوية $12^{\\circ}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل جيب التمام."
+        }
+      ],
+      "feedback": {
+        "correct": "$750 \\times \\cos 12^{\\circ} \\approx 733{,}6\\,\\mathrm{m}$ .",
+        "incorrect": "المجاور = الوتر × جيب التمام."
+      },
+      "solution": {
+        "lines": [
+          "$\\cos 12^{\\circ} = \\dfrac{d}{750}$ ومنه $d = 750 \\times \\cos 12^{\\circ}$",
+          "باستعمال الآلة الحاسبة: $d \\approx 733{,}6107$"
+        ],
+        "result": "d \\approx 733{,}6\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "يصعد المقطع الموالي من الكابل $120\\,\\mathrm{m}$ عندما يقطع مسافة أفقية قدرها $400\\,\\mathrm{m}$ . أعط المدوّر إلى الوحدة من الدرجة لقيس زاوية ميله على الأفق.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: القيس بالدرجة مدوّرا إلى الوحدة",
+      "expectedAnswer": "17",
+      "misconceptionSignatures": [
+        {
+          "value": "73",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        },
+        {
+          "value": "16",
+          "id": "MISC-MUTH-TADWIR-BATR"
+        },
+        {
+          "value": "0.3",
+          "id": "MISC-MUTH-NISBA-BADAL-QAYS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الارتفاع مقابل والمسافة الأفقية مجاورة: الظل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل اللمسة العكسية للنسبة في آلة حاسبة مبرمجة على الدرجة، ثم دوّر في آخر الحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan\\beta = \\dfrac{120}{400} = 0{,}3$ ومنه $\\beta \\approx 16{,}7^{\\circ}$ ، أي $17^{\\circ}$ .",
+        "incorrect": "المعلومان هنا المقابل والمجاور: النسبة المناسبة هي الظل."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan\\beta = \\dfrac{120}{400} = 0{,}3$",
+          "باستعمال الآلة الحاسبة: $\\beta \\approx 16{,}6992^{\\circ}$"
+        ],
+        "result": "\\beta \\approx 17^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

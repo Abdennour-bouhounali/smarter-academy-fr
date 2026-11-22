@@ -1,0 +1,155 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l1-005",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2008 — 1458 و 27",
+    "estimatedMinutes": 4,
+    "tags": [
+      "قسمة إقليدية",
+      "كسر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-adad-tabii_P1",
+      "modelledOn": "BEM 2008 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2008",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "جد حاصل وباقي القسمة الإقليدية للعدد 1458 على 27.",
+      "statement": "حاصل القسمة:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "54",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أكبر مضاعف للعدد 27 لا يتجاوز 1458."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل القسمة هو أكبر عدد طبيعي $q$ يحقق $27 \\times q \\leq 1458$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الباقي أصغر تمامًا من 27."
+        }
+      ],
+      "feedback": {
+        "correct": "$1458 = 27 \\times 54 + 0$ مع $0 < 27$.",
+        "incorrect": "ابحث عن أكبر مضاعف للعدد 27 لا يتجاوز 1458، ثم اطرحه من 1458."
+      },
+      "solution": {
+        "lines": [
+          "$27 \\times 54 = 1458$ و $27 \\times 55 = 1485$ أكبر من 1458.",
+          "$1458 - 1458 = 0$ و $0 < 27$",
+          "إذن المساواة التي تعبّر عن القسمة الإقليدية هي:"
+        ],
+        "result": "1458 = 27 \\times 54 + 0"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "الباقي:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى من 1458 بعد طرح أكبر مضاعف للعدد 27 لا يتجاوزه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي عدد طبيعي أصغر تمامًا من 27."
+        }
+      ],
+      "feedback": {
+        "correct": "$1458 = 27 \\times 54 + 0$: الباقي 0، فهو معدوم.",
+        "incorrect": "اطرح من 1458 أكبر مضاعف للعدد 27 لا يتجاوزه."
+      },
+      "solution": {
+        "lines": [
+          "$1458 - 27 \\times 54 = 0$"
+        ],
+        "result": "r = 0"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "اكتب الكسر $\\dfrac{1458}{27}$ على شكل عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "54",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان $a = b \\times q$ فإن $\\dfrac{a}{b} = q$."
+        }
+      ],
+      "feedback": {
+        "correct": "$1458 = 27 \\times 54$ إذن $\\dfrac{1458}{27} = 54$.",
+        "incorrect": "الباقي معدوم في السؤال 01: الكسر يساوي حاصل القسمة."
+      },
+      "solution": {
+        "lines": [
+          "$1458 = 27 \\times 54$",
+          "$\\dfrac{1458}{27} = \\dfrac{27 \\times 54}{27}$"
+        ],
+        "result": "\\dfrac{1458}{27} = 54"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

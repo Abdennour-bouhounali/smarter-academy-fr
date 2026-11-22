@@ -1,0 +1,206 @@
+{
+  "id": "ex-1am-adad-ashri-mustaqim-mudarraj-l2-010",
+  "lessonCode": "adad-ashri-mustaqim-mudarraj",
+  "level": 2,
+  "metadata": {
+    "title": "علم على العلامة وعلم بعدها",
+    "estimatedMinutes": 5,
+    "tags": [
+      "فاصلة",
+      "تدريجة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-4",
+      "page": 10,
+      "section": "اكتشف",
+      "number": 4
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نصف مستقيم مدرّج مبدؤه $O$ ، ووحدته مقسّمة إلى 10 أجزاء متساوية. نقارن موضعي علمين على الشريط."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "المسافة بين المبدإ $O$ والعلم $F$ تساوي وحدتين. ما فاصلة العلم $F$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "0,2",
+          "id": "MISC-ABSC-SWAP"
+        },
+        {
+          "value": "0",
+          "id": "MISC-ABSC-FROMO"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم وحدة كاملة تفصل النقطة عن المبدإ، وماذا يبقى بعدها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كلّ تدريجة صغيرة جزء من الوحدة، وليست وحدة كاملة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف قيمة التدريجات الصغيرة إلى عدد الوحدات الكاملة."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة $2$ : الوحدات الكاملة أوّلًا ثمّ التدريجات الصغيرة.",
+        "incorrect": "الوحدات الكاملة تعطي الجزء الصحيح، والتدريجات الصغيرة تعطي الجزء بعد الفاصلة ؛ كلّ تدريجة صغيرة جزء من الوحدة لا وحدة كاملة."
+      },
+      "solution": {
+        "lines": [
+          "$2$ وحدة كاملة، ثمّ $0$ تدريجة صغيرة قيمة كلّ منها $0{,}1$",
+          "الفاصلة : $2$ + $0$ × $0{,}1$ = $2$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "المسافة بين المبدإ $O$ والعلم $G$ تساوي وحدتين و5 تدريجات صغيرة. ما فاصلة العلم $G$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$5{,}2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-SWAP"
+        },
+        {
+          "id": "B",
+          "content": "$7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-TICKUNIT"
+        },
+        {
+          "id": "C",
+          "content": "$2{,}05$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-HUNDREDTH"
+        },
+        {
+          "id": "D",
+          "content": "$2{,}5$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم وحدة كاملة تفصل النقطة عن المبدإ، وماذا يبقى بعدها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كلّ تدريجة صغيرة جزء من الوحدة، وليست وحدة كاملة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف قيمة التدريجات الصغيرة إلى عدد الوحدات الكاملة."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة $2{,}5$ : الوحدات الكاملة أوّلًا ثمّ التدريجات الصغيرة.",
+        "incorrect": "الوحدات الكاملة تعطي الجزء الصحيح، والتدريجات الصغيرة تعطي الجزء بعد الفاصلة ؛ كلّ تدريجة صغيرة جزء من الوحدة لا وحدة كاملة."
+      },
+      "solution": {
+        "lines": [
+          "$2$ وحدة كاملة، ثمّ $5$ تدريجة صغيرة قيمة كلّ منها $0{,}1$",
+          "الفاصلة : $2$ + $5$ × $0{,}1$ = $2{,}5$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "النقطة $A$ فاصلتها $2$ والنقطة $B$ فاصلتها $2{,}5$ . النقطة $B$ أبعد عن المبدإ $O$ من النقطة $A$ .",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثمّ قارن تبريرك بالحلّ النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-LONGER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "البعد عن المبدإ هو الفاصلة نفسها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين رتبةً برتبة بدءًا من الجزء الصحيح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ما يظهر طويلًا بعد الفاصلة لا يعني أنّ العدد أكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "إجابة صحيحة.",
+        "incorrect": "نتحقّق بحساب الفاصلة أو بمقارنتها بالعلامات ولا نكتفي بالنظر إلى شكل الكتابة."
+      },
+      "solution": {
+        "lines": [
+          "$2{,}5$ > $2$",
+          "النقطة الأبعد عن المبدإ فاصلتها الأكبر"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

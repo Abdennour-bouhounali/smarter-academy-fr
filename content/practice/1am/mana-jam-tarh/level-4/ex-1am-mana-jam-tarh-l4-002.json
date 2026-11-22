@@ -1,0 +1,250 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l4-002",
+  "lessonCode": "mana-jam-tarh",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — في الصيدلية",
+    "estimatedMinutes": 9,
+    "tags": [
+      "هل يكفي المبلغ",
+      "باقٍ",
+      "ينقص"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 1,
+      "file": "1am-s1-94",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الرابع",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "بعد زيارة الطبيب، ذهبت السيدة نوال لشراء دواء لابنها: قارورة شراب بـ 465,25 دج، و 4 علب من الأقراص سعر العلبة الواحدة 215,5 دج، وعبوة فيتامين بـ 390,75 دج. كان معها 2500 دج، ودفعت منها 800 دج للطبيب مقابل الفحص."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب ثمن علب الأقراص.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "862",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "4 علب، والعلبة بـ 215,5 دج."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب سعر العلبة في عدد العلب."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 215{,}5 = 862$ دج.",
+        "incorrect": "ثمن العلب = عدد العلب × سعر العلبة الواحدة."
+      },
+      "solution": {
+        "lines": [
+          "$4 \\times 215{,}5 = 862$"
+        ],
+        "result": "862 \\text{ DA}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب ثمن الدواء كله.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "1718",
+      "misconceptionSignatures": [
+        {
+          "value": "1071.5",
+          "id": "MISC-JAMTARH-JUZ-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثمن الدواء: الشراب + الأقراص كلها + الفيتامين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب ثمن العلب كلها، لا علبة واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$465{,}25 + 862 + 390{,}75 = 1718$ دج.",
+        "incorrect": "اجمع الأثمان الثلاثة، مع ثمن كل العلب."
+      },
+      "solution": {
+        "lines": [
+          "$465{,}25 + 862 + 390{,}75 = 1718$"
+        ],
+        "result": "1718 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما المبلغ الذي بقي معها بعد دفع ثمن الفحص؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "1700",
+      "misconceptionSignatures": [
+        {
+          "value": "3300",
+          "id": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما كان معها هو الكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي جزء: نطرح ثمن الفحص."
+        }
+      ],
+      "feedback": {
+        "correct": "$2500 - 800 = 1700$ دج.",
+        "incorrect": "بعد الدفع يقلّ المبلغ: اطرح ثمن الفحص مما كان معها."
+      },
+      "solution": {
+        "lines": [
+          "$2500 - 800 = 1700$"
+        ],
+        "result": "1700 \\text{ DA}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "sub": "ا",
+      "statement": "هل يكفيها المبلغ الباقي لشراء الدواء كله؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-JUZ-NAQIS"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن ما بقي معها بثمن الدواء كله."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تنسَ ثمن الفحص الذي دُفع."
+        }
+      ],
+      "feedback": {
+        "correct": "$1700 < 1718$: المبلغ لا يكفي.",
+        "incorrect": "احسب ما بقي معها بعد الفحص، ثم قارنه بثمن الدواء كله."
+      },
+      "solution": {
+        "lines": [
+          "بقي معها 1700 دج، وثمن الدواء 1718 دج.",
+          "$1700 < 1718$ ، إذن المبلغ لا يكفيها."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "sub": "ب",
+      "statement": "كم ينقصها لتشتري الدواء كله؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "18",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثمن الدواء هو الكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما ينقصها + ما معها = ثمن الدواء."
+        }
+      ],
+      "feedback": {
+        "correct": "$1718 - 1700 = 18$ دج.",
+        "incorrect": "ما ينقصها جزء من ثمن الدواء: اطرح ما معها منه."
+      },
+      "solution": {
+        "lines": [
+          "$1718 - 1700 = 18$"
+        ],
+        "result": "18 \\text{ DA}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,318 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-taalufiya-l4-008",
+  "lessonCode": "wadiya-idmajiya-taalufiya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2013 — ثلاث صيغ لروضة أطفال ببومرداس",
+    "estimatedMinutes": 14,
+    "tags": [
+      "ثلاث صيغ",
+      "دالة ثابتة",
+      "مفاضلة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-taalufiya_P2",
+      "modelledOn": "BEM 2013 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2013",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "تقترح روضة أطفال ببومرداس، تحرص على نظافة أطفالها وقاعاتها، ثلاث صيغ للتسجيل، حيث $x$ عدد أيام الحضور في الشهر:\n- الصيغة الأولى: 500DA لليوم الواحد.\n- الصيغة الثانية: حقوق تسجيل شهرية 2000DA ، إضافة إلى 300DA لليوم الواحد.\n- الصيغة الثالثة: 8000DA شهريا مهما كان عدد أيام الحضور.\nنسمّي $f(x)$ ، $g(x)$ ، $h(x)$ المبالغ بـ DA حسب الصيغ الأولى والثانية والثالثة على الترتيب."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عبّر عن $f(x)$ ، $g(x)$ ، $h(x)$ بدلالة $x$ .",
+      "statement": "أعط العدد $a$ حيث: $f(x) = ax$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "500",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما يُدفع عن كل يوم في الصيغة الأولى."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن اليوم هو معامل $x$ .",
+        "incorrect": "$f$ دالة خطية معاملها ثمن اليوم."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 500x$",
+          "$g(x) = 300x + 2000$",
+          "$h(x) = 8000$"
+        ],
+        "result": "f(x) = 500x"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "أعط العددين $a$ و $b$ حيث: $g(x) = ax + b$ ، ابدأ بالعدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "300",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "2000"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما يُدفع عن كل يوم في الصيغة الثانية."
+        }
+      ],
+      "feedback": {
+        "correct": "معامل $x$ هو ثمن اليوم.",
+        "incorrect": "معامل $x$ هو ما يتكرّر مع كل يوم، لا حقوق التسجيل."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 500x$",
+          "$g(x) = 300x + 2000$",
+          "$h(x) = 8000$"
+        ],
+        "result": "g(x) = 300x + 2000"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "ثم العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "2000",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "300"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما يُدفع مرّة واحدة في الشهر."
+        }
+      ],
+      "feedback": {
+        "correct": "حقوق التسجيل هي الحدّ الثابت.",
+        "incorrect": "الحدّ الثابت لا يتعلّق بعدد الأيام."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 500x$",
+          "$g(x) = 300x + 2000$",
+          "$h(x) = 8000$"
+        ],
+        "result": "g(x) = 300x + 2000"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "statement": "أعط العدد $h(x)$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "8000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ لا يتعلّق بعدد الأيام."
+        }
+      ],
+      "feedback": {
+        "correct": "$h$ دالة ثابتة.",
+        "incorrect": "صورة كل عدد بالدالة الثابتة هي نفسها."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 500x$",
+          "$g(x) = 300x + 2000$",
+          "$h(x) = 8000$"
+        ],
+        "result": "h(x) = 8000"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ا",
+      "lead": "حلّ المعادلتين الآتيتين، ثم فسّر كل حل.",
+      "statement": "$f(x) = g(x)$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الأيام",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$500x = 300x + 2000$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$200x = 2000$ .",
+        "incorrect": "اجمع حدود $x$ في طرف واحد."
+      },
+      "solution": {
+        "lines": [
+          "$500x = 300x + 2000$",
+          "$200x = 2000$",
+          "$x = 10$",
+          "من أجل 10 أيام تتساوى الصيغتان الأولى والثانية."
+        ],
+        "result": "x = 10"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ب",
+      "statement": "$g(x) = h(x)$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الأيام",
+      "expectedAnswer": "20",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$300x + 2000 = 8000$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$300x = 6000$ .",
+        "incorrect": "اطرح حقوق التسجيل ثم اقسم على ثمن اليوم."
+      },
+      "solution": {
+        "lines": [
+          "$300x + 2000 = 8000$",
+          "$300x = 6000$",
+          "$x = 20$",
+          "من أجل 20 يوما تتساوى الصيغتان الثانية والثالثة."
+        ],
+        "result": "x = 20"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "statement": "☜ يحضر ياسين إلى الروضة 18 يوما في الشهر. ما هي الصيغة الأقل تكلفة لأبيه؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الصيغة الأولى",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        },
+        {
+          "id": "B",
+          "content": "الصيغة الثانية",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "الصيغة الثالثة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "18 يقع بين حلّي المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب المبالغ الثلاثة من أجل 18 يوما."
+        }
+      ],
+      "feedback": {
+        "correct": "9000DA و 7400DA و 8000DA .",
+        "incorrect": "احسب $f(18)$ و $g(18)$ و $h(18)$ ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "$f(18) = 500 \\times 18 = 9000DA$",
+          "$g(18) = 300 \\times 18 + 2000 = 7400DA$",
+          "$h(18) = 8000DA$",
+          "إذن الصيغة الثانية هي الأقل تكلفة (بين 10 و 20 يوما)."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

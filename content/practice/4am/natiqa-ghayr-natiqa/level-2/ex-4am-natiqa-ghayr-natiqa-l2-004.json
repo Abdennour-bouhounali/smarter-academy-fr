@@ -1,0 +1,164 @@
+{
+  "id": "ex-4am-natiqa-ghayr-natiqa-l2-004",
+  "lessonCode": "natiqa-ghayr-natiqa",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2009 — جداء عددين ناطقين",
+    "estimatedMinutes": 5,
+    "tags": [
+      "عدد ناطق",
+      "جداء"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_natiqa-ghayr-natiqa_P2",
+      "modelledOn": "BEM 2009 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان $A$ و $B$ حيث:",
+    "formulas": [
+      "A = \\sqrt{\\dfrac{49}{9}} \\quad ; \\quad B = \\sqrt{0{,}36}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب كلًّا من العددين $A$ و $B$ .",
+      "statement": "اكتب $A$ على شكل كسر.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "7/3",
+      "misconceptionSignatures": [
+        {
+          "value": "49/18",
+          "id": "MISC-JIDHR-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن كسر موجب مربعه $\\dfrac{49}{9}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\left(\\dfrac{7}{3}\\right)^2 = \\dfrac{49}{9}$ .",
+        "incorrect": "خذ جذر البسط وجذر المقام."
+      },
+      "solution": {
+        "lines": [
+          "$7^2 = 49$ و $3^2 = 9$ ، إذن $\\left(\\dfrac{7}{3}\\right)^2 = \\dfrac{49}{9}$"
+        ],
+        "result": "A = \\dfrac{7}{3}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اكتب $B$ على شكل عدد عشري.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "0.6",
+      "misconceptionSignatures": [
+        {
+          "value": "0.06",
+          "id": "MISC-JIDHR-FASILA"
+        },
+        {
+          "value": "0.18",
+          "id": "MISC-JIDHR-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن عدد عشري مربعه 0,36."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}6^2 = 0{,}36$ .",
+        "incorrect": "راجع موضع الفاصلة عند التربيع."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}6^2 = 0{,}36$ و $0{,}6 > 0$"
+        ],
+        "result": "B = 0{,}6"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "بيّن أن $A \\times B$ عدد ناطق.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة الجداء $A \\times B$ (كسر أو عدد عشري)",
+      "expectedAnswer": "7/5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتائج السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$0{,}6 = \\dfrac{6}{10} = \\dfrac{3}{5}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$A \\times B = \\dfrac{7}{3} \\times \\dfrac{3}{5} = \\dfrac{7}{5} = 1{,}4$ : عدد ناطق.",
+        "incorrect": "عوّض $A$ و $B$ بقيمتيهما، واكتب 0,6 على شكل كسر قبل الضرب."
+      },
+      "solution": {
+        "lines": [
+          "$A \\times B = \\dfrac{7}{3} \\times 0{,}6$",
+          "$= \\dfrac{7}{3} \\times \\dfrac{3}{5}$",
+          "$= \\dfrac{7}{5}$",
+          "إذن $A \\times B$ عدد ناطق."
+        ],
+        "result": "A \\times B = \\dfrac{7}{5}"
+      },
+      "work": "required",
+      "timeSeconds": 150
+    }
+  ]
+}

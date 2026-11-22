@@ -1,0 +1,127 @@
+{
+  "id": "ex-4am-tarrid-khatti-l2-008",
+  "lessonCode": "tarrid-khatti",
+  "level": 2,
+  "metadata": {
+    "title": "ميزان مكتب البريد — حلّ لا يلائم الوضعية",
+    "estimatedMinutes": 5,
+    "tags": [
+      "تفسير النتيجة",
+      "نابض"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-khatti_P3",
+      "modelledOn": "method-spring",
+      "adaptedFrom": "ex-4am-tarrid-khatti-l2-008"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "يستعمل عون في مكتب البريد، يحافظ على أمانة المراسلات، ميزانا نابضيا لوزن الرسائل. استطالة النابض $y$ (بـ mm) بدلالة كتلة الرسالة $x$ (بـ g) هي:",
+    "formulas": [
+      "y = 0{,}25x"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب كتلة الرسالة التي تعطي استطالة قدرها 8mm.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الكتلة بـ g",
+      "expectedAnswer": "32",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكتلة هي العدد $x$ الذي يحقق $0{,}25x = 8$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{8}{0{,}25} = 32$ : كتلة الرسالة 32g.",
+        "incorrect": "هنا الاستطالة معلومة: اقسم على المعامل."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}25x = 8$",
+          "$x = \\dfrac{8}{0{,}25} = 32$",
+          "كتلة الرسالة 32g."
+        ],
+        "result": "32g"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حلّ تلميذ المعادلة $0{,}25x = -3$ فوجد $x = -12$ . هل لهذا الحل معنى في سياق الوضعية؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-TAFSIR"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا يمثّل $x$ في هذه الوضعية؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يمكن أن تكون كتلة سالبة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الكتلة لا تكون سالبة: الحل $-12$ لا يلائم الوضعية.",
+        "incorrect": "ارجع إلى معنى $x$ في النص قبل قبول الحل."
+      },
+      "solution": {
+        "lines": [
+          "$x$ كتلة رسالة، والكتلة عدد موجب.",
+          "$-12 < 0$ ، إذن هذا الحل لا يلائم الوضعية (والاستطالة $-3mm$ لا معنى لها)."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

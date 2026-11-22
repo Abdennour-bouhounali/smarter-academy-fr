@@ -1,0 +1,74 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l4-008",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — حالة الاستقامة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "نقط على استقامة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_shuaayn-mutasawiyayn_P2",
+      "modelledOn": "act-2"
+    }
+  },
+  "statement": {
+    "content": "A، B، C، D أربع نقط على مستقيم واحد حيث $\\overrightarrow{AB} = \\overrightarrow{DC}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أيّ عبارة صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "للقطعتين [AC] و [BD] نفس المنتصف، لكن ABCD ليس متوازي أضلاع حقيقيا (مسطّح)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "ABCD متوازي أضلاع حقيقي",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ISTIQAMA"
+        },
+        {
+          "id": "C",
+          "content": "المساواة مستحيلة لأن النقط على استقامة",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل يمكن لأربع نقط على مستقيم أن تكون رؤوس متوازي أضلاع حقيقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تساوي الشعاعين AB و DC يعطي دائما منتصفا مشتركا للقطعتين [AC] و [BD]."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر نشاط 2 ب."
+        }
+      ],
+      "feedback": {
+        "correct": "المساواة ممكنة والمنتصف المشترك موجود، لكن متوازي الأضلاع مسطّح لأن الرؤوس على استقامة.",
+        "incorrect": "فرّق بين المنتصف المشترك ومتوازي الأضلاع الحقيقي."
+      }
+    }
+  ]
+}

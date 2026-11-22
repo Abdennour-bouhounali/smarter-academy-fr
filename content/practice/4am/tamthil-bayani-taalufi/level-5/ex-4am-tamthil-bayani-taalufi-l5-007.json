@@ -1,0 +1,359 @@
+{
+  "id": "ex-4am-tamthil-bayani-taalufi-l5-007",
+  "lessonCode": "tamthil-bayani-taalufi",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2017 — قطعة أرض مستطيلة لفلاح من سيدي عقبة",
+    "estimatedMinutes": 25,
+    "tags": [
+      "وضعية إدماجية",
+      "مساحات",
+      "قراءة بيانية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tamthil-bayani-taalufi_P3",
+      "modelledOn": "BEM 2017 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2017",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "لفلاح مجتهد من سيدي عقبة قطعة أرض مستطيلة الشكل $ABCD$ حيث: $AB = 16m$ و $BC = 10m$ . $M$ نقطة من القطعة $[AB]$ حيث $AM = x$ (بالمتر) مع $0 \\leqslant x \\leqslant 16$ .\nيقسّم الفلاح أرضه إلى ثلاث قطع مثلثة: يغرس في المثلث $AMD$ طماطم، وفي المثلث $MBC$ فلفلا، وفي المثلث $DMC$ بطيخا.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "K1": [
+          0,
+          0
+        ],
+        "H1": [
+          8,
+          8
+        ],
+        "K2": [
+          0,
+          8
+        ],
+        "H2": [
+          8,
+          0
+        ]
+      },
+      "rays": [
+        {
+          "from": "K1",
+          "through": "H1",
+          "name": "(D)",
+          "tone": "sky",
+          "extend": 0
+        },
+        {
+          "from": "K2",
+          "through": "H2",
+          "name": "(Δ)",
+          "tone": "amber",
+          "extend": 0
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw"
+      },
+      "hidden": [
+        "H1",
+        "H2",
+        "K1",
+        "K2"
+      ],
+      "ariaLabel": "معلم على ورقة مرصوفة: نصف المستقيم (D) يصعد من المبدأ O، ونصف المستقيم (Δ) ينزل من محور التراتيب إلى محور الفواصل، ويتقاطعان",
+      "caption": "محور الفواصل: x (الوحدة 2m) — محور التراتيب: المساحة (الوحدة 10m²)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "عبّر بدلالة $x$ عن المساحة $f(x)$ للمثلث $AMD$ على الشكل $f(x) = ax$ ، ثم أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-KHATTIYA-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $AMD$ قائم في $A$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحته = (الضلع $AM$ × الضلع $AD$ ) ÷ 2."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(x) = \\dfrac{x \\times 10}{2} = 5x$ .",
+        "incorrect": "مساحة مثلث قائم = نصف جداء ضلعي الزاوية القائمة، و $AD = BC$ ."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $AMD$ قائم في $A$ ، و $AD = BC = 10m$ .",
+          "$f(x) = \\dfrac{AM \\times AD}{2} = \\dfrac{x \\times 10}{2} = 5x$"
+        ],
+        "result": "f(x) = 5x"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "بيّن أن مساحة المثلث $MBC$ هي: $g(x) = -5x + 80$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $MBC$ قائم في $B$ ، و $MB = 16 - x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $MBC$ قائم في $B$ ، و $MB = AB - AM = 16 - x$ .",
+          "$g(x) = \\dfrac{MB \\times BC}{2} = \\dfrac{(16 - x) \\times 10}{2} = 5(16 - x) = -5x + 80$ ."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "يمثّل $(D)$ و $(\\Delta)$ في المعلم التالي الدالتين $f$ و $g$ .",
+      "statement": "أيّ المستقيمين يمثّل الدالة $g$ ؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(D)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-BAYANI-MUNHA"
+        },
+        {
+          "id": "B",
+          "content": "$(\\Delta)$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة معامل التوجيه في عبارة $g(x)$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مستقيم معامل توجيهه سالب ينزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = -5 < 0$ و $b = 80$ : $(\\Delta)$ ينزل من النقطة $(0 ; 80)$ .",
+        "incorrect": "معامل توجيه $g$ سالب: تمثيلها مستقيم ينزل."
+      },
+      "solution": {
+        "lines": [
+          "$g(x) = -5x + 80$ : معامل التوجيه $-5 < 0$ ، فتمثيلها مستقيم ينزل، والترتيب عند المبدأ 80.",
+          "المستقيم $(\\Delta)$ ينزل ويقطع محور التراتيب في $(0 ; 80)$ : هو تمثيل الدالة $g$ ."
+        ],
+        "result": "$(\\Delta)$"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "بقراءة بيانية، عيّن قيمة $x$ التي تكون من أجلها مساحة المثلث $MBC$ تساوي $60m^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: قيمة x بالمتر",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ من العدد المعطى على محور التراتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اتجه أفقيا حتى المستقيم $(\\Delta)$ ، ثم عموديا حتى محور الفواصل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد المطلوب هو فاصلة نقطة المستقيم التي ترتيبها الصورة المعطاة."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة من $(\\Delta)$ التي ترتيبها $60$ فاصلتها $4$ .",
+        "incorrect": "العدد الذي عُلمت صورته يُقرأ على محور الفواصل: فاصلة نقطة المستقيم التي ترتيبها الصورة المعطاة."
+      },
+      "solution": {
+        "lines": [
+          "$60m^2$ تمثّلها 6 وحدات على محور التراتيب.",
+          "النقطة من $(\\Delta)$ التي ترتيبها 6 وحدات فاصلتها وحدتان، أي $x = 2 \\times 2 = 4$ .",
+          "إذن تكون مساحة المثلث $MBC$ تساوي $60m^2$ عندما $AM = 4m$ ."
+        ],
+        "result": "x = 4"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ج",
+      "statement": "بقراءة بيانية، عيّن مساحة المثلث $AMD$ من أجل $x = 10$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المساحة بـ m²",
+      "expectedAnswer": "50",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ من العدد المعطى على محور الفواصل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اتجه عموديا حتى المستقيم $(D)$ ، ثم أفقيا حتى محور التراتيب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الصورة هي ترتيب نقطة المستقيم التي فاصلتها العدد المعطى."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة من $(D)$ التي فاصلتها $10$ ترتيبها $50$ .",
+        "incorrect": "الصورة تُقرأ على محور التراتيب: ترتيب نقطة المستقيم، لا فاصلتها."
+      },
+      "solution": {
+        "lines": [
+          "$x = 10$ تمثّلها 5 وحدات على محور الفواصل.",
+          "النقطة من $(D)$ التي فاصلتها 5 وحدات ترتيبها 5 وحدات، أي $50m^2$ ."
+        ],
+        "result": "50m^2"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "بقراءة بيانية، عيّن قيمة $x$ التي تتساوى من أجلها مساحتا المثلثين $AMD$ و $MBC$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: قيمة x بالمتر",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "40",
+          "id": "MISC-BAYANI-FASILA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تتساوى المساحتان عند نقطة تقاطع $(D)$ و $(\\Delta)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ فاصلة نقطة التقاطع، وكل وحدة تمثّل $2m$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "المستقيمان يتقاطعان في النقطة $(8 ; 40)$ .",
+        "incorrect": "قيمة $x$ هي فاصلة نقطة التقاطع."
+      },
+      "solution": {
+        "lines": [
+          "$(D)$ و $(\\Delta)$ يتقاطعان في نقطة فاصلتها 4 وحدات وترتيبها 4 وحدات، أي $(8 ; 40)$ .",
+          "إذن من أجل $x = 8$ ( $M$ منتصف $[AB]$ ) تتساوى المساحتان: $40m^2$ لكل منهما."
+        ],
+        "result": "x = 8"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

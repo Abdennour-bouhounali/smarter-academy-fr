@@ -1,0 +1,293 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l3-005",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 3,
+  "metadata": {
+    "title": "هل المثلث قائم؟",
+    "estimatedMinutes": 9,
+    "tags": [
+      "خاصية فيثاغورس",
+      "مثلث غير قائم"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-2",
+      "page": 171,
+      "section": "طرائق",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$UVW$ مثلث حيث $UV = 5{,}2\\,\\mathrm{cm}$ ، $VW = 3{,}9\\,\\mathrm{cm}$ و $UW = 6{,}6\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما هو أطول أضلاع المثلث $UVW$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$[UV]$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-NOT-LONGEST"
+        },
+        {
+          "id": "B",
+          "content": "$[UW]$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$[VW]$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-NOT-LONGEST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رتّب الأطوال الثلاثة تصاعديا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في مثلث قائم، الوتر هو أطول الأضلاع: هو وحده المرشّح ليكون وترا."
+        }
+      ],
+      "feedback": {
+        "correct": "$[UW]$ هو الأطول، فهو الذي نقارن مربعه بمجموع مربعي الضلعين الآخرين.",
+        "incorrect": "قارن الأعداد العشرية رقما رقما بعد الفاصلة."
+      },
+      "solution": {
+        "lines": [
+          "نرتّب الأطوال: $3{,}9 < 5{,}2 < 6{,}6$ ، إذن أطول الأضلاع هو $[UW]$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب $UW^2$ ، مربع طول أطول أضلاع المثلث $UVW$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: قيمة $UW^2$",
+      "expectedAnswer": "43.56",
+      "misconceptionSignatures": [
+        {
+          "value": "13.2",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        },
+        {
+          "value": "27.04",
+          "id": "MISC-FITAGHURAS-NOT-LONGEST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رتّب أطوال الأضلاع الثلاثة: الضلع الأطول هو الوحيد الذي يمكن أن يكون وترا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع العدد هو جداؤه في نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "أطول الأضلاع هو $[UW]$ و $UW^2 = 6{,}6^2 = 43{,}56$ .",
+        "incorrect": "تأكّد أنك اخترت الضلع الأطول، وأنك ضربت طوله في نفسه."
+      },
+      "solution": {
+        "lines": [
+          "أطول أضلاع المثلث $UVW$ هو $[UW]$ .",
+          "$UW^2 = 6{,}6^2 = 43{,}56$"
+        ],
+        "result": "UW^2 = 43{,}56"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب $VW^2 + UV^2$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: مجموع المربعين",
+      "expectedAnswer": "42.25",
+      "misconceptionSignatures": [
+        {
+          "value": "18.2",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        },
+        {
+          "value": "9.1",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ربّع طول كل ضلع من الضلعين الأقصرين على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المربعين ولا تجمع الطولين."
+        }
+      ],
+      "feedback": {
+        "correct": "$VW^2 + UV^2 = 3{,}9^2 + 5{,}2^2 = 15{,}21 + 27{,}04 = 42{,}25$ .",
+        "incorrect": "احسب مربع كل طول أولا، ثم اجمع المربعين."
+      },
+      "solution": {
+        "lines": [
+          "$VW^2 + UV^2 = 3{,}9^2 + 5{,}2^2$",
+          "$VW^2 + UV^2 = 15{,}21 + 27{,}04 = 42{,}25$"
+        ],
+        "result": "VW^2 + UV^2 = 42{,}25"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "statement": "هل المثلث $UVW$ قائم؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "المثلث $UVW$ قائم لأن العددين $43{,}56$ و $42{,}25$ متقاربان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-LOOKS-RIGHT"
+        },
+        {
+          "id": "B",
+          "content": "المثلث $UVW$ ليس قائما",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لا يمكن الحكم إلا بقياس زواياه بالمنقلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-LOOKS-RIGHT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العددين اللذين حسبتهما: هل هما متساويان تماما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لو كان المثلث قائما لكان مربع طول أطول أضلاعه مساويا تماما لمجموع مربعي الضلعين الآخرين (خاصية فيثاغورس)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "التقارب لا يكفي: المساواة يجب أن تكون تامة."
+        }
+      ],
+      "feedback": {
+        "correct": "$43{,}56 \\neq 42{,}25$ : لو كان المثلث قائما لتساوى العددان حسب خاصية فيثاغورس، إذن هو ليس قائما.",
+        "incorrect": "الشكل أو تقارب العددين لا يكفيان: انظر هل المساواة محقّقة تماما أم لا."
+      },
+      "solution": {
+        "lines": [
+          "أطول الأضلاع هو $[UW]$ : $UW^2 = 43{,}56$ و $VW^2 + UV^2 = 42{,}25$ .",
+          "بما أن $UW^2 \\neq VW^2 + UV^2$ ، فحسب خاصية فيثاغورس المثلث $UVW$ ليس قائما."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "برّر جوابك بكتابة الاستدلال كاملا.",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بتعيين أطول الأضلاع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن مربعه بمجموع مربعي الضلعين الآخرين، ثم استند إلى خاصية فيثاغورس."
+        }
+      ],
+      "feedback": {
+        "correct": "استدلال كامل: أطول ضلع، المقارنة، ثم الاستنتاج بخاصية فيثاغورس.",
+        "incorrect": "قارن استدلالك بالحل النموذجي: هل عيّنت أطول الأضلاع؟ هل ذكرت خاصية فيثاغورس في الاستنتاج؟"
+      },
+      "solution": {
+        "lines": [
+          "أطول الأضلاع هو $[UW]$ : $UW^2 = 43{,}56$ و $VW^2 + UV^2 = 42{,}25$ .",
+          "بما أن $UW^2 \\neq VW^2 + UV^2$ ، فحسب خاصية فيثاغورس المثلث $UVW$ ليس قائما."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

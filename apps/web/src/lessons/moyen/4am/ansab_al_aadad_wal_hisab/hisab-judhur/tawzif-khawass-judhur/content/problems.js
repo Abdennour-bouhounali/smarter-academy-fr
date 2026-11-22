@@ -1,0 +1,341 @@
+/**
+ * Les trois « مسائل » du درس 5 « توظيف خواص الجذور التربيعية » (modules 6, 7, 8)
+ * — des exercices COMPLETS de type امتحان, résolus pas à pas
+ * (common/problems/GuidedProblem.jsx).
+ *
+ * AJOUTS DE LA PLATEFORME, déclarés comme tels (`addition('exam_style_problem')`) :
+ * le manuel ne les contient pas. Ils restent dans le périmètre de la leçon :
+ * أكبر مربّع a² يقسم n pour écrire √n = a√b (P1), جمع جذور متشابهة بالخاصية
+ * التوزيعية (P2), نسبة مقامها عدد غير ناطق : ضرب البسط والمقام في √b (P3) — et
+ * les acquis antérieurs de l'unité (définition de √a, √(a²b) = a√b, √a + √b ≠
+ * √(a + b), قيمة مقرّبة). Jamais le conjugué ni une notion postérieure.
+ *
+ * La مسألة 1 est « مسألة الدرس » : son énoncé vit dans `LESSON_CONFIG.lessonProblem`
+ * (montré dès le sommaire et rappelé au module 1). Elle prolonge le carré dallé du
+ * niveau متقدم (aire 288, six pavages) : même instrument — un carré pavé de
+ * pièces carrées égales d'aire entière —, une autre aire (200, le plateau carré d'une طاولة فسيفساء).
+ * Les مسائل 2 et 3 : des bacs d'un jardin scolaire, des cerfs-volants d'un club
+ * de sciences — contextes qu'aucune autre leçon de 4AM n'utilise.
+ *
+ * Chaque nombre, chaque égalité (racines comprises, en arithmétique ENTIÈRE) et
+ * chaque valeur approchée est vérifié par calcul dans ./problems.test.js.
+ */
+import { addition } from '../../_unit/unitMeta.js';
+import { LESSON_CONFIG } from '../lesson.config.js';
+
+const SOURCE = addition('exam_style_problem');
+
+export const PROBLEMS = [
+  {
+    id: 'masala-1',
+    title: 'مسألة 1 — طاولة الفسيفساء',
+    context: LESSON_CONFIG.lessonProblem.title,
+    headline: 'مسألة الدرس',
+    emoji: '🧱',
+    tone: 'indigo',
+    source: SOURCE,
+    illustration: LESSON_CONFIG.lessonProblem.illustration,
+    statement: LESSON_CONFIG.lessonProblem.statement,
+    data: [
+      { id: 'area', text: 'سطح الطاولة مربّع الشكل مساحته 200 dm²', useful: true },
+      { id: 'tiles', text: 'قطع مربّعة متماثلة تغطّي السطح كلّه، مرصوفة صفوفًا وأعمدة', useful: true },
+      { id: 'whole', text: 'مساحة كل قطعة عدد طبيعي من dm²', useful: true },
+      { id: 'price', text: 'ثمن القطعة الواحدة 120 دج مهما كان مقاسها', useful: true },
+      { id: 'days', text: 'تُنجز الطاولة في 12 يومًا', useful: false },
+      { id: 'town', text: 'الورشة في غرداية', useful: false },
+    ],
+    parts: [
+      {
+        label: '1)', title: 'أصغر قطعة',
+        question: 'عبّر عن طول ضلع الطاولة على الشكل $a\\sqrt{b}$ حيث $a$ و $b$ عددان طبيعيان و $b$ أصغر ما يمكن. ما مساحة أصغر قطعة ممكنة؟',
+        asks: ['طول ضلع الطاولة على الشكل $a\\sqrt{b}$', 'مساحة أصغر قطعة ممكنة'],
+        steps: [
+          { kind: 'sort' },
+          { kind: 'choice', role: 'translate', requires: ['jidhr-taarif'],
+            prompt: 'طول ضلع الطاولة، بـ $dm$، هو:',
+            options: ['$\\sqrt{200}$', '$\\dfrac{200}{4}$', '$\\dfrac{200}{2}$', '$200^2$'],
+            correct: 0, cols: 2,
+            explain: 'مساحة المربّع هي مربّع طول ضلعه: طول الضلع عدد موجب مربّعه 200، فهو $\\sqrt{200}$. أمّا $\\dfrac{200}{4} = 50$ فهو ربع المساحة، لا طول الضلع.' },
+          { kind: 'numeric', role: 'compute', requires: ['kitaba-a-jidhr-b'],
+            prompt: 'أكبر مربّع يقسم 200:', expected: 100,
+            explain: '$200 = 100 \\times 2$، والعدد 2 لا يقبل القسمة على أيّ مربّع غير 1. المربّعان 4 و 25 يقسمان 200 أيضًا، لكنّهما أصغر من 100.' },
+          { kind: 'choice', role: 'conclude', ask: 0, requires: ['kitaba-a-jidhr-b', 'jidhr-a2b'],
+            prompt: 'طول ضلع الطاولة على الشكل $a\\sqrt{b}$ حيث $b$ أصغر ما يمكن:',
+            options: ['$10\\sqrt{2}$', '$2\\sqrt{50}$', '$5\\sqrt{8}$', '$100\\sqrt{2}$'],
+            correct: 0, cols: 2,
+            explain: '$\\sqrt{200} = \\sqrt{10^2 \\times 2} = 10\\sqrt{2}$. الكتابتان $2\\sqrt{50}$ و $5\\sqrt{8}$ تساويانه، لكنّ 50 و 8 ما زالا يقبلان القسمة على مربّع؛ و $100\\sqrt{2}$ تنسى أنّ $\\sqrt{100} = 10$.' },
+          { kind: 'numeric', role: 'answer', ask: 1, requires: ['kitaba-a-jidhr-b'],
+            prompt: 'مساحة أصغر قطعة ممكنة:', expected: 2, suffix: 'dm²',
+            explain: 'نضع 10 قطع على الضلع: $200 = 10^2 \\times 2$، والقطعة التي مساحتها 2 لا تُقسم من جديد إلى قطع مربّعة مساحتها عدد طبيعي.' },
+          { kind: 'solution', ask: 0, lines: [
+            'مساحة سطح الطاولة $200\\,dm^2$، إذن طول ضلعه $\\sqrt{200}\\,dm$.',
+            '$200 = 100 \\times 2 = 10^2 \\times 2$ و 100 أكبر مربّع يقسم 200، إذن $\\sqrt{200} = \\sqrt{10^2 \\times 2} = 10\\sqrt{2}$.',
+            'طول ضلع الطاولة $10\\sqrt{2}\\,dm$، وأصغر قطعة ممكنة مساحتها $2\\,dm^2$.',
+          ] },
+        ],
+      },
+      {
+        label: '2)', title: 'اقتراح المتعلّم',
+        question: 'اقترح متعلّم في الورشة وضع قطعتين فقط على ضلع الطاولة، وكتب: $\\sqrt{200} = 2\\sqrt{50}$. هل كتابته صحيحة؟ لماذا لا يعطي اقتراحه أصغر قطعة؟',
+        asks: ['هل كتابة المتعلّم صحيحة؟', 'لماذا لا يعطي اقتراحه أصغر قطعة؟'],
+        steps: [
+          { kind: 'numeric', role: 'compute',
+            prompt: 'مساحة القطعة الواحدة في اقتراح المتعلّم:', expected: 50, suffix: 'dm²',
+            explain: 'على الطاولة $2 \\times 2 = 4$ قطع، و $200 = 4 \\times 50$.' },
+          { kind: 'choice', role: 'conclude', ask: 0, requires: ['jidhr-a2b'],
+            prompt: 'هل كتابة المتعلّم صحيحة؟',
+            options: ['نعم: $\\sqrt{200} = \\sqrt{2^2 \\times 50} = 2\\sqrt{50}$', 'لا: لأنّ $\\sqrt{200}$ هو $\\sqrt{2}$ مضروبًا في 100', 'لا: لأنّ $2\\sqrt{50}$ هو جذر العدد 100'],
+            correct: 0,
+            explain: '$2^2 \\times 50 = 4 \\times 50 = 200$، إذن $\\sqrt{200} = \\sqrt{2^2} \\times \\sqrt{50} = 2\\sqrt{50}$. العدد الذي يضرب 50 تحت الجذر هو 4 لا 2: $2\\sqrt{50} = \\sqrt{4 \\times 50}$.' },
+          { kind: 'choice', role: 'conclude', ask: 1, requires: ['kitaba-a-jidhr-b'],
+            prompt: 'لماذا لا يعطي اقتراح المتعلّم أصغر قطعة؟',
+            options: ['لأنّ القطعة 50 تُقسم من جديد: $50 = 5^2 \\times 2$', 'لأنّ 50 عدد زوجي', 'لأنّ كتابته خاطئة', 'لأنّ قطعتين على الضلع عدد قليل'],
+            correct: 0,
+            explain: 'العدد 4 يقسم 200 لكنّه ليس أكبر مربّع يقسمه: $2\\sqrt{50} = 2 \\times \\sqrt{5^2 \\times 2} = 2 \\times 5\\sqrt{2} = 10\\sqrt{2}$. كل قطعة مساحتها 50 تُقسم إلى 25 قطعة مساحة كل منها 2.' },
+          { kind: 'solution', ask: 0, lines: [
+            '$200 = 4 \\times 50 = 2^2 \\times 50$، إذن $\\sqrt{200} = 2\\sqrt{50}$: كتابة المتعلّم صحيحة.',
+            'لكنّ $50 = 5^2 \\times 2$، إذن $2\\sqrt{50} = 2 \\times 5\\sqrt{2} = 10\\sqrt{2}$.',
+            'اقتراحه لا يعطي أصغر قطعة: 4 ليس أكبر مربّع يقسم 200، وكل قطعة مساحتها $50\\,dm^2$ تُقسم بدورها إلى 25 قطعة مساحة كل منها $2\\,dm^2$.',
+          ] },
+        ],
+      },
+      {
+        label: '3)', title: 'القطع وثمنها',
+        question: 'اختار الحِرفي أصغر قطعة ممكنة. كم قطعة يلزمه لتغطية سطح الطاولة؟ احسب ثمن هذه القطع.',
+        asks: ['عدد القطع اللازمة', 'ثمن القطع'],
+        steps: [
+          { kind: 'numeric', role: 'compute', requires: ['kitaba-a-jidhr-b'],
+            prompt: 'عدد القطع على ضلع الطاولة:', expected: 10,
+            explain: 'ضلع الطاولة $10\\sqrt{2}\\,dm$: هو مكوّن من 10 أضلاع قطع، طول كل منها $\\sqrt{2}\\,dm$.' },
+          { kind: 'choice', role: 'translate',
+            prompt: 'عدد القطع اللازمة نحسبه بـ:',
+            options: ['$10 \\times 10$', '$10 \\times 4$', '$200 \\div 10$', '$10 + 10$'],
+            correct: 0, cols: 2,
+            explain: 'القطع مرصوفة في 10 صفوف، في كل صفّ 10 قطع. أمّا $10 \\times 4$ فيعدّ القطع على الأضلاع الأربعة فقط، لا قطع السطح كلّه.' },
+          { kind: 'numeric', role: 'answer', ask: 0,
+            prompt: 'عدد القطع اللازمة:', expected: 100, suffix: 'قطعة',
+            explain: '$10 \\times 10 = 100$. تحقّق: $100 \\times 2 = 200$.' },
+          { kind: 'numeric', role: 'answer', ask: 1,
+            prompt: 'ثمن القطع:', expected: 12000, suffix: 'دج',
+            explain: '$100 \\times 120 = 12000$.' },
+          { kind: 'solution', ask: 0, lines: [
+            'على ضلع الطاولة 10 قطع، إذن عدد القطع $10 \\times 10 = 100$، وتحقّق: $100 \\times 2 = 200$.',
+            'ثمن القطع: $100 \\times 120 = 12000$.',
+            'يلزم الحِرفي 100 قطعة، ثمنها 12000 دج.',
+          ] },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'masala-2',
+    title: 'مسألة 2 — أحواض حديقة المتوسطة',
+    context: 'أحواض مربّعة متلاصقة: هل يتّسع الممرّ؟',
+    emoji: '🌿',
+    tone: 'emerald',
+    source: SOURCE,
+    illustration: { kind: 'tags', cards: [{ title: 'الحوض الأول', icon: 'plant', lines: [{ label: 'المساحة', value: '12', unit: 'm²' }] }, { title: 'الحوض الثاني', icon: 'plant', lines: [{ label: 'المساحة', value: '27', unit: 'm²' }] }, { title: 'الحوض الثالث', icon: 'plant', lines: [{ label: 'المساحة', value: '48', unit: 'm²' }] }], ariaLabel: 'ثلاثة أحواض مربّعة متلاصقة مساحاتها 12 م² و 27 م² و 48 م²' },
+    statement: 'يعتني نادي البيئة في متوسطة بحديقة فيها ثلاثة أحواض مربّعة الشكل، متلاصقة في صفّ واحد على طول ممرّ مستقيم طوله $25\\,m$. مساحات الأحواض: $12\\,m^2$ و $27\\,m^2$ و $48\\,m^2$. في النادي 18 تلميذًا يتعاونون على سقي الحديقة مرّتين في الأسبوع. نأخذ $\\sqrt{3} \\approx 1{,}73$.',
+    data: [
+      { id: 'beds', text: 'ثلاثة أحواض مربّعة متلاصقة في صفّ واحد على طول الممرّ', useful: true },
+      { id: 'areas', text: 'مساحات الأحواض: 12 m² و 27 m² و 48 m²', useful: true },
+      { id: 'path', text: 'طول الممرّ 25 m', useful: true },
+      { id: 'approx', text: '1,73 قيمة مقرّبة للجذر التربيعي للعدد 3', useful: true },
+      { id: 'members', text: 'في النادي 18 تلميذًا', useful: false },
+      { id: 'water', text: 'تُسقى الحديقة مرّتين في الأسبوع', useful: false },
+    ],
+    parts: [
+      {
+        label: '1)', title: 'الأحواض الثلاثة',
+        question: 'ليكن $L$ الطول الذي تشغله الأحواض الثلاثة على الممرّ، بالمتر. عبّر عن $L$ على الشكل $a\\sqrt{b}$ حيث $b$ أصغر ما يمكن.',
+        asks: ['$L$ على الشكل $a\\sqrt{b}$'],
+        steps: [
+          { kind: 'sort' },
+          { kind: 'choice', role: 'translate', requires: ['jidhr-taarif'],
+            prompt: 'الطول $L$ يساوي:',
+            options: ['$\\sqrt{12} + \\sqrt{27} + \\sqrt{48}$', '$\\sqrt{12 + 27 + 48}$', '$12 + 27 + 48$', '$\\dfrac{12 + 27 + 48}{3}$'],
+            correct: 0, cols: 2,
+            explain: 'ضلع كل حوض مربّع هو الجذر التربيعي لمساحته، والأحواض متلاصقة: $L$ مجموع أضلاعها الثلاثة. ولا نجمع المساحات تحت جذر واحد.' },
+          { kind: 'numeric', role: 'compute', requires: ['kitaba-a-jidhr-b'],
+            prompt: 'أكمل: $\\sqrt{12} = \\ldots\\sqrt{3}$', expected: 2,
+            explain: '$\\sqrt{12} = \\sqrt{2^2 \\times 3} = 2\\sqrt{3}$.' },
+          { kind: 'numeric', role: 'compute', requires: ['kitaba-a-jidhr-b'],
+            prompt: 'أكمل: $\\sqrt{27} = \\ldots\\sqrt{3}$', expected: 3,
+            explain: '$\\sqrt{27} = \\sqrt{3^2 \\times 3} = 3\\sqrt{3}$.' },
+          { kind: 'numeric', role: 'compute', requires: ['kitaba-a-jidhr-b'],
+            prompt: 'أكمل: $\\sqrt{48} = \\ldots\\sqrt{3}$', expected: 4,
+            explain: '$\\sqrt{48} = \\sqrt{4^2 \\times 3} = 4\\sqrt{3}$: أكبر مربّع يقسم 48 هو 16، لا 4.' },
+          { kind: 'choice', role: 'conclude', ask: 0, requires: ['tabsit-tawzii'],
+            prompt: 'الطول $L$ على الشكل $a\\sqrt{b}$:',
+            options: ['$9\\sqrt{3}$', '$\\sqrt{87}$', '$24\\sqrt{3}$', '$9\\sqrt{9}$'],
+            correct: 0, cols: 2,
+            explain: '$L = 2\\sqrt{3} + 3\\sqrt{3} + 4\\sqrt{3} = (2 + 3 + 4)\\sqrt{3} = 9\\sqrt{3}$: نجمع المعاملات ويبقى الجذر نفسه. أمّا $\\sqrt{87}$ فجذر مجموع المساحات، و $24 = 2 \\times 3 \\times 4$ جداء المعاملات لا مجموعها.' },
+          { kind: 'solution', ask: 0, lines: [
+            '$\\sqrt{12} = 2\\sqrt{3}$ ؛ $\\sqrt{27} = 3\\sqrt{3}$ ؛ $\\sqrt{48} = 4\\sqrt{3}$.',
+            '$L = 2\\sqrt{3} + 3\\sqrt{3} + 4\\sqrt{3} = (2 + 3 + 4)\\sqrt{3} = 9\\sqrt{3}$.',
+            'تشغل الأحواض الثلاثة $9\\sqrt{3}\\,m$ من الممرّ.',
+          ] },
+        ],
+      },
+      {
+        label: '2)', title: 'حوض رابع',
+        question: 'يريد النادي إضافة حوض رابع مربّع مساحته $75\\,m^2$ في الصفّ نفسه. عبّر عن الطول الجديد الذي تشغله الأحواض الأربعة على الشكل $a\\sqrt{b}$. قال تلميذ: «نجمع المساحات الأربع ثم نأخذ الجذر، فالطول الجديد هو $\\sqrt{162}$». هل هو محقّ؟',
+        asks: ['الطول الجديد على الشكل $a\\sqrt{b}$', 'هل التلميذ محقّ؟'],
+        steps: [
+          { kind: 'numeric', role: 'compute', requires: ['kitaba-a-jidhr-b'],
+            prompt: 'أكمل: $\\sqrt{75} = \\ldots\\sqrt{3}$', expected: 5,
+            explain: '$\\sqrt{75} = \\sqrt{5^2 \\times 3} = 5\\sqrt{3}$.' },
+          { kind: 'choice', role: 'conclude', ask: 0, requires: ['tabsit-tawzii'],
+            prompt: 'الطول الجديد على الشكل $a\\sqrt{b}$:',
+            options: ['$14\\sqrt{3}$', '$\\sqrt{162}$', '$14\\sqrt{12}$', '$9\\sqrt{3} + 75$'],
+            correct: 0, cols: 2,
+            explain: '$9\\sqrt{3} + 5\\sqrt{3} = (9 + 5)\\sqrt{3} = 14\\sqrt{3}$. أمّا $9\\sqrt{3} + 75$ فيضيف مساحة الحوض الرابع بدل ضلعه.' },
+          { kind: 'numeric', role: 'compute', requires: ['kitaba-a-jidhr-b'],
+            prompt: 'أكمل: $\\sqrt{162} = \\ldots\\sqrt{2}$', expected: 9,
+            explain: '$162 = 81 \\times 2 = 9^2 \\times 2$، إذن $\\sqrt{162} = 9\\sqrt{2}$.' },
+          { kind: 'choice', role: 'conclude', ask: 1,
+            prompt: 'هل التلميذ محقّ؟',
+            options: ['لا: $\\sqrt{162} = 9\\sqrt{2}$، أمّا الطول الجديد فهو $14\\sqrt{3} = \\sqrt{588}$', 'نعم: $12 + 27 + 48 + 75 = 162$، والطول هو جذر المساحة', 'نعم: $\\sqrt{162}$ و $14\\sqrt{3}$ كتابتان للعدد نفسه'],
+            correct: 0,
+            explain: 'جذر مجموع عددين موجبين تمامًا ليس مجموع جذريهما. مثلًا للحوضين الأوّلين: $\\sqrt{12} + \\sqrt{27} = 2\\sqrt{3} + 3\\sqrt{3} = 5\\sqrt{3}$، بينما $\\sqrt{12 + 27} = \\sqrt{39}$.' },
+          { kind: 'solution', ask: 0, lines: [
+            '$\\sqrt{75} = \\sqrt{5^2 \\times 3} = 5\\sqrt{3}$، إذن الطول الجديد $9\\sqrt{3} + 5\\sqrt{3} = (9 + 5)\\sqrt{3} = 14\\sqrt{3}$.',
+            '$12 + 27 + 48 + 75 = 162$ و $\\sqrt{162} = 9\\sqrt{2}$، بينما $14\\sqrt{3} = \\sqrt{14^2 \\times 3} = \\sqrt{588}$.',
+            'التلميذ ليس محقًّا: جذر مجموع المساحات ليس مجموع أضلاع الأحواض. الطول الجديد $14\\sqrt{3}\\,m$.',
+          ] },
+        ],
+      },
+      {
+        label: '3)', title: 'هل يتّسع الممرّ؟',
+        question: 'هل يتّسع الممرّ للأحواض الأربعة؟ وهل يتّسع أيضًا لحوض خامس مربّع مساحته $3\\,m^2$ يوضع في الصفّ نفسه؟',
+        asks: ['هل يتّسع الممرّ للأحواض الأربعة؟', 'هل يتّسع لحوض خامس أيضًا؟'],
+        steps: [
+          { kind: 'numeric', role: 'compute',
+            prompt: 'قيمة مقرّبة للطول الجديد الذي وجدته في السؤال 2)، بالمتر:', expected: 24.22, display: '24,22', suffix: 'م',
+            explain: '$14 \\times 1{,}73 = 24{,}22$.' },
+          { kind: 'choice', role: 'conclude', ask: 0,
+            prompt: 'هل يتّسع الممرّ للأحواض الأربعة؟',
+            options: ['نعم: $24{,}22 < 25$', 'لا: $14 \\times 3 = 42$ و $42 > 25$', 'لا يمكن الحكم لأنّ $14\\sqrt{3}$ ليس عددًا ناطقًا'],
+            correct: 0,
+            explain: 'نقارن طول الأحواض بطول الممرّ: $14\\sqrt{3} \\approx 24{,}22$ وهو أصغر من 25. أمّا $14 \\times 3$ فيستعمل 3 بدل $\\sqrt{3}$، وقيمة مقرّبة تكفي للمقارنة هنا.' },
+          { kind: 'numeric', role: 'compute', requires: ['kitaba-a-jidhr-b', 'tabsit-tawzii'],
+            prompt: 'مع حوض خامس مساحته $3\\,m^2$ يصير الطول على الشكل $a\\sqrt{3}$. ما قيمة $a$؟', expected: 15,
+            explain: 'ضلع الحوض الخامس $\\sqrt{3}$: $14\\sqrt{3} + \\sqrt{3} = (14 + 1)\\sqrt{3} = 15\\sqrt{3}$.' },
+          { kind: 'choice', role: 'conclude', ask: 1,
+            prompt: 'هل يتّسع الممرّ للحوض الخامس أيضًا؟',
+            options: ['لا: $15 \\times 1{,}73 = 25{,}95$ و $25{,}95 > 25$', 'نعم: مساحة الحوض 3 أصغر بكثير من 25', 'نعم: ما زال $24{,}22 < 25$'],
+            correct: 0,
+            explain: 'لا نقارن مساحة بطول: ضلع الحوض الخامس $\\sqrt{3} \\approx 1{,}73$ مترًا، والمتبقّي من الممرّ أقلّ من متر: $25 - 24{,}22 = 0{,}78$.' },
+          { kind: 'solution', ask: 0, lines: [
+            '$14\\sqrt{3} \\approx 14 \\times 1{,}73 = 24{,}22$ و $24{,}22 < 25$: تتّسع الأحواض الأربعة في الممرّ.',
+            'مع الحوض الخامس: $14\\sqrt{3} + \\sqrt{3} = 15\\sqrt{3} \\approx 15 \\times 1{,}73 = 25{,}95$ و $25{,}95 > 25$.',
+            'يتّسع الممرّ للأحواض الأربعة، ولا يتّسع لحوض خامس مساحته $3\\,m^2$.',
+          ] },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'masala-3',
+    title: 'مسألة 3 — الطائرات الورقية',
+    context: 'من القطر إلى الضلع، ثم الشريط',
+    emoji: '🪁',
+    tone: 'rose',
+    source: SOURCE,
+    illustration: { kind: 'plan', shape: 'square', fill: 'paper', side: '؟', diag: '50', unit: 'cm', ariaLabel: 'طائرة ورقية مربّعة الشكل قطرها 50 سم وطول ضلعها مجهول' },
+    statement: 'في عطلة الربيع، يصنع نادي العلوم بدار الشباب، استثمارًا للوقت فيما ينفع، طائرات ورقية مربّعة الشكل. هيكل كل طائرة قصبتان متعامدتان هما قطرا المربّع، طول كل منهما $50\\,cm$. في المربّع، طول القطر يساوي طول الضلع مضروبًا في $\\sqrt{2}$. يُلصق شريط ملوّن على الأضلاع الأربعة لكل طائرة. في النادي 24 منخرطًا، ويريد صنع 15 طائرة. يُباع الشريط بالمتر الكامل، وثمن المتر الواحد 45 دج. نأخذ $\\sqrt{2} \\approx 1{,}41$.',
+    data: [
+      { id: 'diagonal', text: 'طول قطر الطائرة 50 cm، وهو طول الضلع مضروبًا في الجذر التربيعي للعدد 2', useful: true },
+      { id: 'ribbon', text: 'شريط ملوّن على الأضلاع الأربعة لكل طائرة', useful: true },
+      { id: 'kites', text: 'يريد النادي صنع 15 طائرة', useful: true },
+      { id: 'price', text: 'يُباع الشريط بالمتر الكامل، بـ 45 دج للمتر', useful: true },
+      { id: 'approx', text: '1,41 قيمة مقرّبة للجذر التربيعي للعدد 2', useful: true },
+      { id: 'members', text: 'في النادي 24 منخرطًا', useful: false },
+      { id: 'holiday', text: 'الورشة في عطلة الربيع', useful: false },
+    ],
+    parts: [
+      {
+        label: '1)', title: 'ضلع الطائرة',
+        question: 'ليكن $c$ طول ضلع الطائرة بـ $cm$. عبّر عن $c$ بنسبة مقامها عدد ناطق، ثم اكتبه على الشكل $a\\sqrt{b}$.',
+        asks: ['$c$ على الشكل $a\\sqrt{b}$'],
+        steps: [
+          { kind: 'sort' },
+          { kind: 'choice', role: 'translate',
+            prompt: 'القطر يساوي الضلع مضروبًا في $\\sqrt{2}$، أي $c \\times \\sqrt{2} = 50$. إذن:',
+            options: ['$c = \\dfrac{50}{\\sqrt{2}}$', '$c = 50 \\times \\sqrt{2}$', '$c = \\dfrac{\\sqrt{2}}{50}$', '$c = 50 - \\sqrt{2}$'],
+            correct: 0, cols: 2,
+            explain: 'العدد المجهول $c$ مضروب في $\\sqrt{2}$: نقسم 50 على $\\sqrt{2}$.' },
+          { kind: 'choice', role: 'translate', requires: ['naqt-maqam'],
+            prompt: 'لنجعل مقام $\\dfrac{50}{\\sqrt{2}}$ عددًا ناطقًا، نضرب البسط والمقام في:',
+            options: ['$\\sqrt{2}$', '$2$', '$50$', '$\\sqrt{50}$'],
+            correct: 0, cols: 2,
+            explain: '$\\sqrt{2} \\times \\sqrt{2} = 2$ عدد ناطق، وضرب البسط والمقام في العدد نفسه لا يغيّر النسبة. أمّا الضرب في 2 فيعطي المقام $2\\sqrt{2}$، وهو غير ناطق.' },
+          { kind: 'numeric', role: 'compute', requires: ['naqt-maqam', 'jidaa-jidhrayn'],
+            prompt: 'بعد هذا الضرب، يصبح مقام النسبة العدد الناطق:', expected: 2,
+            explain: '$\\dfrac{50}{\\sqrt{2}} = \\dfrac{50 \\times \\sqrt{2}}{\\sqrt{2} \\times \\sqrt{2}} = \\dfrac{50\\sqrt{2}}{2}$.' },
+          { kind: 'choice', role: 'conclude', ask: 0, requires: ['naqt-maqam'],
+            prompt: 'طول ضلع الطائرة:',
+            options: ['$c = 25\\sqrt{2}$', '$c = 50\\sqrt{2}$', '$c = 25$', '$c = 100\\sqrt{2}$'],
+            correct: 0, cols: 2,
+            explain: '$\\dfrac{50\\sqrt{2}}{2} = 25\\sqrt{2}$: نقسم 50 على 2 ويبقى $\\sqrt{2}$. تحقّق: $25\\sqrt{2} \\times \\sqrt{2} = 25 \\times 2 = 50$.' },
+          { kind: 'solution', ask: 0, lines: [
+            '$c \\times \\sqrt{2} = 50$، إذن $c = \\dfrac{50}{\\sqrt{2}}$.',
+            '$\\dfrac{50}{\\sqrt{2}} = \\dfrac{50 \\times \\sqrt{2}}{\\sqrt{2} \\times \\sqrt{2}} = \\dfrac{50\\sqrt{2}}{2} = 25\\sqrt{2}$.',
+            'طول ضلع الطائرة $25\\sqrt{2}\\,cm$.',
+          ] },
+        ],
+      },
+      {
+        label: '2)', title: 'شريط طائرة واحدة',
+        question: 'عبّر عن طول الشريط اللازم لطائرة واحدة على الشكل $a\\sqrt{b}$. كتب أحد المنخرطين $\\dfrac{50}{\\sqrt{2}} = 25$، فقصّ لطائرته $100\\,cm$ من الشريط. هل يكفيه ذلك؟',
+        asks: ['طول الشريط لطائرة واحدة على الشكل $a\\sqrt{b}$', 'هل يكفيه $100\\,cm$ من الشريط؟'],
+        steps: [
+          { kind: 'choice', role: 'conclude', ask: 0, requires: ['tabsit-tawzii'],
+            prompt: 'طول الشريط لطائرة واحدة، بـ $cm$:',
+            options: ['$100\\sqrt{2}$', '$25\\sqrt{8}$', '$4\\sqrt{2}$', '$100$'],
+            correct: 0, cols: 2,
+            explain: '$25\\sqrt{2} + 25\\sqrt{2} + 25\\sqrt{2} + 25\\sqrt{2} = (25 + 25 + 25 + 25)\\sqrt{2} = 100\\sqrt{2}$. أمّا $25\\sqrt{8} = 50\\sqrt{2}$ فهو طول ضلعين فقط.' },
+          { kind: 'numeric', role: 'compute',
+            prompt: 'قيمة مقرّبة لطول الشريط الذي وجدته، بـ $cm$:', expected: 141, suffix: 'سم',
+            explain: '$100 \\times 1{,}41 = 141$.' },
+          { kind: 'choice', role: 'conclude', ask: 1, requires: ['naqt-maqam'],
+            prompt: 'هل يكفي المنخرطَ $100\\,cm$ من الشريط؟',
+            options: ['لا: $\\dfrac{50}{\\sqrt{2}} = 25\\sqrt{2}$ لا 25، ويلزمه نحو $141\\,cm$', 'نعم: $50 \\div 2 = 25$ و $4 \\times 25 = 100$', 'نعم: يبقى له شريط زائد'],
+            correct: 0,
+            explain: 'قسم المنخرط 50 على 2 بدل أن يقسمه على $\\sqrt{2}$. لو كان الضلع 25 لكان القطر $25\\sqrt{2} \\approx 35{,}25$ سنتيمترًا، لا 50.' },
+          { kind: 'solution', ask: 0, lines: [
+            'طول الشريط: $4 \\times 25\\sqrt{2} = 100\\sqrt{2}$، أي $100\\sqrt{2}\\,cm$ لكل طائرة.',
+            '$100\\sqrt{2} \\approx 100 \\times 1{,}41 = 141$ و $141 > 100$.',
+            'لا يكفيه: $\\dfrac{50}{\\sqrt{2}} = 25\\sqrt{2}$ لا 25، فيلزمه نحو $141\\,cm$ من الشريط.',
+          ] },
+        ],
+      },
+      {
+        label: '3)', title: 'شراء الشريط',
+        question: 'احسب قيمة مقرّبة لطول الشريط اللازم للطائرات الخمس عشرة، بالمتر. كم مترًا يشتري النادي؟ وكم يدفع؟',
+        asks: ['طول الشريط للطائرات الخمس عشرة، بالمتر', 'عدد الأمتار التي يشتريها النادي', 'المبلغ الذي يدفعه النادي'],
+        steps: [
+          { kind: 'numeric', role: 'compute', requires: ['tabsit-tawzii'],
+            prompt: 'طول الشريط للطائرات كلّها يُكتب بالمتر على الشكل $a\\sqrt{2}$. ما قيمة $a$؟', expected: 15,
+            explain: '$15 \\times 100\\sqrt{2} = 1500\\sqrt{2}$ سنتيمترًا، أي $15\\sqrt{2}$ مترًا.' },
+          { kind: 'numeric', role: 'answer', ask: 0,
+            prompt: 'قيمة مقرّبة لطول الشريط، بالمتر:', expected: 21.15, display: '21,15', suffix: 'م',
+            explain: '$15 \\times 1{,}41 = 21{,}15$.' },
+          { kind: 'numeric', role: 'answer', ask: 1,
+            prompt: 'عدد الأمتار التي يشتريها النادي:', expected: 22, suffix: 'م',
+            explain: 'الشريط يُباع بالمتر الكامل: 21 مترًا لا تكفي لأنّ $21 < 21{,}15$، فيشتري النادي 22 مترًا. المدوّر إلى الوحدة (21) لا يصلح هنا.' },
+          { kind: 'numeric', role: 'answer', ask: 2,
+            prompt: 'المبلغ الذي يدفعه النادي:', expected: 990, suffix: 'دج',
+            explain: '$22 \\times 45 = 990$.' },
+          { kind: 'solution', ask: 0, lines: [
+            'طول الشريط: $15 \\times 100\\sqrt{2} = 1500\\sqrt{2}$ سنتيمترًا، أي $15\\sqrt{2} \\approx 15 \\times 1{,}41 = 21{,}15$ مترًا.',
+            'الشريط يُباع بالمتر الكامل و $21 < 21{,}15 < 22$: يشتري النادي 22 مترًا.',
+            'يدفع النادي $22 \\times 45 = 990$، أي 990 دج.',
+          ] },
+        ],
+      },
+    ],
+  },
+];
+
+export const PROBLEM = Object.fromEntries(PROBLEMS.map((p) => [p.id, p]));

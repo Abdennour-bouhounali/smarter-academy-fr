@@ -1,0 +1,186 @@
+{
+  "id": "ex-2am-masafa-nuqtatayn-l3-007",
+  "lessonCode": "masafa-nuqtatayn",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — نقطتان على بعد معلوم والمسافة بينهما",
+    "estimatedMinutes": 10,
+    "tags": [
+      "نقطة على بعد معلوم",
+      "مسافة بين نقطتين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعلّم $M(-2)$ على مستقيم مدرّج، والنقطتان $N$ و $P$ تبعدان عنها $6{,}5$ ، $N$ على اليمين و $P$ على اليسار."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "النقطة $N$ تنتمي إلى المستقيم المدرّج نفسه، $MN=6{,}5$ ، وهي على يمين النقطة $M(-2)$ . ما فاصلة $N$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "4.5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SIGNSWAP",
+          "value": "-4.5"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة المعطاة هي المسافة بين النقطتين: النقطة المطلوبة تبعد بها عن النقطة المعلومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كانت على اليمين أضفنا المسافة إلى الفاصلة المعلومة، وإذا كانت على اليسار طرحناها منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب المسافة بين النقطتين انطلاقًا من فاصلتيهما."
+        }
+      ],
+      "feedback": {
+        "correct": "فاصلة $N$ هي $+4{,}5$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "النقطة على اليمين فنضيف المسافة إلى فاصلة $M$",
+          "$-2+6{,}5=+4{,}5$"
+        ],
+        "result": "4.5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "النقطة $P$ تنتمي إلى المستقيم المدرّج نفسه، $MP=6{,}5$ ، وهي على يسار النقطة $M(-2)$ . ما فاصلة $P$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-8.5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SIGNSWAP",
+          "value": "8.5"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة المعطاة هي المسافة بين النقطتين: النقطة المطلوبة تبعد بها عن النقطة المعلومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كانت على اليمين أضفنا المسافة إلى الفاصلة المعلومة، وإذا كانت على اليسار طرحناها منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب المسافة بين النقطتين انطلاقًا من فاصلتيهما."
+        }
+      ],
+      "feedback": {
+        "correct": "فاصلة $P$ هي $-8{,}5$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "النقطة على اليسار فنطرح المسافة من فاصلة $M$",
+          "$-2-6{,}5=-8{,}5$"
+        ],
+        "result": "-8.5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "النقطتان $N(+4{,}5)$ و $P(-8{,}5)$ على مستقيم مدرّج. احسب المسافة $NP$ .",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "4"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-13"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن أوّلًا أيّ الفاصلتين أكبر: الأكبر هي الأبعد إلى اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى مطروحًا منها الصغرى؛ وإذا كانت الصغرى سالبة فنطرح عددًا سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا: إن وجدت ناتجًا سالبًا فقد قلبت ترتيب الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$NP=13$ : النقطتان على جهتين من المبدأ فنجمع المسافتين إلى الصفر.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى هي $+4{,}5$ والفاصلة الصغرى هي $-8{,}5$",
+          "$NP=(+4{,}5)-(-8{,}5)=(+4{,}5)+(+8{,}5)=13$"
+        ],
+        "result": "13"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

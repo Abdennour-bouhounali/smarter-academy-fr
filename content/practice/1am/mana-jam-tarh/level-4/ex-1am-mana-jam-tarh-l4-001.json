@@ -1,0 +1,210 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l4-001",
+  "lessonCode": "mana-jam-tarh",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — رحلة إلى المتحف",
+    "estimatedMinutes": 8,
+    "tags": [
+      "رتبة مقدار",
+      "مجموع",
+      "باقٍ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثالث",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "لتنظيم رحلة القسم إلى المتحف، اشترى المعلّم تذاكر بـ 2980,5 دج، وماء بـ 415,75 دج، وخبزًا بـ 603 دج. كان معه 4000 دج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أعطِ رتبة مقدار المبلغ الكلي، بتدوير كل ثمن إلى المئة.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "4000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "دوّر كل ثمن إلى أقرب مئة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الأعداد المدوّرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$3000 + 400 + 600 = 4000$.",
+        "incorrect": "دوّر كل ثمن إلى أقرب مئة ثم اجمع (رتبة مقدار، لا المجموع الدقيق)."
+      },
+      "solution": {
+        "lines": [
+          "2980,5 ≈ 3000 ، 415,75 ≈ 400 ، 603 ≈ 600",
+          "$3000 + 400 + 600 = 4000$"
+        ],
+        "result": "4000 \\text{ DA}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب المبلغ الكلي الحقيقي.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "3999.25",
+      "misconceptionSignatures": [
+        {
+          "value": "3396.25",
+          "id": "MISC-JAMTARH-JUZ-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ الكلي مجموع ثلاثة حدود."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاذِ الفواصل: $603 = 603{,}00$."
+        }
+      ],
+      "feedback": {
+        "correct": "$2980{,}5 + 415{,}75 + 603 = 3999{,}25$ دج.",
+        "incorrect": "اجمع الأثمان الثلاثة بدقة، مع محاذاة الفواصل."
+      },
+      "solution": {
+        "lines": [
+          "$2980{,}5 + 415{,}75 = 3396{,}25$",
+          "$3396{,}25 + 603 = 3999{,}25$"
+        ],
+        "result": "3999{,}25 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل يكفي المعلّم المبلغ الذي معه؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-TAQDIR"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المبلغ الكلي الحقيقي بما معه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتبة المقدار وحدها لا تكفي للحكم عندما تكون قريبة جدًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$3999{,}25 < 4000$: المبلغ يكفي.",
+        "incorrect": "احسب المبلغ الحقيقي ثم قارنه بـ 4000 دج."
+      },
+      "solution": {
+        "lines": [
+          "المبلغ الكلي الحقيقي 3999,25 دج.",
+          "$3999{,}25 < 4000$ ، إذن المبلغ يكفي."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "كم يبقى مع المعلّم بعد هذه المشتريات؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "0.75",
+      "misconceptionSignatures": [
+        {
+          "value": "7999.25",
+          "id": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما معه هو الكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي جزء: نطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$4000 - 3999{,}25 = 0{,}75$ دج.",
+        "incorrect": "ما يبقى جزء من المبلغ الذي معه: اطرح المبلغ الكلي منه."
+      },
+      "solution": {
+        "lines": [
+          "$4000 - 3999{,}25 = 0{,}75$"
+        ],
+        "result": "0{,}75 \\text{ DA}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

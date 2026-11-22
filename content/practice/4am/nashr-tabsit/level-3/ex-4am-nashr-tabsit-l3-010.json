@@ -1,0 +1,131 @@
+{
+  "id": "ex-4am-nashr-tabsit-l3-010",
+  "lessonCode": "nashr-tabsit",
+  "level": 3,
+  "metadata": {
+    "title": "عبارة لا تتعلّق بـ x",
+    "estimatedMinutes": 6,
+    "tags": [
+      "تبسيط",
+      "حساب متمعّن"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_nashr-tabsit_P4",
+      "modelledOn": "ex-2",
+      "adaptedFrom": "ex-4am-nashr-tabsit-l3-010"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $M$ حيث:",
+    "formulas": [
+      "M = (x + 1)(x + 2) - x(x + 3)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انشر وبسّط العبارة $M$ ، ثم بيّن أنها لا تتعلّق بـ $x$ .",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P4",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $M$ على الشكل $a$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-NASHR-HAD-WAHID"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب كل حد من القوس الأول في كل حد من القوس الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى الإشارات: جداء عددين مختلفين في الإشارة سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x$ معًا، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$M = 2$ إذن $a = 2$.",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$M = (x + 1)(x + 2) - x(x + 3)$",
+          "$M = x \\times x + x \\times 2 + 1 \\times x + 1 \\times 2 - x \\times x - x \\times 3$",
+          "$M = x^2 + 2x + x + 2 - x^2 - 3x$"
+        ],
+        "result": "M = 2"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج دون حساب الجداءات قيمة العدد $1001 \\times 1002 - 1000 \\times 1003$ .",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن هذا العدد بالعبارة $M$ : ما قيمة $x$ المناسبة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من أجل $x = 1000$ : $x + 1 = 1001$ ، $x + 2 = 1002$ ، $x + 3 = 1003$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "هذا العدد هو قيمة $M$ من أجل $x = 1000$ ، و $M$ ثابتة.",
+        "incorrect": "لاحظ أن هذا العدد هو قيمة $M$ من أجل قيمة معيّنة لـ $x$ ، واستعمل نتيجة السؤال 01."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $x = 1000$ : $M = (1000 + 1)(1000 + 2) - 1000(1000 + 3) = 1001 \\times 1002 - 1000 \\times 1003$",
+          "و $M$ لا تتعلّق بـ $x$ ، إذن:"
+        ],
+        "result": "1001 \\times 1002 - 1000 \\times 1003 = 2"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

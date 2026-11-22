@@ -1,0 +1,133 @@
+{
+  "id": "ex-4am-majmu-shuaayn-l5-001",
+  "lessonCode": "majmu-shuaayn",
+  "level": 5,
+  "generator": {
+    "tool": "unit11-majmu-gen.py",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — عرض المسيّرات فوق خليج الجزائر",
+    "estimatedMinutes": 4,
+    "tags": [
+      "انسحابان متتابعان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_majmu-shuaayn_P1",
+      "modelledOn": "act-3"
+    }
+  },
+  "statement": {
+    "content": "في عرض أضواء بالمسيّرات فوق خليج الجزائر حبًّا للوطن، تنتقل مسيّرة على شبكة مربعات (ضلع المربع 10 m) بالانسحاب الذي شعاعه $\\vec{u}$ (3 مربعات نحو اليمين ومربع واحد نحو الأعلى)، ثم بالانسحاب الذي شعاعه $\\vec{v}$ (مربعان نحو اليسار و 4 مربعات نحو الأعلى)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الانسحاب الوحيد الذي يعوّض الانسحابين",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "5 مربعات نحو اليمين و 5 نحو الأعلى",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-JAM-ATWAL"
+        },
+        {
+          "id": "B",
+          "content": "مربع واحد نحو اليمين و 5 مربعات نحو الأعلى",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "مربعان نحو اليسار و 4 نحو الأعلى",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSIHAB-NISYAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم الانتقالين واحدا بعد الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انسحابان متتابعان يعطيان انسحابا واحدا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "شعاع الانسحاب الناتج يذهب من نقطة البداية إلى نقطة الوصول النهائية."
+        }
+      ],
+      "feedback": {
+        "correct": "نجمع الانتقالين: $3 - 2 = 1$ نحو اليمين و $1 + 4 = 5$ نحو الأعلى، شعاع $\\vec{u} + \\vec{v}$ .",
+        "incorrect": "انسحابان متتابعان = انسحاب واحد شعاعه مجموع الشعاعين: من نقطة البداية إلى نقطة الوصول."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "لتعود المسيّرة إلى نقطة انطلاقها بانسحاب ثالث $\\vec{w}$ ، يجب أن يكون $\\vec{w}$",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مساويا لـ $\\vec{u} + \\vec{v}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        },
+        {
+          "id": "B",
+          "content": "معاكس $\\vec{v}$ وحده",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSIHAB-NISYAN"
+        },
+        {
+          "id": "C",
+          "content": "معاكس $\\vec{u} + \\vec{v}$ : مربع نحو اليسار و 5 نحو الأسفل",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المنحى والاتجاه والطول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "شعاعان متعاكسان لهما نفس المنحى ونفس الطول واتجاهان متعاكسان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الذهاب ثم العودة إلى نفس النقطة يعطي الشعاع المعدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\vec{u} + \\vec{v} + \\vec{w} = \\vec{0}$ يعني $\\vec{w} = -(\\vec{u} + \\vec{v})$ .",
+        "incorrect": "الشعاعان المتعاكسان مجموعهما الشعاع المعدوم؛ لا نجمع الأطوال."
+      }
+    }
+  ]
+}

@@ -1,0 +1,294 @@
+{
+  "id": "ex-3am-qismat-nisbiyayn-l5-002",
+  "lessonCode": "qismat-nisbiyayn",
+  "level": 5,
+  "metadata": {
+    "title": "سلسلة عمليات وحاصل قسمة ومعاكسه",
+    "estimatedMinutes": 6,
+    "tags": [
+      "سلسلة حسابات",
+      "حاصل قسمة",
+      "معاكس"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 1,
+      "file": "3am-s1-104",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان $A$ و $B$ حيث:",
+    "formulas": [
+      "A = 16{,}5 \\times (−4) + (−39) \\div 0{,}5",
+      "B = (9 − 12) \\times [18 − (1 + 35 \\div 7)]"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب $A$ و $B$ .",
+      "statement": "احسب $A$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-144",
+      "misconceptionSignatures": [
+        {
+          "value": "-210",
+          "id": "MISC-QISMA-PRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تُنجز أولًا؟ ابدأ بما بين القوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد الأقواس: الضرب والقسمة معًا من اليسار إلى اليمين، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل خطوة في سطر، وانتبه إلى طرح عدد سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = −144$ .",
+        "incorrect": "راجع أولوية العمليات: الأقواس، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$A = 16{,}5 \\times (−4) + (−39) \\div 0{,}5$",
+          "$A = −66 + (−78)$",
+          "$A = −144$"
+        ],
+        "result": "−144"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $B$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-36",
+      "misconceptionSignatures": [
+        {
+          "value": "-270/7",
+          "id": "MISC-QISMA-PRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تُنجز أولًا؟ ابدأ بما بين القوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد الأقواس: الضرب والقسمة معًا من اليسار إلى اليمين، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل خطوة في سطر، وانتبه إلى طرح عدد سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = −36$ .",
+        "incorrect": "راجع أولوية العمليات: الأقواس، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$B = (9 − 12) \\times [18 − (1 + 35 \\div 7)]$",
+          "$B = (9 − 12) \\times [18 − (1 + 5)]$",
+          "$B = (9 − 12) \\times [18 − 6]$",
+          "$B = −3 \\times 12$",
+          "$B = −36$"
+        ],
+        "result": "−36"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "احسب العدد $A \\div B$ ثم استنتج.",
+      "statement": "احسب $A \\div B$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "-4",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "0.25",
+          "id": "MISC-QISMA-ORDER"
+        },
+        {
+          "value": "-108",
+          "id": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن إشارة حاصل القسمة قبل أن تحسب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم المسافة إلى الصفر للمقسوم على المسافة إلى الصفر للمقسوم عليه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالضرب: حاصل القسمة مضروبًا في المقسوم عليه يعطي المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−144) \\div (−36) = 4$ .",
+        "incorrect": "راجع قاعدة قسمة عددين نسبيين: الإشارة أولًا، ثم قسمة المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العددان سالبان: لهما الإشارة نفسها، إذن الحاصل موجب.",
+          "$144 \\div 36 = 4$",
+          "$−144 \\div (−36) = 4$"
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما معاكس العدد $A \\div B$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن إشارة حاصل القسمة قبل أن تحسب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم المسافة إلى الصفر للمقسوم على المسافة إلى الصفر للمقسوم عليه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالضرب: حاصل القسمة مضروبًا في المقسوم عليه يعطي المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "المعاكس هو $−4$ .",
+        "incorrect": "راجع قاعدة قسمة عددين نسبيين: الإشارة أولًا، ثم قسمة المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "$A \\div B = 4$ ، ومعاكس $4$ هو $−4$ ."
+        ],
+        "result": "−4"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ج",
+      "statement": "ما مقلوب العدد $\\dfrac{A}{B}$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "0.25",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن إشارة حاصل القسمة قبل أن تحسب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم المسافة إلى الصفر للمقسوم على المسافة إلى الصفر للمقسوم عليه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالضرب: حاصل القسمة مضروبًا في المقسوم عليه يعطي المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "المقلوب هو $0{,}25$ .",
+        "incorrect": "راجع قاعدة قسمة عددين نسبيين: الإشارة أولًا، ثم قسمة المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{A}{B} = 4$ ، ومقلوب $4$ هو $\\dfrac{1}{4} = 0{,}25$ ."
+        ],
+        "result": "0{,}25"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

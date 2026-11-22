@@ -1,0 +1,235 @@
+{
+  "id": "ex-4am-tatbiqat-tanasub-l5-003",
+  "lessonCode": "tatbiqat-tanasub",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2025 — حافلة بين باتنة وبسكرة",
+    "estimatedMinutes": 13,
+    "tags": [
+      "وضعية إدماجية",
+      "السرعة المتوسطة",
+      "زيادة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tatbiqat-tanasub_P2",
+      "modelledOn": "BEM 2025 II 2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تربط حافلة لنقل المسافرين مدينة باتنة بمدينة بسكرة، والمسافة بينهما 120km . انطلقت الحافلة من باتنة على الساعة $7h45min$ ووصلت إلى بسكرة على الساعة $9h15min$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب مدة الرحلة بالساعة.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المدة بالساعة (عدد عشري بالفاصلة)",
+      "expectedAnswer": "1,5",
+      "misconceptionSignatures": [
+        {
+          "value": "1,3",
+          "id": "MISC-MAQADIR-WIHDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المدة بالساعات والدقائق أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الدقائق كسر من الساعة: $1min = \\dfrac{1}{60}h$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$9h15min - 7h45min = 1h30min = 1{,}5h$ .",
+        "incorrect": "ساعة و 30 دقيقة ليست $1{,}30h$ : حوّل الدقائق إلى جزء من الساعة."
+      },
+      "solution": {
+        "lines": [
+          "$9h15min - 7h45min = 1h30min$",
+          "$30min = \\dfrac{30}{60}h = 0{,}5h$",
+          "مدة الرحلة $1{,}5h$ ."
+        ],
+        "result": "t = 1{,}5h"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب السرعة المتوسطة للحافلة بـ km/h .",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب السرعة بـ km/h (عدد فقط)",
+      "expectedAnswer": "80",
+      "misconceptionSignatures": [
+        {
+          "value": "1200/13",
+          "id": "MISC-MAQADIR-WIHDA"
+        },
+        {
+          "value": "0,0125",
+          "id": "MISC-MAQADIR-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$v = \\dfrac{d}{t}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل المدة بالساعة بعدد عشري."
+        }
+      ],
+      "feedback": {
+        "correct": "$v = \\dfrac{120}{1{,}5} = 80km/h$ .",
+        "incorrect": "السرعة المتوسطة هي المسافة مقسومة على المدة."
+      },
+      "solution": {
+        "lines": [
+          "$v = \\dfrac{120}{1{,}5} = 80$",
+          "السرعة المتوسطة $80km/h$ ."
+        ],
+        "result": "v = 80km/h"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "عبّر عن هذه السرعة بـ m/s .",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط، مدوّرا إلى $0{,}1$",
+      "expectedAnswer": "22,2",
+      "misconceptionSignatures": [
+        {
+          "value": "288",
+          "id": "MISC-MAQADIR-WIHDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$1km = 1000m$ و $1h = 3600s$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حوّل البسط والمقام كلا على حدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{80\\,000}{3600} \\approx 22{,}2m/s$ .",
+        "incorrect": "حوّل المسافة إلى m والمدة إلى s : $1km/h = \\dfrac{1}{3{,}6}m/s$ ."
+      },
+      "solution": {
+        "lines": [
+          "$80km/h = \\dfrac{80\\,000m}{3600s}$",
+          "$\\dfrac{80\\,000}{3600} = 22{,}22\\ldots$",
+          "السرعة $22{,}2m/s$ تقريبا."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "lead": "في رحلة العودة، زادت الحافلة سرعتها المتوسطة بنسبة 20% .",
+      "statement": "احسب مدة رحلة العودة بالدقائق.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المدة بالدقائق (عدد فقط)",
+      "expectedAnswer": "75",
+      "misconceptionSignatures": [
+        {
+          "value": "72",
+          "id": "MISC-NISBA-TATABU-JAM"
+        },
+        {
+          "value": "1,25",
+          "id": "MISC-MAQADIR-WIHDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "السرعة الجديدة: الزيادة بـ 20% ضرب في $1 + \\dfrac{20}{100}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم $t = \\dfrac{d}{v}$ ، وحوّل الساعات إلى دقائق."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المدة لا تنقص بـ 20%: احسب السرعة الجديدة أولا."
+        }
+      ],
+      "feedback": {
+        "correct": "$v = 80 \\times 1{,}2 = 96km/h$ ، و $t = \\dfrac{120}{96} = 1{,}25h = 75min$ .",
+        "incorrect": "احسب السرعة الجديدة ثم المدة، ولا تطبّق النسبة على المدة مباشرة."
+      },
+      "solution": {
+        "lines": [
+          "السرعة في العودة: $80 \\times \\left(1 + \\dfrac{20}{100}\\right) = 96km/h$",
+          "$t = \\dfrac{120}{96} = 1{,}25h$",
+          "$1{,}25 \\times 60 = 75$",
+          "مدة رحلة العودة 75 دقيقة."
+        ],
+        "result": "t = 75min"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

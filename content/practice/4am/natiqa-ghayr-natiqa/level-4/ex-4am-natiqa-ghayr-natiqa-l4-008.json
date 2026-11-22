@@ -1,0 +1,250 @@
+{
+  "id": "ex-4am-natiqa-ghayr-natiqa-l4-008",
+  "lessonCode": "natiqa-ghayr-natiqa",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2022 — التمرين الأول",
+    "estimatedMinutes": 12,
+    "tags": [
+      "نسبة مقامها ناطق",
+      "مدوّر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_natiqa-ghayr-natiqa_P3",
+      "modelledOn": "BEM 2022 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد $B$ حيث:",
+    "formulas": [
+      "B = \\dfrac{4 + \\sqrt{2}}{\\sqrt{2}}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "اكتب العدد $B$ على شكل نسبة مقامها عدد ناطق، ثم على الشكل $a\\sqrt{2} + b$ حيث $a$ و $b$ عددان طبيعيان.",
+      "statement": "العدد $a$",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب البسط والمقام في $\\sqrt{2}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$(4 + \\sqrt{2}) \\times \\sqrt{2} = 4\\sqrt{2} + 2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = \\dfrac{4\\sqrt{2} + 2}{2} = 2\\sqrt{2} + 1$ .",
+        "incorrect": "اضرب البسط كله والمقام في $\\sqrt{2}$ ، ثم اقسم كل حد من البسط على 2."
+      },
+      "solution": {
+        "lines": [
+          "$B = \\dfrac{(4 + \\sqrt{2}) \\times \\sqrt{2}}{\\sqrt{2} \\times \\sqrt{2}}$",
+          "$= \\dfrac{4\\sqrt{2} + 2}{2}$",
+          "$= 2\\sqrt{2} + 1$"
+        ],
+        "result": "B = 2\\sqrt{2} + 1"
+      },
+      "work": "required",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "العدد $b$",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الذي لا يحتوي على جذر في الكتابة التي وجدتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 2\\sqrt{2} + 1$ ، إذن $b = 1$ .",
+        "incorrect": "استعمل الكتابة التي وجدتها في (ا)."
+      },
+      "solution": {
+        "lines": [
+          "$B = 2\\sqrt{2} + 1$"
+        ],
+        "result": "b = 1"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "بيّن أن $B \\times (2\\sqrt{2} - 1)$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة العدد $B \\times (2\\sqrt{2} - 1)$",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(2\\sqrt{2} + 1)(2\\sqrt{2} - 1) = (2\\sqrt{2})^2 - 1^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$(2\\sqrt{2})^2 = 4 \\times 2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$(2\\sqrt{2})^2 - 1 = 8 - 1 = 7$ .",
+        "incorrect": "استعمل المتطابقة $(a + b)(a - b) = a^2 - b^2$ ، وربّع $2\\sqrt{2}$ كاملًا."
+      },
+      "solution": {
+        "lines": [
+          "$B \\times (2\\sqrt{2} - 1) = (2\\sqrt{2} + 1)(2\\sqrt{2} - 1)$",
+          "$= (2\\sqrt{2})^2 - 1^2$",
+          "$= 8 - 1$"
+        ],
+        "result": "B \\times (2\\sqrt{2} - 1) = 7"
+      },
+      "work": "required",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "statement": "هل الجذر التربيعي للعدد $B \\times (2\\sqrt{2} - 1)$ عدد ناطق؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-KULL-JIDHR"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر جوابك، ثم قارن تبريرك بالحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل 7 مربع لعدد ناطق؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sqrt{7}$ ليس ناطقًا: $4 < 7 < 9$ .",
+        "incorrect": "قارن 7 بالمربعين التامين 4 و 9."
+      },
+      "solution": {
+        "lines": [
+          "$\\sqrt{B \\times (2\\sqrt{2} - 1)} = \\sqrt{7}$ و $2^2 < 7 < 3^2$ : 7 ليس مربعًا لعدد ناطق.",
+          "إذن $\\sqrt{7}$ ليس عددًا ناطقًا."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "أعط مدوّره إلى $10^{-2}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري برقمين بعد الفاصلة",
+      "expectedAnswer": "2.65",
+      "misconceptionSignatures": [
+        {
+          "value": "2.64",
+          "id": "MISC-TAQRIB-NAQS-ZIYADA"
+        },
+        {
+          "value": "3.5",
+          "id": "MISC-JIDHR-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الحاسبة، وانظر إلى الرقم الثالث بعد الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sqrt{7} \\approx 2{,}6457$ : الرقم الثالث بعد الفاصلة 5.",
+        "incorrect": "التدوير ليس اقتطاعًا: انظر إلى الرقم الثالث بعد الفاصلة."
+      },
+      "solution": {
+        "lines": [
+          "$\\sqrt{7} \\approx 2{,}6457$",
+          "الرقم الثالث بعد الفاصلة 5، إذن:"
+        ],
+        "result": "\\sqrt{7} \\approx 2{,}65"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

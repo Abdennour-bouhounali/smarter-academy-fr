@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l3-009",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — متوازي أضلاع أم لا؟",
+    "estimatedMinutes": 3,
+    "tags": [
+      "متوازي أضلاع",
+      "تساوي شعاعين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hisab-murakkibatay_P2",
+      "modelledOn": "method-equal"
+    }
+  },
+  "statement": {
+    "content": "$A(-2\\,;\\,1)$ ، $B(3\\,;\\,2)$ ، $C(4\\,;\\,-1)$ ، $D(-1\\,;\\,-3)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "هل الرباعي ABCD متوازي أضلاع؟",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم: لأن $\\overrightarrow{AB}\\begin{pmatrix} 5 \\\\ 1 \\end{pmatrix} = \\overrightarrow{CD}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-TARTIB-NUQAT"
+        },
+        {
+          "id": "B",
+          "content": "لا: $\\overrightarrow{AB}\\begin{pmatrix} 5 \\\\ 1 \\end{pmatrix}$ و $\\overrightarrow{DC}\\begin{pmatrix} 5 \\\\ 2 \\end{pmatrix}$ مختلفان",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نعم: المركبتان الأوليان متساويتان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-TASAWI-MURAKKABA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المساواة الشعاعية لمتوازي الأضلاع ABCD بترتيب رؤوسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع الأول ومقابله في الاتجاه نفسه: $\\overrightarrow{AB} = \\overrightarrow{DC}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب معادلتين (للفاصلة وللترتيب) وحلّهما."
+        }
+      ],
+      "feedback": {
+        "correct": "ABCD متوازي أضلاع يعني AB = DC، وهنا المركبتان الثانيتان مختلفتان.",
+        "incorrect": "قارن AB بـ DC (لا بـ CD)، والمركبتين معا."
+      }
+    }
+  ]
+}

@@ -1,0 +1,205 @@
+{
+  "id": "ex-1am-talim-fi-mustawi-l4-010",
+  "lessonCode": "talim-fi-mustawi",
+  "level": 4,
+  "metadata": {
+    "title": "الربع والفاصلة الواحدة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "ربع",
+      "فاصلة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ict-ex",
+      "page": 76,
+      "section": "تمرين"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد نعلّم النقط $A(6\\,;\\,2)$ و $B(3\\,;\\,2)$ و $C(3\\,;\\,-2)$ و $D(6\\,;\\,-2)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ هذه النقط تقع في الربع نفسه مع $P(6\\,;\\,2)$ (أي لإحداثييها الإشارتان نفسهما)؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(-3\\,;\\,-2)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNBOTH"
+        },
+        {
+          "id": "B",
+          "content": "$(3\\,;\\,2)$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$(3\\,;\\,-2)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNY"
+        },
+        {
+          "id": "D",
+          "content": "$(-6\\,;\\,2)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNX"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد إشارة فاصلة $P$ وإشارة ترتيبها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن النقطة التي تحمل فاصلتها وترتيبها الإشارتين نفسيهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يكفي أن تتفق إشارة واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "لهما الإشارتان نفسهما فهما في الربع نفسه.",
+        "incorrect": "قارن إشارتي الفاصلة والترتيب معًا."
+      },
+      "solution": {
+        "lines": [
+          "إشارتا $P$ : + و +",
+          "النقطة $(3\\,;\\,2)$ لها الإشارتان نفسهما"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "صحيح أم خاطئ؟ النقطتان $(3\\,;\\,2)$ و $(3\\,;\\,-2)$ لهما الفاصلة نفسها.",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خاطئ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SAMEMIX"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ إحداثي على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفاصلة هي العدد الأول (الخط الأفقي) والترتيب هو الثاني (الخط الشاقولي)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نقطة على محور الفواصل ترتيبها معدوم، ونقطة على محور التراتيب فاصلتها معدومة."
+        }
+      ],
+      "feedback": {
+        "correct": "الجملة صحيحة.",
+        "incorrect": "قارن الإحداثيين بما تقوله الجملة."
+      },
+      "solution": {
+        "lines": [
+          "الجملة تحقّق ما نعرفه عن الإحداثيين"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "صحيح أم خاطئ؟ النقطتان $(6\\,;\\,2)$ و $(3\\,;\\,2)$ لهما الترتيب نفسه.",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "خاطئ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SAMEMIX"
+        },
+        {
+          "id": "B",
+          "content": "صحيح",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ إحداثي على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفاصلة هي العدد الأول (الخط الأفقي) والترتيب هو الثاني (الخط الشاقولي)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نقطة على محور الفواصل ترتيبها معدوم، ونقطة على محور التراتيب فاصلتها معدومة."
+        }
+      ],
+      "feedback": {
+        "correct": "الجملة صحيحة.",
+        "incorrect": "قارن الإحداثيين بما تقوله الجملة."
+      },
+      "solution": {
+        "lines": [
+          "الجملة تحقّق ما نعرفه عن الإحداثيين"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

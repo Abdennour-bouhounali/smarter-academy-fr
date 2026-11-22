@@ -1,0 +1,241 @@
+{
+  "id": "ex-4am-mutatabiqat-shahira-l3-004",
+  "lessonCode": "mutatabiqat-shahira",
+  "level": 3,
+  "metadata": {
+    "title": "BEM 2014 — التمرين الثاني",
+    "estimatedMinutes": 10,
+    "tags": [
+      "مربع مجموع",
+      "تحليل",
+      "معادلة جداء معدوم"
+    ],
+    "source": {
+      "type": "bem",
+      "year": 2014,
+      "part": 1,
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "official",
+      "badge": "BEM 2014",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $E$ حيث :",
+    "formulas": [
+      "E = (2x + 5)^2 - 36"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "تحقّق بالنشر أنّ: $E = 4x^2 + 20x - 11$ .",
+      "statement": "نشر $(2x + 5)^2$ ، العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $(2x + 5)^2$ على الشكل $4x^2 + mx + n$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-MURABBA-MAJMU-BILA-2AB"
+        },
+        {
+          "value": "10",
+          "id": "MISC-MUTATABIQA-2AB-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على مربع مجموع: $(a + b)^2 = a^2 + 2ab + b^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن الحدّين $a$ و $b$ ، ولا تنسَ الحد المضاعف $2ab$ ولا تربيع المعامل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$(2x + 5)^2 = 4x^2 + 20x + 25$ إذن $m = 20$ .",
+        "incorrect": "طبّق المتطابقة الشهيرة حدًّا حدًّا (مربع كل حد والحد المضاعف)، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$E = (2x + 5)^2 - 36$",
+          "$= (2x)^2 + 5^2 + 2 \\times 2x \\times 5 - 36$",
+          "$= 4x^2 + 25 + 20x - 36$"
+        ],
+        "result": "E = 4x^2 + 20x - 11"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $(2x + 5)^2$ على الشكل $4x^2 + mx + n$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "25",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$(2x + 5)^2 = 4x^2 + 20x + 25$ إذن $n = 25$ .",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $n$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$(2x + 5)^2 = 4x^2 + 20x + 25$"
+        ],
+        "result": "n = 25"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "حلّل العبارة $E$ إلى جداء عاملين من الدرجة الأولى.",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $36$ على شكل مربع عدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل $a^2 - b^2 = (a + b)(a - b)$ مع $a = 2x + 5$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك سطرًا بسطر بالحل النموذجي، وانتبه إلى الإشارات عند النشر."
+      },
+      "solution": {
+        "lines": [
+          "$E = (2x + 5)^2 - 36$",
+          "$= (2x + 5)^2 - 6^2$",
+          "$= (2x + 5 + 6)(2x + 5 - 6)$"
+        ],
+        "result": "E = (2x + 11)(2x - 1)"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "lead": "حل المعادلة: $(2x + 11)(2x - 1) = 0$ .",
+      "statement": "الحلّ الأصغر:",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "-11/2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يكون جداء معدومًا إذا كان أحد عامليه على الأقل معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلتين من الدرجة الأولى، ثم حلّ كل واحدة منهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = -\\dfrac{11}{2}$.",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة من الدرجة الأولى، ثم رتّب الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $(2x + 11)(2x - 1) = 0$",
+          "يعني أنّ: $2x + 11 = 0$ أو $2x - 1 = 0$",
+          "أي: $x = \\dfrac{-11}{2}$ أو $x = \\dfrac{1}{2}$",
+          "إذن للمعادلة $(2x + 11)(2x - 1) = 0$ حلّان هما $\\dfrac{-11}{2}$ و $\\dfrac{1}{2}$"
+        ],
+        "result": "x = -\\dfrac{11}{2}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "statement": "الحلّ الأكبر:",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "1/2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة الثانية من الدرجة الأولى، ثم قارن الحلّين."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{1}{2}$.",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة من الدرجة الأولى، ثم رتّب الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "إذن للمعادلة $(2x + 11)(2x - 1) = 0$ حلّان هما $\\dfrac{-11}{2}$ و $\\dfrac{1}{2}$"
+        ],
+        "result": "x = \\dfrac{1}{2}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

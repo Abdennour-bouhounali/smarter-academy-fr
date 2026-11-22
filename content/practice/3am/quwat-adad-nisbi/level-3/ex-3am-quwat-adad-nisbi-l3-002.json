@@ -1,0 +1,210 @@
+{
+  "id": "ex-3am-quwat-adad-nisbi-l3-002",
+  "lessonCode": "quwat-adad-nisbi",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — سلسلتا حسابات بقوى",
+    "estimatedMinutes": 9,
+    "tags": [
+      "سلسلة حسابات",
+      "أولوية العمليات"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-72",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الأول",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "احسب ما يلي:",
+    "formulas": [
+      "a = 3 + 4^{2} \\times 2 - 5 \\times 2 + 1",
+      "b = 6 - 2^{2} \\times (-3) + (-1)^{5} \\times 4"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "في حساب العدد $b$ ، ما أول عملية تُنجز؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الطرح $6 - 2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QUWA-PRIORITY"
+        },
+        {
+          "id": "B",
+          "content": "حساب القوتين $2^{2}$ و $(-1)^{5}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "الضرب $2 \\times (-3)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QUWA-PRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما أول عملية تُنجز في هذه العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأولوية: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب مرحلة واحدة في كل سطر، وتحقّق من إشارة كل حدّ."
+        }
+      ],
+      "feedback": {
+        "correct": "القوى أولًا، ثم الضرب، ثم الجمع والطرح.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "لا أقواس تحوي عمليات في $b$ ، فنبدأ بالقوى:",
+          "$2^{2} = 4$ و $(-1)^{5} = -1$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب $a$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "26",
+      "misconceptionSignatures": [
+        {
+          "value": "67",
+          "id": "MISC-QUWA-PRIORITY"
+        },
+        {
+          "value": "10",
+          "id": "MISC-QUWA-POWER-AS-PRODUCT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما أول عملية تُنجز في هذه العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأولوية: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب مرحلة واحدة في كل سطر، وتحقّق من إشارة كل حدّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 3 + 32 - 10 + 1 = 26$ .",
+        "incorrect": "احترم أولوية العمليات: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$a = 3 + 16 \\times 2 - 5 \\times 2 + 1$",
+          "$a = 3 + 32 - 10 + 1$",
+          "$a = 26$"
+        ],
+        "result": "a = 26"
+      },
+      "work": "required",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب $b$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "value": "22",
+          "id": "MISC-QUWA-ODD-EVEN-SIGN"
+        },
+        {
+          "value": "-28",
+          "id": "MISC-QUWA-PRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما أول عملية تُنجز في هذه العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأولوية: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب مرحلة واحدة في كل سطر، وتحقّق من إشارة كل حدّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$b = 6 + 12 - 4 = 14$ .",
+        "incorrect": "احترم أولوية العمليات: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$b = 6 - 4 \\times (-3) + (-1) \\times 4$",
+          "$b = 6 + 12 - 4$",
+          "$b = 14$"
+        ],
+        "result": "b = 14"
+      },
+      "work": "required",
+      "timeSeconds": 90
+    }
+  ]
+}

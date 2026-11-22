@@ -1,0 +1,182 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-aadad-l3-007",
+  "lessonCode": "wadiya-idmajiya-aadad",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2023 — العددان A و B",
+    "estimatedMinutes": 8,
+    "tags": [
+      "كسر غير قابل للاختزال",
+      "حساب على الكسور"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-aadad_P1",
+      "modelledOn": "BEM 2023 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان A و B حيث:",
+    "formulas": [
+      "A = \\dfrac{1683}{1309}",
+      "B = A \\times \\dfrac{14}{3} - 5"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "اكتب العدد A على شكل كسر غير قابل للاختزال.",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 1683 و 1309.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "187",
+      "misconceptionSignatures": [
+        {
+          "value": "17",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 1683 على 1309: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (1683 ; 1309) بالزوج (1309 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 187.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$1683 = 1309 \\times 1 + 374$",
+          "$1309 = 374 \\times 3 + 187$",
+          "$374 = 187 \\times 2 + 0$",
+          "آخر باقٍ غير معدوم هو 187، إذن:"
+        ],
+        "result": "PGCD(1683 ; 1309) = 187"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "استنتج كتابة العدد A على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "9/7",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "153/119",
+          "id": "MISC-IKHTIZAL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01 (ا)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 187: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال 01 (ا).",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{1683 \\div 187}{1309 \\div 187}$"
+        ],
+        "result": "A = \\dfrac{9}{7}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "بيّن أن B عدد طبيعي، ثم أعط قيمته.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض A بكتابته غير القابلة للاختزال."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الجداء أولًا، ثم اطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = \\dfrac{9}{7} \\times \\dfrac{14}{3} - 5 = 6 - 5 = 1$",
+        "incorrect": "عوّض A بالكسر الذي وجدته في السؤال 01، واحسب الجداء قبل الطرح."
+      },
+      "solution": {
+        "lines": [
+          "$B = \\dfrac{9}{7} \\times \\dfrac{14}{3} - 5$",
+          "$B = \\dfrac{9 \\times 14}{7 \\times 3} - 5 = \\dfrac{126}{21} - 5$",
+          "$B = 6 - 5$",
+          "إذن B عدد طبيعي."
+        ],
+        "result": "B = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

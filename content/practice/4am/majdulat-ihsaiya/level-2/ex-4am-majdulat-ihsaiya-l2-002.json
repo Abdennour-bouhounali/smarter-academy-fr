@@ -1,0 +1,208 @@
+{
+  "id": "ex-4am-majdulat-ihsaiya-l2-002",
+  "lessonCode": "majdulat-ihsaiya",
+  "level": 2,
+  "metadata": {
+    "title": "تمرين 7 (ص 99) — المتوسط والمنوال بالمجدول",
+    "estimatedMinutes": 4,
+    "tags": [
+      "دستور",
+      "متوسط",
+      "منوال"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-7",
+      "page": 99,
+      "section": "أوظّف تعلّماتي",
+      "number": 7
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "حجزنا سلسلة التمرين 7 في المجال ⁦A1:G1⁩ ، ثم حجزنا في الخلية B4 الدستور ⁦=MOYENNE(A1:G1)⁩ وفي الخلية B5 الدستور ⁦=MODE(A1:G1)⁩ :",
+    "table": {
+      "head": [
+        "",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "rows": [
+        [
+          "1",
+          "4",
+          "10",
+          "8",
+          "4",
+          "3",
+          "2",
+          "4"
+        ],
+        [
+          "2",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "3",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "4",
+          "المتوسط",
+          "…",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "5",
+          "المنوال",
+          "…",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "sheet": true
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما هو العدد الذي يظهر في الخلية B4 ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة إن لزم)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        },
+        {
+          "value": "7",
+          "id": "MISC-IHSA-MUTAWASSIT-QISMA-QIYAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MOYENNE(…)⁩ يقسم مجموع القيم العددية في المجال على عددها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع القيم العددية الموجودة في المجال، وعُدّها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المتوسط = مجموع القيم ÷ عددها."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{35}{7} = 5$ .",
+        "incorrect": "اجمع كل القيم العددية التي في المجال، ثم اقسم المجموع على عددها (لا على عدد آخر)."
+      },
+      "solution": {
+        "lines": [
+          "مجموع القيم: $4 + 10 + 8 + 4 + 3 + 2 + 4 = 35$ ، وعددها 7 .",
+          "$\\dfrac{35}{7} = 5$",
+          "إذن يُظهر الدستور العدد 5 ."
+        ],
+        "result": "5"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هو العدد الذي يظهر في الخلية B5 ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-IHSA-DUSTUR-KHATI"
+        },
+        {
+          "value": "10",
+          "id": "MISC-IHSA-DUSTUR-KHATI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MODE(…)⁩ يُظهر المنوال: القيمة ذات أكبر تكرار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ كم مرة تظهر كل قيمة في المجال."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المنوال قيمة من قيم السلسلة، لا عدد مرات ظهورها."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة 4 تظهر 3 مرات، وهو أكبر تكرار.",
+        "incorrect": "المنوال هو القيمة التي تتكرّر أكثر من غيرها في المجال: اكتب القيمة نفسها لا عدد مرات تكرارها."
+      },
+      "solution": {
+        "lines": [
+          "القيمة 4 تظهر 3 مرات في المجال، وكل قيمة أخرى تظهر أقل من ذلك.",
+          "إذن يُظهر الدستور العدد 4 ."
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

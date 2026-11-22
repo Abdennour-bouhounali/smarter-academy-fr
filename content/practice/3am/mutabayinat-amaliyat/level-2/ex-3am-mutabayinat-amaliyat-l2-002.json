@@ -1,0 +1,237 @@
+{
+  "id": "ex-3am-mutabayinat-amaliyat-l2-002",
+  "lessonCode": "mutabayinat-amaliyat",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — معادلة ثم متباينة",
+    "estimatedMinutes": 9,
+    "tags": [
+      "اختبار حلّ",
+      "استنتاج متباينة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 3,
+      "file": "3am-s3-57",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر المعادلة $5(x-1)=2x+4$ والمتباينة $-3x+2>11$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "هل العدد $2$ حلّ للمعادلة $5(x-1)=2x+4$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيحة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-PREREQ"
+        },
+        {
+          "id": "B",
+          "content": "خاطئة",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المعطى بالضبط؟ وما العبارة المطلوب استنتاج متباينة لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابنِ المتباينة المطلوبة عملية بعد عملية، وانتبه إلى إشارة العدد عند كلّ ضرب أو قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر، وأعد كتابة الحصر من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$5\\neq 8$ ؛ إذن $2$ ليس حلًّا.",
+        "incorrect": "استنتج المتباينة خطوة بخطوة، وانتبه إلى اتجاهها بعد كلّ ضرب أو قسمة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $x=2$ : الطرف الأيمن $5\\times 1=5$ والأيسر $2\\times 2+4=8$ .",
+          "$5\\neq 8$ ؛ إذن $2$ ليس حلًّا."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "حلّ المعادلة $5(x-1)=2x+4$ : $x=\\ldots$",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المعطى بالضبط؟ وما العبارة المطلوب استنتاج متباينة لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابنِ المتباينة المطلوبة عملية بعد عملية، وانتبه إلى إشارة العدد عند كلّ ضرب أو قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر، وأعد كتابة الحصر من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$5x-5=2x+4$ ، إذن $3x=9$ ، أي $x=3$ .",
+        "incorrect": "استنتج المتباينة خطوة بخطوة، وانتبه إلى اتجاهها بعد كلّ ضرب أو قسمة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$5x-5=2x+4$ ، إذن $3x=9$ ، أي $x=3$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "أوجد متباينة طرفها الأوّل $x$ انطلاقًا من $-3x+2>11$ .",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x<-3$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$x<-9$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-COEF-LOST"
+        },
+        {
+          "id": "C",
+          "content": "$x>-3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-NEG-NOFLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد إشارة العدد الذي نضرب فيه (أو نقسم عليه)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في عدد سالب تمامًا (أو القسمة عليه) يغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب عددين يحقّقان الشرط، وانظر أيّهما صار الأكبر بعد العملية."
+        }
+      ],
+      "feedback": {
+        "correct": "نقسم الطرفين على $-3$ (سالب) فيتغيّر الاتجاه: $x<-3$ .",
+        "incorrect": "الضرب في عدد سالب تمامًا (أو القسمة عليه) يغيّر اتجاه المتباينة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نطرح $2$ من الطرفين: $-3x>9$ .",
+          "نقسم الطرفين على $-3$ (سالب) فيتغيّر الاتجاه: $x<-3$ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "اشرح خطوات الاستنتاج في السؤال السابق، مع ذكر ما يحدث للاتجاه.",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المعطى بالضبط؟ وما العبارة المطلوب استنتاج متباينة لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابنِ المتباينة المطلوبة عملية بعد عملية، وانتبه إلى إشارة العدد عند كلّ ضرب أو قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر، وأعد كتابة الحصر من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "نقسم الطرفين على $-3$ ، وهو عدد سالب تمامًا، فنعكس الاتجاه: $x<-3$ .",
+        "incorrect": "استنتج المتباينة خطوة بخطوة، وانتبه إلى اتجاهها بعد كلّ ضرب أو قسمة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$-3x+2>11$ ؛ نطرح $2$ من الطرفين: $-3x>9$ .",
+          "نقسم الطرفين على $-3$ ، وهو عدد سالب تمامًا، فنعكس الاتجاه: $x<-3$ ."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

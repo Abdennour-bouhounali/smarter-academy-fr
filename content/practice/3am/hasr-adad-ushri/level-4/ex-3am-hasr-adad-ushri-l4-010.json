@@ -1,0 +1,251 @@
+{
+  "id": "ex-3am-hasr-adad-ushri-l4-010",
+  "lessonCode": "hasr-adad-ushri",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — خمس دورات في الملعب",
+    "estimatedMinutes": 12,
+    "tags": [
+      "زمن",
+      "تدوير",
+      "حصر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يجري عدّاء خمس دورات متساوية الزمن في الملعب. زمن الدورة الواحدة $t$ مدوّر إلى $0{,}1\\,\\mathrm{s}$ هو $58{,}4\\,\\mathrm{s}$ . الزمن الكلّي $T=5t$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أيّ حصر لزمن الدورة $t$ هو الصحيح؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$58{,}35\\le t< 58{,}45$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$58{,}4\\le t< 58{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-TRUNC"
+        },
+        {
+          "id": "C",
+          "content": "$58{,}35< t\\le 58{,}45$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-UPPER-INCLUDED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الرتبة التي دُوِّرت إليها الكمية؟ نصف وحدة هذه الرتبة هو ما نرجع به ونتقدّم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ارجع نصف وحدة من الرتبة إلى الخلف وتقدّم نصف وحدة إلى الأمام: الطرف الأدنى مشمول والطرف الأعلى مستبعد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقرأ الحصر الذي كتبته: القيمة المدوّرة تقع داخله، والطرف الأعلى لا يبلغه العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$58{,}35\\le t<58{,}45$ .",
+        "incorrect": "راجع: نرجع نصف وحدة من الرتبة ونتقدّم نصف وحدة، ثم نضرب الأطراف في العدد الموجب نفسه دون تغيير اتجاه المتباينة؛ الطرف الأعلى مستبعد. أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$58{,}35\\le t<58{,}45$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أيّ حصر للزمن الكلّي $T$ بالثانية هو الصحيح؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$291{,}75< T\\le 292{,}25$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-UPPER-INCLUDED"
+        },
+        {
+          "id": "B",
+          "content": "$58{,}35\\le T< 58{,}45$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-COEF-LOST"
+        },
+        {
+          "id": "C",
+          "content": "$291{,}75\\le T< 292{,}25$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أوّلاً حصر الكمية التي دُوِّرت، ثم اكتب العبارة المطلوبة بدلالتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نضرب أطراف الحصر في العدد الموجب نفسه (فلا يتغيّر اتجاه المتباينة) ثم نضيف الثابت إن وُجد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الطرف الأدنى يبقى مشمولًا والأعلى مستبعدًا؛ تحقّق من ذلك بقراءة الحصر بعد الحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "نضرب في $5$ : $291{,}75\\le T<292{,}25$ .",
+        "incorrect": "راجع: نرجع نصف وحدة من الرتبة ونتقدّم نصف وحدة، ثم نضرب الأطراف في العدد الموجب نفسه دون تغيير اتجاه المتباينة؛ الطرف الأعلى مستبعد. أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضرب في $5$ : $291{,}75\\le T<292{,}25$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "هل يمكن أن يكون الزمن الكلّي $292\\,\\mathrm{s}$ بالضبط؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-CENTER-EXACT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع الحصر الذي وجدته إلى جانب العدد المطلوب مقارنته به."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل العدد أكبر من الطرف الأعلى، أم أصغر من الطرف الأدنى، أم يقع بينهما؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إن وقع العدد بين الطرفين فلا يمكن الجزم؛ وإلاّ فالقرار مؤكّد."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: نعم.",
+        "incorrect": "راجع: قارن العدد بطرفَي الحصر؛ إن وقع بينهما فلا يمكن الجزم، والطرف الأعلى لا يبلغه العدد. أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$291{,}75\\le292<292{,}25$ .",
+          "الجواب: نعم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "علّل: لماذا لا نقول إنّ الزمن الكلّي يساوي $5\\times58{,}4=292\\,\\mathrm{s}$ بالضبط؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ ما تعرضه شاشة الآلة الحاسبة، ولا تعدّه قيمة مضبوطة للحاصل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احصر الحاصل بين قيمتين مقرّبتين متتاليتين في الرتبة المطلوبة، ثم حدّد الرقم الذي يلي تلك الرتبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الحاصل بقيمتيه المقرّبتين: الأولى أصغر منه أو تساويه والثانية أكبر منه."
+        }
+      ],
+      "feedback": {
+        "correct": "إذن $T$ يقع في $[291{,}75 ; 292{,}25[$ ، و $292$ إحدى قيمه الممكنة لا قيمته الوحيدة.",
+        "incorrect": "لا تعدّ ما تعرضه شاشة الآلة قيمة مضبوطة للحاصل: احصره بين قيمتين مقرّبتين متتاليتين؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$58{,}4$ مدوّر لا مضبوط، وزمن الدورة يقع في $[58{,}35 ; 58{,}45[$ .",
+          "إذن $T$ يقع في $[291{,}75 ; 292{,}25[$ ، و $292$ إحدى قيمه الممكنة لا قيمته الوحيدة."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

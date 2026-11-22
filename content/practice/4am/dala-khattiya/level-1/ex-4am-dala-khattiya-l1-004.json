@@ -1,0 +1,132 @@
+{
+  "id": "ex-4am-dala-khattiya-l1-004",
+  "lessonCode": "dala-khattiya",
+  "level": 1,
+  "metadata": {
+    "title": "دالة خطية معاملها سالب",
+    "estimatedMinutes": 3,
+    "tags": [
+      "صورة عدد",
+      "إشارة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "adaptedFrom": "ex-4am-dala-khattiya-l1-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "لتكن $g$ الدالة الخطية المعرّفة بـ:",
+    "formulas": [
+      "g(x) = -3x"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $g(6)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-18",
+      "misconceptionSignatures": [
+        {
+          "value": "-2",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "18",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "صورة العدد $x$ بالدالة الخطية $g$ هي $g(x) = -3 \\times x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $x$ بالعدد $6$ ثم احسب الجداء، وانتبه إلى الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$g(6) = \\left(-3\\right) \\times 6 = -18$ .",
+        "incorrect": "الصورة جداء المعامل في العدد: $g(x) = -3 \\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$g(6) = \\left(-3\\right) \\times 6$",
+          "$g(6) = -18$"
+        ],
+        "result": "g(6) = -18"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $g(-4)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "4/3",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "-12",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "صورة العدد $x$ بالدالة الخطية $g$ هي $g(x) = -3 \\times x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $x$ بالعدد $-4$ ثم احسب الجداء، وانتبه إلى الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$g(-4) = \\left(-3\\right) \\times \\left(-4\\right) = 12$ .",
+        "incorrect": "الصورة جداء المعامل في العدد: $g(x) = -3 \\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$g(-4) = \\left(-3\\right) \\times \\left(-4\\right)$",
+          "$g(-4) = 12$"
+        ],
+        "result": "g(-4) = 12"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

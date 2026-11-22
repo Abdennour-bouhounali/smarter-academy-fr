@@ -1,0 +1,232 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l5-005",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — في الصيدلية",
+    "estimatedMinutes": 6,
+    "tags": [
+      "مسألة",
+      "البادئات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تحضّر صيدلية دواءً: قرص كتلته $500\\ \\mathrm{mg}$ ، وقارورة فيها $2\\,000\\ \\mathrm{mg}$ . نعلم أنّ $1\\ \\mathrm{g} = 1\\,000\\ \\mathrm{mg}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "الجزء الأول. كم غرامًا كتلة القرص؟ (اقسم $500$ على $1\\,000$)",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم ملّيغرامًا في الغرام الواحد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم على ذلك العدد: أزح الفاصلة ثلاث رتب نحو اليسار."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الناتج أصغر من 1."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "0.5",
+      "misconceptionSignatures": [
+        {
+          "value": "50",
+          "id": "MISC-ASHARA-WIHDA"
+        }
+      ],
+      "feedback": {
+        "correct": "$500 \\div 1\\,000 = 0{,}5\\ \\mathrm{g}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$1\\ \\mathrm{g} = 1\\,000\\ \\mathrm{mg}$ .",
+          "$500 \\div 1\\,000 = 0{,}5$ ."
+        ],
+        "result": "0{,}5"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$1\\ \\mathrm{mg} = 0{,}001\\ \\mathrm{g} = 10^{n}\\ \\mathrm{g}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الملّيغرام أصغر من الغرام."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الرقم 1 في الرتبة الثالثة بعد الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأسّ سالب."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-ASHARA-WIHDA"
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\ \\mathrm{mg} = 10^{-3}\\ \\mathrm{g}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}001 = \\dfrac{1}{10^{3}} = 10^{-3}$ ."
+        ],
+        "result": "n = -3"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "الجزء الثاني. الميكروغرام ($\\mu\\mathrm{g}$) يساوي $0{,}000001\\ \\mathrm{g}$ . اكتب $1\\ \\mu\\mathrm{g} = 10^{n}\\ \\mathrm{g}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في أيّ رتبة بعد الفاصلة يقع الرقم 1؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأسّ سالب وقيمته المطلقة هي الرتبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدّ الرتب بعناية."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-6",
+      "misconceptionSignatures": [
+        {
+          "value": "-5",
+          "id": "MISC-ASHARA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\ \\mu\\mathrm{g} = 10^{-6}\\ \\mathrm{g}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الرقم 1 في الرتبة السادسة بعد الفاصلة.",
+          "$0{,}000001 = 10^{-6}$ ."
+        ],
+        "result": "n = -6"
+      }
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "نكتب كتلة القارورة $2\\,000\\ \\mathrm{mg} = 2 \\times 10^{n}\\ \\mathrm{mg}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم صفرًا يلي العدد 2 في $2\\,000$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $2\\,000$ جداءً للعدد 2 في عدد يتكوّن من 1 متبوعًا بأصفار."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدّ الأصفار بعد 2."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-ASHARA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$2\\,000 = 2 \\times 1\\,000 = 2 \\times 10^{3}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "بعد العدد 2 ثلاثة أصفار.",
+          "$2\\,000 = 2 \\times 10^{3}$ ."
+        ],
+        "result": "n = 3"
+      }
+    }
+  ]
+}

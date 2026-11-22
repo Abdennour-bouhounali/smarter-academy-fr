@@ -1,0 +1,59 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l2-004",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — ثلاث نقط على استقامة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "المنتصف",
+      "طول"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_shuaayn-mutasawiyayn_P1",
+      "modelledOn": "know-3"
+    }
+  },
+  "statement": {
+    "content": "A، B، C ثلاث نقط حيث $\\overrightarrow{AB} = \\overrightarrow{BC}$ و AC = 7,4 cm."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "احسب الطول AB (بالسنتيمتر).",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالسنتيمتر)",
+      "expectedAnswer": "3.7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا تمثّل B بالنسبة إلى [AC]؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تساوي الشعاعين AB و BC يعني أن B منتصف [AC]."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "AB نصف AC."
+        }
+      ],
+      "feedback": {
+        "correct": "B منتصف [AC]: AB = 7,4 ÷ 2 = 3,7 cm.",
+        "incorrect": "المساواة الشعاعية تجعل B منتصف [AC]."
+      }
+    }
+  ]
+}

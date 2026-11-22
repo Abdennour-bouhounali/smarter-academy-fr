@@ -1,0 +1,160 @@
+{
+  "id": "ex-4am-natiqa-ghayr-natiqa-l2-007",
+  "lessonCode": "natiqa-ghayr-natiqa",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2012 — الجداء m × n",
+    "estimatedMinutes": 5,
+    "tags": [
+      "عدد ناطق",
+      "جداء"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_natiqa-ghayr-natiqa_P2",
+      "modelledOn": "BEM 2012 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2012",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان الحقيقيان $m$ و $n$ حيث:",
+    "formulas": [
+      "m = \\sqrt{0{,}25} + 1 \\quad ; \\quad n = 2 - \\sqrt{2{,}25}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "اكتب كلا من العددين $m$ و $n$ على شكل عدد عشري.",
+      "statement": "$m$",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "1.5",
+      "misconceptionSignatures": [
+        {
+          "value": "1.05",
+          "id": "MISC-JIDHR-FASILA"
+        },
+        {
+          "value": "1.125",
+          "id": "MISC-JIDHR-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولًا $\\sqrt{0{,}25}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sqrt{0{,}25} = 0{,}5$ ، إذن $m = 0{,}5 + 1$ .",
+        "incorrect": "ابحث عن العدد العشري الذي مربعه 0,25 ، ثم أضف 1."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}5^2 = 0{,}25$ إذن $\\sqrt{0{,}25} = 0{,}5$",
+          "$m = 0{,}5 + 1$"
+        ],
+        "result": "m = 1{,}5"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$n$",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "0.5",
+      "misconceptionSignatures": [
+        {
+          "value": "1.85",
+          "id": "MISC-JIDHR-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولًا $\\sqrt{2{,}25}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sqrt{2{,}25} = 1{,}5$ ، إذن $n = 2 - 1{,}5$ .",
+        "incorrect": "ابحث عن العدد العشري الذي مربعه 2,25 ، ثم اطرحه من 2."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}5^2 = 2{,}25$ إذن $\\sqrt{2{,}25} = 1{,}5$",
+          "$n = 2 - 1{,}5$"
+        ],
+        "result": "n = 0{,}5"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "بيّن أن الجداء $m \\times n$ عدد ناطق.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة الجداء $m \\times n$ (كسر أو عدد عشري)",
+      "expectedAnswer": "3/4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتائج السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "$m \\times n = 1{,}5 \\times 0{,}5 = 0{,}75 = \\dfrac{3}{4}$ : عدد ناطق.",
+        "incorrect": "عوّض $m$ و $n$ بقيمتيهما ثم اضرب."
+      },
+      "solution": {
+        "lines": [
+          "$m \\times n = 1{,}5 \\times 0{,}5$",
+          "$= 0{,}75 = \\dfrac{3}{4}$",
+          "إذن الجداء $m \\times n$ عدد ناطق."
+        ],
+        "result": "m \\times n = \\dfrac{3}{4}"
+      },
+      "work": "required",
+      "timeSeconds": 90
+    }
+  ]
+}

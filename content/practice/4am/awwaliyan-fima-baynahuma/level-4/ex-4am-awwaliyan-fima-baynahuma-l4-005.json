@@ -1,0 +1,258 @@
+{
+  "id": "ex-4am-awwaliyan-fima-baynahuma-l4-005",
+  "lessonCode": "awwaliyan-fima-baynahuma",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2010 — صفيحة معدنية 1,70m × 1,17m",
+    "estimatedMinutes": 14,
+    "tags": [
+      "مربعات",
+      "إثبات",
+      "نفي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_awwaliyan-fima-baynahuma_P2",
+      "modelledOn": "BEM 2010 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2010",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 170 و 117.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 170 على 117: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (170 ; 117) بالزوج (117 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 1. العددان 170 و 117 أوليان فيما بينهما.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$170 = 117 \\times 1 + 53$",
+          "$117 = 53 \\times 2 + 11$",
+          "$53 = 11 \\times 4 + 9$",
+          "$11 = 9 \\times 1 + 2$",
+          "$9 = 2 \\times 4 + 1$",
+          "$2 = 1 \\times 2 + 0$",
+          "آخر باقٍ غير معدوم هو 1، إذن:"
+        ],
+        "result": "PGCD(170 ; 117) = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "صفيحة معدنية مستطيلة الشكل بعداها 1,70m و 1,17m يراد تجزئتها إلى مربعات متساوية بأكبر ضلع ممكن دون ضياع.",
+      "statement": "ما هو طول ضلع كل مربع ؟",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (طول الضلع بالسنتيمتر)",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل البعدين إلى السنتيمتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل نتيجة السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(170 ; 117) = 1: طول ضلع كل مربع 1cm.",
+        "incorrect": "طول الضلع هو القاسم المشترك الأكبر للبعدين بالسنتيمتر."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}70m = 170cm$ و $1{,}17m = 117cm$",
+          "PGCD(170 ; 117) = 1 ، إذن طول ضلع كل مربع 1cm."
+        ],
+        "result": "1cm"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما هو عدد المربعات الناتجة ؟",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد المربعات)",
+      "expectedAnswer": "19890",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم مربعًا على كل بعد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب العددين."
+        }
+      ],
+      "feedback": {
+        "correct": "$170 \\times 117 = 19890$ مربعًا.",
+        "incorrect": "اقسم كل بعد على طول الضلع، ثم اضرب النتيجتين."
+      },
+      "solution": {
+        "lines": [
+          "$170 \\times 117 = 19890$"
+        ],
+        "result": "19890"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "لتقليل عدد المربعات، قصّ العامل من طول الصفيحة شريطًا عرضه 2cm، فصار بعداها 1,68m و 1,17m.",
+      "statement": "بيّن أن العددين 168 و 117 ليسا أوليين فيما بينهما: أعط أصغر قاسم مشترك لهما يختلف عن 1.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي أكبر من 1",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى رقم آحاد كل من العددين 168 و 117، وإلى مجموع أرقام كل منهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جرّب القواسم بالترتيب: 2 ثم 3 ثم 4 ثم 5 …، مستعملًا قواعد قابلية القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أول عدد يقسم العددين معًا هو المطلوب، ويكفي لنفي أنهما أوليان فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "3 يقسم 168 و 117 معًا: العددان ليسا أوليين فيما بينهما.",
+        "incorrect": "طبّق قواعد قابلية القسمة على العددين معًا، بدءًا من أصغر القواسم الممكنة."
+      },
+      "solution": {
+        "lines": [
+          "117 عدد فردي، إذن 2 لا يقسمه (ولا يقسم أيّ قاسم زوجي العددين معًا).",
+          "مجموع أرقام 168 هو 15 ومجموع أرقام 117 هو 9، وكلاهما مضاعف للعدد 3، إذن 3 يقسم العددين معًا.",
+          "3 قاسم مشترك للعددين يختلف عن 1، إذن العددان 168 و 117 ليسا أوليين فيما بينهما."
+        ],
+        "result": "3"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "ما هو عدد المربعات الناتجة الآن بأكبر ضلع ممكن ؟",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد المربعات)",
+      "expectedAnswer": "2184",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب PGCD(168 ; 117): هو طول ضلع أكبر مربع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم كل بعد على طول الضلع، ثم اضرب النتيجتين."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(168 ; 117) = 3 ، و $56 \\times 39 = 2184$ مربعًا.",
+        "incorrect": "احسب أولًا القاسم المشترك الأكبر للبعدين الجديدين، ثم عدد المربعات على كل بعد."
+      },
+      "solution": {
+        "lines": [
+          "$168 = 117 \\times 1 + 51$",
+          "$117 = 51 \\times 2 + 15$",
+          "$51 = 15 \\times 3 + 6$",
+          "$15 = 6 \\times 2 + 3$",
+          "$6 = 3 \\times 2 + 0$",
+          "PGCD(168 ; 117) = 3 : طول ضلع كل مربع 3cm.",
+          "$168 \\div 3 = 56$ و $117 \\div 3 = 39$",
+          "$56 \\times 39 = 2184$"
+        ],
+        "result": "2184"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

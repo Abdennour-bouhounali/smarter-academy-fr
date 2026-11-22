@@ -13,8 +13,11 @@ import { AuthContext } from '../../context/AuthContext';
  *
  * Chaque rôle est donc renvoyé chez lui :
  *
- *   élève   → /espace   son tableau de bord (reprendre sa leçon)
- *   admin   → /admin    le panneau d'administration
+ *   élève      → /espace      son tableau de bord (reprendre sa leçon)
+ *   enseignant → /enseignant  ses classes
+ *   parent     → /wali        فضاء الوليّ (ses enfants liés)
+ *   directeur  → /idara       فضاء الإدارة (son établissement)
+ *   admin      → /admin       le panneau d'administration
  *   visiteur → la page d'accueil, inchangée
  *
  * ── Attendre `loading`, impérativement ───────────────────────────────────
@@ -42,6 +45,18 @@ export default function HomeRedirect() {
 
   if (!loading && user?.role === 'admin') {
     return <Navigate to="/admin" replace />;
+  }
+
+  if (!loading && user?.role === 'teacher') {
+    return <Navigate to="/enseignant" replace />;
+  }
+
+  if (!loading && user?.role === 'parent') {
+    return <Navigate to="/wali" replace />;
+  }
+
+  if (!loading && user?.role === 'school_admin') {
+    return <Navigate to="/idara" replace />;
   }
 
   return <Home />;

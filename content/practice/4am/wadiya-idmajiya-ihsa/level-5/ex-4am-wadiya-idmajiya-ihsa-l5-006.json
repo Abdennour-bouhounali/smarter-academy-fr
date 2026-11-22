@@ -1,0 +1,261 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ihsa-l5-006",
+  "lessonCode": "wadiya-idmajiya-ihsa",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2010 — الرميات الحرة لفريق كرة السلة بأم البواقي",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "مخطط بالأعمدة",
+      "تكرار مجهول",
+      "المتوسط",
+      "الوسيط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-ihsa_P3",
+      "modelledOn": "BEM 2010 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2010",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "سجّل مدرّب فريق كرة السلة لنادٍ بأم البواقي، وهو يربّي لاعبيه على الإيثار وروح الفريق، عدد الرميات الحرة الناجحة لكل لاعب من لاعبيه الـ 20 في حصة تدريبية (10 رميات لكل لاعب). يمثّل المخطط بالأعمدة الآتي النتائج، وقد مُسح عمود القيمة 6 :",
+    "figure": {
+      "kind": "chart",
+      "type": "bar",
+      "ariaLabel": "مخطط بالأعمدة لعدد اللاعبين حسب عدد الرميات الحرة الناجحة من 10: من 4 إلى 9، وعمود القيمة 6 غير مرسوم",
+      "xTitle": "عدد الرميات الناجحة",
+      "yTitle": "عدد اللاعبين",
+      "y": {
+        "max": 6,
+        "step": 1
+      },
+      "bars": [
+        {
+          "label": "4",
+          "value": 2
+        },
+        {
+          "label": "5",
+          "value": 3
+        },
+        {
+          "label": "6",
+          "missing": true
+        },
+        {
+          "label": "7",
+          "value": 5
+        },
+        {
+          "label": "8",
+          "value": 4
+        },
+        {
+          "label": "9",
+          "value": 2
+        }
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب عدد اللاعبين الذين نجحوا في 6 رميات.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الأعمدة المرسومة الخمسة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مجموع التكرارات يساوي عدد اللاعبين 20 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$20 - (2 + 3 + 5 + 4 + 2) = 4$ .",
+        "incorrect": "اطرح مجموع الأعمدة المرسومة من 20 ."
+      },
+      "solution": {
+        "lines": [
+          "القراءة: 2 ، 3 ، 5 ، 4 ، 2 .",
+          "$20 - 16 = 4$"
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "احسب المتوسط وعيّن الوسيط لعدد الرميات الناجحة.",
+      "statement": "المتوسط.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة",
+      "expectedAnswer": "6,6",
+      "misconceptionSignatures": [
+        {
+          "value": "6,5",
+          "id": "MISC-IHSA-MUTAWASSIT-BILA-TARJIH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب كل قيمة في عدد اللاعبين الموافق، ومنها القيمة 6 ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم المجموع على 20 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{4 \\times 2 + 5 \\times 3 + 6 \\times 4 + 7 \\times 5 + 8 \\times 4 + 9 \\times 2}{20} = 6{,}6$ .",
+        "incorrect": "المتوسط المتوازن: مجموع (القيمة × التكرار) ÷ التكرار الكلي، مع تكرار القيمة 6 الذي وجدته."
+      },
+      "solution": {
+        "lines": [
+          "$4 \\times 2 + 5 \\times 3 + 6 \\times 4 + 7 \\times 5 + 8 \\times 4 + 9 \\times 2 = 132$",
+          "$\\dfrac{132}{20} = 6{,}6$"
+        ],
+        "result": "6{,}6"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "الوسيط.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة إن لزم)",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "6,5",
+          "id": "MISC-IHSA-WASIT-QIMA-WUSTA-JADWAL"
+        },
+        {
+          "value": "6,6",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الرتبتان الوسطيان 10 و 11 ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التكرارات المجمعة الصاعدة: 2 ، 5 ، 9 ، …"
+        }
+      ],
+      "feedback": {
+        "correct": "الرتبتان 10 و 11 تقعان في القيمة 7 ، فالوسيط 7 .",
+        "incorrect": "لا تأخذ وسط المحور الأفقي: حدّد بالتكرارات المجمعة الصاعدة القيمة التي تقع فيها الرتبتان 10 و 11 ."
+      },
+      "solution": {
+        "lines": [
+          "التكرارات المجمعة الصاعدة: 2 ، 5 ، 9 ، 14 ، 18 ، 20 .",
+          "الرتب من 10 إلى 14 للقيمة 7 .",
+          "$\\dfrac{7 + 7}{2} = 7$"
+        ],
+        "result": "7"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "يختار المدرّب للمباراة القادمة اللاعبين الذين عدد رمياتهم الناجحة أكبر من الوسيط أو يساويه. كم لاعبا يختار؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-IHSA-SARAMA"
+        },
+        {
+          "value": "5",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الوسيط الذي وجدته في 02 ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هذا العدد تكرار مجمع نازل."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 + 4 + 2 = 11$ لاعبا.",
+        "incorrect": "اجمع تكرار الوسيط نفسه وتكرارات القيم الأكبر منه."
+      },
+      "solution": {
+        "lines": [
+          "القيم 7 و 8 و 9 : $5 + 4 + 2 = 11$",
+          "يختار المدرّب 11 لاعبا."
+        ],
+        "result": "11"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,355 @@
+{
+  "id": "ex-4am-tamthil-bayani-taalufi-l5-008",
+  "lessonCode": "tamthil-bayani-taalufi",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2018 — عرضا أجرة في ورشة للحدادة بتيارت",
+    "estimatedMinutes": 25,
+    "tags": [
+      "وضعية إدماجية",
+      "تمثيل بياني",
+      "جملة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tamthil-bayani-taalufi_P1",
+      "modelledOn": "BEM 2018 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2018",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يعرض صاحب ورشة للحدادة بتيارت، معروف بإنصافه لعماله، على عامل جديد عرضين للأجرة الشهرية:\n- العرض الأول: أجرة ثابتة 30000DA يضاف إليها 500DA عن كل باب حديدي يصنعه.\n- العرض الثاني: أجرة ثابتة 20000DA يضاف إليها 1000DA عن كل باب حديدي يصنعه.\nنسمّي $x$ عدد الأبواب التي يصنعها العامل في الشهر، و $f(x)$ و $g(x)$ أجرته حسب العرضين الأول والثاني على الترتيب."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "احسب أجرة العامل حسب كل عرض إذا صنع 12 بابا في الشهر.",
+      "statement": "الأجرة حسب العرض الأول:",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "36000",
+      "misconceptionSignatures": [
+        {
+          "value": "6000",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الأجرة = 500 × عدد الأبواب + الأجرة الثابتة."
+        }
+      ],
+      "feedback": {
+        "correct": "$500 \\times 12 + 30000 = 36000$ .",
+        "incorrect": "اضرب عدد الأبواب في 500 ثم أضف الأجرة الثابتة."
+      },
+      "solution": {
+        "lines": [
+          "$500 \\times 12 + 30000 = 36000$"
+        ],
+        "result": "36000"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "الأجرة حسب العرض الثاني:",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "32000",
+      "misconceptionSignatures": [
+        {
+          "value": "12000",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الأجرة = 1000 × عدد الأبواب + الأجرة الثابتة."
+        }
+      ],
+      "feedback": {
+        "correct": "$1000 \\times 12 + 20000 = 32000$ .",
+        "incorrect": "اضرب عدد الأبواب في 1000 ثم أضف الأجرة الثابتة."
+      },
+      "solution": {
+        "lines": [
+          "$1000 \\times 12 + 20000 = 32000$"
+        ],
+        "result": "32000"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "$f(x) = 500x + 30000$ و $g(x) = 1000x + 20000$ . لتمثيل الدالتين $f$ و $g$ بيانيا في معلم متعامد (1cm على محور الفواصل يمثل 5 أبواب و 1cm على محور التراتيب يمثل 5000DA):",
+      "statement": "عيّن إحداثيي نقطة تقاطع التمثيل البياني للدالة $g$ مع محور التراتيب.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": {
+        "x": "0",
+        "y": "20000"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "20000",
+            "y": "0"
+          },
+          "id": "MISC-BAYANI-FASILA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل نقطة من محور التراتيب فاصلتها 0."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب صورة العدد 0 بالدالة $g$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$g(0) = 20000$ : النقطة $(0 ; 20000)$ .",
+        "incorrect": "نقطة محور التراتيب فاصلتها 0، وترتيبها صورة 0: اكتب الفاصلة أولا ثم الترتيب."
+      },
+      "solution": {
+        "lines": [
+          "نقطة تقاطع التمثيل البياني للدالة $g$ مع محور التراتيب فاصلتها 0.",
+          "$g(0) = 1000 \\times 0 + 20000 = 20000$",
+          "إذن النقطة هي $(0 ; 20000)$ ، و $20000$ هو الترتيب عند المبدأ."
+        ],
+        "result": "(0 ; 20000)"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب ترتيب النقطة من التمثيل البياني للدالة $f$ التي فاصلتها $40$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "50000",
+      "misconceptionSignatures": [
+        {
+          "value": "20000",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ترتيب نقطة من التمثيل البياني للدالة $f$ هو صورة فاصلتها بالدالة $f$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب الفاصلة في المعامل $a$ ، ثم أضف $b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(40) = 500 \\times 40 + 30000 = 50000$ .",
+        "incorrect": "الترتيب هو صورة الفاصلة: اضرب الفاصلة في $a$ ثم أضف $b$ بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$f(40) = 500 \\times 40 + 30000 = 50000$",
+          "إذن النقطة $(40 ; 50000)$ تنتمي إلى التمثيل البياني للدالة $f$."
+        ],
+        "result": "f(40) = 50000"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ج",
+      "statement": "مثّل بيانيا الدالتين $f$ و $g$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التمثيل البياني لدالة تآلفية مستقيم: تكفي نقطتان منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خذ النقطة $(0 ; b)$ من محور التراتيب، ثم احسب صورة عدد آخر."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "تمثيل $f$ مستقيم يشمل النقطتين $(0 ; 30000)$ و $(40 ; 50000)$ .",
+          "تمثيل $g$ مستقيم يشمل النقطتين $(0 ; 20000)$ و $(10 ; 30000)$ .",
+          "بالوحدتين: النقطة $(40 ; 50000)$ تُعلَّم على بعد 8cm أفقيا و 10cm عموديا من المبدأ."
+        ]
+      },
+      "timeSeconds": 300
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ا",
+      "statement": "حلّ جبريا الجملة $\\begin{cases} y = 500x + 30000 \\\\ y = 1000x + 20000 \\end{cases}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": {
+        "x": "20",
+        "y": "40000"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "40000",
+            "y": "20"
+          },
+          "id": "MISC-JUMLA-BAYANI-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $y$ في المعادلة الثانية بعبارته من الأولى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المعادلة $500x + 30000 = 1000x + 20000$ ثم احسب $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$500x = 10000$ ، ثم $y = 500 \\times 20 + 30000$ .",
+        "incorrect": "اكتب الثنائية $(x ; y)$ : عدد الأبواب أولا ثم الأجرة."
+      },
+      "solution": {
+        "lines": [
+          "$500x + 30000 = 1000x + 20000$",
+          "$30000 - 20000 = 1000x - 500x$",
+          "$500x = 10000$ ومنه $x = 20$",
+          "$y = 500 \\times 20 + 30000 = 40000$",
+          "حل الجملة هو الثنائية $(20 ; 40000)$ ."
+        ],
+        "result": "(20 ; 40000)"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "sub": "ب",
+      "statement": "فسّر الحل بيانيا، ثم بيّن متى يكون العرض الثاني أفضل للعامل.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحل هو إحداثيا نقطة تقاطع التمثيلين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العرض الأفضل للعامل هو الذي تمثيله فوق الآخر (أجرة أكبر)."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "بيانيا: $(20 ; 40000)$ هما إحداثيا نقطة تقاطع تمثيلي $f$ و $g$ : إذا صنع العامل 20 بابا يتقاضى نفس الأجرة $40000DA$ بالعرضين.",
+          "بعد نقطة التقاطع يقع تمثيل $g$ فوق تمثيل $f$ : إذا صنع العامل أكثر من 20 بابا في الشهر يكون العرض الثاني أفضل له.",
+          "وإذا صنع أقل من 20 بابا يكون العرض الأول أفضل."
+        ]
+      },
+      "timeSeconds": 240
+    }
+  ]
+}

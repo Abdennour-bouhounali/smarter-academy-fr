@@ -1,0 +1,231 @@
+{
+  "id": "ex-2am-tawzi-darb-jam-tarh-l4-002",
+  "lessonCode": "tawzi-darb-jam-tarh",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أولوية العمليات والتوزيع",
+    "estimatedMinutes": 10,
+    "tags": [
+      "أولوية",
+      "أقواس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "لتكن السلسلة $B = 20 + 4 \\times (15 - 5)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما اسم السلسلة $B = 20 + 4 \\times (15 - 5)$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مجموع",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "جداء",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "فرق",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-FIRSTOP"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "آخر عملية تُنجز هي الجمع فالسلسلة عبارة عن مجموع."
+        ]
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب السلسلة مرحلة مرحلة وانظر إلى آخر عملية تُنجز."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر: ما بين القوسين أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اسم السلسلة هو اسم آخر عملية تُنجز فيها."
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة عبارة عن مجموع.",
+        "incorrect": "اسم السلسلة هو اسم آخر عملية تُنجز فيها بعد ما بين القوسين والضرب والقسمة."
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $20 + 4 \\times (15 - 5)$ .",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "60",
+      "solution": {
+        "lines": [
+          "$20 + 4 \\times (15 - 5) = 60$"
+        ],
+        "result": "60"
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا: أين الأقواس؟ وهل يوجد عدد مشترك بين الجداءات؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر الطريقة الأسهل: وزّع الضرب على الحدّين أو أنجز ما بين القوسين أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز الحساب مرحلة مرحلة ثم تحقّق من النتيجة بطريقة ثانية."
+        }
+      ],
+      "feedback": {
+        "correct": "$20 + 4 \\times (15 - 5) = 60$",
+        "incorrect": "راجع حسابك مرحلة مرحلة، وتذكّر أنّ ما بين القوسين يُحسب أوّلًا وأنّ الضرب يتوزّع على كلّ حدّ."
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "انشر الجداء ثم احسب $20 + 4 \\times 15 - 4 \\times 5$ .",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "60",
+      "solution": {
+        "lines": [
+          "$20 + 4 \\times 15 - 4 \\times 5 = 60$"
+        ],
+        "result": "60"
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا: أين الأقواس؟ وهل يوجد عدد مشترك بين الجداءات؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر الطريقة الأسهل: وزّع الضرب على الحدّين أو أنجز ما بين القوسين أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز الحساب مرحلة مرحلة ثم تحقّق من النتيجة بطريقة ثانية."
+        }
+      ],
+      "feedback": {
+        "correct": "$20 + 4 \\times 15 - 4 \\times 5 = 60$",
+        "incorrect": "راجع حسابك مرحلة مرحلة، وتذكّر أنّ ما بين القوسين يُحسب أوّلًا وأنّ الضرب يتوزّع على كلّ حدّ."
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "$4 \\times (15 - 5) = 4 \\times 15 - 5$ . هل المساواة صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-FIRSTONLY"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "solution": {
+        "lines": [
+          "$4 \\times (15 - 5) = 40$",
+          "$4 \\times 15 - 5 = 55$",
+          "النتيجتان مختلفتان: المساواة خاطئة."
+        ]
+      },
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طبّق على الطرف الأيسر ما تعرفه من الخاصية التوزيعية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الطرفين حدًّا بحدّ: هل وُزّع الضرب على الحدّين معًا؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الطرفين عدديًا عند الحاجة: هل يتساويان؟"
+        }
+      ],
+      "feedback": {
+        "correct": "المساواة خاطئة: نتحقّق بحساب الطرفين.",
+        "incorrect": "احسب طرفي المساواة عدديًا وقارنهما: المساواة صحيحة فقط إذا تساوى الطرفان دائمًا."
+      },
+      "timeSeconds": 70
+    }
+  ]
+}

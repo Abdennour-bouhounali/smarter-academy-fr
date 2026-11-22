@@ -4,8 +4,8 @@
  * identically usable by a future non-web API client.
  *
  * @property {string} type - One of NETWORK_ERROR, VALIDATION_ERROR,
- *   AUTHENTICATION_ERROR, AUTHORIZATION_ERROR, NOT_FOUND, SERVER_ERROR,
- *   UNEXPECTED_ERROR.
+ *   AUTHENTICATION_ERROR, AUTHORIZATION_ERROR, NOT_FOUND, RATE_LIMITED,
+ *   SERVER_ERROR, UNEXPECTED_ERROR.
  * @property {number|null} status - The HTTP status code, if any (null for NETWORK_ERROR).
  */
 export class ApiError extends Error {
@@ -23,6 +23,12 @@ export function classifyStatus(status) {
   if (status === 403) return 'AUTHORIZATION_ERROR';
   if (status === 404) return 'NOT_FOUND';
   if (status === 422) return 'VALIDATION_ERROR';
+  // 429 mérite son propre type : « trop d'essais, réessayez dans un instant »
+  // est une conduite à tenir, là où « une erreur est survenue » (le défaut
+  // UNEXPECTED_ERROR) laisserait l'élève retaper aussitôt — et rallonger sa
+  // propre punition. La saisie de code d'activation est le premier appelant
+  // à en avoir besoin.
+  if (status === 429) return 'RATE_LIMITED';
   if (status >= 500) return 'SERVER_ERROR';
   return 'UNEXPECTED_ERROR';
 }

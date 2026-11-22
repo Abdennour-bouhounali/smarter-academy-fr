@@ -1,0 +1,235 @@
+{
+  "id": "ex-1am-bahth-adad-naqisa-l5-001",
+  "lessonCode": "bahth-adad-naqisa",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — ورشة النجارة",
+    "estimatedMinutes": 14,
+    "tags": [
+      "وضعية إدماجية",
+      "جداء",
+      "دفعات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "ثمن 6 كراسي متماثلة صنعها نجّار 4 800 دج. طلب زبون هذه الكراسي ودفع 1 500 دج مقدّمًا."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما ثمن الكرسي الواحد بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "800",
+      "misconceptionSignatures": [
+        {
+          "value": "28800",
+          "id": "MISC-NAQISA-MULAGAIN"
+        },
+        {
+          "value": "0.00125",
+          "id": "MISC-NAQISA-DIVREV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للضرب هي القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $800\\times 6=4800$ ، فالعدد الناقص هو $800$ .",
+        "incorrect": "في جداء نقسم الناتج على العدد المعلوم: لا نضربه فيه ولا نقسم المعلوم على الناتج."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square\\times 6=4800$ .",
+          "نُرجع بالعملية العكسية: $\\square=4800\\div 6=800$ .",
+          "نتحقّق: $800\\times 6=4800$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما المبلغ الباقي على الزبون بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "3300",
+      "misconceptionSignatures": [
+        {
+          "value": "6300",
+          "id": "MISC-NAQISA-SAMEOP"
+        },
+        {
+          "value": "-3300",
+          "id": "MISC-NAQISA-REVSUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للجمع هي الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $3300+1500=4800$ ، فالعدد الناقص هو $3300$ .",
+        "incorrect": "في مجموع نطرح العدد المعلوم من الناتج: لا نجمع مرّة أخرى."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square+1500=4800$ .",
+          "نُرجع بالعملية العكسية: $\\square=4800-1500=3300$ .",
+          "نتحقّق: $3300+1500=4800$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "دفع الباقي على 4 دفعات متساوية. ما مبلغ الدفعة بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "825",
+      "misconceptionSignatures": [
+        {
+          "value": "13200",
+          "id": "MISC-NAQISA-MULAGAIN"
+        },
+        {
+          "value": "1/825",
+          "id": "MISC-NAQISA-DIVREV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للضرب هي القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $825\\times 4=3300$ ، فالعدد الناقص هو $825$ .",
+        "incorrect": "في جداء نقسم الناتج على العدد المعلوم: لا نضربه فيه ولا نقسم المعلوم على الناتج."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square\\times 4=3300$ .",
+          "نُرجع بالعملية العكسية: $\\square=3300\\div 4=825$ .",
+          "نتحقّق: $825\\times 4=3300$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "تحقّق: ما مجموع المقدّم (1 500 دج) والدفعات الأربع (3 300 دج) بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "4800",
+      "misconceptionSignatures": [],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تربط الأعداد المعطاة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب بالترتيب المناسب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن نتيجتك بالناتج المعلوم في الوضعية."
+        }
+      ],
+      "feedback": {
+        "correct": "$1500+3300=4800$ .",
+        "incorrect": "أعد الحساب بعناية."
+      },
+      "solution": {
+        "lines": [
+          "$1500+3300=4800$ ."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

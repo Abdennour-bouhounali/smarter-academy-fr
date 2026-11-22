@@ -1,0 +1,194 @@
+{
+  "id": "ex-3am-qawaid-quwa-ashara-l3-007",
+  "lessonCode": "qawaid-quwa-ashara",
+  "level": 3,
+  "metadata": {
+    "title": "تبسيط عبارة طويلة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "سلسلة حساب"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-15",
+      "page": 46,
+      "section": "أوظّف تعلّماتي",
+      "number": 15
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد $A = \\dfrac{10^{3}\\times10^{-6}\\times(10^{-2})^{5}}{(10^{-3})^{3}\\times10^{4}\\times10^{2}}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "اكتب البسط على شكل قوة واحدة للعدد 10: ما أسّه؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أوّلًا كلّ قوة على حدة وحدّد أسّها، وانتبه إلى القوى التي بين قوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز الجداءات والقوى لتحصل على قوة واحدة في البسط وقوة واحدة في المقام، ثمّ اقسم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب أسّ البسط وأسّ المقام كلًّا على حدة قبل أن تطرح، وانتبه إلى الإشارات."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-13",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-QAWAID-ISHARA"
+        },
+        {
+          "value": "-9",
+          "id": "MISC-QAWAID-QUWA-JAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{3}\\times10^{-6}\\times(10^{-2})^{5} = 10^{-13}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$(10^{-2})^{5} = 10^{-10}$ .",
+          "$10^{3}\\times10^{-6}\\times10^{-10} = 10^{3 + (-6) + (-10)} = 10^{-13}$ ."
+        ],
+        "result": "n = -13"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اكتب المقام على شكل قوة واحدة للعدد 10: ما أسّه؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أوّلًا كلّ قوة على حدة وحدّد أسّها، وانتبه إلى القوى التي بين قوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز الجداءات والقوى لتحصل على قوة واحدة في البسط وقوة واحدة في المقام، ثمّ اقسم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب أسّ البسط وأسّ المقام كلًّا على حدة قبل أن تطرح، وانتبه إلى الإشارات."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-QAWAID-QUWA-JAM"
+        },
+        {
+          "value": "15",
+          "id": "MISC-QAWAID-ISHARA"
+        }
+      ],
+      "feedback": {
+        "correct": "$(10^{-3})^{3}\\times10^{4}\\times10^{2} = 10^{-3}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$(10^{-3})^{3} = 10^{-9}$ .",
+          "$10^{-9}\\times10^{4}\\times10^{2} = 10^{-9 + 4 + 2} = 10^{-3}$ ."
+        ],
+        "result": "n = -3"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "استنتج $A = 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أوّلًا كلّ قوة على حدة وحدّد أسّها، وانتبه إلى القوى التي بين قوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز الجداءات والقوى لتحصل على قوة واحدة في البسط وقوة واحدة في المقام، ثمّ اقسم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب أسّ البسط وأسّ المقام كلًّا على حدة قبل أن تطرح، وانتبه إلى الإشارات."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-10",
+      "misconceptionSignatures": [
+        {
+          "value": "-16",
+          "id": "MISC-QAWAID-DARB-ASS"
+        },
+        {
+          "value": "10",
+          "id": "MISC-QAWAID-ISHARA"
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 10^{-10}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{10^{-13}}{10^{-3}}$ .",
+          "نطرح الأسّين: $-13 - (-3) = -10$ ، إذن $A = 10^{-10}$ ."
+        ],
+        "result": "n = -10"
+      }
+    }
+  ]
+}

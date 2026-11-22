@@ -1,0 +1,220 @@
+{
+  "id": "ex-2am-rabi-mutanasib-l3-006",
+  "lessonCode": "rabi-mutanasib",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — اختيار الطريقة المناسبة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "اختيار الطريقة",
+      "الرابع المتناسب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "ثمن $8$ kg من البطيخ هو $640$ DA. الثمن يتناسب مع الكتلة.",
+    "table": {
+      "head": [
+        "الكتلة (kg)",
+        "8",
+        "24",
+        "5",
+        "…"
+      ],
+      "rows": [
+        [
+          "الثمن (DA)",
+          "640",
+          "…",
+          "…",
+          "1120"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "اختر الحساب الأنسب لثمن $24$ kg (لاحظ أن $24 = 8 \\times 3$).",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$640 \\times 3$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$640 + 16$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-RABI-ADD"
+        },
+        {
+          "id": "C",
+          "content": "$640 \\div 3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-RABI-INV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العددين المعلومين في السطر الأول: هل أحدهما مضاعف للآخر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر الطريقة التي تعطي حسابًا ذهنيًّا أبسط بالأعداد المعطاة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أي طريقة تختارها يجب أن تعطي النتيجة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "الثمن $1920$ DA .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$24 = 8 \\times 3$",
+          "$640 \\times 3 = 1920$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما ثمن $5$ kg؟ (لا مضاعف بسيط هنا: مرّ بثمن الكيلوغرام).",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "400",
+      "misconceptionSignatures": [
+        {
+          "value": "637",
+          "id": "MISC-RABI-ADD"
+        },
+        {
+          "value": "640",
+          "id": "MISC-RABI-UNITONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب أولًا: قيمة الوحدة الواحدة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قيمة الوحدة الواحدة تُحسب بقسمة العدد الموجود في السطر الثاني على مقابله في السطر الأول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد ذلك اضرب قيمة الوحدة في الكمية المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "الثمن $400$ DA .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$640 \\div 8 = 80$",
+          "$80 \\times 5 = 400$"
+        ],
+        "result": "400"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما كتلة البطيخ التي ثمنها $1120$ DA؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "value": "89600",
+          "id": "MISC-RABI-INV"
+        },
+        {
+          "value": "488",
+          "id": "MISC-RABI-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب أولًا: قيمة الوحدة الواحدة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قيمة الوحدة الواحدة تُحسب بقسمة العدد الموجود في السطر الثاني على مقابله في السطر الأول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد ذلك اضرب قيمة الوحدة في الكمية المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتلة $14$ kg .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$1120 \\div 80 = 14$"
+        ],
+        "result": "14"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

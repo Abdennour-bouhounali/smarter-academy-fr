@@ -1,0 +1,191 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ihsa-l4-004",
+  "lessonCode": "wadiya-idmajiya-ihsa",
+  "level": 4,
+  "metadata": {
+    "title": "دورة ألعاب إلكترونية: قيمتان مخفيتان",
+    "estimatedMinutes": 10,
+    "tags": [
+      "الوسيط",
+      "المتوسط المتوازن",
+      "قيمة مخفية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ihsa_P3"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "يعطي الجدول الآتي عدد الانتصارات لـ 15 لاعبا في دورة ألعاب إلكترونية، حيث $x$ و $y$ قيمتان مخفيتان ($2 < x < 6$ و $8 < y < 15$). وسيط السلسلة 4 ومتوسطها $5{,}4$ .",
+    "table": {
+      "head": [
+        "عدد الانتصارات",
+        "عدد اللاعبين"
+      ],
+      "rows": [
+        [
+          "1",
+          "2"
+        ],
+        [
+          "2",
+          "3"
+        ],
+        [
+          "$x$",
+          "4"
+        ],
+        [
+          "6",
+          "2"
+        ],
+        [
+          "8",
+          "2"
+        ],
+        [
+          "$y$",
+          "1"
+        ],
+        [
+          "15",
+          "1"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن رتبة الوسيط.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الرتبة",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "7,5",
+          "id": "MISC-IHSA-WASIT-RUTBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب التكرار الكلي: هل هو فردي أم زوجي؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{15 + 1}{2} = 8$ .",
+        "incorrect": "لتكرار كلي فردي $N$ ، رتبة الوسيط $\\dfrac{N + 1}{2}$ ."
+      },
+      "solution": {
+        "lines": [
+          "التكرار الكلي 15 (فردي).",
+          "$\\dfrac{15 + 1}{2} = 8$"
+        ],
+        "result": "8"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج القيمة $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكرارات المجمعة الصاعدة: 2 ، 5 ، ثم 9 للقيمة $x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في أيّ قيمة تقع الرتبة 8 ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الرتبة 8 تقع في القيمة $x$ ، فالوسيط هو $x$ .",
+        "incorrect": "ابحث بالتكرارات المجمعة الصاعدة عن القيمة التي تقع فيها رتبة الوسيط، ثم قارن مع الوسيط المعطى."
+      },
+      "solution": {
+        "lines": [
+          "التكرارات المجمعة الصاعدة: 2 ، 5 ، 9 ، … ؛ الرتب من 6 إلى 9 للقيمة $x$ .",
+          "الرتبة 8 تقع في $x$ ، إذن $x$ هو الوسيط:",
+          "$x = 4$"
+        ],
+        "result": "x = 4"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "باستعمال المتوسط، احسب القيمة $y$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "14",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مجموع القيم = المتوسط × التكرار الكلي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلة مجهولها $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$67 + y = 81$ ، فـ $y = 14$ .",
+        "incorrect": "اكتب: مجموع (القيمة × التكرار) للقيم المعلومة + $y \\times 1$ = المتوسط × التكرار الكلي."
+      },
+      "solution": {
+        "lines": [
+          "$5{,}4 \\times 15 = 81$",
+          "$1 \\times 2 + 2 \\times 3 + 4 \\times 4 + 6 \\times 2 + 8 \\times 2 + 15 \\times 1 + y = 81$",
+          "$67 + y = 81$",
+          "$y = 14$"
+        ],
+        "result": "y = 14"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

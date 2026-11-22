@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l4-007",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — ضلع المربع من نصف القطر",
+    "estimatedMinutes": 3,
+    "tags": [
+      "طول الضلع",
+      "المربع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mudalaat-muntazama_P3",
+      "modelledOn": "method-side"
+    }
+  },
+  "statement": {
+    "content": "مربع ABCD رؤوسه على دائرة مركزها O ونصف قطرها $3\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "القيمة المضبوطة لطول ضلع المربع:",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3\\sqrt{2}\\,\\mathrm{cm}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$3\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-DIL"
+        },
+        {
+          "id": "C",
+          "content": "$6\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-JADHR-NASI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الزاوية المركزية للمربع $90^\\circ$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المثلث OAB قائم في O ومتساوي الساقين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق مبرهنة فيثاغورس فيه."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB^2 = 3^2 + 3^2 = 18$ إذن $AB = 3\\sqrt{2} \\approx 4{,}24$ .",
+        "incorrect": "الضلع يساوي نصف القطر في السداسي فقط، و 6 هو القطر."
+      },
+      "difficulty": 4
+    }
+  ]
+}

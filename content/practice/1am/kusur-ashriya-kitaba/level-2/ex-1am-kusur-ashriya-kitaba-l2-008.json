@@ -1,0 +1,204 @@
+{
+  "id": "ex-1am-kusur-ashriya-kitaba-l2-008",
+  "lessonCode": "kusur-ashriya-kitaba",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أجزاء من عشرة وأجزاء من مائة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "كسر عشري",
+      "كتابات متساوية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "قسّمت خديجة شريطًا من الورق إلى أجزاء متماثلة لتوزّعه بالتساوي على زميلاتها، ثم كتبت أجزاءه بأكثر من كتابة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أتمم: $\\dfrac{4}{10} = \\dfrac{\\ldots}{1000}$",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "400",
+      "misconceptionSignatures": [
+        {
+          "value": "994",
+          "id": "MISC-KUSUR-EQUAL-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المقامين: كم مرّة يوجد أحدهما في الآخر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ماذا نفعل بالحدّ الآخر لنحصل على كتابة مساوية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نطبّق العملية نفسها على البسط والمقام معًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{4}{10} = \\dfrac{4 \\times 100}{10 \\times 100} = \\dfrac{400}{1000}$ : ضربنا البسط والمقام في العدد نفسه.",
+        "incorrect": "نحصل على كتابة مساوية بضرب البسط والمقام في العدد نفسه أو بقسمتهما عليه، وليس بإضافة عدد إليهما."
+      },
+      "solution": {
+        "lines": [
+          "$10 \\times 100 = 1000$ ، إذن نضرب البسط في 100 أيضًا: $4 \\times 100 = 400$",
+          "$\\dfrac{4}{10} = \\dfrac{400}{1000}$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أتمم: $\\dfrac{205}{100} = 2 + \\dfrac{\\ldots}{10} + \\dfrac{5}{100}$",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم البسط على المقام قسمة إقليدية: حاصلها هو عدد الوحدات الكاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما يتبقّى يُوزَّع على الأعشار ثم على الأجزاء من مائة…"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عُشر واحد يساوي عشرة أجزاء من مائة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{205}{100} = 2 + \\dfrac{0}{10} + \\dfrac{5}{100}$.",
+        "incorrect": "نقسم البسط على المقام لنعرف الوحدات الكاملة، ثم نوزّع الباقي على الأعشار فالأجزاء من مائة فالأجزاء من ألف، برقم واحد في كل مرتبة."
+      },
+      "solution": {
+        "lines": [
+          "$205 = 2 \\times 100 + 05$ ، فنقرأ الأجزاء بمرتبتها.",
+          "$\\dfrac{205}{100} = 2 + \\dfrac{0}{10} + \\dfrac{5}{100}$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "$\\dfrac{7}{100} = \\dfrac{70}{1000}$",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KUSUR-DIFF-DEN"
+        }
+      ],
+      "answerFormat": "اختر إجابة واحدة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا نفعل بالبسط إذا ضربنا المقام في 10؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن المقامين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{7 \\times 10}{100 \\times 10} = \\dfrac{70}{1000}$ : ضربنا البسط والمقام في 10.",
+        "incorrect": "كتابتان كسريتان متساويتان إذا مررنا من إحداهما إلى الأخرى بضرب البسط والمقام في العدد نفسه أو بقسمتهما عليه."
+      },
+      "solution": {
+        "lines": [
+          "$100 \\times 10 = 1000$ و $7 \\times 10 = 70$",
+          "إذن $\\dfrac{7}{100} = \\dfrac{70}{1000}$ : العبارة صحيحة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "هل يساوي $\\dfrac{5}{10}$ الكسر $\\dfrac{5}{100}$؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعن بما تعلّمته عن مراتب الأرقام بعد الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي.",
+        "incorrect": "راجع القاعدة وأعد صياغة التبرير."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{10}$ هو 5 أعشار من الوحدة، أي نصفها.",
+          "$\\dfrac{5}{100}$ هو 5 أجزاء من مائة، وهو عُشر ما سبق، وهو يساوي $\\dfrac{5}{10} \\div 10$.",
+          "الكسران غير متساويين: $\\dfrac{5}{10} = \\dfrac{50}{100}$."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

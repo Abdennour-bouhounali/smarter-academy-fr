@@ -1,0 +1,77 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-fada-l1-003",
+  "lessonCode": "wadiya-idmajiya-fada",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — أثر التصغير على الحجم",
+    "estimatedMinutes": 3,
+    "tags": [
+      "التكبير والتصغير",
+      "مقطع مخروط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-fada_P1",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "في محلّ مثلجات يحرص صاحبه على نظافته، كأس مخروطي ارتفاعه $12\\,\\mathrm{cm}$ . يقطعه مستو مواز لفتحته على ثلث ارتفاعه من الرأس، فالمخروط الصغير الذي رأسه رأس الكأس تصغير للكأس نسبته $\\dfrac{1}{3}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "حجم المخروط الصغير يساوي حجم الكأس مضروبا في:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-fada_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{1}{3}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-HAJM-K"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{1}{9}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-MISAHA-K"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{1}{27}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما نوع المقدار؟ طول، مساحة أم حجم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحجوم تُضرب في مكعب النسبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب $\\left(\\dfrac{1}{3}\\right)^3$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\left(\\dfrac{1}{3}\\right)^3 = \\dfrac{1}{27}$ : الحجوم تُضرب في $k^3$ .",
+        "incorrect": "الأطوال تُضرب في k والمساحات في $k^2$ والحجوم في $k^3$ ."
+      },
+      "cognitiveDemand": "recall",
+      "difficulty": 1
+    }
+  ]
+}

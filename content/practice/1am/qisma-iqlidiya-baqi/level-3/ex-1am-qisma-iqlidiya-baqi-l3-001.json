@@ -1,0 +1,251 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l3-001",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — أساور المعرض الخيري",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مساواة",
+      "باقٍ",
+      "ما ينقص"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 2,
+      "file": "1am-s2-70",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الأول",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "1) أنجز القسمة الإقليدية للعدد 347 على 16 معبّرًا عنها بالمساواة المناسبة.\n2) تصنع سهام أساور من 347 خرزة لتبيعها في معرض خيري، ويتضمّن كل سوار 16 خرزة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب حاصل القسمة الإقليدية للعدد 347 على 16.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "21",
+      "misconceptionSignatures": [
+        {
+          "value": "11",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "20",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "22",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 347 من 16 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 16 دون أن نتجاوز 347."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$347 = 16 \\times 21 + 11$ و $11 < 16$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 16 فلا يتجاوز الجداء 347، والباقي عندئذ أصغر من 16."
+      },
+      "solution": {
+        "lines": [
+          "$16 \\times 21 = 336$ و $16 \\times 22 = 352$",
+          "$336 \\le 347 < 352$ ، إذن الحاصل هو 21."
+        ],
+        "result": "q = 21"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اختر المساواة التي تعبّر عن القسمة الإقليدية للعدد 347 على 16.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$347 = 16 \\times 22 + 11$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        },
+        {
+          "id": "B",
+          "content": "$347 = 16 \\times 21 + 11$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$347 = 16 \\times 20 + 27$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "id": "D",
+          "content": "$347 = 16 \\times 11 + 21$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-HASIL"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق من صحة كل مساواة بالحساب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في القسمة الإقليدية على 16، يجب أن يكون الباقي أصغر من 16."
+        }
+      ],
+      "feedback": {
+        "correct": "$16 \\times 21 + 11 = 347$ و $11 < 16$: الشرطان محقّقان.",
+        "incorrect": "المساواة الصحيحة يجب أن تكون صحيحة حسابيًا، وأن يكون باقيها أصغر من المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$16 \\times 21 = 336$ و $336 + 11 = 347$",
+          "$11 < 16$ ، إذن:"
+        ],
+        "result": "347 = 16 \\times 21 + 11"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "كم خرزة تبقى مع سهام بعد صنع أكبر عدد من الأساور؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الخرزات",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "value": "21",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "27",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 347."
+        }
+      ],
+      "feedback": {
+        "correct": "$347 - 16 \\times 21 = 347 - 336 = 11$ ، و $11 < 16$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 16."
+      },
+      "solution": {
+        "lines": [
+          "$347 = 16 \\times 21 + 11$",
+          "$11 < 16$ ، إذن الباقي هو 11."
+        ],
+        "result": "r = 11"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "كم خرزة يجب أن تشتري لتصنع سوارًا آخر؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد الخرزات",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "11",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم يبقى بعد تشكيل المجموعات الكاملة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المجموعة الجديدة تحتاج إلى العدد الكامل للمجموعة."
+        }
+      ],
+      "feedback": {
+        "correct": "يبقى 11، والمجموعة تضمّ 16: $16 - 11 = 5$.",
+        "incorrect": "المطلوب ليس الباقي نفسه، بل ما ينقص الباقي ليصبح 16."
+      },
+      "solution": {
+        "lines": [
+          "$347 = 16 \\times 21 + 11$",
+          "$16 - 11 = 5$"
+        ],
+        "result": "5"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

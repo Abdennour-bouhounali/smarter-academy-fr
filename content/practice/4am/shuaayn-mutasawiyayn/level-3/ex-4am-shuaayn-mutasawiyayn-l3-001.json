@@ -1,0 +1,165 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l3-001",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 7 — متوازيا أضلاع على مثلث",
+    "estimatedMinutes": 4,
+    "tags": [
+      "إنشاء",
+      "متوازي الأضلاع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-7",
+      "page": 134,
+      "section": "الأشعة ومتوازي الأضلاع",
+      "number": 7
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 134): انقل المثلث ABD (الشكل). نريد C حيث ABCD متوازي أضلاع، و E حيث ABDE متوازي أضلاع.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          3
+        ],
+        "B": [
+          5,
+          3
+        ],
+        "D": [
+          3,
+          0
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "D"
+        ],
+        [
+          "D",
+          "A"
+        ]
+      ],
+      "labels": {
+        "A": "nw",
+        "B": "ne",
+        "D": "s"
+      },
+      "ariaLabel": "مثلث ABD: A في أعلى اليسار، B في أعلى اليمين، و D في الأسفل",
+      "maxWidth": 440
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "لإنشاء C:",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "C نظيرة A بالنسبة إلى D",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "C صورة D بالانسحاب الذي شعاعه $\\overrightarrow{AB}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "C صورة D بالانسحاب الذي شعاعه $\\overrightarrow{BA}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المساواة الشعاعية لمتوازي الأضلاع ABCD."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع [AB] ومقابله [DC] في الاتجاه نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "من D نتحرّك كما من A إلى B."
+        }
+      ],
+      "feedback": {
+        "correct": "ABCD متوازي أضلاع يعني أن الشعاعين AB و DC متساويان: C صورة D بالانسحاب الذي شعاعه AB.",
+        "incorrect": "اقرأ الضلعين المتقابلين في الاتجاه نفسه."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "الشعاعان AB و DE:",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "متساويان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        },
+        {
+          "id": "B",
+          "content": "ليس لهما نفس المنحى",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MANHA-MUSTAQIM"
+        },
+        {
+          "id": "C",
+          "content": "لهما نفس المنحى ونفس الطول واتجاهان متعاكسان",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ABDE متوازي أضلاع: اكتب المساواة الشعاعية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الشعاعان AB و ED متساويان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "DE هو الشعاع ED معكوسا."
+        }
+      ],
+      "feedback": {
+        "correct": "الشعاعان AB و ED متساويان، فـ DE يسير في الاتجاه المعاكس لـ AB بنفس المنحى والطول.",
+        "incorrect": "اكتب أولا المساواة التي يعطيها ABDE."
+      }
+    }
+  ]
+}

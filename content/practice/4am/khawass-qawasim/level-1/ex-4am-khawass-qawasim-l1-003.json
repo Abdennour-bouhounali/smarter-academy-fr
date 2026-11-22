@@ -1,0 +1,152 @@
+{
+  "id": "ex-4am-khawass-qawasim-l1-003",
+  "lessonCode": "khawass-qawasim",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2008 — 1386 و 819",
+    "estimatedMinutes": 6,
+    "tags": [
+      "خاصية 1",
+      "قاسم مشترك"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_khawass-qawasim_P1",
+      "modelledOn": "BEM 2008 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2008",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان 1386 و 819."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "بيّن أن 9 قاسم مشترك للعددين 1386 و 819:",
+      "statement": "اكتب العدد 1386 على الشكل $9 \\times k$ حيث $k$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k$ فقط (عدد طبيعي)",
+      "expectedAnswer": "154",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 1386 على 9: يجب أن يكون الباقي معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل هذه القسمة هو العدد $k$ المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$1386 = 9 \\times 154$ ، إذن 9 يقسم 1386.",
+        "incorrect": "ابحث عن العدد الطبيعي $k$ الذي إذا ضُرب في 9 أعطى 1386."
+      },
+      "solution": {
+        "lines": [
+          "$1386 = 9 \\times 154$"
+        ],
+        "result": "1386 = 9 \\times 154"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اكتب العدد 819 على الشكل $9 \\times k'$ حيث $k'$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k'$ فقط (عدد طبيعي)",
+      "expectedAnswer": "91",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 819 على 9: يجب أن يكون الباقي معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل هذه القسمة هو العدد $k'$ المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$819 = 9 \\times 91$ ، إذن 9 يقسم 819.",
+        "incorrect": "ابحث عن العدد الطبيعي $k'$ الذي إذا ضُرب في 9 أعطى 819."
+      },
+      "solution": {
+        "lines": [
+          "$819 = 9 \\times 91$"
+        ],
+        "result": "819 = 9 \\times 91"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "استنتج، دون حساب المجموع، أن 9 يقسم $1386 + 819$ ، ثم اكتبه على الشكل $9 \\times K$ حيث $K$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $K$ فقط (عدد طبيعي)",
+      "expectedAnswer": "245",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الكتابتين $1386 = 9 \\times 154$ و $819 = 9 \\times 91$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرج 9 عاملًا مشتركًا: $9 \\times q + 9 \\times q' = 9 \\times (q + q')$."
+        }
+      ],
+      "feedback": {
+        "correct": "$1386 + 819 = 9 \\times (154 + 91) = 9 \\times 245$.",
+        "incorrect": "القاسم المشترك لعددين يقسم مجموعهما: اكتب كلا من العددين على الشكل $9 \\times q$ ثم أخرج 9 عاملًا مشتركًا."
+      },
+      "solution": {
+        "lines": [
+          "$1386 + 819 = 9 \\times 154 + 9 \\times 91$",
+          "$1386 + 819 = 9 \\times (154 + 91)$",
+          "$1386 + 819 = 9 \\times 245$ ، إذن 9 يقسم $1386 + 819$."
+        ],
+        "result": "1386 + 819 = 9 \\times 245"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

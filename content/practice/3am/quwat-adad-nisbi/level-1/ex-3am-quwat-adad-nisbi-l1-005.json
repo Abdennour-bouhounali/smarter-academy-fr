@@ -1,0 +1,265 @@
+{
+  "id": "ex-3am-quwat-adad-nisbi-l1-005",
+  "lessonCode": "quwat-adad-nisbi",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — كتابة جداءات على الشكل a^n",
+    "estimatedMinutes": 6,
+    "tags": [
+      "قواعد الحساب على القوى"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-83",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اكتب الأعداد الآتية على الشكل $a^n$ .",
+    "formulas": [
+      "A = 2^{4} \\times 2^{7}",
+      "B = 9^{6} \\times 9^{-10}",
+      "C = 6^{3} \\times 6^{2} \\times 6^{5}",
+      "D = 3^{4} \\times 5^{4}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "$A = 2^n$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "value": "28",
+          "id": "MISC-QUWA-PRODUCT-MULTIPLY-EXP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القوى لها الأساس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء قوتين لهما الأساس نفسه: نجمع الأسس ولا نضربها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه لإشارة كل أس عند الجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^4 \\times 2^7 = 2^{4+7} = 2^{11}$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$A = 2^{4+7}$",
+          "$A = 2^{11}$"
+        ],
+        "result": "n = 11"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$B = 9^n$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "value": "-60",
+          "id": "MISC-QUWA-PRODUCT-MULTIPLY-EXP"
+        },
+        {
+          "value": "16",
+          "id": "MISC-QUWA-EXP-SIGN-SLIP"
+        },
+        {
+          "value": "4",
+          "id": "MISC-QUWA-EXP-SIGN-SLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القوى لها الأساس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء قوتين لهما الأساس نفسه: نجمع الأسس ولا نضربها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه لإشارة كل أس عند الجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$9^6 \\times 9^{-10} = 9^{6+(-10)} = 9^{-4}$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$B = 9^{6+(-10)}$",
+          "$B = 9^{-4}$"
+        ],
+        "result": "n = -4"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "$C = 6^n$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "30",
+          "id": "MISC-QUWA-PRODUCT-MULTIPLY-EXP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القوى لها الأساس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء قوتين لهما الأساس نفسه: نجمع الأسس ولا نضربها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه لإشارة كل أس عند الجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$6^3 \\times 6^2 \\times 6^5 = 6^{3+2+5} = 6^{10}$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$C = 6^{3+2+5}$",
+          "$C = 6^{10}$"
+        ],
+        "result": "n = 10"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "اختر الكتابة الصحيحة للعدد $D$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$15^{4}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$15^{8}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QUWA-MIXED-BASES"
+        },
+        {
+          "id": "C",
+          "content": "$8^{4}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QUWA-MIXED-BASES"
+        },
+        {
+          "id": "D",
+          "content": "$15^{16}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QUWA-PRODUCT-MULTIPLY-EXP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للقوتين الأساس نفسه أم الأس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء قوتين لهما الأس نفسه: $a^n \\times b^n = (ab)^n$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا نجمع أسس قوى أساساتها مختلفة."
+        }
+      ],
+      "feedback": {
+        "correct": "الأس نفسه: $3^4 \\times 5^4 = (3 \\times 5)^4 = 15^4$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "للقوتين الأس نفسه 4:",
+          "$D = (3 \\times 5)^{4} = 15^{4}$"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

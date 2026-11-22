@@ -1,0 +1,174 @@
+{
+  "id": "ex-4am-khawas-dawaran-l4-002",
+  "lessonCode": "khawas-dawaran",
+  "level": 4,
+  "metadata": {
+    "title": "من الكتاب — التمرين 18 (ص 161)",
+    "estimatedMinutes": 5,
+    "tags": [
+      "مركز الدوران"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-18",
+      "page": 161,
+      "section": "أتعمّق",
+      "number": 18
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 161): [A′B′] صورة [AB] بدوران مركزه O، والمثلث M′N′P′ صورة المثلث MNP بدوران مركزه W (الشكل الباهت أكملته المنصّة على عقد الشبكة، في معلم ضلع مربعه وحدة).",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          1
+        ],
+        "B": [
+          1,
+          0
+        ],
+        "A'": [
+          2,
+          0
+        ],
+        "B'": [
+          3,
+          1
+        ],
+        "M": [
+          1,
+          3
+        ],
+        "N": [
+          0,
+          2
+        ],
+        "P": [
+          2,
+          2
+        ],
+        "M'": [
+          3,
+          3
+        ],
+        "N'": [
+          4,
+          2
+        ],
+        "P'": [
+          4,
+          4
+        ]
+      },
+      "grid": true,
+      "axes": true,
+      "polygons": [
+        {
+          "points": [
+            "M",
+            "N",
+            "P"
+          ],
+          "tone": "emerald"
+        },
+        {
+          "points": [
+            "M'",
+            "N'",
+            "P'"
+          ],
+          "tone": "sky"
+        }
+      ],
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "A'",
+          "B'"
+        ]
+      ],
+      "ariaLabel": "القطعة AB وصورتها والمثلث MNP وصورته على شبكة",
+      "maxWidth": 440
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا O:",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x\\,;\\,y)$ : الفاصلة ثم الترتيبة (عدد صحيح أو كسر مثل 3/2)",
+      "expectedAnswer": {
+        "x": "3/2",
+        "y": "3/2"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "O على محور [AA′]."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "وعلى محور [BB′]."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تقاطع المحورين."
+        }
+      ],
+      "feedback": {
+        "correct": "$O(1{,}5\\,;\\,1{,}5)$ ، والدوران ربع دورة في الاتجاه المباشر.",
+        "incorrect": "المركز على نفس البعد من كل نقطة وصورتها."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "إحداثيتا W:",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x\\,;\\,y)$ : الفاصلة ثم الترتيبة (عدد صحيح أو كسر مثل 3/2)",
+      "expectedAnswer": {
+        "x": "2",
+        "y": "4"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "محورا [MM′] و [NN′] منطبقان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل [PP′]."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تقاطع محوري [MM′] و [PP′]."
+        }
+      ],
+      "feedback": {
+        "correct": "$W(2\\,;\\,4)$ .",
+        "incorrect": "المحوران المنطبقان لا يعيّنان نقطة: خذ زوجا آخر."
+      }
+    }
+  ]
+}

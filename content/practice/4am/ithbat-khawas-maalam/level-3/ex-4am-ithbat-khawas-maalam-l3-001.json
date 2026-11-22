@@ -1,0 +1,165 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l3-001",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 3,
+  "metadata": {
+    "title": "من الكتاب — التمرين 13 (ص 147)",
+    "estimatedMinutes": 4,
+    "tags": [
+      "مربّع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-13",
+      "page": 147,
+      "section": "إحداثيتا منتصف قطعة - المسافة بين نقطتين",
+      "number": 13
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 147): في معلم متعامد ومتجانس لمستوٍ، (الوحدة 1cm). تُعطى النقط $A(3\\,;\\,0)$ ، $B(0\\,;\\,2)$ ، $C(2\\,;\\,5)$ ، $D(5\\,;\\,3)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا منتصف [AC]:",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x\\,;\\,y)$ : الأولى ثم الثانية (عدد صحيح أو كسر مثل 5/2)",
+      "expectedAnswer": {
+        "x": "5/2",
+        "y": "5/2"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نصف مجموع الفاصلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم نصف مجموع الترتيبين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "النتيجة قد تكون كسرا."
+        }
+      ],
+      "feedback": {
+        "correct": "منتصف [AC]: $\\left(\\dfrac{5}{2}\\,;\\,\\dfrac{5}{2}\\right)$ ، وهو أيضا منتصف [BD]: ABCD متوازي أضلاع.",
+        "incorrect": "المنتصف نصف المجموع."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "احسب $AB^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MASAFA-JADHR-JAM",
+          "value": "5"
+        },
+        {
+          "id": "MISC-MAALAM-MASAFA-TARBI",
+          "value": "-5"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مركبتا $\\overrightarrow{AB}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$-3$ و $2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ربّع ثم اجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB^2 = 9 + 4 = 13$ (و $BC^2 = 4 + 9 = 13$ ).",
+        "incorrect": "ربّع كل مركبة."
+      }
+    },
+    {
+      "id": "q3",
+      "statement": "مع $AB = BC$ و $AB^2 + BC^2 = AC^2$ ، الرباعي ABCD :",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مستطيل وليس مربّعا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "B",
+          "content": "متوازي أضلاع فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "C",
+          "content": "مربّع",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "معيّن وليس مربّعا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا يعطي تناصف القطرين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم الضلعان المتتاليان؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم الزاوية القائمة في B؟"
+        }
+      ],
+      "feedback": {
+        "correct": "متوازي أضلاع، معيّن ( $AB = BC$ )، فيه زاوية قائمة: مربّع.",
+        "incorrect": "اجمع الأدلة الثلاثة."
+      }
+    }
+  ]
+}

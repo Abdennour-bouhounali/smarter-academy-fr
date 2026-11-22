@@ -1,0 +1,292 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ashia-l3-002",
+  "lessonCode": "wadiya-idmajiya-ashia",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — ممر أمام ثانوية بالحراش",
+    "estimatedMinutes": 5,
+    "tags": [
+      "أقصر مسلك",
+      "الانسحاب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ashia_P1",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "يحترم تلميذ وقت دروسه فيمشي كل صباح بين الحيّ والثانوية. ثانوية B بالحراش وحيّ A على جهتين من شارع عرضه $10\\,\\mathrm{m}$ (الشكل): A فوق الحافة العليا بـ $10\\,\\mathrm{m}$ ، و B تحت الحافة السفلى بـ $20\\,\\mathrm{m}$ ، والمسافة الأفقية بينهما $40\\,\\mathrm{m}$ . الممر [MN] عمودي على الحافتين.",
+    "figure": {
+      "points": {
+        "R1": [
+          -6.0,
+          10
+        ],
+        "R2": [
+          46.0,
+          10
+        ],
+        "R3": [
+          46.0,
+          0
+        ],
+        "R4": [
+          -6.0,
+          0
+        ],
+        "A": [
+          0,
+          20
+        ],
+        "HA": [
+          0,
+          10
+        ],
+        "B": [
+          40,
+          -20
+        ],
+        "HB": [
+          40,
+          0
+        ],
+        "K": [
+          40,
+          10
+        ],
+        "M": [
+          31.200000000000003,
+          10
+        ],
+        "N": [
+          31.200000000000003,
+          0
+        ],
+        "W1": [
+          44.4,
+          10
+        ],
+        "W0": [
+          44.4,
+          0
+        ]
+      },
+      "polygons": [
+        {
+          "points": [
+            "R1",
+            "R2",
+            "R3",
+            "R4"
+          ],
+          "tone": "slate"
+        }
+      ],
+      "segments": [
+        {
+          "from": "R1",
+          "to": "R2",
+          "bold": true
+        },
+        {
+          "from": "R4",
+          "to": "R3",
+          "bold": true
+        },
+        {
+          "from": "A",
+          "to": "HA",
+          "dashed": true,
+          "label": "10 m"
+        },
+        {
+          "from": "HB",
+          "to": "B",
+          "dashed": true,
+          "label": "20 m"
+        },
+        {
+          "from": "HA",
+          "to": "K",
+          "dashed": true,
+          "tone": "sky",
+          "label": "40 m"
+        },
+        {
+          "from": "W1",
+          "to": "W0",
+          "label": "10 m"
+        },
+        {
+          "from": "A",
+          "to": "M",
+          "tone": "amber"
+        },
+        {
+          "from": "M",
+          "to": "N",
+          "bold": true,
+          "tone": "indigo"
+        },
+        {
+          "from": "N",
+          "to": "B",
+          "tone": "amber"
+        }
+      ],
+      "rightAngles": [
+        [
+          "R1",
+          "M",
+          "N"
+        ]
+      ],
+      "hidden": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "HA",
+        "HB",
+        "K",
+        "W1",
+        "W0"
+      ],
+      "labels": {
+        "A": "n",
+        "B": "s",
+        "M": "ne",
+        "N": "se"
+      },
+      "ariaLabel": "طريق عرضه 10 m بين حافتين متوازيتين، A فوق الحافة العليا بـ 10 m و B تحت الحافة السفلى بـ 20 m، والمسافة الأفقية بينهما 40 m، والممر [MN] عمودي على الحافتين"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "B′ صورة B بالانسحاب الذي شعاعه $\\overrightarrow{NM}$ . ما المسافة الشاقولية بين A و B′ (بالمتر)؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "30",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "B تصعد بعرض الشارع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "B′ تحت الحافة السفلى بـ 10."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "10 + 10 + 10."
+        }
+      ],
+      "feedback": {
+        "correct": "B′ تحت الحافة السفلى بـ $20 - 10 = 10\\,\\mathrm{m}$ ، فالمسافة الشاقولية $10 + 10 + 10 = 30\\,\\mathrm{m}$ .",
+        "incorrect": "احسب موضع B′ أولا."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 3
+    },
+    {
+      "id": "q2",
+      "statement": "ما الطول $AB'$ (بالمتر)؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "50",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مثلث قائم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "40 و 30."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "فيثاغورس."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB'^2 = 40^2 + 30^2 = 2500$ ومنه $AB' = 50\\,\\mathrm{m}$ .",
+        "incorrect": "الوتر من الضلعين 40 و 30."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 3,
+      "misconceptionSignatures": [
+        {
+          "value": "70",
+          "id": "MISC-SHUAA-JAM-ATWAL"
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "statement": "ما طول أقصر مسلك من A إلى B (بالمتر)؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "60",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "AB′ + MN."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "MN = 10."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "50 + 10."
+        }
+      ],
+      "feedback": {
+        "correct": "$L = AB' + MN = 50 + 10 = 60\\,\\mathrm{m}$ .",
+        "incorrect": "لا تنس عرض الشارع."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 3,
+      "misconceptionSignatures": [
+        {
+          "value": "50",
+          "id": "MISC-SHUAA-MAMAR-NASI"
+        }
+      ]
+    }
+  ]
+}

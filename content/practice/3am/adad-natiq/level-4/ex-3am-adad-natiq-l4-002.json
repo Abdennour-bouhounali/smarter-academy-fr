@@ -1,0 +1,252 @@
+{
+  "id": "ex-3am-adad-natiq-l4-002",
+  "lessonCode": "adad-natiq",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — كتابتان للعدد نفسه ثمّ بسط مجهول",
+    "estimatedMinutes": 12,
+    "tags": [
+      "العدد الناطق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يتقاسم تلميذان في مشروع الحيّ أطوالًا مكتوبة $a=\\dfrac{-10}{25}$ و $b=\\dfrac{14}{-35}$ ، ويتعاونان على التحقّق من تساويهما."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "اكتب $a=\\dfrac{-10}{25}$ بمقام موجب وعلى أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "-2/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2/5",
+          "id": "MISC-NATIQ-DROPSIGN"
+        },
+        {
+          "value": "-5/2",
+          "id": "MISC-NATIQ-INVERT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة الحاصل؟ قارن إشارتي البسط والمقام."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل الإشارة إلى أمام الكسر حتى يصير المقام موجبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل بقسمة البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = -\\dfrac{2}{5}$ .",
+        "incorrect": "تذكّر أنّ المقام في الكتابة المعيارية موجب، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "البسط سالب والمقام موجب، فالعدد سالب : $a = -\\dfrac{10}{25}$ .",
+          "نختزل بقسمة البسط والمقام على $5$ : $-\\dfrac{10}{25} = -\\dfrac{2}{5}$ .",
+          "$a = -\\dfrac{2}{5}$ ."
+        ],
+        "result": "a = -\\dfrac{2}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اكتب $b=\\dfrac{14}{-35}$ بمقام موجب وعلى أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "-2/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2/5",
+          "id": "MISC-NATIQ-DROPSIGN"
+        },
+        {
+          "value": "-5/2",
+          "id": "MISC-NATIQ-INVERT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة الحاصل؟ قارن إشارتي البسط والمقام."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل الإشارة إلى أمام الكسر حتى يصير المقام موجبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل بقسمة البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$b = -\\dfrac{2}{5}$ .",
+        "incorrect": "تذكّر أنّ المقام في الكتابة المعيارية موجب، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "البسط موجب والمقام سالب، وحاصل قسمة عددين مختلفين في الإشارة سالب : $b = -\\dfrac{14}{35}$ .",
+          "نختزل بقسمة البسط والمقام على $7$ : $-\\dfrac{14}{35} = -\\dfrac{2}{5}$ .",
+          "$b = -\\dfrac{2}{5}$ ."
+        ],
+        "result": "b = -\\dfrac{2}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "أوجد العدد $x$ حيث $\\dfrac{-10}{25}=\\dfrac{x}{15}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "-6",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-NATIQ-DROPSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لكلّ عدد ناطق كتابات كثيرة، لكنّه يقع على نقطة واحدة من المستقيم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كلّ كتابة بمقام موجب على أبسط شكل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الكتابات المعيارية: العددان متساويان إذا اتّفقت."
+        }
+      ],
+      "feedback": {
+        "correct": "$-6$ .",
+        "incorrect": "قارن الكتابات المعيارية ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$15=25\\times\\dfrac{3}{5}$ ، أو نكتب $a=-\\dfrac{2}{5}=\\dfrac{-6}{15}$ .",
+          "إذن $x=-6$ ."
+        ],
+        "result": "-6"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "هل $a=b$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، $a=b$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا، لأنّ كتابتيهما مختلفتان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-WRITINGS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كلّ كتابة بمقام موجب على أبسط شكل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الكتابات المعيارية: العددان متساويان إذا اتّفقت."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: نعم، $a=b$ .",
+        "incorrect": "قارن الكتابات المعيارية ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$a=-\\dfrac{2}{5}$ و $b=-\\dfrac{2}{5}$ .",
+          "الكتابتان مختلفتان ولكنّهما تمثّلان العدد نفسه."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

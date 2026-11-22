@@ -1,0 +1,79 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l2-002",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 2,
+  "metadata": {
+    "title": "معارف 3 — مثال الكتاب",
+    "estimatedMinutes": 2,
+    "tags": [
+      "مركبتا شعاع",
+      "أعداد عشرية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-3",
+      "page": 142,
+      "section": "معارف",
+      "number": 3
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 142): نعتبر النقطتين $A(-2{,}5\\,;\\,4)$ و $B(1\\,;\\,-1)$ من المستوي المزوّد بمعلم متعامد ومتجانس مبدؤه O."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مركبتا الشعاع $\\overrightarrow{AB}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "point",
+      "answerFormat": "المركبتان: الأولى ثم الثانية — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "3.5",
+        "y": "-5"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-3.5",
+            "y": "5"
+          },
+          "id": "MISC-MAALAM-TARH-MAQLUB"
+        },
+        {
+          "value": {
+            "x": "-1.5",
+            "y": "-5"
+          },
+          "id": "MISC-MAALAM-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبدأ A والنهاية B."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المركبة الأولى: فاصلة B ناقص فاصلة A."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المركبة الثانية: ترتيب B ناقص ترتيب A، وانتبه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$1 - (-2{,}5) = 3{,}5$ و $-1 - 4 = -5$ .",
+        "incorrect": "طرح عدد سالب: $1 - (-2{,}5) = 1 + 2{,}5$ ."
+      }
+    }
+  ]
+}

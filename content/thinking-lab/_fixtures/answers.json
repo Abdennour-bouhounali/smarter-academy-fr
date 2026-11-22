@@ -1,0 +1,1742 @@
+{
+  "$comment": "Shared fixture of the challenge answer check: packages/core/thinkingLab/checkAnswer.js (Vitest) and apps/api/app/Domain/ThinkingLab/AnswerChecker.php (PHPUnit) must agree on outcome, correct, normalized and mistakeIndex. Recorded by running the JS. When PHP diverges, fix PHP. Contract: docs/architecture/THINKING_LAB.md §4.",
+  "version": 1,
+  "cases": [
+    {
+      "name": "318 canonical",
+      "spec": {
+        "check": "expression",
+        "value": "x^2*(1+pi/3-sqrt(3))",
+        "vars": [
+          "x"
+        ],
+        "domain": {
+          "x": {
+            "min": 0.5,
+            "max": 10
+          }
+        }
+      },
+      "raw": "x^2*(1+pi/3-sqrt(3))",
+      "mistakes": [
+        {
+          "value": "1-pi/4",
+          "scaleWith": "x^2",
+          "reply": "r0"
+        },
+        {
+          "value": "pi/2-1",
+          "scaleWith": "x^2",
+          "reply": "r1"
+        },
+        {
+          "value": "x^2",
+          "outside": [
+            0,
+            1
+          ],
+          "at": {
+            "x": 1
+          },
+          "reply": "r2"
+        }
+      ],
+      "expected": {
+        "outcome": "correct",
+        "correct": true,
+        "normalized": "((x^2)*((1+(pi/3))-sqrt(3)))",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "318 unicode",
+      "spec": {
+        "check": "expression",
+        "value": "x^2*(1+pi/3-sqrt(3))",
+        "vars": [
+          "x"
+        ],
+        "domain": {
+          "x": {
+            "min": 0.5,
+            "max": 10
+          }
+        }
+      },
+      "raw": "(3+π−3√3)x²/3",
+      "mistakes": [
+        {
+          "value": "1-pi/4",
+          "scaleWith": "x^2",
+          "reply": "r0"
+        },
+        {
+          "value": "pi/2-1",
+          "scaleWith": "x^2",
+          "reply": "r1"
+        },
+        {
+          "value": "x^2",
+          "outside": [
+            0,
+            1
+          ],
+          "at": {
+            "x": 1
+          },
+          "reply": "r2"
+        }
+      ],
+      "expected": {
+        "outcome": "equivalent_correct",
+        "correct": true,
+        "normalized": "((((3+pi)-(3*sqrt(3)))*(x^2))/3)",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "318 expanded",
+      "spec": {
+        "check": "expression",
+        "value": "x^2*(1+pi/3-sqrt(3))",
+        "vars": [
+          "x"
+        ],
+        "domain": {
+          "x": {
+            "min": 0.5,
+            "max": 10
+          }
+        }
+      },
+      "raw": "x² + πx²/3 − √3x²",
+      "mistakes": [
+        {
+          "value": "1-pi/4",
+          "scaleWith": "x^2",
+          "reply": "r0"
+        },
+        {
+          "value": "pi/2-1",
+          "scaleWith": "x^2",
+          "reply": "r1"
+        },
+        {
+          "value": "x^2",
+          "outside": [
+            0,
+            1
+          ],
+          "at": {
+            "x": 1
+          },
+          "reply": "r2"
+        }
+      ],
+      "expected": {
+        "outcome": "equivalent_correct",
+        "correct": true,
+        "normalized": "(((x^2)+((pi*(x^2))/3))-(sqrt(3)*(x^2)))",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "318 mathlive",
+      "spec": {
+        "check": "expression",
+        "value": "x^2*(1+pi/3-sqrt(3))",
+        "vars": [
+          "x"
+        ],
+        "domain": {
+          "x": {
+            "min": 0.5,
+            "max": 10
+          }
+        }
+      },
+      "raw": "x^(2)(1+(pi)/(3)-sqrt(3))",
+      "mistakes": [
+        {
+          "value": "1-pi/4",
+          "scaleWith": "x^2",
+          "reply": "r0"
+        },
+        {
+          "value": "pi/2-1",
+          "scaleWith": "x^2",
+          "reply": "r1"
+        },
+        {
+          "value": "x^2",
+          "outside": [
+            0,
+            1
+          ],
+          "at": {
+            "x": 1
+          },
+          "reply": "r2"
+        }
+      ],
+      "expected": {
+        "outcome": "correct",
+        "correct": true,
+        "normalized": "((x^2)*((1+(pi/3))-sqrt(3)))",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "318 mathlive fraction",
+      "spec": {
+        "check": "expression",
+        "value": "x^2*(1+pi/3-sqrt(3))",
+        "vars": [
+          "x"
+        ],
+        "domain": {
+          "x": {
+            "min": 0.5,
+            "max": 10
+          }
+        }
+      },
+      "raw": "(3+pi-3sqrt(3))/(3)x^2",
+      "mistakes": [
+        {
+          "value": "1-pi/4",
+          "scaleWith": "x^2",
+          "reply": "r0"
+        },
+        {
+          "value": "pi/2-1",
+          "scaleWith": "x^2",
+          "reply": "r1"
+        },
+        {
+          "value": "x^2",
+          "outside": [
+            0,
+            1
+          ],
+          "at": {
+            "x": 1
+          },
+          "reply": "r2"
+        }
+      ],
+      "expected": {
+        "outcome": "equivalent_correct",
+        "correct": true,
+        "normalized": "((((3+pi)-(3*sqrt(3)))/3)*(x^2))",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "318 mistake corner",
+      "spec": {
+        "check": "expression",
+        "value": "x^2*(1+pi/3-sqrt(3))",
+        "vars": [
+          "x"
+        ],
+        "domain": {
+          "x": {
+            "min": 0.5,
+            "max": 10
+          }
+        }
+      },
+      "raw": "x^2(1-π/4)",
+      "mistakes": [
+        {
+          "value": "1-pi/4",
+          "scaleWith": "x^2",
+          "reply": "r0"
+        },
+        {
+          "value": "pi/2-1",
+          "scaleWith": "x^2",
+          "reply": "r1"
+        },
+        {
+          "value": "x^2",
+          "outside": [
+            0,
+            1
+          ],
+          "at": {
+            "x": 1
+          },
+          "reply": "r2"
+        }
+      ],
+      "expected": {
+        "outcome": "incorrect",
+        "correct": false,
+        "normalized": "((x^2)*(1-(pi/4)))",
+        "mistakeIndex": 0
+      }
+    },
+    {
+      "name": "318 mistake lens",
+      "spec": {
+        "check": "expression",
+        "value": "x^2*(1+pi/3-sqrt(3))",
+        "vars": [
+          "x"
+        ],
+        "domain": {
+          "x": {
+            "min": 0.5,
+            "max": 10
+          }
+        }
+      },
+      "raw": "(π/2−1)x²",
+      "mistakes": [
+        {
+          "value": "1-pi/4",
+          "scaleWith": "x^2",
+          "reply": "r0"
+        },
+        {
+          "value": "pi/2-1",
+          "scaleWith": "x^2",
+          "reply": "r1"
+        },
+        {
+          "value": "x^2",
+          "outside": [
+            0,
+            1
+          ],
+          "at": {
+            "x": 1
+          },
+          "reply": "r2"
+        }
+      ],
+      "expected": {
+        "outcome": "incorrect",
+        "correct": false,
+        "normalized": "(((pi/2)-1)*(x^2))",
+        "mistakeIndex": 1
+      }
+    },
+    {
+      "name": "318 mistake whole square",
+      "spec": {
+        "check": "expression",
+        "value": "x^2*(1+pi/3-sqrt(3))",
+        "vars": [
+          "x"
+        ],
+        "domain": {
+          "x": {
+            "min": 0.5,
+            "max": 10
+          }
+        }
+      },
+      "raw": "x²",
+      "mistakes": [
+        {
+          "value": "1-pi/4",
+          "scaleWith": "x^2",
+          "reply": "r0"
+        },
+        {
+          "value": "pi/2-1",
+          "scaleWith": "x^2",
+          "reply": "r1"
+        },
+        {
+          "value": "x^2",
+          "outside": [
+            0,
+            1
+          ],
+          "at": {
+            "x": 1
+          },
+          "reply": "r2"
+        }
+      ],
+      "expected": {
+        "outcome": "incorrect",
+        "correct": false,
+        "normalized": "(x^2)",
+        "mistakeIndex": 2
+      }
+    },
+    {
+      "name": "318 mistake negative",
+      "spec": {
+        "check": "expression",
+        "value": "x^2*(1+pi/3-sqrt(3))",
+        "vars": [
+          "x"
+        ],
+        "domain": {
+          "x": {
+            "min": 0.5,
+            "max": 10
+          }
+        }
+      },
+      "raw": "-x^2",
+      "mistakes": [
+        {
+          "value": "1-pi/4",
+          "scaleWith": "x^2",
+          "reply": "r0"
+        },
+        {
+          "value": "pi/2-1",
+          "scaleWith": "x^2",
+          "reply": "r1"
+        },
+        {
+          "value": "x^2",
+          "outside": [
+            0,
+            1
+          ],
+          "at": {
+            "x": 1
+          },
+          "reply": "r2"
+        }
+      ],
+      "expected": {
+        "outcome": "incorrect",
+        "correct": false,
+        "normalized": "(-(x^2))",
+        "mistakeIndex": 2
+      }
+    },
+    {
+      "name": "318 undeclared wrong",
+      "spec": {
+        "check": "expression",
+        "value": "x^2*(1+pi/3-sqrt(3))",
+        "vars": [
+          "x"
+        ],
+        "domain": {
+          "x": {
+            "min": 0.5,
+            "max": 10
+          }
+        }
+      },
+      "raw": "0.2x^2",
+      "mistakes": [
+        {
+          "value": "1-pi/4",
+          "scaleWith": "x^2",
+          "reply": "r0"
+        },
+        {
+          "value": "pi/2-1",
+          "scaleWith": "x^2",
+          "reply": "r1"
+        },
+        {
+          "value": "x^2",
+          "outside": [
+            0,
+            1
+          ],
+          "at": {
+            "x": 1
+          },
+          "reply": "r2"
+        }
+      ],
+      "expected": {
+        "outcome": "incorrect",
+        "correct": false,
+        "normalized": "(0.2*(x^2))",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "318 syntax",
+      "spec": {
+        "check": "expression",
+        "value": "x^2*(1+pi/3-sqrt(3))",
+        "vars": [
+          "x"
+        ],
+        "domain": {
+          "x": {
+            "min": 0.5,
+            "max": 10
+          }
+        }
+      },
+      "raw": "x^2(1+",
+      "mistakes": [
+        {
+          "value": "1-pi/4",
+          "scaleWith": "x^2",
+          "reply": "r0"
+        },
+        {
+          "value": "pi/2-1",
+          "scaleWith": "x^2",
+          "reply": "r1"
+        },
+        {
+          "value": "x^2",
+          "outside": [
+            0,
+            1
+          ],
+          "at": {
+            "x": 1
+          },
+          "reply": "r2"
+        }
+      ],
+      "expected": {
+        "outcome": "syntax_error",
+        "correct": false,
+        "normalized": "x^2(1+",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "318 empty",
+      "spec": {
+        "check": "expression",
+        "value": "x^2*(1+pi/3-sqrt(3))",
+        "vars": [
+          "x"
+        ],
+        "domain": {
+          "x": {
+            "min": 0.5,
+            "max": 10
+          }
+        }
+      },
+      "raw": "   ",
+      "mistakes": [
+        {
+          "value": "1-pi/4",
+          "scaleWith": "x^2",
+          "reply": "r0"
+        },
+        {
+          "value": "pi/2-1",
+          "scaleWith": "x^2",
+          "reply": "r1"
+        },
+        {
+          "value": "x^2",
+          "outside": [
+            0,
+            1
+          ],
+          "at": {
+            "x": 1
+          },
+          "reply": "r2"
+        }
+      ],
+      "expected": {
+        "outcome": "syntax_error",
+        "correct": false,
+        "normalized": "",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "318 unknown symbol",
+      "spec": {
+        "check": "expression",
+        "value": "x^2*(1+pi/3-sqrt(3))",
+        "vars": [
+          "x"
+        ],
+        "domain": {
+          "x": {
+            "min": 0.5,
+            "max": 10
+          }
+        }
+      },
+      "raw": "y^2",
+      "mistakes": [
+        {
+          "value": "1-pi/4",
+          "scaleWith": "x^2",
+          "reply": "r0"
+        },
+        {
+          "value": "pi/2-1",
+          "scaleWith": "x^2",
+          "reply": "r1"
+        },
+        {
+          "value": "x^2",
+          "outside": [
+            0,
+            1
+          ],
+          "at": {
+            "x": 1
+          },
+          "reply": "r2"
+        }
+      ],
+      "expected": {
+        "outcome": "syntax_error",
+        "correct": false,
+        "normalized": "y^2",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "int exact",
+      "spec": {
+        "check": "integer",
+        "value": 7
+      },
+      "raw": "7",
+      "mistakes": [
+        {
+          "value": 14,
+          "reply": "double"
+        },
+        {
+          "value": "0",
+          "outside": [
+            0,
+            1000
+          ],
+          "reply": "range"
+        }
+      ],
+      "expected": {
+        "outcome": "correct",
+        "correct": true,
+        "normalized": "7",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "int arabic",
+      "spec": {
+        "check": "integer",
+        "value": 7
+      },
+      "raw": "٧",
+      "mistakes": [
+        {
+          "value": 14,
+          "reply": "double"
+        },
+        {
+          "value": "0",
+          "outside": [
+            0,
+            1000
+          ],
+          "reply": "range"
+        }
+      ],
+      "expected": {
+        "outcome": "equivalent_correct",
+        "correct": true,
+        "normalized": "7",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "int fraction form",
+      "spec": {
+        "check": "integer",
+        "value": 7
+      },
+      "raw": "14/2",
+      "mistakes": [
+        {
+          "value": 14,
+          "reply": "double"
+        },
+        {
+          "value": "0",
+          "outside": [
+            0,
+            1000
+          ],
+          "reply": "range"
+        }
+      ],
+      "expected": {
+        "outcome": "equivalent_correct",
+        "correct": true,
+        "normalized": "7",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "int decimal form",
+      "spec": {
+        "check": "integer",
+        "value": 7
+      },
+      "raw": "7,0",
+      "mistakes": [
+        {
+          "value": 14,
+          "reply": "double"
+        },
+        {
+          "value": "0",
+          "outside": [
+            0,
+            1000
+          ],
+          "reply": "range"
+        }
+      ],
+      "expected": {
+        "outcome": "equivalent_correct",
+        "correct": true,
+        "normalized": "7",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "int declared double",
+      "spec": {
+        "check": "integer",
+        "value": 7
+      },
+      "raw": "14",
+      "mistakes": [
+        {
+          "value": 14,
+          "reply": "double"
+        },
+        {
+          "value": "0",
+          "outside": [
+            0,
+            1000
+          ],
+          "reply": "range"
+        }
+      ],
+      "expected": {
+        "outcome": "incorrect",
+        "correct": false,
+        "normalized": "14",
+        "mistakeIndex": 0
+      }
+    },
+    {
+      "name": "int range mistake",
+      "spec": {
+        "check": "integer",
+        "value": 7
+      },
+      "raw": "-3",
+      "mistakes": [
+        {
+          "value": 14,
+          "reply": "double"
+        },
+        {
+          "value": "0",
+          "outside": [
+            0,
+            1000
+          ],
+          "reply": "range"
+        }
+      ],
+      "expected": {
+        "outcome": "incorrect",
+        "correct": false,
+        "normalized": "-3",
+        "mistakeIndex": 1
+      }
+    },
+    {
+      "name": "int undeclared",
+      "spec": {
+        "check": "integer",
+        "value": 7
+      },
+      "raw": "8",
+      "mistakes": [
+        {
+          "value": 14,
+          "reply": "double"
+        },
+        {
+          "value": "0",
+          "outside": [
+            0,
+            1000
+          ],
+          "reply": "range"
+        }
+      ],
+      "expected": {
+        "outcome": "incorrect",
+        "correct": false,
+        "normalized": "8",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "int syntax",
+      "spec": {
+        "check": "integer",
+        "value": 7
+      },
+      "raw": "sept",
+      "mistakes": [
+        {
+          "value": 14,
+          "reply": "double"
+        },
+        {
+          "value": "0",
+          "outside": [
+            0,
+            1000
+          ],
+          "reply": "range"
+        }
+      ],
+      "expected": {
+        "outcome": "syntax_error",
+        "correct": false,
+        "normalized": "sept",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "int number value",
+      "spec": {
+        "check": "integer",
+        "value": 2047
+      },
+      "raw": "2047",
+      "mistakes": [],
+      "expected": {
+        "outcome": "correct",
+        "correct": true,
+        "normalized": "2047",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "int filled expression",
+      "spec": {
+        "check": "integer",
+        "value": "2*(41)-63"
+      },
+      "raw": "19",
+      "mistakes": [
+        {
+          "value": "2*(41)",
+          "reply": "x"
+        }
+      ],
+      "expected": {
+        "outcome": "correct",
+        "correct": true,
+        "normalized": "19",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "int filled expression mistake",
+      "spec": {
+        "check": "integer",
+        "value": "2*(41)-63"
+      },
+      "raw": "82",
+      "mistakes": [
+        {
+          "value": "2*(41)",
+          "reply": "x"
+        }
+      ],
+      "expected": {
+        "outcome": "incorrect",
+        "correct": false,
+        "normalized": "82",
+        "mistakeIndex": 0
+      }
+    },
+    {
+      "name": "int filled product",
+      "spec": {
+        "check": "integer",
+        "value": "(6)*(8)-1"
+      },
+      "raw": "47",
+      "mistakes": [],
+      "expected": {
+        "outcome": "correct",
+        "correct": true,
+        "normalized": "47",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "int filled power",
+      "spec": {
+        "check": "integer",
+        "value": "(2)^(10)-1"
+      },
+      "raw": "1023",
+      "mistakes": [],
+      "expected": {
+        "outcome": "correct",
+        "correct": true,
+        "normalized": "1023",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "rat filled fraction",
+      "spec": {
+        "check": "rational",
+        "value": "(3)/(5)*(2)/(4)"
+      },
+      "raw": "0.3",
+      "mistakes": [],
+      "expected": {
+        "outcome": "equivalent_correct",
+        "correct": true,
+        "normalized": "3/10",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "rat filled thirds",
+      "spec": {
+        "check": "rational",
+        "value": "(1)/(3)+(1)/(6)"
+      },
+      "raw": "1/2",
+      "mistakes": [],
+      "expected": {
+        "outcome": "correct",
+        "correct": true,
+        "normalized": "1/2",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "rat exact",
+      "spec": {
+        "check": "rational",
+        "value": "3/10"
+      },
+      "raw": "3/10",
+      "mistakes": [
+        {
+          "value": "9/25",
+          "reply": "a"
+        },
+        {
+          "value": "3/5",
+          "reply": "b"
+        }
+      ],
+      "expected": {
+        "outcome": "correct",
+        "correct": true,
+        "normalized": "3/10",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "rat decimal",
+      "spec": {
+        "check": "rational",
+        "value": "3/10"
+      },
+      "raw": "0,3",
+      "mistakes": [
+        {
+          "value": "9/25",
+          "reply": "a"
+        },
+        {
+          "value": "3/5",
+          "reply": "b"
+        }
+      ],
+      "expected": {
+        "outcome": "equivalent_correct",
+        "correct": true,
+        "normalized": "3/10",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "rat equivalent",
+      "spec": {
+        "check": "rational",
+        "value": "3/10"
+      },
+      "raw": "6/20",
+      "mistakes": [
+        {
+          "value": "9/25",
+          "reply": "a"
+        },
+        {
+          "value": "3/5",
+          "reply": "b"
+        }
+      ],
+      "expected": {
+        "outcome": "equivalent_correct",
+        "correct": true,
+        "normalized": "3/10",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "rat mistake a",
+      "spec": {
+        "check": "rational",
+        "value": "3/10"
+      },
+      "raw": "9/25",
+      "mistakes": [
+        {
+          "value": "9/25",
+          "reply": "a"
+        },
+        {
+          "value": "3/5",
+          "reply": "b"
+        }
+      ],
+      "expected": {
+        "outcome": "incorrect",
+        "correct": false,
+        "normalized": "9/25",
+        "mistakeIndex": 0
+      }
+    },
+    {
+      "name": "rat mistake b equivalent writing",
+      "spec": {
+        "check": "rational",
+        "value": "3/10"
+      },
+      "raw": "0.6",
+      "mistakes": [
+        {
+          "value": "9/25",
+          "reply": "a"
+        },
+        {
+          "value": "3/5",
+          "reply": "b"
+        }
+      ],
+      "expected": {
+        "outcome": "incorrect",
+        "correct": false,
+        "normalized": "3/5",
+        "mistakeIndex": 1
+      }
+    },
+    {
+      "name": "rat wrong",
+      "spec": {
+        "check": "rational",
+        "value": "3/10"
+      },
+      "raw": "1/3",
+      "mistakes": [
+        {
+          "value": "9/25",
+          "reply": "a"
+        },
+        {
+          "value": "3/5",
+          "reply": "b"
+        }
+      ],
+      "expected": {
+        "outcome": "incorrect",
+        "correct": false,
+        "normalized": "1/3",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "rat percent",
+      "spec": {
+        "check": "rational",
+        "value": "3/10"
+      },
+      "raw": "30%",
+      "mistakes": [
+        {
+          "value": "9/25",
+          "reply": "a"
+        },
+        {
+          "value": "3/5",
+          "reply": "b"
+        }
+      ],
+      "expected": {
+        "outcome": "equivalent_correct",
+        "correct": true,
+        "normalized": "3/10",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "rat tolerance in",
+      "spec": {
+        "check": "rational",
+        "value": "32/15",
+        "tolerance": "1/100"
+      },
+      "raw": "2.13",
+      "mistakes": [],
+      "expected": {
+        "outcome": "equivalent_correct",
+        "correct": true,
+        "normalized": "213/100",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "rat tolerance out",
+      "spec": {
+        "check": "rational",
+        "value": "32/15",
+        "tolerance": "1/100"
+      },
+      "raw": "2.2",
+      "mistakes": [],
+      "expected": {
+        "outcome": "incorrect",
+        "correct": false,
+        "normalized": "11/5",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "num exact",
+      "spec": {
+        "check": "number",
+        "value": "48"
+      },
+      "raw": "48",
+      "mistakes": [
+        {
+          "value": "50",
+          "reply": "avg"
+        }
+      ],
+      "expected": {
+        "outcome": "correct",
+        "correct": true,
+        "normalized": "48",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "num decimal",
+      "spec": {
+        "check": "number",
+        "value": "48"
+      },
+      "raw": "48,0",
+      "mistakes": [
+        {
+          "value": "50",
+          "reply": "avg"
+        }
+      ],
+      "expected": {
+        "outcome": "correct",
+        "correct": true,
+        "normalized": "48",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "num fraction",
+      "spec": {
+        "check": "number",
+        "value": "48"
+      },
+      "raw": "96/2",
+      "mistakes": [
+        {
+          "value": "50",
+          "reply": "avg"
+        }
+      ],
+      "expected": {
+        "outcome": "correct",
+        "correct": true,
+        "normalized": "48",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "num mistake",
+      "spec": {
+        "check": "number",
+        "value": "48"
+      },
+      "raw": "50",
+      "mistakes": [
+        {
+          "value": "50",
+          "reply": "avg"
+        }
+      ],
+      "expected": {
+        "outcome": "incorrect",
+        "correct": false,
+        "normalized": "50",
+        "mistakeIndex": 0
+      }
+    },
+    {
+      "name": "num wrong",
+      "spec": {
+        "check": "number",
+        "value": "48"
+      },
+      "raw": "49",
+      "mistakes": [
+        {
+          "value": "50",
+          "reply": "avg"
+        }
+      ],
+      "expected": {
+        "outcome": "incorrect",
+        "correct": false,
+        "normalized": "49",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "num syntax",
+      "spec": {
+        "check": "number",
+        "value": "48"
+      },
+      "raw": "km",
+      "mistakes": [
+        {
+          "value": "50",
+          "reply": "avg"
+        }
+      ],
+      "expected": {
+        "outcome": "syntax_error",
+        "correct": false,
+        "normalized": "km",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "num constant expected",
+      "spec": {
+        "check": "number",
+        "value": "e-2",
+        "relTol": 0.000001
+      },
+      "raw": "0.718281828",
+      "mistakes": [],
+      "expected": {
+        "outcome": "correct",
+        "correct": true,
+        "normalized": "0.718281828",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "num constant given",
+      "spec": {
+        "check": "number",
+        "value": "e-2",
+        "relTol": 0.000001
+      },
+      "raw": "e-2",
+      "mistakes": [],
+      "expected": {
+        "outcome": "correct",
+        "correct": true,
+        "normalized": "0.7182818284590451",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "num constant wrong",
+      "spec": {
+        "check": "number",
+        "value": "e-2",
+        "relTol": 0.000001
+      },
+      "raw": "0.72",
+      "mistakes": [],
+      "expected": {
+        "outcome": "incorrect",
+        "correct": false,
+        "normalized": "0.72",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "num abs tolerance in",
+      "spec": {
+        "check": "number",
+        "value": "0.5073",
+        "absTol": 0.005
+      },
+      "raw": "0.51",
+      "mistakes": [],
+      "expected": {
+        "outcome": "correct",
+        "correct": true,
+        "normalized": "0.51",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "num abs tolerance out",
+      "spec": {
+        "check": "number",
+        "value": "0.5073",
+        "absTol": 0.005
+      },
+      "raw": "0.52",
+      "mistakes": [],
+      "expected": {
+        "outcome": "incorrect",
+        "correct": false,
+        "normalized": "0.52",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "num percent given",
+      "spec": {
+        "check": "number",
+        "value": "-4"
+      },
+      "raw": "-4%",
+      "mistakes": [],
+      "expected": {
+        "outcome": "incorrect",
+        "correct": false,
+        "normalized": "-0.04",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "num percent flag sign",
+      "spec": {
+        "check": "number",
+        "value": "-4",
+        "percent": true
+      },
+      "raw": "-4%",
+      "mistakes": [],
+      "expected": {
+        "outcome": "correct",
+        "correct": true,
+        "normalized": "-4",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "num percent flag arabic sign",
+      "spec": {
+        "check": "number",
+        "value": "-4",
+        "percent": true
+      },
+      "raw": "−4 ٪",
+      "mistakes": [],
+      "expected": {
+        "outcome": "correct",
+        "correct": true,
+        "normalized": "-4",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "num percent flag plain",
+      "spec": {
+        "check": "number",
+        "value": "-4",
+        "percent": true
+      },
+      "raw": "-4",
+      "mistakes": [],
+      "expected": {
+        "outcome": "correct",
+        "correct": true,
+        "normalized": "-4",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "num percent flag wrong",
+      "spec": {
+        "check": "number",
+        "value": "-4",
+        "percent": true
+      },
+      "raw": "0%",
+      "mistakes": [
+        {
+          "value": "0",
+          "reply": "try 100"
+        }
+      ],
+      "expected": {
+        "outcome": "incorrect",
+        "correct": false,
+        "normalized": "0",
+        "mistakeIndex": 0
+      }
+    },
+    {
+      "name": "num negative",
+      "spec": {
+        "check": "number",
+        "value": "-4"
+      },
+      "raw": "−4",
+      "mistakes": [],
+      "expected": {
+        "outcome": "correct",
+        "correct": true,
+        "normalized": "-4",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "num pi",
+      "spec": {
+        "check": "number",
+        "value": "pi/4",
+        "relTol": 0.001
+      },
+      "raw": "π/4",
+      "mistakes": [],
+      "expected": {
+        "outcome": "correct",
+        "correct": true,
+        "normalized": "0.7853981633974483",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "choice right",
+      "spec": {
+        "check": "choice",
+        "value": "B",
+        "choices": [
+          {
+            "id": "A",
+            "text": "صادق"
+          },
+          {
+            "id": "B",
+            "text": "كاذب"
+          },
+          {
+            "id": "C",
+            "text": "لا يمكن"
+          }
+        ]
+      },
+      "raw": "B",
+      "mistakes": [
+        {
+          "value": "A",
+          "reply": "try both"
+        }
+      ],
+      "expected": {
+        "outcome": "correct",
+        "correct": true,
+        "normalized": "B",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "choice object",
+      "spec": {
+        "check": "choice",
+        "value": "B",
+        "choices": [
+          {
+            "id": "A",
+            "text": "صادق"
+          },
+          {
+            "id": "B",
+            "text": "كاذب"
+          },
+          {
+            "id": "C",
+            "text": "لا يمكن"
+          }
+        ]
+      },
+      "raw": {
+        "choiceId": "B"
+      },
+      "mistakes": [
+        {
+          "value": "A",
+          "reply": "try both"
+        }
+      ],
+      "expected": {
+        "outcome": "correct",
+        "correct": true,
+        "normalized": "B",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "choice declared",
+      "spec": {
+        "check": "choice",
+        "value": "B",
+        "choices": [
+          {
+            "id": "A",
+            "text": "صادق"
+          },
+          {
+            "id": "B",
+            "text": "كاذب"
+          },
+          {
+            "id": "C",
+            "text": "لا يمكن"
+          }
+        ]
+      },
+      "raw": "A",
+      "mistakes": [
+        {
+          "value": "A",
+          "reply": "try both"
+        }
+      ],
+      "expected": {
+        "outcome": "incorrect",
+        "correct": false,
+        "normalized": "A",
+        "mistakeIndex": 0
+      }
+    },
+    {
+      "name": "choice other",
+      "spec": {
+        "check": "choice",
+        "value": "B",
+        "choices": [
+          {
+            "id": "A",
+            "text": "صادق"
+          },
+          {
+            "id": "B",
+            "text": "كاذب"
+          },
+          {
+            "id": "C",
+            "text": "لا يمكن"
+          }
+        ]
+      },
+      "raw": "C",
+      "mistakes": [
+        {
+          "value": "A",
+          "reply": "try both"
+        }
+      ],
+      "expected": {
+        "outcome": "incorrect",
+        "correct": false,
+        "normalized": "C",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "choice unknown",
+      "spec": {
+        "check": "choice",
+        "value": "B",
+        "choices": [
+          {
+            "id": "A",
+            "text": "صادق"
+          },
+          {
+            "id": "B",
+            "text": "كاذب"
+          },
+          {
+            "id": "C",
+            "text": "لا يمكن"
+          }
+        ]
+      },
+      "raw": "Z",
+      "mistakes": [
+        {
+          "value": "A",
+          "reply": "try both"
+        }
+      ],
+      "expected": {
+        "outcome": "incorrect",
+        "correct": false,
+        "normalized": "Z",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "expr n squared",
+      "spec": {
+        "check": "expression",
+        "value": "n^2",
+        "vars": [
+          "n"
+        ],
+        "domain": {
+          "n": {
+            "min": 1,
+            "max": 20
+          }
+        }
+      },
+      "raw": "n²",
+      "mistakes": [],
+      "expected": {
+        "outcome": "correct",
+        "correct": true,
+        "normalized": "(n^2)",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "expr n times n",
+      "spec": {
+        "check": "expression",
+        "value": "n^2",
+        "vars": [
+          "n"
+        ],
+        "domain": {
+          "n": {
+            "min": 1,
+            "max": 20
+          }
+        }
+      },
+      "raw": "n*n",
+      "mistakes": [],
+      "expected": {
+        "outcome": "equivalent_correct",
+        "correct": true,
+        "normalized": "(n*n)",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "expr n plus n",
+      "spec": {
+        "check": "expression",
+        "value": "n^2",
+        "vars": [
+          "n"
+        ],
+        "domain": {
+          "n": {
+            "min": 1,
+            "max": 20
+          }
+        }
+      },
+      "raw": "2n",
+      "mistakes": [],
+      "expected": {
+        "outcome": "incorrect",
+        "correct": false,
+        "normalized": "(2*n)",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "expr general incircle",
+      "spec": {
+        "check": "expression",
+        "value": "(a+b-c)/2",
+        "vars": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "raw": "a/2+b/2-c/2",
+      "mistakes": [],
+      "expected": {
+        "outcome": "equivalent_correct",
+        "correct": true,
+        "normalized": "(((a/2)+(b/2))-(c/2))",
+        "mistakeIndex": null
+      }
+    },
+    {
+      "name": "expr general incircle wrong",
+      "spec": {
+        "check": "expression",
+        "value": "(a+b-c)/2",
+        "vars": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "raw": "(a+b+c)/2",
+      "mistakes": [],
+      "expected": {
+        "outcome": "incorrect",
+        "correct": false,
+        "normalized": "(((a+b)+c)/2)",
+        "mistakeIndex": null
+      }
+    }
+  ]
+}

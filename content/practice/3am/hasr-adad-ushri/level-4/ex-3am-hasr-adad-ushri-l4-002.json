@@ -1,0 +1,261 @@
+{
+  "id": "ex-3am-hasr-adad-ushri-l4-002",
+  "lessonCode": "hasr-adad-ushri",
+  "level": 4,
+  "metadata": {
+    "title": "حجم علبة ارتفاعها مدوّر",
+    "estimatedMinutes": 12,
+    "tags": [
+      "حجم",
+      "تدوير",
+      "حصر"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-28",
+      "page": 79,
+      "section": "أوظّف تعلّماتي",
+      "number": 28
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "علبة على شكل متوازي مستطيلات قاعدتها مستطيل بُعداه $5\\,\\mathrm{cm}$ و $3\\,\\mathrm{cm}$ . ارتفاعها $h$ مدوّره إلى $0{,}01$ هو $5{,}41\\,\\mathrm{cm}$ ، وحجمها $V=15h$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أيّ حصر للارتفاع $h$ هو الصحيح؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$5{,}41\\le h< 5{,}42$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-TRUNC"
+        },
+        {
+          "id": "B",
+          "content": "$5{,}405\\le h< 5{,}415$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$5{,}405< h\\le 5{,}415$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-UPPER-INCLUDED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الرتبة التي دُوِّرت إليها الكمية؟ نصف وحدة هذه الرتبة هو ما نرجع به ونتقدّم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ارجع نصف وحدة من الرتبة إلى الخلف وتقدّم نصف وحدة إلى الأمام: الطرف الأدنى مشمول والطرف الأعلى مستبعد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقرأ الحصر الذي كتبته: القيمة المدوّرة تقع داخله، والطرف الأعلى لا يبلغه العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$5{,}405\\le h<5{,}415$ .",
+        "incorrect": "راجع: نرجع نصف وحدة من الرتبة ونتقدّم نصف وحدة، ثم نضرب الأطراف في العدد الموجب نفسه دون تغيير اتجاه المتباينة؛ الطرف الأعلى مستبعد. أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نرجع نصف وحدة من الرتبة ($0{,}005$) ونتقدّم نصف وحدة: $5{,}405$ و $5{,}415$ .",
+          "$5{,}405\\le h<5{,}415$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أيّ حصر للحجم $V$ نحصل عليه من حصر $h$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$81{,}075\\le V< 81{,}225$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$81{,}075< V\\le 81{,}225$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-UPPER-INCLUDED"
+        },
+        {
+          "id": "C",
+          "content": "$5{,}405\\le V< 5{,}415$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-COEF-LOST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أوّلاً حصر الكمية التي دُوِّرت، ثم اكتب العبارة المطلوبة بدلالتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نضرب أطراف الحصر في العدد الموجب نفسه (فلا يتغيّر اتجاه المتباينة) ثم نضيف الثابت إن وُجد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الطرف الأدنى يبقى مشمولًا والأعلى مستبعدًا؛ تحقّق من ذلك بقراءة الحصر بعد الحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "$81{,}075\\le V<81{,}225$ .",
+        "incorrect": "راجع: نرجع نصف وحدة من الرتبة ونتقدّم نصف وحدة، ثم نضرب الأطراف في العدد الموجب نفسه دون تغيير اتجاه المتباينة؛ الطرف الأعلى مستبعد. أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضرب أطراف $5{,}405\\le h<5{,}415$ في $15$ (عدد موجب): $15\\times5{,}405\\le15h<15\\times5{,}415$ .",
+          "$81{,}075\\le V<81{,}225$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما أصغر قيمة يمكن أن يبلغها الحجم $V$ بالسنتيمتر المكعّب؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "81.075",
+      "misconceptionSignatures": [
+        {
+          "value": "81.15",
+          "id": "MISC-TADWIR-CENTER-EXACT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ ما تعرضه شاشة الآلة الحاسبة، ولا تعدّه قيمة مضبوطة للحاصل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احصر الحاصل بين قيمتين مقرّبتين متتاليتين في الرتبة المطلوبة، ثم حدّد الرقم الذي يلي تلك الرتبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الحاصل بقيمتيه المقرّبتين: الأولى أصغر منه أو تساويه والثانية أكبر منه."
+        }
+      ],
+      "feedback": {
+        "correct": "الطرف الأدنى مشمول: $15\\times5{,}405=81{,}075$ .",
+        "incorrect": "لا تعدّ ما تعرضه شاشة الآلة قيمة مضبوطة للحاصل: احصره بين قيمتين مقرّبتين متتاليتين؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأدنى مشمول: $15\\times5{,}405=81{,}075$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "statement": "هل يمكن أن يكون $V=81{,}225$ بالضبط؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-UPPER-INCLUDED"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع الحصر الذي وجدته إلى جانب العدد المطلوب مقارنته به."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل العدد أكبر من الطرف الأعلى، أم أصغر من الطرف الأدنى، أم يقع بينهما؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إن وقع العدد بين الطرفين فلا يمكن الجزم؛ وإلاّ فالقرار مؤكّد."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: لا.",
+        "incorrect": "راجع: قارن العدد بطرفَي الحصر؛ إن وقع بينهما فلا يمكن الجزم، والطرف الأعلى لا يبلغه العدد. أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأعلى مستبعد: $V<81{,}225$ .",
+          "الجواب: لا."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

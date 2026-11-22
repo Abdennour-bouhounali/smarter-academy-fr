@@ -1,0 +1,2387 @@
+{
+  "$comment": "Shared fixture of the thinking-lab expression evaluator. packages/core/thinkingLab/expression.js (Vitest) and apps/api/app/Domain/ThinkingLab/ExpressionEvaluator.php (PHPUnit) must agree on every case. Verdicts (ok / equivalent) are authored, values come from independent formulas, `normalized` and `reason` were recorded by running the JS. When PHP diverges, fix PHP. Contract: docs/architecture/THINKING_LAB.md §4.",
+  "version": 1,
+  "parse": [
+    {
+      "name": "int",
+      "input": "42",
+      "vars": [],
+      "ok": true,
+      "normalized": "42",
+      "at": {},
+      "value": 42
+    },
+    {
+      "name": "decimal point",
+      "input": "3.25",
+      "vars": [],
+      "ok": true,
+      "normalized": "3.25",
+      "at": {},
+      "value": 3.25
+    },
+    {
+      "name": "decimal comma",
+      "input": "3,25",
+      "vars": [],
+      "ok": true,
+      "normalized": "3.25",
+      "at": {},
+      "value": 3.25
+    },
+    {
+      "name": "leading dot",
+      "input": ".5",
+      "vars": [],
+      "ok": true,
+      "normalized": "0.5",
+      "at": {},
+      "value": 0.5
+    },
+    {
+      "name": "trailing dot",
+      "input": "3.",
+      "vars": [],
+      "ok": true,
+      "normalized": "3",
+      "at": {},
+      "value": 3
+    },
+    {
+      "name": "leading zeros",
+      "input": "007.50",
+      "vars": [],
+      "ok": true,
+      "normalized": "7.5",
+      "at": {},
+      "value": 7.5
+    },
+    {
+      "name": "arabic digits",
+      "input": "١٢٣",
+      "vars": [],
+      "ok": true,
+      "normalized": "123",
+      "at": {},
+      "value": 123
+    },
+    {
+      "name": "persian digits",
+      "input": "۴۵",
+      "vars": [],
+      "ok": true,
+      "normalized": "45",
+      "at": {},
+      "value": 45
+    },
+    {
+      "name": "arabic decimal sep",
+      "input": "٣٫٥",
+      "vars": [],
+      "ok": true,
+      "normalized": "3.5",
+      "at": {},
+      "value": 3.5
+    },
+    {
+      "name": "spaces ignored",
+      "input": " 1 2 + 3 ",
+      "vars": [],
+      "ok": true,
+      "normalized": "(12+3)",
+      "at": {},
+      "value": 15
+    },
+    {
+      "name": "nbsp ignored",
+      "input": "2 + 3",
+      "vars": [],
+      "ok": true,
+      "normalized": "(2+3)",
+      "at": {},
+      "value": 5
+    },
+    {
+      "name": "two dots",
+      "input": "1.2.3",
+      "vars": [],
+      "ok": false,
+      "error": "bad_number"
+    },
+    {
+      "name": "lone dot",
+      "input": ".",
+      "vars": [],
+      "ok": false,
+      "error": "bad_number"
+    },
+    {
+      "name": "comma not between digits",
+      "input": "1,",
+      "vars": [],
+      "ok": false,
+      "error": "unknown_symbol"
+    },
+    {
+      "name": "add",
+      "input": "2+3",
+      "vars": [],
+      "ok": true,
+      "normalized": "(2+3)",
+      "at": {},
+      "value": 5
+    },
+    {
+      "name": "sub chain left assoc",
+      "input": "10-4-3",
+      "vars": [],
+      "ok": true,
+      "normalized": "((10-4)-3)",
+      "at": {},
+      "value": 3
+    },
+    {
+      "name": "div chain left assoc",
+      "input": "48/4/3",
+      "vars": [],
+      "ok": true,
+      "normalized": "((48/4)/3)",
+      "at": {},
+      "value": 4
+    },
+    {
+      "name": "mul before add",
+      "input": "2+3*4",
+      "vars": [],
+      "ok": true,
+      "normalized": "(2+(3*4))",
+      "at": {},
+      "value": 14
+    },
+    {
+      "name": "parens",
+      "input": "(2+3)*4",
+      "vars": [],
+      "ok": true,
+      "normalized": "((2+3)*4)",
+      "at": {},
+      "value": 20
+    },
+    {
+      "name": "brackets as parens",
+      "input": "[2+3]*4",
+      "vars": [],
+      "ok": true,
+      "normalized": "((2+3)*4)",
+      "at": {},
+      "value": 20
+    },
+    {
+      "name": "braces as parens",
+      "input": "{2+3}*4",
+      "vars": [],
+      "ok": true,
+      "normalized": "((2+3)*4)",
+      "at": {},
+      "value": 20
+    },
+    {
+      "name": "power right assoc",
+      "input": "2^3^2",
+      "vars": [],
+      "ok": true,
+      "normalized": "(2^(3^2))",
+      "at": {},
+      "value": 512
+    },
+    {
+      "name": "unary minus below power",
+      "input": "-2^2",
+      "vars": [],
+      "ok": true,
+      "normalized": "(-(2^2))",
+      "at": {},
+      "value": -4
+    },
+    {
+      "name": "paren neg power",
+      "input": "(-2)^2",
+      "vars": [],
+      "ok": true,
+      "normalized": "((-2)^2)",
+      "at": {},
+      "value": 4
+    },
+    {
+      "name": "negative exponent",
+      "input": "2^-1",
+      "vars": [],
+      "ok": true,
+      "normalized": "(2^(-1))",
+      "at": {},
+      "value": 0.5
+    },
+    {
+      "name": "double negative",
+      "input": "--3",
+      "vars": [],
+      "ok": true,
+      "normalized": "(-(-3))",
+      "at": {},
+      "value": 3
+    },
+    {
+      "name": "unary plus",
+      "input": "+3",
+      "vars": [],
+      "ok": true,
+      "normalized": "3",
+      "at": {},
+      "value": 3
+    },
+    {
+      "name": "mul by negative",
+      "input": "2*-3",
+      "vars": [],
+      "ok": true,
+      "normalized": "(2*(-3))",
+      "at": {},
+      "value": -6
+    },
+    {
+      "name": "unicode minus",
+      "input": "5−2",
+      "vars": [],
+      "ok": true,
+      "normalized": "(5-2)",
+      "at": {},
+      "value": 3
+    },
+    {
+      "name": "en dash minus",
+      "input": "5–2",
+      "vars": [],
+      "ok": true,
+      "normalized": "(5-2)",
+      "at": {},
+      "value": 3
+    },
+    {
+      "name": "times sign",
+      "input": "3×4",
+      "vars": [],
+      "ok": true,
+      "normalized": "(3*4)",
+      "at": {},
+      "value": 12
+    },
+    {
+      "name": "middle dot",
+      "input": "3·4",
+      "vars": [],
+      "ok": true,
+      "normalized": "(3*4)",
+      "at": {},
+      "value": 12
+    },
+    {
+      "name": "division sign",
+      "input": "12÷4",
+      "vars": [],
+      "ok": true,
+      "normalized": "(12/4)",
+      "at": {},
+      "value": 3
+    },
+    {
+      "name": "double star power",
+      "input": "2**5",
+      "vars": [],
+      "ok": true,
+      "normalized": "(2^5)",
+      "at": {},
+      "value": 32
+    },
+    {
+      "name": "latex cdot",
+      "input": "3\\cdot4",
+      "vars": [],
+      "ok": true,
+      "normalized": "(3*4)",
+      "at": {},
+      "value": 12
+    },
+    {
+      "name": "latex times",
+      "input": "3\\times4",
+      "vars": [],
+      "ok": true,
+      "normalized": "(3*4)",
+      "at": {},
+      "value": 12
+    },
+    {
+      "name": "latex left right",
+      "input": "\\left(1+2\\right)*2",
+      "vars": [],
+      "ok": true,
+      "normalized": "((1+2)*2)",
+      "at": {},
+      "value": 6
+    },
+    {
+      "name": "superscript two",
+      "input": "5²",
+      "vars": [],
+      "ok": true,
+      "normalized": "(5^2)",
+      "at": {},
+      "value": 25
+    },
+    {
+      "name": "superscript three",
+      "input": "2³",
+      "vars": [],
+      "ok": true,
+      "normalized": "(2^3)",
+      "at": {},
+      "value": 8
+    },
+    {
+      "name": "superscript multi",
+      "input": "2¹⁰",
+      "vars": [],
+      "ok": true,
+      "normalized": "(2^10)",
+      "at": {},
+      "value": 1024
+    },
+    {
+      "name": "fraction precedence",
+      "input": "1/2*4",
+      "vars": [],
+      "ok": true,
+      "normalized": "((1/2)*4)",
+      "at": {},
+      "value": 2
+    },
+    {
+      "name": "implicit num var",
+      "input": "3x",
+      "vars": [
+        "x"
+      ],
+      "ok": true,
+      "normalized": "(3*x)",
+      "at": {
+        "x": 2
+      },
+      "value": 6
+    },
+    {
+      "name": "implicit var var",
+      "input": "xy",
+      "vars": [
+        "x",
+        "y"
+      ],
+      "ok": true,
+      "normalized": "(x*y)",
+      "at": {
+        "x": 2,
+        "y": 5
+      },
+      "value": 10
+    },
+    {
+      "name": "implicit num paren",
+      "input": "2(3+1)",
+      "vars": [],
+      "ok": true,
+      "normalized": "(2*(3+1))",
+      "at": {},
+      "value": 8
+    },
+    {
+      "name": "implicit paren paren",
+      "input": "(1+1)(2+3)",
+      "vars": [],
+      "ok": true,
+      "normalized": "((1+1)*(2+3))",
+      "at": {},
+      "value": 10
+    },
+    {
+      "name": "implicit var paren",
+      "input": "x(x+1)",
+      "vars": [
+        "x"
+      ],
+      "ok": true,
+      "normalized": "(x*(x+1))",
+      "at": {
+        "x": 3
+      },
+      "value": 12
+    },
+    {
+      "name": "implicit binds like mul",
+      "input": "1/2x",
+      "vars": [
+        "x"
+      ],
+      "ok": true,
+      "normalized": "((1/2)*x)",
+      "at": {
+        "x": 4
+      },
+      "value": 2
+    },
+    {
+      "name": "implicit with power",
+      "input": "3x^2",
+      "vars": [
+        "x"
+      ],
+      "ok": true,
+      "normalized": "(3*(x^2))",
+      "at": {
+        "x": 2
+      },
+      "value": 12
+    },
+    {
+      "name": "implicit var num",
+      "input": "x2",
+      "vars": [
+        "x"
+      ],
+      "ok": true,
+      "normalized": "(x*2)",
+      "at": {
+        "x": 3
+      },
+      "value": 6
+    },
+    {
+      "name": "implicit pi",
+      "input": "2pi",
+      "vars": [],
+      "ok": true,
+      "normalized": "(2*pi)",
+      "at": {},
+      "value": 6.283185307179586
+    },
+    {
+      "name": "implicit pi var",
+      "input": "πx",
+      "vars": [
+        "x"
+      ],
+      "ok": true,
+      "normalized": "(pi*x)",
+      "at": {
+        "x": 2
+      },
+      "value": 6.283185307179586
+    },
+    {
+      "name": "implicit sqrt",
+      "input": "3√3",
+      "vars": [],
+      "ok": true,
+      "normalized": "(3*sqrt(3))",
+      "at": {},
+      "value": 5.196152422706632
+    },
+    {
+      "name": "implicit fn",
+      "input": "2sin(0)",
+      "vars": [],
+      "ok": true,
+      "normalized": "(2*sin(0))",
+      "at": {},
+      "value": 0
+    },
+    {
+      "name": "implicit abs",
+      "input": "2|x-5|",
+      "vars": [
+        "x"
+      ],
+      "ok": true,
+      "normalized": "(2*abs((x-5)))",
+      "at": {
+        "x": 1
+      },
+      "value": 8
+    },
+    {
+      "name": "pi word",
+      "input": "pi",
+      "vars": [],
+      "ok": true,
+      "normalized": "pi",
+      "at": {},
+      "value": 3.141592653589793
+    },
+    {
+      "name": "pi symbol",
+      "input": "π",
+      "vars": [],
+      "ok": true,
+      "normalized": "pi",
+      "at": {},
+      "value": 3.141592653589793
+    },
+    {
+      "name": "latex pi",
+      "input": "\\pi",
+      "vars": [],
+      "ok": true,
+      "normalized": "pi",
+      "at": {},
+      "value": 3.141592653589793
+    },
+    {
+      "name": "e constant",
+      "input": "e",
+      "vars": [],
+      "ok": true,
+      "normalized": "e",
+      "at": {},
+      "value": 2.718281828459045
+    },
+    {
+      "name": "e power",
+      "input": "e^2",
+      "vars": [],
+      "ok": true,
+      "normalized": "(e^2)",
+      "at": {},
+      "value": 7.3890560989306495
+    },
+    {
+      "name": "e times x",
+      "input": "ex",
+      "vars": [
+        "x"
+      ],
+      "ok": true,
+      "normalized": "(e*x)",
+      "at": {
+        "x": 2
+      },
+      "value": 5.43656365691809
+    },
+    {
+      "name": "sqrt parens",
+      "input": "sqrt(16)",
+      "vars": [],
+      "ok": true,
+      "normalized": "sqrt(16)",
+      "at": {},
+      "value": 4
+    },
+    {
+      "name": "sqrt symbol",
+      "input": "√16",
+      "vars": [],
+      "ok": true,
+      "normalized": "sqrt(16)",
+      "at": {},
+      "value": 4
+    },
+    {
+      "name": "latex sqrt braces",
+      "input": "\\sqrt{16}",
+      "vars": [],
+      "ok": true,
+      "normalized": "sqrt(16)",
+      "at": {},
+      "value": 4
+    },
+    {
+      "name": "sqrt no parens power",
+      "input": "√x^2",
+      "vars": [
+        "x"
+      ],
+      "ok": true,
+      "normalized": "sqrt((x^2))",
+      "at": {
+        "x": -3
+      },
+      "value": 3
+    },
+    {
+      "name": "sqrt then var",
+      "input": "√3x",
+      "vars": [
+        "x"
+      ],
+      "ok": true,
+      "normalized": "(sqrt(3)*x)",
+      "at": {
+        "x": 2
+      },
+      "value": 3.4641016151377544
+    },
+    {
+      "name": "sqrt of sum",
+      "input": "sqrt(9+16)",
+      "vars": [],
+      "ok": true,
+      "normalized": "sqrt((9+16))",
+      "at": {},
+      "value": 5
+    },
+    {
+      "name": "sqrt parens then power",
+      "input": "sqrt(3)^2",
+      "vars": [],
+      "ok": true,
+      "normalized": "(sqrt(3)^2)",
+      "at": {},
+      "value": 2.9999999999999996
+    },
+    {
+      "name": "sin",
+      "input": "sin(pi/6)",
+      "vars": [],
+      "ok": true,
+      "normalized": "sin((pi/6))",
+      "at": {},
+      "value": 0.49999999999999994
+    },
+    {
+      "name": "cos",
+      "input": "cos(pi/3)",
+      "vars": [],
+      "ok": true,
+      "normalized": "cos((pi/3))",
+      "at": {},
+      "value": 0.5000000000000001
+    },
+    {
+      "name": "tan",
+      "input": "tan(pi/4)",
+      "vars": [],
+      "ok": true,
+      "normalized": "tan((pi/4))",
+      "at": {},
+      "value": 0.9999999999999999
+    },
+    {
+      "name": "sin no parens",
+      "input": "sin x",
+      "vars": [
+        "x"
+      ],
+      "ok": true,
+      "normalized": "sin(x)",
+      "at": {
+        "x": 1
+      },
+      "value": 0.8414709848078965
+    },
+    {
+      "name": "sin no parens power",
+      "input": "sin x^2",
+      "vars": [
+        "x"
+      ],
+      "ok": true,
+      "normalized": "sin((x^2))",
+      "at": {
+        "x": 1.5
+      },
+      "value": 0.7780731968879212
+    },
+    {
+      "name": "ln",
+      "input": "ln(e^3)",
+      "vars": [],
+      "ok": true,
+      "normalized": "ln((e^3))",
+      "at": {},
+      "value": 3
+    },
+    {
+      "name": "exp",
+      "input": "exp(1)",
+      "vars": [],
+      "ok": true,
+      "normalized": "exp(1)",
+      "at": {},
+      "value": 2.718281828459045
+    },
+    {
+      "name": "exp word before e",
+      "input": "exp(x)",
+      "vars": [
+        "x"
+      ],
+      "ok": true,
+      "normalized": "exp(x)",
+      "at": {
+        "x": 2
+      },
+      "value": 7.38905609893065
+    },
+    {
+      "name": "abs word",
+      "input": "abs(-7)",
+      "vars": [],
+      "ok": true,
+      "normalized": "abs((-7))",
+      "at": {},
+      "value": 7
+    },
+    {
+      "name": "abs bars",
+      "input": "|-7|",
+      "vars": [],
+      "ok": true,
+      "normalized": "abs((-7))",
+      "at": {},
+      "value": 7
+    },
+    {
+      "name": "abs bars expr",
+      "input": "|x-10|",
+      "vars": [
+        "x"
+      ],
+      "ok": true,
+      "normalized": "abs((x-10))",
+      "at": {
+        "x": 3
+      },
+      "value": 7
+    },
+    {
+      "name": "nested fn",
+      "input": "sqrt(abs(-16))",
+      "vars": [],
+      "ok": true,
+      "normalized": "sqrt(abs((-16)))",
+      "at": {},
+      "value": 4
+    },
+    {
+      "name": "fn of fn no parens",
+      "input": "sqrt sqrt 16",
+      "vars": [],
+      "ok": true,
+      "normalized": "sqrt(sqrt(16))",
+      "at": {},
+      "value": 2
+    },
+    {
+      "name": "div by zero",
+      "input": "1/0",
+      "vars": [],
+      "ok": true,
+      "normalized": "(1/0)",
+      "at": {},
+      "value": null
+    },
+    {
+      "name": "div by zero var",
+      "input": "1/(x-2)",
+      "vars": [
+        "x"
+      ],
+      "ok": true,
+      "normalized": "(1/(x-2))",
+      "at": {
+        "x": 2
+      },
+      "value": null
+    },
+    {
+      "name": "sqrt negative",
+      "input": "sqrt(-1)",
+      "vars": [],
+      "ok": true,
+      "normalized": "sqrt((-1))",
+      "at": {},
+      "value": null
+    },
+    {
+      "name": "ln zero",
+      "input": "ln(0)",
+      "vars": [],
+      "ok": true,
+      "normalized": "ln(0)",
+      "at": {},
+      "value": null
+    },
+    {
+      "name": "ln negative",
+      "input": "ln(-2)",
+      "vars": [],
+      "ok": true,
+      "normalized": "ln((-2))",
+      "at": {},
+      "value": null
+    },
+    {
+      "name": "neg base frac exp",
+      "input": "(-8)^(1/3)",
+      "vars": [],
+      "ok": true,
+      "normalized": "((-8)^(1/3))",
+      "at": {},
+      "value": null
+    },
+    {
+      "name": "zero neg exp",
+      "input": "0^-1",
+      "vars": [],
+      "ok": true,
+      "normalized": "(0^(-1))",
+      "at": {},
+      "value": null
+    },
+    {
+      "name": "zero zero",
+      "input": "0^0",
+      "vars": [],
+      "ok": true,
+      "normalized": "(0^0)",
+      "at": {},
+      "value": 1
+    },
+    {
+      "name": "neg base int exp",
+      "input": "(-2)^3",
+      "vars": [],
+      "ok": true,
+      "normalized": "((-2)^3)",
+      "at": {},
+      "value": -8
+    },
+    {
+      "name": "overflow exp",
+      "input": "exp(1000)",
+      "vars": [],
+      "ok": true,
+      "normalized": "exp(1000)",
+      "at": {},
+      "value": null
+    },
+    {
+      "name": "overflow power",
+      "input": "10^400",
+      "vars": [],
+      "ok": true,
+      "normalized": "(10^400)",
+      "at": {},
+      "value": null
+    },
+    {
+      "name": "undefined propagates",
+      "input": "sqrt(-1)*0",
+      "vars": [],
+      "ok": true,
+      "normalized": "(sqrt((-1))*0)",
+      "at": {},
+      "value": null
+    },
+    {
+      "name": "empty",
+      "input": "",
+      "vars": [],
+      "ok": false,
+      "error": "empty"
+    },
+    {
+      "name": "only spaces",
+      "input": "   ",
+      "vars": [],
+      "ok": false,
+      "error": "empty"
+    },
+    {
+      "name": "unknown variable",
+      "input": "y+1",
+      "vars": [
+        "x"
+      ],
+      "ok": false,
+      "error": "unknown_symbol"
+    },
+    {
+      "name": "unknown word",
+      "input": "log(10)",
+      "vars": [],
+      "ok": false,
+      "error": "unknown_symbol"
+    },
+    {
+      "name": "unknown char",
+      "input": "2$3",
+      "vars": [],
+      "ok": false,
+      "error": "unknown_symbol"
+    },
+    {
+      "name": "equals sign refused",
+      "input": "x=2",
+      "vars": [
+        "x"
+      ],
+      "ok": false,
+      "error": "unknown_symbol"
+    },
+    {
+      "name": "arabic letter refused",
+      "input": "س+1",
+      "vars": [],
+      "ok": false,
+      "error": "unknown_symbol"
+    },
+    {
+      "name": "trailing operator",
+      "input": "2+",
+      "vars": [],
+      "ok": false,
+      "error": "unexpected_token"
+    },
+    {
+      "name": "leading operator",
+      "input": "*2",
+      "vars": [],
+      "ok": false,
+      "error": "unexpected_token"
+    },
+    {
+      "name": "double operator",
+      "input": "2*/3",
+      "vars": [],
+      "ok": false,
+      "error": "unexpected_token"
+    },
+    {
+      "name": "missing close paren",
+      "input": "(2+3",
+      "vars": [],
+      "ok": false,
+      "error": "unbalanced"
+    },
+    {
+      "name": "extra close paren",
+      "input": "2+3)",
+      "vars": [],
+      "ok": false,
+      "error": "unbalanced"
+    },
+    {
+      "name": "empty parens",
+      "input": "()",
+      "vars": [],
+      "ok": false,
+      "error": "unbalanced"
+    },
+    {
+      "name": "unclosed abs",
+      "input": "|2+3",
+      "vars": [],
+      "ok": false,
+      "error": "unbalanced"
+    },
+    {
+      "name": "fn without arg",
+      "input": "sqrt",
+      "vars": [],
+      "ok": false,
+      "error": "unexpected_token"
+    },
+    {
+      "name": "power without exponent",
+      "input": "2^",
+      "vars": [],
+      "ok": false,
+      "error": "unexpected_token"
+    },
+    {
+      "name": "too long",
+      "input": "1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1",
+      "vars": [],
+      "ok": false,
+      "error": "too_long"
+    },
+    {
+      "name": "too deep",
+      "input": "((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((1))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))",
+      "vars": [],
+      "ok": false,
+      "error": "too_deep"
+    },
+    {
+      "name": "mathlive frac",
+      "input": "(3)/(4)",
+      "vars": [],
+      "ok": true,
+      "normalized": "(3/4)",
+      "at": {},
+      "value": 0.75
+    },
+    {
+      "name": "mathlive divide",
+      "input": "12 -: 4",
+      "vars": [],
+      "ok": true,
+      "normalized": "(12/4)",
+      "at": {},
+      "value": 3
+    },
+    {
+      "name": "mathlive times",
+      "input": "3 * 4",
+      "vars": [],
+      "ok": true,
+      "normalized": "(3*4)",
+      "at": {},
+      "value": 12
+    },
+    {
+      "name": "mathlive frac then var",
+      "input": "(1)/(2)x",
+      "vars": [
+        "x"
+      ],
+      "ok": true,
+      "normalized": "((1/2)*x)",
+      "at": {
+        "x": 6
+      },
+      "value": 3
+    },
+    {
+      "name": "mathlive 318 fraction",
+      "input": "(3+pi-3sqrt(3))/(3)x^2",
+      "vars": [
+        "x"
+      ],
+      "ok": true,
+      "normalized": "((((3+pi)-(3*sqrt(3)))/3)*(x^2))",
+      "at": {
+        "x": 2
+      },
+      "value": 1.2605869745108815
+    },
+    {
+      "name": "mathlive power paren",
+      "input": "x^(2)",
+      "vars": [
+        "x"
+      ],
+      "ok": true,
+      "normalized": "(x^2)",
+      "at": {
+        "x": 3
+      },
+      "value": 9
+    },
+    {
+      "name": "mathlive pi paren",
+      "input": "(pi)/(3)",
+      "vars": [],
+      "ok": true,
+      "normalized": "(pi/3)",
+      "at": {},
+      "value": 1.0471975511965976
+    },
+    {
+      "name": "showcase 318 canonical",
+      "input": "x^2*(1+pi/3-sqrt(3))",
+      "vars": [
+        "x"
+      ],
+      "ok": true,
+      "normalized": "((x^2)*((1+(pi/3))-sqrt(3)))",
+      "at": {
+        "x": 1
+      },
+      "value": 0.3151467436277202
+    },
+    {
+      "name": "showcase 318 unicode",
+      "input": "(3+π−3√3)x²/3",
+      "vars": [
+        "x"
+      ],
+      "ok": true,
+      "normalized": "((((3+pi)-(3*sqrt(3)))*(x^2))/3)",
+      "at": {
+        "x": 2
+      },
+      "value": 1.2605869745108815
+    },
+    {
+      "name": "showcase 318 expanded",
+      "input": "x² + πx²/3 − √3x²",
+      "vars": [
+        "x"
+      ],
+      "ok": true,
+      "normalized": "(((x^2)+((pi*(x^2))/3))-(sqrt(3)*(x^2)))",
+      "at": {
+        "x": 3
+      },
+      "value": 2.836320692649485
+    }
+  ],
+  "equivalence": [
+    {
+      "name": "318 canonical",
+      "given": "x^2*(1+pi/3-sqrt(3))",
+      "expected": "x^2*(1+pi/3-sqrt(3))",
+      "vars": [
+        "x"
+      ],
+      "domain": {
+        "x": {
+          "min": 0.5,
+          "max": 10
+        }
+      },
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "318 factored over 3",
+      "given": "(3+π−3√3)x²/3",
+      "expected": "x^2*(1+pi/3-sqrt(3))",
+      "vars": [
+        "x"
+      ],
+      "domain": {
+        "x": {
+          "min": 0.5,
+          "max": 10
+        }
+      },
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "318 expanded",
+      "given": "x² + πx²/3 − √3x²",
+      "expected": "x^2*(1+pi/3-sqrt(3))",
+      "vars": [
+        "x"
+      ],
+      "domain": {
+        "x": {
+          "min": 0.5,
+          "max": 10
+        }
+      },
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "318 mathlive",
+      "given": "x^(2)(1+(pi)/(3)-sqrt(3))",
+      "expected": "x^2*(1+pi/3-sqrt(3))",
+      "vars": [
+        "x"
+      ],
+      "domain": {
+        "x": {
+          "min": 0.5,
+          "max": 10
+        }
+      },
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "318 mistake corner",
+      "given": "x^2(1-pi/4)",
+      "expected": "x^2*(1+pi/3-sqrt(3))",
+      "vars": [
+        "x"
+      ],
+      "domain": {
+        "x": {
+          "min": 0.5,
+          "max": 10
+        }
+      },
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "318 mistake lens",
+      "given": "(π/2−1)x²",
+      "expected": "x^2*(1+pi/3-sqrt(3))",
+      "vars": [
+        "x"
+      ],
+      "domain": {
+        "x": {
+          "min": 0.5,
+          "max": 10
+        }
+      },
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "318 mistake whole square",
+      "given": "x^2",
+      "expected": "x^2*(1+pi/3-sqrt(3))",
+      "vars": [
+        "x"
+      ],
+      "domain": {
+        "x": {
+          "min": 0.5,
+          "max": 10
+        }
+      },
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "318 numeric only",
+      "given": "0.3151",
+      "expected": "x^2*(1+pi/3-sqrt(3))",
+      "vars": [
+        "x"
+      ],
+      "domain": {
+        "x": {
+          "min": 0.5,
+          "max": 10
+        }
+      },
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "318 rounded coefficient",
+      "given": "0.3151x^2",
+      "expected": "x^2*(1+pi/3-sqrt(3))",
+      "vars": [
+        "x"
+      ],
+      "domain": {
+        "x": {
+          "min": 0.5,
+          "max": 10
+        }
+      },
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "318 forgot square",
+      "given": "x(1+pi/3-sqrt(3))",
+      "expected": "x^2*(1+pi/3-sqrt(3))",
+      "vars": [
+        "x"
+      ],
+      "domain": {
+        "x": {
+          "min": 0.5,
+          "max": 10
+        }
+      },
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "333 canonical",
+      "given": "r^2*(2*pi/3-sqrt(3)/2)",
+      "expected": "r^2*(2*pi/3-sqrt(3)/2)",
+      "vars": [
+        "r"
+      ],
+      "domain": {
+        "r": {
+          "min": 0.5,
+          "max": 10
+        }
+      },
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "333 one fraction",
+      "given": "(4π−3√3)r²/6",
+      "expected": "r^2*(2*pi/3-sqrt(3)/2)",
+      "vars": [
+        "r"
+      ],
+      "domain": {
+        "r": {
+          "min": 0.5,
+          "max": 10
+        }
+      },
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "333 sign slip",
+      "given": "(4π+3√3)r²/6",
+      "expected": "r^2*(2*pi/3-sqrt(3)/2)",
+      "vars": [
+        "r"
+      ],
+      "domain": {
+        "r": {
+          "min": 0.5,
+          "max": 10
+        }
+      },
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "square of sum",
+      "given": "(x+1)^2",
+      "expected": "x^2+2x+1",
+      "vars": [
+        "x"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "square of sum wrong",
+      "given": "(x+1)^2",
+      "expected": "x^2+1",
+      "vars": [
+        "x"
+      ],
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "diff of squares",
+      "given": "(x-3)(x+3)",
+      "expected": "x^2-9",
+      "vars": [
+        "x"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "diff of squares sign",
+      "given": "(x-3)(x+3)",
+      "expected": "x^2+9",
+      "vars": [
+        "x"
+      ],
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "cube of diff",
+      "given": "(x-1)^3",
+      "expected": "x^3-3x^2+3x-1",
+      "vars": [
+        "x"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "commutative",
+      "given": "y*x",
+      "expected": "x*y",
+      "vars": [
+        "x",
+        "y"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "distribute",
+      "given": "2(x+y)",
+      "expected": "2x+2y",
+      "vars": [
+        "x",
+        "y"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "distribute wrong",
+      "given": "2(x+y)",
+      "expected": "2x+y",
+      "vars": [
+        "x",
+        "y"
+      ],
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "two var square",
+      "given": "(x-y)^2",
+      "expected": "x^2-2xy+y^2",
+      "vars": [
+        "x",
+        "y"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "two var square wrong",
+      "given": "(x-y)^2",
+      "expected": "x^2-y^2",
+      "vars": [
+        "x",
+        "y"
+      ],
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "factor common",
+      "given": "x^2+x",
+      "expected": "x(x+1)",
+      "vars": [
+        "x"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "fraction sum",
+      "given": "1/x+1/y",
+      "expected": "(x+y)/(xy)",
+      "vars": [
+        "x",
+        "y"
+      ],
+      "domain": {
+        "x": {
+          "min": 0.5,
+          "max": 4
+        },
+        "y": {
+          "min": 0.5,
+          "max": 4
+        }
+      },
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "fraction sum wrong",
+      "given": "1/x+1/y",
+      "expected": "2/(x+y)",
+      "vars": [
+        "x",
+        "y"
+      ],
+      "domain": {
+        "x": {
+          "min": 0.5,
+          "max": 4
+        },
+        "y": {
+          "min": 0.5,
+          "max": 4
+        }
+      },
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "half x writings",
+      "given": "x/2",
+      "expected": "1/2x",
+      "vars": [
+        "x"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "half x vs 1 over 2x",
+      "given": "x/2",
+      "expected": "1/(2x)",
+      "vars": [
+        "x"
+      ],
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "divide by fraction",
+      "given": "x/(1/3)",
+      "expected": "3x",
+      "vars": [
+        "x"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "nested fraction",
+      "given": "(x/2)/3",
+      "expected": "x/6",
+      "vars": [
+        "x"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "power product",
+      "given": "x^2*x^3",
+      "expected": "x^5",
+      "vars": [
+        "x"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "power product wrong",
+      "given": "x^2*x^3",
+      "expected": "x^6",
+      "vars": [
+        "x"
+      ],
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "power of power",
+      "given": "(x^2)^3",
+      "expected": "x^6",
+      "vars": [
+        "x"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "power quotient",
+      "given": "x^5/x^2",
+      "expected": "x^3",
+      "vars": [
+        "x"
+      ],
+      "domain": {
+        "x": {
+          "min": 0.5,
+          "max": 4
+        }
+      },
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "negative exponent",
+      "given": "x^-2",
+      "expected": "1/x^2",
+      "vars": [
+        "x"
+      ],
+      "domain": {
+        "x": {
+          "min": 0.5,
+          "max": 4
+        }
+      },
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "minus sign distribution",
+      "given": "-(x-1)",
+      "expected": "1-x",
+      "vars": [
+        "x"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "minus sign error",
+      "given": "-(x-1)",
+      "expected": "-x-1",
+      "vars": [
+        "x"
+      ],
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "constant equal",
+      "given": "6/8",
+      "expected": "3/4",
+      "vars": [],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "constant decimal",
+      "given": "0.75",
+      "expected": "3/4",
+      "vars": [],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "constant comma",
+      "given": "0,75",
+      "expected": "3/4",
+      "vars": [],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "constant differ",
+      "given": "0.7",
+      "expected": "3/4",
+      "vars": [],
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "constant rounding refused",
+      "given": "0.333",
+      "expected": "1/3",
+      "vars": [],
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "constant pi fraction",
+      "given": "π/4",
+      "expected": "pi/4",
+      "vars": [],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "constant sqrt",
+      "given": "√8",
+      "expected": "2√2",
+      "vars": [],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "constant sqrt wrong",
+      "given": "√8",
+      "expected": "4√2",
+      "vars": [],
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "constant rationalised",
+      "given": "1/√2",
+      "expected": "√2/2",
+      "vars": [],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "constant e",
+      "given": "e^0",
+      "expected": "1",
+      "vars": [],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "constant within reltol",
+      "given": "0.3333333",
+      "expected": "1/3",
+      "vars": [],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "constant outside reltol",
+      "given": "0.33333",
+      "expected": "1/3",
+      "vars": [],
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "constant absTol near zero",
+      "given": "sin(pi)",
+      "expected": "0",
+      "vars": [],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "constant zero vs small",
+      "given": "0.001",
+      "expected": "0",
+      "vars": [],
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "arabic digits equivalent",
+      "given": "٢x+١",
+      "expected": "2x+1",
+      "vars": [
+        "x"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "superscripts equivalent",
+      "given": "x²+x³",
+      "expected": "x^2+x^3",
+      "vars": [
+        "x"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "sqrt of square is abs",
+      "given": "sqrt(x^2)",
+      "expected": "|x|",
+      "vars": [
+        "x"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "sqrt of square vs x default domain",
+      "given": "sqrt(x^2)",
+      "expected": "x",
+      "vars": [
+        "x"
+      ],
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "sqrt of square vs x positive domain",
+      "given": "sqrt(x^2)",
+      "expected": "x",
+      "vars": [
+        "x"
+      ],
+      "domain": {
+        "x": {
+          "min": 0.1,
+          "max": 5
+        }
+      },
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "abs bars vs word",
+      "given": "|x-1|",
+      "expected": "abs(x-1)",
+      "vars": [
+        "x"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "sqrt product",
+      "given": "sqrt(x)*sqrt(x)",
+      "expected": "x",
+      "vars": [
+        "x"
+      ],
+      "domain": {
+        "x": {
+          "min": 0,
+          "max": 9
+        }
+      },
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "sqrt product default domain",
+      "given": "sqrt(x)*sqrt(x)",
+      "expected": "x",
+      "vars": [
+        "x"
+      ],
+      "equivalent": false,
+      "reason": "domain"
+    },
+    {
+      "name": "sqrt vs sqrt both undefined skipped",
+      "given": "sqrt(x)",
+      "expected": "√x",
+      "vars": [
+        "x"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "sqrt quotient",
+      "given": "sqrt(x)/x",
+      "expected": "1/sqrt(x)",
+      "vars": [
+        "x"
+      ],
+      "domain": {
+        "x": {
+          "min": 0.5,
+          "max": 9
+        }
+      },
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "removable gap not sampled",
+      "given": "(x^2-1)/(x-1)",
+      "expected": "x+1",
+      "vars": [
+        "x"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "domain exclude",
+      "given": "(x^2-4)/(x-2)",
+      "expected": "x+2",
+      "vars": [
+        "x"
+      ],
+      "domain": {
+        "x": {
+          "min": 1,
+          "max": 3,
+          "exclude": [
+            2
+          ]
+        }
+      },
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "ln product",
+      "given": "ln(x)+ln(2)",
+      "expected": "ln(2x)",
+      "vars": [
+        "x"
+      ],
+      "domain": {
+        "x": {
+          "min": 0.5,
+          "max": 9
+        }
+      },
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "ln product wrong",
+      "given": "ln(x)+ln(2)",
+      "expected": "ln(x+2)",
+      "vars": [
+        "x"
+      ],
+      "domain": {
+        "x": {
+          "min": 0.5,
+          "max": 9
+        }
+      },
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "ln power",
+      "given": "2ln(x)",
+      "expected": "ln(x^2)",
+      "vars": [
+        "x"
+      ],
+      "domain": {
+        "x": {
+          "min": 0.5,
+          "max": 9
+        }
+      },
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "ln power default domain",
+      "given": "2ln(x)",
+      "expected": "ln(x^2)",
+      "vars": [
+        "x"
+      ],
+      "equivalent": false,
+      "reason": "domain"
+    },
+    {
+      "name": "exp sum",
+      "given": "exp(x)exp(1)",
+      "expected": "exp(x+1)",
+      "vars": [
+        "x"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "exp vs e power",
+      "given": "e^x",
+      "expected": "exp(x)",
+      "vars": [
+        "x"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "exp wrong",
+      "given": "e^x",
+      "expected": "x^e",
+      "vars": [
+        "x"
+      ],
+      "domain": {
+        "x": {
+          "min": 0.5,
+          "max": 3
+        }
+      },
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "expected undefined everywhere",
+      "given": "1",
+      "expected": "sqrt(-1-x^2)",
+      "vars": [
+        "x"
+      ],
+      "equivalent": false,
+      "reason": "domain"
+    },
+    {
+      "name": "both undefined everywhere",
+      "given": "sqrt(-1-x^2)",
+      "expected": "sqrt(-1-x^2)",
+      "vars": [
+        "x"
+      ],
+      "equivalent": false,
+      "reason": "undefined"
+    },
+    {
+      "name": "pythagorean identity",
+      "given": "sin(x)^2+cos(x)^2",
+      "expected": "1",
+      "vars": [
+        "x"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "double angle",
+      "given": "2sin(x)cos(x)",
+      "expected": "sin(2x)",
+      "vars": [
+        "x"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "double angle wrong",
+      "given": "2sin(x)",
+      "expected": "sin(2x)",
+      "vars": [
+        "x"
+      ],
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "cos double",
+      "given": "cos(x)^2-sin(x)^2",
+      "expected": "cos(2x)",
+      "vars": [
+        "x"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "tan ratio",
+      "given": "sin(x)/cos(x)",
+      "expected": "tan(x)",
+      "vars": [
+        "x"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "sin squared parse",
+      "given": "sin x^2",
+      "expected": "sin(x^2)",
+      "vars": [
+        "x"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "sin squared not square of sin",
+      "given": "sin x^2",
+      "expected": "sin(x)^2",
+      "vars": [
+        "x"
+      ],
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "shift",
+      "given": "sin(x+pi/2)",
+      "expected": "cos(x)",
+      "vars": [
+        "x"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "implicit 1/2x is x/2",
+      "given": "1/2x",
+      "expected": "x/2",
+      "vars": [
+        "x"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "implicit 2x^2",
+      "given": "2x^2",
+      "expected": "2*(x^2)",
+      "vars": [
+        "x"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "implicit 2x^2 not (2x)^2",
+      "given": "2x^2",
+      "expected": "(2x)^2",
+      "vars": [
+        "x"
+      ],
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "implicit abs product",
+      "given": "2|x|",
+      "expected": "|2x|",
+      "vars": [
+        "x"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "implicit sqrt product",
+      "given": "√2x",
+      "expected": "sqrt(2)*x",
+      "vars": [
+        "x"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "implicit sqrt product not sqrt(2x)",
+      "given": "√2x",
+      "expected": "sqrt(2x)",
+      "vars": [
+        "x"
+      ],
+      "domain": {
+        "x": {
+          "min": 0.5,
+          "max": 5
+        }
+      },
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "unary minus power",
+      "given": "-x^2",
+      "expected": "-(x^2)",
+      "vars": [
+        "x"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "unary minus power not square of neg",
+      "given": "-x^2",
+      "expected": "(-x)^2",
+      "vars": [
+        "x"
+      ],
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "given syntax error",
+      "given": "x+",
+      "expected": "x",
+      "vars": [
+        "x"
+      ],
+      "equivalent": false,
+      "reason": "syntax"
+    },
+    {
+      "name": "given unknown variable",
+      "given": "y",
+      "expected": "x",
+      "vars": [
+        "x"
+      ],
+      "equivalent": false,
+      "reason": "syntax"
+    },
+    {
+      "name": "given empty",
+      "given": "",
+      "expected": "x",
+      "vars": [
+        "x"
+      ],
+      "equivalent": false,
+      "reason": "syntax"
+    },
+    {
+      "name": "custom relTol accepts rounded",
+      "given": "0.3151x^2",
+      "expected": "x^2*(1+pi/3-sqrt(3))",
+      "vars": [
+        "x"
+      ],
+      "domain": {
+        "x": {
+          "min": 0.5,
+          "max": 10
+        }
+      },
+      "relTol": 0.001,
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "one sample",
+      "given": "(x+1)^2",
+      "expected": "x^2+2x+1",
+      "vars": [
+        "x"
+      ],
+      "samples": 1,
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "many samples",
+      "given": "(x+1)^2",
+      "expected": "x^2+2x+1",
+      "vars": [
+        "x"
+      ],
+      "samples": 20,
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "custom seed",
+      "given": "(x+1)^2",
+      "expected": "x^2+2x+1",
+      "vars": [
+        "x"
+      ],
+      "seed": 7,
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "custom seed differs",
+      "given": "(x+1)^2",
+      "expected": "x^2+2x",
+      "vars": [
+        "x"
+      ],
+      "seed": 7,
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "near equal polynomial",
+      "given": "x^2+2x+1.000001",
+      "expected": "x^2+2x+1",
+      "vars": [
+        "x"
+      ],
+      "domain": {
+        "x": {
+          "min": -0.01,
+          "max": 0.01
+        }
+      },
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "large values reltol",
+      "given": "1000000x^3",
+      "expected": "10^6x^3",
+      "vars": [
+        "x"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "three variables",
+      "given": "a(b+c)",
+      "expected": "ab+ac",
+      "vars": [
+        "a",
+        "b",
+        "c"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "three variables wrong",
+      "given": "a(b+c)",
+      "expected": "ab+c",
+      "vars": [
+        "a",
+        "b",
+        "c"
+      ],
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "triangular number",
+      "given": "n(n+1)/2",
+      "expected": "(n^2+n)/2",
+      "vars": [
+        "n"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "sum of odds",
+      "given": "n^2",
+      "expected": "(2n-1+1)n/2",
+      "vars": [
+        "n"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "inradius formula",
+      "given": "(a+b-c)/2",
+      "expected": "a/2+b/2-c/2",
+      "vars": [
+        "a",
+        "b",
+        "c"
+      ],
+      "equivalent": true,
+      "reason": "equal"
+    },
+    {
+      "name": "root of sum is not sum of roots",
+      "given": "sqrt(x^2+9)",
+      "expected": "x+3",
+      "vars": [
+        "x"
+      ],
+      "domain": {
+        "x": {
+          "min": 0.5,
+          "max": 5
+        }
+      },
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "reciprocal of sum",
+      "given": "1/(x+1)",
+      "expected": "1/x+1",
+      "vars": [
+        "x"
+      ],
+      "domain": {
+        "x": {
+          "min": 0.5,
+          "max": 4
+        }
+      },
+      "equivalent": false,
+      "reason": "differs"
+    },
+    {
+      "name": "reuleaux",
+      "given": "(π−√3)x²/2",
+      "expected": "x^2*(pi-sqrt(3))/2",
+      "vars": [
+        "x"
+      ],
+      "domain": {
+        "x": {
+          "min": 0.5,
+          "max": 10
+        }
+      },
+      "equivalent": true,
+      "reason": "equal"
+    }
+  ]
+}

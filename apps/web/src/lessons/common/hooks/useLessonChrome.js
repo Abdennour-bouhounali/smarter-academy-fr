@@ -1,13 +1,14 @@
 import { createContext, useContext, useMemo } from 'react';
 import { AuthContext } from '../../../context/AuthContext';
+import { usesWorkspaceShell } from '../../../components/layout/CourseLayout';
 import { getLessonChromeLayout } from '../utils/lessonChrome';
 
 /**
  * Source unique de vérité du bandeau de leçon, côté React.
  *
- * `useLessonChromeLayout()` lit l'état d'authentification — le même que celui
- * dont CourseLayout se sert pour choisir la coquille — et en dérive les
- * décalages. `LessonChromeContext` permet ensuite à ModuleLayout de diffuser
+ * `useLessonChromeLayout()` lit le compte connecté et applique la règle de
+ * CourseLayout (`usesStudentShell`) — la même décision qui choisit la
+ * coquille — pour en dériver les décalages. `LessonChromeContext` permet ensuite à ModuleLayout de diffuser
  * CE calcul à ses enfants (StepProgressBar) : un enfant ne devine jamais tout
  * seul si un en-tête existe, il reçoit le contexte de son parent.
  */
@@ -15,7 +16,12 @@ export const LessonChromeContext = createContext(null);
 
 export function useLessonChromeLayout() {
   const auth = useContext(AuthContext);
-  const authenticated = Boolean(auth?.user);
+  // « authenticated » au sens du bandeau = « rendu dans un espace de travail »
+  // (StudentLayout ou TeacherLayout, même en-tête mobile, même barre) : la
+  // même décision que CourseLayout, prise au même endroit. Un administrateur
+  // connecté lit la leçon sous la Navbar visiteur, et le module réserve donc
+  // sa hauteur comme pour un visiteur.
+  const authenticated = usesWorkspaceShell(auth?.user);
   return useMemo(() => getLessonChromeLayout({ authenticated }), [authenticated]);
 }
 

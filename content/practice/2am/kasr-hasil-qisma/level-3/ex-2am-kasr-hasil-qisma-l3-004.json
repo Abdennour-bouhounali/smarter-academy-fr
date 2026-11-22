@@ -1,0 +1,360 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l3-004",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — قسمة عشرية: جدول القيم المقرّبة",
+    "estimatedMinutes": 7,
+    "tags": [
+      "قسمة عشرية",
+      "جدول",
+      "حصر"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-88",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أنجز القسمة العشرية التالية: $28{,}4 \\div 0{,}6$ ثمّ أكمل الجدول."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أنجز القسمة $28{,}4 \\div 0{,}6$ ، واكتفِ برقمين بعد الفاصلة (دون تدوير).",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "47.33",
+      "misconceptionSignatures": [
+        {
+          "value": "47.34",
+          "id": "MISC-QARIBA-SWAP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل أوّلًا المقسوم عليه إلى عدد طبيعي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "واصل القسمة بعد الفاصلة بإضافة أصفار إلى الباقي، وتوقّف عند الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$28{,}4 \\div 0{,}6 = 284 \\div 6 = 47{,}33\\ldots$.",
+        "incorrect": "توقّف عند الرتبة المطلوبة دون زيادة: الأرقام الباقية تُهمل."
+      },
+      "solution": {
+        "lines": [
+          "$28{,}4 \\div 0{,}6 = 284 \\div 6$",
+          "$284 \\div 6 = 47{,}33\\ldots$"
+        ],
+        "result": "47{,}33"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "أكمل جدول القيم المقرّبة:",
+      "statement": "أعط القيمة المقرّبة إلى الوحدة بالزيادة لحاصل القسمة $28{,}4 \\div 0{,}6$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "48",
+      "misconceptionSignatures": [
+        {
+          "value": "47",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "47.4",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالزيادة هي أصغر قيمة من هذه الرتبة تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من القيمة بالنقصان ثم أضف وحدة واحدة من الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$47 < \\frac{28{,}4}{0{,}6} < 48$.",
+        "incorrect": "بالزيادة: هي القيمة التي تلي القيمة بالنقصان مباشرة في الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}6 \\times 48 = 28{,}8$",
+          "$28{,}8 > 28{,}4$",
+          "القيمة بالزيادة هي $48$"
+        ],
+        "result": "48"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أعط القيمة المقرّبة إلى الوحدة بالنقصان لحاصل القسمة $28{,}4 \\div 0{,}6$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "47",
+      "misconceptionSignatures": [
+        {
+          "value": "48",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "47.3",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالنقصان لا تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة دون أن تزيد شيئًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب القيمة في المقسوم عليه: يجب ألاّ يتجاوز الجداء المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$47 < \\frac{28{,}4}{0{,}6} < 48$.",
+        "incorrect": "بالنقصان: نحتفظ بالأرقام حتى الرتبة المطلوبة ونُهمل ما بعدها دون تغيير الرقم الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}6 \\times 47 = 28{,}2$",
+          "$0{,}6 \\times 48 = 28{,}8$",
+          "$28{,}2 < 28{,}4 < 28{,}8$"
+        ],
+        "result": "47"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}1$ بالنقصان لحاصل القسمة $28{,}4 \\div 0{,}6$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "47.3",
+      "misconceptionSignatures": [
+        {
+          "value": "47.4",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "47.33",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالنقصان لا تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة دون أن تزيد شيئًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب القيمة في المقسوم عليه: يجب ألاّ يتجاوز الجداء المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$47{,}3 < \\frac{28{,}4}{0{,}6} < 47{,}4$.",
+        "incorrect": "بالنقصان: نحتفظ بالأرقام حتى الرتبة المطلوبة ونُهمل ما بعدها دون تغيير الرقم الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}6 \\times 47{,}3 = 28{,}38$",
+          "$0{,}6 \\times 47{,}4 = 28{,}44$",
+          "$28{,}38 < 28{,}4 < 28{,}44$"
+        ],
+        "result": "47{,}3"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "د",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}1$ بالزيادة لحاصل القسمة $28{,}4 \\div 0{,}6$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "47.4",
+      "misconceptionSignatures": [
+        {
+          "value": "47.3",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "47.34",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالزيادة هي أصغر قيمة من هذه الرتبة تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من القيمة بالنقصان ثم أضف وحدة واحدة من الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$47{,}3 < \\frac{28{,}4}{0{,}6} < 47{,}4$.",
+        "incorrect": "بالزيادة: هي القيمة التي تلي القيمة بالنقصان مباشرة في الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}6 \\times 47{,}4 = 28{,}44$",
+          "$28{,}44 > 28{,}4$",
+          "القيمة بالزيادة هي $47{,}4$"
+        ],
+        "result": "47{,}4"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "هات حصرًا للحاصل $\\dfrac{28{,}4}{0{,}6}$ بين عددين طبيعيين متتاليين.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$48 < \\dfrac{28{,}4}{0{,}6} < 49$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        },
+        {
+          "id": "B",
+          "content": "$46 < \\dfrac{28{,}4}{0{,}6} < 47$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        },
+        {
+          "id": "C",
+          "content": "$49 < \\dfrac{28{,}4}{0{,}6} < 50$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        },
+        {
+          "id": "D",
+          "content": "$47 < \\dfrac{28{,}4}{0{,}6} < 48$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحصر الصحيح: عددان متتاليان في الرتبة المطلوبة، الأوّل لا يتجاوز الحاصل والثاني يتجاوزه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ حصر بضرب طرفيه في المقسوم عليه ثم قارن بالمقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$47 < \\dfrac{28{,}4}{0{,}6} < 48$.",
+        "incorrect": "تحقّق من الطرفين: الأصغر لا يتجاوز الحاصل والأكبر يتجاوزه، وبينهما وحدة واحدة من الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}6 \\times 47 = 28{,}2 \\text{ و } 0{,}6 \\times 48 = 28{,}8$",
+          "$28{,}2 < 28{,}4 < 28{,}8$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

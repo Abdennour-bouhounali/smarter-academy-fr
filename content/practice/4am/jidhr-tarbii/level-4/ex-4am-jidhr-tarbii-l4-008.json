@@ -1,0 +1,209 @@
+{
+  "id": "ex-4am-jidhr-tarbii-l4-008",
+  "lessonCode": "jidhr-tarbii",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2012 — عددان حقيقيان m و n",
+    "estimatedMinutes": 9,
+    "tags": [
+      "(√a)² = a",
+      "√(a²) = a"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_jidhr-tarbii_P3",
+      "modelledOn": "BEM 2012 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2012",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان الحقيقيان m و n حيث:",
+    "formulas": [
+      "m = (\\sqrt{7})^2 - 3\\sqrt{(-2)^2} + \\sqrt{25} \\qquad و \\qquad n = \\sqrt{(\\sqrt{7} - 3)^2}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $m$ .",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "18",
+          "id": "MISC-JIDHR-MURABBA-ISHARA"
+        },
+        {
+          "value": "48",
+          "id": "MISC-TARBI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(\\sqrt{7})^2 = 7$ و $\\sqrt{25} = 5$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\sqrt{(-2)^2}$ هو العدد الموجب الذي مربعه 4."
+        }
+      ],
+      "feedback": {
+        "correct": "$m = 7 - 3 \\times 2 + 5 = 6$.",
+        "incorrect": "$\\sqrt{(-2)^2}$ عدد موجب، و $(\\sqrt{7})^2 = 7$."
+      },
+      "solution": {
+        "lines": [
+          "$m = 7 - 3 \\times 2 + 5$",
+          "$m = 7 - 6 + 5$"
+        ],
+        "result": "m = 6"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "علما أن $\\sqrt{7} < 3$ ، اكتب $n$ على الشكل $a + b\\sqrt{7}$ ثم أعط:",
+      "statement": "العدد $a$ .",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد a فقط",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "-3",
+          "id": "MISC-JIDHR-MURABBA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة $\\sqrt{7} - 3$؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\sqrt{x^2} = -x$ إذا كان $x$ سالبا."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sqrt{7} - 3 < 0$ إذن $n = 3 - \\sqrt{7}$ و $a = 3$.",
+        "incorrect": "$\\sqrt{7} - 3$ سالب: الجذر يساوي معاكسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\sqrt{7} < 3$ إذن $\\sqrt{7} - 3 < 0$",
+          "$n = -(\\sqrt{7} - 3) = 3 - \\sqrt{7}$"
+        ],
+        "result": "n = 3 - \\sqrt{7}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "العدد $b$ .",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد b فقط",
+      "expectedAnswer": "-1",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-JIDHR-MURABBA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ معامل $\\sqrt{7}$ في $n$."
+        }
+      ],
+      "feedback": {
+        "correct": "$n = 3 + (-1)\\sqrt{7}$ إذن $b = -1$.",
+        "incorrect": "معامل $\\sqrt{7}$ يتعلق بإشارة $\\sqrt{7} - 3$."
+      },
+      "solution": {
+        "lines": [
+          "$n = 3 - \\sqrt{7}$"
+        ],
+        "result": "b = -1"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "بيّن أن الجداء $n \\times (3 + \\sqrt{7})$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة الجداء (عدد طبيعي)",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$n = 3 - \\sqrt{7}$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$(x - y)(x + y) = x^2 - y^2$."
+        }
+      ],
+      "feedback": {
+        "correct": "$(3 - \\sqrt{7})(3 + \\sqrt{7}) = 9 - 7 = 2$.",
+        "incorrect": "استعمل المتطابقة $(x - y)(x + y) = x^2 - y^2$ مع $(\\sqrt{7})^2 = 7$."
+      },
+      "solution": {
+        "lines": [
+          "$n \\times (3 + \\sqrt{7}) = (3 - \\sqrt{7})(3 + \\sqrt{7})$",
+          "$= 3^2 - (\\sqrt{7})^2 = 9 - 7$"
+        ],
+        "result": "n \\times (3 + \\sqrt{7}) = 2"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

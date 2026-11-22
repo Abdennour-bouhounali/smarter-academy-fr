@@ -1,0 +1,198 @@
+{
+  "id": "ex-4am-majdulat-ihsaiya-l4-006",
+  "lessonCode": "majdulat-ihsaiya",
+  "level": 4,
+  "metadata": {
+    "title": "وسيلة التنقّل إلى المتوسطة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مخطط دائري",
+      "زاوية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_majdulat-ihsaiya_P3",
+      "modelledOn": "ex-15",
+      "adaptedFrom": "ex-4am-majdulat-ihsaiya-l4-006"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يمثّل المخطط الدائري الآتي توزيع 72 تلميذا من متوسطة حسب وسيلة تنقّلهم إليها؛ كُتبت فيه زاويتا قطاعين فقط:",
+    "figure": {
+      "kind": "chart",
+      "type": "pie",
+      "show": "angle",
+      "ariaLabel": "مخطط دائري لوسيلة التنقّل: سيرا على الأقدام 150 درجة، الحافلة 90 درجة، والسيارة مجهولة",
+      "parts": [
+        {
+          "label": "سيرا على الأقدام",
+          "value": 150
+        },
+        {
+          "label": "الحافلة",
+          "value": 90
+        },
+        {
+          "label": "السيارة",
+          "value": 120,
+          "missing": true
+        }
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب زاوية قطاع السيارة.",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: قيس الزاوية بالدرجات دون الرمز °",
+      "expectedAnswer": "120",
+      "misconceptionSignatures": [
+        {
+          "value": "60",
+          "id": "MISC-IHSA-ZAWIYA-QITA"
+        },
+        {
+          "value": "240",
+          "id": "MISC-IHSA-ZAWIYA-QITA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "زوايا قطاعات المخطط الدائري مجموعها 360 درجة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح الزاويتين المعلومتين من 360 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$360 - 150 - 90 = 120$ ، أي $120^\\circ$ .",
+        "incorrect": "مجموع زوايا القطاعات كلها 360 درجة: اطرح منه الزاويتين المكتوبتين."
+      },
+      "solution": {
+        "lines": [
+          "مجموع زوايا القطاعات 360 درجة:",
+          "$360 - 150 - 90 = 120$"
+        ],
+        "result": "120^\\circ"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب عدد التلاميذ الذين يتنقّلون بالسيارة.",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "24",
+      "misconceptionSignatures": [
+        {
+          "value": "120",
+          "id": "MISC-IHSA-ZAWIYA-QITA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "زاوية القطاع تتناسب مع عدد تلاميذه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القطاع الذي زاويته 120 درجة يمثّل أيّ جزء من الدائرة؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد التلاميذ = (الزاوية ÷ 360) × 72 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{120}{360} \\times 72 = 24$ تلميذا.",
+        "incorrect": "عدد تلاميذ القطاع = حصة زاويته من 360 مضروبة في العدد الكلي للتلاميذ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{120}{360} = \\dfrac{1}{3}$ ، فالقطاع يمثّل ثلث التلاميذ.",
+          "$\\dfrac{1}{3} \\times 72 = 24$"
+        ],
+        "result": "24"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب عدد التلاميذ الذين يتنقّلون سيرا على الأقدام.",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "150",
+          "id": "MISC-IHSA-ZAWIYA-QITA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الطريقة نفسها مع زاوية 150 درجة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد التلاميذ = (الزاوية ÷ 360) × 72 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{150}{360} \\times 72 = 30$ تلميذا.",
+        "incorrect": "اقسم الزاوية على 360 ثم اضرب في العدد الكلي للتلاميذ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{150}{360} \\times 72 = 30$"
+        ],
+        "result": "30"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

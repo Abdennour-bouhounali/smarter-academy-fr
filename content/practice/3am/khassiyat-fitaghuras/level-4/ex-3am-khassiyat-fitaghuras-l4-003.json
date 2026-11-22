@@ -1,0 +1,260 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l4-003",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — المماس والمتوسط",
+    "estimatedMinutes": 9,
+    "tags": [
+      "خاصية فيثاغورس",
+      "المماس",
+      "المثلث القائم والدائرة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-72",
+      "exercise": 3
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$[AB]$ قطعة مستقيم طولها $7{,}2\\,\\mathrm{cm}$ ، و $(\\mathcal{C})$ دائرة مركزها $O$ وقطرها $[AB]$ . $(\\Delta)$ مماس للدائرة $(\\mathcal{C})$ في النقطة $B$ ، و $H$ نقطة من $(\\Delta)$ حيث $OH = 6\\,\\mathrm{cm}$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -3.6,
+          0
+        ],
+        "B": [
+          3.6,
+          0
+        ],
+        "H": [
+          3.6,
+          4.8
+        ],
+        "E": [
+          1.8,
+          2.4
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "O"
+        },
+        {
+          "from": "O",
+          "to": "B"
+        },
+        {
+          "from": "O",
+          "to": "H",
+          "label": "6 cm"
+        },
+        [
+          "B",
+          "H"
+        ],
+        {
+          "from": "E",
+          "to": "B",
+          "dashed": true
+        }
+      ],
+      "rightAngles": [
+        [
+          "O",
+          "B",
+          "H"
+        ]
+      ],
+      "labels": {
+        "O": "s",
+        "E": "nw",
+        "H": "e"
+      },
+      "circles": [
+        {
+          "center": "O",
+          "through": "A"
+        }
+      ],
+      "lines": [
+        {
+          "through": [
+            "B",
+            "H"
+          ],
+          "name": "(Δ)",
+          "extend": true
+        }
+      ],
+      "ariaLabel": "[AB] قطعة طولها 7,2 cm و (C) دائرة قطرها [AB] ومركزها O، و (Δ) مماسها في B، و H نقطة من (Δ) حيث OH = 6 cm، و E منتصف [OH]",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "برّر أن المثلث $OHB$ قائم في $B$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما وضعية المماس بالنسبة إلى نصف القطر في نقطة التماس؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$H$ نقطة من المماس."
+        }
+      ],
+      "feedback": {
+        "correct": "المماس عمودي على نصف القطر في نقطة التماس.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "$(\\Delta)$ مماس للدائرة $(\\mathcal{C})$ في $B$ ، فهو عمودي على نصف القطر $[OB]$ .",
+          "و $H \\in (\\Delta)$ ، إذن المثلث $OHB$ قائم في $B$ ."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب الطول $BH$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm",
+      "expectedAnswer": "4.8",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-FITAGHURAS-LEG-ADD"
+        },
+        {
+          "value": "2.4",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "23.04",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع المطلوب ليس الوتر: مربعه يساوي مربع الوتر ناقص مربع الضلع الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولا مربع الطول، ثم خذ جذره التربيعي بالآلة الحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$BH^2 = 6^2 - 3{,}6^2 = 23{,}04$ ، إذن $BH = 4{,}8\\,\\mathrm{cm}$ .",
+        "incorrect": "الطول المطلوب ضلع قائم وليس وترا: نطرح مربع الضلع المعلوم من مربع الوتر، ولا نجمع."
+      },
+      "solution": {
+        "lines": [
+          "$O$ منتصف $[AB]$ ، إذن $OB = \\dfrac{7{,}2}{2} = 3{,}6\\,\\mathrm{cm}$ .",
+          "المثلث $OHB$ قائم في $B$ ، حسب خاصية فيثاغورس: $OH^2 = BH^2 + OB^2$",
+          "ومنه: $BH^2 = OH^2 - OB^2$",
+          "$BH^2 = 6^2 - 3{,}6^2 = 36 - 12{,}96 = 23{,}04$",
+          "$BH = \\sqrt{23{,}04} = 4{,}8\\,\\mathrm{cm}$"
+        ],
+        "result": "BH = 4{,}8\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "لتكن $E$ منتصف $[OH]$ . احسب الطول $EB$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-MAALAM-DAIRA-QUTR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$E$ منتصف الوتر في المثلث القائم $OHB$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$E$ مركز الدائرة المحيطة بالمثلث القائم $OHB$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$EB = \\dfrac{OH}{2} = 3\\,\\mathrm{cm}$ .",
+        "incorrect": "المتوسط المتعلّق بالوتر يساوي نصف الوتر."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $OHB$ قائم في $B$ ، و $E$ منتصف وتره $[OH]$ .",
+          "في المثلث القائم، طول المتوسط المتعلّق بالوتر يساوي نصف طول الوتر.",
+          "$EB = \\dfrac{OH}{2} = \\dfrac{6}{2} = 3\\,\\mathrm{cm}$"
+        ],
+        "result": "EB = 3\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

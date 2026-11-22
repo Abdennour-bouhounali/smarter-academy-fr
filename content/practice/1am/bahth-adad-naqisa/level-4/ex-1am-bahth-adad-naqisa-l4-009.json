@@ -1,0 +1,234 @@
+{
+  "id": "ex-1am-bahth-adad-naqisa-l4-009",
+  "lessonCode": "bahth-adad-naqisa",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — عمر في الأسرة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "عمر",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الرابع",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "عمر أبي أربعة أمثال عمري، وعمره 44 سنة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما عمري بالسنوات؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "value": "176",
+          "id": "MISC-NAQISA-MULAGAIN"
+        },
+        {
+          "value": "1/11",
+          "id": "MISC-NAQISA-DIVREV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للضرب هي القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $11\\times 4=44$ ، فالعدد الناقص هو $11$ .",
+        "incorrect": "في جداء نقسم الناتج على العدد المعلوم: لا نضربه فيه ولا نقسم المعلوم على الناتج."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square\\times 4=44$ .",
+          "نُرجع بالعملية العكسية: $\\square=44\\div 4=11$ .",
+          "نتحقّق: $11\\times 4=44$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بعد 5 سنوات سيكون عمري 16 سنة. هل المساواة □ + 5 = 16 تعطي عمري الآن؟ ما هو بالسنوات؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "value": "21",
+          "id": "MISC-NAQISA-SAMEOP"
+        },
+        {
+          "value": "-11",
+          "id": "MISC-NAQISA-REVSUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للجمع هي الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $11+5=16$ ، فالعدد الناقص هو $11$ .",
+        "incorrect": "في مجموع نطرح العدد المعلوم من الناتج: لا نجمع مرّة أخرى."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square+5=16$ .",
+          "نُرجع بالعملية العكسية: $\\square=16-5=11$ .",
+          "نتحقّق: $11+5=16$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "عمر أخي أقلّ من عمري بـ 3 سنوات وهو 8 سنوات: □ − 3 = 8. ما عمري بالسنوات؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-NAQISA-SAMEOP"
+        },
+        {
+          "value": "8/3",
+          "id": "MISC-NAQISA-FAMILY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للطرح هي الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $11-3=8$ ، فالعدد الناقص هو $11$ .",
+        "incorrect": "في □ − a = b نجمع: الجمع يلغي الطرح."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square-3=8$ .",
+          "نُرجع بالعملية العكسية: $\\square=8+3=11$ .",
+          "نتحقّق: $11-3=8$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "تحقّق: احسب أربعة أمثال 11 سنة.",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "44",
+      "misconceptionSignatures": [],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تربط الأعداد المعطاة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب بالترتيب المناسب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن نتيجتك بالناتج المعلوم في الوضعية."
+        }
+      ],
+      "feedback": {
+        "correct": "$4\\times 11=44$ .",
+        "incorrect": "أعد الحساب بعناية."
+      },
+      "solution": {
+        "lines": [
+          "$4\\times 11=44$ ."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

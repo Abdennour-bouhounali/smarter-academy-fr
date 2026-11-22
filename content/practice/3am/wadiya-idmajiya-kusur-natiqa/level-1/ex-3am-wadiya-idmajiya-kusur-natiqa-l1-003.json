@@ -1,0 +1,259 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-kusur-natiqa-l1-003",
+  "lessonCode": "wadiya-idmajiya-kusur-natiqa",
+  "level": 1,
+  "metadata": {
+    "title": "كتابة عدد ناطق على أبسط شكل",
+    "estimatedMinutes": 10,
+    "tags": [
+      "العدد الناطق",
+      "قسمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الأعداد الناطقة $A$ و $B$ و $C$ .",
+    "formulas": [
+      "A = \\dfrac{9}{-12}",
+      "B = \\dfrac{-8}{-20}",
+      "C = -\\dfrac{3}{5} \\div \\dfrac{9}{10}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "اكتب $A$ على شكل كسر غير قابل للاختزال مقامه موجب .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "-3/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "3/4",
+          "id": "MISC-NATIQ-DROPSIGN"
+        },
+        {
+          "value": "-4/3",
+          "id": "MISC-NATIQ-INVERT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ إشارة كلّ عدد: أين وُضعت علامة السالب ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العدد بمقام موجب ثمّ اختزل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر: حاصل قسمة عددين سالبين موجب."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $-\\dfrac{3}{4}$ .",
+        "incorrect": "انتبه إلى الإشارات ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الإشارة السالبة في المقام تنتقل إلى الكسر: $\\dfrac{9}{-12} = -\\dfrac{9}{12}$ .",
+          "$-\\dfrac{9}{12} = -\\dfrac{3}{4}$ (اختزلنا بالقاسم $3$) ."
+        ],
+        "result": "-\\dfrac{3}{4}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اكتب $B$ على شكل كسر غير قابل للاختزال .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "2/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "-2/5",
+          "id": "MISC-NATIQ-TWONEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ إشارة كلّ عدد: أين وُضعت علامة السالب ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العدد بمقام موجب ثمّ اختزل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر: حاصل قسمة عددين سالبين موجب."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{2}{5}$ .",
+        "incorrect": "انتبه إلى الإشارات ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "البسط والمقام سالبان فالكسر موجب: $\\dfrac{-8}{-20} = \\dfrac{8}{20}$ .",
+          "$\\dfrac{8}{20} = \\dfrac{2}{5}$ ."
+        ],
+        "result": "\\dfrac{2}{5}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "احسب $C$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "-2/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "-27/50",
+          "id": "MISC-AMAL-NOFLIP"
+        },
+        {
+          "value": "2/3",
+          "id": "MISC-AMAL-PRODSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نقسمه وما العدد الذي نقسم عليه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على كسر غير معدوم هي الضرب في مقلوبه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالضرب: ناتج القسمة في القاسم يعطي المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $-\\dfrac{2}{3}$ .",
+        "incorrect": "القسمة على كسر هي الضرب في مقلوبه؛ أعد الحساب بعناية."
+      },
+      "solution": {
+        "lines": [
+          "$-\\dfrac{3}{5} \\div \\dfrac{9}{10} = -\\dfrac{3}{5} \\times \\dfrac{10}{9}$ .",
+          "$-\\dfrac{3}{5} \\times \\dfrac{10}{9} = -\\dfrac{30}{45} = -\\dfrac{2}{3}$ ."
+        ],
+        "result": "-\\dfrac{2}{3}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "أيّ العددين أكبر: $-\\dfrac{3}{4}$ أم $-\\dfrac{2}{3}$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-\\dfrac{3}{4}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-NEGORDER"
+        },
+        {
+          "id": "B",
+          "content": "$-\\dfrac{2}{3}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ إشارة كلّ عدد: أين وُضعت علامة السالب ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العدد بمقام موجب ثمّ اختزل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر: حاصل قسمة عددين سالبين موجب."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $-\\dfrac{2}{3}$ .",
+        "incorrect": "انتبه إلى الإشارات ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$-\\dfrac{3}{4} = -\\dfrac{9}{12}$ و $-\\dfrac{2}{3} = -\\dfrac{8}{12}$ .",
+          "من عددين سالبين، الأكبر هو الأقرب إلى الصفر: $-\\dfrac{2}{3} > -\\dfrac{3}{4}$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

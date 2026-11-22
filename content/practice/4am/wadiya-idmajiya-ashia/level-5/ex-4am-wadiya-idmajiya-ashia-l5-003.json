@@ -1,0 +1,70 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ashia-l5-003",
+  "lessonCode": "wadiya-idmajiya-ashia",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — من الطول إلى المسافة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "أقصر مسلك",
+      "مسألة عكسية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ashia_P1",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "شارع عرضه $15\\,\\mathrm{m}$ . الحي A فوق الحافة العليا بـ $20\\,\\mathrm{m}$ ، والمدرسة B تحت الحافة السفلى بـ $28\\,\\mathrm{m}$ ، وطول أقصر مسلك من A إلى B مرورا بممر عمودي على الحافتين هو $75\\,\\mathrm{m}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما المسافة الأفقية بين A و B (بالمتر)؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "36",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AB' = 75 - 15$"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة الشاقولية بين A و B′ هي 48."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "فيثاغورس عكسيا."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB' = 60$ ، و $60^2 = d^2 + 48^2$ ومنه $d^2 = 1296$ و $d = 36\\,\\mathrm{m}$ .",
+        "incorrect": "اطرح عرض الشارع أولا."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 5,
+      "misconceptionSignatures": [
+        {
+          "value": "57",
+          "id": "MISC-SHUAA-MAMAR-NASI"
+        }
+      ]
+    }
+  ]
+}

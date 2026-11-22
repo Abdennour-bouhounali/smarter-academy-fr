@@ -1,0 +1,110 @@
+{
+  "id": "ex-4am-insihab-shuaa-l1-007",
+  "lessonCode": "insihab-shuaa",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — منحى مختلف",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المنحى"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_insihab-shuaa_P2",
+      "modelledOn": "act-1"
+    }
+  },
+  "statement": {
+    "content": "على شبكة لعبة على الهاتف، بطلان ينتقلان: الأول من P إلى Q والثاني من R إلى S (الشكل).",
+    "figure": {
+      "points": {
+        "P": [
+          1,
+          1
+        ],
+        "Q": [
+          4,
+          1
+        ],
+        "R": [
+          6,
+          1
+        ],
+        "S": [
+          6,
+          4
+        ]
+      },
+      "grid": true,
+      "vectors": [
+        {
+          "from": "P",
+          "to": "Q",
+          "tone": "indigo"
+        },
+        {
+          "from": "R",
+          "to": "S",
+          "tone": "amber"
+        }
+      ],
+      "ariaLabel": "ورقة مرصوفة: السهم من P نحو Q أفقي بطول 3، والسهم من R نحو S شاقولي نحو الأعلى بطول 3",
+      "maxWidth": 420
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "لماذا $\\overrightarrow{PQ}$ و $\\overrightarrow{RS}$ غير متساويين؟",
+      "learningPoints": [
+        {
+          "code": "4am_insihab-shuaa_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لأن المنحيين مختلفين: (PQ) أفقي و (RS) شاقولي",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لأن الطولين مختلفين",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TUL-FAQAT"
+        },
+        {
+          "id": "C",
+          "content": "بل هما متساويان: لهما نفس الطول",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TUL-FAQAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن العناصر الثلاثة للشعاع: المنحى (المستقيم الحامل)، الاتجاه (من المبدأ نحو النهاية)، والطول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المنحى يخص المستقيمات: مستقيمان متوازيان لهما نفس المنحى؛ الاتجاه هو جهة السير عليه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن العناصر الثلاثة واحدا واحدا قبل أن تختار."
+        }
+      ],
+      "feedback": {
+        "correct": "الطولان متساويان (3 مربعات) لكن المستقيمين الحاملين متعامدان.",
+        "incorrect": "قارن الطولين أولا، ثم المستقيمين الحاملين."
+      },
+      "difficulty": 1
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "id": "ex-3am-tabsit-hadhf-aqwas-l1-002",
+  "lessonCode": "tabsit-hadhf-aqwas",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — جداء حدّين",
+    "estimatedMinutes": 5,
+    "tags": [
+      "جداء",
+      "تبسيط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اكتب كلًّا من الجداءات التالية على أبسط شكل:",
+    "formulas": [
+      "A = 4 \\times 3x",
+      "B = 3x \\times 5x",
+      "C = (-2x) \\times 4x"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "بسّط الجداء $A$ .",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $ax$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-TABSIT-UNLIKE-MERGED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في جداء حدّين نضرب الأعداد معًا والحروف معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أن $x \\times x$ يُكتب $x^2$، وطبّق قاعدة إشارة الجداء."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء وفي النتيجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 12x$ إذن $a = 12$.",
+        "incorrect": "اجمع الحدود المتشابهة بإشاراتها بعد حذف الأقواس، ثم اقرأ العدد المطلوب في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$A = (4 \\times 3) \\times x$",
+          "$A = 12x$"
+        ],
+        "result": "a = 12"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "الشكل المبسّط للجداء $B$ هو:",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$B = 8x^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-PRODUCT-COEF-ADDED"
+        },
+        {
+          "id": "B",
+          "content": "$B = 15x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-PRODUCT-LETTER"
+        },
+        {
+          "id": "C",
+          "content": "$B = 15x^2$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$B = 8x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-PRODUCT-COEF-ADDED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في جداء حدّين نضرب الأعداد معًا والحروف معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أن $x \\times x$ يُكتب $x^2$، وطبّق قاعدة إشارة الجداء."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء وفي النتيجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 15x^2$.",
+        "incorrect": "راجع إشارة كل حدّ وما يسبق القوسين، ثم اجمع الحدود المتشابهة فقط."
+      },
+      "solution": {
+        "lines": [
+          "$B = (3 \\times 5) \\times (x \\times x)$",
+          "$B = 15x^2$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "بسّط الجداء $C$ .",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $C$ على الشكل $ax^2$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "-8",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-TABSIT-PRODUCT-SIGN"
+        },
+        {
+          "value": "0",
+          "id": "MISC-TABSIT-PRODUCT-COEF-ADDED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في جداء حدّين نضرب الأعداد معًا والحروف معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أن $x \\times x$ يُكتب $x^2$، وطبّق قاعدة إشارة الجداء."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء وفي النتيجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = -8x^2$ إذن $a = -8$.",
+        "incorrect": "اجمع الحدود المتشابهة بإشاراتها بعد حذف الأقواس، ثم اقرأ العدد المطلوب في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$C = (-2 \\times 4) \\times (x \\times x)$",
+          "$C = -8x^2$"
+        ],
+        "result": "a = -8"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

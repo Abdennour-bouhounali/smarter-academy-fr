@@ -1,0 +1,231 @@
+{
+  "id": "ex-3am-quwat-adad-nisbi-l4-007",
+  "lessonCode": "quwat-adad-nisbi",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — كتابة علمية وكتابة على شكل قوة",
+    "estimatedMinutes": 9,
+    "tags": [
+      "قواعد الحساب على القوى",
+      "كتابة علمية"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-72",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$E$ و $G$ عددان حيث:",
+    "formulas": [
+      "E = 1{,}5 \\times 10^{-4} \\times 0{,}06",
+      "G = \\dfrac{16 \\times 2^{5}}{2^{10} \\times 2^{-6}}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "الكتابة العلمية للعدد $E$ هي $9 \\times 10^{n}$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "-6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هذه المرحلة على قوى العدد 10 (درس آخر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القواعد نفسها: نجمع الأسس في الجداء، ونطرحها في القسمة، ونضربها في قوة القوة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من إشارة كل أس."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 0{,}09 \\times 10^{-4} = 9 \\times 10^{-6}$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}5 \\times 0{,}06 = 0{,}09 = 9 \\times 10^{-2}$",
+          "$E = 9 \\times 10^{-2} \\times 10^{-4} = 9 \\times 10^{-6}$"
+        ],
+        "result": "E = 9 \\times 10^{-6}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "اكتب بسط $G$ على الشكل $2^n$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-QUWA-PRODUCT-MULTIPLY-EXP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب كل عدد على شكل قوة للأساس نفسه (مثلًا العدد 8 قوة للعدد 2)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تنسَ أن $a = a^1$ ، ثم طبّق قواعد الحساب على القوى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أس البسط ثم أس المقام، ثم اطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$16 \\times 2^5 = 2^4 \\times 2^5 = 2^9$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$16 = 2^{4}$",
+          "$2^{4} \\times 2^{5} = 2^{9}$"
+        ],
+        "result": "n = 9"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "اكتب $G$ على شكل قوة لعدد نسبي $2^n$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "-7",
+          "id": "MISC-QUWA-EXP-SIGN-SLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "البسط والمقام قوتان للأساس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل قسمة قوتين لهما الأساس نفسه: نطرح أس المقام من أس البسط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طرح أسّ سالب يعني إضافة معاكسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$G = \\dfrac{2^9}{2^4} = 2^5$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "المقام: $2^{10} \\times 2^{-6} = 2^{4}$",
+          "$G = \\dfrac{2^{9}}{2^{4}} = 2^{5}$"
+        ],
+        "result": "G = 2^{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب قيمة $G$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "32",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-QUWA-POWER-AS-PRODUCT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$a^n$ جداء $n$ عاملًا كلها مساوية للعدد $a$ ، وليس $a \\times n$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوة عدد سالب موجبة إذا كان الأس زوجيًا، وسالبة إذا كان الأس فرديًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه للأقواس: في $-a^n$ يخصّ الأس العدد $a$ وحده، ثم نأخذ المعاكس."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^5 = 32$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$G = 2^{5} = 32$"
+        ],
+        "result": "G = 32"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

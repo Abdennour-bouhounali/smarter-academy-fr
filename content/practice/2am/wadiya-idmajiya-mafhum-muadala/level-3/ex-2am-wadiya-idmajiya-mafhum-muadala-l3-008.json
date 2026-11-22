@@ -1,0 +1,234 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-mafhum-muadala-l3-008",
+  "lessonCode": "wadiya-idmajiya-mafhum-muadala",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — ورشتان لطباعة قمصان",
+    "estimatedMinutes": 11,
+    "tags": [
+      "جدول قيم",
+      "اختبار مساواة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "تحتسب الورشة $A$ مبلغ $1500$ DA ثابتًا و $90$ DA عن كلّ قميص ، وتحتسب الورشة $B$ مبلغ $900$ DA ثابتًا و $120$ DA عن كلّ قميص . نسمّي $n$ عدد القمصان ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أكمل الجدول : ما ثمن $n = 20$ قميصًا في الورشة $A$ بالدينار ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "3300",
+      "misconceptionSignatures": [
+        {
+          "value": "1800",
+          "id": "MISC-SYN-MUAD2-FIXED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بقيمته المعلومة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات : الضرب والقسمة قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة."
+        }
+      ],
+      "feedback": {
+        "correct": "النتيجة $3300$ .",
+        "incorrect": "عوّض بالقيم المعلومة واحسب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$1500+90 \\times 20 = 3300$ ."
+        ],
+        "result": "3300"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أكمل الجدول : ما ثمن $n = 20$ قميصًا في الورشة $B$ بالدينار ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "3300",
+      "misconceptionSignatures": [
+        {
+          "value": "2400",
+          "id": "MISC-SYN-MUAD2-FIXED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بقيمته المعلومة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات : الضرب والقسمة قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة."
+        }
+      ],
+      "feedback": {
+        "correct": "النتيجة $3300$ .",
+        "incorrect": "عوّض بالقيم المعلومة واحسب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$900+120 \\times 20 = 3300$ ."
+        ],
+        "result": "3300"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل المساواة $1500+90n = 900+120n$ صحيحة من أجل $n = 20$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "feedback": {
+        "correct": "نعم .",
+        "incorrect": "عوّض الحرف في الطرفين، احسب كلّ طرف ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل : $1500+90 \\times 20 = 3300$ .",
+          "الطرف الثاني : $900+120 \\times 20 = 3300$ .",
+          "$3300 = 3300$ : الطرفان متساويان، فالمساواة صحيحة ."
+        ]
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بقيمته المعطاة في الطرفين معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة ثمّ قارن الناتجين بالرمز المكتوب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الرمز « أصغر أو يساوي » يقبل التساوي، والرمز « أصغر تمامًا » لا يقبله."
+        }
+      ],
+      "timeSeconds": 70
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "ما ثمن $n = 30$ قميصًا في الورشة $B$ بالدينار ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "4500",
+      "misconceptionSignatures": [
+        {
+          "value": "3600",
+          "id": "MISC-SYN-MUAD2-FIXED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بقيمته المعلومة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات : الضرب والقسمة قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة."
+        }
+      ],
+      "feedback": {
+        "correct": "النتيجة $4500$ .",
+        "incorrect": "عوّض بالقيم المعلومة واحسب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$900+120 \\times 30 = 4500$ ."
+        ],
+        "result": "4500"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

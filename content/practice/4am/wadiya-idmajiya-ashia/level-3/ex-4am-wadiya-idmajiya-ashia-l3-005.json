@@ -1,0 +1,213 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ashia-l3-005",
+  "lessonCode": "wadiya-idmajiya-ashia",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — معبر على وادي ميزاب",
+    "estimatedMinutes": 5,
+    "tags": [
+      "أقصر مسلك"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ashia_P1",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "في غرداية، معبر حجري [MN] عمودي على ضفتي وادي ميزاب، والمسافة بين الضفتين $8\\,\\mathrm{m}$ (الشكل). البيت A فوق الضفة العليا بـ $12\\,\\mathrm{m}$ ، والبستان B تحت الضفة السفلى بـ $4\\,\\mathrm{m}$ ، والمسافة الأفقية بينهما $12\\,\\mathrm{m}$ .",
+    "figure": {
+      "points": {
+        "R1": [
+          -1.7999999999999998,
+          8
+        ],
+        "R2": [
+          13.799999999999999,
+          8
+        ],
+        "R3": [
+          13.799999999999999,
+          0
+        ],
+        "R4": [
+          -1.7999999999999998,
+          0
+        ],
+        "A": [
+          0,
+          20
+        ],
+        "HA": [
+          0,
+          8
+        ],
+        "B": [
+          12,
+          -4
+        ],
+        "HB": [
+          12,
+          0
+        ],
+        "K": [
+          12,
+          8
+        ],
+        "M": [
+          10,
+          8
+        ],
+        "N": [
+          10,
+          0
+        ],
+        "W1": [
+          13.319999999999999,
+          8
+        ],
+        "W0": [
+          13.319999999999999,
+          0
+        ]
+      },
+      "polygons": [
+        {
+          "points": [
+            "R1",
+            "R2",
+            "R3",
+            "R4"
+          ],
+          "tone": "slate"
+        }
+      ],
+      "segments": [
+        {
+          "from": "R1",
+          "to": "R2",
+          "bold": true
+        },
+        {
+          "from": "R4",
+          "to": "R3",
+          "bold": true
+        },
+        {
+          "from": "A",
+          "to": "HA",
+          "dashed": true,
+          "label": "12 m"
+        },
+        {
+          "from": "HB",
+          "to": "B",
+          "dashed": true,
+          "label": "4 m"
+        },
+        {
+          "from": "HA",
+          "to": "K",
+          "dashed": true,
+          "tone": "sky",
+          "label": "12 m"
+        },
+        {
+          "from": "W1",
+          "to": "W0",
+          "label": "8 m"
+        },
+        {
+          "from": "A",
+          "to": "M",
+          "tone": "amber"
+        },
+        {
+          "from": "M",
+          "to": "N",
+          "bold": true,
+          "tone": "indigo"
+        },
+        {
+          "from": "N",
+          "to": "B",
+          "tone": "amber"
+        }
+      ],
+      "rightAngles": [
+        [
+          "R1",
+          "M",
+          "N"
+        ]
+      ],
+      "hidden": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "HA",
+        "HB",
+        "K",
+        "W1",
+        "W0"
+      ],
+      "labels": {
+        "A": "n",
+        "B": "s",
+        "M": "ne",
+        "N": "se"
+      },
+      "ariaLabel": "طريق عرضه 8 m بين حافتين متوازيتين، A فوق الحافة العليا بـ 12 m و B تحت الحافة السفلى بـ 4 m، والمسافة الأفقية بينهما 12 m، والممر [MN] عمودي على الحافتين"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما طول أقصر مسلك من A إلى B (بالمتر)؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "28",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "B′ داخل الوادي، فوق الضفة السفلى بـ 4."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة الشاقولية بين A و B′ هي 16."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "فيثاغورس ثم أضف 8."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB' = \\sqrt{12^2 + 16^2} = 20$ و $L = 20 + 8 = 28\\,\\mathrm{m}$ .",
+        "incorrect": "المسافة الشاقولية بين A و B′ تساوي $12 + 4 = 16\\,\\mathrm{m}$ ."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 3,
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-SHUAA-MAMAR-NASI"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,276 @@
+{
+  "id": "ex-4am-talis-hisab-atwal-l5-008",
+  "lessonCode": "talis-hisab-atwal",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2021 — السلّم المزدوج والحبل",
+    "estimatedMinutes": 20,
+    "tags": [
+      "وضعية إدماجية",
+      "خاصية طالس",
+      "معامل التصغير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_talis-hisab-atwal_P2",
+      "modelledOn": "BEM 2021 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "سلّم مزدوج على شكل الحرف A : رجلاه $[SA]$ و $[SB]$ متقايستان طول كل منهما $2{,}5\\,\\mathrm{m}$ ، وقدماه $A$ و $B$ على أرض أفقية حيث $AB = 1{,}5\\,\\mathrm{m}$ . حرصًا على سلامة من يصعد عليه ولمنع انزلاق الرجلين يُربط حبل مشدود $[MN]$ موازٍ للأرض، حيث $M$ من $[SA]$ و $N$ من $[SB]$ و $SM = SN = 1{,}8\\,\\mathrm{m}$ .",
+    "figure": {
+      "points": {
+        "S": [
+          0.0,
+          2.384848003542
+        ],
+        "A": [
+          -0.75,
+          0.0
+        ],
+        "B": [
+          0.75,
+          0.0
+        ],
+        "M": [
+          -0.54,
+          0.667757440992
+        ],
+        "N": [
+          0.54,
+          0.667757440992
+        ]
+      },
+      "segments": [
+        {
+          "from": "S",
+          "to": "M",
+          "label": "1,8"
+        },
+        {
+          "from": "M",
+          "to": "A"
+        },
+        {
+          "from": "S",
+          "to": "B",
+          "label": "2,5"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "label": "1,5",
+          "arrows": 1
+        },
+        {
+          "from": "M",
+          "to": "N",
+          "arrows": 1
+        }
+      ],
+      "ariaLabel": "السلم المزدوج: الرجلان [SA] و [SB] والأرض [AB]، والحبل [MN] يوازي (AB)؛ SA = SB = 2,5 و AB = 1,5 و SM = SN = 1,8",
+      "maxWidth": 260
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب طول الحبل $MN$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "1,08",
+      "misconceptionSignatures": [
+        {
+          "value": "25/12",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "0,42",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقط $S$ ، $M$ ، $A$ على استقامة والنقط $S$ ، $N$ ، $B$ على استقامة، و $(MN) \\parallel (AB)$ : المثلثان $SMN$ و $SAB$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب النسب الثلاث المتساوية $\\dfrac{SM}{SA} = \\dfrac{SN}{SB} = \\dfrac{MN}{AB}$ ، واحتفظ بالمساواة التي فيها $MN$ وثلاثة أطوال معلومة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الطول المجهول بالجداء المتصالب (الرابع المتناسب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$MN = \\dfrac{1{,}5 \\times 1{,}8}{2{,}5} = 1{,}08\\,\\mathrm{m}$ .",
+        "incorrect": "راجع المساواة المختارة: في كل نسبة طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: النقط $S$ ، $M$ ، $A$ على استقامة واحدة، والنقط $S$ ، $N$ ، $B$ على استقامة واحدة، و $(MN) \\parallel (AB)$ (من المعطيات) .",
+          "حسب خاصية طالس: $\\dfrac{SM}{SA} = \\dfrac{SN}{SB} = \\dfrac{MN}{AB}$",
+          "$\\dfrac{1{,}8}{2{,}5} = \\dfrac{MN}{1{,}5}$",
+          "$MN = \\dfrac{1{,}5 \\times 1{,}8}{2{,}5}$"
+        ],
+        "result": "MN = 1{,}08\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب معامل التصغير $k$ الذي يحوّل المثلث $SAB$ إلى المثلث $SMN$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري أو كسر",
+      "expectedAnswer": "0,72",
+      "misconceptionSignatures": [
+        {
+          "value": "25/18",
+          "id": "MISC-TALIS-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$k = \\dfrac{SM}{SA}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$k = \\dfrac{1{,}8}{2{,}5} = 0{,}72$ .",
+        "incorrect": "معامل التناسبية k = (طول في المثلث الناتج) ÷ (الطول الموافق له في المثلث الأصلي)؛ راجع أي المثلثين هو الأصلي."
+      },
+      "solution": {
+        "lines": [
+          "$k = \\dfrac{SM}{SA} = \\dfrac{1{,}8}{2{,}5}$"
+        ],
+        "result": "k = 0{,}72"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "يريد صاحب السلّم تثبيت رفّ أفقي $[PQ]$ طوله $0{,}9\\,\\mathrm{m}$ بين الرجلين ( $P$ من $[SA]$ و $Q$ من $[SB]$ ). على أي بعد $SP$ من القمة $S$ يُثبَّت الرف؟",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المسافة بـ m",
+      "expectedAnswer": "1,5",
+      "misconceptionSignatures": [
+        {
+          "value": "0,54",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(PQ) \\parallel (AB)$ : المثلثان $SPQ$ و $SAB$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $\\dfrac{SP}{SA} = \\dfrac{PQ}{AB}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$SP = \\dfrac{2{,}5 \\times 0{,}9}{1{,}5} = 1{,}5\\,\\mathrm{m}$ .",
+        "incorrect": "راجع المساواة المختارة: في كل نسبة طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "$(PQ) \\parallel (AB)$ ، حسب خاصية طالس: $\\dfrac{SP}{SA} = \\dfrac{SQ}{SB} = \\dfrac{PQ}{AB}$",
+          "$\\dfrac{SP}{2{,}5} = \\dfrac{0{,}9}{1{,}5}$",
+          "$SP = \\dfrac{2{,}5 \\times 0{,}9}{1{,}5}$"
+        ],
+        "result": "SP = 1{,}5\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "☜ يُضاف إلى الحبل $0{,}32\\,\\mathrm{m}$ للعقدتين، ويُباع الحبل بـ $150DA$ للمتر الواحد. ما ثمن الحبل اللازم؟",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الثمن بـ DA",
+      "expectedAnswer": "210",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول الحبل اللازم = $MN$ + طول العقدتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}08 + 0{,}32 = 1{,}4\\,\\mathrm{m}$ و $1{,}4 \\times 150 = 210DA$ .",
+        "incorrect": "أضف طول العقدتين إلى $MN$ ، ثم اضرب في 150."
+      },
+      "solution": {
+        "lines": [
+          "طول الحبل: $1{,}08 + 0{,}32 = 1{,}4\\,\\mathrm{m}$",
+          "الثمن: $1{,}4 \\times 150$"
+        ],
+        "result": "210\\,DA"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

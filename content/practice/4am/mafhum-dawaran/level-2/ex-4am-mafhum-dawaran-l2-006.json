@@ -1,0 +1,93 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l2-006",
+  "lessonCode": "mafhum-dawaran",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — مركز غير مبدأ المعلم",
+    "estimatedMinutes": 3,
+    "tags": [
+      "صورة نقطة",
+      "المرصوفة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mafhum-dawaran_P2",
+      "modelledOn": "ex-7"
+    }
+  },
+  "statement": {
+    "content": "على المرصوفة: $\\Omega(1\\,;\\,1)$ و $P(4\\,;\\,2)$ . P′ صورة P بالدوران الذي مركزه Ω وزاويته $90^\\circ$ في الاتجاه المباشر.",
+    "figure": {
+      "points": {
+        "Ω": [
+          1,
+          1
+        ],
+        "P": [
+          4,
+          2
+        ]
+      },
+      "grid": true,
+      "maxWidth": 420,
+      "ariaLabel": "ورقة مرصوفة عليها النقطتان Ω و P"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما هما إحداثيتا P′؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الإحداثيتان (x ; y) — عددان صحيحان",
+      "expectedAnswer": {
+        "x": "0",
+        "y": "4"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-MARKAZ",
+          "value": {
+            "x": "-2",
+            "y": "4"
+          }
+        },
+        {
+          "id": "MISC-DAWARAN-ITTIJAH",
+          "value": {
+            "x": "2",
+            "y": "-2"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المركز هنا Ω لا مبدأ المعلم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الإزاحة من Ω إلى P ثم دوّرها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف الإزاحة المدوّرة إلى إحداثيتي Ω."
+        }
+      ],
+      "feedback": {
+        "correct": "من Ω إلى P: (3 ; 1) تصبح (−1 ; 3)، و $P'(1 - 1\\,;\\,1 + 3) = (0\\,;\\,4)$ .",
+        "incorrect": "دوّر حول Ω: انطلق من Ω لا من مبدأ المعلم."
+      },
+      "difficulty": 3
+    }
+  ]
+}

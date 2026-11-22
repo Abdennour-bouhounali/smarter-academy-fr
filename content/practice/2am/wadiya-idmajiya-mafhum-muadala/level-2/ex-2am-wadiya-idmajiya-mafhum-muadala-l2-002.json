@@ -1,0 +1,139 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-mafhum-muadala-l2-002",
+  "lessonCode": "wadiya-idmajiya-mafhum-muadala",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — أجرة سيّارة أجرة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "جزء ثابت",
+      "معادلة بعمليّتين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تحتسب سيّارة أجرة $50$ DA عند الركوب ، ثمّ $35$ DA عن كلّ كيلومتر . نسمّي $d$ عدد الكيلومترات ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب أجرة مشوار طوله $12\\,\\mathrm{km}$ بالدينار ، علمًا أنّها تساوي $50+35d$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "470",
+      "misconceptionSignatures": [
+        {
+          "value": "420",
+          "id": "MISC-SYN-MUAD2-FIXED"
+        },
+        {
+          "value": "1020",
+          "id": "MISC-SYN-MUAD2-ADDCOEF"
+        },
+        {
+          "value": "635",
+          "id": "MISC-SYN-MUAD2-ROLE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بقيمته المعلومة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات : الضرب والقسمة قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة."
+        }
+      ],
+      "feedback": {
+        "correct": "النتيجة $470$ .",
+        "incorrect": "عوّض بالقيم المعلومة واحسب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$50+35 \\times 12 = 470$ ."
+        ],
+        "result": "470"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "دفع زبون $330$ DA . أوجد طول مشواره بحلّ المعادلة : $35d+50 = 330$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "280",
+          "id": "MISC-MAJHUL-SUBFORM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في المعادلة ما يُفعل بالمجهول : ضرب أو قسمة أو جمع أو طرح، وما هي آخر عملية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ألغِ آخر عملية أُجريت على المجهول أوّلًا، ثمّ ألغِ ما بقي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من حلّك : عوّض المجهول بقيمته وأنجز العملية، فإن وجدت الطرف الآخر فالحلّ صحيح."
+        }
+      ],
+      "feedback": {
+        "correct": "$d = 8$ .",
+        "incorrect": "ابحث عن العدد الذي يجعل المساواة صحيحة بالعملية العكسية، ثمّ تحقّق منه بإنجاز العملية."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية هي جمع $50$ : $35d = 330-50 = 280$ .",
+          "$d = 280 \\div 35 = 8$ .",
+          "التحقّق : $35 \\times 8+50 = 330$ ."
+        ],
+        "result": "8"
+      },
+      "work": "optional",
+      "timeSeconds": 85
+    }
+  ]
+}

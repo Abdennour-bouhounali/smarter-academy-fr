@@ -1,0 +1,368 @@
+{
+  "_comment": "« حصّة القسم » — the DEFAULT class tests of lesson « قواسم عدد طبيعي » (docs/architecture/CLASS_SESSION.md). `start` opens the hour: the earlier الكفاءة the lesson stands on (recognising a divisor), then two questions of the NEW lesson (`teaser`: most of the class will miss them — they are asked again at the end, with other numbers). `end` closes it. `pool` holds more prepared questions a teacher may add to his own copy. Every question carries a `check` from which its answer is RE-COMPUTED by a test (defaultTests.test.js): a default test never ships a wrong answer.",
+  "lesson": "qawasim-adad-tabii",
+  "grade": "4am",
+  "version": 1,
+  "start": [
+    {
+      "id": "s1",
+      "item": "4am.m1.r01",
+      "kind": "truefalse",
+      "text": "7 قاسم للعدد 91.",
+      "answer": true,
+      "check": {
+        "type": "divisor",
+        "a": 91,
+        "b": 7
+      }
+    },
+    {
+      "id": "s2",
+      "item": "4am.m1.r01",
+      "kind": "choice",
+      "text": "أيّ مساواة تبيّن أنّ 9 قاسم للعدد 72؟",
+      "options": [
+        "$72 = 9 \\times 7 + 9$",
+        "$72 = 9 \\times 8$",
+        "$72 = 8 \\times 8 + 8$"
+      ],
+      "answer": 1,
+      "check": {
+        "type": "productProof",
+        "a": 72,
+        "b": 9
+      }
+    },
+    {
+      "id": "s3",
+      "item": "4am.m1.r01",
+      "kind": "number",
+      "text": "ما هو باقي القسمة الإقليدية للعدد 85 على 6؟",
+      "answer": 1,
+      "check": {
+        "type": "remainder",
+        "a": 85,
+        "b": 6
+      }
+    },
+    {
+      "id": "s4",
+      "item": "4am.m1.r01",
+      "kind": "truefalse",
+      "text": "6 قاسم للعدد 50.",
+      "answer": false,
+      "check": {
+        "type": "divisor",
+        "a": 50,
+        "b": 6
+      }
+    },
+    {
+      "id": "s5",
+      "item": "4am.m1.r01",
+      "kind": "choice",
+      "text": "نعلم أنّ $84 = 7 \\times 12$. أيّ جملة صحيحة؟",
+      "options": [
+        "7 قاسم للعدد 84",
+        "84 قاسم للعدد 7",
+        "7 مضاعف للعدد 84"
+      ],
+      "answer": 0,
+      "check": {
+        "type": "phrase",
+        "a": 84,
+        "b": 7,
+        "forms": [
+          "b_divides_a",
+          "a_divides_b",
+          "b_multiple_of_a"
+        ]
+      }
+    },
+    {
+      "id": "s6",
+      "item": "4am.m1.r01",
+      "kind": "choice",
+      "text": "أيّ هذه الأعداد قاسم للعدد 45؟",
+      "options": [
+        "6",
+        "9",
+        "10"
+      ],
+      "answer": 1,
+      "check": {
+        "type": "pickDivisor",
+        "a": 45
+      }
+    },
+    {
+      "id": "s7",
+      "item": "4am.m1.r01",
+      "kind": "truefalse",
+      "text": "العدد 1 قاسم للعدد 67، والعدد 67 قاسم لنفسه.",
+      "answer": true,
+      "check": {
+        "type": "oneAndItself",
+        "a": 67
+      }
+    },
+    {
+      "id": "s8",
+      "item": "1am.m3.r02",
+      "kind": "truefalse",
+      "text": "العدد 138 يقبل القسمة على 3.",
+      "answer": true,
+      "check": {
+        "type": "divisible",
+        "a": 138,
+        "k": 3
+      }
+    },
+    {
+      "id": "s9",
+      "item": "4am.m1.r02",
+      "teaser": true,
+      "kind": "number",
+      "text": "نعلم أنّ 4 قاسم للعدد 52. ما هو القاسم الآخر الذي تعطيه المساواة $52 = 4 \\times \\dots$؟",
+      "answer": 13,
+      "check": {
+        "type": "partner",
+        "a": 52,
+        "b": 4
+      }
+    },
+    {
+      "id": "s10",
+      "item": "4am.m1.r02",
+      "teaser": true,
+      "kind": "number",
+      "text": "كم قاسمًا للعدد 12؟",
+      "answer": 6,
+      "check": {
+        "type": "divisorCount",
+        "a": 12
+      }
+    }
+  ],
+  "end": [
+    {
+      "id": "e1",
+      "item": "4am.m1.r02",
+      "pairOf": "s9",
+      "kind": "number",
+      "text": "نعلم أنّ 6 قاسم للعدد 78. ما هو القاسم الآخر الذي تعطيه المساواة $78 = 6 \\times \\dots$؟",
+      "answer": 13,
+      "check": {
+        "type": "partner",
+        "a": 78,
+        "b": 6
+      }
+    },
+    {
+      "id": "e2",
+      "item": "4am.m1.r02",
+      "pairOf": "s10",
+      "kind": "number",
+      "text": "كم قاسمًا للعدد 18؟",
+      "answer": 6,
+      "check": {
+        "type": "divisorCount",
+        "a": 18
+      }
+    },
+    {
+      "id": "e3",
+      "item": "4am.m1.r02",
+      "kind": "choice",
+      "text": "ما هي كلّ قواسم العدد 20؟",
+      "options": [
+        "1 ، 2 ، 4 ، 5 ، 10",
+        "2 ، 4 ، 5 ، 10 ، 20",
+        "1 ، 2 ، 4 ، 5 ، 10 ، 20"
+      ],
+      "answer": 2,
+      "check": {
+        "type": "divisorSet",
+        "a": 20
+      }
+    },
+    {
+      "id": "e4",
+      "item": "4am.m1.r02",
+      "kind": "number",
+      "text": "لتعيين كلّ قواسم العدد 70 نجرّب القسمة على 1 ثمّ 2 ثمّ 3… ما هو آخر عدد نجرّبه؟",
+      "answer": 8,
+      "check": {
+        "type": "stopAt",
+        "a": 70
+      }
+    },
+    {
+      "id": "e5",
+      "item": "4am.m1.r02",
+      "kind": "truefalse",
+      "text": "لتعيين كلّ قواسم العدد 40 يجب أن نجرّب القسمة حتّى العدد 20.",
+      "answer": false,
+      "check": {
+        "type": "stopClaim",
+        "a": 40,
+        "upTo": 20
+      }
+    },
+    {
+      "id": "e6",
+      "item": "1am.m3.r02",
+      "kind": "truefalse",
+      "text": "العدد 252 يقبل القسمة على 9.",
+      "answer": true,
+      "check": {
+        "type": "divisible",
+        "a": 252,
+        "k": 9
+      }
+    },
+    {
+      "id": "e7",
+      "item": "4am.m1.r02",
+      "kind": "number",
+      "text": "كم قاسمًا للعدد 31؟",
+      "answer": 2,
+      "check": {
+        "type": "divisorCount",
+        "a": 31
+      }
+    },
+    {
+      "id": "e8",
+      "item": "4am.m1.r02",
+      "kind": "choice",
+      "text": "نعلم أنّ $48 = 6 \\times 8$. ماذا نستنتج؟",
+      "options": [
+        "6 قاسم للعدد 48 فقط",
+        "6 و 8 قاسمان للعدد 48",
+        "48 قاسم للعددين 6 و 8"
+      ],
+      "answer": 1,
+      "check": {
+        "type": "twoDivisors",
+        "a": 48,
+        "b": 6,
+        "forms": [
+          "onlyFirst",
+          "both",
+          "reversed"
+        ]
+      }
+    }
+  ],
+  "pool": [
+    {
+      "id": "p1",
+      "item": "4am.m1.r01",
+      "kind": "truefalse",
+      "text": "8 قاسم للعدد 104.",
+      "answer": true,
+      "check": {
+        "type": "divisor",
+        "a": 104,
+        "b": 8
+      }
+    },
+    {
+      "id": "p2",
+      "item": "4am.m1.r01",
+      "kind": "number",
+      "text": "ما هو باقي القسمة الإقليدية للعدد 97 على 8؟",
+      "answer": 1,
+      "check": {
+        "type": "remainder",
+        "a": 97,
+        "b": 8
+      }
+    },
+    {
+      "id": "p3",
+      "item": "4am.m1.r02",
+      "kind": "number",
+      "text": "نعلم أنّ 7 قاسم للعدد 91. ما هو القاسم الآخر الذي تعطيه المساواة $91 = 7 \\times \\dots$؟",
+      "answer": 13,
+      "check": {
+        "type": "partner",
+        "a": 91,
+        "b": 7
+      }
+    },
+    {
+      "id": "p4",
+      "item": "4am.m1.r02",
+      "kind": "number",
+      "text": "كم قاسمًا للعدد 16؟",
+      "answer": 5,
+      "check": {
+        "type": "divisorCount",
+        "a": 16
+      }
+    },
+    {
+      "id": "p5",
+      "item": "4am.m1.r02",
+      "kind": "number",
+      "text": "لتعيين كلّ قواسم العدد 150 نجرّب القسمة على 1 ثمّ 2 ثمّ 3… ما هو آخر عدد نجرّبه؟",
+      "answer": 12,
+      "check": {
+        "type": "stopAt",
+        "a": 150
+      }
+    },
+    {
+      "id": "p6",
+      "item": "4am.m1.r02",
+      "kind": "choice",
+      "text": "ما هي كلّ قواسم العدد 28؟",
+      "options": [
+        "1 ، 2 ، 4 ، 7 ، 14 ، 28",
+        "1 ، 2 ، 4 ، 7 ، 14",
+        "2 ، 4 ، 7 ، 14 ، 28"
+      ],
+      "answer": 0,
+      "check": {
+        "type": "divisorSet",
+        "a": 28
+      }
+    },
+    {
+      "id": "p7",
+      "item": "1am.m3.r02",
+      "kind": "truefalse",
+      "text": "العدد 1305 يقبل القسمة على 5.",
+      "answer": true,
+      "check": {
+        "type": "divisible",
+        "a": 1305,
+        "k": 5
+      }
+    },
+    {
+      "id": "p8",
+      "item": "4am.m1.r02",
+      "kind": "choice",
+      "text": "نعلم أنّ $63 = 7 \\times 9$. ماذا نستنتج؟",
+      "options": [
+        "63 قاسم للعددين 7 و 9",
+        "7 قاسم للعدد 63 فقط",
+        "7 و 9 قاسمان للعدد 63"
+      ],
+      "answer": 2,
+      "check": {
+        "type": "twoDivisors",
+        "a": 63,
+        "b": 7,
+        "forms": [
+          "reversed",
+          "onlyFirst",
+          "both"
+        ]
+      }
+    }
+  ]
+}

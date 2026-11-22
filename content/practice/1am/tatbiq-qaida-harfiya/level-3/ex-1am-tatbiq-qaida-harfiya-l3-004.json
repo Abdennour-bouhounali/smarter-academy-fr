@@ -1,0 +1,262 @@
+{
+  "id": "ex-1am-tatbiq-qaida-harfiya-l3-004",
+  "lessonCode": "tatbiq-qaida-harfiya",
+  "level": 3,
+  "metadata": {
+    "title": "عمود في المجدول",
+    "estimatedMinutes": 10,
+    "tags": [
+      "مجدول",
+      "صيغة",
+      "سلسلة قيم"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ict-ex",
+      "page": 88,
+      "section": "تمرين"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين الثاني",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "في مجدول تحسب الخانة B2 قيمة العبارة $5x+2$ حيث $x$ مكتوب في الخانة A2 ، وتُنسخ الصيغة نفسها في الأسفل."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما الصيغة التي تُكتب في الخانة B2 ؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$=5A2+2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-NOSIGN"
+        },
+        {
+          "id": "B",
+          "content": "$=5+A2+2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-PLUS"
+        },
+        {
+          "id": "C",
+          "content": "$=5*A2+2$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة المحذوفة بين العدد والحرف أو بين حرفين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حذف الإشارة يعني ضربًا، ونكتب العدد قبل الحرف."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب قيمة صغيرة للحرف في كلّ اقتراح وقارن مع العبارة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "في المجدول نكتب إشارة الضرب دائمًا.",
+        "incorrect": "في المجدول لا تُحذف إشارة الضرب: نكتب $7*A2$ لا $7A2$ ، وإلّا لم يفهم المجدول الصيغة."
+      },
+      "solution": {
+        "lines": [
+          "في المجدول تُكتب إشارة الضرب بنجمة: $=5*A2+2$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما القيمة التي تظهر في الصفّ الذي فيه $x=3$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "17",
+      "misconceptionSignatures": [
+        {
+          "value": "55",
+          "id": "MISC-TATBIQ-GLUED"
+        },
+        {
+          "value": "10",
+          "id": "MISC-TATBIQ-PLUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما قيمة كلّ حرف؟ وفي كم موضع يظهر كلّ حرف في العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع القيمة في كلّ موضع يظهر فيه الحرف، وأعد إشارة الضرب بين العددين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب بالأولويات: ما بين القوسين، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: النتيجة $17$ .",
+        "incorrect": "بين العدد والحرف إشارة ضرب لا تُكتب: عند التعويض نُعيدها، فنحسب جداءً لا عددًا من رقمين."
+      },
+      "solution": {
+        "lines": [
+          "نكتب العبارة: $5\\times x+2$ .",
+          "نضع قيمة كلّ حرف في كلّ موضع يظهر فيه: $5\\times 3+2$ .",
+          "نحسب: $15+2$ .",
+          "نحسب: $17$ .",
+          "الجواب: $17$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما القيمة التي تظهر في الصفّ الذي فيه $x=8$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "42",
+      "misconceptionSignatures": [
+        {
+          "value": "60",
+          "id": "MISC-TATBIQ-GLUED"
+        },
+        {
+          "value": "15",
+          "id": "MISC-TATBIQ-PLUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما قيمة كلّ حرف؟ وفي كم موضع يظهر كلّ حرف في العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع القيمة في كلّ موضع يظهر فيه الحرف، وأعد إشارة الضرب بين العددين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب بالأولويات: ما بين القوسين، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: النتيجة $42$ .",
+        "incorrect": "بين العدد والحرف إشارة ضرب لا تُكتب: عند التعويض نُعيدها، فنحسب جداءً لا عددًا من رقمين."
+      },
+      "solution": {
+        "lines": [
+          "نكتب العبارة: $5\\times x+2$ .",
+          "نضع قيمة كلّ حرف في كلّ موضع يظهر فيه: $5\\times 8+2$ .",
+          "نحسب: $40+2$ .",
+          "نحسب: $42$ .",
+          "الجواب: $42$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "يُظهر المجدول $17$ في الصفّ الذي فيه $x=10$ .",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-PLUS"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بقيمته في كلّ موضع ولا تحذف إشارة الضرب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب ما بين القوسين أوّلًا إن وُجدا، ثمّ الضرب والقسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب القيمة بنفسك ثمّ قارنها بالاقتراحات."
+        }
+      ],
+      "feedback": {
+        "correct": "الحكم بالحساب لا بالتخمين.",
+        "incorrect": "حذف إشارة الضرب لا يعني الجمع: $3x$ تعني $3\\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "نكتب العبارة: $5\\times x+2$ .",
+          "نضع قيمة كلّ حرف في كلّ موضع يظهر فيه: $5\\times 10+2$ .",
+          "نحسب: $50+2$ .",
+          "نحسب: $52$ .",
+          "الجواب: $52$ .",
+          "الحكم: خطأ ، فالقيمة الصحيحة $52$ لا $17$ ."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

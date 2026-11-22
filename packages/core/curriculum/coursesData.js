@@ -1,3027 +1,291 @@
 // `with { type: 'json' }` so this module also loads under plain Node (the
 // curriculum export script) — Vite/vitest accept the attribute too.
-import officialProgram from './smarter_academy_programmes_maths_2026.json' with { type: 'json' };
+// Le programme algérien officiel — la source unique des intitulés arabes.
+import programme4am from './dz/programme_4am_2026_2027.json' with { type: 'json' };
+// Le découpage en leçons de ce programme (phase 7) — dérivé du précédent,
+// jamais concurrent : chaque leçon y déclare le sujet officiel dont elle vient.
+import lessons4am from './dz/lessons_4am_2026_2027.json' with { type: 'json' };
+import units4am from './dz/units_4am_2026_2027.json' with { type: 'json' };
+// 1AM–3AM (2026-10-14, phase 2 du déploiement du cycle moyen) : même trio, leçons
+// `coming_soon` tant qu'elles ne sont pas générées (docs/architecture/LEARNING_NET.md).
+import programme1am from './dz/programme_1am_2026_2027.json' with { type: 'json' };
+import lessons1am from './dz/lessons_1am_2026_2027.json' with { type: 'json' };
+import units1am from './dz/units_1am_2026_2027.json' with { type: 'json' };
+import programme2am from './dz/programme_2am_2026_2027.json' with { type: 'json' };
+import lessons2am from './dz/lessons_2am_2026_2027.json' with { type: 'json' };
+import units2am from './dz/units_2am_2026_2027.json' with { type: 'json' };
+import programme3am from './dz/programme_3am_2026_2027.json' with { type: 'json' };
+import lessons3am from './dz/lessons_3am_2026_2027.json' with { type: 'json' };
+import units3am from './dz/units_3am_2026_2027.json' with { type: 'json' };
+import { filterActiveCourseLevels } from './activeGrades.js';
 
-// --- Métadonnées Smarter Academy ---
-// Ces données enrichissent les objets officiels sans en modifier la liste.
+
+// ── LE CATALOGUE ALGÉRIEN ────────────────────────────────────────────────
 //
-// Each entry is a single lesson-meta object: one lesson per official
-// curriculum object. (An earlier revision split larger notions into
-// "Partie 1 / Partie 2" lessons to respect a 45-minute-per-lesson cap; that
-// split has been retired — every official object now maps to exactly one
-// catalogue lesson, regardless of its total estimated teaching time.)
+// Construit ENTIÈREMENT depuis dz/programme_4am_2026_2027.json, jamais
+// retapé. C'est l'invariant I1 de la phase 6F : le programme fourni par le
+// propriétaire est la seule source des intitulés arabes, et tout ce qui suit
+// en dérive —
 //
-// `durationMinutes` is the authored duration estimate (number); the display
-// string `duration` is derived from it in buildLesson.
+//   programme_4am_2026_2027.json → buildDzCourseLevels() → coursesData.js
+//     → exportCurriculum.mjs → curriculum-export.json
+//     → smarter:import-curriculum → chapters.topics
 //
-// `tier` ('free' | 'premium') is the content-tier flag introduced for the
-// visitor/free-account/premium distinction. There is no subscription/
-// entitlement system yet — this only controls what a visitor or free account
-// can open today (see lessonAccess.js's isLessonUnlocked). Defaults to
-// 'premium' when omitted. Every lesson is currently 'free' — the
-// free/premium split is not enforced yet; flip individual lessons back to
-// 'premium' once the entitlement model is ready.
-const smaMetadata = {
-  '6e_nombres_entiers': {
-    id: 'nombres-entiers',
-    description: "Comprendre ce qu'est vraiment un grand nombre : le construire avec du matériel base 10, lire la valeur de chaque chiffre, décomposer et recomposer, puis comparer, ranger et encadrer les grands nombres, les repérer sur une demi-droite graduée et les interpréter dans des problèmes.",
-    prerequisites: ["Numération décimale", "Lecture et écriture des nombres"],
-    pointsToLearn: [
-      "Construire un nombre avec du matériel base 10",
-      "Lire et écrire les nombres, en chiffres et en lettres",
-      "Comprendre la valeur de position de chaque chiffre",
-      "Décomposer et recomposer les nombres entiers",
-      "Comparer, ranger et encadrer",
-      "Repérer sur une demi-droite graduée",
-      "Résoudre des problèmes en interprétant les nombres",
-    ],
-    durationMinutes: 83,
-    difficulty: 'Facile',
-    status: 'available',
-    icon: '🔢',
-    tier: 'free',
-  },
-  '6e_nombres_decimaux': {
-    id: 'nombres-decimaux',
-    description: "Comprendre qu'un nombre décimal représente une quantité : découper l'unité en dixièmes et centièmes et relier fraction décimale et écriture à virgule, puis comparer, ranger et encadrer des décimaux, les repérer sur une droite graduée et estimer un ordre de grandeur.",
-    prerequisites: ["Numération décimale", "Fractions simples"],
-    pointsToLearn: [
-      "Partager l'unité en dixièmes, centièmes et millièmes",
-      "Relier fraction décimale et écriture à virgule",
-      "Comprendre la valeur de position après la virgule",
-      "Reconnaître des écritures équivalentes (3,5 = 3,50)",
-      "Comparer, ranger et encadrer des décimaux",
-      "Repérer un décimal sur une droite graduée",
-      "Estimer un ordre de grandeur",
-    ],
-    durationMinutes: 89,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '🎯',
-    tier: 'free',
-  },
-  '6e_fractions': {
-    id: 'fractions',
-    description:
-      "Construire le sens de la fraction comme résultat d'un partage en parts égales et comprendre le rôle du numérateur et du dénominateur.",
-    prerequisites: ["Division", "Partage"],
-    pointsToLearn: [
-      'Construire une fraction en partageant une unité en parts égales',
-      'Comprendre le sens du numérateur et du dénominateur',
-      "Trouver une fraction simple d'une quantité",
-      'Placer une fraction sur une demi-droite graduée',
-    ],
-    durationMinutes: 88,
-    difficulty: 'Facile',
-    status: 'available',
-    icon: '🍕',
-    tier: 'free',
-  },
-  '6e_ordre_grandeur_estimation': {
-    id: 'ordre-grandeur-estimation',
-    description: "Développer le réflexe d'estimer un résultat avant de calculer : arrondir pour simplifier et trouver l'ordre de grandeur d'un calcul, puis utiliser l'estimation pour détecter les erreurs, repérer un résultat impossible sans recalculer et choisir le bon niveau de précision.",
-    prerequisites: ["Nombres entiers", "Nombres décimaux", "Opérations"],
-    pointsToLearn: [
-      'Estimer un résultat avant de calculer',
-      'Arrondir un nombre pour simplifier un calcul',
-      "Trouver l'ordre de grandeur d'une somme, d'une différence, d'un produit",
-      'Détecter un résultat impossible ou suspect sans recalculer',
-      'Choisir le bon niveau de précision selon la situation',
-    ],
-    durationMinutes: 89,
-    difficulty: 'Facile',
-    status: 'available',
-    icon: '🔎',
-    tier: 'free',
-  },
-  '6e_resolution_problemes': {
-    id: 'resolution-problemes',
-    description: "Comprendre une situation avant de calculer : extraire les informations utiles et modéliser avec un schéma, des groupes, une droite graduée ou un tableau, puis choisir une stratégie adaptée, résoudre des problèmes à une ou plusieurs étapes, estimer, vérifier et communiquer une réponse complète.",
-    prerequisites: ["Opérations", "Fractions", "Nombres décimaux"],
-    pointsToLearn: [
-      'Comprendre une situation avant de calculer',
-      'Extraire les informations utiles et repérer les informations manquantes',
-      'Modéliser une situation (schéma, groupes, droite graduée, tableau)',
-      'Choisir une stratégie adaptée parmi plusieurs valables',
-      'Résoudre des problèmes à une ou plusieurs étapes',
-      'Estimer, vérifier et communiquer une réponse complète',
-    ],
-    durationMinutes: 90,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '🧭',
-    tier: 'free',
-  },
-  '6e_operations': {
-    id: 'quatre-operations',
-    description: "Comprendre le sens profond des quatre opérations, maîtriser les opérations posées et développer des stratégies de calcul mental efficaces, puis choisir la bonne stratégie de calcul, réaliser la division euclidienne en interprétant le reste et résoudre des problèmes en choisissant l'opération adaptée.",
-    prerequisites: ["Numération décimale", "Tables de multiplication"],
-    pointsToLearn: [
-      "Comprendre les quatre opérations et leurs situations",
-      "Maîtriser les opérations posées (retenues et échanges)",
-      "Utiliser des stratégies de calcul mental efficaces",
-      "Choisir entre calcul mental, en ligne, posé ou estimation",
-      "Réaliser la division euclidienne et interpréter le reste",
-      "Résoudre des problèmes en choisissant l'opération adaptée",
-    ],
-    durationMinutes: 90,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '🧮',
-    tier: 'free',
-  },
-  '6e_longueurs': {
-    id: 'longueurs',
-    description: "Mesurer des longueurs dans des situations concrètes : choisir la bonne unité, manier la règle sans se laisser piéger et comprendre les relations entre unités, puis convertir en comprenant pourquoi la valeur change, estimer avant de calculer et calculer le périmètre d'un polygone.",
-    prerequisites: ["Unités de longueur"],
-    pointsToLearn: [
-      'Choisir une unité de longueur adaptée à une situation',
-      'Mesurer une longueur avec une règle, sans se laisser piéger par le zéro',
-      'Comprendre les relations entre km, m, cm et mm',
-      'Convertir une longueur en comprenant pourquoi la valeur change',
-      'Estimer un ordre de grandeur avant de mesurer ou de calculer',
-      'Calculer le périmètre d’un polygone',
-    ],
-    durationMinutes: 86,
-    difficulty: 'Facile',
-    status: 'available',
-    icon: '📏',
-    tier: 'free',
-  },
-  '6e_masses': {
-    id: 'masses',
-    description: "Comparer des masses à l'aide d'une balance, choisir la bonne unité et lire une masse sur une balance à affichage, puis comprendre les relations entre mg, g, kg et t, convertir en comprenant pourquoi la valeur change et résoudre des problèmes de masse.",
-    prerequisites: ["Unités de mesure"],
-    pointsToLearn: [
-      'Comparer des masses à l’aide d’une balance',
-      'Choisir une unité de masse adaptée à une situation',
-      'Lire une masse sur une balance à affichage',
-      'Comprendre les relations entre mg, g, kg et t',
-      'Convertir une masse en comprenant pourquoi la valeur change',
-      'Estimer et résoudre des problèmes de masse',
-    ],
-    durationMinutes: 85,
-    difficulty: 'Facile',
-    status: 'available',
-    icon: '⚖️',
-    tier: 'free',
-  },
-  '6e_contenances': {
-    id: 'contenances',
-    description: "Comparer des contenances en transvasant un liquide, mesurer avec un récipient gradué et choisir la bonne unité, puis comprendre les relations entre L, dL, cL et mL, convertir en comprenant pourquoi la valeur change et relier 1 L à 1 dm³ dans des problèmes concrets.",
-    prerequisites: ["Conversions d'unités"],
-    pointsToLearn: [
-      'Comparer des contenances en transvasant un liquide',
-      'Mesurer une contenance à l’aide d’un récipient gradué',
-      'Choisir une unité de contenance adaptée à une situation',
-      'Comprendre les relations entre L, dL, cL et mL',
-      'Convertir une contenance en comprenant pourquoi la valeur change',
-      'Relier 1 L à 1 dm³ et résoudre des problèmes concrets',
-    ],
-    durationMinutes: 74,
-    difficulty: 'Facile',
-    status: 'available',
-    icon: '💧',
-    tier: 'free',
-  },
-  '6e_perimetres': {
-    id: 'perimetres',
-    description: "Comprendre le périmètre comme la longueur du contour d’une figure : mesurer et additionner les longueurs des côtés, utiliser les propriétés des figures usuelles et calculer le périmètre de polygones dans des situations concrètes.",
-    prerequisites: ["Longueurs", "Mesures de longueurs"],
-    pointsToLearn: [
-      'Comprendre le périmètre comme la longueur du contour d’une figure',
-      'Mesurer les longueurs des côtés d’un polygone',
-      'Calculer le périmètre en additionnant les longueurs des côtés',
-      'Utiliser les propriétés du carré et du rectangle pour calculer leur périmètre',
-      'Choisir une unité adaptée pour exprimer un périmètre',
-      'Estimer un périmètre avant de le calculer',
-      'Résoudre des problèmes faisant intervenir des périmètres',
-      'Connaître et utiliser la longueur du cercle (P = π × D)',
-    ],
-    durationMinutes: 80,
-    difficulty: 'Facile',
-    status: 'available',
-    icon: '📐',
-    tier: 'free',
-  },
-  '6e_aires': {
-    id: 'aires',
-    description: "Construire le sens de l’aire à partir de situations concrètes : comparer des surfaces, mesurer une aire avec des unités adaptées, comprendre les relations entre unités d’aire et calculer l’aire de figures usuelles.",
-    prerequisites: ["Longueurs", "Unités de longueur"],
-    pointsToLearn: [
-      'Comprendre l’aire comme la mesure d’une surface',
-      'Comparer des surfaces sans se limiter à leur forme ou à leur contour',
-      'Mesurer une aire avec des unités adaptées',
-      'Comprendre les unités usuelles d’aire et leurs relations',
-      'Calculer l’aire d’un rectangle et d’un carré',
-      'Utiliser des décompositions et recompositions pour déterminer une aire',
-      'Résoudre des problèmes faisant intervenir des aires',
-    ],
-    durationMinutes: 81,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '▦',
-    tier: 'free',
-  },
-  '6e_durees': {
-    id: 'durees',
-    description: "Comprendre et mesurer le temps dans des situations concrètes : lire et utiliser les unités usuelles de durée, convertir entre heures, minutes et secondes, comparer des durées, calculer une durée entre deux instants et résoudre des problèmes impliquant des horaires et des durées.",
-    prerequisites: ["Nombres entiers", "Opérations"],
-    pointsToLearn: [
-      'Utiliser les unités usuelles de durée (jour, heure, minute, seconde)',
-      'Lire et interpréter des horaires sur une horloge ou une représentation du temps',
-      'Comprendre les relations entre heures, minutes et secondes',
-      'Convertir une durée dans une autre unité',
-      'Comparer et ordonner des durées',
-      'Calculer une durée entre deux instants',
-      'Résoudre des problèmes de durée et d’horaires',
-    ],
-    durationMinutes: 78,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '⏱️',
-    tier: 'free',
-  },
-  '6e_angles': {
-    id: 'angles',
-    description: "Comprendre l’angle comme une ouverture et non comme une longueur : identifier et comparer des angles, les mesurer avec un rapporteur, reconnaître les principales catégories d’angles et construire un angle de mesure donnée.",
-    prerequisites: ["Longueurs", "Figures géométriques"],
-    pointsToLearn: [
-      'Comprendre l’angle comme une ouverture entre deux demi-droites',
-      'Identifier et comparer des angles à partir de représentations',
-      'Reconnaître un angle droit, aigu ou obtus',
-      'Mesurer un angle avec un rapporteur',
-      'Utiliser correctement le rapporteur et choisir la bonne graduation',
-      'Construire un angle de mesure donnée',
-      'Résoudre des problèmes impliquant des angles',
-    ],
-    durationMinutes: 77,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '📐',
-    tier: 'free',
-  },
-  // --- Espace et géométrie (6e) ---
-  // Les clés reprennent l'id de l'objet officiel du programme
-  // (`espace_geometrie.official_objects[].id`) : c'est ainsi que
-  // buildChaptersForGrade retrouve ces métadonnées. Attention, l'objet
-  // officiel s'appelle `paralleles_perpendiculaires` (et non
-  // `parallelisme_perpendicularite`) : une clé qui ne correspond pas
-  // retombe silencieusement sur `{}` et produit une leçon vide.
-  '6e_reperage_plan': {
-    id: 'reperage-plan',
-    description: "Utiliser un repère et un quadrillage pour localiser précisément des points dans le plan, lire et écrire des coordonnées, comprendre le rôle de chaque coordonnée, placer des points à partir de leurs coordonnées et résoudre des problèmes de repérage.",
-    prerequisites: ["Nombres entiers", "Lecture d'un quadrillage"],
-    pointsToLearn: [
-      "Comprendre qu'un point peut être localisé précisément dans un plan",
-      "Comprendre le rôle de la première et de la deuxième coordonnée",
-      "Lire les coordonnées d'un point dans un repère simple",
-      "Placer un point à partir de ses coordonnées",
-      "Retrouver les coordonnées d'un point placé dans le plan",
-      "Se déplacer dans un quadrillage pour atteindre une position donnée",
-      "Utiliser les coordonnées pour résoudre des problèmes de repérage",
-    ],
-    durationMinutes: 87,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '🗺️',
-    tier: 'free',
-  },
-  '6e_droites_segments': {
-    id: 'droites-segments',
-    description: "Reconnaître, distinguer et représenter une droite, un segment et une demi-droite, comprendre le rôle des points et des extrémités, utiliser les notations géométriques appropriées et construire des objets géométriques simples.",
-    prerequisites: ["Repérage dans le plan", "Figures géométriques"],
-    pointsToLearn: [
-      "Reconnaître une droite",
-      "Reconnaître un segment",
-      "Reconnaître une demi-droite",
-      "Comprendre la différence entre droite, segment et demi-droite",
-      "Identifier les extrémités d'un segment et d'une demi-droite",
-      "Comprendre le rôle des points sur une droite",
-      "Utiliser correctement les notations géométriques",
-      "Construire et prolonger une droite, un segment ou une demi-droite",
-      "Décrire une figure à l'aide de droites et de segments",
-    ],
-    durationMinutes: 86,
-    difficulty: 'Facile',
-    status: 'available',
-    icon: '📏',
-    tier: 'free',
-  },
-  '6e_paralleles_perpendiculaires': {
-    id: 'parallelisme-perpendicularite',
-    description: "Reconnaître, construire et vérifier des droites parallèles et perpendiculaires, comprendre les propriétés qui caractérisent ces relations, identifier l'angle droit et utiliser les instruments géométriques adaptés pour réaliser des constructions précises.",
-    prerequisites: ["Droites et segments", "Angles"],
-    pointsToLearn: [
-      "Reconnaître deux droites parallèles",
-      "Comprendre que deux droites parallèles ne se coupent pas",
-      "Reconnaître deux droites perpendiculaires",
-      "Comprendre le rôle de l'angle droit dans la perpendicularité",
-      "Identifier des situations de parallélisme et de perpendicularité",
-      "Vérifier le parallélisme avec les instruments adaptés",
-      "Vérifier la perpendicularité avec une équerre",
-      "Construire une droite parallèle à une droite donnée",
-      "Construire une droite perpendiculaire à une droite donnée",
-      "Résoudre des problèmes utilisant le parallélisme et la perpendicularité",
-    ],
-    durationMinutes: 89,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '📐',
-    tier: 'free',
-  },
-  '6e_figures_planes': {
-    id: 'figures-planes',
-    description: "Reconnaître, construire, décrire et caractériser les principales figures planes en utilisant leurs côtés, leurs sommets, leurs angles et leurs propriétés géométriques, puis identifier une figure à partir de propriétés données et construire une figure répondant à des contraintes précises.",
-    prerequisites: ["Droites et segments", "Angles", "Parallélisme et perpendicularité"],
-    pointsToLearn: [
-      "Reconnaître les principales figures planes",
-      "Identifier les côtés et les sommets d'une figure",
-      "Identifier et comparer les angles d'une figure",
-      "Reconnaître et caractériser un carré",
-      "Reconnaître et caractériser un rectangle",
-      "Reconnaître et caractériser un triangle",
-      "Décrire une figure à partir de ses propriétés",
-      "Comparer des figures à partir de leurs propriétés",
-      "Identifier une figure à partir d'indices géométriques",
-      "Construire une figure répondant à des propriétés données",
-    ],
-    durationMinutes: 80,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '🔷',
-    tier: 'free',
-  },
-  '6e_symetrie': {
-    id: 'symetrie',
-    description: "Comprendre la symétrie axiale comme une transformation géométrique, identifier un axe de symétrie, construire le symétrique d'un point ou d'une figure et utiliser les relations de perpendicularité et de distance pour vérifier et réaliser des constructions symétriques.",
-    prerequisites: ["Repérage dans le plan", "Figures planes", "Perpendicularité"],
-    pointsToLearn: [
-      "Comprendre le principe d'une symétrie axiale",
-      "Identifier un axe de symétrie",
-      "Reconnaître une figure ou une situation présentant une symétrie",
-      "Comprendre la relation entre un point et son symétrique",
-      "Construire le symétrique d'un point",
-      "Construire le symétrique d'une figure",
-      "Utiliser la perpendicularité pour construire un symétrique",
-      "Utiliser l'égalité des distances à l'axe de symétrie",
-      "Identifier les propriétés conservées par symétrie",
-      "Résoudre des problèmes de symétrie",
-    ],
-    durationMinutes: 77,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '🪞',
-    tier: 'free',
-  },
-  '6e_solides_patrons': {
-    id: 'solides-patrons',
-    description: "Reconnaître et représenter les principaux solides, identifier leurs faces, arêtes et sommets, comprendre les différentes représentations d'un objet en trois dimensions et établir le lien entre un solide et son patron en manipulant, dépliant et repliant des représentations.",
-    prerequisites: ["Figures planes", "Longueurs"],
-    pointsToLearn: [
-      "Reconnaître les principaux solides usuels",
-      "Identifier les faces d'un solide",
-      "Identifier les arêtes d'un solide",
-      "Identifier les sommets d'un solide",
-      "Distinguer les représentations planes et les objets en trois dimensions",
-      "Associer un solide à son patron",
-      "Comprendre comment un patron se replie pour former un solide",
-      "Construire mentalement un solide à partir d'un patron",
-      "Identifier les patrons impossibles",
-      "Résoudre des problèmes de représentation de solides",
-    ],
-    durationMinutes: 80,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '🧊',
-    tier: 'free',
-  },
-  '6e_constructions_geometriques': {
-    id: 'constructions-geometriques',
-    description: "Construire des figures géométriques avec la règle, l'équerre et le compas, choisir l'instrument adapté à chaque construction, réaliser un programme de construction, vérifier la précision d'une figure et communiquer clairement les étapes nécessaires à sa réalisation.",
-    prerequisites: ["Droites et segments", "Parallélisme et perpendicularité", "Figures planes"],
-    pointsToLearn: [
-      "Utiliser correctement une règle graduée",
-      "Utiliser correctement une équerre",
-      "Utiliser correctement un compas",
-      "Tracer un segment de longueur donnée",
-      "Reporter une longueur avec le compas",
-      "Construire une droite parallèle",
-      "Construire une droite perpendiculaire",
-      "Choisir l'instrument adapté à une construction",
-      "Construire une figure à partir d'un programme de construction",
-      "Identifier et corriger une erreur de construction",
-      "Vérifier qu'une construction respecte les propriétés demandées",
-      "Communiquer clairement les étapes d'une construction",
-    ],
-    durationMinutes: 85,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '🛠️',
-    tier: 'free',
-  },
-  '6e_tableaux': {
-    id: 'tableaux',
-    description: "Lire, compléter et produire des tableaux pour organiser des informations numériques, identifier le rôle des lignes, colonnes et en-têtes, extraire des informations et utiliser un tableau pour comparer et résoudre des situations concrètes.",
-    prerequisites: ["Nombres entiers", "Lecture d'informations"],
-    pointsToLearn: [
-      "Comprendre l'intérêt d'un tableau pour organiser des informations",
-      "Identifier les lignes, les colonnes, les cellules et les en-têtes",
-      "Lire et extraire des informations dans un tableau",
-      "Compléter un tableau à partir d'informations données",
-      "Organiser des informations dans un tableau",
-      "Construire un tableau adapté à une situation",
-      "Comparer des informations à l'aide d'un tableau",
-      "Modifier et interpréter des données dans un tableau",
-      "Utiliser un tableau pour résoudre des problèmes simples",
-    ],
-    durationMinutes: 79,
-    difficulty: 'Facile',
-    status: 'available',
-    icon: '📋',
-    tier: 'free',
-  },
-  '6e_graphiques': {
-    id: 'graphiques',
-    description: "Lire et interpréter des graphiques simples issus de situations concrètes, relier un graphique aux données d'un tableau, identifier et comparer des valeurs, repérer des évolutions et produire une représentation graphique adaptée.",
-    prerequisites: ["Tableaux", "Lecture de nombres"],
-    pointsToLearn: [
-      "Comprendre l'intérêt d'un graphique pour représenter des données",
-      "Identifier les éléments principaux d'un graphique",
-      "Lire une valeur à partir d'un graphique",
-      "Associer un graphique à un tableau de données",
-      "Construire un graphique simple à partir d'un tableau",
-      "Comparer des valeurs représentées graphiquement",
-      "Identifier une valeur maximale ou minimale",
-      "Repérer une augmentation ou une diminution",
-      "Interpréter des informations issues d'un graphique",
-      "Détecter et corriger une représentation graphique incorrecte",
-    ],
-    durationMinutes: 82,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '📊',
-    tier: 'free',
-  },
-  '6e_proportionnalite': {
-    id: 'proportionnalite',
-    description: "Reconnaître et résoudre des situations de proportionnalité à l'aide de tableaux, de représentations et de procédures adaptées, comprendre les relations multiplicatives entre grandeurs et choisir une stratégie efficace pour déterminer une valeur inconnue.",
-    prerequisites: ["Nombres entiers", "Multiplication et division", "Tableaux"],
-    pointsToLearn: [
-      "Reconnaître une situation de proportionnalité",
-      "Comprendre qu'une situation de proportionnalité repose sur une relation multiplicative",
-      "Identifier les grandeurs qui varient dans une situation",
-      "Compléter un tableau de proportionnalité",
-      "Utiliser le passage par l'unité lorsque cela est pertinent",
-      "Utiliser la multiplication ou la division pour déterminer une valeur",
-      "Utiliser des relations simples comme le double, le triple ou la moitié",
-      "Comparer des situations proportionnelles et non proportionnelles",
-      "Choisir une stratégie adaptée pour résoudre une situation de proportionnalité",
-      "Résoudre des problèmes de proportionnalité issus de situations concrètes",
-      "Vérifier la cohérence d'un résultat dans une situation de proportionnalité",
-    ],
-    durationMinutes: 86,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '⚖️',
-    tier: 'free',
-  },
-  '6e_algorithmique_programmation': {
-    id: 'algorithmique-programmation',
-    description:
-      "Découvrir les principes fondamentaux d'un algorithme et les traduire dans des programmes simples, en décomposant un problème en instructions, en construisant et exécutant des séquences d'actions et en identifiant et corrigeant les erreurs d'un programme.",
-    prerequisites: ["Nombres entiers", "Repérage dans le plan"],
-    pointsToLearn: [
-      "Comprendre qu'un algorithme décrit une suite d'instructions permettant de résoudre un problème",
-      "Identifier une instruction et comprendre son effet",
-      "Décomposer un problème en étapes simples",
-      "Construire une séquence d'instructions",
-      "Exécuter mentalement ou visuellement un algorithme",
-      "Comprendre l'ordre des instructions",
-      "Utiliser des répétitions simples pour éviter de reproduire plusieurs fois la même instruction",
-      "Modifier un programme pour obtenir le résultat attendu",
-      "Repérer une erreur dans une séquence d'instructions",
-      "Corriger un programme qui ne produit pas le résultat attendu",
-      "Tester un programme et observer son comportement",
-      "Traduire une stratégie de résolution en programme simple",
-    ],
-    // Aligné sur la somme des `estimatedMin` des modules (lesson.config.js).
-    durationMinutes: 86,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '🤖',
-    tier: 'free',
-  },
-  '3e_nombres_rationnels': {
-    id: 'nombres-rationnels',
-    description: "Comprendre les nombres rationnels, rendre une fraction irréductible et comparer des rationnels, puis les additionner, soustraire, multiplier et diviser, et mobiliser ces opérations dans des expressions et des problèmes.",
-    prerequisites: ["Fractions", "Calcul numérique", "Nombres relatifs"],
-    pointsToLearn: [
-      "Comprendre les nombres rationnels comme des nombres pouvant s'écrire sous forme de quotient de deux entiers avec un dénominateur non nul",
-      "Reconnaître différentes écritures d'un même nombre rationnel",
-      "Rendre une fraction irréductible",
-      "Comparer deux nombres rationnels",
-      "Additionner et soustraire des nombres rationnels",
-      "Multiplier des nombres rationnels",
-      "Diviser des nombres rationnels",
-      "Choisir et enchaîner les opérations adaptées dans une expression",
-      "Respecter les priorités de calcul dans une expression contenant des rationnels",
-      "Résoudre des problèmes faisant intervenir des nombres rationnels",
-    ],
-    // Aligné sur la somme des `estimatedMin` des modules (lesson.config.js).
-    durationMinutes: 85,
-    difficulty: 'Difficile',
-    status: 'available',
-    icon: '➗',
-    tier: 'free',
-  },
-  '4e_racine_carree': {
-    id: 'racines-carrees-4e',
-    description: "Ranger des carreaux en carré pour découvrir que certains nombres y arrivent et d'autres non, nommer la racine carrée comme l'opération inverse du carré, reconnaître les carrés parfaits, encadrer une racine entre deux entiers consécutifs et résoudre x² = a.",
-    prerequisites: ["Carrés", "Puissances", "Aires"],
-    // Append-only : les quatre premiers points existaient déjà et leurs LP ids
-    // (…_P1 à _P4) sont référencés par des preuves d'apprentissage. Les deux
-    // suivants sont AJOUTÉS à la fin — jamais insérés au milieu, ce qui
-    // décalerait le sens des ids existants (voir buildLesson).
-    pointsToLearn: [
-      "Comprendre la racine carrée",
-      "Identifier les carrés parfaits",
-      "Calculer des racines carrées simples",
-      "Utiliser la racine carrée dans des problèmes",
-      "Encadrer une racine carrée entre deux entiers consécutifs",
-      "Résoudre une équation du type x² = a",
-    ],
-    durationMinutes: 71,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '√',
-    tier: 'free',
-  },
-  '3e_racine_carree': {
-    id: 'racines-carrees-3e',
-    description: "Comprendre la racine carrée comme opération inverse du carré, reconnaître les carrés parfaits et calculer des racines exactes, puis utiliser ses propriétés, simplifier certaines racines et les mobiliser dans les problèmes de niveau 3e.",
-    prerequisites: ["Carrés et puissances", "Calcul numérique", "Longueurs"],
-    pointsToLearn: [
-      "Comprendre la racine carrée comme l'opération inverse du carré",
-      "Reconnaître les carrés parfaits",
-      "Calculer des racines carrées exactes",
-      "Associer un nombre à son carré et à sa racine carrée",
-      "Comprendre le sens géométrique de la racine carrée",
-      "Utiliser les propriétés de la racine carrée",
-      "Simplifier certaines expressions contenant des racines carrées",
-      "Comparer des nombres contenant des racines carrées",
-      "Utiliser les racines carrées dans des calculs",
-      "Mobiliser les racines carrées dans des problèmes géométriques et numériques",
-    ],
-    // Aligné sur la somme des `estimatedMin` des modules (lesson.config.js).
-    durationMinutes: 78,
-    difficulty: 'Difficile',
-    status: 'available',
-    icon: '√',
-    tier: 'free',
-  },
-  '3e_equations_inequations': {
-    id: 'equations-produit',
-    titleSma: 'Équations produit nul',
-    description: "Résoudre des équations et inéquations du premier degré en mobilisant des transformations équivalentes et interpréter les solutions, notamment dans les situations où un produit est nul.",
-    prerequisites: ["Calcul littéral", "Nombres relatifs", "Distributivité"],
-    pointsToLearn: [
-      "Comprendre une équation comme une égalité contenant une inconnue",
-      "Comprendre la notion de solution d'une équation",
-      "Transformer une équation en conservant les mêmes solutions",
-      "Résoudre une équation du premier degré",
-      "Utiliser la distributivité dans une équation",
-      "Comprendre la propriété du produit nul",
-      "Résoudre une équation produit nul",
-      "Vérifier une solution",
-      "Interpréter une solution dans une situation concrète",
-      "Résoudre des problèmes à l'aide d'équations",
-    ],
-    // Aligné sur la somme des `estimatedMin` des modules (lesson.config.js).
-    durationMinutes: 77,
-    difficulty: 'Difficile',
-    status: 'available',
-    icon: '⚖️',
-    tier: 'free',
-  },
-  '3e_reperage': {
-    id: 'reperage-droite-plan-3e',
-    description: "Utiliser les coordonnées et les représentations dans le plan pour résoudre des problèmes géométriques et interpréter des situations.",
-    prerequisites: ["Nombres relatifs", "Repérage dans le plan", "Calcul numérique"],
-    pointsToLearn: [
-      "Repérer un point sur une droite graduée",
-      "Lire et utiliser les coordonnées d'un point dans le plan",
-      "Identifier l'abscisse et l'ordonnée d'un point",
-      "Placer un point à partir de ses coordonnées",
-      "Déterminer les coordonnées d'un point à partir d'une représentation",
-      "Interpréter les coordonnées comme des déplacements dans le plan",
-      "Utiliser les coordonnées pour déterminer des longueurs simples",
-      "Utiliser les coordonnées pour étudier des configurations géométriques",
-      "Résoudre des problèmes géométriques à l'aide du repérage",
-      "Interpréter une situation géométrique à partir de coordonnées",
-    ],
-    // Aligné sur la somme des `estimatedMin` des modules (lesson.config.js).
-    durationMinutes: 85,
-    difficulty: 'Difficile',
-    status: 'available',
-    icon: '🗺️',
-    tier: 'free',
-  },
-  '3e_representations_espace': {
-    id: 'representation-espace-3e',
-    description: "Lire et produire des représentations de solides et raisonner sur les configurations de l'espace.",
-    prerequisites: ["Figures planes", "Solides", "Repérage dans le plan"],
-    pointsToLearn: [
-      "Reconnaître les principaux solides usuels",
-      "Identifier les faces, arêtes et sommets d'un solide",
-      "Lire une représentation en perspective d'un solide",
-      "Distinguer les éléments visibles et cachés d'un solide",
-      "Identifier un solide à partir de différentes représentations",
-      "Changer de point de vue sur un solide",
-      "Associer différentes représentations d'un même solide",
-      "Produire une représentation adaptée d'un solide",
-      "Raisonner sur les positions relatives de points, droites et plans dans l'espace",
-      "Résoudre des problèmes à partir de représentations de l'espace",
-    ],
-    // Aligné sur la somme des `estimatedMin` des modules (lesson.config.js).
-    durationMinutes: 88,
-    difficulty: 'Difficile',
-    status: 'available',
-    icon: '🧊',
-    tier: 'free',
-  },
-  '3e_triangles': {
-    id: 'triangles-3e',
-    description: "Mobiliser les propriétés des triangles pour construire, calculer, démontrer et résoudre des problèmes géométriques.",
-    prerequisites: ["Angles", "Droites et segments", "Parallélisme et perpendicularité"],
-    pointsToLearn: [
-      "Reconnaître et caractériser les différents types de triangles",
-      "Utiliser les propriétés des triangles particuliers",
-      "Identifier les côtés et angles d'un triangle",
-      "Utiliser la somme des angles d'un triangle",
-      "Construire un triangle à partir de données données",
-      "Construire un triangle répondant à des contraintes géométriques",
-      "Calculer des longueurs ou des angles dans un triangle",
-      "Utiliser les propriétés géométriques pour justifier une construction",
-      "Formuler et vérifier une conjecture sur une configuration triangulaire",
-      "Rédiger un raisonnement géométrique à partir des propriétés d'un triangle",
-      "Résoudre des problèmes géométriques faisant intervenir des triangles",
-    ],
-    // Aligné sur la somme des `estimatedMin` des modules (lesson.config.js).
-    durationMinutes: 87,
-    difficulty: 'Difficile',
-    status: 'available',
-    icon: '🔺',
-    tier: 'free',
-  },
-  '3e_translations_vecteurs': {
-    id: 'translations-vecteurs-3e',
-    description: "Utiliser les translations et les vecteurs pour décrire des déplacements et résoudre des problèmes géométriques.",
-    prerequisites: ["Repérage dans le plan", "Figures planes", "Coordonnées"],
-    pointsToLearn: [
-      "Comprendre une translation comme un déplacement",
-      "Identifier la direction, le sens et la longueur d'un déplacement",
-      "Représenter un déplacement à l'aide d'un vecteur",
-      "Construire l'image d'un point par une translation",
-      "Construire l'image d'une figure par une translation",
-      "Comprendre qu'un même vecteur peut représenter un même déplacement en différents endroits",
-      "Identifier des vecteurs égaux",
-      "Utiliser les coordonnées pour représenter un vecteur",
-      "Déterminer les coordonnées d'un vecteur à partir de deux points",
-      "Utiliser les translations et les vecteurs pour résoudre des problèmes géométriques",
-    ],
-    // Aligné sur la somme des `estimatedMin` des modules (lesson.config.js).
-    durationMinutes: 83,
-    difficulty: 'Difficile',
-    status: 'available',
-    icon: '➡️',
-    tier: 'free',
-  },
-  '3e_thales': {
-    id: 'thales-3e',
-    description: "Reconnaître les configurations de Thalès, écrire les rapports correctement et utiliser le théorème pour calculer des longueurs, puis mobiliser la réciproque et la contraposée dans des démonstrations et des problèmes concrets.",
-    prerequisites: ["Proportionnalité", "Triangles", "Parallélisme", "Fractions"],
-    pointsToLearn: [
-      "Reconnaître une configuration de Thalès",
-      "Identifier les droites parallèles dans une configuration",
-      "Identifier les longueurs correspondantes",
-      "Comprendre le lien entre parallélisme et proportionnalité",
-      "Écrire correctement les rapports de longueurs",
-      "Utiliser le théorème de Thalès pour calculer une longueur",
-      "Choisir les rapports adaptés à une configuration donnée",
-      "Vérifier la cohérence d'un calcul utilisant le théorème de Thalès",
-      "Utiliser la réciproque du théorème de Thalès",
-      "Utiliser la contraposée du théorème de Thalès",
-      "Rédiger une démonstration utilisant Thalès",
-      "Résoudre des problèmes concrets faisant intervenir le théorème de Thalès",
-    ],
-    // Aligné sur la somme des `estimatedMin` des modules (lesson.config.js).
-    durationMinutes: 85,
-    difficulty: 'Difficile',
-    status: 'available',
-    icon: '📐',
-    tier: 'free',
-  },
-  '3e_pythagore': {
-    id: 'pythagore-3e',
-    description: "Identifier l'hypoténuse, écrire l'égalité de Pythagore et l'utiliser pour calculer une longueur dans un triangle rectangle, puis calculer un côté de l'angle droit, utiliser la réciproque pour démontrer qu'un triangle est rectangle et résoudre des problèmes.",
-    prerequisites: ["Triangles", "Carrés et puissances", "Racines carrées", "Longueurs"],
-    pointsToLearn: [
-      "Reconnaître un triangle rectangle",
-      "Identifier l'angle droit",
-      "Identifier l'hypoténuse",
-      "Comprendre la relation entre les carrés des longueurs des côtés",
-      "Écrire correctement l'égalité de Pythagore",
-      "Calculer la longueur de l'hypoténuse",
-      "Calculer la longueur d'un côté de l'angle droit",
-      "Utiliser les racines carrées dans les calculs de longueurs",
-      "Vérifier qu'un résultat est cohérent avec la configuration",
-      "Utiliser la réciproque du théorème de Pythagore",
-      "Démontrer qu'un triangle est rectangle",
-      "Résoudre des problèmes concrets à l'aide du théorème de Pythagore",
-    ],
-    // Aligné sur la somme des `estimatedMin` des modules (lesson.config.js).
-    durationMinutes: 87,
-    difficulty: 'Difficile',
-    status: 'available',
-    icon: '📐',
-    tier: 'free',
-  },
-  '3e_trigonometrie': {
-    id: 'trigonometrie-triangle-rectangle-3e',
-    description: "Utiliser sinus, cosinus et tangente dans un triangle rectangle pour calculer une longueur ou un angle.",
-    prerequisites: ["Triangles", "Angles", "Pythagore", "Fractions"],
-    pointsToLearn: [
-      "Reconnaître un triangle rectangle",
-      "Identifier l'angle étudié",
-      "Identifier le côté opposé à un angle",
-      "Identifier le côté adjacent à un angle",
-      "Identifier l'hypoténuse",
-      "Comprendre qu'un rapport de longueurs dépend de l'angle considéré",
-      "Comprendre et utiliser le sinus d'un angle",
-      "Comprendre et utiliser le cosinus d'un angle",
-      "Comprendre et utiliser la tangente d'un angle",
-      "Choisir le rapport trigonométrique adapté à une situation",
-      "Calculer une longueur dans un triangle rectangle",
-      "Calculer un angle à partir d'un rapport trigonométrique",
-      "Utiliser la calculatrice pour les fonctions trigonométriques",
-      "Résoudre des problèmes concrets utilisant la trigonométrie",
-    ],
-    // Aligné sur la somme des `estimatedMin` des modules (lesson.config.js).
-    durationMinutes: 87,
-    difficulty: 'Difficile',
-    status: 'available',
-    icon: '📐',
-    tier: 'free',
-  },
-  // ── Domaine « Organisation et gestion de données, fonctions » (3e) ──
-  // Les neuf objets officiels du domaine ont chacun leur entrée : les six
-  // premiers étaient jusqu'ici des ébauches auto-dérivées (pointsToLearn tirés
-  // du teachingScope officiel), les trois « fonctions » portaient des ids sans
-  // suffixe de niveau. Les ids suivent désormais la convention <objet>-3e.
-  '3e_statistiques': {
-    id: 'statistiques-3e',
-    description: "Analyser des séries statistiques et utiliser les indicateurs adaptés pour interpréter des données.",
-    prerequisites: ["Nombres relatifs", "Calcul numérique", "Proportionnalité"],
-    pointsToLearn: [
-      "Lire et organiser une série statistique",
-      "Identifier les effectifs et les valeurs d'une série",
-      "Calculer et interpréter une moyenne",
-      "Déterminer et interpréter une médiane",
-      "Déterminer et interpréter une étendue",
-      "Comparer deux séries statistiques",
-      "Identifier l'influence d'une valeur sur un indicateur",
-      "Choisir un indicateur adapté à une situation",
-      "Interpréter des résultats statistiques dans leur contexte",
-      "Résoudre des problèmes faisant intervenir des données statistiques",
-    ],
-    // Aligné sur la somme des `estimatedMin` des modules (lesson.config.js).
-    durationMinutes: 89,
-    difficulty: 'Difficile',
-    status: 'available',
-    icon: '📊',
-    tier: 'free',
-  },
-  '3e_probabilites': {
-    id: 'probabilites-3e',
-    description: "Modéliser des expériences aléatoires et calculer ou interpréter des probabilités dans des situations adaptées.",
-    prerequisites: ["Fractions", "Pourcentages", "Calcul numérique"],
-    pointsToLearn: [
-      "Identifier une expérience aléatoire",
-      "Identifier les issues possibles d'une expérience",
-      "Déterminer les événements associés à une expérience",
-      "Comprendre qu'une probabilité mesure la possibilité qu'un événement se réalise",
-      "Calculer une probabilité dans une situation simple",
-      "Utiliser les fractions pour représenter une probabilité",
-      "Utiliser les fréquences observées dans une expérience aléatoire",
-      "Comparer une fréquence expérimentale à une probabilité théorique",
-      "Comprendre la stabilisation des fréquences lorsque le nombre d'expériences augmente",
-      "Calculer la probabilité d'événements simples",
-      "Interpréter une probabilité dans le contexte d'un problème",
-      "Résoudre des problèmes de probabilités issus de situations concrètes",
-    ],
-    // Aligné sur la somme des `estimatedMin` des modules (lesson.config.js).
-    durationMinutes: 83,
-    difficulty: 'Difficile',
-    status: 'available',
-    icon: '🎲',
-    tier: 'free',
-  },
-  '3e_proportionnalite': {
-    id: 'proportionnalite-3e',
-    description: "Mobiliser la proportionnalité dans des problèmes numériques, géométriques et scientifiques.",
-    prerequisites: ["Nombres relatifs", "Fractions", "Pourcentages", "Tableaux"],
-    pointsToLearn: [
-      "Reconnaître une situation de proportionnalité",
-      "Identifier les grandeurs qui interviennent dans une situation",
-      "Comprendre la relation multiplicative entre deux grandeurs",
-      "Déterminer un coefficient de proportionnalité",
-      "Compléter un tableau de proportionnalité",
-      "Utiliser le passage par l'unité lorsque cela est pertinent",
-      "Utiliser un coefficient multiplicateur pour résoudre une situation",
-      "Résoudre des problèmes de proportionnalité avec des pourcentages",
-      "Utiliser la proportionnalité dans des situations géométriques",
-      "Utiliser la proportionnalité dans des situations scientifiques",
-      "Passer entre tableau, représentation graphique et situation concrète",
-      "Vérifier la cohérence d'un résultat de proportionnalité",
-    ],
-    // Aligné sur la somme des `estimatedMin` des modules (lesson.config.js).
-    durationMinutes: 84,
-    difficulty: 'Difficile',
-    status: 'available',
-    icon: '⚖️',
-    tier: 'free',
-  },
-  '3e_fonctions': {
-    id: 'fonctions-3e',
-    description: "Maîtriser le vocabulaire image/antécédent/f(x), construire un tableau de valeurs, identifier et représenter graphiquement une fonction linéaire puis une fonction affine, lire a et b sur un graphique, déterminer l'expression d'une fonction depuis deux points et modéliser une situation concrète.",
-    prerequisites: ["Repérage dans le plan", "Calcul littéral", "Proportionnalité"],
-    pointsToLearn: [
-      "Comprendre la notion de fonction",
-      "Identifier un antécédent et son image",
-      "Utiliser la notation f(x)",
-      "Calculer l'image d'un nombre par une fonction",
-      "Déterminer un antécédent à partir d'une fonction",
-      "Construire et compléter un tableau de valeurs",
-      "Représenter une fonction dans un repère",
-      "Lire des informations sur la représentation graphique d'une fonction",
-      "Identifier une fonction linéaire",
-      "Identifier une fonction affine",
-      "Déterminer l'expression d'une fonction à partir de données",
-      "Utiliser une fonction pour modéliser une situation concrète",
-    ],
-    durationMinutes: 84,
-    difficulty: 'Difficile',
-    status: 'available',
-    icon: '📈',
-    tier: 'free',
-  },
-  '3e_fonctions_lineaires': {
-    id: 'fonctions-lineaires-3e',
-    description: "Étudier les fonctions linéaires, leur expression, leur représentation graphique et leur lien avec la proportionnalité.",
-    prerequisites: ["Fonctions", "Proportionnalité", "Repérage dans le plan"],
-    pointsToLearn: [
-      "Reconnaître une fonction linéaire",
-      "Comprendre la forme f(x)=ax",
-      "Identifier le coefficient de la fonction linéaire",
-      "Calculer l'image d'un nombre",
-      "Construire un tableau de valeurs",
-      "Représenter graphiquement une fonction linéaire",
-      "Comprendre que la représentation graphique passe par l'origine",
-      "Relier une fonction linéaire à une situation de proportionnalité",
-      "Interpréter le coefficient a dans une situation concrète",
-      "Déterminer une fonction linéaire à partir de données",
-      "Utiliser une fonction linéaire pour résoudre un problème",
-    ],
-    durationMinutes: 58,
-    difficulty: 'Difficile',
-    status: 'available',
-    icon: '📈',
-    tier: 'free',
-  },
-  '3e_fonctions_affines': {
-    id: 'fonctions-affines-3e',
-    description: "Étudier l'expression f(x)=ax+b d'une fonction affine et comprendre le rôle du coefficient directeur et de l'ordonnée à l'origine, puis construire un tableau de valeurs, la représenter graphiquement et l'utiliser pour modéliser des situations.",
-    prerequisites: ["Fonctions linéaires", "Calcul littéral", "Repérage dans le plan"],
-    pointsToLearn: [
-      "Reconnaître une fonction affine",
-      "Comprendre la forme f(x)=ax+b",
-      "Identifier le coefficient directeur a",
-      "Identifier l'ordonnée à l'origine b",
-      "Comprendre le rôle de a sur la représentation graphique",
-      "Comprendre le rôle de b sur la représentation graphique",
-      "Calculer l'image d'un nombre",
-      "Construire un tableau de valeurs",
-      "Représenter graphiquement une fonction affine",
-      "Déterminer l'expression d'une fonction affine à partir de données",
-      "Utiliser une fonction affine pour modéliser une situation concrète",
-    ],
-    durationMinutes: 65,
-    difficulty: 'Difficile',
-    status: 'available',
-    icon: '📈',
-    tier: 'free',
-  },
-  '3e_representation_graphique': {
-    id: 'representation-graphique-3e',
-    description: "Lire, construire et interpréter des représentations graphiques de fonctions et de données.",
-    prerequisites: ["Repérage dans le plan", "Fonctions", "Tableaux"],
-    pointsToLearn: [
-      "Identifier les axes d'une représentation graphique",
-      "Comprendre le rôle de l'échelle",
-      "Lire les coordonnées d'un point",
-      "Placer un point à partir de ses coordonnées",
-      "Construire une représentation graphique à partir d'un tableau",
-      "Associer une représentation graphique à une situation",
-      "Associer une représentation graphique à un tableau de valeurs",
-      "Relier une représentation graphique à une expression de fonction",
-      "Comparer plusieurs représentations graphiques",
-      "Interpréter les informations représentées graphiquement",
-      "Détecter et corriger une représentation graphique incorrecte",
-    ],
-    durationMinutes: 70,
-    difficulty: 'Difficile',
-    status: 'available',
-    icon: '📊',
-    tier: 'free',
-  },
-  '3e_lecture_graphique': {
-    id: 'lecture-graphique-3e',
-    description: "Utiliser efficacement une représentation graphique pour répondre à des questions sur les variations, images, antécédents et intersections.",
-    prerequisites: ["Fonctions", "Repérage dans le plan", "Représentation graphique"],
-    pointsToLearn: [
-      "Lire une image à partir d'une représentation graphique",
-      "Déterminer un antécédent à partir d'une représentation graphique",
-      "Interpréter les coordonnées d'un point de la courbe",
-      "Lire une valeur avec une échelle donnée",
-      "Identifier les valeurs maximales et minimales lorsque cela est pertinent",
-      "Repérer les variations d'une fonction à partir de son graphique",
-      "Identifier les intervalles où une fonction augmente ou diminue",
-      "Déterminer les points d'intersection de deux représentations",
-      "Interpréter graphiquement une solution",
-      "Résoudre des problèmes à partir d'une représentation graphique",
-    ],
-    durationMinutes: 70,
-    difficulty: 'Difficile',
-    status: 'available',
-    icon: '🔎',
-    tier: 'free',
-  },
-  '3e_modelisation': {
-    id: 'modelisation-3e',
-    description: "Traduire une situation réelle ou mathématique en modèle numérique, algébrique, fonctionnel ou géométrique puis interpréter le résultat.",
-    prerequisites: ["Proportionnalité", "Fonctions", "Calcul littéral", "Équations"],
-    pointsToLearn: [
-      "Identifier les informations utiles dans une situation",
-      "Identifier les grandeurs et variables pertinentes",
-      "Choisir une représentation adaptée à une situation",
-      "Traduire une situation en relation mathématique",
-      "Construire un tableau à partir d'une situation",
-      "Construire une représentation graphique adaptée",
-      "Utiliser une expression littérale pour modéliser une relation",
-      "Utiliser une fonction pour modéliser une situation",
-      "Choisir entre plusieurs modèles possibles",
-      "Utiliser un modèle pour effectuer des prévisions ou des calculs",
-      "Interpréter le résultat dans le contexte de la situation",
-      "Vérifier la cohérence et les limites d'un modèle",
-    ],
-    // Aligné sur la somme des `estimatedMin` des modules (lesson.config.js).
-    durationMinutes: 88,
-    difficulty: 'Difficile',
-    status: 'available',
-    icon: '🧠',
-    tier: 'free',
-  },
-  '3e_puissances': {
-    id: 'puissances-3e',
-    description: "Interpréter une puissance, utiliser les règles de calcul sur les puissances et calculer avec des puissances de 10, puis les mobiliser dans l'écriture scientifique, comparer des ordres de grandeur et résoudre des problèmes scientifiques ou numériques.",
-    prerequisites: ["Calcul numérique", "Multiplication", "Fractions"],
-    pointsToLearn: [
-      "Comprendre une puissance comme une multiplication répétée",
-      "Lire et interpréter une écriture avec exposant",
-      "Calculer des puissances d'un nombre",
-      "Comprendre le rôle de l'exposant",
-      "Utiliser les propriétés des puissances",
-      "Calculer avec des puissances de 10",
-      "Comprendre les ordres de grandeur",
-      "Écrire un nombre en notation scientifique",
-      "Passer d'une écriture décimale à une écriture scientifique",
-      "Comparer des nombres à l'aide des puissances de 10",
-      "Utiliser les puissances dans des problèmes scientifiques ou numériques",
-    ],
-    // Aligné sur la somme des `estimatedMin` des modules (lesson.config.js).
-    durationMinutes: 77,
-    difficulty: 'Difficile',
-    status: 'available',
-    icon: '🚀',
-    tier: 'free',
-  },
-  '3e_multiples_diviseurs': {
-    id: 'multiples-diviseurs',
-    description: "Utiliser les notions de multiples, diviseurs, critères de divisibilité et nombres premiers pour décomposer des nombres, raisonner sur la divisibilité et résoudre des problèmes numériques.",
-    prerequisites: ["Nombres entiers", "Multiplication", "Division"],
-    pointsToLearn: [
-      "Comprendre la relation entre multiples et diviseurs",
-      "Reconnaître si un nombre est multiple ou diviseur d'un autre",
-      "Utiliser les critères de divisibilité usuels",
-      "Identifier les diviseurs d'un nombre",
-      "Identifier les multiples d'un nombre",
-      "Reconnaître un nombre premier",
-      "Décomposer un nombre en produit de facteurs premiers",
-      "Utiliser la décomposition en facteurs premiers pour résoudre des problèmes",
-      "Raisonner sur la divisibilité",
-      "Résoudre des problèmes utilisant multiples, diviseurs et nombres premiers",
-    ],
-    // Aligné sur la somme des `estimatedMin` des modules (lesson.config.js).
-    durationMinutes: 85,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '🔢',
-    tier: 'free',
-  },
-  '3e_calcul_litteral': {
-    id: 'calcul-litteral-algebrique',
-    description: "Maîtriser les transformations d'expressions littérales nécessaires aux équations, factorisations, identités remarquables et problèmes, en développant, réduisant, factorisant et transformant des expressions de manière équivalente.",
-    prerequisites: ["Nombres relatifs", "Calcul numérique", "Propriétés de la distributivité"],
-    pointsToLearn: [
-      "Comprendre une expression littérale",
-      "Identifier les termes et facteurs d'une expression",
-      "Réduire une expression littérale",
-      "Regrouper des termes semblables",
-      "Développer une expression",
-      "Utiliser la distributivité simple",
-      "Utiliser la double distributivité",
-      "Factoriser une expression simple",
-      "Comprendre l'équivalence entre différentes écritures d'une expression",
-      "Utiliser les identités remarquables",
-      "Choisir une transformation adaptée à un problème",
-    ],
-    // Aligné sur la somme des `estimatedMin` des modules (lesson.config.js).
-    durationMinutes: 85,
-    difficulty: 'Difficile',
-    status: 'available',
-    icon: '𝑥',
-    tier: 'free',
-  },
-  '3e_resolution_problemes': {
-    id: 'resolution-problemes-3e',
-    description: "Mobiliser les nombres, calculs, expressions, équations et raisonnements pour modéliser et résoudre des problèmes complexes, choisir une stratégie adaptée, vérifier les résultats et communiquer une solution argumentée.",
-    prerequisites: ["Calcul numérique", "Calcul littéral", "Équations", "Proportionnalité"],
-    pointsToLearn: [
-      "Comprendre et extraire les informations utiles d'un problème",
-      "Identifier la question et les contraintes",
-      "Choisir une stratégie de résolution",
-      "Traduire une situation en calcul, expression ou équation",
-      "Mobiliser les nombres et opérations adaptés",
-      "Utiliser le calcul littéral dans une situation problème",
-      "Utiliser une équation pour modéliser une situation",
-      "Organiser les étapes d'une résolution",
-      "Vérifier la cohérence d'un résultat",
-      "Interpréter le résultat dans le contexte du problème",
-      "Communiquer une solution complète et argumentée",
-    ],
-    // Aligné sur la somme des `estimatedMin` des modules (lesson.config.js).
-    durationMinutes: 85,
-    difficulty: 'Difficile',
-    status: 'available',
-    icon: '🧠',
-    tier: 'free',
-  },
-
-
-  // ============================================================
-  // 5E (collège) — nouveau programme du cycle 4, BO n°10 du 5 mars 2026
-  // (NOR MENE2602912A), application à la rentrée 2026-2027.
-  //
-  // Clés `5e_<id de l'objet officiel>`. Les Learning Points ci-dessous sont
-  // ATOMIQUES et dérivés de `teachingScope.include` du référentiel officiel
-  // (docs/architecture/CURRICULUM_MATRIX_5E_4E.md) : un LP = une compétence
-  // évaluable, jamais « Comprendre les nombres relatifs ».
-  //
-  // ⚠️ `learningPoints[].id` est dérivé de l'ORDRE de `pointsToLearn`
-  // (`5e_<lessonId>_P<n>`) et devient append-only dès l'import en base
-  // (`smarter:import-curriculum`). Réordonner ou supprimer une entrée change
-  // le sens d'un id existant.
-  // ============================================================
-
-  // ---- 5E — NOMBRES ET CALCULS ----
-  '5e_operations': {
-    id: 'operations-5e',
-    description: "Consolider les techniques de calcul sur les décimaux et gagner en efficacité : calculer mentalement et en ligne, diviser par un décimal, appliquer les priorités opératoires avec parenthèses, enchaîner plusieurs opérations et reconnaître multiples et diviseurs.",
-    prerequisites: ["Nombres entiers", "Nombres décimaux", "Fractions"],
-    pointsToLearn: [
-      "Calculer mentalement sur des nombres décimaux",
-      "Calculer en ligne en décomposant un calcul",
-      "Diviser par un nombre décimal",
-      "Appliquer les priorités opératoires avec parenthèses",
-      "Enchaîner plusieurs opérations dans un même calcul",
-      "Reconnaître un multiple et un diviseur",
-      "Contrôler la vraisemblance d'un résultat",
-    ],
-    durationMinutes: 70,
-    difficulty: 'Facile',
-    status: 'available',
-    icon: '🧮',
-    tier: 'free',
-  },
-  '5e_nombres_relatifs': {
-    id: 'nombres-relatifs-5e',
-    description: "Construire le sens des nombres positifs et négatifs à partir de situations réelles : les placer et les lire sur une droite graduée, reconnaître l'opposé et la valeur absolue, comparer et ranger des relatifs, puis les additionner et les soustraire en comprenant ce que l'opération fait.",
-    prerequisites: ["Nombres entiers", "Droite graduée"],
-    pointsToLearn: [
-      "Identifier un nombre positif, négatif ou nul dans une situation",
-      "Placer et lire un nombre relatif sur une droite graduée",
-      "Reconnaître l'opposé d'un nombre relatif",
-      "Interpréter la valeur absolue comme une distance à zéro",
-      "Comparer et ranger des nombres relatifs",
-      "Additionner deux nombres relatifs",
-      "Soustraire un nombre relatif",
-      "Contrôler le signe d'un résultat par la droite graduée",
-    ],
-    // Alignée sur la somme des `estimatedMin` des modules (lesson.config.js).
-    durationMinutes: 75,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '🌡️',
-    tier: 'free',
-  },
-  '5e_nombres_rationnels': {
-    id: 'nombres-rationnels-5e',
-    description: "Approfondir la fraction comme nombre : reconnaître des fractions égales, comparer des fractions de dénominateurs multiples, additionner et soustraire dans ces cas, et prendre une fraction d'une quantité dans des problèmes.",
-    prerequisites: ["Fractions", "Division", "Nombres relatifs"],
-    pointsToLearn: [
-      "Reconnaître une fraction comme un nombre et la placer sur une droite",
-      "Produire des fractions égales en multipliant ou divisant les deux termes",
-      "Simplifier une fraction",
-      "Comparer des fractions de même dénominateur ou de dénominateurs multiples",
-      "Additionner deux fractions de dénominateurs multiples",
-      "Soustraire deux fractions de dénominateurs multiples",
-      "Prendre une fraction d'une quantité",
-    ],
-    durationMinutes: 75,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '🍰',
-    tier: 'free',
-  },
-  '5e_puissances': {
-    id: 'puissances-5e',
-    description: "Découvrir la puissance comme écriture compacte d'un produit de facteurs identiques : construire le carré et le cube, mémoriser les carrés parfaits jusqu'à 12, lire et écrire les puissances de 10 et s'en servir dans des calculs simples.",
-    prerequisites: ["Multiplication", "Produit de facteurs identiques"],
-    pointsToLearn: [
-      "Écrire un produit de facteurs identiques sous forme de puissance",
-      "Lire et interpréter une notation puissance",
-      "Interpréter le carré et le cube géométriquement",
-      "Reconnaître les carrés parfaits de 0 à 12",
-      "Écrire et lire une puissance de 10 d'exposant positif",
-      "Calculer une expression simple contenant une puissance",
-    ],
-    durationMinutes: 60,
-    difficulty: 'Facile',
-    status: 'available',
-    icon: '⚡',
-    tier: 'free',
-  },
-  '5e_calcul_litteral': {
-    id: 'calcul-litteral-5e',
-    description: "Introduire la lettre comme un nombre que l'on ne connaît pas encore : produire une expression littérale à partir d'une situation, calculer sa valeur par substitution, développer avec la distributivité simple et écrire une formule générale.",
-    prerequisites: ["Opérations", "Priorités opératoires"],
-    pointsToLearn: [
-      "Comprendre ce qu'une lettre représente dans une expression",
-      "Utiliser une lettre comme inconnue ou comme variable",
-      "Produire une expression littérale à partir d'une situation",
-      "Calculer la valeur d'une expression par substitution",
-      "Développer un produit avec la distributivité simple",
-      "Produire une formule générale et l'appliquer",
-    ],
-    durationMinutes: 70,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '🔤',
-    tier: 'free',
-  },
-
-  // ---- 5E — ESPACE ET GÉOMÉTRIE ----
-  '5e_reperage': {
-    id: 'reperage-5e',
-    description: "Étendre le repérage aux nombres relatifs : lire et placer une abscisse négative sur une droite graduée, puis lire et placer des points dans un repère du plan dont les deux axes portent des positifs et des négatifs.",
-    prerequisites: ["Repérage en 6e", "Nombres relatifs"],
-    pointsToLearn: [
-      "Lire l'abscisse d'un point, positive ou négative",
-      "Placer un point d'abscisse donnée sur une droite graduée",
-      "Identifier les axes et l'origine d'un repère du plan",
-      "Lire les coordonnées d'un point dans les quatre quadrants",
-      "Placer un point à partir de ses coordonnées",
-    ],
-    durationMinutes: 55,
-    difficulty: 'Facile',
-    status: 'available',
-    icon: '📍',
-    tier: 'free',
-  },
-  '5e_representations_espace': {
-    id: 'representations-espace-5e',
-    description: "Représenter et lire des solides de l'espace : reconnaître les vues de dessus, de face et de côté, interpréter une perspective cavalière de prismes et de cylindres, et construire ou reconnaître leurs patrons.",
-    prerequisites: ["Solides", "Patrons"],
-    pointsToLearn: [
-      "Identifier les vues de dessus, de face et de côté d'un solide",
-      "Associer un solide à ses trois vues",
-      "Lire une perspective cavalière d'un prisme droit",
-      "Lire une perspective cavalière d'un cylindre de révolution",
-      "Reconnaître le patron d'un prisme droit",
-      "Reconnaître le patron d'un cylindre de révolution",
-    ],
-    durationMinutes: 65,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '📦',
-    tier: 'free',
-  },
-  '5e_transformations': {
-    id: 'transformations-5e',
-    description: "Découvrir la symétrie centrale comme un demi-tour autour d'un point : construire le symétrique d'un point et d'une figure, et établir les propriétés conservées par cette transformation.",
-    prerequisites: ["Symétrie", "Figures planes"],
-    pointsToLearn: [
-      "Reconnaître une symétrie centrale comme un demi-tour",
-      "Construire le symétrique d'un point par rapport à un centre",
-      "Construire le symétrique d'une figure",
-      "Identifier le centre de symétrie d'une figure",
-      "Utiliser les propriétés conservées par la symétrie centrale",
-      "Distinguer symétrie centrale et symétrie axiale",
-    ],
-    durationMinutes: 65,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '🔄',
-    tier: 'free',
-  },
-  '5e_angles': {
-    id: 'angles-5e',
-    description: "Découvrir les angles formés par deux droites coupées par une sécante : reconnaître les angles alternes-internes et correspondants, et s'en servir pour prouver ou construire un parallélisme.",
-    prerequisites: ["Angles de 6e", "Droites parallèles et perpendiculaires"],
-    pointsToLearn: [
-      "Identifier deux angles alternes-internes",
-      "Identifier deux angles correspondants",
-      "Déduire une égalité d'angles à partir de deux parallèles",
-      "Prouver que deux droites sont parallèles à partir des angles",
-      "Utiliser les angles dans une configuration géométrique",
-    ],
-    durationMinutes: 77,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '📐',
-    tier: 'free',
-  },
-  '5e_triangles': {
-    id: 'triangles-5e',
-    description: "Construire et raisonner sur le triangle : découvrir que la somme des angles vaut toujours 180°, établir l'inégalité triangulaire, construire un triangle à partir de données, puis rencontrer médiatrices, cercle circonscrit, hauteurs et médianes.",
-    prerequisites: ["Figures planes", "Angles"],
-    pointsToLearn: [
-      "Utiliser la somme des angles d'un triangle égale à 180°",
-      "Calculer un angle manquant dans un triangle",
-      "Reconnaître si trois longueurs forment un triangle",
-      "Utiliser l'inégalité triangulaire",
-      "Construire un triangle à partir de données",
-      "Construire les médiatrices et le cercle circonscrit",
-      "Reconnaître une hauteur et une médiane",
-    ],
-    durationMinutes: 84,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '📐',
-    tier: 'free',
-  },
-  '5e_parallelogrammes': {
-    id: 'parallelogrammes-5e',
-    description: "Construire et caractériser le parallélogramme : le définir par ses côtés parallèles, découvrir les propriétés de ses côtés opposés et de ses diagonales, puis reconnaître rectangle, losange et carré comme des parallélogrammes particuliers.",
-    prerequisites: ["Parallélisme", "Quadrilatères"],
-    pointsToLearn: [
-      "Reconnaître un parallélogramme à sa définition",
-      "Construire un parallélogramme",
-      "Utiliser l'égalité des côtés opposés",
-      "Utiliser le point d'intersection des diagonales",
-      "Reconnaître un rectangle, un losange et un carré comme parallélogrammes particuliers",
-      "Justifier qu'un quadrilatère est un parallélogramme",
-    ],
-    durationMinutes: 78,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '🔷',
-    tier: 'free',
-  },
-
-  // ---- 5E — DONNÉES ET PROBABILITÉS ----
-  '5e_statistiques': {
-    id: 'statistiques-5e',
-    description: "Recueillir et organiser des données réelles, calculer effectifs et fréquences, choisir une représentation adaptée — tableau, diagramme en barres, diagramme circulaire — puis calculer une moyenne simple et interpréter ce qu'elle dit.",
-    prerequisites: ["Tableaux", "Graphiques"],
-    pointsToLearn: [
-      "Recueillir et organiser des données dans un tableau",
-      "Calculer un effectif",
-      "Calculer une fréquence",
-      "Lire et construire un diagramme en barres",
-      "Lire et construire un diagramme circulaire",
-      "Calculer une moyenne simple",
-      "Interpréter une série de données dans son contexte",
-    ],
-    durationMinutes: 70,
-    difficulty: 'Facile',
-    status: 'available',
-    icon: '📊',
-    tier: 'free',
-  },
-  '5e_probabilites': {
-    id: 'probabilites-5e',
-    description: "Découvrir le hasard : reconnaître une expérience aléatoire, nommer ses issues et ses événements, décider si les issues sont équiprobables, et situer une probabilité sur l'échelle qui va de l'impossible au certain.",
-    prerequisites: ["Fractions", "Proportionnalité"],
-    pointsToLearn: [
-      "Reconnaître une expérience aléatoire",
-      "Identifier les issues d'une expérience aléatoire",
-      "Décrire un événement par les issues qui le réalisent",
-      "Reconnaître une situation d'équiprobabilité",
-      "Calculer une probabilité en situation d'équiprobabilité",
-      "Situer une probabilité sur l'échelle de 0 à 1",
-    ],
-    durationMinutes: 77,
-    difficulty: 'Facile',
-    status: 'available',
-    icon: '🎲',
-    tier: 'free',
-  },
-
-  // ---- 5E — PROPORTIONNALITÉ ET FONCTIONS ----
-  '5e_proportionnalite': {
-    id: 'proportionnalite-5e',
-    description: "Approfondir la proportionnalité : reconnaître une situation proportionnelle, utiliser le coefficient de proportionnalité, résoudre des problèmes d'échelle, de pourcentage et de vitesse moyenne, et reconnaître la proportionnalité à l'alignement des points avec l'origine.",
-    prerequisites: ["Proportionnalité de 6e", "Fractions"],
-    pointsToLearn: [
-      "Reconnaître une situation de proportionnalité",
-      "Déterminer un coefficient de proportionnalité",
-      "Compléter un tableau de proportionnalité",
-      "Résoudre un problème d'échelle",
-      "Calculer et appliquer un pourcentage",
-      "Calculer une vitesse moyenne",
-      "Reconnaître la proportionnalité sur un graphique",
-    ],
-    durationMinutes: 79,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '⚖️',
-    tier: 'free',
-  },
-  '5e_fonctions': {
-    id: 'fonctions-5e',
-    description: "Découvrir qu'une grandeur peut dépendre d'une autre : dire ce qui varie « en fonction de » quoi, remplir et lire un tableau de valeurs, et lire un graphique cartésien pour répondre à une question sur la situation.",
-    prerequisites: ["Repérage", "Calcul littéral"],
-    pointsToLearn: [
-      "Identifier la grandeur qui dépend d'une autre dans une situation",
-      "Employer l'expression « en fonction de »",
-      "Compléter un tableau de valeurs à partir d'un programme de calcul",
-      "Lire une valeur dans un tableau de valeurs",
-      "Lire une valeur sur un graphique cartésien",
-      "Répondre à une question concrète à partir d'un graphique",
-    ],
-    durationMinutes: 75,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '📈',
-    tier: 'free',
-  },
-
-  // ---- 5E — PENSÉE INFORMATIQUE ----
-  '5e_algorithmique_programmation': {
-    id: 'algorithmique-programmation-5e',
-    description: "Programmer pour tracer : décrire une procédure pas à pas, définir et lire une variable, répéter un bloc d'instructions un nombre fixé de fois, et construire des figures géométriques dont la répétition est la structure.",
-    prerequisites: ["Raisonnement logique"],
-    pointsToLearn: [
-      "Décrire une procédure comme une suite ordonnée d'instructions",
-      "Définir une variable et lui affecter une valeur",
-      "Lire la valeur d'une variable au cours d'un programme",
-      "Utiliser une boucle « répéter n fois »",
-      "Tracer une figure simple avec un programme",
-      "Repérer et corriger une erreur dans un programme",
-    ],
-    // Alignée sur la somme des `estimatedMin` des modules (lesson.config.js).
-    durationMinutes: 85,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '💻',
-    tier: 'free',
-  },
-
-  // ============================================================
-  // 4E (collège) — nouveau programme du cycle 4, BO n°10 du 5 mars 2026
-  // (NOR MENE2602912A), application à la rentrée 2027-2028.
-  //
-  // La 4e APPROFONDIT ce que la 5e a introduit : produit et quotient de
-  // relatifs (la 5e n'a fait que somme et différence), fractions de
-  // dénominateurs quelconques et leur produit/quotient, écriture
-  // scientifique, équations du premier degré, translation, Pythagore,
-  // médiane et étendue, événement contraire. Voir la colonne « Hors
-  // périmètre » de chaque niveau dans CURRICULUM_MATRIX_5E_4E.md.
-  // ============================================================
-
-  // ---- 4E — NOMBRES ET CALCULS ----
-  '4e_nombres_relatifs': {
-    id: 'nombres-relatifs-4e',
-    description: "Étendre le calcul relatif au produit et au quotient : découvrir la règle des signes en prolongeant une régularité plutôt qu'en la mémorisant, multiplier et diviser des relatifs, puis enchaîner les quatre opérations dans une même expression.",
-    prerequisites: ["Nombres relatifs de 5e"],
-    pointsToLearn: [
-      "Multiplier deux nombres relatifs",
-      "Justifier la règle des signes par la régularité d'une table",
-      "Déterminer le signe d'un produit de plusieurs facteurs",
-      "Diviser deux nombres relatifs",
-      "Enchaîner les quatre opérations sur des relatifs",
-      "Contrôler le signe d'un résultat avant de calculer",
-    ],
-    // Alignée sur la somme des `estimatedMin` des modules (lesson.config.js).
-    durationMinutes: 70,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '➕',
-    tier: 'free',
-  },
-  '4e_nombres_rationnels': {
-    id: 'nombres-rationnels-4e',
-    description: "Formaliser le nombre rationnel comme quotient de deux entiers relatifs : comparer par les produits en croix, additionner et soustraire des fractions de dénominateurs quelconques, multiplier, reconnaître l'inverse et diviser par une fraction.",
-    prerequisites: ["Fractions de 5e", "Nombres relatifs"],
-    pointsToLearn: [
-      "Reconnaître un nombre rationnel comme quotient de deux entiers relatifs",
-      "Tester l'égalité de deux fractions par les produits en croix",
-      "Additionner deux fractions de dénominateurs quelconques",
-      "Soustraire deux fractions de dénominateurs quelconques",
-      "Multiplier deux fractions",
-      "Déterminer l'inverse d'un nombre non nul",
-      "Diviser par une fraction en multipliant par son inverse",
-      "Résoudre un problème mettant en jeu des rationnels",
-    ],
-    durationMinutes: 80,
-    difficulty: 'Difficile',
-    status: 'available',
-    icon: '🍰',
-    tier: 'free',
-  },
-  '4e_puissances': {
-    id: 'puissances-4e',
-    titleSma: 'Puissances',
-    description: "Approfondir les puissances : étendre la notation aux exposants négatifs, établir les règles de calcul sur les produits et les quotients de puissances d'un même nombre, et écrire un nombre en notation scientifique pour comparer des ordres de grandeur.",
-    prerequisites: ["Puissances de 5e", "Calcul littéral"],
-    pointsToLearn: [
-      "Interpréter une puissance d'exposant négatif",
-      "Multiplier deux puissances d'un même nombre",
-      "Diviser deux puissances d'un même nombre",
-      "Calculer la puissance d'une puissance",
-      "Utiliser les puissances de 10 d'exposant positif ou négatif",
-      "Écrire un nombre en notation scientifique",
-      "Comparer deux ordres de grandeur",
-    ],
-    durationMinutes: 70,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '⚡',
-    tier: 'free',
-  },
-  // L'objet officiel `calcul_litteral` de 4e porte huit points d'apprentissage,
-  // des transformations d'expression jusqu'à la résolution d'équations. Les
-  // couvrir en une seule leçon donnerait ~150 min, très au-delà du plafond de
-  // 90 min (MAX_LESSON_MINUTES) que `validate-lessons.mjs` fait respecter sur
-  // la somme des `estimatedMin`. L'entrée est donc écrite comme un TABLEAU :
-  // `buildChaptersForGrade` en dérive deux leçons (« Partie 1 / Partie 2 »,
-  // partIndex 1 et 2) rattachées au même objet officiel — le mécanisme prévu
-  // par `buildLesson`, sans inventer d'objet de programme.
-  //
-  // La coupure est pédagogique, pas arithmétique : la partie 1 transforme des
-  // expressions (réduire, développer, factoriser, tester), la partie 2 s'en
-  // sert pour résoudre — une équation n'est manipulable que si l'on sait déjà
-  // réduire et développer ses deux membres.
-  '4e_calcul_litteral': [
-    {
-      id: 'calcul-litteral-4e',
-      titleSma: 'Calcul littéral',
-      description: "Transformer les expressions littérales : réduire en regroupant les termes semblables, développer avec la distributivité simple puis double, factoriser un facteur commun évident, et tester si une égalité est vraie pour une valeur donnée.",
-      prerequisites: ["Calcul littéral de 5e", "Nombres relatifs"],
-      pointsToLearn: [
-        "Réduire une expression littérale",
-        "Développer avec la distributivité simple",
-        "Développer avec la double distributivité",
-        "Factoriser une expression à facteur commun évident",
-        "Tester si une égalité est vraie pour une valeur",
-      ],
-      durationMinutes: 74,
-      difficulty: 'Difficile',
-      status: 'available',
-      icon: '🔤',
-      tier: 'free',
-    },
-    {
-      id: 'equations-4e',
-      titleSma: 'Équations du premier degré',
-      description: "Comprendre qu'une équation est une balance en équilibre : reconnaître ce qu'est une solution, découvrir les transformations qui gardent l'équilibre, résoudre une équation du premier degré ax + b = c, et modéliser un problème par une équation.",
-      prerequisites: ["Calcul littéral de 4e", "Nombres relatifs"],
-      pointsToLearn: [
-        "Reconnaître ce qu'est une solution d'équation",
-        "Tester une valeur dans une équation",
-        "Conserver l'équilibre en agissant sur les deux membres",
-        "Résoudre une équation du type x + b = c et ax = c",
-        "Résoudre une équation du premier degré ax + b = c",
-        "Modéliser un problème par une équation",
-      ],
-      durationMinutes: 76,
-      difficulty: 'Difficile',
-      status: 'available',
-      icon: '⚖️',
-      tier: 'free',
-    },
-    {
-      id: 'raisonnement-problemes-4e',
-      titleSma: 'Raisonnement et résolution de problèmes',
-      description: "Essayer un programme de calcul avec ses propres nombres sans jamais réussir à le mettre en défaut, découvrir que des essais ne prouvent rien et qu'un seul contre-exemple réfute, puis se servir du calcul littéral pour démontrer d'un coup ce qu'aucun essai ne pouvait établir — et mener une enquête complète, de l'énoncé à la phrase-réponse.",
-      prerequisites: ["Calcul littéral de 4e", "Équations du premier degré"],
-      pointsToLearn: [
-        "Comprendre un énoncé et en extraire les données utiles",
-        "Représenter une situation par un schéma ou un tableau",
-        "Estimer un résultat avant de calculer",
-        "Conjecturer à partir d'exemples",
-        "Réfuter par un contre-exemple",
-        "Prouver une conjecture par le calcul littéral",
-        "Vérifier et interpréter un résultat",
-      ],
-      durationMinutes: 83,
-      difficulty: 'Difficile',
-      status: 'available',
-      icon: '🔎',
-      tier: 'free',
-    },
-  ],
-
-  // ---- 4E — ESPACE ET GÉOMÉTRIE ----
-  '4e_transformations': {
-    id: 'transformations-4e',
-    description: "Découvrir la translation comme un glissement du plan : construire l'image d'un point et d'une figure, relier translation et parallélogramme, et utiliser les propriétés conservées pour justifier une construction.",
-    prerequisites: ["Transformations de 5e"],
-    pointsToLearn: [
-      "Reconnaître une translation à son glissement",
-      "Construire l'image d'un point par une translation",
-      "Construire l'image d'une figure par une translation",
-      "Relier une translation au parallélogramme qu'elle forme",
-      "Utiliser les propriétés conservées par une translation",
-    ],
-    durationMinutes: 72,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '➡️',
-    tier: 'free',
-  },
-  '4e_reperage': {
-    id: 'reperage-4e',
-    description: "Approfondir le repérage dans le plan : lire et placer des points à coordonnées décimales ou négatives, choisir une graduation adaptée, et se servir des coordonnées pour résoudre un problème géométrique.",
-    prerequisites: ["Repérage de 5e"],
-    pointsToLearn: [
-      "Lire des coordonnées décimales ou négatives",
-      "Choisir une graduation adaptée à des données",
-      "Placer un point dans un repère à graduation non unitaire",
-      "Utiliser les coordonnées pour résoudre un problème géométrique",
-    ],
-    durationMinutes: 50,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '📍',
-    tier: 'free',
-  },
-  '4e_representations_espace': {
-    id: 'representations-espace-4e',
-    description: "Représenter et mesurer pyramides et cônes : reconnaître leur base et leur hauteur sur une perspective, et découvrir le tiers qui relie leur volume à celui du prisme ou du cylindre de même base.",
-    prerequisites: ["Solides", "Représentations de 5e"],
-    pointsToLearn: [
-      "Reconnaître une pyramide et un cône de révolution",
-      "Identifier la base et la hauteur d'une pyramide",
-      "Identifier la base et la hauteur d'un cône",
-      "Calculer le volume d'une pyramide",
-      "Calculer le volume d'un cône de révolution",
-      "Résoudre un problème de volume",
-    ],
-    durationMinutes: 75,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '🔺',
-    tier: 'free',
-  },
-  '4e_parallelogrammes_translations': {
-    id: 'parallelogrammes-translations-4e',
-    description: "Relier le parallélogramme et la translation : reconnaître qu'un même glissement transforme un côté en son opposé, et utiliser ce lien pour construire, justifier et démontrer dans des configurations.",
-    prerequisites: ["Parallélogrammes de 5e", "Transformations"],
-    pointsToLearn: [
-      "Reconnaître le parallélogramme formé par une translation",
-      "Construire le quatrième sommet d'un parallélogramme par translation",
-      "Justifier qu'un quadrilatère est un parallélogramme par une translation",
-      "Utiliser le lien translation / parallélogramme dans une démonstration",
-    ],
-    durationMinutes: 64,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '🔷',
-    tier: 'free',
-  },
-  // Un objet officiel, DEUX leçons (mécanisme `buildLesson`, partIndex 1 et 2).
-  // La coupe est pédagogique : « Triangles » démontre (cercle circonscrit,
-  // droite des milieux, rédaction), « Pythagore » construit la relation des
-  // aires puis l'exploite. Un élève ne peut pas rédiger une démonstration de
-  // Pythagore avant de savoir ce qu'est une démonstration.
-  '4e_triangles': [
-    {
-      id: 'triangles-4e',
-      titleSma: 'Triangles : démontrer',
-      description: "Démontrer dans le triangle : caractériser le triangle rectangle par son cercle circonscrit, découvrir la droite des milieux, distinguer une propriété de sa réciproque, et rédiger une démonstration géométrique complète.",
-      prerequisites: ["Triangles de 5e", "Angles"],
-      pointsToLearn: [
-        "Caractériser le triangle rectangle par son cercle circonscrit",
-        "Utiliser la droite des milieux",
-        "Distinguer une propriété et sa réciproque",
-        "Rédiger une démonstration géométrique",
-      ],
-      durationMinutes: 78,
-      difficulty: 'Difficile',
-      status: 'available',
-      icon: '📐',
-      tier: 'free',
-    },
-    {
-      id: 'pythagore-4e',
-      titleSma: 'Théorème de Pythagore',
-      description: "Déformer un triangle rectangle et voir trois aires changer sans que leur égalité ne bouge, faire apparaître le carré de l'hypoténuse en posant quatre triangles, calculer une longueur dans les deux sens, puis décider sans figure si un triangle est rectangle.",
-      prerequisites: ["Angles droits", "Aires", "Racine carrée"],
-      pointsToLearn: [
-        "Énoncer le théorème de Pythagore",
-        "Calculer la longueur de l'hypoténuse",
-        "Calculer la longueur d'un côté de l'angle droit",
-        "Utiliser la réciproque pour prouver qu'un triangle est rectangle",
-        "Utiliser la contraposée pour prouver qu'un triangle n'est pas rectangle",
-        "Résoudre un problème avec le théorème de Pythagore",
-      ],
-      durationMinutes: 80,
-      difficulty: 'Difficile',
-      status: 'available',
-      icon: '📐',
-      tier: 'free',
-    },
-  ],
-
-  // ---- 4E — DONNÉES ET PROBABILITÉS ----
-  '4e_statistiques': {
-    id: 'statistiques-4e',
-    description: "Résumer une série par plus qu'une moyenne : calculer une moyenne pondérée, déterminer une médiane et une étendue, et comparer deux séries en choisissant l'indicateur qui répond vraiment à la question posée.",
-    prerequisites: ["Statistiques de 5e"],
-    pointsToLearn: [
-      "Calculer une moyenne pondérée",
-      "Déterminer la médiane d'une série",
-      "Interpréter la médiane comme valeur de partage",
-      "Calculer l'étendue d'une série",
-      "Distinguer ce que disent la moyenne et la médiane",
-      "Comparer deux séries statistiques",
-    ],
-    durationMinutes: 80,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '📊',
-    tier: 'free',
-  },
-  '4e_probabilites': {
-    id: 'probabilites-4e',
-    description: "Approfondir le calcul de probabilités : décrire un événement contraire, une intersection et une réunion, reconnaître événement impossible et certain, et observer comment les fréquences fluctuent puis se stabilisent quand on répète l'expérience.",
-    prerequisites: ["Probabilités de 5e", "Fractions"],
-    pointsToLearn: [
-      "Décrire l'événement contraire d'un événement",
-      "Calculer la probabilité d'un événement contraire",
-      "Décrire l'intersection de deux événements",
-      "Décrire la réunion de deux événements",
-      "Reconnaître un événement impossible et un événement certain",
-      "Observer la fluctuation des fréquences lors de répétitions",
-      "Relier fréquence observée et probabilité",
-    ],
-    durationMinutes: 76,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '🎲',
-    tier: 'free',
-  },
-
-  // ---- 4E — PROPORTIONNALITÉ ET FONCTIONS ----
-  // Un objet officiel, DEUX leçons (mécanisme `buildLesson`, partIndex 1 et 2).
-  // Le référentiel 2026 ne porte AUCUN objet « grandeurs et mesures » au cycle 4 :
-  // les grandeurs composées vivent DANS la proportionnalité (la 5e y installe la
-  // vitesse moyenne, la 3e y ajoute les grandeurs quotient). La part 2 n'est donc
-  // pas un objet inventé. La coupe est pédagogique : « Proportionnalité » traite
-  // le NOMBRE (quatrième proportionnelle, coefficient multiplicateur, évolutions),
-  // « Grandeurs composées » traite la GRANDEUR (ce qu'est un km/h, le débit,
-  // km/h ↔ m/s par le sens).
-  '4e_proportionnalite': [
-    {
-      id: 'proportionnalite-4e',
-      description: "Résoudre des situations de proportionnalité plus complexes : déterminer une quatrième proportionnelle par le produit en croix, calculer une augmentation ou une diminution en pourcentage, et raisonner avec un coefficient multiplicateur.",
-      prerequisites: ["Proportionnalité de 5e"],
-      pointsToLearn: [
-        "Déterminer une quatrième proportionnelle par le produit en croix",
-        "Calculer une augmentation en pourcentage",
-        "Calculer une diminution en pourcentage",
-        "Utiliser un coefficient multiplicateur",
-        "Retrouver une valeur initiale après une évolution",
-        "Résoudre un problème de proportionnalité en contexte",
-      ],
-      durationMinutes: 77,
-      difficulty: 'Moyen',
-      status: 'available',
-      icon: '⚖️',
-      tier: 'free',
-    },
-    {
-      id: 'grandeurs-composees-4e',
-      titleSma: 'Grandeurs composées',
-      description: "Régler trois cadrans liés et découvrir que « si je double » n'a pas la même réponse selon ce qu'on tient fixe, trier les unités qui se lisent « par » de celles qui se lisent « fois », retrouver la même structure dans un robinet qui remplit, changer de km/h en m/s par le sens et non par une recette, puis lire une formule dans ses trois sens.",
-      prerequisites: ["Vitesse moyenne de 5e", "Quotient"],
-      pointsToLearn: [
-        "Relier distance, durée et vitesse",
-        "Reconnaître une grandeur quotient et une grandeur produit",
-        "Calculer un débit",
-        "Convertir une vitesse de km/h en m/s",
-        "Interpréter une formule reliant des grandeurs",
-        "Résoudre un problème de grandeurs composées",
-      ],
-      durationMinutes: 77,
-      difficulty: 'Moyen',
-      status: 'available',
-      icon: '🚴',
-      tier: 'free',
-    },
-  ],
-  '4e_fonctions': {
-    id: 'fonctions-4e',
-    description: "Approfondir la dépendance entre deux grandeurs : exécuter et inverser un programme de calcul, produire la formule qui le résume, et passer du tableau à la formule et au graphique pour modéliser une situation.",
-    prerequisites: ["Fonctions de 5e", "Calcul littéral"],
-    pointsToLearn: [
-      "Identifier la dépendance entre deux grandeurs",
-      "Exécuter un programme de calcul sur plusieurs valeurs",
-      "Produire la formule qui résume un programme de calcul",
-      "Passer d'un tableau de valeurs à une formule",
-      "Représenter graphiquement une dépendance",
-      "Modéliser une situation par une formule et un graphique",
-    ],
-    durationMinutes: 74,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '📈',
-    tier: 'free',
-  },
-
-  // ---- 4E — PENSÉE INFORMATIQUE ----
-  '4e_algorithmique_programmation': {
-    id: 'algorithmique-programmation-4e',
-    description: "Faire choisir un programme : écrire et lire une instruction conditionnelle « si… alors… sinon », manipuler des variables qui évoluent, puis lire, modifier et tester un programme existant pour corriger ce qu'il fait.",
-    prerequisites: ["Algorithmique de 5e"],
-    pointsToLearn: [
-      "Lire une instruction conditionnelle « si… alors… sinon »",
-      "Écrire une condition qui teste une valeur",
-      "Prévoir le chemin suivi par un programme selon la valeur testée",
-      "Manipuler une variable qui évolue au cours du programme",
-      "Modifier un programme existant pour changer son résultat",
-      "Tester un programme et corriger son erreur",
-    ],
-    durationMinutes: 80,
-    difficulty: 'Moyen',
-    status: 'available',
-    icon: '💻',
-    tier: 'free',
-  },
-
-  // ============================================================
-  // SECONDE (lycée) — catalogue only, no implementation yet.
-  // Keys are `seconde_<official object id>` (the grade id is 'seconde',
-  // see courseLevels). Every lesson is 'coming_soon' until it is built.
-  // ============================================================
-
-  // ---- SECONDE — NOMBRES ET CALCULS ----
-  // Built lessons (2026-09-05). pointsToLearn follow the authored 2nde
-  // curriculum data; durationMinutes equals the module sum of each
-  // lesson.config.js (playbook §5).
-  'seconde_ensembles_et_intervalles': {
-    id: "ensembles-et-intervalles-2nde",
-    description: "Utiliser le langage des ensembles et les intervalles pour décrire, représenter et résoudre des situations mathématiques.",
-    prerequisites: ["Nombres relatifs", "Inégalités", "Repérage sur une droite"],
-    pointsToLearn: [
-      "Utiliser le langage des ensembles.",
-      "Lire et représenter des intervalles.",
-      "Décrire un ensemble de nombres à l’aide d’un intervalle.",
-      "Interpréter les bornes et les différents types d’intervalles.",
-      "Utiliser les intervalles pour résoudre des situations mathématiques.",
-      "Comprendre l’appartenance à un ensemble et utiliser l’ensemble vide.",
-      "Déterminer une réunion et une intersection d’ensembles.",
-    ],
-    durationMinutes: 70,
-    difficulty: "Difficile",
-    status: 'available',
-    icon: "🔢",
-    tier: 'free',
-  },
-  'seconde_logique_et_raisonnement': {
-    id: "logique-et-raisonnement-2nde",
-    description: "Construire et analyser des propositions mathématiques, utiliser les connecteurs logiques et raisonner avec implication, équivalence, contre-exemple et contradiction.",
-    prerequisites: ["Ensembles", "Calcul littéral"],
-    pointsToLearn: [
-      "Construire et analyser une proposition mathématique.",
-      "Utiliser les connecteurs logiques.",
-      "Comprendre et utiliser l’implication.",
-      "Comprendre et utiliser l’équivalence.",
-      "Utiliser un contre-exemple pour réfuter une affirmation.",
-      "Raisonner par contradiction.",
-      "Utiliser des variables dans une proposition.",
-      "Formuler la réciproque d’une implication.",
-      "Utiliser une contraposée.",
-      "Comprendre les quantifications universelle et existentielle.",
-      "Raisonner par disjonction des cas.",
-    ],
-    durationMinutes: 67,
-    difficulty: "Difficile",
-    status: 'available',
-    icon: "🧠",
-    tier: 'free',
-  },
-  'seconde_arithmetique': {
-    id: "arithmetique-2nde",
-    description: "Utiliser les multiples, diviseurs et propriétés des nombres entiers pour résoudre des problèmes et construire des raisonnements.",
-    prerequisites: ["Nombres entiers", "Calcul numérique"],
-    pointsToLearn: [
-      "Reconnaître et utiliser les multiples et diviseurs.",
-      "Utiliser les propriétés de divisibilité.",
-      "Raisonner sur les nombres entiers.",
-      "Résoudre des problèmes faisant intervenir multiples et diviseurs.",
-      "Utiliser les propriétés arithmétiques pour construire une démonstration.",
-    ],
-    durationMinutes: 68,
-    difficulty: "Difficile",
-    status: 'available',
-    icon: "🔢",
-    tier: 'free',
-  },
-  'seconde_nombres_reels': {
-    id: "nombres-reels-2nde",
-    description: "Comprendre les nombres réels, les représenter sur une droite et distinguer nombres décimaux, rationnels et irrationnels.",
-    prerequisites: ["Fractions", "Nombres relatifs", "Puissances"],
-    pointsToLearn: [
-      "Comprendre l’ensemble des nombres réels.",
-      "Représenter des nombres réels sur une droite graduée.",
-      "Distinguer nombres décimaux, rationnels et irrationnels.",
-      "Reconnaître et utiliser les écritures exactes et approchées.",
-      "Comparer et encadrer des nombres réels.",
-      "Choisir un arrondi adapté à une situation.",
-    ],
-    durationMinutes: 67,
-    difficulty: "Difficile",
-    status: 'available',
-    icon: "ℝ",
-    tier: 'free',
-  },
-  'seconde_valeur_absolue_et_distance': {
-    id: "valeur-absolue-distance-2nde",
-    description: "Utiliser la valeur absolue comme distance à zéro et résoudre des situations faisant intervenir des distances entre nombres réels.",
-    prerequisites: ["Nombres réels", "Ensembles et intervalles"],
-    pointsToLearn: [
-      "Interpréter la valeur absolue comme une distance à zéro.",
-      "Calculer la valeur absolue d’un nombre réel.",
-      "Interpréter la distance entre deux nombres réels.",
-      "Résoudre des situations utilisant des distances.",
-      "Relier distance, valeur absolue et intervalles.",
-      "Résoudre une inéquation de la forme |x − a| ≤ r.",
-      "Représenter graphiquement l’ensemble des solutions sur une droite.",
-    ],
-    durationMinutes: 59,
-    difficulty: "Difficile",
-    status: 'available',
-    icon: "📏",
-    tier: 'free',
-  },
-  'seconde_calcul_litteral': {
-    id: "calcul-litteral-2nde",
-    description: "Manipuler des expressions algébriques, développer, factoriser, réduire et choisir une forme adaptée à la résolution d'un problème.",
-    prerequisites: ["Arithmétique"],
-    pointsToLearn: [
-      "Identifier et manipuler une expression littérale.",
-      "Réduire une expression.",
-      "Développer une expression.",
-      "Factoriser une expression.",
-      "Choisir une forme développée ou factorisée selon le problème.",
-      "Utiliser le calcul littéral pour démontrer ou résoudre.",
-      "Utiliser les identités remarquables (a+b)², (a−b)² et (a+b)(a−b).",
-      "Factoriser une expression de la forme ax² + bx.",
-      "Effectuer des calculs avec des expressions fractionnaires simples.",
-      "Vérifier une identité algébrique.",
-    ],
-    durationMinutes: 80,
-    difficulty: "Difficile",
-    status: 'available',
-    icon: "✏️",
-    tier: 'free',
-  },
-  'seconde_equations_et_inequations': {
-    id: "equations-et-inequations-2nde",
-    description: "Résoudre des équations et inéquations du premier degré et des équations produit ou quotient dans des situations mathématiques.",
-    prerequisites: ["Calcul littéral", "Ensembles et intervalles"],
-    pointsToLearn: [
-      "Comprendre une équation comme une égalité à résoudre.",
-      "Résoudre une équation du premier degré.",
-      "Comprendre et résoudre une inéquation du premier degré.",
-      "Représenter l’ensemble des solutions sur une droite.",
-      "Résoudre des équations produit.",
-      "Résoudre des équations quotient avec les restrictions nécessaires.",
-      "Interpréter et vérifier les solutions.",
-      "Prendre en compte l’ensemble de définition d’une équation quotient.",
-      "Modéliser un problème par une équation ou une inéquation.",
-      "Vérifier une solution.",
-    ],
-    durationMinutes: 85,
-    difficulty: "Difficile",
-    status: 'available',
-    icon: "⚖️",
-    tier: 'free',
-  },
-
-  // ---- SECONDE — GÉOMÉTRIE ----
-  'seconde_vecteurs': {
-    id: "vecteurs-2nde",
-    description: "Utiliser les vecteurs comme outils de déplacement, de calcul et de résolution de problèmes géométriques.",
-    prerequisites: ["Repérage dans le plan", "Translations", "Coordonnées"],
-    pointsToLearn: [
-      "Comprendre l'égalité de deux vecteurs",
-      "Identifier le vecteur nul",
-      "Construire un représentant d'un vecteur",
-      "Additionner deux vecteurs",
-      "Multiplier un vecteur par un réel",
-      "Reconnaître deux vecteurs colinéaires",
-      "Utiliser une base orthonormée",
-      "Lire les coordonnées d'un vecteur",
-      "Calculer les coordonnées d'un vecteur",
-      "Calculer la norme d'un vecteur",
-      "Calculer les coordonnées du vecteur AB",
-      "Calculer une distance entre deux points",
-      "Calculer les coordonnées du milieu d'un segment",
-      "Utiliser les vecteurs pour résoudre un problème",
-    ],
-    durationMinutes: 87,
-    difficulty: "Difficile",
-    status: 'available',
-    icon: "➡️",
-    tier: 'free',
-  },
-  'seconde_colinearite_et_alignement': {
-    id: "colinearite-alignement-2nde",
-    description: "Utiliser la colinéarité des vecteurs et le déterminant pour étudier l'alignement et le parallélisme.",
-    prerequisites: ["Vecteurs", "Coordonnées", "Déterminants"],
-    pointsToLearn: [
-      "Comprendre la colinéarité",
-      "Reconnaître deux vecteurs colinéaires",
-      "Utiliser la proportionnalité des coordonnées",
-      "Calculer un déterminant",
-      "Utiliser le déterminant pour tester la colinéarité",
-      "Déterminer si trois points sont alignés",
-      "Déterminer si deux droites sont parallèles",
-      "Résoudre un problème d'alignement",
-      "Résoudre un problème de parallélisme",
-    ],
-    durationMinutes: 64,
-    difficulty: "Difficile",
-    status: 'available',
-    icon: "📐",
-    tier: 'free',
-  },
-  'seconde_equations_de_droites': {
-    id: "equations-de-droites-2nde",
-    description: "Déterminer et exploiter les équations des droites dans un repère du plan.",
-    prerequisites: ["Fonctions affines", "Vecteurs", "Repérage dans le plan"],
-    pointsToLearn: [
-      "Comprendre un vecteur directeur",
-      "Identifier un vecteur directeur d'une droite",
-      "Comprendre la pente d'une droite",
-      "Calculer la pente d'une droite",
-      "Déterminer une équation de droite à partir de deux points",
-      "Déterminer une équation de droite à partir d'un point et d'un vecteur directeur",
-      "Déterminer une équation de droite à partir d'un point et de la pente",
-      "Comprendre l'équation réduite",
-      "Comprendre l'équation cartésienne",
-      "Tracer une droite à partir de son équation",
-      "Déterminer si un point appartient à une droite",
-      "Établir l'alignement de trois points",
-    ],
-    durationMinutes: 85,
-    difficulty: "Difficile",
-    status: 'available',
-    icon: "📈",
-    tier: 'free',
-  },
-  'seconde_positions_relatives_droites': {
-    id: "positions-relatives-droites-2nde",
-    description: "Étudier les positions relatives de deux droites et déterminer leur parallélisme ou leur point d'intersection.",
-    prerequisites: ["Équations de droites", "Systèmes simples", "Vecteurs"],
-    pointsToLearn: [
-      "Reconnaître deux droites parallèles",
-      "Reconnaître deux droites sécantes",
-      "Comparer les pentes de deux droites",
-      "Utiliser les équations pour étudier le parallélisme",
-      "Déterminer le point d'intersection de deux droites",
-      "Résoudre un système associé à deux droites",
-      "Interpréter graphiquement une intersection",
-      "Résoudre un problème géométrique avec deux droites",
-    ],
-    durationMinutes: 70,
-    difficulty: "Difficile",
-    status: 'available',
-    icon: "✖️",
-    tier: 'free',
-  },
-
-  // ---- SECONDE — FONCTIONS ----
-  'seconde_fonctions': {
-    id: "fonctions-2nde",
-    description: "Consolider la notion de fonction, représenter une dépendance entre variables et passer entre représentations algébriques, graphiques et numériques.",
-    prerequisites: ["Fonctions du collège", "Repérage dans le plan", "Calcul littéral"],
-    pointsToLearn: [
-      "Comprendre une fonction comme une relation de dépendance",
-      "Identifier la variable",
-      "Déterminer l'ensemble de définition",
-      "Calculer une image",
-      "Déterminer un antécédent",
-      "Lire une fonction dans un tableau",
-      "Lire une fonction sur un graphique",
-      "Lire une fonction à partir d'une expression",
-      "Passer d'un registre de représentation à un autre",
-      "Modéliser une situation avec une fonction",
-      "Utiliser une fonction définie sur un intervalle",
-      "Utiliser une fonction définie sur une réunion d'intervalles",
-    ],
-    durationMinutes: 87,
-    difficulty: "Difficile",
-    status: 'available',
-    icon: "ƒ",
-    tier: 'free',
-  },
-  'seconde_fonctions_de_reference': {
-    id: "fonctions-de-reference-2nde",
-    description: "Étudier les fonctions valeur absolue, carré et inverse et construire des images mentales de leurs représentations graphiques.",
-    prerequisites: ["Fonctions", "Valeur absolue", "Puissances"],
-    pointsToLearn: [
-      "Reconnaître la fonction valeur absolue",
-      "Étudier la fonction carré",
-      "Étudier la fonction inverse",
-      "Connaître leurs expressions",
-      "Construire un tableau de valeurs",
-      "Représenter graphiquement une fonction de référence",
-      "Identifier les caractéristiques d'une courbe",
-      "Comparer les courbes de fonctions de référence",
-      "Déterminer une image graphiquement",
-      "Déterminer un antécédent graphiquement",
-      "Utiliser une fonction de référence pour modéliser une situation",
-    ],
-    durationMinutes: 84,
-    difficulty: "Difficile",
-    status: 'available',
-    icon: "📈",
-    tier: 'free',
-  },
-  'seconde_signe_fonctions': {
-    id: "signe-fonctions-2nde",
-    description: "Étudier le signe d'une fonction et utiliser les tableaux de signes pour résoudre des équations et inéquations.",
-    prerequisites: ["Fonctions", "Inégalités", "Calcul littéral"],
-    pointsToLearn: [
-      "Déterminer le signe d'une fonction",
-      "Interpréter le signe graphiquement",
-      "Déterminer les zéros d'une fonction",
-      "Construire un tableau de signes",
-      "Étudier le signe d'une fonction affine",
-      "Étudier le signe d'un produit",
-      "Étudier le signe d'un quotient",
-      "Utiliser un tableau de signes pour résoudre une inéquation",
-      "Résoudre f(x)=0",
-      "Résoudre f(x)>0",
-      "Résoudre f(x)<0",
-      "Vérifier graphiquement une résolution",
-    ],
-    durationMinutes: 80,
-    difficulty: "Difficile",
-    status: 'available',
-    icon: "➕➖",
-    tier: 'free',
-  },
-  'seconde_variations_et_extremums': {
-    id: "variations-extremums-2nde",
-    description: "Étudier les variations d'une fonction, construire un tableau de variations et déterminer ses maximums et minimums.",
-    prerequisites: ["Fonctions", "Lecture graphique", "Inégalités"],
-    pointsToLearn: [
-      "Comprendre la croissance d'une fonction",
-      "Comprendre la décroissance d'une fonction",
-      "Comprendre la monotonie",
-      "Lire les variations sur un graphique",
-      "Construire un tableau de variations",
-      "Lire un tableau de variations",
-      "Déterminer un maximum",
-      "Déterminer un minimum",
-      "Déterminer un extremum sur un intervalle",
-      "Relier graphique et tableau de variations",
-      "Comparer f(a) et f(b)",
-      "Résoudre un problème d'optimisation",
-    ],
-    durationMinutes: 85,
-    difficulty: "Difficile",
-    status: 'available',
-    icon: "📊",
-    tier: 'free',
-  },
-  'seconde_fonction_affine': {
-    id: "fonction-affine-2nde",
-    description: "Approfondir l'étude des fonctions affines en reliant coefficient directeur, ordonnée à l'origine, variations et représentation graphique.",
-    prerequisites: ["Fonctions affines du collège", "Équations de droites"],
-    pointsToLearn: [
-      "Reconnaître une fonction affine",
-      "Identifier le coefficient directeur",
-      "Identifier l'ordonnée à l'origine",
-      "Interpréter le coefficient directeur comme un taux d'accroissement",
-      "Relier le signe du coefficient directeur aux variations",
-      "Déterminer une fonction affine à partir de données",
-      "Lire le coefficient directeur sur un graphique",
-      "Lire l'ordonnée à l'origine",
-      "Étudier le signe d'une fonction affine",
-      "Résoudre une équation avec une fonction affine",
-      "Résoudre une inéquation avec une fonction affine",
-    ],
-    durationMinutes: 78,
-    difficulty: "Difficile",
-    status: 'available',
-    icon: "📈",
-    tier: 'free',
-  },
-
-  // ---- SECONDE — STATISTIQUES ET PROBABILITÉS ----
-  'seconde_proportions_et_pourcentages': {
-    id: "proportions-pourcentages-2nde",
-    description: "Approfondir les proportions, les pourcentages de pourcentages et distinguer proportion, évolution et coefficient multiplicateur.",
-    prerequisites: ["Proportionnalité", "Pourcentages", "Fractions"],
-    pointsToLearn: [
-      "Calculer une proportion",
-      "Exprimer une proportion sous forme décimale",
-      "Exprimer une proportion sous forme fractionnaire",
-      "Exprimer une proportion en pourcentage",
-      "Calculer une proportion de proportion",
-      "Interpréter un pourcentage de pourcentage",
-      "Distinguer proportion et évolution",
-      "Identifier une variation additive",
-      "Identifier une variation multiplicative",
-      "Utiliser un coefficient multiplicateur",
-      "Passer d'un taux d'évolution à un coefficient multiplicateur",
-    ],
-    durationMinutes: 73,
-    difficulty: "Difficile",
-    status: 'available',
-    icon: "%",
-    tier: 'free',
-  },
-  'seconde_evolutions_successives_reciproques': {
-    id: "evolutions-successives-reciproques-2nde",
-    description: "Calculer et interpréter des évolutions successives et réciproques à l'aide des coefficients multiplicateurs.",
-    prerequisites: ["Pourcentages", "Coefficients multiplicateurs"],
-    pointsToLearn: [
-      "Calculer une évolution successive",
-      "Composer des coefficients multiplicateurs",
-      "Calculer un taux d'évolution global",
-      "Comprendre qu'une succession de pourcentages ne s'additionne pas",
-      "Calculer une évolution réciproque",
-      "Déterminer le coefficient multiplicateur réciproque",
-      "Interpréter une évolution dans son contexte",
-      "Résoudre des problèmes d'évolution",
-    ],
-    durationMinutes: 70,
-    difficulty: "Difficile",
-    status: 'available',
-    icon: "📈",
-    tier: 'free',
-  },
-  'seconde_statistiques_une_variable': {
-    id: "statistiques-une-variable-2nde",
-    description: "Analyser une série statistique à une variable, calculer des indicateurs et étudier la dispersion des données.",
-    prerequisites: ["Statistiques de 3e", "Moyenne", "Médiane", "Quartiles"],
-    pointsToLearn: [
-      "Lire une série statistique",
-      "Calculer une moyenne",
-      "Utiliser la linéarité de la moyenne",
-      "Calculer une médiane",
-      "Déterminer les quartiles",
-      "Interpréter les indicateurs statistiques",
-      "Comprendre l'écart type",
-      "Calculer ou utiliser un écart type",
-      "Interpréter la dispersion d'une série",
-      "Étudier l'influence de l'ajout d'une valeur",
-      "Étudier l'influence de la suppression d'une valeur",
-      "Comparer deux séries statistiques",
-    ],
-    durationMinutes: 89,
-    difficulty: "Difficile",
-    status: 'available',
-    icon: "📊",
-    tier: 'free',
-  },
-  'seconde_series_regroupees_classes': {
-    id: "series-regroupees-classes-2nde",
-    description: "Analyser une série statistique continue regroupée en classes et utiliser les histogrammes et fréquences cumulées.",
-    prerequisites: ["Statistiques", "Moyenne", "Médiane", "Histogrammes"],
-    pointsToLearn: [
-      "Comprendre le regroupement en classes",
-      "Identifier des classes de même amplitude",
-      "Construire un histogramme",
-      "Lire un histogramme",
-      "Construire un polygone des fréquences cumulées",
-      "Calculer une moyenne pondérée",
-      "Estimer une moyenne à partir de classes",
-      "Déterminer la classe médiane",
-      "Estimer une médiane dans une classe",
-      "Interpréter une série continue regroupée",
-    ],
-    durationMinutes: 80,
-    difficulty: "Difficile",
-    status: 'available',
-    icon: "📊",
-    tier: 'free',
-  },
-  'seconde_boites_a_moustaches': {
-    id: "boites-a-moustaches-2nde",
-    description: "Comparer des distributions statistiques à l'aide des indicateurs et des boîtes à moustaches.",
-    prerequisites: ["Quartiles", "Médiane", "Statistiques"],
-    pointsToLearn: [
-      "Lire une boîte à moustaches",
-      "Identifier médiane et quartiles",
-      "Identifier l'étendue",
-      "Comprendre la dispersion",
-      "Comparer deux distributions",
-      "Comparer des médianes",
-      "Comparer des dispersions",
-      "Choisir des indicateurs adaptés",
-      "Interpréter une boîte à moustaches dans son contexte",
-    ],
-    durationMinutes: 65,
-    difficulty: "Difficile",
-    status: 'available',
-    icon: "📦",
-    tier: 'free',
-  },
-  'seconde_tableaux_croises': {
-    id: "tableaux-croises-2nde",
-    description: "Croiser deux variables qualitatives à partir de données réelles et construire un tableau croisé d'effectifs.",
-    prerequisites: ["Effectifs", "Fréquences", "Pourcentages"],
-    pointsToLearn: [
-      "Identifier deux variables qualitatives",
-      "Identifier une variable nominale",
-      "Identifier une variable ordinale",
-      "Lire un fichier de données",
-      "Filtrer une population",
-      "Construire un tableau croisé d'effectifs",
-      "Lire un tableau croisé",
-      "Calculer des effectifs marginaux",
-      "Interpréter les résultats d'un tableau croisé",
-      "Utiliser ET, OU et NON pour filtrer des données",
-    ],
-    durationMinutes: 75,
-    difficulty: "Difficile",
-    status: 'available',
-    icon: "🗂️",
-    tier: 'free',
-  },
-  'seconde_frequences_conditionnelles': {
-    id: "frequences-conditionnelles-2nde",
-    description: "Calculer et interpréter des fréquences conditionnelles et marginales dans des tableaux croisés.",
-    prerequisites: ["Tableaux croisés", "Proportions", "Pourcentages"],
-    pointsToLearn: [
-      "Comprendre une fréquence conditionnelle",
-      "Calculer une fréquence conditionnelle",
-      "Comprendre une fréquence marginale",
-      "Calculer une fréquence marginale",
-      "Compléter un tableau croisé",
-      "Interpréter une fréquence conditionnelle",
-      "Comparer des sous-populations",
-      "Passer des effectifs aux fréquences",
-      "Passer des fréquences aux effectifs",
-      "Interpréter des données réelles",
-    ],
-    durationMinutes: 78,
-    difficulty: "Difficile",
-    status: 'available',
-    icon: "📊",
-    tier: 'free',
-  },
-  'seconde_loi_des_grands_nombres': {
-    id: "loi-grands-nombres-2nde",
-    description: "Simuler des expériences aléatoires et observer la stabilisation des fréquences lorsque le nombre de répétitions augmente.",
-    prerequisites: ["Probabilités de 3e", "Fréquences", "Simulation"],
-    pointsToLearn: [
-      "Simuler une expérience aléatoire",
-      "Répéter une expérience indépendante",
-      "Calculer une fréquence observée",
-      "Observer la fluctuation des fréquences",
-      "Observer la stabilisation des fréquences",
-      "Comprendre le lien entre fréquence et probabilité",
-      "Distinguer modèle probabiliste et situation réelle",
-      "Comprendre qu'une équiprobabilité est une hypothèse du modèle",
-      "Utiliser une simulation Python ou tableur",
-    ],
-    durationMinutes: 75,
-    difficulty: "Difficile",
-    status: 'available',
-    icon: "🎲",
-    tier: 'free',
-  },
-  'seconde_probabilites_conditionnelles': {
-    id: "probabilites-conditionnelles-2nde",
-    description: "Comprendre et calculer une probabilité conditionnelle et distinguer les probabilités selon la condition imposée.",
-    prerequisites: ["Probabilités", "Proportions", "Tableaux croisés"],
-    pointsToLearn: [
-      "Comprendre une probabilité conditionnelle",
-      "Interpréter 'sachant que'",
-      "Calculer P_A(B)",
-      "Calculer une probabilité conditionnelle à partir d'un tableau",
-      "Calculer une probabilité conditionnelle dans une situation concrète",
-      "Distinguer P_A(B) et P_B(A)",
-      "Interpréter une probabilité conditionnelle",
-      "Identifier une erreur d'inversion du conditionnement",
-      "Relier probabilité conditionnelle et fréquence conditionnelle",
-    ],
-    durationMinutes: 80,
-    difficulty: "Difficile",
-    status: 'available',
-    icon: "🎯",
-    tier: 'free',
-  },
-  'seconde_arbres_de_probabilites': {
-    id: "arbres-probabilites-2nde",
-    description: "Construire et exploiter des arbres pondérés pour représenter des expériences successives et calculer des probabilités.",
-    prerequisites: ["Probabilités conditionnelles", "Fractions", "Proportions"],
-    pointsToLearn: [
-      "Construire un arbre de probabilités",
-      "Lire un arbre pondéré",
-      "Interpréter la pondération d'une branche",
-      "Identifier une probabilité conditionnelle dans un arbre",
-      "Calculer la probabilité d'un chemin",
-      "Multiplier les probabilités des branches",
-      "Calculer la probabilité d'un événement",
-      "Additionner les probabilités de plusieurs chemins",
-      "Passer d'une situation réelle à un arbre",
-      "Passer d'un arbre à une situation en langage naturel",
-    ],
-    durationMinutes: 80,
-    difficulty: "Difficile",
-    status: 'available',
-    icon: "🌳",
-    tier: 'free',
-  },
-  'seconde_tests_diagnostiques': {
-    id: "tests-diagnostiques-probabilites-2nde",
-    description: "Utiliser les probabilités conditionnelles pour interpréter les faux positifs, faux négatifs, la sensibilité et la spécificité d'un test.",
-    prerequisites: ["Probabilités conditionnelles", "Arbres", "Tableaux croisés"],
-    pointsToLearn: [
-      "Modéliser une situation de test diagnostique",
-      "Identifier la population étudiée",
-      "Identifier les événements pertinents",
-      "Comprendre un faux positif",
-      "Comprendre un faux négatif",
-      "Comprendre la sensibilité d'un test",
-      "Comprendre la spécificité d'un test",
-      "Calculer une probabilité conditionnelle dans un test",
-      "Interpréter correctement un résultat de test",
-      "Éviter l'inversion des conditionnements",
-      "Analyser une affirmation liée à un test",
-    ],
-    durationMinutes: 81,
-    difficulty: "Difficile",
-    status: 'available',
-    icon: "🧪",
-    tier: 'free',
-  },
-
-  // ---- SECONDE — ALGORITHMIQUE ET PROGRAMMATION ----
-  'seconde_variables_et_instructions': {
-    id: "variables-et-instructions-2nde",
-    description: "Utiliser les variables, affectations, conditions et boucles pour concevoir et comprendre des algorithmes simples.",
-    prerequisites: ["Calcul numérique", "Variables"],
-    pointsToLearn: [
-      "Comprendre la notion de variable informatique",
-      "Identifier les types entier, flottant, booléen et chaîne",
-      "Utiliser une affectation",
-      "Écrire une séquence d'instructions",
-      "Utiliser une instruction conditionnelle",
-      "Utiliser une boucle for",
-      "Utiliser une boucle while",
-      "Écrire une formule avec des variables",
-      "Lire un algorithme",
-      "Modifier un algorithme",
-      "Compléter un algorithme",
-      "Vérifier le fonctionnement d'un programme",
-    ],
-    durationMinutes: 76,
-    difficulty: "Difficile",
-    status: 'available',
-    icon: "💻",
-    tier: 'free',
-  },
-  'seconde_fonctions_en_python': {
-    id: "fonctions-en-python-2nde",
-    description: "Écrire, utiliser et comprendre des fonctions simples en Python pour modéliser des calculs et des expériences mathématiques.",
-    prerequisites: ["Variables", "Fonctions", "Algorithmique"],
-    pointsToLearn: [
-      "Définir une fonction en Python",
-      "Utiliser une fonction avec un argument",
-      "Utiliser une fonction avec plusieurs arguments",
-      "Appeler une fonction",
-      "Lire une fonction existante",
-      "Modifier une fonction",
-      "Compléter une fonction",
-      "Écrire une fonction réalisant un calcul",
-      "Utiliser une fonction renvoyant un nombre aléatoire",
-      "Répéter une fonction pour produire une série statistique",
-      "Simuler une expérience aléatoire",
-      "Vérifier les résultats d'un programme",
-    ],
-    durationMinutes: 86,
-    difficulty: "Difficile",
-    status: 'available',
-    icon: "🐍",
-    tier: 'free',
-  },
-
-  // ---- PREMIÈRE SPÉCIALITÉ ----
-  // Objets officiels ajoutés au référentiel 2026 le 2026-09-09.
-  //
-  // Chaque objet officiel porte 10 à 12 items de périmètre — trop pour une
-  // seule leçon (plafond 90 min, LESSON_CONTRACT.md). Ils sont donc DÉCOUPÉS
-  // via le mécanisme `buildLesson` partIndex/partTotal : une clé, un tableau,
-  // N leçons rattachées au même objet officiel. La coupe est PÉDAGOGIQUE, pas
-  // arithmétique : chaque partie raconte une histoire complète, et la seconde
-  // suppose la première. Les `pointsToLearn` réunis d'un objet redonnent
-  // exactement son teachingScope.include, dans l'ordre.
-  //
-  // Statut coming_soon tant que la leçon n'est pas construite ET routée
-  // (memoire lesson-visibility-gate).
-
-  'premiere_specialite_second_degre': [
-    {
-      id: "second-degre-resoudre-1ere",
-      titleSma: "Second degré : résoudre",
-      description: "Faire apparaître le discriminant en cherchant quand une parabole coupe l'axe, puis résoudre toute équation du second degré et factoriser le trinôme à partir de ses racines.",
-      prerequisites: ["Calcul littéral", "Équations du premier degré", "Fonction carrée"],
-      pointsToLearn: [
-        "Calculer le discriminant d'une équation du second degré",
-        "Résoudre une équation du second degré selon le signe du discriminant",
-        "Déterminer les racines d'un trinôme",
-        "Factoriser un trinôme à partir de ses racines",
-        "Relier les racines et la représentation graphique de la parabole",
-      ],
-      durationMinutes: 80,
-      difficulty: 'Difficile',
-      status: 'available',
-      icon: "📐",
-      tier: 'free',
-    },
-    {
-      id: "second-degre-signe-problemes-1ere",
-      titleSma: "Second degré : signe et problèmes",
-      description: "Lire le signe d'un trinôme sur sa parabole, en faire un tableau de signes, résoudre les inéquations, et modéliser des situations concrètes (trajectoires, aires, optimisation).",
-      prerequisites: ["Second degré : résoudre", "Tableau de signes", "Inéquations du premier degré"],
-      pointsToLearn: [
-        "Déterminer le signe d'un trinôme du second degré",
-        "Résoudre une inéquation du second degré",
-        "Modéliser un problème concret par une équation du second degré",
-        "Modéliser un problème concret par une inéquation du second degré",
-        "Interpréter les solutions dans le contexte du problème",
-      ],
-      durationMinutes: 80,
-      difficulty: 'Difficile',
-      status: 'available',
-      icon: "🎯",
-      tier: 'free',
-    },
-  ],
-  'premiere_specialite_suites_numeriques': [
-    {
-      id: "suites-decouvrir-1ere",
-      titleSma: "Suites : générer et reconnaître",
-      description: "Fabriquer les termes d'une suite de deux façons — de proche en proche, ou directement par son rang — puis reconnaître et démontrer qu'une suite est arithmétique ou géométrique.",
-      prerequisites: ["Fonctions", "Calcul littéral", "Pourcentages"],
-      pointsToLearn: [
-        "Générer les termes d'une suite définie par une formule explicite",
-        "Générer les termes d'une suite définie par une relation de récurrence",
-        "Reconnaître une suite arithmétique et déterminer sa raison",
-        "Reconnaître une suite géométrique et déterminer sa raison",
-        "Démontrer qu'une suite est arithmétique ou géométrique",
-        "Étudier le sens de variation d'une suite",
-      ],
-      durationMinutes: 80,
-      difficulty: 'Difficile',
-      status: 'available',
-      icon: "🔢",
-      tier: 'free',
-    },
-    {
-      id: "suites-calculer-modeliser-1ere",
-      titleSma: "Suites : calculer et modéliser",
-      description: "Atteindre un terme lointain sans dérouler toute la suite, sommer les premiers termes, et modéliser des évolutions réelles (épargne, population, dose) pour les interpréter.",
-      prerequisites: ["Suites : générer et reconnaître", "Puissances", "Pourcentages et évolutions"],
-      pointsToLearn: [
-        "Calculer un terme de rang donné d'une suite arithmétique",
-        "Calculer un terme de rang donné d'une suite géométrique",
-        "Calculer la somme des n premiers termes d'une suite arithmétique",
-        "Calculer la somme des n premiers termes d'une suite géométrique",
-        "Modéliser une situation concrète à l'aide d'une suite",
-        "Interpréter les résultats d'un modèle par suite",
-      ],
-      durationMinutes: 80,
-      difficulty: 'Difficile',
-      status: 'available',
-      icon: "📊",
-      tier: 'free',
-    },
-  ],
-  'premiere_specialite_derivation': [
-    {
-      id: "derivation-nombre-derive-1ere",
-      titleSma: "Dérivation : le nombre dérivé et la tangente",
-      description: "Rapprocher deux points d'une courbe jusqu'à ce que la sécante devienne tangente : le taux d'accroissement de Seconde se fige en un nombre, et ce nombre est une pente.",
-      prerequisites: ["Taux d'accroissement", "Équations de droites", "Fonctions"],
-      pointsToLearn: [
-        "Calculer un taux de variation entre deux points",
-        "Comprendre le nombre dérivé comme limite du taux de variation",
-        "Interpréter le nombre dérivé comme coefficient directeur de la tangente",
-        "Déterminer l'équation de la tangente en un point",
-      ],
-      durationMinutes: 75,
-      difficulty: 'Difficile',
-      status: 'available',
-      icon: "📈",
-      tier: 'free',
-    },
-    {
-      id: "derivation-calculer-1ere",
-      titleSma: "Dérivation : les règles de calcul",
-      description: "Établir la dérivée des fonctions usuelles, puis les règles qui permettent de dériver une somme, un produit, un quotient et une composée simple.",
-      prerequisites: ["Dérivation : le nombre dérivé et la tangente", "Calcul littéral", "Fractions algébriques"],
-      pointsToLearn: [
-        "Calculer la dérivée des fonctions usuelles",
-        "Utiliser la dérivée d'une somme et d'un produit par un réel",
-        "Utiliser la dérivée d'un produit",
-        "Utiliser la dérivée d'un quotient",
-        "Utiliser la dérivée d'une fonction composée simple",
-      ],
-      durationMinutes: 80,
-      difficulty: 'Difficile',
-      status: 'available',
-      icon: "🧮",
-      tier: 'free',
-    },
-    {
-      id: "derivation-variations-optimisation-1ere",
-      titleSma: "Dérivation : variations et optimisation",
-      description: "Faire du signe de la dérivée l'outil qui décide des variations, construire le tableau, et s'en servir pour trouver le meilleur choix dans un problème d'optimisation.",
-      prerequisites: ["Dérivation : les règles de calcul", "Signe d'une fonction", "Tableau de variations"],
-      pointsToLearn: [
-        "Relier le signe de la dérivée aux variations de la fonction",
-        "Construire un tableau de variations à partir de la dérivée",
-        "Résoudre un problème d'optimisation à l'aide de la dérivée",
-      ],
-      durationMinutes: 75,
-      difficulty: 'Difficile',
-      status: 'available',
-      icon: "🏔️",
-      tier: 'free',
-    },
-  ],
-  'premiere_specialite_fonction_exponentielle': [
-    {
-      id: "exponentielle-decouvrir-1ere",
-      titleSma: "Exponentielle : la fonction égale à sa dérivée",
-      description: "Chercher une fonction qui vaut sa propre vitesse de croissance : cette exigence, avec f(0) = 1, en désigne une seule — et sa courbe ne coupe jamais l'axe.",
-      prerequisites: ["Dérivation", "Fonctions", "Variations"],
-      pointsToLearn: [
-        "Connaître la définition de la fonction exponentielle",
-        "Comprendre la propriété caractéristique f' = f et f(0) = 1",
-        "Déterminer l'ensemble de définition et le signe de l'exponentielle",
-        "Étudier les variations de la fonction exponentielle",
-        "Représenter graphiquement la fonction exponentielle",
-        "Calculer la dérivée de exp(u) dans des cas simples",
-      ],
-      durationMinutes: 80,
-      difficulty: 'Difficile',
-      status: 'available',
-      icon: "🚀",
-      tier: 'free',
-    },
-    {
-      id: "exponentielle-calculer-modeliser-1ere",
-      titleSma: "Exponentielle : règles de calcul et modèles",
-      description: "Transformer les sommes en produits avec les règles algébriques, résoudre équations et inéquations, et modéliser une croissance ou une décroissance réelle.",
-      prerequisites: ["Exponentielle : la fonction égale à sa dérivée", "Puissances", "Équations et inéquations"],
-      pointsToLearn: [
-        "Utiliser la relation e^(a+b) = e^a × e^b",
-        "Utiliser les relations e^(−a) et e^(a−b)",
-        "Utiliser la relation (e^a)^n = e^(na)",
-        "Résoudre une équation avec des exponentielles",
-        "Résoudre une inéquation avec des exponentielles",
-        "Modéliser une croissance ou une décroissance par une exponentielle",
-      ],
-      durationMinutes: 80,
-      difficulty: 'Difficile',
-      status: 'available',
-      icon: "📉",
-      tier: 'free',
-    },
-  ],
-  'premiere_specialite_fonctions_trigonometriques': [
-    {
-      id: "trigonometrie-cercle-fonctions-1ere",
-      titleSma: "Fonctions trigonométriques : du cercle à la courbe",
-      description: "Enrouler la droite des réels sur le cercle, puis dérouler le mouvement pour voir naître les courbes du sinus et du cosinus, avec leur parité et leur périodicité.",
-      prerequisites: ["Cercle trigonométrique", "Radian", "Fonctions"],
-      pointsToLearn: [
-        "Situer un réel sur le cercle trigonométrique",
-        "Connaître les propriétés de parité des fonctions sinus et cosinus",
-        "Connaître et utiliser la périodicité des fonctions trigonométriques",
-        "Étudier les variations des fonctions sinus et cosinus",
-        "Représenter graphiquement les fonctions sinus et cosinus",
-        "Interpréter une représentation graphique d'une fonction trigonométrique",
-      ],
-      durationMinutes: 80,
-      difficulty: 'Difficile',
-      status: 'available',
-      icon: "🌊",
-      tier: 'free',
-    },
-    {
-      id: "trigonometrie-equations-modeles-1ere",
-      titleSma: "Fonctions trigonométriques : équations et phénomènes périodiques",
-      description: "Résoudre cos(x) = k et sin(x) = k en lisant les solutions sur le cercle, utiliser les formules d'addition et de duplication, et modéliser un phénomène qui se répète.",
-      prerequisites: ["Fonctions trigonométriques : du cercle à la courbe", "Équations", "Valeurs remarquables"],
-      pointsToLearn: [
-        "Résoudre une équation du type cos(x) = k",
-        "Résoudre une équation du type sin(x) = k",
-        "Résoudre une inéquation trigonométrique simple",
-        "Utiliser les formules d'addition",
-        "Utiliser les formules de duplication",
-        "Modéliser un phénomène périodique par une fonction trigonométrique",
-      ],
-      durationMinutes: 80,
-      difficulty: 'Difficile',
-      status: 'available',
-      icon: "🔁",
-      tier: 'free',
-    },
-  ],
-  'premiere_specialite_produit_scalaire': [
-    {
-      id: "produit-scalaire-definir-1ere",
-      titleSma: "Produit scalaire : définir et détecter l’orthogonalité",
-      description: "Faire naître un nombre de deux vecteurs, le calculer de deux façons (coordonnées, normes et angle), et découvrir que sa nullité EST l'orthogonalité.",
-      prerequisites: ["Vecteurs", "Coordonnées", "Norme d'un vecteur"],
-      pointsToLearn: [
-        "Calculer un produit scalaire à partir des coordonnées",
-        "Calculer un produit scalaire à partir des normes et de l'angle",
-        "Utiliser la bilinéarité et la symétrie du produit scalaire",
-        "Démontrer l'orthogonalité de deux vecteurs par le produit scalaire",
-        "Déterminer un vecteur normal à une droite",
-      ],
-      durationMinutes: 75,
-      difficulty: 'Difficile',
-      status: 'available',
-      icon: "⊥",
-      tier: 'free',
-    },
-    {
-      id: "produit-scalaire-mesurer-demontrer-1ere",
-      titleSma: "Produit scalaire : mesurer et démontrer",
-      description: "Se servir du produit scalaire comme instrument de mesure — angles, distances, équation normale d'une droite — pour démontrer en géométrie plane.",
-      prerequisites: ["Produit scalaire : définir et détecter l'orthogonalité", "Trigonométrie", "Équations de droites"],
-      pointsToLearn: [
-        "Calculer un angle à l'aide du produit scalaire",
-        "Calculer une distance à l'aide du produit scalaire",
-        "Établir une équation de droite sous forme normale",
-        "Démontrer un alignement ou une orthogonalité en géométrie plane",
-        "Déterminer la nature d'un triangle à l'aide du produit scalaire",
-      ],
-      durationMinutes: 75,
-      difficulty: 'Difficile',
-      status: 'available',
-      icon: "📏",
-      tier: 'free',
-    },
-  ],
-  'premiere_specialite_geometrie_espace': [
-    {
-      id: "espace-vecteurs-coordonnees-1ere",
-      titleSma: "L’espace : vecteurs et coordonnées",
-      description: "Ajouter une troisième coordonnée : un point de l'espace se repère par trois nombres, un vecteur aussi, et la norme comme le produit scalaire s'y transportent.",
-      prerequisites: ["Vecteurs du plan", "Coordonnées", "Produit scalaire"],
-      pointsToLearn: [
-        "Déterminer les coordonnées d'un vecteur dans l'espace",
-        "Calculer la norme d'un vecteur de l'espace",
-        "Calculer un produit scalaire dans l'espace",
-        "Reconnaître le parallélisme de deux droites de l'espace",
-        "Reconnaître l'orthogonalité de deux droites de l'espace",
-      ],
-      durationMinutes: 80,
-      difficulty: 'Difficile',
-      status: 'available',
-      icon: "🧊",
-      tier: 'free',
-    },
-    {
-      id: "espace-droites-plans-1ere",
-      titleSma: "L’espace : droites, plans et distances",
-      description: "Décrire une droite par un paramètre et un plan par une équation, décider des positions relatives par le calcul, et mesurer les distances dans l'espace.",
-      prerequisites: ["L'espace : vecteurs et coordonnées", "Représentation paramétrique", "Systèmes"],
-      pointsToLearn: [
-        "Étudier les positions relatives d'une droite et d'un plan",
-        "Étudier les positions relatives de deux plans",
-        "Démontrer le parallélisme dans l'espace",
-        "Démontrer l'orthogonalité dans l'espace",
-        "Déterminer une représentation paramétrique d'une droite",
-        "Déterminer une équation cartésienne d'un plan",
-        "Calculer une distance dans l'espace",
-      ],
-      durationMinutes: 85,
-      difficulty: 'Difficile',
-      status: 'available',
-      icon: "📦",
-      tier: 'free',
-    },
-  ],
-  'premiere_specialite_variables_aleatoires': [
-    {
-      id: "variables-aleatoires-loi-esperance-1ere",
-      titleSma: "Variables aléatoires : loi et espérance",
-      description: "Résumer une expérience aléatoire par un nombre, dresser sa loi de probabilité, puis calculer l'espérance et s'en servir pour décider si un jeu est équitable.",
-      prerequisites: ["Probabilités", "Arbres pondérés", "Fréquences"],
-      pointsToLearn: [
-        "Définir une variable aléatoire discrète",
-        "Déterminer la loi de probabilité d'une variable aléatoire",
-        "Représenter une loi de probabilité par un tableau",
-        "Calculer l'espérance d'une variable aléatoire",
-        "Interpréter l'espérance dans le contexte",
-        "Utiliser l'espérance pour une prise de décision",
-      ],
-      durationMinutes: 80,
-      difficulty: 'Difficile',
-      status: 'available',
-      icon: "🎲",
-      tier: 'free',
-    },
-    {
-      id: "variables-aleatoires-dispersion-binomiale-1ere",
-      titleSma: "Variables aléatoires : dispersion et loi binomiale",
-      description: "Mesurer ce que l'espérance ne dit pas — la dispersion — puis reconnaître la répétition d'épreuves identiques et calculer avec la loi binomiale.",
-      prerequisites: ["Variables aléatoires : loi et espérance", "Écart type", "Arbres pondérés"],
-      pointsToLearn: [
-        "Calculer la variance d'une variable aléatoire",
-        "Calculer l'écart type d'une variable aléatoire",
-        "Reconnaître un schéma de Bernoulli",
-        "Reconnaître une situation relevant de la loi binomiale",
-        "Calculer une probabilité avec la loi binomiale",
-        "Modéliser une situation aléatoire par une variable aléatoire",
-      ],
-      durationMinutes: 80,
-      difficulty: 'Difficile',
-      status: 'available',
-      icon: "🔔",
-      tier: 'free',
-    },
-  ],
-  'premiere_specialite_probabilites_conditionnelles_independance': [
-    {
-      id: "probabilites-conditionnelles-arbres-1ere",
-      titleSma: "Probabilités conditionnelles : arbres et probabilités totales",
-      description: "Reprendre l'arbre pondéré de Seconde comme instrument de calcul : produit le long d'un chemin, somme sur les chemins, et formule des probabilités totales.",
-      prerequisites: ["Probabilités conditionnelles de 2de", "Arbres de probabilités", "Tableaux croisés"],
-      pointsToLearn: [
-        "Calculer une probabilité conditionnelle",
-        "Interpréter une probabilité conditionnelle",
-        "Construire un arbre pondéré",
-        "Exploiter un arbre pondéré pour calculer une probabilité",
-        "Utiliser la formule des probabilités totales",
-      ],
-      durationMinutes: 75,
-      difficulty: 'Difficile',
-      status: 'available',
-      icon: "🎯",
-      tier: 'free',
-    },
-    {
-      id: "probabilites-independance-1ere",
-      titleSma: "Probabilités : inverser le conditionnement et l’indépendance",
-      description: "Retourner un conditionnement sans se tromper de population, puis caractériser l'indépendance par le calcul et la distinguer de l'incompatibilité.",
-      prerequisites: ["Probabilités conditionnelles : arbres et probabilités totales", "Fréquences conditionnelles"],
-      pointsToLearn: [
-        "Inverser un conditionnement",
-        "Reconnaître l'indépendance de deux événements",
-        "Vérifier l'indépendance par le calcul",
-        "Distinguer indépendance et incompatibilité",
-        "Résoudre un problème concret avec des probabilités conditionnelles",
-      ],
-      durationMinutes: 75,
-      difficulty: 'Difficile',
-      status: 'available',
-      icon: "🔀",
-      tier: 'free',
-    },
-  ],
-  // ---- SECONDE — EXTENSION HORS PROGRAMME : trigonométrie ----
-  // Objet `trigonometrie_cercle`, déclaré en `extension_objects` (et NON en
-  // official_objects) : le référentiel 2026 ne met pas de trigonométrie en
-  // Seconde. Ajout Smarter Academy assumé, badgé « hors programme » côté élève.
-  // Treize items de périmètre → DEUX leçons (partIndex 1 et 2) : la première
-  // construit le cercle et y lit les coordonnées, la seconde s'en sert pour
-  // calculer et résoudre. La seconde suppose la première.
-  'seconde_trigonometrie_cercle': [
-    {
-      id: "trigonometrie-cercle-2nde",
-      titleSma: "Le cercle trigonométrique",
-      description: "Enrouler la droite des réels sur un cercle de rayon 1, mesurer l'angle par la longueur parcourue, et découvrir que cosinus et sinus sont les deux coordonnées du point d'arrivée.",
-      prerequisites: ["Trigonométrie du triangle rectangle (3e)", "Repérage dans le plan", "Proportionnalité"],
-      pointsToLearn: [
-        "Comprendre le cercle trigonométrique",
-        "Comprendre le radian comme mesure d'un angle par la longueur d'arc",
-        "Convertir entre degrés et radians",
-        "Associer un réel t à un point du cercle trigonométrique",
-        "Déterminer les coordonnées d'un point du cercle trigonométrique",
-        "Reconnaître le cosinus comme abscisse et le sinus comme ordonnée",
-        "Connaître les valeurs remarquables du cosinus",
-        "Connaître les valeurs remarquables du sinus",
-        "Utiliser les valeurs remarquables pour placer un point",
-      ],
-      durationMinutes: 80,
-      difficulty: "Difficile",
-      status: 'available',
-      icon: "🔵",
-      tier: 'free',
-    },
-    {
-      id: "trigonometrie-equations-2nde",
-      titleSma: "Trigonométrie : identités et équations",
-      description: "Utiliser cos²t + sin²t = 1 comme un Pythagore déguisé, additionner deux angles, et résoudre cos t = a ou sin t = b en lisant les solutions sur le cercle.",
-      prerequisites: ["Le cercle trigonométrique", "Théorème de Pythagore", "Équations"],
-      pointsToLearn: [
-        "Utiliser la relation cos²t + sin²t = 1",
-        "Utiliser les formules d'addition du cosinus et du sinus",
-        "Résoudre une équation cos t = a sur un intervalle donné",
-        "Résoudre une équation sin t = b sur un intervalle donné",
-      ],
-      durationMinutes: 75,
-      difficulty: "Difficile",
-      status: 'available',
-      icon: "🧭",
-      tier: 'free',
-    },
-  ],
-
-};
-
-const slugify = (value) =>
-  value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]/g, '-');
-
+// Si un intitulé arabe apparaît à deux endroits, l'un des deux est un
+// défaut. Un test qui a besoin du libellé LIT le JSON, il ne le recopie pas.
+//
+// Le découpage en leçons vient de dz/lessons_4am_2026_2027.json et les unités
+// du manuel de dz/units_4am_2026_2027.json ; seuls les ميادين qui portent au
+// moins une leçon sont montrés (voir buildDzCourseLevels).
 /**
- * Builds one lesson object from an official program object + one lesson-meta
- * entry. `partIndex`/`partTotal` are 1/1 for unsplit lessons; split parts get
- * 1..partTotal in the metadata array's order.
+ * Une leçon 4AM, construite depuis le découpage fourni par le propriétaire.
+ *
+ * La leçon algérienne a pour provenance un SUJET du programme, et la
+ * déclare telle quelle. (Le catalogue français hérité et son constructeur
+ * ont été retirés le 2026-09-25 avec les leçons françaises : ce fichier ne
+ * porte plus que le catalogue algérien.)
  */
-function buildLesson({ gradeId, levelId, domainId, obj, meta, partIndex, partTotal, origin = 'official' }) {
-  // Lesson codes must be GLOBALLY unique (bare-code API lookups — see the
-  // catalogue invariants test). Authored ids take care of it themselves;
-  // auto-generated stubs get a grade suffix because the same official object
-  // id recurs across grades (e.g. 'triangles' in 5e and 4e).
-  const lessonId = meta.id || `${slugify(obj.id)}-${gradeId}`;
-  const pointsToLearn = meta.pointsToLearn || obj.teachingScope?.include || obj.teaching_scope || [];
-  const durationMinutes = meta.durationMinutes ?? null;
-
+function buildDzLesson(lesson, { levelId, gradeId, topicTitle }) {
+  const pointPrerequisites = lesson.pointPrerequisites ?? {};
   return {
-    // `origin` distingue les objets du RÉFÉRENTIEL OFFICIEL 2026 des ajouts
-    // Smarter Academy (`extension_objects`) : une leçon d'extension n'est pas
-    // au programme du niveau, l'interface doit le dire, et rien ne doit la
-    // présenter comme officielle. `officialObject` reste null dans ce cas —
-    // c'est ce que les tests d'invariants du catalogue vérifient.
-    origin,
-    officialObject: origin === 'official' ? obj.id : null,
-    extensionObject: origin === 'extension' ? obj.id : null,
-    relatedOfficialObjects: obj.relatedOfficialObjects || [],
-    title: meta.titleSma || obj.title,
-    id: lessonId,
-    description: meta.description || obj.description || 'En préparation...',
-    prerequisites: meta.prerequisites || obj.prerequisites || [],
-    // The authored, free-text list — unchanged surface, every existing
-    // reader keeps working exactly as before.
-    pointsToLearn,
-    // Canonical Learning Points, derived from pointsToLearn's order.
-    // `id` is stable/deterministic/human-readable (e.g.
-    // '6e_resolution-problemes-1_P3') and, once imported and referenced by
-    // learning evidence, is effectively append-only: reordering or
-    // removing a pointsToLearn entry shifts what an existing id means
-    // (smarter:validate-curriculum flags that drift after import).
-    learningPoints: pointsToLearn.map((title, i) => ({
-      id: `${gradeId}_${lessonId}_P${i + 1}`,
+    id: lesson.code,
+    // Le TITRE de la leçon : l'intitulé du sujet officiel, au mot près, quand
+    // la leçon EST un sujet (règle phase 7) ; la rubrique du MANUEL, au mot
+    // près, quand la leçon vient d'une unité du manuel (titleSource
+    // 'textbook'). Dans les deux cas rien n'est réécrit par le projet.
+    title: lesson.titleSource === 'textbook' ? lesson.title : topicTitle,
+    officialTopicTitle: topicTitle,
+    titleSource: lesson.titleSource ?? 'official_topic',
+    // 'lesson' (un درس) ou 'synthesis' (« أدمج تعلّماتي » : la synthèse
+    // d'unité, jamais comptée parmi les leçons de l'unité).
+    kind: lesson.kind ?? 'lesson',
+    unitId: lesson.unitId ?? null,
+    textbookRef: lesson.textbookRef ?? null,
+    description: lesson.description,
+    prerequisites: lesson.prerequisites,
+    // Les leçons du catalogue dont celle-ci suppose les acquis — un prérequis
+    // PÉDAGOGIQUE (affiché à l'élève avec son état de maîtrise), jamais un
+    // verrou d'accès : la progression reste non bloquante (LESSON_CONTRACT).
+    prerequisiteLessonCodes: lesson.prerequisiteLessonCodes ?? [],
+    pointsToLearn: lesson.pointsToLearn,
+    // Même convention d'identifiant que le catalogue français
+    // (`<classe>_<leçon>_P<n>`) : c'est elle que lisent l'import, les preuves
+    // d'apprentissage et la carte des connaissances. Déterministe et stable
+    // tant que l'ordre des points ne bouge pas — un réordonnancement change
+    // ce que désigne un identifiant existant, et smarter:validate-curriculum
+    // le signale après import.
+    learningPoints: lesson.pointsToLearn.map((title, i) => ({
+      id: `${gradeId}_${lesson.code}_P${i + 1}`,
       title,
       order: i + 1,
+      // Les points (codes complets) que ce point suppose acquis, avec le seuil
+      // de maîtrise du modèle serveur (MasteryModel::MASTERED_THRESHOLD).
+      prerequisites: (pointPrerequisites[`P${i + 1}`] ?? []).map((id) => ({ id, requiredMastery: 0.7 })),
     })),
-    // Authored duration estimate in minutes; the display string is derived
-    // so there is a single source of truth for lesson length.
-    durationMinutes,
-    duration: durationMinutes != null ? `${durationMinutes} min` : '--',
-    // Split-lesson metadata: "Partie {partIndex} / {partTotal}". 1/1 = unsplit.
-    partIndex,
-    partTotal,
-    difficulty: meta.difficulty || 'Non défini',
-    status: meta.status || 'coming_soon',
-    icon: meta.icon || '📘',
-    isNew: meta.isNew || false,
-    tier: meta.tier || 'free',
-    path: meta.path || `/courses/${levelId}/${gradeId}/${domainId}/${lessonId}`,
+    durationMinutes: lesson.durationMinutes,
+    duration: lesson.durationMinutes != null ? `${lesson.durationMinutes} min` : '--',
+    difficulty: lesson.difficulty,
+    // « coming_soon » : la leçon est DÉCIDÉE, pas ÉCRITE. La carte l'affiche
+    // sans la rendre cliquable, ce qui est exactement l'état réel après la
+    // phase 7 — le contenu est la phase suivante.
+    status: lesson.status,
+    icon: lesson.icon,
+    // La TRAÇABILITÉ, portée par la leçon elle-même plutôt que par un registre
+    // parallèle : le sujet officiel dont elle vient, et le fait que le
+    // découpage soit une décision de projet et non une prescription du
+    // programme.
+    sourceTopicId: lesson.sourceTopicId,
+    decompositionType: lesson.decompositionType,
+    decisionStatus: lesson.decisionStatus,
+    path: `/courses/${levelId}/${gradeId}/${lesson.chapterId}/${lesson.code}`,
   };
 }
 
-// Fonction utilitaire pour extraire les chapitres d'un niveau depuis le JSON officiel
-function buildChaptersForGrade(gradeId, levelId) {
-  const gradeData = officialProgram.levels[gradeId];
-  if (!gradeData || !gradeData.domains) return [];
-
-  return gradeData.domains.map(domain => {
-    if (typeof domain === 'string') {
-      return {
-        id: domain.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '_'),
-        title: domain,
-        lessons: []
-      };
-    }
-
-    return {
-      id: domain.id,
-      title: domain.title,
-      // One official object can map to several lessons if a future entry in
-      // smaMetadata is authored as an array (the retired "Partie 1 / Partie
-      // 2" split); every current entry is a single lesson-meta object.
-      // Les objets OFFICIELS d'abord, puis les EXTENSIONS Smarter Academy —
-      // hors référentiel, marquées comme telles, jamais mélangées aux premiers
-      // dans l'ordre d'affichage.
-      lessons: [
-        ...(domain.official_objects || []).map((obj) => [obj, 'official']),
-        ...(domain.extension_objects || []).map((obj) => [obj, 'extension']),
-      ].flatMap(([obj, origin]) => {
-        const raw = smaMetadata[`${gradeId}_${obj.id}`] || smaMetadata[obj.id] || {};
-        const metas = Array.isArray(raw) ? raw : [raw];
-        return metas.map((meta, i) =>
-          buildLesson({
-            gradeId,
-            levelId,
-            domainId: domain.id,
-            obj,
-            meta,
-            origin,
-            partIndex: i + 1,
-            partTotal: metas.length,
-          })
-        );
-      })
-    };
-  });
+/** Le chemin de la page d'une unité du manuel. Le segment `units` est réservé : aucune leçon ne peut porter ce code. */
+export const DZ_UNIT_PATH_SEGMENT = 'units';
+export function buildDzUnitPath({ levelId, gradeId, chapterId, unitCode }) {
+  return `/courses/${levelId}/${gradeId}/${chapterId}/${DZ_UNIT_PATH_SEGMENT}/${unitCode}`;
 }
 
-export const courseLevels = [
-  {
-    id: 'college',
-    title: 'Collège',
-    subtitle: 'De la 6ème à la 3ème',
-    icon: '📘',
-    color: 'from-blue-500 to-cyan-500',
-    lightBg: 'bg-blue-50/50 border-blue-200',
-    accentColor: 'text-blue-600',
-    badgeBg: 'bg-blue-100 text-blue-700',
-    grades: [
-      { id: '6e', name: '6ème', chapters: buildChaptersForGrade('6e', 'college') },
-      { id: '5e', name: '5ème', chapters: buildChaptersForGrade('5e', 'college') },
-      { id: '4e', name: '4ème', chapters: buildChaptersForGrade('4e', 'college') },
-      { id: '3e', name: '3ème', chapters: buildChaptersForGrade('3e', 'college') }
-    ]
-  },
-  {
-    id: 'lycee',
-    title: 'Lycée',
-    subtitle: 'De la Seconde à la Terminale',
-    icon: '📗',
-    color: 'from-emerald-500 to-teal-500',
-    lightBg: 'bg-emerald-50/50 border-emerald-200',
-    accentColor: 'text-emerald-600',
-    badgeBg: 'bg-emerald-100 text-emerald-700',
-    grades: [
-      { id: 'seconde', name: 'Seconde', chapters: buildChaptersForGrade('seconde', 'lycee') },
-      { id: 'premiere_specialite', name: 'Première Spécialité', chapters: buildChaptersForGrade('premiere_specialite', 'lycee') },
-      { id: 'terminale_specialite', name: 'Terminale Spécialité', chapters: buildChaptersForGrade('terminale_specialite', 'lycee') },
-      { id: 'terminale_complementaires', name: 'Terminale Complémentaires', chapters: buildChaptersForGrade('terminale_complementaires', 'lycee') }
-    ]
-  }
+/**
+ * Une unité (وحدة) du manuel : le niveau entre le ميدان et le درس. Elle porte
+ * ses leçons DANS L'ORDRE DU MANUEL et, à part, sa synthèse (« أدمج
+ * تعلّماتي »). Les intitulés viennent de dz/units_4am_2026_2027.json, qui
+ * cite lui-même l'extraction du manuel.
+ */
+function buildDzUnit(unit, lessonsOfUnit, { levelId, gradeId }) {
+  const built = lessonsOfUnit.slice().sort((a, b) => a.order - b.order);
+  return {
+    id: unit.code,
+    number: unit.number,
+    title: unit.titleAr,
+    icon: unit.icon ?? null,
+    subtitle: unit.subtitleAr ?? null,
+    objectives: unit.objectivesAr ?? [],
+    sourceTopicIds: unit.sourceTopicIds ?? [],
+    textbook: unit.textbook ?? null,
+    challenge: unit.challenge ?? null,
+    aside: unit.aside ?? null,
+    order: unit.order,
+    chapterId: unit.chapterId,
+    path: buildDzUnitPath({ levelId, gradeId, chapterId: unit.chapterId, unitCode: unit.code }),
+    lessons: built.filter((l) => l.kind !== 'synthesis'),
+    synthesis: built.find((l) => l.kind === 'synthesis') ?? null,
+  };
+}
+
+/**
+ * Les classes du cycle moyen, dans l'ordre : chacune construite depuis SON
+ * trio programme / leçons / unités. Ajouter une classe = ajouter ici son trio.
+ */
+const DZ_MOYEN_GRADES = [
+  { programme: programme1am, lessons: lessons1am, units: units1am },
+  { programme: programme2am, lessons: lessons2am, units: units2am },
+  { programme: programme3am, lessons: lessons3am, units: units3am },
+  { programme: programme4am, lessons: lessons4am, units: units4am },
 ];
+
+/** Une classe du cycle moyen (ses ميادين, leurs leçons et leurs unités). */
+function buildDzMoyenGrade({ programme, lessons, units }) {
+  const gradeId = programme.grade;
+  const lessonsByChapter = new Map();
+  for (const lesson of lessons.lessons) {
+    if (!lessonsByChapter.has(lesson.chapterId)) lessonsByChapter.set(lesson.chapterId, []);
+    lessonsByChapter.get(lesson.chapterId).push(lesson);
+  }
+
+  // Le catalogue ne montre QUE les ميادين qui portent des leçons (décision
+  // du propriétaire, 2026-09-25 : l'unité « الأعداد الطبيعيّة والأعداد
+  // النّاطقة » seule). Le PROGRAMME, lui, reste entier et vérifié dans
+  // programme_<g>_2026_2027.json — on ne retranche rien à la source
+  // officielle ; on n'affiche pas un ميدان vide. Un ميدان réapparaît de
+  // lui-même le jour où une leçon de lessons_<g>_2026_2027.json le nomme.
+  // `order` reste la position dans le programme, pas dans cette liste.
+  const topicTitleOf = new Map(programme.domains.flatMap((d) => d.topics.map((t) => [t.id, t.titleAr])));
+  // Les ميادين d'AFFICHAGE décidés par le propriétaire (units_4am › ownerChapters,
+  // unité 6 « الدالة الخطية والتناسبية » sous « ميدان التناسبية والدوال », 2026-10-02) :
+  // rangés APRÈS les domaines du programme, sans aucun sujet officiel — le programme
+  // reste une transcription intouchée, et chaque unité qui s'y range déclare son
+  // domaine de programme (`placement`).
+  const ownerDomains = (units.ownerChapters ?? []).map((c) => ({
+    id: c.id, titleAr: c.titleAr, subtitleAr: c.subtitleAr, topics: [],
+  }));
+  const displayOrder = units.chapterOrder?.order ?? [];
+  const displayRank = (id) => (displayOrder.includes(id) ? displayOrder.indexOf(id) : displayOrder.length);
+  const chapters = [...programme.domains, ...ownerDomains].map((domain, index) => ({
+    id: domain.id,
+    title: domain.titleAr,
+    subtitle: domain.subtitleAr ?? null,
+    // Icône d'affichage du ميدان (units_<g> › chapterIcons) — jamais dans le programme.
+    icon: units.chapterIcons?.[domain.id] ?? null,
+    order: index,
+    // Les sujets OFFICIELS, au mot près. `namedMethodsAr`/`namedPartsAr` ne
+    // sont recopiés QUE là où le programme les porte (6 sujets sur 28) :
+    // fabriquer un tableau vide pour les 22 autres affirmerait que le
+    // programme ne nomme rien, ce qu'il ne dit pas — il se tait.
+    topics: domain.topics.map((topic) => ({
+      id: topic.id,
+      title: topic.titleAr,
+      ...(topic.namedMethodsAr ? { namedMethods: topic.namedMethodsAr } : {}),
+      ...(topic.namedPartsAr ? { namedParts: topic.namedPartsAr } : {}),
+    })),
+    // Les leçons du chapitre, À PLAT, dans l'ordre du catalogue : celles des
+    // unités du manuel d'abord (phase 8), puis celles restées « un sujet =
+    // une leçon » (phase 7). C'est cette liste que lisent la carte des cours,
+    // la progression et l'export ; `units` ci-dessous la regroupe sans la
+    // remplacer.
+    lessons: (lessonsByChapter.get(domain.id) ?? [])
+      .slice()
+      .sort((a, b) => a.order - b.order)
+      .map((lesson) => buildDzLesson(lesson, {
+        levelId: 'moyen',
+        gradeId,
+        // Le sujet est cherché dans TOUT le programme : une unité placée par le
+        // propriétaire sous un autre ميدان (`placement`, unité 3) garde son sujet officiel.
+        topicTitle: topicTitleOf.get(lesson.sourceTopicId),
+      })),
+  })).filter((chapter) => chapter.lessons.length > 0)
+    // L'ordre d'AFFICHAGE décidé par le propriétaire (units_<g> › chapterOrder,
+    // 2026-10-07 : la géométrie en dernier). `order` reste la position dans le
+    // programme ; un ميدان non listé garde sa place relative, après les listés.
+    .sort((a, b) => displayRank(a.id) - displayRank(b.id));
+
+  // Les UNITÉS du manuel, greffées sur leur chapitre. Une unité ne possède
+  // pas ses leçons : elle les référence (mêmes objets que `chapter.lessons`).
+  for (const chapter of chapters) {
+    chapter.units = units.units
+      .filter((u) => u.chapterId === chapter.id)
+      .slice()
+      .sort((a, b) => a.order - b.order)
+      .map((u) => buildDzUnit(u, chapter.lessons.filter((l) => l.unitId === u.code), {
+        levelId: 'moyen',
+        gradeId,
+      }));
+  }
+
+  return {
+    id: gradeId,
+    name: programme.gradeLabelAr,
+    // Le programme ET son découpage en leçons sont arrêtés. Chaque leçon porte
+    // son propre `status` : `available` dès que son lesson.config.js existe
+    // (les 74 leçons 4AM), `coming_soon` sinon — carte non cliquable
+    // « قيد الإعداد » (1AM–3AM, 2026-10-14). Voir I2.
+    curriculumStatus: 'lessons_planned',
+    chapters,
+  };
+}
+
+function buildDzCourseLevels() {
+  return [
+    {
+      id: 'moyen',
+      title: programme4am.levelLabelAr,
+      icon: '📘',
+      color: 'from-emerald-500 to-teal-500',
+      lightBg: 'bg-emerald-50/50 border-emerald-200',
+      accentColor: 'text-emerald-600',
+      badgeBg: 'bg-emerald-100 text-emerald-700',
+      grades: DZ_MOYEN_GRADES.map(buildDzMoyenGrade),
+    },
+    {
+      id: 'thanawi',
+      title: 'التعليم الثانوي',
+      icon: '📗',
+      color: 'from-blue-500 to-cyan-500',
+      lightBg: 'bg-blue-50/50 border-blue-200',
+      accentColor: 'text-blue-600',
+      badgeBg: 'bg-blue-100 text-blue-700',
+      grades: [
+        {
+          // La SECONDE classe algérienne (master spec §3). Son identité
+          // existe — un élève peut s'y inscrire — mais aucun programme n'a
+          // été fourni pour elle (rapport de reprise §19, B1). Le marqueur
+          // ci-dessous est ce qui permet à l'interface de le DIRE, au lieu
+          // de servir un catalogue vide qui passerait pour une panne.
+          id: 'terminale_dz',
+          name: 'السنة الثالثة ثانوي',
+          curriculumStatus: 'not_supplied',
+          chapters: [],
+        },
+      ],
+    },
+  ];
+}
+
+// Le catalogue ALGÉRIEN complet : les deux classes du produit, actives ou
+// non. C'est lui qu'exporte exportCurriculum.mjs vers la base, et lui que
+// lisent les gardes. Il ne contient AUCUNE classe française (phase 6F ; le
+// catalogue français hérité a été supprimé le 2026-09-25).
+// Annotations « pure » (BUNDLE_BOUNDARIES.md §4 règle 7) : sans elles, un import du baril qui n'utilise AUCUN nom du
+// catalogue (ex. `hasRequiredRole`) garderait ces ≈ 95 Ko gzip de JSON dans le lot d'entrée.
+export const dzCourseLevels = /* @__PURE__ */ buildDzCourseLevels();
+
+// The catalogue every student-facing consumer must use. Filtered to only
+// ACTIVE_GRADE_IDS (packages/core/curriculum/activeGrades.js) so that every
+// downstream reader — navigation, course browser, resume/next-lesson logic,
+// grade pickers — is starved of anything not explicitly activated, rather
+// than each needing its own filter.
+export const courseLevels = /* @__PURE__ */ filterActiveCourseLevels(dzCourseLevels);
 
 /**
  * Flattens courseLevels into the list of every selectable grade — the single
@@ -3038,6 +302,11 @@ export function getAllGrades() {
       name: grade.name,
       levelId: level.id,
       levelTitle: level.title,
+      // L'écran de choix de classe dit ce qui attend l'élève : le nombre
+      // de leçons PUBLIÉES (`available` — une carte « قيد الإعداد » n'en est
+      // pas une, 1AM–3AM 2026-10-14), et si le programme n'est pas encore fourni.
+      curriculumStatus: grade.curriculumStatus ?? null,
+      lessonCount: (grade.chapters || []).reduce((n, c) => n + (c.lessons || []).filter((l) => l.status === 'available').length, 0),
     }))
   );
 }
@@ -3051,7 +320,7 @@ export function getAllGrades() {
  * la leçon que son `lessonCode` (l'API n'en renvoie pas le chemin) et doit
  * pouvoir ramener l'élève à son cours.
  */
-const LESSONS_BY_ID = (() => {
+const LESSONS_BY_ID = /* @__PURE__ */ (() => {
   const index = new Map();
   for (const level of courseLevels) {
     for (const grade of level.grades) {
@@ -3089,11 +358,49 @@ export function getLessonById(lessonId) {
 }
 
 /**
- * Le chemin de la page d'accueil d'une leçon, ou `null` si elle est inconnue
- * du catalogue. Les appelants DOIVENT traiter le `null` : une leçon peut être
- * active côté pratique avant d'être routée côté cours, et un lien mort vaut
- * moins que pas de lien du tout.
+ * Le chemin de la page d'accueil d'une leçon PUBLIÉE (`status: 'available'`),
+ * ou `null`. Les appelants DOIVENT traiter le `null` : une leçon peut être
+ * inconnue du catalogue (active côté pratique avant d'être routée côté
+ * cours), ou connue mais pas encore écrite (`coming_soon` : 1AM–3AM depuis le
+ * 2026-10-14 — aucune route) ; un lien mort vaut moins que pas de lien du tout.
+ * Pour la carte d'une leçon non publiée, lire `getLessonById(id).path`.
  */
 export function getLessonPath(lessonId) {
-  return getLessonById(lessonId)?.path || null;
+  const lesson = getLessonById(lessonId);
+  return lesson?.status === 'available' ? lesson.path : null;
+}
+
+/** Index des unités par code — même construction que LESSONS_BY_ID. */
+const UNITS_BY_ID = /* @__PURE__ */ (() => {
+  const index = new Map();
+  for (const level of courseLevels) {
+    for (const grade of level.grades) {
+      for (const chapter of grade.chapters || []) {
+        for (const unit of chapter.units || []) {
+          if (!index.has(unit.id)) {
+            index.set(unit.id, {
+              ...unit,
+              gradeId: grade.id,
+              gradeName: grade.name,
+              levelId: level.id,
+              chapterTitle: chapter.title,
+            });
+          }
+        }
+      }
+    }
+  }
+  return index;
+})();
+
+/** L'unité du manuel portant ce code, chapitre et classe compris — ou `null`. */
+export function getUnitById(unitId) {
+  if (!unitId) return null;
+  return UNITS_BY_ID.get(unitId) || null;
+}
+
+/** L'unité qui porte une leçon, ou `null` pour une leçon hors unité. */
+export function getUnitOfLesson(lessonId) {
+  const lesson = getLessonById(lessonId);
+  return lesson?.unitId ? getUnitById(lesson.unitId) : null;
 }

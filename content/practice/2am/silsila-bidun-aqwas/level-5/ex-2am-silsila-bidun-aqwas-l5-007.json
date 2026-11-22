@@ -1,0 +1,287 @@
+{
+  "id": "ex-2am-silsila-bidun-aqwas-l5-007",
+  "lessonCode": "silsila-bidun-aqwas",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مسار نادي المشي",
+    "estimatedMinutes": 18,
+    "tags": [
+      "مسافات",
+      "أعداد عشرية",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأوّل: مسار نادي المشي والدراجات طوله 40 km . مشى الأعضاء $3{,}5$ km ثم قطعوا بالدراجات 4 مراحل، طول كلّ مرحلة $6{,}25$ km .\nالجزء الثاني: خطّط المنظّمون لاستراحة عندما يبقى من المسار أكثر من 12 km ، ثم قرّروا العودة بطريق مختصر طوله $2{,}5$ km ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ سلسلة عمليات دون أقواس تعطي ما بقي من المسار؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bidun-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$40 - 3{,}5 - 4 \\times 6{,}25$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$40 - 3{,}5 + 4 \\times 6{,}25$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SILSILA-STORYSIGN"
+        },
+        {
+          "id": "C",
+          "content": "$4 \\times 40 - 3{,}5 - 6{,}25$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SILSILA-STORYORDER"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: كل جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل جملة بعملية، بالترتيب الذي جاءت به في القصة."
+        }
+      ],
+      "feedback": {
+        "correct": "$40 - 3{,}5 - 4 \\times 6{,}25 = 11{,}5$ .",
+        "incorrect": "اكتب جمل القصة بعمليات بالترتيب نفسه، واحرص على إشارة كل عملية: ما يُدفع أو ينقص يُطرح."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة الصحيحة: $40 - 3{,}5 - 4 \\times 6{,}25$",
+          "$40 - 3{,}5 - 25$",
+          "$36{,}5 - 25$",
+          "$11{,}5$"
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم كيلومترًا بقي من المسار؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bidun-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد بالكيلومتر",
+      "expectedAnswer": "11.5",
+      "misconceptionSignatures": [
+        {
+          "value": "203.125",
+          "id": "MISC-SILSILA-NOPRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: كل جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل جملة بعملية، بالترتيب الذي جاءت به في القصة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب السلسلة مراعيًا أولوية الضرب والقسمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$40 - 3{,}5 - 4 \\times 6{,}25 = 11{,}5$ .",
+        "incorrect": "نترجم كل جملة من القصة بعملية بالترتيب نفسه، ثم نحسب السلسلة: الضرب والقسمة أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $40 - 3{,}5 - 4 \\times 6{,}25$",
+          "$40 - 3{,}5 - 25$",
+          "$36{,}5 - 25$",
+          "$11{,}5$"
+        ],
+        "result": "11{,}5 \\text{ km}"
+      },
+      "work": "optional",
+      "timeSeconds": 100
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كم كيلومترًا قطعه الأعضاء كلّهم، بما في ذلك الطريق المختصر؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bidun-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد بالكيلومتر",
+      "expectedAnswer": "31",
+      "misconceptionSignatures": [
+        {
+          "value": "49.375",
+          "id": "MISC-SILSILA-NOPRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: كل جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل جملة بعملية، بالترتيب الذي جاءت به في القصة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب السلسلة مراعيًا أولوية الضرب والقسمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$3{,}5 + 4 \\times 6{,}25 + 2{,}5 = 31$ .",
+        "incorrect": "نترجم كل جملة من القصة بعملية بالترتيب نفسه، ثم نحسب السلسلة: الضرب والقسمة أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $3{,}5 + 4 \\times 6{,}25 + 2{,}5$",
+          "$3{,}5 + 25 + 2{,}5$",
+          "$28{,}5 + 2{,}5$",
+          "$31$"
+        ],
+        "result": "31 \\text{ km}"
+      },
+      "work": "optional",
+      "timeSeconds": 100
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "هل بقي أكثر من 12 km من المسار قبل الاستراحة؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bidun-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العددين المحسوبين بدقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل ما حسبته في الأسئلة السابقة."
+        }
+      ],
+      "feedback": {
+        "correct": "تحقّقت من ذلك بالحساب.",
+        "incorrect": "قارن العددين المحسوبين بدقة قبل أن تحكم."
+      },
+      "solution": {
+        "lines": [
+          "بقي $11{,}5 \\text{ km}$ .",
+          "$11{,}5 < 12$ ، إذن لا."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "لماذا لا يجوز حساب $3{,}5 + 4$ أوّلًا في سلسلة ما قطعه الأعضاء؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bidun-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب على ورقتك مرحلة مرحلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اسأل: أيّ عملية تُنجز أوّلًا ولماذا؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تذكر القاعدة المستعملة."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "في $3{,}5 + 4 \\times 6{,}25 + 2{,}5$ العدد $4$ هو عدد المراحل، وكلّ مرحلة طولها $6{,}25$ km .",
+          "الجداء $4 \\times 6{,}25 = 25$ مسافة واحدة تُحسب أوّلًا لأنّ الضرب يسبق الجمع.",
+          "ثم $3{,}5 + 25 + 2{,}5 = 31$ ، من اليسار نحو اليمين."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

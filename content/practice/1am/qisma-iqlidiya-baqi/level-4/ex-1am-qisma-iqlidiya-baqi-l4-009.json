@@ -1,0 +1,249 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l4-009",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — عجين المخبزة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "قطع",
+      "قيمة مقرّبة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "تقسّم مخبزة الحيّ $1000\\,\\mathrm{g}$ من العجين إلى قطع من $24\\,\\mathrm{g}$، ولا تُهدر ما يتبقّى بل تضيفه إلى العجنة التالية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "كم قطعة كاملة تحصل عليها؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد القطع",
+      "expectedAnswer": "41",
+      "misconceptionSignatures": [
+        {
+          "value": "16",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "40",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "42",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 1000 من 24 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 24 دون أن نتجاوز 1000."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$1000 = 24 \\times 41 + 16$ و $16 < 24$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 24 فلا يتجاوز الجداء 1000، والباقي عندئذ أصغر من 24."
+      },
+      "solution": {
+        "lines": [
+          "$24 \\times 41 = 984$ و $24 \\times 42 = 1008$",
+          "$984 \\le 1000 < 1008$ ، إذن الحاصل هو 41."
+        ],
+        "result": "q = 41"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كم غرامًا يبقى؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالغرام (g)",
+      "expectedAnswer": "16",
+      "misconceptionSignatures": [
+        {
+          "value": "41",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "40",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 1000."
+        }
+      ],
+      "feedback": {
+        "correct": "$1000 - 24 \\times 41 = 1000 - 984 = 16$ ، و $16 < 24$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 24."
+      },
+      "solution": {
+        "lines": [
+          "$1000 = 24 \\times 41 + 16$",
+          "$16 < 24$ ، إذن الباقي هو 16."
+        ],
+        "result": "r = 16"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "اختر المساواة التي تعبّر عن القسمة الإقليدية للعدد 1000 على 24.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$1000 = 24 \\times 42 + 16$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        },
+        {
+          "id": "B",
+          "content": "$1000 = 24 \\times 41 + 16$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$1000 = 24 \\times 40 + 40$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "id": "D",
+          "content": "$1000 = 24 \\times 16 + 41$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-HASIL"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق من صحة كل مساواة بالحساب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في القسمة الإقليدية على 24، يجب أن يكون الباقي أصغر من 24."
+        }
+      ],
+      "feedback": {
+        "correct": "$24 \\times 41 + 16 = 1000$ و $16 < 24$: الشرطان محقّقان.",
+        "incorrect": "المساواة الصحيحة يجب أن تكون صحيحة حسابيًا، وأن يكون باقيها أصغر من المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$24 \\times 41 = 984$ و $984 + 16 = 1000$",
+          "$16 < 24$ ، إذن:"
+        ],
+        "result": "1000 = 24 \\times 41 + 16"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "أعطِ القيمة المقرّبة بالنقصان إلى 0,1 لحاصل القسمة العشرية $1000 \\div 24$.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "41.6",
+      "misconceptionSignatures": [
+        {
+          "value": "41.7",
+          "id": "MISC-IQLIDIYA-JUDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "واصل القسمة إلى رقم الأجزاء من عشرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بالنقصان: نحذف ما بعد رقم الأجزاء من عشرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$1000 \\div 24 = 41{,}66\\ldots$ ، والقيمة المقرّبة بالنقصان إلى 0,1 هي 41,6.",
+        "incorrect": "القيمة المقرّبة بالنقصان لا تتجاوز الحاصل."
+      },
+      "solution": {
+        "lines": [
+          "$1000 = 24 \\times 41 + 16$ و $160 = 24 \\times 6 + 16$",
+          "$1000 \\div 24 = 41{,}6\\ldots$ ، القيمة المقرّبة بالنقصان إلى 0,1 هي 41,6."
+        ],
+        "result": "41{,}6"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

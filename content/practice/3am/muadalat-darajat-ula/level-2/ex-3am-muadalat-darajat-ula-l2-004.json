@@ -1,0 +1,180 @@
+{
+  "id": "ex-3am-muadalat-darajat-ula-l2-004",
+  "lessonCode": "muadalat-darajat-ula",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — حلّ معادلتين",
+    "estimatedMinutes": 7,
+    "tags": [
+      "حلّ معادلة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 3,
+      "file": "3am-s3-59",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "حلّ المعادلتين الآتيتين:"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "1) $4(x - 3) = x + 6$ .",
+      "statement": "حلّ المعادلة $4(x - 3) = x + 6$ .",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 6$ .",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر أو عدد عشري)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-MUADALA-SIGN-KEPT"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "ننشر الطرف الأيسر: $4x - 12 = x + 6$ .",
+          "نضيف $-x$ إلى الطرفين (معاكس الحدّ $x$) فنجد: $3x - 12 = 6$ .",
+          "نضيف $12$ إلى الطرفين (معاكس $-12$) فنجد: $3x = 18$ .",
+          "نقسم الطرفين على $3$ فنجد: $x = 6$ .",
+          "التحقّق: من أجل $x = 6$ نجد الطرف الأيسر $12$ والطرف الأيمن $12$ ، فهما متساويان."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "2) $\\dfrac{-5x + 1}{3} = -8$ .",
+      "statement": "حلّ المعادلة $\\dfrac{-5x + 1}{3} = -8$ .",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 5$ .",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر أو عدد عشري)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "-5",
+          "id": "MISC-MUADALA-NEG-COEF"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "نضرب الطرفين في $3$ : $-5x + 1 = -24$ .",
+          "نضيف $-1$ إلى الطرفين (معاكس $1$) فنجد: $-5x = -25$ .",
+          "نقسم الطرفين على $-5$ فنجد: $x = 5$ .",
+          "التحقّق: من أجل $x = 5$ نجد الطرف الأيسر $-24$ والطرف الأيمن $-24$ ، فهما متساويان."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "تحقّق من الحلّ الذي وجدته للمعادلة الثانية.",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد المراد اختباره؟ عوّضه مكان المجهول في الطرف الأيسر ثم في الطرف الأيمن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة بدقّة (انتبه إلى الإشارات)، ثم قارن النتيجتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا تساوى الطرفان فالعدد حلّ للمعادلة، وإذا اختلفا فليس حلًّا لها."
+        }
+      ],
+      "feedback": {
+        "correct": "الطرفان يساويان $-8$ .",
+        "incorrect": "للتحقّق من أنّ عددًا حلّ نعوّضه في الطرفين ونقارن القيمتين؛ أعد المحاولة."
+      },
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب إجابتك ثم قارنها بالتصحيح النموذجي",
+      "solution": {
+        "lines": [
+          "نعوّض $x = 5$ : $\\dfrac{-5 \\times 5 + 1}{3} = \\dfrac{-24}{3} = -8$ .",
+          "نجد الطرف الأيمن $-8$ ، فالحلّ صحيح."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

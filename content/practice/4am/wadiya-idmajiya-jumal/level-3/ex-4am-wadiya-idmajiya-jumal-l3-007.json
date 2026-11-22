@@ -1,0 +1,176 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-jumal-l3-007",
+  "lessonCode": "wadiya-idmajiya-jumal",
+  "level": 3,
+  "metadata": {
+    "title": "حديقة التسلية",
+    "estimatedMinutes": 10,
+    "tags": [
+      "ترييض",
+      "تذاكر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-jumal_P1",
+      "modelledOn": "act-3"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "استقبلت حديقة التسلية ببن عكنون، وهي معلم من معالم عاصمتنا نعتزّ به، 90 زائرا في الصباح، ثمن تذكرة البالغ 400DA وثمن تذكرة الطفل 250DA، وبلغت المداخيل 27600DA.\nنسمّي $x$ عدد البالغين و $y$ عدد الأطفال."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن $x$ و $y$ يحققان الجملة: $\\begin{cases} x + y = 90 \\\\ 8x + 5y = 552 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "سمِّ الكميتين المجهولتين، ثم ترجم كل معلومة من النص بمعادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بسّط كل معادلة بقسمة طرفيها على عدد مناسب."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "عدد الزوار: $x + y = 90$",
+          "المداخيل: $400x + 250y = 27600$ ، وبقسمة الطرفين على 50: $8x + 5y = 552$",
+          "ومنه: $\\begin{cases} x + y = 90 \\\\ 8x + 5y = 552 \\end{cases}$"
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حل هذه الجملة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": {
+        "x": "34",
+        "y": "56"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "56",
+            "y": "34"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن معاملات $x$ ومعاملات $y$ في المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة التعويض أو طريقة الجمع (بعد ضرب المعادلتين في عددين مناسبين) لحذف أحد المجهولين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد إيجاد أحد المجهولين، عوّضه في إحدى المعادلتين لتجد الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "34 بالغا و 56 طفلا.",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} x + y = 90 & ...(1) \\\\ 8x + 5y = 552 & ...(2) \\end{cases}$",
+          "من المعادلة (1) نجد: $y = 90 - x$",
+          "بالتعويض في المعادلة (2) نجد: $8x + 5(90 - x) = 552$",
+          "$3x + 450 = 552$",
+          "$3x = 102$",
+          "$x = 34$",
+          "ومنه: $y = 90 - 34 = 56$",
+          "التحقق في النص: $34 + 56 = 90$ و $400 \\times 34 + 250 \\times 56 = 27600$ .",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(34 ; 56)"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب مداخيل تذاكر الأطفال وحدها.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "14000",
+      "misconceptionSignatures": [
+        {
+          "value": "8500",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل عدد الأطفال الذي وجدته في السؤال 02."
+        }
+      ],
+      "feedback": {
+        "correct": "$56 \\times 250 = 14000$ .",
+        "incorrect": "اضرب عدد الأطفال في ثمن تذكرة الطفل."
+      },
+      "solution": {
+        "lines": [
+          "$56 \\times 250 = 14000$",
+          "مداخيل تذاكر الأطفال $14000DA$ ."
+        ],
+        "result": "14000\\,DA"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

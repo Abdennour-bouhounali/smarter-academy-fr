@@ -1,0 +1,165 @@
+{
+  "id": "ex-4am-zawiya-muhitiya-l3-002",
+  "lessonCode": "zawiya-muhitiya",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 10 — D على القوس",
+    "estimatedMinutes": 4,
+    "tags": [
+      "خاصية 1"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-10",
+      "page": 159,
+      "section": "الزوايا المحيطية و الزوايا المركزية",
+      "number": 10
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 159): ABC مثلث متقايس الأضلاع و O مركز الدائرة المحيطة به، و [DE] قطر لها (الشكل). على الشكل: $\\widehat{BOD} = 45^\\circ$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          1.0,
+          1.7321
+        ],
+        "B": [
+          -2.0,
+          0.0
+        ],
+        "C": [
+          1.0,
+          -1.7321
+        ],
+        "D": [
+          -1.4142,
+          1.4142
+        ],
+        "E": [
+          1.4142,
+          -1.4142
+        ]
+      },
+      "circles": [
+        {
+          "center": "O",
+          "radius": 2
+        }
+      ],
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "A"
+        ],
+        {
+          "from": "D",
+          "to": "E",
+          "tone": "indigo"
+        }
+      ],
+      "ariaLabel": "دائرة مركزها O، المثلث ABC متقايس الأضلاع مرسوم فيها، والقطر [DE]",
+      "maxWidth": 480
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "عيّن قيس $\\widehat{DAB}$ بالدرجة (عدد عشري بالفاصلة عند الحاجة).",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "22.5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوس الذي تحصره كل زاوية: هل هو نفس القوس؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الزاويتين: أيهما أكبر، المركزية أم المحيطية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قيس الزاوية المحيطية نصف قيس الزاوية المركزية التي تحصر معها نفس القوس."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{DAB} = \\dfrac{45^\\circ}{2} = 22{,}5^\\circ$ .",
+        "incorrect": "DAB تحصر القوس DB مع المركزية DOB."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-DIF",
+          "value": "90"
+        },
+        {
+          "id": "MISC-MUHITIYA-MUSAWIYA",
+          "value": "45"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "statement": "عيّن قيس $\\widehat{DBC}$ بالدرجة.",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "97.5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالزوايا التي تعطيها خاصيتا الزاوية المحيطية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم استعمل مجموع أقياس زوايا المثلث، أو الزاوية المستقيمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل زاوية بدلالة القوس الذي تحصره قبل أن تحسب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{DBA} = \\dfrac{75^\\circ}{2} = 37{,}5^\\circ$ و $\\widehat{DBC} = 37{,}5^\\circ + 60^\\circ = 97{,}5^\\circ$ .",
+        "incorrect": "الزاوية DBC تحوي [BA): مجموع زاويتين."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-JUZ",
+          "value": "37,5"
+        }
+      ]
+    }
+  ]
+}

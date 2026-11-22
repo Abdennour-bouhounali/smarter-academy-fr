@@ -16,9 +16,11 @@
  * Fonctions pures : aucun accès réseau, aucun état, aucun React. Le contenu
  * de la question entre, une évaluation sort.
  */
-import { Rational, rationalEquals } from './rational.js';
+import { toLatinDigits } from '../numberFormat.js';
+import { Rational, rationalEquals, normalizeNumeric } from './rational.js';
 import { parseAffineAnswer, affineEquals, affineToString } from './affineCanonical.js';
 import { parseInterval, intervalEquals, intervalToString } from './intervalCompare.js';
+import { isIrreducible } from '../arithmetic/divisibility.js';
 
 export const OUTCOMES = Object.freeze({
   CORRECT: 'correct',
@@ -37,8 +39,58 @@ export const isInertOutcome = (o) => o === OUTCOMES.SYNTAX_ERROR || o === OUTCOM
 
 /** Types de réponse gérés. Le validateur de contenu compare cette liste au schéma. */
 export const SUPPORTED_ANSWER_TYPES = Object.freeze([
-  'choice', 'multiChoice', 'rational', 'affine', 'interval', 'point',
+  'choice', 'multiChoice', 'rational', 'affine', 'interval', 'point', 'integerSet', 'selfCheck',
 ]);
+
+/**
+ * Une question COMPTE-t-elle pour la maîtrise ? Non quand elle est
+ * auto-évaluée (`selfCheck` : « بيّن أن »، « برّر » — l'élève rédige sur sa
+ * feuille, lit le corrigé type et se note lui-même) ou quand le contenu la
+ * déclare `counted: false` (une étape d'exercice de BEM qui relève d'une autre
+ * leçon). Elle est jugée et affichée pareil ; seule la preuve de maîtrise
+ * n'est pas écrite (PracticeEvidenceRecorder.php).
+ */
+export const countsForMastery = (question) => question?.answerType !== 'selfCheck' && question?.counted !== false;
+
+/* ── Ensembles d'entiers naturels (« عيّن كل قواسم العدد 84 ») ──────────────
+ *
+ * La réponse d'un élève est une LISTE : « 1, 2, 3, 6 » ou « 1 ؛ 2 ؛ 3 ؛ 6 » ou
+ * « ١، ٢، ٣، ٦ ». L'ordre et les doublons ne comptent pas — c'est un ensemble.
+ * Les chiffres arabo-indiens (U+0660–U+0669) et les séparateurs arabes (،  ؛)
+ * sont acceptés : l'interface DZ est en arabe, et refuser « ١، ٢ » serait
+ * traiter une convention d'écriture comme une erreur mathématique.
+ */
+// Les écritures d'ensemble que l'élève a sous les yeux sont acceptées aussi :
+// les accolades (les corrections de la leçon écrivent « \{8 ; 12 ; 24\} »),
+// la conjonction « و » (le manuel écrit « 1 و 60 ») et un point final.
+// Un point AU MILIEU reste une erreur : « 1.5 » n'est pas l'ensemble {1, 5}.
+function normalizeIntegerSetInput(raw) {
+  const s = toLatinDigits(raw)
+    .replace(/\\[{}]/g, ' ')
+    .replace(/[{}]/g, ' ')
+    .replace(/و/g, ' ')
+    .replace(/[،؛;,\n]/g, ' ')
+    .trim()
+    .replace(/\.$/, '')
+    .trim();
+  return s === '' ? [] : s.split(/\s+/);
+}
+
+/**
+ * @param {string|number[]|null|undefined} raw
+ * @returns {number[]|null} l'ensemble trié, ou null si un jeton n'est pas un naturel
+ */
+export function parseIntegerSet(raw) {
+  if (raw === null || raw === undefined) return null;
+  const tokens = Array.isArray(raw) ? raw.map(String) : normalizeIntegerSetInput(raw);
+  if (tokens.length === 0) return null;
+  const out = new Set();
+  for (const t of tokens) {
+    if (!/^\d+$/.test(t)) return null;
+    out.add(Number(t));
+  }
+  return [...out].sort((x, y) => x - y);
+}
 
 const result = (outcome, { misconceptionId = null, normalized = '', feedbackKey = null } = {}) => ({
   outcome,
@@ -97,9 +149,37 @@ function evaluateRational(answer, question) {
   const tolerance = policy.tolerance ? Rational.parse(policy.tolerance) : null;
 
   if (rationalEquals(given, expected, tolerance)) {
+    // `requiredForm: 'irreducible'` (leçon « اختزال كسر ») : la VALEUR est
+    // juste mais la fraction écrite n'est pas réduite (« 21/12 » pour 7/4).
+    // Ce n'est ni une erreur de calcul ni une réussite : la tâche demandait
+    // précisément la forme irréductible. Issue partielle, message dédié.
+    if (policy.requiredForm === 'irreducible') {
+      const written = rawFractionParts(answer.value);
+      if (written && !isIrreducible(written.n, written.d)) {
+        // La SIGNATURE reste consultée : « 14/21 » et « 4/6 » ne sont pas la
+        // même erreur au hasard, ce sont des réductions ARRÊTÉES EN CHEMIN,
+        // et la leçon a un message pour cela. Sans cette recherche, une
+        // misconception déclarée dans le contenu ne se déclenchait jamais :
+        // l'élève lisait « pas encore irréductible » sans savoir pourquoi.
+        const partialId = matchSignature(question, (v) => {
+          const sig = rawFractionParts(v);
+          return sig ? sig.n === written.n && sig.d === written.d : false;
+        });
+        return result(OUTCOMES.PARTIALLY_CORRECT, { normalized: given.toString(), feedbackKey: 'notIrreducible', misconceptionId: partialId });
+      }
+      // Une écriture DÉCIMALE (« 1,75 » pour 7/4) n'est pas une fraction du
+      // tout : la tâche demandait « على شكل كسر غير قابل للاختزال ». La valeur
+      // est juste, la forme ne l'est pas — même issue partielle. Un entier
+      // reste accepté : c'est la forme irréductible d'un rationnel entier.
+      if (!written && given.d !== 1) {
+        return result(OUTCOMES.PARTIALLY_CORRECT, { normalized: given.toString(), feedbackKey: 'notIrreducible' });
+      }
+    }
     // Même valeur, écriture différente ("3/2" pour "1,5") : juste, et on peut
     // le dire à l'élève plutôt que de faire comme s'il avait recopié.
-    const sameText = String(question.expectedAnswer).trim() === String(answer.value).trim();
+    // La VIRGULE et le POINT décimaux sont la MÊME écriture (propriétaire,
+    // 2026-10-07 : « 1,5 » et « 1.5 » sont tous deux justes, sans remarque).
+    const sameText = sameWriting(question.expectedAnswer, answer.value);
     return result(sameText ? OUTCOMES.CORRECT : OUTCOMES.EQUIVALENT_CORRECT, { normalized: given.toString() });
   }
 
@@ -108,6 +188,45 @@ function evaluateRational(answer, question) {
     return sig ? sig.equals(given) : false;
   });
   return result(OUTCOMES.INCORRECT, { misconceptionId, normalized: given.toString() });
+}
+
+/**
+ * Les composantes ÉCRITES d'une fraction « a/b » ou « \\frac{a}{b} », sans
+ * réduction — c'est ce qu'il faut pour juger la forme, pas la valeur.
+ * @returns {{n:number, d:number}|null} null si la saisie n'est pas une fraction
+ */
+function rawFractionParts(raw) {
+  const s = normalizeNumeric(raw);
+  const m = s.match(/^([+-]?\d+)\/([+-]?\d+)$/) || s.match(/^\\frac\{([+-]?\d+)\}\{([+-]?\d+)\}$/);
+  if (!m) return null;
+  const n = Math.abs(Number(m[1]));
+  const d = Math.abs(Number(m[2]));
+  return d === 0 ? null : { n, d };
+}
+
+function evaluateIntegerSet(answer, question) {
+  const given = parseIntegerSet(answer?.value);
+  if (!given) return syntaxError(String(answer?.value ?? ''));
+
+  const expected = parseIntegerSet(question.expectedAnswer);
+  if (!expected) throw new Error(`expectedAnswer illisible pour ${question.id}`);
+
+  const normalized = given.join(';');
+  const expectedSet = new Set(expected);
+  const hitAll = expected.every((v) => given.includes(v));
+  const noExtra = given.every((v) => expectedSet.has(v));
+  if (hitAll && noExtra) return result(OUTCOMES.CORRECT, { normalized });
+
+  const misconceptionId = matchSignature(question, (v) => {
+    const sig = parseIntegerSet(v);
+    return sig ? sig.join(';') === normalized : false;
+  });
+  if (misconceptionId) return result(OUTCOMES.INCORRECT, { misconceptionId, normalized });
+
+  // Un sous-ensemble strict de la bonne réponse : l'élève a trouvé des
+  // diviseurs, pas tous — la même lecture que pour multiChoice.
+  if (noExtra) return result(OUTCOMES.PARTIALLY_CORRECT, { normalized, feedbackKey: 'partial' });
+  return result(OUTCOMES.INCORRECT, { misconceptionId: null, normalized });
 }
 
 function evaluateAffine(answer, question) {
@@ -176,6 +295,28 @@ function evaluatePoint(answer, question) {
   return result(OUTCOMES.INCORRECT, { misconceptionId, normalized });
 }
 
+/* ── Auto-évaluation (« بيّن أن »، « برّر ») ──────────────────────────────
+ *
+ * Une démonstration ne se corrige pas automatiquement. Deux temps (décision
+ * du propriétaire, 2026-10-06) :
+ *  1. l'élève ÉCRIT sa démonstration et valide : `{ text }` est enregistré et
+ *     VERROUILLÉ — issue `abandoned` (inerte : aucune information
+ *     mathématique tant qu'il ne s'est pas noté), `normalized: 'self:pending'` ;
+ *  2. le corrigé type s'affiche, l'élève se note : `{ text, selfMark }` avec le
+ *     MÊME texte → `correct` / `incorrect`.
+ * Jamais compté pour la maîtrise (countsForMastery).
+ */
+function evaluateSelfCheck(answer) {
+  const mark = answer?.selfMark;
+  if (mark === 'correct') return result(OUTCOMES.CORRECT, { normalized: 'self:correct' });
+  if (mark === 'incorrect') return result(OUTCOMES.INCORRECT, { normalized: 'self:incorrect' });
+  if (mark === undefined || mark === null) {
+    const text = typeof answer?.text === 'string' ? answer.text.trim() : '';
+    if (text) return result(OUTCOMES.ABANDONED, { normalized: 'self:pending', feedbackKey: 'pending' });
+  }
+  return syntaxError(String(mark ?? ''));
+}
+
 const EVALUATORS = {
   choice: evaluateChoice,
   multiChoice: evaluateMultiChoice,
@@ -183,6 +324,8 @@ const EVALUATORS = {
   affine: evaluateAffine,
   interval: evaluateInterval,
   point: evaluatePoint,
+  integerSet: evaluateIntegerSet,
+  selfCheck: evaluateSelfCheck,
 };
 
 /**
@@ -199,13 +342,25 @@ export function evaluateAnswer(answer, question) {
   return evaluator(answer, question);
 }
 
-/** Le message à montrer, choisi par l'issue. */
-export function feedbackFor(question, evaluation, misconceptions = {}) {
+/** Deux écritures identiques au séparateur décimal près (« , » « . » « ٫ ») — jumeau PHP AnswerEvaluator::sameWriting. */
+function sameWriting(a, b) {
+  const norm = (v) => String(v ?? '').trim().replace(/[.٫]/g, ',');
+  return norm(a) === norm(b);
+}
+
+/**
+ * Le message à montrer, choisi par l'issue.
+ *
+ * Le noyau ne traduit pas : une réponse illisible prend le texte que l'appelant
+ * passe (`messages.syntaxError`, clé i18n `practice.syntaxErrorFeedback`), sinon
+ * le format attendu de la question — jamais une phrase en dur.
+ */
+export function feedbackFor(question, evaluation, misconceptions = {}, messages = {}) {
   if (evaluation.misconceptionId && misconceptions[evaluation.misconceptionId]) {
     return misconceptions[evaluation.misconceptionId].explanation;
   }
   if (evaluation.outcome === OUTCOMES.SYNTAX_ERROR) {
-    return "Je n'ai pas réussi à lire ta réponse. Vérifie le format attendu.";
+    return messages.syntaxError ?? question.answerFormat ?? '';
   }
   const fb = question.feedback ?? {};
   return fb[evaluation.feedbackKey] ?? fb.incorrect ?? '';

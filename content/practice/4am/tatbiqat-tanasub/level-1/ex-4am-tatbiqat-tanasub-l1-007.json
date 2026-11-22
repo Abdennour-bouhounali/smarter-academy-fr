@@ -1,0 +1,118 @@
+{
+  "id": "ex-4am-tatbiqat-tanasub-l1-007",
+  "lessonCode": "tatbiqat-tanasub",
+  "level": 1,
+  "metadata": {
+    "title": "الكتلة الحجمية لمعدن",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الكتلة الحجمية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tatbiqat-tanasub_P2",
+      "modelledOn": "act-6",
+      "adaptedFrom": "ex-4am-tatbiqat-tanasub-l1-007"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "قطعة معدنية كتلتها 540g وحجمها $200cm^3$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب الكتلة الحجمية لهذا المعدن بـ $g/cm^3$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط (بـ $g/cm^3$ ، عشري بالفاصلة)",
+      "expectedAnswer": "2,7",
+      "misconceptionSignatures": [
+        {
+          "value": "10/27",
+          "id": "MISC-MAQADIR-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكتلة الحجمية $\\rho = \\dfrac{m}{V}$ (الكتلة على الحجم)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 540 على 200 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\rho = \\dfrac{540}{200} = 2{,}7g/cm^3$ .",
+        "incorrect": "الكتلة الحجمية هي الكتلة مقسومة على الحجم، لا العكس."
+      },
+      "solution": {
+        "lines": [
+          "$\\rho = \\dfrac{m}{V}$",
+          "$\\rho = \\dfrac{540}{200} = 2{,}7$",
+          "الكتلة الحجمية للمعدن $2{,}7g/cm^3$ ."
+        ],
+        "result": "\\rho = 2{,}7g/cm^3"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج كتلة قطعة من المعدن نفسه حجمها $50cm^3$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الكتلة بـ g (عدد فقط)",
+      "expectedAnswer": "135",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكتلة $m = \\rho \\times V$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب الكتلة الحجمية في الحجم."
+        }
+      ],
+      "feedback": {
+        "correct": "$m = 2{,}7 \\times 50 = 135g$ .",
+        "incorrect": "الكتلة جداء الكتلة الحجمية في الحجم: $m = \\rho \\times V$ ."
+      },
+      "solution": {
+        "lines": [
+          "$m = \\rho \\times V$",
+          "$m = 2{,}7 \\times 50 = 135$",
+          "كتلة القطعة 135g ."
+        ],
+        "result": "m = 135g"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

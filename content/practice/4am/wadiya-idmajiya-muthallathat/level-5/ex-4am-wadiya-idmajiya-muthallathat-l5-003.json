@@ -1,0 +1,296 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muthallathat-l5-003",
+  "lessonCode": "wadiya-idmajiya-muthallathat",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2009 — المظلّي فوق جبل شنوة",
+    "estimatedMinutes": 30,
+    "tags": [
+      "وضعية إدماجية",
+      "الظل",
+      "الآلة الحاسبة",
+      "خاصية فيثاغورس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-muthallathat_P2",
+      "modelledOn": "BEM 2009 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "ينطلق مظلّي من قمة جبل شنوة بتيبازة، على ارتفاع $900\\,\\mathrm{m}$ فوق سطح البحر، وينزلق في خط مستقيم نحو الشاطئ (في مستوى سطح البحر). مظلّته تجعله يقطع $10\\,\\mathrm{m}$ أفقيا كلما نزل $1\\,\\mathrm{m}$ . نسمّي $\\beta$ قيس زاوية مساره مع الأفق. يلتزم المظلّي بتعليمات السلامة ويتحقّق من معدّاته قبل الانطلاق."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $\\tan\\beta$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري",
+      "expectedAnswer": "1/10",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم مثلثا قائما: النزول الشاقولي، المسافة الأفقية، والمسار وترا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النزول مقابل للزاوية $\\beta$ والمسافة الأفقية مجاورة لها."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan\\beta = \\dfrac{1}{10}$ .",
+        "incorrect": "الظل = المقابل (النزول) على المجاور (المسافة الأفقية)."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث القائم الذي يمثّل جزءا من المسار، ظل الزاوية $\\beta$ هو النزول الشاقولي مقسوما على المسافة الأفقية المقطوعة:",
+          "$\\tan\\beta = \\dfrac{1}{10}$"
+        ],
+        "result": "\\tan\\beta = \\dfrac{1}{10}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط المدوّر إلى الوحدة من الدرجة لقيس الزاوية $\\beta$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: القيس بالدرجة مدوّرا إلى الوحدة",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "84",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        },
+        {
+          "value": "5",
+          "id": "MISC-MUTH-TADWIR-BATR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نعرف ظل الزاوية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل اللمسة العكسية للنسبة في آلة حاسبة مبرمجة على الدرجة، ثم دوّر في آخر الحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\beta \\approx 5{,}71^{\\circ}$ ، أي $6^{\\circ}$ .",
+        "incorrect": "العدد $0{,}1$ ظل الزاوية؛ اللمسة العكسية للظل تعطي القيس، والتدوير ليس بترا."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan\\beta = 0{,}1$",
+          "باستعمال الآلة الحاسبة: $\\beta \\approx 5{,}7106^{\\circ}$"
+        ],
+        "result": "\\beta \\approx 6^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "احسب المسافة الأفقية التي يقطعها المظلّي من نقطة الانطلاق حتى يبلغ مستوى سطح البحر.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P2",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "9000",
+      "misconceptionSignatures": [
+        {
+          "value": "90",
+          "id": "MISC-MUTH-DARB-BADAL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ينزل $900\\,\\mathrm{m}$ في المجموع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة الأفقية في مقام الظل: $\\tan\\beta = \\dfrac{900}{d}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$d = \\dfrac{900}{\\tan\\beta} = 900 \\times 10 = 9000\\,\\mathrm{m}$ .",
+        "incorrect": "المجاور في مقام الظل: نقسم $900$ على $\\tan\\beta$ ولا نضرب."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan\\beta = \\dfrac{900}{d}$ ومنه $d = \\dfrac{900}{\\tan\\beta} = \\dfrac{900}{0{,}1}$"
+        ],
+        "result": "d = 9000\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "احسب طول مسار المظلّي بالتدوير إلى الوحدة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بـ m مدوّرا إلى الوحدة",
+      "expectedAnswer": "9045",
+      "misconceptionSignatures": [
+        {
+          "value": "9900",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        },
+        {
+          "value": "8610",
+          "id": "MISC-MUTH-TADWIR-MUBAKKIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسار وتر المثلث القائم الذي ضلعاه $900$ و $9000$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل خاصية فيثاغورس بالقيم المضبوطة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sqrt{9000^2 + 900^2} = \\sqrt{81810000} \\approx 9044{,}89$ أي $9045\\,\\mathrm{m}$ .",
+        "incorrect": "استعمل خاصية فيثاغورس (أو الجيب بالقيمة غير المدوّرة لـ $\\beta$ ): القيس المدوّر $6^{\\circ}$ يعطي نتيجة بعيدة."
+      },
+      "solution": {
+        "lines": [
+          "حسب خاصية فيثاغورس: $L^2 = 9000^2 + 900^2 = 81000000 + 810000 = 81810000$",
+          "$L = \\sqrt{81810000} \\approx 9044{,}8881$"
+        ],
+        "result": "L \\approx 9045\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "☜ يقع ملعب الهبوط على الشاطئ على بعد أفقي $8{,}4\\,\\mathrm{km}$ من نقطة الانطلاق، في جهة انزلاقه. هل يستطيع المظلّي بلوغه بانزلاق مستقيم دون أن يلمس الأرض قبله؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-DARB-BADAL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المسافة الأفقية التي يقطعها قبل بلوغ مستوى البحر بـ $8{,}4\\,\\mathrm{km}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$8{,}4\\,\\mathrm{km} = 8400\\,\\mathrm{m}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم: يبلغ مستوى البحر بعد $9000\\,\\mathrm{m}$ أفقيا، فهو ما زال في الجو فوق الملعب ويمكنه الهبوط فيه.",
+        "incorrect": "حوّل $8{,}4\\,\\mathrm{km}$ إلى أمتار وقارنها بالمسافة الأفقية التي حسبتها في 03."
+      },
+      "solution": {
+        "lines": [
+          "$8{,}4\\,\\mathrm{km} = 8400\\,\\mathrm{m}$ و $8400 < 9000$",
+          "عند الملعب يكون ارتفاعه $(9000 - 8400) \\times 0{,}1 = 60\\,\\mathrm{m}$ : لم يلمس الأرض بعد.",
+          "إذن نعم، يستطيع بلوغ ملعب الهبوط."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

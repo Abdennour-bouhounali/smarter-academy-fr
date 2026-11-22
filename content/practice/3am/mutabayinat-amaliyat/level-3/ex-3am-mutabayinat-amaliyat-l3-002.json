@@ -1,0 +1,246 @@
+{
+  "id": "ex-3am-mutabayinat-amaliyat-l3-002",
+  "lessonCode": "mutabayinat-amaliyat",
+  "level": 3,
+  "metadata": {
+    "title": "حصر طول ضلع انطلاقًا من محيط",
+    "estimatedMinutes": 10,
+    "tags": [
+      "حصر",
+      "محيط",
+      "قسمة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-24",
+      "page": 79,
+      "section": "أوظّف تعلّماتي",
+      "number": 24
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "مثلث متقايس الأضلاع طول ضلعه $c$ ومحيطه $P=3c$ بالسنتيمتر، ونعلم أنّ $9\\le P\\le 12$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أكمل: $\\ldots\\le c$",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-MUTABAYINA-ONE-SIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل العدد الذي نضرب فيه (أو نقسم عليه) موجب أم سالب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في عدد موجب تمامًا (أو القسمة عليه) لا يغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق العملية على كلّ طرف ثم احتفظ بالرمز كما هو."
+        }
+      ],
+      "feedback": {
+        "correct": "نقسم الأطراف على $3$ (موجب): $3\\le c\\le 4$ .",
+        "incorrect": "الضرب في عدد موجب تمامًا (أو القسمة عليه) يحفظ اتجاه المتباينة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم الأطراف على $3$ (موجب): $3\\le c\\le 4$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "أكمل: $c\\le\\ldots$",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-MUTABAYINA-ONE-SIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل العدد الذي نضرب فيه (أو نقسم عليه) موجب أم سالب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في عدد موجب تمامًا (أو القسمة عليه) لا يغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق العملية على كلّ طرف ثم احتفظ بالرمز كما هو."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{P}{3}\\le\\dfrac{12}{3}=4$ .",
+        "incorrect": "الضرب في عدد موجب تمامًا (أو القسمة عليه) يحفظ اتجاه المتباينة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{P}{3}\\le\\dfrac{12}{3}=4$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "مربّع طول ضلعه $c$ حيث $3\\le c\\le 4$ . اختر الحصر الصحيح لمحيطه $4c$ .",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$16\\le 4c\\le 12$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-BOUND-ORDER"
+        },
+        {
+          "id": "B",
+          "content": "$12\\le 4c\\le 16$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$3\\le 4c\\le 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-COEF-LOST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المعطى بالضبط؟ وما العبارة المطلوب استنتاج متباينة لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابنِ المتباينة المطلوبة عملية بعد عملية، وانتبه إلى إشارة العدد عند كلّ ضرب أو قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر، وأعد كتابة الحصر من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "نضرب الأطراف في $4$ (موجب): $12\\le 4c\\le 16$ .",
+        "incorrect": "استنتج المتباينة خطوة بخطوة، وانتبه إلى اتجاهها بعد كلّ ضرب أو قسمة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضرب الأطراف في $4$ (موجب): $12\\le 4c\\le 16$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "إذا كان $9\\le P\\le 12$ فإنّ $P-2\\ge 7$ .",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيحة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خاطئة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-SUB-FLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية المطبّقة على طرفي المتباينة؟ وما العدد المستعمل؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إضافة عدد إلى الطرفين (أو طرحه منهما) لا تغيّر اتجاه المتباينة، موجبًا كان ذلك العدد أو سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الطرفين بعد العملية ثم ضع الرمز نفسه الذي في المتباينة المعطاة."
+        }
+      ],
+      "feedback": {
+        "correct": "نطرح $2$ من الطرفين: $7\\le P-2\\le 10$ ؛ فالجملة صحيحة.",
+        "incorrect": "لا يتغيّر اتجاه المتباينة عندما نضيف إلى طرفيها (أو نطرح منهما) العدد نفسه؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نطرح $2$ من الطرفين: $7\\le P-2\\le 10$ ؛ فالجملة صحيحة."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

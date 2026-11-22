@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-takbir-tasghir-l5-010",
+  "lessonCode": "takbir-tasghir",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — مَن على حق؟",
+    "estimatedMinutes": 2,
+    "tags": [
+      "التكبير",
+      "الحجم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takbir-tasghir_P1",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "قال أمين: «إذا ضاعفنا طول حرف مكعّب فإن حجمه يتضاعف». وقالت سارة: «حجمه يُضرب في 8»."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مَن على حق؟",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا أحد: الحجم يُضرب في 4 لأن للمكعّب وجها مربعا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-HAJM-K"
+        },
+        {
+          "id": "B",
+          "content": "سارة: المكعّب الجديد مبني من $2 \\times 2 \\times 2 = 8$ مكعّبات مثل الأول",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "أمين: الحجم يُضرب في نفس العدد 2",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-HAJM-K"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم المكعّب الجديد وقسّمه إلى مكعّبات مثل الأول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأطوال تُضرب في $k$ ، والمساحات في $k^2$ ، والحجوم في $k^3$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب $2^3$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "سارة على حق: الحجم يُضرب في $k^3 = 8$ .",
+        "incorrect": "مضاعفة الأطوال الثلاثة تضرب الحجم في 8."
+      }
+    }
+  ]
+}

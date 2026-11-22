@@ -1,0 +1,300 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l3-002",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — مبيعات الطماطم بتخفيض الكمية الكبيرة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "تمثيل بياني",
+      "نقط منكسرة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 3,
+      "file": "3am-s3-56",
+      "exercise": 3
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يبيع فلاح الطماطم لأهل الحيّ، وكرما منه يبيع الكيلوغرامات التي تلي العشرة الأولى بثمن أقلّ. يلخّص الجدول التالي المبيعات، ومثّلنا معطياته في المعلم الموالي (الفاصلة بالكيلوغرام والترتيب بمئات الدنانير).",
+    "table": {
+      "head": [
+        "الكتلة (kg)",
+        "5",
+        "10",
+        "15",
+        "20"
+      ],
+      "rows": [
+        [
+          "الثمن (دج)",
+          "600",
+          "1200",
+          "1500",
+          "1800"
+        ]
+      ]
+    },
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          5,
+          6
+        ],
+        "B": [
+          10,
+          12
+        ],
+        "C": [
+          15,
+          15
+        ],
+        "D": [
+          20,
+          18
+        ]
+      },
+      "segments": [
+        [
+          "O",
+          "A"
+        ],
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ]
+      ],
+      "grid": true,
+      "axes": {
+        "every": 5
+      },
+      "labels": {
+        "O": "sw",
+        "A": "nw",
+        "B": "nw",
+        "C": "se",
+        "D": "se"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس: النقط O و A(5;6) و B(10;12) و C(15;15) و D(20;18) موصولة بقطع، ويتغير الميل بعد النقطة B",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: الكتلة بالكيلوغرام — محور التراتيب: الثمن بمئات الدنانير"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "بقراءة المعلم:",
+      "statement": "ما ترتيب النقطة $B$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد: ترتيب النقطة",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-TAMTHIL-SWAP-XY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الترتيب هو العدد الثاني في زوج الإحداثيين، وتُقرأ على المحور العمودي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اذهب من النقطة أفقيا إلى المحور العمودي واقرأ العدد الذي تقع عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "ترتيب $B$ هي $12$.",
+        "incorrect": "الترتيب يُقرأ على المحور العمودي لا الأفقي، ويجب أن تحترم قيمة المربع."
+      },
+      "solution": {
+        "lines": [
+          "نمشي من $B$ أفقيا إلى محور التراتيب فنقرأ $12$ ."
+        ],
+        "result": "12"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "هل الثمن متناسب مع كتلة الطماطم؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأنّ الترتيب يكبر كلما كبرت الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-RISING"
+        },
+        {
+          "id": "B",
+          "content": "لا، النقط ليست على استقامة واحدة",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نعم، لأنّ الرسم ينطلق من المبدأ $O$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-THROUGH-O-ANY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط ليست على استقامة واحدة، فليست الوضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "النقط $O$ و $A$ و $B$ على استقامة واحدة، لكنّ $C$ و $D$ ليستا عليها.",
+          "إذن النقط ليست على استقامة واحدة والثمن ليس متناسبا مع الكتلة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "علّل جوابك.",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تعليلك ثم قارنه بالتصحيح النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اذكر الخاصية التي تستعملها: ما شرط التناسبية على النقط؟"
+        }
+      ],
+      "feedback": {
+        "correct": "التعليل يذكر استقامة النقط ومرور المستقيم بالمبدأ $O$ .",
+        "incorrect": "قارن تعليلك بالتصحيح النموذجي، وتأكد أنك ذكرت الشرطين معا."
+      },
+      "solution": {
+        "lines": [
+          "النقط $O$ و $A$ و $B$ على مستقيم واحد (ثمن الكيلوغرام $120$ دج)، لكنّ $C$ و $D$ خارج هذا المستقيم.",
+          "النقط ليست على استقامة واحدة، إذن الوضعية ليست تناسبية."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "لو كان الثمن متناسبا مع الكتلة بالمعامل نفسه الذي في أول عشرة كيلوغرامات، فكم يكون ثمن $20$ kg بمئات الدنانير؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الثمن بمئات الدنانير",
+      "expectedAnswer": "24",
+      "misconceptionSignatures": [
+        {
+          "value": "18",
+          "id": "MISC-TAMTHIL-THROUGH-O-ANY"
+        },
+        {
+          "value": "14",
+          "id": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب معامل التناسبية في أول عشرة كيلوغرامات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضربه في $20$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}2 \\times 20 = 24$ مئة دج، وهو أكبر من الثمن الفعلي $18$ : الثمن ليس متناسبا.",
+        "incorrect": "احسب المعامل من النقطة $B$ ثم اضربه في $20$ ."
+      },
+      "solution": {
+        "lines": [
+          "معامل التناسبية على المستقيم $(OB)$ : $a = \\dfrac{12}{10} = 1{,}2$ .",
+          "$1{,}2 \\times 20 = 24$ مئة دج، بينما الثمن الفعلي $18$ : النقطة $D$ ليست على $(OB)$ ."
+        ],
+        "result": "24"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

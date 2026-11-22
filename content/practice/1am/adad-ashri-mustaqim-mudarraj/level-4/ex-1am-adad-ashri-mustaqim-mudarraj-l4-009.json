@@ -1,0 +1,210 @@
+{
+  "id": "ex-1am-adad-ashri-mustaqim-mudarraj-l4-009",
+  "lessonCode": "adad-ashri-mustaqim-mudarraj",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — شريط التصوير",
+    "estimatedMinutes": 5,
+    "tags": [
+      "مئوية",
+      "حصر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نصف مستقيم مدرّج بين العلامتين $4$ و$4{,}1$ ، وبينهما 10 أجزاء متساوية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "على نصف مستقيم مدرّج لا يظهر مبدؤه، العلامتان المتتاليتان المكتوبتان هما $4$ و$4{,}1$ وبينهما 10 أجزاء متساوية. تبعد النقطة $K$ عن العلامة $4$ بمقدار 6 تدريجات صغيرة نحو اليمين. ما فاصلتها ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "4,06",
+      "misconceptionSignatures": [
+        {
+          "value": "0,06",
+          "id": "MISC-ABSC-SHIFTORIGIN"
+        },
+        {
+          "value": "10",
+          "id": "MISC-ABSC-TICKUNIT"
+        },
+        {
+          "value": "4,07",
+          "id": "MISC-ABSC-COUNTMARKS"
+        },
+        {
+          "value": "4,6",
+          "id": "MISC-ABSC-TICKUNIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا يهمّ أن يكون المبدأ ظاهرًا : كم يساوي الفرق بين العلامتين المكتوبتين ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم هذا الفرق على عدد الأجزاء لتعرف قيمة التدريجة الصغيرة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ابدأ العدّ من العلامة المكتوبة، فأضف قيمتها إلى ما قطعته."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة $4{,}06$ : ننطلق من قيمة العلامة المكتوبة ونضيف التدريجات الصغيرة.",
+        "incorrect": "عندما لا يظهر المبدأ نقرأ القيمة من العلامات المكتوبة : قيمة التدريجة الصغيرة هي الفرق بين علامتين مقسومًا على عدد الأجزاء، ثمّ تضاف إلى العلامة التي بدأنا منها."
+      },
+      "solution": {
+        "lines": [
+          "الفرق بين العلامتين $4{,}1$ − $4$ = $0{,}1$ مقسوم على 10 أجزاء، فكلّ تدريجة صغيرة $0{,}01$",
+          "الفاصلة : $4$ + $6$ × $0{,}01$ = $4{,}06$"
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "على نصف مستقيم مدرّج لا يظهر مبدؤه، العلامتان المتتاليتان المكتوبتان هما $4$ و$4{,}1$ وبينهما 10 أجزاء متساوية. تبعد النقطة $K$ عن العلامة $4$ بمقدار 3 تدريجات صغيرة نحو اليمين. ما فاصلتها ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$0{,}03$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-SHIFTORIGIN"
+        },
+        {
+          "id": "B",
+          "content": "$4{,}03$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-TICKUNIT"
+        },
+        {
+          "id": "D",
+          "content": "$4{,}04$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-COUNTMARKS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا يهمّ أن يكون المبدأ ظاهرًا : كم يساوي الفرق بين العلامتين المكتوبتين ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم هذا الفرق على عدد الأجزاء لتعرف قيمة التدريجة الصغيرة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ابدأ العدّ من العلامة المكتوبة، فأضف قيمتها إلى ما قطعته."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة $4{,}03$ : ننطلق من قيمة العلامة المكتوبة ونضيف التدريجات الصغيرة.",
+        "incorrect": "عندما لا يظهر المبدأ نقرأ القيمة من العلامات المكتوبة : قيمة التدريجة الصغيرة هي الفرق بين علامتين مقسومًا على عدد الأجزاء، ثمّ تضاف إلى العلامة التي بدأنا منها."
+      },
+      "solution": {
+        "lines": [
+          "الفرق بين العلامتين $4{,}1$ − $4$ = $0{,}1$ مقسوم على 10 أجزاء، فكلّ تدريجة صغيرة $0{,}01$",
+          "الفاصلة : $4$ + $3$ × $0{,}01$ = $4{,}03$"
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "قُسِّمت القطعة بين $4$ و$4{,}1$ إلى 10 أجزاء متساوية. ما قيمة التباعد بين تدريجتين صغيرتين متتاليتين ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "0,01",
+      "misconceptionSignatures": [
+        {
+          "value": "0,1",
+          "id": "MISC-ABSC-PARTSASVALUE"
+        },
+        {
+          "value": "10",
+          "id": "MISC-ABSC-PARTSASVALUE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الطول الذي قُسِّم ؟ وكم جزءًا متساويًا نتجت عنه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التباعد بين تدريجتين صغيرتين هو جزء واحد من الأجزاء المتساوية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم الطول على عدد الأجزاء، واكتب النتيجة بالفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "كلّ جزء يساوي $0{,}01$ : نقسم طول القطعة على عدد الأجزاء.",
+        "incorrect": "قيمة التدريجة الصغيرة هي طول القطعة مقسومًا على عدد أجزائها ؛ لا نقسّم الوحدة بل القطعة المعطاة."
+      },
+      "solution": {
+        "lines": [
+          "طول القطعة $0{,}1$ مقسوم على 10 أجزاء متساوية",
+          "كلّ جزء يساوي $0{,}1$ ÷ $10$ = $0{,}01$"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

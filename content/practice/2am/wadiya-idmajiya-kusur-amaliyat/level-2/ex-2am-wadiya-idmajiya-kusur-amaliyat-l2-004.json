@@ -1,0 +1,184 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-kusur-amaliyat-l2-004",
+  "lessonCode": "wadiya-idmajiya-kusur-amaliyat",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — الكلّ من جزئه : طريق الحافلة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "الكلّ من جزئه",
+      "كسر من عدد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "قطعت حافلة $\\dfrac{1}{8}$ من الطريق بين مدينتين ، وهي $45$ km ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما الكسر الذي يمثّل الجزء المتبقّي من الطريق ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "7/8",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1/8",
+          "id": "MISC-JAMKASR-PART"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكلّ يساوي كسرًا بسطه ومقامه عدد واحد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الأجزاء المأخوذة أوّلًا ثمّ اطرحها من الكلّ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الجزء الباقي هو الكلّ ناقص ما أُخذ ، وهو أصغر من الكلّ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{7}{8}$ .",
+        "incorrect": "اجمع ما أُخذ أوّلًا ثمّ اطرحه من الكلّ ، ولا تُعطِ ما أُخذ بدل الباقي ."
+      },
+      "solution": {
+        "lines": [
+          "$1 = \\dfrac{8}{8}$ .",
+          "ما أُخذ : $\\dfrac{1}{8} = \\dfrac{1}{8} = \\dfrac{1}{8}$ .",
+          "الباقي : $1 - \\dfrac{1}{8} = \\dfrac{8}{8} - \\dfrac{1}{8} = \\dfrac{7}{8}$ ."
+        ],
+        "result": "\\dfrac{7}{8}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما طول الطريق كلّه بالكيلومتر ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "360",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعطى جزء من الكلّ ، ومعه الكسر الذي يمثّله هذا الجزء ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان جزء واحد من ستّة أجزاء متساوية يساوي كمّية معلومة فالكلّ يساوي ستّة أمثالها : نضرب ولا نقسم ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بأخذ الكسر من الكلّ الذي وجدته : يجب أن تجد الجزء المعطى ."
+        }
+      ],
+      "feedback": {
+        "correct": "$360$ .",
+        "incorrect": "الكلّ هو عدد الأجزاء مضروبًا في الجزء الواحد المعلوم ؛ تحقّق بأخذ الكسر من الكلّ الذي وجدته ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{8}$ من الكلّ يساوي $45$ ، والكلّ يساوي $8$ جزءًا من هذا النوع .",
+          "الكلّ : $8 \\times 45 = 360$ ."
+        ],
+        "result": "360"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما طول الجزء المتبقّي من الطريق بالكيلومتر ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "315",
+      "misconceptionSignatures": [
+        {
+          "value": "2880/7",
+          "id": "MISC-JIDAKASR-FLIP"
+        },
+        {
+          "value": "45",
+          "id": "MISC-JIDAKASR-HALFWAY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزء من عدد يعني جداء الكسر في العدد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي ما دام الكسر أصغر من 1 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$315$ km .",
+        "incorrect": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ، ولا تقلب الكسر ."
+      },
+      "solution": {
+        "lines": [
+          "$360 \\div 8 = 45$ .",
+          "$45 \\times 7 = 315$ ."
+        ],
+        "result": "315"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

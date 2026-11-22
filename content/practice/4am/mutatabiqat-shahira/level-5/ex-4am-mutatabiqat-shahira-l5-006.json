@@ -1,0 +1,208 @@
+{
+  "id": "ex-4am-mutatabiqat-shahira-l5-006",
+  "lessonCode": "mutatabiqat-shahira",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2010 — ساحة السوق الأسبوعي",
+    "estimatedMinutes": 10,
+    "tags": [
+      "حساب ذهني",
+      "فرق مربعين",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mutatabiqat-shahira_P4",
+      "modelledOn": "BEM 2010 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2010",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "ساحة السوق الأسبوعي بمدينة الجلفة مربعة الشكل طول ضلعها $95$ m . قرّرت البلدية توسيعها ليجد فيها مزيد من التجّار رزقًا حلالًا، فأصبحت مربعة الشكل طول ضلعها $105$ m ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب ذهنيا (دون وضع العملية):",
+      "statement": "مساحة الساحة قبل التوسيع $95^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "9025",
+      "misconceptionSignatures": [
+        {
+          "value": "10025",
+          "id": "MISC-HISAB-DHIHNI-MURABBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العدد على شكل فرق عدد مدوّر وعدد صغير."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق $(a - b)^2 = a^2 - 2ab + b^2$ ، ولا تنسَ الحد المضاعف $2ab$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$95^2 = 9025$ .",
+        "incorrect": "اكتب العدد بدلالة عدد مدوّر، ثم طبّق المتطابقة الشهيرة المناسبة حدًّا حدًّا."
+      },
+      "solution": {
+        "lines": [
+          "$95^2 = (100 - 5)^2$",
+          "$= 100^2 - 2 \\times 100 \\times 5 + 5^2$",
+          "$= 10000 - 1000 + 25$"
+        ],
+        "result": "95^2 = 9025"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "مساحة الساحة بعد التوسيع $105^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "11025",
+      "misconceptionSignatures": [
+        {
+          "value": "10025",
+          "id": "MISC-HISAB-DHIHNI-MURABBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العدد على شكل مجموع عدد مدوّر وعدد صغير."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق $(a + b)^2 = a^2 + 2ab + b^2$ ، ولا تنسَ الحد المضاعف $2ab$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$105^2 = 11025$ .",
+        "incorrect": "اكتب العدد بدلالة عدد مدوّر، ثم طبّق المتطابقة الشهيرة المناسبة حدًّا حدًّا."
+      },
+      "solution": {
+        "lines": [
+          "$105^2 = (100 + 5)^2$",
+          "$= 100^2 + 2 \\times 100 \\times 5 + 5^2$",
+          "$= 10000 + 1000 + 25$"
+        ],
+        "result": "105^2 = 11025"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب الزيادة في المساحة $105^2 - 95^2$ مستعملا المتطابقة $a^2 - b^2 = (a + b)(a - b)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على فرق مربعين: $a^2 - b^2 = (a + b)(a - b)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب المجموع والفرق أولًا، ثم اضرب النتيجتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$105^2 - 95^2 = 2000$ .",
+        "incorrect": "اكتب العدد بدلالة عدد مدوّر، ثم طبّق المتطابقة الشهيرة المناسبة حدًّا حدًّا."
+      },
+      "solution": {
+        "lines": [
+          "$105^2 - 95^2 = (105 + 95)(105 - 95)$",
+          "$= 200 \\times 10$"
+        ],
+        "result": "105^2 - 95^2 = 2000"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "☜ تُقسَّم الزيادة إلى أماكن للتجّار مساحة كل منها $8\\ m^2$ ، ويدفع كل تاجر 1500DA في الأسبوع. ما المبلغ الأسبوعي الإضافي الذي تحصّله البلدية؟",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدينار DA)",
+      "expectedAnswer": "375000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب عدد الأماكن: الزيادة في المساحة ÷ 8."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب عدد الأماكن في 1500."
+        }
+      ],
+      "feedback": {
+        "correct": "$2000 \\div 8 = 250$ مكانًا، و $250 \\times 1500 = 375000$ DA .",
+        "incorrect": "استعمل الزيادة في المساحة وحدها، ثم احسب عدد الأماكن والمبلغ."
+      },
+      "solution": {
+        "lines": [
+          "عدد الأماكن: $2000 \\div 8 = 250$",
+          "المبلغ الأسبوعي: $250 \\times 1500 = 375000$ DA"
+        ],
+        "result": "375000\\ DA"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

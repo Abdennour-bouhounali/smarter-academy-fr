@@ -1,0 +1,178 @@
+{
+  "id": "ex-4am-tafsir-bayani-jumla-l2-003",
+  "lessonCode": "tafsir-bayani-jumla",
+  "level": 2,
+  "metadata": {
+    "title": "القسمة على معامل y",
+    "estimatedMinutes": 5,
+    "tags": [
+      "y = ax + b",
+      "محور الفواصل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tafsir-bayani-jumla_P1",
+      "modelledOn": "act-5"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "المستقيم $(d)$ هو التمثيل البياني للمعادلة $x + 2y = 8$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "اكتب المعادلة على الشكل $y = ax + b$ .",
+      "statement": "أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-0,5",
+      "misconceptionSignatures": [
+        {
+          "value": "0,5",
+          "id": "MISC-JUMLA-ISHARA-Y"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعادلة من الشكل $ax + by = c$ : نريد أن يبقى $y$ وحده في طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل حدّ $x$ إلى الطرف الثاني مع تغيير إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم اقسم كل الحدود على معامل $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = -0{,}5$ : معامل $x$ بعد عزل $y$ .",
+        "incorrect": "انقل حدّ $x$ بتغيير إشارته، ثم اقسم الطرفين على معامل $y$ (بإشارته)."
+      },
+      "solution": {
+        "lines": [
+          "$x + 2y = 8$",
+          "$2y = -x + 8$",
+          "نقسم كل الحدود على $2$ :",
+          "$y = -0{,}5x + 4$",
+          "إذن: $a = -0{,}5$ و $b = 4$ ."
+        ],
+        "result": "y = -0{,}5x + 4"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "-4",
+          "id": "MISC-JUMLA-ISHARA-Y"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعادلة من الشكل $ax + by = c$ : نريد أن يبقى $y$ وحده في طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $b$ هو الحد الذي لا يحوي $x$ بعد عزل $y$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم اقسم كل الحدود على معامل $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$y = -0{,}5x + 4$ .",
+        "incorrect": "العدد $b$ هو الطرف الثاني مقسوما على معامل $y$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$x + 2y = 8$",
+          "$2y = -x + 8$",
+          "نقسم كل الحدود على $2$ :",
+          "$y = -0{,}5x + 4$",
+          "إذن: $a = -0{,}5$ و $b = 4$ ."
+        ],
+        "result": "y = -0{,}5x + 4"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "عيّن فاصلة نقطة تقاطع المستقيم $(d)$ مع محور الفواصل.",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: فاصلة النقطة",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نقطة من محور الفواصل ترتيبها 0."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $y$ بالعدد 0 في المعادلة."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة $(8 ; 0)$ .",
+        "incorrect": "على محور الفواصل يكون $y = 0$ ؛ عوّض ثم احسب $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "على محور الفواصل يكون $y = 0$ :",
+          "$x + 2 \\times 0 = 8$",
+          "$x = 8$",
+          "إذن $(d)$ يقطع محور الفواصل في النقطة $(8 ; 0)$ ."
+        ],
+        "result": "x = 8"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

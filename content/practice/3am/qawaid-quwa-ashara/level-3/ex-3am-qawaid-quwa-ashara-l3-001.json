@@ -1,0 +1,137 @@
+{
+  "id": "ex-3am-qawaid-quwa-ashara-l3-001",
+  "lessonCode": "qawaid-quwa-ashara",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — جداء وحاصل قسمة وقوى",
+    "estimatedMinutes": 8,
+    "tags": [
+      "سلسلة حساب",
+      "قوة لقوة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-76",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "إليك العددين $R$ و $S$ حيث:",
+    "formulas": [
+      "R = \\dfrac{9\\times3^{4}}{27\\times3^{-2}}",
+      "S = \\dfrac{10^{6}\\times10^{-3}}{(10^{4})^{-2}\\times10^{5}}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "اكتب $R$ على الشكل $3^{n}$ : $R = 3^{n}$ ، ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أوّلًا كلّ قوة على حدة وحدّد أسّها، وانتبه إلى القوى التي بين قوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز الجداءات والقوى لتحصل على قوة واحدة في البسط وقوة واحدة في المقام، ثمّ اقسم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب أسّ البسط وأسّ المقام كلًّا على حدة قبل أن تطرح، وانتبه إلى الإشارات."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "5",
+      "feedback": {
+        "correct": "$R = 3^{5}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$9 = 3^{2}$ و $27 = 3^{3}$ ، فالبسط $3^{2}\\times3^{4} = 3^{6}$ والمقام $3^{3}\\times3^{-2} = 3^{1}$ .",
+          "$R = \\dfrac{3^{6}}{3^{1}} = 3^{5}$ ."
+        ],
+        "result": "n = 5"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اكتب $S$ على الشكل $10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أوّلًا كلّ قوة على حدة وحدّد أسّها، وانتبه إلى القوى التي بين قوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز الجداءات والقوى لتحصل على قوة واحدة في البسط وقوة واحدة في المقام، ثمّ اقسم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب أسّ البسط وأسّ المقام كلًّا على حدة قبل أن تطرح، وانتبه إلى الإشارات."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-QAWAID-QUWA-JAM"
+        },
+        {
+          "value": "-3",
+          "id": "MISC-QAWAID-ISHARA"
+        }
+      ],
+      "feedback": {
+        "correct": "$S = 10^{6}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "البسط: $10^{6}\\times10^{-3} = 10^{3}$ .",
+          "المقام: $(10^{4})^{-2} = 10^{-8}$ ثمّ $10^{-8}\\times10^{5} = 10^{-3}$ .",
+          "$S = \\dfrac{10^{3}}{10^{-3}} = 10^{3-(-3)} = 10^{6}$ ."
+        ],
+        "result": "n = 6"
+      }
+    }
+  ]
+}

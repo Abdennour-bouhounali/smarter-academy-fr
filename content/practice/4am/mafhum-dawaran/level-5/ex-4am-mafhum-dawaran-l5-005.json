@@ -1,0 +1,117 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l5-005",
+  "lessonCode": "mafhum-dawaran",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — مقام الشهيد",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الدوران",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mafhum-dawaran_P1",
+      "modelledOn": "know-1"
+    }
+  },
+  "statement": {
+    "content": "من الأعلى، أطراف سعفات مقام الشهيد الثلاث P و Q و R على دائرة مركزها O، موزّعة بانتظام بهذا الترتيب عكس اتجاه عقارب الساعة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما هي أصغر زاوية (بالدرجات) لدوران مركزه O ينقل كل سعفة إلى مكان سعفة أخرى؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجات)",
+      "expectedAnswer": "120",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-ZAWIYA-UKHRA",
+          "value": "60"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثلاث سعفات موزّعة بانتظام."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الدورة الكاملة على ثلاثة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم."
+        }
+      ],
+      "feedback": {
+        "correct": "$360^\\circ \\div 3 = 120^\\circ$ .",
+        "incorrect": "الدورة الكاملة على ثلاثة أجزاء متساوية."
+      },
+      "difficulty": 3
+    },
+    {
+      "id": "q2",
+      "statement": "صورة P بالدوران الذي مركزه O وزاويته $240^\\circ$ في الاتجاه المباشر هي:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "Q",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MUKAMMIL"
+        },
+        {
+          "id": "B",
+          "content": "R",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "P",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ZAWIYA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$240^\\circ$ تساوي مرتين زاوية بين سعفتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الاتجاه المباشر يتبع الترتيب P ثم Q ثم R."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تقدّم مكانين."
+        }
+      ],
+      "feedback": {
+        "correct": "مكانان عكس عقارب الساعة: من P إلى Q ثم إلى R.",
+        "incorrect": "$240^\\circ$ مباشر = $120^\\circ$ غير مباشر: تقدّم مكانين في الاتجاه المباشر."
+      },
+      "difficulty": 4
+    }
+  ]
+}

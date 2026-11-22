@@ -1,0 +1,225 @@
+{
+  "id": "ex-2am-wasf-silsila-hisab-l2-005",
+  "lessonCode": "wasf-silsila-hisab",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — قوسان أم لا؟",
+    "estimatedMinutes": 10,
+    "tags": [
+      "كتابة",
+      "قوسان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اكتب السلسلة ثم برّر وضع القوسين أو عدم وضعهما."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب سلسلة العمليات الموافقة للجملة: «مجموع العدد 14 وحاصل قسمة 36 على 9» ، ثم برّر استعمالك للقوسين أو عدمه.",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب على ورقتك مرحلة مرحلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اسأل: أيّ عملية تُنجز أخيرًا ولماذا؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تذكر القاعدة المستعملة."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن سلسلتك وتبريرك بالحل النموذجي.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به سلسلتك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$14 + 36 \\div 9$",
+          "لا حاجة إلى قوسين: الأولوية تجعل القطعة تُحسب قبل آخر عملية."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل يلزم قوسان لكتابة السلسلة «مجموع العدد 14 وحاصل قسمة 36 على 9» ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن آخر عملية تُنجز في السلسلة قبل أن تحكم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كل عبارة بالترتيب الصحيح ثم قارن اسمها بما يقوله النص."
+        }
+      ],
+      "feedback": {
+        "correct": "تحقّقت من ذلك بالحساب.",
+        "incorrect": "احسب كل عبارة مرحلة مرحلة واسمِها بآخر عملية فيها قبل أن تحكم."
+      },
+      "solution": {
+        "lines": [
+          "القوسان لا يغيّران بنية السلسلة: لا حاجة إليهما (مجموع)."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أيّ سلسلة توافق الجملة: «حاصل قسمة مجموع العددين 14 و 22 على 9» ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(14 + 22) \\div 9$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$14 + 22 \\div 9$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-NOBRACKET"
+        },
+        {
+          "id": "C",
+          "content": "$9 \\div (14 + 22)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-ORDERDIFF"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بآخر عملية في الجملة: هي الأخيرة التي تُكتب بين قطعتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كلّ قطعة على حدة، وضع بين قوسين كلّ قطعة يجب أن تُحسب قبل آخر عملية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر سلسلتك بحسابها: هل آخر عملية فيها هي التي في الجملة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة الصحيحة: $(14 + 22) \\div 9$ .",
+        "incorrect": "ابدأ بآخر عملية في الجملة، وضع بين قوسين كلّ قطعة تُحسب قبلها، وانتبه إلى ترتيب القطعتين."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية في الجملة هي $\\div$.",
+          "نكتب كلّ قطعة ثم نربط بينهما: $(14 + 22) \\div 9$ (القوسان لازمان لأنّ القطعة يجب أن تُحسب أوّلًا)."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "اكتب السلسلة الموافقة للجملة: «حاصل قسمة مجموع العددين 14 و 22 على 9» ثم احسبها.",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد كتابة السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = (14 + 22) \\div 9 = 4$",
+        "incorrect": "اكتب السلسلة بالقوسين اللازمين ثم احسبها: ما بين القوسين أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "$B = (14 + 22) \\div 9$",
+          "$B = 36 \\div 9$",
+          "$B = 4$"
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

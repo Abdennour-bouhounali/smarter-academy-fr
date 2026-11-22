@@ -1,0 +1,216 @@
+{
+  "id": "ex-4am-aksiya-talis-l1-004",
+  "lessonCode": "aksiya-talis",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2017 — بيّن أن (EF) و (GH) متوازيان",
+    "estimatedMinutes": 5,
+    "tags": [
+      "وضعية الفراشة",
+      "الخاصية العكسية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_aksiya-talis_P1",
+      "modelledOn": "BEM 2017 I-4"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2017",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل (وحدة الطول هي الميليمتر): النقط $E$ ، $K$ ، $G$ في استقامية والنقط $F$ ، $K$ ، $H$ في استقامية، حيث: $KE = 24$ ، $KG = 40$ ، $KF = 18$ ، $KH = 30$ .",
+    "figure": {
+      "points": {
+        "K": [
+          0.0,
+          0.0
+        ],
+        "E": [
+          -16.970562748477,
+          16.970562748477
+        ],
+        "G": [
+          28.284271247462,
+          -28.284271247462
+        ],
+        "F": [
+          12.727922061358,
+          12.727922061358
+        ],
+        "H": [
+          -21.213203435596,
+          -21.213203435596
+        ]
+      },
+      "segments": [
+        [
+          "E",
+          "G"
+        ],
+        [
+          "F",
+          "H"
+        ],
+        [
+          "E",
+          "F"
+        ],
+        [
+          "G",
+          "H"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "E",
+          "K",
+          "F"
+        ]
+      ],
+      "ariaLabel": "النقط E و K و G على استقامة، F و K و H على استقامة، والمستقيمان متعامدان في K",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "بيّن أن المستقيمين $(EF)$ و $(GH)$ متوازيان.",
+      "statement": "احسب النسبة $\\dfrac{KE}{KG}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "3/5",
+      "misconceptionSignatures": [
+        {
+          "value": "5/3",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$KE$ و $KG$ طولان يُقاسان من النقطة $K$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $KE$ على $KG$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{KE}{KG} = \\dfrac{24}{40} = \\dfrac{3}{5}$ .",
+        "incorrect": "النسبة $\\dfrac{KE}{KG}$ : الطول $KE$ على الطول $KG$ ، وكلاهما من النقطة $K$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{KE}{KG} = \\dfrac{24}{40} = \\dfrac{3}{5}$"
+        ],
+        "result": "\\dfrac{KE}{KG} = \\dfrac{3}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "احسب النسبة $\\dfrac{KF}{KH}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "3/5",
+      "misconceptionSignatures": [
+        {
+          "value": "5/3",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$KF$ و $KH$ طولان يُقاسان من النقطة $K$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $KF$ على $KH$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{KF}{KH} = \\dfrac{18}{30} = \\dfrac{3}{5}$ .",
+        "incorrect": "النسبة $\\dfrac{KF}{KH}$ : الطول $KF$ على الطول $KH$ ، وكلاهما من النقطة $K$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{KF}{KH} = \\dfrac{18}{30} = \\dfrac{3}{5}$"
+        ],
+        "result": "\\dfrac{KF}{KH} = \\dfrac{3}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "اكتب البرهان.",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقط $E$ ، $K$ ، $G$ في استقامية، والنقط $F$ ، $K$ ، $H$ في استقامية: هل الترتيب نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل النسبتين اللتين حسبتهما: هل هما متساويتان بقيمهما المضبوطة؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختم بذكر الخاصية المستعملة: الخاصية العكسية لخاصية طالس."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{KE}{KG} = \\dfrac{KF}{KH} = \\dfrac{3}{5}$ والنقط بنفس الترتيب: $(EF) \\parallel (GH)$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي: الاستقامية، الترتيب نفسه، تساوي النسبتين، ثم ذكر الخاصية العكسية لخاصية طالس."
+      },
+      "solution": {
+        "lines": [
+          "بما أن النقط $E$ ، $K$ ، $G$ و $F$ ، $K$ ، $H$ في استقامية وبنفس الترتيب،",
+          "و بما أن: $\\dfrac{KE}{KG} = \\dfrac{KF}{KH} = \\dfrac{3}{5}$",
+          "فإن المستقيمين $(EF)$ و $(GH)$ متوازيان حسب خاصية طالس العكسية."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

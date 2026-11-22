@@ -1,0 +1,219 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-aadad-l4-010",
+  "lessonCode": "wadiya-idmajiya-aadad",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2024 — صندوق 120cm × 72cm × 48cm",
+    "estimatedMinutes": 8,
+    "tags": [
+      "قابلية القسمة",
+      "القاسم المشترك الأكبر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-aadad_P1",
+      "modelledOn": "BEM 2024 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يريد صاحب ورشة لصناعة الألعاب بالمسيلة، إدخالًا للفرح على الأطفال المرضى، ملء صندوق على شكل متوازي مستطيلات أبعاده 120cm و 72cm و 48cm بمكعبات خشبية متقايسة، دون فراغ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "هل يمكن أن يكون طول حرف كل مكعب 8cm ؟ 9cm ؟ برّر إجابتك.",
+      "statement": "طول حرف كل مكعب 8cm.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يجب أن يقسم طول الحرف الأبعاد الثلاثة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 120 و 72 و 48 على 8."
+        }
+      ],
+      "feedback": {
+        "correct": "120 = 8 × 15 ، 72 = 8 × 9 ، 48 = 8 × 6: يمكن أن يكون طول الحرف 8cm.",
+        "incorrect": "تحقّق من قابلية قسمة كل بُعد من الأبعاد الثلاثة على 8."
+      },
+      "solution": {
+        "lines": [
+          "$120 = 8 \\times 15$ ، $72 = 8 \\times 9$ ، $48 = 8 \\times 6$",
+          "إذن يمكن أن يكون طول حرف كل مكعب 8cm."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "طول حرف كل مكعب 9cm.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يجب أن يقسم طول الحرف الأبعاد الثلاثة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل قاعدة قابلية القسمة على 9 (مجموع الأرقام)."
+        }
+      ],
+      "feedback": {
+        "correct": "120 لا يقبل القسمة على 9 (مجموع أرقامه 3): لا يمكن أن يكون طول الحرف 9cm.",
+        "incorrect": "تحقّق من قابلية قسمة كل بُعد من الأبعاد الثلاثة على 9."
+      },
+      "solution": {
+        "lines": [
+          "$1 + 2 + 0 = 3$ : 120 لا يقبل القسمة على 9 ( $120 = 9 \\times 13 + 3$ ).",
+          "إذن لا يمكن أن يكون طول حرف كل مكعب 9cm."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "ما هو أكبر طول ممكن لحرف المكعب (بالسنتيمتر)؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (بالسنتيمتر)",
+      "expectedAnswer": "24",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول الحرف قاسم مشترك للأبعاد الثلاثة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب PGCD(120 ; 72) ثم تحقّق أنه يقسم 48، وإلا فاحسب PGCD للناتج و 48."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(120 ; 72) = 24 و 24 يقسم 48: أكبر طول ممكن هو 24cm.",
+        "incorrect": "احسب القاسم المشترك الأكبر لبُعدين، ثم قاسمه المشترك الأكبر مع البعد الثالث."
+      },
+      "solution": {
+        "lines": [
+          "$120 = 72 \\times 1 + 48$ ، $72 = 48 \\times 1 + 24$ ، $48 = 24 \\times 2 + 0$ : $PGCD(120 ; 72) = 24$",
+          "$48 = 24 \\times 2$ : 24 يقسم 48 أيضًا.",
+          "إذن أكبر طول لحرف المكعب هو 24cm."
+        ],
+        "result": "24\\,cm"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما هو عندئذ عدد المكعبات اللازمة لملء الصندوق؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "30",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب عدد المكعبات على كل بُعد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد المكعبات = جداء الأعداد الثلاثة."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 \\times 3 \\times 2 = 30$ مكعبًا.",
+        "incorrect": "اقسم كل بُعد على طول الحرف، ثم اضرب النواتج الثلاثة."
+      },
+      "solution": {
+        "lines": [
+          "$120 \\div 24 = 5$ ، $72 \\div 24 = 3$ ، $48 \\div 24 = 2$",
+          "عدد المكعبات: $5 \\times 3 \\times 2 = 30$"
+        ],
+        "result": "30"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

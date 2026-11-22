@@ -1,0 +1,252 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l2-006",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — كتب المكتبات المدرسية",
+    "estimatedMinutes": 6,
+    "tags": [
+      "باقٍ معدوم",
+      "مضاعف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تبرّعت جمعية بـ 1296 كتابًا لمكتبات 48 قسمًا، وتريد توزيعها بالتساوي."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "كم كتابًا يحصل عليه كل قسم؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الكتب",
+      "expectedAnswer": "27",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "26",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "value": "28",
+          "id": "MISC-HASR-IZAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 1296 من 48 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 48 دون أن نتجاوز 1296."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من 48."
+        }
+      ],
+      "feedback": {
+        "correct": "$1296 = 48 \\times 27 + 0$ و $0 < 48$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 48 فلا يتجاوز الجداء 1296، والباقي عندئذ أصغر من 48."
+      },
+      "solution": {
+        "lines": [
+          "$48 \\times 27 = 1296$ و $48 \\times 28 = 1344$",
+          "$1296 \\le 1296 < 1344$ ، إذن الحاصل هو 27."
+        ],
+        "result": "q = 27"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كم كتابًا يبقى؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الكتب",
+      "expectedAnswer": "0",
+      "misconceptionSignatures": [
+        {
+          "value": "27",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "48",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 1296."
+        }
+      ],
+      "feedback": {
+        "correct": "$1296 - 48 \\times 27 = 1296 - 1296 = 0$ ، و $0 < 48$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 48."
+      },
+      "solution": {
+        "lines": [
+          "$1296 = 48 \\times 27 + 0$",
+          "$0 < 48$ ، إذن الباقي هو 0."
+        ],
+        "result": "r = 0"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "اختر الكتابة الصحيحة التي تحصر حاصل القسمة $\\frac{1296}{48}$ بين عددين طبيعيين متتاليين (أو تعطيه إذا كان عددًا طبيعيًا).",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\frac{1296}{48} = 27$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$27 < \\frac{1296}{48} < 28$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-SIFR-SARIM"
+        },
+        {
+          "id": "C",
+          "content": "$26 < \\frac{1296}{48} < 27$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-SIFR-SARIM"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 1296 على 48."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من $48 \\times q \\le 1296 < 48 \\times (q + 1)$ نقسم الأطراف على 48."
+        }
+      ],
+      "feedback": {
+        "correct": "$1296 = 48 \\times 27$ والباقي معدوم، فـ $\\frac{1296}{48}$ عدد طبيعي.",
+        "incorrect": "احصر 1296 بين مضاعفين متتاليين للعدد 48 ثم اقسم على 48؛ وإذا كان الباقي معدومًا فحاصل القسمة عدد طبيعي."
+      },
+      "solution": {
+        "lines": [
+          "$1296 = 48 \\times 27 + 0$",
+          "الباقي معدوم: $1296 = 48 \\times 27$ ، إذن $\\frac{1296}{48} = 27$ عدد طبيعي."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "علمًا أنّ $1296 = 48 \\times 27$ ، اختر الجملة الصحيحة.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "1296 يقسم 48",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-YAQSIM-AKS"
+        },
+        {
+          "id": "B",
+          "content": "1296 يقبل القسمة على 48",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "48 مضاعف لـ 1296",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-YAQSIM-AKS"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كل جملة: أيّ العددين هو المقسوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "48 أصغر من 1296: هل يمكن أن يقسم 1296 العدد 48؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الباقي معدوم: 48 يقسم 1296، و 1296 مضاعف لـ 48، و 1296 يقبل القسمة على 48.",
+        "incorrect": "المقسوم هو العدد الأكبر هنا؛ والعدد الذي يقسم هو المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$1296 = 48 \\times 27$ والباقي معدوم.",
+          "نقول: 1296 يقبل القسمة على 48، أو 1296 مضاعف لـ 48، أو 48 يقسم 1296."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

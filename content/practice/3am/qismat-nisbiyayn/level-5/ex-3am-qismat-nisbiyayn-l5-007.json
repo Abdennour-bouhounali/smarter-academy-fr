@@ -1,0 +1,271 @@
+{
+  "id": "ex-3am-qismat-nisbiyayn-l5-007",
+  "lessonCode": "qismat-nisbiyayn",
+  "level": 5,
+  "metadata": {
+    "title": "حصر حاصل قسمة وتدويره",
+    "estimatedMinutes": 8,
+    "tags": [
+      "حاصل قسمة",
+      "حصر",
+      "تدوير"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 1,
+      "file": "3am-s1-2",
+      "exercise": 3
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان $V$ و $E$ حيث:",
+    "formulas": [
+      "V = (−0{,}25) \\times 4 \\times (−10) \\times (−1)",
+      "E = (−10) \\times 2 \\times 0{,}1 \\times (−7) \\times (−0{,}5)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب $V$ و $E$ .",
+      "statement": "احسب $V$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تُنجز أولًا؟ ابدأ بما بين القوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد الأقواس: الضرب والقسمة معًا من اليسار إلى اليمين، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل خطوة في سطر، وانتبه إلى طرح عدد سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "$V = −10$ .",
+        "incorrect": "راجع أولوية العمليات: الأقواس، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$V = (−0{,}25) \\times 4 \\times (−10) \\times (−1)$",
+          "$V = −1 \\times (−10) \\times (−1)$",
+          "$V = 10 \\times (−1)$",
+          "$V = −10$"
+        ],
+        "result": "−10"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $E$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تُنجز أولًا؟ ابدأ بما بين القوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد الأقواس: الضرب والقسمة معًا من اليسار إلى اليمين، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل خطوة في سطر، وانتبه إلى طرح عدد سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = −7$ .",
+        "incorrect": "راجع أولوية العمليات: الأقواس، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$E = (−10) \\times 2 \\times 0{,}1 \\times (−7) \\times (−0{,}5)$",
+          "$E = −20 \\times 0{,}1 \\times (−7) \\times (−0{,}5)$",
+          "$E = −2 \\times (−7) \\times (−0{,}5)$",
+          "$E = 14 \\times (−0{,}5)$",
+          "$E = −7$"
+        ],
+        "result": "−7"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "احصر العدد $\\dfrac{V}{E}$ بين عددين عشريين لهما ثلاثة أرقام بعد الفاصلة.",
+      "statement": "ما أكبر عدد عشري له ثلاثة أرقام بعد الفاصلة ويكون أصغر من $\\dfrac{V}{E}$ أو يساويه؟",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بثلاثة أرقام بعد الفاصلة",
+      "expectedAnswer": "1.428",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب حاصل القسمة بدقّة قبل أي تقريب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حدّد الرقم الذي تتوقّف عنده ثم انظر إلى الرقم الذي يليه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إن كان الرقم التالي خمسة أو أكبر فزد الرقم الأخير بواحد."
+        }
+      ],
+      "feedback": {
+        "correct": "الحدّ الأدنى هو $1{,}428$ .",
+        "incorrect": "راجع التقريب: انظر إلى الرقم الذي يلي الرقم المطلوب."
+      },
+      "solution": {
+        "lines": [
+          "$V = −10$ و $E = −7$ ، عددان سالبان، فحاصل القسمة موجب.",
+          "$\\dfrac{V}{E} = \\dfrac{10}{7} = 1{,}428571\\ldots$",
+          "أكبر عدد عشري بثلاثة أرقام بعد الفاصلة لا يتجاوزه هو $1{,}428$ ."
+        ],
+        "result": "1{,}428"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما أصغر عدد عشري له ثلاثة أرقام بعد الفاصلة ويكون أكبر من $\\dfrac{V}{E}$ أو يساويه؟",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بثلاثة أرقام بعد الفاصلة",
+      "expectedAnswer": "1.429",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب حاصل القسمة بدقّة قبل أي تقريب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حدّد الرقم الذي تتوقّف عنده ثم انظر إلى الرقم الذي يليه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إن كان الرقم التالي خمسة أو أكبر فزد الرقم الأخير بواحد."
+        }
+      ],
+      "feedback": {
+        "correct": "الحدّ الأعلى هو $1{,}429$ .",
+        "incorrect": "راجع التقريب: انظر إلى الرقم الذي يلي الرقم المطلوب."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{V}{E} = 1{,}428571\\ldots$",
+          "أصغر عدد عشري بثلاثة أرقام بعد الفاصلة لا يقلّ عنه هو $1{,}429$ ."
+        ],
+        "result": "1{,}429"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "أعط مدوّر العدد $\\dfrac{V}{E}$ إلى $10^{-1}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بمنزلة واحدة بعد الفاصلة",
+      "expectedAnswer": "1.4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب حاصل القسمة بدقّة قبل أي تقريب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حدّد الرقم الذي تتوقّف عنده ثم انظر إلى الرقم الذي يليه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إن كان الرقم التالي خمسة أو أكبر فزد الرقم الأخير بواحد."
+        }
+      ],
+      "feedback": {
+        "correct": "المدوّر هو $1{,}4$ .",
+        "incorrect": "راجع التقريب: انظر إلى الرقم الذي يلي الرقم المطلوب."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{V}{E} = 1{,}4285\\ldots$",
+          "الرقم بعد المنزلة الأولى هو $2$ ، أقل من $5$ ، فنُبقي الرقم الأخير كما هو.",
+          "المدوّر هو $1{,}4$ ."
+        ],
+        "result": "1{,}4"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

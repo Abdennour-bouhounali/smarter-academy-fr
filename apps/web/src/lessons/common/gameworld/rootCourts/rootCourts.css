@@ -1,0 +1,213 @@
+/*
+ * « قصر الساحات » — the world's own HUD. Every selector is prefixed by the shell's root: a colour set on a class alone
+ * is beaten by `.di-root p { color: inherit }` (defects.md D13). What he must read is 18 px or more at 1366×768.
+ */
+.di-root .rc-rod {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: 0.55rem;
+  margin-top: 0.5rem;
+}
+.di-root .rc-rod__cell,
+.di-root .rc-rod__steps {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 0.9rem;
+  background: rgba(15, 33, 71, 0.92);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(8, 20, 48, 0.3);
+}
+.di-root .rc-rod__cell small,
+.di-root .rc-rod__steps small {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #bfdbfe;
+}
+.di-root .rc-rod__cell b {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fff;
+}
+.di-root .rc-rod__cell--math {
+  font-size: 1.35rem;
+  background: rgba(29, 78, 216, 0.95);
+}
+.di-root .rc-rod__steps button {
+  min-width: 3.4rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.7rem;
+  border: 2px solid #93c5fd;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  font-size: 1.25rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+.di-root .rc-rod__steps button.is-on {
+  background: #fff;
+  color: #1d4ed8;
+  border-color: #fff;
+}
+.di-root .rc-eq {
+  font-size: 1.6rem;
+}
+/* a band and a jam are FACTS about the platform, never mistakes: amber and violet, never the red of an error */
+.di-root .rc-verdict p {
+  font-size: 1.2rem;
+}
+.di-root .rc-verdict .rc-verdict--band {
+  color: #92400e;
+  background: #fef3c7;
+}
+.di-root .rc-verdict .rc-verdict--jam {
+  color: #5b21b6;
+  background: #ede9fe;
+}
+.di-root .rc-verdict .rc-verdict--band,
+.di-root .rc-verdict .rc-verdict--jam {
+  padding: 0.35rem 0.8rem;
+  border-radius: 0.7rem;
+}
+.di-root .rc-verdict .rc-verdict__wall {
+  color: #0f2147;
+  font-weight: 700;
+  background: #fff;
+  padding: 0.35rem 0.8rem;
+  border-radius: 0.7rem;
+}
+.di-root .rc-eq__wall {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+}
+/* the shell's middle column lets clicks through to the world: the dial's marks are buttons, they take them back */
+.di-root .rc-rod__steps {
+  pointer-events: auto;
+}
+/* the last platform, back in his hands: its product and the fact, on one line, in the colour of that fact */
+.di-root .rc-last {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.di-root .rc-last--band {
+  color: #92400e;
+  background: #fef3c7;
+}
+.di-root .rc-last--jam {
+  color: #5b21b6;
+  background: #ede9fe;
+}
+/* « put it down », whenever he wants: a real button (and the key X), beside the rod's length */
+.di-root .rc-rod__drop {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 0.9rem;
+  border: 2px solid #93c5fd;
+  background: #fff;
+  color: #1d4ed8;
+  font: inherit;
+  font-size: 1.125rem;
+  font-weight: 800;
+  cursor: pointer;
+  pointer-events: auto;
+  box-shadow: 0 6px 18px rgba(8, 20, 48, 0.3);
+}
+.di-root .rc-rod__drop kbd {
+  padding: 0.05rem 0.5rem;
+  border-radius: 0.4rem;
+  background: #1d4ed8;
+  color: #fff;
+  font: inherit;
+}
+/* a yard: what is left in the crate (or the cells no tile fills) — green when the crate is empty and the square whole */
+.di-root .rc-rod__left {
+  font-size: 1.25rem;
+  font-weight: 800;
+  background: #fef3c7;
+  color: #92400e;
+}
+.di-root .rc-rod__left.is-short {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+.di-root .rc-rod__left.is-even {
+  background: #dcfce7;
+  color: #166534;
+}
+/* the final mission: a written problem on a wide card, at reading sizes */
+.di-root .rc-mission__lead {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.8;
+}
+.di-root .rc-mission__lines {
+  margin: 0.6rem 0;
+  padding: 0.8rem 1rem;
+  border-radius: 1rem;
+  background: #0b1b3f;
+  color: #fff;
+}
+.di-root .rc-mission__fact {
+  margin: 0.4rem 0;
+  padding: 0.5rem 1rem;
+  border-radius: 0.8rem;
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.di-root .rc-mission__go {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 0.6rem;
+}
+/* its lines stand one under the other, each on ONE row: a label is never broken beside its box */
+.di-root .rc-mission__lines .rf-uselines {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.35rem;
+}
+/* each line stands against the right edge, its words beside its boxes (never spread over the card: « 3      ,      6 »
+   read as three things — the walk of lesson 2, 2026-11-21); a left-to-right line ends on the right, a right-to-left one
+   starts there */
+.di-root .rc-mission__lines .rf-use {
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  white-space: nowrap;
+}
+.di-root .rc-mission__lines .rf-use[dir='rtl'] {
+  justify-content: flex-start;
+}
+/* the count of a platform's tiles, running at the top of the screen while they light one by one */
+.di-root .rc-count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 6.5rem;
+  margin-top: 0.5rem;
+  padding: 0.3rem 1.4rem;
+  border-radius: 1.2rem;
+  background: #0f2147;
+  border: 3px solid #fbbf24;
+  box-shadow: 0 8px 22px rgba(8, 20, 48, 0.35);
+}
+.di-root .rc-count b {
+  font-size: 3.2rem;
+  font-weight: 900;
+  line-height: 1.15;
+  color: #fde68a;
+}

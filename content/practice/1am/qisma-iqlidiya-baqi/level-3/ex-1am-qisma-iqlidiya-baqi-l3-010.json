@@ -1,0 +1,247 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l3-010",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — رفوف مكتبة القسم",
+    "estimatedMinutes": 8,
+    "tags": [
+      "حصر",
+      "الحاصل + 1"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثالث",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "رتّب تلاميذ القسم متعاونين 538 كتابًا في رفوف المكتبة، ويتّسع كل رفّ لـ 24 كتابًا."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ حصر للعدد 538 بين مضاعفين متتاليين للعدد 24 صحيح؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$24 \\times 22 \\le 538 < 24 \\times 23$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$24 \\times 21 \\le 538 < 24 \\times 22$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "id": "C",
+          "content": "$24 \\times 23 \\le 538 < 24 \\times 24$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الجداءات المقترحة وقارنها بـ 538."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الجداء الأول لا يتجاوز 538، والثاني يتجاوزه."
+        }
+      ],
+      "feedback": {
+        "correct": "$24 \\times 22 = 528$ و $24 \\times 23 = 552$ ، و $528 \\le 538 < 552$.",
+        "incorrect": "احسب كل جداء: يجب أن يكون الأول أصغر من 538 أو يساويه، والثاني أكبر منه."
+      },
+      "solution": {
+        "lines": [
+          "$24 \\times 22 = 528$ و $24 \\times 23 = 552$",
+          "$528 \\le 538 < 552$"
+        ],
+        "result": "24 \\times 22 \\le 538 < 24 \\times 23"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "كم رفًّا يُملأ تمامًا؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الرفوف",
+      "expectedAnswer": "22",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "21",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "23",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 538 من 24 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 24 دون أن نتجاوز 538."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$538 = 24 \\times 22 + 10$ و $10 < 24$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 24 فلا يتجاوز الجداء 538، والباقي عندئذ أصغر من 24."
+      },
+      "solution": {
+        "lines": [
+          "$24 \\times 22 = 528$ و $24 \\times 23 = 552$",
+          "$528 \\le 538 < 552$ ، إذن الحاصل هو 22."
+        ],
+        "result": "q = 22"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "كم كتابًا يبقى بعد ذلك؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الكتب",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "22",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "34",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 538."
+        }
+      ],
+      "feedback": {
+        "correct": "$538 - 24 \\times 22 = 538 - 528 = 10$ ، و $10 < 24$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 24."
+      },
+      "solution": {
+        "lines": [
+          "$538 = 24 \\times 22 + 10$",
+          "$10 < 24$ ، إذن الباقي هو 10."
+        ],
+        "result": "r = 10"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "كم رفًّا يلزم لترتيب كل الكتب؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد الرفوف",
+      "expectedAnswer": "23",
+      "misconceptionSignatures": [
+        {
+          "value": "22",
+          "id": "MISC-IQLIDIYA-NISYAN-ZIYADA"
+        },
+        {
+          "value": "10",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل تكفي المجموعات الكاملة لوضع كل شيء؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ماذا نفعل بالباقي إذا لم يكن معدومًا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$538 = 24 \\times 22 + 10$: يبقى 10 بعد المجموعات الكاملة، ويحتاج إلى رفّ آخر.",
+        "incorrect": "الحاصل يعدّ المجموعات الكاملة فقط؛ إذا بقي شيء فهو يحتاج إلى مجموعة إضافية."
+      },
+      "solution": {
+        "lines": [
+          "$538 = 24 \\times 22 + 10$",
+          "يبقى 10 بعد المجموعات الكاملة، فنحتاج إلى رفّ آخر:",
+          "$22 + 1 = 23$"
+        ],
+        "result": "23"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

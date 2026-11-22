@@ -1,0 +1,185 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ihsa-l3-005",
+  "lessonCode": "wadiya-idmajiya-ihsa",
+  "level": 3,
+  "metadata": {
+    "title": "فوجان متساويا المتوسط",
+    "estimatedMinutes": 7,
+    "tags": [
+      "المدى",
+      "التشتت",
+      "المقارنة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ihsa_P2"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في مسابقة للحساب الذهني أُجريت بأمانة ودون غشّ، تحصّل تلاميذ الفوجين «أ» و «ب» على العلامات الآتية، وللفوجين المتوسط نفسه 15 :",
+    "table": {
+      "head": [
+        "الفوج",
+        "العلامات"
+      ],
+      "rows": [
+        [
+          "«أ»",
+          "14 ، 15 ، 15 ، 16 ، 15"
+        ],
+        [
+          "«ب»",
+          "8 ، 12 ، 15 ، 18 ، 22"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب مدى علامات كل فوج.",
+      "statement": "الفوج «أ».",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "16",
+          "id": "MISC-IHSA-MADA-AKBAR-QIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المدى = أكبر علامة − أصغر علامة."
+        }
+      ],
+      "feedback": {
+        "correct": "$16 - 14 = 2$ .",
+        "incorrect": "اطرح أصغر علامة من أكبر علامة في الفوج «أ»."
+      },
+      "solution": {
+        "lines": [
+          "$16 - 14 = 2$"
+        ],
+        "result": "2"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "الفوج «ب».",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "value": "22",
+          "id": "MISC-IHSA-MADA-AKBAR-QIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أكبر علامة وأصغر علامة في الفوج «ب»."
+        }
+      ],
+      "feedback": {
+        "correct": "$22 - 8 = 14$ .",
+        "incorrect": "اطرح أصغر علامة من أكبر علامة في الفوج «ب»."
+      },
+      "solution": {
+        "lines": [
+          "$22 - 8 = 14$"
+        ],
+        "result": "14"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "أيّ الفوجين نتائجه أكثر انتظاما؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الفوج «ب»، لأن مداه أكبر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-TASHATTUT-MAQLUB"
+        },
+        {
+          "id": "B",
+          "content": "الفوج «أ»، لأن مداه أصغر",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نتائج الفوجين منتظمة بالقدر نفسه، لأن لهما المتوسط نفسه",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MUQARANA-MUTAWASSIT-FAQAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المتوسط واحد: لا يفرّق بين الفوجين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المدى الأصغر يعني علامات متقاربة."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 < 14$ : علامات الفوج «أ» متقاربة.",
+        "incorrect": "المدى مؤشر تشتت: كلما صغر كانت القيم أكثر تقاربا."
+      },
+      "solution": {
+        "lines": [
+          "للفوجين المتوسط نفسه، ومدى «أ» (2) أصغر من مدى «ب» (14).",
+          "إذن نتائج الفوج «أ» أكثر انتظاما."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

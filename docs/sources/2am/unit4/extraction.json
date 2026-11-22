@@ -1,0 +1,2226 @@
+{
+ "_comment": [
+  "EXTRACTION CANONIQUE du manuel scolaire officiel — 2AM, الجيل الثاني (منشورات الشهاب 2017), unité 4 « مفهوم معادلة ».",
+  "Source : docs/official-book-pdfs/كتاب الرياضيات للسنة الثانية متوسط الجيل الثاني.pdf, pages 54 à 69 du livre (PDF 51 à 66).",
+  "Ce fichier est LA source de vérité pédagogique de l’unité ; tout contenu cite un `id` d’ici via `source.elementId`.",
+  "Transcription VISUELLE d’un scan médiocre ; réponses calculées (Fraction, Decimal, entiers) dans build-extraction.py, `answerSource: computed`.",
+  "Généré par docs/sources/2am/unit4/build-extraction.py — ne pas éditer à la main."
+ ],
+ "unitCode": "mafhum-muadala",
+ "textbook": {
+  "title": "كتاب الرياضيات — السنة الثانية من التعليم المتوسط",
+  "generation": "الجيل الثاني",
+  "unitNumber": 4,
+  "unitTitle": "مفهوم معادلة",
+  "pages": {
+   "first": 54,
+   "last": 69
+  },
+  "pdfPageOffset": 3,
+  "sections": [
+   "سأتعلّم في هذا الباب",
+   "تحدّي",
+   "أستعدّ",
+   "أنشطة",
+   "معارف",
+   "طرائق",
+   "دوري الآن",
+   "أوظّف تعلّماتي",
+   "أؤكّد تعلّماتي",
+   "أتعمّق",
+   "أدمج تعلّماتي",
+   "وضعية للتقويم",
+   "أوظّف تكنولوجيات الإعلام والاتصال"
+  ]
+ },
+ "frozenAt": "2026-10-29",
+ "terminology": {
+  "note": "Le manuel écrit « عبارة حرفية », « تبسيط حساب حرفي », « من أجل x = … », « اختبار صحة مساواة / متباينة », « معادلة », « حلّ معادلة », « حلول معادلة ».",
+  "terms": [
+   "عبارة حرفية",
+   "مجهول",
+   "متغيّر",
+   "تبسيط",
+   "قيمة عبارة",
+   "مساواة",
+   "متباينة",
+   "معادلة",
+   "حلّ",
+   "تعويض"
+  ]
+ },
+ "elements": [
+  {
+   "id": "objectives",
+   "kind": "objectives",
+   "page": 54,
+   "section": "سأتعلّم في هذا الباب",
+   "verified": true,
+   "items": [
+    "اختبار صحة مساواة أو متباينة تتضمن عددا مجهولا (أو عددين مجهولين) عندما نستبدله بقيمة معلومة.",
+    "حل المعادلات من الشكل: a ÷ … = b حيث a و b عددان عشريان معلومان في وضعيات بسيطة."
+   ]
+  },
+  {
+   "id": "opener",
+   "kind": "aside",
+   "page": 54,
+   "section": "تمهيد",
+   "verified": true,
+   "text": "الرمز x يُستعمل عموما للدلالة على مجهول أو متغيّر رياضي. وأول من استعمل هذه الفكرة هو الرياضياتي الخوارزمي (781 م – 847 م)، أبرز علماء الرياضيات في الحضارة العربية الإسلامية، وقد سماه «شيء». وقبل أن تصل هذه الكلمة العربية بدورها إلى إسبانيا وتلفظ في لغتهم «كسي»، ثم تنتشر في أوروبا بعد ذلك بصيغتها النهائية «x».",
+   "figure": "صورة الخوارزمي على طابع، وفي الخلفية مخطوط «الكتاب المختصر في حساب الجبر والمقابلة»."
+  },
+  {
+   "id": "challenge",
+   "kind": "challenge",
+   "page": 54,
+   "section": "تحدّي",
+   "verified": true,
+   "text": "يغرس فلاحون أشجار التفاح بتشكيل مربّعات. لوقاية الأشجار من الرياح، يغرسون أشجارا ذات أوراق مقاومة حول أشجار التفاح. يجسّد الشكل المقابل متتالية أشجار التفاح والأشجار المقاومة من أجل بعض قيم العدد (n) لصفوف أشجار التفاح. كيف يمكن معرفة عدد أشجار كل صنف من أجل كل قيمة لـ n ؟",
+   "figure": "أربعة مربّعات n = 1 … 4 : n × n شجرة تفاح محاطة بصفّ من الأشجار المقاومة.",
+   "answer": {
+    "apples": "n × n",
+    "windbreak": "4 × n + 4",
+    "table": {
+     "1": {
+      "apples": 1,
+      "windbreak": 8
+     },
+     "2": {
+      "apples": 4,
+      "windbreak": 12
+     },
+     "3": {
+      "apples": 9,
+      "windbreak": 16
+     },
+     "4": {
+      "apples": 16,
+      "windbreak": 20
+     }
+    }
+   },
+   "answerSource": "computed",
+   "reading": "Relu à 110 dpi (2026-10-29) : n = 1 donne 1 pommier et 8 arbres autour. Réécrit par la leçon ibara-harfiya-intaj (rangée de cellules de cire)."
+  },
+  {
+   "id": "prep",
+   "kind": "prerequisites",
+   "page": 55,
+   "section": "أستعدّ",
+   "verified": true,
+   "instruction": "اختر الإجابة الصحيحة (أو الإجابات الصحيحة) في كل حالة، مبرّرا إياها.",
+   "items": [
+    {
+     "n": 1,
+     "question": "نتيجة الحساب 36 − 10 − 6 هي :",
+     "options": [
+      "10",
+      "20",
+      "26"
+     ],
+     "correct": [
+      1
+     ],
+     "why": "36 − 10 = 26 ثم 26 − 6 = 20"
+    },
+    {
+     "n": 2,
+     "question": "نتيجة الحساب 36 − (10 − 6) هي :",
+     "options": [
+      "20",
+      "32",
+      "52"
+     ],
+     "correct": [
+      1
+     ],
+     "why": "10 − 6 = 4 ثم 36 − 4 = 32"
+    },
+    {
+     "n": 3,
+     "question": "نتيجة الحساب 12 + 4 × 3 هي :",
+     "options": [
+      "24",
+      "58",
+      "144"
+     ],
+     "correct": [
+      0
+     ],
+     "why": "4 × 3 = 12 ثم 12 + 12 = 24"
+    },
+    {
+     "n": 4,
+     "question": "نتيجة الحساب 3 × (2 × 3 + 7) هي :",
+     "options": [
+      "126",
+      "39",
+      "60"
+     ],
+     "correct": [
+      1
+     ],
+     "why": "2 × 3 + 7 = 13 ثم 3 × 13 = 39"
+    },
+    {
+     "n": 5,
+     "question": "العبارة التي تمثّل مجموع العددين a و b من بين العبارات: a + b ، a × b ، 2 × a + b :",
+     "options": [
+      "a + b",
+      "a × b",
+      "2 × a + b"
+     ],
+     "correct": [
+      0
+     ],
+     "why": "المجموع يُكتب a + b"
+    },
+    {
+     "n": 6,
+     "question": "على الشكل قطعة [AB] : الطول AB = 9 − x (القطعة الحمراء 9 والخضراء x تُنقَص)",
+     "options": [
+      "9 − x",
+      "9 + x",
+      "9 × x"
+     ],
+     "correct": [
+      0
+     ],
+     "why": "طول AB = 9 ناقص x",
+     "verified": false,
+     "reading": "texte de l’énoncé coupé à droite ; options lues dans les colonnes (1) (2) (3)"
+    },
+    {
+     "n": 7,
+     "question": "على الشكل : الطول AB = 12 − x",
+     "options": [
+      "12 + x",
+      "12 × x",
+      "12 − x"
+     ],
+     "correct": [
+      2
+     ],
+     "why": "AB = 12 ناقص x",
+     "verified": false
+    },
+    {
+     "n": 8,
+     "question": "على الشكل المدرّج : الطول AB = 6 × x (6 مرّات الطول x)",
+     "options": [
+      "x",
+      "6 × x",
+      "6 + x"
+     ],
+     "correct": [
+      1
+     ],
+     "why": "AB هو 6 مرّات الطول x",
+     "verified": false
+    },
+    {
+     "n": 9,
+     "question": "على الشكل : AB = 7 + 2 × x",
+     "options": [
+      "9 + x",
+      "7 + 2 × x",
+      "2 × x + 7"
+     ],
+     "correct": [
+      1,
+      2
+     ],
+     "why": "AB = 7 ثم 2 مرّات x",
+     "verified": false
+    },
+    {
+     "n": 10,
+     "question": "محيط الخماسي (أضلاعه 2x و 3 كما في الشكل) هو :",
+     "options": [
+      "2 × x + 3",
+      "3 × 2 × x + 6",
+      "3 × (2 × x + 3)"
+     ],
+     "correct": [],
+     "why": "القراءة: خماسي فيه ضلعان طول كلّ منهما 3 وثلاثة أضلاع 2x",
+     "verified": false,
+     "reading": "figure du pentagone (côtés 3, 3, 2x, 2x, 2x) ; la clé exacte dépend du dessin : à relire par ibara-harfiya-intaj (3 × (2 × x + 3) est lue comme 3 côtés de la forme 2x + 3 ?). Le périmètre exact N’EST PAS repris."
+    }
+   ],
+   "answerSource": "computed",
+   "reading": "Relu à 110 dpi : items 1–5 et 10 (ibara-harfiya-intaj) ; 6–9 sont des longueurs AB en x (hall-mushkil-muadala). La marge droite des énoncés 6–10 est coupée."
+  },
+  {
+   "id": "act-1",
+   "kind": "activity",
+   "page": 56,
+   "section": "أنشطة",
+   "verified": true,
+   "text": "أراد مسؤول قرية تنظيم مأدبة طعام في الساحة العمومية. فكّر في وضع طاولات مربّعة الشكل في بوضعها واحدة جنب الأخرى بحيث يمكن وضع كرسيّ على كلّ ضلع حرّ منها. أراد أن يجد صيغة لحساب الأماكن المتوفّرة، تبعا لعدد الطاولات الموضوعة.",
+   "number": 1,
+   "title": "إنتاج عبارة حرفية",
+   "questions": [
+    "1) ما هو عدد الأماكن المتوفّرة عند وضع طاولة واحدة؟ طاولتين؟ 3 طاولات؟",
+    "2) ما هو عدد الأماكن المتوفّرة عند وضع 10 طاولات؟ 51 طاولة؟",
+    "3) اكتب جملة تشرح فيها كيف نعرف عدد الأماكن المتوفّرة بعد معرفة عدد الطاولات الموضوعة.",
+    "4) جد صيغة حرفية تُمكّننا من حساب عدد الكراسي بمعلومية عدد الطاولات."
+   ],
+   "figure": "ثلاثة أشكال لطاولات مربّعة صُفّت في صفّ واحد (1 ثم 2 ثم 3) وكرسيّ على كل ضلع حرّ.",
+   "answer": {
+    "chairs": {
+     "1": 4,
+     "2": 6,
+     "3": 8,
+     "10": 22,
+     "51": 104
+    },
+    "formula": "2 × n + 2"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "act-2",
+   "kind": "activity",
+   "page": 56,
+   "section": "أنشطة",
+   "verified": true,
+   "text": "في نادٍ رياضي، ندفع مبلغ 2000 DA للاشتراك السنوي و 150 DA مقابل كلّ حصّة. 1) عبّر عن الوضعية بعبارة حرفية مناسبة. 2) احسب المبالغ اللازمة مقابل 10 حصص، 50 حصة و 100 حصّة. 3) لإنجاز ورقة حساب باستعمال مجدول، تمكّننا من معرفة المبالغ اللازمة من 1 إلى 100 حصّة. أ) احجز قيَم x كما في الجدول المقابل (0 ، 1 ، 2 ، … ، 100). ب) في الخلية B2 ، اكتب الدستور (العبارة) المناسبة للوضعية والمحصّل عليها في 1). (جـ) … (أسفل الصفحة مقصوص).",
+   "number": 2,
+   "title": "استعمال عبارة حرفية",
+   "answer": {
+    "expression": "2000 + 150 × x",
+    "values": {
+     "10": 3500,
+     "50": 9500,
+     "100": 17000
+    }
+   },
+   "answerSource": "computed",
+   "reading": "Les questions 3 ب–جـ sont coupées au bas de la page (discrepancy 5)."
+  },
+  {
+   "id": "act-3",
+   "kind": "activity",
+   "page": 57,
+   "section": "أنشطة",
+   "verified": true,
+   "text": "يمثّل الشكل المقابل كفتي ميزان في وضع توازن. على الكفة اليمنى 3 مكعبات متماثلة وعلى الكفة اليسرى جلّتان متماثلتان وكتلة 200 g. 1) ترجم الوضعية بالعبارة 3 × c = 2 × b + 200. ماذا يمثّل كل من الحرفين b و c ؟ 2) هل يكون الميزان في توازن عندما تكون كتلة الجلّة 10 g وكتلة المكعّب 70 g ؟ 3) … كتلة الجلّة 20 g وكتلة المكعّب 80 g ؟ 4) عيّن في ما يلي، إن كانت كلّ مساواة صحيحة أم خاطئة من أجل القيمة المعطاة: 7 × x + 8 = 12 × x − 4 من أجل x = 6 ؛ 9 × x + 8 = 7 × x + 10 من أجل x = 1. 5) من بين القيم الآتية، عيّن التي تكون من أجلها المتباينة 10x − 2 < 55 − 3x صحيحة: … ، 5 ، 6 ، 7.",
+   "number": 3,
+   "title": "اختبار متساويات أو متباينات",
+   "answer": {
+    "balance": {
+     "10,70": false,
+     "20,80": true
+    },
+    "equalities": {
+     "7x+8=12x-4 at 6": false,
+     "9x+8=7x+10 at 1": true
+    },
+    "inequalityTrueFor": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ]
+   },
+   "answerSource": "computed",
+   "reading": "La liste de valeurs de la question 5 est coupée à droite (discrepancy 4) : seules 5, 6, 7 (fausses) sont lisibles. Relu à 110 dpi."
+  },
+  {
+   "id": "act-4",
+   "kind": "activity",
+   "page": 57,
+   "section": "أنشطة",
+   "verified": true,
+   "text": "جمع فلاّح 5760 بيضة. لتسويقها، وضعها في أطباق، فتحصّل على حمولتين من 240 طبق لكلّ واحدة. 1) ما هو عدد البيضات في كلّ طبق ؟ 2) نرمز بالرمز x لعدد البيضات في الطبق الواحد. اربط الوضعية بالحساب (أو الحسابات) المناسب(ة) لها : أ) 240 × x = 5760 ب) 480 × x = 5760 جـ) 5760 / x = 480. أنجز، عندئذ، الحساب ثمّ عيّن عدد البيضات في الطبق الواحد. 3) حلّ المعادلات الآتية : 1/3 × x = 21,7 ، x/250 = 1/5 ، 489/x = 163 ، 258,6/x = 21,55.",
+   "number": 4,
+   "title": "حلّ مشكل باستعمال معادلة",
+   "answer": {
+    "eggsPerTray": {
+     "480 x = 5760": 12,
+     "5760/x = 480": 12,
+     "240 x = 5760": 24
+    },
+    "solutions": {
+     "1/3 x = 21,7": "65,1",
+     "x/250 = 1/5": 50,
+     "489/x = 163": 3,
+     "258,6/x = 21,55": 12
+    }
+   },
+   "answerSource": "computed",
+   "reading": "Le texte parle de « حمولتين من 240 طبق » : 2 × 240 = 480 plateaux ; le bon appariement est 480 × x = 5760 et 5760/x = 480 (x = 12)."
+  },
+  {
+   "id": "know-1",
+   "kind": "knowledge",
+   "page": 58,
+   "section": "معارف",
+   "verified": true,
+   "text": "العبارة الحرفية هي عبارة تكون فيها بعض الأعداد ممثّلة بحروف. أمثلة: 1) يمثّل الشكل مربّعا طول ضلعه x. نعبّر عن محيط هذا المربّع بالعبارة: 4 × x. 2) نكتب متتاليات التعليمات: «اختر عددا؛ اضربه في 2؛ اطرح من النتيجة 3» على شكل عبارة ونجد: (2 × x) − 3 أي 2x − 3.",
+   "number": 1,
+   "title": "العبارات الحرفية",
+   "answer": {
+    "perimeterSquare": "4 × x",
+    "program": "2x − 3"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "know-2",
+   "kind": "knowledge",
+   "page": 58,
+   "section": "معارف",
+   "verified": true,
+   "text": "يمكن تبسيط حساب حرفي : (أ) باستعمال اصطلاحات: يمكن الاستغناء عن الإشارة × عندما تكون أمام حرف أو قوس. مثال: بسّط 7 × a ؛ 7 × (a + 1) ؛ 7 × a + 3 × b حيث a و b عددان كيفيان. نكتب 7a ؛ 7(a + 1) ؛ 7a + 3b. (ب) باستعمال خواص الضرب: 1 × a = a ، 0 × a = 0 ، a × b = b × a. مثال: 1 × a + 0 × b + 1 × b = a + 0 + b = a + b. (جـ) باستعمال كتابات مبسّطة: نكتب الجداء a × a على الشكل a² ونقرأ «a مربّع»، ونكتب a × a × a على الشكل a³ ونقرأ «a مكعّب». مثال: بسّط ثمّ احسب: أ) 2 × a + 5 × a − 3 × a ب) 10 × 10 جـ) 10 × 10 × 10 ؛ الحل: (2 + 5 − 3) × a = 4a ، 10 × 10 = 10² = 100 ، 10 × 10 × 10 = 10³ = 1000.",
+   "number": 2,
+   "title": "تبسيط حساب حرفي",
+   "answer": {
+    "simplify": {
+     "2a + 5a - 3a": "4a",
+     "10 x 10": 100,
+     "10 x 10 x 10": 1000
+    }
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "method-1",
+   "kind": "method",
+   "page": 59,
+   "section": "طرائق",
+   "verified": true,
+   "text": "تمرين: جمع أمين 50 طابعا جزائريا و x طابعا أجنبيا. 1) عبّر بدلالة x عن عدد كلّ الطوابع التي جمعها أمين. 2) جمع أيمن سيارته الصغيرة في 5 علب. في كلّ علبة توجد x سيارة. عبّر بدلالة x عن عدد كلّ سيارات أيمن. 3) عبّر بدلالة x عن محيط الشكل (مضلّع بأطوال 5 ، 5 ، x ، 1 وأضلاع متقابلة متماثلة: x مرّات الطول x 6 مرّات). الحل: 1) 50 + x ؛ 2) 5 × x ؛ 3) 22 + 6 × x. التعاليق: عدد مرّات الطول x على الشكل 6 نضيف إليه الأطوال المعطاة بالأعداد وهي 22.",
+   "number": 1,
+   "title": "التعبير بدلالة x",
+   "answer": {
+    "stamps": "50 + x",
+    "cars": "5 × x",
+    "perimeter": "22 + 6 × x"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "method-2",
+   "kind": "method",
+   "page": 59,
+   "section": "طرائق",
+   "verified": true,
+   "text": "تمرين: 1) احسب عدد البلاطات الملوّنة على حافة مربّع ضلعه: 5 بلاطات ، 6 بلاطات ، 7 بلاطات. 2) مربّع له n بلاطة على ضلعه. عبّر بدلالة n عن عدد البلاطات الملوّنة على حافته. الحل: من أجل n = 5 ، يكون عدد البلاطات الملوّنة هو: 4 × 5 + 4 ؛ n = 6: 4 × 6 + 4 ؛ n = 7: 4 × 7 + 4. 2) من أجل مربّع له n بلاطة على ضلعه، يكون عدد البلاطات الملوّنة هو 4 × n + 4. التعاليق: نستعين برسم مربّع لكلّ حالة لتسهيل عملية عدّ البلاطات على الحافة. نختار استراتيجية معينة لعدّ البلاطات: مثل أن نعدّ 4 مرّات عدد البلاطات على أضلاع المربّع و 4 بلاطات على الأركان الأربعة. ملاحظة: يمكن إنتاج عبارات أخرى لعدّ البلاطات ونتأكّد من تساويها بتحويلها.",
+   "number": 2,
+   "title": "بالتعميم",
+   "answer": {
+    "border": {
+     "5": 24,
+     "6": 28,
+     "7": 32
+    },
+    "formula": "4 × n + 4"
+   },
+   "answerSource": "computed",
+   "reading": "« مربّع له n بلاطة على ضلعه » avec « 4 × n + 4 » : la formule compte le contour AUTOUR d’un carré de n × n (discrepancy 3)."
+  },
+  {
+   "id": "now-59",
+   "kind": "now",
+   "page": 59,
+   "section": "دوري الآن",
+   "verified": true,
+   "text": "① عبّر بدلالة x و y على الطول AB (قطعة مقسومة إلى x ثم y ثم 2). ② احسب النتيجة عندما نطبّق برنامج الحساب باختيار 0 ثمّ 5 : اختر عددا ؛ اضربه في 2 ؛ أضف إلى النتيجة 13.",
+   "answer": {
+    "AB": "x + y + 2",
+    "program": {
+     "0": 13,
+     "5": 23
+    }
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "know-3",
+   "kind": "knowledge",
+   "page": 60,
+   "section": "معارف",
+   "verified": true,
+   "text": "نعني باختبار تساوي عبارتين حرفيتين تعويض الحروف فيهما بأعداد لمعرفة إن كانت هذه المساواة صحيحة أم خاطئة من أجل هذه الأعداد. مثال: لنختبر تساوي العبارتين 2x + 3 و 5x نعطي قيمة لـ x ونحسب قيمتي العبارتين من أجلها مثلا من أجل x = 4 نجد: 11 و 20 ؛ نقارن النتيجتين وكون 20 ≠ 11 فالعبارتان غير متساويتين. في الحالة التي تعطي فيها العبارتان الحرفيتان نفس النتيجة، مهما كانت القيم المعطاة للحروف، نقول إنّ العبارتين الحرفيتين متساويتان. مثال: العبارتان 2 × (x + 3) و 2x + 6 متساويتان: حسب خاصية التوزيع، العبارتان تعطيان نفس النتيجة مهما كانت القيمة المعطاة للحرف x. خاصية: يكفي إيجاد مثال واحد تعطي من أجله العبارتان الحرفيتان نتيجتين مختلفتين لتبرير أنّ العبارتين الحرفيتين غير متساويتين. مثال: العبارتان x² + 9 و 4x + 6 تعطيان نفس النتيجة من أجل x = 1 و x = 3 ، لكنهما لا تعطيان نفس النتيجة من أجل x = 0 مثلا، فهما عبارتان غير متساويتين.",
+   "number": 3,
+   "title": "اختبار تساوي عبارتين حرفيتين",
+   "answer": {
+    "2x+3 vs 5x at 4": [
+     11,
+     20
+    ],
+    "x^2+9 vs 4x+6": {
+     "equalAt": [
+      1,
+      3
+     ],
+     "counterexample": 0
+    }
+   },
+   "answerSource": "computed",
+   "reading": "Marge droite des exemples coupée."
+  },
+  {
+   "id": "know-4",
+   "kind": "knowledge",
+   "page": 60,
+   "section": "معارف",
+   "verified": true,
+   "text": "نعني باختبار صحة متباينة تعويض الحروف فيها بأعداد لمعرفة إن كانت صحيحة أم خاطئة من أجل هذه الأعداد. مثال: المتباينة 4 + 6x < 27 صحيحة من أجل x = 3 وخاطئة من أجل x = 4.",
+   "number": 4,
+   "title": "اختبار صحّة متباينة",
+   "answer": {
+    "4+6x<27": {
+     "3": true,
+     "4": false
+    }
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "know-5",
+   "kind": "knowledge",
+   "page": 60,
+   "section": "معارف",
+   "verified": true,
+   "text": "عندما يكون، من أجل قيم معيّنة، لعبارتين A و B نفس النتيجة، نقول إنّ هذه القيم هي حلول المعادلة A = B. وجدنا في مثال سابق أنّ العبارتين 2x + 3 و … (بقية التعريف ومثاله مقصوصان في أسفل الصفحة؛ « … تعطيان نفس النتيجة 5 »).",
+   "number": 5,
+   "title": "المعادلات",
+   "answer": {
+    "2x+3 = 3x at 3": true
+   },
+   "answerSource": "computed",
+   "reading": "Fin de la définition et exemple coupés au bas de la page (discrepancy 8)."
+  },
+  {
+   "id": "method-3",
+   "kind": "method",
+   "page": 61,
+   "section": "طرائق",
+   "verified": true,
+   "text": "اختبر المساواة x + 5 = 3x − 7 من أجل x = 6 ثمّ x = 2. الحل: من أجل x = 6 : 6 + 5 = 11 و 3 × 6 − 7 = 11 ، فالمساواة صحيحة. من أجل x = 2 : 2 + 5 = 7 و 3 × 2 − 7 = −1 ، فالمساواة خاطئة. (جدول: x ، الطرف الأوّل، الطرف الثاني، «النتيجة»).",
+   "number": 3,
+   "title": "اختبار مساواة",
+   "answer": {
+    "x=6": [
+     11,
+     11,
+     true
+    ],
+    "x=2": [
+     7,
+     -1,
+     false
+    ]
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "method-4",
+   "kind": "method",
+   "page": 61,
+   "section": "طرائق",
+   "verified": true,
+   "text": "أنفق أمين x + 200 DA وأنفقت سيليا 3x + 100 DA (ثلاثة أضعاف ما أنفقه أمين ناقصا 100 …). إذا كانا قد أنفقا نفس المبلغ فالوضعية تُترجم بالمعادلة x + 200 = 3x + 100.",
+   "number": 4,
+   "title": "ترجمة مشكل بمعادلة",
+   "answer": {
+    "equation": "x + 200 = 3 × x + 100",
+    "solution": 50,
+    "amount": 250
+   },
+   "answerSource": "computed",
+   "reading": "La dernière ligne de la solution imprime « 3 × x + 1000 » (coquille ; énoncé et commentaire : 100) — discrepancy 1."
+  },
+  {
+   "id": "method-5",
+   "kind": "method",
+   "page": 61,
+   "section": "طرائق",
+   "verified": true,
+   "text": "حلّ المعادلة 84/x = 14. نبحث عن عدد x بحيث 14 × x = 84 ، أي x = 84/14 = 6. تحقّق: 84/6 = 14. (البحث عن قاسم مجهول يؤول إلى حساب جداء عددين [sic] .)",
+   "number": 5,
+   "title": "حلّ معادلة من الشكل a/x = b",
+   "answer": {
+    "x": 6,
+    "check": 14
+   },
+   "answerSource": "computed",
+   "reading": "Le cadre dit « جداء » ; le calcul est un quotient (discrepancy 2)."
+  },
+  {
+   "id": "now-61",
+   "kind": "now",
+   "page": 61,
+   "section": "دوري الآن",
+   "verified": true,
+   "text": "① نعتبر المساواة 2 + 7x = 9x . هل هي صحيحة من أجل x = 1 ؟ من أجل x = 3 ؟ هل هي صحيحة من أجل كل قيم x ؟ ② حلّ المعادلة 40/x = 16.",
+   "answer": {
+    "1": {
+     "x=1": true,
+     "x=3": false,
+     "always": false
+    },
+    "2": "2,5"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-1",
+   "kind": "exercise",
+   "page": 62,
+   "section": "إنتاج عبارات حرفية",
+   "verified": true,
+   "text": "n عدد طبيعي. عبّر بدلالة n عن : أ) نصف n ب) العدد الطبيعي الذي يلي n ج) ضعف ثلث n د) العدد الطبيعي الذي يسبق n هـ) n مربّع و) ربع n.",
+   "number": 1,
+   "answer": {
+    "half": "n/2",
+    "next": "n + 1",
+    "prev": "n − 1",
+    "doubleThird": "2n/3",
+    "quarter": "n/4",
+    "square": "n²"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-2",
+   "kind": "exercise",
+   "page": 62,
+   "section": "إنتاج عبارات حرفية",
+   "verified": true,
+   "text": "اكتب تعليمة تجنّب كتابة قائمة كلّ الحسابات: 9 × 7 + 7 ، 9 × 6 + 7 ، 9 × 5 + 7 ، 9 × 10 + 7 ، 9 × 9 + 7 ، 9 × 8 + 7.",
+   "number": 2,
+   "answer": {
+    "instruction": "9 × n + 7",
+    "n": [
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "values": [
+     52,
+     61,
+     70,
+     79,
+     88,
+     97
+    ]
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-3",
+   "kind": "exercise",
+   "page": 62,
+   "section": "إنتاج عبارات حرفية",
+   "verified": true,
+   "text": "اكتب تعليمة تجنّب كتابة قائمة كلّ الحسابات: 5 − 4 + 4 ، 5 − 4 + 3 ، 5 − 4 + 2 ، 5 − 4 + 7 ، 5 − 4 + 6 ، 5 − 4 + 5.",
+   "number": 3,
+   "answer": {
+    "instruction": "5 − 4 + n",
+    "n": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-4",
+   "kind": "exercise",
+   "page": 62,
+   "section": "إنتاج عبارات حرفية",
+   "verified": true,
+   "text": "اكتب تعليمة تجنّب كتابة قائمة كلّ الحسابات: (5 + 5) × 4 ، (5 + 4) × 4 ، (5 + 3) × 4 ، (5 + 8) × 4 ، (5 + 7) × 4 ، (5 + 6) × 4.",
+   "number": 4,
+   "answer": {
+    "instruction": "(5 + n) × 4",
+    "n": [
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ]
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-5",
+   "kind": "exercise",
+   "page": 62,
+   "section": "إنتاج عبارات حرفية",
+   "verified": true,
+   "text": "اكتب بدلالة x الطول AB (قطعة [AB] : جزء 8 ثم جزء x).",
+   "number": 5,
+   "answer": {
+    "AB": "8 + x"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-6",
+   "kind": "exercise",
+   "page": 62,
+   "section": "إنتاج عبارات حرفية",
+   "verified": true,
+   "text": "اكتب بدلالة x الطول AB (قطعة طولها 13 منها جزء x).",
+   "number": 6,
+   "answer": {
+    "AB": "13 − x"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-7",
+   "kind": "exercise",
+   "page": 62,
+   "section": "إنتاج عبارات حرفية",
+   "verified": true,
+   "text": "اكتب بدلالة x الطول AB (قطعة مقسومة إلى 10 أجزاء كل منها x).",
+   "number": 7,
+   "answer": {
+    "AB": "10 × x"
+   },
+   "answerSource": "computed",
+   "reading": "nombre de segments à relire (lu 10)"
+  },
+  {
+   "id": "ex-8",
+   "kind": "exercise",
+   "page": 62,
+   "section": "إنتاج عبارات حرفية",
+   "verified": true,
+   "text": "اكتب بدلالة x محيط المثلث ABC المتساوي الساقين (الساقان x cm والقاعدة 5 cm).",
+   "number": 8,
+   "answer": {
+    "P": "2 × x + 5"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-9",
+   "kind": "exercise",
+   "page": 63,
+   "section": "إنتاج عبارات حرفية",
+   "verified": true,
+   "text": "وحدة الطول cm. اكتب P محيط المثلث بدلالة الحرف x (ساقان x والقاعدة 5).",
+   "number": 9,
+   "answer": {
+    "P": "2 × x + 5"
+   },
+   "answerSource": "computed",
+   "reading": "doublon visuel avec 8 (même triangle, p. 62 gauche)"
+  },
+  {
+   "id": "ex-10",
+   "kind": "exercise",
+   "page": 63,
+   "section": "إنتاج عبارات حرفية",
+   "verified": false,
+   "text": "وحدة الطول cm. اكتب A مساحة المستطيل بدلالة الحرف ℓ (طول المستطيل يساوي ضعف عرضه).",
+   "number": 10,
+   "answer": {
+    "A": "2 × ℓ × ℓ = 2ℓ²",
+    "note": "lecture : ℓ = largeur, longueur 2ℓ"
+   },
+   "answerSource": "computed",
+   "reading": "énoncé ambigu (ℓ = largeur ?) ; à relire à 200 dpi"
+  },
+  {
+   "id": "ex-11",
+   "kind": "exercise",
+   "page": 63,
+   "section": "إنتاج عبارات حرفية",
+   "verified": false,
+   "text": "وحدة الطول cm. اكتب P محيط الشكل الآتي بدلالة الحرف x (مستطيل ضلعه x يتبعه مثلث متساوي الساقين).",
+   "number": 11,
+   "answer": {
+    "P": "à relire sur la figure"
+   },
+   "answerSource": "computed",
+   "reading": "figure composite ; non utilisée telle quelle"
+  },
+  {
+   "id": "ex-12",
+   "kind": "exercise",
+   "page": 63,
+   "section": "إنتاج عبارات حرفية",
+   "verified": false,
+   "text": "x هو قيس زاوية بالدرجات. عبّر، في كلّ حالة، عن قيس الزاوية ABC بدلالة x (مثلثان بزوايا x و x و 2x).",
+   "number": 12,
+   "answer": {
+    "angles": "à relire sur la figure"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-13",
+   "kind": "exercise",
+   "page": 63,
+   "section": "إنتاج عبارات حرفية",
+   "verified": true,
+   "text": "هذا برنامج حساب: «اختر عددا، اضربه في 3، أضف إليه 7 ثمّ خذ نصف النتيجة». طُلب من 3 تلاميذ كتابة العبارة التي تترجم برنامج الحساب: أمين 3x + 7/2 ، سيلين (3x + 7)/2 ، حمزة 3(x + 7)/2. ما هو التلميذ الذي كتب العبارة الصحيحة؟",
+   "number": 13,
+   "answer": {
+    "correct": "سيلين",
+    "expression": "(3x + 7)/2",
+    "check x=5": "11"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-14",
+   "kind": "exercise",
+   "page": 63,
+   "section": "أستعمل عبارات حرفية",
+   "verified": true,
+   "text": "نعتبر العبارة الحرفية A = 3x + 5. احسب A من أجل x = 3 ؛ x = 4 ؛ x = 5.",
+   "number": 14,
+   "answer": {
+    "A": {
+     "3": 14,
+     "4": 17,
+     "5": 20
+    }
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-15",
+   "kind": "exercise",
+   "page": 63,
+   "section": "أستعمل عبارات حرفية",
+   "verified": true,
+   "text": "نعتبر العبارة الحرفية B = 2 − 5x. احسب B من أجل x = 0 ؛ x = 1 ؛ x = −1.",
+   "number": 15,
+   "answer": {
+    "B": {
+     "0": 2,
+     "1": -3,
+     "-1": 7
+    }
+   },
+   "answerSource": "computed",
+   "reading": "valeurs négatives : après l’unité 3 (discrepancy 10)"
+  },
+  {
+   "id": "ex-16",
+   "kind": "exercise",
+   "page": 63,
+   "section": "أستعمل عبارات حرفية",
+   "verified": false,
+   "text": "نعتبر العبارة الحرفية C = 100x + 25. احسب C من أجل x = 0,25 ؛ x = 0,5 ؛ x = 12,5.",
+   "number": 16,
+   "answer": {
+    "C": {
+     "0,25": "50",
+     "0,5": "75",
+     "12,5": "1275"
+    }
+   },
+   "answerSource": "computed",
+   "reading": "le signe imprimé semble « − » sur le scan (100x − 25) ; lu « + » avec la table de l’exercice 20 (6x + 25) — à relire"
+  },
+  {
+   "id": "ex-17",
+   "kind": "exercise",
+   "page": 63,
+   "section": "أستعمل عبارات حرفية",
+   "verified": true,
+   "text": "احسب العبارة 1 + 3 × x + 4 × y من أجل : أ) x = 2 و y = 3 ؛ ب) x = 4 و y = 9. (3x + 4y + 1)",
+   "number": 17,
+   "answer": {
+    "a": 19,
+    "b": 49
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-18",
+   "kind": "exercise",
+   "page": 63,
+   "section": "أستعمل عبارات حرفية",
+   "verified": true,
+   "text": "أكمل الجدول (x = 1 ، x = 3 ، x = 12,5) للعبارات 4 × x − 5 ، 6 × x + 25 ، 3 × (x + 5).",
+   "number": 18,
+   "answer": {
+    "4x-5": {
+     "1": -1,
+     "3": 7,
+     "12,5": "45"
+    },
+    "6x+25": {
+     "1": 31,
+     "3": 43,
+     "12,5": "100"
+    },
+    "3(x+5)": {
+     "1": 18,
+     "3": 24,
+     "12,5": "52,5"
+    }
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-19",
+   "kind": "exercise",
+   "page": 63,
+   "section": "تبسيط حساب حرفي",
+   "verified": true,
+   "text": "اكتب بشكل مبسّط كلا من : أ) ½ × a ب) 5 × (a + b) ج) 2 × a × a د) 7 × a × b.",
+   "number": 19,
+   "answer": {
+    "a": "a/2",
+    "b": "5(a + b)",
+    "c": "2a²",
+    "d": "7ab"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-20",
+   "kind": "exercise",
+   "page": 63,
+   "section": "تبسيط حساب حرفي",
+   "verified": true,
+   "text": "اربط بين كلّ عبارتين متساويتين: 2(a + 6) ، 12a ، 12 + a ، 2 + 6a ، 2 × 6 + a ، 2 × 6 × a ، 2 + a × 6 ، 2 × (a + 6).",
+   "number": 20,
+   "answer": {
+    "pairs": [
+     [
+      "2(a + 6)",
+      "2 × (a + 6)"
+     ],
+     [
+      "12a",
+      "2 × 6 × a"
+     ],
+     [
+      "12 + a",
+      "2 × 6 + a"
+     ],
+     [
+      "2 + 6a",
+      "2 + a × 6"
+     ]
+    ]
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-21",
+   "kind": "exercise",
+   "page": 63,
+   "section": "تبسيط حساب حرفي",
+   "verified": true,
+   "text": "بسّط قدر الإمكان كلا من العبارات: أ) 2a + 0 × b − 4 + a ب) 3a × b − 3a − 3ab ج) c + c × c + c د) a × a − 2 × a × b + b × b.",
+   "number": 21,
+   "answer": {
+    "a": "3a − 4",
+    "b": "−3a",
+    "c": "2c + c²",
+    "d": "a² − 2ab + b²"
+   },
+   "answerSource": "computed",
+   "reading": "d est parfois lue c × c ; ib. 21 b donne 3ab − 3a − 3ab = −3a (négatif : bank après l’unité 3)"
+  },
+  {
+   "id": "ex-22",
+   "kind": "exercise",
+   "page": 63,
+   "section": "تبسيط حساب حرفي",
+   "verified": true,
+   "text": "x عدد. نعتبر العبارة الحرفية 5 × x + 2 × x + 3 × 8. 1) هذه العبارة مجموع. ما هو عدد حدوده؟ 2) أ) بسّط كتابة هذه العبارة. ب) ما هو العامل المشترك بين الحدّين الأوّل والثاني من العبارة؟ ج) أكمل: 5x + 2x = (… + …)x. 3) اكتب العبارة على شكل مجموع حدّين مبسّطين.",
+   "number": 22,
+   "answer": {
+    "terms": 3,
+    "simplified": "7x + 24",
+    "commonFactor": "x",
+    "factorisation": "(5 + 2)x"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-23",
+   "kind": "exercise",
+   "page": 63,
+   "section": "تبسيط حساب حرفي",
+   "verified": true,
+   "text": "أعد كتابة كلّ من العبارات بإضافة كلّ إشارات العمليات غير الظاهرة: أ) 7x ب) 2x + y ج) 1 − 3x د) 3(2x + y) هـ) 2x² + 12 و x³.",
+   "number": 23,
+   "answer": {
+    "a": "7 × x",
+    "b": "2 × x + y",
+    "c": "1 − 3 × x",
+    "d": "3 × (2 × x + y)",
+    "e": "2 × x × x + 12",
+    "f": "x × x × x"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-24",
+   "kind": "exercise",
+   "page": 63,
+   "section": "اختبار تساوي عبارتين حرفيتين",
+   "verified": true,
+   "text": "احسب من أجل x = 3 : أ) 3x ب) 1/9 x² ج) 4x − 1 د) 7(x − 3).",
+   "number": 24,
+   "answer": {
+    "a": 9,
+    "b": 1,
+    "c": 11,
+    "d": 0
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-25",
+   "kind": "exercise",
+   "page": 63,
+   "section": "اختبار تساوي عبارتين حرفيتين",
+   "verified": true,
+   "text": "احسب من أجل a = 3 ، b = 4 ، c = 10 : C = 5a ، B = b + 6 ، A = a + b + c ، E = 2a + 3b − c ، D = 3 + 10a ، F = 4c + 3b × 2a.",
+   "number": 25,
+   "answer": {
+    "C": 15,
+    "B": 10,
+    "A": 17,
+    "E": 8,
+    "D": 33,
+    "F": 112
+   },
+   "answerSource": "computed",
+   "reading": "F lue 4c + 3b × 2a (le scan est flou)"
+  },
+  {
+   "id": "ex-26",
+   "kind": "exercise",
+   "page": 63,
+   "section": "اختبار تساوي عبارتين حرفيتين",
+   "verified": true,
+   "text": "نضع x = 2 و y = 3. 1) احسب قيمة A = 3x − 4y + 12. 2) احسب قيمة B = 4 + x(2y − 3).",
+   "number": 26,
+   "answer": {
+    "A": 6,
+    "B": 10
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-27",
+   "kind": "exercise",
+   "page": 64,
+   "section": "اختبار تساوي عبارتين حرفيتين",
+   "verified": true,
+   "text": "نريد معرفة إن كانت المساواة 28 + 4x = 9x − 2 صحيحة من أجل x = 6. 1) احسب من أجل x = 6 : أ) قيمة 28 + 4x ب) قيمة 9x − 2. 2) هل المساواة صحيحة من أجل x = 6 ؟",
+   "number": 27,
+   "answer": {
+    "28+4x": 52,
+    "9x-2": 52,
+    "holds": true
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-28",
+   "kind": "exercise",
+   "page": 64,
+   "section": "اختبار تساوي عبارتين حرفيتين",
+   "verified": true,
+   "text": "أ) اختبر كلّ مساواة من أجل القيم المعطاة في الجدول: x = 2 ، x = 5 ، x = 0,2 ؛ 1 + x = 2x + 0,2 و 2 + 2x = 2(x + 1). ب) ما هي العبارة الصحيحة دائما ؟ برّر.",
+   "number": 28,
+   "answer": {
+    "1+x=2x+0,2": {
+     "2": false,
+     "5": false,
+     "0,2": false
+    },
+    "2+2x=2(x+1)": {
+     "2": true,
+     "5": true,
+     "0,2": true
+    },
+    "always": "2 + 2x = 2(x + 1)"
+   },
+   "answerSource": "computed",
+   "reading": "la première ligne n’est vraie qu’en x = 0,8 : fausse pour les trois valeurs du tableau"
+  },
+  {
+   "id": "ex-29",
+   "kind": "exercise",
+   "page": 64,
+   "section": "اختبار تساوي عبارتين حرفيتين",
+   "verified": true,
+   "text": "هل المساواة −4 + 6x = 2(x + 8) صحيحة من أجل : أ) x = 5 ؟ ب) x = 7 ؟",
+   "number": 29,
+   "answer": {
+    "x=5": true,
+    "x=7": false
+   },
+   "answerSource": "computed",
+   "reading": "−4 + 6x : valeur signée (unité 3) — x = 5 : 26 = 26 vrai, x = 7 : 38 ≠ 30"
+  },
+  {
+   "id": "ex-30",
+   "kind": "exercise",
+   "page": 64,
+   "section": "اختبار تساوي عبارتين حرفيتين",
+   "verified": true,
+   "text": "هل المساواات الآتية صحيحة؟ أ) x + 2x = 3x² ب) 2x + 4x = 8x² ج) 3 + 4x = 7x د) 3(x + 5) = 3x + 15.",
+   "number": 30,
+   "answer": {
+    "a": false,
+    "b": false,
+    "c": false,
+    "d": true
+   },
+   "answerSource": "computed",
+   "reading": "ce sont des égalités vraies « pour tout x » ou non : seule d (distributivité) ; contre-exemples x = 1 pour a, b, c"
+  },
+  {
+   "id": "ex-31",
+   "kind": "exercise",
+   "page": 64,
+   "section": "اختبار تساوي عبارتين حرفيتين",
+   "verified": true,
+   "text": "نعتبر العبارة : 22 = 6x + 7. من بين القيم الآتية توجد قيمة واحدة تحقّق المساواة، ما هي ؟ أ) x = 1 ب) x = 1,5 ج) x = 2 د) x = 2,5.",
+   "number": 31,
+   "answer": {
+    "x": "2,5"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-32",
+   "kind": "exercise",
+   "page": 64,
+   "section": "اختبار تساوي عبارتين حرفيتين",
+   "verified": true,
+   "text": "من بين العبارات الآتية، اذكر التي تساوي العبارة 4n + 4 : أ) 4(n + 1) ب) 8n ج) 4n + 1 د) n + 1 + n + 1 + n + 1 + n + 1.",
+   "number": 32,
+   "answer": {
+    "equal": [
+     "4(n + 1)",
+     "n + 1 + n + 1 + n + 1 + n + 1"
+    ]
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-33",
+   "kind": "exercise",
+   "page": 64,
+   "section": "اختبار تساوي عبارتين حرفيتين",
+   "verified": true,
+   "text": "اكتب عبارات أخرى تساوي العبارة 6n + 14.",
+   "number": 33,
+   "answer": {
+    "examples": [
+     "2(3n + 7)",
+     "6n + 10 + 4"
+    ]
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-34",
+   "kind": "exercise",
+   "page": 64,
+   "section": "المعادلات",
+   "verified": true,
+   "text": "احسب ذهنيا. أ) ما هو العدد الذي إذا أضفناه إلى 16 نحصل على … ؟ ب) ما هو العدد الذي إذا طرحناه من 48 نحصل على … ؟ ج) ما هو العدد الذي إذا ضربناه في 3 نحصل على … ؟ د) على أيّ عدد نقسم 144 لنحصل على 12 ؟",
+   "number": 34,
+   "answer": {
+    "d": 12
+   },
+   "answerSource": "computed",
+   "reading": "les résultats cibles sont coupés à droite ; seule la question d est complète (144 ÷ 12 = 12)"
+  },
+  {
+   "id": "ex-35",
+   "kind": "exercise",
+   "page": 64,
+   "section": "المعادلات",
+   "verified": true,
+   "text": "احسب ذهنيا. 1) ما هو العدد الذي إذا أضفناه إلى 1,5 نحصل على … 2) … طرحناه من 20 … 3) … ضربناه في 7 … 4) على أيّ عدد نقسم 12 لنحصل على 2,4 ؟",
+   "number": 35,
+   "answer": {
+    "4": 5
+   },
+   "answerSource": "computed",
+   "reading": "cibles coupées ; la question 4 : 12 ÷ 5 = 2,4"
+  },
+  {
+   "id": "ex-36",
+   "kind": "exercise",
+   "page": 64,
+   "section": "المعادلات",
+   "verified": true,
+   "text": "عيّن العدد الناقص في كلّ من المساويات الآتية: أ) 150 − □ = 75 ب) 5 + □ = 135 ج) 0,5 × □ = 2 د) 24 − □ = −6.",
+   "number": 36,
+   "answer": {
+    "a": 75,
+    "b": 130,
+    "c": 4,
+    "d": 30
+   },
+   "answerSource": "computed",
+   "reading": "d : −6 signé (unité 3)"
+  },
+  {
+   "id": "ex-37",
+   "kind": "exercise",
+   "page": 64,
+   "section": "المعادلات",
+   "verified": true,
+   "text": "عيّن العدد الناقص في كلّ من المساويات الآتية: أ) □ − 0,75 = 9 ب) 15 × □ = 87 ج) 5 × □ = 11 د) 0,1 × □ = 0,47 هـ) 121/□ = 11 و) 0,47/□ = 0,1.",
+   "number": 37,
+   "answer": {
+    "a": "9,75",
+    "b": "5,8",
+    "c": "2,2",
+    "d": "4,7",
+    "e": 11,
+    "f": "4,7"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-38",
+   "kind": "exercise",
+   "page": 64,
+   "section": "المعادلات",
+   "verified": true,
+   "text": "حلّ المعادلتين : أ) x/7 = 11 ب) 21/x = 3.",
+   "number": 38,
+   "answer": {
+    "a": 77,
+    "b": 7
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-39",
+   "kind": "exercise",
+   "page": 64,
+   "section": "المعادلات",
+   "verified": true,
+   "text": "حلّ المعادلات : أ) 169/x = 13 ب) 145/x = 29 ج) 47/x = 0,1 د) 2530/x = 0,01.",
+   "number": 39,
+   "answer": {
+    "a": 13,
+    "b": 5,
+    "c": 470,
+    "d": 253000
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-40",
+   "kind": "exercise",
+   "page": 64,
+   "section": "المعادلات",
+   "verified": true,
+   "text": "طول خطوة أمين 75 cm وطول خطوة العملاق ثلاث مرّات خطوة أمين. 1) عبّر بدلالة x عن المسافة التي يقطعها كلّ من أمين والعملاق في x خطوة. 2) بعد x خطوة، تأخّر أمين بمسافة 15 m عن العملاق : ما هي المعادلة التي يجب أن يحقّقها x ؟",
+   "number": 40,
+   "answer": {
+    "amine": "75 × x",
+    "giant": "225 × x",
+    "equation": "225x − 75x = 1500",
+    "x": 10
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "self-1",
+   "kind": "qcm",
+   "page": 65,
+   "section": "أؤكّد تعلّماتي",
+   "verified": true,
+   "text": "العبارة بدلالة x التي تترجم برنامج الحساب : «أختار عددا x ، أضيف إليه 1/2 وأضرب النتيجة في 3» هي : أ) x + 1/2 × 3 ب) 1/2 (x + 3) ج) 3(x + 1/2)",
+   "number": 1,
+   "answer": "ج",
+   "answerSource": "computed",
+   "onFailPage": 58
+  },
+  {
+   "id": "self-2",
+   "kind": "qcm",
+   "page": 65,
+   "section": "أؤكّد تعلّماتي",
+   "verified": true,
+   "text": "العبارة التي تترجم : «أختار عددا x ، أضيف له 1 أضرب المجموع في 3 وأطرح من النتيجة 2» هي : أ) 2 − (x + 1) × 3 ب) 3x + 1 ج) 3x + 2",
+   "number": 2,
+   "answer": "ب",
+   "answerSource": "computed",
+   "onFailPage": 58
+  },
+  {
+   "id": "self-3",
+   "kind": "qcm",
+   "page": 65,
+   "section": "أؤكّد تعلّماتي",
+   "verified": true,
+   "text": "العبارة التي تلخّص قائمة الحسابات: 5 × 1 + 1 ، 5 × 2 + 1 ، … ، 5 × 10 + 1 هي : أ) 5n + 1 ب) 5 + n + 1 ج) 5 × (n + 1)",
+   "number": 3,
+   "answer": "أ",
+   "answerSource": "computed",
+   "onFailPage": 58
+  },
+  {
+   "id": "self-4",
+   "kind": "qcm",
+   "page": 65,
+   "section": "أؤكّد تعلّماتي",
+   "verified": true,
+   "text": "عند تعويض x بـ 4 في العبارة A = 7 + 3(2x − 5) نجد : أ) A = 16 ب) A = −2 ج) A = 10",
+   "number": 4,
+   "answer": "أ",
+   "answerSource": "computed",
+   "onFailPage": 60
+  },
+  {
+   "id": "self-5",
+   "kind": "qcm",
+   "page": 65,
+   "section": "أؤكّد تعلّماتي",
+   "verified": true,
+   "text": "قيمة العبارة الحرفية 6x + 4 من أجل x = 3,5 هي : أ) 21 ب) 25 ج) 22",
+   "number": 5,
+   "answer": "ب",
+   "answerSource": "computed",
+   "onFailPage": 60
+  },
+  {
+   "id": "self-6",
+   "kind": "qcm",
+   "page": 65,
+   "section": "أؤكّد تعلّماتي",
+   "verified": true,
+   "text": "3(5x + 4) هي الكتابة المبسّطة للعبارة : أ) 3 + (5x + 4) ب) 3 + 5 + x + 4 ج) 3 × (5 × x + 4)",
+   "number": 6,
+   "answer": "ج",
+   "answerSource": "computed",
+   "onFailPage": 58
+  },
+  {
+   "id": "self-7",
+   "kind": "qcm",
+   "page": 65,
+   "section": "أؤكّد تعلّماتي",
+   "verified": true,
+   "text": "قيمة العبارة E = 73x + 27x ، من أجل x = 43,75 هي : أ) 437,5 ب) 4375 ج) 43750",
+   "number": 7,
+   "answer": "ب",
+   "answerSource": "computed",
+   "onFailPage": 60
+  },
+  {
+   "id": "self-8",
+   "kind": "qcm",
+   "page": 65,
+   "section": "أؤكّد تعلّماتي",
+   "verified": false,
+   "text": "المساواة 3x + 20 = 8x محقّقة من أجل : أ) x = −4 ب) x = 4 ج) x = 2,4",
+   "number": 8,
+   "answer": "ب",
+   "answerSource": "computed",
+   "onFailPage": 60
+  },
+  {
+   "id": "self-9",
+   "kind": "qcm",
+   "page": 65,
+   "section": "أؤكّد تعلّماتي",
+   "verified": false,
+   "text": "العبارتان A = 5(x − 2) و B = 5x − 10 : أ) متساويتان من أجل جميع قيم x ب) متساويتان من أجل x = 0 فقط ج) غير متساويتين دوما",
+   "number": 9,
+   "answer": "أ",
+   "answerSource": "computed",
+   "onFailPage": 61
+  },
+  {
+   "id": "self-10",
+   "kind": "qcm",
+   "page": 65,
+   "section": "أؤكّد تعلّماتي",
+   "verified": true,
+   "text": "مساحة المستطيل الذي عرضه 9 cm وطوله x تكتب بدلالة x على الشكل : أ) 2x(9 + x) ب) 9x ج) 2 × (9 + 2x)",
+   "number": 10,
+   "answer": "ب",
+   "answerSource": "computed",
+   "onFailPage": 59
+  },
+  {
+   "id": "self-11",
+   "kind": "qcm",
+   "page": 65,
+   "section": "أؤكّد تعلّماتي",
+   "verified": false,
+   "text": "العدد الناقص في المساواة 58 = 40,6/□ هو : أ) 7 ب) 0,7 ج) 0,07",
+   "number": 11,
+   "answer": "ب",
+   "answerSource": "computed",
+   "onFailPage": 61
+  },
+  {
+   "id": "deep-44",
+   "kind": "deep",
+   "page": 66,
+   "section": "أتعمّق",
+   "verified": true,
+   "text": "عبّر بدلالة x عن طول كلّ أحرف العلبة (متوازي مستطيلات : 42 cm و x).",
+   "number": 44,
+   "answer": {
+    "edges": "à relire sur la figure"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "deep-45",
+   "kind": "deep",
+   "page": 66,
+   "section": "أتعمّق",
+   "verified": true,
+   "text": "على الشكل الآتي، ABCD و AEFG مربّعان. 1) عبّر بدلالة x و y عن مساحة المستطيل EBHF. 2) عبّر بدلالة x و y عن مساحة المستطيل GHCD. 3) استنتج عبارة مبسّطة للجزء الملوّن.",
+   "number": 45,
+   "answer": {
+    "EBHF": "y × (x − y)",
+    "GHCD": "x × (x − y)"
+   },
+   "answerSource": "computed",
+   "reading": "lecture : AB = x, AE = y ; à relire (la figure est dense)"
+  },
+  {
+   "id": "deep-46",
+   "kind": "deep",
+   "page": 66,
+   "section": "أتعمّق",
+   "verified": true,
+   "text": "نصنع بخيط طوله 10 cm مستطيلا. نعتبر x أحد بعديه. 1) اكتب بدلالة x عبارة محيط المستطيل P. تحقّق من أنّ P = 10 cm. 2) اكتب بدلالة x عبارة مساحة المستطيل A. 3) احسب مساحة المستطيل من أجل x = 3 cm.",
+   "number": 46,
+   "answer": {
+    "otherSide": "5 − x",
+    "P": "2 × (x + 5 − x) = 10",
+    "A": "x × (5 − x)",
+    "A(3)": 6
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "deep-47",
+   "kind": "deep",
+   "page": 66,
+   "section": "أتعمّق",
+   "verified": true,
+   "text": "باستعمال أعواد كبريت، نصنع مثلثات حسب النموذج الآتي (مثلثات متتالية تتشارك ضلعا). أ) ما هو عدد الأعواد اللازمة لصنع مثلث واحد؟ ب) … لصنع مثلثين؟ 3 مثلثات؟ 5 مثلثات؟ 10 مثلثات؟ 265 مثلث؟ جـ) أوجد عبارة تسمح بمعرفة عدد الأعواد اللازمة …",
+   "number": 47,
+   "answer": {
+    "sticks": {
+     "1": 3,
+     "2": 5,
+     "3": 7,
+     "5": 11,
+     "10": 21,
+     "265": 531
+    },
+    "formula": "2 × n + 1"
+   },
+   "answerSource": "computed",
+   "reading": "la figure : n triangles en chaîne, chaque nouveau triangle ajoute 2 allumettes ; 2n + 1"
+  },
+  {
+   "id": "deep-48",
+   "kind": "deep",
+   "page": 66,
+   "section": "أتعمّق",
+   "verified": true,
+   "text": "مشكل مفتوح: في مضلع، القطر هو طول قطعة مستقيم يكون طرفاها رأسين غير متتابعين للمضلع. ما هو عدد أقطار مضلع له x ضلعا ؟",
+   "number": 48,
+   "answer": {
+    "diagonals": "x(x − 3)/2",
+    "table": {
+     "3": 0,
+     "4": 2,
+     "5": 5,
+     "6": 9,
+     "7": 14,
+     "8": 20
+    }
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "deep-49",
+   "kind": "deep",
+   "page": 66,
+   "section": "أتعمّق",
+   "verified": false,
+   "text": "نعتبر المساواة : 5 × (x + 6) + 5 = 5 × (x + 8) − 5. 1) اختبر المساواة من أجل : x = 1 ، x = 4 و x = 12. 2) ماذا تلاحظ ؟ 3) هل يمكن أن نستنتج أنّ هذه المساواة صحيحة دائما ؟",
+   "number": 49,
+   "answer": {
+    "x=1": [
+     40,
+     40
+    ],
+    "x=4": [
+     55,
+     55
+    ],
+    "x=12": [
+     95,
+     95
+    ],
+    "always": true
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "deep-50",
+   "kind": "deep",
+   "page": 66,
+   "section": "أتعمّق",
+   "verified": false,
+   "text": "نعتبر المساواة : 4 × (x + 3) − 8 = 4 × (x + 1). 1) اختبر المساواة من أجل عدّة أعداد من اختيارك. 2) ما هو التخمين الذي يمكن أن تضعه حول المساواة ؟ 3) برّر.",
+   "number": 50,
+   "answer": {
+    "always": true
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "deep-51",
+   "kind": "deep",
+   "page": 66,
+   "section": "أتعمّق",
+   "verified": true,
+   "text": "عند وضع العملية 35 × 46 عموديا، نلاحظ أنّ الطريقة تؤول إلى حساب 230 + 1380. اشرح ذلك.",
+   "number": 51,
+   "answer": {
+    "product": 1610,
+    "split": "5 × 46 + 30 × 46 = 230 + 1380"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "deep-52",
+   "kind": "deep",
+   "page": 66,
+   "section": "أتعمّق",
+   "verified": true,
+   "text": "برنامج حساب: اختر عددا طبيعيا غير معدوم. أضف إليه التالي له مباشرة. اضرب في 2. اطرح 2. قسّم على 4. 1) طبّق البرنامج باختيار 5 ، 12 و 25 كعدد البداية. 2) ماذا تلاحظ ؟ …",
+   "number": 52,
+   "answer": {
+    "results": {
+     "5": 5,
+     "12": 12,
+     "25": 25
+    },
+    "expression": "((n + (n + 1)) × 2 − 2) ÷ 4 = n"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "deep-53",
+   "kind": "deep",
+   "page": 67,
+   "section": "أتعمّق",
+   "verified": false,
+   "text": "ورقة حساب في المجدول: العبارة 3x + 7 = 31 ، مع قيم x من 0 إلى 10 (عمود للطرف الأيسر وعمود للنتيجة).",
+   "number": 53,
+   "answer": {
+    "x": 8
+   },
+   "answerSource": "computed",
+   "reading": "marge droite coupée (discrepancy 7)"
+  },
+  {
+   "id": "deep-54",
+   "kind": "deep",
+   "page": 67,
+   "section": "أتعمّق",
+   "verified": false,
+   "text": "مجموع ثلاثة أعداد طبيعية متتالية يساوي 3 مرّات العدد الأوسط. هل هذا صحيح دائما ؟ برّر.",
+   "number": 54,
+   "answer": {
+    "always": true,
+    "expression": "(n − 1) + n + (n + 1) = 3n"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "deep-55",
+   "kind": "deep",
+   "page": 67,
+   "section": "أتعمّق",
+   "verified": false,
+   "text": "نقول: n + n = n × n من أجل n = 0. هل هذه المساواة صحيحة دائما ؟",
+   "number": 55,
+   "answer": {
+    "n=0": true,
+    "n=1": false,
+    "n=2": true,
+    "always": false
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "deep-56",
+   "kind": "deep",
+   "page": 67,
+   "section": "أتعمّق",
+   "verified": false,
+   "text": "ترجم بمعادلة: ارتفعت درجة الحرارة بـ 10 °C فبلغت 9 °C ؛ عمر أمين 10 سنوات ويكبره … بـ 9 ؛ مستطيل مساحته 9 cm² وطوله 10 cm.",
+   "number": 56,
+   "answer": {
+    "temperature": {
+     "equation": "x + 10 = 9",
+     "x": -1
+    },
+    "rectangle": {
+     "equation": "10 × x = 9",
+     "x": "0,9"
+    }
+   },
+   "answerSource": "computed",
+   "reading": "x = −1 : après l’unité 3"
+  },
+  {
+   "id": "deep-57",
+   "kind": "deep",
+   "page": 67,
+   "section": "أتعمّق",
+   "verified": false,
+   "text": "حوار: محيط مثلث أضلاعه x ، x − 2 ، x + 2 يساوي 27 ؛ هل x = 9 ؟",
+   "number": 57,
+   "answer": {
+    "x=9": true
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "deep-58",
+   "kind": "deep",
+   "page": 67,
+   "section": "أتعمّق",
+   "verified": true,
+   "text": "زوايا مثلث قيسها x ، 2x ، 3x بالدرجات : عيّن x.",
+   "number": 58,
+   "answer": {
+    "x": 30,
+    "equation": "6x = 180"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "deep-59",
+   "kind": "deep",
+   "page": 67,
+   "section": "أتعمّق",
+   "verified": false,
+   "text": "ورقة مستطيلة بها فتحة (شكل مقصوص): محيطها ومساحتها بدلالة x ؛ المحيط P = 45 cm : عيّن x.",
+   "number": 59,
+   "answer": {
+    "note": "figure à relire à 200 dpi"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "deep-60",
+   "kind": "deep",
+   "page": 67,
+   "section": "أتعمّق",
+   "verified": false,
+   "text": "أربعة أعداد متتالية الفرق بينها 2 : مجموعها مضاعف للعدد 4. برّر.",
+   "number": 60,
+   "answer": {
+    "sum": "4n + 12 = 4(n + 3)"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "deep-61",
+   "kind": "deep",
+   "page": 67,
+   "section": "أتعمّق",
+   "verified": false,
+   "text": "ثلاثة خزّانات وقود: B = A + 150 ، C = 2B ، المجموع 3000 L. عيّن A.",
+   "number": 61,
+   "answer": {
+    "A": "637,5",
+    "equation": "4A + 450 = 3000"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "integration",
+   "kind": "integration",
+   "page": 68,
+   "section": "أدمج تعلّماتي",
+   "verified": true,
+   "text": "نادي A : 1300 DA للاشتراك + 150 DA مقابل كلّ حصّة. نادي B : 800 DA + 170 DA مقابل كلّ حصّة. 1) عبّر عن المبلغ في كلّ نادٍ بدلالة عدد الحصص n. 2) أنجز جدولا. 3) متى يتساوى المبلغان ؟ ومتى يكون B أرخص ؟",
+   "title": "النادي",
+   "answer": {
+    "A": "1300 + 150n",
+    "B": "800 + 170n",
+    "equalAt": 25,
+    "cost": 5050,
+    "BCheaperFor": "n < 25"
+   },
+   "answerSource": "computed",
+   "reading": "la 1re formule est « الصيغة A », la 2e « النادي B » (discrepancy 9)"
+  },
+  {
+   "id": "evaluation",
+   "kind": "integration",
+   "page": 68,
+   "section": "وضعية للتقويم",
+   "verified": true,
+   "text": "مسافة الكبح D = V × V / 203,2 على طريق جافّ و V × V / 101,6 على طريق مبلل (V بـ km/h و D بالمتر). سيارة تسير بسرعة 130 km/h ، وحيوان على بعد 150 m. هل تتوقّف السيارة قبل الحيوان ؟",
+   "title": "مسافة الكبح",
+   "answer": {
+    "dry": "83,16929133858267716535433071",
+    "wet": "166,3385826771653543307086614"
+   },
+   "answerSource": "computed",
+   "reading": "130² ÷ 101,6 n’est pas un décimal exact : la synthèse remplace la formule (README, owner question 13)"
+  },
+  {
+   "id": "ict",
+   "kind": "ict",
+   "page": 69,
+   "section": "أوظّف تكنولوجيات الإعلام والاتصال",
+   "verified": true,
+   "text": "نشاط: نريد حلّ المعادلة (x + 3) × 2 + 2x = 48 باستعمال مجدول: نحسب العبارة من أجل قيم x بخطوة 0,5. ثم «دوري الآن» : حلّ المعادلة 2x + 3 = 3x − 1 بجدول قيم x = 0 … 11.",
+   "title": "باستعمال مجدول",
+   "answer": {
+    "activity": {
+     "equation": "(x + 3) × 2 + 2x = 48",
+     "x": "10,5"
+    },
+    "nowYourTurn": {
+     "equation": "2x + 3 = 3x − 1",
+     "x": 4
+    }
+   },
+   "answerSource": "computed"
+  }
+ ],
+ "discrepancies": [
+  {
+   "elementId": "method-4",
+   "kind": "misprint",
+   "text": "p. 61 : la dernière ligne de la solution imprime « x + 200 = 3 × x + 1000 » ; l’énoncé et le commentaire donnent 100."
+  },
+  {
+   "elementId": "method-5",
+   "kind": "misprint",
+   "text": "p. 61 : le cadre dit « البحث عن قاسم مجهول يؤول إلى حساب جداء عددين » alors que le calcul est un QUOTIENT (x = 84 ÷ 14) ; la 2e flèche de calcul « 84 ×x→ 14 » devrait être « 14 ×x→ 84 ». La plateforme écrit « … يؤول إلى حساب حاصل قسمة » (hall-mushkil-muadala, module 3)."
+  },
+  {
+   "elementId": "method-2",
+   "kind": "reading",
+   "text": "p. 59 : « مربّع له n بلاطة على ضلعه » avec « 4 × n + 4 » : un carré de n tuiles par côté a 4n − 4 tuiles de bord ; le décompte du livre est celui du contour AUTOUR d’un carré de n × n. La plateforme dit toujours « حوض من n × n بلاطة، يحيط به إطار » (ibara-harfiya-intaj, module 3)."
+  },
+  {
+   "elementId": "act-3",
+   "kind": "cut",
+   "text": "p. 57, question 5 : la liste de valeurs est coupée à droite (« … ، 5 ، 6 ، 7 ») ; la première valeur lisible est illisible (10x − 2 < 55 − 3x est vraie pour x ≤ 4 seulement, donc la liste imprimée contient une valeur ≤ 4)."
+  },
+  {
+   "elementId": "act-2",
+   "kind": "cut",
+   "text": "p. 56 : la question 3 b–c est coupée au bas de la page."
+  },
+  {
+   "elementId": "unit",
+   "kind": "cut",
+   "text": "p. 64 : ex-41 … ex-43 sont absents du scan (le bas de la page est coupé après ex-40 et ex-33)."
+  },
+  {
+   "elementId": "unit",
+   "kind": "cut",
+   "text": "pp. 63 et 67 : ex-14 … ex-20 et deep-53 … deep-57 ont leurs nombres et débuts de lignes coupés sur le bord droit ; la numérotation est déduite de la suite."
+  },
+  {
+   "elementId": "know-5",
+   "kind": "cut",
+   "text": "p. 60 : la fin de la définition de « المعادلات » et son exemple sont coupés au bas de la page (« … تعطيان نفس النتيجة 5 »)."
+  },
+  {
+   "elementId": "integration",
+   "kind": "naming",
+   "text": "p. 68 : « الصيغة A » puis « النادي B » (appellation) ; les deux formules coûtent 5050 DA pour n = 25."
+  },
+  {
+   "elementId": "unit",
+   "kind": "scope",
+   "text": "Valeurs négatives du livre (ex-15 : B = 2 − 5x en x = 1 et −1 ; ex-36 d : 24 − □ = −6 ; deep-56 : +10 °C → 9 °C) : légitimes après l’unité 3, mais l’ordre de génération (ibara et hall avant majmu-jabri) les exclut des modules et des étapes comptées d’ibara et de hall (README, question 10)."
+  },
+  {
+   "elementId": "deep-61",
+   "kind": "scope",
+   "text": "p. 67 : hors du périmètre 2AM (4x + 450 = 3000 demande un regroupement et une équation décimale à deux opérations : 3AM muadalat-darajat-ula). Aucune leçon ne l’intègre (`notIntegrated`)."
+  },
+  {
+   "elementId": "unit",
+   "kind": "scope",
+   "text": "pp. 54–69 lues à 110 dpi (marge droite et bas de plusieurs pages coupés : scan médiocre). Les éléments d’ibara-harfiya-intaj sont relus et `verified: True` ; ceux de hall-mushkil-muadala, ikhtibar-musawat-mutabayina et de la synthèse restent `verified: False` : leur leçon les relira."
+  },
+  {
+   "elementId": "prep",
+   "kind": "reading",
+   "text": "p. 55 : items 6–10 : l’énoncé est coupé à droite ; les options sont lues dans les colonnes (1) (2) (3) ; l’item 10 (périmètre du pentagone, côtés 2x et 3) est repris par ibara-harfiya-intaj avec ses propres nombres."
+  },
+  {
+   "elementId": "ex-21",
+   "kind": "scope",
+   "text": "p. 63 : 3ab − 3a − 3ab = −3a est un résultat négatif signé ; ibara ne le prend pas (valeurs ≥ 0)."
+  }
+ ],
+ "destinations": {
+  "_comment": "elementId → { lesson, module } ; `items` répartit un élément ; une leçon encore coming_soon est une destination EN ATTENTE (check-textbook-coverage.mjs). Modules de ibara-harfiya-intaj : 0 أستعدّ · 1 نشاط (خلايا الشمع) · 2 معارف · 3 طريقة · 4 أتمرّن · 5–7 مسائل · 8 إختبار أولي. `None` = la banque de pratique seulement.",
+  "objectives": {
+   "lesson": "unit",
+   "module": "page"
+  },
+  "opener": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": 2
+  },
+  "challenge": {
+   "lesson": "unit",
+   "module": "page",
+   "duplicatedIn": [
+    {
+     "lesson": "ibara-harfiya-intaj",
+     "module": 1
+    }
+   ],
+   "note": "l'idée (compter un motif croissant pour TOUT n) entre par le laboratoire `wax-cells` ; la carte de l'unité porte le texte réécrit (README du plan, § « Le تحدّي »), sourceElementId « challenge »"
+  },
+  "prep": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": 0,
+   "items": {
+    "1-2-3-4-5": {
+     "lesson": "ibara-harfiya-intaj",
+     "module": 0
+    },
+    "6-7-8-9": {
+     "lesson": "hall-mushkil-muadala",
+     "module": 0
+    },
+    "10": {
+     "lesson": "ibara-harfiya-intaj",
+     "module": 4
+    }
+   }
+  },
+  "act-1": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": 4
+  },
+  "act-2": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": 5
+  },
+  "act-3": {
+   "lesson": "ikhtibar-musawat-mutabayina",
+   "module": 4
+  },
+  "act-4": {
+   "lesson": "hall-mushkil-muadala",
+   "module": 4
+  },
+  "know-1": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": 2
+  },
+  "know-2": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": 2
+  },
+  "know-3": {
+   "lesson": "ikhtibar-musawat-mutabayina",
+   "module": 2
+  },
+  "know-4": {
+   "lesson": "ikhtibar-musawat-mutabayina",
+   "module": 2
+  },
+  "know-5": {
+   "lesson": "hall-mushkil-muadala",
+   "module": 2
+  },
+  "method-1": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": 3
+  },
+  "method-2": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": 3
+  },
+  "method-3": {
+   "lesson": "ikhtibar-musawat-mutabayina",
+   "module": 3
+  },
+  "method-4": {
+   "lesson": "hall-mushkil-muadala",
+   "module": 3
+  },
+  "method-5": {
+   "lesson": "hall-mushkil-muadala",
+   "module": 3
+  },
+  "now-59": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": 4
+  },
+  "now-61": {
+   "lesson": "ikhtibar-musawat-mutabayina",
+   "module": 4,
+   "items": {
+    "1": {
+     "lesson": "ikhtibar-musawat-mutabayina",
+     "module": 4
+    },
+    "2": {
+     "lesson": "hall-mushkil-muadala",
+     "module": 4
+    }
+   }
+  },
+  "ex-1": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": 4
+  },
+  "ex-2": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": 4
+  },
+  "ex-3": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": null
+  },
+  "ex-4": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": null
+  },
+  "ex-5": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": 4
+  },
+  "ex-6": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": null
+  },
+  "ex-7": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": null
+  },
+  "ex-8": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": null
+  },
+  "ex-9": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": null
+  },
+  "ex-13": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": 4
+  },
+  "ex-14": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": 4
+  },
+  "ex-17": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": 4
+  },
+  "ex-19": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": 4
+  },
+  "ex-21": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": 4
+  },
+  "ex-22": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": 4
+  },
+  "ex-23": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": null
+  },
+  "ex-24": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": null
+  },
+  "ex-25": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": null
+  },
+  "ex-26": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": null
+  },
+  "ex-10": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": null,
+   "notIntegrated": "énoncé ambigu (ℓ largeur ou longueur ?) : l'aire d'un rectangle en x est reprise par la مسألة 2"
+  },
+  "ex-11": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": null,
+   "notIntegrated": "figure composite à relire à 200 dpi : le périmètre en x est repris par les exercices 4 et la مسألة 2"
+  },
+  "ex-12": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": null,
+   "notIntegrated": "mesures d'angles en x : figure à relire ; hors des idées de la leçon (angles : 3AM)"
+  },
+  "ex-15": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": null,
+   "notIntegrated": "valeur négative (B = 2 − 5x en x = 1, −1) : après l'unité 3, ordre de génération (README, question 10)"
+  },
+  "ex-16": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": null,
+   "notIntegrated": "le signe imprimé de C = 100x ± 25 est illisible sur le scan"
+  },
+  "ex-18": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": null,
+   "notIntegrated": "le tableau contient 4x − 5 en x = 1 (valeur négative) : après l'unité 3"
+  },
+  "ex-20": {
+   "lesson": "ikhtibar-musawat-mutabayina",
+   "module": null,
+   "note": "apparier des écritures égales : c'est tester une égalité (ikhtibar-musawat-mutabayina P2), pas produire une écriture"
+  },
+  "ex-27": {
+   "lesson": "ikhtibar-musawat-mutabayina",
+   "module": 4
+  },
+  "ex-28": {
+   "lesson": "ikhtibar-musawat-mutabayina",
+   "module": 4
+  },
+  "ex-29": {
+   "lesson": "ikhtibar-musawat-mutabayina",
+   "module": null
+  },
+  "ex-30": {
+   "lesson": "ikhtibar-musawat-mutabayina",
+   "module": 4
+  },
+  "ex-31": {
+   "lesson": "ikhtibar-musawat-mutabayina",
+   "module": 4
+  },
+  "ex-32": {
+   "lesson": "ikhtibar-musawat-mutabayina",
+   "module": null
+  },
+  "ex-33": {
+   "lesson": "ikhtibar-musawat-mutabayina",
+   "module": null
+  },
+  "ex-34": {
+   "lesson": "hall-mushkil-muadala",
+   "module": 0
+  },
+  "ex-35": {
+   "lesson": "hall-mushkil-muadala",
+   "module": null
+  },
+  "ex-36": {
+   "lesson": "hall-mushkil-muadala",
+   "module": null
+  },
+  "ex-37": {
+   "lesson": "hall-mushkil-muadala",
+   "module": 4
+  },
+  "ex-38": {
+   "lesson": "hall-mushkil-muadala",
+   "module": 4
+  },
+  "ex-39": {
+   "lesson": "hall-mushkil-muadala",
+   "module": 4
+  },
+  "ex-40": {
+   "lesson": "hall-mushkil-muadala",
+   "module": 5
+  },
+  "self-1": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": null
+  },
+  "self-2": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": null,
+   "duplicatedIn": [
+    {
+     "lesson": "wadiya-idmajiya-mafhum-muadala",
+     "module": null
+    }
+   ]
+  },
+  "self-3": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": null
+  },
+  "self-4": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": null
+  },
+  "self-5": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": null
+  },
+  "self-6": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": null
+  },
+  "self-7": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": null
+  },
+  "self-10": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": null
+  },
+  "self-8": {
+   "lesson": "ikhtibar-musawat-mutabayina",
+   "module": null
+  },
+  "self-9": {
+   "lesson": "ikhtibar-musawat-mutabayina",
+   "module": null
+  },
+  "self-11": {
+   "lesson": "hall-mushkil-muadala",
+   "module": null
+  },
+  "deep-44": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": null,
+   "notIntegrated": "figure à relire à 200 dpi (arêtes d'une boîte de 42 cm et x) ; l'idée « longueur en x » est celle des exercices 2 et 4 du module 4"
+  },
+  "deep-45": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": null,
+   "notIntegrated": "figure dense (deux carrés ABCD et AEFG, aires en x et y) : demande une soustraction de longueurs, hors du périmètre de la leçon ; l'aire d'un rectangle en x est reprise par la مسألة 2"
+  },
+  "deep-46": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": 6
+  },
+  "deep-47": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": null
+  },
+  "deep-48": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": null,
+   "notIntegrated": "x(x − 3)/2 demande de développer un produit : 3AM (nashr-jabri-3am) ; problème ouvert sans sa conclusion exacte au niveau 2AM"
+  },
+  "deep-49": {
+   "lesson": "ikhtibar-musawat-mutabayina",
+   "module": null
+  },
+  "deep-50": {
+   "lesson": "ikhtibar-musawat-mutabayina",
+   "module": 7
+  },
+  "deep-51": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": null,
+   "notIntegrated": "la multiplication posée 35 × 46 = 230 + 1380 est la distributivité de l'unité 1 (tawzi-darb-jam-tarh)"
+  },
+  "deep-52": {
+   "lesson": "ibara-harfiya-intaj",
+   "module": 7
+  },
+  "deep-53": {
+   "lesson": "hall-mushkil-muadala",
+   "module": null
+  },
+  "deep-54": {
+   "lesson": "ikhtibar-musawat-mutabayina",
+   "module": 7
+  },
+  "deep-55": {
+   "lesson": "ikhtibar-musawat-mutabayina",
+   "module": 4
+  },
+  "deep-56": {
+   "lesson": "hall-mushkil-muadala",
+   "module": 4
+  },
+  "deep-57": {
+   "lesson": "ikhtibar-musawat-mutabayina",
+   "module": null
+  },
+  "deep-58": {
+   "lesson": "wadiya-idmajiya-mafhum-muadala",
+   "module": null
+  },
+  "deep-59": {
+   "lesson": "hall-mushkil-muadala",
+   "module": null
+  },
+  "deep-60": {
+   "lesson": "ikhtibar-musawat-mutabayina",
+   "module": null
+  },
+  "deep-61": {
+   "lesson": "wadiya-idmajiya-mafhum-muadala",
+   "module": null,
+   "notIntegrated": "4x + 450 = 3000 demande un regroupement et une équation décimale à deux opérations : 3AM muadalat-darajat-ula (hors périmètre 2AM)"
+  },
+  "integration": {
+   "lesson": "wadiya-idmajiya-mafhum-muadala",
+   "module": 1
+  },
+  "evaluation": {
+   "lesson": "wadiya-idmajiya-mafhum-muadala",
+   "module": 2
+  },
+  "ict": {
+   "lesson": "wadiya-idmajiya-mafhum-muadala",
+   "module": 6,
+   "items": {
+    "activity": {
+     "lesson": "wadiya-idmajiya-mafhum-muadala",
+     "module": 6
+    },
+    "nowYourTurn": {
+     "lesson": "ikhtibar-musawat-mutabayina",
+     "module": 4
+    }
+   }
+  }
+ }
+}

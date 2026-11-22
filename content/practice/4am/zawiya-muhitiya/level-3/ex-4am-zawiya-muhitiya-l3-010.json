@@ -1,0 +1,68 @@
+{
+  "id": "ex-4am-zawiya-muhitiya-l3-010",
+  "lessonCode": "zawiya-muhitiya",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — توربين أدرار",
+    "estimatedMinutes": 3,
+    "tags": [
+      "خاصية 1"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_zawiya-muhitiya_P2",
+      "modelledOn": "know-4"
+    }
+  },
+  "statement": {
+    "content": "توربين رياح في أدرار له ثلاث شفرات متساوية: أطرافها A و B و C على دائرة مركزها O (المحور)، والزاوية المركزية بين كل شفرتين متتاليتين $120^\\circ$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قيس الزاوية $\\widehat{BAC}$ بالدرجة؟",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "60",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوس الذي تحصره كل زاوية: هل هو نفس القوس؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الزاويتين: أيهما أكبر، المركزية أم المحيطية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قيس الزاوية المحيطية نصف قيس الزاوية المركزية التي تحصر معها نفس القوس."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{BAC} = \\dfrac{1}{2}\\widehat{BOC} = 60^\\circ$ .",
+        "incorrect": "BAC و BOC تحصران القوس BC."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-DIF",
+          "value": "240"
+        },
+        {
+          "id": "MISC-MUHITIYA-MUSAWIYA",
+          "value": "120"
+        }
+      ]
+    }
+  ]
+}

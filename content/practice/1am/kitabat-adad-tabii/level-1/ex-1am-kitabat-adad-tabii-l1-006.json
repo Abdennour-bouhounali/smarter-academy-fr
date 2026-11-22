@@ -1,0 +1,130 @@
+{
+  "id": "ex-1am-kitabat-adad-tabii-l1-006",
+  "lessonCode": "kitabat-adad-tabii",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أكمل المفكوك",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مفكوك نموذجي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "أكمل المفكوك النموذجي للعدد 7418."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أكمل المفكوك النموذجي بالعدد المناسب مكان النقاط: $7418 = (7 \\times \\ldots) + (4 \\times 100) + (1 \\times 10) + 8$",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1000",
+      "misconceptionSignatures": [
+        {
+          "value": "10000",
+          "id": "MISC-KITABA-RANK-NAME"
+        },
+        {
+          "value": "100",
+          "id": "MISC-KITABA-RANK-NAME"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما مرتبة الرقم 7 في العدد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل رقم يُضرب في قيمة مرتبته: 1 للآحاد، 10 للعشرات…"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب مجموع الحدود."
+        }
+      ],
+      "feedback": {
+        "correct": "الرقم 7 هو رقم الآلاف، فنضربه في 1000.",
+        "incorrect": "كل رقم يُضرب في قيمة مرتبته؛ حدّد مرتبة الرقم انطلاقا من رقم الآحاد."
+      },
+      "solution": {
+        "lines": [
+          "الرقم 7 هو رقم الآلاف في 7418.",
+          "$7418 = 7 \\times 1000 + 4 \\times 100 + 1 \\times 10 + 8$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أكمل المفكوك النموذجي بالعدد المناسب مكان النقاط: $7418 = (7 \\times 1000) + (4 \\times 100) + (1 \\times \\ldots) + 8$",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "100",
+          "id": "MISC-KITABA-RANK-NAME"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما مرتبة الرقم 1 في العدد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل رقم يُضرب في قيمة مرتبته: 1 للآحاد، 10 للعشرات…"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب مجموع الحدود."
+        }
+      ],
+      "feedback": {
+        "correct": "الرقم 1 هو رقم العشرات، فنضربه في 10.",
+        "incorrect": "كل رقم يُضرب في قيمة مرتبته؛ حدّد مرتبة الرقم انطلاقا من رقم الآحاد."
+      },
+      "solution": {
+        "lines": [
+          "الرقم 1 هو رقم العشرات في 7418.",
+          "$7418 = 7 \\times 1000 + 4 \\times 100 + 1 \\times 10 + 8$"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,405 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muadalat-l4-007",
+  "lessonCode": "wadiya-idmajiya-muadalat",
+  "level": 4,
+  "metadata": {
+    "title": "نشر، تحليل، معادلة ومتراجحة",
+    "estimatedMinutes": 17,
+    "tags": [
+      "نشر",
+      "تحليل",
+      "معادلة جداء معدوم",
+      "متراجحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-muadalat_P1",
+      "modelledOn": "ex-41"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $F$ حيث:",
+    "formulas": [
+      "F = (2x + 1)^2 - (2x + 1)(x + 5)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انشر وبسّط العبارة $F$ .",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $F$ على الشكل $ax^2 + bx + c$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طبّق المتطابقات الشهيرة، ثم انشر الجداءات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى الإشارة «−» أمام قوس: تتغيّر إشارة كل حد من نشره."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 2$ .",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$F = (2x + 1)^2 - (2x + 1)(x + 5)$",
+          "ننشر كل جداء (أو مربع)، ثم نجمع الحدود المتشابهة: حدود $x^2$ تعطي $2x^2$"
+        ],
+        "result": "a = 2"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $F$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "-7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العدد المطلوب في الشكل المبسّط، بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$b = -7$ .",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "نجمع حدود $x$ من النشر السابق: $-7x$"
+        ],
+        "result": "b = -7"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "العدد $c$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $F$ على الشكل $ax^2 + bx + c$ : اكتب العدد $c$ فقط",
+      "expectedAnswer": "-4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العدد المطلوب في الشكل المبسّط، بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$c = -4$ .",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$F = (2x + 1)^2 - (2x + 1)(x + 5)$",
+          "$F = 4x^2 + 4x + 1 - (2x^2 + 10x + x + 5)$",
+          "$F = 4x^2 + 4x + 1 - 2x^2 - 11x - 5$",
+          "إذن $F = 2x^2 - 7x - 4$"
+        ],
+        "result": "F = 2x^2 - 7x - 4"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "lead": "حلّل العبارة $F$ إلى جداء عاملين من الدرجة الأولى.",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب على الشكل $(2x + 1)(x + n)$ : اكتب العدد $n$ فقط (قد يكون سالبًا)",
+      "expectedAnswer": "-4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن العامل المشترك $(2x + 1)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرج العامل المشترك، ثم بسّط ما بين القوسين الكبيرين بإشاراته."
+        }
+      ],
+      "feedback": {
+        "correct": "$n = -4$ .",
+        "incorrect": "أخرج العامل المشترك من كل حد، ثم بسّط ما بين القوسين الكبيرين بإشاراته."
+      },
+      "solution": {
+        "lines": [
+          "$F = (2x + 1)\\left[(2x + 1) - (x + 5)\\right]$",
+          "$F = (2x + 1)(2x + 1 - x - 5)$",
+          "إذن $F = (2x + 1)(x - 4)$"
+        ],
+        "result": "F = (2x + 1)(x - 4)"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "lead": "حلّ المعادلة: $F = 0$ .",
+      "statement": "الحلّ الأصغر:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "-1/2",
+      "misconceptionSignatures": [
+        {
+          "value": "1/2",
+          "id": "MISC-JIDAA-ISHARA-JADHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يكون جداء معدومًا إذا كان أحد عامليه على الأقل معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلتين من الدرجة الأولى، ثم حلّ كل واحدة منهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الحلّين، ثم اكتب الأصغر منهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = -\\dfrac{1}{2}$ .",
+        "incorrect": "كل عامل معدوم يعطي معادلة من الدرجة الأولى: انقل العدد ثم اقسم على معامل $x$ بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $(2x + 1)(x - 4) = 0$",
+          "يكون جداء معدومًا إذا كان أحد عامليه على الأقل معدومًا.",
+          "من العامل الذي يعطي الحل الأصغر:",
+          "$2x + 1 = 0$",
+          "$2x = -1$",
+          "$x = \\dfrac{-1}{2}$"
+        ],
+        "result": "x = -\\dfrac{1}{2}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "الحلّ الأكبر:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "-4",
+          "id": "MISC-JIDAA-ISHARA-JADHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة الثانية من الدرجة الأولى، ثم قارن الحلّين."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 4$ .",
+        "incorrect": "كل عامل معدوم يعطي معادلة من الدرجة الأولى: انقل العدد ثم اقسم على معامل $x$ بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $(2x + 1)(x - 4) = 0$",
+          "يعني أنّ: $2x + 1 = 0$ أو $x - 4 = 0$",
+          "أي: $x = -\\dfrac{1}{2}$ أو $x = 4$",
+          "إذن للمعادلة حلّان هما $-\\dfrac{1}{2}$ و $4$ ."
+        ],
+        "result": "x = 4"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "lead": "حلّ المتراجحة: $F > 2x(x - 3)$ .",
+      "statement": "حدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x < k$ أو $x \\leqslant k$ أو $x > k$ أو $x \\geqslant k$ : اكتب العدد $k$ فقط (عدد صحيح أو كسر a/b، قد يكون سالبًا)",
+      "expectedAnswer": "-4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر، كما في حل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إضافة عدد إلى الطرفين أو طرحه منهما لا تغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحدّ هو العدد الذي يحقّق المعادلة المرفقة (نضع «=» مكان رمز المتباينة): اقسم في الأخير على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "حدّ الحلول هو $k = -4$ .",
+        "incorrect": "أعد الحل سطرًا سطرًا: العملية نفسها على الطرفين، ثم القسمة على معامل $x$ في الأخير."
+      },
+      "solution": {
+        "lines": [
+          "حدّ الحلول هو حلّ المعادلة المرفقة: $2x^2 - 7x - 4 = 2x(x - 3)$",
+          "$2x^2 - 7x - 4 = 2x^2 - 6x$",
+          "$-7x + 6x = 4$",
+          "$-x = 4$",
+          "$x = \\dfrac{4}{-1}$",
+          "إذن حدّ الحلول هو $-4$ ."
+        ],
+        "result": "k = -4"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q8",
+      "step": "04",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < -4$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$x \\leqslant -4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        },
+        {
+          "id": "C",
+          "content": "$x > -4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-SALIB-BILA-QALB"
+        },
+        {
+          "id": "D",
+          "content": "$x \\geqslant -4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-SALIB-BILA-QALB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارة معامل $x$ في آخر سطر قبل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد موجب تحافظ على الاتجاه، والقسمة على عدد سالب تغيّره."
+        }
+      ],
+      "feedback": {
+        "correct": "$x < -4$ .",
+        "incorrect": "تتبّع سطور الحل: الاتجاه يتغيّر فقط عند الضرب أو القسمة على عدد سالب، ونوع المتباينة (تامة أو غير تامة) لا يتغيّر أبدًا."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $2x^2 - 7x - 4 > 2x(x - 3)$",
+          "$2x^2 - 7x - 4 > 2x^2 - 6x$",
+          "$-7x + 6x > 4$",
+          "$-x > 4$",
+          "نقسم الطرفين على العدد السالب $-1$ فنغيّر اتجاه المتباينة:",
+          "$\\dfrac{-x}{-1} < \\dfrac{4}{-1}$",
+          "إذن حلول المتراجحة هي كل قيم $x$ الأصغر تماما من $-4$ ."
+        ],
+        "result": "x < -4"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

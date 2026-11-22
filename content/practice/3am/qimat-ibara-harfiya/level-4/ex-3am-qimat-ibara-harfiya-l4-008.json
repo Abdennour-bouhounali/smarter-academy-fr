@@ -1,0 +1,205 @@
+{
+  "id": "ex-3am-qimat-ibara-harfiya-l4-008",
+  "lessonCode": "qimat-ibara-harfiya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — مساحة مربّع ونصف قرص",
+    "estimatedMinutes": 12,
+    "tags": [
+      "العدد pi",
+      "قيمة مضبوطة",
+      "قيمة مقرّبة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "شكل مكوّن من مربّع طول ضلعه $x$ سنتيمتر ونصف قرص قطره ضلع من أضلاعه. مساحته بالسنتيمتر المربع: $S = x^2 + \\dfrac{1}{2}\\pi\\left(\\dfrac{x}{2}\\right)^2$ ، ونأخذ $x = 6$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "اكتب القيمة المضبوطة لـ $S$ من أجل $x = 6$ على الشكل $a + k\\pi$ : العدد $a$ :",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "36",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة المضبوطة هي $36 + 4{,}5\\pi$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$S = 6^2 + \\dfrac{1}{2} \\times \\pi \\times 3^2$",
+          "$S = 36 + \\dfrac{9}{2}\\pi$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اكتب القيمة المضبوطة لـ $S$ من أجل $x = 6$ على الشكل $a + k\\pi$ : العدد $k$ :",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "4.5",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة المضبوطة هي $36 + 4{,}5\\pi$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$S = 6^2 + \\dfrac{1}{2} \\times \\pi \\times \\left(\\dfrac{6}{2}\\right)^2$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أعط قيمة مقرّبة لـ $S$ من أجل $x = 6$ إلى $0{,}01$ بالنقصان (القيمة المقرّبة الافتراضية) .",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "50.13",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة المقرّبة هي $50{,}13$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$S = 36 + 4{,}5\\pi \\approx 50{,}13$ (بالنقصان إلى $0{,}01$ )"
+        ],
+        "result": "S \\approx 50{,}13"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أعط قيمة مقرّبة لـ $S$ من أجل $x = 6$ إلى $0{,}01$ بالتدوير إلى أقرب قيمة .",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "50.14",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة المقرّبة هي $50{,}14$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$S = 36 + 4{,}5\\pi \\approx 50{,}14$ (بالتدوير إلى $0{,}01$ )"
+        ],
+        "result": "S \\approx 50{,}14"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

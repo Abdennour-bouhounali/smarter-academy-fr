@@ -1,0 +1,230 @@
+{
+  "id": "ex-2am-jida-kasrayn-l4-008",
+  "lessonCode": "jida-kasrayn",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — جداء عدد عشري في كسر ثمّ الكتابة العشريّة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "عدد عشري",
+      "كتابة عشريّة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العدد $R = \\dfrac{3}{8} \\times 2{,}4$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $R$ على شكل كسر غير قابل للاختزال .",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "9/10",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "3/8",
+          "id": "MISC-JIDAKASR-BOTHMUL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لاحظ العدد الذي يضرب الكسر: هل هو طبيعي أم عشري؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب العدد في البسط وأبقِ المقام كما هو: $n \\times \\dfrac{a}{b} = \\dfrac{n \\times a}{b}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل الناتج إن أمكن (والعدد العشري يُكتب كسرًا عشريًا أو يُضرب في البسط مباشرة)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9}{10}$ .",
+        "incorrect": "العدد يُضرب في البسط وحده ولا يُضرب في المقام، ثمّ اختزل الناتج."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{8} \\times 2{,}4 = \\dfrac{2{,}4 \\times 3}{8} = \\dfrac{7{,}2}{8}$ .",
+          "$\\dfrac{7{,}2}{8} = \\dfrac{72}{80}$ .",
+          "نختزل بالقسمة على $8$ : $\\dfrac{72}{80} = \\dfrac{9}{10}$ ."
+        ],
+        "result": "\\dfrac{9}{10}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اكتب العدد $R = \\dfrac{9}{10}$ على شكل عدد عشري .",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "0.9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المعطيات ثمّ حدّد العملية المناسبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب خطوة بخطوة وراجع الوحدة في الناتج."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}9$ .",
+        "incorrect": "راجع المعطيات والعمليّة ثمّ أعد الحساب."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{9}{10} = 0{,}9$ ."
+        ],
+        "result": "0{,}9"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "هل العدد $0{,}9$ هو القيمة المضبوطة للجداء $\\dfrac{3}{8} \\times 2{,}4$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا ثمّ تحقّق منها بحساب بسيط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الناتج بمقام مشترك ثمّ قارنه بما قيل."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم : $\\dfrac{9}{10} = 0{,}9$ بالضبط .",
+        "incorrect": "احسب ثمّ قارن بدقّة قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{8} \\times 2{,}4 = \\dfrac{9}{10} = 0{,}9$ : القسمة تتوقّف ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "احسب $1{,}5 \\times \\dfrac{4}{9}$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "2/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "4/9",
+          "id": "MISC-JIDAKASR-BOTHMUL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لاحظ العدد الذي يضرب الكسر: هل هو طبيعي أم عشري؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب العدد في البسط وأبقِ المقام كما هو: $n \\times \\dfrac{a}{b} = \\dfrac{n \\times a}{b}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل الناتج إن أمكن (والعدد العشري يُكتب كسرًا عشريًا أو يُضرب في البسط مباشرة)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2}{3}$ .",
+        "incorrect": "العدد يُضرب في البسط وحده ولا يُضرب في المقام، ثمّ اختزل الناتج."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}5 \\times \\dfrac{4}{9} = \\dfrac{1{,}5 \\times 4}{9} = \\dfrac{6}{9}$ .",
+          "نختزل بالقسمة على $3$ : $\\dfrac{6}{9} = \\dfrac{2}{3}$ ."
+        ],
+        "result": "\\dfrac{2}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

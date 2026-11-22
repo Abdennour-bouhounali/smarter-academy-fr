@@ -1,0 +1,198 @@
+{
+  "id": "ex-2am-talim-nuqta-mustawi-l3-010",
+  "lessonCode": "talim-nuqta-mustawi",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مستطيل وتبرير",
+    "estimatedMinutes": 11,
+    "tags": [
+      "مستطيل",
+      "مساحة",
+      "تبرير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس مبدؤه $O$ ، نعلّم $A(-4\\,;\\,-1)$ و $B(-4\\,;\\,3)$ و $C(2\\,;\\,3)$ ثلاثة رؤوس متتالية لمستطيل $ABCD$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن النقطة $D$ بحيث يكون الرباعي $ABCD$ مستطيلًا، ثم اكتب إحداثيتيها.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "2",
+        "y": "-1"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "-1",
+            "y": "2"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNAXIS",
+          "value": {
+            "x": "2",
+            "y": "1"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNLEFT",
+          "value": {
+            "x": "-2",
+            "y": "-1"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في مستطيل أضلاعه توازي المحورين، لكلّ ضلعين متقابلين الفاصلة نفسها أو الترتيب نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الرأس الرابع يأخذ فاصلة أحد الرؤوس المعلومة وترتيب رأس آخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارسم الرؤوس المعلومة على الشبكة وأكمل الشكل ثم اقرأ الرأس الرابع."
+        }
+      ],
+      "feedback": {
+        "correct": "$D(2\\,;\\,-1)$ .",
+        "incorrect": "في مستطيل أضلاعه توازي المحورين، الرأس الرابع يأخذ فاصلة رأس وترتيب رأس آخر من الرؤوس المعلومة."
+      },
+      "solution": {
+        "lines": [
+          "نرسم الرؤوس المعلومة على الشبكة ونكمل المستطيل",
+          "$D(2\\,;\\,-1)$"
+        ],
+        "result": "D(2\\,;\\,-1)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما مساحة المستطيل $ABCD$ بعدّ وحدات المساحة؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد وحدات المساحة",
+      "expectedAnswer": "24",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-AREASUM",
+          "value": "10"
+        },
+        {
+          "id": "MISC-NUQTA2-AREAPERIM",
+          "value": "20"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عُدّ وحدات الطول ثم وحدات العرض على الشبكة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحة المستطيل جداء الطول في العرض."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تجمع الطول مع العرض، وتذكّر الوحدة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "المساحة $24$ .",
+        "incorrect": "عُدّ وحدات الطول ثم وحدات العرض على الشبكة، ثم اضرب أحدهما في الآخر، ولا تجمعهما."
+      },
+      "solution": {
+        "lines": [
+          "بعدا المستطيل: $4$ و $6$ وحدات",
+          "المساحة $4 \\times 6 = 24$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "برّر : لماذا تكون للنقطتين $C$ و $D$ الفاصلة نفسها؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب ما تعرفه عن الإحداثيتين وأيّهما تُكتب أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل كلمتي الفاصلة والترتيب في جملتك."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مثّل الوضع على شبكة صغيرة ثم صغ ملاحظتك."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن جوابك بالحل النموذجي، ثم قيّم نفسك.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به جوابك فقرة فقرة."
+      },
+      "solution": {
+        "lines": [
+          "$[CD]$ ضلع مقابل للضلع $[AB]$ ، وهذا الأخير عمودي على محور الفواصل.",
+          "كلّ نقط ضلع عمودي على محور الفواصل لها الفاصلة نفسها.",
+          "إذن $C$ و $D$ لهما الفاصلة نفسها."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

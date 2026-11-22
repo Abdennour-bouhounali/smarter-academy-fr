@@ -1,0 +1,175 @@
+{
+  "id": "ex-4am-muadalat-x-murabba-l2-005",
+  "lessonCode": "muadalat-x-murabba",
+  "level": 2,
+  "metadata": {
+    "title": "المعادلتان x² = 0 و x² = 0,25",
+    "estimatedMinutes": 4,
+    "tags": [
+      "عدد الحلول",
+      "الصفر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_muadalat-x-murabba_P1",
+      "modelledOn": "know-3",
+      "adaptedFrom": "ex-4am-muadalat-x-murabba-l2-005"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعتبر المعادلتين $x^2 = 0$ و $x^2 = 0{,}25$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن عدد حلول المعادلة $x^2 = 0$.",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-HALL-SIFR"
+        },
+        {
+          "value": "0",
+          "id": "MISC-HALL-SIFR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما هو العدد الذي مربعه 0؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل لهذا العدد معاكس مختلف عنه؟"
+        }
+      ],
+      "feedback": {
+        "correct": "المعادلة $x^2 = 0$ تقبل حلا واحدا هو 0.",
+        "incorrect": "العدد 0 هو معاكس نفسه: كم عددًا مربعه 0؟"
+      },
+      "solution": {
+        "lines": [
+          "$x^2 = 0$ يعني $x = 0$",
+          "إذن المعادلة تقبل حلا واحدا."
+        ],
+        "result": "1"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "حل المعادلة $x^2 = 0{,}25$.",
+      "statement": "الحل السالب:",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة)",
+      "expectedAnswer": "-0.5",
+      "misconceptionSignatures": [
+        {
+          "value": "-0.05",
+          "id": "MISC-JIDHR-FASILA"
+        },
+        {
+          "value": "-0.125",
+          "id": "MISC-HALL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن عدد عشري مربعه $0{,}25$: فكّر في $5^2$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد الأرقام بعد الفاصلة في المربع ضعف عددها في العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم، هذا هو الحل السالب: للمعادلة حلان متعاكسان.",
+        "incorrect": "الحلان عددان متعاكسان مربع كل منهما هو الطرف الثاني بعد عزل $x^2$: خذ السالب منهما."
+      },
+      "solution": {
+        "lines": [
+          "$x^2 = 0{,}25$ يعني $x^2 = 0{,}5^2$",
+          "بالتالي $x = 0{,}5$ أو $x = -0{,}5$"
+        ],
+        "result": "x = -0{,}5 \\quad ; \\quad x = 0{,}5"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "الحل الموجب:",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة)",
+      "expectedAnswer": "0.5",
+      "misconceptionSignatures": [
+        {
+          "value": "0.05",
+          "id": "MISC-JIDHR-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن عدد عشري مربعه $0{,}25$: فكّر في $5^2$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد الأرقام بعد الفاصلة في المربع ضعف عددها في العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم، وهو معاكس الحل السالب.",
+        "incorrect": "الحل الموجب هو معاكس الحل السالب: مربعه هو الطرف الثاني بعد عزل $x^2$."
+      },
+      "solution": {
+        "lines": [
+          "$x^2 = 0{,}25$ يعني $x^2 = 0{,}5^2$",
+          "بالتالي $x = 0{,}5$ أو $x = -0{,}5$"
+        ],
+        "result": "x = -0{,}5 \\quad ; \\quad x = 0{,}5"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,219 @@
+{
+  "id": "ex-3am-jam-tarh-kasrayn-l2-001",
+  "lessonCode": "jam-tarh-kasrayn",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مجموع ثلاثة كسور ثمّ قسمة على فرق",
+    "estimatedMinutes": 12,
+    "tags": [
+      "جمع كسرين",
+      "تعليل"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 1,
+      "file": "3am-s1-104",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن $E = \\dfrac{5}{12} + \\dfrac{7}{6} + \\dfrac{9}{4}$ و $D = \\dfrac{9}{10} \\div \\left( \\dfrac{5}{6} - \\dfrac{8}{15} \\right)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $E = \\dfrac{5}{12} + \\dfrac{7}{6} + \\dfrac{9}{4}$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_jam-tarh-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "23/6",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "21/22",
+          "id": "MISC-JAMTARH-ACROSS"
+        },
+        {
+          "value": "7/4",
+          "id": "MISC-JAMTARH-NOSCALE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليّة المطلوبة؟ وهل المقامات متساوية أو أحدها مضاعف لغيره؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب مضاعفات المقام الأكبر حتى تجد أوّل مضاعف يقبل القسمة على المقام الآخر، فهو مقامك المشترك."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ حدّ بالمقام المشترك، ثمّ اجمع البسوط أو اطرحها، ثمّ اختزل إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = \\dfrac{23}{6}$ .",
+        "incorrect": "اكتب الكسرين بمقام مشترك قبل أن تجمع أو تطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نبحث عن أصغر مضاعف مشترك للمقامات $12$ و $6$ و $4$ : إنّه $12$ .",
+          "$\\dfrac{7}{6} = \\dfrac{7 \\times 2}{6 \\times 2} = \\dfrac{14}{12}$ .",
+          "$\\dfrac{9}{4} = \\dfrac{9 \\times 3}{4 \\times 3} = \\dfrac{27}{12}$ .",
+          "$E = \\dfrac{5 + 14 + 27}{12} = \\dfrac{46}{12} = \\dfrac{23}{6}$ (اختزلنا بالقاسم $2$) ."
+        ],
+        "result": "E = \\dfrac{23}{6}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "علّل أنّ العدد $E$ الذي وجدته لا يقبل الاختزال.",
+      "learningPoints": [
+        {
+          "code": "3am_jam-tarh-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثمّ اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجب أن تبرّره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اذكر المقام الذي اخترته ولماذا يصلح، ثمّ اكتب خطوات الحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "تطابق برهانك مع الحل النموذجي .",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثمّ قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "$E = \\dfrac{23}{6}$ .",
+          "العدد $23$ أوّلي، وهو لا يقسم $6$ ، فالقاسم المشترك الأكبر للبسط والمقام هو $1$ .",
+          "إذن الكسر $\\dfrac{23}{6}$ غير قابل للاختزال."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب $\\dfrac{5}{6} - \\dfrac{8}{15}$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_jam-tarh-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "3/10",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليّة المطلوبة؟ وهل المقامات متساوية أو أحدها مضاعف لغيره؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب مضاعفات المقام الأكبر حتى تجد أوّل مضاعف يقبل القسمة على المقام الآخر، فهو مقامك المشترك."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ حدّ بالمقام المشترك، ثمّ اجمع البسوط أو اطرحها، ثمّ اختزل إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{10}$ .",
+        "incorrect": "اكتب الكسرين بمقام مشترك قبل أن تجمع أو تطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نبحث عن أصغر مضاعف مشترك للمقامات $6$ و $15$ : إنّه $30$ .",
+          "$\\dfrac{5}{6} = \\dfrac{5 \\times 5}{6 \\times 5} = \\dfrac{25}{30}$ .",
+          "$\\dfrac{8}{15} = \\dfrac{8 \\times 2}{15 \\times 2} = \\dfrac{16}{30}$ .",
+          "$\\dfrac{25 - 16}{30} = \\dfrac{9}{30} = \\dfrac{3}{10}$ (اختزلنا بالقاسم $3$) ."
+        ],
+        "result": "\\dfrac{3}{10}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "بيّن أنّ $D = 3$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jam-tarh-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثمّ اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجب أن تبرّره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اذكر المقام الذي اخترته ولماذا يصلح، ثمّ اكتب خطوات الحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "تطابق برهانك مع الحل النموذجي .",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثمّ قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{6} - \\dfrac{8}{15} = \\dfrac{25}{30} - \\dfrac{16}{30} = \\dfrac{9}{30} = \\dfrac{3}{10}$ .",
+          "$D = \\dfrac{9}{10} \\div \\dfrac{3}{10} = \\dfrac{9}{10} \\times \\dfrac{10}{3} = \\dfrac{90}{30} = 3$ ."
+        ],
+        "result": "D = 3"
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

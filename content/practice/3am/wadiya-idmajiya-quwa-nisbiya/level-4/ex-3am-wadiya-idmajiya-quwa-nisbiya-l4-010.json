@@ -1,0 +1,209 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-quwa-nisbiya-l4-010",
+  "lessonCode": "wadiya-idmajiya-quwa-nisbiya",
+  "level": 4,
+  "metadata": {
+    "title": "تضاعف خانات لوحة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "قوى العدد 2",
+      "رتبة القدر"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ict",
+      "page": 53,
+      "section": "أوظّف تكنولوجيات الإعلام والاتصال"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين الأوّل",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نملأ لوحة بالتضاعف المتتالي."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "لوحة خانات: نضع في الخانة الأولى حبّة واحدة وفي كل خانة تالية ضعف ما قبلها. كم حبّة في الخانة الثامنة ؟ (أي $2^{7}$)",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "128",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة النتيجة، وكم عاملًا في الجداء ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد العوامل السالبة الزوجي يعطي ناتجًا موجبًا؛ والأسّ السالب يعني مقلوب القوة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الإشارة ثمّ احسب القيمة."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $128$ .",
+        "incorrect": "انتبه إلى إشارة القوة وإلى الأسّ السالب، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$2^{7}$ = $128$ ."
+        ],
+        "result": "128"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم حبّة في الخانة 11 ؟ (أي $2^{10}$)",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "1024",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة النتيجة، وكم عاملًا في الجداء ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد العوامل السالبة الزوجي يعطي ناتجًا موجبًا؛ والأسّ السالب يعني مقلوب القوة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الإشارة ثمّ احسب القيمة."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $1024$ .",
+        "incorrect": "انتبه إلى إشارة القوة وإلى الأسّ السالب، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$2^{10}$ = $1024$ ."
+        ],
+        "result": "1024"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اكتب $2^{6} \\times 2^{4}$ على الشكل $2^{n}$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية بين القوتين: جداء أم حاصل قسمة أم قوة قوة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الجداء يجمع الأسّين، والقسمة تطرحهما، وقوة القوة تضربهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الأسّ الجديد ثمّ تحقّق بحالة بسيطة."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $10$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$2^{6} \\times 2^{4}$ = $2^{10}$ ."
+        ],
+        "result": "10"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "علمًا أنّ $2^{20} = 1\\,048\\,576$ ، رتبة قدره $a' \\times 10^{6}$ : ما قيمة $a'$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "العدد الصحيح $a'$ (من 1 إلى 9)",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-WQ-ROUND"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أوّلًا الكتابة العلمية للعدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ندوّر $a$ إلى الوحدة ونُبقي القوة $10^{n}$ ؛ إذا صار المدوّر $10$ فهو $1 \\times 10^{n+1}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ المدوّر عدد صحيح من $1$ إلى $9$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $1$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الكتابة العلمية $2^{20}$ = $1{,}048576 \\times 10^{6}$ .",
+          "مدوّر $1{,}048576$ إلى الوحدة هو $1$ ، فرتبة القدر $1 \\times 10^{6}$ ."
+        ],
+        "result": "1"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

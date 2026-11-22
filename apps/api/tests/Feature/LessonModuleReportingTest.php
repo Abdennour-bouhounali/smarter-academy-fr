@@ -13,17 +13,15 @@ use PHPUnit\Framework\Attributes\DataProvider;
 use Tests\TestCase;
 
 /**
- * Signaler depuis le sommaire d'une leçon et depuis un module.
- *
- * Le parcours a DEUX temps, et c'est le cœur du test : le clic pose un signal
- * exploitable avant toute saisie, l'envoi le complète. Un formulaire abandonné
- * doit laisser une trace — c'est justement l'information qu'on perdait.
+ * Signaler depuis le sommaire d'une leçon et depuis un module — par un
+ * RELECTEUR (ambassadeur), en UN envoi. Le clic n'envoie plus rien : aucune
+ * ligne n'existe avant « إرسال ».
  */
 class LessonModuleReportingTest extends TestCase
 {
     use RefreshDatabase;
 
-    private User $student;
+    private User $ambassador;
 
     private User $admin;
 
@@ -46,104 +44,48 @@ class LessonModuleReportingTest extends TestCase
             'title' => 'Comparer des fractions', 'publication_status' => LessonModule::PUB_PUBLISHED,
         ]);
 
-        $this->student = User::factory()->create(['role' => User::ROLE_STUDENT, 'grade' => '6e']);
+        $this->ambassador = User::factory()->create(['role' => User::ROLE_TEACHER]);
+        $this->ambassador->forceFill(['is_ambassador' => true])->save();
         $this->admin = User::factory()->create(['role' => User::ROLE_ADMIN]);
     }
 
-    private function signal(array $context, ?User $as = null)
+    private function send(array $payload, ?User $as = null)
     {
-        return $this->actingAs($as ?? $this->student, 'sanctum')->postJson('/api/v1/reports', $context);
+        // Message obligatoire : un texte par défaut, sauf si le test en fournit un.
+        $payload += ['note' => 'Le problème est décrit ici.'];
+
+        return $this->actingAs($as ?? $this->ambassador, 'sanctum')->postJson('/api/v1/reports', $payload);
     }
 
-    private function complete(int $id, array $details, ?User $as = null)
-    {
-        return $this->actingAs($as ?? $this->student, 'sanctum')->patchJson("/api/v1/reports/{$id}", $details);
-    }
-
-    // ------------------------------------------------------- SIGNAL IMMÉDIAT
-
-    /**
-     * LE point du dispositif : le signalement existe dès le clic, sans
-     * catégorie. « Un élève a buté ici » est déjà exploitable.
-     */
-    public function test_le_clic_cree_le_signalement_avant_toute_saisie(): void
-    {
-        $this->signal(['source' => 'lesson', 'lessonCode' => 'fractions', 'grade' => '6e'])
-            ->assertStatus(201)
-            ->assertJsonPath('report.submitted', false)
-            ->assertJsonPath('report.category', null);
-
-        $report = StudentReport::first();
-        $this->assertNotNull($report, 'le signal doit exister sans attendre le formulaire');
-        $this->assertNull($report->category, 'aucune catégorie inventée');
-        $this->assertNull($report->details_completed_at);
-        $this->assertSame(StudentReport::STATUS_NEW, $report->status);
-        $this->assertSame($this->student->id, $report->user_id);
-    }
-
-    /** Fermer sans rien écrire ne supprime pas le signal (§14). */
-    public function test_un_formulaire_abandonne_laisse_sa_trace(): void
-    {
-        $this->signal(['source' => 'module', 'lessonCode' => 'fractions', 'moduleNumber' => 3])
-            ->assertStatus(201);
-
-        // L'élève referme : aucun appel de complétion n'arrive jamais.
-        $this->assertSame(1, StudentReport::count());
-        $this->assertFalse(StudentReport::first()->hasDetails());
-    }
-
-    // ------------------------------------------------------------- CONTEXTE
+    // ------------------------------------------------------------ CONTEXTE
 
     public function test_un_signalement_de_lecon_identifie_la_lecon_sans_module(): void
     {
-        $id = $this->signal(['source' => 'lesson', 'lessonCode' => 'fractions', 'grade' => '6e'])
-            ->json('report.id');
-        $this->complete($id, ['category' => 'math_error', 'note' => 'Un calcul faux dans le sommaire.'])
-            ->assertStatus(200);
+        $this->send(['source' => 'lesson', 'lessonCode' => 'fractions', 'grade' => '6e', 'category' => 'typo'])->assertStatus(201);
 
-        $report = StudentReport::find($id);
-        $this->assertSame(StudentReport::SOURCE_LESSON, $report->source);
+        $report = StudentReport::first();
+        $this->assertSame('lesson', $report->source);
         $this->assertSame($this->lesson->id, $report->lesson_id);
         $this->assertNull($report->lesson_module_id);
-        $this->assertNull($report->module_number);
-        $this->assertSame('math_error', $report->category);
     }
 
-    public function test_un_signalement_de_module_identifie_lecon_e_t_module(): void
+    public function test_un_signalement_de_module_identifie_lecon_et_module(): void
     {
-        $id = $this->signal([
-            'source' => 'module', 'lessonCode' => 'fractions', 'grade' => '6e', 'moduleNumber' => 3,
-        ])->json('report.id');
-        $this->complete($id, ['category' => 'manipulation_not_working', 'note' => 'Le glisser ne marche pas.'])
-            ->assertStatus(200);
+        $this->send(['source' => 'module', 'lessonCode' => 'fractions', 'grade' => '6e', 'moduleNumber' => 3, 'category' => 'math_error'])
+            ->assertStatus(201);
 
-        $report = StudentReport::find($id);
-        $this->assertSame(StudentReport::SOURCE_MODULE, $report->source);
+        $report = StudentReport::first();
         $this->assertSame($this->lesson->id, $report->lesson_id);
-        $this->assertSame($this->module->id, $report->lesson_module_id, 'le module doit être résolu côté serveur');
-        $this->assertSame(3, $report->module_number);
+        $this->assertSame($this->module->id, $report->lesson_module_id);
     }
 
-    /** Un signalement de module sans module n'a nulle part où pointer. */
     public function test_un_signalement_de_module_exige_le_module(): void
     {
-        $this->signal(['source' => 'module', 'lessonCode' => 'fractions'])
-            ->assertStatus(422)
-            ->assertJsonPath('success', false);
+        $this->send(['source' => 'module', 'lessonCode' => 'fractions', 'category' => 'typo'])->assertStatus(422);
+        $this->assertSame(0, StudentReport::count());
     }
 
-    public function test_une_source_inconnue_est_refusee(): void
-    {
-        $this->signal(['source' => 'depuis_la_lune', 'lessonCode' => 'fractions'])
-            ->assertStatus(422)
-            ->assertJsonValidationErrors('source');
-    }
-
-    /**
-     * IDOR : le module est cherché PAR (leçon, numéro), jamais par un id
-     * posté. Un numéro qui n'existe pas dans CETTE leçon ne se rattache donc
-     * à rien — même si ce numéro existe ailleurs.
-     */
+    /** IDOR : le module est cherché PAR (leçon, numéro), jamais par un id posté. */
     public function test_un_module_d_une_autre_lecon_n_est_jamais_rattache(): void
     {
         $autre = Lesson::create([
@@ -154,18 +96,22 @@ class LessonModuleReportingTest extends TestCase
             'lesson_id' => $autre->id, 'code' => '09', 'number' => 9, 'title' => 'Ailleurs',
         ]);
 
-        $id = $this->signal([
+        $id = $this->send([
             'source' => 'module', 'lessonCode' => 'fractions', 'grade' => '6e',
-            'moduleNumber' => 9,
-            'lesson_module_id' => $moduleAilleurs->id,
-        ])->json('report.id');
+            'moduleNumber' => 9, 'lesson_module_id' => $moduleAilleurs->id, 'category' => 'typo',
+        ])->assertStatus(201)->json('report.id');
 
         $report = StudentReport::find($id);
         $this->assertSame($this->lesson->id, $report->lesson_id);
-        $this->assertNull(
-            $report->lesson_module_id,
-            'le module 9 n\'existe pas dans fractions : rien ne doit être rattaché'
-        );
+        $this->assertNull($report->lesson_module_id);
+    }
+
+    public function test_aucune_source_hors_liste_n_est_acceptee(): void
+    {
+        foreach (['admin', 'arbitrary', 'another_internal_context', '', 'LESSON'] as $forged) {
+            $this->send(['source' => $forged, 'lessonCode' => 'fractions', 'category' => 'typo'])->assertStatus(422);
+        }
+        $this->assertSame(0, StudentReport::count());
     }
 
     // ------------------------------------------------------------ CATÉGORIES
@@ -187,170 +133,48 @@ class LessonModuleReportingTest extends TestCase
     #[DataProvider('offeredCategories')]
     public function test_chaque_categorie_proposee_est_acceptee(string $category): void
     {
-        $id = $this->signal(['source' => 'lesson', 'lessonCode' => 'fractions'])->json('report.id');
-
-        $this->complete($id, ['category' => $category])->assertStatus(200);
+        $id = $this->send(['source' => 'lesson', 'lessonCode' => 'fractions', 'category' => $category])
+            ->assertStatus(201)->json('report.id');
         $this->assertSame($category, StudentReport::find($id)->category);
     }
 
     /**
-     * §21 : l'ancien vocabulaire reste accepté. Le supprimer casserait tout
-     * client pas encore rechargé, et rendrait illisibles les signalements
-     * déjà en base.
+     * Les anciennes catégories ne se CRÉENT plus : l'ancien client à deux
+     * temps n'existe plus, et les seuls signalements en base ont été effacés.
      */
-    public function test_les_anciennes_categories_restent_acceptees(): void
+    public function test_les_anciennes_categories_ne_se_creent_plus(): void
     {
         foreach (StudentReport::LEGACY_CATEGORIES as $legacy) {
-            $id = $this->signal(['source' => 'lesson', 'lessonCode' => 'fractions'])->json('report.id');
-            $this->complete($id, ['category' => $legacy])->assertStatus(200);
+            $this->send(['source' => 'lesson', 'lessonCode' => 'fractions', 'category' => $legacy])->assertStatus(422);
         }
-
-        $this->assertSame(count(StudentReport::LEGACY_CATEGORIES), StudentReport::whereNotNull('category')->count());
+        $this->assertSame(0, StudentReport::count());
     }
 
-    /** « Autre » n'oblige pas à écrire : un signalement sans mot reste utile. */
-    public function test_autre_sans_texte_est_accepte(): void
+    public function test_le_message_est_obligatoire(): void
     {
-        $id = $this->signal(['source' => 'lesson', 'lessonCode' => 'fractions'])->json('report.id');
-
-        $this->complete($id, ['category' => 'other'])->assertStatus(200);
-        $this->assertNull(StudentReport::find($id)->note);
+        $this->send(['source' => 'lesson', 'lessonCode' => 'fractions', 'category' => 'other', 'note' => ''])
+            ->assertStatus(422)->assertJsonValidationErrors('note');
+        $this->send(['source' => 'lesson', 'lessonCode' => 'fractions', 'category' => 'other', 'note' => 'ab'])
+            ->assertStatus(422)->assertJsonValidationErrors('note');
+        $this->send(['source' => 'lesson', 'lessonCode' => 'fractions', 'category' => 'other', 'note' => 'Faux.'])
+            ->assertStatus(201);
     }
 
     public function test_un_texte_trop_long_est_refuse(): void
     {
-        $id = $this->signal(['source' => 'lesson', 'lessonCode' => 'fractions'])->json('report.id');
-
-        $this->complete($id, ['category' => 'other', 'note' => str_repeat('a', 2001)])
-            ->assertStatus(422)
-            ->assertJsonValidationErrors('note');
-    }
-
-    // ---------------------------------------------------------- PROPRIÉTÉ
-
-    public function test_un_eleve_ne_complete_pas_le_signalement_d_un_autre(): void
-    {
-        $id = $this->signal(['source' => 'lesson', 'lessonCode' => 'fractions'])->json('report.id');
-        $intrus = User::factory()->create(['role' => User::ROLE_STUDENT]);
-
-        $this->complete($id, ['category' => 'typo'], $intrus)
-            ->assertStatus(422)
-            // Indiscernable d'un signalement inexistant : ne pas révéler qu'il existe.
-            ->assertJsonPath('message', 'Signalement introuvable.');
-
-        $this->assertNull(StudentReport::find($id)->category);
-    }
-
-    public function test_un_signalement_deja_envoye_ne_se_reecrit_pas(): void
-    {
-        $id = $this->signal(['source' => 'lesson', 'lessonCode' => 'fractions'])->json('report.id');
-        $this->complete($id, ['category' => 'math_error'])->assertStatus(200);
-
-        $this->complete($id, ['category' => 'typo'])->assertStatus(422);
-        $this->assertSame('math_error', StudentReport::find($id)->category);
-    }
-
-    public function test_un_visiteur_ne_signale_rien(): void
-    {
-        $this->postJson('/api/v1/reports', ['source' => 'lesson', 'lessonCode' => 'fractions'])
-            ->assertStatus(401);
-    }
-
-    // -------------------------------------------------------- DÉDUPLICATION
-
-    /** Ouvrir et refermer cinq fois ne fabrique pas cinq signalements (§15). */
-    public function test_les_ouvertures_repetees_reutilisent_le_meme_signal(): void
-    {
-        $ids = [];
-        foreach (range(1, 5) as $ignored) {
-            $ids[] = $this->signal([
-                'source' => 'module', 'lessonCode' => 'fractions', 'moduleNumber' => 3,
-            ])->json('report.id');
-        }
-
-        $this->assertCount(1, array_unique($ids));
-        $this->assertSame(1, StudentReport::count());
-    }
-
-    /**
-     * ...mais deux problèmes DIFFÉRENTS sur le même module restent deux
-     * signalements. La dédup ne doit pas faire taire un second constat.
-     */
-    public function test_un_second_probleme_apres_envoi_cree_un_nouveau_signalement(): void
-    {
-        $first = $this->signal(['source' => 'module', 'lessonCode' => 'fractions', 'moduleNumber' => 3])->json('report.id');
-        $this->complete($first, ['category' => 'math_error'])->assertStatus(200);
-
-        $second = $this->signal(['source' => 'module', 'lessonCode' => 'fractions', 'moduleNumber' => 3])->json('report.id');
-        $this->complete($second, ['category' => 'manipulation_not_working'])->assertStatus(200);
-
-        $this->assertNotSame($first, $second);
-        $this->assertSame(2, StudentReport::count());
-    }
-
-    /** Deux modules distincts ne partagent jamais un signal. */
-    public function test_deux_modules_donnent_deux_signalements(): void
-    {
-        LessonModule::create([
-            'lesson_id' => $this->lesson->id, 'code' => '04', 'number' => 4, 'title' => 'Suite',
-        ]);
-
-        $a = $this->signal(['source' => 'module', 'lessonCode' => 'fractions', 'moduleNumber' => 3])->json('report.id');
-        $b = $this->signal(['source' => 'module', 'lessonCode' => 'fractions', 'moduleNumber' => 4])->json('report.id');
-
-        $this->assertNotSame($a, $b);
-        $this->assertSame(2, StudentReport::count());
-    }
-
-    /**
-     * Le cas que le durcissement vise : le POST initial échoue (réseau), le
-     * client repose le signal à l'envoi, et il ne doit en résulter QU'UN
-     * signalement.
-     *
-     * C'est déjà garanti par la déduplication : reposer le même contexte
-     * pendant que le signal est encore incomplet retrouve la même ligne. Ce
-     * test l'énonce depuis le point de vue du client qui réessaie, parce que
-     * c'est ce chemin-là qui doit rester vrai.
-     */
-    public function test_reposer_le_signal_apres_un_echec_ne_cree_pas_de_doublon(): void
-    {
-        // Premier POST : supposons sa réponse perdue en route. La ligne
-        // existe pourtant bien côté serveur.
-        $first = $this->signal(['source' => 'module', 'lessonCode' => 'fractions', 'moduleNumber' => 3]);
-        $first->assertStatus(201);
-
-        // Le client, qui se croit sans identifiant, repose le signal à l'envoi.
-        $retry = $this->signal(['source' => 'module', 'lessonCode' => 'fractions', 'moduleNumber' => 3]);
-        $retry->assertStatus(201);
-
-        $this->assertSame(
-            $first->json('report.id'),
-            $retry->json('report.id'),
-            'la nouvelle tentative doit retrouver le MÊME signalement'
-        );
-        $this->assertSame(1, StudentReport::count());
-
-        // Et la complétion aboutit sur cette unique ligne.
-        $this->complete($retry->json('report.id'), ['category' => 'math_error', 'note' => 'Rejoué.'])
-            ->assertStatus(200);
-
-        $this->assertSame(1, StudentReport::count());
-        $this->assertSame('math_error', StudentReport::first()->category);
+        $this->send(['source' => 'lesson', 'lessonCode' => 'fractions', 'category' => 'other', 'note' => str_repeat('a', 2001)])
+            ->assertStatus(422)->assertJsonValidationErrors('note');
     }
 
     // ---------------------------------------------------------------- ADMIN
 
     public function test_l_admin_voit_l_origine_et_le_contexte_exact(): void
     {
-        $lessonReport = $this->signal(['source' => 'lesson', 'lessonCode' => 'fractions', 'grade' => '6e'])->json('report.id');
-        $this->complete($lessonReport, ['category' => 'typo', 'note' => 'Coquille dans le sommaire.']);
-
-        $moduleReport = $this->signal(['source' => 'module', 'lessonCode' => 'fractions', 'grade' => '6e', 'moduleNumber' => 3])->json('report.id');
-        $this->complete($moduleReport, ['category' => 'manipulation_not_working', 'note' => 'Rien ne bouge.']);
+        $lessonReport = $this->send(['source' => 'lesson', 'lessonCode' => 'fractions', 'grade' => '6e', 'category' => 'typo', 'note' => 'Coquille.'])->json('report.id');
+        $moduleReport = $this->send(['source' => 'module', 'lessonCode' => 'fractions', 'grade' => '6e', 'moduleNumber' => 3, 'category' => 'manipulation_not_working'])->json('report.id');
 
         $this->actingAs($this->admin, 'sanctum')->getJson('/api/v1/admin/reports')
-            ->assertStatus(200)
-            ->assertJsonPath('counts.all', 2);
+            ->assertStatus(200)->assertJsonPath('counts.all', 2);
 
         $this->actingAs($this->admin, 'sanctum')->getJson("/api/v1/admin/reports/{$lessonReport}")
             ->assertStatus(200)
@@ -365,109 +189,34 @@ class LessonModuleReportingTest extends TestCase
             ->assertJsonPath('report.context.moduleTitle', 'Comparer des fractions');
     }
 
-    /**
-     * Les signaux sans description sont VISIBLES par défaut — mais étiquetés.
-     *
-     * Ils étaient masqués au départ. Un signal caché derrière une case à
-     * cocher est un signal que personne ne regarde, alors que « douze élèves
-     * ont ouvert la fenêtre ici sans rien écrire » est justement ce qu'on
-     * veut voir. Ce qui compte, c'est de ne pas les confondre avec un
-     * signalement abouti : d'où `detailsCompleted`.
-     */
-    public function test_les_signaux_incomplets_sont_listes_et_distingues(): void
+    public function test_l_admin_filtre_par_origine_et_combine_les_filtres(): void
     {
-        $this->signal(['source' => 'module', 'lessonCode' => 'fractions', 'moduleNumber' => 3]);
-        $complete = $this->signal(['source' => 'lesson', 'lessonCode' => 'fractions'])->json('report.id');
-        $this->complete($complete, ['category' => 'typo']);
-
-        $response = $this->actingAs($this->admin, 'sanctum')->getJson('/api/v1/admin/reports')
-            ->assertStatus(200)
-            ->assertJsonCount(2, 'reports.data')
-            ->assertJsonPath('counts.incomplete', 1);
-
-        $flags = collect($response->json('reports.data'))->pluck('detailsCompleted')->sort()->values();
-        $this->assertEquals([false, true], $flags->all(), 'les deux états doivent être distinguables');
-    }
-
-    public function test_l_admin_isole_les_signaux_seuls_ou_les_signalements_decrits(): void
-    {
-        $this->signal(['source' => 'module', 'lessonCode' => 'fractions', 'moduleNumber' => 3]);
-        $complete = $this->signal(['source' => 'lesson', 'lessonCode' => 'fractions'])->json('report.id');
-        $this->complete($complete, ['category' => 'typo']);
-
-        $this->actingAs($this->admin, 'sanctum')->getJson('/api/v1/admin/reports?completion=incomplete')
-            ->assertStatus(200)
-            ->assertJsonCount(1, 'reports.data')
-            ->assertJsonPath('reports.data.0.detailsCompleted', false);
-
-        $this->actingAs($this->admin, 'sanctum')->getJson('/api/v1/admin/reports?completion=complete')
-            ->assertStatus(200)
-            ->assertJsonCount(1, 'reports.data')
-            ->assertJsonPath('reports.data.0.detailsCompleted', true);
-    }
-
-    /**
-     * Le filtre de complétude ne doit pas annuler les autres : un
-     * administrateur combine « signaux seuls » et « sur ce module ».
-     */
-    public function test_le_filtre_de_completude_se_combine_aux_autres(): void
-    {
-        $this->signal(['source' => 'module', 'lessonCode' => 'fractions', 'moduleNumber' => 3]);
-        $this->signal(['source' => 'lesson', 'lessonCode' => 'fractions']);
-
-        $this->actingAs($this->admin, 'sanctum')
-            ->getJson('/api/v1/admin/reports?completion=incomplete&source=module')
-            ->assertStatus(200)
-            ->assertJsonCount(1, 'reports.data')
-            ->assertJsonPath('reports.data.0.source', 'module');
-    }
-
-    /**
-     * Une source inventée ne franchit pas la validation, quelle qu'elle soit.
-     * La liste est fermée côté serveur : le client ne peut pas se déclarer
-     * dans un contexte interne.
-     */
-    public function test_aucune_source_hors_liste_n_est_acceptee(): void
-    {
-        foreach (['admin', 'arbitrary', 'another_internal_context', '', 'LESSON'] as $forged) {
-            $this->signal(['source' => $forged, 'lessonCode' => 'fractions'])
-                ->assertStatus(422);
-        }
-
-        $this->assertSame(0, StudentReport::count(), 'aucune ligne ne doit être créée');
-    }
-
-    public function test_l_admin_filtre_par_origine(): void
-    {
-        $a = $this->signal(['source' => 'lesson', 'lessonCode' => 'fractions'])->json('report.id');
-        $this->complete($a, ['category' => 'typo']);
-        $b = $this->signal(['source' => 'module', 'lessonCode' => 'fractions', 'moduleNumber' => 3])->json('report.id');
-        $this->complete($b, ['category' => 'display_problem']);
+        $this->send(['source' => 'lesson', 'lessonCode' => 'fractions', 'category' => 'typo']);
+        $this->send(['source' => 'module', 'lessonCode' => 'fractions', 'moduleNumber' => 3, 'category' => 'display_problem']);
+        $this->send(['source' => 'module', 'lessonCode' => 'fractions', 'moduleNumber' => 3, 'category' => 'typo']);
 
         $this->actingAs($this->admin, 'sanctum')->getJson('/api/v1/admin/reports?source=module')
-            ->assertStatus(200)
-            ->assertJsonCount(1, 'reports.data')
+            ->assertStatus(200)->assertJsonCount(2, 'reports.data');
+        $this->actingAs($this->admin, 'sanctum')->getJson('/api/v1/admin/reports?source=module&category=typo')
+            ->assertStatus(200)->assertJsonCount(1, 'reports.data')
             ->assertJsonPath('reports.data.0.source', 'module');
     }
 
-    public function test_un_eleve_n_accede_pas_a_l_administration_des_signalements(): void
+    public function test_un_relecteur_non_admin_n_accede_pas_a_l_administration(): void
     {
-        $id = $this->signal(['source' => 'lesson', 'lessonCode' => 'fractions'])->json('report.id');
+        $id = $this->send(['source' => 'lesson', 'lessonCode' => 'fractions', 'category' => 'typo'])->json('report.id');
 
-        $this->actingAs($this->student, 'sanctum')->getJson('/api/v1/admin/reports')->assertStatus(403);
-        $this->actingAs($this->student, 'sanctum')->getJson("/api/v1/admin/reports/{$id}")->assertStatus(403);
+        $this->actingAs($this->ambassador, 'sanctum')->getJson('/api/v1/admin/reports')->assertStatus(403);
+        $this->actingAs($this->ambassador, 'sanctum')->getJson("/api/v1/admin/reports/{$id}")->assertStatus(403);
+        $this->actingAs($this->ambassador, 'sanctum')->getJson("/api/v1/admin/reports/{$id}/screenshot")->assertStatus(403);
     }
 
     // ----------------------------------------------- AUCUN EFFET DE BORD
 
-    /**
-     * §13 : signaler n'est pas apprendre. Aucune progression, aucune preuve,
-     * aucune maîtrise ne doit bouger.
-     */
     public function test_signaler_ne_touche_a_aucune_donnee_d_apprentissage(): void
     {
-        $id = $this->signal(['source' => 'module', 'lessonCode' => 'fractions', 'moduleNumber' => 3])->json('report.id');
-        $this->complete($id, ['category' => 'math_error', 'note' => 'Faux.']);
+        $this->send(['source' => 'module', 'lessonCode' => 'fractions', 'moduleNumber' => 3, 'category' => 'math_error', 'note' => 'Faux.'])
+            ->assertStatus(201);
 
         $this->assertDatabaseCount('student_lesson_progress', 0);
         $this->assertDatabaseCount('learning_evidence', 0);

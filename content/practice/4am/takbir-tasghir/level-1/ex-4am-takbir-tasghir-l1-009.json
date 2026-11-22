@@ -1,0 +1,228 @@
+{
+  "id": "ex-4am-takbir-tasghir-l1-009",
+  "lessonCode": "takbir-tasghir",
+  "level": 1,
+  "metadata": {
+    "title": "نشاط 5 — مقطع الهرم تصغير",
+    "estimatedMinutes": 2,
+    "tags": [
+      "مقطع هرم",
+      "التصغير"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-5",
+      "page": 165,
+      "section": "أنشطة",
+      "number": 5
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 165، نشاط 5): SABCD هرم منتظم قاعدته المربع ABCD حيث AB = 4cm. E نقطة من الحرف [SA] حيث $SE = \\dfrac{3}{4}SA$ ، و (P) المستوي الموازي للقاعدة الذي يشمل E، يقطع [SB] و [SC] و [SD] في F و G و H.",
+    "figure": {
+      "kind": "space",
+      "view": {
+        "azimuth": -40,
+        "elevation": 26
+      },
+      "points": {
+        "S": [
+          0,
+          0,
+          6
+        ],
+        "A": [
+          -2,
+          -2,
+          0
+        ],
+        "B": [
+          2,
+          -2,
+          0
+        ],
+        "C": [
+          2,
+          2,
+          0
+        ],
+        "D": [
+          -2,
+          2,
+          0
+        ],
+        "E": [
+          -1.5,
+          -1.5,
+          1.5
+        ],
+        "F": [
+          1.5,
+          -1.5,
+          1.5
+        ],
+        "G": [
+          1.5,
+          1.5,
+          1.5
+        ],
+        "H": [
+          -1.5,
+          1.5,
+          1.5
+        ],
+        "P1": [
+          -3.4,
+          -3.1,
+          1.5
+        ],
+        "P2": [
+          3.4,
+          -3.1,
+          1.5
+        ],
+        "P3": [
+          3.4,
+          3.1,
+          1.5
+        ],
+        "P4": [
+          -3.4,
+          3.1,
+          1.5
+        ]
+      },
+      "solids": [
+        {
+          "type": "polyhedron",
+          "faces": [
+            [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            [
+              "S",
+              "A",
+              "B"
+            ],
+            [
+              "S",
+              "B",
+              "C"
+            ],
+            [
+              "S",
+              "C",
+              "D"
+            ],
+            [
+              "S",
+              "D",
+              "A"
+            ]
+          ],
+          "tone": "slate"
+        }
+      ],
+      "planes": [
+        {
+          "points": [
+            "P1",
+            "P2",
+            "P3",
+            "P4"
+          ],
+          "tone": "sky",
+          "label": "(P)"
+        }
+      ],
+      "sections": [
+        {
+          "points": [
+            "E",
+            "F",
+            "G",
+            "H"
+          ],
+          "tone": "rose"
+        }
+      ],
+      "hidden": [
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ],
+      "labels": {
+        "S": "n",
+        "A": "sw",
+        "B": "s",
+        "C": "e",
+        "D": "nw",
+        "E": "w",
+        "F": "se",
+        "G": "e",
+        "H": "nw"
+      },
+      "ariaLabel": "هرم منتظم SABCD قاعدته المربع ABCD، والمستوي (P) الموازي للقاعدة يقطع الأحرف [SA] و [SB] و [SC] و [SD] في E و F و G و H",
+      "caption": "أعادت المنصّة رسم شكل الكتاب بوضوح أكبر، بنفس المعطيات",
+      "maxWidth": 480
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المربع EFGH تصغير للمربع ABCD بالنسبة:",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{4}{3}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-ITTIJAH"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{3}{4}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{1}{4}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى المثلث SAB و (EF) // (AB)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خاصية طالس: $\\dfrac{EF}{AB} = \\dfrac{SE}{SA}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن SE بـ SA."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{EF}{AB} = \\dfrac{SE}{SA} = \\dfrac{3}{4}$ : المقطع تصغير للقاعدة بالنسبة $\\dfrac{3}{4}$ .",
+        "incorrect": "النسبة تُقرأ من الرأس S: SE على SA، لا EA على SA."
+      }
+    }
+  ]
+}

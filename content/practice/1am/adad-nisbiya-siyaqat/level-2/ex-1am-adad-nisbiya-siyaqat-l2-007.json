@@ -1,0 +1,179 @@
+{
+  "id": "ex-1am-adad-nisbiya-siyaqat-l2-007",
+  "lessonCode": "adad-nisbiya-siyaqat",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — مآرب العمارة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "أعداد نسبية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "عمارة في عنابة فيها طوابق علوية وطابقان سفليان، والأرضي هو الصفر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "تُرقَّم طوابق عمارة بأعداد نسبية والطابق الأرضي هو الصفر. ما رقم الطابق الذي يقع طابقًا واحدًا تحت الطابق الأرضي؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "-1",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-REL-FLOORPOS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "فوق الصفر أم تحته؟ وكم تدريجة تبعد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما فوق الصفر عدد موجب بلا إشارة، وما تحته عدد سالب تسبقه الإشارة − ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجهة بالإشارة ثمّ المسافة بالعدد."
+        }
+      ],
+      "feedback": {
+        "correct": "تحت الصفر : عدد سالب، $-1$.",
+        "incorrect": "الجهة من الصفر تقول الإشارة، والمسافة تقول العدد."
+      },
+      "solution": {
+        "lines": [
+          "تحت الصفر (أو المرجع)",
+          "عدد سالب، مسافته $1$ : $-1$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "تُرقَّم طوابق عمارة بأعداد نسبية والطابق الأرضي هو الصفر. ما رقم الطابق الذي يقع 6 طوابق فوق الطابق الأرضي؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "-6",
+          "id": "MISC-REL-ABOVENEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "فوق الصفر أم تحته؟ وكم تدريجة تبعد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما فوق الصفر عدد موجب بلا إشارة، وما تحته عدد سالب تسبقه الإشارة − ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجهة بالإشارة ثمّ المسافة بالعدد."
+        }
+      ],
+      "feedback": {
+        "correct": "فوق الصفر : عدد موجب يُكتب بلا إشارة، $6$.",
+        "incorrect": "الجهة من الصفر تقول الإشارة، والمسافة تقول العدد."
+      },
+      "solution": {
+        "lines": [
+          "فوق الصفر (أو المرجع)",
+          "عدد موجب، مسافته $6$ : $6$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اكتب معاكس العدد $-2$ .",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "-2",
+          "id": "MISC-REL-OPPSAME"
+        },
+        {
+          "value": "-3",
+          "id": "MISC-REL-OPPNEXT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العدد على الجهاز ثمّ انظر أين يقف ظلّه في المرآة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المعاكس له المسافة نفسها إلى الصفر على الجهة الأخرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "غيّر الإشارة وأبقِ المسافة."
+        }
+      ],
+      "feedback": {
+        "correct": "معاكس $-2$ هو $2$ : المسافة نفسها إلى الصفر على الجهة الأخرى.",
+        "incorrect": "المعاكس يقع على الجهة الأخرى من الصفر وبالمسافة نفسها."
+      },
+      "solution": {
+        "lines": [
+          "$-2$ : المسافة $2$ تحت الصفر",
+          "المعاكس : المسافة نفسها على الجهة الأخرى، $2$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

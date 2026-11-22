@@ -1,0 +1,319 @@
+{
+  "id": "ex-1am-qawaid-qabiliyat-qisma-l5-003",
+  "lessonCode": "qawaid-qabiliyat-qisma",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — أسلاك المنزل",
+    "estimatedMinutes": 18,
+    "tags": [
+      "محيط",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 3,
+      "file": "1am-s2-62",
+      "exercise": 4
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "أرض مستطيلة طولها $75\\,\\mathrm{m}$ وعرضها $48\\,\\mathrm{m}$ (الأطوال غير حقيقية)، بنى صاحبها فيها منزلًا وحديقة.\nالجزء الأول: يريد تثبيت سلك على محيط الأرض بمسامير موزّعة بمسافات متساوية.\nالجزء الثاني: يتردّد بين مسمار كل $3\\,\\mathrm{m}$ ومسمار كل $4\\,\\mathrm{m}$، ويريد ألا تبقى مسافة ناقصة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب محيط الأرض.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالمتر (m)",
+      "expectedAnswer": "246",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "محيط المستطيل = 2 × (الطول + العرض)."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times (75 + 48) = 246$.",
+        "incorrect": "أنجز الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$75 + 48 = 123$",
+          "$2 \\times 123 = 246$"
+        ],
+        "result": "246"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "هل يقبل العدد 246 القسمة على 3؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-AHAD-3"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مجموع أرقام العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل هذا المجموع يقبل القسمة على 3؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "رقم الآحاد وحده لا يكفي للقسمة على 3."
+        }
+      ],
+      "feedback": {
+        "correct": "مجموع أرقام العدد 246: $2 + 4 + 6 = 12$ ، و 12 يقبل القسمة على 3.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 3 إذا كان مجموع أرقامه يقبل القسمة على 3."
+      },
+      "solution": {
+        "lines": [
+          "مجموع أرقام العدد 246: $2 + 4 + 6 = 12$ ، و 12 يقبل القسمة على 3.",
+          "$246 = 3 \\times 82 + 0$ ، الباقي معدوم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل يقبل العدد 246 القسمة على 4؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-MAJMU"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى العدد المشكّل من رقمي الآحاد والعشرات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل هذا العدد المكوّن من رقمين يقبل القسمة على 4؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يكفي أن يكون العدد زوجيًا."
+        }
+      ],
+      "feedback": {
+        "correct": "العدد المشكّل من رقمي آحاد وعشرات 246 هو 46، و 46 لا يقبل القسمة على 4.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 4 إذا كان العدد المشكّل من رقمي آحاده وعشراته يقبل القسمة على 4."
+      },
+      "solution": {
+        "lines": [
+          "العدد المشكّل من رقمي آحاد وعشرات 246 هو 46، و 46 لا يقبل القسمة على 4.",
+          "$246 = 4 \\times 61 + 2$ ، الباقي 2 غير معدوم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "احسب باقي القسمة الإقليدية للعدد 246 على 4.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "61",
+          "id": "MISC-QABILIYA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية عموديًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي عدد طبيعي أصغر من 4."
+        }
+      ],
+      "feedback": {
+        "correct": "$246 = 4 \\times 61 + 2$ و $2 < 4$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 4."
+      },
+      "solution": {
+        "lines": [
+          "$246 = 4 \\times 61 + 2$",
+          "$2 < 4$ ، إذن الباقي هو 2، و 246 لا يقبل القسمة على 4."
+        ],
+        "result": "r = 2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "أيّ المسافتين يختار؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مسمار كل $3\\,\\mathrm{m}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "مسمار كل $4\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-BAQI"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة المناسبة تقسم المحيط دون باقٍ."
+        }
+      ],
+      "feedback": {
+        "correct": "246 يقبل القسمة على 3 ولا يقبل القسمة على 4.",
+        "incorrect": "اختر المسافة التي باقي قسمة المحيط عليها معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$2 + 4 + 6 = 12$: 246 يقبل القسمة على 3.",
+          "46 لا يقبل القسمة على 4 ($246 = 4 \\times 61 + 2$).",
+          "يختار مسمارًا كل $3\\,\\mathrm{m}$."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "احسب عدد المسامير إذا ثُبّت مسمار كل $3\\,\\mathrm{m}$.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد المسامير",
+      "expectedAnswer": "82",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-QABILIYA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية عموديًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق بضرب الحاصل في 3."
+        }
+      ],
+      "feedback": {
+        "correct": "$246 = 3 \\times 82 + 0$.",
+        "incorrect": "ابحث عن أكبر عدد طبيعي نضربه في 3 دون أن نتجاوز 246."
+      },
+      "solution": {
+        "lines": [
+          "$246 = 3 \\times 82 + 0$",
+          "الحاصل هو 82."
+        ],
+        "result": "82"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

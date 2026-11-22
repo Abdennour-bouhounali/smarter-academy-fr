@@ -1,0 +1,130 @@
+{
+  "id": "ex-4am-majmu-shuaayn-l3-004",
+  "lessonCode": "majmu-shuaayn",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 16 — قطران متناصفان",
+    "estimatedMinutes": 4,
+    "tags": [
+      "قاعدة متوازي الأضلاع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-16",
+      "page": 135,
+      "section": "مجموع شعاعين - علاقة شال",
+      "number": 16
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (تمرين 16): A، B، C، D، E نقط حيث $\\overrightarrow{AE} = \\overrightarrow{EC}$ و $\\overrightarrow{BE} = \\overrightarrow{ED}$ و B لا تنتمي إلى (AC)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الرباعي ABCD",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مستطيل لأن E منتصف قطريه",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ISTIQAMA"
+        },
+        {
+          "id": "B",
+          "content": "رباعي كيفي",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        },
+        {
+          "id": "C",
+          "content": "متوازي أضلاع لأن قطريه [AC] و [BD] لهما نفس المنتصف E",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للشعاعين نفس المبدأ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "شعاعان لهما نفس المبدأ يُجمعان بقاعدة متوازي الأضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع هو القطر الصادر من المبدأ المشترك، لا القطر الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "E منتصف [AC] و [BD]: القطران متناصفان، فـ ABCD متوازي أضلاع.",
+        "incorrect": "قاعدة متوازي الأضلاع: مجموع شعاعين لهما نفس المبدأ هو القطر الصادر من ذلك المبدأ."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "النقطة F حيث $\\overrightarrow{AF} = \\overrightarrow{AB} + \\overrightarrow{AD}$",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "تنطبق على C",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "تنطبق على E",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-JAM-ATWAL"
+        },
+        {
+          "id": "C",
+          "content": "تنطبق على B",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-QAIDA-QUTR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للشعاعين نفس المبدأ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "شعاعان لهما نفس المبدأ يُجمعان بقاعدة متوازي الأضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع هو القطر الصادر من المبدأ المشترك، لا القطر الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "قاعدة متوازي الأضلاع في ABCD: $\\overrightarrow{AB} + \\overrightarrow{AD} = \\overrightarrow{AC}$ .",
+        "incorrect": "قاعدة متوازي الأضلاع: مجموع شعاعين لهما نفس المبدأ هو القطر الصادر من ذلك المبدأ."
+      }
+    }
+  ]
+}

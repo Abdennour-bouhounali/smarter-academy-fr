@@ -1,0 +1,170 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l5-006",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 5,
+  "metadata": {
+    "title": "وضعية — توصيل في قسنطينة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "انسحاب",
+      "تساوي شعاعين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hisab-murakkibatay_P3",
+      "modelledOn": "act-2"
+    }
+  },
+  "statement": {
+    "content": "على خريطة تطبيق توصيل في قسنطينة (الوحدة 200 m) يحرص سائقوه على الأمانة في إيصال الطلبات، المطعم في $R(-3\\,;\\,2)$ . الطلب الأول: الزبون K حيث $\\overrightarrow{RK}\\begin{pmatrix} 4 \\\\ 3 \\end{pmatrix}$ . الطلب الثاني: الدرّاج يعيد الحركة نفسها انطلاقا من المقهى $C(1\\,;\\,-2)$ فيصل إلى L."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا K:",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "point",
+      "answerFormat": "الإحداثيتان (x ; y) — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "1",
+        "y": "5"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-7",
+            "y": "-1"
+          },
+          "id": "MISC-MAALAM-MAJHUL-AMALIYA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبدأ R معلوم والنهاية K مجهولة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$x_K - x_R$ يساوي المركبة الأولى، و $y_K - y_R$ يساوي الثانية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف كل مركبة إلى إحداثية R الموافقة."
+        }
+      ],
+      "feedback": {
+        "correct": "$K(-3 + 4\\,;\\,2 + 3) = (1\\,;\\,5)$ .",
+        "incorrect": "R هي المبدأ: أضف المركبتين."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "إحداثيتا L:",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "point",
+      "answerFormat": "الإحداثيتان (x ; y) — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "5",
+        "y": "1"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-3",
+            "y": "-5"
+          },
+          "id": "MISC-MAALAM-MAJHUL-AMALIYA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبدأ C معلوم والنهاية L مجهولة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$x_L - x_C$ يساوي المركبة الأولى، و $y_L - y_C$ يساوي الثانية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف كل مركبة إلى إحداثية C الموافقة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{CL} = \\overrightarrow{RK}$ : $L(1 + 4\\,;\\,-2 + 3) = (5\\,;\\,1)$ .",
+        "incorrect": "الحركة نفسها: CL = RK."
+      }
+    },
+    {
+      "id": "q3",
+      "statement": "الرباعي RKLC:",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "ليس متوازي أضلاع لأن R و C مختلفتان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MABDA"
+        },
+        {
+          "id": "B",
+          "content": "متوازي أضلاع لأن $\\overrightarrow{RK} = \\overrightarrow{CL}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "متوازي أضلاع لأن $\\overrightarrow{RK} = \\overrightarrow{LC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-TARTIB-NUQAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مركبتي كل شعاع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن المركبة الأولى بالأولى والثانية بالثانية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يتساوى الشعاعان إذا تساوت المركبتان معا."
+        }
+      ],
+      "feedback": {
+        "correct": "RK = CL يعني أن RKLC متوازي أضلاع (الضلع RK ومقابله CL في الاتجاه نفسه).",
+        "incorrect": "RK و LC متعاكسان."
+      }
+    }
+  ]
+}

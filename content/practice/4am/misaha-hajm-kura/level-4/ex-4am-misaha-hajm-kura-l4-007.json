@@ -1,0 +1,143 @@
+{
+  "id": "ex-4am-misaha-hajm-kura-l4-007",
+  "lessonCode": "misaha-hajm-kura",
+  "level": 4,
+  "metadata": {
+    "title": "أرخميدس — الأسطوانة من الجلة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "أرخميدس",
+      "حجم الجلة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_misaha-hajm-kura_P2",
+      "modelledOn": "intro-archimedes"
+    }
+  },
+  "statement": {
+    "content": "جلة حجمها $36\\pi\\,\\mathrm{cm}^3$ موضوعة في أسطوانة على مقاسها تماما (نصف قطر القاعدة $R$ والارتفاع $2R$).",
+    "figure": {
+      "kind": "space",
+      "view": {
+        "azimuth": -62,
+        "elevation": 16
+      },
+      "points": {
+        "O": [
+          0,
+          0,
+          0
+        ],
+        "N": [
+          0,
+          0,
+          1
+        ],
+        "S": [
+          0,
+          0,
+          -1
+        ],
+        "M": [
+          1,
+          0,
+          0
+        ]
+      },
+      "hidden": [
+        "N",
+        "S",
+        "M"
+      ],
+      "solids": [
+        {
+          "type": "cylinder",
+          "base": "S",
+          "top": "N",
+          "radius": 1,
+          "tone": "sky"
+        },
+        {
+          "type": "sphere",
+          "center": "O",
+          "radius": 1,
+          "tone": "rose"
+        }
+      ],
+      "segments": [
+        {
+          "from": "O",
+          "to": "M",
+          "label": "R",
+          "dashed": true
+        },
+        {
+          "from": "S",
+          "to": "N",
+          "dashed": true
+        }
+      ],
+      "labels": {
+        "O": "nw"
+      },
+      "ariaLabel": "كرة نصف قطرها R داخل أسطوانة دوران نصف قطر قاعدتها R وارتفاعها 2R: الكرة تمسّ القاعدتين والسطح الجانبي",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "حجم هذه الأسطوانة:",
+      "learningPoints": [
+        {
+          "code": "4am_misaha-hajm-kura_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$24\\pi\\,\\mathrm{cm}^3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HAJM-MUAMIL"
+        },
+        {
+          "id": "B",
+          "content": "$72\\pi\\,\\mathrm{cm}^3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HAJM-MUAMIL"
+        },
+        {
+          "id": "C",
+          "content": "$54\\pi\\,\\mathrm{cm}^3$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حجم الجلة ثلثا حجم الأسطوانة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان الثلثان $36\\pi$ فالثلث $18\\pi$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأسطوانة ثلاثة أثلاث."
+        }
+      ],
+      "feedback": {
+        "correct": "$36\\pi \\div \\frac{2}{3} = 54\\pi\\,\\mathrm{cm}^3$ .",
+        "incorrect": "$24\\pi$ أخذ ثلثي الجلة، و $72\\pi$ ضاعفها."
+      },
+      "difficulty": 4
+    }
+  ]
+}

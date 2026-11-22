@@ -1,0 +1,121 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l5-001",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 5,
+  "metadata": {
+    "title": "تحدّ — نجمة العلم الجزائري",
+    "estimatedMinutes": 3,
+    "tags": [
+      "نجمة العلم",
+      "الإنشاء"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "challenge",
+      "page": 151,
+      "section": "تحدّ"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 151): أنشئ على ورق غير مرصوف تصميما لنجمة العلم الجزائري بحيث تكون المسافة بين كل رأسين متتاليين من هذه النجمة تساوي $10\\,\\mathrm{cm}$ . (رأسان متتاليان: طرفان متتاليان من أطراف النجمة الخمسة.)"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "نصف قطر الدائرة التي تشمل رؤوس النجمة، مدوّرا إلى 0,01 بالسنتيمتر:",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "8.51",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUNTAZAM-DIL",
+          "value": "10.00"
+        },
+        {
+          "id": "MISC-MUTH-NISBA-UKHRA",
+          "value": "6.18"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الرؤوس الخمسة رؤوس خماسي منتظم: ما زاويته المركزية؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في المثلث القائم OHA (H منتصف [AB]): الزاوية في O نصف الزاوية المركزية و AH = 5."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الوتر OA = AH ÷ جيب الزاوية."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin 36^\\circ = \\dfrac{5}{R}$ إذن $R = \\dfrac{5}{\\sin 36^\\circ} \\approx 8{,}51$ .",
+        "incorrect": "نصف القطر ليس 10: هذا صحيح للسداسي فقط."
+      },
+      "difficulty": 5
+    },
+    {
+      "id": "q2",
+      "statement": "لرسم النجمة نصل:",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "كل رأس بالرأس الذي يليه بعد رأس",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "كل رأسين متتاليين",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-NAJMA"
+        },
+        {
+          "id": "C",
+          "content": "كل رأس بالمركز O",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MARKAZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم الرؤوس الخمسة على الدائرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "وصل رأسين متتاليين يعطي الخماسي، لا النجمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نقفز فوق رأس في كل مرة."
+        }
+      ],
+      "feedback": {
+        "correct": "الفروع [AC] و [CE] و [EB] و [BD] و [DA]: طول كل فرع $\\approx 16{,}18\\,\\mathrm{cm}$ .",
+        "incorrect": "المسافة بين رأسين متتاليين ضلع الخماسي، لا فرع النجمة."
+      },
+      "difficulty": 4
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "id": "ex-4am-tarrid-mushkila-l1-009",
+  "lessonCode": "tarrid-mushkila",
+  "level": 1,
+  "metadata": {
+    "title": "ثلاثة أضعاف عمر الابن",
+    "estimatedMinutes": 4,
+    "tags": [
+      "ترييض",
+      "أعمار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-mushkila_P1",
+      "modelledOn": "method-modelling"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "أب يعتني بتربية ابنه؛ عمره اليوم 34 سنة، و عمر ابنه 4 سنوات."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بعد كم سنة يصبح عمر الأب ثلاثة أضعاف عمر ابنه؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد السنوات",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-TARRID-MAJHUL-WAHID"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "سمِّ $x$ عدد السنوات: الأب والابن يكبران معًا بـ $x$ سنة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب «عمر الأب = 3 × عمر الابن» بعد $x$ سنة."
+        }
+      ],
+      "feedback": {
+        "correct": "$34 + x = 3(4 + x)$ تعطي $x = 11$ .",
+        "incorrect": "بعد $x$ سنة يصبح عمر الابن $4 + x$ : ضع القوسين قبل الضرب في 3 ."
+      },
+      "solution": {
+        "lines": [
+          "نسمّي $x$ عدد السنوات.",
+          "المعادلة: $34 + x = 3(4 + x)$",
+          "$34 + x = 12 + 3x$",
+          "$34 - 12 = 3x - x$",
+          "$22 = 2x$",
+          "$x = 11$",
+          "التحقق: $34 + 11 = 45$ و $3 \\times (4 + 11) = 45$ ."
+        ],
+        "result": "x = 11"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل يمكن أن يصبح الفرق بين عمريهما 20 سنة يومًا ما؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-MAJHUL-WAHID"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بعد $x$ سنة، احسب الفرق $(34 + x) - (4 + x)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يتغيّر هذا الفرق مع الزمن؟"
+        }
+      ],
+      "feedback": {
+        "correct": "لا: الفرق بين عمريهما ثابت، يساوي 30 سنة دائمًا.",
+        "incorrect": "احسب الفرق بين العمرين بعد $x$ سنة وبسّطه."
+      },
+      "solution": {
+        "lines": [
+          "بعد $x$ سنة: $(34 + x) - (4 + x) = 30$ .",
+          "الفرق بين العمرين يبقى 30 سنة مهما كان $x$ ، إذن لا يمكن أن يصبح 20 سنة."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

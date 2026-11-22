@@ -1,0 +1,309 @@
+{
+  "id": "ex-3am-nisba-miawiya-3am-l5-005",
+  "lessonCode": "nisba-miawiya-3am",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — فاتورة الكهرباء",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "تخفيض ثم زيادة",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: تحرص عائلة على ترشيد استهلاك الكهرباء، فخفّضت فاتورتها التي كانت $6\\,400$ دج بنسبة $12{,}5\\,\\%$ .\nالجزء الثاني: ارتفع سعر الكهرباء بعد ذلك بنسبة $10\\,\\%$ ، فتساءل الأب: هل صارت الفاتورة أقلّ من الفاتورة الأولى؟"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "ما قيمة الفاتورة بعد الترشيد؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "المبلغ بالدينار (دج)",
+      "expectedAnswer": "5600",
+      "misconceptionSignatures": [
+        {
+          "value": "7200",
+          "id": "MISC-NISBA3-COEF-DEC"
+        },
+        {
+          "value": "800",
+          "id": "MISC-NISBA3-COEF-DEC"
+        },
+        {
+          "value": "6387.5",
+          "id": "MISC-NISBA3-ADD-T"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل الكمية تزداد أم تنقص؟ وما الكمية الأصلية؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التخفيض يُحسب على الكمية الأصلية: الناتج هو الأصل مضروبا في معامل أصغر من الواحد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب معامل التخفيض ثم اضرب فيه الكمية الأصلية، أو احسب التخفيض ثم اطرحه من الأصل."
+        }
+      ],
+      "feedback": {
+        "correct": "$5\\,600$ .",
+        "incorrect": "النسبة تُحسب على الكمية الأصلية؛ والناتج بعد التخفيض هو الأصل مضروبا في معامل أصغر من الواحد؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "معامل التخفيض بـ $12{,}5\\,\\%$ هو $1 - \\dfrac{12{,}5}{100} = 0{,}875$ .",
+          "الناتج: $6\\,400 \\times 0{,}875 = 5\\,600$ ."
+        ],
+        "result": "6\\,400 \\times 0{,}875 = 5\\,600"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كم دينارا وفّرت العائلة؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "المبلغ بالدينار (دج)",
+      "expectedAnswer": "800",
+      "misconceptionSignatures": [
+        {
+          "value": "64",
+          "id": "MISC-NISBA3-DIV100-ONLY"
+        },
+        {
+          "value": "80000",
+          "id": "MISC-NISBA3-MULT-T"
+        },
+        {
+          "value": "6412.5",
+          "id": "MISC-NISBA3-ADD-T"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نأخذ منه النسبة؟ وما هي هذه النسبة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نسبة مئوية من عدد: نضرب هذا العدد في النسبة مقسومة على مئة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب النسبة على شكل كسر مقامه مئة، ثم احسب جداء العدد في هذا الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$800$ .",
+        "incorrect": "لحساب نسبة مئوية من عدد نضرب العدد في النسبة مقسومة على مئة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$12{,}5\\,\\%$ من $6\\,400$ هي $6\\,400 \\times \\dfrac{12{,}5}{100} = 800$ ."
+        ],
+        "result": "6\\,400 \\times \\dfrac{12{,}5}{100} = 800"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "ما قيمة الفاتورة بعد ارتفاع السعر؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "المبلغ بالدينار (دج)",
+      "expectedAnswer": "6160",
+      "misconceptionSignatures": [
+        {
+          "value": "560",
+          "id": "MISC-NISBA3-COEF-INC"
+        },
+        {
+          "value": "5610",
+          "id": "MISC-NISBA3-ADD-T"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل الكمية تزداد أم تنقص؟ وما الكمية الأصلية؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الزيادة تُحسب على الكمية الأصلية: الناتج هو الأصل مضروبا في معامل أكبر من الواحد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب معامل الزيادة ثم اضرب فيه الكمية الأصلية، أو احسب الزيادة ثم أضفها إلى الأصل."
+        }
+      ],
+      "feedback": {
+        "correct": "$6\\,160$ .",
+        "incorrect": "النسبة تُحسب على الكمية الأصلية؛ والناتج بعد الزيادة هو الأصل مضروبا في معامل أكبر من الواحد؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "معامل الزيادة بـ $10\\,\\%$ هو $1 + \\dfrac{10}{100} = 1{,}1$ .",
+          "الناتج: $5\\,600 \\times 1{,}1 = 6\\,160$ ."
+        ],
+        "result": "5\\,600 \\times 1{,}1 = 6\\,160"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما النسبة المئوية الكلّية للتغيّر بين الفاتورة الأولى والأخيرة؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "النسبة المئوية (بدون الرمز %)",
+      "expectedAnswer": "3.75",
+      "misconceptionSignatures": [
+        {
+          "value": "2.5",
+          "id": "MISC-NISBA3-SUM-RATES"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكمية عند البداية؟ وما التغيّر الأوّل ثم الثاني؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة الثانية تُؤخذ من الناتج الأوّل لا من الكمية الأصلية؛ والتغيّران يتتابعان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الناتج بعد التغيّر الأوّل، ثم طبّق التغيّر الثاني على هذا الناتج."
+        }
+      ],
+      "feedback": {
+        "correct": "$3{,}75$ .",
+        "incorrect": "النسبة الثانية تُؤخذ من الناتج الأوّل؛ التغيّران يتتابعان ولا يُلغي أحدهما الآخر؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$المعامل الإجمالي: 0{,}875 \\times 1{,}1 = 0{,}9625$ .",
+          "النسبة المئوية الكلّية للتغيّر هي $|0{,}9625 - 1| \\times 100 = 3{,}75$ ."
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ج",
+      "statement": "هل الفاتورة الأخيرة أقلّ من الفاتورة الأولى؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيحة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خاطئة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NISBA3-SUM-RATES"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكمية عند البداية؟ وما التغيّر الأوّل ثم الثاني؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة الثانية تُؤخذ من الناتج الأوّل لا من الكمية الأصلية؛ والتغيّران يتتابعان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الناتج بعد التغيّر الأوّل، ثم طبّق التغيّر الثاني على هذا الناتج."
+        }
+      ],
+      "feedback": {
+        "correct": "صحيحة .",
+        "incorrect": "النسبة الثانية تُؤخذ من الناتج الأوّل؛ التغيّران يتتابعان ولا يُلغي أحدهما الآخر؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$6\\,160 < 6\\,400$ ، فهي أقلّ بنسبة $3{,}75\\,\\%$ ."
+        ]
+      },
+      "timeSeconds": 100
+    }
+  ]
+}

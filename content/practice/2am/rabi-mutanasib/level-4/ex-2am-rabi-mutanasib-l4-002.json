@@ -1,0 +1,276 @@
+{
+  "id": "ex-2am-rabi-mutanasib-l4-002",
+  "lessonCode": "rabi-mutanasib",
+  "level": 4,
+  "metadata": {
+    "title": "مخبار مدرّج",
+    "estimatedMinutes": 12,
+    "tags": [
+      "الجداءان المتصالبان",
+      "الرابع المتناسب"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-2",
+      "page": 72,
+      "section": "أنشطة",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يظهر على مخبار مدرّج فقدت معظم تدريجاته التدريجة $24$ cL فقط، ويقابلها ارتفاع $6$ cm. الارتفاع يتناسب مع كمية السائل المسكوب في المخبار نفسه. أرادت نادية حساب كمية السائل $x$ الذي ارتفاعه $15$ cm.",
+    "table": {
+      "head": [
+        "كمية السائل (cL)",
+        "24",
+        "$x$"
+      ],
+      "rows": [
+        [
+          "الارتفاع (cm)",
+          "6",
+          "15"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "تعيين الرابع المتناسب $x$ .",
+      "statement": "اختر مساواة الجداءين المتصالبين الصحيحة.",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$24 \\times 15 = 6 \\times x$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$24 \\times 6 = 15 \\times x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-RABI-CROSS"
+        },
+        {
+          "id": "C",
+          "content": "$24 \\times x = 6 \\times 15$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-RABI-CROSS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العدد المجهول في خانته من الجدول واقرأ العددين على كل قطر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في جدول تناسبية: جداء العددين على أحد القطرين يساوي جداء العددين على القطر الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثم اقسم طرفيها على العدد المعلوم الذي يضرب المجهول."
+        }
+      ],
+      "feedback": {
+        "correct": "$24 \\times 15 = 6 \\times x$ .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$24 \\times 15 = 6 \\times x$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $x$ بالـ cL .",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "60",
+      "misconceptionSignatures": [
+        {
+          "value": "9,6",
+          "id": "MISC-RABI-CROSS"
+        },
+        {
+          "value": "33",
+          "id": "MISC-RABI-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العدد المجهول في خانته من الجدول واقرأ العددين على كل قطر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في جدول تناسبية: جداء العددين على أحد القطرين يساوي جداء العددين على القطر الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثم اقسم طرفيها على العدد المعلوم الذي يضرب المجهول."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 60$ .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$6x = 360$",
+          "$x = 360 \\div 6 = 60$"
+        ],
+        "result": "60"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "نسكب في المخبار نفسه كمية أخرى.",
+      "statement": "ما ارتفاع $40$ cL من السائل في المخبار؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "22",
+          "id": "MISC-RABI-ADD"
+        },
+        {
+          "value": "160",
+          "id": "MISC-RABI-INV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "الارتفاع $10$ cm .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$24 \\times y = 6 \\times 40$",
+          "$y = 240 \\div 24 = 10$"
+        ],
+        "result": "10"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما كمية السائل التي ارتفاعها $4$ cm؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "16",
+      "misconceptionSignatures": [
+        {
+          "value": "22",
+          "id": "MISC-RABI-ADD"
+        },
+        {
+          "value": "1",
+          "id": "MISC-RABI-ALIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "الكمية $16$ cL .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$6 \\times z = 24 \\times 4$",
+          "$z = 96 \\div 6 = 16$"
+        ],
+        "result": "16"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

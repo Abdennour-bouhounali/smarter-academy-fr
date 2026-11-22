@@ -13,7 +13,17 @@ import { join, dirname, resolve, relative, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse } from '@babel/parser';
 import traverseModule from '@babel/traverse';
-import { courseLevels } from '../../packages/core/curriculum/coursesData.js';
+// Cet outillage valide l'arbre de leçons SUR LE DISQUE contre le catalogue
+// algérien (`dzCourseLevels`) : les leçons écrites sous lessons/moyen/4am/.
+// Le catalogue français et ses 132 dossiers ont été supprimés le 2026-09-25 ;
+// un dossier de leçon absent du catalogue DZ est désormais une erreur.
+//
+// ATTENTION : indexer une leçon ne l'ACTIVE pas. Ce qu'un élève peut ouvrir
+// est décidé par ACTIVE_GRADE_IDS et le registre de l'application, que
+// check-dormant-isolation.mjs vérifie séparément.
+import { dzCourseLevels } from '../../packages/core/curriculum/coursesData.js';
+
+const courseLevels = dzCourseLevels;
 
 export const traverse = traverseModule.default || traverseModule;
 export const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
@@ -122,6 +132,10 @@ export function buildLessonIndex() {
             chapterTitle: chapter.title,
             path: lesson.path,
             prerequisites: lesson.prerequisites ?? [],
+            // Phase 8
+            kind: lesson.kind ?? 'lesson',
+            unitId: lesson.unitId ?? null,
+            prerequisiteLessonCodes: lesson.prerequisiteLessonCodes ?? [],
           });
         }
       }
@@ -161,6 +175,9 @@ export function parseLessonConfig(lessonDir) {
   // `knowledgeMap: true` — the lesson's formalisation is the cumulative
   // Knowledge Map instead of a dedicated « À retenir » module.
   const knowledgeMap = literalValue(propOf(configNode, 'knowledgeMap')) === true;
+  // `knowledgeMapMode: 'progressive'` — the map is the progressive graph
+  // (knowledgeGraph.js), docs/architecture/KNOWLEDGE_MAP.md Part A.
+  const knowledgeMapMode = literalValue(propOf(configNode, 'knowledgeMapMode')) ?? null;
 
   const priorNode = propOf(configNode, 'priorKnowledge');
   let priorKnowledge;
@@ -181,6 +198,46 @@ export function parseLessonConfig(lessonDir) {
         .filter((e) => typeof e.term === 'string')
     : [];
 
+  // Phase 8 : la NATURE de la leçon ('lesson' | 'synthesis') et ses RESSOURCES
+  // déclarées (manipulations, méthodes, situation) — des littéraux, comme tout
+  // le reste, pour que validate-lessons.mjs et l'export du registre les lisent.
+  const kindValue = literalValue(propOf(configNode, 'kind'));
+  const kind = typeof kindValue === 'string' ? kindValue : 'lesson';
+  const unit = literalValue(propOf(configNode, 'unit'));
+  const resourcesNode = propOf(configNode, 'resources');
+  const resources = resourcesNode === undefined
+    ? undefined
+    : resourcesNode.type === 'ArrayExpression'
+      ? resourcesNode.elements.filter((el) => el?.type === 'ObjectExpression').map((el) => ({
+          line: el.loc?.start.line,
+          kind: literalValue(propOf(el, 'kind')),
+          code: literalValue(propOf(el, 'code')),
+          type: literalValue(propOf(el, 'type')),
+          title: literalValue(propOf(el, 'title')),
+          module: literalValue(propOf(el, 'module')),
+          learningPointIds: literalValue(propOf(el, 'learningPointIds')),
+          sourceElementIds: literalValue(propOf(el, 'sourceElementIds')),
+          // Les DEUX NIVEAUX et la traçabilité de l'expérience
+          // (packages/core/curriculum/manipulationLevels.js). `experience`
+          // est un objet littéral : on en lit les champs un par un, parce
+          // que `literalValue` ne descend pas dans les objets — c'est voulu,
+          // les métadonnées de leçon restent statiques et lisibles à l'œil.
+          level: literalValue(propOf(el, 'level')),
+          objective: literalValue(propOf(el, 'objective')),
+          autonomy: literalValue(propOf(el, 'autonomy')),
+          experience: (() => {
+            const node = propOf(el, 'experience');
+            if (node === undefined) return undefined;
+            if (node.type !== 'ObjectExpression') return 'INVALID';
+            return {
+              type: literalValue(propOf(node, 'type')),
+              reason: literalValue(propOf(node, 'reason')),
+              theme: literalValue(propOf(node, 'theme')),
+            };
+          })(),
+        }))
+      : 'INVALID';
+
   const modulesNode = propOf(configNode, 'modules');
   const modules = modulesNode?.type === 'ArrayExpression'
     ? modulesNode.elements
@@ -191,6 +248,8 @@ export function parseLessonConfig(lessonDir) {
           stage: literalValue(propOf(el, 'stage')),
           estimatedMin: literalValue(propOf(el, 'estimatedMin')),
           slug: literalValue(propOf(el, 'slug')),
+          // 'problem' = un module « مسألة » (GuidedProblem) — LESSON_CONTRACT.md § Modules « مسائل ».
+          track: literalValue(propOf(el, 'track')),
           title: literalValue(propOf(el, 'title')),
           path: literalValue(propOf(el, 'path')),
           teachesLearningPointIds: literalValue(propOf(el, 'teachesLearningPointIds')),
@@ -204,6 +263,10 @@ export function parseLessonConfig(lessonDir) {
     estimatedDurationMin: typeof estimatedDurationMin === 'number' ? estimatedDurationMin : null,
     modules,
     knowledgeMap,
+    knowledgeMapMode,
+    kind,
+    unit: typeof unit === 'string' ? unit : null,
+    resources,
     grade: gradeOf(lessonDir),
     priorKnowledge,
     teachingScopeInclude,

@@ -1,0 +1,141 @@
+{
+  "id": "ex-4am-tanasub-muamil-l1-003",
+  "lessonCode": "tanasub-muamil",
+  "level": 1,
+  "metadata": {
+    "title": "أهو جدول تناسبية؟",
+    "estimatedMinutes": 2,
+    "tags": [
+      "جدول تناسبية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tanasub-muamil_P1",
+      "modelledOn": "act-1"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الجدول الآتي:",
+    "table": {
+      "head": [
+        "$x$",
+        "1",
+        "2",
+        "5"
+      ],
+      "rows": [
+        [
+          "$y$",
+          "3",
+          "6",
+          "15"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل هذا الجدول جدول تناسبية؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب حاصل القسمة $\\dfrac{y}{x}$ في كل عمود."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية تناسبية إذا كانت كل حواصل القسمة متساوية، وإذا كان المقدار الثاني معدوما حين يكون الأول معدوما."
+        }
+      ],
+      "feedback": {
+        "correct": "حواصل القسمة في الأعمدة الثلاثة متساوية.",
+        "incorrect": "احسب حاصل القسمة في كل عمود قبل أن تحكم: تزايد المقدارين معا لا يكفي."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{1} = \\dfrac{6}{2} = \\dfrac{15}{5} = 3$",
+          "حواصل القسمة متساوية، إذن الجدول جدول تناسبية."
+        ],
+        "result": "جدول تناسبية"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هو معامل التناسبية؟",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "1/3",
+          "id": "MISC-TANASUB-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل التناسبية هو العدد الذي نضرب فيه أعداد السطر الأول لنحصل على أعداد السطر الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم عددا من السطر الثاني على العدد المقابل له من السطر الأول: $\\dfrac{y}{x}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "معامل التناسبية هو 3 .",
+        "incorrect": "معامل التناسبية هو $\\dfrac{y}{x}$ : السطر الثاني على السطر الأول، وليس العكس."
+      },
+      "solution": {
+        "lines": [
+          "$a = \\dfrac{15}{5}$",
+          "$a = 3$"
+        ],
+        "result": "a = 3"
+      },
+      "timeSeconds": 45
+    }
+  ]
+}

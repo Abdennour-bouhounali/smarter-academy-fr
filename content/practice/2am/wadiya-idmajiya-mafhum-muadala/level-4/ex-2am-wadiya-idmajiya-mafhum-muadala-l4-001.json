@@ -1,0 +1,243 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-mafhum-muadala-l4-001",
+  "lessonCode": "wadiya-idmajiya-mafhum-muadala",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — أرض فلّاح : مربّع ومستطيل",
+    "estimatedMinutes": 14,
+    "tags": [
+      "معادلة",
+      "مساحة",
+      "كسر من كمّية",
+      "معادلة بعمليّتين"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 2,
+      "file": "2am-s2-53",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "07"
+    }
+  },
+  "statement": {
+    "content": "لفلّاح قطعة أرض متكوّنة من مربّع ومستطيل لهما المساحة نفسها . ضلع المربّع $50\\,\\mathrm{m}$ ، وعرض المستطيل $20\\,\\mathrm{m}$ ، وطوله $x$ بالمتر ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب مساحة المربّع $S_1$ بالمتر المربّع .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "2500",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بقيمته المعلومة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات : الضرب والقسمة قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة."
+        }
+      ],
+      "feedback": {
+        "correct": "النتيجة $2500$ .",
+        "incorrect": "عوّض بالقيم المعلومة واحسب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$S_1 = 50 \\times 50 = 2500$ متر مربّع ."
+        ],
+        "result": "2500"
+      },
+      "counted": false,
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "مساحة المستطيل $S_2 = 20x$ تساوي مساحة المربّع . أوجد $x$ بحلّ المعادلة : $20x = 2500$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "125",
+      "misconceptionSignatures": [
+        {
+          "value": "50000",
+          "id": "MISC-MAJHUL-MULTDIV"
+        },
+        {
+          "value": "2480",
+          "id": "MISC-MAJHUL-SUBFORM"
+        },
+        {
+          "value": "2520",
+          "id": "MISC-MAJHUL-ADDFORM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في المعادلة ما يُفعل بالمجهول : ضرب أو قسمة أو جمع أو طرح، وما هي آخر عملية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ألغِ آخر عملية أُجريت على المجهول أوّلًا، ثمّ ألغِ ما بقي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من حلّك : عوّض المجهول بقيمته وأنجز العملية، فإن وجدت الطرف الآخر فالحلّ صحيح."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 125$ .",
+        "incorrect": "ابحث عن العدد الذي يجعل المساواة صحيحة بالعملية العكسية، ثمّ تحقّق منه بإنجاز العملية."
+      },
+      "solution": {
+        "lines": [
+          "لإلغاء الضرب في $20$ نقسم : $x = 2500 \\div 20 = 125$ .",
+          "التحقّق : $20 \\times 125 = 2500$ ."
+        ],
+        "result": "125"
+      },
+      "work": "optional",
+      "timeSeconds": 85
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "خصّص الفلّاح خُمس مساحة الأرض كلّها لزراعة الطماطم ، أي $\\dfrac{1}{5}$ من مجموع مساحتي المربّع والمستطيل . ما المساحة المخصّصة للطماطم بالمتر المربّع ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "1000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بقيمته المعلومة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات : الضرب والقسمة قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة."
+        }
+      ],
+      "feedback": {
+        "correct": "النتيجة $1000$ .",
+        "incorrect": "عوّض بالقيم المعلومة واحسب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "مساحة الأرض : $2 \\times 2500 = 5000$ متر مربّع .",
+          "الخُمس : $5000 \\div 5 = 1000$ متر مربّع ."
+        ],
+        "result": "1000"
+      },
+      "counted": false,
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "باع الفلّاح الطماطم بسعر $50$ DA للكيلوغرام ، وبعد خصم مصاريف النقل $1500$ DA بقي معه $14500$ DA . نسمّي $m$ كتلة الطماطم المباعة بالكيلوغرام . حلّ المعادلة : $50m-1500 = 14500$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "320",
+      "misconceptionSignatures": [
+        {
+          "value": "290",
+          "id": "MISC-SYN-MUAD2-FIXED"
+        },
+        {
+          "value": "260",
+          "id": "MISC-SYN-MUAD2-SIGN"
+        },
+        {
+          "value": "16000",
+          "id": "MISC-MAJHUL-ADDFORM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في المعادلة ما يُفعل بالمجهول : ضرب أو قسمة أو جمع أو طرح، وما هي آخر عملية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ألغِ آخر عملية أُجريت على المجهول أوّلًا، ثمّ ألغِ ما بقي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من حلّك : عوّض المجهول بقيمته وأنجز العملية، فإن وجدت الطرف الآخر فالحلّ صحيح."
+        }
+      ],
+      "feedback": {
+        "correct": "$m = 320$ .",
+        "incorrect": "ابحث عن العدد الذي يجعل المساواة صحيحة بالعملية العكسية، ثمّ تحقّق منه بإنجاز العملية."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية هي طرح $1500$ : $50m = 14500+1500 = 16000$ .",
+          "$m = 16000 \\div 50 = 320$ .",
+          "التحقّق : $50 \\times 320-1500 = 14500$ ."
+        ],
+        "result": "320"
+      },
+      "work": "optional",
+      "timeSeconds": 85
+    }
+  ]
+}

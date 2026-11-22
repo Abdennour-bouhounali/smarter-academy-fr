@@ -1,9 +1,18 @@
 # Smarter Academy — Lesson Design & Implementation Playbook
 
-> **The authoritative reference for any AI agent (or developer) designing and implementing a
-> Smarter Academy lesson.** It consolidates the platform's contracts, the pedagogical directives,
-> and every hard-won lesson from the built lessons (fractions, nombres-entiers, contenances,
-> longueurs, masses, périmètres, aires, durées, angles) into one coherent system of rules.
+> **An operational synthesis for any AI agent (or developer) designing and implementing a
+> Smarter Academy lesson.** The single entry point is `docs/lessons/LESSON_DEVELOPMENT_GUIDE.md`
+> and the normative lesson contract is `docs/architecture/LESSON_CONTRACT.md`; this playbook
+> defers to both. Its rules were first distilled from the French-era lessons (fractions,
+> nombres-entiers, contenances, longueurs, masses, périmètres, aires, durées, angles) — those
+> lessons were **deleted on 2026-09-25**; the only lesson content today is five 4AM units:
+> « الأعداد الطبيعيّة والأعداد النّاطقة » (9 lessons under
+> `apps/web/src/lessons/moyen/4am/ansab_al_aadad_wal_hisab/aadad-tabiiya-natiqa/`) and
+> « الحساب على الجذور » (5 lessons under `…/hisab-judhur/`, 2026-09-30) and « الحساب الحرفي »
+> (3 lessons + synthesis under `…/hisab-harfi/`, 2026-10-01) and « معادلات ومتراجحات من الدرجة الأولى
+> بمجهول واحد » (4 lessons + synthesis under `…/muadalat-mutarajihat/`, 2026-10-01) and « جمل معادلتين من
+> الدرجة الأولى بمجهولين » (3 lessons + synthesis under `…/jumal-muadalatayn/`, 2026-10-01). Where a
+> passage below cites a French-era file, it is labelled historical.
 >
 > The sibling contracts stay normative — `ARCHITECTURE.md`, `LESSON_CONTRACT.md`,
 > `EXERCISE_CONTRACT.md`, `PROGRESS_MODEL.md`, `LEARNING_ARCHITECTURE.md`,
@@ -25,12 +34,14 @@ final evaluation into **learning evidence**.
 
 Structurally, a lesson is:
 
-- **One catalogue entry** (`packages/core/curriculum/coursesData.js` `smaMetadata`, merged with
-  the official ministry JSON) — the source of truth for WHAT is taught: identity, description,
-  prerequisites, `pointsToLearn`, duration, difficulty, status, icon, tier.
-- **One lesson directory** (`apps/web/src/lessons/college/{grade}/{domain}/{lesson}/`) with
-  `lesson.config.js` (source of truth for HOW: modules, stages, LP wiring), `moduleContext.js`,
-  `index.jsx`, `routes.jsx`, `components/`, `modules/Module<NN><Descriptor>.jsx`.
+- **One catalogue entry** (the DZ catalogue `packages/core/curriculum/dz/lessons_4am_2026_2027.json`,
+  read through `packages/core/curriculum/coursesData.js`) — the source of truth for WHAT is taught: identity, description,
+  prerequisites, `pointsToLearn`, duration, difficulty, status, icon. **Never a `tier`**: free
+  or premium is decided by the administrator in `lessons.tier` (new lessons are created free).
+- **One lesson directory** (`apps/web/src/lessons/moyen/<grade>/<chapter>/<unit>/<lesson>/`) with
+  `lesson.config.js` (source of truth for HOW: modules, stages, LP wiring), `index.jsx`,
+  `routes.jsx`, `moduleContext.js`, `knowledge.jsx`, `content/{textbook.js,exercises.js}`,
+  `modules/Module<NN><Descriptor>.jsx` — see `docs/lessons/LESSON_DEVELOPMENT_GUIDE.md` §3.
 - **A module sequence ≤ 90 minutes** following the canonical stage journey, ending in an
   always-unlocked evaluation, usually opened by a never-blocking prerequisite diagnostic.
 
@@ -86,7 +97,7 @@ and procedure it needs is in one of four states:
 
 | State | Meaning | Declared as |
 | --- | --- | --- |
-| A mastered | prior learning, diagnosed by Module 0 | `priorKnowledge: [...]` in `lesson.config.js` |
+| A mastered | prior learning — from previous years or from an earlier lesson of the same unit (diagnosed by a Module 0 only when the lesson has one) | `priorKnowledge: [...]` in `lesson.config.js` |
 | B just taught | established in teaching position before the demand | `<KnowledgeBrick id variant="new">` |
 | C just-in-time | shown right before because the demand needs it | `<KnowledgeBrick variant="rappel">` |
 | D enrichment | labelled optional, never required | `<KnowledgeBrick variant="enrichment">` |
@@ -108,7 +119,7 @@ effect and is the contract the audit checks.
 demand into a ladder · disclose progressively. Never a generic "Rappel", a theory dump, a
 post-answer definition, or a lost interaction.
 
-Reference implementation: `fonctions-3e` module 2.
+Reference implementation: `apps/web/src/lessons/moyen/4am/ansab_al_aadad_wal_hisab/aadad-tabiiya-natiqa/qasim-mushtarak-akbar/modules/Module02Maarif.jsx` (every question declares `requires={[…]}`); verify with `npm run audit:knowledge:gate`.
 
 ---
 
@@ -150,14 +161,25 @@ the student be able to make happen?), never from a widget list; it is specific t
 cause and effect immediately, reveals representations progressively, contains an « aha » the copy
 does not state first, is replayable to its extremes, and leaves each later module its own
 discovery. The layout invariant (§10.6b) and the scope rule (§16b) apply to it with full force.
-The five 3e function lessons (machine mystérieuse, balance du marchand, compteur du taxi,
-graphique de la batterie, sonde de la montgolfière) are the precedent; the three « données » lessons
-(laboratoire du dé, recette pour 7, laboratoire de modélisation) added the operational rules of
-`INTERACTION_PEDAGOGY.md` §6ter (per-session seeded randomness, DOM tracks over SVG text, the
-`disabled`-freezes-the-action bug class, prediction without verdict).
+*(Historical — the French-era 3e function and « données » lessons that first set this precedent
+were deleted on 2026-09-25; read them in git history.)* The operational rules they produced live on
+in `INTERACTION_PEDAGOGY.md` §6ter (per-session seeded randomness, DOM tracks over SVG text, the
+`disabled`-freezes-the-action bug class, prediction without verdict). Today a lesson's opening lab is
+one of the closed registry of manipulation types (below); a `synthesis` lesson (the unit's
+وضعية إدماجية) has no opening manipulation.
 
-Proven signature interactions (the precedent bank — reuse the *pattern*, not blindly the
-component):
+**Current manipulations (normative).** A lesson's manipulation is one of the **10 registry types**
+declared in `packages/core/curriculum/manipulationTypes.js` and mounted through
+`apps/web/src/lessons/common/manipulations/manipulationRegistry.js`: `divisor-explorer`,
+`divisor-explorer-books`, `team-builder`, `factor-pairs`, `divisor-properties`, `common-divisors`,
+`pgcd-differences`, `euclidean-algorithm`, `coprime-explorer`, `fraction-reduction`. A type is
+reused across lessons by props and theme data (the drawn worlds table of
+`MANIPULATION_CONTRACT.md` §2bis); a new visual extends an existing type or adds a registry type —
+never a lesson-local one-off.
+
+**Historical precedent bank** *(French-era lessons and components, all deleted on 2026-09-25 — none
+of the components below exists; the table is kept only for the pedagogical pattern each one
+embodied, read them in git history)*:
 
 | Lesson | Signature | Idea it embodies |
 |---|---|---|
@@ -228,8 +250,9 @@ integer degrees on the protractor's tappable 10° grid.
   practice_lab → evaluation`) must be non-decreasing across the `modules` array. `trigger`,
   `discovery`, `formalization`, `practice_lab`, `evaluation` are REQUIRED for an `available`
   lesson; `prerequisite_check` and `manipulation` are used when the mathematics calls for them
-  (in practice: always include the module 0 diagnostic, and a manipulation stage whenever the
-  lesson has a signature manipulation — every built lesson does).
+  (a `prerequisite_check` Module 0 is optional — only 2 of the 9 4AM lessons have one,
+  `qasim-adad-tabii` and `ikhtizal-kasr`, where the prerequisites come from previous years; a
+  manipulation stage whenever the lesson has a signature manipulation).
 - **Duration**: `sum(estimatedMin) ≤ 90` (hard cap); set the catalogue's `durationMinutes` equal
   to the module sum (established precedent — it supersedes any pasted value and kills the ±10
   warning).
@@ -239,7 +262,8 @@ integer degrees on the protractor's tappable 10° grid.
   replacement is a recorded user decision, do the swap and re-import in one pass *before* new
   evidence exists, then run `php artisan smarter:validate-curriculum` and record the title-drift
   flags as reviewed/approved. Authored lesson ids carry no grade suffix (`durees`, not
-  `durees-6e`) — author the `smaMetadata` entry before evidence import, because the id change
+  `durees-6e`) — author the catalogue entry (`packages/core/curriculum/dz/lessons_4am_2026_2027.json`, read via
+  `coursesData.js`) before evidence import, because the id change
   changes every LP code.
 - **LP wiring**: every LP must appear in some non-evaluation module's `teachesLearningPointIds`
   (**literal string arrays only** — the validator parses statically); evaluation modules declare
@@ -363,7 +387,7 @@ values (1,5 vs 15 vs 1 500; 4 vs 0,4 vs 400). A wrong answer is not automaticall
   success **only** up to a fixed attempt cap, then force-reveal and complete.
 - **Never gate wrong-answer feedback on `!solved`** — `solved` flips true on the next render;
   use internal `checked && !isRight` instead.
-- **Audit shared components' gating defaults**: `OrderingGame` and `InfoSorter` block on success
+- **Audit shared components' gating defaults**: `InfoSorter` blocks on success
   by default (correct for boss contexts); content modules must pass their `formative` opt-in
   (`InfoSorter` also takes `onCheck={kit.react}`). A bare `onSolved={…}` wiring is not
   automatically compliant.
@@ -384,8 +408,9 @@ step-locking rules, or tap-target minimums — it supplies content only.
   `brief` (mission card), optional `intro`/`footer`, and `steps[]` each with `num`, `title`,
   `done` (module-owned boolean), `content` — a ReactNode **or** `(kit) => ReactNode` where
   `kit = { react, alreadyCompleted, effectsEnabled }`. It wires `useProgress`, step locking
-  (`isStepLocked(alreadyCompleted, …)` — sequential on first pass, all-open on revisit),
-  `incompleteSteps` (the "what's left" popover on the disabled next button), the
+  (`isStepLocked(alreadyCompleted, sequentialLocked, viewer)` — sequential on first pass,
+  all-open on revisit, on presentation, and for a teacher's free navigation),
+  `incompleteSteps` (the "what's left" popover, shown when `canAdvance` is false), the
   micro-celebration toolkit (`useModuleEffects`, `EffectsToggle`, `StreakChip`, `XPBurst`,
   `StepProgressBar`), and completion. **No auto-scroll, no auto-advance** — ever.
 - **Question components**: `TapQuestion` (single MCQ; `above` accepts a node or
@@ -396,26 +421,30 @@ step-locking rules, or tap-target minimums — it supplies content only.
   silently truncates (the shipped "350 cm = 3 m" / "45 mm = 4 cm" bugs). Decimal-heavy lessons
   apply this to *every* numeric question preemptively.
 - **`PrerequisiteDiagnostic`** (Module 0, `number: 0`, `stage: 'prerequisite_check'`,
-  `style: 'diagnostic'`, ~4 min): 5 closed-choice questions × 2 pts testing the **declared
-  prerequisites only** — never the lesson's own material. Silent until one submit, score tiers
-  < 5 / 5–7 / > 7 (never pass/fail), `nextLink` unconditional, no `assessment.enabled` anywhere,
+  `style: 'diagnostic'`, optional — only `qasim-adad-tabii` (6 items, 9 pts) and `ikhtizal-kasr`
+  (4 items, 8 pts) have one): a few closed-choice questions testing the **declared
+  prerequisites only** — never the lesson's own material. Silent until one submit, advice tiers
+  computed on the score **ratio** (`apps/web/src/lessons/common/kit/diagnosticLevel.js`:
+  < 50 % fragile, ≤ 70 % progres, else pret — never pass/fail), `nextLink` unconditional, no `assessment.enabled` anywhere,
   local-only persistence (`usePrerequisiteDiagnostic`). It never gates anything.
 - **`BossFinal`** (last module, `stage: 'evaluation'`, `style: 'assessment'`, ~15 min): **QCM
   only** (numeric tasks become choices whose distractors are the classic mistakes), **silent
-  until one global submit**, then Boss review → Mon profil → Synthèse. Data conventions from the
-  built lessons: 10 épreuves with per-lesson-prefixed literal ids (`pe-e1…`, `ct-e1…`), each with
+  until one global submit**, then Boss review → Mon profil → Synthèse. Data conventions of the 4AM
+  lessons (see the nine `modules/Module0*Itqan.jsx` / `Module03Ahill.jsx`): 4–6 épreuves with
+  per-lesson literal ids, each with
   `skill` (mapped to the module that teaches it, powering « Revoir le module N ») and full
   `assessment` metadata covering all LPs; a `registre` of 4 context chips; per-skill zero-miss 🏅
-  badges plus one 💎 perfect badge; a bespoke `Synthese` that **reuses the lesson's own
-  manipulative** as a frozen visual recap; `timerSeconds: 600`, `xpPerCorrect: 10`; static
+  badges plus one 💎 perfect badge; `synthese={<KnowledgeSnapshot complete variant="complete" />}`
+  (the lesson's knowledge map as recap); `timerSeconds` ≈ `estimatedTime` minutes × 60
+  (6–9 min, 12 min for the synthesis lesson); static
   `extra` nodes allowed per épreuve. Persistence via `useFinalTestAttempt` (saved attempt
   short-circuits to review; « Refaire le test » resets). **No phase after Synthèse** re-gating
   completion. Épreuves are authored *last*, so distractors mirror the traps actually taught.
 - **Bespoke manipulations** (the lesson's own components) follow the same contract: props
   `solved`/`onSolved` (+ `react` from the slot function), unconditional completion at the goal,
-  `react(isCorrect)` at the same call site, controlled state owned by the module. Prefer
-  extending the shared labs (`MeasureFillMission`, `OrderingGame`, `InfoSorter`, `GroupBuilder`,
-  `NumberLine`) over inventing a counter-with-buttons.
+  `react(isCorrect)` at the same call site, controlled state owned by the module. Prefer a
+  registry manipulation type or a shared lab (`InfoSorter`, `NumberLine`) over inventing a
+  counter-with-buttons.
 
 ---
 
@@ -435,7 +464,7 @@ blocker:
    taps.
 4. **ARIA layering**: interactive wrapper `role="group"`; `role="img"` only on purely visual
    SVG — never on an element containing real `<button>`s (it hides them from AT). Hit shapes get
-   `role="button"`, `tabIndex`, French `aria-label`s, Enter/Space handlers.
+   `role="button"`, `tabIndex`, Arabic `aria-label`s (`ARABIC_RTL_CONTRACT.md`), Enter/Space handlers.
 5. **Density caps**: ≤ ~52 interactive/animated nodes per manipulation. Big grids (the 10×10
    dm²-in-cm² overlay) are static SVG lines; large magnitudes render as capped representative
    tiles plus a « ×N » badge — never 1000 nodes.
@@ -446,8 +475,9 @@ blocker:
    the student can reach. Derive placement from the content — bounding boxes, anchor points,
    outward offsets from a computed centre, a viewBox fitted to the drawing *plus* its labels —
    never a fixed pixel offset that happens to work at the default value. Assert it: sweep the
-   control in the e2e suite (`svgOverflow` / `textCollisions`), or, when the placement is pure
-   geometry, unit-test the full grid of reachable states. `SolidTurner`'s fixed label offset was
+   control and run `npm run audit:collisions` (`scripts/audit-svg-collisions.mjs`), or, when the
+   placement is pure geometry, unit-test the full grid of reachable states. The (historical,
+   deleted) `SolidTurner`'s fixed label offset was
    correct at the default angle and collided at 16 orientations out of 468 — a screenshot could
    not have caught it. See INTERACTION_PEDAGOGY §17.
 7. **Controlled components, module-owned state**; factors and conversions from the utils table
@@ -480,8 +510,8 @@ Phones are the primary device; 375 × 667 with `hasTouch` is the tested baseline
 ## 12. Accessibility
 
 Keyboard operability on all interactive elements (Enter/Space activation, arrow-key movement for
-draggables); visible focus (`focus-visible:ring` house classes); French `aria-label`s that state
-the *reading* (« Cuve graduée, 6 dL sur 10 »); color never the sole carrier (text + icons on all
+draggables); visible focus (`focus-visible:ring` house classes); Arabic `aria-label`s that state
+the *reading* (as `ARABIC_RTL_CONTRACT.md` requires); color never the sole carrier (text + icons on all
 ok/ko states, labeled chips); every visual consequence mirrored in text; reduced-motion support
 everywhere; readable instruction text. Every visual-only mechanic gets an alternative
 (drag → tap controls, rotation → increment buttons, animation → the same state change,
@@ -501,26 +531,90 @@ purposes: transformation, causality, movement, comparison, construction, progres
 contour or hop arc; a stamped diameter ribbon). Decorative animation is removed. Keep meaningful
 animations ≤ ~600 ms, reduced-motion aware; the kit's XP burst is the only celebration effect.
 
+### 13bis. Arabic typography (ar-DZ lessons) — Cairo, global, non-negotiable
+
+All student-facing Arabic content uses the application's global Cairo Arabic typography
+(`apps/web/tailwind.config.js`, `apps/web/src/index.css`; master spec §14). This is a platform-wide
+rule, not a per-lesson decision:
+
+- **Never** import another Arabic font at the lesson or module level (no Tajawal, Noto Sans
+  Arabic, Amiri, IBM Plex Arabic, etc. as a primary choice — Tajawal only exists as the platform's
+  own second fallback, already wired in globally).
+- **Never** define a lesson-specific Arabic font class, inline `font-family`, or override the
+  global Arabic typography. Rely on inheritance — `font-sans`, `font-space`, `font-inter`,
+  `font-mono`, plain text nodes, headings — all already resolve to Cairo for Arabic glyphs
+  (`font-mono` keeps JetBrains Mono for digits/code and Cairo for the Arabic letters of a
+  mono-styled label). Never place a system font (`system-ui`, `ui-sans-serif`, `Arial`…) before
+  Cairo: system fonts have Arabic glyphs and would silently replace it.
+- **Preserve the mathematical font system.** KaTeX and MathLive set their own fonts on their own
+  elements; do not touch or wrap them with a font override.
+- **Preserve code/monospace typography** (`font-mono` / `.font-mono-jetbrains` — JetBrains Mono).
+  Numerals and code stay monospace regardless of the surrounding Arabic text.
+- A lesson generator's job is content and structure, not typography. If a generated lesson needs
+  to render Arabic text, it inherits Cairo automatically and must not attempt to set up its own
+  font stack.
+
+### 13ter. Arabic is the student's language (ar-DZ lessons) — everything they read
+
+Every student-facing sentence and pedagogical word in an ar-DZ lesson is in Arabic. The only
+Latin text a student may see is **legitimate mathematical notation** or **a technical identifier
+that is never rendered**. This is an acceptance criterion, not a preference: "most of the lesson
+is Arabic" is a failure.
+
+**Must be Arabic** — titles, descriptions, briefs, step titles and subtitles, questions, options,
+distractors, explanations, hints, every feedback string (success, error, retry, empty, completion),
+manipulation labels and legends, knowledge-map entries, badges, and every `aria-label`, `title`
+and `placeholder` (a screen reader reads these aloud to the same student).
+
+**Must NOT be translated** — `PGCD`, `PPCM`, variables (`a`, `b`, `x`), operators, `√`, equations,
+numerals, and standard abbreviations; and all technical identifiers: ids (`id: '4am_pgcd'`),
+component/function/file names, routes, registry keys, CSS classes, database fields. Prefer the
+Arabic wording *with* the standard notation — `القاسم المشترك الأكبر (PGCD)` — and never invent an
+awkward translation of an established symbol. `احسب PGCD(84;36)` is correct; `Calcule PGCD(84;36)`
+is not.
+
+**Where the untranslated text actually hides.** A lesson can be flawless on its own files and still
+show French to a student, because the *chrome* comes from shared components:
+
+- **Scan every module, not the first screen** — and every interactive state: initial, selected,
+  correct, incorrect, each hint level, validation, error, completion, reset, and both navigation
+  directions. Text that only appears after an interaction is the most common miss.
+- **Follow imports to the real rendered surface** — module → manipulation → shared kit → feedback →
+  button. Build the actual import graph; a lesson's own 18 files can pull in 70+.
+- **Fix shared chrome at the shared level, through i18n** — never by hardcoding Arabic into a
+  component other lessons render. Add the key to `apps/web/src/i18n/locales/ar/` and call `t()`.
+  Check the key *resolves*: a missing key renders the raw key or a stale default.
+- **Arabic plurals need all six forms** (`_zero`, `_one`, `_two`, `_few`, `_many`, `_other`), and
+  the count belongs *inside* the key — never concatenate a number with a translated noun.
+- **Isolate numeric pairs with `dir="ltr"`.** In an RTL page, `{score} / {max}` renders reversed:
+  10/11 reads as "11 / 10". Every score, counter and ratio (`N / M`) needs the wrapper, exactly as
+  `MathText` already does for expressions.
+
+**Always run a second full scan after generating or editing a lesson**, searching independently for
+French and English prose, mixed-language sentences, untranslated buttons/feedback/hints, and
+accidental developer or placeholder text. Classify each hit — notation and identifiers stay,
+prose gets translated — and finish in the browser, since some strings only appear dynamically.
+
 ---
 
 ## 14. Reference lessons: reference ≠ template
 
-Fractions (6e) is the pedagogical reference — it proves the architecture (manipulation,
-synchronized representations, misconception-driven design, kit modules, evidence, boss). The
-grandeurs family (longueurs → masses → contenances → périmètres/aires/durées/angles) is the
-structural reference for the 8-module shape and the component engineering rules.
+The reference lessons are the nine 4AM lessons of « الأعداد الطبيعيّة والأعداد النّاطقة » —
+`docs/lessons/LESSON_DEVELOPMENT_GUIDE.md` §9 says what each one demonstrates. *(Historical: this
+section once named Fractions (6e) as the pedagogical reference and the grandeurs family as the
+structural reference; those French lessons, and every component the list below cites by name
+(`LiquidContainer`, `MeasureFillMission`, `PolygonPerimeter`…), were deleted on 2026-09-25 — read
+them in git history.)*
 
 **For every new lesson, produce an explicit four-way analysis before designing:**
 
 - **REUSE** — infrastructure and patterns as-is: the kit, the formative components with their
   opt-ins, the conflict-cognitif trigger pattern, reveal-as-conclusion (the symbol appears only
-  after the gesture), the `components/learningPoints.js` convention (literal LP mirror +
-  `recommendedSlug` per LP for the boss profile), the e2e conventions, proven lesson-local
-  components when the same mathematics applies (`LiquidContainer`, `MeasureFillMission`).
-- **ADAPT** — patterns that transfer with change: the carried-object narrative, ladder/switcher
-  components re-derived for a new unit table, a copied-and-extended component when the source
-  lesson must stay untouched (périmètres duplicated longueurs' `PolygonPerimeter` rather than
-  editing it).
+  after the gesture), the literal `learningPoints` in `lesson.config.js`, the e2e conventions,
+  the registry manipulation types when the same mathematics applies.
+- **ADAPT** — patterns that transfer with change: the carried-object narrative, a registry type
+  given new props or theme data (a new drawn world), a shared component **extended behind an
+  optional prop** — never forked or copied (the guide: « Do not fork a shared component »).
 - **REPLACE** — patterns mathematically wrong for this lesson: partition semantics for a
   continuous magnitude; decimal conversion helpers for sexagesimal time. *Same Smarter Academy
   experience, different mathematical learning architecture* — the engine emerges from the
@@ -559,7 +653,7 @@ formal mathematics? → *only then* the technical architecture.
 ### 15.3 Produce the design spec before code
 
 For a from-scratch or rebuilt lesson, write the lesson's Markdown design contract first
-(`docs/lessons/<GRADE>_<LESSON>_SPEC.md`; worked example: `6E_CONTENANCES_SPEC.md`), with this
+(`docs/lessons/<GRADE>_<LESSON>_SPEC.md`; the French worked examples were deleted on 2026-09-25 with their lessons), with this
 structure: Lesson Identity · Curriculum Contract · Pedagogical Vision · Target Student &
 Cognitive Challenges · Mathematical Model · Invariants · Representation Model · Global Journey ·
 Module Architecture (per-module) · Interaction Design (candidates + verdicts) · Signature
@@ -576,13 +670,16 @@ surface them as explicit options; record the answers in the spec.
 
 1. Catalogue entry (`status: 'coming_soon'`) — everything downstream reads LP ids from it.
 2. Utils module + isolated verification of the pure math.
-3. `lesson.config.js` + `learningPoints.js` + `moduleContext.js` + `routes.jsx` skeleton.
+3. `lesson.config.js` + `knowledge.jsx` + `content/` + the one-line `moduleContext.js` and
+   `routes.jsx` (LESSON_DEVELOPMENT_GUIDE §3) — and `knowledgeGraph.js`, the progressive Knowledge
+   Map, designed **with** the lesson (its `reveals` is the lesson's progression; its guidance is
+   drawn from the exercises and questions written here): `KNOWLEDGE_MAP.md` A.10, A.13, A.14.
 4. **Signature interaction** and its module — highest risk first; validate density caps and
    reduced motion here.
 5. Core discovery modules (trigger + discoveries).
 6. Guided practice / formalization modules.
 7. Transfer / practice_lab module.
-8. Module 0 diagnostic, then the **boss last** (its distractors mirror the actually-taught
+8. Module 0 diagnostic (only if the prerequisites come from previous years), then the **boss last** (its distractors mirror the actually-taught
    traps).
 9. Integration verification (locking, revisit, stale-attempt edge cases, archive removal).
 10. Accessibility + responsive pass.
@@ -595,20 +692,23 @@ surface them as explicit options; record the answers in the spec.
 
 ### 15.5 Integration surface (per lesson, complete)
 
-- **Catalogue**: one `smaMetadata` entry in `packages/core/curriculum/coursesData.js` (chapter
-  placement is automatic from the official JSON's domain; the route path auto-derives). Core
-  tests are invariant-based (unique codes/paths) — new entries pass if ids are globally unique.
-- **Lesson directory**: `lesson.config.js` (id matches the catalogue; `sequentialUnlock: true`;
-  LP header comment with the literal ids; **no `totalModules`**), `moduleContext.js` (the
-  canonical 20-line form — `totalModules: modules.length` and, whenever a module 0 exists,
-  `lastModuleNumber`, or the final module's Terminer button breaks; `levelLabel`/`gradeLabel`
-  are per-lesson literals), `index.jsx` (thin `LessonIndex` wrapper), `routes.jsx`
-  (`MODULE_COMPONENTS` keyed by module `number`, including `0`).
-- **`App.jsx`**: one import + one `{xRoutes()}` spread per **new** lesson (nothing for a rebuild
-  of an existing one). The registry auto-discovers configs via `import.meta.glob` — no registry
-  edit.
-- **Locking**: module-to-module via `lessonAccess.js` (`n <= 1` always unlocked — module 0 never
-  gates module 1; `evaluation` always unlocked; a completed module never re-locks). Step-to-step
+- **Catalogue**: one entry in `packages/core/curriculum/dz/lessons_4am_2026_2027.json` (read
+  through `packages/core/curriculum/coursesData.js`). Core tests are invariant-based (unique
+  codes/paths) — new entries pass if ids are globally unique.
+- **Lesson directory**: `lesson.config.js` (id matches the catalogue; LP header comment with the
+  literal ids; **no `totalModules`**), `moduleContext.js` — one line,
+  `buildModuleContext(LESSON_CONFIG, LESSON_BASE_PATH)` from `_unit/moduleContext.js`,
+  `index.jsx` (thin `LessonIndex` wrapper), `routes.jsx` — `import.meta.glob('./modules/Module*.jsx')`
+  + `buildLessonRoutes({ config, basePath, moduleFiles, loadKnowledge, loadIndex })` from
+  `_unit/lessonRoutes.jsx`, which resolves each module by the two-digit number in its filename.
+  See `LESSON_CONTRACT.md` « L'unité 4AM » and LESSON_DEVELOPMENT_GUIDE §3.
+- **Mounting** (since 2026-10-14): nothing in `App.jsx`. `node scripts/generate-lesson-index.mjs` adds a **new**
+  lesson to `lessons/lessonIndex.generated.json` (a rebuild only needs it when its modules change);
+  the lazy route boundary and `lessonLoaders.js` do the rest — no registry edit.
+- **Locking**: module-to-module via `isModuleUnlocked(isModuleCompleted, n, { stage,
+  firstModuleNumber, previousStage })` in `packages/core/lessonAccess.js` (the lesson's first
+  module always open; a module after a `prerequisite_check` never gated by it; `evaluation`
+  always unlocked — see `LESSON_CONTRACT.md` « Déverrouillage séquentiel »; a completed module never re-locks). Step-to-step
   is kit-internal. Never special-case the shared threshold for one lesson.
 - **Persistence** (all via `scopedStorage`, `u_{userId|anon}_` prefixed; anonymous visitors get
   full local persistence): `smarter_lesson_{id}` (completion/XP, server-synced via
@@ -657,8 +757,8 @@ chain, in order:
    something changed? Would I know what to do next?* Any NO → redesign before shipping.
 7. **Status flip + curriculum sync**: `available` → re-validate → export/import →
    `smarter:validate-curriculum` with drift review recorded.
-8. **Scope check**: `git status` confined to the lesson directory, `coursesData.js`, `App.jsx`
-   (new lessons only), the spec, and the e2e file — sibling lessons untouched.
+8. **Scope check**: `git status` confined to the lesson directory, `coursesData.js`, `lessonIndex.generated.json`
+   (new lessons, or changed modules), the spec, and the e2e file — sibling lessons untouched.
 
 **Definition of Done** (all must hold): every JSON LP taught and assessed; every important
 concept has a meaningful manipulation; the student always knows what to do; rules are discovered

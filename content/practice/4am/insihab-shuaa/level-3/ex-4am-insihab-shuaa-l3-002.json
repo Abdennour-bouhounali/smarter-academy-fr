@@ -1,0 +1,77 @@
+{
+  "id": "ex-4am-insihab-shuaa-l3-002",
+  "lessonCode": "insihab-shuaa",
+  "level": 3,
+  "metadata": {
+    "title": "نشاط 2 أ — إنشاء D",
+    "estimatedMinutes": 2,
+    "tags": [
+      "متوازي الأضلاع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-2",
+      "page": 128,
+      "section": "أنشطة",
+      "number": 2
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 128): ABC مثلث كيفي. نريد إنشاء النقطة D بحيث يكون الرباعي ABCD متوازي أضلاع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "النقطة D هي:",
+      "learningPoints": [
+        {
+          "code": "4am_insihab-shuaa_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صورة C بالانسحاب الذي يحوّل B إلى A",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "صورة C بالانسحاب الذي يحوّل A إلى B",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        },
+        {
+          "id": "C",
+          "content": "صورة A بالانسحاب الذي يحوّل C إلى B",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-HARAKA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{AB} = \\overrightarrow{DC}$ يعني ABCD متوازي أضلاع: اقرأ A ثم B ثم نهاية الشعاع الثاني ثم مبدأه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في متوازي الأضلاع، كل ضلعين متقابلين يعطيان شعاعين متساويين إذا قرأناهما في نفس الجهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارسم الرباعي على ورقة وضع السهمين لتتحقق من الجهة."
+        }
+      ],
+      "feedback": {
+        "correct": "ABCD متوازي أضلاع يعني $\\overrightarrow{AB}$ = $\\overrightarrow{DC}$ أي $\\overrightarrow{CD}$ = $\\overrightarrow{BA}$ : D صورة C بالانسحاب الذي يحوّل B إلى A.",
+        "incorrect": "بالانسحاب الذي يحوّل A إلى B نحصل على الرباعي ABDC لا ABCD."
+      },
+      "difficulty": 3,
+      "cognitiveDemand": "reason"
+    }
+  ]
+}

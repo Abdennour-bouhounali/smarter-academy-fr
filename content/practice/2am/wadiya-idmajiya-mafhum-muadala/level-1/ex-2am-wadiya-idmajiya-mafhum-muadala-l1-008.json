@@ -1,0 +1,84 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-mafhum-muadala-l1-008",
+  "lessonCode": "wadiya-idmajiya-mafhum-muadala",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — حلّ معادلة من الشكل x ÷ a = b",
+    "estimatedMinutes": 5,
+    "tags": [
+      "معادلة",
+      "قسمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نحلّ معادلة يكون فيها المجهول مقسومًا على عدد ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "حلّ المعادلة : $\\dfrac{x}{7} = 2{,}5$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "17.5",
+      "misconceptionSignatures": [
+        {
+          "value": "9.5",
+          "id": "MISC-MAJHUL-ADDFORM"
+        },
+        {
+          "value": "4.5",
+          "id": "MISC-MAJHUL-SUBFORM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في المعادلة ما يُفعل بالمجهول : ضرب أو قسمة أو جمع أو طرح، وما هي آخر عملية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ألغِ آخر عملية أُجريت على المجهول أوّلًا، ثمّ ألغِ ما بقي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من حلّك : عوّض المجهول بقيمته وأنجز العملية، فإن وجدت الطرف الآخر فالحلّ صحيح."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 17{,}5$ .",
+        "incorrect": "ابحث عن العدد الذي يجعل المساواة صحيحة بالعملية العكسية، ثمّ تحقّق منه بإنجاز العملية."
+      },
+      "solution": {
+        "lines": [
+          "لإلغاء القسمة على $7$ نضرب : $x = 2{,}5 \\times 7 = 17{,}5$ .",
+          "التحقّق : $\\dfrac{17{,}5}{7} = 2{,}5$ ."
+        ],
+        "result": "17{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 85
+    }
+  ]
+}

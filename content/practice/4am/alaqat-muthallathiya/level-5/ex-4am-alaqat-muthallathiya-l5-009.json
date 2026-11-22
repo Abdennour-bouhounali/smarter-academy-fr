@@ -1,0 +1,367 @@
+{
+  "id": "ex-4am-alaqat-muthallathiya-l5-009",
+  "lessonCode": "alaqat-muthallathiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2021 — أنبوب الماء من المنبع إلى الخزان",
+    "estimatedMinutes": 20,
+    "tags": [
+      "الوضعية الإدماجية",
+      "العلاقات المثلثية",
+      "تكلفة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_alaqat-muthallathiya_P2",
+      "modelledOn": "BEM 2021 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في قرية بولاية تيزي وزو، يريد فلاح جلب الماء من منبع $S$ في أعلى تلّة إلى خزان $T$ أسفلها بأنبوب مستقيم $[ST]$ . $H$ المسقط العمودي للمنبع $S$ على المستوي الأفقي المارّ بـ $T$ ، والمسافة الأفقية $TH = 120\\,\\mathrm{m}$ (الشكل المقابل). يعطي جهاز قياس الميل $\\cos\\widehat{STH} = \\dfrac{15}{17}$ . تُباع الأنابيب في قطع طول كل منها $6\\,\\mathrm{m}$ ، ثمن القطعة $2750\\,\\mathrm{DA}$ . وينوي الفلاح أن يتقاسم ماء المنبع مع جيرانه تكافلًا.",
+    "figure": {
+      "points": {
+        "T": [
+          0,
+          0
+        ],
+        "H": [
+          120,
+          0
+        ],
+        "S": [
+          120,
+          64
+        ]
+      },
+      "segments": [
+        {
+          "from": "T",
+          "to": "H",
+          "label": "120 m"
+        },
+        [
+          "H",
+          "S"
+        ],
+        {
+          "from": "T",
+          "to": "S",
+          "tone": "indigo"
+        }
+      ],
+      "rightAngles": [
+        [
+          "T",
+          "H",
+          "S"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "T",
+          "from": "H",
+          "to": "S"
+        }
+      ],
+      "labels": {
+        "T": "sw",
+        "H": "se",
+        "S": "n"
+      },
+      "ariaLabel": "الأنبوب [ST] من المنبع S إلى الخزان T، و H المسقط العمودي لـ S على المستوي الأفقي المار بـ T حيث TH = 120 م، والزاوية STH معلّمة",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب القيمتين المضبوطتين لـ $\\sin\\widehat{STH}$ و $\\tan\\widehat{STH}$ .",
+      "statement": "$\\sin \\widehat{STH}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "8/17",
+      "misconceptionSignatures": [
+        {
+          "value": "2/17",
+          "id": "MISC-MUTH-JAMA-NISAB"
+        },
+        {
+          "value": "64/289",
+          "id": "MISC-MUTH-JADHR-NASI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العلاقة التي تربط جيب الزاوية وجيب تمامها هي $\\cos^2 \\widehat{STH} + \\sin^2 \\widehat{STH} = 1$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اعزل $\\sin^2 \\widehat{STH}$ ثم عوّض جيب التمام بقيمته، ولا تنس تربيع البسط والمقام معا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\sin \\widehat{STH}$ عدد موجب تماما: خذ الجذر التربيعي الموجب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin^2 \\widehat{STH} = 1 - \\dfrac{225}{289} = \\dfrac{64}{289}$ ، إذن $\\sin \\widehat{STH} = \\dfrac{8}{17}$ .",
+        "incorrect": "استعمل العلاقة $\\cos^2 x + \\sin^2 x = 1$ (بين المربعين)، ثم خذ الجذر التربيعي الموجب."
+      },
+      "solution": {
+        "lines": [
+          "$\\sin^2 \\widehat{STH} + \\cos^2 \\widehat{STH} = 1$ ، إذن $\\sin^2 \\widehat{STH} = 1 - \\left(\\dfrac{15}{17}\\right)^2 = 1 - \\dfrac{225}{289} = \\dfrac{64}{289}$",
+          "$\\sin \\widehat{STH}$ عدد موجب، إذن $\\sin \\widehat{STH} = \\sqrt{\\dfrac{64}{289}}$"
+        ],
+        "result": "\\sin \\widehat{STH} = \\dfrac{8}{17}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$\\tan \\widehat{STH}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "8/15",
+      "misconceptionSignatures": [
+        {
+          "value": "15/8",
+          "id": "MISC-MUTH-TAN-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الظل هو حاصل قسمة الجيب على جيب التمام: $\\tan \\widehat{STH} = \\dfrac{\\sin \\widehat{STH}}{\\cos \\widehat{STH}}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على كسر هي الضرب في مقلوبه، ثم اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan \\widehat{STH} = \\dfrac{8}{17} \\div \\dfrac{15}{17} = \\dfrac{8}{15}$ .",
+        "incorrect": "الظل = الجيب ÷ جيب التمام؛ القسمة على كسر هي الضرب في مقلوبه."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan \\widehat{STH} = \\dfrac{\\sin \\widehat{STH}}{\\cos \\widehat{STH}} = \\dfrac{8}{17} \\div \\dfrac{15}{17}$"
+        ],
+        "result": "\\tan \\widehat{STH} = \\dfrac{8}{15}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب الفرق في الارتفاع $SH$ بين المنبع والخزان.",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "64",
+      "misconceptionSignatures": [
+        {
+          "value": "225",
+          "id": "MISC-MUTH-TAN-QISMA-MAQLUBA"
+        },
+        {
+          "value": "1920/17",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$[SH]$ مقابل للزاوية $\\widehat{STH}$ و $[TH]$ مجاور لها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل الظل."
+        }
+      ],
+      "feedback": {
+        "correct": "$SH = 120 \\times \\dfrac{8}{15} = 64\\,\\mathrm{m}$ .",
+        "incorrect": "المعلوم المجاور والمطلوب المقابل: اضرب في الظل."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $STH$ القائم في $H$ : $\\tan\\widehat{STH} = \\dfrac{SH}{TH}$",
+          "$SH = 120 \\times \\dfrac{8}{15}$"
+        ],
+        "result": "SH = 64\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "☜ ما المبلغ الذي يدفعه الفلاح لشراء الأنابيب؟",
+      "statement": "طول الأنبوب $ST$ :",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "136",
+      "misconceptionSignatures": [
+        {
+          "value": "1800/17",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$[ST]$ هو الوتر و $[TH]$ مجاور للزاوية $\\widehat{STH}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المجهول في مقام جيب التمام."
+        }
+      ],
+      "feedback": {
+        "correct": "$ST = \\dfrac{TH}{\\cos\\widehat{STH}} = 120 \\times \\dfrac{17}{15} = 136\\,\\mathrm{m}$ .",
+        "incorrect": "الوتر = المجاور ÷ جيب التمام."
+      },
+      "solution": {
+        "lines": [
+          "$\\cos\\widehat{STH} = \\dfrac{TH}{ST}$ ، إذن $ST = 120 \\div \\dfrac{15}{17} = 120 \\times \\dfrac{17}{15}$"
+        ],
+        "result": "ST = 136\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "عدد قطع الأنابيب اللازمة:",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "23",
+      "misconceptionSignatures": [
+        {
+          "value": "22",
+          "id": "MISC-MUTH-TADWIR-BATR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم طول الأنبوب على 6، والقطعة لا تُشترى ناقصة."
+        }
+      ],
+      "feedback": {
+        "correct": "$136 \\div 6 \\simeq 22{,}7$ : يلزم 23 قطعة.",
+        "incorrect": "عدد القطع هو أصغر عدد طبيعي يغطي الطول كله."
+      },
+      "solution": {
+        "lines": [
+          "$136 \\div 6 \\simeq 22{,}67$",
+          "22 قطعة تغطي $132\\,\\mathrm{m}$ فقط، إذن يلزم 23 قطعة."
+        ],
+        "result": "23"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ج",
+      "statement": "المبلغ الذي يدفعه الفلاح:",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "63250",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب عدد القطع في ثمن القطعة."
+        }
+      ],
+      "feedback": {
+        "correct": "$23 \\times 2750 = 63250\\,\\mathrm{DA}$ .",
+        "incorrect": "المبلغ = عدد القطع × ثمن القطعة."
+      },
+      "solution": {
+        "lines": [
+          "$23 \\times 2750$"
+        ],
+        "result": "63250\\,\\mathrm{DA}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

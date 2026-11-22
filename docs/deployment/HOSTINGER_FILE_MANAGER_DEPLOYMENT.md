@@ -376,7 +376,7 @@ Puis reporter `GOOGLE_CLIENT_ID` et `GOOGLE_CLIENT_SECRET` dans le `.env`
    témoin le plus simple que le nouveau code est bien en place.
 3. **Le mode debug est fermé** — `https://smarter-academy.fr/api/v1/inexistant`
    renvoie `{"message": "..."}` **sans** trace d'exécution.
-4. **Les pages légales** — `/cgu`, `/confidentialite`, `/mentions-legales`.
+4. **Les pages légales** — `/cgu`, `/confidentialite` (la page `/mentions-legales` a été retirée le 2026-10-04).
 5. **Connexion existante** — se connecter avec un compte déjà en base.
    *C'est le test de non-régression le plus important.*
 6. **Inscription** — créer un compte de test : la case de consentement doit être

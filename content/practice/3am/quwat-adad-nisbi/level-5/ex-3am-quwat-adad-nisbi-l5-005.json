@@ -1,0 +1,401 @@
+{
+  "id": "ex-3am-quwat-adad-nisbi-l5-005",
+  "lessonCode": "quwat-adad-nisbi",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — تحدّي طيّ الورقة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "أس سالب",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في تحدٍّ بنادي العلوم، يطوي تلميذ بإتقان ورقة سمكها $0{,}1\\,\\mathrm{mm}$ وطولها $64\\,\\mathrm{cm}$ على نصفين مرّات متتالية. بعد $n$ طيّة يصبح سمك الرزمة $0{,}1 \\times 2^{n}\\,\\mathrm{mm}$ ، ويصبح طولها $64 \\times 2^{-n}\\,\\mathrm{cm}$ .\nالجزء الأول: السمك.\nالجزء الثاني: الطول."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "ما سمك الرزمة بعد 5 طيّات؟ (بالمليمتر)",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة) أو كسر",
+      "expectedAnswer": "3,2",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-QUWA-POWER-AS-PRODUCT"
+        },
+        {
+          "value": "0,32",
+          "id": "MISC-QUWA-PRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما أول عملية تُنجز في هذه العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأولوية: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب مرحلة واحدة في كل سطر، وتحقّق من إشارة كل حدّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}1 \\times 32 = 3{,}2$ .",
+        "incorrect": "احترم أولوية العمليات: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$2^{5} = 32$",
+          "$0{,}1 \\times 32 = 3{,}2$"
+        ],
+        "result": "3{,}2\\,\\mathrm{mm}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما سمك الرزمة بعد 10 طيّات؟ (بالمليمتر)",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة) أو كسر",
+      "expectedAnswer": "102,4",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-QUWA-POWER-AS-PRODUCT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما أول عملية تُنجز في هذه العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأولوية: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب مرحلة واحدة في كل سطر، وتحقّق من إشارة كل حدّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}1 \\times 1024 = 102{,}4$ .",
+        "incorrect": "احترم أولوية العمليات: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$2^{10} = 1024$",
+          "$0{,}1 \\times 1024 = 102{,}4$"
+        ],
+        "result": "102{,}4\\,\\mathrm{mm}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "كم مرة يكون السمك بعد 10 طيّات أكبر منه بعد 5 طيّات؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "32",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-QUWA-QUOTIENT-EXP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "البسط والمقام قوتان للأساس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل قسمة قوتين لهما الأساس نفسه: نطرح أس المقام من أس البسط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طرح أسّ سالب يعني إضافة معاكسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2^{10}}{2^5} = 2^5 = 32$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{0{,}1 \\times 2^{10}}{0{,}1 \\times 2^{5}} = 2^{10-5} = 2^{5} = 32$"
+        ],
+        "result": "32"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "ما طول الرزمة بعد 6 طيّات؟ (بالسنتيمتر)",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "-384",
+          "id": "MISC-QUWA-NEG-EXP-NEGATIVE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$a^{-n}$ هو مقلوب $a^n$ ، فهو لا يدلّ على عدد سالب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $a^n$ أولًا، ثم خذ مقلوبه، وحافظ على إشارة $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "من أجل $a \\neq 0$ : $a^0 = 1$ و $a^1 = a$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$64 \\times 2^{-6} = \\dfrac{64}{64} = 1$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$2^{-6} = \\dfrac{1}{2^{6}} = \\dfrac{1}{64}$",
+          "$64 \\times \\dfrac{1}{64} = 1$"
+        ],
+        "result": "1\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما طول الرزمة بعد 8 طيّات؟ (بالسنتيمتر)",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "1/4",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-QUWA-NEG-EXP-NEGATIVE"
+        },
+        {
+          "value": "-512",
+          "id": "MISC-QUWA-NEG-EXP-NEGATIVE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$a^{-n}$ هو مقلوب $a^n$ ، فهو لا يدلّ على عدد سالب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $a^n$ أولًا، ثم خذ مقلوبه، وحافظ على إشارة $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "من أجل $a \\neq 0$ : $a^0 = 1$ و $a^1 = a$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$64 \\times 2^{-8} = 2^{6-8} = 2^{-2} = \\dfrac{1}{4}$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$64 = 2^{6}$",
+          "$2^{6} \\times 2^{-8} = 2^{-2} = \\dfrac{1}{4}$"
+        ],
+        "result": "0{,}25\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ا",
+      "lead": "القرار.",
+      "statement": "بعد 8 طيّات، أيهما أكبر: سمك الرزمة أم طولها؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "السمك",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الطول",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QUWA-DECISION-UNCHECKED"
+        },
+        {
+          "id": "C",
+          "content": "متساويان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QUWA-DECISION-UNCHECKED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارجع إلى القيم التي حسبتها في الأسئلة السابقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين قبل أن تقرّر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القرار الصحيح يُبنى على حساب، لا على تخمين."
+        }
+      ],
+      "feedback": {
+        "correct": "السمك $2{,}56\\,\\mathrm{cm}$ والطول $0{,}25\\,\\mathrm{cm}$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "السمك: $0{,}1 \\times 2^{8} = 25{,}6\\,\\mathrm{mm} = 2{,}56\\,\\mathrm{cm}$",
+          "الطول: $0{,}25\\,\\mathrm{cm}$ ، إذن السمك أكبر."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "sub": "ب",
+      "statement": "برّر جوابك مع الانتباه إلى الوحدات.",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارجع إلى القيم التي حسبتها في الأسئلة السابقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين قبل أن تقرّر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القرار الصحيح يُبنى على حساب، لا على تخمين."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}1 \\times 256 = 25{,}6\\,\\mathrm{mm} = 2{,}56\\,\\mathrm{cm}$",
+          "$64 \\times 2^{-8} = 0{,}25\\,\\mathrm{cm}$",
+          "$2{,}56 > 0{,}25$ : السمك أكبر من الطول."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

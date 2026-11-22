@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l4-004",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — صورة رأس مثلث",
+    "estimatedMinutes": 3,
+    "tags": [
+      "انسحاب",
+      "متوازي الأضلاع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_shuaayn-mutasawiyayn_P3",
+      "modelledOn": "method-image"
+    }
+  },
+  "statement": {
+    "content": "ABC مثلث. D صورة A بالانسحاب الذي شعاعه $\\overrightarrow{BC}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "طبيعة الرباعي ABCD:",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "متوازي أضلاع",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "ABDC متوازي أضلاع وليس ABCD",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        },
+        {
+          "id": "C",
+          "content": "مستطيل",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المساواة الشعاعية لصورة A."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الشعاع AD يساوي الشعاع BC."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقرأ الرباعي A ثم D ثم C ثم B."
+        }
+      ],
+      "feedback": {
+        "correct": "الشعاعان AD و BC متساويان: ADCB، أي ABCD، متوازي أضلاع.",
+        "incorrect": "من A إلى صورتها D: الشعاع AD."
+      }
+    }
+  ]
+}

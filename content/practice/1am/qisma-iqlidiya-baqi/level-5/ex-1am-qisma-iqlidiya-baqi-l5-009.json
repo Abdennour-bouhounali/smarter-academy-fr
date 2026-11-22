@@ -1,0 +1,337 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l5-009",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — رفوف مكتبة البلدية",
+    "estimatedMinutes": 18,
+    "tags": [
+      "رفوف",
+      "الحاصل + 1",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تلقّت مكتبة البلدية هديةً 2475 كتابًا جديدًا، ويتطوّع الشباب لترتيبها.\nالجزء الأول: يتّسع الرفّ لـ 48 كتابًا.\nالجزء الثاني: في القاعة 50 رفًّا فارغًا فقط."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب حاصل القسمة الإقليدية للعدد 2475 على 48.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "51",
+      "misconceptionSignatures": [
+        {
+          "value": "27",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "50",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "52",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 2475 من 48 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 48 دون أن نتجاوز 2475."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$2475 = 48 \\times 51 + 27$ و $27 < 48$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 48 فلا يتجاوز الجداء 2475، والباقي عندئذ أصغر من 48."
+      },
+      "solution": {
+        "lines": [
+          "$48 \\times 51 = 2448$ و $48 \\times 52 = 2496$",
+          "$2448 \\le 2475 < 2496$ ، إذن الحاصل هو 51."
+        ],
+        "result": "q = 51"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اختر المساواة التي تعبّر عن القسمة الإقليدية للعدد 2475 على 48.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2475 = 48 \\times 51 + 27$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$2475 = 48 \\times 50 + 75$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "id": "C",
+          "content": "$2475 = 48 \\times 27 + 51$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "id": "D",
+          "content": "$2475 = 48 \\times 52 + 27$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق من صحة كل مساواة بالحساب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في القسمة الإقليدية على 48، يجب أن يكون الباقي أصغر من 48."
+        }
+      ],
+      "feedback": {
+        "correct": "$48 \\times 51 + 27 = 2475$ و $27 < 48$: الشرطان محقّقان.",
+        "incorrect": "المساواة الصحيحة يجب أن تكون صحيحة حسابيًا، وأن يكون باقيها أصغر من المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$48 \\times 51 = 2448$ و $2448 + 27 = 2475$",
+          "$27 < 48$ ، إذن:"
+        ],
+        "result": "2475 = 48 \\times 51 + 27"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "كم رفًّا يلزم لترتيب كل الكتب؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد الرفوف",
+      "expectedAnswer": "52",
+      "misconceptionSignatures": [
+        {
+          "value": "51",
+          "id": "MISC-IQLIDIYA-NISYAN-ZIYADA"
+        },
+        {
+          "value": "27",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل تكفي المجموعات الكاملة لوضع كل شيء؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ماذا نفعل بالباقي إذا لم يكن معدومًا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$2475 = 48 \\times 51 + 27$: يبقى 27 بعد المجموعات الكاملة، ويحتاج إلى رفّ آخر.",
+        "incorrect": "الحاصل يعدّ المجموعات الكاملة فقط؛ إذا بقي شيء فهو يحتاج إلى مجموعة إضافية."
+      },
+      "solution": {
+        "lines": [
+          "$2475 = 48 \\times 51 + 27$",
+          "يبقى 27 بعد المجموعات الكاملة، فنحتاج إلى رفّ آخر:",
+          "$51 + 1 = 52$"
+        ],
+        "result": "52"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "هل تكفي الرفوف الخمسون؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-NISYAN-ZIYADA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن عدد الرفوف اللازمة بـ 50."
+        }
+      ],
+      "feedback": {
+        "correct": "يلزم 52 رفًّا و $52 > 50$.",
+        "incorrect": "قارن عدد الرفوف اللازمة بعدد الرفوف المتوفّرة."
+      },
+      "solution": {
+        "lines": [
+          "يلزم 52 رفًّا، و $52 > 50$ ، إذن لا تكفي."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "كم كتابًا يبقى دون رفّ إذا مُلئت الرفوف الخمسون؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد الكتب",
+      "expectedAnswer": "75",
+      "misconceptionSignatures": [
+        {
+          "value": "27",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم كتابًا تتّسع له 50 رفًّا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$50 \\times 48 = 2400$ و $2475 - 2400 = 75$.",
+        "incorrect": "احسب ما تتّسع له الرفوف الخمسون، ثم اطرحه من 2475."
+      },
+      "solution": {
+        "lines": [
+          "$50 \\times 48 = 2400$",
+          "$2475 - 2400 = 75$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "اقترح أحد الشباب وضع 50 كتابًا في كل رفّ. هل تكفي الرفوف الخمسون عندئذ؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-NISYAN-ZIYADA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 2475 على 50."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كم رفًّا يلزم مع الباقي؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$2475 = 50 \\times 49 + 25$: يلزم 50 رفًّا، وهي متوفّرة.",
+        "incorrect": "لا تنسَ الرفّ الذي يستقبل الباقي."
+      },
+      "solution": {
+        "lines": [
+          "$2475 = 50 \\times 49 + 25$",
+          "يلزم $49 + 1 = 50$ رفًّا، و $50 \\le 50$ ، إذن تكفي."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

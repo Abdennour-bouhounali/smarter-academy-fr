@@ -1,0 +1,63 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ashia-l3-010",
+  "lessonCode": "wadiya-idmajiya-ashia",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — محيط رباعي المنتصفات",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مستقيم المنتصفين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ashia_P1",
+      "modelledOn": "ex-22"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "ABCD رباعي قطراه $AC = 10\\,\\mathrm{cm}$ و $BD = 14\\,\\mathrm{cm}$ ، و M، N، P، Q منتصفات [DA]، [AB]، [BC]، [CD]."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما محيط الرباعي MNPQ (بالسنتيمتر)؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "24",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خاصية مستقيم المنتصفين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$MN = QP = \\dfrac{BD}{2}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "و $NP = MQ = \\dfrac{AC}{2}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$MN + NP + PQ + QM = 7 + 5 + 7 + 5 = 24\\,\\mathrm{cm}$ ، أي $AC + BD$ .",
+        "incorrect": "كل ضلع نصف قطر من القطرين."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 3
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "id": "ex-4am-mushkilat-jumla-l1-006",
+  "lessonCode": "mushkilat-jumla",
+  "level": 1,
+  "metadata": {
+    "title": "عمرا ريان ولينة",
+    "estimatedMinutes": 7,
+    "tags": [
+      "ترييض",
+      "أعمار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mushkilat-jumla_P1",
+      "modelledOn": "act-3"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "مجموع عمري ريان وأخته لينة، اللذين يتعاونان على خدمة جدّتهما، 20 سنة، وريان أكبر من لينة بـ 4 سنوات."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "نسمّي $x$ عمر ريان و $y$ عمر لينة (بالسنوات).",
+      "statement": "ترجم المعطيات بجملة معادلتين مجهولاها $x$ و $y$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«أكبر بـ 4 سنوات» تعني: عمر ريان = عمر لينة + 4 ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "مجموع العمرين: $x + y = 20$",
+          "ريان أكبر بـ 4 سنوات: $x = y + 4$ أي $x - y = 4$",
+          "ومنه الجملة: $\\begin{cases} x + y = 20 \\\\ x - y = 4 \\end{cases}$"
+        ],
+        "result": "\\begin{cases} x + y = 20 \\\\ x - y = 4 \\end{cases}"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "جد عمر ريان وعمر لينة.",
+      "statement": "عمر ريان:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العمر بالسنوات (عدد فقط)",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معاملا $y$ متعاكسان في المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المعادلتين طرفا لطرف."
+        }
+      ],
+      "feedback": {
+        "correct": "عمر ريان 12 سنة.",
+        "incorrect": "بجمع المعادلتين طرفا لطرف يختفي $y$ : $2x = 24$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} x + y = 20 & ...(1) \\\\ x - y = 4 & ...(2) \\end{cases}$",
+          "بجمع المعادلتين طرفا لطرف نجد: $2x = 24$ ومنه $x = 12$",
+          "بتعويض قيمة $x$ في المعادلة (1): $12 + y = 20$ ومنه $y = 8$",
+          "التحقق في النص: $12 + 8 = 20$ و $12 - 8 = 4$ .",
+          "إذن عمر ريان 12 سنة وعمر لينة 8 سنوات."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "عمر لينة:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العمر بالسنوات (عدد فقط)",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لينة أصغر من ريان بـ 4 سنوات."
+        }
+      ],
+      "feedback": {
+        "correct": "عمر لينة 8 سنوات، ونتحقق: $12 + 8 = 20$ و $12 - 8 = 4$ .",
+        "incorrect": "عمر لينة = عمر ريان − 4 ."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} x + y = 20 & ...(1) \\\\ x - y = 4 & ...(2) \\end{cases}$",
+          "بجمع المعادلتين طرفا لطرف نجد: $2x = 24$ ومنه $x = 12$",
+          "بتعويض قيمة $x$ في المعادلة (1): $12 + y = 20$ ومنه $y = 8$",
+          "التحقق في النص: $12 + 8 = 20$ و $12 - 8 = 4$ .",
+          "إذن عمر ريان 12 سنة وعمر لينة 8 سنوات."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

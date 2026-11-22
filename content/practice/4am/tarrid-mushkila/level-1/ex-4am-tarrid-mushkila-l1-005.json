@@ -1,0 +1,84 @@
+{
+  "id": "ex-4am-tarrid-mushkila-l1-005",
+  "lessonCode": "tarrid-mushkila",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2010 — علامة الاختبار",
+    "estimatedMinutes": 4,
+    "tags": [
+      "ترييض",
+      "معادلة",
+      "معدّل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tarrid-mushkila_P1",
+      "modelledOn": "BEM 2010 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2010",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "يُحسب المعدّل الفصلي $m$ لتلميذ في مادة الرياضيات، علامة فرضه $f$ و علامة اختباره $e$ ، بالعلاقة:",
+    "formulas": [
+      "m = \\dfrac{f + 2e}{3}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "تحصّل سليم على 11 في الفرض. ما هي العلامة التي يجب أن يتحصّل عليها في الاختبار ليكون معدّله الفصلي 13 ؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: علامة الاختبار (من 20)",
+      "expectedAnswer": "14",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $m$ و $f$ بقيمتيهما في العلاقة: يبقى مجهول واحد $e$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب الطرفين في 3 للتخلّص من المقام."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم اطرح علامة الفرض من الطرفين واقسم على 2 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{11 + 2e}{3} = 13$ تعطي $e = 14$ .",
+        "incorrect": "المعامل 2 يخصّ علامة الاختبار فقط: اضرب أولًا الطرفين في 3 ."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض في العلاقة: $\\dfrac{11 + 2e}{3} = 13$",
+          "$11 + 2e = 13 \\times 3$",
+          "$11 + 2e = 39$",
+          "$2e = 39 - 11$",
+          "$2e = 28$",
+          "$e = 14$",
+          "إذن يجب أن يتحصّل سليم على 14 في الاختبار."
+        ],
+        "result": "e = 14"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

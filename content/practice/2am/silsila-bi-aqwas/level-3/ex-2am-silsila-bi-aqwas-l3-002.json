@@ -1,0 +1,205 @@
+{
+  "id": "ex-2am-silsila-bi-aqwas-l3-002",
+  "lessonCode": "silsila-bi-aqwas",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — معقوفان وخطّ كسر",
+    "estimatedMinutes": 12,
+    "tags": [
+      "أقواس متداخلة",
+      "خطّ الكسر",
+      "آلة حاسبة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-68",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "احسب العددين $E$ و $F$ ، ثم أجب عن السؤال الثالث. لتكن العبارتان: $E = 400 - [(12 + 8) \\times 3 - 15]$ و $F = \\dfrac{20 - 1{,}5 \\times 4 + 6}{12 \\div 4 + 5}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $E = 400 - [(12 + 8) \\times 3 - 15]$ .",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "355",
+      "misconceptionSignatures": [
+        {
+          "value": "397",
+          "id": "MISC-AQWAS-IGNORED"
+        },
+        {
+          "value": "325",
+          "id": "MISC-AQWAS-DROPOUTER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع خطًّا تحت أعمق القوسين: هما أوّل ما يُحسب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القوسين الداخليين ثم المعقوفين، ثم أكمل بقية العبارة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أعد كتابة العبارة بعد كل مرحلة بما بقي منها."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 400 - [(12 + 8) \\times 3 - 15] = 355$",
+        "incorrect": "نبدأ بأعمق القوسين ثم نخرج إلى المعقوفين، وفي كل مستوى نحترم أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$E = 400 - [(12 + 8) \\times 3 - 15]$",
+          "$E = 400 - (20 \\times 3 - 15)$",
+          "$E = 400 - (60 - 15)$",
+          "$E = 400 - 45$",
+          "$E = 355$"
+        ],
+        "result": "E = 355"
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب العبارة $F = \\dfrac{20 - 1{,}5 \\times 4 + 6}{12 \\div 4 + 5}$ دون استعمال خطّ الكسر ثم احسب قيمتها.",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "2.5",
+      "misconceptionSignatures": [
+        {
+          "value": "19.125",
+          "id": "MISC-AQWAS-BARSPLIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى البسط وإلى المقام: كلٌّ منهما عبارة تُحسب وحدها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب البسط وحده والمقام وحده، ثم اقسم أحدهما على الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يمكنك أن تكتب البسط والمقام كلًّا بين قوسين ثم تضع علامة القسمة بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$F = \\dfrac{20 - 1{,}5 \\times 4 + 6}{12 \\div 4 + 5} = 2{,}5$",
+        "incorrect": "خطّ الكسر يجمع البسط ويجمع المقام: نحسب كلًّا منهما أوّلًا ثم نقسم."
+      },
+      "solution": {
+        "lines": [
+          "$F = \\dfrac{20 - 1{,}5 \\times 4 + 6}{12 \\div 4 + 5}$",
+          "$F = (20 - 1{,}5 \\times 4 + 6) \\div (12 \\div 4 + 5)$",
+          "$F = (20 - 6 + 6) \\div (3 + 5)$",
+          "$F = (14 + 6) \\div 8$",
+          "$F = 20 \\div 8$",
+          "$F = 2{,}5$"
+        ],
+        "result": "F = 2{,}5"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما اللمسات التي يجب حجزها على آلة حاسبة علمية لحساب $F = \\dfrac{20 - 1{,}5 \\times 4 + 6}{12 \\div 4 + 5}$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(20 - 1{,}5 \\times 4 + 6) \\div (12 \\div 4 + 5) =$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$20 - 1{,}5 \\times 4 + 6 \\div (12 \\div 4 + 5) =$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-CALCNOBRACKET"
+        },
+        {
+          "id": "C",
+          "content": "$(20 - 1{,}5 \\times 4 + 6) \\div 12 \\div 4 + 5 =$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-CALCNOBRACKET"
+        },
+        {
+          "id": "D",
+          "content": "$20 - 1{,}5 \\times 4 + 6 \\div 12 \\div 4 + 5 =$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-CALCNOBRACKET"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجب حسابه كلّه قبل القسمة أو الضرب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جرّب في ذهنك كل اختيار: أيّ اختيار يحسب العبارة المطلوبة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$(20 - 1{,}5 \\times 4 + 6) \\div (12 \\div 4 + 5) =$ تعطي $2{,}5$ .",
+        "incorrect": "كل قوس نحتاجه في الحساب يجب أن نكتبه على الآلة: خطّ الكسر يصير قسمة بين قوسين."
+      },
+      "solution": {
+        "lines": [
+          "نكتب كل قوس نحتاجه: $(20 - 1{,}5 \\times 4 + 6) \\div (12 \\div 4 + 5) =$",
+          "فتظهر النتيجة $2{,}5$ ."
+        ]
+      },
+      "timeSeconds": 100
+    }
+  ]
+}

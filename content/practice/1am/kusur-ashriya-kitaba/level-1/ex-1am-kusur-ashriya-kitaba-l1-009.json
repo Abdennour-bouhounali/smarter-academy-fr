@@ -1,0 +1,229 @@
+{
+  "id": "ex-1am-kusur-ashriya-kitaba-l1-009",
+  "lessonCode": "kusur-ashriya-kitaba",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — صحيح أم خطأ؟",
+    "estimatedMinutes": 4,
+    "tags": [
+      "كتابة عشرية",
+      "كسر عشري"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "أجب بصحيح أو خطأ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "$0{,}05 = \\dfrac{5}{10}$",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KUSUR-ZERO-PLACE"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر إجابة واحدة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل يوجد صفر بين الفاصلة والرقم 5؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العدد بدلالة مراتبه: أعشار، أجزاء من مائة."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}05 = \\dfrac{5}{100}$ ، والعدد $\\dfrac{5}{10}$ هو $0{,}5$.",
+        "incorrect": "الصفر بعد الفاصلة يحفظ مرتبة الأعشار الفارغة: $0{,}05$ يحوي 5 أجزاء من مائة، لا 5 أعشار."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}05$ فيه رقمان بعد الفاصلة، إذن مقامه 100: $0{,}05 = \\dfrac{5}{100}$",
+          "$\\dfrac{5}{10} = 0{,}5$ ، وهو أكبر من $0{,}05$ ، فالعبارة خاطئة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "$2{,}50 = 2{,}5$",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KUSUR-TRAILING-ZERO"
+        }
+      ],
+      "answerFormat": "اختر إجابة واحدة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العددين على شكل كسرين عشريين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يغيّر صفر في آخر الجزء العشري قيمة العدد؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}50 = \\dfrac{250}{100} = \\dfrac{25}{10} = 2{,}5$.",
+        "incorrect": "الصفر الواقع في آخر الجزء العشري لا يغيّر قيمة العدد: $2{,}50$ و $2{,}5$ يمثّلان العدد نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$2{,}50 = \\dfrac{250}{100}$ و $2{,}5 = \\dfrac{25}{10}$",
+          "وبقسمة بسط ومقام الأول على 10 نجد الثاني: العبارة صحيحة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "$35{,}2 = \\dfrac{352}{1000}$",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KUSUR-DEN-DIGITS"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر إجابة واحدة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم رقمًا بعد الفاصلة في $35{,}2$؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن عدد أصفار المقام بعدد هذه الأرقام."
+        }
+      ],
+      "feedback": {
+        "correct": "$35{,}2 = \\dfrac{352}{10}$ ، أمّا $\\dfrac{352}{1000} = 0{,}352$.",
+        "incorrect": "عدد أصفار المقام يساوي عدد الأرقام بعد الفاصلة: رقم واحد بعد الفاصلة يعني مقامًا فيه صفر واحد."
+      },
+      "solution": {
+        "lines": [
+          "$35{,}2 \\times 10 = 352$ ، إذن $35{,}2 = \\dfrac{352}{10}$",
+          "$\\dfrac{352}{1000} = 0{,}352$ ، فالعبارة خاطئة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "$0{,}7 = \\dfrac{10}{7}$",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KUSUR-NUM-DEN-SWAP"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر إجابة واحدة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين يكتب البسط وأين يكتب المقام في كسر عشري؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل $\\dfrac{10}{7}$ أصغر من 1 أم أكبر منه؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}7 = \\dfrac{7}{10}$ ، أمّا $\\dfrac{10}{7}$ فأكبر من 1.",
+        "incorrect": "في الكسر العشري يكون المقام قوة للعشرة (10 أو 100 أو 1000…) والبسط هو الأرقام بلا فاصلة، لا العكس."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}7 = \\dfrac{7}{10}$",
+          "$\\dfrac{10}{7}$ أكبر من 1 بينما $0{,}7$ أصغر من 1 ، فالعبارة خاطئة."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+{
+  "id": "ex-2am-muqarana-nisbiya-l4-005",
+  "lessonCode": "muqarana-nisbiya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — عدد محصور بين فاصلتي نقطتين",
+    "estimatedMinutes": 9,
+    "tags": [
+      "عدد محصور",
+      "فاصلة نقطة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "على مستقيم مدرّج وحدته $1\\,\\text{cm}$ علّم النقطتين $L(-9)$ و $K(-5)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما عدد الأعداد الصحيحة المحصورة بين فاصلتي $L$ و $K$ (دون الطرفين) ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-MUQARANA-NISBIYA-EI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الصحيحة الواقعة بين الحدّين واحدًا واحدًا على المستقيم المدرّج."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المتباينة صارمة: الحدّان نفسهما لا يُحسبان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ الصفر والأعداد الصحيحة السالبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$-8, -7, -6$ : ثلاثة أعداد.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$-9 < x < -5$",
+          "$x \\in \\{-8, -7, -6\\}$",
+          "عددها 3"
+        ],
+        "result": "3"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "أيّ العدد الآتي محصور بين $-9$ و $-5$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-6{,}5$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$-9$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-EI"
+        },
+        {
+          "id": "C",
+          "content": "$-4{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-SRR"
+        },
+        {
+          "id": "D",
+          "content": "$-10$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-BDG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج وحدّد الجزء الواقع بينهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد محصور بين عددين: أكبر من أحدهما وأصغر من الآخر في الوقت نفسه، دون أن يساوي أيًّا منهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب كل عدد مقترح: هل يحقق المتباينتين معًا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$-9 < -6{,}5 < -5$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$5 < 6{,}5 < 9$ والأعداد سالبة",
+          "$-9 < -6{,}5 < -5$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "هل يوجد عدد عشري محصور بين $-6$ و $-5$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لأنهما عددان صحيحان متتاليان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-NNB"
+        },
+        {
+          "id": "B",
+          "content": "نعم، مثل $-5{,}5$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج وحدّد الجزء الواقع بينهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد محصور بين عددين: أكبر من أحدهما وأصغر من الآخر في الوقت نفسه، دون أن يساوي أيًّا منهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب كل عدد مقترح: هل يحقق المتباينتين معًا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$-6 < -5{,}5 < -5$ : بين أي عددين مختلفين عدد لا نهائي من الأعداد.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$-6 < -5{,}5 < -5$",
+          "فيوجد عدد عشري بينهما"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,241 @@
+{
+  "id": "ex-3am-qimat-ibara-harfiya-l2-002",
+  "lessonCode": "qimat-ibara-harfiya",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — نشر والتحقق بقيمة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "نشر",
+      "تحقق بقيمة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-81",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $D$ حيث:",
+    "formulas": [
+      "D = (2x - 5)(4x + 3)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انشر ثم بسّط العبارة $D$ ، واكتبها على الشكل $ax^2 + bx + c$ .",
+      "statement": "العدد $b$ :",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $D$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "-14",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض الحرف بعدد صغير في العبارة الأصلية وفي النتيجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$D = 8x^2 - 14x - 15$ إذن $b = -14$ .",
+        "incorrect": "وزّع كل حدّ على كل حدّ مع الانتباه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$D = 2x \\times 4x + 2x \\times 3 - 5 \\times 4x - 5 \\times 3$",
+          "$D = 8x^2 + 6x - 20x - 15 = 8x^2 - 14x - 15$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "تحقّق من صحة النشر من أجل $x = -3$ .",
+      "statement": "احسب قيمة $D$ من أجل $x = -3$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "99",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-QIMA-SIGN-LOST"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = -3$ هي $99$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$D = (2 \\times (-3) - 5) \\times (4 \\times (-3) + 3)$",
+          "$D = (-6 - 5) \\times (-12 + 3)$",
+          "$D = -11 \\times (-9)$",
+          "$D = 99$"
+        ],
+        "result": "D = 99"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب قيمة العبارة $8x^2 - 14x - 15$ من أجل $x = -3$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "99",
+      "misconceptionSignatures": [
+        {
+          "value": "-45",
+          "id": "MISC-QIMA-NEG-POWER"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = -3$ هي $99$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$8x^2 - 14x - 15 = 8 \\times (-3)^2 - 14 \\times (-3) - 15$",
+          "$= 8 \\times 9 - 14 \\times (-3) - 15$",
+          "$= 72 - (-42) - 15$",
+          "$= 114 - 15$",
+          "$= 99$"
+        ],
+        "result": "99"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "وجدنا القيمة نفسها من أجل $x = -3$ . هل يكفي ذلك لنبرهن أنّ $D = 8x^2 - 14x - 15$ من أجل كل $x$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم: ما دامت القيمتان متساويتين فالعبارتان متساويتان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QIMA-ONE-VALUE"
+        },
+        {
+          "id": "B",
+          "content": "لا: قيمة واحدة متساوية لا تبرهن المساواة، والبرهان هو حساب النشر نفسه",
+          "isCorrect": true
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن القيمتين اللتين حسبتهما: هل اختلفتا عند قيمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قيمة واحدة تختلف عندها العبارتان تكفي لإثبات أنهما غير متساويتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أمّا تساوي القيمتين من أجل قيمة أو قيمتين فلا يثبت التساوي: لإثباته ننشر ونقارن الشكلين."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة المتساوية تدعم النشر لكنّها لا تبرهنه؛ يبرهنه الحساب الجبري.",
+        "incorrect": "قيمة مختلفة تكفي لإثبات عدم التساوي، أمّا القيم المتساوية فلا تكفي لإثبات التساوي."
+      },
+      "solution": {
+        "lines": [
+          "لا: قيمة واحدة متساوية لا تبرهن المساواة، والبرهان هو حساب النشر نفسه"
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

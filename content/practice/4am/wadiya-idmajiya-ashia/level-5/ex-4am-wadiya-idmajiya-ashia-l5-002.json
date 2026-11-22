@@ -1,0 +1,214 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ashia-l5-002",
+  "lessonCode": "wadiya-idmajiya-ashia",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — نزهة في الطاسيلي",
+    "estimatedMinutes": 5,
+    "tags": [
+      "أقصر مسلك",
+      "تدوير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ashia_P1",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "يتقاسم أفراد الفوج الحمل تعاونًا بينهم. في نزهة بالطاسيلي، يعبر الفوج واديا عرضه $5\\,\\mathrm{m}$ بممر [MN] عمودي على ضفتيه (الشكل). المخيّم A فوق الضفة العليا بـ $7\\,\\mathrm{m}$ ، والكهف B تحت الضفة السفلى بـ $6\\,\\mathrm{m}$ ، والمسافة الأفقية بينهما $11\\,\\mathrm{m}$ .",
+    "figure": {
+      "points": {
+        "R1": [
+          -1.65,
+          5
+        ],
+        "R2": [
+          12.649999999999999,
+          5
+        ],
+        "R3": [
+          12.649999999999999,
+          0
+        ],
+        "R4": [
+          -1.65,
+          0
+        ],
+        "A": [
+          0,
+          12
+        ],
+        "HA": [
+          0,
+          5
+        ],
+        "B": [
+          11,
+          -6
+        ],
+        "HB": [
+          11,
+          0
+        ],
+        "K": [
+          11,
+          5
+        ],
+        "M": [
+          9,
+          5
+        ],
+        "N": [
+          9,
+          0
+        ],
+        "W1": [
+          12.209999999999999,
+          5
+        ],
+        "W0": [
+          12.209999999999999,
+          0
+        ]
+      },
+      "polygons": [
+        {
+          "points": [
+            "R1",
+            "R2",
+            "R3",
+            "R4"
+          ],
+          "tone": "slate"
+        }
+      ],
+      "segments": [
+        {
+          "from": "R1",
+          "to": "R2",
+          "bold": true
+        },
+        {
+          "from": "R4",
+          "to": "R3",
+          "bold": true
+        },
+        {
+          "from": "A",
+          "to": "HA",
+          "dashed": true,
+          "label": "7 m"
+        },
+        {
+          "from": "HB",
+          "to": "B",
+          "dashed": true,
+          "label": "6 m"
+        },
+        {
+          "from": "HA",
+          "to": "K",
+          "dashed": true,
+          "tone": "sky",
+          "label": "11 m"
+        },
+        {
+          "from": "W1",
+          "to": "W0",
+          "label": "5 m"
+        },
+        {
+          "from": "A",
+          "to": "M",
+          "tone": "amber"
+        },
+        {
+          "from": "M",
+          "to": "N",
+          "bold": true,
+          "tone": "indigo"
+        },
+        {
+          "from": "N",
+          "to": "B",
+          "tone": "amber"
+        }
+      ],
+      "rightAngles": [
+        [
+          "R1",
+          "M",
+          "N"
+        ]
+      ],
+      "hidden": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "HA",
+        "HB",
+        "K",
+        "W1",
+        "W0"
+      ],
+      "labels": {
+        "A": "n",
+        "B": "s",
+        "M": "ne",
+        "N": "se"
+      },
+      "ariaLabel": "طريق عرضه 5 m بين حافتين متوازيتين، A فوق الحافة العليا بـ 7 m و B تحت الحافة السفلى بـ 6 m، والمسافة الأفقية بينهما 11 m، والممر [MN] عمودي على الحافتين"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما طول أقصر مسلك من A إلى B (بالمتر، مدوّرا إلى الوحدة)؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح (مدوّر إلى الوحدة)",
+      "expectedAnswer": "22",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة الشاقولية بين A و B′: 13."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\sqrt{11^2 + 13^2} = \\sqrt{290}$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف 5 ثم دوّر."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB' = \\sqrt{290} \\approx 17{,}03$ و $L \\approx 22{,}03$ ، أي $22\\,\\mathrm{m}$ .",
+        "incorrect": "المسافة الشاقولية بين A و B′ هي $7 + 6 = 13\\,\\mathrm{m}$ ."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 5,
+      "misconceptionSignatures": [
+        {
+          "value": "17",
+          "id": "MISC-SHUAA-MAMAR-NASI"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "id": "ex-1am-kitabat-adad-tabii-l2-005",
+  "lessonCode": "kitabat-adad-tabii",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — قراءة عدد بفئاته",
+    "estimatedMinutes": 5,
+    "tags": [
+      "كتابة بالحروف",
+      "فئات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العدد 30408."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "كيف يُقرأ العدد $30\\,408$؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "ثلاثة آلاف وأربعمائة وثمانية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-ZERO-PLACE"
+        },
+        {
+          "id": "B",
+          "content": "ثلاثون ألفا وأربعمائة وثمانية",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "ثلاثمائة ألف وأربعمائة وثمانية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-ZERO-PLACE"
+        },
+        {
+          "id": "D",
+          "content": "ثلاثة صفر أربعة صفر ثمانية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-DIGIT-BY-DIGIT"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزّئ العدد إلى فئات من ثلاثة أرقام انطلاقا من اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ كل فئة كعدد أصغر من 1000 ثم اذكر اسم فئتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى المراتب الفارغة (الأصفار)."
+        }
+      ],
+      "feedback": {
+        "correct": "$30\\,408$ يُقرأ « ثلاثون ألفا وأربعمائة وثمانية ».",
+        "incorrect": "نجزّئ العدد إلى فئات من ثلاثة أرقام انطلاقا من اليمين، ثم نقرأ الفئات من اليسار، كل فئة باسمها."
+      },
+      "solution": {
+        "lines": [
+          "$30\\,|\\,408$",
+          "نقرأ فئة فئة: « ثلاثون ألفا وأربعمائة وثمانية »."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "برّر قراءتك بتجزئة العدد 30408 إلى فئات.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من أين نبدأ التجزئة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ كل فئة ثم اذكر اسمها."
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك بالحل النموذجي سطرا بسطر."
+      },
+      "solution": {
+        "lines": [
+          "نجزّئ انطلاقا من اليمين: $30\\,408$.",
+          "فئة الآلاف 30: « ثلاثون ألفا »؛ فئة الوحدات 408: « أربعمائة وثمانية ».",
+          "إذن: « ثلاثون ألفا وأربعمائة وثمانية »."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

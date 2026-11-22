@@ -1,0 +1,327 @@
+{
+  "id": "ex-4am-takrar-mujamma-l5-004",
+  "lessonCode": "takrar-mujamma",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2024 — مكتبة البلدية بقسنطينة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "وضعية إدماجية",
+      "على الأكثر",
+      "على الأقل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_takrar-mujamma_P3",
+      "modelledOn": "BEM 2024 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "سجّلت مكتبة البلدية بقسنطينة عدد الكتب التي استعارها كل منخرط من منخرطيها الخمسين خلال شهر مارس:",
+    "table": {
+      "head": [
+        "عدد الكتب",
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "rows": [
+        [
+          "عدد المنخرطين",
+          "6",
+          "9",
+          "14",
+          "11",
+          "7",
+          "3"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب التكرار المجمع الصاعد للقيمة 2.",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "29",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        },
+        {
+          "value": "14",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        },
+        {
+          "value": "35",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكرار المجمع الصاعد لقيمة هو مجموع تكرارها وتكرارات القيم الأصغر منها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ من أول عمود في الجدول واجمع التكرارات حتى 2 مع تكرارها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: التكرار المجمع الصاعد لآخر عمود يساوي التكرار الكلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 + 9 + 14 = 29$ .",
+        "incorrect": "اجمع تكرار القيمة نفسها وتكرارات القيم الأصغر منها فقط، ولا تنس تكرار القيمة نفسها."
+      },
+      "solution": {
+        "lines": [
+          "التكرار المجمع الصاعد للقيمة 2 هو مجموع تكرار القيمة 2 وتكرارات القيم الأصغر منها:",
+          "$6 + 9 + 14 = 29$"
+        ],
+        "result": "29"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب التكرار المجمع النازل للقيمة 4.",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        },
+        {
+          "value": "7",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        },
+        {
+          "value": "47",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكرار المجمع النازل هو مجموع تكرار هذه القيمة وتكرارات القيم الأكبر منها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع تكرار 4 وتكرارات ما بعدها حتى آخر عمود في الجدول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: التكرار المجمع النازل لأول عمود يساوي التكرار الكلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$7 + 3 = 10$ .",
+        "incorrect": "اجمع تكرار القيمة نفسها وتكرارات القيم الأكبر منها فقط: النازل يتّجه نحو نهاية الجدول."
+      },
+      "solution": {
+        "lines": [
+          "التكرار المجمع النازل للقيمة 4 هو مجموع تكرار القيمة 4 وتكرارات القيم الأكبر منها:",
+          "$7 + 3 = 10$"
+        ],
+        "result": "10"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما هي النسبة المئوية للمنخرطين الذين استعاروا كتابين على الأكثر؟",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: النسبة المئوية دون الرمز %",
+      "expectedAnswer": "58",
+      "misconceptionSignatures": [
+        {
+          "value": "29",
+          "id": "MISC-IHSA-TAWATUR-BILA-QISMA"
+        },
+        {
+          "value": "30",
+          "id": "MISC-IHSA-SARAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«كتابين على الأكثر» تعني: كتابين أو أقل؛ الحدّ نفسه داخل في العدّ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أولا عدد الأفراد الذين يحقّقون الشرط (تكرار مجمع)، ثم اقسمه على التكرار الكلي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب التواتر الناتج في 100 لتحصل على النسبة المئوية."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{29}{50} \\times 100 = 58$ ، أي $58\\%$ .",
+        "incorrect": "عدّ أولا الأفراد الذين يحقّقون الشرط بدقة (انتبه إلى الحدّ)، ثم اقسم على التكرار الكلي واضرب في 100."
+      },
+      "solution": {
+        "lines": [
+          "عدد الأفراد المعنيين: $6 + 9 + 14 = 29$",
+          "$\\dfrac{29}{50} = 0{,}58$",
+          "$0{,}58 \\times 100 = 58$"
+        ],
+        "result": "58\\%"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "تمنح المكتبة كل منخرط استعار 3 كتب على الأقل بطاقة «قارئ متميّز».",
+      "statement": "ما هو عدد البطاقات التي تمنحها المكتبة؟",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "21",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-IHSA-SARAMA"
+        },
+        {
+          "value": "40",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«3 كتب على الأقل» تعني: 3 كتب أو أكثر؛ الحدّ نفسه داخل في العدّ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هذا العدد هو التكرار المجمع النازل: اجمع تكرار الحدّ وتكرارات ما بعده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حدّد في الجدول الأعمدة التي تحقّق الشرط، ثم اجمع تكراراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$11 + 7 + 3 = 21$ .",
+        "incorrect": "اقرأ الحدّ بعناية: هل هو داخل في العدّ أم لا؟ ثم اجمع تكرارات الأعمدة التي تحقّق الشرط فقط."
+      },
+      "solution": {
+        "lines": [
+          "القيم المعنية: 3، 4، 5 .",
+          "$11 + 7 + 3 = 21$"
+        ],
+        "result": "21"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "تكلفة طبع البطاقة الواحدة 150DA. احسب تكلفة طبع هذه البطاقات.",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "3150",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل عدد البطاقات الذي وجدته في (ا)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب عدد البطاقات في تكلفة البطاقة الواحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$21 \\times 150 = 3150$ ، أي 3150DA .",
+        "incorrect": "التكلفة = عدد البطاقات × تكلفة البطاقة الواحدة."
+      },
+      "solution": {
+        "lines": [
+          "$21 \\times 150 = 3150$"
+        ],
+        "result": "3150DA"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

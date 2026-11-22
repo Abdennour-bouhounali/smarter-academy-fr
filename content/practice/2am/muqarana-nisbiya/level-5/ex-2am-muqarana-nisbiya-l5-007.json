@@ -1,0 +1,357 @@
+{
+  "id": "ex-2am-muqarana-nisbiya-l5-007",
+  "lessonCode": "muqarana-nisbiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — ترتيب فرق البطولة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "ترتيب",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "ينظّم نادي الحيّ بطولة كرة قدم للأطفال بروح رياضية وأخلاق عالية. فارق الأهداف في المباراة الواحدة (المعدّل) للفرق الخمسة هو: النجم $1{,}4$ ، الأمل $-0{,}6$ ، الوفاق $0$ ، الشباب $-1{,}25$ ، الاتحاد $0{,}95$ .\nالجزء الأول: ترتيب الفرق.\nالجزء الثاني: الفرق الأخيرة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "رتّب فوارق الأهداف ترتيبًا تنازليًّا (من الأول إلى الأخير): اختر السلسلة الصحيحة.",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$1{,}4 > 0{,}95 > 0 > -1{,}25 > -0{,}6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-BDG"
+        },
+        {
+          "id": "B",
+          "content": "$1{,}4 > 0{,}95 > 0 > -0{,}6 > -1{,}25$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$-1{,}25 > -0{,}6 > 0 > 0{,}95 > 1{,}4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-OD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بفرز الأعداد حسب إشاراتها: السالبة، ثم الصفر، ثم الموجبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب الأعداد السالبة فيما بينها حسب مسافاتها إلى الصفر: الأكبر مسافة هو الأصغر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب السلسلة كاملة بالرمز نفسه، ثم تحقّق من كل زوج متجاور."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}4 > 0{,}95 > 0 > -0{,}6 > -1{,}25$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الموجبة: $1{,}4 > 0{,}95$ ثم الصفر",
+          "السالبة: $0{,}6 < 1{,}25$ ، فـ $-0{,}6 > -1{,}25$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما فارق الأهداف للفريق صاحب المركز الثالث؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "0",
+      "misconceptionSignatures": [
+        {
+          "value": "-0,6",
+          "id": "MISC-MUQARANA-NISBIYA-ZS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بفرز الأعداد حسب إشاراتها: السالبة، ثم الصفر، ثم الموجبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب الأعداد السالبة فيما بينها حسب مسافاتها إلى الصفر: الأكبر مسافة هو الأصغر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب السلسلة كاملة بالرمز نفسه، ثم تحقّق من كل زوج متجاور."
+        }
+      ],
+      "feedback": {
+        "correct": "الثالث هو الوفاق بفارق $0$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}4 > 0{,}95 > 0 > -0{,}6 > -1{,}25$",
+          "الثالث $0$"
+        ],
+        "result": "0"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "كم فريقًا فارق أهدافه سالب؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-MUQARANA-NISBIYA-ZS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارتي العددين قبل أي شيء آخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد السالب أصغر من الصفر، والصفر أصغر من كل عدد موجب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عند اختلاف الإشارتين لا حاجة إلى مقارنة المسافتين إلى الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "الأمل والشباب فقط.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$-0{,}6 < 0$ و $-1{,}25 < 0$",
+          "الوفاق عند $0$ لا يُحسب",
+          "فريقان"
+        ],
+        "result": "2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "أيّ الفرق صاحب أصغر فارق (المركز الأخير)؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الأمل",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-BDG"
+        },
+        {
+          "id": "B",
+          "content": "الشباب",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "الوفاق",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-ZS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج: أيّهما أبعد عن الصفر؟ وفي أيّ جهة منه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددان سالبان: الأصغر هو الذي له أكبر مسافة إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن المسافتين إلى الصفر (العددين دون إشارتيهما) ثم اعكس الحكم لأن العددين سالبان."
+        }
+      ],
+      "feedback": {
+        "correct": "$-1{,}25 < -0{,}6$ ، فالشباب في المركز الأخير.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}25 > 0{,}6$ والعددان سالبان",
+          "$-1{,}25 < -0{,}6$ ، فالشباب الأخير"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما فارق أهداف الفريق قبل الأخير؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "-0,6",
+      "misconceptionSignatures": [
+        {
+          "value": "-1,25",
+          "id": "MISC-MUQARANA-NISBIYA-BDG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بفرز الأعداد حسب إشاراتها: السالبة، ثم الصفر، ثم الموجبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب الأعداد السالبة فيما بينها حسب مسافاتها إلى الصفر: الأكبر مسافة هو الأصغر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب السلسلة كاملة بالرمز نفسه، ثم تحقّق من كل زوج متجاور."
+        }
+      ],
+      "feedback": {
+        "correct": "قبل الأخير هو الأمل: $-0{,}6$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$-1{,}25 < -0{,}6 < 0 < 0{,}95 < 1{,}4$",
+          "الثاني من الأصغر هو $-0{,}6$"
+        ],
+        "result": "-0{,}6"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ج",
+      "statement": "برّر أن الأمل يسبق الشباب في الترتيب.",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج: أيّهما أبعد عن الصفر؟ وفي أيّ جهة منه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددان سالبان: الأصغر هو الذي له أكبر مسافة إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن المسافتين إلى الصفر (العددين دون إشارتيهما) ثم اعكس الحكم لأن العددين سالبان."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$-0{,}6$ و $-1{,}25$ سالبان",
+          "مسافتاهما إلى الصفر: $0{,}6 < 1{,}25$",
+          "الأقرب إلى الصفر هو الأكبر: $-0{,}6 > -1{,}25$ ، فالأمل يسبق الشباب"
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

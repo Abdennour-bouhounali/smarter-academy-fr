@@ -1,0 +1,244 @@
+{
+  "id": "ex-4am-inshaat-talis-l5-009",
+  "lessonCode": "inshaat-talis",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2010 — شريط الفسيفساء على البلاطة",
+    "estimatedMinutes": 22,
+    "tags": [
+      "وضعية إدماجية",
+      "طول غير ناطق",
+      "تكلفة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_inshaat-talis_P2",
+      "modelledOn": "BEM 2010 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2010",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "بلاطة مربعة الشكل $ABCD$ طول ضلعها $30\\,\\mathrm{cm}$ . يريد حرفيّ يتقن عمله تزيينها بشريط من الفسيفساء يوضع على القطر $[AC]$ ابتداءً من $A$ ، طوله $AM = \\dfrac{2}{3}AC$ ، دون استعمال مسطرة مدرّجة.\n• يزيّن الحرفي $40$ بلاطة، وثمن السنتيمتر من الشريط $9DA$ . (نأخذ $\\sqrt{2} \\approx 1{,}41$ )"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب $AC$ على الشكل $a\\sqrt{2}$ ثم أعط العدد $a$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "60",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $ABC$ قائم في $B$ : $AC^2 = 30^2 + 30^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\sqrt{1800} = \\sqrt{900 \\times 2}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC^2 = 1800$ ومنه $AC = \\sqrt{900 \\times 2} = 30\\sqrt{2}\\,\\mathrm{cm}$ .",
+        "incorrect": "بسّط $\\sqrt{1800}$ بإخراج أكبر مربع تام."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $B$ ، حسب خاصية فيثاغورس: $AC^2 = 30^2 + 30^2 = 1800$",
+          "$AC = \\sqrt{900 \\times 2} = 30\\sqrt{2}$"
+        ],
+        "result": "AC = 30\\sqrt{2}\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 150,
+      "counted": false
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أنشئ النقطة $M$ على $[AC]$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب خطوات الإنشاء مرقّمة (أو صوّر ورقتك)، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القطر يُرسم دون قياس، وطوله $30\\sqrt{2}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قسّمه إلى ثلاث قطع متقايسة بنصف مستقيم مساعد مبدؤه $A$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "ثلاث قطع متقايسة على نصف مستقيم مساعد، نصل الثالثة بـ $C$ ، والموازي المارّ بالثانية يعيّن $M$ .",
+        "incorrect": "قارن إنشاءك بالحل النموذجي خطوة خطوة، ثم صحّح الخطوة التي تختلف."
+      },
+      "solution": {
+        "lines": [
+          "1) نرسم نصف مستقيم $[Ax)$ لا يحمل القطعة $[AC]$ .",
+          "2) نعيّن عليه بالمدور، ابتداءً من $A$ ، 3 قطع متقايسة متتالية (بفتحة مدور كيفية) تنتهي عند العلامة $P_{3}$ .",
+          "3) نصل العلامة $P_{3}$ بالنقطة $C$ .",
+          "4) نرسم بالمسطرة والكوس الموازي للمستقيم $(P_{3}C)$ المارّ بالعلامة $P_{2}$ : يقطع $[AC]$ في $M$ .",
+          "التبرير: $(P_{2}M) \\parallel (P_{3}C)$ ، فحسب خاصية طالس في المثلثين $AP_{2}M$ و $AP_{3}C$ : $\\dfrac{AM}{AC} = \\dfrac{AP_{2}}{AP_{3}} = \\dfrac{2}{3}$ ."
+        ]
+      },
+      "timeSeconds": 360
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "اكتب $AM$ على الشكل $a\\sqrt{2}$ ثم أعط العدد $a$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "40",
+          "id": "MISC-TALIS-JADHR-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AM = \\dfrac{2}{3}AC$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AM = \\dfrac{2}{3} \\times 30\\sqrt{2} = 20\\sqrt{2}\\,\\mathrm{cm}$ .",
+        "incorrect": "اضرب $\\dfrac{2}{3}$ في $30\\sqrt{2}$ واحتفظ بالجذر."
+      },
+      "solution": {
+        "lines": [
+          "$AM = \\dfrac{2}{3}AC = \\dfrac{2}{3} \\times 30\\sqrt{2}$"
+        ],
+        "result": "AM = 20\\sqrt{2}\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "الموازي للمستقيم $(BC)$ المارّ بـ $M$ يقطع $[AB]$ في $N$ . احسب $BN$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-TALIS-JIHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$N \\in [AB]$ و $M \\in [AC]$ و $(MN) \\parallel (BC)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $AN$ أولا بخاصية طالس."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AN}{AB} = \\dfrac{AM}{AC} = \\dfrac{2}{3}$ ومنه $AN = 20$ و $BN = 30 - 20 = 10\\,\\mathrm{cm}$ .",
+        "incorrect": "$BN = AB - AN$ ، و $AN$ يُحسب بالنسبة $\\dfrac{AM}{AC}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$N \\in [AB]$ و $M \\in [AC]$ و $(MN) \\parallel (BC)$ ، حسب خاصية طالس: $\\dfrac{AN}{AB} = \\dfrac{AM}{AC} = \\dfrac{2}{3}$",
+          "$AN = \\dfrac{2}{3} \\times 30 = 20$ ومنه $BN = 30 - 20$"
+        ],
+        "result": "BN = 10\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "☜ ما الثمن التقريبي للشريط اللازم لتزيين البلاطات الأربعين؟",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الثمن بـ DA",
+      "expectedAnswer": "10152",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول الشريط على بلاطة: $20\\sqrt{2} \\approx 20 \\times 1{,}41$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$20 \\times 1{,}41 = 28{,}2\\,\\mathrm{cm}$ ، $28{,}2 \\times 9 = 253{,}8DA$ للبلاطة، و $253{,}8 \\times 40 = 10\\,152DA$ .",
+        "incorrect": "احسب طول الشريط على بلاطة واحدة بالقيمة المقرّبة المعطاة، ثم ثمنه، ثم للبلاطات كلها."
+      },
+      "solution": {
+        "lines": [
+          "طول الشريط على بلاطة: $20\\sqrt{2} \\approx 28{,}2\\,\\mathrm{cm}$",
+          "ثمنه: $28{,}2 \\times 9 = 253{,}8DA$",
+          "لـ 40 بلاطة: $253{,}8 \\times 40$"
+        ],
+        "result": "10\\,152DA"
+      },
+      "timeSeconds": 240,
+      "counted": false
+    }
+  ]
+}

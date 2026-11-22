@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 /**
- * LE CADRE DES TROIS PAGES LÉGALES — mentions légales, confidentialité, CGU.
+ * LE CADRE DES DEUX PAGES LÉGALES — confidentialité, CGU.
  *
  * Pourquoi un composant partagé : trois documents qui se citent l'un l'autre
  * doivent se RESSEMBLER. Un lecteur qui passe des CGU à la politique de
@@ -10,17 +11,17 @@ import { Link } from 'react-router-dom';
  * et le même pied de page — sinon il croit avoir changé de site.
  *
  * Le cadre ne fournit QUE la mise en page : en-tête, largeur de lecture,
- * navigation entre les trois documents. Le texte juridique vit dans chaque
+ * navigation entre les documents. Le texte juridique vit dans chaque
  * page, parce que c'est lui qui fait foi.
  *
  * Ce composant s'affiche à l'intérieur de MainLayout, qui porte déjà la barre
  * de navigation et le pied de page : il ne doit en ajouter aucun.
  */
 
+// Des CLÉS : constant de module, donc résolu au rendu.
 const LEGAL_LINKS = [
-  { to: '/mentions-legales', label: 'Mentions légales' },
-  { to: '/confidentialite', label: 'Confidentialité' },
-  { to: '/cgu', label: 'CGU' },
+  { to: '/confidentialite', labelKey: 'legal.privacyShort' },
+  { to: '/cgu', labelKey: 'legal.termsShort' },
 ];
 
 /**
@@ -46,15 +47,6 @@ export function LegalSection({ id, number, title, children }) {
   );
 }
 
-/** Un sous-titre à l'intérieur d'une section. */
-export function LegalSubheading({ children }) {
-  return (
-    <h3 className="font-space font-semibold text-base sm:text-lg text-slate-800 mt-6 mb-2">
-      {children}
-    </h3>
-  );
-}
-
 /** Un paragraphe de corps de texte. */
 export function LegalParagraph({ children }) {
   return (
@@ -65,77 +57,9 @@ export function LegalParagraph({ children }) {
 /** Une liste à puces. */
 export function LegalList({ children }) {
   return (
-    <ul className="font-inter text-slate-600 text-base leading-relaxed space-y-2 pl-5 list-disc marker:text-blue-400">
+    <ul className="font-inter text-slate-600 text-base leading-relaxed space-y-2 ps-5 list-disc marker:text-blue-400">
       {children}
     </ul>
-  );
-}
-
-/**
- * Un encadré d'insistance — pour les clauses qu'un lecteur pressé ne doit pas
- * manquer (renonciation au droit de rétractation, absence d'automatisme,
- * consentement parental). Le fond coloré n'a pas de valeur juridique : il
- * signale simplement que la clause engage.
- */
-export function LegalCallout({ tone = 'blue', title, children }) {
-  const tones = {
-    blue: 'bg-blue-50 border-blue-200',
-    amber: 'bg-amber-50 border-amber-200',
-    slate: 'bg-slate-50 border-slate-200',
-  };
-  return (
-    <div className={`rounded-2xl border px-5 py-4 ${tones[tone] ?? tones.slate}`}>
-      {title && (
-        <p className="font-space font-semibold text-slate-900 text-base mb-1.5">{title}</p>
-      )}
-      <div className="font-inter text-slate-700 text-base leading-relaxed space-y-2">
-        {children}
-      </div>
-    </div>
-  );
-}
-
-/**
- * Un tableau. Toujours enveloppé dans un conteneur qui défile
- * horizontalement : à 400 px de large, un tableau à trois colonnes déborde,
- * et un document légal illisible sur téléphone n'est pas opposable
- * sereinement.
- */
-export function LegalTable({ headers, rows }) {
-  return (
-    <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
-      <table className="w-full min-w-[34rem] border-collapse text-left">
-        <thead>
-          <tr className="border-b-2 border-slate-200">
-            {headers.map((h) => (
-              <th
-                key={h}
-                scope="col"
-                className="font-space font-semibold text-slate-900 text-sm py-3 pr-4 align-bottom"
-              >
-                {h}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((row, i) => (
-            <tr key={i} className="border-b border-slate-100 align-top">
-              {row.map((cell, j) => (
-                <td
-                  key={j}
-                  className={`py-3 pr-4 font-inter text-base leading-relaxed ${
-                    j === 0 ? 'text-slate-800 font-medium' : 'text-slate-600'
-                  }`}
-                >
-                  {cell}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
   );
 }
 
@@ -161,6 +85,7 @@ const SHELL = 'sa-page mx-auto w-full max-w-[1200px]';
 const MEASURE = 'max-w-[1050px] mx-auto';
 
 export default function LegalPage({ eyebrow, title, intro, updatedAt, children }) {
+  const { t } = useTranslation('marketing');
   return (
     <div className="pt-16">
       <section className={`py-12 sm:py-16 ${SHELL}`}>
@@ -183,7 +108,7 @@ export default function LegalPage({ eyebrow, title, intro, updatedAt, children }
             )}
             {updatedAt && (
               <p className="font-mono-jetbrains text-slate-400 text-xs uppercase tracking-wider mt-5">
-                Dernière mise à jour : {updatedAt}
+                {t('legal.lastUpdated', { date: updatedAt })}
               </p>
             )}
           </motion.div>
@@ -196,24 +121,18 @@ export default function LegalPage({ eyebrow, title, intro, updatedAt, children }
 
       <div className={`pb-20 ${SHELL}`}>
         <nav
-          aria-label="Documents légaux"
+          aria-label={t('legal.documentsAria')}
           className={`${MEASURE} border-t border-slate-200 pt-8 flex flex-wrap gap-x-6 gap-y-3`}
         >
           {LEGAL_LINKS.map((l) => (
             <Link
               key={l.to}
               to={l.to}
-              className="font-inter text-base text-slate-500 hover:text-blue-600 transition-colors"
+              className="font-inter text-base text-slate-500 hover:text-nav-accent transition-colors"
             >
-              {l.label}
+              {t(l.labelKey)}
             </Link>
           ))}
-          <Link
-            to="/contact"
-            className="font-inter text-base text-slate-500 hover:text-blue-600 transition-colors"
-          >
-            Nous contacter
-          </Link>
         </nav>
       </div>
     </div>

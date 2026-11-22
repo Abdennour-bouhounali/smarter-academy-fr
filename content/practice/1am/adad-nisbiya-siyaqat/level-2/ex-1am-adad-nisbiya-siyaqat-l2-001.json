@@ -1,0 +1,193 @@
+{
+  "id": "ex-1am-adad-nisbiya-siyaqat-l2-001",
+  "lessonCode": "adad-nisbiya-siyaqat",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — أبرد قراءة في الأسبوع",
+    "estimatedMinutes": 5,
+    "tags": [
+      "حرارة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "سجّل مرصد أسبوعًا من القراءات الصباحية. الأبرد هو الأدنى مستوى لا الأكبر عددًا."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "سجّلت محطّة أرصاد تيارت صباحًا القراءات الآتية : $4$ ؛ $-1$ ؛ $-5$ ؛ $0$ ؛ $2$ . أيّ هذه القراءات أبرد؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-REL-SIGNBIG"
+        },
+        {
+          "id": "B",
+          "content": "$-5$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-REL-SIGNBIG"
+        },
+        {
+          "id": "D",
+          "content": "$0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-REL-SIGNBIG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الجهة التي يقع فيها كلّ عدد من الصفر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما تحت الصفر أخفض ممّا فوقه، والأبعد تحت الصفر هو الأخفض."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن مواضع المستوى لا أحجام الأعداد المكتوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "الأبرد هو أدنى مستوى للسائل : $-5$ .",
+        "incorrect": "الأبرد ليس الأكبر عددًا : العدد السالب أصغر من الصفر ومن كلّ عدد موجب."
+      },
+      "solution": {
+        "lines": [
+          "نرتّب القراءات من الأصغر إلى الأكبر",
+          "الأصغر هو الأبرد : $-5$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "قرأ محرار سطيف صباحًا 6 درجات تحت الصفر. اكتب هذه القراءة بعدد نسبي.",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "-6",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-REL-SIGNLOST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "فوق الصفر أم تحته؟ وكم تدريجة تبعد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما فوق الصفر عدد موجب بلا إشارة، وما تحته عدد سالب تسبقه الإشارة − ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجهة بالإشارة ثمّ المسافة بالعدد."
+        }
+      ],
+      "feedback": {
+        "correct": "تحت الصفر : عدد سالب، $-6$.",
+        "incorrect": "الجهة من الصفر تقول الإشارة، والمسافة تقول العدد."
+      },
+      "solution": {
+        "lines": [
+          "تحت الصفر (أو المرجع)",
+          "عدد سالب، مسافته $6$ : $-6$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما المسافة إلى الصفر للعدد $-5$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "-5",
+          "id": "MISC-REL-NEGDIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يقوله العدد : الجهة أم البعد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي عدد التدريجات بين المستوى والصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احذف الإشارة تجد المسافة إلى الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "المسافة إلى الصفر للعدد $-5$ هي $5$ .",
+        "incorrect": "المسافة لا تكون سالبة : هي العدد دون إشارته."
+      },
+      "solution": {
+        "lines": [
+          "المسافة هي عدد التدريجات بين $-5$ والصفر",
+          "$5$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

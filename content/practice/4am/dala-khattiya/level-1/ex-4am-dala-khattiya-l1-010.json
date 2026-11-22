@@ -1,0 +1,132 @@
+{
+  "id": "ex-4am-dala-khattiya-l1-010",
+  "lessonCode": "dala-khattiya",
+  "level": 1,
+  "metadata": {
+    "title": "حذاء رياضي بنصف السعر",
+    "estimatedMinutes": 4,
+    "tags": [
+      "وضعية",
+      "تخفيض"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "adaptedFrom": "ex-4am-dala-khattiya-l1-010"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في أيام التخفيضات، يبيع محل للأحذية الرياضية كل حذاء بنصف سعره، تشجيعًا للشباب على ممارسة الرياضة. الدالة الخطية $f$ ترفق بالسعر $x$ (بـ DA) قبل التخفيض السعر بعده:",
+    "formulas": [
+      "f(x) = 0{,}5x"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $f(6400)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "3200",
+      "misconceptionSignatures": [
+        {
+          "value": "12800",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "-3200",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "صورة العدد $x$ بالدالة الخطية $f$ هي $f(x) = 0{,}5 \\times x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $x$ بالعدد $6400$ ثم احسب الجداء، وانتبه إلى الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(6400) = 0{,}5 \\times 6400 = 3200$ .",
+        "incorrect": "الصورة جداء المعامل في العدد: $f(x) = 0{,}5 \\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(6400) = 0{,}5 \\times 6400$",
+          "$f(6400) = 3200$"
+        ],
+        "result": "f(6400) = 3200DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "سعر حذاء بعد التخفيض 2750DA . جد سعره قبل التخفيض.",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "5500",
+      "misconceptionSignatures": [
+        {
+          "value": "1375",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "-5500",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد المطلوب $x$ يحقق $f(x) = 2750$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المعادلة $0{,}5x = 2750$ : اقسم الطرفين على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{2750}{0{,}5} = 5500$ .",
+        "incorrect": "لا تحسب صورة العدد المعطى: ابحث عن العدد $x$ الذي صورته هذا العدد."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 2750$ معناه $0{,}5x = 2750$",
+          "$x = \\dfrac{2750}{0{,}5} = 5500$"
+        ],
+        "result": "x = 5500DA"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

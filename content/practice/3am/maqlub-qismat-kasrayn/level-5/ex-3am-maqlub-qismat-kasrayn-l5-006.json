@@ -1,0 +1,311 @@
+{
+  "id": "ex-3am-maqlub-qismat-kasrayn-l5-006",
+  "lessonCode": "maqlub-qismat-kasrayn",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — بلاط حديقة المدرسة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "كسر",
+      "مساحة",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: يعتني تلاميذ المدرسة بالحديقة المشتركة. قطعة مستطيلة منها مساحتها $\\dfrac{35}{6}\\,\\mathrm{m}^2$ وعرضها $\\dfrac{7}{4}\\,\\mathrm{m}$ .\nالجزء الثاني: يريدون تغطية القطعة ببلاط مساحة البلاطة الواحدة $\\dfrac{5}{12}\\,\\mathrm{m}^2$ وثمنها $350$ دج، والميزانية المخصّصة $4\\,500$ دج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "الجزء الأول.",
+      "statement": "ما طول القطعة بالمتر؟ اكتب الناتج على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "10/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "245/24",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "3/10",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "24/245",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ الكسرين هو المقسوم وأيّهما المقسوم عليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني: نقلب المقسوم عليه وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء، اختزل العوامل المشتركة قبل الضرب، ثمّ اكتب الناتج على أبسط شكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{35}{6} \\div \\dfrac{7}{4} = \\dfrac{10}{3}$ لأنّ قسمة كسر على كسر هي ضرب الأوّل في مقلوب الثاني.",
+        "incorrect": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني فقط، ثمّ نختزل؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $\\dfrac{35}{6} \\div \\dfrac{7}{4} = \\dfrac{35}{6} \\times \\dfrac{4}{7}$ .",
+          "$= \\dfrac{35 \\times 4}{6 \\times 7} = \\dfrac{10}{3}$ ."
+        ],
+        "result": "\\dfrac{10}{3}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "كم بلاطة تلزم لتغطية متر مربّع واحد، إذا كانت مساحة البلاطة الواحدة $\\dfrac{5}{12}\\,\\mathrm{m}^2$ ؟ اكتب الناتج على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "12/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "-5/12",
+          "id": "MISC-MAQLUB-OPPOSITE"
+        },
+        {
+          "value": "1/5",
+          "id": "MISC-MAQLUB-NUMONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي يُطلب مقلوبه؟ وهل هو عدد طبيعي أم عشري أم كسر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مقلوب عدد غير معدوم هو العدد الذي جداؤه معه يساوي $1$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العدد على شكل كسر ثمّ بدّل بسطه ومقامه، وتحقّق من ذلك بإجراء الجداء."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{12}{5}$ لأنّ جداء العدد ومقلوبه يساوي $1$ .",
+        "incorrect": "جداء العدد ومقلوبه يساوي العدد الذي هو عنصر محايد للضرب؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "عدد البلاطات في متر مربّع واحد هو مقلوب مساحة البلاطة الواحدة $\\dfrac{5}{12}$ .",
+          "أي $\\dfrac{12}{5}$ بلاطة."
+        ],
+        "result": "\\dfrac{12}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "كم بلاطة تلزم لتغطية القطعة كلّها؟",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "value": "175/72",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "1/14",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "72/175",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ الكسرين هو المقسوم وأيّهما المقسوم عليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني: نقلب المقسوم عليه وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء، اختزل العوامل المشتركة قبل الضرب، ثمّ اكتب الناتج على أبسط شكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{35}{6} \\div \\dfrac{5}{12} = 14$ لأنّ قسمة كسر على كسر هي ضرب الأوّل في مقلوب الثاني.",
+        "incorrect": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني فقط، ثمّ نختزل؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $\\dfrac{35}{6} \\div \\dfrac{5}{12} = \\dfrac{35}{6} \\times \\dfrac{12}{5}$ .",
+          "$= \\dfrac{35 \\times 12}{6 \\times 5} = 14$ ."
+        ],
+        "result": "14"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "ما ثمن هذه البلاطات بالدينار إذا كان ثمن البلاطة الواحدة $350$ دج؟",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "4900",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كل سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$4\\,900$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "ثمن $14$ بلاطة هو $14 \\times 350 = 4\\,900$ دج."
+        ],
+        "result": "4\\,900"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "د",
+      "statement": "هل تكفي ميزانية الأقسام $4\\,500$ دج لتغطية القطعة؟",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، تكفي",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا، لا تكفي",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الخيارات واحسب كلاّ منها بدل أن تخمّن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ خيار على الأعداد الواردة فيه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حوّل القسمة إلى جداء بمقلوب القاسم، ثمّ قارن."
+        }
+      ],
+      "feedback": {
+        "correct": "الكلفة $4\\,900$ دج، وهي أكبر من الميزانية $4\\,500$ دج.",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الكلفة $4\\,900$ دج وهي أكبر من $4\\,500$ دج."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,240 @@
+{
+  "id": "ex-2am-masafa-nuqtatayn-l5-006",
+  "lessonCode": "masafa-nuqtatayn",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — رصيد صندوق جمعية الحيّ",
+    "estimatedMinutes": 12,
+    "tags": [
+      "مسافة بين نقطتين",
+      "رصيد",
+      "مسافة كلّية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "رصيد صندوق جمعية الحيّ بالدينار: يوم الاثنين $-3000$ (مبلغ مستحقّ للمورّد) ، ويوم الأربعاء $+1500$ ، ويوم الجمعة $+4500$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "النقطتان $L(-3000)$ و $W(+1500)$ على مستقيم مدرّج. احسب المسافة $LW$ .",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "4500",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "1500"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-4500"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن أوّلًا أيّ الفاصلتين أكبر: الأكبر هي الأبعد إلى اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى مطروحًا منها الصغرى؛ وإذا كانت الصغرى سالبة فنطرح عددًا سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا: إن وجدت ناتجًا سالبًا فقد قلبت ترتيب الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$LW=4500$ : النقطتان على جهتين من المبدأ فنجمع المسافتين إلى الصفر.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى هي $+1500$ والفاصلة الصغرى هي $-3000$",
+          "$LW=(+1500)-(-3000)=(+1500)+(+3000)=4500$"
+        ],
+        "result": "4500"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "النقطتان $W(+1500)$ و $V(+4500)$ على مستقيم مدرّج. احسب المسافة $WV$ .",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "3000",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-ADDSAME",
+          "value": "6000"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-3000"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن أوّلًا أيّ الفاصلتين أكبر: الأكبر هي الأبعد إلى اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى مطروحًا منها الصغرى؛ وإذا كانت الصغرى سالبة فنطرح عددًا سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا: إن وجدت ناتجًا سالبًا فقد قلبت ترتيب الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$WV=3000$ : نطرح الفاصلة الصغرى من الفاصلة الكبرى.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى هي $+4500$ والفاصلة الصغرى هي $+1500$",
+          "$WV=(+4500)-(+1500)=(+4500)+(-1500)=3000$"
+        ],
+        "result": "3000"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "تغيّر الرصيد من $L(-3000)$ ثمّ إلى $W(+1500)$ ثمّ إلى $V(+4500)$ . ما المسافة الكلّية التي قطعها ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "7500",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قسّم الطريق إلى مقاطع واحسب مسافة كلّ مقطع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كلّ مقطع مسافته عدد موجب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة الكلّية تختلف عن المسافة بين نقطتي البداية والنهاية إن عاد المتنقّل إلى الوراء."
+        }
+      ],
+      "feedback": {
+        "correct": "المسافة الكلّية $7500$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$LW=4500$",
+          "$WV=3000$",
+          "المجموع $=7500$"
+        ],
+        "result": "7500"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "على مستقيم مدرّج: $L(-3000)$ و $W(+1500)$ و $V(+4500)$ . هل $W$ منتصف القطعة $[LV]$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المسافتين $WL$ و $WV$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$W$ هي المنتصف إذا كانت المسافتان متساويتين وكانت $W$ بين الطرفين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن المسافتين."
+        }
+      ],
+      "feedback": {
+        "correct": "لا: $W$ ليست منتصف $[LV]$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$WL=4500$ و $WV=3000$",
+          "المسافتان غير متساويتين"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

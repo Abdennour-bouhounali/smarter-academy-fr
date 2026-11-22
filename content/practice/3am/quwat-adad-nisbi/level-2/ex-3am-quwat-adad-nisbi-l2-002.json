@@ -1,0 +1,238 @@
+{
+  "id": "ex-3am-quwat-adad-nisbi-l2-002",
+  "lessonCode": "quwat-adad-nisbi",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — إشارة القوى والتعليل",
+    "estimatedMinutes": 6,
+    "tags": [
+      "قوة عدد نسبي",
+      "إشارة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن الأعداد الآتية:",
+    "formulas": [
+      "E = (-2)^{6}",
+      "F = (-5)^{13} \\times (-3)^{4}",
+      "G = -2^{6}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $E$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "64",
+      "misconceptionSignatures": [
+        {
+          "value": "-64",
+          "id": "MISC-QUWA-ODD-EVEN-SIGN"
+        },
+        {
+          "value": "-12",
+          "id": "MISC-QUWA-POWER-AS-PRODUCT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$a^n$ جداء $n$ عاملًا كلها مساوية للعدد $a$ ، وليس $a \\times n$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوة عدد سالب موجبة إذا كان الأس زوجيًا، وسالبة إذا كان الأس فرديًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه للأقواس: في $-a^n$ يخصّ الأس العدد $a$ وحده، ثم نأخذ المعاكس."
+        }
+      ],
+      "feedback": {
+        "correct": "الأس 6 زوجي: $(-2)^6 = 64$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$2^{6} = 64$",
+          "الأس زوجي: $(-2)^{6} = 64$"
+        ],
+        "result": "E = 64"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $G$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "-64",
+      "misconceptionSignatures": [
+        {
+          "value": "64",
+          "id": "MISC-QUWA-MINUS-BASE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$a^n$ جداء $n$ عاملًا كلها مساوية للعدد $a$ ، وليس $a \\times n$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوة عدد سالب موجبة إذا كان الأس زوجيًا، وسالبة إذا كان الأس فرديًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه للأقواس: في $-a^n$ يخصّ الأس العدد $a$ وحده، ثم نأخذ المعاكس."
+        }
+      ],
+      "feedback": {
+        "correct": "$-2^6 = -(2^6) = -64$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$-2^{6} = -(2^{6})$",
+          "$G = -64$"
+        ],
+        "result": "G = -64"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما إشارة العدد $F$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "موجب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QUWA-ODD-EVEN-SIGN"
+        },
+        {
+          "id": "B",
+          "content": "سالب",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة الأساس؟ وهل الأس زوجي أم فردي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوة عدد سالب موجبة إذا كان الأس زوجيًا، وسالبة إذا كان فرديًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إشارة جداء عددين: موجبة إذا كانت إشارتاهما متماثلتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$(-5)^{13}$ سالب و $(-3)^4$ موجب، فجداؤهما سالب.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$(-5)^{13}$ سالب (أس فردي)، و $(-3)^{4}$ موجب (أس زوجي).",
+          "جداء عدد سالب في عدد موجب سالب: $F < 0$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "علّل إشارة $F$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة الأساس؟ وهل الأس زوجي أم فردي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوة عدد سالب موجبة إذا كان الأس زوجيًا، وسالبة إذا كان فرديًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إشارة جداء عددين: موجبة إذا كانت إشارتاهما متماثلتين."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الأساس $-5$ سالب والأس 13 فردي، إذن $(-5)^{13} < 0$",
+          "الأساس $-3$ سالب والأس 4 زوجي، إذن $(-3)^{4} > 0$",
+          "جداء سالب في موجب سالب، إذن $F < 0$"
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

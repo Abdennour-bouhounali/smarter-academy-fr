@@ -1,0 +1,80 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ashia-l5-007",
+  "lessonCode": "wadiya-idmajiya-ashia",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — صورة بانسحاب ومنتصف",
+    "estimatedMinutes": 4,
+    "tags": [
+      "الانسحاب",
+      "المنتصف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ashia_P1",
+      "modelledOn": "ex-19"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "ABC مثلث. D صورة A بالانسحاب الذي شعاعه $\\overrightarrow{BC}$ ، و I منتصف [AC]."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أيّ استنتاج صحيح؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "I منتصف [BD]",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "I منتصف [AD]",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "D منتصف [BC]",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSIHAB-SURA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{AD} = \\overrightarrow{BC}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ABCD متوازي أضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قطراه متناصفان."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AD} = \\overrightarrow{BC}$ : ABCD متوازي أضلاع قطراه [AC] و [BD] متناصفان، فـ I منتصف [BD].",
+        "incorrect": "ابحث عن متوازي الأضلاع."
+      },
+      "cognitiveDemand": "reason",
+      "difficulty": 5
+    }
+  ]
+}

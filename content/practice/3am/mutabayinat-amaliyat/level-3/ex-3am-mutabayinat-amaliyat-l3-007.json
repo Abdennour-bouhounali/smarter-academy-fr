@@ -1,0 +1,243 @@
+{
+  "id": "ex-3am-mutabayinat-amaliyat-l3-007",
+  "lessonCode": "mutabayinat-amaliyat",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — درجات الحرارة في ورقلة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "حصر",
+      "ضرب في سالب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "سجّلت محطة الأرصاد الجوية في ورقلة درجة الحرارة $T$ بالدرجة المئوية، حيث $-4\\le T\\le 8$ ، في إحدى ليالي الشتاء. وتحسب القاعة الباردة عدد الدقائق اللازمة للتدفئة بالعبارة $D=10-3T$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "اختر الحصر الصحيح للعبارة $-3T$ .",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-24\\le -3T\\le 12$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$-12\\le -3T\\le 24$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-NEG-NOFLIP"
+        },
+        {
+          "id": "C",
+          "content": "$12\\le -3T\\le -24$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-BOUND-ORDER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد إشارة العدد الذي نضرب فيه (أو نقسم عليه)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في عدد سالب تمامًا (أو القسمة عليه) يغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب عددين يحقّقان الشرط، وانظر أيّهما صار الأكبر بعد العملية."
+        }
+      ],
+      "feedback": {
+        "correct": "نضرب في $-3$ (سالب) فنعكس الاتجاه: $-24\\le -3T\\le 12$ .",
+        "incorrect": "الضرب في عدد سالب تمامًا (أو القسمة عليه) يغيّر اتجاه المتباينة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضرب في $-3$ (سالب) فنعكس الاتجاه: $-24\\le -3T\\le 12$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "أكمل: $\\ldots\\le D$",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "-14",
+      "misconceptionSignatures": [
+        {
+          "value": "22",
+          "id": "MISC-MUTABAYINA-COEF-LOST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المعطى بالضبط؟ وما العبارة المطلوب استنتاج متباينة لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابنِ المتباينة المطلوبة عملية بعد عملية، وانتبه إلى إشارة العدد عند كلّ ضرب أو قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر، وأعد كتابة الحصر من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$-24\\le -3T\\le 12$ ثم نضيف $10$ : $-14\\le D\\le 22$ .",
+        "incorrect": "استنتج المتباينة خطوة بخطوة، وانتبه إلى اتجاهها بعد كلّ ضرب أو قسمة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$-24\\le -3T\\le 12$ ثم نضيف $10$ : $-14\\le D\\le 22$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "أكمل: $D\\le\\ldots$",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "22",
+      "misconceptionSignatures": [
+        {
+          "value": "-14",
+          "id": "MISC-MUTABAYINA-BOUND-ORDER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المعطى بالضبط؟ وما العبارة المطلوب استنتاج متباينة لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابنِ المتباينة المطلوبة عملية بعد عملية، وانتبه إلى إشارة العدد عند كلّ ضرب أو قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر، وأعد كتابة الحصر من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$D\\le 22$ .",
+        "incorrect": "استنتج المتباينة خطوة بخطوة، وانتبه إلى اتجاهها بعد كلّ ضرب أو قسمة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$D\\le 22$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "من أجل كلّ $T$ في المجال المعطى لدينا $D\\ge -14$ .",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيحة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خاطئة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-NEG-NOFLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المعطى بالضبط؟ وما العبارة المطلوب استنتاج متباينة لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابنِ المتباينة المطلوبة عملية بعد عملية، وانتبه إلى إشارة العدد عند كلّ ضرب أو قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر، وأعد كتابة الحصر من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$-14\\le D\\le 22$ ؛ فالجملة صحيحة.",
+        "incorrect": "استنتج المتباينة خطوة بخطوة، وانتبه إلى اتجاهها بعد كلّ ضرب أو قسمة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$-14\\le D\\le 22$ ؛ فالجملة صحيحة."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

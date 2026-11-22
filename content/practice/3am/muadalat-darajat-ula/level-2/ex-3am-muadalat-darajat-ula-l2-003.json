@@ -1,0 +1,195 @@
+{
+  "id": "ex-3am-muadalat-darajat-ula-l2-003",
+  "lessonCode": "muadalat-darajat-ula",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — حلّ معادلة والتحقّق",
+    "estimatedMinutes": 7,
+    "tags": [
+      "حلّ معادلة",
+      "التحقّق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر المعادلة $7x + 4 = 3x - 12$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "حلّ المعادلة $7x + 4 = 3x - 12$ .",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = -4$ .",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر أو عدد عشري)",
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "value": "-2",
+          "id": "MISC-MUADALA-SIGN-KEPT"
+        },
+        {
+          "value": "4",
+          "id": "MISC-MUADALA-NEG-COEF"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "لدينا: $7x + 4 = 3x - 12$ .",
+          "نضيف $-3x$ إلى الطرفين (معاكس الحدّ $3x$) فنجد: $4x + 4 = -12$ .",
+          "نضيف $-4$ إلى الطرفين (معاكس $4$) فنجد: $4x = -16$ .",
+          "نقسم الطرفين على $4$ فنجد: $x = -4$ .",
+          "التحقّق: من أجل $x = -4$ نجد الطرف الأيسر $-24$ والطرف الأيمن $-24$ ، فهما متساويان."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما القيمة المشتركة للطرفين عند الحلّ الذي وجدته؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد المراد اختباره؟ عوّضه مكان المجهول في الطرف الأيسر ثم في الطرف الأيمن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة بدقّة (انتبه إلى الإشارات)، ثم قارن النتيجتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا تساوى الطرفان فالعدد حلّ للمعادلة، وإذا اختلفا فليس حلًّا لها."
+        }
+      ],
+      "feedback": {
+        "correct": "كلّ من الطرفين يساوي $-24$ عند $x = -4$ .",
+        "incorrect": "للتحقّق من أنّ عددًا حلّ نعوّضه في الطرفين ونقارن القيمتين؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر أو عدد عشري)",
+      "expectedAnswer": "-24",
+      "misconceptionSignatures": [
+        {
+          "value": "-4",
+          "id": "MISC-MUADALA-CHECK-ONE-SIDE"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "الطرف الأيسر: $7 \\times (-4) + 4 = -24$ .",
+          "الطرف الأيمن: $3 \\times (-4) - 12 = -24$ .",
+          "القيمة المشتركة $-24$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "هل للمعادلة $4x = -16$ الحلّ نفسه؟ أي هل العدد $-4$ حلّ لها؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد المراد اختباره؟ عوّضه مكان المجهول في الطرف الأيسر ثم في الطرف الأيمن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة بدقّة (انتبه إلى الإشارات)، ثم قارن النتيجتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا تساوى الطرفان فالعدد حلّ للمعادلة، وإذا اختلفا فليس حلًّا لها."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم: الطرفان متساويان عند هذا العدد.",
+        "incorrect": "للتحقّق من أنّ عددًا حلّ نعوّضه في الطرفين ونقارن القيمتين؛ أعد المحاولة."
+      },
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-CHECK-ONE-SIDE"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "نعوّض $x = -4$ في كلّ طرف على حدة.",
+          "الطرف الأيسر: $4 \\times (-4)$ ، أي $-16$ .",
+          "الطرف الأيمن: $-16$ ، أي $-16$ .",
+          "الطرفان متساويان، إذن العدد $-4$ حلّ للمعادلة."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

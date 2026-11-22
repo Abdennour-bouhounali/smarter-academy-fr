@@ -1,0 +1,206 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muthallathat-l1-005",
+  "lessonCode": "wadiya-idmajiya-muthallathat",
+  "level": 1,
+  "metadata": {
+    "title": "الطولان IE و EL",
+    "estimatedMinutes": 6,
+    "tags": [
+      "الظل",
+      "جيب التمام"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 124,
+      "section": "الوضعيات",
+      "number": 5
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل: $LIE$ مثلث قائم في $I$ حيث $IL = 6\\,\\mathrm{cm}$ و $\\widehat{L} = 50^{\\circ}$ .",
+    "figure": {
+      "points": {
+        "L": [
+          0,
+          6
+        ],
+        "I": [
+          0,
+          0
+        ],
+        "E": [
+          7.1505,
+          0
+        ]
+      },
+      "segments": [
+        {
+          "from": "L",
+          "to": "I",
+          "label": "6 cm"
+        },
+        [
+          "I",
+          "E"
+        ],
+        [
+          "L",
+          "E"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "L",
+          "I",
+          "E"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "L",
+          "from": "I",
+          "to": "E",
+          "label": "50°"
+        }
+      ],
+      "labels": {
+        "L": "nw",
+        "I": "sw",
+        "E": "se"
+      },
+      "ariaLabel": "مثلث LIE قائم في I: L فوق I و E على اليمين؛ IL = 6 cm وقيس الزاوية L يساوي 50 درجة",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب الطول $IE$ بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm مدوّرا إلى 0,1",
+      "expectedAnswer": "7.2",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        },
+        {
+          "value": "4.6",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بالنسبة إلى الزاوية $\\widehat{L}$ : $[IL]$ مجاور و $[IE]$ مقابل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة التي تجمعهما هي الظل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالآلة الحاسبة مبرمجة على الدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$IE = 6 \\times \\tan 50^{\\circ} \\approx 7{,}2\\,\\mathrm{cm}$ .",
+        "incorrect": "الطول المطلوب في بسط الظل: نضرب ولا نقسم، والآلة مبرمجة على الدرجة."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $LIE$ القائم في $I$ : $\\tan\\widehat{L} = \\dfrac{IE}{IL}$ أي $\\tan 50^{\\circ} = \\dfrac{IE}{6}$",
+          "ومنه: $IE = 6 \\times \\tan 50^{\\circ}$",
+          "باستعمال الآلة الحاسبة: $IE \\approx 7{,}1505$"
+        ],
+        "result": "IE \\approx 7{,}2\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب الطول $EL$ بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm مدوّرا إلى 0,1",
+      "expectedAnswer": "9.3",
+      "misconceptionSignatures": [
+        {
+          "value": "3.9",
+          "id": "MISC-MUTH-DARB-BADAL-QISMA"
+        },
+        {
+          "value": "7.8",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$[EL]$ هو الوتر، و $[IL]$ مجاور للزاوية $\\widehat{L}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة التي تجمع المجاور والوتر هي جيب التمام."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالآلة الحاسبة مبرمجة على الدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$EL = \\dfrac{6}{\\cos 50^{\\circ}} \\approx 9{,}3\\,\\mathrm{cm}$ .",
+        "incorrect": "الوتر هو المجهول وهو في مقام جيب التمام: نقسم $6$ على $\\cos 50^{\\circ}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\cos\\widehat{L} = \\dfrac{IL}{EL}$ أي $\\cos 50^{\\circ} = \\dfrac{6}{EL}$",
+          "ومنه: $EL = \\dfrac{6}{\\cos 50^{\\circ}}$",
+          "باستعمال الآلة الحاسبة: $EL \\approx 9{,}3343$"
+        ],
+        "result": "EL \\approx 9{,}3\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "id": "ex-3am-qawaid-quwa-ashara-l2-005",
+  "lessonCode": "qawaid-quwa-ashara",
+  "level": 2,
+  "metadata": {
+    "title": "صحيح أم خطأ؟",
+    "estimatedMinutes": 6,
+    "tags": [
+      "القواعد الثلاث",
+      "مجموع قوى"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-20",
+      "page": 47,
+      "section": "أوظّف تعلّماتي",
+      "number": 20
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في كلّ حالة من الحالات الأربع، هل الجملة المقترحة صحيحة؟"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "نصف $10^{10}$ (أي $10^{10}$ مقسومًا على 2) هو $10^{5}$ .",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل كلّ اقتراح إلى قوة واحدة للعدد 10 مستعملًا القاعدة المناسبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر اقتراحًا واحدًا في كلّ مرّة، وانتبه إلى أنّ القواعد الثلاث لا تخصّ الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا شككت في قاعدة فجرّبها على قوة صغيرة تعرف قيمتها العشرية."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QAWAID-NISF"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "الجملة خاطئة: نصف $10^{10}$ هو $5\\times10^{9}$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب قيمته أو بتطبيق القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نصف عدد هو قسمته على 2 وليس قسمة أسّه: $\\dfrac{10^{10}}{2} = 5\\times10^{9}$ .",
+          "وهو ليس $10^{5}$ ، فالجملة خاطئة."
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$10^{3}+10^{2} = 10^{5}$ .",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل كلّ اقتراح إلى قوة واحدة للعدد 10 مستعملًا القاعدة المناسبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر اقتراحًا واحدًا في كلّ مرّة، وانتبه إلى أنّ القواعد الثلاث لا تخصّ الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا شككت في قاعدة فجرّبها على قوة صغيرة تعرف قيمتها العشرية."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QAWAID-MAJMU"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "الجملة خاطئة: $10^{3}+10^{2} = 1\\,100$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب قيمته أو بتطبيق القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "لا توجد قاعدة تجمع الأسّين في مجموع: $10^{3}+10^{2} = 1\\,000+100 = 1\\,100$ .",
+          "وهو ليس $10^{5} = 100\\,000$ ، فالجملة خاطئة."
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "$100\\times10^{-4} = 10^{-2}$ .",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل كلّ اقتراح إلى قوة واحدة للعدد 10 مستعملًا القاعدة المناسبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر اقتراحًا واحدًا في كلّ مرّة، وانتبه إلى أنّ القواعد الثلاث لا تخصّ الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا شككت في قاعدة فجرّبها على قوة صغيرة تعرف قيمتها العشرية."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QAWAID-ISHARA"
+        }
+      ],
+      "feedback": {
+        "correct": "الجملة صحيحة: $100\\times10^{-4} = 10^{2}\\times10^{-4} = 10^{-2}$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب قيمته أو بتطبيق القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$100 = 10^{2}$ ، إذن $100\\times10^{-4} = 10^{2}\\times10^{-4}$ .",
+          "نجمع الأسّين: $2 + (-4) = -2$ ، فالجملة صحيحة."
+        ]
+      }
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "$10^{2}+10^{-2} = 100{,}01$ .",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل كلّ اقتراح إلى قوة واحدة للعدد 10 مستعملًا القاعدة المناسبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر اقتراحًا واحدًا في كلّ مرّة، وانتبه إلى أنّ القواعد الثلاث لا تخصّ الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا شككت في قاعدة فجرّبها على قوة صغيرة تعرف قيمتها العشرية."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QAWAID-MAJMU"
+        }
+      ],
+      "feedback": {
+        "correct": "الجملة صحيحة: $100 + 0{,}01 = 100{,}01$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب قيمته أو بتطبيق القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10^{2} = 100$ و $10^{-2} = 0{,}01$ .",
+          "$100 + 0{,}01 = 100{,}01$ ، فالجملة صحيحة."
+        ]
+      }
+    }
+  ]
+}

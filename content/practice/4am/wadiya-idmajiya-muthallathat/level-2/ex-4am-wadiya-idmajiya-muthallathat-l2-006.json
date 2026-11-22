@@ -1,0 +1,137 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muthallathat-l2-006",
+  "lessonCode": "wadiya-idmajiya-muthallathat",
+  "level": 2,
+  "metadata": {
+    "title": "قطر أرضية ملعب «5 جويلية» وزاويته",
+    "estimatedMinutes": 6,
+    "tags": [
+      "خاصية فيثاغورس",
+      "الظل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-muthallathat_P1",
+      "modelledOn": "ex-31"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "أرضية ملعب كرة القدم «5 جويلية» مستطيل $ABCD$ طوله $AB = 105\\,\\mathrm{m}$ وعرضه $BC = 68\\,\\mathrm{m}$ . يجري لاعب من الراية $A$ إلى الراية المقابلة لها $C$ على القطر $[AC]$ . يحافظ عمّال الملعب على نظافة أرضيته ويتقنون ترسيم خطوطها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب طول القطر $AC$ بالتدوير إلى الوحدة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P2",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بـ m مدوّرا إلى الوحدة",
+      "expectedAnswer": "125",
+      "misconceptionSignatures": [
+        {
+          "value": "173",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $ABC$ قائم في $B$ ووتره القطر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خاصية فيثاغورس."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC = \\sqrt{105^2 + 68^2} = \\sqrt{15649} \\approx 125{,}1$ أي $125\\,\\mathrm{m}$ .",
+        "incorrect": "نجمع مربعي البعدين لا البعدين، ثم نأخذ الجذر."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $B$ ، حسب خاصية فيثاغورس: $AC^2 = AB^2 + BC^2 = 11025 + 4624 = 15649$",
+          "$AC = \\sqrt{15649} \\approx 125{,}096$"
+        ],
+        "result": "AC \\approx 125\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط المدوّر إلى الوحدة من الدرجة لقيس الزاوية $\\widehat{BAC}$ بين القطر والطول.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: القيس بالدرجة مدوّرا إلى الوحدة",
+      "expectedAnswer": "33",
+      "misconceptionSignatures": [
+        {
+          "value": "57",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $ABC$ : $[BC]$ مقابل للزاوية $\\widehat{BAC}$ و $[AB]$ مجاور لها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل الظل بالأطوال المعطاة (المضبوطة)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل اللمسة العكسية للنسبة في آلة حاسبة مبرمجة على الدرجة، ثم دوّر في آخر الحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan\\widehat{BAC} = \\dfrac{68}{105}$ ومنه $\\widehat{BAC} \\approx 32{,}93^{\\circ}$ ، أي $33^{\\circ}$ .",
+        "incorrect": "الظل = المقابل ( $BC$ ) على المجاور ( $AB$ )."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $ABC$ القائم في $B$ : $\\tan\\widehat{BAC} = \\dfrac{BC}{AB} = \\dfrac{68}{105}$",
+          "باستعمال الآلة الحاسبة: $\\widehat{BAC} \\approx 32{,}9279^{\\circ}$"
+        ],
+        "result": "\\widehat{BAC} \\approx 33^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

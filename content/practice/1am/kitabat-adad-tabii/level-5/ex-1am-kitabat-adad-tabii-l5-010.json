@@ -1,0 +1,338 @@
+{
+  "id": "ex-1am-kitabat-adad-tabii-l5-010",
+  "lessonCode": "kitabat-adad-tabii",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — صكوك أمين صندوق الجمعية",
+    "estimatedMinutes": 18,
+    "tags": [
+      "صك",
+      "كتابة بالحروف",
+      "أمانة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يكتب أمين صندوق جمعية الحي كل صكّ بالأرقام وبالحروف، والبنك يرفض كل صكّ لا تتطابق كتابتاه.\nالجزء الأول: يحرّر الأمين صكّين.\nالجزء الثاني: يصل صكّ كُتب عليه بالأرقام $40\\,700$ دج، وبالحروف « أربعة آلاف وسبعمائة دينار »."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "كيف يكتب الأمين المبلغ $26\\,080$ دج بالحروف؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "ألفان وستمائة وثمانون",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-ZERO-PLACE"
+        },
+        {
+          "id": "B",
+          "content": "ستة وعشرون ألفا وثمانمائة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-RANK-NAME"
+        },
+        {
+          "id": "C",
+          "content": "ستة وعشرون ألفا وثمانون",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "اثنان ستة صفر ثمانية صفر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-DIGIT-BY-DIGIT"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزّئ العدد إلى فئات من ثلاثة أرقام انطلاقا من اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ كل فئة كعدد أصغر من 1000 ثم اذكر اسم فئتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى المراتب الفارغة (الأصفار)."
+        }
+      ],
+      "feedback": {
+        "correct": "$26\\,080$ يُقرأ « ستة وعشرون ألفا وثمانون ».",
+        "incorrect": "نجزّئ العدد إلى فئات من ثلاثة أرقام انطلاقا من اليمين، ثم نقرأ الفئات من اليسار، كل فئة باسمها."
+      },
+      "solution": {
+        "lines": [
+          "$26\\,|\\,080$",
+          "نقرأ فئة فئة: « ستة وعشرون ألفا وثمانون »."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كيف يكتب الأمين بالأرقام المبلغ « سبعة عشر ألفا وخمسة » دنانير؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي بالأرقام (يمكنك ترك فراغ بين الفئات)",
+      "expectedAnswer": "17005",
+      "misconceptionSignatures": [
+        {
+          "value": "175",
+          "id": "MISC-KITABA-ZERO-PLACE"
+        },
+        {
+          "value": "1705",
+          "id": "MISC-KITABA-ZERO-PLACE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما أسماء الفئات التي تسمعها في العدد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل فئة على يمين الفئة الأولى تُكتب بثلاثة أرقام بالضبط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب 0 في كل مرتبة فارغة."
+        }
+      ],
+      "feedback": {
+        "correct": "« سبعة عشر ألفا وخمسة » يكتب بالأرقام $17\\,005$.",
+        "incorrect": "كل فئة بعد الفئة الأولى تُكتب بثلاثة أرقام: المرتبة الفارغة يحفظها الرقم 0."
+      },
+      "solution": {
+        "lines": [
+          "نكتب كل فئة بثلاثة أرقام: 17 في فئة الآلاف، 005 في فئة الوحدات.",
+          "إذن العدد هو $17\\,005$."
+        ],
+        "result": "17\\,005"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "هل الكتابتان على الصكّ الثالث متطابقتان؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-ZERO-PLACE"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العدد $40\\,700$ بفئاته."
+        }
+      ],
+      "feedback": {
+        "correct": "لا: $40\\,700$ يُقرأ « أربعون ألفا وسبعمائة ».",
+        "incorrect": "اقرأ فئة الآلاف: 40 وليس 4."
+      },
+      "solution": {
+        "lines": [
+          "$40\\,700$: فئة الآلاف 40، وفئة الوحدات 700.",
+          "يُقرأ « أربعون ألفا وسبعمائة »، فالكتابتان غير متطابقتين."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما العدد المكتوب بالحروف على الصكّ الثالث؟ اكتبه بالأرقام.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي بالأرقام (يمكنك ترك فراغ بين الفئات)",
+      "expectedAnswer": "4700",
+      "misconceptionSignatures": [
+        {
+          "value": "47",
+          "id": "MISC-KITABA-ZERO-PLACE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما أسماء الفئات التي تسمعها في العدد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل فئة على يمين الفئة الأولى تُكتب بثلاثة أرقام بالضبط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب 0 في كل مرتبة فارغة."
+        }
+      ],
+      "feedback": {
+        "correct": "« أربعة آلاف وسبعمائة » يكتب بالأرقام 4700.",
+        "incorrect": "كل فئة بعد الفئة الأولى تُكتب بثلاثة أرقام: المرتبة الفارغة يحفظها الرقم 0."
+      },
+      "solution": {
+        "lines": [
+          "نكتب كل فئة بثلاثة أرقام: 4 في فئة الآلاف، 700 في فئة الوحدات.",
+          "إذن العدد هو 4700."
+        ],
+        "result": "4700"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ج",
+      "statement": "كم ورقة من فئة 100 دج يمثّل المبلغ المكتوب بالأرقام $40\\,700$ دج؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "407",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-KITABA-DIGIT-COUNT"
+        },
+        {
+          "value": "40",
+          "id": "MISC-KITABA-RANKSHIFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد المئات هو عدد المجموعات من 100 التي نكوّنها من العدد كله، لا الرقم وحده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احذف الأرقام التي على يمين مرتبة المئات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: اضرب جوابك في 100 ثم أضف ما بقي."
+        }
+      ],
+      "feedback": {
+        "correct": "$40\\,700 = 407 \\times 100 + 0$: عدد المئات هو 407، أمّا رقم المئات فهو 7.",
+        "incorrect": "رقم المرتبة هو ما يبقى فيها وحدها؛ أمّا عدد وحداتها فنحسب فيه كل ما يمكن تجميعه منها في العدد كله."
+      },
+      "solution": {
+        "lines": [
+          "$40\\,700 = 407 \\times 100 + 0$",
+          "إذن عدد المئات في العدد $40\\,700$ هو 407، ورقم المئات هو 7."
+        ],
+        "result": "407"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "برّر لماذا يرفض البنك هذا الصكّ.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الكتابتين فئة فئة."
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك بالحل النموذجي سطرا بسطر."
+      },
+      "solution": {
+        "lines": [
+          "بالأرقام: $40\\,700$ دج، أي « أربعون ألفا وسبعمائة ».",
+          "بالحروف: « أربعة آلاف وسبعمائة » أي 4700 دج.",
+          "المبلغان مختلفان (نقص صفر في فئة الآلاف)، فيرفض البنك الصكّ."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

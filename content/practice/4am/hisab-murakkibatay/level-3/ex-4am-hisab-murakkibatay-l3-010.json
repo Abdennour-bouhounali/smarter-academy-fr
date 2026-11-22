@@ -1,0 +1,78 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l3-010",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — كسور",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مركبتا شعاع",
+      "كسور"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hisab-murakkibatay_P1",
+      "modelledOn": "ex-6"
+    }
+  },
+  "statement": {
+    "content": "$A(0{,}5\\,;\\,\\dfrac{2}{3})$ و $B(0{,}75\\,;\\,-\\dfrac{1}{3})$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مركبتا $\\overrightarrow{AB}$ (كسران مثل 1/4):",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "point",
+      "answerFormat": "المركبتان: الأولى ثم الثانية — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "0.25",
+        "y": "-1"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-0.25",
+            "y": "1"
+          },
+          "id": "MISC-MAALAM-TARH-MAQLUB"
+        },
+        {
+          "value": {
+            "x": "5/4",
+            "y": "1/3"
+          },
+          "id": "MISC-MAALAM-JAM-IHDATHIYAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبدأ A والنهاية B."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المركبة الأولى: فاصلة B ناقص فاصلة A."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المركبة الثانية: ترتيب B ناقص ترتيب A، وانتبه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{4} - \\dfrac{1}{2} = \\dfrac{1}{4}$ و $-\\dfrac{1}{3} - \\dfrac{2}{3} = -1$ .",
+        "incorrect": "وحّد المقامين قبل الطرح."
+      }
+    }
+  ]
+}

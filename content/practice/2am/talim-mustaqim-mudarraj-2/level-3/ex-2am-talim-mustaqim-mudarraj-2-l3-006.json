@@ -1,0 +1,212 @@
+{
+  "id": "ex-2am-talim-mustaqim-mudarraj-2-l3-006",
+  "lessonCode": "talim-mustaqim-mudarraj-2",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — منسوب السدّ",
+    "estimatedMinutes": 10,
+    "tags": [
+      "قراءة فاصلة",
+      "معاكس",
+      "تغيير المبدأ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يُسجَّل منسوب ماء سدّ بالنسبة إلى منسوبه العادي (الصفر) بمسطرة قيمة تدريجتها الواحدة $0{,}5\\,\\mathrm{m}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "النقطة $A$ على 3 تدريجات إلى يسار المبدأ، وقيمة التدريجة الواحدة $0{,}5\\,\\mathrm{m}$. ما فاصلة $A$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-3\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM2-UNITIGNORED"
+        },
+        {
+          "id": "B",
+          "content": "$-1{,}5\\,\\mathrm{m}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$-3{,}5\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM2-ADDSTEP"
+        },
+        {
+          "id": "D",
+          "content": "$1{,}5\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM2-SIGNSIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ التدريجات بين المبدأ والنقطة، ثم انظر إلى جهتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفاصلة = عدد التدريجات × قيمة التدريجة الواحدة، وإشارتها حسب الجهة: يمين المبدأ موجبة، يسار المبدأ سالبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء أوّلًا ثم ضع الإشارة المناسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$A(-1{,}5)$ : $3$ تدريجات × $0{,}5\\,\\mathrm{m}$ ، في الجهة اليسرى فالإشارة سالبة.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "عدد التدريجات $3$ ، قيمة التدريجة $0{,}5\\,\\mathrm{m}$",
+          "النقطة على يسار المبدأ فالإشارة سالبة",
+          "$A(-1{,}5)$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما معاكس العدد $-1{,}5$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "1.5",
+      "misconceptionSignatures": [
+        {
+          "value": "-1.5",
+          "id": "MISC-TALIM2-OPPSAME"
+        },
+        {
+          "value": "5.1",
+          "id": "MISC-TALIM2-DIGITSWAP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العددان المتعاكسان لهما المسافة نفسها إلى الصفر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "معاكس عدد يُحصل عليه بتغيير إشارته فقط، ولا يتغيّر ما بعد الإشارة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: مجموع العددين المتعاكسين يساوي الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "معاكس $-1{,}5$ هو $1{,}5$ : المسافة نفسها إلى الصفر، والإشارة مختلفة.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "معاكس $-1{,}5$ هو العدد الذي له المسافة نفسها إلى الصفر وإشارته مخالفة",
+          "$1{,}5$"
+        ],
+        "result": "1.5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "فاصلة النقطة $A$ هي $-1{,}5\\,\\mathrm{m}$ والنقطة $B$ فاصلتها $0{,}5\\,\\mathrm{m}$ . ننقل المبدأ إلى $B$ ونبقي التدريجة نفسها. ما الفاصلة الجديدة للنقطة $A$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "-1.5",
+          "id": "MISC-TALIM2-ORIGINFIXED"
+        },
+        {
+          "value": "-1",
+          "id": "MISC-TALIM2-ADDORIGIN"
+        },
+        {
+          "value": "2",
+          "id": "MISC-TALIM2-SIGNSIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا تتغيّر النقطة، بل يتغيّر المبدأ الذي نبدأ منه العدّ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفاصلة الجديدة = الفاصلة القديمة − فاصلة المبدأ الجديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعدّ من المبدأ الجديد إلى النقطة."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة الجديدة $-1{,}5 - (0{,}5) = -2$ : النقطة هي نفسها والمبدأ تغيّر.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "النقطة لم تتحرّك، وإنّما المبدأ هو الذي تحرّك",
+          "الفاصلة الجديدة = $-1{,}5 - (0{,}5) = -2$"
+        ],
+        "result": "-2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

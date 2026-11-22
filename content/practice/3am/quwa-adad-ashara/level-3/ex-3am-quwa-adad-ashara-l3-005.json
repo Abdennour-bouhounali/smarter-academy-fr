@@ -1,0 +1,176 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l3-005",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 3,
+  "metadata": {
+    "title": "أملأ الفراغ بقوة للعدد 10",
+    "estimatedMinutes": 6,
+    "tags": [
+      "الوحدات",
+      "التحويلات"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-11",
+      "page": 46,
+      "section": "أوظّف تعلّماتي",
+      "number": 11
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعلم أنّ $1\\ \\mathrm{m} = 100\\ \\mathrm{cm}$ وأنّ $1\\ \\mathrm{km} = 1\\,000\\ \\mathrm{m}$ وأنّ $1\\ \\mathrm{m} = 1\\,000\\ \\mathrm{mm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "كم سنتيمترًا في $1\\ \\mathrm{km}$ ؟",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم مترًا في الكيلومتر؟ وكم سنتيمترًا في المتر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب العددين العشريّين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$1\\,000 \\times 100$ يعطي 1 متبوعًا بأصفار."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "100000",
+      "misconceptionSignatures": [
+        {
+          "value": "10000",
+          "id": "MISC-ASHARA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\ \\mathrm{km} = 100\\,000\\ \\mathrm{cm}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$1\\ \\mathrm{km} = 1\\,000 \\times 100\\ \\mathrm{cm} = 100\\,000\\ \\mathrm{cm}$ ."
+        ],
+        "result": "100\\,000"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "نكتب $1\\ \\mathrm{km} = 100\\,000\\ \\mathrm{cm} = 10^{n}\\ \\mathrm{cm}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ الأصفار الواقعة بعد الرقم 1 في هذا العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأسّ هو عدد الأصفار بعد الرقم 1، وليس عدد أرقام العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدّ الأصفار صفرًا صفرًا بدءًا من الرقم 1 حتى آخر العدد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-ASHARA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\ \\mathrm{km} = 10^{5}\\ \\mathrm{cm}$ .",
+        "incorrect": "عدّ الأصفار (أو رتبة الرقم 1 بعد الفاصلة) بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$100\\,000$ هو 1 متبوع بخمسة أصفار.",
+          "$100\\,000 = 10^{5}$ ."
+        ],
+        "result": "n = 5"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "$10^{4}\\ \\mathrm{mm}$ تساوي كم مترًا؟",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $10^{4}$ كتابة عشرية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كم ملّيمترًا في المتر الواحد؟ اقسم عليه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قسمة عدد على 1 000 تُزيح الفاصلة ثلاث رتب نحو اليسار."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "10",
+      "feedback": {
+        "correct": "$10^{4}\\ \\mathrm{mm} = 10\\,000\\ \\mathrm{mm} = 10\\ \\mathrm{m}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10^{4} = 10\\,000$ ملّيمتر.",
+          "$10\\,000 \\div 1\\,000 = 10$ متر."
+        ],
+        "result": "10"
+      }
+    }
+  ]
+}

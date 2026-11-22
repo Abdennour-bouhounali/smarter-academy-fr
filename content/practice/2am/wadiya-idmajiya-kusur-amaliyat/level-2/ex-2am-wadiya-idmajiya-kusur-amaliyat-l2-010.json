@@ -1,0 +1,253 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-kusur-amaliyat-l2-010",
+  "lessonCode": "wadiya-idmajiya-kusur-amaliyat",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — كسر من جزء : كتب المكتبة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "جداء كسرين",
+      "كسر من كسر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في مكتبة $480$ كتابًا : $\\dfrac{3}{4}$ منها كتب عربيّة ، و $\\dfrac{2}{3}$ من الكتب العربيّة قصص ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما الكسر الذي تمثّله القصص العربيّة من كتب المكتبة كلّها ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "1/2",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "5/7",
+          "id": "MISC-JIDAKASR-SUMACROSS"
+        },
+        {
+          "value": "6/7",
+          "id": "MISC-JIDAKASR-DENSUM"
+        },
+        {
+          "value": "8/9",
+          "id": "MISC-JIDAKASR-CROSS"
+        },
+        {
+          "value": "2/3",
+          "id": "MISC-SYN-KASR2-WHOLE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في جداء كسرين نضرب البسطين معًا والمقامين معًا ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا نوحّد المقامات في الضرب ولا نقلب أيّ كسر ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل الناتج إن أمكن وتحقّق أنّه أصغر من كلّ عامل أصغر من 1 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{2}$ .",
+        "incorrect": "في الضرب نضرب البسطين معًا والمقامين معًا دون توحيد المقامات ، ثمّ نختزل ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2}{3} \\times \\dfrac{3}{4} = \\dfrac{2 \\times 3}{3 \\times 4} = \\dfrac{6}{12}$ .",
+          "نختزل : $\\dfrac{6}{12} = \\dfrac{1}{2}$ ."
+        ],
+        "result": "\\dfrac{1}{2}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما عدد القصص العربيّة ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "240",
+      "misconceptionSignatures": [
+        {
+          "value": "960",
+          "id": "MISC-JIDAKASR-FLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزء من عدد يعني جداء الكسر في العدد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي ما دام الكسر أصغر من 1 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$240$ .",
+        "incorrect": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ، ولا تقلب الكسر ."
+      },
+      "solution": {
+        "lines": [
+          "$480 \\div 2 = 240$ ."
+        ],
+        "result": "240"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما الكسر الذي تمثّله الكتب العربيّة التي ليست قصصًا من المكتبة كلّها ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "1/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1/3",
+          "id": "MISC-JAMKASR-ACROSS"
+        },
+        {
+          "value": "1/2",
+          "id": "MISC-JAMKASR-NOSCALE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليّة المطلوبة ؟ وهل المقامان متساويان ، أم أنّ أحدهما مضاعف للآخر ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا اختلف المقامان فاكتب الكسر ذا المقام الأصغر بالمقام الأكبر : اضرب حدّيه في العدد نفسه ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع (أو اطرح) البسطين وأبقِ المقام كما هو ، ثمّ اختزل الناتج إن أمكن ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{4}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح ، ثمّ اختزل الناتج وأعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{2} = \\dfrac{1 \\times 2}{2 \\times 2} = \\dfrac{2}{4}$ .",
+          "$\\dfrac{3}{4} - \\dfrac{1}{2} = \\dfrac{3 - 2}{4} = \\dfrac{1}{4}$ ."
+        ],
+        "result": "\\dfrac{1}{4}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "ما عدد هذه الكتب ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "120",
+      "misconceptionSignatures": [
+        {
+          "value": "1920",
+          "id": "MISC-JIDAKASR-FLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزء من عدد يعني جداء الكسر في العدد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي ما دام الكسر أصغر من 1 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$120$ .",
+        "incorrect": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ، ولا تقلب الكسر ."
+      },
+      "solution": {
+        "lines": [
+          "$480 \\div 4 = 120$ ."
+        ],
+        "result": "120"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

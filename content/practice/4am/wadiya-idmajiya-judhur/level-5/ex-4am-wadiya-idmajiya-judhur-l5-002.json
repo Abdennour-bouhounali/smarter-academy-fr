@@ -1,0 +1,246 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-judhur-l5-002",
+  "lessonCode": "wadiya-idmajiya-judhur",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2010 — رواق دار الصناعة التقليدية",
+    "estimatedMinutes": 13,
+    "tags": [
+      "a√2",
+      "المعادلة x² = a",
+      "مساحة",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-judhur_P1",
+      "modelledOn": "BEM 2010 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2010",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في دار الصناعة التقليدية بغرداية، حفاظًا على تراث الوطن، رواق تُعرض فيه صناعات الأجداد، وأرضيته مكوّنة من جزأين:\n• جزء مربع الشكل $ABCD$ مساحته $72m^2$ .\n• جزء على شكل مثلث $BEC$ قائم و متساوي الساقين في $E$ ، وتره الضلع $[BC]$ ، يقع خارج المربع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب طول الضلع $BC$ على الشكل $a\\sqrt{2}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "36",
+          "id": "MISC-JIDHR-MURABBA-MANSI"
+        },
+        {
+          "value": "18",
+          "id": "MISC-JIDHR-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$BC^2 = 72$ لأن $ABCD$ مربع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $72 = 36 \\times 2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC = \\sqrt{72} = 6\\sqrt{2}\\,m$",
+        "incorrect": "طول ضلع المربع هو الجذر التربيعي لمساحته؛ أخرج جذر المربع التام."
+      },
+      "solution": {
+        "lines": [
+          "$BC^2 = 72$ و $BC > 0$ ، إذن $BC = \\sqrt{72} = \\sqrt{36 \\times 2}$"
+        ],
+        "result": "BC = 6\\sqrt{2}\\,m"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "بيّن أن $EB^2 = 36$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طبّق خاصية فيثاغورس في المثلث $BEC$ القائم في $E$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$EB = EC$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك سطرًا بسطر بالحل النموذجي."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $BEC$ قائم في $E$ : $EB^2 + EC^2 = BC^2$",
+          "و $EB = EC$ ، إذن $2EB^2 = 72$"
+        ],
+        "result": "EB^2 = 36"
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "استنتج الطول $EB$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بالمتر (m)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "18",
+          "id": "MISC-HALL-QISMA"
+        },
+        {
+          "value": "-6",
+          "id": "MISC-JIDHR-SALIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حل المعادلة $EB^2 = 36$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الطول عدد موجب."
+        }
+      ],
+      "feedback": {
+        "correct": "$EB^2 = 36$ و $EB > 0$ ، إذن $EB = 6m$ .",
+        "incorrect": "حل المعادلة $EB^2 = 36$ و احتفظ بالحل الموجب."
+      },
+      "solution": {
+        "lines": [
+          "$EB^2 = 36$ و $EB > 0$ يعني $EB = \\sqrt{36}$"
+        ],
+        "result": "EB = 6m"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "احسب مساحة المثلث $BEC$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المساحة بـ $m^2$",
+      "expectedAnswer": "18",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة المثلث القائم نصف جداء ضلعيه القائمين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{6 \\times 6}{2} = 18m^2$",
+        "incorrect": "الضلعان القائمان هما $[EB]$ و $[EC]$ : اضربهما ثم اقسم على 2."
+      },
+      "solution": {
+        "lines": [
+          "$\\mathcal{A}_{BEC} = \\dfrac{EB \\times EC}{2} = \\dfrac{6 \\times 6}{2}$"
+        ],
+        "result": "18m^2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "☜ يريد صاحب الرواق تبليط الأرضية كلها ببلاط ثمن المتر المربع الواحد منه 1350DA. احسب تكلفة التبليط.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: التكلفة بـ DA",
+      "expectedAnswer": "121500",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة الأرضية = مساحة المربع + مساحة المثلث."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب المساحة الكلية في ثمن المتر المربع."
+        }
+      ],
+      "feedback": {
+        "correct": "المساحة $72 + 18 = 90m^2$ ، و التكلفة $90 \\times 1350 = 121500DA$ .",
+        "incorrect": "لا تنس أحد الجزأين: الأرضية مكوّنة من المربع و المثلث معًا."
+      },
+      "solution": {
+        "lines": [
+          "مساحة الأرضية: $72 + 18 = 90m^2$",
+          "التكلفة: $90 \\times 1350$"
+        ],
+        "result": "121500DA"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

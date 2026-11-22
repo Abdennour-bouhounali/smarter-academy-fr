@@ -1,0 +1,65 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l5-007",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — خلية النحل ومحيطها",
+    "estimatedMinutes": 3,
+    "tags": [
+      "طول الضلع",
+      "السداسي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mudalaat-muntazama_P1",
+      "modelledOn": "know-5"
+    }
+  },
+  "statement": {
+    "content": "خلية نحل سداسية منتظمة، رؤوسها على دائرة نصف قطرها $2{,}7\\,\\mathrm{mm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "محيط الخلية بالمليمتر:",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "16.2",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUNTAZAM-AMDA",
+          "value": "13.5"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما طول ضلع السداسي المنتظم بالنسبة إلى نصف القطر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المثلثات الستة متقايسة الأضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المحيط = عدد الأضلاع × الضلع."
+        }
+      ],
+      "feedback": {
+        "correct": "الضلع يساوي نصف القطر: $6 \\times 2{,}7 = 16{,}2$ .",
+        "incorrect": "في السداسي المنتظم الضلع يساوي نصف القطر."
+      },
+      "difficulty": 4
+    }
+  ]
+}

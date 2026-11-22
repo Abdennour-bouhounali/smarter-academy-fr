@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l2-009",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — أزواج متساوية",
+    "estimatedMinutes": 3,
+    "tags": [
+      "تساوي شعاعين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hisab-murakkibatay_P2",
+      "modelledOn": "know-equal"
+    }
+  },
+  "statement": {
+    "content": "$A(1\\,;\\,2)$ ، $B(4\\,;\\,0)$ ، $C(-2\\,;\\,5)$ ، $D(1\\,;\\,3)$ ، $E(0\\,;\\,-1)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أيّ مساواة صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{AB} = \\overrightarrow{CD}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{AB} = \\overrightarrow{DC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-TARTIB-NUQAT"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{AC} = \\overrightarrow{BE}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-TASAWI-MURAKKABA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مركبتي كل شعاع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن المركبة الأولى بالأولى والثانية بالثانية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يتساوى الشعاعان إذا تساوت المركبتان معا."
+        }
+      ],
+      "feedback": {
+        "correct": "AB و CD مركبتاهما 3 و −2. أما AC(−3 ; 3) و BE(−4 ; −1) فمختلفان.",
+        "incorrect": "احسب مركبتي كل شعاع ثم قارن المركبتين معا."
+      }
+    }
+  ]
+}

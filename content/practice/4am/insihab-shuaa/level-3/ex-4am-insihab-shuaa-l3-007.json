@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-insihab-shuaa-l3-007",
+  "lessonCode": "insihab-shuaa",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — ترتيب الحروف",
+    "estimatedMinutes": 2,
+    "tags": [
+      "متوازي الأضلاع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_insihab-shuaa_P3",
+      "modelledOn": "know-2"
+    }
+  },
+  "statement": {
+    "content": "K و L و M و N أربع نقط كل ثلاث منها ليست في استقامية، و $\\overrightarrow{KL}$ = $\\overrightarrow{MN}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الرباعي الذي هو متوازي أضلاع:",
+      "learningPoints": [
+        {
+          "code": "4am_insihab-shuaa_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "KLNM",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "KLMN",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        },
+        {
+          "id": "C",
+          "content": "KMLN",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{AB} = \\overrightarrow{DC}$ يعني ABCD متوازي أضلاع: اقرأ A ثم B ثم نهاية الشعاع الثاني ثم مبدأه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في متوازي الأضلاع، كل ضلعين متقابلين يعطيان شعاعين متساويين إذا قرأناهما في نفس الجهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارسم الرباعي على ورقة وضع السهمين لتتحقق من الجهة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{KL}$ = $\\overrightarrow{MN}$ : K ثم L ثم نهاية الشعاع الثاني N ثم مبدؤه M.",
+        "incorrect": "KLMN يتطلب $\\overrightarrow{KL}$ = $\\overrightarrow{NM}$ ."
+      },
+      "difficulty": 3
+    }
+  ]
+}

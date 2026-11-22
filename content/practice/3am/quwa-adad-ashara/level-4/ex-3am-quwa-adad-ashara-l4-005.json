@@ -1,0 +1,192 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l4-005",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مفكوك عدد فيه رتب فارغة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "المفكوك",
+      "رتب فارغة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد $N = 7\\,040\\,300$ . في مفكوك عدد لا نكتب حدًّا لرقم يساوي الصفر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ الكتابات التالية هي مفكوك $N$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أرقام $N$ ورتبة كلّ منها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الرقم 7 في رتبة الملايين، ورتبة الوحدات توافق $10^{0}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الرقمان 4 و3 لا يقعان في رتبتين متجاورتين: انتبه إلى الأصفار."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$7 \\times 10^{6} + 4 \\times 10^{5} + 3 \\times 10^{2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-MAFKUK"
+        },
+        {
+          "id": "B",
+          "content": "$7 \\times 10^{6} + 4 \\times 10^{4} + 3 \\times 10^{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$7 \\times 10^{7} + 4 \\times 10^{5} + 3 \\times 10^{3}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-MAFKUK"
+        }
+      ],
+      "feedback": {
+        "correct": "$N = 7 \\times 10^{6} + 4 \\times 10^{4} + 3 \\times 10^{2}$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب الكتابة العشرية للقوة المعنية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الرقم 7 في رتبة الملايين: $7 \\times 10^{6}$ .",
+          "الرقم 4 في رتبة عشرات الآلاف: $4 \\times 10^{4}$ ، والرقم 3 في رتبة المئات: $3 \\times 10^{2}$ ."
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "كم حدًّا في مفكوك العدد $7\\,040\\,300$ ؟",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اذكر الأرقام غير المعدومة في العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كلّ رقم غير معدوم يعطي حدًّا في المفكوك."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأصفار لا تعطي حدودًا."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-ASHARA-MAFKUK"
+        }
+      ],
+      "feedback": {
+        "correct": "ثلاثة أرقام غير معدومة إذن ثلاثة حدود.",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الأرقام غير المعدومة: 7 و 4 و 3.",
+          "إذن للمفكوك ثلاثة حدود."
+        ],
+        "result": "3"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "$7\\,040\\,300 = 7 \\times 10^{6} + 4 \\times 10^{n} + 3 \\times 10^{2}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما رتبة الرقم 4 في العدد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد رتبة الملايين تأتي مئات الآلاف ثمّ عشرات الآلاف."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الرقم 4 يقع في رتبة عشرات الآلاف."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-ASHARA-MAFKUK"
+        }
+      ],
+      "feedback": {
+        "correct": "الرقم 4 في رتبة عشرات الآلاف: $4 \\times 10^{4}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الرقم 4 هو رقم عشرات الآلاف.",
+          "$4 \\times 10\\,000 = 4 \\times 10^{4}$ ."
+        ],
+        "result": "n = 4"
+      }
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "id": "ex-1am-qawaid-qabiliyat-qisma-l1-005",
+  "lessonCode": "qawaid-qabiliyat-qisma",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — الباقي يحكم",
+    "estimatedMinutes": 3,
+    "tags": [
+      "باقٍ معدوم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نريد أن نعرف هل يقبل العدد 438 القسمة على 6، ولا نملك قاعدة للقسمة على 6."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب باقي القسمة الإقليدية للعدد 438 على 6.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "0",
+      "misconceptionSignatures": [
+        {
+          "value": "73",
+          "id": "MISC-QABILIYA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية عموديًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي عدد طبيعي أصغر من 6."
+        }
+      ],
+      "feedback": {
+        "correct": "$438 = 6 \\times 73 + 0$ و $0 < 6$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 6."
+      },
+      "solution": {
+        "lines": [
+          "$438 = 6 \\times 73 + 0$",
+          "$0 < 6$ ، إذن الباقي هو 0، و 438 يقبل القسمة على 6."
+        ],
+        "result": "r = 0"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج: هل يقبل العدد 438 القسمة على 6؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-BAQI"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما هو الباقي؟"
+        }
+      ],
+      "feedback": {
+        "correct": "باقي القسمة الإقليدية للعدد 438 على 6 هو 0.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 6 إذا كان باقي قسمته الإقليدية على 6 معدومًا."
+      },
+      "solution": {
+        "lines": [
+          "باقي القسمة الإقليدية للعدد 438 على 6 هو 0.",
+          "$438 = 6 \\times 73 + 0$ ، الباقي معدوم."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

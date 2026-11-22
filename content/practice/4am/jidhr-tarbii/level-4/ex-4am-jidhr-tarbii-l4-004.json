@@ -1,0 +1,194 @@
+{
+  "id": "ex-4am-jidhr-tarbii-l4-004",
+  "lessonCode": "jidhr-tarbii",
+  "level": 4,
+  "metadata": {
+    "title": "جذر مربع فرق فيه جذر",
+    "estimatedMinutes": 9,
+    "tags": [
+      "√(a²) = a",
+      "إشارة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_jidhr-tarbii_P3",
+      "modelledOn": "method-compute",
+      "adaptedFrom": "ex-4am-jidhr-tarbii-l4-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العدد $D = \\sqrt{(2 - \\sqrt{5})^2}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن العدد $2 - \\sqrt{5}$ سالب.",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن مربعي العددين 2 و $\\sqrt{5}$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العددان موجبان: أكبرهما هو الذي مربعه أكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك سطرًا بسطر بالحل النموذجي، وانتبه إلى الخاصية المستعملة."
+      },
+      "solution": {
+        "lines": [
+          "$2^2 = 4$ و $(\\sqrt{5})^2 = 5$ و $4 < 5$",
+          "و 2 و $\\sqrt{5}$ موجبان، إذن $2 < \\sqrt{5}$"
+        ],
+        "result": "2 - \\sqrt{5} < 0"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "اكتب $D$ على الشكل $a + b\\sqrt{5}$ حيث $a$ و $b$ عددان نسبيان، ثم أعط:",
+      "statement": "العدد $a$ .",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد a فقط",
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-JIDHR-MURABBA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$D$ هو العدد الموجب الذي مربعه $(2 - \\sqrt{5})^2$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل نتيجة السؤال 01: $2 - \\sqrt{5}$ سالب، فمعاكسه موجب."
+        }
+      ],
+      "feedback": {
+        "correct": "$D = \\sqrt{5} - 2$ إذن $a = -2$.",
+        "incorrect": "$\\sqrt{x^2} = x$ فقط إذا كان $x$ موجبا؛ هنا خذ معاكس $2 - \\sqrt{5}$."
+      },
+      "solution": {
+        "lines": [
+          "$2 - \\sqrt{5} < 0$ إذن $D = -(2 - \\sqrt{5}) = -2 + \\sqrt{5}$"
+        ],
+        "result": "D = -2 + \\sqrt{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "العدد $b$ .",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد b فقط",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "-1",
+          "id": "MISC-JIDHR-MURABBA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $D$ كما في (ا) ثم اقرأ معامل $\\sqrt{5}$."
+        }
+      ],
+      "feedback": {
+        "correct": "$D = -2 + 1 \\times \\sqrt{5}$ إذن $b = 1$.",
+        "incorrect": "معامل $\\sqrt{5}$ في $D$ يتعلق بإشارة $2 - \\sqrt{5}$."
+      },
+      "solution": {
+        "lines": [
+          "$D = -2 + \\sqrt{5}$"
+        ],
+        "result": "b = 1"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب $\\sqrt{(4 - \\sqrt{10})^2} + \\sqrt{10}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة $4 - \\sqrt{10}$؟ قارن $4^2$ و $(\\sqrt{10})^2$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان العدد داخل المربع موجبا فالجذر يساويه."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sqrt{10} < 4$ إذن $\\sqrt{(4 - \\sqrt{10})^2} = 4 - \\sqrt{10}$، والمجموع 4.",
+        "incorrect": "حدّد إشارة العدد داخل المربع قبل حذف الجذر."
+      },
+      "solution": {
+        "lines": [
+          "$(\\sqrt{10})^2 = 10 < 16 = 4^2$ إذن $4 - \\sqrt{10} > 0$",
+          "$\\sqrt{(4 - \\sqrt{10})^2} + \\sqrt{10} = 4 - \\sqrt{10} + \\sqrt{10}$"
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

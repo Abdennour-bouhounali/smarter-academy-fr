@@ -1,0 +1,68 @@
+{
+  "id": "ex-4am-muntasaf-masafa-l1-006",
+  "lessonCode": "muntasaf-masafa",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — المسافة بين نقطتين",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المسافة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_muntasaf-masafa_P2",
+      "modelledOn": "know-dist"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس: $A(1\\,;\\,2)$ و $B(7\\,;\\,10)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المسافة AB:",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري بالفاصلة (مثل 2,5)",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MASAFA-JADHR-JAM",
+          "value": "14"
+        },
+        {
+          "id": "MISC-MAALAM-MASAFA-JADHR-NASI",
+          "value": "100"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الفرقين: فرق الفاصلتين وفرق الترتيبين (النهاية ناقص المبدأ)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ربّع كل فرق ثم اجمع المربعين: هذا مربع المسافة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خذ الجذر التربيعي في الأخير، وبسّطه إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = \\sqrt{6^2 + 8^2} = \\sqrt{100} = 10$ .",
+        "incorrect": "ربّع الفرقين ثم اجمع ثم خذ الجذر."
+      }
+    }
+  ]
+}

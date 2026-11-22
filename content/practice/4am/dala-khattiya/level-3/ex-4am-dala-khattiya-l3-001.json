@@ -1,0 +1,185 @@
+{
+  "id": "ex-4am-dala-khattiya-l3-001",
+  "lessonCode": "dala-khattiya",
+  "level": 3,
+  "metadata": {
+    "title": "طرائق — تعيين دالة خطية من عدد وصورته",
+    "estimatedMinutes": 5,
+    "tags": [
+      "تعيين دالة خطية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-determine",
+      "page": 69,
+      "section": "طرائق",
+      "adaptedFrom": "ex-4am-dala-khattiya-l3-001"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$g$ دالة خطية حيث:",
+    "formulas": [
+      "g(-2) = 6"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن الدالة الخطية $g$ ، أي معاملها $a$ حيث $g(x) = ax$ .",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "value": "-1/3",
+          "id": "MISC-KHATTIYA-MUAMIL-MAQLUB"
+        },
+        {
+          "value": "3",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$g$ دالة خطية: $g(x) = ax$ ، و $g(-2) = 6$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب المعادلة $a \\times \\left(-2\\right) = 6$ ثم حلّها."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{6}{-2} = -3$ ، إذن $g(x) = -3x$ .",
+        "incorrect": "المعامل هو الصورة مقسومة على العدد (وليس العكس)، مع الانتباه إلى الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "$g$ دالة خطية، إذن $g(x) = ax$ .",
+          "$g(-2) = 6$ معناه $a \\times \\left(-2\\right) = 6$",
+          "$a = \\dfrac{6}{-2} = -3$"
+        ],
+        "result": "g(x) = -3x"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $g(5)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-15",
+      "misconceptionSignatures": [
+        {
+          "value": "-5/3",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "15",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "صورة العدد $x$ بالدالة الخطية $g$ هي $g(x) = -3 \\times x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $x$ بالعدد $5$ ثم احسب الجداء، وانتبه إلى الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$g(5) = \\left(-3\\right) \\times 5 = -15$ .",
+        "incorrect": "الصورة جداء المعامل في العدد: $g(x) = -3 \\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$g(5) = \\left(-3\\right) \\times 5$",
+          "$g(5) = -15$"
+        ],
+        "result": "g(5) = -15"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "جد العدد الذي صورته $21$ بالدالة $g$ .",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-7",
+      "misconceptionSignatures": [
+        {
+          "value": "-63",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "7",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد المطلوب $x$ يحقق $g(x) = 21$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المعادلة $-3x = 21$ : اقسم الطرفين على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{21}{-3} = -7$ .",
+        "incorrect": "لا تحسب صورة العدد المعطى: ابحث عن العدد $x$ الذي صورته هذا العدد."
+      },
+      "solution": {
+        "lines": [
+          "$g(x) = 21$ معناه $-3x = 21$",
+          "$x = \\dfrac{21}{-3} = -7$"
+        ],
+        "result": "x = -7"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

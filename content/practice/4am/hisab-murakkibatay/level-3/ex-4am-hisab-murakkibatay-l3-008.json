@@ -1,0 +1,77 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l3-008",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — شعاع مساو من نقطة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "نقطة مجهولة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hisab-murakkibatay_P3",
+      "modelledOn": "act-2"
+    }
+  },
+  "statement": {
+    "content": "$A(-3\\,;\\,2)$ ، $B(1\\,;\\,-2)$ ، $D(0\\,;\\,5)$ . E النقطة حيث $\\overrightarrow{DE} = \\overrightarrow{AB}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا E:",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "point",
+      "answerFormat": "الإحداثيتان (x ; y) — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "4",
+        "y": "1"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-4",
+            "y": "9"
+          },
+          "id": "MISC-MAALAM-TARTIB-NUQAT"
+        },
+        {
+          "value": {
+            "x": "4",
+            "y": "-4"
+          },
+          "id": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبدأ D معلوم والنهاية E مجهولة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$x_E - x_D$ يساوي المركبة الأولى، و $y_E - y_D$ يساوي الثانية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف كل مركبة إلى إحداثية D الموافقة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AB}\\begin{pmatrix} 4 \\\\ -4 \\end{pmatrix}$ : $E(0 + 4\\,;\\,5 - 4) = (4\\,;\\,1)$ .",
+        "incorrect": "D هي المبدأ: أضف مركبتي AB إلى إحداثيتي D."
+      }
+    }
+  ]
+}

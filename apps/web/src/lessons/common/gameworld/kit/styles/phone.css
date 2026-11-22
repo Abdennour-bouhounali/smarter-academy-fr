@@ -1,0 +1,344 @@
+/* ───────── A PHONE HELD SIDEWAYS — the practice hub (2026-11-17) ─────────
+   Only pages designed for a phone open on a phone (owner): the map and the levels stand SIDE BY SIDE and everything is
+   on ONE screen — stacked, the levels were pushed under the map and nobody saw them. A card over the world keeps a
+   thin margin: every pixel of 370 counts. */
+@media (max-height: 500px) {
+  .di-veil {
+    padding: 0.45rem;
+  }
+  /* a sideways phone is wide and low: a card uses the width, so its text needs fewer lines */
+  .di-card {
+    width: min(100%, 46rem);
+    max-height: calc(100vh - 0.9rem);
+    padding-block: 0.7rem;
+  }
+  /* when a card's content is still too tall at the smallest readable scale, it is the BOX INSIDE the card that slides
+     (Fit › data-di-fit-scroll) — the card itself never cuts its last line */
+  .di-card {
+    display: flex;
+    flex-direction: column;
+  }
+  .di-card > .di-fitbox {
+    min-height: 0;
+  }
+  /* a rule tablet: its emblem is smaller, the rule keeps its size */
+  .di-tablet__icon {
+    font-size: 1.9rem;
+    line-height: 1.1;
+    margin: 0;
+  }
+  .di-mapcard {
+    width: 100%;
+    padding: 0.5rem 0.8rem;
+  }
+  .di-map__head {
+    gap: 0.5rem;
+  }
+  /* the two tabs say where he is: the title and the sentence under it give their line to the map */
+  .di-map__head h2,
+  .di-map__head .di-spaces .di-dim,
+  .di-map__total .di-bar {
+    display: none;
+  }
+  .di-map__head .di-spaces {
+    margin-top: 0;
+    flex-wrap: nowrap;
+  }
+  .di-map__body {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 0.6rem;
+    margin: 0.4rem 0 0;
+  }
+  .di-map {
+    min-height: 0;
+    height: calc(100vh - 9.8rem);
+  }
+  .di-map__panel {
+    height: calc(100vh - 9.8rem);
+    padding: 0.5rem 0.6rem;
+    gap: 0.35rem;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .di-node__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.3rem;
+  }
+  .di-node strong {
+    font-size: 0.95rem;
+  }
+  .di-node__pips i {
+    width: 7px;
+    height: 7px;
+  }
+  .di-map__root {
+    padding: 0.15rem 0.8rem;
+    font-size: 0.95rem;
+  }
+  /* the levels column fits without sliding: the rule is one line (its tablet is one tap away), the rows are tighter */
+  .di-map__panelhead span {
+    font-size: 1.3rem;
+  }
+  .di-map__panelhead h3 {
+    font-size: 1.05rem;
+  }
+  .di-map__rule {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.15rem 0.6rem;
+    font-size: 1rem;
+  }
+  .di-map__rule p {
+    display: none;
+  }
+  .di-levels {
+    gap: 0.28rem;
+  }
+  .di-level {
+    padding: 0.22rem 0.5rem;
+    gap: 0.5rem;
+  }
+  .di-level__go {
+    width: 2rem;
+    height: 2rem;
+  }
+  /* a level is ONE line — its number, then its name — in a size a phone can read (12 px, not 10) */
+  .di-level__name {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 0.4rem;
+    line-height: 1.25;
+  }
+  .di-level__name small {
+    font-size: 0.95rem;
+  }
+  /* the summary node has one level more than the others: its sentence gives its two lines to them */
+  .di-map__panel > .di-dim {
+    display: none;
+  }
+  /* the exam ladder: five steps that still rise, low enough for the first one to show its button */
+  .di-ladder {
+    min-height: 0;
+    gap: 0.3rem;
+    margin: 0.4rem 0 0;
+  }
+  .di-ladder > .di-dim {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+  .di-rungs {
+    gap: 0.45rem;
+  }
+  .di-rungs li {
+    padding-bottom: calc(var(--rise) * 0.7rem);
+  }
+  .di-rungs button {
+    min-height: 0;
+    height: calc(100vh - 13.5rem);
+    padding: 0.45rem 0.4rem;
+    gap: 0.2rem;
+  }
+  .di-rung__n {
+    width: 2.1rem;
+    height: 2.1rem;
+    font-size: 1.1rem;
+  }
+  .di-rungs small,
+  .di-rungs em {
+    font-size: 0.92rem;
+    line-height: 1.3;
+  }
+  .di-rung__go {
+    padding: 0.2rem 0.7rem;
+    font-size: 0.95rem;
+  }
+  .di-mapcard footer.di-row {
+    margin-top: 0.4rem;
+  }
+  .di-mapcard .di-btn--wide {
+    min-height: 2.6rem;
+    padding-block: 0.3rem;
+  }
+}
+
+/* ───────── A PHONE HELD SIDEWAYS — « خريطة المعارف », the journey (2026-11-17) ─────────
+   The card kept its title and its buttons and lost its EXPLANATION: nothing was left of 370 px for the text. The trail is
+   one line that slides, the head is compact, and the big « تدرّب على هذه البطاقة » leaves the room to the text — the tab
+   « تدرّب » beside « البطاقة » already does it. */
+@media (max-height: 500px) {
+  .di-page__fit {
+    gap: 0.4rem;
+    padding: 0.45rem 0.8rem 0.5rem;
+  }
+  .di-page__head h2 {
+    font-size: 1.2rem;
+  }
+  .di-page__head p {
+    display: none;
+  }
+  .di-journey {
+    gap: 0.4rem;
+  }
+  .di-trail {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 0.25rem 0.6rem;
+  }
+  .di-trail::-webkit-scrollbar {
+    display: none;
+  }
+  .di-trail > * {
+    flex: none;
+  }
+  .di-journey__main {
+    gap: 0.6rem;
+  }
+  .di-jcard {
+    padding: 0.5rem 0.9rem;
+    gap: 0.35rem;
+  }
+  .di-jcard .di-kpanel__head > span {
+    width: 2.6rem;
+    height: 2.6rem;
+    font-size: 1.5rem;
+  }
+  .di-jcard .di-kpanel__head h3 {
+    font-size: 1.55rem;
+    line-height: 1.25;
+  }
+  .di-jcard .di-kpanel__head p {
+    font-size: 1.05rem;
+  }
+  .di-jcard .di-tabs button {
+    padding-block: 0.2rem;
+    font-size: 1rem;
+  }
+  .di-jcard > .di-btn {
+    display: none;
+  }
+  .di-jcard .di-ctx p,
+  .di-jcard .di-parts p {
+    font-size: 1.22rem;
+    line-height: 1.65;
+  }
+  .di-next {
+    gap: 0.4rem;
+  }
+  .di-next h4 {
+    font-size: 1rem;
+  }
+}
+
+/* ───────── A PHONE HELD SIDEWAYS — « خريطة المعارف », the full map and « تدرّب » (2026-11-17) ─────────
+   While the student answers a question the map steps aside: the question takes the whole width (beside thirteen cards it
+   had a third of a 370 px screen). On the map itself a card shows its name only — its family is its colour. */
+@media (max-height: 500px) {
+  .di-page__body {
+    gap: 0.6rem;
+  }
+  .di-page__body.is-training {
+    grid-template-columns: 1fr;
+  }
+  .di-page__body.is-training .di-kmap {
+    display: none;
+  }
+  .di-knode {
+    max-width: 8.2rem;
+    padding: 0.18rem 0.45rem 0.18rem 0.25rem;
+    gap: 0.25rem;
+  }
+  .di-knode__text small {
+    display: none;
+  }
+  .di-knode__text strong {
+    font-size: 0.86rem;
+    line-height: 1.2;
+  }
+  .di-kmap__edge {
+    display: none;
+  }
+  .di-kpanel {
+    padding: 0.5rem 0.7rem;
+    gap: 0.35rem;
+  }
+}
+
+/* ───────── A PHONE HELD SIDEWAYS — « تقدّمي » (2026-11-17) ─────────
+   The readiness, « ما التالي؟ » and two of the four الكفاءات were below the screen, on a page that does not slide: the
+   road is a thin strip, the gauge is small with its button beside it, a الكفاءة is one line. */
+@media (max-height: 500px) {
+  .di-road {
+    gap: 0.4rem;
+  }
+  .di-road li {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.25rem 0.6rem;
+  }
+  .di-road li strong {
+    font-size: 0.92rem;
+    white-space: nowrap;
+  }
+  .di-road li .di-bar {
+    flex: 1;
+    min-width: 0;
+  }
+  .di-progress__body {
+    grid-template-columns: 1fr 2.4fr;
+    gap: 0.6rem;
+  }
+  .di-ready {
+    gap: 0.2rem;
+    padding: 0.5rem;
+  }
+  .di-ready svg {
+    width: 5.6rem;
+    height: 5.6rem;
+  }
+  .di-ready > b {
+    margin-top: -4.75rem;
+    height: 4.5rem;
+    font-size: 1.4rem;
+  }
+  .di-ready .di-btn svg {
+    flex: none;
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+  .di-ready h3 {
+    font-size: 1rem;
+    margin: 0;
+  }
+  .di-ready p {
+    display: none;
+  }
+  .di-ready .di-btn {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.95rem;
+    min-height: 0;
+    line-height: 1.35;
+  }
+  .di-ptable {
+    gap: 0.3rem;
+    padding: 0.5rem;
+  }
+  .di-ptable__row {
+    padding: 0.2rem 0.6rem;
+    font-size: 0.95rem;
+  }
+  .di-ptable__row i {
+    font-size: 1.25rem;
+  }
+  .di-ptable__row strong {
+    font-size: 1rem;
+  }
+  .di-ptable__row small {
+    font-size: 0.92rem;
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l3-008",
+  "lessonCode": "mana-jam-tarh",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — رفّ العم رشيد",
+    "estimatedMinutes": 7,
+    "tags": [
+      "مجموع",
+      "العدد الناقص"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 1,
+      "file": "1am-s1-104",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الرابع",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أراد العم رشيد صنع رفّ خشبي لكتب أحفاده، فاشترى: لوحة خشبية بـ 1275,5 دج، ومنشارًا بـ 640,25 دج، وعلبة طلاء بـ 418,75 دج، ومطرقة. دفع للبائع 2700 دج ثمنًا لكل هذه الأدوات."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب ثمن اللوحة والمنشار والطلاء معًا.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "2334.5",
+      "misconceptionSignatures": [
+        {
+          "value": "1915.75",
+          "id": "MISC-JAMTARH-JUZ-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الثمن معًا: مجموع ثلاثة حدود."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاذِ الفواصل قبل الجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$1275{,}5 + 640{,}25 + 418{,}75 = 2334{,}5$ دج.",
+        "incorrect": "اجمع الأثمان الثلاثة كلها، بعد محاذاة الفواصل."
+      },
+      "solution": {
+        "lines": [
+          "$1275{,}5 + 640{,}25 = 1915{,}75$",
+          "$1915{,}75 + 418{,}75 = 2334{,}5$"
+        ],
+        "result": "2334{,}5 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "في المخطط بأقواس الذي يمثّل المشتريات، العدد 2700 هو:",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الكل (القوس تحت الخط)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "جزء (قوس فوق الخط)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "2700 دج ثمن ماذا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثمن كل الأدوات يضمّ ثمن المطرقة وثمن الأدوات الأخرى."
+        }
+      ],
+      "feedback": {
+        "correct": "2700 دج ثمن كل الأدوات: هو الكل.",
+        "incorrect": "المبلغ المدفوع ثمن كل الأدوات معًا، بما فيها المطرقة."
+      },
+      "solution": {
+        "lines": [
+          "2700 = ثمن اللوحة والمنشار والطلاء + ثمن المطرقة.",
+          "2700 هو الكل."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "جد ثمن المطرقة.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "365.5",
+      "misconceptionSignatures": [
+        {
+          "value": "5034.5",
+          "id": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثمن المطرقة جزء من الكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح ثمن الأدوات الثلاث الأخرى من المبلغ المدفوع."
+        }
+      ],
+      "feedback": {
+        "correct": "$2700 - 2334{,}5 = 365{,}5$ دج.",
+        "incorrect": "ثمن المطرقة جزء من المبلغ المدفوع: هو أصغر منه."
+      },
+      "solution": {
+        "lines": [
+          "ثمن الأدوات الثلاث 2334,5 دج.",
+          "$2700 - 2334{,}5 = 365{,}5$"
+        ],
+        "result": "365{,}5 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

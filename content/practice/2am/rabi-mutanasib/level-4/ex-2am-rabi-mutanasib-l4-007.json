@@ -1,0 +1,193 @@
+{
+  "id": "ex-2am-rabi-mutanasib-l4-007",
+  "lessonCode": "rabi-mutanasib",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — عرضان للتفاح",
+    "estimatedMinutes": 12,
+    "tags": [
+      "اختيار الطريقة",
+      "مقارنة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يعرض بائعان التفاح بسعر ثابت للكيلوغرام: العرض $A$ هو $4$ kg بـ $540$ DA ، والعرض $B$ هو $7$ kg بـ $910$ DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما ثمن الكيلوغرام الواحد في العرض $A$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "135",
+      "misconceptionSignatures": [
+        {
+          "value": "2160",
+          "id": "MISC-RABI-MULROW"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب أولًا: قيمة الوحدة الواحدة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قيمة الوحدة الواحدة تُحسب بقسمة العدد الموجود في السطر الثاني على مقابله في السطر الأول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد ذلك اضرب قيمة الوحدة في الكمية المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$135$ DA .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$540 \\div 4 = 135$"
+        ],
+        "result": "135"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما ثمن الكيلوغرام الواحد في العرض $B$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "130",
+      "misconceptionSignatures": [
+        {
+          "value": "6370",
+          "id": "MISC-RABI-MULROW"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب أولًا: قيمة الوحدة الواحدة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قيمة الوحدة الواحدة تُحسب بقسمة العدد الموجود في السطر الثاني على مقابله في السطر الأول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد ذلك اضرب قيمة الوحدة في الكمية المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$130$ DA .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$910 \\div 7 = 130$"
+        ],
+        "result": "130"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "أيّ العرضين أرخص؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "العرض $A$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-RABI-TOTAL"
+        },
+        {
+          "id": "B",
+          "content": "العرض $B$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "العرضان متساويان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-RABI-TOTAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولًا القيمة المطلوبة بدقّة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن القيمة المحسوبة بالمبلغ أو بالكمية المتاحة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القرار يُبنى على مقارنة بين عددين، لا على تقدير."
+        }
+      ],
+      "feedback": {
+        "correct": "العرض $B$ أرخص: $130 < 135$ .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$130 < 135$",
+          "ثمن الكيلوغرام في العرض $B$ أصغر."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

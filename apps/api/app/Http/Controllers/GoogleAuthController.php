@@ -8,10 +8,14 @@ use App\Domain\Identity\GoogleIdentityRejected;
 use App\Domain\Identity\GoogleLinkOutcome;
 use App\Domain\Identity\LegalConsent;
 use App\Domain\Identity\PendingGoogleSignup;
+use App\Domain\Identity\PersonName;
+use App\Domain\Registration\RegistrationGate;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+use Illuminate\Validation\Rules\Password as PasswordRule;
 use Laravel\Socialite\Facades\Socialite;
 use Throwable;
 
@@ -56,7 +60,7 @@ class GoogleAuthController extends Controller
      * Départ vers Google. Ne demande que l'identité — aucun accès Gmail,
      * Drive ou contacts : on veut savoir QUI, pas obtenir des pouvoirs.
      */
-    public function redirect(): RedirectResponse|JsonResponse
+    public function redirect(Request $request): RedirectResponse|JsonResponse
     {
         if (! $this->isConfigured()) {
             return response()->json([
@@ -65,9 +69,16 @@ class GoogleAuthController extends Controller
             ], 503);
         }
 
+        // Le TYPE de compte choisi avant de partir (élève par défaut, ou
+        // enseignant) voyage dans `state`, que Google renvoie tel quel. Il
+        // n'est lu qu'à travers une liste blanche, et ne sert qu'à un compte
+        // NEUF : un compte existant garde son rôle, quel que soit `state`.
+        $role = $this->requestedRole($request->query('accountType'));
+
         return Socialite::driver('google')
             ->stateless()
             ->scopes(['openid', 'profile', 'email'])
+            ->with(['state' => 'type:'.$role])
             ->redirect();
     }
 
@@ -103,14 +114,32 @@ class GoogleAuthController extends Controller
             return $this->back(['erreur' => $e->reason]);
         }
 
-        // Compte neuf : RIEN n'a été créé. On renvoie l'élève vers l'écran de
-        // consentement, muni d'un jeton d'attente (§22).
+        // Compte neuf : RIEN n'a été créé. On renvoie la personne vers l'écran
+        // de consentement, munie d'un jeton d'attente (§22) qui porte aussi le
+        // type de compte demandé au départ.
         if ($outcome->kind === GoogleLinkOutcome::NEEDS_CONSENT) {
-            return $this->back([
+            // Inscriptions fermées (config/registration.php) : un compte Google NEUF n'est pas créé ; les comptes
+            // existants, eux, se connectent (plus bas).
+            if (! app(RegistrationGate::class)->isOpen()) {
+                return $this->back(['erreur' => RegistrationGate::CLOSED_CODE]);
+            }
+            $role = $this->requestedRole(self::roleFromState((string) $request->query('state', '')));
+
+            // `prenom`/`nom` : ce que Google SUGGÈRE, pour pré-remplir l'écran
+            // où la personne confirme « الاسم و اللقب ». Une suggestion
+            // seulement — le nom enregistré est celui qu'elle valide (voir
+            // complete()). Même exposition que l'adresse déjà présente ici.
+            // Seul un nom qui passe DÉJÀ la règle arabe est suggéré : un
+            // « Amine » latin pré-rempli ne ferait qu'ouvrir l'écran sur une
+            // erreur ; le champ vide invite à l'écrire en arabe.
+            return $this->back(array_filter([
                 'etape' => 'consentement',
-                'handoff' => PendingGoogleSignup::issue($identity),
+                'handoff' => PendingGoogleSignup::issue($identity, $role),
                 'email' => $identity->email,
-            ]);
+                'type' => $role,
+                'prenom' => PersonName::isValid($identity->firstName) ? PersonName::normalize($identity->firstName) : null,
+                'nom' => PersonName::isValid($identity->lastName) ? PersonName::normalize($identity->lastName) : null,
+            ], fn ($v) => $v !== null && $v !== ''));
         }
 
         return $this->issueSessionRedirect($outcome->user);
@@ -122,14 +151,40 @@ class GoogleAuthController extends Controller
      */
     public function complete(Request $request): JsonResponse
     {
+        if (! app(RegistrationGate::class)->isOpen()) {
+            return response()->json([
+                'success' => false,
+                'code' => RegistrationGate::CLOSED_CODE,
+                'message' => RegistrationGate::CLOSED_MESSAGE,
+            ], 403);
+        }
+
+        PersonName::normalizeRequest($request);
+
         $validated = $request->validate([
             'handoff' => 'required|string',
+            // « الاسم و اللقب » CONFIRMÉS par la personne à la première
+            // connexion — pré-remplis depuis Google, mais c'est ce qu'elle
+            // valide qui fait foi (un pseudo Google n'est pas un nom d'élève).
+            ...PersonName::rules(),
             // Un BOOLÉEN, et rien d'autre. Aucune version n'est acceptée du
             // client : le serveur écrit celles qui ont cours (§7).
             'accept_legal' => 'required|accepted',
+            // Le type de compte, confirmé (ou changé) sur l'écran de
+            // consentement — même liste blanche que l'inscription classique.
+            'accountType' => ['nullable', 'string', Rule::in(User::SELF_REGISTERABLE_ROLES)],
+            // Un mot de passe, OBLIGATOIRE depuis le 2026-10-22 (propriétaire) :
+            // le compte Google s'ouvre aussi par courriel + mot de passe — sur
+            // la tablette de la classe, où l'élève n'a pas sa session Google.
+            // Mêmes règles que l'inscription classique (AuthController::register).
+            'password' => ['required', 'string', PasswordRule::min(8)->letters()->numbers()],
         ], [
             'accept_legal.required' => "Vous devez accepter les Conditions Générales d'Utilisation et la Politique de confidentialité.",
             'accept_legal.accepted' => "Vous devez accepter les Conditions Générales d'Utilisation et la Politique de confidentialité.",
+            ...PersonName::messages(),
+            'password.min' => 'Le mot de passe doit faire au moins 8 caractères.',
+            'password.letters' => 'Le mot de passe doit contenir au moins une lettre.',
+            'password.numbers' => 'Le mot de passe doit contenir au moins un chiffre.',
         ]);
 
         $identity = PendingGoogleSignup::open($validated['handoff']);
@@ -141,8 +196,15 @@ class GoogleAuthController extends Controller
             ], 422);
         }
 
+        $role = $validated['accountType'] ?? PendingGoogleSignup::roleOf($validated['handoff']);
+
         try {
-            $user = $this->linker->createFromIdentity($identity, LegalConsent::current());
+            $user = $this->linker->createFromIdentity(
+                $identity->withName($validated['firstName'], $validated['lastName']),
+                LegalConsent::current(),
+                $role,
+                $validated['password'],
+            );
         } catch (GoogleIdentityRejected $e) {
             return response()->json(['success' => false, 'message' => $e->getMessage()], 422);
         }
@@ -212,6 +274,18 @@ class GoogleAuthController extends Controller
             'etape' => 'connecte',
             'token' => $user->createToken($user->role.'-token')->plainTextToken,
         ]);
+    }
+
+    /** La liste blanche des types de compte à l'inscription : élève, ou enseignant. */
+    private function requestedRole(?string $raw): string
+    {
+        return in_array($raw, User::SELF_REGISTERABLE_ROLES, true) ? $raw : User::ROLE_STUDENT;
+    }
+
+    /** `state` = `type:teacher` → `teacher`. Tout le reste → null (donc élève). */
+    public static function roleFromState(string $state): ?string
+    {
+        return str_starts_with($state, 'type:') ? substr($state, 5) : null;
     }
 
     private function isConfigured(): bool

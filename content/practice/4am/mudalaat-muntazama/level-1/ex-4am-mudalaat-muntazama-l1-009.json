@@ -1,0 +1,65 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l1-009",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — ساعة البريد المركزي",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الزاوية المركزية",
+      "الساعة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mudalaat-muntazama_P2",
+      "modelledOn": "know-5"
+    }
+  },
+  "statement": {
+    "content": "على مينا ساعة البريد المركزي بالجزائر العاصمة، علامات الساعات الاثنتا عشرة موزّعة بانتظام على دائرة مركزها O."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "قيس الزاوية المركزية بين علامتين متتاليتين (بالدرجات):",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح (بالدرجات)",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUNTAZAM-180",
+          "value": "15"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ أضلاع المضلع: كل ضلع تحصره زاوية مركزية واحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الزوايا المركزية متقايسة وتملأ دورة كاملة حول المركز."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم قيس الدورة الكاملة على عدد الأضلاع."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{360^\\circ}{12} = 30^\\circ$ : عقرب الساعات يدور $30^\\circ$ في كل ساعة.",
+        "incorrect": "العلامات الاثنتا عشرة تقسم الدورة إلى زوايا متقايسة."
+      },
+      "difficulty": 1
+    }
+  ]
+}

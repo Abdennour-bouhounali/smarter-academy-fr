@@ -1,0 +1,204 @@
+{
+  "id": "ex-4am-natiqa-ghayr-natiqa-l4-009",
+  "lessonCode": "natiqa-ghayr-natiqa",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2013 — التمرين الأول",
+    "estimatedMinutes": 12,
+    "tags": [
+      "عدد طبيعي",
+      "حصر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_natiqa-ghayr-natiqa_P1",
+      "modelledOn": "BEM 2013 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2013",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد الحقيقي $A$ حيث:",
+    "formulas": [
+      "A = \\sqrt{2}(\\sqrt{2} + 1) + \\sqrt{8} - 1"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن: $A = 1 + 3\\sqrt{2}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر $\\sqrt{2}(\\sqrt{2} + 1)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\sqrt{8} = \\sqrt{4 \\times 2} = 2\\sqrt{2}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك سطرًا بسطر بالحل النموذجي، وانتبه إلى كل مرحلة من مراحل الحساب."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\sqrt{2} \\times \\sqrt{2} + \\sqrt{2} + \\sqrt{4 \\times 2} - 1$",
+          "$= 2 + \\sqrt{2} + 2\\sqrt{2} - 1$"
+        ],
+        "result": "A = 1 + 3\\sqrt{2}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ليكن العدد الحقيقي $B$ حيث: $B = 3\\sqrt{2} - 1$ . بيّن أن $A \\times B$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة الجداء $A \\times B$",
+      "expectedAnswer": "17",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(3\\sqrt{2} + 1)(3\\sqrt{2} - 1) = (3\\sqrt{2})^2 - 1^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$(3\\sqrt{2})^2 = 9 \\times 2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$A \\times B = 18 - 1 = 17$ .",
+        "incorrect": "استعمل المتطابقة $(a + b)(a - b) = a^2 - b^2$ وربّع $3\\sqrt{2}$ كاملًا."
+      },
+      "solution": {
+        "lines": [
+          "$A \\times B = (3\\sqrt{2} + 1)(3\\sqrt{2} - 1)$",
+          "$= (3\\sqrt{2})^2 - 1^2$",
+          "$= 18 - 1$"
+        ],
+        "result": "A \\times B = 17"
+      },
+      "work": "required",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "هل $\\sqrt{A \\times B}$ عدد ناطق؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-KULL-JIDHR"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر جوابك، ثم قارن تبريرك بالحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل 17 مربع لعدد ناطق؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$16 < 17 < 25$ : $\\sqrt{17}$ ليس ناطقًا.",
+        "incorrect": "قارن 17 بالمربعين التامين 16 و 25."
+      },
+      "solution": {
+        "lines": [
+          "$\\sqrt{A \\times B} = \\sqrt{17}$ و $4^2 = 16 < 17 < 25 = 5^2$",
+          "إذن $\\sqrt{A \\times B}$ ليس عددًا ناطقًا."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "احصر $\\sqrt{A \\times B}$ بين عددين طبيعيين متتاليين.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد الطبيعي $k$ حيث $k < \\sqrt{A \\times B} < k + 1$",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-TAQRIB-NAQS-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل المربعين التامين اللذين يحصران 17."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 < \\sqrt{17} < 5$ .",
+        "incorrect": "ابحث عن أكبر مربع تام أصغر من 17."
+      },
+      "solution": {
+        "lines": [
+          "$16 < 17 < 25$ إذن $\\sqrt{16} < \\sqrt{17} < \\sqrt{25}$"
+        ],
+        "result": "4 < \\sqrt{17} < 5"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

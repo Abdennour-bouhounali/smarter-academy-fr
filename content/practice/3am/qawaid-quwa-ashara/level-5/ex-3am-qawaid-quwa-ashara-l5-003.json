@@ -1,0 +1,243 @@
+{
+  "id": "ex-3am-qawaid-quwa-ashara-l5-003",
+  "lessonCode": "qawaid-quwa-ashara",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — برنامج حساب نادي الرياضيات",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مسألة",
+      "برنامج حساب",
+      "سلسلة حساب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "علّق نادي الرياضيات برنامج الحساب التالي: «اختر عددًا، اضربه في $10^{6}$ ، اقسم الناتج على $10^{-3}$ ، ثمّ اضربه في $(10^{-2})^{4}$ »."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "الجزء الأول. نختار العدد $2$ . ما هي النتيجة النهائية؟ احسب $2\\times10^{6}\\div10^{-3}\\times(10^{-2})^{4}$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أوّلًا كلّ قوة على حدة وحدّد أسّها، وانتبه إلى القوى التي بين قوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز الجداءات والقوى لتحصل على قوة واحدة في البسط وقوة واحدة في المقام، ثمّ اقسم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب أسّ البسط وأسّ المقام كلًّا على حدة قبل أن تطرح، وانتبه إلى الإشارات."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-QAWAID-ISHARA"
+        }
+      ],
+      "feedback": {
+        "correct": "$2\\times10^{6}\\div10^{-3}\\times(10^{-2})^{4} = 20$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$(10^{-2})^{4} = 10^{-8}$ .",
+          "$10^{6}\\div10^{-3}\\times10^{-8} = 10^{6+3-8} = 10^{1}$ ، إذن النتيجة $2\\times10 = 20$ ."
+        ],
+        "result": "20"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "نختار العدد $0{,}35$ . ما هي النتيجة النهائية للبرنامج؟",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أوّلًا كلّ قوة على حدة وحدّد أسّها، وانتبه إلى القوى التي بين قوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز الجداءات والقوى لتحصل على قوة واحدة في البسط وقوة واحدة في المقام، ثمّ اقسم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب أسّ البسط وأسّ المقام كلًّا على حدة قبل أن تطرح، وانتبه إلى الإشارات."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "3.5",
+      "misconceptionSignatures": [
+        {
+          "value": "0.035",
+          "id": "MISC-QAWAID-ISHARA"
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}35\\times10^{1} = 3{,}5$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "البرنامج يضرب في $10^{6}\\div10^{-3}\\times10^{-8} = 10^{1}$ .",
+          "$0{,}35\\times10 = 3{,}5$ ."
+        ],
+        "result": "3{,}5"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "الجزء الثاني. يُختصر البرنامج في ضرب واحد في $10^{n}$ ، حيث $10^{n} = 10^{6}\\div10^{-3}\\times(10^{-2})^{4}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أوّلًا كلّ قوة على حدة وحدّد أسّها، وانتبه إلى القوى التي بين قوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز الجداءات والقوى لتحصل على قوة واحدة في البسط وقوة واحدة في المقام، ثمّ اقسم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب أسّ البسط وأسّ المقام كلًّا على حدة قبل أن تطرح، وانتبه إلى الإشارات."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "-5",
+          "id": "MISC-QAWAID-ISHARA"
+        },
+        {
+          "value": "-11",
+          "id": "MISC-QAWAID-QUWA-JAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{6}\\div10^{-3}\\times(10^{-2})^{4} = 10^{1}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$6 - (-3) + (-8) = 6 + 3 - 8 = 1$ .",
+          "البرنامج يضرب العدد المختار في $10^{1} = 10$ ."
+        ],
+        "result": "n = 1"
+      }
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "قال أنيس: «النتيجة تساوي دائمًا عشرة أضعاف العدد المختار». هل هو على صواب؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل كلّ اقتراح إلى قوة واحدة للعدد 10 مستعملًا القاعدة المناسبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر اقتراحًا واحدًا في كلّ مرّة، وانتبه إلى أنّ القواعد الثلاث لا تخصّ الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا شككت في قاعدة فجرّبها على قوة صغيرة تعرف قيمتها العشرية."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QAWAID-ISHARA"
+        }
+      ],
+      "feedback": {
+        "correct": "أنيس على صواب: البرنامج يضرب في $10^{1} = 10$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب قيمته أو بتطبيق القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "البرنامج كلّه ضرب في $10^{6}\\div10^{-3}\\times(10^{-2})^{4} = 10^{1}$ .",
+          "إذن النتيجة عشرة أضعاف العدد المختار مهما كان، وأنيس على صواب."
+        ]
+      }
+    }
+  ]
+}

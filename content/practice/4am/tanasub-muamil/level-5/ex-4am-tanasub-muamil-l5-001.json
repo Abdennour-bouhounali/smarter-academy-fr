@@ -1,0 +1,477 @@
+{
+  "id": "ex-4am-tanasub-muamil-l5-001",
+  "lessonCode": "tanasub-muamil",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2012 — بائعا البطاطا بسوق عين مليلة",
+    "estimatedMinutes": 11,
+    "tags": [
+      "وضعية إدماجية",
+      "تسعيرتان",
+      "جدول"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tanasub-muamil_P2",
+      "modelledOn": "BEM 2012 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2012",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في السوق الأسبوعي لعين مليلة يبيع بائعان أمينان البطاطا من النوعية نفسها:\n– البائع الأول: 70DA للكيلوغرام الواحد.\n– البائع الثاني: 60DA للكيلوغرام الواحد، ويضيف 300DA لنقل السلعة إلى المنزل مهما كانت الكمية.",
+    "table": {
+      "head": [
+        "الكتلة (kg)",
+        "10",
+        "…",
+        "…"
+      ],
+      "rows": [
+        [
+          "المبلغ عند البائع الأول (DA)",
+          "…",
+          "1750",
+          "…"
+        ],
+        [
+          "المبلغ عند البائع الثاني (DA)",
+          "…",
+          "…",
+          "2700"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "انقل الجدول وأكمله.",
+      "statement": "المبلغ عند البائع الأول من أجل $10kg$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "700",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب الكتلة في ثمن الكيلوغرام."
+        }
+      ],
+      "feedback": {
+        "correct": "$70 \\times 10 = 700$ .",
+        "incorrect": "المبلغ = 70 × الكتلة."
+      },
+      "solution": {
+        "lines": [
+          "$70 \\times 10 = 700$"
+        ],
+        "result": "700DA"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ا",
+      "statement": "المبلغ عند البائع الثاني من أجل $10kg$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "900",
+      "misconceptionSignatures": [
+        {
+          "value": "600",
+          "id": "MISC-TANASUB-MABLAGH-THABIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الصيغة جيدا: ما الذي يُدفع عن كل وحدة، وما الذي يُدفع مرة واحدة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المبلغ = العدد × ثمن الوحدة + المبلغ الثابت."
+        }
+      ],
+      "feedback": {
+        "correct": "$60 \\times 10 + 300 = 900$ .",
+        "incorrect": "لا تنس المبلغ الثابت: المبلغ = العدد × ثمن الوحدة + المبلغ الثابت."
+      },
+      "solution": {
+        "lines": [
+          "$60 \\times 10 + 300 = 900$"
+        ],
+        "result": "900DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ب",
+      "statement": "الكتلة التي يكون من أجلها المبلغ عند البائع الأول 1750DA :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الكتلة بـ kg (عشري بالفاصلة إن لزم)",
+      "expectedAnswer": "25",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم المبلغ على ثمن الكيلوغرام."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1750}{70} = 25$ .",
+        "incorrect": "اقسم المبلغ على 70 ."
+      },
+      "solution": {
+        "lines": [
+          "$70 \\times x = 1750$",
+          "$x = \\dfrac{1750}{70} = 25$"
+        ],
+        "result": "25kg"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "ب",
+      "statement": "المبلغ عند البائع الثاني من أجل هذه الكتلة:",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "1800",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الصيغة جيدا: ما الذي يُدفع عن كل وحدة، وما الذي يُدفع مرة واحدة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المبلغ = العدد × ثمن الوحدة + المبلغ الثابت."
+        }
+      ],
+      "feedback": {
+        "correct": "$60 \\times 25 + 300 = 1800$ .",
+        "incorrect": "لا تنس المبلغ الثابت: المبلغ = العدد × ثمن الوحدة + المبلغ الثابت."
+      },
+      "solution": {
+        "lines": [
+          "$60 \\times 25 + 300 = 1800$"
+        ],
+        "result": "1800DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "01",
+      "sub": "ج",
+      "statement": "الكتلة التي يكون من أجلها المبلغ عند البائع الثاني 2700DA :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الكتلة بـ kg (عشري بالفاصلة إن لزم)",
+      "expectedAnswer": "40",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح مبلغ النقل أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اقسم على ثمن الكيلوغرام."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2700 - 300}{60} = 40$ .",
+        "incorrect": "$60x + 300 = 2700$ : اطرح 300 ثم اقسم على 60 ."
+      },
+      "solution": {
+        "lines": [
+          "$60x + 300 = 2700$",
+          "$60x = 2400$",
+          "$x = 40$"
+        ],
+        "result": "40kg"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "01",
+      "sub": "ج",
+      "statement": "المبلغ عند البائع الأول من أجل هذه الكتلة:",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "2800",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب الكتلة في 70 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$70 \\times 40 = 2800$ .",
+        "incorrect": "المبلغ = 70 × الكتلة."
+      },
+      "solution": {
+        "lines": [
+          "$70 \\times 40 = 2800$"
+        ],
+        "result": "2800DA"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q7",
+      "step": "02",
+      "sub": "ا",
+      "lead": "نسمّي $x$ كتلة البطاطا المشتراة بـ kg ، و $y_1$ و $y_2$ المبلغين المدفوعين عند البائعين الأول والثاني على الترتيب.",
+      "statement": "عبّر عن $y_1$ بدلالة $x$ على الشكل $y_1 = a \\times x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "70",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في وضعية تناسبية: المقدار الثاني = معامل التناسبية × المقدار الأول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $a$ هو حاصل قسمة المقدار الثاني على المقدار الأول المقابل له."
+        }
+      ],
+      "feedback": {
+        "correct": "$y_1 = 70 \\times x$ .",
+        "incorrect": "المبلغ = ثمن الكيلوغرام × الكتلة."
+      },
+      "solution": {
+        "lines": [
+          "$y_1 = 70 \\times x$"
+        ],
+        "result": "y_1 = 70x"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q8",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل $y_2$ متناسب مع $x$ ؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TANASUB-MABLAGH-THABIT"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب حاصل القسمة $\\dfrac{y}{x}$ في كل عمود."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر مبلغ النقل."
+        }
+      ],
+      "feedback": {
+        "correct": "حواصل القسمة مختلفة.",
+        "incorrect": "احسب حاصل القسمة في كل عمود قبل أن تحكم: تزايد المقدارين معا لا يكفي."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{900}{10} = 90$ ، $\\dfrac{1800}{25} = 72$ ، $\\dfrac{2700}{40} = 67{,}5$",
+          "حواصل القسمة مختلفة، إذن $y_2$ غير متناسب مع $x$ (بسبب مبلغ النقل الثابت)."
+        ],
+        "result": "غير متناسب"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q9",
+      "step": "03",
+      "sub": "ا",
+      "lead": "☜ يريد صاحب مطعم شراء $45kg$ من البطاطا، ومعه 3200DA . ساعده على اختيار البائع الأنسب.",
+      "statement": "عند أيّ بائع يشتري؟",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "البائع الأول",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "البائع الثاني",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المبلغ عند كل بائع من أجل $45kg$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن المبلغين، وتحقّق أنه يملك ما يكفي."
+        }
+      ],
+      "feedback": {
+        "correct": "المبلغ عند البائع الثاني أقل من المبلغ عند البائع الأول.",
+        "incorrect": "لا تنس مبلغ النقل عند البائع الثاني، ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "عند البائع الأول: $70 \\times 45 = 3150$",
+          "عند البائع الثاني: $60 \\times 45 + 300 = 3000$",
+          "$3000 < 3150$ ، والمبلغان أقل من 3200DA ، إذن يشتري من البائع الثاني."
+        ],
+        "result": "البائع الثاني"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q10",
+      "step": "03",
+      "sub": "ب",
+      "statement": "ما هو المبلغ الذي يبقى معه بعد الشراء عند هذا البائع؟",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "200",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح المبلغ المدفوع من المبلغ الذي معه."
+        }
+      ],
+      "feedback": {
+        "correct": "$3200 - 3000 = 200$ .",
+        "incorrect": "احسب المبلغ عند البائع الأنسب، ثم اطرحه من المبلغ الذي معه."
+      },
+      "solution": {
+        "lines": [
+          "المبلغ عند البائع الثاني: $60 \\times 45 + 300 = 3000$",
+          "$3200 - 3000 = 200$",
+          "يبقى معه $200DA$ ."
+        ],
+        "result": "200DA"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

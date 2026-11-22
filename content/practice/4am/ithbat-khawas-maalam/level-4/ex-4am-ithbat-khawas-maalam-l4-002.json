@@ -1,0 +1,135 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l4-002",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 4,
+  "metadata": {
+    "title": "من الكتاب — التمرين 24 (ص 149)",
+    "estimatedMinutes": 4,
+    "tags": [
+      "مستطيل",
+      "مربّع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-24",
+      "page": 149,
+      "section": "أتعمّق",
+      "number": 24
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 149): المستوي مزود بمعلم متعامد ومتجانس. $A(1\\,;\\,2)$ ، $B(3\\,;\\,4)$ ، $C(5\\,;\\,2)$ ، $D(3\\,;\\,0)$ . للقطعتين [AC] و [BD] نفس المنتصف $(3\\,;\\,2)$ ونفس الطول 4."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "نستنتج أن الرباعي ABCD :",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "معيّن",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "B",
+          "content": "ليس متوازي أضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "C",
+          "content": "مستطيل (والسؤال عن المربّع يحتاج دليلا آخر)",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "مربّع لأن قطريه متقايسان ومتناصفان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قطران متناصفان: ماذا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ومتقايسان: ماذا؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأضلاع المتتالية لم تُقارن."
+        }
+      ],
+      "feedback": {
+        "correct": "متوازي أضلاع قطراه متقايسان: مستطيل.",
+        "incorrect": "التقايس والتناصف يعطيان المستطيل فقط."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "مع $\\overrightarrow{AB}\\begin{pmatrix} 2 \\\\ 2 \\end{pmatrix}$ و $\\overrightarrow{BC}\\begin{pmatrix} 2 \\\\ -2 \\end{pmatrix}$ ، $(BD) \\perp (AC)$ لأن:",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$AC = BD$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "B",
+          "content": "AB = BC فالمستطيل ABCD مربّع، وقطرا المربّع متعامدان",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "قطري كل مستطيل متعامدان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب AB و BC."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مستطيل فيه ضلعان متتاليان متقايسان؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قطرا المعيّن متعامدان."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = BC = 2\\sqrt{2}$ : مربّع، وقطراه متعامدان.",
+        "incorrect": "التعامد يأتي من المعيّن (ضلعان متتاليان متقايسان)، لا من المستطيل."
+      }
+    }
+  ]
+}

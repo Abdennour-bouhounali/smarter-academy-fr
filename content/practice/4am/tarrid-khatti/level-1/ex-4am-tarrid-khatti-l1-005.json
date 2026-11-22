@@ -1,0 +1,146 @@
+{
+  "id": "ex-4am-tarrid-khatti-l1-005",
+  "lessonCode": "tarrid-khatti",
+  "level": 1,
+  "metadata": {
+    "title": "من المستقيم إلى الدالة الخطية",
+    "estimatedMinutes": 4,
+    "tags": [
+      "تمثيل بياني",
+      "معامل التناسبية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-khatti_P2",
+      "modelledOn": "act-4",
+      "adaptedFrom": "ex-4am-tarrid-khatti-l1-005"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في المعلم المتعامد والمتجانس التالي، نصف المستقيم $(D)$ هو التمثيل البياني لوضعية تناسبية، وهو يشمل النقطة $A$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          2,
+          5
+        ]
+      },
+      "rays": [
+        {
+          "from": "O",
+          "through": "A",
+          "name": "(D)",
+          "tone": "indigo",
+          "extend": 0.15
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw",
+        "A": "e"
+      },
+      "ariaLabel": "معلم على ورقة مرصوفة: نصف مستقيم (D) ينطلق من المبدأ O ويشمل النقطة A",
+      "caption": "وحدة الطول: ضلع مربع من الشبكة على المحورين"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اقرأ إحداثيي النقطة $A$ ، ثم عيّن الدالة الخطية $f$ التي يمثّلها $(D)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "5/2",
+      "misconceptionSignatures": [
+        {
+          "value": "2/5",
+          "id": "MISC-KHATTIYA-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ فاصلة $A$ على محور الفواصل وترتيبها على محور التراتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$f(x) = ax$ و $f(x_A) = y_A$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$a$ هو الترتيب مقسوما على الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$A(2 ; 5)$ ، إذن $a = \\dfrac{5}{2} = 2{,}5$ و $f(x) = 2{,}5x$ .",
+        "incorrect": "المعامل هو ترتيب $A$ مقسوما على فاصلتها، لا العكس."
+      },
+      "solution": {
+        "lines": [
+          "نقرأ $A(2 ; 5)$ .",
+          "$f(2) = 5$ معناه $a \\times 2 = 5$ ، أي $a = 2{,}5$ .",
+          "إذن $f(x) = 2{,}5x$ ."
+        ],
+        "result": "f(x) = 2{,}5x"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $f(6)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "15",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ 6 في عبارة $f(x)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(6) = 2{,}5 \\times 6 = 15$ .",
+        "incorrect": "اضرب العدد 6 في معامل الدالة."
+      },
+      "solution": {
+        "lines": [
+          "$f(6) = 2{,}5 \\times 6 = 15$"
+        ],
+        "result": "f(6) = 15"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

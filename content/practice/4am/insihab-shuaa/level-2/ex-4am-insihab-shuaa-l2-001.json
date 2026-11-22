@@ -1,0 +1,219 @@
+{
+  "id": "ex-4am-insihab-shuaa-l2-001",
+  "lessonCode": "insihab-shuaa",
+  "level": 2,
+  "metadata": {
+    "title": "تمرين 4 — صورة R",
+    "estimatedMinutes": 2,
+    "tags": [
+      "الانسحاب",
+      "المرصوفة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-4",
+      "page": 134,
+      "section": "الأشعة والمساواة الشعاعية",
+      "number": 4
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 134): لاحظ الشكل (شجرة الصنوبر).",
+    "figure": {
+      "points": {
+        "O": [
+          3,
+          5
+        ],
+        "A": [
+          0,
+          4
+        ],
+        "M": [
+          2,
+          4
+        ],
+        "N": [
+          4,
+          4
+        ],
+        "B": [
+          6,
+          4
+        ],
+        "C": [
+          0,
+          3
+        ],
+        "P": [
+          2,
+          3
+        ],
+        "Q": [
+          4,
+          3
+        ],
+        "D": [
+          6,
+          3
+        ],
+        "E": [
+          0,
+          2
+        ],
+        "R": [
+          2,
+          2
+        ],
+        "S": [
+          4,
+          2
+        ],
+        "F": [
+          6,
+          2
+        ],
+        "H": [
+          2,
+          0
+        ],
+        "K": [
+          4,
+          0
+        ]
+      },
+      "grid": true,
+      "segments": [
+        [
+          "O",
+          "A"
+        ],
+        [
+          "O",
+          "B"
+        ],
+        [
+          "A",
+          "M"
+        ],
+        [
+          "N",
+          "B"
+        ],
+        [
+          "M",
+          "C"
+        ],
+        [
+          "N",
+          "D"
+        ],
+        [
+          "C",
+          "P"
+        ],
+        [
+          "Q",
+          "D"
+        ],
+        [
+          "P",
+          "E"
+        ],
+        [
+          "Q",
+          "F"
+        ],
+        [
+          "E",
+          "R"
+        ],
+        [
+          "S",
+          "F"
+        ],
+        [
+          "R",
+          "H"
+        ],
+        [
+          "H",
+          "K"
+        ],
+        [
+          "K",
+          "S"
+        ]
+      ],
+      "labels": {
+        "O": "n",
+        "A": "w",
+        "C": "w",
+        "E": "w",
+        "B": "e",
+        "D": "e",
+        "F": "e",
+        "H": "s",
+        "K": "s",
+        "R": "s",
+        "S": "s"
+      },
+      "ariaLabel": "شجرة صنوبر على ورقة مرصوفة: القمة O، الفروع الأفقية AM و NB و CP و QD و ER و SF، والجذع RHKS",
+      "maxWidth": 520
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "صورة R بالانسحاب الذي شعاعه $\\overrightarrow{EM}$ هي:",
+      "learningPoints": [
+        {
+          "code": "4am_insihab-shuaa_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "N",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "M",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSIHAB-SURA"
+        },
+        {
+          "id": "C",
+          "content": "P",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-HARAKA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "صورة نقطة بالانسحاب: نحرّكها بنفس حركة النقطة المعطاة نحو صورتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ حركة السهم المعطى (أفقيا ثم شاقوليا) وطبّقها انطلاقا من النقطة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: للسهم من النقطة نحو صورتها نفس المنحى ونفس الاتجاه ونفس الطول."
+        }
+      ],
+      "feedback": {
+        "correct": "من E إلى M: مربعان يمينا ومربعان نحو الأعلى؛ من R بنفس الحركة نصل إلى N.",
+        "incorrect": "M صورة E لا R: انقل الحركة إلى R."
+      },
+      "difficulty": 2
+    }
+  ]
+}

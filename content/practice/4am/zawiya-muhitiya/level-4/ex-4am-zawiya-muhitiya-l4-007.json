@@ -1,0 +1,106 @@
+{
+  "id": "ex-4am-zawiya-muhitiya-l4-007",
+  "lessonCode": "zawiya-muhitiya",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — معادلة من الزاويتين",
+    "estimatedMinutes": 4,
+    "tags": [
+      "خاصية 1",
+      "معادلة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_zawiya-muhitiya_P2",
+      "modelledOn": "know-4"
+    }
+  },
+  "statement": {
+    "content": "في دائرة مركزها O، الزاوية المحيطية $\\widehat{AMB}$ والزاوية المركزية $\\widehat{AOB}$ تحصران نفس القوس، حيث $\\widehat{AMB} = (x + 10)^\\circ$ و $\\widehat{AOB} = (3x)^\\circ$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قيمة x؟",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "20",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الزاويتان تحصران نفس القوس: اكتب العلاقة بينهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض كل زاوية بعبارتها بدلالة x، تحصل على معادلة من الدرجة الأولى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة ثم تحقّق بالتعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "$3x = 2(x + 10)$ ومنه $x = 20$ .",
+        "incorrect": "المركزية ضعف المحيطية: اكتب المعادلة."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-MUSAWIYA",
+          "value": "5"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "statement": "ما قيس $\\widehat{AMB}$ بالدرجة؟",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "30",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الزاويتان تحصران نفس القوس: اكتب العلاقة بينهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض كل زاوية بعبارتها بدلالة x، تحصل على معادلة من الدرجة الأولى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة ثم تحقّق بالتعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{AMB} = 20 + 10 = 30^\\circ$ ، و $\\widehat{AOB} = 60^\\circ$ .",
+        "incorrect": "عوّض قيمة x في عبارة AMB."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-DIF",
+          "value": "60"
+        }
+      ]
+    }
+  ]
+}

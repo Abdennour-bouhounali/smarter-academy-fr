@@ -1,0 +1,203 @@
+{
+  "id": "ex-2am-hall-mushkil-muadala-l2-007",
+  "lessonCode": "hall-mushkil-muadala",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — علب التمر",
+    "estimatedMinutes": 6,
+    "tags": [
+      "ترجمة وضعيّة",
+      "معادلة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يعبّئ فلّاح من بسكرة $120$ علبة متماثلة من التمر، وكتلتها الكلّية $300\\,\\mathrm{kg}$ . نسمّي $x$ كتلة العلبة الواحدة بالكيلوغرام."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ معادلة تترجم هذه الوضعيّة ؟ اختر الإجابة الصحيحة :",
+      "learningPoints": [
+        {
+          "code": "2am_hall-mushkil-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$120\\times x=300$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{x}{120}=300$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAJHUL-ROLE"
+        },
+        {
+          "id": "C",
+          "content": "$300\\times x=120$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAJHUL-SWAP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعيّة وسمِّ المجهول بحرف، ثمّ حدّد ما يُعطى وما يُطلب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العملية التي تربط الأعداد بالمجهول كما تحدث في الوضعيّة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر كلّ معادلة : هل تصف الوضعيّة، وهل يجعلها العدد المتوقّع صحيحة ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "المعادلة الصحيحة هي $120\\times x=300$ .",
+        "incorrect": "عبّر عن الوضعيّة بعملية بين العدد المعلوم والمجهول، ثمّ اختبر الخيارات بقيمة مقبولة."
+      },
+      "solution": {
+        "lines": [
+          "$120\\times x=300$ : هذه المعادلة تصف الوضعيّة.",
+          "وحلّها $x=2{,}5$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حلّ المعادلة التي اخترتها : $120\\times x=300$ .",
+      "learningPoints": [
+        {
+          "code": "2am_hall-mushkil-muadala_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "2.5",
+      "misconceptionSignatures": [
+        {
+          "value": "36000",
+          "id": "MISC-MAJHUL-MULTDIV"
+        },
+        {
+          "value": "0.4",
+          "id": "MISC-MAJHUL-FLIP"
+        },
+        {
+          "value": "180",
+          "id": "MISC-MAJHUL-SUBFORM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في المعادلة ما يُفعل بالمجهول : ضرب أو قسمة أو جمع أو طرح، وما هي آخر عملية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العامل الناقص في جداء يُحسب بقسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من حلّك : عوّض المجهول بقيمته وأنجز العملية، فإن وجدت الطرف الآخر فالحلّ صحيح."
+        }
+      ],
+      "feedback": {
+        "correct": "$x=2{,}5$ .",
+        "incorrect": "ابحث عن العدد الذي يجعل المساواة صحيحة بالعملية العكسية، ثمّ تحقّق منه بإنجاز العملية."
+      },
+      "solution": {
+        "lines": [
+          "$x=300\\div 120=2{,}5$ .",
+          "التحقّق : $120\\times 2{,}5=300$ ."
+        ],
+        "result": "2{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 70
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل العدد $2$ حلّ للمعادلة $120\\times x=300$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_hall-mushkil-muadala_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض المجهول بالعدد المقترح في المعادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز العملية الواحدة المكتوبة في المعادلة وحدها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الناتج بالطرف الآخر : إذا تساويا فالعدد حلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "لا : المساواة غير صحيحة.",
+        "incorrect": "أنجز العملية بهذا العدد وقارن الناتج بالطرف الآخر."
+      },
+      "solution": {
+        "lines": [
+          "$120\\times 2=240$ وهو يخالف $300$ .",
+          "المساواة غير صحيحة، فالعدد ليس حلًّا للمعادلة."
+        ]
+      },
+      "timeSeconds": 70
+    }
+  ]
+}

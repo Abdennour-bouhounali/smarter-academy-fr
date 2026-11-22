@@ -1,0 +1,269 @@
+{
+  "id": "ex-1am-adad-ashri-mustaqim-mudarraj-l5-009",
+  "lessonCode": "adad-ashri-mustaqim-mudarraj",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — سلالم التمور",
+    "estimatedMinutes": 12,
+    "tags": [
+      "وضعية إدماجية",
+      "متتالية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يعدّ فلاّح تمور واحة، يزن الصناديق ويعلّم كتلها على نصف مستقيم مدرّج بالكيلوغرام، تدريجته الصغيرة 0,1 ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "لاحظ المتتالية التي تُقرأ على نصف مستقيم مدرّج من اليسار إلى اليمين : $12{,}4$ ; $12{,}7$ ; $13$ ؛ ما هو الحدّ الثاني بعد آخر حدّ مكتوب ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "13,6",
+      "misconceptionSignatures": [
+        {
+          "value": "19",
+          "id": "MISC-ABSC-STEPPLACE"
+        },
+        {
+          "value": "13,06",
+          "id": "MISC-ABSC-STEPPLACE"
+        },
+        {
+          "value": "13,2",
+          "id": "MISC-ABSC-STEPPLACE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الفرق بين حدّين متتاليين : هل هو ثابت ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحدّ التالي يُعطى بإضافة الفرق نفسه أو بطرحه إن كانت المتتالية تنازلية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه لرتبة الرقم الذي يتغيّر في كلّ خطوة."
+        }
+      ],
+      "feedback": {
+        "correct": "الفرق ثابت، والحدّ المطلوب $13{,}6$.",
+        "incorrect": "في متتالية على نصف مستقيم مدرّج الفرق بين حدّين متتاليين ثابت ؛ نحسبه ثمّ نضيفه (أو نطرحه) من آخر حدّ بالانتباه إلى رتبة الأرقام."
+      },
+      "solution": {
+        "lines": [
+          "الفرق بين حدّين متتاليين : $12{,}7$ − $12{,}4$ = $0{,}3$",
+          "$13$ + $0{,}3$ = $13{,}3$ ثمّ $13{,}3$ + $0{,}3$ = $13{,}6$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "المسافة بين المبدإ $O$ وكتلة الصندوق الثالث تساوي 12 وحدة و6 تدريجات صغيرة. ما فاصلة كتلة الصندوق الثالث ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "12,6",
+      "misconceptionSignatures": [
+        {
+          "value": "7,2",
+          "id": "MISC-ABSC-SWAP"
+        },
+        {
+          "value": "18",
+          "id": "MISC-ABSC-TICKUNIT"
+        },
+        {
+          "value": "12,06",
+          "id": "MISC-ABSC-HUNDREDTH"
+        },
+        {
+          "value": "0,6",
+          "id": "MISC-ABSC-FROMO"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم وحدة كاملة تفصل النقطة عن المبدإ، وماذا يبقى بعدها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كلّ تدريجة صغيرة جزء من الوحدة، وليست وحدة كاملة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف قيمة التدريجات الصغيرة إلى عدد الوحدات الكاملة."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة $12{,}6$ : الوحدات الكاملة أوّلًا ثمّ التدريجات الصغيرة.",
+        "incorrect": "الوحدات الكاملة تعطي الجزء الصحيح، والتدريجات الصغيرة تعطي الجزء بعد الفاصلة ؛ كلّ تدريجة صغيرة جزء من الوحدة لا وحدة كاملة."
+      },
+      "solution": {
+        "lines": [
+          "$12$ وحدة كاملة، ثمّ $6$ تدريجة صغيرة قيمة كلّ منها $0{,}1$",
+          "الفاصلة : $12$ + $6$ × $0{,}1$ = $12{,}6$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "النقطة $W$ فاصلتها $13{,}45$ ، وهي تقع بين تدريجتين صغيرتين متتاليتين على نصف مستقيم تدريجته الصغيرة $0{,}1$ . أيّ حصر صحيح لفاصلتها بين تدريجتين متتاليتين ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الحصر الصحيح",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$13{,}3 < W < 13{,}4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-BOUNDSSHIFT"
+        },
+        {
+          "id": "B",
+          "content": "$13{,}4 < W < 13{,}5$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$13{,}5 < W < 13{,}6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-BOUNDSSHIFT"
+        },
+        {
+          "id": "D",
+          "content": "$13{,}5 < W < 13{,}4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-BOUNDSREV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التدريجتان متتاليتان : الفرق بينهما قيمة التدريجة الصغيرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الأصغر في الحصر يكون على يسار النقطة والأكبر على يمينها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الفاصلة بكلّ تدريجة قريبة منها."
+        }
+      ],
+      "feedback": {
+        "correct": "الحصر الصحيح : $13{,}4$ < $13{,}45$ < $13{,}5$.",
+        "incorrect": "نحصر الفاصلة بين تدريجتين متتاليتين : الأصغر على يسار النقطة والأكبر على يمينها، والفرق بينهما قيمة التدريجة."
+      },
+      "solution": {
+        "lines": [
+          "نبحث عن التدريجتين المتتاليتين اللتين تحيطان بالعدد $13{,}45$",
+          "$13{,}4$ < $13{,}45$ < $13{,}5$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "النقطة $A$ فاصلتها $12{,}4$ والنقطة $B$ فاصلتها $12{,}6$ . النقطة $B$ أبعد عن المبدإ $O$ من النقطة $A$ .",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثمّ قارن تبريرك بالحلّ النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-LONGER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "البعد عن المبدإ هو الفاصلة نفسها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين رتبةً برتبة بدءًا من الجزء الصحيح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ما يظهر طويلًا بعد الفاصلة لا يعني أنّ العدد أكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "إجابة صحيحة.",
+        "incorrect": "نتحقّق بحساب الفاصلة أو بمقارنتها بالعلامات ولا نكتفي بالنظر إلى شكل الكتابة."
+      },
+      "solution": {
+        "lines": [
+          "$12{,}6$ > $12{,}4$",
+          "النقطة الأبعد عن المبدإ فاصلتها الأكبر"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l3-006",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — تلفريك قسنطينة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "انسحاب",
+      "نقطة مجهولة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hisab-murakkibatay_P3",
+      "modelledOn": "act-2"
+    }
+  },
+  "statement": {
+    "content": "على خريطة قسنطينة المزوّدة بمعلم، في رحلة علمية يتعاون فيها التلاميذ، كابينة التلفريك تنتقل من المحطة $A(1\\,;\\,4)$ إلى المحطة $B(3\\,;\\,1)$ . بنفس الانسحاب تنتقل كابينة ثانية من $C(-2\\,;\\,-1)$ إلى النقطة E."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا E:",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "point",
+      "answerFormat": "الإحداثيتان (x ; y) — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "0",
+        "y": "-4"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-4",
+            "y": "2"
+          },
+          "id": "MISC-MAALAM-MAJHUL-AMALIYA"
+        },
+        {
+          "value": {
+            "x": "2",
+            "y": "-3"
+          },
+          "id": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نفس الانسحاب يعني نفس الشعاع: CE = AB."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب مركبتي AB."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضفهما إلى إحداثيتي C."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AB}\\begin{pmatrix} 2 \\\\ -3 \\end{pmatrix}$ ، فـ $E(-2 + 2\\,;\\,-1 - 3) = (0\\,;\\,-4)$ .",
+        "incorrect": "CE = AB: من C نتحرّك بمركبتي AB."
+      }
+    }
+  ]
+}

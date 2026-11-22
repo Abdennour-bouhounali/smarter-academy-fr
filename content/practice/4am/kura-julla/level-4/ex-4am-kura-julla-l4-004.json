@@ -1,0 +1,67 @@
+{
+  "id": "ex-4am-kura-julla-l4-004",
+  "lessonCode": "kura-julla",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — دائرة كبرى لمجسّم الكرة الأرضية",
+    "estimatedMinutes": 5,
+    "tags": [
+      "الدائرة الكبرى"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_kura-julla_P2",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "مجسّم الكرة الأرضية في قسم الجغرافيا قطره $30\\,\\mathrm{cm}$ ، وخط الاستواء دائرة كبرى عليه."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما هو نصف قطر دائرة خط الاستواء بالسنتيمتر؟",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر)",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-KURA-QUTR",
+          "value": "30"
+        },
+        {
+          "id": "MISC-KURA-DAIRA-KUBRA",
+          "value": "7.5"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خط الاستواء دائرة كبرى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الدائرة الكبرى لها نفس نصف قطر الكرة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب نصف قطر الكرة من قطرها."
+        }
+      ],
+      "feedback": {
+        "correct": "نصف قطر الكرة $15\\,\\mathrm{cm}$ ، والدائرة الكبرى لها نفس نصف القطر.",
+        "incorrect": "الدائرة الكبرى ليست أصغر من الكرة، والقطر ضعف نصف القطر."
+      }
+    }
+  ]
+}

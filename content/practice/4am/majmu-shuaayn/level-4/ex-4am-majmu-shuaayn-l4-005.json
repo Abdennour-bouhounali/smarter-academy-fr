@@ -1,0 +1,99 @@
+{
+  "id": "ex-4am-majmu-shuaayn-l4-005",
+  "lessonCode": "majmu-shuaayn",
+  "level": 4,
+  "generator": {
+    "tool": "unit11-majmu-gen.py",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — سبّاحة في وادي الصومام",
+    "estimatedMinutes": 4,
+    "tags": [
+      "قاعدة متوازي الأضلاع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_majmu-shuaayn_P3",
+      "modelledOn": "challenge"
+    }
+  },
+  "statement": {
+    "content": "سبّاحة سرعتها الذاتية $5\\,\\mathrm{km/h}$ تعبر وادي الصومام، وسرعة التيار $3\\,\\mathrm{km/h}$ موازية للحافتين. تريد أن تسير فعلا عموديا على الحافتين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "سرعتها الفعلية بـ km/h :",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد (km/h)",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للشعاعين نفس المبدأ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "شعاعان لهما نفس المبدأ يُجمعان بقاعدة متوازي الأضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع هو القطر الصادر من المبدأ المشترك، لا القطر الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "المثلث قائم وتره السرعة الذاتية: $\\sqrt{5^2 - 3^2} = 4\\,\\mathrm{km/h}$ .",
+        "incorrect": "قاعدة متوازي الأضلاع: مجموع شعاعين لهما نفس المبدأ هو القطر الصادر من ذلك المبدأ."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "قيس الزاوية بين اتجاه سباحتها والعمودي على الحافتين، مدوّرا إلى الدرجة:",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح (بالدرجة)",
+      "expectedAnswer": "37",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للشعاعين نفس المبدأ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "شعاعان لهما نفس المبدأ يُجمعان بقاعدة متوازي الأضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع هو القطر الصادر من المبدأ المشترك، لا القطر الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin\\theta = \\dfrac{3}{5} = 0{,}6$ ومنه $\\theta \\approx 36{,}87^{\\circ}$ أي $37^{\\circ}$ عكس التيار.",
+        "incorrect": "قاعدة متوازي الأضلاع: مجموع شعاعين لهما نفس المبدأ هو القطر الصادر من ذلك المبدأ."
+      }
+    }
+  ]
+}

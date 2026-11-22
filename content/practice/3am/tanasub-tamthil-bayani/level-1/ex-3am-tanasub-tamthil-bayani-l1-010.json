@@ -1,0 +1,159 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l1-010",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — قراءة قيمة مجهولة على المستقيم",
+    "estimatedMinutes": 5,
+    "tags": [
+      "معامل التناسبية",
+      "قراءة بيانية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يتقاسم تلاميذ النادي الأخضر غرس الأشجار في حديقة الحيّ، فيتولّى كل فريق عدد الشتلات الموضّح في المعلم التالي. يمثّل المستقيم $(D)$ الذي يشمل $O$ و $B$ مصاريف السقي (بمئات الدنانير) بدلالة عدد الشتلات.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "B": [
+          2,
+          5
+        ]
+      },
+      "lines": [
+        {
+          "through": [
+            "O",
+            "B"
+          ],
+          "name": "(D)",
+          "tone": "indigo",
+          "extend": [
+            0,
+            2
+          ]
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw",
+        "B": "se"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس: مستقيم (D) يشمل المبدأ O والنقطة B(2;5) ويمتد إلى النقطة (6;15)",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: عدد الشتلات — محور التراتيب: المصاريف بمئات الدنانير"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "بقراءة بيانية:",
+      "statement": "ما المصاريف (بمئات الدنانير) لغرس 6 شتلات؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الترتيب بمئات الدنانير",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ من العدد $6$ على المحور الأفقي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اصعد عموديا حتى المستقيم $(D)$ ثم اذهب أفقيا إلى المحور العمودي."
+        }
+      ],
+      "feedback": {
+        "correct": "عند الفاصلة $6$ يكون الترتيب $15$ ، أي $1500$ دج.",
+        "incorrect": "اقرأ الترتيب عند الفاصلة $6$ على المستقيم نفسه."
+      },
+      "solution": {
+        "lines": [
+          "النقطة من $(D)$ التي فاصلتها $6$ ترتيبها $15$ ."
+        ],
+        "result": "15"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كم شتلة يمكن غرسها بمصاريف قدرها 1000 دج (أي 10 مئات الدنانير)؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الشتلات",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "25",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الآن تبدأ من الترتيب $10$ على المحور العمودي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اذهب أفقيا حتى المستقيم ثم انزل عموديا إلى المحور الأفقي."
+        }
+      ],
+      "feedback": {
+        "correct": "عند الترتيب $10$ تكون الفاصلة $4$ ، أي $4$ شتلات.",
+        "incorrect": "ابدأ من الترتيب على المحور العمودي واقرأ الفاصلة على المحور الأفقي."
+      },
+      "solution": {
+        "lines": [
+          "النقطة من $(D)$ التي ترتيبها $10$ فاصلتها $4$ ."
+        ],
+        "result": "4"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "id": "ex-1am-talim-fi-mustawi-l4-005",
+  "lessonCode": "talim-fi-mustawi",
+  "level": 4,
+  "metadata": {
+    "title": "تقاطع مستقيمين",
+    "estimatedMinutes": 5,
+    "tags": [
+      "شاقولي",
+      "أفقي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نبحث عن نقطة تقاطع مستقيم شاقولي ومستقيم أفقي في معلم متعامد."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "المستقيم $(AC)$ شاقولي ويشمل $A(2\\,;\\,-3)$ و $C(2\\,;\\,4)$ ، والمستقيم $(BD)$ أفقي ويشمل $B(-2\\,;\\,1)$ و $D(6\\,;\\,1)$ . ما إحداثيا نقطة تقاطعهما $O$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "2",
+        "y": "1"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SWAP",
+          "value": {
+            "x": "1",
+            "y": "2"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المستقيم الشاقولي له الفاصلة نفسها في كلّ نقطه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المستقيم الأفقي له الترتيب نفسه في كلّ نقطه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نقطة التقاطع تأخذ فاصلة الشاقولي وترتيب الأفقي."
+        }
+      ],
+      "feedback": {
+        "correct": "$O(2\\,;\\,1)$ .",
+        "incorrect": "فاصلة التقاطع هي فاصلة المستقيم الشاقولي وترتيبه هو ترتيب المستقيم الأفقي."
+      },
+      "solution": {
+        "lines": [
+          "كلّ نقاط $(AC)$ فاصلتها $2$",
+          "كلّ نقاط $(BD)$ ترتيبها $1$",
+          "$O(2\\,;\\,1)$"
+        ],
+        "result": "O(2\\,;\\,1)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "المستقيم $(AC)$ شاقولي ويشمل $A(-1\\,;\\,3)$ و $C(-1\\,;\\,-2)$ ، والمستقيم $(BD)$ أفقي ويشمل $B(-4\\,;\\,1)$ و $D(3\\,;\\,1)$ . ما إحداثيا نقطة تقاطعهما $O$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-1",
+        "y": "1"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SWAP",
+          "value": {
+            "x": "1",
+            "y": "-1"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المستقيم الشاقولي له الفاصلة نفسها في كلّ نقطه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المستقيم الأفقي له الترتيب نفسه في كلّ نقطه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نقطة التقاطع تأخذ فاصلة الشاقولي وترتيب الأفقي."
+        }
+      ],
+      "feedback": {
+        "correct": "$O(-1\\,;\\,1)$ .",
+        "incorrect": "فاصلة التقاطع هي فاصلة المستقيم الشاقولي وترتيبه هو ترتيب المستقيم الأفقي."
+      },
+      "solution": {
+        "lines": [
+          "كلّ نقاط $(AC)$ فاصلتها $-1$",
+          "كلّ نقاط $(BD)$ ترتيبها $1$",
+          "$O(-1\\,;\\,1)$"
+        ],
+        "result": "O(-1\\,;\\,1)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

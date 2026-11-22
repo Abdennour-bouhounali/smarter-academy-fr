@@ -1,0 +1,141 @@
+{
+  "id": "ex-4am-tarrid-khatti-l2-003",
+  "lessonCode": "tarrid-khatti",
+  "level": 2,
+  "metadata": {
+    "title": "تمرين 28 (ص 75) — الدرّاج",
+    "estimatedMinutes": 5,
+    "tags": [
+      "جدول",
+      "وضعية غير تناسبية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-28",
+      "page": 75,
+      "section": "أتعمّق",
+      "number": 28,
+      "adaptedFrom": "ex-4am-tarrid-khatti-l2-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "يعطي الجدول الآتي المسافة $d$ (بـ km) التي قطعها درّاج يتدرّب بانتظام بدلالة المدة $t$ (بالساعة) منذ انطلاقه، وسرعته ثابتة خلال كل ساعة:",
+    "table": {
+      "head": [
+        "المدة $t$ (h)",
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "rows": [
+        [
+          "المسافة $d$ (km)",
+          "40",
+          "70",
+          "130",
+          "155"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل المسافة $d$ متناسبة مع المدة $t$ خلال الرحلة كلها؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-NAMUDHAJ"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $\\dfrac{d}{t}$ في كل عمود."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "وضعية تناسبية: حاصل القسمة نفسه في كل الأعمدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{40}{1} \\neq \\dfrac{70}{2}$ : المسافة غير متناسبة مع المدة.",
+        "incorrect": "لا يكفي أن يزداد المقداران معا: قارن حواصل القسمة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{40}{1} = 40$ و $\\dfrac{70}{2} = 35$",
+          "$40 \\neq 35$ ، إذن المسافة غير متناسبة مع المدة خلال الرحلة كلها."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "خلال الساعة الأولى ($0 \\leqslant t \\leqslant 1$) الوضعية تناسبية. عبّر عن $d(t)$ بدلالة $t$ في هذه المرحلة.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "40",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في الساعة الأولى ينطلق الدرّاج من المبدأ بسرعة ثابتة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المعامل هو المسافة المقطوعة في ساعة واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$d(t) = 40t$ : سرعته في المرحلة الأولى 40km/h.",
+        "incorrect": "استعمل العمود الأول من الجدول: المسافة بعد ساعة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "$d(1) = 40$ معناه $a \\times 1 = 40$",
+          "إذن $d(t) = 40t$ من أجل $0 \\leqslant t \\leqslant 1$ ."
+        ],
+        "result": "d(t) = 40t"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

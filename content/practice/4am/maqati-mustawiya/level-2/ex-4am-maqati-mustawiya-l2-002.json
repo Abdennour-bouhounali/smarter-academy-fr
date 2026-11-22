@@ -1,0 +1,173 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l2-002",
+  "lessonCode": "maqati-mustawiya",
+  "level": 2,
+  "metadata": {
+    "title": "طرائق — حساب نصف قطر مقطع كرة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "فيثاغورس"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-section-radius",
+      "page": 169,
+      "section": "طرائق"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 169): يقطع مستو (P) كرة مركزها O ونصف قطرها $2{,}5\\,\\mathrm{cm}$ وفق دائرة مركزها O′ حيث $OO' = 1{,}5\\,\\mathrm{cm}$ .",
+    "figure": {
+      "kind": "space",
+      "view": {
+        "azimuth": -62,
+        "elevation": 20
+      },
+      "points": {
+        "O": [
+          0,
+          0,
+          0
+        ],
+        "O'": [
+          0,
+          0,
+          1.5
+        ],
+        "M": [
+          -1.88,
+          -0.684,
+          1.5
+        ],
+        "P1": [
+          -3,
+          -3,
+          1.5
+        ],
+        "P2": [
+          3,
+          -3,
+          1.5
+        ],
+        "P3": [
+          3,
+          3,
+          1.5
+        ],
+        "P4": [
+          -3,
+          3,
+          1.5
+        ]
+      },
+      "solids": [
+        {
+          "type": "sphere",
+          "center": "O",
+          "radius": 2.5
+        }
+      ],
+      "circles": [
+        {
+          "center": "O'",
+          "radius": 2,
+          "normal": "z",
+          "on": 0,
+          "tone": "rose",
+          "bold": true
+        }
+      ],
+      "planes": [
+        {
+          "points": [
+            "P1",
+            "P2",
+            "P3",
+            "P4"
+          ],
+          "tone": "amber",
+          "label": "(P)"
+        }
+      ],
+      "segments": [
+        {
+          "from": "O",
+          "to": "O'",
+          "label": "1,5"
+        },
+        {
+          "from": "O'",
+          "to": "M",
+          "tone": "rose"
+        },
+        {
+          "from": "O",
+          "to": "M",
+          "dashed": true,
+          "label": "2,5"
+        }
+      ],
+      "rightAngles": [
+        [
+          "O",
+          "O'",
+          "M"
+        ]
+      ],
+      "labels": {
+        "O'": "ne"
+      },
+      "hidden": [
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ],
+      "ariaLabel": "كرة مركزها O ونصف قطرها 2,5 يقطعها المستوي (P) وفق دائرة مركزها O′ حيث OO′ = 1,5، و M نقطة من الدائرة",
+      "maxWidth": 400
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما نصف قطر الدائرة $O'M$ (بـ $\\mathrm{cm}$)؟",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAQTA-TARH",
+          "value": "1"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث OO′M قائم في O′."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$OM = 2{,}5$ ، $OO' = 1{,}5$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$O'M^2 = 2{,}5^2 - 1{,}5^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$O'M^2 = 6{,}25 - 2{,}25 = 4$ ، إذن $O'M = 2\\,\\mathrm{cm}$ .",
+        "incorrect": "$2{,}5 - 1{,}5 = 1$ : طرحت الطولين."
+      },
+      "difficulty": 2
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "id": "ex-4am-awwaliyan-fima-baynahuma-l1-007",
+  "lessonCode": "awwaliyan-fima-baynahuma",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2025 — العددان 1158 و 426",
+    "estimatedMinutes": 7,
+    "tags": [
+      "نفي",
+      "قواعد قابلية القسمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_awwaliyan-fima-baynahuma_P3",
+      "modelledOn": "BEM 2025 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان 1158 و 426."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن، دون حساب القاسم المشترك الأكبر، أن العددين ليسا أوليين فيما بينهما: أعط أصغر قاسم مشترك لهما يختلف عن 1.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي أكبر من 1",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى رقم آحاد كل من العددين 1158 و 426، وإلى مجموع أرقام كل منهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جرّب القواسم بالترتيب: 2 ثم 3 ثم 4 ثم 5 …، مستعملًا قواعد قابلية القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أول عدد يقسم العددين معًا هو المطلوب، ويكفي لنفي أنهما أوليان فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "2 يقسم 1158 و 426 معًا: العددان ليسا أوليين فيما بينهما.",
+        "incorrect": "طبّق قواعد قابلية القسمة على العددين معًا، بدءًا من أصغر القواسم الممكنة."
+      },
+      "solution": {
+        "lines": [
+          "رقم آحاد كل من 1158 و 426 زوجي، إذن 2 يقسم العددين معًا.",
+          "2 قاسم مشترك للعددين يختلف عن 1، إذن العددان 1158 و 426 ليسا أوليين فيما بينهما."
+        ],
+        "result": "2"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب: PGCD(1158 ; 426).",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 1158 على 426: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (1158 ; 426) بالزوج (426 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 6.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$1158 = 426 \\times 2 + 306$",
+          "$426 = 306 \\times 1 + 120$",
+          "$306 = 120 \\times 2 + 66$",
+          "$120 = 66 \\times 1 + 54$",
+          "$66 = 54 \\times 1 + 12$",
+          "$54 = 12 \\times 4 + 6$",
+          "$12 = 6 \\times 2 + 0$",
+          "آخر باقٍ غير معدوم هو 6، إذن:"
+        ],
+        "result": "PGCD(1158 ; 426) = 6"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

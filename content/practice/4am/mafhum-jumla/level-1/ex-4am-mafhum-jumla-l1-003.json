@@ -1,0 +1,140 @@
+{
+  "id": "ex-4am-mafhum-jumla-l1-003",
+  "lessonCode": "mafhum-jumla",
+  "level": 1,
+  "metadata": {
+    "title": "جملة مجهولاها a و b",
+    "estimatedMinutes": 4,
+    "tags": [
+      "جملة",
+      "ثنائية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 62,
+      "section": "أؤكّد تعلّماتي",
+      "number": 4,
+      "adaptedFrom": "ex-4am-mafhum-jumla-l1-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الجملة ذات المجهولين $a$ و $b$ التالية:",
+    "formulas": [
+      "\\begin{cases} 2a - b = 3 \\\\ a - 2b = -3 \\end{cases}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل الثنائية $(3 ; 3)$ حل لهذه الجملة؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mafhum-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $a$ بـ $3$ و $b$ بـ $3$ في كل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الثنائية حل للجملة إذا حققت المعادلتين في آن واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 3 - 3 = 3$ ؛ $3 - 2 \\times 3 = -3$ : الثنائية حل للجملة.",
+        "incorrect": "العدد الأول في الثنائية قيمة $a$ والثاني قيمة $b$ ؛ عوّض في المعادلتين معا وقارن كل نتيجة بالطرف الثاني."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $a$ بـ $3$ و $b$ بـ $3$ :",
+          "$2 \\times 3 - 3 = 3$",
+          "$3 - 2 \\times 3 = -3$",
+          "ومنه الثنائية $(3 ; 3)$ حل للجملة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل الثنائية $(2 ; 1)$ حل لهذه الجملة؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-MUADALA-WAHIDA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $a$ بـ $2$ و $b$ بـ $1$ في كل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الثنائية حل للجملة إذا حققت المعادلتين في آن واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 2 - 1 = 3$ ؛ $2 - 2 \\times 1 = 0 \\neq -3$ : الثنائية ليست حلا للجملة.",
+        "incorrect": "العدد الأول في الثنائية قيمة $a$ والثاني قيمة $b$ ؛ عوّض في المعادلتين معا وقارن كل نتيجة بالطرف الثاني."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $a$ بـ $2$ و $b$ بـ $1$ :",
+          "$2 \\times 2 - 1 = 3$",
+          "$2 - 2 \\times 1 = 0 \\neq -3$",
+          "ومنه الثنائية $(2 ; 1)$ ليست حلا للجملة (لا تحقق المعادلتين معا)."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

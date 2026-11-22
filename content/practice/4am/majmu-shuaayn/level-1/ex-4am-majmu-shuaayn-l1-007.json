@@ -1,0 +1,80 @@
+{
+  "id": "ex-4am-majmu-shuaayn-l1-007",
+  "lessonCode": "majmu-shuaayn",
+  "level": 1,
+  "generator": {
+    "tool": "unit11-majmu-gen.py",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — ذهاب وإياب",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الشعاع المعدوم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_majmu-shuaayn_P4",
+      "modelledOn": "act-4"
+    }
+  },
+  "statement": {
+    "content": "P و Q نقطتان مختلفتان."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "$\\overrightarrow{PQ} + \\overrightarrow{QP} =$",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\vec{0}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "العدد 0",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SIFR-ADAD"
+        },
+        {
+          "id": "C",
+          "content": "$2\\overrightarrow{PQ}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المنحى والاتجاه والطول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "شعاعان متعاكسان لهما نفس المنحى ونفس الطول واتجاهان متعاكسان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الذهاب ثم العودة إلى نفس النقطة يعطي الشعاع المعدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "علاقة شال: $\\overrightarrow{PQ} + \\overrightarrow{QP} = \\overrightarrow{PP} = \\vec{0}$ ، شعاع لا عدد.",
+        "incorrect": "الشعاعان المتعاكسان مجموعهما الشعاع المعدوم؛ لا نجمع الأطوال."
+      }
+    }
+  ]
+}

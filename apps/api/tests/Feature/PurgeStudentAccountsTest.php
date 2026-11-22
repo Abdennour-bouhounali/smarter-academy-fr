@@ -69,4 +69,20 @@ class PurgeStudentAccountsTest extends TestCase
 
         $this->assertSame(2, User::where('role', 'student')->count());
     }
+
+    /** Un enseignant n'est pas un élève : la purge des élèves ne le touche pas, ni ses classes. */
+    public function test_un_enseignant_n_est_jamais_supprime(): void
+    {
+        $teacher = User::factory()->create(['role' => User::ROLE_TEACHER]);
+        \App\Models\Classroom::factory()->ownedBy($teacher)->create();
+        User::factory()->create(['role' => User::ROLE_STUDENT]);
+
+        $this->artisan('smarter:purge-students', ['--force' => true])
+            ->expectsConfirmation('Supprimer définitivement 1 compte(s) élève et TOUTES leurs données ?', 'yes')
+            ->assertSuccessful();
+
+        $this->assertDatabaseHas('users', ['id' => $teacher->id]);
+        $this->assertDatabaseCount('classrooms', 1);
+        $this->assertSame(0, User::where('role', User::ROLE_STUDENT)->count());
+    }
 }

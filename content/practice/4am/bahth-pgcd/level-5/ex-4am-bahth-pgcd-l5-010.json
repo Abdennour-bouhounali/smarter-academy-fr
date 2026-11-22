@@ -1,0 +1,184 @@
+{
+  "id": "ex-4am-bahth-pgcd-l5-010",
+  "lessonCode": "bahth-pgcd",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2022 — تشكيلات متماثلة من الصناديق",
+    "estimatedMinutes": 10,
+    "tags": [
+      "خوارزمية إقليدس",
+      "توظيف PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_bahth-pgcd_P5",
+      "modelledOn": "BEM 2022 II-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "خصص فلاح بستانًا لإنتاج التفاح و الإجاص، فكان المحصول: 1386 صندوقًا من التفاح و 945 صندوقًا من الإجاص."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "قصد مساعدة دُور العجزة و مراكز الأيتام و ذوي الاحتياجات الخاصة، يريد هذا الفلاح أن يُجمِّع الصناديق في تشكيلات متماثلة من حيث النوع و العدد (أي كل تشكيلة تحتوي على نفس عدد الصناديق من التفاح و نفس عدد الصناديق من الإجاص).",
+      "statement": "ما هو أكبر عدد من التشكيلات التي يمكن تكوينها ؟",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P5",
+          "role": "primary"
+        },
+        {
+          "code": "4am_bahth-pgcd_P4",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "63",
+      "misconceptionSignatures": [
+        {
+          "value": "21",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        },
+        {
+          "value": "22",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد التشكيلات يقسم 1386 و 945 معًا، والمطلوب أكبره."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القاسم المشترك الأكبر للعددين بخوارزمية إقليدس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "أكبر عدد من التشكيلات هو $PGCD(1386 ; 945) = 63$.",
+        "incorrect": "عدد التشكيلات قاسم مشترك للعددين، والمطلوب أكبرها: احسب القاسم المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "عدد التشكيلات يقسم 1386 و 945 وهو أكبر ما يمكن، فهو $PGCD(1386 ; 945)$. باستعمال خوارزمية إقليدس:",
+          "$1386 = 945 \\times 1 + 441$",
+          "$945 = 441 \\times 2 + 63$",
+          "$441 = 63 \\times 7 + 0$",
+          "آخر باقٍ غير معدوم هو 63، إذن أكبر عدد من التشكيلات هو 63."
+        ],
+        "result": "PGCD(1386 ; 945) = 63"
+      },
+      "work": "optional",
+      "timeSeconds": 270
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما هو عدد صناديق التفاح و عدد صناديق الإجاص في كل تشكيلة. — صناديق التفاح:",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P5",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد صناديق التفاح في كل تشكيلة",
+      "expectedAnswer": "22",
+      "misconceptionSignatures": [
+        {
+          "value": "63",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وُزّعت صناديق التفاح بالتساوي على التشكيلات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم عدد صناديق التفاح على عدد التشكيلات الذي وجدته في (ا)."
+        }
+      ],
+      "feedback": {
+        "correct": "$1386 \\div 63 = 22$ صندوقًا من التفاح في كل تشكيلة.",
+        "incorrect": "عدد التشكيلات ليس محتوى التشكيلة: اقسم عدد الصناديق على عدد التشكيلات."
+      },
+      "solution": {
+        "lines": [
+          "عدد صناديق التفاح في كل تشكيلة: $1386 \\div 63 = 22$"
+        ],
+        "result": "22"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ب",
+      "statement": "— صناديق الإجاص:",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P5",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد صناديق الإجاص في كل تشكيلة",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "63",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وُزّعت صناديق الإجاص بالتساوي على التشكيلات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم عدد صناديق الإجاص على عدد التشكيلات الذي وجدته في (ا)."
+        }
+      ],
+      "feedback": {
+        "correct": "$945 \\div 63 = 15$ صندوقًا من الإجاص في كل تشكيلة.",
+        "incorrect": "عدد التشكيلات ليس محتوى التشكيلة: اقسم عدد الصناديق على عدد التشكيلات."
+      },
+      "solution": {
+        "lines": [
+          "عدد صناديق الإجاص في كل تشكيلة: $945 \\div 63 = 15$"
+        ],
+        "result": "15"
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

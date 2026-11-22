@@ -1,0 +1,133 @@
+{
+  "id": "ex-4am-hall-jabri-l4-005",
+  "lessonCode": "hall-jabri",
+  "level": 4,
+  "metadata": {
+    "title": "معادلة بمقام",
+    "estimatedMinutes": 8,
+    "tags": [
+      "تبسيط",
+      "اختيار الطريقة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-9",
+      "page": 60,
+      "section": "أوظّف تعلّماتي",
+      "number": 9
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر جملة المعادلتين التالية:",
+    "formulas": [
+      "\\begin{cases} \\dfrac{x}{6} - y = -1 \\\\ 3x - 2y = 6 \\end{cases}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن المعادلة الأولى تكافئ المعادلة: $x - 6y = -6$ .",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب الطرفين في المقام $6$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "نضرب طرفي المعادلة $\\dfrac{x}{6} - y = -1$ في $6$ :",
+          "$6 \\times \\dfrac{x}{6} - 6y = -6$",
+          "أي $x - 6y = -6$"
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حل الجملة باستعمال طريقة من اختيارك.",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hall-jabri_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": {
+        "x": "3",
+        "y": "3/2"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "3/2",
+            "y": "3"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى معاملات المجهولين: هل يوجد معامل يساوي $1$ أو $-1$ ؟ هل يوجد معاملان متعاكسان أو متساويان؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مجهول معامله $1$ أو مجهول معبّر عنه بدلالة الآخر: التعويض. معاملان متعاكسان أو يصيران كذلك بضرب بسيط: الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد إيجاد المجهول الأول عوّض قيمته لتجد الثاني، ثم تحقق في المعادلتين."
+        }
+      ],
+      "feedback": {
+        "correct": "الثنائية $\\left(3 ; \\dfrac{3}{2}\\right)$ تحقق المعادلتين معا: هي حل الجملة.",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "الجملة تكافئ: $\\begin{cases} x - 6y = -6 \\\\ 3x - 2y = 6 \\end{cases}$",
+          "من المعادلة (1) نجد: $x = 6y - 6$",
+          "نعوّض في المعادلة (2): $3(6y - 6) - 2y = 6$",
+          "$16y = 24$",
+          "ومنه $y = \\dfrac{3}{2}$",
+          "نعوّض قيمة $y$ في عبارة $x$: $x = 6 \\times \\dfrac{3}{2} - 6 = 3$",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "\\left(3 ; \\dfrac{3}{2}\\right)"
+      },
+      "work": "optional",
+      "timeSeconds": 360
+    }
+  ]
+}

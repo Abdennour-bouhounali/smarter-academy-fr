@@ -1,0 +1,126 @@
+{
+  "id": "ex-2am-jam-tarh-kusur-l3-009",
+  "lessonCode": "jam-tarh-kusur",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — عدد دورات وكسر دورة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "عدد طبيعي وكسر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "قطع متسابقان في الصباح $2 + \\dfrac{3}{8}$ دورة من مضمار ، وقطعا بعد الظهر $1 + \\dfrac{1}{4}$ دورة ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما عدد الدورات التي قطعاها في اليوم كلّه ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "29/8",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الجزءان اللذان تبحث عن مجموعهما أو عن الباقي بعدهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد ثمّ اجمع، والباقي نحصل عليه بالطرح من الكلّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل الناتج إن أمكن وتحقّق أنّه يبقى أصغر من الكلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{29}{8}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$2 = \\dfrac{16}{8}$ .",
+          "$1 = \\dfrac{8}{8}$ .",
+          "$\\dfrac{1}{4} = \\dfrac{1 \\times 2}{4 \\times 2} = \\dfrac{2}{8}$ .",
+          "$2 + \\dfrac{3}{8} + 1 + \\dfrac{1}{4} = \\dfrac{16 + 3 + 8 + 2}{8} = \\dfrac{29}{8}$ ."
+        ],
+        "result": "\\dfrac{29}{8}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ينبغي إتمام $5$ دورات . ما الجزء من الدورات الذي بقي ؟ احسب $5 - \\dfrac{29}{8}$ .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "11/8",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الجزءان اللذان تبحث عن مجموعهما أو عن الباقي بعدهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد ثمّ اجمع، والباقي نحصل عليه بالطرح من الكلّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل الناتج إن أمكن وتحقّق أنّه يبقى أصغر من الكلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{11}{8}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$5 = \\dfrac{40}{8}$ .",
+          "$5 - \\dfrac{29}{8} = \\dfrac{40 - 29}{8} = \\dfrac{11}{8}$ ."
+        ],
+        "result": "\\dfrac{11}{8}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

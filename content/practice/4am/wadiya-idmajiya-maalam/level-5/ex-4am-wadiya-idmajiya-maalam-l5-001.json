@@ -1,0 +1,219 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-maalam-l5-001",
+  "lessonCode": "wadiya-idmajiya-maalam",
+  "level": 5,
+  "metadata": {
+    "title": "أتعمّق — تمرين 22",
+    "estimatedMinutes": 9,
+    "tags": [
+      "دائرة",
+      "طبيعة شكل",
+      "حساب المثلثات"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-22",
+      "page": 149,
+      "section": "أتعمّق",
+      "number": 22
+    }
+  },
+  "statement": {
+    "content": "المستوي منسوب إلى معلم متعامد ومتجانس مبدؤه O (الوحدة $1\\,\\mathrm{cm}$). $A(1\\,;\\,3)$ ، $B(2\\,;\\,4)$ ، $C(5\\,;\\,1)$ و $D(2\\,;\\,0)$ أربع نقط."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المثلث ABC:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "قائم في A",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-FITHAGHURAS-WATAR"
+        },
+        {
+          "id": "B",
+          "content": "قائم في B: $AB^2 + BC^2 = AC^2$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "متساوي الساقين في B",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-NASI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AB^2 = 2$ ، $BC^2 = 18$ ، $AC^2 = 20$"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أطول ضلع [AC]."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$2 + 18 = 20$"
+        }
+      ],
+      "feedback": {
+        "correct": "$2 + 18 = 20$ : قائم في B.",
+        "incorrect": "قارن مربع أطول ضلع بمجموع المربعين الآخرين."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 5
+    },
+    {
+      "id": "q2",
+      "statement": "النقط الأربع على دائرة مركزها I منتصف [AC]. إحداثيتا I:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الثنائية (x ; y)",
+      "expectedAnswer": {
+        "x": "3",
+        "y": "2"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "منتصف [AC]."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\dfrac{1 + 5}{2}$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\dfrac{3 + 1}{2}$"
+        }
+      ],
+      "feedback": {
+        "correct": "$I(3\\,;\\,2)$ .",
+        "incorrect": "نصف مجموع الإحداثيتين."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 5
+    },
+    {
+      "id": "q3",
+      "statement": "نصف قطر هذه الدائرة:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\sqrt{5}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-JAM"
+        },
+        {
+          "id": "C",
+          "content": "$2\\sqrt{5}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-DAIRA-QUTR"
+        },
+        {
+          "id": "D",
+          "content": "$5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-NASI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب IA."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$IA^2 = 2^2 + 1^2$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ IB و IC و ID لها نفس القيمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$IA = IB = IC = ID = \\sqrt{5}$ .",
+        "incorrect": "نصف القطر بعد كل نقطة عن المركز."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 5
+    },
+    {
+      "id": "q4",
+      "statement": "قيس الزاوية $\\widehat{BCA}$ مدوّرا إلى $0{,}1$ (بالدرجة):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة (مدوّر إلى 0,1)",
+      "expectedAnswer": "18.4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث ABC قائم في B."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\tan\\widehat{BCA} = \\dfrac{AB}{BC} = \\dfrac{\\sqrt{2}}{3\\sqrt{2}}$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\tan\\widehat{BCA} = \\dfrac{1}{3}$"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan\\widehat{BCA} = \\dfrac{1}{3}$ ومنه $\\widehat{BCA} \\approx 18{,}4^{\\circ}$ .",
+        "incorrect": "في المثلث القائم في B: الظل = المقابل ÷ المجاور."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "71.6",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        }
+      ],
+      "difficulty": 5
+    }
+  ]
+}

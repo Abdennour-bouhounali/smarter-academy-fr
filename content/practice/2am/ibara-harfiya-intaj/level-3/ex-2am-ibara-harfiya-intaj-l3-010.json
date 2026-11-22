@@ -1,0 +1,179 @@
+{
+  "id": "ex-2am-ibara-harfiya-intaj-l3-010",
+  "lessonCode": "ibara-harfiya-intaj",
+  "level": 3,
+  "metadata": {
+    "title": "محيط مثلّث متساوي الساقين",
+    "estimatedMinutes": 6,
+    "tags": [
+      "محيط",
+      "مثلّث"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-9",
+      "page": 63,
+      "section": "إنتاج عبارات حرفية",
+      "number": 9
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "مثلّث متساوي الساقين ، طول كلّ من ساقيه $x$ cm وطول قاعدته $7$ cm ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما عبارة محيط هذا المثلّث بالسنتيمتر ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x + 7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-NOFIRST"
+        },
+        {
+          "id": "B",
+          "content": "$2x + 7$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$3x + 7$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعيّة وحدّد ما يتغيّر (الحرف) وما يبقى ثابتًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ خيار بقيمة بسيطة للحرف ثمّ قارن بالعدّ المباشر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاعدة الصحيحة تعطي العدد نفسه الذي تجده بالعدّ في كلّ مرّة تجرّبها."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتابة الصحيحة هي $2x + 7$ .",
+        "incorrect": "جرّب كلّ خيار على قيمة بسيطة للحرف وقارن بالعدّ المباشر قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "$2x + 7$ : المحيط هو مجموع الأضلاع الثلاثة : $x + x + 7$ .",
+          "عند $x = 9$ : $2 \\times 9 + 7 = 25$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $P = 2x + 7$ من أجل $x = 9$ .",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "25",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بالقيمة المعطاة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ احترم أولويّة العمليّات : الضرب قبل الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة قبل أن تجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$P = 25$ .",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ أعد الحساب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$2 \\times 9 + 7 = 25$ ."
+        ],
+        "result": "25"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب $P = 2x + 7$ من أجل $x = 12{,}5$ .",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "32",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بالقيمة المعطاة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ احترم أولويّة العمليّات : الضرب قبل الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة قبل أن تجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$P = 32$ .",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ أعد الحساب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$2 \\times 12{,}5 + 7 = 32$ ."
+        ],
+        "result": "32"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

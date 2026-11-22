@@ -1,0 +1,351 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l5-009",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — كتاب قبل نهاية العطلة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "مطالعة",
+      "احترام الوقت",
+      "بالزيادة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: يقرأ وليد كتابًا من 487 صفحة، 15 صفحة كل يوم، ويحترم برنامجه يوميًا.\nالجزء الثاني: يريد أن يُنهي الكتاب في 30 يومًا قبل نهاية العطلة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "كم يومًا يقرأ فيه 15 صفحة كاملة؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الأيام",
+      "expectedAnswer": "32",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "31",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "value": "33",
+          "id": "MISC-HASR-IZAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 487 من 15 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 15 دون أن نتجاوز 487."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من 15."
+        }
+      ],
+      "feedback": {
+        "correct": "$487 = 15 \\times 32 + 7$ و $7 < 15$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 15 فلا يتجاوز الجداء 487، والباقي عندئذ أصغر من 15."
+      },
+      "solution": {
+        "lines": [
+          "$15 \\times 32 = 480$ و $15 \\times 33 = 495$",
+          "$480 \\le 487 < 495$ ، إذن الحاصل هو 32."
+        ],
+        "result": "q = 32"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كم صفحة يقرأ في اليوم الأخير؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الصفحات",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "32",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "22",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 487."
+        }
+      ],
+      "feedback": {
+        "correct": "$487 - 15 \\times 32 = 487 - 480 = 7$ ، و $7 < 15$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 15."
+      },
+      "solution": {
+        "lines": [
+          "$487 = 15 \\times 32 + 7$",
+          "$7 < 15$ ، إذن الباقي هو 7."
+        ],
+        "result": "r = 7"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "كم يومًا يلزمه لإنهاء الكتاب؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد الأيام",
+      "expectedAnswer": "33",
+      "misconceptionSignatures": [
+        {
+          "value": "32",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "value": "7",
+          "id": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 487 على 15."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يبقى شيء بعد المجموعات الكاملة؟ ماذا نفعل به؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد اللازم هو القيمة المقرّبة إلى الوحدة بالزيادة عندما لا يكون الحاصل عددًا طبيعيًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$487 = 15 \\times 32 + 7$: 32 كاملة ويبقى 7، فيلزم 33.",
+        "incorrect": "لا تنسَ ما يبقى بعد المجموعات الكاملة: يحتاج هو أيضًا إلى مكان."
+      },
+      "solution": {
+        "lines": [
+          "$487 = 15 \\times 32 + 7$",
+          "$32 < \\frac{487}{15} < 33$ ، والباقي 7 يحتاج إلى واحدة أخرى: يلزم 33 (القيمة المقرّبة بالزيادة)."
+        ],
+        "result": "33"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "هل يُنهي الكتاب في 30 يومًا بهذا البرنامج؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن عدد الأيام اللازمة بـ 30."
+        }
+      ],
+      "feedback": {
+        "correct": "$33 > 30$: لا يُنهيه.",
+        "incorrect": "احسب عدد الأيام اللازمة كلها ثم قارن بـ 30."
+      },
+      "solution": {
+        "lines": [
+          "يلزمه 33 يومًا و $33 > 30$.",
+          "لا يُنهي الكتاب في 30 يومًا."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "اختر الكتابة الصحيحة التي تحصر حاصل القسمة $\\frac{487}{30}$ بين عددين طبيعيين متتاليين (أو تعطيه إذا كان عددًا طبيعيًا).",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$15 < \\frac{487}{30} < 16$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        },
+        {
+          "id": "B",
+          "content": "$16 < \\frac{487}{30} < 17$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$7 < \\frac{487}{30} < 8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 487 على 30."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من $30 \\times q \\le 487 < 30 \\times (q + 1)$ نقسم الأطراف على 30."
+        }
+      ],
+      "feedback": {
+        "correct": "$487 = 30 \\times 16 + 7$ والباقي غير معدوم، فـ $\\frac{487}{30}$ يقع تمامًا بين 16 و 17.",
+        "incorrect": "احصر 487 بين مضاعفين متتاليين للعدد 30 ثم اقسم على 30؛ وإذا كان الباقي معدومًا فحاصل القسمة عدد طبيعي."
+      },
+      "solution": {
+        "lines": [
+          "$487 = 30 \\times 16 + 7$",
+          "$30 \\times 16 < 487 < 30 \\times 17$ ، نقسم على 30: $16 < \\frac{487}{30} < 17$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "كم صفحة على الأقل يجب أن يقرأ كل يوم ليُنهي الكتاب في 30 يومًا؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد الصفحات",
+      "expectedAnswer": "17",
+      "misconceptionSignatures": [
+        {
+          "value": "16",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "value": "18",
+          "id": "MISC-HASR-IZAHA"
+        },
+        {
+          "value": "7",
+          "id": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احصر $\\frac{487}{30}$ بين عددين طبيعيين متتاليين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمة المقرّبة إلى الوحدة بالزيادة هي أكبر طرفي الحصر."
+        }
+      ],
+      "feedback": {
+        "correct": "$16 < \\frac{487}{30} < 17$ ، فالقيمة بالزيادة 17.",
+        "incorrect": "بالزيادة: أكبر طرفي الحصر بين عددين طبيعيين متتاليين؛ بالنقصان: أصغرهما."
+      },
+      "solution": {
+        "lines": [
+          "$487 = 30 \\times 16 + 7$",
+          "$16 < \\frac{487}{30} < 17$",
+          "القيمة المقرّبة إلى الوحدة بالزيادة هي 17."
+        ],
+        "result": "17"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

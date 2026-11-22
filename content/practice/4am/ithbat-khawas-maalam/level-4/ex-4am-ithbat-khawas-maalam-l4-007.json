@@ -1,0 +1,85 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l4-007",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — ثلاث خيام حول نار المخيم",
+    "estimatedMinutes": 2,
+    "tags": [
+      "دائرة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_ithbat-khawas-maalam_P3",
+      "modelledOn": "ex-19"
+    }
+  },
+  "generator": {
+    "tool": "u1x-ithbat-khawas-maalam/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "ثلاث خيام $A(5\\,;\\,0)$ ، $B(3\\,;\\,4)$ ، $C(-4\\,;\\,3)$ ونار المخيم في المبدأ O (معلم متعامد ومتجانس، الوحدة 1 m)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "النقطة O :",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "ليست مركز الدائرة لأن إحداثيات الخيام مختلفة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SHAKL-DALIL"
+        },
+        {
+          "id": "B",
+          "content": "مركز دائرة نصف قطرها 25",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-NASI"
+        },
+        {
+          "id": "C",
+          "content": "مركز دائرة نصف قطرها 10",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-DAIRA-QUTR"
+        },
+        {
+          "id": "D",
+          "content": "مركز دائرة تشمل A و B و C ، نصف قطرها 5",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $OA^2$ و $OB^2$ و $OC^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل هي متساوية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نصف القطر هو الجذر."
+        }
+      ],
+      "feedback": {
+        "correct": "$OA^2 = OB^2 = OC^2 = 25$ : الخيام على دائرة مركزها O ونصف قطرها 5.",
+        "incorrect": "نصف القطر 5 (لا 25 ولا 10)."
+      }
+    }
+  ]
+}

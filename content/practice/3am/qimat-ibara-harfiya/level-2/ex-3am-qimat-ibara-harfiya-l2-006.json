@@ -1,0 +1,261 @@
+{
+  "id": "ex-3am-qimat-ibara-harfiya-l2-006",
+  "lessonCode": "qimat-ibara-harfiya",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — أين الخطأ في هذا التعويض؟",
+    "estimatedMinutes": 9,
+    "tags": [
+      "أقواس",
+      "عدد سالب",
+      "تصحيح خطأ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "حسب تلميذان قيمة العبارة $x^2 - 9$ من أجل $x = -4$ ، فكتب الأول: $-4^2 - 9 = -25$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أين الخطأ في سطر التلميذ الأول؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لم يضع $-4$ بين قوسين: الصحيح $(-4)^2 - 9$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا خطأ: $-4^2$ تساوي $(-4)^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QIMA-NEG-POWER"
+        },
+        {
+          "id": "C",
+          "content": "الخطأ أنّ $x^2$ تعني $2x$ ، والصحيح $2 \\times (-4) - 9$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QIMA-SQUARE-DOUBLE"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن القيمتين اللتين حسبتهما: هل اختلفتا عند قيمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قيمة واحدة تختلف عندها العبارتان تكفي لإثبات أنهما غير متساويتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أمّا تساوي القيمتين من أجل قيمة أو قيمتين فلا يثبت التساوي: لإثباته ننشر ونقارن الشكلين."
+        }
+      ],
+      "feedback": {
+        "correct": "القوسان يجعلان $(-4)^2 = 16$ ، أمّا $-4^2$ فتعني $-(4^2) = -16$ .",
+        "incorrect": "قيمة مختلفة تكفي لإثبات عدم التساوي، أمّا القيم المتساوية فلا تكفي لإثبات التساوي."
+      },
+      "solution": {
+        "lines": [
+          "لم يضع $-4$ بين قوسين: الصحيح $(-4)^2 - 9$"
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "احسب القيمة الصحيحة لـ $x^2 - 9$ من أجل $x = -4$ .",
+      "statement": "احسب قيمة العبارة $x^2 - 9$ من أجل $x = -4$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "-25",
+          "id": "MISC-QIMA-NEG-POWER"
+        },
+        {
+          "value": "-17",
+          "id": "MISC-QIMA-SQUARE-DOUBLE"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = -4$ هي $7$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$x^2 - 9 = (-4)^2 - 9$",
+          "$= 16 - 9$",
+          "$= 7$"
+        ],
+        "result": "7"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "حسب الثاني قيمة $3x^2$ من أجل $x = -2$ فكتب: $(3 \\times (-2))^2 = 36$ . أين الخطأ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا خطأ: المربّع يشمل المعامل أيضًا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QIMA-COEF-IN-POWER"
+        },
+        {
+          "id": "B",
+          "content": "أدخل المعامل $3$ في المربّع: الصحيح $3 \\times (-2)^2$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لم يضع $-2$ بين قوسين",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QIMA-NEG-POWER"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن القيمتين اللتين حسبتهما: هل اختلفتا عند قيمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قيمة واحدة تختلف عندها العبارتان تكفي لإثبات أنهما غير متساويتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أمّا تساوي القيمتين من أجل قيمة أو قيمتين فلا يثبت التساوي: لإثباته ننشر ونقارن الشكلين."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب الصحيح: أدخل المعامل $3$ في المربّع: الصحيح $3 \\times (-2)^2$",
+        "incorrect": "قيمة مختلفة تكفي لإثبات عدم التساوي، أمّا القيم المتساوية فلا تكفي لإثبات التساوي."
+      },
+      "solution": {
+        "lines": [
+          "أدخل المعامل $3$ في المربّع: الصحيح $3 \\times (-2)^2$"
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "احسب قيمة العبارة $3x^2$ من أجل $x = -2$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "36",
+          "id": "MISC-QIMA-COEF-IN-POWER"
+        },
+        {
+          "value": "-12",
+          "id": "MISC-QIMA-NEG-POWER"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = -2$ هي $12$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$3x^2 = 3 \\times (-2)^2$",
+          "$= 3 \\times 4$",
+          "$= 12$"
+        ],
+        "result": "12"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

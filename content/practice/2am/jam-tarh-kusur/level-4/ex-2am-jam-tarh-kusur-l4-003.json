@@ -1,0 +1,170 @@
+{
+  "id": "ex-2am-jam-tarh-kusur-l4-003",
+  "lessonCode": "jam-tarh-kusur",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مجموع ثمّ قيمة مقرّبة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جمع كسرين",
+      "كتابة عشرية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نريد حساب $\\dfrac{7}{12} + \\dfrac{1}{4}$ ثمّ كتابة الناتج بالفاصلة ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $S = \\dfrac{7}{12} + \\dfrac{1}{4}$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "5/6",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1/2",
+          "id": "MISC-JAMKASR-ACROSS"
+        },
+        {
+          "value": "2/3",
+          "id": "MISC-JAMKASR-NOSCALE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليّة المطلوبة؟ وهل المقامان متساويان، أم أنّ أحدهما مضاعف للآخر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا اختلف المقامان فاكتب الكسر ذا المقام الأصغر بالمقام الأكبر: اضرب حدّيه في العدد نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع (أو اطرح) البسطين وأبقِ المقام كما هو، ثمّ اختزل الناتج إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = \\dfrac{5}{6}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{4} = \\dfrac{1 \\times 3}{4 \\times 3} = \\dfrac{3}{12}$ .",
+          "$S = \\dfrac{7}{12} + \\dfrac{1}{4} = \\dfrac{7 + 3}{12} = \\dfrac{10}{12}$ .",
+          "نختزل بالقسمة على $2$ : $\\dfrac{10}{12} = \\dfrac{5}{6}$ ."
+        ],
+        "result": "S = \\dfrac{5}{6}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط القيمة المقرّبة بالنقصان إلى 0{,}01 للعدد $\\dfrac{5}{6}$ .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "0.83",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكسر هو حاصل قسمة بسطه على مقامه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}83$ .",
+        "incorrect": "أنجز القسمة بعد الفاصلة وتوقّف عند الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{6} = 5 \\div 6$",
+          "بالنقصان: نتوقّف عند الرتبة المطلوبة دون تغيير الرقم الأخير."
+        ],
+        "result": "0{,}83"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أعط القيمة المقرّبة بالزيادة إلى 0{,}01 للعدد $\\dfrac{5}{6}$ .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "0.84",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكسر هو حاصل قسمة بسطه على مقامه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}84$ .",
+        "incorrect": "أنجز القسمة بعد الفاصلة وتوقّف عند الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{6} = 5 \\div 6$",
+          "بالزيادة: نضيف وحدة واحدة من الرتبة المطلوبة إلى القيمة بالنقصان."
+        ],
+        "result": "0{,}84"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

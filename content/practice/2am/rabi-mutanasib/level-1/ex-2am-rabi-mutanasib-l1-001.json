@@ -1,0 +1,221 @@
+{
+  "id": "ex-2am-rabi-mutanasib-l1-001",
+  "lessonCode": "rabi-mutanasib",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — إتمام جدول تناسبية: استهلاك البنزين",
+    "estimatedMinutes": 6,
+    "tags": [
+      "جدول تناسبية",
+      "الرابع المتناسب"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 3,
+      "file": "2am-s3-30",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "تستهلك سيارة $6{,}5$ لترًا من البنزين لقطع مسافة $100$ km. أتمم جدول التناسبية التالي.",
+    "table": {
+      "head": [
+        "المسافة المقطوعة (km)",
+        "100",
+        "…",
+        "…",
+        "520"
+      ],
+      "rows": [
+        [
+          "كمية البنزين (L)",
+          "6,5",
+          "13",
+          "52",
+          "…"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما المسافة التي تقطعها السيارة بـ $13$ لترًا؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "200",
+      "misconceptionSignatures": [
+        {
+          "value": "106,5",
+          "id": "MISC-RABI-ADD"
+        },
+        {
+          "value": "1300",
+          "id": "MISC-RABI-MULROW"
+        },
+        {
+          "value": "0,845",
+          "id": "MISC-RABI-INV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "ضاعفنا كمية البنزين فتضاعفت المسافة: $200$ km .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$13 = 6{,}5 \\times 2$",
+          "$100 \\times 2 = 200$"
+        ],
+        "result": "200"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما المسافة التي تقطعها بـ $52$ لترًا؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "800",
+      "misconceptionSignatures": [
+        {
+          "value": "145,5",
+          "id": "MISC-RABI-ADD"
+        },
+        {
+          "value": "3,38",
+          "id": "MISC-RABI-INV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب $800$ km .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$52 = 13 \\times 4$",
+          "$200 \\times 4 = 800$"
+        ],
+        "result": "800"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما كمية البنزين اللازمة لقطع $520$ km؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "33,8",
+      "misconceptionSignatures": [
+        {
+          "value": "426,5",
+          "id": "MISC-RABI-ADD"
+        },
+        {
+          "value": "8000",
+          "id": "MISC-RABI-INV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب $33{,}8$ لتر.",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$520 = 100 \\times 5{,}2$",
+          "$6{,}5 \\times 5{,}2 = 33{,}8$"
+        ],
+        "result": "33{,}8"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+{
+  "id": "ex-4am-tanasub-taghayyurat-l4-003",
+  "lessonCode": "tanasub-taghayyurat",
+  "level": 4,
+  "metadata": {
+    "title": "اشتراك قاعة رياضة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "وضعية",
+      "تعيين دالة تآلفية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tanasub-taghayyurat_P2",
+      "modelledOn": "act-4",
+      "adaptedFrom": "ex-4am-tanasub-taghayyurat-l4-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في قاعة رياضة يقصدها الشباب للمحافظة على صحتهم، المبلغ المدفوع $f(x)$ (بـ DA) دالة تآلفية لعدد أشهر الاشتراك $x$ . اشتراك شهرين كلّف 3500DA ، واشتراك 6 أشهر كلّف 7500DA ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عيّن العبارة الجبرية للدالة $f$ .",
+      "statement": "أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "1000",
+      "misconceptionSignatures": [
+        {
+          "value": "4000",
+          "id": "MISC-TAGHAYYUR-BIDUN-QISMA"
+        },
+        {
+          "value": "-1000",
+          "id": "MISC-TAGHAYYUR-TARTIB"
+        },
+        {
+          "value": "0,001",
+          "id": "MISC-BAYANI-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خاصية تناسب التغيّرات: المعامل $a$ هو حاصل قسمة فرق الصورتين على فرق العددين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $\\dfrac{f(6) - f(2)}{6 - 2}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح بالترتيب نفسه في البسط والمقام، وانتبه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{4000}{4} = 1000$ .",
+        "incorrect": "اقسم فرق الصورتين على فرق العددين، واطرح بالترتيب نفسه في البسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "العبارة الجبرية للدالة التآلفية $f$ هي: $f(x) = ax + b$ .",
+          "إيجاد العدد $a$ (خاصية تناسب التغيّرات):",
+          "$a = \\dfrac{f(x_2) - f(x_1)}{x_2 - x_1}$",
+          "$a = \\dfrac{7500 - 3500}{6 - 2}$",
+          "$a = \\dfrac{4000}{4}$",
+          "$a = 1000$"
+        ],
+        "result": "a = 1000"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "1500",
+      "misconceptionSignatures": [
+        {
+          "value": "1750",
+          "id": "MISC-TAGHAYYUR-B-NISBA"
+        },
+        {
+          "value": "1000",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$f(2) = 3500$ و $f(x) = ax + b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $a$ بقيمته و $x$ بالعدد $2$ ، ثم حلّ المعادلة التي مجهولها $b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$b = 3500 - 2000 = 1500$ .",
+        "incorrect": "بعد حساب $a$ : $b = f(x_1) - a x_1$ ، وليس حاصل قسمة الصورة على العدد."
+      },
+      "solution": {
+        "lines": [
+          "إيجاد العدد $b$ (الترتيب إلى المبدأ):",
+          "لدينا: $f(2) = 3500$",
+          "أي: $1000 \\times 2 + b = 3500$",
+          "$2000 + b = 3500$",
+          "$b = 3500 - 2000$",
+          "$b = 1500$",
+          "ومنه العبارة الجبرية للدالة $f$ هي: $f(x) = 1000x + 1500$"
+        ],
+        "result": "f(x) = 1000x + 1500"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما هو عدد أشهر الاشتراك الذي يكلّف 12500DA ؟",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الأشهر",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "value": "12,5",
+          "id": "MISC-TAALUFI-SABIQ-QISMA"
+        },
+        {
+          "value": "-1487,5",
+          "id": "MISC-TAALUFI-SABIQ-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة $f(x) = 12500$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل الحدّ الثابت إلى الطرف الآخر أولا، ثم اقسم على المعامل."
+        }
+      ],
+      "feedback": {
+        "correct": "$1000x = 11000$ ، إذن $x = \\dfrac{11000}{1000}$ .",
+        "incorrect": "اطرح الحدّ الثابت من الطرفين أولا، ثم اقسم على المعامل."
+      },
+      "solution": {
+        "lines": [
+          "نحلّ المعادلة: $f(x) = 12500$",
+          "$1000x + 1500 = 12500$",
+          "$1000x = 12500 - 1500$",
+          "$1000x = 11000$",
+          "$x = \\dfrac{11000}{1000}$",
+          "$x = 11$"
+        ],
+        "result": "x = 11"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "lead": "تقترح قاعة أخرى 1250DA للشهر الواحد دون مبلغ ثابت.",
+      "statement": "أيّ العرضين أقل تكلفة لاشتراك مدّته 8 أشهر؟",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "عرض القاعة الأولى",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "عرض القاعة الثانية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المبلغ الذي يدفعه المشترك في كل قاعة لمدة 8 أشهر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن المبلغين."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(8) = 9500$ و $1250 \\times 8 = 10000$ .",
+        "incorrect": "احسب المبلغين لمدة 8 أشهر وقارنهما."
+      },
+      "solution": {
+        "lines": [
+          "القاعة الأولى: $f(8) = 1000 \\times 8 + 1500 = 9500$ أي $9500DA$",
+          "القاعة الثانية: $1250 \\times 8 = 10000$ أي $10000DA$",
+          "$9500 < 10000$ : عرض القاعة الأولى أقل تكلفة لمدة 8 أشهر."
+        ],
+        "result": "عرض القاعة الأولى"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

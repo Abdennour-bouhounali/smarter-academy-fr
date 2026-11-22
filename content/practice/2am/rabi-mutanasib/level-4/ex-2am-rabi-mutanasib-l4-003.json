@@ -1,0 +1,251 @@
+{
+  "id": "ex-2am-rabi-mutanasib-l4-003",
+  "lessonCode": "rabi-mutanasib",
+  "level": 4,
+  "metadata": {
+    "title": "نقل الحصى",
+    "estimatedMinutes": 12,
+    "tags": [
+      "معامل التناسبية",
+      "الرابع المتناسب"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-17",
+      "page": 79,
+      "section": "أوظّف تعلّماتي",
+      "number": 17
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "كتلة الحصى تتناسب مع حجمه: $8$ m³ من الحصى كتلتها $11{,}2$ طنًّا.",
+    "table": {
+      "head": [
+        "الحجم (m³)",
+        "8",
+        "12",
+        "…"
+      ],
+      "rows": [
+        [
+          "الكتلة (طن)",
+          "11,2",
+          "…",
+          "21"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب معامل التناسبية (كتلة المتر المكعّب الواحد بالطن).",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "1,4",
+      "misconceptionSignatures": [
+        {
+          "value": "89,6",
+          "id": "MISC-RABI-MULROW"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في الجدول عمودًا يحوي العددين المعلومين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "معامل التناسبية هو العدد الذي نضرب فيه كل عدد من السطر الأول لنحصل على مقابله في السطر الثاني."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم عددًا من السطر الثاني على مقابله في السطر الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "معامل التناسبية $1{,}4$ .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$11{,}2 \\div 8 = 1{,}4$"
+        ],
+        "result": "1{,}4"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب كتلة $12$ m³ من الحصى.",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "16,8",
+      "misconceptionSignatures": [
+        {
+          "value": "15,2",
+          "id": "MISC-RABI-ADD"
+        },
+        {
+          "value": "134,4",
+          "id": "MISC-RABI-MULROW"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتلة $16{,}8$ طنًّا.",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}4 \\times 12 = 16{,}8$"
+        ],
+        "result": "16{,}8"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب كتلة $12$ m³ بطريقة ثانية مختلفة، وبيّن أنّها تعطي النتيجة نفسها.",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن علاقة بسيطة بين عددين من السطر الأول: مجموع أو جداء أو ضعف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما يحدث في السطر الأول يحدث في السطر الثاني: المجموع يقابله مجموع، والجداء في عدد يقابله جداء في العدد نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل عددين معلومين من السطر الثاني لتركيب العدد المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$12 = 8 + 4$",
+          "كتلة $4$ m³ هي نصف كتلة $8$ m³ : $5{,}6$ طنًّا",
+          "$11{,}2 + 5{,}6 = 16{,}8$",
+          "النتيجة نفسها لأنّ الجدول جدول تناسبية: المجموع في السطر الأول يقابله المجموع في السطر الثاني."
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "الحمولة القصوى لشاحنة $21$ طنًّا: ما أقصى حجم من الحصى تنقله؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "29,4",
+          "id": "MISC-RABI-INV"
+        },
+        {
+          "value": "17,8",
+          "id": "MISC-RABI-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "الحجم $15$ m³ .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$21 \\div 1{,}4 = 15$"
+        ],
+        "result": "15"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

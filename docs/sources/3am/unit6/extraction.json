@@ -1,0 +1,2210 @@
+{
+ "_comment": [
+  "EXTRACTION CANONIQUE du manuel scolaire officiel — 3AM, الجيل الثاني (منشورات الشهاب 2017), unité 6 « التناسبية ».",
+  "Source : docs/official-book-pdfs/كتاب الرياضيات للسنة الثالثة متوسط الجيل الثاني.pdf, pages 86 à 101 du livre (PDF 86 à 101).",
+  "Ce fichier est LA source de vérité pédagogique de l’unité ; tout contenu cite un `id` d’ici via `source.elementId`.",
+  "Transcription VISUELLE ; réponses calculées (Fraction exacte) dans build-extraction.py, `answerSource: computed`.",
+  "Généré par docs/sources/3am/unit6/build-extraction.py — ne pas éditer à la main."
+ ],
+ "unitCode": "tanasubiya-sura",
+ "textbook": {
+  "title": "كتاب الرياضيات — السنة الثالثة من التعليم المتوسط",
+  "generation": "الجيل الثاني",
+  "unitNumber": 6,
+  "unitTitle": "التناسبية",
+  "pages": {
+   "first": 86,
+   "last": 101
+  },
+  "pdfPageOffset": 0,
+  "sections": [
+   "سأتعلّم في هذا الباب",
+   "تحدّي",
+   "أستعدّ",
+   "أنشطة",
+   "معارف",
+   "طرائق",
+   "دورك الآن",
+   "أوظّف تعلّماتي",
+   "أؤكّد تعلّماتي",
+   "أتعمّق",
+   "أدمج تعلّماتي",
+   "وضعية للتقويم",
+   "أوظّف تكنولوجيات الإعلام والاتصال"
+  ]
+ },
+ "frozenAt": "2026-10-21",
+ "terminology": {
+  "note": "Le manuel écrit « التناسبية », « جدول تناسبية », « مُعامل التناسبية », « التمثيل البياني », « نقاط في استقامية مع مبدإ المعلم », « الفاصلة / الترتيب », « النسبة المئوية », « الحركة المنتظمة », « السرعة المتوسطة », « السرعة اللحظية ».",
+  "terms": [
+   "تناسبية",
+   "جدول تناسبية",
+   "مُعامل التناسبية",
+   "تمثيل بياني",
+   "استقامية",
+   "مبدأ المعلم",
+   "فاصلة",
+   "ترتيب",
+   "نسبة مئوية",
+   "حركة منتظمة",
+   "سرعة متوسطة"
+  ]
+ },
+ "elements": [
+  {
+   "id": "objectives",
+   "kind": "objectives",
+   "page": 86,
+   "section": "سأتعلّم في هذا الباب",
+   "verified": true,
+   "items": [
+    "التعرف على وضعية تناسبية في تمثيل بياني.",
+    "استعمال التناسبية في وضعيات تدخل فيها النسبة المئوية.",
+    "التعرف على الحركة المنتظمة.",
+    "استعمال المساواة d = V × t في حسابات متعلقة بالمسافة المقطوعة والسرعة والزمن.",
+    "تحويل وحدات قياس السرعة وتوظيف التناسبية لاستعمال وحدات الزمن."
+   ]
+  },
+  {
+   "id": "opener",
+   "kind": "aside",
+   "page": 86,
+   "section": "تمهيد (نص تاريخي)",
+   "verified": false,
+   "unreadable": true,
+   "reading": "Le cadre violet (histoire) est détruit par des blocs de pixels : seuls des fragments isolés se devinent (« السرعة », « ساعة رملية », « عقدة » / « ميل بحري », des marins et une corde à nœuds) — IMPOSSIBLE à transcrire, NON reconstitué. Photo : un moulinet à corde (loch) et un sablier — la mesure de la vitesse des navires. Titre et liste « سأتعلّم » lisibles (voir `objectives`)."
+  },
+  {
+   "id": "challenge",
+   "kind": "challenge",
+   "page": 86,
+   "section": "تحدّي",
+   "verified": true,
+   "text": "البيان المقابل يُمثّل المسافة المقطوعة بدلالة الزمن لعدّاء. 1) ما هي المسافة التي قطعها هذا العداء في مُدّة 3min34s؟ 2) ما هي المدة الموافقة لقطع مسافة 1500m؟",
+   "figure": {
+    "type": "graph",
+    "xAxis": "الزمن (s)",
+    "yAxis": "المسافة (m)",
+    "marked": {
+     "x": 4,
+     "y": 24,
+     "dashed": true
+    },
+    "note": "une demi-droite issue de O passant par le point marqué (4 s ; 24 m) ; AUCUNE autre graduation ni point imprimé"
+   },
+   "reading": "p. 86 relue à 220 dpi : axes (m) en ordonnée et (s) en abscisse ; seules graduations imprimées 0, 4 (s) et 24 (m) avec deux tirets menant au point (4 ; 24). La droite elle-même est quasi invisible dans le scan (quelques pointillés bleutés entre O et (4 ; 24) et au-delà) : lue comme une demi-droite issue de O. Les réponses se déduisent du coefficient 24/4.",
+   "answer": {
+    "speed": "6 m/s",
+    "3min34s": "214 s → 1284 m",
+    "1500m": "250 s = 4 min 10 s"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "prep",
+   "kind": "prep",
+   "page": 87,
+   "section": "أستعدّ",
+   "verified": true,
+   "text": "جد الإجابة الصحيحة (أو الإجابات الصحيحة) في كل حالة، مبرّرا إياها.",
+   "items": [
+    {
+     "n": 1,
+     "question": "الجدول الذي يُمثّل وضعية تناسبية هو الجدول…",
+     "options": [
+      "7 ; 6 ; 0 فوق 56 ; 48 ; 8",
+      "12 ; 6 ; 4 فوق 18 ; 9 ; 6 (قراءة العمودين 4→6, 6→9, 12→18)",
+      "2 ; 3 ; 6 فوق 5 ; 7,5 ; 15"
+     ],
+     "correct": [
+      1,
+      2
+     ],
+     "columns_read": {
+      "(1)": [
+       [
+        7,
+        56
+       ],
+       [
+        6,
+        48
+       ],
+       [
+        0,
+        8
+       ]
+      ],
+      "(2)": [
+       [
+        4,
+        6
+       ],
+       [
+        6,
+        9
+       ],
+       [
+        12,
+        18
+       ]
+      ],
+      "(3)": [
+       [
+        2,
+        5
+       ],
+       [
+        3,
+        7.5
+       ],
+       [
+        6,
+        15
+       ]
+      ]
+     },
+     "coefficients": {
+      "(2)": "3/2",
+      "(3)": "5/2"
+     }
+    },
+    {
+     "n": 2,
+     "question": "5 عُلب متماثلة تزن 4kg. تزن العُلبة الواحدة…",
+     "options": [
+      "1,25kg",
+      "0,8kg",
+      "1kg"
+     ],
+     "correct": [
+      1
+     ]
+    },
+    {
+     "n": 3,
+     "question": "في هذه الوضعية التناسبية… (كمية البنزين المستهلكة 4L ← المسافة 100km ؛ 6L ← x)",
+     "options": [
+      "100 ÷ 4 = 25 ومنه: x = 25 × 6",
+      "6 ÷ 4 = 1,5 ومنه: x = 100 × 1,5",
+      "6 - 4 = 2 ومنه: x - 100 = 2"
+     ],
+     "correct": [
+      0,
+      1
+     ],
+     "x": "150"
+    },
+    {
+     "n": 4,
+     "question": "معامل التناسبية المُشار إليه في الجدول هو: (الكتلة kg: 7 ، 14 ← السعر DA: 600 ، 1200)",
+     "options": [
+      "7/600",
+      "600/7",
+      "600 × 7"
+     ],
+     "correct": [
+      1
+     ],
+     "note": "coefficient « السعر ÷ الكتلة » = 600/7 DA par kg (sens kg → DA, celui du tableau)"
+    },
+    {
+     "n": 5,
+     "question": "في جدول التناسبية هذا قيمة x تُساوي… (2,8 ← 0,4 ؛ 7,6 ← x)",
+     "options": [
+      "2,8 × 7,6 / 0,4",
+      "2,8 × 0,4 / 7,6",
+      "0,4 × 7,6 / 2,8"
+     ],
+     "correct": [
+      2
+     ],
+     "x": "38/35",
+     "columns_read": {
+      "table": [
+       [
+        2.8,
+        0.4
+       ],
+       [
+        7.6,
+        "x"
+       ]
+      ]
+     }
+    },
+    {
+     "n": 6,
+     "question": "إحداثيا النقطة A في هذا المعلم هما… (A : فاصلتها 2 وترتيبها 3 ؛ تدريجان 1…4 على المحورين)",
+     "options": [
+      "(2;3)",
+      "(3;2)",
+      "الفاصلة 2 والترتيب 3"
+     ],
+     "correct": [
+      0,
+      2
+     ],
+     "A": [
+      2,
+      3
+     ]
+    },
+    {
+     "n": 7,
+     "question": "في إحدى الأقسام توجد 12 بنتا من بين 30 متمدرسا. النسبة المئوية للبنات في هذا القسم هي…",
+     "options": [
+      "40%",
+      "70%",
+      "25%"
+     ],
+     "correct": [
+      0
+     ]
+    },
+    {
+     "n": 8,
+     "question": "لحساب 75% من 200 نُجري العملية…",
+     "options": [
+      "200 × 0,75",
+      "200 × 75 / 100",
+      "200 - 75"
+     ],
+     "correct": [
+      0,
+      1
+     ]
+    },
+    {
+     "n": 9,
+     "question": "x عدد حيث 2 = 3/x إذن…",
+     "options": [
+      "x = 6",
+      "x = 2/3",
+      "x = 1,5"
+     ],
+     "correct": [
+      2
+     ]
+    },
+    {
+     "n": 10,
+     "question": "نعبّر عن الساعة ونصف الساعة بـ…",
+     "options": [
+      "1,30h",
+      "1,5h",
+      "1h30min"
+     ],
+     "correct": [
+      1,
+      2
+     ]
+    }
+   ],
+   "columns": "[(1), (2), (3)] ; (1) = colonne de droite",
+   "answerSource": "computed",
+   "reading": "p. 87 relue à 220 dpi (tableaux 1, 3, 4, 5 et repère 6 découpés). Item 1 : colonnes lues par paires (x ; y) — (1) contient une colonne (0 ; 8), donc non proportionnel. Item 4 : lignes « الكتلة 14 | 7 » et « السعر 1200 | 600 » : 7 kg ↔ 600 DA. Item 5 : colonnes (2,8 ; 0,4) et (7,6 ; x). Item 6 : A(2 ; 3) (fenêtre y 0…4, x 0…4). Le surlignage jaune de la colonne (2) est un artefact du scan (voir l’en-tête). Items 7, 8, 9 : 40 %, 75 % de 200, 2 = 3/x."
+  },
+  {
+   "id": "act-1",
+   "kind": "activity",
+   "page": 88,
+   "section": "أنشطة 1 — تحديد خصائص وضعية تناسبية في تمثيل بياني",
+   "verified": true,
+   "text": "يحتاج أيوب إلى دبابيس لتزيين القسم. لذلك عليه أن يختار بين العروض الثلاثة الآتية: المحل (1): 5DA للعُلبة الواحدة. المحل (2): 2,5DA للعُلبة الواحدة + قيمة جُزافية 10DA. المحل (3): من عُلبة إلى 8 عُلب: تُحسب العُلبة الواحدة بـ 5DA ، بدءًا من العُلبة التاسعة تُحسب العُلبة الواحدة بـ 2DA. 1) من أجل كُل عرض من العُروض الثلاثة، انقل وأتمم الجدول المقابل (عدد العُلب 2 ، 6 ، 12 ، 14 ← الثمن DA) • اذكر في كُل حالة إن كان الجدول يُمثّل وضعية تناسبية؟ 2) ارسم معلما (على محور الفواصل مربع واحد يُمثّل عُلبة واحدة وعلى محور التراتيب مربّع واحد يُمثّل 5DA). مثّل في هذا المعلم وبألوان مُختلفة مُعطيات الجدول المُناسب لكُل عرض من العروض الثلاثة. 3) اشرح كيف يُمكن التعرّف بيانيا على جدول تناسبية.",
+   "answer": {
+    "boxes": [
+     2,
+     6,
+     12,
+     14
+    ],
+    "shop1": [
+     "10",
+     "30",
+     "60",
+     "70"
+    ],
+    "shop2": [
+     "15",
+     "25",
+     "40",
+     "45"
+    ],
+    "shop3": [
+     "10",
+     "30",
+     "48",
+     "52"
+    ],
+    "proportional": {
+     "shop1": true,
+     "shop2": false,
+     "shop3": false
+    },
+    "coefficientShop1": "5 DA par boîte",
+    "plottedSquares (x boîtes ; y × 5 DA)": {
+     "shop1": [
+      [
+       2,
+       "2"
+      ],
+      [
+       6,
+       "6"
+      ],
+      [
+       12,
+       "12"
+      ],
+      [
+       14,
+       "14"
+      ]
+     ],
+     "shop2": [
+      [
+       2,
+       "3"
+      ],
+      [
+       6,
+       "5"
+      ],
+      [
+       12,
+       "8"
+      ],
+      [
+       14,
+       "9"
+      ]
+     ],
+     "shop3": [
+      [
+       2,
+       "2"
+      ],
+      [
+       6,
+       "6"
+      ],
+      [
+       12,
+       "9,6"
+      ],
+      [
+       14,
+       "10,4"
+      ]
+     ]
+    },
+    "graphReading": "shop1 : points alignés avec l’origine ; shop2 : points alignés mais la droite ne passe pas par l’origine (ordonnée à l’origine 10 DA) ; shop3 : points NON alignés (la pente change après 8 boîtes)",
+    "3": "situation de proportionnalité ⇔ points alignés avec l’origine du repère"
+   },
+   "answerSource": "computed",
+   "note": "Posée en APPLICATION (guide §4ter) : la plateforme conçoit son propre lab d’entrée ; cette activité sert d’exercice.",
+   "reading": "Tableau relu à 220 dpi : 2, 6, 12, 14. Le texte du magasin 3 est lu « 5 DA la boîte jusqu’à 8 boîtes ; à partir de la 9e boîte, 2 DA la boîte »."
+  },
+  {
+   "id": "act-2",
+   "kind": "activity",
+   "page": 88,
+   "section": "أنشطة 2 — استعمال النسبة المئوية",
+   "verified": true,
+   "text": "1) بلغ عدد سُكان الجزائر 40 مليون نسمة سنة 2016. أ) خلال هذه السنة، بلغت نسبة فئة السكان الذين تقلّ أعمارهم عن 15 سنة 29%. ما هو عدد السكان البالغين 15 سنة فأكثر؟ ب) خلال هذه السنة حوالي 10,8 مليون امرأة تتراوح أعمارهن بين 15 سنة و 49 سنة. ما هي النسبة المئوية لهذه الفئة السكانية؟ جـ) إذا اعتبرنا أنّ عدد السكان سيرتفع بـ 37,5% بين 2016 و 2050، فما هو عدد السكان سنة 2050. 2) في إحدى المؤسسات الصناعية، 25% من أصل 200 عاملة هُنّ مُهندسات و 35% من أصل 300 عامل هُم مُهندسون. ما هي النسبة المئوية للمهندسين والمهندسات معا في هذه المؤسسة؟",
+   "answer": {
+    "1a": "0,71 → 28,4 millions (71 %)",
+    "1b": "27%",
+    "1c": "55 millions",
+    "2": {
+     "women engineers": 50,
+     "men engineers": 105,
+     "total": "155 sur 500",
+     "percent": "31%"
+    }
+   },
+   "answerSource": "computed",
+   "note": "Posée en APPLICATION (guide §4ter) : la plateforme conçoit son propre lab d’entrée ; cette activité sert d’exercice."
+  },
+  {
+   "id": "act-3",
+   "kind": "activity",
+   "page": 89,
+   "section": "أنشطة 3 — احترام إشارة تحديد السرعة",
+   "verified": false,
+   "text": "انطلق الأب وابنه في رحلة على متن سيارة. 1) قطع الأب في المرحلة الأولى مسافة 180km في مُدّة 2h. نفترض أنّه حافظ باستمرار على سرعة ثابتة أثناء قيادة السيارة. أ) ما هي المسافة التي قطعها خلال ساعة واحدة؟ نقول أنّ السرعة المتوسطة لهذه السيارة في هذه المرحلة هي 90 كيلومتر في الساعة ونكتب 90km/h. ب) في مرحلة ثانية من هذه الرحلة، ظلّ الأب يقود السيارة لمُدّة 1,5h وبسرعة متوسطة قدرها 83km/h. ما هي المسافة التي قطعها خلال هذه المرحلة؟ جـ) ما هي سرعته المتوسطة التي قطع بها المسافتين معا خلال المرحلتين؟ 2) طلب الأب من ابنه أن يساعده على قيادة السيارة، علما أنّ للابن رخصة سياقة جديدة تفرض عليه عدم تجاوز سرعة 80km/h. أ) قطع الابن مسافة 120km في مُدّة 1h30min. ما هي سرعته المتوسطة؟ هل احترم الابن تحديد السرعة الذي تفرضه رخصته؟ ب) قال الأب للابن: « كان عليك التوقّف مرتين عند الضوء الأحمر ». ماذا تستنتج؟",
+   "answer": {
+    "1a": "90 km",
+    "1b": "124,5 km",
+    "1c": "609/2/7/2 = 87 km/h (≠ moyenne de 90 et 83)",
+    "2a": "80 km/h : limite respectée (exactement 80)",
+    "2b": "la vitesse MOYENNE cache des arrêts : pendant la marche la vitesse instantanée a dépassé 80 km/h"
+   },
+   "answerSource": "computed",
+   "reading": "2b est une question de lecture : « à l’arrêt deux fois » ⇒ la voiture a roulé plus vite que 80 km/h entre les arrêts (la moyenne n’est pas la vitesse à chaque instant)."
+  },
+  {
+   "id": "know-0",
+   "kind": "aside",
+   "page": 89,
+   "section": "هل تعلم؟",
+   "verified": false,
+   "text": "تُعتبر السرعة مفهوما مألوفا ومتداولا عند العام والخاص في حياتنا المُعاصرة. فالسائق الذي يقطع مسافة 320km خلال مُدّة 4h يقول إن سرعته المتوسطة كانت 80km/h، رغم أنّه لاحظ خلال سفره أنّ سرعته غير ثابتة (يحدث تسارع أو تباطؤ…) وأنّ عدّاد السيارة يُشير في كل لحظة لقيمة تارة أكبر وتارة أصغر من 80km/h لأنّ عدّاد السيارة يُشير إلى قيمة سرعة السيارة في كل لحظة. نقول أنّ هناك سرعتين: السرعة المتوسطة والسرعة اللحظية. السرعة المتوسطة هي السرعة التي يُفترض أن تكتسبها السيارة إذا قطعت مسافات متساوية في مُدد متساوية مُحافظة باستمرار على نفس السرعة.",
+   "answer": {
+    "320/4": "80 km/h"
+   },
+   "answerSource": "computed",
+   "reading": "figure : un compteur de vitesse gradué 20…220 km/h (aiguille près de 20)"
+  },
+  {
+   "id": "know-1a",
+   "kind": "knowledge",
+   "page": 90,
+   "section": "معارف 1 — التعرّف على وضعية تناسبية في تمثيل بياني (خاصية 1)",
+   "verified": true,
+   "text": "خاصية 1: تُمثّل بيانيا كل وضعية تناسبية في معلم بنقاط في استقامية مع مبدإ المعلم. مثال: الجدول الآتي هو جدول تناسبية (الزمن h : 1 ، 3 ، 4 ← درجة الحرارة °C : 10 ، 30 ، 40). يُمثَّل بيانيا في معلم بنقاط في استقامية مع مبدإ المعلم.",
+   "answer": {
+    "coefficient": "10 °C par heure",
+    "points": [
+     [
+      1,
+      10
+     ],
+     [
+      3,
+      30
+     ],
+     [
+      4,
+      40
+     ]
+    ],
+    "alignedWithOrigin": true
+   },
+   "answerSource": "computed",
+   "figure": {
+    "axes": "x : (h) 0…4 ; y : (°C) 10…50",
+    "points": [
+     [
+      1,
+      10
+     ],
+     [
+      3,
+      30
+     ],
+     [
+      4,
+      40
+     ]
+    ],
+    "line": "droite pointillée issue de O"
+   },
+   "reading": "graphique relu à 220 dpi : trois points (1;10), (3;30), (4;40) sur une droite pointillée issue de l’origine."
+  },
+  {
+   "id": "know-1b",
+   "kind": "knowledge",
+   "page": 90,
+   "section": "معارف 1 — خاصية 2",
+   "verified": true,
+   "text": "خاصية 2: كل تمثيل بياني نقاطه في استقامية مع مبدإ المعلم يُمثّل وضعية تناسبية. مثال: (أ) النقاط ليست في استقامية، إذن هذا البيان لا يُمثّل وضعية تناسبية. (ب) النقاط ليست في استقامية مع مبدإ المعلم، إذن هذا البيان لا يُمثّل وضعية تناسبية. (جـ) النقاط في استقامية مع مبدإ المعلم، إذن هذا البيان يُمثّل وضعية تناسبية.",
+   "figure": {
+    "axes": "x : (h) 0…4 ; y : (°C) 10…50 (même repère trois fois)",
+    "rightGraph (curve)": {
+     "points": [
+      [
+       0,
+       0
+      ],
+      [
+       2,
+       10
+      ],
+      [
+       4,
+       40
+      ]
+     ],
+     "shape": "courbe pointillée convexe passant par O : points NON alignés"
+    },
+    "middleGraph": {
+     "points": [
+      [
+       0,
+       50
+      ],
+      [
+       2,
+       40
+      ],
+      [
+       3,
+       35
+      ]
+     ],
+     "shape": "droite décroissante qui coupe l’axe des ordonnées en 50 : points alignés mais PAS avec l’origine"
+    },
+    "leftGraph": {
+     "points": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       20
+      ],
+      [
+       2,
+       40
+      ]
+     ],
+     "shape": "droite croissante issue de O : points alignés avec l’origine"
+    }
+   },
+   "answer": {
+    "curve": "non",
+    "lineNotThroughO": "non",
+    "lineThroughO": "oui (coefficient 20)"
+   },
+   "answerSource": "computed",
+   "reading": "trois graphiques relus à 220 dpi (de droite à gauche dans le livre) : courbe (0;0)(2;10)(4;40) ; droite (0;50)(2;40)(≈3;35) — le troisième point est lu à ≈ 35–36, sans importance : le refus vient de l’ordonnée à l’origine ; droite (0;0)(1;20)(2;40)."
+  },
+  {
+   "id": "know-2a",
+   "kind": "knowledge",
+   "page": 90,
+   "section": "معارف 2 — النسبة المئوية (خاصية)",
+   "verified": true,
+   "text": "خاصية: t يُشير إلى عدد. لحساب t% من عدد، نضرب هذا العدد في t/100. طريقة: يؤول حساب نسبة مئوية إلى حساب مُعامل تناسبية والتعبير عنه بالكتابة t/100.",
+   "answer": {
+    "example 70 % of 75": "52,5"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "know-2b",
+   "kind": "knowledge",
+   "page": 90,
+   "section": "معارف 2 — أمثلة",
+   "verified": true,
+   "text": "مثال 1: تحتوي قارورة عصير سعتها 75cL على 70% ماء. (جدول: ماء cL : 52,5 ، 70 ؛ عصير cL : 75 ، 100 ؛ المعامل × 70/100). يوجد 52,5cL من الماء في هذه القارورة. مثال 2: من بين 32 مُتمدرسا في أحد الأقسام، توجد 8 بنات. (8/32 = 0,25 = 25/100). النسبة المئوية للبنات في هذا القسم هي 25%.",
+   "answer": {
+    "example1": "52,5 cL",
+    "example2": "25%"
+   },
+   "answerSource": "computed",
+   "reading": "deux tableaux de proportionnalité lus à 220 dpi : (eau 52,5 | 70 ; jus 75 | 100) et (8 | … ; 32 | 100) avec flèches × 70/100 et × ?"
+  },
+  {
+   "id": "method-1a",
+   "kind": "method",
+   "page": 91,
+   "section": "طرائق — التناسبية والتمثيل البياني",
+   "verified": true,
+   "text": "تمرين: يُمثّل التمثيل البياني المقابل، كتلة بنزين m بـ (kg) بدلالة حجمه V بـ (L). 1) ما هي كتلة 2L من هذا البنزين؟ 2) عبّر عن m بدلالة V. 3) احسب كتلة 7L من هذا البنزين. 4) احسب حجم 10,5kg من هذا البنزين. حل: 1) 1,5kg هي كُتلة 2L من هذا البنزين. 2) يُمثّل البيان وضعية تناسبية لأن نقاطه في استقامية مع مبدإ المعلم. الجدول المُقابل هو جدول تناسبية. حسب مُساواة الجداءين المُتصالبين نجد: m = 1,5 × V / 2 ومنه m = 0,75 × V ؛ (0,75 هو معامل التناسبية و يُمثّل في هذه الوضعية كُتلة 1L بـ kg). 3) كتلة 7L من هذا البنزين هي 5,25kg. 4) حجم 10,5kg من هذا البنزين هو 14L. تعاليق: الحجم مُمثّل على محور الفواصل والكُتلة مُمثّلة على محور التراتيب. للإجابة على السؤالين 3 و 4 يُمكن استعمال العبارة الحرفية m = 0,75V أو يُمكن إتمام جدول التناسبية الآتي بالإجراء المُناسب (الحجم L: 2 ، 7 ، y ؛ الكتلة kg: 1,5 ، x ، 10,5).",
+   "figure": {
+    "axes": "x : الحجم (L) 1…4 ; y : الكتلة (kg) 1…4",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      0.75
+     ],
+     [
+      2,
+      1.5
+     ],
+     [
+      4,
+      3
+     ]
+    ],
+    "line": "droite pointillée issue de O"
+   },
+   "answer": {
+    "1": "1,5 kg",
+    "2": "m = 0,75 V",
+    "3": "5,25 kg",
+    "4": "14 L"
+   },
+   "answerSource": "computed",
+   "reading": "graphique relu à 220 dpi : points (0;0), (1;≈0,75), (2;1,5), (4;3) ; le repère annexe de « تعاليق » marque 1,5 et 2 en pointillés."
+  },
+  {
+   "id": "method-1b",
+   "kind": "method",
+   "page": 91,
+   "section": "طريقة — M(x ; y) sur une droite issue de l’origine",
+   "verified": true,
+   "text": "طريقة: إذا كانت M(x;y) نقطة من نقاط في استقامية مع مبدإ المعلم فإنّه يُمكن التعبير عن y بدلالة x في علاقة من الشكل y = ax.",
+   "answer": {
+    "rule": "y = a·x ; a = ordonnée du point d’abscisse 1"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "method-2",
+   "kind": "method",
+   "page": 91,
+   "section": "طرائق — زيادة وتخفيض",
+   "verified": true,
+   "text": "تمرين: سعر كتاب 2000DA ازداد سعره بـ 10%، ثم انخفض بـ 10%، ما هو سعره الجديد؟ حل: ازدياد السعر بـ 10% يعني أنّ السعر صار 2200DA (2000 + 0,1 × 2000 = 2200). انخفاض السعر السابق بـ 10% يعني أنّ السعر صار 1980DA (2200 − 0,1 × 2200 = 1980). إذن السعر الجديد للكتاب هو 1980DA. ملاحظة: زيادة سعر بـ 10% ثم تخفيضه بـ 10% لا يُعيدنا إلى السعر الأصلي. طريقة: 1) لحساب ناتج زيادة x بـ t%، نحسب x + x × t/100 أو نحسب (1 + t/100)x. 2) لحساب ناتج تخفيض x بـ t%، نحسب x − x × t/100 أو نحسب (1 − t/100)x.",
+   "answer": {
+    "after +10%": "2200",
+    "after −10%": "1980",
+    "difference with start": "-20",
+    "factor": "0,99 (= 0,99)"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "now-91",
+   "kind": "now",
+   "page": 91,
+   "section": "دورك الآن (p. 91)",
+   "verified": true,
+   "text": "سعر كتاب 2000DA، انخفض سعره بـ 10%، ثم ازداد بـ 10%، ما هو سعره الجديد؟ • قارن النتيجة بنتيجة المشكل السابق، ماذا يُمكن أن تستنتج؟",
+   "answer": {
+    "after −10%": "1800",
+    "after +10%": "1980",
+    "conclusion": "même résultat 1980 DA : l’ordre des deux variations ne change pas le prix final (les facteurs se multiplient dans n’importe quel ordre) ; et 1980 ≠ 2000"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "know-3",
+   "kind": "knowledge",
+   "page": 92,
+   "section": "معارف 3 — الحركة المنتظمة والسرعة المتوسطة",
+   "verified": false,
+   "text": "نقول عن حركة أنّها منتظمة إذا كانت المسافات التي يقطعها مُتحرك مُتناسبة مع المُدد الموافقة لها. مُعامل التناسبية هو السرعة المتوسطة V. (الجدول: المُدّة t ← المسافة d ؛ × V) وبالتالي d = V × t. السرعة المتوسطة لمتحرك هي حاصل قسمة المسافة المقطوعة (d) على المدة الزمنية المستغرقة لقطع هذه المسافة (t): V = d/t. مثال 1: يُمثّل البيان المقابل المسافات المقطوعة لدراجة نارية بدلالة الزمن. التمثيل البياني عبارة عن نقاط في استقامية مع مبدإ المعلم، إذن المسافة المقطوعة مُتناسبة مع المُدّة المستغرقة لقطعها؛ فالحركة منتظمة. يقطع الدرّاج مسافة 120km خلال 1 ساعة. السرعة المتوسطة للدراجة هي V = 120Km/h. مثال 2: حساب سرعة متوسطة. قطعت سيارة مسافة 246km في 3h. V = d/t ومنه V = 246/3 = 82. السرعة المتوسطة للسيارة هي 82km/h أو 82km.h⁻¹. مثال 3: حساب مسافة. سار راجل مُدّة 50s بسرعة متوسطة قدرها 1,5m/s. d = V × t ومنه d = 1,5 × 50 = 75. قطع هذا الراجل مسافة 75m. مثال 4: حساب مُدّة زمنية. يقطع قطار مسافة 450km بسرعة متوسطة قدرها 90km/h. d = V × t ومنه 450 = 90 × t أي t = 450/90 = 5. مُدّة رحلة القطار هي 5h. ملاحظات: • في حركة منتظمة، يُعبّر عن المسافة بالمساواة d = V × t ويُعبّر عن المدة بالمساواة t = d/V حيث d هي المسافة المقطوعة و t المدة المستغرقة لقطع المسافة. • يُعبّر عن السرعة حسب الوحدات المختارة للمسافة وللمدة المستغرقة لقطع هذه المسافة. إذا عُبّر عن المسافة بالكيلومتر (km) وللمدة بالساعة (h) فإنّ السرعة يُعبّر عنها في الساعة بالكيلومتر ونكتب: Km/h أو Km.h⁻¹ (تُقرأ كيلومتر في الساعة). إذا عُبّر عن المسافة بالمتر (m) وللمدة بالثانية (s) فإنّ السرعة يُعبّر عنها بالمتر في الثانية ونكتب: m/s أو m.s⁻¹.",
+   "answer": {
+    "ex1": "120 km/h",
+    "ex2": "82 km/h",
+    "ex3": "75 m",
+    "ex4": "5 h"
+   },
+   "answerSource": "computed",
+   "figure": {
+    "axes": "x : الزمن (h) 1…5 ; y : المسافة (km) 60…540 par 60",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      0.5,
+      60
+     ],
+     [
+      1,
+      120
+     ],
+     [
+      2,
+      240
+     ],
+     [
+      4,
+      480
+     ]
+    ],
+    "line": "droite pointillée issue de O"
+   },
+   "reading": "graphique de l’exemple 1 relu à 220 dpi : points (½;60), (1;120), (2;240), (4;480) sur une droite issue de O."
+  },
+  {
+   "id": "method-3",
+   "kind": "method",
+   "page": 93,
+   "section": "طرائق — تحويل وحدات قياس السرعة",
+   "verified": false,
+   "text": "تمرين: 1) عبّر عن السرعة V = 15,3Km.h⁻¹ بـ (m/s). 2) عبّر عن السرعة V = 20m/s بـ (Km/h). حل: 15,3Km.h⁻¹ تُكتب أيضا 15,3Km/1h وتعني أنّ المُدّة التي استُغرقت لقطع مسافة 15,3km هي 1h. نعلم أنّ 1h = 3600s و 1Km = 1000m. 1) V = 15,3Km.h⁻¹ = 15,3Km/1h = 15,3 × 1000m / 1 × 3600s = 4,25m.s⁻¹. 2) V = 20m.s⁻¹ = 20m/1s = 3600 × 20Km / 1000 × 1h = 72Km.h⁻¹. طريقة: تحويل وحدة قياس السرعة يؤول إلى تحويل وحدة الزمن ووحدة المسافة في عبارة السرعة. • للتحويل من km.h⁻¹ إلى m.s⁻¹ نضرب في 1000/3600. • للتحويل من m.s⁻¹ إلى km.h⁻¹ نضرب في 3600/1000.",
+   "answer": {
+    "1": "4,25 m/s",
+    "2": "72 km/h"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "method-4",
+   "kind": "method",
+   "page": 93,
+   "section": "طرائق — استعمال المساواة d = V × t",
+   "verified": false,
+   "text": "تمرين: 1) سارت فاطمة على طريق سيار مُدّة 1h30min وبسرعة متوسطة قدرها 105Km.h⁻¹. ما هي المسافة التي قطعتها؟ 2) قطع عماد على متن دراجته مسافة 36km بسرعة متوسطة قدرها 16Km.h⁻¹. ما هي المدة الزمنية لقطع هذه المسافة؟ 3) قطع أيوب مسافة 10km مشيا، واستغرقت المسافة المقطوعة 1h15min. احسب سرعته المتوسطة. حل وتعاليق: 1) t = 1h30min = 1h + 0,5h = 1,5h (جدول: ساعة 1 ، x ؛ دقيقة 60 ، 30 ؛ x = 30/60 = 0,5) ؛ d = V × t إذن d = 105 × 1,5 = 157,5. المسافة التي قطعتها فاطمة هي 157,5Km. 2) نعلم أنّ d = V × t ومنه t = d/V = 36/16 = 2,25h أي 2h + 0,25h ؛ 0,25h = 0,25 × 60min = 15min. قطع عماد المسافة في مُدّة 2h15min. 3) t = 1h15min = 1h + 0,25h = 1,25h ؛ V = d/t = 10/1,25 = 8. مشى أيوب بسرعة متوسطة قدرها 8Km.h⁻¹. طريقة: • إذا عُلم عددان من بين الأعداد الثلاثة d ، V ، t فإنّه يُمكننا حساب العدد الثالث باستعمال الصيغة d = V × t. • لتحويل الساعات إلى دقائق نضرب في 60 (لأنّ 1h = 60min).",
+   "answer": {
+    "1": "157,5 km",
+    "2": "2,25 h = 2h15min",
+    "3": "8 km/h"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "now-93-1",
+   "kind": "now",
+   "page": 93,
+   "section": "دورك الآن (p. 93) — 1",
+   "verified": false,
+   "text": "قطع درّاج مسافة 5400m في مُدّة 12min. احسب سرعته المتوسطة بـ m.s⁻¹ ثُمّ بـ Km.h⁻¹.",
+   "answer": {
+    "m/s": "7,5",
+    "km/h": "27"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "now-93-2",
+   "kind": "now",
+   "page": 93,
+   "section": "دورك الآن (p. 93) — 2",
+   "verified": false,
+   "text": "قطعت سيارة 260km بسرعة متوسطة قدرها 80Km.h⁻¹. احسب مُدّة المسافة المقطوعة بالساعات و الدقائق.",
+   "answer": {
+    "hours": "3,25",
+    "hm": "3h15min"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-1",
+   "kind": "exercise",
+   "page": 94,
+   "section": "أوظّف تعلّماتي — 1",
+   "verified": true,
+   "text": "إليك أربعة جداول وأربعة بيانات: 1) صِل كُل جدول بالبيان المناسب له. 2) حدّد من بين الجداول الآتية الجدول الذي يُمثّل وضعية تناسبية. الجدول ①: (0 ، 2 ، 6 ← 2 ، 3 ، 5) ؛ ②: (1 ، 4 ، 9 ← 2 ، 4 ، 6) ؛ ③: (1 ، 4 ، 6 ← 1 ، 2 ، 3) ؛ ④: (1 ، 2 ، 4 ← −10 ، −20 ، −40).",
+   "figure": {
+    "graphs (reading order in the scan)": {
+     "G1 (top left)": "points (2;1), (4;2), (6;3) : droite croissante issue de O (unité 1 sur les deux axes)",
+     "G2 (top right)": "points (1;−10), (2;−20), (4;−40) : droite décroissante issue de O (axe des ordonnées vers le bas)",
+     "G3 (middle)": "points (1;2), (4;4), (9;6) : courbe pointillée concave (racine carrée) — non alignés",
+     "G4 (bottom)": "points (0;2), (2;3), (6;5) : droite croissante coupant l’axe des ordonnées en 2 — alignés mais pas avec O"
+    }
+   },
+   "answer": {
+    "1 (matching)": {
+     "①": "G4",
+     "②": "G3",
+     "③": "G1",
+     "④": "G2"
+    },
+    "2 (proportional)": [
+     "③ (après correction)",
+     "④ (coefficient −10)"
+    ],
+    "check": {
+     "①": "non",
+     "②": "non",
+     "③ (tel qu’imprimé)": "non",
+     "③ (corrigé : 2 au lieu de 1)": "oui",
+     "④": "oui"
+    }
+   },
+   "answerSource": "computed",
+   "reading": "tableaux et quatre graphiques relus à 330 dpi. Le graphique G1 passe par (2;1), (4;2), (6;3) alors que le tableau ③ imprime « 1 4 6 / 1 2 3 » : voir discrepancies. Tableau ④ à valeurs négatives : proportionnel (coefficient −10) ; le livre attend « un » tableau au singulier, l’autre cas est signalé."
+  },
+  {
+   "id": "ex-2",
+   "kind": "exercise",
+   "page": 94,
+   "section": "أوظّف تعلّماتي — 2",
+   "verified": true,
+   "text": "يُمثّل التمثيل البياني الآتي كُتلة المواد الدسمة المحتواة في جُبن. 1) هل الوضعية هي وضعية تناسبية؟ اشرح. 2) ما أقصى كمية من هذا الجبن يُمكن تناولها بحيث لا تتعدى كمية المواد الدسمة 6g؟ 3) ما هي النسبة المئوية للمواد الدسمة في هذا الجبن؟ 4) ما كمية المواد الدسمة المحتوية في 740g من هذا الجبن؟",
+   "figure": {
+    "axes": "x : كتلة الجبن (g) 50, 100, 150 ; y : كتلة المواد الدسمة (g) 6, 12, 18",
+    "points": [
+     [
+      50,
+      6
+     ],
+     [
+      100,
+      12
+     ],
+     [
+      150,
+      18
+     ]
+    ],
+    "line": "droite pointillée issue de O"
+   },
+   "answer": {
+    "1": "oui : points alignés avec l’origine",
+    "coefficient": "0,12",
+    "2": "50 g",
+    "3": "12%",
+    "4": "88,8 g"
+   },
+   "answerSource": "computed",
+   "reading": "graphique relu à 330 dpi : points (50;6), (100;12), (150;18) sur une droite issue de O."
+  },
+  {
+   "id": "ex-3",
+   "kind": "exercise",
+   "page": 94,
+   "section": "أوظّف تعلّماتي — 3",
+   "verified": true,
+   "text": "إليك معلومات تتعلّق بعُلب (5 عُلب تزن 3,5kg ؛ 3 عُلب تزن 2,1kg). 1) التأكيدات الآتية صحيحة أم خاطئة؟ اشرح. فاطمة: « الكُتلة بدلالة عدد العُلب، تُمثّل بنقاط في استقامية مع مبدإ المعلم ». مريم: « 8 علب تزن 5,8kg ». 2) ما هي كُتلة 13 عُلبة؟",
+   "figure": {
+    "picture": "5 boîtes identiques marquées 3,5 Kg ; 3 boîtes marquées 2,1 Kg"
+   },
+   "answer": {
+    "coefficient": "0,7 kg par boîte",
+    "Fatima": "vrai (proportionnel : 3,5/5 = 2,1/3 = 0,7)",
+    "Maryam": "faux : 8 × 0,7 = 5,6 kg (≠ 5,8 kg)",
+    "2": "9,1 kg"
+   },
+   "answerSource": "computed",
+   "reading": "dessin relu à 330 dpi : 5 boîtes ↔ 3,5 Kg ; 3 boîtes ↔ 2,1 Kg."
+  },
+  {
+   "id": "ex-4",
+   "kind": "exercise",
+   "page": 94,
+   "section": "أوظّف تعلّماتي — 4",
+   "verified": true,
+   "text": "التمثيل البياني الآتي يُمثّل كمية البنزين المستهلكة بدلالة المسافة المقطوعة. 1) هل هذا البيان يُمثّل وضعية تناسبية؟ 2) ما هي كمية البنزين اللازمة لقطع مسافة 200km؟ 3) احسب كمية البنزين اللازمة لقطع 520km؟ 4) ما هي المسافة التي يُمكن قطعها إذا استهلكنا 52L؟",
+   "figure": {
+    "axes": "x : المسافة (km) 100, 200, 300, 400 ; y : كمية البنزين (L) graduations 6, 13, 26",
+    "points": [
+     [
+      100,
+      6.5
+     ],
+     [
+      200,
+      13
+     ],
+     [
+      400,
+      26
+     ]
+    ],
+    "line": "droite pointillée issue de O"
+   },
+   "answer": {
+    "1": "oui : points alignés avec l’origine",
+    "coefficient": "0,065 L par km (6,5 L pour 100 km)",
+    "2": "13 L",
+    "3": "33,8 L",
+    "4": "800 km"
+   },
+   "answerSource": "computed",
+   "reading": "graphique relu à 330 dpi : points (200;13) et (400;26) sur les graduations 13 et 26 ; le premier point (100 ; ≈6,5) est un peu AU-DESSUS de la graduation imprimée « 6 » : voir discrepancies."
+  },
+  {
+   "id": "ex-5",
+   "kind": "exercise",
+   "page": 95,
+   "section": "أوظّف تعلّماتي — 5",
+   "verified": true,
+   "text": "إليك معلومات متعلّقة ببراميل لتخزين الماء: (الارتفاع cm: 15 ، 30 ، 45 ، 120 ← السِعة L: 40 ، 80 ، 120 ، 320). 1) مثّل الجدول أعلاه في معلم (على محور الفواصل: خُذ لكل 10cm مربعا واحدا وعلى محور التراتيب: خُذ لكل 40L مربعا واحدا). 2) بيِّن إن كان جدول تناسبية بإجرائين: • باستعمال البيان. • باستعمال الجدول. 3) باستعمال البيان، أعط تقديرا لارتفاع برميل سعته 250L ثُمّ حدّد هذه النتيجة حسابيا.",
+   "answer": {
+    "squares (x/10 cm ; y/40 L)": [
+     [
+      "3/2",
+      "1"
+     ],
+     [
+      "3",
+      "2"
+     ],
+     [
+      "9/2",
+      "3"
+     ],
+     [
+      "12",
+      "8"
+     ]
+    ],
+    "2": "points alignés avec l’origine (graphique) ; rapports 40/15 = 80/30 = 120/45 = 320/120 = 8/3 (tableau)",
+    "coefficient": "8/3 L par cm (≈ 2,67)",
+    "3": "≈ 94 cm au graphique ; calcul : 250 × 3/8 = 93,75 cm"
+   },
+   "answerSource": "computed",
+   "reading": "tableau relu à 220 dpi : 15, 30, 45, 120 / 40, 80, 120, 320."
+  },
+  {
+   "id": "ex-6",
+   "kind": "exercise",
+   "page": 95,
+   "section": "أوظّف تعلّماتي — 6",
+   "verified": true,
+   "text": "عبّر بنسب مئوية عن كل مما يلي: أ) 7 من 10 ب) 3 من 5 جـ) 45 من 50 د) 3 من 8 هـ) 30 من 80 و) 12 من 20",
+   "answer": {
+    "أ": "70%",
+    "ب": "60%",
+    "جـ": "90%",
+    "د": "37,5%",
+    "هـ": "37,5%",
+    "و": "60%"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-7",
+   "kind": "exercise",
+   "page": 95,
+   "section": "أوظّف تعلّماتي — 7",
+   "verified": true,
+   "text": "تُباع لعبة بـ 380DA، بعد مدة ارتفع سعرها بـ 15%. 1) ما هو مبلغ الزيادة؟ 2) ما هو السعر الجديد للعبة؟",
+   "answer": {
+    "1": "57 DA",
+    "2": "437 DA"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-8",
+   "kind": "exercise",
+   "page": 95,
+   "section": "أوظّف تعلّماتي — 8",
+   "verified": true,
+   "text": "انتقل سعر بضاعة من 3000DA إلى 3060DA. ما هي النسبة المئوية لهذه الزيادة؟",
+   "answer": {
+    "increase": "60 DA",
+    "rate": "2%"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-9",
+   "kind": "exercise",
+   "page": 95,
+   "section": "أوظّف تعلّماتي — 9",
+   "verified": true,
+   "text": "يحتاج أيوب لتحضير مشروب إلى 10cL من عصير البرتقال و 15cL من عصير المشمش. يحتوي عصير البرتقال على 90% من الماء وعصير المشمش على 80% من الماء. ما هي النسبة المئوية للماء في هذا المشروب؟",
+   "answer": {
+    "water": "9 + 12 = 21 cL",
+    "drink": "25 cL",
+    "rate": "84%"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-10",
+   "kind": "exercise",
+   "page": 95,
+   "section": "أوظّف تعلّماتي — 10",
+   "verified": true,
+   "text": "يحتاج الطفل المُراهق إلى 8 ساعات نوم على الأقل. نام أيوب على الساعة 23h30min واستيقظ على الساعة 6h30min. عبّر بنسبة مئوية عن نقص النوم عند أيوب.",
+   "answer": {
+    "slept": "7 h",
+    "missing": "1 h",
+    "rate": "12,5% des 8 h nécessaires"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-11",
+   "kind": "exercise",
+   "page": 95,
+   "section": "أوظّف تعلّماتي — 11",
+   "verified": true,
+   "text": "القسم 3م1: يوجد به 45% بنات من أصل 40 تلميذا وتلميذة. القسم 3م2: يوجد به 45% بنات من أصل 40 تلميذا وتلميذة. ما هي النسبة المئوية للبنات في القسمين معا؟",
+   "answer": {
+    "girls": "18 + 18 = 36 sur 80",
+    "rate": "45%"
+   },
+   "answerSource": "computed",
+   "reading": "transcrit tel qu’imprimé (les deux classes portent 45 % de 40 : données identiques, donc 45 % — voir discrepancies)."
+  },
+  {
+   "id": "ex-12",
+   "kind": "exercise",
+   "page": 95,
+   "section": "أوظّف تعلّماتي — 12",
+   "verified": true,
+   "text": "خلال مباراة في كرة القدم، نجح الفريق الوطني في استغلال الكرة في الشوط الأول بـ 60% من أصل 70 تمريرة، وخلال الشوط الثاني نجح في استغلال الكرة بـ 90% من أصل 50 تمريرة. ما النسبة المئوية للتمريرات التي نجح في استغلالها هذا الفريق؟",
+   "answer": {
+    "success": "42 + 45 = 87 sur 120",
+    "rate": "72,5%"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-13",
+   "kind": "exercise",
+   "page": 95,
+   "section": "أوظّف تعلّماتي — 13 (جغرافيا)",
+   "verified": true,
+   "text": "تُغطي المُحيطات تقريبا 70% من سطح الكرة الأرضية. مساحة سطح المُحيطات هي 360,5 مليون كيلومتر مربع. أعط تقديرا لمساحة سطح الكرة الأرضية؟",
+   "answer": {
+    "earth surface": "515 millions de km²"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-14",
+   "kind": "exercise",
+   "page": 95,
+   "section": "أوظّف تعلّماتي — 14 (التنمية المستدامة)",
+   "verified": true,
+   "text": "يواجه العالم خطورة التدهور البيئي الذي يجب التغلب عليه مع عدم التخلي عن حاجات التنمية الاقتصادية وكذلك المساواة والعدل الاجتماعي. حسب إحصائيات 2007 فإنّ الاستهلاك السنوي للفرد الأوروبي 7,5 طن من ثاني أكسيد الكربون CO₂. يعتقد الخُبراء أنّ ديمومة حياة الأرض مرهون بأن تكون كمية الاستهلاك 1,5 طن. • عبّر بنسبة مئوية عن التخفيض الضروري لاستهلاك CO₂ عند الفرد الأوروبي.",
+   "answer": {
+    "reduction": "7,5 − 1,5 = 6 t",
+    "rate": "80%"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-15",
+   "kind": "exercise",
+   "page": 95,
+   "section": "أوظّف تعلّماتي — 15",
+   "verified": true,
+   "text": "عندما يتجمّد الماء، فإنّ حجمه يزداد بـ 7,5%. ما حجم قطعة الجليد التي نحصل عليها بعد تجميد 200L من الماء؟",
+   "answer": {
+    "ice": "215 L"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-16",
+   "kind": "exercise",
+   "page": 96,
+   "section": "أوظّف تعلّماتي — 16",
+   "verified": true,
+   "text": "يبلغ طول الحدود البرية الجزائرية حوالي 6343km وشريط ساحلي طوله حوالي 1644km. • احسب النسبة المئوية لما يُمثّله طول الساحل بالنسبة إلى مُحيط التراب الجزائري.",
+   "answer": {
+    "perimeter": "6343 + 1644 = 7987 km",
+    "rate": "1644/7987 ≈ 20,6 %"
+   },
+   "answerSource": "computed",
+   "reading": "« مُحيط التراب » lu comme la somme frontières terrestres + littoral (7987 km) ; l’autre lecture 1644/6343 ≈ 25,9 % est signalée."
+  },
+  {
+   "id": "ex-17",
+   "kind": "exercise",
+   "page": 96,
+   "section": "أوظّف تعلّماتي — 17 (السرعة المتوسطة)",
+   "verified": false,
+   "text": "حوّل ما يلي ذهنيا إلى الدقائق. أ) 4h5min ب) 7h جـ) 1h30min د) 30s هـ) 0,1h و) 15s",
+   "answer": {
+    "أ": "245 min",
+    "ب": "420 min",
+    "جـ": "90 min",
+    "د": "0,5 min",
+    "هـ": "6 min",
+    "و": "0,25 min"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-18",
+   "kind": "exercise",
+   "page": 96,
+   "section": "أوظّف تعلّماتي — 18",
+   "verified": false,
+   "text": "حوّل ما يلي ذهنيا إلى الساعات بكتابة عشريّة. أ) 45min ب) 12min جـ) 18min د) 30min هـ) 90min و) 15min",
+   "answer": {
+    "أ": "0,75 h",
+    "ب": "0,2 h",
+    "جـ": "0,3 h",
+    "د": "0,5 h",
+    "هـ": "1,5 h",
+    "و": "0,25 h"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-19",
+   "kind": "exercise",
+   "page": 96,
+   "section": "أوظّف تعلّماتي — 19",
+   "verified": false,
+   "text": "حوّل ما يلي إلى الساعات والدقائق. أ) 2,4h ب) 3,75h جـ) 4,9h د) 5,45h هـ) 2,5h و) 1,3h",
+   "answer": {
+    "أ": "2h24min",
+    "ب": "3h45min",
+    "جـ": "4h54min",
+    "د": "5h27min",
+    "هـ": "2h30min",
+    "و": "1h18min"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-20",
+   "kind": "exercise",
+   "page": 96,
+   "section": "أوظّف تعلّماتي — 20",
+   "verified": false,
+   "text": "نفترض أنّ سيارة تسير بسرعة ثابتة. إليك إنجاز مريم: (المسافة 10km ، y ؛ الزمن 15min ، 24h) y × 15 = 10 × 24 ومنه y = 10 × 24 / 15 — خطأ. اشرح لماذا أخطأت مريم.",
+   "answer": {
+    "error": "elle mélange les unités : 15 min et 24 h ne sont pas dans la même unité (24 h = 1440 min)",
+    "correct": "y = 10 × 1440 / 15 = 960 km"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-21",
+   "kind": "exercise",
+   "page": 96,
+   "section": "أوظّف تعلّماتي — 21",
+   "verified": false,
+   "text": "تسير سيارة بحركة منتظمة على الطريق السيار بسرعة 120Km.h⁻¹. 1) عبّر عن المسافة المقطوعة d بدلالة المدة الزمنية للتنقل t. 2) أحسب المسافات المقطوعة خلال: أ) 4h45min ب) 2h جـ) 1h30min. 3) عبّر عن t بدلالة d، ثم احسب مُدد المسافات المقطوعة الآتية: أ) 240km ب) 105km جـ) 30km.",
+   "answer": {
+    "1": "d = 120 t",
+    "2": {
+     "أ 4h45min": "570 km",
+     "ب 2h": "240 km",
+     "ج 1h30min": "180 km"
+    },
+    "3": {
+     "t": "t = d/120",
+     "أ 240km": "2 h",
+     "ب 105km": "7/8 h = 52,5 min = 52 min 30 s",
+     "ج 30km": "1/4 h = 15 min"
+    }
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-22",
+   "kind": "exercise",
+   "page": 96,
+   "section": "أوظّف تعلّماتي — 22",
+   "verified": false,
+   "text": "رتّب الحيوانات الآتية من السريع إلى البطيء: الزرافة 51km.h⁻¹ ؛ الفيل 12m.s⁻¹ ؛ الأيل 20m.s⁻¹.",
+   "answer": {
+    "in km/h": {
+     "الزرافة 51 km/h": "51",
+     "الفيل 12 m/s": "43,2",
+     "الأيل 20 m/s": "72"
+    },
+    "order": "الأيل (72) > الزرافة (51) > الفيل (43,2)"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-23",
+   "kind": "exercise",
+   "page": 96,
+   "section": "أوظّف تعلّماتي — 23",
+   "verified": false,
+   "text": "في ما يلي، احسب السرعة المتوسطة للحيوانات، مُحدّدا الوحدة. 1) يقطع حصان مسافة 21km في 3h. 2) يقطع كلب مسافة 24m في 4s. 3) يقطع عصفور مسافة 7km في 20min.",
+   "answer": {
+    "1": "7 km/h",
+    "2": "6 m/s",
+    "3": "21 km/h"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-24",
+   "kind": "exercise",
+   "page": 96,
+   "section": "أوظّف تعلّماتي — 24",
+   "verified": false,
+   "text": "تُحسب سرعة تدفّق مياه نهر، بقسمة حجم الماء بـ m³ على مدّة التدفق بالثانية. 1) ما هي الوِحدة المُعبّرة عن سرعة التدفق؟ 2) يَصُبُّ أحد الأنهار 8000m³ في البحر خلال 20s. احسب ذهنيا سرعة تدفّق هذا النهر؟",
+   "answer": {
+    "1": "m³/s (m³.s⁻¹)",
+    "2": "400 m³/s"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-25",
+   "kind": "exercise",
+   "page": 96,
+   "section": "أوظّف تعلّماتي — 25",
+   "verified": false,
+   "text": "قطع أيوب 14km خلال 2h30min. 1) احسب سرعته المتوسطة بـ km/h. 2) بهذه السرعة، ما المسافة المقطوعة خلال 1h45min؟",
+   "answer": {
+    "1": "5,6 km/h",
+    "2": "9,8 km"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-26",
+   "kind": "exercise",
+   "page": 96,
+   "section": "أوظّف تعلّماتي — 26",
+   "verified": false,
+   "text": "يُمكن للدلفين أن يقطع مسافة 9km خلال 15min. 1) احسب سرعته المتوسطة بـ km/h. 2) بهذه السرعة: أ) ما المسافة التي يقطعها هذا الدلفين خلال 1h15min؟ ب) ما المُدّة التي يستغرقها الدلفين ليقطع مسافة 10,8km؟ تُعطى النتيجة بالدقائق.",
+   "answer": {
+    "1": "36 km/h",
+    "2a": "45 km",
+    "2b": "18 min"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-27",
+   "kind": "exercise",
+   "page": 96,
+   "section": "أوظّف تعلّماتي — 27",
+   "verified": false,
+   "text": "تستغرق فاطمة مُدّة 12min للذهاب إلى العمل بواسطة حافلة. سرعتها المتوسطة 40km/h. أ) عبّر عن 12min بالساعات في كتابة عشرية. ب) ما المسافة التي تفصل إقامة فاطمة عن العمل؟",
+   "answer": {
+    "أ": "0,2 h",
+    "ب": "8 km"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "ex-28",
+   "kind": "exercise",
+   "page": 96,
+   "section": "أوظّف تعلّماتي — 28",
+   "verified": false,
+   "text": "مُتزحلق على الأمواج، قطع على نفس الموجة مسافة 11,7km في مُدّة 36min. احسب سرعته المتوسطة بـ m/min، ثُمّ بـ km/h.",
+   "answer": {
+    "m/min": "325",
+    "km/h": "19,5"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "self-1",
+   "kind": "self",
+   "page": 97,
+   "section": "أؤكّد تعلّماتي — 1",
+   "verified": true,
+   "text": "اختر البيان الذي يمثل وضعية تناسبية… (ثلاثة بيانات في معلم 0…4 : (1) على اليمين، (2) في الوسط، (3) على اليسار)",
+   "options": [
+    "droite décroissante : points (0;3), (1;2), (2;1), (3;0)",
+    "droite croissante issue de O : points (1;1), (2;2), (3;3), (4;4)",
+    "courbe convexe issue de O : points ≈(1,4;1), (2;2), ≈(2,5;3,3)"
+   ],
+   "correct": [
+    1
+   ],
+   "truth": [
+    false,
+    true,
+    false
+   ],
+   "answer": "le graphique du milieu (droite issue de O, coefficient 1)",
+   "answerSource": "computed",
+   "retour": "90",
+   "reading": "p. 97 relue à 220 dpi : unité de 1 carreau ; le premier graphique coupe l’axe des ordonnées en 3 (non proportionnel), le deuxième passe par O, le troisième est une courbe."
+  },
+  {
+   "id": "self-2",
+   "kind": "self",
+   "page": 97,
+   "section": "أؤكّد تعلّماتي — 2",
+   "verified": true,
+   "text": "إليك الجدول الآتي: (4 ، 8 ، 12 ← 10 ، 20 ، 30). التمثيل البياني لهذا الجدول في معلم هو… أ) نقاط في استقامية مع مبدإ المعلم. ب) نقاط ليست في استقامية. جـ) نقاط من مستقيم لا يمر من المبدإ. اختر الإجابة الصحيحة من بين الإجابات الآتية:",
+   "options": [
+    "أ",
+    "ب",
+    "جـ"
+   ],
+   "correct": [
+    0
+   ],
+   "truth": [
+    true,
+    false,
+    false
+   ],
+   "answer": {
+    "correct": "أ",
+    "coefficient": "5/2"
+   },
+   "answerSource": "computed",
+   "retour": "90"
+  },
+  {
+   "id": "self-3",
+   "kind": "self",
+   "page": 97,
+   "section": "أؤكّد تعلّماتي — 3",
+   "verified": true,
+   "text": "القسم 3م1 تعداده 30 و 20% منه بنات. القسم 3م2 تعداده 20 و 80% منه بنات. ما هي النسبة المئوية للبنات في القسمين معا؟",
+   "answer": {
+    "girls": "6 + 16 = 22 sur 50",
+    "rate": "44%"
+   },
+   "answerSource": "computed",
+   "retour": "90 و 91"
+  },
+  {
+   "id": "self-4",
+   "kind": "self",
+   "page": 97,
+   "section": "أؤكّد تعلّماتي — 4",
+   "verified": true,
+   "text": "لباس ثمنه 10500DA، بيع بعد تخفيض بثمن 8400DA. ما هي النسبة المئوية لهذا التخفيض؟",
+   "answer": {
+    "reduction": "2100 DA",
+    "rate": "20%"
+   },
+   "answerSource": "computed",
+   "retour": "90 و 91"
+  },
+  {
+   "id": "self-5",
+   "kind": "self",
+   "page": 97,
+   "section": "أؤكّد تعلّماتي — 5",
+   "verified": true,
+   "text": "غرض ثمنه 200DA، انخفض ثمنه بـ 10% ثُمّ ارتفع بـ 10%. ما هو ثمنه الجديد؟",
+   "answer": {
+    "after −10%": "180",
+    "after +10%": "198 DA"
+   },
+   "answerSource": "computed",
+   "retour": "90 و 91"
+  },
+  {
+   "id": "self-6",
+   "kind": "self",
+   "page": 97,
+   "section": "أؤكّد تعلّماتي — 6",
+   "verified": true,
+   "text": "ينطلق أيوب في رحلة فيقطع مسافة 84km أي 60% من مسافة هذه الرحلة. ما هي مسافة هذه الرحلة؟",
+   "answer": {
+    "trip": "140 km"
+   },
+   "answerSource": "computed",
+   "retour": "90 و 91"
+  },
+  {
+   "id": "self-7",
+   "kind": "self",
+   "page": 97,
+   "section": "أؤكّد تعلّماتي — 7",
+   "verified": false,
+   "text": "27Km.h⁻¹ = ……. ضع العلامة x على الإجابة الصحيحة: 7,5m.s⁻¹ ؛ 9,72m.s⁻¹ ؛ 97,2m.s⁻¹",
+   "options": [
+    "7,5m.s⁻¹",
+    "9,72m.s⁻¹",
+    "97,2m.s⁻¹"
+   ],
+   "correct": [
+    0
+   ],
+   "answer": "7,5 m/s",
+   "answerSource": "computed",
+   "retour": "93"
+  },
+  {
+   "id": "self-8",
+   "kind": "self",
+   "page": 97,
+   "section": "أؤكّد تعلّماتي — 8",
+   "verified": false,
+   "text": "يقطع أيوب بدراجته مسافة 12km بسرعة متوسطة قدرها 8m.s⁻¹. يقطع أيوب هذه المسافة في مُدّة…. 25min ؛ 30min ؛ 1h6min",
+   "options": [
+    "1h6min",
+    "30min",
+    "25min"
+   ],
+   "correct": [
+    2
+   ],
+   "answer": "1500 s = 25 min",
+   "answerSource": "computed",
+   "retour": "93"
+  },
+  {
+   "id": "self-9",
+   "kind": "self",
+   "page": 97,
+   "section": "أؤكّد تعلّماتي — 9",
+   "verified": false,
+   "text": "يقطع أيوب مسافة 42km في مُدّة 1h12min. ما هي سرعته المتوسطة؟",
+   "answer": "35 km/h (1h12min = 1,2 h)",
+   "answerSource": "computed",
+   "retour": "92 و 93"
+  },
+  {
+   "id": "self-10",
+   "kind": "self",
+   "page": 97,
+   "section": "أؤكّد تعلّماتي — 10",
+   "verified": false,
+   "text": "يمشي أيوب مسافة 5km خلال 1h15min ثُمّ يمشي مسافة 18km خلال 3h. سرعته المتوسطة هي… ضع العلامة x على الإجابة الصحيحة: ≃ 5,4km.h⁻¹ ؛ 5km.h⁻¹ ؛ 6km.h⁻¹",
+   "options": [
+    "6km.h⁻¹",
+    "5km.h⁻¹",
+    "≃ 5,4km.h⁻¹"
+   ],
+   "correct": [
+    2
+   ],
+   "answer": "23 km en 4,25 h = 92/17 ≈ 5,41 km/h",
+   "answerSource": "computed",
+   "retour": "92 و 93"
+  },
+  {
+   "id": "deep-30",
+   "kind": "exercise",
+   "page": 98,
+   "section": "أتعمّق — 30 (أفكّر وأجيب)",
+   "verified": true,
+   "text": "أجب بصحيح أو خاطئ مع التبرير. أ) في أحد الأندية الرياضية ثُمن الأنصار هم قُصّر ونصف الأنصار أعمارهم أكبر من 25 سنة. 37,5% هي النسبة المئوية للأنصار الذين تتراوح أعمارهم بين 18 سنة و 25 سنة. ب) تلزمنا مُدّة 1min12s لقطع مسافة 800m بسرعة متوسطة قدرها 40km/h. جـ) السرعة المتوسطة للدرّاج الذي يقطع مسافة 18km خلال ساعة واحدة هي أكبر تماما من سرعة سيارة يُتحكّم فيها عن بُعد تقطع 5m خلال 1s.",
+   "answer": {
+    "أ": "vrai : 1 − 1/8 − 1/2 = 3/8 = 37,5 %",
+    "ب": "vrai : 800 m en 72 s = 100/9 m/s = 40 km/h",
+    "ج": "faux : 18 km/h = 5 m/s (les deux vitesses sont ÉGALES)"
+   },
+   "answerSource": "computed",
+   "note": "أ = pourcentage (N) ; ب et جـ = vitesses (H)"
+  },
+  {
+   "id": "deep-31",
+   "kind": "exercise",
+   "page": 98,
+   "section": "أتعمّق — 31 (قراءة وتحليل بيان)",
+   "verified": true,
+   "text": "التمثيل البياني أدناه يُمثّل حجم الخرسانة التي تنتجها آلة بدلالة زمن تشغيلها. 1) ما هو حجم الخرسانة المنتجة: أ) خلال 1 ساعة؟ ب) بين الساعة الثانية والساعة الخامسة؟ 2) ماذا حصل بين الساعة الأولى والساعة الثانية؟ 3) هل حجم الخرسانة المنتجة بهذه الآلة متناسب مع زمن تشغيلها؟",
+   "figure": {
+    "axes": "x : الزمن (h) 0…5 ; y : الحجم (m³) graduations 45 et 110",
+    "brokenLine": [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      45
+     ],
+     [
+      2,
+      45
+     ],
+     [
+      5,
+      110
+     ]
+    ],
+    "dashed": "tirets verticaux en x = 1, 2, 5 et horizontaux en y = 45 et y = 110"
+   },
+   "answer": {
+    "1a": "45 m³",
+    "1b": "110 − 45 = 65 m³",
+    "2": "le graphique est horizontal : aucun béton produit entre 1 h et 2 h (la machine ne produit pas), le volume reste 45 m³",
+    "3": "non : ce n’est pas une droite issue de O (segment, palier, puis segment de pente différente)"
+   },
+   "answerSource": "computed",
+   "reading": "graphique relu à 330 dpi : (0;0) → (1;45) → palier (2;45) → (5;110) ; tirets verticaux en 1, 2, 5 ; graduations 45 et 110 imprimées."
+  },
+  {
+   "id": "deep-32",
+   "kind": "exercise",
+   "page": 98,
+   "section": "أتعمّق — 32 (أين أضع النقطة؟)",
+   "verified": true,
+   "text": "وضعت فاطمة على المعلم المُقابل النقطة A ثم أرادت أن تضع نقطة B بحيث تكون النقطتان A و B في استقامية مع مبدإ المعلم. إذا علمت أنّ فاصلة النقطة B هي 7 فما هو ترتيبها؟",
+   "figure": {
+    "axes": "x : 0…4 (graduation 1) ; y : graduations 10 et 20 (et traits intermédiaires)",
+    "A": [
+     4,
+     15
+    ]
+   },
+   "answer": {
+    "coefficient": "15/4 = 3,75",
+    "B": "(7 ; 26,25)"
+   },
+   "answerSource": "computed",
+   "reading": "repère relu à 330 dpi : A au-dessus de l’abscisse 4, à la graduation intermédiaire entre 10 et 20 (= 15)."
+  },
+  {
+   "id": "deep-33",
+   "kind": "exercise",
+   "page": 98,
+   "section": "أتعمّق — 33 (أبرهن)",
+   "verified": true,
+   "text": "في المعلم المُقابل، [Ot) نصف مستقيم يمر من المبدإ. M نقطة إحداثياها (x;y) و A نقطة فاصلتها 1 وترتيبها a على نصف المستقيم [Ot). 1) باستعمال خاصية المثلثين المعيّنين بمستقيمين متوازيين يقطعهما مستقيمان غير متوازيين، بيّن أنّ 1/x = a/y. 2) لماذا يُمكن أن نكتب y = ax ؟ 3) عمّ تُعبّر المُساواة y = ax ؟ 4) هل العلاقة بين إحداثيي النقطة M مرتبطة بموضع النقطة M؟ برّر. 5) انقل وأتمم: إذا كانت نقط ………… مع مبدإ المعلم فإنّ ………… هذه النقط ………… مع ……………",
+   "figure": {
+    "points": "O(0;0), I(1;0), A(1;a) avec J(0;1) et a repéré sur l’axe des ordonnées, H(x;0), M(x;y) ; droites (AI) et (MH) parallèles (pointillés verticaux) ; [Ot) = demi-droite OAM"
+   },
+   "answer": {
+    "1": "triangles OIA et OHM : (AI) // (MH) ⟹ OI/OH = IA/HM, soit 1/x = a/y",
+    "2": "produit en croix : y = a·x",
+    "3": "les ordonnées sont proportionnelles aux abscisses, de coefficient a (ordonnée du point d’abscisse 1)",
+    "4": "non : la relation y = ax est la même pour TOUT point M de la demi-droite",
+    "5": "points ALIGNÉS avec l’origine du repère ⟹ leurs ORDONNÉES sont proportionnelles à leurs ABSCISSES (même rapport y/x = a)"
+   },
+   "answerSource": "computed",
+   "reading": "figure relue à 330 dpi. Cet exercice repose sur la propriété de Thales (triangles à côtés parallèles), introduite à l’unité 9 « المثلثات » du livre : voir discrepancies."
+  },
+  {
+   "id": "deep-34",
+   "kind": "exercise",
+   "page": 98,
+   "section": "أتعمّق — 34 (عدّاد السيارة)",
+   "verified": false,
+   "text": "يُشير العدّاد إلى 56782km عندما تنطلق سيارة على الساعة 12h30min، وعند وصولها على الساعة 14h10min نقرأ على العدّاد 56887km. ما هي السرعة المتوسطة بالكيلومتر في الساعة لهذه السيارة خلال هذا الانتقال؟",
+   "answer": {
+    "distance": "105 km",
+    "time": "1h40min = 5/3 h",
+    "speed": "63 km/h"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "deep-35",
+   "kind": "exercise",
+   "page": 99,
+   "section": "أتعمّق — 35 (الصاعقة والبرق)",
+   "verified": false,
+   "text": "ينتشر الصوت بسرعة 330m/s. يُرافق ظاهرة حدوث الصاعقة في فصل الشتاء مُشاهدة البرق وسماع دوي الرعد. 1) إذا سمعت صوت دوي الرعد بعد 6s من رؤية البرق، فما هي المسافة التي تفصلك عن المكان الذي سقطت فيه الصاعقة الرعدية؟ 2) يتواجد أيوب على مسافة 9,9km من سقوط صاعقة رعدية. ما هي المدة الزمنية الفاصلة بين رؤيته للبرق وسماعه لدوي الرعد؟",
+   "answer": {
+    "1": "1980 m",
+    "2": "30 s"
+   },
+   "answerSource": "computed",
+   "reading": "la question 35 commence en bas de la page 98 et se termine en haut de la page 99"
+  },
+  {
+   "id": "deep-36",
+   "kind": "exercise",
+   "page": 99,
+   "section": "أتعمّق — 36 (سرعة دوران الأرض حول الشمس)",
+   "verified": false,
+   "text": "تدُور الأرض حول الشمس خلال سنة (365 يوما). عندما تدور دورة كاملة فإنّها تقطع مسافة 9,5 × 10⁸ Km. أحسب سرعة دوران الأرض حول الشمس بالكيلومتر في الثانية. تُدوّر النتيجة إلى الوحدة.",
+   "answer": {
+    "seconds in a year": "31 536 000",
+    "speed": "≈ 30,12 km/s → 30 km/s"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "deep-37",
+   "kind": "exercise",
+   "page": 99,
+   "section": "أتعمّق — 37 (دوران الأرض حول نفسها)",
+   "verified": false,
+   "text": "يُقدّر نصف القطر المتوسط للأرض بـ 6371km. نعلم أنّ الأرض تدور دورة كاملة حول نفسها خلال 24h. 1) يتواجد رجل على سطح الأرض على مستوى خط الاستواء، بيّن أنّه يقطع حوالي 40030km خلال 24h. 2) حدّد سرعته المتوسطة بـ km/h.",
+   "answer": {
+    "1": "2 × π × 6371 ≈ 40030,2 km ≈ 40 030 km",
+    "2": "40030/24 ≈ 1668 km/h"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "deep-38",
+   "kind": "exercise",
+   "page": 99,
+   "section": "أتعمّق — 38 (ساعة الوصول)",
+   "verified": false,
+   "text": "ينطلق أيوب بدراجته من منزله على الساعة 7h55min بسرعة 12km/h متوجها إلى المتوسطة التي تبعد عن منزله بمسافة 6km. على أي ساعة يلتحق بالمتوسطة؟",
+   "answer": {
+    "duration": "6/12 = 0,5 h = 30 min",
+    "arrival": "8h25min"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "deep-39",
+   "kind": "exercise",
+   "page": 99,
+   "section": "أتعمّق — 39 (ارتفاع ثُمّ انخفاض للأسعار)",
+   "verified": true,
+   "text": "1) اشترى شخص معطفا في فترة ارتفعت فيها الأسعار بـ 25%. دفع 3875DA ثمنا لهذا المعطف. كم كان ثمنه قبل ارتفاع الأسعار؟ 2) بعد فترة انخفضت الأسعار بنسبة 25%. ما هو الثمن الجديد للمعطف؟",
+   "answer": {
+    "1": "3100 DA (3875 ÷ 1,25)",
+    "2": "2906,25 DA (3875 × 0,75 ; idem 3100 × 1,25 × 0,75)"
+   },
+   "answerSource": "computed",
+   "reading": "question 2 lue comme « la baisse de 25 % s’applique au prix 3875 DA » : résultat 2906,25 DA (même valeur en repartant de 3100 DA)."
+  },
+  {
+   "id": "deep-40",
+   "kind": "exercise",
+   "page": 99,
+   "section": "أتعمّق — 40 (تخفيضان متتاليان)",
+   "verified": true,
+   "text": "تُباع غسّالة بـ 20800DA. خضع سعرها إلى تخفيضين متتاليين في إحدى الفترات بـ 20% ثم بـ 10%. 1) ما هو السعر الجديد للغسّالة؟ 2) ما هي النسبة المئوية الكلية للتخفيض؟ 3) إذا كان التخفيض بـ 10% أولا ثمّ بـ 20% ثانيا هل يكون سعر الغسّالة هو السعر نفسه الذي تحصّلت عليه في السؤال 1؟",
+   "answer": {
+    "1": "16640 puis 14976 DA",
+    "2": "28% (pas 30 %)",
+    "3": "oui : 20800 × 0,9 × 0,8 = 14976 (le produit des facteurs ne dépend pas de l’ordre)"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "deep-41",
+   "kind": "exercise",
+   "page": 99,
+   "section": "أتعمّق — 41 (الكتلة والوزن)",
+   "verified": true,
+   "text": "وزن جسم في مكان ما مُرتبط بكتلته وتسارع الجاذبية ويُعبَّر عن هذا بعلاقة نيوتن p = mg حيث P: هو وزن هذا الجسم في هذا المكان معبَّرًا عنه بالنيوتن (N) (هو مقدار قوة جذب الكوكب لهذا الجسم). m كُتلة الجسم بـ kg. g تسارُع جاذبية هذا الكوكب. 1) على الأرض تسارع جاذبية الأرض هي g_T = 9,8. احسب الوزن (بالنيوتن) على الأرض لرجل كُتلته 70kg. 2) العلاقة p = mg تبقى صحيحة على كوكب القمر. الجدول الآتي يُعطي قيمًا لكُتل تُقابلها أوزانها على سطح كوكب القمر (الكتلة kg: 3 ، 10 ، 25 ، 40 ، 55 ← الوزن N: 5,1 ، 17 ، 42,5 ، 68 ، 93,5). أ) هل الجدول جدول تناسبية؟ ب) احسب تسارُع جاذبية القمر (نرمزه بـ g_L). جـ) هل صحيح أنّنا نَزنُ على القمر 6 مرات أقل من الأرض؟",
+   "answer": {
+    "1": "686 N",
+    "2a": "oui : le rapport poids/masse vaut toujours 1,7",
+    "2b": "g_L = 1,7 N/kg",
+    "2c": "9,8/1,7 ≈ 5,76 : « 6 fois moins » est une approximation (≈ 5,8), pas une égalité"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "deep-42",
+   "kind": "exercise",
+   "page": 99,
+   "section": "أتعمّق — 42 (أفهم بيانا / أستخرج معلومات)",
+   "verified": false,
+   "text": "البيان الآتي يُمثّل المسافة المقطوعة بدلالة الزمن لمركبة. احسب السرعة المتوسطة لهذه المركبة في مُختلف المراحل.",
+   "figure": {
+    "axes": "x : التوقيت 2h, 2h15, 2h30, 2h45, 3h, 3h15 ; y : المسافة (km) 10, 20, 30, 35",
+    "points": {
+     "A": [
+      "2h",
+      0
+     ],
+     "B": [
+      "2h15",
+      20
+     ],
+     "C": [
+      "2h30",
+      20
+     ],
+     "D": [
+      "3h15",
+      35
+     ]
+    },
+    "shape": "ligne brisée A-B-C-D (BC horizontal)"
+   },
+   "answer": {
+    "AB": "20 km en 15 min = 80 km/h",
+    "BC": "0 km/h (arrêt de 15 min)",
+    "CD": "15 km en 45 min = 20 km/h"
+   },
+   "answerSource": "computed",
+   "reading": "graphique relu à 330 dpi : A(2h;0), B(2h15;20), C(2h30;20), D(3h15;35)."
+  },
+  {
+   "id": "integration",
+   "kind": "integration",
+   "page": 100,
+   "section": "أدمج تعلّماتي — وضعية (رحلة من القالة إلى تلمسان)",
+   "verified": false,
+   "text": "انطلقت عائلة مريم في رحلة على متن سيارة من القالة إلى تلمسان على الطريق السيار غرب شرق وكان الأب قد قرّر أن تكون سرعته المتوسطة خلال هذه الرحلة 100km/h، لكنه في البداية قطع 40% من المسافة الكُليّة في مُدّة 3h 2min 24s. هل يُواصل رحلته بنفس السرعة؟ إذا كان الجواب بالنفي فما هي السرعة الثابتة التي يجب أن يقود بها السيارة كي يحترم قراره؟ • ما هي تكلفة البنزين خلال هذه الرحلة؟ (تُدوّر إلى الوحدة من الدينار). (استعمل الوثائق المُرفقة بهذا النص). الوثائق: الطريق القالة ← تلمسان 912km ؛ استهلاك البنزين: 5L/100Km ؛ سعر اللتر من البنزين: 35,72DA. توجيهات: قراءة وفهم الوضعية: عمّ يتحدّث النص؟ رتّب المعطيات ثُمّ حذف التعليمة (أو التعليمات). تحليل الوضعية واختيار استراتيجية حل مناسبة: ما هي المقادير المُتداخلة في النص؟ ما علاقتها ببعضها؟ ما المقصود بالسرعة المتوسطة؟ ماذا نحسب في البداية؟ ماذا نوظّف؟ ولماذا؟ هل هذا كاف؟ إذن عمّ نبحث فيما بعد؟ تنفيذ استراتيجية الحل المختارة: أفكّر في تقسيم ثلاث مراحل ثُمّ أُجيب… أستخدم الوحدات بعناية. أختار العملية المناسبة لكل مرحلة. أُنجز الحسابات. أفسّر نتائج الحسابات. أحرّر حلا. حل مختصر: السرعة الثابتة التي يجب أن يقود بها السيارة كي يحترم قراره هي 90km/h. تكلفة البنزين 1629DA.",
+   "answer": {
+    "planned total time": "912/100 = 9,12 h",
+    "first part": "364,8 km en 3,04 h (3h 2min 24s) → 120 km/h ≠ 100 : non, il doit ralentir",
+    "remaining": "547,2 km en 6,08 h",
+    "constant speed": "90 km/h",
+    "fuel": "45,6 L × 35,72 = 1628,832 → 1629 DA"
+   },
+   "answerSource": "computed",
+   "note": "Le livre donne 90 km/h et 1629 DA : RECALCULÉS ici, identiques (1628,832 arrondi à l’unité).",
+   "reading": "carte relue à 220 dpi : « 912Km » entre القالة et تلمسان (passant par مدينة الجزائر) ; encadré jaune « استهلاك البنزين : 5L/100Km ; سعر اللتر من البنزين : 35,72DA »."
+  },
+  {
+   "id": "evaluation",
+   "kind": "integration",
+   "page": 100,
+   "section": "وضعية للتقويم",
+   "verified": false,
+   "text": "يُصدِر مؤشر بطارية كمبيوتر محمول صوتا ثُمّ تظهر رسالة على الشاشة تفيد بقُرب نفاد البطارية. أتساءل، ما المُدّة الزمنية التي يُمكن أن أعمل خلالها بهذا الكمبيوتر بعيدا عن مأخذ التيار الكهربائي حينما تكون البطارية مشحونة كُليّا. (صورة الشاشة: « 22% » و « باقي 26 min »). أعط تقديرا لذاتية هذا الكمبيوتر حينما تكون البطارية مشحونة كُليّا.",
+   "answer": {
+    "estimate": "26 min ↔ 22 % : 26 / 0,22 ≈ 118 min ≈ 1h58min, soit environ 2 h"
+   },
+   "answerSource": "computed",
+   "reading": "photo relue à 220 dpi : « 22 % » (icône batterie) et « 26 min » (« باقي 26 min ») ; la page 100 est d’image dégradée (blocs de pixels roses autour du texte) mais les chiffres sont nets."
+  },
+  {
+   "id": "ict",
+   "kind": "ict",
+   "page": 101,
+   "section": "أوظّف تكنولوجيات الإعلام والاتصال — مسافة التوقّف والأمان من الحوادث",
+   "verified": false,
+   "text": "نشاط: يسير سائق عربة مُحترس بسرعة مُعبّر عنها بـ V km/h. 1) حساب مسافة رد الفعل: حين يُشاهد هذا السائق عائقا أمامه فإنّ 1s هي مُدّة ضرورية تسمح له بالتريّث قبل اتخاذ أي إجراء. خلال هذه المُدّة تكون العربة قد قطعت مسافة d1 (يُعبّر عنها بالمتر) وتُسمى مسافة رد الفعل وتُعطى بالعلاقة d1 = V/3,6. اشرح لماذا تُعطى هذه المسافة خلال 1s بهذه العلاقة. • انقل على ورقة الحساب اكمل مُعطيات الورقة الحسابية (V: 20 ، 30 ، … ، 130 km/h ؛ الخلايا B1…M1)، ثُمّ احجز في الخلية B2 الطلبة المناسبة لحساب مسافة رد الفعل d1(m) من أجل V = 20km/h. ومن ثمّ عمّم محتوى الخلية B2 إلى M2. 2) حساب مسافة الفرملة: d2 هي المسافة التي تقطعها العربة خلال المُدّة الزمنية التي يضغط فيها السائق على دواسة الفرامل. نقبل أنّ قيمة مقرّبة لهذه المسافة تُعطى بالعلاقة d2 = V² / (254 × C) حيث d2 يُعبّر عنها بـ (m) و V بـ (km/h) و C مُعامل الالتصاق يتعلّق بوضع الطريق. في كُل ما يلي نعتبر الطريق جافًا إذن C = 0,8. • عُد إلى ورقة الحساب السابقة واملأ الخلية A3 كما هو مبيّن على الورقة المقابلة. ثُمّ احجز في الخلية B3 الطلبة =B1^2/(254*0,8) ومن ثمّ عمّم محتوى الخلية B3 إلى M3. 3) حساب مسافة التوقّف: نرمز بـ d لمسافة التوقّف، لدينا d = d1 + d2. أ) عُد مرّة أخرى إلى ورقة الحساب السابقة واملأ الخلية A4 كما هو مبيّن على الورقة المقابلة. ثُمّ احجز في الخلية B4 الطلبة =B2+B3 ومن ثمّ عمّم محتوى الخلية B4 إلى M4. ب) هل مسافة التوقّف مُتناسبة مع السرعة؟ اشرح. جـ) ما السلوكيات الواجب أن تُحرّك مشاعر وتصرّفات السائق عند قراءته لمسافات التوقّف هذه؟",
+   "answer": {
+    "speeds": [
+     20,
+     30,
+     40,
+     50,
+     60,
+     70,
+     80,
+     90,
+     100,
+     110,
+     120,
+     130
+    ],
+    "d1 (m)": [
+     "5,56",
+     "8,33",
+     "11,11",
+     "13,89",
+     "16,67",
+     "19,44",
+     "22,22",
+     "25",
+     "27,78",
+     "30,56",
+     "33,33",
+     "36,11"
+    ],
+    "d2 (m)": [
+     "1,97",
+     "4,43",
+     "7,87",
+     "12,3",
+     "17,72",
+     "24,11",
+     "31,5",
+     "39,86",
+     "49,21",
+     "59,55",
+     "70,87",
+     "83,17"
+    ],
+    "d = d1 + d2 (m)": [
+     "7,52",
+     "12,76",
+     "18,99",
+     "26,19",
+     "34,38",
+     "43,56",
+     "53,72",
+     "64,86",
+     "76,99",
+     "90,1",
+     "104,2",
+     "119,28"
+    ],
+    "proportional": "non : d1 est proportionnelle à V (V/3,6) mais d2 croît comme V² ; d = d1 + d2 n’est pas proportionnelle à V (les distances d’arrêt augmentent plus vite que la vitesse)"
+   },
+   "answerSource": "computed",
+   "reading": "tableur : ligne 1 « V(km/h) » 20…130, lignes 2–4 « d1(m) », « d2(m) », « d(m) » ; valeurs imprimées B2 = 5,56 ; C2 = 8,33 ; B3 = 1,97 ; C3 = 4,43 (retrouvées par le calcul)."
+  }
+ ],
+ "discrepancies": [
+  {
+   "elementId": "opener",
+   "kind": "scan",
+   "text": "Le cadre historique de la page 86 (sous « سأتعلّم ») est presque entièrement détruit par des blocs de pixels : ILLISIBLE, non transcrit, non reconstitué (seuls des mots isolés — sablier, loch, nœuds, vitesse des navires — se devinent)."
+  },
+  {
+   "elementId": "challenge",
+   "kind": "reading",
+   "text": "Le graphique du défi est quasi vide dans le scan : seuls les repères 4 (s) et 24 (m) et les tirets du point (4 ; 24) sont nets ; la droite issue de O n’est visible qu’en pointillés très pâles. Réponses déduites du coefficient 24/4 = 6 m/s (1284 m ; 250 s = 4 min 10 s) — le livre ne les imprime pas."
+  },
+  {
+   "elementId": "prep",
+   "kind": "scan",
+   "text": "Surlignage jaune de la colonne (2) sur la page 87 : artefact du scan (colonne entière surlignée, y compris des options fausses comme 6 ÷ 4 = 1,5 à l’item 3 et 2,8×0,4/7,6 à l’item 5), PAS une clé. Réponses recalculées : 1 → (2),(3) ; 2 → (2) ; 3 → (1),(2) ; 4 → (2) ; 5 → (3) ; 6 → (1),(3) ; 7 → (1) ; 8 → (1),(2) ; 9 → (3) ; 10 → (2),(3)."
+  },
+  {
+   "elementId": "prep",
+   "kind": "ambiguity",
+   "text": "Item 4 « معامل التناسبية المُشار إليه في الجدول » : le sens kg → DA (600/7) est lu ; le sens inverse (7/600) est l’option (1) fausse. Item 10 : « 1,30h » (option 1) est un piège (1,30 h = 1 h 18 min)."
+  },
+  {
+   "elementId": "act-1",
+   "kind": "reading",
+   "text": "Dans le tableau des trois magasins le libellé « عدد العلب » est imprimé à GAUCHE des nombres 2, 6, 12, 14 (inhabituel). Magasin 3 lu « 5 DA la boîte jusqu’à 8 boîtes, 2 DA à partir de la 9e » : 10, 30, 48, 52 DA."
+  },
+  {
+   "elementId": "know-1b",
+   "kind": "reading",
+   "text": "Deuxième graphique (droite décroissante) : le troisième point est lu à (3 ; ≈35) ; la valeur exacte n’a pas d’importance (la droite coupe l’axe des ordonnées en 50, donc ne passe pas par O)."
+  },
+  {
+   "elementId": "ex-1",
+   "kind": "misprint",
+   "text": "Le tableau ③ est imprimé « 1 4 6 / 1 2 3 » mais le graphique correspondant (droite issue de O) passe par (2 ; 1), (4 ; 2), (6 ; 3) : lire « 2 4 6 / 1 2 3 » (coefficient 1/2). Tel qu’imprimé, ③ ne serait pas proportionnel (1/1 ≠ 2/4). Texte conservé tel qu’imprimé ; correction : première colonne (2 ; 1)."
+  },
+  {
+   "elementId": "ex-1",
+   "kind": "ambiguity",
+   "text": "La question 2 est au singulier (« الجدول الذي يُمثّل… ») mais DEUX tableaux sont proportionnels : ③ (corrigé) et ④ (coefficient négatif −10 : points alignés avec l’origine). La leçon décidera si le coefficient négatif est admis (il ne décrit pas une grandeur physique)."
+  },
+  {
+   "elementId": "ex-4",
+   "kind": "misprint",
+   "text": "Le premier point du graphique est à (100 ; ≈6,5) mais la graduation imprimée au bord de l’axe est « 6 » (à ≈6,1) : lu 6,5 (cohérent avec 13 L pour 200 km et 26 L pour 400 km ; 52 L ⇒ 800 km exactement)."
+  },
+  {
+   "elementId": "ex-11",
+   "kind": "misprint",
+   "text": "Les deux classes sont imprimées avec les MÊMES données (45 % de 40) : réponse triviale 45 % ; conservé tel quel. La leçon peut proposer ses propres effectifs."
+  },
+  {
+   "elementId": "ex-16",
+   "kind": "ambiguity",
+   "text": "« نسبة طول الساحل بالنسبة إلى مُحيط التراب الجزائري » : lu 1644 / (6343 + 1644) = 1644/7987 ≈ 20,6 %. L’autre lecture (1644/6343 ≈ 25,9 %) est écartée."
+  },
+  {
+   "elementId": "deep-33",
+   "kind": "scope",
+   "text": "L’exercice démontre y = ax par la propriété de Thales (triangles OIA et OHM). Le livre étudie cette propriété à l’unité 9 « المثلثات » (pp. 128–149), APRÈS l’unité 6 : la leçon T doit l’aborder sans Thales (rapport de 1 à x) ou le présenter en enrichissement."
+  },
+  {
+   "elementId": "deep-33",
+   "kind": "reading",
+   "text": "Question 5 : les pointillés sont laissés à compléter ; la complétion proposée (« points alignés avec l’origine ⟹ ordonnées proportionnelles aux abscisses ») est CALCULÉE/dérivée, pas imprimée."
+  },
+  {
+   "elementId": "deep-39",
+   "kind": "ambiguity",
+   "text": "Question 2 : « بعد فترة انخفضت الأسعار بنسبة 25% » lue comme une baisse de 25 % appliquée au prix payé (3875 DA) : 2906,25 DA ; même résultat en repartant du prix initial 3100 DA (× 1,25 × 0,75)."
+  },
+  {
+   "elementId": "deep-41",
+   "kind": "scope",
+   "text": "Question jـ : 9,8 / 1,7 ≈ 5,76 ; « 6 fois moins » est donc une approximation, pas une égalité exacte."
+  },
+  {
+   "elementId": "integration",
+   "kind": "check",
+   "text": "Solution brève du livre (90 km/h ; 1629 DA) RECALCULÉE : 40 % de 912 = 364,8 km en 3,04 h (3h 2min 24s) = 120 km/h ≠ 100 ; il reste 547,2 km en 9,12 − 3,04 = 6,08 h ⇒ 90 km/h ; carburant 912 × 5/100 = 45,6 L × 35,72 = 1628,832 ⇒ 1629 DA. Concordant."
+  },
+  {
+   "elementId": "evaluation",
+   "kind": "estimate",
+   "text": "Le livre ne donne pas de réponse : 26 min restantes pour 22 % ⇒ 26/0,22 ≈ 118 min, soit environ 2 h d’autonomie (estimation, pas valeur exacte)."
+  },
+  {
+   "elementId": "ict",
+   "kind": "reading",
+   "text": "Tableur : les valeurs imprimées B2 = 5,56, C2 = 8,33, B3 = 1,97, C3 = 4,43 sont retrouvées par le calcul ; le texte imprime « اكمل » et « الطلبة » (= الصيغة) tels quels. d est calculé ici pour V = 20…130 km/h ; la question jـ (comportements) est ouverte."
+  },
+  {
+   "elementId": "unit",
+   "kind": "scope",
+   "text": "Pages 86–101 complètes. Il n’y a pas d’exercice 29 : la page 98 (أتعمّق) s’ouvre sur le 30 « أفكر وأجيب » ; les exercices 1–28 sont les « أوظّف تعلّماتي » (pp. 94–96), les items 1–10 les « أؤكّد تعلّماتي » (p. 97). Les éléments de la leçon haraka-muntazama-sura et de la synthèse sont transcrits plus brièvement (verified: false)."
+  }
+ ],
+ "destinations": {
+  "_comment": "elementId → { lesson, module } ; `items` répartit un élément ; une leçon encore coming_soon est une destination EN ATTENTE (check-textbook-coverage.mjs). Modules de tanasub-tamthil-bayani et de nisba-miawiya-3am : 0 أستعدّ · 1 نشاط (un lab) · 2 معارف · 3 طريقة · 4 أتمرّن · 5–7 مسائل · 8 إختبار أولي ; `None` = leçon en attente ou banque d’exercices.",
+  "objectives": {
+   "lesson": "unit",
+   "module": "page"
+  },
+  "challenge": {
+   "lesson": "unit",
+   "module": "page"
+  },
+  "opener": {
+   "lesson": "wadiya-idmajiya-tanasubiya-sura",
+   "module": null
+  },
+  "prep": {
+   "lesson": "tanasub-tamthil-bayani",
+   "module": 0,
+   "items": {
+    "1-4-5-6": {
+     "lesson": "tanasub-tamthil-bayani",
+     "module": 0
+    },
+    "7-8-9": {
+     "lesson": "nisba-miawiya-3am",
+     "module": 0
+    },
+    "2-3-10": {
+     "lesson": "haraka-muntazama-sura",
+     "module": null
+    }
+   }
+  },
+  "act-1": {
+   "lesson": "tanasub-tamthil-bayani",
+   "module": 4,
+   "note": "APPLICATION (guide §4ter) : la plateforme conçoit son propre lab d’entrée (points d’un tableau dans un repère) ; l’activité des trois magasins est posée en أتمرّن."
+  },
+  "act-2": {
+   "lesson": "nisba-miawiya-3am",
+   "module": 4,
+   "note": "APPLICATION (guide §4ter) : la plateforme conçoit son propre lab d’entrée sur le pourcentage ; les usages de la population sont posés en أتمرّن."
+  },
+  "act-3": {
+   "lesson": "haraka-muntazama-sura",
+   "module": null
+  },
+  "know-0": {
+   "lesson": "haraka-muntazama-sura",
+   "module": null
+  },
+  "know-1a": {
+   "lesson": "tanasub-tamthil-bayani",
+   "module": 2
+  },
+  "know-1b": {
+   "lesson": "tanasub-tamthil-bayani",
+   "module": 2
+  },
+  "method-1a": {
+   "lesson": "tanasub-tamthil-bayani",
+   "module": 3
+  },
+  "method-1b": {
+   "lesson": "tanasub-tamthil-bayani",
+   "module": 3
+  },
+  "know-2a": {
+   "lesson": "nisba-miawiya-3am",
+   "module": 2
+  },
+  "know-2b": {
+   "lesson": "nisba-miawiya-3am",
+   "module": 2
+  },
+  "method-2": {
+   "lesson": "nisba-miawiya-3am",
+   "module": 3
+  },
+  "now-91": {
+   "lesson": "nisba-miawiya-3am",
+   "module": 3
+  },
+  "know-3": {
+   "lesson": "haraka-muntazama-sura",
+   "module": null
+  },
+  "method-3": {
+   "lesson": "haraka-muntazama-sura",
+   "module": null
+  },
+  "method-4": {
+   "lesson": "haraka-muntazama-sura",
+   "module": null
+  },
+  "now-93-1": {
+   "lesson": "haraka-muntazama-sura",
+   "module": null
+  },
+  "now-93-2": {
+   "lesson": "haraka-muntazama-sura",
+   "module": null
+  },
+  "ex-1": {
+   "lesson": "tanasub-tamthil-bayani",
+   "module": 4
+  },
+  "ex-2": {
+   "lesson": "tanasub-tamthil-bayani",
+   "module": 4
+  },
+  "ex-3": {
+   "lesson": "tanasub-tamthil-bayani",
+   "module": 4
+  },
+  "ex-4": {
+   "lesson": "tanasub-tamthil-bayani",
+   "module": 4
+  },
+  "ex-5": {
+   "lesson": "tanasub-tamthil-bayani",
+   "module": 4
+  },
+  "ex-6": {
+   "lesson": "nisba-miawiya-3am",
+   "module": 4
+  },
+  "ex-7": {
+   "lesson": "nisba-miawiya-3am",
+   "module": 4
+  },
+  "ex-8": {
+   "lesson": "nisba-miawiya-3am",
+   "module": 4
+  },
+  "ex-9": {
+   "lesson": "nisba-miawiya-3am",
+   "module": 4
+  },
+  "ex-10": {
+   "lesson": "nisba-miawiya-3am",
+   "module": 4
+  },
+  "ex-11": {
+   "lesson": "nisba-miawiya-3am",
+   "module": 4
+  },
+  "ex-12": {
+   "lesson": "nisba-miawiya-3am",
+   "module": 4
+  },
+  "ex-13": {
+   "lesson": "nisba-miawiya-3am",
+   "module": 4
+  },
+  "ex-14": {
+   "lesson": "nisba-miawiya-3am",
+   "module": 4
+  },
+  "ex-15": {
+   "lesson": "nisba-miawiya-3am",
+   "module": 4
+  },
+  "ex-16": {
+   "lesson": "nisba-miawiya-3am",
+   "module": 4
+  },
+  "ex-17": {
+   "lesson": "haraka-muntazama-sura",
+   "module": null
+  },
+  "ex-18": {
+   "lesson": "haraka-muntazama-sura",
+   "module": null
+  },
+  "ex-19": {
+   "lesson": "haraka-muntazama-sura",
+   "module": null
+  },
+  "ex-20": {
+   "lesson": "haraka-muntazama-sura",
+   "module": null
+  },
+  "ex-21": {
+   "lesson": "haraka-muntazama-sura",
+   "module": null
+  },
+  "ex-22": {
+   "lesson": "haraka-muntazama-sura",
+   "module": null
+  },
+  "ex-23": {
+   "lesson": "haraka-muntazama-sura",
+   "module": null
+  },
+  "ex-24": {
+   "lesson": "haraka-muntazama-sura",
+   "module": null
+  },
+  "ex-25": {
+   "lesson": "haraka-muntazama-sura",
+   "module": null
+  },
+  "ex-26": {
+   "lesson": "haraka-muntazama-sura",
+   "module": null
+  },
+  "ex-27": {
+   "lesson": "haraka-muntazama-sura",
+   "module": null
+  },
+  "ex-28": {
+   "lesson": "haraka-muntazama-sura",
+   "module": null
+  },
+  "self-1": {
+   "lesson": "tanasub-tamthil-bayani",
+   "module": 8
+  },
+  "self-2": {
+   "lesson": "tanasub-tamthil-bayani",
+   "module": 8
+  },
+  "self-3": {
+   "lesson": "nisba-miawiya-3am",
+   "module": 8
+  },
+  "self-4": {
+   "lesson": "nisba-miawiya-3am",
+   "module": 8
+  },
+  "self-5": {
+   "lesson": "nisba-miawiya-3am",
+   "module": 8
+  },
+  "self-6": {
+   "lesson": "nisba-miawiya-3am",
+   "module": 8
+  },
+  "self-7": {
+   "lesson": "haraka-muntazama-sura",
+   "module": null
+  },
+  "self-8": {
+   "lesson": "haraka-muntazama-sura",
+   "module": null
+  },
+  "self-9": {
+   "lesson": "haraka-muntazama-sura",
+   "module": null
+  },
+  "self-10": {
+   "lesson": "haraka-muntazama-sura",
+   "module": null
+  },
+  "deep-30": {
+   "lesson": "nisba-miawiya-3am",
+   "module": 4,
+   "items": {
+    "a": {
+     "lesson": "nisba-miawiya-3am",
+     "module": 4
+    },
+    "b-c": {
+     "lesson": "haraka-muntazama-sura",
+     "module": null
+    }
+   }
+  },
+  "deep-31": {
+   "lesson": "tanasub-tamthil-bayani",
+   "module": 4
+  },
+  "deep-32": {
+   "lesson": "tanasub-tamthil-bayani",
+   "module": 4
+  },
+  "deep-33": {
+   "lesson": "tanasub-tamthil-bayani",
+   "module": 4
+  },
+  "deep-41": {
+   "lesson": "tanasub-tamthil-bayani",
+   "module": 4
+  },
+  "deep-39": {
+   "lesson": "nisba-miawiya-3am",
+   "module": 4
+  },
+  "deep-40": {
+   "lesson": "nisba-miawiya-3am",
+   "module": 4
+  },
+  "deep-34": {
+   "lesson": "haraka-muntazama-sura",
+   "module": null
+  },
+  "deep-35": {
+   "lesson": "haraka-muntazama-sura",
+   "module": null
+  },
+  "deep-36": {
+   "lesson": "haraka-muntazama-sura",
+   "module": null
+  },
+  "deep-37": {
+   "lesson": "haraka-muntazama-sura",
+   "module": null
+  },
+  "deep-38": {
+   "lesson": "haraka-muntazama-sura",
+   "module": null
+  },
+  "deep-42": {
+   "lesson": "haraka-muntazama-sura",
+   "module": null
+  },
+  "integration": {
+   "lesson": "wadiya-idmajiya-tanasubiya-sura",
+   "module": null
+  },
+  "evaluation": {
+   "lesson": "wadiya-idmajiya-tanasubiya-sura",
+   "module": null
+  },
+  "ict": {
+   "lesson": "wadiya-idmajiya-tanasubiya-sura",
+   "module": null
+  }
+ }
+}

@@ -1,94 +1,48 @@
 import { apiRequest, ApiError, classifyStatus } from './apiClient';
+import { apiMessage } from './apiMessage';
 
 /**
- * « Signaler un problème », côté élève.
+ * « Signaler un problème » — administrateur et AMBASSADEURS (« سفراء »).
+ *
+ * UN envoi, multipart (depuis 2026-10-05) : le contexte, la catégorie, une
+ * note facultative et une capture d'écran facultative (zone fautive déjà
+ * encadrée). Le clic sur le bouton n'envoie RIEN.
  *
  * N'envoie que des CODES de contenu — jamais d'identifiant de base. Le
  * serveur reconstruit lui-même la leçon, le module et la tentative
- * (App\Domain\Admin\ReportService) : c'est ce qui permet à l'élève de ne rien
- * avoir à identifier, et ce qui empêche un client de désigner le contenu d'un
- * autre.
+ * (App\Domain\Admin\ReportService) : un client ne peut pas désigner le
+ * contenu d'un autre.
  *
  * @param {string} token
  * @param {{
- *   category: string, note?: string,
- *   lessonCode?: string, grade?: string, moduleNumber?: number, step?: string,
- *   exerciseCode?: string, questionId?: string, sessionId?: string, attemptUuid?: string,
+ *   source: 'lesson'|'module'|'exercise'|'question'|'diagnostic',
+ *   context?: object, category: string, note?: string, screenshot?: Blob|null,
  * }} report
  */
-/**
- * LE SIGNAL — appelé au clic, avant toute saisie.
- *
- * « Un élève a buté ici » est déjà une information exploitable, même s'il
- * referme la fenêtre sans rien écrire. Attendre l'envoi du formulaire ferait
- * perdre exactement ce qu'on cherche à mesurer.
- *
- * Le serveur déduplique : ouvrir et refermer la fenêtre plusieurs fois sur le
- * même contexte renvoie le même signalement, il n'en fabrique pas cinq.
- *
- * @param {string} token
- * @param {{ source: 'lesson'|'module'|'exercise'|'question'|'diagnostic',
- *   lessonCode?: string, grade?: string, moduleNumber?: number, step?: string,
- *   exerciseCode?: string, questionId?: string, sessionId?: string, attemptUuid?: string }} context
- * @returns {Promise<{id: number, source: string, submitted: boolean}>}
- */
-export async function initiateReport(token, context) {
+export async function submitReport(token, { source, context = {}, category, note, screenshot = null }) {
+  const body = new FormData();
+  const fields = { source, ...context, ...collectDiagnostics(), category, note: note || undefined };
+  for (const [key, value] of Object.entries(fields)) {
+    if (value === undefined || value === null || value === '') continue;
+    body.append(key, String(value));
+  }
+  if (screenshot) {
+    const extension = screenshot.type === 'image/webp' ? 'webp' : screenshot.type === 'image/jpeg' ? 'jpg' : 'png';
+    body.append('screenshot', screenshot, `capture.${extension}`);
+  }
+
+  // Sans Content-Type : le navigateur pose lui-même la frontière multipart.
   const { ok, status, data } = await apiRequest('/reports', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-    body: JSON.stringify({ ...context, ...collectDiagnostics() }),
+    headers: { Accept: 'application/json', Authorization: `Bearer ${token}` },
+    body,
   });
 
   if (!ok) {
-    throw new ApiError(data?.message || 'Impossible d’ouvrir le signalement.', classifyStatus(status), status);
+    throw new ApiError(apiMessage('reportSend', data, status), classifyStatus(status), status);
   }
 
   return data.report;
-}
-
-/**
- * Cet échec vaut-il la peine d'être rejoué ?
- *
- * OUI pour ce qui est passager : réseau coupé, serveur momentanément
- * indisponible. La même requête, plus tard, peut aboutir.
- *
- * NON pour ce qui est un refus : une autorisation manquante ou une validation
- * refusée se reproduiront à l'identique. Les rejouer masquerait la vraie
- * cause derrière un second échec, et ferait boucler un client sur une requête
- * que le serveur ne veut pas — d'où la règle explicite plutôt qu'un
- * `catch` qui réessaie tout.
- *
- * @param {unknown} error
- * @returns {boolean}
- */
-export function isRetryableFailure(error) {
-  // Une erreur qui n'est pas typée ne dit rien de sa cause : on la traite
-  // comme passagère, quitte à retenter une fois. Perdre le signalement d'un
-  // élève serait pire que de réessayer pour rien.
-  if (!error || typeof error.type !== 'string') return true;
-
-  return error.type === 'NETWORK_ERROR' || error.type === 'SERVER_ERROR';
-}
-
-/**
- * LA COMPLÉTION — la catégorie et, si l'élève le veut, ses mots.
- *
- * La note reste facultative pour TOUTES les catégories, « Autre » comprise :
- * exiger une explication écrite ferait taire la moitié des élèves, et un
- * signalement sans mot reste un signalement.
- */
-export async function completeReport(token, reportId, { category, note }) {
-  const { ok, status, data } = await apiRequest(`/reports/${encodeURIComponent(reportId)}`, {
-    method: 'PATCH',
-    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-    body: JSON.stringify({ category, note: note || undefined }),
-  });
-
-  if (!ok) {
-    throw new ApiError(data?.message || 'Impossible d’envoyer le signalement.', classifyStatus(status), status);
-  }
-
-  return data;
 }
 
 /**

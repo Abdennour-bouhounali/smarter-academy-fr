@@ -1,0 +1,240 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l4-009",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — نقطة خارج الدائرة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "خاصية فيثاغورس",
+      "مثلث غير قائم",
+      "الدائرة المحيطة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "$ABC$ مثلث حيث $AB = 7\\,\\mathrm{cm}$ ، $AC = 4{,}2\\,\\mathrm{cm}$ و $BC = 5{,}8\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $AB^2$ ، مربع طول أطول أضلاع المثلث $ABC$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: قيمة $AB^2$",
+      "expectedAnswer": "49",
+      "misconceptionSignatures": [
+        {
+          "value": "14",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        },
+        {
+          "value": "33.64",
+          "id": "MISC-FITAGHURAS-NOT-LONGEST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رتّب أطوال الأضلاع الثلاثة: الضلع الأطول هو الوحيد الذي يمكن أن يكون وترا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع العدد هو جداؤه في نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "أطول الأضلاع هو $[AB]$ و $AB^2 = 7^2 = 49$ .",
+        "incorrect": "تأكّد أنك اخترت الضلع الأطول، وأنك ضربت طوله في نفسه."
+      },
+      "solution": {
+        "lines": [
+          "أطول أضلاع المثلث $ABC$ هو $[AB]$ .",
+          "$AB^2 = 7^2 = 49$"
+        ],
+        "result": "AB^2 = 49"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $AC^2 + BC^2$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: مجموع المربعين",
+      "expectedAnswer": "51.28",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        },
+        {
+          "value": "10",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ربّع طول كل ضلع من الضلعين الأقصرين على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المربعين ولا تجمع الطولين."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC^2 + BC^2 = 4{,}2^2 + 5{,}8^2 = 17{,}64 + 33{,}64 = 51{,}28$ .",
+        "incorrect": "احسب مربع كل طول أولا، ثم اجمع المربعين."
+      },
+      "solution": {
+        "lines": [
+          "$AC^2 + BC^2 = 4{,}2^2 + 5{,}8^2$",
+          "$AC^2 + BC^2 = 17{,}64 + 33{,}64 = 51{,}28$"
+        ],
+        "result": "AC^2 + BC^2 = 51{,}28"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل المثلث $ABC$ قائم؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "المثلث $ABC$ قائم لأن العددين $49$ و $51{,}28$ متقاربان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-LOOKS-RIGHT"
+        },
+        {
+          "id": "B",
+          "content": "المثلث $ABC$ ليس قائما",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لا يمكن الحكم إلا بقياس زواياه بالمنقلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-LOOKS-RIGHT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العددين اللذين حسبتهما: هل هما متساويان تماما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لو كان المثلث قائما لكان مربع طول أطول أضلاعه مساويا تماما لمجموع مربعي الضلعين الآخرين (خاصية فيثاغورس)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "التقارب لا يكفي: المساواة يجب أن تكون تامة."
+        }
+      ],
+      "feedback": {
+        "correct": "$49 \\neq 51{,}28$ : لو كان المثلث قائما لتساوى العددان حسب خاصية فيثاغورس، إذن هو ليس قائما.",
+        "incorrect": "الشكل أو تقارب العددين لا يكفيان: انظر هل المساواة محقّقة تماما أم لا."
+      },
+      "solution": {
+        "lines": [
+          "أطول الأضلاع هو $[AB]$ : $AB^2 = 49$ و $AC^2 + BC^2 = 51{,}28$ .",
+          "بما أن $AB^2 \\neq AC^2 + BC^2$ ، فحسب خاصية فيثاغورس المثلث $ABC$ ليس قائما."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "استنتج أن النقطة $C$ لا تنتمي إلى الدائرة التي قطرها $[AB]$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا نعرف عن مثلث رؤوسه على دائرة وأحد أضلاعه قطر لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل نتيجة السؤال السابق: المثلث ليس قائما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "افترض أن $C$ على الدائرة، ثم بيّن أن ذلك يناقض ما وجدته."
+        }
+      ],
+      "feedback": {
+        "correct": "لو كانت $C$ على الدائرة لكان المثلث قائما في $C$ ، وهو ليس كذلك.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "$AB^2 = 49$ و $AC^2 + BC^2 = 51{,}28$ ، و $49 \\neq 51{,}28$ : حسب خاصية فيثاغورس المثلث $ABC$ ليس قائما في $C$ .",
+          "لو كانت $C$ نقطة من الدائرة التي قطرها $[AB]$ لكان المثلث $ABC$ قائما في $C$ (مثلث محاط بدائرة أحد أضلاعه قطر لها).",
+          "وهذا غير صحيح، إذن $C$ لا تنتمي إلى هذه الدائرة."
+        ]
+      },
+      "timeSeconds": 240
+    }
+  ]
+}

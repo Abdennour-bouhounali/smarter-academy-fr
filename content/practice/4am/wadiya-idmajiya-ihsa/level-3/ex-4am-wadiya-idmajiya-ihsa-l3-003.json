@@ -1,0 +1,194 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ihsa-l3-003",
+  "lessonCode": "wadiya-idmajiya-ihsa",
+  "level": 3,
+  "metadata": {
+    "title": "علامات 16 تلميذا في فرض",
+    "estimatedMinutes": 8,
+    "tags": [
+      "التكرار المجمع الصاعد",
+      "الوسيط",
+      "المتوسط المتوازن"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ihsa_P1"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يعطي الجدول الآتي علامات 16 تلميذا في فرض الرياضيات حصّلوها بالمراجعة والاجتهاد:",
+    "table": {
+      "head": [
+        "العلامة",
+        "10",
+        "12",
+        "14",
+        "16"
+      ],
+      "rows": [
+        [
+          "عدد التلاميذ",
+          "3",
+          "4",
+          "5",
+          "4"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب عدد التلاميذ الذين تحصّلوا على 12 على الأكثر.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-IHSA-SARAMA"
+        },
+        {
+          "value": "4",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        },
+        {
+          "value": "13",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«12 على الأكثر» تعني 12 أو أقل."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 + 4 = 7$ .",
+        "incorrect": "هذا العدد هو التكرار المجمع الصاعد للعلامة 12 : لا تنس تكرار 12 نفسها."
+      },
+      "solution": {
+        "lines": [
+          "$3 + 4 = 7$"
+        ],
+        "result": "7"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عيّن وسيط هذه السلسلة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة إن لزم)",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-IHSA-WASIT-QIMA-WUSTA-JADWAL"
+        },
+        {
+          "value": "13,25",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكرار الكلي 16 : الرتبتان الوسطيان 8 و 9 ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التكرارات المجمعة الصاعدة: 3 ، 7 ، …"
+        }
+      ],
+      "feedback": {
+        "correct": "الرتبتان 8 و 9 تقعان في العلامة 14 ، فالوسيط 14 .",
+        "incorrect": "الوسيط لا يُؤخذ من وسط سطر الجدول: حدّد العلامة التي تقع فيها الرتبتان 8 و 9 ."
+      },
+      "solution": {
+        "lines": [
+          "الرتبتان الوسطيان 8 و 9 .",
+          "التكرارات المجمعة الصاعدة: 3 ، 7 ، 12 ، 16 ؛ الرتب من 8 إلى 12 للعلامة 14 .",
+          "$\\dfrac{14 + 14}{2} = 14$"
+        ],
+        "result": "14"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب متوسط علامات التلاميذ.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة",
+      "expectedAnswer": "13,25",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-IHSA-MUTAWASSIT-BILA-TARJIH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب كل علامة في عدد التلاميذ الموافق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم المجموع على 16 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{10 \\times 3 + 12 \\times 4 + 14 \\times 5 + 16 \\times 4}{16} = 13{,}25$ .",
+        "incorrect": "المتوسط المتوازن: مجموع (العلامة × عدد التلاميذ) ÷ 16 ."
+      },
+      "solution": {
+        "lines": [
+          "$10 \\times 3 + 12 \\times 4 + 14 \\times 5 + 16 \\times 4 = 212$",
+          "$\\dfrac{212}{16} = 13{,}25$"
+        ],
+        "result": "13{,}25"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

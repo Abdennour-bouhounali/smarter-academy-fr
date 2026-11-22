@@ -1,0 +1,169 @@
+{
+  "id": "ex-2am-jam-tarh-kusur-l2-006",
+  "lessonCode": "jam-tarh-kusur",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — اكتشف الخطأ في الحساب",
+    "estimatedMinutes": 6,
+    "tags": [
+      "جمع كسرين",
+      "خطأ شائع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "كتب سمير : $\\dfrac{2}{5} + \\dfrac{3}{10} = \\dfrac{5}{15}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل هذه الكتابة صحيحة ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMKASR-ACROSS"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا ثمّ تحقّق منها بحساب بسيط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الناتج بمقام مشترك ثمّ قارنه بما قيل."
+        }
+      ],
+      "feedback": {
+        "correct": "لا : لا نجمع المقامين، ولا نجمع أجزاء من نوعين مختلفين .",
+        "incorrect": "احسب ثمّ قارن بدقّة قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{15}$ جمع فيها سمير البسطين والمقامين معًا .",
+          "الصحيح : $\\dfrac{2}{5} = \\dfrac{4}{10}$ ثمّ $\\dfrac{4}{10} + \\dfrac{3}{10} = \\dfrac{7}{10}$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $S = \\dfrac{2}{5} + \\dfrac{3}{10}$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "7/10",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1/3",
+          "id": "MISC-JAMKASR-ACROSS"
+        },
+        {
+          "value": "1/2",
+          "id": "MISC-JAMKASR-NOSCALE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليّة المطلوبة؟ وهل المقامان متساويان، أم أنّ أحدهما مضاعف للآخر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا اختلف المقامان فاكتب الكسر ذا المقام الأصغر بالمقام الأكبر: اضرب حدّيه في العدد نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع (أو اطرح) البسطين وأبقِ المقام كما هو، ثمّ اختزل الناتج إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = \\dfrac{7}{10}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2}{5} = \\dfrac{2 \\times 2}{5 \\times 2} = \\dfrac{4}{10}$ .",
+          "$S = \\dfrac{2}{5} + \\dfrac{3}{10} = \\dfrac{4 + 3}{10} = \\dfrac{7}{10}$ ."
+        ],
+        "result": "S = \\dfrac{7}{10}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اشرح لسمير لماذا لا نجمع المقامين .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثمّ اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب جملة أو جملتين: الفكرة ثمّ الحساب الذي يدعمها."
+        }
+      ],
+      "feedback": {
+        "correct": "المقام يسمّي نوع الأجزاء ولا يُجمع .",
+        "incorrect": "قارن تبريرك بالحلّ النموذجي: الفكرة ثمّ الحساب الذي يدعمها."
+      },
+      "solution": {
+        "lines": [
+          "المقام يسمّي نوع الأجزاء، أي كم جزءًا متساويًا في الكلّ، فهو لا يتغيّر عند الجمع .",
+          "نكتب الكسرين بالمقام نفسه ثمّ نجمع البسطين فقط ."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

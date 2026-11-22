@@ -1,0 +1,224 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l3-003",
+  "lessonCode": "mana-jam-tarh",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — العددان A و B",
+    "estimatedMinutes": 7,
+    "tags": [
+      "مجموع",
+      "فرق",
+      "حدود"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العددين A و B حيث:",
+    "formulas": [
+      "A = 45{,}8 + 17{,}35",
+      "B = 45{,}8 - 17{,}35"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب A.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "63.15",
+      "misconceptionSignatures": [
+        {
+          "value": "47.535",
+          "id": "MISC-JAMTARH-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "A مجموع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاذِ الفاصلتين: $45{,}80 + 17{,}35$."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 63{,}15$.",
+        "incorrect": "اجمع بعد كتابة 45,8 على الشكل 45,80."
+      },
+      "solution": {
+        "lines": [
+          "$A = 45{,}8 + 17{,}35 = 45{,}80 + 17{,}35 = 63{,}15$"
+        ],
+        "result": "A = 63{,}15"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب B.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "28.45",
+      "misconceptionSignatures": [
+        {
+          "value": "63.15",
+          "id": "MISC-JAMTARH-MAJMU-FARQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "B فرق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح 17,35 من 45,80."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 28{,}45$، والتحقق: $28{,}45 + 17{,}35 = 45{,}8$.",
+        "incorrect": "B ناتج طرح وليس ناتج جمع."
+      },
+      "solution": {
+        "lines": [
+          "$B = 45{,}8 - 17{,}35 = 45{,}80 - 17{,}35 = 28{,}45$"
+        ],
+        "result": "B = 28{,}45"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "العدد A هو:",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مجموع العددين 45,8 و 17,35",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "فرق العددين 45,8 و 17,35",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-MAJMU-FARQ"
+        },
+        {
+          "id": "C",
+          "content": "حدّ من حدّي المجموع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-HUDUD"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تعطي A؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما اسم ناتجها؟"
+        }
+      ],
+      "feedback": {
+        "correct": "A ناتج جمع 45,8 و 17,35: هو مجموعهما.",
+        "incorrect": "A هو ناتج العملية، لا أحد العددين اللذين نجمعهما."
+      },
+      "solution": {
+        "lines": [
+          "$A = 45{,}8 + 17{,}35$ ناتج جمع: A مجموع العددين 45,8 و 17,35، وهما حدّا المجموع."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "احسب فرق العددين A و B.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "34.7",
+      "misconceptionSignatures": [
+        {
+          "value": "91.6",
+          "id": "MISC-JAMTARH-MAJMU-FARQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ العددين أكبر: A أم B؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفرق: الأكبر − الأصغر."
+        }
+      ],
+      "feedback": {
+        "correct": "$63{,}15 - 28{,}45 = 34{,}7$، وهو ضعف 17,35.",
+        "incorrect": "احسب A و B أولًا، ثم اطرح الأصغر من الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "$A - B = 63{,}15 - 28{,}45 = 34{,}7$"
+        ],
+        "result": "A - B = 34{,}7"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "id": "ex-4am-hasiba-muthallathiya-l3-009",
+  "lessonCode": "hasiba-muthallathiya",
+  "level": 3,
+  "metadata": {
+    "title": "شاشة غريبة: جيب 37° وجيب تمامها",
+    "estimatedMinutes": 6,
+    "tags": [
+      "وضع الدرجة",
+      "الجيب",
+      "جيب التمام"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hasiba-muthallathiya_P1",
+      "modelledOn": "know-3",
+      "adaptedFrom": "ex-4am-hasiba-muthallathiya-l3-008"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ضغطت نسيمة ⁦ON sin 37 =⁩ فظهر على الشاشة $-0{,}6435381334$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ماذا تستنتج؟",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\sin 37^{\\circ} \\approx -0{,}64$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-HASIBA-RAD"
+        },
+        {
+          "id": "B",
+          "content": "الحاسبة مبرمجة بالراديان: جيب زاوية حادة لا يكون سالبا",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "كان عليها أن تضغط ⁦2nd⁩ قبل ⁦sin⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-AKS-BADAL-MUBASHIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جيب زاوية حادة نسبة طولين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انظر إلى الحرف في أعلى الشاشة."
+        }
+      ],
+      "feedback": {
+        "correct": "جيب زاوية حادة محصور بين 0 و 1: الشاشة تدل على وضع الراديان.",
+        "incorrect": "نسبة طولين لا تكون سالبة؛ ابحث عن وحدة الزوايا التي تعمل بها الحاسبة."
+      },
+      "solution": {
+        "lines": [
+          "جيب زاوية حادة نسبة طولين، فهو موجب (ومحصور بين 0 و 1).",
+          "القيمة السالبة تعني أن الحاسبة حسبت جيب 37 راديان: يجب برمجتها بالدرجة ( ⁦D⁩ ).",
+          "اللمسة ⁦2nd⁩ للّمسات العكسية، ولا تغيّر الوحدة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بعد برمجة الحاسبة بالدرجة، احسب $\\sin 37^{\\circ}$ بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري مدوّر إلى 0,01",
+      "expectedAnswer": "0.60",
+      "misconceptionSignatures": [
+        {
+          "value": "-0.64",
+          "id": "MISC-MUTH-HASIBA-RAD"
+        },
+        {
+          "value": "0.80",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق أن الحاسبة مبرمجة بالدرجة: الحرف ⁦D⁩ في أعلى الشاشة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اللمسة المباشرة: ⁦sin⁩ ثم قيس الزاوية ثم ⁦=⁩ (دون ⁦2nd⁩)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتدوير إلى الجزء من 100: انظر إلى الرقم الموالي؛ إذا كان 5 أو أكبر نضيف 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin 37^{\\circ} = 0{,}6018150232 \\approx 0{,}60$ .",
+        "incorrect": "احسب باللمسة المباشرة والحاسبة مبرمجة بالدرجة، ثم دوّر (لا تبتر) إلى الجزء من 100."
+      },
+      "solution": {
+        "lines": [
+          "الحاسبة مبرمجة بالدرجة: ⁦ON sin 37 =⁩ يظهر على الشاشة $0{,}6018150232$ .",
+          "الرقم الذي يلي رقم الأجزاء من 100 هو 1، وهو أصغر من 5: نُبقي رقم الأجزاء من 100 كما هو."
+        ],
+        "result": "\\sin 37^{\\circ} \\approx 0{,}60"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب $\\cos 37^{\\circ}$ بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري مدوّر إلى 0,01",
+      "expectedAnswer": "0.80",
+      "misconceptionSignatures": [
+        {
+          "value": "0.79",
+          "id": "MISC-MUTH-TADWIR-BATR"
+        },
+        {
+          "value": "0.77",
+          "id": "MISC-MUTH-HASIBA-RAD"
+        },
+        {
+          "value": "0.60",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق أن الحاسبة مبرمجة بالدرجة: الحرف ⁦D⁩ في أعلى الشاشة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اللمسة المباشرة: ⁦cos⁩ ثم قيس الزاوية ثم ⁦=⁩ (دون ⁦2nd⁩)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتدوير إلى الجزء من 100: انظر إلى الرقم الموالي؛ إذا كان 5 أو أكبر نضيف 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\cos 37^{\\circ} = 0{,}79863551 \\approx 0{,}80$ .",
+        "incorrect": "احسب باللمسة المباشرة والحاسبة مبرمجة بالدرجة، ثم دوّر (لا تبتر) إلى الجزء من 100."
+      },
+      "solution": {
+        "lines": [
+          "الحاسبة مبرمجة بالدرجة: ⁦ON cos 37 =⁩ يظهر على الشاشة $0{,}79863551$ .",
+          "الرقم الذي يلي رقم الأجزاء من 100 هو 8، وهو أكبر من 5: نضيف 1 إلى رقم الأجزاء من 100."
+        ],
+        "result": "\\cos 37^{\\circ} \\approx 0{,}80"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

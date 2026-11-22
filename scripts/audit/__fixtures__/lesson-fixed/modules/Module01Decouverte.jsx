@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../apps/web/src/lessons/common/kit';
-import { Feedback } from '../../../../../apps/web/src/lessons/common/components/LessonUI';
 import { KnowledgeSnapshot } from '../../../../../apps/web/src/lessons/common/knowledge';
 import MathText from '../../../../../apps/web/src/lessons/common/components/MathText';
 
 export default function Module01Decouverte() {
-  const [ran, setRan] = useState(false);
+  const [ran] = useState(false);
   const [a, setA] = useState(false);
   const [b, setB] = useState(false);
 

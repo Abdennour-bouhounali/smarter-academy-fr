@@ -1,0 +1,242 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l5-001",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — تحت المجهر",
+    "estimatedMinutes": 6,
+    "tags": [
+      "مسألة",
+      "أسّ سالب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في حصّة العلوم الطبيعية شاهد تلاميذ القسم تحت المجهر شعرة سُمكها حوالي $0{,}0001\\ \\mathrm{m}$ ، وبكتيريا طولها حوالي $0{,}000001\\ \\mathrm{m}$ ، وفيروسًا قطره حوالي $0{,}00000001\\ \\mathrm{m}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "الجزء الأول. الشعرة: $0{,}0001 = 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين يقع الرقم 1 بعد الفاصلة؟ حدّد رتبته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في $10^{-n}$ يكون الرقم 1 في الرتبة $n$ بعد الفاصلة (الأعشار هي الرتبة الأولى)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأسّ سالب وقيمته المطلقة هي رتبة الرقم 1، أمّا عدد الأصفار بين الفاصلة والرقم 1 فأقلّ منها بواحد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "value": "-3",
+          "id": "MISC-ASHARA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}0001 = 10^{-4}$ .",
+        "incorrect": "عدّ الأصفار (أو رتبة الرقم 1 بعد الفاصلة) بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الرقم 1 في الرتبة 4 بعد الفاصلة.",
+          "$0{,}0001 = \\dfrac{1}{10^{4}} = 10^{-4}$ ."
+        ],
+        "result": "n = -4"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "الفيروس: $0{,}00000001 = 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين يقع الرقم 1 بعد الفاصلة؟ حدّد رتبته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في $10^{-n}$ يكون الرقم 1 في الرتبة $n$ بعد الفاصلة (الأعشار هي الرتبة الأولى)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأسّ سالب وقيمته المطلقة هي رتبة الرقم 1، أمّا عدد الأصفار بين الفاصلة والرقم 1 فأقلّ منها بواحد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-8",
+      "misconceptionSignatures": [
+        {
+          "value": "-7",
+          "id": "MISC-ASHARA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}00000001 = 10^{-8}$ .",
+        "incorrect": "عدّ الأصفار (أو رتبة الرقم 1 بعد الفاصلة) بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الرقم 1 في الرتبة 8 بعد الفاصلة.",
+          "$0{,}00000001 = \\dfrac{1}{10^{8}} = 10^{-8}$ ."
+        ],
+        "result": "n = -8"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "الجزء الثاني. كم صفرًا يسبق الرقم 1 في الكتابة العشرية لقطر الفيروس (مع صفر الوحدات)؟",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الكتابة العشرية لقطر الفيروس ثمّ عدّ الأصفار قبل الرقم 1."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضمن الأصفار صفر الوحدات الواقع قبل الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد الأصفار هو رتبة الرقم 1 بعد الفاصلة."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-ASHARA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "قطر الفيروس $0{,}00000001$ : ثمانية أصفار قبل الرقم 1.",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}00000001$ : صفر الوحدات ثمّ سبعة أصفار بعد الفاصلة.",
+          "المجموع ثمانية أصفار."
+        ],
+        "result": "8"
+      }
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "أيّ الجمل التالية صحيحة؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قطر كلّ كائن على شكل قوة للعدد 10 أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كلّما كان الرقم 1 أبعد عن الفاصلة كان العدد أصغر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الأسس السالبة بمقارنة الكتابات العشرية."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "الفيروس أصغر الثلاثة لأنّ أسّه $-8$ هو الأصغر",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الشعرة أصغر الثلاثة لأنّ $-4$ أقرب إلى الصفر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-SALIB"
+        },
+        {
+          "id": "C",
+          "content": "الفيروس أكبر الثلاثة لأنّ 8 أكبر من 4",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-SALIB"
+        }
+      ],
+      "feedback": {
+        "correct": "الفيروس $10^{-8}$ هو الأصغر لأنّ رقمه 1 أبعد ما يمكن عن الفاصلة.",
+        "incorrect": "اختبر كلّ اقتراح بحساب الكتابة العشرية للقوة المعنية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الأقطار: $10^{-4}$ و $10^{-6}$ و $10^{-8}$ .",
+          "$0{,}00000001 < 0{,}000001 < 0{,}0001$ ."
+        ]
+      }
+    }
+  ]
+}

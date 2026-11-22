@@ -1,0 +1,83 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-fada-l1-009",
+  "lessonCode": "wadiya-idmajiya-fada",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — حجم مخروط مبتور بالنسبة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "المخروط المبتور",
+      "التكبير والتصغير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-fada_P1",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "مخروط حجمه $V_1$ يقطعه مستو مواز لقاعدته في منتصف ارتفاعه: المخروط الصغير تصغير له نسبته $\\dfrac{1}{2}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "حجم المخروط المبتور (الجزء السفلي) يساوي:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-fada_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{1}{2}V_1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MABTUR-FARQ"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{7}{8}V_1$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{3}{4}V_1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-MISAHA-K"
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{1}{8}V_1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MABTUR-FARQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حجم المخروط المبتور = حجم الكبير − حجم الصغير."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حجم الصغير $k^3 V_1$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب $1 - \\left(\\dfrac{1}{2}\\right)^3$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$V_1 - \\dfrac{1}{8}V_1 = \\dfrac{7}{8}V_1$ .",
+        "incorrect": "$\\dfrac{1}{8}V_1$ حجم المخروط الصغير وحده، و $\\dfrac{1}{2}$ و $\\dfrac{3}{4}$ بـ k أو $k^2$ بدل $k^3$ ."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 1
+    }
+  ]
+}

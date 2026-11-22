@@ -1,0 +1,378 @@
+{
+  "id": "ex-4am-dala-khattiya-l5-001",
+  "lessonCode": "dala-khattiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2011 — دروس الدعم بدار الشباب بالأغواط",
+    "estimatedMinutes": 14,
+    "tags": [
+      "وضعية إدماجية",
+      "ثلاث صيغ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_dala-khattiya_P1",
+      "modelledOn": "BEM 2011 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2011",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تقترح دار الشباب بالأغواط، تشجيعًا على طلب العلم، دروس دعم في الرياضيات لتلاميذ السنة الرابعة متوسط، وفق ثلاث صيغ شهرية:\n– الصيغة (أ): دفع 350DA للحصة الواحدة.\n– الصيغة (ب): دفع اشتراك شهري قدره 1000DA و 250DA للحصة الواحدة.\n– الصيغة (ج): دفع اشتراك شهري قدره 2500DA و 150DA للحصة الواحدة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب تكلفة 12 حصة في الشهر حسب كل صيغة.",
+      "statement": "حسب الصيغة (أ):",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "4200",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكلفة = ثمن الحصة × عدد الحصص."
+        }
+      ],
+      "feedback": {
+        "correct": "$350 \\times 12 = 4200$ .",
+        "incorrect": "اضرب عدد الحصص في ثمن الحصة."
+      },
+      "solution": {
+        "lines": [
+          "$350 \\times 12 = 4200$"
+        ],
+        "result": "4200DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "حسب الصيغة (ب):",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "4000",
+      "misconceptionSignatures": [
+        {
+          "value": "3000",
+          "id": "MISC-TANASUB-MABLAGH-THABIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكلفة = الاشتراك + ثمن الحصة × عدد الحصص."
+        }
+      ],
+      "feedback": {
+        "correct": "$1000 + 250 \\times 12 = 4000$ .",
+        "incorrect": "لا تنس الاشتراك الشهري."
+      },
+      "solution": {
+        "lines": [
+          "$1000 + 250 \\times 12 = 4000$"
+        ],
+        "result": "4000DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "حسب الصيغة (ج):",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "4300",
+      "misconceptionSignatures": [
+        {
+          "value": "1800",
+          "id": "MISC-TANASUB-MABLAGH-THABIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكلفة = الاشتراك + ثمن الحصة × عدد الحصص."
+        }
+      ],
+      "feedback": {
+        "correct": "$2500 + 150 \\times 12 = 4300$ .",
+        "incorrect": "لا تنس الاشتراك الشهري."
+      },
+      "solution": {
+        "lines": [
+          "$2500 + 150 \\times 12 = 4300$"
+        ],
+        "result": "4300DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "ليكن $x$ عدد الحصص في الشهر، و $y_1$ ، $y_2$ ، $y_3$ التكلفة بـ DA حسب الصيغ (أ)، (ب)، (ج) على الترتيب.",
+      "statement": "اكتب $y_1$ بدلالة $x$ على الشكل $y_1 = ax$ .",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "350",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكلفة دون اشتراك = ثمن الحصة × عدد الحصص."
+        }
+      ],
+      "feedback": {
+        "correct": "$y_1 = 350 \\times x$ .",
+        "incorrect": "المعامل هو ثمن الحصة الواحدة دون اشتراك."
+      },
+      "solution": {
+        "lines": [
+          "$y_1 = 350x$ ، $y_2 = 250x + 1000$ ، $y_3 = 150x + 2500$"
+        ],
+        "result": "y_1 = 350x"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أيّ الصيغ الثلاث تُنمذَج بدالة خطية؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الصيغة (أ)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الصيغة (ب)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KHATTIYA-AFFINE"
+        },
+        {
+          "id": "C",
+          "content": "الصيغة (ج)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KHATTIYA-AFFINE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدالة الخطية من الشكل $x \\longmapsto ax$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ماذا يدفع التلميذ إذا لم يحضر أي حصة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الصيغة (أ) وحدها دون اشتراك.",
+        "incorrect": "صيغة فيها اشتراك ثابت لا تُنمذج بدالة خطية."
+      },
+      "solution": {
+        "lines": [
+          "$y_1 = 350x$ من الشكل $ax$ : الدالة $x \\longmapsto y_1$ خطية.",
+          "$y_2$ و $y_3$ فيهما اشتراك ثابت (صورة 0 غير معدومة): ليستا خطيتين."
+        ],
+        "result": "الصيغة (أ)"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "في معلم متعامد ومتجانس، مثّل بيانيا الدوال الثلاث $x \\longmapsto y_1$ ، $x \\longmapsto y_2$ ، $x \\longmapsto y_3$ (نأخذ $1cm$ لكل حصتين على محور الفواصل و $1cm$ لكل $500DA$ على محور التراتيب).",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تمثيل دالة خطية مستقيم يشمل المبدأ $O$ ؛ تمثيل دالة تآلفية مستقيم لا يشمله في الغالب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يكفي لكل مستقيم نقطتان (استعمل نتائج السؤال 01)."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "تمثيل $y_1 = 350x$ مستقيم يشمل المبدأ والنقطة $(10 ; 3500)$ .",
+          "تمثيل $y_2 = 250x + 1000$ مستقيم يشمل $(0 ; 1000)$ و $(12 ; 4000)$ .",
+          "تمثيل $y_3 = 150x + 2500$ مستقيم يشمل $(0 ; 2500)$ و $(10 ; 4000)$ ."
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "statement": "جد عدد الحصص الذي تتساوى عنده تكلفتا الصيغتين (أ) و (ب).",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الحصص (عدد فقط)",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة $350x = 250x + 1000$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$100x = 1000$ ، إذن $x = 10$ .",
+        "incorrect": "اجمع حدود $x$ في طرف واحد ثم اقسم."
+      },
+      "solution": {
+        "lines": [
+          "$350x = 250x + 1000$",
+          "$100x = 1000$",
+          "$x = 10$"
+        ],
+        "result": "x = 10"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q8",
+      "step": "04",
+      "statement": "☜ يريد كريم حضور 8 حصص في الشهر. ما هي الصيغة الأقل تكلفة له؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الصيغة (أ)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الصيغة (ب)",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "الصيغة (ج)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TANASUB-MABLAGH-THABIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب تكلفة 8 حصص حسب كل صيغة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن المبالغ الثلاثة."
+        }
+      ],
+      "feedback": {
+        "correct": "الصيغة (أ): أقل من 10 حصص تكون الصيغة (أ) أرخص من (ب).",
+        "incorrect": "احسب المبالغ الثلاثة ثم قارنها."
+      },
+      "solution": {
+        "lines": [
+          "$350 \\times 8 = 2800$ ؛ $1000 + 250 \\times 8 = 3000$ ؛ $2500 + 150 \\times 8 = 3700$",
+          "الصيغة (أ) هي الأقل تكلفة."
+        ],
+        "result": "الصيغة (أ)"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

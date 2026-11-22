@@ -1,0 +1,127 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-jumal-l1-010",
+  "lessonCode": "wadiya-idmajiya-jumal",
+  "level": 1,
+  "metadata": {
+    "title": "تبسيط معادلة وتفسير حل",
+    "estimatedMinutes": 4,
+    "tags": [
+      "تبسيط",
+      "تفسير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-jumal_P2"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "نعتبر المعادلة $20x + 20y = 1600$ .",
+      "statement": "بقسمة طرفي المعادلة على 20، احسب قيمة $x + y$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $x + y$ (عدد فقط)",
+      "expectedAnswer": "80",
+      "misconceptionSignatures": [
+        {
+          "value": "1600",
+          "id": "MISC-JAM-TARAF-WAHID"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$20x + 20y = 20(x + y)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم الطرف الثاني أيضا على 20."
+        }
+      ],
+      "feedback": {
+        "correct": "$x + y = 80$ .",
+        "incorrect": "نقسم الطرفين معا على 20، لا الطرف الأول وحده."
+      },
+      "solution": {
+        "lines": [
+          "$20x + 20y = 1600$",
+          "نقسم الطرفين على 20: $x + y = \\dfrac{1600}{20}$",
+          "$x + y = 80$"
+        ],
+        "result": "x + y = 80"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "في مشكلة عن عدد الأولاد $x$ وعدد البنات $y$ في قسم، وجدت ريم الثنائية $(12{,}5 ; 17{,}5)$ حلا لجملة المشكلة.",
+      "statement": "هل يمكن أن تكون هذه الثنائية جوابا للمشكلة؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-TAHAQQUQ-NAS"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا يمثل كل من $x$ و $y$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يمكن أن يكون عدد التلاميذ عددا عشريا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "لا: عدد الأولاد وعدد البنات عددان طبيعيان.",
+        "incorrect": "التحقق يكون في نص المشكلة: ما نوع العدد الذي يمثل عدد تلاميذ؟"
+      },
+      "solution": {
+        "lines": [
+          "$x$ و $y$ عددا تلاميذ، فهما عددان طبيعيان.",
+          "$12{,}5$ و $17{,}5$ ليسا عددين طبيعيين.",
+          "إذن الثنائية لا تصلح جوابا: نراجع الترييض أو الحساب."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

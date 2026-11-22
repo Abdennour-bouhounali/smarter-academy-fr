@@ -1,0 +1,189 @@
+{
+  "id": "ex-1am-talim-mustaqim-mudarraj-l1-002",
+  "lessonCode": "talim-mustaqim-mudarraj",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — قراءة فواصل على الطريق",
+    "estimatedMinutes": 5,
+    "tags": [
+      "فاصلة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في قرية بسطيف طريق مستقيم محطّة الحافلة عليه هي المبدإ $O$ ؛ المدرسة شرقه (يمين المبدإ) وساحة المسجد غربه (يسار المبدإ). نعدّ الاتجاه الموجب نحو اليمين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ساحة المسجد: تقع النقطة $P$ على يسار المبدإ $O$ على بعد 3 وحدات. ما فاصلتها؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-TALIM1-SIGNSIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى الجهة التي تقع عليها النقطة من المبدإ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفاصلة هي المسافة إلى المبدإ مع إشارة الجهة: − على يسار المبدإ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الوحدات الكاملة ثمّ أضف التدريجات الصغيرة، وضع الإشارة في الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة $-3$ : الجهة تعطي الإشارة والبعد يعطي العدد.",
+        "incorrect": "اقرأ الجهة من المبدإ ثمّ احسب البعد، ولا تنسَ قيمة التدريجة."
+      },
+      "solution": {
+        "lines": [
+          "على يسار المبدإ: الإشارة −",
+          "البعد: $3$ وحدات و $0$ تدريجات من $10$ : $3$",
+          "الفاصلة: $-3$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "مخبزة: تقع النقطة $Q$ على يمين المبدإ $O$ على بعد 6 وحدات. ما فاصلتها؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "-6",
+          "id": "MISC-TALIM1-SIGNSIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى الجهة التي تقع عليها النقطة من المبدإ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفاصلة هي المسافة إلى المبدإ مع إشارة الجهة: − على يسار المبدإ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الوحدات الكاملة ثمّ أضف التدريجات الصغيرة، وضع الإشارة في الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة $6$ : الجهة تعطي الإشارة والبعد يعطي العدد.",
+        "incorrect": "اقرأ الجهة من المبدإ ثمّ احسب البعد، ولا تنسَ قيمة التدريجة."
+      },
+      "solution": {
+        "lines": [
+          "على يمين المبدإ: الإشارة + (تُحذف)",
+          "البعد: $6$ وحدات و $0$ تدريجات من $10$ : $6$",
+          "الفاصلة: $6$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "على مستقيم مدرّج ننطلق من المبدإ $O$ ونعدّ الاتجاه الموجب نحو اليمين. النقطة $R(-4)$ تقع:",
+      "learningPoints": [
+        {
+          "code": "1am_talim-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "على يمين المبدإ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM1-SIGNSIDE"
+        },
+        {
+          "id": "B",
+          "content": "على يسار المبدإ",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "عند المبدإ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM1-SIGNSIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع الأعداد على مستقيم مدرّج وانظر أين تقع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأعداد تكبر نحو اليمين وتصغر نحو اليسار."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن مواضع النقط لا أحجام الأرقام المكتوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "فاصلة $-4$ : النقطة على يسار المبدإ.",
+        "incorrect": "الإشارة − تعني الجهة اليسرى والإشارة + (المحذوفة) الجهة اليمنى."
+      },
+      "solution": {
+        "lines": [
+          "$-4$ سالب",
+          "على يسار المبدإ"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

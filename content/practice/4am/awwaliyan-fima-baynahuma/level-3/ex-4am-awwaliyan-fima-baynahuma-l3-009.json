@@ -1,0 +1,214 @@
+{
+  "id": "ex-4am-awwaliyan-fima-baynahuma-l3-009",
+  "lessonCode": "awwaliyan-fima-baynahuma",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2015 — العددان 1311 و 1007",
+    "estimatedMinutes": 12,
+    "tags": [
+      "خوارزمية إقليدس",
+      "كسر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_awwaliyan-fima-baynahuma_P2",
+      "modelledOn": "BEM 2015 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 1311 و 1007 مع كتابة مراحل الحساب.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "19",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 1311 على 1007: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (1311 ; 1007) بالزوج (1007 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 19.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$1311 = 1007 \\times 1 + 304$",
+          "$1007 = 304 \\times 3 + 95$",
+          "$304 = 95 \\times 3 + 19$",
+          "$95 = 19 \\times 5 + 0$",
+          "آخر باقٍ غير معدوم هو 19، إذن:"
+        ],
+        "result": "PGCD(1311 ; 1007) = 19"
+      },
+      "work": "required",
+      "timeSeconds": 270
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "اكتب $\\dfrac{1311}{1007}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "69/53",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 19: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال 01.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1311}{1007} = \\dfrac{1311 \\div 19}{1007 \\div 19}$"
+        ],
+        "result": "\\dfrac{1311}{1007} = \\dfrac{69}{53}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "تحقّق أن بسط ومقام الكسر الناتج أوليان فيما بينهما.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيمة PGCD(69 ; 53) التي وجدتها",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عددان أوليان فيما بينهما: احسب قاسمهما المشترك الأكبر PGCD(69 ; 53)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 69 على 53، ثم واصل القسمات المتتابعة إلى أن تجد باقيًا معدومًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن آخر باقٍ غير معدوم بما يتطلّبه تعريف عددين أوليين فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(69 ; 53) = 1: العددان 69 و 53 أوليان فيما بينهما.",
+        "incorrect": "راجع القسمات المتتابعة باقيًا باقيًا: آخر باقٍ غير معدوم هو القاسم المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$69 = 53 \\times 1 + 16$",
+          "$53 = 16 \\times 3 + 5$",
+          "$16 = 5 \\times 3 + 1$",
+          "$5 = 1 \\times 5 + 0$",
+          "آخر باقٍ غير معدوم هو 1، إذن PGCD(69 ; 53) = 1 .",
+          "ومنه العددان 69 و 53 أوليان فيما بينهما."
+        ],
+        "result": "PGCD(69 ; 53) = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب العدد P حيث: $P = \\dfrac{1311}{1007} - \\dfrac{8}{53} \\times 2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد طبيعي أو كسر a/b)",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الكتابة غير القابلة للاختزال للكسر $\\dfrac{1311}{1007}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ بالجداء، ثم اطرح كسرين لهما المقام نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$P = \\dfrac{69}{53} - \\dfrac{16}{53} = \\dfrac{53}{53}$",
+        "incorrect": "الضرب قبل الطرح، ثم وحّد المقامين."
+      },
+      "solution": {
+        "lines": [
+          "$P = \\dfrac{69}{53} - \\dfrac{16}{53}$",
+          "$P = \\dfrac{53}{53}$"
+        ],
+        "result": "P = 1"
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l2-010",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — السداسي صورة نفسه",
+    "estimatedMinutes": 3,
+    "tags": [
+      "المضلع صورة نفسه"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mudalaat-muntazama_P1",
+      "modelledOn": "know-5"
+    }
+  },
+  "statement": {
+    "content": "ABCDEF سداسي منتظم مركزه O، رؤوسه مرتّبة في الاتجاه المباشر انطلاقا من A.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          0.0,
+          3.0
+        ],
+        "B": [
+          -2.598,
+          1.5
+        ],
+        "C": [
+          -2.598,
+          -1.5
+        ],
+        "D": [
+          -0.0,
+          -3.0
+        ],
+        "E": [
+          2.598,
+          -1.5
+        ],
+        "F": [
+          2.598,
+          1.5
+        ]
+      },
+      "circles": [
+        {
+          "center": "O",
+          "radius": 3
+        }
+      ],
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "E"
+        ],
+        [
+          "E",
+          "F"
+        ],
+        [
+          "F",
+          "A"
+        ]
+      ],
+      "ariaLabel": "سداسي منتظم ABCDEF مركزه O في دائرته المحيطة، رؤوسه مرتبة في الاتجاه المباشر انطلاقا من A في الأعلى",
+      "maxWidth": 480
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الدوران الذي مركزه O ويحوّل A إلى C يحوّل B إلى:",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "D",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "A",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ITTIJAH"
+        },
+        {
+          "id": "C",
+          "content": "C",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما زاوية الدوران الذي يحوّل A إلى C؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\widehat{AOC} = 2 \\times 60^\\circ$ في الاتجاه المباشر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "من B نتقدّم رأسين في نفس الاتجاه."
+        }
+      ],
+      "feedback": {
+        "correct": "زاويته $120^\\circ$ في الاتجاه المباشر: كل رأس يتقدّم رأسين، فـ B ↦ D، والسداسي صورة نفسه.",
+        "incorrect": "الدوران نفسه يحرّك كل الرؤوس بنفس العدد من الخطوات وفي نفس الاتجاه."
+      },
+      "difficulty": 2
+    }
+  ]
+}

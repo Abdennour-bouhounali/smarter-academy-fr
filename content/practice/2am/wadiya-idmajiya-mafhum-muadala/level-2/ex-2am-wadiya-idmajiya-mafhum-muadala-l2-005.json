@@ -1,0 +1,144 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-mafhum-muadala-l2-005",
+  "lessonCode": "wadiya-idmajiya-mafhum-muadala",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — محيط مستطيل بحرفين",
+    "estimatedMinutes": 7,
+    "tags": [
+      "عبارة حرفيّة",
+      "محيط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "مستطيل طوله $a$ وعرضه $b$ بالمتر ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اختر عبارة محيطه بالمتر .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2a+b$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-BRACKET"
+        },
+        {
+          "id": "B",
+          "content": "$2+a+b$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-ADDFOR"
+        },
+        {
+          "id": "C",
+          "content": "$2(a+b)$",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "$2(a+b)$ .",
+        "incorrect": "اكتب الجزء الثابت مرّة واحدة والجزء المتكرّر مضروبًا في عدده، ثمّ اختبر عبارتك على عدد صغير."
+      },
+      "solution": {
+        "lines": [
+          "المحيط ضعف مجموع الطول والعرض : $2(a+b)$ .",
+          "اختبار : $a = 3$ و $b = 1$ يعطيان $2(3+1) = 8$ ."
+        ]
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب طول كلّ ضلع بدلالة الحرف ثمّ اجمع الأضلاع كلّها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الحدود المتشابهة : الحرف مع الحرف والعدد مع العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر العبارة على قيمة صغيرة للحرف وقارن بحساب الأضلاع مباشرة."
+        }
+      ],
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب المحيط من أجل $a = 7{,}5$ و $b = 4$ بالمتر .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "23",
+      "misconceptionSignatures": [
+        {
+          "value": "19",
+          "id": "MISC-IBARA2-BRACKET"
+        },
+        {
+          "value": "13.5",
+          "id": "MISC-IBARA2-ADDFOR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بقيمته المعلومة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات : الضرب والقسمة قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة."
+        }
+      ],
+      "feedback": {
+        "correct": "النتيجة $23$ .",
+        "incorrect": "عوّض بالقيم المعلومة واحسب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$2(7{,}5+4) = 23$ ."
+        ],
+        "result": "23"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

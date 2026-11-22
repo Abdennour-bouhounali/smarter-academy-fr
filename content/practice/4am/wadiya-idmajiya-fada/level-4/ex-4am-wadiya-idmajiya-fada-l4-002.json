@@ -1,0 +1,196 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-fada-l4-002",
+  "lessonCode": "wadiya-idmajiya-fada",
+  "level": 4,
+  "metadata": {
+    "title": "تحدّي الوحدة — حجم الماء باللتر",
+    "estimatedMinutes": 6,
+    "tags": [
+      "اللتر",
+      "التدوير"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "challenge",
+      "page": 163,
+      "section": "تحدّ"
+    }
+  },
+  "statement": {
+    "content": "دلو على شكل مخروط مبتور فيه ماء: قطر حافته العلوية $40\\,\\mathrm{cm}$ وقطر قاعه $30\\,\\mathrm{cm}$ ، ومستوى الماء على بعد $7\\,\\mathrm{cm}$ من الحافة العلوية (الشكل). حجم الماء $\\dfrac{24388}{3}\\pi\\,\\mathrm{cm}^3$ .",
+    "figure": {
+      "kind": "space",
+      "view": {
+        "azimuth": -90,
+        "elevation": 14
+      },
+      "points": {
+        "O": [
+          0,
+          0,
+          0
+        ],
+        "O1": [
+          0,
+          0,
+          35
+        ],
+        "W": [
+          0,
+          0,
+          28
+        ],
+        "T1": [
+          -20,
+          0,
+          41
+        ],
+        "T2": [
+          20,
+          0,
+          41
+        ],
+        "D1": [
+          -15,
+          0,
+          -6
+        ],
+        "D2": [
+          15,
+          0,
+          -6
+        ],
+        "V0": [
+          -28,
+          0,
+          35
+        ],
+        "V1": [
+          -28,
+          0,
+          28
+        ],
+        "V2": [
+          -28,
+          0,
+          0
+        ],
+        "X0": [
+          -37,
+          0,
+          17
+        ]
+      },
+      "solids": [
+        {
+          "type": "frustum",
+          "base": "O",
+          "top": "O1",
+          "radius": 15,
+          "topRadius": 20,
+          "tone": "amber"
+        }
+      ],
+      "circles": [
+        {
+          "center": "W",
+          "radius": 19,
+          "tone": "sky",
+          "bold": true
+        }
+      ],
+      "segments": [
+        {
+          "from": "T1",
+          "to": "T2",
+          "label": "40 cm"
+        },
+        {
+          "from": "D1",
+          "to": "D2",
+          "label": "30 cm"
+        },
+        {
+          "from": "V0",
+          "to": "V1",
+          "label": "7 cm",
+          "tone": "rose",
+          "labelOffset": 24
+        },
+        {
+          "from": "V1",
+          "to": "V2",
+          "label": "28 cm",
+          "labelOffset": 27
+        }
+      ],
+      "hidden": [
+        "O",
+        "O1",
+        "W",
+        "T1",
+        "T2",
+        "D1",
+        "D2",
+        "V0",
+        "V1",
+        "V2",
+        "X0"
+      ],
+      "ariaLabel": "دلو على شكل مخروط مبتور فيه ماء: قطر الحافة العلوية 40 cm وقطر القاع 30 cm، ومن الحافة إلى سطح الماء 7 cm، ومن سطح الماء إلى القاع 28 cm",
+      "maxWidth": 420
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "حجم الماء باللتر مدوّرا إلى $0{,}01$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-fada_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (باللتر، مدوّر إلى 0,01)",
+      "expectedAnswer": "25.54",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب القيمة المقربة للحجم بالسنتيمتر المكعب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$1\\,\\mathrm{L} = 1000\\,\\mathrm{cm}^3$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قسّم على 1000 ثم دوّر في الأخير."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{24388}{3}\\pi \\approx 25\\,539{,}1\\,\\mathrm{cm}^3 \\approx 25{,}54\\,\\mathrm{L}$ .",
+        "incorrect": "نقسم على 1000 لا على 100، وندوّر في آخر الحساب."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "255.39",
+          "id": "MISC-SAA-WAHDA"
+        },
+        {
+          "value": "25.42",
+          "id": "MISC-MABTUR-TALIS"
+        },
+        {
+          "value": "33.9",
+          "id": "MISC-MABTUR-QIRAA"
+        }
+      ],
+      "difficulty": 4
+    }
+  ]
+}

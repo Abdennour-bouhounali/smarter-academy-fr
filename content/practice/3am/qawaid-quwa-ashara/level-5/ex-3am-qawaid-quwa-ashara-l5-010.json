@@ -1,0 +1,181 @@
+{
+  "id": "ex-3am-qawaid-quwa-ashara-l5-010",
+  "lessonCode": "qawaid-quwa-ashara",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — سرعة المعالج",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مسألة",
+      "k × 10^p"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "معالج حاسوب في مخبر المدرسة ينفّذ $3\\times10^{9}$ عمليّة في الثانية الواحدة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "الجزء الأول. عدد العمليّات في $2\\times10^{-3}$ ثانية: $3\\times10^{9}\\times2\\times10^{-3} = 6\\times10^{n}$ ، ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع الأعداد مع الأعداد، وقوى العدد 10 مع قوى العدد 10 (كلّ في مجموعته)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الأعداد وحدها ثمّ طبّق قاعدة قوى العدد 10 على الأسّين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اترك النتيجة على الشكل $k \\times 10^{n}$ كما تخرج دون تغيير العدد $k$ ، ما لم يُطلب منك غير ذلك."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "-27",
+          "id": "MISC-QAWAID-AMIL"
+        }
+      ],
+      "feedback": {
+        "correct": "$3\\times10^{9}\\times2\\times10^{-3} = 6\\times10^{6}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضرب الأعداد: $3\\times2 = 6$ ، ونجمع الأسّين: $9 + (-3) = 6$ .",
+          "في $2\\times10^{-3}$ ثانية ينفّذ $6\\times10^{6}$ عمليّة."
+        ],
+        "result": "n = 6"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "الجزء الثاني. يحتاج برنامج إلى $6\\times10^{12}$ عمليّة. مدّته بالثواني: $\\dfrac{6\\times10^{12}}{3\\times10^{9}} = 2\\times10^{n}$ ، ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع الأعداد مع الأعداد، وقوى العدد 10 مع قوى العدد 10 (كلّ في مجموعته)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الأعداد وحدها ثمّ طبّق قاعدة قوى العدد 10 على الأسّين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اترك النتيجة على الشكل $k \\times 10^{n}$ كما تخرج دون تغيير العدد $k$ ، ما لم يُطلب منك غير ذلك."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "21",
+          "id": "MISC-QAWAID-AMIL"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{6\\times10^{12}}{3\\times10^{9}} = 2\\times10^{3}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم الأعداد: $\\dfrac{6}{3} = 2$ ، ونطرح الأسّين: $12 - 9 = 3$ .",
+          "المدّة $2\\times10^{3}$ ثانية."
+        ],
+        "result": "n = 3"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "اكتب المدّة $2\\times10^{3}$ ثانية عددًا طبيعيًّا.",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العدد المعطى على شكل قوة للعدد 10، أو اكتب القوة على شكل عدد عشري."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انظر إلى موضع الفاصلة أو إلى رتبة الرقم 1 بعد الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالاتجاه المعاكس: حوّل جوابك إلى الكتابة الأخرى وقارنها بالمعطى."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "2000",
+      "misconceptionSignatures": [
+        {
+          "value": "200",
+          "id": "MISC-QAWAID-AMIL"
+        }
+      ],
+      "feedback": {
+        "correct": "$2\\times10^{3} = 2\\,000$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الضرب في $10^{3}$ يعني إضافة ثلاثة أصفار.",
+          "$2\\times10^{3} = 2\\,000$ ثانية."
+        ],
+        "result": "2\\,000"
+      }
+    }
+  ]
+}

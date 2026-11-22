@@ -1,0 +1,233 @@
+{
+  "id": "ex-3am-mutabayinat-amaliyat-l2-004",
+  "lessonCode": "mutabayinat-amaliyat",
+  "level": 2,
+  "metadata": {
+    "title": "استنتج متباينة طرفها الأوّل $z$",
+    "estimatedMinutes": 8,
+    "tags": [
+      "استنتاج",
+      "قسمة على سالب"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-16",
+      "page": 78,
+      "section": "أوظّف تعلّماتي",
+      "number": 16
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$z$ عدد ناطق حيث $-4z\\ge -10$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما المتباينة الصحيحة التي طرفها الأوّل $z$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$z\\le \\dfrac{5}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$z\\ge -10$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-COEF-LOST"
+        },
+        {
+          "id": "C",
+          "content": "$z\\ge \\dfrac{5}{2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-NEG-NOFLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد إشارة العدد الذي نضرب فيه (أو نقسم عليه)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في عدد سالب تمامًا (أو القسمة عليه) يغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب عددين يحقّقان الشرط، وانظر أيّهما صار الأكبر بعد العملية."
+        }
+      ],
+      "feedback": {
+        "correct": "نقسم طرفي $-4z\\ge -10$ على $-4$ (سالب) فيتغيّر الاتجاه: $z\\le\\dfrac{5}{2}$ .",
+        "incorrect": "الضرب في عدد سالب تمامًا (أو القسمة عليه) يغيّر اتجاه المتباينة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم طرفي $-4z\\ge -10$ على $-4$ (سالب) فيتغيّر الاتجاه: $z\\le\\dfrac{5}{2}$ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "أكمل: $z\\le\\ldots$",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "5/2",
+      "misconceptionSignatures": [
+        {
+          "value": "-10",
+          "id": "MISC-MUTABAYINA-COEF-LOST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد إشارة العدد الذي نضرب فيه (أو نقسم عليه)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في عدد سالب تمامًا (أو القسمة عليه) يغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب عددين يحقّقان الشرط، وانظر أيّهما صار الأكبر بعد العملية."
+        }
+      ],
+      "feedback": {
+        "correct": "نقسم الطرفين على $-4$ ونعكس الاتجاه: $z\\le\\dfrac{-10}{-4}=\\dfrac{5}{2}$ .",
+        "incorrect": "الضرب في عدد سالب تمامًا (أو القسمة عليه) يغيّر اتجاه المتباينة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم الطرفين على $-4$ ونعكس الاتجاه: $z\\le\\dfrac{-10}{-4}=\\dfrac{5}{2}$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "استنتج: $2z+1\\le\\ldots$",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-MUTABAYINA-ONE-SIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المعطى بالضبط؟ وما العبارة المطلوب استنتاج متباينة لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابنِ المتباينة المطلوبة عملية بعد عملية، وانتبه إلى إشارة العدد عند كلّ ضرب أو قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر، وأعد كتابة الحصر من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "نضيف $1$ : $2z+1\\le 6$ .",
+        "incorrect": "استنتج المتباينة خطوة بخطوة، وانتبه إلى اتجاهها بعد كلّ ضرب أو قسمة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$z\\le\\dfrac{5}{2}$ ، إذن $2z\\le 5$ .",
+          "نضيف $1$ : $2z+1\\le 6$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "لماذا تغيّر اتجاه المتباينة في السؤال الأوّل؟",
+      "learningPoints": [
+        {
+          "code": "3am_mutabayinat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد إشارة العدد الذي نضرب فيه (أو نقسم عليه)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في عدد سالب تمامًا (أو القسمة عليه) يغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب عددين يحقّقان الشرط، وانظر أيّهما صار الأكبر بعد العملية."
+        }
+      ],
+      "feedback": {
+        "correct": "لأنّنا قسمنا طرفي المتباينة على عدد سالب تمامًا ($-4$) ، والقسمة على عدد سالب تغيّر الاتجاه.",
+        "incorrect": "الضرب في عدد سالب تمامًا (أو القسمة عليه) يغيّر اتجاه المتباينة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "لأنّنا قسمنا طرفي المتباينة على عدد سالب تمامًا ($-4$) ، والقسمة على عدد سالب تغيّر الاتجاه."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

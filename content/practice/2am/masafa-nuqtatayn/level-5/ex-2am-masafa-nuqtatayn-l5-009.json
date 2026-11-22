@@ -1,0 +1,232 @@
+{
+  "id": "ex-2am-masafa-nuqtatayn-l5-009",
+  "lessonCode": "masafa-nuqtatayn",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — دكاكين شارع مستقيم",
+    "estimatedMinutes": 12,
+    "tags": [
+      "مسافة بين نقطتين",
+      "مسافة كلّية",
+      "كلفة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "على شارع مستقيم مدرّج بالمتر: المخبزة $A(-45)$ والمكتبة $B(+30)$ والصيدلية $C(-10)$ . يوزّع عامل طلبات من المخبزة إلى المكتبة ثمّ إلى الصيدلية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "النقطتان $A(-45)$ و $B(+30)$ على مستقيم مدرّج. احسب المسافة $AB$ .",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "75",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "15"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-75"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن أوّلًا أيّ الفاصلتين أكبر: الأكبر هي الأبعد إلى اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى مطروحًا منها الصغرى؛ وإذا كانت الصغرى سالبة فنطرح عددًا سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا: إن وجدت ناتجًا سالبًا فقد قلبت ترتيب الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB=75$ : النقطتان على جهتين من المبدأ فنجمع المسافتين إلى الصفر.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى هي $+30$ والفاصلة الصغرى هي $-45$",
+          "$AB=(+30)-(-45)=(+30)+(+45)=75$"
+        ],
+        "result": "75"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "النقطتان $B(+30)$ و $C(-10)$ على مستقيم مدرّج. احسب المسافة $BC$ .",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "40",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "20"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-40"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن أوّلًا أيّ الفاصلتين أكبر: الأكبر هي الأبعد إلى اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى مطروحًا منها الصغرى؛ وإذا كانت الصغرى سالبة فنطرح عددًا سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا: إن وجدت ناتجًا سالبًا فقد قلبت ترتيب الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC=40$ : النقطتان على جهتين من المبدأ فنجمع المسافتين إلى الصفر.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى هي $+30$ والفاصلة الصغرى هي $-10$",
+          "$BC=(+30)-(-10)=(+30)+(+10)=40$"
+        ],
+        "result": "40"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "يمشي عامل من $A(-45)$ ثمّ إلى $B(+30)$ ثمّ إلى $C(-10)$ . ما المسافة الكلّية التي قطعها ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "115",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قسّم الطريق إلى مقاطع واحسب مسافة كلّ مقطع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كلّ مقطع مسافته عدد موجب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة الكلّية تختلف عن المسافة بين نقطتي البداية والنهاية إن عاد المتنقّل إلى الوراء."
+        }
+      ],
+      "feedback": {
+        "correct": "المسافة الكلّية $115$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$AB=75$",
+          "$BC=40$",
+          "المجموع $=115$"
+        ],
+        "result": "115"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "تُحسب كلفة نقل طلب بين المخبزة $A(-45)$ والمكتبة $B(+30)$ على الشارع المستقيم المدرّج بالأمتار بسعر $1{,}5$ دج للمتر الواحد. ما كلفة النقل بالدينار ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد موجب",
+      "expectedAnswer": "112.5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أوّلًا المسافة بين النقطتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثمّ اضربها في سعر المتر الواحد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من رتبة الجواب."
+        }
+      ],
+      "feedback": {
+        "correct": "الكلفة $112{,}5$ دج.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$AB=75$",
+          "الكلفة $=75\\times1{,}5=112{,}5$ دج"
+        ],
+        "result": "112.5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

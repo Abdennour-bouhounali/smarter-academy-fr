@@ -1,0 +1,122 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l1-004",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 1,
+  "metadata": {
+    "title": "أستعدّ 1 — مثلث بزاويتين من 60°",
+    "estimatedMinutes": 3,
+    "tags": [
+      "المثلث المتقايس الأضلاع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "prep",
+      "page": 151,
+      "section": "أستعدّ",
+      "number": 1
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 151): في المثلث ABC المرسوم، قيس كل من الزاويتين في C وفي B هو $60^\\circ$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          2,
+          3.464
+        ],
+        "C": [
+          -2,
+          3.464
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "A"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "C",
+          "from": "A",
+          "to": "B",
+          "label": "60°"
+        },
+        {
+          "at": "B",
+          "from": "C",
+          "to": "A",
+          "label": "60°"
+        }
+      ],
+      "ariaLabel": "مثلث ABC رأسه A في الأسفل و [BC] أفقي في الأعلى، والزاويتان في C و B قيس كل منهما 60 درجة",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المثلث ABC:",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "متقايس الأضلاع، فهو مضلع منتظم ذو ثلاثة أضلاع",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "متساوي الساقين فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-ADLA"
+        },
+        {
+          "id": "C",
+          "content": "قائم في A",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-ZAWAYA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الزاوية الثالثة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مجموع زوايا المثلث $180^\\circ$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا تقايست الزوايا الثلاث تقايست الأضلاع."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{A} = 180^\\circ - 60^\\circ - 60^\\circ = 60^\\circ$ : الزوايا الثلاث متقايسة، فالأضلاع متقايسة.",
+        "incorrect": "الزاوية في A ليست قائمة: مجموع الزوايا الثلاث $180^\\circ$ ."
+      },
+      "difficulty": 1
+    }
+  ]
+}

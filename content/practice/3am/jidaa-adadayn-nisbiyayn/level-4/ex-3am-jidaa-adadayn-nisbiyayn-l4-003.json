@@ -1,0 +1,194 @@
+{
+  "id": "ex-3am-jidaa-adadayn-nisbiyayn-l4-003",
+  "lessonCode": "jidaa-adadayn-nisbiyayn",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — التبرير بأعداد عشرية",
+    "estimatedMinutes": 9,
+    "tags": [
+      "تبرير",
+      "خاصية التوزيع",
+      "أعداد عشرية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نريد معرفة قيمة $A = (−1{,}5) \\times (−0{,}6)$ بالطريقة نفسها.",
+    "formulas": [
+      "B = (−1{,}5) \\times 0{,}6",
+      "S = (−1{,}5) \\times 0{,}6 + (−1{,}5) \\times (−0{,}6)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $B$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-0.9",
+      "misconceptionSignatures": [
+        {
+          "value": "0.9",
+          "id": "MISC-JIDAA-SUB"
+        },
+        {
+          "value": "-9",
+          "id": "MISC-JIDAA-DECIMAL"
+        },
+        {
+          "value": "-0.09",
+          "id": "MISC-JIDAA-DECIMAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب أولًا كأنّ العددين طبيعيان، ثم أرجع الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد الأرقام بعد الفاصلة في الجداء هو مجموع عدد الأرقام بعد الفاصلة في العاملين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عيّن الإشارة أولًا، ثم اضرب المسافتين إلى الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−1{,}5) \\times 0{,}6 = −0{,}9$ : العاملان مختلفا الإشارة (سالب وموجب)، إذن الجداء سالب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العاملان مختلفا الإشارة (سالب وموجب)، إذن الجداء سالب.",
+          "$1{,}5 \\times 0{,}6 = 0{,}9$",
+          "$B = (−1{,}5) \\times 0{,}6 = −0{,}9$"
+        ],
+        "result": "B = −0{,}9"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $S$ باستعمال الخاصية التوزيعية: $S = (−1{,}5) \\times (0{,}6 + (−0{,}6))$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الخاصية التوزيعية للضرب على الجمع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أحد العددين المجموعين هو معاكس الآخر، فمجموعهما معدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الضرب في 0 يعطي 0 دائمًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = (−1{,}5) \\times 0 = 0$ .",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}6 + (−0{,}6) = 0$ ثم $(−1{,}5) \\times 0 = 0$"
+        ],
+        "result": "S = 0"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "استنتج قيمة $A$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "0.9",
+      "misconceptionSignatures": [
+        {
+          "value": "-0.9",
+          "id": "MISC-JIDAA-NEGNEG"
+        },
+        {
+          "value": "9",
+          "id": "MISC-JIDAA-DECIMAL"
+        },
+        {
+          "value": "0.09",
+          "id": "MISC-JIDAA-DECIMAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الخاصية التوزيعية للضرب على الجمع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أحد العددين المجموعين هو معاكس الآخر، فمجموعهما معدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الضرب في 0 يعطي 0 دائمًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$A$ معاكس $B = −0{,}9$ ، إذن $A = 0{,}9$ .",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "$S = B + A = 0$ و $B = −0{,}9$",
+          "إذن $A = 0{,}9$ لأنّ $A$ هو معاكس $B$ ."
+        ],
+        "result": "A = 0{,}9"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

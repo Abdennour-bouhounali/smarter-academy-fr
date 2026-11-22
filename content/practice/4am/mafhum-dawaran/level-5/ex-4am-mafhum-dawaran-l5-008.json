@@ -1,0 +1,144 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l5-008",
+  "lessonCode": "mafhum-dawaran",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — زليج تلمسان",
+    "estimatedMinutes": 5,
+    "tags": [
+      "صورة قطعة",
+      "المرصوفة",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mafhum-dawaran_P3",
+      "modelledOn": "act-3"
+    }
+  },
+  "statement": {
+    "content": "في زخرفة زليج من تلمسان على المرصوفة: $\\Omega(1\\,;\\,-1)$ و $A(2\\,;\\,0)$ و $B(3\\,;\\,2)$ . الحرفيّ يدير القطعة [AB] حول Ω بزاوية $90^\\circ$ في الاتجاه غير المباشر.",
+    "figure": {
+      "points": {
+        "Ω": [
+          1,
+          -1
+        ],
+        "A": [
+          2,
+          0
+        ],
+        "B": [
+          3,
+          2
+        ]
+      },
+      "grid": true,
+      "maxWidth": 420,
+      "segments": [
+        [
+          "A",
+          "B"
+        ]
+      ],
+      "ariaLabel": "ورقة مرصوفة عليها Ω والقطعة [AB]"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا A′ صورة A:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الإحداثيتان (x ; y) — عددان صحيحان",
+      "expectedAnswer": {
+        "x": "2",
+        "y": "-2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-ITTIJAH",
+          "value": {
+            "x": "0",
+            "y": "0"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من Ω إلى A: 1 يمينا و 1 أعلى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ربع دورة في اتجاه عقارب الساعة: (a ; b) تصبح (b ; −a)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف الإزاحة المدوّرة إلى Ω."
+        }
+      ],
+      "feedback": {
+        "correct": "من Ω: (1 ; 1) تصبح (1 ; −1): $A'(2\\,;\\,-2)$ .",
+        "incorrect": "دوّر حول Ω لا حول مبدأ المعلم، ومع عقارب الساعة."
+      },
+      "difficulty": 4
+    },
+    {
+      "id": "q2",
+      "statement": "إحداثيتا B′ صورة B:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الإحداثيتان (x ; y) — عددان صحيحان",
+      "expectedAnswer": {
+        "x": "4",
+        "y": "-3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-ITTIJAH",
+          "value": {
+            "x": "-2",
+            "y": "0"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من Ω إلى B: 2 يمينا و 3 أعلى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نفس القاعدة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف إلى Ω."
+        }
+      ],
+      "feedback": {
+        "correct": "من Ω: (2 ; 3) تصبح (3 ; −2): $B'(4\\,;\\,-3)$ ؛ والقطعة الصورة [A′B′].",
+        "incorrect": "دوّر الإزاحة من Ω إلى B ربع دورة مع عقارب الساعة."
+      },
+      "difficulty": 4
+    }
+  ]
+}

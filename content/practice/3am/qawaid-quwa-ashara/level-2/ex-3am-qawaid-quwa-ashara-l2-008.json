@@ -1,0 +1,152 @@
+{
+  "id": "ex-3am-qawaid-quwa-ashara-l2-008",
+  "lessonCode": "qawaid-quwa-ashara",
+  "level": 2,
+  "metadata": {
+    "title": "أختبر نفسي: الأسّ السالب",
+    "estimatedMinutes": 6,
+    "tags": [
+      "أسّ سالب"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "self-6",
+      "page": 49,
+      "section": "أؤكّد تعلّماتي",
+      "number": 6
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أجب عن السؤالين التاليين باختيار الإجابة الصحيحة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "$10^{3}\\times10^{-3}$ يساوي:",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوتين المضروبتين وأسّ كلّ منهما (انتبه إلى إشارته)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في جداء قوتين للعدد 10 نجري عملية واحدة على الأسّين: ما هي؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب القاعدة على مثال صغير: $10^{2}\\times10^{1}$ هو $10\\times10\\times10$ ، فكم عاملًا 10 في الجداء؟"
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$10^{-9}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QAWAID-DARB-ASS"
+        },
+        {
+          "id": "B",
+          "content": "$1$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$10^{6}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QAWAID-ISHARA"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{3}\\times10^{-3} = 10^{0} = 1$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب قيمته أو بتطبيق القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نجمع الأسّين: $3 + (-3) = 0$ .",
+          "$10^{3}\\times10^{-3} = 10^{0} = 1$ ."
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "$\\dfrac{10^{17}}{10^{20}}$ يساوي:",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد البسط والمقام وأسّ كلّ منهما (انتبه إلى إشارة الأسّ)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في حاصل قسمة قوتين للعدد 10 نجري عملية واحدة على الأسّين: ما هي، وبأيّ ترتيب؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر أنّ $\\dfrac{10^{2}}{10^{1}}$ هو $\\dfrac{10\\times10}{10}$ ، وأنّ طرح أسّ سالب يعني جمع عدد موجب."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$10^{3}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QAWAID-ISHARA"
+        },
+        {
+          "id": "B",
+          "content": "$10^{-3}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$10^{37}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QAWAID-DARB-ASS"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{10^{17}}{10^{20}} = 10^{-3}$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب قيمته أو بتطبيق القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نطرح الأسّين: $17 - 20 = -3$ .",
+          "$\\dfrac{10^{17}}{10^{20}} = 10^{-3}$ ، وهو عدد أصغر من 1."
+        ]
+      }
+    }
+  ]
+}

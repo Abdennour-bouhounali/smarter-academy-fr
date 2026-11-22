@@ -1,0 +1,197 @@
+{
+  "id": "ex-3am-tabsit-hadhf-aqwas-l2-004",
+  "lessonCode": "tabsit-hadhf-aqwas",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — جداء أم مجموع للحدّين نفسيهما",
+    "estimatedMinutes": 6,
+    "tags": [
+      "جداء",
+      "حدود متشابهة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارتان:",
+    "formulas": [
+      "A = 2x \\times 3x",
+      "B = 2x + 3x"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بسّط $A$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$A = 6x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-PRODUCT-LETTER"
+        },
+        {
+          "id": "B",
+          "content": "$A = 6x^2$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$A = 5x^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-PRODUCT-COEF-ADDED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في جداء حدّين نضرب الأعداد معًا والحروف معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أن $x \\times x$ يُكتب $x^2$، وطبّق قاعدة إشارة الجداء."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء وفي النتيجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 6x^2$.",
+        "incorrect": "راجع إشارة كل حدّ وما يسبق القوسين، ثم اجمع الحدود المتشابهة فقط."
+      },
+      "solution": {
+        "lines": [
+          "$A = (2 \\times 3) \\times (x \\times x)$",
+          "$A = 6x^2$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بسّط $B$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$B = 5x$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$B = 5x^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-SUM-POWER-ADDED"
+        },
+        {
+          "id": "C",
+          "content": "$B = 6x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-SUM-COEF-MULT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود المتشابهة: الحدود التي لها الجزء الحرفي نفسه ($x^2$ مع $x^2$، و $x$ مع $x$، والأعداد مع الأعداد)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع معاملات كل نوع بإشاراتها، ولا تجمع حدًّا في $x$ مع حدّ في $x^2$ أو مع عدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في العبارة قبل التبسيط وبعده: يجب أن تعطيا القيمة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 5x$.",
+        "incorrect": "راجع إشارة كل حدّ وما يسبق القوسين، ثم اجمع الحدود المتشابهة فقط."
+      },
+      "solution": {
+        "lines": [
+          "$B = (2 + 3)x$",
+          "$B = 5x$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "برّر أن $A \\neq B$ بحساب قيمتيهما من أجل $x = 1$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في جداء حدّين نضرب الأعداد معًا والحروف معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أن $x \\times x$ يُكتب $x^2$، وطبّق قاعدة إشارة الجداء."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء وفي النتيجة."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $x = 1$ : $A = 6 \\times 1^2 = 6$ و $B = 5 \\times 1 = 5$ .",
+          "القيمتان مختلفتان إذن $A \\neq B$ : في الجداء نضرب المعاملات والحروف، وفي المجموع نجمع المعاملات فقط."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

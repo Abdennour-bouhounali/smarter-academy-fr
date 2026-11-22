@@ -1,0 +1,193 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-aadad-nisbiya-l2-005",
+  "lessonCode": "wadiya-idmajiya-aadad-nisbiya",
+  "level": 2,
+  "metadata": {
+    "title": "عربة التلفريك",
+    "estimatedMinutes": 6,
+    "tags": [
+      "ارتفاع",
+      "جداء",
+      "حاصل قسمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "تنطلق عربة تلفريك من محطة علوية ارتفاعها $560$ m فوق سطح البحر وتنزل بانتظام بمقدار $3{,}5$ m في كل ثانية. المحطة السفلية ارتفاعها $−35$ m . نرمز بـ $t$ إلى عدد الثواني منذ الانطلاق؛ فيكون التغيّر في الارتفاع $(−3{,}5) \\times t$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما ارتفاع العربة بعد $40$ ثانية من الانطلاق؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "420",
+      "misconceptionSignatures": [
+        {
+          "value": "22260",
+          "id": "MISC-QISMA-PRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ النص وحدّد الأعداد المعطاة وما يعبّر عنه كل منها: ارتفاع أم انخفاض، ربح أم خسارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر عن الانخفاض أو الخسارة أو الدَّين بعدد سالب، ثم اختر العملية التي تناسب السؤال."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العملية بأعداد نسبية ثم أنجزها بقاعدة الإشارات وبأولوية العمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $420$ m .",
+        "incorrect": "راجع ترجمة النص إلى عملية بين أعداد نسبية: أيّ عدد سالب وأيّ عملية تناسب السؤال؟"
+      },
+      "solution": {
+        "lines": [
+          "$560 + (−3{,}5) \\times 40$",
+          "$= 560 + (−140)$",
+          "$= 420$"
+        ],
+        "result": "420"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "بعد كم ثانية تبلغ العربة مستوى سطح البحر (الارتفاع $0$) ؟ احسب $(0 − 560) \\div (−3{,}5)$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "160",
+      "misconceptionSignatures": [
+        {
+          "value": "-160",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "0.00625",
+          "id": "MISC-QISMA-ORDER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العددين اللذين نقسم أحدهما على الآخر وعيّن إشارة كل منهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عاملان مجهولان فالعامل الناقص هو حاصل قسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعملية العكسية: اضرب نتيجتك في العامل المعلوم."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $160$ ثانية .",
+        "incorrect": "راجع الربط بين الضرب والقسمة وقاعدة إشارات الحاصل، ثم تحقّق بالضرب."
+      },
+      "solution": {
+        "lines": [
+          "$(0 − 560) \\div (−3{,}5)$",
+          "$= (−560) \\div (−3{,}5)$",
+          "$= 160$"
+        ],
+        "result": "160"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "بعد كم ثانية تبلغ العربة المحطة السفلية؟ احسب $(−35 − 560) \\div (−3{,}5)$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "170",
+      "misconceptionSignatures": [
+        {
+          "value": "-170",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "-591.5",
+          "id": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العددين اللذين نقسم أحدهما على الآخر وعيّن إشارة كل منهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عاملان مجهولان فالعامل الناقص هو حاصل قسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعملية العكسية: اضرب نتيجتك في العامل المعلوم."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $170$ ثانية .",
+        "incorrect": "راجع الربط بين الضرب والقسمة وقاعدة إشارات الحاصل، ثم تحقّق بالضرب."
+      },
+      "solution": {
+        "lines": [
+          "$(−35 − 560) \\div (−3{,}5)$",
+          "$= (−595) \\div (−3{,}5)$",
+          "$= 170$"
+        ],
+        "result": "170"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

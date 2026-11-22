@@ -1,0 +1,113 @@
+{
+  "id": "ex-4am-jidhr-tarbii-l2-008",
+  "lessonCode": "jidhr-tarbii",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2018 — مثلث أحد أضلاعه جذر",
+    "estimatedMinutes": 5,
+    "tags": [
+      "(√a)² = a",
+      "خاصية فيثاغورس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_jidhr-tarbii_P3",
+      "modelledOn": "BEM 2018 I-4"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2018",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "$TIC$ مثلث فيه: $TI = \\sqrt{11}cm$ ، $TC = 5cm$ و $CI = 6cm$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $TI^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "value": "121",
+          "id": "MISC-TARBI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من أجل كل عدد موجب $a$: $(\\sqrt{a})^2 = a$."
+        }
+      ],
+      "feedback": {
+        "correct": "$TI^2 = (\\sqrt{11})^2 = 11$.",
+        "incorrect": "مربع $\\sqrt{11}$ هو 11."
+      },
+      "solution": {
+        "lines": [
+          "$TI^2 = (\\sqrt{11})^2$"
+        ],
+        "result": "TI^2 = 11"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بيّن أن المثلث $TIC$ قائم.",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $TC^2$ و $CI^2$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن $CI^2$ بالمجموع $TI^2 + TC^2$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل الخاصية العكسية لخاصية فيثاغورس."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك سطرًا بسطر بالحل النموذجي، وانتبه إلى الخاصية المستعملة."
+      },
+      "solution": {
+        "lines": [
+          "$CI^2 = 6^2 = 36$",
+          "$TI^2 + TC^2 = 11 + 5^2 = 11 + 25 = 36$",
+          "بما أن $CI^2 = TI^2 + TC^2$ فحسب الخاصية العكسية لخاصية فيثاغورس:"
+        ],
+        "result": "المثلث TIC قائم في T"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "id": "ex-1am-adad-ashri-mustaqim-mudarraj-l4-007",
+  "lessonCode": "adad-ashri-mustaqim-mudarraj",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — تحديد المسافة بالتدريجات",
+    "estimatedMinutes": 5,
+    "tags": [
+      "حصر",
+      "قراءة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نستعمل نصف مستقيم مدرّجًا تدريجته الصغيرة 0,1."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "النقطة $D$ فاصلتها $0{,}38$ ، وهي تقع بين تدريجتين صغيرتين متتاليتين على نصف مستقيم تدريجته الصغيرة $0{,}1$ . أيّ حصر صحيح لفاصلتها بين تدريجتين متتاليتين ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الحصر الصحيح",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$0{,}2 < D < 0{,}3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-BOUNDSSHIFT"
+        },
+        {
+          "id": "B",
+          "content": "$0{,}3 < D < 0{,}4$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$0{,}4 < D < 0{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-BOUNDSSHIFT"
+        },
+        {
+          "id": "D",
+          "content": "$0{,}4 < D < 0{,}3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-BOUNDSREV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التدريجتان متتاليتان : الفرق بينهما قيمة التدريجة الصغيرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الأصغر في الحصر يكون على يسار النقطة والأكبر على يمينها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الفاصلة بكلّ تدريجة قريبة منها."
+        }
+      ],
+      "feedback": {
+        "correct": "الحصر الصحيح : $0{,}3$ < $0{,}38$ < $0{,}4$.",
+        "incorrect": "نحصر الفاصلة بين تدريجتين متتاليتين : الأصغر على يسار النقطة والأكبر على يمينها، والفرق بينهما قيمة التدريجة."
+      },
+      "solution": {
+        "lines": [
+          "نبحث عن التدريجتين المتتاليتين اللتين تحيطان بالعدد $0{,}38$",
+          "$0{,}3$ < $0{,}38$ < $0{,}4$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم تدريجة صغيرة تفصل النقطة التي فاصلتها $0{,}7$ عن المبدإ $O$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "0,7",
+          "id": "MISC-ABSC-FROMO"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم تدريجة صغيرة في الوحدة الواحدة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع عدد الوحدات في عدد التدريجات التي تساويها كلّ وحدة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثمّ أضف التدريجات الباقية بعد آخر علامة."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة تبعد عن المبدإ بـ $7$ تدريجة صغيرة.",
+        "incorrect": "الوحدة الكاملة تُحسب بعدد أجزائها لا بواحد : نضرب الفاصلة في عدد أجزاء الوحدة."
+      },
+      "solution": {
+        "lines": [
+          "الوحدة الواحدة تساوي $10$ تدريجات صغيرة",
+          "$0{,}7$ = $0{,}7$ × $10$ تدريجة = $7$ تدريجة"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "النقطة $B$ فاصلتها $4{,}04$ ، وهي تقع بين تدريجتين صغيرتين متتاليتين قيمة التدريجة الصغيرة $0{,}1$ . ما فاصلة التدريجة التي على يسار النقطة مباشرة ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "4,1",
+          "id": "MISC-ABSC-BOUNDSSHIFT"
+        },
+        {
+          "value": "3,9",
+          "id": "MISC-ABSC-BOUNDSSHIFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب التدريجات القريبة من الفاصلة بخطوة قيمتها قيمة التدريجة الصغيرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التدريجة اليسرى أصغر من الفاصلة والتي تليها أكبر منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خذ آخر مضاعف للخطوة لا يتجاوز الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "التدريجة التي على يسار النقطة مباشرة فاصلتها $4$.",
+        "incorrect": "التدريجة اليسرى هي أكبر تدريجة لا تتجاوز فاصلة النقطة ؛ والتي تليها (اليمنى) أكبر من الفاصلة."
+      },
+      "solution": {
+        "lines": [
+          "التدريجات هي مضاعفات $0{,}1$ : ... $3{,}9$ ، $4$ ، $4{,}1$ ...",
+          "العدد $4{,}04$ محصور بين $4$ و$4{,}1$ ، فالتدريجة اليسرى هي $4$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

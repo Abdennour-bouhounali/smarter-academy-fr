@@ -1,0 +1,394 @@
+{
+  "id": "ex-3am-maqlub-qismat-kasrayn-l5-005",
+  "lessonCode": "maqlub-qismat-kasrayn",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — دوّاسة الدرّاجة المشتركة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "مقلوب عدد",
+      "قسمة",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: تتعاون ليلى وكريم في العناية بدرّاجة مشتركة في نادي المدرسة. صحنها الأمامي ذو $36$ سنًّا وترسها الخلفي ذو $48$ سنًّا. تدور العجلة، لكلّ دورة للدوّاسة، عددًا من الدورات يساوي حاصل قسمة عدد أسنان الصحن الأمامي على عدد أسنان الترس الخلفي.\nالجزء الثاني: يريد النادي اختيار الوضع الأنسب لطريق مستوٍ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "كم دورةً تدورها العجلة عندما تدور الدوّاسة دورة واحدة؟ اكتب الناتج على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "3/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1728",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "4/3",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "1/1728",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المقسوم؟ وما العدد المقسوم عليه؟ وما مقلوب هذا الأخير؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد غير معدوم هي الضرب في مقلوبه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حوّل القسمة إلى جداء، واختزل قبل أن تضرب كلّما أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$36 \\div 48 = \\dfrac{3}{4}$ لأنّ القسمة على عدد هي الضرب في مقلوبه.",
+        "incorrect": "القسمة على عدد غير معدوم هي الضرب في مقلوبه؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $36 \\div 48 = 36 \\times \\dfrac{1}{48}$ .",
+          "$= \\dfrac{36 \\times 1}{1 \\times 48} = \\dfrac{3}{4}$ ."
+        ],
+        "result": "\\dfrac{3}{4}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كم دورة للدوّاسة تلزم لتدور العجلة $15$ دورة؟",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "45/4",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "1/20",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "4/45",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ الكسرين هو المقسوم وأيّهما المقسوم عليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني: نقلب المقسوم عليه وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء، اختزل العوامل المشتركة قبل الضرب، ثمّ اكتب الناتج على أبسط شكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$15 \\div \\dfrac{3}{4} = 20$ لأنّ قسمة كسر على كسر هي ضرب الأوّل في مقلوب الثاني.",
+        "incorrect": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني فقط، ثمّ نختزل؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $15 \\div \\dfrac{3}{4} = 15 \\times \\dfrac{4}{3}$ .",
+          "$= \\dfrac{15 \\times 4}{1 \\times 3} = 20$ ."
+        ],
+        "result": "20"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "كم دورة للدوّاسة تلزم لتدور العجلة دورة واحدة؟ اكتب الناتج على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "4/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "-3/4",
+          "id": "MISC-MAQLUB-OPPOSITE"
+        },
+        {
+          "value": "1/3",
+          "id": "MISC-MAQLUB-NUMONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي يُطلب مقلوبه؟ وهل هو عدد طبيعي أم عشري أم كسر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مقلوب عدد غير معدوم هو العدد الذي جداؤه معه يساوي $1$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العدد على شكل كسر ثمّ بدّل بسطه ومقامه، وتحقّق من ذلك بإجراء الجداء."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{4}{3}$ لأنّه مقلوب $\\dfrac{3}{4}$ .",
+        "incorrect": "جداء العدد ومقلوبه يساوي العدد الذي هو عنصر محايد للضرب؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "دورة دوّاسة واحدة تدير العجلة $\\dfrac{3}{4}$ دورة.",
+          "فعدد دورات الدوّاسة لدورة عجلة واحدة هو مقلوب $\\dfrac{3}{4}$ ، أي $\\dfrac{4}{3}$ ."
+        ],
+        "result": "\\dfrac{4}{3}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "نقلت ليلى السلسلة إلى صحن أمامي ذي $40$ سنًّا وترس خلفي ذي $24$ سنًّا. كم دورة تدورها العجلة لكلّ دورة للدوّاسة؟ اكتب الناتج على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "5/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "960",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "3/5",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "1/960",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المقسوم؟ وما العدد المقسوم عليه؟ وما مقلوب هذا الأخير؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد غير معدوم هي الضرب في مقلوبه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حوّل القسمة إلى جداء، واختزل قبل أن تضرب كلّما أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$40 \\div 24 = \\dfrac{5}{3}$ لأنّ القسمة على عدد هي الضرب في مقلوبه.",
+        "incorrect": "القسمة على عدد غير معدوم هي الضرب في مقلوبه؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $40 \\div 24 = 40 \\times \\dfrac{1}{24}$ .",
+          "$= \\dfrac{40 \\times 1}{1 \\times 24} = \\dfrac{5}{3}$ ."
+        ],
+        "result": "\\dfrac{5}{3}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "كم دورة للدوّاسة تلزم لتدور العجلة $10$ دورات بعد هذا التغيير؟",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "50/3",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "1/6",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "3/50",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ الكسرين هو المقسوم وأيّهما المقسوم عليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني: نقلب المقسوم عليه وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء، اختزل العوامل المشتركة قبل الضرب، ثمّ اكتب الناتج على أبسط شكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$10 \\div \\dfrac{5}{3} = 6$ لأنّ قسمة كسر على كسر هي ضرب الأوّل في مقلوب الثاني.",
+        "incorrect": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني فقط، ثمّ نختزل؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $10 \\div \\dfrac{5}{3} = 10 \\times \\dfrac{3}{5}$ .",
+          "$= \\dfrac{10 \\times 3}{1 \\times 5} = 6$ ."
+        ],
+        "result": "6"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ج",
+      "statement": "أيّ الوضعين يحتاج دورات أقلّ للدوّاسة لتدور العجلة $10$ دورات؟",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الوضع الجديد ($40$ و $24$)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الوضع الأوّل ($36$ و $48$)",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "الوضعان متساويان",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الخيارات واحسب كلاّ منها بدل أن تخمّن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ خيار على الأعداد الواردة فيه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حوّل القسمة إلى جداء بمقلوب القاسم، ثمّ قارن."
+        }
+      ],
+      "feedback": {
+        "correct": "الوضع الجديد يحتاج $6$ دورات فقط، والأوّل يحتاج $\\dfrac{40}{3}$ دورة.",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الوضع الأوّل: $10 \\div \\dfrac{3}{4} = \\dfrac{40}{3}$ دورة.",
+          "الوضع الجديد: $10 \\div \\dfrac{5}{3} = 6$ دورات."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

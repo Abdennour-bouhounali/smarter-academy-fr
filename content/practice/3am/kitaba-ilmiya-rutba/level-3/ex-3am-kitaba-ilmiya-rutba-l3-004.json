@@ -1,0 +1,269 @@
+{
+  "id": "ex-3am-kitaba-ilmiya-rutba-l3-004",
+  "lessonCode": "kitaba-ilmiya-rutba",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — الحصر بين قوتين للعدد 10",
+    "estimatedMinutes": 8,
+    "tags": [
+      "حصر",
+      "اختيار من متعدد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أجب عن الأسئلة التالية باختيار الإجابة الصحيحة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ الأعداد التالية محصور بين $10^{-3}$ و $10^{-2}$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل كلّ اقتراح إلى عدد عشري أو إلى الكتابة العلمية لتقارنه بالمعطى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكتابة العلمية $a\\times10^{n}$ تشترط $1\\le a<10$ ؛ وفي المقارنة تُقارَن الأسّ أوّلًا ثمّ العدد $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر كلّ اقتراح على حدة وأسقط الخاطئ منها."
+        }
+      ],
+      "timeSeconds": 100,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$0{,}0042$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$0{,}042$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ILMIYA-HASR"
+        },
+        {
+          "id": "C",
+          "content": "$4{,}2\\times10^{-4}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ILMIYA-HASR"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{-3}\\le0{,}0042<10^{-2}$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب قيمته أو بتطبيق القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}001\\le0{,}0042<0{,}01$ ، أمّا $0{,}042$ فأكبر من $0{,}01$ ، و $4{,}2\\times10^{-4} = 0{,}00042$ أصغر من $0{,}001$ ."
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حصر العدد $A = 5{,}3\\times10^{6}$ بين قوتين متتاليتين للعدد 10 هو:",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل كلّ اقتراح إلى عدد عشري أو إلى الكتابة العلمية لتقارنه بالمعطى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكتابة العلمية $a\\times10^{n}$ تشترط $1\\le a<10$ ؛ وفي المقارنة تُقارَن الأسّ أوّلًا ثمّ العدد $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر كلّ اقتراح على حدة وأسقط الخاطئ منها."
+        }
+      ],
+      "timeSeconds": 100,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$10^{6}\\le A<10^{7}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$10^{5}\\le A<10^{6}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ILMIYA-HASR"
+        },
+        {
+          "id": "C",
+          "content": "$10^{7}\\le A<10^{8}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ILMIYA-HASR"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{6}\\le A<10^{7}$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب قيمته أو بتطبيق القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الكتابة العلمية معطاة: $A = 5{,}3\\times10^{6}$ فـ $10^{6}\\le A<10^{7}$ ."
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "حصر العدد $B = 0{,}00071$ بين قوتين متتاليتين للعدد 10 هو:",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل كلّ اقتراح إلى عدد عشري أو إلى الكتابة العلمية لتقارنه بالمعطى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكتابة العلمية $a\\times10^{n}$ تشترط $1\\le a<10$ ؛ وفي المقارنة تُقارَن الأسّ أوّلًا ثمّ العدد $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر كلّ اقتراح على حدة وأسقط الخاطئ منها."
+        }
+      ],
+      "timeSeconds": 100,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$10^{-5}\\le B<10^{-4}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ILMIYA-HASR"
+        },
+        {
+          "id": "B",
+          "content": "$10^{-3}\\le B<10^{-2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ILMIYA-HASR"
+        },
+        {
+          "id": "C",
+          "content": "$10^{-4}\\le B<10^{-3}$",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{-4}\\le B<10^{-3}$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب قيمته أو بتطبيق القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$B = 7{,}1\\times10^{-4}$ فـ $10^{-4}\\le B<10^{-3}$ ."
+        ]
+      }
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "أيّ الأعداد التالية محصور بين $10^{5}$ و $10^{6}$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل كلّ اقتراح إلى عدد عشري أو إلى الكتابة العلمية لتقارنه بالمعطى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكتابة العلمية $a\\times10^{n}$ تشترط $1\\le a<10$ ؛ وفي المقارنة تُقارَن الأسّ أوّلًا ثمّ العدد $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر كلّ اقتراح على حدة وأسقط الخاطئ منها."
+        }
+      ],
+      "timeSeconds": 100,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$42\\times10^{5}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ILMIYA-K"
+        },
+        {
+          "id": "B",
+          "content": "$4{,}2\\times10^{5}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$0{,}42\\times10^{5}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ILMIYA-HASR"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{5}\\le4{,}2\\times10^{5}<10^{6}$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب قيمته أو بتطبيق القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$42\\times10^{5} = 4\\,200\\,000>10^{6}$ ، و $0{,}42\\times10^{5} = 42\\,000<10^{5}$ ."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+/* THE INVESTIGATION `measure` (InquiryMeasure.jsx) — two strips one above the other, ONE fraction, counted again in a
+   new unit; and the typed fraction in its own shape (`FracTpl`, also used by `part`). It reuses the frame of the division
+   screens (inquiry.css › .iq--div) and the strips of `join` (Span). Shapes are the brand blue; a plank that fills is
+   green, what is left amber — as everywhere in this world. SVG text is ≥ 18 units of a 1000-wide scene; HTML text keeps
+   the 12 px floor of the forge's zoom (--di-min-font). */
+.iq--measure {
+  grid-template-rows: auto auto minmax(0, 1fr) auto auto auto auto;
+}
+
+/* the fraction bar between the two strips */
+.iq-meas-bar {
+  stroke: #e8f6ff;
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+/* the chain of equal fractions and the divisions of the plank: one formula each, never broken */
+.iq-meas-calc {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem 2rem;
+  min-height: 2.6rem;
+}
+.rf-root .iq-meas-calc {
+  color: #e8f6ff;
+}
+.iq-meas-chain {
+  white-space: nowrap;
+  font-size: max(var(--di-min-font, 12px), 1.2rem);
+}
+.iq-meas-div {
+  white-space: nowrap;
+  font-size: max(var(--di-min-font, 12px), 1.05rem);
+  opacity: 0.92;
+}
+
+/* the planks the world tried on the lower strip */
+.iq-meas-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.7rem;
+}
+.iq-meas-check small {
+  font-size: max(var(--di-min-font, 12px), 0.95rem);
+  font-weight: 800;
+}
+.rf-root .iq-meas-check small {
+  color: #9fd8ff;
+}
+.iq-meas-tried {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  animation: iq-drop 0.3s ease-out backwards;
+}
+.iq-meas-tried.is-fills {
+  border-color: #8dffb0;
+  background: rgba(141, 255, 176, 0.2);
+}
+.iq--measure .iq-chip.is-no,
+.iq--part .iq-chip.is-no {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+/* a typed fraction in its own shape: two boxes over a real bar */
+.iq-fracin {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+.iq .iq-fracin .di-num {
+  height: 2.2rem;
+  text-align: center;
+}
+.iq-fracin__bar {
+  display: block;
+  align-self: stretch;
+  height: 3px;
+  border-radius: 2px;
+  background: #e8f6ff;
+}
+
+@media (max-height: 500px) {
+  .iq .iq-fracin .di-num {
+    height: 1.9rem;
+  }
+  .iq-meas-calc {
+    min-height: 2.2rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .iq-meas-tried {
+    animation: none;
+  }
+}

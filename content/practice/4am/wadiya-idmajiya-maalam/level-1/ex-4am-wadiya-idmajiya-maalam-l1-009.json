@@ -1,0 +1,86 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-maalam-l1-009",
+  "lessonCode": "wadiya-idmajiya-maalam",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — نقاط على محور الفواصل",
+    "estimatedMinutes": 2,
+    "tags": [
+      "قراءة إحداثيتي نقطة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-maalam_P2",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "أربع إشارات على مسار سباق: $R(0\\,;\\,3)$ ، $S(-4\\,;\\,0)$ ، $T(2\\,;\\,-2)$ ، $U(5\\,;\\,0)$ في معلم متعامد ومتجانس."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الإشارات التي تقع على محور الفواصل هي:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "R و T",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-TABDIL-X-Y"
+        },
+        {
+          "id": "B",
+          "content": "T و U",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-ISHARA"
+        },
+        {
+          "id": "C",
+          "content": "S و U",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "R فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-TABDIL-X-Y"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "على محور الفواصل، ما قيمة الترتيب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الترتيب هو العدد الثاني في الثنائية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ابحث عن النقط التي ترتيبها 0."
+        }
+      ],
+      "feedback": {
+        "correct": "نقطة من محور الفواصل ترتيبها 0: $S(-4\\,;\\,0)$ و $U(5\\,;\\,0)$ . أمّا R فعلى محور التراتيب (فاصلتها 0).",
+        "incorrect": "على محور الفواصل الترتيب يساوي 0 (العدد الثاني)."
+      },
+      "cognitiveDemand": "recall",
+      "difficulty": 1
+    }
+  ]
+}

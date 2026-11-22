@@ -1,0 +1,68 @@
+{
+  "id": "ex-4am-kura-julla-l5-003",
+  "lessonCode": "kura-julla",
+  "level": 5,
+  "metadata": {
+    "title": "وضعية — خط الاستواء",
+    "estimatedMinutes": 5,
+    "tags": [
+      "الدائرة الكبرى",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_kura-julla_P2",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "مجسّم كبير للكرة الأرضية في مدخل مدينة العلوم قطره $32\\,\\mathrm{cm}$ . نلصق شريطا ملوّنا على خط الاستواء (دائرة كبرى)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "طول الشريط على الشكل $k\\pi\\,\\mathrm{cm}$ . ما هو k؟",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد k (معامل π)",
+      "expectedAnswer": "32",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-KURA-QUTR",
+          "value": "64"
+        },
+        {
+          "id": "MISC-KURA-QUTR",
+          "value": "16"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خط الاستواء دائرة كبرى: نصف قطرها نصف قطر الكرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "محيط دائرة نصف قطرها r هو $2\\pi r$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب r من القطر."
+        }
+      ],
+      "feedback": {
+        "correct": "$r = 16\\,\\mathrm{cm}$ ، المحيط $2\\pi \\times 16 = 32\\pi\\,\\mathrm{cm}$ .",
+        "incorrect": "المحيط $2\\pi r$ مع r نصف القطر، لا القطر."
+      }
+    }
+  ]
+}

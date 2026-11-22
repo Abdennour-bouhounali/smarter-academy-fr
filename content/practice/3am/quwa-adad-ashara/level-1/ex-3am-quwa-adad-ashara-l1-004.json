@@ -1,0 +1,181 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l1-004",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أصفار القوة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "عدد الأصفار",
+      "قوى العدد 10"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "الكتابة العشرية للعدد $10^{n}$ ، من أجل $n$ طبيعي غير معدوم، تحوي رقمًا 1 متبوعًا بأصفار."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "كم صفرًا في الكتابة العشرية للعدد $10^{9}$ ؟",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما معنى $10^{9}$ ؟ جداء كم عاملًا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كلّ عامل 10 يُضيف صفرًا واحدًا على يمين الرقم 1."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحسب الرقم 1 ضمن الأصفار."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-ASHARA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{9}$ يحوي 9 أصفار.",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10^{9} = 1\\,000\\,000\\,000$ .",
+          "بعد الرقم 1 نجد تسعة أصفار."
+        ],
+        "result": "9"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كم رقمًا (بما فيه الرقم 1) في الكتابة العشرية للعدد $10^{5}$ ؟",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العدد $10^{5}$ كتابة عشرية أولًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد الأرقام هو عدد الأصفار مضافًا إليه الرقم 1."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تخلط بين الأسّ وعدد الأرقام."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-ASHARA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{5} = 100\\,000$ ، وهو مكتوب بستّة أرقام.",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10^{5} = 100\\,000$ .",
+          "خمسة أصفار مع الرقم 1: ستّة أرقام."
+        ],
+        "result": "6"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "عدد مكتوب بالرقم 1 متبوعًا بـ 12 صفرًا. نكتبه على الشكل $10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ الأصفار الواقعة بعد الرقم 1 في هذا العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأسّ هو عدد الأصفار بعد الرقم 1، وليس عدد أرقام العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدّ الأصفار صفرًا صفرًا بدءًا من الرقم 1 حتى آخر العدد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-ASHARA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "العدد 1 متبوع بـ 12 صفرًا هو $10^{12}$ .",
+        "incorrect": "عدّ الأصفار (أو رتبة الرقم 1 بعد الفاصلة) بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "عدد الأصفار 12 إذن الأسّ 12.",
+          "$10^{12}$ ."
+        ],
+        "result": "n = 12"
+      }
+    }
+  ]
+}

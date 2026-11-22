@@ -1,0 +1,220 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l3-005",
+  "lessonCode": "mana-jam-tarh",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أسعار السوق",
+    "estimatedMinutes": 7,
+    "tags": [
+      "أكثر",
+      "أقل",
+      "مجموع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في سوق القرية، يعلن البائع الأمين أسعاره بوضوح: ثمن الكيلوغرام من البرتقال 185 دج، وثمن الكيلوغرام من التفاح أكثر منه بـ 95 دج، وثمن الكيلوغرام من الموز أقل من ثمن الكيلوغرام من التفاح بـ 40 دج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب ثمن الكيلوغرام من التفاح.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "280",
+      "misconceptionSignatures": [
+        {
+          "value": "90",
+          "id": "MISC-JAMTARH-KALIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التفاح أغلى من البرتقال."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكل = مجموع الجزأين."
+        }
+      ],
+      "feedback": {
+        "correct": "$185 + 95 = 280$ دج.",
+        "incorrect": "ثمن التفاح أكثر من ثمن البرتقال: النتيجة أكبر من 185 دج."
+      },
+      "solution": {
+        "lines": [
+          "$185 + 95 = 280$"
+        ],
+        "result": "280 \\text{ DA}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب ثمن الكيلوغرام من الموز.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "240",
+      "misconceptionSignatures": [
+        {
+          "value": "320",
+          "id": "MISC-JAMTARH-KALIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الموز أرخص من التفاح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثمن التفاح هو الكل، وثمن الموز جزء منه."
+        }
+      ],
+      "feedback": {
+        "correct": "$280 - 40 = 240$ دج.",
+        "incorrect": "ثمن الموز أقل من ثمن التفاح: اطرح."
+      },
+      "solution": {
+        "lines": [
+          "ثمن التفاح 280 دج.",
+          "$280 - 40 = 240$"
+        ],
+        "result": "240 \\text{ DA}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "في المخطط بأقواس الذي يربط ثمن التفاح بثمن الموز، الكل (القوس تحت الخط) هو:",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "ثمن الكيلوغرام من التفاح",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "ثمن الكيلوغرام من الموز",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        },
+        {
+          "id": "C",
+          "content": "الفرق 40 دج",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ الثمنين أكبر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأكبر يضمّ الأصغر والفرق."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن التفاح = ثمن الموز + 40: هو الكل.",
+        "incorrect": "الموز أرخص: أيّ الثمنين يضمّ الآخر والفرق؟"
+      },
+      "solution": {
+        "lines": [
+          "ثمن الموز أقل من ثمن التفاح بـ 40 دج، إذن ثمن الموز + 40 = ثمن التفاح.",
+          "الكل هو ثمن الكيلوغرام من التفاح."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "اشترت أمّ سعاد كيلوغرامًا من كل نوع. احسب المبلغ الذي دفعته.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "705",
+      "misconceptionSignatures": [
+        {
+          "value": "520",
+          "id": "MISC-JAMTARH-JUZ-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولًا ثمن كل نوع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المبلغ المدفوع مجموع الأثمان الثلاثة."
+        }
+      ],
+      "feedback": {
+        "correct": "$185 + 280 + 240 = 705$ دج.",
+        "incorrect": "لا تنسَ أيّ نوع من الأنواع الثلاثة."
+      },
+      "solution": {
+        "lines": [
+          "البرتقال 185 ، التفاح 280 ، الموز 240.",
+          "$185 + 280 + 240 = 705$"
+        ],
+        "result": "705 \\text{ DA}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,411 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l4-001",
+  "lessonCode": "mafhum-dawaran",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 5 — المروحة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "تعيين دوران",
+      "زوايا"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-5",
+      "page": 158,
+      "section": "صورة شكل بدوران",
+      "number": 5
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 158): في الشكل خمسة مثلثات متقايسة رأسها المشترك A، و $\\widehat{ABD} = 75^\\circ$ (AB = AD). الفراغات بين المثلثات (مقيسة على شكل الكتاب): $\\widehat{DAE} = \\widehat{FAM} = \\widehat{QAR} = 30^\\circ$ و $\\widehat{NAP} = \\widehat{SAB} = 60^\\circ$ . مركز الدوران في كل حالة هو A.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          -1.0353,
+          -3.8637
+        ],
+        "D": [
+          1.0353,
+          -3.8637
+        ],
+        "E": [
+          2.8284,
+          -2.8284
+        ],
+        "F": [
+          3.8637,
+          -1.0353
+        ],
+        "M": [
+          3.8637,
+          1.0353
+        ],
+        "N": [
+          2.8284,
+          2.8284
+        ],
+        "P": [
+          -1.0353,
+          3.8637
+        ],
+        "Q": [
+          -2.8284,
+          2.8284
+        ],
+        "R": [
+          -3.8637,
+          1.0353
+        ],
+        "S": [
+          -3.8637,
+          -1.0353
+        ]
+      },
+      "polygons": [
+        {
+          "points": [
+            "A",
+            "B",
+            "D"
+          ],
+          "tone": "rose"
+        },
+        {
+          "points": [
+            "A",
+            "E",
+            "F"
+          ],
+          "tone": "emerald"
+        },
+        {
+          "points": [
+            "A",
+            "M",
+            "N"
+          ],
+          "tone": "emerald"
+        },
+        {
+          "points": [
+            "A",
+            "P",
+            "Q"
+          ],
+          "tone": "emerald"
+        },
+        {
+          "points": [
+            "A",
+            "R",
+            "S"
+          ],
+          "tone": "emerald"
+        }
+      ],
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "tone": "rose"
+        },
+        {
+          "from": "B",
+          "to": "D",
+          "tone": "rose"
+        },
+        {
+          "from": "D",
+          "to": "A",
+          "tone": "rose"
+        },
+        {
+          "from": "A",
+          "to": "E",
+          "tone": "emerald"
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "tone": "emerald"
+        },
+        {
+          "from": "F",
+          "to": "A",
+          "tone": "emerald"
+        },
+        {
+          "from": "A",
+          "to": "M",
+          "tone": "emerald"
+        },
+        {
+          "from": "M",
+          "to": "N",
+          "tone": "emerald"
+        },
+        {
+          "from": "N",
+          "to": "A",
+          "tone": "emerald"
+        },
+        {
+          "from": "A",
+          "to": "P",
+          "tone": "emerald"
+        },
+        {
+          "from": "P",
+          "to": "Q",
+          "tone": "emerald"
+        },
+        {
+          "from": "Q",
+          "to": "A",
+          "tone": "emerald"
+        },
+        {
+          "from": "A",
+          "to": "R",
+          "tone": "emerald"
+        },
+        {
+          "from": "R",
+          "to": "S",
+          "tone": "emerald"
+        },
+        {
+          "from": "S",
+          "to": "A",
+          "tone": "emerald"
+        }
+      ],
+      "angles": [
+        {
+          "at": "B",
+          "from": "D",
+          "to": "A",
+          "label": "75°",
+          "radius": 18
+        }
+      ],
+      "ariaLabel": "مروحة من خمسة مثلثات متقايسة رأسها المشترك A: ABD نحو الأسفل، AEF أسفل اليمين، AMN أعلى اليمين، APQ أعلى اليسار، ARS يسارا؛ الزاوية ABD قيسها 75 درجة",
+      "maxWidth": 480
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المثلث AMN صورة ABD بالدوران الذي زاويته واتجاهه:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$120^\\circ$ في الاتجاه غير المباشر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ITTIJAH"
+        },
+        {
+          "id": "B",
+          "content": "$90^\\circ$ في الاتجاه المباشر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ZAWIYA-UKHRA"
+        },
+        {
+          "id": "C",
+          "content": "$120^\\circ$ في الاتجاه المباشر",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "زاوية الرأس $\\widehat{BAD} = 180^\\circ - 2 \\times 75^\\circ$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من B إلى M عكس عقارب الساعة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع زوايا الرؤوس والفراغات."
+        }
+      ],
+      "feedback": {
+        "correct": "$30^\\circ + 30^\\circ + 30^\\circ + 30^\\circ = 120^\\circ$ عكس عقارب الساعة.",
+        "incorrect": "لا تنس زاوية الرأس في العدّ، وتتبّع الاتجاه."
+      },
+      "difficulty": 3
+    },
+    {
+      "id": "q2",
+      "statement": "المثلث APQ صورة ABD بالدوران الذي زاويته واتجاهه:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$150^\\circ$ في الاتجاه غير المباشر",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$150^\\circ$ في الاتجاه المباشر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ITTIJAH"
+        },
+        {
+          "id": "C",
+          "content": "$210^\\circ$ في الاتجاه غير المباشر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MUKAMMIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من B إلى P في اتجاه عقارب الساعة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تمرّ بالفراغ SAB ثم بالمثلث ARS."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$60^\\circ + 30^\\circ + 30^\\circ + 30^\\circ = 150^\\circ$ في اتجاه عقارب الساعة.",
+        "incorrect": "اختر الطريق مع عقارب الساعة واجمع ما يمرّ به."
+      },
+      "difficulty": 3
+    },
+    {
+      "id": "q3",
+      "statement": "المثلث ARS صورة ABD بالدوران الذي زاويته واتجاهه:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$90^\\circ$ في الاتجاه المباشر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ITTIJAH"
+        },
+        {
+          "id": "B",
+          "content": "$90^\\circ$ في الاتجاه غير المباشر",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$60^\\circ$ في الاتجاه غير المباشر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ZAWIYA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من B إلى R في اتجاه عقارب الساعة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "فراغ ثم زاوية رأس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$60^\\circ + 30^\\circ = 90^\\circ$ في اتجاه عقارب الساعة.",
+        "incorrect": "من B إلى R: الفراغ SAB ثم زاوية الرأس RAS."
+      },
+      "difficulty": 3
+    },
+    {
+      "id": "q4",
+      "statement": "المثلث AEF صورة AMN بالدوران الذي زاويته واتجاهه:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$60^\\circ$ في الاتجاه المباشر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ITTIJAH"
+        },
+        {
+          "id": "B",
+          "content": "$30^\\circ$ في الاتجاه غير المباشر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ZAWIYA-UKHRA"
+        },
+        {
+          "id": "C",
+          "content": "$60^\\circ$ في الاتجاه غير المباشر",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من M إلى E في اتجاه عقارب الساعة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "فراغ ثم زاوية رأس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$30^\\circ + 30^\\circ = 60^\\circ$ في اتجاه عقارب الساعة.",
+        "incorrect": "عُدّ الفراغ FAM وزاوية الرأس EAF."
+      },
+      "difficulty": 3
+    }
+  ]
+}

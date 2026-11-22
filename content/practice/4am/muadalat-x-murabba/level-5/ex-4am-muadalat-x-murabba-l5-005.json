@@ -1,0 +1,92 @@
+{
+  "id": "ex-4am-muadalat-x-murabba-l5-005",
+  "lessonCode": "muadalat-x-murabba",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2021 — حاجز النافورة",
+    "estimatedMinutes": 15,
+    "tags": [
+      "مساحة قرص",
+      "نصف قطر",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_muadalat-x-murabba_P2",
+      "modelledOn": "BEM 2021 II ☜"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في وسط حديقة عمومية بمدينة قسنطينة نافورة على شكل قرص مساحته $50{,}24m^2$. تريد البلدية، حفاظًا على جمال الحديقة وسلامة الأطفال، إحاطة النافورة بحاجز من الحجارة المزخرفة يُشترى بالمتر الطولي.\n\n• أجرة العامل $3000DA$ مهما كان طول الحاجز.\n\n• خصصت البلدية مبلغ $40680DA$ لهذه العملية.\n\n(نأخذ $\\pi = 3{,}14$)"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "☜ أعطِ أكبر ثمن ممكن للمتر الطولي الواحد من الحاجز حتى لا تفوق التكلفة المبلغ المخصص لها.",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_muadalat-x-murabba_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المبلغ بالدينار (DA)",
+      "expectedAnswer": "1500",
+      "misconceptionSignatures": [
+        {
+          "value": "750",
+          "id": "MISC-HALL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة القرص $\\pi r^2$: اكتب معادلة مجهولها $r$ ثم اعزل $r^2$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طول الحاجز هو محيط الدائرة $2\\pi r$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب متراجحة: ثمن الحاجز + أجرة العامل ≤ المبلغ المخصص."
+        }
+      ],
+      "feedback": {
+        "correct": "نصف القطر $4m$، المحيط $25{,}12m$، و $25{,}12\\,p + 3000 \\leq 40680$ تعطي $p \\leq 1500$.",
+        "incorrect": "جد نصف القطر من المساحة، ثم المحيط، ثم حل المتراجحة التي تعبّر عن الميزانية."
+      },
+      "solution": {
+        "lines": [
+          "ليكن $r$ نصف قطر النافورة: $3{,}14 \\times r^2 = 50{,}24$",
+          "$r^2 = 50{,}24 \\div 3{,}14 = 16$",
+          "$r^2 = 4^2$ و $r > 0$، إذن $r = 4m$",
+          "طول الحاجز (محيط الدائرة): $2 \\times 3{,}14 \\times 4 = 25{,}12m$",
+          "ليكن $p$ ثمن المتر الطولي: $25{,}12\\,p + 3000 \\leq 40680$",
+          "$25{,}12\\,p \\leq 37680$",
+          "$p \\leq 37680 \\div 25{,}12$",
+          "إذن أكبر ثمن ممكن للمتر الطولي هو $1500DA$."
+        ],
+        "result": "p \\leq 1500\\,DA"
+      },
+      "work": "optional",
+      "timeSeconds": 900
+    }
+  ]
+}

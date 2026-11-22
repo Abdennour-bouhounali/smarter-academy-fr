@@ -1,0 +1,85 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l1-002",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — أيّ مساواة تثبت الزاوية القائمة؟",
+    "estimatedMinutes": 2,
+    "tags": [
+      "عكس فيثاغورس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_ithbat-khawas-maalam_P1",
+      "modelledOn": "method-proof"
+    }
+  },
+  "generator": {
+    "tool": "u1x-ithbat-khawas-maalam/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "RST مثلث في معلم متعامد ومتجانس، وحسبنا مربعات أطوال أضلاعه."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "لإثبات أن المثلث RST قائم في S ، نتحقق أن:",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$SR^2 + ST^2 = RT^2$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$RS^2 + RT^2 = ST^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-FITHAGHURAS-WATAR"
+        },
+        {
+          "id": "C",
+          "content": "$SR = ST$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SAQAYN-QAIM"
+        },
+        {
+          "id": "D",
+          "content": "$RT^2 + ST^2 = RS^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-FITHAGHURAS-WATAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الزاوية القائمة في S تقابل أيّ ضلع؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع المقابل للزاوية القائمة هو أطول الأضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "هذا الضلع وحده في طرف، والضلعان الصادران من S في الطرف الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "الضلع المقابل لـ S هو [RT] ، فهو الذي يكون وحده: $SR^2 + ST^2 = RT^2$ .",
+        "incorrect": "الضلع الذي يكون وحده يقابل الرأس حيث الزاوية القائمة؛ وضلعان متقايسان يعطيان متساوي الساقين فقط."
+      }
+    }
+  ]
+}

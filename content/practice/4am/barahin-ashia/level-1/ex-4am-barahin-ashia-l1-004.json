@@ -1,0 +1,79 @@
+{
+  "id": "ex-4am-barahin-ashia-l1-004",
+  "lessonCode": "barahin-ashia",
+  "level": 1,
+  "generator": {
+    "tool": "gen-barahin.mjs",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — ترتيب الحدّين",
+    "estimatedMinutes": 3,
+    "tags": [
+      "علاقة شال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_barahin-ashia_P1",
+      "modelledOn": "ex-20"
+    }
+  },
+  "statement": {
+    "content": "B و C و D ثلاث نقط."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "$\\overrightarrow{CD}$ + $\\overrightarrow{BC}$ يساوي:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{BD}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{DB}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-AKS"
+        },
+        {
+          "id": "C",
+          "content": "لا يُختصر لأن نهاية الأول ليست مبدأ الثاني",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-RABT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل نهاية $\\overrightarrow{BC}$ هي مبدأ $\\overrightarrow{CD}$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترتيب الحدّين في المجموع لا يهم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المجموع بترتيب آخر ثم طبّق علاقة شال."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{CD} + \\overrightarrow{BC} = \\overrightarrow{BC} + \\overrightarrow{CD} = \\overrightarrow{BD}$ .",
+        "incorrect": "بدّل ترتيب الحدّين حتى يتتابعا، ثم طبّق علاقة شال."
+      }
+    }
+  ]
+}

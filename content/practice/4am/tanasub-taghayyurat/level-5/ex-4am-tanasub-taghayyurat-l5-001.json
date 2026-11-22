@@ -1,0 +1,362 @@
+{
+  "id": "ex-4am-tanasub-taghayyurat-l5-001",
+  "lessonCode": "tanasub-taghayyurat",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2019 — درجة الحرارة على طريق تيكجدة",
+    "estimatedMinutes": 11,
+    "tags": [
+      "وضعية إدماجية",
+      "درجة الحرارة",
+      "تعيين دالة تآلفية",
+      "تناسب التغيّرات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tanasub-taghayyurat_P2",
+      "modelledOn": "BEM 2019 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2019",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "خلال رحلة مدرسية علمية إلى تيكجدة بجبال جرجرة، حبًّا في العلم واكتشافًا لجمال الوطن، سجّل التلاميذ درجة الحرارة في اللحظة نفسها عند نقطتين من الطريق الجبلي: عند الارتفاع 500m كانت درجة الحرارة 17 درجة سلسيوس، وعند الارتفاع 1500m كانت 11 درجة سلسيوس.\nنقبل أن درجة الحرارة $T(x)$ (بالدرجة سلسيوس) عند الارتفاع $x$ (بالمتر) دالة تآلفية: $T(x) = ax + b$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "عيّن العبارة الجبرية للدالة $T$ :",
+      "statement": "احسب المعامل $a$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-0,006",
+      "misconceptionSignatures": [
+        {
+          "value": "-6",
+          "id": "MISC-TAGHAYYUR-BIDUN-QISMA"
+        },
+        {
+          "value": "0,006",
+          "id": "MISC-TAGHAYYUR-TARTIB"
+        },
+        {
+          "value": "-500/3",
+          "id": "MISC-BAYANI-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خاصية تناسب التغيّرات: المعامل $a$ هو حاصل قسمة فرق الصورتين على فرق العددين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $\\dfrac{T(1500) - T(500)}{1500 - 500}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح بالترتيب نفسه في البسط والمقام، وانتبه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{-6}{1000} = -0{,}006$ .",
+        "incorrect": "اقسم فرق الصورتين على فرق العددين، واطرح بالترتيب نفسه في البسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "العبارة الجبرية للدالة التآلفية $T$ هي: $T(x) = ax + b$ .",
+          "إيجاد العدد $a$ (خاصية تناسب التغيّرات):",
+          "$a = \\dfrac{T(x_2) - T(x_1)}{x_2 - x_1}$",
+          "$a = \\dfrac{11 - 17}{1500 - 500}$",
+          "$a = \\dfrac{-6}{1000}$",
+          "$a = -0{,}006$"
+        ],
+        "result": "a = -0{,}006"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب العدد $b$ ، ثم اكتب عبارة $T(x)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "0,034",
+          "id": "MISC-TAGHAYYUR-B-NISBA"
+        },
+        {
+          "value": "-0,006",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$T(500) = 17$ و $T(x) = ax + b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $a$ بقيمته و $x$ بالعدد $500$ ، ثم حلّ المعادلة التي مجهولها $b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$b = 17 - (-3) = 20$ .",
+        "incorrect": "بعد حساب $a$ : $b = T(x_1) - a x_1$ ، وليس حاصل قسمة الصورة على العدد."
+      },
+      "solution": {
+        "lines": [
+          "إيجاد العدد $b$ (الترتيب إلى المبدأ):",
+          "لدينا: $T(500) = 17$",
+          "أي: $-0{,}006 \\times 500 + b = 17$",
+          "$-3 + b = 17$",
+          "$b = 17 - (-3)$",
+          "$b = 20$",
+          "ومنه العبارة الجبرية للدالة $T$ هي: $T(x) = -0{,}006x + 20$"
+        ],
+        "result": "T(x) = -0{,}006x + 20"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "ماذا يمثّل العدد $b$ في هذه الوضعية؟",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "درجة الحرارة عند مستوى سطح البحر (الارتفاع 0m)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "انخفاض درجة الحرارة عند الصعود مترا واحدا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAALUFI-A-B-MAQLUB"
+        },
+        {
+          "id": "C",
+          "content": "الارتفاع الذي تنعدم عنده درجة الحرارة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-BAYANI-B-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$b = T(0)$ : ما معنى الارتفاع 0m ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$T(0) = b$ : درجة الحرارة عند الارتفاع 0m .",
+        "incorrect": "احسب $T(0)$ ثم فسّر الارتفاع 0m ."
+      },
+      "solution": {
+        "lines": [
+          "$T(0) = a \\times 0 + b = b$",
+          "إذن $b$ هو درجة الحرارة عند الارتفاع 0m ، أي عند مستوى سطح البحر."
+        ],
+        "result": "درجة الحرارة عند مستوى سطح البحر (الارتفاع 0m)"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "صعد التلاميذ 250m فوق النقطة الثانية. بكم درجة انخفضت درجة الحرارة؟",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد موجب: الانخفاض بالدرجة سلسيوس",
+      "expectedAnswer": "1,5",
+      "misconceptionSignatures": [
+        {
+          "value": "-0,006",
+          "id": "MISC-TAGHAYYUR-BIDUN-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خاصية تناسب التغيّرات: فرق صورتين يساوي $a$ مضروبا في فرق العددين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الفرق بين العددين، ثم اضربه في المعامل $a$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$-0{,}006 \\times 250 = -1{,}5$ .",
+        "incorrect": "فرق الصورتين يساوي المعامل $a$ مضروبا في فرق العددين، لا المعامل وحده."
+      },
+      "solution": {
+        "lines": [
+          "حسب خاصية تناسب التغيّرات: $T(x_2) - T(x_1) = a(x_2 - x_1)$",
+          "$T(1750) - T(1500) = -0{,}006 \\times (1750 - 1500)$",
+          "$T(1750) - T(1500) = -0{,}006 \\times 250 = -1{,}5$",
+          "انخفضت درجة الحرارة بـ $1{,}5$ درجة."
+        ],
+        "result": "1{,}5"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ا",
+      "statement": "قمة جبلية ارتفاعها 2300m . احسب درجة الحرارة عندها في تلك اللحظة.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "6,2",
+      "misconceptionSignatures": [
+        {
+          "value": "-13,8",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد $2300$ في عبارة $T(x)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب أولا في المعامل، ثم أضف الحدّ الثابت بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$T(2300) = -13{,}8 + 20 = 6{,}2$ .",
+        "incorrect": "اضرب العدد في المعامل ثم أضف الحدّ الثابت بإشارته، ولا تنسه."
+      },
+      "solution": {
+        "lines": [
+          "$T(2300) = -0{,}006 \\times 2300 + 20$",
+          "$T(2300) = -13{,}8 + 20$",
+          "$T(2300) = 6{,}2$"
+        ],
+        "result": "T(2300) = 6{,}2"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ب",
+      "statement": "على أي ارتفاع تكون درجة الحرارة 8 درجات سلسيوس؟",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الارتفاع بالمتر",
+      "expectedAnswer": "2000",
+      "misconceptionSignatures": [
+        {
+          "value": "-4000/3",
+          "id": "MISC-TAALUFI-SABIQ-QISMA"
+        },
+        {
+          "value": "-4060/3",
+          "id": "MISC-TAALUFI-SABIQ-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة $T(x) = 8$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل الحدّ الثابت إلى الطرف الآخر أولا، ثم اقسم على المعامل."
+        }
+      ],
+      "feedback": {
+        "correct": "$-0{,}006x = -12$ ، إذن $x = \\dfrac{-12}{-0{,}006}$ .",
+        "incorrect": "اطرح الحدّ الثابت من الطرفين أولا، ثم اقسم على المعامل."
+      },
+      "solution": {
+        "lines": [
+          "نحلّ المعادلة: $T(x) = 8$",
+          "$-0{,}006x + 20 = 8$",
+          "$-0{,}006x = 8 - 20$",
+          "$-0{,}006x = -12$",
+          "$x = \\dfrac{-12}{-0{,}006}$",
+          "$x = 2000$"
+        ],
+        "result": "x = 2000"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

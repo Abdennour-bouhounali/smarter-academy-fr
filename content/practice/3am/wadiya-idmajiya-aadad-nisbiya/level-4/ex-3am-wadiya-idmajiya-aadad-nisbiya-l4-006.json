@@ -1,0 +1,194 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-aadad-nisbiya-l4-006",
+  "lessonCode": "wadiya-idmajiya-aadad-nisbiya",
+  "level": 4,
+  "metadata": {
+    "title": "إشارة جداء فواصل وتراتيب نقط",
+    "estimatedMinutes": 6,
+    "tags": [
+      "إحداثيات",
+      "إشارة",
+      "جداء"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد نعتبر النقط: $A(−2\\,;\\,−5)$ ، $B(−7\\,;\\,−1)$ ، $C(3\\,;\\,−4)$ ، $D(−6\\,;\\,−3)$ ، $E(4\\,;\\,2)$ ، $F(1\\,;\\,6)$ . من غير حساب القيمة، أجب عمّا يلي."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما إشارة جداء فواصل النقط الست $A$ و $B$ و $C$ و $D$ و $E$ و $F$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "سالب",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "موجب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IDA-MORENEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ العوامل السالبة في الجداء ولا تحسب القيمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء عدد زوجي من العوامل السالبة موجب، وعدد فردي منها يجعله سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من أنّ كل عامل غير معدوم قبل أن تحكم على الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد العوامل السالبة 3 وهو عدد فردي: الجداء سالب.",
+        "incorrect": "راجع قاعدة إشارة الجداء: تتبع إشارته زوجية عدد العوامل السالبة."
+      },
+      "solution": {
+        "lines": [
+          "عدد العوامل السالبة: 3 ، وهو عدد فردي ، فالجداء سالب."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما إشارة جداء تراتيب النقط الست؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "سالب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IDA-ANYNEG"
+        },
+        {
+          "id": "B",
+          "content": "موجب",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ العوامل السالبة في الجداء ولا تحسب القيمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء عدد زوجي من العوامل السالبة موجب، وعدد فردي منها يجعله سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من أنّ كل عامل غير معدوم قبل أن تحكم على الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد العوامل السالبة 4 وهو عدد زوجي: الجداء موجب.",
+        "incorrect": "راجع قاعدة إشارة الجداء: تتبع إشارته زوجية عدد العوامل السالبة."
+      },
+      "solution": {
+        "lines": [
+          "عدد العوامل السالبة: 4 ، وهو عدد زوجي ، فالجداء موجب."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب جداء فاصلتي $B$ و $D$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "42",
+      "misconceptionSignatures": [
+        {
+          "value": "-42",
+          "id": "MISC-JIDAA-NEGNEG"
+        },
+        {
+          "value": "-13",
+          "id": "MISC-JIDAA-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ النص وحدّد الأعداد المعطاة وما يعبّر عنه كل منها: ارتفاع أم انخفاض، ربح أم خسارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر عن الانخفاض أو الخسارة أو الدَّين بعدد سالب، ثم اختر العملية التي تناسب السؤال."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العملية بأعداد نسبية ثم أنجزها بقاعدة الإشارات وبأولوية العمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $42$ .",
+        "incorrect": "راجع ترجمة النص إلى عملية بين أعداد نسبية: أيّ عدد سالب وأيّ عملية تناسب السؤال؟"
+      },
+      "solution": {
+        "lines": [
+          "$(−7) \\times (−6)$",
+          "$= 42$"
+        ],
+        "result": "42"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

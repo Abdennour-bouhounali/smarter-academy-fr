@@ -1,0 +1,68 @@
+{
+  "id": "ex-4am-kura-julla-l5-002",
+  "lessonCode": "kura-julla",
+  "level": 5,
+  "metadata": {
+    "title": "وضعية — مصباح في القبة السماوية",
+    "estimatedMinutes": 5,
+    "tags": [
+      "معلم الفضاء",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_kura-julla_P4",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "قبة القبة السماوية نصف كرة مركزها O ونصف قطرها $10\\,\\mathrm{m}$ . في معلم متعامد ومتجانس مبدؤه O (الوحدة المتر) نريد تثبيت مصباح في الموضع $L(6\\,;\\,0\\,;\\,8)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "احسب البعد OL بالمتر.",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P4",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالمتر)",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-KURA-MURABBA",
+          "value": "14"
+        },
+        {
+          "id": "MISC-KURA-MURABBA",
+          "value": "100"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $OL^2$ أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$OL^2 = 36 + 0 + 64$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خذ الجذر التربيعي."
+        }
+      ],
+      "feedback": {
+        "correct": "$OL^2 = 100$ ، $OL = 10\\,\\mathrm{m} = R$ : المصباح على القبة تماما.",
+        "incorrect": "البعد هو الجذر التربيعي لمجموع المربعات."
+      }
+    }
+  ]
+}

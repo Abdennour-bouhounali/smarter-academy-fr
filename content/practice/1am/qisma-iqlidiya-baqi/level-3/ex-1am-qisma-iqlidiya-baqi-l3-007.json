@@ -1,0 +1,264 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l3-007",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — ورود العم سليمان",
+    "estimatedMinutes": 8,
+    "tags": [
+      "باقات",
+      "مساواة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 2,
+      "file": "1am-s2-73",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الرابع",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "حصد العم سليمان 1246 وردة من حقله، ويريد أن يضعها في باقات من 15 وردة ليبيعها في سوق القرية بسعر عادل."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب عدد الباقات.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الباقات",
+      "expectedAnswer": "83",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "82",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "84",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 1246 من 15 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 15 دون أن نتجاوز 1246."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$1246 = 15 \\times 83 + 1$ و $1 < 15$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 15 فلا يتجاوز الجداء 1246، والباقي عندئذ أصغر من 15."
+      },
+      "solution": {
+        "lines": [
+          "$15 \\times 83 = 1245$ و $15 \\times 84 = 1260$",
+          "$1245 \\le 1246 < 1260$ ، إذن الحاصل هو 83."
+        ],
+        "result": "q = 83"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب عدد الورود الباقية (وضّح العملية).",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الورود",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "83",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "16",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 1246."
+        }
+      ],
+      "feedback": {
+        "correct": "$1246 - 15 \\times 83 = 1246 - 1245 = 1$ ، و $1 < 15$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 15."
+      },
+      "solution": {
+        "lines": [
+          "$1246 = 15 \\times 83 + 1$",
+          "$1 < 15$ ، إذن الباقي هو 1."
+        ],
+        "result": "r = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "اختر المساواة التي تعبّر عن القسمة الإقليدية للعدد 1246 على 15.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$1246 = 15 \\times 82 + 16$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "id": "B",
+          "content": "$1246 = 15 \\times 1 + 83$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "id": "C",
+          "content": "$1246 = 15 \\times 84 + 1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        },
+        {
+          "id": "D",
+          "content": "$1246 = 15 \\times 83 + 1$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق من صحة كل مساواة بالحساب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في القسمة الإقليدية على 15، يجب أن يكون الباقي أصغر من 15."
+        }
+      ],
+      "feedback": {
+        "correct": "$15 \\times 83 + 1 = 1246$ و $1 < 15$: الشرطان محقّقان.",
+        "incorrect": "المساواة الصحيحة يجب أن تكون صحيحة حسابيًا، وأن يكون باقيها أصغر من المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$15 \\times 83 = 1245$ و $1245 + 1 = 1246$",
+          "$1 < 15$ ، إذن:"
+        ],
+        "result": "1246 = 15 \\times 83 + 1"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "لو وضع 13 وردة في كل باقة، كم باقة كاملة يشكّل؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الباقات",
+      "expectedAnswer": "95",
+      "misconceptionSignatures": [
+        {
+          "value": "11",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "94",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "96",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 1246 من 13 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 13 دون أن نتجاوز 1246."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$1246 = 13 \\times 95 + 11$ و $11 < 13$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 13 فلا يتجاوز الجداء 1246، والباقي عندئذ أصغر من 13."
+      },
+      "solution": {
+        "lines": [
+          "$13 \\times 95 = 1235$ و $13 \\times 96 = 1248$",
+          "$1235 \\le 1246 < 1248$ ، إذن الحاصل هو 95."
+        ],
+        "result": "q = 95"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

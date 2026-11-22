@@ -1,11 +1,9 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { ArrowRight, ScrollText } from 'lucide-react';
-import { courseLevels, getFlatAvailableLessons } from '@smarter-academy/core';
-
-const ALL_GRADES = courseLevels.flatMap((level) =>
-  level.grades.map((grade) => ({ ...grade, levelId: level.id }))
-);
+import { m } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import { ScrollText } from 'lucide-react';
+import { ArrowForward } from '../common/DirectionalIcons';
+import { HOME_GRADES as ALL_GRADES, AVAILABLE_LESSON_COUNT } from '../../utils/gradeSummary';
 
 /**
  * One section, two jobs: TRUST (a real, computed number — never a hardcoded
@@ -14,12 +12,13 @@ const ALL_GRADES = courseLevels.flatMap((level) =>
  * proof this is real" and "here's yours" read as one thought, not two.
  */
 export default function TrustRelevanceSection() {
-  const lessonCount = getFlatAvailableLessons(courseLevels).length;
+  const { t } = useTranslation('marketing');
+  const lessonCount = AVAILABLE_LESSON_COUNT;
 
   return (
     <section className="section-wrapper">
       <div className="max-w-5xl mx-auto">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -27,15 +26,15 @@ export default function TrustRelevanceSection() {
         >
           <p className="font-mono-jetbrains text-blue-500 text-xs font-semibold tracking-widest uppercase mb-3 flex items-center justify-center gap-1.5">
             <ScrollText size={13} />
-            Programme officiel de l'Éducation nationale
+            {t('trust.title')}
           </p>
-          <h2 className="section-title !mb-3">De la 6e à la Terminale</h2>
+          <h2 className="section-title !mb-3">{t('trust.subtitle')}</h2>
           <p className="font-inter text-slate-500 text-base">
-            {lessonCount} leçons interactives déjà disponibles — la 6e est aujourd'hui le niveau le plus complet.
+            {t('trust.lessonsAvailable', { lessonCount })}
           </p>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -47,7 +46,7 @@ export default function TrustRelevanceSection() {
             return (
               <Link
                 key={grade.id}
-                to={`/courses?level=${grade.levelId}&grade=${grade.id}`}
+                to="/register"
                 className={`px-5 py-3 rounded-2xl font-space font-bold text-sm transition-all ${
                   isFlagship
                     ? 'text-white shadow-md hover:-translate-y-0.5'
@@ -59,12 +58,12 @@ export default function TrustRelevanceSection() {
               </Link>
             );
           })}
-        </motion.div>
+        </m.div>
 
         <div className="text-center mt-8">
-          <Link to="/courses" className="inline-flex items-center gap-2 font-inter text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">
-            Voir le programme complet
-            <ArrowRight size={15} />
+          <Link to="/register" className="inline-flex items-center gap-2 font-inter text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">
+            {t('trust.seeFullProgramme')}
+            <ArrowForward size={15} />
           </Link>
         </div>
       </div>

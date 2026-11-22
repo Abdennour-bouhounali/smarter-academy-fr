@@ -1,0 +1,192 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-aadad-nisbiya-l5-003",
+  "lessonCode": "wadiya-idmajiya-aadad-nisbiya",
+  "level": 5,
+  "metadata": {
+    "title": "حفظ لقاح في ثلاجة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "وضعية إدماجية",
+      "تحويل",
+      "حدّ أقصى"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تُحفظ علبة لقاح في ثلاجة درجتها $−8$ °C ، ولا يجوز أن ترتفع حرارتها فوق $23$ °F . للمرور من درجة سيلسيوس $T_C$ إلى درجة فهرنهايت $T_F$ نستعمل القاعدة $T_F = 1{,}8 \\times T_C + 32$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "عبّر عن حرارة الثلاجة ($−8$ °C) بالدرجة فهرنهايت.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "17.6",
+      "misconceptionSignatures": [
+        {
+          "value": "43.2",
+          "id": "MISC-WIDMAJ-REVCHAIN"
+        },
+        {
+          "value": "46.4",
+          "id": "MISC-WIDMAJ-DROPNEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القاعدة المعطاة وما تربطه بين الدرجتين، وأيّ الدرجتين معلومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "للتحويل من سيلسيوس إلى فهرنهايت نضرب ثم نضيف؛ وللعكس نُجري العمليتين بترتيب معاكس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة التحويل في الاتجاه المعاكس: يجب أن تجد العدد الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $17{,}6$ °F .",
+        "incorrect": "راجع قاعدة التحويل وترتيب العمليتين، ثم تحقّق بالعملية المعاكسة."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}8 \\times (−8) + 32$",
+          "$= (−14{,}4) + 32$",
+          "$= 17{,}6$"
+        ],
+        "result": "17{,}6"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "عبّر عن الحدّ الأقصى ($23$ °F) بالدرجة سيلسيوس.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-5",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "-0.2",
+          "id": "MISC-QISMA-ORDER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القاعدة المعطاة وما تربطه بين الدرجتين، وأيّ الدرجتين معلومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "للتحويل من سيلسيوس إلى فهرنهايت نضرب ثم نضيف؛ وللعكس نُجري العمليتين بترتيب معاكس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة التحويل في الاتجاه المعاكس: يجب أن تجد العدد الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $−5$ °C .",
+        "incorrect": "راجع قاعدة التحويل وترتيب العمليتين، ثم تحقّق بالعملية المعاكسة."
+      },
+      "solution": {
+        "lines": [
+          "$(23 − 32) \\div 1{,}8$",
+          "$= (−9) \\div 1{,}8$",
+          "$= −5$"
+        ],
+        "result": "−5"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "كم درجة سيلسيوس يمكن أن ترتفع حرارة الثلاجة قبل بلوغ هذا الحدّ؟ احسب $−5 − (−8)$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "-13",
+          "id": "MISC-QISMA-SUBNEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ النص وحدّد الأعداد المعطاة وما يعبّر عنه كل منها: ارتفاع أم انخفاض، ربح أم خسارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر عن الانخفاض أو الخسارة أو الدَّين بعدد سالب، ثم اختر العملية التي تناسب السؤال."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العملية بأعداد نسبية ثم أنجزها بقاعدة الإشارات وبأولوية العمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $3$ °C .",
+        "incorrect": "راجع ترجمة النص إلى عملية بين أعداد نسبية: أيّ عدد سالب وأيّ عملية تناسب السؤال؟"
+      },
+      "solution": {
+        "lines": [
+          "$−5 − (−8) = −5 + 8 = 3$"
+        ],
+        "result": "3"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

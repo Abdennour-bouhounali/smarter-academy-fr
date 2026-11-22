@@ -1,0 +1,346 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l5-006",
+  "lessonCode": "mana-jam-tarh",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مرآب السيد علي",
+    "estimatedMinutes": 20,
+    "tags": [
+      "طرح",
+      "مخطط بأقواس",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 1,
+      "file": "1am-s1-101",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: يجهّز السيد علي مرآبه بإتقان. يحتاج إلى 180 بلاطة لتبليط أرضيته، والصندوق الواحد يحوي 12 بلاطة؛ اشترى 17 صندوقًا (صندوقان احتياطًا)، ثمن الصندوق 940,5 دج.\nالجزء الثاني: طول المرآب $594{,}2\\,\\mathrm{cm}$ وعرضه $300\\,\\mathrm{cm}$. عند ركن السيارة يبقى أمامها $96{,}8\\,\\mathrm{cm}$ وخلفها $78{,}5\\,\\mathrm{cm}$. عرض السيارة $176{,}4\\,\\mathrm{cm}$، ويريد السيد علي أن يترك فراغًا لا يقل عن $55{,}5\\,\\mathrm{cm}$ على كل جانب منها. أطوال الأنواع المعروضة في الجدول.",
+    "table": {
+      "head": [
+        "",
+        "النوع 1",
+        "النوع 2",
+        "النوع 3"
+      ],
+      "rows": [
+        [
+          "الطول (cm)",
+          "405,8",
+          "418,9",
+          "421,6"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "كم صندوقًا يلزم السيد علي دون احتياط؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "15",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم مرة يوجد 12 في 180؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$180 \\div 12 = 15$ صندوقًا.",
+        "incorrect": "اقسم عدد البلاطات على عدد بلاطات الصندوق."
+      },
+      "solution": {
+        "lines": [
+          "$180 \\div 12 = 15$"
+        ],
+        "result": "15"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب ثمن الصناديق التي اشتراها.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "15988.5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الصناديق المشتراة × ثمن الصندوق."
+        }
+      ],
+      "feedback": {
+        "correct": "$17 \\times 940{,}5 = 15988{,}5$ دج.",
+        "incorrect": "اضرب عدد الصناديق المشتراة (17) في ثمن الصندوق."
+      },
+      "solution": {
+        "lines": [
+          "$17 \\times 940{,}5 = 15988{,}5$"
+        ],
+        "result": "15988{,}5 \\text{ DA}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "في المخطط بأقواس لطول المرآب، طول السيارة هو:",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "جزء (قوس فوق الخط)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الكل (القوس تحت الخط)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول المرآب = الفراغ الأمامي + طول السيارة + الفراغ الخلفي."
+        }
+      ],
+      "feedback": {
+        "correct": "طول السيارة أحد أجزاء طول المرآب.",
+        "incorrect": "أيّ الأطوال يضمّ الأخرى؟"
+      },
+      "solution": {
+        "lines": [
+          "طول المرآب هو الكل، وطول السيارة جزء منه مع الفراغين."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب طول السيارة.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالسنتيمتر (cm)",
+      "expectedAnswer": "418.9",
+      "misconceptionSignatures": [
+        {
+          "value": "769.5",
+          "id": "MISC-JAMTARH-KULL-JUZ"
+        },
+        {
+          "value": "497.4",
+          "id": "MISC-JAMTARH-JUZ-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح الفراغين من طول المرآب."
+        }
+      ],
+      "feedback": {
+        "correct": "$594{,}2 - 96{,}8 - 78{,}5 = 418{,}9\\,\\mathrm{cm}$.",
+        "incorrect": "اطرح الفراغين كليهما من طول المرآب."
+      },
+      "solution": {
+        "lines": [
+          "$96{,}8 + 78{,}5 = 175{,}3$",
+          "$594{,}2 - 175{,}3 = 418{,}9$"
+        ],
+        "result": "418{,}9 \\text{ cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "ما نوع السيارة التي اختارها السيد علي؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "النوع 1",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-FASILA"
+        },
+        {
+          "id": "B",
+          "content": "النوع 2",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "النوع 3",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-FASILA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب طول السيارة أولًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عنه في الجدول."
+        }
+      ],
+      "feedback": {
+        "correct": "طول السيارة $418{,}9\\,\\mathrm{cm}$: النوع 2.",
+        "incorrect": "احسب طول السيارة بدقة ثم قارن بالجدول."
+      },
+      "solution": {
+        "lines": [
+          "طول السيارة $418{,}9\\,\\mathrm{cm}$، وهو طول النوع 2."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "احسب مجموع عرض السيارة والفراغين الجانبيين.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالسنتيمتر (cm)",
+      "expectedAnswer": "287.4",
+      "misconceptionSignatures": [
+        {
+          "value": "231.9",
+          "id": "MISC-JAMTARH-JUZ-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدود المجموع ثلاثة: العرض والفراغان."
+        }
+      ],
+      "feedback": {
+        "correct": "$176{,}4 + 55{,}5 + 55{,}5 = 287{,}4\\,\\mathrm{cm}$.",
+        "incorrect": "لا تنسَ الفراغ على الجانبين كليهما."
+      },
+      "solution": {
+        "lines": [
+          "$176{,}4 + 55{,}5 + 55{,}5 = 287{,}4$"
+        ],
+        "result": "287{,}4 \\text{ cm}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "06",
+      "statement": "هل يسمح عرض المرآب بترك الفراغين المطلوبين؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-JUZ-NAQIS"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المجموع بعرض المرآب."
+        }
+      ],
+      "feedback": {
+        "correct": "$287{,}4 < 300$: نعم.",
+        "incorrect": "احسب العرض اللازم (السيارة والفراغان) ثم قارنه بعرض المرآب."
+      },
+      "solution": {
+        "lines": [
+          "العرض اللازم $287{,}4\\,\\mathrm{cm}$.",
+          "$287{,}4 < 300$ ، إذن عرض المرآب يسمح بذلك."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

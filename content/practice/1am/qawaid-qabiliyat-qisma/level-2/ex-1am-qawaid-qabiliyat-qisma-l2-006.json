@@ -1,0 +1,167 @@
+{
+  "id": "ex-1am-qawaid-qabiliyat-qisma-l2-006",
+  "lessonCode": "qawaid-qabiliyat-qisma",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — بالقسمة ثم بالقاعدة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "باقٍ معدوم",
+      "الرقمان الأخيران"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أعدّت مكتبة المتوسطة 1236 بطاقة إعارة، وتريد ترتيبها في 4 علب متساوية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب باقي القسمة الإقليدية للعدد 1236 على 4.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "0",
+      "misconceptionSignatures": [
+        {
+          "value": "309",
+          "id": "MISC-QABILIYA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية عموديًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي عدد طبيعي أصغر من 4."
+        }
+      ],
+      "feedback": {
+        "correct": "$1236 = 4 \\times 309 + 0$ و $0 < 4$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 4."
+      },
+      "solution": {
+        "lines": [
+          "$1236 = 4 \\times 309 + 0$",
+          "$0 < 4$ ، إذن الباقي هو 0، و 1236 يقبل القسمة على 4."
+        ],
+        "result": "r = 0"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج: هل يقبل العدد 1236 القسمة على 4؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-ZAWJI-4"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى العدد المشكّل من رقمي الآحاد والعشرات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل هذا العدد المكوّن من رقمين يقبل القسمة على 4؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يكفي أن يكون العدد زوجيًا."
+        }
+      ],
+      "feedback": {
+        "correct": "العدد المشكّل من رقمي آحاد وعشرات 1236 هو 36، و 36 يقبل القسمة على 4.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 4 إذا كان العدد المشكّل من رقمي آحاده وعشراته يقبل القسمة على 4."
+      },
+      "solution": {
+        "lines": [
+          "العدد المشكّل من رقمي آحاد وعشرات 1236 هو 36، و 36 يقبل القسمة على 4.",
+          "$1236 = 4 \\times 309 + 0$ ، الباقي معدوم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "تحقّق من جوابك بقاعدة القسمة على 4 دون إنجاز القسمة.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد المشكّل من رقمي الآحاد والعشرات؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يقبل هذا العدد القسمة على 4؟"
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي.",
+        "incorrect": "راجع القاعدة وأعد صياغة التبرير."
+      },
+      "solution": {
+        "lines": [
+          "العدد المشكّل من رقمي الآحاد والعشرات للعدد 1236 هو 36.",
+          "$36 = 4 \\times 9$: يقبل القسمة على 4، إذن 1236 يقبل القسمة على 4."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

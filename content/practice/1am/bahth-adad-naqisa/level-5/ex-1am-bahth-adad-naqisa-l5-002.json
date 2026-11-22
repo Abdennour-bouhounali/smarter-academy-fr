@@ -1,0 +1,245 @@
+{
+  "id": "ex-1am-bahth-adad-naqisa-l5-002",
+  "lessonCode": "bahth-adad-naqisa",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — مكتبة الثانوية",
+    "estimatedMinutes": 14,
+    "tags": [
+      "وضعية إدماجية",
+      "رفوف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في مكتبة الثانوية 480 كتابًا موزّعة بالتساوي على 8 رفوف."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "كم كتابًا في الرفّ الواحد؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "60",
+      "misconceptionSignatures": [
+        {
+          "value": "3840",
+          "id": "MISC-NAQISA-MULAGAIN"
+        },
+        {
+          "value": "1/60",
+          "id": "MISC-NAQISA-DIVREV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للضرب هي القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $60\\times 8=480$ ، فالعدد الناقص هو $60$ .",
+        "incorrect": "في جداء نقسم الناتج على العدد المعلوم: لا نضربه فيه ولا نقسم المعلوم على الناتج."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square\\times 8=480$ .",
+          "نُرجع بالعملية العكسية: $\\square=480\\div 8=60$ .",
+          "نتحقّق: $60\\times 8=480$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أخذ التلاميذ من أحد الرفوف عددًا من الكتب فبقي فيه 38 كتابًا. كم كتابًا أخذوا؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "22",
+      "misconceptionSignatures": [
+        {
+          "value": "98",
+          "id": "MISC-NAQISA-TRAPADD"
+        },
+        {
+          "value": "-22",
+          "id": "MISC-NAQISA-REVSUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المجهول هنا هو المطروح: ما أُخذ من العدد الذي بدأنا منه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $60-22=38$ ، فالعدد الناقص هو $22$ .",
+        "incorrect": "في a − □ = b المجهول هو المطروح: نطرح الناتج من a ولا نعكس الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $60-\\square=38$ .",
+          "نُرجع بالعملية العكسية: $\\square=60-38=22$ .",
+          "نتحقّق: $60-22=38$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أُضيف إلى رفّ آخر 15 كتابًا فصار فيه 75 كتابًا. كم كتابًا كان فيه؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "60",
+      "misconceptionSignatures": [
+        {
+          "value": "90",
+          "id": "MISC-NAQISA-SAMEOP"
+        },
+        {
+          "value": "-60",
+          "id": "MISC-NAQISA-REVSUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للجمع هي الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $60+15=75$ ، فالعدد الناقص هو $60$ .",
+        "incorrect": "في مجموع نطرح العدد المعلوم من الناتج: لا نجمع مرّة أخرى."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square+15=75$ .",
+          "نُرجع بالعملية العكسية: $\\square=75-15=60$ .",
+          "نتحقّق: $60+15=75$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "لو وُضع في كلّ رفّ 40 كتابًا لكفت الكتب لعدد من الرفوف. كم رفًّا؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "19200",
+          "id": "MISC-NAQISA-MULAGAIN"
+        },
+        {
+          "value": "1/12",
+          "id": "MISC-NAQISA-DIVREV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للضرب هي القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $12\\times 40=480$ ، فالعدد الناقص هو $12$ .",
+        "incorrect": "في جداء نقسم الناتج على العدد المعلوم: لا نضربه فيه ولا نقسم المعلوم على الناتج."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square\\times 40=480$ .",
+          "نُرجع بالعملية العكسية: $\\square=480\\div 40=12$ .",
+          "نتحقّق: $12\\times 40=480$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

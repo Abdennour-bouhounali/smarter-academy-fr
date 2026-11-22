@@ -1,0 +1,480 @@
+/* ───────── the two practice spaces, the ladder of the exam, the promotion, « تقدّمي » ───────── */
+.di-spaces {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.3rem;
+  flex-wrap: wrap;
+}
+.di-spaces button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 1.1rem;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: none;
+  color: #fff;
+  font:
+    800 1rem 'Cairo',
+    sans-serif;
+  cursor: pointer;
+}
+.di-spaces button.is-on {
+  background: #fbbf24;
+  border-color: #fbbf24;
+  color: #3b2a06;
+}
+.di-ladder {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 0.8rem 0 0.2rem;
+  min-height: 25rem;
+}
+.di-ladder--locked {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fde68a;
+}
+.di-rungs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.7rem;
+  align-items: end;
+  direction: rtl;
+}
+.di-rungs li {
+  padding-bottom: calc(var(--rise) * 1.5rem);
+}
+.di-rungs button {
+  width: 100%;
+  min-height: 15rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.9rem 0.6rem;
+  border-radius: 1.2rem;
+  border: 2px solid rgba(255, 255, 255, 0.22);
+  background: linear-gradient(170deg, #fffdf6, #efe7d2);
+  color: #111827;
+  font-family: inherit;
+  cursor: pointer;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
+}
+.di-rungs button:hover:not(:disabled) {
+  transform: translateY(-5px);
+}
+.di-rungs li.is-next button {
+  border-color: #fbbf24;
+  box-shadow:
+    0 0 0 4px rgba(251, 191, 36, 0.4),
+    0 0 30px rgba(251, 191, 36, 0.5);
+}
+.di-rungs li.is-locked button {
+  background: rgba(255, 255, 255, 0.07);
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+.di-rung__n {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: #111827;
+  color: #fffdf6;
+  font-size: 1.4rem;
+}
+.di-rungs li.is-passed .di-rung__n {
+  background: #16a34a;
+}
+.di-rungs li.is-locked .di-rung__n {
+  background: rgba(255, 255, 255, 0.15);
+  color: #cbd5e1;
+}
+.di-rungs strong {
+  font-size: 1.08rem;
+  font-weight: 900;
+  text-align: center;
+  line-height: 1.5;
+}
+.di-rungs small {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  opacity: 0.8;
+}
+.di-rungs em {
+  font-style: normal;
+  font-size: max(var(--di-min-font, 12px), 0.72rem);
+  font-weight: 700;
+  color: #b45309;
+  text-align: center;
+  line-height: 1.5;
+}
+.di-rungs .di-stars3 svg {
+  color: rgba(17, 24, 39, 0.2);
+}
+.di-rungs li.is-locked .di-stars3 svg {
+  color: rgba(255, 255, 255, 0.2);
+}
+.di-rung__go {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  background: #111827;
+  color: #fffdf6;
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+.di-rungs li.is-locked .di-rung__go {
+  display: none;
+}
+.di-promo__mark {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.di-promo__mark b {
+  font-size: 1.5rem;
+  color: #fbbf24;
+}
+.di-confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+.di-confetti i {
+  position: absolute;
+  top: -3%;
+  left: var(--x);
+  width: 0.7rem;
+  height: 1.1rem;
+  border-radius: 2px;
+  background: hsl(var(--h) 90% 60%);
+  animation: di-confetti 2.6s var(--d) ease-in forwards;
+}
+@keyframes di-confetti {
+  to {
+    transform: translateY(108vh) rotate(720deg);
+    opacity: 0.7;
+  }
+}
+.di-road {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.7rem;
+  position: relative;
+}
+.di-road li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 1.1rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+}
+.di-road li.is-on {
+  border-color: #7dfcff;
+}
+.di-road li.is-done {
+  border-color: #34d399;
+  background: rgba(52, 211, 153, 0.1);
+}
+.di-road strong {
+  font-size: 1rem;
+}
+.di-road b {
+  font-size: 1.2rem;
+}
+.di-road .di-bar {
+  width: 100%;
+}
+.di-progress__body {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1.9fr;
+  gap: 1rem;
+}
+.di-ready {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 1.2rem;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(251, 191, 36, 0.5);
+  text-align: center;
+  position: relative;
+}
+.di-ready > svg {
+  width: 11rem;
+  height: 11rem;
+}
+.di-ready .di-btn {
+  flex: none;
+  margin-top: 0.5rem;
+}
+.di-ready__track {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.12);
+  stroke-width: 11;
+}
+.di-ready__arc {
+  fill: none;
+  stroke: #fbbf24;
+  stroke-width: 11;
+  stroke-linecap: round;
+  transition: stroke-dasharray 1s;
+}
+.di-ready > b {
+  margin-top: -7.6rem;
+  height: 7.2rem;
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: #fbbf24;
+}
+.di-ready h3 {
+  margin: 0;
+  font-size: 1.35rem;
+  color: inherit;
+}
+.di-ready p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  opacity: 0.85;
+}
+.di-ptable {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.di-ptable__head,
+.di-ptable__row {
+  display: grid;
+  /* four columns; the fifth (the server's status) only when it is shown — an empty fifth column squeezed the names of
+     lesson 6's five keys onto three lines and pushed the last row off a 1024 × 768 screen (2026-11-19) */
+  grid-template-columns: 2.4fr 1.3fr 1fr 1.4fr;
+  align-items: center;
+  gap: 0.6rem;
+}
+.di-ptable--server .di-ptable__head,
+.di-ptable--server .di-ptable__row {
+  grid-template-columns: 2.2fr 1.3fr 1fr 1.4fr 1fr;
+}
+.di-ptable__head {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #7dfcff;
+  padding: 0 0.8rem;
+}
+.di-ptable__row {
+  flex: 1;
+  padding: 0.6rem 0.8rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 1rem;
+  font-weight: 700;
+}
+.di-ptable__row > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.di-ptable__row > span:first-child {
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+.di-ptable__row i {
+  font-style: normal;
+  font-size: 1.6rem;
+  flex: none;
+}
+.di-ptable__row strong {
+  font-size: 1.1rem;
+}
+.di-ptable__row small {
+  font-size: 0.78rem;
+  opacity: 0.7;
+}
+.di-ptable__row.is-off {
+  opacity: 0.55;
+}
+.di-ptable__row .is-good {
+  color: #6ee7b7;
+}
+.di-ptable__row .is-weak {
+  color: #fdba74;
+}
+.di-ptable__row .is-none {
+  opacity: 0.6;
+}
+
+.di-btn--lab {
+  border-color: #34d399 !important;
+  background: rgba(52, 211, 153, 0.18) !important;
+}
+.di-btn--kit {
+  border-color: #fbbf24 !important;
+  background: rgba(251, 191, 36, 0.16) !important;
+}
+.di-tablet__mine {
+  display: grid;
+  gap: 0.15rem;
+  margin: 0.2rem 0 0.6rem;
+  padding: 0.55rem 0.8rem;
+  border-radius: 0.9rem;
+  background: rgba(13, 148, 136, 0.13);
+  border: 1.5px dashed #0f766e;
+}
+.di-tablet__mine small {
+  font-size: max(var(--di-min-font, 12px), 0.82rem);
+  font-weight: 800;
+  color: #0f766e;
+}
+.di-tablet__mine p {
+  margin: 0 !important;
+  font-weight: 800;
+}
+.di-tablet__words {
+  font-weight: 700 !important;
+  font-style: italic;
+}
+.di-preview {
+  position: absolute;
+  top: 0.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.35rem 1rem;
+  border-radius: 99px;
+  background: #fde68a;
+  color: #422006;
+  font:
+    800 0.95rem 'Cairo',
+    sans-serif;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  white-space: nowrap;
+}
+.di-preview a {
+  color: #1e3a8a;
+  text-decoration: underline;
+  font-weight: 900;
+}
+
+/* a phone held sideways: a page too tall to stay readable scrolls inside its box (Fit.jsx) */
+.di-fitbox[data-di-fit-scroll] {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+/* a phone held sideways: the teacher's preview notice is a small pill under the corner buttons — in the middle of the top it
+   covered the stars counter and the buttons of the pages (owner's screenshots, 2026-11-16) */
+@media (max-height: 500px) {
+  .di-preview {
+    top: 3.7rem;
+    left: 0.8rem;
+    transform: none;
+    padding: 0.15rem 0.7rem;
+    font-size: 0.85rem;
+  }
+  .di-preview span {
+    display: none;
+  }
+}
+/* a phone held sideways: THE MIDDLE OF THE SCREEN IS THE WORLD. The equation, the verdict and the robot's sentence covered
+   the bridge the student had just built (owner, 2026-11-16: « the messages hide it, impossible to go through »): the
+   equation and the verdict go to the corner under the island's name, the sentence to the bottom between the stick and the
+   buttons — the robot and the bridge stay in sight. */
+@media (max-height: 500px) {
+  .di-center {
+    top: 3.7rem;
+    left: auto;
+    right: 0.8rem;
+    transform: none;
+    align-items: flex-end;
+    width: min(42vw, 21rem);
+    gap: 0.3rem;
+  }
+  .di-eq {
+    padding: 0.3rem 0.8rem;
+    font-size: 1.25rem;
+    border-radius: 0.9rem;
+  }
+  .di-objective {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.92rem;
+    border-radius: 0.9rem;
+  }
+  .di-verdict {
+    align-items: flex-end;
+    gap: 0.25rem;
+  }
+  .di-verdict p {
+    padding: 0.25rem 0.8rem;
+    white-space: normal;
+    text-align: start;
+    border-radius: 0.9rem;
+  }
+  .di-verdict__pred {
+    font-size: 0.95rem;
+  }
+  .di-verdict__bridge,
+  .di-toast {
+    font-size: 0.88rem;
+  }
+  .di-toast {
+    padding: 0.25rem 0.8rem;
+  }
+  .di-say {
+    bottom: 0.6rem;
+    left: 9.5rem;
+    transform: none;
+    max-width: min(42vw, 24rem);
+    padding: 0.4rem 0.8rem 0.4rem 0.6rem;
+    font-size: 0.92rem;
+    line-height: 1.45;
+    border-radius: 1rem;
+  }
+}
+@media (max-height: 500px) {
+  .di-wprompt__in {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.8rem;
+  }
+}

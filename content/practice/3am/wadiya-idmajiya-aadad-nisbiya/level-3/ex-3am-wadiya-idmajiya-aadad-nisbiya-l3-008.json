@@ -1,0 +1,193 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-aadad-nisbiya-l3-008",
+  "lessonCode": "wadiya-idmajiya-aadad-nisbiya",
+  "level": 3,
+  "metadata": {
+    "title": "نقط التلاميذ بالنسبة إلى المعدّل",
+    "estimatedMinutes": 6,
+    "tags": [
+      "معدّل",
+      "متوسط",
+      "فارق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "معدّل القسم في فرض هو $10$ . نكتب نقطة كل تلميذ بالنسبة إلى المعدّل: $2{,}5$ تعني نقطة فوق المعدّل بـ $2{,}5$ و $−3$ تعني نقطة تحته بـ $3$ . هذه الفوارق لخمسة تلاميذ: $2{,}5$ ، $−3$ ، $0{,}5$ ، $−4{,}5$ ، $1{,}5$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب مجموع الفوارق الخمسة.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ النص وحدّد الأعداد المعطاة وما يعبّر عنه كل منها: ارتفاع أم انخفاض، ربح أم خسارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر عن الانخفاض أو الخسارة أو الدَّين بعدد سالب، ثم اختر العملية التي تناسب السؤال."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العملية بأعداد نسبية ثم أنجزها بقاعدة الإشارات وبأولوية العمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $−3$ .",
+        "incorrect": "راجع ترجمة النص إلى عملية بين أعداد نسبية: أيّ عدد سالب وأيّ عملية تناسب السؤال؟"
+      },
+      "solution": {
+        "lines": [
+          "$2{,}5 + (−3) + 0{,}5 + (−4{,}5) + 1{,}5$",
+          "$= (−0{,}5) + 0{,}5 + (−4{,}5) + 1{,}5$",
+          "$= 0 + (−4{,}5) + 1{,}5$",
+          "$= (−4{,}5) + 1{,}5$",
+          "$= −3$"
+        ],
+        "result": "−3"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب متوسّط الفوارق.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-0.6",
+      "misconceptionSignatures": [
+        {
+          "value": "0.6",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "-8",
+          "id": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العددين اللذين نقسم أحدهما على الآخر وعيّن إشارة كل منهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عاملان مجهولان فالعامل الناقص هو حاصل قسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعملية العكسية: اضرب نتيجتك في العامل المعلوم."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $−0{,}6$ .",
+        "incorrect": "راجع الربط بين الضرب والقسمة وقاعدة إشارات الحاصل، ثم تحقّق بالضرب."
+      },
+      "solution": {
+        "lines": [
+          "$(2{,}5 + (−3) + 0{,}5 + (−4{,}5) + 1{,}5) \\div 5$",
+          "$= ((−0{,}5) + 0{,}5 + (−4{,}5) + 1{,}5) \\div 5$",
+          "$= (0 + (−4{,}5) + 1{,}5) \\div 5$",
+          "$= ((−4{,}5) + 1{,}5) \\div 5$",
+          "$= (−3) \\div 5$",
+          "$= −0{,}6$"
+        ],
+        "result": "−0{,}6"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما متوسّط النقاط الحقيقية لهؤلاء التلاميذ الخمسة؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "9.4",
+      "misconceptionSignatures": [
+        {
+          "value": "1.4",
+          "id": "MISC-QISMA-PRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ النص وحدّد الأعداد المعطاة وما يعبّر عنه كل منها: ارتفاع أم انخفاض، ربح أم خسارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر عن الانخفاض أو الخسارة أو الدَّين بعدد سالب، ثم اختر العملية التي تناسب السؤال."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العملية بأعداد نسبية ثم أنجزها بقاعدة الإشارات وبأولوية العمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $9{,}4$ .",
+        "incorrect": "راجع ترجمة النص إلى عملية بين أعداد نسبية: أيّ عدد سالب وأيّ عملية تناسب السؤال؟"
+      },
+      "solution": {
+        "lines": [
+          "$10 + (2{,}5 + (−3) + 0{,}5 + (−4{,}5) + 1{,}5) \\div 5$",
+          "$= 10 + ((−0{,}5) + 0{,}5 + (−4{,}5) + 1{,}5) \\div 5$",
+          "$= 10 + (0 + (−4{,}5) + 1{,}5) \\div 5$",
+          "$= 10 + ((−4{,}5) + 1{,}5) \\div 5$",
+          "$= 10 + (−3) \\div 5$",
+          "$= 10 + (−0{,}6)$",
+          "$= 9{,}4$"
+        ],
+        "result": "9{,}4"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

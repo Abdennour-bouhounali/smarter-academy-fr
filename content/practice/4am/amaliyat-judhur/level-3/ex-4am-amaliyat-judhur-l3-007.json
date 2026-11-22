@@ -1,0 +1,172 @@
+{
+  "id": "ex-4am-amaliyat-judhur-l3-007",
+  "lessonCode": "amaliyat-judhur",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2023 — التمرين الأول",
+    "estimatedMinutes": 10,
+    "tags": [
+      "حاصل قسمة جذرين",
+      "الكتابة a√b"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_amaliyat-judhur_P2",
+      "modelledOn": "BEM 2023 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن الأعداد $C$ ، $B$ ، $A$ حيث:",
+    "formulas": [
+      "A = \\dfrac{630}{150}",
+      "B = \\sqrt{28} + 2\\sqrt{63} - \\sqrt{175}",
+      "C = \\dfrac{2\\sqrt{3}}{\\sqrt{7}}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب العدد $A$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "21/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن القاسم المشترك الأكبر للعددين 630 و 150."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{630}{150} = \\dfrac{630 \\div 30}{150 \\div 30} = \\dfrac{21}{5}$",
+        "incorrect": "اقسم البسط والمقام على قاسمهما المشترك الأكبر.",
+        "notIrreducible": "القيمة صحيحة لكن الكسر ما زال قابلًا للاختزال: اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "$PGCD(630 ; 150) = 30$",
+          "$A = \\dfrac{630 \\div 30}{150 \\div 30}$"
+        ],
+        "result": "A = \\dfrac{21}{5}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بين أن العدد $B$ يكتب على الشكل $a\\sqrt{7}$ حيث: $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $28 = 4 \\times 7$ ، $63 = 9 \\times 7$ ، $175 = 25 \\times 7$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل حد على الشكل $k\\sqrt{7}$ ثم اجمع المعاملات."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 2\\sqrt{7} + 6\\sqrt{7} - 5\\sqrt{7} = 3\\sqrt{7}$",
+        "incorrect": "لا تنسَ المعامل 2 أمام $\\sqrt{63}$ وإشارة الطرح أمام $\\sqrt{175}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$B = \\sqrt{4 \\times 7} + 2\\sqrt{9 \\times 7} - \\sqrt{25 \\times 7}$",
+          "$= 2\\sqrt{7} + 6\\sqrt{7} - 5\\sqrt{7}$"
+        ],
+        "result": "B = 3\\sqrt{7}"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اكتب الجداء $B \\times C$ على الشكل $a\\sqrt{3}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_amaliyat-judhur_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في الجداء يظهر $\\dfrac{\\sqrt{7}}{\\sqrt{7}}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$B \\times C = 3\\sqrt{7} \\times \\dfrac{2\\sqrt{3}}{\\sqrt{7}} = 6\\sqrt{3}$",
+        "incorrect": "اضرب المعاملين 3 و 2، ثم بسّط حاصل قسمة الجذرين المتساويين."
+      },
+      "solution": {
+        "lines": [
+          "$B \\times C = 3\\sqrt{7} \\times \\dfrac{2\\sqrt{3}}{\\sqrt{7}}$",
+          "$= \\dfrac{3 \\times 2 \\times \\sqrt{7} \\times \\sqrt{3}}{\\sqrt{7}}$",
+          "$= 6\\sqrt{3}$"
+        ],
+        "result": "B \\times C = 6\\sqrt{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

@@ -1,0 +1,231 @@
+{
+  "id": "ex-2am-tawzi-darb-jam-tarh-l1-002",
+  "lessonCode": "tawzi-darb-jam-tarh",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أحسب عبارة بطريقتين ثم أكمل المساواة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "طريقتان",
+      "توزيع"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-81",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "احسب العبارة $E = 4 \\times (6 + 9)$ بطريقتين مختلفتين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "الطريقة الأولى : احسب ما بين القوسين أوّلًا ثم اضرب. ما قيمة $E = 4 \\times (6 + 9)$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "60",
+      "solution": {
+        "lines": [
+          "$4 \\times (6 + 9) = 4 \\times 15 = 60$",
+          "$4 \\times (6 + 9) = 4 \\times 6 + 4 \\times 9 = 24 + 36 = 60$"
+        ],
+        "result": "60"
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "33",
+          "id": "MISC-TAWZI-FIRSTONLY"
+        },
+        {
+          "value": "19",
+          "id": "MISC-TAWZI-ADDK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى العدد الذي يضرب القوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يمكنك أن تحسب ما بين القوسين أوّلًا، أو أن توزّع الضرب على كلّ حدّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بالطريقتين يجب أن تحصل على العدد نفسه: استعمل الثانية للتحقّق."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times (6 + 9) = 60$",
+        "incorrect": "تذكّر أنّ العدد الذي يضرب القوسين يضرب كلّ حدّ، ولا يضرب حدًّا واحدًا فقط."
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "الطريقة الثانية : احسب $4 \\times 6 + 4 \\times 9$ .",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "60",
+      "solution": {
+        "lines": [
+          "$4 \\times 6 + 4 \\times 9 = 60$"
+        ],
+        "result": "60"
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا: أين الأقواس؟ وهل يوجد عدد مشترك بين الجداءات؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر الطريقة الأسهل: وزّع الضرب على الحدّين أو أنجز ما بين القوسين أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز الحساب مرحلة مرحلة ثم تحقّق من النتيجة بطريقة ثانية."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 6 + 4 \\times 9 = 60$",
+        "incorrect": "راجع حسابك مرحلة مرحلة، وتذكّر أنّ ما بين القوسين يُحسب أوّلًا وأنّ الضرب يتوزّع على كلّ حدّ."
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أتمم المساواة : $4 \\times (6 + 9) = 4 \\times 6 + 4 \\times \\ldots$ .",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "9",
+      "solution": {
+        "lines": [
+          "$4 \\times (6 + 9) = 4 \\times 6 + 4 \\times 9$",
+          "$4 \\times (6 + 9) = 60$"
+        ],
+        "result": "9"
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي يتكرّر في الطرفين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الطرفين حدًّا بحدّ لتعرف ما ينقص."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض ما وجدته في المساواة وتحقّق من أنّ الطرفين متساويان."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times (6 + 9) = 4 \\times 6 + 4 \\times 9$",
+        "incorrect": "قارن الطرفين حدًّا بحدّ ثم عوّض ما وجدته وتحقّق من تساوي الطرفين."
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "أيّ خاصية تبرّر المساواة $4 \\times (6 + 9) = 4 \\times 6 + 4 \\times 9$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "تجميع عوامل الجداء",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "تبديل حدّي الجمع",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "توزيع الضرب على الجمع",
+          "isCorrect": true
+        }
+      ],
+      "solution": {
+        "lines": [
+          "العملية بين الحدّين هي الجمع فالخاصية هي توزيع الضرب على الجمع.",
+          "$4 \\times (6 + 9) = 4 \\times 6 + 4 \\times 9$"
+        ]
+      },
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى العملية بين الحدّين داخل القوسين: جمع أم طرح؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الخاصية التي توزّع الضرب تحمل اسم العملية بين الحدّين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الخاصيتان الأخريان لا تُوزّعان الضرب على حدّي مجموع أو فرق."
+        }
+      ],
+      "feedback": {
+        "correct": "الخاصية هي توزيع الضرب على الجمع.",
+        "incorrect": "سمّ الخاصية بحسب العملية التي بين الحدّين داخل القوسين."
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

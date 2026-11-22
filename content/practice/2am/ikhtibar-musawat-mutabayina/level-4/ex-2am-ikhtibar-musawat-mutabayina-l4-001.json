@@ -1,0 +1,197 @@
+{
+  "id": "ex-2am-ikhtibar-musawat-mutabayina-l4-001",
+  "lessonCode": "ikhtibar-musawat-mutabayina",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — عبارتان متساويتان أم لا",
+    "estimatedMinutes": 6,
+    "tags": [
+      "تساوي عبارتين",
+      "مثال مضادّ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اختبر تساوي العبارتين في كلّ حالة :"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل العبارتان $x+x$ و $2x$ متساويتان مهما كانت قيمة $x$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جرّب العبارتين بقيمة أو قيمتين للحرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا اختلفت النتيجتان عند قيمة واحدة فالعبارتان غير متساويتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا تساوتا عند عدّة قيم فتحقّق من القاعدة (التوزيع مثلا) قبل أن تحكم : التساوي عند بعض القيم لا يكفي."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم : العبارتان متساويتان مهما كانت قيمة الحرف .",
+        "incorrect": "مثال مضادّ واحد يكفي لإثبات عدم التساوي، أمّا التساوي فيبرّره قاعدة معروفة."
+      },
+      "solution": {
+        "lines": [
+          "$x+x=2x$ : العبارتان متساويتان مهما كانت قيمة $x$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل العبارتان $x+x$ و $x^{2}$ متساويتان مهما كانت قيمة $x$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جرّب العبارتين بقيمة أو قيمتين للحرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا اختلفت النتيجتان عند قيمة واحدة فالعبارتان غير متساويتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا تساوتا عند عدّة قيم فتحقّق من القاعدة (التوزيع مثلا) قبل أن تحكم : التساوي عند بعض القيم لا يكفي."
+        }
+      ],
+      "feedback": {
+        "correct": "لا : توجد قيمة تختلف عندها العبارتان .",
+        "incorrect": "مثال مضادّ واحد يكفي لإثبات عدم التساوي، أمّا التساوي فيبرّره قاعدة معروفة."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $x=1$ : $1+1=2$ و $1^{2}=1$ .",
+          "النتيجتان مختلفتان : مثال مضادّ واحد يكفي، فالعبارتان غير متساويتين ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "العبارتان $x+x$ و $x^{2}$ تعطيان العدد نفسه من أجل بعض قيم $x$ . أيّ قيمة من القيم الآتية تبيّن أنّهما ليستا متساويتين ؟ اختر الإجابة الصحيحة :",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$2$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختبر القيم المعطاة في العبارتين معا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن القيمة التي تعطي نتيجتين مختلفتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قيمة واحدة تختلف عندها العبارتان تكفي لإثبات أنّهما ليستا متساويتين."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة $3$ تبيّن ذلك .",
+        "incorrect": "القيمة المطلوبة هي التي تعطي العبارتين نتيجتين مختلفتين."
+      },
+      "solution": {
+        "lines": [
+          "$x=0$ : $0=0$ .",
+          "$x=2$ : $4=4$ .",
+          "$x=3$ : $6\\ne 9$ .",
+          "القيمة $3$ مثال مضادّ : العبارتان ليستا متساويتين ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

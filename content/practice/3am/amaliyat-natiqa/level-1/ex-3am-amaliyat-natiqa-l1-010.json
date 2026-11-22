@@ -1,0 +1,278 @@
+{
+  "id": "ex-3am-amaliyat-natiqa-l1-010",
+  "lessonCode": "amaliyat-natiqa",
+  "level": 1,
+  "metadata": {
+    "title": "قسمة عدد ناطق على عدد ناطق",
+    "estimatedMinutes": 14,
+    "tags": [
+      "العمليات على الأعداد الناطقة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-43",
+      "page": 32,
+      "section": "أوظّف تعلّماتي",
+      "number": 43
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "اكتب كلّ حاصل قسمة على أبسط شكل ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $A = -\\dfrac{5}{13} \\div 10$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "-1/26",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1/26",
+          "id": "MISC-AMAL-PRODSIGN"
+        },
+        {
+          "value": "-50/13",
+          "id": "MISC-AMAL-NOFLIP"
+        },
+        {
+          "value": "-26",
+          "id": "MISC-AMAL-FLIPFIRST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نقسم عليه؟ وما إشارته؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد ناطق هي الضرب في مقلوبه، والمقلوب يحتفظ بإشارة العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب في المقلوب مع تحديد الإشارة أوّلًا، ثمّ اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = -\\dfrac{1}{26}$ .",
+        "incorrect": "اقلب العدد الذي نقسم عليه مع الاحتفاظ بإشارته، ثمّ اضرب وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "القسمة على $10$ هي الضرب في مقلوبه، ومقلوب $10$ هو $\\dfrac{1}{10}$ (يحتفظ بالإشارة نفسها).",
+          "$-\\dfrac{5}{13} \\div 10 = -\\dfrac{5}{13} \\times \\dfrac{1}{10}$ .",
+          "العاملان من إشارتين مختلفتين: الجداء سالب.",
+          "$-\\dfrac{5}{13} \\times \\dfrac{1}{10} = -\\dfrac{5 \\times 1}{13 \\times 10} = -\\dfrac{5}{130} = -\\dfrac{1}{26}$ ."
+        ],
+        "result": "A = -\\dfrac{1}{26}"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $B = \\dfrac{7}{8} \\div \\dfrac{9}{4}$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "7/18",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "63/32",
+          "id": "MISC-AMAL-NOFLIP"
+        },
+        {
+          "value": "18/7",
+          "id": "MISC-AMAL-FLIPFIRST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نقسم عليه؟ وما إشارته؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد ناطق هي الضرب في مقلوبه، والمقلوب يحتفظ بإشارة العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب في المقلوب مع تحديد الإشارة أوّلًا، ثمّ اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = \\dfrac{7}{18}$ .",
+        "incorrect": "اقلب العدد الذي نقسم عليه مع الاحتفاظ بإشارته، ثمّ اضرب وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "القسمة على $\\dfrac{9}{4}$ هي الضرب في مقلوبه، ومقلوب $\\dfrac{9}{4}$ هو $\\dfrac{4}{9}$ (يحتفظ بالإشارة نفسها).",
+          "$\\dfrac{7}{8} \\div \\dfrac{9}{4} = \\dfrac{7}{8} \\times \\dfrac{4}{9}$ .",
+          "العاملان موجبان: الجداء موجب.",
+          "$\\dfrac{7}{8} \\times \\dfrac{4}{9} = \\dfrac{7 \\times 4}{8 \\times 9} = \\dfrac{28}{72} = \\dfrac{7}{18}$ ."
+        ],
+        "result": "B = \\dfrac{7}{18}"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب $C = \\dfrac{4}{15} \\div \\left(-\\dfrac{8}{3}\\right)$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "-1/10",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1/10",
+          "id": "MISC-AMAL-PRODSIGN"
+        },
+        {
+          "value": "-32/45",
+          "id": "MISC-AMAL-NOFLIP"
+        },
+        {
+          "value": "-10",
+          "id": "MISC-AMAL-FLIPFIRST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليات الموجودة؟ وهل توجد أقواس أو كسر مركّب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح، ومع كلّ عملية نحدّد الإشارة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز عملية واحدة في كلّ سطر، ثمّ اكتب النتيجة غير القابلة للاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = -\\dfrac{1}{10}$ .",
+        "incorrect": "احترم الأولويّة: الأقواس ثمّ الضرب والقسمة ثمّ الجمع والطرح، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "القسمة على $-\\dfrac{8}{3}$ هي الضرب في مقلوبه، ومقلوب $-\\dfrac{8}{3}$ هو $-\\dfrac{3}{8}$ (يحتفظ بالإشارة نفسها).",
+          "$\\dfrac{4}{15} \\div \\left(-\\dfrac{8}{3}\\right) = \\dfrac{4}{15} \\times \\left(-\\dfrac{3}{8}\\right)$ .",
+          "العاملان من إشارتين مختلفتين: الجداء سالب.",
+          "$\\dfrac{4}{15} \\times \\left(-\\dfrac{3}{8}\\right) = -\\dfrac{4 \\times 3}{15 \\times 8} = -\\dfrac{12}{120} = -\\dfrac{1}{10}$ ."
+        ],
+        "result": "C = -\\dfrac{1}{10}"
+      }
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب $D = 8 \\div \\dfrac{6}{5}$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "20/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "48/5",
+          "id": "MISC-AMAL-NOFLIP"
+        },
+        {
+          "value": "3/20",
+          "id": "MISC-AMAL-FLIPFIRST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نقسم عليه؟ وما إشارته؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد ناطق هي الضرب في مقلوبه، والمقلوب يحتفظ بإشارة العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب في المقلوب مع تحديد الإشارة أوّلًا، ثمّ اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$D = \\dfrac{20}{3}$ .",
+        "incorrect": "اقلب العدد الذي نقسم عليه مع الاحتفاظ بإشارته، ثمّ اضرب وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "القسمة على $\\dfrac{6}{5}$ هي الضرب في مقلوبه، ومقلوب $\\dfrac{6}{5}$ هو $\\dfrac{5}{6}$ (يحتفظ بالإشارة نفسها).",
+          "$8 \\div \\dfrac{6}{5} = 8 \\times \\dfrac{5}{6}$ .",
+          "العاملان موجبان: الجداء موجب.",
+          "$8 \\times \\dfrac{5}{6} = \\dfrac{8 \\times 5}{6} = \\dfrac{40}{6} = \\dfrac{20}{3}$ ."
+        ],
+        "result": "D = \\dfrac{20}{3}"
+      }
+    }
+  ]
+}

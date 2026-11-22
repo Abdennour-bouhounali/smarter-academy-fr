@@ -1,0 +1,383 @@
+{
+  "id": "ex-3am-tabsit-hadhf-aqwas-l5-002",
+  "lessonCode": "tabsit-hadhf-aqwas",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — قطعة الأخوين",
+    "estimatedMinutes": 20,
+    "tags": [
+      "وضعية إدماجية",
+      "حذف الأقواس",
+      "جداء",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-80",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "قطعة أرض مربعة الشكل $ABCD$ محيطها $64\\,\\mathrm{m}$ يملكها الأخوان أمين وخديجة، ويتقاسمانها بالتراضي. $E$ نقطة من $[AB]$ حيث $BE = 10\\,\\mathrm{m}$ ، و $M$ نقطة من $[BC]$ حيث $BM = x$ (بالمتر) و $0 \\le x \\le 16$ .\nتملك خديجة المثلث القائم $EBM$ وشريطًا مساحته $(2x + 6)\\,\\mathrm{m^2}$ ، ويملك أمين الباقي.\nالجزء الأول: مساحتا القطعتين بدلالة $x$ .\nالجزء الثاني: المقارنة والقرار."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "احسب طول ضلع القطعة بالمتر.",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالمتر)",
+      "expectedAnswer": "16",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "محيط المربع = 4 × طول الضلع."
+        }
+      ],
+      "feedback": {
+        "correct": "طول الضلع $16\\,\\mathrm{m}$ .",
+        "incorrect": "اقسم محيط المربع على عدد أضلاعه."
+      },
+      "solution": {
+        "lines": [
+          "$64 \\div 4 = 16\\,\\mathrm{m}$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "مساحة المثلث $EBM$ هي $\\dfrac{10 \\times x}{2}$ ؛ اكتبها على أبسط شكل $ax$ . العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $S_{EBM}$ على الشكل $ax$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في جداء حدّين نضرب الأعداد معًا والحروف معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أن $x \\times x$ يُكتب $x^2$، وطبّق قاعدة إشارة الجداء."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء وفي النتيجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$S_{EBM} = 5x$ إذن $a = 5$.",
+        "incorrect": "اجمع الحدود المتشابهة بإشاراتها بعد حذف الأقواس، ثم اقرأ العدد المطلوب في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{10 \\times x}{2} = \\dfrac{10}{2} \\times x = 5x$"
+        ],
+        "result": "a = 5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "اكتب $S_1$ مساحة قطعة خديجة على أبسط شكل.",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$S_1 = 7x + 6$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$S_1 = 3x - 6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-PLUS-CHANGED"
+        },
+        {
+          "id": "C",
+          "content": "$S_1 = 13x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-UNLIKE-MERGED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة التي تسبق القوسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوسان مسبوقان بالإشارة $+$ (وغير متبوعين بـ $\\times$ أو $\\div$) يُحذفان دون تغيير أي إشارة بينهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العبارة بدون أقواس حدًّا حدًّا، ثم اجمع الحدود المتشابهة."
+        }
+      ],
+      "feedback": {
+        "correct": "$S_1 = 7x + 6$.",
+        "incorrect": "راجع إشارة كل حدّ وما يسبق القوسين، ثم اجمع الحدود المتشابهة فقط."
+      },
+      "solution": {
+        "lines": [
+          "$S_1 = 5x + (2x + 6)$",
+          "$S_1 = 5x + 2x + 6 = 7x + 6$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "اكتب $S_2$ مساحة قطعة أمين على أبسط شكل.",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$S_2 = 262 + 7x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-MINUS-KEPT"
+        },
+        {
+          "id": "B",
+          "content": "$S_2 = 262 - 7x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-MINUS-FIRST-ONLY"
+        },
+        {
+          "id": "C",
+          "content": "$S_2 = 250 - 7x$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة التي تسبق القوسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوسان مسبوقان بالإشارة $-$ يُحذفان مع تغيير إشارة كل حدّ بينهما، لا الحدّ الأول وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العبارة بدون أقواس حدًّا حدًّا، ثم اجمع الحدود المتشابهة، وتحقّق بتعويض $x$ بعدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$S_2 = 250 - 7x$.",
+        "incorrect": "راجع إشارة كل حدّ وما يسبق القوسين، ثم اجمع الحدود المتشابهة فقط."
+      },
+      "solution": {
+        "lines": [
+          "$S_2 = 16 \\times 16 - (7x + 6)$",
+          "$S_2 = 256 - 7x - 6$",
+          "$S_2 = 250 - 7x$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني. من أجل $x = 10$ :",
+      "statement": "احسب $S_1$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "76",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى، ويُستحسن أن تعوّض في الشكل المبسّط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويات العمليات: القوى، ثم الضرب، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالتعويض في العبارة قبل تبسيطها: القيمة لا تتغيّر."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل $x = 10$ نجد $S_1 = 76$.",
+        "incorrect": "عوّض $x$ بالعدد المعطى في الشكل المبسّط واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$S_1 = 7x + 6$",
+          "من أجل $x = 10$ : $S_1 = 7(10) + 6 = 76$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب $S_2$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "180",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى، ويُستحسن أن تعوّض في الشكل المبسّط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويات العمليات: القوى، ثم الضرب، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالتعويض في العبارة قبل تبسيطها: القيمة لا تتغيّر."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل $x = 10$ نجد $S_2 = 180$.",
+        "incorrect": "عوّض $x$ بالعدد المعطى في الشكل المبسّط واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$S_2 = -7x + 250$",
+          "من أجل $x = 10$ : $S_2 = -7(10) + 250 = 180$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "statement": "تقول خديجة: « حتى لو وضعنا $M$ في $C$ ($x = 16$) تبقى قطعة أمين أكبر ». هل هي على حق؟",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-DECISION-UNCHECKED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب كل ما يلزم من أجل القيمة المعطاة لـ $x$ قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين اللذين حصلت عليهما."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم: من أجل $x = 16$ نجد $S_2 = 138$ و $S_1 = 118$ .",
+        "incorrect": "أنجز الحسابات من أجل القيمة المعطاة ثم قارن قبل أن تقرّر."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $x = 16$ : $S_1 = 7 \\times 16 + 6 = 118$ و $S_2 = 250 - 7 \\times 16 = 138$ .",
+          "$138 > 118$ : قطعة أمين تبقى أكبر."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

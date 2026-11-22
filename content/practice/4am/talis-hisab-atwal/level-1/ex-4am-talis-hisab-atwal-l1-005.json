@@ -1,0 +1,132 @@
+{
+  "id": "ex-4am-talis-hisab-atwal-l1-005",
+  "lessonCode": "talis-hisab-atwal",
+  "level": 1,
+  "metadata": {
+    "title": "معامل التصغير",
+    "estimatedMinutes": 4,
+    "tags": [
+      "معامل التناسبية",
+      "تصغير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_talis-hisab-atwal_P3",
+      "modelledOn": "know-2"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "المثلثان $AMN$ و $ABC$ في وضعية طالس ( $M \\in [AB]$ ، $N \\in [AC]$ و $(MN) \\parallel (BC)$ )، حيث $AM = 3$ و $AB = 6$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب معامل التناسبية $k$ الذي يحوّل المثلث $ABC$ إلى المثلث $AMN$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري أو كسر",
+      "expectedAnswer": "0,5",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-TALIS-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث الأصلي هو $ABC$ والمثلث الناتج هو $AMN$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$k$ = طول في المثلث الناتج ÷ الطول الموافق له في المثلث الأصلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$k = \\dfrac{AM}{AB} = \\dfrac{3}{6} = 0{,}5$ : تصغير.",
+        "incorrect": "معامل التناسبية k = (طول في المثلث الناتج) ÷ (الطول الموافق له في المثلث الأصلي)؛ راجع أي المثلثين هو الأصلي."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $AMN$ تصغير للمثلث $ABC$ في وضعية طالس، ومعامل التصغير:",
+          "$k = \\dfrac{AM}{AB} = \\dfrac{3}{6}$"
+        ],
+        "result": "k = 0{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "إذا كان $BC = 7$ ، احسب $MN$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (عشري بالفاصلة مثل 2,75 أو كسر مثل 7/9)",
+      "expectedAnswer": "3,5",
+      "misconceptionSignatures": [
+        {
+          "value": "14",
+          "id": "MISC-TALIS-MUAMIL-MAQLUB"
+        },
+        {
+          "value": "4",
+          "id": "MISC-TALIS-JAMA-BADAL-DARB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الأطوال كلها تُضرب في المعامل نفسه $k$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل المعامل الذي وجدته في السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "$MN = k \\times BC = 0{,}5 \\times 7 = 3{,}5$ .",
+        "incorrect": "في التصغير نضرب كل طول من $ABC$ في $k$ ، ولا نطرح العدد نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$MN = k \\times BC$",
+          "$MN = 0{,}5 \\times 7$"
+        ],
+        "result": "MN = 3{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

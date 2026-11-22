@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Mafs, Coordinates, Plot, Point } from "mafs";
 import "mafs/core.css";
 import "mafs/font.css";

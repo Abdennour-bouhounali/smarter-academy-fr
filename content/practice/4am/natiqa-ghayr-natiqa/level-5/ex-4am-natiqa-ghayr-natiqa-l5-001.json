@@ -1,0 +1,241 @@
+{
+  "id": "ex-4am-natiqa-ghayr-natiqa-l5-001",
+  "lessonCode": "natiqa-ghayr-natiqa",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2010 — تبليط قاعة دار الشباب",
+    "estimatedMinutes": 20,
+    "tags": [
+      "وضعية",
+      "عدد ناطق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_natiqa-ghayr-natiqa_P2",
+      "modelledOn": "BEM 2010 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2010",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "قاعة النشاطات في دار الشباب، يقصدها الشباب للقراءة والتعلّم، أرضيتها مربعة الشكل مساحتها $51{,}84m^2$ .\nيريد المدير تبليطها ببلاطات مربعة الشكل طول ضلع كل منها $0{,}4m$ ، توضع متلاصقة دون قصّ، ثمن البلاطة الواحدة 120DA.\nبجوار القاعة قاعة للمطالعة أرضيتها مربعة الشكل أيضًا مساحتها $45m^2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب طول ضلع أرضية قاعة النشاطات.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بـ m)",
+      "expectedAnswer": "7.2",
+      "misconceptionSignatures": [
+        {
+          "value": "25.92",
+          "id": "MISC-JIDHR-NISF"
+        },
+        {
+          "value": "0.72",
+          "id": "MISC-JIDHR-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول الضلع هو العدد الموجب الذي مربعه 51,84."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$72^2 = 5184$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$7{,}2^2 = 51{,}84$ : طول الضلع 7,2m.",
+        "incorrect": "ابحث عن العدد العشري الذي مربعه 51,84، وانتبه إلى موضع الفاصلة."
+      },
+      "solution": {
+        "lines": [
+          "ليكن $c$ طول الضلع: $c^2 = 51{,}84$ و $c > 0$",
+          "$7{,}2^2 = 51{,}84$ إذن $c = \\sqrt{51{,}84} = 7{,}2$"
+        ],
+        "result": "c = 7{,}2 \\text{ m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "كم بلاطة توضع على طول ضلع واحد من القاعة؟",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "18",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم طول الضلع على طول ضلع البلاطة."
+        }
+      ],
+      "feedback": {
+        "correct": "$7{,}2 \\div 0{,}4 = 18$ .",
+        "incorrect": "اقسم طول ضلع القاعة (بالمتر) على طول ضلع البلاطة (بالمتر)."
+      },
+      "solution": {
+        "lines": [
+          "$7{,}2 \\div 0{,}4 = 72 \\div 4 = 18$"
+        ],
+        "result": "18"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "استنتج عدد البلاطات اللازمة لتبليط القاعة.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "324",
+      "misconceptionSignatures": [
+        {
+          "value": "72",
+          "id": "MISC-MURABBA-DIF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "البلاطات تكوّن صفوفًا متساوية: عدد الصفوف يساوي عدد البلاطات في كل صف."
+        }
+      ],
+      "feedback": {
+        "correct": "$18 \\times 18 = 324$ بلاطة.",
+        "incorrect": "عدد البلاطات = (عدد البلاطات في الصف) × (عدد الصفوف)."
+      },
+      "solution": {
+        "lines": [
+          "$18 \\times 18 = 324$"
+        ],
+        "result": "324"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب ثمن البلاطات اللازمة.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (DA)",
+      "expectedAnswer": "38880",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب عدد البلاطات في ثمن البلاطة الواحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$324 \\times 120 = 38880$ DA.",
+        "incorrect": "استعمل عدد البلاطات الذي وجدته في السؤال 02 (ب)."
+      },
+      "solution": {
+        "lines": [
+          "$324 \\times 120 = 38880$"
+        ],
+        "result": "38880 \\text{ DA}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "هل طول ضلع أرضية قاعة المطالعة عدد ناطق؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-KULL-JIDHR"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر جوابك، ثم قارن تبريرك بالحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول ضلع أرضية قاعة المطالعة هو الجذر التربيعي للعدد 45."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل 45 مربع لعدد ناطق؟ قارنه بمربعات الأعداد الطبيعية."
+        }
+      ],
+      "feedback": {
+        "correct": "$6^2 < 45 < 7^2$ : 45 ليس مربعًا لعدد ناطق، فجذره ليس عددًا ناطقًا.",
+        "incorrect": "قارن 45 بالمربعين التامين المتتاليين اللذين يحصرانه."
+      },
+      "solution": {
+        "lines": [
+          "طول ضلع أرضية قاعة المطالعة يساوي $\\sqrt{45}$ .",
+          "$6^2 = 36 < 45 < 49 = 7^2$ : العدد 45 ليس مربعًا لعدد ناطق.",
+          "إذن طول ضلع أرضية قاعة المطالعة ليس عددًا ناطقًا: نكتفي له بقيم مقرّبة."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

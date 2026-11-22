@@ -1,0 +1,308 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-khattiya-l5-004",
+  "lessonCode": "wadiya-idmajiya-khattiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2016 — استخراج الملح من بحيرة مالحة",
+    "estimatedMinutes": 25,
+    "tags": [
+      "وضعية إدماجية",
+      "تركيز",
+      "نسبة مئوية",
+      "دالة خطية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-khattiya_P3",
+      "modelledOn": "BEM 2016 II-02"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تستخرج مؤسسة الملح من مياه بحيرة مالحة بالتبخير. يحتوي كل لتر من ماء البحيرة على 35g من الملح، وتسترجع المؤسسة 80% فقط من هذا الملح. نسمّي $m(v)$ كتلة الملح المسترجعة (بالكيلوغرام) من $v$ مترا مكعبا من ماء البحيرة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب كتلة الملح (بالكيلوغرام) الموجودة في $1m^3$ من ماء البحيرة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الكتلة بـ kg",
+      "expectedAnswer": "35",
+      "misconceptionSignatures": [
+        {
+          "value": "0.035",
+          "id": "MISC-MAQADIR-WIHDA"
+        },
+        {
+          "value": "35000",
+          "id": "MISC-MAQADIR-WIHDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$1m^3 = 1000L$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$1kg = 1000g$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$35 \\times 1000 = 35000g = 35kg$ .",
+        "incorrect": "حوّل الحجم إلى لترات ثم الكتلة إلى كيلوغرامات."
+      },
+      "solution": {
+        "lines": [
+          "$1m^3 = 1000L$ ، و $35 \\times 1000 = 35000g$ .",
+          "$35000g = 35kg$ ."
+        ],
+        "result": "35kg"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "عبّر عن $m(v)$ بدلالة $v$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المعامل $a$ فقط في $m(v) = av$",
+      "expectedAnswer": "28",
+      "misconceptionSignatures": [
+        {
+          "value": "35",
+          "id": "MISC-IHSA-NISBA-MIN-ADAD"
+        },
+        {
+          "value": "7",
+          "id": "MISC-TAKHFID-NISBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المؤسسة تسترجع 80% فقط من الملح الموجود في كل متر مكعب."
+        }
+      ],
+      "feedback": {
+        "correct": "$m(v) = 0{,}8 \\times 35v = 28v$ .",
+        "incorrect": "المعامل هو 80% من كتلة الملح في $1m^3$ ."
+      },
+      "solution": {
+        "lines": [
+          "من كل $1m^3$ تسترجع المؤسسة: $\\dfrac{80}{100} \\times 35 = 28kg$ .",
+          "$m(v) = 28v$"
+        ],
+        "result": "m(v) = 28v"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب حجم الماء (بـ $m^3$) اللازم لاسترجاع 7 أطنان من الملح.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الحجم بـ m³",
+      "expectedAnswer": "250",
+      "misconceptionSignatures": [
+        {
+          "value": "0.25",
+          "id": "MISC-MAQADIR-WIHDA"
+        },
+        {
+          "value": "196000",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل الأطنان إلى كيلوغرامات: $1t = 1000kg$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جد العدد الذي صورته هذه الكتلة بالدالة $m$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$28v = 7000$ ومنه $v = 250m^3$ .",
+        "incorrect": "7 أطنان = 7000kg، ثم اقسم على المعامل."
+      },
+      "solution": {
+        "lines": [
+          "$7t = 7000kg$",
+          "$m(v) = 7000$ معناه $28v = 7000$",
+          "$v = \\dfrac{7000}{28} = 250$ ، يلزم $250m^3$ من الماء."
+        ],
+        "result": "v = 250m^3"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "تبيع المؤسسة الطن الواحد من الملح بـ 12000DA، وتدفع ضريبة نسبتها 15% من مبلغ المبيعات.",
+      "statement": "احسب مبلغ مبيعات 7 أطنان.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "84000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ متناسب مع عدد الأطنان."
+        }
+      ],
+      "feedback": {
+        "correct": "$7 \\times 12000 = 84000$ DA.",
+        "incorrect": "اضرب عدد الأطنان في ثمن الطن."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 12000 = 84000$"
+        ],
+        "result": "84000DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "احسب المبلغ المتبقي للمؤسسة بعد دفع الضريبة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "71400",
+      "misconceptionSignatures": [
+        {
+          "value": "12600",
+          "id": "MISC-TAKHFID-NISBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يبقى للمؤسسة 85% من مبلغ المبيعات."
+        }
+      ],
+      "feedback": {
+        "correct": "$84000 \\times 0{,}85 = 71400$ DA.",
+        "incorrect": "المتبقي = المبيعات − الضريبة، لا الضريبة نفسها."
+      },
+      "solution": {
+        "lines": [
+          "الضريبة: $0{,}15 \\times 84000 = 12600$ DA.",
+          "المتبقي: $84000 - 12600 = 71400$ DA."
+        ],
+        "result": "71400DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "☜ تريد المؤسسة مبلغا صافيا (بعد دفع الضريبة) قدره 214200DA. ما حجم الماء (بـ $m^3$) الذي يجب تبخيره؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الحجم بـ m³",
+      "expectedAnswer": "750",
+      "misconceptionSignatures": [
+        {
+          "value": "600",
+          "id": "MISC-TAKHFID-NISBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المبلغ الصافي عن الطن الواحد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استنتج عدد الأطنان، ثم الحجم بالدالة $m$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$10200$ DA صافية للطن، أي 21 طنا، و $21000 \\div 28 = 750m^3$ .",
+        "incorrect": "الضريبة تُطرح قبل حساب عدد الأطنان."
+      },
+      "solution": {
+        "lines": [
+          "المبلغ الصافي للطن: $12000 \\times 0{,}85 = 10200$ DA.",
+          "عدد الأطنان: $214200 \\div 10200 = 21$ ، أي $21000kg$ .",
+          "$28v = 21000$ ومنه $v = 750$ .",
+          "يجب تبخير $750m^3$ من ماء البحيرة."
+        ],
+        "result": "v = 750m^3"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

@@ -1,0 +1,240 @@
+{
+  "id": "ex-1am-ikhtizal-kitaba-kasriya-l3-008",
+  "lessonCode": "ikhtizal-kitaba-kasriya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — كسر عشري وكتابة عشرية",
+    "estimatedMinutes": 9,
+    "tags": [
+      "كسر عشري",
+      "الفاصلة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 2,
+      "file": "1am-s2-64",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أجب عن الأسئلة الآتية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "اكتب على شكل كسر عشري العدد العشري 4,03:",
+      "statement": "أتمم: $4{,}03 = \\dfrac{\\ldots}{100}$",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "403",
+      "misconceptionSignatures": [
+        {
+          "value": "4030",
+          "id": "MISC-KASRIYA-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم رقمًا بعد الفاصلة في هذا العدد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كم صفرًا في المقام المطلوب؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "البسط هو العدد مضروبًا في المقام."
+        }
+      ],
+      "feedback": {
+        "correct": "$4{,}03 = \\dfrac{403}{100}$ لأن $\\dfrac{403}{100} = 403 \\div 100$.",
+        "incorrect": "في الكسر العشري، عدد أصفار المقام هو عدد الأرقام بعد الفاصلة: نضرب العدد العشري في المقام لنجد البسط."
+      },
+      "solution": {
+        "lines": [
+          "$4{,}03 \\times 100 = 403$ ، إذن $4{,}03 = \\dfrac{403}{100}$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أكمل الكتابة العشرية للكسر $\\dfrac{59}{1000}$.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة)",
+      "expectedAnswer": "0,059",
+      "misconceptionSignatures": [
+        {
+          "value": "0,59",
+          "id": "MISC-KASRIYA-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل المقام 10 أو 100 أو 1000؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إن لم يكن كذلك، اضرب البسط والمقام في نفس العدد لتحصل على مقام 10 أو 100 أو 1000."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد أصفار المقام هو عدد الأرقام بعد الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{59}{1000} = 0{,}059$.",
+        "incorrect": "في كسر عشري، عدد أصفار المقام هو عدد الأرقام بعد الفاصلة؛ وإن لم يكن المقام 10 أو 100 أو 1000 نحوّله أولًا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{59}{1000} = 0{,}059$"
+        ],
+        "result": "\\dfrac{59}{1000} = 0{,}059"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اكتب العدد العشري $12{,}5$ على شكل كسر في أبسط شكل ممكن.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b لا يقبل الاختزال",
+      "expectedAnswer": "25/2",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "125/10",
+          "id": "MISC-KASRIYA-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العدد أوّلًا على شكل كسر عشري (مقامه 10 أو 100 أو 1000)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن قاسم مشترك للبسط والمقام."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل حتى لا يبقى قاسم مشترك غير 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$12{,}5 = \\dfrac{125}{10} = \\dfrac{25}{2}$.",
+        "incorrect": "نكتب العدد العشري على شكل كسر عشري، ثم نختزله بقسمة البسط والمقام على قاسم مشترك لهما حتى أبسط شكل.",
+        "notIrreducible": "الكتابة تساوي الكسر لكنها ما زالت قابلة للاختزال: ابحث عن قاسم مشترك آخر للبسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "$12{,}5 = \\dfrac{125}{10}$",
+          "$125 = 5 \\times 25$ و $10 = 5 \\times 2$ ، إذن $\\dfrac{125}{10} = \\dfrac{125 \\div 5}{10 \\div 5} = \\dfrac{25}{2}$",
+          "العددان 25 و 2 لا يقبلان قاسمًا مشتركًا غير 1: $\\dfrac{25}{2}$ في أبسط شكل ممكن."
+        ],
+        "result": "12{,}5 = \\dfrac{25}{2}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "أيّ كتابة من بين الكتابات الآتية تساوي 12,5؟",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{125}{100}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KASRIYA-FASILA"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{125}{10}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{12}{5}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KASRIYA-ARQAM"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم رقمًا بعد الفاصلة في 12,5؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كم صفرًا يجب أن يكون في المقام؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$12{,}5 = \\dfrac{125}{10}$ : رقم واحد بعد الفاصلة، صفر واحد في المقام.",
+        "incorrect": "في الكسر العشري، عدد أصفار المقام هو عدد الأرقام بعد الفاصلة."
+      },
+      "solution": {
+        "lines": [
+          "$12{,}5 = \\dfrac{125}{10}$",
+          "$\\dfrac{125}{100} = 1{,}25$ و $\\dfrac{12}{5} = 2{,}4$."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

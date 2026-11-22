@@ -1,0 +1,206 @@
+{
+  "id": "ex-4am-mada-wasit-mutawassit-l3-003",
+  "lessonCode": "mada-wasit-mutawassit",
+  "level": 3,
+  "metadata": {
+    "title": "الحرارة القصوى بالوادي في جوان",
+    "estimatedMinutes": 7,
+    "tags": [
+      "المدى",
+      "المتوسط",
+      "الوسيط"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-4",
+      "page": 93,
+      "section": "أنشطة",
+      "number": 4
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "إليك درجات الحرارة القصوى (°C) التي سُجّلت في مدينة الوادي خلال الأيام العشرة الأولى من جوان: 40 ، 35 ، 34 ، 41 ، 48 ، 37 ، 35 ، 46 ، 37 ، 40 ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب مدى ومتوسط هذه السلسلة.",
+      "statement": "احسب مدى هذه السلسلة.",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدى بـ °C",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "value": "48",
+          "id": "MISC-IHSA-MADA-AKBAR-QIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المدى هو الفرق بين أكبر قيمة وأصغر قيمة في السلسلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن أكبر قيمة وأصغر قيمة من قيم السلسلة (لا من التكرارات)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح أصغر قيمة من أكبر قيمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$48 - 34 = 14$ .",
+        "incorrect": "المدى فرق بين قيمتين من قيم السلسلة: أكبر قيمة ناقص أصغر قيمة، ولا تُستعمل التكرارات."
+      },
+      "solution": {
+        "lines": [
+          "أكبر قيمة: 48°C ، وأصغر قيمة: 34°C",
+          "$48 - 34 = 14$"
+        ],
+        "result": "14"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب متوسط هذه السلسلة.",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة العشرية إن لزم)",
+      "expectedAnswer": "39,3",
+      "misconceptionSignatures": [
+        {
+          "value": "38,5",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المتوسط هو مجموع القيم مقسوما على عددها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع كل قيم السلسلة، ثم عُدّ هذه القيم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم المجموع على عدد القيم (التكرار الكلي)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{393}{10} = 39{,}3$ .",
+        "incorrect": "اجمع كل القيم ثم اقسم المجموع على عدد القيم؛ تأكّد من أنك لم تنس أي قيمة."
+      },
+      "solution": {
+        "lines": [
+          "مجموع القيم:",
+          "$40 + 35 + 34 + 41 + 48$",
+          "$+ 37 + 35 + 46 + 37 + 40 = 393$",
+          "عدد القيم: 10",
+          "$m = \\dfrac{393}{10} = 39{,}3$"
+        ],
+        "result": "m = 39{,}3"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "رتّب هذه السلسلة ترتيبا تنازليا، ثم أعط وسيطها.",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة العشرية إن لزم)",
+      "expectedAnswer": "38,5",
+      "misconceptionSignatures": [
+        {
+          "value": "42,5",
+          "id": "MISC-IHSA-WASIT-BILA-TARTIB"
+        },
+        {
+          "value": "37",
+          "id": "MISC-IHSA-WASIT-RUTBA"
+        },
+        {
+          "value": "40",
+          "id": "MISC-IHSA-WASIT-RUTBA"
+        },
+        {
+          "value": "39,3",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا يُقرأ الوسيط إلا بعد ترتيب قيم السلسلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب القيم تصاعديا، ثم عُدّها: هل عددها N فردي أم زوجي؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان N فرديا فالوسيط هو القيمة ذات الرتبة $\\dfrac{N + 1}{2}$ ، وإذا كان زوجيا فهو نصف مجموع القيمتين ذواتي الرتبتين $\\dfrac{N}{2}$ و $\\dfrac{N}{2} + 1$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$Med = 38{,}5$ .",
+        "incorrect": "رتّب القيم أولا، ثم عيّن الرتبة الوسطى (أو الرتبتين الوسطيين إذا كان عدد القيم زوجيا)."
+      },
+      "solution": {
+        "lines": [
+          "الترتيب التنازلي: 48 ، 46 ، 41 ، 40 ، 40 ، 37 ، 37 ، 35 ، 35 ، 34",
+          "عدد القيم 10 عدد زوجي، فالوسيط هو نصف مجموع القيمتين ذواتي الرتبتين 5 و 6 (40 و 37):",
+          "$Med = \\dfrac{40 + 37}{2} = 38{,}5$"
+        ],
+        "result": "Med = 38{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

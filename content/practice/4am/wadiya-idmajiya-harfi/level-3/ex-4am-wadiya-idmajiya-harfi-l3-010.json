@@ -1,0 +1,290 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-harfi-l3-010",
+  "lessonCode": "wadiya-idmajiya-harfi",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2021 — نشر، تحليل، معادلة، حساب",
+    "estimatedMinutes": 12,
+    "tags": [
+      "نشر",
+      "عامل مشترك",
+      "الشكل المناسب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-harfi_P1",
+      "modelledOn": "BEM 2021 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة الجبرية $E$ حيث :",
+    "formulas": [
+      "E = (x - 4)(x - 9) + 2(x - 4)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انشر و بسّط العبارة $E$ .",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $x^2 + mx + n$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "-11",
+      "misconceptionSignatures": [
+        {
+          "value": "-15",
+          "id": "MISC-NASHR-ISHARA-SALIBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب كل حد من القوس الأول في كل حد من القوس الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى الإشارات، ولا تنسَ تغيير الإشارات عند حذف قوسين مسبوقين بالإشارة −."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = x^2 - 11x + 28$ إذن $m = -11$ .",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$E = x^2 - 9x - 4x + 36 + 2x - 8$"
+        ],
+        "result": "E = x^2 - 11x + 28"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $x^2 + mx + n$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "28",
+      "misconceptionSignatures": [
+        {
+          "value": "44",
+          "id": "MISC-NASHR-ISHARA-SALIBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بعد الحساب، اقرأ العدد $n$ في الشكل المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = x^2 - 11x + 28$ إذن $n = 28$ .",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$E = x^2 - 11x + 28$"
+        ],
+        "result": "n = 28"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "حلّل إلى جداء عاملين العبارة $E$ .",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $(x - 4)(x + m)$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "-7",
+      "misconceptionSignatures": [
+        {
+          "value": "-11",
+          "id": "MISC-TAHLIL-ISHARA-QAWS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن العامل المشترك بين حدّي العبارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرجه، واكتب ما تبقّى من كل حد بين قوسين مع إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بسّط ما بداخل القوس الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = (x - 4)(x - 7)$ إذن $m = -7$ .",
+        "incorrect": "تحقّق من تحليلك بنشر الجداء: يجب أن تجد العبارة الأصلية."
+      },
+      "solution": {
+        "lines": [
+          "$E = (x - 4)[(x - 9) + 2]$"
+        ],
+        "result": "E = (x - 4)(x - 7)"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "lead": "حل المعادلة: $(x - 4)(x - 7) = 0$ .",
+      "statement": "الحلّ الأصغر:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يكون جداء معدومًا إذا كان أحد عامليه على الأقل معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلتين من الدرجة الأولى، ثم حلّ كل واحدة منهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 4$ .",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة من الدرجة الأولى، ثم رتّب الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "$(x - 4)(x - 7) = 0$ يعني أنّ: $x - 4 = 0$ أو $x - 7 = 0$",
+          "أي: $x = 4$ أو $x = 7$",
+          "إذن للمعادلة حلّان هما $4$ و $7$"
+        ],
+        "result": "x = 4"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "الحلّ الأكبر:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة الثانية من الدرجة الأولى، ثم قارن الحلّين."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 7$ .",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة من الدرجة الأولى، ثم رتّب الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "إذن للمعادلة حلّان هما $4$ و $7$"
+        ],
+        "result": "x = 7"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "احسب $E$ من أجل $x = 204$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "39400",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختر الشكل الذي يُسهّل الحساب دون آلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الشكل المحلّل يعطي جداء عددين بسيطين."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 39400$ .",
+        "incorrect": "عوّض بالقيمة المعطاة في الشكل المناسب، واحسب بعناية مع احترام أولويات العمليات."
+      },
+      "solution": {
+        "lines": [
+          "بالشكل المحلّل: $E = (204 - 4)(204 - 7) = 200 \\times 197$"
+        ],
+        "result": "E = 39400"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

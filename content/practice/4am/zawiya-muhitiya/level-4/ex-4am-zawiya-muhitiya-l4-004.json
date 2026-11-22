@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-zawiya-muhitiya-l4-004",
+  "lessonCode": "zawiya-muhitiya",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — برّر التقايس",
+    "estimatedMinutes": 3,
+    "tags": [
+      "خاصية 2"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_zawiya-muhitiya_P3",
+      "modelledOn": "know-4"
+    }
+  },
+  "statement": {
+    "content": "A و B و C و D نقط من دائرة، و C و D في نفس الجهة من المستقيم (AB)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "لماذا $\\widehat{ACB} = \\widehat{ADB}$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لأن C و D على نفس البعد من A",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-QAWS"
+        },
+        {
+          "id": "B",
+          "content": "لأن كلا منهما نصف الأخرى",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-MUTASAWIYA"
+        },
+        {
+          "id": "C",
+          "content": "لأنهما زاويتان محيطيتان تحصران نفس القوس AB",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل الزاويتان محيطيتان (رأساهما على الدائرة)؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل تحصران نفس القوس، أي رأساهما في نفس الجهة من الوتر؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زاويتان محيطيتان تحصران نفس القوس متقايستان."
+        }
+      ],
+      "feedback": {
+        "correct": "الخاصية 2 من معارف 4.",
+        "incorrect": "رأسا الزاويتين على الدائرة وفي نفس الجهة من الوتر [AB]."
+      }
+    }
+  ]
+}

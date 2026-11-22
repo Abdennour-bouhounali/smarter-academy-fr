@@ -1,0 +1,255 @@
+{
+  "id": "ex-4am-tafsir-bayani-jumla-l4-001",
+  "lessonCode": "tafsir-bayani-jumla",
+  "level": 4,
+  "metadata": {
+    "title": "نشاط 5 — صندوق القسم بمبالغ أخرى",
+    "estimatedMinutes": 12,
+    "tags": [
+      "نشاط 5",
+      "نقطة التقاطع",
+      "الحالات الثلاث"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-5",
+      "page": 79,
+      "section": "أنشطة",
+      "number": 5
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "في صندوق القسم الذي يعتني به التلاميذ بإتقان ونظام 43 قطعة نقدية من فئتي 100DA و 200DA مبلغها 5000DA. نسمّي $x$ عدد قطع 100DA و $y$ عدد قطع 200DA:",
+    "formulas": [
+      "\\begin{cases} x + y = 43 \\\\ 100x + 200y = 5000 \\end{cases}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل الثنائية $(40 ; 3)$ حل لهذه الجملة؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-MUADALA-WAHIDA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض في المعادلتين معا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الثنائية حل للجملة إذا حققت المعادلتين في آن واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "تحقق المعادلة الأولى ولا تحقق الثانية.",
+        "incorrect": "تحقق في المعادلتين معا، لا في الأولى فقط."
+      },
+      "solution": {
+        "lines": [
+          "$40 + 3 = 43$ : المعادلة الأولى محققة.",
+          "$100 \\times 40 + 200 \\times 3 = 4600 \\neq 5000$ : المعادلة الثانية غير محققة.",
+          "إذن $(40 ; 3)$ ليست حلا للجملة: النقطة $(40 ; 3)$ تقع على المستقيم الأول فقط."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "لو كان المبلغ 5600DA (والعدد دائما 43 قطعة)، لصارت المعادلة الثانية $100x + 200y = 5600$ .\nاكتب هذه المعادلة على الشكل $y = ax + b$ .",
+      "statement": "أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "28",
+      "misconceptionSignatures": [
+        {
+          "value": "5600",
+          "id": "MISC-JUMLA-ISHARA-Y"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعادلة من الشكل $ax + by = c$ : نريد أن يبقى $y$ وحده في طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل حدّ $x$ إلى الطرف الثاني مع تغيير إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم اقسم كل الحدود على معامل $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$y = -0{,}5x + 28$ .",
+        "incorrect": "اقسم الطرف الثاني على معامل $y$ ."
+      },
+      "solution": {
+        "lines": [
+          "$200y = -100x + 5600$",
+          "$y = -0{,}5x + 28$"
+        ],
+        "result": "y = -0{,}5x + 28"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "جد حل الجملة الجديدة، ثم فسّره.",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": {
+        "x": "30",
+        "y": "13"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "13",
+            "y": "30"
+          },
+          "id": "MISC-JUMLA-BAYANI-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "فاصلة نقطة التقاطع تجعل العبارتين متساويتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حل المعادلة التي تساوي بين العبارتين، ثم عوّض الحل في إحدى العبارتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الثنائية $(x ; y)$ : الفاصلة أولا ثم الترتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "هي إحداثيات نقطة تقاطع المستقيمين، أي حل الجملة.",
+        "incorrect": "ساوِ بين العبارتين لإيجاد الفاصلة، ثم احسب الترتيب بالتعويض؛ واكتب الفاصلة أولا."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة نقطة التقاطع تحقق: $-x + 43 = -0{,}5x + 28$",
+          "$0{,}5x = 15$",
+          "$x = 30$",
+          "نعوّض: $y = -30 + 43 = 13$",
+          "تحقق: $-0{,}5 \\times 30 + 28 = 13$",
+          "إذن نقطة التقاطع هي $(30 ; 13)$ ، وهي حل الجملة.",
+          "التفسير: 30 قطعة من فئة 100DA و 13 قطعة من فئة 200DA."
+        ],
+        "result": "(30 ; 13)"
+      },
+      "timeSeconds": 210
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "لو كانت القطع الـ 43 كلها من فئة 100DA ومبلغها 5000DA، لكانت الجملة $\\begin{cases} x + y = 43 \\\\ 100x + 100y = 5000 \\end{cases}$ . ما عدد حلول هذه الجملة؟",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لها حل وحيد",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-HALAT"
+        },
+        {
+          "id": "B",
+          "content": "ليس لها حل",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لها عدد غير منته من الحلول",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-HALAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المعادلتين على الشكل $y = ax + b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن معاملي التوجيه ثم الترتيبين عند المبدأ."
+        }
+      ],
+      "feedback": {
+        "correct": "المستقيمان متوازيان.",
+        "incorrect": "اكتب كل معادلة على الشكل $y = ax + b$ وقارن $a$ و $b$ ."
+      },
+      "solution": {
+        "lines": [
+          "$x + y = 43$ تُكتب $y = -x + 43$ ، و $100x + 100y = 5000$ تُكتب $y = -x + 50$ .",
+          "نفس معامل التوجيه وترتيبان مختلفان: المستقيمان متوازيان، فالجملة ليس لها حل.",
+          "في الوضعية: 43 قطعة من فئة 100DA لا تعطي إلا 4300DA."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

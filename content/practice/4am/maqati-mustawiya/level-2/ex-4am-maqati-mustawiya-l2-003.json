@@ -1,0 +1,64 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l2-003",
+  "lessonCode": "maqati-mustawiya",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — مقطع قريب من القطب",
+    "estimatedMinutes": 3,
+    "tags": [
+      "فيثاغورس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_maqati-mustawiya_P1",
+      "modelledOn": "act-2"
+    }
+  },
+  "statement": {
+    "content": "كرة نصف قطرها $13\\,\\mathrm{cm}$ يقطعها مستو يبعد عن مركزها بـ $12\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما نصف قطر المقطع (بـ $\\mathrm{cm}$)؟",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAQTA-TARH",
+          "value": "1"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المستوي قريب من القطب: المقطع صغير."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المثلث OAM قائم في A."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$r^2 = 13^2 - 12^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$r^2 = 169 - 144 = 25$ ، إذن $r = 5\\,\\mathrm{cm}$ .",
+        "incorrect": "$13 - 12 = 1$ ليس نصف القطر: نطرح المربعين."
+      },
+      "difficulty": 2
+    }
+  ]
+}

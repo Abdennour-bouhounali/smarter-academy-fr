@@ -1,0 +1,195 @@
+{
+  "id": "ex-2am-muqarana-nisbiya-l3-008",
+  "lessonCode": "muqarana-nisbiya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — الترتيب حسب القيمة والمسافة إلى الصفر",
+    "estimatedMinutes": 9,
+    "tags": [
+      "ترتيب",
+      "المسافة إلى الصفر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "حدّد مرشد في نادي المغامرة مواضع أربع نقط على مستقيم مدرّج مبدؤه $O$ ، فواصلها: $-2$ و $-5$ و $4$ و $-1$ ، ويحرص على كتابة ترتيبها بأمانة علمية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "اختر الترتيب التصاعدي للفواصل.",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-1 < -2 < 4 < -5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-SBD"
+        },
+        {
+          "id": "B",
+          "content": "$-1 < -2 < -5 < 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-BDG"
+        },
+        {
+          "id": "C",
+          "content": "$-5 < -2 < -1 < 4$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بفرز الأعداد حسب إشاراتها: السالبة، ثم الصفر، ثم الموجبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب الأعداد السالبة فيما بينها حسب مسافاتها إلى الصفر: الأكبر مسافة هو الأصغر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب السلسلة كاملة بالرمز نفسه، ثم تحقّق من كل زوج متجاور."
+        }
+      ],
+      "feedback": {
+        "correct": "$-5 < -2 < -1 < 4$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "السالبة: $5 > 2 > 1$ ، فـ $-5 < -2 < -1$",
+          "ثم الموجب $4$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما الفاصلة الأقرب إلى الصفر؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "-1",
+      "misconceptionSignatures": [
+        {
+          "value": "-5",
+          "id": "MISC-MUQARANA-NISBIYA-NZS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة إلى الصفر هي طول المسار من الصفر إلى العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة إلى الصفر لا تكون سالبة أبدًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للحصول عليها: اكتب العدد دون إشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "المسافات: $2$ و $5$ و $4$ و $1$ ، والأقرب إلى الصفر هي $-1$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "المسافات إلى الصفر: 2 ، 5 ، 4 ، 1",
+          "الأقرب إلى الصفر هي $-1$"
+        ],
+        "result": "-1"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما أصغر هذه الفواصل؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "-5",
+      "misconceptionSignatures": [
+        {
+          "value": "-1",
+          "id": "MISC-MUQARANA-NISBIYA-BDG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج: أيّهما أبعد عن الصفر؟ وفي أيّ جهة منه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددان سالبان: الأصغر هو الذي له أكبر مسافة إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن المسافتين إلى الصفر (العددين دون إشارتيهما) ثم اعكس الحكم لأن العددين سالبان."
+        }
+      ],
+      "feedback": {
+        "correct": "الأصغر هو العدد السالب الأبعد عن الصفر: $-5$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$-5 < -2 < -1 < 4$",
+          "الأصغر هي $-5$"
+        ],
+        "result": "-5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

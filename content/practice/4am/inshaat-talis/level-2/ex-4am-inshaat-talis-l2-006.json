@@ -1,0 +1,185 @@
+{
+  "id": "ex-4am-inshaat-talis-l2-006",
+  "lessonCode": "inshaat-talis",
+  "level": 2,
+  "metadata": {
+    "title": "طرائق ص 107 — تبرير الإنشاء",
+    "estimatedMinutes": 7,
+    "tags": [
+      "طرائق",
+      "الرابع المتناسب",
+      "تبرير"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-construct-length",
+      "page": 107,
+      "section": "طرائق",
+      "adaptedFrom": "ex-4am-inshaat-talis-l2-006"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "(وحدة الأطوال هي السنتيمتر) لإنشاء قطعة $[AB]$ بحيث $AB = \\dfrac{14}{3}$ ، رسمنا نصفي مستقيمين $[Ax)$ و $[Ay)$ ، وعيّنا على $[Ax)$ النقطتين $C$ و $D$ حيث $AC = 3$ و $AD = 7$ ، وعلى $[Ay)$ النقطة $E$ حيث $AE = 2$ ، ثم رسمنا الموازي للمستقيم $(CE)$ الذي يشمل $D$ فقطع $[Ay)$ في $B$ (الشكل المقابل).",
+    "figure": {
+      "points": {
+        "A": [
+          0.0,
+          0.0
+        ],
+        "C": [
+          1.8,
+          2.4
+        ],
+        "D": [
+          4.2,
+          5.6
+        ],
+        "E": [
+          2.0,
+          0.0
+        ],
+        "B": [
+          4.666666666667,
+          0.0
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "C",
+          "label": "3",
+          "labelSide": 1
+        },
+        {
+          "from": "A",
+          "to": "E",
+          "label": "2",
+          "labelSide": -1
+        },
+        {
+          "from": "C",
+          "to": "E",
+          "arrows": 1,
+          "tone": "indigo"
+        },
+        {
+          "from": "D",
+          "to": "B",
+          "arrows": 1,
+          "tone": "indigo"
+        }
+      ],
+      "rays": [
+        {
+          "from": "A",
+          "through": "D",
+          "name": "x",
+          "extend": 0.15
+        },
+        {
+          "from": "A",
+          "through": "B",
+          "name": "y",
+          "extend": 0.2
+        }
+      ],
+      "labels": {
+        "A": "sw",
+        "C": "w",
+        "D": "w",
+        "E": "s",
+        "B": "s"
+      },
+      "ariaLabel": "نصفا مستقيمين [Ax) و [Ay)، على الأول C و D حيث AC = 3 و AD = 7، وعلى الثاني E حيث AE = 2، والموازي للمستقيم (CE) المارّ بـ D يقطع [Ay) في B",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب النسبة $\\dfrac{AC}{AD}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "3/7",
+      "misconceptionSignatures": [
+        {
+          "value": "7/3",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النسبة طول على طول، والطولان يُقاسان من $A$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AC}{AD} = \\dfrac{3}{7}$ .",
+        "incorrect": "اقسم $AC$ على $AD$ (لا العكس)."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AC}{AD} = \\dfrac{3}{7}$"
+        ],
+        "result": "\\dfrac{AC}{AD} = \\dfrac{3}{7}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بيّن أن $AB = \\dfrac{14}{3}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$C \\in [AD]$ و $E \\in [AB]$ و $(CE) \\parallel (DB)$ : أي خاصية تطبّق؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب تساوي النسبتين ثم استعمل الجداء المتصالب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AC}{AD} = \\dfrac{AE}{AB}$ أي $\\dfrac{3}{7} = \\dfrac{2}{AB}$ ، ومنه $AB = \\dfrac{7 \\times 2}{3} = \\dfrac{14}{3}$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي: المعطيات، ثم التوازي، ثم النسب المتساوية وذكر الخاصية المستعملة."
+      },
+      "solution": {
+        "lines": [
+          "النقط $A$ ، $C$ ، $D$ في استقامية والنقط $A$ ، $E$ ، $B$ في استقامية، و $(CE) \\parallel (DB)$ .",
+          "حسب خاصية طالس في المثلثين $ACE$ و $ADB$ : $\\dfrac{AC}{AD} = \\dfrac{AE}{AB}$",
+          "$\\dfrac{3}{7} = \\dfrac{2}{AB}$ ومنه $3 \\times AB = 7 \\times 2$",
+          "$AB = \\dfrac{14}{3}$"
+        ]
+      },
+      "timeSeconds": 240
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l2-006",
+  "lessonCode": "maqati-mustawiya",
+  "level": 2,
+  "metadata": {
+    "title": "نشاط 4 — عرض مقطع الأسطوانة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "أسطوانة",
+      "فيثاغورس"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-4",
+      "page": 165,
+      "section": "أنشطة"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 165): أسطوانة دوران نصف قطر قاعدتها $1{,}7\\,\\mathrm{cm}$ وارتفاعها $6\\,\\mathrm{cm}$ ، يقطعها المستوي (P) الموازي لمحورها حيث بعد O عن $(IK)$ هو $0{,}8\\,\\mathrm{cm}$ (الشكل).",
+    "figure": {
+      "kind": "space",
+      "view": {
+        "azimuth": -40,
+        "elevation": 22
+      },
+      "points": {
+        "O'": [
+          0,
+          0,
+          0
+        ],
+        "O": [
+          0,
+          0,
+          6
+        ],
+        "H": [
+          -0.8,
+          0,
+          6
+        ],
+        "K": [
+          -0.8,
+          1.5,
+          6
+        ],
+        "I": [
+          -0.8,
+          -1.5,
+          6
+        ],
+        "L": [
+          -0.8,
+          -1.5,
+          0
+        ],
+        "J": [
+          -0.8,
+          1.5,
+          0
+        ]
+      },
+      "solids": [
+        {
+          "type": "cylinder",
+          "base": "O'",
+          "top": "O",
+          "radius": 1.7
+        }
+      ],
+      "sections": [
+        {
+          "points": [
+            "K",
+            "I",
+            "L",
+            "J"
+          ],
+          "tone": "emerald"
+        }
+      ],
+      "segments": [
+        {
+          "from": "O'",
+          "to": "O",
+          "dashed": true
+        },
+        {
+          "from": "O",
+          "to": "H",
+          "dashed": true,
+          "tone": "rose"
+        }
+      ],
+      "rightAngles": [
+        [
+          "O",
+          "H",
+          "I"
+        ]
+      ],
+      "labels": {
+        "H": "n",
+        "O": "ne",
+        "K": "nw",
+        "I": "se"
+      },
+      "ariaLabel": "الشكل (1): أسطوانة دوران محورها (OO′) يقطعها مستو موازٍ لمحورها وفق المستطيل KILJ، و H المسقط العمودي لـ O على [KI]",
+      "maxWidth": 480
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما البعد $KI$ للمقطع (بـ $\\mathrm{cm}$)؟",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAQTA-TARH",
+          "value": "1.8"
+        },
+        {
+          "id": "MISC-MAQTA-NISF",
+          "value": "1.5"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "H منتصف الوتر $[KI]$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المثلث OHI قائم في H و $OI = 1{,}7$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$HI^2 = 1{,}7^2 - 0{,}8^2$ ثم $KI = 2\\,HI$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$HI^2 = 2{,}89 - 0{,}64 = 2{,}25$ ، $HI = 1{,}5$ و $KI = 3\\,\\mathrm{cm}$ .",
+        "incorrect": "$HI = 1{,}5$ نصف الوتر فقط، و $2(1{,}7 - 0{,}8)$ ليس بخاصية فيثاغورس."
+      },
+      "difficulty": 2
+    }
+  ]
+}

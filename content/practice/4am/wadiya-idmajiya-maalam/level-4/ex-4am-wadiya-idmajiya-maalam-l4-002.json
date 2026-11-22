@@ -1,0 +1,230 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-maalam-l4-002",
+  "lessonCode": "wadiya-idmajiya-maalam",
+  "level": 4,
+  "metadata": {
+    "title": "أتعمّق — تمرين 25 (شهادة التعليم المتوسط)",
+    "estimatedMinutes": 8,
+    "tags": [
+      "طبيعة شكل",
+      "انسحاب",
+      "شهادة التعليم المتوسط"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-25",
+      "page": 149,
+      "section": "أتعمّق",
+      "number": 25
+    }
+  },
+  "statement": {
+    "content": "من امتحان شهادة التعليم المتوسط. المستوي مزود بمعلم متعامد ومتجانس $(O\\,;\\,\\vec{i},\\,\\vec{j})$ . $A(-2\\,;\\,-3)$ ، $B(4\\,;\\,1)$ ، $C(2\\,;\\,4)$ ، مع $AC = \\sqrt{65}$ و $BC = \\sqrt{13}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "القيمة المضبوطة للطول AB:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$52$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-NASI"
+        },
+        {
+          "id": "B",
+          "content": "$\\sqrt{20}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-TARBI"
+        },
+        {
+          "id": "C",
+          "content": "$10$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-JAM"
+        },
+        {
+          "id": "D",
+          "content": "$2\\sqrt{13}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{AB}\\begin{pmatrix} 6 \\\\ 4 \\end{pmatrix}$"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\sqrt{36 + 16}$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\sqrt{52} = \\sqrt{4 \\times 13}$"
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = \\sqrt{52} = 2\\sqrt{13}$ .",
+        "incorrect": "جذر مجموع المربعين ثم نبسّط."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 4
+    },
+    {
+      "id": "q2",
+      "statement": "المثلث ABC:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "قائم في A",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-FITHAGHURAS-WATAR"
+        },
+        {
+          "id": "B",
+          "content": "قائم في B",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "قائم في C",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-FITHAGHURAS-WATAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أطول ضلع [AC]."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$AB^2 + BC^2$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$52 + 13$"
+        }
+      ],
+      "feedback": {
+        "correct": "$AB^2 + BC^2 = 52 + 13 = 65 = AC^2$ : قائم في B.",
+        "incorrect": "الزاوية القائمة تقابل أطول ضلع."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 4
+    },
+    {
+      "id": "q3",
+      "statement": "E صورة A بالانسحاب الذي شعاعه $\\overrightarrow{BC}$ . إحداثيتاها:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الثنائية (x ; y)",
+      "expectedAnswer": {
+        "x": "-4",
+        "y": "0"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{BC}\\begin{pmatrix} -2 \\\\ 3 \\end{pmatrix}$"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\overrightarrow{AE} = \\overrightarrow{BC}$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف إلى إحداثيتي A."
+        }
+      ],
+      "feedback": {
+        "correct": "$E(-2 - 2\\,;\\,-3 + 3) = (-4\\,;\\,0)$ .",
+        "incorrect": "نضيف مركبتي الشعاع إلى إحداثيتي A."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 4
+    },
+    {
+      "id": "q4",
+      "statement": "لماذا ABCE مستطيل؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{AE} = \\overrightarrow{CB}$ وزاوية B قائمة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-TARTIB-NUQAT"
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{AE} = \\overrightarrow{BC}$ وحده يكفي",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{AE} = \\overrightarrow{BC}$ يجعل ABCE متوازي أضلاع، وزاويته في B قائمة",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا يعطي تساوي شعاعين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "متوازي أضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم الزاوية القائمة."
+        }
+      ],
+      "feedback": {
+        "correct": "متوازي أضلاع (من تساوي الشعاعين، بترتيب الرؤوس) وزاوية قائمة في B: مستطيل.",
+        "incorrect": "تساوي شعاعين يعطي متوازي أضلاع؛ الزاوية القائمة تجعله مستطيلا."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 4
+    }
+  ]
+}

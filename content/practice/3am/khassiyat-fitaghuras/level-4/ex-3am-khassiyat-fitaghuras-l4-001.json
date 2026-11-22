@@ -1,0 +1,320 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l4-001",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — دائرة ومماس",
+    "estimatedMinutes": 12,
+    "tags": [
+      "خاصية فيثاغورس",
+      "الدائرة المحيطة",
+      "المماس"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-80",
+      "exercise": 4
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الرابع",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "$(\\mathcal{C})$ دائرة مركزها $O$ وقطرها $[AB]$ حيث $AB = 6{,}8\\,\\mathrm{cm}$ . $M$ نقطة من $(\\mathcal{C})$ حيث $AM = 3{,}2\\,\\mathrm{cm}$ . $(d)$ المماس للدائرة $(\\mathcal{C})$ في النقطة $B$ ، و $H$ نقطة من $(d)$ حيث $BH = 4{,}4\\,\\mathrm{cm}$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -3.4,
+          0
+        ],
+        "B": [
+          3.4,
+          0
+        ],
+        "M": [
+          -1.8941,
+          2.8235
+        ],
+        "H": [
+          3.4,
+          -4.4
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "O"
+        },
+        {
+          "from": "O",
+          "to": "B"
+        },
+        {
+          "from": "A",
+          "to": "M",
+          "label": "3,2 cm"
+        },
+        [
+          "M",
+          "B"
+        ],
+        {
+          "from": "B",
+          "to": "H",
+          "label": "4,4 cm"
+        },
+        {
+          "from": "O",
+          "to": "H",
+          "dashed": true
+        }
+      ],
+      "rightAngles": [
+        [
+          "O",
+          "B",
+          "H"
+        ]
+      ],
+      "labels": {
+        "O": "s",
+        "H": "e",
+        "B": "ne"
+      },
+      "circles": [
+        {
+          "center": "O",
+          "through": "A"
+        }
+      ],
+      "lines": [
+        {
+          "through": [
+            "B",
+            "H"
+          ],
+          "name": "(d)",
+          "extend": true
+        }
+      ],
+      "ariaLabel": "دائرة مركزها O وقطرها [AB] حيث AB = 6,8 cm، و M نقطة منها حيث AM = 3,2 cm، و (d) مماسها في B، و H نقطة من (d) حيث BH = 4,4 cm",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "برّر أن المثلث $ABM$ قائم في $M$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين تقع النقط $A$ ، $B$ ، $M$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما هو الضلع $[AB]$ بالنسبة إلى الدائرة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "مثلث محاط بدائرة أحد أضلاعه قطر لها هو مثلث قائم.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABM$ محاط بالدائرة $(\\mathcal{C})$ ، وضلعه $[AB]$ قطر لها.",
+          "إذا كان أحد أضلاع مثلث قطرا لدائرته المحيطة فإن هذا المثلث قائم، والقطر وتره.",
+          "إذن المثلث $ABM$ قائم في $M$ ."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب الطول $MB$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "7.52",
+          "id": "MISC-FITAGHURAS-LEG-ADD"
+        },
+        {
+          "value": "3.6",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "36",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع المطلوب ليس الوتر: مربعه يساوي مربع الوتر ناقص مربع الضلع الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولا مربع الطول، ثم خذ جذره التربيعي بالآلة الحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$MB^2 = 6{,}8^2 - 3{,}2^2 = 36$ ، إذن $MB = 6\\,\\mathrm{cm}$ .",
+        "incorrect": "الطول المطلوب ضلع قائم وليس وترا: نطرح مربع الضلع المعلوم من مربع الوتر، ولا نجمع."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABM$ قائم في $M$ ، حسب خاصية فيثاغورس: $AB^2 = MB^2 + AM^2$",
+          "ومنه: $MB^2 = AB^2 - AM^2$",
+          "$MB^2 = 6{,}8^2 - 3{,}2^2 = 46{,}24 - 10{,}24 = 36$",
+          "$MB = \\sqrt{36} = 6\\,\\mathrm{cm}$"
+        ],
+        "result": "MB = 6\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "برّر أن المثلث $OBH$ قائم في $B$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يميّز المماس لدائرة في نقطة منها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن المستقيم $(d)$ بنصف القطر $[OB]$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "المماس عمودي على نصف القطر في نقطة التماس.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "المستقيم $(d)$ مماس للدائرة $(\\mathcal{C})$ في النقطة $B$ .",
+          "المماس لدائرة في نقطة منها عمودي على نصف القطر في هذه النقطة: $(d) \\perp (OB)$ .",
+          "و $H \\in (d)$ ، إذن المثلث $OBH$ قائم في $B$ ."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "أعط قيمة مقرّبة إلى $0{,}1$ للطول $OH$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm مدوّرا إلى 0,1",
+      "expectedAnswer": "5.6",
+      "misconceptionSignatures": [
+        {
+          "value": "5.5",
+          "id": "MISC-FITAGHURAS-ROUND-TRUNC"
+        },
+        {
+          "value": "7.8",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "30.92",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مربع الطول، ثم استعمل اللمسة $\\sqrt{\\ }$ ، ولا تدوّر إلا النتيجة الأخيرة (انظر إلى الرقم الموالي للرقم المطلوب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$OH^2 = 3{,}4^2 + 4{,}4^2 = 30{,}92$ ، إذن $OH \\approx 5{,}6\\,\\mathrm{cm}$ .",
+        "incorrect": "ابدأ بتحديد الوتر، ثم اكتب مساواة فيثاغورس، وتذكّر أن ما تحسبه أولا هو مربع الطول لا الطول نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$O$ منتصف القطر $[AB]$ ، إذن $OB = \\dfrac{6{,}8}{2} = 3{,}4\\,\\mathrm{cm}$ .",
+          "المثلث $OBH$ قائم في $B$ ، حسب خاصية فيثاغورس: $OH^2 = OB^2 + BH^2$",
+          "$OH^2 = 3{,}4^2 + 4{,}4^2$",
+          "$OH^2 = 11{,}56 + 19{,}36 = 30{,}92$",
+          "$OH = \\sqrt{30{,}92}$ (القيمة المضبوطة)",
+          "باستعمال اللمسة $\\sqrt{\\ }$ للآلة الحاسبة: $\\sqrt{30{,}92} \\approx 5{,}560575509$",
+          "المدوّر إلى $0{,}1$ : $OH \\approx 5{,}6\\,\\mathrm{cm}$"
+        ],
+        "result": "OH \\approx 5{,}6\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,237 @@
+{
+  "id": "ex-2am-tawzi-darb-jam-tarh-l2-005",
+  "lessonCode": "tawzi-darb-jam-tarh",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أستعمل عددًا مدوّرًا قريبًا",
+    "estimatedMinutes": 9,
+    "tags": [
+      "حساب ذهني",
+      "تفكيك"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يكتب سالم العدد 99 على الشكل 100 − 1 ليحسب ذهنيًا."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ كتابة تساوي $(100 - 1) \\times 7$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P4",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$100 \\times 7 - 1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-FIRSTONLY"
+        },
+        {
+          "id": "B",
+          "content": "$100 \\times 7 - 1 \\times 7$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$100 \\times 7 + 1 \\times 7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-SIGNCHANGE"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "$(100 - 1) \\times 7 = 100 \\times 7 - 1 \\times 7$",
+          "الضرب يتوزّع على كلّ حدّ من حدّي القوسين."
+        ]
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد الذي يضرب القوسين يتوزّع على الحدّين معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب هذا العدد في الحدّ الأول ثم في الحدّ الثاني، واحتفظ بالعملية التي بين الحدّين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب الطرفين: يجب أن تحصل على النتيجة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتابة الصحيحة هي $100 \\times 7 - 1 \\times 7$ .",
+        "incorrect": "العدد الذي يضرب القوسين يضرب كلّ حدّ بالعملية نفسها التي بين الحدّين: راجع كلّ خيار بحساب الطرفين."
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب ذهنيًا $99 \\times 7$ .",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P4",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "693",
+      "solution": {
+        "lines": [
+          "$99 \\times 7 = (100 - 1) \\times 7 = 100 \\times 7 - 1 \\times 7 = 700 - 7 = 693$"
+        ],
+        "result": "693"
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا: أين الأقواس؟ وهل يوجد عدد مشترك بين الجداءات؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر الطريقة الأسهل: وزّع الضرب على الحدّين أو أنجز ما بين القوسين أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز الحساب مرحلة مرحلة ثم تحقّق من النتيجة بطريقة ثانية."
+        }
+      ],
+      "feedback": {
+        "correct": "$99 \\times 7 = 693$",
+        "incorrect": "راجع حسابك مرحلة مرحلة، وتذكّر أنّ ما بين القوسين يُحسب أوّلًا وأنّ الضرب يتوزّع على كلّ حدّ."
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "يكتب 48 على الشكل 50 − 2. أيّ كتابة تساوي $(50 - 2) \\times 6$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P4",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$50 \\times 6 - 2 \\times 6$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$50 \\times 6 + 2 \\times 6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-SIGNCHANGE"
+        },
+        {
+          "id": "C",
+          "content": "$50 \\times 6 - 2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-FIRSTONLY"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "$(50 - 2) \\times 6 = 50 \\times 6 - 2 \\times 6$",
+          "الضرب يتوزّع على كلّ حدّ من حدّي القوسين."
+        ]
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد الذي يضرب القوسين يتوزّع على الحدّين معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب هذا العدد في الحدّ الأول ثم في الحدّ الثاني، واحتفظ بالعملية التي بين الحدّين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب الطرفين: يجب أن تحصل على النتيجة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتابة الصحيحة هي $50 \\times 6 - 2 \\times 6$ .",
+        "incorrect": "العدد الذي يضرب القوسين يضرب كلّ حدّ بالعملية نفسها التي بين الحدّين: راجع كلّ خيار بحساب الطرفين."
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "احسب ذهنيًا $48 \\times 6$ .",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P4",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "288",
+      "solution": {
+        "lines": [
+          "$48 \\times 6 = (50 - 2) \\times 6 = 50 \\times 6 - 2 \\times 6 = 300 - 12 = 288$"
+        ],
+        "result": "288"
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا: أين الأقواس؟ وهل يوجد عدد مشترك بين الجداءات؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر الطريقة الأسهل: وزّع الضرب على الحدّين أو أنجز ما بين القوسين أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز الحساب مرحلة مرحلة ثم تحقّق من النتيجة بطريقة ثانية."
+        }
+      ],
+      "feedback": {
+        "correct": "$48 \\times 6 = 288$",
+        "incorrect": "راجع حسابك مرحلة مرحلة، وتذكّر أنّ ما بين القوسين يُحسب أوّلًا وأنّ الضرب يتوزّع على كلّ حدّ."
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

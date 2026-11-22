@@ -1,0 +1,211 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l4-003",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2024 — 432 شتلة طماطم",
+    "estimatedMinutes": 6,
+    "tags": [
+      "قاسم",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-adad-tabii_P1",
+      "modelledOn": "BEM 2024 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لدى بستاني يعتزّ بأرض وطنه ويحرص على خدمتها 432 شتلة طماطم، يريد غرسها كلها في صفوف تحتوي كلها على نفس العدد من الشتلات."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "هل يمكن أن يحتوي كل صف على 16 شتلة؟ 30 شتلة؟ برّر إجابتك.",
+      "statement": "16 شتلة في كل صف.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 432 على 16."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "16 قاسم للعدد 432 إذا وفقط إذا كان باقي هذه القسمة معدومًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$432 = 16 \\times 27$: الباقي معدوم.",
+        "incorrect": "أجرِ القسمة الإقليدية للعدد 432 على 16، وانظر هل الباقي معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$432 = 16 \\times 27$ (الباقي معدوم).",
+          "إذن 16 قاسم للعدد 432: يمكن ذلك (27 صفًّا)."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "30 شتلة في كل صف.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 432 على 30."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "30 قاسم للعدد 432 إذا وفقط إذا كان باقي هذه القسمة معدومًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$432 = 30 \\times 14 + 12$: الباقي غير معدوم.",
+        "incorrect": "أجرِ القسمة الإقليدية للعدد 432 على 30، وانظر هل الباقي معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$432 = 30 \\times 14 + 12$ مع $12 < 30$",
+          "الباقي 12 غير معدوم، إذن 30 ليس قاسمًا للعدد 432: لا يمكن ذلك."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "اختار البستاني أن يغرس 24 شتلة في كل صف. أوجد عدد الصفوف.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "18",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نبحث عن عدد طبيعي $q$ حيث $432 = 24 \\times q$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أجرِ القسمة الإقليدية للعدد 432 على 24."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان الباقي معدومًا فإن حاصل القسمة هو العدد المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$432 = 24 \\times 18$.",
+        "incorrect": "اقسم 432 على 24: حاصل القسمة هو العدد $q$ إذا كان الباقي معدومًا."
+      },
+      "solution": {
+        "lines": [
+          "$24 \\times 18 = 432$",
+          "إذن $432 = 24 \\times 18$"
+        ],
+        "result": "432 = 24 \\times 18"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "ثمن الشتلة الواحدة 15DA. احسب ثمن كل الشتلات.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (DA)",
+      "expectedAnswer": "6480",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثمن الشتلات = عدد الشتلات × ثمن الشتلة الواحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$432 \\times 15 = 6480$ أي 6480DA.",
+        "incorrect": "اضرب عدد الشتلات في ثمن الشتلة الواحدة."
+      },
+      "solution": {
+        "lines": [
+          "$432 \\times 15$"
+        ],
+        "result": "432 \\times 15 = 6480 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

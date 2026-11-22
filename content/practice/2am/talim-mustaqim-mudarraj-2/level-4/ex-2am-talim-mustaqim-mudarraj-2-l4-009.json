@@ -1,0 +1,215 @@
+{
+  "id": "ex-2am-talim-mustaqim-mudarraj-2-l4-009",
+  "lessonCode": "talim-mustaqim-mudarraj-2",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — خمس نقط: وضع وترتيب",
+    "estimatedMinutes": 10,
+    "tags": [
+      "وضع نقط",
+      "ترتيب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "مستقيم مدرّج على لوحة ورشة، مبدؤه $O$ . قيمة التدريجة الواحدة $25$ cm. $A$ على 4 تدريجات إلى يسار المبدأ، $B$ على 3 تدريجات إلى يمين المبدأ، $C$ على تدريجة واحدة إلى يسار المبدأ، $D$ على تدريجتين إلى يمين المبدأ، $E$ عند المبدأ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما فاصلة النقطة $C$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-25",
+      "misconceptionSignatures": [
+        {
+          "value": "-1",
+          "id": "MISC-TALIM2-UNITIGNORED"
+        },
+        {
+          "value": "25",
+          "id": "MISC-TALIM2-SIGNSIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ التدريجات بين المبدأ والنقطة، ثم انظر إلى جهتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفاصلة = عدد التدريجات × قيمة التدريجة الواحدة، وإشارتها حسب الجهة: يمين المبدأ موجبة، يسار المبدأ سالبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء أوّلًا ثم ضع الإشارة المناسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$C(-25)$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$C$ على $1$ تدريجات يسار المبدأ",
+          "$1 \\times 25$ مع الإشارة المناسبة",
+          "$C(-25)$"
+        ],
+        "result": "-25"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أيّ النقط لها أكبر فاصلة؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$C$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$A$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$B$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$D$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أوجد فاصلة كلّ نقطة أوّلًا: عدد التدريجات × القيمة مع مراعاة الجهة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأصغر هو الأبعد إلى يسار المبدأ، والأكبر هو الأبعد إلى يمينه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تقارن بعدد التدريجات وحده: انظر إلى إشارة كلّ فاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$B$ هي الأكبر فاصلة : $75$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفواصل: $A(-100)$ ؛ $B(75)$ ؛ $C(-25)$ ؛ $D(50)$ ؛ $E(0)$",
+          "الأكبر هو الأبعد إلى اليمين: $B$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "رتّب فواصل النقط ترتيبًا تصاعديًّا: اختر السلسلة الصحيحة.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$75 < 50 < 0 < -25 < -100$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$-100 < 75 < 50 < -25 < 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$0 < -25 < 50 < 75 < -100$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$-100 < -25 < 0 < 50 < 75$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أوجد فاصلة كلّ نقطة أوّلًا: عدد التدريجات × القيمة مع مراعاة الجهة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأصغر هو الأبعد إلى يسار المبدأ، والأكبر هو الأبعد إلى يمينه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تقارن بعدد التدريجات وحده: انظر إلى إشارة كلّ فاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "الترتيب التصاعدي: $-100 < -25 < 0 < 50 < 75$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفواصل: $A(-100)$ ؛ $B(75)$ ؛ $C(-25)$ ؛ $D(50)$ ؛ $E(0)$",
+          "الترتيب التصاعدي: $-100 < -25 < 0 < 50 < 75$"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

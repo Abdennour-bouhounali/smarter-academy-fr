@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l2-007",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — زاوية مركزية من 50°",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الزاوية المركزية",
+      "الانغلاق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mudalaat-muntazama_P2",
+      "modelledOn": "challenge"
+    }
+  },
+  "statement": {
+    "content": "ندوّر رأسا A حول O بالدوران الذي زاويته $50^\\circ$ ، ثم نعيد نفس الدوران على كل صورة جديدة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "هل نحصل على مضلع منتظم؟",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا: $360 \\div 50 = 7{,}2$ ليس عددا صحيحا، فلا تعود أي صورة إلى A بعد دورة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم: سباعي منتظم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-DAWRA"
+        },
+        {
+          "id": "C",
+          "content": "نعم: ثماني منتظم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-DAWRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $7 \\times 50^\\circ$ ثم $8 \\times 50^\\circ$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لكي تنغلق الحلقة يجب أن يكون $n \\times 50^\\circ$ دورة كاملة بالضبط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "هل يوجد عدد صحيح n بحيث $n \\times 50 = 360$ ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$7 \\times 50^\\circ = 350^\\circ$ و $8 \\times 50^\\circ = 400^\\circ$ : لا تعود أي صورة إلى A.",
+        "incorrect": "لا يكفي أن نقترب من الدورة: يجب أن نبلغها بالضبط."
+      },
+      "difficulty": 2
+    }
+  ]
+}

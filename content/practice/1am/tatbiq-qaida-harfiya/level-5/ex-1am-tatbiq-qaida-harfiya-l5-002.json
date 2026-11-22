@@ -1,0 +1,254 @@
+{
+  "id": "ex-1am-tatbiq-qaida-harfiya-l5-002",
+  "lessonCode": "tatbiq-qaida-harfiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — مكتبتان: أيّهما أرخص؟",
+    "estimatedMinutes": 14,
+    "tags": [
+      "وضعية إدماجية",
+      "قاعدتان",
+      "مثال مضادّ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "ثمن $n$ كرّاسة بالدينار في المكتبة الأولى $P=4\\times n+30$ وفي الثانية $Q=6\\times n$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "الجزء الأول — سليم",
+      "statement": "اشترى سليم $20$ كرّاسة. أيّ المكتبتين أرخص له؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "المكتبة الأولى",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "المكتبة الثانية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-PLUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما القاعدة في كلّ حالة؟ وما القيم المعطاة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القيمتين كلتيهما بالقاعدة المناسبة لكلّ حالة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن النتيجتين ثمّ أجب عن السؤال."
+        }
+      ],
+      "feedback": {
+        "correct": "قارنّا القيمتين المحسوبتين بالقاعدتين.",
+        "incorrect": "حذف إشارة الضرب لا يعني الجمع: $3x$ تعني $3\\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "المكتبة الأولى: $4\\times 20+30=110$ .",
+          "المكتبة الثانية: $6\\times 20=120$ .",
+          "نقارن: الأقلّ هو المكتبة الأولى ."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "الجزء الثاني — هدى",
+      "statement": "اشترت هدى $5$ كرّاسات. احسب $P$ من أجل $n=5$ .",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "50",
+      "misconceptionSignatures": [
+        {
+          "value": "39",
+          "id": "MISC-TATBIQ-PLUS"
+        },
+        {
+          "value": "75",
+          "id": "MISC-TATBIQ-GLUED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما قيمة كلّ حرف؟ وفي كم موضع يظهر كلّ حرف في العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع القيمة في كلّ موضع يظهر فيه الحرف، وأعد إشارة الضرب بين العددين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب بالأولويات: ما بين القوسين، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: النتيجة $50$ .",
+        "incorrect": "حذف إشارة الضرب لا يعني الجمع: $3x$ تعني $3\\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "نكتب القاعدة: $P=4\\times n+30$ .",
+          "نضع قيمة كلّ حرف في كلّ موضع يظهر فيه: $P=4\\times 5+30$ .",
+          "نحسب: $P=20+30$ .",
+          "نحسب: $P=50$ .",
+          "الجواب: $P=50$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب $Q$ من أجل $n=5$ .",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "65",
+          "id": "MISC-TATBIQ-GLUED"
+        },
+        {
+          "value": "11",
+          "id": "MISC-TATBIQ-PLUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما قيمة كلّ حرف؟ وفي كم موضع يظهر كلّ حرف في العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع القيمة في كلّ موضع يظهر فيه الحرف، وأعد إشارة الضرب بين العددين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب بالأولويات: ما بين القوسين، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: النتيجة $30$ .",
+        "incorrect": "بين العدد والحرف إشارة ضرب لا تُكتب: عند التعويض نُعيدها، فنحسب جداءً لا عددًا من رقمين."
+      },
+      "solution": {
+        "lines": [
+          "نكتب القاعدة: $Q=6\\times n$ .",
+          "نضع قيمة كلّ حرف في كلّ موضع يظهر فيه: $Q=6\\times 5$ .",
+          "نحسب: $Q=30$ .",
+          "الجواب: $Q=30$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "قال سليم: « المكتبة الأولى أرخص من الثانية مهما كان عدد الكرّاسات ». هل قوله صحيح، علمًا أنّه كان صحيحًا من أجل $20$ كرّاسة؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، قوله صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-ONEOK"
+        },
+        {
+          "id": "B",
+          "content": "لا، قوله غير صحيح",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي أثبته المثال المقدّم: هل تساوت الجهتان أم اختلفتا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مثال تصحّ فيه القاعدة لا يثبت أنّها صحيحة دائمًا، ومثال تخطئ فيه يكفي لإبطالها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الجهتين من أجل القيمة المعطاة ثمّ احكم."
+        }
+      ],
+      "feedback": {
+        "correct": "مثال مضادّ واحد يكفي.",
+        "incorrect": "مثال تصحّ فيه المساواة لا يثبت أنّها صحيحة دائمًا: نبحث عن قيمة تختلف عندها الجهتان."
+      },
+      "solution": {
+        "lines": [
+          "من أجل هذه القيمة: $4\\times 5+30=50$ و $6\\times 5=30$ .",
+          "الأولى أغلى هنا: مثال مضادّ واحد يكفي لإبطال قوله."
+        ]
+      },
+      "timeSeconds": 100
+    }
+  ]
+}

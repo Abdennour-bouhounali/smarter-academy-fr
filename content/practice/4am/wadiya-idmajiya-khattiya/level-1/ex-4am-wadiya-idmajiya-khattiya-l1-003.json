@@ -1,0 +1,118 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-khattiya-l1-003",
+  "lessonCode": "wadiya-idmajiya-khattiya",
+  "level": 1,
+  "metadata": {
+    "title": "العدد الذي علمت صورته",
+    "estimatedMinutes": 4,
+    "tags": [
+      "معامل",
+      "العدد الذي علمت صورته"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 74,
+      "section": "الوضعيات",
+      "number": 3,
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-khattiya-l1-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "$g$ دالة خطية، والعدد $8$ هو العدد الذي صورته $14$ بالدالة $g$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن معامل الدالة $g$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "7/4",
+      "misconceptionSignatures": [
+        {
+          "value": "4/7",
+          "id": "MISC-KHATTIYA-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العبارة تعني: $g(8) = 14$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $a \\times 8 = 14$ ثم استخرج $a$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{14}{8} = \\dfrac{7}{4} = 1{,}75$ .",
+        "incorrect": "الصورة هي 14 والعدد هو 8: المعامل = الصورة ÷ العدد."
+      },
+      "solution": {
+        "lines": [
+          "$g(8) = 14$ معناه $a \\times 8 = 14$",
+          "$a = \\dfrac{14}{8} = \\dfrac{7}{4} = 1{,}75$"
+        ],
+        "result": "g(x) = \\dfrac{7}{4}x"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $g(-4)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-7",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$g(-4) = a \\times (-4)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$g(-4) = \\dfrac{7}{4} \\times (-4) = -7$ .",
+        "incorrect": "اضرب المعامل في $-4$ مع مراعاة الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "$g(-4) = \\dfrac{7}{4} \\times (-4) = -7$"
+        ],
+        "result": "g(-4) = -7"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

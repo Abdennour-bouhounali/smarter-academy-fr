@@ -1,0 +1,80 @@
+{
+  "id": "ex-4am-majmu-shuaayn-l3-009",
+  "lessonCode": "majmu-shuaayn",
+  "level": 3,
+  "generator": {
+    "tool": "unit11-majmu-gen.py",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — عوّض بشعاع يساويه",
+    "estimatedMinutes": 3,
+    "tags": [
+      "إنشاء ممثل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_majmu-shuaayn_P3",
+      "modelledOn": "ex-10"
+    }
+  },
+  "statement": {
+    "content": "ABCD متوازي أضلاع (الرؤوس بهذا الترتيب)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "$\\overrightarrow{AB} + \\overrightarrow{CB} =$",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{BD}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-AKS"
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{DB}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{AC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-QAIDA-QUTR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للشعاعين نفس المبدأ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "شعاعان لهما نفس المبدأ يُجمعان بقاعدة متوازي الأضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع هو القطر الصادر من المبدأ المشترك، لا القطر الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{CB} = \\overrightarrow{DA}$ ، فـ $\\overrightarrow{DA} + \\overrightarrow{AB} = \\overrightarrow{DB}$ .",
+        "incorrect": "قاعدة متوازي الأضلاع: مجموع شعاعين لهما نفس المبدأ هو القطر الصادر من ذلك المبدأ."
+      }
+    }
+  ]
+}

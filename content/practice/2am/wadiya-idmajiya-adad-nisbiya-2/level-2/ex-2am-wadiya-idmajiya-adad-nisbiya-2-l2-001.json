@@ -1,0 +1,266 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-adad-nisbiya-2-l2-001",
+  "lessonCode": "wadiya-idmajiya-adad-nisbiya-2",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — أربعة مجاميع جبرية وإثبات",
+    "estimatedMinutes": 10,
+    "tags": [
+      "المجموع الجبري",
+      "المتعاكسان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الأول",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العبارات $A$ و $B$ و $C$ و $D$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب المجموع الجبري $A=(-9)+(-14)$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-23",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-JAMNISB-SIGNLOST",
+          "value": "23"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نحوّل كلّ طرح إلى جمع لمعاكس العدد المطروح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نجمع الموجبة فيما بينها والسالبة فيما بينها، ونحسب ما بين الأقواس أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "في الأخير نجمع عددين من إشارتين مختلفتين : نأخذ إشارة الأبعد عن الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "$(-9)+(-14)=(-23)$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "المجموع الجبري : $(-23)$"
+        ],
+        "result": "-23"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب المجموع الجبري $B=(+16)-(+31)$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-15",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-JAMNISB-SUBNOFLIP",
+          "value": "47"
+        },
+        {
+          "id": "MISC-JAMNISB-FLIPBOTH",
+          "value": "15"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نحوّل كلّ طرح إلى جمع لمعاكس العدد المطروح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نجمع الموجبة فيما بينها والسالبة فيما بينها، ونحسب ما بين الأقواس أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "في الأخير نجمع عددين من إشارتين مختلفتين : نأخذ إشارة الأبعد عن الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "$(+16)-(+31)=(-15)$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "نحوّل كلّ طرح إلى جمع للمعاكس : $(+16)+(-31)$",
+          "نجمع الموجبة معًا والسالبة معًا : $(+16)+(-31)$",
+          "المجموع الجبري : $(-15)$"
+        ],
+        "result": "-15"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب المجموع الجبري $C=(-3)-(-26)+(+48)-(+29)+(-19)$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "23",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-JABRI-NOTURN",
+          "value": "29"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نحوّل كلّ طرح إلى جمع لمعاكس العدد المطروح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نجمع الموجبة فيما بينها والسالبة فيما بينها، ونحسب ما بين الأقواس أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "في الأخير نجمع عددين من إشارتين مختلفتين : نأخذ إشارة الأبعد عن الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "$(-3)-(-26)+(+48)-(+29)+(-19)=(+23)$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "نحوّل كلّ طرح إلى جمع للمعاكس : $(-3)+(+26)+(+48)+(-29)+(-19)$",
+          "نجمع الموجبة معًا والسالبة معًا : $(+74)+(-51)$",
+          "المجموع الجبري : $(+23)$"
+        ],
+        "result": "23"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "احسب المجموع الجبري $D=[(-12)+(+22)]-[(-25)-(+25)]$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "60",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نحوّل كلّ طرح إلى جمع لمعاكس العدد المطروح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نجمع الموجبة فيما بينها والسالبة فيما بينها، ونحسب ما بين الأقواس أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "في الأخير نجمع عددين من إشارتين مختلفتين : نأخذ إشارة الأبعد عن الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "$[(-12)+(+22)]-[(-25)-(+25)]=(+60)$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "نحسب ما بين الأقواس أوّلًا : $[(-12)+(+22)]=(+10)$ ، $[(-25)-(+25)]=(-50)$",
+          "نحوّل كلّ طرح إلى جمع للمعاكس : $(+10)+(+50)$",
+          "المجموع الجبري : $(+60)$"
+        ],
+        "result": "60"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "أثبت أنّ $A+C=0$ علمًا أنّ $A=-23$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب جملة أو جملتين : الفكرة ثمّ الحساب الذي يدعمها."
+        }
+      ],
+      "feedback": {
+        "correct": "$A$ و $C$ متعاكسان فمجموعهما $0$ .",
+        "incorrect": "قارن تبريرك بالحلّ النموذجي : الفكرة ثمّ الحساب الذي يدعمها."
+      },
+      "solution": {
+        "lines": [
+          "نحسب $C$ : $C=+23$",
+          "نجد $A+C=(-23)+(+23)=0$",
+          "العددان $A$ و $C$ متعاكسان : لهما المسافة نفسها إلى الصفر وإشارتان مختلفتان، فمجموعهما معدوم."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

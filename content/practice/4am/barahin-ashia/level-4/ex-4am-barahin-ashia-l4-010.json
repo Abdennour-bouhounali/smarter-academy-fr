@@ -1,0 +1,81 @@
+{
+  "id": "ex-4am-barahin-ashia-l4-010",
+  "lessonCode": "barahin-ashia",
+  "level": 4,
+  "generator": {
+    "tool": "gen-barahin.mjs",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — إنشاء نقطة بمجموع شعاعين",
+    "estimatedMinutes": 3,
+    "tags": [
+      "إنشاء",
+      "علاقة شال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_barahin-ashia_P3",
+      "modelledOn": "ex-23"
+    }
+  },
+  "statement": {
+    "content": "ABC مثلث و M نقطة خارجه. K النقطة حيث $\\overrightarrow{MK} = \\overrightarrow{MA} + \\overrightarrow{BC}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "لإنشاء K :",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "K صورة A بالانسحاب الذي شعاعه $\\overrightarrow{BC}$ ، فالرباعي ABCK متوازي أضلاع",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "K صورة B بالانسحاب الذي شعاعه $\\overrightarrow{AC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSIHAB-SURA"
+        },
+        {
+          "id": "C",
+          "content": "K نظيرة A بالنسبة إلى M",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSHA-MABDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أدخل النقطة A في $\\overrightarrow{MK}$ بعلاقة شال."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد الحذف تبقى مساواة شعاع مبدؤه A ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "صورة نقطة بانسحاب: نهاية الممثّل الذي مبدؤه هذه النقطة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{MA} + \\overrightarrow{AK} = \\overrightarrow{MA} + \\overrightarrow{BC}$ فـ $\\overrightarrow{AK} = \\overrightarrow{BC}$ : K صورة A ، و ABCK متوازي أضلاع.",
+        "incorrect": "اكتب $\\overrightarrow{MK} = \\overrightarrow{MA} + \\overrightarrow{AK}$ ، ثم قارن."
+      }
+    }
+  ]
+}

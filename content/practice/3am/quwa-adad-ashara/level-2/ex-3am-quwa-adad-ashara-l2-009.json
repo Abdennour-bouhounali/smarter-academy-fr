@@ -1,0 +1,145 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l2-009",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 2,
+  "metadata": {
+    "title": "أختبر نفسي: كتابة قوة سالبة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "أسّ سالب",
+      "اختيار من متعدد"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "self-3",
+      "page": 49,
+      "section": "أؤكّد تعلّماتي",
+      "number": 3
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اختر الإجابة الصحيحة في السؤال الأول ثمّ أجب عن السؤال الثاني."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "$10^{-2} =$ ",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$10^{-2}$ هو مقلوب $10^{2}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد موجب والرقم 1 في الرتبة 2 بعد الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من رتبة الرقم 1."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$0{,}001$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-FASILA"
+        },
+        {
+          "id": "B",
+          "content": "$0{,}01$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$-0{,}01$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-SALIB"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{-2} = \\dfrac{1}{100} = 0{,}01$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب الكتابة العشرية للقوة المعنية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10^{-2} = \\dfrac{1}{10^{2}} = \\dfrac{1}{100} = 0{,}01$ ."
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما الكتابة العشرية للعدد $10^{-5}$ ؟",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$10^{-n}$ هو مقلوب $10^{n}$ ، أي $\\dfrac{1}{10^{n}}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في $10^{-n}$ يكون الرقم 1 في الرتبة $n$ بعد الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الفاصلة ثمّ ضع الرقم 1 في الرتبة المطلوبة، وأكمل الباقي بأصفار؛ والعدد موجب دائمًا."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "0.00001",
+      "misconceptionSignatures": [
+        {
+          "value": "-100000",
+          "id": "MISC-ASHARA-SALIB"
+        },
+        {
+          "value": "0.000001",
+          "id": "MISC-ASHARA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{-5} = 0{,}00001$ .",
+        "incorrect": "تذكّر كيف تُقرأ القوة ثمّ اكتب كتابتها العشرية بعناية وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10^{-5} = \\dfrac{1}{10^{5}}$ والرقم 1 في الرتبة 5 بعد الفاصلة.",
+          "$10^{-5} = 0{,}00001$ ."
+        ],
+        "result": "0{,}00001"
+      }
+    }
+  ]
+}

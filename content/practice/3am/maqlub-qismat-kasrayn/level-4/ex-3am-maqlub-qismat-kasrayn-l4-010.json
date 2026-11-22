@@ -1,0 +1,227 @@
+{
+  "id": "ex-3am-maqlub-qismat-kasrayn-l4-010",
+  "lessonCode": "maqlub-qismat-kasrayn",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — إشارة الحاصل",
+    "estimatedMinutes": 9,
+    "tags": [
+      "قسمة",
+      "أعداد نسبية",
+      "كسر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب.",
+      "statement": "احسب $(-7) \\div 14$ .",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "-1/2",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كل سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$-\\dfrac{1}{2}$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$(-7) \\div 14 = -\\dfrac{7}{14} = -\\dfrac{1}{2}$ ."
+        ],
+        "result": "-\\dfrac{1}{2}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $\\left(-\\dfrac{5}{6}\\right) \\div \\left(-\\dfrac{10}{9}\\right)$ .",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "3/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كل سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{4}$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "حاصل قسمة عددين سالبين موجب: $\\dfrac{5}{6} \\div \\dfrac{10}{9} = \\dfrac{5}{6} \\times \\dfrac{9}{10} = \\dfrac{3}{4}$ ."
+        ],
+        "result": "\\dfrac{3}{4}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "احسب.",
+      "statement": "احسب $\\dfrac{5}{6} \\div \\dfrac{10}{9}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "3/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "25/27",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "4/3",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "27/25",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ الكسرين هو المقسوم وأيّهما المقسوم عليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني: نقلب المقسوم عليه وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء، اختزل العوامل المشتركة قبل الضرب، ثمّ اكتب الناتج على أبسط شكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{5}{6} \\div \\dfrac{10}{9} = \\dfrac{3}{4}$ لأنّ قسمة كسر على كسر هي ضرب الأوّل في مقلوب الثاني.",
+        "incorrect": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني فقط، ثمّ نختزل؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $\\dfrac{5}{6} \\div \\dfrac{10}{9} = \\dfrac{5}{6} \\times \\dfrac{9}{10}$ .",
+          "$= \\dfrac{5 \\times 9}{6 \\times 10} = \\dfrac{3}{4}$ ."
+        ],
+        "result": "\\dfrac{3}{4}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "lead": "برّر.",
+      "statement": "لماذا يساوي $\\left(-\\dfrac{5}{6}\\right) \\div \\left(-\\dfrac{10}{9}\\right)$ العدد $\\dfrac{5}{6} \\div \\dfrac{10}{9}$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجب أن تبرّره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل تعريف المقلوب (جداء العدد ومقلوبه) أو القسمة بالضرب في المقلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "عددان سالبان حاصل قسمتهما موجب، فنقسم القيمتين المطلقتين.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "حاصل قسمة عددين لهما الإشارة نفسها موجب.",
+          "فنقسم القيمتين المطلقتين: $\\dfrac{5}{6} \\div \\dfrac{10}{9} = \\dfrac{3}{4}$ ."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

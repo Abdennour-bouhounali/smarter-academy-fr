@@ -1,0 +1,463 @@
+{
+  "id": "ex-4am-mafhum-taalufiya-l5-002",
+  "lessonCode": "mafhum-taalufiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2007 — حرفيّان لتصليح الأجهزة الكهرومنزلية بسطيف",
+    "estimatedMinutes": 25,
+    "tags": [
+      "وضعية إدماجية",
+      "تسعيرتان",
+      "جدول"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mafhum-taalufiya_P3",
+      "modelledOn": "BEM 2007 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2007",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "لتصليح الأجهزة الكهرومنزلية في المنازل، يقترح حرفيّان بسطيف يشتهران بالإتقان والأمانة التسعيرتين الآتيتين:\n– الحرفي الأول: 900DA لساعة العمل الواحدة.\n– الحرفي الثاني: 600DA لساعة العمل، يضاف إليها 1200DA مصاريف التنقل مهما كانت مدة العمل.",
+    "table": {
+      "head": [
+        "مدة العمل (بالساعات)",
+        "2",
+        "…"
+      ],
+      "rows": [
+        [
+          "المبلغ حسب الحرفي الأول (DA)",
+          "…",
+          "…"
+        ],
+        [
+          "المبلغ حسب الحرفي الثاني (DA)",
+          "…",
+          "6000"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انقل الجدول وأكمله.",
+      "statement": "المبلغ حسب الحرفي الأول من أجل ساعتين:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "1800",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ = ثمن الساعة × عدد الساعات."
+        }
+      ],
+      "feedback": {
+        "correct": "$900 \\times 2 = 1800$ .",
+        "incorrect": "اضرب عدد الساعات في ثمن الساعة."
+      },
+      "solution": {
+        "lines": [
+          "$900 \\times 2 = 1800$"
+        ],
+        "result": "1800DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "المبلغ حسب الحرفي الثاني من أجل ساعتين:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "2400",
+      "misconceptionSignatures": [
+        {
+          "value": "1200",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا تنسَ مصاريف التنقل."
+        }
+      ],
+      "feedback": {
+        "correct": "$600 \\times 2 + 1200 = 2400$ .",
+        "incorrect": "اضرب عدد الساعات في 600، ثم أضف مصاريف التنقل."
+      },
+      "solution": {
+        "lines": [
+          "$g(2) = 600 \\times 2 + 1200$",
+          "$g(2) = 1200 + 1200$",
+          "$g(2) = 2400$ أي $2400DA$ ."
+        ],
+        "result": "2400DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "مدة العمل التي يكون من أجلها المبلغ حسب الحرفي الثاني 6000DA :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: مدة العمل بالساعات",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-TAALUFI-SABIQ-QISMA"
+        },
+        {
+          "value": "-1190",
+          "id": "MISC-TAALUFI-SABIQ-TARTIB"
+        },
+        {
+          "value": "3601200",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح مصاريف التنقل من المبلغ أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اقسم على ثمن الساعة."
+        }
+      ],
+      "feedback": {
+        "correct": "$(6000 - 1200) \\div 600 = 8$ .",
+        "incorrect": "اطرح مصاريف التنقل أولا، ثم اقسم على 600."
+      },
+      "solution": {
+        "lines": [
+          "$g(x) = 6000$ معناه $600x + 1200 = 6000$",
+          "$600x = 6000 - 1200$",
+          "$600x = 4800$",
+          "$x = \\dfrac{4800}{600}$",
+          "$x = 8$"
+        ],
+        "result": "8"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "statement": "المبلغ حسب الحرفي الأول من أجل هذه المدة:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "7200",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل المدة التي وجدتها في العمود الأخير."
+        }
+      ],
+      "feedback": {
+        "correct": "$900 \\times 8 = 7200$ .",
+        "incorrect": "اضرب المدة التي وجدتها في 900."
+      },
+      "solution": {
+        "lines": [
+          "$900 \\times 8 = 7200$"
+        ],
+        "result": "7200DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ا",
+      "lead": "ليكن $x$ مدة العمل بالساعات، و $f(x)$ ، $g(x)$ المبلغين المدفوعين للحرفيين الأول والثاني على الترتيب.\nعبّر عن $g(x)$ بدلالة $x$ على الشكل $g(x) = ax + b$ .",
+      "statement": "أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "600",
+      "misconceptionSignatures": [
+        {
+          "value": "1200",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المبلغ الذي يُدفع عن كل ساعة عمل؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 600$ : هو معامل $x$ .",
+        "incorrect": "المعامل $a$ هو العدد المضروب في $x$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 900x$ و $g(x) = 600x + 1200$ .",
+          "$g(x) = 600x + 1200$ من الشكل $ax + b$ حيث: $a = 600$ و $b = 1200$ ."
+        ],
+        "result": "a = 600"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "1200",
+      "misconceptionSignatures": [
+        {
+          "value": "600",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المبلغ الذي يُدفع مهما كانت مدة العمل؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$b = 1200$ ، إذن $g(x) = 600x + 1200$ .",
+        "incorrect": "$b$ هو الحدّ الذي لا يحتوي على $x$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 900x$ و $g(x) = 600x + 1200$ .",
+          "$g(x) = 600x + 1200$ من الشكل $ax + b$ حيث: $a = 600$ و $b = 1200$ ."
+        ],
+        "result": "b = 1200"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q7",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما نوع الدالة $g$ ؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "دالة خطية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAALUFI-KHATTIYA-KHALT"
+        },
+        {
+          "id": "B",
+          "content": "دالة ثابتة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAALUFI-THABITA"
+        },
+        {
+          "id": "C",
+          "content": "دالة تآلفية ليست خطية وليست ثابتة",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب عبارة الدالة على الشكل $ax + b$ إن أمكن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الدالة الخطية: $b = 0$ ؛ الدالة الثابتة: $a = 0$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 600$ و $b = 1200$ كلاهما غير معدوم.",
+        "incorrect": "قارن المعاملين $a$ و $b$ بالعدد 0."
+      },
+      "solution": {
+        "lines": [
+          "$g(x) = 600x + 1200$ : $a = 600 \\neq 0$ و $b = 1200 \\neq 0$ .",
+          "إذن $g$ دالة تآلفية ليست خطية (و $f(x) = 900x$ دالة خطية)."
+        ],
+        "result": "دالة تآلفية ليست خطية وليست ثابتة"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q8",
+      "step": "03",
+      "sub": "ا",
+      "statement": "جد مدة العمل التي يكون من أجلها المبلغان متساويين.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: مدة العمل بالساعات",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المعادلة $f(x) = g(x)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الحدود التي فيها $x$ في طرف واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$900x = 600x + 1200$ يعطي $300x = 1200$ .",
+        "incorrect": "حلّ المعادلة $900x = 600x + 1200$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = g(x)$ معناه $900x = 600x + 1200$",
+          "$300x = 1200$",
+          "$x = 4$",
+          "من أجل 4 ساعات يتساوى المبلغان: $f(4) = g(4) = 3600$ ."
+        ],
+        "result": "4\\,h"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q9",
+      "step": "03",
+      "sub": "ب",
+      "statement": "☜ دامت عملية تصليح ثلاث ساعات ونصف. أيّ الحرفيين يختار صاحب المنزل ليدفع أقل؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الحرفي الأول",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الحرفي الثاني",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TANASUB-MABLAGH-THABIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المبلغين من أجل $x = 3{,}5$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر أصغرهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(3{,}5) = 3150$ و $g(3{,}5) = 3300$ .",
+        "incorrect": "احسب $f(3{,}5)$ و $g(3{,}5)$ ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "$f(3{,}5) = 900 \\times 3{,}5 = 3150$",
+          "$g(3{,}5) = 600 \\times 3{,}5 + 1200 = 3300$",
+          "$3150 < 3300$ : يختار الحرفي الأول (المدة أقل من 4 ساعات)."
+        ],
+        "result": "الحرفي الأول"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

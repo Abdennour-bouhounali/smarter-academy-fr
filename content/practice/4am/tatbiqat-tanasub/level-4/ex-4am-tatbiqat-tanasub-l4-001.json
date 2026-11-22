@@ -1,0 +1,177 @@
+{
+  "id": "ex-4am-tatbiqat-tanasub-l4-001",
+  "lessonCode": "tatbiqat-tanasub",
+  "level": 4,
+  "metadata": {
+    "title": "طرائق — الخزان",
+    "estimatedMinutes": 7,
+    "tags": [
+      "تغيّران متتابعان"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-percent",
+      "page": 71,
+      "section": "طرائق",
+      "adaptedFrom": "ex-4am-tatbiqat-tanasub-l4-001"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "خزان ماء، يحرص صاحبه على عدم تبذير مائه، مملوء سعته $30m^3$ . أفرغنا 30% من محتواه، ثم أضفنا 15% ممّا بقي فيه."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب حجم الماء الباقي في الخزان بعد الإفراغ.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الحجم بـ $m^3$ (عدد فقط)",
+      "expectedAnswer": "21",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الإفراغ بـ 30% ضرب في $1 - \\dfrac{30}{100}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $30 \\times 0{,}7$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$30 \\times 0{,}7 = 21m^3$ .",
+        "incorrect": "بعد إفراغ 30% يبقى 70% من الماء."
+      },
+      "solution": {
+        "lines": [
+          "$30 \\times \\left(1 - \\dfrac{30}{100}\\right) = 30 \\times 0{,}7 = 21$",
+          "بقي في الخزان $21m^3$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب حجم الماء الذي أصبح في الخزان.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الحجم بـ $m^3$ (عدد عشري بالفاصلة)",
+      "expectedAnswer": "24,15",
+      "misconceptionSignatures": [
+        {
+          "value": "25,5",
+          "id": "MISC-NISBA-TATABU-JAM"
+        },
+        {
+          "value": "3,15",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الإضافة بـ 15% تُحسب ممّا بقي في الخزان، لا من سعته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الزيادة بـ 15% ضرب في $1 + \\dfrac{15}{100}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$21 \\times 1{,}15 = 24{,}15m^3$ .",
+        "incorrect": "اضرب الحجم الباقي في مضاعف الزيادة."
+      },
+      "solution": {
+        "lines": [
+          "$21 \\times \\left(1 + \\dfrac{15}{100}\\right) = 21 \\times 1{,}15$",
+          "$= 24{,}15$",
+          "أصبح في الخزان $24{,}15m^3$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب النسبة المئوية للتغيّر الكلي لحجم الماء في الخزان.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب النسبة $t$ فقط دون الرمز %، مسبوقة بالإشارة − إن كان التغيّر انخفاضًا",
+      "expectedAnswer": "-19,5",
+      "misconceptionSignatures": [
+        {
+          "value": "-15",
+          "id": "MISC-NISBA-TATABU-JAM"
+        },
+        {
+          "value": "19,5",
+          "id": "MISC-NISBA-TATABU-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التغيّران المتتابعان يُترجمان بجداء المضاعفين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الجداء بالعدد 1 ، أو قارن الحجم الأخير بـ $30m^3$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}7 \\times 1{,}15 = 0{,}805 = 1 - \\dfrac{19{,}5}{100}$ : انخفاض بنسبة $19{,}5\\%$ .",
+        "incorrect": "النسب المتتابعة لا تُجمع: احسب جداء المضاعفين."
+      },
+      "solution": {
+        "lines": [
+          "المضاعف الكلي: $0{,}7 \\times 1{,}15 = 0{,}805$",
+          "$0{,}805 = 1 - 0{,}195 = 1 - \\dfrac{19{,}5}{100}$",
+          "نقص حجم الماء بنسبة $19{,}5\\%$ ."
+        ],
+        "result": "t = -19{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

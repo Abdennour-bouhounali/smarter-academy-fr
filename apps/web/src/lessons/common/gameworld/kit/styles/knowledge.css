@@ -1,0 +1,547 @@
+/* ───────── « خريطة المعارف »: the full page ───────── */
+.di-page {
+  position: absolute;
+  inset: 0;
+  z-index: 12;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 1rem 1.2rem 1.1rem;
+  background: radial-gradient(ellipse at 30% 0%, #1c3a8a 0%, #0b1740 45%, #060d26 100%);
+  color: #f4f8ff;
+  animation: di-fade 0.3s;
+  user-select: text;
+}
+.di-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: radial-gradient(1.5px 1.5px at 12% 22%, #fff, transparent),
+    radial-gradient(1px 1px at 37% 71%, #fff, transparent), radial-gradient(1.5px 1.5px at 64% 14%, #fff, transparent),
+    radial-gradient(1px 1px at 83% 58%, #fff, transparent), radial-gradient(1px 1px at 52% 88%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 91% 9%, #fff, transparent), radial-gradient(1px 1px at 6% 80%, #fff, transparent);
+}
+.di-page__head {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.di-page__head > div:first-child {
+  flex: 1;
+  min-width: 0;
+}
+.di-page__head h2 {
+  margin: 0;
+  font-size: 1.7rem;
+  font-weight: 900;
+}
+.di-page__head p {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+.di-pill--gold {
+  border-color: #fbbf24;
+  color: #fde68a;
+}
+.di-page__body {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1.75fr 1fr;
+  gap: 1rem;
+}
+.di-kmap {
+  position: relative;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  overflow: hidden;
+}
+/* everything the map draws sits in ONE layer, so the whole map can be scaled at once (see « is-training ») */
+.di-kmap__in {
+  position: absolute;
+  inset: 0;
+}
+.di-kmap__in > svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.di-kmap line {
+  stroke: rgba(255, 255, 255, 0.16);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+.di-kmap line.is-dashed {
+  stroke-dasharray: 5 9;
+}
+.di-kmap line.is-lit {
+  stroke: rgba(125, 252, 255, 0.75);
+}
+.di-kmap__edge {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  padding: 0 0.5rem;
+  border-radius: 999px;
+  background: #0d1a45;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #cbd5e1;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.di-knode {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  /* its own width, whatever room is left to its right: a card placed at 83 % was squeezed to the 17 % that remained and
+     its name was cut */
+  width: max-content;
+  max-width: 12.5rem;
+  padding: 0.32rem 0.7rem 0.32rem 0.45rem;
+  border-radius: 999px;
+  border: 2px solid rgba(125, 252, 255, 0.55);
+  background: linear-gradient(#22408f, #142a66);
+  color: #fff;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: start;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+.di-knode:hover {
+  transform: translate(-50%, -50%) scale(1.06);
+}
+.di-knode__icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  font-size: 1.05rem;
+}
+.di-knode__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+  min-width: 0;
+}
+.di-knode__text small {
+  font-size: 0.64rem;
+  font-weight: 700;
+  opacity: 0.75;
+}
+.di-knode__text strong {
+  font-size: 0.84rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+.di-knode {
+  border-radius: 1.4rem;
+}
+.di-knode--guide {
+  border-color: rgba(167, 243, 208, 0.6);
+  background: linear-gradient(#1f5c5a, #153f47);
+}
+.di-knode--mistake {
+  border-color: rgba(251, 146, 60, 0.8);
+  background: linear-gradient(#7c3a1d, #4c2413);
+}
+.di-knode.is-locked {
+  border-style: dashed;
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.05);
+  color: #94a3b8;
+  box-shadow: none;
+}
+.di-knode.is-sel {
+  box-shadow:
+    0 0 0 4px rgba(251, 191, 36, 0.55),
+    0 0 26px rgba(251, 191, 36, 0.6);
+  border-color: #fbbf24;
+}
+.di-knode.is-gold {
+  border-color: #fbbf24;
+  background: linear-gradient(#9a6a12, #5b3a06);
+}
+.di-knode__tick {
+  position: absolute;
+  top: -7px;
+  inset-inline-start: -5px;
+  display: grid;
+  place-items: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  background: #34d399;
+  color: #06261a;
+}
+.di-knode.is-gold .di-knode__tick {
+  background: #fbbf24;
+  color: #3b2a06;
+}
+/* the legend stands in the one corner no card uses (top, left), one family per line: at the bottom it ran over the
+   last cards as soon as the map got narrower (the panel widens for « تدرّب ») */
+.di-kmap__legend {
+  position: absolute;
+  top: 0.6rem;
+  left: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.22rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #cbd5e1;
+}
+.di-kmap__legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.di-kmap__legend i {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: #2b55c0;
+}
+.di-kmap__legend .is-guide i {
+  background: #2b8a80;
+}
+.di-kmap__legend .is-mistake i {
+  background: #c2622d;
+}
+.di-kpanel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-height: 0;
+  padding: 1rem 1.1rem;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1.5px solid rgba(125, 252, 255, 0.35);
+}
+.di-kpanel--mistake {
+  border-color: rgba(251, 146, 60, 0.7);
+}
+.di-kpanel--guide {
+  border-color: rgba(167, 243, 208, 0.5);
+}
+.di-kpanel__head {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+}
+.di-kpanel__head > span {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 1.8rem;
+}
+.di-kpanel__head small {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #7dfcff;
+}
+.di-kpanel__head h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: inherit;
+  line-height: 1.5;
+}
+.di-kpanel__head p {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+.di-kpanel__body {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+}
+.di-tabs {
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.25rem;
+  border-radius: 0.9rem;
+  background: rgba(0, 0, 0, 0.25);
+}
+.di-tabs button {
+  flex: 1;
+  padding: 0.35rem 0.4rem;
+  border: 0;
+  border-radius: 0.7rem;
+  background: none;
+  color: #cbd5e1;
+  font:
+    800 0.88rem 'Cairo',
+    sans-serif;
+  cursor: pointer;
+}
+.di-tabs button.is-on {
+  background: #fbbf24;
+  color: #3b2a06;
+}
+.di-ctx p,
+.di-parts p {
+  margin: 0 0 0.5rem;
+  font-size: 1.02rem;
+  line-height: 1.85;
+}
+.di-ctx ul {
+  margin: 0 0 0.5rem;
+  padding-inline-start: 1.1rem;
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+.di-ctx__formula {
+  margin: 0.4rem 0;
+  padding: 0.5rem;
+  border-radius: 0.9rem;
+  background: rgba(0, 0, 0, 0.25);
+  text-align: center;
+  font-size: 1.25rem;
+}
+.di-ctx__note {
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.9rem;
+  background: rgba(125, 252, 255, 0.08);
+  border-inline-start: 4px solid #7dfcff;
+  font-weight: 600;
+}
+.di-parts {
+  display: grid;
+  gap: 0.5rem;
+}
+.di-parts > div {
+  padding: 0.55rem 0.8rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.06);
+}
+.di-parts small {
+  font-size: max(var(--di-min-font, 12px), 0.74rem);
+  font-weight: 800;
+  opacity: 0.85;
+}
+.di-parts p {
+  margin: 0;
+}
+.di-parts .is-wrong {
+  border-inline-start: 4px solid #fb923c;
+}
+.di-parts .is-wrong small {
+  color: #fdba74;
+}
+.di-parts .is-why {
+  border-inline-start: 4px solid #7dfcff;
+}
+.di-parts .is-right {
+  border-inline-start: 4px solid #34d399;
+}
+.di-parts .is-right small {
+  color: #6ee7b7;
+}
+.di-memo {
+  margin: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+.di-memo > div {
+  padding: 0.45rem 0.8rem;
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.06);
+}
+.di-memo dt {
+  font-size: max(var(--di-min-font, 12px), 0.74rem);
+  font-weight: 800;
+  color: #7dfcff;
+}
+.di-memo dd {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.7;
+}
+.di-memo .is-rule dd {
+  font-size: 1.4rem;
+  text-align: center;
+}
+.di-memo .is-trap {
+  background: rgba(251, 146, 60, 0.12);
+}
+.di-memo .is-trap dt {
+  color: #fdba74;
+}
+.di-memo .is-exam dt {
+  color: #fde68a;
+}
+.di-quiz {
+  display: grid;
+  gap: 0.6rem;
+}
+.di-quiz__q p {
+  margin: 0 0 0.3rem;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.di-quiz__q > div {
+  display: grid;
+  gap: 0.3rem;
+}
+.di-quiz__q button {
+  padding: 0.4rem 0.7rem;
+  border-radius: 0.8rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font:
+    600 0.95rem/1.6 'Cairo',
+    sans-serif;
+  text-align: start;
+  cursor: pointer;
+}
+.di-quiz__q button.is-on {
+  border-color: #7dfcff;
+  background: rgba(125, 252, 255, 0.16);
+}
+.di-quiz__q button.is-ok {
+  border-color: #34d399;
+  background: rgba(52, 211, 153, 0.2);
+}
+.di-quiz__q button.is-ko {
+  border-color: #fb923c;
+  background: rgba(251, 146, 60, 0.16);
+}
+.di-quiz__gold {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0.4rem;
+  border-radius: 0.9rem;
+  background: rgba(251, 191, 36, 0.18);
+  color: #fde68a;
+  font-weight: 800;
+}
+.di-title__doors {
+  margin-top: 0;
+  gap: 0.6rem;
+}
+@media (max-width: 1100px) {
+  .di-page__body {
+    grid-template-columns: 1.45fr 1fr;
+  }
+  .di-knode {
+    max-width: 8.6rem;
+    padding: 0.25rem 0.5rem 0.25rem 0.3rem;
+    gap: 0.3rem;
+  }
+  .di-knode__icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    font-size: 0.9rem;
+  }
+  .di-knode__text strong {
+    font-size: 0.72rem;
+  }
+  .di-kmap__edge {
+    font-size: 0.62rem;
+    padding: 0 0.35rem;
+  }
+  .di-page__head p {
+    display: none;
+  }
+}
+
+/* ───────── THE 12 PX FLOOR on the map (GAME_WORLD.md « 12 px floor »; 2026-11-19 — the map is no longer exempt) ─────────
+   Every text the map draws is `max(var(--di-min-font, 12px), its size)`. `KnowledgePage` sets `--di-page-floor` on the
+   page's zoomed box (12 px ÷ its zoom: the page zooms itself to ×1…×1.8); while « تدرّب » is open the map is zoomed again
+   (×0.84 above 1100 px, `trainer.css`), so its floor is divided by that too. The rules below carry `.di-kmap` in front:
+   they win over the unfloored sizes of `knowledgeJourney.css` and `trainer.css`, loaded after this file. Below 1101 px
+   the cards were drawn at 10–11.5 px: they are now 12 px, and the card keeps its footprint by a smaller icon and padding. */
+.di-page__fit {
+  --di-min-font: var(--di-page-floor, 12px);
+}
+@media (min-width: 1101px) {
+  .di-page__body.is-training .di-kmap__in {
+    --di-min-font: calc(var(--di-page-floor, 12px) / 0.84);
+  }
+}
+.di-kmap .di-kmap__edge {
+  font-size: max(var(--di-min-font, 12px), 0.7rem);
+}
+.di-kmap .di-knode__text small {
+  font-size: max(var(--di-min-font, 12px), 0.64rem);
+}
+.di-kmap .di-knode__text strong {
+  font-size: max(var(--di-min-font, 12px), 0.84rem);
+}
+.di-kmap .di-kmap__legend {
+  font-size: max(var(--di-min-font, 12px), 0.72rem);
+}
+.di-kmap .di-knode__stars {
+  bottom: -11px;
+  font-size: max(var(--di-min-font, 12px), 0.6rem);
+  line-height: 1.3;
+}
+@media (min-width: 1101px) {
+  .di-kmap .di-kmap__edge {
+    font-size: max(var(--di-min-font, 12px), 0.8rem);
+  }
+  .di-kmap .di-knode__text small {
+    font-size: max(var(--di-min-font, 12px), 0.76rem);
+  }
+  .di-kmap .di-knode__text strong {
+    font-size: max(var(--di-min-font, 12px), 1rem);
+  }
+  .di-kmap .di-kmap__legend {
+    font-size: max(var(--di-min-font, 12px), 0.82rem);
+  }
+}
+@media (max-width: 1100px) {
+  /* 12 px text in the same footprint: the icon, the padding and the gaps give back what the text takes */
+  .di-kmap .di-knode {
+    padding: 0.2rem 0.45rem 0.2rem 0.25rem;
+    gap: 0.25rem;
+  }
+  .di-kmap .di-knode__icon {
+    width: 1.4rem;
+    height: 1.4rem;
+    font-size: 0.8rem;
+  }
+  .di-kmap .di-knode__text {
+    line-height: 1.15;
+  }
+  .di-kmap .di-knode__text strong {
+    line-height: 1.25;
+  }
+  .di-kmap .di-kmap__edge {
+    font-size: max(var(--di-min-font, 12px), 0.62rem);
+    padding: 0 0.3rem;
+    line-height: 1.35;
+  }
+  .di-kmap .di-kmap__legend {
+    font-size: max(var(--di-min-font, 12px), 0.72rem);
+    gap: 0.1rem;
+  }
+}

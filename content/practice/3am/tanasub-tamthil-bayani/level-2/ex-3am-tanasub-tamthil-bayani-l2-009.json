@@ -1,0 +1,220 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l2-009",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 2,
+  "metadata": {
+    "title": "كتلة الوقود بدلالة حجمه",
+    "estimatedMinutes": 9,
+    "tags": [
+      "تمثيل بياني",
+      "معامل التناسبية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-1a",
+      "page": 91,
+      "section": "طرائق"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يملأ عمّال البلدية خزانات الآلات بالوقود، ويريدون معرفة كتلة الوقود بدلالة حجمه. يمثّل المستقيم $(D)$ في المعلم التالي الكتلة $m$ (بالكيلوغرام) بدلالة الحجم $V$ (باللتر)، وهو يشمل المبدأ $O$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          4,
+          3
+        ]
+      },
+      "lines": [
+        {
+          "through": [
+            "O",
+            "A"
+          ],
+          "name": "(D)",
+          "tone": "indigo",
+          "extend": [
+            0,
+            1
+          ]
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw",
+        "A": "se"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس: مستقيم (D) يشمل المبدأ O والنقطة A(4;3) ويمتد حتى النقطة (8;6)",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: الحجم V باللتر — محور التراتيب: الكتلة m بالكيلوغرام"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بقراءة بيانية، ما كتلة $2$ L من هذا الوقود؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الكتلة بالكيلوغرام",
+      "expectedAnswer": "1.5",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-TAMTHIL-SWAP-XY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ من العدد $2$ على المحور الأفقي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اصعد إلى المستقيم واقرأ الترتيب، ولاحظ أنّه يقع بين تدريجين."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة من $(D)$ التي فاصلتها $2$ ترتيبها $1{,}5$ .",
+        "incorrect": "اقرأ الترتيب على المحور العمودي عند الفاصلة $2$ على المستقيم نفسه."
+      },
+      "solution": {
+        "lines": [
+          "النقطة من $(D)$ التي فاصلتها $2$ ترتيبها $1{,}5$ ، إذن كتلة $2$ L هي $1{,}5$ kg."
+        ],
+        "result": "1{,}5\\ \\text{kg}"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أيّ مساواة تعبّر عن $m$ بدلالة $V$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$V = 0{,}75\\,m$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-COEF-INVERSE"
+        },
+        {
+          "id": "B",
+          "content": "$m = 0{,}75\\,V$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$m = V - 1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ إحداثيي النقطة $A$ ثم احسب معامل التناسبية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكتلة هي الحجم مضروبا في المعامل."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 3 \\div 4 = 0{,}75$ ، إذن $m = 0{,}75\\,V$ .",
+        "incorrect": "احسب المعامل $m \\div V$ ثم اكتب $m = a \\times V$ ."
+      },
+      "solution": {
+        "lines": [
+          "النقطة $A(4\\,;\\,3)$ من $(D)$ : $a = \\dfrac{3}{4} = 0{,}75$ .",
+          "إذن $m = 0{,}75\\,V$ ."
+        ],
+        "result": "m = 0{,}75\\,V"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب حجم $10{,}5$ kg من هذا الوقود باللتر.",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الحجم باللتر",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "value": "7.875",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        },
+        {
+          "value": "11.5",
+          "id": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل $m = 0{,}75\\,V$ وعوّض $m$ بالعدد المعلوم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لإيجاد $V$ اقسم على معامل التناسبية."
+        }
+      ],
+      "feedback": {
+        "correct": "$V = 10{,}5 \\div 0{,}75 = 14$ L.",
+        "incorrect": "لإيجاد الحجم نقسم الكتلة على $0{,}75$ ولا نضربها فيه."
+      },
+      "solution": {
+        "lines": [
+          "$10{,}5 = 0{,}75 \\times V$",
+          "$V = \\dfrac{10{,}5}{0{,}75} = 14$ L."
+        ],
+        "result": "14\\ \\text{L}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

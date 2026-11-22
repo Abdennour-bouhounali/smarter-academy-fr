@@ -1,0 +1,132 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l2-009",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2023 — A = 476/4",
+    "estimatedMinutes": 4,
+    "tags": [
+      "قواسم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qawasim-adad-tabii_P3",
+      "modelledOn": "BEM 2023 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد A حيث:",
+    "formulas": [
+      "A = \\dfrac{476}{4}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب العدد A على شكل عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "119",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ قسمة 476 على 4."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق أن الباقي معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$476 = 4 \\times 119$.",
+        "incorrect": "اقسم 476 على 4 وتحقّق أن الباقي معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$4 \\times 119 = 476$",
+          "إذن A عدد طبيعي."
+        ],
+        "result": "A = 119"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عيّن كل قواسم العدد A.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        7,
+        17,
+        119
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            7,
+            17
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 119 بمربعات الأعداد: إلى أي عدد يكفي أن تختبر قابلية القسمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل قسمة باقيها معدوم تعطي قاسمين: $d$ و $119 \\div d$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$119 = 1 \\times 119$ ، $119 = 7 \\times 17$.",
+        "incorrect": "اختبر الأعداد التي مربعها أصغر من العدد أو يساويه، وخذ من كل قسمة باقيها معدوم القاسمين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$10^2 = 100 \\leq 119 < 121 = 11^2$ ومنه نختبر قابلية قسمة 119 على الأعداد من 1 إلى 10.",
+          "نجد أن 119 يقبل القسمة على كل من الأعداد: 1 ، 7.",
+          "ومن المساويات: $119 = 1 \\times 119$ ، $119 = 7 \\times 17$",
+          "إذن قواسم العدد 119 هي: 1 ، 7 ، 17 ، 119."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    }
+  ]
+}

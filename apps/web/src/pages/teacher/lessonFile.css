@@ -1,0 +1,26 @@
+/* « ملفّ الدرس » (LessonFilePage.jsx): the lab's whiteboard on the lesson's own full-screen page, in the calm palette of the
+   teacher's screens — white, dark ink, one dark tone for what is pressed; the lab's blue accents are replaced here only. */
+.lf-stage { color: #0f172a; }
+.lf-wait { display: grid; place-items: center; gap: .6rem; min-height: 60vh; font-family: 'Cairo', 'Tajawal', system-ui, sans-serif; font-size: 1.1rem; font-weight: 800; color: #475569; } .lf-wait a { color: #0f172a; text-decoration: underline; }
+.lf-stage .text-blue-500, .lf-stage .text-blue-600 { color: #3b5bdb !important; }
+.lf-stage .sa-ml-btn--primary { background: #3b5bdb !important; border-color: #3b5bdb !important; color: #fff !important; } .lf-stage .sa-ml-btn--primary:hover { background: #334155 !important; }
+.lf-stage .sa-ml-bar { background: #fff; border-color: #e2e8f0; }
+/* inside the teacher's space: the common header of the lesson's tools STAYS above the whiteboard. The lab's shell is one
+   viewport tall by itself, which pushed the header out of the screen (owner, 2026-11-18: « the header appears for a second
+   then disappears »): here the page is exactly one viewport — the header, then the whiteboard in what is left. */
+.ltp[data-lesson-tool-page='file'] { display: flex; flex-direction: column; height: 100dvh; padding-bottom: 0; overflow: hidden; }
+.ltp[data-lesson-tool-page='file'] > .ltb { position: static; flex: none; margin-bottom: .4rem; }
+.ltp[data-lesson-tool-page='file'] > .ltp__body { flex: 1; min-height: 0; } .lf-stage { height: 100%; }
+.lf-stage .sa-ml-tool:not(.sa-ml-tool--wide) { height: 100%; min-height: 0; }
+/* under the laptop width the teacher's space has a top bar (3.5rem) and a bottom bar of tabs (5rem): the page is the
+   viewport LESS those, or the common header slid under the top bar */
+@media (max-width: 767px) { .ltp[data-lesson-tool-page='file'] { height: calc(100dvh - 3.5rem - 5rem); } }
+/* a phone held sideways: the whiteboard IS the screen — over the teacher space's bars, without the common header (the
+   whiteboard's own arrow goes back to the lesson). Upright, the page shows « أدِر هاتفك » under the header. */
+@media (max-height: 500px) and (pointer: coarse) {
+  .ltp[data-lesson-tool-page='file'] { position: fixed; inset: 0; z-index: 70; height: 100dvh; padding: 0; background: #fff; }
+  .ltp[data-lesson-tool-page='file'] > .ltb { display: none; }
+  /* the teacher space's own bars live in another stacking layer: hidden, not merely covered */
+  body:has(.ltp[data-lesson-tool-page='file']) [data-workspace-bar] { display: none; }
+}
+@media (max-width: 767px) and (orientation: portrait) and (pointer: coarse) { .ltp[data-lesson-tool-page='file'] { height: auto; overflow: visible; display: block; } }

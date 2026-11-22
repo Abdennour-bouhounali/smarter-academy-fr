@@ -1,0 +1,110 @@
+{
+  "id": "ex-4am-insihab-shuaa-l5-002",
+  "lessonCode": "insihab-shuaa",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — توصيل بالدرّاجة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الاتجاه"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_insihab-shuaa_P2",
+      "modelledOn": "know-1"
+    }
+  },
+  "statement": {
+    "content": "في تطبيق توصيل بوهران، رحلتان على خريطة مرصوفة (الشكل): من المطعم P إلى الزبون Q، ومن المطعم R إلى الزبون S.",
+    "figure": {
+      "points": {
+        "P": [
+          1,
+          1
+        ],
+        "Q": [
+          4,
+          2
+        ],
+        "R": [
+          7,
+          4
+        ],
+        "S": [
+          4,
+          3
+        ]
+      },
+      "grid": true,
+      "vectors": [
+        {
+          "from": "P",
+          "to": "Q",
+          "tone": "indigo"
+        },
+        {
+          "from": "R",
+          "to": "S",
+          "tone": "rose"
+        }
+      ],
+      "ariaLabel": "خريطة مرصوفة: السهم من P نحو Q والسهم من R نحو S",
+      "maxWidth": 420
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "هل الرحلتان ممثّلتان لنفس الشعاع؟",
+      "learningPoints": [
+        {
+          "code": "4am_insihab-shuaa_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا: نفس المنحى ونفس الطول لكن اتجاهان متعاكسان",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم: نفس الطول",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TUL-FAQAT"
+        },
+        {
+          "id": "C",
+          "content": "لا: المنحى مختلف",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MANHA-MUSTAQIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "على المرصوفة، عُدّ المربعات أفقيا ثم شاقوليا لكل سهم، مع الجهة (يمين / يسار، أعلى / أسفل)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "سهمان متساويان يعني نفس العدّ ونفس الجهة في الاتجاهين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب لكل سهم «كذا يمينا وكذا نحو الأعلى» ثم قارن."
+        }
+      ],
+      "feedback": {
+        "correct": "الأولى: 3 يمينا و 1 نحو الأعلى؛ الثانية: 3 يسارا و 1 نحو الأسفل: نفس المستقيم الحامل اتجاها، ونفس الطول، والجهة معاكسة.",
+        "incorrect": "اكتب حركة كل رحلة مع الجهة."
+      },
+      "difficulty": 5
+    }
+  ]
+}

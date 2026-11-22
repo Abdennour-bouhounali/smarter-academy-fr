@@ -1,0 +1,285 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l4-002",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — جدول القيم المقرّبة إلى 0,001",
+    "estimatedMinutes": 9,
+    "tags": [
+      "قسمة عشرية",
+      "جدول",
+      "حصر"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-74",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الحاصل $Q = 92 \\div 13$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "أنجز القسمة الإقليدية للعدد $92$ على $13$:",
+      "statement": "احسب حاصل القسمة الإقليدية للعدد $92$ على العدد $13$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أكبر عدد نضربه في المقسوم عليه دون أن يتجاوز المقسوم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي هو ما يبقى من المقسوم بعد طرح الجداء، وهو أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$92 = 13 \\times 7 + 1$ و $1 < 13$.",
+        "incorrect": "القسمة الإقليدية: المقسوم = المقسوم عليه × الحاصل + الباقي، والباقي أصغر من المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$92 = 13 \\times 7 + 1$",
+          "$1 < 13$"
+        ],
+        "result": "7"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب باقي القسمة الإقليدية للعدد $92$ على العدد $13$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أكبر عدد نضربه في المقسوم عليه دون أن يتجاوز المقسوم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي هو ما يبقى من المقسوم بعد طرح الجداء، وهو أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$92 = 13 \\times 7 + 1$ و $1 < 13$.",
+        "incorrect": "القسمة الإقليدية: المقسوم = المقسوم عليه × الحاصل + الباقي، والباقي أصغر من المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$92 = 13 \\times 7 + 1$",
+          "$1 < 13$"
+        ],
+        "result": "1"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "أكمل الجدول:",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}001$ بالنقصان للحاصل $Q$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "7.076",
+      "misconceptionSignatures": [
+        {
+          "value": "7.077",
+          "id": "MISC-QARIBA-ROUNDED"
+        },
+        {
+          "value": "7.0769",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالنقصان لا تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة دون أن تزيد شيئًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب القيمة في المقسوم عليه: يجب ألاّ يتجاوز الجداء المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$7{,}076 < \\frac{92}{13} < 7{,}077$.",
+        "incorrect": "بالنقصان: نحتفظ بالأرقام حتى الرتبة المطلوبة ونُهمل ما بعدها دون تغيير الرقم الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$13 \\times 7{,}076 = 91{,}988$",
+          "$13 \\times 7{,}077 = 92{,}001$",
+          "$91{,}988 < 92 < 92{,}001$"
+        ],
+        "result": "7{,}076"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}001$ بالزيادة للحاصل $Q$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "7.077",
+      "misconceptionSignatures": [
+        {
+          "value": "7.076",
+          "id": "MISC-QARIBA-SWAP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالزيادة هي أصغر قيمة من هذه الرتبة تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من القيمة بالنقصان ثم أضف وحدة واحدة من الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$7{,}076 < \\frac{92}{13} < 7{,}077$.",
+        "incorrect": "بالزيادة: هي القيمة التي تلي القيمة بالنقصان مباشرة في الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$13 \\times 7{,}077 = 92{,}001$",
+          "$92{,}001 > 92$",
+          "القيمة بالزيادة هي $7{,}077$"
+        ],
+        "result": "7{,}077"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "اختر الحصر الصحيح للحاصل $Q$ إلى $0{,}001$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$7{,}077 < Q < 7{,}078$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-ROUNDED"
+        },
+        {
+          "id": "B",
+          "content": "$7{,}076 < Q < 7{,}077$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$7{,}075 < Q < 7{,}076$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        },
+        {
+          "id": "D",
+          "content": "$7{,}078 < Q < 7{,}079$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحصر الصحيح: عددان متتاليان في الرتبة المطلوبة، الأوّل لا يتجاوز الحاصل والثاني يتجاوزه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ حصر بضرب طرفيه في المقسوم عليه ثم قارن بالمقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$7{,}076 < Q < 7{,}077$.",
+        "incorrect": "تحقّق من الطرفين: الأصغر لا يتجاوز الحاصل والأكبر يتجاوزه، وبينهما وحدة واحدة من الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$13 \\times 7{,}076 = 91{,}988 \\text{ و } 13 \\times 7{,}077 = 92{,}001$",
+          "$91{,}988 < 92 < 92{,}001$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

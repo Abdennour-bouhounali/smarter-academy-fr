@@ -1,0 +1,173 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-kusur-natiqa-l4-004",
+  "lessonCode": "wadiya-idmajiya-kusur-natiqa",
+  "level": 4,
+  "metadata": {
+    "title": "تبليط جدار",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مساحة",
+      "قسمة كسرين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الرابع",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "جدار مستطيل بُعداه $3$ m و $\\dfrac{9}{4}$ m يُكسى ببلاطات مربّعة طول ضلع كلّ منها $\\dfrac{3}{20}$ m ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب مساحة الجدار بالمتر المربّع .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "27/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم الشكل واكتب بُعديه عليه بالوحدة نفسها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحة المستطيل جداء بُعديه، ومساحة المثلث نصف جداء قاعدته في ارتفاعه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل النتيجة واذكر الوحدة المناسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{27}{4}$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times \\dfrac{9}{4} = \\dfrac{27}{4}$ m² ."
+        ],
+        "result": "\\dfrac{27}{4}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب مساحة بلاطة واحدة بالمتر المربّع .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "9/400",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم الشكل واكتب بُعديه عليه بالوحدة نفسها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحة المستطيل جداء بُعديه، ومساحة المثلث نصف جداء قاعدته في ارتفاعه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل النتيجة واذكر الوحدة المناسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{9}{400}$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{20} \\times \\dfrac{3}{20} = \\dfrac{9}{400}$ m² ."
+        ],
+        "result": "\\dfrac{9}{400}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "كم بلاطة يلزم لكسوة الجدار كلّه ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "300",
+      "misconceptionSignatures": [
+        {
+          "value": "243/1600",
+          "id": "MISC-AMAL-NOFLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نقسمه وما العدد الذي نقسم عليه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على كسر غير معدوم هي الضرب في مقلوبه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالضرب: ناتج القسمة في القاسم يعطي المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $300$ .",
+        "incorrect": "القسمة على كسر هي الضرب في مقلوبه؛ أعد الحساب بعناية."
+      },
+      "solution": {
+        "lines": [
+          "عدد البلاطات هو مساحة الجدار مقسومة على مساحة بلاطة:",
+          "$\\dfrac{27}{4} \\div \\dfrac{9}{400} = \\dfrac{27}{4} \\times \\dfrac{400}{9} = \\dfrac{10800}{36} = 300$ بلاطة ."
+        ],
+        "result": "300"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

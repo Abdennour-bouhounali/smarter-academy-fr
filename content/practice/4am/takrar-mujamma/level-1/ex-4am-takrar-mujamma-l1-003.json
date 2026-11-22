@@ -1,0 +1,161 @@
+{
+  "id": "ex-4am-takrar-mujamma-l1-003",
+  "lessonCode": "takrar-mujamma",
+  "level": 1,
+  "metadata": {
+    "title": "قامات 20 تلميذا",
+    "estimatedMinutes": 3,
+    "tags": [
+      "على الأقل",
+      "على الأكثر"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-1",
+      "page": 92,
+      "section": "أنشطة",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "تمثّل السلسلة الآتية أطوال قامات 20 تلميذا (بالسنتيمتر)، منظّمة في جدول تكراري:",
+    "table": {
+      "head": [
+        "القامة (cm)",
+        "154",
+        "157",
+        "159",
+        "160",
+        "165"
+      ],
+      "rows": [
+        [
+          "عدد التلاميذ",
+          "3",
+          "4",
+          "5",
+          "5",
+          "3"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما هو عدد التلاميذ الذين أطوال قاماتهم 159cm على الأقل؟",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-IHSA-SARAMA"
+        },
+        {
+          "value": "12",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«159cm على الأقل» تعني: 159cm أو أكثر؛ الحدّ نفسه داخل في العدّ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هذا العدد هو التكرار المجمع النازل: اجمع تكرار الحدّ وتكرارات ما بعده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حدّد في الجدول الأعمدة التي تحقّق الشرط، ثم اجمع تكراراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 + 5 + 3 = 13$ .",
+        "incorrect": "اقرأ الحدّ بعناية: هل هو داخل في العدّ أم لا؟ ثم اجمع تكرارات الأعمدة التي تحقّق الشرط فقط."
+      },
+      "solution": {
+        "lines": [
+          "القيم المعنية: 159، 160، 165 .",
+          "$5 + 5 + 3 = 13$"
+        ],
+        "result": "13"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هو عدد التلاميذ الذين أطوال قاماتهم 160cm على الأكثر؟",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "17",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-IHSA-SARAMA"
+        },
+        {
+          "value": "8",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«160cm على الأكثر» تعني: 160cm أو أقل؛ الحدّ نفسه داخل في العدّ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هذا العدد هو التكرار المجمع الصاعد: اجمع التكرارات من البداية حتى الحدّ مع تكراره."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حدّد في الجدول الأعمدة التي تحقّق الشرط، ثم اجمع تكراراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 + 4 + 5 + 5 = 17$ .",
+        "incorrect": "اقرأ الحدّ بعناية: هل هو داخل في العدّ أم لا؟ ثم اجمع تكرارات الأعمدة التي تحقّق الشرط فقط."
+      },
+      "solution": {
+        "lines": [
+          "القيم المعنية: 154، 157، 159، 160 .",
+          "$3 + 4 + 5 + 5 = 17$"
+        ],
+        "result": "17"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

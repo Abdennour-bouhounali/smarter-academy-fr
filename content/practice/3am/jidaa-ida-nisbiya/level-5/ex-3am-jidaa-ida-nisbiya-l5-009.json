@@ -1,0 +1,239 @@
+{
+  "id": "ex-3am-jidaa-ida-nisbiya-l5-009",
+  "lessonCode": "jidaa-ida-nisbiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مربّعات",
+    "estimatedMinutes": 10,
+    "tags": [
+      "مربع عدد",
+      "إشارة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان $C$ و $D$ حيث:",
+    "formulas": [
+      "C = (−1{,}2)^2 + (−0{,}8)^2",
+      "D = (−3)^2 \\times (−2)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب $C$ و $D$ .",
+      "statement": "احسب $C$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "2.08",
+      "misconceptionSignatures": [
+        {
+          "value": "-2.08",
+          "id": "MISC-IDA-SQUARENEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المربع $a^2$ هو الجداء $a \\times a$ : عاملان متساويان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عاملان متساويان إمّا موجبان معًا وإمّا سالبان معًا، فجداؤهما موجب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب المسافة إلى الصفر مضروبة في نفسها، ثم ضع الإشارة $+$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = 1{,}44 + 0{,}64 = 2{,}08$",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "$(−1{,}2)^2 = (−1{,}2) \\times (−1{,}2) = 1{,}44$ .",
+          "$(−0{,}8)^2 = (−0{,}8) \\times (−0{,}8) = 0{,}64$ .",
+          "$C = 1{,}44 + 0{,}64 = 2{,}08$"
+        ],
+        "result": "C = 2{,}08"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $D$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-18",
+      "misconceptionSignatures": [
+        {
+          "value": "18",
+          "id": "MISC-IDA-SQUARENEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المربع أولًا: $(−3)^2 = (−3) \\times (−3)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اضرب الناتج في $(−2)$ : عددان مختلفا الإشارة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ أنّ المربع موجب دائمًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$D = 9 \\times (−2) = −18$",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "$(−3)^2 = (−3) \\times (−3) = 9$ .",
+          "$D = 9 \\times (−2) = −18$"
+        ],
+        "result": "D = −18"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "مربّعات وإشارة.",
+      "statement": "هل يمكن أن يكون مجموع مربّعي عددين نسبيين سالبًا ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IDA-SQUARENEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المربع $a^2$ هو الجداء $a \\times a$ : عاملان متساويان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عاملان متساويان إمّا موجبان معًا وإمّا سالبان معًا، فجداؤهما موجب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب المسافة إلى الصفر مضروبة في نفسها، ثم ضع الإشارة $+$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "لا: مجموع مربّعين موجب أو معدوم.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "كل مربع موجب أو معدوم.",
+          "مجموع عددين موجبين أو معدومين موجب أو معدوم، إذن لا يكون سالبًا."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما أصغر قيمة ممكنة لمربع عدد نسبي ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المربع لا يكون سالبًا أبدًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يوجد عدد نسبي مربّعه $0$ ؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مربع العدد $0$ هو $0 \\times 0$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "والقيمة $0$ تُبلَغ حين يكون العدد $0$ ، إذن أصغر قيمة ممكنة هي $0$ .",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "كل مربع موجب أو معدوم.",
+          "والقيمة $0$ تُبلَغ حين يكون العدد $0$ ، إذن أصغر قيمة ممكنة هي $0$ ."
+        ],
+        "result": "0"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

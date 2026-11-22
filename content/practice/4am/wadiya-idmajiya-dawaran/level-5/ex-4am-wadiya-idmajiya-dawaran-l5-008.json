@@ -1,0 +1,158 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-dawaran-l5-008",
+  "lessonCode": "wadiya-idmajiya-dawaran",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — العجلة الكبيرة ذات 16 مقصورة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "الدوران",
+      "المسافة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-dawaran_P3",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "عجلة كبيرة في مدينة ألعاب، نصف قطرها $20\\,\\mathrm{m}$ ، تحمل 16 مقصورة متباعدة بنفس المسافة. يساعد الكبار الصغار على الصعود، فالتكافل خُلُق حسن."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الزاوية المركزية بين مقصورتين متتاليتين (بالدرجة، عدد عشري بالفاصلة):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة (بالدرجة)",
+      "expectedAnswer": "22.5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "16 قوسا متقايسة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تملأ دورة كاملة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$360^\\circ$ على 16."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{360^\\circ}{16} = 22{,}5^\\circ$ .",
+        "incorrect": "16 مقصورة على دائرة مغلقة: 16 قوسا."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "24",
+          "id": "MISC-MUNTAZAM-AMDA"
+        }
+      ],
+      "difficulty": 5
+    },
+    {
+      "id": "q2",
+      "statement": "المسافة المستقيمة بين مقصورتين متتاليتين بالمتر، مدوّرة إلى $0{,}01$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة (مدوّر إلى 0,01)",
+      "expectedAnswer": "7.8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث القائم: $11{,}25^\\circ$ عند المركز."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نصف المسافة $= 20\\sin 11{,}25^\\circ$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضاعف ثم دوّر."
+        }
+      ],
+      "feedback": {
+        "correct": "$d = 40\\sin 11{,}25^\\circ \\approx 7{,}80\\,\\mathrm{m}$ .",
+        "incorrect": "نصف الزاوية المركزية في المثلث القائم."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "15.31",
+          "id": "MISC-MUNTAZAM-NISF-ZAWIYA"
+        },
+        {
+          "value": "7.85",
+          "id": "MISC-MUNTAZAM-QAWS-WATAR"
+        }
+      ],
+      "difficulty": 5
+    },
+    {
+      "id": "q3",
+      "statement": "بعد أربعة دورانات متتالية من مقصورة إلى الموالية، كم درجة دارت العجلة؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "90",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل دوران بالزاوية المركزية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أربعة دورانات متتالية حول نفس المركز."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نضرب الزاوية في 4."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 22{,}5^\\circ = 90^\\circ$ : ربع دورة.",
+        "incorrect": "دورانات متتالية حول نفس المركز تتجمّع زواياها."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "22.5",
+          "id": "MISC-DAWARAN-KHAWAS"
+        }
+      ],
+      "difficulty": 5
+    }
+  ]
+}

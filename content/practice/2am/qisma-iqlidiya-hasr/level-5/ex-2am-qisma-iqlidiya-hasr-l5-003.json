@@ -1,0 +1,350 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l5-003",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — فرق الدورة الرياضية",
+    "estimatedMinutes": 18,
+    "tags": [
+      "فرق",
+      "مضاعف",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-79",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: سجّل 437 تلميذًا في دورة رياضية، ويريد المنظّمون تكوين فرق من 13 لاعبًا بروح رياضية.\nالجزء الثاني: يريد المنظّمون ألّا يبقى أيّ تلميذ خارج فريق كامل، فيدعون تلاميذ آخرين للانضمام."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "كم فريقًا كاملًا يمكن تكوينه؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الفرق",
+      "expectedAnswer": "33",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "32",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "value": "34",
+          "id": "MISC-HASR-IZAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 437 من 13 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 13 دون أن نتجاوز 437."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من 13."
+        }
+      ],
+      "feedback": {
+        "correct": "$437 = 13 \\times 33 + 8$ و $8 < 13$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 13 فلا يتجاوز الجداء 437، والباقي عندئذ أصغر من 13."
+      },
+      "solution": {
+        "lines": [
+          "$13 \\times 33 = 429$ و $13 \\times 34 = 442$",
+          "$429 \\le 437 < 442$ ، إذن الحاصل هو 33."
+        ],
+        "result": "q = 33"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كم تلميذًا يبقى خارج الفرق الكاملة؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد التلاميذ",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "33",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "21",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 437."
+        }
+      ],
+      "feedback": {
+        "correct": "$437 - 13 \\times 33 = 437 - 429 = 8$ ، و $8 < 13$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 13."
+      },
+      "solution": {
+        "lines": [
+          "$437 = 13 \\times 33 + 8$",
+          "$8 < 13$ ، إذن الباقي هو 8."
+        ],
+        "result": "r = 8"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "اختر الكتابة الصحيحة التي تحصر حاصل القسمة $\\frac{437}{13}$ بين عددين طبيعيين متتاليين (أو تعطيه إذا كان عددًا طبيعيًا).",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$33 < \\frac{437}{13} < 34$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$32 < \\frac{437}{13} < 33$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        },
+        {
+          "id": "C",
+          "content": "$8 < \\frac{437}{13} < 9$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 437 على 13."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من $13 \\times q \\le 437 < 13 \\times (q + 1)$ نقسم الأطراف على 13."
+        }
+      ],
+      "feedback": {
+        "correct": "$437 = 13 \\times 33 + 8$ والباقي غير معدوم، فـ $\\frac{437}{13}$ يقع تمامًا بين 33 و 34.",
+        "incorrect": "احصر 437 بين مضاعفين متتاليين للعدد 13 ثم اقسم على 13؛ وإذا كان الباقي معدومًا فحاصل القسمة عدد طبيعي."
+      },
+      "solution": {
+        "lines": [
+          "$437 = 13 \\times 33 + 8$",
+          "$13 \\times 33 < 437 < 13 \\times 34$ ، نقسم على 13: $33 < \\frac{437}{13} < 34$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "كم فريقًا يلزم لكي يلعب كل التلاميذ (الفريق الأخير قد لا يكتمل)؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد الفرق",
+      "expectedAnswer": "34",
+      "misconceptionSignatures": [
+        {
+          "value": "33",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "value": "8",
+          "id": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 437 على 13."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يبقى شيء بعد المجموعات الكاملة؟ ماذا نفعل به؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد اللازم هو القيمة المقرّبة إلى الوحدة بالزيادة عندما لا يكون الحاصل عددًا طبيعيًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$437 = 13 \\times 33 + 8$: 33 كاملة ويبقى 8، فيلزم 34.",
+        "incorrect": "لا تنسَ ما يبقى بعد المجموعات الكاملة: يحتاج هو أيضًا إلى مكان."
+      },
+      "solution": {
+        "lines": [
+          "$437 = 13 \\times 33 + 8$",
+          "$33 < \\frac{437}{13} < 34$ ، والباقي 8 يحتاج إلى واحدة أخرى: يلزم 34 (القيمة المقرّبة بالزيادة)."
+        ],
+        "result": "34"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "كم تلميذًا يجب أن ينضمّ لكي يكتمل الفريق الأخير؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم لاعبًا في الفريق الناقص؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كم ينقصه ليصبح 13؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$13 - 8 = 5$.",
+        "incorrect": "الفريق الناقص يضمّ الباقي؛ احسب ما ينقصه ليبلغ 13."
+      },
+      "solution": {
+        "lines": [
+          "$437 = 13 \\times 33 + 8$",
+          "$13 - 8 = 5$"
+        ],
+        "result": "5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "بعد انضمامهم يصبح العدد 442. هل يقبل 442 القسمة على 13؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-HISAB"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 442 على 13."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يقبل القسمة يعني: الباقي معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$442 = 13 \\times 34$ والباقي معدوم.",
+        "incorrect": "انظر إلى باقي القسمة الإقليدية: هل هو معدوم؟"
+      },
+      "solution": {
+        "lines": [
+          "$442 = 13 \\times 34 + 0$",
+          "الباقي معدوم، إذن 442 يقبل القسمة على 13."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,11 +1,54 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, lazy, Suspense } from 'react';
+import { useTranslation } from 'react-i18next';
 import ReactDOM from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Printer, ArrowLeft, Compass, FileText, Expand, ChevronUp, ChevronDown, Columns2 } from 'lucide-react';
+import { X, Printer, Compass, FileText, Expand, ChevronUp, ChevronDown, Columns2 } from 'lucide-react';
 import { useLessonViewport } from './useLessonViewport';
+import { IS_RTL } from '../../../locale.js';
 import { useWorkspaceLayout } from '../../../context/WorkspaceLayoutContext';
-import { buildStructure, progressionByModule, HIGHLIGHT_CAT } from './knowledgeStructure';
+import { buildStructure, progressionByModule } from './knowledgeStructure';
 import ConceptVisual from './ConceptVisual';
+import { useLessonKnowledge } from './KnowledgeProvider';
+import { Link } from 'react-router-dom';
+import { getLessonById } from '@smarter-academy/core';
+import { getLoadedLessonConfig, getModulePath } from '../../registry';
+import { useLearningProfile } from '../hooks/useLearningProfile';
+import { MASTERY_STATES, masteryTooltip } from '../components/LearningPointMastery';
+import { moduleMasteryOverlay } from './knowledgeMastery';
+import { resolveGraph } from './progressive/graphModel';
+import MathLabel from '../components/MathLabel';
+
+// CARTE PROGRESSIVE — la carte de connaissances de toutes les leçons
+// (KNOWLEDGE_MAP.md, Part A). Chargée à part, à l'ouverture de la carte.
+const ProgressiveKnowledgeMap = lazy(() => import('./progressive/ProgressiveKnowledgeMap'));
+// Sa lecture linéaire « المعارف مفصّلة » (écran ET impression).
+const LinearKnowledgeView = lazy(() => import('./progressive/LinearKnowledgeView'));
+
+/**
+ * Le graphe que la carte affiche — TOUJOURS la carte mentale interactive (propriétaire, 2026-11-08 : l'ancienne carte par
+ * strates — ses vues « navigation », détail d'item / de catégorie et sa fiche d'impression — est supprimée). Le KNOWLEDGE_GRAPH
+ * de la leçon s'il est valide, sinon le REPLI dérivé de ses items (graphFromKnowledge) : jamais une carte vide.
+ */
+function useProgressiveGraph() {
+  const { t } = useTranslation('lesson');
+  const { graph, knowledge } = useLessonKnowledge();
+  const sequenceLabel = t('map.progressive.fallbackSequence');
+  return React.useMemo(
+    () => resolveGraph(graph, knowledge, { sequenceLabel }),
+    [graph, knowledge, sequenceLabel],
+  );
+}
+
+/*
+ * RTL (ar-DZ — src/locale.js) : le panneau vit sur le bord de FIN de la zone
+ * de contenu — la droite en LTR, la GAUCHE sous RTL (la barre latérale occupe
+ * alors la droite). Tout ce qui dépend du bord est dérivé en UN endroit par
+ * cas : les trois géométries (tiroir / colonne / plein), le sens d'entrée
+ * (`x`), le calcul de la poignée, et des utilitaires logiques pour les bords
+ * (`border-s`, `rounded-es-*`, `start-6`). `useLessonViewport` mesure la
+ * boîte de padding de <main>, elle-même miroitée en CSS (index.css) : la
+ * mesure ne suppose jamais un côté.
+ */
 
 /* ─────────────────────────────────────────────────────────────────────────
    PRINT STYLES
@@ -25,9 +68,11 @@ const PRINT_CSS = `
     print-color-adjust: exact !important;
   }
 
-  /* Base typography */
+  /* Base typography. Cairo carries the Arabic glyphs (master spec §14,
+     index.css) — added here so printed Arabic content doesn't fall back to
+     a system font; Latin identity fonts stay first for Latin runs. */
   html, body {
-    font-family: "Avenir Next", "Inter", "Segoe UI", system-ui, sans-serif !important;
+    font-family: "Avenir Next", "Inter", "Cairo", "Segoe UI", system-ui, sans-serif !important;
     background: #fff !important;
     color: #172033 !important;
   }
@@ -85,11 +130,11 @@ const PRINT_CSS = `
     background-color: transparent !important;
     border: none !important;
     padding: 0 0 4px 0 !important;
-    text-align: left !important;
+    text-align: start !important;
     box-shadow: none !important;
   }
   .sa-print-hero-body div[class*="text-center"] {
-    text-align: left !important;
+    text-align: start !important;
   }
   .sa-print-body p, .sa-print-body div, .sa-print-body span {
     font-size: 9pt !important;
@@ -108,13 +153,17 @@ const PRINT_CSS = `
    CATEGORIES & THEME
    ───────────────────────────────────────────────────────────────────────── */
 
+// `labelKey` (et non `label`) : l'interface élève est arabe, et la carte est
+// l'une des surfaces que le programme exige de rendre en RTL. Le libellé est
+// résolu AU RENDU par i18n (locales/ar/lesson.json → map.categories.*), pas
+// figé ici.
 export const CATEGORIES = [
-  { id: 'concepts',    emoji: '🔵', label: 'CONCEPTS',    color: 'blue' },
-  { id: 'regles',      emoji: '🟠', label: 'RÈGLES',      color: 'orange' },
-  { id: 'methodes',    emoji: '🟢', label: 'MÉTHODES',    color: 'green' },
-  { id: 'vocabulaire', emoji: '🟣', label: 'VOCABULAIRE', color: 'purple' },
-  { id: 'memoriser',   emoji: '🔴', label: 'À MÉMORISER', color: 'red' },
-  { id: 'formules',    emoji: '🧮', label: 'FORMULES',    color: 'indigo' },
+  { id: 'concepts',    emoji: '🔵', labelKey: 'map.categories.concepts',    color: 'blue' },
+  { id: 'regles',      emoji: '🟠', labelKey: 'map.categories.regles',      color: 'orange' },
+  { id: 'methodes',    emoji: '🟢', labelKey: 'map.categories.methodes',    color: 'green' },
+  { id: 'vocabulaire', emoji: '🟣', labelKey: 'map.categories.vocabulaire', color: 'purple' },
+  { id: 'memoriser',   emoji: '🔴', labelKey: 'map.categories.memoriser',   color: 'red' },
+  { id: 'formules',    emoji: '🧮', labelKey: 'map.categories.formules',    color: 'indigo' },
 ];
 
 export const CAT_THEME = {
@@ -146,391 +195,97 @@ const STRATUM_ACCENT = {
   green:  { rule: 'bg-emerald-400', label: 'text-emerald-700' },
 };
 
-/** Une connaissance = une LIGNE compacte, pas une carte. */
-function KnowledgeRow({ item, onSelect, dotClass }) {
-  return (
-    <button
-      onClick={() => onSelect(item)}
-      data-km-item={item.id}
-      data-km-new={item.isNew ? 'true' : undefined}
-      className="group w-full text-left flex items-baseline gap-2.5 py-1.5 px-2 -mx-2 rounded-lg hover:bg-slate-50 transition-colors"
-    >
-      <span className={`mt-1.5 w-1.5 h-1.5 rounded-full shrink-0 ${dotClass}`} aria-hidden="true" />
-      <span className="min-w-0 flex-1">
-        <span className="text-sm text-slate-800 font-medium group-hover:text-slate-950">{item.title}</span>
-        {item.summary && (
-          <span className="block text-xs text-slate-500 leading-snug truncate">{item.summary}</span>
-        )}
-      </span>
-      {item.isNew && (
-        <>
-          <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-indigo-500" aria-hidden="true" />
-          <span className="sr-only">(nouveau)</span>
-        </>
-      )}
-    </button>
-  );
-}
-
-/** Bandeau « À retenir » — mise en avant transversale, en tête de la carte. */
-function HighlightBand({ items, onSelect }) {
-  if (items.length === 0) return null;
-  return (
-    <section className="rounded-xl border border-rose-200 bg-rose-50/50 px-3 py-2.5" data-km-highlight="true">
-      <div className="flex items-baseline gap-2 mb-1.5">
-        <span className="text-[10px] font-bold tracking-[0.14em] text-rose-700">À RETENIR</span>
-        <span className="text-[10px] text-rose-400 font-mono">{items.length}</span>
-      </div>
-      <div className="flex flex-col divide-y divide-rose-100/70">
-        {items.map((item) => (
-          <KnowledgeRow key={item.id} item={item} onSelect={onSelect} dotClass="bg-rose-400" />
-        ))}
-      </div>
-    </section>
-  );
-}
-
-/**
- * Vue NAVIGATION — hiérarchie : strate → catégorie → connaissance.
- * Peu de conteneurs, beaucoup de typographie : un cahier structuré, pas un
- * tableau de bord.
- */
-function StructuredView({ items, onSelect, columns = 1 }) {
-  const { highlight, strata } = buildStructure(items);
-  const steps = progressionByModule(items);
-
-  return (
-    <div className="space-y-5" data-km-structured="true">
-      <HighlightBand items={highlight} onSelect={onSelect} />
-
-      <div
-        className={columns > 1 ? 'gap-x-8' : ''}
-        style={columns > 1 ? { columnCount: columns, columnGap: '2rem' } : undefined}
-      >
-        {strata.map((stratum) => {
-          const accent = STRATUM_ACCENT[stratum.accent] ?? STRATUM_ACCENT.blue;
-          return (
-            <section
-              key={stratum.id}
-              className="mb-5 break-inside-avoid"
-              data-km-stratum={stratum.id}
-              style={{ breakInside: 'avoid' }}
-            >
-              {/* Titre de strate : filet + libellé, aucun encadré */}
-              <div className="flex items-baseline gap-2 mb-2">
-                <span className={`h-3 w-1 rounded-full ${accent.rule}`} aria-hidden="true" />
-                <h3 className={`text-[11px] font-bold tracking-[0.14em] ${accent.label}`}>{stratum.label}</h3>
-                <span className="text-[10px] text-slate-400">{stratum.caption}</span>
-                <span className="ml-auto text-[10px] font-mono text-slate-300">{stratum.count}</span>
-              </div>
-
-              <div className="pl-3 border-l border-slate-100 space-y-3">
-                {stratum.groups.map((g) => (
-                  <div key={g.category.id} data-km-group={g.category.id}>
-                    {/* Sous-titre de catégorie — seulement si la strate en compte plusieurs */}
-                    {stratum.groups.length > 1 && (
-                      <div className="text-[10px] font-semibold tracking-widest text-slate-400 mb-0.5">
-                        {g.category.label}
-                      </div>
-                    )}
-                    <div className="flex flex-col">
-                      {g.items.map((item) => (
-                        <KnowledgeRow
-                          key={item.id}
-                          item={item}
-                          onSelect={onSelect}
-                          dotClass={accent.rule}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-          );
-        })}
-      </div>
-
-      {/* Fil cumulatif — la carte s'enrichit module après module */}
-      {steps.length > 0 && (
-        <div className="pt-3 border-t border-slate-100 flex items-center gap-1.5 flex-wrap" data-km-progression="true">
-          <span className="text-[10px] text-slate-400 mr-1">Ta carte&nbsp;:</span>
-          {steps.map((s, i) => (
-            <React.Fragment key={s.module}>
-              {i > 0 && <span className="text-slate-200 text-[10px]" aria-hidden="true">→</span>}
-              <span className="text-[10px] font-mono text-slate-500 bg-slate-50 border border-slate-100 rounded px-1.5 py-0.5">
-                M{s.module}<span className="text-slate-300"> +{s.count}</span>
-              </span>
-            </React.Fragment>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-}
-
-function ItemDetailView({ item, onBack, catColor }) {
-  const theme = CAT_THEME[catColor];
-  return (
-    <motion.div
-      key="detail"
-      initial={{ x: 24, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      exit={{ x: 24, opacity: 0 }}
-      transition={{ duration: 0.18 }}
-      className="space-y-4"
-    >
-      {/* Back button */}
-      <button
-        onClick={onBack}
-        className="flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-slate-900 transition-colors"
-      >
-        <ArrowLeft className="w-3.5 h-3.5" />
-        Retour à la carte
-      </button>
-
-      {/* Title badge */}
-      <div className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold ${theme.badge}`}>
-        <span>{item.title}</span>
-      </div>
-
-      {/* Summary */}
-      {item.summary && (
-        <p className="text-sm text-slate-600 leading-relaxed">{item.summary}</p>
-      )}
-
-      {/* Visual */}
-      {item.visual && (
-        <div className="bg-white rounded-xl border border-slate-100 px-3 py-3">
-          <ConceptVisual size={item.visualSize} context="drawer">
-            {item.visual}
-          </ConceptVisual>
-        </div>
-      )}
-
-      {/* Body */}
-      {item.body}
-
-      {/* Manipulation reference — future-ready */}
-      {item.manipulationRef && (
-        <div className="bg-indigo-50 rounded-xl border border-indigo-100 p-3">
-          <div className="text-[10px] font-bold text-indigo-600 uppercase tracking-widest mb-1">
-            🔗 Tu l'as découvert avec
-          </div>
-          <div className="text-sm font-semibold text-indigo-900">{item.manipulationRef.title}</div>
-          {item.manipulationRef.href && (
-            <a
-              href={item.manipulationRef.href}
-              className="mt-2 inline-block text-xs text-indigo-600 underline hover:text-indigo-800"
-            >
-              Revoir la manipulation →
-            </a>
-          )}
-        </div>
-      )}
-    </motion.div>
-  );
-}
-
-function CategoryDetailView({ category, items, onBack }) {
-  const theme = CAT_THEME[category.color];
-  return (
-    <motion.div
-      key="cat-detail"
-      initial={{ x: 24, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      exit={{ x: 24, opacity: 0 }}
-      transition={{ duration: 0.18 }}
-      className="space-y-4 pb-4"
-    >
-      {/* Back button */}
-      <button
-        onClick={onBack}
-        className="flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-slate-900 transition-colors"
-      >
-        <ArrowLeft className="w-3.5 h-3.5" />
-        Retour à la carte
-      </button>
-
-      {/* Category header */}
-      <div className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-bold ${theme.hdr} border`}>
-        <span aria-hidden="true">{category.emoji}</span>
-        <span className="font-mono tracking-wider">{category.label}</span>
-        <span className={`ml-auto text-xs px-2 py-0.5 rounded-full ${theme.badge}`}>{items.length}</span>
-      </div>
-
-      {/* CompleteCards for this category */}
-      <div className="space-y-4">
-        {items.map(item => (
-          <CompleteCard key={item.id} item={item} catColor={category.color} />
-        ))}
-      </div>
-    </motion.div>
-  );
-}
-
-function NavigationView({ items, selectedItem, onSelectItem, columns = 1 }) {
-  return (
-    <div data-km-navview="true">
-      <AnimatePresence mode="wait" initial={false}>
-        {selectedItem ? (
-          selectedItem.isCategory ? (
-            <CategoryDetailView
-              key="cat-detail"
-              category={selectedItem.category}
-              items={selectedItem.items}
-              onBack={() => onSelectItem(null)}
-            />
-          ) : (
-            <ItemDetailView
-              key="detail"
-              item={selectedItem}
-              catColor={CATEGORIES.find(c => c.id === selectedItem.type)?.color ?? 'blue'}
-              onBack={() => onSelectItem(null)}
-            />
-          )
-        ) : (
-          <motion.div
-            key="structure"
-            initial={{ x: -16, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: -16, opacity: 0 }}
-            transition={{ duration: 0.15 }}
-          >
-            <StructuredView items={items} onSelect={onSelectItem} columns={columns} />
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-}
-
 /* ─────────────────────────────────────────────────────────────────────────
-   PRINT VIEW
-   Dedicated A4 revision document.
+   FIL « بطاقتك » + SURCOUCHE DE MAÎTRISE (Mastery V2, phase 8c)
+   La VISIBILITÉ des items reste pilotée par la complétion ; la maîtrise
+   n'ajoute que des pastilles à côté de chaque module (les points qu'il
+   enseigne) et, pour une lacune dans un module parcouru, « راجع ». Rien de
+   tout cela ne part à l'impression (data-km-noprint).
    ───────────────────────────────────────────────────────────────────────── */
+const MASTERY_DOT_TONE = { slate: 'bg-slate-300', rose: 'bg-rose-500', amber: 'bg-amber-400', emerald: 'bg-emerald-500' };
 
-const PRINT_PALETTE = {
-  blue:   { border: 'border-[#1687D9]', text: 'text-[#1687D9]', line: 'border-[#D9DEE8]' },
-  orange: { border: 'border-[#E94F9B]', text: 'text-[#E94F9B]', line: 'border-[#D9DEE8]' },
-  green:  { border: 'border-[#168F7A]', text: 'text-[#168F7A]', line: 'border-[#D9DEE8]' },
-  purple: { border: 'border-[#6D3FE7]', text: 'text-[#6D3FE7]', line: 'border-[#D9DEE8]' },
-  red:    { border: 'border-[#E94F9B]', text: 'text-[#172554]', line: 'border-[#D9DEE8]' },
-  indigo: { border: 'border-[#6D3FE7]', text: 'text-[#6D3FE7]', line: 'border-[#D9DEE8]' },
-};
-
-function PrintCard({ item, catColor }) {
-  const theme = PRINT_PALETTE[catColor] || PRINT_PALETTE.blue;
-  return (
-    <div className={`print-card mb-3 pb-3 border-b ${theme.line} last:border-b-0 last:pb-0`}>
-      <div className={`font-bold text-[9.5pt] mb-1.5 flex items-baseline gap-1.5 ${theme.text}`}>
-        <span className="text-[7pt]">●</span> {item.title}
-      </div>
-      {item.visual && (
-        <ConceptVisual size={item.visualSize} context="print">
-          {item.visual}
-        </ConceptVisual>
-      )}
-      <div className="text-[9pt] text-[#172033] leading-snug space-y-2 sa-print-body">
-        {item.body}
-      </div>
-    </div>
-  );
+function ProgressionStrip({ steps }) {
+  const { lessonId } = useLessonKnowledge();
+  const config = lessonId ? getLoadedLessonConfig(lessonId) : null;
+  const teaches = config?.modules?.some((m) => m.teachesLearningPointIds?.length);
+  // Le profil n'est lu que pour une leçon qui déclare ce qu'enseignent ses
+  // modules : sinon, le fil reste exactement celui d'avant.
+  return teaches
+    ? <MasteryAwareStrip steps={steps} lessonId={lessonId} config={config} />
+    : <StripBase steps={steps} overlay={null} />;
 }
 
-function PrintHero({ items }) {
-  if (!items || items.length === 0) return null;
+function MasteryAwareStrip({ steps, lessonId, config }) {
+  const { unlockedModules } = useLessonKnowledge();
+  const { profile, status } = useLearningProfile({ lesson: lessonId });
+  const overlay = React.useMemo(() => {
+    if (status !== 'ready' || !profile) return null;
+    const rowsByCode = new Map(
+      (profile.currentMastery ?? []).flatMap((g) => (g.lessons ?? []).flatMap((l) => l.learningPoints ?? []))
+        .map((row) => [row.code ?? row.learningPointCode, row]),
+    );
+    const titles = new Map((getLessonById(lessonId)?.learningPoints ?? []).map((lp) => [lp.id, lp.title]));
+    const byModule = moduleMasteryOverlay({
+      moduleNumbers: steps.map((s) => s.module),
+      modules: config.modules,
+      rowsByCode,
+      completedModules: unlockedModules,
+      modulePath: (n) => getModulePath(lessonId, n),
+    });
+    for (const entry of byModule.values()) {
+      for (const dot of entry.dots) dot.title = dot.row?.title || titles.get(dot.code) || dot.code;
+    }
+    return byModule;
+  }, [status, profile, steps, config, unlockedModules, lessonId]);
+
+  return <StripBase steps={steps} overlay={overlay} />;
+}
+
+function StripBase({ steps, overlay }) {
+  const { t } = useTranslation('lesson');
   return (
-    <div className="print-section mb-6 break-inside-avoid">
-      <div className="border border-[#E94F9B] bg-[#E94F9B]/[0.04] rounded-lg p-5">
-        <div className="inline-block px-3 py-1 bg-[#E94F9B] text-white text-[8pt] font-bold tracking-widest rounded-sm uppercase mb-4">
-          ⭐ À Retenir
-        </div>
-        <div className="space-y-4">
-          {items.map(item => (
-            <div key={item.id} className="print-card">
-              {item.visual && (
-                <ConceptVisual size={item.visualSize} context="print">
-                  {item.visual}
-                </ConceptVisual>
+    <div className="pt-3 border-t border-slate-100 flex items-center gap-1.5 flex-wrap" data-km-progression="true">
+      <span className="text-[10px] text-slate-400 me-1">{t('map.yourMapColon')}</span>
+      {steps.map((s, i) => {
+        const mastery = overlay?.get(s.module) ?? null;
+        return (
+          <React.Fragment key={s.module}>
+            {i > 0 && <span className="text-slate-200 text-[10px]" aria-hidden="true">→</span>}
+            <span className="inline-flex items-center gap-1 text-[10px] font-mono text-slate-500 bg-slate-50 border border-slate-100 rounded px-1.5 py-0.5">
+              {t('map.stepChip', { module: s.module })}<span className="text-slate-300" dir="ltr"> +{s.count}</span>
+              {mastery && (
+                <span className="inline-flex items-center gap-0.5 ms-0.5" data-km-noprint="true" data-km-mastery={s.module} aria-label={t('map.masteryOverlayAria', { module: s.module })}>
+                  {mastery.dots.map((d) => {
+                    const tip = `${d.title} — ${masteryTooltip(d.state, d.row)}`;
+                    const tone = MASTERY_STATES[d.state]?.tone ?? 'slate';
+                    return (
+                      <span
+                        key={d.code}
+                        className={`inline-block h-2 w-2 rounded-full ${MASTERY_DOT_TONE[tone]}`}
+                        title={tip}
+                        role="img"
+                        aria-label={tip}
+                        data-mastery-state={d.state}
+                      />
+                    );
+                  })}
+                </span>
               )}
-              <div className="text-[#172554] text-[10pt] font-medium sa-print-hero-body space-y-3">
-                {item.body}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-const PRINT_STRATUM = {
-  blue:   'border-[#1687D9] text-[#1687D9]',
-  orange: 'border-[#E94F9B] text-[#E94F9B]',
-  green:  'border-[#168F7A] text-[#168F7A]',
-};
-
-function PrintView({ items, printTitle = 'MA CARTE', printSubject = 'Mathématiques' }) {
-  // Même hiérarchie qu'à l'écran (strate → catégorie → connaissance) : la
-  // feuille imprimée est la MÊME structure mathématique, pas une capture du tiroir.
-  const { highlight, strata } = buildStructure(items);
-
-  return (
-    <div className="font-sans text-[#172033] mx-auto w-full max-w-[210mm]">
-
-      {/* Header */}
-      <div className="flex justify-between items-end border-b border-[#DCE3EF] pb-2 mb-6">
-        <div>
-          <div className="text-[20pt] font-black text-[#172554] tracking-tight leading-none mb-1">
-            {printTitle}
-          </div>
-          <div className="text-[10pt] font-bold text-[#6D3FE7] uppercase tracking-widest">
-            Ma carte de connaissances
-          </div>
-        </div>
-        <div className="text-right">
-          <div className="text-[9pt] font-bold text-[#172033]">SMARTER ACADEMY</div>
-          <div className="text-[8pt] text-[#667085]">{printSubject}</div>
-        </div>
-      </div>
-
-      {/* Hero: À Retenir */}
-      <PrintHero items={highlight} />
-
-      {/* Strates en deux colonnes A4 */}
-      <div className="columns-1 md:columns-2 gap-6">
-        {strata.map(stratum => (
-          <div key={stratum.id} className="print-section mb-6 break-inside-avoid">
-            <div className={`text-[11pt] font-bold uppercase tracking-widest mb-1 pb-1 border-b-2 ${PRINT_STRATUM[stratum.accent] ?? PRINT_STRATUM.blue}`}>
-              {stratum.label}
-              <span className="ml-2 text-[7.5pt] font-normal normal-case tracking-normal text-[#667085]">
-                {stratum.caption}
-              </span>
-            </div>
-            {stratum.groups.map(g => (
-              <div key={g.category.id} className="mb-3">
-                {stratum.groups.length > 1 && (
-                  <div className="text-[8pt] font-bold uppercase tracking-widest text-[#667085] mt-2 mb-1">
-                    {g.category.label}
-                  </div>
-                )}
-                <div className="space-y-1">
-                  {g.items.map(item => (
-                    <PrintCard key={item.id} item={item} catColor={g.category.color} />
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        ))}
-      </div>
-
-      {/* Footer */}
-      <div className="mt-8 pt-3 border-t border-[#DCE3EF] flex justify-between text-[7pt] text-[#667085] uppercase tracking-widest print-avoid-break-after">
-        <span>Smarter Academy</span>
-        <span>01</span>
-      </div>
+            </span>
+            {mastery?.reviewPath && (
+              <Link
+                to={mastery.reviewPath}
+                className="text-[10px] font-bold text-rose-700 hover:text-rose-900 underline underline-offset-2"
+                aria-label={t('map.reviewModuleAria', { module: s.module })}
+                data-km-noprint="true"
+                data-km-review={s.module}
+              >
+                {t('map.reviewModuleShort')}
+              </Link>
+            )}
+          </React.Fragment>
+        );
+      })}
     </div>
   );
 }
@@ -541,6 +296,7 @@ function PrintView({ items, printTitle = 'MA CARTE', printSubject = 'Mathématiq
    ───────────────────────────────────────────────────────────────────────── */
 
 function CompleteCard({ item, catColor }) {
+  const { t } = useTranslation('lesson');
   const theme = CAT_THEME[catColor];
   // Volontairement SANS encadré coloré ni ombre : la hiérarchie vient du filet
   // de gauche et de la typographie. Les cartes ne doivent pas dominer la carte.
@@ -548,9 +304,9 @@ function CompleteCard({ item, catColor }) {
     <div className="km-card break-inside-avoid" data-km-item={item.id} data-km-new={item.isNew ? 'true' : undefined} style={{ breakInside: 'avoid' }}>
       <div className="km-card-title font-bold text-slate-900 text-sm mb-1 flex items-center gap-2">
         <span>{item.title}</span>
-        {item.isNew && <span className={`text-[10px] font-bold uppercase tracking-wide px-1.5 py-0.5 rounded-full ${theme.badge}`} data-km-noprint="true">nouveau</span>}
+        {item.isNew && <span className={`text-[10px] font-bold uppercase tracking-wide px-1.5 py-0.5 rounded-full ${theme.badge}`} data-km-noprint="true">{t('map.new')}</span>}
       </div>
-      {item.summary && <p className="text-xs text-slate-500 mb-2 leading-snug">{item.summary}</p>}
+      {item.summary && <p className="text-xs text-slate-500 mb-2 leading-snug"><MathLabel><MathLabel>{item.summary}</MathLabel></MathLabel></p>}
       {item.visual && (
         <ConceptVisual size={item.visualSize} context="drawer">
           {item.visual}
@@ -562,6 +318,7 @@ function CompleteCard({ item, catColor }) {
 }
 
 export function CompleteView({ items, printable = true, columns = 1 }) {
+  const { t } = useTranslation('lesson');
   const { highlight, strata } = buildStructure(items);
 
   return (
@@ -574,7 +331,7 @@ export function CompleteView({ items, printable = true, columns = 1 }) {
           className="flex items-center gap-2 px-4 py-2 bg-slate-900 text-white text-xs font-bold rounded-xl hover:bg-slate-700 transition-colors shadow"
         >
           <Printer className="w-3.5 h-3.5" />
-          Imprimer ma carte
+          {t('map.printMyMap')}
         </button>
       </div>}
 
@@ -584,10 +341,10 @@ export function CompleteView({ items, printable = true, columns = 1 }) {
         <section className="km-cat-section space-y-2 mb-6 break-inside-avoid" data-km-highlight="true" style={{ breakInside: 'avoid' }}>
           <div className="flex items-baseline gap-2">
             <span className="h-3 w-1 rounded-full bg-rose-400" aria-hidden="true" />
-            <h3 className="text-[11px] font-bold tracking-[0.14em] text-rose-700">À RETENIR</h3>
-            <span className="ml-auto text-[10px] font-mono text-slate-300">{highlight.length}</span>
+            <h3 className="text-[11px] font-bold tracking-[0.14em] text-rose-700">{t('map.toRetain')}</h3>
+            <span className="ms-auto text-[10px] font-mono text-slate-300">{highlight.length}</span>
           </div>
-          <div className="pl-3 border-l border-rose-100 space-y-2">
+          <div className="ps-3 border-s border-rose-100 space-y-2">
             {highlight.map(item => (
               <CompleteCard key={item.id} item={item} catColor="red" />
             ))}
@@ -606,17 +363,17 @@ export function CompleteView({ items, printable = true, columns = 1 }) {
             >
               <div className="km-cat-title flex items-baseline gap-2 mb-2">
                 <span className={`h-3 w-1 rounded-full ${accent.rule}`} aria-hidden="true" />
-                <h3 className={`text-[11px] font-bold tracking-[0.14em] ${accent.label}`}>{stratum.label}</h3>
-                <span className="text-[10px] text-slate-400">{stratum.caption}</span>
-                <span className="ml-auto text-[10px] font-mono text-slate-300">{stratum.count}</span>
+                <h3 className={`text-[11px] font-bold tracking-[0.14em] ${accent.label}`}>{t(stratum.labelKey)}</h3>
+                <span className="text-[10px] text-slate-400">{t(stratum.captionKey)}</span>
+                <span className="ms-auto text-[10px] font-mono text-slate-300">{stratum.count}</span>
               </div>
 
-              <div className="pl-3 border-l border-slate-100 space-y-3">
+              <div className="ps-3 border-s border-slate-100 space-y-3">
                 {stratum.groups.map(g => (
                   <div key={g.category.id} data-km-group={g.category.id} className="space-y-2">
                     {stratum.groups.length > 1 && (
                       <div className="text-[10px] font-semibold tracking-widest text-slate-400">
-                        {g.category.label}
+                        {t(g.category.labelKey)}
                       </div>
                     )}
                     {g.items.map(item => (
@@ -643,11 +400,11 @@ export function CompleteView({ items, printable = true, columns = 1 }) {
    ───────────────────────────────────────────────────────────────────────── */
 
 export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onModeChange, printTitle, printSubject, expanded = false, onExpandedChange }) {
+  const { t } = useTranslation('lesson');
   // Mode colonne : la coquille a DÉJÀ rétréci le contenu et réservé une
   // gouttière à droite. La carte n'a donc rien à pousser — elle se pose dans
   // la place qu'on lui a faite (cf. WorkspaceLayoutContext).
-  const { isPrior, priorAvailable, setPrior, maCarteWidth,
-          setPriorWidth, priorWidthBounds, setMapExpanded } = useWorkspaceLayout();
+  const { isPrior, priorAvailable, setPrior, maCarteWidth, setMapExpanded } = useWorkspaceLayout();
 
   // La coquille doit savoir que le plein écran est actif pour LIBÉRER la
   // gouttière de la colonne : sans cela le rectangle de la leçon reste amputé
@@ -678,20 +435,14 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
   const { top: vpTop, left: vpLeft, right: vpRight, width: vpWidth, height: vpHeight,
           viewportWidth: vpOuter, ready: vpReady } = viewport;
 
-  // En mode plein sur large écran, la carte se lit en colonnes — sinon la
-  // hiérarchie s'étire en une bande étroite au milieu du vide.
-  // En mode colonne la largeur est celle que la coquille a réservée : les deux
-  // valeurs doivent être la MÊME, sinon la carte flotte dans sa gouttière ou
-  // la déborde.
-  const panelWidth = expanded ? vpWidth : isPrior ? maCarteWidth : width;
-  const contentColumns = expanded && panelWidth >= 1100 ? 3 : expanded && panelWidth >= 720 ? 2 : 1;
 
   // Les deux géométries, en valeurs NUMÉRIQUES pour que framer-motion puisse
   // interpoler entre elles (d'où `left` plutôt que `right` : une seule origine).
   const drawerW = Math.min(width, vpWidth || width);
   const drawerGeom = {
     top: vpTop,
-    left: Math.max(vpLeft, (vpOuter || 0) - vpRight - drawerW),
+    // Bord de FIN du viewport de la leçon : à droite en LTR, à gauche en RTL.
+    left: IS_RTL ? vpLeft : Math.max(vpLeft, (vpOuter || 0) - vpRight - drawerW),
     width: drawerW,
     height: minimized ? 56 : vpHeight,
   };
@@ -701,7 +452,7 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
   // même valeur sert à réserver et à occuper.
   const priorGeom = {
     top: vpTop,
-    left: Math.max(0, (vpOuter || 0) - maCarteWidth),
+    left: IS_RTL ? 0 : Math.max(0, (vpOuter || 0) - maCarteWidth),
     width: maCarteWidth,
     height: vpHeight,
   };
@@ -714,16 +465,41 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
   // justes dès la première image.
   const expandedGeom = {
     top: vpTop,
-    left: vpLeft,
-    width: Math.max(0, (vpOuter || 0) - vpLeft),
+    // Du bord de la barre latérale au bord opposé de la fenêtre.
+    left: IS_RTL ? 0 : vpLeft,
+    width: IS_RTL ? Math.max(0, (vpOuter || 0) - vpRight) : Math.max(0, (vpOuter || 0) - vpLeft),
     height: vpHeight,
   };
 
-  const geom = expanded ? expandedGeom : isPrior ? priorGeom : drawerGeom;
+  // Dans le LECTEUR DE MISSION (plein fenêtre, pilote) il n'y a ni barre latérale ni coquille visibles : le plein écran couvre
+  // TOUTE la fenêtre (propriétaire, 2026-11-08 : « la carte doit couvrir tout l'écran »), au lieu de s'arrêter au bord de la
+  // barre latérale cachée sous le lecteur.
+  const inPlayer = isOpen && typeof document !== 'undefined' && Boolean(document.querySelector('[data-mission-player]'));
+  const playerGeom = {
+    top: 0,
+    left: 0,
+    width: vpOuter || (typeof window !== 'undefined' ? window.innerWidth : 0),
+    height: typeof window !== 'undefined' ? window.innerHeight : vpHeight,
+  };
+  const geom = expanded ? (inPlayer ? playerGeom : expandedGeom) : isPrior ? priorGeom : drawerGeom;
+  const readZoom = expanded && geom.width ? Math.round(Math.min(1.5, Math.max(1.15, geom.width / 900)) * 100) / 100 : 1;
 
   // Items déjà réduits par la progression (KnowledgeProvider) ; le drapeau
   // `discovered` reste honoré pour un masquage ponctuel.
   const visibleItems = items.filter(item => item.discovered !== false);
+  const progressiveGraph = useProgressiveGraph();
+  // Le sélecteur « عمود / ملء الشاشة » : segments lisibles, cibles ≥ 44 px au
+  // toucher, icône active en indigo. En plein écran, la colonne reste
+  // mémorisée dessous (`isPrior`) ; le sélecteur ne marque pourtant qu'UNE
+  // option — celle qu'on voit (l'ancien les marquait toutes les deux).
+  const columnActive = isPrior && !expanded;
+  const viewButtonClass = (active) => [
+    'min-h-[44px] min-w-[44px] sm:min-h-[36px] sm:min-w-0 inline-flex items-center justify-center gap-1.5 px-2.5 sm:px-3 rounded-xl text-xs font-bold transition-all',
+    'focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400',
+    active ? 'bg-white text-slate-900 shadow-sm ring-1 ring-slate-200' : 'text-slate-500 hover:text-slate-900 hover:bg-white/70',
+  ].join(' ');
+  const viewIconClass = (active) => `w-4 h-4 shrink-0 ${active ? 'text-indigo-600' : ''}`;
+  const ICON_BTN = 'inline-flex items-center justify-center w-11 h-11 sm:w-9 sm:h-9 rounded-xl text-slate-400 hover:bg-slate-100 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400';
 
   // Reset minimized state when opened
   useEffect(() => {
@@ -791,21 +567,15 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
     if (!isDragging) return;
     e.preventDefault();
 
-    // MODE COLONNE — la carte est collée au bord de la FENÊTRE (c'est la
-    // coquille qui lui réserve la place), et la largeur qu'on ajuste est celle
-    // de la gouttière. Les bornes viennent du contexte : elles garantissent
-    // qu'il reste toujours MIN_CONTENT_WIDTH à la leçon, donc que le contenu
-    // ne peut jamais finir caché derrière la carte.
-    if (isPrior) {
-      const next = window.innerWidth - e.clientX;
-      setPriorWidth(Math.min(Math.max(next, priorWidthBounds.min), priorWidthBounds.max));
-      return;
-    }
+    // MODE COLONNE : pas de poignée — la largeur est FIXE, calculée par la
+    // coquille pour l'écran (WorkspaceLayoutContext.columnWidthFor).
+    if (isPrior) return;
 
     // Le bord droit du tiroir est celui du viewport de la leçon : la largeur
     // est la distance du pointeur à CE bord, pas au bord de la fenêtre.
-    const rightEdge = window.innerWidth - vpRight;
-    let newWidth = rightEdge - e.clientX;
+    // Distance du pointeur au bord de FIN du viewport (droite en LTR,
+    // gauche en RTL) : c'est la largeur du tiroir.
+    let newWidth = IS_RTL ? e.clientX - vpLeft : (window.innerWidth - vpRight) - e.clientX;
 
     // Sur écran étroit, on ne préserve pas une largeur de bureau qui rendrait
     // la leçon inutilisable : la borne haute suit la place réellement offerte.
@@ -820,7 +590,7 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
     if (newWidth > maxWidth) newWidth = maxWidth;
 
     setWidth(newWidth);
-  }, [isDragging, vpRight, vpWidth, isPrior, setPriorWidth, priorWidthBounds.min, priorWidthBounds.max]);
+  }, [isDragging, vpRight, vpWidth, isPrior]);
 
   const handlePointerUp = useCallback((e) => {
     setIsDragging(false);
@@ -844,9 +614,9 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
             //   ouverture tiroir : glissé depuis le bord droit
             //   ouverture plein  : fondu + très léger zoom (il ne vient d'aucun bord)
             //   tiroir ⇄ plein   : les quatre bords se déplacent de façon continue
-            // OUVERTURE / FERMETURE — la carte ENTRE PAR LA DROITE : elle
-            // glisse de droite à gauche jusqu'à sa colonne, et ressort par la
-            // droite en partant. Pendant ce temps la coquille rétrécit le
+            // OUVERTURE / FERMETURE — la carte ENTRE PAR SON BORD DE FIN (la
+            // droite en LTR, la gauche en RTL — d'où le signe sur `x`) : elle
+            // glisse jusqu'à sa colonne, et ressort par le même bord. Pendant ce temps la coquille rétrécit le
             // contenu (gouttière de `--sa-gutter-w`, même durée) : les deux
             // mouvements se répondent, la leçon fait de la place pendant que
             // la carte arrive.
@@ -858,9 +628,9 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
             // carte traversait tout l'écran depuis le bord GAUCHE. Ici elle
             // part de `x: 100%`, c'est-à-dire d'exactement une largeur de
             // panneau à DROITE de sa place — hors écran, quel que soit le mode.
-            initial={{ x: '100%', opacity: 0 }}
+            initial={{ x: IS_RTL ? '-100%' : '100%', opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            exit={{ x: '100%', opacity: 0 }}
+            exit={{ x: IS_RTL ? '-100%' : '100%', opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             style={{
               position: 'fixed',
@@ -887,20 +657,26 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
                 // ombre portée ni coin arrondi, qui la feraient à nouveau
                 // flotter au-dessus du contenu.
                 : isPrior
-                  ? 'border-l bg-slate-50/60'
-                  : 'border-l border-b shadow-2xl shadow-slate-900/15 rounded-bl-2xl',
+                  ? 'border-s bg-slate-50/60'
+                  : 'border-s border-b shadow-2xl shadow-slate-900/15 rounded-es-2xl',
             ].join(' ')}
             role="dialog"
-            aria-label="Ma carte des connaissances"
+            aria-label={t('map.myKnowledgeMap')}
             aria-modal="false" // It's a companion, not a blocking modal
           >
-            {/* ── Resize Handle (Left Edge) ── */}
-            {!expanded && <div
+            {/* ── Resize Handle — sur le bord du panneau FACE AU CONTENU ──
+                Le panneau occupe le bord de FIN ; l'arête tournée vers la leçon
+                est donc sa gauche en LTR et sa droite en RTL. Exprimé
+                physiquement parce que l'auto-centrage (`translate-x`, moitié de
+                largeur) est physique lui aussi et doit basculer avec. */}
+            {/* Tiroir seulement : en mode COLONNE la largeur est fixe (la
+                meilleure pour l'écran), et en plein écran il n'y a rien à régler. */}
+            {!expanded && !isPrior && <div
               onPointerDown={handlePointerDown}
               onPointerMove={handlePointerMove}
               onPointerUp={handlePointerUp}
               onPointerCancel={handlePointerUp}
-              className="absolute left-0 top-0 bottom-0 w-6 -translate-x-1/2 cursor-col-resize z-50 flex items-center justify-center group touch-none"
+              className="absolute left-0 rtl:left-auto rtl:right-0 top-0 bottom-0 w-6 -translate-x-1/2 rtl:translate-x-1/2 cursor-col-resize z-50 flex items-center justify-center group touch-none"
               aria-hidden="true"
               data-km-noprint="true"
             >
@@ -910,17 +686,17 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
 
             {/* ── Header ── */}
             <div
-              className="flex items-center justify-between px-4 py-3 border-b border-slate-100 shrink-0 bg-white rounded-tl-2xl"
+              className="flex items-center justify-between px-4 py-3 border-b border-slate-100 shrink-0 bg-white rounded-ss-2xl"
               data-km-noprint="true"
             >
               <div className="flex items-center gap-2 min-w-0">
                 <span className="text-xl shrink-0" aria-hidden="true">🧠</span>
                 <div className="min-w-0">
                   <div className="font-bold text-slate-900 text-sm leading-tight truncate">
-                    MA CARTE
+                    {t('map.myMapShort')}
                   </div>
                   <div className="text-[10px] text-slate-400 font-mono truncate">
-                    {visibleItems.length} {visibleItems.length > 1 ? 'découvertes' : 'découverte'}
+                    {t('map.discoveries', { count: visibleItems.length })}
                   </div>
                 </div>
               </div>
@@ -941,9 +717,10 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
                     L'état courant est mis en évidence ; c'est un vrai groupe
                     radio pour les lecteurs d'écran. */}
                 <div
-                  className="flex items-center gap-0.5 p-0.5 rounded-lg bg-slate-100/80"
+                  className="flex items-center gap-1 p-1 rounded-2xl bg-slate-100 ring-1 ring-inset ring-slate-200/70"
                   role="radiogroup"
-                  aria-label="Affichage de la carte"
+                  aria-label={t('map.mapDisplay')}
+                  data-km-switch="polished"
                 >
                   {/* ── COLONNE ────────────────────────────────────────────
                       La troisième présentation, et la seule qui change la
@@ -955,32 +732,26 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
                     <button
                       onClick={() => { onExpandedChange?.(false); setPrior(true); }}
                       role="radio"
-                      aria-checked={isPrior}
-                      title="Colonne — la leçon fait de la place à la carte"
+                      aria-checked={columnActive}
+                      title={t('map.columnHint')}
                       data-km-view="prior"
-                      className={[
-                        'flex items-center gap-1 px-1.5 sm:px-2 py-1 rounded-md text-[11px] font-bold transition-colors',
-                        isPrior ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-800',
-                      ].join(' ')}
+                      className={viewButtonClass(columnActive)}
                     >
-                      <Columns2 className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
-                      <span className="hidden sm:inline">Colonne</span>
+                      <Columns2 className={viewIconClass(columnActive)} aria-hidden="true" />
+                      <span className="hidden sm:inline">{t('map.column')}</span>
                     </button>
                   )}
                   <button
                     onClick={() => onExpandedChange?.(true)}
                     role="radio"
                     aria-checked={expanded}
-                    title="Plein écran — la carte occupe toute la zone de la leçon"
+                    title={t('map.fullScreenHint')}
                     data-km-view="expanded"
                     data-km-expand="true"
-                    className={[
-                      'flex items-center gap-1 px-1.5 sm:px-2 py-1 rounded-md text-[11px] font-bold transition-colors',
-                      expanded ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-800',
-                    ].join(' ')}
+                    className={viewButtonClass(expanded)}
                   >
-                    <Expand className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
-                    <span className="hidden sm:inline">Plein écran</span>
+                    <Expand className={viewIconClass(expanded)} aria-hidden="true" />
+                    <span className="hidden sm:inline">{t('map.fullScreen')}</span>
                   </button>
                 </div>
 
@@ -988,18 +759,18 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
                     ne ressemble plus à celle du plein écran. */}
                 {!expanded && !isPrior && <button
                   onClick={() => setMinimized(m => !m)}
-                  className="p-1.5 rounded-lg hover:bg-slate-100 transition-colors text-slate-400 hover:text-slate-700"
-                  aria-label={minimized ? 'Déplier la carte' : 'Replier la carte'}
+                  className={`${ICON_BTN} hover:text-slate-700`}
+                  aria-label={minimized ? t('map.expandMap') : t('map.collapseMap')}
                   aria-expanded={!minimized}
                   data-km-minimize="true"
-                  title={minimized ? 'Déplier' : 'Replier'}
+                  title={minimized ? t('map.expand') : t('map.collapse')}
                 >
                   {minimized ? <ChevronDown className="w-4 h-4" /> : <ChevronUp className="w-4 h-4" />}
                 </button>}
                 <button
                   onClick={onClose}
-                  className="p-1.5 rounded-lg hover:bg-slate-100 transition-colors text-slate-400 hover:text-rose-500"
-                  aria-label="Fermer la carte"
+                  className={`${ICON_BTN} hover:text-rose-500`}
+                  aria-label={t('map.closeMap')}
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -1016,26 +787,26 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
                   <button
                     onClick={() => handleModeChange('navigation')}
                     className={[
-                      'flex-1 flex items-center justify-center gap-1.5 px-2 py-1.5 rounded-lg text-xs font-bold transition-all truncate',
+                      `flex-1 flex items-center justify-center gap-1.5 px-2 rounded-lg font-bold transition-all truncate ${expanded ? 'py-2 text-base' : 'py-1.5 text-xs'}`,
                       mode === 'navigation'
                         ? 'bg-slate-900 text-white shadow-sm'
                         : 'text-slate-500 hover:bg-slate-100 hover:text-slate-800',
                     ].join(' ')}
                   >
                     <Compass className="w-3.5 h-3.5 shrink-0" />
-                    <span className="truncate">Navigation</span>
+                    <span className="truncate">{t('map.progressive.tabMap')}</span>
                   </button>
                   <button
                     onClick={() => handleModeChange('complete')}
                     className={[
-                      'flex-1 flex items-center justify-center gap-1.5 px-2 py-1.5 rounded-lg text-xs font-bold transition-all truncate',
+                      `flex-1 flex items-center justify-center gap-1.5 px-2 rounded-lg font-bold transition-all truncate ${expanded ? 'py-2 text-base' : 'py-1.5 text-xs'}`,
                       mode === 'complete'
                         ? 'bg-slate-900 text-white shadow-sm'
                         : 'text-slate-500 hover:bg-slate-100 hover:text-slate-800',
                     ].join(' ')}
                   >
                     <FileText className="w-3.5 h-3.5 shrink-0" />
-                    <span className="truncate">Vue complète</span>
+                    <span className="truncate">{t('map.progressive.tabDetails')}</span>
                   </button>
                 </div>
 
@@ -1049,29 +820,39 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
                   ].join(' ')}
                   data-km-scroll="true"
                 >
-                  <div className={expanded ? 'mx-auto w-full max-w-[1400px]' : ''}>
+                  {/* LISIBLE SANS SE PENCHER (propriétaire, 2026-11-08) : en plein écran, TOUT le contenu (nœuds, flèches, étiquettes,
+                      carte de contexte, lecture « المعارف مفصّلة ») grandit avec la largeur de l'écran — un seul facteur, comme le
+                      lecteur de mission : ×1,15 vers 1024 px, jusqu'à ×1,5 dès ~1366 px. La géométrie du graphe ne change pas. */}
+                  <div className={expanded ? 'mx-auto w-full max-w-[1400px]' : ''} style={readZoom !== 1 ? { zoom: readZoom } : undefined} data-km-read-zoom={readZoom}>
                   {visibleItems.length === 0 ? (
                     <div className="h-full flex flex-col items-center justify-center text-center gap-2 py-10" data-km-empty="true">
                       <span className="text-3xl" aria-hidden="true">🧭</span>
-                      <p className="text-sm font-bold text-slate-800">Ta carte est encore vide.</p>
-                      <p className="text-xs text-slate-500 max-w-[26ch]">Elle se remplit à chaque module terminé : commence par le module 1.</p>
+                      <p className="text-sm font-bold text-slate-800">{t('map.emptyMap')}</p>
+                      <p className="text-xs text-slate-500 max-w-[26ch]">{t('map.emptyMapHint')}</p>
                     </div>
                   ) : mode === 'navigation' ? (
-                    <NavigationView
-                      items={visibleItems}
-                      selectedItem={selectedItem}
-                      onSelectItem={setSelectedItem}
-                      columns={contentColumns}
-                    />
+                    <Suspense fallback={null}>
+                      <ProgressiveKnowledgeMap
+                        graph={progressiveGraph}
+                        items={visibleItems}
+                        selectedId={selectedItem?.graphNodeId ?? null}
+                        onSelect={(id) => setSelectedItem(id ? { graphNodeId: id } : null)}
+                        footer={<ProgressionStrip steps={progressionByModule(visibleItems)} />}
+                      />
+                    </Suspense>
                   ) : (
-                    <CompleteView items={visibleItems} columns={Math.min(contentColumns, 2)} />
+                    <Suspense fallback={null}>
+                      <LinearKnowledgeView graph={progressiveGraph} items={visibleItems} />
+                    </Suspense>
                   )}
                   </div>
                 </div>
 
                 {/* ── Print View ── */}
                 <div className="hidden sa-print-view w-full bg-white">
-                  <PrintView items={visibleItems} printTitle={printTitle} printSubject={printSubject} />
+                  <Suspense fallback={null}>
+                    <LinearKnowledgeView graph={progressiveGraph} items={visibleItems} variant="print" printTitle={printTitle} printSubject={printSubject} />
+                  </Suspense>
                 </div>
               </>
             )}
@@ -1086,7 +867,8 @@ export default function KnowledgeMap({ items = [], isOpen, onClose, mode, onMode
    TRIGGER — self-contained, portals the panel to <body>
    ───────────────────────────────────────────────────────────────────────── */
 
-export function KnowledgeMapTrigger({ items = [], open: openProp, onOpenChange, printTitle, printSubject }) {
+export function KnowledgeMapTrigger({ items = [], open: openProp, onOpenChange, printTitle, printSubject, expandRequest = 0 }) {
+  const { t } = useTranslation('lesson');
   const [openState, setOpenState] = useState(false);
   const controlled = typeof openProp === 'boolean';
   const open = controlled ? openProp : openState;
@@ -1106,6 +888,9 @@ export function KnowledgeMapTrigger({ items = [], open: openProp, onOpenChange, 
     try { return localStorage.getItem('knowledgeMapExpanded') === 'true'; }
     catch { return false; }
   });
+  // une ouverture qui DEMANDE le plein écran (la barre de mission : la carte mentale a besoin de place) — sans écraser le
+  // choix enregistré de l'élève (knowledgeMapExpanded)
+  useEffect(() => { if (expandRequest) setExpanded(true); }, [expandRequest]);
   const handleExpandedChange = useCallback((next) => {
     setExpanded(next);
     try { localStorage.setItem('knowledgeMapExpanded', String(next)); } catch { /* noop */ }
@@ -1132,10 +917,30 @@ export function KnowledgeMapTrigger({ items = [], open: openProp, onOpenChange, 
       <motion.button
         onClick={() => setOpen(o => !o)}
         className={[
-          // bottom-20 : au-dessus du bouton Ctrl+K du site visiteur (bottom-6,
-          // même coin, même z-index) et de la barre basse mobile de l'espace
-          // élève (h-16) — sinon le déclencheur est recouvert.
-          'fixed bottom-20 right-6 z-40',
+          // La hauteur tient compte de la barre basse mobile des espaces
+          // élève et enseignant (h-16, sous `lg`) — sinon le déclencheur est
+          // recouvert : `--sa-bottom-nav` (index.css) vaut alors 4rem.
+          // Côté : PHYSIQUEMENT à gauche, dans les deux directions — et c'est
+          // volontairement une valeur physique, pas `start-6`.
+          //
+          // Sous RTL, `start-6` plaçait le déclencheur à DROITE, c'est-à-dire
+          // sous la barre latérale de l'espace élève, qui occupe ce bord : le
+          // bouton restait visible mais inatteignable, la barre interceptant
+          // tous les clics. Constaté par la QA du moteur sous RTL — la sonde
+          // de la reprise précédente ne montait pas la coquille élève, donc
+          // ne pouvait pas le voir.
+          //
+          // Gauche convient aux deux cas : sous LTR le panneau s'ouvre à
+          // droite et le déclencheur lui fait face ; sous RTL la barre occupe
+          // la droite, et le panneau s'ouvrant à gauche, le déclencheur le
+          // recouvrirait s'il n'était pas décalé vers le bas.
+          //
+          // HAUTEUR : au RAS DU COIN (bottom-6 = 1.5rem), autant d'écart au
+          // bas qu'à gauche (left-6). L'étage du dessous était occupé par le
+          // déclencheur « ⛶ عرض » du mode classe ; celui-ci est remonté dans
+          // la rangée de repères du محور, et la carte a pris sa place. La
+          // pile complète est documentée dans classroom.css.
+          'fixed bottom-[calc(1.5rem+var(--sa-bottom-nav,0px))] left-6 z-40',
           'flex items-center gap-2 px-4 py-3 rounded-2xl',
           'font-bold text-sm shadow-lg shadow-slate-900/20',
           'transition-colors duration-200',
@@ -1143,7 +948,7 @@ export function KnowledgeMapTrigger({ items = [], open: openProp, onOpenChange, 
             ? 'bg-slate-900 text-white'
             : 'bg-white text-slate-800 border border-slate-200 hover:border-slate-400 hover:shadow-xl',
         ].join(' ')}
-        aria-label={open ? 'Fermer la carte' : 'Ouvrir ma carte des connaissances'}
+        aria-label={open ? t('map.closeMap') : t('map.openMyMap')}
         data-km-trigger="true"
         aria-pressed={open}
         data-km-noprint="true"
@@ -1151,7 +956,7 @@ export function KnowledgeMapTrigger({ items = [], open: openProp, onOpenChange, 
         whileTap={{ scale: 0.97 }}
       >
         <span className="text-lg" aria-hidden="true">🧠</span>
-        <span>Ma carte</span>
+        <span>{t('map.myMap')}</span>
       </motion.button>
 
       {/* Panel — portalled to body so print CSS can isolate it */}

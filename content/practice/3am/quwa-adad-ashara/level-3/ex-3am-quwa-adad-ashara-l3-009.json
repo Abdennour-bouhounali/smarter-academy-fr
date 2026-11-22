@@ -1,0 +1,192 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l3-009",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — بادئات الوحدات",
+    "estimatedMinutes": 6,
+    "tags": [
+      "البادئات",
+      "الوحدات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "البادئات تدلّ على قوى للعدد 10: «ميغا» مليون، «جيغا» مليار، «نانو» جزء من مليار."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "$1\\ \\mathrm{nm} = 0{,}000000001\\ \\mathrm{m} = 10^{n}\\ \\mathrm{m}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين يقع الرقم 1 بعد الفاصلة؟ حدّد رتبته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في $10^{-n}$ يكون الرقم 1 في الرتبة $n$ بعد الفاصلة (الأعشار هي الرتبة الأولى)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأسّ سالب وقيمته المطلقة هي رتبة الرقم 1، أمّا عدد الأصفار بين الفاصلة والرقم 1 فأقلّ منها بواحد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-9",
+      "misconceptionSignatures": [
+        {
+          "value": "-8",
+          "id": "MISC-ASHARA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\ \\mathrm{nm} = 10^{-9}\\ \\mathrm{m}$ .",
+        "incorrect": "عدّ الأصفار (أو رتبة الرقم 1 بعد الفاصلة) بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الرقم 1 في الرتبة التاسعة بعد الفاصلة.",
+          "$0{,}000000001 = 10^{-9}$ ."
+        ],
+        "result": "n = -9"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$1\\ \\mathrm{Gm} = 1\\,000\\,000\\,000\\ \\mathrm{m} = 10^{n}\\ \\mathrm{m}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ الأصفار الواقعة بعد الرقم 1 في هذا العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأسّ هو عدد الأصفار بعد الرقم 1، وليس عدد أرقام العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدّ الأصفار صفرًا صفرًا بدءًا من الرقم 1 حتى آخر العدد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-ASHARA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\ \\mathrm{Gm} = 10^{9}\\ \\mathrm{m}$ .",
+        "incorrect": "عدّ الأصفار (أو رتبة الرقم 1 بعد الفاصلة) بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,000\\,000\\,000$ تسعة أصفار.",
+          "$1\\,000\\,000\\,000 = 10^{9}$ ."
+        ],
+        "result": "n = 9"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "أيّ البادئات التالية تعني $10^{6}$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«ميغا» و«ميكرو» و«ميلي»: أيّها يدلّ على وحدة أكبر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القوة $10^{6}$ عدد كبير: مليون."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "البادئتان الأخريان تدلّان على أجزاء صغيرة من الوحدة."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "ميلي",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-WIHDA"
+        },
+        {
+          "id": "B",
+          "content": "ميغا",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "ميكرو",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-WIHDA"
+        }
+      ],
+      "feedback": {
+        "correct": "«ميغا» تعني مليونًا: $10^{6}$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب الكتابة العشرية للقوة المعنية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "«ميغا» $= 1\\,000\\,000 = 10^{6}$ .",
+          "«ميكرو» $= 10^{-6}$ و«ميلي» $= 10^{-3}$ ."
+        ]
+      }
+    }
+  ]
+}

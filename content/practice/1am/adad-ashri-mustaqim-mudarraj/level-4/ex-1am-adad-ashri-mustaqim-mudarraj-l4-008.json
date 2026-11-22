@@ -1,0 +1,220 @@
+{
+  "id": "ex-1am-adad-ashri-mustaqim-mudarraj-l4-008",
+  "lessonCode": "adad-ashri-mustaqim-mudarraj",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — أعلام ومبدأ مخفيّ",
+    "estimatedMinutes": 5,
+    "tags": [
+      "حصر",
+      "مبدأ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يظهر جزء فقط من الشريط : العلامتان المكتوبتان 20 و21 وبينهما 10 تدريجات صغيرة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "على نصف مستقيم مدرّج لا يظهر مبدؤه، العلامتان المتتاليتان المكتوبتان هما $20$ و$21$ وبينهما 10 أجزاء متساوية. تبعد النقطة $K$ عن العلامة $20$ بمقدار 3 تدريجات صغيرة نحو اليمين. ما فاصلتها ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "20,3",
+      "misconceptionSignatures": [
+        {
+          "value": "0,3",
+          "id": "MISC-ABSC-SHIFTORIGIN"
+        },
+        {
+          "value": "23",
+          "id": "MISC-ABSC-TICKUNIT"
+        },
+        {
+          "value": "20,4",
+          "id": "MISC-ABSC-COUNTMARKS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا يهمّ أن يكون المبدأ ظاهرًا : كم يساوي الفرق بين العلامتين المكتوبتين ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم هذا الفرق على عدد الأجزاء لتعرف قيمة التدريجة الصغيرة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ابدأ العدّ من العلامة المكتوبة، فأضف قيمتها إلى ما قطعته."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة $20{,}3$ : ننطلق من قيمة العلامة المكتوبة ونضيف التدريجات الصغيرة.",
+        "incorrect": "عندما لا يظهر المبدأ نقرأ القيمة من العلامات المكتوبة : قيمة التدريجة الصغيرة هي الفرق بين علامتين مقسومًا على عدد الأجزاء، ثمّ تضاف إلى العلامة التي بدأنا منها."
+      },
+      "solution": {
+        "lines": [
+          "الفرق بين العلامتين $21$ − $20$ = $1$ مقسوم على 10 أجزاء، فكلّ تدريجة صغيرة $0{,}1$",
+          "الفاصلة : $20$ + $3$ × $0{,}1$ = $20{,}3$"
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "النقطة $T$ فاصلتها $20{,}52$ ، وهي تقع بين تدريجتين صغيرتين متتاليتين على نصف مستقيم تدريجته الصغيرة $0{,}1$ . أيّ حصر صحيح لفاصلتها بين تدريجتين متتاليتين ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الحصر الصحيح",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$20{,}4 < T < 20{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-BOUNDSSHIFT"
+        },
+        {
+          "id": "B",
+          "content": "$20{,}5 < T < 20{,}6$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$20{,}6 < T < 20{,}7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-BOUNDSSHIFT"
+        },
+        {
+          "id": "D",
+          "content": "$20{,}6 < T < 20{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-BOUNDSREV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التدريجتان متتاليتان : الفرق بينهما قيمة التدريجة الصغيرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الأصغر في الحصر يكون على يسار النقطة والأكبر على يمينها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الفاصلة بكلّ تدريجة قريبة منها."
+        }
+      ],
+      "feedback": {
+        "correct": "الحصر الصحيح : $20{,}5$ < $20{,}52$ < $20{,}6$.",
+        "incorrect": "نحصر الفاصلة بين تدريجتين متتاليتين : الأصغر على يسار النقطة والأكبر على يمينها، والفرق بينهما قيمة التدريجة."
+      },
+      "solution": {
+        "lines": [
+          "نبحث عن التدريجتين المتتاليتين اللتين تحيطان بالعدد $20{,}52$",
+          "$20{,}5$ < $20{,}52$ < $20{,}6$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "على نصف مستقيم مدرّج لا يظهر مبدؤه، العلامتان المتتاليتان المكتوبتان هما $20$ و$21$ وبينهما 10 أجزاء متساوية. تبعد النقطة $K$ عن العلامة $20$ بمقدار 8 تدريجات صغيرة نحو اليمين. ما فاصلتها ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$20{,}8$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$0{,}8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-SHIFTORIGIN"
+        },
+        {
+          "id": "C",
+          "content": "$28$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-TICKUNIT"
+        },
+        {
+          "id": "D",
+          "content": "$20{,}9$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-COUNTMARKS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا يهمّ أن يكون المبدأ ظاهرًا : كم يساوي الفرق بين العلامتين المكتوبتين ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم هذا الفرق على عدد الأجزاء لتعرف قيمة التدريجة الصغيرة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ابدأ العدّ من العلامة المكتوبة، فأضف قيمتها إلى ما قطعته."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة $20{,}8$ : ننطلق من قيمة العلامة المكتوبة ونضيف التدريجات الصغيرة.",
+        "incorrect": "عندما لا يظهر المبدأ نقرأ القيمة من العلامات المكتوبة : قيمة التدريجة الصغيرة هي الفرق بين علامتين مقسومًا على عدد الأجزاء، ثمّ تضاف إلى العلامة التي بدأنا منها."
+      },
+      "solution": {
+        "lines": [
+          "الفرق بين العلامتين $21$ − $20$ = $1$ مقسوم على 10 أجزاء، فكلّ تدريجة صغيرة $0{,}1$",
+          "الفاصلة : $20$ + $8$ × $0{,}1$ = $20{,}8$"
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

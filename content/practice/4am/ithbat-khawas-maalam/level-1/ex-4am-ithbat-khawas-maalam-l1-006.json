@@ -1,0 +1,85 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l1-006",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — متوازي أضلاع ضلعان منه متقايسان",
+    "estimatedMinutes": 2,
+    "tags": [
+      "معيّن"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_ithbat-khawas-maalam_P2",
+      "modelledOn": "ex-13"
+    }
+  },
+  "generator": {
+    "tool": "u1x-ithbat-khawas-maalam/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "PQRS متوازي أضلاع في معلم متعامد ومتجانس، وحسبنا أن $PQ = QR$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ماذا نستطيع أن نستنتج بالتأكيد؟",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الرباعي PQRS معيّن",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الرباعي PQRS مستطيل",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "C",
+          "content": "الرباعي PQRS مربّع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "D",
+          "content": "الرباعي PQRS ليس معيّنا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "[PQ] و [QR] ضلعان متتاليان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضلعان متتاليان متقايسان في متوازي أضلاع: أيّ رباعي؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القطران لم يُقارنا بعد."
+        }
+      ],
+      "feedback": {
+        "correct": "متوازي أضلاع فيه ضلعان متتاليان متقايسان: معيّن.",
+        "incorrect": "الضلعان المتتاليان يعطيان المعيّن؛ المستطيل يحتاج القطرين."
+      }
+    }
+  ]
+}

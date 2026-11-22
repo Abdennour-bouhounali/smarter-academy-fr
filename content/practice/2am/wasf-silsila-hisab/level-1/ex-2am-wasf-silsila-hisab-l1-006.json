@@ -1,0 +1,274 @@
+{
+  "id": "ex-2am-wasf-silsila-hisab-l1-006",
+  "lessonCode": "wasf-silsila-hisab",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — عمليات من المستوى نفسه",
+    "estimatedMinutes": 8,
+    "tags": [
+      "الحدّ الأول",
+      "تسمية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "عند تتابع جمع وطرح، تُنجز العمليات من اليسار نحو اليمين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما اسم السلسلة $A = 20 + 5 - 3$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مجموع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-FIRSTOP"
+        },
+        {
+          "id": "B",
+          "content": "فرق",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "جداء",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع خطًّا تحت العملية التي تُنجز في الأخير، بعد انتهاء كل ما بين القوسين وكل ضرب أو قسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب السلسلة مرحلة مرحلة وتتبّع آخر عملية بقيت لك."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يبقى في الأخير عددان تربط بينهما عملية واحدة: هي التي تعطي اسم السلسلة."
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة عبارة عن فرق: آخر عملية تُنجز فيها هي الطرح.",
+        "incorrect": "لا تسمِّ السلسلة بأوّل عملية تُنجز ولا بأوّل رمز تراه: سمِّها بآخر عملية تُنجز فيها."
+      },
+      "solution": {
+        "lines": [
+          "$A = 20 + 5 - 3$",
+          "$A = 22$",
+          "آخر عملية تُنجز هي الطرح، فالسلسلة عبارة عن فرق."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "في السلسلة $A = 20 + 5 - 3$ ، ما الحدّ الأول ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$20$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-PIECES"
+        },
+        {
+          "id": "B",
+          "content": "$3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-ORDERDIFF"
+        },
+        {
+          "id": "C",
+          "content": "$20 + 5$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد أوّلًا آخر عملية في السلسلة: العددان أو القطعتان اللتان تربط بينهما هما المقصودتان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ السلسلة قطعتين: ما كان قبل آخر عملية وما كان بعدها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "في الفرق وفي حاصل القسمة يهمّ الترتيب: المكتوب أوّلًا هو الحدّ الأول (المقسوم)."
+        }
+      ],
+      "feedback": {
+        "correct": "الحدّ الأول هو $20 + 5$ .",
+        "incorrect": "حدّد آخر عملية أوّلًا، ثم اقرأ القطعة التي تسبقها والقطعة التي تليها كاملتين."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية في $20 + 5 - 3$ هي $-$ فالسلسلة فرق.",
+          "قبلها $20 + 5$ وبعدها $3$ .",
+          "الحدّ الأول هو $20 + 5$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما اسم السلسلة $B = 30 - 6 + 4$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مجموع",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "فرق",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-FIRSTOP"
+        },
+        {
+          "id": "C",
+          "content": "جداء",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع خطًّا تحت العملية التي تُنجز في الأخير، بعد انتهاء كل ما بين القوسين وكل ضرب أو قسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب السلسلة مرحلة مرحلة وتتبّع آخر عملية بقيت لك."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يبقى في الأخير عددان تربط بينهما عملية واحدة: هي التي تعطي اسم السلسلة."
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة عبارة عن مجموع: آخر عملية تُنجز فيها هي الجمع.",
+        "incorrect": "لا تسمِّ السلسلة بأوّل عملية تُنجز ولا بأوّل رمز تراه: سمِّها بآخر عملية تُنجز فيها."
+      },
+      "solution": {
+        "lines": [
+          "$B = 30 - 6 + 4$",
+          "$B = 28$",
+          "آخر عملية تُنجز هي الجمع، فالسلسلة عبارة عن مجموع."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "في السلسلة $B = 30 - 6 + 4$ ، ما الحدّ الأول ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$30$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-PIECES"
+        },
+        {
+          "id": "B",
+          "content": "$30 - 6$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$4$",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد أوّلًا آخر عملية في السلسلة: العددان أو القطعتان اللتان تربط بينهما هما المقصودتان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ السلسلة قطعتين: ما كان قبل آخر عملية وما كان بعدها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "في الفرق وفي حاصل القسمة يهمّ الترتيب: المكتوب أوّلًا هو الحدّ الأول (المقسوم)."
+        }
+      ],
+      "feedback": {
+        "correct": "الحدّ الأول هو $30 - 6$ .",
+        "incorrect": "حدّد آخر عملية أوّلًا، ثم اقرأ القطعة التي تسبقها والقطعة التي تليها كاملتين."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية في $30 - 6 + 4$ هي $+$ فالسلسلة مجموع.",
+          "قبلها $30 - 6$ وبعدها $4$ .",
+          "الحدّ الأول هو $30 - 6$ ."
+        ]
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

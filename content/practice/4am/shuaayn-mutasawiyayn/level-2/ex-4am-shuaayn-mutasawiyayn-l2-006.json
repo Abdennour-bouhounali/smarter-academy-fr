@@ -1,0 +1,121 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l2-006",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — متوازي أضلاع على الشبكة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "متوازي الأضلاع",
+      "ورقة مرصوفة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_shuaayn-mutasawiyayn_P2",
+      "modelledOn": "method-equal"
+    }
+  },
+  "statement": {
+    "content": "على الورقة المرصوفة (الشكل)، الرباعي ABCD رؤوسه على عقد الشبكة.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          4,
+          1
+        ],
+        "C": [
+          5,
+          4
+        ],
+        "D": [
+          1,
+          3
+        ]
+      },
+      "grid": true,
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "A"
+        ]
+      ],
+      "labels": {
+        "A": "sw",
+        "B": "se",
+        "C": "ne",
+        "D": "nw"
+      },
+      "ariaLabel": "ورقة مرصوفة: رباعي ABCD رؤوسه على عقد الشبكة"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "هل ABCD متوازي أضلاع؟",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا: لأن AB لا يساوي BC",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "نعم: $\\overrightarrow{AB} = \\overrightarrow{DC}$ (نفس عدد المربعات أفقيا وعموديا وفي الاتجاه نفسه)",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نعم: $\\overrightarrow{AB} = \\overrightarrow{CD}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عُدّ المربعات من A إلى B: أفقيا ثم عموديا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ المربعات من D إلى C بالطريقة نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حركتان متطابقتان تعطيان شعاعين متساويين."
+        }
+      ],
+      "feedback": {
+        "correct": "من A إلى B ومن D إلى C: 4 مربعات نحو اليمين ومربع نحو الأعلى. الشعاعان متساويان، فـ ABCD متوازي أضلاع.",
+        "incorrect": "قارن الحركة من A إلى B بالحركة من D إلى C."
+      }
+    }
+  ]
+}

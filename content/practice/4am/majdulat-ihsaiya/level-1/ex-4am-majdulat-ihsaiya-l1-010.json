@@ -1,0 +1,169 @@
+{
+  "id": "ex-4am-majdulat-ihsaiya-l1-010",
+  "lessonCode": "majdulat-ihsaiya",
+  "level": 1,
+  "metadata": {
+    "title": "تمرين 16 (ص 99) — الطلبية Histogramme",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مدرّج تكراري",
+      "جيوجيبرا"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-16",
+      "page": 99,
+      "section": "أوظّف تعلّماتي",
+      "number": 16
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "تعطى السلسلة الإحصائية:",
+    "table": {
+      "head": [
+        "الفئات",
+        "$7 \\le t < 8$",
+        "$8 \\le t < 9$",
+        "$9 \\le t < 10$"
+      ],
+      "rows": [
+        [
+          "التكرارات",
+          "6",
+          "1",
+          "4"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما نوع التمثيل البياني المناسب لهذه السلسلة؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مدرّج تكراري",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "مخطط دائري",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MUKHATTAT-GHAYR-MUNASIB"
+        },
+        {
+          "id": "C",
+          "content": "مخطط بالأعمدة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MUKHATTAT-GHAYR-MUNASIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اسأل نفسك: هل المعطيات قيم منفصلة، أم فئات متلاصقة، أم أجزاء من كلّ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المخطط بالأعمدة لقيم منفصلة، والمدرّج التكراري لفئات متلاصقة، والمخطط الدائري لتوزيع كلّ على أجزائه."
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة مجمّعة في فئات متلاصقة: نمثّلها بمدرّج تكراري، مستطيلات متلاصقة عرض كل منها طول الفئة.",
+        "incorrect": "اختر التمثيل حسب طبيعة المعطيات: قيم منفصلة، فئات متلاصقة، أو أجزاء من كلّ."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة مجمّعة في فئات متلاصقة: نمثّلها بمدرّج تكراري، مستطيلات متلاصقة عرض كل منها طول الفئة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عيّن الطلبية التي تُحجز في البرمجية جيوجيبرا لرسم هذا التمثيل.",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "⁦Histogramme({7,8,9},{6,1,4})⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-TALABIYA-HISTOGRAMME"
+        },
+        {
+          "id": "B",
+          "content": "⁦Histogramme({6,1,4},{7,8,9,10})⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-TALABIYA-HISTOGRAMME"
+        },
+        {
+          "id": "C",
+          "content": "⁦Histogramme({7,8,9,10},{6,1,4})⁩",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "⁦Histogramme({7,8,9,10},{4,1,6})⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-TALABIYA-HISTOGRAMME"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في الطلبية Histogramme القائمة الأولى بين حاضنتين حدود الفئات، والثانية التكرارات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ الفئات: عدد الحدود يزيد بواحد على عدد الفئات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "رتّب التكرارات بترتيب الفئات نفسه، من الفئة الأولى إلى الأخيرة."
+        }
+      ],
+      "feedback": {
+        "correct": "القائمة الأولى حدود الفئات والثانية تكراراتها بالترتيب.",
+        "incorrect": "القائمة الأولى حدود الفئات كلها (عددها = عدد الفئات + 1)، والثانية تكرارات الفئات بالترتيب نفسه."
+      },
+      "solution": {
+        "lines": [
+          "ثلاث فئات متلاصقة حدودها 7 ، 8 ، 9 ، 10 (أربعة أعداد)، وتكراراتها بالترتيب 6 ، 1 ، 4 .",
+          "الطلبية: ⁦Histogramme({7,8,9,10},{6,1,4})⁩ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

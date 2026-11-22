@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-misaha-hajm-kura-l1-010",
+  "lessonCode": "misaha-hajm-kura",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — التدوير إلى الجزء من عشرة",
+    "estimatedMinutes": 1,
+    "tags": [
+      "التدوير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_misaha-hajm-kura_P3",
+      "modelledOn": "know-2"
+    }
+  },
+  "statement": {
+    "content": "مساحة كرة نصف قطرها $1\\,\\mathrm{cm}$ هي $4\\pi\\,\\mathrm{cm}^2$ ، والحاسبة تعطي $4\\pi = 12{,}566\\ldots$"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المدوّر إلى الجزء من عشرة لهذه المساحة هو:",
+      "learningPoints": [
+        {
+          "code": "4am_misaha-hajm-kura_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$12{,}5\\,\\mathrm{cm}^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR"
+        },
+        {
+          "id": "B",
+          "content": "$12{,}57\\,\\mathrm{cm}^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR"
+        },
+        {
+          "id": "C",
+          "content": "$12{,}6\\,\\mathrm{cm}^2$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الجزء من عشرة: رقم واحد بعد الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انظر إلى الرقم الذي يليه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "6 أكبر من 5 أو يساويه: نزيد 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$12{,}566\\ldots \\approx 12{,}6$ .",
+        "incorrect": "$12{,}5$ بتر لا تدوير، و $12{,}57$ رقمان بعد الفاصلة."
+      },
+      "difficulty": 1
+    }
+  ]
+}

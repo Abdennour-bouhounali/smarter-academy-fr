@@ -1,0 +1,121 @@
+{
+  "id": "ex-4am-zawiya-muhitiya-l5-002",
+  "lessonCode": "zawiya-muhitiya",
+  "level": 5,
+  "metadata": {
+    "title": "تمرين 12 — البرهان العام",
+    "estimatedMinutes": 4,
+    "tags": [
+      "زاوية رأسها داخل الدائرة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-12",
+      "page": 159,
+      "section": "الزوايا المحيطية و الزوايا المركزية",
+      "number": 12
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 159): (P) دائرة مركزها O و [BD] قطر لها، (AB) و (CD) متقاطعان في M داخل الدائرة. نقبل أن $\\widehat{CMB} = \\dfrac{\\widehat{COB} + \\widehat{AOD}}{2}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "هذه المساواة تنتج من:",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\widehat{CMB} = \\widehat{AMD} = \\widehat{CDB} + \\widehat{ABD}$ ، وكل من $\\widehat{CDB}$ و $\\widehat{ABD}$ نصف زاويتها المركزية",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\widehat{CMB}$ محيطية، فهي نصف $\\widehat{COB}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-RAS"
+        },
+        {
+          "id": "C",
+          "content": "$\\widehat{CMB} = \\widehat{COB} + \\widehat{AOD}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-DIF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالزوايا التي تعطيها خاصيتا الزاوية المحيطية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم استعمل مجموع أقياس زوايا المثلث، أو الزاوية المستقيمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل زاوية بدلالة القوس الذي تحصره قبل أن تحسب."
+        }
+      ],
+      "feedback": {
+        "correct": "الزاويتان المتقابلتان بالرأس متقايستان، والزاوية الخارجية مجموع الداخليتين.",
+        "incorrect": "رأس CMB داخل الدائرة: ليست محيطية."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "إذا كان $\\widehat{COB} = 70^\\circ$ و $\\widehat{AOD} = 50^\\circ$ ، فما قيس $\\widehat{CMB}$ بالدرجة؟",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "60",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوس الذي تحصره كل زاوية: هل هو نفس القوس؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الزاويتين: أيهما أكبر، المركزية أم المحيطية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قيس الزاوية المحيطية نصف قيس الزاوية المركزية التي تحصر معها نفس القوس."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{70^\\circ + 50^\\circ}{2} = 60^\\circ$ .",
+        "incorrect": "نصف مجموع الزاويتين المركزيتين."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-RAS",
+          "value": "35"
+        },
+        {
+          "id": "MISC-MUHITIYA-DIF",
+          "value": "120"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,253 @@
+{
+  "id": "ex-4am-hall-jabri-l5-008",
+  "lessonCode": "hall-jabri",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2023 — نقل الآجر من مصنع بسكيكدة",
+    "estimatedMinutes": 16,
+    "tags": [
+      "جملة",
+      "وضعية",
+      "مقارنة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_hall-jabri_P2",
+      "modelledOn": "BEM 2023 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "ينقل مصنع للآجر بولاية سكيكدة، يسهم في بناء مساكن الوطن، إنتاجه بنوعين من الشاحنات: شاحنات صغيرة وشاحنات كبيرة، وكل شاحنة تُملأ عن آخرها.\n• يوم الأحد نقلت 4 شاحنات صغيرة و 3 شاحنات كبيرة 26000 آجرة.\n• يوم الاثنين نقلت شاحنتان صغيرتان و 5 شاحنات كبيرة 34000 آجرة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "نسمّي $x$ عدد الآجر الذي تنقله شاحنة صغيرة و $y$ عدد الآجر الذي تنقله شاحنة كبيرة.",
+      "statement": "ترجم المعطيات بجملة معادلتين مجهولاها $x$ و $y$ .",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب معادلة لكل معلومة من النص."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "يوم الأحد: $4x + 3y = 26000$",
+          "يوم الاثنين: $2x + 5y = 34000$",
+          "ومنه الجملة: $\\begin{cases} 4x + 3y = 26000 \\\\ 2x + 5y = 34000 \\end{cases}$"
+        ],
+        "result": "\\begin{cases} 4x + 3y = 26000 \\\\ 2x + 5y = 34000 \\end{cases}"
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حل الجملة: $\\begin{cases} 4x + 3y = 26000 \\\\ 2x + 5y = 34000 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hall-jabri_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": {
+        "x": "2000",
+        "y": "6000"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "6000",
+            "y": "2000"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن معاملي $x$ في المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب طرفي المعادلة (2) في $-2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع المعادلتين طرفا لطرف، ثم عوّض القيمة في إحدى المعادلتين لتجد المجهول الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "الثنائية $(2000 ; 6000)$ تحقق المعادلتين معا: هي حل الجملة.",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "نضرب طرفي المعادلة (2) في $-2$ :",
+          "$\\begin{cases} 4x + 3y = 26000 \\\\ -4x - 10y = -68000 \\end{cases}$",
+          "بجمع المعادلتين طرفا لطرف نجد: $-7y = -42000$",
+          "ومنه $y = 6000$",
+          "نعوّض $y$ بـ $6000$ في المعادلة (1): $4x + 3 \\times 6000 = 26000$",
+          "$4x = 8000$",
+          "ومنه $x = 2000$",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(2000 ; 6000)"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "lead": "تكلفة نقل حمولة شاحنة صغيرة 3000DA وتكلفة نقل حمولة شاحنة كبيرة 7000DA. طلب مقاول 50000 آجرة.",
+      "statement": "كم حمولة شاحنة صغيرة تلزم لنقل الطلبية بالشاحنات الصغيرة فقط؟",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب عدد الحمولات (عدد طبيعي)",
+      "expectedAnswer": "25",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم عدد الآجر المطلوب على حمولة شاحنة صغيرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$50000 \\div 2000 = 25$ .",
+        "incorrect": "استعمل حمولة الشاحنة الصغيرة من السؤال 02."
+      },
+      "solution": {
+        "lines": [
+          "$50000 \\div 2000 = 25$ : تلزم 25 حمولة شاحنة صغيرة."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "كم حمولة شاحنة كبيرة تلزم على الأقل لنقل الطلبية بالشاحنات الكبيرة فقط؟",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب عدد الحمولات (عدد طبيعي)",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم عدد الآجر على حمولة شاحنة كبيرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد الحمولات عدد طبيعي يكفي لكل الآجر."
+        }
+      ],
+      "feedback": {
+        "correct": "$50000 \\div 6000 \\approx 8{,}33$ : تلزم 9 حمولات.",
+        "incorrect": "خارج القسمة ليس طبيعيا: خذ العدد الطبيعي الذي يكفي لنقل كل الآجر."
+      },
+      "solution": {
+        "lines": [
+          "$50000 \\div 6000 \\approx 8{,}33$",
+          "8 حمولات لا تكفي ( $8 \\times 6000 = 48000$ )، إذن تلزم 9 حمولات على الأقل."
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "☜ أيّ الحلّين أقل تكلفة للمقاول؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الشاحنات الصغيرة فقط",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "الشاحنات الكبيرة فقط",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب تكلفة كل حل باستعمال عدد الحمولات."
+        }
+      ],
+      "feedback": {
+        "correct": "$63000DA$ بالشاحنات الكبيرة مقابل $75000DA$ بالصغيرة.",
+        "incorrect": "احسب التكلفتين ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "الشاحنات الصغيرة فقط: $25 \\times 3000 = 75000$ ، أي $75000DA$ .",
+          "الشاحنات الكبيرة فقط: $9 \\times 7000 = 63000$ ، أي $63000DA$ .",
+          "ومنه النقل بالشاحنات الكبيرة فقط أقل تكلفة."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

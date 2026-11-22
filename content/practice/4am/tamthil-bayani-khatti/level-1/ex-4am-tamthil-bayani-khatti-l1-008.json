@@ -1,0 +1,115 @@
+{
+  "id": "ex-4am-tamthil-bayani-khatti-l1-008",
+  "lessonCode": "tamthil-bayani-khatti",
+  "level": 1,
+  "metadata": {
+    "title": "طرائق — تمثيل الدالة $x \\longmapsto 1{,}5x$",
+    "estimatedMinutes": 5,
+    "tags": [
+      "تمثيل بياني"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-draw",
+      "page": 69,
+      "section": "طرائق",
+      "adaptedFrom": "ex-4am-tamthil-bayani-khatti-l1-008"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نريد تمثيل الدالة الخطية $f$ حيث $f(x) = 1{,}5x$ في معلم متعامد ومتجانس $(O, \\vec{i}, \\vec{j})$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب ترتيب النقطة $A$ من التمثيل البياني للدالة $f$ التي فاصلتها 2.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "4/3",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ترتيب النقطة $A$ هو صورة فاصلتها بالدالة $f$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $1{,}5 \\times 2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(2) = 1{,}5 \\times 2 = 3$ ، إذن $A(2 ; 3)$ .",
+        "incorrect": "اضرب الفاصلة في المعامل $1{,}5$ ، ولا تقسم."
+      },
+      "solution": {
+        "lines": [
+          "$f(2) = 1{,}5 \\times 2 = 3$",
+          "إذن $A(2 ; 3)$ ."
+        ],
+        "result": "A(2 ; 3)"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "مثّل بيانيا الدالة $f$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التمثيل البياني لدالة خطية مستقيم يشمل المبدأ $O$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يكفي تعيين نقطة ثانية من التمثيل بحساب صورة عدد غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "تمثيل الدالة الخطية $f$ مستقيم يشمل المبدأ $O$ .",
+          "نعلّم النقطة $A(2 ; 3)$ (اخترنا الفاصلة 2 لنحصل على ترتيب صحيح).",
+          "المستقيم $(OA)$ هو التمثيل البياني للدالة $f$ ."
+        ]
+      },
+      "timeSeconds": 240
+    }
+  ]
+}

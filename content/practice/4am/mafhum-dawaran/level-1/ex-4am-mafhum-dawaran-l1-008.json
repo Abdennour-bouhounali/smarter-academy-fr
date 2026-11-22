@@ -1,0 +1,93 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l1-008",
+  "lessonCode": "mafhum-dawaran",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — نصف دورة على المرصوفة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "صورة نقطة",
+      "التناظر المركزي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mafhum-dawaran_P2",
+      "modelledOn": "know-2"
+    }
+  },
+  "statement": {
+    "content": "على المرصوفة: $O(0\\,;\\,0)$ و $N(2\\,;\\,-3)$ . N′ صورة N بالدوران الذي مركزه O وزاويته $180^\\circ$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "N": [
+          2,
+          -3
+        ]
+      },
+      "grid": true,
+      "maxWidth": 420,
+      "ariaLabel": "ورقة مرصوفة عليها النقطتان O و N"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما هما إحداثيتا N′؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الإحداثيتان (x ; y) — عددان صحيحان",
+      "expectedAnswer": {
+        "x": "-2",
+        "y": "3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-TANAZUR",
+          "value": {
+            "x": "2",
+            "y": "3"
+          }
+        },
+        {
+          "id": "MISC-DAWARAN-TANAZUR",
+          "value": {
+            "x": "-2",
+            "y": "-3"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدوران بزاوية $180^\\circ$ هو التناظر بالنسبة إلى O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "O منتصف [NN′]."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نغيّر إشارتي الإحداثيتين."
+        }
+      ],
+      "feedback": {
+        "correct": "O منتصف [NN′]: $N'(-2\\,;\\,3)$ .",
+        "incorrect": "التناظر بالنسبة إلى نقطة لا يغيّر إحداثية واحدة فقط."
+      },
+      "difficulty": 1
+    }
+  ]
+}

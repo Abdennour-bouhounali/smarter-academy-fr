@@ -1,0 +1,144 @@
+{
+  "id": "ex-3am-muadalat-darajat-ula-l1-009",
+  "lessonCode": "muadalat-darajat-ula",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — حلّ معادلتين",
+    "estimatedMinutes": 5,
+    "tags": [
+      "حلّ معادلة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 3,
+      "file": "3am-s3-59",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "حلّ المعادلتين الآتيتين:"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "حلّ المعادلة الأولى: $9x - 5 = 4x + 10$ .",
+      "statement": "ما حلّ المعادلة $9x - 5 = 4x + 10$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 3$ .",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر أو عدد عشري)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-MUADALA-SIGN-KEPT"
+        },
+        {
+          "value": "-3",
+          "id": "MISC-MUADALA-NEG-COEF"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "لدينا: $9x - 5 = 4x + 10$ .",
+          "نضيف $-4x$ إلى الطرفين (معاكس الحدّ $4x$) فنجد: $5x - 5 = 10$ .",
+          "نضيف $5$ إلى الطرفين (معاكس $-5$) فنجد: $5x = 15$ .",
+          "نقسم الطرفين على $5$ فنجد: $x = 3$ .",
+          "التحقّق: من أجل $x = 3$ نجد الطرف الأيسر $22$ والطرف الأيمن $22$ ، فهما متساويان."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "حلّ المعادلة الثانية: $-3x + 8 = 2x - 12$ .",
+      "statement": "ما حلّ المعادلة $-3x + 8 = 2x - 12$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 4$ .",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر أو عدد عشري)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "4/5",
+          "id": "MISC-MUADALA-SIGN-KEPT"
+        },
+        {
+          "value": "-4",
+          "id": "MISC-MUADALA-NEG-COEF"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "لدينا: $-3x + 8 = 2x - 12$ .",
+          "نضيف $-2x$ إلى الطرفين (معاكس الحدّ $2x$) فنجد: $-5x + 8 = -12$ .",
+          "نضيف $-8$ إلى الطرفين (معاكس $8$) فنجد: $-5x = -20$ .",
+          "نقسم الطرفين على $-5$ فنجد: $x = 4$ .",
+          "التحقّق: من أجل $x = 4$ نجد الطرف الأيسر $-4$ والطرف الأيمن $-4$ ، فهما متساويان."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "id": "ex-3am-nashr-jabri-3am-l4-003",
+  "lessonCode": "nashr-jabri-3am",
+  "level": 4,
+  "metadata": {
+    "title": "عبارة لا تتعلّق بـ x: حساب ذهني",
+    "estimatedMinutes": 7,
+    "tags": [
+      "نشر",
+      "حساب ذهني"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-25",
+      "page": 64,
+      "section": "نشر العبارة (a+b)(c+d)",
+      "number": 25
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تذكير: $a^2 = a \\times a$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "انشر ثم بسّط $E = (x - 3)^2 - (x - 1)(x - 5)$ ، أي $E = (x - 3)(x - 3) - (x - 1)(x - 5)$ . العبارة المبسّطة عدد: ما هو؟",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "14",
+          "id": "MISC-NASHR-SIGN-NEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر كل جداء على حدة وسجّل كل الحدود الناتجة بإشاراتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الحدود المتشابهة فقط (الجزء الحرفي نفسه)، ثم رتّب الحدود: $x^2$ ثم $x$ ثم العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في العبارة الأصلية وفي المبسّطة: يجب أن تجد القيمة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 4$ ، وهو عدد لا يتعلّق بـ $x$ .",
+        "incorrect": "عوّض $x$ بالعدد المعطى واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$E = x^2 - 3x - 3x + 9 - (x^2 - 5x - x + 5)$",
+          "$E = x^2 - 6x + 9 - x^2 + 6x - 5$",
+          "$E = 4$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج ذهنيًّا قيمة $9997^2 - 9999 \\times 9995$ (انتبه: $9997 = x - 3$ و $9999 = x - 1$ و $9995 = x - 5$ من أجل $x = 10000$ ).",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر كل جداء على حدة وسجّل كل الحدود الناتجة بإشاراتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الحدود المتشابهة فقط (الجزء الحرفي نفسه)، ثم رتّب الحدود: $x^2$ ثم $x$ ثم العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في العبارة الأصلية وفي المبسّطة: يجب أن تجد القيمة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة هي $4$ .",
+        "incorrect": "عوّض $x$ بالعدد المعطى واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $x = 10000$ : $(x - 3)^2 - (x - 1)(x - 5) = 9997^2 - 9999 \\times 9995$ .",
+          "وهذه العبارة تساوي $4$ مهما كان $x$ ، إذن $9997^2 - 9999 \\times 9995 = 4$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

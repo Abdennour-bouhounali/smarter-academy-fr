@@ -1,0 +1,79 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ashia-l3-006",
+  "lessonCode": "wadiya-idmajiya-ashia",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — الممر أمام المدرسة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "أقصر مسلك"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ashia_P3",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "في شارع عرضه $10\\,\\mathrm{m}$ ، الحي A فوق الحافة العليا بـ $10\\,\\mathrm{m}$ والمدرسة B تحت الحافة السفلى بـ $20\\,\\mathrm{m}$ ، والمسافة الأفقية بينهما $40\\,\\mathrm{m}$ (أقصر مسلك $60\\,\\mathrm{m}$ ). تقترح كنزة وضع الممر مقابل المدرسة مباشرة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "هل اقتراح كنزة يعطي أقصر مسلك؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا: المسلك حوالي $71{,}2\\,\\mathrm{m}$ ، أطول من $60\\,\\mathrm{m}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم: NB أقصر ما يمكن فالمسلك أقصر ما يمكن",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "لا: المسلك حوالي $50\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MAMAR-NASI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب AM و NB في هذا الموضع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$AM = \\sqrt{40^2 + 10^2}$ و $NB = 20$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن مع 60."
+        }
+      ],
+      "feedback": {
+        "correct": "$AM = \\sqrt{1700} \\approx 41{,}2$ ، $NB = 20$ ، $MN = 10$ : $L \\approx 71{,}2\\,\\mathrm{m} > 60\\,\\mathrm{m}$ .",
+        "incorrect": "تقصير NB وحده يطيل AM كثيرا."
+      },
+      "cognitiveDemand": "reason",
+      "difficulty": 3
+    }
+  ]
+}

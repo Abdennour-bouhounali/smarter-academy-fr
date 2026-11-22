@@ -1,0 +1,284 @@
+{
+  "id": "ex-2am-silsila-bi-aqwas-l5-008",
+  "lessonCode": "silsila-bi-aqwas",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — تعاونية المدرسة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "أقواس",
+      "وضعية",
+      "آلة حاسبة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "اشترت جمعية المدرسة 12 قلمًا بسعر 2,5 دج للقلم ومسطرة بـ 6 دج، ويتقاسم 4 تلاميذ الثمن بالتساوي."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ سلسلة عمليات تعطي ما يدفعه كلّ تلميذ؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(12 \\times 2{,}5 + 6) \\div 4$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$12 \\times 2{,}5 + 6 \\div 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-IGNORED"
+        },
+        {
+          "id": "C",
+          "content": "$12 \\times (2{,}5 + 6) \\div 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-MISPLACED"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: أيّ مقدار يجب حسابه كلّه قبل غيره؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع بين قوسين المقدار الذي يُحسب أوّلًا، ثم اختبر كل سلسلة بالحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "$(12 \\times 2{,}5 + 6) \\div 4 = 9$ .",
+        "incorrect": "اكتب جمل القصة بعمليات بالترتيب نفسه، وضع بين قوسين ما يجب حسابه أوّلًا، ثم اختبر السلسلة بعدد تقريبي."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة الصحيحة: $(12 \\times 2{,}5 + 6) \\div 4$",
+          "$A = (30 + 6) \\div 4$",
+          "$A = 36 \\div 4$",
+          "$A = 9$"
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم دينارًا يدفع كلّ تلميذ؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار الجزائري",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "31.5",
+          "id": "MISC-AQWAS-IGNORED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: كل جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل جملة بعملية، وضع بين قوسين ما يجب حسابه أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب بالترتيب الصحيح: القوسان أوّلًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$(12 \\times 2{,}5 + 6) \\div 4 = 9$ .",
+        "incorrect": "نترجم القصة بسلسلة عمليات فيها الأقواس اللازمة ثم نحسب: ما بين القوسين أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $(12 \\times 2{,}5 + 6) \\div 4$",
+          "$T = (30 + 6) \\div 4$",
+          "$T = 36 \\div 4$",
+          "$T = 9$"
+        ],
+        "result": "9 \\text{ DA }"
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "لو تقاسم 3 تلاميذ فقط الثمن نفسه، فكم دينارًا يدفع كلّ تلميذ؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار الجزائري",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "32",
+          "id": "MISC-AQWAS-IGNORED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: كل جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل جملة بعملية، وضع بين قوسين ما يجب حسابه أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب بالترتيب الصحيح: القوسان أوّلًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$(12 \\times 2{,}5 + 6) \\div 3 = 12$ .",
+        "incorrect": "نترجم القصة بسلسلة عمليات فيها الأقواس اللازمة ثم نحسب: ما بين القوسين أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $(12 \\times 2{,}5 + 6) \\div 3$",
+          "$T = (30 + 6) \\div 3$",
+          "$T = 36 \\div 3$",
+          "$T = 12$"
+        ],
+        "result": "12 \\text{ DA }"
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "هل يدفع التلميذ أكثر من $10$ دج عندما يتقاسم 3 تلاميذ؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النتيجتين بدقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كل عبارة بالترتيب الصحيح قبل أن تحكم."
+        }
+      ],
+      "feedback": {
+        "correct": "تحقّقت من ذلك بالحساب.",
+        "incorrect": "احسب كل عبارة مرحلة مرحلة وقارن النتيجتين قبل أن تحكم."
+      },
+      "solution": {
+        "lines": [
+          "$(12 \\times 2{,}5 + 6) \\div 3 = 12$",
+          "$12 > 10$"
+        ]
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "حجز زميل اللمسات $12 \\times 2{,}5 + 6 \\div 4 =$ فظهر $31{,}5$ . بيّن خطأه وصحّح الحساب.",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب على ورقتك مرحلة مرحلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اسأل: أيّ عملية تُنجز أوّلًا ولماذا؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تذكر القاعدة المستعملة."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$12 \\times 2{,}5 + 6 \\div 4 = 31{,}5$ : لم تُراعَ الأقواس فحُسب ما لا يجب حسابه أوّلًا.",
+          "الصحيح: $(12 \\times 2{,}5 + 6) \\div 4 = 9$ لأنّ القوسين يُحسبان قبل القسمة أو الضرب."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

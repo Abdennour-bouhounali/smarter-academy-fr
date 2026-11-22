@@ -1,0 +1,392 @@
+{
+  "id": "ex-3am-musawiyat-amaliyat-l5-001",
+  "lessonCode": "musawiyat-amaliyat",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — المحمية الوطنية وطائر الصقر",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "محيط",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 3,
+      "file": "3am-s3-57",
+      "exercise": 4
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: محمية وطنية يحرص القائمون عليها على صون الأمانة التي ائتمنهم الوطن عليها؛ شكلها مستطيل طوله ثلاثة أضعاف عرضه $w$ ومحيطها $240\\,\\mathrm{km}$ .\nالجزء الثاني: رصد أحد العلماء طائر صقر فوجد أنّه يقطع $80\\,\\mathrm{km}$ في $15\\,\\mathrm{min}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "ما المساواة التي تعبّر عن محيط المحمية؟",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2(3w + w) = 240$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$3w + w = 240$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-TERM-LOST"
+        },
+        {
+          "id": "C",
+          "content": "$2 \\times 3w + w = 240$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-TERM-LOST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجهله المسألة؟ سمِّه بحرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم الجملة إلى مساواة بين عبارتين، ثم طبّق العمليّات نفسها على طرفيها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الجواب بالتعويض في نصّ المسألة."
+        }
+      ],
+      "feedback": {
+        "correct": "$2(3w + w) = 240$ .",
+        "incorrect": "استعمل خواص المساواة والعمليّات: عملية واحدة على الطرفين معًا تنقلك من مساواة إلى أخرى؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الطول $3w$ والعرض $w$ ، والمحيط $2(3w + w)$ .",
+          "إذن $2(3w + w) = 240$ ، أي $8w = 240$ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "نعلم أنّ $8w = 240$ ، إذن $w = \\ldots$ .",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "240",
+          "id": "MISC-MUSAWIYA-ONE-SIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نضرب فيه (أو نقسم عليه)؟ وهل هو معدوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نضرب (أو نقسم) الطرفين معًا، وكلّ حدّ من الطرف يتأثّر بالعملية؛ والقسمة على صفر ممنوعة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع الطرف كاملًا بين قوسين قبل أن تضرب، وانتبه لإشارة العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$w = 30$ .",
+        "incorrect": "لا تتغيّر المساواة عندما نضرب طرفيها في العدد نفسه أو نقسمهما على عدد غير معدوم؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $8w = 240$ .",
+          "بقسمة طرفي المساواة على $8$ نجد: $\\dfrac{8w}{8} = \\dfrac{240}{8}$ ، أي $w = 30$ ."
+        ],
+        "result": "w = 30"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما طول المحمية بالكيلومتر؟",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الطول بالكيلومتر",
+      "expectedAnswer": "90",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجهله المسألة؟ سمِّه بحرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم الجملة إلى مساواة بين عبارتين، ثم طبّق العمليّات نفسها على طرفيها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الجواب بالتعويض في نصّ المسألة."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 \\times 30 = 90\\,\\mathrm{km}$ .",
+        "incorrect": "استعمل خواص المساواة والعمليّات: عملية واحدة على الطرفين معًا تنقلك من مساواة إلى أخرى؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$w = 30$ و الطول $3w = 90$ ."
+        ],
+        "result": "90"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "ما سرعة الصقر بالكيلومتر في الساعة؟ (ربع الساعة يوافق $\\dfrac{1}{4}$ ساعة)",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "السرعة (km/h)",
+      "expectedAnswer": "320",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجهله المسألة؟ سمِّه بحرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم الجملة إلى مساواة بين عبارتين، ثم طبّق العمليّات نفسها على طرفيها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الجواب بالتعويض في نصّ المسألة."
+        }
+      ],
+      "feedback": {
+        "correct": "$80 \\times 4 = 320$ .",
+        "incorrect": "استعمل خواص المساواة والعمليّات: عملية واحدة على الطرفين معًا تنقلك من مساواة إلى أخرى؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$v = \\dfrac{80}{\\frac{1}{4}} = 320\\,\\mathrm{km/h}$ ."
+        ],
+        "result": "320"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "نعلم أنّ $320t = 160$ ، إذن $t = \\ldots$ .",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "1/2",
+      "misconceptionSignatures": [
+        {
+          "value": "160",
+          "id": "MISC-MUSAWIYA-ONE-SIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نضرب فيه (أو نقسم عليه)؟ وهل هو معدوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نضرب (أو نقسم) الطرفين معًا، وكلّ حدّ من الطرف يتأثّر بالعملية؛ والقسمة على صفر ممنوعة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع الطرف كاملًا بين قوسين قبل أن تضرب، وانتبه لإشارة العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$t = \\dfrac{1}{2}$ .",
+        "incorrect": "لا تتغيّر المساواة عندما نضرب طرفيها في العدد نفسه أو نقسمهما على عدد غير معدوم؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $320t = 160$ .",
+          "بقسمة طرفي المساواة على $320$ نجد: $\\dfrac{320t}{320} = \\dfrac{160}{320}$ ، أي $t = \\dfrac{1}{2}$ ."
+        ],
+        "result": "t = \\dfrac{1}{2}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ا",
+      "statement": "هل يقطع الصقر طول المحمية كاملًا في ربع ساعة؟",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، فهو يقطع $80\\,\\mathrm{km}$ فقط في ربع ساعة وهي أقلّ من $90\\,\\mathrm{km}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم، لأنّ الطول $90\\,\\mathrm{km}$ يقطعه الصقر في ساعة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-DECISION"
+        },
+        {
+          "id": "C",
+          "content": "نعم، لأنّ سرعته $320\\,\\mathrm{km/h}$ أكبر من $90$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-DECISION"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجهله المسألة؟ سمِّه بحرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم الجملة إلى مساواة بين عبارتين، ثم طبّق العمليّات نفسها على طرفيها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الجواب بالتعويض في نصّ المسألة."
+        }
+      ],
+      "feedback": {
+        "correct": "لا: $80\\,\\mathrm{km} < 90\\,\\mathrm{km}$ .",
+        "incorrect": "استعمل خواص المساواة والعمليّات: عملية واحدة على الطرفين معًا تنقلك من مساواة إلى أخرى؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "في ربع ساعة يقطع الصقر $80\\,\\mathrm{km}$ .",
+          "$80 < 90$ ، إذن لا يقطع طول المحمية كاملًا."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "sub": "ب",
+      "statement": "برّر قرارك بمساواة تُظهر المسافة التي يقطعها الصقر في ربع ساعة.",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا تفعل العمليّة بكل طرف من أطراف المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر: لا نغيّر مساواة إلا بعملية نجريها على طرفيها معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب خطوتك بعبارة «بإضافة… / بضرب… إلى/في الطرفين» ثم استنتج."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "المسافة في ربع ساعة تساوي $80\\,\\mathrm{km}$ .",
+          "بقسمة المسافة على المدّة نجد السرعة $320\\,\\mathrm{km/h}$ ، وهي مسافة أقلّ من طول المحمية $90\\,\\mathrm{km}$ ."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,338 @@
+{
+  "id": "ex-3am-qimat-ibara-harfiya-l2-001",
+  "lessonCode": "qimat-ibara-harfiya",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — اختبار صحة مساواة من أجل قيم",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مساواة",
+      "مثال مضاد",
+      "تحقق بقيمة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 3,
+      "file": "3am-s3-47",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نريد اختبار صحة المساواة $A = B$ حيث:",
+    "formulas": [
+      "A = 5x^2 - 10x + 6",
+      "B = 5x^2 + 2x - 18"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب قيمة $A$ من أجل $x = 2$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "6",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = 2$ هي $6$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$A = 5 \\times 2^2 - 10 \\times 2 + 6$",
+          "$A = 5 \\times 4 - 10 \\times 2 + 6$",
+          "$A = 20 - 20 + 6$",
+          "$A = 0 + 6$",
+          "$A = 6$"
+        ],
+        "result": "A = 6"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب قيمة $B$ من أجل $x = 2$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "6",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = 2$ هي $6$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$B = 5 \\times 2^2 + 2 \\times 2 - 18$",
+          "$B = 5 \\times 4 + 2 \\times 2 - 18$",
+          "$B = 20 + 4 - 18$",
+          "$B = 24 - 18$",
+          "$B = 6$"
+        ],
+        "result": "B = 6"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب قيمة $A$ من أجل $x = -2$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "46",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-QIMA-SIGN-LOST"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = -2$ هي $46$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$A = 5 \\times (-2)^2 - 10 \\times (-2) + 6$",
+          "$A = 5 \\times 4 - 10 \\times (-2) + 6$",
+          "$A = 20 - (-20) + 6$",
+          "$A = 40 + 6$",
+          "$A = 46$"
+        ],
+        "result": "A = 46"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب قيمة $B$ من أجل $x = -2$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-QIMA-SIGN-LOST"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = -2$ هي $-2$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$B = 5 \\times (-2)^2 + 2 \\times (-2) - 18$",
+          "$B = 5 \\times 4 + 2 \\times (-2) - 18$",
+          "$B = 20 + (-4) - 18$",
+          "$B = 16 - 18$",
+          "$B = -2$"
+        ],
+        "result": "B = -2"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "المساواة $A = B$ محققة من أجل:",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x = 2$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$x = -2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QIMA-SIGN-LOST"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن القيمتين اللتين حسبتهما: هل اختلفتا عند قيمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قيمة واحدة تختلف عندها العبارتان تكفي لإثبات أنهما غير متساويتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أمّا تساوي القيمتين من أجل قيمة أو قيمتين فلا يثبت التساوي: لإثباته ننشر ونقارن الشكلين."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل $x = 2$ نجد $6$ و $6$ ، أمّا من أجل $x = -2$ فنجد $46$ و $-2$ .",
+        "incorrect": "قيمة مختلفة تكفي لإثبات عدم التساوي، أمّا القيم المتساوية فلا تكفي لإثبات التساوي."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $x = 2$ : $A = 6$ و $B = 6$ ، فالمساواة محققة.",
+          "من أجل $x = -2$ : $A = 46$ و $B = -2$ ، فالمساواة غير محققة."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "علّل: لماذا لا تتحقق المساواة $A = B$ من أجل $x = -2$ ؟",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي تريد إثباته بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب قيمة العبارتين من أجل قيمة مناسبة ثم قارن النتيجتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب القيمتين صراحةً ثم الخلاصة في جملة واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمتان $46$ و $-2$ مختلفتان، إذن $x = -2$ مثال مضاد: المساواة $A = B$ غير محققة من أجل $x = -2$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $x = -2$ : $A = 5 \\times (-2)^2 - 10 \\times (-2) + 6 = 20 + 20 + 6 = 46$ .",
+          "من أجل $x = -2$ : $B = 5 \\times (-2)^2 + 2 \\times (-2) - 18 = 20 - 4 - 18 = -2$ .",
+          "القيمتان $46$ و $-2$ مختلفتان، إذن $x = -2$ مثال مضاد: المساواة $A = B$ غير محققة من أجل $x = -2$ ."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

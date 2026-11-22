@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { storage } from '../../../utils/storage';
 
 const KEY = 'smarter_effects_enabled';
@@ -13,16 +13,24 @@ const KEY = 'smarter_effects_enabled';
  * Defaults to OFF — sound/vibration must be an opt-in, never a surprise on
  * first visit.
  */
+const EFFECTS_EVENT = 'sa:effects';
+
+/** Écrit la préférence ET prévient tous les interrupteurs ouverts (page, labo, défi) : ils disent toujours la même chose (2026-10-28). */
+function setEffectsEnabled(next) {
+  storage.setItem(KEY, next ? '1' : '0');
+  if (typeof window !== 'undefined') window.dispatchEvent(new CustomEvent(EFFECTS_EVENT, { detail: !!next }));
+}
+
 export function useEffectsPreference() {
   const [enabled, setEnabled] = useState(() => storage.getItem(KEY) === '1');
 
-  const toggle = useCallback(() => {
-    setEnabled((prev) => {
-      const next = !prev;
-      storage.setItem(KEY, next ? '1' : '0');
-      return next;
-    });
+  useEffect(() => {
+    const on = (e) => setEnabled(!!e.detail);
+    window.addEventListener(EFFECTS_EVENT, on);
+    return () => window.removeEventListener(EFFECTS_EVENT, on);
   }, []);
+
+  const toggle = useCallback(() => setEffectsEnabled(storage.getItem(KEY) !== '1'), []);
 
   return { enabled, toggle };
 }

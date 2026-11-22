@@ -1,0 +1,388 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-ibarat-harfiya-3-l4-003",
+  "lessonCode": "wadiya-idmajiya-ibarat-harfiya-3",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — قطعة مربّعة بين أمين وخديجة",
+    "estimatedMinutes": 16,
+    "tags": [
+      "وضعية إدماجية",
+      "مساحة",
+      "متباينة",
+      "مقارنة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-80",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "قطعة أرض مربّعة محيطها $96$ م مجزّأة كما في المخطط: $M$ نقطة من $[BC]$ حيث $BM = x$ و $0 \\leq x \\leq 24$ ، و $E$ نقطة من $[AB]$ حيث $BE = 18$ . الجزء $MBE$ (مثلث قائم في $B$) تملكه خديجة ومساحته $S_1$ ، والباقي يملكه أمين ومساحته $S_2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب طول ضلع القطعة بالمتر :",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "24",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "طول الضلع $24$ م .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$96 \\div 4 = 24$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "عبّر بدلالة $x$ عن المساحتين. المثلث $MBE$ قائم في $B$ : $S_1 = \\dfrac{BM \\times BE}{2}$ و $S_2$ = مساحة المربّع ناقص $S_1$ .",
+      "statement": "اكتب $S_1$ على الشكل $ux$ : العدد $u$ :",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $u$ فقط",
+      "expectedAnswer": "9",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحدود المتشابهة في العبارة؟ وهل يسبق قوسًا إشارة طرح أو عدد يضربه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انشر الأقواس أولًا: العدد أمام القوس يضرب كل حدّ داخله، وإشارة الطرح أمامه تغيّر إشارة كل حدّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود التي فيها الحرف معًا، ثم الأعداد معًا، وتحقّق بقيمة صغيرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$u = 9$ .",
+        "incorrect": "انشر الأقواس مع الانتباه إلى الإشارات ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$S_1 = \\dfrac{x \\times 18}{2}$",
+          "$S_1 = 9x$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "اكتب $S_2$ على الشكل $ux + w$ : العدد $u$ :",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $u$ فقط",
+      "expectedAnswer": "-9",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-SYN-HARF-BRACKET"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحدود المتشابهة في العبارة؟ وهل يسبق قوسًا إشارة طرح أو عدد يضربه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انشر الأقواس أولًا: العدد أمام القوس يضرب كل حدّ داخله، وإشارة الطرح أمامه تغيّر إشارة كل حدّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود التي فيها الحرف معًا، ثم الأعداد معًا، وتحقّق بقيمة صغيرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$u = -9$ .",
+        "incorrect": "انشر الأقواس مع الانتباه إلى الإشارات ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$S_2 = 24^2 - 9x$",
+          "$S_2 = -9x + 576$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "العدد $w$ :",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $w$ فقط",
+      "expectedAnswer": "576",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحدود المتشابهة في العبارة؟ وهل يسبق قوسًا إشارة طرح أو عدد يضربه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انشر الأقواس أولًا: العدد أمام القوس يضرب كل حدّ داخله، وإشارة الطرح أمامه تغيّر إشارة كل حدّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود التي فيها الحرف معًا، ثم الأعداد معًا، وتحقّق بقيمة صغيرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$w = 576$ .",
+        "incorrect": "انشر الأقواس مع الانتباه إلى الإشارات ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$S_2 = -9x + 576$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ا",
+      "lead": "إليك المتباينة $9x < 576 - 9x$ . اختبر صحتها.",
+      "statement": "هل هي صحيحة من أجل $x = 24$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، صحيحة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا، غير صحيحة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SYN-HARF-PARTIAL"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد ما تطلبه كل خطوة: عبارة، أم قيمة من أجل عدد، أم قرار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بالعدد المعطى في كل مكان منه، واحترم الأقواس وأولوية العمليات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الأعداد التي حسبتها قبل أن تقرّر، وتحقّق من الوحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "المتباينة صحيحة من أجل $x = 24$ .",
+        "incorrect": "راجع خطوات الحل: عوّض ثم احسب، وقارن الأعداد قبل أن تقرّر."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأيسر: $9 \\times 24 = 216$ ؛ الطرف الأيمن: $576 - 216 = 360$ .",
+          "$216 < 360$ : المتباينة صحيحة."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ب",
+      "statement": "هل هي صحيحة من أجل $x = 10$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، غير صحيحة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SYN-HARF-PARTIAL"
+        },
+        {
+          "id": "B",
+          "content": "نعم، صحيحة",
+          "isCorrect": true
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد ما تطلبه كل خطوة: عبارة، أم قيمة من أجل عدد، أم قرار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بالعدد المعطى في كل مكان منه، واحترم الأقواس وأولوية العمليات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الأعداد التي حسبتها قبل أن تقرّر، وتحقّق من الوحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "المتباينة صحيحة من أجل $x = 10$ .",
+        "incorrect": "راجع خطوات الحل: عوّض ثم احسب، وقارن الأعداد قبل أن تقرّر."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأيسر: $9 \\times 10 = 90$ ؛ الطرف الأيمن: $576 - 90 = 486$ .",
+          "$90 < 486$ : المتباينة صحيحة."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "lead": "نأخذ $x = 24$ .",
+      "statement": "قارن مساحة قطعة أمين $S_2$ ومساحة قطعة خديجة $S_1$ :",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "القطعتان متساويتان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SYN-HARF-DIFFSIGN"
+        },
+        {
+          "id": "B",
+          "content": "قطعة أمين أكبر من قطعة خديجة",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "قطعة أمين أصغر من قطعة خديجة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SYN-HARF-DIFFSIGN"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا تعلّمنا إشارة الفرق عن ترتيب العددين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب قيمة كل عبارة من أجل العدد المعطى، ثم قارن العددين، أو احسب الفرق وانظر إلى إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا انعكس ترتيب الطرح فإنّ إشارة الفرق تنعكس أيضًا."
+        }
+      ],
+      "feedback": {
+        "correct": "قطعة أمين أكبر من قطعة خديجة.",
+        "incorrect": "احسب القيمتين أو الفرق، وانتبه إلى ترتيب الطرح قبل أن تحكم على الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "$S_1 = 216$ و $S_2 = 360$ .",
+          "$S_2 - S_1 = 144 > 0$ : قطعة أمين أكبر."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-aadad-nisbiya-l4-001",
+  "lessonCode": "wadiya-idmajiya-aadad-nisbiya",
+  "level": 4,
+  "metadata": {
+    "title": "نظائر نقطتين في معلم",
+    "estimatedMinutes": 6,
+    "tags": [
+      "إحداثيات",
+      "نظير",
+      "جداء"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد مبدؤه $O$ ، نعتبر النقطتين $A(−5\\,;\\,2)$ و $B(3\\,;\\,−4)$ . فاصلة نقطة هي إحداثيتها الأولى وترتيبها هو إحداثيتها الثانية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أوجد إحداثيتي $A'$ نظيرة $A$ بالنسبة إلى المبدأ $O$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "5",
+        "y": "-2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-WIDMAJ-ONECOORD",
+          "value": {
+            "x": "5",
+            "y": "2"
+          }
+        },
+        {
+          "id": "MISC-WIDMAJ-ONECOORD",
+          "value": {
+            "x": "-5",
+            "y": "-2"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الإحداثيتين المعلومتين: الفاصلة أولًا ثم الترتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر بعملية على كل إحداثية على حدة، ثم اجمع النتيجتين في ثنائية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من النتيجة بالنظر إلى موضع النقطة بالنسبة إلى محوري المعلم."
+        }
+      ],
+      "feedback": {
+        "correct": "الإحداثيتان هما $(5 ; −2)$ .",
+        "incorrect": "راجع قراءة الإحداثيات وأثر الضرب في عدد سالب على كل إحداثية."
+      },
+      "solution": {
+        "lines": [
+          "$x = 5$ ، $y = −2$"
+        ],
+        "result": "(5 ; −2)"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "أوجد إحداثيتي $B'$ نظيرة $B$ بالنسبة إلى محور الفواصل (المحور الأفقي).",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "3",
+        "y": "4"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-WIDMAJ-AXIS",
+          "value": {
+            "x": "-3",
+            "y": "-4"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الإحداثيتين المعلومتين: الفاصلة أولًا ثم الترتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر بعملية على كل إحداثية على حدة، ثم اجمع النتيجتين في ثنائية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من النتيجة بالنظر إلى موضع النقطة بالنسبة إلى محوري المعلم."
+        }
+      ],
+      "feedback": {
+        "correct": "الإحداثيتان هما $(3 ; 4)$ .",
+        "incorrect": "راجع قراءة الإحداثيات وأثر الضرب في عدد سالب على كل إحداثية."
+      },
+      "solution": {
+        "lines": [
+          "$x = 3$ ، $y = 4$"
+        ],
+        "result": "(3 ; 4)"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب جداء فاصلة $A$ في ترتيبها.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-10",
+      "misconceptionSignatures": [
+        {
+          "value": "-3",
+          "id": "MISC-JIDAA-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ النص وحدّد الأعداد المعطاة وما يعبّر عنه كل منها: ارتفاع أم انخفاض، ربح أم خسارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر عن الانخفاض أو الخسارة أو الدَّين بعدد سالب، ثم اختر العملية التي تناسب السؤال."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العملية بأعداد نسبية ثم أنجزها بقاعدة الإشارات وبأولوية العمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $−10$ .",
+        "incorrect": "راجع ترجمة النص إلى عملية بين أعداد نسبية: أيّ عدد سالب وأيّ عملية تناسب السؤال؟"
+      },
+      "solution": {
+        "lines": [
+          "$(−5) \\times 2$",
+          "$= −10$"
+        ],
+        "result": "−10"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

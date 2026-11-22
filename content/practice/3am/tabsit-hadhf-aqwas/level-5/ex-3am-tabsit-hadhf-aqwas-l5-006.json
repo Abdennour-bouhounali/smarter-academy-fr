@@ -1,0 +1,333 @@
+{
+  "id": "ex-3am-tabsit-hadhf-aqwas-l5-006",
+  "lessonCode": "tabsit-hadhf-aqwas",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — كتب لمكتبة المتوسطة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "حذف الأقواس",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "جمع ثلاثة زملاء مبلغًا لشراء كتب يهدونها لمكتبة المتوسطة: قدّم أمين $x$ دج، وقدّمت سارة $(2x - 50)$ دج، وقدّم يوسف $(x + 120)$ دج. ثم دفعوا $(x - 30)$ دج لتغليف الكتب.\nالجزء الأول: المبلغ بدلالة $x$ .\nالجزء الثاني: ثمن الكتاب الواحد $100$ دج، ويريدون إهداء $7$ كتب."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "اكتب المبلغ المجموع $T$ على أبسط شكل $ax + b$ . العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $T$ على الشكل $ax + b$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة التي تسبق القوسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوسان مسبوقان بالإشارة $+$ (وغير متبوعين بـ $\\times$ أو $\\div$) يُحذفان دون تغيير أي إشارة بينهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العبارة بدون أقواس حدًّا حدًّا، ثم اجمع الحدود المتشابهة."
+        }
+      ],
+      "feedback": {
+        "correct": "$T = 4x + 70$ إذن $a = 4$.",
+        "incorrect": "اجمع الحدود المتشابهة بإشاراتها بعد حذف الأقواس، ثم اقرأ العدد المطلوب في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$T = x + (2x - 50) + (x + 120)$",
+          "$T = x + 2x - 50 + x + 120$",
+          "$T = 4x + 70$"
+        ],
+        "result": "a = 4"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ا",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $T$ على الشكل $ax + b$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "70",
+      "misconceptionSignatures": [
+        {
+          "value": "170",
+          "id": "MISC-TABSIT-PLUS-CHANGED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة التي تسبق القوسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوسان مسبوقان بالإشارة $+$ (وغير متبوعين بـ $\\times$ أو $\\div$) يُحذفان دون تغيير أي إشارة بينهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العبارة بدون أقواس حدًّا حدًّا، ثم اجمع الحدود المتشابهة."
+        }
+      ],
+      "feedback": {
+        "correct": "$T = 4x + 70$ إذن $b = 70$.",
+        "incorrect": "اجمع الحدود المتشابهة بإشاراتها بعد حذف الأقواس، ثم اقرأ العدد المطلوب في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$T = 4x + 70$"
+        ],
+        "result": "b = 70"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ب",
+      "statement": "المبلغ الباقي بعد التغليف هو $R = (4x + 70) - (x - 30)$ . اكتبه على أبسط شكل.",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$R = 3x + 40$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-MINUS-FIRST-ONLY"
+        },
+        {
+          "id": "B",
+          "content": "$R = 5x + 40$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-MINUS-KEPT"
+        },
+        {
+          "id": "C",
+          "content": "$R = 3x + 100$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة التي تسبق القوسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوسان مسبوقان بالإشارة $-$ يُحذفان مع تغيير إشارة كل حدّ بينهما، لا الحدّ الأول وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العبارة بدون أقواس حدًّا حدًّا، ثم اجمع الحدود المتشابهة، وتحقّق بتعويض $x$ بعدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$R = 3x + 100$.",
+        "incorrect": "راجع إشارة كل حدّ وما يسبق القوسين، ثم اجمع الحدود المتشابهة فقط."
+      },
+      "solution": {
+        "lines": [
+          "$R = 4x + 70 - x + 30$",
+          "$R = 3x + 100$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني. قدّم أمين $200$ دج.",
+      "statement": "احسب المبلغ الباقي $R$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "700",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى، ويُستحسن أن تعوّض في الشكل المبسّط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويات العمليات: القوى، ثم الضرب، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالتعويض في العبارة قبل تبسيطها: القيمة لا تتغيّر."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل $x = 200$ : $R = 700$ دج.",
+        "incorrect": "عوّض $x$ بالعدد المعطى في الشكل المبسّط واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$R = 3x + 100$",
+          "من أجل $x = 200$ : $R = 3(200) + 100 = 700$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل يكفي الباقي لشراء الكتب السبعة؟",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، يكفي",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا، لا يكفي",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-DECISION-UNCHECKED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب كل ما يلزم من أجل القيمة المعطاة لـ $x$ قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين اللذين حصلت عليهما."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم: $R = 700$ دج و $7 \\times 100 = 700$ دج.",
+        "incorrect": "أنجز الحسابات من أجل القيمة المعطاة ثم قارن قبل أن تقرّر."
+      },
+      "solution": {
+        "lines": [
+          "ثمن الكتب $7 \\times 100 = 700$ دج.",
+          "الباقي $700$ دج: يكفي تمامًا."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "تقول سارة إنها حسبت $R = 3x + 40$ . اشرح لها خطأها بلطف.",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة التي تسبق القوسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوسان مسبوقان بالإشارة $-$ يُحذفان مع تغيير إشارة كل حدّ بينهما، لا الحدّ الأول وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العبارة بدون أقواس حدًّا حدًّا، ثم اجمع الحدود المتشابهة، وتحقّق بتعويض $x$ بعدد."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "القوسان في $-(x - 30)$ مسبوقان بالإشارة $-$ : تتغيّر إشارة كل حدّ، فنكتب $-x + 30$ .",
+          "سارة غيّرت إشارة الحدّ الأول وحده فكتبت $-x - 30$ ، فوجدت $3x + 40$ .",
+          "الصحيح $R = 4x + 70 - x + 30 = 3x + 100$ ."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

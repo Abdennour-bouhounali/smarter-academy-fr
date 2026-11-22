@@ -1,0 +1,531 @@
+/* ───────── discovery mode of the knowledge page: one card first, each tap reveals what follows ───────── */
+.di-knode {
+  transition:
+    left 0.7s cubic-bezier(0.2, 1, 0.3, 1),
+    top 0.7s cubic-bezier(0.2, 1, 0.3, 1),
+    transform 0.25s,
+    box-shadow 0.15s;
+  animation: di-found 0.55s cubic-bezier(0.2, 1.5, 0.4, 1) backwards;
+}
+@keyframes di-found {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.3);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+.di-knode.is-hero,
+.di-knode.is-hero:hover {
+  transform: translate(-50%, -50%) scale(2);
+  z-index: 2;
+  box-shadow:
+    0 0 0 5px rgba(251, 191, 36, 0.5),
+    0 0 60px rgba(251, 191, 36, 0.55);
+  animation: di-hero 2.2s ease-in-out infinite;
+}
+@keyframes di-hero {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 5px rgba(251, 191, 36, 0.5),
+      0 0 40px rgba(251, 191, 36, 0.4);
+  }
+  50% {
+    box-shadow:
+      0 0 0 9px rgba(251, 191, 36, 0.3),
+      0 0 80px rgba(251, 191, 36, 0.7);
+  }
+}
+.di-knode__more {
+  position: absolute;
+  top: -9px;
+  inset-inline-end: -6px;
+  display: grid;
+  place-items: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  background: #fbbf24;
+  color: #3b2a06;
+  animation: di-bob 1s ease-in-out infinite;
+}
+.di-knode.has-more {
+  border-color: #fbbf24;
+}
+.di-kmap line {
+  animation: di-fade 0.8s ease-out;
+}
+.di-kmap__edge {
+  animation: di-fade 0.8s ease-out;
+}
+.di-kmap__hint {
+  position: absolute;
+  left: 50%;
+  top: 66%;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 0.3rem 1.1rem;
+  border-radius: 999px;
+  background: rgba(251, 191, 36, 0.16);
+  border: 1.5px dashed #fbbf24;
+  color: #fde68a;
+  font-weight: 800;
+  white-space: nowrap;
+  animation: di-bob 1.6s ease-in-out infinite;
+}
+.di-kmap__hint--done {
+  top: auto;
+  bottom: 2.4rem;
+  background: rgba(52, 211, 153, 0.18);
+  border-color: #34d399;
+  color: #d1fae5;
+  animation: di-pop 0.5s;
+}
+.di-kmap__again {
+  position: absolute;
+  top: 0.5rem;
+  inset-inline-start: 0.7rem;
+  font-size: 0.78rem;
+  opacity: 0.7;
+}
+.di-pill--found {
+  border-color: #fbbf24;
+  color: #fde68a;
+}
+
+/* the page's header holds up to five controls: its subtitle WRAPS (two lines at most at the widths we serve) and is never
+   cut — at 1840 × 900 the counters show their words and an ellipsis had eaten the end of the sentence (2026-11-19). The
+   map below is `flex: 1`: it gives the line back, nothing scrolls. */
+.di-page__head p {
+  white-space: normal;
+  overflow-wrap: break-word;
+  line-height: 1.4;
+}
+
+/* ───────── « خريطة المعارف » rebuilt (2026-11-15): the page fits the screen, the discovery is a JOURNEY ───────── */
+.di-page {
+  display: block;
+  padding: 0;
+}
+/* the scaled box is pinned to the top-left corner: scaled, it fills the page exactly (never shifted, never cut) */
+.di-page__fit {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 1rem 1.2rem 1.1rem;
+}
+.di-page__head > div:first-child {
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+}
+.di-page__head h2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.di-page__head .di-pill,
+.di-page__head .di-btn {
+  flex: none;
+  white-space: nowrap;
+}
+@media (max-width: 1500px) {
+  .di-pill__label {
+    display: none;
+  }
+  .di-page__head .di-btn {
+    padding: 0 1rem;
+  }
+}
+@media (min-width: 1101px) {
+  .di-knode {
+    max-width: 15rem;
+    padding: 0.4rem 0.85rem 0.4rem 0.5rem;
+    gap: 0.5rem;
+  }
+  .di-knode__icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 1.25rem;
+  }
+  .di-knode__text small {
+    font-size: 0.76rem;
+  }
+  .di-knode__text strong {
+    font-size: 1rem;
+  }
+  .di-kmap__edge {
+    font-size: 0.8rem;
+    padding: 0.05rem 0.6rem;
+  }
+  .di-kmap__legend {
+    font-size: 0.82rem;
+  }
+}
+.di-journey {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.di-trail {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.15rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 1.2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+}
+.di-trail button:not(.di-link) {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.18rem 0.85rem 0.18rem 0.55rem;
+  border-radius: 999px;
+  border: 2px solid rgba(125, 252, 255, 0.45);
+  background: rgba(125, 252, 255, 0.08);
+  color: #fff;
+  font:
+    700 0.95rem 'Cairo',
+    sans-serif;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.15s;
+}
+.di-trail button:not(.di-link):hover {
+  transform: translateY(-2px);
+}
+.di-trail button.is-read {
+  border-color: #34d399;
+}
+.di-trail button.is-now {
+  background: #fbbf24;
+  color: #3b2a06;
+  border-color: #fbbf24;
+  transform: scale(1.07);
+  box-shadow: 0 0 18px rgba(251, 191, 36, 0.6);
+}
+.di-trail__link {
+  width: 1.1rem;
+  height: 2.5px;
+  border-radius: 2px;
+  background: rgba(125, 252, 255, 0.55);
+}
+.di-trail__rest {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-inline-start: 0.7rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #fde68a;
+}
+.di-trail__again {
+  margin-inline-start: auto;
+  font-size: 0.82rem;
+  opacity: 0.7;
+}
+.di-journey__main {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1.75fr 1fr;
+  gap: 1rem;
+}
+.di-jcard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 0;
+  padding: 1.3rem 1.7rem 1.2rem;
+  border-radius: 1.9rem;
+  background: linear-gradient(170deg, rgba(34, 64, 143, 0.8), rgba(13, 26, 69, 0.85));
+  border: 2.5px solid rgba(125, 252, 255, 0.55);
+  box-shadow:
+    0 22px 60px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  animation: di-turn 0.6s cubic-bezier(0.2, 1.2, 0.4, 1);
+}
+.di-jcard.di-kpanel--mistake {
+  border-color: rgba(251, 146, 60, 0.85);
+  background: linear-gradient(170deg, rgba(124, 58, 29, 0.75), rgba(40, 20, 12, 0.88));
+}
+.di-jcard.di-kpanel--guide {
+  border-color: rgba(167, 243, 208, 0.7);
+  background: linear-gradient(170deg, rgba(31, 92, 90, 0.78), rgba(12, 38, 44, 0.88));
+}
+@keyframes di-turn {
+  from {
+    opacity: 0;
+    transform: perspective(1000px) rotateY(-26deg) scale(0.93);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.di-jcard .di-kpanel__head {
+  gap: 1.1rem;
+  align-items: center;
+}
+.di-jcard .di-kpanel__head > span {
+  width: 4.8rem;
+  height: 4.8rem;
+  border-radius: 1.4rem;
+  font-size: 2.7rem;
+}
+.di-jcard .di-kpanel__head small {
+  font-size: 1.05rem;
+}
+.di-jcard .di-kpanel__head h3 {
+  font-size: 2.2rem;
+  line-height: 1.4;
+}
+.di-jcard .di-kpanel__head p {
+  font-size: 1.35rem;
+}
+.di-jcard__tick {
+  margin-inline-start: auto;
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: #34d399;
+  color: #06261a;
+  font-style: normal;
+}
+.di-jcard .di-tabs {
+  padding: 0.3rem;
+}
+.di-jcard .di-tabs button {
+  padding: 0.5rem 0.5rem;
+  font-size: 1.1rem;
+  border-radius: 0.8rem;
+}
+.di-jcard .di-ctx p,
+.di-jcard .di-parts p {
+  font-size: 1.42rem;
+  line-height: 2.1;
+}
+.di-jcard .di-ctx ul {
+  font-size: 1.3rem;
+  line-height: 2;
+  gap: 0.5rem;
+}
+.di-jcard .di-ctx__formula {
+  font-size: 1.9rem;
+  padding: 0.8rem;
+}
+.di-jcard .di-ctx__note {
+  padding: 0.7rem 1.1rem;
+  font-size: 1.25rem;
+}
+.di-jcard .di-parts {
+  gap: 0.7rem;
+}
+.di-jcard .di-parts > div {
+  padding: 0.8rem 1.1rem;
+}
+.di-jcard .di-parts small {
+  font-size: 1rem;
+}
+.di-jcard .di-memo {
+  gap: 0.5rem;
+}
+.di-jcard .di-memo > div {
+  padding: 0.55rem 1.1rem;
+}
+.di-jcard .di-memo dt {
+  font-size: 1rem;
+}
+.di-jcard .di-memo dd {
+  font-size: 1.3rem;
+}
+.di-jcard .di-memo .is-rule dd {
+  font-size: 2rem;
+}
+.di-jcard .di-quiz {
+  gap: 0.8rem;
+}
+.di-jcard .di-quiz__q p {
+  font-size: 1.3rem;
+}
+.di-jcard .di-quiz__q button {
+  padding: 0.55rem 1rem;
+  font-size: 1.18rem;
+}
+.di-jcard > .di-btn {
+  align-self: center;
+  min-width: 20rem;
+  min-height: 3.3rem;
+  font-size: 1.15rem;
+}
+.di-jcard .di-feedback--soft {
+  font-size: 1.25rem;
+  padding: 1rem;
+}
+.di-next {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  min-height: 0;
+  padding: 1.1rem;
+  border-radius: 1.7rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+.di-next h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #fde68a;
+  line-height: 1.6;
+}
+.di-nextcard {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  width: 100%;
+  padding: 0.95rem 1.1rem;
+  border-radius: 1.4rem;
+  border: 2.5px solid;
+  color: #fff;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: start;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
+}
+.di-nextcard > span:nth-child(2) {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.45;
+}
+.di-nextcard small {
+  font-size: 0.95rem;
+  font-weight: 700;
+  opacity: 0.9;
+}
+.di-nextcard strong {
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+.di-nextcard__icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 1.1rem;
+  background: rgba(255, 255, 255, 0.15);
+  font-size: 1.9rem;
+}
+.di-nextcard.is-mystery {
+  border-color: #fbbf24;
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.32), rgba(251, 191, 36, 0.08));
+  animation: di-glow 1.8s ease-in-out infinite;
+}
+.di-nextcard.is-mystery .di-nextcard__icon {
+  background: #fbbf24;
+  color: #3b2a06;
+}
+.di-nextcard.is-mystery:hover:not(:disabled) {
+  transform: translateY(-4px) scale(1.02);
+}
+.di-nextcard:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  animation: none;
+}
+@keyframes di-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(251, 191, 36, 0);
+  }
+  50% {
+    box-shadow:
+      0 0 0 6px rgba(251, 191, 36, 0.25),
+      0 0 34px rgba(251, 191, 36, 0.45);
+  }
+}
+.di-nextcard.is-found {
+  border-color: rgba(125, 252, 255, 0.5);
+  background: rgba(125, 252, 255, 0.08);
+}
+.di-nextcard.is-found:hover {
+  transform: translateX(-4px);
+}
+.di-next__frontier {
+  margin-top: auto;
+  display: grid;
+  gap: 0.4rem;
+}
+.di-next__frontier > small {
+  font-size: 0.9rem;
+  font-weight: 700;
+  opacity: 0.85;
+}
+.di-nextcard.is-back {
+  padding: 0.5rem 0.8rem;
+  border-width: 2px;
+  border-color: rgba(251, 191, 36, 0.6);
+  background: rgba(251, 191, 36, 0.08);
+}
+.di-nextcard.is-back strong {
+  font-size: 1.05rem;
+}
+.di-nextcard.is-back .di-nextcard__icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  font-size: 1.2rem;
+  border-radius: 0.8rem;
+}
+.di-next > .di-btn {
+  margin-top: auto;
+}
+@media (max-width: 1100px) {
+  .di-journey__main {
+    grid-template-columns: 1.45fr 1fr;
+  }
+  .di-jcard {
+    padding: 1rem 1.2rem;
+  }
+  .di-jcard .di-kpanel__head h3 {
+    font-size: 1.75rem;
+  }
+  .di-jcard .di-kpanel__head > span {
+    width: 3.8rem;
+    height: 3.8rem;
+    font-size: 2.1rem;
+  }
+  .di-jcard .di-ctx p,
+  .di-jcard .di-parts p {
+    font-size: 1.22rem;
+    line-height: 1.95;
+  }
+  .di-jcard .di-ctx ul {
+    font-size: 1.12rem;
+  }
+  .di-jcard > .di-btn {
+    min-width: 14rem;
+  }
+  .di-nextcard strong {
+    font-size: 1.1rem;
+  }
+  .di-trail button:not(.di-link) {
+    font-size: 0.82rem;
+  }
+}

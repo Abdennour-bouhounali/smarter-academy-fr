@@ -1,0 +1,153 @@
+{
+  "id": "ex-4am-tatbiqat-tanasub-l1-003",
+  "lessonCode": "tatbiqat-tanasub",
+  "level": 1,
+  "metadata": {
+    "title": "تمرين 19 — الفواكه في الكيس",
+    "estimatedMinutes": 4,
+    "tags": [
+      "أخذ نسبة مئوية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-19",
+      "page": 73,
+      "section": "أوظّف تعلّماتي",
+      "number": 19,
+      "adaptedFrom": "ex-4am-tatbiqat-tanasub-l1-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "يوجد في كيس 30 برتقالة و 10 تفاحات. أخذ أحمد 20% من البرتقالات، وأخذت لينة 30% من التفاحات ليهديا جيرانهما."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب:",
+      "statement": "عدد البرتقالات التي أخذها أحمد.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أخذ $t\\%$ من مقدار يعني ضربه في $\\dfrac{t}{100}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $30 \\times \\dfrac{20}{100}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$30 \\times \\dfrac{20}{100} = 6$ برتقالات.",
+        "incorrect": "أخذ $t\\%$ من 30 هو $30 \\times \\dfrac{t}{100}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$30 \\times \\dfrac{20}{100} = 6$",
+          "أخذ أحمد 6 برتقالات."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "عدد التفاحات التي أخذتها لينة.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أخذ $t\\%$ من مقدار يعني ضربه في $\\dfrac{t}{100}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $10 \\times \\dfrac{30}{100}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$10 \\times \\dfrac{30}{100} = 3$ تفاحات.",
+        "incorrect": "أخذ $t\\%$ من 10 هو $10 \\times \\dfrac{t}{100}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$10 \\times \\dfrac{30}{100} = 3$",
+          "أخذت لينة 3 تفاحات."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "استنتج عدد الفواكه التي بقيت في الكيس.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "31",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كان في الكيس 40 حبة فاكهة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح من العدد الكلي ما أخذه أحمد وما أخذته لينة."
+        }
+      ],
+      "feedback": {
+        "correct": "$40 - (6 + 3) = 31$ .",
+        "incorrect": "العدد الكلي للفواكه 40 ؛ اطرح منه عدد ما أُخذ."
+      },
+      "solution": {
+        "lines": [
+          "عدد الفواكه في البداية: $30 + 10 = 40$",
+          "عدد الفواكه المأخوذة: $6 + 3 = 9$",
+          "$40 - 9 = 31$",
+          "بقيت في الكيس 31 حبة فاكهة."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

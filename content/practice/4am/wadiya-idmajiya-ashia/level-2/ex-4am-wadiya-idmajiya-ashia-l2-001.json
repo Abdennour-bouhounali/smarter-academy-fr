@@ -1,0 +1,77 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ashia-l2-001",
+  "lessonCode": "wadiya-idmajiya-ashia",
+  "level": 2,
+  "metadata": {
+    "title": "سؤال الكتاب — 4",
+    "estimatedMinutes": 3,
+    "tags": [
+      "قاعدة متوازي الأضلاع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 136,
+      "section": "الوضعيات",
+      "number": 4
+    }
+  },
+  "statement": {
+    "content": "A و B و C ثلاث نقط ليست على استقامة واحدة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ممثل الشعاع $\\overrightarrow{AB} + \\overrightarrow{AC}$ هو:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الشعاع $\\overrightarrow{AE}$ حيث ABEC متوازي أضلاع",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الشعاع $\\overrightarrow{BC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-QAIDA-QUTR"
+        },
+        {
+          "id": "C",
+          "content": "الشعاع $\\overrightarrow{CB}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-QAIDA-QUTR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "للشعاعين نفس المبدأ A."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قاعدة متوازي الأضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع هو القطر الصادر من A."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AC} = \\overrightarrow{BE}$ ثم $\\overrightarrow{AB} + \\overrightarrow{BE} = \\overrightarrow{AE}$ : القطر من A.",
+        "incorrect": "$\\overrightarrow{BC}$ و $\\overrightarrow{CB}$ هما القطر الآخر."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 2
+    }
+  ]
+}

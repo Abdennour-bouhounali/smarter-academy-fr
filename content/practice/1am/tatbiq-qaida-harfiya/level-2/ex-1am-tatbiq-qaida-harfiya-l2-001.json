@@ -1,0 +1,202 @@
+{
+  "id": "ex-1am-tatbiq-qaida-harfiya-l2-001",
+  "lessonCode": "tatbiq-qaida-harfiya",
+  "level": 2,
+  "metadata": {
+    "title": "مثال مضادّ واحد يكفي",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مثال مضادّ",
+      "قاعدة خاطئة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-4",
+      "page": 80,
+      "section": "أبرّر بالمثال المضاد",
+      "number": 4
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "قال كريم: « ثلاثة أمثال أيّ عدد طبيعي $n$ تساوي جداء العدد في نفسه »، أي $3\\times n=n\\times n$ دائمًا."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ القيم الآتية تُثبت أنّ قوله خاطئ؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$n=0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-ONEOK"
+        },
+        {
+          "id": "B",
+          "content": "$n=3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-ONEOK"
+        },
+        {
+          "id": "C",
+          "content": "$n=4$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الطرفين الأيمن والأيسر من أجل كلّ قيمة مقترحة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نبحث عن قيمة تختلف عندها الجهتان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القيمة التي تتساوى عندها الجهتان لا تُبطل القاعدة."
+        }
+      ],
+      "feedback": {
+        "correct": "مثال مضادّ واحد يكفي.",
+        "incorrect": "مثال تصحّ فيه المساواة لا يثبت أنّها صحيحة دائمًا: نبحث عن قيمة تختلف عندها الجهتان."
+      },
+      "solution": {
+        "lines": [
+          "نحسب الجهتين من أجل كلّ قيمة: $3\\times 0=0$ و $0\\times 0=0$ ؛ $3\\times 3=9$ و $3\\times 3=9$ ؛ $3\\times 4=12$ و $4\\times 4=16$ .",
+          "الجهتان تختلفان عند $n=4$ فقط: هذا مثال مضادّ."
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "وجدنا أنّ $3\\times n$ تساوي $15$ بينما $n\\times n$ تساوي $25$ من أجل $n=5$ . هل يكفي هذا المثال لنقول إنّ قول كريم غير صحيح دائمًا؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لا يكفي",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-MANYNEED"
+        },
+        {
+          "id": "B",
+          "content": "نعم، يكفي",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي أثبته المثال المقدّم: هل تساوت الجهتان أم اختلفتا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مثال تصحّ فيه القاعدة لا يثبت أنّها صحيحة دائمًا، ومثال تخطئ فيه يكفي لإبطالها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الجهتين من أجل القيمة المعطاة ثمّ احكم."
+        }
+      ],
+      "feedback": {
+        "correct": "مثال مضادّ واحد يكفي.",
+        "incorrect": "مثال مضادّ واحد يكفي لإبطال القاعدة، ولا نحتاج إلى أمثلة أخرى."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $n=5$ : $3\\times 5=15$ بينما $5\\times 5=25$ .",
+          "الجهتان مختلفتان: هذا مثال مضادّ، وهو يكفي وحده."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "قال كريم: « قولي صحيح لأنّه صحّ من أجل $n=3$ ». هل يكفي هذا المثال ليثبت أنّ قوله صحيح دائمًا؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لا يكفي",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم، يكفي",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-ONEOK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي أثبته المثال المقدّم: هل تساوت الجهتان أم اختلفتا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مثال تصحّ فيه القاعدة لا يثبت أنّها صحيحة دائمًا، ومثال تخطئ فيه يكفي لإبطالها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الجهتين من أجل القيمة المعطاة ثمّ احكم."
+        }
+      ],
+      "feedback": {
+        "correct": "الأمثلة التي تصحّ فيها القاعدة لا تثبت شيئًا.",
+        "incorrect": "مثال تصحّ فيه المساواة لا يثبت أنّها صحيحة دائمًا: نبحث عن قيمة تختلف عندها الجهتان."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $n=3$ : $3\\times 3=9$ و $3\\times 3=9$ : الجهتان متساويتان.",
+          "مثال تصحّ فيه المساواة لا يثبت أنّها صحيحة دائمًا."
+        ]
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

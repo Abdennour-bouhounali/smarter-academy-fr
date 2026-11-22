@@ -1,0 +1,1132 @@
+/* ── Le مختبر التحليل والدوال ──────────────────────────────────────────────
+   Le plan prend tout ce qu'il peut ; le panneau se range sur le bord de
+   départ (à droite en arabe) sur grand écran, et devient un TIROIR en bas
+   sous 768 px (§38). Le plan est LTR par nature — c'est des mathématiques
+   (§39) ; le panneau suit la direction de la page.
+
+   Les conventions sont celles du grapheur, du مختبر الأشعة, du مختبر
+   التحويلات et du مختبر المقاطع المخروطية (functionGrapher.css, vectors.css,
+   transformations.css, conics.css) : mêmes teintes, mêmes rayons, mêmes
+   familles — les instruments du مختبر doivent se ressembler (§45). */
+
+/* La barre des laboratoires en haut, puis le plan et le panneau côte à côte.
+   Une GRILLE, et non un flex qui s'enroule : la QA a montré qu'un
+   `flex-wrap` donnait au plan une largeur de 0 — le panneau de 380 px et la
+   barre pleine largeur ne laissaient aucune place calculable à la ligne
+   suivante, et le plan disparaissait purement et simplement. Une grille
+   NOMME ses pistes, donc chacun reçoit exactement ce qu'on lui destine. */
+.sa-ml-an {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
+  background: #ffffff;
+  font-family: 'Cairo', system-ui, sans-serif;
+  min-height: 0;
+}
+
+/* ── Le choix du laboratoire : une barre qui défile au doigt ───────────── */
+
+.sa-ml-an__labs {
+  display: flex;
+  gap: 6px;
+  padding: 8px 10px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  border-bottom: 1px solid #e2e8f0;
+  background: #f8fafc;
+  grid-row: 1;
+  grid-column: 1 / -1;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sa-ml-an__lab {
+  flex: 0 0 auto;
+  min-height: 40px;
+  padding: 8px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #475569;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.sa-ml-an__lab:hover { background: #f1f5f9; }
+
+.sa-ml-an__lab.is-active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+.sa-ml-an__lab:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* ── Le corps : plan + panneau ─────────────────────────────────────────── */
+
+.sa-ml-an__stage {
+  position: relative;
+  min-height: 0;
+  min-width: 0;
+  grid-row: 2;
+  grid-column: 1;
+}
+
+.sa-ml-an__plane {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #ffffff;
+  /* Le doigt MANIPULE, il ne fait pas défiler la page (§38). */
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: crosshair;
+}
+
+.sa-ml-an__plane:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: -2px;
+}
+
+/* mafs aux couleurs de la plateforme. mafs livre un thème SOMBRE par défaut
+   (--mafs-bg: black) : sans ces variables le repère serait noir et les
+   étiquettes blanches sur blanc. Ce sont EXACTEMENT les valeurs du grapheur
+   — un seul repère sur la plateforme, donc une seule apparence. */
+.sa-ml-an__plane .MafsView {
+  position: absolute;
+  inset: 0;
+  font-family: 'JetBrains Mono', 'Inter', sans-serif;
+  font-size: 12px;
+  --mafs-bg: #ffffff;
+  --mafs-fg: #0f172a;
+  --mafs-origin-color: #334155;
+  --mafs-line-color: #cbd5e1;
+  --grid-line-subdivision-color: #eef2f7;
+  --mafs-axis-stroke-width: 1.5px;
+  --mafs-line-stroke-dash-style: 6, 4;
+}
+
+.sa-ml-an__plane--nogrid .MafsView {
+  --mafs-line-color: transparent;
+  --grid-line-subdivision-color: transparent;
+}
+
+.sa-ml-an__axisnames {
+  font-size: 13px;
+  fill: #475569;
+}
+
+.sa-ml-an__measure {
+  font-family: 'JetBrains Mono', 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  paint-order: stroke;
+  stroke: #ffffff;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+/* ── Les poignées ─────────────────────────────────────────────────────── */
+
+.sa-ml-an__handle { cursor: grab; touch-action: none; }
+.sa-ml-an__handle--dragging { cursor: grabbing; }
+
+/* La cible TACTILE : invisible, large (44 px de diamètre), et seule à
+   écouter les gestes. Le dessin ne grossit pas, la cible oui (§38). */
+.sa-ml-an__hit {
+  fill: transparent;
+  stroke: none;
+}
+
+.sa-ml-an__handle:focus-visible .sa-ml-an__dot {
+  stroke: #3b82f6;
+  stroke-width: 3.5;
+}
+
+.sa-ml-an__handle:focus { outline: none; }
+
+.sa-ml-an__handlelabel {
+  font-family: 'JetBrains Mono', 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  paint-order: stroke;
+  stroke: #ffffff;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+/* ── Les commandes de vue ──────────────────────────────────────────────── */
+
+.sa-ml-an__zoom {
+  position: absolute;
+  inset-inline-end: 10px;
+  inset-block-start: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 2;
+}
+
+.sa-ml-an__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #334155;
+  font: inherit;
+  font-size: 0.875rem;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgb(15 23 42 / 8%);
+}
+
+.sa-ml-an__btn--icon {
+  min-width: 40px;
+  padding: 8px;
+}
+
+.sa-ml-an__btn:hover { background: #f8fafc; }
+
+.sa-ml-an__btn:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.sa-ml-an__toggle {
+  position: absolute;
+  inset-inline-start: 10px;
+  inset-block-end: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #334155;
+  font: inherit;
+  font-size: 0.875rem;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgb(15 23 42 / 8%);
+  z-index: 2;
+}
+
+.sa-ml-an__error {
+  position: absolute;
+  inset-inline: 10px;
+  inset-block-start: 10px;
+  margin: 0;
+  padding: 10px 14px;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 0.875rem;
+  z-index: 3;
+}
+
+/* ── Le panneau ───────────────────────────────────────────────────────── */
+
+/* Sous 768 px le panneau est un TIROIR sous le plan ; au-delà, une colonne
+   à côté. Dans les deux cas c'est la grille qui le place. */
+.sa-ml-an__panel {
+  grid-row: 3;
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #e2e8f0;
+  background: #ffffff;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* Le panneau ouvert prend sa propre rangée : le plan garde alors la sienne,
+   et aucun des deux ne se retrouve à zéro.
+
+   Le plan a une hauteur PLANCHER (§38 : « on mobile, graph gets priority »).
+   Sans elle, la QA a mesuré 42 px de plan sur un écran de 320×640 : le
+   panneau, haut de tout son contenu, mangeait la rangée `1fr` en entier et
+   il ne restait plus rien à regarder. Le tiroir défile, le graphe non.
+
+   Ces plafonds valent pour le TIROIR seulement — sous 768 px. Écrits hors
+   d'une requête média, ils fuyaient jusqu'au bureau : le panneau latéral se
+   retrouvait bridé à 340 px dans une colonne de 778 px, donc il défilait
+   son contenu par une lucarne de 196 px en laissant 440 px de vide en
+   dessous. C'est le défaut que l'utilisateur a signalé. */
+@media (max-width: 767px) {
+  /* Le plan garde un plancher (§38 : « graph gets priority »), le tiroir
+     prend le reste — jusqu'à 52 % de la hauteur, parce qu'un tiroir de
+     185 px pour 700 px de réglages ne se parcourt pas. */
+  .sa-ml-an:not(.sa-ml-an--collapsed) {
+    grid-template-rows: auto minmax(240px, 1fr) minmax(0, auto);
+  }
+
+  .sa-ml-an__panel {
+    max-block-size: 52vh;
+  }
+}
+
+@media (min-width: 768px) {
+  .sa-ml-an,
+  .sa-ml-an:not(.sa-ml-an--collapsed) {
+    grid-template-rows: auto minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) 340px;
+  }
+
+  .sa-ml-an--collapsed,
+  .sa-ml-an--collapsed:not(.x) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sa-ml-an__panel {
+    grid-row: 2;
+    grid-column: 2;
+    /* Le panneau REMPLIT sa colonne ; seul son corps défile, et seulement
+       quand le contenu dépasse vraiment. */
+    max-block-size: none;
+    block-size: 100%;
+    border-top: none;
+    border-inline-start: 1px solid #e2e8f0;
+  }
+
+  .sa-ml-an--collapsed .sa-ml-an__panel { display: none; }
+}
+
+@media (min-width: 1200px) {
+  .sa-ml-an,
+  .sa-ml-an:not(.sa-ml-an--collapsed) {
+    grid-template-columns: minmax(0, 1fr) 380px;
+  }
+
+  .sa-ml-an--collapsed,
+  .sa-ml-an--collapsed:not(.x) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ── La lecture vive : toujours visible, au-dessus des onglets ─────────── */
+
+/* Le bandeau est FIXE en haut du panneau : chaque pixel qu'il prend est un
+   pixel de moins pour les réglages. On le garde donc serré — trois cellules
+   d'une ligne chacune — pour que le premier écran du laboratoire n'ait pas
+   besoin de défiler. */
+.sa-ml-an__live {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 4px;
+  margin: 0;
+  padding: 6px 8px;
+  border-bottom: 1px solid #e2e8f0;
+  background: #f8fafc;
+  flex: 0 0 auto;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.sa-ml-an__live::-webkit-scrollbar { display: none; }
+
+.sa-ml-an__livecell {
+  flex: 1 1 0;
+  min-inline-size: 72px;
+  padding: 4px 8px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.sa-ml-an__livelabel {
+  display: block;
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 0.6875rem;
+  color: #64748b;
+  direction: ltr;
+  unicode-bidi: isolate;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sa-ml-an__livevalue {
+  display: block;
+  margin: 1px 0 0;
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #1d4ed8;
+  direction: ltr;
+  unicode-bidi: isolate;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sa-ml-an__tabs {
+  display: flex;
+  gap: 4px;
+  padding: 5px 6px;
+  border-bottom: 1px solid #e2e8f0;
+  background: #f8fafc;
+  flex: 0 0 auto;
+}
+
+.sa-ml-an__tab {
+  flex: 1 1 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 8px 10px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: #64748b;
+  font: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sa-ml-an__tab.is-active {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  color: #1d4ed8;
+}
+
+.sa-ml-an__tab:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.sa-ml-an__panelbody {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 10px 12px;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+/* ── Les sections du pupitre ───────────────────────────────────────────── */
+
+.sa-ml-an__section {
+  padding: 10px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.sa-ml-an__section:last-child { border-bottom: none; }
+
+.sa-ml-an__sectiontitle,
+.sa-ml-an__grouptitle {
+  margin: 0 0 10px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.sa-ml-an__subtitle {
+  margin: 14px 0 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+.sa-ml-an__grouplabel {
+  margin: 0 0 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.sa-ml-an__hint,
+.sa-ml-an__note {
+  margin: 8px 0 0;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: #64748b;
+}
+
+.sa-ml-an__note { color: #94a3b8; }
+
+.sa-ml-an__empty {
+  margin: 0;
+  padding: 16px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.875rem;
+}
+
+/* ── Les champs ───────────────────────────────────────────────────────── */
+
+.sa-ml-an__field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.sa-ml-an__fieldlabel {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+.sa-ml-an__input {
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #0f172a;
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 0.9375rem;
+}
+
+.sa-ml-an__input:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: -1px;
+  border-color: #3b82f6;
+}
+
+/* ── Curseurs ─────────────────────────────────────────────────────────── */
+
+.sa-ml-an__slider {
+  display: grid;
+  grid-template-columns: auto 1fr 68px;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.sa-ml-an__sliderlabel {
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #334155;
+  min-width: 2.5em;
+}
+
+.sa-ml-an__range {
+  inline-size: 100%;
+  /* 44 px de haut pour la cible tactile, sans grossir le trait dessiné. */
+  min-height: 44px;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+.sa-ml-an__range:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.sa-ml-an__number {
+  min-height: 40px;
+  padding: 6px 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 0.8125rem;
+  color: #0f172a;
+  inline-size: 100%;
+}
+
+/* ── Bascules, puces, actions ─────────────────────────────────────────── */
+
+.sa-ml-an__toggle:not(.sa-ml-an__toggle--view) {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  font-size: 0.875rem;
+  color: #334155;
+  cursor: pointer;
+}
+
+.sa-ml-an__toggle.is-disabled { opacity: 0.45; cursor: not-allowed; }
+
+.sa-ml-an__toggle input {
+  inline-size: 18px;
+  block-size: 18px;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+.sa-ml-an__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.sa-ml-an__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 40px;
+  padding: 7px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #475569;
+  font: inherit;
+  font-size: 0.8125rem;
+  cursor: pointer;
+}
+
+.sa-ml-an__chip:hover { background: #f8fafc; }
+
+.sa-ml-an__chip.is-active {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+.sa-ml-an__chip:focus-visible,
+.sa-ml-an__seg:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.sa-ml-an__segmented {
+  display: flex;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #f8fafc;
+  margin-bottom: 10px;
+}
+
+.sa-ml-an__seg {
+  flex: 1 1 0;
+  min-height: 38px;
+  padding: 6px 8px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #64748b;
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sa-ml-an__seg.is-active {
+  background: #ffffff;
+  color: #1d4ed8;
+  box-shadow: 0 1px 2px rgb(15 23 42 / 8%);
+}
+
+.sa-ml-an__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.sa-ml-an__action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #334155;
+  font: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sa-ml-an__action:hover:not(:disabled) { background: #f8fafc; }
+
+.sa-ml-an__action:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.sa-ml-an__action--primary {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+.sa-ml-an__action--primary:hover:not(:disabled) { background: #1d4ed8; }
+
+.sa-ml-an__action.is-active {
+  background: #fef3c7;
+  border-color: #fcd34d;
+  color: #92400e;
+}
+
+.sa-ml-an__action:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.sa-ml-an__details { margin-top: 10px; }
+
+.sa-ml-an__summary {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+}
+
+/* ── La lecture (l'inspecteur) ─────────────────────────────────────────── */
+
+.sa-ml-an__group {
+  padding: 10px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.sa-ml-an__group:last-child { border-bottom: none; }
+
+.sa-ml-an__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 0;
+}
+
+.sa-ml-an__row--stacked {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
+}
+
+.sa-ml-an__rowlabel {
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 0.8125rem;
+  color: #64748b;
+  flex: 0 0 auto;
+}
+
+.sa-ml-an__rowvalue { text-align: end; }
+
+.sa-ml-an__row--stacked .sa-ml-an__rowvalue { text-align: start; }
+
+/* La NOTATION mathématique : toujours LTR, toujours monospace (§2, §39). */
+.sa-ml-an__math {
+  display: inline-block;
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 0.875rem;
+  color: #0f172a;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.sa-ml-an__math--strong {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1d4ed8;
+}
+
+.sa-ml-an__list,
+.sa-ml-an__studylist,
+.sa-ml-an__hints {
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sa-ml-an__hints {
+  padding-inline-start: 18px;
+  list-style: decimal;
+}
+
+.sa-ml-an__hintitem {
+  margin: 6px 0;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: #475569;
+}
+
+.sa-ml-an__listitem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 0;
+  border-bottom: 1px dashed #f1f5f9;
+}
+
+.sa-ml-an__tag {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 0.6875rem;
+  font-weight: 600;
+}
+
+/* Chaque ligne de l'étude est un BOUTON : elle allume sa couche sur le
+   graphe. C'est l'exigence §16 — « connect every result to the graph ». */
+.sa-ml-an__studyrow {
+  inline-size: 100%;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
+}
+
+.sa-ml-an__studyrow:hover { background: #f8fafc; }
+
+.sa-ml-an__studyrow.is-active {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.sa-ml-an__studyrow:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.sa-ml-an__studylabel {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #334155;
+  flex: 0 0 auto;
+}
+
+.sa-ml-an__studyvalue {
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 0.75rem;
+  color: #475569;
+  text-align: end;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* ── Les tables d'approche (§11) ───────────────────────────────────────── */
+
+.sa-ml-an__tables {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  margin-bottom: 10px;
+}
+
+.sa-ml-an__table {
+  flex: 1 1 0;
+  min-inline-size: 140px;
+  border-collapse: collapse;
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 0.75rem;
+}
+
+.sa-ml-an__caption {
+  padding-block-end: 4px;
+  font-weight: 700;
+  color: #334155;
+  white-space: nowrap;
+}
+
+.sa-ml-an__table th,
+.sa-ml-an__table td {
+  padding: 4px 6px;
+  border-bottom: 1px solid #f1f5f9;
+  text-align: start;
+  color: #475569;
+}
+
+.sa-ml-an__table th { color: #94a3b8; font-weight: 600; }
+
+/* ── Verdicts et entraînement ─────────────────────────────────────────── */
+
+.sa-ml-an__verdict {
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #f1f5f9;
+  color: #334155;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+.sa-ml-an__verdict--ok {
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+.sa-ml-an__verdict--warn {
+  background: #fffbeb;
+  color: #92400e;
+}
+
+.sa-ml-an__warn {
+  margin: 0;
+  color: #b45309;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+.sa-ml-an__question {
+  margin: 10px 0 8px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.7;
+  color: #0f172a;
+}
+
+.sa-ml-an__explain {
+  margin: 8px 0 0;
+  font-size: 0.8125rem;
+  line-height: 1.7;
+}
+
+.sa-ml-an__score {
+  margin: 12px 0 0;
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.sa-ml-an__prediction {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #f1f5f9;
+}
+
+/* Le texte réservé aux lecteurs d'écran. Chaque instrument définit le sien :
+   il n'existe PAS de classe `sr-only` globale sur la plateforme, et en
+   supposer une afficherait ce texte en clair. */
+.sa-ml-an__sr {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Mouvement réduit (§40) ────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .sa-ml-an *,
+  .sa-ml-an *::before,
+  .sa-ml-an *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* ── جدول التغيّرات — le tableau de variations ─────────────────────────────
+   Une GRILLE, pas un `<table>` : dans un tableau de variations la POSITION
+   VERTICALE d'une valeur porte du sens (en haut un maximum, en bas un
+   minimum, au milieu un point stationnaire), et une cellule de tableau
+   centrerait tout en perdant exactement ce qu'il dit. La lisibilité pour un
+   lecteur d'écran passe par la description textuelle de `VariationTable`. */
+
+.sa-ml-an__vartable {
+  margin: 12px 0 0;
+  padding: 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.sa-ml-an__vartitle {
+  padding: 8px 12px;
+  border-bottom: 1px solid #e2e8f0;
+  background: #f8fafc;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* Le tableau peut dépasser en largeur : il défile SEUL, sans pousser le
+   panneau (un jeu de colonnes ne se comprime pas sans devenir illisible). */
+.sa-ml-an__varscroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 8px;
+}
+
+.sa-ml-an__vargrid {
+  display: grid;
+  align-items: stretch;
+  min-inline-size: max-content;
+  direction: ltr;
+  unicode-bidi: isolate;
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  row-gap: 0;
+}
+
+/* Le libellé ouvre sa rangée, dans la PREMIÈRE colonne — pas sur toute la
+   largeur : un libellé étendu ouvrait une rangée à lui seul et le placement
+   automatique poussait les flèches hors de leur ligne. */
+.sa-ml-an__varrowlabel {
+  display: flex;
+  align-items: center;
+  padding: 4px 10px 4px 4px;
+  border-top: 1px solid #f1f5f9;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+  white-space: nowrap;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.sa-ml-an__varx {
+  padding: 2px 6px;
+  text-align: center;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #0f172a;
+  white-space: nowrap;
+}
+
+.sa-ml-an__vard {
+  padding: 2px 6px;
+  text-align: center;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.sa-ml-an__varsign {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 10px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #94a3b8;
+}
+
+.sa-ml-an__varsign.is-positive { color: #16a34a; }
+.sa-ml-an__varsign.is-negative { color: #ea580c; }
+
+/* La PISTE : les valeurs y montent et y descendent. */
+.sa-ml-an__varvalue {
+  display: flex;
+  flex-direction: column;
+  padding: 4px 6px;
+  text-align: center;
+  border-inline: 1px solid #f1f5f9;
+}
+
+.sa-ml-an__varnum {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #334155;
+  white-space: nowrap;
+}
+
+/* Un extremum se distingue SANS dépendre de la seule couleur (§40) : il est
+   encadré, pas seulement coloré. */
+.sa-ml-an__varnum.is-extremum {
+  padding: 1px 6px;
+  border: 1px solid #fdba74;
+  border-radius: 6px;
+  background: #fff7ed;
+  color: #9a3412;
+}
+
+/* La limite au bord : un symbole, pas un nombre — et on le distingue d'une
+   valeur atteinte, qui, elle, est un fait sur la fonction. */
+.sa-ml-an__varinf {
+  color: #7c3aed;
+  font-size: 0.9375rem;
+}
+
+.sa-ml-an__vararrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #94a3b8;
+}
+
+.sa-ml-an__vararrow.is-up { color: #16a34a; }
+.sa-ml-an__vararrow.is-down { color: #ea580c; }
+
+/* La double barre d'une discontinuité : la fonction ne traverse pas. */
+.sa-ml-an__varbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  block-size: 100%;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #dc2626;
+}
+
+/* ── Les champs MATHÉMATIQUES (MathLive) ──────────────────────────────────
+   L'élève voit `1/x` empilé en fraction et `√x` sous un radical, au lieu
+   d'une ligne de LaTeX. Les teintes sont celles du champ du grapheur
+   (functionGrapher.css) : un seul champ de saisie mathématique sur la
+   plateforme, donc une seule apparence. */
+
+.sa-ml-an__mathfield {
+  display: block;
+  inline-size: 100%;
+  min-block-size: 44px;
+  padding: 4px 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #ffffff;
+  font-size: 1.0625rem;
+  color: #0f172a;
+  direction: ltr;
+  unicode-bidi: isolate;
+  --caret-color: #2563eb;
+  --selection-background-color: rgb(59 130 246 / 20%);
+  --contains-highlight-background-color: rgb(59 130 246 / 8%);
+}
+
+.sa-ml-an__mathfield:focus-within {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgb(59 130 246 / 20%);
+}
+
+.sa-ml-an__mathfield--invalid { border-color: #fda4af; }
+
+/* Le menu contextuel de MathLive n'a rien à faire ici (il propose MathML et
+   LaTeX, que personne n'utilisera) ; la bascule du clavier virtuel reste,
+   c'est elle qui ouvre le pavé au doigt. */
+.sa-ml-an__mathfield::part(menu-toggle) { display: none; }
+.sa-ml-an__mathfield::part(virtual-keyboard-toggle) { color: #64748b; }
+
+/* Le champ remplace un `<input>` dans une `<label>` : le libellé reste
+   au-dessus, le champ prend la largeur. */
+.sa-ml-an__field > .sa-ml-an__mathfield { margin-block-start: 2px; }
+
+/* ── « D'un seul regard » (§3.5) : les lectures secondaires se masquent ── */
+
+.sa-ml-an__panelblock { margin-top: 8px; }
+.sa-ml-an__panelblock .sa-ml-an__group { padding: 0; border-bottom: none; }
+.sa-ml-an__panelblock .sa-ml-an__studylist { margin-top: 0; }

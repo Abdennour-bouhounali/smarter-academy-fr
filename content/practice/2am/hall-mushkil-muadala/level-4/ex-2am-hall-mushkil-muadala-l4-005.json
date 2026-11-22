@@ -1,0 +1,194 @@
+{
+  "id": "ex-2am-hall-mushkil-muadala-l4-005",
+  "lessonCode": "hall-mushkil-muadala",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — علب في صندوق",
+    "estimatedMinutes": 6,
+    "tags": [
+      "معادلة",
+      "عمليّتان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "صندوق فارغ كتلته $4\\,\\mathrm{kg}$ يحوي $x$ علبة، كتلة كلّ علبة $2{,}5\\,\\mathrm{kg}$ ، والكتلة الكلّيّة $19\\,\\mathrm{kg}$ . المعادلة : $2{,}5x+4=19$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نريد حلّ $2{,}5x+4=19$ . ما المعادلة التي نحصل عليها بعد إلغاء آخر عملية أُجريت على المجهول ؟",
+      "learningPoints": [
+        {
+          "code": "2am_hall-mushkil-muadala_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2{,}5\\times x=15$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$2{,}5\\times x=23$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAJHUL-ADDFORM"
+        },
+        {
+          "id": "C",
+          "content": "$x+4=7{,}6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAJHUL-UNDOFIRST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد آخر عملية أُجريت على المجهول في الطرف الأيسر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ألغِ تلك العملية أوّلًا بالعملية العكسية، وطبّقها على العدد الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر الخيار بالحلّ المتوقّع : هل يحقّق المعادلة الجديدة ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "نحصل على $2{,}5\\times x=15$ .",
+        "incorrect": "ألغِ آخر عملية أوّلًا : إن كانت جمعًا فاطرح، وإن كانت قسمة فاضرب."
+      },
+      "solution": {
+        "lines": [
+          "$2{,}5\\times x=15$ : ألغينا آخر عملية بعكسها.",
+          "ثمّ نحلّ المعادلة الجديدة بعملية واحدة."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حلّ المعادلة : $2{,}5x+4=19$ .",
+      "learningPoints": [
+        {
+          "code": "2am_hall-mushkil-muadala_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "3.6",
+          "id": "MISC-MAJHUL-UNDOFIRST"
+        },
+        {
+          "value": "15",
+          "id": "MISC-MAJHUL-SUBFORM"
+        },
+        {
+          "value": "9.2",
+          "id": "MISC-MAJHUL-ADDFORM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في المعادلة ما يُفعل بالمجهول : ضرب أو قسمة أو جمع أو طرح، وما هي آخر عملية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ألغِ آخر عملية أُجريت على المجهول أوّلًا، ثمّ ألغِ ما بقي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من حلّك : عوّض المجهول بقيمته وأنجز العملية، فإن وجدت الطرف الآخر فالحلّ صحيح."
+        }
+      ],
+      "feedback": {
+        "correct": "$x=6$ .",
+        "incorrect": "ابحث عن العدد الذي يجعل المساواة صحيحة بالعملية العكسية، ثمّ تحقّق منه بإنجاز العملية."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية هي جمع $4$ : $2{,}5x=19-4=15$ .",
+          "$x=15\\div 2{,}5=6$ .",
+          "التحقّق : $2{,}5\\times 6+4=19$ ."
+        ],
+        "result": "6"
+      },
+      "work": "optional",
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "تحقّق : احسب $2{,}5x+4$ من أجل قيمة $x$ التي وجدتها.",
+      "learningPoints": [
+        {
+          "code": "2am_hall-mushkil-muadala_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "19",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بقيمته المعلومة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات : الضرب والقسمة قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة."
+        }
+      ],
+      "feedback": {
+        "correct": "النتيجة $19$ .",
+        "incorrect": "عوّض بالقيم المعلومة واحسب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$2{,}5\\times 6+4=19$ ."
+        ],
+        "result": "19"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

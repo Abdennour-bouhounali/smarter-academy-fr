@@ -1,0 +1,149 @@
+{
+  "id": "ex-4am-tarrid-khatti-l2-004",
+  "lessonCode": "tarrid-khatti",
+  "level": 2,
+  "metadata": {
+    "title": "حلبة الكارتينغ",
+    "estimatedMinutes": 6,
+    "tags": [
+      "نمذجة",
+      "صورة وسابقة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-khatti_P1",
+      "modelledOn": "method-spring",
+      "adaptedFrom": "ex-4am-tarrid-khatti-l2-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "تقترح حلبة للكارتينغ، تشترط احترام قواعد السلامة، 18DA للدقيقة الواحدة. نسمّي $x$ مدة القيادة بالدقائق و $f(x)$ المبلغ المدفوع بـ DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عبّر عن $f(x)$ بدلالة $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "18",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ = ثمن الدقيقة × عدد الدقائق."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(x) = 18x$ .",
+        "incorrect": "المعامل هو ثمن دقيقة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 18 \\times x = 18x$"
+        ],
+        "result": "f(x) = 18x"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب المبلغ المدفوع لقيادة مدتها 24 دقيقة.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "432",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ هو صورة 24 بالدالة $f$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(24) = 18 \\times 24 = 432$ DA.",
+        "incorrect": "عوّض $x$ بالمدة في عبارة $f(x)$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(24) = 18 \\times 24 = 432$",
+          "يدفع 432DA."
+        ],
+        "result": "432DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "كم دقيقة يمكن أن يقود بمبلغ 540DA؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدة بالدقائق",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "9720",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المدة هي العدد $x$ الذي يحقق $f(x) = 540$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم المبلغ على ثمن الدقيقة."
+        }
+      ],
+      "feedback": {
+        "correct": "$18x = 540$ ، إذن $x = 30$ : 30 دقيقة.",
+        "incorrect": "هنا المبلغ معلوم: اقسم على المعامل."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 540$ معناه $18x = 540$",
+          "$x = \\dfrac{540}{18} = 30$",
+          "يقود 30 دقيقة."
+        ],
+        "result": "30min"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

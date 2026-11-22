@@ -1,0 +1,300 @@
+{
+  "id": "ex-3am-maqlub-qismat-kasrayn-l3-004",
+  "lessonCode": "maqlub-qismat-kasrayn",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — عددان جداؤهما 1",
+    "estimatedMinutes": 9,
+    "tags": [
+      "قسمة",
+      "مقلوب عدد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن $A = \\dfrac{14}{15} \\div \\dfrac{7}{10}$ و $B = \\dfrac{\\dfrac{3}{8}}{\\dfrac{1}{2}}$ و $C = 9 \\div \\dfrac{3}{8}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب كلاًّ من $A$ و $B$ و $C$ على أبسط شكل.",
+      "statement": "احسب $A$ .",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "4/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "49/75",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "3/4",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "75/49",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ الكسرين هو المقسوم وأيّهما المقسوم عليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني: نقلب المقسوم عليه وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء، اختزل العوامل المشتركة قبل الضرب، ثمّ اكتب الناتج على أبسط شكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{14}{15} \\div \\dfrac{7}{10} = \\dfrac{4}{3}$ لأنّ قسمة كسر على كسر هي ضرب الأوّل في مقلوب الثاني.",
+        "incorrect": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني فقط، ثمّ نختزل؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $\\dfrac{14}{15} \\div \\dfrac{7}{10} = \\dfrac{14}{15} \\times \\dfrac{10}{7}$ .",
+          "$= \\dfrac{14 \\times 10}{15 \\times 7} = \\dfrac{4}{3}$ ."
+        ],
+        "result": "\\dfrac{4}{3}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $B = \\dfrac{\\dfrac{3}{8}}{\\dfrac{1}{2}}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "3/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "3/16",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "4/3",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "16/3",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ الكسرين هو المقسوم وأيّهما المقسوم عليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني: نقلب المقسوم عليه وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء، اختزل العوامل المشتركة قبل الضرب، ثمّ اكتب الناتج على أبسط شكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{8} \\div \\dfrac{1}{2} = \\dfrac{3}{4}$ لأنّ قسمة كسر على كسر هي ضرب الأوّل في مقلوب الثاني.",
+        "incorrect": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني فقط، ثمّ نختزل؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $\\dfrac{3}{8} \\div \\dfrac{1}{2} = \\dfrac{3}{8} \\times 2$ .",
+          "$= \\dfrac{3 \\times 2}{8 \\times 1} = \\dfrac{3}{4}$ ."
+        ],
+        "result": "\\dfrac{3}{4}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "احسب $C$ .",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "24",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "27/8",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "1/24",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "8/27",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ الكسرين هو المقسوم وأيّهما المقسوم عليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني: نقلب المقسوم عليه وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء، اختزل العوامل المشتركة قبل الضرب، ثمّ اكتب الناتج على أبسط شكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$9 \\div \\dfrac{3}{8} = 24$ لأنّ قسمة كسر على كسر هي ضرب الأوّل في مقلوب الثاني.",
+        "incorrect": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني فقط، ثمّ نختزل؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $9 \\div \\dfrac{3}{8} = 9 \\times \\dfrac{8}{3}$ .",
+          "$= \\dfrac{9 \\times 8}{1 \\times 3} = 24$ ."
+        ],
+        "result": "24"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "أحسب جداء $A$ في $B$ .",
+      "statement": "احسب $A \\times B$ .",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كل سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$1$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$A \\times B = \\dfrac{4}{3} \\times \\dfrac{3}{4} = 1$ ."
+        ],
+        "result": "1"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "استنتج علاقة بين العددين $A$ و $B$ .",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجب أن تبرّره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل تعريف المقلوب (جداء العدد ومقلوبه) أو القسمة بالضرب في المقلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$A$ و $B$ عددان مقلوب أحدهما الآخر لأنّ جداءهما $1$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "جداء $A$ في $B$ يساوي $1$ .",
+          "إذن $A$ و $B$ مقلوب أحدهما الآخر."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

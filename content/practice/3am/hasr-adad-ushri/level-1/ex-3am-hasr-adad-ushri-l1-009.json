@@ -1,0 +1,194 @@
+{
+  "id": "ex-3am-hasr-adad-ushri-l1-009",
+  "lessonCode": "hasr-adad-ushri",
+  "level": 1,
+  "metadata": {
+    "title": "أحصر العدد 1 بين كسرين",
+    "estimatedMinutes": 6,
+    "tags": [
+      "كسور",
+      "حصر",
+      "عدد طبيعي"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-20",
+      "page": 79,
+      "section": "أوظّف تعلّماتي",
+      "number": 20
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نريد إثبات أنّ $\\dfrac{23}{26}<1<\\dfrac{26}{23}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما القيمة المقرّبة بالنقصان إلى الوحدة للعدد $\\dfrac{26}{23}$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-TAQRIB-NAQS-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العددان الطبيعيان المتتاليان اللذان يقع العدد بينهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الطبيعي الأصغر هو الجزء الصحيح للعدد، والأكبر هو الذي يليه مباشرة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الحصر على المستقيم المدرّج: يقع العدد بعد الأصغر وقبل الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$1<\\dfrac{26}{23}<2$ ؛ القيمة المقرّبة بالنقصان هي $1$ .",
+        "incorrect": "راجع: بين أيّ عددين طبيعيين متتاليين يقع العدد؟ ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$26>23$ ؛ إذن $\\dfrac{26}{23}>1$ .",
+          "$1<\\dfrac{26}{23}<2$ ؛ القيمة المقرّبة بالنقصان هي $1$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما القيمة المقرّبة بالزيادة إلى الوحدة للعدد $\\dfrac{23}{26}$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-TAQRIB-NAQS-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العددان الطبيعيان المتتاليان اللذان يقع العدد بينهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الطبيعي الأصغر هو الجزء الصحيح للعدد، والأكبر هو الذي يليه مباشرة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الحصر على المستقيم المدرّج: يقع العدد بعد الأصغر وقبل الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$0<\\dfrac{23}{26}<1$ ؛ القيمة المقرّبة بالزيادة هي $1$ .",
+        "incorrect": "راجع: بين أيّ عددين طبيعيين متتاليين يقع العدد؟ ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$23<26$ ؛ إذن $\\dfrac{23}{26}<1$ .",
+          "$0<\\dfrac{23}{26}<1$ ؛ القيمة المقرّبة بالزيادة هي $1$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أيّ حصر صحيح؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{26}{23}<1&&1<\\dfrac{23}{26}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-BOUND-SHIFT"
+        },
+        {
+          "id": "B",
+          "content": "$1<\\dfrac{23}{26}&&\\dfrac{23}{26}<\\dfrac{26}{23}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-BOUND-SHIFT"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{23}{26}<1&&1<\\dfrac{26}{23}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العددان الطبيعيان المتتاليان اللذان يقع العدد بينهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الطبيعي الأصغر هو الجزء الصحيح للعدد، والأكبر هو الذي يليه مباشرة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الحصر على المستقيم المدرّج: يقع العدد بعد الأصغر وقبل الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{23}{26}<1<\\dfrac{26}{23}$ .",
+        "incorrect": "راجع: بين أيّ عددين طبيعيين متتاليين يقع العدد؟ ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{23}{26}<1$ لأنّ البسط أصغر من المقام، و $1<\\dfrac{26}{23}$ لأنّ البسط أكبر من المقام.",
+          "$\\dfrac{23}{26}<1<\\dfrac{26}{23}$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

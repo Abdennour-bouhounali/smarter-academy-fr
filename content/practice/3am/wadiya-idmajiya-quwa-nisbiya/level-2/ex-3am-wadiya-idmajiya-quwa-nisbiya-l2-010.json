@@ -1,0 +1,205 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-quwa-nisbiya-l2-010",
+  "lessonCode": "wadiya-idmajiya-quwa-nisbiya",
+  "level": 2,
+  "metadata": {
+    "title": "مساحات بوحدات مختلفة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "تحويل الوحدات",
+      "مربّع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثاني",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نحوّل المساحات والأحجام إلى وحدات النظام الدولي."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "$1\\ \\mathrm{km}^{2} = 10^{6}\\ \\mathrm{m}^{2}$ ؛ مساحة $3\\ \\mathrm{km}^{2}$ بالمتر المربّع هي $3 \\times 10^{n}$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين تضع الفاصلة ليبقى رقم واحد غير معدوم قبلها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $a$ من $1$ إلى أقل من $10$ ، والأسّ $n$ هو عدد رتب إزاحة الفاصلة (موجب للأعداد الكبيرة وسالب للصغيرة)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة الضرب في $10^{n}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $6$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الأسّ هو عدد رتب إزاحة الفاصلة: موجب لأنّ العدد كبير .",
+          "$3 \\times 10^{6}$ = $3 \\times 10^{6}$ ، إذن $n = 6$ ."
+        ],
+        "result": "6"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "$1\\ \\mathrm{cm} = 10^{-2}\\ \\mathrm{m}$ ، إذن $5{,}4\\ \\mathrm{cm}^{2} = 5{,}4 \\times (10^{-2})^{2}\\ \\mathrm{m}^{2}$ . اكتب النتيجة كتابة علمية : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "-4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين تضع الفاصلة ليبقى رقم واحد غير معدوم قبلها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $a$ من $1$ إلى أقل من $10$ ، والأسّ $n$ هو عدد رتب إزاحة الفاصلة (موجب للأعداد الكبيرة وسالب للصغيرة)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة الضرب في $10^{n}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $-4$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الأسّ هو عدد رتب إزاحة الفاصلة: سالب لأنّ العدد صغير .",
+          "$5{,}4 \\times (10^{-2})^{2}$ = $5{,}4 \\times 10^{-4}$ ، إذن $n = -4$ ."
+        ],
+        "result": "-4"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "وما قيمة العدد $a$ في الكتابة العلمية نفسها ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "العدد $a$ (عدد عشري)",
+      "expectedAnswer": "5.4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين تضع الفاصلة ليبقى رقم واحد غير معدوم قبلها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $a$ من $1$ إلى أقل من $10$ ، والأسّ $n$ هو عدد رتب إزاحة الفاصلة (موجب للأعداد الكبيرة وسالب للصغيرة)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة الضرب في $10^{n}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $5{,}4$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نُزيح الفاصلة حتى يبقى رقم واحد غير معدوم قبلها: $a = 5{,}4$ .",
+          "$5{,}4 \\times (10^{-2})^{2}$ = $5{,}4 \\times 10^{-4}$ ."
+        ],
+        "result": "5{,}4"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "$1\\ \\mathrm{km}^{3} = (10^{3})^{3}\\ \\mathrm{m}^{3}$ ؛ حجم $2\\ \\mathrm{km}^{3}$ بالمتر المكعّب هو $2 \\times 10^{n}$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين تضع الفاصلة ليبقى رقم واحد غير معدوم قبلها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $a$ من $1$ إلى أقل من $10$ ، والأسّ $n$ هو عدد رتب إزاحة الفاصلة (موجب للأعداد الكبيرة وسالب للصغيرة)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة الضرب في $10^{n}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $9$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الأسّ هو عدد رتب إزاحة الفاصلة: موجب لأنّ العدد كبير .",
+          "$2 \\times (10^{3})^{3}$ = $2 \\times 10^{9}$ ، إذن $n = 9$ ."
+        ],
+        "result": "9"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

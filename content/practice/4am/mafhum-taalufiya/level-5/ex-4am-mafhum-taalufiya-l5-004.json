@@ -1,0 +1,451 @@
+{
+  "id": "ex-4am-mafhum-taalufiya-l5-004",
+  "lessonCode": "mafhum-taalufiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2012 — بطاقات الدعوة في مطبعة بالبليدة",
+    "estimatedMinutes": 25,
+    "tags": [
+      "وضعية إدماجية",
+      "عرضان",
+      "جدول",
+      "دالة خطية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mafhum-taalufiya_P3",
+      "modelledOn": "BEM 2012 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2012",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "لطبع بطاقات دعوة لحفل زفاف تجتمع فيه العائلتان وتُوصَل فيه الأرحام، تقترح مطبعة بالبليدة عرضين:\n– العرض الأول: 25DA للبطاقة الواحدة.\n– العرض الثاني: 15DA للبطاقة الواحدة، يضاف إليها 1200DA ثمن التصميم مهما كان عدد البطاقات.",
+    "table": {
+      "head": [
+        "عدد البطاقات",
+        "50",
+        "…"
+      ],
+      "rows": [
+        [
+          "المبلغ حسب العرض الأول (DA)",
+          "…",
+          "…"
+        ],
+        [
+          "المبلغ حسب العرض الثاني (DA)",
+          "…",
+          "6450"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انقل الجدول وأكمله.",
+      "statement": "المبلغ حسب العرض الأول من أجل 50 بطاقة:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "1250",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ = ثمن البطاقة × عدد البطاقات."
+        }
+      ],
+      "feedback": {
+        "correct": "$25 \\times 50 = 1250$ .",
+        "incorrect": "اضرب عدد البطاقات في ثمن البطاقة."
+      },
+      "solution": {
+        "lines": [
+          "$25 \\times 50 = 1250$"
+        ],
+        "result": "1250DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "المبلغ حسب العرض الثاني من أجل 50 بطاقة:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "1950",
+      "misconceptionSignatures": [
+        {
+          "value": "750",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا تنسَ ثمن التصميم."
+        }
+      ],
+      "feedback": {
+        "correct": "$15 \\times 50 + 1200 = 1950$ .",
+        "incorrect": "اضرب عدد البطاقات في 15، ثم أضف ثمن التصميم."
+      },
+      "solution": {
+        "lines": [
+          "$g(50) = 15 \\times 50 + 1200$",
+          "$g(50) = 750 + 1200$",
+          "$g(50) = 1950$ أي $1950DA$ ."
+        ],
+        "result": "1950DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "عدد البطاقات الذي يكون من أجله المبلغ حسب العرض الثاني 6450DA :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد البطاقات",
+      "expectedAnswer": "350",
+      "misconceptionSignatures": [
+        {
+          "value": "430",
+          "id": "MISC-TAALUFI-SABIQ-QISMA"
+        },
+        {
+          "value": "-770",
+          "id": "MISC-TAALUFI-SABIQ-TARTIB"
+        },
+        {
+          "value": "97950",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح ثمن التصميم من المبلغ أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اقسم على ثمن البطاقة."
+        }
+      ],
+      "feedback": {
+        "correct": "$(6450 - 1200) \\div 15 = 350$ .",
+        "incorrect": "اطرح ثمن التصميم أولا، ثم اقسم على 15."
+      },
+      "solution": {
+        "lines": [
+          "$g(x) = 6450$ معناه $15x + 1200 = 6450$",
+          "$15x = 6450 - 1200$",
+          "$15x = 5250$",
+          "$x = \\dfrac{5250}{15}$",
+          "$x = 350$"
+        ],
+        "result": "350"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "statement": "المبلغ حسب العرض الأول من أجل هذا العدد من البطاقات:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "8750",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل عدد البطاقات الذي وجدته في العمود الأخير."
+        }
+      ],
+      "feedback": {
+        "correct": "$25 \\times 350 = 8750$ .",
+        "incorrect": "اضرب عدد البطاقات الذي وجدته في 25."
+      },
+      "solution": {
+        "lines": [
+          "$25 \\times 350 = 8750$"
+        ],
+        "result": "8750DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ا",
+      "lead": "ليكن $x$ عدد البطاقات، و $f(x)$ ، $g(x)$ المبلغين المدفوعين حسب العرضين الأول والثاني على الترتيب.\nعبّر عن $g(x)$ بدلالة $x$ على الشكل $g(x) = ax + b$ .",
+      "statement": "أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "1200",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المبلغ الذي يُدفع عن كل بطاقة في العرض الثاني؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 15$ : هو معامل $x$ .",
+        "incorrect": "المعامل $a$ هو العدد المضروب في $x$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 25x$ و $g(x) = 15x + 1200$ .",
+          "$g(x) = 15x + 1200$ من الشكل $ax + b$ حيث: $a = 15$ و $b = 1200$ ."
+        ],
+        "result": "a = 15"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "1200",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المبلغ الذي يُدفع مرة واحدة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$b = 1200$ ، إذن $g(x) = 15x + 1200$ .",
+        "incorrect": "$b$ هو الحدّ الذي لا يحتوي على $x$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 25x$ و $g(x) = 15x + 1200$ .",
+          "$g(x) = 15x + 1200$ من الشكل $ax + b$ حيث: $a = 15$ و $b = 1200$ ."
+        ],
+        "result": "b = 1200"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q7",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل الدالة $g$ دالة خطية؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KHATTIYA-AFFINE"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $g(0)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$g(0) = 1200 \\neq 0$ .",
+        "incorrect": "صورة 0 بدالة خطية معدومة."
+      },
+      "solution": {
+        "lines": [
+          "$g(0) = 15 \\times 0 + 1200 = 1200 \\neq 0$ .",
+          "إذن $g$ ليست دالة خطية، بل دالة تآلفية ( $b = 1200$ )."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q8",
+      "step": "03",
+      "statement": "حلّ المعادلة $f(x) = g(x)$ ، ثم فسّر النتيجة.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب حل المعادلة فقط",
+      "expectedAnswer": "120",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $f(x)$ و $g(x)$ بعبارتيهما في المعادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الحدود التي فيها $x$ في طرف واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$10x = 1200$ : من أجل هذا العدد من البطاقات يتساوى المبلغان.",
+        "incorrect": "انقل الحدود التي فيها $x$ إلى طرف والحدّ الثابت إلى الطرف الآخر."
+      },
+      "solution": {
+        "lines": [
+          "$25x = 15x + 1200$",
+          "$10x = 1200$",
+          "$x = 120$",
+          "تفسير: من أجل 120 بطاقة يتساوى المبلغان: $f(120) = g(120) = 3000$ ."
+        ],
+        "result": "x = 120"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q9",
+      "step": "04",
+      "statement": "☜ يحتاج العريس 150 بطاقة. ما العرض الأنسب له؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "العرض الأول",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TANASUB-MABLAGH-THABIT"
+        },
+        {
+          "id": "B",
+          "content": "العرض الثاني",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المبلغين من أجل 150 بطاقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر أصغرهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(150) = 3750$ و $g(150) = 3450$ .",
+        "incorrect": "احسب $f(150)$ و $g(150)$ ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "$f(150) = 25 \\times 150 = 3750$",
+          "$g(150) = 15 \\times 150 + 1200 = 3450$",
+          "$3450 < 3750$ : العرض الثاني هو الأنسب (أكثر من 120 بطاقة)."
+        ],
+        "result": "العرض الثاني"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,195 @@
+{
+  "id": "ex-3am-qawaid-quwa-ashara-l1-008",
+  "lessonCode": "qawaid-quwa-ashara",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أيّ المساواة صحيحة؟",
+    "estimatedMinutes": 6,
+    "tags": [
+      "جداء قوى",
+      "حاصل القسمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "اكتب أنيس عدّة مساواات في دفتره. حدّد الصحيح منها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ العلاقات التالية صحيحة؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل كلّ اقتراح إلى قوة واحدة للعدد 10 مستعملًا القاعدة المناسبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر اقتراحًا واحدًا في كلّ مرّة، وانتبه إلى أنّ القواعد الثلاث لا تخصّ الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا شككت في قاعدة فجرّبها على قوة صغيرة تعرف قيمتها العشرية."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$10^{2}\\times10^{5} = 10^{10}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QAWAID-DARB-ASS"
+        },
+        {
+          "id": "B",
+          "content": "$10^{2}\\times10^{5} = 10^{7}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$10^{2}\\times10^{5} = 100^{7}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QAWAID-ASAS"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{2}\\times10^{5} = 10^{7}$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب قيمته أو بتطبيق القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "في الجداء نجمع الأسّين: $2 + 5 = 7$ ، أمّا $2 \\times 5 = 10$ فهو خطأ الضرب.",
+          "$10^{2}\\times10^{5} = 10^{7}$ ."
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل المساواة $\\dfrac{10^{9}}{10^{3}} = 10^{3}$ صحيحة؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل كلّ اقتراح إلى قوة واحدة للعدد 10 مستعملًا القاعدة المناسبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر اقتراحًا واحدًا في كلّ مرّة، وانتبه إلى أنّ القواعد الثلاث لا تخصّ الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا شككت في قاعدة فجرّبها على قوة صغيرة تعرف قيمتها العشرية."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QAWAID-DARB-ASS"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "المساواة خاطئة: $\\dfrac{10^{9}}{10^{3}} = 10^{6}$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب قيمته أو بتطبيق القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "في القسمة نطرح الأسّين: $9 - 3 = 6$ ، لا نقسمهما.",
+          "$\\dfrac{10^{9}}{10^{3}} = 10^{6}$ ، فالمساواة المقترحة خاطئة."
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "$A = 10^{3}\\times10^{3} = 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوتين المضروبتين وأسّ كلّ منهما (انتبه إلى إشارته)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في جداء قوتين للعدد 10 نجري عملية واحدة على الأسّين: ما هي؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب القاعدة على مثال صغير: $10^{2}\\times10^{1}$ هو $10\\times10\\times10$ ، فكم عاملًا 10 في الجداء؟"
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-QAWAID-DARB-ASS"
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 10^{3}\\times10^{3} = 10^{6}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "في الجداء نجمع الأسّين: $3 + 3 = 6$ .",
+          "$10^{3}\\times10^{3} = 10^{6}$ ."
+        ],
+        "result": "n = 6"
+      }
+    }
+  ]
+}

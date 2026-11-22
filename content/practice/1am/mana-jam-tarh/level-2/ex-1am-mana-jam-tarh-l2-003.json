@@ -1,0 +1,131 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l2-003",
+  "lessonCode": "mana-jam-tarh",
+  "level": 2,
+  "metadata": {
+    "title": "قامة أخي أحمد",
+    "estimatedMinutes": 4,
+    "tags": [
+      "يزيد",
+      "تحويل الوحدات"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "self-8",
+      "page": 31,
+      "section": "أقوّم تعلّماتي",
+      "number": 8
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يرافق أحمد أخاه الصغير كل صباح إلى المدرسة. تبلغ قامة أحمد $1{,}54\\,\\mathrm{m}$، وبذلك تزيد قامته عن قامة أخيه بـ $7\\,\\mathrm{cm}$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "في المخطط بأقواس الذي يمثّل الوضعية، طول قامة أحمد هو:",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الكل (القوس تحت الخط)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "جزء (قوس فوق الخط)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من الأطول: أحمد أم أخوه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأطول يتكوّن من قامة الأخ والزيادة معًا."
+        }
+      ],
+      "feedback": {
+        "correct": "قامة أحمد = قامة أخيه + $7\\,\\mathrm{cm}$: هي الكل.",
+        "incorrect": "قامة أحمد تزيد عن قامة أخيه: هي تضمّ قامة الأخ والزيادة."
+      },
+      "solution": {
+        "lines": [
+          "قامة أحمد تزيد عن قامة أخيه بـ $7\\,\\mathrm{cm}$، إذن قامة الأخ + $7\\,\\mathrm{cm}$ = قامة أحمد.",
+          "قامة أحمد هي الكل (تحت الخط)."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب طول قامة الأخ بالسنتيمتر.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالسنتيمتر (cm)",
+      "expectedAnswer": "147",
+      "misconceptionSignatures": [
+        {
+          "value": "161",
+          "id": "MISC-JAMTARH-KALIMA"
+        },
+        {
+          "value": "1.47",
+          "id": "MISC-JAMTARH-WAHDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل قامة أحمد إلى السنتيمتر أولًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$1\\,\\mathrm{m} = 100\\,\\mathrm{cm}$ ، ثم اطرح الزيادة."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}54\\,\\mathrm{m} = 154\\,\\mathrm{cm}$ و $154 - 7 = 147$.",
+        "incorrect": "لا نطرح سنتيمترات من أمتار مباشرة: حوّل، ثم اطرح لأن الأخ أقصر."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}54\\,\\mathrm{m} = 154\\,\\mathrm{cm}$",
+          "$154 - 7 = 147$"
+        ],
+        "result": "147 \\text{ cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "id": "ex-4am-tatbiqat-tanasub-l1-010",
+  "lessonCode": "tatbiqat-tanasub",
+  "level": 1,
+  "metadata": {
+    "title": "القطار",
+    "estimatedMinutes": 3,
+    "tags": [
+      "السرعة",
+      "مقدار بدلالة آخر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tatbiqat-tanasub_P3",
+      "modelledOn": "know-4",
+      "adaptedFrom": "ex-4am-tatbiqat-tanasub-l1-010"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "يسير قطار بسرعة متوسطة ثابتة قدرها $90km/h$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عبّر عن المسافة $d$ (بـ km) التي يقطعها القطار بدلالة المدة $t$ (بالساعة).",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب $d$ على الشكل $d = kt$ ثم أعط العدد $k$ فقط",
+      "expectedAnswer": "90",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من $v = \\dfrac{d}{t}$ نستنتج $d = v \\times t$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السرعة ثابتة: المسافة متناسبة مع المدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$d = 90t$ .",
+        "incorrect": "المسافة جداء السرعة في المدة."
+      },
+      "solution": {
+        "lines": [
+          "$v = \\dfrac{d}{t}$ ومنه $d = v \\times t$",
+          "$d = 90t$"
+        ],
+        "result": "d = 90t"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب المسافة التي يقطعها القطار في ساعتين ونصف.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المسافة بـ km (عدد فقط)",
+      "expectedAnswer": "225",
+      "misconceptionSignatures": [
+        {
+          "value": "36",
+          "id": "MISC-MAQADIR-QISMA-MAQLUBA"
+        },
+        {
+          "value": "207",
+          "id": "MISC-MAQADIR-WIHDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ساعتان ونصف تساوي $2{,}5h$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $t$ في العلاقة السابقة."
+        }
+      ],
+      "feedback": {
+        "correct": "$d = 90 \\times 2{,}5 = 225km$ .",
+        "incorrect": "حوّل المدة إلى ساعات بعدد عشري ثم اضرب في 90 ."
+      },
+      "solution": {
+        "lines": [
+          "ساعتان ونصف $= 2{,}5h$",
+          "$d = 90 \\times 2{,}5 = 225$",
+          "يقطع القطار 225km ."
+        ],
+        "result": "d = 225km"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

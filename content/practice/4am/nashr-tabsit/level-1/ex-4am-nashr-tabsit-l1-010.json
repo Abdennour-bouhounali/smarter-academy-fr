@@ -1,0 +1,122 @@
+{
+  "id": "ex-4am-nashr-tabsit-l1-010",
+  "lessonCode": "nashr-tabsit",
+  "level": 1,
+  "metadata": {
+    "title": "حساب ذهني بالنشر",
+    "estimatedMinutes": 2,
+    "tags": [
+      "الخاصية التوزيعية",
+      "حساب ذهني"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_nashr-tabsit_P2",
+      "modelledOn": "act-1"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "احسب ذهنيًا باستعمال الخاصية التوزيعية:"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "$6 \\times 102$ (لاحظ أن $102 = 100 + 2$).",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "612",
+      "misconceptionSignatures": [
+        {
+          "value": "602",
+          "id": "MISC-NASHR-HAD-WAHID"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $6 \\times 102 = 6 \\times (100 + 2)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب 6 في كل حد من حدّي القوس، ثم اجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 \\times 102 = 600 + 12 = 612$ .",
+        "incorrect": "اضرب 6 في 100 وفي 2 معًا، ثم اجمع النتيجتين."
+      },
+      "solution": {
+        "lines": [
+          "$6 \\times 102 = 6 \\times (100 + 2)$",
+          "$= 6 \\times 100 + 6 \\times 2$",
+          "$= 600 + 12$"
+        ],
+        "result": "6 \\times 102 = 612"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "$8 \\times 99$ (لاحظ أن $99 = 100 - 1$).",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "792",
+      "misconceptionSignatures": [
+        {
+          "value": "799",
+          "id": "MISC-NASHR-HAD-WAHID"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $8 \\times 99 = 8 \\times (100 - 1)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب 8 في كل حد من حدّي القوس، ثم اطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$8 \\times 99 = 800 - 8 = 792$ .",
+        "incorrect": "اضرب 8 في 100 وفي 1 معًا، ثم اطرح النتيجتين."
+      },
+      "solution": {
+        "lines": [
+          "$8 \\times 99 = 8 \\times (100 - 1)$",
+          "$= 8 \\times 100 - 8 \\times 1$",
+          "$= 800 - 8$"
+        ],
+        "result": "8 \\times 99 = 792"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

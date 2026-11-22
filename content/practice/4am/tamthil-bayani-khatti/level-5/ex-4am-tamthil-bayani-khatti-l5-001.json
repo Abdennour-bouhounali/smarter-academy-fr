@@ -1,0 +1,413 @@
+{
+  "id": "ex-4am-tamthil-bayani-khatti-l5-001",
+  "lessonCode": "tamthil-bayani-khatti",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2007 — صيغتا الدخول إلى حديقة التسلية ببن عكنون",
+    "estimatedMinutes": 20,
+    "tags": [
+      "وضعية إدماجية",
+      "صيغتان",
+      "قراءة بيانية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tamthil-bayani-khatti_P2",
+      "modelledOn": "BEM 2007 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2007",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تقترح إدارة حديقة للتسلية ببن عكنون، تحافظ على نظافتها، صيغتين للدخول:\n– الصيغة الأولى: 150DA للدخول الواحد.\n– الصيغة الثانية: 50DA للدخول الواحد مع بطاقة سنوية ثمنها 400DA.\nيمثّل $(D)$ و $(\\Delta)$ في المعلم التالي المبلغ المدفوع حسب الصيغتين بدلالة عدد الدخولات $x$ (وحدة محور التراتيب: 100DA).",
+    "table": {
+      "head": [
+        "عدد الدخولات",
+        "2",
+        "6"
+      ],
+      "rows": [
+        [
+          "المبلغ حسب الصيغة الأولى (DA)",
+          "300",
+          "…"
+        ],
+        [
+          "المبلغ حسب الصيغة الثانية (DA)",
+          "500",
+          "…"
+        ]
+      ]
+    },
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "H": [
+          8,
+          12
+        ],
+        "B": [
+          0,
+          4
+        ],
+        "C": [
+          8,
+          8
+        ]
+      },
+      "rays": [
+        {
+          "from": "O",
+          "through": "H",
+          "name": "(D)",
+          "tone": "indigo",
+          "extend": 0
+        },
+        {
+          "from": "B",
+          "through": "C",
+          "name": "(Δ)",
+          "tone": "rose",
+          "extend": 0
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw"
+      },
+      "hidden": [
+        "H",
+        "B",
+        "C"
+      ],
+      "ariaLabel": "معلم على ورقة مرصوفة: نصف المستقيم (D) ينطلق من المبدأ O، ونصف المستقيم (Δ) ينطلق من محور التراتيب فوق المبدأ، ويتقاطعان",
+      "caption": "محور الفواصل: عدد الدخولات — محور التراتيب: المبلغ بمئات الدنانير"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "انقل الجدول وأكمله.",
+      "statement": "المبلغ حسب الصيغة الأولى من أجل 6 دخولات:",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "900",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ = الثمن الوحدوي × العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$150 \\times 6 = 900$ .",
+        "incorrect": "أعد الحساب حسب الصيغة المطلوبة، ولا تنس المبلغ الثابت إن وُجد."
+      },
+      "solution": {
+        "lines": [
+          "$150 \\times 6 = 900$"
+        ],
+        "result": "900"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "المبلغ حسب الصيغة الثانية من أجل 6 دخولات:",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "700",
+      "misconceptionSignatures": [
+        {
+          "value": "300",
+          "id": "MISC-TANASUB-MABLAGH-THABIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ = ثمن الدخول × عدد الدخولات + ثمن البطاقة."
+        }
+      ],
+      "feedback": {
+        "correct": "$50 \\times 6 + 400 = 700$ .",
+        "incorrect": "أعد الحساب حسب الصيغة المطلوبة، ولا تنس المبلغ الثابت إن وُجد."
+      },
+      "solution": {
+        "lines": [
+          "$50 \\times 6 + 400 = 700$"
+        ],
+        "result": "700"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "ليكن $x$ عدد الدخولات، و $f(x)$ و $g(x)$ المبلغين بالدينار حسب الصيغتين الأولى والثانية على الترتيب.",
+      "statement": "عبّر عن $f(x)$ بدلالة $x$ على الشكل $f(x) = ax$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "150",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ حسب الصيغة الأولى = ثمن الدخول الواحد × عدد الدخولات."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(x) = 150x$ ، و $g(x) = 50x + 400$ .",
+        "incorrect": "المعامل هو ثمن الدخول الواحد في الصيغة الأولى."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 150x$",
+          "و $g(x) = 50x + 400$ ."
+        ],
+        "result": "f(x) = 150x"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "statement": "أيّ المستقيمين يمثّل الدالة $f$ ؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(D)$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$(\\Delta)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TANASUB-MABLAGH-THABIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التمثيل البياني لدالة خطية جزء من مستقيم يشمل المبدأ $O$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أيّ التمثيلين ينطلق من المبدأ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$(D)$ يشمل المبدأ $O$ : هو تمثيل الدالة الخطية.",
+        "incorrect": "دالة خطية: صورة 0 هي 0، فتمثيلها يشمل المبدأ."
+      },
+      "solution": {
+        "lines": [
+          "الدالة $f$ خطية: $f(0) = 0$ ، أما $g(0) = 400$ فتمثيل $g$ يقطع محور التراتيب في 4 (أي 400DA ).",
+          "إذن $(D)$ هو التمثيل المطلوب، لأنه يشمل المبدأ $O$ ."
+        ],
+        "result": "(D)"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "بقراءة بيانية، عيّن عدد الدخولات الذي يكون من أجله المبلغ حسب الصيغة الأولى 1200DA .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الدخولات",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "18",
+          "id": "MISC-BAYANI-FASILA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ من العدد المعطى على محور التراتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اتجه أفقيا حتى المستقيم $(D)$ ، ثم عموديا حتى محور الفواصل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد المطلوب هو فاصلة نقطة المستقيم التي ترتيبها الصورة المعطاة."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة من $(D)$ التي ترتيبها $12$ فاصلتها $8$ .",
+        "incorrect": "العدد الذي علمت صورته يُقرأ على محور الفواصل: فاصلة نقطة المستقيم التي ترتيبها الصورة المعطاة."
+      },
+      "solution": {
+        "lines": [
+          "النقطة من المستقيم $(D)$ التي ترتيبها $12$ فاصلتها $8$ .",
+          "1200DA توافق 12 وحدة على محور التراتيب: عدد الدخولات 8."
+        ],
+        "result": "f(8) = 12"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ج",
+      "statement": "بقراءة بيانية، عيّن عدد الدخولات الذي يتساوى من أجله المبلغان.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الدخولات",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن نقطة تقاطع المستقيمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد الدخولات هو فاصلة هذه النقطة."
+        }
+      ],
+      "feedback": {
+        "correct": "يتقاطع المستقيمان في النقطة $(4 ; 6)$ : من أجل 4 دخولات يدفع الزائر 600DA في الصيغتين.",
+        "incorrect": "المبلغان متساويان عند نقطة تقاطع المستقيمين: اقرأ فاصلتها."
+      },
+      "solution": {
+        "lines": [
+          "المستقيمان $(D)$ و $(\\Delta)$ يتقاطعان في النقطة $(4 ; 6)$ .",
+          "إذن من أجل 4 دخولات يتساوى المبلغان (600DA )."
+        ],
+        "result": "x = 4"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "statement": "☜ يريد مراد الدخول إلى الحديقة 10 مرات هذه السنة. ما هي الصيغة الأنسب له؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الصيغة الأولى",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TANASUB-MABLAGH-THABIT"
+        },
+        {
+          "id": "B",
+          "content": "الصيغة الثانية",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن موضعي المستقيمين بعد نقطة تقاطعهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أو احسب المبلغ حسب كل صيغة من أجل 10 دخولات."
+        }
+      ],
+      "feedback": {
+        "correct": "الصيغة الثانية: 900DA بدل 1500DA .",
+        "incorrect": "بعد 4 دخولات يصبح $(D)$ فوق $(\\Delta)$ : الصيغة الأولى أغلى."
+      },
+      "solution": {
+        "lines": [
+          "$10 > 4$ : بعد نقطة التقاطع يكون $(\\Delta)$ تحت $(D)$ .",
+          "التحقق: $f(10) = 150 \\times 10 = 1500$ و $g(10) = 50 \\times 10 + 400 = 900$ .",
+          "إذن الصيغة الثانية أنسب لمراد."
+        ],
+        "result": "الصيغة الثانية"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

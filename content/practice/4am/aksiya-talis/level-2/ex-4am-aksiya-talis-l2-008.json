@@ -1,0 +1,278 @@
+{
+  "id": "ex-4am-aksiya-talis-l2-008",
+  "lessonCode": "aksiya-talis",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2010 — بيّن أن (EF)//(BC) ثم احسب EF",
+    "estimatedMinutes": 9,
+    "tags": [
+      "الخاصية العكسية",
+      "خاصية طالس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_aksiya-talis_P1",
+      "modelledOn": "BEM 2010 I-4"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2010",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل (وحدة الطول هي السنتيمتر): $E$ نقطة من $[AB]$ و $F$ نقطة من $[AC]$ حيث: $AE = 2$ ، $EB = 3$ ، $AF = 2{,}4$ ، $AC = 6$ و $BC = 7$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0.0,
+          0.0
+        ],
+        "B": [
+          5.0,
+          0.0
+        ],
+        "E": [
+          2.0,
+          0.0
+        ],
+        "C": [
+          1.2,
+          5.87877538268
+        ],
+        "F": [
+          0.48,
+          2.351510153072
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "E",
+          "label": "2"
+        },
+        {
+          "from": "E",
+          "to": "B",
+          "label": "3"
+        },
+        {
+          "from": "A",
+          "to": "F",
+          "label": "2,4"
+        },
+        [
+          "F",
+          "C"
+        ],
+        {
+          "from": "B",
+          "to": "C",
+          "label": "7"
+        },
+        [
+          "E",
+          "F"
+        ]
+      ],
+      "ariaLabel": "مثلث ABC، E من [AB] و F من [AC]؛ AE = 2 و EB = 3 و AF = 2,4 و BC = 7",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "بيّن أن $(EF) \\parallel (BC)$ .",
+      "statement": "احسب النسبة $\\dfrac{AE}{AB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "2/5",
+      "misconceptionSignatures": [
+        {
+          "value": "5/2",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "2/3",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AB = AE + EB$ : الضلع كاملا من الرأس $A$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $AE$ على $AB$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AE}{AB} = \\dfrac{2}{5}$ .",
+        "incorrect": "النسبة $\\dfrac{AE}{AB}$ : الطول $AE$ على الطول $AB$ ، وكلاهما من النقطة $A$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$AB = AE + EB = 2 + 3 = 5$",
+          "$\\dfrac{AE}{AB} = \\dfrac{2}{5}$"
+        ],
+        "result": "\\dfrac{AE}{AB} = \\dfrac{2}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "احسب النسبة $\\dfrac{AF}{AC}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "2/5",
+      "misconceptionSignatures": [
+        {
+          "value": "5/2",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "2/3",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AF$ و $AC$ طولان يُقاسان من النقطة $A$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $AF$ على $AC$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AF}{AC} = \\dfrac{2{,}4}{6} = \\dfrac{2}{5}$ .",
+        "incorrect": "النسبة $\\dfrac{AF}{AC}$ : الطول $AF$ على الطول $AC$ ، وكلاهما من النقطة $A$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AF}{AC} = \\dfrac{2{,}4}{6} = \\dfrac{2}{5}$"
+        ],
+        "result": "\\dfrac{AF}{AC} = \\dfrac{2}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "اكتب البرهان.",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقط $A$ ، $E$ ، $B$ في استقامية، والنقط $A$ ، $F$ ، $C$ في استقامية: هل الترتيب نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل النسبتين اللتين حسبتهما: هل هما متساويتان بقيمهما المضبوطة؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختم بذكر الخاصية المستعملة: الخاصية العكسية لخاصية طالس."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AE}{AB} = \\dfrac{AF}{AC} = 0{,}4$ والترتيب نفسه: $(EF) \\parallel (BC)$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي: الاستقامية، الترتيب نفسه، تساوي النسبتين، ثم ذكر الخاصية العكسية لخاصية طالس."
+      },
+      "solution": {
+        "lines": [
+          "بما أن النقط $A$ ، $E$ ، $B$ و $A$ ، $F$ ، $C$ في استقامية وبنفس الترتيب،",
+          "و بما أن: $\\dfrac{AE}{AB} = \\dfrac{AF}{AC} = \\dfrac{2}{5}$",
+          "فإن المستقيمين $(EF)$ و $(BC)$ متوازيان حسب خاصية طالس العكسية."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "احسب الطول $EF$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "2,8",
+      "misconceptionSignatures": [
+        {
+          "value": "17.5",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(EF) \\parallel (BC)$ (السؤال 01): المثلثان $AEF$ و $ABC$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $\\dfrac{AE}{AB} = \\dfrac{EF}{BC}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$EF = \\dfrac{2 \\times 7}{5} = 2{,}8\\,\\mathrm{cm}$ .",
+        "incorrect": "في كل نسبة: طول من المثلث الصغير على الطول الموافق له في المثلث الكبير."
+      },
+      "solution": {
+        "lines": [
+          "بما أن $(EF) \\parallel (BC)$ ، حسب خاصية طالس: $\\dfrac{AE}{AB} = \\dfrac{AF}{AC} = \\dfrac{EF}{BC}$",
+          "$\\dfrac{2}{5} = \\dfrac{EF}{7}$",
+          "$EF = \\dfrac{2 \\times 7}{5}$"
+        ],
+        "result": "EF = 2{,}8\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

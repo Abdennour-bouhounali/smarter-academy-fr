@@ -1,0 +1,253 @@
+{
+  "id": "ex-4am-ikhtizal-kasr-l5-001",
+  "lessonCode": "ikhtizal-kasr",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2022 — اللون الأخضر لورشة دهن بالبليدة",
+    "estimatedMinutes": 15,
+    "tags": [
+      "كسر غير قابل للاختزال",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_ikhtizal-kasr_P3",
+      "modelledOn": "BEM 2022 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يحرص دهّان بورشة بالبليدة على إتقان عمله، فيحضّر لونًا أخضر بمزج 1386 mL من الدهن الأصفر مع 924 mL من الدهن الأزرق.\n• يُباع الدهن الأصفر في علب سعة كل منها 2,5 L بـ 1850DA للعلبة.\n• يُباع الدهن الأزرق في علب سعة كل منها 2 L بـ 1600DA للعلبة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 1386 و 924.",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "462",
+      "misconceptionSignatures": [
+        {
+          "value": "231",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 1386 على 924: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (1386 ; 924) بالزوج (924 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 462.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$1386 = 924 \\times 1 + 462$",
+          "$924 = 462 \\times 2 + 0$",
+          "آخر باقٍ غير معدوم هو 462، إذن:"
+        ],
+        "result": "PGCD(1386 ; 924) = 462"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اكتب الكسر $\\dfrac{1386}{924}$ (نسبة كمية الدهن الأصفر إلى كمية الدهن الأزرق) على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "3/2",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "693/462",
+          "id": "MISC-IKHTIZAL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01 (ا)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 462: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال 01 (ا).",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1386}{924} = \\dfrac{1386 \\div 462}{924 \\div 462}$",
+          "إذن: لكل 3 حصص من الدهن الأصفر نمزج حصتين من الدهن الأزرق."
+        ],
+        "result": "\\dfrac{1386}{924} = \\dfrac{3}{2}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "يحتاج الدهّان إلى 20 L من اللون الأخضر نفسه لدهن قسم في متوسطة، وقد تطوّع بجهده لتجميل مدرسة الحيّ.",
+      "statement": "ما هي كمية الدهن الأصفر اللازمة (باللتر)؟",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (باللتر)",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من نتيجة السؤال 01: كم حصة في المزيج كله؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الدهن الأصفر يمثّل 3 حصص من 5 حصص متساوية."
+        }
+      ],
+      "feedback": {
+        "correct": "$20 \\times \\dfrac{3}{5} = 12$",
+        "incorrect": "قسّم 20 L إلى 5 حصص متساوية، ثم خذ 3 حصص منها."
+      },
+      "solution": {
+        "lines": [
+          "في المزيج: 3 حصص من الأصفر و 2 من الأزرق، أي 5 حصص متساوية.",
+          "$20 \\times \\dfrac{3}{5} = 12$"
+        ],
+        "result": "12\\,L"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما هي كمية الدهن الأزرق اللازمة (باللتر)؟",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (باللتر)",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدهن الأزرق يمثّل حصتين من 5 حصص متساوية."
+        }
+      ],
+      "feedback": {
+        "correct": "$20 \\times \\dfrac{2}{5} = 8$",
+        "incorrect": "خذ حصتين من 5 حصص متساوية من 20 L."
+      },
+      "solution": {
+        "lines": [
+          "$20 \\times \\dfrac{2}{5} = 8$ (أو $20 - 12 = 8$)."
+        ],
+        "result": "8\\,L"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "☜ ما هو المبلغ الذي يدفعه الدهّان لشراء علب الدهن اللازمة؟",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (المبلغ بالدينار)",
+      "expectedAnswer": "15650",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العلب لا تُجزّأ: احسب عدد العلب اللازمة من كل لون."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا لم تكن القسمة تامة، يلزم شراء علبة إضافية."
+        }
+      ],
+      "feedback": {
+        "correct": "5 علب صفراء و 4 علب زرقاء: $9250 + 6400 = 15650$",
+        "incorrect": "احسب عدد العلب من كل لون (عدد طبيعي)، ثم اضرب في ثمن العلبة."
+      },
+      "solution": {
+        "lines": [
+          "الأصفر: $12 \\div 2{,}5 = 4{,}8$ ، إذن يلزم 5 علب: $5 \\times 1850 = 9250$DA",
+          "الأزرق: $8 \\div 2 = 4$ علب: $4 \\times 1600 = 6400$DA",
+          "المبلغ: $9250 + 6400 = 15650$DA"
+        ],
+        "result": "15650DA"
+      },
+      "timeSeconds": 360
+    }
+  ]
+}

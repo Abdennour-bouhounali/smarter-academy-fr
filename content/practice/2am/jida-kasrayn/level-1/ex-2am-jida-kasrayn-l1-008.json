@@ -1,0 +1,97 @@
+{
+  "id": "ex-2am-jida-kasrayn-l1-008",
+  "lessonCode": "jida-kasrayn",
+  "level": 1,
+  "metadata": {
+    "title": "أختار الكتابات الصحيحة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "جداء كسرين",
+      "اختيار من متعدّد"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "self-7",
+      "page": 33,
+      "section": "أؤكّد تعلّماتي",
+      "number": 7
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "اختر كلّ الإجابات الصحيحة :"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "العدد $\\dfrac{5}{9} \\times \\dfrac{2}{7}$ يساوي :",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "multiChoice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{2 \\times 5}{9 \\times 7}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{35}{18}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDAKASR-CROSS"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{10}{16}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDAKASR-DENSUM"
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{10}{63}$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر كلّ الإجابات الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليّة بين الكسرين؟ وماذا يمثّل كلّ منهما من الكلّ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في ضرب كسرين لا نبحث عن مقام مشترك: نضرب البسطين معًا ونضرب المقامين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء على شكل كسر واحد ثمّ اختزله إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "الاختيار الصحيح يساوي الجداء المحسوب .",
+        "incorrect": "ضرب كسرين: بسط × بسط فوق مقام × مقام، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{9} \\times \\dfrac{2}{7} = \\dfrac{5 \\times 2}{9 \\times 7} = \\dfrac{10}{63}$ ، وهي الكتابة نفسها $\\dfrac{2 \\times 5}{9 \\times 7}$ (الضرب تبديليّ) .",
+          "أمّا $\\dfrac{35}{18}$ فقد قُلب فيها الكسر الثاني ، و $\\dfrac{10}{16}$ جُمع فيها المقامان ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

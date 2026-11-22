@@ -1,0 +1,64 @@
+{
+  "id": "ex-4am-misaha-hajm-kura-l3-010",
+  "lessonCode": "misaha-hajm-kura",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — جلة نصف قطرها عشري",
+    "estimatedMinutes": 3,
+    "tags": [
+      "حجم الجلة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_misaha-hajm-kura_P2",
+      "modelledOn": "know-2"
+    }
+  },
+  "statement": {
+    "content": "جلة نصف قطرها $1{,}5\\,\\mathrm{cm}$ . اكتب حجمها على الشكل $k\\pi\\,\\mathrm{cm}^3$ ثم أعط $k$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قيمة $k$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_misaha-hajm-kura_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة (مثل 2,5) أو عدد طبيعي",
+      "expectedAnswer": "4.5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(1{,}5)^3 = 3{,}375$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\frac{4}{3} \\times 3{,}375$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم 3,375 على 3 ثم اضرب في 4."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\frac{4}{3} \\times 3{,}375 = 4{,}5$ : $\\mathcal{V} = 4{,}5\\pi\\,\\mathrm{cm}^3$ .",
+        "incorrect": "الأس 3: $(1{,}5)^2 = 2{,}25$ لا يكفي."
+      },
+      "difficulty": 3,
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-HAJM-QUWA",
+          "value": "3"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l5-008",
+  "lessonCode": "maqati-mustawiya",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — مجسّم هرم",
+    "estimatedMinutes": 3,
+    "tags": [
+      "هرم",
+      "مساحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_maqati-mustawiya_P4",
+      "modelledOn": "act-5"
+    }
+  },
+  "statement": {
+    "content": "تطبع الطابعة ثلاثية الأبعاد مجسّما لهرم منتظم قاعدته مربع ضلعه $12\\,\\mathrm{cm}$ . الطبقة EFGH موازية للقاعدة، و E من $[SA]$ حيث $SE = \\dfrac{5}{6}SA$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما مساحة الطبقة EFGH (بـ $\\mathrm{cm}^2$)؟",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P4",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر المربع)",
+      "expectedAnswer": "100",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAKBIR-MISAHA-K",
+          "value": "120"
+        },
+        {
+          "id": "MISC-MAQTA-HARAM",
+          "value": "144"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضلع الطبقة $\\dfrac{5}{6} \\times 12$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضلع الطبقة $10$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مساحة مربع ضلعه 10."
+        }
+      ],
+      "feedback": {
+        "correct": "ضلع الطبقة $10\\,\\mathrm{cm}$ ، مساحتها $100\\,\\mathrm{cm}^2$ .",
+        "incorrect": "$\\dfrac{5}{6} \\times 144 = 120$ يضرب المساحة في k بدل $k^2$ ."
+      },
+      "difficulty": 5
+    }
+  ]
+}

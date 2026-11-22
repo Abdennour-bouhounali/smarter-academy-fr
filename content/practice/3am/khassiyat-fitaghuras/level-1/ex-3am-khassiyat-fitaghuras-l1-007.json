@@ -1,0 +1,139 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l1-007",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 1,
+  "metadata": {
+    "title": "الآلة الحاسبة في خدمة فيثاغورس",
+    "estimatedMinutes": 4,
+    "tags": [
+      "خاصية فيثاغورس",
+      "الآلة الحاسبة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-6",
+      "page": 174,
+      "section": "أوظّف تعلّماتي",
+      "number": 6
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "تراجع ريم مع زميلتها التي تجد صعوبة في استعمال الآلة الحاسبة، فتكتب لها السلسلة: $9\\ x^2\\ +\\ 40\\ x^2\\ =$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما العدد الذي يظهر على شاشة الآلة الحاسبة بعد إنجاز السلسلة: $9\\ x^2\\ +\\ 40\\ x^2\\ =$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1681",
+      "misconceptionSignatures": [
+        {
+          "value": "49",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "98",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اللمسة $x^2$ تربّع العدد الذي قبلها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الآلة تحسب $9^2$ ثم $40^2$ ثم تجمعهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$9^2 + 40^2 = 81 + 1600 = 1681$ .",
+        "incorrect": "اللمسة $x^2$ تعطي جداء العدد في نفسه، ثم تجمع الآلة النتيجتين."
+      },
+      "solution": {
+        "lines": [
+          "$9^2 + 40^2 = 81 + 1600 = 1681$"
+        ],
+        "result": "9^2 + 40^2 = 1681"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج طول الوتر $[BC]$ لمثلث $ABC$ قائم في $A$ حيث $AB = 9\\,\\mathrm{mm}$ و $AC = 40\\,\\mathrm{mm}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ mm",
+      "expectedAnswer": "41",
+      "misconceptionSignatures": [
+        {
+          "value": "49",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "1681",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولا مربع الطول، ثم خذ جذره التربيعي بالآلة الحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC^2 = 9^2 + 40^2 = 1681$ ، إذن $BC = 41\\,\\mathrm{mm}$ .",
+        "incorrect": "ابدأ بتحديد الوتر، ثم اكتب مساواة فيثاغورس، وتذكّر أن ما تحسبه أولا هو مربع الطول لا الطول نفسه."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $A$ ، حسب خاصية فيثاغورس: $BC^2 = AB^2 + AC^2$",
+          "$BC^2 = 9^2 + 40^2$",
+          "$BC^2 = 81 + 1600 = 1681$",
+          "$BC = \\sqrt{1681} = 41\\,\\mathrm{mm}$"
+        ],
+        "result": "BC = 41\\,\\mathrm{mm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

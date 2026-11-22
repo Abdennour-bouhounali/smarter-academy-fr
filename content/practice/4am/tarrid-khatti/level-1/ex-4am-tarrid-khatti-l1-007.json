@@ -1,0 +1,113 @@
+{
+  "id": "ex-4am-tarrid-khatti-l1-007",
+  "lessonCode": "tarrid-khatti",
+  "level": 1,
+  "metadata": {
+    "title": "طرائق (ص 71) — النابض",
+    "estimatedMinutes": 4,
+    "tags": [
+      "نابض",
+      "دالة خطية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-spring",
+      "page": 71,
+      "section": "طرائق",
+      "adaptedFrom": "ex-4am-tarrid-khatti-l1-007"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في حصّة علمية، يتعاون التلاميذ على تجريب نابض يستطيل بشكل متناسب مع الكتلة المعلّقة به: كتلة 2g تعطي استطالة 0,6cm. نسمّي $x$ الكتلة المعلّقة (بالغرام) و $f(x)$ استطالة النابض (بالسنتيمتر)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن الدالة الخطية $f$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "0,3",
+      "misconceptionSignatures": [
+        {
+          "value": "10/3",
+          "id": "MISC-TANASUB-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$f(x) = ax$ و $f(2) = 0{,}6$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$a$ هو الاستطالة مقسومة على الكتلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{0{,}6}{2} = 0{,}3$ ، إذن $f(x) = 0{,}3x$ .",
+        "incorrect": "المعامل هو الاستطالة على الكتلة، لا العكس."
+      },
+      "solution": {
+        "lines": [
+          "$f(2) = 0{,}6$ معناه $2a = 0{,}6$",
+          "$a = \\dfrac{0{,}6}{2} = 0{,}3$",
+          "إذن $f(x) = 0{,}3x$ ."
+        ],
+        "result": "f(x) = 0{,}3x"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عيّن استطالة النابض من أجل كتلة قدرها 10g.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الاستطالة بـ cm",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الاستطالة هي صورة 10 بالدالة $f$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(10) = 0{,}3 \\times 10 = 3$ : الاستطالة 3cm.",
+        "incorrect": "احسب صورة 10: اضرب في المعامل."
+      },
+      "solution": {
+        "lines": [
+          "$f(10) = 0{,}3 \\times 10 = 3$",
+          "عندما نعلّق كتلة 10g تكون استطالة النابض 3cm."
+        ],
+        "result": "3cm"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

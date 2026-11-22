@@ -1,0 +1,294 @@
+{
+  "id": "ex-2am-muqarana-kasrayn-l5-006",
+  "lessonCode": "muqarana-kasrayn",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — تقاسم مبلغ",
+    "estimatedMinutes": 12,
+    "tags": [
+      "مقارنة كسور",
+      "الباقي",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-73",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تقاسم ثلاثة إخوة وأختهم مبلغًا قدره $1800\\ \\mathrm{DA}$ : أخذ الأخ الأكبر $\\dfrac{1}{4}$ منه ، وأخذ الأخ الأوسط $\\dfrac{9}{20}$ منه ، وأخذ الأخ الأصغر $\\dfrac{1}{10}$ منه ، وأخذت الأخت الباقي ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما الكسر الذي يمثّل نصيب الأخت ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "1/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط ؟ وما الكسور المعطاة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد قبل الجمع أو الطرح ثمّ اختزل ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{5}$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{20} + \\dfrac{9}{20} + \\dfrac{2}{20} = \\dfrac{16}{20}$ .",
+          "$1 - \\dfrac{16}{20} = \\dfrac{4}{20} = \\dfrac{1}{5}$ ."
+        ],
+        "result": "\\dfrac{1}{5}"
+      },
+      "work": "optional",
+      "timeSeconds": 90,
+      "counted": false
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "من أخذ أكبر نصيب ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الأخ الأكبر",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "الأخ الأوسط",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "الأخ الأصغر",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "الأخت",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكسر الخاصّ بكلّ حالة ؟ وهل مقاماتها متساوية أو يقسم بعضها بعضًا ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور كلّها بالمقام نفسه إن اختلفت المقامات ثمّ قارن بين البسوط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحكم من البسط وحده ولا من المقام وحده ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب : الأخ الأوسط .",
+        "incorrect": "وحّد المقامات قبل أن تحكم ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "نكتب الكسور بالمقام $20$ : $\\dfrac{1}{4} = \\dfrac{5}{20}$ ، $\\dfrac{9}{20}$ ، $\\dfrac{1}{10} = \\dfrac{2}{20}$ ، $\\dfrac{1}{5} = \\dfrac{4}{20}$ .",
+          "أكبر بسط هو $9$ .",
+          "الجواب : الأخ الأوسط ($\\dfrac{9}{20}$) ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "رتّب أنصبة الأربعة ($\\dfrac{1}{4}$ ؛ $\\dfrac{9}{20}$ ؛ $\\dfrac{1}{10}$ ؛ $\\dfrac{1}{5}$) ترتيبًا تنازليًّا .",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{9}{20} > \\dfrac{1}{4} > \\dfrac{1}{10} > \\dfrac{1}{5}$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{9}{20} > \\dfrac{1}{4} > \\dfrac{1}{5} > \\dfrac{1}{10}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{9}{20} > \\dfrac{1}{10} > \\dfrac{1}{5} > \\dfrac{1}{4}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-BIGDEN"
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{1}{10} > \\dfrac{1}{5} > \\dfrac{1}{4} > \\dfrac{9}{20}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-REVERSED"
+        }
+      ],
+      "answerFormat": "اختر الترتيب الصحيح",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما مقامات هذه الكسور ؟ هل يقسم أحدها الآخر ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور كلّها بالمقام الأكبر ثمّ قارن بين البسوط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى جهة الترتيب المطلوبة : الأصغر أوّلًا في الترتيب التصاعدي والأكبر أوّلًا في التنازلي ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9}{20} > \\dfrac{1}{4} > \\dfrac{1}{5} > \\dfrac{1}{10}$ .",
+        "incorrect": "وحّد المقامات ثمّ رتّب البسوط في الجهة المطلوبة وأعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "نكتب الكسور بالمقام نفسه ($20$) : $\\dfrac{1}{4} = \\dfrac{5}{20}$ ، $\\dfrac{9}{20}$ ، $\\dfrac{1}{10} = \\dfrac{2}{20}$ ، $\\dfrac{1}{5} = \\dfrac{4}{20}$ .",
+          "نرتّب البسوط تنازليًّا : $9 > 5 > 4 > 2$ .",
+          "إذن : $\\dfrac{9}{20} > \\dfrac{1}{4} > \\dfrac{1}{5} > \\dfrac{1}{10}$ ."
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "ما نصيب الأخ الأوسط بالدينار ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "810",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط ؟ وما الكسور المعطاة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد قبل الجمع أو الطرح ثمّ اختزل ."
+        }
+      ],
+      "feedback": {
+        "correct": "$810$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$1800 \\div 20 = 90$ ثمّ $90 \\times 9 = 810$ ، أي $810\\ \\mathrm{DA}$ ."
+        ],
+        "result": "810"
+      },
+      "work": "optional",
+      "timeSeconds": 90,
+      "counted": false
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "ما نصيب الأخت بالدينار ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "360",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط ؟ وما الكسور المعطاة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد قبل الجمع أو الطرح ثمّ اختزل ."
+        }
+      ],
+      "feedback": {
+        "correct": "$360$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$1800 \\div 5 = 360$ ، أي $360\\ \\mathrm{DA}$ ."
+        ],
+        "result": "360"
+      },
+      "work": "optional",
+      "timeSeconds": 90,
+      "counted": false
+    }
+  ]
+}

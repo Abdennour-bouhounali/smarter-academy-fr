@@ -1,0 +1,208 @@
+{
+  "id": "ex-4am-aksiya-talis-l1-005",
+  "lessonCode": "aksiya-talis",
+  "level": 1,
+  "metadata": {
+    "title": "نشاط 2 — الشكل 2: الترتيب نفسه",
+    "estimatedMinutes": 4,
+    "tags": [
+      "نشاط 2",
+      "نفس الترتيب"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-2",
+      "page": 105,
+      "section": "أنشطة",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "$(d)$ و $(d')$ مستقيمان متقاطعان في $A$ ، $B$ من $(d)$ و $C$ من $(d')$ . عيّن تلميذ $B'$ من $(d)$ و $C'$ من $(d')$ بحيث $\\dfrac{AB'}{AB} = \\dfrac{AC'}{AC} = \\dfrac{1}{3}$ ، مع $B'$ بين $A$ و $B$ و $C'$ بين $A$ و $C$ (الشكل المقابل).",
+    "figure": {
+      "points": {
+        "A": [
+          0.0,
+          0.0
+        ],
+        "B": [
+          -9.234543869793,
+          -25.37170076122
+        ],
+        "g2": [
+          -6.156362579862,
+          -16.914467174146
+        ],
+        "B′": [
+          -3.078181289931,
+          -8.457233587073
+        ],
+        "C": [
+          18.0,
+          -31.17691453624
+        ],
+        "h2": [
+          12.0,
+          -20.784609690827
+        ],
+        "C′": [
+          6.0,
+          -10.392304845413
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B′",
+          "ticks": 1
+        },
+        {
+          "from": "B′",
+          "to": "g2",
+          "ticks": 1
+        },
+        {
+          "from": "g2",
+          "to": "B",
+          "ticks": 1
+        },
+        {
+          "from": "A",
+          "to": "C′",
+          "ticks": 2
+        },
+        {
+          "from": "C′",
+          "to": "h2",
+          "ticks": 2
+        },
+        {
+          "from": "h2",
+          "to": "C",
+          "ticks": 2
+        },
+        [
+          "B",
+          "C"
+        ],
+        [
+          "B′",
+          "C′"
+        ]
+      ],
+      "hidden": [
+        "g2",
+        "h2"
+      ],
+      "ariaLabel": "الشكل 2: B′ بين A و B و C′ بين A و C، و AB′ ثلث AB و AC′ ثلث AC",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل النقط $A$ ، $B'$ ، $B$ مرتبة بنفس ترتيب النقط $A$ ، $C'$ ، $C$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-JIHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين تقع $B'$ بالنسبة إلى $A$ و $B$ ؟ وأين تقع $C'$ بالنسبة إلى $A$ و $C$ ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$B'$ و $C'$ كلتاهما بين $A$ والنقطة الأخرى: الترتيب نفسه.",
+        "incorrect": "قارن موقع النقطة الجديدة في كل مستقيم: بين الرأس والنقطة الأولى، أم من الجهة الأخرى للرأس؟"
+      },
+      "solution": {
+        "lines": [
+          "$B'$ بين $A$ و $B$ ، و $C'$ بين $A$ و $C$ : النقط مرتبة بنفس الترتيب."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل المستقيمان $(BC)$ و $(B'C')$ متوازيان؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_aksiya-talis_P2",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-SHAKL-BURHAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النسبتين بقيمهما المضبوطة (الجداء المتصالب)، لا بقيم مقرّبة ولا بمظهر الشكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق أيضا من ترتيب النقط على المستقيمين المتقاطعين."
+        }
+      ],
+      "feedback": {
+        "correct": "النسبتان متساويتان والترتيب نفسه: $(B'C') \\parallel (BC)$ (الشكل 2 من النشاط).",
+        "incorrect": "الخاصية العكسية تتطلب شرطين معا: تساوي النسبتين بقيم مضبوطة، وترتيب النقط نفسه على المستقيمين."
+      },
+      "solution": {
+        "lines": [
+          "بما أن النقط $A$ ، $B'$ ، $B$ و $A$ ، $C'$ ، $C$ في استقامية وبنفس الترتيب،",
+          "و بما أن: $\\dfrac{AB'}{AB} = \\dfrac{AC'}{AC} = \\dfrac{1}{3}$",
+          "فإن المستقيمين $(B'C')$ و $(BC)$ متوازيان حسب خاصية طالس العكسية."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

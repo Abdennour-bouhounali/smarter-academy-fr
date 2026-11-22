@@ -1,0 +1,252 @@
+{
+  "id": "ex-3am-hasr-adad-ushri-l4-004",
+  "lessonCode": "hasr-adad-ushri",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — كتلة صناديق التمر",
+    "estimatedMinutes": 12,
+    "tags": [
+      "كتلة",
+      "تدوير",
+      "حصر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يشحن تاجر $25$ صندوقًا متماثلًا من التمر. يكتب الميزان كتلة الصندوق الواحد $m$ مدوّرة إلى $0{,}1\\,\\mathrm{kg}$ ، فقرأ $12{,}3\\,\\mathrm{kg}$ . الكتلة الكلّية هي $M=25m$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أيّ حصر للكتلة الكلّية $M$ هو الصحيح؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$12{,}25\\le M< 12{,}35$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-COEF-LOST"
+        },
+        {
+          "id": "B",
+          "content": "$306{,}25\\le M< 308{,}75$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$306{,}25< M\\le 308{,}75$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-UPPER-INCLUDED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أوّلاً حصر الكمية التي دُوِّرت، ثم اكتب العبارة المطلوبة بدلالتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نضرب أطراف الحصر في العدد الموجب نفسه (فلا يتغيّر اتجاه المتباينة) ثم نضيف الثابت إن وُجد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الطرف الأدنى يبقى مشمولًا والأعلى مستبعدًا؛ تحقّق من ذلك بقراءة الحصر بعد الحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "$12{,}25\\le m<12{,}35$ ؛ نضرب في $25$ : $306{,}25\\le M<308{,}75$ .",
+        "incorrect": "راجع: نرجع نصف وحدة من الرتبة ونتقدّم نصف وحدة، ثم نضرب الأطراف في العدد الموجب نفسه دون تغيير اتجاه المتباينة؛ الطرف الأعلى مستبعد. أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$12{,}25\\le m<12{,}35$ ؛ نضرب في $25$ : $306{,}25\\le M<308{,}75$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما العدد الذي لا تبلغه الكتلة الكلّية $M$ بالكيلوغرام (الطرف الأعلى)؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "308.75",
+      "misconceptionSignatures": [
+        {
+          "value": "307.5",
+          "id": "MISC-TADWIR-CENTER-EXACT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ ما تعرضه شاشة الآلة الحاسبة، ولا تعدّه قيمة مضبوطة للحاصل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احصر الحاصل بين قيمتين مقرّبتين متتاليتين في الرتبة المطلوبة، ثم حدّد الرقم الذي يلي تلك الرتبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الحاصل بقيمتيه المقرّبتين: الأولى أصغر منه أو تساويه والثانية أكبر منه."
+        }
+      ],
+      "feedback": {
+        "correct": "الطرف الأعلى مستبعد: $25\\times12{,}35=308{,}75$ .",
+        "incorrect": "لا تعدّ ما تعرضه شاشة الآلة قيمة مضبوطة للحاصل: احصره بين قيمتين مقرّبتين متتاليتين؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأعلى مستبعد: $25\\times12{,}35=308{,}75$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "حمولة الشاحنة القصوى $310\\,\\mathrm{kg}$ . هل الحمولة مقبولة حتمًا؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-CENTER-EXACT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع الحصر الذي وجدته إلى جانب العدد المطلوب مقارنته به."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل العدد أكبر من الطرف الأعلى، أم أصغر من الطرف الأدنى، أم يقع بينهما؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إن وقع العدد بين الطرفين فلا يمكن الجزم؛ وإلاّ فالقرار مؤكّد."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: نعم.",
+        "incorrect": "راجع: قارن العدد بطرفَي الحصر؛ إن وقع بينهما فلا يمكن الجزم، والطرف الأعلى لا يبلغه العدد. أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$M<308{,}75<310$ .",
+          "الجواب: نعم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل يمكن أن تكون الكتلة الكلّية $M=308{,}75\\,\\mathrm{kg}$ بالضبط؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-UPPER-INCLUDED"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع الحصر الذي وجدته إلى جانب العدد المطلوب مقارنته به."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل العدد أكبر من الطرف الأعلى، أم أصغر من الطرف الأدنى، أم يقع بينهما؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إن وقع العدد بين الطرفين فلا يمكن الجزم؛ وإلاّ فالقرار مؤكّد."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: لا.",
+        "incorrect": "راجع: قارن العدد بطرفَي الحصر؛ إن وقع بينهما فلا يمكن الجزم، والطرف الأعلى لا يبلغه العدد. أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأعلى مستبعد: $M<308{,}75$ .",
+          "الجواب: لا."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

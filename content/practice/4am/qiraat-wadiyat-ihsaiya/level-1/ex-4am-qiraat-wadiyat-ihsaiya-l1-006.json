@@ -1,0 +1,142 @@
+{
+  "id": "ex-4am-qiraat-wadiyat-ihsaiya-l1-006",
+  "lessonCode": "qiraat-wadiyat-ihsaiya",
+  "level": 1,
+  "metadata": {
+    "title": "مقاسات أحذية رياضية",
+    "estimatedMinutes": 4,
+    "tags": [
+      "قراءة مخطط بالأعمدة",
+      "المتوسط المتوازن"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_qiraat-wadiyat-ihsaiya_P2",
+      "modelledOn": null,
+      "adaptedFrom": "ex-4am-qiraat-wadiyat-ihsaiya-l3-010"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "يمثّل المخطط بالأعمدة الآتي مقاسات الأحذية الرياضية التي باعها محلّ، أمين في معاملاته، في يوم:",
+    "figure": {
+      "kind": "chart",
+      "type": "bar",
+      "ariaLabel": "مخطط بالأعمدة لعدد أزواج الأحذية المبيعة حسب المقاس 38 و 40 و 42",
+      "xTitle": "المقاس",
+      "yTitle": "عدد الأزواج",
+      "y": {
+        "max": 6,
+        "step": 1
+      },
+      "bars": [
+        {
+          "label": "38",
+          "value": 3
+        },
+        {
+          "label": "40",
+          "value": 5
+        },
+        {
+          "label": "42",
+          "value": 2
+        }
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن عدد الأزواج المبيعة في هذا اليوم.",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ ارتفاع العمود على المحور العمودي: كل خط رفيع من خطوط الشبكة تدريجة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع ارتفاعات الأعمدة الثلاثة."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 + 5 + 2 = 10$ .",
+        "incorrect": "عدد الأزواج هو مجموع ارتفاعات الأعمدة، لا عدد الأعمدة."
+      },
+      "solution": {
+        "lines": [
+          "$3 + 5 + 2 = 10$"
+        ],
+        "result": "10"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب متوسط مقاسات الأحذية المبيعة.",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة",
+      "expectedAnswer": "39,8",
+      "misconceptionSignatures": [
+        {
+          "value": "40",
+          "id": "MISC-IHSA-MUTAWASSIT-BILA-TARJIH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل مقاس يُضرب في عدد الأزواج المبيعة منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الجداءات ثم اقسم على العدد الكلي للأزواج."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{398}{10} = 39{,}8$ .",
+        "incorrect": "لا تحسب متوسط المقاسات الثلاثة فقط: كل مقاس يُحسب بعدد أزواجه."
+      },
+      "solution": {
+        "lines": [
+          "$38 \\times 3 + 40 \\times 5 + 42 \\times 2 = 398$",
+          "$\\dfrac{398}{10} = 39{,}8$"
+        ],
+        "result": "39{,}8"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

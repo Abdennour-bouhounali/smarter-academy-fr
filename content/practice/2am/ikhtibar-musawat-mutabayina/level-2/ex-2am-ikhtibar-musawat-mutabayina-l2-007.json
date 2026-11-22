@@ -1,0 +1,198 @@
+{
+  "id": "ex-2am-ikhtibar-musawat-mutabayina-l2-007",
+  "lessonCode": "ikhtibar-musawat-mutabayina",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — القيمة التي يتساوى عندها الطرفان",
+    "estimatedMinutes": 6,
+    "tags": [
+      "متباينة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اختبر صحّة كلّ مساواة أو متباينة من أجل القيمة المعطاة :"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل المتباينة $9-x<3x-7$ صحيحة من أجل $x=4$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بالقيمة المعطاة في الطرف الأوّل ثمّ في الطرف الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة، مع إنجاز الضرب قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الناتجين بالرمز المكتوب، وانتبه إلى حالة التساوي : هل يقبلها الرمز ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "لا : المتباينة خاطئة .",
+        "incorrect": "عوّض الحرف في الطرفين، احسب كلّ طرف ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل : $9-4=5$ .",
+          "الطرف الثاني : $3\\times 4-7=5$ .",
+          "$5<5$ : المقارنة خاطئة، فالمتباينة خاطئة ."
+        ]
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "من بين القيم $2$ ، $3$ ، $4$ و $5$ : ما هي القيم التي تجعل المتباينة $9-x<3x-7$ صحيحة ؟ اختر الإجابة الصحيحة :",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$4$ و $5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IKHTIBAR-BOUNDARY"
+        },
+        {
+          "id": "B",
+          "content": "لا قيمة منها",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$2$ ، $3$ و $4$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$5$ فقط",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختبر القيم المعطاة واحدة بعد الأخرى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لكلّ قيمة احسب الطرفين ثمّ قارنهما بالرمز المكتوب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى القيمة التي يتساوى عندها الطرفان : هل يقبلها الرمز ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "القيم المطلوبة : $5$ فقط .",
+        "incorrect": "اختبر كلّ قيمة على حدة، وانتبه إلى حالة تساوي الطرفين."
+      },
+      "solution": {
+        "lines": [
+          "$x=2$ : $7<-1$ ← خاطئة .",
+          "$x=3$ : $6<2$ ← خاطئة .",
+          "$x=4$ : $5<5$ ← خاطئة .",
+          "$x=5$ : $4<8$ ← صحيحة ."
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "من بين القيم $2$ ، $3$ ، $4$ ، $5$ : كم قيمة تجعل المتباينة $9-x<3x-7$ صحيحة ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختبر الخيارات واحدا بعد الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لكلّ خيار احسب الطرفين ثمّ قارنهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدّ الخيارات التي تكون عندها المقارنة صحيحة."
+        }
+      ],
+      "feedback": {
+        "correct": "العدد هو $1$ .",
+        "incorrect": "اختبر كلّ خيار على حدة ثمّ عدّ الخيارات الصحيحة."
+      },
+      "solution": {
+        "lines": [
+          "$2$ : $7<-1$ ← خاطئة .",
+          "$3$ : $6<2$ ← خاطئة .",
+          "$4$ : $5<5$ ← خاطئة .",
+          "$5$ : $4<8$ ← صحيحة .",
+          "العدد : $1$ ."
+        ],
+        "result": "1"
+      },
+      "work": "optional",
+      "timeSeconds": 100
+    }
+  ]
+}

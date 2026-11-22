@@ -1,0 +1,338 @@
+{
+  "id": "ex-1am-talim-fi-mustawi-l5-009",
+  "lessonCode": "talim-fi-mustawi",
+  "level": 5,
+  "metadata": {
+    "title": "وضعية: مدرج الملعب",
+    "estimatedMinutes": 7,
+    "tags": [
+      "قراءة",
+      "نظيرة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "في الشكل أربع نقط من مدرج ملعب بمعلم متعامد.",
+    "figure": {
+      "points": {
+        "A": [
+          -4,
+          1
+        ],
+        "B": [
+          -1,
+          4
+        ],
+        "C": [
+          3,
+          2
+        ],
+        "D": [
+          2,
+          -3
+        ],
+        "c1": [
+          -5,
+          -5
+        ],
+        "c2": [
+          5,
+          5
+        ]
+      },
+      "grid": true,
+      "axes": true,
+      "hidden": [
+        "c1",
+        "c2"
+      ],
+      "ariaLabel": "معلم متعامد تظهر فيه أربع نقط A و B و C و D",
+      "maxWidth": 400
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اقرأ إحداثيي النقطة $A$ في الشكل.",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-4",
+        "y": "1"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SWAP",
+          "value": {
+            "x": "1",
+            "y": "-4"
+          }
+        },
+        {
+          "id": "MISC-MUSTAWI-SIGNY",
+          "value": {
+            "x": "-4",
+            "y": "-1"
+          }
+        },
+        {
+          "id": "MISC-MUSTAWI-SIGNX",
+          "value": {
+            "x": "4",
+            "y": "1"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الفاصلة على الخط الأفقي أوّلًا ثمّ الترتيب على الخط الشاقولي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من النقطة انزل أو اصعد إلى الخط الأفقي لتقرأ الفاصلة، ثمّ سر أفقيًّا إلى الخط الشاقولي لتقرأ الترتيب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "راقب الإشارة: يسار الخط الشاقولي فاصلة سالبة، وتحت الخط الأفقي ترتيب سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "إحداثيا $A$ هما $(-4\\,;\\,1)$ .",
+        "incorrect": "الفاصلة أوّلًا (على الخط الأفقي) ثمّ الترتيب (على الخط الشاقولي)، ولا تنسَ الإشارتين."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $A$ هي $-4$ وترتيبها $1$",
+          "$A(-4\\,;\\,1)$"
+        ],
+        "result": "A(-4\\,;\\,1)"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اقرأ إحداثيي النقطة $D$ في الشكل.",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "2",
+        "y": "-3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SWAP",
+          "value": {
+            "x": "-3",
+            "y": "2"
+          }
+        },
+        {
+          "id": "MISC-MUSTAWI-SIGNY",
+          "value": {
+            "x": "2",
+            "y": "3"
+          }
+        },
+        {
+          "id": "MISC-MUSTAWI-SIGNX",
+          "value": {
+            "x": "-2",
+            "y": "-3"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الفاصلة على الخط الأفقي أوّلًا ثمّ الترتيب على الخط الشاقولي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من النقطة انزل أو اصعد إلى الخط الأفقي لتقرأ الفاصلة، ثمّ سر أفقيًّا إلى الخط الشاقولي لتقرأ الترتيب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "راقب الإشارة: يسار الخط الشاقولي فاصلة سالبة، وتحت الخط الأفقي ترتيب سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "إحداثيا $D$ هما $(2\\,;\\,-3)$ .",
+        "incorrect": "الفاصلة أوّلًا (على الخط الأفقي) ثمّ الترتيب (على الخط الشاقولي)، ولا تنسَ الإشارتين."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $D$ هي $2$ وترتيبها $-3$",
+          "$D(2\\,;\\,-3)$"
+        ],
+        "result": "D(2\\,;\\,-3)"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "النقطة $M'$ نظيرة $M(-4\\,;\\,1)$ بالنسبة إلى محور التراتيب. ما إحداثيا $M'$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "4",
+        "y": "1"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SYMMIX",
+          "value": {
+            "x": "-4",
+            "y": "-1"
+          }
+        },
+        {
+          "id": "MISC-MUSTAWI-SYMBOTH",
+          "value": {
+            "x": "4",
+            "y": "-1"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النظيرة بالنسبة إلى محور التراتيب تقع على الجهة الأخرى منه بالبعد نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "محور التراتيب شاقولي: النظيرة على يمينه أو يساره على الخط الأفقي نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الترتيب يبقى والفاصلة تعاكسها."
+        }
+      ],
+      "feedback": {
+        "correct": "إحداثيا $M'$ هما $(4\\,;\\,1)$ .",
+        "incorrect": "بالنسبة إلى محور التراتيب تتغيّر إشارة الفاصلة وحدها."
+      },
+      "solution": {
+        "lines": [
+          "النظيرة بالنسبة إلى محور التراتيب: الترتيب نفسه والفاصلة معاكسة",
+          "$M'(4\\,;\\,1)$"
+        ],
+        "result": "M'(4\\,;\\,1)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "أيّ هذه النقط تقع في الربع نفسه مع $P(2\\,;\\,-3)$ (أي لإحداثييها الإشارتان نفسهما)؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(3\\,;\\,3)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNY"
+        },
+        {
+          "id": "B",
+          "content": "$(-2\\,;\\,2)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNBOTH"
+        },
+        {
+          "id": "C",
+          "content": "$(1\\,;\\,-1)$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$(-1\\,;\\,-2)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNX"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد إشارة فاصلة $P$ وإشارة ترتيبها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن النقطة التي تحمل فاصلتها وترتيبها الإشارتين نفسيهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يكفي أن تتفق إشارة واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "لهما الإشارتان نفسهما فهما في الربع نفسه.",
+        "incorrect": "قارن إشارتي الفاصلة والترتيب معًا."
+      },
+      "solution": {
+        "lines": [
+          "إشارتا $P$ : + و −",
+          "النقطة $(1\\,;\\,-1)$ لها الإشارتان نفسهما"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

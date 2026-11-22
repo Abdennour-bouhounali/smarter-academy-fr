@@ -1,0 +1,269 @@
+{
+  "id": "ex-3am-muqaranat-natiqayn-l4-010",
+  "lessonCode": "muqaranat-natiqayn",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — حساب ذهني ومقارنة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "نشر",
+      "حساب ذهني",
+      "فرق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارتان $A = (x + 5)^2$ و $B = x(x + 10)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب قيمة $A$ من أجل $x = 100$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر مختزل)",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط؟ وما العمليات التي تحتاجها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب خطوة خطوة مع الانتباه إلى الإشارات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "راجع النتيجة بطريقة ثانية قبل أن تجيب."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "11025",
+      "feedback": {
+        "correct": "قيمة $A$ هي $11025$ .",
+        "incorrect": "أعد الحساب بالترتيب مع الانتباه إلى الإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$A = 105^2 = 11\\,025$"
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب قيمة $B$ من أجل $x = 100$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر مختزل)",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط؟ وما العمليات التي تحتاجها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب خطوة خطوة مع الانتباه إلى الإشارات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "راجع النتيجة بطريقة ثانية قبل أن تجيب."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "11000",
+      "feedback": {
+        "correct": "قيمة $B$ هي $11000$ .",
+        "incorrect": "أعد الحساب بالترتيب مع الانتباه إلى الإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$B = 100 \\times 110 = 11\\,000$"
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب $A - B$ من أجل $x = 100$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر مختزل)",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العبارتان؟ وكيف يُكتب فرقهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الفرق بوضع العبارة الثانية بين قوسين ثم بسّط وانتبه إلى إشارة ما بعد الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض قيمة بسيطة للحرف في الفرق وفي النتيجة."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "25",
+      "misconceptionSignatures": [
+        {
+          "value": "-25",
+          "id": "MISC-MUQ-ORDER-SUB"
+        }
+      ],
+      "feedback": {
+        "correct": "$A - B = 25$ .",
+        "incorrect": "ضع العبارة الثانية بين قوسين قبل الطرح، ثمّ بسّط."
+      },
+      "solution": {
+        "lines": [
+          "$A - B = 11\\,025 - 11\\,000 = 25$"
+        ]
+      }
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "بسّط $A - B$ مهما كان $x$ ، فتجد عددًا ثابتًا. ما هو؟",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر مختزل)",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العبارتان؟ وكيف يُكتب فرقهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الفرق بوضع العبارة الثانية بين قوسين ثم بسّط وانتبه إلى إشارة ما بعد الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض قيمة بسيطة للحرف في الفرق وفي النتيجة."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "25",
+      "feedback": {
+        "correct": "$A - B = 25$ .",
+        "incorrect": "ضع العبارة الثانية بين قوسين قبل الطرح، ثمّ بسّط."
+      },
+      "solution": {
+        "lines": [
+          "$A - B = x^2 + 10x + 25 - (x^2 + 10x)$",
+          "$A - B = x^2 + 10x + 25 - x^2 - 10x = 25$"
+        ]
+      }
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "ماذا تستنتج؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما هو الفرق المبسَّط؟ ومتى يكون موجبًا ومتى يكون سالبًا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن القيمة التي ينعدم عندها الفرق، ثم انظر إلى جهتيها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر قيمة من كل جهة للتأكّد من الإشارة."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$A > B$ مهما كانت قيمة $x$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$A < B$ مهما كانت قيمة $x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-ORDER-SUB"
+        },
+        {
+          "id": "C",
+          "content": "لا نستطيع الحكم دون معرفة $x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-NEED-VALUES"
+        }
+      ],
+      "feedback": {
+        "correct": "الفرق ثابت وموجب، إذن $A > B$ .",
+        "incorrect": "ادرس إشارة الفرق المبسَّط على جهتي القيمة التي ينعدم عندها."
+      },
+      "solution": {
+        "lines": [
+          "$A - B = 25 > 0$ مهما كانت قيمة $x$ ، إذن $A > B$ ."
+        ]
+      }
+    }
+  ]
+}

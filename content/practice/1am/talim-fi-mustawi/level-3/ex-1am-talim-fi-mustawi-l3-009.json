@@ -1,0 +1,217 @@
+{
+  "id": "ex-1am-talim-fi-mustawi-l3-009",
+  "lessonCode": "talim-fi-mustawi",
+  "level": 3,
+  "metadata": {
+    "title": "موضع نقط عشرية",
+    "estimatedMinutes": 6,
+    "tags": [
+      "موضع",
+      "عشري"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعلّم في معلم متعامد نقطًا إحداثياها عشريان."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أين تقع النقطة $(-2{,}5\\,;\\,3{,}5)$ بالنسبة إلى المحورين؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "تحت محور الفواصل وعلى يسار محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNY"
+        },
+        {
+          "id": "B",
+          "content": "تحت محور الفواصل وعلى يمين محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNBOTH"
+        },
+        {
+          "id": "C",
+          "content": "فوق محور الفواصل وعلى يسار محور التراتيب",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "فوق محور الفواصل وعلى يمين محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNX"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفاصلة تقول الجهة على الخط الأفقي: يمين أو يسار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الترتيب يقول الجهة على الخط الشاقولي: فوق أو تحت."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد السالب: يسار (للفاصلة) أو تحت (للترتيب)."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة تعيّن اليمين أو اليسار والترتيب يعيّن الفوق أو التحت.",
+        "incorrect": "انظر إلى إشارة كلّ إحداثي على حدة."
+      },
+      "solution": {
+        "lines": [
+          "إشارة الفاصلة سالبة: يسار محور التراتيب",
+          "إشارة الترتيب موجبة: فوق محور الفواصل"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أين تقع النقطة $(0{,}5\\,;\\,-4)$ بالنسبة إلى المحورين؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "تحت محور الفواصل وعلى يمين محور التراتيب",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "تحت محور الفواصل وعلى يسار محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNX"
+        },
+        {
+          "id": "C",
+          "content": "فوق محور الفواصل وعلى يمين محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNY"
+        },
+        {
+          "id": "D",
+          "content": "فوق محور الفواصل وعلى يسار محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفاصلة تقول الجهة على الخط الأفقي: يمين أو يسار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الترتيب يقول الجهة على الخط الشاقولي: فوق أو تحت."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد السالب: يسار (للفاصلة) أو تحت (للترتيب)."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة تعيّن اليمين أو اليسار والترتيب يعيّن الفوق أو التحت.",
+        "incorrect": "انظر إلى إشارة كلّ إحداثي على حدة."
+      },
+      "solution": {
+        "lines": [
+          "إشارة الفاصلة موجبة: يمين محور التراتيب",
+          "إشارة الترتيب سالبة: تحت محور الفواصل"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "صحيح أم خاطئ؟ النقطتان $(2{,}5\\,;\\,3)$ و $(0{,}5\\,;\\,4{,}5)$ تقعان في الربع نفسه.",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "خاطئ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNBOTH"
+        },
+        {
+          "id": "B",
+          "content": "صحيح",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ إحداثي على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفاصلة هي العدد الأول (الخط الأفقي) والترتيب هو الثاني (الخط الشاقولي)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نقطة على محور الفواصل ترتيبها معدوم، ونقطة على محور التراتيب فاصلتها معدومة."
+        }
+      ],
+      "feedback": {
+        "correct": "الجملة صحيحة.",
+        "incorrect": "قارن الإحداثيين بما تقوله الجملة."
+      },
+      "solution": {
+        "lines": [
+          "الجملة تحقّق ما نعرفه عن الإحداثيين"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l2-007",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — ما قاله رامي",
+    "estimatedMinutes": 5,
+    "tags": [
+      "يقسم",
+      "مضاعف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لاحظ رامي أنّ $945 = 15 \\times 63$ فقال: «945 يقسم 15»."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل قول رامي صحيح؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-YAQSIM-AKS"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ العددين هو المقسوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يمكن قسمة 15 على 945 دون باقٍ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "15 هو الذي يقسم 945، لا العكس.",
+        "incorrect": "من $945 = 15 \\times 63$: المقسوم 945 والمقسوم عليه 15."
+      },
+      "solution": {
+        "lines": [
+          "$945 = 15 \\times 63$ والباقي معدوم.",
+          "نقول: 15 يقسم 945 (أو 945 مضاعف لـ 15)، فقول رامي خاطئ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "علمًا أنّ $945 = 15 \\times 63$ ، اختر الجملة الصحيحة.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "15 مضاعف لـ 945",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-YAQSIM-AKS"
+        },
+        {
+          "id": "B",
+          "content": "15 يقبل القسمة على 945",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-YAQSIM-AKS"
+        },
+        {
+          "id": "C",
+          "content": "15 يقسم 945",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كل جملة: أيّ العددين هو المقسوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "15 أصغر من 945: هل يمكن أن يقسم 945 العدد 15؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الباقي معدوم: 15 يقسم 945، و 945 مضاعف لـ 15، و 945 يقبل القسمة على 15.",
+        "incorrect": "المقسوم هو العدد الأكبر هنا؛ والعدد الذي يقسم هو المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$945 = 15 \\times 63$ والباقي معدوم.",
+          "نقول: 945 يقبل القسمة على 15، أو 945 مضاعف لـ 15، أو 15 يقسم 945."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "$\\frac{945}{15}$ عدد طبيعي. احسبه.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "63",
+      "misconceptionSignatures": [
+        {
+          "value": "64",
+          "id": "MISC-HASR-SIFR-SARIM"
+        },
+        {
+          "value": "62",
+          "id": "MISC-HASR-SIFR-SARIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 945 على 15."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي معدوم: حاصل القسمة هو القيمة المضبوطة."
+        }
+      ],
+      "feedback": {
+        "correct": "$945 = 15 \\times 63$ ، إذن $\\frac{945}{15} = 63$.",
+        "incorrect": "ابحث عن العدد الطبيعي الذي إذا ضربناه في 15 نجد 945."
+      },
+      "solution": {
+        "lines": [
+          "$15 \\times 63 = 945$",
+          "إذن $\\frac{945}{15} = 63$."
+        ],
+        "result": "63"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

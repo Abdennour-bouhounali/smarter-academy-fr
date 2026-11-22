@@ -1,0 +1,466 @@
+{
+  "id": "ex-4am-tanasub-muamil-l5-008",
+  "lessonCode": "tanasub-muamil",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2012 — فاتورتا الماء لعائلتين بالبويرة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "وضعية إدماجية",
+      "تسعيرتان",
+      "جدول"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tanasub-muamil_P2",
+      "modelledOn": "BEM 2012 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2012",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تتلقى عائلتان بالبويرة فاتورة الماء كل فصل، وتحرص كلتاهما على عدم تبذيره:\n– العائلة الأولى: تدفع اشتراكا ثابتا قدره 480DA ، إضافة إلى 32DA للمتر المكعب المستهلك.\n– العائلة الثانية: تدفع 38DA للمتر المكعب المستهلك، دون أي اشتراك.",
+    "table": {
+      "head": [
+        "الاستهلاك ( $m^3$ )",
+        "20",
+        "…",
+        "…"
+      ],
+      "rows": [
+        [
+          "مبلغ العائلة الأولى (DA)",
+          "…",
+          "2400",
+          "…"
+        ],
+        [
+          "مبلغ العائلة الثانية (DA)",
+          "…",
+          "…",
+          "3420"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "انقل الجدول وأتممه.",
+      "statement": "مبلغ العائلة الأولى من أجل $20m^3$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "1120",
+      "misconceptionSignatures": [
+        {
+          "value": "640",
+          "id": "MISC-TANASUB-MABLAGH-THABIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الصيغة جيدا: ما الذي يُدفع عن كل وحدة، وما الذي يُدفع مرة واحدة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المبلغ = العدد × ثمن الوحدة + المبلغ الثابت."
+        }
+      ],
+      "feedback": {
+        "correct": "$32 \\times 20 + 480 = 1120$ .",
+        "incorrect": "لا تنس المبلغ الثابت: المبلغ = العدد × ثمن الوحدة + المبلغ الثابت."
+      },
+      "solution": {
+        "lines": [
+          "$32 \\times 20 + 480 = 1120$"
+        ],
+        "result": "1120DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ا",
+      "statement": "مبلغ العائلة الثانية من أجل $20m^3$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "760",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب الاستهلاك في 38 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$38 \\times 20 = 760$ .",
+        "incorrect": "المبلغ = 38 × الاستهلاك."
+      },
+      "solution": {
+        "lines": [
+          "$38 \\times 20 = 760$"
+        ],
+        "result": "760DA"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ب",
+      "statement": "الاستهلاك الذي يكون من أجله مبلغ العائلة الأولى 2400DA :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الاستهلاك بـ $m^3$",
+      "expectedAnswer": "60",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح الاشتراك أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اقسم على 32 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2400 - 480}{32} = 60$ .",
+        "incorrect": "$32x + 480 = 2400$ : اطرح 480 ثم اقسم على 32 ."
+      },
+      "solution": {
+        "lines": [
+          "$32x + 480 = 2400$",
+          "$32x = 1920$",
+          "$x = 60$"
+        ],
+        "result": "60m^3"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "ب",
+      "statement": "مبلغ العائلة الثانية من أجل هذا الاستهلاك:",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "2280",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب الاستهلاك في 38 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$38 \\times 60 = 2280$ .",
+        "incorrect": "المبلغ = 38 × الاستهلاك."
+      },
+      "solution": {
+        "lines": [
+          "$38 \\times 60 = 2280$"
+        ],
+        "result": "2280DA"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q5",
+      "step": "01",
+      "sub": "ج",
+      "statement": "الاستهلاك الذي يكون من أجله مبلغ العائلة الثانية 3420DA :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الاستهلاك بـ $m^3$",
+      "expectedAnswer": "90",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم المبلغ على 38 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3420}{38} = 90$ .",
+        "incorrect": "اقسم المبلغ على ثمن المتر المكعب."
+      },
+      "solution": {
+        "lines": [
+          "$38 \\times x = 3420$",
+          "$x = 90$"
+        ],
+        "result": "90m^3"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "01",
+      "sub": "ج",
+      "statement": "مبلغ العائلة الأولى من أجل هذا الاستهلاك:",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "3360",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الصيغة جيدا: ما الذي يُدفع عن كل وحدة، وما الذي يُدفع مرة واحدة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المبلغ = العدد × ثمن الوحدة + المبلغ الثابت."
+        }
+      ],
+      "feedback": {
+        "correct": "$32 \\times 90 + 480 = 3360$ .",
+        "incorrect": "لا تنس المبلغ الثابت: المبلغ = العدد × ثمن الوحدة + المبلغ الثابت."
+      },
+      "solution": {
+        "lines": [
+          "$32 \\times 90 + 480 = 3360$"
+        ],
+        "result": "3360DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q7",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أيّ المبلغين متناسب مع الاستهلاك؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مبلغ العائلة الأولى",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TANASUB-MABLAGH-THABIT"
+        },
+        {
+          "id": "B",
+          "content": "مبلغ العائلة الثانية",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب حواصل القسمة في كل سطر من الجدول."
+        }
+      ],
+      "feedback": {
+        "correct": "حاصل القسمة ثابت في السطر الثالث وحده.",
+        "incorrect": "قارن حواصل القسمة في كل سطر."
+      },
+      "solution": {
+        "lines": [
+          "العائلة الأولى: $\\dfrac{1120}{20} = 56$ و $\\dfrac{2400}{60} = 40$ : غير متناسب (بسبب الاشتراك).",
+          "العائلة الثانية: $\\dfrac{760}{20} = \\dfrac{2280}{60} = \\dfrac{3420}{90} = 38$ : متناسب."
+        ],
+        "result": "مبلغ العائلة الثانية"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q8",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ليكن $x$ الاستهلاك بـ $m^3$ و $y_2$ مبلغ العائلة الثانية. عبّر عن $y_2$ بدلالة $x$ على الشكل $y_2 = a \\times x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "38",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في وضعية تناسبية: المقدار الثاني = معامل التناسبية × المقدار الأول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $a$ هو حاصل قسمة المقدار الثاني على المقدار الأول المقابل له."
+        }
+      ],
+      "feedback": {
+        "correct": "$y_2 = 38 \\times x$ .",
+        "incorrect": "المبلغ = ثمن المتر المكعب × الاستهلاك."
+      },
+      "solution": {
+        "lines": [
+          "$y_2 = 38 \\times x$"
+        ],
+        "result": "y_2 = 38x"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q9",
+      "step": "03",
+      "sub": "ا",
+      "lead": "☜ استهلكت كل عائلة $75m^3$ في الفصل الأخير.",
+      "statement": "أيّ العائلتين تدفع أكثر؟",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "العائلة الأولى",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "العائلة الثانية",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مبلغ كل عائلة من أجل $75m^3$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "مبلغ العائلة الأولى أكبر.",
+        "incorrect": "لا تنس الاشتراك الثابت للعائلة الأولى، ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "العائلة الأولى: $32 \\times 75 + 480 = 2880$",
+          "العائلة الثانية: $38 \\times 75 = 2850$",
+          "$2880 > 2850$ ، إذن العائلة الأولى تدفع أكثر."
+        ],
+        "result": "العائلة الأولى"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q10",
+      "step": "03",
+      "sub": "ب",
+      "statement": "ما هو الفرق بين المبلغين؟",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tanasub-muamil_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "30",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المبلغين ثم اطرح الأصغر من الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$2880 - 2850 = 30$ .",
+        "incorrect": "احسب المبلغين من أجل $75m^3$ ثم اطرح."
+      },
+      "solution": {
+        "lines": [
+          "العائلة الأولى: $32 \\times 75 + 480 = 2880$",
+          "العائلة الثانية: $38 \\times 75 = 2850$",
+          "$2880 - 2850 = 30$"
+        ],
+        "result": "30DA"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

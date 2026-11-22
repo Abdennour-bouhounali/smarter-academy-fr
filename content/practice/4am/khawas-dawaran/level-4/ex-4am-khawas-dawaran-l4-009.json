@@ -1,0 +1,67 @@
+{
+  "id": "ex-4am-khawas-dawaran-l4-009",
+  "lessonCode": "khawas-dawaran",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — مثلث قائم",
+    "estimatedMinutes": 3,
+    "tags": [
+      "المساحات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_khawas-dawaran_P1",
+      "modelledOn": "know-3"
+    }
+  },
+  "generator": {
+    "tool": "u13-khawas-dawaran/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "OAB مثلث قائم في O حيث $OA = OB = 6$ . O′A′B′ صورته بدوران زاويته $40^\\circ$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما مساحة O′A′B′؟",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "18",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-KHAWAS",
+          "value": "36"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة مثلث قائم: نصف جداء الضلعين القائمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم الدوران."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المساحة محفوظة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{6 \\times 6}{2} = 18$ ، والدوران يحافظ على المساحات.",
+        "incorrect": "لا تنس القسمة على 2، ثم المساحة لا تتغيّر."
+      }
+    }
+  ]
+}

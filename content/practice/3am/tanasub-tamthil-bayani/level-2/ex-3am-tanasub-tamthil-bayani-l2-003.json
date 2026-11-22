@@ -1,0 +1,299 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l2-003",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — صناديق قارورات الماء",
+    "estimatedMinutes": 8,
+    "tags": [
+      "تمثيل بياني",
+      "معامل التناسبية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "توزّع جمعية خيرية قارورات الماء على المصلّين في الأيام الحارّة، وكل صندوق يضم 24 قارورة، أي دزينتين. مثّلنا في المعلم التالي عدد الصناديق (الفاصلة) وعدد الدزينات (الترتيب) التي تحتويها.",
+    "table": {
+      "head": [
+        "عدد الصناديق",
+        "2",
+        "4",
+        "6",
+        "8"
+      ],
+      "rows": [
+        [
+          "عدد الدزينات",
+          "4",
+          "8",
+          "12",
+          "16"
+        ]
+      ]
+    },
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          2,
+          4
+        ],
+        "B": [
+          4,
+          8
+        ],
+        "C": [
+          6,
+          12
+        ],
+        "D": [
+          8,
+          16
+        ]
+      },
+      "grid": true,
+      "axes": {
+        "every": 2
+      },
+      "labels": {
+        "O": "sw",
+        "A": "se",
+        "B": "se",
+        "C": "se",
+        "D": "se"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس: أربع نقط A(2;4) و B(4;8) و C(6;12) و D(8;16) على استقامة واحدة مع المبدأ",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: عدد الصناديق — محور التراتيب: عدد الدزينات"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "بقراءة المعلم:",
+      "statement": "ما ترتيب النقطة $C$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد: ترتيب النقطة",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-TAMTHIL-SWAP-XY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الترتيب هو العدد الثاني في زوج الإحداثيين، وتُقرأ على المحور العمودي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اذهب من النقطة أفقيا إلى المحور العمودي واقرأ العدد الذي تقع عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "ترتيب $C$ هي $12$.",
+        "incorrect": "الترتيب يُقرأ على المحور العمودي لا الأفقي، ويجب أن تحترم قيمة المربع."
+      },
+      "solution": {
+        "lines": [
+          "نمشي من $C$ أفقيا إلى محور التراتيب فنقرأ $12$ ."
+        ],
+        "result": "12"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل عدد الدزينات متناسب مع عدد الصناديق؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لأنّ المبدأ $O$ ليس من النقط المعلَّمة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-ORIGIN-DROP"
+        },
+        {
+          "id": "B",
+          "content": "نعم، النقط على استقامة واحدة مع المبدأ $O$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لا، لأنّ الترتيب لا يساوي الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-EQUAL-ONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط على استقامة واحدة مع المبدأ $O$ ، فهي تمثّل وضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "النقط $A$ و $B$ و $C$ و $D$ على استقامة واحدة مع المبدأ $O$ .",
+          "إذن الوضعية تناسبية."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "ما معامل التناسبية $a$ (عدد الدزينات في الصندوق الواحد)؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: معامل التناسبية",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "1/2",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        },
+        {
+          "value": "4",
+          "id": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل التناسبية هو ترتيب النقطة الذي فاصلته $1$ ، أو ناتج قسمة الترتيب على الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ إحداثيي النقطة $B$ ثم اقسم الترتيب على الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تقسم الفاصلة على الترتيب ولا تطرح أحد العددين من الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{8}{4} = 2$ .",
+        "incorrect": "المعامل هو ناتج قسمة الترتيب على الفاصلة (وليس العكس) لنقطة من المستقيم."
+      },
+      "solution": {
+        "lines": [
+          "النقطة $B(4\\,;\\,8)$ من المستقيم.",
+          "$a = \\dfrac{8}{4} = 2$"
+        ],
+        "result": "a = 2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "كم قارورة تحتوي $5$ صناديق؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد القارورات",
+      "expectedAnswer": "120",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-TAMTHIL-UNIT-AXIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل $y = a\\,x$ لتعرف عدد الدزينات في $5$ صناديق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الدزينة تساوي $12$ قارورة."
+        }
+      ],
+      "feedback": {
+        "correct": "$y = 2 \\times 5 = 10$ دزينات، أي $120$ قارورة.",
+        "incorrect": "الترتيب عدد الدزينات لا القارورات: لا تنس أن الدزينة $12$ قارورة."
+      },
+      "solution": {
+        "lines": [
+          "$y = 2 \\times 5 = 10$ دزينات.",
+          "عدد القارورات: $10 \\times 12 = 120$ ."
+        ],
+        "result": "120"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

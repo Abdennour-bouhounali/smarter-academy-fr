@@ -1,0 +1,245 @@
+{
+  "id": "ex-3am-musawiyat-amaliyat-l4-010",
+  "lessonCode": "musawiyat-amaliyat",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — نقطة تُتمّ المعدّل",
+    "estimatedMinutes": 9,
+    "tags": [
+      "المتوسط الحسابي",
+      "استعمال الخواص"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اجتهدت ليلى في مادة الرياضيات إتقانًا لعملها. نقطتاها في فرضين $12$ و $14$ ، وتريد أن يكون معدّل الفروض الثلاثة $13$ . نرمز بـ $x$ إلى نقطة الفرض الثالث، فنكتب $\\dfrac{26 + x}{3} = 13$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب المتوسط الحسابي للأعداد $10$ و $12$ و $14$ .",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "المتوسط",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العلاقة بين المساواة المعطاة والمساواة المطلوبة؟ أيّ عملية تنقلك من الأولى إلى الثانية؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا أمكن الانتقال من المساواة المعطاة إلى المساواة المقترحة بعملية واحدة على الطرفين فهي صحيحة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب عمليّة واحدة على الطرفين، ثم قارن النتيجة بالمساواة المقترحة حدًّا بحدّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{36}{3} = 12$ .",
+        "incorrect": "استعمل خواص المساواة والعمليّات: عملية واحدة على الطرفين معًا تنقلك من مساواة إلى أخرى؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{10 + 12 + 14}{3} = \\dfrac{36}{3} = 12$ ."
+        ],
+        "result": "12"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "اكتب المساواة التي نحصل عليها من $\\dfrac{26 + x}{3} = 13$ بضرب طرفيها في العدد $3$.",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x + 26 = 13$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-ONE-SIDE"
+        },
+        {
+          "id": "B",
+          "content": "$x + \\dfrac{35}{3} = 16$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-ADD-MULT-MIX"
+        },
+        {
+          "id": "C",
+          "content": "$x + 26 = 39$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نضرب فيه (أو نقسم عليه)؟ وهل هو معدوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نضرب (أو نقسم) الطرفين معًا، وكلّ حدّ من الطرف يتأثّر بالعملية؛ والقسمة على صفر ممنوعة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع الطرف كاملًا بين قوسين قبل أن تضرب، وانتبه لإشارة العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$x + 26 = 39$ .",
+        "incorrect": "لا تتغيّر المساواة عندما نضرب طرفيها في العدد نفسه أو نقسمهما على عدد غير معدوم؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $\\dfrac{1}{3}x + \\dfrac{26}{3} = 13$ .",
+          "بضرب طرفي المساواة في $3$ نجد: $3 \\times (\\dfrac{1}{3}x + \\dfrac{26}{3}) = 3 \\times 13$ ، أي $x + 26 = 39$ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "نعلم أنّ $x + 26 = 39$ ، إذن $x = \\ldots$ .",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "value": "39",
+          "id": "MISC-MUSAWIYA-ONE-SIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نضيفه (أو نطرحه)؟ وعلى أيّ طرف نطبّقه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تتغيّر المساواة إلا إذا أضفنا العدد نفسه (أو طرحناه) إلى طرفيها معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الطرف الأيمن والطرف الأيسر في سطر واحد ثم طبّق العملية على كلٍّ منهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 13$ .",
+        "incorrect": "لا تتغيّر المساواة عندما نضيف إلى طرفيها معًا (أو نطرح منهما) العدد نفسه؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $x + 26 = 39$ .",
+          "بطرح $26$ من طرفي المساواة نجد: $x = 13$ ."
+        ],
+        "result": "x = 13"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "إذا كان $\\dfrac{26 + x}{3} = 13$ فإنّ $x = 13$ . هل هذه المساواة صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيحة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خاطئة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-DOUBT-OP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العلاقة بين المساواة المعطاة والمساواة المطلوبة؟ أيّ عملية تنقلك من الأولى إلى الثانية؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا أمكن الانتقال من المساواة المعطاة إلى المساواة المقترحة بعملية واحدة على الطرفين فهي صحيحة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب عمليّة واحدة على الطرفين، ثم قارن النتيجة بالمساواة المقترحة حدًّا بحدّ."
+        }
+      ],
+      "feedback": {
+        "correct": "ضربنا الطرفين في $3$ ثمّ طرحنا $26$ منهما.",
+        "incorrect": "استعمل خواص المساواة والعمليّات: عملية واحدة على الطرفين معًا تنقلك من مساواة إلى أخرى؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $\\dfrac{1}{3}x + \\dfrac{26}{3} = 13$ .",
+          "بضرب طرفي المساواة في $3$ نجد: $3 \\times (\\dfrac{1}{3}x + \\dfrac{26}{3}) = 3 \\times 13$ ، أي $x + 26 = 39$ .",
+          "بطرح $26$ من طرفي المساواة نجد: $x = 13$ .",
+          "ضربنا الطرفين في $3$ ثمّ طرحنا $26$ منهما."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

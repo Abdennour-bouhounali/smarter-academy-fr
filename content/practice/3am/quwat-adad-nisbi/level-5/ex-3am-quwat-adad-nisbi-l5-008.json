@@ -1,0 +1,345 @@
+{
+  "id": "ex-3am-quwat-adad-nisbi-l5-008",
+  "lessonCode": "quwat-adad-nisbi",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مواعيد دواء الجدّة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "أس سالب",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تعتني سارة بجدّتها وتتابع مواعيد دوائها بدقّة، برًّا بها. تنقسم كمية الدواء في الدم على 2 كل 6 ساعات: بعد جرعة $64\\,\\mathrm{mg}$ تصبح الكمية بعد $n$ فترة من 6 ساعات $64 \\times 2^{-n}\\,\\mathrm{mg}$ .\nالجزء الأول: الكمية في الدم.\nالجزء الثاني: ينصح الطبيب بجرعة جديدة عندما تصبح الكمية أقل من $2^{3}\\,\\mathrm{mg}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "اكتب 64 على الشكل $2^n$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "32",
+          "id": "MISC-QUWA-POWER-AS-PRODUCT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$a^n$ جداء $n$ عاملًا كلها مساوية للعدد $a$ ، وليس $a \\times n$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوة عدد سالب موجبة إذا كان الأس زوجيًا، وسالبة إذا كان الأس فرديًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه للأقواس: في $-a^n$ يخصّ الأس العدد $a$ وحده، ثم نأخذ المعاكس."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^6 = 64$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$2 \\times 2 \\times 2 \\times 2 \\times 2 \\times 2 = 64$ ، إذن $64 = 2^{6}$"
+        ],
+        "result": "n = 6"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما الكمية بعد 24 ساعة؟ (بالمليغرام)",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "-1024",
+          "id": "MISC-QUWA-NEG-EXP-NEGATIVE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$a^{-n}$ هو مقلوب $a^n$ ، فهو لا يدلّ على عدد سالب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $a^n$ أولًا، ثم خذ مقلوبه، وحافظ على إشارة $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "من أجل $a \\neq 0$ : $a^0 = 1$ و $a^1 = a$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^6 \\times 2^{-4} = 2^2 = 4$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "24 ساعة = 4 فترات",
+          "$64 \\times 2^{-4} = 2^{6} \\times 2^{-4} = 2^{2} = 4$"
+        ],
+        "result": "4\\,\\mathrm{mg}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما الكمية بعد يومين (48 ساعة)؟ (بالمليغرام)",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "1/4",
+      "misconceptionSignatures": [
+        {
+          "value": "-4",
+          "id": "MISC-QUWA-NEG-EXP-NEGATIVE"
+        },
+        {
+          "value": "4",
+          "id": "MISC-QUWA-EXP-SIGN-SLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القوى لها الأساس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء قوتين لهما الأساس نفسه: نجمع الأسس ولا نضربها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه لإشارة كل أس عند الجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^6 \\times 2^{-8} = 2^{-2} = \\dfrac{1}{4}$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "48 ساعة = 8 فترات",
+          "$2^{6} \\times 2^{-8} = 2^{-2} = \\dfrac{1}{4}$"
+        ],
+        "result": "0{,}25\\,\\mathrm{mg}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "ما الكمية بعد 18 ساعة؟ (بالمليغرام)",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "1/8",
+          "id": "MISC-QUWA-NEG-EXP-NEGATIVE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$a^{-n}$ هو مقلوب $a^n$ ، فهو لا يدلّ على عدد سالب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $a^n$ أولًا، ثم خذ مقلوبه، وحافظ على إشارة $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "من أجل $a \\neq 0$ : $a^0 = 1$ و $a^1 = a$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^6 \\times 2^{-3} = 2^3 = 8$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "18 ساعة = 3 فترات",
+          "$2^{6} \\times 2^{-3} = 2^{3} = 8$"
+        ],
+        "result": "8\\,\\mathrm{mg}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "متى تحتاج الجدّة إلى جرعة جديدة لأوّل مرة؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "بعد 12 ساعة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QUWA-DECISION-UNCHECKED"
+        },
+        {
+          "id": "B",
+          "content": "بعد 18 ساعة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QUWA-DECISION-UNCHECKED"
+        },
+        {
+          "id": "C",
+          "content": "بعد 24 ساعة",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارجع إلى القيم التي حسبتها في الأسئلة السابقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين قبل أن تقرّر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القرار الصحيح يُبنى على حساب، لا على تخمين."
+        }
+      ],
+      "feedback": {
+        "correct": "بعد 18 ساعة تبقى 8 mg (ليست أقل من 8)، وبعد 24 ساعة 4 mg.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "بعد 18 ساعة: $2^{3} = 8$ ، وهي ليست أقل من $2^{3}$ .",
+          "بعد 24 ساعة: $2^{2} = 4 < 8$ ، إذن الجرعة الجديدة بعد 24 ساعة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "lead": "القرار.",
+      "statement": "برّر قرارك بمقارنة قوى للعدد 2.",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارجع إلى القيم التي حسبتها في الأسئلة السابقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين قبل أن تقرّر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القرار الصحيح يُبنى على حساب، لا على تخمين."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الكمية بعد $n$ فترة: $2^{6} \\times 2^{-n} = 2^{6-n}$",
+          "تكون أقل من $2^{3}$ عندما $6 - n < 3$ ، أي $n > 3$",
+          "أول قيمة: $n = 4$ ، أي بعد 24 ساعة."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

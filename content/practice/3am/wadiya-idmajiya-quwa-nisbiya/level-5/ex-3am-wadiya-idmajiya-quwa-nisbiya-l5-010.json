@@ -1,0 +1,269 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-quwa-nisbiya-l5-010",
+  "lessonCode": "wadiya-idmajiya-quwa-nisbiya",
+  "level": 5,
+  "metadata": {
+    "title": "طول جزيء",
+    "estimatedMinutes": 12,
+    "tags": [
+      "تحويل الوحدات",
+      "الكتابة العلمية",
+      "رتبة القدر"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "integration",
+      "page": 52,
+      "section": "أدمج تعلّماتي"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "جزيء مكوّن من ذرّتين متجاورتين: نصف قطر الأولى $r_1 = 60\\ \\mathrm{pm}$ ، ونصف قطر الثانية $r_2 = 70\\ \\mathrm{pm}$ ، والمسافة بين مركزيهما $d = 0{,}13\\ \\mathrm{nm}$ . تذكّر أنّ: بيكو $10^{-12}$ ، نانو $10^{-9}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نصف قطر الذرّة الأولى بالمتر هو $a \\times 10^{n}$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "-11",
+      "misconceptionSignatures": [
+        {
+          "value": "-12",
+          "id": "MISC-WQ-NOTSCI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين تضع الفاصلة ليبقى رقم واحد غير معدوم قبلها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $a$ من $1$ إلى أقل من $10$ ، والأسّ $n$ هو عدد رتب إزاحة الفاصلة (موجب للأعداد الكبيرة وسالب للصغيرة)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة الضرب في $10^{n}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $-11$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الأسّ هو عدد رتب إزاحة الفاصلة: سالب لأنّ العدد صغير .",
+          "$60 \\times 10^{-12}$ = $6 \\times 10^{-11}$ ، إذن $n = -11$ ."
+        ],
+        "result": "-11"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "والمسافة بين المركزين بالمتر $a \\times 10^{n}$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "-10",
+      "misconceptionSignatures": [
+        {
+          "value": "-9",
+          "id": "MISC-WQ-NOTSCI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين تضع الفاصلة ليبقى رقم واحد غير معدوم قبلها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $a$ من $1$ إلى أقل من $10$ ، والأسّ $n$ هو عدد رتب إزاحة الفاصلة (موجب للأعداد الكبيرة وسالب للصغيرة)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة الضرب في $10^{n}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $-10$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الأسّ هو عدد رتب إزاحة الفاصلة: سالب لأنّ العدد صغير .",
+          "$0{,}13 \\times 10^{-9}$ = $1{,}3 \\times 10^{-10}$ ، إذن $n = -10$ ."
+        ],
+        "result": "-10"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "طول الجزيء بالمتر $L = r_1 + d + r_2$ كتابة علمية $a \\times 10^{n}$ : ما قيمة $a$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "العدد $a$ (عدد عشري)",
+      "expectedAnswer": "2.6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين تضع الفاصلة ليبقى رقم واحد غير معدوم قبلها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $a$ من $1$ إلى أقل من $10$ ، والأسّ $n$ هو عدد رتب إزاحة الفاصلة (موجب للأعداد الكبيرة وسالب للصغيرة)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة الضرب في $10^{n}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $2{,}6$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نُزيح الفاصلة حتى يبقى رقم واحد غير معدوم قبلها: $a = 2{,}6$ .",
+          "$60 \\times 10^{-12} + 0{,}13 \\times 10^{-9} + 70 \\times 10^{-12}$ = $2{,}6 \\times 10^{-10}$ ."
+        ],
+        "result": "2{,}6"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "وما قيمة الأسّ $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "-10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين تضع الفاصلة ليبقى رقم واحد غير معدوم قبلها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $a$ من $1$ إلى أقل من $10$ ، والأسّ $n$ هو عدد رتب إزاحة الفاصلة (موجب للأعداد الكبيرة وسالب للصغيرة)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة الضرب في $10^{n}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $-10$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الأسّ هو عدد رتب إزاحة الفاصلة: سالب لأنّ العدد صغير .",
+          "$60 \\times 10^{-12} + 0{,}13 \\times 10^{-9} + 70 \\times 10^{-12}$ = $2{,}6 \\times 10^{-10}$ ، إذن $n = -10$ ."
+        ],
+        "result": "-10"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "رتبة قدر طول الجزيء هي $a' \\times 10^{n}$ : ما قيمة $a'$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "العدد الصحيح $a'$ (من 1 إلى 9)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-WQ-ROUND"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أوّلًا الكتابة العلمية للعدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ندوّر $a$ إلى الوحدة ونُبقي القوة $10^{n}$ ؛ إذا صار المدوّر $10$ فهو $1 \\times 10^{n+1}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ المدوّر عدد صحيح من $1$ إلى $9$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $3$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الكتابة العلمية $60 \\times 10^{-12} + 0{,}13 \\times 10^{-9} + 70 \\times 10^{-12}$ = $2{,}6 \\times 10^{-10}$ .",
+          "مدوّر $2{,}6$ إلى الوحدة هو $3$ ، فرتبة القدر $3 \\times 10^{-10}$ ."
+        ],
+        "result": "3"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

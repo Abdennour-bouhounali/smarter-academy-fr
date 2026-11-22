@@ -1,0 +1,228 @@
+{
+  "id": "ex-3am-qimat-ibara-harfiya-l3-004",
+  "lessonCode": "qimat-ibara-harfiya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — تحقق بالنشر ثم تبسيط وقيمة",
+    "estimatedMinutes": 11,
+    "tags": [
+      "نشر",
+      "تبسيط",
+      "قيمة عبارة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-80",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$D$ عبارة جبرية حيث:",
+    "formulas": [
+      "D = (3x - 1)(x + 4) - (2x^2 + 9x - 7)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انشر ثم بسّط $(3x - 1)(x + 4)$ واكتبها على الشكل $ax^2 + bx + c$ .",
+      "statement": "العدد $b$ :",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $(3x-1)(x+4)$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "11",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض الحرف بعدد صغير في العبارة الأصلية وفي النتيجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$(3x-1)(x+4) = 3x^2 + 11x - 4$ إذن $b = 11$ .",
+        "incorrect": "وزّع كل حدّ على كل حدّ مع الانتباه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$(3x - 1)(x + 4) = 3x^2 + 12x - x - 4 = 3x^2 + 11x - 4$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "استنتج الشكل المبسّط للعبارة $D$ على الشكل $ax^2 + bx + c$ .",
+      "statement": "العدد $b$ :",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $D$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "2",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض الحرف بعدد صغير في العبارة الأصلية وفي النتيجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$D = x^2 + 2x + 3$ إذن $b = 2$ .",
+        "incorrect": "وزّع كل حدّ على كل حدّ مع الانتباه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$D = 3x^2 + 11x - 4 - 2x^2 - 9x + 7$",
+          "$D = x^2 + 2x + 3$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "احسب قيمة $D$ من أجل $x = -\\dfrac{1}{2}$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "2.25",
+      "misconceptionSignatures": [
+        {
+          "value": "4.25",
+          "id": "MISC-QIMA-SIGN-LOST"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = -\\dfrac{1}{2}$ هي $2{,}25$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$D = \\left(3 \\times \\left(-\\dfrac{1}{2}\\right) - 1\\right) \\times \\left(-\\dfrac{1}{2} + 4\\right) - \\left(2 \\times \\left(-\\dfrac{1}{2}\\right)^2 + 9 \\times \\left(-\\dfrac{1}{2}\\right) - 7\\right)$",
+          "$D = \\left(3 \\times \\left(-\\dfrac{1}{2}\\right) - 1\\right) \\times \\left(-\\dfrac{1}{2} + 4\\right) - \\left(2 \\times 0{,}25 + 9 \\times \\left(-\\dfrac{1}{2}\\right) - 7\\right)$",
+          "$D = (-1{,}5 - 1) \\times \\left(-\\dfrac{1}{2} + 4\\right) - (0{,}5 + (-4{,}5) - 7)$",
+          "$D = -2{,}5 \\times 3{,}5 - (-4 - 7)$",
+          "$D = -8{,}75 - (-4 - 7)$",
+          "$D = -8{,}75 - (-11)$",
+          "$D = 2{,}25$"
+        ],
+        "result": "D = 2{,}25"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "احسب قيمة العبارة $x^2 + 2x + 3$ من أجل $x = \\dfrac{2}{3}$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "43/9",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = \\dfrac{2}{3}$ هي $\\dfrac{43}{9}$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$x^2 + 2x + 3 = \\left(\\dfrac{2}{3}\\right)^2 + 2 \\times \\dfrac{2}{3} + 3$",
+          "$= \\dfrac{4}{9} + 2 \\times \\dfrac{2}{3} + 3$",
+          "$= \\dfrac{4}{9} + \\dfrac{4}{3} + 3$",
+          "$= \\dfrac{16}{9} + 3$",
+          "$= \\dfrac{43}{9}$"
+        ],
+        "result": "\\dfrac{43}{9}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

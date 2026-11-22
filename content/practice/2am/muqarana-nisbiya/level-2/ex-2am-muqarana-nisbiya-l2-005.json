@@ -1,0 +1,204 @@
+{
+  "id": "ex-2am-muqarana-nisbiya-l2-005",
+  "lessonCode": "muqarana-nisbiya",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — فواصل نقط ومسافاتها إلى المبدأ",
+    "estimatedMinutes": 6,
+    "tags": [
+      "فاصلة نقطة",
+      "المسافة إلى الصفر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "على مستقيم مدرّج مبدؤه $O$ ووحدته $1\\,\\text{cm}$ : فاصلة $A$ هي $-8$ وفاصلة $B$ هي $-5$ وفاصلة $C$ هي $+3$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما المسافة $OA$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "-8",
+          "id": "MISC-MUQARANA-NISBIYA-ND"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة إلى الصفر هي طول المسار من الصفر إلى العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة إلى الصفر لا تكون سالبة أبدًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للحصول عليها: اكتب العدد دون إشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "المسافة إلى الصفر هي العدد دون إشارته: $OA = 8$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$OA = |{-8}| = 8$"
+        ],
+        "result": "OA = 8"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "قارن فاصلتي $A$ و $B$ : اختر العبارة الصحيحة.",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-8 < -5$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$-8 > -5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-BDG"
+        },
+        {
+          "id": "C",
+          "content": "$-5 < -8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-BDG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج: أيّهما أبعد عن الصفر؟ وفي أيّ جهة منه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددان سالبان: الأصغر هو الذي له أكبر مسافة إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن المسافتين إلى الصفر (العددين دون إشارتيهما) ثم اعكس الحكم لأن العددين سالبان."
+        }
+      ],
+      "feedback": {
+        "correct": "$8 > 5$ والعددان سالبان: $-8 < -5$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$OA = 8 > 5 = OB$ والعددان سالبان",
+          "$-8 < -5$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "أيّ النقط الثلاث فاصلتها الأصغر؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "النقطة $B$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-NZS"
+        },
+        {
+          "id": "B",
+          "content": "النقطة $A$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "النقطة $C$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-SI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج: أيّهما أبعد عن الصفر؟ وفي أيّ جهة منه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددان سالبان: الأصغر هو الذي له أكبر مسافة إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن المسافتين إلى الصفر (العددين دون إشارتيهما) ثم اعكس الحكم لأن العددين سالبان."
+        }
+      ],
+      "feedback": {
+        "correct": "الأصغر هو العدد السالب الأبعد عن الصفر: فاصلة $A$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$-8 < -5 < 3$",
+          "النقطة $A$ فاصلتها الأصغر"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

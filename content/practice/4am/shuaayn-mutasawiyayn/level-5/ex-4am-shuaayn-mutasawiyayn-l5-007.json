@@ -1,0 +1,110 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l5-007",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — أعمدة جسر بقسنطينة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "وضعية",
+      "انسحاب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_shuaayn-mutasawiyayn_P3",
+      "modelledOn": "method-image"
+    }
+  },
+  "statement": {
+    "content": "لتركيب إنارة جسر فوق وادي الرمال بقسنطينة خدمةً للمارّة ليلًا، يُنقل كل عمود بالانسحاب الذي شعاعه $\\overrightarrow{AB}$ حيث AB = 35 m. عمود في النقطة C (A و B و C ليست على استقامة) نُقل إلى D."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "كم يبعد D عن C؟ (بالمتر)",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالمتر)",
+      "expectedAnswer": "35",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "D صورة C بالانسحاب الذي شعاعه AB."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الشعاع CD يساوي الشعاع AB."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "شعاعان متساويان لهما نفس الطول."
+        }
+      ],
+      "feedback": {
+        "correct": "الشعاعان CD و AB متساويان، فـ CD = AB = 35 m.",
+        "incorrect": "المساواة الشعاعية تعطي تساوي الطولين."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "أيّ عبارة صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "ABDC متوازي أضلاع قطراه [AD] و [BC] متناصفان",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "ABCD متوازي أضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        },
+        {
+          "id": "C",
+          "content": "[AB] و [CD] لهما نفس المنتصف",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المساواة الشعاعية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع [AB] ومقابله [CD]."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حدّد القطرين بعد ترتيب الرؤوس."
+        }
+      ],
+      "feedback": {
+        "correct": "CD = AB (شعاعان): ABDC متوازي أضلاع، قطراه [AD] و [BC] لهما نفس المنتصف.",
+        "incorrect": "رتّب الرؤوس ثم حدّد القطرين."
+      }
+    }
+  ]
+}

@@ -1,0 +1,256 @@
+{
+  "id": "ex-3am-adad-natiq-l4-004",
+  "lessonCode": "adad-natiq",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — حاصل قسمة عددين نسبيين عددٌ ناطق",
+    "estimatedMinutes": 12,
+    "tags": [
+      "العدد الناطق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يريد أشرف إتقان تقسيم عدد على عدد في دفتر المحاسبة : $Q=(-52)\\div(-16)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "اكتب حاصل القسمة $(-52)\\div(-16)$ على الشكل $\\dfrac{a}{b}$ بمقام موجب وعلى أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "13/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "-13/4",
+          "id": "MISC-NATIQ-TWONEG"
+        },
+        {
+          "value": "4/13",
+          "id": "MISC-NATIQ-INVERT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة الحاصل؟ قارن إشارتي البسط والمقام."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل الإشارة إلى أمام الكسر حتى يصير المقام موجبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل بقسمة البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$Q = \\dfrac{13}{4}$ .",
+        "incorrect": "تذكّر أنّ المقام في الكتابة المعيارية موجب، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$(-52)\\div(-16)=\\dfrac{-52}{-16}$ .",
+          "البسط والمقام سالبان، وحاصل قسمة عددين سالبين موجب : $Q = \\dfrac{52}{16}$ .",
+          "نختزل بقسمة البسط والمقام على $4$ : $\\dfrac{52}{16} = \\dfrac{13}{4}$ .",
+          "$Q = \\dfrac{13}{4}$ ."
+        ],
+        "result": "Q = \\dfrac{13}{4}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "بين أيّ عددين صحيحين متتاليين يقع $Q$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3$ و $4$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$-4$ و $-3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-TWONEG"
+        },
+        {
+          "id": "C",
+          "content": "$4$ و $5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-NEGPLACE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة الإقليدية للبسط على المقام، ثمّ انتبه إلى الإشارة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارسم المستقيم المدرّج واقرأ التدريجات الصغيرة."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $3$ و $4$ .",
+        "incorrect": "حدّد الجهة من الصفر ثمّ العددين الصحيحين المتتاليين، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$Q=\\dfrac{13}{4}=3{,}25$ .",
+          "$3<3{,}25<4$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "هل $Q$ عدد عشري ؟",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-DECIMAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّل مقام الكسر المختزل إلى جداء عوامل أوّلية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الكسر المختزل له كتابة عشرية تامّة إذا لم يظهر في مقامه إلّا العاملان الأوّليان اللذان يقسمان العدد عشرة."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: نعم .",
+        "incorrect": "اختزل ثمّ حلّل المقام، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$4=2^2$ ، ليس في مقام الكسر المختزل إلّا العامل $2$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "اكتب $Q$ على الشكل العشري .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "3.25",
+      "misconceptionSignatures": [
+        {
+          "value": "-3.25",
+          "id": "MISC-NATIQ-TWONEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اسأل نفسك: هل هو حاصل قسمة عددين نسبيين مقامه غير معدوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ كلّ عدد صحيح نسبي وكلّ عدد عشري نسبي له كتابة كسرية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العدد على الشكل a/b ثمّ اقرأ تعريف العدد الناطق."
+        }
+      ],
+      "feedback": {
+        "correct": "$3{,}25$ .",
+        "incorrect": "راجع تعريف العدد الناطق ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{13}{4}=\\dfrac{325}{100}=3{,}25$ ."
+        ],
+        "result": "3{,}25"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

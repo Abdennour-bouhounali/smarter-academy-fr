@@ -1,0 +1,161 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l4-007",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2023 — 2964/57 و 2964/52",
+    "estimatedMinutes": 6,
+    "tags": [
+      "كسر",
+      "عدد طبيعي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-adad-tabii_P2",
+      "modelledOn": "BEM 2023 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن الأعداد A و B و C حيث:",
+    "formulas": [
+      "A = \\dfrac{2964}{57}",
+      "B = \\dfrac{2964}{52}",
+      "C = \\dfrac{2964}{3135}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن A عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة A (عدد طبيعي)",
+      "expectedAnswer": "52",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 2964 على 57."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان الباقي معدومًا فإن $2964 = 57 \\times q$."
+        }
+      ],
+      "feedback": {
+        "correct": "$2964 = 57 \\times 52$ إذن $A = 52$.",
+        "incorrect": "اقسم 2964 على 57 وانظر هل الباقي معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$57 \\times 52 = 2964$",
+          "$A = \\dfrac{57 \\times 52}{57}$",
+          "إذن A عدد طبيعي:"
+        ],
+        "result": "A = 52"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج، دون إجراء القسمة، أن B عدد طبيعي، وأعط قيمته.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة B (عدد طبيعي)",
+      "expectedAnswer": "57",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل المساواة التي وجدتها في السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المساواة $a = b \\times q$ تُقرأ في الاتجاهين."
+        }
+      ],
+      "feedback": {
+        "correct": "$2964 = 52 \\times 57$ إذن $B = 57$.",
+        "incorrect": "اقرأ المساواة $2964 = 57 \\times A$ من الجهة الأخرى."
+      },
+      "solution": {
+        "lines": [
+          "$2964 = 57 \\times 52 = 52 \\times 57$",
+          "$B = \\dfrac{52 \\times 57}{52}$"
+        ],
+        "result": "B = 57"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اكتب C على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "52/55",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01، ثم اقسم 3135 على 57."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب البسط والمقام على شكل جداء أحد عامليه 57."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = \\dfrac{57 \\times 52}{57 \\times 55} = \\dfrac{52}{55}$.",
+        "incorrect": "اكتب البسط والمقام على شكل جداء العدد 57 في عدد طبيعي، ثم اختزل.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال."
+      },
+      "solution": {
+        "lines": [
+          "$2964 = 57 \\times 52$ و $3135 = 57 \\times 55$",
+          "$C = \\dfrac{57 \\times 52}{57 \\times 55}$",
+          "$52 = 2^2 \\times 13$ و $55 = 5 \\times 11$ ليس لهما قاسم مشترك غير 1."
+        ],
+        "result": "C = \\dfrac{52}{55}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,254 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l4-007",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — نسبة ثلاثة عشر إلى ثلاثين",
+    "estimatedMinutes": 9,
+    "tags": [
+      "نسبة",
+      "قيم مقرّبة",
+      "حصر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "في فوج من $30$ تلميذًا، $13$ تلميذًا شاركوا في حملة تنظيف الحيّ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نسبة المشاركين إلى تلاميذ الفوج هي:",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{30}{13}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-RATIOFLIP"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{13}{17}$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{13}{30}$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{17}{30}$",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الجزء (المشاركون) في البسط والكلّ (الفوج) في المقام."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{13}{30}$ : المشاركون على الفوج كلّه.",
+        "incorrect": "ضع الجزء في البسط والكلّ في المقام."
+      },
+      "solution": {
+        "lines": [
+          "الجزء: $13$ ، الكلّ: $30$",
+          "النسبة $\\dfrac{13}{30}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}01$ بالنقصان لهذه النسبة.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "0.43",
+      "misconceptionSignatures": [
+        {
+          "value": "0.44",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "0.433",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالنقصان لا تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة دون أن تزيد شيئًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب القيمة في المقسوم عليه: يجب ألاّ يتجاوز الجداء المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}43 < \\frac{13}{30} < 0{,}44$.",
+        "incorrect": "بالنقصان: نحتفظ بالأرقام حتى الرتبة المطلوبة ونُهمل ما بعدها دون تغيير الرقم الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$30 \\times 0{,}43 = 12{,}9$",
+          "$30 \\times 0{,}44 = 13{,}2$",
+          "$12{,}9 < 13 < 13{,}2$"
+        ],
+        "result": "0{,}43"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}01$ بالزيادة لهذه النسبة.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "0.44",
+      "misconceptionSignatures": [
+        {
+          "value": "0.43",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "0.434",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالزيادة هي أصغر قيمة من هذه الرتبة تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من القيمة بالنقصان ثم أضف وحدة واحدة من الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}43 < \\frac{13}{30} < 0{,}44$.",
+        "incorrect": "بالزيادة: هي القيمة التي تلي القيمة بالنقصان مباشرة في الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$30 \\times 0{,}44 = 13{,}2$",
+          "$13{,}2 > 13$",
+          "القيمة بالزيادة هي $0{,}44$"
+        ],
+        "result": "0{,}44"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "اختر الحصر الصحيح للنسبة $\\dfrac{13}{30}$ إلى $0{,}001$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$0{,}434 < \\dfrac{13}{30} < 0{,}435$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        },
+        {
+          "id": "B",
+          "content": "$0{,}433 < \\dfrac{13}{30} < 0{,}434$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$0{,}432 < \\dfrac{13}{30} < 0{,}433$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        },
+        {
+          "id": "D",
+          "content": "$0{,}435 < \\dfrac{13}{30} < 0{,}436$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحصر الصحيح: عددان متتاليان في الرتبة المطلوبة، الأوّل لا يتجاوز الحاصل والثاني يتجاوزه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ حصر بضرب طرفيه في المقسوم عليه ثم قارن بالمقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}433 < \\dfrac{13}{30} < 0{,}434$.",
+        "incorrect": "تحقّق من الطرفين: الأصغر لا يتجاوز الحاصل والأكبر يتجاوزه، وبينهما وحدة واحدة من الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$30 \\times 0{,}433 = 12{,}99 \\text{ و } 30 \\times 0{,}434 = 13{,}02$",
+          "$12{,}99 < 13 < 13{,}02$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

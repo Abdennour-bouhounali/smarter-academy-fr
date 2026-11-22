@@ -1,0 +1,275 @@
+{
+  "id": "ex-3am-kitaba-ilmiya-rutba-l5-003",
+  "lessonCode": "kitaba-ilmiya-rutba",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — نبضات القلب في سنة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "مقادير حقيقية",
+      "كتابة علمية",
+      "رتبة قدر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يدقّ قلب إنسان بالغ حوالي 70 دقّة في الدقيقة. نحسب عدد دقّاته في سنة من 365 يومًا (يوم = 24 ساعة، ساعة = 60 دقيقة)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما عدد دقّات القلب في سنة؟",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العمليّات المطلوبة واحسبها بترتيب مناسب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب أو اقسم الأعداد العشرية مباشرة أو استعمل قواعد قوى العدد 10."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قدّر النتيجة بتقريب سريع للتحقّق من رتبة قدرها."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "36792000",
+      "feedback": {
+        "correct": "حوالي $36\\,792\\,000$ دقّة.",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "عدد الدقائق في سنة: $60\\times24\\times365 = 525\\,600$ .",
+          "$70\\times525\\,600 = 36\\,792\\,000$ ."
+        ],
+        "result": "36 792 000"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "الكتابة العلمية للعدد $36\\,792\\,000$ هي $a\\times10^{n}$ حيث $1\\le a<10$ : ما قيمة $a$ ؟",
+      "answerType": "rational",
+      "answerFormat": "العدد $a$ (عدد عشري)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد أوّل رقم غير معدوم في العدد وانظر أين تقع الفاصلة بالنسبة إليه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في الكتابة العلمية $a\\times10^{n}$ يكون $a$ من 1 إلى أقلّ تمامًا من 10: ضع الفاصلة بعد أوّل رقم غير معدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: ضرب $a$ في $10^{n}$ يجب أن يعيد العدد المعطى."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "3.6792",
+      "feedback": {
+        "correct": "$36\\,792\\,000 = 3{,}6792\\times10^{7}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $36\\,792\\,000$ على الشكل $a\\times10^{n}$ مع $1\\le a<10$ .",
+          "$36\\,792\\,000 = 3{,}6792\\times10^{7}$ ، إذن $a = 3{,}6792$ ."
+        ],
+        "result": "a = 3.6792"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "الكتابة العلمية للعدد $36\\,792\\,000$ هي $a\\times10^{n}$ حيث $1\\le a<10$ : ما قيمة الأسّ $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العدد بـ 1 وبـ 10: هل هو كبير جدًّا أم صغير جدًّا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد المراتب التي تنقل بها الفاصلة هو $|n|$ ؛ الأسّ موجب إن كان العدد كبيرًا وسالب إن كان العدد أصغر من 1."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: $10^{n}$ هي أكبر قوة للعدد 10 لا تتجاوز العدد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-ILMIYA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$36\\,792\\,000 = 3{,}6792\\times10^{7}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $36\\,792\\,000$ على الشكل $a\\times10^{n}$ مع $1\\le a<10$ .",
+          "$36\\,792\\,000 = 3{,}6792\\times10^{7}$ ، إذن $n = 7$ ."
+        ],
+        "result": "n = 7"
+      }
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "statement": "رتبة قدر العدد $36\\,792\\,000$ هي $a'\\times10^{n}$ حيث $a'$ عدد صحيح من 1 إلى 9 : ما قيمة $a'$ ؟",
+      "answerType": "rational",
+      "answerFormat": "العدد الصحيح $a'$ (من 1 إلى 9)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العدد كتابة علمية $a\\times10^{n}$ أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتبة القدر هي $a'\\times10^{n}$ حيث $a'$ هو العدد $a$ مدوّرًا إلى الوحدة (نصف فما فوق يُرفع)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحذف ما بعد الفاصلة: قرّب $a$ إلى أقرب عدد صحيح."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-ILMIYA-BATR"
+        }
+      ],
+      "feedback": {
+        "correct": "رتبة قدر $36\\,792\\,000$ هي $4\\times10^{7}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الكتابة العلمية: $36\\,792\\,000 = 3{,}6792\\times10^{7}$ .",
+          "تدوير $3{,}6792$ إلى الوحدة يعطي 4 .",
+          "رتبة قدر $36\\,792\\,000$ هي $4\\times10^{7}$ ، فـ $a' = 4$ ."
+        ],
+        "result": "a' = 4"
+      }
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "رتبة قدر العدد $36\\,792\\,000$ هي $a'\\times10^{n}$ حيث $a'$ عدد صحيح من 1 إلى 9 : ما قيمة الأسّ $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العدد كتابة علمية $a\\times10^{n}$ ثمّ دوّر $a$ إلى الوحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان تدوير $a$ يعطي 10 فإنّ $10\\times10^{n}=1\\times10^{n+1}$ فيتغيّر الأسّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن رتبة القدر بالعدد نفسه: يجب أن تكون قريبة منه، لا أكبر منه بعشر مرّات."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-ILMIYA-QUWA"
+        }
+      ],
+      "feedback": {
+        "correct": "رتبة قدر $36\\,792\\,000$ هي $4\\times10^{7}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الكتابة العلمية: $36\\,792\\,000 = 3{,}6792\\times10^{7}$ .",
+          "تدوير $3{,}6792$ إلى الوحدة يعطي 4 .",
+          "رتبة قدر $36\\,792\\,000$ هي $4\\times10^{7}$ ، فـ $n = 7$ ."
+        ],
+        "result": "n = 7"
+      }
+    }
+  ]
+}

@@ -1,0 +1,365 @@
+{
+  "id": "ex-4am-mada-wasit-mutawassit-l3-001",
+  "lessonCode": "mada-wasit-mutawassit",
+  "level": 3,
+  "metadata": {
+    "title": "درجات الحرارة في مدينتين خلال نوفمبر",
+    "estimatedMinutes": 12,
+    "tags": [
+      "المدى",
+      "المتوسط المتوازن",
+      "التشتت"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-3",
+      "page": 93,
+      "section": "أنشطة",
+      "number": 3
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يبيّن الجدول الآتي درجات الحرارة (°C) التي سُجّلت في مدينتين (أ) و (ب) خلال شهر نوفمبر (30 يوما):",
+    "table": {
+      "head": [
+        "درجة الحرارة في المدينة (أ)",
+        "18",
+        "15",
+        "16",
+        "20"
+      ],
+      "rows": [
+        [
+          "عدد الأيام",
+          "2",
+          "18",
+          "6",
+          "4"
+        ],
+        [
+          "درجة الحرارة في المدينة (ب)",
+          "10",
+          "18",
+          "15",
+          "20"
+        ],
+        [
+          "عدد الأيام",
+          "3",
+          "4",
+          "16",
+          "7"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "عيّن مدى كل سلسلة من السلسلتين وقارن بينهما.",
+      "statement": "عيّن مدى سلسلة المدينة (أ).",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدى بـ °C",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-IHSA-MADA-AKBAR-QIMA"
+        },
+        {
+          "value": "16",
+          "id": "MISC-IHSA-MADA-TAKRAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المدى هو الفرق بين أكبر قيمة وأصغر قيمة في السلسلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن أكبر قيمة وأصغر قيمة من قيم السلسلة (لا من التكرارات)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح أصغر قيمة من أكبر قيمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$20 - 15 = 5$ .",
+        "incorrect": "المدى فرق بين قيمتين من قيم السلسلة: أكبر قيمة ناقص أصغر قيمة، ولا تُستعمل التكرارات."
+      },
+      "solution": {
+        "lines": [
+          "أكبر قيمة: 20°C ، وأصغر قيمة: 15°C",
+          "$20 - 15 = 5$"
+        ],
+        "result": "5"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "عيّن مدى سلسلة المدينة (ب).",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدى بـ °C",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-IHSA-MADA-AKBAR-QIMA"
+        },
+        {
+          "value": "13",
+          "id": "MISC-IHSA-MADA-TAKRAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المدى هو الفرق بين أكبر قيمة وأصغر قيمة في السلسلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن أكبر قيمة وأصغر قيمة من قيم السلسلة (لا من التكرارات)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح أصغر قيمة من أكبر قيمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$20 - 10 = 10$ .",
+        "incorrect": "المدى فرق بين قيمتين من قيم السلسلة: أكبر قيمة ناقص أصغر قيمة، ولا تُستعمل التكرارات."
+      },
+      "solution": {
+        "lines": [
+          "أكبر قيمة: 20°C ، وأصغر قيمة: 10°C",
+          "$20 - 10 = 10$"
+        ],
+        "result": "10"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "احسب متوسط كل من السلسلتين، مدوّرا إلى 0,01.",
+      "statement": "متوسط درجات الحرارة في المدينة (أ):",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري مدوّر إلى 0,01",
+      "expectedAnswer": "16,07",
+      "misconceptionSignatures": [
+        {
+          "value": "17,25",
+          "id": "MISC-IHSA-MUTAWASSIT-BILA-TARJIH"
+        },
+        {
+          "value": "120,5",
+          "id": "MISC-IHSA-MUTAWASSIT-QISMA-QIYAM"
+        },
+        {
+          "value": "15",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في جدول تكرارات تُضرب كل قيمة في تكرارها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الجداءات (القيمة × التكرار)، ثم اجمع التكرارات لتحصل على التكرار الكلي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم مجموع الجداءات على التكرار الكلي، لا على عدد القيم المختلفة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{482}{30} \\approx 16{,}07$ .",
+        "incorrect": "المتوسط المتوازن: مجموع الجداءات (القيمة × التكرار) مقسوما على التكرار الكلي."
+      },
+      "solution": {
+        "lines": [
+          "مجموع الجداءات (القيمة × التكرار):",
+          "$18 \\times 2 + 15 \\times 18 + 16 \\times 6 + 20 \\times 4 = 482$",
+          "التكرار الكلي:",
+          "$2 + 18 + 6 + 4 = 30$",
+          "$m = \\dfrac{482}{30} = \\dfrac{241}{15}$",
+          "مدوّرا إلى 0,01: $m \\approx 16{,}07$"
+        ],
+        "result": "m \\approx 16{,}07"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "متوسط درجات الحرارة في المدينة (ب):",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري مدوّر إلى 0,01",
+      "expectedAnswer": "16,07",
+      "misconceptionSignatures": [
+        {
+          "value": "15,75",
+          "id": "MISC-IHSA-MUTAWASSIT-BILA-TARJIH"
+        },
+        {
+          "value": "120,5",
+          "id": "MISC-IHSA-MUTAWASSIT-QISMA-QIYAM"
+        },
+        {
+          "value": "15",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في جدول تكرارات تُضرب كل قيمة في تكرارها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الجداءات (القيمة × التكرار)، ثم اجمع التكرارات لتحصل على التكرار الكلي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم مجموع الجداءات على التكرار الكلي، لا على عدد القيم المختلفة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{482}{30} \\approx 16{,}07$ .",
+        "incorrect": "المتوسط المتوازن: مجموع الجداءات (القيمة × التكرار) مقسوما على التكرار الكلي."
+      },
+      "solution": {
+        "lines": [
+          "مجموع الجداءات (القيمة × التكرار):",
+          "$10 \\times 3 + 18 \\times 4 + 15 \\times 16 + 20 \\times 7 = 482$",
+          "التكرار الكلي:",
+          "$3 + 4 + 16 + 7 = 30$",
+          "$m = \\dfrac{482}{30} = \\dfrac{241}{15}$",
+          "مدوّرا إلى 0,01: $m \\approx 16{,}07$"
+        ],
+        "result": "m \\approx 16{,}07"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "أي المدينتين كانت أكثر حرّا خلال شهر نوفمبر؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "المدينة (أ)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MUQARANA-MUTAWASSIT-FAQAT"
+        },
+        {
+          "id": "B",
+          "content": "المدينة (ب)، لأن مداها أكبر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MADA-AKBAR-QIMA"
+        },
+        {
+          "id": "C",
+          "content": "للمدينتين المتوسط نفسه؛ درجات المدينة (ب) أكثر تشتّتا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن أولا المتوسطين اللذين وجدتهما في 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المدى لا يقيس الحرارة بل تشتّت درجات الحرارة."
+        }
+      ],
+      "feedback": {
+        "correct": "المتوسطان متساويان، والمدى الأكبر يدلّ على تشتّت أكبر لا على حرارة أكبر.",
+        "incorrect": "المتوسط يقيس «مستوى» الحرارة، والمدى يقيس تشتّتها: قارن كل مؤشر بما يقيسه."
+      },
+      "solution": {
+        "lines": [
+          "للمدينتين المتوسط نفسه: $\\dfrac{482}{30} \\approx 16{,}07$ °C ، فلا تُعدّ إحداهما أكثر حرّا من الأخرى في المتوسط.",
+          "مدى المدينة (ب) 10°C ومدى المدينة (أ) 5°C: درجات الحرارة في المدينة (ب) أكثر تشتّتا."
+        ],
+        "result": "المتوسط نفسه؛ (ب) أكثر تشتّتا"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

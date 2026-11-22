@@ -1,0 +1,184 @@
+{
+  "id": "ex-4am-dala-khattiya-l3-008",
+  "lessonCode": "dala-khattiya",
+  "level": 3,
+  "metadata": {
+    "title": "باقة الإنترنت بالجيغا",
+    "estimatedMinutes": 5,
+    "tags": [
+      "وضعية",
+      "تعيين دالة خطية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "adaptedFrom": "ex-4am-dala-khattiya-l3-008"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في عرض لمتعامل الهاتف النقال، ثمن باقة الإنترنت المخصّصة للبحث ومراجعة الدروس متناسب مع حجمها. نسمّي $f(x)$ ثمن باقة حجمها $x$ جيغا (بـ DA)، ونعلم أن:",
+    "formulas": [
+      "f(4) = 340"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن الدالة الخطية $f$ . ماذا يمثّل معاملها؟",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "85",
+      "misconceptionSignatures": [
+        {
+          "value": "1/85",
+          "id": "MISC-KHATTIYA-MUAMIL-MAQLUB"
+        },
+        {
+          "value": "-85",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$f$ دالة خطية: $f(x) = ax$ ، و $f(4) = 340$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب المعادلة $a \\times 4 = 340$ ثم حلّها."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{340}{4} = 85$ ، إذن $f(x) = 85x$ .",
+        "incorrect": "المعامل هو الصورة مقسومة على العدد (وليس العكس)، مع الانتباه إلى الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "$f$ دالة خطية، إذن $f(x) = ax$ .",
+          "$f(4) = 340$ معناه $a \\times 4 = 340$",
+          "$a = \\dfrac{340}{4} = 85$"
+        ],
+        "result": "f(x) = 85x"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب ثمن باقة حجمها 10 جيغا.",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "850",
+      "misconceptionSignatures": [
+        {
+          "value": "2/17",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "-850",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "صورة العدد $x$ بالدالة الخطية $f$ هي $f(x) = 85 \\times x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $x$ بالعدد $10$ ثم احسب الجداء، وانتبه إلى الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(10) = 85 \\times 10 = 850$ .",
+        "incorrect": "الصورة جداء المعامل في العدد: $f(x) = 85 \\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(10) = 85 \\times 10$",
+          "$f(10) = 850$"
+        ],
+        "result": "f(10) = 850DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما حجم الباقة التي ثمنها 1105DA ؟",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الجيغا (عدد فقط)",
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "value": "93925",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "-13",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد المطلوب $x$ يحقق $f(x) = 1105$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المعادلة $85x = 1105$ : اقسم الطرفين على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{1105}{85} = 13$ .",
+        "incorrect": "لا تحسب صورة العدد المعطى: ابحث عن العدد $x$ الذي صورته هذا العدد."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 1105$ معناه $85x = 1105$",
+          "$x = \\dfrac{1105}{85} = 13$"
+        ],
+        "result": "x = 13"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

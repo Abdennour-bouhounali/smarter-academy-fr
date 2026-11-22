@@ -1,0 +1,174 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l2-009",
+  "lessonCode": "mana-jam-tarh",
+  "level": 2,
+  "metadata": {
+    "title": "مسافات على طريق",
+    "estimatedMinutes": 4,
+    "tags": [
+      "مسافات",
+      "مخطط بأقواس"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "now-29",
+      "page": 29,
+      "section": "دوري الآن"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "على طريق وطني تقع المدن A و B و C و D بهذا الترتيب. يحترم سائق حافلة قانون المرور، ويقرأ اللافتات: المسافة AB تساوي $87\\,\\mathrm{km}$، والمسافة AC تساوي $151\\,\\mathrm{km}$، والمسافة AD تساوي $236\\,\\mathrm{km}$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "في مخطط بأقواس تمثّل فيه المسافة AC الكل، الجزآن هما:",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "AB و BC",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "AB و AD",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        },
+        {
+          "id": "C",
+          "content": "AC و CD",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم الطريق: A ثم B ثم C."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة من A إلى C تمرّ بـ B."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC = AB + BC$: الجزآن AB و BC.",
+        "incorrect": "الجزآن يُكوّنان معًا المسافة من A إلى C، دون تجاوز C."
+      },
+      "solution": {
+        "lines": [
+          "B تقع بين A و C ، إذن $AC = AB + BC$.",
+          "الكل AC والجزآن AB و BC."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب المسافة BC.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالكيلومتر (km)",
+      "expectedAnswer": "64",
+      "misconceptionSignatures": [
+        {
+          "value": "238",
+          "id": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "BC جزء من AC."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نطرح AB من AC."
+        }
+      ],
+      "feedback": {
+        "correct": "$151 - 87 = 64\\,\\mathrm{km}$.",
+        "incorrect": "BC جزء من المسافة AC: هي أصغر منها."
+      },
+      "solution": {
+        "lines": [
+          "$BC = AC - AB = 151 - 87 = 64$"
+        ],
+        "result": "BC = 64 \\text{ km}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب المسافة CD.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالكيلومتر (km)",
+      "expectedAnswer": "85",
+      "misconceptionSignatures": [
+        {
+          "value": "387",
+          "id": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "C تقع بين A و D."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "AD هو الكل، و AC و CD جزآه."
+        }
+      ],
+      "feedback": {
+        "correct": "$236 - 151 = 85\\,\\mathrm{km}$.",
+        "incorrect": "CD جزء من المسافة AD: اطرح الجزء المعلوم AC."
+      },
+      "solution": {
+        "lines": [
+          "$AD = AC + CD$ ، إذن $CD = AD - AC = 236 - 151 = 85$"
+        ],
+        "result": "CD = 85 \\text{ km}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-harfi-l2-001",
+  "lessonCode": "wadiya-idmajiya-harfi",
+  "level": 2,
+  "metadata": {
+    "title": "طول بدلالة x وحصر",
+    "estimatedMinutes": 5,
+    "tags": [
+      "نمذجة",
+      "حصر"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-37",
+      "page": 41,
+      "section": "الوضعيات",
+      "number": 37
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "ABCD مربع طول ضلعه $10$ cm ، و $x$ عدد موجب. لوّنّا فيه مربعًا طول ضلعه $x$ في الركن $A$ (حيث $AE = AG = x$)، والمستطيل (1) بعداه $4$ cm و $10$ cm على طول الضلع $[BC]$ (حيث $FB = 4$)، والمستطيل (2) بعداه $x$ و $4$ cm في الركن $D$ (حيث $DH = 4$). النقطتان $E$ و $F$ من $[AB]$ ، والنقطتان $G$ و $H$ من $[AD]$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عبّر بدلالة $x$ عن الطول $EF$ .",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $EF$ على الشكل $mx + n$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "-1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقاط $A$ ، $E$ ، $F$ ، $B$ على استقامة واحدة بهذا الترتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$AB = AE + EF + FB$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$EF = 6 - x$ إذن $m = -1$ .",
+        "incorrect": "عبّر عن الأطوال بدلالة $x$ أولا، ثم طبّق قاعدة المساحة أو المحيط، وانشر وبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$AB = AE + EF + FB$ إذن $10 = x + EF + 4$",
+          "$EF = 10 - x - 4$"
+        ],
+        "result": "EF = 6 - x"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $EF$ على الشكل $mx + n$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-NAMDHAJA-MISAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بعد الحساب، اقرأ العدد $n$ في الشكل المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$EF = 6 - x$ إذن $n = 6$ .",
+        "incorrect": "عبّر عن الأطوال بدلالة $x$ أولا، ثم طبّق قاعدة المساحة أو المحيط، وانشر وبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$EF = 6 - x$"
+        ],
+        "result": "n = 6"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "استنتج حصرًا للعدد $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب الحصر على الشكل $0 < x < k$ : اكتب العدد $k$ فقط",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الطول $EF$ موجب تماما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المتباينة التي تعبّر عن ذلك."
+        }
+      ],
+      "feedback": {
+        "correct": "$0 < x < 6$ .",
+        "incorrect": "الطول $x$ موجب، والطول $EF$ موجب تماما أيضا: اكتب ذلك ثم استنتج."
+      },
+      "solution": {
+        "lines": [
+          "$x > 0$ ، والطول $EF$ موجب تماما: $6 - x > 0$",
+          "أي $x < 6$"
+        ],
+        "result": "0 < x < 6"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

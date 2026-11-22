@@ -1,0 +1,239 @@
+{
+  "id": "ex-3am-hasr-adad-ushri-l5-003",
+  "lessonCode": "hasr-adad-ushri",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — شاحنة محمّلة بأكياس السميد",
+    "estimatedMinutes": 18,
+    "tags": [
+      "كتلة",
+      "تدوير",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "حمولة شاحنة قصوى $3500\\,\\mathrm{kg}$ . حُمّلت عليها $140$ كيسًا من السميد، كتلة الكيس $m$ مدوّرة إلى $0{,}1\\,\\mathrm{kg}$ هي $24{,}9\\,\\mathrm{kg}$ . الكتلة الكلّية $M=140m$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أيّ حصر للكتلة الكلّية $M$ بالكيلوغرام هو الصحيح؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$24{,}85\\le M< 24{,}95$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTABAYINA-COEF-LOST"
+        },
+        {
+          "id": "B",
+          "content": "$3479\\le M< 3493$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$3479< M\\le 3493$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-UPPER-INCLUDED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أوّلاً حصر الكمية التي دُوِّرت، ثم اكتب العبارة المطلوبة بدلالتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نضرب أطراف الحصر في العدد الموجب نفسه (فلا يتغيّر اتجاه المتباينة) ثم نضيف الثابت إن وُجد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الطرف الأدنى يبقى مشمولًا والأعلى مستبعدًا؛ تحقّق من ذلك بقراءة الحصر بعد الحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "$24{,}85\\le m<24{,}95$ ؛ نضرب في $140$ : $3479\\le M<3493$ .",
+        "incorrect": "راجع: نرجع نصف وحدة من الرتبة ونتقدّم نصف وحدة، ثم نضرب الأطراف في العدد الموجب نفسه دون تغيير اتجاه المتباينة؛ الطرف الأعلى مستبعد. أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$24{,}85\\le m<24{,}95$ ؛ نضرب في $140$ : $3479\\le M<3493$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما العدد الذي لا تبلغه الكتلة الكلّية $M$ (الطرف الأعلى)؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "3493",
+      "misconceptionSignatures": [
+        {
+          "value": "3486",
+          "id": "MISC-TADWIR-CENTER-EXACT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ ما تعرضه شاشة الآلة الحاسبة، ولا تعدّه قيمة مضبوطة للحاصل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احصر الحاصل بين قيمتين مقرّبتين متتاليتين في الرتبة المطلوبة، ثم حدّد الرقم الذي يلي تلك الرتبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الحاصل بقيمتيه المقرّبتين: الأولى أصغر منه أو تساويه والثانية أكبر منه."
+        }
+      ],
+      "feedback": {
+        "correct": "$140\\times24{,}95=3493$ .",
+        "incorrect": "لا تعدّ ما تعرضه شاشة الآلة قيمة مضبوطة للحاصل: احصره بين قيمتين مقرّبتين متتاليتين؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$140\\times24{,}95=3493$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "هل الشاحنة غير محمّلة فوق طاقتها حتمًا؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-UPPER-INCLUDED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع الحصر الذي وجدته إلى جانب العدد المطلوب مقارنته به."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل العدد أكبر من الطرف الأعلى، أم أصغر من الطرف الأدنى، أم يقع بينهما؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إن وقع العدد بين الطرفين فلا يمكن الجزم؛ وإلاّ فالقرار مؤكّد."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: نعم.",
+        "incorrect": "راجع: قارن العدد بطرفَي الحصر؛ إن وقع بينهما فلا يمكن الجزم، والطرف الأعلى لا يبلغه العدد. أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$M<3493<3500$ .",
+          "الجواب: نعم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "statement": "علّل جوابك.",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع الحصر الذي وجدته إلى جانب العدد المطلوب مقارنته به."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل العدد أكبر من الطرف الأعلى، أم أصغر من الطرف الأدنى، أم يقع بينهما؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إن وقع العدد بين الطرفين فلا يمكن الجزم؛ وإلاّ فالقرار مؤكّد."
+        }
+      ],
+      "feedback": {
+        "correct": "لذلك لا تتجاوز الحمولة الحدّ المسموح في أيّ حالة.",
+        "incorrect": "راجع: قارن العدد بطرفَي الحصر؛ إن وقع بينهما فلا يمكن الجزم، والطرف الأعلى لا يبلغه العدد. أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "أكبر ما تبلغه الكتلة الكلّية أقلّ من $3493$ ، وهو أقلّ من $3500$ .",
+          "لذلك لا تتجاوز الحمولة الحدّ المسموح في أيّ حالة."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

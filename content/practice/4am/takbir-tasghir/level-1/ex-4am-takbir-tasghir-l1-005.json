@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-takbir-tasghir-l1-005",
+  "lessonCode": "takbir-tasghir",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — نسبة أكبر من 1",
+    "estimatedMinutes": 2,
+    "tags": [
+      "التكبير والتصغير",
+      "النسبة k"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takbir-tasghir_P1",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "نموذج لملعب 5 جويلية مطبوع بطابعة ثلاثية الأبعاد، ثم طُبع نموذج ثانٍ بالنسبة $k = 1{,}5$ انطلاقا من الأول."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "النموذج الثاني:",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "ليس تكبيرا ولا تصغيرا لأن $1{,}5$ ليس عددا صحيحا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-ITTIJAH"
+        },
+        {
+          "id": "B",
+          "content": "تكبير للأول لأن $1{,}5 > 1$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "تصغير للأول لأن $1{,}5$ عدد عشري",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-ITTIJAH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن $k$ بالعدد 1."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان $k > 1$ فهو تكبير."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب طولا من الأول في $1{,}5$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$k = 1{,}5 > 1$ : كل طول يكبر، فهو تكبير.",
+        "incorrect": "العدد k قد يكون عشريا أو كسرا: نقارنه بالعدد 1."
+      }
+    }
+  ]
+}

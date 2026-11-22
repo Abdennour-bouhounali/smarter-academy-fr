@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-takbir-tasghir-l2-010",
+  "lessonCode": "takbir-tasghir",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — k من نسبة المساحات",
+    "estimatedMinutes": 2,
+    "tags": [
+      "النسبة k",
+      "المساحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takbir-tasghir_P1",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "مساحة أوجه مجسّم $50\\,\\mathrm{cm}^2$ ، ومساحة أوجه تكبيره $200\\,\\mathrm{cm}^2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "نسبة التكبير:",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$k = \\dfrac{1}{2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-ITTIJAH"
+        },
+        {
+          "id": "B",
+          "content": "$k = 2$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$k = 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-JADHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\dfrac{200}{50} = 4$ هي نسبة المساحتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نسبة المساحتين تساوي $k^2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ابحث عن العدد الذي مربّعه 4."
+        }
+      ],
+      "feedback": {
+        "correct": "$k^2 = \\dfrac{200}{50} = 4$ ، إذن $k = 2$ .",
+        "incorrect": "نسبة المساحات هي $k^2$ ، لا $k$ ."
+      }
+    }
+  ]
+}

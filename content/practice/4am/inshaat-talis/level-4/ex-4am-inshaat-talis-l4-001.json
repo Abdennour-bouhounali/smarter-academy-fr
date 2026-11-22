@@ -1,0 +1,213 @@
+{
+  "id": "ex-4am-inshaat-talis-l4-001",
+  "lessonCode": "inshaat-talis",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 19 — النقطة P خارج [MN]",
+    "estimatedMinutes": 10,
+    "tags": [
+      "تمرين 19",
+      "خارج القطعة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-19",
+      "page": 111,
+      "section": "وضع نقط على مستقيم",
+      "number": 19,
+      "adaptedFrom": "ex-4am-inshaat-talis-l4-001"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ضع نقطتين متمايزتين $M$ و $N$ . نبحث عن النقطة $P$ من المستقيم $(MN)$ التي لا تنتمي إلى $[MN]$ وتحقّق $\\dfrac{PM}{PN} = \\dfrac{11}{7}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل تقع النقطة $P$ بعد $N$ (من جهة $N$ ) ؟",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-JIHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$PM$ أكبر من $PN$ أم أصغر منه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النقطة الخارجية تكون أقرب إلى النقطة التي يقابلها الطول الأصغر."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم: $PM > PN$ ، فـ $P$ أقرب إلى $N$ ، أي بعد $N$ .",
+        "incorrect": "لو كانت $P$ قبل $M$ لكان $PM < PN$ ، بينما $\\dfrac{PM}{PN} = \\dfrac{11}{7} > 1$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{PM}{PN} = \\dfrac{11}{7} > 1$ ومنه $PM > PN$ : $P$ أقرب إلى $N$ منها إلى $M$ .",
+          "$P$ خارج $[MN]$ ، فهي بعد $N$ ( $N$ بين $M$ و $P$ )."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أنشئ النقطة $P$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب خطوات الإنشاء مرقّمة (أو صوّر ورقتك)، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "موازيان مدرّجان بنفس الوحدة يشملان $M$ و $N$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لنقطة خارج القطعة: عيّن العلامتين في نفس الجهة من المستقيم $(MN)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$MF = 11$ و $NE = 7$ في نفس الجهة، و $(EF)$ يقطع $(MN)$ في $P$ بعد $N$ .",
+        "incorrect": "قارن إنشاءك بالحل النموذجي خطوة خطوة، ثم صحّح الخطوة التي تختلف."
+      },
+      "solution": {
+        "lines": [
+          "1) نرسم مستقيمين متوازيين $(d_1)$ و $(d_2)$ يشملان $M$ و $N$ على الترتيب.",
+          "2) بنفس فتحة المدور نعيّن على $(d_1)$ النقطة $F$ حيث $MF = 11$ وحدات، وعلى $(d_2)$ النقطة $E$ حيث $NE = 7$ وحدات، في نفس الجهة من المستقيم $(MN)$ .",
+          "3) المستقيم $(EF)$ يقطع المستقيم $(MN)$ خارج $[MN]$ في $P$ .",
+          "التبرير: $(MF) \\parallel (NE)$ ، فحسب خاصية طالس في المثلثين $PMF$ و $PNE$ : $\\dfrac{PM}{PN} = \\dfrac{MF}{NE} = \\dfrac{11}{7}$ ."
+        ]
+      },
+      "timeSeconds": 420
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب النسبة $\\dfrac{MP}{MN}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "2,75",
+      "misconceptionSignatures": [
+        {
+          "value": "11/18",
+          "id": "MISC-TALIS-JIHA"
+        },
+        {
+          "value": "11/7",
+          "id": "MISC-TALIS-NISBA-JUZ-KULL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$N$ بين $M$ و $P$ : $MN = PM - PN$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان $PM = 11u$ و $PN = 7u$ ، فكم يساوي $MN$ ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$MN = 11u - 7u = 4u$ ، فـ $\\dfrac{MP}{MN} = \\dfrac{11}{4}$ .",
+        "incorrect": "$P$ خارج $[MN]$ : $MN$ هو الفرق بين $PM$ و $PN$ ."
+      },
+      "solution": {
+        "lines": [
+          "$PM = 11u$ و $PN = 7u$ و $N \\in [MP]$ ومنه $MN = PM - PN = 4u$",
+          "$\\dfrac{MP}{MN} = \\dfrac{11u}{4u}$"
+        ],
+        "result": "\\dfrac{MP}{MN} = \\dfrac{11}{4}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "إذا كان $MN = 8\\,\\mathrm{cm}$ ، احسب الطول $NP$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "value": "22",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $MP$ أولا ثم استعمل موقع $N$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$MP = \\dfrac{11}{4} \\times 8 = 22$ ومنه $NP = 22 - 8 = 14\\,\\mathrm{cm}$ (و $\\dfrac{22}{14} = \\dfrac{11}{7}$ ).",
+        "incorrect": "$N$ بين $M$ و $P$ : $NP = MP - MN$ ."
+      },
+      "solution": {
+        "lines": [
+          "$MP = \\dfrac{11}{4}MN = \\dfrac{11}{4} \\times 8 = 22$",
+          "$NP = MP - MN = 22 - 8$"
+        ],
+        "result": "NP = 14\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,357 @@
+{
+  "id": "ex-2am-muqarana-nisbiya-l5-006",
+  "lessonCode": "muqarana-nisbiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — قرى تحت مستوى البحر",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "ارتفاعات",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "ارتفاعات خمس قرى بالنسبة إلى مستوى سطح البحر (الصفر): الواحة $-3{,}2$ m ، السبخة $-3{,}02$ m ، الهضبة $12{,}5$ m ، الساحل $0$ m ، المنخفض $-3{,}25$ m. يتعاون سكّان القرى على بناء سدّ لحماية الجميع.\nالجزء الأول: ترتيب القرى.\nالجزء الثاني: ارتفاع السدّ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "رتّب القرى حسب ارتفاعها ترتيبًا تنازليًّا: اختر السلسلة الصحيحة.",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$12{,}5 > 0 > -3{,}02 > -3{,}2 > -3{,}25$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$12{,}5 > 0 > -3{,}25 > -3{,}2 > -3{,}02$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-BDG"
+        },
+        {
+          "id": "C",
+          "content": "$-3{,}25 > -3{,}2 > -3{,}02 > 0 > 12{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-OD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بفرز الأعداد حسب إشاراتها: السالبة، ثم الصفر، ثم الموجبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب الأعداد السالبة فيما بينها حسب مسافاتها إلى الصفر: الأكبر مسافة هو الأصغر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب السلسلة كاملة بالرمز نفسه، ثم تحقّق من كل زوج متجاور."
+        }
+      ],
+      "feedback": {
+        "correct": "$12{,}5 > 0 > -3{,}02 > -3{,}2 > -3{,}25$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "السالبة: $3{,}02 < 3{,}20 < 3{,}25$ ، فـ $-3{,}02 > -3{,}2 > -3{,}25$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما ارتفاع أخفض قرية؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "-3,25",
+      "misconceptionSignatures": [
+        {
+          "value": "-3,02",
+          "id": "MISC-MUQARANA-NISBIYA-BDG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج: أيّهما أبعد عن الصفر؟ وفي أيّ جهة منه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددان سالبان: الأصغر هو الذي له أكبر مسافة إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن المسافتين إلى الصفر (العددين دون إشارتيهما) ثم اعكس الحكم لأن العددين سالبان."
+        }
+      ],
+      "feedback": {
+        "correct": "الأخفض هي $-3{,}25$ (المنخفض).",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$3{,}25 > 3{,}20 > 3{,}02$",
+          "الأخفض $-3{,}25$"
+        ],
+        "result": "-3{,}25"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "كم قرية ارتفاعها أصغر من الصفر؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-MUQARANA-NISBIYA-ZS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارتي العددين قبل أي شيء آخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد السالب أصغر من الصفر، والصفر أصغر من كل عدد موجب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عند اختلاف الإشارتين لا حاجة إلى مقارنة المسافتين إلى الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "ثلاث قرى: الواحة والسبخة والمنخفض.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$-3{,}2 < 0$ ، $-3{,}02 < 0$ ، $-3{,}25 < 0$",
+          "الساحل عند $0$ لا يُحسب",
+          "ثلاث قرى"
+        ],
+        "result": "3"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "يحمي السدّ القرى التي ارتفاعها أكبر تمامًا من $-3{,}1$ m . كم قرية غير محمية؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-MUQARANA-NISBIYA-BDG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج: أيّهما أبعد عن الصفر؟ وفي أيّ جهة منه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددان سالبان: الأصغر هو الذي له أكبر مسافة إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن المسافتين إلى الصفر (العددين دون إشارتيهما) ثم اعكس الحكم لأن العددين سالبان."
+        }
+      ],
+      "feedback": {
+        "correct": "الواحة والمنخفض فقط أصغر تمامًا من $-3{,}1$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$-3{,}2 < -3{,}1$ و $-3{,}25 < -3{,}1$",
+          "$-3{,}02 > -3{,}1$",
+          "قريتان"
+        ],
+        "result": "2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل قرية السبخة ($-3{,}02$ m) محمية؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لأن $-3{,}02 < -3{,}1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-BDG"
+        },
+        {
+          "id": "B",
+          "content": "نعم، لأن $-3{,}02 > -3{,}1$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لا، لأن $-3{,}02 = -3{,}1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-DAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارجع إلى القيم التي رتّبتها في الأسئلة السابقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين المعنيّين قبل أن تقرّر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القرار الصحيح يُبنى على مقارنة، لا على تخمين."
+        }
+      ],
+      "feedback": {
+        "correct": "$3{,}02 < 3{,}10$ والعددان سالبان، فـ $-3{,}02 > -3{,}1$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$3{,}02 < 3{,}10$ والعددان سالبان",
+          "$-3{,}02 > -3{,}1$ ، فهي محمية"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ج",
+      "statement": "برّر أن قرية الواحة ($-3{,}2$ m) غير محمية.",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارجع إلى القيم التي رتّبتها في الأسئلة السابقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين المعنيّين قبل أن تقرّر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القرار الصحيح يُبنى على مقارنة، لا على تخمين."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "شرط الحماية: الارتفاع أكبر تمامًا من $-3{,}1$",
+          "$3{,}2 > 3{,}1$ والعددان سالبان، فـ $-3{,}2 < -3{,}1$",
+          "إذن الواحة غير محمية"
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

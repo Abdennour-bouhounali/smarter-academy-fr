@@ -1,0 +1,191 @@
+{
+  "id": "ex-3am-amaliyat-natiqa-l4-010",
+  "lessonCode": "amaliyat-natiqa",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — عدد طبيعي بقوى",
+    "estimatedMinutes": 11,
+    "tags": [
+      "العمليات على الأعداد الناطقة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن $M = (-2)^{3} \\times \\left( -\\dfrac{1}{4} \\right) + \\left( -\\dfrac{1}{3} \\right)^{2} \\times 9$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أنّ العدد $M = \\left(-2\\right)^{3} \\times \\left(-\\dfrac{1}{4}\\right) + \\left(-\\dfrac{1}{3}\\right)^{2} \\times 9$ عدد طبيعي .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "timeSeconds": 180,
+      "answerFormat": "اكتب برهانك هنا، ثمّ اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اذكر ما تريد إثباته بالضبط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب العبارة خطوة خطوة مع اتّباع الأولويّة."
+        }
+      ],
+      "feedback": {
+        "correct": "تطابق برهانك مع الحل النموذجي .",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثمّ قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "$\\left(-2\\right)^{3} = -8$ (أسّ فردي وأساس سالب، فالناتج سالب) .",
+          "العاملان سالبان: الجداء موجب.",
+          "$-8 \\times \\left(-\\dfrac{1}{4}\\right) = \\dfrac{8 \\times 1}{4} = \\dfrac{8}{4} = 2$ .",
+          "$\\left(-\\dfrac{1}{3}\\right)^{2} = \\dfrac{1}{9}$ (أسّ زوجي وأساس سالب، فالناتج موجب) .",
+          "العاملان موجبان: الجداء موجب.",
+          "$\\dfrac{1}{9} \\times 9 = \\dfrac{1 \\times 9}{9} = \\dfrac{9}{9} = 1$ .",
+          "العددان $2$ و $1$ موجبان، فمجموعهما موجب.",
+          "$2 + 1 = \\dfrac{2 + 1}{1} = 3$ .",
+          "إذن $M = 3$ ، وهو عدد طبيعي لأنّ مقامه يساوي الواحد وإشارته موجبة."
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب $N = \\left(-\\dfrac{5}{6} + \\dfrac{1}{3}\\right) \\times \\left(-\\dfrac{8}{3}\\right)$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "4/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "-4/3",
+          "id": "MISC-AMAL-PRODSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليات الموجودة؟ وهل توجد أقواس أو كسر مركّب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح، ومع كلّ عملية نحدّد الإشارة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز عملية واحدة في كلّ سطر، ثمّ اكتب النتيجة غير القابلة للاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "$N = \\dfrac{4}{3}$ .",
+        "incorrect": "احترم الأولويّة: الأقواس ثمّ الضرب والقسمة ثمّ الجمع والطرح، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "العددان $-\\dfrac{5}{6}$ و $\\dfrac{1}{3}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $-\\dfrac{5}{6}$ ، فإشارة المجموع سالبة.",
+          "$-\\dfrac{5}{6} + \\dfrac{1}{3} = -\\dfrac{5}{6} + \\dfrac{2}{6} = \\dfrac{-5 + 2}{6} = -\\dfrac{1}{2}$ .",
+          "العاملان سالبان: الجداء موجب.",
+          "$-\\dfrac{1}{2} \\times \\left(-\\dfrac{8}{3}\\right) = \\dfrac{1 \\times 8}{2 \\times 3} = \\dfrac{8}{6} = \\dfrac{4}{3}$ ."
+        ],
+        "result": "N = \\dfrac{4}{3}"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل العدد $N = \\left(-\\dfrac{5}{6} + \\dfrac{1}{3}\\right) \\times \\left(-\\dfrac{8}{3}\\right)$ عدد صحيح نسبي ؟",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "timeSeconds": 90,
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AMAL-SUMSIGN"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب العبارة بخطوات قصيرة قبل أن تحكم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب النتيجة على أبسط شكل ثمّ انظر إلى مقامها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد ناطق هو عدد صحيح نسبي إذا كان مقام كتابته المختزلة يساوي الواحد."
+        }
+      ],
+      "feedback": {
+        "correct": "الإجابة الصحيحة: لا .",
+        "incorrect": "أنهِ الحساب واختزل ثمّ انظر إلى المقام، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "العددان $-\\dfrac{5}{6}$ و $\\dfrac{1}{3}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $-\\dfrac{5}{6}$ ، فإشارة المجموع سالبة.",
+          "$-\\dfrac{5}{6} + \\dfrac{1}{3} = -\\dfrac{5}{6} + \\dfrac{2}{6} = \\dfrac{-5 + 2}{6} = -\\dfrac{1}{2}$ .",
+          "العاملان سالبان: الجداء موجب.",
+          "$-\\dfrac{1}{2} \\times \\left(-\\dfrac{8}{3}\\right) = \\dfrac{1 \\times 8}{2 \\times 3} = \\dfrac{8}{6} = \\dfrac{4}{3}$ .",
+          "$N = \\dfrac{4}{3}$ ، وهذا العدد لا يمثّل عددًا صحيح نسبي."
+        ],
+        "result": "N = \\dfrac{4}{3}"
+      }
+    }
+  ]
+}

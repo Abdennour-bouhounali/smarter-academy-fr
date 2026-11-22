@@ -1,0 +1,446 @@
+{
+  "id": "ex-4am-mafhum-taalufiya-l5-009",
+  "lessonCode": "mafhum-taalufiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2014 — صيغتا المخيم الصيفي بتيقزيرت",
+    "estimatedMinutes": 25,
+    "tags": [
+      "وضعية إدماجية",
+      "صيغتان",
+      "قراءة بيانية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mafhum-taalufiya_P1",
+      "modelledOn": "BEM 2014 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2014",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تنظّم جمعية تتعاون فيها العائلات مخيما صيفيا بتيقزيرت، وتقترح على المشاركين صيغتين:\n– الصيغة الأولى: 1500DA لليوم الواحد.\n– الصيغة الثانية: 1000DA لليوم الواحد، مع حقوق تسجيل قدرها 3000DA .\nنسمّي $x$ عدد أيام المخيم، و $f(x)$ ، $g(x)$ المبلغين المدفوعين بـ DA حسب الصيغتين الأولى والثانية على الترتيب. المستقيمان $(d_1)$ و $(d_2)$ في الشكل هما التمثيلان البيانيان للدالتين $f$ و $g$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "F": [
+          10,
+          15
+        ],
+        "G": [
+          0,
+          3
+        ],
+        "K": [
+          10,
+          13
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "F",
+          "label": "(d₁)",
+          "tone": "indigo"
+        },
+        {
+          "from": "G",
+          "to": "K",
+          "label": "(d₂)",
+          "tone": "rose"
+        }
+      ],
+      "grid": true,
+      "axes": {
+        "every": 2
+      },
+      "labels": {
+        "O": "sw"
+      },
+      "hidden": [
+        "F",
+        "G",
+        "K"
+      ],
+      "caption": "على محور الفواصل: الوحدة تمثل يوما واحدا. على محور التراتيب: الوحدة تمثل 1000DA .",
+      "ariaLabel": "معلم متعامد على ورقة مرصوفة فيه مستقيمان: (d₁) يشمل المبدأ O ، و (d₂) يقطع محور التراتيب في الترتيب 3 ، ويتقاطعان في النقطة ذات الإحداثيين (6 ; 9)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أيّ المستقيمين $(d_1)$ و $(d_2)$ هو التمثيل البياني للدالة $g$ ؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(d_1)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KHATTIYA-AFFINE"
+        },
+        {
+          "id": "B",
+          "content": "$(d_2)$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $g(0)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أيّ المستقيمين لا يشمل المبدأ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$g(0) = 3000$ : المستقيم يقطع محور التراتيب في الترتيب 3.",
+        "incorrect": "تمثيل دالة خطية يشمل المبدأ."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 1500x$ دالة خطية: تمثيلها يشمل المبدأ، فهو $(d_1)$ .",
+          "$g(0) = 3000$ : تمثيل $g$ يقطع محور التراتيب في النقطة $(0 ; 3)$ (بالوحدة 1000DA)، فهو $(d_2)$ ."
+        ],
+        "result": "(d_2)"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "بقراءة بيانية، أعط المبلغ حسب الصيغة الثانية لمخيم مدته 4 أيام.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "7000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انطلق من الفاصلة 4 إلى المستقيم $(d_2)$ ، ثم اقرأ الترتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أن الوحدة على محور التراتيب تمثل 1000DA ."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة من $(d_2)$ ذات الفاصلة 4 ترتيبها 7، أي 7000DA .",
+        "incorrect": "اقرأ الترتيب ثم اضربه في 1000."
+      },
+      "solution": {
+        "lines": [
+          "النقطة من $(d_2)$ التي فاصلتها 4 ترتيبها 7 .",
+          "المبلغ هو $7 \\times 1000 = 7000$ أي 7000DA ."
+        ],
+        "result": "7000DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "عبّر عن $g(x)$ بدلالة $x$ على الشكل $g(x) = ax + b$ .",
+      "statement": "أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "1000",
+      "misconceptionSignatures": [
+        {
+          "value": "3000",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المبلغ الذي يُدفع عن كل يوم في الصيغة الثانية؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 1000$ : هو معامل $x$ .",
+        "incorrect": "المعامل $a$ هو العدد المضروب في $x$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 1500x$ و $g(x) = 1000x + 3000$ .",
+          "$g(x) = 1000x + 3000$ من الشكل $ax + b$ حيث: $a = 1000$ و $b = 3000$ ."
+        ],
+        "result": "a = 1000"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "3000",
+      "misconceptionSignatures": [
+        {
+          "value": "1000",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المبلغ الذي يُدفع مرة واحدة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$b = 3000$ ، إذن $g(x) = 1000x + 3000$ .",
+        "incorrect": "$b$ هو الحدّ الذي لا يحتوي على $x$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 1500x$ و $g(x) = 1000x + 3000$ .",
+          "$g(x) = 1000x + 3000$ من الشكل $ax + b$ حيث: $a = 1000$ و $b = 3000$ ."
+        ],
+        "result": "b = 3000"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب المبلغ حسب الصيغة الثانية لمخيم مدته 12 يوما.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "15000",
+      "misconceptionSignatures": [
+        {
+          "value": "12000",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $g(12)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$g(12) = 1000 \\times 12 + 3000 = 15000$ .",
+        "incorrect": "اضرب في 1000 ثم أضف حقوق التسجيل."
+      },
+      "solution": {
+        "lines": [
+          "$g(12) = 1000 \\times 12 + 3000$",
+          "$g(12) = 12000 + 3000$",
+          "$g(12) = 15000$ أي $15000DA$ ."
+        ],
+        "result": "g(12) = 15000\\,DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ا",
+      "statement": "دفع مشارك 11000DA حسب الصيغة الثانية. كم يوما قضى في المخيم؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الأيام",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "11",
+          "id": "MISC-TAALUFI-SABIQ-QISMA"
+        },
+        {
+          "value": "-2989",
+          "id": "MISC-TAALUFI-SABIQ-TARTIB"
+        },
+        {
+          "value": "11003000",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة $g(x) = 11000$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح حقوق التسجيل ثم اقسم على ثمن اليوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$1000x + 3000 = 11000$ تعطي $x = 8$ .",
+        "incorrect": "اطرح حقوق التسجيل أولا، ثم اقسم على 1000."
+      },
+      "solution": {
+        "lines": [
+          "$g(x) = 11000$ معناه $1000x + 3000 = 11000$",
+          "$1000x = 11000 - 3000$",
+          "$1000x = 8000$",
+          "$x = \\dfrac{8000}{1000}$",
+          "$x = 8$"
+        ],
+        "result": "x = 8"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "sub": "ب",
+      "statement": "بقراءة بيانية، عيّن عدد الأيام الذي يتساوى من أجله المبلغان.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الأيام",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ فاصلة نقطة تقاطع المستقيمين $(d_1)$ و $(d_2)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "المستقيمان يتقاطعان في النقطة $(6 ; 9)$ .",
+        "incorrect": "ابحث عن النقطة المشتركة بين المستقيمين واقرأ فاصلتها."
+      },
+      "solution": {
+        "lines": [
+          "المستقيمان $(d_1)$ و $(d_2)$ يتقاطعان في النقطة التي فاصلتها 6 وترتيبها 9.",
+          "من أجل 6 أيام يتساوى المبلغان: $f(6) = g(6) = 9000$ أي 9000DA ."
+        ],
+        "result": "6"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q8",
+      "step": "04",
+      "statement": "☜ يريد سفيان المشاركة في المخيم 9 أيام. ما هي الصيغة الأنسب له؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الصيغة الأولى",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TANASUB-MABLAGH-THABIT"
+        },
+        {
+          "id": "B",
+          "content": "الصيغة الثانية",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المبلغين من أجل 9 أيام، أو قارن المستقيمين بعد نقطة التقاطع."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(9) = 13500$ و $g(9) = 12000$ .",
+        "incorrect": "احسب $f(9)$ و $g(9)$ ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "$f(9) = 1500 \\times 9 = 13500$",
+          "$g(9) = 1000 \\times 9 + 3000 = 12000$",
+          "$12000 < 13500$ : الصيغة الثانية هي الأنسب (أكثر من 6 أيام، $(d_2)$ تحت $(d_1)$ )."
+        ],
+        "result": "الصيغة الثانية"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

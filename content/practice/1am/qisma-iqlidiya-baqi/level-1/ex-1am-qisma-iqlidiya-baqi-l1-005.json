@@ -1,0 +1,138 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l1-005",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 1,
+  "metadata": {
+    "title": "أيّ باقٍ صحيح؟",
+    "estimatedMinutes": 3,
+    "tags": [
+      "شرط الباقي",
+      "قراءة المساواة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "self-7",
+      "page": 47,
+      "section": "أقوّم تعلّماتي",
+      "number": 7
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعتبر المساواة $172 = 16 \\times 10 + 12$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "تحقّق: هل هذه المساواة صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الجداء أولًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أضف العدد 12 إلى الجداء وقارن بالطرف الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "$16 \\times 10 = 160$ و $160 + 12 = 172$.",
+        "incorrect": "احسب $16 \\times 10$ ثم أضف 12."
+      },
+      "solution": {
+        "lines": [
+          "$16 \\times 10 = 160$",
+          "$160 + 12 = 172$ ، المساواة صحيحة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اختر الجملة الصحيحة.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "باقي القسمة الإقليدية للعدد 172 على 16 هو 12",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "باقي القسمة الإقليدية للعدد 172 على 12 هو 10",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-QIRAA"
+        },
+        {
+          "id": "C",
+          "content": "باقي القسمة الإقليدية للعدد 172 على 10 هو 12",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في القسمة الإقليدية يجب أن يكون الباقي أصغر من المقسوم عليه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن 12 بكل من 10 و 16."
+        }
+      ],
+      "feedback": {
+        "correct": "$12 < 16$: المساواة تعبّر عن القسمة على 16؛ و $12 > 10$ فهي لا تعبّر عن القسمة على 10.",
+        "incorrect": "المساواة صحيحة، لكنها لا تعبّر عن قسمة إقليدية إلا إذا كان الباقي أصغر من المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$172 = 16 \\times 10 + 12$ و $12 < 16$: باقي قسمة 172 على 16 هو 12.",
+          "$12 > 10$: ليست قسمة 172 على 10 (فيها $172 = 10 \\times 17 + 2$).",
+          "و $172 = 12 \\times 14 + 4$: باقي قسمة 172 على 12 هو 4."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

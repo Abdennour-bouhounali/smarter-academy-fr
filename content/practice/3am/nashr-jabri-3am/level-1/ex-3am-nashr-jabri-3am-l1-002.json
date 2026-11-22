@@ -1,0 +1,190 @@
+{
+  "id": "ex-3am-nashr-jabri-3am-l1-002",
+  "lessonCode": "nashr-jabri-3am",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — نشر والتحقق بقيمة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "نشر",
+      "تحقق"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-81",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $D$ حيث:",
+    "formulas": [
+      "D = (3x - 2)(5x + 4)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "انشر ثم بسّط العبارة $D$ . الشكل الصحيح هو:",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$D = 15x^2 + 2x - 8$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$D = 15x^2 + 2x + 8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-NEG-NEG"
+        },
+        {
+          "id": "C",
+          "content": "$D = 15x^2 + 22x - 8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-SIGN-NEG"
+        },
+        {
+          "id": "D",
+          "content": "$D = 15x^2 - 8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-PRODUCT-MISSING"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني: أربعة جداءات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات الأربعة واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء الأصلي وفي النتيجة: يجب أن تجد العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$D = 15x^2 + 2x - 8$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$D = (3x - 2)(5x + 4)$",
+          "$D = 3x \\times 5x + 3x \\times 4 - 2 \\times 5x - 2 \\times 4$",
+          "$D = 15x^2 + 2x - 8$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب قيمة $D = (3x-2)(5x+4)$ من أجل $x = -2$ .",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "48",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى واحترم أولويات العمليات والإشارات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القوسين أولًا، ثم الجداءات، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يمكنك التعويض في الشكل المبسّط، ثم تحقّق بالتعويض في الشكل الأصلي."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل $x = -2$ القيمة هي $48$ .",
+        "incorrect": "عوّض $x$ بالعدد المعطى واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$D = (3 \\times (-2) - 2)(5 \\times (-2) + 4)$",
+          "$D = (-8) \\times (-6) = 48$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب قيمة الشكل المنشور $15x^2 + 2x - 8$ من أجل $x = -2$ . ماذا تلاحظ؟",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "48",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى واحترم أولويات العمليات والإشارات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القوسين أولًا، ثم الجداءات، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يمكنك التعويض في الشكل المبسّط، ثم تحقّق بالتعويض في الشكل الأصلي."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل $x = -2$ القيمة هي $48$ .",
+        "incorrect": "عوّض $x$ بالعدد المعطى واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$15 \\times (-2)^2 + 2 \\times (-2) - 8 = 60 - 4 - 8 = 48$",
+          "نجد القيمة نفسها: هذا يطمئننا على صحة النشر."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

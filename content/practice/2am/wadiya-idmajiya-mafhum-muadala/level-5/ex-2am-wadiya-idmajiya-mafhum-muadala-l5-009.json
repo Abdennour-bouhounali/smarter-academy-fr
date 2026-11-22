@@ -1,0 +1,245 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-mafhum-muadala-l5-009",
+  "lessonCode": "wadiya-idmajiya-mafhum-muadala",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — بيض مزرعة",
+    "estimatedMinutes": 13,
+    "tags": [
+      "جزء ثابت",
+      "معادلة بعمليّتين",
+      "قيمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تضع مزرعة البيض في صوانٍ ، في كلّ صينيّة $30$ بيضة ، وتبقى $12$ بيضة خارج الصوانّي . عدد الصوانّي $x$ ، وعدد البيض $30x+12$ . ثمن البيضة الواحدة $8$ DA . الجزء الأوّل : عدد البيض . الجزء الثاني : الثمن ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "كم بيضة في $x = 9$ صوانٍ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "282",
+      "misconceptionSignatures": [
+        {
+          "value": "270",
+          "id": "MISC-SYN-MUAD2-FIXED"
+        },
+        {
+          "value": "378",
+          "id": "MISC-SYN-MUAD2-ADDCOEF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بقيمته المعلومة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات : الضرب والقسمة قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة."
+        }
+      ],
+      "feedback": {
+        "correct": "النتيجة $282$ .",
+        "incorrect": "عوّض بالقيم المعلومة واحسب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$30 \\times 9+12 = 282$ ."
+        ],
+        "result": "282"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عدد البيض كلّه $372$ . كم صينيّة عبّأت المزرعة ؟ حلّ المعادلة : $30x+12 = 372$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "0.4",
+          "id": "MISC-MAJHUL-UNDOFIRST"
+        },
+        {
+          "value": "360",
+          "id": "MISC-MAJHUL-SUBFORM"
+        },
+        {
+          "value": "12.4",
+          "id": "MISC-SYN-MUAD2-FIXED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في المعادلة ما يُفعل بالمجهول : ضرب أو قسمة أو جمع أو طرح، وما هي آخر عملية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ألغِ آخر عملية أُجريت على المجهول أوّلًا، ثمّ ألغِ ما بقي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من حلّك : عوّض المجهول بقيمته وأنجز العملية، فإن وجدت الطرف الآخر فالحلّ صحيح."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 12$ .",
+        "incorrect": "ابحث عن العدد الذي يجعل المساواة صحيحة بالعملية العكسية، ثمّ تحقّق منه بإنجاز العملية."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية هي جمع $12$ : $30x = 372-12 = 360$ .",
+          "$x = 360 \\div 30 = 12$ .",
+          "التحقّق : $30 \\times 12+12 = 372$ ."
+        ],
+        "result": "12"
+      },
+      "work": "optional",
+      "timeSeconds": 85
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "الجزء الثاني : بكم تبيع المزرعة $372$ بيضة بالدينار ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "2976",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بقيمته المعلومة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات : الضرب والقسمة قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة."
+        }
+      ],
+      "feedback": {
+        "correct": "النتيجة $2976$ .",
+        "incorrect": "عوّض بالقيم المعلومة واحسب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$372 \\times 8 = 2976$ ."
+        ],
+        "result": "2976"
+      },
+      "counted": false,
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "هل يبلغ الثمن $3000$ DA على الأقلّ ، أي هل $2976 \\ge 3000$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "لا .",
+        "incorrect": "عوّض الحرف في الطرفين، احسب كلّ طرف ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل : $2976 = 2976$ .",
+          "الطرف الثاني : $3000 = 3000$ .",
+          "$2976 \\ge 3000$ : العلاقة خاطئة ."
+        ]
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بقيمته المعطاة في الطرفين معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة ثمّ قارن الناتجين بالرمز المكتوب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الرمز « أصغر أو يساوي » يقبل التساوي، والرمز « أصغر تمامًا » لا يقبله."
+        }
+      ],
+      "counted": false,
+      "timeSeconds": 70
+    }
+  ]
+}

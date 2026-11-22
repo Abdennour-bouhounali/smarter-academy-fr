@@ -1,0 +1,210 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l4-005",
+  "lessonCode": "mana-jam-tarh",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — حفل النجاح",
+    "estimatedMinutes": 10,
+    "tags": [
+      "مجموع",
+      "باقٍ"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 1,
+      "file": "1am-s1-93",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الرابع",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "أقامت عائلة نور حفلًا صغيرًا بمناسبة نجاحها، ودعت إليه جيرانها، فاشترت: مناديل بـ 420,6 دج، وكؤوسًا بـ 1350,4 دج، ومشروبات بـ 6875,25 دج، وحلويات بـ 3260,75 دج. ثم اشترت 100 ملعقة صغيرة ثمن الواحدة 4,5 دج. دفع الأب 15000 دج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب ثمن المناديل والكؤوس والمشروبات والحلويات.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "11907",
+      "misconceptionSignatures": [
+        {
+          "value": "8646.25",
+          "id": "MISC-JAMTARH-JUZ-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مجموع أربعة حدود."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع حدّين حدّين بعد محاذاة الفواصل."
+        }
+      ],
+      "feedback": {
+        "correct": "$420{,}6 + 1350{,}4 + 6875{,}25 + 3260{,}75 = 11907$ دج.",
+        "incorrect": "اجمع الأثمان الأربعة كلها."
+      },
+      "solution": {
+        "lines": [
+          "$420{,}6 + 1350{,}4 = 1771$",
+          "$6875{,}25 + 3260{,}75 = 10136$",
+          "$1771 + 10136 = 11907$"
+        ],
+        "result": "11907 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب ثمن الملاعق.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "450",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الملاعق × ثمن الملعقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في 100 يزيح الفاصلة منزلتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$100 \\times 4{,}5 = 450$ دج.",
+        "incorrect": "ثمن الملاعق = 100 × ثمن الملعقة الواحدة."
+      },
+      "solution": {
+        "lines": [
+          "$4{,}5 \\times 100 = 450$"
+        ],
+        "result": "450 \\text{ DA}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب المبلغ الكلي المصروف في هذا الحفل.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "12357",
+      "misconceptionSignatures": [
+        {
+          "value": "11907",
+          "id": "MISC-JAMTARH-JUZ-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ الكلي يضمّ كل المشتريات، ومنها الملاعق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب ثمن الملاعق ثم اجمعه مع باقي الأثمان."
+        }
+      ],
+      "feedback": {
+        "correct": "$11907 + 450 = 12357$ دج.",
+        "incorrect": "لا تنسَ ثمن الملاعق."
+      },
+      "solution": {
+        "lines": [
+          "$11907 + 450 = 12357$"
+        ],
+        "result": "12357 \\text{ DA}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "ما المبلغ المتبقي مع الأب؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "2643",
+      "misconceptionSignatures": [
+        {
+          "value": "27357",
+          "id": "MISC-JAMTARH-KULL-JUZ"
+        },
+        {
+          "value": "3093",
+          "id": "MISC-JAMTARH-JUZ-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما دفعه الأب هو الكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المتبقي = المبلغ المدفوع − المبلغ الكلي المصروف."
+        }
+      ],
+      "feedback": {
+        "correct": "$15000 - 12357 = 2643$ دج.",
+        "incorrect": "المتبقي جزء من المبلغ الذي دفعه الأب: اطرح المبلغ الكلي المصروف."
+      },
+      "solution": {
+        "lines": [
+          "$15000 - 12357 = 2643$"
+        ],
+        "result": "2643 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

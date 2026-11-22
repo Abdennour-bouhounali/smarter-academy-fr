@@ -1,0 +1,78 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l5-010",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 5,
+  "metadata": {
+    "title": "وضعية — شعاعان بمجهولين",
+    "estimatedMinutes": 3,
+    "tags": [
+      "تساوي شعاعين",
+      "معادلات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hisab-murakkibatay_P2",
+      "modelledOn": "know-equal"
+    }
+  },
+  "statement": {
+    "content": "$\\vec{u}\\begin{pmatrix} a + 1 \\\\ 2b \\end{pmatrix}$ و $\\vec{v}\\begin{pmatrix} 3 \\\\ -4 \\end{pmatrix}$ شعاعان، حيث a و b عددان."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الثنائية $(a\\,;\\,b)$ التي تجعل $\\vec{u} = \\vec{v}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "point",
+      "answerFormat": "الثنائية (a ; b) — عددان صحيحان أو كسران",
+      "expectedAnswer": {
+        "x": "2",
+        "y": "-2"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "4",
+            "y": "-8"
+          },
+          "id": "MISC-MAALAM-MAJHUL-AMALIYA"
+        },
+        {
+          "value": {
+            "x": "3",
+            "y": "-4"
+          },
+          "id": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "شعاعان متساويان: المركبة الأولى = الأولى، والثانية = الثانية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$a + 1 = 3$ و $2b = -4$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ كل معادلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$a + 1 = 3$ ومنه $a = 2$ ، و $2b = -4$ ومنه $b = -2$ .",
+        "incorrect": "ساو المركبتين، ثم حلّ المعادلتين."
+      }
+    }
+  ]
+}

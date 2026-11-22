@@ -1,0 +1,596 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   MODE CLASSE — « وضع القسم » (lessons/common/classroom/)
+
+   Tout est préfixé `sa-classroom-` : rien ici ne s'appelle .fullscreen,
+   .toolbar ou .container. La racine est un simple bloc au repos ; active,
+   elle couvre l'écran. Le MÊME rendu sert au plein écran natif (la racine
+   est l'élément :fullscreen, dans la couche supérieure du navigateur) et au
+   repli (position fixe, z-index 70 : au-dessus du dialogue de signalement
+   (60), au-dessous du fantôme de glisser (80) qui doit rester visible).
+
+   Le contenu reçoit trois variables, publiées par usePresentationFit :
+     --sa-classroom-scale  échelle effective (0.55 … 1.25)
+     --sa-classroom-w      largeur offerte au contenu, en px
+     --sa-classroom-h      hauteur offerte au contenu, en px
+   Un contenu qui les ignore est simplement montré tel quel, centré.
+   ───────────────────────────────────────────────────────────────────────── */
+
+.sa-classroom-root {
+  position: relative;
+}
+
+.sa-classroom-root:focus {
+  outline: none;
+}
+
+.sa-classroom-entry-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
+.sa-classroom-root--active {
+  position: fixed;
+  inset: 0;
+  /* Une marge héritée d'un parent (`space-y-*` de Tailwind pose un
+     margin-top sur chaque enfant) décalerait la boîte fixe vers le bas :
+     inset 0 + margin-top 32px = 32px de page visibles au-dessus. */
+  margin: 0 !important;
+  z-index: 70;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  /* Le fond du mode classe : la teinte indigo des manipulations, plus claire. */
+  background: linear-gradient(180deg, #EEF2FF 0%, #F6F8FF 100%);
+  color: #0F172A;
+  padding:
+    max(8px, env(safe-area-inset-top))
+    max(12px, env(safe-area-inset-right))
+    max(8px, env(safe-area-inset-bottom))
+    max(12px, env(safe-area-inset-left));
+  overflow: hidden;
+  overscroll-behavior: contain;
+}
+
+/* REPLI (pas de plein écran natif) : la racine fixe ne peut pas sortir du
+   contexte d'empilement de ses ancêtres (le <main> des coquilles est
+   `relative z-10`, et son pied de page voisin aussi) : tout ce qui est posé
+   hors de la présentation — barre de navigation, pied
+   de page, carte, cahier — pourrait la recouvrir et intercepter les clics.
+   On cache donc TOUT ce qui n'est ni la présentation, ni dedans, ni un de
+   ses ancêtres — exactement ce que fait la couche supérieure du plein écran
+   natif, qui ne montre que l'élément plein écran. Ce qui est porté DANS la
+   racine (fantôme de glisser) reste visible. */
+html[data-sa-classroom="fallback"] body *:not(.sa-classroom-root--active):not(.sa-classroom-root--active *):not(:has(.sa-classroom-root--active)) {
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* En plein écran natif la feuille de style du navigateur pose déjà
+   position/inset/taille ; on ne fait que garder notre fond. */
+.sa-classroom-root:fullscreen,
+.sa-classroom-root:-webkit-full-screen {
+  background: linear-gradient(180deg, #EEF2FF 0%, #F6F8FF 100%);
+}
+
+.sa-classroom-root::backdrop {
+  background: #EEF2FF;
+}
+
+/* La zone offerte au contenu : elle prend tout ce que les barres laissent,
+   ne déborde jamais de l'écran, et défile à l'intérieur SEULEMENT en dernier
+   recours (le moteur d'ajustement réduit d'abord l'échelle jusqu'au plancher). */
+.sa-classroom-root--active .sa-classroom-content {
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+/* La scène : sa hauteur NATURELLE est la mesure du moteur. `margin: auto 0`
+   la centre verticalement quand elle est plus petite que la zone. */
+.sa-classroom-root--active .sa-classroom-stage {
+  flex: 0 0 auto;
+  width: 100%;
+  margin: auto 0;
+  font-size: calc(1rem * var(--sa-classroom-scale, 1));
+}
+
+.sa-classroom-toolbar {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 48px;
+  padding: 2px 4px 4px;
+}
+
+/* La barre de navigation du bas : deux groupes, chacun « saut de محور » +
+   « pas d'unité ». Les sauts sont visuellement plus discrets que le pas —
+   c'est le pas qu'on fait le plus souvent. */
+.sa-classroom-nav {
+  flex: 0 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  /* `row-gap` serré : toute hauteur prise ici l'est sur la SCÈNE. */
+  gap: 2px 12px;
+  padding: 2px 4px 0;
+}
+
+/* La ligne de la SORTIE — sous « التالي », du même côté que lui. Elle prend
+   toute la largeur (flex-basis: 100%) pour passer sous les deux groupes de
+   navigation, et aligne son bouton sur le bord de fin : « خروج » tombe donc
+   exactement SOUS « التالي », pas au milieu de l'écran.
+   (Sous RTL, ce bord de fin est le bord physique GAUCHE — les deux boutons
+   partagent alors leur `x`, ce que verrouille le kit e2e.)
+
+   ELLE COÛTE DE LA HAUTEUR À LA SCÈNE. La barre est mesurée par le moteur
+   d'ajustement (usePresentationFit, `reservedRefs`) : tout ce qu'elle prend,
+   la manipulation présentée ne l'a plus, et une scène qui remplissait déjà
+   son cadre se met à déborder — la bibliothèque de « نشاط 1 » débordait de
+   25 px, échelle déjà au plancher (MIN_FIT_FACTOR, qu'on ne baisse pas :
+   en dessous, les objets de la manipulation ne se lisent plus au tableau).
+
+   « خروج » GARDE POURTANT sa ligne, et son blanc au-dessus : c'est là que
+   l'enseignant le cherche, sous le pas qu'il vient de faire. La hauteur
+   qu'il coûte est reprise sur le CHROME, jamais sur le dessin — marges des
+   deux barres resserrées ici, et rembourrage de l'atelier de manipulation
+   rendu à la scène (voir `[data-manipulation-workspace]` plus bas). À
+   768 px de haut — un vidéoprojecteur, un portable — la bibliothèque de
+   « نشاط 1 » retrouve ainsi sa place. Ne rien regonfler sans relancer
+   `e2e/lesson-kit/classroom.mjs`, qui mesure ce débordement. */
+
+/* UNE BARRE SANS AUCUN PAS (une manipulation ou un exercice présenté seul)
+   n'a plus rien à porter depuis que « خروج » est remonté dans la barre
+   d'outils : elle se réduit à rien plutôt que de voler à la scène une bande
+   qui ne sépare plus rien. `:has()` : la barre se reconnaît elle-même. */
+.sa-classroom-nav:not(:has([data-classroom-nav-unit])):not(:has([data-classroom-nav-module])) {
+  padding: 0;
+  margin-top: -6px;
+}
+
+.sa-classroom-nav__side {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.sa-classroom-nav__side--end {
+  justify-content: flex-end;
+}
+
+.sa-classroom-nav__module {
+  border-style: dashed;
+  color: #4338CA;
+}
+
+.sa-classroom-nav__label {
+  white-space: nowrap;
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+  .sa-classroom-root--active,
+  .sa-classroom-root--active * {
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* ── Une coquille imbriquée sous une session active : passe-plat ──────── */
+.sa-classroom-nested {
+  display: block;
+  min-width: 0;
+}
+
+/* L'ATELIER DE MANIPULATION présenté (ManipulationWorkspace) rend ses
+   marges à la SCÈNE. Sa bordure, son fond et ses onglets مبتدئ/متقدم restent
+   — on doit savoir quel niveau est affiché au tableau — mais le rembourrage
+   et les interlignes d'une page (p-4, space-y-3) sont du luxe sur un
+   vidéoprojecteur : ils y coûtent une quarantaine de pixels que le dessin
+   réclame. La manipulation calcule son budget de rayons sur la place
+   réellement offerte (DivisorExplorerBooks mesure le DOM), donc ce qu'on
+   rend ici va directement aux livres.
+
+   C'est la réserve où l'on puise quand le chrome de séance grandit : la
+   barre du bas porte désormais « خروج » sur sa propre ligne, et sans ces
+   pixels la bibliothèque de « نشاط 1 » débordait à 768 px de haut.
+
+   Dans TOUTES les portées : présentée seule, la manipulation n'a qu'une
+   barre courte (« خروج » et rien d'autre), mais cette barre lui coûte quand
+   même l'échelle — la bibliothèque à 16 rayons révélés tombait de 1 à 0,84,
+   et les boutons projetés cessaient d'être plus grands qu'en page. Rendre
+   le rembourrage la ramène au-dessus du seuil que vérifie
+   `manipulations.mjs` (« les tailles sont plus grandes »). */
+.sa-classroom-root--active [data-manipulation-workspace] {
+  padding: 0.5rem;
+}
+.sa-classroom-root--active [data-manipulation-workspace] > * + * {
+  margin-top: 0.375rem;
+}
+.sa-classroom-root--active [data-manipulation-workspace] > header > * + * {
+  margin-top: 0.25rem;
+}
+
+/* ── Le cadre de lecture des contenus de page (ClassroomFrame) ─────────
+   `zoom` = base × échelle : le contenu est ré-agencé à la nouvelle taille
+   (ce n'est pas un transform). Le moteur mesure la scène, parent du cadre. */
+.sa-classroom-frame:not(.sa-classroom-frame--active) {
+  display: contents;
+}
+
+.sa-classroom-frame--active {
+  width: 100%;
+  margin: 0 auto;
+  min-width: 0;
+}
+
+/* ── Un module présenté : une unité à la fois ─────────────────────────── */
+.sa-classroom-module {
+  width: 100%;
+}
+
+.sa-classroom-module__unit[hidden] {
+  display: none !important;
+}
+
+.sa-classroom-root--active .sa-classroom-module__unit {
+  width: 100%;
+}
+
+/* La mission (MissionBrief) en unité pleine : plus grande, aérée. */
+.sa-classroom-root--active .sa-classroom-module__unit--brief > div {
+  padding: 32px 36px;
+  border-radius: 28px;
+}
+.sa-classroom-root--active .sa-classroom-module__unit--brief h2 { font-size: 1.75rem; line-height: 1.35; }
+.sa-classroom-root--active .sa-classroom-module__unit--brief h2 + div { font-size: 1.125rem; line-height: 1.85; }
+
+/* Une étape (StepCard) en unité : bordure épaisse, titre lisible de loin. */
+.sa-classroom-root--active .sa-classroom-module__unit--step > section {
+  padding: 28px 32px;
+  border-width: 3px;
+  border-radius: 24px;
+}
+.sa-classroom-root--active .sa-classroom-module__unit--step > section > div:first-child h3 { font-size: 1.375rem; }
+.sa-classroom-root--active .sa-classroom-module__unit--step > section > div:first-child p { font-size: 1rem; }
+
+/* Le repère de position sur la barre d'outils. */
+.sa-classroom-position {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 2px solid #C7D2FE;
+  background: #fff;
+  color: #3730A3;
+  font-weight: 800;
+  font-size: 0.9375rem;
+  white-space: nowrap;
+}
+
+/* ── Le sommaire d'une leçon présentée ────────────────────────────────── */
+.sa-classroom-lesson-overview {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(0, 3fr) minmax(280px, 2fr);
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .sa-classroom-lesson-overview { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* ── La page d'un module présenté (ModuleLayout) ───────────────────────── */
+.sa-classroom-module-page { width: 100%; }
+.sa-classroom-module-main { width: 100%; }
+.sa-classroom-module-content { width: 100%; }
+
+/* ── Le bouton flottant « ⛶ عرض » (mode classe du module) ───────────────
+   La colonne, du bas vers le haut :
+
+     bottom: 1.5rem   « ⛶ عرض »        ← nous, au RAS DU COIN
+     bottom: 5.5rem   « 🧠 بطاقتي »     (KnowledgeMap, bottom-22)
+     bottom: 9.5rem   « 📓 كرّاسي »     (LessonNotebookAnchor)
+
+   « عرض » se pose JUSTE SOUS la carte des connaissances, au ras du coin :
+   son écart au BAS (1.5rem) égale son écart à GAUCHE (1.5rem), la pastille
+   est posée dans l'angle. La carte et le cahier s'empilent au-dessus.
+
+   Le coin est libre : l'ancienne pastille « Ctrl+K » du site, posée en
+   `end-6` (donc physiquement à GAUCHE sous RTL), l'occupait et interceptait
+   les clics de cet étage. Elle a été retirée, puis la palette elle-même
+   (2026-11-17, décision du propriétaire : pas de recherche globale).
+
+   Les trois hauteurs se tiennent : changer l'une sans les autres fait se
+   recouvrir deux pastilles.
+
+   `left` est PHYSIQUE, pas logique : sous RTL, `start` placerait le bouton
+   à droite, sous la barre latérale de l'espace élève, qui intercepte les
+   clics (leçon de QA consignée dans KnowledgeMap.jsx).
+   Il disparaît à l'impression, comme les autres déclencheurs. */
+.sa-classroom-fab {
+  position: fixed;
+  left: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 40;
+  box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.18);
+}
+.sa-classroom-fab:hover { box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.2); }
+
+@media print { .sa-classroom-fab { display: none; } }
+
+/* Pendant une séance, le chrome FLOTTANT de la page disparaît : « كرّاسي » et
+   « بطاقتي » n'ont pas leur place sur un projecteur. Ils reviennent à la
+   sortie, car c'est la classe sur <body> qui part, pas les composants
+   (aucun démontage, donc aucun état perdu). La sortie, elle, n'est plus
+   dans cette colonne : elle est au bas de la barre de navigation. */
+body.sa-classroom-session .sa-nb-lesson-trigger,
+body.sa-classroom-session [data-km-trigger] {
+  display: none;
+}
+
+/* « 🧪 المختبر » n'est pas dans cette liste, et c'est voulu : il vit dans la
+   rangée de repères du module, que la présentation rend elle-même. Il reste
+   donc disponible pendant une séance — c'est au tableau, devant la classe,
+   qu'on a le plus besoin de sortir un instrument au milieu d'une
+   explication. */
+
+/* ── UN TEST PRÉSENTÉ : une question à la fois ─────────────────────────
+   (kit/TestPresentation.jsx — module 0 « أستعدّ » et test final « إتقان »)
+
+   L'écran appartient à LA QUESTION. Pas de sommaire, pas de carte dans une
+   carte, pas de liste verticale de tout le test : le titre est sur la barre
+   d'outils, le repère « السؤال 3 من 10 » aussi, et il reste ici l'énoncé,
+   les choix, la validation. Les autres questions sont rendues mais `hidden`
+   — rien ne se remonte, donc aucune réponse n'est perdue. */
+.sa-test-presentation {
+  width: 100%;
+}
+
+.sa-classroom-root--active .sa-test-presentation__question[hidden] {
+  display: none !important;
+}
+
+/* La question courante occupe la largeur offerte, centrée et bornée à une
+   mesure de lecture : au tableau, une ligne qui traverse 2 mètres ne se lit
+   pas. Le cadre (ClassroomFrame) porte déjà l'agrandissement. */
+.sa-classroom-root--active .sa-test-presentation__question {
+  width: 100%;
+}
+
+/* L'ÉNONCÉ est le premier citoyen de l'écran : plus grand que le corps de
+   texte d'une page, et aéré. Les choix suivent, assez hauts pour être visés
+   depuis le fond de la classe (le minimum de 48 px vient déjà de ChoiceGrid).
+
+   On vise le PREMIER enfant du corps (l'énoncé, que le moteur rende un <p>,
+   un <div> ou un <span> — le diagnostic compose le sien avec MathText et
+   SourceTag), et non `p` seul, qui laissait l'énoncé du module 0 à la taille
+   d'une page. */
+.sa-classroom-root--active .sa-test-presentation__body > div > :first-child,
+.sa-classroom-root--active .sa-test-presentation__body > p {
+  font-size: 1.1875rem;
+  line-height: 1.85;
+}
+
+.sa-classroom-root--active .sa-test-presentation__body button {
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
+  font-size: 1.0625rem;
+}
+
+/* LES QUESTIONS LONGUES (brief §17). On ne rétrécit PAS la typographie
+   jusqu'à l'illisible : le moteur d'ajustement a déjà son plancher (0.55),
+   et au-delà la question défile À L'INTÉRIEUR d'elle-même. La barre du bas
+   (السابق / التالي) et le bouton de validation restent donc toujours
+   atteignables, hors de la zone qui défile. */
+.sa-classroom-root--active .sa-test-presentation__body {
+  max-height: calc(var(--sa-classroom-h, 100vh) * 0.62);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+/* La correction et la synthèse, elles, ne bornent rien : on y arrive après
+   la révélation, et elles ont le droit de défiler avec la scène. */
+.sa-classroom-root--active .sa-test-presentation__review {
+  border-top: 2px solid #E2E8F0;
+  padding-top: 1rem;
+}
+
+.sa-classroom-root--active .sa-test-presentation__finish,
+.sa-classroom-root--active .sa-test-presentation__summary {
+  margin-top: 1.25rem;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   LE POINTEUR DE CLASSE (« المؤشّر ») — ClassroomPointer.jsx.
+
+   Un calque fixe DANS la racine de la séance (donc visible en plein écran
+   natif), au-dessus de tout ce qu'elle contient — y compris le مختبر (80)
+   et le fantôme de glisser. `pointer-events: none` partout : il ne prend
+   jamais un clic. La position est écrite en `transform` par un seul
+   requestAnimationFrame ; `--sa-pointer-d` vient de pointerDiameter().
+   ───────────────────────────────────────────────────────────────────────── */
+.sa-classroom-pointer-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483000;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.sa-classroom-pointer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--sa-pointer-d, 96px);
+  height: var(--sa-pointer-d, 96px);
+  margin: calc(var(--sa-pointer-d, 96px) / -2) 0 0 calc(var(--sa-pointer-d, 96px) / -2);
+  border-radius: 9999px;
+  box-sizing: border-box;
+  /* Le halo : un disque rouge translucide cerclé — on voit le contenu à travers. */
+  background: var(--sa-pointer-halo);
+  border: max(3px, calc(var(--sa-pointer-d, 96px) * 0.045)) solid var(--sa-pointer-ring);
+  box-shadow: 0 0 calc(var(--sa-pointer-d, 96px) * 0.35) var(--sa-pointer-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 120ms ease-out;
+  will-change: transform;
+}
+
+/* Le cœur : un point plein, bordé de blanc pour rester lisible sur un fond
+   rouge ou sombre (une information portée aussi par la FORME, pas que la couleur). */
+.sa-classroom-pointer__core {
+  width: 34%;
+  height: 34%;
+  border-radius: 9999px;
+  background: var(--sa-pointer-core);
+  box-shadow: 0 0 0 max(2px, calc(var(--sa-pointer-d, 96px) * 0.03)) #fff, 0 0 0 max(3px, calc(var(--sa-pointer-d, 96px) * 0.05)) rgba(127, 29, 29, 0.55);
+}
+
+/* « تسليط الضوء » : tout s'assombrit sauf un disque autour du pointeur, au
+   bord adouci. Les coordonnées sont des variables écrites par le même rAF. */
+.sa-classroom-spotlight {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 160ms ease-out;
+  background: radial-gradient(
+    circle at var(--sa-spot-x, -1000px) var(--sa-spot-y, -1000px),
+    transparent 0,
+    transparent var(--sa-spot-r, 200px),
+    rgba(15, 23, 42, 0.62) calc(var(--sa-spot-r, 200px) + 28px)
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sa-classroom-pointer,
+  .sa-classroom-spotlight {
+    transition: none;
+  }
+}
+
+/* Les commandes du pointeur dans la barre du haut. */
+.sa-classroom-pointer-toggle[aria-pressed="true"] {
+  border-color: #B91C1C;
+  background: #FEF2F2;
+  color: #991B1B;
+}
+
+.sa-classroom-pointer-dot {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: #EF4444;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3px rgba(185, 28, 28, 0.6);
+}
+
+@media print {
+  .sa-classroom-pointer-layer {
+    display: none !important;
+  }
+}
+
+/* ── Les pages d'une unité (ClassroomPaged) ───────────────────────────── */
+[data-classroom-page-hidden] {
+  display: none !important;
+}
+.sa-classroom-position--page {
+  border-color: #FDE68A;
+  background: #FFFBEB;
+  color: #92400E;
+}
+
+/* ── La page d'entrée d'un module (ModuleOverview) ───────────────────── */
+.sa-classroom-overview {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 36px 40px;
+  border: 3px solid #C7D2FE;
+  border-radius: 28px;
+  background: linear-gradient(180deg, #EEF2FF 0%, #FFFFFF 70%);
+}
+.sa-classroom-overview__eyebrow {
+  align-self: flex-start;
+  margin: 0;
+  padding: 4px 16px;
+  border-radius: 999px;
+  background: #4338CA;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1rem;
+}
+.sa-classroom-overview__title {
+  margin: 0;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  font-weight: 800;
+  color: #1E1B4B;
+}
+.sa-classroom-overview__subtitle {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: #475569;
+}
+.sa-classroom-overview__learn { margin-top: 10px; }
+.sa-classroom-overview__learn-title {
+  margin: 0 0 12px;
+  font-size: 1.375rem;
+  font-weight: 800;
+  color: #3730A3;
+}
+.sa-classroom-overview__points {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sa-classroom-overview__point {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 1.25rem;
+  line-height: 1.7;
+  font-weight: 600;
+  color: #1E293B;
+}
+.sa-classroom-overview__bullet {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  margin-top: 0.15rem;
+  border-radius: 10px;
+  background: #E0E7FF;
+  color: #3730A3;
+  font-weight: 800;
+  font-size: 1rem;
+}
+.sa-classroom-overview__time {
+  margin: 8px 0 0;
+  font-size: 1rem;
+  color: #64748B;
+}
+
+/* Le sommaire présenté : deux écrans, un seul visible — une colonne. */
+.sa-classroom-lesson-overview--split { grid-template-columns: minmax(0, 1fr); }
+.sa-classroom-lesson-overview--split > section[hidden] { display: none !important; }

@@ -1,0 +1,219 @@
+{
+  "id": "ex-2am-jida-kasrayn-l2-010",
+  "lessonCode": "jida-kasrayn",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أقرأ العبارة « كسر من عدد »",
+    "estimatedMinutes": 6,
+    "tags": [
+      "كسر من عدد",
+      "اختيار من متعدّد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نتأمّل العبارة «$\\dfrac{3}{8}$ من $48$» :"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أيّ العبارات التالية تعبّر عن «$\\dfrac{3}{8}$ من $48$» ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "multiChoice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{3}{8} + 48$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$48 \\div 8 \\times 3$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$48 \\times \\dfrac{8}{3}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDAKASR-FLIP"
+        },
+        {
+          "id": "D",
+          "content": "$48 \\div 8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDAKASR-HALFWAY"
+        },
+        {
+          "id": "E",
+          "content": "$48 \\times \\dfrac{3}{8}$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر كلّ الإجابات الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كلمة «من» بعد كسر تعني الضرب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\dfrac{a}{b}$ من $x$ هو $x \\times \\dfrac{a}{b}$ : اقسم $x$ على $b$ ثمّ اضرب في $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي إذا كان الكسر أصغر من 1."
+        }
+      ],
+      "feedback": {
+        "correct": "الاختيار الصحيح يساوي الجداء المحسوب .",
+        "incorrect": "الكسر «من» عدد يعني الضرب: اقسم على المقام ثمّ اضرب في البسط، ولا تقلب الكسر."
+      },
+      "solution": {
+        "lines": [
+          "«من» بعد كسر تعني الضرب : $\\dfrac{3}{8}$ من $48$ هو $48 \\times \\dfrac{3}{8}$ .",
+          "وهو يساوي $48 \\div 8 \\times 3 = 6 \\times 3 = 18$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $\\dfrac{3}{8}$ من $48$ .",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "18",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "128",
+          "id": "MISC-JIDAKASR-FLIP"
+        },
+        {
+          "value": "6",
+          "id": "MISC-JIDAKASR-HALFWAY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كلمة «من» بعد كسر تعني الضرب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\dfrac{a}{b}$ من $x$ هو $x \\times \\dfrac{a}{b}$ : اقسم $x$ على $b$ ثمّ اضرب في $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي إذا كان الكسر أصغر من 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$18$ .",
+        "incorrect": "الكسر «من» عدد يعني الضرب: اقسم على المقام ثمّ اضرب في البسط، ولا تقلب الكسر."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{8}$ من $48$ هو $48 \\times \\dfrac{3}{8}$ .",
+          "$48 \\div 8 = 6$ ثمّ $6 \\times 3 = 18$ ."
+        ],
+        "result": "18"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "احسب $\\dfrac{5}{6}$ من $72$ .",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "60",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "432/5",
+          "id": "MISC-JIDAKASR-FLIP"
+        },
+        {
+          "value": "12",
+          "id": "MISC-JIDAKASR-HALFWAY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كلمة «من» بعد كسر تعني الضرب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\dfrac{a}{b}$ من $x$ هو $x \\times \\dfrac{a}{b}$ : اقسم $x$ على $b$ ثمّ اضرب في $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي إذا كان الكسر أصغر من 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$60$ .",
+        "incorrect": "الكسر «من» عدد يعني الضرب: اقسم على المقام ثمّ اضرب في البسط، ولا تقلب الكسر."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{6}$ من $72$ هو $72 \\times \\dfrac{5}{6}$ .",
+          "$72 \\div 6 = 12$ ثمّ $12 \\times 5 = 60$ ."
+        ],
+        "result": "60"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

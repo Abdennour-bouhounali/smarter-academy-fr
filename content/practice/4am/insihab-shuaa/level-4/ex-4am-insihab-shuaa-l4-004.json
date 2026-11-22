@@ -1,0 +1,127 @@
+{
+  "id": "ex-4am-insihab-shuaa-l4-004",
+  "lessonCode": "insihab-shuaa",
+  "level": 4,
+  "metadata": {
+    "title": "معارف 2 — حالة خاصة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "متوازي الأضلاع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-2",
+      "page": 130,
+      "section": "معارف",
+      "number": 2
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 130): حالة خاصة: النقط A، B، C، D في استقامية، و $\\overrightarrow{AB}$ = $\\overrightarrow{DC}$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          4,
+          0
+        ],
+        "E": [
+          5,
+          0
+        ],
+        "D": [
+          6,
+          0
+        ],
+        "C": [
+          10,
+          0
+        ]
+      },
+      "vectors": [
+        {
+          "from": "A",
+          "to": "B",
+          "tone": "rose"
+        },
+        {
+          "from": "D",
+          "to": "C",
+          "tone": "rose"
+        }
+      ],
+      "segments": [
+        {
+          "from": "B",
+          "to": "D"
+        }
+      ],
+      "labels": {
+        "A": "s",
+        "B": "s",
+        "E": "n",
+        "D": "s",
+        "C": "s"
+      },
+      "ariaLabel": "النقط A و B و E و D و C على مستقيم واحد: الشعاعان من A نحو B ومن D نحو C متساويان",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أي عبارة صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "4am_insihab-shuaa_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا يتكوّن رباعي، لكن [AC] و [BD] لهما نفس المنتصف",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "ABCD متوازي أضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ISTIQAMA"
+        },
+        {
+          "id": "C",
+          "content": "[AC] و [BD] ليس لهما نفس المنتصف",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ISTIQAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{AB} = \\overrightarrow{DC}$ يعني ABCD متوازي أضلاع: اقرأ A ثم B ثم نهاية الشعاع الثاني ثم مبدأه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في متوازي الأضلاع، كل ضلعين متقابلين يعطيان شعاعين متساويين إذا قرأناهما في نفس الجهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارسم الرباعي على ورقة وضع السهمين لتتحقق من الجهة."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط على مستقيم واحد: «متوازي أضلاع مسطّح»، والمنتصف المشترك يبقى.",
+        "incorrect": "متوازي الأضلاع يتطلب ثلاث نقط ليست في استقامية."
+      },
+      "difficulty": 4
+    }
+  ]
+}

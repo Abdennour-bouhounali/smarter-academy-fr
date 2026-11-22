@@ -1,0 +1,173 @@
+{
+  "id": "ex-1am-ikhtizal-kitaba-kasriya-l2-004",
+  "lessonCode": "ikhtizal-kitaba-kasriya",
+  "level": 2,
+  "metadata": {
+    "title": "من على صواب: سامي أم فاطمة؟",
+    "estimatedMinutes": 6,
+    "tags": [
+      "اختزال",
+      "قاسم مشترك"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-27",
+      "page": 58,
+      "section": "أتمرّن",
+      "number": 27
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "سأل الأستاذ: «هل العدد 91 يقبل قاسمًا محصورًا بين 2 و 10؟». قال سامي: «لا، حسب قواعد قابلية القسمة ليس له قاسم». وقالت فاطمة: «نعم، وجدتُ قاسمًا»."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "من منهما على صواب؟",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "سامي",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KASRIYA-LA-QAIDA"
+        },
+        {
+          "id": "B",
+          "content": "فاطمة",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القواعد التي تعرفها تخصّ 2، 3، 4، 5، 9 فقط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جرّب جداول الضرب للأعداد الأخرى بين 2 و 10."
+        }
+      ],
+      "feedback": {
+        "correct": "$91 = 7 \\times 13$ : العدد 7 قاسم للعدد 91.",
+        "incorrect": "أن لا تنطبق أيّ قاعدة من قواعدنا لا يعني أنّ العدد ليس له قاسم: جرّب الأعداد الأخرى."
+      },
+      "solution": {
+        "lines": [
+          "91 لا يقبل القسمة على 2 ولا 3 ولا 4 ولا 5 ولا 9.",
+          "لكن $91 = 7 \\times 13$ : فاطمة على صواب."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أتمم: $91 = 7 \\times \\ldots$",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "13",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق بالضرب أنّ الباقي معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$7 \\times 13 = 91$.",
+        "incorrect": "أنجز قسمة 91 على 7."
+      },
+      "solution": {
+        "lines": [
+          "$91 = 7 \\times 13 + 0$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اختزل الكسر $\\dfrac{91}{119}$ إلى أبسط شكل ممكن.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b لا يقبل الاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "13/17",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "91/119",
+          "id": "MISC-KASRIYA-LA-QAIDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن قاسم مشترك للبسط والمقام بقواعد قابلية القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على هذا القاسم، ثم أعد البحث في الكسر الجديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا لم تنفع القواعد، جرّب جداول الضرب (7، 11، 13…)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{91}{119} = \\dfrac{13}{17}$ ولا يقبل البسط والمقام قاسمًا مشتركًا غير 1.",
+        "incorrect": "نقسم البسط والمقام على قاسم مشترك لهما، ونعيد ذلك حتى لا يبقى قاسم مشترك غير 1.",
+        "notIrreducible": "الكتابة تساوي الكسر لكنها ما زالت قابلة للاختزال: ابحث عن قاسم مشترك آخر للبسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "$91 = 7 \\times 13$ و $119 = 7 \\times 17$ ، إذن $\\dfrac{91}{119} = \\dfrac{91 \\div 7}{119 \\div 7} = \\dfrac{13}{17}$",
+          "العددان 13 و 17 لا يقبلان قاسمًا مشتركًا غير 1: $\\dfrac{13}{17}$ في أبسط شكل ممكن."
+        ],
+        "result": "\\dfrac{91}{119} = \\dfrac{13}{17}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

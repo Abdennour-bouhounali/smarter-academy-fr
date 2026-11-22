@@ -1,0 +1,153 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muadalat-l3-006",
+  "lessonCode": "wadiya-idmajiya-muadalat",
+  "level": 3,
+  "metadata": {
+    "title": "ورشة الطباعة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "ترييض",
+      "معادلة",
+      "مقارنة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-muadalat_P2",
+      "modelledOn": "situation"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تُتقن ورشة طباعة عملها، وتقترح على الطلبة الراغبين في نسخ دروسهم صيغتين:\n– الصيغة الأولى: 15DA للصفحة.\n– الصيغة الثانية: 400DA مصاريف التجهيز و 5DA للصفحة.\nنسمّي $x$ عدد الصفحات المطبوعة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "جد $x$ حتى تتساوى تكلفتا الصيغتين.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الصفحات",
+      "expectedAnswer": "40",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عبّر عن تكلفة كل صيغة بدلالة $x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب أن التكلفتين متساويتان، ثم حلّ المعادلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 40$ .",
+        "incorrect": "انقل حدود $x$ إلى طرف والأعداد إلى الطرف الآخر مع تغيير الإشارة، ثم اقسم على معامل $x$ . تحقّق بالتعويض."
+      },
+      "solution": {
+        "lines": [
+          "$15x - 5x = 400$",
+          "$10x = 400$",
+          "$x = \\dfrac{400}{10}$"
+        ],
+        "result": "x = 40"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب التكلفة المشتركة من أجل هذا العدد من الصفحات.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المبلغ بـ DA",
+      "expectedAnswer": "600",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالحل في إحدى العبارتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$600$DA .",
+        "incorrect": "أعد الحساب خطوة خطوة، مع احترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$15 \\times 40 = 600$",
+          "ونتحقق: $400 + 5 \\times 40 = 600$"
+        ],
+        "result": "600DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "لطباعة 100 صفحة، ما هي الصيغة الأقل تكلفة؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الصيغة الأولى",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        },
+        {
+          "id": "B",
+          "content": "الصيغة الثانية",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب تكلفة 100 صفحة بكل صيغة، أو قارن 100 بعدد الصفحات الذي تتساوى عنده التكلفتان."
+        }
+      ],
+      "feedback": {
+        "correct": "الصيغة الثانية.",
+        "incorrect": "احسب المبلغين من أجل 100 صفحة ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "الصيغة الأولى: $15 \\times 100 = 1500$ DA",
+          "الصيغة الثانية: $400 + 5 \\times 100 = 900$ DA",
+          "$900 < 1500$ ، إذن الصيغة الثانية هي الأقل تكلفة."
+        ],
+        "result": "الصيغة الثانية"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

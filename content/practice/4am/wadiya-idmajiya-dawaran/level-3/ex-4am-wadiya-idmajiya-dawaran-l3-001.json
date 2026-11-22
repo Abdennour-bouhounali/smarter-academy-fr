@@ -1,0 +1,201 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-dawaran-l3-001",
+  "lessonCode": "wadiya-idmajiya-dawaran",
+  "level": 3,
+  "metadata": {
+    "title": "التمرين 15 (1)",
+    "estimatedMinutes": 4,
+    "tags": [
+      "الدوران",
+      "المسافة في المثلث القائم"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-15",
+      "page": 161,
+      "section": "أتعمّق",
+      "number": 15
+    }
+  },
+  "statement": {
+    "content": "A و B نقطتان حيث AB = 4cm. C هي صورة B بالدّوران الذي مركزه A و زاويته $72^\\circ$ في الاتجاه المباشر. D هي صورة C، E صورة D و F صورة E بالدوران السابق (الشكل).",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          4.0,
+          0.0
+        ],
+        "C": [
+          1.236,
+          3.804
+        ],
+        "D": [
+          -3.236,
+          2.351
+        ],
+        "E": [
+          -3.236,
+          -2.351
+        ],
+        "F": [
+          1.236,
+          -3.804
+        ]
+      },
+      "circles": [
+        {
+          "center": "A",
+          "radius": 4,
+          "tone": "sky"
+        }
+      ],
+      "polygons": [
+        {
+          "points": [
+            "B",
+            "C",
+            "D",
+            "E",
+            "F"
+          ],
+          "tone": "indigo"
+        }
+      ],
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "4 cm",
+          "dashed": true
+        },
+        {
+          "from": "A",
+          "to": "C",
+          "dashed": true
+        }
+      ],
+      "angles": [
+        {
+          "at": "A",
+          "from": "B",
+          "to": "C",
+          "label": "72°",
+          "arrow": true
+        }
+      ],
+      "labels": {
+        "A": "sw"
+      },
+      "ariaLabel": "دائرة مركزها A ونصف قطرها 4 cm؛ B و C و D و E و F عليها، كل نقطة صورة السابقة بالدوران الذي مركزه A وزاويته 72 درجة"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "لماذا $FB = BC$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لأنّ $FB = AB = 4\\,\\mathrm{cm}$ مثل كل الأضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-DIL"
+        },
+        {
+          "id": "B",
+          "content": "لأنّ F و B متناظرتان بالنسبة إلى A",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-RAS-ZAWIYA"
+        },
+        {
+          "id": "C",
+          "content": "لأنّ $5 \\times 72^\\circ = 360^\\circ$ : صورة F هي B، والدوران يحافظ على الأطوال",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم دورانا من B إلى F؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خمسة دورانات بـ $72^\\circ$ تساوي دورة كاملة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الدوران يحافظ على الأطوال: صورة $[BC]$ هي $[CD]$ …"
+        }
+      ],
+      "feedback": {
+        "correct": "الدوران الخامس يعيد F إلى B: صورة $[EF]$ هي $[FB]$ ، وكل الأضلاع بطول BC.",
+        "incorrect": "F ليست على بعد $180^\\circ$ من B، والمسافة بين رأسين ليست نصف القطر."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 3
+    },
+    {
+      "id": "q2",
+      "statement": "احسب FB بالسنتيمتر مدوّرا إلى $0{,}01$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة (مدوّر إلى 0,01)",
+      "expectedAnswer": "4.7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث ABF متساوي الساقين في A وزاويته الرئيسية $72^\\circ$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الارتفاع النازل من A ينصّف الزاوية: $36^\\circ$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\dfrac{FB}{2} = 4\\sin 36^\\circ$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$FB = 2 \\times 4 \\times \\sin 36^\\circ \\approx 4{,}70\\,\\mathrm{cm}$ .",
+        "incorrect": "الزاوية في المثلث القائم $36^\\circ$ (نصف $72^\\circ$ )، والجيب يعطي نصف FB."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "7.61",
+          "id": "MISC-MUNTAZAM-NISF-ZAWIYA"
+        },
+        {
+          "value": "4",
+          "id": "MISC-MUNTAZAM-DIL"
+        },
+        {
+          "value": "5.03",
+          "id": "MISC-MUNTAZAM-QAWS-WATAR"
+        }
+      ],
+      "difficulty": 3
+    }
+  ]
+}

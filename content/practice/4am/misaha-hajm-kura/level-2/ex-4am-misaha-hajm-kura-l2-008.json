@@ -1,0 +1,65 @@
+{
+  "id": "ex-4am-misaha-hajm-kura-l2-008",
+  "lessonCode": "misaha-hajm-kura",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — من القطر إلى الحجم",
+    "estimatedMinutes": 2,
+    "tags": [
+      "حجم الجلة",
+      "القطر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_misaha-hajm-kura_P2",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "جلة قطرها $6\\,\\mathrm{cm}$ . اكتب حجمها على الشكل $k\\pi\\,\\mathrm{cm}^3$ ثم أعط $k$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قيمة $k$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_misaha-hajm-kura_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة (مثل 2,5) أو عدد طبيعي",
+      "expectedAnswer": "36",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القانون يستعمل نصف القطر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$R = 3\\,\\mathrm{cm}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب $\\frac{4}{3} \\times 3^3$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\mathcal{V} = \\frac{4}{3}\\pi \\times 27 = 36\\pi\\,\\mathrm{cm}^3$ .",
+        "incorrect": "بالقطر نجد ثمانية أضعاف الحجم."
+      },
+      "difficulty": 2,
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MISAHA-QUTR",
+          "value": "288"
+        }
+      ]
+    }
+  ]
+}

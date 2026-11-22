@@ -1,0 +1,134 @@
+{
+  "id": "ex-4am-natiqa-ghayr-natiqa-l1-004",
+  "lessonCode": "natiqa-ghayr-natiqa",
+  "level": 1,
+  "metadata": {
+    "title": "أيّها ليس ناطقًا؟",
+    "estimatedMinutes": 4,
+    "tags": [
+      "عدد غير ناطق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_natiqa-ghayr-natiqa_P3",
+      "modelledOn": "act-2"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "لتكن الأعداد $D$ ، $C$ ، $B$ ، $A$ حيث:",
+    "formulas": [
+      "A = \\sqrt{1{,}44} \\quad ; \\quad B = \\sqrt{0{,}36} \\quad ; \\quad C = \\sqrt{\\dfrac{4}{25}} \\quad ; \\quad D = \\sqrt{11}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن، من بين هذه الأعداد، العدد الذي ليس ناطقًا. برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$A$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-TABII-FAQAT"
+        },
+        {
+          "id": "B",
+          "content": "$B$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-TABII-FAQAT"
+        },
+        {
+          "id": "C",
+          "content": "$C$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-TABII-FAQAT"
+        },
+        {
+          "id": "D",
+          "content": "$D$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر جوابك، ثم قارن تبريرك بالحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جذر عدد عشري أو كسر قد يكون ناطقًا: $0{,}5^2 = 0{,}25$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث، لكل عدد تحت الجذر، عن عدد ناطق مربعه هذا العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "11 ليس مربعًا لعدد ناطق، فـ $\\sqrt{11}$ ليس عددًا ناطقًا؛ أما $A$ و $B$ و $C$ فناطقة.",
+        "incorrect": "جذر العدد العشري أو الكسر ليس بالضرورة غير ناطق: احسب كل جذر."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}2^2 = 1{,}44$ إذن $A = 1{,}2$ ؛ $0{,}6^2 = 0{,}36$ إذن $B = 0{,}6$ ؛ $\\left(\\dfrac{2}{5}\\right)^2 = \\dfrac{4}{25}$ إذن $C = \\dfrac{2}{5}$ .",
+          "$3^2 = 9 < 11 < 16 = 4^2$ : العدد 11 ليس مربعًا لعدد ناطق، إذن $D = \\sqrt{11}$ ليس عددًا ناطقًا."
+        ],
+        "result": "D = \\sqrt{11}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب العدد $C$ على شكل كسر.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "2/5",
+      "misconceptionSignatures": [
+        {
+          "value": "2/25",
+          "id": "MISC-JIDHR-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن عدد مربعه 4 وعن عدد مربعه 25."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\left(\\dfrac{2}{5}\\right)^2 = \\dfrac{4}{25}$ ، إذن $C = \\dfrac{2}{5}$ .",
+        "incorrect": "خذ جذر البسط وجذر المقام معًا: لا تقسم على 2."
+      },
+      "solution": {
+        "lines": [
+          "$2^2 = 4$ و $5^2 = 25$ ، إذن $\\left(\\dfrac{2}{5}\\right)^2 = \\dfrac{4}{25}$"
+        ],
+        "result": "C = \\dfrac{2}{5}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

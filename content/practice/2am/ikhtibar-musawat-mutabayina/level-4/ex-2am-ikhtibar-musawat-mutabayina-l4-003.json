@@ -1,0 +1,198 @@
+{
+  "id": "ex-2am-ikhtibar-musawat-mutabayina-l4-003",
+  "lessonCode": "ikhtibar-musawat-mutabayina",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — كم مثالا مضادّا يلزم",
+    "estimatedMinutes": 6,
+    "tags": [
+      "تساوي عبارتين",
+      "مثال مضادّ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اختبر تساوي العبارتين في كلّ حالة :"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل العبارتان $3x+x$ و $4x$ متساويتان مهما كانت قيمة $x$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جرّب العبارتين بقيمة أو قيمتين للحرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا اختلفت النتيجتان عند قيمة واحدة فالعبارتان غير متساويتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا تساوتا عند عدّة قيم فتحقّق من القاعدة (التوزيع مثلا) قبل أن تحكم : التساوي عند بعض القيم لا يكفي."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم : العبارتان متساويتان مهما كانت قيمة الحرف .",
+        "incorrect": "مثال مضادّ واحد يكفي لإثبات عدم التساوي، أمّا التساوي فيبرّره قاعدة معروفة."
+      },
+      "solution": {
+        "lines": [
+          "$3x+x=4x$ : العبارتان متساويتان مهما كانت قيمة $x$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "لإثبات أنّ عبارتين حرفيتين ليستا متساويتين يكفي :",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "ثلاثة أمثلة على الأقلّ تختلف عندها العبارتان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IKHTIBAR-MANYEX"
+        },
+        {
+          "id": "B",
+          "content": "قيمة واحدة تتساوى عندها العبارتان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IKHTIBAR-ONEVALUE"
+        },
+        {
+          "id": "C",
+          "content": "مثال واحد تختلف عنده العبارتان",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تذكّر ما يثبته المثال المضادّ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المثال المضادّ قيمة تعطي العبارتين نتيجتين مختلفتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كم مثالا نحتاج حتى نكون متأكّدين ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "مثال واحد تختلف عنده العبارتان يكفي .",
+        "incorrect": "اختلاف النتيجتين عند قيمة واحدة يكفي لنفي التساوي مهما كانت القيمة."
+      },
+      "solution": {
+        "lines": [
+          "إذا اختلفت العبارتان عند قيمة واحدة فلا يمكن أن تكونا متساويتين مهما كانت قيمة الحرف .",
+          "لذلك يكفي مثال مضادّ واحد، أمّا التساوي عند بعض القيم فلا يكفي لإثبات التساوي ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "العبارتان $3x+x$ و $3x^{2}$ تعطيان العدد نفسه من أجل بعض قيم $x$ . أيّ قيمة من القيم الآتية تبيّن أنّهما ليستا متساويتين ؟ اختر الإجابة الصحيحة :",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$1$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختبر القيم المعطاة في العبارتين معا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن القيمة التي تعطي نتيجتين مختلفتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قيمة واحدة تختلف عندها العبارتان تكفي لإثبات أنّهما ليستا متساويتين."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة $1$ تبيّن ذلك .",
+        "incorrect": "القيمة المطلوبة هي التي تعطي العبارتين نتيجتين مختلفتين."
+      },
+      "solution": {
+        "lines": [
+          "$x=0$ : $0=0$ .",
+          "$x=1$ : $4\\ne 3$ .",
+          "القيمة $1$ مثال مضادّ : العبارتان ليستا متساويتين ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

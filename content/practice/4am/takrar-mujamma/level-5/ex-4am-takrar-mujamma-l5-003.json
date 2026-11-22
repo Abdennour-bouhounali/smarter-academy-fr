@@ -1,0 +1,347 @@
+{
+  "id": "ex-4am-takrar-mujamma-l5-003",
+  "lessonCode": "takrar-mujamma",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2014 — حصص المعالجة في الرياضيات",
+    "estimatedMinutes": 10,
+    "tags": [
+      "وضعية إدماجية",
+      "نسب مئوية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_takrar-mujamma_P3",
+      "modelledOn": "BEM 2014 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2014",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تحصّل 32 تلميذا من قسم السنة الرابعة متوسط بمتوسطة في تيارت على العلامات الآتية في الفرض الأول للرياضيات:",
+    "table": {
+      "head": [
+        "العلامة",
+        "عدد التلاميذ"
+      ],
+      "rows": [
+        [
+          "4",
+          "2"
+        ],
+        [
+          "6",
+          "3"
+        ],
+        [
+          "8",
+          "5"
+        ],
+        [
+          "10",
+          "8"
+        ],
+        [
+          "12",
+          "7"
+        ],
+        [
+          "14",
+          "4"
+        ],
+        [
+          "16",
+          "3"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب التكرار المجمع الصاعد للعلامة 8.",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        },
+        {
+          "value": "27",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكرار المجمع الصاعد لقيمة هو مجموع تكرارها وتكرارات القيم الأصغر منها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ من أول عمود في الجدول واجمع التكرارات حتى 8 مع تكرارها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: التكرار المجمع الصاعد لآخر عمود يساوي التكرار الكلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 + 3 + 5 = 10$ .",
+        "incorrect": "اجمع تكرار القيمة نفسها وتكرارات القيم الأصغر منها فقط، ولا تنس تكرار القيمة نفسها."
+      },
+      "solution": {
+        "lines": [
+          "التكرار المجمع الصاعد للعلامة 8 هو مجموع تكرار القيمة 8 وتكرارات القيم الأصغر منها:",
+          "$2 + 3 + 5 = 10$"
+        ],
+        "result": "10"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب التكرار المجمع النازل للعلامة 12.",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        },
+        {
+          "value": "25",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكرار المجمع النازل هو مجموع تكرار هذه القيمة وتكرارات القيم الأكبر منها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع تكرار 12 وتكرارات ما بعدها حتى آخر عمود في الجدول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: التكرار المجمع النازل لأول عمود يساوي التكرار الكلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$7 + 4 + 3 = 14$ .",
+        "incorrect": "اجمع تكرار القيمة نفسها وتكرارات القيم الأكبر منها فقط: النازل يتّجه نحو نهاية الجدول."
+      },
+      "solution": {
+        "lines": [
+          "التكرار المجمع النازل للعلامة 12 هو مجموع تكرار القيمة 12 وتكرارات القيم الأكبر منها:",
+          "$7 + 4 + 3 = 14$"
+        ],
+        "result": "14"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "استنتج التواتر المجمع الصاعد للعلامة 8.",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة أو كسر على الشكل a/b",
+      "expectedAnswer": "0,3125",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-IHSA-TAWATUR-BILA-QISMA"
+        },
+        {
+          "value": "0,84375",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        },
+        {
+          "value": "0,15625",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التواتر المجمع الصاعد هو التكرار المجمع الصاعد مقسوما على التكرار الكلي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أولا التكرار المجمع الصاعد ثم اقسمه على التكرار الكلي للسلسلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: التواتر عدد بين 0 و 1، والتواتر المجمع الصاعد لآخر عمود يساوي 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{10}{32} = 0{,}3125$ .",
+        "incorrect": "لا تكتف بالتكرار المجمع: اقسمه على التكرار الكلي للسلسلة."
+      },
+      "solution": {
+        "lines": [
+          "التواتر المجمع الصاعد = التكرار المجمع الصاعد ÷ التكرار الكلي:",
+          "$\\dfrac{10}{32} = 0{,}3125$"
+        ],
+        "result": "0{,}3125"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما هي النسبة المئوية للتلاميذ الذين تحصّلوا على العلامة 10 على الأقل؟",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: النسبة المئوية دون الرمز %",
+      "expectedAnswer": "68,75",
+      "misconceptionSignatures": [
+        {
+          "value": "22",
+          "id": "MISC-IHSA-TAWATUR-BILA-QISMA"
+        },
+        {
+          "value": "43,75",
+          "id": "MISC-IHSA-SARAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«10 على الأقل» تعني: 10 أو أكثر؛ الحدّ نفسه داخل في العدّ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أولا عدد الأفراد الذين يحقّقون الشرط (تكرار مجمع)، ثم اقسمه على التكرار الكلي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب التواتر الناتج في 100 لتحصل على النسبة المئوية."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{22}{32} \\times 100 = 68{,}75$ ، أي $68{,}75\\%$ .",
+        "incorrect": "عدّ أولا الأفراد الذين يحقّقون الشرط بدقة (انتبه إلى الحدّ)، ثم اقسم على التكرار الكلي واضرب في 100."
+      },
+      "solution": {
+        "lines": [
+          "عدد الأفراد المعنيين: $8 + 7 + 4 + 3 = 22$",
+          "$\\dfrac{22}{32} = 0{,}6875$",
+          "$0{,}6875 \\times 100 = 68{,}75$"
+        ],
+        "result": "68{,}75\\%"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "يبرمج الأستاذ حصص معالجة إذا فاقت نسبة التلاميذ المتحصّلين على علامة أقل من 10 نسبة $25\\%$ . هل يبرمج هذه الحصص؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«أقل من 10» تستثني العلامة 10 نفسها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب عدد التلاميذ الذين علاماتهم أقل من 10، ثم نسبتهم المئوية، وقارنها بـ 25%."
+        }
+      ],
+      "feedback": {
+        "correct": "نسبة التلاميذ الذين علاماتهم أقل من 10 تفوق 25%.",
+        "incorrect": "اجمع تكرارات كل العلامات الأقل من 10 (لا علامة واحدة)، ثم احسب النسبة المئوية وقارن."
+      },
+      "solution": {
+        "lines": [
+          "عدد التلاميذ الذين علاماتهم أقل من 10: $2 + 3 + 5 = 10$",
+          "$\\dfrac{10}{32} \\times 100 = 31{,}25$",
+          "$31{,}25\\% > 25\\%$ ، إذن يبرمج الأستاذ حصص المعالجة."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,1394 @@
+{
+ "_comment": [
+  "EXTRACTION CANONIQUE du manuel scolaire officiel — 1AM, الجيل الثاني (موفم 2017), unité 11 « السطوح المستوية : الأطوال، المحيطات، المساحات ».",
+  "Source : docs/official-book-pdfs/كتاب الرياضيات للسنة الأولى متوسط الجيل الثاني.pdf, pages imprimées 147 à 160 (PDF 147 à 161).",
+  "Ce fichier est LA source de vérité pédagogique de l’unité ; tout contenu cite un `id` d’ici via `source.elementId`.",
+  "Transcription VISUELLE ; figures quadrillées en cellules, aires et périmètres calculés par build-extraction.py, `answerSource: computed`.",
+  "Généré par docs/sources/1am/unit11/build-extraction.py — ne pas éditer à la main."
+ ],
+ "unitCode": "sutuh-masahat-muhitat",
+ "textbook": {
+  "title": "كتاب الرياضيات — السنة الأولى من التعليم المتوسط",
+  "generation": "الجيل الثاني",
+  "unitNumber": 11,
+  "unitTitle": "السطوح المستوية: الأطوال، المحيطات، المساحات",
+  "pages": {
+   "first": 147,
+   "last": 160
+  },
+  "pdfPageOffset": 1,
+  "sections": [
+   "سأتعلّم في هذا الباب",
+   "استحضر مكتسباتي",
+   "اكتشف",
+   "أوظّف تعلّماتي",
+   "أكتسب طرائق",
+   "دوري الآن",
+   "أتمرّن",
+   "أقوّم تعلّماتي",
+   "أتعمّق",
+   "أتعلّم الإدماج",
+   "وضعية تقويم",
+   "استعمل تكنولوجيات الإعلام والاتصال"
+  ]
+ },
+ "frozenAt": "2026-10-15",
+ "terminology": {
+  "note": "Le manuel écrit « السطح », « المساحة », « المحيط », « وحدة طول », « وحدة مساحة », « رصف / مرصوفة », « المضلّع », « القرص », « الدائرة ».",
+  "terms": [
+   "السطح",
+   "المساحة",
+   "المحيط",
+   "وحدة الطول",
+   "وحدة المساحة",
+   "الرصف",
+   "المرصوفة",
+   "مضلّع",
+   "القرص"
+  ]
+ },
+ "elements": [
+  {
+   "id": "objectives",
+   "kind": "objectives",
+   "page": 147,
+   "section": "سأتعلّم في هذا الباب",
+   "verified": true,
+   "items": [
+    "تعيين مساحة سطح مستو باستعمال رصف بسيط.",
+    "مقارنة مساحات في وضعيات بسيطة.",
+    "حساب محيط ومساحة مستطيل.",
+    "حساب مساحة مثلث قائم.",
+    "حساب محيط قرص.",
+    "إجراء تحويلات لوحدات الأطوال والمساحات."
+   ]
+  },
+  {
+   "id": "opener",
+   "kind": "aside",
+   "page": 147,
+   "section": "تمهيد",
+   "verified": true,
+   "text": "من أوحى إلى النحل صنع بيته على شكل سداسي منتظم! مجتمع النحل مجتمع متكامل ومتميّز بالتنظيم، وقد ألهمه الله صنع قرص الشمع على شكل سداسي منتظم تنعدم فيه الفراغات البينية، ما يجعل بيت النحل من أقوى البيوت مقاومة وتحملا للعدد الكبير من ساكنيه، ويتطلّب أقل كمية ممكنة من الشمع لتقسيمه إلى حيّزات متساوية. وفي نهاية تسعينات القرن الماضي (سنة 1999) أثبت علماء الرياضيات أنّ من بين المضلّعات التي تحدّ مساحة معطاة، فإنّ السداسي المنتظم هو المضلّع الأصغر محيطا.",
+   "figure": "صورتا قرص شمع (خلايا سداسية)، وفي إحداهما سداسي منتظم مؤشّر عليه وثلاث زوايا 120° عند رأس مشترك.",
+   "note": "Le texte dit « تنعدم فيه الفراغات البينية » (pas de vide entre les cellules) et attribue au résultat de Hales (1999) « le plus petit périmètre pour une aire donnée »."
+  },
+  {
+   "id": "prep",
+   "kind": "prerequisites",
+   "page": 148,
+   "section": "استحضر مكتسباتي",
+   "verified": true,
+   "instruction": "اختر الإجابة (أو الإجابات) الصحيحة في كل حالة، وبرّر اختيارك.",
+   "items": [
+    {
+     "n": 1,
+     "question": "يُسمّى طول الخط الأحمر في هذا الشكل:",
+     "figure": "سطح أخضر (خماسي) محاط بخط أحمر",
+     "options": [
+      "سطحا",
+      "مضلّعا",
+      "محيطا"
+     ],
+     "correct": [
+      2
+     ],
+     "why": "طول الخط الذي يحدّ السطح هو محيطه"
+    },
+    {
+     "n": 2,
+     "question": "الشكلان اللذان لهما نفس المساحة هما:",
+     "figure": "أربعة أشكال (أ) (ب) (ج) (د) على ورقة مرصوفة",
+     "cells": {
+      "أ": {
+       "name": "أ",
+       "rows": [
+        ".##",
+        "###",
+        ".#."
+       ],
+       "area": 6,
+       "perimeter": 12
+      },
+      "ب": {
+       "name": "ب",
+       "rows": [
+        ".##",
+        "###"
+       ],
+       "area": 5,
+       "perimeter": 10
+      },
+      "ج": {
+       "name": "ج",
+       "rows": [
+        "#..",
+        "###",
+        "###"
+       ],
+       "area": 7,
+       "perimeter": 12
+      },
+      "د": {
+       "name": "د",
+       "rows": [
+        ".##",
+        ".###"
+       ],
+       "tip": "triangle de base 2 carreaux et de hauteur 1 carreau = 1 carreau",
+       "area": 6,
+       "perimeter": null
+      }
+     },
+     "options": [
+      "الشكلان (أ) و (ب)",
+      "الشكلان (أ) و (ج)",
+      "الشكلان (أ) و (د)"
+     ],
+     "correct": [
+      2
+     ],
+     "why": "مساحات: (أ) 6 ، (ب) 5 ، (ج) 7 ، (د) 6 (مثلث الرأس = مربع واحد)"
+    },
+    {
+     "n": 3,
+     "question": "شكل واحد ليس له نفس المحيط مع الشكل (أ)، وهو:",
+     "figure": "أشكال (أ) (ب) (ج) (د) على ورقة مرصوفة",
+     "cells": {
+      "أ": {
+       "name": "أ",
+       "rows": [
+        "#....",
+        "#....",
+        "#####",
+        ".####"
+       ],
+       "area": 11,
+       "perimeter": 18
+      },
+      "ب": {
+       "name": "ب",
+       "rows": [
+        "#####",
+        "#####",
+        "#####",
+        ".####"
+       ],
+       "area": 19,
+       "perimeter": 18
+      },
+      "ج": {
+       "name": "ج",
+       "rows": [
+        "...##",
+        "#####",
+        ".####",
+        ".####"
+       ],
+       "area": 15,
+       "perimeter": 18
+      },
+      "د": {
+       "name": "د",
+       "rows": [
+        "...##",
+        "#..##",
+        "#####",
+        "#####"
+       ],
+       "area": 15,
+       "perimeter": 20
+      }
+     },
+     "options": [
+      "الشكل (ب)",
+      "الشكل (ج)",
+      "الشكل (د)"
+     ],
+     "correct": [
+      2
+     ],
+     "why": "المحيطات: (أ) 18 ، (ب) 18 ، (ج) 18 ، (د) 20"
+    },
+    {
+     "n": 4,
+     "question": "أيّهما أصغر محيطا؟ مربع طول ضلعه 4cm أم دائرة قطرها 4cm.",
+     "options": [
+      "المربع",
+      "الدائرة",
+      "لا أستطيع الحكم"
+     ],
+     "correct": [
+      1
+     ],
+     "why": "محيط المربع 16cm ؛ محيط الدائرة π × 4 ≈ 12,57cm",
+     "destination": "muhit-qurs"
+    },
+    {
+     "n": 5,
+     "question": "طول الدائرة في هذا الشكل هو:",
+     "figure": "دائرة نصف قطرها 3cm تقريبا مرسومة على ورقة مرصوفة (وحدة 1cm)",
+     "options": [
+      "16cm",
+      "24cm",
+      "محصور بين 16cm و 24cm"
+     ],
+     "correct": [
+      2
+     ],
+     "why": "محيط الدائرة بين محيط المربع المحاط (24) والمربع (مضلّع) المحاط داخلها (16)",
+     "destination": "muhit-qurs",
+     "reading": "Cercle lu à 100 dpi : diamètre 6 carreaux (à relire par muhit-qurs)."
+    }
+   ],
+   "answerSource": "computed",
+   "reading": "Items 1–3 relus à 250–300 dpi (figures en cellules, aire et périmètre calculés) ; 4 et 5 appartiennent à muhit-qurs."
+  },
+  {
+   "id": "act-1",
+   "kind": "activity",
+   "number": 1,
+   "page": 149,
+   "section": "اكتشف",
+   "title": "تعيين مساحة ومحيط سطح مستو",
+   "verified": true,
+   "text": "① انقل الجدول أدناه وأكمله باستعمال وحدة المساحة ووحدة الطّول المعطاتين في الشكل المرفق (الشكل ① مرصوف، ② ③ ④ أشكال أخرى؛ الجدول: الشكل — مساحته — محيطه). ② قارن مساحتي كلّ من السّطحين، ومحيطيهما في كل حالة: ① و ② ، ③ و ② ، ① و ④ . ③ ماذا يمكن أن تستنتج؟ ④ باستعمال وحدة طول ووحدة مساحة مماثلتين للوحدتين الواردتين في الشكل، ارسم على مرصوفة: أ) سطحين لهما نفس المساحة وليس لهما نفس المحيط. ب) سطحين لهما نفس المحيط وليس لهما نفس المساحة.",
+   "figure": "ورقة مرصوفة: وحدة مساحة = مربع واحد (أخضر)، وحدة طول = ضلع مربع (أحمر). أربعة أشكال ①②③④ ؛ ① مرصوف بالأزرق ؛ ② مرسوم بخط فقط ؛ ③ أصفر ؛ ④ أخضر.",
+   "cells": {
+    "①": {
+     "name": "①",
+     "rows": [
+      "###.",
+      "####",
+      "####",
+      "#..."
+     ],
+     "area": 12,
+     "perimeter": 16
+    },
+    "②": {
+     "name": "②",
+     "rows": [
+      "...#",
+      "##.#",
+      "####",
+      "####"
+     ],
+     "area": 12,
+     "perimeter": 18
+    },
+    "③": {
+     "name": "③",
+     "rows": [
+      "#....",
+      "#####",
+      "###..",
+      "###.."
+     ],
+     "area": 12,
+     "perimeter": 18
+    },
+    "④": {
+     "name": "④",
+     "rows": [
+      "#...",
+      "#...",
+      "####",
+      "####"
+     ],
+     "area": 10,
+     "perimeter": 16
+    }
+   },
+   "reading": "Relu à 220 dpi : ① 3+4+4+1 carreaux ; ② 1+3+4+4 (l’encoche au 2e rang) ; ③ 1+5+3+3 ; ④ 1+1+4+4 (L). Aire et périmètre calculés.",
+   "answer": {
+    "table": {
+     "①": {
+      "area": 12,
+      "perimeter": 16
+     },
+     "②": {
+      "area": 12,
+      "perimeter": 18
+     },
+     "③": {
+      "area": 12,
+      "perimeter": 18
+     },
+     "④": {
+      "area": 10,
+      "perimeter": 16
+     }
+    },
+    "sameAreaNotPerimeter": [
+     "①②",
+     "①③"
+    ],
+    "samePerimeterNotArea": [
+     "①④"
+    ],
+    "sameBoth": [
+     "②③"
+    ]
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "act-2",
+   "kind": "activity",
+   "number": 2,
+   "page": 149,
+   "section": "اكتشف",
+   "title": "وحدات الطول والمساحة",
+   "verified": false,
+   "text": "الميليمتر المربع هو مساحة مربع طول ضلعه 1mm، ونكتبها 1mm² ونقرأها «واحد ميليمتر مربع». أ) عبّر بـ cm² ثم بـ mm² عن مساحة مربع طول ضلعه 1cm. عبّر بـ m² ثم بـ cm² عن مساحة مربع طول ضلعه 1m. ب) انقل وأكمل: 1cm² = … mm² ، 1m² = … cm² . ج) عبّر بـ dam ثم بـ m عن طول ضلع مربع مساحته 1dam².",
+   "answer": {
+    "1cm2": "100 mm²",
+    "1m2": "10000 cm²",
+    "side 1dam2": "1 dam = 10 m"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "act-3",
+   "kind": "activity",
+   "number": 3,
+   "page": 149,
+   "section": "اكتشف",
+   "title": "محيط ومساحة مستطيل",
+   "verified": false,
+   "text": "أ) عبّر بالسنتيمتر عن عرض وطول المستطيل ABCD (مرصوف، 6cm × 4cm تقريبا). ما مساحة ABCD وما محيطه؟ ارسم مستطيلا EFGH عرضه 3cm له نفس مساحة ABCD. هل لهما نفس المحيط؟ ب) ارسم مستطيلا عرضه 3cm وطوله 7cm واحسب مساحته. ارسم مستطيلا له نفس محيط المستطيل السابق. هل لهما نفس المساحة؟ ج) ارسم مربعا طول ضلعه 5cm، واحسب مساحته.",
+   "reading": "Dimensions de ABCD non relues (à relire par mustatil-murabba-masaha)."
+  },
+  {
+   "id": "act-4",
+   "kind": "activity",
+   "number": 4,
+   "page": 150,
+   "section": "اكتشف",
+   "title": "مساحة مثلث قائم",
+   "verified": false,
+   "text": "أ) ما طبيعة المثلث ABC (AB = 7cm ، BC = 4cm ، قائم في B) ؟ أنشئ ABC بأطواله الحقيقية، عيّن D بحيث ABCD مستطيل، احسب مساحة ABCD واستنتج مساحة ABC. ب) احسب مساحة المثلث الملوّن في ثلاث حالات (6 × 4,2 ؛ 6,5 × 3,8 ؛ 5 × 5). ج) جد صيغة لحساب مساحة مثلث قائم بدلالة طولي ضلعيه القائمين."
+  },
+  {
+   "id": "act-5",
+   "kind": "activity",
+   "number": 5,
+   "page": 150,
+   "section": "اكتشف",
+   "title": "محيط قرص",
+   "verified": false,
+   "text": "عندما تدور العجلة دورة واحدة دون أن تنزلق، تقطع المسافة من A إلى B. ما علاقة الطول AB بطول الإطار الخارجي للعجلة؟ كرّر التجربة بأشياء مختلفة إطارها الخارجي دائري، سجّل في جدول P (طول الدائرة) و d (قطرها) و P/d، ماذا تلاحظ بالنسبة إلى حاصل قسمة طول الدائرة على قطرها؟"
+  },
+  {
+   "id": "know-1",
+   "kind": "knowledge",
+   "number": 1,
+   "page": 151,
+   "section": "أوظّف تعلّماتي",
+   "title": "مساحة سطح مستو ومحيطه",
+   "verified": true,
+   "text": "أ) يمكن لسطوح مختلفة أن يكون لها نفس المساحة ونفس المحيط. مثال: الشكلان ① و ② . ب) يمكن لسطوح مختلفة أن يكون لها نفس المساحة دون أن يكون لها نفس المحيط. مثال: الشكلان ① و ③ . ج) يمكن لسطوح مختلفة أن يكون لها نفس المحيط دون أن يكون لها نفس المساحة. مثال: الشكلان ④ و ⑤ .",
+   "figure": "خمسة أشكال على مرصوفة: ① وردي ② أصفر ③ أزرق (متقايسة المساحة)، ④ مستطيل بنهايتين دائريتين (أصفر) ، ⑤ مستطيل بجانبين مقوّسين إلى الداخل (بنّي).",
+   "reading": "Cinq surfaces à comparer : ①②③ de même aire ; ①② de même périmètre, ③ non ; ④⑤ de même périmètre (côtés arrondis compensés) et d’aires différentes. La plateforme les REDESSINE (guide §4ter-bis).",
+   "answer": {
+    "statements": [
+     "même aire et même périmètre",
+     "même aire, périmètres différents",
+     "même périmètre, aires différentes"
+    ]
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "know-2",
+   "kind": "knowledge",
+   "number": 2,
+   "page": 151,
+   "section": "أوظّف تعلّماتي",
+   "title": "وحدات الطول ووحدات المساحة",
+   "verified": false,
+   "text": "كل مربع طول ضلعه وحدة طول، يمكن اعتبار مساحته وحدة مساحة، وهكذا نرفق بكل وحدة طول وحدة مساحة. 1m² هي مساحة مربع طول ضلعه 1m ، 1cm² ... ؛ جدول وحدات المساحة km² hm² dam² m² dm² cm² mm² (كل وحدة = 100 مرة التي تليها) ؛ 1m² = 100dm² = 10000cm² = 1000000mm² ؛ 1dam² = 100m² ؛ 1hm² = 10000m² ؛ 1km² = 1000000m². الوحدات الفلاحية: 1ha = 1hm² = 10000m² ، 1a = 1dam² = 100m² ، 1ca = 1m² ؛ 1ha = 100a ، 1a = 100ca."
+  },
+  {
+   "id": "method-1",
+   "kind": "method",
+   "number": 1,
+   "page": 152,
+   "section": "أكتسب طرائق",
+   "title": "تعيين مساحة سطح مستو باستعمال رصف بسيط",
+   "verified": true,
+   "text": "نص: عيّن مساحة السطح الملوّن بالبنفسجي في الشكل أدناه، مرّة باستعمال الوحدة ① ومرّة أخرى باستعمال الوحدة ② . حل: يتكوّن السطح الملوّن بالبنفسجي من 21 مربعا مثيلا للوحدة ①، ومنه مساحته 21 مربعا (وحدة ①). الوحدة ② هي ضعف الوحدة ①، ومنه فالمساحة باستعمال الوحدة ② هي نصف المساحة باستعمال الوحدة ①. وعليه مساحة السطح الملوّن بالبنفسجي هي 10,5 (وحدة ②). توجيهات: يمكن البحث عن علاقة تربط الوحدتين والاستفادة منها لتعيين المساحة باستعمال الوحدة الأخرى. طريقة: • نعتمد على العدّ في تعيين مساحة سطح مستو على مرصوفة. • للتعبير عن مساحة سطح بوحدتين مختلفتين يمكن الاستفادة من العلاقة التي تربط الوحدتين.",
+   "figure": "سطح بنفسجي على مرصوفة (6 أعمدة × 3 صفوف تقريبا بثقب أبيض واحد) ؛ وحدة ① = مربع أصفر ؛ وحدة ② = مستطيل أخضر من مربعين.",
+   "answer": {
+    "unit1": 21,
+    "unit2": "21/2",
+    "unit2decimal": "10,5",
+    "relation": "unit2 = 2 × unit1"
+   },
+   "answerSource": "computed",
+   "reading": "Le nombre 21 est celui du manuel ; la figure n’a pas été recomptée carreau par carreau (la plateforme redessine son propre pavage)."
+  },
+  {
+   "id": "method-2",
+   "kind": "method",
+   "number": 2,
+   "page": 152,
+   "section": "أكتسب طرائق",
+   "title": "تحويل وحدات المساحة",
+   "verified": false,
+   "text": "نص: ① حوّل إلى m² كلا من: 3dam² ، 5,7hm² ، 14,625km² . ② نفس السؤال من أجل: 276dm² ، 2835cm² ، 857105mm² . طريقة: استعمال الجدول (كل وحدة = 100 مرة التي تليها) ؛ 3dam² = 300m² ؛ 5,7hm² = 57000m² ؛ 14,625km² = 14625000m² ؛ 276dm² = 2,76m² ؛ 2835cm² = 0,2835m² ؛ 857105mm² = 0,857105m².",
+   "answer": {
+    "3dam2": "300",
+    "5,7hm2": "57000",
+    "14,625km2": "14625000",
+    "276dm2": "2,76",
+    "2835cm2": "0,2835",
+    "857105mm2": "0,857105"
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "know-3",
+   "kind": "knowledge",
+   "number": 3,
+   "page": 153,
+   "section": "أوظّف تعلّماتي",
+   "title": "محيط ومساحة مستطيل",
+   "verified": false,
+   "text": "محيط مستطيل هو مجموع أطوال أضلاعه. إذا كان طوله a وعرضه b فإنّ محيطه P = 2 × (a + b). مساحة مستطيل هي جداء طوله وعرضه A = a × b. لحساب محيط أو مساحة شكل، ينبغي التأكد من أنّ كل الأطوال المستعملة معبّر عنها بنفس الوحدة."
+  },
+  {
+   "id": "know-4",
+   "kind": "knowledge",
+   "number": 4,
+   "page": 153,
+   "section": "أوظّف تعلّماتي",
+   "title": "محيط ومساحة مربّع",
+   "verified": false,
+   "text": "مربّع طول ضلعه a: محيطه P = 4 × a ، مساحته A = a × a = a²."
+  },
+  {
+   "id": "know-5",
+   "kind": "knowledge",
+   "number": 5,
+   "page": 153,
+   "section": "أوظّف تعلّماتي",
+   "title": "محيط ومساحة مثلث قائم",
+   "verified": false,
+   "text": "المثلّث القائم هو نصف مستطيل. محيط مثلث هو مجموع أطوال أضلاعه. مساحة مثلث قائم طولا ضلعيه القائمين a و b هي نصف مساحة مستطيل بعداه a و b : A = (a × b)/2 = ½ ab."
+  },
+  {
+   "id": "know-6",
+   "kind": "knowledge",
+   "number": 6,
+   "page": 153,
+   "section": "أوظّف تعلّماتي",
+   "title": "محيط قرص والعدد π",
+   "verified": false,
+   "text": "محيط قرص هو طول الدائرة التي تحدّه. محيط قرص نصف قطره r وقطره d هو: P = 2 × π × r أو P = π × d. نأخذ 3,14 كقيمة مقرّبة للعدد π عند الحساب. باستعمال آلة حاسبة: عندما نضغط على المسة π تظهر قيمة مقرّبة للعدد π، مثل 3.141592654."
+  },
+  {
+   "id": "method-3",
+   "kind": "method",
+   "number": 3,
+   "page": 154,
+   "section": "أكتسب طرائق",
+   "title": "حساب مساحة سطح بالتجزئة",
+   "verified": false,
+   "text": "نص: احسب مساحة السطح الملوّن في كل من الحالتين (① شكل L : 7cm × 6cm ناقص مربع ضلعه 4cm ؛ ② مستطيل 8cm × 3cm ومثلثان قائمان). حل: ① (7 × 6) − (4 × 4) = 26cm² ، أو (4 × 3) + (7 × 2) = 26 ؛ ② (8 × 3) + (4 × 3)/2 + (2 × 3)/2 = 33cm². طريقة: لحساب مساحات بعض السطوح يمكن تجزئتها إلى سطوح مألوفة (كالمربع والمستطيل والمثلث…)، ثم نجمع أو نطرح المساحات الناتجة حسب الحالة.",
+   "answer": {
+    "case1": 26,
+    "case2": 33
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "now-154",
+   "kind": "practice",
+   "page": 154,
+   "section": "دوري الآن",
+   "verified": false,
+   "text": "① باستعمال معطيات الشكل المرفق (سطح أخضر بشكل «زهرة» على مرصوفة، 1cm) احسب محيط الشكل الملوّن، خذ 3,14 كقيمة مقرّبة للعدد π. ② ارسم مربعا ABCD طول ضلعه 6cm ؛ ارسم داخل المربع نصف الدائرة التي قطرها [AB] ونصف الدائرة التي قطرها [CD] ؛ امسح كلا من [AB] و [CD] واحسب محيط الشكل الناتج."
+  },
+  {
+   "id": "ex-1",
+   "kind": "exercise",
+   "number": 1,
+   "page": 155,
+   "section": "مقارنة محيطات ومساحات في وضعيات بسيطة",
+   "verified": true,
+   "text": "ارسم، دون استعمال مسطرة مدرّجة، قطعة مستقيم طولها محيط السطح.",
+   "figure": "خماسي أخضر غير منتظم بلا تدريج (لا أطوال مقروءة).",
+   "reading": "Aucune longueur n’est donnée : la consigne se fait au compas (report de longueurs), geste non disponible à l’écran."
+  },
+  {
+   "id": "ex-2",
+   "kind": "exercise",
+   "number": 2,
+   "page": 155,
+   "section": "مقارنة محيطات ومساحات في وضعيات بسيطة",
+   "verified": true,
+   "text": "قارن، دون استعمال مسطرة مدرّجة، بين محيطي السطحين (أ) و (ب).",
+   "figure": "(أ) مثلث ؛ (ب) رباعي (وردي) ؛ بلا تدريج.",
+   "reading": "Comparaison de périmètres sans règle graduée : report de longueurs au compas, ou fil. Sur écran : « le fil » du labo (la plateforme redessine l’exercice avec des longueurs au carreau)."
+  },
+  {
+   "id": "ex-3",
+   "kind": "exercise",
+   "number": 3,
+   "page": 155,
+   "section": "مقارنة محيطات ومساحات في وضعيات بسيطة",
+   "verified": false,
+   "text": "قارن محيطات وكذا مساحات الأشكال.",
+   "figure": "ثلاثة أشكال ①②③ على مرصوفة بأضلاع مائلة (قطرية).",
+   "cells": {
+    "①": {
+     "area": 9,
+     "halves": 2,
+     "note": "rectangle 4×2 + 2 demi-carreaux en haut (deux bords en biais)"
+    },
+    "②": {
+     "area": 13
+    },
+    "③": {
+     "area": 8
+    }
+   },
+   "reading": "Lu à 250 dpi : aires ③ = 8 (2,5 + 2,5 + 2 + 1), ② = 13, ① = 9 carreaux, avec des demi-carreaux le long des bords obliques ; périmètres non calculés (côtés en diagonale √2 d’un carreau)."
+  },
+  {
+   "id": "ex-4",
+   "kind": "exercise",
+   "number": 4,
+   "page": 155,
+   "section": "مقارنة محيطات ومساحات في وضعيات بسيطة",
+   "verified": true,
+   "text": "ارسم على ورقة كراسك ثلاثة مضلّعات لها نفس المحيط وليس لها نفس المساحة."
+  },
+  {
+   "id": "ex-5",
+   "kind": "exercise",
+   "number": 5,
+   "page": 155,
+   "section": "مقارنة محيطات ومساحات في وضعيات بسيطة",
+   "verified": true,
+   "text": "ارسم على ورقة كراسك ثلاثة مضلّعات لها نفس المساحة، وليس لها نفس المحيط."
+  },
+  {
+   "id": "ex-6",
+   "kind": "exercise",
+   "number": 6,
+   "page": 155,
+   "section": "مقارنة محيطات ومساحات في وضعيات بسيطة",
+   "verified": true,
+   "text": "ارسم على ورقة كراسك ثلاثة مضلّعات مختلفة لها نفس المساحة، ولها نفس المحيط."
+  },
+  {
+   "id": "ex-7",
+   "kind": "exercise",
+   "number": 7,
+   "page": 155,
+   "section": "إجراء تحويلات لوحدات الأطوال والمساحات",
+   "verified": false,
+   "text": "عبّر بالمتر عن الأطوال: أ) 27dam ب) 3hm جـ) 32km د) 35dm هـ) 569cm و) 8500mm"
+  },
+  {
+   "id": "ex-8",
+   "kind": "exercise",
+   "number": 8,
+   "page": 155,
+   "section": "إجراء تحويلات لوحدات الأطوال والمساحات",
+   "verified": false,
+   "text": "انقل وأكمل: 24m = … cm ؛ 7km = … m ؛ 61,78dm = … mm ؛ 61,78dm = … m ؛ 43dam = … hm ؛ 43cm = … dam"
+  },
+  {
+   "id": "ex-9",
+   "kind": "exercise",
+   "number": 9,
+   "page": 155,
+   "section": "إجراء تحويلات لوحدات الأطوال والمساحات",
+   "verified": false,
+   "text": "انقل وأكمل: 75m = 750 … ؛ 395m = 3,95 … ؛ 5km = 500 … ؛ 3458cm = 3,458 … ؛ 9 … = 900000cm ؛ 2107 … = 2,107m"
+  },
+  {
+   "id": "ex-10",
+   "kind": "exercise",
+   "number": 10,
+   "page": 155,
+   "section": "إجراء تحويلات لوحدات الأطوال والمساحات",
+   "verified": false,
+   "text": "عبّر بالمتر المربع (m²) عن المساحات: 9dam² ، 5,27hm² ، 3km² ، 52dm² ، 52134cm² ، 50000mm²"
+  },
+  {
+   "id": "ex-11",
+   "kind": "exercise",
+   "number": 11,
+   "page": 155,
+   "section": "إجراء تحويلات لوحدات الأطوال والمساحات",
+   "verified": false,
+   "text": "انقل وأكمل: 3m² = … cm² ؛ 0,0065km² = … m² ؛ 5,21dm² = … mm² ؛ 8716dm² = … m² ؛ 3,12cm² = … dm² ؛ 43dam² = … hm²"
+  },
+  {
+   "id": "ex-12",
+   "kind": "exercise",
+   "number": 12,
+   "page": 155,
+   "section": "إجراء تحويلات لوحدات الأطوال والمساحات",
+   "verified": false,
+   "text": "انقل وأكمل: 75m² = 750000 … ؛ 2759m² = 27,59 … ؛ 5km² = 500 … ؛ 1234cm² = 0,1234 … ؛ 12 … = 120000cm² ؛ 21070 … = 2,107m²"
+  },
+  {
+   "id": "ex-13",
+   "kind": "exercise",
+   "number": 13,
+   "page": 155,
+   "section": "إجراء تحويلات لوحدات الأطوال والمساحات",
+   "verified": false,
+   "text": "انقل وأكمل: 5a = … ca ؛ 23a = … m² ؛ 324a = … ha ؛ 5,12ha = … dam² ؛ 27,605ha = … ca ؛ 2345ca = … m²"
+  },
+  {
+   "id": "ex-14",
+   "kind": "exercise",
+   "number": 14,
+   "page": 155,
+   "section": "حساب محيطات ومساحات بسيطة",
+   "verified": false,
+   "text": "① احسب في كل حالة محيط ومساحة المربع الذي طول ضلعه: 5cm ، 0,32m ، 12dm ، 725mm ② عبّر عن المحيط بالمتر (m) وعن المساحة بالمتر المربع (m²)."
+  },
+  {
+   "id": "ex-15",
+   "kind": "exercise",
+   "number": 15,
+   "page": 155,
+   "section": "حساب محيطات ومساحات بسيطة",
+   "verified": false,
+   "text": "احسب في كل حالة محيط ومساحة المستطيل الذي بعداه (طوله وعرضه): 7cm و 5cm ؛ 0,37m و 0,2m ؛ 12dm و 45cm ؛ 0,5m و 208mm."
+  },
+  {
+   "id": "ex-16",
+   "kind": "exercise",
+   "number": 16,
+   "page": 156,
+   "section": "حساب محيطات ومساحات بسيطة",
+   "verified": false,
+   "text": "باستعمال معطيات الشكلين ① ، ② احسب مساحة ومحيط كل منهما (شكلان بزوايا قائمة، أطوال 2 ، 4 ، 7 ، 3 ، 4 ، 7 cm)."
+  },
+  {
+   "id": "ex-17",
+   "kind": "exercise",
+   "number": 17,
+   "page": 156,
+   "section": "حساب محيطات ومساحات بسيطة",
+   "verified": false,
+   "text": "ارسم مربعا ABCD طول ضلعه 4cm ، عيّن النقطة E من [CD] حيث CE = 1,5cm ، والنقطة F من [AD] حيث DF = 1,5cm . احسب مساحة الرباعي BEDF."
+  },
+  {
+   "id": "ex-18",
+   "kind": "exercise",
+   "number": 18,
+   "page": 156,
+   "section": "حساب محيطات ومساحات بسيطة",
+   "verified": false,
+   "text": "ارسم مثلثا ABC قائما في A بحيث AB = 6cm و AC = 45mm . احسب مساحة المثلث ABC."
+  },
+  {
+   "id": "ex-19",
+   "kind": "exercise",
+   "number": 19,
+   "page": 156,
+   "section": "حساب محيطات ومساحات بسيطة",
+   "verified": false,
+   "text": "احسب مساحة مثلث قائم ومتساوي الساقين طول كل من ضلعيه القائمين 8cm."
+  },
+  {
+   "id": "ex-20",
+   "kind": "exercise",
+   "number": 20,
+   "page": 156,
+   "section": "حساب محيطات ومساحات بسيطة",
+   "verified": false,
+   "text": "أنشئ معينا قطراه 6cm و 9cm ، واحسب مساحته."
+  },
+  {
+   "id": "ex-21",
+   "kind": "exercise",
+   "number": 21,
+   "page": 156,
+   "section": "حساب محيطات ومساحات بسيطة",
+   "verified": false,
+   "text": "أ) أنشئ مستطيلا عرضه نصف طوله، وبيّن أنّه يمكن تقسيمه إلى مربعين متقايسين. ب) مستطيل عرضه نصف طوله ومساحته 50cm²، احسب بعديه."
+  },
+  {
+   "id": "ex-22",
+   "kind": "exercise",
+   "number": 22,
+   "page": 156,
+   "section": "حساب محيطات ومساحات بسيطة",
+   "verified": false,
+   "text": "بأخذ 3,14 كقيمة مقرّبة للعدد π ، احسب بالمتر طول دائرة نصف قطرها 6cm."
+  },
+  {
+   "id": "ex-23",
+   "kind": "exercise",
+   "number": 23,
+   "page": 156,
+   "section": "حساب محيطات ومساحات بسيطة",
+   "verified": false,
+   "text": "يمثّل خط الاستواء أكبر دائرة على الكرة الأرضية، ويقدّر نصف قطرها بـ 6376km. بأخذ 3,14 كقيمة مقرّبة للعدد π ، احسب طول خط الاستواء."
+  },
+  {
+   "id": "ex-24",
+   "kind": "exercise",
+   "number": 24,
+   "page": 156,
+   "section": "حساب محيطات ومساحات بسيطة",
+   "verified": false,
+   "text": "أراد صاحب حقل (مستطيل 15m × 5,5m تقريبا) أن يستحدث فيه ممرا له نفس العرض وبالأبعاد المقترحة على المخطط (9m ، 80cm ، 70cm) ويحيطه بسياج مع ترك باب عند مدخل كل ممر. أ) احسب مساحة الحقل المتبقية. ب) إذا علمت أنّ ثمن المتر الواحد من السياج هو 125DA ، احسب ثمن السياج."
+  },
+  {
+   "id": "ex-25",
+   "kind": "exercise",
+   "number": 25,
+   "page": 156,
+   "section": "حساب محيطات ومساحات بسيطة",
+   "verified": false,
+   "text": "مستطيل طوله 14,7cm وعرضه ثلثا (2/3) طوله. احسب مساحته ومحيطه."
+  },
+  {
+   "id": "ex-26",
+   "kind": "exercise",
+   "number": 26,
+   "page": 156,
+   "section": "حساب محيطات ومساحات بسيطة",
+   "verified": false,
+   "text": "يقول إلياس إنّ مساحة مثلث قائم أحد ضلعيه القائمين 5cm والآخر هو ضعف الأول هي نفس مساحة مربّع طول ضلعه 5cm. هل توافقه الرأي؟ برّر جوابك."
+  },
+  {
+   "id": "ex-27",
+   "kind": "exercise",
+   "number": 27,
+   "page": 156,
+   "section": "حساب محيطات ومساحات بسيطة",
+   "verified": false,
+   "text": "أ) ارسم مربعا ABCD طول ضلعه 4cm ، وعيّن النقطتين F و E بحيث F منتصف [BC] و E منتصف [BF]. ب) جد العلاقة بين مساحتي المثلثين ABE و AEF . ج) جد العلاقة بين مساحتي المثلثين AEF و AFC."
+  },
+  {
+   "id": "ex-28",
+   "kind": "exercise",
+   "number": 28,
+   "page": 156,
+   "section": "حساب محيطات ومساحات بسيطة",
+   "verified": false,
+   "text": "احسب بالسنتيمتر المربع مساحة السطح (شبه منحرف قائم قاعدتاه 3cm و 7cm وارتفاعه 4cm تقريبا)."
+  },
+  {
+   "id": "ex-29",
+   "kind": "exercise",
+   "number": 29,
+   "page": 156,
+   "section": "حساب محيطات ومساحات بسيطة",
+   "verified": false,
+   "text": "احسب طول السلسلة باستعمال البيانات الموجودة على الشكل أدناه (دراجة: عجلتان وسلسلة، 48cm)."
+  },
+  {
+   "id": "self-1",
+   "kind": "self",
+   "number": 1,
+   "page": 157,
+   "section": "أقوّم تعلّماتي",
+   "verified": false,
+   "text": "① قارن بين مساحتي السطحين ① و ② . ② قارن بين محيطي السطحين ① و ② .",
+   "figure": "سطح أصفر ① فوق سطح أحمر ② على مرصوفة (عرض 6 مربعات تقريبا) ؛ ② مستطيل بنتوءين جانبيين.",
+   "reading": "Deux surfaces empilées dans un rectangle 6 × 4 environ : ① jaune (en haut, avec une encoche), ② rouge (en bas, deux « oreilles »). Carreaux non recomptés ; la plateforme redessine l’exercice avec ses propres figures."
+  },
+  {
+   "id": "self-2",
+   "kind": "self",
+   "number": 2,
+   "page": 157,
+   "section": "أقوّم تعلّماتي",
+   "verified": false,
+   "text": "ارسم على مرصوفة مستطيلا ومربعا لكل منهما نفس مساحة المضلّع، وليس له نفس المحيط.",
+   "figure": "مضلّع أخضر غامق (سداسي مقعّر : ساعة رملية) داخل مستطيل برتقالي على مرصوفة.",
+   "reading": "Sablier : 2 trapèzes (haut et bas) dans un rectangle 8 × 5 environ ; aire non recomptée."
+  },
+  {
+   "id": "self-3",
+   "kind": "self",
+   "number": 3,
+   "page": 157,
+   "section": "أقوّم تعلّماتي",
+   "verified": false,
+   "text": "أحد هذه القياسات لا يعبّر عن نفس المساحة التي تعبّر عنها البقية، حدّده: 2345m² ؛ 0,2345hm² ؛ 2345000mm² ؛ 234500dm²."
+  },
+  {
+   "id": "self-4",
+   "kind": "self",
+   "number": 4,
+   "page": 157,
+   "section": "أقوّم تعلّماتي",
+   "verified": false,
+   "text": "رتّب المساحات الآتية ترتيبا تنازليا: 72dam² ، 13hm² ، 2km² ، 513m²."
+  },
+  {
+   "id": "self-5",
+   "kind": "self",
+   "number": 5,
+   "page": 157,
+   "section": "أقوّم تعلّماتي",
+   "verified": false,
+   "text": "اختر الجواب الصحيح وبرّر اختيارك: إذا كان طول ضلع مربع 5cm فإنّ محيطه: 25cm² ، 25cm ، 20cm ؛ ومساحته: 25cm² ، 25cm ، 20cm."
+  },
+  {
+   "id": "self-6",
+   "kind": "self",
+   "number": 6,
+   "page": 157,
+   "section": "أقوّم تعلّماتي",
+   "verified": false,
+   "text": "المستطيل الذي طوله 13cm وعرضه 65mm فإنّ مساحته: 845cm² ، 84,5cm² ، 845mm²."
+  },
+  {
+   "id": "self-7",
+   "kind": "self",
+   "number": 7,
+   "page": 157,
+   "section": "أقوّم تعلّماتي",
+   "verified": false,
+   "text": "مستطيل محيطه 24cm وعرضه 5cm. احسب طوله."
+  },
+  {
+   "id": "self-8",
+   "kind": "self",
+   "number": 8,
+   "page": 157,
+   "section": "أقوّم تعلّماتي",
+   "verified": false,
+   "text": "قارن بين مساحتي المثلثين ① و ② (مثلثان داخل مثلث قائم 4cm × 6cm)."
+  },
+  {
+   "id": "self-9",
+   "kind": "self",
+   "number": 9,
+   "page": 157,
+   "section": "أقوّم تعلّماتي",
+   "verified": false,
+   "text": "بأخذ 3,14 كقيمة مقرّبة للعدد π ، احسب بالمتر طول دائرة نصف قطرها 50cm."
+  },
+  {
+   "id": "self-10",
+   "kind": "self",
+   "number": 10,
+   "page": 157,
+   "section": "أقوّم تعلّماتي",
+   "verified": false,
+   "text": "كل الأقواس في الشكل أنصاف دوائر. يقول إلياس إنّ الخط الأسود أطول من كل من الخطين الأخضر والأحمر (AB = 8cm). هل هذا صحيح؟ برّر جوابك."
+  },
+  {
+   "id": "self-11",
+   "kind": "self",
+   "number": 11,
+   "page": 157,
+   "section": "أقوّم تعلّماتي",
+   "verified": false,
+   "text": "من كم نصف دائرة يتكوّن الخط الأحمر؟ احسب طوله (مربع ضلعه 6cm، أربع بتلات)."
+  },
+  {
+   "id": "deep-1",
+   "kind": "deepen",
+   "number": 1,
+   "page": 158,
+   "section": "أتعمّق",
+   "verified": false,
+   "text": "علما أنّ كل الأقواس في الشكل هي أنصاف دوائر متقايسة، احسب بالسنتيمتر محيط السطح أدناه (سطح أخضر على مرصوفة، 2cm)."
+  },
+  {
+   "id": "deep-2",
+   "kind": "deepen",
+   "number": 2,
+   "page": 158,
+   "section": "أتعمّق",
+   "verified": true,
+   "text": "السطح الملوّن في الشكل المرفق ليس مضلّعا. ارسم على ورقة مرصوفة مستطيلا ومربعا لكل منهما نفس مساحة هذا السطح الملوّن.",
+   "reading": "Surface « stade » : un rectangle sur quadrillage dont deux bords courbes cèdent à l’extérieur ce que deux autres reçoivent (demi-disques). Aire par COMPENSATION : on déplace les parties en excès sur les creux. Non recomptée carreau par carreau ; la plateforme conçoit sa propre surface."
+  },
+  {
+   "id": "deep-3",
+   "kind": "deepen",
+   "number": 3,
+   "page": 158,
+   "section": "أتعمّق",
+   "verified": false,
+   "text": "مربع طول ضلعه 6cm. أ) احسب طول المستطيل الذي عرضه 2cm والذي له نفس محيط المربع. ب) قارن بين مساحتيهما. ج) أعد نفس السؤالين (أ) و (ب) من أجل مستطيل عرضه 4cm."
+  },
+  {
+   "id": "deep-4",
+   "kind": "deepen",
+   "number": 4,
+   "page": 158,
+   "section": "أتعمّق",
+   "verified": false,
+   "text": "مستطيل ومربّع لهما نفس المحيط. إذا علمت أنّ طول المستطيل 12cm ومساحته 96cm²، احسب مساحة المربّع."
+  },
+  {
+   "id": "deep-5",
+   "kind": "deepen",
+   "number": 5,
+   "page": 158,
+   "section": "أتعمّق",
+   "verified": false,
+   "text": "مربّع ومثلّث متقايس الأضلاع لهما نفس المحيط. إذا علمت أنّ مساحة المربّع 36cm²، احسب طول ضلع المثلث."
+  },
+  {
+   "id": "deep-6",
+   "kind": "deepen",
+   "number": 6,
+   "page": 158,
+   "section": "أتعمّق",
+   "verified": false,
+   "text": "في الشكل ABCD الضلعان [AD] و [BC] متوازيان، و AB = CD ويُسمّى شبه منحرف متساوي الساقين (AD = 3cm ، BC = 2 + 3 + … = 8cm ، الارتفاع 3cm). احسب مساحته بطريقتين مختلفتين."
+  },
+  {
+   "id": "deep-7",
+   "kind": "deepen",
+   "number": 7,
+   "page": 158,
+   "section": "أتعمّق",
+   "verified": false,
+   "text": "احسب محيط ومساحة السطح الملوّن في الشكل أدناه (AF = 1cm ; FD = 9cm ; FE = 3cm ; AE = 3,16cm ; ED = 9,49cm ; AB = 5cm)."
+  },
+  {
+   "id": "deep-8",
+   "kind": "deepen",
+   "number": 8,
+   "page": 158,
+   "section": "أتعمّق",
+   "verified": false,
+   "text": "كل الرباعيات في الشكل هي مستطيلات. قارن بين مساحتي الجزأين الملوّنين."
+  },
+  {
+   "id": "deep-9",
+   "kind": "deepen",
+   "number": 9,
+   "page": 158,
+   "section": "أتعمّق",
+   "verified": false,
+   "text": "ABC مثلث متقايس الأضلاع، طول ضلعه 6cm و AH = 5,2cm. احسب محيطه ومساحته."
+  },
+  {
+   "id": "deep-10",
+   "kind": "deepen",
+   "number": 10,
+   "page": 158,
+   "section": "أتعمّق",
+   "verified": false,
+   "text": "السداسي المنتظم هو مضلّع له ستة أضلاع متقايسة، وزواياه متقايسة. يمكن تقسيم السداسي المنتظم إلى ستة مثلثات متقايسة الأضلاع. احسب محيط سداسي منتظم طول ضلعه 6cm."
+  },
+  {
+   "id": "deep-11",
+   "kind": "deepen",
+   "number": 11,
+   "page": 158,
+   "section": "أتعمّق",
+   "verified": false,
+   "text": "الشكل أدناه هو تمثيل لمظلة شمسية على سطح مستو. الأقواس التي تكوّن هذا التمثيل كلها أنصاف دوائر، والتي تقع في الأسفل كلها متقايسة. احسب محيط الجزء الملوّن بالأصفر."
+  },
+  {
+   "id": "integration",
+   "kind": "integration",
+   "page": 159,
+   "section": "أتعلّم الإدماج",
+   "title": "تجديد أرضية منزل",
+   "verified": false,
+   "text": "يريد صاحب منزل فرش قاعة الضيوف والغرف الثلاث بالسجاد، وتجديد بلاط الشرفة (انظر المخطط المقابل). إذا علمت أنّ تكلفة المتر المربع الواحد من البلاط هي 1200DA، وتكلفة المتر المربع الواحد من السجاد هي 500DA، وأنّ السجاد يثبت على طول حافة الحائط بشرائط خشبية سعر المتر الواحد منها هو 45DA، وأنّ فتحات الأبواب متساوية وتساوي 0,9m. احسب تكلفة الأشغال.",
+   "shortSolution": [
+    "تكلفة تبليط الشرفة هي 28800DA.",
+    "تكلفة السجاد هي 38550DA.",
+    "ثمن الشريط الخشبي اللازم هو 2853DA ومنه تكلفة الأشغال هي 70203DA."
+   ],
+   "answer": {
+    "total": 70203,
+    "pieces": [
+     28800,
+     38550,
+     2853
+    ]
+   },
+   "answerSource": "computed"
+  },
+  {
+   "id": "evaluation",
+   "kind": "integration",
+   "page": 159,
+   "section": "وضعية تقويم",
+   "verified": false,
+   "text": "الشكل المقابل (مستطيل 9m × 4m ناقص مربع 1m عند الزاوية السفلية اليسرى) يمثّل أعلى الوجه العلوي لمسبح المنزل. لضمان أمن أولاده والمحافظة على نظافة مسبح المنزل، يريد صاحب المسبح تغطيته بقماش مشمع نظافة المسبح. يثبت القماش على قضيب ألمنيوم يحيط بكافة المسبح على بعد 20cm من حافته. يقترح حرفي: ثمن المتر المربع من القماش هو 1250DA ، ثمن المتر من قضيب الألمنيوم هو 240DA ، مبلغ اليد العاملة 6500DA. احسب تكلفة تغطية المسبح."
+  },
+  {
+   "id": "ict",
+   "kind": "ict",
+   "page": 160,
+   "section": "استعمل تكنولوجيات الإعلام والاتصال",
+   "verified": false,
+   "text": "نشاط 1 (جيوجبرا): حل مسألة بمساعدة جيوجبرا — مستقيم (d) ونقطتان A و B من نفس الجهة، عيّن النقطة C من (d) بحيث يكون محيط المثلث ABC أصغر ما يمكن. نشاط 2: استعمال جيوجبرا لوضع تخمين — مربع ABCD ، النقطة M من [CD] والنقطة E من [BC] حيث CE = DM ، المضلّع AECM : حرّك M وقارن مساحة AECM مع مساحة المربع."
+  }
+ ],
+ "discrepancies": [
+  {
+   "elementId": "unit",
+   "kind": "scan",
+   "text": "La page imprimée 150 (activités 4–5) est DOUBLÉE à la page PDF 151 ; à partir de la page imprimée 151, page PDF = page imprimée + 1 (153 imprimée = 154 PDF …). « أقوّم تعلّماتي » p. 157 renvoie à « pp. 170–172 » (erreur du manuel)."
+  },
+  {
+   "elementId": "prep",
+   "kind": "reading",
+   "text": "Item 2 relu à 300 dpi : (أ) 6 carreaux, (ب) 5, (ج) 7, (د) 6 — la pointe triangulaire de (د) (base 2 carreaux, hauteur 1) vaut 1 carreau. Item 3 relu à 200 dpi : périmètres 18, 18, 18, 20 (le seul différent est (د) : encoche ouverte vers le haut)."
+  },
+  {
+   "elementId": "act-1",
+   "kind": "reading",
+   "text": "Figures relues à 220 dpi (carreaux de 54 px) : ① 12 carreaux / périmètre 16, ② 12 / 18, ③ 12 / 18, ④ 10 / 16 (calculés par area_perimeter). Réponses attendues : ① et ② ont même aire et des périmètres différents ; ② et ③ mêmes aire et périmètre ; ① et ④ même périmètre et des aires différentes."
+  },
+  {
+   "elementId": "know-1",
+   "kind": "reading",
+   "text": "Les figures ④ et ⑤ ont des bords courbes (demi-disques ajoutés ou retranchés) : « même périmètre » entre elles ne se lit pas au carreau (le périmètre des arcs est le sujet de muhit-qurs) ; la plateforme n’en reprend que l’idée (deux surfaces de même périmètre et d’aires différentes) avec ses propres figures au carreau."
+  },
+  {
+   "elementId": "method-1",
+   "kind": "scope",
+   "text": "Le manuel écrit « المساحة باستعمال الوحدة ② هي نصف المساحة باستعمال الوحدة ① » (unité ② = 2 carreaux) : 21 carreaux = 10,5 unités ②. La leçon le fait manipuler avec des unités d’aire (pas de cm² : ce sont celles de wahdat-tul-masaha)."
+  },
+  {
+   "elementId": "ex-1",
+   "kind": "scope",
+   "text": "ex 1–2 se font au compas / à la bande de papier (report de longueurs) : geste non disponible à l’écran ; la plateforme les redessine (un fil virtuel, des longueurs en carreaux)."
+  },
+  {
+   "elementId": "ex-3",
+   "kind": "reading",
+   "text": "Les bords obliques coupent des carreaux EN DEUX (demi-carreaux) : aires ③ 8, ② 13, ① 9 ; les périmètres comparent des côtés en diagonale (√2 > 1) sans valeur exacte attendue : la comparaison se fait côté à côté."
+  },
+  {
+   "elementId": "ex-6",
+   "kind": "intended",
+   "text": "ex 6 demande trois polygones DIFFÉRENTS de même aire et de même périmètre (exemple : ② et ③ de l’activité 1) ; la consigne de dessin devient un choix de couples."
+  },
+  {
+   "elementId": "deep-2",
+   "kind": "reading",
+   "text": "Surface non polygonale : l’aire se lit par compensation de bords courbes ; la leçon n’emploie que des surfaces dont les creux et les bosses se COMPENSENT exactement au carreau (demi-carreaux)."
+  },
+  {
+   "elementId": "unit",
+   "kind": "scope",
+   "text": "Pages 147–160 complètes. Les éléments de wahdat-tul-masaha, mustatil-murabba-masaha, masahat-muthallath-qaim, muhit-qurs et de la synthèse sont transcrits plus brièvement (verified: false) : leur leçon les relira."
+  }
+ ],
+ "destinations": {
+  "_comment": "elementId → { lesson, module } ; `items` répartit un élément ; une leçon encore coming_soon est une destination EN ATTENTE (check-textbook-coverage.mjs). Première leçon générée : masahat-muhit-sath (2026-10-15).",
+  "objectives": {
+   "lesson": "unit",
+   "module": "page"
+  },
+  "opener": {
+   "lesson": "masahat-muhit-sath",
+   "module": 2,
+   "note": "تمهيد p. 147 (le rayon de miel : le plus petit périmètre pour une aire donnée) : une carte « لماذا السداسي؟ » à la fin de معارف"
+  },
+  "prep": {
+   "lesson": "masahat-muhit-sath",
+   "module": 0,
+   "items": {
+    "1-2-3": {
+     "lesson": "masahat-muhit-sath",
+     "module": 0
+    },
+    "4-5": {
+     "lesson": "muhit-qurs",
+     "module": 0
+    }
+   }
+  },
+  "act-1": {
+   "lesson": "masahat-muhit-sath",
+   "module": 4,
+   "note": "APPLICATION (guide §4ter) : le labo `tile-yard` est l’entrée conçue par la plateforme ; نشاط 1 (le tableau aire / périmètre de quatre figures) est posé dans أتمرّن"
+  },
+  "act-2": {
+   "lesson": "wahdat-tul-masaha",
+   "module": null
+  },
+  "act-3": {
+   "lesson": "mustatil-murabba-masaha",
+   "module": null
+  },
+  "act-4": {
+   "lesson": "masahat-muthallath-qaim",
+   "module": null
+  },
+  "act-5": {
+   "lesson": "muhit-qurs",
+   "module": null
+  },
+  "know-1": {
+   "lesson": "masahat-muhit-sath",
+   "module": 2
+  },
+  "know-2": {
+   "lesson": "wahdat-tul-masaha",
+   "module": null
+  },
+  "method-1": {
+   "lesson": "masahat-muhit-sath",
+   "module": 3
+  },
+  "method-2": {
+   "lesson": "wahdat-tul-masaha",
+   "module": null
+  },
+  "know-3": {
+   "lesson": "mustatil-murabba-masaha",
+   "module": null
+  },
+  "know-4": {
+   "lesson": "mustatil-murabba-masaha",
+   "module": null
+  },
+  "know-5": {
+   "lesson": "masahat-muthallath-qaim",
+   "module": null
+  },
+  "know-6": {
+   "lesson": "muhit-qurs",
+   "module": null
+  },
+  "method-3": {
+   "lesson": "mustatil-murabba-masaha",
+   "module": null
+  },
+  "now-154": {
+   "lesson": "muhit-qurs",
+   "module": null
+  },
+  "ex-1": {
+   "lesson": "masahat-muhit-sath",
+   "module": 4
+  },
+  "ex-2": {
+   "lesson": "masahat-muhit-sath",
+   "module": 4
+  },
+  "ex-3": {
+   "lesson": "masahat-muhit-sath",
+   "module": 4
+  },
+  "ex-4": {
+   "lesson": "masahat-muhit-sath",
+   "module": 4
+  },
+  "ex-5": {
+   "lesson": "masahat-muhit-sath",
+   "module": 4
+  },
+  "ex-6": {
+   "lesson": "masahat-muhit-sath",
+   "module": 4
+  },
+  "ex-7": {
+   "lesson": "wahdat-tul-masaha",
+   "module": null
+  },
+  "ex-8": {
+   "lesson": "wahdat-tul-masaha",
+   "module": null
+  },
+  "ex-9": {
+   "lesson": "wahdat-tul-masaha",
+   "module": null
+  },
+  "ex-10": {
+   "lesson": "wahdat-tul-masaha",
+   "module": null
+  },
+  "ex-11": {
+   "lesson": "wahdat-tul-masaha",
+   "module": null
+  },
+  "ex-12": {
+   "lesson": "wahdat-tul-masaha",
+   "module": null
+  },
+  "ex-13": {
+   "lesson": "wahdat-tul-masaha",
+   "module": null
+  },
+  "ex-14": {
+   "lesson": "mustatil-murabba-masaha",
+   "module": null
+  },
+  "ex-15": {
+   "lesson": "mustatil-murabba-masaha",
+   "module": null
+  },
+  "ex-16": {
+   "lesson": "mustatil-murabba-masaha",
+   "module": null
+  },
+  "ex-17": {
+   "lesson": "mustatil-murabba-masaha",
+   "module": null
+  },
+  "ex-18": {
+   "lesson": "masahat-muthallath-qaim",
+   "module": null
+  },
+  "ex-19": {
+   "lesson": "masahat-muthallath-qaim",
+   "module": null
+  },
+  "ex-20": {
+   "lesson": "masahat-muthallath-qaim",
+   "module": null
+  },
+  "ex-21": {
+   "lesson": "mustatil-murabba-masaha",
+   "module": null
+  },
+  "ex-22": {
+   "lesson": "muhit-qurs",
+   "module": null
+  },
+  "ex-23": {
+   "lesson": "muhit-qurs",
+   "module": null
+  },
+  "ex-24": {
+   "lesson": "mustatil-murabba-masaha",
+   "module": null
+  },
+  "ex-25": {
+   "lesson": "mustatil-murabba-masaha",
+   "module": null
+  },
+  "ex-26": {
+   "lesson": "masahat-muthallath-qaim",
+   "module": null
+  },
+  "ex-27": {
+   "lesson": "masahat-muthallath-qaim",
+   "module": null
+  },
+  "ex-28": {
+   "lesson": "masahat-muthallath-qaim",
+   "module": null
+  },
+  "ex-29": {
+   "lesson": "muhit-qurs",
+   "module": null
+  },
+  "self-1": {
+   "lesson": "masahat-muhit-sath",
+   "module": 8
+  },
+  "self-2": {
+   "lesson": "masahat-muhit-sath",
+   "module": 4,
+   "note": "consigne de dessin → choix (aire par pavage puis rectangle et carré de même aire)"
+  },
+  "self-3": {
+   "lesson": "wahdat-tul-masaha",
+   "module": null
+  },
+  "self-4": {
+   "lesson": "wahdat-tul-masaha",
+   "module": null
+  },
+  "self-5": {
+   "lesson": "mustatil-murabba-masaha",
+   "module": null
+  },
+  "self-6": {
+   "lesson": "mustatil-murabba-masaha",
+   "module": null
+  },
+  "self-7": {
+   "lesson": "mustatil-murabba-masaha",
+   "module": null
+  },
+  "self-8": {
+   "lesson": "masahat-muthallath-qaim",
+   "module": null
+  },
+  "self-9": {
+   "lesson": "muhit-qurs",
+   "module": null
+  },
+  "self-10": {
+   "lesson": "muhit-qurs",
+   "module": null
+  },
+  "self-11": {
+   "lesson": "muhit-qurs",
+   "module": null
+  },
+  "deep-1": {
+   "lesson": "muhit-qurs",
+   "module": null
+  },
+  "deep-2": {
+   "lesson": "masahat-muhit-sath",
+   "module": 6,
+   "note": "surface non polygonale : l’aire se lit par COMPENSATION (on déplace une pièce en excès sur un creux) — une مسألة"
+  },
+  "deep-3": {
+   "lesson": "mustatil-murabba-masaha",
+   "module": null
+  },
+  "deep-4": {
+   "lesson": "mustatil-murabba-masaha",
+   "module": null
+  },
+  "deep-5": {
+   "lesson": "mustatil-murabba-masaha",
+   "module": null
+  },
+  "deep-6": {
+   "lesson": "masahat-muthallath-qaim",
+   "module": null
+  },
+  "deep-7": {
+   "lesson": "masahat-muthallath-qaim",
+   "module": null
+  },
+  "deep-8": {
+   "lesson": "masahat-muthallath-qaim",
+   "module": null
+  },
+  "deep-9": {
+   "lesson": "masahat-muthallath-qaim",
+   "module": null
+  },
+  "deep-10": {
+   "lesson": "mustatil-murabba-masaha",
+   "module": null
+  },
+  "deep-11": {
+   "lesson": "muhit-qurs",
+   "module": null
+  },
+  "integration": {
+   "lesson": "wadiya-idmajiya-sutuh-masahat-muhitat",
+   "module": null
+  },
+  "evaluation": {
+   "lesson": "wadiya-idmajiya-sutuh-masahat-muhitat",
+   "module": null
+  },
+  "ict": {
+   "lesson": "wadiya-idmajiya-sutuh-masahat-muhitat",
+   "module": null
+  }
+ }
+}

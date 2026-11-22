@@ -1,0 +1,234 @@
+{
+  "id": "ex-1am-bahth-adad-naqisa-l4-005",
+  "lessonCode": "bahth-adad-naqisa",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — مشتريات نادي القصص",
+    "estimatedMinutes": 10,
+    "tags": [
+      "مال",
+      "جداء"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الرابع",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "خصّص نادي القسم 3 000 دج لشراء قصص، فبقي في الصندوق 1 100 دج بعد الشراء."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما المبلغ المصروف بالدينار؟ (3 000 − □ = 1 100)",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "1900",
+      "misconceptionSignatures": [
+        {
+          "value": "4100",
+          "id": "MISC-NAQISA-TRAPADD"
+        },
+        {
+          "value": "-1900",
+          "id": "MISC-NAQISA-REVSUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المجهول هنا هو المطروح: ما أُخذ من العدد الذي بدأنا منه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $3000-1900=1100$ ، فالعدد الناقص هو $1900$ .",
+        "incorrect": "في a − □ = b المجهول هو المطروح: نطرح الناتج من a ولا نعكس الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $3000-\\square=1100$ .",
+          "نُرجع بالعملية العكسية: $\\square=3000-1100=1900$ .",
+          "نتحقّق: $3000-1900=1100$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اشتُريت بالمبلغ المصروف 4 قصص بالثمن نفسه. ما ثمن القصة الواحدة بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "475",
+      "misconceptionSignatures": [
+        {
+          "value": "7600",
+          "id": "MISC-NAQISA-MULAGAIN"
+        },
+        {
+          "value": "1/475",
+          "id": "MISC-NAQISA-DIVREV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للضرب هي القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $475\\times 4=1900$ ، فالعدد الناقص هو $475$ .",
+        "incorrect": "في جداء نقسم الناتج على العدد المعلوم: لا نضربه فيه ولا نقسم المعلوم على الناتج."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square\\times 4=1900$ .",
+          "نُرجع بالعملية العكسية: $\\square=1900\\div 4=475$ .",
+          "نتحقّق: $475\\times 4=1900$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "لو كان ثمن القصة الواحدة 380 دج، فكم قصّة تُشترى بالمبلغ المصروف؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "722000",
+          "id": "MISC-NAQISA-MULAGAIN"
+        },
+        {
+          "value": "0.2",
+          "id": "MISC-NAQISA-DIVREV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للضرب هي القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $5\\times 380=1900$ ، فالعدد الناقص هو $5$ .",
+        "incorrect": "في جداء نقسم الناتج على العدد المعلوم: لا نضربه فيه ولا نقسم المعلوم على الناتج."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square\\times 380=1900$ .",
+          "نُرجع بالعملية العكسية: $\\square=1900\\div 380=5$ .",
+          "نتحقّق: $5\\times 380=1900$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "تحقّق: احسب ثمن 5 قصص بـ 380 دج للقصة بالدينار.",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "1900",
+      "misconceptionSignatures": [],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تربط الأعداد المعطاة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب بالترتيب المناسب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن نتيجتك بالناتج المعلوم في الوضعية."
+        }
+      ],
+      "feedback": {
+        "correct": "$5\\times 380=1900$ .",
+        "incorrect": "أعد الحساب بعناية."
+      },
+      "solution": {
+        "lines": [
+          "$5\\times 380=1900$ ."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

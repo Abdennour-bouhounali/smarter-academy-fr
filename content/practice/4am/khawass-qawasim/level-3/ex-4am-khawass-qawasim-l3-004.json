@@ -1,0 +1,165 @@
+{
+  "id": "ex-4am-khawass-qawasim-l3-004",
+  "lessonCode": "khawass-qawasim",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2008 — 1729 و 532",
+    "estimatedMinutes": 8,
+    "tags": [
+      "خاصية 2",
+      "كسر غير قابل للاختزال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_khawass-qawasim_P3",
+      "modelledOn": "BEM 2008 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2008",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان 1729 و 532."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أجرِ القسمة الإقليدية للعدد 1729 على 532.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الباقي فقط (عدد طبيعي)",
+      "expectedAnswer": "133",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أكبر مضاعف للعدد 532 لا يتجاوز 1729."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي هو الفرق بين 1729 وهذا المضاعف، ويجب أن يكون أصغر تمامًا من 532."
+        }
+      ],
+      "feedback": {
+        "correct": "$1729 = 532 \\times 3 + 133$ مع $133 < 532$.",
+        "incorrect": "في القسمة الإقليدية $1729 = 532 \\times q + r$ يكون الباقي $r$ أصغر تمامًا من 532."
+      },
+      "solution": {
+        "lines": [
+          "$532 \\times 3 = 1596$ و $532 \\times 4 = 2128 > 1729$",
+          "$1729 - 1596 = 133$",
+          "إذن $1729 = 532 \\times 3 + 133$ مع $133 < 532$."
+        ],
+        "result": "1729 = 532 \\times 3 + 133"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "علمًا أن 19 يقسم كلا من 1729 و 532، استنتج أن 19 يقسم هذا الباقي، واكتبه على الشكل $19 \\times k$ حيث $k$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k$ فقط (عدد طبيعي)",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الباقي على الشكل $r = 1729 - 532 \\times 3$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "19 يقسم 532 فهو يقسم $532 \\times 3$؛ وهو يقسم 1729، فيقسم الفرق (الخاصية 2)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم الباقي على 19 للحصول على $k$."
+        }
+      ],
+      "feedback": {
+        "correct": "$133 = 19 \\times 7$: 19 يقسم باقي القسمة الإقليدية للعدد 1729 على 532.",
+        "incorrect": "القاسم المشترك لعددين يقسم باقي القسمة الإقليدية لأحدهما على الآخر: اقسم الباقي على 19."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $1729 = 532 \\times 3 + 133$ ومنه $133 = 1729 - 532 \\times 3$.",
+          "19 يقسم 532 فهو يقسم مضاعفه $532 \\times 3$ ، و 19 يقسم 1729.",
+          "إذن 19 يقسم الفرق $1729 - 532 \\times 3$ أي يقسم 133 (الخاصية 2).",
+          "$133 = 19 \\times 7$"
+        ],
+        "result": "133 = 19 \\times 7"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "اكتب الكسر $\\dfrac{532}{1729}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "4/13",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب كلا من البسط والمقام على شكل جداء يظهر فيه العامل 133 (الباقي)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختزل على هذا العامل، ثم تحقّق أن الكسر الناتج لا يُختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{532}{1729} = \\dfrac{133 \\times 4}{133 \\times 13} = \\dfrac{4}{13}$.",
+        "incorrect": "ابحث عن عامل مشترك كبير للبسط والمقام انطلاقًا من السؤال 01.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال."
+      },
+      "solution": {
+        "lines": [
+          "$532 = 133 \\times 4$ و $1729 = 133 \\times 13$",
+          "$\\dfrac{532}{1729} = \\dfrac{133 \\times 4}{133 \\times 13}$",
+          "العددان 4 و 13 ليس لهما قاسم مشترك غير 1."
+        ],
+        "result": "\\dfrac{532}{1729} = \\dfrac{4}{13}"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

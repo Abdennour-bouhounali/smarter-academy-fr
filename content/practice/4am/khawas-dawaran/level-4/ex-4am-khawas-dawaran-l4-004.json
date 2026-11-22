@@ -1,0 +1,102 @@
+{
+  "id": "ex-4am-khawas-dawaran-l4-004",
+  "lessonCode": "khawas-dawaran",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — صورة مثلث في معلم",
+    "estimatedMinutes": 3,
+    "tags": [
+      "إنشاء صورة شكل",
+      "معلم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_khawas-dawaran_P3",
+      "modelledOn": "ex-4"
+    }
+  },
+  "generator": {
+    "tool": "u13-khawas-dawaran/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "في معلم مبدؤه O: $A(1\\,;\\,1)$ ، $B(4\\,;\\,1)$ ، $C(1\\,;\\,3)$ . A′B′C′ صورة المثلث ABC بالدوران الذي مركزه O وزاويته $90^\\circ$ في الاتجاه المباشر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا B′:",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x\\,;\\,y)$ : الفاصلة ثم الترتيبة (عدد صحيح أو كسر مثل 3/2)",
+      "expectedAnswer": {
+        "x": "-1",
+        "y": "4"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من O إلى B: الحركة (4 ; 1)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عكس عقارب الساعة: (a ; b) تصبح (−b ; a)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المركز هو المبدأ."
+        }
+      ],
+      "feedback": {
+        "correct": "$B'(-1\\,;\\,4)$ .",
+        "incorrect": "ربع دورة عكس عقارب الساعة حول O."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "إحداثيتا C′:",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x\\,;\\,y)$ : الفاصلة ثم الترتيبة (عدد صحيح أو كسر مثل 3/2)",
+      "expectedAnswer": {
+        "x": "-3",
+        "y": "1"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحركة (1 ; 3)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نفس القاعدة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: $OC' = OC$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$C'(-3\\,;\\,1)$ .",
+        "incorrect": "ربع دورة عكس عقارب الساعة حول O."
+      }
+    }
+  ]
+}

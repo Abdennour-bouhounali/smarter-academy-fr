@@ -1,0 +1,308 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l2-001",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — قسمة عشرية بثلاثة أرقام بعد الفاصلة ثمّ القيم المقرّبة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "قسمة عشرية",
+      "قيم مقرّبة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-68",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أوجد حاصل القسمة $29{,}9 \\div 10{,}6$ ، ثلاثة أرقام بعد الفاصلة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ قسمة على عدد طبيعي لها الحاصل نفسه الذي لـ $29{,}9 \\div 10{,}6$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$299 \\div 10{,}6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-ONETERM"
+        },
+        {
+          "id": "B",
+          "content": "$29{,}9 \\div 106$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-ONETERM"
+        },
+        {
+          "id": "C",
+          "content": "$299 \\div 106$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$2990 \\div 106$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-ONETERM"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحدّان يُضربان في العدد نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تأكّد أنّ المقسوم عليه صار طبيعيًا وأنّ المقسوم ضُرب في العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$29{,}9 \\div 10{,}6 = 299 \\div 106$ : ضربنا الحدّين في $10$.",
+        "incorrect": "ما يُضرب في المقسوم عليه يُضرب في المقسوم، بالعدد نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$10{,}6 \\times 10 = 106$ و $29{,}9 \\times 10 = 299$",
+          "$29{,}9 \\div 10{,}6 = 299 \\div 106$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أنجز القسمة $29{,}9 \\div 10{,}6$ ، واكتفِ بثلاثة أرقام بعد الفاصلة (دون تدوير).",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "2.82",
+      "misconceptionSignatures": [
+        {
+          "value": "2.821",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "28.2",
+          "id": "MISC-QARIBA-ONETERM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل أوّلًا المقسوم عليه إلى عدد طبيعي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "واصل القسمة بعد الفاصلة بإضافة أصفار إلى الباقي، وتوقّف عند الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$29{,}9 \\div 10{,}6 = 299 \\div 106 = 2{,}82\\ldots$.",
+        "incorrect": "توقّف عند الرتبة المطلوبة دون زيادة: الأرقام الباقية تُهمل."
+      },
+      "solution": {
+        "lines": [
+          "$29{,}9 \\div 10{,}6 = 299 \\div 106$",
+          "$299 \\div 106 = 2{,}82\\ldots$"
+        ],
+        "result": "2{,}82"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما القيمة المقرّبة بالزيادة إلى $0{,}1$ لحاصل القسمة $29{,}9 \\div 10{,}6$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "2.9",
+      "misconceptionSignatures": [
+        {
+          "value": "2.8",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "2.83",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالزيادة هي أصغر قيمة من هذه الرتبة تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من القيمة بالنقصان ثم أضف وحدة واحدة من الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}8 < \\frac{29{,}9}{10{,}6} < 2{,}9$.",
+        "incorrect": "بالزيادة: هي القيمة التي تلي القيمة بالنقصان مباشرة في الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$10{,}6 \\times 2{,}9 = 30{,}74$",
+          "$30{,}74 > 29{,}9$",
+          "القيمة بالزيادة هي $2{,}9$"
+        ],
+        "result": "2{,}9"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "وما القيمة المقرّبة بالزيادة إلى $0{,}001$ لهذا الحاصل؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "2.821",
+      "misconceptionSignatures": [
+        {
+          "value": "2.82",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "2.8208",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالزيادة هي أصغر قيمة من هذه الرتبة تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من القيمة بالنقصان ثم أضف وحدة واحدة من الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}82 < \\frac{29{,}9}{10{,}6} < 2{,}821$.",
+        "incorrect": "بالزيادة: هي القيمة التي تلي القيمة بالنقصان مباشرة في الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$10{,}6 \\times 2{,}821 = 29{,}9026$",
+          "$29{,}9026 > 29{,}9$",
+          "القيمة بالزيادة هي $2{,}821$"
+        ],
+        "result": "2{,}821"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "اختر حصرًا للحاصل $\\dfrac{29{,}9}{10{,}6}$ بين عددين طبيعيين متتاليين.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3 < \\dfrac{29{,}9}{10{,}6} < 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-ROUNDED"
+        },
+        {
+          "id": "B",
+          "content": "$1 < \\dfrac{29{,}9}{10{,}6} < 2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        },
+        {
+          "id": "C",
+          "content": "$2 < \\dfrac{29{,}9}{10{,}6} < 3$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$4 < \\dfrac{29{,}9}{10{,}6} < 5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحصر الصحيح: عددان متتاليان في الرتبة المطلوبة، الأوّل لا يتجاوز الحاصل والثاني يتجاوزه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ حصر بضرب طرفيه في المقسوم عليه ثم قارن بالمقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 < \\dfrac{29{,}9}{10{,}6} < 3$.",
+        "incorrect": "تحقّق من الطرفين: الأصغر لا يتجاوز الحاصل والأكبر يتجاوزه، وبينهما وحدة واحدة من الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$10{,}6 \\times 2 = 21{,}2 \\text{ و } 10{,}6 \\times 3 = 31{,}8$",
+          "$21{,}2 < 29{,}9 < 31{,}8$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

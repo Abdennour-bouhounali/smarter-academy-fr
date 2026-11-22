@@ -1,0 +1,124 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l4-002",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 12 — قاعدة متوازي الأضلاع",
+    "estimatedMinutes": 4,
+    "tags": [
+      "متوازي أضلاع",
+      "نقطة مجهولة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-12",
+      "page": 147,
+      "section": "إحداثيتا منتصف قطعة - المسافة بين نقطتين",
+      "number": 12
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 147، تمرين 12): $A(1\\,;\\,-1)$ ، $B(0\\,;\\,3)$ ، $C(-2\\,;\\,0)$ ، و D حيث $\\overrightarrow{AB} + \\overrightarrow{AC} = \\overrightarrow{AD}$ . (صحّحت المنصّة خطأً مطبعيًا: الكتاب يسأل عن «ABCD»، والرباعي المقصود ABDC.)"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا D:",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "point",
+      "answerFormat": "الإحداثيتان (x ; y) — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "-3",
+        "y": "4"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-4",
+            "y": "5"
+          },
+          "id": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مركبتي AB و AC."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مركبتا AD هما مجموعا المركبتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "D = A زائد مركبتي AD."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AD}\\begin{pmatrix} -1 - 3 \\\\ 4 + 1 \\end{pmatrix}$ ، فـ $D(1 - 4\\,;\\,-1 + 5) = (-3\\,;\\,4)$ .",
+        "incorrect": "مركبتا AD ليستا إحداثيتي D: أضفهما إلى إحداثيتي A."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "نوع الرباعي ABDC:",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "ليس متوازي أضلاع لأن ABCD متقاطع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-TARTIB-NUQAT"
+        },
+        {
+          "id": "B",
+          "content": "متوازي أضلاع لأن $\\overrightarrow{AB} = \\overrightarrow{CD}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "مستطيل",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مركبتي كل شعاع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن المركبة الأولى بالأولى والثانية بالثانية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يتساوى الشعاعان إذا تساوت المركبتان معا."
+        }
+      ],
+      "feedback": {
+        "correct": "CD مركبتاه $(-1\\,;\\,4)$ = مركبتا AB: ABDC متوازي أضلاع (قطراه $BC^2 = 13$ و $AD^2 = 41$ غير متقايسين).",
+        "incorrect": "الترتيب ABDC: الضلع AB ومقابله CD."
+      }
+    }
+  ]
+}

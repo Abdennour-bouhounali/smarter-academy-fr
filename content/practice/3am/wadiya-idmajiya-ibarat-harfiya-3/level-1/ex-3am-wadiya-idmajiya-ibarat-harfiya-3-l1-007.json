@@ -1,0 +1,199 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-ibarat-harfiya-3-l1-007",
+  "lessonCode": "wadiya-idmajiya-ibarat-harfiya-3",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — عرضان لنادٍ رياضي",
+    "estimatedMinutes": 7,
+    "tags": [
+      "عرضان",
+      "مقارنة",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يقترح نادٍ رياضي عرضين للاشتراك: العرض $A$ ثمنه $600$ دج ثمنًا ثابتًا و $25$ دج لكل حصّة، والعرض $B$ ثمنه $625$ دج ثمنًا ثابتًا و $24$ دج لكل حصّة. إذا رمزنا بـ $x$ إلى عدد الحصص، فإنّ ثمن العرضين هو:",
+    "formulas": [
+      "A = 600 + 25x",
+      "B = 625 + 24x"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب ثمن كل عرض من أجل $x = 12$ .",
+      "statement": "ثمن العرض $A$ بالدينار :",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "900",
+      "misconceptionSignatures": [
+        {
+          "value": "300",
+          "id": "MISC-SYN-HARF-PARTIAL"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن العرض $A$ هو $900$ دج.",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$A = 600 + 25 \\times 12$",
+          "$A = 600 + 300$",
+          "$A = 900$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ثمن العرض $B$ بالدينار :",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "913",
+      "misconceptionSignatures": [
+        {
+          "value": "288",
+          "id": "MISC-SYN-HARF-PARTIAL"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن العرض $B$ هو $913$ دج.",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$B = 625 + 24 \\times 12$",
+          "$B = 625 + 288$",
+          "$B = 913$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "من أجل $x = 12$ ، أيّ العبارتين أكبر؟ (قارن ثمن العرضين.)",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "العرض $A$ أغلى من العرض $B$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SYN-HARF-DIFFSIGN"
+        },
+        {
+          "id": "B",
+          "content": "العرض $A$ أرخص من العرض $B$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "العرضان بالثمن نفسه",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SYN-HARF-DIFFSIGN"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا تعلّمنا إشارة الفرق عن ترتيب العددين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب قيمة كل عبارة من أجل العدد المعطى، ثم قارن العددين، أو احسب الفرق وانظر إلى إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا انعكس ترتيب الطرح فإنّ إشارة الفرق تنعكس أيضًا."
+        }
+      ],
+      "feedback": {
+        "correct": "العرض $A$ أرخص من العرض $B$ .",
+        "incorrect": "احسب القيمتين أو الفرق، وانتبه إلى ترتيب الطرح قبل أن تحكم على الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "$A = 900$ و $B = 913$ .",
+          "$A - B = -13$ وهو عدد سالب .",
+          "إذن $A < B$ : العرض $A$ أرخص."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

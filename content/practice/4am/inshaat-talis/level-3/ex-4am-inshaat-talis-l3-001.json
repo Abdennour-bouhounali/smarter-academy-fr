@@ -1,0 +1,168 @@
+{
+  "id": "ex-4am-inshaat-talis-l3-001",
+  "lessonCode": "inshaat-talis",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 18 — نقطة من (AB) لا تنتمي إلى [AB]",
+    "estimatedMinutes": 9,
+    "tags": [
+      "تمرين 18",
+      "خارج القطعة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-18",
+      "page": 111,
+      "section": "وضع نقط على مستقيم",
+      "number": 18
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ارسم مستقيما $(AB)$ . نريد إنشاء، دون استعمال مسطرة مدرّجة، النقطة $M$ من $(AB)$ ولا تنتمي إلى $[AB]$ حيث $\\dfrac{AM}{AB} = \\dfrac{4}{9}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل تقع النقطة $M$ بعد $B$ (من جهة $B$ ) ؟",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-JIHA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن $AM$ بـ $AB$ : النسبة $\\dfrac{4}{9}$ أصغر من 1 أم أكبر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لو كانت $M$ بعد $B$ ، فكيف يكون $AM$ مقارنة بـ $AB$ ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "لا: $AM = \\dfrac{4}{9}AB < AB$ ، و $M$ لا تنتمي إلى $[AB]$ ، فهي من الجهة الأخرى للنقطة $A$ .",
+        "incorrect": "النقطة بعد $B$ تحقّق $AM > AB$ ، بينما هنا $\\dfrac{AM}{AB} < 1$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AM}{AB} = \\dfrac{4}{9} < 1$ ومنه $AM < AB$ .",
+          "لو كانت $M$ بعد $B$ لكان $AM > AB$ ، ولو كانت بين $A$ و $B$ لانتمت إلى $[AB]$ .",
+          "إذن $M$ من الجهة الأخرى للنقطة $A$ ( $A$ بين $M$ و $B$ )."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أنشئ النقطة $M$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب خطوات الإنشاء مرقّمة (أو صوّر ورقتك)، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "على نصف مستقيم $[Ax)$ عيّن 9 قطع متقايسة وصل التاسعة بـ $B$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل 4 قطع على نصف المستقيم المعاكس لـ $[Ax)$ ، ثم ارسم الموازي."
+        }
+      ],
+      "feedback": {
+        "correct": "9 قطع على $[Ax)$ ، $(P_9B)$ ، ثم العلامة الرابعة على $[Ax')$ المعاكس والموازي المارّ بها يعيّن $M$ .",
+        "incorrect": "قارن إنشاءك بالحل النموذجي خطوة خطوة، ثم صحّح الخطوة التي تختلف."
+      },
+      "solution": {
+        "lines": [
+          "1) نرسم نصف مستقيم $[Ax)$ لا يحمل المستقيم $(AB)$ ، ونعيّن عليه بالمدور، ابتداءً من $A$ ، 9 قطع متقايسة تنتهي عند العلامة $P_{9}$ .",
+          "2) نصل العلامة $P_{9}$ بالنقطة $B$ .",
+          "3) على نصف المستقيم $[Ax')$ المعاكس لـ $[Ax)$ ننقل بنفس فتحة المدور 4 قطع ابتداءً من $A$ ، فنحصل على النقطة $Q$ .",
+          "4) الموازي للمستقيم $(P_{9}B)$ المارّ بـ $Q$ يقطع المستقيم $(AB)$ في $M$ ، من الجهة الأخرى للنقطة $A$ .",
+          "التبرير: المستقيمان $(QP_{9})$ و $(MB)$ متقاطعان في $A$ و $(QM) \\parallel (P_{9}B)$ ، حسب خاصية طالس: $\\dfrac{AM}{AB} = \\dfrac{AQ}{AP_{9}} = \\dfrac{4}{9}$ ، و $M$ لا تنتمي إلى $[AB]$ ."
+        ]
+      },
+      "timeSeconds": 420
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب النسبة $\\dfrac{MB}{AB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "13/9",
+      "misconceptionSignatures": [
+        {
+          "value": "5/9",
+          "id": "MISC-TALIS-JIHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$A$ بين $M$ و $B$ : $MB = MA + AB$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر عن $MA$ بدلالة $AB$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$MB = \\dfrac{4}{9}AB + AB = \\dfrac{13}{9}AB$ ، فـ $\\dfrac{MB}{AB} = \\dfrac{13}{9}$ .",
+        "incorrect": "$M$ خارج $[AB]$ من جهة $A$ : الطول $MB$ أكبر من $AB$ ."
+      },
+      "solution": {
+        "lines": [
+          "$A \\in [MB]$ ومنه $MB = MA + AB = \\dfrac{4}{9}AB + AB = \\dfrac{13}{9}AB$"
+        ],
+        "result": "\\dfrac{MB}{AB} = \\dfrac{13}{9}"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

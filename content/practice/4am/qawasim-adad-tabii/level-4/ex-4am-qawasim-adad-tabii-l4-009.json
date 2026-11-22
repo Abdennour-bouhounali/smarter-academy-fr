@@ -1,0 +1,177 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l4-009",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2024 — 192 شجيرة ليمون",
+    "estimatedMinutes": 8,
+    "tags": [
+      "قواسم",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qawasim-adad-tabii_P2",
+      "modelledOn": "BEM 2024 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يريد فلاح يحبّ أرض الجزائر ويتقن عمله غرس 192 شجيرة ليمون في صفوف تحتوي كلها على نفس العدد من الشجيرات، دون أن تبقى أي شجيرة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "هل يمكن أن يحتوي كل صف على 15 شجيرة؟ على 16 شجيرة؟ برّر إجابتك.",
+      "statement": "15 شجيرة في كل صف:",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 192 على 15."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يكون ذلك ممكنا إذا كان 15 قاسما للعدد 192، أي إذا كان الباقي معدوما."
+        }
+      ],
+      "feedback": {
+        "correct": "$192 = 15 \\times 12 + 12$: الباقي غير معدوم.",
+        "incorrect": "احسب باقي قسمة 192 على 15 قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "$192 = 15 \\times 12 + 12$",
+          "الباقي 12 غير معدوم، إذن 15 ليس قاسما للعدد 192: هذا غير ممكن."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "16 شجيرة في كل صف:",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 192 على 16."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يكون ذلك ممكنا إذا كان 16 قاسما للعدد 192، أي إذا كان الباقي معدوما."
+        }
+      ],
+      "feedback": {
+        "correct": "$192 = 16 \\times 12$: الباقي معدوم.",
+        "incorrect": "احسب باقي قسمة 192 على 16 قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "$192 = 16 \\times 12$",
+          "الباقي معدوم، إذن 16 قاسم للعدد 192: هذا ممكن."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "أوجد كل القيم الممكنة لعدد الصفوف، إذا كان كل صف يحتوي على 10 شجيرات على الأقل و 30 شجيرة على الأكثر.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        8,
+        12,
+        16
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الشجيرات في كل صف قاسم للعدد 192، وعدد الصفوف هو شريكه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن قواسم 192 الواقعة من 10 إلى 30، ثم احسب عدد الصفوف الموافق لكل منها."
+        }
+      ],
+      "feedback": {
+        "correct": "$192 = 16 \\times 12 = 12 \\times 16 = 8 \\times 24$.",
+        "incorrect": "المطلوب عدد الصفوف لا عدد الشجيرات في الصف: اقسم 192 على كل قاسم مناسب."
+      },
+      "solution": {
+        "lines": [
+          "عدد الصفوف × عدد الشجيرات في كل صف = 192",
+          "$192 = 1 \\times 192$ ، $192 = 2 \\times 96$ ، $192 = 3 \\times 64$ ، $192 = 4 \\times 48$ ، $192 = 6 \\times 32$ ، $192 = 8 \\times 24$ ، $192 = 12 \\times 16$",
+          "قواسم 192 الواقعة من 10 إلى 30 هي: 12 ، 16 ، 24.",
+          "عدد الصفوف الموافق: 16 ، 12 ، 8.",
+          "إذن القيم الممكنة لعدد الصفوف هي: 8 ، 12 ، 16."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

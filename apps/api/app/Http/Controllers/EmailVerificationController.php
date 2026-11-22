@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Domain\Classroom\PendingClassJoin;
 use App\Domain\Identity\EmailVerificationLink;
 use App\Models\User;
 use App\Notifications\VerifyEmailAddress;
@@ -16,9 +17,16 @@ use Illuminate\Http\RedirectResponse;
  * celui où l'on s'est inscrit. Exiger une session y rendrait la vérification
  * impossible pour une bonne partie des élèves.
  *
- * Ce qui la protège à la place : la SIGNATURE de l'URL (middleware `signed`),
- * qui prouve que le lien vient de nous et n'a pas été modifié, et son
- * expiration. Voir EmailVerificationLink.
+ * Ce qui la protège à la place : la SIGNATURE de l'URL, qui prouve que le
+ * lien vient de nous et n'a pas été modifié, et son expiration. Voir
+ * EmailVerificationLink.
+ *
+ * La signature est contrôlée DANS `verify`, et non par le middleware
+ * `signed` : celui-ci répond `403 {"message":"Invalid signature."}` — du
+ * JSON brut, sur le domaine de l'API, affiché tel quel dans le navigateur de
+ * l'élève qui clique un lien expiré (le cas le plus courant). Ici, un lien
+ * refusé renvoie vers l'écran `?statut=invalide`, qui explique et propose
+ * un nouveau lien. Le refus est le même ; seule sa forme change.
  */
 class EmailVerificationController extends Controller
 {
@@ -32,6 +40,12 @@ class EmailVerificationController extends Controller
      */
     public function verify(Request $request, string $id, string $hash): RedirectResponse
     {
+        // En PREMIER, avant toute lecture de la base : un lien non signé,
+        // altéré (identifiant compris) ou expiré ne désigne personne.
+        if (! $request->hasValidSignature()) {
+            return $this->redirectToFrontend('invalide');
+        }
+
         $user = User::find($id);
 
         // Compte disparu : la signature est valable (elle a été émise par
@@ -50,6 +64,10 @@ class EmailVerificationController extends Controller
         if (! $user->markEmailAsVerified()) {
             return $this->redirectToFrontend('deja-verifie');
         }
+
+        // Inscrit depuis le lien d'une classe : l'adhésion à laquelle il a
+        // consenti se fait MAINTENANT, quel que soit le navigateur.
+        app(PendingClassJoin::class)->complete($user);
 
         return $this->redirectToFrontend('succes');
     }
@@ -78,7 +96,17 @@ class EmailVerificationController extends Controller
             ]);
         }
 
-        $user->notify(new VerifyEmailAddress);
+        // Le serveur de courriel a refusé : on le DIT (503), au lieu d'un
+        // 500 ou d'un « envoyé » mensonger. Le frontend affiche
+        // `apiErrors.sendEmail` (le `message` ci-dessous ne va jamais à
+        // l'écran, voir apiMessage.js). L'élève peut réessayer.
+        if (! VerifyEmailAddress::sendTo($user)) {
+            return response()->json([
+                'success' => false,
+                'alreadyVerified' => false,
+                'message' => "L'e-mail de vérification n'a pas pu être envoyé.",
+            ], 503);
+        }
 
         return response()->json([
             'success' => true,

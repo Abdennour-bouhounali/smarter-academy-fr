@@ -1,0 +1,194 @@
+{
+  "id": "ex-3am-jam-tarh-kasrayn-l2-007",
+  "lessonCode": "jam-tarh-kasrayn",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مجموع ثلاثة كسور",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جمع كسرين",
+      "مقام مشترك",
+      "تعليل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن $A = \\dfrac{2}{3} + \\dfrac{3}{4} + \\dfrac{5}{6}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما أصغر مقام مشترك للمقامات $3$ و $4$ و $6$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jam-tarh-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$12$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$72$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-PRODUCTONLY"
+        },
+        {
+          "id": "C",
+          "content": "$13$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-SUMDEN"
+        },
+        {
+          "id": "D",
+          "content": "$6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-BIGGER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ خيار بحساب بالمقام المشترك بدل التخمين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استبعد الخيارات التي تجمع المقامات أو تترك البسوط دون تغيير."
+        }
+      ],
+      "feedback": {
+        "correct": "$12$ .",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "مضاعفات $6$ : $6$ ، $12$ ؛ و $12 \\div 3 = 4$ ، $12 \\div 4 = 3$ ."
+        ],
+        "result": "12"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $A = \\dfrac{2}{3} + \\dfrac{3}{4} + \\dfrac{5}{6}$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_jam-tarh-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "9/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "10/13",
+          "id": "MISC-JAMTARH-ACROSS"
+        },
+        {
+          "value": "5/6",
+          "id": "MISC-JAMTARH-NOSCALE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليّة المطلوبة؟ وهل المقامات متساوية أو أحدها مضاعف لغيره؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب مضاعفات المقام الأكبر حتى تجد أوّل مضاعف يقبل القسمة على المقام الآخر، فهو مقامك المشترك."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ حدّ بالمقام المشترك، ثمّ اجمع البسوط أو اطرحها، ثمّ اختزل إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = \\dfrac{9}{4}$ .",
+        "incorrect": "اكتب الكسرين بمقام مشترك قبل أن تجمع أو تطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نبحث عن أصغر مضاعف مشترك للمقامات $3$ و $4$ و $6$ : إنّه $12$ .",
+          "$\\dfrac{2}{3} = \\dfrac{2 \\times 4}{3 \\times 4} = \\dfrac{8}{12}$ .",
+          "$\\dfrac{3}{4} = \\dfrac{3 \\times 3}{4 \\times 3} = \\dfrac{9}{12}$ .",
+          "$\\dfrac{5}{6} = \\dfrac{5 \\times 2}{6 \\times 2} = \\dfrac{10}{12}$ .",
+          "$A = \\dfrac{8 + 9 + 10}{12} = \\dfrac{27}{12} = \\dfrac{9}{4}$ (اختزلنا بالقاسم $3$) ."
+        ],
+        "result": "A = \\dfrac{9}{4}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "برّر أنّ العدد $24$ يصلح أيضًا مقامًا مشتركًا، وأنّ النتيجة لا تتغيّر.",
+      "learningPoints": [
+        {
+          "code": "3am_jam-tarh-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثمّ اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجب أن تبرّره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اذكر المقام الذي اخترته ولماذا يصلح، ثمّ اكتب خطوات الحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "تطابق برهانك مع الحل النموذجي .",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثمّ قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "$24$ من مضاعفات $12$ ، فهو مضاعف للمقامات $3$ و $4$ و $6$ .",
+          "بالمقام $24$ : $\\dfrac{16}{24} + \\dfrac{18}{24} + \\dfrac{20}{24} = \\dfrac{54}{24} = \\dfrac{9}{4}$ ، وهي النتيجة نفسها."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

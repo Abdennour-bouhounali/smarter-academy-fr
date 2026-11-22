@@ -1,0 +1,156 @@
+{
+  "id": "ex-4am-khawass-qawasim-l3-007",
+  "lessonCode": "khawass-qawasim",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2016 — 13 و 91",
+    "estimatedMinutes": 6,
+    "tags": [
+      "خاصية 1",
+      "مضاعفات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_khawass-qawasim_P2",
+      "modelledOn": "BEM 2016 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن 13 من قواسم العدد 91: اكتب 91 على الشكل $13 \\times k$ حيث $k$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k$ فقط (عدد طبيعي)",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 91 على 13: يجب أن يكون الباقي معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل هذه القسمة هو العدد $k$ المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$91 = 13 \\times 7$ ، إذن 13 يقسم 91.",
+        "incorrect": "ابحث عن العدد الطبيعي $k$ الذي إذا ضُرب في 13 أعطى 91."
+      },
+      "solution": {
+        "lines": [
+          "$91 = 13 \\times 7$"
+        ],
+        "result": "91 = 13 \\times 7"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج أن 13 يقسم 9100، واكتبه على الشكل $13 \\times K$ حيث $K$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $K$ فقط (عدد طبيعي)",
+      "expectedAnswer": "700",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب 9100 على شكل جداء يظهر فيه العدد 91."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قاسم عدد يقسم كل مضاعف له."
+        }
+      ],
+      "feedback": {
+        "correct": "$9100 = 91 \\times 100 = 13 \\times 7 \\times 100 = 13 \\times 700$.",
+        "incorrect": "لاحظ أن 9100 مضاعف للعدد 91، ثم استعمل كتابة 91 من السؤال 01."
+      },
+      "solution": {
+        "lines": [
+          "$9100 = 91 \\times 100$",
+          "$9100 = 13 \\times 7 \\times 100$",
+          "$9100 = 13 \\times 700$"
+        ],
+        "result": "9100 = 13 \\times 700"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "بيّن أن 13 يقسم العدد 9191، ثم اكتبه على الشكل $13 \\times K'$ حيث $K'$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $K'$ فقط (عدد طبيعي)",
+      "expectedAnswer": "707",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب 9191 على شكل مجموع عددين يقسمهما 13."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل نتيجتي السؤالين 01 و 02."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أخرج 13 عاملًا مشتركًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$9191 = 9100 + 91 = 13 \\times 700 + 13 \\times 7 = 13 \\times 707$.",
+        "incorrect": "القاسم المشترك لعددين يقسم مجموعهما: اكتب 9191 مجموعًا لعددين وجدتهما سابقًا."
+      },
+      "solution": {
+        "lines": [
+          "$9191 = 9100 + 91$",
+          "$9191 = 13 \\times 700 + 13 \\times 7$",
+          "$9191 = 13 \\times (700 + 7) = 13 \\times 707$"
+        ],
+        "result": "9191 = 13 \\times 707"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

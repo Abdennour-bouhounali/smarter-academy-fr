@@ -1,0 +1,202 @@
+{
+  "id": "ex-4am-tarrid-muthallathiya-l3-004",
+  "lessonCode": "tarrid-muthallathiya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2024 — زاوية بين طريقين على مخطط الحيّ",
+    "estimatedMinutes": 9,
+    "tags": [
+      "ترييض وضعية",
+      "معلم",
+      "الظل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tarrid-muthallathiya_P1",
+      "modelledOn": "BEM 2024 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "على مخطط حيّ مزوّد بمعلم متعامد ومتجانس $(O, \\vec{i}, \\vec{j})$ (الوحدة تمثل $100\\,\\mathrm{m}$)، تمثل النقط $R(6;4)$ ، $S(2;1)$ ، $T(-4;9)$ على الترتيب الملعب والمدرسة والمسجد. الطرق $[RS]$ و $[ST]$ و $[RT]$ مستقيمة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب الطول $RS$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بوحدة المعلم",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$RS = \\sqrt{(x_S - x_R)^2 + (y_S - y_R)^2}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$RS = \\sqrt{(2 - 6)^2 + (1 - 4)^2} = \\sqrt{25} = 5$ .",
+        "incorrect": "طبّق قانون المسافة بين نقطتين في معلم متعامد ومتجانس."
+      },
+      "solution": {
+        "lines": [
+          "$RS = \\sqrt{(2 - 6)^2 + (1 - 4)^2} = \\sqrt{16 + 9}$"
+        ],
+        "result": "RS = 5"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب الطول $ST$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بوحدة المعلم",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$ST = \\sqrt{(x_T - x_S)^2 + (y_T - y_S)^2}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$ST = \\sqrt{(-4 - 2)^2 + (9 - 1)^2} = \\sqrt{100} = 10$ .",
+        "incorrect": "انتبه إلى إشارة الفاصلة $-4$ ."
+      },
+      "solution": {
+        "lines": [
+          "$ST = \\sqrt{(-4 - 2)^2 + (9 - 1)^2} = \\sqrt{36 + 64}$"
+        ],
+        "result": "ST = 10"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "علما أن $RT = 5\\sqrt{5}$ ، بيّن أن المثلث $RST$ قائم في $S$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن $RT^2$ بـ $RS^2 + ST^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الخاصية العكسية لخاصية فيثاغورس."
+        }
+      ],
+      "feedback": {
+        "correct": "$RS^2 + ST^2 = 25 + 100 = 125 = RT^2$ : المثلث قائم في $S$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي."
+      },
+      "solution": {
+        "lines": [
+          "$RT^2 = (5\\sqrt{5})^2 = 125$ و $RS^2 + ST^2 = 25 + 100 = 125$",
+          "نلاحظ أن $RS^2 + ST^2 = RT^2$ ، إذن المثلث $RST$ قائم في $S$ حسب الخاصية العكسية لخاصية فيثاغورس."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب قيس الزاوية $\\widehat{SRT}$ (الزاوية بين الطريقين عند الملعب) بالتدوير إلى الوحدة من الدرجة.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-muthallathiya_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيس الزاوية بالدرجة مدوّرا إلى الوحدة",
+      "expectedAnswer": "63",
+      "misconceptionSignatures": [
+        {
+          "value": "27",
+          "id": "MISC-MUTH-ZAWIYA-KHATI"
+        },
+        {
+          "value": "2",
+          "id": "MISC-MUTH-NISBA-BADAL-QAYS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $RST$ القائم في $S$ ، الضلعان المعلومان: ما موقع كل منهما بالنسبة إلى الزاوية $\\widehat{SRT}$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب ظل الزاوية $\\widehat{SRT}$ ثم استعمل اللمسة العكسية ⁦2nd⁩ ثم ⁦tan⁻¹⁩ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الحاسبة مبرمجة على الدرجة، ثم دوّر النتيجة النهائية فقط."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan\\widehat{SRT} = \\dfrac{ST}{RS} = \\dfrac{10}{5} = 2$ ، ومنه $\\widehat{SRT} \\approx 63^{\\circ}$ .",
+        "incorrect": "المقابل للزاوية $R$ هو $[ST]$ والمجاور $[RS]$ ؛ ثم اللمسة العكسية."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $RST$ القائم في $S$ : $\\tan\\widehat{SRT} = \\dfrac{ST}{RS} = \\dfrac{10}{5} = 2$",
+          "باستعمال الآلة الحاسبة (⁦tan⁻¹⁩): $\\widehat{SRT} \\approx 63{,}4349^{\\circ}$",
+          "ونجد القيس نفسه بـ $\\sin\\widehat{SRT} = \\dfrac{10}{5\\sqrt{5}}$ ."
+        ],
+        "result": "\\widehat{SRT} \\approx 63^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

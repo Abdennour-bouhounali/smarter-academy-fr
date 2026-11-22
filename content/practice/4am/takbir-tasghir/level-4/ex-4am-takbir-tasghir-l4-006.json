@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-takbir-tasghir-l4-006",
+  "lessonCode": "takbir-tasghir",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — جرّة زيت الزيتون",
+    "estimatedMinutes": 2,
+    "tags": [
+      "التصغير",
+      "السعة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takbir-tasghir_P2",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "جرّة زيت زيتون من القبائل سعتها $40\\,\\mathrm{L}$ . جرّة صغيرة للتذوّق هي تصغير لها بالنسبة $\\dfrac{1}{2}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "سعة الجرّة الصغيرة:",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$10\\,\\mathrm{L}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-HAJM-K"
+        },
+        {
+          "id": "B",
+          "content": "$5\\,\\mathrm{L}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$20\\,\\mathrm{L}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-HAJM-K"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "السعة حجم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأطوال تُضرب في $k$ ، والمساحات في $k^2$ ، والحجوم في $k^3$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\left(\\dfrac{1}{2}\\right)^3 = \\dfrac{1}{8}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{40}{8} = 5\\,\\mathrm{L}$ .",
+        "incorrect": "نصف الطول لا يعطي نصف السعة: السعة تُضرب في $\\dfrac{1}{8}$ ."
+      }
+    }
+  ]
+}

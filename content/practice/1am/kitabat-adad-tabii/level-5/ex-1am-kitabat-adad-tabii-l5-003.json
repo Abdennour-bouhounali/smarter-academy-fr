@@ -1,0 +1,271 @@
+{
+  "id": "ex-1am-kitabat-adad-tabii-l5-003",
+  "lessonCode": "kitabat-adad-tabii",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — رمز خزانة نادي الروبوتيك",
+    "estimatedMinutes": 18,
+    "tags": [
+      "أكبر عدد",
+      "أصغر عدد",
+      "رمز"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يختار أعضاء نادي الروبوتيك رمزا سرّيا لخزانة أدواتهم، باستعمال البطاقات 3، 0، 8، 5، 1، كل بطاقة مرة واحدة، فيكون الرمز عددا من خمسة أرقام.\nالجزء الأول: يقترح سليم أكبر عدد ممكن، وتقترح مريم أصغر عدد ممكن.\nالجزء الثاني: يتّفق الأعضاء على أن يكون الرمز أصغر عدد ممكن رقم مئاته 0."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما هو العدد الذي يقترحه سليم؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "85310",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ رقم يجب أن يكون في أكبر مرتبة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب الأرقام من الأكبر إلى الأصغر انطلاقا من اليسار."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنك استعملت كل رقم مرة واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "العدد المطلوب هو $85\\,310$.",
+        "incorrect": "كلما كان الرقم أكبر وجب أن يأخذ مرتبة أكبر."
+      },
+      "solution": {
+        "lines": [
+          "نضع الأرقام من الأكبر إلى الأصغر انطلاقا من المرتبة الكبرى: $85\\,310$."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما هو العدد الذي تقترحه مريم؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "10358",
+      "misconceptionSignatures": [
+        {
+          "value": "1358",
+          "id": "MISC-KITABA-LEADING-ZERO"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل يمكن أن يبدأ العدد بالرقم 0؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع في المرتبة الكبرى أصغر رقم غير معدوم، ثم باقي الأرقام تصاعديا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنك استعملت كل رقم مرة واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "العدد المطلوب هو $10\\,358$.",
+        "incorrect": "الرقم 0 لا يمكن أن يفتتح كتابة عدد من عدة أرقام: نبدأ بأصغر رقم غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "لا يمكن أن يبدأ العدد بـ 0، فنبدأ بأصغر رقم غير معدوم ثم نرتّب الباقي تصاعديا: $10\\,358$."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "كيف يُقرأ العدد الذي يقترحه سليم؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "ثمانية آلاف وخمسمائة وواحد وثلاثون",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-ZERO-PLACE"
+        },
+        {
+          "id": "B",
+          "content": "خمسة وثمانون ألفا وثلاثمائة وعشرة",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "ثمانمائة وثلاثة وخمسون ألفا ومائة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-ZERO-PLACE"
+        },
+        {
+          "id": "D",
+          "content": "ثمانية خمسة ثلاثة واحد صفر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-DIGIT-BY-DIGIT"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزّئ العدد إلى فئات من ثلاثة أرقام انطلاقا من اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ كل فئة كعدد أصغر من 1000 ثم اذكر اسم فئتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى المراتب الفارغة (الأصفار)."
+        }
+      ],
+      "feedback": {
+        "correct": "$85\\,310$ يُقرأ « خمسة وثمانون ألفا وثلاثمائة وعشرة ».",
+        "incorrect": "نجزّئ العدد إلى فئات من ثلاثة أرقام انطلاقا من اليمين، ثم نقرأ الفئات من اليسار، كل فئة باسمها."
+      },
+      "solution": {
+        "lines": [
+          "$85\\,|\\,310$",
+          "نقرأ فئة فئة: « خمسة وثمانون ألفا وثلاثمائة وعشرة »."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "ما هو الرمز الذي اتّفق عليه الأعضاء؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "13058",
+      "misconceptionSignatures": [
+        {
+          "value": "1358",
+          "id": "MISC-KITABA-LEADING-ZERO"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل يمكن أن يبدأ العدد بالرقم 0؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع في المرتبة الكبرى أصغر رقم غير معدوم، ثم باقي الأرقام تصاعديا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنك استعملت كل رقم مرة واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "العدد المطلوب هو $13\\,058$.",
+        "incorrect": "الرقم 0 لا يمكن أن يفتتح كتابة عدد من عدة أرقام: نبدأ بأصغر رقم غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "لا يمكن أن يبدأ العدد بـ 0، فنبدأ بأصغر رقم غير معدوم ثم نرتّب الباقي تصاعديا: $13\\,058$."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "برّر أن الرمز المختار هو أصغر عدد يحقّق الشرط.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الرقم الذي يُوضع في أكبر مرتبة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك بالحل النموذجي سطرا بسطر."
+      },
+      "solution": {
+        "lines": [
+          "رقم المئات 0، فيبقى للمراتب الأخرى الأرقام 1، 3، 5، 8.",
+          "نضع أصغرها في المرتبة الكبرى: 1 لعشرات الآلاف، ثم 3 للآلاف، ثم 5 للعشرات و 8 للآحاد.",
+          "الرمز هو $13\\,058$."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

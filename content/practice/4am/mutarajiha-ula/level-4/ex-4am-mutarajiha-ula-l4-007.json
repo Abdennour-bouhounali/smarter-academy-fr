@@ -1,0 +1,267 @@
+{
+  "id": "ex-4am-mutarajiha-ula-l4-007",
+  "lessonCode": "mutarajiha-ula",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2018 — تحقّق، تحليل ومتراجحة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "متراجحة",
+      "نشر",
+      "تحليل",
+      "حل متراجحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mutarajiha-ula_P2",
+      "modelledOn": "BEM 2018 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2018",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "تحقّق من صحة المساواة الآتية: $(2x + 5)(x - 3) = 2x^2 - x - 15$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mutarajiha-ula_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر الجداء: اضرب كل حد من القوس الأول في كل حد من القوس الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الحدّين اللذين فيهما $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا."
+      },
+      "solution": {
+        "lines": [
+          "$(2x + 5)(x - 3) = 2x^2 - 6x + 5x - 15$",
+          "$= 2x^2 - x - 15$"
+        ],
+        "result": "(2x + 5)(x - 3) = 2x^2 - x - 15"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "حلّل إلى جداء عاملين من الدرجة الأولى العبارة: $F = 2x^2 - x - 15 + (2x + 5)^2$ .",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutarajiha-ula_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب على الشكل $(2x + 5)(mx + n)$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل المساواة المحقّقة في السؤال الأول لتكتب $2x^2 - x - 15$ جداءً."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العامل $(2x + 5)$ مشترك: أخرجه ثم بسّط ما بين القوسين الكبيرين."
+        }
+      ],
+      "feedback": {
+        "correct": "$F = (2x + 5)(3x + 2)$ إذن $m = 3$ .",
+        "incorrect": "أخرج العامل المشترك من كل حد، ثم بسّط ما بين القوسين الكبيرين بإشاراته."
+      },
+      "solution": {
+        "lines": [
+          "$F = (2x + 5)(x - 3) + (2x + 5)^2$",
+          "$= (2x + 5)\\left[(x - 3) + (2x + 5)\\right]$",
+          "$= (2x + 5)(x - 3 + 2x + 5)$"
+        ],
+        "result": "F = (2x + 5)(3x + 2)"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutarajiha-ula_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب على الشكل $(2x + 5)(mx + n)$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العدد المطلوب في الشكل المحلّل، بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$F = (2x + 5)(3x + 2)$ إذن $n = 2$ .",
+        "incorrect": "أخرج العامل المشترك من كل حد، ثم بسّط ما بين القوسين الكبيرين بإشاراته."
+      },
+      "solution": {
+        "lines": [
+          "$F = (2x + 5)(3x + 2)$"
+        ],
+        "result": "n = 2"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "lead": "حلّ المتراجحة: $(2x + 5)(x - 3) \\leqslant 2x^2 + 9$ .",
+      "statement": "حدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutarajiha-ula_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x < k$ أو $x \\leqslant k$ أو $x > k$ أو $x \\geqslant k$ : اكتب العدد $k$ فقط (عدد صحيح أو كسر a/b، قد يكون سالبًا)",
+      "expectedAnswer": "-24",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر، كما في حل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إضافة عدد إلى الطرفين أو طرحه منهما لا تغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحدّ هو العدد الذي يحقّق المعادلة المرفقة (نضع «=» مكان رمز المتباينة): اقسم في الأخير على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "حدّ الحلول هو $k = -24$ .",
+        "incorrect": "أعد الحل سطرًا سطرًا: العملية نفسها على الطرفين، ثم القسمة على معامل $x$ في الأخير."
+      },
+      "solution": {
+        "lines": [
+          "حدّ الحلول هو حلّ المعادلة المرفقة: $(2x + 5)(x - 3) = 2x^2 + 9$",
+          "باستعمال المساواة المحقّقة في السؤال الأول:",
+          "$2x^2 - x - 15 = 2x^2 + 9$",
+          "$-x = 9 + 15$",
+          "$-x = 24$",
+          "$\\dfrac{-x}{-1} = \\dfrac{24}{-1}$",
+          "إذن حدّ الحلول هو $-24$ ."
+        ],
+        "result": "k = -24"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_mutarajiha-ula_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < -24$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-SALIB-BILA-QALB"
+        },
+        {
+          "id": "B",
+          "content": "$x \\leqslant -24$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-SALIB-BILA-QALB"
+        },
+        {
+          "id": "C",
+          "content": "$x > -24$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        },
+        {
+          "id": "D",
+          "content": "$x \\geqslant -24$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارة معامل $x$ في آخر سطر قبل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد موجب تحافظ على الاتجاه، والقسمة على عدد سالب تغيّره."
+        }
+      ],
+      "feedback": {
+        "correct": "$x \\geqslant -24$ .",
+        "incorrect": "تتبّع سطور الحل: الاتجاه يتغيّر فقط عند الضرب أو القسمة على عدد سالب، ونوع المتباينة (تامة أو غير تامة) لا يتغيّر أبدًا."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $(2x + 5)(x - 3) \\leqslant 2x^2 + 9$",
+          "باستعمال المساواة المحقّقة في السؤال الأول:",
+          "$2x^2 - x - 15 \\leqslant 2x^2 + 9$",
+          "$-x \\leqslant 9 + 15$",
+          "$-x \\leqslant 24$",
+          "نقسم الطرفين على العدد السالب $-1$ فنغيّر اتجاه المتباينة:",
+          "$\\dfrac{-x}{-1} \\geqslant \\dfrac{24}{-1}$",
+          "إذن حلول المتراجحة هي كل قيم $x$ الأكبر من أو تساوي $-24$ .",
+          "قسمنا الطرفين (أو ضربناهما) في آخر خطوة على عدد سالب، فتغيّر اتجاه المتباينة وبقي نوعها."
+        ],
+        "result": "x \\geqslant -24"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

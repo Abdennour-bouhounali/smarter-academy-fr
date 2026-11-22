@@ -1,0 +1,212 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l4-003",
+  "lessonCode": "mafhum-dawaran",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — صورة مثلث على المرصوفة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "صورة مثلث",
+      "المرصوفة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mafhum-dawaran_P3",
+      "modelledOn": "ex-7"
+    }
+  },
+  "statement": {
+    "content": "على المرصوفة: $O(0\\,;\\,0)$ والمثلث ABC حيث $A(1\\,;\\,2)$ و $B(4\\,;\\,1)$ و $C(2\\,;\\,4)$ . نعتبر الدوران الذي مركزه O وزاويته $90^\\circ$ في الاتجاه غير المباشر.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          1,
+          2
+        ],
+        "B": [
+          4,
+          1
+        ],
+        "C": [
+          2,
+          4
+        ]
+      },
+      "grid": true,
+      "maxWidth": 420,
+      "polygons": [
+        {
+          "points": [
+            "A",
+            "B",
+            "C"
+          ],
+          "tone": "indigo"
+        }
+      ],
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "A"
+        ]
+      ],
+      "ariaLabel": "ورقة مرصوفة عليها O والمثلث ABC"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا A′ صورة A:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الإحداثيتان (x ; y) — عددان صحيحان",
+      "expectedAnswer": {
+        "x": "2",
+        "y": "-1"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-ITTIJAH",
+          "value": {
+            "x": "-2",
+            "y": "1"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من O إلى A: 1 يمينا و 2 أعلى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ربع دورة في اتجاه عقارب الساعة: (a ; b) تصبح (b ; −a)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق على A."
+        }
+      ],
+      "feedback": {
+        "correct": "$A'(2\\,;\\,-1)$ .",
+        "incorrect": "في اتجاه عقارب الساعة: الأعلى يصبح يمينا."
+      },
+      "difficulty": 3
+    },
+    {
+      "id": "q2",
+      "statement": "إحداثيتا B′ صورة B:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الإحداثيتان (x ; y) — عددان صحيحان",
+      "expectedAnswer": {
+        "x": "1",
+        "y": "-4"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-ITTIJAH",
+          "value": {
+            "x": "-1",
+            "y": "4"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من O إلى B: 4 يمينا و 1 أعلى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نفس القاعدة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق على B."
+        }
+      ],
+      "feedback": {
+        "correct": "$B'(1\\,;\\,-4)$ .",
+        "incorrect": "دوّر الإزاحة من O إلى B ربع دورة مع عقارب الساعة."
+      },
+      "difficulty": 3
+    },
+    {
+      "id": "q3",
+      "statement": "إحداثيتا C′ صورة C:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الإحداثيتان (x ; y) — عددان صحيحان",
+      "expectedAnswer": {
+        "x": "4",
+        "y": "-2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-ITTIJAH",
+          "value": {
+            "x": "-4",
+            "y": "2"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من O إلى C: 2 يمينا و 4 أعلى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نفس القاعدة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق على C."
+        }
+      ],
+      "feedback": {
+        "correct": "$C'(4\\,;\\,-2)$ : المثلث A′B′C′ صورة ABC.",
+        "incorrect": "ربع دورة مع عقارب الساعة لكل رأس."
+      },
+      "difficulty": 3
+    }
+  ]
+}

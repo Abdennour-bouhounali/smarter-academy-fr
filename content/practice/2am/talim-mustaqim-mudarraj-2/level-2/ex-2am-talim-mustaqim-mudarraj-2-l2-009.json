@@ -1,0 +1,200 @@
+{
+  "id": "ex-2am-talim-mustaqim-mudarraj-2-l2-009",
+  "lessonCode": "talim-mustaqim-mudarraj-2",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — عدّ التدريجات وجهة النقطة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "وضع نقط",
+      "جهة النقطة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "على مستقيم مدرّج قيمة تدريجته الواحدة $5$ نضع النقط $A(-35)$ و $B(+20)$ و $C(-5{,}5)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نريد وضع النقطة $A(-35)$ على مستقيم مدرّج، وقيمة التدريجة الواحدة $5$. كم تدريجة تعدّ من المبدأ؟ اكتب العدد سالبًا إذا كانت النقطة على يسار المبدأ.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "-7",
+      "misconceptionSignatures": [
+        {
+          "value": "-35",
+          "id": "MISC-TALIM2-UNITIGNORED"
+        },
+        {
+          "value": "7",
+          "id": "MISC-TALIM2-SIGNSIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد التدريجات = الفاصلة ÷ قيمة التدريجة الواحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أمّا الجهة فتحدّدها الإشارة: سالبة على اليسار، موجبة على اليمين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب عدد التدريجات في قيمة التدريجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$-35 \\div 5 = -7$ : عدد التدريجات مسبوق بالإشارة.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$-35 \\div 5 = -7$",
+          "$7$ تدريجات إلى يسار المبدأ"
+        ],
+        "result": "-7"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "نريد وضع النقطة $B(20)$ على مستقيم مدرّج، وقيمة التدريجة الواحدة $5$. كم تدريجة تعدّ من المبدأ؟ اكتب العدد سالبًا إذا كانت النقطة على يسار المبدأ.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$20$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM2-UNITIGNORED"
+        },
+        {
+          "id": "B",
+          "content": "$4$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$-4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM2-SIGNSIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد التدريجات = الفاصلة ÷ قيمة التدريجة الواحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أمّا الجهة فتحدّدها الإشارة: سالبة على اليسار، موجبة على اليمين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب عدد التدريجات في قيمة التدريجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$20 \\div 5 = 4$ : عدد التدريجات مسبوق بالإشارة.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$20 \\div 5 = 4$",
+          "$4$ تدريجات إلى يمين المبدأ"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "على أيّ جهة من المبدأ تقع النقطة $C(-5{,}5)$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "على يمين المبدأ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM2-SIGNSIDE"
+        },
+        {
+          "id": "B",
+          "content": "على يسار المبدأ",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارة الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفاصلة الموجبة إلى يمين المبدأ والسالبة إلى يساره."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر موقع $-3$ بالنسبة إلى الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة $-5{,}5$ سالبة: النقطة على يسار المبدأ.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة سالبة",
+          "النقطة على يسار المبدأ"
+        ]
+      },
+      "timeSeconds": 45
+    }
+  ]
+}

@@ -1,0 +1,310 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l5-006",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — رحلة إلى حديقة التجارب",
+    "estimatedMinutes": 18,
+    "tags": [
+      "حافلات",
+      "الحاصل + 1",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تنظّم المتوسطة رحلة علمية إلى حديقة التجارب لـ 412 تلميذًا يرافقهم 23 أستاذًا.\nالجزء الأول: تتّسع الحافلة الكبيرة لـ 50 راكبًا، وثمن كرائها 12500 دج.\nالجزء الثاني: تتّسع الحافلة الصغيرة لـ 30 راكبًا، وثمن كرائها 8000 دج. يختار المدير الكراء الأقل كلفة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب عدد المسافرين.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "435",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التلاميذ + الأساتذة."
+        }
+      ],
+      "feedback": {
+        "correct": "$412 + 23 = 435$.",
+        "incorrect": "لا تنسَ الأساتذة المرافقين."
+      },
+      "solution": {
+        "lines": [
+          "$412 + 23 = 435$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب حاصل القسمة الإقليدية للعدد 435 على 50.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "35",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "7",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "9",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 435 من 50 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 50 دون أن نتجاوز 435."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$435 = 50 \\times 8 + 35$ و $35 < 50$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 50 فلا يتجاوز الجداء 435، والباقي عندئذ أصغر من 50."
+      },
+      "solution": {
+        "lines": [
+          "$50 \\times 8 = 400$ و $50 \\times 9 = 450$",
+          "$400 \\le 435 < 450$ ، إذن الحاصل هو 8."
+        ],
+        "result": "q = 8"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "كم حافلة كبيرة يلزم كراؤها؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد الحافلات",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-IQLIDIYA-NISYAN-ZIYADA"
+        },
+        {
+          "value": "35",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل تكفي المجموعات الكاملة لوضع كل شيء؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ماذا نفعل بالباقي إذا لم يكن معدومًا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$435 = 50 \\times 8 + 35$: يبقى 35 بعد المجموعات الكاملة، ويحتاج إلى حافلة أخرى.",
+        "incorrect": "الحاصل يعدّ المجموعات الكاملة فقط؛ إذا بقي شيء فهو يحتاج إلى مجموعة إضافية."
+      },
+      "solution": {
+        "lines": [
+          "$435 = 50 \\times 8 + 35$",
+          "يبقى 35 بعد المجموعات الكاملة، فنحتاج إلى حافلة أخرى:",
+          "$8 + 1 = 9$"
+        ],
+        "result": "9"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب كلفة الحافلات الكبيرة.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "112500",
+      "misconceptionSignatures": [
+        {
+          "value": "100000",
+          "id": "MISC-IQLIDIYA-NISYAN-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الحافلات × ثمن الكراء."
+        }
+      ],
+      "feedback": {
+        "correct": "$9 \\times 12500 = 112500$ دج.",
+        "incorrect": "اضرب عدد الحافلات اللازمة في ثمن كراء الحافلة."
+      },
+      "solution": {
+        "lines": [
+          "$9 \\times 12500 = 112500$"
+        ],
+        "result": "112500 \\text{ DA}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "كم حافلة صغيرة يلزم كراؤها لو اختار الحافلات الصغيرة؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد الحافلات",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "14",
+          "id": "MISC-IQLIDIYA-NISYAN-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل تكفي المجموعات الكاملة لوضع كل شيء؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ماذا نفعل بالباقي إذا لم يكن معدومًا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$435 = 30 \\times 14 + 15$: يبقى 15 بعد المجموعات الكاملة، ويحتاج إلى حافلة أخرى.",
+        "incorrect": "الحاصل يعدّ المجموعات الكاملة فقط؛ إذا بقي شيء فهو يحتاج إلى مجموعة إضافية."
+      },
+      "solution": {
+        "lines": [
+          "$435 = 30 \\times 14 + 15$",
+          "يبقى 15 بعد المجموعات الكاملة، فنحتاج إلى حافلة أخرى:",
+          "$14 + 1 = 15$"
+        ],
+        "result": "15"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "أيّ الكراءين أقل كلفة؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الحافلات الكبيرة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الحافلات الصغيرة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-NISYAN-ZIYADA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب كلفة الحافلات الصغيرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الكلفتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$15 \\times 8000 = 120000 > 112500$: الحافلات الكبيرة أقل كلفة.",
+        "incorrect": "احسب كلفة الحافلات الصغيرة اللازمة ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "$15 \\times 8000 = 120000$",
+          "$112500 < 120000$ ، إذن الحافلات الكبيرة أقل كلفة."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

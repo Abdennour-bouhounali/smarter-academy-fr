@@ -1,0 +1,383 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l4-001",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — قسمة إقليدية ثمّ قسمة عشرية وجدول القيم المقرّبة",
+    "estimatedMinutes": 9,
+    "tags": [
+      "قسمة عشرية",
+      "جدول",
+      "حصر"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-79",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "أنجز القسمة الإقليدية للعدد $263$ على العدد $14$ ، ثمّ القسمة العشرية لهذا العدد على $14$ ، وأكمل الجدول."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "القسمة الإقليدية:",
+      "statement": "احسب حاصل القسمة الإقليدية للعدد $263$ على العدد $14$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "18",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أكبر عدد نضربه في المقسوم عليه دون أن يتجاوز المقسوم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي هو ما يبقى من المقسوم بعد طرح الجداء، وهو أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$263 = 14 \\times 18 + 11$ و $11 < 14$.",
+        "incorrect": "القسمة الإقليدية: المقسوم = المقسوم عليه × الحاصل + الباقي، والباقي أصغر من المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$263 = 14 \\times 18 + 11$",
+          "$11 < 14$"
+        ],
+        "result": "18"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب باقي القسمة الإقليدية للعدد $263$ على العدد $14$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "11",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أكبر عدد نضربه في المقسوم عليه دون أن يتجاوز المقسوم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي هو ما يبقى من المقسوم بعد طرح الجداء، وهو أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$263 = 14 \\times 18 + 11$ و $11 < 14$.",
+        "incorrect": "القسمة الإقليدية: المقسوم = المقسوم عليه × الحاصل + الباقي، والباقي أصغر من المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$263 = 14 \\times 18 + 11$",
+          "$11 < 14$"
+        ],
+        "result": "11"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "أنجز القسمة العشرية $263 \\div 14$ ، واكتفِ بثلاثة أرقام بعد الفاصلة (دون تدوير).",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "18.785",
+      "misconceptionSignatures": [
+        {
+          "value": "18.786",
+          "id": "MISC-QARIBA-SWAP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل أوّلًا المقسوم عليه إلى عدد طبيعي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "واصل القسمة بعد الفاصلة بإضافة أصفار إلى الباقي، وتوقّف عند الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$263 \\div 14 = 263 \\div 14 = 18{,}785\\ldots$.",
+        "incorrect": "توقّف عند الرتبة المطلوبة دون زيادة: الأرقام الباقية تُهمل."
+      },
+      "solution": {
+        "lines": [
+          "$263 \\div 14 = 263 \\div 14$",
+          "$263 \\div 14 = 18{,}785\\ldots$"
+        ],
+        "result": "18{,}785"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "القيم المقرّبة إلى $0{,}1$:",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}1$ بالنقصان لحاصل القسمة $263 \\div 14$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "18.7",
+      "misconceptionSignatures": [
+        {
+          "value": "18.8",
+          "id": "MISC-QARIBA-ROUNDED"
+        },
+        {
+          "value": "18.78",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالنقصان لا تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة دون أن تزيد شيئًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب القيمة في المقسوم عليه: يجب ألاّ يتجاوز الجداء المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$18{,}7 < \\frac{263}{14} < 18{,}8$.",
+        "incorrect": "بالنقصان: نحتفظ بالأرقام حتى الرتبة المطلوبة ونُهمل ما بعدها دون تغيير الرقم الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$14 \\times 18{,}7 = 261{,}8$",
+          "$14 \\times 18{,}8 = 263{,}2$",
+          "$261{,}8 < 263 < 263{,}2$"
+        ],
+        "result": "18{,}7"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}1$ بالزيادة لحاصل القسمة $263 \\div 14$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "18.8",
+      "misconceptionSignatures": [
+        {
+          "value": "18.7",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "18.79",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالزيادة هي أصغر قيمة من هذه الرتبة تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من القيمة بالنقصان ثم أضف وحدة واحدة من الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$18{,}7 < \\frac{263}{14} < 18{,}8$.",
+        "incorrect": "بالزيادة: هي القيمة التي تلي القيمة بالنقصان مباشرة في الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$14 \\times 18{,}8 = 263{,}2$",
+          "$263{,}2 > 263$",
+          "القيمة بالزيادة هي $18{,}8$"
+        ],
+        "result": "18{,}8"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ج",
+      "lead": "القيم المقرّبة إلى $0{,}01$:",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}01$ بالنقصان لحاصل القسمة $263 \\div 14$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "18.78",
+      "misconceptionSignatures": [
+        {
+          "value": "18.79",
+          "id": "MISC-QARIBA-ROUNDED"
+        },
+        {
+          "value": "18.785",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالنقصان لا تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة دون أن تزيد شيئًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب القيمة في المقسوم عليه: يجب ألاّ يتجاوز الجداء المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$18{,}78 < \\frac{263}{14} < 18{,}79$.",
+        "incorrect": "بالنقصان: نحتفظ بالأرقام حتى الرتبة المطلوبة ونُهمل ما بعدها دون تغيير الرقم الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$14 \\times 18{,}78 = 262{,}92$",
+          "$14 \\times 18{,}79 = 263{,}06$",
+          "$262{,}92 < 263 < 263{,}06$"
+        ],
+        "result": "18{,}78"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "sub": "د",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}01$ بالزيادة لحاصل القسمة $263 \\div 14$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "18.79",
+      "misconceptionSignatures": [
+        {
+          "value": "18.78",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "18.786",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالزيادة هي أصغر قيمة من هذه الرتبة تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من القيمة بالنقصان ثم أضف وحدة واحدة من الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$18{,}78 < \\frac{263}{14} < 18{,}79$.",
+        "incorrect": "بالزيادة: هي القيمة التي تلي القيمة بالنقصان مباشرة في الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$14 \\times 18{,}79 = 263{,}06$",
+          "$263{,}06 > 263$",
+          "القيمة بالزيادة هي $18{,}79$"
+        ],
+        "result": "18{,}79"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

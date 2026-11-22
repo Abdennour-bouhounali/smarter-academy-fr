@@ -1,0 +1,121 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l3-006",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — دائرة الوسط",
+    "estimatedMinutes": 2,
+    "tags": [
+      "دائرة",
+      "ملعب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_ithbat-khawas-maalam_P3",
+      "modelledOn": "ex-18"
+    }
+  },
+  "generator": {
+    "tool": "u1x-ithbat-khawas-maalam/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "دائرة وسط ملعب نظّفه المتطوّعون قطرها [AB] حيث $A(-3\\,;\\,0)$ و $B(3\\,;\\,0)$ في معلم متعامد ومتجانس، والكرة في $M(0\\,;\\,3)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المركز I منتصف [AB]. احسب $IM^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-DAIRA-QUTR",
+          "value": "36"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المركز I منتصف [AB]."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "I هو المبدأ هنا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مركبتا $\\overrightarrow{IM}$ ثم المربع."
+        }
+      ],
+      "feedback": {
+        "correct": "I هو المبدأ و $IM^2 = 0 + 9 = 9$ .",
+        "incorrect": "المركز منتصف القطر."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "الكرة M :",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "على دائرة الوسط لأن $IM = 3 = IA$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "داخلها لأن $IM = 3 < AB = 6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-DAIRA-QUTR"
+        },
+        {
+          "id": "C",
+          "content": "خارجها لأن $IM^2 = 9 > 3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-NASI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نصف القطر IA."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن IM بـ IA."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تقارن بالقطر."
+        }
+      ],
+      "feedback": {
+        "correct": "$IA = 3$ : M على الدائرة.",
+        "incorrect": "نقارن بنصف القطر لا بالقطر."
+      }
+    }
+  ]
+}

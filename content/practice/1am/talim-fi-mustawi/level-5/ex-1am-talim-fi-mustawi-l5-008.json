@@ -1,0 +1,260 @@
+{
+  "id": "ex-1am-talim-fi-mustawi-l5-008",
+  "lessonCode": "talim-fi-mustawi",
+  "level": 5,
+  "metadata": {
+    "title": "اختبار قصير",
+    "estimatedMinutes": 7,
+    "tags": [
+      "ترتيب",
+      "نقط المحورين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "أسئلة قصيرة عن الإحداثيين وترتيبهما."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل النقطتان $A(-2\\,;\\,3)$ و $B(3\\,;\\,-2)$ هما النقطة نفسها؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SWAPSAME"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الفاصلة والترتيب في كلّ زوج."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الأول للخط الأفقي والثاني للخط الشاقولي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إن اختلف العددان فتبديلهما يعطي نقطة أخرى."
+        }
+      ],
+      "feedback": {
+        "correct": "العددان نفسهما لكن ترتيبهما مختلف: نقطتان مختلفتان.",
+        "incorrect": "قارن الفاصلتين ثمّ الترتيبين."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $A$ هي $-2$ وفاصلة $B$ هي $3$",
+          "الفاصلتان مختلفتان: نقطتان مختلفتان"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "صحيح أم خاطئ؟ النقطة $(0\\,;\\,-4)$ تقع على محور التراتيب.",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "خاطئ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-AXISSWAP"
+        },
+        {
+          "id": "B",
+          "content": "صحيح",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ إحداثي على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفاصلة هي العدد الأول (الخط الأفقي) والترتيب هو الثاني (الخط الشاقولي)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نقطة على محور الفواصل ترتيبها معدوم، ونقطة على محور التراتيب فاصلتها معدومة."
+        }
+      ],
+      "feedback": {
+        "correct": "الجملة صحيحة.",
+        "incorrect": "قارن الإحداثيين بما تقوله الجملة."
+      },
+      "solution": {
+        "lines": [
+          "الجملة تحقّق ما نعرفه عن الإحداثيين"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أين تقع النقطة $(5\\,;\\,0)$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "هي المبدأ",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "ليست على أيّ من المحورين",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "على محور الفواصل",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "على محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-AXISSWAP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اسأل: أيّ الإحداثيين معدوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترتيب معدوم: لا نصعد ولا ننزل، فالنقطة على الخط الأفقي. فاصلة معدومة: لا نتحرّك أفقيًّا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إن انعدم الإحداثيان معًا فهي المبدأ، وإن لم ينعدم أيّ منهما فهي خارج المحورين."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة $(5\\,;\\,0)$ على محور الفواصل .",
+        "incorrect": "ترتيب معدوم يعني محور الفواصل، وفاصلة معدومة تعني محور التراتيب."
+      },
+      "solution": {
+        "lines": [
+          "ترتيب النقطة معدوم",
+          "على محور الفواصل"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "النقطة $M'$ نظيرة $M(5\\,;\\,0)$ بالنسبة إلى محور الفواصل. ما إحداثيا $M'$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "5",
+        "y": "0"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SYMMIX",
+          "value": {
+            "x": "-5",
+            "y": "0"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النظيرة بالنسبة إلى محور الفواصل تقع على الجهة الأخرى منه بالبعد نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "محور الفواصل أفقي: النظيرة فوقه أو تحته على الخط الشاقولي نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الفاصلة تبقى والترتيب يعاكسه."
+        }
+      ],
+      "feedback": {
+        "correct": "إحداثيا $M'$ هما $(5\\,;\\,0)$ .",
+        "incorrect": "بالنسبة إلى محور الفواصل تتغيّر إشارة الترتيب وحده."
+      },
+      "solution": {
+        "lines": [
+          "النظيرة بالنسبة إلى محور الفواصل: الفاصلة نفسها والترتيب معاكس",
+          "$M'(5\\,;\\,0)$"
+        ],
+        "result": "M'(5\\,;\\,0)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

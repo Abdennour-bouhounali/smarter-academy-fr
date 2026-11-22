@@ -1,0 +1,329 @@
+{
+  "id": "ex-4am-tahlil-ibara-l4-009",
+  "lessonCode": "tahlil-ibara",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2013 — قيمة مقربة وتحليل",
+    "estimatedMinutes": 15,
+    "tags": [
+      "قيمة مقربة",
+      "متراجحة",
+      "نشر",
+      "عامل مشترك"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tahlil-ibara_P2",
+      "modelledOn": "BEM 2013 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2013",
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "لتكن العبارة: $A = 2x - 3$ حيث $x$ عدد حقيقي.",
+      "statement": "احسب القيمة المقربة إلى $10^{-2}$ بالنقصان لِـ $A$ من أجل $x = \\sqrt{3}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة برقمين بعد الفاصلة",
+      "expectedAnswer": "0,46",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $\\sqrt{3}$ : $A = 2\\sqrt{3} - 3$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب بالآلة الحاسبة ثم احذف الأرقام بعد الرقم الثاني من الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 2\\sqrt{3} - 3 \\approx 0{,}464$ والقيمة المقربة بالنقصان إلى $10^{-2}$ هي $0{,}46$ .",
+        "incorrect": "القيمة المقربة بالنقصان هي العدد العشري برقمين بعد الفاصلة الأصغر مباشرة من القيمة المضبوطة."
+      },
+      "solution": {
+        "lines": [
+          "$A = 2\\sqrt{3} - 3$",
+          "$= 0{,}464\\ldots$",
+          "$0{,}46 < 0{,}464\\ldots < 0{,}47$"
+        ],
+        "result": "A \\approx 0{,}46"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "حلّ المتراجحة: $A \\leqslant 0$ ثم مثل مجموعة حلولها بيانيّا.",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة هي الأعداد $x$ حيث $x \\leq k$ أو $x \\geq k$ (أو بمتباينة تامة) : اكتب العدد الحدّي $k$ فقط",
+      "expectedAnswer": "3/2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر ثم اجمع حدود $x$ في طرف والأعداد في الطرف الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم الطرفين على عدد موجب: لا يتغيّر اتجاه المتباينة."
+        }
+      ],
+      "feedback": {
+        "correct": "$x \\leqslant \\dfrac{3}{2}$ .",
+        "incorrect": "انقل الحدود بإشاراتها، وعند القسمة على عدد سالب اعكس اتجاه المتباينة."
+      },
+      "solution": {
+        "lines": [
+          "$2x - 3 \\leqslant 0$",
+          "$2x \\leqslant 3$",
+          "$x \\leqslant \\dfrac{3}{2}$",
+          "التمثيل البياني: نشطب الجزء الواقع على يمين $\\dfrac{3}{2}$ ، والعدد $\\dfrac{3}{2}$ من الحلول."
+        ],
+        "result": "x \\leqslant \\dfrac{3}{2}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "انشر ثم بسط العبارة $B$ حيث: $B = (2x - 3)^2 + 4x^2 - 9$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $B$ على الشكل $ax^2 + bx$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب كل حد من القوس الأول في كل حد من القوس الثاني، وطبّق المتطابقة الشهيرة على المربع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى الإشارة «−» أمام قوس: تغيّر إشارة كل حد داخله."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 8x^2 - 12x$ إذن $a = 8$ .",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$B = (2x - 3)^2 + 4x^2 - 9$",
+          "$= 4x^2 - 12x + 9 + 4x^2 - 9$"
+        ],
+        "result": "B = 8x^2 - 12x"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $B$ على الشكل $ax^2 + bx$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "-12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العدد المطلوب في الشكل المبسّط، بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 8x^2 - 12x$ إذن $b = -12$ .",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$B = 8x^2 - 12x$"
+        ],
+        "result": "b = -12"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "استنتج أن: $B = 4x(2x - 3)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $B$ على الشكل $kx(2x - 3)$ : اكتب العدد $k$ فقط",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من النشر: $B = 8x^2 - 12x$ ، ابحث عن العامل المشترك الأكبر للحدّين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أو: $4x^2 - 9 = (2x - 3)(2x + 3)$ ، فيظهر العامل $(2x - 3)$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بسّط ما بين القوسين الكبيرين بإشاراته، ثم قارن بالشكل المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 4x(2x - 3)$ إذن $k = 4$ .",
+        "incorrect": "أخرج العامل المشترك من كل حد، ثم بسّط ما بين القوسين الكبيرين بإشاراته (حدّ وحده يعني $1$)."
+      },
+      "solution": {
+        "lines": [
+          "$B = (2x - 3)^2 + (2x - 3)(2x + 3)$",
+          "$= (2x - 3)(2x - 3 + 2x + 3)$",
+          "$= (2x - 3) \\times 4x$"
+        ],
+        "result": "B = 4x(2x - 3)"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ج",
+      "statement": "حل المعادلة $B = 0$ . — الحلّ الأصغر:",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الشكل المحلّل $B = 4x(2x - 3)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يكون جداء معدومًا إذا كان أحد عامليه على الأقل معدومًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 0$ .",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة من الدرجة الأولى، ثم رتّب الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "$4x(2x - 3) = 0$ يعني أنّ: $4x = 0$ أو $2x - 3 = 0$",
+          "أي: $x = 0$ أو $x = \\dfrac{3}{2}$"
+        ],
+        "result": "x = 0"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q7",
+      "step": "02",
+      "sub": "ج",
+      "statement": "الحلّ الأكبر:",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "3/2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة $2x - 3 = 0$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{3}{2}$ .",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة من الدرجة الأولى، ثم رتّب الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "إذن للمعادلة $B = 0$ حلّان هما $0$ و $\\dfrac{3}{2}$"
+        ],
+        "result": "x = \\dfrac{3}{2}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

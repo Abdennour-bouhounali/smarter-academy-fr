@@ -1,0 +1,193 @@
+{
+  "id": "ex-1am-bahth-adad-naqisa-l3-008",
+  "lessonCode": "bahth-adad-naqisa",
+  "level": 3,
+  "metadata": {
+    "title": "جدار البلاطات",
+    "estimatedMinutes": 8,
+    "tags": [
+      "جدار",
+      "مجموع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-7",
+      "page": 86,
+      "section": "البحث عن أعداد ناقصة",
+      "number": 7
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "حائط بلاطات من ثلاثة صفوف: ثلاث بلاطات في الأسفل وفوقها بلاطتان وفوقهما بلاطة. العدد على كلّ بلاطة هو مجموع العددين اللذين تحتها. على القمّة 58، وعلى البلاطة اليسرى من الصفّ الثاني 26، وعلى البلاطة اليمنى من الصفّ الأسفل 14."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما العدد على البلاطة اليمنى من الصفّ الثاني؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "32",
+      "misconceptionSignatures": [
+        {
+          "value": "84",
+          "id": "MISC-NAQISA-SAMEOP"
+        },
+        {
+          "value": "-32",
+          "id": "MISC-NAQISA-REVSUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للجمع هي الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $32+26=58$ ، فالعدد الناقص هو $32$ .",
+        "incorrect": "في مجموع نطرح العدد المعلوم من الناتج: لا نجمع مرّة أخرى."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square+26=58$ .",
+          "نُرجع بالعملية العكسية: $\\square=58-26=32$ .",
+          "نتحقّق: $32+26=58$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما العدد على البلاطة الوسطى من الصفّ الأسفل؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "18",
+      "misconceptionSignatures": [
+        {
+          "value": "46",
+          "id": "MISC-NAQISA-SAMEOP"
+        },
+        {
+          "value": "-18",
+          "id": "MISC-NAQISA-REVSUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للجمع هي الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $18+14=32$ ، فالعدد الناقص هو $18$ .",
+        "incorrect": "في مجموع نطرح العدد المعلوم من الناتج: لا نجمع مرّة أخرى."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square+14=32$ .",
+          "نُرجع بالعملية العكسية: $\\square=32-14=18$ .",
+          "نتحقّق: $18+14=32$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما العدد على البلاطة اليسرى من الصفّ الأسفل؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "44",
+          "id": "MISC-NAQISA-SAMEOP"
+        },
+        {
+          "value": "-8",
+          "id": "MISC-NAQISA-REVSUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للجمع هي الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $8+18=26$ ، فالعدد الناقص هو $8$ .",
+        "incorrect": "في مجموع نطرح العدد المعلوم من الناتج: لا نجمع مرّة أخرى."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square+18=26$ .",
+          "نُرجع بالعملية العكسية: $\\square=26-18=8$ .",
+          "نتحقّق: $8+18=26$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

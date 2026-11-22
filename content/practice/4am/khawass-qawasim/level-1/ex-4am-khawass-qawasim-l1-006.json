@@ -1,0 +1,122 @@
+{
+  "id": "ex-4am-khawass-qawasim-l1-006",
+  "lessonCode": "khawass-qawasim",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2024 — كتب مكتبة المتوسطة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "خاصية 1",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_khawass-qawasim_P1",
+      "modelledOn": "BEM 2024 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "تشجّع مكتبة متوسطة بالبيّض تلاميذها على حبّ القراءة، وهي تملك 595 كتابًا أدبيًا و 340 كتابًا علميًا، وتريد ترتيبها في علب يتسع كل منها لـ 17 كتابًا بالضبط، دون خلط الصنفين ودون أن يبقى أي كتاب."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل يمكن ترتيب كل كتب المكتبة بهذه الطريقة؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يجب أن يقبل عدد كتب كل صنف القسمة على 17."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أجرِ القسمتين $595 \\div 17$ و $340 \\div 17$."
+        }
+      ],
+      "feedback": {
+        "correct": "$595 = 17 \\times 35$ و $340 = 17 \\times 20$: يمكن ترتيب كل صنف في علب كاملة.",
+        "incorrect": "تحقّق من قابلية قسمة كلٍّ من 595 و 340 على 17."
+      },
+      "solution": {
+        "lines": [
+          "$595 = 17 \\times 35$ و $340 = 17 \\times 20$",
+          "كل من العددين يقبل القسمة على 17، إذن يمكن ترتيب الكتب بهذه الطريقة."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أوجد العدد الكلي للعلب، دون حساب العدد الكلي للكتب.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد العلب)",
+      "expectedAnswer": "55",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الكتابتين $595 = 17 \\times 35$ و $340 = 17 \\times 20$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرج 17 عاملًا مشتركًا: $17 \\times q + 17 \\times q' = 17 \\times (q + q')$."
+        }
+      ],
+      "feedback": {
+        "correct": "$595 + 340 = 17 \\times (35 + 20) = 17 \\times 55$.",
+        "incorrect": "القاسم المشترك لعددين يقسم مجموعهما: اكتب كلا من العددين على الشكل $17 \\times q$ ثم أخرج 17 عاملًا مشتركًا."
+      },
+      "solution": {
+        "lines": [
+          "$595 + 340 = 17 \\times 35 + 17 \\times 20$",
+          "$595 + 340 = 17 \\times (35 + 20)$",
+          "$595 + 340 = 17 \\times 55$ ، إذن 17 يقسم $595 + 340$.",
+          "عدد العلب هو 55."
+        ],
+        "result": "595 + 340 = 17 \\times 55"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

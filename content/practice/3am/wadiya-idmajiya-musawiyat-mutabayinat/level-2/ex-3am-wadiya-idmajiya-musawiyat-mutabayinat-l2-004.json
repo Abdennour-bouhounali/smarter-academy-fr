@@ -1,0 +1,271 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-musawiyat-mutabayinat-l2-004",
+  "lessonCode": "wadiya-idmajiya-musawiyat-mutabayinat",
+  "level": 2,
+  "metadata": {
+    "title": "تعويض وتحقّق",
+    "estimatedMinutes": 10,
+    "tags": [
+      "التحقّق",
+      "خواص المساويات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الأوّل",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "أجب عن الأسئلة التالية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ الأعداد التالية حلّ للمعادلة $4x - 4 = 3x + 11$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$16$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-CHECK-ONE-SIDE"
+        },
+        {
+          "id": "B",
+          "content": "$15$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-SIGN-KEPT"
+        },
+        {
+          "id": "D",
+          "content": "$-15$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-SUBST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين المجهول وأين الأعداد ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المجهول في طرف والأعداد في الطرف الآخر، ثمّ اقسم على معامل المجهول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض النتيجة في الطرفين لتتأكّد من تساويهما."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $15$ .",
+        "incorrect": "راجع نقل الحدود وإشاراتها ثمّ القسمة على المعامل، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض في الطرفين: $4(15) - 4$ و $3(15) + 11$ .",
+          "العدد الذي يعطي طرفين متساويين هو $15$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حلّ المعادلة $6x + 3 = 3x + 12$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-MUADALA-SIGN-KEPT"
+        },
+        {
+          "value": "9",
+          "id": "MISC-MUADALA-PARTIAL-SOLVE"
+        },
+        {
+          "value": "1",
+          "id": "MISC-MUADALA-DIV-WRONG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين المجهول وأين الأعداد ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المجهول في طرف والأعداد في الطرف الآخر، ثمّ اقسم على معامل المجهول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض النتيجة في الطرفين لتتأكّد من تساويهما."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $3$ .",
+        "incorrect": "راجع نقل الحدود وإشاراتها ثمّ القسمة على المعامل، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نجمع المجهول في طرف: $3x = 12 - (3)$ ، أي $3x = 9$ .",
+          "نقسم على $3$ : $x = 3$ ."
+        ],
+        "result": "3"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "إذا كان $5x + 5 = 25$ فاحسب $25x + 25$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "125",
+      "misconceptionSignatures": [
+        {
+          "value": "105",
+          "id": "MISC-MUSAWIYA-TERM-LOST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تُجرى على الطرفين معًا ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نفس العدد يُضاف أو يُطرح أو يُضرب فيه الطرفان، فتبقى المساواة صحيحة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل سطر من الحساب ثمّ تحقّق منه بالتعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $125$ .",
+        "incorrect": "انتبه: العملية تُجرى على الطرفين معًا، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضرب الطرفين في $5$ : $25x + 25 = 5 \\times (25)$ .",
+          "فالقيمة هي $125$ ."
+        ],
+        "result": "125"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "أيّ الأعداد التالية حلّ للمعادلة $5x + 3 = 3x - 3$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-SUBST"
+        },
+        {
+          "id": "B",
+          "content": "$0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-SIGN-KEPT"
+        },
+        {
+          "id": "C",
+          "content": "$-6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-PARTIAL-SOLVE"
+        },
+        {
+          "id": "D",
+          "content": "$-3$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين المجهول وأين الأعداد ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المجهول في طرف والأعداد في الطرف الآخر، ثمّ اقسم على معامل المجهول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض النتيجة في الطرفين لتتأكّد من تساويهما."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $-3$ .",
+        "incorrect": "راجع نقل الحدود وإشاراتها ثمّ القسمة على المعامل، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض في الطرفين: $5(-3) + 3$ و $3(-3) - 3$ .",
+          "العدد الذي يعطي طرفين متساويين هو $-3$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

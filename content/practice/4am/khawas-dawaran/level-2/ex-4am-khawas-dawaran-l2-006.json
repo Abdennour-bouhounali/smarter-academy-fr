@@ -1,0 +1,64 @@
+{
+  "id": "ex-4am-khawas-dawaran-l2-006",
+  "lessonCode": "khawas-dawaran",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — نصف دورة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "التناظر المركزي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_khawas-dawaran_P3",
+      "modelledOn": "ex-17"
+    }
+  },
+  "generator": {
+    "tool": "u13-khawas-dawaran/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "في معلم: $I(2\\,;\\,-1)$ و $K(5\\,;\\,3)$ . K′ صورة K بالدوران الذي مركزه I وزاويته $180^\\circ$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا K′:",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x\\,;\\,y)$ : الفاصلة ثم الترتيبة (عدد صحيح أو كسر مثل 3/2)",
+      "expectedAnswer": {
+        "x": "-1",
+        "y": "-5"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدوران الذي زاويته $180^\\circ$ تناظر بالنسبة إلى I."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "I منتصف [KK′]."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$x_{K'} = 2x_I - x_K$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$K'(-1\\,;\\,-5)$ .",
+        "incorrect": "I منتصف [KK′]: نضاعف إحداثيتي I ونطرح إحداثيتي K."
+      }
+    }
+  ]
+}

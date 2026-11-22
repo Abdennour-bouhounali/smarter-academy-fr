@@ -1,0 +1,188 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-aadad-nisbiya-l4-010",
+  "lessonCode": "wadiya-idmajiya-aadad-nisbiya",
+  "level": 4,
+  "metadata": {
+    "title": "نقطتان وحسابات على إحداثياتهما",
+    "estimatedMinutes": 6,
+    "tags": [
+      "إحداثيات",
+      "جداء",
+      "حاصل قسمة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "prep",
+      "page": 7,
+      "section": "أستعدّ"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد، $G(3\\,;\\,−6)$ و $H(−9\\,;\\,12)$ نقطتان."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب حاصل قسمة فاصلة $H$ على فاصلة $G$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "-12",
+          "id": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العددين اللذين نقسم أحدهما على الآخر وعيّن إشارة كل منهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عاملان مجهولان فالعامل الناقص هو حاصل قسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعملية العكسية: اضرب نتيجتك في العامل المعلوم."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $−3$ .",
+        "incorrect": "راجع الربط بين الضرب والقسمة وقاعدة إشارات الحاصل، ثم تحقّق بالضرب."
+      },
+      "solution": {
+        "lines": [
+          "$(−9) \\div 3$",
+          "$= −3$"
+        ],
+        "result": "−3"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب حاصل قسمة ترتيب $H$ على ترتيب $G$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "-0.5",
+          "id": "MISC-QISMA-ORDER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العددين اللذين نقسم أحدهما على الآخر وعيّن إشارة كل منهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عاملان مجهولان فالعامل الناقص هو حاصل قسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعملية العكسية: اضرب نتيجتك في العامل المعلوم."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $−2$ .",
+        "incorrect": "راجع الربط بين الضرب والقسمة وقاعدة إشارات الحاصل، ثم تحقّق بالضرب."
+      },
+      "solution": {
+        "lines": [
+          "$12 \\div (−6)$",
+          "$= −2$"
+        ],
+        "result": "−2"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "النقطة $W$ فاصلتها جداء فاصلتي $G$ و $H$ ، وترتيبها حاصل قسمة ترتيب $G$ على ترتيب $H$ . أوجد إحداثيتيها.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-27",
+        "y": "-0.5"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الإحداثيتين المعلومتين: الفاصلة أولًا ثم الترتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر بعملية على كل إحداثية على حدة، ثم اجمع النتيجتين في ثنائية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من النتيجة بالنظر إلى موضع النقطة بالنسبة إلى محوري المعلم."
+        }
+      ],
+      "feedback": {
+        "correct": "الإحداثيتان هما $(−27 ; −0{,}5)$ .",
+        "incorrect": "راجع قراءة الإحداثيات وأثر الضرب في عدد سالب على كل إحداثية."
+      },
+      "solution": {
+        "lines": [
+          "$x = 3 \\times (−9) = −27$",
+          "$y = (−6) \\div 12 = −0{,}5$"
+        ],
+        "result": "(−27 ; −0{,}5)"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

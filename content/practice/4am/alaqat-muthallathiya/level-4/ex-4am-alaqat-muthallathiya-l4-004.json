@@ -1,0 +1,209 @@
+{
+  "id": "ex-4am-alaqat-muthallathiya-l4-004",
+  "lessonCode": "alaqat-muthallathiya",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 20 (ص 123) — زاوية جيب تمامها 0,18",
+    "estimatedMinutes": 10,
+    "tags": [
+      "إنشاء زاوية",
+      "الحاسبة",
+      "العلاقات المثلثية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-20",
+      "page": 123,
+      "section": "إنشاءات هندسية",
+      "number": 20,
+      "adaptedFrom": "ex-4am-alaqat-muthallathiya-l4-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نريد إنشاء زاوية حادة قيسها $x$ ، بدون استعمال منقلة، بحيث $\\cos x = 0{,}18$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب العدد $0{,}18$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "9/50",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$0{,}18 = \\dfrac{18}{100}$ ثم اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}18 = \\dfrac{18}{100} = \\dfrac{9}{50}$ .",
+        "incorrect": "اكتب العدد العشري كسرا مقامه 100 ثم اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}18 = \\dfrac{18}{100} = \\dfrac{2 \\times 9}{2 \\times 50}$"
+        ],
+        "result": "0{,}18 = \\dfrac{9}{50}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أنشئ، بدون استعمال منقلة، هذه الزاوية.",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جيب التمام = المجاور على الوتر: مثلث قائم مجاوره 9 ووتره 50 (بوحدة مناسبة)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مثلا: مجاور $1{,}8\\,\\mathrm{cm}$ ووتر $10\\,\\mathrm{cm}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$OA = 1{,}8\\,\\mathrm{cm}$ ، دائرة مركزها $A$ ونصف قطرها $10\\,\\mathrm{cm}$ : $x = \\widehat{OAB}$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{9}{50} = \\dfrac{1{,}8}{10}$ : نختار مجاورا طوله $1{,}8\\,\\mathrm{cm}$ ووترا طوله $10\\,\\mathrm{cm}$ .",
+          "ننشئ زاوية قائمة رأسها $O$ ، ونعيّن $A$ على أحد ضلعيها حيث $OA = 1{,}8\\,\\mathrm{cm}$ .",
+          "الدائرة التي مركزها $A$ ونصف قطرها $10\\,\\mathrm{cm}$ تقطع الضلع الآخر في $B$ .",
+          "في المثلث $AOB$ القائم في $O$ : $\\cos\\widehat{OAB} = \\dfrac{OA}{AB} = \\dfrac{1{,}8}{10} = 0{,}18$ ، إذن $x = \\widehat{OAB}$ ."
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "عيّن بالحاسبة قيس هذه الزاوية، بالتدوير إلى الوحدة من الدرجة.",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: القيس بالدرجة مدوّرا إلى الوحدة",
+      "expectedAnswer": "80",
+      "misconceptionSignatures": [
+        {
+          "value": "79",
+          "id": "MISC-MUTH-TADWIR-BATR"
+        },
+        {
+          "value": "10",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اللمسة العكسية لجيب التمام، والحاسبة مبرمجة بالدرجة."
+        }
+      ],
+      "feedback": {
+        "correct": "⁦2nd cos⁻¹ 0,18 =⁩ يعطي $79{,}63\\ldots$ ، إذن $x \\approx 80^{\\circ}$ .",
+        "incorrect": "استعمل اللمسة العكسية لجيب التمام، ثم دوّر إلى الوحدة (لا تبتر)."
+      },
+      "solution": {
+        "lines": [
+          "بالحاسبة: ⁦2nd cos⁻¹ 0,18 =⁩ يظهر $79{,}63018…$",
+          "الرقم الموالي لرقم الوحدات هو 6: نضيف 1."
+        ],
+        "result": "x \\approx 80^{\\circ}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "باستعمال علاقة مثلثية، احسب $\\sin x$ ، ثم دوّر النتيجة إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري مدوّر إلى 0,01",
+      "expectedAnswer": "0.98",
+      "misconceptionSignatures": [
+        {
+          "value": "0.82",
+          "id": "MISC-MUTH-JAMA-NISAB"
+        },
+        {
+          "value": "0.97",
+          "id": "MISC-MUTH-JADHR-NASI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العلاقة التي تربط جيب الزاوية وجيب تمامها هي $\\cos^2 x + \\sin^2 x = 1$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اعزل $\\sin^2 x$ ثم عوّض جيب التمام بقيمته، ولا تنس تربيع البسط والمقام معا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\sin x$ عدد موجب تماما: خذ الجذر التربيعي الموجب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin^2 x = 1 - 0{,}0324 = 0{,}9676$ ، و $\\sin x = \\sqrt{0{,}9676} \\simeq 0{,}9837$ ، إذن $\\sin x \\approx 0{,}98$ .",
+        "incorrect": "احسب $\\sin^2 x$ أولا، ثم الجذر بالحاسبة، ثم دوّر."
+      },
+      "solution": {
+        "lines": [
+          "$\\sin^2 x = 1 - \\cos^2 x = 1 - 0{,}18^2 = 1 - 0{,}0324 = 0{,}9676$",
+          "$\\sin x > 0$ ، إذن $\\sin x = \\sqrt{0{,}9676} \\simeq 0{,}98367$"
+        ],
+        "result": "\\sin x \\approx 0{,}98"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

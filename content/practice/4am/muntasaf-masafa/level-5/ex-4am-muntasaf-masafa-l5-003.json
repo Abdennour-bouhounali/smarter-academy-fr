@@ -1,0 +1,64 @@
+{
+  "id": "ex-4am-muntasaf-masafa-l5-003",
+  "lessonCode": "muntasaf-masafa",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — محيط مثلث",
+    "estimatedMinutes": 4,
+    "tags": [
+      "المسافة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_muntasaf-masafa_P2",
+      "modelledOn": "act-4"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس (الوحدة $1\\,\\mathrm{cm}$): $A(1\\,;\\,1)$ ، $B(4\\,;\\,5)$ ، $C(1\\,;\\,5)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "محيط المثلث ABC بالسنتيمتر:",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري بالفاصلة (مثل 2,5)",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MASAFA-JADHR-JAM",
+          "value": "14"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الفرقين: فرق الفاصلتين وفرق الترتيبين (النهاية ناقص المبدأ)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ربّع كل فرق ثم اجمع المربعين: هذا مربع المسافة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خذ الجذر التربيعي في الأخير، وبسّطه إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = 5$ ، $BC = 3$ ، $CA = 4$ ، والمحيط $5 + 3 + 4 = 12\\,\\mathrm{cm}$ .",
+        "incorrect": "احسب الأضلاع الثلاثة ثم اجمعها."
+      }
+    }
+  ]
+}

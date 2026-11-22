@@ -1,0 +1,125 @@
+{
+  "id": "ex-4am-tarrid-mushkila-l5-005",
+  "lessonCode": "tarrid-mushkila",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2020 — قواميس مكتبة متوسطة بالبويرة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "ترييض",
+      "متراجحة",
+      "نسبة مئوية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tarrid-mushkila_P1",
+      "modelledOn": "BEM 2020 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2020",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تريد متوسطة بولاية البويرة، تشجيعًا على القراءة والعلم، تجهيز مكتبتها بنسخ من قاموس، بحيث تكون نسخة واحدة لكل تلميذين من تلاميذ السنة الرابعة. أقسام السنة الرابعة أربعة، فيها على الترتيب 34 ، 36 ، 35 و 39 تلميذًا.\nالمكتبة التي قصدها مدير المتوسطة تعرض طبعات مختلفة من القاموس، أثمانها من 500DA إلى 1500DA للنسخة حسب جودة الطبعة.\n• تكلفة تجليد كل نسخة تمثّل 25% من ثمنها المعروض.\n• مصاريف النقل 1800DA مهما كان عدد النسخ.\n• خصّصت المتوسطة لذلك مبلغ 72000DA ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب عدد النسخ اللازمة.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد النسخ",
+      "expectedAnswer": "72",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب عدد تلاميذ السنة الرابعة كلهم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نسخة واحدة لكل تلميذين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{144}{2} = 72$ نسخة.",
+        "incorrect": "اجمع أعداد التلاميذ ثم اقسم على 2 ."
+      },
+      "solution": {
+        "lines": [
+          "عدد التلاميذ: $34 + 36 + 35 + 39 = 144$",
+          "عدد النسخ: $144 \\div 2 = 72$"
+        ],
+        "result": "72"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "☜ أعطِ القيمة التي لا يمكن أن يتجاوزها ثمن النسخة الواحدة حتى تتمكّن المتوسطة من شراء النسخ اللازمة حسب الشروط المذكورة.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد: الثمن بـ DA",
+      "expectedAnswer": "780",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "سمِّ $x$ ثمن النسخة: كم تكلّف النسخة الواحدة مع تجليدها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التكلفة الكلية = تكلفة النسخ مع التجليد + مصاريف النقل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب أن التكلفة الكلية لا تتجاوز المبلغ المخصّص، ثم حلّ المتراجحة."
+        }
+      ],
+      "feedback": {
+        "correct": "$72 \\times 1{,}25x + 1800 \\leqslant 72000$ أي $90x \\leqslant 70200$ تعطي $x \\leqslant 780$ .",
+        "incorrect": "تكلفة النسخة الواحدة مع تجليدها هي $x + 0{,}25x$ ، ومصاريف النقل تُدفع مرة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "ليكن $x$ ثمن النسخة الواحدة (بـ DA): تكلفتها مع التجليد $x + \\dfrac{25}{100}x = 1{,}25x$ .",
+          "$72 \\times 1{,}25x + 1800 \\leqslant 72000$",
+          "$90x + 1800 \\leqslant 72000$",
+          "$90x \\leqslant 70200$",
+          "$x \\leqslant \\dfrac{70200}{90}$",
+          "$x \\leqslant 780$",
+          "إذن ثمن النسخة الواحدة لا يمكن أن يتجاوز 780DA ."
+        ],
+        "result": "x \\leqslant 780\\,DA"
+      },
+      "work": "optional",
+      "timeSeconds": 900
+    }
+  ]
+}

@@ -46,8 +46,8 @@ for (const dir of findLessonDirs()) {
           }
         }
         // Espacement KaTeX `\;` `\,` `\!` avalé : reste « ; » nu entre deux $.
-        if (SWALLOWED.test(v) && !v.includes('\;') && !v.includes('\\,')) {
-          problems.push({ file: relative(repoRoot, file), line: path.node.loc?.start.line, cmd: 'espacement (\; \\, \\!)', value: v.slice(0, 90) });
+        if (SWALLOWED.test(v) && !v.includes('\\;') && !v.includes('\\,')) {
+          problems.push({ file: relative(repoRoot, file), line: path.node.loc?.start.line, cmd: 'espacement (\\; \\, \\!)', value: v.slice(0, 90) });
         }
       },
     });

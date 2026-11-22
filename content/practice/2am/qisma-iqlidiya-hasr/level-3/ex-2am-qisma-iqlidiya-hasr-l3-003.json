@@ -1,0 +1,249 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l3-003",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أنجز ثم أكمل",
+    "estimatedMinutes": 7,
+    "tags": [
+      "قسمة إقليدية",
+      "أكمل"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-74",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أنجز القسمة الإقليدية للعدد 389 على 12، ثم أكمل: $389 = 12 \\times \\ldots + \\ldots$"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب حاصل القسمة الإقليدية للعدد 389 على 12.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "32",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "31",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "value": "33",
+          "id": "MISC-HASR-IZAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 389 من 12 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 12 دون أن نتجاوز 389."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من 12."
+        }
+      ],
+      "feedback": {
+        "correct": "$389 = 12 \\times 32 + 5$ و $5 < 12$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 12 فلا يتجاوز الجداء 389، والباقي عندئذ أصغر من 12."
+      },
+      "solution": {
+        "lines": [
+          "$12 \\times 32 = 384$ و $12 \\times 33 = 396$",
+          "$384 \\le 389 < 396$ ، إذن الحاصل هو 32."
+        ],
+        "result": "q = 32"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب باقي القسمة الإقليدية للعدد 389 على 12.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "32",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "17",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 389."
+        }
+      ],
+      "feedback": {
+        "correct": "$389 - 12 \\times 32 = 389 - 384 = 5$ ، و $5 < 12$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 12."
+      },
+      "solution": {
+        "lines": [
+          "$389 = 12 \\times 32 + 5$",
+          "$5 < 12$ ، إذن الباقي هو 5."
+        ],
+        "result": "r = 5"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "كتب زميلك: $389 = 12 \\times 31 + 17$. هل تعبّر هذه المساواة عن القسمة الإقليدية للعدد 389 على 12؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق أولًا من صحة المساواة بالحساب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم قارن العدد المضاف بالمقسوم عليه 12."
+        }
+      ],
+      "feedback": {
+        "correct": "المساواة صحيحة لكن $17 \\ge 12$: يمكن أخذ 12 مرّة أخرى.",
+        "incorrect": "القسمة الإقليدية على 12: مساواة صحيحة وباقٍ أصغر من 12."
+      },
+      "solution": {
+        "lines": [
+          "$12 \\times 31 + 17 = 389$",
+          "المساواة صحيحة لكن $17 \\ge 12$: يمكن أخذ 12 مرّة أخرى.",
+          "القسمة الإقليدية هي $389 = 12 \\times 32 + 5$."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "اختر الكتابة الصحيحة التي تحصر حاصل القسمة $\\frac{389}{12}$ بين عددين طبيعيين متتاليين (أو تعطيه إذا كان عددًا طبيعيًا).",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$31 < \\frac{389}{12} < 32$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        },
+        {
+          "id": "B",
+          "content": "$32 < \\frac{389}{12} < 33$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$5 < \\frac{389}{12} < 6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 389 على 12."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من $12 \\times q \\le 389 < 12 \\times (q + 1)$ نقسم الأطراف على 12."
+        }
+      ],
+      "feedback": {
+        "correct": "$389 = 12 \\times 32 + 5$ والباقي غير معدوم، فـ $\\frac{389}{12}$ يقع تمامًا بين 32 و 33.",
+        "incorrect": "احصر 389 بين مضاعفين متتاليين للعدد 12 ثم اقسم على 12؛ وإذا كان الباقي معدومًا فحاصل القسمة عدد طبيعي."
+      },
+      "solution": {
+        "lines": [
+          "$389 = 12 \\times 32 + 5$",
+          "$12 \\times 32 < 389 < 12 \\times 33$ ، نقسم على 12: $32 < \\frac{389}{12} < 33$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

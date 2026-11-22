@@ -1,0 +1,427 @@
+{
+  "id": "ex-1am-masahat-muhit-sath-l5-001",
+  "lessonCode": "masahat-muhit-sath",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أرض الفلاح والسياج والحرث",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "محيط",
+      "ثمن"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 1,
+      "file": "1am-s1-96",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يملك الفلاح عليّ أرضًا كما في الشكل المقابل، ويدفع التزاماته بأمانة. وضع لنفسه ميزانية قدرها 80000 دج لأعمال هذا الموسم.\nالجزء الأول: السياج. يريد إحاطة أرضه بسياج مع ترك مدخل عرضه $4{,}25\\,\\mathrm{m}$، وثمن المتر الواحد 220 دج.\nالجزء الثاني: الحرث والقرار. يستأجر آلة حرث بـ 1800 دج للساعة الواحدة، وتعمل 3 ساعات في اليوم، وسيستمر الحرث 4 أيام.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          10,
+          1
+        ],
+        "C": [
+          9,
+          6
+        ],
+        "D": [
+          1,
+          5
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "96"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "54,5"
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "label": "78,25"
+        },
+        {
+          "from": "D",
+          "to": "A",
+          "label": "62"
+        }
+      ],
+      "polygons": [
+        {
+          "points": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "tone": "emerald"
+        }
+      ],
+      "ariaLabel": "أرض رباعية الشكل ABCD أطوال أضلاعها بالمتر 96 و 54,5 و 78,25 و 62",
+      "caption": "(الأطوال غير حقيقية، وهي بالمتر)",
+      "maxWidth": 380
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "ما طول السياج الذي يحيط بالأرض كلها؟ (بالمتر)",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "290,75",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المحيط هو مجموع أطوال الأضلاع كلها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الأطوال بالتدريج وانتبه إلى مواضع الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة الجمع بترتيب آخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$290{,}75\\,\\mathrm{m}$.",
+        "incorrect": "نجمع أطوال الأضلاع الأربعة."
+      },
+      "solution": {
+        "lines": [
+          "$96 + 54{,}5 + 78{,}25 + 62 = 290{,}75$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما طول السياج بعد ترك المدخل؟ (بالمتر)",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "286,5",
+      "misconceptionSignatures": [
+        {
+          "value": "290,75",
+          "id": "MISC-MASAHA-ENTRANCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المدخل جزء من الحدّ لا يوضع فيه سياج."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح عرض المدخل من محيط الأرض."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الطول الذي يُسيَّج هو ما يبقى بعد حذف المدخل."
+        }
+      ],
+      "feedback": {
+        "correct": "$290{,}75$ − $4{,}25$ = $286{,}5$.",
+        "incorrect": "نطرح عرض المدخل."
+      },
+      "solution": {
+        "lines": [
+          "$290{,}75 - 4{,}25 = 286{,}5$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما تكلفة السياج بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "63030",
+      "misconceptionSignatures": [
+        {
+          "value": "63965",
+          "id": "MISC-MASAHA-ENTRANCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الثمن = طول السياج × ثمن المتر الواحد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أولًا الطول الذي ستسيّجه فعلًا، ثم اضرب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من أنك ضربت في طول السياج الجديد لا في المحيط الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "$286{,}5$ × $220$ = $63030$ دج.",
+        "incorrect": "الطول × ثمن المتر."
+      },
+      "solution": {
+        "lines": [
+          "$286{,}5 \\times 220 = 63030$ دج."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "كم ساعة تعمل آلة الحرث في المجموع؟",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ساعات اليوم الواحد معلومة وعدد الأيام معلوم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب ساعات اليوم في عدد الأيام."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الوحدة: ساعات."
+        }
+      ],
+      "feedback": {
+        "correct": "$3$ × $4$ = $12$ ساعة.",
+        "incorrect": "ساعات اليوم × عدد الأيام."
+      },
+      "solution": {
+        "lines": [
+          "3 × 4 = 12 ساعة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما تكلفة الحرث بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "21600",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكلفة = عدد الساعات × أجرة الساعة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب 12 في 1800."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من مرتبة الجواب."
+        }
+      ],
+      "feedback": {
+        "correct": "$12$ × $1800$ = $21600$ دج.",
+        "incorrect": "الساعات × أجرة الساعة."
+      },
+      "solution": {
+        "lines": [
+          "12 × 1800 = 21600 دج."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ا",
+      "lead": "القرار.",
+      "statement": "هل تكفي ميزانية الفلاح (80000 دج) للسياج والحرث معًا؟",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، ويبقى معه 16970 دج",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MASAHA-DECISION-INCOMPLETE"
+        },
+        {
+          "id": "B",
+          "content": "لا، ينقصه 5565 دج",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MASAHA-ENTRANCE"
+        },
+        {
+          "id": "C",
+          "content": "لا، ينقصه 4630 دج",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مجموع الإنفاق كله."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن المجموع بالميزانية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنس أنّ السياج محسوب بعد طرح المدخل."
+        }
+      ],
+      "feedback": {
+        "correct": "$63030$ + $21600$ = $84630$ أكبر من $80000$.",
+        "incorrect": "نجمع السياج والحرث ثم نقارن بالميزانية."
+      },
+      "solution": {
+        "lines": [
+          "السياج: 63030 دج.",
+          "الحرث: 21600 دج.",
+          "المجموع: 63030 + 21600 = 84630 دج.",
+          "84630 − 80000 = 4630 دج ينقصه."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "sub": "ب",
+      "statement": "ما الذي ينصح به الفلاح ليبقى في حدود ميزانيته؟ برّر بعدد أو عددين من حساباتك.",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القياس الذي تتحدث عنه: المساحة أم المحيط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل في جوابك العددين اللذين وجدتهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تامة: \"لأن … و …\"."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي.",
+        "incorrect": "راجع التبرير وأعد صياغته: اذكر العددين اللذين قارنتهما والمقدار الذي تتحدث عنه (مساحة أم محيط)."
+      },
+      "solution": {
+        "lines": [
+          "ينقصه 4630 دج: يمكنه مثلًا تقليص أيام الحرث أو تأجيل جزء من السياج.",
+          "القرار يستند إلى المجموع الكامل 84630 دج مقارنًا بـ 80000 دج."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

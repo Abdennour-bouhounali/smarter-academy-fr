@@ -1,0 +1,252 @@
+{
+  "id": "ex-4am-ikhtizal-kasr-l4-006",
+  "lessonCode": "ikhtizal-kasr",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 29 — A = (n + 7)/(n + 1)",
+    "estimatedMinutes": 12,
+    "tags": [
+      "كسر غير قابل للاختزال"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-29",
+      "page": 15,
+      "section": "أوظّف تعلّماتي",
+      "number": 29,
+      "adaptedFrom": "ex-4am-ikhtizal-kasr-l5-001"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نضع $A = \\dfrac{n + 7}{n + 1}$ حيث $n$ عدد طبيعي كيفي."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "عيّن، في كل حالة، الكسر غير القابل للاختزال الذي يساوي $A$ :",
+      "statement": "$n = 13$",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "10/7",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $n$ بـ 13 في البسط وفي المقام."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختزل الكسر الناتج بقسمة حديه على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 2: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على قاسمهما المشترك الأكبر، لا على قاسم مشترك آخر.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $n = 13$ : $A = \\dfrac{13 + 7}{13 + 1} = \\dfrac{20}{14}$",
+          "باستعمال خوارزمية إقليدس:",
+          "$20 = 14 \\times 1 + 6$",
+          "$14 = 6 \\times 2 + 2$",
+          "$6 = 2 \\times 3 + 0$",
+          "آخر باقٍ غير معدوم هو 2، إذن PGCD(20 ; 14) = 2 .",
+          "$\\dfrac{20}{14} = \\dfrac{20 \\div 2}{14 \\div 2}$"
+        ],
+        "result": "\\dfrac{20}{14} = \\dfrac{10}{7}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$n = 11$",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "3/2",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "9/6",
+          "id": "MISC-IKHTIZAL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $n$ بـ 11، ثم اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 6: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على قاسمهما المشترك الأكبر، لا على قاسم مشترك آخر.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $n = 11$ : $A = \\dfrac{11 + 7}{11 + 1} = \\dfrac{18}{12}$",
+          "باستعمال خوارزمية إقليدس:",
+          "$18 = 12 \\times 1 + 6$",
+          "$12 = 6 \\times 2 + 0$",
+          "آخر باقٍ غير معدوم هو 6، إذن PGCD(18 ; 12) = 6 .",
+          "$\\dfrac{18}{12} = \\dfrac{18 \\div 6}{12 \\div 6}$"
+        ],
+        "result": "\\dfrac{18}{12} = \\dfrac{3}{2}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "$n = 9$",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "8/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $n$ بـ 9، ثم اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 2: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على قاسمهما المشترك الأكبر، لا على قاسم مشترك آخر.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $n = 9$ : $A = \\dfrac{9 + 7}{9 + 1} = \\dfrac{16}{10}$",
+          "باستعمال خوارزمية إقليدس:",
+          "$16 = 10 \\times 1 + 6$",
+          "$10 = 6 \\times 1 + 4$",
+          "$6 = 4 \\times 1 + 2$",
+          "$4 = 2 \\times 2 + 0$",
+          "آخر باقٍ غير معدوم هو 2، إذن PGCD(16 ; 10) = 2 .",
+          "$\\dfrac{16}{10} = \\dfrac{16 \\div 2}{10 \\div 2}$"
+        ],
+        "result": "\\dfrac{16}{10} = \\dfrac{8}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "بيّن أن: $A = 1 + \\dfrac{6}{n + 1}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب البسط $n + 7$ على الشكل $(n + 1) + 6$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{n + 7}{n + 1} = \\dfrac{(n + 1) + 6}{n + 1}$",
+          "$A = \\dfrac{n + 1}{n + 1} + \\dfrac{6}{n + 1}$",
+          "$A = 1 + \\dfrac{6}{n + 1}$"
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "استنتج قيم $n$ التي يكون من أجلها $A$ عددًا طبيعيًا.",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        0,
+        1,
+        2,
+        5
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 02: يكون $A$ طبيعيًا إذا كان $\\dfrac{6}{n + 1}$ طبيعيًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذن $n + 1$ قاسم للعدد 6: اكتب قواسم 6."
+        }
+      ],
+      "feedback": {
+        "correct": "$n + 1$ قاسم للعدد 6: 1 ، 2 ، 3 ، 6.",
+        "incorrect": "اكتب كل قواسم 6، ثم اطرح 1 من كل قاسم."
+      },
+      "solution": {
+        "lines": [
+          "يكون $A$ عددًا طبيعيًا إذا كان $n + 1$ قاسمًا للعدد 6.",
+          "قواسم 6 هي: 1 ، 2 ، 3 ، 6",
+          "إذن $n + 1 \\in \\{1 ; 2 ; 3 ; 6\\}$ أي $n \\in \\{0 ; 1 ; 2 ; 5\\}$ ."
+        ]
+      },
+      "timeSeconds": 240
+    }
+  ]
+}

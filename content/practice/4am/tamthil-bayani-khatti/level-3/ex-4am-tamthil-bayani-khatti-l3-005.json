@@ -1,0 +1,187 @@
+{
+  "id": "ex-4am-tamthil-bayani-khatti-l3-005",
+  "lessonCode": "tamthil-bayani-khatti",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 14 — نقطتان ودالتان",
+    "estimatedMinutes": 7,
+    "tags": [
+      "انتماء نقطة",
+      "معامل",
+      "منحى المستقيم"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-14",
+      "page": 73,
+      "section": "أوظّف تعلّماتي",
+      "number": 14,
+      "adaptedFrom": "ex-4am-tamthil-bayani-khatti-l3-005"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$(D)$ هو المستقيم الذي يمثّل الدالة الخطية $f$ حيث $f(x) = -3{,}2x$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل النقطة $B(5 ; 16)$ تنتمي إلى $(D)$ ؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KHATTIYA-ISHARA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب صورة فاصلة $B$ بالدالة $f$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الصورة بترتيب $B$ ، بإشارتيهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(5) = -16 \\neq 16$ : $B$ لا تنتمي إلى $(D)$ .",
+        "incorrect": "انتبه إلى إشارة المعامل عند حساب الصورة."
+      },
+      "solution": {
+        "lines": [
+          "$f(5) = -3{,}2 \\times 5 = -16$",
+          "$-16 \\neq 16$ ، إذن $B$ لا تنتمي إلى $(D)$ ."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "النقطتان $B(5 ; 16)$ و $C(10 ; 32)$ تنتميان إلى التمثيل البياني لدالة خطية $g$ . عيّن الدالة $g$ ، ثم تحقّق باستعمال النقطة $C$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "3,2",
+      "misconceptionSignatures": [
+        {
+          "value": "5/16",
+          "id": "MISC-KHATTIYA-MUAMIL-MAQLUB"
+        },
+        {
+          "value": "-3,2",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$g$ دالة خطية: $g(x) = ax$ ، وتمثيلها يشمل النقطة ذات الإحداثيين $(5 ; 16)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب المعادلة $a \\times 5 = 16$ ثم حلّها: الترتيب على الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{16}{5} = 3{,}2$ ، إذن $g(x) = 3{,}2x$ .",
+        "incorrect": "المعامل هو الترتيب مقسوما على الفاصلة (وليس العكس)، مع الانتباه إلى الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "$g$ دالة خطية، إذن $g(x) = ax$ .",
+          "$g(5) = 16$ معناه $a \\times 5 = 16$",
+          "$a = \\dfrac{16}{5} = 3{,}2$"
+        ],
+        "result": "g(x) = 3{,}2x"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل يصعد التمثيل البياني للدالة $g$ أم ينزل؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "يصعد من اليسار إلى اليمين",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "ينزل من اليسار إلى اليمين",
+          "isCorrect": false,
+          "misconceptionId": "MISC-BAYANI-MUNHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارة معامل الدالة الخطية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان المعامل موجبا فالمستقيم يصعد، وإذا كان سالبا فهو ينزل."
+        }
+      ],
+      "feedback": {
+        "correct": "المعامل $3{,}2$ موجب: المستقيم يصعد.",
+        "incorrect": "منحى المستقيم تعيّنه إشارة المعامل: موجب ← يصعد، سالب ← ينزل."
+      },
+      "solution": {
+        "lines": [
+          "معامل الدالة الخطية هو $3{,}2$ ، وهو عدد موجب.",
+          "إذن المستقيم $(BC)$ يصعد من اليسار إلى اليمين."
+        ],
+        "result": "يصعد"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

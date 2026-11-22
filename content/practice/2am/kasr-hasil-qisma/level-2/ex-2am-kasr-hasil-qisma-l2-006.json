@@ -1,0 +1,179 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l2-006",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — لماذا لا نأخذ القيمة الأقرب؟",
+    "estimatedMinutes": 5,
+    "tags": [
+      "قيم مقرّبة",
+      "برّر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نريد حصر حاصل القسمة $13 \\div 7$ إلى $0{,}01$ ، أي بين قيمتين متتاليتين تختلفان بـ $0{,}01$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اختر الحصر الصحيح للحاصل $\\dfrac{13}{7}$ إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$1{,}86 < \\dfrac{13}{7} < 1{,}87$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-ROUNDED"
+        },
+        {
+          "id": "B",
+          "content": "$1{,}84 < \\dfrac{13}{7} < 1{,}85$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        },
+        {
+          "id": "C",
+          "content": "$1{,}87 < \\dfrac{13}{7} < 1{,}88$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        },
+        {
+          "id": "D",
+          "content": "$1{,}85 < \\dfrac{13}{7} < 1{,}86$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحصر الصحيح: عددان متتاليان في الرتبة المطلوبة، الأوّل لا يتجاوز الحاصل والثاني يتجاوزه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ حصر بضرب طرفيه في المقسوم عليه ثم قارن بالمقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}85 < \\dfrac{13}{7} < 1{,}86$.",
+        "incorrect": "تحقّق من الطرفين: الأصغر لا يتجاوز الحاصل والأكبر يتجاوزه، وبينهما وحدة واحدة من الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 1{,}85 = 12{,}95 \\text{ و } 7 \\times 1{,}86 = 13{,}02$",
+          "$12{,}95 < 13 < 13{,}02$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}01$ بالنقصان لحاصل القسمة $13 \\div 7$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "1.85",
+      "misconceptionSignatures": [
+        {
+          "value": "1.86",
+          "id": "MISC-QARIBA-ROUNDED"
+        },
+        {
+          "value": "1.857",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالنقصان لا تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة دون أن تزيد شيئًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب القيمة في المقسوم عليه: يجب ألاّ يتجاوز الجداء المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}85 < \\frac{13}{7} < 1{,}86$.",
+        "incorrect": "بالنقصان: نحتفظ بالأرقام حتى الرتبة المطلوبة ونُهمل ما بعدها دون تغيير الرقم الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 1{,}85 = 12{,}95$",
+          "$7 \\times 1{,}86 = 13{,}02$",
+          "$12{,}95 < 13 < 13{,}02$"
+        ],
+        "result": "1{,}85"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كتب تلميذ أنّ القيمة بالنقصان إلى $0{,}01$ هي $1{,}86$ لأنّها الأقرب إلى الحاصل. برّر أنّ ذلك خطأ.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب جملة أو جملتين: الفكرة ثم الحساب الذي يدعمها."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة بالنقصان لا تتجاوز الحاصل: هي $1{,}85$ لأنّ $7 \\times 1{,}85 = 12{,}95 < 13$.",
+        "incorrect": "قارن تبريرك بالحلّ النموذجي: الفكرة ثم الحساب الذي يدعمها."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 1{,}86 = 13{,}02 > 13$",
+          "القيمة بالنقصان لا تتجاوز الحاصل: هي $1{,}85$ لأنّ $7 \\times 1{,}85 = 12{,}95 < 13$."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

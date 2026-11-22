@@ -1,0 +1,240 @@
+{
+  "id": "ex-1am-adad-nisbiya-siyaqat-l5-006",
+  "lessonCode": "adad-nisbiya-siyaqat",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — نادي الغوص",
+    "estimatedMinutes": 12,
+    "tags": [
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "غوّاصان في نادي الغوص : الأوّل على عمق 15 م تحت سطح الماء والثاني على ارتفاع 4 م فوقه فوق منصّة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "يغوص الغوّاص الأوّل إلى عمق 15 م تحت سطح الماء. اكتب ارتفاعه بالنسبة إلى سطح الماء بعدد نسبي.",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "-15",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-REL-SIGNLOST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "فوق الصفر أم تحته؟ وكم تدريجة تبعد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما فوق الصفر عدد موجب بلا إشارة، وما تحته عدد سالب تسبقه الإشارة − ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجهة بالإشارة ثمّ المسافة بالعدد."
+        }
+      ],
+      "feedback": {
+        "correct": "تحت الصفر : عدد سالب، $-15$.",
+        "incorrect": "الجهة من الصفر تقول الإشارة، والمسافة تقول العدد."
+      },
+      "solution": {
+        "lines": [
+          "تحت الصفر (أو المرجع)",
+          "عدد سالب، مسافته $15$ : $-15$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "يقف الغوّاص الثاني على منصّة ارتفاعها 4 م فوق سطح الماء. اكتب ارتفاعه بالنسبة إلى سطح الماء بعدد نسبي.",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "-4",
+          "id": "MISC-REL-ABOVENEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "فوق الصفر أم تحته؟ وكم تدريجة تبعد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما فوق الصفر عدد موجب بلا إشارة، وما تحته عدد سالب تسبقه الإشارة − ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجهة بالإشارة ثمّ المسافة بالعدد."
+        }
+      ],
+      "feedback": {
+        "correct": "فوق الصفر : عدد موجب يُكتب بلا إشارة، $4$.",
+        "incorrect": "الجهة من الصفر تقول الإشارة، والمسافة تقول العدد."
+      },
+      "solution": {
+        "lines": [
+          "فوق الصفر (أو المرجع)",
+          "عدد موجب، مسافته $4$ : $4$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "الغوّاصان. أيّ الموضعين أبعد عن سطح الماء : $-15$ م أم $4$ م ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-REL-SIGNDIST"
+        },
+        {
+          "id": "B",
+          "content": "$-15$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "البعد نفسه",
+          "isCorrect": false,
+          "misconceptionId": "MISC-REL-SIGNONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "البعد عن الصفر مسافة : هل تتأثّر بالإشارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب مسافة كلّ موضع إلى الصفر ثمّ قارن."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأبعد هو الأكبر مسافة ولو كان تحت الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "الأبعد هو $-15$ : مسافته $15$ وهي الأكبر.",
+        "incorrect": "البعد عن الصفر مسافة : نقارن المسافات لا الإشارات."
+      },
+      "solution": {
+        "lines": [
+          "المسافتان : $15$ و $4$",
+          "الأكبر مسافة هو $-15$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "اكتب معاكس العدد $-15$ .",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "-15",
+          "id": "MISC-REL-OPPSAME"
+        },
+        {
+          "value": "-16",
+          "id": "MISC-REL-OPPNEXT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العدد على الجهاز ثمّ انظر أين يقف ظلّه في المرآة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المعاكس له المسافة نفسها إلى الصفر على الجهة الأخرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "غيّر الإشارة وأبقِ المسافة."
+        }
+      ],
+      "feedback": {
+        "correct": "معاكس $-15$ هو $15$ : المسافة نفسها إلى الصفر على الجهة الأخرى.",
+        "incorrect": "المعاكس يقع على الجهة الأخرى من الصفر وبالمسافة نفسها."
+      },
+      "solution": {
+        "lines": [
+          "$-15$ : المسافة $15$ تحت الصفر",
+          "المعاكس : المسافة نفسها على الجهة الأخرى، $15$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

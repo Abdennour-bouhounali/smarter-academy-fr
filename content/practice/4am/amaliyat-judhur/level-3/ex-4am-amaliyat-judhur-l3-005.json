@@ -1,0 +1,201 @@
+{
+  "id": "ex-4am-amaliyat-judhur-l3-005",
+  "lessonCode": "amaliyat-judhur",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2009 — التمرين الأول",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جداء جذرين",
+      "الكتابة a√b"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_amaliyat-judhur_P1",
+      "modelledOn": "BEM 2009 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن الأعداد $C$ ، $B$ ، $A$ حيث:",
+    "formulas": [
+      "A = \\sqrt{48}",
+      "B = 3\\sqrt{27}",
+      "C = \\sqrt{3} + 2"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب $A + B$ على الشكل $a\\sqrt{3}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-MUAMIL-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $48 = 16 \\times 3$ و $27 = 9 \\times 3$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كلًّا من $A$ و $B$ على الشكل $k\\sqrt{3}$ ثم اجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$A + B = 4\\sqrt{3} + 9\\sqrt{3} = 13\\sqrt{3}$",
+        "incorrect": "لا تنسَ المعامل 3 أمام $\\sqrt{27}$ في $B$ ."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\sqrt{16 \\times 3} = 4\\sqrt{3}$",
+          "$B = 3\\sqrt{9 \\times 3} = 3 \\times 3\\sqrt{3} = 9\\sqrt{3}$",
+          "$A + B = 4\\sqrt{3} + 9\\sqrt{3}$"
+        ],
+        "result": "A + B = 13\\sqrt{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بيّن أن $A \\times B$ هو عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة الجداء $A \\times B$ (عدد طبيعي)",
+      "expectedAnswer": "108",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الكتابتين على الشكل $k\\sqrt{3}$ من السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما قيمة $\\sqrt{3} \\times \\sqrt{3}$ ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$A \\times B = 4\\sqrt{3} \\times 9\\sqrt{3} = 36 \\times 3 = 108$",
+        "incorrect": "اضرب المعاملين معًا ثم $\\sqrt{3} \\times \\sqrt{3}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$A \\times B = 4\\sqrt{3} \\times 9\\sqrt{3}$",
+          "$= 4 \\times 9 \\times \\sqrt{3} \\times \\sqrt{3}$",
+          "$= 36 \\times 3$"
+        ],
+        "result": "A \\times B = 108"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "اكتب $\\dfrac{C^2}{\\sqrt{3}}$ على شكل نسبة مقامها عدد ناطق. (تُكتب على الشكل $\\dfrac{a\\sqrt{3} + b}{3}$ )",
+      "statement": "العدد $a$",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر $C^2 = (\\sqrt{3} + 2)^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اضرب البسط والمقام في $\\sqrt{3}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{C^2}{\\sqrt{3}} = \\dfrac{7\\sqrt{3} + 12}{3}$",
+        "incorrect": "انشر $C^2$ بالمتطابقة $(a + b)^2 = a^2 + 2ab + b^2$ ، ثم اجعل المقام ناطقًا."
+      },
+      "solution": {
+        "lines": [
+          "$C^2 = (\\sqrt{3})^2 + 2 \\times 2 \\times \\sqrt{3} + 2^2 = 7 + 4\\sqrt{3}$",
+          "$\\dfrac{C^2}{\\sqrt{3}} = \\dfrac{(7 + 4\\sqrt{3}) \\times \\sqrt{3}}{\\sqrt{3} \\times \\sqrt{3}}$"
+        ],
+        "result": "\\dfrac{C^2}{\\sqrt{3}} = \\dfrac{7\\sqrt{3} + 12}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "العدد $b$",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد طبيعي)",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $4\\sqrt{3} \\times \\sqrt{3}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$4\\sqrt{3} \\times \\sqrt{3} = 4 \\times 3 = 12$",
+        "incorrect": "الحد الناطق في البسط يأتي من جداء $4\\sqrt{3}$ في $\\sqrt{3}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$(7 + 4\\sqrt{3}) \\times \\sqrt{3} = 7\\sqrt{3} + 4 \\times 3 = 7\\sqrt{3} + 12$"
+        ],
+        "result": "\\dfrac{C^2}{\\sqrt{3}} = \\dfrac{7\\sqrt{3} + 12}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

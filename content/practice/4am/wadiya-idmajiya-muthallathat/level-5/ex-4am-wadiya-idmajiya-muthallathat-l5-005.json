@@ -1,0 +1,343 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muthallathat-l5-005",
+  "lessonCode": "wadiya-idmajiya-muthallathat",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2018 — منحدر خندق الطريق السيار قرب البويرة",
+    "estimatedMinutes": 30,
+    "tags": [
+      "وضعية إدماجية",
+      "الظل",
+      "الآلة الحاسبة",
+      "الجيب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-muthallathat_P3",
+      "modelledOn": "BEM 2018 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2018",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "لشقّ مقطع من الطريق السيار شرق-غرب قرب البويرة، حُفر خندق في تلّة. جانب الخندق منحدر ترابي مستوٍ؛ في المقطع العرضي (الشكل المقابل): $A$ على حافة الخندق في مستوى سطح الأرض، و $B$ عند قدم المنحدر على مستوى الطريق، و $H$ النقطة من مستوى الطريق الواقعة شاقوليا تحت $A$ . عمق الحفر $AH = 12\\,\\mathrm{m}$ والعرض الأفقي للمنحدر $HB = 15\\,\\mathrm{m}$ . تشترط قواعد الأمان ألّا تتجاوز زاوية ميل المنحدر على الأفق $35^{\\circ}$ . يلتزم المقاول بشروط الأمان ويؤدّي عمله بأمانة وإتقان.",
+    "figure": {
+      "points": {
+        "H": [
+          0,
+          0
+        ],
+        "A": [
+          0,
+          12
+        ],
+        "B": [
+          15,
+          0
+        ]
+      },
+      "segments": [
+        {
+          "from": "H",
+          "to": "A",
+          "label": "12 m"
+        },
+        {
+          "from": "H",
+          "to": "B",
+          "label": "15 m"
+        },
+        [
+          "A",
+          "B"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "H",
+          "B"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "B",
+          "from": "H",
+          "to": "A"
+        }
+      ],
+      "labels": {
+        "H": "sw",
+        "A": "nw",
+        "B": "se"
+      },
+      "ariaLabel": "المقطع العرضي لمنحدر الخندق: AH شاقولي طوله 12 m و HB أفقي طوله 15 m والمنحدر [AB]؛ زاوية الميل عند B",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $\\tan\\widehat{ABH}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري",
+      "expectedAnswer": "4/5",
+      "misconceptionSignatures": [
+        {
+          "value": "5/4",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $AHB$ قائم في $H$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بالنسبة إلى الزاوية $\\widehat{ABH}$ : العمق مقابل والعرض الأفقي مجاور."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan\\widehat{ABH} = \\dfrac{12}{15} = \\dfrac{4}{5}$ .",
+        "incorrect": "الظل = المقابل ( $AH$ ) على المجاور ( $HB$ )."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $AHB$ القائم في $H$ : $\\tan\\widehat{ABH} = \\dfrac{AH}{HB} = \\dfrac{12}{15}$"
+        ],
+        "result": "\\tan\\widehat{ABH} = \\dfrac{4}{5} = 0{,}8"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط المدوّر إلى الوحدة من الدرجة لقيس الزاوية $\\widehat{ABH}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: القيس بالدرجة مدوّرا إلى الوحدة",
+      "expectedAnswer": "39",
+      "misconceptionSignatures": [
+        {
+          "value": "51",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        },
+        {
+          "value": "38",
+          "id": "MISC-MUTH-TADWIR-BATR"
+        },
+        {
+          "value": "0.8",
+          "id": "MISC-MUTH-NISBA-BADAL-QAYS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل اللمسة العكسية للنسبة في آلة حاسبة مبرمجة على الدرجة، ثم دوّر في آخر الحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{ABH} \\approx 38{,}66^{\\circ}$ ، أي $39^{\\circ}$ .",
+        "incorrect": "اللمسة العكسية للظل، والتدوير لا البتر."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan\\widehat{ABH} = 0{,}8$",
+          "باستعمال الآلة الحاسبة: $\\widehat{ABH} \\approx 38{,}6598^{\\circ}$"
+        ],
+        "result": "\\widehat{ABH} \\approx 39^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل يحترم هذا المنحدر قواعد الأمان؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-NISBA-BADAL-QAYS"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن قيس زاوية الميل بـ $35^{\\circ}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "لا: زاوية الميل نحو $39^{\\circ}$ وهي أكبر من $35^{\\circ}$ .",
+        "incorrect": "نقارن قيس الزاوية (بالدرجة) بـ $35^{\\circ}$ ، لا ظلها."
+      },
+      "solution": {
+        "lines": [
+          "$\\widehat{ABH} \\approx 38{,}7^{\\circ}$ و $38{,}7 > 35$",
+          "إذن المنحدر لا يحترم قواعد الأمان."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "sub": "ا",
+      "statement": "لتكون زاوية الميل $35^{\\circ}$ تماما مع العمق نفسه، احسب العرض الأفقي الجديد $HB'$ للمنحدر بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m مدوّرا إلى 0,1",
+      "expectedAnswer": "17.1",
+      "misconceptionSignatures": [
+        {
+          "value": "8.4",
+          "id": "MISC-MUTH-DARB-BADAL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث القائم الجديد $AHB'$ : العمق مقابل للزاوية $35^{\\circ}$ والعرض مجاور."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العرض في مقام الظل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالآلة الحاسبة مبرمجة على الدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$HB' = \\dfrac{12}{\\tan 35^{\\circ}} \\approx 17{,}1\\,\\mathrm{m}$ .",
+        "incorrect": "المجهول في مقام الظل: نقسم $12$ على $\\tan 35^{\\circ}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan 35^{\\circ} = \\dfrac{AH}{HB'}$ ومنه $HB' = \\dfrac{12}{\\tan 35^{\\circ}}$",
+          "باستعمال الآلة الحاسبة: $HB' \\approx 17{,}1378$"
+        ],
+        "result": "HB' \\approx 17{,}1\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "sub": "ب",
+      "statement": "احسب طول المنحدر الجديد $AB'$ بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m مدوّرا إلى 0,1",
+      "expectedAnswer": "20.9",
+      "misconceptionSignatures": [
+        {
+          "value": "14.6",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$[AB']$ وتر، والعمق مقابل للزاوية $35^{\\circ}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الجيب: المجهول في المقام."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB' = \\dfrac{12}{\\sin 35^{\\circ}} \\approx 20{,}9\\,\\mathrm{m}$ .",
+        "incorrect": "الوتر في مقام الجيب: نقسم العمق على $\\sin 35^{\\circ}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\sin 35^{\\circ} = \\dfrac{AH}{AB'}$ ومنه $AB' = \\dfrac{12}{\\sin 35^{\\circ}}$",
+          "باستعمال الآلة الحاسبة: $AB' \\approx 20{,}9214$"
+        ],
+        "result": "AB' \\approx 20{,}9\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "id": "ex-4am-aksiya-talis-l1-010",
+  "lessonCode": "aksiya-talis",
+  "level": 1,
+  "metadata": {
+    "title": "الجداء المتصالب: نسبتان متقاربتان",
+    "estimatedMinutes": 5,
+    "tags": [
+      "الجداء المتصالب",
+      "عدم التوازي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_aksiya-talis_P1",
+      "modelledOn": null,
+      "adaptedFrom": "ex-4am-aksiya-talis-l1-010"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "$ABC$ مثلث، $M$ نقطة من $[AB]$ و $N$ نقطة من $[AC]$ حيث: $AM = 3$ ، $AB = 7$ ، $AN = 4$ و $AC = 9$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0.0,
+          0.0
+        ],
+        "B": [
+          -3.5,
+          -6.062177826491
+        ],
+        "M": [
+          -1.5,
+          -2.598076211353
+        ],
+        "C": [
+          3.078181289931,
+          -8.457233587073
+        ],
+        "N": [
+          1.368080573303,
+          -3.758770483144
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "M",
+          "label": "3"
+        },
+        [
+          "M",
+          "B"
+        ],
+        {
+          "from": "A",
+          "to": "N",
+          "label": "4"
+        },
+        [
+          "N",
+          "C"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "M",
+          "N"
+        ]
+      ],
+      "ariaLabel": "مثلث ABC، M من [AB] و N من [AC]؛ AM = 3 و AN = 4",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب النسبة $\\dfrac{AM}{AB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "3/7",
+      "misconceptionSignatures": [
+        {
+          "value": "7/3",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "3/4",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AM$ و $AB$ طولان يُقاسان من النقطة $A$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $AM$ على $AB$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AM}{AB} = \\dfrac{3}{7}$ .",
+        "incorrect": "النسبة $\\dfrac{AM}{AB}$ : الطول $AM$ على الطول $AB$ ، وكلاهما من النقطة $A$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AM}{AB} = \\dfrac{3}{7}$"
+        ],
+        "result": "\\dfrac{AM}{AB} = \\dfrac{3}{7}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب النسبة $\\dfrac{AN}{AC}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "4/9",
+      "misconceptionSignatures": [
+        {
+          "value": "9/4",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "4/5",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AN$ و $AC$ طولان يُقاسان من النقطة $A$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $AN$ على $AC$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AN}{AC} = \\dfrac{4}{9}$ .",
+        "incorrect": "النسبة $\\dfrac{AN}{AC}$ : الطول $AN$ على الطول $AC$ ، وكلاهما من النقطة $A$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AN}{AC} = \\dfrac{4}{9}$"
+        ],
+        "result": "\\dfrac{AN}{AC} = \\dfrac{4}{9}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل المستقيمان $(MN)$ و $(BC)$ متوازيان؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-TAQRIB-BURHAN"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النسبتين بقيمهما المضبوطة (الجداء المتصالب)، لا بقيم مقرّبة ولا بمظهر الشكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق أيضا من ترتيب النقط على المستقيمين المتقاطعين."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 \\times 9 = 27$ و $7 \\times 4 = 28$ : النسبتان مختلفتان ولو كانت قيمتاهما المقرّبتان متقاربتين.",
+        "incorrect": "الخاصية العكسية تتطلب شرطين معا: تساوي النسبتين بقيم مضبوطة، وترتيب النقط نفسه على المستقيمين."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 9 = 27$ و $7 \\times 4 = 28$ ، إذن $\\dfrac{AM}{AB} \\neq \\dfrac{AN}{AC}$ .",
+          "لو كان $(MN) \\parallel (BC)$ لكانت النسبتان متساويتين حسب خاصية طالس،",
+          "إذن المستقيمان $(MN)$ و $(BC)$ غير متوازيين."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+# Long-term caching for the build output (docs/architecture/BUNDLE_BOUNDARIES.md).
+#
+# Every file Vite writes here carries a content hash in its name
+# (index-ARoA8p5K.js): a new build produces NEW names, so a browser may keep
+# these forever without ever serving stale code. Without this rule the server
+# answered « no-store » and every visit re-downloaded the whole application.
+#
+# It lives in assets/ on purpose: a rule in the web root's .htaccess would be
+# inherited by api/, whose responses must never be cached this way.
+<IfModule mod_headers.c>
+  Header set Cache-Control "public, max-age=31536000, immutable"
+</IfModule>

@@ -1,0 +1,231 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l2-007",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — ركن ملعب كرة اليد",
+    "estimatedMinutes": 8,
+    "tags": [
+      "خاصية فيثاغورس",
+      "مثلث غير قائم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يعيد العمّ رابح، حارس الملعب، رسم ركن ملعب كرة اليد بحبل مشدود قبل المقابلة. شكّل مثلثا $ABC$ حيث $AB = 6\\,\\mathrm{m}$ ، $AC = 8\\,\\mathrm{m}$ ، فقاس $BC$ فوجده $10{,}2\\,\\mathrm{m}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $BC^2$ ، مربع طول أطول أضلاع المثلث $ABC$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: قيمة $BC^2$",
+      "expectedAnswer": "104.04",
+      "misconceptionSignatures": [
+        {
+          "value": "20.4",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        },
+        {
+          "value": "64",
+          "id": "MISC-FITAGHURAS-NOT-LONGEST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رتّب أطوال الأضلاع الثلاثة: الضلع الأطول هو الوحيد الذي يمكن أن يكون وترا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع العدد هو جداؤه في نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "أطول الأضلاع هو $[BC]$ و $BC^2 = 10{,}2^2 = 104{,}04$ .",
+        "incorrect": "تأكّد أنك اخترت الضلع الأطول، وأنك ضربت طوله في نفسه."
+      },
+      "solution": {
+        "lines": [
+          "أطول أضلاع المثلث $ABC$ هو $[BC]$ .",
+          "$BC^2 = 10{,}2^2 = 104{,}04$"
+        ],
+        "result": "BC^2 = 104{,}04"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $AB^2 + AC^2$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: مجموع المربعين",
+      "expectedAnswer": "100",
+      "misconceptionSignatures": [
+        {
+          "value": "28",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        },
+        {
+          "value": "14",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ربّع طول كل ضلع من الضلعين الأقصرين على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المربعين ولا تجمع الطولين."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB^2 + AC^2 = 6^2 + 8^2 = 36 + 64 = 100$ .",
+        "incorrect": "احسب مربع كل طول أولا، ثم اجمع المربعين."
+      },
+      "solution": {
+        "lines": [
+          "$AB^2 + AC^2 = 6^2 + 8^2$",
+          "$AB^2 + AC^2 = 36 + 64 = 100$"
+        ],
+        "result": "AB^2 + AC^2 = 100"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل الزاوية $\\widehat{BAC}$ قائمة؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأن $10{,}2$ قريب جدا من $10$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-LOOKS-RIGHT"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نعم، لأن $BC^2 = 6^2 + 8^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-NON-RIGHT-APPLIED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العددين اللذين حسبتهما: هل هما متساويان تماما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لو كان المثلث قائما لكان مربع طول أطول أضلاعه مساويا تماما لمجموع مربعي الضلعين الآخرين (خاصية فيثاغورس)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "التقارب لا يكفي: المساواة يجب أن تكون تامة."
+        }
+      ],
+      "feedback": {
+        "correct": "$104{,}04 \\neq 100$ : لو كان المثلث قائما لتساوى العددان حسب خاصية فيثاغورس، إذن هو ليس قائما.",
+        "incorrect": "الشكل أو تقارب العددين لا يكفيان: انظر هل المساواة محقّقة تماما أم لا."
+      },
+      "solution": {
+        "lines": [
+          "أطول الأضلاع هو $[BC]$ : $BC^2 = 104{,}04$ و $AB^2 + AC^2 = 100$ .",
+          "بما أن $BC^2 \\neq AB^2 + AC^2$ ، فحسب خاصية فيثاغورس المثلث $ABC$ ليس قائما."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "برّر جوابك بكتابة الاستدلال كاملا.",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بتعيين أطول الأضلاع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن مربعه بمجموع مربعي الضلعين الآخرين، ثم استند إلى خاصية فيثاغورس."
+        }
+      ],
+      "feedback": {
+        "correct": "استدلال كامل: أطول ضلع، المقارنة، ثم الاستنتاج بخاصية فيثاغورس.",
+        "incorrect": "قارن استدلالك بالحل النموذجي: هل عيّنت أطول الأضلاع؟ هل ذكرت خاصية فيثاغورس في الاستنتاج؟"
+      },
+      "solution": {
+        "lines": [
+          "أطول الأضلاع هو $[BC]$ : $BC^2 = 104{,}04$ و $AB^2 + AC^2 = 100$ .",
+          "بما أن $BC^2 \\neq AB^2 + AC^2$ ، فحسب خاصية فيثاغورس المثلث $ABC$ ليس قائما."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

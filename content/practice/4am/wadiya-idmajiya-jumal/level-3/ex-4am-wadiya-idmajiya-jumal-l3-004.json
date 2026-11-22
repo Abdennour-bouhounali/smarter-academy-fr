@@ -1,0 +1,179 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-jumal-l3-004",
+  "lessonCode": "wadiya-idmajiya-jumal",
+  "level": 3,
+  "metadata": {
+    "title": "التفاح والبرتقال",
+    "estimatedMinutes": 10,
+    "tags": [
+      "ترييض",
+      "كتل",
+      "وحدات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-jumal_P2",
+      "modelledOn": "ex-27"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في سلّة فاكهة أهداها تلاميذ القسم لزميل مريض، تزن 3 تفاحات وبرتقالتان معا $1kg\\,100g$ ، وتزن تفاحة و 4 برتقالات معا $1kg\\,200g$ (الثمار من النوع نفسه متماثلة الكتلة).\nنسمّي $x$ كتلة التفاحة و $y$ كتلة البرتقالة (بالغرام)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن $x$ و $y$ يحققان الجملة: $\\begin{cases} 3x + 2y = 1100 \\\\ x + 4y = 1200 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الكتلتين بالغرام قبل كتابة المعادلتين."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "$1kg\\,100g = 1100g$ و $1kg\\,200g = 1200g$",
+          "المعلومة الأولى: $3x + 2y = 1100$",
+          "المعلومة الثانية: $x + 4y = 1200$",
+          "ومنه: $\\begin{cases} 3x + 2y = 1100 \\\\ x + 4y = 1200 \\end{cases}$"
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حل هذه الجملة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": {
+        "x": "200",
+        "y": "250"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "250",
+            "y": "200"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن معاملات $x$ ومعاملات $y$ في المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة التعويض أو طريقة الجمع (بعد ضرب المعادلتين في عددين مناسبين) لحذف أحد المجهولين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد إيجاد أحد المجهولين، عوّضه في إحدى المعادلتين لتجد الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "كتلة التفاحة $200g$ وكتلة البرتقالة $250g$ .",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} 3x + 2y = 1100 & ...(1) \\\\ x + 4y = 1200 & ...(2) \\end{cases}$",
+          "بضرب طرفي المعادلة (1) في العدد $2$ ، وبضرب طرفي المعادلة (2) في العدد $(-1)$ نجد:",
+          "$\\begin{cases} 6x + 4y = 2200 & ...(3) \\\\ -x - 4y = -1200 & ...(4) \\end{cases}$",
+          "بجمع (3) و (4) طرفا لطرف نجد:",
+          "$5x = 1000$",
+          "$x = 200$",
+          "بتعويض $x$ بـ $200$ في المعادلة (1) نجد: $3 \\times 200 + 2y = 1100$",
+          "$2y = 500$",
+          "$y = 250$",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(200 ; 250)"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب بالكيلوغرام كتلة 5 تفاحات و 6 برتقالات.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الكتلة بـ kg (عدد عشري مثل 1,5)",
+      "expectedAnswer": "5/2",
+      "misconceptionSignatures": [
+        {
+          "value": "2500",
+          "id": "MISC-JUMLA-WIHDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الكتلة بالغرام أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$1kg = 1000g$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$2500g = 2{,}5kg$ .",
+        "incorrect": "احسب الكتلة بالغرام ثم حوّلها إلى كيلوغرام (اقسم على 1000)."
+      },
+      "solution": {
+        "lines": [
+          "$5 \\times 200 + 6 \\times 250 = 1000 + 1500 = 2500$ أي $2500g$",
+          "$2500g = 2{,}5kg$"
+        ],
+        "result": "2{,}5\\,kg"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

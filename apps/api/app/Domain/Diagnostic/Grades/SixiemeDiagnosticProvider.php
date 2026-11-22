@@ -19,11 +19,11 @@ use App\Domain\Diagnostic\Contracts\GradeDiagnosticProvider;
  *   Tier 2 — fraction-of-a-quantity, division/remainder, measurement
  *   Tier 3 — estimation and integrative problem-solving
  *
- * Only two lessons are `tier: 'free'` in the catalogue today
- * (nombres-entiers, longueurs) — the diagnostic itself is not tier-gated
+ * A lesson's tier lives in the database (`lessons.tier`, decided by the
+ * administrator; the catalogue carries none) — the diagnostic itself is not tier-gated
  * (assessing what a student knows shouldn't require a subscription), but
  * the *recommended lesson* it sends them to may itself be premium-gated by
- * the existing LessonCard/isLessonUnlocked machinery, unchanged.
+ * the existing LessonCard / ContentAvailability machinery, unchanged.
  */
 class SixiemeDiagnosticProvider implements GradeDiagnosticProvider
 {

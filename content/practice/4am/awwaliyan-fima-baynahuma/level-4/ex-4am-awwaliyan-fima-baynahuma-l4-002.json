@@ -1,0 +1,219 @@
+{
+  "id": "ex-4am-awwaliyan-fima-baynahuma-l4-002",
+  "lessonCode": "awwaliyan-fima-baynahuma",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2016 — العددان 1859 و 1430",
+    "estimatedMinutes": 12,
+    "tags": [
+      "خوارزمية إقليدس",
+      "كسر",
+      "جذور"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_awwaliyan-fima-baynahuma_P2",
+      "modelledOn": "BEM 2016 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 1859 و 1430.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "143",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر على العدد الأصغر: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (العدد الأكبر ; العدد الأصغر) بالزوج (العدد الأصغر ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 143.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$1859 = 1430 \\times 1 + 429$",
+          "$1430 = 429 \\times 3 + 143$",
+          "$429 = 143 \\times 3 + 0$",
+          "آخر باقٍ غير معدوم هو 143، إذن:"
+        ],
+        "result": "PGCD(1859 ; 1430) = 143"
+      },
+      "work": "optional",
+      "timeSeconds": 270
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "اكتب الكسر $\\dfrac{1859}{1430}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "13/10",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 143: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال 01.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1859}{1430} = \\dfrac{1859 \\div 143}{1430 \\div 143}$"
+        ],
+        "result": "\\dfrac{1859}{1430} = \\dfrac{13}{10}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "بيّن أن بسط ومقام الكسر الناتج أوليان فيما بينهما.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيمة PGCD(13 ; 10) التي وجدتها",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عددان أوليان فيما بينهما: احسب قاسمهما المشترك الأكبر PGCD(13 ; 10)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 13 على 10، ثم واصل القسمات المتتابعة إلى أن تجد باقيًا معدومًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن آخر باقٍ غير معدوم بما يتطلّبه تعريف عددين أوليين فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(13 ; 10) = 1: العددان 13 و 10 أوليان فيما بينهما.",
+        "incorrect": "راجع القسمات المتتابعة باقيًا باقيًا: آخر باقٍ غير معدوم هو القاسم المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$13 = 10 \\times 1 + 3$",
+          "$10 = 3 \\times 3 + 1$",
+          "$3 = 1 \\times 3 + 0$",
+          "آخر باقٍ غير معدوم هو 1، إذن PGCD(13 ; 10) = 1 .",
+          "ومنه العددان 13 و 10 أوليان فيما بينهما."
+        ],
+        "result": "PGCD(13 ; 10) = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "اكتب العدد $A = \\sqrt{1859} + 2\\sqrt{99}$ على الشكل $a\\sqrt{11}$ حيث $a$ عدد طبيعي يطلب تعيينه.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: العدد $a$ في الكتابة $a\\sqrt{11}$",
+      "expectedAnswer": "19",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب كل عدد تحت الجذر على شكل جداء مربع تام في 11."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\sqrt{k^2 \\times 11} = k\\sqrt{11}$ ، ثم اجمع المعاملات."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 19\\sqrt{11}$",
+        "incorrect": "حلّل كل عدد تحت الجذر إلى جداء مربع تام في 11، ثم اجمع المعاملات مع إشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$\\sqrt{1859} = \\sqrt{169 \\times 11} = 13\\sqrt{11}$ ; $\\sqrt{99} = \\sqrt{9 \\times 11} = 3\\sqrt{11}$",
+          "$A = 13\\sqrt{11} + 6\\sqrt{11} = 19\\sqrt{11}$"
+        ],
+        "result": "A = 19\\sqrt{11}"
+      },
+      "timeSeconds": 210
+    }
+  ]
+}

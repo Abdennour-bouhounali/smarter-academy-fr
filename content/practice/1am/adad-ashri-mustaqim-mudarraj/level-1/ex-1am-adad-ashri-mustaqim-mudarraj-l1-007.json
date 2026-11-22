@@ -1,0 +1,224 @@
+{
+  "id": "ex-1am-adad-ashri-mustaqim-mudarraj-l1-007",
+  "lessonCode": "adad-ashri-mustaqim-mudarraj",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — ما فاصلة العلم؟",
+    "estimatedMinutes": 5,
+    "tags": [
+      "فاصلة",
+      "عدد عشري"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ثلاثة أعلام ملوّنة على شريط القياس. نصف مستقيم مدرّج مبدؤه $O$ ، ووحدته مقسّمة إلى 10 أجزاء متساوية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "المسافة بين المبدإ $O$ والعلم الأحمر تساوي وحدة واحدة وتدريجتين صغيرتين. ما فاصلة العلم الأحمر ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$1{,}2$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$2{,}1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-SWAP"
+        },
+        {
+          "id": "C",
+          "content": "$3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-TICKUNIT"
+        },
+        {
+          "id": "D",
+          "content": "$1{,}02$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-HUNDREDTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم وحدة كاملة تفصل النقطة عن المبدإ، وماذا يبقى بعدها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كلّ تدريجة صغيرة جزء من الوحدة، وليست وحدة كاملة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف قيمة التدريجات الصغيرة إلى عدد الوحدات الكاملة."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة $1{,}2$ : الوحدات الكاملة أوّلًا ثمّ التدريجات الصغيرة.",
+        "incorrect": "الوحدات الكاملة تعطي الجزء الصحيح، والتدريجات الصغيرة تعطي الجزء بعد الفاصلة ؛ كلّ تدريجة صغيرة جزء من الوحدة لا وحدة كاملة."
+      },
+      "solution": {
+        "lines": [
+          "$1$ وحدة كاملة، ثمّ $2$ تدريجة صغيرة قيمة كلّ منها $0{,}1$",
+          "الفاصلة : $1$ + $2$ × $0{,}1$ = $1{,}2$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "المسافة بين المبدإ $O$ والعلم الأزرق تساوي وحدتين و6 تدريجات صغيرة. ما فاصلة العلم الأزرق ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "2,6",
+      "misconceptionSignatures": [
+        {
+          "value": "6,2",
+          "id": "MISC-ABSC-SWAP"
+        },
+        {
+          "value": "8",
+          "id": "MISC-ABSC-TICKUNIT"
+        },
+        {
+          "value": "2,06",
+          "id": "MISC-ABSC-HUNDREDTH"
+        },
+        {
+          "value": "0,6",
+          "id": "MISC-ABSC-FROMO"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم وحدة كاملة تفصل النقطة عن المبدإ، وماذا يبقى بعدها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كلّ تدريجة صغيرة جزء من الوحدة، وليست وحدة كاملة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف قيمة التدريجات الصغيرة إلى عدد الوحدات الكاملة."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة $2{,}6$ : الوحدات الكاملة أوّلًا ثمّ التدريجات الصغيرة.",
+        "incorrect": "الوحدات الكاملة تعطي الجزء الصحيح، والتدريجات الصغيرة تعطي الجزء بعد الفاصلة ؛ كلّ تدريجة صغيرة جزء من الوحدة لا وحدة كاملة."
+      },
+      "solution": {
+        "lines": [
+          "$2$ وحدة كاملة، ثمّ $6$ تدريجة صغيرة قيمة كلّ منها $0{,}1$",
+          "الفاصلة : $2$ + $6$ × $0{,}1$ = $2{,}6$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "المسافة بين المبدإ $O$ والعلم الأخضر تساوي 3 وحدات و8 تدريجات صغيرة. ما فاصلة العلم الأخضر ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$8{,}3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-SWAP"
+        },
+        {
+          "id": "B",
+          "content": "$11$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-TICKUNIT"
+        },
+        {
+          "id": "C",
+          "content": "$3{,}08$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-HUNDREDTH"
+        },
+        {
+          "id": "D",
+          "content": "$3{,}8$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم وحدة كاملة تفصل النقطة عن المبدإ، وماذا يبقى بعدها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كلّ تدريجة صغيرة جزء من الوحدة، وليست وحدة كاملة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف قيمة التدريجات الصغيرة إلى عدد الوحدات الكاملة."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة $3{,}8$ : الوحدات الكاملة أوّلًا ثمّ التدريجات الصغيرة.",
+        "incorrect": "الوحدات الكاملة تعطي الجزء الصحيح، والتدريجات الصغيرة تعطي الجزء بعد الفاصلة ؛ كلّ تدريجة صغيرة جزء من الوحدة لا وحدة كاملة."
+      },
+      "solution": {
+        "lines": [
+          "$3$ وحدة كاملة، ثمّ $8$ تدريجة صغيرة قيمة كلّ منها $0{,}1$",
+          "الفاصلة : $3$ + $8$ × $0{,}1$ = $3{,}8$"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

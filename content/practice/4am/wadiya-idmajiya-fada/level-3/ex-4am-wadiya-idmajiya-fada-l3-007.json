@@ -1,0 +1,73 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-fada-l3-007",
+  "lessonCode": "wadiya-idmajiya-fada",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — التدوير",
+    "estimatedMinutes": 5,
+    "tags": [
+      "التدوير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-fada_P3",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "حجم غطاء فانوس هو $513\\pi\\,\\mathrm{cm}^3$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "قيمته المدوّرة إلى $0{,}1\\,\\mathrm{cm}^3$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-fada_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (مدوّر إلى 0,1)",
+      "expectedAnswer": "1611.6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $513 \\times \\pi$ بالآلة الحاسبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انظر إلى رقم الجزء من مائة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان 5 أو أكثر نزيد رقم الجزء من عشرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$513\\pi \\approx 1611{,}64$ ، ومدوّرا إلى $0{,}1$ : $1611{,}6\\,\\mathrm{cm}^3$ .",
+        "incorrect": "التدوير إلى $0{,}1$ يُبقي رقما واحدا بعد الفاصلة."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "1611.7",
+          "id": "MISC-TADWIR"
+        },
+        {
+          "value": "1612",
+          "id": "MISC-TADWIR"
+        },
+        {
+          "value": "1610.8",
+          "id": "MISC-TADWIR"
+        }
+      ],
+      "difficulty": 3
+    }
+  ]
+}

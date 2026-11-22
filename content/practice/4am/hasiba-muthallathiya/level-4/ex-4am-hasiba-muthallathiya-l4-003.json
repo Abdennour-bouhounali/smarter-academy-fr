@@ -1,0 +1,294 @@
+{
+  "id": "ex-4am-hasiba-muthallathiya-l4-003",
+  "lessonCode": "hasiba-muthallathiya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2014 — مستطيل وزاوية 34°: أطوال ومساحات",
+    "estimatedMinutes": 12,
+    "tags": [
+      "الظل",
+      "الجيب",
+      "مساحات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_hasiba-muthallathiya_P1",
+      "modelledOn": "BEM 2014 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2014",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "الشكل المقابل: $ABCD$ مستطيل فيه $BC = 7\\,\\mathrm{cm}$ و $\\widehat{BDC} = 34^{\\circ}$ .",
+    "figure": {
+      "points": {
+        "D": [
+          0,
+          0
+        ],
+        "C": [
+          10.3779,
+          0
+        ],
+        "B": [
+          10.3779,
+          7
+        ],
+        "A": [
+          0,
+          7
+        ]
+      },
+      "segments": [
+        [
+          "D",
+          "C"
+        ],
+        {
+          "from": "C",
+          "to": "B",
+          "label": "7 cm"
+        },
+        [
+          "B",
+          "A"
+        ],
+        [
+          "A",
+          "D"
+        ],
+        [
+          "B",
+          "D"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "D",
+          "C",
+          "B"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "D",
+          "from": "C",
+          "to": "B",
+          "label": "34°"
+        }
+      ],
+      "ariaLabel": "المستطيل ABCD حيث BC يساوي 7 سم، وقطره BD، والزاوية BDC قيسها 34 درجة",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب الطول $DC$ بالتدوير إلى الوحدة (استعن بـ: $\\tan\\widehat{BDC}$ ).",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بـ cm مدوّرا إلى الوحدة",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-MUTH-DARB-BADAL-QISMA"
+        },
+        {
+          "value": "13",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "-11",
+          "id": "MISC-MUTH-HASIBA-RAD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $BCD$ ، حدّد موقع الطول المعلوم والطول المطلوب بالنسبة إلى الزاوية $\\widehat{BDC}$ (مجاور، مقابل أو وتر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة التي تجمعهما هي ظل الزاوية $\\widehat{BDC}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالحاسبة مبرمجة بالدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$DC = \\dfrac{7}{\\tan 34^{\\circ}} \\approx 10{,}37792678 \\approx 10\\,\\mathrm{cm}$ .",
+        "incorrect": "الطول المطلوب في مقام الظل: نقسم الطول المعلوم على $\\tan 34^{\\circ}$ ولا نضرب فيه؛ والحاسبة مبرمجة بالدرجة."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $BCD$ القائم في $C$ لدينا: $\\tan\\widehat{BDC} = \\dfrac{BC}{DC}$",
+          "ومنه: $DC = \\dfrac{BC}{\\tan\\widehat{BDC}} = \\dfrac{7}{\\tan 34^{\\circ}}$",
+          "باستعمال الحاسبة: $DC \\approx 10{,}37792678$",
+          "الرقم الذي يلي رقم الوحدات هو 3، وهو أصغر من 5: نُبقي رقم الوحدات كما هو."
+        ],
+        "result": "DC \\approx 10\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب مساحة المستطيل $ABCD$ (باستعمال المدوّر $DC$ ).",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المساحة بـ cm²",
+      "expectedAnswer": "70",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة المستطيل = الطول × العرض."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\mathcal{A} = 10 \\times 7 = 70\\,\\mathrm{cm}^2$ .",
+        "incorrect": "مساحة المستطيل جداء بُعديه."
+      },
+      "solution": {
+        "lines": [
+          "$\\mathcal{A}_{ABCD} = DC \\times BC = 10 \\times 7$"
+        ],
+        "result": "\\mathcal{A}_{ABCD} = 70\\,\\mathrm{cm}^2"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "استنتج مساحة المثلث $ABD$ .",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المساحة بـ cm²",
+      "expectedAnswer": "35",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القطر $[BD]$ يقسم المستطيل إلى مثلثين متقايسين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\mathcal{A}_{ABD} = \\dfrac{70}{2} = 35\\,\\mathrm{cm}^2$ .",
+        "incorrect": "القطر يقسم المستطيل إلى مثلثين لهما المساحة نفسها."
+      },
+      "solution": {
+        "lines": [
+          "$\\mathcal{A}_{ABD} = \\dfrac{\\mathcal{A}_{ABCD}}{2} = \\dfrac{70}{2}$"
+        ],
+        "result": "\\mathcal{A}_{ABD} = 35\\,\\mathrm{cm}^2"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب الطول $BD$ بالتدوير إلى $0{,}1$ (استعن بـ: $\\sin\\widehat{BDC}$ ).",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm مدوّرا إلى 0,1",
+      "expectedAnswer": "12.5",
+      "misconceptionSignatures": [
+        {
+          "value": "3.9",
+          "id": "MISC-MUTH-DARB-BADAL-QISMA"
+        },
+        {
+          "value": "12.2",
+          "id": "MISC-MUTH-TADWIR-MUBAKKIR"
+        },
+        {
+          "value": "8.4",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $BCD$ ، حدّد موقع الطول المعلوم والطول المطلوب بالنسبة إلى الزاوية $\\widehat{BDC}$ (مجاور، مقابل أو وتر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة التي تجمعهما هي جيب الزاوية $\\widehat{BDC}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالحاسبة مبرمجة بالدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$BD = \\dfrac{7}{\\sin 34^{\\circ}} \\approx 12{,}51804155 \\approx 12{,}5\\,\\mathrm{cm}$ .",
+        "incorrect": "الطول المطلوب في مقام الجيب: نقسم ولا نضرب؛ ونستعمل القيمة المعطاة للزاوية لا المدوّر $DC$ ."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $BCD$ القائم في $C$ لدينا: $\\sin\\widehat{BDC} = \\dfrac{BC}{BD}$",
+          "ومنه: $BD = \\dfrac{7}{\\sin 34^{\\circ}}$",
+          "باستعمال الحاسبة: $BD \\approx 12{,}51804155$"
+        ],
+        "result": "BD \\approx 12{,}5\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "id": "ex-4am-tarrid-mushkila-l5-004",
+  "lessonCode": "tarrid-mushkila",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2021 — سياج بستان زيتون",
+    "estimatedMinutes": 18,
+    "tags": [
+      "ترييض",
+      "متراجحة",
+      "محيط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tarrid-mushkila_P1",
+      "modelledOn": "BEM 2021 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يريد عمي سعيد، حفاظًا على محصوله، إحاطة بستان زيتون مستطيل الشكل بُعداه 75m و 45m بسياج، مع ترك مدخل عرضه 4m دون سياج.\n• يُباع السياج في لفّات طول كل لفّة 25m ، و أثمان اللفّات تتراوح بين 3000DA و 6000DA للّفّة حسب نوعيتها.\n• أجرة العامل 150DA للمتر الواحد من السياج المركّب.\n• خصّص عمي سعيد مبلغ 80000DA لهذه الأشغال."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "☜ أعطِ أكبر ثمن ممكن للّفّة الواحدة حتى لا تفوق تكلفة الأشغال المبلغ المخصّص لها.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد: الثمن بـ DA",
+      "expectedAnswer": "4460",
+      "misconceptionSignatures": [
+        {
+          "value": "278750/59",
+          "id": "MISC-TARRID-TAHAQQUQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب طول السياج اللازم: محيط البستان ناقص عرض المدخل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد اللفّات عدد طبيعي يكفي للطول كله؛ وأجرة العامل تُحسب على طول السياج المركّب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "سمِّ $x$ ثمن اللفّة، واكتب أن التكلفة لا تفوق المبلغ المخصّص، ثم حلّ المتراجحة."
+        }
+      ],
+      "feedback": {
+        "correct": "طول السياج 236m ، 10 لفّات، أجرة العامل 35400DA ؛ $10x + 35400 \\leqslant 80000$ تعطي $x \\leqslant 4460$ .",
+        "incorrect": "لا تنسَ المدخل، وأن 9 لفّات لا تكفي، وأن الأجرة تُضاف إلى ثمن اللفّات."
+      },
+      "solution": {
+        "lines": [
+          "محيط البستان: $2 \\times (75 + 45) = 240$ أي $240m$ .",
+          "طول السياج: $240 - 4 = 236$ أي $236m$ .",
+          "عدد اللفّات: $\\dfrac{236}{25} = 9{,}44$ ؛ 9 لفّات لا تكفي، إذن يجب شراء 10 لفّات.",
+          "أجرة العامل: $150 \\times 236 = 35400$ DA .",
+          "ليكن $x$ ثمن اللفّة الواحدة: تكلفة الأشغال $10x + 35400$ .",
+          "$10x + 35400 \\leqslant 80000$",
+          "$10x \\leqslant 44600$",
+          "$x \\leqslant 4460$",
+          "إذن أكبر ثمن ممكن للّفّة الواحدة هو 4460DA (وهو بين 3000DA و 6000DA)."
+        ],
+        "result": "x \\leqslant 4460\\,DA"
+      },
+      "work": "optional",
+      "timeSeconds": 1080
+    }
+  ]
+}

@@ -1,0 +1,292 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l5-001",
+  "lessonCode": "mana-jam-tarh",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — نزهة في الغابة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "ميزانية",
+      "هل يكفي المبلغ",
+      "باقٍ"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 1,
+      "file": "1am-s1-91",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "قرّرت عائلة سفيان قضاء يوم في الغابة، وحرص الأبناء على ترك المكان نظيفًا كما وجدوه.\nالجزء الأول: قبل الانطلاق اشترت العائلة 4 خبزات بـ 15 دج للخبزة، وجبنًا بـ 645,5 دج، وفواكه بـ 380,25 دج، وماء بـ 150 دج. كان في خزّان السيارة $18\\,\\mathrm{L}$ من الوقود فملأه الأب؛ سعة الخزّان $45\\,\\mathrm{L}$ وسعر اللتر 45,6 دج.\nالجزء الثاني: في الغابة استأجرت العائلة طاولة بـ 300 دج. كان مع الأب 2500 دج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "كم لترًا من الوقود أضاف الأب لملء الخزّان؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد باللتر (L)",
+      "expectedAnswer": "27",
+      "misconceptionSignatures": [
+        {
+          "value": "63",
+          "id": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "سعة الخزّان هي الكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما كان فيه + ما أضافه = السعة."
+        }
+      ],
+      "feedback": {
+        "correct": "$45 - 18 = 27\\,\\mathrm{L}$.",
+        "incorrect": "ما أضافه الأب جزء من سعة الخزّان: اطرح ما كان فيه."
+      },
+      "solution": {
+        "lines": [
+          "$\\square + 18 = 45$",
+          "$\\square = 45 - 18 = 27$"
+        ],
+        "result": "27 \\text{ L}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب ثمن الخبز.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "60",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الخبزات × ثمن الخبزة."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 15 = 60$ دج.",
+        "incorrect": "اضرب عدد الخبزات في ثمن الخبزة الواحدة."
+      },
+      "solution": {
+        "lines": [
+          "$4 \\times 15 = 60$"
+        ],
+        "result": "60 \\text{ DA}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب ثمن الوقود الذي أضافه الأب.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "1231.2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولًا عدد اللترات المضافة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثمن الوقود = عدد اللترات × سعر اللتر."
+        }
+      ],
+      "feedback": {
+        "correct": "$27 \\times 45{,}6 = 1231{,}2$ دج.",
+        "incorrect": "اضرب عدد اللترات المضافة (لا سعة الخزّان) في سعر اللتر."
+      },
+      "solution": {
+        "lines": [
+          "$27 \\times 45{,}6 = 1231{,}2$"
+        ],
+        "result": "1231{,}2 \\text{ DA}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب الميزانية اللازمة للعائلة قبل الانطلاق (المشتريات والوقود).",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "2466.95",
+      "misconceptionSignatures": [
+        {
+          "value": "1235.75",
+          "id": "MISC-JAMTARH-JUZ-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الميزانية مجموع خمسة حدود."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تنسَ ثمن الوقود."
+        }
+      ],
+      "feedback": {
+        "correct": "$60 + 645{,}5 + 380{,}25 + 150 + 1231{,}2 = 2466{,}95$ دج.",
+        "incorrect": "اجمع ثمن الخبز والجبن والفواكه والماء والوقود."
+      },
+      "solution": {
+        "lines": [
+          "$60 + 645{,}5 + 380{,}25 + 150 = 1235{,}75$",
+          "$1235{,}75 + 1231{,}2 = 2466{,}95$"
+        ],
+        "result": "2466{,}95 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "هل يكفي المبلغ الذي مع الأب لكل المصاريف (الميزانية والطاولة)؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-JUZ-NAQIS"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب كل المصاريف: الميزانية + الطاولة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن بالمبلغ الذي مع الأب."
+        }
+      ],
+      "feedback": {
+        "correct": "$2766{,}95 > 2500$: المبلغ لا يكفي.",
+        "incorrect": "أضف ثمن الطاولة إلى الميزانية، ثم قارن بـ 2500 دج."
+      },
+      "solution": {
+        "lines": [
+          "المصاريف: $2466{,}95 + 300 = 2766{,}95$",
+          "$2766{,}95 > 2500$ ، إذن المبلغ لا يكفي."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "كم ينقص الأب ليدفع كل المصاريف؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "266.95",
+      "misconceptionSignatures": [
+        {
+          "value": "-33.05",
+          "id": "MISC-JAMTARH-JUZ-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل المصاريف هي الكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما ينقصه + ما معه = كل المصاريف."
+        }
+      ],
+      "feedback": {
+        "correct": "$2766{,}95 - 2500 = 266{,}95$ دج.",
+        "incorrect": "ما ينقصه جزء من كل المصاريف: اطرح ما معه منها."
+      },
+      "solution": {
+        "lines": [
+          "$2766{,}95 - 2500 = 266{,}95$"
+        ],
+        "result": "266{,}95 \\text{ DA}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

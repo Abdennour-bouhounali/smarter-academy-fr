@@ -1,0 +1,139 @@
+{
+  "id": "ex-4am-ikhtizal-kasr-l2-006",
+  "lessonCode": "ikhtizal-kasr",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2020 — العددان A و B",
+    "estimatedMinutes": 6,
+    "tags": [
+      "كسر غير قابل للاختزال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_ikhtizal-kasr_P4",
+      "modelledOn": "BEM 2020 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2020",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "إليك العددين $A$ و $B$ حيث:",
+    "formulas": [
+      "A = \\dfrac{7}{5} - \\dfrac{2}{5} \\times \\dfrac{3}{4}",
+      "B = \\left(\\dfrac{2}{3} + \\dfrac{1}{6}\\right) \\div \\dfrac{5}{4}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب $A$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "11/10",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالعملية ذات الأولوية: ما بين القوسين، ثم الضرب أو القسمة، ثم الجمع أو الطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختزل كل كسر وسيط قبل أن تواصل، ثم وحّد المقامات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "في الأخير تحقّق أن البسط والمقام أوليان فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "حساب صحيح، والنتيجة على شكل كسر غير قابل للاختزال.",
+        "incorrect": "احترم أولوية العمليات، ثم اختزل الناتج إلى أن يصير البسط والمقام أوليين فيما بينهما.",
+        "notIrreducible": "القيمة صحيحة لكن الكسر ما زال قابلًا للاختزال: اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{7}{5} - \\dfrac{6}{20}$",
+          "$A = \\dfrac{7}{5} - \\dfrac{3}{10}$",
+          "$A = \\dfrac{14}{10} - \\dfrac{3}{10}$"
+        ],
+        "result": "A = \\dfrac{11}{10}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب $B$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "2/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "20/30",
+          "id": "MISC-IKHTIZAL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالعملية ذات الأولوية: ما بين القوسين، ثم الضرب أو القسمة، ثم الجمع أو الطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختزل كل كسر وسيط قبل أن تواصل، ثم وحّد المقامات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "في الأخير تحقّق أن البسط والمقام أوليان فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "حساب صحيح، والنتيجة على شكل كسر غير قابل للاختزال.",
+        "incorrect": "احترم أولوية العمليات، ثم اختزل الناتج إلى أن يصير البسط والمقام أوليين فيما بينهما.",
+        "notIrreducible": "القيمة صحيحة لكن الكسر ما زال قابلًا للاختزال: اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "$B = \\left(\\dfrac{4}{6} + \\dfrac{1}{6}\\right) \\div \\dfrac{5}{4}$",
+          "$B = \\dfrac{5}{6} \\times \\dfrac{4}{5}$",
+          "$B = \\dfrac{20}{30}$"
+        ],
+        "result": "B = \\dfrac{2}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

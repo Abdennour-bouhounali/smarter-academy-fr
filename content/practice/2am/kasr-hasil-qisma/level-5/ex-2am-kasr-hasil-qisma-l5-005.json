@@ -1,0 +1,272 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l5-005",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — نسبة المشاركين",
+    "estimatedMinutes": 12,
+    "tags": [
+      "نسبة",
+      "قيم مقرّبة",
+      "برّر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: في المتوسطة $18$ قسمًا، وقد شارك $11$ قسمًا منها في معرض العلوم.\nالجزء الثاني: يريد المدير أن يكتب نسبة المشاركة في لوحة الإعلانات."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نسبة الأقسام المشاركة إلى أقسام المتوسطة هي:",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{18}{11}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-RATIOFLIP"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{11}{18}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{11}{7}$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{7}{18}$",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الأقسام المشاركة (الجزء) في البسط وأقسام المتوسطة (الكلّ) في المقام."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{11}{18}$.",
+        "incorrect": "ضع الجزء في البسط والكلّ في المقام."
+      },
+      "solution": {
+        "lines": [
+          "الجزء: $11$ ، الكلّ: $18$",
+          "النسبة $\\dfrac{11}{18}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}01$ بالنقصان لهذه النسبة.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "0.61",
+      "misconceptionSignatures": [
+        {
+          "value": "0.62",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "0.611",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالنقصان لا تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة دون أن تزيد شيئًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب القيمة في المقسوم عليه: يجب ألاّ يتجاوز الجداء المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}61 < \\frac{11}{18} < 0{,}62$.",
+        "incorrect": "بالنقصان: نحتفظ بالأرقام حتى الرتبة المطلوبة ونُهمل ما بعدها دون تغيير الرقم الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$18 \\times 0{,}61 = 10{,}98$",
+          "$18 \\times 0{,}62 = 11{,}16$",
+          "$10{,}98 < 11 < 11{,}16$"
+        ],
+        "result": "0{,}61"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}01$ بالزيادة لهذه النسبة.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "0.62",
+      "misconceptionSignatures": [
+        {
+          "value": "0.61",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "0.612",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالزيادة هي أصغر قيمة من هذه الرتبة تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من القيمة بالنقصان ثم أضف وحدة واحدة من الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}61 < \\frac{11}{18} < 0{,}62$.",
+        "incorrect": "بالزيادة: هي القيمة التي تلي القيمة بالنقصان مباشرة في الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$18 \\times 0{,}62 = 11{,}16$",
+          "$11{,}16 > 11$",
+          "القيمة بالزيادة هي $0{,}62$"
+        ],
+        "result": "0{,}62"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "lead": "الجزء الثاني: ماذا يكتب المدير؟",
+      "statement": "هل يمكن أن نكتب في اللوحة: «نسبة المشاركة تساوي $0{,}61$ بالضبط» ؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-EXACTAPPROX"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أو قارن بدقّة قبل أن تجيب."
+        }
+      ],
+      "feedback": {
+        "correct": "لا: $18 \\times 0{,}61 = 10{,}98 \\neq 11$.",
+        "incorrect": "اضرب $0{,}61$ في $18$ وقارن بـ $11$."
+      },
+      "solution": {
+        "lines": [
+          "$18 \\times 0{,}61 = 10{,}98$",
+          "$10{,}98 \\neq 11$ : $0{,}61$ قيمة مقرّبة فقط"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "اقترح عبارة صحيحة للّوحة تستعمل القيمتين المقرّبتين، وبرّر أنّها صحيحة.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب جملة أو جملتين: الفكرة ثم الحساب الذي يدعمها."
+        }
+      ],
+      "feedback": {
+        "correct": "$18 \\times 0{,}61 = 10{,}98 < 11 < 11{,}16 = 18 \\times 0{,}62$ : الحصر صحيح.",
+        "incorrect": "قارن تبريرك بالحلّ النموذجي: الفكرة ثم الحساب الذي يدعمها."
+      },
+      "solution": {
+        "lines": [
+          "«نسبة المشاركة محصورة بين $0{,}61$ و $0{,}62$».",
+          "$18 \\times 0{,}61 = 10{,}98 < 11 < 11{,}16 = 18 \\times 0{,}62$ : الحصر صحيح."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

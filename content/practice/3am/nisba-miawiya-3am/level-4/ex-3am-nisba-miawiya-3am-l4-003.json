@@ -1,0 +1,219 @@
+{
+  "id": "ex-3am-nisba-miawiya-3am-l4-003",
+  "lessonCode": "nisba-miawiya-3am",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — حديقة الحيّ",
+    "estimatedMinutes": 11,
+    "tags": [
+      "معادلة",
+      "نسبة مئوية من مساحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الرابع",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "حديقة مستطيلة بعداها $x$ و $(x + 6)$ بالمتر، ومحيطها $52\\,\\mathrm{m}$ . يعتني أهل الحيّ بها معا، ويخصّصون جزءا منها للأزهار."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "حلّ المعادلة $4x + 12 = 52$ ، ما قيمة $x$ بالمتر؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كل سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بالتعويض أو بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$10$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "محيط المستطيل: $2x + 2(x + 6) = 4x + 12 = 52$ ، إذن $4x = 40$ و $x = 10$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما مساحة الحديقة بالمتر المربع؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "160",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كل سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بالتعويض أو بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$160$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الأبعاد $10$ و $16$ ، والمساحة $10 \\times 16 = 160\\,\\mathrm{m}^2$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "تخصّص $35\\,\\%$ من المساحة للأزهار. ما مساحة الأزهار؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "56",
+      "misconceptionSignatures": [
+        {
+          "value": "1.6",
+          "id": "MISC-NISBA3-DIV100-ONLY"
+        },
+        {
+          "value": "5600",
+          "id": "MISC-NISBA3-MULT-T"
+        },
+        {
+          "value": "195",
+          "id": "MISC-NISBA3-ADD-T"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نأخذ منه النسبة؟ وما هي هذه النسبة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نسبة مئوية من عدد: نضرب هذا العدد في النسبة مقسومة على مئة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب النسبة على شكل كسر مقامه مئة، ثم احسب جداء العدد في هذا الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$56$ .",
+        "incorrect": "لحساب نسبة مئوية من عدد نضرب العدد في النسبة مقسومة على مئة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$35\\,\\%$ من $160$ هي $160 \\times \\dfrac{35}{100} = 56$ ."
+        ],
+        "result": "160 \\times \\dfrac{35}{100} = 56"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "زُرعت الورود على $24\\,\\mathrm{m}^2$ . ما نسبتها المئوية من المساحة؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "النسبة المئوية (بدون الرمز %)",
+      "expectedAnswer": "15",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الجزء؟ وما الكلّ الذي نقارن به؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نبحث عن العدد الذي يجعل الكسر «الجزء على الكلّ» مساويا للكسر «هذا العدد على مئة»."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع الكلّ تحت مئة في جدول تناسبية وضع الجزء تحت العدد المجهول، ثم أتمّم."
+        }
+      ],
+      "feedback": {
+        "correct": "$15$ .",
+        "incorrect": "النسبة المئوية هي العدد الذي يساوي الكسر «الجزء على الكلّ» حين نكتبه مقامه مئة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $\\dfrac{24}{160} = \\dfrac{t}{100}$ ، فنجد $t = \\dfrac{100 \\times 24}{160} = 15$ .",
+          "إذن النسبة المئوية هي $15\\,\\%$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

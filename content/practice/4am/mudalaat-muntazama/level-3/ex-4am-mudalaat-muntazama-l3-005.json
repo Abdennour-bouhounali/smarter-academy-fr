@@ -1,0 +1,119 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l3-005",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 9 — دورانات أخرى",
+    "estimatedMinutes": 3,
+    "tags": [
+      "المضلع صورة نفسه",
+      "الدوران"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-9",
+      "page": 159,
+      "section": "صورة شكل بدوران",
+      "number": 9
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 159): ABC مثلث متقايس الأضلاع مركزه O، و A′B′C′ صورته بالدوران الذي مركزه O وزاويته $45^\\circ$ في الاتجاه المباشر.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          0,
+          2
+        ],
+        "B": [
+          -1.732,
+          -1
+        ],
+        "C": [
+          1.732,
+          -1
+        ]
+      },
+      "circles": [
+        {
+          "center": "O",
+          "radius": 2
+        }
+      ],
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "A"
+        ]
+      ],
+      "ariaLabel": "مثلث متقايس الأضلاع ABC مركزه O، في دائرته المحيطة",
+      "maxWidth": 340
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "هل يمكن أن يكون المثلث A′B′C′ صورة ABC بدوران آخر مركزه O؟",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم: زاويته $165^\\circ$ في الاتجاه المباشر",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا: الدوران الذي يحوّل شكلا إلى آخر وحيد",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-TARTIB"
+        },
+        {
+          "id": "C",
+          "content": "نعم: زاويته $90^\\circ$ في الاتجاه المباشر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-MARKAZIYA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ABC صورة نفسه بدوران مركزه O: ما زاويته؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الزاوية المركزية للمثلث المتقايس الأضلاع $120^\\circ$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف هذه الزاوية إلى $45^\\circ$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "ABC صورة نفسه بالدوران (O، $120^\\circ$)، فالدوران (O، $45^\\circ + 120^\\circ$) يعطي نفس المثلث A′B′C′.",
+        "incorrect": "تذكّر خاصية 3: المضلع المنتظم صورة نفسه بالدوران الذي زاويته زاويته المركزية."
+      },
+      "difficulty": 3
+    }
+  ]
+}

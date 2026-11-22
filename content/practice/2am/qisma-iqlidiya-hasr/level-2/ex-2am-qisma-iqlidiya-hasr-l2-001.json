@@ -1,0 +1,305 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l2-001",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 2,
+  "metadata": {
+    "title": "بيض المزرعة في صفائح",
+    "estimatedMinutes": 8,
+    "tags": [
+      "صفائح",
+      "حصر",
+      "قسمة إقليدية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-1",
+      "page": 24,
+      "section": "أنشطة",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يبيع صاحب مزرعة لتربية الدجاج البيض في صفائح من 30 بيضة، ويحرص على ألّا تنكسر بيضة واحدة. جمع اليوم 2145 بيضة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اختر الحصر الصحيح للعدد 2145 بين مضاعفين متتاليين للعدد 30.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$30 \\times 70 \\le 2145 < 30 \\times 71$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "id": "B",
+          "content": "$30 \\times 71 \\le 2145 < 30 \\times 72$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$30 \\times 72 \\le 2145 < 30 \\times 73$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الجداءات المقترحة وقارنها بـ 2145."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الجداء الأول لا يتجاوز 2145، والثاني يتجاوزه."
+        }
+      ],
+      "feedback": {
+        "correct": "$30 \\times 71 = 2130$ و $30 \\times 72 = 2160$ ، و $2130 \\le 2145 < 2160$.",
+        "incorrect": "احسب كل جداء: يجب أن يكون الأول أصغر من 2145 أو يساويه، والثاني أكبر منه."
+      },
+      "solution": {
+        "lines": [
+          "$30 \\times 71 = 2130$ و $30 \\times 72 = 2160$",
+          "$2130 \\le 2145 < 2160$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "كم صفيحة يمكنه ملؤها تمامًا؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الصفائح",
+      "expectedAnswer": "71",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "70",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "value": "72",
+          "id": "MISC-HASR-IZAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 2145 من 30 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 30 دون أن نتجاوز 2145."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من 30."
+        }
+      ],
+      "feedback": {
+        "correct": "$2145 = 30 \\times 71 + 15$ و $15 < 30$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 30 فلا يتجاوز الجداء 2145، والباقي عندئذ أصغر من 30."
+      },
+      "solution": {
+        "lines": [
+          "$30 \\times 71 = 2130$ و $30 \\times 72 = 2160$",
+          "$2130 \\le 2145 < 2160$ ، إذن الحاصل هو 71."
+        ],
+        "result": "q = 71"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "كم بيضة تبقى في الصفيحة غير المملوءة؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد البيض",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "71",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "45",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 2145."
+        }
+      ],
+      "feedback": {
+        "correct": "$2145 - 30 \\times 71 = 2145 - 2130 = 15$ ، و $15 < 30$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 30."
+      },
+      "solution": {
+        "lines": [
+          "$2145 = 30 \\times 71 + 15$",
+          "$15 < 30$ ، إذن الباقي هو 15."
+        ],
+        "result": "r = 15"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "أنجز ابنه العملية فوجد $2145 = 30 \\times 70 + 45$. هل تعبّر هذه المساواة عن القسمة الإقليدية للعدد 2145 على 30؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق أولًا من صحة المساواة بالحساب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم قارن العدد المضاف بالمقسوم عليه 30."
+        }
+      ],
+      "feedback": {
+        "correct": "المساواة صحيحة لكن $45 \\ge 30$: يمكن أخذ 30 مرّة أخرى.",
+        "incorrect": "القسمة الإقليدية على 30: مساواة صحيحة وباقٍ أصغر من 30."
+      },
+      "solution": {
+        "lines": [
+          "$30 \\times 70 + 45 = 2145$",
+          "المساواة صحيحة لكن $45 \\ge 30$: يمكن أخذ 30 مرّة أخرى.",
+          "القسمة الإقليدية هي $2145 = 30 \\times 71 + 15$."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "كم صفيحة يلزم إحضارها لوضع كل البيض؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد الصفائح",
+      "expectedAnswer": "72",
+      "misconceptionSignatures": [
+        {
+          "value": "71",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "value": "15",
+          "id": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 2145 على 30."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يبقى شيء بعد المجموعات الكاملة؟ ماذا نفعل به؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد اللازم هو القيمة المقرّبة إلى الوحدة بالزيادة عندما لا يكون الحاصل عددًا طبيعيًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$2145 = 30 \\times 71 + 15$: 71 كاملة ويبقى 15، فيلزم 72.",
+        "incorrect": "لا تنسَ ما يبقى بعد المجموعات الكاملة: يحتاج هو أيضًا إلى مكان."
+      },
+      "solution": {
+        "lines": [
+          "$2145 = 30 \\times 71 + 15$",
+          "$71 < \\frac{2145}{30} < 72$ ، والباقي 15 يحتاج إلى واحدة أخرى: يلزم 72 (القيمة المقرّبة بالزيادة)."
+        ],
+        "result": "72"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

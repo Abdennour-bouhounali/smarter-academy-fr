@@ -1,0 +1,349 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-taalufiya-l5-004",
+  "lessonCode": "wadiya-idmajiya-taalufiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2017 — شاحنة وسيارة بين الأغواط وغرداية",
+    "estimatedMinutes": 35,
+    "tags": [
+      "وضعية إدماجية",
+      "دالة متناقصة",
+      "نقطة التقاطع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-taalufiya_P2",
+      "modelledOn": "BEM 2017 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2017",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "المسافة بين الأغواط وغرداية على الطريق الوطني رقم 1 هي $210km$ ، ويحرص سائقان محترفان على أن يصلا في الموعد المحدّد.\nعلى الساعة الثامنة صباحا انطلقت شاحنة من الأغواط نحو غرداية بسرعة ثابتة $60km/h$ ، وفي اللحظة نفسها انطلقت سيارة من غرداية نحو الأغواط بسرعة ثابتة $80km/h$ .\nنسمّي $t$ المدة بالساعات منذ الانطلاق، و $d_1(t)$ ، $d_2(t)$ بُعدي الشاحنة والسيارة عن الأغواط بـ km."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "الجزء الأول:\nاحسب بُعد كل مركبة عن الأغواط على الساعة التاسعة صباحا.",
+      "statement": "الشاحنة:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: البعد بـ km",
+      "expectedAnswer": "60",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في ساعة واحدة تقطع الشاحنة $60km$ مبتعدة عن الأغواط."
+        }
+      ],
+      "feedback": {
+        "correct": "$60 \\times 1$ .",
+        "incorrect": "الشاحنة انطلقت من الأغواط: بعدها هو المسافة التي قطعتها."
+      },
+      "solution": {
+        "lines": [
+          "الشاحنة: $60 \\times 1 = 60km$ عن الأغواط.",
+          "السيارة: قطعت $80km$ من غرداية، إذن بعدها عن الأغواط $210 - 80 = 130km$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "السيارة:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: البعد بـ km",
+      "expectedAnswer": "130",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-TAHAQQUQ",
+          "value": "80"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "السيارة انطلقت من غرداية: اطرح ما قطعته من المسافة بين المدينتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$210 - 80$ .",
+        "incorrect": "المطلوب بعد السيارة عن الأغواط، لا المسافة التي قطعتها."
+      },
+      "solution": {
+        "lines": [
+          "الشاحنة: $60 \\times 1 = 60km$ عن الأغواط.",
+          "السيارة: قطعت $80km$ من غرداية، إذن بعدها عن الأغواط $210 - 80 = 130km$ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "عبّر عن $d_1(t)$ و $d_2(t)$ بدلالة $t$ .",
+      "statement": "أعط العدد $a$ حيث: $d_1(t) = at$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "60",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة = السرعة × المدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$d_1$ دالة خطية معاملها السرعة.",
+        "incorrect": "معامل $t$ هو السرعة."
+      },
+      "solution": {
+        "lines": [
+          "الشاحنة تبتعد عن الأغواط: $d_1(t) = 60t$",
+          "السيارة تقترب من الأغواط: $d_2(t) = 210 - 80t = -80t + 210$"
+        ],
+        "result": "d_1(t) = 60t"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "أعط العددين $a$ و $b$ حيث: $d_2(t) = at + b$ ، ابدأ بالعدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-80",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-BAYANI-ISHARA-A",
+          "value": "80"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بعد السيارة عن الأغواط ينقص مع الزمن."
+        }
+      ],
+      "feedback": {
+        "correct": "البعد ينقص بـ $80km$ في كل ساعة.",
+        "incorrect": "$d_2$ دالة متناقصة: معاملها سالب."
+      },
+      "solution": {
+        "lines": [
+          "الشاحنة تبتعد عن الأغواط: $d_1(t) = 60t$",
+          "السيارة تقترب من الأغواط: $d_2(t) = 210 - 80t = -80t + 210$"
+        ],
+        "result": "d_2(t) = -80t + 210"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "statement": "ثم العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "210",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بعد السيارة عن الأغواط لحظة الانطلاق."
+        }
+      ],
+      "feedback": {
+        "correct": "$d_2(0)$ هو المسافة بين المدينتين.",
+        "incorrect": "الحدّ الثابت هو قيمة $d_2(t)$ من أجل $t = 0$ ."
+      },
+      "solution": {
+        "lines": [
+          "الشاحنة تبتعد عن الأغواط: $d_1(t) = 60t$",
+          "السيارة تقترب من الأغواط: $d_2(t) = 210 - 80t = -80t + 210$"
+        ],
+        "result": "d_2(t) = -80t + 210"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ا",
+      "lead": "الجزء الثاني: المستوي منسوب إلى معلم متعامد $(O, \\vec{i} , \\vec{j})$ .",
+      "statement": "مثّل بيانيا الدالتين $d_1$ و $d_2$ من أجل $0 \\leqslant t \\leqslant 2$ .\n(نأخذ 1cm على محور الفواصل يمثل ربع ساعة، و 1cm على محور التراتيب يمثل $20km$)",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب صورتي العددين 0 و 2 بكل دالة."
+        }
+      ],
+      "feedback": {
+        "correct": "$d_1(0) = 0$ ، $d_1(2) = 120$ ، $d_2(0) = 210$ ، $d_2(2) = 50$ .",
+        "incorrect": "علّم نقطتين من كل تمثيل بالوحدتين المعطاتين ثم صِل بينهما."
+      },
+      "solution": {
+        "lines": [
+          "تمثيل $d_1$ : القطعة المستقيمة من $(0 ; 0)$ إلى $(2 ; 120)$ .",
+          "تمثيل $d_2$ : القطعة المستقيمة من $(0 ; 210)$ إلى $(2 ; 50)$ ."
+        ]
+      },
+      "timeSeconds": 360
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "sub": "ب",
+      "statement": "عيّن حسابيا إحداثيي نقطة تقاطع التمثيلين البيانيين، ثم فسّر النتيجة في سياق الوضعية.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": {
+        "x": "3/2",
+        "y": "90"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-JUMLA-BAYANI-MAQLUB",
+          "value": {
+            "x": "90",
+            "y": "3/2"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المركبتان تلتقيان عندما يكون لهما نفس البعد عن الأغواط: $d_1(t) = d_2(t)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفاصلة مدة بالساعات (يمكن أن تكون عشرية)."
+        }
+      ],
+      "feedback": {
+        "correct": "$60t = -80t + 210$ .",
+        "incorrect": "حلّ $d_1(t) = d_2(t)$ ، ثم اكتب المدة أولا والبعد ثانيا."
+      },
+      "solution": {
+        "lines": [
+          "$60t = -80t + 210$",
+          "$140t = 210$",
+          "$t = \\dfrac{210}{140} = 1{,}5$",
+          "$d_1(1{,}5) = 60 \\times 1{,}5 = 90$",
+          "نقطة التقاطع هي $(1{,}5 ; 90)$ : تلتقي المركبتان بعد ساعة ونصف من الانطلاق، أي على الساعة التاسعة والنصف، على بعد $90km$ من الأغواط."
+        ],
+        "result": "(1{,}5 ; 90)"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q8",
+      "step": "04",
+      "statement": "☜ احسب المسافة التي تفصل بين المركبتين على الساعة العاشرة صباحا.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المسافة بـ km",
+      "expectedAnswer": "70",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-TAHAQQUQ",
+          "value": "50"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب بعد كل مركبة عن الأغواط بعد ساعتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المركبتان تجاوزتا نقطة اللقاء: اطرح البعد الأصغر من الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$d_1(2) - d_2(2)$ .",
+        "incorrect": "بعد اللقاء أصبحت الشاحنة أبعد عن الأغواط من السيارة."
+      },
+      "solution": {
+        "lines": [
+          "$d_1(2) = 60 \\times 2 = 120km$",
+          "$d_2(2) = -80 \\times 2 + 210 = 50km$",
+          "المسافة بين المركبتين: $120 - 50 = 70km$ ."
+        ],
+        "result": "70km"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

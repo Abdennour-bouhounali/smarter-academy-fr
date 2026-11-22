@@ -1,0 +1,198 @@
+{
+  "id": "ex-3am-qawaid-quwa-ashara-l3-009",
+  "lessonCode": "qawaid-quwa-ashara",
+  "level": 3,
+  "metadata": {
+    "title": "أيّها يساوي $10^{-4}$ ؟",
+    "estimatedMinutes": 7,
+    "tags": [
+      "كتابات متساوية",
+      "أعداد عشرية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-17",
+      "page": 46,
+      "section": "أوظّف تعلّماتي",
+      "number": 17
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نبحث بين العبارات التالية عن العبارة التي تساوي $10^{-4}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ العبارات التالية تساوي $10^{-4}$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل كلّ اقتراح إلى قوة واحدة للعدد 10 مستعملًا القاعدة المناسبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر اقتراحًا واحدًا في كلّ مرّة، وانتبه إلى أنّ القواعد الثلاث لا تخصّ الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا شككت في قاعدة فجرّبها على قوة صغيرة تعرف قيمتها العشرية."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{10^{-6}}{100}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QAWAID-ISHARA"
+        },
+        {
+          "id": "B",
+          "content": "$10^{-5}+10^{-5}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QAWAID-MAJMU"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{10^{3}}{10^{7}}$",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{10^{3}}{10^{7}} = 10^{-4}$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب قيمته أو بتطبيق القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{10^{3}}{10^{7}} = 10^{3-7} = 10^{-4}$ .",
+          "$\\dfrac{10^{-6}}{100} = \\dfrac{10^{-6}}{10^{2}} = 10^{-8}$ ، وفي المجموع لا نجمع الأسّين: $10^{-5}+10^{-5} = 2\\times10^{-5}$ ."
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "اكتب $0{,}01\\times10^{-2} = 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العدد المعطى على شكل قوة للعدد 10، أو اكتب القوة على شكل عدد عشري."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انظر إلى موضع الفاصلة أو إلى رتبة الرقم 1 بعد الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالاتجاه المعاكس: حوّل جوابك إلى الكتابة الأخرى وقارنها بالمعطى."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-QAWAID-ISHARA"
+        },
+        {
+          "value": "-3",
+          "id": "MISC-QAWAID-ISHARA"
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}01\\times10^{-2} = 10^{-4}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}01 = 10^{-2}$ .",
+          "$10^{-2}\\times10^{-2} = 10^{-4}$ ."
+        ],
+        "result": "n = -4"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "اكتب $\\dfrac{0{,}001}{10} = 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العدد المعطى على شكل قوة للعدد 10، أو اكتب القوة على شكل عدد عشري."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انظر إلى موضع الفاصلة أو إلى رتبة الرقم 1 بعد الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالاتجاه المعاكس: حوّل جوابك إلى الكتابة الأخرى وقارنها بالمعطى."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "value": "-2",
+          "id": "MISC-QAWAID-ISHARA"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{0{,}001}{10} = 10^{-4}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}001 = 10^{-3}$ و $10 = 10^{1}$ .",
+          "$\\dfrac{10^{-3}}{10^{1}} = 10^{-3-1} = 10^{-4}$ ."
+        ],
+        "result": "n = -4"
+      }
+    }
+  ]
+}

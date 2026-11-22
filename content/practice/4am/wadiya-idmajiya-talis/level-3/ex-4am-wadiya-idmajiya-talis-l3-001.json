@@ -1,0 +1,176 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-talis-l3-001",
+  "lessonCode": "wadiya-idmajiya-talis",
+  "level": 3,
+  "metadata": {
+    "title": "أدمج تعلّماتي — الوضعية: الحالة h = r",
+    "estimatedMinutes": 12,
+    "tags": [
+      "أسطوانة",
+      "مخروط",
+      "معادلة",
+      "حجم"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "situation",
+      "page": 112,
+      "section": "أدمج تعلّماتي"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أسطوانة دوران ارتفاعها $h$ ونصف قطر قاعدتها $r$ ، مرسومة داخل مخروط دوران ارتفاعه $18\\,\\mathrm{cm}$ ونصف قطر قاعدته $6\\,\\mathrm{cm}$ (قاعدتها على قاعدة المخروط ودائرتها العليا على سطحه). ندرس الحالة التي يتساوى فيها ارتفاع الأسطوانة ونصف قطرها: $h = r$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب نصف قطر الأسطوانة $r$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "4,5",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-TALIS-HALL-MUADALA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في نصف المقطع المحوري: $\\dfrac{r}{6} = \\dfrac{18 - h}{18}$ (خاصية طالس)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $h$ بـ $r$ ، ثم اضرب الطرفين في $18$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود التي فيها $r$ في طرف واحد، ثم اقسم."
+        }
+      ],
+      "feedback": {
+        "correct": "$18r = 108 - 6r$ ، أي $24r = 108$ ومنه $r = 4{,}5\\,\\mathrm{cm}$ .",
+        "incorrect": "عند نقل الحدّ الذي فيه $r$ من طرف إلى آخر تتغيّر إشارته."
+      },
+      "solution": {
+        "lines": [
+          "حسب خاصية طالس في نصف المقطع المحوري: $\\dfrac{r}{6} = \\dfrac{18 - h}{18}$",
+          "بما أن $h = r$ : $\\dfrac{r}{6} = \\dfrac{18 - r}{18}$",
+          "$18r = 6(18 - r)$",
+          "$18r = 108 - 6r$",
+          "$24r = 108$",
+          "$r = \\dfrac{108}{24}$"
+        ],
+        "result": "r = 4{,}5\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "نكتب حجم الأسطوانة على الشكل $V = k\\pi\\,\\mathrm{cm}^3$ . أعط العدد $k$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $k$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "91,125",
+      "misconceptionSignatures": [
+        {
+          "value": "20,25",
+          "id": "MISC-TALIS-TARBI-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$V = \\pi \\times r^2 \\times h$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$V = \\pi \\times 4{,}5^2 \\times 4{,}5 = 91{,}125\\pi\\,\\mathrm{cm}^3$ .",
+        "incorrect": "في $V = \\pi r^2 h$ يُربَّع نصف القطر وحده، ولا نستعمل القطر."
+      },
+      "solution": {
+        "lines": [
+          "$V = \\pi \\times r^2 \\times h$",
+          "$V = \\pi \\times 4{,}5^2 \\times 4{,}5$"
+        ],
+        "result": "V = 91{,}125\\pi\\,\\mathrm{cm}^3"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}01$ لحجم الأسطوانة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة (القيمة المقرّبة إلى $0{,}01$ ) بـ $\\mathrm{cm}^3$",
+      "expectedAnswer": "286,28",
+      "misconceptionSignatures": [
+        {
+          "value": "91.13",
+          "id": "MISC-TALIS-HAJM-BIDUN-PI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب العدد $k$ في $\\pi$ بالآلة الحاسبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "دوّر إلى الجزء من مئة."
+        }
+      ],
+      "feedback": {
+        "correct": "$91{,}125 \\times \\pi \\approx 286{,}28\\,\\mathrm{cm}^3$ .",
+        "incorrect": "الحجم هو $k\\pi$ وليس $k$ : اضرب في $\\pi$ ثم دوّر."
+      },
+      "solution": {
+        "lines": [
+          "$V = 91{,}125\\pi \\approx 286{,}2776\\ldots$",
+          "بالتدوير إلى $0{,}01$ : $V \\approx 286{,}28\\,\\mathrm{cm}^3$"
+        ],
+        "result": "V \\approx 286{,}28\\,\\mathrm{cm}^3"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

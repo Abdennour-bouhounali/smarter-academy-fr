@@ -1,0 +1,160 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-khattiya-l1-004",
+  "lessonCode": "wadiya-idmajiya-khattiya",
+  "level": 1,
+  "metadata": {
+    "title": "قراءة مستقيم",
+    "estimatedMinutes": 4,
+    "tags": [
+      "تمثيل بياني",
+      "قراءة بيانية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 74,
+      "section": "الوضعيات",
+      "number": 4,
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-khattiya-l1-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في المعلم المتعامد والمتجانس التالي، المستقيم $(D)$ يشمل مبدأ المعلم $O$ والنقطة $A$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          4,
+          1
+        ],
+        "Z": [
+          0,
+          3
+        ]
+      },
+      "lines": [
+        {
+          "through": [
+            "O",
+            "A"
+          ],
+          "name": "(D)",
+          "tone": "indigo",
+          "extend": [
+            0.25,
+            0.2
+          ]
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw",
+        "A": "n"
+      },
+      "hidden": [
+        "Z"
+      ],
+      "ariaLabel": "معلم متعامد ومتجانس على ورقة مرصوفة: المستقيم (D) يشمل المبدأ O والنقطة A",
+      "caption": "وحدة الطول: ضلع مربع من الشبكة على المحورين"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اقرأ إحداثيي النقطة $A$ ، ثم عيّن الدالة الخطية $f$ التي تمثيلها البياني المستقيم $(D)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "1/4",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-KHATTIYA-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ فاصلة $A$ على محور الفواصل وترتيبها على محور التراتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المستقيم يشمل المبدأ: $f(x) = ax$ ، و $a$ = ترتيب $A$ ÷ فاصلة $A$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$A(4 ; 1)$ ، إذن $a = \\dfrac{1}{4} = 0{,}25$ .",
+        "incorrect": "المعامل = الترتيب ÷ الفاصلة، لا العكس."
+      },
+      "solution": {
+        "lines": [
+          "بقراءة بيانية: $A(4 ; 1)$ .",
+          "$(D)$ يشمل المبدأ، فهو تمثيل دالة خطية $f(x) = ax$ .",
+          "$f(4) = 1$ معناه $4a = 1$ ومنه $a = \\dfrac{1}{4} = 0{,}25$ ."
+        ],
+        "result": "f(x) = 0{,}25x"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب صورة العدد $10$ بالدالة $f$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "2,5",
+      "misconceptionSignatures": [
+        {
+          "value": "40",
+          "id": "MISC-KHATTIYA-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$f(10) = a \\times 10$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(10) = 0{,}25 \\times 10 = 2{,}5$ .",
+        "incorrect": "اضرب المعامل الذي وجدته في 10."
+      },
+      "solution": {
+        "lines": [
+          "$f(10) = 0{,}25 \\times 10 = 2{,}5$"
+        ],
+        "result": "f(10) = 2{,}5"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

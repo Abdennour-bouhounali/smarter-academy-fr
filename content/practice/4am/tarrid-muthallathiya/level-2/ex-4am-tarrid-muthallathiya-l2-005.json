@@ -1,0 +1,204 @@
+{
+  "id": "ex-4am-tarrid-muthallathiya-l2-005",
+  "lessonCode": "tarrid-muthallathiya",
+  "level": 2,
+  "metadata": {
+    "title": "ضلعا الزاوية القائمة من الوتر",
+    "estimatedMinutes": 6,
+    "tags": [
+      "جيب التمام",
+      "الجيب",
+      "حل المثلث القائم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-muthallathiya_P2",
+      "modelledOn": "method-cos"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$ABC$ مثلث قائم في $A$ حيث $\\widehat{ABC} = 40^{\\circ}$ و $BC = 8\\,\\mathrm{cm}$ (الشكل المقابل).",
+    "figure": {
+      "points": {
+        "A": [
+          0.0,
+          0.0
+        ],
+        "B": [
+          6.1284,
+          0.0
+        ],
+        "C": [
+          0.0,
+          5.1423
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "A",
+          "C"
+        ],
+        {
+          "from": "B",
+          "to": "C",
+          "label": "8 cm"
+        }
+      ],
+      "rightAngles": [
+        [
+          "B",
+          "A",
+          "C"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "B",
+          "from": "C",
+          "to": "A",
+          "label": "40°"
+        }
+      ],
+      "labels": {
+        "A": "sw",
+        "B": "se",
+        "C": "nw"
+      },
+      "ariaLabel": "مثلث ABC قائم في A، الزاوية ABC قيسها 40 درجة، والوتر BC طوله 8 cm",
+      "maxWidth": 280
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $AB$ بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm مدوّرا إلى 0,01",
+      "expectedAnswer": "6.13",
+      "misconceptionSignatures": [
+        {
+          "value": "5.14",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "10.44",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $ABC$ القائم في $A$ ، حدّد موقع الضلع المعلوم والضلع المطلوب بالنسبة إلى الزاوية $\\widehat{ABC}$ (مجاور، مقابل أو وتر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة التي تجمع هذين الضلعين هي جيب تمام الزاوية $\\widehat{ABC}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالآلة الحاسبة مبرمجة على الدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = 8 \\times \\cos 40^{\\circ} \\approx 6{,}13\\,\\mathrm{cm}$ .",
+        "incorrect": "الطول المطلوب في بسط النسبة: نضرب الطول المعلوم في النسبة المثلثية ولا نقسم عليها؛ والآلة الحاسبة مبرمجة على الدرجة."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $ABC$ القائم في $A$ لدينا: $\\cos\\,\\widehat{ABC} = \\dfrac{AB}{BC}$",
+          "ومنه: $AB = BC \\times \\cos\\,\\widehat{ABC}$",
+          "$AB = 8 \\times \\cos 40^{\\circ}$",
+          "باستعمال الآلة الحاسبة: $AB \\approx 6{,}1284$"
+        ],
+        "result": "AB \\approx 6{,}13\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $AC$ بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm مدوّرا إلى 0,01",
+      "expectedAnswer": "5.14",
+      "misconceptionSignatures": [
+        {
+          "value": "6.13",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "12.45",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $ABC$ القائم في $A$ ، حدّد موقع الضلع المعلوم والضلع المطلوب بالنسبة إلى الزاوية $\\widehat{ABC}$ (مجاور، مقابل أو وتر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة التي تجمع هذين الضلعين هي جيب الزاوية $\\widehat{ABC}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالآلة الحاسبة مبرمجة على الدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC = 8 \\times \\sin 40^{\\circ} \\approx 5{,}14\\,\\mathrm{cm}$ .",
+        "incorrect": "الطول المطلوب في بسط النسبة: نضرب الطول المعلوم في النسبة المثلثية ولا نقسم عليها؛ والآلة الحاسبة مبرمجة على الدرجة."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $ABC$ القائم في $A$ لدينا: $\\sin\\,\\widehat{ABC} = \\dfrac{AC}{BC}$",
+          "ومنه: $AC = BC \\times \\sin\\,\\widehat{ABC}$",
+          "$AC = 8 \\times \\sin 40^{\\circ}$",
+          "باستعمال الآلة الحاسبة: $AC \\approx 5{,}1423$"
+        ],
+        "result": "AC \\approx 5{,}14\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

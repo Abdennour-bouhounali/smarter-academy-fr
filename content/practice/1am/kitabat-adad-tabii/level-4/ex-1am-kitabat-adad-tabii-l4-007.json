@@ -1,0 +1,228 @@
+{
+  "id": "ex-1am-kitabat-adad-tabii-l4-007",
+  "lessonCode": "kitabat-adad-tabii",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — حملة الأقلام التضامنية",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جمع",
+      "كتابة بالحروف",
+      "عدد العشرات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثالث",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نظّم نادي المتوسطة حملة تضامنية لجمع الأقلام لتلاميذ مدرسة جبلية: جُمع 1248 قلما في اليوم الأول و 1765 قلما في اليوم الثاني. تُربط الأقلام في حزم من 10 أقلام."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب عدد الأقلام المجموعة في اليومين.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3013",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تعطي المجموع؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز الجمع عموديا."
+        }
+      ],
+      "feedback": {
+        "correct": "$1248 + 1765 = 3013$.",
+        "incorrect": "نجمع عددي اليومين، مع الاحتفاظ بكل مرتبة."
+      },
+      "solution": {
+        "lines": [
+          "$1248 + 1765 = 3013$",
+          "جُمع 3013 قلما."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كيف يُقرأ العدد 3013؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "ثلاثة آلاف ومائة وثلاثون",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-RANK-NAME"
+        },
+        {
+          "id": "B",
+          "content": "ثلاثمائة وثلاثة عشر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-ZERO-PLACE"
+        },
+        {
+          "id": "C",
+          "content": "ثلاثة صفر واحد ثلاثة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-DIGIT-BY-DIGIT"
+        },
+        {
+          "id": "D",
+          "content": "ثلاثة آلاف وثلاثة عشر",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزّئ العدد إلى فئات من ثلاثة أرقام انطلاقا من اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ كل فئة كعدد أصغر من 1000 ثم اذكر اسم فئتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى المراتب الفارغة (الأصفار)."
+        }
+      ],
+      "feedback": {
+        "correct": "3013 يُقرأ « ثلاثة آلاف وثلاثة عشر ».",
+        "incorrect": "نجزّئ العدد إلى فئات من ثلاثة أرقام انطلاقا من اليمين، ثم نقرأ الفئات من اليسار، كل فئة باسمها."
+      },
+      "solution": {
+        "lines": [
+          "$3\\,|\\,013$",
+          "نقرأ فئة فئة: « ثلاثة آلاف وثلاثة عشر »."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كم حزمة كاملة من 10 أقلام نكوّن بـ 3013 قلما؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "301",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-KITABA-DIGIT-COUNT"
+        },
+        {
+          "value": "30",
+          "id": "MISC-KITABA-RANKSHIFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد العشرات هو عدد المجموعات من 10 التي نكوّنها من العدد كله، لا الرقم وحده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احذف الأرقام التي على يمين مرتبة العشرات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: اضرب جوابك في 10 ثم أضف ما بقي."
+        }
+      ],
+      "feedback": {
+        "correct": "$3013 = 301 \\times 10 + 3$: عدد العشرات هو 301، أمّا رقم العشرات فهو 1.",
+        "incorrect": "رقم المرتبة هو ما يبقى فيها وحدها؛ أمّا عدد وحداتها فنحسب فيه كل ما يمكن تجميعه منها في العدد كله."
+      },
+      "solution": {
+        "lines": [
+          "$3013 = 301 \\times 10 + 3$",
+          "إذن عدد العشرات في العدد 3013 هو 301، ورقم العشرات هو 1."
+        ],
+        "result": "301"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "كم قلما يبقى دون حزمة بعد ربط كل الحزم الممكنة؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حزمة تأخذ 10 أقلام."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما الذي يبقى في مرتبة الآحاد؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$3013 = 301 \\times 10 + 3$: يبقى 3 أقلام.",
+        "incorrect": "ما يبقى بعد ربط كل عشرة هو رقم الآحاد."
+      },
+      "solution": {
+        "lines": [
+          "$3013 = 301 \\times 10 + 3$",
+          "يبقى 3 أقلام."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "id": "ex-4am-zawiya-muhitiya-l2-008",
+  "lessonCode": "zawiya-muhitiya",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — حالة القطر",
+    "estimatedMinutes": 2,
+    "tags": [
+      "حالة القطر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_zawiya-muhitiya_P2",
+      "modelledOn": "qcm"
+    }
+  },
+  "statement": {
+    "content": "[BC] قطر لدائرة مركزها O، و A نقطة من الدائرة تختلف عن B و C."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قيس $\\widehat{BAC}$ بالدرجة؟",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "90",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوس الذي تحصره كل زاوية: هل هو نفس القوس؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الزاويتين: أيهما أكبر، المركزية أم المحيطية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قيس الزاوية المحيطية نصف قيس الزاوية المركزية التي تحصر معها نفس القوس."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{BOC} = 180^\\circ$ فـ $\\widehat{BAC} = 90^\\circ$ .",
+        "incorrect": "الزاوية المركزية هنا زاوية مستقيمة."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-MUSAWIYA",
+          "value": "180"
+        }
+      ]
+    }
+  ]
+}

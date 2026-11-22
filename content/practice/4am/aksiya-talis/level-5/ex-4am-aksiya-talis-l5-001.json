@@ -1,0 +1,343 @@
+{
+  "id": "ex-4am-aksiya-talis-l5-001",
+  "lessonCode": "aksiya-talis",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2009 — العارضة بين كابلي الجسر",
+    "estimatedMinutes": 22,
+    "tags": [
+      "وضعية إدماجية",
+      "الخاصية العكسية",
+      "جسر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_aksiya-talis_P1",
+      "modelledOn": "BEM 2009 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "حفاظًا على سلامة الراجلين، ولإنجاز جسر لهم فوق الطريق السريع، ثُبّت عمود شاقولي $[SH]$ ، وشُدّ من قمّته $S$ كابلان مستقيمان $[SA]$ و $[SB]$ إلى سطح الجسر، حيث النقط $H$ ، $B$ ، $A$ على استقامة واحدة ( $B$ بين $H$ و $A$ )، و $SA = 40\\,\\mathrm{m}$ ، $SB = 25\\,\\mathrm{m}$ و $AB = 25\\,\\mathrm{m}$ . يريد المهندس تثبيت عارضة حديدية $[MN]$ بين الكابلين، حيث $M$ من $[SA]$ و $N$ من $[SB]$ ، و $SM = 16\\,\\mathrm{m}$ و $SN = 10\\,\\mathrm{m}$ ، ويشترط أن تكون العارضة موازية لسطح الجسر (الشكل المقابل).",
+    "figure": {
+      "points": {
+        "H": [
+          0.0,
+          0.0
+        ],
+        "S": [
+          0.0,
+          24.0
+        ],
+        "A": [
+          32.0,
+          0.0
+        ],
+        "B": [
+          7.0,
+          0.0
+        ],
+        "M": [
+          12.8,
+          14.4
+        ],
+        "N": [
+          2.8,
+          14.4
+        ]
+      },
+      "segments": [
+        {
+          "from": "H",
+          "to": "S",
+          "bold": true
+        },
+        [
+          "H",
+          "B"
+        ],
+        {
+          "from": "B",
+          "to": "A",
+          "label": "25"
+        },
+        {
+          "from": "S",
+          "to": "M",
+          "label": "16"
+        },
+        [
+          "M",
+          "A"
+        ],
+        {
+          "from": "S",
+          "to": "N",
+          "label": "10"
+        },
+        [
+          "N",
+          "B"
+        ],
+        {
+          "from": "M",
+          "to": "N",
+          "tone": "amber"
+        }
+      ],
+      "rightAngles": [
+        [
+          "S",
+          "H",
+          "A"
+        ]
+      ],
+      "ariaLabel": "العمود [SH] شاقولي، الكابلان [SA] و [SB] مشدودان إلى سطح الجسر (AB)، والعارضة [MN] بين الكابلين؛ SM = 16 و SN = 10 و AB = 25",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب النسبة $\\dfrac{SM}{SA}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "2/5",
+      "misconceptionSignatures": [
+        {
+          "value": "5/2",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "2/3",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$SM$ و $SA$ طولان يُقاسان من النقطة $S$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $SM$ على $SA$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{SM}{SA} = \\dfrac{16}{40} = \\dfrac{2}{5}$ .",
+        "incorrect": "النسبة $\\dfrac{SM}{SA}$ : الطول $SM$ على الطول $SA$ ، وكلاهما من النقطة $S$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{SM}{SA} = \\dfrac{16}{40} = \\dfrac{2}{5}$"
+        ],
+        "result": "\\dfrac{SM}{SA} = \\dfrac{2}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب النسبة $\\dfrac{SN}{SB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "2/5",
+      "misconceptionSignatures": [
+        {
+          "value": "5/2",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "2/3",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$SN$ و $SB$ طولان يُقاسان من النقطة $S$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $SN$ على $SB$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{SN}{SB} = \\dfrac{10}{25} = \\dfrac{2}{5}$ .",
+        "incorrect": "النسبة $\\dfrac{SN}{SB}$ : الطول $SN$ على الطول $SB$ ، وكلاهما من النقطة $S$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{SN}{SB} = \\dfrac{10}{25} = \\dfrac{2}{5}$"
+        ],
+        "result": "\\dfrac{SN}{SB} = \\dfrac{2}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل العارضة $[MN]$ موازية لسطح الجسر $(AB)$ ؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النسبتين بقيمهما المضبوطة (الجداء المتصالب)، لا بقيم مقرّبة ولا بمظهر الشكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق أيضا من ترتيب النقط على المستقيمين المتقاطعين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{SM}{SA} = \\dfrac{SN}{SB} = 0{,}4$ والترتيب نفسه: العارضة موازية لسطح الجسر.",
+        "incorrect": "الخاصية العكسية تتطلب شرطين معا: تساوي النسبتين بقيم مضبوطة، وترتيب النقط نفسه على المستقيمين."
+      },
+      "solution": {
+        "lines": [
+          "بما أن النقط $S$ ، $M$ ، $A$ و $S$ ، $N$ ، $B$ في استقامية وبنفس الترتيب،",
+          "و بما أن: $\\dfrac{SM}{SA} = \\dfrac{SN}{SB} = \\dfrac{2}{5}$",
+          "فإن المستقيمين $(MN)$ و $(AB)$ متوازيان حسب خاصية طالس العكسية."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب طول العارضة $MN$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "62.5",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(MN) \\parallel (AB)$ : المثلثان $SMN$ و $SAB$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $\\dfrac{SM}{SA} = \\dfrac{MN}{AB}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$MN = \\dfrac{16 \\times 25}{40} = 10\\,\\mathrm{m}$ .",
+        "incorrect": "في كل نسبة: طول من المثلث الصغير على الطول الموافق له في المثلث الكبير."
+      },
+      "solution": {
+        "lines": [
+          "بما أن $(MN) \\parallel (AB)$ ، حسب خاصية طالس: $\\dfrac{SM}{SA} = \\dfrac{SN}{SB} = \\dfrac{MN}{AB}$",
+          "$\\dfrac{16}{40} = \\dfrac{MN}{25}$",
+          "$MN = \\dfrac{16 \\times 25}{40}$"
+        ],
+        "result": "MN = 10\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "☜ ثمن المتر الواحد من العارضة الحديدية $4500DA$ ، ومصاريف تركيبها $12000DA$ . ما تكلفة العارضة؟",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "57000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول العارضة من السؤال 03."
+        }
+      ],
+      "feedback": {
+        "correct": "$10 \\times 4500 + 12000 = 57000DA$ .",
+        "incorrect": "رتّب الحساب: الكمية اللازمة أولا، ثم اضربها في سعر الوحدة، ثم أضف المصاريف الثابتة إن وُجدت."
+      },
+      "solution": {
+        "lines": [
+          "ثمن العارضة: $10 \\times 4500 = 45000DA$",
+          "التكلفة: $45000 + 12000$"
+        ],
+        "result": "57000\\,DA"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

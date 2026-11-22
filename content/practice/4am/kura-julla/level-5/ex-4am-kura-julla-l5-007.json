@@ -1,0 +1,64 @@
+{
+  "id": "ex-4am-kura-julla-l5-007",
+  "lessonCode": "kura-julla",
+  "level": 5,
+  "metadata": {
+    "title": "وضعية — نقطة متناظرة الإحداثيات",
+    "estimatedMinutes": 5,
+    "tags": [
+      "معلم الفضاء",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_kura-julla_P4",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس للفضاء مبدؤه O، كرة مركزها O ونصف قطرها 9. النقطة $M(2a\\,;\\,a\\,;\\,2a)$ حيث $a > 0$ على هذه الكرة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قيمة a؟",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P4",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-KURA-MURABBA",
+          "value": "9"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$OM^2 = (2a)^2 + a^2 + (2a)^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بسّط: $OM^2 = 9a^2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حل $9a^2 = 81$ مع $a > 0$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$9a^2 = 81$ ، $a^2 = 9$ ، $a = 3$ .",
+        "incorrect": "المعادلة $OM^2 = R^2$ تُكتب بالمربعات."
+      }
+    }
+  ]
+}

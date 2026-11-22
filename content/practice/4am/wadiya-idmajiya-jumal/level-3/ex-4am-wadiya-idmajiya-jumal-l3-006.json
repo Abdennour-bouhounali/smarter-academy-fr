@@ -1,0 +1,139 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-jumal-l3-006",
+  "lessonCode": "wadiya-idmajiya-jumal",
+  "level": 3,
+  "metadata": {
+    "title": "محلّ المثلّجات",
+    "estimatedMinutes": 8,
+    "tags": [
+      "حل جملة",
+      "أثمان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-jumal_P1",
+      "modelledOn": "ex-22"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "في محلّ للمثلّجات قرب الثانوية، يحرص صاحبه على إتقان عمله: 3 مخروطات وكأسا عصير بـ 340DA، ومخروطان و 5 كؤوس عصير بـ 520DA.\nنسمّي $x$ سعر المخروط و $y$ سعر كأس العصير (بالدينار)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "حل الجملة $\\begin{cases} 3x + 2y = 340 \\\\ 2x + 5y = 520 \\end{cases}$ مبيّنا طريقة الحل.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": {
+        "x": "60",
+        "y": "80"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "80",
+            "y": "60"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا يوجد معامل يساوي 1: طريقة الجمع أنسب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب المعادلة الأولى في 5 والثانية في $-2$ لحذف $y$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع طرفا لطرف ثم عوّض لتجد $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الثنائية $(60 ; 80)$ تحقق المعادلتين معا: هي حل الجملة.",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} 3x + 2y = 340 & ...(1) \\\\ 2x + 5y = 520 & ...(2) \\end{cases}$",
+          "بضرب طرفي المعادلة (1) في العدد $5$ ، وبضرب طرفي المعادلة (2) في العدد $(-2)$ نجد:",
+          "$\\begin{cases} 15x + 10y = 1700 & ...(3) \\\\ -4x - 10y = -1040 & ...(4) \\end{cases}$",
+          "بجمع (3) و (4) طرفا لطرف نجد:",
+          "$11x = 660$",
+          "$x = 60$",
+          "بتعويض $x$ بـ $60$ في المعادلة (1) نجد: $3 \\times 60 + 2y = 340$",
+          "$2y = 160$",
+          "$y = 80$",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(60 ; 80)"
+      },
+      "work": "required",
+      "timeSeconds": 360
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم يدفع زبون اشترى مخروطين و 3 كؤوس عصير؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "360",
+      "misconceptionSignatures": [
+        {
+          "value": "340",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل السعرين اللذين وجدتهما في السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 60 + 3 \\times 80 = 360$ .",
+        "incorrect": "اضرب كل سعر في عدد القطع ثم اجمع."
+      },
+      "solution": {
+        "lines": [
+          "$2 \\times 60 + 3 \\times 80 = 120 + 240 = 360$",
+          "يدفع الزبون $360DA$ ."
+        ],
+        "result": "360\\,DA"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

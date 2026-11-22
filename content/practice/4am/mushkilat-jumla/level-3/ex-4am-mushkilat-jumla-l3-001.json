@@ -1,0 +1,176 @@
+{
+  "id": "ex-4am-mushkilat-jumla-l3-001",
+  "lessonCode": "mushkilat-jumla",
+  "level": 3,
+  "metadata": {
+    "title": "القطع النقدية: المراحل كاملة",
+    "estimatedMinutes": 14,
+    "tags": [
+      "ترييض",
+      "المراحل الخمس",
+      "قطع نقدية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "challenge",
+      "page": 55,
+      "section": "تحدّ"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتزيين قسمهم بروح التعاون، جمع التلاميذ مبلغ 610DA مُشكّلا من 37 قطعة نقدية من فئتي 20DA و 10DA. ما هو عدد القطع النقدية التي جمعها التلاميذ من كل فئة؟"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اختر المجهولين المناسبين، ثم ترجم المعطيات بجملة معادلتين.",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المجهولان هما ما يسأل عنه النص."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "معادلة لعدد القطع ومعادلة للمبلغ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "المطلوب: عدد القطع من كل فئة. نسمّي $x$ عدد القطع من فئة 20DA و $y$ عدد القطع من فئة 10DA.",
+          "عدد القطع: $x + y = 37$",
+          "المبلغ: $20x + 10y = 610$",
+          "ومنه الجملة: $\\begin{cases} x + y = 37 \\\\ 20x + 10y = 610 \\end{cases}$"
+        ],
+        "result": "\\begin{cases} x + y = 37 \\\\ 20x + 10y = 610 \\end{cases}"
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حل الجملة مبيّنا مراحل الحل.",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": {
+        "x": "24",
+        "y": "13"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "13",
+            "y": "24"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجعل معاملي $y$ متعاكسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب المعادلة الأولى في $10$ والثانية في $-1$ ، ثم اجمع طرفا لطرف."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد إيجاد $x$ عوّض في المعادلة الأولى."
+        }
+      ],
+      "feedback": {
+        "correct": "الثنائية $(24 ; 13)$ تحقق المعادلتين معا.",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} x + y = 37 & ...(1) \\\\ 20x + 10y = 610 & ...(2) \\end{cases}$",
+          "بضرب طرفي المعادلة (1) في العدد $10$ وطرفي المعادلة (2) في العدد $-1$ نجد:",
+          "$\\begin{cases} 10x + 10y = 370 \\\\ -20x - 10y = -610 \\end{cases}$",
+          "بجمع المعادلتين طرفا لطرف نجد: $-10x = -240$",
+          "ومنه: $x = \\dfrac{-240}{-10} = 24$",
+          "بتعويض قيمة $x$ في المعادلة (1) نجد: $24 + y = 37$",
+          "$y = 13$",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(24 ; 13)"
+      },
+      "work": "required",
+      "timeSeconds": 420
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "تحقّق من النتيجة في نص المشكلة، ثم أجب عن سؤال المشكلة بجملة.",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق في النص: عدد القطع ثم المبلغ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "عدد القطع: $24 + 13 = 37$ قطعة.",
+          "المبلغ: $20 \\times 24 + 10 \\times 13 = 480 + 130 = 610$ أي $610DA$ .",
+          "العددان طبيعيان ويحققان النص.",
+          "الجواب: جمع التلاميذ 24 قطعة من فئة 20DA و 13 قطعة من فئة 10DA."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

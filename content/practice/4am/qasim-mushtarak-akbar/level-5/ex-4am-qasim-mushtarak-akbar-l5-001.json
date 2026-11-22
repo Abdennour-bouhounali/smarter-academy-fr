@@ -1,0 +1,278 @@
+{
+  "id": "ex-4am-qasim-mushtarak-akbar-l5-001",
+  "lessonCode": "qasim-mushtarak-akbar",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2022 — محافظ مدرسية بالمدية",
+    "estimatedMinutes": 14,
+    "tags": [
+      "PGCD",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-mushtarak-akbar_P3",
+      "modelledOn": "BEM 2022 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "بمناسبة الدخول المدرسي، جمعت جمعية خيرية بالمدية 252 كراسًا و 180 قلمًا لفائدة تلاميذ العائلات المعوزة، وتريد توزيعها كلها في محافظ متماثلة (أي في كل محفظة نفس عدد الكراريس ونفس عدد الأقلام) دون أن يبقى شيء.\n• تشتري الجمعية الكراريس بـ 45DA للكراس الواحد، والأقلام بـ 25DA للقلم الواحد، والمحافظ الفارغة بـ 850DA للمحفظة الواحدة.\n• تملك الجمعية 50000DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما هو أكبر عدد من المحافظ التي يمكن تحضيرها ؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد المحافظ)",
+      "expectedAnswer": "36",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        },
+        {
+          "value": "18",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد المحافظ يجب أن يقسم 252 و 180 معًا: فهو قاسم مشترك لهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب قواسم 252 وقواسم 180، ثم استخرج القواسم المشتركة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أكبر عدد ممكن هو أكبر هذه القواسم المشتركة."
+        }
+      ],
+      "feedback": {
+        "correct": "أكبر عدد من المحافظ هو PGCD(252 ; 180).",
+        "incorrect": "عدد المحافظ قاسم مشترك للعددين 252 و 180؛ والمطلوب أكبرها، لا محتوى الواحدة منها."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 252 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 7 ، 9 ، 12 ، 14 ، 18 ، 21 ، 28 ، 36 ، 42 ، 63 ، 84 ، 126 ، 252",
+          "قواسم العدد 180 هي: 1 ، 2 ، 3 ، 4 ، 5 ، 6 ، 9 ، 10 ، 12 ، 15 ، 18 ، 20 ، 30 ، 36 ، 45 ، 60 ، 90 ، 180",
+          "القواسم المشتركة للعددين 252 و 180 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 9 ، 12 ، 18 ، 36",
+          "أكبرها هو 36، إذن أكبر عدد من المحافظ هو PGCD(252 ; 180) = 36."
+        ],
+        "result": "PGCD(252 ; 180) = 36"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما هو عدد الكراريس في كل محفظة ؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "36",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع الكراريس كلها بالتساوي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 252 على العدد الذي وجدته في السؤال السابق."
+        }
+      ],
+      "feedback": {
+        "correct": "$252 \\div 36 = 7$",
+        "incorrect": "اقسم العدد الكلي (252) على أكبر عدد وجدته."
+      },
+      "solution": {
+        "lines": [
+          "$252 \\div 36 = 7$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما هو عدد الأقلام في كل محفظة ؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "36",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع الأقلام كلها بالتساوي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 180 على العدد الذي وجدته في السؤال السابق."
+        }
+      ],
+      "feedback": {
+        "correct": "$180 \\div 36 = 5$",
+        "incorrect": "اقسم العدد الكلي (180) على أكبر عدد وجدته."
+      },
+      "solution": {
+        "lines": [
+          "$180 \\div 36 = 5$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "اقترح أحد الأعضاء توزيع الأدوات كلها، بالطريقة نفسها، على 12 تلميذًا فقط. هل هذا ممكن ؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P4",
+          "role": "primary"
+        },
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يكون ذلك ممكنًا إذا كان 12 قاسمًا مشتركًا للعددين 252 و 180."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القواسم المشتركة لعددين هي قواسم قاسمهما المشترك الأكبر: هل 12 يقسم العدد الذي وجدته في السؤال 01؟"
+        }
+      ],
+      "feedback": {
+        "correct": "12 يقسم 36، فهو قاسم مشترك للعددين 252 و 180.",
+        "incorrect": "استعمل الملاحظة: كل قاسم للقاسم المشترك الأكبر قاسم مشترك للعددين."
+      },
+      "solution": {
+        "lines": [
+          "القواسم المشتركة للعددين 252 و 180 هي قواسم PGCD(252 ; 180) = 36 .",
+          "$36 = 12 \\times 3$: العدد 12 يقسم 36، فهو قاسم مشترك للعددين 252 و 180،",
+          "إذن يمكن ذلك: $252 \\div 12 = 21$ كراسًا و $180 \\div 12 = 15$ قلمًا لكل تلميذ."
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "☜ هل يكفي المبلغ الذي تملكه الجمعية لتجهيز أكبر عدد ممكن من المحافظ ؟ أعط المبلغ المتبقي.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (المبلغ المتبقي بالدينار)",
+      "expectedAnswer": "3560",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب ثمن الكراريس ثم ثمن الأقلام ثم ثمن المحافظ الفارغة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المصاريف، ثم قارنها بالمبلغ الذي تملكه الجمعية."
+        }
+      ],
+      "feedback": {
+        "correct": "المصاريف 46440DA، وهي أقل من 50000DA.",
+        "incorrect": "عدد المحافظ هو أكبر عدد وجدته في السؤال 01؛ اجمع المصاريف الثلاث ثم اطرحها من 50000DA."
+      },
+      "solution": {
+        "lines": [
+          "ثمن الكراريس: $252 \\times 45 = 11340$",
+          "ثمن الأقلام: $180 \\times 25 = 4500$",
+          "ثمن المحافظ: $36 \\times 850 = 30600$",
+          "المجموع: $11340 + 4500 + 30600 = 46440$",
+          "$46440 < 50000$: المبلغ يكفي، والمتبقي $50000 - 46440 = 3560$"
+        ],
+        "result": "3560DA"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

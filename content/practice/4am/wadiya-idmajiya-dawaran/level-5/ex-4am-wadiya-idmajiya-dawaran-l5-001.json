@@ -1,0 +1,223 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-dawaran-l5-001",
+  "lessonCode": "wadiya-idmajiya-dawaran",
+  "level": 5,
+  "metadata": {
+    "title": "أدمج تعلّماتي — الوضعية كاملة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "المضلع المنتظم",
+      "الدوران",
+      "المسافة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "situation",
+      "page": 160,
+      "section": "أدمج تعلّماتي"
+    }
+  },
+  "statement": {
+    "content": "لإضافة لمسة جمالية على الحديقة العمومية للبلدية ارتأت المصلحة المعنية تخصيص حيّز دائريّ نصف قطره 3m لغرس الأزهار على أن تحيط به 6 أعمدة كهربائية متباعدة بنفس المسافة. اقترح مخططا لوضع هذه الأعمدة على محيط الحيز، مُحدّدا المسافة بين كل عمودين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "قراءة الوضعية: الأعمدة هي رؤوس:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "سداسي منتظم ضلعه $6\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-DAIRA-QUTR"
+        },
+        {
+          "id": "B",
+          "content": "خماسي منتظم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-AMDA"
+        },
+        {
+          "id": "C",
+          "content": "سداسي منتظم محاط بدائرة الحيّز",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الأعمدة على محيط الحيّز."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "متباعدة بنفس المسافة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نقط متباعدة بانتظام على دائرة: مضلع منتظم."
+        }
+      ],
+      "feedback": {
+        "correct": "سداسي منتظم محاط بالدائرة التي نصف قطرها $3\\,\\mathrm{m}$ .",
+        "incorrect": "ستة أعمدة على دائرة مغلقة تحدّد ستة أقواس متقايسة."
+      },
+      "cognitiveDemand": "recall",
+      "difficulty": 5
+    },
+    {
+      "id": "q2",
+      "statement": "زاوية الدوران الذي يحوّل كل عمود إلى الموالي (بالدرجة):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "60",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مركز الدوران مركز الحيّز."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ستة أقواس متقايسة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الدورة الكاملة على 6."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{360^\\circ}{6} = 60^\\circ$ .",
+        "incorrect": "زاوية الدوران هي الزاوية المركزية."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "72",
+          "id": "MISC-MUNTAZAM-AMDA"
+        },
+        {
+          "value": "120",
+          "id": "MISC-MUNTAZAM-MARKAZIYA"
+        }
+      ],
+      "difficulty": 5
+    },
+    {
+      "id": "q3",
+      "statement": "المسافة بين عمودين متتاليين (بالمتر):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالمتر)",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث الذي رأسه المركز ورأساه عمودان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "متساوي الساقين وزاويته الرئيسية $60^\\circ$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "هو متقايس الأضلاع."
+        }
+      ],
+      "feedback": {
+        "correct": "المثلث متقايس الأضلاع: المسافة = نصف القطر = $3\\,\\mathrm{m}$ .",
+        "incorrect": "زوايا المثلث كلها $60^\\circ$ : أضلاعه متقايسة."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "3.14",
+          "id": "MISC-MUNTAZAM-QAWS-WATAR"
+        },
+        {
+          "value": "6",
+          "id": "MISC-MAALAM-DAIRA-QUTR"
+        }
+      ],
+      "difficulty": 5
+    },
+    {
+      "id": "q4",
+      "statement": "المخطط بالمقياس $1\\,\\mathrm{cm}$ لكل $1\\,\\mathrm{m}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "دائرة نصف قطرها $3\\,\\mathrm{cm}$ ، نحمل عليها بالمدوّر بفتحة $6\\,\\mathrm{cm}$ ست نقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-DAIRA-QUTR"
+        },
+        {
+          "id": "B",
+          "content": "دائرة نصف قطرها $3\\,\\mathrm{cm}$ ، نحمل عليها بالمدوّر بنفس الفتحة $3\\,\\mathrm{cm}$ ست نقط متتالية",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "دائرة نصف قطرها $6\\,\\mathrm{cm}$ ، ونقسمها بالمنقلة إلى زوايا $72^\\circ$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-AMDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المقياس: المتر يُمثَّل بسنتيمتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة بين عمودين تساوي نصف القطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "فتحة المدوّر = نصف القطر على المخطط."
+        }
+      ],
+      "feedback": {
+        "correct": "نصف القطر $3\\,\\mathrm{cm}$ وفتحة المدوّر $3\\,\\mathrm{cm}$ : ست حملات تعيدنا إلى النقطة الأولى.",
+        "incorrect": "ضلع السداسي يساوي نصف القطر، والزاوية المركزية $60^\\circ$ ."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 5
+    }
+  ]
+}

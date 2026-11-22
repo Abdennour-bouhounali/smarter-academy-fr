@@ -1,0 +1,168 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l2-002",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أكياس الدقيق: قيمتان إلى 0,1 ثم تبرير",
+    "estimatedMinutes": 5,
+    "tags": [
+      "قيم مقرّبة",
+      "برّر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يوزّع مخبز الحيّ $25$ kg من الدقيق بالتساوي على $3$ أكياس، وتُكتب كتلة الكيس الواحد $\\dfrac{25}{3}$ kg ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}1$ بالنقصان لكتلة الكيس الواحد (بالكيلوغرام).",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "8.3",
+      "misconceptionSignatures": [
+        {
+          "value": "8.4",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "8.33",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالنقصان لا تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة دون أن تزيد شيئًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب القيمة في المقسوم عليه: يجب ألاّ يتجاوز الجداء المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$8{,}3 < \\frac{25}{3} < 8{,}4$.",
+        "incorrect": "بالنقصان: نحتفظ بالأرقام حتى الرتبة المطلوبة ونُهمل ما بعدها دون تغيير الرقم الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 8{,}3 = 24{,}9$",
+          "$3 \\times 8{,}4 = 25{,}2$",
+          "$24{,}9 < 25 < 25{,}2$"
+        ],
+        "result": "8{,}3"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "وأعط القيمة المقرّبة إلى $0{,}1$ بالزيادة.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "8.4",
+      "misconceptionSignatures": [
+        {
+          "value": "8.3",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "8.34",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالزيادة هي أصغر قيمة من هذه الرتبة تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من القيمة بالنقصان ثم أضف وحدة واحدة من الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$8{,}3 < \\frac{25}{3} < 8{,}4$.",
+        "incorrect": "بالزيادة: هي القيمة التي تلي القيمة بالنقصان مباشرة في الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 8{,}4 = 25{,}2$",
+          "$25{,}2 > 25$",
+          "القيمة بالزيادة هي $8{,}4$"
+        ],
+        "result": "8{,}4"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "برّر أنّ العدد $8{,}3$ ليس القيمة المضبوطة لكتلة الكيس الواحد.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب جملة أو جملتين: الفكرة ثم الحساب الذي يدعمها."
+        }
+      ],
+      "feedback": {
+        "correct": "إذن $8{,}3$ قيمة مقرّبة بالنقصان فقط: $8{,}3 < \\dfrac{25}{3} < 8{,}4$.",
+        "incorrect": "قارن تبريرك بالحلّ النموذجي: الفكرة ثم الحساب الذي يدعمها."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 8{,}3 = 24{,}9 \\neq 25$",
+          "إذن $8{,}3$ قيمة مقرّبة بالنقصان فقط: $8{,}3 < \\dfrac{25}{3} < 8{,}4$."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

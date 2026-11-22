@@ -1,0 +1,267 @@
+{
+  "id": "ex-3am-jidaa-adadayn-nisbiyayn-l4-002",
+  "lessonCode": "jidaa-adadayn-nisbiyayn",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — جدول الجداءات",
+    "estimatedMinutes": 9,
+    "tags": [
+      "تبرير",
+      "نمط عددي",
+      "قاعدة الإشارات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نكتب الجداءات الآتية في جدول:",
+    "formulas": [
+      "(−5) \\times 3 = −15",
+      "(−5) \\times 2 = −10",
+      "(−5) \\times 1 = −5",
+      "(−5) \\times 0 = 0"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "نلاحظ نمطًا.",
+      "statement": "كلّما نقص العامل الثاني بـ 1 ازداد الجداء بكم؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "-5",
+          "id": "MISC-JIDAA-NEGNEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الخاصية التوزيعية للضرب على الجمع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أحد العددين المجموعين هو معاكس الآخر، فمجموعهما معدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الضرب في 0 يعطي 0 دائمًا."
+        }
+      ],
+      "feedback": {
+        "correct": "من $−5$ إلى $0$ زاد الجداء بـ 5، وهكذا في كل خطوة.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "$−15 \\to −10 \\to −5 \\to 0$ : الجداء يزداد بـ 5 في كل خطوة."
+        ],
+        "result": "5"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "نواصل الجدول بالنمط نفسه.",
+      "statement": "احسب $(−5) \\times (−1)$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "-5",
+          "id": "MISC-JIDAA-NEGNEG"
+        },
+        {
+          "value": "-6",
+          "id": "MISC-JIDAA-ADD"
+        },
+        {
+          "value": "4",
+          "id": "MISC-JIDAA-SUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الخاصية التوزيعية للضرب على الجمع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أحد العددين المجموعين هو معاكس الآخر، فمجموعهما معدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الضرب في 0 يعطي 0 دائمًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−5) \\times (−1) = 5$ : العاملان سالبان، إذن الجداء موجب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العاملان سالبان، إذن الجداء موجب.",
+          "$5 \\times 1 = 5$",
+          "$(−5) \\times (−1) = 5$"
+        ],
+        "result": "5"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب $(−5) \\times (−2)$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "-10",
+          "id": "MISC-JIDAA-NEGNEG"
+        },
+        {
+          "value": "-7",
+          "id": "MISC-JIDAA-ADD"
+        },
+        {
+          "value": "3",
+          "id": "MISC-JIDAA-SUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الخاصية التوزيعية للضرب على الجمع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أحد العددين المجموعين هو معاكس الآخر، فمجموعهما معدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الضرب في 0 يعطي 0 دائمًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−5) \\times (−2) = 10$ : العاملان سالبان، إذن الجداء موجب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العاملان سالبان، إذن الجداء موجب.",
+          "$5 \\times 2 = 10$",
+          "$(−5) \\times (−2) = 10$"
+        ],
+        "result": "10"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "احسب $(−5) \\times (−3)$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "-15",
+          "id": "MISC-JIDAA-NEGNEG"
+        },
+        {
+          "value": "-8",
+          "id": "MISC-JIDAA-ADD"
+        },
+        {
+          "value": "2",
+          "id": "MISC-JIDAA-SUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الخاصية التوزيعية للضرب على الجمع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أحد العددين المجموعين هو معاكس الآخر، فمجموعهما معدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الضرب في 0 يعطي 0 دائمًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−5) \\times (−3) = 15$ : العاملان سالبان، إذن الجداء موجب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العاملان سالبان، إذن الجداء موجب.",
+          "$5 \\times 3 = 15$",
+          "$(−5) \\times (−3) = 15$"
+        ],
+        "result": "15"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

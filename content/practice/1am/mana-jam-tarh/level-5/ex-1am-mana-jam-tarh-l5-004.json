@@ -1,0 +1,285 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l5-004",
+  "lessonCode": "mana-jam-tarh",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — يوم تطوّعي في الحيّ",
+    "estimatedMinutes": 18,
+    "tags": [
+      "باقٍ",
+      "هل يكفي المبلغ",
+      "مجموع"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 1,
+      "file": "1am-s1-106",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "خصّصت جمعية الحيّ مبلغ 40000 دج لتنظيم يوم تطوّعي لتنظيف الحيّ وتشجيره.\nالجزء الأول: اشترت الجمعية 60 شتلة سعر الواحدة 425,5 دج، و 100 كيس قمامة سعر الواحد 38,75 دج.\nالجزء الثاني: قرّرت الجمعية تصوير اليوم التطوّعي، والمصوّر يطلب 8500 دج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب ثمن الشتلات.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "25530",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الشتلات × سعر الشتلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$60 \\times 425{,}5 = 25530$ دج.",
+        "incorrect": "اضرب عدد الشتلات في سعر الشتلة الواحدة."
+      },
+      "solution": {
+        "lines": [
+          "$60 \\times 425{,}5 = 25530$"
+        ],
+        "result": "25530 \\text{ DA}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب ثمن أكياس القمامة.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "3875",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الضرب في 100 يزيح الفاصلة منزلتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$100 \\times 38{,}75 = 3875$ دج.",
+        "incorrect": "اضرب سعر الكيس في 100."
+      },
+      "solution": {
+        "lines": [
+          "$38{,}75 \\times 100 = 3875$"
+        ],
+        "result": "3875 \\text{ DA}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب ما صرفته الجمعية في الجزء الأول.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "29405",
+      "misconceptionSignatures": [
+        {
+          "value": "25530",
+          "id": "MISC-JAMTARH-JUZ-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المصروف = ثمن الشتلات + ثمن الأكياس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كل ثمن ثم اجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$25530 + 3875 = 29405$ دج.",
+        "incorrect": "اجمع ثمن الشتلات وثمن الأكياس."
+      },
+      "solution": {
+        "lines": [
+          "$25530 + 3875 = 29405$"
+        ],
+        "result": "29405 \\text{ DA}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب المبلغ المتبقي مع الجمعية بعد الجزء الأول.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "10595",
+      "misconceptionSignatures": [
+        {
+          "value": "69405",
+          "id": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ المخصّص هو الكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المتبقي جزء: نطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$40000 - 29405 = 10595$ دج.",
+        "incorrect": "المتبقي جزء من المبلغ المخصّص: اطرح المصروف منه."
+      },
+      "solution": {
+        "lines": [
+          "$40000 - 29405 = 10595$"
+        ],
+        "result": "10595 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "هل يكفي المبلغ المتبقي لدفع أجرة المصوّر؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المبلغ المتبقي بأجرة المصوّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب المتبقي بدقة أولًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$10595 > 8500$: المبلغ يكفي.",
+        "incorrect": "احسب المتبقي بعد الجزء الأول ثم قارنه بـ 8500 دج."
+      },
+      "solution": {
+        "lines": [
+          "المبلغ المتبقي 10595 دج.",
+          "$10595 > 8500$ ، إذن يكفي لأجرة المصوّر."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "كم كلّف هذا اليوم التطوّعي الجمعية في المجموع؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "37905",
+      "misconceptionSignatures": [
+        {
+          "value": "29405",
+          "id": "MISC-JAMTARH-JUZ-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكلفة الكلية تضمّ الجزأين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أضف أجرة المصوّر إلى المصروف في الجزء الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "$29405 + 8500 = 37905$ دج.",
+        "incorrect": "لا تنسَ أجرة المصوّر."
+      },
+      "solution": {
+        "lines": [
+          "$29405 + 8500 = 37905$"
+        ],
+        "result": "37905 \\text{ DA}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

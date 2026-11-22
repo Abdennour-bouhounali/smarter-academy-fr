@@ -1,0 +1,229 @@
+{
+  "id": "ex-3am-nashr-jabri-3am-l4-009",
+  "lessonCode": "nashr-jabri-3am",
+  "level": 4,
+  "metadata": {
+    "title": "جداءان متتاليان يفصل بينهما عدد واحد",
+    "estimatedMinutes": 8,
+    "tags": [
+      "نشر",
+      "تخمين",
+      "حساب ذهني"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-46",
+      "page": 67,
+      "section": "أتعمّق",
+      "number": 46
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر المساويات: $7 \\times 9 = 8^2 - 1$ ، $4 \\times 6 = 5^2 - 1$ ، $1 \\times 3 = 2^2 - 1$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "نلاحظ: $7 \\times 9 = 8^2 - 1$ و $4 \\times 6 = 5^2 - 1$ .",
+      "statement": "تحقّق أنّ $7 \\times 9 = 8^2 - 1$ : احسب $8^2 - 1$ .",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "63",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى واحترم أولويات العمليات والإشارات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القوسين أولًا، ثم الجداءات، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يمكنك التعويض في الشكل المبسّط، ثم تحقّق بالتعويض في الشكل الأصلي."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل $x = 8$ القيمة هي $63$ .",
+        "incorrect": "عوّض $x$ بالعدد المعطى واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$8^2 - 1 = 63 = 7 \\times 9$ ✓"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "انشر ثم بسّط $(x - 1)(x + 1)$ . الشكل الصحيح هو:",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x^2 - 1$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$x^2 + 1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-SIGN-NEG"
+        },
+        {
+          "id": "C",
+          "content": "$x^2 + x - 1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-PRODUCT-MISSING"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني: أربعة جداءات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات الأربعة واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء الأصلي وفي النتيجة: يجب أن تجد العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$x^2 - 1$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$(x - 1)(x + 1)$",
+          "$x \\times x + x \\times 1 - 1 \\times x - 1 \\times 1$",
+          "$x^2 - 1$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "استنتج ذهنيًّا $4999 \\times 5001$ (فكّر في $x = 5000$ ).",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "24999999",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني: أربعة جداءات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات الأربعة واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء الأصلي وفي النتيجة: يجب أن تجد العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$4999 \\times 5001 = 24999999$ .",
+        "incorrect": "عوّض $x$ بالعدد المعطى واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$4999 \\times 5001 = (5000 - 1)(5000 + 1) = 5000^2 - 1 = 24999999$"
+        ]
+      },
+      "timeSeconds": 90,
+      "misconceptionSignatures": [
+        {
+          "value": "25000001",
+          "id": "MISC-NASHR-SIGN-NEG"
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "تقول فاطمة: « $99998 \\times 100000 = 99999^2 - 1$ ». لماذا هي متأكدة من ذلك؟",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني: أربعة جداءات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات الأربعة واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء الأصلي وفي النتيجة: يجب أن تجد العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "نضع $n = 99999$ ، فيكون $99998 = n - 1$ و $100000 = n + 1$ .",
+          "$(n - 1)(n + 1) = n^2 + n - n - 1 = n^2 - 1$ مهما كان $n$ .",
+          "إذن $99998 \\times 100000 = 99999^2 - 1$ ."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

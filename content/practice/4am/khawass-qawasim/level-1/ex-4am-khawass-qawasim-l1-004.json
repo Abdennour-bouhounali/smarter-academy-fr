@@ -1,0 +1,70 @@
+{
+  "id": "ex-4am-khawass-qawasim-l1-004",
+  "lessonCode": "khawass-qawasim",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2009 — الفرق 1430 − 559",
+    "estimatedMinutes": 3,
+    "tags": [
+      "خاصية 1"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_khawass-qawasim_P1",
+      "modelledOn": "BEM 2009 I-4 02"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعلم أن: $1430 = 13 \\times 110$ و $559 = 13 \\times 43$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب $1430 - 559$ على الشكل $13 \\times k$ حيث $k$ عدد طبيعي، دون إجراء الطرح.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k$ فقط (عدد طبيعي)",
+      "expectedAnswer": "67",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الكتابتين $1430 = 13 \\times 110$ و $559 = 13 \\times 43$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرج 13 عاملًا مشتركًا: $13 \\times q - 13 \\times q' = 13 \\times (q - q')$."
+        }
+      ],
+      "feedback": {
+        "correct": "$1430 - 559 = 13 \\times (110 - 43) = 13 \\times 67$.",
+        "incorrect": "القاسم المشترك لعددين يقسم فرقهما: اكتب كلا من العددين على الشكل $13 \\times q$ ثم أخرج 13 عاملًا مشتركًا."
+      },
+      "solution": {
+        "lines": [
+          "$1430 - 559 = 13 \\times 110 - 13 \\times 43$",
+          "$1430 - 559 = 13 \\times (110 - 43)$",
+          "$1430 - 559 = 13 \\times 67$ ، إذن 13 يقسم $1430 - 559$."
+        ],
+        "result": "1430 - 559 = 13 \\times 67"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

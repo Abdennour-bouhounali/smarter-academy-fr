@@ -1,0 +1,289 @@
+{
+  "id": "ex-4am-hall-jabri-l5-003",
+  "lessonCode": "hall-jabri",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2007 — سيارات الأجرة بين ورقلة وتقرت",
+    "estimatedMinutes": 18,
+    "tags": [
+      "جملة",
+      "وضعية",
+      "تسعيرة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_hall-jabri_P2",
+      "modelledOn": "BEM 2007 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2007",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تطبّق شركة لسيارات الأجرة بورقلة، يعرف سائقوها بالأمانة مع الزبائن، تسعيرة تتكوّن من مبلغ ثابت عند الانطلاق، يضاف إليه ثمن كل كيلومتر مقطوع.\nدفع مسافر 1590DA مقابل رحلة طولها $160km$ ، ودفع مسافر آخر 1950DA مقابل رحلة طولها $200km$ .\nنسمّي $x$ ثمن الكيلومتر الواحد و $y$ المبلغ الثابت (بالدينار)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ترجم المعطيات بجملة معادلتين مجهولاها $x$ و $y$ .",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب معادلة لكل معلومة من النص."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "الرحلة الأولى: $160x + y = 1590$",
+          "الرحلة الثانية: $200x + y = 1950$",
+          "ومنه الجملة: $\\begin{cases} 160x + y = 1590 \\\\ 200x + y = 1950 \\end{cases}$"
+        ],
+        "result": "\\begin{cases} 160x + y = 1590 \\\\ 200x + y = 1950 \\end{cases}"
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حل الجملة: $\\begin{cases} 160x + y = 1590 \\\\ 200x + y = 1950 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hall-jabri_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": {
+        "x": "9",
+        "y": "150"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "150",
+            "y": "9"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن معاملي $y$ في المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "معاملا $y$ متساويان: اضرب إحدى المعادلتين في $-1$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع المعادلتين طرفا لطرف، ثم عوّض القيمة في إحدى المعادلتين لتجد المجهول الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "الثنائية $(9 ; 150)$ تحقق المعادلتين معا: هي حل الجملة.",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "نضرب طرفي المعادلة (1) في $-1$ :",
+          "$\\begin{cases} -160x - y = -1590 \\\\ 200x + y = 1950 \\end{cases}$",
+          "بجمع المعادلتين طرفا لطرف نجد: $40x = 360$",
+          "ومنه $x = 9$",
+          "نعوّض $x$ بـ $9$ في المعادلة (1): $160 \\times 9 + y = 1590$",
+          "ومنه $y = 150$",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(9 ; 150)"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "lead": "تقترح شركة ثانية تسعيرة 11DA للكيلومتر الواحد دون مبلغ ثابت.",
+      "statement": "احسب ثمن رحلة طولها $120km$ لدى الشركة الأولى.",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب الثمن بـ DA (عدد فقط)",
+      "expectedAnswer": "1230",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل ثمن الكيلومتر والمبلغ الثابت من السؤال 02."
+        }
+      ],
+      "feedback": {
+        "correct": "$9 \\times 120 + 150 = 1230$ .",
+        "incorrect": "الثمن = ثمن الكيلومتر × المسافة + المبلغ الثابت."
+      },
+      "solution": {
+        "lines": [
+          "الشركة الأولى: $9 \\times 120 + 150 = 1230$ ، أي $1230DA$ .",
+          "الشركة الثانية: $11 \\times 120 = 1320$ ، أي $1320DA$ ."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "statement": "احسب ثمن الرحلة نفسها لدى الشركة الثانية.",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب الثمن بـ DA (عدد فقط)",
+      "expectedAnswer": "1320",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا يوجد مبلغ ثابت في الشركة الثانية."
+        }
+      ],
+      "feedback": {
+        "correct": "$11 \\times 120 = 1320$ .",
+        "incorrect": "اضرب المسافة في 11DA."
+      },
+      "solution": {
+        "lines": [
+          "الشركة الأولى: $9 \\times 120 + 150 = 1230$ ، أي $1230DA$ .",
+          "الشركة الثانية: $11 \\times 120 = 1320$ ، أي $1320DA$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "جد طول الرحلة التي تكون من أجلها التكلفة نفسها لدى الشركتين.",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب الطول بـ km (عدد فقط)",
+      "expectedAnswer": "75",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب تكلفة رحلة طولها $d$ لدى كل شركة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ساوِ بين التكلفتين ثم حل المعادلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$9d + 150 = 11d$ ومنه $d = 75$ .",
+        "incorrect": "ساوِ بين $9d + 150$ و $11d$ ."
+      },
+      "solution": {
+        "lines": [
+          "نسمّي $d$ طول الرحلة: $9d + 150 = 11d$",
+          "$9d - 11d = -150$ أي $-2d = -150$",
+          "ومنه $d = 75$ : من أجل $75km$ تتساوى التكلفتان."
+        ],
+        "result": "d = 75\\,km"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "☜ أراد مسافر قطع مسافة $60km$ . أيّ الشركتين أقل تكلفة له؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الشركة الأولى",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "الشركة الثانية",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب ثمن الرحلة لدى كل شركة."
+        }
+      ],
+      "feedback": {
+        "correct": "$690DA$ لدى الأولى مقابل $660DA$ لدى الثانية.",
+        "incorrect": "احسب الثمنين ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "الشركة الأولى: $9 \\times 60 + 150 = 690$ ، أي $690DA$ .",
+          "الشركة الثانية: $11 \\times 60 = 660$ ، أي $660DA$ .",
+          "ومنه الشركة الثانية أقل تكلفة (المسافة أقل من $75km$ )."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

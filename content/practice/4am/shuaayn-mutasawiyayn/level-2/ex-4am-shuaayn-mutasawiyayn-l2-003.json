@@ -1,0 +1,151 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l2-003",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 2,
+  "metadata": {
+    "title": "نشاط 2 ب — الشعاعان AC و DB",
+    "estimatedMinutes": 3,
+    "tags": [
+      "نقط على استقامة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-2",
+      "page": 129,
+      "section": "أنشطة",
+      "number": 2
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 129): A، B، C، D، O نقط من المستقيم (d) كما في الشكل، حيث CA = DB و AO = OD.",
+    "figure": {
+      "points": {
+        "C": [
+          -3,
+          0
+        ],
+        "A": [
+          -1,
+          0
+        ],
+        "O": [
+          0,
+          0
+        ],
+        "D": [
+          1,
+          0
+        ],
+        "B": [
+          3,
+          0
+        ],
+        "e1": [
+          -3.8,
+          0
+        ],
+        "e2": [
+          3.8,
+          0
+        ]
+      },
+      "segments": [
+        {
+          "from": "e1",
+          "to": "C"
+        },
+        {
+          "from": "C",
+          "to": "A",
+          "ticks": 1
+        },
+        {
+          "from": "A",
+          "to": "O",
+          "ticks": 2
+        },
+        {
+          "from": "O",
+          "to": "D",
+          "ticks": 2
+        },
+        {
+          "from": "D",
+          "to": "B",
+          "ticks": 1
+        },
+        {
+          "from": "B",
+          "to": "e2"
+        }
+      ],
+      "hidden": [
+        "e1",
+        "e2"
+      ],
+      "labels": {
+        "C": "s",
+        "A": "s",
+        "O": "s",
+        "D": "s",
+        "B": "s"
+      },
+      "ariaLabel": "المستقيم (d) عليه بالترتيب من اليسار C ثم A ثم O ثم D ثم B، مع CA = DB و AO = OD",
+      "maxWidth": 440
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "قارن بين الشعاعين AC و DB:",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "متساويان لأن AC = DB",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TUL-FAQAT"
+        },
+        {
+          "id": "B",
+          "content": "ليس لهما نفس المنحى",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MANHA-MUSTAQIM"
+        },
+        {
+          "id": "C",
+          "content": "لهما نفس المنحى ونفس الطول واتجاهان متعاكسان",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الشعاعان على المستقيم (d) نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من A إلى C نسير نحو اليسار؛ من D إلى B نحو اليمين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن المنحى ثم الاتجاه ثم الطول."
+        }
+      ],
+      "feedback": {
+        "correct": "المنحى واحد (المستقيم (d)) والطولان متساويان، لكن الاتجاهين متعاكسان: الشعاعان غير متساويين.",
+        "incorrect": "الطول وحده لا يكفي: قارن الاتجاهين."
+      }
+    }
+  ]
+}

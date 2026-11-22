@@ -1,0 +1,188 @@
+{
+  "id": "ex-3am-jam-tarh-kasrayn-l2-009",
+  "lessonCode": "jam-tarh-kasrayn",
+  "level": 2,
+  "metadata": {
+    "title": "أؤكّد تعلّماتي: عدّة صيغ للعدد نفسه",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جمع كسرين",
+      "طرح كسرين"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "self-3",
+      "page": 33,
+      "section": "أؤكّد تعلّماتي",
+      "number": 3
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اختر كلّ الإجابات الصحيحة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "العدد $\\dfrac{17}{24}$ هو نتيجة :",
+      "learningPoints": [
+        {
+          "code": "3am_jam-tarh-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "multiChoice",
+      "answerFormat": "اختر كلّ الإجابات الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{5}{24} + \\dfrac{1}{2} = \\dfrac{17}{24}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{15}{8} - \\dfrac{7}{6} = \\dfrac{17}{24}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{10}{12} + \\dfrac{7}{12} = \\dfrac{17}{24}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-ACROSS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ خيار بحساب بالمقام المشترك بدل التخمين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استبعد الخيارات التي تجمع المقامات أو تترك البسوط دون تغيير."
+        }
+      ],
+      "feedback": {
+        "correct": "الخياران الصحيحان يعطيان العدد نفسه .",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{24} + \\dfrac{1}{2} = \\dfrac{5}{24} + \\dfrac{12}{24} = \\dfrac{17}{24}$ .",
+          "$\\dfrac{15}{8} - \\dfrac{7}{6} = \\dfrac{45}{24} - \\dfrac{28}{24} = \\dfrac{17}{24}$ .",
+          "أمّا $\\dfrac{10}{12} + \\dfrac{7}{12} = \\dfrac{17}{12}$ فلا."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "برّر أنّ الخيار الثالث خطأ.",
+      "learningPoints": [
+        {
+          "code": "3am_jam-tarh-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثمّ اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجب أن تبرّره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اذكر المقام الذي اخترته ولماذا يصلح، ثمّ اكتب خطوات الحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "تطابق برهانك مع الحل النموذجي .",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثمّ قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "في $\\dfrac{10}{12} + \\dfrac{7}{12}$ المقامان متساويان، فنجمع البسطين ونبقي المقام: $\\dfrac{17}{12}$ .",
+          "لا نجمع المقامين: $\\dfrac{17}{24}$ نتيجة جمع للبسطين وللمقامين معًا وهو خطأ."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب $A = \\dfrac{9}{16} + \\dfrac{5}{12}$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_jam-tarh-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "47/48",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1/2",
+          "id": "MISC-JAMTARH-ACROSS"
+        },
+        {
+          "value": "7/24",
+          "id": "MISC-JAMTARH-NOSCALE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليّة المطلوبة؟ وهل المقامات متساوية أو أحدها مضاعف لغيره؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب مضاعفات المقام الأكبر حتى تجد أوّل مضاعف يقبل القسمة على المقام الآخر، فهو مقامك المشترك."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ حدّ بالمقام المشترك، ثمّ اجمع البسوط أو اطرحها، ثمّ اختزل إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = \\dfrac{47}{48}$ .",
+        "incorrect": "اكتب الكسرين بمقام مشترك قبل أن تجمع أو تطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نبحث عن أصغر مضاعف مشترك للمقامات $16$ و $12$ : إنّه $48$ .",
+          "$\\dfrac{9}{16} = \\dfrac{9 \\times 3}{16 \\times 3} = \\dfrac{27}{48}$ .",
+          "$\\dfrac{5}{12} = \\dfrac{5 \\times 4}{12 \\times 4} = \\dfrac{20}{48}$ .",
+          "$A = \\dfrac{27 + 20}{48} = \\dfrac{47}{48}$ ."
+        ],
+        "result": "A = \\dfrac{47}{48}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

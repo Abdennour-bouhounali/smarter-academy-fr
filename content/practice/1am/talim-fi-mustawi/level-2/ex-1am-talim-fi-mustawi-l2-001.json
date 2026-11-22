@@ -1,0 +1,262 @@
+{
+  "id": "ex-1am-talim-fi-mustawi-l2-001",
+  "lessonCode": "talim-fi-mustawi",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — نقط على المحورين",
+    "estimatedMinutes": 7,
+    "tags": [
+      "معلم",
+      "نقط المحورين"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 3,
+      "file": "1am-s3-43",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعلّم في معلم متعامد مبدؤه $O$ ووحدته $1\\ \\text{cm}$ النقط: $D(-4\\,;\\,0)$ ، $C(3\\,;\\,0)$ ، $B(-3\\,;\\,-3)$ ، $A(-3\\,;\\,3)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أين تقع النقطة $(-4\\,;\\,0)$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "على محور الفواصل",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "على محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-AXISSWAP"
+        },
+        {
+          "id": "C",
+          "content": "هي المبدأ",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "ليست على أيّ من المحورين",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اسأل: أيّ الإحداثيين معدوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترتيب معدوم: لا نصعد ولا ننزل، فالنقطة على الخط الأفقي. فاصلة معدومة: لا نتحرّك أفقيًّا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إن انعدم الإحداثيان معًا فهي المبدأ، وإن لم ينعدم أيّ منهما فهي خارج المحورين."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة $(-4\\,;\\,0)$ على محور الفواصل .",
+        "incorrect": "ترتيب معدوم يعني محور الفواصل، وفاصلة معدومة تعني محور التراتيب."
+      },
+      "solution": {
+        "lines": [
+          "ترتيب النقطة معدوم",
+          "على محور الفواصل"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أين تقع النقطة $(-3\\,;\\,-3)$ بالنسبة إلى المحورين؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "تحت محور الفواصل وعلى يمين محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNX"
+        },
+        {
+          "id": "B",
+          "content": "فوق محور الفواصل وعلى يسار محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNY"
+        },
+        {
+          "id": "C",
+          "content": "فوق محور الفواصل وعلى يمين محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNBOTH"
+        },
+        {
+          "id": "D",
+          "content": "تحت محور الفواصل وعلى يسار محور التراتيب",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفاصلة تقول الجهة على الخط الأفقي: يمين أو يسار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الترتيب يقول الجهة على الخط الشاقولي: فوق أو تحت."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد السالب: يسار (للفاصلة) أو تحت (للترتيب)."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة تعيّن اليمين أو اليسار والترتيب يعيّن الفوق أو التحت.",
+        "incorrect": "انظر إلى إشارة كلّ إحداثي على حدة."
+      },
+      "solution": {
+        "lines": [
+          "إشارة الفاصلة سالبة: يسار محور التراتيب",
+          "إشارة الترتيب سالبة: تحت محور الفواصل"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "صحيح أم خاطئ؟ النقطتان $(-3\\,;\\,3)$ و $(-3\\,;\\,-3)$ لهما الفاصلة نفسها.",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خاطئ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SAMEMIX"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ إحداثي على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفاصلة هي العدد الأول (الخط الأفقي) والترتيب هو الثاني (الخط الشاقولي)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نقطة على محور الفواصل ترتيبها معدوم، ونقطة على محور التراتيب فاصلتها معدومة."
+        }
+      ],
+      "feedback": {
+        "correct": "الجملة صحيحة.",
+        "incorrect": "قارن الإحداثيين بما تقوله الجملة."
+      },
+      "solution": {
+        "lines": [
+          "الجملة تحقّق ما نعرفه عن الإحداثيين"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "كم نقطة من النقط الآتية تقع على أحد المحورين: $A(-4\\,;\\,0)$ ، $B(3\\,;\\,0)$ ، $C(-3\\,;\\,-3)$ ، $D(-3\\,;\\,3)$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد النقط",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نقطة المحور لها إحداثي معدوم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن الصفر في كلّ زوج."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الزوج $(0\\,;\\,0)$ هو المبدأ وهو على المحورين معًا."
+        }
+      ],
+      "feedback": {
+        "correct": "عددها $2$ .",
+        "incorrect": "عدّ الأزواج التي فيها صفر."
+      },
+      "solution": {
+        "lines": [
+          "الأزواج التي فيها صفر: $A$ ، $B$",
+          "العدد $2$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

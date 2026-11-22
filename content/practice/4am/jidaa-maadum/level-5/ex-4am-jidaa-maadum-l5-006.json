@@ -1,0 +1,294 @@
+{
+  "id": "ex-4am-jidaa-maadum-l5-006",
+  "lessonCode": "jidaa-maadum",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2017 — حقلا القمح والشعير بالمسيلة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "مساحة",
+      "متطابقات شهيرة",
+      "معادلة جداء معدوم",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_jidaa-maadum_P3",
+      "modelledOn": "BEM 2017 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2017",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في مستثمرة فلاحية بولاية المسيلة يعمل أصحابها بجدّ لخدمة أرض الوطن، حقلان متجاوران: الأول مربع الشكل طول ضلعه $x$ متر يُزرع قمحًا، والثاني مستطيل الشكل بُعداه $x$ و $20\\,m$ يُزرع شعيرًا. المساحة الكلية للحقلين هي $2400\\,m^2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عبّر بدلالة $x$ عن المساحة الكلية للحقلين.",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "تُكتب المساحة الكلية على الشكل $x^2 + bx$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "20",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب مساحة كل حقل بدلالة $x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المساحتين."
+        }
+      ],
+      "feedback": {
+        "correct": "المساحة الكلية: $x^2 + 20x$ إذن $b = 20$ .",
+        "incorrect": "اكتب مساحة المربع ومساحة المستطيل بدلالة $x$ ثم اجمعهما."
+      },
+      "solution": {
+        "lines": [
+          "مساحة حقل القمح: $x^2$",
+          "مساحة حقل الشعير: $20x$",
+          "المساحة الكلية: $x^2 + 20x$"
+        ],
+        "result": "x^2 + 20x"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "تحقّق أن: $x^2 + 20x - 2400 = (x + 10)^2 - 2500$ ، ثم حلّل العبارة $x^2 + 20x - 2400$ إلى جداء عاملين.",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $x^2 + 20x - 2400$ على الشكل $(x - 40)(x + m)$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "60",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر $(x + 10)^2$ واطرح $2500$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $2500$ على شكل مربع، ثم طبّق $a^2 - b^2 = (a - b)(a + b)$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بسّط ما داخل كل قوس، ثم قارن بالشكل المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$x^2 + 20x - 2400 = (x - 40)(x + 60)$ إذن $m = 60$ .",
+        "incorrect": "انشر الجداء المقترح بالعدد الذي وجدته، وقارن بالعبارة المعطاة حدًّا حدًّا."
+      },
+      "solution": {
+        "lines": [
+          "$(x + 10)^2 - 2500 = x^2 + 20x + 100 - 2500 = x^2 + 20x - 2400$",
+          "$(x + 10)^2 - 50^2 = [(x + 10) - 50][(x + 10) + 50]$"
+        ],
+        "result": "x^2 + 20x - 2400 = (x - 40)(x + 60)"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "حل المعادلة: $x^2 + 20x - 2400 = 0$ .",
+      "statement": "الحلّ الأصغر:",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "-60",
+      "misconceptionSignatures": [
+        {
+          "value": "-40",
+          "id": "MISC-JIDAA-ISHARA-JADHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا تنشر الطرف الأول: استعمل تحليله إلى جداء عاملين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد التحليل تصير المعادلة معادلة جداء معدوم: أحد العاملين على الأقل معدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ كل معادلة من الدرجة الأولى، ثم رتّب الحلّين من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = -60$ .",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة من الدرجة الأولى بإشاراتها، ثم رتّب الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "المعادلة تُكتب: $(x - 40)(x + 60) = 0$",
+          "يعني أنّ: $x - 40 = 0$ أو $x + 60 = 0$",
+          "ومنه: $x = 40$ أو $x = -60$",
+          "إذن للمعادلة حلّان هما $-60$ و $40$"
+        ],
+        "result": "x = -60"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "الحلّ الأكبر:",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "40",
+      "misconceptionSignatures": [
+        {
+          "value": "60",
+          "id": "MISC-JIDAA-ISHARA-JADHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة الثانية من الدرجة الأولى، ثم قارن الحلّين."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 40$ .",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة من الدرجة الأولى بإشاراتها، ثم رتّب الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "إذن للمعادلة حلّان هما $-60$ و $40$"
+        ],
+        "result": "x = 40"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "sub": "ا",
+      "lead": "استنتج طول ضلع حقل القمح، ثم مساحة كل من الحقلين.",
+      "statement": "طول ضلع حقل القمح بـ $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بالمتر",
+      "expectedAnswer": "40",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المجهول $x$ يمثّل طولًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احتفظ بحلّ المعادلة الذي يناسب الوضعية، وارفض الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "الضلع $40\\,m$ (الحل السالب مرفوض).",
+        "incorrect": "الطول عدد موجب تمامًا: أيّ حلّي المعادلة يصلح؟"
+      },
+      "solution": {
+        "lines": [
+          "$x$ طول، إذن الحل $-60$ مرفوض",
+          "$x = 40$"
+        ],
+        "result": "x = 40\\,m"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "sub": "ب",
+      "statement": "مساحة حقل القمح بـ $m^2$ :",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المساحة بالمتر المربع",
+      "expectedAnswer": "1600",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حقل القمح مربع ضلعه $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "مساحة حقل القمح $1600\\,m^2$ ، وحقل الشعير $800\\,m^2$ .",
+        "incorrect": "مساحة المربع = الضلع × الضلع."
+      },
+      "solution": {
+        "lines": [
+          "$40^2 = 1600$",
+          "مساحة حقل الشعير: $20 \\times 40 = 800$",
+          "تحقّق: $1600 + 800 = 2400$"
+        ],
+        "result": "1600\\,m^2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

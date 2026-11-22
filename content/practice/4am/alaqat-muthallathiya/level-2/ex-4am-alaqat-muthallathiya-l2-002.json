@@ -1,0 +1,197 @@
+{
+  "id": "ex-4am-alaqat-muthallathiya-l2-002",
+  "lessonCode": "alaqat-muthallathiya",
+  "level": 2,
+  "metadata": {
+    "title": "دوري الآن (ص 121) — جيبها 0,4",
+    "estimatedMinutes": 7,
+    "tags": [
+      "العلاقات المثلثية",
+      "القيمة المضبوطة",
+      "التدوير"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "now-121",
+      "page": 121,
+      "section": "دوري الآن"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$x$ هو قيس زاوية حادة حيث $\\sin x = 0{,}4$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القيمة المضبوطة للعدد $\\cos x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{\\sqrt{21}}{5}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$0{,}6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-JAMA-NISAB"
+        },
+        {
+          "id": "C",
+          "content": "$0{,}84$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-JADHR-NASI"
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{\\sqrt{21}}{25}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-TARBI-BASTI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العلاقة التي تربط جيب الزاوية وجيب تمامها هي $\\cos^2 x + \\sin^2 x = 1$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اعزل $\\cos^2 x$ ثم عوّض الجيب بقيمته، ولا تنس تربيع البسط والمقام معا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\cos x$ عدد موجب تماما: خذ الجذر التربيعي الموجب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\cos^2 x = 1 - 0{,}16 = 0{,}84 = \\dfrac{21}{25}$ ، إذن $\\cos x = \\dfrac{\\sqrt{21}}{5}$ .",
+        "incorrect": "اعزل $\\cos^2 x$ ثم خذ الجذر الموجب، وجذر كسر هو جذر البسط على جذر المقام."
+      },
+      "solution": {
+        "lines": [
+          "$\\cos^2 x = 1 - \\sin^2 x = 1 - 0{,}16 = 0{,}84 = \\dfrac{84}{100} = \\dfrac{21}{25}$",
+          "$\\cos x$ عدد موجب، إذن $\\cos x = \\sqrt{\\dfrac{21}{25}} = \\dfrac{\\sqrt{21}}{\\sqrt{25}}$"
+        ],
+        "result": "\\cos x = \\dfrac{\\sqrt{21}}{5}"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط المدوّر إلى الجزء من 100 للعدد $\\cos x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري مدوّر إلى 0,01",
+      "expectedAnswer": "0.92",
+      "misconceptionSignatures": [
+        {
+          "value": "0.91",
+          "id": "MISC-MUTH-TADWIR-BATR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $\\sqrt{21} \\div 5$ بالحاسبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تبتر: انظر إلى الرقم الموالي."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{\\sqrt{21}}{5} \\simeq 0{,}9165$ ، إذن $\\cos x \\approx 0{,}92$ .",
+        "incorrect": "احسب القيمة المضبوطة بالحاسبة ثم دوّر (لا تبتر) إلى رقمين بعد الفاصلة."
+      },
+      "solution": {
+        "lines": [
+          "بالحاسبة: $\\dfrac{\\sqrt{21}}{5} \\simeq 0{,}916515$",
+          "الرقم الموالي لرقم الأجزاء من 100 هو 6، وهو أكبر من 5: نضيف 1."
+        ],
+        "result": "\\cos x \\approx 0{,}92"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "استنتج المدوّر إلى الجزء من 100 للعدد $\\tan x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري مدوّر إلى 0,01",
+      "expectedAnswer": "0.44",
+      "misconceptionSignatures": [
+        {
+          "value": "0.43",
+          "id": "MISC-MUTH-TADWIR-MUBAKKIR"
+        },
+        {
+          "value": "2.29",
+          "id": "MISC-MUTH-TAN-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\tan x = \\dfrac{\\sin x}{\\cos x}$ ، واستعمل القيمة المضبوطة لجيب التمام."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تقسم على القيمة المدوّرة: دوّر النتيجة النهائية فقط."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan x = \\dfrac{0{,}4}{\\frac{\\sqrt{21}}{5}} = \\dfrac{2}{\\sqrt{21}} \\simeq 0{,}4364$ ، إذن $\\tan x \\approx 0{,}44$ .",
+        "incorrect": "اقسم $\\sin x$ على القيمة المضبوطة لـ $\\cos x$ (لا على المدوّرة)، ثم دوّر."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan x = \\dfrac{\\sin x}{\\cos x} = 0{,}4 \\times \\dfrac{5}{\\sqrt{21}} = \\dfrac{2}{\\sqrt{21}}$",
+          "بالحاسبة: $\\dfrac{2}{\\sqrt{21}} \\simeq 0{,}43644$",
+          "ملاحظة: القسمة على $0{,}92$ تعطي $0{,}43$ ، لأن التدوير قبل نهاية الحساب يراكم الخطأ."
+        ],
+        "result": "\\tan x \\approx 0{,}44"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

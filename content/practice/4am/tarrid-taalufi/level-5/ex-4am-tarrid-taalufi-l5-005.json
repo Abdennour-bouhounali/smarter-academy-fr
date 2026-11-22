@@ -1,0 +1,469 @@
+{
+  "id": "ex-4am-tarrid-taalufi-l5-005",
+  "lessonCode": "tarrid-taalufi",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2007 — مسبح نصف أولمبي بالشلف",
+    "estimatedMinutes": 30,
+    "tags": [
+      "وضعية إدماجية",
+      "تسعيرتان",
+      "متراجحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tarrid-taalufi_P2",
+      "modelledOn": "BEM 2007 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2007",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يقترح مسبح نصف أولمبي بالشلف، يشجّع الشباب على الرياضة، على روّاده التسعيرتين التاليتين:\n- التسعيرة الأولى: 200DA للحصة الواحدة دون انخراط.\n- التسعيرة الثانية: 120DA للحصة الواحدة مع انخراط سنوي قدره 2400DA.",
+    "table": {
+      "head": [
+        "عدد الحصص في السنة",
+        "10",
+        "…"
+      ],
+      "rows": [
+        [
+          "التسعيرة الأولى (DA)",
+          "…",
+          "5000"
+        ],
+        [
+          "التسعيرة الثانية (DA)",
+          "…",
+          "…"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انقل الجدول ثم أكمله.",
+      "statement": "التسعيرة الأولى من أجل 10 حصص:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "2000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التسعيرة الأولى: ثمن الحصة فقط."
+        }
+      ],
+      "feedback": {
+        "correct": "$10 \\times 200$ .",
+        "incorrect": "اضرب عدد الحصص في ثمن الحصة."
+      },
+      "solution": {
+        "lines": [
+          "كيفية ملء الجدول:",
+          "$10 \\times 200 = 2000$"
+        ],
+        "result": "2000DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "التسعيرة الثانية من أجل 10 حصص:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "3600",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAALUFI-NISYAN-B",
+          "value": "1200"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثمن الحصص ثم الانخراط السنوي."
+        }
+      ],
+      "feedback": {
+        "correct": "$10 \\times 120 + 2400$ .",
+        "incorrect": "لا تنس الانخراط السنوي."
+      },
+      "solution": {
+        "lines": [
+          "كيفية ملء الجدول:",
+          "$10 \\times 120 + 2400 = 3600$"
+        ],
+        "result": "3600DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "عدد الحصص إذا كان المبلغ حسب التسعيرة الأولى 5000DA :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الحصص",
+      "expectedAnswer": "25",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في التسعيرة الأولى المبلغ = ثمن الحصة × عدد الحصص."
+        }
+      ],
+      "feedback": {
+        "correct": "$5000 \\div 200$ .",
+        "incorrect": "اقسم المبلغ على ثمن الحصة."
+      },
+      "solution": {
+        "lines": [
+          "كيفية ملء الجدول:",
+          "$5000 \\div 200 = 25$"
+        ],
+        "result": "25"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "statement": "التسعيرة الثانية من أجل هذا العدد من الحصص:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "5400",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض عدد الحصص الذي وجدته في التسعيرة الثانية."
+        }
+      ],
+      "feedback": {
+        "correct": "$25 \\times 120 + 2400$ .",
+        "incorrect": "اضرب في ثمن الحصة في التسعيرة الثانية ثم أضف الانخراط."
+      },
+      "solution": {
+        "lines": [
+          "كيفية ملء الجدول:",
+          "$25 \\times 120 + 2400 = 5400$"
+        ],
+        "result": "5400DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ا",
+      "lead": "ليكن $x$ عدد الحصص في السنة، و $y_1$ ، $y_2$ المبلغين بـ DA حسب التسعيرتين الأولى والثانية على الترتيب.",
+      "statement": "عبّر عن $y_1$ و $y_2$ بدلالة $x$ .\nأعط العدد $a$ حيث: $y_1 = ax$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "200",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع عن كل حصة في التسعيرة الأولى؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هو ما يُدفع $x$ مرّة: معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "ما يُدفع عن كل حصة في التسعيرة الأولى هو معامل $x$ .",
+        "incorrect": "معامل $x$ هو المبلغ الذي يتكرّر مع كل وحدة، لا المبلغ الذي يُدفع مرّة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "التعبير بدلالة $x$ عن $y_1$ و $y_2$ :",
+          "التسعيرة الأولى: $y_1 = 200x$",
+          "التسعيرة الثانية: $y_2 = 120x + 2400$"
+        ],
+        "result": "y_1 = 200x"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أعط العددين $a$ و $b$ حيث: $y_2 = ax + b$ ، ابدأ بالعدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "120",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "2400"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع عن كل حصة في التسعيرة الثانية؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هو ما يُدفع $x$ مرّة: معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "ما يُدفع عن كل حصة في التسعيرة الثانية هو معامل $x$ .",
+        "incorrect": "معامل $x$ هو المبلغ الذي يتكرّر مع كل وحدة، لا المبلغ الذي يُدفع مرّة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "التعبير بدلالة $x$ عن $y_1$ و $y_2$ :",
+          "التسعيرة الأولى: $y_1 = 200x$",
+          "التسعيرة الثانية: $y_2 = 120x + 2400$"
+        ],
+        "result": "y_2 = 120x + 2400"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q7",
+      "step": "02",
+      "sub": "ا",
+      "statement": "ثم العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "2400",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "120"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع مرّة واحدة (الانخراط السنوي)؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الانخراط السنوي يُدفع مرّة واحدة: هو الحدّ الثابت $b$ .",
+        "incorrect": "الحدّ الثابت لا يتعلّق بعدد الوحدات $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "التعبير بدلالة $x$ عن $y_1$ و $y_2$ :",
+          "التسعيرة الأولى: $y_1 = 200x$",
+          "التسعيرة الثانية: $y_2 = 120x + 2400$"
+        ],
+        "result": "y_2 = 120x + 2400"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q8",
+      "step": "02",
+      "sub": "ب",
+      "statement": "حل المتراجحة: $120x + 2400 < 200x$ .\nحدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x < k$ أو $x > k$ : اكتب العدد $k$ فقط",
+      "expectedAnswer": "30",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحدّ هو حل المعادلة المرفقة $120x + 2400 = 200x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "حدّ الحلول هو حل المعادلة المرفقة.",
+        "incorrect": "انقل حدود $x$ إلى طرف واحد ثم اقسم على معامل $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "حل المتراجحة: $120x + 2400 < 200x$",
+          "$2400 < 200x - 120x$",
+          "$2400 < 80x$",
+          "$\\dfrac{2400}{80} < x$",
+          "$30 < x$ ، أي $x > 30$",
+          "إذا حلول المتراجحة هي كل قيم $x$ الأكبر تماما من 30: التسعيرة الثانية أقل تكلفة ابتداء من 31 حصة."
+        ],
+        "result": "x > 30"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q9",
+      "step": "02",
+      "sub": "ب",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < 30$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QALB-ZAID"
+        },
+        {
+          "id": "B",
+          "content": "$x > 30$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قسمنا في آخر سطر على عدد موجب."
+        }
+      ],
+      "feedback": {
+        "correct": "التسعيرة الثانية أقل تكلفة عندما يتجاوز عدد الحصص هذا الحدّ.",
+        "incorrect": "القسمة على عدد موجب لا تغيّر اتجاه المتباينة."
+      },
+      "solution": {
+        "lines": [
+          "حل المتراجحة: $120x + 2400 < 200x$",
+          "$2400 < 200x - 120x$",
+          "$2400 < 80x$",
+          "$\\dfrac{2400}{80} < x$",
+          "$30 < x$ ، أي $x > 30$",
+          "إذا حلول المتراجحة هي كل قيم $x$ الأكبر تماما من 30: التسعيرة الثانية أقل تكلفة ابتداء من 31 حصة."
+        ],
+        "result": "x > 30"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q10",
+      "step": "03",
+      "statement": "☜ تنوي سلمى حضور 36 حصة خلال السنة. ما هي التسعيرة الأنسب لها؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "التسعيرة الأولى",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        },
+        {
+          "id": "B",
+          "content": "التسعيرة الثانية",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 36 بحدّ حلول المتراجحة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أو احسب المبلغ بكل تسعيرة من أجل 36 حصة."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل 36 حصة: 7200DA مقابل 6720DA .",
+        "incorrect": "الأنسب هو الأقل تكلفة؛ استعمل نتيجة المتراجحة."
+      },
+      "solution": {
+        "lines": [
+          "من أجل 36 حصة: $y_1 = 200 \\times 36 = 7200DA$ و $y_2 = 120 \\times 36 + 2400 = 6720DA$ .",
+          "أو: $36 > 30$ ، فحسب المتراجحة السابقة التسعيرة الثانية أقل تكلفة.",
+          "إذا التسعيرة الأنسب لسلمى هي التسعيرة الثانية (توفّر $480DA$)."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

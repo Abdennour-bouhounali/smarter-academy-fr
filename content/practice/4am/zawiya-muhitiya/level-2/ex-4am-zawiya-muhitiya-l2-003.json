@@ -1,0 +1,118 @@
+{
+  "id": "ex-4am-zawiya-muhitiya-l2-003",
+  "lessonCode": "zawiya-muhitiya",
+  "level": 2,
+  "metadata": {
+    "title": "أؤكّد تعلّماتي 3 — القطر",
+    "estimatedMinutes": 2,
+    "tags": [
+      "حالة القطر"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 160,
+      "section": "أؤكّد تعلّماتي",
+      "number": 3
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 160): في الشكل الآتي [BC] قطر للدائرة التي مركزها O، و A نقطة منها. الزاوية $\\widehat{BOC}$ زاوية مستقيمة نعدّها زاوية مركزية.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "B": [
+          -0.618,
+          1.9021
+        ],
+        "C": [
+          0.618,
+          -1.9021
+        ],
+        "A": [
+          -1.9754,
+          0.3129
+        ]
+      },
+      "circles": [
+        {
+          "center": "O",
+          "radius": 2
+        }
+      ],
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "A",
+          "C"
+        ],
+        [
+          "B",
+          "C"
+        ]
+      ],
+      "ariaLabel": "دائرة مركزها O وقطرها [BC]، والنقطة A عليها",
+      "maxWidth": 360
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "اختر الإجابة الصحيحة:",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\widehat{BAC} = 2\\widehat{BOC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-DIF"
+        },
+        {
+          "id": "B",
+          "content": "$\\widehat{BAC} = \\dfrac{1}{2}\\widehat{BOC}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\widehat{ABC} = \\widehat{ACB}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-QAWS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوس الذي تحصره كل زاوية: هل هو نفس القوس؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الزاويتين: أيهما أكبر، المركزية أم المحيطية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قيس الزاوية المحيطية نصف قيس الزاوية المركزية التي تحصر معها نفس القوس."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{BOC} = 180^\\circ$ و $\\widehat{BAC} = 90^\\circ$ .",
+        "incorrect": "المحيطية BAC والمركزية BOC تحصران نفس القوس (نصف الدائرة)."
+      }
+    }
+  ]
+}

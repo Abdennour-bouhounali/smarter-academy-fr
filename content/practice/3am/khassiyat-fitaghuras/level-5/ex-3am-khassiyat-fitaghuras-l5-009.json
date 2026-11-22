@@ -1,0 +1,394 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l5-009",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — رفّ الزاوية",
+    "estimatedMinutes": 25,
+    "tags": [
+      "وضعية إدماجية",
+      "خاصية فيثاغورس",
+      "مثلث غير قائم",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "صنع نجّار رفّا مثلثا $KLM$ ليُثبّت في زاوية غرفة بين جدارين متعامدين، حيث $KL = 45\\,\\mathrm{cm}$ ، $LM = 60\\,\\mathrm{cm}$ والحافة الأمامية $KM = 76\\,\\mathrm{cm}$ . الضلعان $[LK]$ و $[LM]$ يلتصقان بالجدارين إذا كانت الزاوية في $L$ قائمة. والنجّار يحرص على إتقان عمله."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول:",
+      "statement": "احسب $KM^2$ ، مربع طول أطول أضلاع المثلث $KLM$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: قيمة $KM^2$",
+      "expectedAnswer": "5776",
+      "misconceptionSignatures": [
+        {
+          "value": "152",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        },
+        {
+          "value": "3600",
+          "id": "MISC-FITAGHURAS-NOT-LONGEST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رتّب أطوال الأضلاع الثلاثة: الضلع الأطول هو الوحيد الذي يمكن أن يكون وترا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع العدد هو جداؤه في نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "أطول الأضلاع هو $[KM]$ و $KM^2 = 76^2 = 5776$ .",
+        "incorrect": "تأكّد أنك اخترت الضلع الأطول، وأنك ضربت طوله في نفسه."
+      },
+      "solution": {
+        "lines": [
+          "أطول أضلاع المثلث $KLM$ هو $[KM]$ .",
+          "$KM^2 = 76^2 = 5776$"
+        ],
+        "result": "KM^2 = 5776"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $KL^2 + LM^2$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: مجموع المربعين",
+      "expectedAnswer": "5625",
+      "misconceptionSignatures": [
+        {
+          "value": "210",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        },
+        {
+          "value": "105",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ربّع طول كل ضلع من الضلعين الأقصرين على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المربعين ولا تجمع الطولين."
+        }
+      ],
+      "feedback": {
+        "correct": "$KL^2 + LM^2 = 45^2 + 60^2 = 2025 + 3600 = 5625$ .",
+        "incorrect": "احسب مربع كل طول أولا، ثم اجمع المربعين."
+      },
+      "solution": {
+        "lines": [
+          "$KL^2 + LM^2 = 45^2 + 60^2$",
+          "$KL^2 + LM^2 = 2025 + 3600 = 5625$"
+        ],
+        "result": "KL^2 + LM^2 = 5625"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل الزاوية $\\widehat{KLM}$ قائمة، فيلتصق الرفّ بالجدارين؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأن $5\\,776$ و $5\\,625$ متقاربان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-LOOKS-RIGHT"
+        },
+        {
+          "id": "B",
+          "content": "نعم، لأن $KM^2 = KL^2 + LM^2$ في كل مثلث",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-NON-RIGHT-APPLIED"
+        },
+        {
+          "id": "C",
+          "content": "لا، الزاوية ليست قائمة",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العددين اللذين حسبتهما: هل هما متساويان تماما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لو كان المثلث قائما لكان مربع طول أطول أضلاعه مساويا تماما لمجموع مربعي الضلعين الآخرين (خاصية فيثاغورس)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "التقارب لا يكفي: المساواة يجب أن تكون تامة."
+        }
+      ],
+      "feedback": {
+        "correct": "$5776 \\neq 5625$ : لو كان المثلث قائما لتساوى العددان حسب خاصية فيثاغورس، إذن هو ليس قائما.",
+        "incorrect": "الشكل أو تقارب العددين لا يكفيان: انظر هل المساواة محقّقة تماما أم لا."
+      },
+      "solution": {
+        "lines": [
+          "أطول الأضلاع هو $[KM]$ : $KM^2 = 5776$ و $KL^2 + LM^2 = 5625$ .",
+          "بما أن $KM^2 \\neq KL^2 + LM^2$ ، فحسب خاصية فيثاغورس المثلث $KLM$ ليس قائما."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "برّر جوابك بكتابة الاستدلال كاملا.",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بتعيين أطول الأضلاع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن مربعه بمجموع مربعي الضلعين الآخرين، ثم استند إلى خاصية فيثاغورس."
+        }
+      ],
+      "feedback": {
+        "correct": "استدلال كامل: أطول ضلع، المقارنة، ثم الاستنتاج بخاصية فيثاغورس.",
+        "incorrect": "قارن استدلالك بالحل النموذجي: هل عيّنت أطول الأضلاع؟ هل ذكرت خاصية فيثاغورس في الاستنتاج؟"
+      },
+      "solution": {
+        "lines": [
+          "أطول الأضلاع هو $[KM]$ : $KM^2 = 5776$ و $KL^2 + LM^2 = 5625$ .",
+          "بما أن $KM^2 \\neq KL^2 + LM^2$ ، فحسب خاصية فيثاغورس المثلث $KLM$ ليس قائما."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "lead": "الجزء الثاني:",
+      "statement": "أراد النجّار أن يصحّح الرفّ ليكون قائما في $L$ مع الإبقاء على $KL = 45\\,\\mathrm{cm}$ و $LM = 60\\,\\mathrm{cm}$ . ما الطول الذي يجب أن تكون عليه الحافة $[KM]$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm",
+      "expectedAnswer": "75",
+      "misconceptionSignatures": [
+        {
+          "value": "105",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "5625",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولا مربع الطول، ثم خذ جذره التربيعي بالآلة الحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$KM^2 = 45^2 + 60^2 = 5625$ ، إذن $KM = 75\\,\\mathrm{cm}$ .",
+        "incorrect": "ابدأ بتحديد الوتر، ثم اكتب مساواة فيثاغورس، وتذكّر أن ما تحسبه أولا هو مربع الطول لا الطول نفسه."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $KLM$ قائم في $L$ ، حسب خاصية فيثاغورس: $KM^2 = KL^2 + LM^2$",
+          "$KM^2 = 45^2 + 60^2$",
+          "$KM^2 = 2025 + 3600 = 5625$",
+          "$KM = \\sqrt{5625} = 75\\,\\mathrm{cm}$"
+        ],
+        "result": "KM = 75\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "بكم سنتيمترا يجب أن يقصّر النجّار الحافة $[KM]$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بـ cm",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الطول الحالي بالطول المطلوب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$76 - 75 = 1\\,\\mathrm{cm}$ .",
+        "incorrect": "الفرق بين $76$ والطول المحسوب."
+      },
+      "solution": {
+        "lines": [
+          "الطول الحالي $76\\,\\mathrm{cm}$ والطول المطلوب $75\\,\\mathrm{cm}$ .",
+          "$76 - 75 = 1\\,\\mathrm{cm}$"
+        ],
+        "result": "1\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q7",
+      "step": "06",
+      "statement": "قال صاحب البيت: «فرق سنتيمتر واحد لا يهمّ، والرفّ قائم تقريبا». ما رأيك؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح، لأن الفرق صغير جدا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-LOOKS-RIGHT"
+        },
+        {
+          "id": "B",
+          "content": "غير صحيح: بـ $76\\,\\mathrm{cm}$ لا يكون الرفّ قائما ولن يلتصق تماما بالجدارين",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "صحيح، لأن $45 + 60 = 105$ أكبر من $76$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المساواة إما محقّقة تماما وإما غير محقّقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ارجع إلى المقارنة في الجزء الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "«تقريبا قائم» يعني «ليس قائما».",
+        "incorrect": "قارن $KM^2$ بـ $KL^2 + LM^2$ : هل هما متساويان تماما؟"
+      },
+      "solution": {
+        "lines": [
+          "بـ $KM = 76\\,\\mathrm{cm}$ : $KM^2 = 5\\,776 \\neq 5\\,625 = KL^2 + LM^2$ ، فحسب خاصية فيثاغورس الزاوية في $L$ ليست قائمة.",
+          "الرفّ لن يلتصق بالجدارين المتعامدين؛ إتقان العمل يقتضي تقصير الحافة إلى $75\\,\\mathrm{cm}$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

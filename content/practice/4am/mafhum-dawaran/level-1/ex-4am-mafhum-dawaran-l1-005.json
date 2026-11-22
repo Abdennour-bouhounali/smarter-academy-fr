@@ -1,0 +1,272 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l1-005",
+  "lessonCode": "mafhum-dawaran",
+  "level": 1,
+  "metadata": {
+    "title": "نشاط 1 — الورق الشفاف",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الدوران",
+      "نشاط"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-1",
+      "page": 152,
+      "section": "أنشطة",
+      "number": 1
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 152): ننقل الشكل (F) والنقطة O على ورق شفاف، نثبّته بإبرة المدور في O وندوّره في اتجاه حركة عقارب الساعة حتى ينطبق (F) على (F′).",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -1,
+          3
+        ],
+        "B": [
+          -1,
+          6
+        ],
+        "C": [
+          -4,
+          6
+        ],
+        "A₁": [
+          1,
+          3
+        ],
+        "B₁": [
+          1,
+          6
+        ],
+        "C₁": [
+          4,
+          6
+        ],
+        "A'": [
+          3,
+          1
+        ],
+        "B'": [
+          6,
+          1
+        ],
+        "C'": [
+          6,
+          4
+        ]
+      },
+      "grid": true,
+      "polygons": [
+        {
+          "points": [
+            "A",
+            "B",
+            "C"
+          ],
+          "tone": "indigo"
+        },
+        {
+          "points": [
+            "A₁",
+            "B₁",
+            "C₁"
+          ],
+          "tone": "amber"
+        },
+        {
+          "points": [
+            "A'",
+            "B'",
+            "C'"
+          ],
+          "tone": "emerald"
+        }
+      ],
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "tone": "indigo",
+          "bold": true
+        },
+        {
+          "from": "A",
+          "to": "C",
+          "tone": "indigo",
+          "bold": true
+        },
+        {
+          "from": "A₁",
+          "to": "B₁",
+          "tone": "amber",
+          "bold": true
+        },
+        {
+          "from": "A₁",
+          "to": "C₁",
+          "tone": "amber",
+          "bold": true
+        },
+        {
+          "from": "A'",
+          "to": "B'",
+          "tone": "emerald",
+          "bold": true
+        },
+        {
+          "from": "A'",
+          "to": "C'",
+          "tone": "emerald",
+          "bold": true
+        }
+      ],
+      "arcs": [
+        {
+          "from": "C",
+          "to": "B",
+          "sweep": "cw",
+          "tone": "indigo"
+        },
+        {
+          "from": "B₁",
+          "to": "C₁",
+          "sweep": "cw",
+          "tone": "amber"
+        },
+        {
+          "from": "C'",
+          "to": "B'",
+          "sweep": "cw",
+          "tone": "emerald"
+        }
+      ],
+      "labels": {
+        "O": "s",
+        "A": "w",
+        "A₁": "e",
+        "B": "n",
+        "B₁": "n",
+        "C": "w",
+        "C₁": "e",
+        "A'": "w",
+        "B'": "s",
+        "C'": "n"
+      },
+      "ariaLabel": "ورقة مرصوفة: ثلاثة أشكال متقايسة على هيئة مخروط مثلّج — (F) رأسه A في أعلى اليسار، (F₁) نظيره على اليمين، و (F′) مستلقٍ في أسفل اليمين — والنقطة O في الأسفل",
+      "maxWidth": 540
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "نتحصّل على (F′) انطلاقا من (F) بـ:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الدوران الذي مركزه O وزاويته $90^\\circ$ عكس اتجاه عقارب الساعة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ITTIJAH"
+        },
+        {
+          "id": "B",
+          "content": "التناظر المحوري بالنسبة إلى المستقيم الشاقولي المار بـ O",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-TANAZUR"
+        },
+        {
+          "id": "C",
+          "content": "الدوران الذي مركزه O وزاويته $90^\\circ$ في اتجاه حركة عقارب الساعة",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الورق دار حول O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في أي اتجاه دار الورق؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قِس الزاوية بين [OA) و [OA′)."
+        }
+      ],
+      "feedback": {
+        "correct": "الورق دار ربع دورة حول O في اتجاه عقارب الساعة.",
+        "incorrect": "التناظر المحوري يقلب الشكل، والورق الشفاف هنا لم يُقلب بل دار."
+      },
+      "difficulty": 1
+    },
+    {
+      "id": "q2",
+      "statement": "قارن الطولين OA و OA′:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$OA' = OA$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$OA' = 2\\,OA$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MASAFA"
+        },
+        {
+          "id": "C",
+          "content": "$OA' < OA$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MASAFA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطة A مرسومة على الورق الشفاف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الورق يدور حول الإبرة في O."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "هل يتغيّر بعد نقطة من الورق عن الإبرة حين ندوّره؟"
+        }
+      ],
+      "feedback": {
+        "correct": "كل نقطة من الورق تبقى على نفس البعد من الإبرة: $OA' = OA$ .",
+        "incorrect": "الدوران حول O لا يقرّب النقط من O ولا يبعدها."
+      },
+      "difficulty": 1
+    }
+  ]
+}

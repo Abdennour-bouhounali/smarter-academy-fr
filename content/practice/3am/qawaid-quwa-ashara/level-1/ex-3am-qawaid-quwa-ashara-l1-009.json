@@ -1,0 +1,176 @@
+{
+  "id": "ex-3am-qawaid-quwa-ashara-l1-009",
+  "lessonCode": "qawaid-quwa-ashara",
+  "level": 1,
+  "metadata": {
+    "title": "كتب المكتبات",
+    "estimatedMinutes": 6,
+    "tags": [
+      "جداء قوى",
+      "حاصل القسمة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-13",
+      "page": 46,
+      "section": "أوظّف تعلّماتي",
+      "number": 13
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في مخازن المكتبة الوطنية يوجد ألف مليار رفّ، وفي كلّ رفّ ألف كتاب."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب «ألف مليار» على الشكل $10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العدد المعطى على شكل قوة للعدد 10، أو اكتب القوة على شكل عدد عشري."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انظر إلى موضع الفاصلة أو إلى رتبة الرقم 1 بعد الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالاتجاه المعاكس: حوّل جوابك إلى الكتابة الأخرى وقارنها بالمعطى."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "12",
+      "feedback": {
+        "correct": "$1\\,000\\,000\\,000\\,000 = 10^{12}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "ألف مليار هو ألف مرّة مليار: $10^{3}\\times10^{9}$ ، أي 1 متبوع باثني عشر صفرًا.",
+          "ألف مليار $= 10^{12}$ ."
+        ],
+        "result": "n = 12"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عدد الكتب كلّها هو $10^{12}\\times10^{3} = 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوتين المضروبتين وأسّ كلّ منهما (انتبه إلى إشارته)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في جداء قوتين للعدد 10 نجري عملية واحدة على الأسّين: ما هي؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب القاعدة على مثال صغير: $10^{2}\\times10^{1}$ هو $10\\times10\\times10$ ، فكم عاملًا 10 في الجداء؟"
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "36",
+          "id": "MISC-QAWAID-DARB-ASS"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{12}\\times10^{3} = 10^{15}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نجمع الأسّين: $12 + 3 = 15$ .",
+          "$10^{12}\\times10^{3} = 10^{15}$ ."
+        ],
+        "result": "n = 15"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "وُزّعت هذه الكتب بالتساوي على $10^{9}$ مدرسة: $\\dfrac{10^{15}}{10^{9}} = 10^{n}$ ، ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد البسط والمقام وأسّ كلّ منهما (انتبه إلى إشارة الأسّ)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في حاصل قسمة قوتين للعدد 10 نجري عملية واحدة على الأسّين: ما هي، وبأيّ ترتيب؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر أنّ $\\dfrac{10^{2}}{10^{1}}$ هو $\\dfrac{10\\times10}{10}$ ، وأنّ طرح أسّ سالب يعني جمع عدد موجب."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "24",
+          "id": "MISC-QAWAID-DARB-ASS"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{10^{15}}{10^{9}} = 10^{6}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نطرح الأسّين: $15 - 9 = 6$ .",
+          "$\\dfrac{10^{15}}{10^{9}} = 10^{6}$ كتاب لكلّ مدرسة."
+        ],
+        "result": "n = 6"
+      }
+    }
+  ]
+}

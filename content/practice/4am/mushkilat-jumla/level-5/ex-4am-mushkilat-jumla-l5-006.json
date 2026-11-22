@@ -1,0 +1,311 @@
+{
+  "id": "ex-4am-mushkilat-jumla-l5-006",
+  "lessonCode": "mushkilat-jumla",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2022 — دلاع فلاح من بسكرة",
+    "estimatedMinutes": 22,
+    "tags": [
+      "جملة",
+      "ترييض",
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mushkilat-jumla_P2",
+      "modelledOn": "BEM 2022 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "التمرين",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "شحن فلاح من ولاية بسكرة، المعروف بكرمه وتصدّقه من محصوله، $9600kg$ من الدلاع في 400 صندوق من صنفين: صناديق تتسع لـ $20kg$ وصناديق تتسع لـ $30kg$ ، وكل صندوق مملوء عن آخره."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "نسمّي $x$ عدد الصناديق ذات $20kg$ و $y$ عدد الصناديق ذات $30kg$ .",
+      "statement": "ترجم المعطيات بجملة معادلتين مجهولاها $x$ و $y$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معادلة لعدد الصناديق ومعادلة للكتلة."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "عدد الصناديق: $x + y = 400$",
+          "الكتلة: $20x + 30y = 9600$",
+          "ومنه الجملة: $\\begin{cases} x + y = 400 \\\\ 20x + 30y = 9600 \\end{cases}$"
+        ],
+        "result": "\\begin{cases} x + y = 400 \\\\ 20x + 30y = 9600 \\end{cases}"
+      },
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "جِد عدد الصناديق من كل صنف.",
+      "statement": "عدد الصناديق ذات $20kg$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط",
+      "expectedAnswer": "240",
+      "misconceptionSignatures": [
+        {
+          "value": "160",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب المعادلة الأولى في $30$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح منها المعادلة الثانية طرفا لطرف ليختفي $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "شحن الفلاح 240 صندوقا ذا $20kg$ .",
+        "incorrect": "اجعل معاملي $y$ متساويين ثم اطرح المعادلتين طرفا لطرف."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} x + y = 400 & ...(1) \\\\ 20x + 30y = 9600 & ...(2) \\end{cases}$",
+          "بضرب طرفي المعادلة (1) في العدد $30$ وطرفي المعادلة (2) في العدد $-1$ نجد:",
+          "$\\begin{cases} 30x + 30y = 12000 \\\\ -20x - 30y = -9600 \\end{cases}$",
+          "بجمع المعادلتين طرفا لطرف نجد: $10x = 2400$",
+          "ومنه: $x = \\dfrac{2400}{10} = 240$",
+          "بتعويض قيمة $x$ في المعادلة (1) نجد: $240 + y = 400$",
+          "$y = 160$",
+          "التحقق في النص: $240 + 160 = 400$ و $20 \\times 240 + 30 \\times 160 = 4800 + 4800 = 9600$ .",
+          "إذن شحن 240 صندوقا ذا $20kg$ و 160 صندوقا ذا $30kg$ ."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 480
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "عدد الصناديق ذات $30kg$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط",
+      "expectedAnswer": "160",
+      "misconceptionSignatures": [
+        {
+          "value": "240",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الصناديق 400."
+        }
+      ],
+      "feedback": {
+        "correct": "شحن 160 صندوقا ذا $30kg$ ، ونتحقق: $4800 + 4800 = 9600$ .",
+        "incorrect": "من $x + y = 400$ : $y = 400 - x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} x + y = 400 & ...(1) \\\\ 20x + 30y = 9600 & ...(2) \\end{cases}$",
+          "بضرب طرفي المعادلة (1) في العدد $30$ وطرفي المعادلة (2) في العدد $-1$ نجد:",
+          "$\\begin{cases} 30x + 30y = 12000 \\\\ -20x - 30y = -9600 \\end{cases}$",
+          "بجمع المعادلتين طرفا لطرف نجد: $10x = 2400$",
+          "ومنه: $x = \\dfrac{2400}{10} = 240$",
+          "بتعويض قيمة $x$ في المعادلة (1) نجد: $240 + y = 400$",
+          "$y = 160$",
+          "التحقق في النص: $240 + 160 = 400$ و $20 \\times 240 + 30 \\times 160 = 4800 + 4800 = 9600$ .",
+          "إذن شحن 240 صندوقا ذا $20kg$ و 160 صندوقا ذا $30kg$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "يريد الفلاح توزيع كل الصناديق على تجار التجزئة في حمولات متماثلة (كل حمولة فيها نفس عدد الصناديق ذات $20kg$ ونفس عدد الصناديق ذات $30kg$ ).",
+      "statement": "ما هو أكبر عدد من الحمولات يمكن تكوينه؟",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط",
+      "expectedAnswer": "80",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الحمولات قاسم مشترك لعددي الصناديق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القاسم المشترك الأكبر للعددين 240 و 160."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(240 ; 160) = 80 : أكبر عدد من الحمولات هو 80.",
+        "incorrect": "أكبر عدد من الحمولات هو القاسم المشترك الأكبر لعددي الصناديق من الصنفين."
+      },
+      "solution": {
+        "lines": [
+          "عدد الحمولات يقسم 240 ويقسم 160، وأكبره هو PGCD(240 ; 160).",
+          "$240 = 160 \\times 1 + 80$",
+          "$160 = 80 \\times 2 + 0$",
+          "آخر باقٍ غير معدوم هو 80، إذن:"
+        ],
+        "result": "PGCD(240 ; 160) = 80"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "lead": "ما هو عدد الصناديق من كل صنف في الحمولة الواحدة؟",
+      "statement": "عدد الصناديق ذات $20kg$ في الحمولة:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع الصناديق ذات $20kg$ على عدد الحمولات."
+        }
+      ],
+      "feedback": {
+        "correct": "$240 \\div 80 = 3$ .",
+        "incorrect": "اقسم عدد الصناديق ذات $20kg$ على عدد الحمولات."
+      },
+      "solution": {
+        "lines": [
+          "في كل حمولة: $240 \\div 80 = 3$ صناديق ذات $20kg$ ، و $160 \\div 80 = 2$ صندوقان ذوا $30kg$ ."
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ب",
+      "statement": "عدد الصناديق ذات $30kg$ في الحمولة:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع الصناديق ذات $30kg$ على عدد الحمولات."
+        }
+      ],
+      "feedback": {
+        "correct": "$160 \\div 80 = 2$ .",
+        "incorrect": "اقسم عدد الصناديق ذات $30kg$ على عدد الحمولات."
+      },
+      "solution": {
+        "lines": [
+          "في كل حمولة: $240 \\div 80 = 3$ صناديق ذات $20kg$ ، و $160 \\div 80 = 2$ صندوقان ذوا $30kg$ ."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "id": "ex-2am-ibara-harfiya-intaj-l1-006",
+  "lessonCode": "ibara-harfiya-intaj",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — سياج حديقة المتوسّطة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "محيط",
+      "عبارة حرفيّة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "حديقة المتوسّطة مربّعة الشكل ، طول ضلعها $x$ متر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما عبارة محيط الحديقة بالمتر ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x^{4}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-POWER"
+        },
+        {
+          "id": "B",
+          "content": "$4x$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$x + 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-ADDFOR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعيّة وحدّد ما يتغيّر (الحرف) وما يبقى ثابتًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ خيار بقيمة بسيطة للحرف ثمّ قارن بالعدّ المباشر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاعدة الصحيحة تعطي العدد نفسه الذي تجده بالعدّ في كلّ مرّة تجرّبها."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتابة الصحيحة هي $4x$ .",
+        "incorrect": "جرّب كلّ خيار على قيمة بسيطة للحرف وقارن بالعدّ المباشر قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "$4x$ : للمربّع أربعة أضلاع متساوية.",
+          "عند $x = 3$ : $4 \\times 3 = 12$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب محيط الحديقة ، أي قيمة $P = 4x$ من أجل $x = 13$ .",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "52",
+      "misconceptionSignatures": [
+        {
+          "value": "413",
+          "id": "MISC-IBARA2-JUXTA"
+        },
+        {
+          "value": "17",
+          "id": "MISC-IBARA2-ADDFOR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بالقيمة المعطاة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ احترم أولويّة العمليّات : الضرب قبل الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة قبل أن تجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$P = 52$ .",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ أعد الحساب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$4 \\times 13 = 52$ ."
+        ],
+        "result": "52"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "مساحة الحديقة بالمتر المربّع هي $S = x^{2}$ . احسب قيمتها من أجل $x = 13$ .",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "169",
+      "misconceptionSignatures": [
+        {
+          "value": "26",
+          "id": "MISC-IBARA2-SQUARE2"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بالقيمة المعطاة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ احترم أولويّة العمليّات : الضرب قبل الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة قبل أن تجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = 169$ .",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ أعد الحساب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$13^{2} = 169$ ."
+        ],
+        "result": "169"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

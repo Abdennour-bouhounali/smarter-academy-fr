@@ -1,0 +1,248 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-amaliyat-tabiiya-ushriya-l4-005",
+  "lessonCode": "wadiya-idmajiya-amaliyat-tabiiya-ushriya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — ألغاز الأعداد 5 الأربعة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "لغز",
+      "أولوية",
+      "مقارنة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "لغز: نستعمل العدد $5$ أربع مرّات بالضبط مع العمليات والأقواس."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب قيمة السلسلة $5 + 5 + 5 \\times 5$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "35",
+      "misconceptionSignatures": [
+        {
+          "value": "75",
+          "id": "MISC-SILSILA-NOPRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين وخطّ الكسر يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 + 5 + 5 \\times 5 = 35$ .",
+        "incorrect": "الضرب والقسمة يُنجزان قبل الجمع والطرح حتى لو ظهر الجمع أو الطرح أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "$A = 5 + 5 + 5 \\times 5$",
+          "$A = 5 + 5 + 25$",
+          "$A = 10 + 25$",
+          "$A = 35$"
+        ],
+        "result": "35"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أيّ سلسلة بأربعة أعداد $5$ تساوي $6$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$5 \\times 5 + 5 \\div 5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-IGNORED"
+        },
+        {
+          "id": "B",
+          "content": "$5 \\times (5 + 5) \\div 5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-MISPLACED"
+        },
+        {
+          "id": "C",
+          "content": "$(5 \\times 5 + 5) \\div 5$",
+          "isCorrect": true
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المطلوب جيّدًا: ما العملية التي تُنجز في الأخير، وما الذي يُحسب قبلها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ سلسلة مقترحة بالحساب أو بالقاعدة المناسبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الجواب هو السلسلة التي تترجم المطلوب وتعطي القيمة المنتظرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$(5 \\times 5 + 5) \\div 5 = 6$ .",
+        "incorrect": "اختبر كلّ سلسلة بالحساب: الصحيحة هي التي تترجم المطلوب وتعطي القيمة المنتظرة، وانتبه إلى القوسين."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة الصحيحة: $(5 \\times 5 + 5) \\div 5$",
+          "$A = (5 \\times 5 + 5) \\div 5$",
+          "$A = (25 + 5) \\div 5$",
+          "$A = 30 \\div 5$",
+          "$A = 6$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل قيمة $5 \\times 5 - 5 \\div 5$ أكبر من $23$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SILSILA-NOPRIORITY"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب كلّ طرف من الطرفين على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين الناتجين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحكم قبل أن تحسب: اختبر بالأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم، تحقّق بالحساب.",
+        "incorrect": "احسب الطرفين كلّا على حدة قبل أن تحكم."
+      },
+      "solution": {
+        "lines": [
+          "$A = 5 \\times 5 - 5 \\div 5$",
+          "$A = 25 - 1$",
+          "$A = 24$",
+          "$A = 23$",
+          "النتيجتان تحقّقان ما قيل: الجواب نعم."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "اكتب سلسلة بأربعة أعداد $5$ تساوي $30$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب على ورقتك مرحلة مرحلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اسأل: أيّ حساب يثبت ما تقول؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تذكر القاعدة المستعملة."
+        }
+      ],
+      "feedback": {
+        "correct": "سلسلة أخرى صحيحة بأربعة أعداد $5$ مقبولة أيضًا.",
+        "incorrect": "قارن تبريرك بالحلّ النموذجي: الفكرة ثم الحساب الذي يدعمها."
+      },
+      "solution": {
+        "lines": [
+          "مثال: $5 \\times 5 + 5 + 5 - 5$ .",
+          "$5 \\times 5 = 25$ ثم $25 + 5 + 5 - 5 = 30$ .",
+          "سلسلة أخرى صحيحة بأربعة أعداد $5$ مقبولة أيضًا."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

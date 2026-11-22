@@ -1,0 +1,139 @@
+{
+  "id": "ex-4am-hasiba-muthallathiya-l1-006",
+  "lessonCode": "hasiba-muthallathiya",
+  "level": 1,
+  "metadata": {
+    "title": "جيب 30° ثم ظلها مدوّرا",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الجيب",
+      "الظل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hasiba-muthallathiya_P1",
+      "modelledOn": "act-4",
+      "adaptedFrom": "ex-4am-hasiba-muthallathiya-l1-006"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "حاسبة علمية مبرمجة بالدرجة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "الحاسبة مبرمجة بالدرجة. نضغط ⁦ON sin 30 =⁩ . ما العدد الذي يظهر على الشاشة؟",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري كما يظهر على الشاشة",
+      "expectedAnswer": "0.5",
+      "misconceptionSignatures": [
+        {
+          "value": "-0.9880316241",
+          "id": "MISC-MUTH-HASIBA-RAD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق أن الحاسبة مبرمجة بالدرجة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اللمسة المباشرة ⁦sin⁩ ثم ⁦30⁩ ثم ⁦=⁩."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin 30^{\\circ} = 0{,}5$ (قيمة مضبوطة).",
+        "incorrect": "بحاسبة مبرمجة بالدرجة تعطي اللمسة المباشرة جيب الزاوية $30^{\\circ}$ ؛ في وضع الراديان تظهر قيمة سالبة."
+      },
+      "solution": {
+        "lines": [
+          "الحاسبة مبرمجة بالدرجة: ⁦ON sin 30 =⁩ يظهر على الشاشة $0{,}5$ ."
+        ],
+        "result": "\\sin 30^{\\circ} = 0{,}5"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $\\tan 30^{\\circ}$ بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري مدوّر إلى 0,01",
+      "expectedAnswer": "0.58",
+      "misconceptionSignatures": [
+        {
+          "value": "0.57",
+          "id": "MISC-MUTH-TADWIR-BATR"
+        },
+        {
+          "value": "-6.41",
+          "id": "MISC-MUTH-HASIBA-RAD"
+        },
+        {
+          "value": "1.73",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق أن الحاسبة مبرمجة بالدرجة: الحرف ⁦D⁩ في أعلى الشاشة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اللمسة المباشرة: ⁦tan⁩ ثم قيس الزاوية ثم ⁦=⁩ (دون ⁦2nd⁩)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتدوير إلى الجزء من 100: انظر إلى الرقم الموالي؛ إذا كان 5 أو أكبر نضيف 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan 30^{\\circ} = 0{,}5773502692 \\approx 0{,}58$ .",
+        "incorrect": "احسب باللمسة المباشرة والحاسبة مبرمجة بالدرجة، ثم دوّر (لا تبتر) إلى الجزء من 100."
+      },
+      "solution": {
+        "lines": [
+          "الحاسبة مبرمجة بالدرجة: ⁦ON tan 30 =⁩ يظهر على الشاشة $0{,}5773502692$ .",
+          "الرقم الذي يلي رقم الأجزاء من 100 هو 7، وهو أكبر من 5: نضيف 1 إلى رقم الأجزاء من 100."
+        ],
+        "result": "\\tan 30^{\\circ} \\approx 0{,}58"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

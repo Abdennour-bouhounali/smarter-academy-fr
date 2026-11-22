@@ -1,0 +1,540 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l5-003",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مسار كرة البلياردو",
+    "estimatedMinutes": 25,
+    "tags": [
+      "وضعية إدماجية",
+      "خاصية فيثاغورس",
+      "التدوير",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-78",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يحبّ أحمد لعبة البلياردو ويلعبها مع إخوته بعد إنهاء واجباته. ضرب الكرة من النقطة $A$ ، فاصطدمت بالجدار في $B$ ، ثم بالجدار في $C$ ، ثم سقطت في الحفرة $E$ . الشكل يبيّن، لكل مقطع، طولي الضلعين القائمين للمثلث القائم الذي هو وتره.",
+    "figure": {
+      "points": {
+        "G": [
+          0,
+          0
+        ],
+        "H": [
+          24,
+          0
+        ],
+        "K": [
+          24,
+          13
+        ],
+        "L": [
+          0,
+          13
+        ],
+        "A": [
+          2,
+          4
+        ],
+        "P": [
+          14,
+          4
+        ],
+        "B": [
+          14,
+          13
+        ],
+        "C": [
+          24,
+          5.5
+        ],
+        "E": [
+          20,
+          0
+        ]
+      },
+      "segments": [
+        [
+          "G",
+          "H"
+        ],
+        [
+          "H",
+          "K"
+        ],
+        [
+          "K",
+          "L"
+        ],
+        [
+          "L",
+          "G"
+        ],
+        {
+          "from": "A",
+          "to": "B",
+          "tone": "rose",
+          "bold": true
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "tone": "rose",
+          "bold": true
+        },
+        {
+          "from": "C",
+          "to": "E",
+          "tone": "rose",
+          "bold": true
+        },
+        {
+          "from": "A",
+          "to": "P",
+          "label": "120 cm",
+          "dashed": true
+        },
+        {
+          "from": "P",
+          "to": "B",
+          "label": "90 cm",
+          "dashed": true,
+          "labelSide": -1
+        },
+        {
+          "from": "B",
+          "to": "K",
+          "label": "100 cm",
+          "dashed": true
+        },
+        {
+          "from": "K",
+          "to": "C",
+          "label": "75 cm",
+          "dashed": true
+        },
+        {
+          "from": "C",
+          "to": "H",
+          "label": "55 cm",
+          "dashed": true
+        },
+        {
+          "from": "H",
+          "to": "E",
+          "label": "40 cm",
+          "dashed": true
+        }
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "P",
+          "B"
+        ],
+        [
+          "B",
+          "K",
+          "C"
+        ],
+        [
+          "C",
+          "H",
+          "E"
+        ]
+      ],
+      "labels": {
+        "A": "w",
+        "B": "n",
+        "C": "e",
+        "E": "s"
+      },
+      "hidden": [
+        "G",
+        "H",
+        "K",
+        "L",
+        "P"
+      ],
+      "ariaLabel": "طاولة بلياردو مستطيلة، ومسار الكرة A ثم B ثم C ثم الحفرة E، مع الأضلاع القائمة لكل مقطع: 120 و 90، 100 و 75، 55 و 40 سنتيمترا",
+      "maxWidth": 320,
+      "caption": "(الأطوال غير حقيقية)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب طول كل مقطع من مسار الكرة:",
+      "statement": "$AB$ :",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm",
+      "expectedAnswer": "150",
+      "misconceptionSignatures": [
+        {
+          "value": "210",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "22500",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولا مربع الطول، ثم خذ جذره التربيعي بالآلة الحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB^2 = 120^2 + 90^2 = 22500$ ، إذن $AB = 150\\,\\mathrm{cm}$ .",
+        "incorrect": "ابدأ بتحديد الوتر، ثم اكتب مساواة فيثاغورس، وتذكّر أن ما تحسبه أولا هو مربع الطول لا الطول نفسه."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $APB$ قائم في $P$ ، حسب خاصية فيثاغورس: $AB^2 = AP^2 + PB^2$",
+          "$AB^2 = 120^2 + 90^2$",
+          "$AB^2 = 14400 + 8100 = 22500$",
+          "$AB = \\sqrt{22500} = 150\\,\\mathrm{cm}$"
+        ],
+        "result": "AB = 150\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$BC$ :",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm",
+      "expectedAnswer": "125",
+      "misconceptionSignatures": [
+        {
+          "value": "175",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "15625",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولا مربع الطول، ثم خذ جذره التربيعي بالآلة الحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC^2 = 100^2 + 75^2 = 15625$ ، إذن $BC = 125\\,\\mathrm{cm}$ .",
+        "incorrect": "ابدأ بتحديد الوتر، ثم اكتب مساواة فيثاغورس، وتذكّر أن ما تحسبه أولا هو مربع الطول لا الطول نفسه."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $BKC$ قائم في $K$ ، حسب خاصية فيثاغورس: $BC^2 = BK^2 + KC^2$",
+          "$BC^2 = 100^2 + 75^2$",
+          "$BC^2 = 10000 + 5625 = 15625$",
+          "$BC = \\sqrt{15625} = 125\\,\\mathrm{cm}$"
+        ],
+        "result": "BC = 125\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "ما القيمة المضبوطة للطول $CE$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$95\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-ROOT-SPLIT"
+        },
+        {
+          "id": "B",
+          "content": "$\\sqrt{4625}\\,\\mathrm{cm}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\sqrt{1\\,425}\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-HYP-WRONG"
+        },
+        {
+          "id": "D",
+          "content": "$4\\,625\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولا $CE^2$ بخاصية فيثاغورس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الطول هو العدد الموجب الذي مربعه يساوي القيمة التي حسبتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القيمة المضبوطة تُكتب بالرمز $\\sqrt{\\ }$ إذا لم يكن العدد مربعا تاما."
+        }
+      ],
+      "feedback": {
+        "correct": "$CE^2 = 4625$ ، إذن $CE = \\sqrt{4625}$ (قيمة مضبوطة).",
+        "incorrect": "لا تخلط بين مربع الطول والطول نفسه، ولا تجمع الأطوال: احسب المربع ثم خذ جذره."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $CHE$ قائم في $H$ ، حسب خاصية فيثاغورس: $CE^2 = CH^2 + HE^2$",
+          "$CE^2 = 55^2 + 40^2$",
+          "$CE^2 = 3025 + 1600 = 4625$",
+          "$CE^2 = 4625$ ، ومنه القيمة المضبوطة: $CE = \\sqrt{4625}\\,\\mathrm{cm}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أعط قيمة مقرّبة للطول $CE$ بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm مدوّرا إلى 0,1",
+      "expectedAnswer": "68",
+      "misconceptionSignatures": [
+        {
+          "value": "95",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "4625",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مربع الطول، ثم استعمل اللمسة $\\sqrt{\\ }$ ، ولا تدوّر إلا النتيجة الأخيرة (انظر إلى الرقم الموالي للرقم المطلوب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$CE^2 = 55^2 + 40^2 = 4625$ ، إذن $CE \\approx 68\\,\\mathrm{cm}$ .",
+        "incorrect": "ابدأ بتحديد الوتر، ثم اكتب مساواة فيثاغورس، وتذكّر أن ما تحسبه أولا هو مربع الطول لا الطول نفسه."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $CHE$ قائم في $H$ ، حسب خاصية فيثاغورس: $CE^2 = CH^2 + HE^2$",
+          "$CE^2 = 55^2 + 40^2$",
+          "$CE^2 = 3025 + 1600 = 4625$",
+          "$CE = \\sqrt{4625}$ (القيمة المضبوطة)",
+          "باستعمال اللمسة $\\sqrt{\\ }$ للآلة الحاسبة: $\\sqrt{4625} \\approx 68{,}007352543$",
+          "المدوّر إلى $0{,}1$ : $CE \\approx 68\\,\\mathrm{cm}$"
+        ],
+        "result": "CE \\approx 68\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "أعط قيمة مقرّبة إلى $0{,}1$ للطول الكلي للمسار الذي قطعته الكرة (بالسنتيمتر).",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm مدوّرا إلى 0,1",
+      "expectedAnswer": "343",
+      "misconceptionSignatures": [
+        {
+          "value": "500",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسار مجموع المقاطع الثلاثة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل للمقطع $CE$ قيمة الآلة الكاملة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "دوّر المجموع في النهاية فقط."
+        }
+      ],
+      "feedback": {
+        "correct": "$150 + 125 + \\sqrt{4\\,625} \\approx 343{,}0\\,\\mathrm{cm}$ .",
+        "incorrect": "كل مقطع وتر لمثلث قائم: لا تجمع الأضلاع القائمة."
+      },
+      "solution": {
+        "lines": [
+          "$AB + BC + CE = 150 + 125 + \\sqrt{4\\,625}$",
+          "$\\approx 275 + 68{,}0074 \\approx 343{,}0074$",
+          "إذن الطول الكلي $\\approx 343{,}0\\,\\mathrm{cm}$"
+        ],
+        "result": "\\approx 343{,}0\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "قال أحمد: «قطعت الكرة أكثر من $3{,}5\\,\\mathrm{m}$ قبل أن تسقط». هل هو محقّ؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأن $120 + 90 + 100 + 75 + 55 + 40 = 480\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "id": "B",
+          "content": "لا، قطعت حوالي $3{,}43\\,\\mathrm{m}$ فقط",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نعم، لأن $343 > 3{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WAHDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل الطول الكلي إلى المتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$1\\,\\mathrm{m} = 100\\,\\mathrm{cm}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$343\\,\\mathrm{cm} = 3{,}43\\,\\mathrm{m} < 3{,}5\\,\\mathrm{m}$ .",
+        "incorrect": "قارن عددين بالوحدة نفسها، والمسار مجموع الأوتار لا الأضلاع القائمة."
+      },
+      "solution": {
+        "lines": [
+          "الطول الكلي $\\approx 343{,}0\\,\\mathrm{cm} = 3{,}43\\,\\mathrm{m}$ .",
+          "$3{,}43 < 3{,}5$ : أحمد ليس محقّا."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

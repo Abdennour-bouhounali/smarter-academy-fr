@@ -1,0 +1,184 @@
+{
+  "id": "ex-3am-tasawi-muqaranat-kasrayn-l3-007",
+  "lessonCode": "tasawi-muqaranat-kasrayn",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — حصّة الرمي على السلّة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "ترتيب كسور",
+      "مسألة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "في حصّة الرمي على السلّة سجّل أمين 7 رميات من 10، وسجّلت سلمى 3 من 4، وسجّل يونس 5 من 8."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "رتّب الكسور $\\dfrac{7}{10} ، \\dfrac{3}{4} ، \\dfrac{5}{8}$ ترتيبًا تصاعديًا.",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{5}{8} < \\dfrac{7}{10} < \\dfrac{3}{4}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{3}{4} < \\dfrac{5}{8} < \\dfrac{7}{10}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-NUMERATORS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكسور المطلوب ترتيبها؟ وما الترتيب المطلوب: تصاعدي أم تنازلي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور كلّها بمقام مشترك ثمّ قارن البسوط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بمقارنة كلّ كسرين متجاورين في ترتيبك."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{5}{8} < \\dfrac{7}{10} < \\dfrac{3}{4}$ .",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "المقام المشترك $40$ : $\\dfrac{7}{10} = \\dfrac{28}{40} ، \\dfrac{3}{4} = \\dfrac{30}{40} ، \\dfrac{5}{8} = \\dfrac{25}{40}$ .",
+          "الترتيب التصاعدي : $\\dfrac{5}{8} < \\dfrac{7}{10} < \\dfrac{3}{4}$ ."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما أكبر الكسور $\\dfrac{7}{10} ، \\dfrac{3}{4} ، \\dfrac{5}{8}$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "3/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كل سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{4}$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "بالمقام $40$ : $28 ، 30 ، 25$ ، والأكبر $\\dfrac{3}{4}$ ."
+        ],
+        "result": "\\dfrac{3}{4}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "جد العدد $x$ حيث $\\dfrac{7}{10} = \\dfrac{x}{40}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "28",
+      "misconceptionSignatures": [
+        {
+          "value": "37",
+          "id": "MISC-TASAWI-ADDSAME"
+        },
+        {
+          "value": "400/7",
+          "id": "MISC-TASAWI-CROSSWRONG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في أيّ موضع يوجد العدد المجهول؟ وما الكسر الآخر في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كسران متساويان جداءاهما المتصالبان متساويان: اكتب المعادلة المناسبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة كتابة المساواة بعد التعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 28$ لأنّ $7 \\times 40 = 10 \\times x$ .",
+        "incorrect": "كسران متساويان جداءاهما المتصالبان متساويان: اكتب المعادلة بدقّة وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{7}{10} = \\dfrac{x}{40}$ ، إذن $7 \\times 40 = 10 \\times x$ .",
+          "$x = 28$ ."
+        ],
+        "result": "x = 28"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l4-001",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 14 — الرأس D",
+    "estimatedMinutes": 4,
+    "tags": [
+      "متوازي أضلاع",
+      "نقطة مجهولة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-14",
+      "page": 147,
+      "section": "إحداثيتا منتصف قطعة - المسافة بين نقطتين",
+      "number": 14
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 147، تمرين 14): في معلم متعامد ومتجانس، $A(1\\,;\\,1)$ ، $B(-1\\,;\\,4)$ ، $C(3\\,;\\,3)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا D بحيث $\\overrightarrow{AB} = \\overrightarrow{DC}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "point",
+      "answerFormat": "الإحداثيتان (x ; y) — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "5",
+        "y": "0"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "1",
+            "y": "6"
+          },
+          "id": "MISC-MAALAM-TARTIB-NUQAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المساواة الشعاعية لمتوازي الأضلاع ABCD بترتيب رؤوسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع الأول ومقابله في الاتجاه نفسه: $\\overrightarrow{AB} = \\overrightarrow{DC}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب معادلتين (للفاصلة وللترتيب) وحلّهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AB}\\begin{pmatrix} -2 \\\\ 3 \\end{pmatrix}$ ؛ $3 - x_D = -2$ و $3 - y_D = 3$ ، إذن $D(5\\,;\\,0)$ .",
+        "incorrect": "D هي مبدأ DC: $x_C - x_D = x_B - x_A$ ."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "نوع الرباعي ABCD:",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "معيّن لأن $\\overrightarrow{AB} = \\overrightarrow{DC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "B",
+          "content": "رباعي متقاطع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-TARTIB-NUQAT"
+        },
+        {
+          "id": "C",
+          "content": "متوازي أضلاع",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مركبتي كل شعاع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن المركبة الأولى بالأولى والثانية بالثانية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يتساوى الشعاعان إذا تساوت المركبتان معا."
+        }
+      ],
+      "feedback": {
+        "correct": "AB = DC و A، B، C ليست على استقامة: ABCD متوازي أضلاع (ليس معيّنا: $AB^2 = 13$ و $BC^2 = 17$).",
+        "incorrect": "تساوي شعاعين يعطي متوازي أضلاع، ولا يكفي للمعيّن."
+      }
+    }
+  ]
+}

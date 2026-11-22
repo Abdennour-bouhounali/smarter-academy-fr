@@ -1,0 +1,199 @@
+{
+  "id": "ex-4am-amaliyat-judhur-l5-007",
+  "lessonCode": "amaliyat-judhur",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2015 — توسيع حديقة مربعة",
+    "estimatedMinutes": 13,
+    "tags": [
+      "جداء جذرين",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_amaliyat-judhur_P1",
+      "modelledOn": "BEM 2015 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يملك عمي أحمد حديقة مربعة الشكل مساحتها $50\\,m^2$ ، يجلس فيها كل مساء ليقرأ ويُعلّم أحفاده ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب طول ضلع الحديقة على الشكل $a\\sqrt{2}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (طول الضلع بالمتر هو $a\\sqrt{2}$ )",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "25",
+          "id": "MISC-JIDHR-MURABBA-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول الضلع هو $\\sqrt{50}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $50$ جداء مربع تام في $2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sqrt{50} = \\sqrt{25 \\times 2} = 5\\sqrt{2}$ m.",
+        "incorrect": "ابحث عن مربع تام يقسم 50 ويكون حاصل القسمة 2."
+      },
+      "solution": {
+        "lines": [
+          "طول الضلع $c = \\sqrt{50}$",
+          "$c = \\sqrt{25 \\times 2} = \\sqrt{25} \\times \\sqrt{2}$"
+        ],
+        "result": "c = 5\\sqrt{2}\\,m"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "يريد عمي أحمد توسيع حديقته لتبقى مربعة الشكل وتصبح مساحتها ضعف مساحتها الأولى.",
+      "statement": "احسب طول ضلع الحديقة الجديدة.",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بالمتر",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة الحديقة الجديدة ضعف $50\\,m^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طول ضلع مربع هو الجذر التربيعي لمساحته."
+        }
+      ],
+      "feedback": {
+        "correct": "مساحة الحديقة الجديدة $100\\,m^2$ ، وطول ضلعها $\\sqrt{100} = 10$ m.",
+        "incorrect": "احسب أولًا مساحة الحديقة الجديدة، ثم جذرها التربيعي."
+      },
+      "solution": {
+        "lines": [
+          "مساحة الحديقة الجديدة: $2 \\times 50 = 100\\,m^2$",
+          "طول ضلعها: $\\sqrt{100}$"
+        ],
+        "result": "c' = 10\\,m"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "بيّن أن طول ضلع الحديقة الجديدة يساوي طول ضلع الحديقة الأولى مضروبًا في $\\sqrt{2}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب $5\\sqrt{2}$ في $\\sqrt{2}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن بالنتيجة التي وجدتها في (ا)."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك سطرًا بسطر بالحل النموذجي، وانتبه إلى الخاصية المستعملة في كل مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$5\\sqrt{2} \\times \\sqrt{2} = 5 \\times 2 = 10$",
+          "وهو طول ضلع الحديقة الجديدة، إذن:"
+        ],
+        "result": "c' = c \\times \\sqrt{2}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "☜ يحيط عمي أحمد الحديقة الجديدة بسياج ثمن المتر الواحد منه $650$DA، مع ترك مدخل عرضه $1\\,m$ دون سياج. ما ثمن السياج؟",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الثمن بالدينار (DA)",
+      "expectedAnswer": "25350",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب محيط الحديقة الجديدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح عرض المدخل ثم اضرب في ثمن المتر."
+        }
+      ],
+      "feedback": {
+        "correct": "طول السياج $40 - 1 = 39\\,m$ وثمنه $39 \\times 650 = 25350$DA.",
+        "incorrect": "طول السياج = محيط الحديقة الجديدة ناقص عرض المدخل."
+      },
+      "solution": {
+        "lines": [
+          "محيط الحديقة الجديدة: $4 \\times 10 = 40\\,m$",
+          "طول السياج: $40 - 1 = 39\\,m$",
+          "ثمن السياج: $39 \\times 650$"
+        ],
+        "result": "25350\\,DA"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

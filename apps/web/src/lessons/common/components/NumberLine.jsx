@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import { useCallback, useRef } from 'react';
 import { formatFr, roundTo } from '@smarter-academy/core';
 
 /**
@@ -126,7 +126,18 @@ export default function NumberLine({
         className="w-full h-auto min-w-[340px] select-none"
         role="img"
         aria-label={ariaLabel}
-        style={{ touchAction: mode === 'place' ? 'none' : 'auto' }}
+        // LTR EXPLICITE, comme CoordPlane. Une droite graduée est un objet
+        // MATHÉMATIQUE : elle croît vers la droite, y compris dans une page
+        // arabe (ALGERIA_PLATFORM_MASTER_SPEC.md §14 — « ne pas refléter
+        // aveuglément les interfaces mathématiques »).
+        //
+        // Sans cet attribut, l'algorithme bidi héritait du `dir="rtl"` de la
+        // page et réordonnait les étiquettes négatives : « -5 » s'affichait
+        // « 5- », le signe passant à droite du chiffre. Constaté à l'écran
+        // pendant la QA du moteur sous RTL — invisible pour un build, et
+        // faux mathématiquement.
+        dir="ltr"
+        style={{ direction: 'ltr', touchAction: mode === 'place' ? 'none' : 'auto' }}
         // Les gestes sont écoutés sur le <svg> lui-même : ils remontent depuis
         // n'importe quel enfant (curseur, axe, graduations). Avec les handlers
         // posés sur le seul rect transparent du fond, tout ce qui était peint

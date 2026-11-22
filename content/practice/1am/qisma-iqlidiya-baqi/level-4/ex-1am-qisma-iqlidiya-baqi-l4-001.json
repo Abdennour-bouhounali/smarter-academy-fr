@@ -1,0 +1,318 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l4-001",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — قابلية القسمة والقسمتان",
+    "estimatedMinutes": 10,
+    "tags": [
+      "قابلية القسمة",
+      "قسمة إقليدية",
+      "قسمة عشرية"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 2,
+      "file": "1am-s2-78",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الأول",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "أجب عمّا يلي."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "هل يقبل العدد 3015 القسمة على 5؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى رقم الآحاد."
+        }
+      ],
+      "feedback": {
+        "correct": "رقم آحاده 5.",
+        "incorrect": "يقبل العدد القسمة على 5 إذا كان رقم آحاده 0 أو 5."
+      },
+      "solution": {
+        "lines": [
+          "رقم آحاد 3015 هو 5 ، إذن يقبل القسمة على 5."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل يقبل العدد 3015 القسمة على 9؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مجموع أرقامه."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 + 0 + 1 + 5 = 9$.",
+        "incorrect": "يقبل العدد القسمة على 9 إذا كان مجموع أرقامه يقبل القسمة على 9."
+      },
+      "solution": {
+        "lines": [
+          "$3 + 0 + 1 + 5 = 9$ ، و 9 يقبل القسمة على 9.",
+          "إذن 3015 يقبل القسمة على 9."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أنجز عموديًا القسمة الإقليدية للعدد 58 على 7: ما هو الحاصل؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "7",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "9",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 58 من 7 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 7 دون أن نتجاوز 58."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$58 = 7 \\times 8 + 2$ و $2 < 7$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 7 فلا يتجاوز الجداء 58، والباقي عندئذ أصغر من 7."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 8 = 56$ و $7 \\times 9 = 63$",
+          "$56 \\le 58 < 63$ ، إذن الحاصل هو 8."
+        ],
+        "result": "q = 8"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أكمل: اختر المساواة المعبّرة عن هذه القسمة.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$58 = 7 \\times 9 + 2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        },
+        {
+          "id": "B",
+          "content": "$58 = 7 \\times 8 + 2$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$58 = 7 \\times 7 + 9$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "id": "D",
+          "content": "$58 = 7 \\times 2 + 8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-HASIL"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق من صحة كل مساواة بالحساب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في القسمة الإقليدية على 7، يجب أن يكون الباقي أصغر من 7."
+        }
+      ],
+      "feedback": {
+        "correct": "$7 \\times 8 + 2 = 58$ و $2 < 7$: الشرطان محقّقان.",
+        "incorrect": "المساواة الصحيحة يجب أن تكون صحيحة حسابيًا، وأن يكون باقيها أصغر من المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 8 = 56$ و $56 + 2 = 58$",
+          "$2 < 7$ ، إذن:"
+        ],
+        "result": "58 = 7 \\times 8 + 2"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "أنجز عموديًا القسمة العشرية للعدد 50,4 على 12.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "4.2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نقسم الجزء الصحيح ثم نضع الفاصلة في الحاصل."
+        }
+      ],
+      "feedback": {
+        "correct": "$50{,}4 \\div 12 = 4{,}2$.",
+        "incorrect": "ضع الفاصلة في الحاصل عند تنزيل أول رقم بعد الفاصلة."
+      },
+      "solution": {
+        "lines": [
+          "$12 \\times 4{,}2 = 50{,}4$"
+        ],
+        "result": "4{,}2"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "أعطِ المدوّر إلى الوحدة لهذا الحاصل.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى رقم الأجزاء من عشرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$4{,}2 \\approx 4$.",
+        "incorrect": "رقم الأجزاء من عشرة أصغر من 5."
+      },
+      "solution": {
+        "lines": [
+          "رقم الأجزاء من عشرة هو 2 ، و $2 < 5$.",
+          "المدوّر إلى الوحدة هو 4."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "id": "ex-4am-barahin-ashia-l2-006",
+  "lessonCode": "barahin-ashia",
+  "level": 2,
+  "generator": {
+    "tool": "gen-barahin.mjs",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — نهاية ممثّل مجموع على المرصوفة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "إنشاء",
+      "مرصوفة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_barahin-ashia_P3",
+      "modelledOn": "now-138"
+    }
+  },
+  "statement": {
+    "content": "على المرصوفة (الشكل): الشعاعان $\\overrightarrow{AB}$ و $\\overrightarrow{CD}$ ، والنقط O و M و N و Q .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          1,
+          4
+        ],
+        "B": [
+          4,
+          5
+        ],
+        "C": [
+          5,
+          1
+        ],
+        "D": [
+          6,
+          3
+        ],
+        "M": [
+          4,
+          3
+        ],
+        "N": [
+          3,
+          1
+        ],
+        "Q": [
+          1,
+          2
+        ]
+      },
+      "grid": true,
+      "vectors": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "",
+          "tone": "rose"
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "label": "",
+          "tone": "indigo"
+        }
+      ],
+      "labels": {
+        "O": "sw",
+        "M": "ne",
+        "N": "se",
+        "Q": "nw"
+      },
+      "ariaLabel": "مرصوفة عليها الشعاعان AB و CD والنقط O و M و N و Q"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "النقطة P حيث $\\overrightarrow{OP}$ = $\\overrightarrow{AB}$ + $\\overrightarrow{CD}$ هي:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "M",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "N",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSHA-MABDA"
+        },
+        {
+          "id": "C",
+          "content": "Q",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSHA-MABDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ مربعات كل شعاع: كم إلى اليمين؟ كم إلى الأعلى؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ارسم من O ممثّل $\\overrightarrow{AB}$ ، ثم من نهايته ممثّل $\\overrightarrow{CD}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الانتقالان يُجمعان: الأفقي مع الأفقي والعمودي مع العمودي."
+        }
+      ],
+      "feedback": {
+        "correct": "من O نسير مثل $\\overrightarrow{AB}$ (3 يمينا و 1 أعلى) ثم مثل $\\overrightarrow{CD}$ (1 يمينا و 2 أعلى): نصل إلى M .",
+        "incorrect": "N نهاية $\\overrightarrow{AB}$ وحده و Q نهاية $\\overrightarrow{CD}$ وحده: المجموع يضع الممثّلين متتابعين."
+      }
+    }
+  ]
+}

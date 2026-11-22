@@ -1,0 +1,230 @@
+{
+  "id": "ex-1am-hasil-qisma-kasr-l4-007",
+  "lessonCode": "hasil-qisma-kasr",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — توزيع الكتب على المكتبات",
+    "estimatedMinutes": 11,
+    "tags": [
+      "حاصل القسمة",
+      "قابلية القسمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الأول",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "توزّع جمعية للقراءة 215 كتابًا على 4 مكتبات بالتساوي، لتُتاح لكل أطفال الحيّ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل يقبل العدد 215 القسمة على 4 ؟",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى العدد المكوّن من رقمي الآحاد والعشرات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يقبل هذا العدد القسمة على 4 ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$215 = 4 \\times 53 + 3$ : لا يقبل القسمة.",
+        "incorrect": "يقبل العدد القسمة على 4 إذا كان العدد المكوّن من رقمي آحاده وعشراته يقبل القسمة على 4."
+      },
+      "solution": {
+        "lines": [
+          "العدد المكوّن من رقمي الآحاد والعشرات هو 15 ولا يقبل القسمة على 4.",
+          "إذن 215 لا يقبل القسمة على 4."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب نصيب المكتبة الواحدة على شكل كسر (حاصل قسمة 215 على 4).",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "215/4",
+      "misconceptionSignatures": [
+        {
+          "value": "4/215",
+          "id": "MISC-HASIL-QALB"
+        },
+        {
+          "value": "215,4",
+          "id": "MISC-HASIL-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العدد الذي نقسمه والعدد الذي نقسم عليه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في الكتابة الكسرية يوضع المقسوم فوق الشرطة والمقسوم عليه تحتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب القسمة أولًا ثم حوّلها إلى كسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$215 \\div 4$ = $\\dfrac{215}{4}$ : المقسوم بسط والمقسوم عليه مقام.",
+        "incorrect": "الكسر $\\dfrac{a}{b}$ هو حاصل قسمة $a$ على $b$ : البسط هو المقسوم والمقام هو المقسوم عليه، والشرطة لا تتحوّل إلى فاصلة."
+      },
+      "solution": {
+        "lines": [
+          "$215 \\div 4$ = $\\dfrac{215}{4}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اكتب هذا الحاصل على شكل عدد عشري.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة)",
+      "expectedAnswer": "53,75",
+      "misconceptionSignatures": [
+        {
+          "value": "215,4",
+          "id": "MISC-HASIL-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجعل المقام 10 أو 100 أو 1000 بالضرب في عدد مناسب، أو أجرِ القسمة العشرية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل تتوقّف الأرقام بعد الفاصلة أم تتكرّر بلا نهاية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نتحدّث عن عدد عشري عندما تتوقّف الأرقام بعد الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{215}{4}$ = $53{,}75$",
+        "incorrect": "حاصل القسمة عدد عشري إذا انتهت أرقامه بعد الفاصلة ؛ وإلاّ فالكسر هو الكتابة المضبوطة له."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{215}{4} = \\dfrac{215 \\times 25}{4 \\times 25} = \\dfrac{5375}{100}$ (نضرب الحدّين في العدد نفسه)",
+          "$\\dfrac{5375}{100}$ = $53{,}75$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "حاصل قسمة 215 على 4 هو العدد الطبيعي 53.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASIL-IQLIDI"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب العدد 53 في 4 وقارن بالنتيجة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكسر هو العدد الذي إذا ضُرب في مقامه أعطى بسطه."
+        }
+      ],
+      "feedback": {
+        "correct": "$215 \\div 4$ = $\\dfrac{215}{4}$ = $53{,}75$",
+        "incorrect": "حاصل القسمة الإقليدية يهمل الباقي، أمّا حاصل القسمة فهو الكسر $\\dfrac{a}{b}$ الذي إذا ضُرب في $b$ أعطى $a$."
+      },
+      "solution": {
+        "lines": [
+          "$215 = 4 \\times 53 + 3$ : العدد 53 هو حاصل القسمة الإقليدية وباقيها 3.",
+          "أمّا حاصل قسمة 215 على 4 فهو $\\dfrac{215}{4}$ = $53{,}75$."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

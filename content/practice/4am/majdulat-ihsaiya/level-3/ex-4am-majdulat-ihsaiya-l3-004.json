@@ -1,0 +1,262 @@
+{
+  "id": "ex-4am-majdulat-ihsaiya-l3-004",
+  "lessonCode": "majdulat-ihsaiya",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 7 (ص 99) — المجدول يعيد الحساب",
+    "estimatedMinutes": 8,
+    "tags": [
+      "دستور",
+      "متوسط",
+      "وسيط",
+      "إعادة الحساب"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-7",
+      "page": 99,
+      "section": "أوظّف تعلّماتي",
+      "number": 7,
+      "adaptedFrom": "ex-4am-majdulat-ihsaiya-l3-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "حجزنا سلسلة التمرين 7 في المجال ⁦A1:G1⁩ ، والدستور ⁦=MOYENNE(A1:G1)⁩ في الخلية B4 والدستور ⁦=MEDIANE(A1:G1)⁩ في الخلية B3 . ثم عوّضنا القيمة 10 في الخلية B1 بالعدد 17 دون أن نلمس الدستورين، فصار السطر الأول:",
+    "table": {
+      "head": [
+        "",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "rows": [
+        [
+          "1",
+          "4",
+          "17",
+          "8",
+          "4",
+          "3",
+          "2",
+          "4"
+        ]
+      ],
+      "sheet": true
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما هو العدد الذي يظهر الآن في الخلية B4 ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة إن لزم)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MOYENNE(…)⁩ يقسم مجموع القيم العددية في المجال على عددها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع القيم العددية الموجودة في المجال، وعُدّها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المتوسط = مجموع القيم ÷ عددها."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{42}{7} = 6$ .",
+        "incorrect": "اجمع كل القيم العددية التي في المجال، ثم اقسم المجموع على عددها (لا على عدد آخر)."
+      },
+      "solution": {
+        "lines": [
+          "مجموع القيم: $4 + 17 + 8 + 4 + 3 + 2 + 4 = 42$ ، وعددها 7 .",
+          "$\\dfrac{42}{7} = 6$",
+          "إذن يُظهر الدستور العدد 6 ."
+        ],
+        "result": "6"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما هو العدد الذي يظهر الآن في الخلية B3 ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة إن لزم)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MEDIANE(…)⁩ يُظهر وسيط القيم: يرتّبها المجدول أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب القيم الـ 7 تصاعديا، ثم خذ القيمة التي تقع في الوسط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لعدد فرديّ من القيم، الرتبة الوسطى هي $\\dfrac{N + 1}{2}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "القيم مرتّبة: 2 ، 3 ، 4 ، 4 ، 4 ، 8 ، 17 ، والوسيط 4 .",
+        "incorrect": "لا يُقرأ الوسيط إلا بعد ترتيب القيم تصاعديا، ثم نأخذ القيمة الوسطى (أو نصف مجموع القيمتين الوسطيين)."
+      },
+      "solution": {
+        "lines": [
+          "نرتّب القيم تصاعديا: 2 ، 3 ، 4 ، 4 ، 4 ، 8 ، 17 .",
+          "عدد القيم 7 فرديّ: الوسيط هو القيمة ذات الرتبة $\\dfrac{7 + 1}{2} = 4$ .",
+          "الوسيط: 4",
+          "إذن يُظهر الدستور العدد 4 ."
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "بأيّ عدد يجب أن نعوّض القيمة 17 في الخلية B1 ليُظهر الدستور الذي في B4 العدد 7 ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "24",
+      "misconceptionSignatures": [
+        {
+          "value": "49",
+          "id": "MISC-IHSA-MUTAWASSIT-QISMA-QIYAM"
+        },
+        {
+          "value": "7",
+          "id": "MISC-IHSA-MUTAWASSIT-QISMA-QIYAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "متوسط سبع قيم يساوي 7 معناه أن مجموعها يساوي $7 \\times 7$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب مجموع القيم الست الأخرى التي لا تتغيّر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القيمة الجديدة = المجموع المطلوب − مجموع القيم الست."
+        }
+      ],
+      "feedback": {
+        "correct": "$7 \\times 7 = 49$ و $4 + 8 + 4 + 3 + 2 + 4 = 25$ ، إذن $49 - 25 = 24$ .",
+        "incorrect": "اضرب المتوسط المطلوب في عدد القيم لتحصل على مجموعها، ثم اطرح مجموع القيم الست التي لا تتغيّر."
+      },
+      "solution": {
+        "lines": [
+          "ليكن $x$ العدد الجديد في B1 . المتوسط 7 لسبع قيم معناه: $\\dfrac{25 + x}{7} = 7$",
+          "مجموع القيم الأخرى: $4 + 8 + 4 + 3 + 2 + 4 = 25$",
+          "$25 + x = 49$ ، إذن $x = 24$"
+        ],
+        "result": "24"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "بيّن أنّ الدستور الذي في B3 يُظهر العدد نفسه بعد هذا التعويض.",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رتّب السلسلة الجديدة تصاعديا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أين تقع القيمة 24 في الترتيب؟ وهل تغيّرت القيمة الرابعة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "إجابتك مطابقة للحل النموذجي.",
+        "incorrect": "قارن إجابتك بالحل النموذجي سطرا سطرا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة الجديدة مرتّبة: 2 ، 3 ، 4 ، 4 ، 4 ، 8 ، 24 .",
+          "عدد القيم 7 فرديّ: الوسيط القيمة ذات الرتبة 4 ، أي 4 .",
+          "قبل التعويض كان الوسيط 4 أيضا: تغيير أكبر قيمة لا يغيّر القيمة الوسطى، والمجدول يعيد الحساب ويُظهر 4 ."
+        ]
+      },
+      "timeSeconds": 240
+    }
+  ]
+}

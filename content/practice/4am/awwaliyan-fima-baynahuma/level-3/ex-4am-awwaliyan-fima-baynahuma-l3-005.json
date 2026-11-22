@@ -1,0 +1,177 @@
+{
+  "id": "ex-4am-awwaliyan-fima-baynahuma-l3-005",
+  "lessonCode": "awwaliyan-fima-baynahuma",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2016 — العددان 1575 و 1088",
+    "estimatedMinutes": 10,
+    "tags": [
+      "خوارزمية إقليدس",
+      "جذور"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_awwaliyan-fima-baynahuma_P2",
+      "modelledOn": "BEM 2016 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 1575 و 1088.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 1575 على 1088: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (1575 ; 1088) بالزوج (1088 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 1. العددان 1575 و 1088 أوليان فيما بينهما.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$1575 = 1088 \\times 1 + 487$",
+          "$1088 = 487 \\times 2 + 114$",
+          "$487 = 114 \\times 4 + 31$",
+          "$114 = 31 \\times 3 + 21$",
+          "$31 = 21 \\times 1 + 10$",
+          "$21 = 10 \\times 2 + 1$",
+          "$10 = 1 \\times 10 + 0$",
+          "آخر باقٍ غير معدوم هو 1، إذن:"
+        ],
+        "result": "PGCD(1575 ; 1088) = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 270
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل العددان 1575 و 1088 أوليان فيما بينهما؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AWWALIYAN-ADAD-AWWALI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل يوجد عدد يختلف عن 1 يقسم 1575 و 1088 معًا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب PGCD(1575 ; 1088) بالقسمات المتتابعة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عددان أوليان فيما بينهما يعني أن قاسمهما المشترك الأكبر يساوي 1، ولو لم يكن أيّ منهما عددًا أوليًا."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(1575 ; 1088) = 1: العددان أوليان فيما بينهما.",
+        "incorrect": "احسب القاسم المشترك الأكبر بخوارزمية إقليدس قبل أن تحكم؛ لا يُشترط أن يكون أحد العددين عددًا أوليًا."
+      },
+      "solution": {
+        "lines": [
+          "وجدنا في السؤال 01: PGCD(1575 ; 1088) = 1 .",
+          "الجواب: نعم، العددان 1575 و 1088 أوليان فيما بينهما لأن قاسمهما المشترك الأكبر يساوي 1."
+        ],
+        "result": "PGCD(1575 ; 1088) = 1"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اكتب العدد $A = \\sqrt{1575} - 2\\sqrt{252}$ على الشكل $a\\sqrt{7}$ حيث $a$ عدد طبيعي يطلب تعيينه.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: العدد $a$ في الكتابة $a\\sqrt{7}$",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب كل عدد تحت الجذر على شكل جداء مربع تام في 7."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\sqrt{k^2 \\times 7} = k\\sqrt{7}$ ، ثم اجمع المعاملات."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 3\\sqrt{7}$",
+        "incorrect": "حلّل كل عدد تحت الجذر إلى جداء مربع تام في 7، ثم اجمع المعاملات مع إشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$\\sqrt{1575} = \\sqrt{225 \\times 7} = 15\\sqrt{7}$ ; $\\sqrt{252} = \\sqrt{36 \\times 7} = 6\\sqrt{7}$",
+          "$A = 15\\sqrt{7} - 12\\sqrt{7} = 3\\sqrt{7}$"
+        ],
+        "result": "A = 3\\sqrt{7}"
+      },
+      "timeSeconds": 210
+    }
+  ]
+}

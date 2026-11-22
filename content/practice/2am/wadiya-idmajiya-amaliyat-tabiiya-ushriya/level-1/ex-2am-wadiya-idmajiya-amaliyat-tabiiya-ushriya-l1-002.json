@@ -1,0 +1,251 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-amaliyat-tabiiya-ushriya-l1-002",
+  "lessonCode": "wadiya-idmajiya-amaliyat-tabiiya-ushriya",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — قسمة وضرب متتاليان، خط كسر، جداء أم فرق، توزيع على فرق",
+    "estimatedMinutes": 6,
+    "tags": [
+      "ضرب وقسمة",
+      "خطّ الكسر",
+      "توزيع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "سلاسل عمليات على أعداد طبيعية وعشرية: أجب عن الأسئلة الأربعة، ولا تنسَ أنّ كلّ سلسلة تُحسب بالترتيب الصحيح للعمليات."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب قيمة السلسلة $120 \\div 8 \\times 5$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "75",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-SILSILA-MULFIRST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين وخطّ الكسر يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$120 \\div 8 \\times 5 = 75$ .",
+        "incorrect": "في سلسلة ضرب وقسمة نحسب من اليسار نحو اليمين: لا نضرب قبل أن نقسم."
+      },
+      "solution": {
+        "lines": [
+          "$A = 120 \\div 8 \\times 5$",
+          "$A = 15 \\times 5$",
+          "$A = 75$"
+        ],
+        "result": "75"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب قيمة السلسلة $\\dfrac{18 + 12}{6 - 2}$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "7.5",
+      "misconceptionSignatures": [
+        {
+          "value": "18",
+          "id": "MISC-AQWAS-BARSPLIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين وخطّ الكسر يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{18 + 12}{6 - 2} = 7{,}5$ .",
+        "incorrect": "خطّ الكسر يقسم البسط كلّه على المقام كلّه، فنحسب البسط والمقام أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{18 + 12}{6 - 2}$",
+          "$A = \\dfrac{30}{4}$",
+          "$A = 7{,}5$"
+        ],
+        "result": "7{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما اسم السلسلة $6 \\times (14 - 9)$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "choices": [
+        {
+          "id": "A",
+          "content": "جداء",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "فرق",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-FIRSTOP"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب مرحلة مرحلة وتتبّع آخر عملية بقيت لك."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع خطًّا تحت العملية التي تُنجز في الأخير."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العملية الأخيرة هي التي تسمّي السلسلة."
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة عبارة عن جداء: آخر عملية تُنجز فيها هي الضرب.",
+        "incorrect": "لا تسمِّ السلسلة بأوّل عملية تُنجز ولا بأوّل رمز تراه: سمِّها بآخر عملية تُنجز فيها."
+      },
+      "solution": {
+        "lines": [
+          "$A = 6 \\times (14 - 9)$",
+          "$A = 6 \\times 5$",
+          "$A = 30$",
+          "آخر عملية تُنجز هي الضرب ، فالسلسلة عبارة عن جداء."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "هل المساواة $9 \\times (20 + 3) = 9 \\times 20 + 3$ صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-FIRSTONLY"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب كلّ طرف من الطرفين على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين الناتجين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحكم قبل أن تحسب: اختبر بالأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "لا، فالحساب يبيّن غير ذلك.",
+        "incorrect": "احسب الطرفين كلّا على حدة قبل أن تحكم."
+      },
+      "solution": {
+        "lines": [
+          "$A = 9 \\times (20 + 3)$",
+          "$A = 9 \\times 23$",
+          "$A = 207$",
+          "$A = 9 \\times 20 + 3$",
+          "$A = 180 + 3$",
+          "$A = 183$",
+          "النتيجتان لا تحقّقان ما قيل: الجواب لا."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

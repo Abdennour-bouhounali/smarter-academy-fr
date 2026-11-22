@@ -19,12 +19,13 @@
 //   node scripts/audit-knowledge-dependencies.mjs [--lesson <id>] [--grade 3e]
 //                                                 [--report] [--gate] [--strict] [--json]
 
-import { mkdirSync, writeFileSync, readFileSync } from 'node:fs';
+import { existsSync, mkdirSync, writeFileSync, readFileSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import {
   repoRoot, findLessonDirs, parseLessonConfig, buildLessonIndex, listSourceFiles, moduleFileNumber,
 } from './lib/lessonAst.mjs';
 import { readKnowledge } from './lib/knowledgeData.mjs';
+import { ACTIVE_GRADE_IDS } from '../packages/core/curriculum/activeGrades.js';
 import { buildModuleStream } from './lib/exposureStream.mjs';
 
 const argv = process.argv.slice(2);
@@ -76,6 +77,17 @@ export function auditLesson(lessonDir, catalogue, options = {}) {
   });
 
   const knowledge = readKnowledge(lessonDir);
+  // A v2 lesson (`retiredModules: true` in its routes.jsx, LESSON_V2.md §2) has no module page: there is no exposure
+  // stream to audit. Its rules are forged in its world, checked by its own tests (`world/forges.test.js`) and the status
+  // script — not here.
+  const routesFile = join(lessonDir, 'routes.jsx');
+  if (existsSync(routesFile) && /retiredModules:\s*true/.test(readFileSync(routesFile, 'utf-8'))) {
+    return {
+      id: config.id, grade: config.grade, dir: rel, skipped: 'v2 — no module page',
+      hasKnowledge: knowledge.file !== null, brickCount: 0, questionCount: 0, requiresCount: 0,
+      ignored: config.knowledgeAuditIgnore, findings: [], contract: null, segments: [],
+    };
+  }
   for (const p of knowledge.problems) {
     add(p.code, p.code.startsWith('E_') ? 'critical' : 'medium', p.message, { file: relative(repoRoot, knowledge.file), line: p.line });
   }
@@ -125,7 +137,9 @@ export function auditLesson(lessonDir, catalogue, options = {}) {
       add('E_BRICK_ITEM_MISSING', 'critical', `<KnowledgeBrick id="${seg.itemId}"> has no matching item in knowledge.jsx`, seg);
     }
     const item = knowledge.items.get(seg.itemId);
-    if (item && item.module !== seg.module) {
+    // Une brique « rappel » est posée EXPRÈS hors de son module d'origine
+    // (le rappel d'une définition dans أوظّف تعلّماتي) : pas un décalage.
+    if (item && item.module !== seg.module && seg.variant !== 'rappel') {
       add('W_BRICK_MODULE_MISMATCH', 'medium', `brick '${seg.itemId}' renders in module ${seg.module} but knowledge.jsx declares it under module ${item.module} — the map attributes it to ${item.module}`, seg);
     }
     for (const id of seg.establishes ?? []) {
@@ -356,13 +370,13 @@ if (opts.report) {
   const outDir = join(repoRoot, 'docs/reports/knowledge-contracts');
   mkdirSync(outDir, { recursive: true });
   for (const r of results) {
-    writeFileSync(join(outDir, `${r.grade}_${r.id}.json`), `${JSON.stringify(r.contract, null, 2)}\n`);
+    if (r.contract) writeFileSync(join(outDir, `${r.grade}_${r.id}.json`), `${JSON.stringify(r.contract, null, 2)}\n`);
   }
 
-  // Le périmètre traité s'étend désormais à la 6e (chantier de refonte
-  // pédagogique 2026-09-07) : elle rejoint la 3e et la 2nde dans le tableau
-  // principal. Seule la 4e reste relevée hors périmètre.
-  const inScope = (r) => r.grade === '6e' || r.grade === '3e' || r.grade === 'seconde';
+  // Le périmètre traité, ce sont les classes ACTIVES du produit algérien
+  // (activeGrades.js) : depuis la suppression des leçons françaises
+  // (2026-09-25), les leçons 4AM tombaient dans « hors périmètre ».
+  const inScope = (r) => ACTIVE_GRADE_IDS.includes(r.grade);
   const sum = (rs, sev) => rs.reduce((n, r) => n + count(r, sev), 0);
   const scoped = results.filter(inScope);
   const other = results.filter((r) => !inScope(r));
@@ -390,7 +404,7 @@ if (opts.report) {
 >
 > Le lexique est un **détecteur**, pas le juge : il signale les candidats à l'audit manuel.
 
-## Périmètre courant — 6e, 3e et 2nde
+## Périmètre courant — classes actives (${ACTIVE_GRADE_IDS.join(', ')})
 
 ${scoped.length} leçon(s) · critiques ${sum(scoped, 'critical')} · hautes ${sum(scoped, 'high')} · moyennes ${sum(scoped, 'medium')} · basses ${sum(scoped, 'low')}
 
@@ -398,14 +412,12 @@ ${table(scoped)}
 
 ${details(scoped)}
 
-## Hors périmètre — 4e (relevé, non réparé)
-
-Ce niveau n'est pas encore traité. Les constats sont enregistrés ici pour mémoire.
+${other.length ? `## Hors périmètre — classes inactives (relevé, non réparé)
 
 ${other.length} leçon(s) · critiques ${sum(other, 'critical')} · hautes ${sum(other, 'high')} · moyennes ${sum(other, 'medium')} · basses ${sum(other, 'low')}
 
 ${table(other)}
-`;
+` : ''}`;
   writeFileSync(join(repoRoot, 'docs/reports/KNOWLEDGE_DEPENDENCY_AUDIT.md'), md);
   console.log(`\nRapport écrit : docs/reports/KNOWLEDGE_DEPENDENCY_AUDIT.md (+ ${results.length} contrats JSON)`);
 }

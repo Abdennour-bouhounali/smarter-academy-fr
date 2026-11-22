@@ -1,0 +1,390 @@
+{
+  "id": "ex-4am-qiraat-wadiyat-ihsaiya-l3-002",
+  "lessonCode": "qiraat-wadiyat-ihsaiya",
+  "level": 3,
+  "metadata": {
+    "title": "التمرين 19 — انقل وأكمل الجدول",
+    "estimatedMinutes": 9,
+    "tags": [
+      "قراءة مخطط بالأعمدة",
+      "التواتر المجمع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-19",
+      "page": 101,
+      "section": "أتعمّق",
+      "number": 19
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يمثّل المخطط بالأعمدة الآتي توزيع مجموعة أشخاص حسب القنوات التلفزيونية التي شاهدوها في نهاية الأسبوع:",
+    "table": {
+      "head": [
+        "القناة",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "rows": [
+        [
+          "عدد الأشخاص",
+          "…",
+          "…",
+          "…",
+          "…",
+          "…"
+        ]
+      ]
+    },
+    "figure": {
+      "kind": "chart",
+      "type": "bar",
+      "ariaLabel": "مخطط بالأعمدة لعدد الأشخاص حسب القنوات: القناتان A و B، القناتان B و D، القناة C، القناة D، القناة E",
+      "xTitle": "القناة",
+      "yTitle": "عدد الأشخاص",
+      "y": {
+        "max": 1400,
+        "step": 200,
+        "minor": 4
+      },
+      "bars": [
+        {
+          "label": "القناتان A و B",
+          "value": 950
+        },
+        {
+          "label": "القناتان B و D",
+          "value": 1250
+        },
+        {
+          "label": "القناة C",
+          "value": 350
+        },
+        {
+          "label": "القناة D",
+          "value": 700
+        },
+        {
+          "label": "القناة E",
+          "value": 450
+        }
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انقل ثم أتمم سطر «عدد الأشخاص» في الجدول.",
+      "statement": "عدد الأشخاص الذين شاهدوا القناة A .",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "400",
+      "misconceptionSignatures": [
+        {
+          "value": "950",
+          "id": "MISC-IHSA-QIRAA-MUKHATTAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا يوجد عمود لهذه القناة وحدها: ابحث عن عمود يجمعها مع قناة أخرى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ بالقناة التي لها عمود وحدها، ثم اطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "القناة A: $950 - 550 = 400$ .",
+        "incorrect": "العمود الذي يجمع قناتين لا يُنقل كما هو: اطرح منه عدد مشاهدي القناة الأخرى."
+      },
+      "solution": {
+        "lines": [
+          "القناة B: $1250 - 700 = 550$",
+          "القناة A: $950 - 550 = 400$"
+        ],
+        "result": "400"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "عدد الأشخاص الذين شاهدوا القناة B .",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "550",
+      "misconceptionSignatures": [
+        {
+          "value": "1250",
+          "id": "MISC-IHSA-QIRAA-MUKHATTAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا يوجد عمود لهذه القناة وحدها: ابحث عن عمود يجمعها مع قناة أخرى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ بالقناة التي لها عمود وحدها، ثم اطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$1250 - 700 = 550$ .",
+        "incorrect": "العمود الذي يجمع قناتين لا يُنقل كما هو: اطرح منه عدد مشاهدي القناة الأخرى."
+      },
+      "solution": {
+        "lines": [
+          "$1250 - 700 = 550$"
+        ],
+        "result": "550"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "عدد الأشخاص الذين شاهدوا القناة C .",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "350",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "للقناة C عمود وحدها: اقرأ ارتفاعه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل تدريجة رفيعة تمثّل 50 شخصا."
+        }
+      ],
+      "feedback": {
+        "correct": "عمود «القناة C» يصل إلى 350 .",
+        "incorrect": "اقرأ ارتفاع العمود بدقّة على التدريج."
+      },
+      "solution": {
+        "lines": [
+          "عمود «القناة C» يصل إلى 350 ."
+        ],
+        "result": "350"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "statement": "عدد الأشخاص الذين شاهدوا القناة D .",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "700",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "للقناة D عمود وحدها: اقرأ ارتفاعه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل تدريجة رفيعة تمثّل 50 شخصا."
+        }
+      ],
+      "feedback": {
+        "correct": "عمود «القناة D» يصل إلى 700 .",
+        "incorrect": "اقرأ ارتفاع العمود بدقّة على التدريج."
+      },
+      "solution": {
+        "lines": [
+          "عمود «القناة D» يصل إلى 700 ."
+        ],
+        "result": "700"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q5",
+      "step": "01",
+      "statement": "عدد الأشخاص الذين شاهدوا القناة E .",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "450",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "للقناة E عمود وحدها: اقرأ ارتفاعه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل تدريجة رفيعة تمثّل 50 شخصا."
+        }
+      ],
+      "feedback": {
+        "correct": "عمود «القناة E» يصل إلى 450 .",
+        "incorrect": "اقرأ ارتفاع العمود بدقّة على التدريج."
+      },
+      "solution": {
+        "lines": [
+          "عمود «القناة E» يصل إلى 450 ."
+        ],
+        "result": "450"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "statement": "احسب التكرار الكلي.",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2450",
+      "misconceptionSignatures": [
+        {
+          "value": "3700",
+          "id": "MISC-IHSA-QIRAA-MUKHATTAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع أعداد سطر «عدد الأشخاص» الذي أتممته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تجمع ارتفاعات الأعمدة: القناة B تظهر في عمودين."
+        }
+      ],
+      "feedback": {
+        "correct": "$400 + 550 + 350 + 700 + 450 = 2450$ .",
+        "incorrect": "اجمع عدد مشاهدي كل قناة مرّة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "$400 + 550 + 350 + 700 + 450 = 2450$"
+        ],
+        "result": "2450"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "statement": "احسب التواتر المجمع الصاعد للقناة C .",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b أو عدد عشري",
+      "expectedAnswer": "26/49",
+      "misconceptionSignatures": [
+        {
+          "value": "1/7",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        },
+        {
+          "value": "1300",
+          "id": "MISC-IHSA-TAWATUR-BILA-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التواتر المجمع الصاعد للقناة C يجمع القنوات A و B و C ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم هذا المجموع على التكرار الكلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{400 + 550 + 350}{2450} = \\dfrac{1300}{2450} = \\dfrac{26}{49}$ .",
+        "incorrect": "التواتر المجمع الصاعد يجمع تواترات القنوات من A حتى C ، لا تواتر C وحدها."
+      },
+      "solution": {
+        "lines": [
+          "$400 + 550 + 350 = 1300$",
+          "$\\dfrac{1300}{2450} = \\dfrac{26}{49}$"
+        ],
+        "result": "\\dfrac{26}{49}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-takbir-tasghir-l3-008",
+  "lessonCode": "takbir-tasghir",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — من الحجم إلى الأطوال",
+    "estimatedMinutes": 2,
+    "tags": [
+      "النسبة k",
+      "الحجم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takbir-tasghir_P1",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "كُبّر مجسّم فضُرب حجمه في $64$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أطواله ضُربت في:",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{64}{3}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-JADHR"
+        },
+        {
+          "id": "B",
+          "content": "$4$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-JADHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحجوم تُضرب في $k^3$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$k^3 = 64$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ما العدد الذي مكعّبه 64؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 4 \\times 4 = 64$ ، إذن $k = 4$ .",
+        "incorrect": "8 هو العدد الذي مربّعه 64، لا مكعّبه."
+      }
+    }
+  ]
+}

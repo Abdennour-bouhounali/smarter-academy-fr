@@ -1,0 +1,82 @@
+{
+  "id": "ex-4am-qasim-mushtarak-akbar-l1-007",
+  "lessonCode": "qasim-mushtarak-akbar",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2015 — مراحل الحساب — 42 و 70",
+    "estimatedMinutes": 4,
+    "tags": [
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-mushtarak-akbar_P2",
+      "modelledOn": "BEM 2015 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 42 و 70 مع كتابة مراحل الحساب.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قائمة قواسم كل من العددين 42 و 70."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استخرج القواسم المشتركة: الأعداد الموجودة في القائمتين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاسم المشترك الأكبر هو أكبر القواسم المشتركة، لا أيّ واحد منها."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 42 و 70 هي 1 ، 2 ، 7 ، 14، وأكبرها 14.",
+        "incorrect": "اكتب قائمتي القواسم كاملتين، ثم خذ أكبر عدد يظهر في القائمتين معًا."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 42 هي: 1 ، 2 ، 3 ، 6 ، 7 ، 14 ، 21 ، 42",
+          "قواسم العدد 70 هي: 1 ، 2 ، 5 ، 7 ، 10 ، 14 ، 35 ، 70",
+          "القواسم المشتركة للعددين 42 و 70 هي: 1 ، 2 ، 7 ، 14",
+          "أكبرها هو 14، إذن:"
+        ],
+        "result": "PGCD(42 ; 70) = 14"
+      },
+      "work": "required",
+      "timeSeconds": 240
+    }
+  ]
+}

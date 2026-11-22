@@ -1,0 +1,135 @@
+{
+  "id": "ex-4am-mafhum-taalufiya-l2-009",
+  "lessonCode": "mafhum-taalufiya",
+  "level": 2,
+  "metadata": {
+    "title": "الدالة x ⟼ −7x",
+    "estimatedMinutes": 4,
+    "tags": [
+      "دالة خطية",
+      "صورة عدد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "adaptedFrom": "ex-4am-mafhum-taalufiya-l2-009"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الدالة $h$ المعرّفة كما يلي:",
+    "formulas": [
+      "h : x \\longmapsto -7x"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما نوع الدالة $h$ ؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "دالة خطية",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "دالة ثابتة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAALUFI-THABITA"
+        },
+        {
+          "id": "C",
+          "content": "دالة تآلفية ليست خطية وليست ثابتة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAALUFI-KHATTIYA-KHALT"
+        },
+        {
+          "id": "D",
+          "content": "ليست دالة تآلفية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAALUFI-THABITA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب عبارة الدالة على الشكل $ax + b$ إن أمكن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الدالة الخطية: $b = 0$ ؛ الدالة الثابتة: $a = 0$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$h(x) = -7x + 0$ : $b = 0$ .",
+        "incorrect": "قارن المعاملين $a$ و $b$ بالعدد 0."
+      },
+      "solution": {
+        "lines": [
+          "$h(x) = -7x = -7x + 0$ من الشكل $ax + b$ حيث $a = -7$ و $b = 0$ .",
+          "إذن $h$ دالة تآلفية، وهي دالة خطية ( $b = 0$ )."
+        ],
+        "result": "دالة خطية"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $h(-3)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "21",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $-3$ في العبارة $h(x) = -7x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب في المعامل أولا، ثم أضف الحدّ الثابت، مع الانتباه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$h(-3) = -7 \\times (-3) = 21$ .",
+        "incorrect": "اضرب العدد في المعامل $a$ ، ثم أضف الحدّ الثابت $b$ ."
+      },
+      "solution": {
+        "lines": [
+          "$h(-3) = -7 \\times (-3)$",
+          "$h(-3) = 21$"
+        ],
+        "result": "h(-3) = 21"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

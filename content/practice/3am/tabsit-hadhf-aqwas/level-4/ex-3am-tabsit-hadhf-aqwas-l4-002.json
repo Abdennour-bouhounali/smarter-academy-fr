@@ -1,0 +1,215 @@
+{
+  "id": "ex-3am-tabsit-hadhf-aqwas-l4-002",
+  "lessonCode": "tabsit-hadhf-aqwas",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — غرفة مطالعة للحيّ",
+    "estimatedMinutes": 10,
+    "tags": [
+      "محيط",
+      "حذف الأقواس",
+      "معادلة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-68",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "تحوّل عائلة مخزنًا قديمًا إلى غرفة مطالعة يرتادها أطفال الحيّ مجّانًا. أرضية الغرفة مستطيلة طولها $(5x - 3)$ وعرضها $(x + 1)$ (وحدة الطول هي المتر، والأطوال غير حقيقية)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "اكتب محيط الأرضية $P$ بدلالة $x$ على أبسط شكل.",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $P$ على الشكل $ax + b$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة التي تسبق القوسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوسان مسبوقان بالإشارة $+$ (وغير متبوعين بـ $\\times$ أو $\\div$) يُحذفان دون تغيير أي إشارة بينهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العبارة بدون أقواس حدًّا حدًّا، ثم اجمع الحدود المتشابهة."
+        }
+      ],
+      "feedback": {
+        "correct": "$P = 12x - 4$ إذن $a = 12$.",
+        "incorrect": "اجمع الحدود المتشابهة بإشاراتها بعد حذف الأقواس، ثم اقرأ العدد المطلوب في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$P = (5x - 3) + (x + 1) + (5x - 3) + (x + 1)$",
+          "$P = 5x - 3 + x + 1 + 5x - 3 + x + 1$",
+          "$P = 12x - 4$"
+        ],
+        "result": "a = 12"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $P$ على الشكل $ax + b$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-TABSIT-PLUS-CHANGED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة التي تسبق القوسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوسان مسبوقان بالإشارة $+$ (وغير متبوعين بـ $\\times$ أو $\\div$) يُحذفان دون تغيير أي إشارة بينهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العبارة بدون أقواس حدًّا حدًّا، ثم اجمع الحدود المتشابهة."
+        }
+      ],
+      "feedback": {
+        "correct": "$P = 12x - 4$ إذن $b = -4$.",
+        "incorrect": "اجمع الحدود المتشابهة بإشاراتها بعد حذف الأقواس، ثم اقرأ العدد المطلوب في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$P = 12x - 4$"
+        ],
+        "result": "b = -4"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "علمًا أن محيط الأرضية $68\\,\\mathrm{m}$ ، جد قيمة $x$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المعادلة بالشكل المبسّط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض الحل في المعادلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$12x - 4 = 68$ تعطي $x = 6$ .",
+        "incorrect": "اكتب المعادلة $P = 68$ بالشكل المبسّط لـ $P$ ثم حلّها."
+      },
+      "solution": {
+        "lines": [
+          "$12x - 4 = 68$",
+          "$12x = 72$",
+          "$x = 6$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "استنتج مساحة أرضية الغرفة بالمتر المربع.",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالمتر المربع)",
+      "expectedAnswer": "189",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الطول والعرض من أجل قيمة $x$ التي وجدتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحة المستطيل = الطول × العرض."
+        }
+      ],
+      "feedback": {
+        "correct": "$27 \\times 7 = 189$ .",
+        "incorrect": "احسب البعدين أوّلًا بتعويض $x$ ثم اضربهما."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $x = 6$ : الطول $5 \\times 6 - 3 = 27$ والعرض $6 + 1 = 7$ .",
+          "المساحة $= 27 \\times 7 = 189\\,\\mathrm{m^2}$ ."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ashia-l2-008",
+  "lessonCode": "wadiya-idmajiya-ashia",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — أقصر مسلك من AB′",
+    "estimatedMinutes": 2,
+    "tags": [
+      "أقصر مسلك"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ashia_P1",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "في وضعية ممر للراجلين عرض الطريق فيها $15\\,\\mathrm{m}$ ، وجدنا بعد نقل B بالشعاع $\\overrightarrow{NM}$ أنّ $AB' = 34\\,\\mathrm{m}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما طول أقصر مسلك من A إلى B (بالمتر)؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "49",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسلك = AM + MB′ + MN."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أقصره AB′ + MN."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنس الممر."
+        }
+      ],
+      "feedback": {
+        "correct": "$L = AB' + MN = 34 + 15 = 49\\,\\mathrm{m}$ .",
+        "incorrect": "الممر يُقطع في كل الأحوال."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 2,
+      "misconceptionSignatures": [
+        {
+          "value": "34",
+          "id": "MISC-SHUAA-MAMAR-NASI"
+        }
+      ]
+    }
+  ]
+}

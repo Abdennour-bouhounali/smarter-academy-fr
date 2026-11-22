@@ -1,0 +1,131 @@
+{
+  "id": "ex-4am-hall-jabri-l3-004",
+  "lessonCode": "hall-jabri",
+  "level": 3,
+  "metadata": {
+    "title": "نختار طريقة مناسبة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "اختيار الطريقة",
+      "التعويض"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-11",
+      "page": 60,
+      "section": "أوظّف تعلّماتي",
+      "number": 11
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "نعتبر جملة المعادلتين التالية:",
+    "formulas": [
+      "\\begin{cases} x + y = 12 & ...(1) \\\\ 3x + 2y = 31 & ...(2) \\end{cases}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "حل الجملة باختيار طريقة مناسبة.",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hall-jabri_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": {
+        "x": "7",
+        "y": "5"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "5",
+            "y": "7"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى معاملات المجهولين: هل يوجد معامل يساوي $1$ أو $-1$ ؟ هل يوجد معاملان متعاكسان أو متساويان؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مجهول معامله $1$ أو مجهول معبّر عنه بدلالة الآخر: التعويض. معاملان متعاكسان أو يصيران كذلك بضرب بسيط: الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد إيجاد المجهول الأول عوّض قيمته لتجد الثاني، ثم تحقق في المعادلتين."
+        }
+      ],
+      "feedback": {
+        "correct": "الثنائية $(7 ; 5)$ تحقق المعادلتين معا: هي حل الجملة.",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "من المعادلة (1) نجد: $y = 12 - x$",
+          "نعوّض في المعادلة (2): $3x + 2(12 - x) = 31$",
+          "ومنه $x = 7$",
+          "نعوّض قيمة $x$ في عبارة $y$: $y = 12 - 7 = 5$",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(7 ; 5)"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "برّر اختيارك للطريقة.",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن مجهول معامله $1$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "في المعادلة (1) معاملا $x$ و $y$ يساويان $1$ : نعبّر بسهولة عن $y$ بدلالة $x$ ( $y = 12 - x$ ) دون كسور.",
+          "لذلك طريقة التعويض مناسبة هنا.",
+          "(طريقة الجمع ممكنة أيضا بضرب المعادلة (1) في $-2$ .)"
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l4-010",
+  "lessonCode": "maqati-mustawiya",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — مساحة مقطع مخروط",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مخروط",
+      "بدلالة π"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_maqati-mustawiya_P4",
+      "modelledOn": "act-5"
+    }
+  },
+  "statement": {
+    "content": "مخروط دوران نصف قطر قاعدته $6\\,\\mathrm{cm}$ ، يقطعه مستو موازٍ لقاعدته في منتصف المحور $[SO]$ ($SO' = \\dfrac{1}{2}SO$)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مساحة المقطع على الشكل $k\\pi\\,\\mathrm{cm}^2$ : أعط k.",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P4",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (المعامل k)",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAQTA-HARAM",
+          "value": "36"
+        },
+        {
+          "id": "MISC-TAKBIR-MISAHA-K",
+          "value": "18"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المقطع دائرة نصف قطرها $\\dfrac{1}{2} \\times 6$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحة قرص نصف قطره r هي $\\pi r^2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\pi \\times 3^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "نصف قطر المقطع $3$ ، مساحته $9\\pi\\,\\mathrm{cm}^2$ : $k = 9$ .",
+        "incorrect": "$36\\pi$ مساحة القاعدة، و $18\\pi$ يضرب المساحة في $\\dfrac{1}{2}$ لا في $\\dfrac{1}{4}$ ."
+      },
+      "difficulty": 4
+    }
+  ]
+}

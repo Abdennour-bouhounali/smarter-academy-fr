@@ -1,17 +1,459 @@
 # Knowledge Map Architecture
 
 > **The contract for integrating the cumulative Knowledge Map (« Ma carte des connaissances »)
-> into a lesson.** Written for AI coding agents and developers migrating the generated 3e and
-> 2nde lessons. Everything below describes code that exists today in the reference lesson — it is
-> not a design proposal. Where something is deliberately not built, it is marked
-> **NOT IMPLEMENTED**.
+> into a lesson.** Written for AI coding agents and developers. It was first written while migrating
+> the French-era 3e and 2nde lessons (reference: `vecteurs-2nde`); **those lessons were deleted on
+> 2026-09-25**. The reference integration today is the **4AM unit** « الأعداد الطبيعيّة والأعداد
+> النّاطقة » — all 9 lessons declare `knowledgeMap: true`, own a `knowledge.jsx`, and pass
+> `loadKnowledge: () => import('./knowledge')` to `buildLessonRoutes`. The shared implementation
+> lives in `apps/web/src/lessons/common/knowledge/`. Passages that cite `vecteurs-2nde`, a
+> lesson-local `components/…` path or an e2e suite (`km-*.mjs`, `*-carte.mjs`,
+> `sidebar-toggle.mjs`) are **historical** — those files no longer exist; the current automated
+> coverage is the vitest tests in `apps/web/src/lessons/common/knowledge/*.test.js(x)`. Where
+> something is deliberately not built, it is marked **NOT IMPLEMENTED**.
+>
+> **Two layers since 2026-09-29.** The **progressive interactive learning map** (Part A below) is
+> Smarter Academy's Knowledge Map. It was approved on one lesson (`qasim-adad-tabii`, the reference)
+> and **migrated to all nine lessons of the unit the same day** (A.15). The stratified map described
+> from « Purpose » onwards is now only the engine underneath and a documented escape hatch — no
+> lesson shows it. Both layers share the same engine — one `knowledge.jsx`, one cumulative state,
+> one progress system.
 
 Companion docs: `LESSON_CONTRACT.md` (module/stage contract, including the `knowledgeMap: true`
 exemption), `LESSON_INTEGRATION_GUIDE.md` (routing, locking, storage), `PROGRESS_MODEL.md`
 (completion vs mastery), `INTERACTION_PEDAGOGY.md` (how a module teaches).
-Migration notes: `KNOWLEDGE_MAP_MIGRATION_2NDE.md` (2nde), `KNOWLEDGE_MAP_REFONTE_6E.md`
-(the 24 6e lessons, 2026-09-07 — including the « a brick must live in the literal `steps` »
-trap and the 6e-specific map visuals in `common/knowledge6e/`).
+Migration notes for the French 2nde and 6e lessons (including the « a brick must live in
+the literal `steps` » trap) were deleted on 2026-09-25 together with those lessons and
+`common/knowledge6e/`; they remain in git history.
+
+---
+
+# Part A — The progressive interactive learning map (approved architecture)
+
+> Approved by the product owner on 2026-09-29 after the prototype on « التعرّف على قاسم لعدد
+> طبيعي ». This part states **what the Knowledge Map is** in Smarter Academy's educational
+> architecture, the **rules** every lesson follows, and **how far the implementation goes today**.
+> Implementation detail (files, layout algorithm, animation timings) lives in
+> [« Progressive map — implementation »](#progressive-map--implementation), further down.
+
+## A.1 Status
+
+| | **Today (since the migration of 2026-09-29)** |
+| --- | --- |
+| Lessons | **all nine** lessons of the unit declare `knowledgeMapMode: 'progressive'` and export a hand-authored `KNOWLEDGE_GRAPH` (A.15); `qasim-adad-tabii` is the reference |
+| New / generated lessons | authored with the graph from the start (A.13) — the gates below refuse a lesson without one |
+| Engine | shared: `common/knowledge/` + `common/knowledge/progressive/`, lazy-loaded — **no fork per lesson** |
+| Gates | `scripts/validate-lessons.mjs` (a lesson with `knowledgeMap: true` must declare the mode, own a `knowledgeGraph.js` and re-export it) and `progressive/lessonGraphs.test.js` (the A.14 invariants, for **every** lesson, automatically) |
+| Fallback | a lesson declaring the mode with a missing or invalid graph gets a graph **derived** from its items (A.9) — never a blank map; no current lesson uses it |
+| Escape hatch | **none since 2026-11-08** — the stratified presentation was deleted; `knowledgeMapMode` stays declared (the gate checks it) but the panel always shows the mind map |
+
+## A.2 One knowledge model, two representations
+
+The old map was a **structured summary** of the lesson's knowledge. The new map is a
+**progressive interactive learning map**: the learner *constructs* the lesson's knowledge by
+discovering it, idea by idea, along its relationships.
+
+It has two representations of the **same** model — never two content systems:
+
+| | **A. الخريطة — the interactive Mind Map** | **B. المعارف مفصّلة — the linear reading** |
+| --- | --- | --- |
+| Answers | « كيف ترتبط المعارف؟ » — how do the ideas connect? | « بأي ترتيب أقرأ وأراجع المعارف؟ » — in what order do I read and revise? |
+| Form | visual, spatial, interactive graph | one column, numbered top to bottom |
+| Content | `KNOWLEDGE_GRAPH` nodes + edges, and the `knowledge.jsx` items they carry | the **same** nodes and items, in `linearEntries` order |
+| Discovery | progressive: nodes revealed along relationships | everything the learner has reached, in reading order |
+| Print | — | the printed A4 document |
+
+Both read one source: the lesson's `knowledge.jsx` items (the mathematics, shared with the
+`<KnowledgeBrick>` of the modules) and its `knowledgeGraph.js` (the structure, relationships and
+guidance). Nothing is written twice; a text in either view is the same string.
+
+## A.3 The Mind Map
+
+The Mind Map is **visual, spatial and interactive**:
+
+- **nodes** — knowledge objects: a semantic type (icon + label), a title, a short subtitle
+  (often the notation), and a state;
+- **semantic relationships** — every arrow carries a label saying *why* two ideas are linked (A.8);
+- **animated edges** — an arrow draws itself when a relationship is discovered, then its label
+  appears, then the new node enters;
+- **contextual information** — opening a node shows its content (the lesson's words), its
+  relationships written out, and « أضف إلى كرّاسي » where the node is a knowledge item;
+- **a complete-map view** — « عرض الخريطة كاملة » shows every node and relationship in the same
+  layout as a recap (locked nodes as ghosts);
+- **the learner's progression** — the map never shows knowledge the learner has not reached (A.4).
+
+**The finger on the first card** (owner, 2026-11-08): in the explore view, while nothing is discovered yet, a hand 👇 bobs
+ABOVE the root card (« ابدأ هنا ») pointing at it — « tap here to see the explanation » without one more sentence
+(`GraphNode`, `data-kg-start-finger`). It leaves at the first tap; with reduced motion it stays still. Every lesson's map.
+
+The learner **discovers** the structure progressively — the root first, then each relationship
+leads to the next idea, with exactly one « التالي » node flashing to show the next step. The whole
+structure is never handed over before learning.
+
+## A.4 Learning-synchronised reveal — and the five states
+
+**Central principle.** The map reveals knowledge **as the learner learns the corresponding part of
+the lesson**. It is not a static graph of the whole lesson shown before learning. And « available
+to learn » is not « mastered ».
+
+> **Exception — the OPEN map (owner, 2026-11-08, PILOT `qasim-adad-tabii` only, not yet a rule).** `knowledgeMapOpen: true` in
+> the lesson config shows EVERY knowledge item from the start, with no lock by محور, and the map opens on its « full » view
+> (exploration stays one tap away). Only the map's `items` open. What the student has really ESTABLISHED stays separate:
+> `useLessonKnowledge().learnedItems` (the progression-based list) is what the mission's tool coins (`useMission`) and
+> « أتوقّع القاعدة » (`usePredictGate › known`) read — otherwise every coin would be lit and every rule prediction skipped.
+> `unlockedModules` stays the real progression (the mastery overlay reads it), and the end-of-module memo still shows only its
+> own items (`KnowledgeSnapshot`, same rule as the teacher's view).
+
+Recommended progression, and how the implementation realises each step **with the existing
+progress system** (no second progression, no second mastery system):
+
+| Step | Pedagogical meaning | Implemented by |
+| --- | --- | --- |
+| module available | the learner can open the محور | `moduleGate` / `stepUnlock` (unchanged) |
+| knowledge established | the learner meets an idea in the module | a `<KnowledgeBrick id>` renders → `unlockItem(id)` (live), `KNOWLEDGE_DEPENDENCY.md` |
+| module learned / completed | all steps done | `markModuleCompleted` → `completedModules` → `unlockModule(n)` (persisted + live) |
+| knowledge becomes available in the map | nodes whose `requires` item is now in the cumulative map | `nodeStates` — a node is **locked** until then |
+| learner explores the map | opens nodes, follows relationships | exploration state (`discover`), per tab |
+| exercises / evaluation | practice and final test | the existing exercise and evidence pipeline (`EXERCISE_CONTRACT.md`) |
+| mastery | per Learning Point | Mastery V2 (`LEARNING_ARCHITECTURE.md`), shown on the « بطاقتك » strip under the graph |
+
+The five states, precisely:
+
+| State | Meaning | Source — and what is NOT invented |
+| --- | --- | --- |
+| **locked** | the idea has not been reached in the lesson | the node's `requires` item is absent from the cumulative map (completion ∪ brick ∪ `freeNavigation`). Shown as a ghost without title (no spoiler) and « بعد المحور n » |
+| **available** | reached, not yet opened in the map | revealed by exploration, not opened. One of them — the next in discovery order — flashes « التالي » |
+| **discovered** | opened in the map | **exploration UI state** only: `sessionStorage` `sa_km_explore_<lessonId>`, never sent to the server, never read by progress or mastery |
+| **learned** | the lesson has taught it | **not a separate node state**: every non-locked node *is* learned knowledge in the platform's sense (its item was established by a brick or a completed module). The strip shows module completion |
+| **mastered** | the learner has demonstrated it | **not a node state**: mastery exists **per Learning Point** (`unassessed` · `gap` · `reinforce` · `mastered`, Mastery V2), shown as dots on the « بطاقتك » strip, with « راجع » for a gap. A node carries no Learning Point id today (A.15) |
+
+Guidance nodes (A.5) only ever go **available → discovered**: a warning is read, not mastered.
+A teacher or admin (`freeNavigation`) sees every node unlocked from the start; nothing is written.
+
+## A.5 Knowledge types
+
+`kind` is a **semantic type** — what role an idea plays for the learner. The types are a closed
+vocabulary (`graphModel.js` `CORE_KINDS` / `GUIDE_KINDS`, habillage in `nodeKinds.js`), **not
+mandatory categories**: a lesson uses only the types its mathematics justifies, and must not
+force every type into every lesson.
+
+| `kind` | Arabic label | Family | Role |
+| --- | --- | --- | --- |
+| `concept` | مفهوم | core | the idea the lesson is about |
+| `definition` | تعريف | core | a textbook definition |
+| `idea` | فكرة أساسية | core | a key idea that is neither a definition nor a property |
+| `relationship` | علاقة | core | a property or formula linking objects |
+| `method` | طريقة | core | a procedure to apply |
+| `example` | مثال | core | a worked example that supports a concept |
+| `term` | مصطلحات | core | vocabulary, equivalent phrasings |
+| `retain` | للحفظ | core | a fact to know by heart |
+| `common_mistake` | خطأ شائع | guide | a frequent wrong action or reasoning (A.6) |
+| `warning` | انتبه | guide | a condition or subtle distinction (A.6) |
+| `tip` | نصيحة | guide | a useful reasoning / solving strategy (A.7) |
+| `check` | تحقّق | guide | a concrete way to verify an answer or understanding (A.7) |
+| `prerequisite` | تذكّر | guide | prior knowledge the idea needs (A.7) |
+| `takeaway` | خلاصة | guide | the essential idea to keep (A.7) |
+
+**Core** is what to KNOW; **guide** is what ACCOMPANIES it. Core stays visually dominant (white
+card, 2 px border); guide nodes are tinted, 1 px border, thick start-edge bar, lighter title —
+identifiable by icon + label, never by colour alone. All fourteen types are used across the unit
+(A.15 lists them lesson by lesson); no lesson uses them all.
+
+**A knowledge item may be carried by a guide-type node** when that is what it honestly is: the
+« تذكير » items of lessons 2, 3 and 9 are `prerequisite` nodes, « كيف أتأكد أنني انتهيت؟ » (lesson 8)
+is a `check`, « أي طريقة أختار؟ » (lesson 6) a `tip`, « أوليان فيما بينهما ≠ عددان أوليان »
+(lesson 7) a `warning`. The node is still `notebook: true` — the item is carried, counted and
+listed exactly like a core item — it only *looks* like the aid it is.
+
+## A.6 Common mistake vs warning
+
+**خطأ شائع** is a **first-class** knowledge type. It describes, in its `context.parts`:
+
+| `role` | Label | Content |
+| --- | --- | --- |
+| `wrong` | الخطأ | what students commonly do or conclude |
+| `why` | لماذا؟ | why it is incorrect |
+| `right` | الصحيح | the correct reasoning or result |
+| `example` (optional) | مثال | a concise example |
+
+A common mistake is **derived from the lesson's actual mathematics and pedagogy** — a distractor
+the lesson's questions use, an exercise's `commonError`, a correction a module writes (« العكس:
+… »). Never generic filler (« انتبه أثناء الحساب »): every mistake teaches something concrete.
+
+They are **not interchangeable**:
+
+| | **خطأ شائع** | **انتبه** |
+| --- | --- | --- |
+| Is | a common incorrect student action / reasoning | a mathematical condition, subtle distinction or point needing attention |
+| Example (prototype) | « من 120 = 6 × 20 نستنتج أن 6 وحده قاسم » | « التعريفان يشترطان b ≠ 0 » |
+| Shape | `parts` wrong / why / right (+ example) | `text` (+ `note`) |
+
+## A.7 Supporting knowledge — نصيحة, تحقّق, تذكّر, خلاصة
+
+| Type | Is | Example shape |
+| --- | --- | --- |
+| **نصيحة** (`tip`) | a useful reasoning or solving strategy | a shortcut the lesson itself teaches — only when it is **in this lesson's scope** |
+| **تحقّق** (`check`) | a concrete way to verify an answer or understanding | « نُجري القسمة الإقليدية وننظر إلى الباقي » + the lesson's own worked cases |
+| **تذكّر** (`prerequisite`) | relevant prior knowledge the idea depends on | the Euclidean division, from the lesson's « أستعدّ » — not a list of everything learnt before |
+| **خلاصة** (`takeaway`) | the essential idea that must remain: « if you remember one thing » | one or two sentences assembled from the lesson's definitions |
+
+All four are **lesson-specific and pedagogically justified**, like the mistakes. If the lesson
+gives no source for a tip, there is no tip (the prototype has none: its only candidate was out of
+the lesson's `teachingScope`).
+
+## A.8 Relationships are semantic
+
+Every edge carries a `label` saying **why** two ideas are connected; arrows are never decorative.
+The label is free Arabic text, written for the lesson; the recommended vocabulary:
+
+| Relation | Use for |
+| --- | --- |
+| يعني / معناه | a notion → its definition |
+| يعرّف | a definition → the notion it defines |
+| يوضّح / مثال على | an example → what it illustrates |
+| يكافئ / نفس الفكرة | two equivalent formulations (often `lateral`) |
+| يؤدي إلى / نستنتج / نستخلص | a consequence, a conclusion, the takeaway |
+| يعتمد على / تذكّر | a dependency on prior knowledge |
+| انتبه إلى | a condition or subtle point |
+| خطأ شائع (في) | the mistake attached to the idea it concerns |
+| نتحقق منه بـ | the check for an idea |
+| يساعد على | a tip for a task |
+| يلخّص | a summary |
+| حالتان خاصّتان | special cases |
+
+Used by the reference lesson: معناه · نفس الفكرة · تذكّر · باقٍ معدوم · نتحقق منه بـ · مثال · خطأ شائع ·
+نقول أيضًا · حالتان خاصّتان · انتبه إلى · نستخلص. The migrated lessons add labels taken from their
+own sentences — « الجداءات تتكرّر », « يصبح خاصية », « الباقي فرق », « يكفي », « أكبرها »,
+« نرمز له », « في حالات خاصّة », « نكرّرها », « نختصر الطرحات », « ننفيه بـ / نثبته بـ »,
+« نتوقّف عند », « نصل إليه بـ » (A.15). A relationship is also written out in the node's
+context (« الروابط »), which is what a screen reader gets instead of the drawing.
+
+## A.9 The data model — as implemented
+
+The conceptual model maps onto **real** fields. There is no other schema; nothing is stored in the
+database (the model is lesson source code, like the rest of the lesson).
+
+```js
+// knowledge.jsx — the MATHEMATICS (unchanged, shared with <KnowledgeBrick> and the stratified map)
+export const LESSON_KNOWLEDGE = { modules: { [n]: [{ id, type, title, summary, visual?, body }] } };
+export { KNOWLEDGE_GRAPH } from './knowledgeGraph';      // opt-in
+
+// knowledgeGraph.js — the STRUCTURE, RELATIONSHIPS and GUIDANCE
+export const KNOWLEDGE_GRAPH = {
+  root,                                                  // id of the starting node
+  nodes: [{ id, kind, lane, title, subtitle?, requires, reveals?, notebook?,
+            context: { text?, formula?, list?, parts?: [{ role, text }], note? } }],
+  edges: [{ from, to, label, lateral? }],
+};
+// lesson.config.js — the flag
+knowledgeMapMode: 'progressive'
+```
+
+| Conceptual field | Implemented as |
+| --- | --- |
+| id | `node.id` (graph) · `item.id` (knowledge) |
+| type | `node.kind` (A.5) · the stratified map's `item.type` is a separate, older category set |
+| title | `node.title` |
+| description | `node.context.text` (+ `subtitle`, the one-line notation) |
+| optional example | `context.formula`, `context.list`, a `parts` entry of role `example`, or an `example` node |
+| relationship | `edge.label` (+ `lateral` for same-level relations) |
+| connections | `edges` (drawing) and `reveals` (discovery order; default = outgoing edges) |
+| learning / reveal state | **derived, never stored in the data**: locked from `requires` vs the cumulative map; available / discovered from the exploration state (A.4) |
+| module association | **indirect**: `node.requires` → the `knowledge.jsx` item → the module that declares it in `LESSON_KNOWLEDGE.modules`; the locked hint « بعد المحور n » reads it (`lockedInfoFor` in `ProgressiveKnowledgeMap.jsx`) |
+| exercise / evaluation association | **NOT IMPLEMENTED** — no field links a node to an exercise, a question or a Learning Point (A.15) |
+| knowledge item carried | `notebook: true` — the node *is* its `requires` item (linear reading, « أضف إلى كرّاسي »). A `notebook` node may **omit `context`**: its card then shows the item's own `summary` (`contextOf` in `graphModel.js`) — the graph never retypes what `knowledge.jsx` already says |
+| fallback graph | `graphFromKnowledge(knowledge)` / `resolveGraph(authored, knowledge)` (`graphModel.js`): when a lesson declares the mode but its graph is missing or fails `validateGraph` (unknown ids, unreachable node, **cycle**), the map uses one `notebook` node per item, in module then declaration order, chained by the lesson order only (label « ثمّ », `map.progressive.fallbackSequence`), with the A.15 category → kind starting point and **no** guidance. Marked `derived: true`; the per-lesson test refuses it for a shipped lesson |
+| layout | `lane` (`start`/`center`/`end`); rows derived; declaration order breaks ties |
+
+## A.10 Authoring rules (lesson authors and AI generation)
+
+1. **Do not invent knowledge to fill the map.** Every node comes from the lesson: its textbook
+   content, its activities, its exercises (`method`, `commonError`), its questions and corrections.
+   Texts are **imported** from `content/*.js`, never retyped.
+2. **Do not force every type.** Use the types the mathematics justifies (A.5).
+3. **Prefer meaningful relationships.** Every edge has a label that says why (A.8); attach guidance
+   to the idea it explains — **never to the root by default**.
+4. **Common mistakes are mathematically specific** — what is done, why it is wrong, what is right
+   (A.6), grounded in the lesson's own distractors and errors.
+5. **Useful content is concise.** A context is a few sentences; the long text stays in the module.
+6. **Examples support concepts.** An example node hangs from the definition it illustrates.
+7. **The map follows the actual pedagogical progression.** `reveals` reproduces the lesson's order;
+   each node is gated (`requires`) by the item that establishes it — the map never shows more than
+   the lesson has taught.
+8. **Do not duplicate the lesson verbatim.** Nodes quote the essential sentences, not whole modules.
+9. **The map is a learning representation, not a transcript.**
+10. **Keep core mathematical knowledge dominant.** Guidance nodes stay fewer than half the map (the
+    prototype: 6 of 13); combine related aids into one node rather than multiplying them.
+11. **A خطأ شائع needs the lesson's « لماذا؟ ».** A distractor whose error the lesson never
+    explains is not a common mistake: if the lesson only *states* the right rule, the node is a
+    `warning` quoting it (lesson 5, « PGCD(a ; 0) = a »). One idea, one node: a distinction already
+    carried by an item is not doubled by a mistake node (lesson 7).
+12. **Write every equality inside `$…$`.** Outside a math island, digits after Arabic text are
+    reordered: « 252 − 140 = 112 » displays as « 112 = 140 − 252 ». This includes a quoted source:
+    if a lesson string carries a bare equality, the map leaves that part out rather than show it
+    reversed (asserted by the per-lesson test). A Latin word glued to a formula (`PGCD$(a ; b)$`)
+    is handled by `MathText` (`ARABIC_RTL_CONTRACT.md`).
+13. **Compute, don't copy, the worked arithmetic.** Divisor lists, factor pairs, successive
+    differences and Euclidean divisions shown by a node are computed from the textbook's own numbers
+    (`ACTIVITY.numbers`…), counted **as the textbook counts** (« 13 − 13 = 0 » is a step: « ثمان
+    خطوات » for 765 and 135).
+14. **Never spoil an evaluation.** Every node is gated by an item, and items belong to teaching
+    modules; content that *is* an evaluation's answer stays out of the map (lesson 9: the solution
+    2440 of « أحلّ الوضعية »).
+15. **Mind the discovery order.** `discoveryOrder` is depth-first over `reveals`: the aid that
+    reveals the takeaway must be in the **last** branch, or the takeaway is reached before the rest
+    of the lesson. A second aid pointing at the takeaway draws its edge but does not list it in
+    `reveals`.
+16. **Keep labels short and titles shorter.** A long label on a straight edge sits in the middle of
+    the row it crosses; the layout test fails when it lands on a node. Titles ≤ 28 characters (≈ 20 to
+    avoid « … » on a phone); a math subtitle must fit a phone lane at 0.7 scale — name the pair in the
+    title and keep the subtitle to the result (« PGCD = 28 »).
+
+## A.11 Arabic, RTL and mathematics
+
+The map follows `ARABIC_RTL_CONTRACT.md` with nothing specific to relax:
+
+- all UI text is Arabic (i18n `lesson.json` → `map.progressive.*`), in **Cairo** (global stack);
+- the UI is **RTL**: the `start` lane is on the right, the reading order runs right to left, the
+  first step is on the reading-start side;
+- mathematics goes through `MathText` (KaTeX in a `dir="ltr"` island): `a = b × q` and
+  `143 = 11 × 13 + 0` are never reversed;
+- only **lane positions** mirror; arrows keep flowing downward, and notation is never mirrored;
+- relation labels are **DOM text** (Cairo, browser bidi), not SVG text;
+- a **math subtitle is never truncated** — it is scaled to fit (`FittedMath`): « 11 × 13 + 0 »
+  without « 143 = » would be a false equality; an Arabic subtitle may end in « … ».
+
+## A.12 Responsive and accessible
+
+**Readable without leaning in** (owner, 2026-11-08). In FULL-SCREEN mode the whole content (nodes, arrows, labels, context card,
+« المعارف مفصّلة ») is scaled by ONE factor from the panel width — `readZoom = clamp(width / 900, 1.15, 1.5)` (CSS `zoom`,
+`data-km-read-zoom`), like the mission player; the graph geometry does not change. The two tabs are `text-base` there. The
+graph never grows beyond two 250 px lanes (≈ 600 px), so the side CONTEXT card takes the rest: from 300 to 560 px
+(`ProgressiveKnowledgeMap`, `sideW`) instead of leaving an empty margin between the card and the graph. Drawer and column
+modes are unchanged.
+
+| | Behaviour |
+| --- | --- |
+| Desktop (map body ≥ 760 px: full-screen panel, wide column) | graph + context panel beside it; column mode has a fixed best width (« The column ») |
+| Tablet, drawer, phone (< 760 px) | graph full width, context as a bottom sheet (≤ 42 vh); the scroll centres incoming nodes above it; the next step is always fully visible |
+| Keyboard | nodes are buttons in reading order; ↓ / ↑ / Home / End move focus; Enter / Space open; Escape closes one level at a time; visible focus rings |
+| Screen reader | node `aria-label` = type · title · state; relationships written out in « الروابط »; a polite live region announces what was discovered and revealed |
+| Touch | targets ≥ 44 px (nodes, pills, header switch, close) |
+| Reduced motion | no drawing, no delays, no pulse, a still next-step ring — same information, same interaction |
+| Not colour alone | every type has an icon + label; mistakes use ✗ ؟ ✓ markers; states have a text label and ✓ / lock icons |
+
+## A.13 Future lesson generation
+
+**Every future lesson — human- or AI-authored — is authored with the progressive map from the
+beginning.** The graph is not a post-processing step: it is designed with the lesson, because its
+`reveals` *is* the lesson's progression and its guidance comes from the lesson's own exercises.
+
+A generated lesson produces, besides `knowledge.jsx`:
+
+- the **core knowledge** nodes carrying each item (`notebook: true`);
+- **meaningful relationships** (labelled edges, A.8);
+- **useful examples** attached to their definitions;
+- **relevant common mistakes** (A.6) — from its questions' distractors and its exercises' `commonError`;
+- **relevant warnings** (conditions of its definitions);
+- **useful checks / tips** where the lesson supports them;
+- a **concise takeaway** where appropriate;
+- `knowledgeMapMode: 'progressive'` in `lesson.config.js`.
+
+Rules: A.10. Gate: A.14. Contract entry: `LESSON_DEVELOPMENT_GUIDE.md` §14.2 and
+`AI_LESSON_CONTRACT.md` « Knowledge map ».
+
+## A.14 Quality checklist
+
+A lesson's map is ready only if:
+
+- [ ] Core concepts are represented (every `knowledge.jsx` item is carried by a `notebook` node).
+- [ ] Important relationships are represented, each with a label that says why.
+- [ ] The learning sequence is coherent (`reveals` follows the lesson; `requires` gates by the item that establishes the node).
+- [ ] Examples are meaningful and hang from what they illustrate.
+- [ ] Relevant common mistakes are included, each with wrong / why / right.
+- [ ] Relevant warnings are included (conditions of the definitions).
+- [ ] Verification strategies are included where useful.
+- [ ] No fabricated or generic content exists — every text is traceable to the lesson's sources.
+- [ ] The Mind Map is not overloaded (guidance < half the nodes; no arrow crosses a node; no labels overlap).
+- [ ] The detailed view has a clear reading order (① is the start; aids next to their ideas).
+- [ ] Arabic / RTL is correct (Cairo, RTL, Arabic labels).
+- [ ] Mathematics is correctly rendered (LTR islands, nothing truncated or mirrored).
+- [ ] Learning-state integration is correct (locked before the module teaches it; teacher sees all).
+
+What the tests check automatically, **for every lesson** (`progressive/lessonGraphs.test.js`, no
+per-lesson code — a new lesson is picked up by existing): the mode and the re-export; graph validity
+(no cycle); every node gated by a real item and the root by an item of the first teaching module;
+every item carried by exactly one `notebook` node; unique ids and titles; a label on every edge;
+something to show on every node; every mistake with wrong / why / right; no guidance on the root and
+guidance < half; **every aid quotes at least one of its texts word for word from the lesson's
+`content/*.js` or `modules/*.jsx`**; discovery never reaching a later محور before an earlier one;
+the flash walking the whole map and, after the first محور, exactly that محور's ideas open; the linear
+reading listing every item and aid once, a reminder before its idea; **every numeric equality,
+Euclidean division and PGCD claim arithmetically true**; no equality outside a math island; and
+layout geometry at 328 / 400 / 720 / 1100 px (inside the width, no node overlap, no arrow through a
+node, no label on a node or on a label). `progressiveMap.test.js` keeps the reference lesson's own
+assertions and the engine's (fallback, `contextOf`, cycles). In the browser,
+`apps/web/e2e/knowledge-map.mjs` measures every lesson at 1440 / 820 / 390 px (full map, linear
+reading, the flash walk, replay, a student after module 1). **Relevance** — is this the right
+mistake, the right relation? — remains a human review.
+
+## A.15 Migration of the existing lessons — done 2026-09-29
+
+The eight other lessons were migrated in four batches (divisors · PGCD · coprime & fractions ·
+integration), each one authored, tested (`lessonGraphs.test.js`), measured in the browser
+(`e2e/knowledge-map.mjs`) and reviewed on screenshots before the next. **Representation changed;
+curriculum did not**: no `knowledge.jsx` item, brick, snapshot, module, exercise or lesson order was
+edited — each lesson gained a `knowledgeGraph.js`, one re-export line in `knowledge.jsx` and the
+flag in `lesson.config.js`.
+
+| Lesson | Nodes · edges · aids | Items → kind (normalisation) | Aids — and their source | Handled explicitly |
+| --- | --- | --- | --- | --- |
+| 1 `qasim-adad-tabii` | 13 · 15 · 6 | reference (unchanged) | — | reference |
+| 2 `qawasim-adad-tabii` | 11 · 11 · 5 | methodes → method ×2; « تذكير » → prerequisite; memoriser → retain | 3 mistakes: ex 3 `commonError`, module 2 q 1 distractor « نصف 105 », ex 6 `commonError`; takeaway | the 60 factor pairs computed |
+| 3 `khawass-qawasim` | 13 · 13 · 5 | « تذكير » → prerequisite; regles → relationship ×2; methodes → method ×2 | tip: ex 12 / 13 (the `commonError` of 13 is a loss of time, not an error); mistakes: ex 15 `commonError`, module 3 q 1 (condition vs conclusion); takeaway | the activity's three cases computed; the conjecture is an `idea` node; the converse left out (no « why » in the lesson) |
+| 4 `qasim-mushtarak-akbar` | 9 · 8 · 2 | concepts → definition ×2; vocabulaire → term; regles → relationship | mistake: ex 10 (distractor + `commonError` + explanation); takeaway | the evaluation's « أصغر عدد » distractor merged into it, not doubled |
+| 5 `tayin-pgcd` | 8 · 8 · 3 | methodes → method; regles → relationship ×2 | warning « PGCD(a ; 0) = a » (a distractor the lesson never explains → A.10 rule 11); mistake: ex 22 `commonError` + `explainFor(45)`; takeaway | 42 and 60 computed |
+| 6 `bahth-pgcd` | 12 · 11 · 5 | regles → relationship ×2; methodes → method ×2; memoriser « أي طريقة أختار؟ » → tip | 2 reminders (خاصية 1 and 2 of lesson 3 — `priorKnowledge`, module corrections); mistake « آخر فرق هو 0؟ » (evaluation E2 + the textbook's last step); takeaway = the طرائق page's rule and remarks, verbatim | 252 / 140 and 765 / 135 computed (8 differences vs 3 divisions, as the book counts); the textbook misprint note stays in module 1 |
+| 7 `awwaliyan-fima-baynahuma` | 10 · 10 · 4 | concepts → definition; methodes → method ×2; memoriser « ≠ عددان أوليان » → warning | tip: ex 27 + مريم (module 1); mistake: ex 39 `commonError`; takeaway | ex 39's closing bare equality left out (A.10 rule 12) |
+| 8 `ikhtizal-kasr` | 11 · 11 · 5 | methodes → method ×2; concepts → definition; memoriser « كيف أتأكد…؟ » → check | reminder: « أستعدّ » item 8 + the diagnostic's advice; mistakes: module 1 q 1 distractors, « لأن 7 عدد أولي » (module 1 q 2, module 2 q 1, E2); takeaway | — |
+| 9 `wadiya-idmajiya-aadad` | 7 · 7 · 3 | « تذكير » → prerequisite; methodes → method | mistake « مجموع أم قاسم؟ » (module 1 question 3 distractors + its explanation); takeaway = the three stage labels (a platform addition, not the textbook's) | **integration lesson** (since 2026-10-13 its situation is the textbook's aprons challenge, p. 7 — nodes: PGCD reminder, « مجموع أم قاسم؟ » mistake, Euclid, three stages; modules 1–6 are six practice « وضعيات تدريبية », module 7 « تحليل الوضعية النهائية للاختبار » gates the map, the evaluation is module 8): no new knowledge; the map shows the method (قراءة → استراتيجية → تنفيذ), and **not** the solution (13 schools) — it is the evaluation's answer (A.10 rule 14); (« أؤكّد تعلّماتي » was removed 2026-10-13) it formerly referred to lessons 1–7, whose maps carry that knowledge |
+
+**The A.15 blockers are resolved:** (1) the isolation test became « every lesson with a map has a
+valid, hand-authored graph » plus a per-lesson invariant suite (`lessonGraphs.test.js`); (2) the
+graph gate is in `scripts/validate-lessons.mjs` (static) and the invariants in the test suite (run by
+`npm test`); (3) the polished header switch « عمود / ملء الشاشة » (single selection) is now the only
+switch. **Fallback:** implemented (A.9, `resolveGraph`). **Shared fixes found by the migration:**
+`MathText` groups a Latin word glued to a formula into its LTR island (16 textbook strings of five
+lessons read `(b ; r)PGCD(a ; b) = PGCD`); the floating « بطاقتي » / « كرّاسي » pills rise above the
+bottom navigation bar below `lg` (the map was unreachable on phones and tablets); `validateGraph`
+rejects cycles.
+
+**Still NOT IMPLEMENTED, decide before scale:** a node ↔ Learning Point / exercise association (for a
+per-node mastery hint), a print of the graph itself, persistence of the exploration beyond the
+browser tab, automatic placement for more than two parallel branches per row, and the in-page
+« للتذكّر » snapshot (still the stratified list). **French:** no French lesson exists since
+2026-09-25 and no French locale ships; relation labels are data (Arabic, written per lesson), the
+engine's UI strings go through i18n (`map.progressive.*`) — a French lesson would write its own labels.
+
+---
+
+# Part B — The cumulative map engine and the stratified presentation
+
+> **REMOVED 2026-11-08 (owner): the stratified PRESENTATION.** The panel now shows ONLY the interactive mind map (Part A) and its
+> linear reading « المعارف مفصّلة ». Deleted from `KnowledgeMap.jsx`: the « navigation » strata list (`StructuredView`,
+> `HighlightBand`, `KnowledgeRow`), the item and category detail screens (`ItemDetailView`, `CategoryDetailView`,
+> `NavigationView`) and the stratified print sheet (`PrintView`, `PrintCard`, `PrintHero`); print now always uses
+> `LinearKnowledgeView variant="print"`. `useProgressiveGraph` no longer reads `knowledgeMapMode`: every lesson gets its
+> `KNOWLEDGE_GRAPH` or the graph derived from its items. KEPT (still used): the engine below (items, cumulative state, bricks,
+> the panel and its geometry), `CompleteView` + `knowledgeStructure.js` (the end-of-module / final synthesis cards,
+> `KnowledgeSnapshot`) and the « بطاقتك » strip. Where this Part describes the stratified list as what the panel shows, it is
+> historical.
+
+> Everything below « Purpose » describes the engine both layers share (items, cumulative state,
+> module completion, bricks, the panel, its drawer / column / full-screen geometry, print) and the
+> **stratified** presentation — today shown by **no** lesson (all nine declare the progressive
+> mode), kept as the engine underneath and the `'legacy'` escape hatch. The progressive
+> implementation's own detail is in « Progressive map — implementation ».
 
 ---
 
@@ -28,8 +470,9 @@ complete lesson knowledge. Its presentations are all fed by the same data:
   *Not a presentation the student picks.*
 - **the column** (« Colonne », *prior mode*) — the workspace makes ROOM for the map instead of
   letting it float above the lesson: the sidebar compresses to icons, the content genuinely
-  shrinks, and the map becomes a real third region. Resizable, and bounded so the lesson keeps at
-  least `MIN_CONTENT_WIDTH`. Desktop only (≥ 1024px). *A second workspace.*
+  shrinks, and the map becomes a real third region. **Fixed width** — the best for the screen, never
+  resized by the reader (2026-09-29) — and the lesson always keeps `MIN_CONTENT_WIDTH`. Desktop only
+  (≥ 1024px), for students **and teachers**. *A second workspace.*
 - **expanded** — the same map filling the lesson's own viewport. *A full knowledge workspace.*
 - **print (A4)** — a dedicated structured document. *A mathematical reference.*
 - **the module « À retenir »** — the end-of-module snapshot of that same map, in the page.
@@ -48,10 +491,11 @@ Module completion → authoritative progress (useProgress) → knowledge contrib
 ```
 
 The layout state lives in `src/context/WorkspaceLayoutContext.jsx`, mounted above the router in
-`App.jsx` — **above both shells**, since `CourseLayout` picks `StudentLayout` or `MainLayout` by
-authentication and the column must work under either. `mode` is `closed | normal | prior`; only
-`prior` changes the shell, so the drawer and expanded geometry (locked by `km-layout.mjs` and the
-ten `*-carte.mjs` suites) are untouched.
+`App.jsx` — **above every shell**, since `CourseLayout` picks `StudentLayout`, `TeacherLayout` (a
+teacher reads the same lesson in their own space — `TEACHER_CLASSROOM_ARCHITECTURE.md` §8b) or
+`MainLayout` by the reader, and the column must work under any of them. `mode` is `closed | normal | prior`; only
+`prior` changes the shell, so the drawer and expanded geometry are untouched. (They were locked by
+`km-layout.mjs` and ten `*-carte.mjs` e2e suites — historical, deleted with the French lessons.)
 
 **How the content actually shrinks.** The shell reserves a right gutter in the padding of its
 `<main>`, via `--sa-gutter-w` and the `.sa-workspace-main` rule in `index.css`. This is deliberate:
@@ -62,20 +506,57 @@ measurement system.
 
 > Reserve with `padding-right` on `<main>`, never with a competing grid.
 
-`contentGutter === maCarteWidth` is what guarantees the content is never hidden behind the card;
-`maxMaCarteWidth()` bounds the resize so the lesson always keeps `MIN_CONTENT_WIDTH`.
+`contentGutter === maCarteWidth` is what guarantees the content is never hidden behind the card.
 
-**The sidebar has two reasons to be collapsed, and one state.** `sidebarCollapsed` is derived as
-`prior || sidebarManuallyCollapsed` — the manual toggle (`data-sidebar-toggle`, persisted under
-`sidebarCollapsed`) is a comfort, prior mode is a need, so prior wins and the toggle is disabled
-(and says why) while the column is open.
+**The column width is fixed — the best for the screen (2026-09-29).** There is no resize handle in
+column mode (the floating drawer below 1024 px keeps its own). `columnWidthFor(viewport, sidebar)`
+in `WorkspaceLayoutContext.jsx` gives 40 % of the space beside the sidebar, at least
+`MA_CARTE_MIN_WIDTH` (360 — two lanes of nodes and an untruncated header), at most
+`MA_CARTE_MAX_WIDTH` (480; `MA_CARTE_MAX_WIDE` 560 from 1600 px), and never so much that the lesson
+drops under `MIN_CONTENT_WIDTH` (560):
+
+| Screen | Sidebar folded: map / lesson | Sidebar open: map / lesson |
+| --- | --- | --- |
+| 1024 | 378 / 566 | — (toggle locked) |
+| 1280 | 480 / 720 | 410 / 614 |
+| 1440 | 480 / 880 | 474 / 710 |
+| 1920 | 560 / 1280 | 560 / 1104 |
+
+The former per-reader width (`maCarteColumnWidth` in storage, `setPriorWidth`, `priorWidthBounds`)
+is gone. Pinned by `src/context/workspaceLayout.test.js`.
+
+**The lesson's side padding shrinks in column mode.** `.sa-page` keeps its 60 px sides everywhere
+else; inside `.sa-workspace-main[data-workspace-prior]` it becomes `clamp(20px, 2vw, 32px)` (index.css),
+with the same 300 ms transition as the gutter.
+
+**The sidebar has two reasons to be collapsed, and one state.** Outside column mode,
+`sidebarCollapsed` is the reader's manual choice (`sidebarCollapsed` in storage). In column mode the
+sidebar is **folded by default** but can be **reopened** with the same toggle: the column is then
+recomputed beside it (`sidebarOpenBesideMap` in storage, a separate choice so neither overwrites the
+other). The toggle is locked (disabled, and its label says why) only where reopening would squeeze
+the lesson under `MIN_CONTENT_WIDTH` — `sidebarCanOpenBesideColumn(viewport)`, i.e. below 1176 px.
+
+**One toggle for both spaces** — `components/common/SidebarToggle.jsx`, used by `StudentNavbar`
+and `TeacherNavbar` (`data-sidebar-toggle`): a 32 px disc sitting on the sidebar's edge, level with
+the logo row (`top-4 -end-4`), with a 44 px hit area (`after:-inset-1.5`), shadow, the space's
+accent on hover/focus (blue student, teal teacher), a chevron naming the action's direction
+(`DirectionalIcons`), `aria-expanded`, and an honest disabled state.
+
+> **Superseded on 2026-11-16:** the sidebar no longer folds. Both workspaces have a fixed 80 px rail (`components/common/WorkspaceNav.jsx`, `RAIL_WIDTH`) and `SidebarToggle` is deleted; the knowledge map's column sits beside the rail. See `docs/reports/NAVIGATION_REBUILD_PLAN.md` §0.
+
+**The teacher shell is the same workspace.** `TeacherLayout`'s `<main>` carries
+`.sa-workspace-main`, `--sa-sidebar-w`, `--sa-gutter-w` and `data-workspace-prior` like
+`StudentLayout`, and `TeacherNavbar` folds to icons (`w-20`) like `StudentNavbar`. Before
+2026-09-29 the teacher `<main>` used a hard `lg:ps-64`: column mode reserved nothing and the map
+covered 380 px of the lesson.
 
 **Fullscreen suspends the column.** `mapExpanded` (published by the panel) drops the gutter to 0:
 fullscreen covers the lesson area itself, so reserving a column there would amputate the very
 rectangle it fills — the card stopped short of the right edge. For the same reason `expandedGeom`
 is computed as *sidebar edge → window edge* rather than read from `<main>`: the shell only releases
 the gutter on the next render, so a measured width made the panel lurch left before correcting
-right. Both are regression-tested in `km-prior.mjs`.
+right. (Both were regression-tested in `km-prior.mjs` — historical, deleted; no current e2e suite
+covers them.)
 
 **Opening and closing** slide in from the right (`x: 100% → 0`, 300ms) while the shell's gutter
 opens underneath on the same curve — the lesson makes room *while* the card arrives, and both
@@ -87,7 +568,8 @@ a real bug: framer-motion interpolated from its own zero state (`left: 0`), so t
 the *left* edge and travelled across the screen. `useLessonViewport` also measures in a
 `useLayoutEffect`, so the first painted frame already carries the true rectangle.
 
-Covered by `apps/web/e2e/lesson-kit/km-prior.mjs` (54 assertions) and `sidebar-toggle.mjs` (29).
+*(Historical: this was covered by `km-prior.mjs` (54 assertions) and `sidebar-toggle.mjs` (29),
+deleted on 2026-09-25 — no current e2e suite covers the prior column.)*
 
 The architectural rule that motivates everything else:
 
@@ -98,52 +580,48 @@ The architectural rule that motivates everything else:
 
 ## Reference Implementation
 
-**`vecteurs-2nde` is the reference integration**, and `common/knowledge/` is the single shared
-implementation. Migrate other lessons by *importing* it — never by copying it.
+**The 4AM unit is the reference integration**, and `apps/web/src/lessons/common/knowledge/` is the
+single shared implementation. A lesson *imports* it — never copies it.
 
 ```text
-apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/
-├── knowledge.jsx                        ← WHAT each module contributes (the data)
-├── lesson.config.js                     ← declares knowledgeMap: true
-├── routes.jsx                           ← wraps every page in the provider
-├── components/
-│   ├── KnowledgeMap.jsx                 ← the drawer UI (generic; do not fork)
-│   ├── knowledgeVisuals.jsx             ← SVG mini-figures used by knowledge.jsx
-│   ├── knowledgeState.js                ← pure cumulative reducer
-│   ├── knowledgeState.test.js           ← unit tests for the reducer
-│   ├── KnowledgeProvider.jsx            ← cumulative state + mounts the drawer
-│   └── KnowledgeSnapshot.jsx            ← the « À retenir » presentation
-└── modules/Module0*.jsx                 ← each passes <KnowledgeSnapshot> as its footer
+apps/web/src/lessons/moyen/4am/ansab_al_aadad_wal_hisab/aadad-tabiiya-natiqa/<lesson>/
+├── knowledge.jsx         ← WHAT each module contributes (the data: LESSON_KNOWLEDGE)
+├── lesson.config.js      ← declares knowledgeMap: true
+├── routes.jsx            ← passes loadKnowledge: () => import('./knowledge') to buildLessonRoutes
+└── modules/Module0*.jsx  ← each passes <KnowledgeSnapshot moduleNumber={n} /> as its footer
+
+apps/web/src/lessons/common/knowledge/
+├── KnowledgeMap.jsx            ← the drawer UI (generic; do not fork)
+├── knowledgeState.js (+ test)  ← pure cumulative reducer
+├── knowledgeStructure.js       ← hierarchy / strata
+├── knowledgeMastery.js (+ test)
+├── KnowledgeProvider.jsx       ← cumulative state + mounts the drawer
+├── LazyKnowledgeProvider.jsx   ← loads knowledge.jsx on demand
+├── KnowledgeSnapshot.jsx       ← the « À retenir » presentation
+└── ConceptVisual.jsx (+ test), finalSynthesis.test.js
 ```
 
-Everything lives **inside the lesson folder** for the ten lessons migrated on 2026-09-05.
-
-**Since 2026-09-06 the generic files also exist as a shared implementation**,
-`apps/web/src/lessons/common/knowledge/` (`KnowledgeMap.jsx`, `knowledgeState.js` + test,
-`KnowledgeSnapshot.jsx`, `knowledgeVisuals.jsx` with `MiniPlane` / `MiniGraph`, and a
-parameterised `KnowledgeProvider.jsx` taking `lessonId`, `knowledge`, `printTitle`,
-`printSubject`). The six lessons built that day (`positions-relatives-droites-2nde`,
-`fonctions-2nde`, `fonctions-de-reference-2nde`, `signe-fonctions-2nde`,
-`variations-extremums-2nde`, `fonction-affine-2nde`) import it:
+**Who wraps the page in the provider.** Not `routes.jsx`: `buildLessonRoutes`
+(`lessons/moyen/4am/ansab_al_aadad_wal_hisab/aadad-tabiiya-natiqa/_unit/lessonRoutes.jsx`) renders
+every page through `LessonPageFrame` of the lazy lesson runtime
+(`apps/web/src/lessons/common/lessonRuntime.jsx`), which mounts
+`<LazyLessonKnowledgeProvider load={loadKnowledge} lessonId={config.id} …>`. `routes.jsx` only
+passes `loadKnowledge`. Modules import the snapshot from the shared folder:
 
 ```jsx
-import { LessonKnowledgeProvider } from '../../../../common/knowledge';   // routes.jsx
-import { KnowledgeSnapshot } from '../../../../../common/knowledge';       // modules
-<LessonKnowledgeProvider lessonId={LESSON_CONFIG.id} knowledge={LESSON_KNOWLEDGE} printTitle="…" printSubject="Mathématiques · 2nde">
+import { KnowledgeSnapshot } from '../../../../../../common/knowledge';   // modules
 ```
 
-**Since 2026-09-06 there is exactly one implementation.** The eleven per-lesson
-`components/KnowledgeMap.jsx` files (~9 270 duplicated lines) are now one-line **re-exports** of
-`common/knowledge/KnowledgeMap`, so their existing `./KnowledgeMap` imports still resolve while
-every lesson shares the same drawer, expanded mode, hierarchy and print view. Never reintroduce a
-copy.
+*(Historical: until 2026-09-25 the reference was `lycee/seconde/geometrie/vecteurs-2nde/`, with
+lesson-local `components/KnowledgeMap.jsx` re-exports and a `routes.jsx` that wrapped each route in
+`<LessonKnowledgeProvider>` itself. Those lessons were deleted; read them in git history.)*
 
 ---
 
 ## Architecture
 
 ```text
-                         LESSON (vecteurs-2nde)
+                         LESSON (any 4AM lesson)
                                   │
         ┌─────────────────────────┴─────────────────────────┐
         ↓                                                   ↓
@@ -204,11 +682,11 @@ Two fields are **added by the reducer, never written by the author**:
 | `isNew` | `cumulativeKnowledge` | the item's module was unlocked during this page session |
 
 One optional escape hatch is honored by the drawer: an item with `discovered: false` is filtered
-out of `visibleItems`. It is **not used** by `vecteurs-2nde`.
+out of `visibleItems`. It is **not used** by any 4AM lesson.
 
 ### The categories
 
-Defined once and exported from `components/KnowledgeMap.jsx`. **Do not invent new categories** —
+Defined once and exported from `apps/web/src/lessons/common/knowledge/KnowledgeMap.jsx`. **Do not invent new categories** —
 the drawer, the print view and the snapshot all iterate this exact array:
 
 ```js
@@ -269,6 +747,17 @@ empty scaffolding.
 `progressionByModule(items)` returns `[{ module, count }]` — the `M1 +2 → M2 +4 → …` trail that
 makes the cumulative reveal visible.
 
+**Mastery overlay (Mastery V2, 2026-09-24).** Visibility stays COMPLETION-driven; mastery is only
+an overlay on the « بطاقتك » strip (`ProgressionStrip` in `KnowledgeMap.jsx`,
+`knowledgeMastery.js` → `moduleMasteryOverlay`): each module chip carries one dot per Learning
+Point its config declares in `teachesLearningPointIds`, coloured with `MASTERY_STATES`, titled
+with the label + reason. A module chip with at least one `gap` point adds a small « راجع » link to
+that module when the module is in the map's `unlockedModules` (`useLessonKnowledge()` —
+`KnowledgeMap.jsx` passes it as `completedModules` to `moduleMasteryOverlay`): the modules stored
+as completed **plus** those unlocked live on this page, including every module once the final
+test's synthesis calls `unlockAll`. The profile is fetched only when the lesson's modules declare taught points; the
+overlay is `data-km-noprint` and never reaches the A4 print. The map computes no mastery.
+
 **Adding a category** means placing it in a stratum in `STRATA`; a category listed nowhere simply
 will not render.
 
@@ -299,7 +788,7 @@ maps to `[]` — both are handled.
 Modules that contribute nothing in the reference lesson: module 0 (prerequisite diagnostic — it
 tests prior knowledge, it does not teach) and module 8 (the final assessment — it evaluates).
 
-### A real example (module 1 of `vecteurs-2nde`)
+### A real example (module 1 of `vecteurs-2nde` — historical, lesson deleted 2026-09-25; the shape is unchanged, see any 4AM `knowledge.jsx`)
 
 ```jsx
 1: [
@@ -353,14 +842,52 @@ later, edit that one item — do not re-declare it under a later module.
 
 ### Visuals
 
-Figures used by `knowledge.jsx` live in `components/knowledgeVisuals.jsx` and are self-contained
-SVG components: `MiniPlane` (compact coordinate plane with points/arrows), `RightTriangle`
-(Pythagoras), `ChaslesArrow` (A → B → C). They take student-space coordinates (y upward) and
-convert internally. They are plain SVG on purpose: they render identically on screen and in print.
+A figure used by a lesson's `knowledge.jsx` is written in that lesson, as a self-contained SVG component (student-space
+coordinates, y upward, converted inside). Plain SVG on purpose: it renders identically on screen and in print.
+(The shared file `knowledgeVisuals.jsx` was deleted on 2026-11-17: no lesson imported any of its figures.)
 
 They do **not** use `CoordPlane` or the lesson's `VectorScene`/`labelLayout` label placer. Map
 figures are small, static and hand-placed. Their labels are audited by the e2e layout audit like
 any other SVG, so a badly placed label fails the suite (see [Validation](#validation)).
+
+### The memo card — « 🔑 للتذكّر » as a FICHE DE MÉMOIRE (`variant="memo"`, PROTOTYPE 2026-10-28)
+
+Owner: « the end-of-module card must be clear — the rule is SEEN and memorised at first sight —, professional and made for Gen Z;
+it is the core the student must understand, memorise and use in the exam ». Prototype on `maqlub-qismat-kasrayn` modules 1–4
+(`<KnowledgeSnapshot moduleNumber={n} variant="memo" />`), rendered by `knowledge/MemoCard.jsx`. Validated 2026-10-28; rolled out to every
+lesson (done 2026-10-28) and BINDING on every new lesson (`LESSON_DEVELOPMENT_GUIDE.md` §6ter), along [`../reports/LAB_PROTOTYPE_ROLLOUT.md`](../reports/LAB_PROTOTYPE_ROLLOUT.md) (`memoContent.test.js` checks every lesson's `memo`).
+
+- **Header** (dark band): « 🔑 للتذكّر », the promise « افهم · احفظ · استعمل في الامتحان », the count of new rules (Arabic plurals
+  `map.memo.newCount_*`), « ⏱ اختبر ذاكرتك » (when the card's items carry `memo.quiz`) and « افتح بطاقتي ».
+- **One TILE per item of the module**, in the order of the eye: the RULE large (`memo.rule`, KaTeX, `\dfrac`; what CHANGES is coloured
+  `\textcolor{#e11d48}{…}` — the lesson's helper `R(x)`), the SLOGAN (`memo.hook`, 2–5 words), then three short lines with an icon each:
+  مثال (`memo.example`, a formula), فخّ (`memo.trap`), في الامتحان (`memo.exam`). Formula first when the card is narrow (< `xl`), side by
+  side above; a formula never wraps.
+- **Earlier items** are CHIPS (title + `memo.chip`, a mini-formula). A module that brings nothing (exercises) shows every item as a tile.
+- **« اختبر ذاكرتك » — the timed challenge (optional, 2026-10-28)** (`MemoQuiz.jsx`, pure logic `memoQuiz.js`): the centre of the
+  screen over a shaded background (portal on `body`, page scroll locked with `classroom/useScrollLock`). Up to `QUIZ_SIZE` = 5 questions,
+  3 choices, `SECONDS` = 12 s each (a bar that empties, red in the last quarter). Questions come from the card's items
+  (`memo.quiz = [{ q, options: [3], correct }]`, 2 per rule): the module's rules FIRST (one each, then the second), then earlier ones;
+  the PLACE of the right answer is balanced over the run (`answerSlots`: each place at most ⌈n/3⌉ times, never twice in a row —
+  owner: « a quiz where the answer is mostly the 1st or 2nd is not a quiz »). Large layout (≈ 1040 px, up to 84 % of the screen height,
+  three big option cards, one progress segment per question in the top band). Sound: the device's « الصوت » preference, with its own
+  speaker button in the band (start, right, wrong, the last 3 seconds tick, a fanfare at the end). Right → « صحيح! » and the next one comes alone; wrong or time up → the right answer stays green with « راجع القاعدة 02 »
+  until « التالي ». End: stars (3 all right, 2 ≥ 60 %), score, time, best score (localStorage per page × module, try/catch), the rules to
+  review, « أعد التحدّي ». Keys 1 2 3 · Enter · Escape. NOT learning evidence: nothing is sent. Numbers inside Arabic sentences (score,
+  best, rule list) are isolated LRI…PDI — measured with `Range.getBoundingClientRect`, not eyeballed.
+  **Authoring `memo.quiz`:** each distractor is a REAL mistake of the rule (not flipped, both flipped, the opposite instead of the
+  inverse…), never a random number; each option compiles in KaTeX (`memoQuiz.test.js`).
+- An item without `memo` shows its `summary` in the tile: any lesson can switch, the card improves when the author writes `memo`.
+- **Width of `memo.rule` (measured 2026-10-28):** about 12–14 symbols at 1366 px, no « … »; the box shrinks when `memo.example` is long and a longer formula
+  is clipped or overlaps its example. A long identity may go on three lines with `aligned`. Measure it in the browser (teacher view, `[data-memo-tile]`), don't estimate.
+  Keep `hook`/`trap`/`exam` to words: `<`, `>`, signed numbers and Latin letters reorder inside Arabic text.
+- **Authoring `memo`:** the rule in symbols (letters a, b, c, d, x), never a sentence; the example with the lesson's OWN numbers; a trap that
+  names the real mistake; no fraction inside a sentence (`trap`, `exam`, `hook` stay one line — put formulas in `rule` / `example`).
+  Every `rule`, `example`, `chip` must compile in KaTeX strict (`memoCard.render.test.jsx`).
+- DOM contract: the `KnowledgeSnapshot` one (each item once, « جديد » only on the module's items) + `[data-memo-card]`,
+  `[data-memo-tile]`, `[data-memo-rule]`, `[data-memo-chip]`, `[data-memo-quiz-open]`; the challenge `[data-memo-quiz][data-phase=intro|play|end]`,
+  `[data-memo-quiz-option][data-state]`, `[data-memo-quiz-timer]`, `[data-memo-quiz-next]`, `[data-memo-quiz-score]`. Verified in the browser at 1366 and 1024
+  (a full run: right answers, a time-out, wrong answers, the end screen, Escape).
 
 ### Mathematical notation
 
@@ -377,7 +904,7 @@ produces broken output — never bulk-edit these strings with regex tooling.
 
 ### The reducer
 
-`components/knowledgeState.js` is **pure**: it reads no storage, no context, no React state.
+`apps/web/src/lessons/common/knowledge/knowledgeState.js` is **pure**: it reads no storage, no context, no React state.
 
 ```js
 cumulativeKnowledge(lessonKnowledge, unlocked, newModules = []) → item[]
@@ -405,7 +932,19 @@ module 2 completed      → M1 + M2
 …
 last content module     → complete lesson knowledge
 boss synthèse reached   → complete lesson knowledge (unlockAll)
+
+teacher / admin reader  → complete lesson knowledge from the start (freeNavigation)
 ```
+
+**A teacher reads the complete map (2026-09-29).** A reader with `freeNavigation`
+(`features/learning/learningViewer.js` — teacher or admin; never a role test) has no progression
+(`tracksProgress` is false) and prepares the lesson rather than learning it, so
+`LessonKnowledgeProvider` treats **every** module of `LESSON_KNOWLEDGE` as unlocked for them:
+drawer, column, expanded, « عرض كامل » and print all show the whole lesson, on every lesson. Nothing
+is written. One exception keeps the teacher's view honest: a module's footer
+`<KnowledgeSnapshot moduleNumber={n}>` (the « للتذكّر » at the end of a محور) shows that reader
+only the items of modules `≤ n` — what a student holds at that point — while the final
+`<KnowledgeSnapshot complete>` shows everything. Students are unaffected.
 
 The reference lesson deliberately starts with an **empty map**, and the drawer shows an explicit
 empty state (« Ta carte est encore vide. »). The prerequisite diagnostic (module 0) contributes
@@ -465,7 +1004,8 @@ whole lesson has been worked through and evaluated.
 The Knowledge Map is a **read-only consumer** of progress. It never unlocks a module, never changes
 `sequentialUnlock` behaviour, and never writes progress. A student who jumps straight to the
 always-reachable evaluation module with only module 1 done sees a map holding only module 1's
-knowledge — verified by the e2e suite.
+knowledge — verified by the e2e suite. The one reader for whom the map is complete without
+progress is a `freeNavigation` reader (teacher/admin — [The progression](#the-progression)).
 
 ---
 
@@ -493,8 +1033,8 @@ Now:
 ### How a module wires it
 
 ```jsx
-// modules/Module04EnchainerLesDeplacements.jsx
-import KnowledgeSnapshot from '../components/KnowledgeSnapshot';
+// modules/Module01AlMaktaba.jsx (qasim-adad-tabii)
+import { KnowledgeSnapshot } from '../../../../../../common/knowledge';
 
 <ContentModule
   …
@@ -542,7 +1082,8 @@ recapitulation placed mid-lesson).
 ### The removed formalization module
 
 Because every module now ends on the current map and the assessment ends on the complete map, a
-separate « À retenir » module is redundant. `vecteurs-2nde` **has none**. Its `lesson.config.js`
+separate « À retenir » module is redundant. The 4AM lessons **have none** (as `vecteurs-2nde`,
+historical, had none). Its `lesson.config.js`
 declares:
 
 ```js
@@ -597,8 +1138,10 @@ notation from a later module is now a real spoiler on screen, not just a theoret
 
 ### Mounting
 
-The drawer is mounted **once per lesson page** by `LessonKnowledgeProvider`, which `routes.jsx`
-wraps around every route element (lesson index and every module):
+The drawer is mounted **once per lesson page** by the knowledge provider, which `LessonPageFrame`
+(`apps/web/src/lessons/common/lessonRuntime.jsx`, used by `buildLessonRoutes`) wraps around every
+route element (lesson index and every module) as `<LazyLessonKnowledgeProvider load={loadKnowledge}>`.
+*(Historical — the snippet below is the French-era per-lesson `routes.jsx` form.)*
 
 ```jsx
 function withSuspense(Component) {
@@ -622,12 +1165,25 @@ whole mounting story.
 ### The trigger button
 
 ```text
-fixed bottom-20 right-6 z-40   ·   data-km-trigger="true"   ·   data-km-noprint="true"
+fixed bottom-6 left-6 z-40   ·   data-km-trigger="true"   ·   data-km-noprint="true"
 ```
 
-`bottom-20`, not `bottom-6`: the visitor site's command-palette button (`#command-palette-trigger`)
-sits at `fixed bottom-6 right-6 z-40` in the same corner, and the student space has a `h-16` mobile
-bottom nav. At `bottom-6` the trigger is unclickable in both shells.
+`left-6`, a **physical** edge and never `start-6`: under RTL `start` resolves to the right, where
+the student sidebar sits and swallows every click (found in RTL QA).
+
+`bottom-6`: the ground floor of the lesson's **floating column**. It used to sit at
+`bottom-[5.5rem]` above the classroom-mode button « ⛶ عرض »; since that button moved into the
+محور's marker row (2026-09-24) the map took its storey, and « كرّاسي » sits above it
+(`CLASSROOM_MODE.md`, `classroom.css`).
+
+**Below 1024 px (fixed 2026-09-29, with the migration):** the student and teacher spaces show an
+`h-16` bottom nav (`lg:hidden fixed bottom-0 z-40`) that used to cover this trigger — a tap landed on
+the nav, and the map was unreachable on every tablet and phone. `index.css` now sets
+`--sa-bottom-nav: 4rem` below `lg` on a page that has the workspace shell
+(`body:has(.sa-workspace-main)` — the pills live in a portal, outside `<main>`), and both pills add
+it: « بطاقتي » at `bottom-[calc(1.5rem+var(--sa-bottom-nav,0px))]`, « كرّاسي » at
+`calc(5.5rem + var(--sa-bottom-nav, 0px))` (`notebook.css`). Desktop and the visitor shell are
+unchanged (the variable is 0); the practice player's own « كرّاسي » override is untouched.
 
 ### Layout model — the lesson viewport
 
@@ -719,7 +1275,7 @@ never overwrites it.
 
 | | Drawer | Expanded |
 | --- | --- | --- |
-| Desktop / laptop | resizable 320–800 px, lesson stays readable beside it | fills the lesson viewport; content laid out in 2–3 columns (`≥1100 px → 3`, `≥720 px → 2`) |
+| Desktop / laptop | column mode: fixed best width (table above); drawer (only below 1024 px): resizable 320–800 px | fills the lesson viewport; content laid out in 2–3 columns (`≥1100 px → 3`, `≥720 px → 2`) |
 | Tablet | same, clamped to 95 % of available width | same, 2 columns |
 | Mobile (≤ 640 px) | may span the full width — a desktop width is **not** preserved if it would make the lesson unusable | full lesson viewport, 1 column |
 
@@ -983,7 +1539,7 @@ lesson viewport the map is measured against, and the column count.
 | Overlay | none — companion panel, page stays interactive | none | none; the panel covers the page at small widths but does not block it |
 | Resize | pointer drag on the left edge | same | same handle, `touch-none`; full width is reachable |
 | Switcher labels | « Tiroir » / « Plein écran » | same | icons only (labels hidden below `sm`) |
-| Trigger | `bottom-20 right-6`, clear of the command palette | same | same, clear of the `h-16` student bottom nav |
+| Trigger | `bottom-6 left-6`, ground floor of the floating column | same | same — **covered by the `h-16` student bottom nav below 1024 px (known issue, [The trigger button](#the-trigger-button))** |
 
 A desktop width is **never** preserved at the cost of making the lesson unusable: the clamp is
 always relative to the width actually available.
@@ -1032,8 +1588,7 @@ common/knowledge/
 ├── knowledgeStructure.js    strata / hierarchy derivation
 ├── knowledgeState.js        cumulative reducer  (+ .test.js)
 ├── KnowledgeProvider.jsx    parameterised: lessonId, knowledge, printTitle, printSubject
-├── KnowledgeSnapshot.jsx    « À retenir »
-└── knowledgeVisuals.jsx     shared SVG figures (optional; write lesson-specific ones locally)
+└── KnowledgeSnapshot.jsx    « À retenir »
 ```
 
 The provider is parameterised, so nothing needs editing per lesson — pass `lessonId`, `knowledge`,
@@ -1076,8 +1631,10 @@ is allowed; removing it requires renumbering the following modules (`number`, `p
 
 ### Step 4 — Wrap the routes
 
-In `routes.jsx`, wrap the element of every route (index + modules) in `<LessonKnowledgeProvider>`.
-This both supplies the state and mounts the drawer:
+In a 4AM lesson there is nothing to wrap: `routes.jsx` passes
+`loadKnowledge: () => import('./knowledge')` to `buildLessonRoutes`, and `LessonPageFrame`
+(`common/lessonRuntime.jsx`) mounts the provider and the drawer around every page.
+*(Historical — the French-era lessons wrapped each route by hand, as below.)*
 
 ```jsx
 <LessonKnowledgeProvider
@@ -1168,6 +1725,7 @@ STATE
   knowledgeState.js  stays PURE — no storage, no context, no React
   unlock trigger     module COMPLETED (persisted completedModules ∪ live unlockModule)
                      OR a <KnowledgeBrick id> establishing the item has RENDERED (live unlockItem)
+                     OR the reader has freeNavigation (teacher/admin): every module, nothing written
   live unlock        fired from the footer snapshot (same allDone as ModuleLayout's
                      markModuleCompleted) or from a brick inside a step the student has reached
   item unlock        page-local, exactly the lifetime of the module's step state
@@ -1178,13 +1736,15 @@ LAYOUT
   lesson viewport    measured from <main>'s padding box + #app-header (useLessonViewport)
   drawer right edge  flush with the LESSON VIEWPORT's right edge, fixed
   drawer left edge   the only resize handle; 320px ≤ width ≤ min(available·0.95, 800px)
+  column (prior)     FIXED width = columnWidthFor(viewport, sidebar); no handle; lesson ≥ 560px;
+                     same shell for students and teachers (.sa-workspace-main + data-workspace-prior)
   expanded           == the lesson viewport on all four edges; NEVER the browser Fullscreen API,
                      never covers the global header or sidebar
   top edge           never moves on resize; tracked by ResizeObserver (header AND main)
   height             grows/shrinks from the BOTTOM; content area scrolls; no vertical resize
   width memory       knowledgeMapWidth survives a trip through expanded mode
   panel              portalled to document.body (print isolation depends on it)
-  trigger            bottom-20 right-6 (bottom-6 collides with the command palette / bottom nav)
+  trigger            bottom-6 left-6 (ground floor of the floating column; « كرّاسي » above)
 
 HIERARCHY
   strata             derived by knowledgeStructure.js from item.type — lessons declare nothing more
@@ -1240,7 +1800,8 @@ PRINT
 - **Mixing print CSS into screen layout**, or deleting the `data-km-noprint` attributes.
 - **Adding a PDF library / server-side export** when `window.print()` already produces the A4
   document.
-- **Placing the trigger at `bottom-6 right-6`**, where the command-palette button covers it.
+- **Placing the trigger with `start-6`/`right-6`**, which under RTL puts it beneath the student
+  sidebar, visible but unclickable.
 - **Bulk-editing KaTeX strings with regex**, producing single backslashes and silently broken math.
 - **Forgetting `knowledgeMap: true`** after removing a formalization module — the lesson validator
   then reports a missing required stage.
@@ -1256,25 +1817,278 @@ What the reference implementation is checked by, and what a migrated lesson shou
 | Reducer unit tests | `npx vitest run --root apps/web <lessonDir>` | 9 tests in `knowledgeState.test.js` |
 | Lesson contract | `node scripts/validate-lessons.mjs` | no new error; `knowledgeMap: true` waives `formalization` |
 | Build | `npm run build` | passes |
-| Knowledge-map e2e | `node apps/web/e2e/lesson-kit/2nde-vecteurs-carte.mjs` (vite on :5231) | 64/64 |
-| Lesson e2e | `node apps/web/e2e/lesson-kit/2nde-vecteurs.mjs` | 70/70 |
-| **Sizing** (shared, all lessons) | `node apps/web/e2e/lesson-kit/km-layout.mjs` | 96/96 |
-| **Hierarchy / reveal / print** (shared) | `node apps/web/e2e/lesson-kit/km-structure.mjs` | 16/16 |
+| Knowledge unit tests (shared) | `npx vitest run --root apps/web src/lessons/common/knowledge` | `knowledgeState`, `knowledgeMastery`, `finalSynthesis`, `ConceptVisual` tests |
+| Knowledge dependency contract | `npm run audit:knowledge:gate` | exit 0 |
+| Unit e2e | `node apps/web/e2e/lesson-kit/4am-aadad-tabiiya-natiqa.mjs` | unit page, opening lab, no horizontal scroll (it does **not** assert the map) |
 
-`km-layout.mjs` and `km-structure.mjs` test the **shared** component, not one lesson: run them
-after any change to `common/knowledge/`. They mock `/auth/me` to exercise the student shell, whose
-sidebar inset is where sizing bugs actually appear.
+No current e2e suite asserts the map's progression, sizing or print view. *(Historical: the
+French-era suites `2nde-vecteurs-carte.mjs` (the per-lesson template), `2nde-vecteurs.mjs`,
+`km-layout.mjs` (sizing, 96 checks) and `km-structure.mjs` (hierarchy / reveal / print, 16 checks)
+were deleted on 2026-09-25 with the French lessons; read them in git history. The invariants they
+asserted — empty map at lesson start, live update on module completion, no future item leaking,
+print lists exactly the current items, complete map at the boss synthèse — remain the contract.)*
 
-Every migrated lesson ships its own `*-carte.mjs` copy; see
-`KNOWLEDGE_MAP_MIGRATION_2NDE.md` for the per-lesson counts.
+## Progressive map — implementation
 
-`2nde-vecteurs-carte.mjs` is the template to copy. It asserts, at every stage: the map is empty at
-lesson start; module 1 completed live updates both snapshot and drawer without navigation; for each
-seeded module the snapshot set equals the drawer set equals the expected cumulative set; no future
-item leaks; only the current module's items are detailed and flagged « nouveau »; navigation mode
-renders KaTeX in item detail; the print view lists exactly the current items and nothing later;
-the boss synthèse renders the complete map inline and moves the drawer to the same state; and the
-mobile panel fits the viewport with the right edge flush and the top under the header.
+**Status: the Knowledge Map of every lesson.** Approved on `qasim-adad-tabii` (« التعرّف على قاسم
+لعدد طبيعي », the reference lesson whose graph is drawn below) on 2026-09-29 and migrated the same
+day to the eight other lessons (A.15). The architecture, rules and checklist are in **Part A**;
+**new** lessons are authored with the graph from the start (A.13). This section documents the
+implementation.
+
+### What it is
+
+For every lesson, the body of the map's first tab (renamed « الخريطة »; the second tab is
+renamed « المعارف مفصّلة ») is an **interactive knowledge graph** instead of the stratified list:
+knowledge objects (nodes) linked by **labelled relations** (arrows that say *why* two ideas are
+linked: « معناه », « نفس الفكرة », « مثال », « تذكّر », « خطأ شائع », « نستخلص »…), discovered
+progressively. Beside the mathematics it carries a **guidance layer** — reminders, checks, common
+mistakes, warnings, a takeaway — each grounded in the lesson and attached to the idea it helps. The
+second tab, « المعارف مفصّلة », becomes a **linear numbered reading** (`LinearKnowledgeView`,
+see « The linear reading » below), which is also what prints.
+Everything else is the ordinary map, unchanged: the panel and its drawer / column / full-screen
+geometry, and the « بطاقتك » strip with its Mastery V2 overlay (rendered under the graph as its
+`footer`).
+
+### Declaring the map (every lesson)
+
+Three things, all required — `validate-lessons.mjs` refuses a lesson with `knowledgeMap: true`
+that misses one:
+
+```text
+lesson.config.js   knowledgeMapMode: 'progressive'          ← the flag ('legacy' or absent = stratified map)
+knowledgeGraph.js  export const KNOWLEDGE_GRAPH = { root, nodes, edges }
+knowledge.jsx      export { KNOWLEDGE_GRAPH } from './knowledgeGraph';
+```
+
+`LazyKnowledgeProvider` passes `mod.KNOWLEDGE_GRAPH ?? null` to `LessonKnowledgeProvider`, which
+exposes it as `graph`; `KnowledgeMap.jsx` (`useProgressiveGraph`) resolves it with
+`resolveGraph(graph, knowledge)` when the flag is set — the lesson's graph if valid, else the
+**derived fallback** (A.9) — and renders the lazy `progressive/ProgressiveKnowledgeMap`. Each
+lesson's graph lives in that lesson's own lazy `knowledge` chunk (≈ 1.5–2.5 KB gzip): opening one
+lesson never downloads another lesson's graph.
+
+### The graph data (`knowledgeGraph.js`, per lesson)
+
+```js
+export const KNOWLEDGE_GRAPH = {
+  root: 'qasim',
+  nodes: [{ id, kind, lane, title, subtitle?, requires, reveals?, notebook?,
+            context: { text?, formula?, list?, parts?, note? } }],
+  edges: [{ from, to, label, lateral? }],
+};
+```
+
+| Field | Meaning |
+| --- | --- |
+| `kind` | a **semantic type** from one of two families (`graphModel.js` `CORE_KINDS` / `GUIDE_KINDS`, habillage in `nodeKinds.js`). **core** — what to KNOW: `concept` مفهوم · `definition` تعريف · `idea` فكرة أساسية · `relationship` علاقة · `method` طريقة · `example` مثال · `term` مصطلحات · `retain` للحفظ. **guide** — what ACCOMPANIES it: `common_mistake` خطأ شائع · `warning` انتبه · `tip` نصيحة · `check` تحقّق · `prerequisite` تذكّر · `takeaway` خلاصة. A lesson uses only the types its mathematics justifies. The renderer reads data (icon, label, family, colours); no component tests « is this a mistake? » |
+| `lane` | `start` · `center` · `end` — `start` is the reading-start side (right under RTL). Rows are **derived**, never written (see Layout) |
+| `requires` | the `knowledge.jsx` item id that establishes this node. A node whose item is not in the cumulative map is **locked** — the graph never shows more than the ordinary map. Guidance nodes are gated the same way (by the item they accompany) |
+| `reveals` | what opening the node reveals (default: its outgoing edges' targets) — this is the discovery order |
+| `notebook` | the node *is* that item: its context offers « أضف إلى كرّاسي » and it carries the item in the linear reading |
+| `context` | the content shown when opened — **the lesson's words**, imported from `content/textbook.js` / `content/exercises.js`, never retyped (asserted by the test). `parts: [{ role, text }]` with `role` ∈ `wrong` · `why` · `right` · `example` (labels الخطأ · لماذا؟ · الصحيح · مثال, each with a text marker ✗ ؟ ✓ •, never colour alone) is how a `common_mistake` says what is done, why it is wrong, and what is right. Rendered by `NodeContextBody.jsx` in both the map and the linear reading |
+| `lateral` | a same-row relation (dashed « handle » under both nodes), e.g. بالباقي ⇢ بالجداء « نفس الفكرة » |
+
+**Declaration order matters for layout**: when two nodes would share a lane and a row, the one
+declared later moves down (with its descendants).
+
+### The lesson's graph (13 nodes, 15 relations)
+
+```text
+                        [قاسم عدد طبيعي]  مفهوم
+                  معناه ┌───────┴───────┐ معناه
+                 [بالباقي] ─ ─ نفس الفكرة ─ ▶ [بالجداء]              تعريف × 2
+                تذكّر │                      │ مثال
+       📌 [القسمة الإقليدية]                  [120 و 6]
+           باقٍ معدوم │           ┆            │ خطأ شائع
+                [143 و 11] ┄┄┄┄┄┄┆      ⛔ [قاسم واحد فقط؟]
+       نتحقق منه بـ │               ┆  ← central corridor
+            🔍 [نحسب الباقي]        ┆
+                              نقول أيضًا
+                       [أربع جمل، معنى واحد]                        مصطلحات
+             خطأ شائع ┌─────────┴─────────┐ حالتان خاصّتان
+          ⛔ [عكس الاتجاه]       [1 والعدد نفسه قاسمان دائمًا]        للحفظ
+                   │                          │ انتبه إلى
+                   │                   ⚠️ [القاسم ليس 0]
+                   └──────── نستخلص ──────────┘
+                         🎯 [قاسم ⇔ باقٍ معدوم]                       خلاصة
+```
+(drawn LTR here; under RTL بالباقي is on the right.)
+
+### The guidance layer — and what grounds each node (2026-09-29)
+
+Every guidance node cites the lesson; nothing is generic advice. `progressiveMap.test.js` asserts
+the texts are the lesson's own, that every mistake has wrong / why / right, that every Euclidean
+equality shown is true (`a = b × q + r`, `r < b`), and that no guidance hangs off the root.
+
+| Node | Type | Attached to (relation) | Source in the lesson |
+| --- | --- | --- | --- |
+| القسمة الإقليدية | تذكّر | بالباقي (« تذكّر »), leads to the example (« باقٍ معدوم ») | exercise 1 `method`; أستعدّ items 2–3 corrections (137 ÷ 5, 72 ÷ 24) |
+| نحسب الباقي | تحقّق | example 143 (« نتحقق منه بـ ») | نشاط 1: `420 = 28 × 15 + 0` vs `420 = 26 × 16 + 4` (computed from `ACTIVITY.numbers`); M2 Q1 « التعريف كله في الباقي » |
+| قاسم واحد فقط؟ | خطأ شائع | example 120 (« خطأ شائع ») | M2 Q2 distractor « 6 قاسم للعدد 120 فقط » and its explanation « المساواة تُقرأ في الاتجاهين » |
+| عكس الاتجاه | خطأ شائع | أربع جمل (« خطأ شائع ») | exercise 5 `commonError`, explanation and correction (« 8 يقسم 4 »); M1/M2 « العكس » corrections |
+| القاسم ليس 0 | انتبه | 1 والعدد نفسه (« انتبه إلى ») | `b ≠ 0` in both definitions; « غير معدوم » in the remark |
+| قاسم ⇔ باقٍ معدوم | خلاصة | end of both last branches (« نستخلص ») | the two definitions + the four-sentence remark |
+
+**Deliberately left out:** a `tip`. The only candidate (exercise 2: « قابلية القسمة على 6 = على 2
+وعلى 3 ») is a property of divisors, which this lesson's `teachingScope` excludes (الدرس 3).
+
+### States — and what is NOT a new system
+
+| State | Source |
+| --- | --- |
+| `locked` | the node's `requires` item is absent from `items` — i.e. the **existing** completion ∪ brick ∪ `freeNavigation` rule. A locked node shows no title (no spoiler), only « بعد المحور n » and, when opened, which محور unlocks it |
+| `available` | revealed, not yet opened — halo + « اكتشف » chip (« ابدأ هنا » on the root at the start, « التالي » on the next step) |
+| `discovered` | opened — ✓ |
+
+Core and guidance nodes share these states; guidance has **no** learned/mastered state (a warning
+is read, not mastered). `available → discovered` is **exploration UI state**, not knowledge and not
+mastery: it is kept in `sessionStorage` under `sa_km_explore_<lessonId>`
+(`{ explore: { revealed, discovered }, view }`), restored defensively (unknown ids dropped), never
+sent to the server, never read by progress or mastery. Mastery stays on the « بطاقتك » strip.
+
+### Interaction
+
+- **Two floating pills, at the top** (`sticky top-0` in the map's scroll area, reading-start corner):
+  - the view toggle (`data-kg-view-toggle`) — ONE button that names the action it performs:
+    « عرض الخريطة كاملة » while exploring, « الاستكشاف » on the full map (owner's choice: one
+    alternating button, not a two-option switch);
+  - replay (`data-kg-replay`) « إعادة استكشاف الخريطة », same pill design, beside it. Where both
+    labels do not fit side by side (map body < 440 px: drawer, phones) replay becomes a **round**
+    pill of the same design, its label kept as `aria-label` / `title`.
+- **Explore** (default): only the root is shown. Opening a node:
+  1. **scrolls first** — the map moves so the incoming node(s) land at the **centre of the visible
+     area** (below the floating pills, above the bottom context sheet, measured after render). When
+     the incoming group is taller than that area (phones), the next-step node is centred instead;
+  2. **then reveals**, the whole timeline shifted by the scroll time (`batch.lead`, 0.45 s; 0 when
+     nothing needs to move): *parent reacts → arrow draws itself (SVG `pathLength`) → relation
+     label appears → child enters (opacity, scale 0.85 → 1, slight drop)*; further links of the
+     newcomer draw after it.
+  A scroll-past-end runway (`data-kg-runway`, exploration only) lets the last rows reach the centre.
+  The graph's height is set at once (not animated) so the scroll target exists before the reveal.
+- **The next step flashes** — exactly ONE node, the first `available` one in the lesson's
+  **discovery order** (`discoveryOrder`: depth-first over `reveals` — finish a branch before the
+  next), carries an indigo ring that springs out and fades in a loop (`data-kg-next-flash`) and the
+  chip « التالي ». Same colour on every node type: the signal means the same thing everywhere.
+  Following the flash walks the whole lesson; a locked branch is never pointed at; no flash once
+  everything is discovered. Reduced motion: a still ring.
+- **Full map**: every node and relation, same layout, staggered by row; locked nodes as ghosts;
+  selection cleared so the recap is not dimmed; nodes stay clickable. « الاستكشاف » returns to the
+  exploration exactly as left.
+- **Replay**: back to the root alone, no page reload, focus on the root.
+- **Progress**: « اكتشفت n من m » over the unlocked nodes, « · k مقفلة » when some are locked; the
+  « اكتملت خريطتك » banner appears only when nothing is locked.
+- **Context**: kind · state, title, `NodeContextBody` (text, formula, list, the roled `parts` of a
+  mistake, note), the node's **relations written out** (clickable — what a screen reader gets
+  instead of the drawing), « أضف إلى كرّاسي » for `notebook` nodes. Closed by ✕ or `Escape`.
+- **Keyboard**: nodes are buttons in reading order; `↓`/`↑`/`Home`/`End` move focus, `Enter`/`Space`
+  open. A polite live region announces what was discovered and revealed.
+- **Panel header switch** « عمود / ملء الشاشة » (`data-km-switch="polished"`), every lesson since
+  the migration: a segmented control with a roomier track, ≥ 44 px targets on touch (36 px from
+  `sm`), the active segment raised in white with an indigo icon, matching 44 / 36 px collapse and
+  close buttons. It marks only the visible presentation as selected (the old switch marked **both**
+  « عمود » and « ملء الشاشة » as checked in full screen, the column staying remembered underneath —
+  that defect is gone with it).
+
+### Layout and responsiveness (`graphLayout.js`, pure, tested)
+
+Two lanes plus a centre, rows top to bottom.
+
+- **Rows** = longest path from the root (lateral edges ignored), then **collision resolution**: two
+  nodes in the same lane and row — or a centre node with any other — cannot coexist; the one
+  declared later moves down one row, and its descendants follow. Deterministic.
+- **Edges**, shape chosen by geometry: *straight* (same x); *elbow* (down–across–down; elbows
+  converging on one target **merge on a junction with one label**, placed just above the target);
+  *lateral* (a dashed handle under both nodes); *corridor* — towards a centre node when the source's
+  lane is **occupied** between the two rows (guidance stacked under an example), the edge leaves by
+  the source's inner flank and runs down the gap between the lanes instead of crossing those nodes.
+- **Labels** of a branch sit mid-arm when they fit (`labelWidth(text) < |dx| − 8`), otherwise on the
+  short drop into the child, so long sibling labels never collide at the centre.
+- Tests assert, at 328 / 400 / 720 / 1100 px: no node overlap, no arrow crossing a node it does not
+  connect, no label on a node, no two labels overlapping.
+
+Only lane positions mirror under RTL — arrows keep flowing downward and mathematical notation is
+never mirrored.
+
+| Width of the map body | Behaviour |
+| --- | --- |
+| ≥ 760 px (full-screen panel, wide column) | graph + **context beside it** (300 px, sticky); a legend/hint fills it when nothing is selected |
+| < 760 px (400 px drawer, tablet, phone) | graph full width, **context as a bottom sheet** (≤ 42 vh, sticky, relations collapsed into « الروابط n ») |
+
+Node heights are 86 / 92 px so Cairo's tall glyphs are never clipped. **Core** nodes: 2 px border,
+white while available, tinted once discovered — they dominate. **Guidance** nodes: tinted
+background, 1 px border, a thick start-edge bar (`border-s-4`), slightly lighter title — visibly
+« accompaniment », identifiable by icon + type label, never by colour alone. A **math subtitle is
+never truncated** (« 11 × 13 + 0 » without « 143 = » would be false): `FittedMath` scales it down
+(≥ 0.7) to fit the lane; an Arabic subtitle may end in « … ». Interactive targets are ≥ 44 px.
+`prefers-reduced-motion`: no drawing, no delays, no pulse, a still next-step ring — same
+information, same interaction.
+
+### The linear reading « المعارف مفصّلة »
+
+`LinearKnowledgeView.jsx` replaces `CompleteView` for every lesson — on screen **and** in
+print (`variant="print"` in `.sa-print-view`, instead of the stratified `PrintView`). The map
+answers « how are these ideas linked? »; this view answers « if I read everything, where do I start
+and what comes next? ». It never redraws the graph.
+
+- **One column**, top to bottom, at every breakpoint, **full width** with generous padding (owner:
+  no centred narrow column).
+- **Numbered steps** 1 → n, the number in a circle linked to the next by a quiet vertical rule;
+  step ① carries « ابدأ من هنا » (and only ①). Hierarchy: number → type → title → explanation → body.
+- **Order** — `linearEntries(graph, items)`: the graph walked **depth-first** by `reveals`, so each
+  aid comes right after the knowledge it explains (never all mistakes at the end), and a
+  `prerequisite` comes **before** the idea that reveals it (recall, then read). For this lesson:
+  تذكّر القسمة الإقليدية → بالباقي → تحقّق → بالجداء → خطأ «قاسم واحد فقط؟» → أربع جمل →
+  خطأ «عكس الاتجاه» → 1 والعدد نفسه → انتبه b ≠ 0 → الخلاصة (10 steps).
+- **Two kinds of step, one renderer driven by type**: a knowledge item (a `notebook` node) shows
+  exactly the content of the usual view — title, summary, visual, body (the textbook text); a
+  guidance node shows its `context` via `NodeContextBody` in a tinted card with the start-edge bar,
+  the same visual grammar as on the map. Core nodes without an item (root, examples) have no step:
+  their content already lives in the body of the item they illustrate.
+- Only what the cumulative map holds is listed; « n معارف أخرى تُفتح … » closes the list when steps
+  are still locked. Entrance animation: 6 px fade, 50 ms stagger, none under reduced motion or in print.
+
+### Files
+
+```text
+apps/web/src/lessons/common/knowledge/progressive/
+├── graphModel.js              kinds, validateGraph, discover, nodeStates, visibleEdges, relationsOf,
+│                              exploreProgress, linearEntries, discoveryOrder, nextToDiscover
+├── graphLayout.js             layoutGraph, nodeRows (with collision resolution), roundedPath, labelWidth
+├── nodeKinds.js               KIND_STYLE (family, icon, full Tailwind class strings), isGuideKind
+├── GraphNode.jsx              one node (+ FittedMath, next-step flash)
+├── GraphEdges.jsx             GraphEdgeLines (SVG, self-drawing) + GraphEdgeLabels (DOM pills)
+├── NodeContextBody.jsx        a node's `context` (text / formula / list / parts / note) — map and reading
+├── NodeContextCard.jsx        the context card (side / sheet)
+├── LinearKnowledgeView.jsx    « المعارف مفصّلة »: numbered single column, screen + print variants
+├── ProgressiveKnowledgeMap.jsx  orchestration: exploration state, views, replay, scroll-then-reveal
+│                              timeline, next step, keyboard, live region
+├── progressiveMap.test.js     the reference lesson (integrity vs its sources, guidance grounding,
+│                              discovery & next step, linear order, layout) + the engine (fallback,
+│                              contextOf, cycles)
+└── lessonGraphs.test.js       the A.14 invariants for EVERY lesson (A.14 lists them)
+apps/web/src/lessons/moyen/4am/…/<lesson>/knowledgeGraph.js   each lesson's graph (nine)
+apps/web/e2e/knowledge-map.mjs                                 browser QA of every lesson's map
+```
+
+Both views are lazy chunks (`React.lazy` in `KnowledgeMap.jsx`: `ProgressiveKnowledgeMap` ≈ 9.5 KB
+gzip, `LinearKnowledgeView` ≈ 2.5 KB gzip), requested when a lesson's map opens; the pure model
+(`graphModel.js`) is in the `KnowledgeMap` chunk, and nothing of the map is in the entry bundle
+(measured after the migration: only the i18n key `fallbackSequence` of the eager `lesson` namespace).
+
+### Open questions after the migration
+
+- Every graph is hand-authored: the relations are pedagogical judgements, not derivable from
+  `knowledge.jsx` categories — the derived fallback exists only so that a lesson is never blank.
+- Lanes are authored and rows derived; a node with more than two same-row children is pushed down
+  (lesson 7's definition has four, laid out on two rows). A lesson needing three parallel branches
+  would need a third lane or automatic placement. The deepest map is 10 rows (lesson 6).
+- Guidance is quoted from the lesson but assembled into nodes by hand; a generated lesson needs its
+  exercises' `method` / `commonError` and its distractors' `explain` authored with this in mind.
+- The in-page « للتذكّر » snapshot stays the stratified list; only the drawer changes.
+- Exploration state is per tab (`sessionStorage`); whether it should persist across visits is open.
+- A student who has established no item yet sees the map's empty state, not the root (the root
+  is gated like every node) — unchanged from the stratified map.
 
 ---
 
@@ -1308,21 +2122,19 @@ migrating:
 | `knowledgeState.js` | `cumulativeKnowledge`, `knowledgeModuleNumbers`, `toModuleSet`, `allKnowledge`, `groupByCategory` (+ `.test.js`) |
 | `KnowledgeProvider.jsx` | `LessonKnowledgeProvider` (parameterised), `useLessonKnowledge`; mounts the drawer |
 | `KnowledgeSnapshot.jsx` | the « À retenir » presentation (`compact` / `complete`) |
-| `knowledgeVisuals.jsx` | shared SVG figures |
 | `index.js` | the public entry point — import from here |
+| `progressive/` | the progressive map of every lesson — see [Progressive map — implementation](#progressive-map--implementation) |
 
-**The lesson (reference integration)** —
-`apps/web/src/lessons/lycee/seconde/geometrie/vecteurs-2nde/`
+**The lesson (reference integration)** — any lesson of
+`apps/web/src/lessons/moyen/4am/ansab_al_aadad_wal_hisab/aadad-tabiiya-natiqa/`
 
 | File | Role |
 | --- | --- |
 | `knowledge.jsx` | `LESSON_KNOWLEDGE.modules[n]` — the only place knowledge text is written |
-| `components/KnowledgeMap.jsx` | one-line **re-export** of `common/knowledge/KnowledgeMap` (legacy import path) |
-| `components/knowledgeVisuals.jsx` | lesson figures: `MiniPlane`, `RightTriangle`, `ChaslesArrow` |
-| `routes.jsx` | wraps every route element in the provider |
+| `routes.jsx` | passes `loadKnowledge: () => import('./knowledge')` to `buildLessonRoutes` (`../_unit/lessonRoutes.jsx`), whose `LessonPageFrame` (`common/lessonRuntime.jsx`) mounts the provider |
 | `lesson.config.js` | `knowledgeMap: true` |
-| `modules/Module0[1-7]*.jsx` | `footer={<KnowledgeSnapshot moduleNumber={N} />}` |
-| `modules/Module08MissionFinale.jsx` | `synthese={<KnowledgeSnapshot variant="complete" complete />}` |
+| `modules/Module0*.jsx` | `footer={<KnowledgeSnapshot moduleNumber={N} />}` |
+| `modules/Module0*Itqan.jsx` | `synthese={<KnowledgeSnapshot complete variant="complete" />}` |
 
 **Platform files it depends on**
 
@@ -1338,6 +2150,4 @@ migrating:
 | `apps/web/src/lessons/common/kit/BossFinal.jsx` | renders the `synthese` prop |
 | `apps/web/src/lessons/common/components/MathText.jsx` | KaTeX renderer |
 | `scripts/validate-lessons.mjs` | honors `knowledgeMap: true` |
-| `apps/web/e2e/lesson-kit/2nde-vecteurs-carte.mjs` | the progression/print/responsive e2e template |
-| `apps/web/e2e/lesson-kit/km-layout.mjs` | sizing invariants: drawer/expanded × 6 shell-breakpoint combinations (96 checks) |
-| `apps/web/e2e/lesson-kit/km-structure.mjs` | hierarchy, progressive reveal, both modes, detail view, print (16 checks) |
+| `apps/web/src/lessons/common/lessonRuntime.jsx` | `LessonPageFrame` — mounts `LazyLessonKnowledgeProvider` around every lesson page |

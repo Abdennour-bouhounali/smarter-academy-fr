@@ -1,0 +1,200 @@
+{
+  "id": "ex-2am-ikhtibar-musawat-mutabayina-l2-005",
+  "lessonCode": "ikhtibar-musawat-mutabayina",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — متباينة بالرمز ≥",
+    "estimatedMinutes": 6,
+    "tags": [
+      "متباينة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اختبر صحّة كلّ مساواة أو متباينة من أجل القيمة المعطاة :"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل المتباينة $5x-2\\ge 18$ صحيحة من أجل $x=4$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "نعم",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بالقيمة المعطاة في الطرف الأوّل ثمّ في الطرف الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة، مع إنجاز الضرب قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الناتجين بالرمز المكتوب، وانتبه إلى حالة التساوي : هل يقبلها الرمز ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "نعم : المتباينة صحيحة .",
+        "incorrect": "عوّض الحرف في الطرفين، احسب كلّ طرف ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل : $5\\times 4-2=18$ .",
+          "الطرف الثاني : $18$ .",
+          "$18\\ge 18$ : المقارنة صحيحة، فالمتباينة صحيحة ."
+        ]
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "من بين القيم $3$ ، $4$ ، $5$ و $6$ : ما هي القيم التي تجعل المتباينة $5x-2\\ge 18$ صحيحة ؟ اختر الإجابة الصحيحة :",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$5$ و $6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IKHTIBAR-STRICT"
+        },
+        {
+          "id": "B",
+          "content": "$4$ ، $5$ و $6$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$4$ و $5$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$3$ فقط",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختبر القيم المعطاة واحدة بعد الأخرى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لكلّ قيمة احسب الطرفين ثمّ قارنهما بالرمز المكتوب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى القيمة التي يتساوى عندها الطرفان : يقبلها الرمز أم لا ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "القيم المطلوبة : $4$ ، $5$ و $6$ .",
+        "incorrect": "اختبر كلّ قيمة على حدة، وانتبه إلى حالة تساوي الطرفين."
+      },
+      "solution": {
+        "lines": [
+          "$x=3$ : $13\\ge 18$ ← خاطئة .",
+          "$x=4$ : $18\\ge 18$ ← صحيحة .",
+          "$x=5$ : $23\\ge 18$ ← صحيحة .",
+          "$x=6$ : $28\\ge 18$ ← صحيحة ."
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب قيمة $5x-2$ من أجل $x=4$ .",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "18",
+      "misconceptionSignatures": [
+        {
+          "value": "52",
+          "id": "MISC-IKHTIBAR-JUXTA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بقيمته، وضع الأعداد السالبة بين قوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الضرب صراحة : العدد المكتوب قبل الحرف يضرب قيمته، ولا يُكتب بجانبها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز الضرب أوّلا ثمّ الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة هي $18$ .",
+        "incorrect": "عوّض الحرف بقيمته ثمّ أنجز العمليّات بحسب الأولويّة."
+      },
+      "solution": {
+        "lines": [
+          "$5\\times 4-2=18$ ."
+        ],
+        "result": "18"
+      },
+      "work": "optional",
+      "timeSeconds": 70
+    }
+  ]
+}

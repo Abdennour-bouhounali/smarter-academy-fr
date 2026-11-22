@@ -1,0 +1,250 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l3-009",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — قفف التضامن",
+    "estimatedMinutes": 8,
+    "tags": [
+      "تضامن",
+      "باقٍ معدوم",
+      "بالزيادة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "جمعت جمعية خيرية 2350 كيلوغرامًا من الدقيق لتوزيعها في أكياس من 25 كيلوغرامًا على العائلات المحتاجة، و 2350 كيلوغرامًا من الأرز في أكياس من 40 كيلوغرامًا."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "كم كيسًا من الدقيق تحضّر الجمعية؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الأكياس",
+      "expectedAnswer": "94",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "93",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "value": "95",
+          "id": "MISC-HASR-IZAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 2350 من 25 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 25 دون أن نتجاوز 2350."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من 25."
+        }
+      ],
+      "feedback": {
+        "correct": "$2350 = 25 \\times 94 + 0$ و $0 < 25$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 25 فلا يتجاوز الجداء 2350، والباقي عندئذ أصغر من 25."
+      },
+      "solution": {
+        "lines": [
+          "$25 \\times 94 = 2350$ و $25 \\times 95 = 2375$",
+          "$2350 \\le 2350 < 2375$ ، إذن الحاصل هو 94."
+        ],
+        "result": "q = 94"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل يقبل العدد 2350 القسمة على 25؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-HISAB"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 2350 على 25."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يقبل القسمة يعني: الباقي معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$2350 = 25 \\times 94$ والباقي معدوم.",
+        "incorrect": "انظر إلى باقي القسمة الإقليدية: هل هو معدوم؟"
+      },
+      "solution": {
+        "lines": [
+          "$2350 = 25 \\times 94 + 0$",
+          "الباقي معدوم، إذن 2350 يقبل القسمة على 25."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "علمًا أنّ $2350 = 25 \\times 94$ ، اختر الجملة الصحيحة.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "2350 مضاعف لـ 25",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "2350 يقسم 25",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-YAQSIM-AKS"
+        },
+        {
+          "id": "C",
+          "content": "25 يقبل القسمة على 2350",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-YAQSIM-AKS"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كل جملة: أيّ العددين هو المقسوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "25 أصغر من 2350: هل يمكن أن يقسم 2350 العدد 25؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الباقي معدوم: 25 يقسم 2350، و 2350 مضاعف لـ 25، و 2350 يقبل القسمة على 25.",
+        "incorrect": "المقسوم هو العدد الأكبر هنا؛ والعدد الذي يقسم هو المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$2350 = 25 \\times 94$ والباقي معدوم.",
+          "نقول: 2350 يقبل القسمة على 25، أو 2350 مضاعف لـ 25، أو 25 يقسم 2350."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "كم كيسًا يلزم لتعبئة كل الأرز (الكيس الأخير قد لا يمتلئ)؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد الأكياس",
+      "expectedAnswer": "59",
+      "misconceptionSignatures": [
+        {
+          "value": "58",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "value": "30",
+          "id": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 2350 على 40."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يبقى شيء بعد المجموعات الكاملة؟ ماذا نفعل به؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد اللازم هو القيمة المقرّبة إلى الوحدة بالزيادة عندما لا يكون الحاصل عددًا طبيعيًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$2350 = 40 \\times 58 + 30$: 58 كاملة ويبقى 30، فيلزم 59.",
+        "incorrect": "لا تنسَ ما يبقى بعد المجموعات الكاملة: يحتاج هو أيضًا إلى مكان."
+      },
+      "solution": {
+        "lines": [
+          "$2350 = 40 \\times 58 + 30$",
+          "$58 < \\frac{2350}{40} < 59$ ، والباقي 30 يحتاج إلى واحدة أخرى: يلزم 59 (القيمة المقرّبة بالزيادة)."
+        ],
+        "result": "59"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

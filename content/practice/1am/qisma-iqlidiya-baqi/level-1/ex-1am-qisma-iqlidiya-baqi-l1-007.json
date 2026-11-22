@@ -1,0 +1,151 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l1-007",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — المساواة المناسبة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "مساواة",
+      "حاصل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نريد إنجاز القسمة الإقليدية للعدد 507 على 32."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اختر المساواة التي تعبّر عن القسمة الإقليدية للعدد 507 على 32.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$507 = 32 \\times 14 + 59$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "id": "B",
+          "content": "$507 = 32 \\times 27 + 15$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "id": "C",
+          "content": "$507 = 32 \\times 16 + 27$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        },
+        {
+          "id": "D",
+          "content": "$507 = 32 \\times 15 + 27$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق من صحة كل مساواة بالحساب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في القسمة الإقليدية على 32، يجب أن يكون الباقي أصغر من 32."
+        }
+      ],
+      "feedback": {
+        "correct": "$32 \\times 15 + 27 = 507$ و $27 < 32$: الشرطان محقّقان.",
+        "incorrect": "المساواة الصحيحة يجب أن تكون صحيحة حسابيًا، وأن يكون باقيها أصغر من المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$32 \\times 15 = 480$ و $480 + 27 = 507$",
+          "$27 < 32$ ، إذن:"
+        ],
+        "result": "507 = 32 \\times 15 + 27"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هو حاصل هذه القسمة؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "27",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "14",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "16",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 507 من 32 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 32 دون أن نتجاوز 507."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$507 = 32 \\times 15 + 27$ و $27 < 32$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 32 فلا يتجاوز الجداء 507، والباقي عندئذ أصغر من 32."
+      },
+      "solution": {
+        "lines": [
+          "$32 \\times 15 = 480$ و $32 \\times 16 = 512$",
+          "$480 \\le 507 < 512$ ، إذن الحاصل هو 15."
+        ],
+        "result": "q = 15"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

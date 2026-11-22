@@ -1,0 +1,70 @@
+{
+  "id": "ex-4am-takbir-tasghir-l2-003",
+  "lessonCode": "takbir-tasghir",
+  "level": 2,
+  "metadata": {
+    "title": "نشاط 6 — الحجم 𝒱′",
+    "estimatedMinutes": 3,
+    "tags": [
+      "نشاط 6",
+      "الحجم"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-6",
+      "page": 165,
+      "section": "أنشطة",
+      "number": 6
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 165، نشاط 6): متوازي المستطيلات ABCDEFGH (AB = 5cm ؛ BC = 4cm ؛ AE = 3cm) حجمه $\\mathcal{V} = 60\\,\\mathrm{cm}^3$ ، و A′B′C′D′E′F′G′H′ ناتج عن تصغيره بنسبة $\\dfrac{3}{5}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "احسب حجمه $\\mathcal{V}'$ بالسنتيمتر المكعب.",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة مثل 1,25 ، أو كسر مثل 4/7)",
+      "expectedAnswer": "12,96",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAKBIR-HAJM-K",
+          "value": "36"
+        },
+        {
+          "id": "MISC-TAKBIR-HAJM-K",
+          "value": "21,6"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحجم ثلاثة أبعاد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأطوال تُضرب في $k$ ، والمساحات في $k^2$ ، والحجوم في $k^3$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\left(\\dfrac{3}{5}\\right)^3 = \\dfrac{27}{125}$ ، أو $3 \\times 2{,}4 \\times 1{,}8$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\mathcal{V}' = \\left(\\dfrac{3}{5}\\right)^3 \\times 60 = 12{,}96\\,\\mathrm{cm}^3 = 3 \\times 2{,}4 \\times 1{,}8$ .",
+        "incorrect": "الحجم يُضرب في $k^3$ لا في $k$ ولا في $k^2$ ."
+      }
+    }
+  ]
+}

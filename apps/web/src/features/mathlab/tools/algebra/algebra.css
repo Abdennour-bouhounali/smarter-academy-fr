@@ -1,0 +1,1198 @@
+/* ── Le مختبر الجبر (laboratoire d'algèbre) ───────────────────────────────
+   La scène (équation, balance, droite graduée) prend la place ; le panneau
+   (saisie, opérations, historique) se tient sur le bord de départ — à droite
+   en arabe, par propriété logique, jamais par `left`/`right`. Sous 768 px la
+   scène passe au-dessus et le panneau dessous, comme dans les trois autres
+   instruments.
+
+   Les DESSINS (balance, droite graduée) et toute notation sont `direction:
+   ltr` : SVG n'hérite pas de `dir`, et un repère mathématique ne se renverse
+   pas sur une page RTL (ARABIC_RTL_CONTRACT.md §4). */
+
+.sa-ml-alg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  font-family: 'Inter', 'Cairo', 'Tajawal', sans-serif;
+}
+
+/* V2 : la barre des sections en haut, puis le CORPS de la section — c'est
+   lui qui porte l'ancienne mise en page (scène + panneau). */
+.sa-ml-alg__body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+@media (min-width: 768px) {
+  .sa-ml-alg__body { flex-direction: row-reverse; }
+}
+
+/* ── La scène ──────────────────────────────────────────────────────────── */
+
+.sa-ml-alg__stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Le contenu se centre dans la hauteur disponible plutôt que de laisser
+     un grand vide sous la balance ; `margin: auto` sur les bords garde le
+     défilement possible quand la scène est plus haute que la fenêtre. */
+  justify-content: flex-start;
+  gap: 0.75rem;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 1rem 1rem 1.5rem;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 60%);
+}
+
+.sa-ml-alg__stage > :first-child { margin-block-start: auto; }
+.sa-ml-alg__stage > :last-child { margin-block-end: auto; }
+
+.sa-ml-alg__current {
+  direction: ltr;
+  width: 100%;
+  max-width: 34rem;
+  text-align: center;
+  font-size: 1.05rem;
+  padding: 0.5rem 0.75rem;
+  /* Une équation longue défile DANS sa zone ; la page, jamais (§31). */
+  overflow: visible;
+  overflow-y: hidden;
+}
+
+.sa-ml-alg__current .katex { font-size: 1.6em; }
+
+@media (max-width: 480px) {
+  .sa-ml-alg__current .katex { font-size: 1.3em; }
+}
+
+/* ── La balance ────────────────────────────────────────────────────────── */
+
+.sa-ml-alg__balance {
+  direction: ltr;
+  width: 100%;
+  max-width: 32rem;
+  height: auto;
+}
+
+.sa-ml-alg__beam,
+.sa-ml-alg__token rect,
+.sa-ml-alg__token text {
+  transition: transform 260ms cubic-bezier(0.34, 1.2, 0.64, 1), opacity 200ms ease;
+}
+
+.sa-ml-alg__balance--animated .sa-ml-alg__beam { transform-origin: center; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sa-ml-alg__beam,
+  .sa-ml-alg__token rect,
+  .sa-ml-alg__token text,
+  .sa-ml-alg__numberline-solution { transition: none; }
+}
+
+/* ── La droite graduée ─────────────────────────────────────────────────── */
+
+.sa-ml-alg__numberline {
+  width: 100%;
+  max-width: 32rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sa-ml-alg__numberline-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.sa-ml-alg__numberline-title {
+  font-family: 'Space Grotesk', 'Cairo', 'Tajawal', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: #0f172a;
+}
+
+.sa-ml-alg__numberline-actions { display: flex; gap: 0.25rem; }
+
+.sa-ml-alg__numberline-svg {
+  direction: ltr;
+  width: 100%;
+  height: auto;
+  touch-action: none;
+  cursor: grab;
+  border-radius: 0.75rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+}
+
+.sa-ml-alg__numberline-svg:active { cursor: grabbing; }
+
+.sa-ml-alg__numberline-svg:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+}
+
+.sa-ml-alg__numberline-solution { transition: opacity 200ms ease; }
+
+.sa-ml-alg__numberline-hint {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+/* ── Le verdict ────────────────────────────────────────────────────────── */
+
+.sa-ml-alg__verdict {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2rem;
+}
+
+.sa-ml-alg__solution {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0.375rem 0.875rem;
+  border-radius: 999px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  background: #f5f3ff;
+  color: #5b21b6;
+  border: 1px solid #ddd6fe;
+}
+
+.sa-ml-alg__solution--none {
+  background: #fef2f2;
+  color: #b91c1c;
+  border-color: #fecaca;
+}
+
+.sa-ml-alg__solution--infinite {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
+}
+
+.sa-ml-alg__solution-label {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  opacity: 0.75;
+}
+
+/* ── La vérification ───────────────────────────────────────────────────── */
+
+.sa-ml-alg__verification {
+  width: 100%;
+  max-width: 28rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.125rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.875rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.sa-ml-alg__verification-title {
+  margin: 0 0 0.25rem;
+  font-size: 0.875rem;
+  color: #334155;
+  text-align: center;
+}
+
+.sa-ml-alg__verification .katex { font-size: 1.1em; }
+
+.sa-ml-alg__verification-verdict {
+  margin: 0.375rem 0 0;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #15803d;
+  text-align: center;
+}
+
+.sa-ml-alg__verification-verdict--false { color: #b91c1c; }
+
+/* ── Le panneau ────────────────────────────────────────────────────────── */
+
+.sa-ml-alg__panel {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  min-height: 0;
+  max-height: 46%;
+  border-top: 1px solid #e2e8f0;
+  background: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .sa-ml-alg__panel {
+    flex: 0 0 20rem;
+    max-height: none;
+    border-top: 0;
+    border-inline-start: 1px solid #e2e8f0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .sa-ml-alg__panel { flex-basis: 23rem; }
+}
+
+.sa-ml-alg__panel-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0.875rem 0.875rem 1.25rem;
+}
+
+.sa-ml-alg__section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sa-ml-alg__heading {
+  margin: 0;
+  font-family: 'Space Grotesk', 'Cairo', 'Tajawal', sans-serif;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: #0f172a;
+}
+
+/* ── La saisie ─────────────────────────────────────────────────────────── */
+
+.sa-ml-alg__equation-form { display: flex; gap: 0.375rem; }
+
+.sa-ml-alg__input {
+  flex: 1 1 auto;
+  min-width: 0;
+  direction: ltr;
+  text-align: left;
+  padding: 0.5rem 0.625rem;
+  font-family: 'JetBrains Mono', 'Space Grotesk', 'Inter', monospace;
+  font-size: 0.9375rem;
+  color: #0f172a;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  /* Chiffres LATINS, jamais indo-arabes : la police arabe de repli
+     rendrait « 11 » en « ١١ » — convention des manuels algériens de
+     mathématiques (grapherFormat.js). */
+  font-variant-numeric: lining-nums;
+  -moz-font-feature-settings: 'lnum';
+  font-feature-settings: 'lnum';
+}
+
+.sa-ml-alg__input:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 1px;
+  border-color: #7c3aed;
+}
+
+.sa-ml-alg__input[aria-invalid='true'] { border-color: #ef4444; }
+
+.sa-ml-alg__explore,
+.sa-ml-alg__apply {
+  flex: none;
+  padding: 0.5rem 0.875rem;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: #7c3aed;
+  border: 0;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  /* Cible tactile confortable (§31). */
+  min-height: 2.5rem;
+}
+
+.sa-ml-alg__explore:hover,
+.sa-ml-alg__apply:hover:not(:disabled) { background: #6d28d9; }
+
+.sa-ml-alg__apply:disabled { background: #cbd5e1; cursor: not-allowed; }
+
+.sa-ml-alg__generate { display: flex; gap: 0.375rem; align-items: stretch; }
+
+.sa-ml-alg__level {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 0.5rem 0.5rem;
+  font-family: inherit;
+  font-size: 0.8125rem;
+  color: #334155;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  min-height: 2.5rem;
+}
+
+.sa-ml-alg__new {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  flex: none;
+  padding: 0.5rem 0.75rem;
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #334155;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  min-height: 2.5rem;
+}
+
+.sa-ml-alg__new:hover { background: #e2e8f0; }
+
+/* ── Les opérations ────────────────────────────────────────────────────── */
+
+.sa-ml-alg__suggestions { display: flex; flex-direction: column; gap: 0.25rem; }
+
+.sa-ml-alg__suggestions-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.sa-ml-alg__suggestion-row { display: flex; flex-wrap: wrap; gap: 0.375rem; }
+
+.sa-ml-alg__suggestion {
+  padding: 0.4375rem 0.75rem;
+  font-family: 'JetBrains Mono', 'Space Grotesk', 'Inter', monospace;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #5b21b6;
+  background: #f5f3ff;
+  border: 1px solid #ddd6fe;
+  border-radius: 999px;
+  cursor: pointer;
+  min-height: 2.25rem;
+}
+
+.sa-ml-alg__suggestion:hover:not(:disabled) { background: #ede9fe; }
+.sa-ml-alg__suggestion:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.sa-ml-alg__operation { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.sa-ml-alg__kinds {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.25rem;
+}
+
+.sa-ml-alg__kind {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.125rem;
+  padding: 0.4375rem 0.25rem;
+  font-family: inherit;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: #475569;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  min-height: 2.75rem;
+}
+
+.sa-ml-alg__kind--active {
+  color: #5b21b6;
+  background: #f5f3ff;
+  border-color: #c4b5fd;
+}
+
+.sa-ml-alg__kind:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.sa-ml-alg__value-row { display: flex; gap: 0.375rem; align-items: center; }
+
+.sa-ml-alg__value-label {
+  flex: none;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.sa-ml-alg__value {
+  flex: 1 1 auto;
+  min-width: 0;
+  direction: ltr;
+  text-align: left;
+  padding: 0.5rem 0.625rem;
+  font-family: 'JetBrains Mono', 'Space Grotesk', 'Inter', monospace;
+  font-size: 0.9375rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  min-height: 2.5rem;
+}
+
+.sa-ml-alg__value:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 1px;
+}
+
+.sa-ml-alg__error {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: #b91c1c;
+}
+
+/* ── تراجع / إعادة ─────────────────────────────────────────────────────── */
+
+.sa-ml-alg__history-actions { display: flex; gap: 0.375rem; flex-wrap: wrap; }
+
+.sa-ml-alg__mini-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3125rem;
+  padding: 0.4375rem 0.6875rem;
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #334155;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  min-height: 2.25rem;
+}
+
+.sa-ml-alg__mini-action:hover:not(:disabled) { background: #e2e8f0; }
+.sa-ml-alg__mini-action:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.sa-ml-alg__mini-action--active {
+  color: #5b21b6;
+  background: #f5f3ff;
+  border-color: #c4b5fd;
+}
+
+.sa-ml-alg__mini {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #475569;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.375rem;
+  cursor: pointer;
+}
+
+.sa-ml-alg__mini:hover { background: #e2e8f0; }
+
+.sa-ml-alg__ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #5b21b6;
+  background: transparent;
+  border: 1px solid #ddd6fe;
+  border-radius: 999px;
+  cursor: pointer;
+  min-height: 2.25rem;
+}
+
+.sa-ml-alg__ghost:hover { background: #f5f3ff; }
+
+/* ── Les paramètres ────────────────────────────────────────────────────── */
+
+.sa-ml-alg__parameters {
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.sa-ml-alg__parameters-form,
+.sa-ml-alg__parameters-solution {
+  direction: ltr;
+  margin: 0;
+  text-align: center;
+}
+
+.sa-ml-alg__param { display: flex; flex-direction: column; gap: 0.125rem; }
+
+.sa-ml-alg__param-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'JetBrains Mono', 'Space Grotesk', 'Inter', monospace;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+.sa-ml-alg__param-value { color: #5b21b6; }
+
+.sa-ml-alg__param-slider { width: 100%; accent-color: #7c3aed; min-height: 1.5rem; }
+
+.sa-ml-alg__parameters-hint {
+  margin: 0.25rem 0 0;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+/* ── L'historique ──────────────────────────────────────────────────────── */
+
+.sa-ml-alg__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sa-ml-alg__step {
+  display: flex;
+  flex-direction: column;
+  gap: 0.0625rem;
+  padding-inline-start: 0.25rem;
+  border-inline-start: 2px solid #e2e8f0;
+}
+
+.sa-ml-alg__step--active { border-inline-start-color: #7c3aed; }
+.sa-ml-alg__step--ahead { opacity: 0.45; }
+
+.sa-ml-alg__step-op {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.375rem;
+  direction: ltr;
+  padding-inline-start: 0.5rem;
+  font-family: 'JetBrains Mono', 'Space Grotesk', 'Inter', monospace;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #7c3aed;
+}
+
+.sa-ml-alg__step-op-sides {
+  direction: rtl;
+  font-family: 'Inter', 'Cairo', sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: #94a3b8;
+}
+
+.sa-ml-alg__step-equation {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  font-family: inherit;
+  text-align: start;
+  background: transparent;
+  border: 0;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  /* Une étape longue défile dans sa ligne, la page ne déborde pas. */
+  overflow: visible;
+}
+
+.sa-ml-alg__step-equation:hover { background: #f8fafc; }
+
+.sa-ml-alg__step-equation:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: -2px;
+}
+
+.sa-ml-alg__step--active .sa-ml-alg__step-equation { background: #f5f3ff; }
+
+.sa-ml-alg__step-cursor { flex: none; color: #7c3aed; }
+
+.sa-ml-alg__flipped {
+  margin: 0;
+  padding-inline-start: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #c2410c;
+}
+
+/* ── Lecteurs d'écran ──────────────────────────────────────────────────── */
+
+.sa-ml-alg__sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ══ V2 — les sections (2026-09-30) ═══════════════════════════════════════
+   Teintes du kit partagé (shared/labKit.css) : vert #008443 pour le geste,
+   orange #F36D21 pour « ce qui vient de se passer ». Surfaces claires. */
+
+.sa-ml-alg__stage--steps { align-items: stretch; }
+.sa-ml-alg__stage--steps > :first-child,
+.sa-ml-alg__stage--steps > :last-child { margin-block: 0; }
+/* Dans une scène qui DÉFILE, un enfant flex ne doit pas rétrécir : sinon la
+   formule du haut (« f(x) = 2x + 1 ») est rognée sous le plan. */
+.sa-ml-alg__stage--steps > * { flex-shrink: 0; }
+
+.sa-ml-alg__hint {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--sa-kit-slate, #64748b);
+  line-height: 1.5;
+}
+
+.sa-ml-alg__prose {
+  margin: 0 0 0.5rem;
+  line-height: 1.7;
+}
+
+.sa-ml-alg__rules {
+  margin: 0;
+  padding-inline-start: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  line-height: 1.7;
+}
+
+.sa-ml-alg__card-title {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--sa-kit-ink, #1a1a1a);
+}
+
+/* ── La ligne intermédiaire (opération posée) et son animation ───────── */
+
+.sa-ml-alg__intermediate {
+  direction: ltr;
+  width: 100%;
+  max-width: 34rem;
+  text-align: center;
+  overflow: visible;
+  overflow-y: hidden;
+  padding: 0.25rem 0.75rem;
+  border-radius: 10px;
+  background: var(--sa-kit-accent-soft, #fdeee4);
+  color: #7c2d12;
+  animation: sa-ml-alg-drop 0.35s ease both;
+}
+
+.sa-ml-alg__intermediate .katex { font-size: 1.2em; }
+
+.sa-ml-alg__current--after { animation: sa-ml-alg-drop 0.35s ease 0.35s both; }
+
+@keyframes sa-ml-alg-drop {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ── نشر وتبسيط كل طرف ─────────────────────────────────────────────── */
+
+.sa-ml-alg__expansion {
+  width: 100%;
+  max-width: 34rem;
+  padding: 0.75rem;
+  border: 1px solid #b7dcc7;
+  border-radius: var(--sa-kit-radius, 12px);
+  background: #fbfefc;
+}
+
+.sa-ml-alg__expansion-side + .sa-ml-alg__expansion-side { margin-top: 0.5rem; }
+
+.sa-ml-alg__expansion-label {
+  margin: 0 0 0.25rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--sa-kit-primary, #008443);
+}
+
+.sa-ml-alg__expansion-next {
+  margin: 0.5rem 0 0;
+  font-size: 0.8rem;
+  color: var(--sa-kit-slate, #64748b);
+}
+
+/* ── Le retournement du sens ───────────────────────────────────────── */
+
+.sa-ml-alg__flip {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  width: 100%;
+  max-width: 34rem;
+  padding: 0.7rem 0.9rem;
+  border: 2px solid var(--sa-kit-accent, #f36d21);
+  border-radius: var(--sa-kit-radius, 12px);
+  background: var(--sa-kit-accent-soft, #fdeee4);
+  color: #7c2d12;
+  animation: sa-ml-alg-pulse 0.9s ease 1;
+}
+
+.sa-ml-alg__flip svg { flex: none; color: var(--sa-kit-accent, #f36d21); margin-top: 2px; }
+.sa-ml-alg__flip-title { margin: 0; font-weight: 700; font-size: 0.92rem; line-height: 1.6; }
+.sa-ml-alg__flip-symbols { direction: ltr; margin: 0.2rem 0 0; text-align: start; }
+.sa-ml-alg__flip-symbols .katex { font-size: 1.35em; }
+
+@keyframes sa-ml-alg-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(243, 109, 33, 0.45); }
+  100% { box-shadow: 0 0 0 12px rgba(243, 109, 33, 0); }
+}
+
+/* ── L'ensemble des solutions ──────────────────────────────────────── */
+
+.sa-ml-alg__set {
+  width: 100%;
+  max-width: 34rem;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid #b7dcc7;
+  border-radius: var(--sa-kit-radius, 12px);
+  background: var(--sa-kit-primary-soft, #e6f4ec);
+}
+
+.sa-ml-alg__set-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.sa-ml-alg__set-label { font-weight: 700; font-size: 0.85rem; color: #065f46; }
+.sa-ml-alg__set-row .katex { font-size: 1.2em; }
+.sa-ml-alg__set-words { margin: 0.3rem 0 0; font-size: 0.86rem; line-height: 1.7; color: #1f2937; }
+
+/* ── Le travail pas à pas (simplifier, factoriser, systèmes) ────────── */
+
+.sa-ml-alg__work {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 46rem;
+  margin-inline: auto;
+}
+
+.sa-ml-alg__expression,
+.sa-ml-alg__system {
+  direction: ltr;
+  width: 100%;
+  max-width: 46rem;
+  margin-inline: auto;
+  text-align: center;
+  overflow: visible;
+  overflow-y: hidden;
+}
+
+.sa-ml-alg__expression .katex,
+.sa-ml-alg__system .katex { font-size: 1.35em; }
+
+.sa-ml-alg__result {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 0.9rem;
+  border: 2px solid var(--sa-kit-primary, #008443);
+  border-radius: var(--sa-kit-radius, 12px);
+  background: var(--sa-kit-primary-soft, #e6f4ec);
+  overflow: visible;
+}
+
+.sa-ml-alg__result-label { font-weight: 700; font-size: 0.86rem; color: #065f46; }
+.sa-ml-alg__result .katex { font-size: 1.25em; }
+
+.sa-ml-alg__restriction {
+  margin: 0;
+  font-size: 0.86rem;
+  color: #7c2d12;
+  line-height: 1.7;
+}
+
+.sa-ml-alg__check {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid #b7dcc7;
+  border-radius: var(--sa-kit-radius, 12px);
+  background: #ffffff;
+  color: #065f46;
+}
+
+.sa-ml-alg__check > svg { flex: none; margin-top: 3px; color: var(--sa-kit-primary, #008443); }
+.sa-ml-alg__check > div { min-width: 0; overflow: visible; }
+.sa-ml-alg__check-title { margin: 0 0 0.25rem; font-weight: 700; font-size: 0.86rem; }
+.sa-ml-alg__check-verdict { margin: 0.25rem 0 0; font-size: 0.84rem; }
+.sa-ml-alg__check-line { direction: ltr; text-align: start; }
+
+.sa-ml-alg__disc-line {
+  direction: ltr;
+  overflow: visible;
+  overflow-y: hidden;
+  padding: 0.2rem 0;
+}
+
+/* Les couples candidats (somme–produit, méthode ac) */
+.sa-ml-alg__candidates {
+  direction: ltr;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr));
+  gap: 0.3rem;
+  margin: 0.4rem 0;
+  font-family: 'JetBrains Mono', 'Inter', sans-serif;
+  font-size: 0.82rem;
+}
+
+.sa-ml-alg__candidates-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.3rem 0.55rem;
+  border: 1px solid var(--sa-kit-line, #e2e8f0);
+  border-radius: 8px;
+  background: #f8fafc;
+  color: #334155;
+}
+
+.sa-ml-alg__candidates-head {
+  grid-column: 1 / -1;
+  background: transparent;
+  border: 0;
+  font-family: 'Cairo', 'Inter', sans-serif;
+  font-weight: 700;
+  color: var(--sa-kit-slate, #64748b);
+}
+
+.sa-ml-alg__candidates-row.is-match {
+  border: 2px solid var(--sa-kit-accent, #f36d21);
+  background: var(--sa-kit-accent-soft, #fdeee4);
+  color: #7c2d12;
+  font-weight: 700;
+}
+
+.sa-ml-alg__reveal { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+/* ── Méthodes / familles (boutons à bascule) ────────────────────────── */
+
+.sa-ml-alg__methods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+}
+
+.sa-ml-alg__method {
+  appearance: none;
+  min-height: 40px;
+  padding: 0 0.9rem;
+  border: 1px solid var(--sa-kit-line, #e2e8f0);
+  border-radius: 999px;
+  background: #ffffff;
+  color: #334155;
+  font: inherit;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sa-ml-alg__method:hover { border-color: var(--sa-kit-primary, #008443); }
+
+.sa-ml-alg__method.is-active {
+  border-color: var(--sa-kit-primary, #008443);
+  background: var(--sa-kit-primary-soft, #e6f4ec);
+  color: var(--sa-kit-primary, #008443);
+  font-weight: 700;
+}
+
+.sa-ml-alg__method:focus-visible,
+.sa-ml-alg__param-number:focus-visible,
+.sa-ml-alg__system-form input:focus-visible {
+  outline: 3px solid rgba(243, 109, 33, 0.55);
+  outline-offset: 2px;
+}
+
+/* ── Systèmes : le formulaire ──────────────────────────────────────── */
+
+.sa-ml-alg__system-form { display: flex; flex-direction: column; gap: 0.5rem; }
+.sa-ml-alg__system-field { display: flex; flex-direction: column; gap: 0.25rem; }
+.sa-ml-alg__system-form .sa-ml-alg__explore { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; }
+.sa-ml-alg__explore { display: inline-flex; align-items: center; gap: 0.35rem; }
+
+.sa-ml-alg__field-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+/* Les boutons principaux des nouvelles sections : le vert de la plateforme. */
+.sa-ml-alg__body[data-ml-alg-mode='systems'] .sa-ml-alg__explore,
+.sa-ml-alg__body[data-ml-alg-mode='simplify'] .sa-ml-alg__explore,
+.sa-ml-alg__body[data-ml-alg-mode='factor'] .sa-ml-alg__explore { background: var(--sa-kit-primary, #008443); }
+
+.sa-ml-alg__body[data-ml-alg-mode='systems'] .sa-ml-alg__explore:hover,
+.sa-ml-alg__body[data-ml-alg-mode='simplify'] .sa-ml-alg__explore:hover,
+.sa-ml-alg__body[data-ml-alg-mode='factor'] .sa-ml-alg__explore:hover { background: #006b37; }
+
+/* ── Le plan (réutilisé de مختبر الأشعة) ───────────────────────────── */
+
+.sa-ml-alg__plane-host {
+  position: relative;
+  width: 100%;
+  height: clamp(260px, 46vh, 520px);
+  border: 1px solid var(--sa-kit-line, #e2e8f0);
+  border-radius: var(--sa-kit-radius, 12px);
+  overflow: hidden;
+  flex: none;
+}
+
+.sa-ml-alg .sa-ml-vec__plane {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #ffffff;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: grab;
+  direction: ltr;
+}
+
+.sa-ml-alg .sa-ml-vec__plane:focus-visible {
+  outline: 3px solid rgba(243, 109, 33, 0.55);
+  outline-offset: -3px;
+}
+
+/* mafs livre un thème SOMBRE (node_modules/mafs/core.css) : sans ces
+   variables — celles du grapheur et du مختبر الأشعة — le repère serait noir. */
+.sa-ml-alg .sa-ml-vec__plane .MafsView {
+  position: absolute;
+  inset: 0;
+  font-family: 'JetBrains Mono', 'Inter', sans-serif;
+  font-size: 12px;
+  --mafs-bg: #ffffff;
+  --mafs-fg: #0f172a;
+  --mafs-origin-color: #334155;
+  --mafs-line-color: #cbd5e1;
+  --grid-line-subdivision-color: #eef2f7;
+  --mafs-axis-stroke-width: 1.5px;
+  --mafs-line-stroke-dash-style: 6, 4;
+}
+
+.sa-ml-alg .sa-ml-vec__plane .mafs-axis text { fill: #475569; }
+
+.sa-ml-alg .sa-ml-vec__axisnames text {
+  font-family: 'Inter', 'Cairo', serif;
+  font-size: 15px;
+  fill: #334155;
+}
+
+.sa-ml-alg .sa-ml-vec__zoom {
+  position: absolute;
+  inset-block-end: 0.5rem;
+  inset-inline-end: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+}
+
+.sa-ml-alg .sa-ml-vec__zoombtn { width: 2.5rem; height: 2.5rem; min-width: 2.5rem; min-height: 2.5rem; }
+
+.sa-ml-alg__plane-label {
+  font-family: 'JetBrains Mono', 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  paint-order: stroke;
+  stroke: #ffffff;
+  stroke-width: 3.5px;
+  stroke-linejoin: round;
+}
+
+.sa-ml-alg__legend {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sa-ml-alg__legend li { display: inline-flex; align-items: center; gap: 0.4rem; }
+.sa-ml-alg__legend-swatch { width: 1.6rem; height: 4px; border-radius: 2px; }
+
+/* ── Fonctions ─────────────────────────────────────────────────────── */
+
+.sa-ml-alg__family-form { direction: ltr; margin: 0; text-align: center; }
+
+.sa-ml-alg__param-number {
+  width: 5.2rem;
+  min-height: 40px;
+  padding: 0 0.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 0.9rem;
+  text-align: center;
+  direction: ltr;
+}
+
+.sa-ml-alg__body[data-ml-alg-mode='functions'] .sa-ml-alg__param-slider { accent-color: var(--sa-kit-primary, #008443); min-height: 40px; }
+.sa-ml-alg__body[data-ml-alg-mode='functions'] .sa-ml-alg__param-label { color: var(--sa-kit-ink, #1a1a1a); }
+
+.sa-ml-alg__table-controls {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 0.4rem 0.6rem;
+}
+
+.sa-ml-alg__facts {
+  margin: 0;
+  padding: 0.7rem 0.9rem;
+  padding-inline-start: 1.8rem;
+  border: 1px solid var(--sa-kit-line, #e2e8f0);
+  border-radius: var(--sa-kit-radius, 12px);
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.88rem;
+  line-height: 1.75;
+  color: #1f2937;
+}
+
+.sa-ml-alg__table-wrap { width: 100%; overflow: visible; }
+
+.sa-ml-alg__table {
+  direction: ltr;
+  border-collapse: collapse;
+  margin-inline: auto;
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 0.86rem;
+}
+
+.sa-ml-alg__table-caption {
+  caption-side: top;
+  padding-bottom: 0.3rem;
+  font-family: 'Cairo', 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--sa-kit-slate, #64748b);
+}
+
+.sa-ml-alg__table th,
+.sa-ml-alg__table td {
+  min-width: 3rem;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid var(--sa-kit-line, #e2e8f0);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.sa-ml-alg__table th { background: var(--sa-kit-primary-soft, #e6f4ec); color: #065f46; }
+
+/* ── Historique : la ligne intermédiaire ───────────────────────────── */
+
+.sa-ml-alg__step-intermediate {
+  direction: ltr;
+  padding-inline-start: 0.5rem;
+  font-size: 0.85rem;
+  overflow: visible;
+  overflow-y: hidden;
+}
+
+.sa-ml-alg__step-expanded {
+  padding-inline-start: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--sa-kit-primary, #008443);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sa-ml-alg__intermediate,
+  .sa-ml-alg__current--after,
+  .sa-ml-alg__flip { animation: none; }
+}
+
+/* ══ « حلّ خطوة بخطوة » — le tableau qui se construit (2026-09-30) ═══════
+   La barre des pas flotte (StepPlayer, shared/labKit.css) : elle ne prend
+   plus de place dans la scène. Le tableau (shared/mathBoard) s'y pose. */
+
+.sa-ml-alg__stage > .sa-ml-board,
+.sa-ml-alg__verification .sa-ml-board {
+  width: 100%;
+  max-width: 40rem;
+}
+
+.sa-ml-alg__graph {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+/* Le bouton qui DÉMARRE un déroulé : vert, franc, jamais « la réponse ». */
+.sa-ml-alg__solve {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.5rem;
+  padding: 0.45rem 1rem;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--sa-kit-primary, #008443);
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.sa-ml-alg__solve:hover { background: #006b37; }
+.sa-ml-alg__solve:focus-visible { outline: 3px solid #F36D21; outline-offset: 2px; }
+
+/* Pas de barre de défilement DANS un élément (demande de la propriétaire,
+   2026-09-30) : formules, résultats, tableaux, arbres passent à la ligne ou
+   s'étendent ; seule la scène — l'écran de l'outil — défile. */
+
+/* ── Téléphone : UN seul défilement, celui de l'écran ──────────────────────
+   Sous 768 px, la scène et le panneau ne défilent plus chacun dans leur
+   boîte (la barre « الحل خطوة بخطوة » y mangeait la scène et cachait le
+   tableau) : l'outil entier devient une colonne qui défile, la scène et le
+   panneau prennent leur hauteur naturelle, et la barre des pas reste collée
+   en haut pendant qu'on lit le tableau. */
+@media (max-width: 767px) {
+  .sa-ml-alg { overflow-y: auto; overflow-x: hidden; }
+  .sa-ml-alg__body { flex: none; min-height: auto; }
+  .sa-ml-alg__stage { flex: none; min-height: 0; overflow: visible; }
+  .sa-ml-alg__panel { flex: none; max-height: none; }
+  .sa-ml-alg__panel-body { overflow: visible; }
+}

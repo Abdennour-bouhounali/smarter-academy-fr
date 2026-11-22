@@ -1,0 +1,206 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l3-002",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2015 — 4508 و 23",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مراحل الحساب",
+      "حساب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-adad-tabii_P1",
+      "modelledOn": "BEM 2015 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "اكتب المساواة التي تعبّر عن القسمة الإقليدية للعدد 4508 على 23 مع كتابة مراحل الحساب.",
+      "statement": "حاصل القسمة:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "196",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أكبر مضاعف للعدد 23 لا يتجاوز 4508."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل القسمة هو أكبر عدد طبيعي $q$ يحقق $23 \\times q \\leq 4508$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الباقي أصغر تمامًا من 23."
+        }
+      ],
+      "feedback": {
+        "correct": "$4508 = 23 \\times 196 + 0$ مع $0 < 23$.",
+        "incorrect": "ابحث عن أكبر مضاعف للعدد 23 لا يتجاوز 4508، ثم اطرحه من 4508."
+      },
+      "solution": {
+        "lines": [
+          "$23 \\times 196 = 4508$ و $23 \\times 197 = 4531$ أكبر من 4508.",
+          "$4508 - 4508 = 0$ و $0 < 23$",
+          "إذن المساواة التي تعبّر عن القسمة الإقليدية هي:"
+        ],
+        "result": "4508 = 23 \\times 196 + 0"
+      },
+      "work": "required",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "الباقي:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى من 4508 بعد طرح أكبر مضاعف للعدد 23 لا يتجاوزه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي عدد طبيعي أصغر تمامًا من 23."
+        }
+      ],
+      "feedback": {
+        "correct": "$4508 = 23 \\times 196 + 0$: الباقي 0، فهو معدوم.",
+        "incorrect": "اطرح من 4508 أكبر مضاعف للعدد 23 لا يتجاوزه."
+      },
+      "solution": {
+        "lines": [
+          "$4508 - 23 \\times 196 = 0$"
+        ],
+        "result": "r = 0"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل 196 قاسم للعدد 4508؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل المساواة التي وجدتها في السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المساواة $a = b \\times q$ تُقرأ في الاتجاهين."
+        }
+      ],
+      "feedback": {
+        "correct": "$4508 = 23 \\times 196 = 196 \\times 23$: 196 قاسم للعدد 4508.",
+        "incorrect": "اقرأ المساواة التي وجدتها في السؤال 01 في الاتجاهين."
+      },
+      "solution": {
+        "lines": [
+          "$4508 = 23 \\times 196 + 0$",
+          "$4508 = 196 \\times 23$ و 23 عدد طبيعي، إذن 196 قاسم للعدد 4508."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب العدد P حيث: $P = \\dfrac{4508}{23} - 7 \\times 25$ .",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "21",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01 لحساب $\\dfrac{4508}{23}$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب قبل الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$P = 196 - 175 = 21$.",
+        "incorrect": "احسب أولًا الكسر (السؤال 01) ثم الجداء، ثم اطرح."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{4508}{23} = 196$",
+          "$P = 196 - 175$"
+        ],
+        "result": "P = 21"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

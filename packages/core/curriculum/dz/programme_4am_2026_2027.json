@@ -1,0 +1,129 @@
+{
+  "_comment": [
+    "Le programme officiel de mathématiques de 4AM (السنة الرابعة متوسط),",
+    "2e génération, année 2026/2027 — tel que fourni par le propriétaire du",
+    "projet le 2026-09-16.",
+    "",
+    "CE FICHIER EST UNE TRANSCRIPTION, PAS UNE INTERPRÉTATION. Les intitulés",
+    "arabes sont ceux du programme, au mot près. Rien n'a été ajouté, rien",
+    "retiré, rien reformulé — y compris quand un intitulé énumère plusieurs",
+    "gestes dans une seule phrase.",
+    "",
+    "Ce qu'il ne contient PAS, et qui n'est donc pas inventé ici : le découpage",
+    "en leçons, les points d'apprentissage, les durées, les prérequis d'années",
+    "antérieures, l'ordre d'enseignement dans l'année. Tout cela relève de la",
+    "phase 7 et doit être décidé, pas déduit. Voir",
+    "docs/ALGERIA_4AM_CURRICULUM.md.",
+    "",
+    "Il n'est encore lu par AUCUN code : coursesData.js ne l'importe pas. Il",
+    "est la source depuis laquelle la phase 7 construira le catalogue, de la",
+    "même façon que smarter_academy_programmes_maths_2026.json l'est pour le",
+    "catalogue français."
+  ],
+  "grade": "4am",
+  "gradeLabelAr": "السنة الرابعة متوسط",
+  "level": "moyen",
+  "levelLabelAr": "التعليم المتوسط",
+  "subject": "الرياضيات",
+  "generation": "الجيل الثاني",
+  "schoolYear": "2026/2027",
+  "source": "Fourni par le propriétaire du projet (2026-09-16) comme spécification officielle du programme.",
+  "verified": false,
+  "verificationNote": "Non confronté à un document ministériel dans ce dépôt. Le document d'accompagnement, la répartition horaire et les attendus de fin de cycle n'ont pas été fournis.",
+  "domains": [
+    {
+      "id": "ansab_al_aadad_wal_hisab",
+      "titleAr": "ميدان أنساب الأعداد والحساب",
+      "subtitleAr": "الأعداد الطبيعية، الناطقة والحساب على الجذور",
+      "topics": [
+        {
+          "id": "pgcd",
+          "titleAr": "قواسم عدد طبيعي والقاسم المشترك الأكبر (PGCD) باستخدام خوارزمية أقليدس أو الفروق المتتالية",
+          "namedMethodsAr": ["خوارزمية أقليدس", "الفروق المتتالية"]
+        },
+        {
+          "id": "aadad_awwaliya",
+          "titleAr": "الأعداد الأولية وكيفية كتابة كسر غير قابل للاختزال"
+        },
+        {
+          "id": "hisab_judhur",
+          "titleAr": "الحساب على الجذور التربيعية",
+          "namedPartsAr": ["الجمع", "الضرب", "القسمة", "تبسيط عبارة"]
+        },
+        {
+          "id": "nataqat_maqam",
+          "titleAr": "ناطقة مقام نسبة وجذر تربيعي لعدد موجب"
+        }
+      ]
+    },
+    {
+      "id": "hisab_harfi",
+      "titleAr": "ميدان الحساب الحرفي",
+      "subtitleAr": "الجبر",
+      "topics": [
+        { "id": "nashr_tabsit", "titleAr": "النشر والتبسيط" },
+        { "id": "tahlil", "titleAr": "تحليل عبارة جبرية إلى منتوج عوامل من الدرجة الأولى" },
+        { "id": "muadalat_daraja_ula", "titleAr": "حل معادلات من الدرجة الأولى بمجهول واحد" },
+        { "id": "muadalat_jida_maadum", "titleAr": "المعادلات جذاء معدوم" },
+        { "id": "mutarajihat", "titleAr": "حل متراجحات من الدرجة الأولى بمجهول واحد وتمثيلها بيانيا" },
+        {
+          "id": "jumal_muadalatayn",
+          "titleAr": "جمل معادلتين من الدرجة الأولى بمجهولين",
+          "namedMethodsAr": ["طريقة التعويض", "طريقة الجمع"]
+        },
+        { "id": "duwal_khattiya", "titleAr": "الدوال الخطية" },
+        { "id": "duwal_taalufiya", "titleAr": "الدوال التآلفية" },
+        { "id": "tamthil_bayani", "titleAr": "التمثيل البياني" }
+      ]
+    },
+    {
+      "id": "handasa",
+      "titleAr": "ميدان الهندسة",
+      "subtitleAr": "المهندس والقياس",
+      "topics": [
+        { "id": "thales", "titleAr": "خاصية طالس وعكسيتها في المثلث المستوي وحساب الأطوال" },
+        {
+          "id": "nisab_muthallathiya",
+          "titleAr": "النسب المثلثية في مثلث قائم",
+          "namedPartsAr": ["جيب", "جيب تمام", "ظل زاوية حادة"]
+        },
+        { "id": "alaqat_nisab", "titleAr": "العلاقات بين النسب المثلثية" },
+        {
+          "id": "maalam",
+          "titleAr": "المعلم في المستوي",
+          "namedPartsAr": ["إحداثيتا نقطة", "إحداثيتا شعاع", "المسافة بين نقطتين"]
+        },
+        {
+          "id": "insihab_shuaa",
+          "titleAr": "الانسحاب والشعاع",
+          "namedPartsAr": ["مركبة شعاع", "مجموع شعاعين"]
+        },
+        { "id": "dawaran_zawaya", "titleAr": "الدوران والزوايا" },
+        {
+          "id": "handasa_fada",
+          "titleAr": "الهندسة في الفضاء",
+          "namedPartsAr": ["الكرة والجلة", "مساحة الكرة وحجم الجلة", "المقاطع المستوية لمجسمات مألوفة", "التكبير والتصغير"],
+          "addedBy": "owner_request",
+          "addedOn": "2026-10-05",
+          "note": "Absent de la transcription fournie le 2026-09-16. Le propriétaire a demandé l'unité 14 « الهندسة في الفضاء » du manuel officiel (pp. 163–169) sous « ميدان الهندسة » ; le sujet est ajouté ici, DÉCLARÉ comme tel (addedBy / addedOn), avec l'intitulé de l'unité du manuel et ses parties (« سأتعلّم في هذا الباب »)."
+        }
+      ]
+    },
+    {
+      "id": "tanzim_al_muatayat",
+      "titleAr": "ميدان تنظيم المعطيات",
+      "subtitleAr": "الإحصاء",
+      "topics": [
+        { "id": "silsila_fiat", "titleAr": "سلسلة إحصائية ذات فئات" },
+        { "id": "hisab_takrar", "titleAr": "حساب التكرار" },
+        { "id": "takrar_nisbi", "titleAr": "التكرار النسبي" },
+        { "id": "takrar_mujamma_saaid", "titleAr": "التكرار المجمع الصاعد" },
+        { "id": "takrar_mujamma_nazil", "titleAr": "التكرار المجمع النازل" },
+        { "id": "wast_hisabi", "titleAr": "الوسط الحسابي / المعدل" },
+        { "id": "tawatur", "titleAr": "التواتر" },
+        { "id": "mada", "titleAr": "المدى" },
+        { "id": "wasit", "titleAr": "الوسيط لسلسلة إحصائية" }
+      ]
+    }
+  ]
+}

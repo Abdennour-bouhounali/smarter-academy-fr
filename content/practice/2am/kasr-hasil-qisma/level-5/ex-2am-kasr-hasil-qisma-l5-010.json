@@ -1,0 +1,248 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l5-010",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 5,
+  "metadata": {
+    "title": "عدد عشري بين قيمتين",
+    "estimatedMinutes": 12,
+    "tags": [
+      "حصر",
+      "قيم مقرّبة",
+      "قرار"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ict-3",
+      "page": 37,
+      "section": "أوظّف تكنولوجيات الإعلام والاتصال"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: يعرض برنامج على الشاشة القيمة $2{,}66$ ، ونعلم أنّ حاصل القسمة $8 \\div 3$ هو القيمة المضبوطة $\\dfrac{8}{3}$ .\nالجزء الثاني: نبحث عن أعداد عشرية تقع بين هاتين القيمتين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}001$ بالنقصان لحاصل القسمة $8 \\div 3$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "2.666",
+      "misconceptionSignatures": [
+        {
+          "value": "2.667",
+          "id": "MISC-QARIBA-ROUNDED"
+        },
+        {
+          "value": "2.6666",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالنقصان لا تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة دون أن تزيد شيئًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب القيمة في المقسوم عليه: يجب ألاّ يتجاوز الجداء المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}666 < \\frac{8}{3} < 2{,}667$.",
+        "incorrect": "بالنقصان: نحتفظ بالأرقام حتى الرتبة المطلوبة ونُهمل ما بعدها دون تغيير الرقم الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 2{,}666 = 7{,}998$",
+          "$3 \\times 2{,}667 = 8{,}001$",
+          "$7{,}998 < 8 < 8{,}001$"
+        ],
+        "result": "2{,}666"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}001$ بالزيادة لحاصل القسمة $8 \\div 3$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "2.667",
+      "misconceptionSignatures": [
+        {
+          "value": "2.666",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "2.6667",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالزيادة هي أصغر قيمة من هذه الرتبة تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من القيمة بالنقصان ثم أضف وحدة واحدة من الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}666 < \\frac{8}{3} < 2{,}667$.",
+        "incorrect": "بالزيادة: هي القيمة التي تلي القيمة بالنقصان مباشرة في الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 2{,}667 = 8{,}001$",
+          "$8{,}001 > 8$",
+          "القيمة بالزيادة هي $2{,}667$"
+        ],
+        "result": "2{,}667"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "الجزء الثاني: أقارن بالضرب.",
+      "statement": "هل $2{,}666 < \\dfrac{8}{3}$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أو قارن بدقّة قبل أن تجيب."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 \\times 2{,}666 = 7{,}998 < 8$ : نعم.",
+        "incorrect": "اضرب $2{,}666$ في $3$ وقارن بـ $8$."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 2{,}666 = 7{,}998$",
+          "$7{,}998 < 8$ : $2{,}666 < \\dfrac{8}{3}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "lead": "اختر العدد المناسب:",
+      "statement": "أيّ هذه الأعداد محصور بين $2{,}66$ و $\\dfrac{8}{3}$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2{,}667$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        },
+        {
+          "id": "B",
+          "content": "$2{,}659$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$2{,}665$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$2{,}67$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-EXACTAPPROX"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد المطلوب أكبر من $2{,}66$ وأصغر من الحاصل $\\dfrac{8}{3}$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب كلّ عدد في $3$ وقارنه مع $8$."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}66 < 2{,}665 < \\dfrac{8}{3}$ لأنّ $3 \\times 2{,}665 = 7{,}995 < 8$.",
+        "incorrect": "العدد المطلوب أكبر من $2{,}66$ ، وجداؤه في $3$ أصغر من $8$."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 2{,}665 = 7{,}995 < 8$ و $2{,}665 > 2{,}66$",
+          "$2{,}667$ و $2{,}67$ يتجاوزان $\\dfrac{8}{3}$ ، و $2{,}659$ أصغر من $2{,}66$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

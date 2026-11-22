@@ -1,0 +1,215 @@
+{
+  "id": "ex-2am-rabi-mutanasib-l3-010",
+  "lessonCode": "rabi-mutanasib",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — أسعار الأرز",
+    "estimatedMinutes": 10,
+    "tags": [
+      "الخاصية الجمعية",
+      "معامل التناسبية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "الجدول التالي يمثّل وضعية تناسبية بين كتلة الأرز وثمنه.",
+    "table": {
+      "head": [
+        "الكتلة (kg)",
+        "2",
+        "5",
+        "7",
+        "10"
+      ],
+      "rows": [
+        [
+          "الثمن (DA)",
+          "290",
+          "725",
+          "…",
+          "…"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب معامل التناسبية (ثمن الكيلوغرام).",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "145",
+      "misconceptionSignatures": [
+        {
+          "value": "580",
+          "id": "MISC-RABI-MULROW"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في الجدول عمودًا يحوي العددين المعلومين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "معامل التناسبية هو العدد الذي نضرب فيه كل عدد من السطر الأول لنحصل على مقابله في السطر الثاني."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم عددًا من السطر الثاني على مقابله في السطر الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "معامل التناسبية $145$ .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$290 \\div 2 = 145$"
+        ],
+        "result": "145"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب ثمن $7$ kg.",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "1015",
+      "misconceptionSignatures": [
+        {
+          "value": "295",
+          "id": "MISC-RABI-ADD"
+        },
+        {
+          "value": "725",
+          "id": "MISC-RABI-ALIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن علاقة بسيطة بين عددين من السطر الأول: مجموع أو جداء أو ضعف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما يحدث في السطر الأول يحدث في السطر الثاني: المجموع يقابله مجموع، والجداء في عدد يقابله جداء في العدد نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل عددين معلومين من السطر الثاني لتركيب العدد المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "الثمن $1015$ DA .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$7 = 5 + 2$",
+          "$725 + 290 = 1015$"
+        ],
+        "result": "1015"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "اختر الحساب الذي يعطي ثمن $10$ kg.",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$725 \\times 2$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$725 + 5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-RABI-ADD"
+        },
+        {
+          "id": "C",
+          "content": "$725 + 290$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-RABI-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن علاقة بسيطة بين عددين من السطر الأول: مجموع أو جداء أو ضعف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما يحدث في السطر الأول يحدث في السطر الثاني: المجموع يقابله مجموع، والجداء في عدد يقابله جداء في العدد نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل عددين معلومين من السطر الثاني لتركيب العدد المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "الثمن $1450$ DA .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$10 = 5 \\times 2$",
+          "$725 \\times 2 = 1450$"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

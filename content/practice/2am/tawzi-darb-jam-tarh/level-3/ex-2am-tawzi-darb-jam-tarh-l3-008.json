@@ -1,0 +1,225 @@
+{
+  "id": "ex-2am-tawzi-darb-jam-tarh-l3-008",
+  "lessonCode": "tawzi-darb-jam-tarh",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أنشر عبارة فيها جمع وحرف",
+    "estimatedMinutes": 10,
+    "tags": [
+      "حرف",
+      "نشر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $G = 3 \\times (x + 7)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ كتابة هي نشر للعبارة $G = 3 \\times (x + 7)$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3x + 7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-NOTATION"
+        },
+        {
+          "id": "B",
+          "content": "$3x + 21$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$3x - 21$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-SIGNCHANGE"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "$3 \\times (x + 7) = 3x + 21$",
+          "جداء عدد في الحرف $x$ يُكتب بحذف علامة الضرب."
+        ]
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد الذي أمام القوسين يضرب الحدّين معًا، والحرف $x$ أحدهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء عدد في الحرف $x$ يُكتب بحذف علامة الضرب: $a \\times x$ تُكتب $ax$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر نتيجتك بقيمة بسيطة للحرف $x$: يجب أن يعطي الطرفان العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتابة الصحيحة هي $3x + 21$ .",
+        "incorrect": "العدد الذي يضرب القوسين يضرب كلّ حدّ بالعملية نفسها التي بين الحدّين: راجع كلّ خيار بحساب الطرفين."
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب قيمة $3 \\times (x + 7)$ من أجل $x$ يساوي $2{,}5$ .",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "28.5",
+      "solution": {
+        "lines": [
+          "$3 \\times (2{,}5 + 7) = 28{,}5$"
+        ],
+        "result": "28{,}5"
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف $x$ بالعدد المعطى في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ وليس $a + x$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة: ما بين القوسين أوّلًا إن وُجد، ثم الضرب، ثم الجمع أو الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 \\times (2{,}5 + 7) = 28{,}5$",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$."
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب قيمة $3x + 21$ من أجل $x$ يساوي $2{,}5$ .",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "28.5",
+      "solution": {
+        "lines": [
+          "$3 \\times 2{,}5 + 21 = 28{,}5$"
+        ],
+        "result": "28{,}5"
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف $x$ بالعدد المعطى في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ وليس $a + x$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة: ما بين القوسين أوّلًا إن وُجد، ثم الضرب، ثم الجمع أو الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 \\times 2{,}5 + 21 = 28{,}5$",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$."
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "احسب قيمة $3x + 7$ من أجل $x$ يساوي $2{,}5$ .",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "14.5",
+      "solution": {
+        "lines": [
+          "$3 \\times 2{,}5 + 7 = 14{,}5$"
+        ],
+        "result": "14{,}5"
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "12.5",
+          "id": "MISC-TAWZI-NOTATION"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف $x$ بالعدد المعطى في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ وليس $a + x$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة: ما بين القوسين أوّلًا إن وُجد، ثم الضرب، ثم الجمع أو الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 \\times 2{,}5 + 7 = 14{,}5$",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$."
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

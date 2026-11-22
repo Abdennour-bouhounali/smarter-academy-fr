@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-misaha-hajm-kura-l1-009",
+  "lessonCode": "misaha-hajm-kura",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — القيمة المضبوطة",
+    "estimatedMinutes": 1,
+    "tags": [
+      "القيمة المضبوطة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_misaha-hajm-kura_P3",
+      "modelledOn": "know-2"
+    }
+  },
+  "statement": {
+    "content": "كرة نصف قطرها $2\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "القيمة المضبوطة لمساحتها هي:",
+      "learningPoints": [
+        {
+          "code": "4am_misaha-hajm-kura_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$16\\pi\\,\\mathrm{cm}^2$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$50{,}27\\,\\mathrm{cm}^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR"
+        },
+        {
+          "id": "C",
+          "content": "$16\\,\\mathrm{cm}^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المضبوطة لا تُدوَّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $\\pi$ لا يُكتب بعدد محدود من الأرقام."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب النتيجة بدلالة $\\pi$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\mathcal{A} = 4\\pi \\times 4 = 16\\pi\\,\\mathrm{cm}^2$ : هذه هي القيمة المضبوطة.",
+        "incorrect": "$50{,}27$ قيمة مدوّرة، و $16$ نسي العدد $\\pi$ ."
+      },
+      "difficulty": 1
+    }
+  ]
+}

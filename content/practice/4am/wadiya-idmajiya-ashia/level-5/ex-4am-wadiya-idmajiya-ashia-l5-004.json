@@ -1,0 +1,224 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ashia-l5-004",
+  "lessonCode": "wadiya-idmajiya-ashia",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — اقتراح التطبيق",
+    "estimatedMinutes": 5,
+    "tags": [
+      "موضع M",
+      "تحقّق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ashia_P3",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "تطبيق خرائط يقترح وضع ممر [MN] في شارع عرضه $6\\,\\mathrm{m}$ (الشكل): A فوق الحافة العليا بـ $12\\,\\mathrm{m}$ ، B تحت الحافة السفلى بـ $24\\,\\mathrm{m}$ ، والمسافة الأفقية $54\\,\\mathrm{m}$ . يضع التطبيق M على بعد $20\\,\\mathrm{m}$ أفقيا من A.",
+    "figure": {
+      "points": {
+        "R1": [
+          -8.1,
+          6
+        ],
+        "R2": [
+          62.099999999999994,
+          6
+        ],
+        "R3": [
+          62.099999999999994,
+          0
+        ],
+        "R4": [
+          -8.1,
+          0
+        ],
+        "A": [
+          0,
+          18
+        ],
+        "HA": [
+          0,
+          6
+        ],
+        "B": [
+          54,
+          -24
+        ],
+        "HB": [
+          54,
+          0
+        ],
+        "K": [
+          54,
+          6
+        ],
+        "M": [
+          20,
+          6
+        ],
+        "N": [
+          20,
+          0
+        ],
+        "W1": [
+          59.94,
+          6
+        ],
+        "W0": [
+          59.94,
+          0
+        ]
+      },
+      "polygons": [
+        {
+          "points": [
+            "R1",
+            "R2",
+            "R3",
+            "R4"
+          ],
+          "tone": "slate"
+        }
+      ],
+      "segments": [
+        {
+          "from": "R1",
+          "to": "R2",
+          "bold": true
+        },
+        {
+          "from": "R4",
+          "to": "R3",
+          "bold": true
+        },
+        {
+          "from": "A",
+          "to": "HA",
+          "dashed": true,
+          "label": "12 m"
+        },
+        {
+          "from": "HB",
+          "to": "B",
+          "dashed": true,
+          "label": "24 m"
+        },
+        {
+          "from": "HA",
+          "to": "K",
+          "dashed": true,
+          "tone": "sky",
+          "label": "54 m"
+        },
+        {
+          "from": "W1",
+          "to": "W0",
+          "label": "6 m"
+        },
+        {
+          "from": "A",
+          "to": "M",
+          "tone": "amber"
+        },
+        {
+          "from": "M",
+          "to": "N",
+          "bold": true,
+          "tone": "indigo"
+        },
+        {
+          "from": "N",
+          "to": "B",
+          "tone": "amber"
+        }
+      ],
+      "rightAngles": [
+        [
+          "R1",
+          "M",
+          "N"
+        ]
+      ],
+      "hidden": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "HA",
+        "HB",
+        "K",
+        "W1",
+        "W0"
+      ],
+      "labels": {
+        "A": "n",
+        "B": "s",
+        "M": "ne",
+        "N": "se"
+      },
+      "ariaLabel": "طريق عرضه 6 m بين حافتين متوازيتين، A فوق الحافة العليا بـ 12 m و B تحت الحافة السفلى بـ 24 m، والمسافة الأفقية بينهما 54 m، والممر [MN] عمودي على الحافتين"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "هل اقتراح التطبيق هو الموضع الأمثل؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا: الموضع الأمثل على بعد $18\\,\\mathrm{m}$ أفقيا من A",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "لا: الموضع الأمثل في منتصف المسافة ( $27\\,\\mathrm{m}$ )",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MAMAR-WASAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "M على [AB′]."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة الشاقولية بين A و B′: 36."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$54 \\times \\dfrac{12}{36}$"
+        }
+      ],
+      "feedback": {
+        "correct": "M على $[AB']$ : $54 \\times \\dfrac{12}{12 + 24} = 18\\,\\mathrm{m}$ ، لا 20.",
+        "incorrect": "A و B ليسا على نفس البعد من الطريق."
+      },
+      "cognitiveDemand": "reason",
+      "difficulty": 5
+    }
+  ]
+}

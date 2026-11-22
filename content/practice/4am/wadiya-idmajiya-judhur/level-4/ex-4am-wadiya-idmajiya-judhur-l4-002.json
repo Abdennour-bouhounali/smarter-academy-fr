@@ -1,0 +1,176 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-judhur-l4-002",
+  "lessonCode": "wadiya-idmajiya-judhur",
+  "level": 4,
+  "metadata": {
+    "title": "أبسط كتابة للعدد √72",
+    "estimatedMinutes": 7,
+    "tags": [
+      "a√b",
+      "أبسط كتابة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-judhur_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "كتب يونس: $\\sqrt{72} = \\sqrt{4 \\times 18} = 2\\sqrt{18}$ ، و قال: «هذه أبسط كتابة»."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل $2\\sqrt{18}$ هي أبسط كتابة للعدد $\\sqrt{72}$ ؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDHR-MURABBA-MANSI"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل يقبل العدد 18 القسمة على مربع تام أكبر من 1؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "فكّر في $18 = 9 \\times 2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "المساواة صحيحة لكن $\\sqrt{18}$ ما زال يُبسّط: $18 = 9 \\times 2$ .",
+        "incorrect": "أبسط كتابة لا يبقى تحت جذرها أي مربع تام أكبر من 1."
+      },
+      "solution": {
+        "lines": [
+          "$18 = 9 \\times 2$ و 9 مربع تام، إذن $\\sqrt{18} = 3\\sqrt{2}$ ما زال يُبسّط.",
+          "الكتابة $2\\sqrt{18}$ صحيحة لكنها ليست أبسط كتابة."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب العدد $\\sqrt{72}$ على الشكل $a\\sqrt{2}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "36",
+          "id": "MISC-JIDHR-MURABBA-MANSI"
+        },
+        {
+          "value": "2",
+          "id": "MISC-MUAMIL-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أكبر مربع تام يقسم 72."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $72 = 36 \\times 2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sqrt{72} = \\sqrt{36 \\times 2} = 6\\sqrt{2}$",
+        "incorrect": "استعمل أكبر مربع تام يقسم 72، و أخرج جذره من تحت الجذر."
+      },
+      "solution": {
+        "lines": [
+          "$\\sqrt{72} = \\sqrt{36 \\times 2} = \\sqrt{36} \\times \\sqrt{2}$"
+        ],
+        "result": "\\sqrt{72} = 6\\sqrt{2}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "استنتج كتابة العدد $C = \\sqrt{72} + \\sqrt{8} - 3\\sqrt{2}$ على الشكل $a\\sqrt{2}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-JIDHR-JAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $\\sqrt{8}$ على الشكل $k\\sqrt{2}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = 6\\sqrt{2} + 2\\sqrt{2} - 3\\sqrt{2} = 5\\sqrt{2}$",
+        "incorrect": "اكتب كل حد على الشكل $k\\sqrt{2}$ ، ثم اجمع و اطرح المعاملات."
+      },
+      "solution": {
+        "lines": [
+          "$C = 6\\sqrt{2} + \\sqrt{4 \\times 2} - 3\\sqrt{2}$",
+          "$= 6\\sqrt{2} + 2\\sqrt{2} - 3\\sqrt{2}$"
+        ],
+        "result": "C = 5\\sqrt{2}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "id": "ex-4am-murakkibata-shuaa-l1-009",
+  "lessonCode": "murakkibata-shuaa",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — سهم أفقي",
+    "estimatedMinutes": 2,
+    "tags": [
+      "قراءة بيانية",
+      "إشارة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_murakkibata-shuaa_P1",
+      "modelledOn": "know-3"
+    }
+  },
+  "statement": {
+    "content": "على المرصوفة (الشكل) سهم أفقي يمثّل الشعاع $\\overrightarrow{KL}$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "K": [
+          3,
+          1
+        ],
+        "L": [
+          -1,
+          1
+        ]
+      },
+      "grid": true,
+      "axes": true,
+      "vectors": [
+        {
+          "from": "K",
+          "to": "L",
+          "tone": "rose"
+        }
+      ],
+      "labels": {
+        "O": "sw"
+      },
+      "ariaLabel": "معلم على المرصوفة: سهم أفقي من K نحو اليسار إلى L",
+      "maxWidth": 420
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما مركبتا الشعاع $\\overrightarrow{KL}$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_murakkibata-shuaa_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "مركبتا الشعاع (x ; y): الأفقية ثم العمودية — عددان مثل −3 أو 2,5",
+      "expectedAnswer": {
+        "x": "-4",
+        "y": "0"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انطلق من مبدأ الشعاع وعُدّ المربعات بموازاة محور الفواصل، ثم بموازاة محور التراتيب، حتى نهايته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نحو اليمين أو نحو الأعلى العدد موجب، ونحو اليسار أو نحو الأسفل العدد سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب أولا الإزاحة الأفقية ثم الإزاحة العمودية، كل واحدة بإشارتها."
+        }
+      ],
+      "feedback": {
+        "correct": "من K: 4 وحدات نحو اليسار ولا حركة عمودية: $\\begin{pmatrix} -4 \\\\ 0 \\end{pmatrix}$ .",
+        "incorrect": "سهم أفقي: المركبة العمودية 0، ونحو اليسار سالب."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "4",
+            "y": "0"
+          },
+          "id": "MISC-MAALAM-ISHARA"
+        },
+        {
+          "value": {
+            "x": "0",
+            "y": "-4"
+          },
+          "id": "MISC-MAALAM-TABDIL-X-Y"
+        },
+        {
+          "value": {
+            "x": "-1",
+            "y": "1"
+          },
+          "id": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l2-008",
+  "lessonCode": "mafhum-dawaran",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — أي نقطة هي الصورة؟",
+    "estimatedMinutes": 3,
+    "tags": [
+      "صورة نقطة",
+      "المرصوفة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mafhum-dawaran_P2",
+      "modelledOn": "know-2"
+    }
+  },
+  "statement": {
+    "content": "على المرصوفة: O مركز الدوران و A نقطة، و B و C و D و E نقط أخرى. نعتبر الدوران الذي مركزه O وزاويته $90^\\circ$ في الاتجاه المباشر.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          2,
+          1
+        ],
+        "B": [
+          -1,
+          2
+        ],
+        "C": [
+          1,
+          -2
+        ],
+        "D": [
+          -2,
+          -1
+        ],
+        "E": [
+          1,
+          2
+        ]
+      },
+      "grid": true,
+      "maxWidth": 420,
+      "ariaLabel": "ورقة مرصوفة عليها O و A والنقط B و C و D و E"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "صورة A بهذا الدوران هي:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "B",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "C",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ITTIJAH"
+        },
+        {
+          "id": "C",
+          "content": "D",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ZAWIYA-UKHRA"
+        },
+        {
+          "id": "D",
+          "content": "E",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-TANAZUR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الصورة على نفس البعد من O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الزاوية بين [OA) و [OA′) قائمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الاتجاه المباشر هو عكس اتجاه حركة عقارب الساعة ↺، وغير المباشر في اتجاهها ↻."
+        }
+      ],
+      "feedback": {
+        "correct": "OB = OA و $\\widehat{AOB} = 90^\\circ$ عكس عقارب الساعة: الصورة B.",
+        "incorrect": "اختبر الشروط الثلاثة لكل نقطة: البعد والزاوية والاتجاه."
+      },
+      "difficulty": 2
+    }
+  ]
+}

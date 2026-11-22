@@ -1,10 +1,8 @@
 // Shared harness for the lesson-kit deep tests (Playwright, resolved from the repo's node_modules).
-// Run: node apps/web/e2e/lesson-kit/t1-core.mjs   (dev server on :5183)
+// Run e.g.: node apps/web/e2e/lesson-kit/4am-aadad-tabiiya-natiqa.mjs   (dev server on :5183)
 import { chromium } from 'playwright';
 
 export const BASE = process.env.KIT_BASE || 'http://localhost:5183';
-export const LESSON = `${BASE}/courses/college/6e/nombres_calculs/nombres-entiers`;
-export const STORE_KEY = 'u_anon_smarter_lesson_nombres-entiers';
 export const XP_KEY = 'u_anon_smarter_global_xp';
 export const SHOT_DIR = new URL('./shots/', import.meta.url).pathname;
 import { mkdirSync } from 'node:fs';
@@ -26,12 +24,17 @@ export async function launch() {
   return { browser };
 }
 export async function newCtx(browser, { mobile = false } = {}) {
-  return browser.newContext(
+  const ctx = await browser.newContext(
     mobile
       ? { viewport: { width: 375, height: 667 }, hasTouch: true, isMobile: true, deviceScaleFactor: 2,
           userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1' }
       : { viewport: { width: 1280, height: 1400 } }
   );
+  // Les polices Google (index.html) ne portent aucune assertion ; quand le réseau
+  // ne les atteint pas, elles retiennent l'événement « load » et chaque page.goto
+  // expire (2026-10-01). On les coupe : la page retombe sur ses polices locales.
+  await ctx.route(/fonts\.(googleapis|gstatic)\.com/, (r) => r.abort());
+  return ctx;
 }
 export function watchErrors(page, bucket) {
   page.on('console', (msg) => {
@@ -45,12 +48,12 @@ export function watchErrors(page, bucket) {
 // Seeds lesson progress ONCE per context: addInitScript re-runs on every navigation
 // (including reload), so guard it — otherwise a reload would wipe live progress.
 export const lessonKey = (lessonId) => `u_anon_smarter_lesson_${lessonId}`;
-export async function seed(page, completedModules, key = STORE_KEY) {
+export async function seed(page, completedModules, key) {
   await page.addInitScript(
     ([k, m]) => { if (!localStorage.getItem(k)) localStorage.setItem(k, JSON.stringify({ completedModules: m, completedExercises: [] })); },
     [key, completedModules]
   );
 }
-export async function getProgress(page, key = STORE_KEY) { return page.evaluate((k) => JSON.parse(localStorage.getItem(k) || 'null'), key); }
+export async function getProgress(page, key) { return page.evaluate((k) => JSON.parse(localStorage.getItem(k) || 'null'), key); }
 export async function getXp(page) { return page.evaluate((k) => parseInt(localStorage.getItem(k) || '0', 10), XP_KEY); }
 export async function noHorizontalScroll(page) { return page.evaluate(() => document.scrollingElement.scrollWidth <= window.innerWidth + 1); }

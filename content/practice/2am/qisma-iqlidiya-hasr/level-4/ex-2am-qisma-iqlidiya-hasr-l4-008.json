@@ -1,0 +1,248 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l4-008",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — دقائق التطوّع",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مدّة",
+      "قسمة إقليدية",
+      "حصر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "تطوّع شباب الحيّ لتنظيف حديقة عمومية مدّة 1000 دقيقة في المجموع. نعلم أنّ الساعة 60 دقيقة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "كم ساعة كاملة تطوّعوا؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الساعات",
+      "expectedAnswer": "16",
+      "misconceptionSignatures": [
+        {
+          "value": "40",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "15",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "value": "17",
+          "id": "MISC-HASR-IZAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 1000 من 60 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 60 دون أن نتجاوز 1000."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من 60."
+        }
+      ],
+      "feedback": {
+        "correct": "$1000 = 60 \\times 16 + 40$ و $40 < 60$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 60 فلا يتجاوز الجداء 1000، والباقي عندئذ أصغر من 60."
+      },
+      "solution": {
+        "lines": [
+          "$60 \\times 16 = 960$ و $60 \\times 17 = 1020$",
+          "$960 \\le 1000 < 1020$ ، إذن الحاصل هو 16."
+        ],
+        "result": "q = 16"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "وكم دقيقة زيادة على هذه الساعات؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الدقائق",
+      "expectedAnswer": "40",
+      "misconceptionSignatures": [
+        {
+          "value": "16",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "100",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 1000."
+        }
+      ],
+      "feedback": {
+        "correct": "$1000 - 60 \\times 16 = 1000 - 960 = 40$ ، و $40 < 60$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 60."
+      },
+      "solution": {
+        "lines": [
+          "$1000 = 60 \\times 16 + 40$",
+          "$40 < 60$ ، إذن الباقي هو 40."
+        ],
+        "result": "r = 40"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "اختر حصرًا للعدد $\\frac{1000}{60}$ (المدّة بالساعات) بين عددين طبيعيين متتاليين.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$15 < \\frac{1000}{60} < 16$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        },
+        {
+          "id": "B",
+          "content": "$40 < \\frac{1000}{60} < 41$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "id": "C",
+          "content": "$16 < \\frac{1000}{60} < 17$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 1000 على 60."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من $60 \\times q \\le 1000 < 60 \\times (q + 1)$ نقسم الأطراف على 60."
+        }
+      ],
+      "feedback": {
+        "correct": "$1000 = 60 \\times 16 + 40$ والباقي غير معدوم، فـ $\\frac{1000}{60}$ يقع تمامًا بين 16 و 17.",
+        "incorrect": "احصر 1000 بين مضاعفين متتاليين للعدد 60 ثم اقسم على 60؛ وإذا كان الباقي معدومًا فحاصل القسمة عدد طبيعي."
+      },
+      "solution": {
+        "lines": [
+          "$1000 = 60 \\times 16 + 40$",
+          "$60 \\times 16 < 1000 < 60 \\times 17$ ، نقسم على 60: $16 < \\frac{1000}{60} < 17$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}1$ بالنقصان للعدد $\\frac{1000}{60}$.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "16.6",
+      "misconceptionSignatures": [
+        {
+          "value": "16.7",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "value": "16.4",
+          "id": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة العشرية للعدد 1000 على 60."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "توقّف عند الرقم الأول بعد الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$1000 \\div 60 = 16{,}66\\ldots$",
+        "incorrect": "بالنقصان إلى $0{,}1$: رقم واحد بعد الفاصلة دون تدوير."
+      },
+      "solution": {
+        "lines": [
+          "$1000 \\div 60 = 16{,}66\\ldots$",
+          "$16{,}6 < 16{,}66\\ldots < 16{,}7$"
+        ],
+        "result": "16{,}6"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

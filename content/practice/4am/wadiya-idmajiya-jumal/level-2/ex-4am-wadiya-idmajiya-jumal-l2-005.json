@@ -1,0 +1,200 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-jumal-l2-005",
+  "lessonCode": "wadiya-idmajiya-jumal",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2007 — الماء المعدني والمناديل",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جملة",
+      "أثمان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-jumal_P2",
+      "modelledOn": "BEM 2007 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2007",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "حُل الجملة: $\\begin{cases} 2x + 5y = 330 \\\\ 6x + 4y = 440 \\end{cases}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": {
+        "x": "40",
+        "y": "50"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "50",
+            "y": "40"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن معاملات $x$ ومعاملات $y$ في المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة التعويض أو طريقة الجمع (بعد ضرب المعادلتين في عددين مناسبين) لحذف أحد المجهولين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد إيجاد أحد المجهولين، عوّضه في إحدى المعادلتين لتجد الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "الثنائية $(40 ; 50)$ تحقق المعادلتين معا: هي حل الجملة.",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} 2x + 5y = 330 & ...(1) \\\\ 6x + 4y = 440 & ...(2) \\end{cases}$",
+          "بضرب طرفي المعادلة (1) في العدد $(-4)$ ، وبضرب طرفي المعادلة (2) في العدد $5$ نجد:",
+          "$\\begin{cases} -8x - 20y = -1320 & ...(3) \\\\ 30x + 20y = 2200 & ...(4) \\end{cases}$",
+          "بجمع (3) و (4) طرفا لطرف نجد:",
+          "$22x = 880$",
+          "$x = 40$",
+          "بتعويض $x$ بـ $40$ في المعادلة (2) نجد: $6 \\times 40 + 4y = 440$",
+          "$4y = 200$",
+          "$y = 50$",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(40 ; 50)"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "اشترى سمير من كشك قارورتين من الماء المعدني و 5 علب مناديل ورقية بمبلغ 330DA، واشترت أخته 3 قارورات من الماء المعدني وعلبتي مناديل بمبلغ 220DA. جِد ثمن القارورة الواحدة وثمن علبة المناديل الواحدة.",
+      "statement": "ثمن القارورة الواحدة:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الثمن بـ DA (عدد فقط)",
+      "expectedAnswer": "40",
+      "misconceptionSignatures": [
+        {
+          "value": "50",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "سمِّ $x$ ثمن القارورة و $y$ ثمن علبة المناديل، واكتب معادلة لكل مشتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب طرفي معادلة الأخت في 2 وقارن بجملة السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن القارورة الواحدة $40DA$ .",
+        "incorrect": "معادلة الأخت $3x + 2y = 220$ ، وضعفها هو المعادلة الثانية في جملة السؤال 01."
+      },
+      "solution": {
+        "lines": [
+          "نرمز إلى ثمن القارورة الواحدة بـ $x$ وإلى ثمن علبة المناديل الواحدة بـ $y$ .",
+          "مشتريات سمير: $2x + 5y = 330$",
+          "مشتريات أخته: $3x + 2y = 220$",
+          "بضرب طرفي المعادلة الثانية في 2 نجد $6x + 4y = 440$ ، فالجملة هي جملة السؤال 01.",
+          "ومن حل السؤال 01: $x = 40$ و $y = 50$",
+          "إذن ثمن القارورة الواحدة $40DA$ وثمن علبة المناديل الواحدة $50DA$ ."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ثمن علبة المناديل الواحدة:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الثمن بـ DA (عدد فقط)",
+      "expectedAnswer": "50",
+      "misconceptionSignatures": [
+        {
+          "value": "40",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$y$ هو العدد الثاني في حل جملة السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن علبة المناديل $50DA$ ، ونتحقق: $3 \\times 40 + 2 \\times 50 = 220$ .",
+        "incorrect": "استعمل حل جملة السؤال 01: $y$ هو ثمن علبة المناديل."
+      },
+      "solution": {
+        "lines": [
+          "نرمز إلى ثمن القارورة الواحدة بـ $x$ وإلى ثمن علبة المناديل الواحدة بـ $y$ .",
+          "مشتريات سمير: $2x + 5y = 330$",
+          "مشتريات أخته: $3x + 2y = 220$",
+          "بضرب طرفي المعادلة الثانية في 2 نجد $6x + 4y = 440$ ، فالجملة هي جملة السؤال 01.",
+          "ومن حل السؤال 01: $x = 40$ و $y = 50$",
+          "إذن ثمن القارورة الواحدة $40DA$ وثمن علبة المناديل الواحدة $50DA$ ."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

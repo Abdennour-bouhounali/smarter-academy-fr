@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-takbir-tasghir-l1-004",
+  "lessonCode": "takbir-tasghir",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — المساحة تُضرب في k²",
+    "estimatedMinutes": 2,
+    "tags": [
+      "التكبير",
+      "المساحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takbir-tasghir_P1",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "مكعّب كُبّر بالنسبة $k = 3$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مساحة وجه من أوجهه تُضرب في:",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-MISAHA-K"
+        },
+        {
+          "id": "B",
+          "content": "$27$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-BUUD"
+        },
+        {
+          "id": "C",
+          "content": "$9$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الوجه مربع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأطوال تُضرب في $k$ ، والمساحات في $k^2$ ، والحجوم في $k^3$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضلع المربع ضُرب في 3، فكم مربعا صغيرا في الوجه الجديد؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الوجه مربع ضلعه ضُرب في 3: مساحته تُضرب في $3^2 = 9$ .",
+        "incorrect": "المساحة بعدان: تُضرب في $k^2$ ."
+      }
+    }
+  ]
+}

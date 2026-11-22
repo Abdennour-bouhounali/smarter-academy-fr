@@ -1,0 +1,293 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-khattiya-l5-002",
+  "lessonCode": "wadiya-idmajiya-khattiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2009 — الرعد والبرق فوق جبال الأوراس",
+    "estimatedMinutes": 25,
+    "tags": [
+      "وضعية إدماجية",
+      "سرعة",
+      "دالة خطية",
+      "تمثيل بياني"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-khattiya_P3",
+      "modelledOn": "BEM 2009 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "خلال عاصفة رعدية فوق جبال الأوراس، يرى عادل البرق ثم يسمع صوت الرعد بعد مدة. نعتبر أن ضوء البرق يصل لحظيا، وأن الصوت ينتشر في الهواء بسرعة ثابتة قدرها 340m في الثانية. نسمّي $t$ المدة (بالثواني) بين رؤية البرق وسماع الرعد، و $d(t)$ بُعد مكان الصاعقة عن عادل (بالمتر)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب بُعد الصاعقة إذا سمع عادل الرعد بعد 5 ثوان من رؤية البرق.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: البعد بالمتر",
+      "expectedAnswer": "1700",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة = السرعة × المدة."
+        }
+      ],
+      "feedback": {
+        "correct": "صحيح: الصاعقة على بعد 1700m.",
+        "incorrect": "اضرب السرعة في المدة."
+      },
+      "solution": {
+        "lines": [
+          "$340 \\times 5 = 1700$",
+          "الصاعقة على بعد 1700m."
+        ],
+        "result": "1700m"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "عبّر عن $d(t)$ بدلالة $t$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المعامل $a$ فقط في $d(t) = at$",
+      "expectedAnswer": "340",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "السرعة ثابتة: البعد متناسب مع المدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$d(t) = 340t$ .",
+        "incorrect": "المعامل هو المسافة التي يقطعها الصوت في ثانية واحدة."
+      },
+      "solution": {
+        "lines": [
+          "$d(t) = 340t$ : $d$ دالة خطية."
+        ],
+        "result": "d(t) = 340t"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "احسب سرعة الصوت بـ km/h.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: السرعة بـ km/h",
+      "expectedAnswer": "1224",
+      "misconceptionSignatures": [
+        {
+          "value": "0.34",
+          "id": "MISC-MAQADIR-WIHDA"
+        },
+        {
+          "value": "20.4",
+          "id": "MISC-MAQADIR-WIHDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في ساعة واحدة 3600 ثانية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$1km = 1000m$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$340 \\times 3600 = 1224000m$ في الساعة، أي $1224km/h$ .",
+        "incorrect": "احسب المسافة المقطوعة في 3600 ثانية ثم حوّلها إلى km."
+      },
+      "solution": {
+        "lines": [
+          "في ساعة: $340 \\times 3600 = 1224000m = 1224km$ .",
+          "سرعة الصوت $1224km/h$ ."
+        ],
+        "result": "1224km/h"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "مثّل بيانيا الدالة $d$ من أجل $0 \\leqslant t \\leqslant 30$ في معلم متعامد (نأخذ: 1cm على محور الفواصل يمثّل 2 ثانية، و 1cm على محور التراتيب يمثّل 1000m).",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$d$ دالة خطية: تمثيلها جزء من مستقيم يشمل المبدأ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب نقطة ثانية، مثلا $d(20)$ ، ثم حوّلها إلى سنتيمترات بالسلّم."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "$d$ دالة خطية، تمثيلها البياني قطعة مستقيم تشمل المبدأ $O$ .",
+          "نقطة ثانية: $d(20) = 340 \\times 20 = 6800$ ، أي النقطة $(20 ; 6800)$ .",
+          "بالسلّم: $20$ ثانية ← $10cm$ أفقيا، و $6800m$ ← $6{,}8cm$ عموديا.",
+          "نرسم القطعة من $O$ إلى النقطة ذات الفاصلة $30$ والترتيب $d(30) = 10200$ ."
+        ]
+      },
+      "timeSeconds": 360
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "لصاعقة ثانية على بعد 5100m من عادل، عيّن بقراءة بيانية ثم بالحساب المدة بين رؤية البرق وسماع الرعد.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدة بالثواني",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "1734000",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المدة هي فاصلة نقطة التمثيل التي ترتيبها 5100."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حسابيا: حلّ $340t = 5100$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$340t = 5100$ ومنه $t = 15$ ثانية.",
+        "incorrect": "المطلوب العدد الذي صورته 5100: اقسم على 340."
+      },
+      "solution": {
+        "lines": [
+          "بيانيا: النقطة من التمثيل التي ترتيبها 5100 فاصلتها 15.",
+          "حسابيا: $340t = 5100$ ومنه $t = \\dfrac{5100}{340} = 15$ .",
+          "يسمع عادل الرعد بعد 15 ثانية."
+        ],
+        "result": "t = 15s"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "☜ تنصح الحماية المدنية بالاحتماء فورا إذا كانت الصاعقة على بعد أقل من 10km. سمع عادل الرعد بعد 25 ثانية من رؤية البرق. هل يجب عليه الاحتماء فورا؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-TAFSIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $d(25)$ وقارنه بـ 10km."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى الوحدات: $10km = 10000m$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$d(25) = 8500m < 10000m$ : يجب الاحتماء فورا.",
+        "incorrect": "قارن البعد بالمتر بـ 10000m."
+      },
+      "solution": {
+        "lines": [
+          "$d(25) = 340 \\times 25 = 8500$ m.",
+          "$8500m < 10000m$ ، الصاعقة على بعد أقل من 10km.",
+          "نعم، يجب على عادل الاحتماء فورا."
+        ],
+        "result": "نعم، يجب الاحتماء"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

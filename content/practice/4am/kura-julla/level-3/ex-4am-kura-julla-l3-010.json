@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-kura-julla-l3-010",
+  "lessonCode": "kura-julla",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — فقاعة أم بلية؟",
+    "estimatedMinutes": 4,
+    "tags": [
+      "الكرة",
+      "الجلة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_kura-julla_P1",
+      "modelledOn": "act-1"
+    }
+  },
+  "statement": {
+    "content": "في المطبخ: فقاعة صابون تطفو، وحبّة بازلاء خضراء، وكرة تنس طاولة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أيّ هذه المجسّمات نموذج لجلة؟",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "حبّة البازلاء",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "فقاعة الصابون",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-JULLA"
+        },
+        {
+          "id": "C",
+          "content": "كرة تنس الطاولة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-JULLA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّها مملوء حتى المركز؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الجلة مجسّم مملوء، والكرة سطح أجوف."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرة تنس الطاولة جوفاء من الداخل."
+        }
+      ],
+      "feedback": {
+        "correct": "حبّة البازلاء مملوءة: نموذج للجلة؛ الفقاعة وكرة تنس الطاولة جوفاوان: نموذجان للكرة.",
+        "incorrect": "المجسّم الأجوف نموذج للكرة لا للجلة."
+      }
+    }
+  ]
+}

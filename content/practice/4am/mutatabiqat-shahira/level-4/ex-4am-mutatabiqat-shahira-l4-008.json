@@ -1,0 +1,256 @@
+{
+  "id": "ex-4am-mutatabiqat-shahira-l4-008",
+  "lessonCode": "mutatabiqat-shahira",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2025 — شكل آخر لعبارة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "مربع فرق",
+      "تحليل",
+      "جذر تربيعي",
+      "متراجحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mutatabiqat-shahira_P2",
+      "modelledOn": "BEM 2025 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تعطى العبارة :",
+    "formulas": [
+      "E = x^2 - 10x - 11"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "بيّن أنه يمكن كتابة العبارة $E$ على الشكل : $E = (x - 5)^2 - 36$ .",
+      "statement": "نشر $(x - 5)^2$ ، العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $(x - 5)^2$ على الشكل $x^2 + mx + n$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "-10",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-MURABBA-FARQ-BILA-2AB"
+        },
+        {
+          "value": "-5",
+          "id": "MISC-MUTATABIQA-2AB-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على مربع فرق: $(a - b)^2 = a^2 - 2ab + b^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن الحدّين $a$ و $b$ ، ولا تنسَ الحد المضاعف $2ab$ ولا تربيع المعامل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$(x - 5)^2 = x^2 - 10x + 25$ إذن $m = -10$ .",
+        "incorrect": "طبّق المتطابقة الشهيرة حدًّا حدًّا (مربع كل حد والحد المضاعف)، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$E = (x - 5)^2 - 36$",
+          "$= x^2 - 2 \\times 5 \\times x + 5^2 - 36$",
+          "$= x^2 - 10x + 25 - 36$"
+        ],
+        "result": "E = x^2 - 10x - 11"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $(x - 5)^2$ على الشكل $x^2 + mx + n$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "25",
+      "misconceptionSignatures": [
+        {
+          "value": "-25",
+          "id": "MISC-MURABBA-FARQ-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$(x - 5)^2 = x^2 - 10x + 25$ إذن $n = 25$ .",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $n$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$(x - 5)^2 = x^2 - 10x + 25$"
+        ],
+        "result": "n = 25"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "حلّل العبارة $E$ إلى جداء عاملين من الدرجة الأولى.",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انطلق من الشكل $E = (x - 5)^2 - 36$ واكتب $36$ على شكل مربع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل $a^2 - b^2 = (a + b)(a - b)$ مع $a = x - 5$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك سطرًا بسطر بالحل النموذجي، وانتبه إلى الإشارات عند النشر."
+      },
+      "solution": {
+        "lines": [
+          "$E = (x - 5)^2 - 36$",
+          "$E = (x - 5)^2 - 6^2$",
+          "$E = (x - 5 - 6)(x - 5 + 6)$"
+        ],
+        "result": "E = (x - 11)(x + 1)"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب العبارة $E$ من أجل : $x = \\sqrt{2} + 5$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "-34",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الشكل $E = (x - 5)^2 - 36$ : ماذا يساوي $x - 5$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$(\\sqrt{2})^2 = 2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = (\\sqrt{2})^2 - 36 = 2 - 36 = -34$ .",
+        "incorrect": "عوّض في الشكل $(x - 5)^2 - 36$ : يكون $x - 5 = \\sqrt{2}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$E = (x - 5)^2 - 36$",
+          "$E = (\\sqrt{2} + 5 - 5)^2 - 36$",
+          "$E = (\\sqrt{2})^2 - 36 = 2 - 36$"
+        ],
+        "result": "E = -34"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "احسب قيم $x$ التي من أجلها تكون العبارة $E - x^2$ موجبة تماما.",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة هي الأعداد $x$ حيث $x < k$ : اكتب العدد $k$ فقط",
+      "expectedAnswer": "-11/10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المتراجحة $E - x^2 > 0$ وبسّط طرفها الأول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عند القسمة على عدد سالب يتغيّر اتجاه المتراجحة."
+        }
+      ],
+      "feedback": {
+        "correct": "$x < -\\dfrac{11}{10}$ .",
+        "incorrect": "$E - x^2 = -10x - 11$ : حلّ المتراجحة $-10x - 11 > 0$ وانتبه إلى اتجاهها عند القسمة على $-10$ ."
+      },
+      "solution": {
+        "lines": [
+          "$E - x^2 > 0$ معناه: $x^2 - 10x - 11 - x^2 > 0$",
+          "$-10x > 11$",
+          "$x < \\dfrac{11}{-10}$",
+          "إذن: قيم $x$ حتى تكون $E - x^2$ موجبة تماما هي كل القيم الأقل تماما من $-\\dfrac{11}{10}$"
+        ],
+        "result": "x < -\\dfrac{11}{10}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

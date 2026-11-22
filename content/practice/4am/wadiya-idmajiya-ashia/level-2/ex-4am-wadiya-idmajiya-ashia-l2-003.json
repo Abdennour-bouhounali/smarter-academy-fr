@@ -1,0 +1,235 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ashia-l2-003",
+  "lessonCode": "wadiya-idmajiya-ashia",
+  "level": 2,
+  "metadata": {
+    "title": "وضعية ممر الراجلين — الرباعي MB′BN",
+    "estimatedMinutes": 4,
+    "tags": [
+      "الانسحاب",
+      "متوازي الأضلاع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "situation",
+      "page": 136,
+      "section": "أدمج تعلّماتي"
+    }
+  },
+  "statement": {
+    "content": "ممر الراجلين [MN] عمودي على حافتي الطريق، والمسلك من الحي A إلى المدرسة B يمر بـ M ثم N (الشكل). B′ صورة B بالانسحاب الذي شعاعه $\\overrightarrow{NM}$ .",
+    "figure": {
+      "points": {
+        "R1": [
+          -4.5,
+          2
+        ],
+        "R2": [
+          5.5,
+          2
+        ],
+        "R3": [
+          5.5,
+          0
+        ],
+        "R4": [
+          -4.5,
+          0
+        ],
+        "A": [
+          -3,
+          5
+        ],
+        "M": [
+          -1,
+          2
+        ],
+        "N": [
+          -1,
+          0
+        ],
+        "B": [
+          4,
+          -3
+        ]
+      },
+      "polygons": [
+        {
+          "points": [
+            "R1",
+            "R2",
+            "R3",
+            "R4"
+          ],
+          "tone": "slate"
+        }
+      ],
+      "segments": [
+        {
+          "from": "R1",
+          "to": "R2",
+          "bold": true
+        },
+        {
+          "from": "R4",
+          "to": "R3",
+          "bold": true
+        },
+        {
+          "from": "A",
+          "to": "M",
+          "tone": "amber"
+        },
+        {
+          "from": "M",
+          "to": "N",
+          "bold": true,
+          "tone": "indigo"
+        },
+        {
+          "from": "N",
+          "to": "B",
+          "tone": "amber"
+        }
+      ],
+      "rightAngles": [
+        [
+          "R1",
+          "M",
+          "N"
+        ]
+      ],
+      "hidden": [
+        "R1",
+        "R2",
+        "R3",
+        "R4"
+      ],
+      "labels": {
+        "A": "n",
+        "B": "s",
+        "M": "ne",
+        "N": "se"
+      },
+      "grid": true,
+      "caption": "أعادت المنصّة رسم شكل الكتاب بوضوح أكبر، بنفس المعطيات",
+      "ariaLabel": "خريطة الوضعية على ورقة مرصوفة: طريق عرضه مربعان، الحي A فوق الحافة العليا بثلاثة مربعات، والمدرسة B تحت الحافة السفلى بثلاثة مربعات وعلى بعد سبعة مربعات أفقيا من A، والممر [MN] عمودي على الحافتين"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الرباعي MB′BN (في موضع كيفي للممر) هو:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "متوازي أضلاع",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "مستطيل",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "مربع",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "رباعي ليس له ضلعان متوازيان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{NM} = \\overrightarrow{BB'}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضلعان متقابلان متوازيان ومتساويان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "هل [MB′] عمودي على الحافة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{NM} = \\overrightarrow{BB'}$ : متوازي أضلاع. ليس مستطيلا في موضع كيفي لأنّ [MB′] مائل.",
+        "incorrect": "شعاعان متساويان على ضلعين متقابلين يعطيان متوازي أضلاع."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 2
+    },
+    {
+      "id": "q2",
+      "statement": "نستنتج أنّ الطول NB يساوي:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$MB'$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "MN",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$AB'$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MAMAR-NASI"
+        },
+        {
+          "id": "D",
+          "content": "AM",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في متوازي الأضلاع MB′BN."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلعان المتقابلان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "[NB] يقابل [MB′]."
+        }
+      ],
+      "feedback": {
+        "correct": "ضلعان متقابلان في متوازي الأضلاع: $NB = MB'$ .",
+        "incorrect": "[NB] و [MB′] ضلعان متقابلان."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 2
+    }
+  ]
+}

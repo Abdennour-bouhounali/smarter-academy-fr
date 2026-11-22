@@ -1,0 +1,175 @@
+{
+  "id": "ex-3am-muqaranat-natiqayn-l3-007",
+  "lessonCode": "muqaranat-natiqayn",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — أنشر ثمّ أقارن",
+    "estimatedMinutes": 12,
+    "tags": [
+      "نشر",
+      "فرق عبارتين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارتان $A = (x + 3)(x + 1)$ و $B = x^2 + 4x + 5$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "انشر $A$ واكتبها على الشكل $x^2 + bx + c$ . ما العدد $c$ ؟",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $c$ فقط",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العبارتان؟ وكيف يُكتب فرقهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الفرق بوضع العبارة الثانية بين قوسين ثم بسّط وانتبه إلى إشارة ما بعد الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض قيمة بسيطة للحرف في الفرق وفي النتيجة."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "3",
+      "feedback": {
+        "correct": "$A = x^2 + 4x + 3$ ، إذن $c = 3$ .",
+        "incorrect": "ضع العبارة الثانية بين قوسين قبل الطرح، ثمّ بسّط."
+      },
+      "solution": {
+        "lines": [
+          "$A = x^2 + x + 3x + 3 = x^2 + 4x + 3$"
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بسّط $A - B$ ، فتجد عددًا ثابتًا. ما هو؟",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر مختزل)",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العبارتان؟ وكيف يُكتب فرقهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الفرق بوضع العبارة الثانية بين قوسين ثم بسّط وانتبه إلى إشارة ما بعد الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض قيمة بسيطة للحرف في الفرق وفي النتيجة."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-2",
+      "feedback": {
+        "correct": "$A - B = -2$ .",
+        "incorrect": "ضع العبارة الثانية بين قوسين قبل الطرح، ثمّ بسّط."
+      },
+      "solution": {
+        "lines": [
+          "$A - B = x^2 + 4x + 3 - (x^2 + 4x + 5)$",
+          "$A - B = x^2 + 4x + 3 - x^2 - 4x - 5 = -2$"
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ماذا تستنتج؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما هو الفرق المبسَّط؟ ومتى يكون موجبًا ومتى يكون سالبًا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن القيمة التي ينعدم عندها الفرق، ثم انظر إلى جهتيها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر قيمة من كل جهة للتأكّد من الإشارة."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$A < B$ مهما كانت قيمة $x$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$A > B$ مهما كانت قيمة $x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-ORDER-SUB"
+        },
+        {
+          "id": "C",
+          "content": "لا نستطيع المقارنة دون معرفة $x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-NEED-VALUES"
+        }
+      ],
+      "feedback": {
+        "correct": "الفرق ثابت وسالب، إذن $A < B$ دائمًا.",
+        "incorrect": "ادرس إشارة الفرق المبسَّط على جهتي القيمة التي ينعدم عندها."
+      },
+      "solution": {
+        "lines": [
+          "$A - B = -2 < 0$ مهما كانت قيمة $x$ ، إذن $A < B$ ."
+        ]
+      }
+    }
+  ]
+}

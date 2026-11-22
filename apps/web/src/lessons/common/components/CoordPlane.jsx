@@ -1,4 +1,4 @@
-import React, { useRef, useState, useCallback } from 'react';
+import { useRef, useState, useCallback } from 'react';
 import { sampleFunction, clipAffineToRange, imageAt, antecedentsOf } from '../utils/cartesian';
 
 /**
@@ -463,8 +463,17 @@ export default function CoordPlane({
       <svg
         ref={svgRef}
         viewBox={`0 0 ${width} ${height}`}
+        // Math LTR isolation (ALGERIA_PLATFORM_MASTER_SPEC.md §14): every
+        // coordinate here is an explicit numeric x/y, but `textAnchor`
+        // ('start'/'end') on this component's <text> labels resolves
+        // relative to CSS `direction` in some renderers — forcing `dir`/
+        // `direction: ltr` here keeps axis labels and point labels anchored
+        // exactly as authored regardless of the RTL page shell around it.
+        // Never mirror the coordinate system itself for RTL (spec §14: "do
+        // NOT blindly mirror mathematical interfaces").
+        dir="ltr"
         className="w-full max-w-[460px] select-none bg-white rounded-xl border-2 border-slate-200"
-        style={{ width: size, touchAction: dragging.current ? 'none' : 'manipulation' }}
+        style={{ width: size, touchAction: dragging.current ? 'none' : 'manipulation', direction: 'ltr' }}
         {...(interactive
           ? { role: 'group', 'aria-label': ariaLabel ?? 'Repère du plan' }
           : { role: 'img', 'aria-label': ariaLabel ?? 'Repère du plan' })}

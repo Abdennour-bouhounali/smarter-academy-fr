@@ -1,0 +1,175 @@
+{
+  "id": "ex-4am-tarrid-muthallathiya-l4-005",
+  "lessonCode": "tarrid-muthallathiya",
+  "level": 4,
+  "metadata": {
+    "title": "مثلث متقايس الساقين: الارتفاع ثم الزوايا",
+    "estimatedMinutes": 9,
+    "tags": [
+      "مثلث متقايس الساقين",
+      "جيب التمام",
+      "زاوية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-muthallathiya_P3",
+      "modelledOn": "ex-28",
+      "adaptedFrom": "ex-4am-tarrid-muthallathiya-l4-007"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$ABC$ مثلث متقايس الساقين رأسه $A$ حيث $AB = AC = 10\\,\\mathrm{cm}$ و $BC = 12\\,\\mathrm{cm}$ ، و $H$ منتصف $[BC]$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب الارتفاع $AH$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث المتقايس الساقين، المتوسط $[AH]$ هو أيضا الارتفاع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خاصية فيثاغورس في المثلث $ABH$ القائم في $H$ ، و $BH = 6$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AH^2 = 100 - 36 = 64$ ومنه $AH = 8\\,\\mathrm{cm}$ .",
+        "incorrect": "الوتر في المثلث $ABH$ هو $[AB]$ ، و $BH$ نصف $BC$ ."
+      },
+      "solution": {
+        "lines": [
+          "$(AH)$ محور $[BC]$ لأن $AB = AC$ ، فالمثلث $ABH$ قائم في $H$ و $BH = 6\\,\\mathrm{cm}$ .",
+          "$AH^2 = AB^2 - BH^2 = 100 - 36 = 64$"
+        ],
+        "result": "AH = 8\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب قيس الزاوية $\\widehat{ABC}$ بالتدوير إلى الوحدة من الدرجة.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيس الزاوية بالدرجة مدوّرا إلى الوحدة",
+      "expectedAnswer": "53",
+      "misconceptionSignatures": [
+        {
+          "value": "37",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "0.6",
+          "id": "MISC-MUTH-NISBA-BADAL-QAYS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $ABH$ القائم في $H$ ، الضلعان المعلومان: ما موقع كل منهما بالنسبة إلى الزاوية $\\widehat{ABC}$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب جيب تمام الزاوية $\\widehat{ABC}$ ثم استعمل اللمسة العكسية ⁦2nd⁩ ثم ⁦cos⁻¹⁩ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الحاسبة مبرمجة على الدرجة، ثم دوّر النتيجة النهائية فقط."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\cos\\widehat{ABC} = \\dfrac{BH}{AB} = \\dfrac{6}{10}$ ، ومنه $\\widehat{ABC} \\approx 53^{\\circ}$ .",
+        "incorrect": "في المثلث القائم $ABH$ : المجاور للزاوية $B$ هو $[BH]$ والوتر $[AB]$ ."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $ABH$ القائم في $H$ : $\\cos\\widehat{ABH} = \\dfrac{BH}{AB} = \\dfrac{6}{10} = 0{,}6$",
+          "باستعمال الآلة الحاسبة (⁦cos⁻¹⁩): $\\widehat{ABC} \\approx 53{,}1301^{\\circ}$"
+        ],
+        "result": "\\widehat{ABC} \\approx 53^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "استنتج قيس الزاوية $\\widehat{BAC}$ بالتدوير إلى الوحدة من الدرجة.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيس الزاوية بالدرجة مدوّرا إلى الوحدة",
+      "expectedAnswer": "74",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "زاويتا القاعدة متقايستان، ومجموع زوايا المثلث $180^{\\circ}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أو: $\\widehat{BAC} = 2 \\times \\widehat{BAH}$ في المثلث $ABH$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل القيس كما تعطيه الحاسبة ولا تدوّر قبل النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{BAC} = 180^{\\circ} - 2 \\times \\widehat{ABC} \\approx 73{,}74^{\\circ} \\approx 74^{\\circ}$ .",
+        "incorrect": "زاويتا القاعدة $B$ و $C$ متقايستان؛ اطرح مجموعهما من $180^{\\circ}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\widehat{BAC} = 180^{\\circ} - 2 \\times \\widehat{ABC} \\approx 180^{\\circ} - 2 \\times 53{,}1301^{\\circ} = 73{,}7398^{\\circ}$",
+          "طريقة ثانية: في المثلث $ABH$ : $\\sin\\widehat{BAH} = \\dfrac{6}{10}$ و $\\widehat{BAC} = 2 \\times \\widehat{BAH}$ ، فنجد النتيجة نفسها."
+        ],
+        "result": "\\widehat{BAC} \\approx 74^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

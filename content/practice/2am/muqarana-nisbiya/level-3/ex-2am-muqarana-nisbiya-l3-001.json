@@ -1,0 +1,195 @@
+{
+  "id": "ex-2am-muqarana-nisbiya-l3-001",
+  "lessonCode": "muqarana-nisbiya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — ترتيب أعداد نسبية",
+    "estimatedMinutes": 9,
+    "tags": [
+      "ترتيب",
+      "أعداد نسبية"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 2,
+      "file": "2am-s2-69",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "ليكن الأعداد النسبية $A$ ، $B$ ، $C$ ، $D$ حيث:",
+    "formulas": [
+      "A = (4{,}2) \\quad B = (-3{,}5) \\quad C = (-0{,}35) \\quad D = (-3{,}05)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "رتّب الأعداد $A$ ، $B$ ، $C$ ، $D$ ترتيبًا تصاعديًا: اختر السلسلة الصحيحة.",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$A > C > D > B$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-OD"
+        },
+        {
+          "id": "B",
+          "content": "$B < D < C < A$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$C < D < B < A$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-BDG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بفرز الأعداد حسب إشاراتها: السالبة، ثم الصفر، ثم الموجبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب الأعداد السالبة فيما بينها حسب مسافاتها إلى الصفر: الأكبر مسافة هو الأصغر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب السلسلة كاملة بالرمز نفسه، ثم تحقّق من كل زوج متجاور."
+        }
+      ],
+      "feedback": {
+        "correct": "السالبة أولًا: $-3{,}5 < -3{,}05 < -0{,}35$ ثم الموجب: $B < D < C < A$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "العدد الموجب $A$ هو الأكبر",
+          "بين السالبة: $3{,}5 > 3{,}05 > 0{,}35$ ، فـ $-3{,}5 < -3{,}05 < -0{,}35$",
+          "$B < D < C < A$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما أكبر هذه الأعداد؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "4,2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارتي العددين قبل أي شيء آخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد السالب أصغر من الصفر، والصفر أصغر من كل عدد موجب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عند اختلاف الإشارتين لا حاجة إلى مقارنة المسافتين إلى الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "العدد الموجب الوحيد هو الأكبر: $A = 4{,}2$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$A$ هو العدد الموجب الوحيد",
+          "الأكبر هو $A = 4{,}2$"
+        ],
+        "result": "A = 4{,}2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما العدد الثالث في الترتيب التصاعدي؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "-0,35",
+      "misconceptionSignatures": [
+        {
+          "value": "-3,5",
+          "id": "MISC-MUQARANA-NISBIYA-BDG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بفرز الأعداد حسب إشاراتها: السالبة، ثم الصفر، ثم الموجبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب الأعداد السالبة فيما بينها حسب مسافاتها إلى الصفر: الأكبر مسافة هو الأصغر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب السلسلة كاملة بالرمز نفسه، ثم تحقّق من كل زوج متجاور."
+        }
+      ],
+      "feedback": {
+        "correct": "الترتيب التصاعدي: $B < D < C < A$ ، والثالث هو $C = -0{,}35$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$-3{,}5 < -3{,}05 < -0{,}35 < 4{,}2$",
+          "الثالث هو $C = -0{,}35$"
+        ],
+        "result": "C = -0{,}35"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

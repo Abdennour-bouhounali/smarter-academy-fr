@@ -1,0 +1,120 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-judhur-l2-008",
+  "lessonCode": "wadiya-idmajiya-judhur",
+  "level": 2,
+  "metadata": {
+    "title": "مثلث قائم متساوي الساقين",
+    "estimatedMinutes": 4,
+    "tags": [
+      "a√2",
+      "تدوير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-judhur_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "مثلث قائم و متساوي الساقين، طول كل من ضلعيه القائمين $5cm$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب طول الوتر على الشكل $a\\sqrt{2}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "25",
+          "id": "MISC-JIDHR-MURABBA-MANSI"
+        },
+        {
+          "value": "10",
+          "id": "MISC-JIDHR-JAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مربع الوتر يساوي مجموع مربعي الضلعين القائمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $50 = 25 \\times 2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الوتر $\\sqrt{50} = 5\\sqrt{2}\\,cm$ .",
+        "incorrect": "احسب مربع الوتر أولًا، ثم اكتب جذره على الشكل $a\\sqrt{2}$ ."
+      },
+      "solution": {
+        "lines": [
+          "مربع الوتر: $5^2 + 5^2 = 50$",
+          "الوتر: $\\sqrt{50} = \\sqrt{25 \\times 2}$"
+        ],
+        "result": "5\\sqrt{2}\\,cm"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط المدوّر إلى $0{,}1$ لطول الوتر.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة): الطول بـ cm",
+      "expectedAnswer": "7.1",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-WADIYA-TADWIR-MUBAKKIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $5\\sqrt{2}$ بالحاسبة دون تدوير مسبق."
+        }
+      ],
+      "feedback": {
+        "correct": "$5\\sqrt{2} \\approx 7{,}071$ ، و مدوّره إلى $0{,}1$ هو $7{,}1cm$ .",
+        "incorrect": "احسب الجداء كاملًا بالحاسبة ثم دوّر في الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$5\\sqrt{2} \\approx 7{,}071$"
+        ],
+        "result": "5\\sqrt{2} \\approx 7{,}1cm"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

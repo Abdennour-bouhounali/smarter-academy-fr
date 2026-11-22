@@ -1,0 +1,265 @@
+{
+  "id": "ex-2am-talim-nuqta-mustawi-l4-001",
+  "lessonCode": "talim-nuqta-mustawi",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — منتصف قطعة على الشكل",
+    "estimatedMinutes": 10,
+    "tags": [
+      "قراءة إحداثيتين",
+      "نظيرة",
+      "طول"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 2,
+      "file": "2am-s2-53",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس مبدؤه $O$ ووحدته $1\\,\\mathrm{cm}$ ، يبيّن الشكل المثلث $ABC$ والنقطة $M$ منتصف القطعة $[BC]$ .",
+    "figure": {
+      "grid": true,
+      "axes": true,
+      "points": {
+        "A": [
+          -2,
+          3
+        ],
+        "B": [
+          4,
+          3
+        ],
+        "C": [
+          -2,
+          -3
+        ],
+        "M": [
+          1,
+          0
+        ],
+        "O": [
+          0,
+          0
+        ]
+      },
+      "ariaLabel": "مثلث ABC ومنتصف M لضلعه BC في معلم متعامد ومتجانس",
+      "maxWidth": 420,
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "A"
+        ]
+      ],
+      "labels": {
+        "O": "sw"
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اقرأ إحداثيتي النقطة $M$ في الشكل.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "1",
+        "y": "0"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "0",
+            "y": "1"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNLEFT",
+          "value": {
+            "x": "-1",
+            "y": "0"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الفاصلة على محور الفواصل أوّلًا، بالنزول من النقطة أو الصعود منها عموديًّا إلى هذا المحور."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اقرأ الترتيب على محور التراتيب بالسير أفقيًّا من النقطة إلى هذا المحور؛ العدد الأوّل في الثنائية هو الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "راقب الإشارة: النقط التي على يسار محور التراتيب أو تحت محور الفواصل تأخذ عددًا سالبًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$M(1\\,;\\,0)$ .",
+        "incorrect": "راجع قراءة الإحداثيتين: الفاصلة أوّلًا على محور الفواصل ثم الترتيب على محور التراتيب."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $M$ هي $1$ وترتيبها $0$",
+          "$M(1\\,;\\,0)$"
+        ],
+        "result": "M(1\\,;\\,0)"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عيّن النقطة $A'$ نظيرة $A(-2\\,;\\,3)$ بالنسبة إلى النقطة $M(1\\,;\\,0)$ ، ثم اكتب إحداثيتيها.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "4",
+        "y": "-3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "-3",
+            "y": "4"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-BOTHSIGNS",
+          "value": {
+            "x": "2",
+            "y": "-3"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النظير بالنسبة إلى نقطة: نقطة المركز منتصف القطعة التي تصل بين النقطة ونظيرتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ على الشبكة من النقطة إلى المركز ثم تابع المسافة نفسها في الاتجاه نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق على الشبكة من أنّ المركز في الوسط."
+        }
+      ],
+      "feedback": {
+        "correct": "$A'(4\\,;\\,-3)$ .",
+        "incorrect": "النقطة $M$ هي منتصف القطعة التي تصل النقطة بنظيرتها: تابع الانتقال نفسه الذي يربط النقطة بـ $M$ ."
+      },
+      "solution": {
+        "lines": [
+          "من $A$ إلى $M$ نتحرّك بـ $3$ أفقيًّا و $-3$ عموديًّا",
+          "نتابع الانتقال نفسه فنجد $A'(4\\,;\\,-3)$"
+        ],
+        "result": "A'(4\\,;\\,-3)"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما طول القطعة $[AB]$ بالسنتيمتر ، علمًا أنّ وحدة المعلم $1\\,\\mathrm{cm}$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالسنتيمتر",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-LENSUM",
+          "value": "2"
+        },
+        {
+          "id": "MISC-NUQTA2-LENOFF",
+          "value": "7"
+        },
+        {
+          "id": "MISC-NUQTA2-LENMAX",
+          "value": "4"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "علّم النقطتين وتأكّد أنّهما على خطّ واحد من الشبكة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ الوحدات بين النقطتين على الشبكة، مرورًا بالمحور إن كان القطعة تقطعه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب عدد الوحدات في طول الوحدة إن طُلبت النتيجة بالمتر أو السنتيمتر."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد الوحدات $6$ فالطول $6\\,\\mathrm{cm}$ .",
+        "incorrect": "القطعة تقع على خطّ من الشبكة: عُدّ وحداتها واحدة واحدة، ومُرّ بالمحور إن كانت تقطعه."
+      },
+      "solution": {
+        "lines": [
+          "القطعة $[AB]$ توازي أحد المحورين",
+          "عدد وحداتها $6$",
+          "الطول $6 \\times 1 = 6\\,\\mathrm{cm}$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

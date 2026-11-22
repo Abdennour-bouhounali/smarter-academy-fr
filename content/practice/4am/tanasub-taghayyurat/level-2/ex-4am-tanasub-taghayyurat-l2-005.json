@@ -1,0 +1,201 @@
+{
+  "id": "ex-4am-tanasub-taghayyurat-l2-005",
+  "lessonCode": "tanasub-taghayyurat",
+  "level": 2,
+  "metadata": {
+    "title": "معامل كسري",
+    "estimatedMinutes": 5,
+    "tags": [
+      "معامل كسري",
+      "دالة خطية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tanasub-taghayyurat_P1",
+      "modelledOn": "act-4",
+      "adaptedFrom": "ex-4am-tanasub-taghayyurat-l2-005"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "$h$ دالة تآلفية حيث: $h(2) = 1$ و $h(6) = 3$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عيّن العبارة الجبرية للدالة $h$ .",
+      "statement": "أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "0,5",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-TAGHAYYUR-BIDUN-QISMA"
+        },
+        {
+          "value": "-0,5",
+          "id": "MISC-TAGHAYYUR-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خاصية تناسب التغيّرات: المعامل $a$ هو حاصل قسمة فرق الصورتين على فرق العددين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $\\dfrac{h(6) - h(2)}{6 - 2}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح بالترتيب نفسه في البسط والمقام، وانتبه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{2}{4} = 0{,}5$ .",
+        "incorrect": "اقسم فرق الصورتين على فرق العددين، واطرح بالترتيب نفسه في البسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "العبارة الجبرية للدالة التآلفية $h$ هي: $h(x) = ax + b$ .",
+          "إيجاد العدد $a$ (خاصية تناسب التغيّرات):",
+          "$a = \\dfrac{h(x_2) - h(x_1)}{x_2 - x_1}$",
+          "$a = \\dfrac{3 - 1}{6 - 2}$",
+          "$a = \\dfrac{2}{4}$",
+          "$a = 0{,}5$"
+        ],
+        "result": "a = 0{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "0",
+      "misconceptionSignatures": [
+        {
+          "value": "0,5",
+          "id": "MISC-TAGHAYYUR-B-NISBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$h(2) = 1$ و $h(x) = ax + b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $a$ بقيمته و $x$ بالعدد $2$ ، ثم حلّ المعادلة التي مجهولها $b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$b = 1 - 1 = 0$ .",
+        "incorrect": "بعد حساب $a$ : $b = h(x_1) - a x_1$ ، وليس حاصل قسمة الصورة على العدد."
+      },
+      "solution": {
+        "lines": [
+          "إيجاد العدد $b$ (الترتيب إلى المبدأ):",
+          "لدينا: $h(2) = 1$",
+          "أي: $0{,}5 \\times 2 + b = 1$",
+          "$1 + b = 1$",
+          "$b = 1 - 1$",
+          "$b = 0$",
+          "ومنه العبارة الجبرية للدالة $h$ هي: $h(x) = 0{,}5x$"
+        ],
+        "result": "h(x) = 0{,}5x"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما نوع الدالة $h$ ؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "دالة خطية",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "دالة ثابتة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAALUFI-A-B-MAQLUB"
+        },
+        {
+          "id": "C",
+          "content": "دالة تآلفية ليست خطية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAALUFI-THABITA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العددين $a$ و $b$ بالعدد 0."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الدالة الخطية دالة تآلفية حدّها الثابت معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "الحدّ الثابت معدوم: $h(x) = 0{,}5x$ .",
+        "incorrect": "انظر إلى العدد $b$ الذي وجدته."
+      },
+      "solution": {
+        "lines": [
+          "$h(x) = 0{,}5x + 0 = 0{,}5x$",
+          "الحدّ الثابت $b$ معدوم، إذن $h$ دالة خطية (وهي حالة خاصة من الدالة التآلفية)."
+        ],
+        "result": "دالة خطية"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

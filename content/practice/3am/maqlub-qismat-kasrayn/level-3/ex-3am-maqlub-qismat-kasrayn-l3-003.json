@@ -1,0 +1,316 @@
+{
+  "id": "ex-3am-maqlub-qismat-kasrayn-l3-003",
+  "lessonCode": "maqlub-qismat-kasrayn",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — قسمة وجمع في أبسط شكل",
+    "estimatedMinutes": 9,
+    "tags": [
+      "قسمة",
+      "عدد عشري",
+      "كسر"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 1,
+      "file": "3am-s1-110",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثاني",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "اكتب كلّ ناتج على أبسط شكل. ليكن $A = \\dfrac{2}{5} + \\dfrac{3}{4} \\times \\dfrac{2}{3}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "أحسب $A$ .",
+      "statement": "احسب $A$ .",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "9/10",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كل سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9}{10}$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{2}{5} + \\dfrac{3}{4} \\times \\dfrac{2}{3} = \\dfrac{2}{5} + \\dfrac{1}{2} = \\dfrac{4}{10} + \\dfrac{5}{10} = \\dfrac{9}{10}$ ."
+        ],
+        "result": "\\dfrac{9}{10}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "أحسب $B$ .",
+      "statement": "احسب $3 \\div 1{,}5$ .",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "2",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "9/2",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "1/2",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "2/9",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المقسوم؟ وما العدد المقسوم عليه؟ وما مقلوب هذا الأخير؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد غير معدوم هي الضرب في مقلوبه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حوّل القسمة إلى جداء، واختزل قبل أن تضرب كلّما أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 \\div 1{,}5 = 2$ لأنّ القسمة على عدد هي الضرب في مقلوبه.",
+        "incorrect": "القسمة على عدد غير معدوم هي الضرب في مقلوبه؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}5 = \\dfrac{15}{10} = \\dfrac{3}{2}$ .",
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $3 \\div \\dfrac{3}{2} = 3 \\times \\dfrac{2}{3}$ .",
+          "$= \\dfrac{3 \\times 2}{1 \\times 3} = 2$ ."
+        ],
+        "result": "2"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب $2 \\div \\dfrac{4}{5}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "5/2",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "8/5",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "2/5",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "5/8",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ الكسرين هو المقسوم وأيّهما المقسوم عليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني: نقلب المقسوم عليه وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء، اختزل العوامل المشتركة قبل الضرب، ثمّ اكتب الناتج على أبسط شكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\div \\dfrac{4}{5} = \\dfrac{5}{2}$ لأنّ قسمة كسر على كسر هي ضرب الأوّل في مقلوب الثاني.",
+        "incorrect": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني فقط، ثمّ نختزل؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $2 \\div \\dfrac{4}{5} = 2 \\times \\dfrac{5}{4}$ .",
+          "$= \\dfrac{2 \\times 5}{1 \\times 4} = \\dfrac{5}{2}$ ."
+        ],
+        "result": "\\dfrac{5}{2}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "احسب $B = 7 + 3 \\div 1{,}5 \\div \\dfrac{4}{5}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "19/2",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كل سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{19}{2}$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$B = 7 + 2 \\div \\dfrac{4}{5} = 7 + \\dfrac{5}{2} = \\dfrac{14}{2} + \\dfrac{5}{2} = \\dfrac{19}{2}$ ."
+        ],
+        "result": "\\dfrac{19}{2}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "lead": "أحسب $C$ .",
+      "statement": "احسب $C = \\dfrac{3}{5} \\div A$ .",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "2/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "27/50",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "3/2",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "50/27",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ الكسرين هو المقسوم وأيّهما المقسوم عليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني: نقلب المقسوم عليه وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء، اختزل العوامل المشتركة قبل الضرب، ثمّ اكتب الناتج على أبسط شكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{5} \\div \\dfrac{9}{10} = \\dfrac{2}{3}$ لأنّ قسمة كسر على كسر هي ضرب الأوّل في مقلوب الثاني.",
+        "incorrect": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني فقط، ثمّ نختزل؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $\\dfrac{3}{5} \\div \\dfrac{9}{10} = \\dfrac{3}{5} \\times \\dfrac{10}{9}$ .",
+          "$= \\dfrac{3 \\times 10}{5 \\times 9} = \\dfrac{2}{3}$ ."
+        ],
+        "result": "\\dfrac{2}{3}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

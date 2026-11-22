@@ -1,0 +1,234 @@
+{
+  "id": "ex-4am-aksiya-talis-l4-009",
+  "lessonCode": "aksiya-talis",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 25 — D منتصف [EF]",
+    "estimatedMinutes": 12,
+    "tags": [
+      "تمرين 25",
+      "خاصية طالس"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-25",
+      "page": 113,
+      "section": "أتعمّق",
+      "number": 25,
+      "adaptedFrom": "ex-4am-aksiya-talis-l5-002"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$ABC$ مثلث و $[AD]$ متوسطه المتعلق بالضلع $[BC]$ ، حيث $BC = 10$ و $AD = 6$ . $M$ نقطة من $[AD]$ حيث $DM = 2{,}4$ . المستقيم الموازي لـ $(AC)$ والذي يشمل $M$ يقطع $[BC]$ في $E$ ، والمستقيم الموازي لـ $(AB)$ والذي يشمل $M$ يقطع $[BC]$ في $F$ (الشكل المقابل).",
+    "figure": {
+      "points": {
+        "B": [
+          -4.0,
+          0.0
+        ],
+        "C": [
+          6.0,
+          0.0
+        ],
+        "D": [
+          1.0,
+          0.0
+        ],
+        "A": [
+          4.6,
+          4.8
+        ],
+        "M": [
+          2.44,
+          1.92
+        ],
+        "E": [
+          3.0,
+          0.0
+        ],
+        "F": [
+          -1.0,
+          0.0
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "A",
+          "C"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "A",
+          "D"
+        ],
+        {
+          "from": "M",
+          "to": "E",
+          "dashed": true
+        },
+        {
+          "from": "M",
+          "to": "F",
+          "dashed": true
+        }
+      ],
+      "labels": {
+        "D": "s",
+        "E": "s",
+        "F": "s",
+        "M": "e"
+      },
+      "ariaLabel": "مثلث ABC و [AD] متوسطه، M من [AD]، الموازي لـ (AC) المار بـ M يقطع [BC] في E، والموازي لـ (AB) المار بـ M يقطع [BC] في F",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب الطول $DE$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (طول)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "12.5",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(ME) \\parallel (AC)$ : المثلثان $DME$ و $DAC$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $\\dfrac{DE}{DC} = \\dfrac{DM}{DA}$ مع $DC = \\dfrac{BC}{2}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$DE = \\dfrac{5 \\times 2{,}4}{6} = 2$ .",
+        "incorrect": "في كل نسبة: طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، من الرأس $D$ ."
+      },
+      "solution": {
+        "lines": [
+          "$D$ منتصف $[BC]$ إذن $DC = DB = 5$ .",
+          "بما أن $(ME) \\parallel (AC)$ ، حسب خاصية طالس في المثلث $DAC$ : $\\dfrac{DE}{DC} = \\dfrac{DM}{DA}$",
+          "$\\dfrac{DE}{5} = \\dfrac{2{,}4}{6}$ ومنه $DE = \\dfrac{5 \\times 2{,}4}{6}$"
+        ],
+        "result": "DE = 2"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب الطول $DF$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (طول)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "12.5",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(MF) \\parallel (AB)$ : المثلثان $DMF$ و $DAB$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $\\dfrac{DF}{DB} = \\dfrac{DM}{DA}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$DF = \\dfrac{5 \\times 2{,}4}{6} = 2$ .",
+        "incorrect": "في كل نسبة: طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، من الرأس $D$ ."
+      },
+      "solution": {
+        "lines": [
+          "بما أن $(MF) \\parallel (AB)$ ، حسب خاصية طالس في المثلث $DAB$ : $\\dfrac{DF}{DB} = \\dfrac{DM}{DA}$",
+          "$\\dfrac{DF}{5} = \\dfrac{2{,}4}{6}$ ومنه $DF = \\dfrac{5 \\times 2{,}4}{6}$"
+        ],
+        "result": "DF = 2"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "استنتج أن $D$ منتصف القطعة $[EF]$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن $DE$ و $DF$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أين تقع $E$ و $F$ بالنسبة إلى $D$ ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$DE = DF$ و $E$ ، $F$ من جهتين مختلفتين للنقطة $D$ : $D$ منتصف $[EF]$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي: الاستقامية، الترتيب نفسه، تساوي النسبتين، ثم ذكر الخاصية العكسية لخاصية طالس."
+      },
+      "solution": {
+        "lines": [
+          "$DE = DF = 2$ ، و $E$ من $[DC]$ و $F$ من $[DB]$ : النقطتان من جهتين مختلفتين للنقطة $D$ على $(BC)$ .",
+          "إذن $D$ منتصف القطعة $[EF]$ .",
+          "ملاحظة: النتيجة صحيحة مهما كان موضع $M$ على $[AD]$ ، لأن $\\dfrac{DE}{DC} = \\dfrac{DF}{DB} = \\dfrac{DM}{DA}$ و $DB = DC$ ."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,502 @@
+{
+  "id": "ex-4am-majdulat-ihsaiya-l5-001",
+  "lessonCode": "majdulat-ihsaiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2007 — استهلاك الكهرباء لعائلة بالبويرة",
+    "estimatedMinutes": 14,
+    "tags": [
+      "وضعية إدماجية",
+      "مجال",
+      "دستور",
+      "مدى",
+      "وسيط",
+      "متوسط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_majdulat-ihsaiya_P2",
+      "modelledOn": "BEM 2007 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2007",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "حجز ربّ عائلة بالبويرة، الحريص على ترشيد الاستهلاك، في مجدول استهلاك عائلته من الكهرباء (بالكيلوواط ساعي kWh) في كل شهر من أشهر السنة الماضية:",
+    "table": {
+      "head": [
+        "",
+        "A",
+        "B"
+      ],
+      "rows": [
+        [
+          "1",
+          "الشهر",
+          "الاستهلاك (kWh)"
+        ],
+        [
+          "2",
+          "جانفي",
+          "310"
+        ],
+        [
+          "3",
+          "فيفري",
+          "280"
+        ],
+        [
+          "4",
+          "مارس",
+          "240"
+        ],
+        [
+          "5",
+          "أفريل",
+          "190"
+        ],
+        [
+          "6",
+          "ماي",
+          "170"
+        ],
+        [
+          "7",
+          "جوان",
+          "250"
+        ],
+        [
+          "8",
+          "جويلية",
+          "380"
+        ],
+        [
+          "9",
+          "أوت",
+          "400"
+        ],
+        [
+          "10",
+          "سبتمبر",
+          "290"
+        ],
+        [
+          "11",
+          "أكتوبر",
+          "200"
+        ],
+        [
+          "12",
+          "نوفمبر",
+          "240"
+        ],
+        [
+          "13",
+          "ديسمبر",
+          "290"
+        ]
+      ],
+      "sheet": true
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "عيّن مجال الخلايا التي حُجزت فيها قيم الاستهلاك.",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "⁦B1:B13⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MAJAL-KHALIYA"
+        },
+        {
+          "id": "B",
+          "content": "⁦B2:B13⁩",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "⁦A2:B13⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MAJAL-KHALIYA"
+        },
+        {
+          "id": "D",
+          "content": "⁦B2:B12⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MAJAL-KHALIYA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المجال يُكتب: الخلية الأولى ثم « ⁦:⁩ » ثم الخلية الأخيرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حدّد الخلية التي فيها أول قيمة والخلية التي فيها آخر قيمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تُدخل في المجال خلية عنوان، ولا تنس آخر خلية."
+        }
+      ],
+      "feedback": {
+        "correct": "قيم الاستهلاك الاثنتا عشرة في العمود B من B2 إلى B13 ؛ B1 فيها العنوان والعمود A فيه أسماء الأشهر.",
+        "incorrect": "المجال يبدأ بخلية أول قيمة وينتهي بخلية آخر قيمة، ولا يضمّ خلايا العناوين."
+      },
+      "solution": {
+        "lines": [
+          "العمود A فيه أسماء الأشهر، والخلية B1 فيها عنوان العمود.",
+          "قيم الاستهلاك من B2 (جانفي) إلى B13 (ديسمبر): المجال ⁦B2:B13⁩ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "عيّن الدستور الذي يُحجز في الخلية D2 ليُظهر متوسط الاستهلاك الشهري.",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "⁦=MEDIANE(B2:B13)⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-WASIT-MUTAWASSIT"
+        },
+        {
+          "id": "B",
+          "content": "⁦=MOYENNE(B2:B12)⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MAJAL-KHALIYA"
+        },
+        {
+          "id": "C",
+          "content": "⁦MOYENNE(B2:B13)⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-DUSTUR-BILA-ISHARA"
+        },
+        {
+          "id": "D",
+          "content": "⁦=MOYENNE(B2:B13)⁩",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل دستور يبدأ بالإشارة « ⁦=⁩ »، ثم اسم الدالة، ثم المجال بين قوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حدّد أولا المجال الذي يضمّ كل القيم المطلوبة، ولا شيئا غيرها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم اختر الدالة: MAX و MIN للمدى، MEDIANE للوسيط، MOYENNE للمتوسط، MODE للمنوال."
+        }
+      ],
+      "feedback": {
+        "correct": "⁦=MOYENNE(B2:B13)⁩ يُظهر 270 .",
+        "incorrect": "راجع ثلاثة أشياء: الإشارة « ⁦=⁩ » في البداية، الدالة المناسبة للمؤشّر، والمجال الذي يضمّ كل القيم."
+      },
+      "solution": {
+        "lines": [
+          "المتوسط تحسبه الدالة MOYENNE على مجال القيم الاثنتي عشرة.",
+          "الدستور: ⁦=MOYENNE(B2:B13)⁩ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "حجز ربّ العائلة دساتير المدى والوسيط والمتوسط على المجال B2:B13 .",
+      "statement": "ما هو العدد الذي يُظهره الدستور ⁦=MAX(B2:B13)-MIN(B2:B13)⁩ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "230",
+      "misconceptionSignatures": [
+        {
+          "value": "400",
+          "id": "MISC-IHSA-MADA-AKBAR-QIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MAX(…)-MIN(…)⁩ يحسب مدى القيم: أكبر قيمة ناقص أصغر قيمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر قيمة وأصغر قيمة في المجال ⁦B2:B13⁩."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح أصغر قيمة من أكبر قيمة، ولا تكتف بأكبر قيمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$400 - 170 = 230$ .",
+        "incorrect": "المدى فرق: أكبر قيمة في المجال ناقص أصغر قيمة فيه، والدستور يحسب هذا الفرق."
+      },
+      "solution": {
+        "lines": [
+          "أكبر قيمة في المجال ⁦B2:B13⁩: 400 ، وأصغر قيمة: 170 .",
+          "$400 - 170 = 230$",
+          "إذن يُظهر الدستور العدد 230 ."
+        ],
+        "result": "230"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما هو العدد الذي يُظهره الدستور ⁦=MEDIANE(B2:B13)⁩ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة إن لزم)",
+      "expectedAnswer": "265",
+      "misconceptionSignatures": [
+        {
+          "value": "315",
+          "id": "MISC-IHSA-WASIT-BILA-TARTIB"
+        },
+        {
+          "value": "270",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MEDIANE(…)⁩ يُظهر وسيط القيم: يرتّبها المجدول أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب القيم الـ 12 تصاعديا، ثم عيّن القيمتين اللتين تقعان في الوسط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لعدد زوجيّ من القيم، الوسيط نصف مجموع القيمتين الوسطيين."
+        }
+      ],
+      "feedback": {
+        "correct": "القيم مرتّبة: 170 ، 190 ، 200 ، 240 ، 240 ، 250 ، 280 ، 290 ، 290 ، 310 ، 380 ، 400 ، والوسيط 265 .",
+        "incorrect": "لا يُقرأ الوسيط إلا بعد ترتيب القيم تصاعديا، ثم نأخذ القيمة الوسطى (أو نصف مجموع القيمتين الوسطيين)."
+      },
+      "solution": {
+        "lines": [
+          "نرتّب القيم تصاعديا: 170 ، 190 ، 200 ، 240 ، 240 ، 250 ، 280 ، 290 ، 290 ، 310 ، 380 ، 400 .",
+          "عدد القيم 12 زوجيّ: الوسيط نصف مجموع القيمتين ذواتي الرتبتين 6 و 7 ، أي 250 و 280 .",
+          "$\\dfrac{250 + 280}{2} = 265$",
+          "إذن يُظهر الدستور العدد 265 ."
+        ],
+        "result": "265"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ج",
+      "statement": "ما هو العدد الذي يُظهره الدستور ⁦=MOYENNE(B2:B13)⁩ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة إن لزم)",
+      "expectedAnswer": "270",
+      "misconceptionSignatures": [
+        {
+          "value": "265",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MOYENNE(…)⁩ يقسم مجموع القيم العددية في المجال على عددها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع القيم العددية الموجودة في المجال، وعُدّها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المتوسط = مجموع القيم ÷ عددها."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3240}{12} = 270$ .",
+        "incorrect": "اجمع كل القيم العددية التي في المجال، ثم اقسم المجموع على عددها (لا على عدد آخر)."
+      },
+      "solution": {
+        "lines": [
+          "مجموع القيم: $3240$ ، وعددها 12 .",
+          "$\\dfrac{3240}{12} = 270$",
+          "إذن يُظهر الدستور العدد 270 ."
+        ],
+        "result": "270"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ا",
+      "lead": "تتوقّع العائلة للسنة القادمة استهلاكا شهريا يساوي متوسط استهلاك السنة الماضية، وسعر الكيلوواط ساعي 4,5DA . ☜ أعط المبلغ الذي ستدفعه العائلة ثمنا لكهرباء السنة القادمة.",
+      "statement": "ما هو الاستهلاك السنوي الذي تتوقّعه العائلة؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الاستهلاك بـ kWh",
+      "expectedAnswer": "3240",
+      "misconceptionSignatures": [
+        {
+          "value": "3180",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الاستهلاك الشهري المتوقّع يساوي المتوسط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في السنة 12 شهرا."
+        }
+      ],
+      "feedback": {
+        "correct": "$270 \\times 12 = 3240$ ، أي $3240\\,\\mathrm{kWh}$ .",
+        "incorrect": "اضرب الاستهلاك الشهري المتوقّع (المتوسط) في عدد أشهر السنة."
+      },
+      "solution": {
+        "lines": [
+          "الاستهلاك الشهري المتوقّع: المتوسط $270\\,\\mathrm{kWh}$ .",
+          "$270 \\times 12 = 3240$"
+        ],
+        "result": "3240"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "sub": "ب",
+      "statement": "ما هو المبلغ الذي ستدفعه العائلة؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "counted": false,
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "14580",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الاستهلاك السنوي المتوقّع هو جواب السؤال (ا)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المبلغ = الاستهلاك بالكيلوواط ساعي × 4,5 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$3240 \\times 4{,}5 = 14580$ ، أي 14580DA .",
+        "incorrect": "اضرب الاستهلاك السنوي المتوقّع في سعر الكيلوواط ساعي."
+      },
+      "solution": {
+        "lines": [
+          "$3240 \\times 4{,}5 = 14580$"
+        ],
+        "result": "14580\\,\\mathrm{DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

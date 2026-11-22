@@ -1,0 +1,175 @@
+{
+  "id": "ex-4am-hall-jabri-l4-010",
+  "lessonCode": "hall-jabri",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2007 — البن والسكر",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جملة",
+      "ترجمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_hall-jabri_P3",
+      "modelledOn": "BEM 2007 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2007",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "حل الجملة: $\\begin{cases} 2x + 3y = 2310 \\\\ 5x + 2y = 5060 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hall-jabri_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": {
+        "x": "960",
+        "y": "130"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "130",
+            "y": "960"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى معاملات المجهولين: هل يوجد معامل يساوي $1$ أو $-1$ ؟ هل يوجد معاملان متعاكسان أو متساويان؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مجهول معامله $1$ أو مجهول معبّر عنه بدلالة الآخر: التعويض. معاملان متعاكسان أو يصيران كذلك بضرب بسيط: الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد إيجاد المجهول الأول عوّض قيمته لتجد الثاني، ثم تحقق في المعادلتين."
+        }
+      ],
+      "feedback": {
+        "correct": "الثنائية $(960 ; 130)$ تحقق المعادلتين معا: هي حل الجملة.",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "نضرب طرفي المعادلة (1) في $2$ وطرفي المعادلة (2) في $-3$ :",
+          "$\\begin{cases} 4x + 6y = 4620 \\\\ -15x - 6y = -15180 \\end{cases}$",
+          "بجمع المعادلتين طرفا لطرف نجد: $-11x = -10560$",
+          "ومنه $x = 960$",
+          "نعوّض $x$ بـ $960$ في المعادلة (1): $2 \\times 960 + 3y = 2310$",
+          "$3y = 390$",
+          "ومنه $y = 130$",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(960 ; 130)"
+      },
+      "work": "optional",
+      "timeSeconds": 360
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "اشترى صاحب مقهى $2kg$ من البن و $3kg$ من السكر بمبلغ 2310DA، ثم اشترى $5kg$ من البن و $2kg$ من السكر بمبلغ 5060DA. جد ثمن الكيلوغرام الواحد من البن وثمن الكيلوغرام الواحد من السكر.",
+      "statement": "ثمن الكيلوغرام الواحد من البن:",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب الثمن بـ DA (عدد فقط)",
+      "expectedAnswer": "960",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "سمّ $x$ ثمن الكيلوغرام من البن و $y$ ثمن الكيلوغرام من السكر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلة لكل شراء وقارن بجملة السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن الكيلوغرام من البن $960DA$ .",
+        "incorrect": "اكتب معادلة لكل عملية شراء، ثم استعمل حل السؤال 01."
+      },
+      "solution": {
+        "lines": [
+          "نسمّي $x$ ثمن الكيلوغرام من البن و $y$ ثمن الكيلوغرام من السكر (بالدينار).",
+          "الشراء الأول: $2x + 3y = 2310$ ؛ الشراء الثاني: $5x + 2y = 5060$ .",
+          "هي جملة السؤال 01، وحلها الثنائية $(960 ; 130)$ .",
+          "ومنه ثمن الكيلوغرام من البن $960DA$ ومن السكر $130DA$ ."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ثمن الكيلوغرام الواحد من السكر:",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب الثمن بـ DA (عدد فقط)",
+      "expectedAnswer": "130",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هو المجهول الثاني $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن الكيلوغرام من السكر $130DA$ .",
+        "incorrect": "ثمن السكر هو العدد الثاني في الثنائية حل جملة السؤال 01."
+      },
+      "solution": {
+        "lines": [
+          "نسمّي $x$ ثمن الكيلوغرام من البن و $y$ ثمن الكيلوغرام من السكر (بالدينار).",
+          "الشراء الأول: $2x + 3y = 2310$ ؛ الشراء الثاني: $5x + 2y = 5060$ .",
+          "هي جملة السؤال 01، وحلها الثنائية $(960 ; 130)$ .",
+          "ومنه ثمن الكيلوغرام من البن $960DA$ ومن السكر $130DA$ ."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

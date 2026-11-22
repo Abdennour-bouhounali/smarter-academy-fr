@@ -2,6 +2,9 @@
 
 namespace App\Domain\Billing;
 
+use App\Models\Plan;
+use App\Models\PlanPrice;
+
 /**
  * Les offres achetables — l'autorité serveur sur « combien ça coûte ».
  *
@@ -28,7 +31,44 @@ class PlanCatalog
     {
         $plan = config("billing.plans.{$key}");
 
-        return is_array($plan) ? $plan : null;
+        if (is_array($plan)) {
+            return $plan;
+        }
+
+        // ── Les offres CONFIGURÉES EN BASE ─────────────────────────────
+        // Le produit algérien n'a aucun paiement en ligne : ces offres
+        // n'ont pas de tarif chez un fournisseur (price_id vide), donc
+        // purchasable() les refuse — c'est voulu. Elles sont rendues ici
+        // pour que `subscriptions.plan` reste lisible (nom, montant
+        // informatif) par SubscriptionManager et l'administration.
+        return $this->fromDatabase($key);
+    }
+
+    /** L'offre existe-t-elle, en configuration ou en base ? */
+    public function exists(string $key): bool
+    {
+        return $this->find($key) !== null;
+    }
+
+    /** @return array<string, mixed>|null */
+    private function fromDatabase(string $key): ?array
+    {
+        $plan = Plan::where('slug', $key)->with('currentVersion.activePrice')->first();
+        if ($plan === null) {
+            return null;
+        }
+        $price = $plan->currentVersion?->activePrice;
+
+        return [
+            'key' => $plan->slug,
+            'name' => $plan->name,
+            'description' => $plan->description,
+            'price_id' => $price?->provider_price_id,
+            'amount_cents' => $price?->amount_cents,
+            'currency' => $price?->currency ?? 'DZD',
+            'interval' => $price?->billing_interval,
+            'active' => $plan->status === Plan::STATUS_ACTIVE,
+        ];
     }
 
     /**
@@ -115,7 +155,11 @@ class PlanCatalog
             }
         }
 
-        return null;
+        // Puis les offres en base, par le tarif fournisseur d'une version
+        // publiée — chemin dormant en Algérie, gardé pour l'extensibilité.
+        $price = PlanPrice::where('provider_price_id', $priceId)->with('version.plan:id,slug')->first();
+
+        return $price?->version?->plan?->slug;
     }
 
     /** Le mode de facturation — `test` ou `live`. */

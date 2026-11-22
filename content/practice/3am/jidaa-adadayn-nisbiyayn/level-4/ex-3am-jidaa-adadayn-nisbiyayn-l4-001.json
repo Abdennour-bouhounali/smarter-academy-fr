@@ -1,0 +1,226 @@
+{
+  "id": "ex-3am-jidaa-adadayn-nisbiyayn-l4-001",
+  "lessonCode": "jidaa-adadayn-nisbiyayn",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — لماذا جداء عددين سالبين موجب؟",
+    "estimatedMinutes": 9,
+    "tags": [
+      "تبرير",
+      "خاصية التوزيع",
+      "قاعدة الإشارات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نريد أن نعرف قيمة $(−6) \\times (−5)$ باستعمال الخاصية التوزيعية للضرب على الجمع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $(−6) \\times 5$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-30",
+      "misconceptionSignatures": [
+        {
+          "value": "-1",
+          "id": "MISC-JIDAA-ADD"
+        },
+        {
+          "value": "1",
+          "id": "MISC-JIDAA-SUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة كل عامل؟ وما بعده عن الصفر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان للعاملين الإشارة نفسها فالجداء موجب، وإذا اختلفت إشارتاهما فهو سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عيّن الإشارة أولًا، ثم اضرب المسافتين إلى الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−6) \\times 5 = −30$ : العاملان مختلفا الإشارة (سالب وموجب)، إذن الجداء سالب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العاملان مختلفا الإشارة (سالب وموجب)، إذن الجداء سالب.",
+          "$6 \\times 5 = 30$",
+          "$(−6) \\times 5 = −30$"
+        ],
+        "result": "−30"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أكمل: $(−6) \\times 5 + (−6) \\times (−5) = (−6) \\times (5 + (−5)) = (−6) \\times \\square$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الخاصية التوزيعية للضرب على الجمع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أحد العددين المجموعين هو معاكس الآخر، فمجموعهما معدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الضرب في 0 يعطي 0 دائمًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 + (−5) = 0$ ، والمجموع $(−6) \\times 5 + (−6) \\times (−5)$ يساوي $(−6) \\times 0 = 0$ .",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "$5 + (−5) = 0$ لأنّ $5$ و $−5$ متعاكسان.",
+          "$(−6) \\times 0 = 0$"
+        ],
+        "result": "0"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "إذن $−30 + (−6) \\times (−5) = 0$ . ما قيمة $(−6) \\times (−5)$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "-30",
+          "id": "MISC-JIDAA-NEGNEG"
+        },
+        {
+          "value": "0",
+          "id": "MISC-JIDAA-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الخاصية التوزيعية للضرب على الجمع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أحد العددين المجموعين هو معاكس الآخر، فمجموعهما معدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الضرب في 0 يعطي 0 دائمًا."
+        }
+      ],
+      "feedback": {
+        "correct": "نضيف $30$ إلى $−30$ فنحصل على $0$ ، إذن $(−6) \\times (−5) = 30$ .",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العدد الذي نضيفه إلى $−30$ ليعطي $0$ هو معاكسه.",
+          "$(−6) \\times (−5) = 30$"
+        ],
+        "result": "30"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "استنتج قاعدة إشارة جداء عددين سالبين، واشرح لماذا لا يمكن أن يكون جداء $(−6) \\times (−5)$ سالبًا.",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الخاصية التوزيعية للضرب على الجمع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أحد العددين المجموعين هو معاكس الآخر، فمجموعهما معدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الضرب في 0 يعطي 0 دائمًا."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "لو كان $(−6) \\times (−5) = −30$ لكان $(−6) \\times 5 + (−6) \\times (−5) = −30 + (−30) = −60$ .",
+          "لكن الخاصية التوزيعية تعطي $(−6) \\times (5 + (−5)) = (−6) \\times 0 = 0$ .",
+          "التناقض يبيّن أنّ $(−6) \\times (−5) = 30$ : جداء عددين سالبين موجب."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

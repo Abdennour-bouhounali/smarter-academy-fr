@@ -1,0 +1,201 @@
+{
+  "id": "ex-4am-tarrid-khatti-l4-010",
+  "lessonCode": "tarrid-khatti",
+  "level": 4,
+  "metadata": {
+    "title": "ثمن الأنترنت — من التمثيل إلى الدستور",
+    "estimatedMinutes": 10,
+    "tags": [
+      "تمثيل بياني",
+      "تفسير النتيجة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-khatti_P3",
+      "modelledOn": "act-4",
+      "adaptedFrom": "ex-4am-tarrid-khatti-l4-010"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ثمن الأنترنت عند متعامل للهاتف النقال متناسب مع حجمه. يمثّل نصف المستقيم $(D)$ في المعلم التالي الثمن (بـ DA) بدلالة الحجم (بـ Go)، وهو يشمل النقطة $A$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          1,
+          3
+        ],
+        "H": [
+          3,
+          9
+        ]
+      },
+      "rays": [
+        {
+          "from": "O",
+          "through": "H",
+          "name": "(D)",
+          "tone": "indigo",
+          "extend": 0.05
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw",
+        "A": "e"
+      },
+      "hidden": [
+        "H"
+      ],
+      "ariaLabel": "معلم على ورقة مرصوفة: نصف مستقيم (D) من المبدأ O يشمل النقطة A",
+      "caption": "محور الفواصل: كل وحدة تمثّل 0,5Go — محور التراتيب: كل وحدة تمثّل 25DA"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اقرأ إحداثيي النقطة $A$ بالوحدات الحقيقية، ثم عيّن الدالة الخطية $f$ التي ترفق بالحجم $x$ (Go) ثمنه $f(x)$ (DA).",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "150",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-BAYANI-FASILA-TARTIB"
+        },
+        {
+          "value": "1/150",
+          "id": "MISC-KHATTIYA-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "فاصلة $A$ : وحدة واحدة، أي 0,5Go ؛ ترتيبها: 3 وحدات، أي 75DA."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$a = \\dfrac{f(x)}{x}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$A(0{,}5 ; 75)$ ، إذن $a = \\dfrac{75}{0{,}5}$ و $f(x) = 150x$ .",
+        "incorrect": "حوّل الوحدات قبل الحساب، ثم اقسم الترتيب على الفاصلة."
+      },
+      "solution": {
+        "lines": [
+          "$A(0{,}5 ; 75)$",
+          "$a = \\dfrac{75}{0{,}5} = 150$ ، إذن $f(x) = 150x$ ."
+        ],
+        "result": "f(x) = 150x"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "فسّر معامل الدالة $f$ في سياق الوضعية.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $f(1)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "$f(1) = 150$ : ثمن 1Go هو 150DA.",
+          "المعامل هو سعر الجيغا الواحد."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "مع ياسين 1000DA، والباقات تُباع بمضاعفات 0,5Go فقط. ما أكبر حجم يمكنه شراؤه؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الحجم بـ Go (عشري بالفاصلة)",
+      "expectedAnswer": "6,5",
+      "misconceptionSignatures": [
+        {
+          "value": "20/3",
+          "id": "MISC-TARRID-TAFSIR"
+        },
+        {
+          "value": "7",
+          "id": "MISC-TARRID-TAFSIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ $f(x) = 1000$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحجم يجب أن يكون مضاعفا لـ 0,5 ولا يتجاوز الحل."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{1000}{150} \\approx 6{,}67$ ، وأكبر مضاعف لـ 0,5 لا يتجاوزه: $6{,}5Go$ (بـ 975DA).",
+        "incorrect": "الحل الرياضي ليس بالضرورة مضاعفا لـ 0,5: خذ أكبر مضاعف لا يتجاوزه."
+      },
+      "solution": {
+        "lines": [
+          "$150x = 1000$ ، $x = \\dfrac{1000}{150} = \\dfrac{20}{3} \\approx 6{,}67$",
+          "أكبر مضاعف لـ 0,5 لا يتجاوز $6{,}67$ هو $6{,}5$ : $f(6{,}5) = 975 \\leqslant 1000$ و $f(7) = 1050 > 1000$ .",
+          "يشتري ياسين $6{,}5Go$ على الأكثر."
+        ],
+        "result": "6{,}5Go"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

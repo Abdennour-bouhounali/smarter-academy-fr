@@ -1,0 +1,112 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l2-001",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 2,
+  "metadata": {
+    "title": "نشاط 5 — الزاوية المركزية في المثلث المتقايس الأضلاع",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الزاوية المركزية",
+      "الزاوية المحيطية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-5",
+      "page": 153,
+      "section": "أنشطة",
+      "number": 5
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 153): MPN مثلث متقايس الأضلاع مرسوم في الدائرة التي مركزها O.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "M": [
+          0,
+          2
+        ],
+        "N": [
+          -1.732,
+          -1
+        ],
+        "P": [
+          1.732,
+          -1
+        ]
+      },
+      "circles": [
+        {
+          "center": "O",
+          "radius": 2
+        }
+      ],
+      "segments": [
+        [
+          "M",
+          "N"
+        ],
+        [
+          "N",
+          "P"
+        ],
+        [
+          "P",
+          "M"
+        ]
+      ],
+      "ariaLabel": "دائرة مركزها O ومثلث متقايس الأضلاع MPN مرسوم داخلها: M في الأعلى، N في الأسفل على اليسار، P في الأسفل على اليمين",
+      "maxWidth": 340
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "قيس الزاوية المركزية $\\widehat{NOP}$ التي تحصر مع $\\widehat{NMP}$ نفس القوس (بالدرجات):",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح (بالدرجات)",
+      "expectedAnswer": "120",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-DIF",
+          "value": "30"
+        },
+        {
+          "id": "MISC-MUNTAZAM-MARKAZIYA",
+          "value": "60"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما قيس الزاوية المحيطية $\\widehat{NMP}$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الزاوية المركزية ضعف الزاوية المحيطية التي تحصر معها نفس القوس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضاعف قيس زاوية المثلث المتقايس الأضلاع."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{NOP} = 2 \\times \\widehat{NMP} = 2 \\times 60^\\circ$ .",
+        "incorrect": "الزاوية المركزية ضعف المحيطية، لا نصفها."
+      },
+      "difficulty": 2
+    }
+  ]
+}

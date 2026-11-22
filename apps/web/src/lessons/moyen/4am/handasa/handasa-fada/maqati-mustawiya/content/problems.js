@@ -1,0 +1,405 @@
+/**
+ * Les trois « مسائل » du درس « المقاطع المستوية للمجسمات المألوفة » (modules 5, 6, 7) — des exercices COMPLETS de type
+ * امتحان, résolus pas à pas (common/problems/GuidedProblem.jsx).
+ *
+ * AJOUTS DE LA PLATEFORME, déclarés comme tels (`addition('exam_style_problem')`) : le manuel ne les contient pas. Ils restent
+ * dans le périmètre de la leçon : la section d'une sphère (cercle de rayon √(R² − h²), « rien » si h > R), la section d'un pavé
+ * parallèle à une face ou à une arête, la section d'une pyramide parallèle à la base (réduction de rapport SE/SA, Thalès) —
+ * jamais l'aire de la sphère ni le volume de la boule (درس 2), jamais l'effet de k sur les aires et volumes (درس 4), jamais une
+ * section oblique. Prérequis utilisés : فيثاغورس, طالس, la بلاطة قائمة, le périmètre du carré.
+ *
+ * La مسألة 1 est « مسألة الدرس » : son énoncé et sa figure vivent dans `LESSON_CONFIG.lessonProblem` (montrés dès le sommaire
+ * et rappelés à la fin du module 1, prolongement du lab متقدم : l'IMPRIMANTE 3D du club, une sphère imprimée couche par couche,
+ * ici R = 6,5 coupée par deux plans), et se résout ici. Contextes 2 et 3 : ceux réservés à cette leçon (le bloc de fromage
+ * tranché, la verrière pyramidale coupée parallèlement à sa base).
+ *
+ * Chaque nombre est vérifié par calcul dans ./problems.test.js.
+ */
+import { addition } from '../../_unit/unitMeta.js';
+import { LESSON_CONFIG } from '../lesson.config.js';
+
+const SOURCE = addition('exam_style_problem');
+
+/** مسألة 2 — le bloc 30 × 12 × 8 (haut ABCD, bas EFGH) : une tranche parallèle à BCGF (amber) et le coin coupé MNPQ (emerald). */
+const FIG_CHEESE = {
+  kind: 'space',
+  view: { azimuth: 30, elevation: 30 },
+  points: {
+    A: [0, 0, 8], B: [30, 0, 8], C: [30, 12, 8], D: [0, 12, 8], E: [0, 0, 0], F: [30, 0, 0], G: [30, 12, 0], H: [0, 12, 0],
+    I: [10, 0, 8], J: [10, 12, 8], K: [10, 12, 0], L: [10, 0, 0],
+    M: [22, 12, 8], N: [30, 6, 8], P: [30, 6, 0], Q: [22, 12, 0],
+  },
+  solids: [{ type: 'polyhedron', faces: [['A', 'B', 'C', 'D'], ['E', 'F', 'G', 'H'], ['A', 'B', 'F', 'E'], ['B', 'C', 'G', 'F'], ['C', 'D', 'H', 'G'], ['D', 'A', 'E', 'H']], tone: 'amber' }],
+  sections: [{ points: ['I', 'J', 'K', 'L'], tone: 'amber' }, { points: ['M', 'N', 'P', 'Q'], tone: 'emerald' }],
+  segments: [{ from: 'A', to: 'B', label: '30 cm' }, { from: 'A', to: 'D', label: '12 cm' }, { from: 'B', to: 'F', label: '8 cm' }],
+  hidden: ['I', 'J', 'K', 'L'],
+  ariaLabel: 'قالب جبن على شكل بلاطة قائمة ABCDEFGH أبعادها 30 cm و 12 cm و 8 cm: شريحة يقطعها مستو يوازي الوجه BCGF، وفي الركن C مقطع MNPQ بمستو شاقولي يوازي الحرف [CG] حيث M من [CD] و N من [CB]',
+  maxWidth: 440,
+};
+
+/** مسألة 3 — le هرم منتظم SABCD (AB = 2, SA = 2,25, hauteur 1,75) ; EFGH à SE = 2/5 SA, IJKL à SI = 3/5 SA. */
+const FIG_SKYLIGHT = {
+  kind: 'space',
+  view: { azimuth: -62, elevation: 18 },
+  points: {
+    S: [0, 0, 1.75], A: [-1, -1, 0], B: [1, -1, 0], C: [1, 1, 0], D: [-1, 1, 0],
+    E: [-0.4, -0.4, 1.05], F: [0.4, -0.4, 1.05], G: [0.4, 0.4, 1.05], H: [-0.4, 0.4, 1.05],
+    I: [-0.6, -0.6, 0.7], J: [0.6, -0.6, 0.7], K: [0.6, 0.6, 0.7], L: [-0.6, 0.6, 0.7],
+  },
+  solids: [{ type: 'polyhedron', faces: [['A', 'B', 'C', 'D'], ['S', 'A', 'B'], ['S', 'B', 'C'], ['S', 'C', 'D'], ['S', 'D', 'A']], tone: 'sky' }],
+  sections: [{ points: ['E', 'F', 'G', 'H'], tone: 'amber' }, { points: ['I', 'J', 'K', 'L'], tone: 'emerald' }],
+  segments: [{ from: 'A', to: 'B', label: '2 m' }],
+  ariaLabel: 'منور على شكل هرم منتظم SABCD قاعدته المربع ABCD الذي ضلعه 2 m، يقطعه مستويان أفقيان يوازيان القاعدة: الإطار EFGH قرب الرأس S، والإطار IJKL تحته، و E و I على الحرف [SA]',
+  maxWidth: 400,
+};
+
+export const PROBLEMS = [
+  {
+    id: 'masala-1',
+    tone: 'indigo',
+    title: 'مسألة 1 — غطاء مصباح من الطابعة',
+    context: LESSON_CONFIG.lessonProblem.title,
+    headline: 'مسألة الدرس',
+    emoji: '🖨️',
+    source: SOURCE,
+    statement: LESSON_CONFIG.lessonProblem.statement,
+    figure: LESSON_CONFIG.lessonProblem.figure,
+    data: [
+      { id: 'radius', text: 'نصف قطر الكرة 6,5 cm', useful: true },
+      { id: 'planeP', text: 'المستوي الأفقي السفلي يبعد عن المركز بـ 6 cm', useful: true },
+      { id: 'ring', text: 'قطر حلقة المصباح 7,8 cm', useful: true },
+      { id: 'layer', text: 'سمك كل طبقة 0,2 mm', useful: true },
+      { id: 'time', text: 'طباعة الطبقة الواحدة تدوم 15 ثانية', useful: true },
+      { id: 'spool', text: 'طول الخيط في البكرة 330 m', useful: false },
+      { id: 'colour', text: 'لون الغطاء أبيض', useful: false },
+    ],
+    parts: [
+      {
+        label: '1)', title: 'قاعدة الغطاء',
+        question: 'ما طبيعة مقطع الكرة بالمستوي $(P)$ ؟ احسب نصف قطره.',
+        asks: ['طبيعة مقطع الكرة بالمستوي $(P)$', 'نصف قطر هذا المقطع'],
+        steps: [
+          { kind: 'sort' },
+          { kind: 'choice', role: 'conclude', ask: 0, requires: ['maqta-kura'],
+            prompt: 'نقارن بعد المستوي $(P)$ عن المركز بنصف قطر الكرة. مقطع الكرة بالمستوي $(P)$ :',
+            options: [
+              'دائرة مركزها $A$ ، لأن $0 < 6 < 6{,}5$',
+              'دائرة كبرى مركزها $O$ ونصف قطرها $6{,}5\\,\\mathrm{cm}$',
+              'لا شيء: المستوي $(P)$ لا يقطع الكرة',
+            ],
+            correct: 0,
+            explain: 'بعد المستوي عن المركز $OA = 6$ وهو بين $0$ و $R = 6{,}5$ : المقطع دائرة مركزها $A$ ، المسقط العمودي لـ $O$ على $(P)$ .' },
+          { kind: 'choice', role: 'translate', requires: ['tariqat-nisf-qutr', 'fithaghuras'],
+            prompt: 'لتكن $M$ نقطة من هذا المقطع. لحساب نصف قطره $AM$ نستعمل:',
+            options: [
+              'خاصية فيثاغورس في المثلث $OAM$ القائم في $A$',
+              'الفرق بين الطولين: $AM = OM - OA$',
+              'خاصية طالس في المثلث $OAM$',
+            ],
+            correct: 0,
+            explain: 'المستقيم $(OA)$ عمودي على المستوي $(P)$ فهو عمودي على $(AM)$ : المثلث $OAM$ قائم في $A$ ، و $OM = 6{,}5$ لأن $M$ من الكرة.' },
+          { kind: 'numeric', role: 'compute', requires: ['tariqat-nisf-qutr'],
+            prompt: 'مربع نصف القطر $AM^2$ :', expected: 6.25, display: '6,25',
+            explain: '$AM^2 = OM^2 - OA^2 = 6{,}5^2 - 6^2 = 42{,}25 - 36 = 6{,}25$ .' },
+          { kind: 'numeric', role: 'answer', ask: 1, requires: ['tariqat-nisf-qutr'],
+            prompt: 'نصف قطر المقطع $AM$ :', expected: 2.5, display: '2,5', suffix: 'cm',
+            explain: '$2{,}5^2 = 6{,}25$ ، إذن $AM = 2{,}5$ . (الطرح $6{,}5 - 6 = 0{,}5$ ليس نصف القطر: نطرح المربعين ثم نأخذ الجذر.)' },
+          { kind: 'solution', lines: [
+            'بعد المستوي $(P)$ عن المركز $OA = 6$ و $6 < 6{,}5$ : المقطع دائرة مركزها $A$ .',
+            'المثلث $OAM$ قائم في $A$ ، وحسب خاصية فيثاغورس: $AM^2 = 6{,}5^2 - 6^2 = 42{,}25 - 36 = 6{,}25$ .',
+            'إذن قاعدة الغطاء دائرة مركزها $A$ ونصف قطرها $AM = 2{,}5\\,\\mathrm{cm}$ .',
+          ] },
+        ],
+      },
+      {
+        label: '2)', title: 'موضع مستوي الفتحة',
+        question: 'تُركَّب حلقة المصباح تماما على حافة الفتحة العليا، فمقطع الكرة بالمستوي $(Q)$ دائرة قطرها $7{,}8\\,\\mathrm{cm}$ . على أيّ بعد من المركز $O$ يجب وضع المستوي $(Q)$ ؟ اقترح زميل وضعه على بعد $7\\,\\mathrm{cm}$ من $O$ : ماذا يحدث عندئذ؟',
+        asks: ['البعد $OB$', 'ماذا يحدث على بعد $7\\,\\mathrm{cm}$ ؟'],
+        steps: [
+          { kind: 'numeric', role: 'compute',
+            prompt: 'نصف قطر الفتحة $BE$ ($E$ نقطة من حافتها):', expected: 3.9, display: '3,9',
+            explain: 'قطر الفتحة $7{,}8$ ونصف قطرها نصفه: $BE = 7{,}8 \\div 2 = 3{,}9$ .' },
+          { kind: 'choice', role: 'translate', requires: ['tariqat-nisf-qutr', 'fithaghuras'],
+            prompt: 'المثلث $OBE$ قائم في $B$ ، والمجهول هذه المرة هو $OB$ . نكتب:',
+            options: ['$OB^2 = OE^2 - BE^2$', '$OB^2 = OE^2 + BE^2$', '$OB = OE - BE$'],
+            correct: 0, cols: 3,
+            explain: 'الوتر هو $OE = 6{,}5$ لأن $E$ من الكرة: $OE^2 = OB^2 + BE^2$ ، ومنه $OB^2 = OE^2 - BE^2$ .' },
+          { kind: 'numeric', role: 'compute', requires: ['tariqat-nisf-qutr'],
+            prompt: 'مربع البعد $OB^2$ :', expected: 27.04, display: '27,04',
+            explain: '$OB^2 = 6{,}5^2 - 3{,}9^2 = 42{,}25 - 15{,}21 = 27{,}04$ .' },
+          { kind: 'numeric', role: 'answer', ask: 0, requires: ['tariqat-nisf-qutr'],
+            prompt: 'البعد $OB$ :', expected: 5.2, display: '5,2', suffix: 'cm',
+            explain: '$5{,}2^2 = 27{,}04$ ، إذن $OB = 5{,}2$ ، وهو أصغر من $6{,}5$ : المستوي $(Q)$ يقطع الكرة فعلا.' },
+          { kind: 'choice', role: 'conclude', ask: 1, requires: ['maqta-kura'],
+            prompt: 'إذا وُضع المستوي $(Q)$ على بعد $7\\,\\mathrm{cm}$ من $O$ :',
+            options: [
+              'لا يقطع الكرة لأن $7 > 6{,}5$ : لا فتحة ولا طبقة في هذا الموضع',
+              'يقطع الكرة وفق دائرة نصف قطرها $\\sqrt{7^2 - 6{,}5^2}$',
+              'يمسّ الكرة في نقطة واحدة',
+            ],
+            correct: 0,
+            explain: 'بعد المستوي عن المركز أكبر من نصف القطر ($7 > 6{,}5$): المستوي لا يقطع الكرة. لا يمسّها إلا على بعد $6{,}5$ بالضبط.' },
+          { kind: 'solution', lines: [
+            'نصف قطر الفتحة $BE = 7{,}8 \\div 2 = 3{,}9$ ، والمثلث $OBE$ قائم في $B$ و $OE = 6{,}5$ .',
+            '$OB^2 = 6{,}5^2 - 3{,}9^2 = 42{,}25 - 15{,}21 = 27{,}04$ ، إذن $OB = 5{,}2$ .',
+            'يوضع المستوي $(Q)$ على بعد $5{,}2\\,\\mathrm{cm}$ من $O$ ؛ أمّا على بعد $7\\,\\mathrm{cm}$ فلا يقطع الكرة لأن $7 > 6{,}5$ .',
+          ] },
+        ],
+      },
+      {
+        label: '3)', title: 'الطبقات ومدّة الطباعة',
+        question: 'ما ارتفاع الغطاء المطبوع، أي البعد $AB$ بين المستويين $(P)$ و $(Q)$ ؟ كم طبقة تطبعها الطابعة؟ احسب مدّة الطباعة بالدقائق.',
+        asks: ['ارتفاع الغطاء $AB$', 'عدد الطبقات', 'مدّة الطباعة بالدقائق'],
+        steps: [
+          { kind: 'choice', role: 'translate',
+            prompt: 'المستويان $(P)$ و $(Q)$ على جانبي المركز $O$ ، فارتفاع الغطاء:',
+            options: ['$AB = OA + OB$', '$AB = OB - OA$', '$AB = 2 \\times 6{,}5$'],
+            correct: 0, cols: 3,
+            explain: '$A$ تحت $O$ و $B$ فوقه على المستقيم نفسه: $AB = OA + OB$ . القطر $13$ هو ارتفاع الكرة كاملة، والغطاء مقطوع من الجهتين.' },
+          { kind: 'numeric', role: 'answer', ask: 0,
+            prompt: 'ارتفاع الغطاء $AB$ :', expected: 11.2, display: '11,2', suffix: 'cm',
+            explain: '$AB = 6 + 5{,}2 = 11{,}2$ ، وهو أقل من القطر $13$ .' },
+          { kind: 'numeric', role: 'compute',
+            prompt: 'هذا الارتفاع بالمليمتر:', expected: 112, suffix: 'mm',
+            explain: '$1\\,\\mathrm{cm}$ فيه $10\\,\\mathrm{mm}$ : $11{,}2 \\times 10 = 112$ .' },
+          { kind: 'numeric', role: 'answer', ask: 1,
+            prompt: 'عدد الطبقات:', expected: 560, suffix: 'طبقة',
+            explain: 'كل طبقة سمكها $0{,}2\\,\\mathrm{mm}$ : $112 \\div 0{,}2 = 560$ .' },
+          { kind: 'numeric', role: 'answer', ask: 2,
+            prompt: 'مدّة الطباعة:', expected: 140, suffix: 'دقيقة',
+            explain: '$560 \\times 15 = 8400$ ثانية، و $8400 \\div 60 = 140$ دقيقة.' },
+          { kind: 'solution', lines: [
+            'ارتفاع الغطاء $AB = OA + OB = 6 + 5{,}2 = 11{,}2$ ، أي $11{,}2 \\times 10 = 112$ مليمترا.',
+            'عدد الطبقات: $112 \\div 0{,}2 = 560$ طبقة.',
+            'مدّة الطباعة: $560 \\times 15 = 8400$ ثانية، و $8400 \\div 60 = 140$ دقيقة، أي ساعتان و 20 دقيقة.',
+          ] },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'masala-2',
+    tone: 'teal',
+    title: 'مسألة 2 — قالب الجبن في محل الألبان',
+    context: 'شرائح وركن من قالب جبن على شكل بلاطة قائمة',
+    emoji: '🧀',
+    source: SOURCE,
+    statement: 'في محل لبيع الألبان والأجبان قالب جبن على شكل بلاطة قائمة $ABCDEFGH$ كما في الشكل المقابل، طوله $AB = 30\\,\\mathrm{cm}$ وعرضه $BC = 12\\,\\mathrm{cm}$ وارتفاعه $CG = 8\\,\\mathrm{cm}$ ، وثمنه 3000 دج. يقطع البائع القالب بسلك مشدود وفق مستويات توازي الوجه $BCGF$ ، فيحصل على شرائح سُمك كل منها $1{,}5\\,\\mathrm{cm}$ . وطلب زبون قطعة من ركن قالب آخر مماثل، فقطعه البائع بمستو شاقولي يوازي الحرف $[CG]$ ويشمل النقطة $M$ من $[CD]$ والنقطة $N$ من $[CB]$ حيث $CM = 8\\,\\mathrm{cm}$ و $CN = 6\\,\\mathrm{cm}$ . كتلة القالب $3{,}6\\,\\mathrm{kg}$ ، ويفتح المحل على الساعة 7 صباحا لأنّ صاحبه يحرص على احترام مواعيد زبائنه.',
+    figure: FIG_CHEESE,
+    data: [
+      { id: 'dims', text: 'أبعاد القالب 30 cm و 12 cm و 8 cm', useful: true },
+      { id: 'planes', text: 'مستويات القطع توازي الوجه الذي بعداه 12 cm و 8 cm', useful: true },
+      { id: 'slice', text: 'سمك الشريحة 1,5 cm', useful: true },
+      { id: 'corner', text: 'نقطتا قطع الركن على بعد 8 cm و 6 cm من الرأس', useful: true },
+      { id: 'price', text: 'ثمن القالب 3000 دج', useful: true },
+      { id: 'mass', text: 'كتلة القالب 3,6 kg', useful: false },
+      { id: 'hour', text: 'يفتح المحل على الساعة 7', useful: false },
+    ],
+    parts: [
+      {
+        label: '1)', title: 'مقطع يوازي وجها',
+        question: 'ما طبيعة مقطع القالب بمستو يوازي الوجه $BCGF$ ؟ احسب مساحته.',
+        asks: ['طبيعة المقطع', 'مساحة المقطع'],
+        steps: [
+          { kind: 'sort' },
+          { kind: 'choice', role: 'translate', requires: ['balata-qaima'],
+            prompt: 'بعدا الوجه $BCGF$ هما:',
+            options: ['$BC$ و $CG$', '$AB$ و $BC$', '$AB$ و $CG$'],
+            correct: 0, cols: 3,
+            explain: 'الوجه $BCGF$ مستطيل ضلعاه المتتاليان $[BC]$ و $[CG]$ : $BC = 12$ و $CG = 8$ .' },
+          { kind: 'choice', role: 'conclude', ask: 0, requires: ['maqta-balata'],
+            prompt: 'مقطع القالب بمستو يوازي الوجه $BCGF$ :',
+            options: [
+              'مستطيل له نفس بعدي الوجه $BCGF$ : $12\\,\\mathrm{cm}$ و $8\\,\\mathrm{cm}$',
+              'مستطيل بعداه $30\\,\\mathrm{cm}$ و $8\\,\\mathrm{cm}$',
+              'مستطيل يصغر كلما ابتعد السلك عن الوجه $BCGF$',
+            ],
+            correct: 0,
+            explain: 'مقطع بلاطة قائمة بمستو يوازي أحد أوجهها مستطيل له نفس بعدي ذلك الوجه، أينما مرّ المستوي.' },
+          { kind: 'numeric', role: 'answer', ask: 1, requires: ['maqta-balata'],
+            prompt: 'مساحة المقطع:', expected: 96, suffix: 'cm²',
+            explain: '$12 \\times 8 = 96$ . ($30 \\times 8 = 240$ مساحة الوجه $ABFE$ الذي لا يوازيه المستوي.)' },
+          { kind: 'solution', lines: [
+            'المستوي يوازي الوجه $BCGF$ : المقطع مستطيل له نفس بعدي هذا الوجه.',
+            'بعداه $BC = 12\\,\\mathrm{cm}$ و $CG = 8\\,\\mathrm{cm}$ ، ومساحته $12 \\times 8 = 96\\,\\mathrm{cm}^2$ .',
+          ] },
+        ],
+      },
+      {
+        label: '2)', title: 'قطعة الركن',
+        question: 'ما طبيعة مقطع القالب بالمستوي الذي يشمل $M$ و $N$ ويوازي الحرف $[CG]$ ؟ احسب الطول $MN$ ، ثم مساحة هذا المقطع.',
+        asks: ['طبيعة المقطع', 'الطول $MN$', 'مساحة المقطع'],
+        steps: [
+          { kind: 'choice', role: 'conclude', ask: 0, requires: ['maqta-balata'],
+            prompt: 'المقطع $MNPQ$ ($P$ و $Q$ على الوجه السفلي):',
+            options: [
+              'مستطيل أحد بعديه $MN$ والآخر يساوي طول الحرف $[CG]$',
+              'مثلث رؤوسه $M$ و $N$ و $G$',
+              'مستطيل له نفس بعدي الوجه $BCGF$',
+            ],
+            correct: 0,
+            explain: 'مقطع بلاطة قائمة بمستو يوازي أحد أحرفها مستطيل طوله أو عرضه يساوي طول ذلك الحرف: $MQ = CG = 8$ .' },
+          { kind: 'choice', role: 'translate', requires: ['fithaghuras'],
+            prompt: 'لحساب الطول $MN$ نستعمل:',
+            options: [
+              'خاصية فيثاغورس في المثلث $MCN$ القائم في $C$',
+              'المجموع $CM + CN$',
+              'خاصية طالس في المثلث $MCN$',
+            ],
+            correct: 0,
+            explain: 'الوجه العلوي مستطيل، فالزاوية في $C$ قائمة، و $[MN]$ وتر المثلث $MCN$ .' },
+          { kind: 'numeric', role: 'compute', requires: ['fithaghuras'],
+            prompt: 'مربع الطول $MN^2$ :', expected: 100,
+            explain: '$MN^2 = CM^2 + CN^2 = 8^2 + 6^2 = 64 + 36 = 100$ .' },
+          { kind: 'numeric', role: 'answer', ask: 1, requires: ['fithaghuras'],
+            prompt: 'الطول $MN$ :', expected: 10, suffix: 'cm',
+            explain: '$10^2 = 100$ ، إذن $MN = 10$ ، وليس $8 + 6 = 14$ .' },
+          { kind: 'numeric', role: 'answer', ask: 2, requires: ['maqta-balata'],
+            prompt: 'مساحة المقطع:', expected: 80, suffix: 'cm²',
+            explain: 'المقطع مستطيل بعداه $MN = 10$ و $MQ = CG = 8$ : المساحة $10 \\times 8 = 80$ .' },
+          { kind: 'solution', lines: [
+            'المستوي يوازي الحرف $[CG]$ : المقطع $MNPQ$ مستطيل أحد بعديه $MQ = CG = 8\\,\\mathrm{cm}$ .',
+            'المثلث $MCN$ قائم في $C$ : $MN^2 = 8^2 + 6^2 = 64 + 36 = 100$ ، إذن $MN = 10\\,\\mathrm{cm}$ .',
+            'مساحة المقطع: $10 \\times 8 = 80\\,\\mathrm{cm}^2$ .',
+          ] },
+        ],
+      },
+      {
+        label: '3)', title: 'الشرائح وثمنها',
+        question: 'يبيع البائع كل شرائح القالب بالثمن نفسه، ليحصل على ثمن القالب كاملا. كم شريحة يحصل عليها من قالب كامل؟ هل للشرائح كلها الوجه نفسه؟ احسب ثمن الشريحة الواحدة.',
+        asks: ['عدد الشرائح', 'هل للشرائح كلها الوجه نفسه؟', 'ثمن الشريحة الواحدة'],
+        steps: [
+          { kind: 'choice', role: 'translate',
+            prompt: 'تتوالى الشرائح على طول الحرف:',
+            options: ['$[AB]$ الذي طوله $30\\,\\mathrm{cm}$', '$[BC]$ الذي طوله $12\\,\\mathrm{cm}$', '$[CG]$ الذي طوله $8\\,\\mathrm{cm}$'],
+            correct: 0,
+            explain: 'مستويات القطع توازي الوجه $BCGF$ فهي عمودية على الحرف $[AB]$ : الشرائح تصطفّ على طوله.' },
+          { kind: 'numeric', role: 'answer', ask: 0,
+            prompt: 'عدد الشرائح:', expected: 20, suffix: 'شريحة',
+            explain: '$30 \\div 1{,}5 = 20$ .' },
+          { kind: 'choice', role: 'conclude', ask: 1, requires: ['maqta-balata'],
+            prompt: 'وجه كل شريحة:',
+            options: [
+              'نعم: كل مقطع يوازي $BCGF$ مستطيل بعداه $12\\,\\mathrm{cm}$ و $8\\,\\mathrm{cm}$ ، فالشرائح متطابقة',
+              'لا: الوجه يصغر كلما اقتربت الشريحة من طرف القالب',
+              'لا: شريحتا الطرفين فقط لهما وجه بعداه $12\\,\\mathrm{cm}$ و $8\\,\\mathrm{cm}$',
+            ],
+            correct: 0,
+            explain: 'المقطع الموازي لوجه لا يتغيّر عندما ينسحب المستوي: كل الشرائح لها الوجه نفسه والسمك نفسه، فلها الثمن نفسه.' },
+          { kind: 'numeric', role: 'answer', ask: 2,
+            prompt: 'ثمن الشريحة الواحدة:', expected: 150, suffix: 'دج',
+            explain: '$3000 \\div 20 = 150$ .' },
+          { kind: 'solution', lines: [
+            'المستويات توازي الوجه $BCGF$ وتتوالى على الحرف $[AB]$ : عدد الشرائح $30 \\div 1{,}5 = 20$ .',
+            'كل مقطع يوازي الوجه $BCGF$ مستطيل بعداه $12\\,\\mathrm{cm}$ و $8\\,\\mathrm{cm}$ : للشرائح كلها الوجه نفسه والسمك نفسه.',
+            'ثمن الشريحة الواحدة: $3000 \\div 20 = 150$ دج.',
+          ] },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'masala-3',
+    tone: 'rose',
+    title: 'مسألة 3 — المنور الهرمي وإطاراه',
+    context: 'إطاران أفقيان في منور على شكل هرم منتظم',
+    emoji: '🔺',
+    source: SOURCE,
+    statement: 'في سقف قاعة المطالعة بالمكتبة البلدية منوَر زجاجي على شكل هرم منتظم $SABCD$ كما في الشكل المقابل، قاعدته المربع $ABCD$ الذي ضلعه $2\\,\\mathrm{m}$ ، وطول كل حرف جانبي $2{,}25\\,\\mathrm{m}$ . لتثبيت ألواح الزجاج يركّب الحدّاد، متقنا عمله، إطارين أفقيين من الألمنيوم يوازيان القاعدة، رؤوس كل منهما على الأحرف $[SA]$ و $[SB]$ و $[SC]$ و $[SD]$ : الإطار $EFGH$ حيث $E$ من $[SA]$ و $SE = 0{,}9\\,\\mathrm{m}$ ، والإطار $IJKL$ حيث $I$ من $[SA]$ و $AI = 0{,}9\\,\\mathrm{m}$ . ثمن المتر الواحد من قضبان الألمنيوم 850 دج. رُكّب المنوَر سنة 2019، وسُمك زجاجه $8\\,\\mathrm{mm}$ .',
+    figure: FIG_SKYLIGHT,
+    data: [
+      { id: 'base', text: 'ضلع القاعدة 2 m', useful: true },
+      { id: 'edge', text: 'طول الحرف الجانبي 2,25 m', useful: true },
+      { id: 'frame1', text: 'الإطار الأول على بعد 0,9 m من الرأس على الحرف الجانبي', useful: true },
+      { id: 'frame2', text: 'الإطار الثاني على بعد 0,9 m من رأس القاعدة على الحرف الجانبي', useful: true },
+      { id: 'price', text: 'ثمن المتر من الألمنيوم 850 دج', useful: true },
+      { id: 'year', text: 'رُكّب المنور سنة 2019', useful: false },
+      { id: 'glass', text: 'سمك الزجاج 8 mm', useful: false },
+    ],
+    parts: [
+      {
+        label: '1)', title: 'الإطار القريب من الرأس',
+        question: 'ما طبيعة الإطار $EFGH$ ؟ احسب طول ضلعه $EF$ .',
+        asks: ['طبيعة الإطار $EFGH$', 'طول الضلع $EF$'],
+        steps: [
+          { kind: 'sort' },
+          { kind: 'choice', role: 'translate', requires: ['maqta-haram'],
+            prompt: 'نسبة التصغير التي تحوّل القاعدة $ABCD$ إلى الإطار $EFGH$ :',
+            options: [
+              '$k = \\dfrac{SE}{SA} = \\dfrac{0{,}9}{2{,}25} = \\dfrac{2}{5}$',
+              '$k = \\dfrac{SE}{EA} = \\dfrac{0{,}9}{1{,}35} = \\dfrac{2}{3}$',
+              '$k = \\dfrac{EA}{SA} = \\dfrac{1{,}35}{2{,}25} = \\dfrac{3}{5}$',
+            ],
+            correct: 0,
+            explain: 'النسبة تبدأ من الرأس $S$ وتقارن بالحرف كله: $k = \\dfrac{SE}{SA}$ ، و $\\dfrac{0{,}9}{2{,}25} = \\dfrac{90}{225} = \\dfrac{2}{5}$ .' },
+          { kind: 'choice', role: 'conclude', ask: 0, requires: ['maqta-haram'],
+            prompt: 'الإطار $EFGH$ :',
+            options: ['مربع، تصغير للمربع $ABCD$', 'مستطيل ليس مربعا', 'مربع يقايس القاعدة $ABCD$'],
+            correct: 0,
+            explain: 'مقطع هرم بمستو يوازي قاعدته تصغير لهذه القاعدة: تصغير المربع $ABCD$ مربع.' },
+          { kind: 'numeric', role: 'answer', ask: 1, requires: ['maqta-haram', 'talis-nisab'],
+            prompt: 'طول الضلع $EF$ :', expected: 0.8, display: '0,8', suffix: 'm',
+            explain: 'حسب خاصية طالس في المثلث $SAB$ : $\\dfrac{EF}{AB} = \\dfrac{SE}{SA}$ ، إذن $EF = \\dfrac{2}{5} \\times 2 = 0{,}8$ .' },
+          { kind: 'solution', lines: [
+            'الإطار $EFGH$ مقطع الهرم بمستو يوازي القاعدة: مربع، تصغير للمربع $ABCD$ .',
+            'نسبة التصغير $k = \\dfrac{SE}{SA} = \\dfrac{0{,}9}{2{,}25} = \\dfrac{2}{5}$ .',
+            'طول ضلعه $EF = \\dfrac{2}{5} \\times 2 = 0{,}8\\,\\mathrm{m}$ .',
+          ] },
+        ],
+      },
+      {
+        label: '2)', title: 'الإطار الثاني ودفتر الحدّاد',
+        question: 'كتب الحدّاد في دفتره: «الإطار $IJKL$ تصغير للقاعدة بنسبة $\\dfrac{AI}{SA}$ ». هل هو محقّ؟ احسب طول الضلع $IJ$ .',
+        asks: ['هل الحدّاد محقّ؟', 'طول الضلع $IJ$'],
+        steps: [
+          { kind: 'numeric', role: 'compute',
+            prompt: 'الطول $SI$ :', expected: 1.35, display: '1,35', suffix: 'm',
+            explain: '$SI = SA - AI = 2{,}25 - 0{,}9 = 1{,}35$ .' },
+          { kind: 'choice', role: 'conclude', ask: 0, requires: ['maqta-haram'],
+            prompt: 'هل الحدّاد محقّ؟',
+            options: [
+              'لا: النسبة تبدأ من الرأس، $k = \\dfrac{SI}{SA} = \\dfrac{1{,}35}{2{,}25} = \\dfrac{3}{5}$',
+              'نعم: $k = \\dfrac{AI}{SA}$ لأن $I$ على الحرف $[SA]$',
+              'لا: $k = \\dfrac{SI}{AI} = \\dfrac{1{,}35}{0{,}9} = \\dfrac{3}{2}$',
+            ],
+            correct: 0,
+            explain: 'نسبة التصغير هي $\\dfrac{SI}{SA}$ (من الرأس). نسبة الحدّاد $\\dfrac{AI}{SA} = \\dfrac{0{,}9}{2{,}25} = \\dfrac{2}{5}$ هي نسبة الإطار الأول، والنسبة $\\dfrac{3}{2} > 1$ لا تعطي تصغيرا.' },
+          { kind: 'numeric', role: 'answer', ask: 1, requires: ['maqta-haram', 'talis-nisab'],
+            prompt: 'طول الضلع $IJ$ :', expected: 1.2, display: '1,2', suffix: 'm',
+            explain: '$IJ = \\dfrac{3}{5} \\times 2 = 1{,}2$ . بنسبة الحدّاد نجد $0{,}8$ ، وهو ضلع الإطار الأول الأقرب إلى الرأس.' },
+          { kind: 'solution', lines: [
+            '$SI = 2{,}25 - 0{,}9 = 1{,}35\\,\\mathrm{m}$ ، ونسبة التصغير تبدأ من الرأس: $k = \\dfrac{SI}{SA} = \\dfrac{1{,}35}{2{,}25} = \\dfrac{3}{5}$ .',
+            'الحدّاد مخطئ: النسبة $\\dfrac{AI}{SA} = \\dfrac{2}{5}$ تعطي ضلع الإطار الأول لا الثاني.',
+            'طول ضلع الإطار $IJKL$ : $IJ = \\dfrac{3}{5} \\times 2 = 1{,}2\\,\\mathrm{m}$ .',
+          ] },
+        ],
+      },
+      {
+        label: '3)', title: 'قضبان الإطارين وتكلفتها',
+        question: 'ما الطول الكلي لقضبان الألمنيوم اللازمة للإطارين؟ احسب تكلفتها.',
+        asks: ['الطول الكلي للقضبان', 'تكلفة القضبان'],
+        steps: [
+          { kind: 'numeric', role: 'compute',
+            prompt: 'محيط الإطار $EFGH$ :', expected: 3.2, display: '3,2', suffix: 'm',
+            explain: 'مربع ضلعه $0{,}8$ : $4 \\times 0{,}8 = 3{,}2$ .' },
+          { kind: 'numeric', role: 'compute',
+            prompt: 'محيط الإطار $IJKL$ :', expected: 4.8, display: '4,8', suffix: 'm',
+            explain: 'مربع ضلعه $1{,}2$ : $4 \\times 1{,}2 = 4{,}8$ .' },
+          { kind: 'numeric', role: 'answer', ask: 0,
+            prompt: 'الطول الكلي للقضبان:', expected: 8, suffix: 'm',
+            explain: '$3{,}2 + 4{,}8 = 8$ .' },
+          { kind: 'numeric', role: 'answer', ask: 1,
+            prompt: 'تكلفة القضبان:', expected: 6800, suffix: 'دج',
+            explain: '$8 \\times 850 = 6800$ .' },
+          { kind: 'solution', lines: [
+            'محيط $EFGH$ : $4 \\times 0{,}8 = 3{,}2\\,\\mathrm{m}$ ، ومحيط $IJKL$ : $4 \\times 1{,}2 = 4{,}8\\,\\mathrm{m}$ .',
+            'الطول الكلي للقضبان: $3{,}2 + 4{,}8 = 8\\,\\mathrm{m}$ .',
+            'التكلفة: $8 \\times 850 = 6800$ دج.',
+          ] },
+        ],
+      },
+    ],
+  },
+];
+
+export const PROBLEM = Object.fromEntries(PROBLEMS.map((p) => [p.id, p]));

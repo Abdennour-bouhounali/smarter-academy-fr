@@ -1,0 +1,66 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-maalam-l3-010",
+  "lessonCode": "wadiya-idmajiya-maalam",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — الطرف الآخر للقطر",
+    "estimatedMinutes": 2,
+    "tags": [
+      "منتصف قطعة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-maalam_P3",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "قوس من مسار دراجات على شكل نصف دائرة مركزها $I(2\\,;\\,0)$ ، وأحد طرفي قطرها $A(-1\\,;\\,0)$ (معلم متعامد ومتجانس)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا الطرف الآخر B للقطر:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الثنائية (x ; y)",
+      "expectedAnswer": {
+        "x": "5",
+        "y": "0"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "I منتصف $[AB]$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\dfrac{-1 + x_B}{2} = 2$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$x_B = 4 - (-1)$"
+        }
+      ],
+      "feedback": {
+        "correct": "$x_B = 2 \\times 2 - (-1) = 5$ و $y_B = 0$ : $B(5\\,;\\,0)$ .",
+        "incorrect": "المركز منتصف القطر: $x_B = 2x_I - x_A$ ."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 3
+    }
+  ]
+}

@@ -1,0 +1,318 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l3-009",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 3,
+  "metadata": {
+    "title": "الكتلة والوزن على سطح القمر",
+    "estimatedMinutes": 10,
+    "tags": [
+      "تناسبية",
+      "جدول",
+      "معامل التناسبية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-41",
+      "page": 99,
+      "section": "أتعمّق",
+      "number": 41
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين الثالث",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "في نادي علوم الفلك تتعلّم هالة أنّ وزن جسم على كوكب يتناسب مع كتلته. يعطي الجدول الوزن $P$ (بالنيوتن) لأجسام كتلها $m$ (بالكيلوغرام) على سطح القمر، وقد مثّلنا نقطه في المعلم الموالي.",
+    "table": {
+      "head": [
+        "الكتلة (kg)",
+        "10",
+        "20",
+        "30"
+      ],
+      "rows": [
+        [
+          "الوزن (N)",
+          "17",
+          "34",
+          "51"
+        ]
+      ]
+    },
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          10,
+          17
+        ],
+        "B": [
+          20,
+          34
+        ],
+        "C": [
+          30,
+          51
+        ]
+      },
+      "lines": [
+        {
+          "through": [
+            "O",
+            "C"
+          ],
+          "name": "(D)",
+          "tone": "indigo",
+          "extend": [
+            0,
+            0.1
+          ]
+        }
+      ],
+      "grid": {
+        "step": 10
+      },
+      "axes": {
+        "every": 10
+      },
+      "labels": {
+        "O": "sw",
+        "A": "se",
+        "B": "se",
+        "C": "se"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس كل مربع فيه يمثل 10 وحدات: المستقيم (D) يشمل المبدأ O والنقط A(10;17) و B(20;34) و C(30;51)",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: الكتلة بالكيلوغرام — محور التراتيب: الوزن بالنيوتن — كل مربّع يمثّل 10 وحدات"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل الوزن على القمر متناسب مع الكتلة؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لأنّ الترتيب لا يساوي الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-EQUAL-ONLY"
+        },
+        {
+          "id": "B",
+          "content": "لا، لأنّ المبدأ $O$ ليس من النقط المعلَّمة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-ORIGIN-DROP"
+        },
+        {
+          "id": "C",
+          "content": "نعم، النقط على استقامة واحدة مع المبدأ $O$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط على استقامة واحدة مع المبدأ $O$ ، فهي تمثّل وضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "النقط $A$ و $B$ و $C$ على المستقيم $(D)$ الذي يشمل $O$ .",
+          "إذن الوزن متناسب مع الكتلة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما معامل التناسبية $g_L$ (تسارع الجاذبية على القمر)؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: معامل التناسبية",
+      "expectedAnswer": "1.7",
+      "misconceptionSignatures": [
+        {
+          "value": "10/17",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        },
+        {
+          "value": "14",
+          "id": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل التناسبية هو ترتيب النقطة الذي فاصلته $1$ ، أو ناتج قسمة الترتيب على الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ إحداثيي النقطة $B$ ثم اقسم الترتيب على الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تقسم الفاصلة على الترتيب ولا تطرح أحد العددين من الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{34}{20} = 1{,}7$ .",
+        "incorrect": "المعامل هو ناتج قسمة الترتيب على الفاصلة (وليس العكس) لنقطة من المستقيم."
+      },
+      "solution": {
+        "lines": [
+          "النقطة $B(20\\,;\\,34)$ من المستقيم.",
+          "$a = \\dfrac{34}{20} = 1{,}7$"
+        ],
+        "result": "a = 1{,}7"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "ما وزن جسم كتلته $25$ kg على القمر بالنيوتن؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الوزن بالنيوتن",
+      "expectedAnswer": "42.5",
+      "misconceptionSignatures": [
+        {
+          "value": "32",
+          "id": "MISC-TAMTHIL-DIFFERENCE"
+        },
+        {
+          "value": "14.7",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل $P = g_L \\times m$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $m$ بالعدد المعلوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}7 \\times 25 = 42{,}5$ N.",
+        "incorrect": "اضرب الكتلة في المعامل ولا تضف إليها عددا."
+      },
+      "solution": {
+        "lines": [
+          "$P = 1{,}7 \\times 25 = 42{,}5$ N."
+        ],
+        "result": "42{,}5\\ \\text{N}"
+      },
+      "work": "optional",
+      "timeSeconds": 80
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "ما كتلة جسم وزنه $68$ N على القمر بالكيلوغرام؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الكتلة بالكيلوغرام",
+      "expectedAnswer": "40",
+      "misconceptionSignatures": [
+        {
+          "value": "115.6",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        },
+        {
+          "value": "66.3",
+          "id": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم الوزن على معامل التناسبية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$m = P \\div g_L$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$68 \\div 1{,}7 = 40$ kg.",
+        "incorrect": "لإيجاد الكتلة نقسم الوزن على $1{,}7$ ولا نضربه فيه."
+      },
+      "solution": {
+        "lines": [
+          "$68 = 1{,}7 \\times m$",
+          "$m = \\dfrac{68}{1{,}7} = 40$ kg."
+        ],
+        "result": "40\\ \\text{kg}"
+      },
+      "work": "optional",
+      "timeSeconds": 100
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "id": "ex-4am-takbir-tasghir-l5-008",
+  "lessonCode": "takbir-tasghir",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — مجسّم ومبنى",
+    "estimatedMinutes": 4,
+    "tags": [
+      "التكبير",
+      "الحجم",
+      "الوحدات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takbir-tasghir_P2",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "مجسّم لمبنى بالنسبة $\\dfrac{1}{100}$ حجمه $1{,}2\\,\\mathrm{dm}^3$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "احسب حجم المبنى الحقيقي بالمتر المكعب ($1\\,\\mathrm{m}^3 = 1000\\,\\mathrm{dm}^3$).",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة مثل 1,25 ، أو كسر مثل 4/7)",
+      "expectedAnswer": "1200",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAKBIR-HAJM-K",
+          "value": "0,12"
+        },
+        {
+          "id": "MISC-TAKBIR-HAJM-K",
+          "value": "12"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من المجسّم إلى المبنى تكبير بالنسبة 100."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحجم يُضرب في $100^3 = 1000000$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب بالـ $\\mathrm{dm}^3$ ثم اقسم على 1000."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}2 \\times 1000000 = 1200000\\,\\mathrm{dm}^3 = 1200\\,\\mathrm{m}^3$ .",
+        "incorrect": "الحجم يُضرب في $k^3$ ، ثم نحوّل الوحدة."
+      }
+    }
+  ]
+}

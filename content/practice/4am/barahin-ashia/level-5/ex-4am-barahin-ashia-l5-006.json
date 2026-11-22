@@ -1,0 +1,81 @@
+{
+  "id": "ex-4am-barahin-ashia-l5-006",
+  "lessonCode": "barahin-ashia",
+  "level": 5,
+  "generator": {
+    "tool": "gen-barahin.mjs",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — محطة التلفريك",
+    "estimatedMinutes": 3,
+    "tags": [
+      "صورة دائرة",
+      "علاقة شال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_barahin-ashia_P3",
+      "modelledOn": "now-138"
+    }
+  },
+  "statement": {
+    "content": "منصّة دائرية في محطة تلفريك تلمسان يعتني عمّالها بنظافتها مركزها Ω ونصف قطرها $5\\,\\mathrm{m}$ . تُنقل صورتها على المخطّط بالانسحاب الذي شعاعه $\\overrightarrow{UV} + \\overrightarrow{VW}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "صورة المنصّة دائرة:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مركزها Ω′ حيث $\\overrightarrow{\\Omega\\Omega'} = \\overrightarrow{UW}$ ونصف قطرها $5\\,\\mathrm{m}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "مركزها Ω′ حيث $\\overrightarrow{\\Omega'\\Omega} = \\overrightarrow{UW}$ ونصف قطرها $5\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSIHAB-SURA"
+        },
+        {
+          "id": "C",
+          "content": "مركزها Ω′ حيث $\\overrightarrow{\\Omega\\Omega'} = \\overrightarrow{UW}$ ونصف قطرها $5 + UW$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-DAIRA-QUTR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بسّط شعاع الانسحاب أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "صورة دائرة: مركزها صورة المركز."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الانسحاب يحافظ على الأطوال."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{UV} + \\overrightarrow{VW} = \\overrightarrow{UW}$ ؛ المركز صورة Ω ونصف القطر لا يتغيّر.",
+        "incorrect": "صورة Ω هي نهاية الشعاع الذي مبدؤه Ω ، والانسحاب لا يغيّر نصف القطر."
+      }
+    }
+  ]
+}

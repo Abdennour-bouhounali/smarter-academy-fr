@@ -1,0 +1,319 @@
+{
+  "id": "ex-1am-kitabat-adad-tabii-l4-004",
+  "lessonCode": "kitabat-adad-tabii",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — كتابة عشرية ومفكوك",
+    "estimatedMinutes": 10,
+    "tags": [
+      "كسر عشري",
+      "مفكوك",
+      "ضرب في 100"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 1,
+      "file": "1am-s1-97",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثاني",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "1) أعط الكتابة العشرية (بالفاصلة) للعددين $\\frac{47}{100}$ و $5 + \\frac{3}{10} + \\frac{8}{1000}$.\n2) أكمل المفكوك النموذجي للعدد 2864.\n3) أكمل: $3{,}8 \\times 100 = \\ldots$"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أعط الكتابة العشرية للعدد $\\frac{47}{100}$.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة)",
+      "expectedAnswer": "0.47",
+      "misconceptionSignatures": [
+        {
+          "value": "4,7",
+          "id": "MISC-KITABA-COMMA-SHIFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المقام 100: كم رقما بعد الفاصلة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\frac{47}{100} = 0{,}47$.",
+        "incorrect": "المقام 100: رقمان بعد الفاصلة."
+      },
+      "solution": {
+        "lines": [
+          "$\\frac{47}{100} = 0{,}47$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "أعط الكتابة العشرية للعدد $5 + \\frac{3}{10} + \\frac{8}{1000}$.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة)",
+      "expectedAnswer": "5.308",
+      "misconceptionSignatures": [
+        {
+          "value": "5,38",
+          "id": "MISC-KITABA-ZERO-PLACE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما مرتبة الرقم 8 هنا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا أجزاء من مائة: ماذا نكتب في هذه المرتبة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$5 + \\frac{3}{10} + \\frac{8}{1000} = 5{,}308$.",
+        "incorrect": "كل مرتبة فارغة بعد الفاصلة يحفظها 0."
+      },
+      "solution": {
+        "lines": [
+          "3 أعشار، 0 أجزاء من مائة، 8 أجزاء من ألف.",
+          "$5 + \\frac{3}{10} + \\frac{8}{1000} = 5{,}308$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أكمل المفكوك النموذجي بالعدد المناسب مكان النقاط: $2864 = (2 \\times \\ldots) + (8 \\times 100) + (6 \\times 10) + 4$",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1000",
+      "misconceptionSignatures": [
+        {
+          "value": "10000",
+          "id": "MISC-KITABA-RANK-NAME"
+        },
+        {
+          "value": "100",
+          "id": "MISC-KITABA-RANK-NAME"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما مرتبة الرقم 2 في العدد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل رقم يُضرب في قيمة مرتبته: 1 للآحاد، 10 للعشرات…"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب مجموع الحدود."
+        }
+      ],
+      "feedback": {
+        "correct": "الرقم 2 هو رقم الآلاف، فنضربه في 1000.",
+        "incorrect": "كل رقم يُضرب في قيمة مرتبته؛ حدّد مرتبة الرقم انطلاقا من رقم الآحاد."
+      },
+      "solution": {
+        "lines": [
+          "الرقم 2 هو رقم الآلاف في 2864.",
+          "$2864 = 2 \\times 1000 + 8 \\times 100 + 6 \\times 10 + 4$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أكمل المفكوك النموذجي بالعدد المناسب مكان النقاط: $2864 = (2 \\times 1000) + (8 \\times \\ldots) + (6 \\times 10) + 4$",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "100",
+      "misconceptionSignatures": [
+        {
+          "value": "1000",
+          "id": "MISC-KITABA-RANK-NAME"
+        },
+        {
+          "value": "10",
+          "id": "MISC-KITABA-RANK-NAME"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما مرتبة الرقم 8 في العدد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل رقم يُضرب في قيمة مرتبته: 1 للآحاد، 10 للعشرات…"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب مجموع الحدود."
+        }
+      ],
+      "feedback": {
+        "correct": "الرقم 8 هو رقم المئات، فنضربه في 100.",
+        "incorrect": "كل رقم يُضرب في قيمة مرتبته؛ حدّد مرتبة الرقم انطلاقا من رقم الآحاد."
+      },
+      "solution": {
+        "lines": [
+          "الرقم 8 هو رقم المئات في 2864.",
+          "$2864 = 2 \\times 1000 + 8 \\times 100 + 6 \\times 10 + 4$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ج",
+      "statement": "أكمل المفكوك النموذجي بالعدد المناسب مكان النقاط: $2864 = (2 \\times 1000) + (8 \\times 100) + (6 \\times \\ldots) + 4$",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "100",
+          "id": "MISC-KITABA-RANK-NAME"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما مرتبة الرقم 6 في العدد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل رقم يُضرب في قيمة مرتبته: 1 للآحاد، 10 للعشرات…"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب مجموع الحدود."
+        }
+      ],
+      "feedback": {
+        "correct": "الرقم 6 هو رقم العشرات، فنضربه في 10.",
+        "incorrect": "كل رقم يُضرب في قيمة مرتبته؛ حدّد مرتبة الرقم انطلاقا من رقم الآحاد."
+      },
+      "solution": {
+        "lines": [
+          "الرقم 6 هو رقم العشرات في 2864.",
+          "$2864 = 2 \\times 1000 + 8 \\times 100 + 6 \\times 10 + 4$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "أكمل: $3{,}8 \\times 100 = \\ldots$",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "380",
+      "misconceptionSignatures": [
+        {
+          "value": "38",
+          "id": "MISC-KITABA-COMMA-SHIFT"
+        },
+        {
+          "value": "3800",
+          "id": "MISC-KITABA-ZERO-PLACE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الضرب في 100 ينقل كل رقم مرتبتين نحو اليسار."
+        }
+      ],
+      "feedback": {
+        "correct": "$3{,}8 \\times 100 = 380$.",
+        "incorrect": "عند الضرب في 100 يصبح كل رقم أكبر بمرتبتين."
+      },
+      "solution": {
+        "lines": [
+          "$3{,}8 \\times 100 = 380$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "id": "ex-4am-tarrid-taalufi-l3-005",
+  "lessonCode": "tarrid-taalufi",
+  "level": 3,
+  "metadata": {
+    "title": "جيغا إضافية",
+    "estimatedMinutes": 10,
+    "tags": [
+      "نمذجة",
+      "عدد صورته معلومة",
+      "ميزانية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-taalufi_P1",
+      "modelledOn": "act-4",
+      "adaptedFrom": "ex-4am-tarrid-taalufi-l3-005"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "باقة أنترنت: 1000DA في الشهر، ثم 80DA لكل جيغا إضافية.\nنسمّي $x$ عدد الجيغا الإضافية و $f(x)$ المبلغ الشهري بـ DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عبّر عن $f(x)$ بدلالة $x$ .",
+      "statement": "أعط العددين $a$ و $b$ حيث: $f(x) = ax + b$ ، ابدأ بالعدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "80",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "1000"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع عن كل جيغا إضافية؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هو ما يُدفع $x$ مرّة: معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "ما يُدفع عن كل جيغا إضافية هو معامل $x$ .",
+        "incorrect": "معامل $x$ هو المبلغ الذي يتكرّر مع كل وحدة، لا المبلغ الذي يُدفع مرّة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 80x + 1000$"
+        ],
+        "result": "f(x) = 80x + 1000"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "ثم العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "1000",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "80"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع مرّة واحدة (المبلغ الشهري للباقة)؟"
+        }
+      ],
+      "feedback": {
+        "correct": "المبلغ الشهري للباقة يُدفع مرّة واحدة: هو الحدّ الثابت $b$ .",
+        "incorrect": "الحدّ الثابت لا يتعلّق بعدد الوحدات $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 80x + 1000$"
+        ],
+        "result": "f(x) = 80x + 1000"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "دفعت ريم هذا الشهر 1640DA . كم جيغا إضافية استهلكت؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الجيغا",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حل المعادلة $f(x) = 1640$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح المبلغ الشهري للباقة أولا."
+        }
+      ],
+      "feedback": {
+        "correct": "$(1640 - 1000) \\div 80$ .",
+        "incorrect": "اكتب $80x + 1000 = 1640$ ثم اعزل $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$80x + 1000 = 1640$",
+          "$80x = 640$",
+          "$x = 8$",
+          "استهلكت ريم 8 جيغا إضافية."
+        ],
+        "result": "x = 8"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "لا يريد سمير أن يتجاوز مبلغه الشهري 2000DA . ما هو أكبر عدد من الجيغا الإضافية يمكنه استهلاكه؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الجيغا",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حل المتراجحة $80x + 1000 \\leqslant 2000$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد الجيغا عدد طبيعي."
+        }
+      ],
+      "feedback": {
+        "correct": "هو أكبر عدد طبيعي يحقّق المتراجحة.",
+        "incorrect": "اكتب $80x + 1000 \\leqslant 2000$ ثم خذ أكبر عدد طبيعي يحققها."
+      },
+      "solution": {
+        "lines": [
+          "$80x + 1000 \\leqslant 2000$",
+          "$80x \\leqslant 1000$",
+          "$x \\leqslant 12{,}5$",
+          "أكبر عدد طبيعي هو 12: $f(12) = 1960DA$ و $f(13) = 2040DA$ ."
+        ],
+        "result": "12"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

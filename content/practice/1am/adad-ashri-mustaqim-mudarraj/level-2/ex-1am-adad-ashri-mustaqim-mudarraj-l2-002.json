@@ -1,0 +1,212 @@
+{
+  "id": "ex-1am-adad-ashri-mustaqim-mudarraj-l2-002",
+  "lessonCode": "adad-ashri-mustaqim-mudarraj",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — كتابة عدد على شكل مجموع",
+    "estimatedMinutes": 5,
+    "tags": [
+      "مجموع",
+      "تعليم نقطة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 2,
+      "file": "1am-s2-78",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يعلّم تلميذ نقاطًا على نصف مستقيم مدرّج وحدته مقسّمة إلى 10 أجزاء متساوية، وتُعطى فواصل بعضها على شكل مجموع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نريد تعليم النقطة $K\\left(3 + \\dfrac{2}{10}\\right)$ . ما فاصلتها مكتوبةً بالفاصلة ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "3,2",
+      "misconceptionSignatures": [
+        {
+          "value": "2,3",
+          "id": "MISC-ABSC-SWAP"
+        },
+        {
+          "value": "0,5",
+          "id": "MISC-ABSC-ADDALL"
+        },
+        {
+          "value": "3,02",
+          "id": "MISC-ABSC-HUNDREDTH"
+        },
+        {
+          "value": "5",
+          "id": "MISC-ABSC-TICKUNIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكسر $\\dfrac{a}{10}$ يقرأ أعشارًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسر العشري بالفاصلة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثمّ أضفه إلى الجزء الصحيح."
+        }
+      ],
+      "feedback": {
+        "correct": "$K(3{,}2)$ : الجزء الصحيح $3$ والجزء العشري $0{,}2$.",
+        "incorrect": "كسر عشري مقامه 10 يعطي رقمًا واحدًا بعد الفاصلة ؛ والعدد الصحيح يبقى قبل الفاصلة ولا يُجمع مع البسط."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2}{10}$ = $0{,}2$",
+          "$3$ + $0{,}2$ = $3{,}2$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "نريد تعليم النقطة $K\\left(1 + \\dfrac{7}{10}\\right)$ . ما فاصلتها مكتوبةً بالفاصلة ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$1{,}7$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$7{,}1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-SWAP"
+        },
+        {
+          "id": "C",
+          "content": "$0{,}8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-ADDALL"
+        },
+        {
+          "id": "D",
+          "content": "$1{,}07$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-HUNDREDTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكسر $\\dfrac{a}{10}$ يقرأ أعشارًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسر العشري بالفاصلة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثمّ أضفه إلى الجزء الصحيح."
+        }
+      ],
+      "feedback": {
+        "correct": "$K(1{,}7)$ : الجزء الصحيح $1$ والجزء العشري $0{,}7$.",
+        "incorrect": "كسر عشري مقامه 10 يعطي رقمًا واحدًا بعد الفاصلة ؛ والعدد الصحيح يبقى قبل الفاصلة ولا يُجمع مع البسط."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{7}{10}$ = $0{,}7$",
+          "$1$ + $0{,}7$ = $1{,}7$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "فاصلة النقطة $K$ هي $3{,}2$ . كم تدريجة صغيرة نعدّ بعد العلامة $3$ لنصل إلى هذا الموضع ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "32",
+          "id": "MISC-ABSC-TOTALTICKS"
+        },
+        {
+          "value": "5",
+          "id": "MISC-ABSC-TICKUNIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ من العلامة المذكورة لا من المبدإ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب ما بقي من الوحدة بعد العلامة ثمّ قسّمه على قيمة التدريجة الصغيرة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد التدريجات الصغيرة عدد طبيعي."
+        }
+      ],
+      "feedback": {
+        "correct": "نعدّ $2$ تدريجات صغيرة بعد العلامة $3$ فنصل إلى الفاصلة $3{,}2$.",
+        "incorrect": "نعدّ التدريجات الصغيرة ابتداءً من العلامة المعلومة ؛ الجزء بعد الفاصلة يعطي عددها عندما تكون التدريجة جزءًا من عشرة، ولا نعدّ كلّ ما قبلها."
+      },
+      "solution": {
+        "lines": [
+          "من العلامة $3$ إلى الفاصلة $3{,}2$ نقطع $0{,}2$ من الوحدة",
+          "كلّ تدريجة صغيرة $0{,}1$ إذن العدد $0{,}2$ ÷ $0{,}1$ = $2$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

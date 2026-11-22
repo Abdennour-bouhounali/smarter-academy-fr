@@ -1,0 +1,193 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-aadad-nisbiya-l2-008",
+  "lessonCode": "wadiya-idmajiya-aadad-nisbiya",
+  "level": 2,
+  "metadata": {
+    "title": "منسوب ماء سدّ",
+    "estimatedMinutes": 6,
+    "tags": [
+      "منسوب",
+      "جداء",
+      "حاصل قسمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "يُقاس منسوب ماء سدّ بالنسبة إلى علامة عادية: المنسوب $4{,}2$ m يعني أنّه فوقها، والمنسوب السالب يعني أنّه تحتها. في فترة الجفاف ينخفض المنسوب بانتظام بمقدار $0{,}35$ m في كل يوم. نرمز بـ $t$ إلى عدد الأيام منذ يوم القياس الأول حيث المنسوب $4{,}2$ m ، و $t$ سالب قبله."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما المنسوب بعد $12$ يومًا؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "0",
+      "misconceptionSignatures": [
+        {
+          "value": "46.2",
+          "id": "MISC-QISMA-PRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ النص وحدّد الأعداد المعطاة وما يعبّر عنه كل منها: ارتفاع أم انخفاض، ربح أم خسارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر عن الانخفاض أو الخسارة أو الدَّين بعدد سالب، ثم اختر العملية التي تناسب السؤال."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العملية بأعداد نسبية ثم أنجزها بقاعدة الإشارات وبأولوية العمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $0$ m .",
+        "incorrect": "راجع ترجمة النص إلى عملية بين أعداد نسبية: أيّ عدد سالب وأيّ عملية تناسب السؤال؟"
+      },
+      "solution": {
+        "lines": [
+          "$4{,}2 + (−0{,}35) \\times 12$",
+          "$= 4{,}2 + (−4{,}2)$",
+          "$= 0$"
+        ],
+        "result": "0"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "بعد كم يومًا يبلغ المنسوب $−1{,}4$ m ؟ احسب $(−1{,}4 − 4{,}2) \\div (−0{,}35)$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "16",
+      "misconceptionSignatures": [
+        {
+          "value": "-16",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "0.0625",
+          "id": "MISC-QISMA-ORDER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العددين اللذين نقسم أحدهما على الآخر وعيّن إشارة كل منهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عاملان مجهولان فالعامل الناقص هو حاصل قسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعملية العكسية: اضرب نتيجتك في العامل المعلوم."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $16$ يومًا .",
+        "incorrect": "راجع الربط بين الضرب والقسمة وقاعدة إشارات الحاصل، ثم تحقّق بالضرب."
+      },
+      "solution": {
+        "lines": [
+          "$(−1{,}4 − 4{,}2) \\div (−0{,}35)$",
+          "$= (−5{,}6) \\div (−0{,}35)$",
+          "$= 16$"
+        ],
+        "result": "16"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما المنسوب قبل يوم القياس الأول بخمسة أيام ($t = −5$) ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "5.95",
+      "misconceptionSignatures": [
+        {
+          "value": "-19.25",
+          "id": "MISC-QISMA-PRIORITY"
+        },
+        {
+          "value": "2.45",
+          "id": "MISC-JIDAA-NEGNEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ النص وحدّد الأعداد المعطاة وما يعبّر عنه كل منها: ارتفاع أم انخفاض، ربح أم خسارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر عن الانخفاض أو الخسارة أو الدَّين بعدد سالب، ثم اختر العملية التي تناسب السؤال."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العملية بأعداد نسبية ثم أنجزها بقاعدة الإشارات وبأولوية العمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $5{,}95$ m .",
+        "incorrect": "راجع ترجمة النص إلى عملية بين أعداد نسبية: أيّ عدد سالب وأيّ عملية تناسب السؤال؟"
+      },
+      "solution": {
+        "lines": [
+          "$4{,}2 + (−0{,}35) \\times (−5)$",
+          "$= 4{,}2 + 1{,}75$",
+          "$= 5{,}95$"
+        ],
+        "result": "5{,}95"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

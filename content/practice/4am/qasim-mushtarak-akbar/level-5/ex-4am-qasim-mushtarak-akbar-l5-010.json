@@ -1,0 +1,239 @@
+{
+  "id": "ex-4am-qasim-mushtarak-akbar-l5-010",
+  "lessonCode": "qasim-mushtarak-akbar",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2024 — علب حلويات العيد بسوق أهراس",
+    "estimatedMinutes": 12,
+    "tags": [
+      "PGCD",
+      "وضعية",
+      "عروض"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-mushtarak-akbar_P3",
+      "modelledOn": "BEM 2024 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "حضّر صاحب محل حلويات بسوق أهراس، وهو معروف بأمانته في تجارته، بمناسبة عيد الفطر، 432 قطعة مقروط و 288 قطعة غريبية، ويريد ترتيبها كلها في علب متماثلة (نفس عدد قطع المقروط ونفس عدد قطع الغريبية في كل علبة)، بأكبر عدد ممكن من العلب. اقترحت عليه مطبعة ثلاثة عروض لطبع العلب:\n• العرض 1: 45DA للعلبة الواحدة.\n• العرض 2: 30DA للعلبة الواحدة مع مبلغ جزافي قدره 2000DA.\n• العرض 3: مبلغ جزافي قدره 8000DA مهما كان عدد العلب."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما هو أكبر عدد من العلب يمكن تحضيره ؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد العلب)",
+      "expectedAnswer": "144",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        },
+        {
+          "value": "72",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد العلب يجب أن يقسم 432 و 288 معًا: فهو قاسم مشترك لهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب قواسم 432 وقواسم 288، ثم استخرج القواسم المشتركة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أكبر عدد ممكن هو أكبر هذه القواسم المشتركة."
+        }
+      ],
+      "feedback": {
+        "correct": "أكبر عدد من العلب هو PGCD(432 ; 288).",
+        "incorrect": "عدد العلب قاسم مشترك للعددين 432 و 288؛ والمطلوب أكبرها، لا محتوى الواحدة منها."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 432 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 8 ، 9 ، 12 ، 16 ، 18 ، 24 ، 27 ، 36 ، 48 ، 54 ، 72 ، 108 ، 144 ، 216 ، 432",
+          "قواسم العدد 288 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 8 ، 9 ، 12 ، 16 ، 18 ، 24 ، 32 ، 36 ، 48 ، 72 ، 96 ، 144 ، 288",
+          "القواسم المشتركة للعددين 432 و 288 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 8 ، 9 ، 12 ، 16 ، 18 ، 24 ، 36 ، 48 ، 72 ، 144",
+          "أكبرها هو 144، إذن أكبر عدد من العلب هو PGCD(432 ; 288) = 144."
+        ],
+        "result": "PGCD(432 ; 288) = 144"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما هو عدد قطع المقروط في كل علبة ؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "144",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع قطع المقروط كلها بالتساوي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 432 على العدد الذي وجدته في السؤال السابق."
+        }
+      ],
+      "feedback": {
+        "correct": "$432 \\div 144 = 3$",
+        "incorrect": "اقسم العدد الكلي (432) على أكبر عدد وجدته."
+      },
+      "solution": {
+        "lines": [
+          "$432 \\div 144 = 3$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما هو عدد قطع الغريبية في كل علبة ؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "144",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع قطع الغريبية كلها بالتساوي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 288 على العدد الذي وجدته في السؤال السابق."
+        }
+      ],
+      "feedback": {
+        "correct": "$288 \\div 144 = 2$",
+        "incorrect": "اقسم العدد الكلي (288) على أكبر عدد وجدته."
+      },
+      "solution": {
+        "lines": [
+          "$288 \\div 144 = 2$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "☜ ما هو العرض الأقل تكلفة لطبع العلب ؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "العرض 1",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "العرض 2",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "العرض 3",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد العلب هو العدد الذي وجدته في السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب تكلفة الطبع حسب كل عرض ثم قارن."
+        }
+      ],
+      "feedback": {
+        "correct": "العرض 1: 6480DA ، العرض 2: 6320DA ، العرض 3: 8000DA.",
+        "incorrect": "احسب تكلفة كل عرض لأكبر عدد من العلب، ثم اختر أصغرها."
+      },
+      "solution": {
+        "lines": [
+          "العرض 1: $144 \\times 45 = 6480$",
+          "العرض 2: $144 \\times 30 + 2000 = 6320$",
+          "العرض 3: $8000$",
+          "$6320 < 6480 < 8000$ ، إذن العرض 2 هو الأقل تكلفة."
+        ],
+        "result": "العرض 2"
+      },
+      "timeSeconds": 300
+    }
+  ]
+}

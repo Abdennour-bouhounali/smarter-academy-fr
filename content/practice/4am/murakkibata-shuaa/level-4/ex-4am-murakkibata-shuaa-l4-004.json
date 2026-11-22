@@ -1,0 +1,74 @@
+{
+  "id": "ex-4am-murakkibata-shuaa-l4-004",
+  "lessonCode": "murakkibata-shuaa",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — نقطة على محور",
+    "estimatedMinutes": 2,
+    "tags": [
+      "OM"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_murakkibata-shuaa_P2",
+      "modelledOn": "know-1"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس مبدؤه O، M نقطة من محور التراتيب ترتيبها 6."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مركبتا الشعاع $\\overrightarrow{OM}$ هما:",
+      "learningPoints": [
+        {
+          "code": "4am_murakkibata-shuaa_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\begin{pmatrix} 0 \\\\ 6 \\end{pmatrix}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\begin{pmatrix} 6 \\\\ 0 \\end{pmatrix}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-TABDIL-X-Y"
+        },
+        {
+          "id": "C",
+          "content": "$\\begin{pmatrix} 0 \\\\ -6 \\end{pmatrix}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مبدأ هذا الشعاع هو مبدأ المعلم O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من O، الإزاحة الأفقية هي الفاصلة والإزاحة العمودية هي الترتيب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مركبتا $\\overrightarrow{OM}$ هما إحداثيتا M بنفس الترتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "$M(0\\,;\\,6)$ : لا إزاحة أفقية من O، و 6 نحو الأعلى.",
+        "incorrect": "على محور التراتيب الفاصلة 0."
+      }
+    }
+  ]
+}

@@ -1,0 +1,233 @@
+{
+  "id": "ex-2am-masafa-nuqtatayn-l3-001",
+  "lessonCode": "masafa-nuqtatayn",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مسافات ثلاث نقط ونقطة مناظرة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "مسافة بين نقطتين",
+      "استنتاج مسافة",
+      "منتصف"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 2,
+      "file": "2am-s2-63",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "على مستقيم مدرّج مبدؤه $O$ وطول تدريجته $1\\,\\mathrm{cm}$ ، نعلّم النقط $A(+6{,}5)$ و $B(-4)$ و $C(-1)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "النقطتان $C(-1)$ و $B(-4)$ على مستقيم مدرّج. احسب المسافة $CB$ .",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-ADDSAME",
+          "value": "5"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-3"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن أوّلًا أيّ الفاصلتين أكبر: الأكبر هي الأبعد إلى اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى مطروحًا منها الصغرى؛ وإذا كانت الصغرى سالبة فنطرح عددًا سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا: إن وجدت ناتجًا سالبًا فقد قلبت ترتيب الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$CB=3$ : نطرح الفاصلة الصغرى من الفاصلة الكبرى.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى هي $-1$ والفاصلة الصغرى هي $-4$",
+          "$CB=(-1)-(-4)=(-1)+(+4)=3$"
+        ],
+        "result": "3"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "النقطتان $C(-1)$ و $A(+6{,}5)$ على مستقيم مدرّج. احسب المسافة $CA$ .",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "7.5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "5.5"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-7.5"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن أوّلًا أيّ الفاصلتين أكبر: الأكبر هي الأبعد إلى اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى مطروحًا منها الصغرى؛ وإذا كانت الصغرى سالبة فنطرح عددًا سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا: إن وجدت ناتجًا سالبًا فقد قلبت ترتيب الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$CA=7{,}5$ : النقطتان على جهتين من المبدأ فنجمع المسافتين إلى الصفر.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى هي $+6{,}5$ والفاصلة الصغرى هي $-1$",
+          "$CA=(+6{,}5)-(-1)=(+6{,}5)+(+1)=7{,}5$"
+        ],
+        "result": "7.5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "على مستقيم مدرّج: $A(+6{,}5)$ و $C(-1)$ و $B(-4)$ . وجدنا $AC=7{,}5$ و $CB=3$ . استنتج المسافة $AB$ .",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "10.5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل النقطة $C$ بين $A$ و $B$ ؟ ارسم الوضع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كانت النقطة بين الطرفين جمعنا المسافتين، وإلا طرحنا الصغرى من الكبرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب $AB$ مباشرة من الفاصلتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB=10{,}5$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$C$ بين $A$ و $B$ فنجمع المسافتين",
+          "$AB=7{,}5+3=10{,}5$"
+        ],
+        "result": "10.5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "$B(-4)$ و $C(-1)$ نقطتان على مستقيم مدرّج. عيّن فاصلة النقطة $K$ حتى تكون $C$ منتصف القطعة $[BK]$ .",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المسافة $BC$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$K$ تبعد عن $C$ بالمسافة نفسها، لكن في الجهة المقابلة لـ $B$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب المسافة $CK$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$K(+2)$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$BC=3$",
+          "$K$ تبعد عن $C$ بـ $3$ في الجهة المقابلة لـ $B$",
+          "$-1+3=+2$"
+        ],
+        "result": "2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

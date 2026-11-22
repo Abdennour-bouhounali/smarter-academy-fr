@@ -1,0 +1,109 @@
+{
+  "id": "ex-4am-insihab-shuaa-l5-009",
+  "lessonCode": "insihab-shuaa",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — صورة محطة في المترو",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الانسحاب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_insihab-shuaa_P1",
+      "modelledOn": "ex-4"
+    }
+  },
+  "statement": {
+    "content": "على خريطة مترو الجزائر المرسومة على مرصوفة (الشكل)، وهو مرفق نحافظ عليه جميعًا، الانسحاب الذي شعاعه $\\overrightarrow{EM}$ ينقل علامة المحطة.",
+    "figure": {
+      "points": {
+        "E": [
+          0,
+          0
+        ],
+        "M": [
+          2,
+          1
+        ],
+        "R": [
+          3,
+          3
+        ],
+        "W": [
+          5,
+          4
+        ],
+        "Z": [
+          1,
+          2
+        ]
+      },
+      "grid": true,
+      "vectors": [
+        {
+          "from": "E",
+          "to": "M",
+          "tone": "amber"
+        }
+      ],
+      "ariaLabel": "خريطة مرصوفة: السهم من E نحو M، والمحطات R و W و Z",
+      "maxWidth": 420
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "صورة المحطة R بهذا الانسحاب هي:",
+      "learningPoints": [
+        {
+          "code": "4am_insihab-shuaa_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "W",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "M",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSIHAB-SURA"
+        },
+        {
+          "id": "C",
+          "content": "Z",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "صورة نقطة بالانسحاب: نحرّكها بنفس حركة النقطة المعطاة نحو صورتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ حركة السهم المعطى (أفقيا ثم شاقوليا) وطبّقها انطلاقا من النقطة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: للسهم من النقطة نحو صورتها نفس المنحى ونفس الاتجاه ونفس الطول."
+        }
+      ],
+      "feedback": {
+        "correct": "من E إلى M: مربعان يمينا ومربع نحو الأعلى؛ من R بنفس الحركة نصل إلى W.",
+        "incorrect": "Z تأتي من الحركة المعاكسة."
+      },
+      "difficulty": 5
+    }
+  ]
+}

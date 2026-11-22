@@ -1,0 +1,157 @@
+{
+  "id": "ex-4am-hasiba-muthallathiya-l4-005",
+  "lessonCode": "hasiba-muthallathiya",
+  "level": 4,
+  "metadata": {
+    "title": "كثيب تاغيت: زاوية المنحدر والمسافة الأفقية",
+    "estimatedMinutes": 10,
+    "tags": [
+      "الجيب",
+      "جيب التمام",
+      "تدوير مبكّر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hasiba-muthallathiya_P2",
+      "modelledOn": "ex-8"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "متزلّج على الرمال في تاغيت ينزل كثيبا على منحدر مستقيم طوله $50\\,\\mathrm{m}$ ، وارتفاع قمة الكثيب عن سفحه $15\\,\\mathrm{m}$ (المنحدر والارتفاع والسفح الأفقي يكوّنون مثلثا قائما). ويشارك المتزلّج في تنظيف الكثبان من النفايات بعد كل نزول."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب قيس الزاوية $x$ التي يصنعها المنحدر مع الأفق بالتدوير إلى الوحدة من الدرجة.",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيس الزاوية بالدرجة، مدوّرا إلى الوحدة",
+      "expectedAnswer": "17",
+      "misconceptionSignatures": [
+        {
+          "value": "73",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "0",
+          "id": "MISC-MUTH-HASIBA-RAD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المنحدر هو الوتر، والارتفاع يقابل الزاوية $x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اللمسة العكسية: ⁦2nd⁩ ثم ⁦sin⁻¹⁩ ثم النسبة ثم ⁦=⁩."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الحرف ⁦D⁩ (الدرجة)، ثم دوّر إلى الوحدة: انظر إلى الرقم الموالي للرقم الأخير الذي تحتفظ به."
+        }
+      ],
+      "feedback": {
+        "correct": "$x \\approx 17{,}45760312^{\\circ} \\approx 17^{\\circ}$ .",
+        "incorrect": "النسبة ليست القيس: القيس يُعيَّن باللمسة العكسية المناسبة والحاسبة مبرمجة بالدرجة، ثم يُدوَّر (لا يُبتر) إلى الوحدة."
+      },
+      "solution": {
+        "lines": [
+          "$\\sin x = \\dfrac{15}{50} = 0{,}3$ (المقابل على الوتر).",
+          "باستعمال الحاسبة المبرمجة بالدرجة: ⁦ON 2nd sin⁻¹ ( 15 ÷ 50 ) =⁩ يظهر على الشاشة $17{,}45760312$ .",
+          "الرقم الذي يلي رقم الوحدات هو 4، وهو أصغر من 5: نُبقي رقم الوحدات كما هو."
+        ],
+        "result": "x \\approx 17^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب المسافة الأفقية بين القمة ونقطة الوصول بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m مدوّرا إلى 0,1",
+      "expectedAnswer": "47.7",
+      "misconceptionSignatures": [
+        {
+          "value": "47.6",
+          "id": "MISC-MUTH-TADWIR-BATR"
+        },
+        {
+          "value": "47.8",
+          "id": "MISC-MUTH-TADWIR-MUBAKKIR"
+        },
+        {
+          "value": "52.4",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة الأفقية تجاور الزاوية $x$ والمنحدر هو الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل جيب التمام بالقيمة غير المدوّرة لـ $x$ (أو خاصية فيثاغورس)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا استعملت القيس المدوّر ابتعدت النتيجة عن المسافة الحقيقية."
+        }
+      ],
+      "feedback": {
+        "correct": "$d = 50 \\times \\cos x \\approx 47{,}69696007 \\approx 47{,}7\\,\\mathrm{m}$ .",
+        "incorrect": "المسافة الأفقية في بسط جيب التمام: نضرب في $\\cos x$ بكل أرقام الشاشة ولا ندوّر إلا النتيجة."
+      },
+      "solution": {
+        "lines": [
+          "$\\cos x = \\dfrac{d}{50}$ ومنه $d = 50 \\times \\cos x$",
+          "بكل أرقام الشاشة: $d \\approx 47{,}69696007$",
+          "(بالقيس المدوّر $17^{\\circ}$ نجد $47{,}8152378$ : تدوير مبكّر.)"
+        ],
+        "result": "d \\approx 47{,}7\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    }
+  ]
+}

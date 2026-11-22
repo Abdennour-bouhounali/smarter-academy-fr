@@ -1,0 +1,148 @@
+{
+  "id": "ex-1am-kitabat-adad-tabii-l2-008",
+  "lessonCode": "kitabat-adad-tabii",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — عدّاد يتغيّر كله",
+    "estimatedMinutes": 5,
+    "tags": [
+      "يلي",
+      "يسبق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أجب ثم برّر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب بالأرقام العدد الذي يلي العدد $29\\,999$ مباشرة.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "30000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أضف وحدة واحدة إلى رقم الآحاد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عشر وحدات من مرتبة تصنع وحدة واحدة من المرتبة التي على يسارها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: الفرق بين العددين 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$29\\,999 + 1 = 30\\,000$.",
+        "incorrect": "عندما تبلغ مرتبةٌ عشرَ وحدات نربطها في وحدة واحدة من المرتبة التي على يسارها، وقد يتكرّر ذلك."
+      },
+      "solution": {
+        "lines": [
+          "$29\\,999 + 1 = 30\\,000$",
+          "إذن العدد هو $30\\,000$."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب بالأرقام العدد الذي يسبق العدد $40\\,000$ مباشرة.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "39999",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انزع وحدة واحدة من الآحاد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا لم يكن في الآحاد شيء، افتح وحدة من المرتبة التي على اليسار إلى عشر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: الفرق بين العددين 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$40\\,000 - 1 = 39\\,999$.",
+        "incorrect": "عندما تكون مرتبة فارغة نفتح وحدة من المرتبة التي على يسارها إلى عشر."
+      },
+      "solution": {
+        "lines": [
+          "$40\\,000 - 1 = 39\\,999$",
+          "إذن العدد هو $39\\,999$."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "برّر لماذا تغيّرت كل أرقام العدد $29\\,999$ عند إضافة 1.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا نفعل بعشر وحدات من مرتبة واحدة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك بالحل النموذجي سطرا بسطر."
+      },
+      "solution": {
+        "lines": [
+          "9 آحاد + 1 = 10 آحاد = عشرة واحدة، فيصبح رقم الآحاد 0.",
+          "وتصبح العشرات 10 = مئة واحدة، ثم المئات 10 = ألف واحد، ثم الآلاف 10 = عشرة آلاف.",
+          "فتصبح عشرات الآلاف 3: $30\\,000$."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

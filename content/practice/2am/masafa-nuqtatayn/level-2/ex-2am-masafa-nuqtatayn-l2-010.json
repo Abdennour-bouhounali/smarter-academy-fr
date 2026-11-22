@@ -1,0 +1,195 @@
+{
+  "id": "ex-2am-masafa-nuqtatayn-l2-010",
+  "lessonCode": "masafa-nuqtatayn",
+  "level": 2,
+  "metadata": {
+    "title": "تحريك نقطتين دون تغيير المسافة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مسافة بين نقطتين",
+      "تحريك"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ict-1",
+      "page": 53,
+      "section": "أوظّف تكنولوجيات الإعلام والاتصال",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعلّم $A(-2)$ و $B(+5)$ على مستقيم مدرّج، ثمّ نحرّك النقطتين معًا."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "النقطتان $A(-2)$ و $B(+5)$ على مستقيم مدرّج. احسب المسافة $AB$ .",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "3"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-7"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن أوّلًا أيّ الفاصلتين أكبر: الأكبر هي الأبعد إلى اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى مطروحًا منها الصغرى؛ وإذا كانت الصغرى سالبة فنطرح عددًا سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا: إن وجدت ناتجًا سالبًا فقد قلبت ترتيب الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB=7$ : النقطتان على جهتين من المبدأ فنجمع المسافتين إلى الصفر.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى هي $+5$ والفاصلة الصغرى هي $-2$",
+          "$AB=(+5)-(-2)=(+5)+(+2)=7$"
+        ],
+        "result": "7"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "$A(-2)$ و $B(+5)$ نقطتان على مستقيم مدرّج. نحرّك النقطتين بإضافة $3$ إلى فاصلتيهما فنحصل على $A'$ و $B'$ . ما المسافة $A'B'$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$4$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$7$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$9$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$10$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب فاصلتي $A'$ و $B'$ الجديدتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثمّ احسب المسافة بينهما: الكبرى مطروحًا منها الصغرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن النتيجة بالمسافة $AB$ قبل التحريك."
+        }
+      ],
+      "feedback": {
+        "correct": "$A'B'=7$ : التحريك لم يغيّر المسافة.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$A'(+1)$ و $B'(+8)$",
+          "$A'B'=(+8)-(+1)=7$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "$A(-2)$ و $B(+5)$ نقطتان على مستقيم مدرّج. نحرّك النقطتين بإضافة $-4{,}5$ إلى فاصلتيهما فنحصل على $A'$ و $B'$ . ما المسافة $A'B'$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب فاصلتي $A'$ و $B'$ الجديدتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثمّ احسب المسافة بينهما: الكبرى مطروحًا منها الصغرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن النتيجة بالمسافة $AB$ قبل التحريك."
+        }
+      ],
+      "feedback": {
+        "correct": "$A'B'=7$ : التحريك لم يغيّر المسافة.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$A'(-6{,}5)$ و $B'(+0{,}5)$",
+          "$A'B'=(+0{,}5)-(-6{,}5)=7$"
+        ],
+        "result": "7"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

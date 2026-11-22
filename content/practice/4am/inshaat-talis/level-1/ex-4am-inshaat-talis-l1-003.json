@@ -1,0 +1,152 @@
+{
+  "id": "ex-4am-inshaat-talis-l1-003",
+  "lessonCode": "inshaat-talis",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2009 — النقطة M حيث AM على AB يساوي 3 على 5",
+    "estimatedMinutes": 7,
+    "tags": [
+      "إنشاء",
+      "نقطة بنسبة معلومة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_inshaat-talis_P1",
+      "modelledOn": "BEM 2009 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "$[AB]$ قطعة مستقيم طولها $8\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أنشئ، دون استعمال مسطرة مدرّجة، النقطة $M$ من $[AB]$ حيث $\\dfrac{AM}{AB} = \\dfrac{3}{5}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب خطوات الإنشاء مرقّمة (أو صوّر ورقتك)، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\dfrac{AM}{AB} = \\dfrac{3}{5}$ : القطعة $[AB]$ خمسة أجزاء متساوية و $[AM]$ ثلاثة منها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "على نصف مستقيم مساعد مبدؤه $A$ عيّن خمس قطع متقايسة، صل الخامسة بـ $B$ ، ثم ارسم موازيا مناسبا."
+        }
+      ],
+      "feedback": {
+        "correct": "خمس قطع متقايسة، نصل الخامسة بـ $B$ ، والموازي المارّ بالعلامة الثالثة يعيّن $M$ .",
+        "incorrect": "قارن إنشاءك بالحل النموذجي خطوة خطوة، ثم صحّح الخطوة التي تختلف."
+      },
+      "solution": {
+        "lines": [
+          "1) نرسم نصف مستقيم $[Ax)$ لا يحمل القطعة $[AB]$ .",
+          "2) نعيّن عليه بالمدور، ابتداءً من $A$ ، 5 قطع متقايسة متتالية (بفتحة مدور كيفية) تنتهي عند العلامة $P_{5}$ .",
+          "3) نصل العلامة $P_{5}$ بالنقطة $B$ .",
+          "4) نرسم بالمسطرة والكوس الموازي للمستقيم $(P_{5}B)$ المارّ بالعلامة $P_{3}$ : يقطع $[AB]$ في $M$ .",
+          "التبرير: $(P_{3}M) \\parallel (P_{5}B)$ ، فحسب خاصية طالس في المثلثين $AP_{3}M$ و $AP_{5}B$ : $\\dfrac{AM}{AB} = \\dfrac{AP_{3}}{AP_{5}} = \\dfrac{3}{5}$ ."
+        ]
+      },
+      "timeSeconds": 360
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "جد الطول $AM$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "4,8",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-TALIS-NISBA-JUZ-KULL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AM = \\dfrac{3}{5}AB$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب $\\dfrac{3}{5}$ في طول القطعة."
+        }
+      ],
+      "feedback": {
+        "correct": "$AM = \\dfrac{3}{5} \\times 8 = 4{,}8\\,\\mathrm{cm}$ .",
+        "incorrect": "النسبة $\\dfrac{AM}{AB}$ هي نسبة الجزء إلى الكل: $AM$ ثلاثة أخماس $AB$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AM}{AB} = \\dfrac{3}{5}$ ومنه $AM = \\dfrac{3}{5}AB$",
+          "$AM = \\dfrac{3}{5} \\times 8 = \\dfrac{24}{5}$"
+        ],
+        "result": "AM = 4{,}8\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "جد الطول $MB$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "3,2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$M$ تنتمي إلى $[AB]$ : $AB = AM + MB$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$MB = 8 - 4{,}8 = 3{,}2\\,\\mathrm{cm}$ (أي $\\dfrac{2}{5}AB$ ).",
+        "incorrect": "$M$ بين $A$ و $B$ : اطرح $AM$ من $AB$ ."
+      },
+      "solution": {
+        "lines": [
+          "$M \\in [AB]$ ومنه $MB = AB - AM$",
+          "$MB = 8 - 4{,}8$"
+        ],
+        "result": "MB = 3{,}2\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

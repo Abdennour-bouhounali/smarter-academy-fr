@@ -1,0 +1,220 @@
+{
+  "id": "ex-2am-rabi-mutanasib-l2-006",
+  "lessonCode": "rabi-mutanasib",
+  "level": 2,
+  "metadata": {
+    "title": "كتلة حبل",
+    "estimatedMinutes": 8,
+    "tags": [
+      "جدول تناسبية",
+      "الجداءان المتصالبان"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-16",
+      "page": 79,
+      "section": "أوظّف تعلّماتي",
+      "number": 16
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "كتلة حبل متجانس تتناسب مع طوله، وقد سُجّلت المعطيات التالية في جدول تناسبية.",
+    "table": {
+      "head": [
+        "الطول (m)",
+        "$x$",
+        "8",
+        "20"
+      ],
+      "rows": [
+        [
+          "الكتلة (kg)",
+          "4,5",
+          "9",
+          "$y$"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "اختر مساواة الجداءين المتصالبين التي تسمح بحساب $x$ .",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x \\times 8 = 9 \\times 4{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-RABI-CROSS"
+        },
+        {
+          "id": "B",
+          "content": "$x \\times 4{,}5 = 8 \\times 9$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-RABI-CROSS"
+        },
+        {
+          "id": "C",
+          "content": "$x \\times 9 = 8 \\times 4{,}5$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العدد المجهول في خانته من الجدول واقرأ العددين على كل قطر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في جدول تناسبية: جداء العددين على أحد القطرين يساوي جداء العددين على القطر الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثم اقسم طرفيها على العدد المعلوم الذي يضرب المجهول."
+        }
+      ],
+      "feedback": {
+        "correct": "$x \\times 9 = 8 \\times 4{,}5$ .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الجداءان المتصالبان: $x \\times 9 = 8 \\times 4{,}5$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $x$ .",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "16",
+          "id": "MISC-RABI-CROSS"
+        },
+        {
+          "value": "3,5",
+          "id": "MISC-RABI-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العدد المجهول في خانته من الجدول واقرأ العددين على كل قطر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في جدول تناسبية: جداء العددين على أحد القطرين يساوي جداء العددين على القطر الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثم اقسم طرفيها على العدد المعلوم الذي يضرب المجهول."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 4$ .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$9x = 36$",
+          "$x = 36 \\div 9 = 4$"
+        ],
+        "result": "4"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "احسب $y$ .",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "22,5",
+      "misconceptionSignatures": [
+        {
+          "value": "21",
+          "id": "MISC-RABI-ADD"
+        },
+        {
+          "value": "3,6",
+          "id": "MISC-RABI-CROSS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العدد المجهول في خانته من الجدول واقرأ العددين على كل قطر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في جدول تناسبية: جداء العددين على أحد القطرين يساوي جداء العددين على القطر الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثم اقسم طرفيها على العدد المعلوم الذي يضرب المجهول."
+        }
+      ],
+      "feedback": {
+        "correct": "$y = 22{,}5$ .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$8y = 9 \\times 20 = 180$",
+          "$y = 180 \\div 8 = 22{,}5$"
+        ],
+        "result": "22{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

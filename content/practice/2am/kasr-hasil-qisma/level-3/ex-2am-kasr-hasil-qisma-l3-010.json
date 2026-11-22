@@ -1,0 +1,194 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l3-010",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — نسبة طولين عشريين",
+    "estimatedMinutes": 7,
+    "tags": [
+      "نسبة",
+      "كتابة كسرية",
+      "حصر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نسبة طول القطعة $2{,}5$ m إلى طول القطعة $0{,}6$ m هي الكتابة الكسرية $\\dfrac{2{,}5}{0{,}6}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ كتابة تساوي $\\dfrac{2{,}5}{0{,}6}$ ومقامها عدد طبيعي؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{2{,}5}{6}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-ONETERM"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{25}{6}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{25}{60}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-ONETERM"
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{250}{6}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-ONETERM"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحدّان يُضربان في العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2{,}5}{0{,}6}=\\dfrac{25}{6}$ : ضربنا الحدّين في $10$.",
+        "incorrect": "ما يُضرب في المقام يُضرب في البسط، بالعدد نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}6 \\times 10 = 6$ و $2{,}5 \\times 10 = 25$",
+          "$\\dfrac{2{,}5}{0{,}6}=\\dfrac{25}{6}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}01$ بالنقصان لهذه النسبة.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "4.16",
+      "misconceptionSignatures": [
+        {
+          "value": "4.17",
+          "id": "MISC-QARIBA-ROUNDED"
+        },
+        {
+          "value": "4.166",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالنقصان لا تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة دون أن تزيد شيئًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب القيمة في المقسوم عليه: يجب ألاّ يتجاوز الجداء المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$4{,}16 < \\frac{2{,}5}{0{,}6} < 4{,}17$.",
+        "incorrect": "بالنقصان: نحتفظ بالأرقام حتى الرتبة المطلوبة ونُهمل ما بعدها دون تغيير الرقم الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}6 \\times 4{,}16 = 2{,}496$",
+          "$0{,}6 \\times 4{,}17 = 2{,}502$",
+          "$2{,}496 < 2{,}5 < 2{,}502$"
+        ],
+        "result": "4{,}16"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "وأعط القيمة المقرّبة إلى $0{,}01$ بالزيادة.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "4.17",
+      "misconceptionSignatures": [
+        {
+          "value": "4.16",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "4.167",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالزيادة هي أصغر قيمة من هذه الرتبة تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من القيمة بالنقصان ثم أضف وحدة واحدة من الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$4{,}16 < \\frac{2{,}5}{0{,}6} < 4{,}17$.",
+        "incorrect": "بالزيادة: هي القيمة التي تلي القيمة بالنقصان مباشرة في الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}6 \\times 4{,}17 = 2{,}502$",
+          "$2{,}502 > 2{,}5$",
+          "القيمة بالزيادة هي $4{,}17$"
+        ],
+        "result": "4{,}17"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

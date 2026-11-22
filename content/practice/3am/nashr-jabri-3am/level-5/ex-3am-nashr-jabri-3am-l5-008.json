@@ -1,0 +1,339 @@
+{
+  "id": "ex-3am-nashr-jabri-3am-l5-008",
+  "lessonCode": "nashr-jabri-3am",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — ملعب وبطاقته التقنية",
+    "estimatedMinutes": 14,
+    "tags": [
+      "وضعية إدماجية",
+      "مساحة",
+      "نشر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في إطار تهيئة ملعب جواري، أُعطيت المعطيات التالية ($x$ عدد أكبر من $2$ )."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "ملعب مستطيل طوله $x + 8$ وعرضه $x - 2$ (بالمتر). مساحته $S = (x + 8)(x - 2)$ . اكتبها على الشكل $ax^2 + bx + c$ .",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $S$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-NASHR-PRODUCT-MISSING"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني: أربعة جداءات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات الأربعة واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء الأصلي وفي النتيجة: يجب أن تجد العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = x^2 + 6x - 16$ إذن $b = 6$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$S = (x + 8)(x - 2)$",
+          "$S = x \\times x - x \\times 2 + 8 \\times x - 8 \\times 2$",
+          "$S = x^2 + 6x - 16$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "مساحة الملعب هي أيضًا مجموع مساحتي مستطيلين. أيّ العبارات الآتية تعبّر عنها؟",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(x - 2)x + 8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-AREA-SIDE-MISSING"
+        },
+        {
+          "id": "B",
+          "content": "$(x - 2)x + 8(x - 2)$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم المستطيل (أو تخيّله) مقسّمًا إلى أجزاء، وسمِّ كل جزء ببعديه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحة المستطيل الكبير = جداء بعديه، وهي أيضًا مجموع مساحات أجزائه (وإذا اقتطعنا جزءًا طرحنا مساحته)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا اقتُطع شريطان يتقاطعان فالمربع المشترك طُرح مرتين: أعده مرة واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$x^2 + 6x - 16$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم الطول $x + 8$ إلى $x$ و $8$ : المستطيلان أبعادهما $x$ و $x - 2$ ، و $8$ و $x - 2$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "محيط الملعب $P = 2[(x + 8) + (x - 2)]$ بعد النشر والتبسيط هو:",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$P = 4x + 12$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$P = 3x + 14$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-FIRST-ONLY"
+        },
+        {
+          "id": "C",
+          "content": "$P = 4x + 20$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-SIGN-NEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر كل جداء على حدة وسجّل كل الحدود الناتجة بإشاراتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الحدود المتشابهة فقط (الجزء الحرفي نفسه)، ثم رتّب الحدود: $x^2$ ثم $x$ ثم العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في العبارة الأصلية وفي المبسّطة: يجب أن تجد القيمة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$P = 4x + 12$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$P = 2(2x + 6) = 4x + 12$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "الجزء الثاني: تقول البطاقة التقنية للملعب: الطول $20\\ \\mathrm{m}$ ، العرض $10\\ \\mathrm{m}$ ، المساحة $200\\ \\mathrm{m}^2$ .",
+      "statement": "احسب مساحة الملعب من أجل $x = 12$ .",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "200",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى واحترم أولويات العمليات والإشارات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القوسين أولًا، ثم الجداءات، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يمكنك التعويض في الشكل المبسّط، ثم تحقّق بالتعويض في الشكل الأصلي."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل $x = 12$ القيمة هي $200$ .",
+        "incorrect": "عوّض $x$ بالعدد المعطى واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$S = (12 + 8)(12 - 2) = 20 \\times 10 = 200\\ \\mathrm{m}^2$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "احسب طول الملعب وعرضه من أجل $x = 12$ ، ثم محيطه.",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "60",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى واحترم أولويات العمليات والإشارات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القوسين أولًا، ثم الجداءات، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يمكنك التعويض في الشكل المبسّط، ثم تحقّق بالتعويض في الشكل الأصلي."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل $x = 12$ القيمة هي $60$ .",
+        "incorrect": "عوّض $x$ بالعدد المعطى واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "الطول $= 20$ والعرض $= 10$ ، والمحيط $P = 2 \\times (20 + 10) = 60\\ \\mathrm{m}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "هل المعطيات توافق البطاقة التقنية (الطول $20$ ، العرض $10$ ، المساحة $200$ ) من أجل $x = 12$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، توافقها",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا، لا توافقها",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-DECISION-UNCHECKED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى واحترم أولويات العمليات والإشارات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القوسين أولًا، ثم الجداءات، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يمكنك التعويض في الشكل المبسّط، ثم تحقّق بالتعويض في الشكل الأصلي."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم.",
+        "incorrect": "قارن النتيجة المحسوبة بالعدد المعطى في نصّ الوضعية."
+      },
+      "solution": {
+        "lines": [
+          "الطول $20$ والعرض $10$ والمساحة $200$ : المعطيات توافق البطاقة."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

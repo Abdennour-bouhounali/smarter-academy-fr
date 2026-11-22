@@ -1,0 +1,127 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-talis-l3-008",
+  "lessonCode": "wadiya-idmajiya-talis",
+  "level": 3,
+  "metadata": {
+    "title": "مصباح الشارع وظلّ أحمد",
+    "estimatedMinutes": 10,
+    "tags": [
+      "طريقة الظلّ",
+      "خاصية طالس",
+      "معادلة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-talis_P1",
+      "modelledOn": "challenge"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "مصباح في أعلى عمود شاقولي. يقف أحمد (طوله $1{,}8\\,\\mathrm{m}$ ) على بعد $4\\,\\mathrm{m}$ من قدم العمود، فيصل ظلّه إلى $2\\,\\mathrm{m}$ خلفه، وقدم العمود وقدم أحمد ونهاية ظلّه على استقامة واحدة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب ارتفاع المصباح.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "5,4",
+      "misconceptionSignatures": [
+        {
+          "value": "3.6",
+          "id": "MISC-TALIS-ZILL-RAS-MUSHTARAK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أحمد والعمود شاقوليان، والشعاع الضوئي يمرّ برأس أحمد وينتهي عند نهاية ظلّه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة من نهاية الظلّ إلى قدم العمود هي $4 + 2$ : اكتب $\\dfrac{1{,}8}{h} = \\dfrac{2}{6}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$h = \\dfrac{1{,}8 \\times 6}{2} = 5{,}4\\,\\mathrm{m}$ .",
+        "incorrect": "الأطوال تُقاس من نهاية الظلّ: ظلّ أحمد $2\\,\\mathrm{m}$ ، والمسافة إلى قدم العمود $4 + 2$ ."
+      },
+      "solution": {
+        "lines": [
+          "المثلثان (نهاية الظلّ، قدم أحمد، رأسه) و (نهاية الظلّ، قدم العمود، المصباح) في وضعية طالس:",
+          "$\\dfrac{1{,}8}{h} = \\dfrac{2}{4 + 2}$",
+          "$h = \\dfrac{1{,}8 \\times 6}{2}$"
+        ],
+        "result": "h = 5{,}4\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "على أي بعد $x$ من قدم العمود يجب أن يقف أحمد ليكون طول ظلّه $3\\,\\mathrm{m}$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-TALIS-ZILL-RAS-MUSHTARAK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة من نهاية الظلّ الجديد إلى قدم العمود هي $x + 3$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $\\dfrac{1{,}8}{5{,}4} = \\dfrac{3}{x + 3}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x + 3 = \\dfrac{3 \\times 5{,}4}{1{,}8} = 9$ ومنه $x = 6\\,\\mathrm{m}$ .",
+        "incorrect": "$x + 3$ هي المسافة من نهاية الظلّ إلى قدم العمود؛ اطرح طول الظلّ في الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1{,}8}{5{,}4} = \\dfrac{3}{x + 3}$",
+          "$x + 3 = \\dfrac{3 \\times 5{,}4}{1{,}8} = 9$",
+          "$x = 9 - 3$"
+        ],
+        "result": "x = 6\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

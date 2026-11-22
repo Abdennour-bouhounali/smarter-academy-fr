@@ -1,0 +1,330 @@
+{
+  "id": "ex-1am-kitabat-adad-tabii-l5-009",
+  "lessonCode": "kitabat-adad-tabii",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مخزن الورشة الممتلئ",
+    "estimatedMinutes": 18,
+    "tags": [
+      "ربط",
+      "تسلسل",
+      "عشرة آلاف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في مخزن ورشة التغليف: الحزمة 10 أقلام، والعلبة 10 حزم، والكرتونة 10 علب.\nالجزء الأول: في المخزن 9 كراتين و 9 علب و 9 حزم و 9 أقلام.\nالجزء الثاني: يضيف متطوّع قلما واحدا، ثم يُربط كل شيء من جديد (كل 10 كراتين تُوضع في صندوق كبير)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب عدد الأقلام في المخزن.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "9999",
+      "misconceptionSignatures": [
+        {
+          "value": "36",
+          "id": "MISC-KITABA-SUMCOUNTS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم قلما في الكرتونة؟ وفي العلبة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب كل عدد في قيمة وحدته ثم اجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$9 \\times 1000 + 9 \\times 100 + 9 \\times 10 + 9 = 9999$.",
+        "incorrect": "كل وعاء له قيمته: الكرتونة 1000 قلم، العلبة 100، الحزمة 10."
+      },
+      "solution": {
+        "lines": [
+          "$9 \\times 1000 + 9 \\times 100 + 9 \\times 10 + 9 = 9999$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كيف يُقرأ هذا العدد؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "تسعة تسعة تسعة تسعة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-DIGIT-BY-DIGIT"
+        },
+        {
+          "id": "B",
+          "content": "تسعة آلاف وتسعمائة وتسعة وتسعون",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "تسعة آلاف وتسعمائة وتسعون",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-RANK-NAME"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزّئ العدد إلى فئات من ثلاثة أرقام انطلاقا من اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ كل فئة كعدد أصغر من 1000 ثم اذكر اسم فئتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى المراتب الفارغة (الأصفار)."
+        }
+      ],
+      "feedback": {
+        "correct": "9999 يُقرأ « تسعة آلاف وتسعمائة وتسعة وتسعون ».",
+        "incorrect": "نجزّئ العدد إلى فئات من ثلاثة أرقام انطلاقا من اليمين، ثم نقرأ الفئات من اليسار، كل فئة باسمها."
+      },
+      "solution": {
+        "lines": [
+          "$9\\,|\\,999$",
+          "نقرأ فئة فئة: « تسعة آلاف وتسعمائة وتسعة وتسعون »."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "كم قلما في المخزن بعد إضافة القلم؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "10000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أضف وحدة واحدة إلى رقم الآحاد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عشر وحدات من مرتبة تصنع وحدة واحدة من المرتبة التي على يسارها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: الفرق بين العددين 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$9999 + 1 = 10\\,000$.",
+        "incorrect": "عندما تبلغ مرتبةٌ عشرَ وحدات نربطها في وحدة واحدة من المرتبة التي على يسارها، وقد يتكرّر ذلك."
+      },
+      "solution": {
+        "lines": [
+          "$9999 + 1 = 10\\,000$",
+          "إذن العدد هو $10\\,000$."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "بعد الربط من جديد، كم كرتونة يحويها الصندوق الكبير؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-KITABA-DIGIT-COUNT"
+        },
+        {
+          "value": "1",
+          "id": "MISC-KITABA-RANKSHIFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الآلاف هو عدد المجموعات من 1000 التي نكوّنها من العدد كله، لا الرقم وحده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احذف الأرقام التي على يمين مرتبة الآلاف."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: اضرب جوابك في 1000 ثم أضف ما بقي."
+        }
+      ],
+      "feedback": {
+        "correct": "$10\\,000 = 10 \\times 1000 + 0$: عدد الآلاف هو 10، أمّا رقم الآلاف فهو 0.",
+        "incorrect": "رقم المرتبة هو ما يبقى فيها وحدها؛ أمّا عدد وحداتها فنحسب فيه كل ما يمكن تجميعه منها في العدد كله."
+      },
+      "solution": {
+        "lines": [
+          "$10\\,000 = 10 \\times 1000 + 0$",
+          "إذن عدد الآلاف في العدد $10\\,000$ هو 10، ورقم الآلاف هو 0."
+        ],
+        "result": "10"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ج",
+      "statement": "كيف يُقرأ عدد الأقلام بعد الإضافة؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مائة ألف",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-ZERO-PLACE"
+        },
+        {
+          "id": "B",
+          "content": "عشرة آلاف",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "ألف",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-ZERO-PLACE"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزّئ العدد إلى فئات من ثلاثة أرقام انطلاقا من اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ كل فئة كعدد أصغر من 1000 ثم اذكر اسم فئتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى المراتب الفارغة (الأصفار)."
+        }
+      ],
+      "feedback": {
+        "correct": "$10\\,000$ يُقرأ « عشرة آلاف ».",
+        "incorrect": "نجزّئ العدد إلى فئات من ثلاثة أرقام انطلاقا من اليمين، ثم نقرأ الفئات من اليسار، كل فئة باسمها."
+      },
+      "solution": {
+        "lines": [
+          "$10\\,|\\,000$",
+          "نقرأ فئة فئة: « عشرة آلاف »."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "برّر لماذا تغيّرت كل الأوعية بإضافة قلم واحد.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا نفعل بعشرة أقلام؟"
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك بالحل النموذجي سطرا بسطر."
+      },
+      "solution": {
+        "lines": [
+          "9 أقلام + 1 = 10 أقلام: تُربط حزمة، فتصبح الحزم 10.",
+          "10 حزم تصنع علبة، فتصبح العلب 10؛ و 10 علب تصنع كرتونة، فتصبح الكراتين 10.",
+          "10 كراتين تُوضع في الصندوق الكبير: $9999 + 1 = 10\\,000$."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

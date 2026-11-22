@@ -1,0 +1,361 @@
+{
+  "id": "ex-4am-hasiba-muthallathiya-l3-001",
+  "lessonCode": "hasiba-muthallathiya",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 3 — الزاوية 40°: الحاسبة والقياس",
+    "estimatedMinutes": 9,
+    "tags": [
+      "الحاسبة",
+      "نشاط القياس"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-3",
+      "page": 122,
+      "section": "النسب المثلثية - استعمال حاسبة",
+      "number": 3
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أنشأ تلميذ المثلث $ABC$ القائم في $C$ حيث $\\widehat{BAC} = 40^{\\circ}$ ، وقاس أضلاعه فوجد: $AB = 8\\,\\mathrm{cm}$ ، $AC = 6{,}1\\,\\mathrm{cm}$ و $BC = 5{,}1\\,\\mathrm{cm}$ (الشكل المقابل).",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "C": [
+          6.1284,
+          0
+        ],
+        "B": [
+          6.1284,
+          5.1423
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "8 cm"
+        },
+        {
+          "from": "A",
+          "to": "C",
+          "label": "6,1 cm"
+        },
+        {
+          "from": "C",
+          "to": "B",
+          "label": "5,1 cm"
+        }
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "C",
+          "B"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "A",
+          "from": "C",
+          "to": "B",
+          "label": "40°"
+        }
+      ],
+      "ariaLabel": "مثلث ABC قائم في C أنشأه تلميذ: الزاوية عند A قيسها 40 درجة، وأطوال الأضلاع المقيسة 8 سم و 6,1 سم و 5,1 سم",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "باستعمال حاسبة مبرمجة بالدرجة، احسب بالتدوير إلى الجزء من 100:",
+      "statement": "$\\cos 40^{\\circ}$",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري مدوّر إلى 0,01",
+      "expectedAnswer": "0.77",
+      "misconceptionSignatures": [
+        {
+          "value": "0.76",
+          "id": "MISC-MUTH-TADWIR-BATR"
+        },
+        {
+          "value": "-0.67",
+          "id": "MISC-MUTH-HASIBA-RAD"
+        },
+        {
+          "value": "0.64",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق أن الحاسبة مبرمجة بالدرجة: الحرف ⁦D⁩ في أعلى الشاشة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اللمسة المباشرة: ⁦cos⁩ ثم قيس الزاوية ثم ⁦=⁩ (دون ⁦2nd⁩)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتدوير إلى الجزء من 100: انظر إلى الرقم الموالي؛ إذا كان 5 أو أكبر نضيف 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\cos 40^{\\circ} = 0{,}7660444431 \\approx 0{,}77$ .",
+        "incorrect": "احسب باللمسة المباشرة والحاسبة مبرمجة بالدرجة، ثم دوّر (لا تبتر) إلى الجزء من 100."
+      },
+      "solution": {
+        "lines": [
+          "الحاسبة مبرمجة بالدرجة: ⁦ON cos 40 =⁩ يظهر على الشاشة $0{,}7660444431$ .",
+          "الرقم الذي يلي رقم الأجزاء من 100 هو 6، وهو أكبر من 5: نضيف 1 إلى رقم الأجزاء من 100."
+        ],
+        "result": "\\cos 40^{\\circ} \\approx 0{,}77"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$\\sin 40^{\\circ}$",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري مدوّر إلى 0,01",
+      "expectedAnswer": "0.64",
+      "misconceptionSignatures": [
+        {
+          "value": "0.75",
+          "id": "MISC-MUTH-HASIBA-RAD"
+        },
+        {
+          "value": "0.77",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق أن الحاسبة مبرمجة بالدرجة: الحرف ⁦D⁩ في أعلى الشاشة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اللمسة المباشرة: ⁦sin⁩ ثم قيس الزاوية ثم ⁦=⁩ (دون ⁦2nd⁩)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتدوير إلى الجزء من 100: انظر إلى الرقم الموالي؛ إذا كان 5 أو أكبر نضيف 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin 40^{\\circ} = 0{,}6427876097 \\approx 0{,}64$ .",
+        "incorrect": "احسب باللمسة المباشرة والحاسبة مبرمجة بالدرجة، ثم دوّر (لا تبتر) إلى الجزء من 100."
+      },
+      "solution": {
+        "lines": [
+          "الحاسبة مبرمجة بالدرجة: ⁦ON sin 40 =⁩ يظهر على الشاشة $0{,}6427876097$ .",
+          "الرقم الذي يلي رقم الأجزاء من 100 هو 2، وهو أصغر من 5: نُبقي رقم الأجزاء من 100 كما هو."
+        ],
+        "result": "\\sin 40^{\\circ} \\approx 0{,}64"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "$\\tan 40^{\\circ}$",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري مدوّر إلى 0,01",
+      "expectedAnswer": "0.84",
+      "misconceptionSignatures": [
+        {
+          "value": "0.83",
+          "id": "MISC-MUTH-TADWIR-BATR"
+        },
+        {
+          "value": "-1.12",
+          "id": "MISC-MUTH-HASIBA-RAD"
+        },
+        {
+          "value": "1.19",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق أن الحاسبة مبرمجة بالدرجة: الحرف ⁦D⁩ في أعلى الشاشة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اللمسة المباشرة: ⁦tan⁩ ثم قيس الزاوية ثم ⁦=⁩ (دون ⁦2nd⁩)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتدوير إلى الجزء من 100: انظر إلى الرقم الموالي؛ إذا كان 5 أو أكبر نضيف 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan 40^{\\circ} = 0{,}8390996312 \\approx 0{,}84$ .",
+        "incorrect": "احسب باللمسة المباشرة والحاسبة مبرمجة بالدرجة، ثم دوّر (لا تبتر) إلى الجزء من 100."
+      },
+      "solution": {
+        "lines": [
+          "الحاسبة مبرمجة بالدرجة: ⁦ON tan 40 =⁩ يظهر على الشاشة $0{,}8390996312$ .",
+          "الرقم الذي يلي رقم الأجزاء من 100 هو 9، وهو أكبر من 5: نضيف 1 إلى رقم الأجزاء من 100."
+        ],
+        "result": "\\tan 40^{\\circ} \\approx 0{,}84"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "باستعمال أقياس أطوال أضلاع المثلث، احسب النسبة $\\dfrac{AC}{AB}$ بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري مدوّر إلى 0,01",
+      "expectedAnswer": "0.76",
+      "misconceptionSignatures": [
+        {
+          "value": "1.31",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الضلع $[AC]$ مجاور للزاوية $\\widehat{A}$ والوتر هو $[AB]$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب حاصل قسمة الطولين المقيسين ثم دوّر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AC}{AB} = \\dfrac{6{,}1}{8} = 0{,}7625 \\approx 0{,}76$ .",
+        "incorrect": "النسبة المطلوبة هي طول المجاور المقيس على طول الوتر المقيس، ثم ندوّر إلى الجزء من 100."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AC}{AB} = \\dfrac{6{,}1}{8} = 0{,}7625$",
+          "الرقم الموالي لرقم الأجزاء من 100 هو 2، وهو أصغر من 5."
+        ],
+        "result": "\\dfrac{AC}{AB} \\approx 0{,}76"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "قارن النتيجتين $0{,}76$ و $\\cos 40^{\\circ}$ المدوّرة. ماذا تستنتج؟",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النسبة $\\dfrac{AC}{AB}$ هي جيب تمام الزاوية $\\widehat{A}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القياس بالمسطرة دقيق إلى المليمتر فقط."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمتان متقاربتان جدا: الفرق يأتي من دقة القياس.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AC}{AB}$ هي جيب تمام الزاوية $\\widehat{A}$ ، أي $\\cos 40^{\\circ}$ .",
+          "بالقياس نجد $0{,}76$ وبالحاسبة $0{,}77$ : القيمتان متقاربتان جدا.",
+          "الفرق الصغير يأتي من دقة القياس بالمسطرة (إلى المليمتر)، أما الحاسبة فتعطي قيمة مقربة بعشرة أرقام.",
+          "نستنتج أن النسبة المثلثية لا تتعلق إلا بقيس الزاوية، والحاسبة تعطيها بدقة أكبر من القياس."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

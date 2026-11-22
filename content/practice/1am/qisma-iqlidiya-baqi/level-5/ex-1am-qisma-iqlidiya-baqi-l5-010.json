@@ -1,0 +1,320 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l5-010",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — دورة الأحياء",
+    "estimatedMinutes": 18,
+    "tags": [
+      "فرق",
+      "الحاصل + 1",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "نظّمت البلدية دورة في كرة القدم بين الأحياء، شعارها الروح الرياضية، وشارك فيها 247 لاعبًا.\nالجزء الأول: يضمّ كل فريق 11 لاعبًا.\nالجزء الثاني: يحصل كل فريق كامل على 13 قميصًا، وتُباع القمصان في رزم من 20 قميصًا. تملك البلدية 16 رزمة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "كم فريقًا كاملًا يمكن تشكيله؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الفرق",
+      "expectedAnswer": "22",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "21",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "23",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 247 من 11 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 11 دون أن نتجاوز 247."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$247 = 11 \\times 22 + 5$ و $5 < 11$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 11 فلا يتجاوز الجداء 247، والباقي عندئذ أصغر من 11."
+      },
+      "solution": {
+        "lines": [
+          "$11 \\times 22 = 242$ و $11 \\times 23 = 253$",
+          "$242 \\le 247 < 253$ ، إذن الحاصل هو 22."
+        ],
+        "result": "q = 22"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كم لاعبًا يبقى دون فريق؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد اللاعبين",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "22",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "16",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 247."
+        }
+      ],
+      "feedback": {
+        "correct": "$247 - 11 \\times 22 = 247 - 242 = 5$ ، و $5 < 11$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 11."
+      },
+      "solution": {
+        "lines": [
+          "$247 = 11 \\times 22 + 5$",
+          "$5 < 11$ ، إذن الباقي هو 5."
+        ],
+        "result": "r = 5"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "كم لاعبًا يجب أن ينضمّ لتشكيل فريق آخر كامل؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد اللاعبين",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم يبقى بعد تشكيل المجموعات الكاملة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المجموعة الجديدة تحتاج إلى العدد الكامل للمجموعة."
+        }
+      ],
+      "feedback": {
+        "correct": "يبقى 5، والمجموعة تضمّ 11: $11 - 5 = 6$.",
+        "incorrect": "المطلوب ليس الباقي نفسه، بل ما ينقص الباقي ليصبح 11."
+      },
+      "solution": {
+        "lines": [
+          "$247 = 11 \\times 22 + 5$",
+          "$11 - 5 = 6$"
+        ],
+        "result": "6"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب عدد القمصان اللازمة للفرق الكاملة.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد القمصان",
+      "expectedAnswer": "286",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الفرق × 13."
+        }
+      ],
+      "feedback": {
+        "correct": "$22 \\times 13 = 286$.",
+        "incorrect": "اضرب عدد الفرق الكاملة في 13."
+      },
+      "solution": {
+        "lines": [
+          "$22 \\times 13 = 286$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "كم رزمة يلزم شراؤها؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد الرزم",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "14",
+          "id": "MISC-IQLIDIYA-NISYAN-ZIYADA"
+        },
+        {
+          "value": "6",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل تكفي المجموعات الكاملة لوضع كل شيء؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ماذا نفعل بالباقي إذا لم يكن معدومًا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$286 = 20 \\times 14 + 6$: يبقى 6 بعد المجموعات الكاملة، ويحتاج إلى رزمة أخرى.",
+        "incorrect": "الحاصل يعدّ المجموعات الكاملة فقط؛ إذا بقي شيء فهو يحتاج إلى مجموعة إضافية."
+      },
+      "solution": {
+        "lines": [
+          "$286 = 20 \\times 14 + 6$",
+          "يبقى 6 بعد المجموعات الكاملة، فنحتاج إلى رزمة أخرى:",
+          "$14 + 1 = 15$"
+        ],
+        "result": "15"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "لو انضمّ اللاعبون الناقصون وتشكّل فريق آخر، هل تكفي الرزم الـ 16؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-NISYAN-ZIYADA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب عدد القمصان لـ 23 فريقًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم عدد الرزم اللازمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$23 \\times 13 = 299 = 20 \\times 14 + 19$: يلزم 15 رزمة، و $15 \\le 16$.",
+        "incorrect": "أعد الحساب بفريق إضافي، ولا تنسَ رزمة الباقي."
+      },
+      "solution": {
+        "lines": [
+          "$23 \\times 13 = 299$",
+          "$299 = 20 \\times 14 + 19$ ، يلزم $14 + 1 = 15$ رزمة.",
+          "$15 \\le 16$ ، إذن تكفي."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

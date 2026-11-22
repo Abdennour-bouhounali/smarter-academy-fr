@@ -1,0 +1,231 @@
+{
+  "id": "ex-2am-muqarana-kasrayn-l4-009",
+  "lessonCode": "muqarana-kasrayn",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — ثمن الهدية",
+    "estimatedMinutes": 10,
+    "tags": [
+      "مقارنة بالعدد 1",
+      "مجموع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "اشترك ثلاثة أصدقاء في شراء هدية لمدرّسهم : ساهم الأوّل بـ $\\dfrac{3}{8}$ من ثمنها ، والثاني بـ $\\dfrac{1}{2}$ منه ، والثالث بـ $\\dfrac{1}{4}$ منه ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما الكسر الذي يمثّل مجموع المساهمات الثلاث ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "9/8",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط ؟ وما الكسور المعطاة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد قبل الجمع أو الطرح ثمّ اختزل ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9}{8}$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{8} + \\dfrac{4}{8} + \\dfrac{2}{8} = \\dfrac{9}{8}$ ."
+        ],
+        "result": "\\dfrac{9}{8}"
+      },
+      "work": "optional",
+      "timeSeconds": 90,
+      "counted": false
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل جمع الأصدقاء ثمن الهدية كاملًا ؟ قارن بين $\\dfrac{9}{8}$ والعدد $1$ :",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{9}{8} < 1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-REVERSED"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{9}{8} > 1$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع الكسر أمام العدد المعطى : اكتب العدد كسرًا مقامه مقام الكسر ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العدد على شكل كسر له المقام نفسه ثمّ قارن بين البسطين ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بين البسطين بعد توحيد المقامين ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9}{8} > 1$ .",
+        "incorrect": "اختر طريقة المقارنة المناسبة للحالة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "العدد $1 = \\dfrac{8}{8}$ .",
+          "البسط أكبر من المقام : $9 > 8$ ، إذن $\\dfrac{9}{8} > 1$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "من ساهم بالجزء الأكبر ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الأوّل",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-NUMONLY"
+        },
+        {
+          "id": "B",
+          "content": "الثاني",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "الثالث",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكسر الخاصّ بكلّ حالة ؟ وهل مقاماتها متساوية أو يقسم بعضها بعضًا ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور كلّها بالمقام نفسه إن اختلفت المقامات ثمّ قارن بين البسوط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحكم من البسط وحده ولا من المقام وحده ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب : الثاني .",
+        "incorrect": "وحّد المقامات قبل أن تحكم ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "نكتب الكسور بالمقام $8$ : $\\dfrac{3}{8}$ ، $\\dfrac{1}{2} = \\dfrac{4}{8}$ ، $\\dfrac{1}{4} = \\dfrac{2}{8}$ .",
+          "أكبر بسط هو $4$ .",
+          "الجواب : الثاني ($\\dfrac{1}{2}$) ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "ما الكسر الذي يمثّل الزيادة عن ثمن الهدية ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "1/8",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط ؟ وما الكسور المعطاة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد قبل الجمع أو الطرح ثمّ اختزل ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{8}$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{9}{8} - 1 = \\dfrac{9}{8} - \\dfrac{8}{8} = \\dfrac{1}{8}$ ."
+        ],
+        "result": "\\dfrac{1}{8}"
+      },
+      "work": "optional",
+      "timeSeconds": 90,
+      "counted": false
+    }
+  ]
+}

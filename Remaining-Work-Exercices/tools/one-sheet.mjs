@@ -1,0 +1,11 @@
+import { chromium } from 'playwright';
+const [B, TOKEN, OUT, L, LVL, EX] = process.argv.slice(2);
+const browser = await chromium.launch({ args: ['--no-sandbox'] });
+const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+await ctx.addInitScript((t) => localStorage.setItem('token', t), TOKEN);
+const page = await ctx.newPage();
+await page.goto(`${B}/enseignant/pratique/${L}/${LVL}/${EX}`, { waitUntil: 'domcontentloaded' });
+await page.waitForSelector('[data-exam-sheet]', { timeout: 20000 });
+await page.waitForTimeout(1500);
+await page.locator('[data-exam-sheet]').screenshot({ path: OUT });
+await browser.close();

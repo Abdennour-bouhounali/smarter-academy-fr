@@ -1,0 +1,252 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l4-002",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — قسمة إقليدية وقسمة عشرية",
+    "estimatedMinutes": 9,
+    "tags": [
+      "قسمة إقليدية",
+      "قسمة عشرية",
+      "حصر"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-87",
+      "exercise": 3
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العددين 157 و 23."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اختر عبارة القسمة الإقليدية للعدد 157 على 23.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$157 = 23 \\times 5 + 42$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "id": "B",
+          "content": "$157 = 23 \\times 19 + 6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "id": "C",
+          "content": "$157 = 23 \\times 6 + 19$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$157 = 23 \\times 7 + 19$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-HISAB"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق من صحة كل مساواة بالحساب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في القسمة الإقليدية على 23 يكون الباقي أصغر من 23."
+        }
+      ],
+      "feedback": {
+        "correct": "$23 \\times 6 + 19 = 157$ و $19 < 23$.",
+        "incorrect": "ابحث عن المساواة الصحيحة التي باقيها أصغر من 23."
+      },
+      "solution": {
+        "lines": [
+          "$23 \\times 6 = 138$ و $138 + 19 = 157$",
+          "$19 < 23$ ، إذن $157 = 23 \\times 6 + 19$ هي القسمة الإقليدية للعدد 157 على 23."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أنجز القسمة العشرية للعدد 157 على 23 (نتوقّف عند ثلاثة أرقام بعد الفاصلة).",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "6.826",
+      "misconceptionSignatures": [
+        {
+          "value": "6.827",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالقسمة الإقليدية ثم أكمل بعد الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أضف صفرًا إلى كل باقٍ وتابع القسمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$157 \\div 23 = 6{,}826\\ldots$",
+        "incorrect": "تابع القسمة بعد الفاصلة: ثلاثة أرقام فقط، دون تدوير."
+      },
+      "solution": {
+        "lines": [
+          "$157 = 23 \\times 6 + 19$",
+          "$190 = 23 \\times 8 + 6$ ، $60 = 23 \\times 2 + 14$ ، $140 = 23 \\times 6 + 2$",
+          "$157 \\div 23 = 6{,}826\\ldots$"
+        ],
+        "result": "6{,}826"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "علمًا أنّ $1{,}57 \\div 0{,}23 = 157 \\div 23$ ، اختر حصرًا إلى الوحدة لهذا الحاصل.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$6 < 1{,}57 \\div 0{,}23 < 7$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$5 < 1{,}57 \\div 0{,}23 < 6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        },
+        {
+          "id": "C",
+          "content": "$7 < 1{,}57 \\div 0{,}23 < 8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل يساوي $6{,}826$: انظر إلى جزئه الصحيح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العددان الطبيعيان المتتاليان هما الجزء الصحيح والعدد الذي يليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 < 6{,}826 < 7$.",
+        "incorrect": "الحصر بين عددين طبيعيين متتاليين: الجزء الصحيح للحاصل والعدد الذي يليه."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}57 \\div 0{,}23 = 6{,}826$",
+          "$6 < 6{,}826 < 7$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "أعط القيمة المقرّبة إلى الوحدة بالزيادة لحاصل القسمة $\\frac{157}{23}$.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "value": "8",
+          "id": "MISC-HASR-IZAHA"
+        },
+        {
+          "value": "19",
+          "id": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احصر $\\frac{157}{23}$ بين عددين طبيعيين متتاليين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمة المقرّبة إلى الوحدة بالزيادة هي أكبر طرفي الحصر."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 < \\frac{157}{23} < 7$ ، فالقيمة بالزيادة 7.",
+        "incorrect": "بالزيادة: أكبر طرفي الحصر بين عددين طبيعيين متتاليين؛ بالنقصان: أصغرهما."
+      },
+      "solution": {
+        "lines": [
+          "$157 = 23 \\times 6 + 19$",
+          "$6 < \\frac{157}{23} < 7$",
+          "القيمة المقرّبة إلى الوحدة بالزيادة هي 7."
+        ],
+        "result": "7"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

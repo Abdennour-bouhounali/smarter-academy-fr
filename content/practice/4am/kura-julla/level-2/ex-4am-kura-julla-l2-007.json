@@ -1,0 +1,63 @@
+{
+  "id": "ex-4am-kura-julla-l2-007",
+  "lessonCode": "kura-julla",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — دائرة تدور حول قطرها",
+    "estimatedMinutes": 3,
+    "tags": [
+      "توليد الكرة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_kura-julla_P2",
+      "modelledOn": "know-1"
+    }
+  },
+  "statement": {
+    "content": "في درس التكنولوجيا يتعاون التلاميذ على تجربة: تدور عجلة دائرية رقيقة مركزها O ونصف قطرها $2{,}5\\,\\mathrm{cm}$ بسرعة حول أحد أقطارها، فنرى كرة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما هو قطر الكرة المتولّدة بالسنتيمتر؟",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-KURA-QUTR",
+          "value": "2.5"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ ملاحظة معارف 1 عن تدوير دائرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكرة المتولّدة لها نفس مركز الدائرة ونفس نصف قطرها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القطر ضعف نصف القطر."
+        }
+      ],
+      "feedback": {
+        "correct": "الكرة مركزها O ونصف قطرها $2{,}5\\,\\mathrm{cm}$ ، فقطرها $5\\,\\mathrm{cm}$ .",
+        "incorrect": "المطلوب القطر، لا نصف القطر."
+      }
+    }
+  ]
+}

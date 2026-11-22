@@ -1,0 +1,200 @@
+{
+  "id": "ex-1am-tatbiq-qaida-harfiya-l2-005",
+  "lessonCode": "tatbiq-qaida-harfiya",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — هل يكفي هذا المثال؟",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مثال مضادّ",
+      "تبرير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اقترح زميل القاعدة $a+b=a\\times b$ لأيّ عددين طبيعيين $a$ و $b$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "جرّب زميلك $a=2$ و $b=2$ فوجد $4$ في الجهتين. هل يكفي هذا ليثبت أنّ القاعدة صحيحة دائمًا؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، يكفي",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-ONEOK"
+        },
+        {
+          "id": "B",
+          "content": "لا، لا يكفي",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي أثبته المثال المقدّم: هل تساوت الجهتان أم اختلفتا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مثال تصحّ فيه القاعدة لا يثبت أنّها صحيحة دائمًا، ومثال تخطئ فيه يكفي لإبطالها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الجهتين من أجل القيمة المعطاة ثمّ احكم."
+        }
+      ],
+      "feedback": {
+        "correct": "الأمثلة التي تصحّ فيها القاعدة لا تثبت شيئًا.",
+        "incorrect": "مثال تصحّ فيه المساواة لا يثبت أنّها صحيحة دائمًا: نبحث عن قيمة تختلف عندها الجهتان."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $a=2$ و $b=2$ : $2+2=4$ و $2\\times 2=4$ : الجهتان متساويتان.",
+          "مثال تصحّ فيه المساواة لا يثبت أنّها صحيحة دائمًا."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "من أجل $a=3$ و $b=5$ نجد $8$ في جهة و $15$ في الأخرى. هل يكفي هذا المثال وحده لنقول إنّ القاعدة غير صحيحة دائمًا؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، يكفي",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا، لا يكفي",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-MANYNEED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي أثبته المثال المقدّم: هل تساوت الجهتان أم اختلفتا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مثال تصحّ فيه القاعدة لا يثبت أنّها صحيحة دائمًا، ومثال تخطئ فيه يكفي لإبطالها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الجهتين من أجل القيمة المعطاة ثمّ احكم."
+        }
+      ],
+      "feedback": {
+        "correct": "مثال مضادّ واحد يكفي.",
+        "incorrect": "مثال مضادّ واحد يكفي لإبطال القاعدة، ولا نحتاج إلى أمثلة أخرى."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $a=3$ و $b=5$ : $3+5=8$ بينما $3\\times 5=15$ .",
+          "الجهتان مختلفتان: هذا مثال مضادّ، وهو يكفي وحده."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كم مثالًا مضادًّا يلزم على الأقلّ لإبطال القاعدة؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مثالان مضادّان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-MANYNEED"
+        },
+        {
+          "id": "B",
+          "content": "عدّة أمثلة مضادّة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-MANYNEED"
+        },
+        {
+          "id": "C",
+          "content": "مثال مضادّ واحد",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي أثبته المثال المقدّم: هل تساوت الجهتان أم اختلفتا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مثال تصحّ فيه القاعدة لا يثبت أنّها صحيحة دائمًا، ومثال تخطئ فيه يكفي لإبطالها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الجهتين من أجل القيمة المعطاة ثمّ احكم."
+        }
+      ],
+      "feedback": {
+        "correct": "مثال واحد يكفي.",
+        "incorrect": "مثال مضادّ واحد يكفي لإبطال القاعدة، ولا نحتاج إلى أمثلة أخرى."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $a=3$ و $b=5$ : $3+5=8$ بينما $3\\times 5=15$ .",
+          "مثال مضادّ واحد يكفي لنقول إنّ القاعدة ليست صحيحة دائمًا."
+        ]
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

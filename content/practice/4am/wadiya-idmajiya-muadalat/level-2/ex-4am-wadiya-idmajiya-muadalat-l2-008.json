@@ -1,0 +1,182 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muadalat-l2-008",
+  "lessonCode": "wadiya-idmajiya-muadalat",
+  "level": 2,
+  "metadata": {
+    "title": "متراجحة بمعامل سالب وأكبر عدد صحيح",
+    "estimatedMinutes": 6,
+    "tags": [
+      "متراجحة",
+      "معامل سالب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-muadalat_P1",
+      "modelledOn": "qcm"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "لتكن المتراجحة ذات المجهول $x$ :",
+    "formulas": [
+      "-4x + 7 \\geqslant 19"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "حلّ هذه المتراجحة.",
+      "statement": "حدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x < k$ أو $x \\leqslant k$ أو $x > k$ أو $x \\geqslant k$ : اكتب العدد $k$ فقط (عدد صحيح أو كسر a/b، قد يكون سالبًا)",
+      "expectedAnswer": "-3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر، كما في حل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إضافة عدد إلى الطرفين أو طرحه منهما لا تغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحدّ هو العدد الذي يحقّق المعادلة المرفقة (نضع «=» مكان رمز المتباينة): اقسم في الأخير على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "حدّ الحلول هو $k = -3$ .",
+        "incorrect": "أعد الحل سطرًا سطرًا: العملية نفسها على الطرفين، ثم القسمة على معامل $x$ في الأخير."
+      },
+      "solution": {
+        "lines": [
+          "حدّ الحلول هو حلّ المعادلة المرفقة: $-4x + 7 = 19$",
+          "$-4x = 19 - 7$",
+          "$-4x = 12$",
+          "$x = \\dfrac{12}{-4}$",
+          "إذن حدّ الحلول هو $-3$ ."
+        ],
+        "result": "k = -3"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < -3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        },
+        {
+          "id": "B",
+          "content": "$x \\leqslant -3$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$x > -3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-SALIB-BILA-QALB"
+        },
+        {
+          "id": "D",
+          "content": "$x \\geqslant -3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-SALIB-BILA-QALB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارة معامل $x$ في آخر سطر قبل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد موجب تحافظ على الاتجاه، والقسمة على عدد سالب تغيّره."
+        }
+      ],
+      "feedback": {
+        "correct": "$x \\leqslant -3$ .",
+        "incorrect": "تتبّع سطور الحل: الاتجاه يتغيّر فقط عند الضرب أو القسمة على عدد سالب، ونوع المتباينة (تامة أو غير تامة) لا يتغيّر أبدًا."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $-4x + 7 \\geqslant 19$",
+          "$-4x \\geqslant 19 - 7$",
+          "$-4x \\geqslant 12$",
+          "نقسم الطرفين على العدد السالب $-4$ فنغيّر اتجاه المتباينة:",
+          "$\\dfrac{-4x}{-4} \\leqslant \\dfrac{12}{-4}$",
+          "إذن حلول المتراجحة هي كل قيم $x$ الأصغر من أو تساوي $-3$ ."
+        ],
+        "result": "x \\leqslant -3"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما هو أكبر عدد صحيح يحقّق هذه المتراجحة؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح (قد يكون سالبًا)",
+      "expectedAnswer": "-3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل حلول المتراجحة: هل الحدّ نفسه حلّ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$-3$ .",
+        "incorrect": "استعمل حلول المتراجحة، وانتبه: هل الحدّ نفسه حلّ؟"
+      },
+      "solution": {
+        "lines": [
+          "حلول المتراجحة هي الأعداد $x \\leqslant -3$ ، و $-3$ نفسه حلّ.",
+          "إذن أكبر عدد صحيح يحقّقها هو $-3$ ."
+        ],
+        "result": "-3"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

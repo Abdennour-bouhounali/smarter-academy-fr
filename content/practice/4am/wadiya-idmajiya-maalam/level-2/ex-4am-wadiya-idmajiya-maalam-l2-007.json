@@ -1,0 +1,66 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-maalam-l2-007",
+  "lessonCode": "wadiya-idmajiya-maalam",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — مركز دائرة من قطرها",
+    "estimatedMinutes": 2,
+    "tags": [
+      "منتصف قطعة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-maalam_P3",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "نافورة دائرية في ساحة مقام الشهيد، أحد أقطارها $[GH]$ حيث $G(-3\\,;\\,4)$ و $H(5\\,;\\,-2)$ (معلم متعامد ومتجانس)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا مركز النافورة:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الثنائية (x ; y)",
+      "expectedAnswer": {
+        "x": "1",
+        "y": "1"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المركز منتصف كل قطر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$x = \\dfrac{-3 + 5}{2}$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$y = \\dfrac{4 + (-2)}{2}$"
+        }
+      ],
+      "feedback": {
+        "correct": "المركز منتصف $[GH]$ : $\\left(\\dfrac{-3 + 5}{2}\\,;\\,\\dfrac{4 - 2}{2}\\right) = (1\\,;\\,1)$ .",
+        "incorrect": "نصف مجموع الفاصلتين ونصف مجموع الترتيبين."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 2
+    }
+  ]
+}

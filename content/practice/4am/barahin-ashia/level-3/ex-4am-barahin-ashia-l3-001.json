@@ -1,0 +1,202 @@
+{
+  "id": "ex-4am-barahin-ashia-l3-001",
+  "lessonCode": "barahin-ashia",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 20 — تبسيط CE + FE",
+    "estimatedMinutes": 5,
+    "tags": [
+      "تبسيط",
+      "متوازي أضلاع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-20",
+      "page": 137,
+      "section": "أتعمّق",
+      "number": 20
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 137، تمرين 20): ABEF متوازي أضلاع مركزه D و ABCD متوازي أضلاع (الشكل).",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          6
+        ],
+        "B": [
+          0,
+          0
+        ],
+        "C": [
+          2,
+          -3
+        ],
+        "D": [
+          2,
+          3
+        ],
+        "E": [
+          4,
+          0
+        ],
+        "F": [
+          4,
+          6
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "E"
+        ],
+        [
+          "E",
+          "F"
+        ],
+        [
+          "F",
+          "A"
+        ],
+        [
+          "A",
+          "E"
+        ],
+        {
+          "from": "B",
+          "to": "F",
+          "dashed": true
+        },
+        [
+          "D",
+          "C"
+        ],
+        [
+          "B",
+          "C"
+        ]
+      ],
+      "labels": {
+        "A": "nw",
+        "B": "w",
+        "C": "s",
+        "D": "n",
+        "E": "e",
+        "F": "ne"
+      },
+      "ariaLabel": "متوازي أضلاع ABEF قطراه [AE] و [BF] يتقاطعان في D، والنقطة C حيث ABCD متوازي أضلاع",
+      "maxWidth": 260
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "$\\overrightarrow{CE}$ + $\\overrightarrow{FE}$ يساوي:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{AD}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{CF}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-RABT"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{DA}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-AKS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الشعاعان لا يتتابعان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في ABEF لدينا $\\overrightarrow{FE} = \\overrightarrow{AB}$ ، وفي BCED لدينا $\\overrightarrow{CE} = \\overrightarrow{BD}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض كلا منهما ثم رتّب الحدّين لتطبّق علاقة شال."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{CE} + \\overrightarrow{FE} = \\overrightarrow{BD} + \\overrightarrow{AB} = \\overrightarrow{AB} + \\overrightarrow{BD} = \\overrightarrow{AD}$ .",
+        "incorrect": "عوّض كل شعاع بشعاع يساويه حتى يتتابعا، ثم طبّق علاقة شال."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "النقطة M حيث $\\overrightarrow{BM}$ = $\\overrightarrow{DM}$ + $\\overrightarrow{CM}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "تنطبق على E",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "تنطبق على F",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-RABT"
+        },
+        {
+          "id": "C",
+          "content": "منتصف [CE]",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-RABT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع ما فيه M في طرف واحد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\overrightarrow{BM} + \\overrightarrow{MD} = \\overrightarrow{BD}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تصبح المساواة $\\overrightarrow{CM} = \\overrightarrow{BD}$ : ابحث على الشكل عن شعاع مبدؤه C يساوي $\\overrightarrow{BD}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{CM} = \\overrightarrow{BD} = \\overrightarrow{CE}$ ، فـ M تنطبق على E .",
+        "incorrect": "اختصر المساواة إلى $\\overrightarrow{CM} = \\overrightarrow{BD}$ ، ثم تذكّر أن BCED متوازي أضلاع."
+      }
+    }
+  ]
+}

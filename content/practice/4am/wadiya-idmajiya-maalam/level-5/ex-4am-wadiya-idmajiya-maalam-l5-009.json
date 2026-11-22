@@ -1,0 +1,74 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-maalam-l5-009",
+  "lessonCode": "wadiya-idmajiya-maalam",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — خريطة المترو",
+    "estimatedMinutes": 3,
+    "tags": [
+      "السلّم",
+      "طول خط منكسر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-maalam_P1",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "على خريطة مترو الجزائر، $1\\,\\mathrm{cm}$ يمثّل $0{,}5\\,\\mathrm{km}$ . قطار يسير من المحطة $A(0\\,;\\,0)$ إلى $B(3\\,;\\,4)$ ثم إلى $C(9\\,;\\,12)$ على الخريطة (معلم متعامد ومتجانس، الوحدة $1\\,\\mathrm{cm}$)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المسافة الحقيقية التي يقطعها القطار (بالكيلومتر):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة",
+      "expectedAnswer": "7.5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AB = 5\\,\\mathrm{cm}$"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$BC = \\sqrt{6^2 + 8^2} = 10\\,\\mathrm{cm}$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$15 \\times 0{,}5$"
+        }
+      ],
+      "feedback": {
+        "correct": "على الخريطة $5 + 10 = 15\\,\\mathrm{cm}$ ، أي $7{,}5\\,\\mathrm{km}$ .",
+        "incorrect": "احسب الطول على الخريطة ثم طبّق السلّم."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-MAALAM-SULLAM"
+        },
+        {
+          "value": "30",
+          "id": "MISC-MAALAM-SULLAM"
+        }
+      ],
+      "difficulty": 5
+    }
+  ]
+}

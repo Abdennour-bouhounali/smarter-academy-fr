@@ -1,0 +1,360 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-kusur-amaliyat-l5-006",
+  "lessonCode": "wadiya-idmajiya-kusur-amaliyat",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — وضعيّة إدماجيّة : حديقة العشب",
+    "estimatedMinutes": 14,
+    "tags": [
+      "جمع كسرين",
+      "القسمة الإقليدية",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "حديقة مستطيلة طولها $26$ m وعرضها $18$ m : $\\dfrac{2}{3}$ منها عشب ، و $\\dfrac{1}{6}$ ورود ، والباقي ممرّات . يغطّي كيس بذور العشب $15$ m² ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "الجزء الأوّل :",
+      "statement": "ما الكسر الذي يمثّله العشب والورود معًا ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "5/6",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1/3",
+          "id": "MISC-JAMKASR-ACROSS"
+        },
+        {
+          "value": "1/2",
+          "id": "MISC-JAMKASR-NOSCALE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليّة المطلوبة ؟ وهل المقامان متساويان ، أم أنّ أحدهما مضاعف للآخر ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا اختلف المقامان فاكتب الكسر ذا المقام الأصغر بالمقام الأكبر : اضرب حدّيه في العدد نفسه ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع (أو اطرح) البسطين وأبقِ المقام كما هو ، ثمّ اختزل الناتج إن أمكن ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{5}{6}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح ، ثمّ اختزل الناتج وأعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2}{3} = \\dfrac{2 \\times 2}{3 \\times 2} = \\dfrac{4}{6}$ .",
+          "$\\dfrac{2}{3} + \\dfrac{1}{6} = \\dfrac{4 + 1}{6} = \\dfrac{5}{6}$ ."
+        ],
+        "result": "\\dfrac{5}{6}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما الكسر الذي تمثّله الممرّات ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "1/6",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "5/6",
+          "id": "MISC-JAMKASR-PART"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكلّ يساوي كسرًا بسطه ومقامه عدد واحد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الأجزاء المأخوذة أوّلًا ثمّ اطرحها من الكلّ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الجزء الباقي هو الكلّ ناقص ما أُخذ ، وهو أصغر من الكلّ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{6}$ .",
+        "incorrect": "اجمع ما أُخذ أوّلًا ثمّ اطرحه من الكلّ ، ولا تُعطِ ما أُخذ بدل الباقي ."
+      },
+      "solution": {
+        "lines": [
+          "$1 = \\dfrac{6}{6}$ .",
+          "$\\dfrac{2}{3} = \\dfrac{2 \\times 2}{3 \\times 2} = \\dfrac{4}{6}$ .",
+          "ما أُخذ : $\\dfrac{2}{3} + \\dfrac{1}{6} = \\dfrac{4 + 1}{6} = \\dfrac{5}{6}$ .",
+          "الباقي : $1 - \\dfrac{5}{6} = \\dfrac{6}{6} - \\dfrac{5}{6} = \\dfrac{1}{6}$ ."
+        ],
+        "result": "\\dfrac{1}{6}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "lead": "الجزء الثاني :",
+      "statement": "احسب مساحة الحديقة بالمتر المربّع .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "468",
+      "misconceptionSignatures": [
+        {
+          "value": "88",
+          "id": "MISC-SYN-KASR2-PERIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المستطيل : ما العمليّة التي تعطي مساحته ؟ وما التي تعطي محيطه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المساحة = الطول × العرض ، والمحيط = 2 × (الطول + العرض) ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى الوحدة : المساحة بالمتر المربّع والمحيط بالمتر ."
+        }
+      ],
+      "feedback": {
+        "correct": "$468\\,\\mathrm{m}^2$ .",
+        "incorrect": "المساحة جداء البعدين والمحيط مجموع الأضلاع الأربعة : لا تخلط بينهما وانتبه إلى الوحدة ."
+      },
+      "solution": {
+        "lines": [
+          "$26 \\times 18 = 468$ ، أي $468\\,\\mathrm{m}^2$ ."
+        ],
+        "result": "468\\,\\mathrm{m}^2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "احسب مساحة العشب بالمتر المربّع .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "312",
+      "misconceptionSignatures": [
+        {
+          "value": "702",
+          "id": "MISC-JIDAKASR-FLIP"
+        },
+        {
+          "value": "156",
+          "id": "MISC-JIDAKASR-HALFWAY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزء من عدد يعني جداء الكسر في العدد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي ما دام الكسر أصغر من 1 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$312$ .",
+        "incorrect": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ، ولا تقلب الكسر ."
+      },
+      "solution": {
+        "lines": [
+          "$468 \\div 3 = 156$ .",
+          "$156 \\times 2 = 312$ ."
+        ],
+        "result": "312"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "ما عدد الأكياس اللازمة لتغطية العشب كلّه ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "21",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "value": "12",
+          "id": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما عدد المجموعات الكاملة (صناديق ، حافلات ، أكياس ، شرائح …) ؟ وهل يبقى شيء يحتاج إلى مجموعة إضافية ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القسمة الإقليدية : إذا بقي شيء فلا بدّ من مجموعة إضافية ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد اللازم هو الحاصل زائد واحد عندما لا يكون الباقي معدومًا ."
+        }
+      ],
+      "feedback": {
+        "correct": "$21$ .",
+        "incorrect": "المقسوم عليه × الحاصل + الباقي = المقسوم ، والباقي أصغر من المقسوم عليه . تحقّق ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$312 = 15 \\times 20 + 12$ ، و $12 < 15$ .",
+          "$15 \\times 20 = 300$ و $312 - 300 = 12$ .",
+          "يبقى $12$ ولا يكفي لمجموعة كاملة ، فنحتاج إلى $20 + 1 = 21$ ."
+        ],
+        "result": "21"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "هل تكفي $20$ كيسًا لتغطية العشب كلّه ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا ثمّ تحقّق منها بحساب بسيط ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أو قارن بدقّة ثمّ قارن بما قيل ."
+        }
+      ],
+      "feedback": {
+        "correct": "لا .",
+        "incorrect": "احسب ثمّ قارن بدقّة قبل أن تجيب ."
+      },
+      "solution": {
+        "lines": [
+          "$20 \\times 15 = 300$ m² فقط .",
+          "$300 < 312$ : لا تكفي ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

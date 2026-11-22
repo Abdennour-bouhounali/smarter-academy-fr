@@ -1,0 +1,291 @@
+{
+  "id": "ex-4am-mutatabiqat-shahira-l5-001",
+  "lessonCode": "mutatabiqat-shahira",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2017 — توسيع حديقة عمومية",
+    "estimatedMinutes": 16,
+    "tags": [
+      "مربع مجموع",
+      "مساحة",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mutatabiqat-shahira_P1",
+      "modelledOn": "BEM 2017 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2017",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "حديقة عمومية بمدينة تيارت مربعة الشكل طول ضلعها $x$ m . قرّرت البلدية توسيعها بإضافة $6$ m إلى طول ضلعها، فتبقى الحديقة مربعة الشكل، ويُهيّأ الجزء المضاف لغرس الأزهار تشجيعًا للأهالي على العناية بنظافة الحيّ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عبّر بدلالة $x$ عن المساحة $S$ للحديقة بعد التوسيع، ثم انشرها وبسّطها.",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $S$ على الشكل $x^2 + mx + n$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-MURABBA-MAJMU-BILA-2AB"
+        },
+        {
+          "value": "6",
+          "id": "MISC-MUTATABIQA-2AB-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على مربع مجموع: $(a + b)^2 = a^2 + 2ab + b^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن الحدّين $a$ و $b$ ، ولا تنسَ الحد المضاعف $2ab$ ولا تربيع المعامل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = x^2 + 12x + 36$ إذن $m = 12$ .",
+        "incorrect": "طبّق المتطابقة الشهيرة حدًّا حدًّا (مربع كل حد والحد المضاعف)، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "طول ضلع الحديقة بعد التوسيع: $(x + 6)$ m",
+          "$S = (x + 6)^2$",
+          "$S = x^2 + 2 \\times x \\times 6 + 6^2$"
+        ],
+        "result": "S = x^2 + 12x + 36"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $S$ على الشكل $x^2 + mx + n$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "36",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = x^2 + 12x + 36$ إذن $n = 36$ .",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $n$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$S = x^2 + 12x + 36$"
+        ],
+        "result": "n = 36"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "استنتج بدلالة $x$ مساحة الجزء المضاف $A$ على شكل مجموع مبسّط.",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $mx + n$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-MURABBA-MAJMU-BILA-2AB"
+        },
+        {
+          "value": "6",
+          "id": "MISC-MUTATABIQA-2AB-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح مساحة الحديقة القديمة $x^2$ من $S$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل النشر الذي وجدته في السؤال 01."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحدّان $x^2$ و $-x^2$ يتعادمان."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 12x + 36$ إذن $m = 12$ .",
+        "incorrect": "طبّق المتطابقة الشهيرة حدًّا حدًّا (مربع كل حد والحد المضاعف)، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "مساحة الجزء المضاف = مساحة الحديقة بعد التوسيع − مساحتها قبله",
+          "$A = (x + 6)^2 - x^2$",
+          "$A = x^2 + 12x + 36 - x^2$"
+        ],
+        "result": "A = 12x + 36"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $mx + n$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "36",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 12x + 36$ إذن $n = 36$ .",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $n$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$A = 12x + 36$"
+        ],
+        "result": "n = 36"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "احسب مساحة الجزء المضاف من أجل $x = 45$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (بالمتر المربع)",
+      "expectedAnswer": "576",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى في الشكل المبسّط الذي وجدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 576$.",
+        "incorrect": "عوّض $x$ في كل حد، واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$A = 12 \\times 45 + 36 = 540 + 36$",
+          "تحقّق: $51^2 - 45^2 = 2601 - 2025 = 576$"
+        ],
+        "result": "A = 576\\ m^2"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "☜ تكلفة تهيئة المتر المربع الواحد لغرس الأزهار 350DA ، وتُضاف 15000DA لنقل الشتلات. ما التكلفة الإجمالية لتهيئة الجزء المضاف (من أجل $x = 45$)؟",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدينار DA)",
+      "expectedAnswer": "216600",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب تكلفة التهيئة: المساحة المضافة × 350."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أضف مصاريف النقل."
+        }
+      ],
+      "feedback": {
+        "correct": "$576 \\times 350 + 15000 = 201600 + 15000 = 216600$ DA .",
+        "incorrect": "استعمل مساحة الجزء المضاف وحده (لا مساحة الحديقة كلها)، ثم أضف مصاريف النقل مرة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "تكلفة التهيئة: $576 \\times 350 = 201600$ DA",
+          "التكلفة الإجمالية: $201600 + 15000 = 216600$ DA"
+        ],
+        "result": "216600\\ DA"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

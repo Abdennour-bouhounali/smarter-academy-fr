@@ -1,0 +1,121 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-talis-l2-003",
+  "lessonCode": "wadiya-idmajiya-talis",
+  "level": 2,
+  "metadata": {
+    "title": "أسطوانة محاطة: الارتفاع ثم الحجم",
+    "estimatedMinutes": 7,
+    "tags": [
+      "أسطوانة",
+      "مخروط",
+      "معادلة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-talis_P2",
+      "modelledOn": "situation"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "أسطوانة دوران نصف قطرها $r = 3\\,\\mathrm{cm}$ محاطة بمخروط دوران ارتفاعه $12\\,\\mathrm{cm}$ ونصف قطر قاعدته $4\\,\\mathrm{cm}$ (قاعدتها على قاعدة المخروط ودائرتها العليا على سطحه)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب ارتفاع الأسطوانة $h$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في نصف المقطع المحوري: $\\dfrac{r}{4} = \\dfrac{12 - h}{12}$ (خاصية طالس)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض بـ $r = 3$ ، احسب $12 - h$ ثم $h$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{4} = \\dfrac{12 - h}{12}$ ، أي $12 - h = 9$ ومنه $h = 3\\,\\mathrm{cm}$ .",
+        "incorrect": "$\\dfrac{3}{4}$ هي نسبة ارتفاع المثلث الصغير $12 - h$ إلى $12$ ، لا نسبة $h$ إلى $12$ ."
+      },
+      "solution": {
+        "lines": [
+          "حسب خاصية طالس في نصف المقطع المحوري: $\\dfrac{r}{4} = \\dfrac{12 - h}{12}$",
+          "$\\dfrac{3}{4} = \\dfrac{12 - h}{12}$",
+          "$12 - h = \\dfrac{3 \\times 12}{4} = 9$",
+          "$h = 12 - 9$"
+        ],
+        "result": "h = 3\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "نكتب حجم الأسطوانة على الشكل $V = k\\pi\\,\\mathrm{cm}^3$ . أعط العدد $k$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $k$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "27",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-TALIS-TARBI-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$V = \\pi \\times r^2 \\times h$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$V = \\pi \\times 3^2 \\times 3 = 27\\pi\\,\\mathrm{cm}^3$ .",
+        "incorrect": "في $V = \\pi r^2 h$ يُربَّع نصف القطر وحده، ولا نستعمل القطر."
+      },
+      "solution": {
+        "lines": [
+          "$V = \\pi \\times r^2 \\times h$",
+          "$V = \\pi \\times 3^2 \\times 3$"
+        ],
+        "result": "V = 27\\pi\\,\\mathrm{cm}^3"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

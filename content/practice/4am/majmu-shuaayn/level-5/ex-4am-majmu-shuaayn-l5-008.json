@@ -1,0 +1,80 @@
+{
+  "id": "ex-4am-majmu-shuaayn-l5-008",
+  "lessonCode": "majmu-shuaayn",
+  "level": 5,
+  "generator": {
+    "tool": "unit11-majmu-gen.py",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — خريطة لعبة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الشعاعان المتعاكسان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_majmu-shuaayn_P4",
+      "modelledOn": "know-5"
+    }
+  },
+  "statement": {
+    "content": "في لعبة استكشاف على الهاتف، يتحرّك البطل بالانسحابات التي أشعتها $\\vec{u}$ ثم $\\vec{v}$ ثم $\\vec{w}$ حيث $\\vec{w} = -(\\vec{u} + \\vec{v})$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "$\\vec{u} + \\vec{v} + \\vec{w} =$",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2(\\vec{u} + \\vec{v})$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        },
+        {
+          "id": "B",
+          "content": "$\\vec{w}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSIHAB-NISYAN"
+        },
+        {
+          "id": "C",
+          "content": "$\\vec{0}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المنحى والاتجاه والطول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "شعاعان متعاكسان لهما نفس المنحى ونفس الطول واتجاهان متعاكسان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الذهاب ثم العودة إلى نفس النقطة يعطي الشعاع المعدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\vec{u} + \\vec{v}$ ومعاكسه مجموعهما المعدوم: البطل يعود إلى نقطة انطلاقه.",
+        "incorrect": "الشعاعان المتعاكسان مجموعهما الشعاع المعدوم؛ لا نجمع الأطوال."
+      }
+    }
+  ]
+}

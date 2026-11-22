@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-muntasaf-masafa-l5-009",
+  "lessonCode": "muntasaf-masafa",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — أين الخطأ؟",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المسافة",
+      "تصويب خطأ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_muntasaf-masafa_P2",
+      "modelledOn": "know-dist"
+    }
+  },
+  "statement": {
+    "content": "لحساب المسافة بين $A(-1\\,;\\,5)$ و $B(3\\,;\\,2)$ كتب سامي: $AB = \\sqrt{(3 - (-1))^2 + (2 - 5)^2} = \\sqrt{4^2 - 3^2} = \\sqrt{7}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أين الخطأ، وما المسافة الصحيحة؟",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(-3)^2 = 9$ لا $-9$ : $AB = \\sqrt{16 + 9} = 5$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا خطأ: $AB = \\sqrt{7}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-ISHARA"
+        },
+        {
+          "id": "C",
+          "content": "الخطأ في الجذر: $AB = 4 + 3 = 7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الفرقين: فرق الفاصلتين وفرق الترتيبين (النهاية ناقص المبدأ)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ربّع كل فرق ثم اجمع المربعين: هذا مربع المسافة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خذ الجذر التربيعي في الأخير، وبسّطه إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "مربع عدد سالب موجب: $(2 - 5)^2 = (-3)^2 = 9$ ، و $AB = \\sqrt{25} = 5$ .",
+        "incorrect": "كل مربع موجب، والمسافة جذر مجموع المربعين."
+      }
+    }
+  ]
+}

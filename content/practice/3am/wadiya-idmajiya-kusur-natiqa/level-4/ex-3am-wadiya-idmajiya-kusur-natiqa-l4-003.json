@@ -1,0 +1,246 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-kusur-natiqa-l4-003",
+  "lessonCode": "wadiya-idmajiya-kusur-natiqa",
+  "level": 4,
+  "metadata": {
+    "title": "مساحتا مثلثين بأبعاد كسرية",
+    "estimatedMinutes": 10,
+    "tags": [
+      "مساحة مثلث",
+      "مقارنة",
+      "فرق كسرين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الرابع",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "مثلث أوّل قاعدته $\\dfrac{7}{4}$ m وارتفاعه المقابل $\\dfrac{6}{5}$ m ، ومثلث ثانٍ قاعدته $\\dfrac{5}{2}$ m وارتفاعه المقابل $\\dfrac{3}{7}$ m ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب مساحة المثلث الأوّل بالمتر المربّع .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "21/20",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "21/10",
+          "id": "MISC-SYN-KUSUR-NOHALF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم الشكل واكتب بُعديه عليه بالوحدة نفسها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحة المستطيل جداء بُعديه، ومساحة المثلث نصف جداء قاعدته في ارتفاعه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل النتيجة واذكر الوحدة المناسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{21}{20}$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "مساحة المثلث $= \\dfrac{1}{2} \\times$ القاعدة $\\times$ الارتفاع .",
+          "$\\dfrac{1}{2} \\times \\dfrac{7}{4} \\times \\dfrac{6}{5} = \\dfrac{42}{40} = \\dfrac{21}{20}$ m² ."
+        ],
+        "result": "\\dfrac{21}{20}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب مساحة المثلث الثاني بالمتر المربّع .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "15/28",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "15/14",
+          "id": "MISC-SYN-KUSUR-NOHALF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم الشكل واكتب بُعديه عليه بالوحدة نفسها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحة المستطيل جداء بُعديه، ومساحة المثلث نصف جداء قاعدته في ارتفاعه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل النتيجة واذكر الوحدة المناسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{15}{28}$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{2} \\times \\dfrac{5}{2} \\times \\dfrac{3}{7} = \\dfrac{15}{28}$ m² ."
+        ],
+        "result": "\\dfrac{15}{28}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أيّ المثلثين أكبر مساحة ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "المثلث الثاني",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-DENOMS"
+        },
+        {
+          "id": "B",
+          "content": "المثلث الأوّل",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للكسرين المقام نفسه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "وحّد المقامات ثمّ قارن البسطين، فالكسر الأكبر له البسط الأكبر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحكم بنظرة إلى البسط وحده أو المقام وحده."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: المثلث الأوّل .",
+        "incorrect": "وحّد المقامات قبل المقارنة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{21}{20} > 1$ بينما $\\dfrac{15}{28} < 1$ ، فالمثلث الأوّل أكبر مساحة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما الفرق بين المساحتين بالمتر المربّع ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "18/35",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "-18/35",
+          "id": "MISC-JAMTARH-FARQ-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تعبّر عن الوضعية: جمع أجزاء أم طرح جزء من الكلّ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "وحّد المقامات بأصغر مقام مشترك ثمّ اجمع أو اطرح البسطين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل النتيجة، وتحقّق بمقارنتها بالواحد."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{18}{35}$ .",
+        "incorrect": "وحّد المقامات قبل الجمع أو الطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "المقام المشترك $140$ .",
+          "$\\dfrac{21}{20} - \\dfrac{15}{28} = \\dfrac{147}{140} - \\dfrac{75}{140} = \\dfrac{72}{140} = \\dfrac{18}{35}$ m² ."
+        ],
+        "result": "\\dfrac{18}{35}"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

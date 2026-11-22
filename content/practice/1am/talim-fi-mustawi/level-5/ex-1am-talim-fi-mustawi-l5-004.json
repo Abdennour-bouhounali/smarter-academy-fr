@@ -1,0 +1,270 @@
+{
+  "id": "ex-1am-talim-fi-mustawi-l5-004",
+  "lessonCode": "talim-fi-mustawi",
+  "level": 5,
+  "metadata": {
+    "title": "مستطيل المسبح الصغير",
+    "estimatedMinutes": 7,
+    "tags": [
+      "مستطيل",
+      "رأس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يُرسم مسبح الأطفال في نادي الحيّ على معلم متعامد: ثلاثة من رؤوسه $A(-4\\,;\\,3)$ و $B(2\\,;\\,3)$ و $C(2\\,;\\,-1)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "$ABCD$ مستطيل أضلاعه توازي المحورين، ورؤوسه $A$ و $B$ و $C$ و $D$ متتالية، حيث $A(-4\\,;\\,3)$ و $B(2\\,;\\,3)$ و $C(2\\,;\\,-1)$ . ما إحداثيا الرأس $D$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-4",
+        "y": "-1"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SWAP",
+          "value": {
+            "x": "-1",
+            "y": "-4"
+          }
+        },
+        {
+          "id": "MISC-MUSTAWI-SIGNY",
+          "value": {
+            "x": "-4",
+            "y": "1"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم الرؤوس الثلاثة على معلم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضلعان متقابلان على خطّين من الاتجاه نفسه: $D$ لها فاصلة $A$ وترتيب $C$ إن كان $AD$ شاقوليًّا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بأنّ $D$ تقع على خطّ شاقولي مع $A$ وعلى خطّ أفقي مع $C$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$D(-4\\,;\\,-1)$ .",
+        "incorrect": "الرأس الرابع يأخذ فاصلته من الرأس المقابل لضلع شاقولي وترتيبه من الرأس المقابل لضلع أفقي."
+      },
+      "solution": {
+        "lines": [
+          "أضلاع المستطيل توازي المحورين: كلّ رأسين متجاورين لهما فاصلة واحدة أو ترتيب واحد",
+          "$D(-4\\,;\\,-1)$"
+        ],
+        "result": "D(-4\\,;\\,-1)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "نعلّم في معلم متعامد النقط $A(-4\\,;\\,3)$ و $B(2\\,;\\,3)$ و $C(2\\,;\\,-1)$ و $D(-4\\,;\\,-1)$ (وحدة الطول واحدة على المحورين). ما طبيعة الرباعي $ABCD$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مربّع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-NATSQUARE"
+        },
+        {
+          "id": "B",
+          "content": "مستطيل وليس مربّعًا",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "معيّن وليس مربّعًا",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "شبه منحرف",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "علّم النقط الأربع على معلم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أضلاعه توازي المحورين، فاحسب طول ضلعين متجاورين بعدّ الوحدات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إن تساوى الطولان فهو مربّع، وإلا فهو مستطيل."
+        }
+      ],
+      "feedback": {
+        "correct": "الضلعان المتجاوران $6$ و $4$ غير متساويين : مستطيل وليس مربّعًا .",
+        "incorrect": "عدّ وحدات ضلعين متجاورين ثمّ قارن."
+      },
+      "solution": {
+        "lines": [
+          "$AB=6$ و $BC=4$ وكلّ الزوايا قائمة لأنّ الأضلاع توازي المحورين",
+          "مستطيل وليس مربّعًا"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "المستقيم $(AC)$ شاقولي ويشمل $A(-1\\,;\\,3)$ و $C(-1\\,;\\,-1)$ ، والمستقيم $(BD)$ أفقي ويشمل $B(-4\\,;\\,1)$ و $D(2\\,;\\,1)$ . ما إحداثيا نقطة تقاطعهما $O$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-1",
+        "y": "1"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SWAP",
+          "value": {
+            "x": "1",
+            "y": "-1"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المستقيم الشاقولي له الفاصلة نفسها في كلّ نقطه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المستقيم الأفقي له الترتيب نفسه في كلّ نقطه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نقطة التقاطع تأخذ فاصلة الشاقولي وترتيب الأفقي."
+        }
+      ],
+      "feedback": {
+        "correct": "$O(-1\\,;\\,1)$ .",
+        "incorrect": "فاصلة التقاطع هي فاصلة المستقيم الشاقولي وترتيبه هو ترتيب المستقيم الأفقي."
+      },
+      "solution": {
+        "lines": [
+          "كلّ نقاط $(AC)$ فاصلتها $-1$",
+          "كلّ نقاط $(BD)$ ترتيبها $1$",
+          "$O(-1\\,;\\,1)$"
+        ],
+        "result": "O(-1\\,;\\,1)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "نعلّم النقطة $P(-4\\,;\\,3)$ على ورقة يمثّل فيها $1\\ \\text{cm}$ على كلّ محور القيمة $2$ . ما بعد $P$ عن محور التراتيب بالسنتيمتر؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالسنتيمتر",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SCALEIGN",
+          "value": "4"
+        },
+        {
+          "id": "MISC-MUSTAWI-NEGDIST",
+          "value": "-2"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالفاصلة دون إشارتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كلّ سنتيمتر يمثّل $2$ : اقسم على $2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "البعد لا يكون سالبًا."
+        }
+      ],
+      "feedback": {
+        "correct": "البعد $2\\ \\text{cm}$ .",
+        "incorrect": "اقسم القيمة (دون إشارتها) على قيمة السنتيمتر الواحد."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة دون إشارته: $4$",
+          "$4\\div 2=2$ سنتيمترًا"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

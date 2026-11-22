@@ -1,0 +1,229 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l2-009",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — حاصل مضبوط أم محصور؟",
+    "estimatedMinutes": 6,
+    "tags": [
+      "باقٍ معدوم",
+      "حصر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر حاصلي القسمة $\\frac{3500}{125}$ و $\\frac{3550}{125}$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب باقي القسمة الإقليدية للعدد 3500 على 125.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "0",
+      "misconceptionSignatures": [
+        {
+          "value": "28",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "125",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 3500."
+        }
+      ],
+      "feedback": {
+        "correct": "$3500 - 125 \\times 28 = 3500 - 3500 = 0$ ، و $0 < 125$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 125."
+      },
+      "solution": {
+        "lines": [
+          "$3500 = 125 \\times 28 + 0$",
+          "$0 < 125$ ، إذن الباقي هو 0."
+        ],
+        "result": "r = 0"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "قالت هدى: «$\\frac{3500}{125}$ محصور تمامًا بين عددين طبيعيين متتاليين». هل توافقها؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-SIFR-SARIM"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما باقي قسمة 3500 على 125؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان الباقي معدومًا، فما طبيعة الحاصل؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$3500 = 125 \\times 28$: الحاصل عدد طبيعي، فلا يقع تمامًا بين عددين متتاليين.",
+        "incorrect": "عندما يكون الباقي معدومًا يكون حاصل القسمة عددًا طبيعيًا."
+      },
+      "solution": {
+        "lines": [
+          "$3500 = 125 \\times 28 + 0$",
+          "إذن $\\frac{3500}{125} = 28$ عدد طبيعي."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "$\\frac{3500}{125}$ عدد طبيعي. احسبه.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "28",
+      "misconceptionSignatures": [
+        {
+          "value": "29",
+          "id": "MISC-HASR-SIFR-SARIM"
+        },
+        {
+          "value": "27",
+          "id": "MISC-HASR-SIFR-SARIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 3500 على 125."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي معدوم: حاصل القسمة هو القيمة المضبوطة."
+        }
+      ],
+      "feedback": {
+        "correct": "$3500 = 125 \\times 28$ ، إذن $\\frac{3500}{125} = 28$.",
+        "incorrect": "ابحث عن العدد الطبيعي الذي إذا ضربناه في 125 نجد 3500."
+      },
+      "solution": {
+        "lines": [
+          "$125 \\times 28 = 3500$",
+          "إذن $\\frac{3500}{125} = 28$."
+        ],
+        "result": "28"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "أعط القيمة المقرّبة إلى الوحدة بالنقصان لحاصل القسمة $\\frac{3550}{125}$.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "28",
+      "misconceptionSignatures": [
+        {
+          "value": "29",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "value": "50",
+          "id": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احصر $\\frac{3550}{125}$ بين عددين طبيعيين متتاليين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمة المقرّبة إلى الوحدة بالنقصان هي أصغر طرفي الحصر."
+        }
+      ],
+      "feedback": {
+        "correct": "$28 < \\frac{3550}{125} < 29$ ، فالقيمة بالنقصان 28.",
+        "incorrect": "بالنقصان: أصغر طرفي الحصر بين عددين طبيعيين متتاليين؛ بالزيادة: أكبرهما."
+      },
+      "solution": {
+        "lines": [
+          "$3550 = 125 \\times 28 + 50$",
+          "$28 < \\frac{3550}{125} < 29$",
+          "القيمة المقرّبة إلى الوحدة بالنقصان هي 28."
+        ],
+        "result": "28"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

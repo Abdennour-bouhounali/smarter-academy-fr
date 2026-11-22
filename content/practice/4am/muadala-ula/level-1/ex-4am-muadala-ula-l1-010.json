@@ -1,0 +1,145 @@
+{
+  "id": "ex-4am-muadala-ula-l1-010",
+  "lessonCode": "muadala-ula",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2019 — استعارة الكتب",
+    "estimatedMinutes": 5,
+    "tags": [
+      "ax = b",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_muadala-ula_P1",
+      "modelledOn": "BEM 2019 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2019",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "تقترح مكتبة بسيدي بلعباس، تشجيعًا على القراءة والعلم، على قرّائها صيغتين لاستعارة الكتب: الصيغة الأولى: 40DA للكتاب الواحد. الصيغة الثانية: 25DA للكتاب الواحد مع بطاقة سنوية ثمنها 300DA ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "ما هو عدد الكتب التي يمكن استعارتها في كل صيغة بمبلغ 1200DA ؟",
+      "statement": "بالصيغة الأولى.",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الكتب",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "1/30",
+          "id": "MISC-MUADALA-QISMA-MAQLUBA"
+        },
+        {
+          "value": "1160",
+          "id": "MISC-MUADALA-TARH-MUAMIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "سمِّ $x$ عدد الكتب: ثمن الاستعارة بالصيغة الأولى $40x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلة: هذا الثمن يساوي المبلغ، ثم حلّها."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 30$ : 30 كتابًا.",
+        "incorrect": "الحل هو حاصل قسمة العدد الذي في الطرف الآخر على معامل $x$ بإشارته. تحقّق بالتعويض."
+      },
+      "solution": {
+        "lines": [
+          "ليكن $x$ عدد الكتب:",
+          "$40x = 1200$",
+          "$x = \\dfrac{1200}{40}$"
+        ],
+        "result": "x = 30"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "بالصيغة الثانية.",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الكتب",
+      "expectedAnswer": "36",
+      "misconceptionSignatures": [
+        {
+          "value": "1/36",
+          "id": "MISC-MUADALA-QISMA-MAQLUBA"
+        },
+        {
+          "value": "60",
+          "id": "MISC-MUADALA-NAQL-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بالصيغة الثانية يُدفع ثمن البطاقة زيادة على ثمن الكتب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب المعادلة $25x + 300 = 1200$ ثم اطرح ثمن البطاقة من الطرفين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم على ثمن استعارة الكتاب الواحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 36$ : 36 كتابًا.",
+        "incorrect": "أجرِ كل عملية على الطرفين معًا، ثم اقسم على معامل $x$ بإشارته، وتحقّق بالتعويض."
+      },
+      "solution": {
+        "lines": [
+          "$25x + 300 = 1200$",
+          "$25x = 1200 - 300$",
+          "$25x = 900$",
+          "$x = \\dfrac{900}{25}$"
+        ],
+        "result": "x = 36"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

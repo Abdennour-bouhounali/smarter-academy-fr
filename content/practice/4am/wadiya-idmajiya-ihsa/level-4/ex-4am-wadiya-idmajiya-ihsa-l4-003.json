@@ -1,0 +1,217 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ihsa-l4-003",
+  "lessonCode": "wadiya-idmajiya-ihsa",
+  "level": 4,
+  "metadata": {
+    "title": "التمرين 20 (ص 101) — تكراران مجهولان",
+    "estimatedMinutes": 10,
+    "tags": [
+      "الوسيط",
+      "تكرار مجهول",
+      "المتوسط المتوازن"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-20",
+      "page": 101,
+      "section": "أتعمّق",
+      "number": 20
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "وسيط السلسلة الإحصائية المعطاة أدناه يساوي $6{,}5$ وتكرارها الكلي 10 ، حيث $a$ و $b$ عددان طبيعيان. (طُبع الوسيط في الكتاب 6 : مع هذه التكرارات لا يمكن أن يساوي الوسيط 6 ، فصحّحته المنصّة إلى $6{,}5$ .)",
+    "table": {
+      "head": [
+        "القيمة",
+        "4",
+        "5",
+        "8",
+        "12"
+      ],
+      "rows": [
+        [
+          "التكرار",
+          "3",
+          "$a$",
+          "$b$",
+          "4"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $a + b$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مجموع التكرارات يساوي التكرار الكلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$10 - 3 - 4 = 3$ .",
+        "incorrect": "اكتب: $3 + a + b + 4 = 10$ ."
+      },
+      "solution": {
+        "lines": [
+          "$3 + a + b + 4 = 10$",
+          "$a + b = 3$"
+        ],
+        "result": "a + b = 3"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "التكرار الكلي 10 : الوسيط نصف مجموع القيمتين ذواتي الرتبتين 5 و 6 .",
+      "statement": "جد $a$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$6{,}5 = \\dfrac{5 + 8}{2}$ : القيمة ذات الرتبة 5 هي 5 ، وذات الرتبة 6 هي 8 ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمة 5 تأخذ الرتب من 4 إلى $3 + a$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر رتبة للقيمة 5 هي 5 ، أي $3 + a = 5$ ، فـ $a = 2$ .",
+        "incorrect": "حدّد القيمتين ذواتي الرتبتين 5 و 6 من الوسيط المعطى، ثم استعمل التكرارات المجمعة الصاعدة."
+      },
+      "solution": {
+        "lines": [
+          "$6{,}5 = \\dfrac{5 + 8}{2}$ ، إذن القيمة ذات الرتبة 5 هي 5 والقيمة ذات الرتبة 6 هي 8 .",
+          "القيمة 5 تأخذ الرتب من 4 إلى $3 + a$ ، والقيمة 8 تبدأ من الرتبة $4 + a$ .",
+          "$3 + a = 5$",
+          "$a = 2$"
+        ],
+        "result": "a = 2"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "استنتج $b$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة 01 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 - 2 = 1$ .",
+        "incorrect": "عوّض $a$ في $a + b$ ."
+      },
+      "solution": {
+        "lines": [
+          "$b = 3 - 2 = 1$",
+          "تحقّق: التكرارات المجمعة الصاعدة 3 ، 5 ، 6 ، 10 ؛ الرتبة 5 للقيمة 5 والرتبة 6 للقيمة 8 ."
+        ],
+        "result": "b = 1"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب متوسط هذه السلسلة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة",
+      "expectedAnswer": "7,8",
+      "misconceptionSignatures": [
+        {
+          "value": "7,25",
+          "id": "MISC-IHSA-MUTAWASSIT-BILA-TARJIH"
+        },
+        {
+          "value": "6,5",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $a$ و $b$ بقيمتيهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مجموع (القيمة × التكرار) ÷ 10 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{4 \\times 3 + 5 \\times 2 + 8 \\times 1 + 12 \\times 4}{10} = 7{,}8$ .",
+        "incorrect": "المتوسط المتوازن: مجموع (القيمة × التكرار) ÷ التكرار الكلي."
+      },
+      "solution": {
+        "lines": [
+          "$4 \\times 3 + 5 \\times 2 + 8 \\times 1 + 12 \\times 4 = 78$",
+          "$\\dfrac{78}{10} = 7{,}8$"
+        ],
+        "result": "7{,}8"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

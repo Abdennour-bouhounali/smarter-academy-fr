@@ -1,0 +1,308 @@
+{
+  "id": "ex-2am-rabi-mutanasib-l5-008",
+  "lessonCode": "rabi-mutanasib",
+  "level": 5,
+  "metadata": {
+    "title": "محيط مضمار دائري",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "الجداءان المتصالبان",
+      "الرابع المتناسب"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "opener",
+      "page": 70,
+      "section": "الرابع المتناسب وحساب محيط الأرض حوالي 300 ق.م"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "على غرار ما فعله القدماء لتقدير محيط الأرض: مضمار دائري يتألف من $36$ قوسًا متساويًا طول كل قوس $85$ m. نريد معرفة طول المضمار كله ثم أطوال أجزاء منه.\nالجزء الأول: المحيط.\nالجزء الثاني: أجزاء المضمار.",
+    "table": {
+      "head": [
+        "عدد الأقواس",
+        "1",
+        "36"
+      ],
+      "rows": [
+        [
+          "الطول (m)",
+          "85",
+          "$x$"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "اختر مساواة الجداءين المتصالبين التي تعطي $x$ .",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$1 \\times 85 = 36 \\times x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-RABI-CROSS"
+        },
+        {
+          "id": "B",
+          "content": "$1 \\times x = 85 \\times 36$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$x \\times 36 = 85 \\times 1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-RABI-CROSS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العدد المجهول في خانته من الجدول واقرأ العددين على كل قطر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في جدول تناسبية: جداء العددين على أحد القطرين يساوي جداء العددين على القطر الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثم اقسم طرفيها على العدد المعلوم الذي يضرب المجهول."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 85 \\times 36$ .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$1 \\times x = 85 \\times 36$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب طول المضمار كله بالمتر.",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "3060",
+      "misconceptionSignatures": [
+        {
+          "value": "121",
+          "id": "MISC-RABI-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العدد المجهول في خانته من الجدول واقرأ العددين على كل قطر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في جدول تناسبية: جداء العددين على أحد القطرين يساوي جداء العددين على القطر الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثم اقسم طرفيها على العدد المعلوم الذي يضرب المجهول."
+        }
+      ],
+      "feedback": {
+        "correct": "الطول $3060$ m .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$x = 85 \\times 36 = 3060$"
+        ],
+        "result": "3060"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "ما طول $5$ أقواس؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "425",
+      "misconceptionSignatures": [
+        {
+          "value": "90",
+          "id": "MISC-RABI-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "الطول $425$ m .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$85 \\times 5 = 425$"
+        ],
+        "result": "425"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "كم قوسًا يغطي طول $1700$ m؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "144500",
+          "id": "MISC-RABI-MULROW"
+        },
+        {
+          "value": "0,05",
+          "id": "MISC-RABI-INV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد الأقواس $20$ .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$1700 \\div 85 = 20$"
+        ],
+        "result": "20"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ج",
+      "statement": "برّر أنّ $18$ قوسًا تغطي نصف المضمار.",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارجع إلى الحسابات التي أنجزتها في الأسئلة السابقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اذكر الطريقة المستعملة والعددين اللذين اعتمدت عليهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل خطوة مع عبارة تبرّرها."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$18 = 36 \\div 2$",
+          "طول $18$ قوسًا: $85 \\times 18 = 1530$ m وهو نصف $3060$ m ."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

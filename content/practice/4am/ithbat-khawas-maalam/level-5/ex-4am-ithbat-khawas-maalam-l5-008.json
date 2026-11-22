@@ -1,0 +1,163 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l5-008",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — نزهة GPS في الطاسيلي",
+    "estimatedMinutes": 4,
+    "tags": [
+      "دائرة",
+      "الطاسيلي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_ithbat-khawas-maalam_P3",
+      "modelledOn": "ex-18"
+    }
+  },
+  "generator": {
+    "tool": "u1x-ithbat-khawas-maalam/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "في نزهة بالطاسيلي، قوسان صخريان في $A(-4\\,;\\,2)$ و $B(2\\,;\\,-6)$ ، والمخيّم في مركز الدائرة التي قطرها [AB] (معلم متعامد ومتجانس، الوحدة 100 m)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا المخيّم (مركز الدائرة):",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x\\,;\\,y)$ : الأولى ثم الثانية (عدد صحيح أو كسر مثل 5/2)",
+      "expectedAnswer": {
+        "x": "-1",
+        "y": "-2"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المركز منتصف [AB]."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نصف مجموع الفاصلتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نصف مجموع الترتيبين."
+        }
+      ],
+      "feedback": {
+        "correct": "المخيّم $\\Omega(-1\\,;\\,-2)$ .",
+        "incorrect": "المنتصف نصف المجموع."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "نصف القطر (بالوحدة):",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-DAIRA-QUTR",
+          "value": "10"
+        },
+        {
+          "id": "MISC-MAALAM-MASAFA-JADHR-NASI",
+          "value": "25"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\Omega A^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$9 + 16$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الجذر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\Omega A = 5$ .",
+        "incorrect": "نصف القطر نصف القطر [AB]."
+      }
+    },
+    {
+      "id": "q3",
+      "statement": "الدليل في $T(3\\,;\\,1)$ :",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "على الدائرة لأن $\\Omega T^2 = 16 + 9 = 25$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "ليس عليها لأن $\\Omega T^2 = 25 > 5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-NASI"
+        },
+        {
+          "id": "C",
+          "content": "ليس عليها لأن $AB = 10 \\neq \\Omega T$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-DAIRA-QUTR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $\\Omega T^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن بـ $r^2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نصف القطر لا القطر."
+        }
+      ],
+      "feedback": {
+        "correct": "T على الدائرة.",
+        "incorrect": "نقارن $\\Omega T^2$ بـ $r^2 = 25$ ."
+      }
+    }
+  ]
+}

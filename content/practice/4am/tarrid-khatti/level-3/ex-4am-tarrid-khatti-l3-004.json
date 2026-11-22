@@ -1,0 +1,149 @@
+{
+  "id": "ex-4am-tarrid-khatti-l3-004",
+  "lessonCode": "tarrid-khatti",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 36 (ص 75) — كرة القدم في القسم",
+    "estimatedMinutes": 8,
+    "tags": [
+      "نسبة مئوية",
+      "نمذجة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-36",
+      "page": 75,
+      "section": "أتعمّق",
+      "number": 36,
+      "adaptedFrom": "ex-4am-tarrid-khatti-l3-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في قسم متكوّن من 30 تلميذا، 20 منهم يدرسون اللغة الإنجليزية و 10 يدرسون اللغة الألمانية. 60% من الذين يدرسون الإنجليزية يمارسون كرة القدم، و 70% من الذين يدرسون الألمانية يمارسونها أيضا."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نسمّي $f(x)$ عدد ممارسي كرة القدم من بين $x$ تلميذا يدرسون الإنجليزية. عبّر عن $f(x)$ بدلالة $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "0,6",
+      "misconceptionSignatures": [
+        {
+          "value": "1,6",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أخذ $60\\%$ من عدد هو ضربه في $\\dfrac{60}{100}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(x) = \\dfrac{60}{100}x = 0{,}6x$ .",
+        "incorrect": "أخذ نسبة من عدد يعني الضرب في هذه النسبة مقسومة على 100."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = \\dfrac{60}{100} \\times x = 0{,}6x$"
+        ],
+        "result": "f(x) = 0{,}6x"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب عدد تلاميذ القسم الذين يمارسون كرة القدم.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد التلاميذ",
+      "expectedAnswer": "19",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $f(20)$ ، ثم 70% من 10."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع العددين."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}6 \\times 20 + 0{,}7 \\times 10 = 12 + 7 = 19$ .",
+        "incorrect": "احسب عدد اللاعبين في كل مجموعة ثم اجمع."
+      },
+      "solution": {
+        "lines": [
+          "من الإنجليزية: $f(20) = 0{,}6 \\times 20 = 12$",
+          "من الألمانية: $0{,}7 \\times 10 = 7$",
+          "المجموع: $12 + 7 = 19$ تلميذا."
+        ],
+        "result": "19"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما هي النسبة المئوية لتلاميذ القسم الذين يمارسون كرة القدم؟ (دوّر إلى 0,01)",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة مدوّر إلى 0,01، دون الرمز %",
+      "expectedAnswer": "63,33",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النسبة = عدد اللاعبين ÷ عدد تلاميذ القسم × 100."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{19}{30} \\times 100 \\approx 63{,}33$ : حوالي $63{,}33\\%$ .",
+        "incorrect": "قسّم على عدد تلاميذ القسم كله، لا على إحدى المجموعتين."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{19}{30} \\times 100 = \\dfrac{190}{3} \\approx 63{,}33$",
+          "حوالي $63{,}33\\%$ من تلاميذ القسم يمارسون كرة القدم."
+        ],
+        "result": "63{,}33\\%"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

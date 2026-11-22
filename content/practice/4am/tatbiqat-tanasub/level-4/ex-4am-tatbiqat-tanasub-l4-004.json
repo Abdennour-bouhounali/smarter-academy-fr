@@ -1,0 +1,222 @@
+{
+  "id": "ex-4am-tatbiqat-tanasub-l4-004",
+  "lessonCode": "tatbiqat-tanasub",
+  "level": 4,
+  "metadata": {
+    "title": "تخفيض ثم زيادة بالنسبة نفسها",
+    "estimatedMinutes": 6,
+    "tags": [
+      "تغيّران متتابعان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tatbiqat-tanasub_P1",
+      "modelledOn": "method-percent",
+      "adaptedFrom": "ex-4am-tatbiqat-tanasub-l4-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "حذاء رياضي سعره 1000DA ، خُفّض سعره بنسبة 20%، ثم زِيد السعر الجديد بنسبة 20%."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب سعر الحذاء بعد التخفيض.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "800",
+      "misconceptionSignatures": [
+        {
+          "value": "200",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التخفيض بـ 20% ضرب في $1 - \\dfrac{20}{100}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب السعر الأول في هذا المضاعف."
+        }
+      ],
+      "feedback": {
+        "correct": "$1000 \\times 0{,}8 = 800$ ، أي 800DA .",
+        "incorrect": "بعد التخفيض يُدفع 80% من السعر."
+      },
+      "solution": {
+        "lines": [
+          "$1000 \\times \\left(1 - \\dfrac{20}{100}\\right) = 1000 \\times 0{,}8 = 800$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب سعر الحذاء بعد الزيادة.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "960",
+      "misconceptionSignatures": [
+        {
+          "value": "1000",
+          "id": "MISC-NISBA-TATABU-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الزيادة تُحسب على السعر بعد التخفيض."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الزيادة بـ 20% ضرب في $1 + \\dfrac{20}{100}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$800 \\times 1{,}2 = 960$ ، أي 960DA .",
+        "incorrect": "اضرب السعر بعد التخفيض في مضاعف الزيادة."
+      },
+      "solution": {
+        "lines": [
+          "$800 \\times \\left(1 + \\dfrac{20}{100}\\right) = 800 \\times 1{,}2 = 960$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "هل عاد سعر الحذاء إلى قيمته الأولى؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NISBA-TATABU-JAM"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن السعر الأخير بالسعر الأول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الزيادة حُسبت على سعر أصغر من السعر الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "$960 \\neq 1000$ : لم يعد السعر إلى قيمته الأولى.",
+        "incorrect": "قارن السعر بعد التغيّرين بالسعر الأول 1000DA ."
+      },
+      "solution": {
+        "lines": [
+          "$960 < 1000$",
+          "لم يعد السعر إلى قيمته الأولى، لأن الزيادة حُسبت على 800DA لا على 1000DA ."
+        ],
+        "result": "لم يعد"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "احسب النسبة المئوية للتغيّر الكلي.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب النسبة $t$ فقط دون الرمز %، مسبوقة بالإشارة − إن كان التغيّر انخفاضًا",
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-NISBA-TATABU-JAM"
+        },
+        {
+          "value": "4",
+          "id": "MISC-NISBA-TATABU-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التغيّران المتتابعان يُترجمان بجداء المضاعفين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداء على الشكل $1 - \\dfrac{t}{100}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}8 \\times 1{,}2 = 0{,}96 = 1 - \\dfrac{4}{100}$ : انخفاض بنسبة 4% .",
+        "incorrect": "النسب المتتابعة لا تُجمع: احسب جداء المضاعفين."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}8 \\times 1{,}2 = 0{,}96$",
+          "$0{,}96 = 1 - \\dfrac{4}{100}$",
+          "انخفض السعر في المجموع بنسبة 4% ."
+        ],
+        "result": "t = -4"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

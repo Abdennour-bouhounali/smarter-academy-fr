@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 // The only classification archetype in the v1 6e bank is "useful vs not
 // useful information" (see problemes.resolution's prb-01) — bin labels are
 // hardcoded rather than sent by the backend. If a future grade needs a
 // different classification shape, the public question DTO gains bin
 // metadata then; not built speculatively now.
+// Clés de traduction seulement : t() est résolu au rendu, pas ici.
 const BINS = [
-  { id: 'useful', label: 'Utile' },
-  { id: 'not_useful', label: 'Pas utile' },
+  { id: 'useful', labelKey: 'diagnostic.questions.binUseful' },
+  { id: 'not_useful', labelKey: 'diagnostic.questions.binNotUseful' },
 ];
 
 /**
@@ -20,6 +22,7 @@ const BINS = [
  * reports the student's assignments.
  */
 export default function ClassificationQuestion({ question, onChange, disabled }) {
+  const { t } = useTranslation('student');
   const [assignments, setAssignments] = useState({});
   const [selected, setSelected] = useState(null);
 
@@ -48,7 +51,7 @@ export default function ClassificationQuestion({ question, onChange, disabled })
       {pool.length > 0 && (
         <div>
           <div className="text-[11px] font-mono-jetbrains font-bold text-slate-400 uppercase tracking-wider mb-2">
-            Touche une information, puis un bac
+            {t('diagnostic.questions.classificationHint')}
           </div>
           <div className="flex flex-wrap gap-2">
             {pool.map((it) => (
@@ -58,9 +61,9 @@ export default function ClassificationQuestion({ question, onChange, disabled })
                 type="button"
                 onClick={() => setSelected(it.id)}
                 aria-pressed={selected === it.id}
-                className={`px-3 py-2.5 rounded-xl border-2 text-sm font-medium text-left max-w-[260px] transition-all min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${
+                className={`px-3 py-2.5 rounded-xl border-2 text-sm font-medium text-start max-w-[260px] transition-all min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-nav-accent ${
                   selected === it.id
-                    ? 'bg-blue-50 border-blue-500 ring-2 ring-blue-300 text-blue-900'
+                    ? 'bg-nav-accent-soft border-nav-accent ring-2 ring-blue-300 text-blue-900'
                     : 'bg-white border-slate-200 text-slate-700 hover:border-slate-400'
                 }`}
               >
@@ -85,7 +88,7 @@ export default function ClassificationQuestion({ question, onChange, disabled })
               selected !== null ? 'border-blue-400 bg-blue-50/50 cursor-pointer' : 'border-slate-200 bg-slate-50'
             }`}
           >
-            <div className="text-[11px] font-mono-jetbrains font-bold text-slate-500 uppercase tracking-wider">{bin.label}</div>
+            <div className="text-[11px] font-mono-jetbrains font-bold text-slate-500 uppercase tracking-wider">{t(bin.labelKey)}</div>
             {inBin(bin.id).map((it) => (
               <motion.button
                 key={it.id}
@@ -95,7 +98,7 @@ export default function ClassificationQuestion({ question, onChange, disabled })
                   e.stopPropagation();
                   unassign(it.id);
                 }}
-                className="w-full text-left px-3 py-2 rounded-lg border-2 border-slate-200 bg-white text-sm text-slate-700 hover:opacity-80 transition-colors"
+                className="w-full text-start px-3 py-2 rounded-lg border-2 border-slate-200 bg-white text-sm text-slate-700 hover:opacity-80 transition-colors"
               >
                 {it.text}
               </motion.button>

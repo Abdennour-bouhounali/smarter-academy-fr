@@ -1,0 +1,74 @@
+{
+  "id": "ex-4am-ikhtizal-kasr-l1-008",
+  "lessonCode": "ikhtizal-kasr",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2019 — العدد A = 14/9 × (5/2 + 2)",
+    "estimatedMinutes": 3,
+    "tags": [
+      "كسر غير قابل للاختزال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_ikhtizal-kasr_P4",
+      "modelledOn": "BEM 2019 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2019",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد $A$ حيث:",
+    "formulas": [
+      "A = \\dfrac{14}{9} \\times \\left(\\dfrac{5}{2} + 2\\right)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن $A$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيمة $A$ بعد الاختزال",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بما بين القوسين: اكتب 2 على شكل كسر مقامه 2."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب الكسرين، ثم اختزل الناتج."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{14}{9} \\times \\dfrac{9}{2} = \\dfrac{126}{18}$ ، والقسمة تامة: $A$ عدد طبيعي.",
+        "incorrect": "احسب ما بين القوسين أولًا، ثم اضرب واختزل: يجب أن يصير المقام 1."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{14}{9} \\times \\left(\\dfrac{5}{2} + \\dfrac{4}{2}\\right)$",
+          "$A = \\dfrac{14}{9} \\times \\dfrac{9}{2}$",
+          "$A = \\dfrac{126}{18}$",
+          "إذن $A$ عدد طبيعي."
+        ],
+        "result": "A = 7"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

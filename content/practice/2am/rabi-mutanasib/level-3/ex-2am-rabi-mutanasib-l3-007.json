@@ -1,0 +1,198 @@
+{
+  "id": "ex-2am-rabi-mutanasib-l3-007",
+  "lessonCode": "rabi-mutanasib",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — خطأ ياسين",
+    "estimatedMinutes": 10,
+    "tags": [
+      "الخاصية الضربية",
+      "تصحيح خطأ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "ثمن $4$ kg من الجزر $320$ DA. قال ياسين: «ثمن $5$ kg هو $321$ DA لأنّني أضفت $1$ إلى العددين معًا»."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "تحقّق من استدلال ياسين.",
+      "statement": "اختر الحساب الصحيح لثمن $5$ kg.",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$320 + 1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-RABI-ADD"
+        },
+        {
+          "id": "B",
+          "content": "$320 \\times 5 \\div 4$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$320 \\times 5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-RABI-MULROW"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن ما يحدث في السطر الأول بما يحدث في السطر الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في جدول تناسبية يُضرب العددان في العدد نفسه، ولا نضيف إليهما العدد نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب الطريقة على عدد من الجدول تعرف مقابله لتتأكّد."
+        }
+      ],
+      "feedback": {
+        "correct": "الثمن $400$ DA وليس $321$ DA .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "ثمن الكيلوغرام: $320 \\div 4 = 80$",
+          "ثمن $5$ kg: $80 \\times 5 = 400$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما الفرق بين ثمن $5$ kg وثمن $4$ kg؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "80",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-RABI-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن ما يحدث في السطر الأول بما يحدث في السطر الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في جدول تناسبية يُضرب العددان في العدد نفسه، ولا نضيف إليهما العدد نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب الطريقة على عدد من الجدول تعرف مقابله لتتأكّد."
+        }
+      ],
+      "feedback": {
+        "correct": "الفرق $80$ DA .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$400 - 320 = 80$",
+          "الفرق هو ثمن كيلوغرام واحد."
+        ],
+        "result": "80"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما ثمن $9$ kg؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "720",
+      "misconceptionSignatures": [
+        {
+          "value": "325",
+          "id": "MISC-RABI-ADD"
+        },
+        {
+          "value": "2880",
+          "id": "MISC-RABI-MULROW"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "الثمن $720$ DA .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$80 \\times 9 = 720$"
+        ],
+        "result": "720"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

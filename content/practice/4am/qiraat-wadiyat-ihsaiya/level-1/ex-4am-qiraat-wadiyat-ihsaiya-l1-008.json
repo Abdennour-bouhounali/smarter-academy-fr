@@ -1,0 +1,117 @@
+{
+  "id": "ex-4am-qiraat-wadiyat-ihsaiya-l1-008",
+  "lessonCode": "qiraat-wadiyat-ihsaiya",
+  "level": 1,
+  "metadata": {
+    "title": "مسابقة القسم: فريقان",
+    "estimatedMinutes": 3,
+    "tags": [
+      "المتوسط المتوازن",
+      "مجموعات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_qiraat-wadiyat-ihsaiya_P3",
+      "modelledOn": "challenge"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في مسابقة القسم فريقان متعاونان: فريق من 4 أصدقاء متوسط نقاطهم 12 ، وفريق من 6 أصدقاء متوسط نقاطهم 7 ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب مجموع نقاط الأصدقاء الـ 10 .",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "90",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مجموع نقاط مجموعة = عدد أفرادها × متوسطها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب مجموع كل مجموعة ثم اجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 12 + 6 \\times 7 = 90$ .",
+        "incorrect": "اضرب متوسط كل مجموعة في عدد أفرادها، ثم اجمع النتيجتين."
+      },
+      "solution": {
+        "lines": [
+          "$4 \\times 12 = 48$ و $6 \\times 7 = 42$",
+          "$48 + 42 = 90$"
+        ],
+        "result": "90"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب متوسط نقاط الأصدقاء الـ 10 .",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (عشري عند الحاجة)",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "9,5",
+          "id": "MISC-IHSA-MUTAWASSIT-MUTAWASSITAYN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المتوسط = مجموع النقاط ÷ عدد الأفراد كلهم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد أفراد الفريقين غير متساوٍ: متوسط المتوسطين لا يصلح هنا."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{90}{10} = 9$ .",
+        "incorrect": "اقسم مجموع النقاط الذي وجدته في 01 على العدد الكلي للأفراد."
+      },
+      "solution": {
+        "lines": [
+          "عدد الأفراد: $4 + 6 = 10$",
+          "$\\dfrac{90}{10} = 9$",
+          "وليس $\\dfrac{12 + 7}{2} = 9{,}5$ ، لأن عدد أفراد الفريقين مختلف."
+        ],
+        "result": "9"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

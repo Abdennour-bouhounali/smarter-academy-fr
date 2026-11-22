@@ -1,0 +1,332 @@
+{
+  "id": "ex-4am-dala-khattiya-l5-007",
+  "lessonCode": "dala-khattiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2013 — كراء دراجة رباعية الدفع بتاغيت",
+    "estimatedMinutes": 13,
+    "tags": [
+      "وضعية إدماجية",
+      "ثلاثة عروض"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_dala-khattiya_P1",
+      "modelledOn": "BEM 2013 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2013",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "قرّر أصدقاء كراء دراجة رباعية الدفع لزيارة كثبان تاغيت مع المحافظة على نظافتها، لمدة لا تتجاوز أسبوعا. قدّمت لهم ثلاث وكالات العروض التالية:\n– الوكالة الأولى: 2500DA لليوم الواحد.\n– الوكالة الثانية: 1800DA لليوم الواحد يُضاف إليه تأمين غير مسترجع قدره 3500DA .\n– الوكالة الثالثة: مبلغ جزافي قدره 12000DA لمدة لا تتجاوز أسبوعا."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب تكلفة كراء الدراجة لمدة 6 أيام:",
+      "statement": "حسب الوكالة الأولى:",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "15000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكلفة = ثمن اليوم × عدد الأيام."
+        }
+      ],
+      "feedback": {
+        "correct": "$2500 \\times 6 = 15000$ .",
+        "incorrect": "اضرب عدد الأيام في ثمن اليوم حسب الوكالة الأولى."
+      },
+      "solution": {
+        "lines": [
+          "$2500 \\times 6 = 15000$"
+        ],
+        "result": "15000DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "حسب الوكالة الثانية:",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "14300",
+      "misconceptionSignatures": [
+        {
+          "value": "10800",
+          "id": "MISC-TANASUB-MABLAGH-THABIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكلفة = ثمن اليوم × عدد الأيام + التأمين."
+        }
+      ],
+      "feedback": {
+        "correct": "$1800 \\times 6 + 3500 = 14300$ .",
+        "incorrect": "لا تنس التأمين."
+      },
+      "solution": {
+        "lines": [
+          "$1800 \\times 6 + 3500 = 14300$"
+        ],
+        "result": "14300DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما الوكالة الأنسب لكراء 6 أيام؟",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الوكالة الأولى",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TANASUB-MABLAGH-THABIT"
+        },
+        {
+          "id": "B",
+          "content": "الوكالة الثانية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TANASUB-MABLAGH-THABIT"
+        },
+        {
+          "id": "C",
+          "content": "الوكالة الثالثة",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المبالغ الثلاثة."
+        }
+      ],
+      "feedback": {
+        "correct": "الوكالة الثالثة: 12000DA .",
+        "incorrect": "قارن تكلفة الوكالات الثلاث لـ 6 أيام."
+      },
+      "solution": {
+        "lines": [
+          "$15000 > 14300 > 12000$ : الوكالة الثالثة هي الأنسب لـ 6 أيام."
+        ],
+        "result": "الوكالة الثالثة"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "ليكن $x$ عدد أيام الكراء ($1 \\leqslant x \\leqslant 7$)، و $f(x)$ ، $g(x)$ ، $h(x)$ التكلفة حسب الوكالات الأولى والثانية والثالثة على الترتيب.",
+      "statement": "اكتب $f(x)$ على الشكل $f(x) = ax$ .",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "2500",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكلفة حسب الوكالة الأولى = ثمن اليوم × عدد الأيام."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(x) = 2500x$ .",
+        "incorrect": "المعامل هو ثمن اليوم في الوكالة الأولى."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 2500x$ ، $g(x) = 1800x + 3500$ ، $h(x) = 12000$"
+        ],
+        "result": "f(x) = 2500x"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أيّ الدوال $f$ ، $g$ ، $h$ دالة خطية؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$f$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$g$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KHATTIYA-AFFINE"
+        },
+        {
+          "id": "C",
+          "content": "$h$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAALUFI-KHATTIYA-KHALT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدالة الخطية من الشكل $x \\longmapsto ax$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f$ وحدها.",
+        "incorrect": "دالة فيها مبلغ ثابت ليست خطية."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 2500x$ من الشكل $ax$ : $f$ دالة خطية.",
+          "$g$ و $h$ ليستا من الشكل $ax$ (فيهما مبلغ ثابت)."
+        ],
+        "result": "f"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "في معلم متعامد ومتجانس، مثّل بيانيا الدوال $f$ ، $g$ ، $h$ من أجل $1 \\leqslant x \\leqslant 7$ (نأخذ $2cm$ لليوم الواحد على محور الفواصل و $1cm$ لكل $2000DA$ على محور التراتيب).",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تمثيل دالة خطية مستقيم يشمل المبدأ $O$ ؛ تمثيل دالة تآلفية مستقيم لا يشمله في الغالب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب صورتي 1 و 7 بكل دالة."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "تمثيل $f$ قطعة من مستقيم يشمل المبدأ، طرفاها $(1 ; 2500)$ و $(7 ; 17500)$ .",
+          "تمثيل $g$ قطعة طرفاها $(1 ; 5300)$ و $(7 ; 16100)$ .",
+          "تمثيل $h$ قطعة موازية لمحور الفواصل، طرفاها $(1 ; 12000)$ و $(7 ; 12000)$ ."
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "statement": "حلّ المعادلة $f(x) = g(x)$ . ماذا يمثّل حلّها؟",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الحل $x$ (عدد فقط)",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$2500x = 1800x + 3500$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع حدود $x$ في طرف واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$700x = 3500$ ، إذن $x = 5$ .",
+        "incorrect": "اجمع حدود $x$ في طرف ثم اقسم على معامل $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$2500x = 1800x + 3500$",
+          "$700x = 3500$",
+          "$x = 5$ : لكراء 5 أيام تتساوى تكلفتا الوكالتين الأولى والثانية."
+        ],
+        "result": "x = 5"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,280 @@
+{
+  "id": "ex-1am-hasil-qisma-kasr-l3-010",
+  "lessonCode": "hasil-qisma-kasr",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — القيم المقرّبة لحاصل القسمة",
+    "estimatedMinutes": 9,
+    "tags": [
+      "قيمة مقرّبة",
+      "حاصل القسمة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 2,
+      "file": "1am-s2-64",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نعتبر حاصل قسمة 17 على 6."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب حاصل القسمة 17 على 6 على شكل كسر.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "17/6",
+      "misconceptionSignatures": [
+        {
+          "value": "6/17",
+          "id": "MISC-HASIL-QALB"
+        },
+        {
+          "value": "17,6",
+          "id": "MISC-HASIL-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العدد الذي نقسمه والعدد الذي نقسم عليه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في الكتابة الكسرية يوضع المقسوم فوق الشرطة والمقسوم عليه تحتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب القسمة أولًا ثم حوّلها إلى كسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$17 \\div 6$ = $\\dfrac{17}{6}$ : المقسوم بسط والمقسوم عليه مقام.",
+        "incorrect": "الكسر $\\dfrac{a}{b}$ هو حاصل قسمة $a$ على $b$ : البسط هو المقسوم والمقام هو المقسوم عليه، والشرطة لا تتحوّل إلى فاصلة."
+      },
+      "solution": {
+        "lines": [
+          "$17 \\div 6$ = $\\dfrac{17}{6}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط القيمة المقرّبة بالنقصان إلى 0,1 لهذا الحاصل.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بـ رقم واحد بعد الفاصلة",
+      "expectedAnswer": "2,8",
+      "misconceptionSignatures": [
+        {
+          "value": "2,9",
+          "id": "MISC-HASIL-TAQRIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أرقام حاصل القسمة بعد الفاصلة حتى المرتبة المطلوبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمة المقرّبة بالنقصان أصغر من الحاصل، والقيمة المقرّبة بالزيادة أكبر منه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زِد وحدة واحدة على آخر رقم محتفَظ به عند التقريب بالزيادة."
+        }
+      ],
+      "feedback": {
+        "correct": "$17 \\div 6$ = $2{,}8333$…، إذن القيمة المقرّبة بالنقصان هي $2{,}8$.",
+        "incorrect": "القيمة المقرّبة ليست قيمة مضبوطة : بالنقصان نحذف ما بعد المرتبة المطلوبة، وبالزيادة نزيد وحدة على آخر رقم محتفَظ به."
+      },
+      "solution": {
+        "lines": [
+          "$17 \\div 6$ = $2{,}8333$… (الأرقام لا تتوقّف)",
+          "$2{,}8$ < $\\dfrac{17}{6}$ < $2{,}9$ : بالنقصان نأخذ $2{,}8$."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أعط القيمة المقرّبة بالزيادة إلى 0,1 لهذا الحاصل.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بـ رقم واحد بعد الفاصلة",
+      "expectedAnswer": "2,9",
+      "misconceptionSignatures": [
+        {
+          "value": "2,8",
+          "id": "MISC-HASIL-TAQRIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أرقام حاصل القسمة بعد الفاصلة حتى المرتبة المطلوبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمة المقرّبة بالنقصان أصغر من الحاصل، والقيمة المقرّبة بالزيادة أكبر منه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زِد وحدة واحدة على آخر رقم محتفَظ به عند التقريب بالزيادة."
+        }
+      ],
+      "feedback": {
+        "correct": "$17 \\div 6$ = $2{,}8333$…، إذن القيمة المقرّبة بالزيادة هي $2{,}9$.",
+        "incorrect": "القيمة المقرّبة ليست قيمة مضبوطة : بالنقصان نحذف ما بعد المرتبة المطلوبة، وبالزيادة نزيد وحدة على آخر رقم محتفَظ به."
+      },
+      "solution": {
+        "lines": [
+          "$17 \\div 6$ = $2{,}8333$… (الأرقام لا تتوقّف)",
+          "$2{,}8$ < $\\dfrac{17}{6}$ < $2{,}9$ : بالزيادة نأخذ $2{,}9$."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "أعط القيمة المقرّبة بالنقصان إلى 0,01 لهذا الحاصل.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بـ رقمين بعد الفاصلة",
+      "expectedAnswer": "2,83",
+      "misconceptionSignatures": [
+        {
+          "value": "2,84",
+          "id": "MISC-HASIL-TAQRIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أرقام حاصل القسمة بعد الفاصلة حتى المرتبة المطلوبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمة المقرّبة بالنقصان أصغر من الحاصل، والقيمة المقرّبة بالزيادة أكبر منه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زِد وحدة واحدة على آخر رقم محتفَظ به عند التقريب بالزيادة."
+        }
+      ],
+      "feedback": {
+        "correct": "$17 \\div 6$ = $2{,}8333$…، إذن القيمة المقرّبة بالنقصان هي $2{,}83$.",
+        "incorrect": "القيمة المقرّبة ليست قيمة مضبوطة : بالنقصان نحذف ما بعد المرتبة المطلوبة، وبالزيادة نزيد وحدة على آخر رقم محتفَظ به."
+      },
+      "solution": {
+        "lines": [
+          "$17 \\div 6$ = $2{,}8333$… (الأرقام لا تتوقّف)",
+          "$2{,}83$ < $\\dfrac{17}{6}$ < $2{,}84$ : بالنقصان نأخذ $2{,}83$."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "$\\dfrac{17}{6} = 2{,}83$",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASIL-QIMA"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب العدد العشري في 6 وقارن بالبسط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكسر هو العدد الذي إذا ضُرب في مقامه أعطى بسطه."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 \\times 2{,}83 = 16{,}98 \\neq 17$.",
+        "incorrect": "حاصل القسمة عدد عشري إذا انتهت أرقامه بعد الفاصلة ؛ وإلاّ فالكسر هو الكتابة المضبوطة له."
+      },
+      "solution": {
+        "lines": [
+          "$6 \\times 2{,}83 = 16{,}98$ ولا يساوي 17.",
+          "$2{,}83$ قيمة مقرّبة بالنقصان، أمّا $\\dfrac{17}{6}$ فهو القيمة المضبوطة."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "id": "ex-3am-tabsit-hadhf-aqwas-l3-001",
+  "lessonCode": "tabsit-hadhf-aqwas",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — حذف الأقواس والتبسيط",
+    "estimatedMinutes": 8,
+    "tags": [
+      "حذف الأقواس",
+      "تبسيط"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-75",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$E$ عبارة جبرية حيث:",
+    "formulas": [
+      "E = 12 + (x - 5) - (3x + 4)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب العبارة $E$ بدون أقواس.",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$E = 12 + x - 5 - 3x - 4$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$E = 12 + x - 5 - 3x + 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-MINUS-FIRST-ONLY"
+        },
+        {
+          "id": "C",
+          "content": "$E = 12 - x + 5 - 3x - 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-PLUS-CHANGED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالأقواس: ما الإشارة التي تسبق كل زوج منها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسبوقان بـ $+$ يُحذفان كما هما، والمسبوقان بـ $-$ تتغيّر معهما إشارة كل حدّ بينهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد حذف الأقواس اجمع الحدود المتشابهة، ثم تحقّق بتعويض $x$ بعدد صغير."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 12 + x - 5 - 3x - 4$.",
+        "incorrect": "راجع إشارة كل حدّ وما يسبق القوسين، ثم اجمع الحدود المتشابهة فقط."
+      },
+      "solution": {
+        "lines": [
+          "القوسان الأوّلان مسبوقان بـ $+$ : لا تتغيّر الإشارات؛ والثانيان مسبوقان بـ $-$ : تتغيّر إشارة كل حدّ.",
+          "$E = 12 + x - 5 - 3x - 4$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "بسّط العبارة $E$ .",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $ax + b$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-TABSIT-MINUS-KEPT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالأقواس: ما الإشارة التي تسبق كل زوج منها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسبوقان بـ $+$ يُحذفان كما هما، والمسبوقان بـ $-$ تتغيّر معهما إشارة كل حدّ بينهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد حذف الأقواس اجمع الحدود المتشابهة، ثم تحقّق بتعويض $x$ بعدد صغير."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = -2x + 3$ إذن $a = -2$.",
+        "incorrect": "اجمع الحدود المتشابهة بإشاراتها بعد حذف الأقواس، ثم اقرأ العدد المطلوب في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$E = 12 + x - 5 - 3x - 4$",
+          "$E = (1 - 3)x + (12 - 5 - 4)$",
+          "$E = -2x + 3$"
+        ],
+        "result": "a = -2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $ax + b$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "11",
+          "id": "MISC-TABSIT-MINUS-FIRST-ONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالأقواس: ما الإشارة التي تسبق كل زوج منها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسبوقان بـ $+$ يُحذفان كما هما، والمسبوقان بـ $-$ تتغيّر معهما إشارة كل حدّ بينهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد حذف الأقواس اجمع الحدود المتشابهة، ثم تحقّق بتعويض $x$ بعدد صغير."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = -2x + 3$ إذن $b = 3$.",
+        "incorrect": "اجمع الحدود المتشابهة بإشاراتها بعد حذف الأقواس، ثم اقرأ العدد المطلوب في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$E = -2x + 3$"
+        ],
+        "result": "b = 3"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب قيمة العبارة $E$ من أجل $x = -1$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى، ويُستحسن أن تعوّض في الشكل المبسّط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويات العمليات: القوى، ثم الضرب، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالتعويض في العبارة قبل تبسيطها: القيمة لا تتغيّر."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل $x = -1$ نجد $E = 5$.",
+        "incorrect": "عوّض $x$ بالعدد المعطى في الشكل المبسّط واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$E = -2x + 3$",
+          "من أجل $x = -1$ : $E = -2(-1) + 3 = 5$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "id": "ex-1am-adad-ashri-mustaqim-mudarraj-l1-006",
+  "lessonCode": "adad-ashri-mustaqim-mudarraj",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مسطرة النجّار",
+    "estimatedMinutes": 5,
+    "tags": [
+      "فاصلة",
+      "كسر عشري"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يعلّم نجّار على لوح خشبي علامات بمسطرة مدرّجة مبدؤها طرف اللوح. نصف مستقيم مدرّج مبدؤه $O$ ، ووحدته مقسّمة إلى 10 أجزاء متساوية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "المسافة بين المبدإ $O$ وثقب المسمار الأوّل تساوي 5 وحدات و5 تدريجات صغيرة. ما فاصلة ثقب المسمار الأوّل ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "5,5",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-ABSC-TICKUNIT"
+        },
+        {
+          "value": "5,05",
+          "id": "MISC-ABSC-HUNDREDTH"
+        },
+        {
+          "value": "0,5",
+          "id": "MISC-ABSC-FROMO"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم وحدة كاملة تفصل النقطة عن المبدإ، وماذا يبقى بعدها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كلّ تدريجة صغيرة جزء من الوحدة، وليست وحدة كاملة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف قيمة التدريجات الصغيرة إلى عدد الوحدات الكاملة."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة $5{,}5$ : الوحدات الكاملة أوّلًا ثمّ التدريجات الصغيرة.",
+        "incorrect": "الوحدات الكاملة تعطي الجزء الصحيح، والتدريجات الصغيرة تعطي الجزء بعد الفاصلة ؛ كلّ تدريجة صغيرة جزء من الوحدة لا وحدة كاملة."
+      },
+      "solution": {
+        "lines": [
+          "$5$ وحدة كاملة، ثمّ $5$ تدريجة صغيرة قيمة كلّ منها $0{,}1$",
+          "الفاصلة : $5$ + $5$ × $0{,}1$ = $5{,}5$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "قُسِّمت الوحدة إلى 10 أجزاء متساوية. ما قيمة التباعد بين تدريجتين صغيرتين متتاليتين ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$10$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-PARTSASVALUE"
+        },
+        {
+          "id": "B",
+          "content": "$0{,}01$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-TICKTENTH"
+        },
+        {
+          "id": "C",
+          "content": "$0{,}1$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الطول الذي قُسِّم ؟ وكم جزءًا متساويًا نتجت عنه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التباعد بين تدريجتين صغيرتين هو جزء واحد من الأجزاء المتساوية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم الطول على عدد الأجزاء، واكتب النتيجة بالفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "التدريجة الصغيرة تساوي $\\dfrac{1}{10}$ من الوحدة، أي $0{,}1$.",
+        "incorrect": "عندما نقسّم الوحدة إلى عدّة أجزاء متساوية فكلّ جزء كسر مقامه عدد الأجزاء ؛ عدد الأجزاء ليس قيمة التدريجة."
+      },
+      "solution": {
+        "lines": [
+          "الوحدة مقسّمة إلى 10 أجزاء متساوية",
+          "كلّ جزء يساوي $\\dfrac{1}{10}$ = $0{,}1$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "فاصلة علامة الثقب الثاني هي $5{,}8$ . كم تدريجة صغيرة نعدّ بعد العلامة $5$ لنصل إلى هذا الموضع ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "58",
+          "id": "MISC-ABSC-TOTALTICKS"
+        },
+        {
+          "value": "13",
+          "id": "MISC-ABSC-TICKUNIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ من العلامة المذكورة لا من المبدإ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب ما بقي من الوحدة بعد العلامة ثمّ قسّمه على قيمة التدريجة الصغيرة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد التدريجات الصغيرة عدد طبيعي."
+        }
+      ],
+      "feedback": {
+        "correct": "نعدّ $8$ تدريجات صغيرة بعد العلامة $5$ فنصل إلى الفاصلة $5{,}8$.",
+        "incorrect": "نعدّ التدريجات الصغيرة ابتداءً من العلامة المعلومة ؛ الجزء بعد الفاصلة يعطي عددها عندما تكون التدريجة جزءًا من عشرة، ولا نعدّ كلّ ما قبلها."
+      },
+      "solution": {
+        "lines": [
+          "من العلامة $5$ إلى الفاصلة $5{,}8$ نقطع $0{,}8$ من الوحدة",
+          "كلّ تدريجة صغيرة $0{,}1$ إذن العدد $0{,}8$ ÷ $0{,}1$ = $8$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

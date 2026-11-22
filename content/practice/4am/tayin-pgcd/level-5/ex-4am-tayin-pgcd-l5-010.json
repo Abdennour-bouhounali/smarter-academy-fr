@@ -1,0 +1,304 @@
+{
+  "id": "ex-4am-tayin-pgcd-l5-010",
+  "lessonCode": "tayin-pgcd",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2022 — حقائب الإسعافات الأولية بالشلف",
+    "estimatedMinutes": 19,
+    "tags": [
+      "PGCD",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tayin-pgcd_P3",
+      "modelledOn": "BEM 2022 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في إطار حملة تحسيسية، تريد مديرية الحماية المدنية لولاية الشلف تحضير حقائب إسعافات أولية متماثلة للمتوسطات، فجمعت 120 ضمادة و 72 قارورة مطهّر و 48 مقصًا، بحيث تحتوي كل حقيبة على نفس عدد الضمادات ونفس عدد القارورات ونفس عدد المقصات، دون أن يبقى أي شيء.\n• ثمن الحقيبة الفارغة 650DA.\n• تبرّعت مؤسسة اقتصادية بمبلغ 20000DA لشراء الحقائب الفارغة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $d$ حيث: $d = $ PGCD(120 ; 72).",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "24",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قائمة قواسم كل من العددين 120 و 72، مثنى مثنى (1 مع العدد نفسه، ثم 2 …) حتى لا يفوتك قاسم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استخرج القواسم المشتركة: الأعداد الموجودة في القائمتين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاسم المشترك الأكبر هو أكبر القواسم المشتركة، لا أيّ واحد منها."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 120 و 72 هي 1 ، 2 ، 3 ، 4 ، 6 ، 8 ، 12 ، 24، وأكبرها 24.",
+        "incorrect": "اكتب قائمتي القواسم كاملتين، ثم خذ أكبر عدد يظهر في القائمتين معًا."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 120 هي: 1 ، 2 ، 3 ، 4 ، 5 ، 6 ، 8 ، 10 ، 12 ، 15 ، 20 ، 24 ، 30 ، 40 ، 60 ، 120",
+          "قواسم العدد 72 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 8 ، 9 ، 12 ، 18 ، 24 ، 36 ، 72",
+          "القواسم المشتركة للعددين 120 و 72 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 8 ، 12 ، 24",
+          "أكبرها هو 24، إذن:"
+        ],
+        "result": "PGCD(120 ; 72) = 24"
+      },
+      "work": "optional",
+      "timeSeconds": 510
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بيّن أن $d$ قاسم للعدد 48، ثم استنتج أكبر عدد من الحقائب التي يمكن تحضيرها.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد الحقائب)",
+      "expectedAnswer": "24",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل $d$ يقسم 48؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان $b$ قاسمًا للعدد $a$ فإن PGCD$(a ; b) = b$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد الحقائب يقسم الأعداد الثلاثة: فهو قاسم مشترك للعددين $d$ و 48."
+        }
+      ],
+      "feedback": {
+        "correct": "$48 = 24 \\times 2$ : PGCD(d ; 48) = d، إذن أكبر عدد من الحقائب هو 24.",
+        "incorrect": "عدد الحقائب قاسم مشترك للأعداد الثلاثة، أي قاسم مشترك للعددين $d$ و 48."
+      },
+      "solution": {
+        "lines": [
+          "$48 = 24 \\times 2$ ، إذن $d$ قاسم للعدد 48.",
+          "عدد الحقائب يقسم 120 و 72، فهو قاسم للعدد $d$ ، ويقسم 48: إذن هو قاسم مشترك للعددين $d$ و 48.",
+          "أكبر عدد ممكن هو PGCD$(d ; 48)$ ، وبما أن $d$ قاسم للعدد 48 فإن PGCD$(d ; 48) = d = 24$ ."
+        ],
+        "result": "24"
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "lead": "ما هو محتوى كل حقيبة ؟",
+      "statement": "عدد الضمادات في كل حقيبة:",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "24",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع الضمادات كلها بالتساوي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد الكلي على العدد الذي وجدته في السؤال السابق."
+        }
+      ],
+      "feedback": {
+        "correct": "$120 \\div 24 = 5$",
+        "incorrect": "اقسم العدد الكلي (120) على أكبر عدد وجدته، لا العكس."
+      },
+      "solution": {
+        "lines": [
+          "$120 \\div 24 = 5$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "عدد قارورات المطهّر في كل حقيبة:",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "24",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع القارورات كلها بالتساوي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد الكلي على العدد الذي وجدته في السؤال السابق."
+        }
+      ],
+      "feedback": {
+        "correct": "$72 \\div 24 = 3$",
+        "incorrect": "اقسم العدد الكلي (72) على أكبر عدد وجدته، لا العكس."
+      },
+      "solution": {
+        "lines": [
+          "$72 \\div 24 = 3$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ج",
+      "statement": "عدد المقصات في كل حقيبة:",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "24",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع المقصات كلها بالتساوي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد الكلي على العدد الذي وجدته في السؤال السابق."
+        }
+      ],
+      "feedback": {
+        "correct": "$48 \\div 24 = 2$",
+        "incorrect": "اقسم العدد الكلي (48) على أكبر عدد وجدته، لا العكس."
+      },
+      "solution": {
+        "lines": [
+          "$48 \\div 24 = 2$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "☜ أعط المبلغ الذي يبقى من تبرّع المؤسسة بعد شراء الحقائب الفارغة.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (المبلغ بالدينار)",
+      "expectedAnswer": "4400",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الحقائب الفارغة هو عدد الحقائب الذي وجدته في السؤال 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب في ثمن الحقيبة، ثم اطرح من التبرّع."
+        }
+      ],
+      "feedback": {
+        "correct": "$20000 - 24 \\times 650 = 4400$",
+        "incorrect": "اضرب عدد الحقائب في 650DA ثم اطرح الناتج من 20000DA."
+      },
+      "solution": {
+        "lines": [
+          "ثمن الحقائب: $24 \\times 650 = 15600$DA",
+          "المتبقي: $20000 - 15600 = 4400$DA"
+        ],
+        "result": "4400DA"
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

@@ -1,0 +1,349 @@
+{
+  "id": "ex-3am-kitaba-ilmiya-rutba-l1-002",
+  "lessonCode": "kitaba-ilmiya-rutba",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — الكتابة العلمية لعددين",
+    "estimatedMinutes": 9,
+    "tags": [
+      "كتابة علمية",
+      "رتبة قدر",
+      "حصر بين قوتين"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 1,
+      "file": "3am-s1-113",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$A$ و $B$ عددان حيث:",
+    "formulas": [
+      "A = 0{,}0078\\times10^{-3}",
+      "B = 38\\times10^{6}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "الكتابة العلمية للعدد $A$ هي $a\\times10^{n}$ حيث $1\\le a<10$ : ما قيمة $a$ ؟",
+      "answerType": "rational",
+      "answerFormat": "العدد $a$ (عدد عشري)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد أوّل رقم غير معدوم في العدد وانظر أين تقع الفاصلة بالنسبة إليه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في الكتابة العلمية $a\\times10^{n}$ يكون $a$ من 1 إلى أقلّ تمامًا من 10: ضع الفاصلة بعد أوّل رقم غير معدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: ضرب $a$ في $10^{n}$ يجب أن يعيد العدد المعطى."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "7.8",
+      "feedback": {
+        "correct": "$A = 7{,}8\\times10^{-6}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $A$ على الشكل $a\\times10^{n}$ مع $1\\le a<10$ .",
+          "$A = 7{,}8\\times10^{-6}$ ، إذن $a = 7{,}8$ ."
+        ],
+        "result": "a = 7.8"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "الكتابة العلمية للعدد $A$ هي $a\\times10^{n}$ حيث $1\\le a<10$ : ما قيمة الأسّ $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العدد بـ 1 وبـ 10: هل هو كبير جدًّا أم صغير جدًّا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد المراتب التي تنقل بها الفاصلة هو $|n|$ ؛ الأسّ موجب إن كان العدد كبيرًا وسالب إن كان العدد أصغر من 1."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: $10^{n}$ هي أكبر قوة للعدد 10 لا تتجاوز العدد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-6",
+      "misconceptionSignatures": [
+        {
+          "value": "-3",
+          "id": "MISC-ILMIYA-K"
+        },
+        {
+          "value": "0",
+          "id": "MISC-ILMIYA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 7{,}8\\times10^{-6}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $A$ على الشكل $a\\times10^{n}$ مع $1\\le a<10$ .",
+          "$A = 7{,}8\\times10^{-6}$ ، إذن $n = -6$ ."
+        ],
+        "result": "n = -6"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "رتبة قدر العدد $A$ هي:",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل كلّ اقتراح إلى عدد عشري أو إلى الكتابة العلمية لتقارنه بالمعطى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكتابة العلمية $a\\times10^{n}$ تشترط $1\\le a<10$ ؛ وفي المقارنة تُقارَن الأسّ أوّلًا ثمّ العدد $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر كلّ اقتراح على حدة وأسقط الخاطئ منها."
+        }
+      ],
+      "timeSeconds": 100,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$8\\times10^{-6}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$7\\times10^{-6}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ILMIYA-BATR"
+        },
+        {
+          "id": "C",
+          "content": "$1\\times10^{-5}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ILMIYA-QUWA"
+        }
+      ],
+      "feedback": {
+        "correct": "رتبة القدر هي $8\\times10^{-6}$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب قيمته أو بتطبيق القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$A = 7{,}8\\times10^{-6}$ .",
+          "نقرّب $7{,}8$ إلى الوحدة فنجد 8 ، فرتبة القدر $8\\times10^{-6}$ ."
+        ]
+      }
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "statement": "الكتابة العلمية للعدد $B$ هي $a\\times10^{n}$ حيث $1\\le a<10$ : ما قيمة $a$ ؟",
+      "answerType": "rational",
+      "answerFormat": "العدد $a$ (عدد عشري)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد أوّل رقم غير معدوم في العدد وانظر أين تقع الفاصلة بالنسبة إليه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في الكتابة العلمية $a\\times10^{n}$ يكون $a$ من 1 إلى أقلّ تمامًا من 10: ضع الفاصلة بعد أوّل رقم غير معدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: ضرب $a$ في $10^{n}$ يجب أن يعيد العدد المعطى."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "3.8",
+      "feedback": {
+        "correct": "$B = 3{,}8\\times10^{7}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $B$ على الشكل $a\\times10^{n}$ مع $1\\le a<10$ .",
+          "$B = 3{,}8\\times10^{7}$ ، إذن $a = 3{,}8$ ."
+        ],
+        "result": "a = 3.8"
+      }
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "الكتابة العلمية للعدد $B$ هي $a\\times10^{n}$ حيث $1\\le a<10$ : ما قيمة الأسّ $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العدد بـ 1 وبـ 10: هل هو كبير جدًّا أم صغير جدًّا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد المراتب التي تنقل بها الفاصلة هو $|n|$ ؛ الأسّ موجب إن كان العدد كبيرًا وسالب إن كان العدد أصغر من 1."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: $10^{n}$ هي أكبر قوة للعدد 10 لا تتجاوز العدد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-ILMIYA-K"
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 3{,}8\\times10^{7}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $B$ على الشكل $a\\times10^{n}$ مع $1\\le a<10$ .",
+          "$B = 3{,}8\\times10^{7}$ ، إذن $n = 7$ ."
+        ],
+        "result": "n = 7"
+      }
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ج",
+      "statement": "نحصر العدد $B$ بين قوتين متتاليتين للعدد 10 : $10^{n}\\le B<10^{n+1}$ . ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العدد كتابة علمية $a\\times10^{n}$ أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما دام $1\\le a<10$ فإنّ $10^{n}\\le a\\times10^{n}<10^{n+1}$ : الأسّ $n$ هو نفسه أسّ الكتابة العلمية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ العدد أكبر من أو يساوي $10^{n}$ وأصغر تمامًا من $10^{n+1}$ ."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-ILMIYA-K"
+        },
+        {
+          "value": "8",
+          "id": "MISC-ILMIYA-HASR"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{7}\\le B<10^{8}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$B = 3{,}8\\times10^{7}$ مع $1\\le 3{,}8<10$ .",
+          "إذن $10^{7}\\le B<10^{8}$ ، فـ $n = 7$ ."
+        ],
+        "result": "n = 7"
+      }
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "id": "ex-4am-qasim-mushtarak-akbar-l4-004",
+  "lessonCode": "qasim-mushtarak-akbar",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2016 — 75 و 108",
+    "estimatedMinutes": 10,
+    "tags": [
+      "PGCD",
+      "كسر",
+      "جذور"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-mushtarak-akbar_P2",
+      "modelledOn": "BEM 2016 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 75 و 108.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قائمة قواسم كل من العددين 75 و 108."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استخرج القواسم المشتركة: الأعداد الموجودة في القائمتين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاسم المشترك الأكبر هو أكبر القواسم المشتركة، لا أيّ واحد منها."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 75 و 108 هي 1 ، 3، وأكبرها 3.",
+        "incorrect": "اكتب قائمتي القواسم كاملتين، ثم خذ أكبر عدد يظهر في القائمتين معًا."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 75 هي: 1 ، 3 ، 5 ، 15 ، 25 ، 75",
+          "قواسم العدد 108 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 9 ، 12 ، 18 ، 27 ، 36 ، 54 ، 108",
+          "القواسم المشتركة للعددين 75 و 108 هي: 1 ، 3",
+          "أكبرها هو 3، إذن:"
+        ],
+        "result": "PGCD(75 ; 108) = 3"
+      },
+      "work": "optional",
+      "timeSeconds": 270
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب الكسر $\\dfrac{108}{75}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "36/25",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 3: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال 01.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{108}{75} = \\dfrac{108 \\div 3}{75 \\div 3}$"
+        ],
+        "result": "\\dfrac{108}{75} = \\dfrac{36}{25}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اكتب العدد $A = \\sqrt{108} + \\sqrt{75}$ على الشكل $a\\sqrt{3}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "11",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب 108 و 75 على شكل جداء أحد عامليه مربع تام مضروب في 3."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل $\\sqrt{m^2 \\times 3} = m\\sqrt{3}$ ثم اجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 6\\sqrt{3} + 5\\sqrt{3}$",
+        "incorrect": "اكتب كل جذر على الشكل $m\\sqrt{3}$ ثم اجمع المعاملين."
+      },
+      "solution": {
+        "lines": [
+          "$\\sqrt{108} = \\sqrt{36 \\times 3} = 6\\sqrt{3}$",
+          "$\\sqrt{75} = \\sqrt{25 \\times 3} = 5\\sqrt{3}$",
+          "$A = 6\\sqrt{3} + 5\\sqrt{3}$"
+        ],
+        "result": "A = 11\\sqrt{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

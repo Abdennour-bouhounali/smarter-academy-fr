@@ -1,0 +1,185 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-jumal-l4-004",
+  "lessonCode": "wadiya-idmajiya-jumal",
+  "level": 4,
+  "metadata": {
+    "title": "تذاكر الملعب: معطيات مستحيلة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "ترييض",
+      "تفسير",
+      "التحقق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-jumal_P2",
+      "modelledOn": "act-3"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أعلن نادٍ، تتعاون جماهيره وإدارته على تنظيم المباريات، أنه باع 1000 تذكرة لمباراة: تذكرة المنصة بـ 600DA وتذكرة المدرجات بـ 200DA، وأن المداخيل بلغت 383000DA.\nنسمّي $x$ عدد تذاكر المنصة و $y$ عدد تذاكر المدرجات."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن $x$ و $y$ يحققان الجملة: $\\begin{cases} x + y = 1000 \\\\ 3x + y = 1915 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "سمِّ الكميتين المجهولتين، ثم ترجم كل معلومة من النص بمعادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بسّط كل معادلة بقسمة طرفيها على عدد مناسب."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "عدد التذاكر: $x + y = 1000$",
+          "المداخيل: $600x + 200y = 383000$ ، وبقسمة الطرفين على 200: $3x + y = 1915$",
+          "ومنه: $\\begin{cases} x + y = 1000 \\\\ 3x + y = 1915 \\end{cases}$"
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حل هذه الجملة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد عشري أو كسر)",
+      "expectedAnswer": {
+        "x": "915/2",
+        "y": "1085/2"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "1085/2",
+            "y": "915/2"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل $y$ هو نفسه في المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح إحدى المعادلتين من الأخرى طرفا لطرف لتحذف $y$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض قيمة $x$ في إحدى المعادلتين لتجد $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الثنائية $(457{,}5 ; 542{,}5)$ تحقق المعادلتين معا.",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} x + y = 1000 & ...(1) \\\\ 3x + y = 1915 & ...(2) \\end{cases}$",
+          "بطرح المعادلة (1) من المعادلة (2) طرفا لطرف نجد:",
+          "$2x = 915$",
+          "$x = 457{,}5$",
+          "بتعويض $x$ بـ $457{,}5$ في المعادلة (1) نجد: $457{,}5 + y = 1000$",
+          "$y = 542{,}5$",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(457{,}5 ; 542{,}5)"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل يمكن أن تكون المداخيل المعلنة صحيحة؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-TAHAQQUQ-NAS"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا يمثل كل من $x$ و $y$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يمكن أن يكون عدد التذاكر عددا عشريا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "لا: عدد التذاكر عدد طبيعي، والحل ليس كذلك.",
+        "incorrect": "التحقق يكون في نص الوضعية: ما نوع العدد الذي يمثل عدد تذاكر؟"
+      },
+      "solution": {
+        "lines": [
+          "حل الجملة $x = 457{,}5$ و $y = 542{,}5$ ليسا عددين طبيعيين.",
+          "لكن عدد التذاكر عدد طبيعي.",
+          "إذن المعطيات متناقضة: المداخيل المعلنة (أو عدد التذاكر) خاطئة."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

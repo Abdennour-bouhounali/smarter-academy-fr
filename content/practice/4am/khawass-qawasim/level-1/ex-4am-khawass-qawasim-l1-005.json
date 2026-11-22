@@ -1,0 +1,118 @@
+{
+  "id": "ex-4am-khawass-qawasim-l1-005",
+  "lessonCode": "khawass-qawasim",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2015 — 1078 و 147",
+    "estimatedMinutes": 6,
+    "tags": [
+      "خاصية 2",
+      "قسمة إقليدية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_khawass-qawasim_P3",
+      "modelledOn": "BEM 2015 I-1 01"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أجرِ القسمة الإقليدية للعدد 1078 على 147 مع كتابة مراحل الحساب.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الباقي فقط (عدد طبيعي)",
+      "expectedAnswer": "49",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أكبر مضاعف للعدد 147 لا يتجاوز 1078."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي هو الفرق بين 1078 وهذا المضاعف، ويجب أن يكون أصغر تمامًا من 147."
+        }
+      ],
+      "feedback": {
+        "correct": "$1078 = 147 \\times 7 + 49$ مع $49 < 147$.",
+        "incorrect": "في القسمة الإقليدية $1078 = 147 \\times q + r$ يكون الباقي $r$ أصغر تمامًا من 147."
+      },
+      "solution": {
+        "lines": [
+          "$147 \\times 7 = 1029$ و $147 \\times 8 = 1176 > 1078$",
+          "$1078 - 1029 = 49$",
+          "إذن $1078 = 147 \\times 7 + 49$ مع $49 < 147$."
+        ],
+        "result": "1078 = 147 \\times 7 + 49"
+      },
+      "work": "required",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "علمًا أن 7 يقسم كلا من 1078 و 147، استنتج دون إجراء القسمة على 7 أن 7 يقسم الباقي 49، ثم اكتبه على الشكل $7 \\times k$ حيث $k$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k$ فقط (عدد طبيعي)",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الباقي على الشكل $r = 1078 - 147 \\times 7$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "7 يقسم 147 فهو يقسم $147 \\times 7$؛ وهو يقسم 1078، فيقسم الفرق (الخاصية 2)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم الباقي على 7 للحصول على $k$."
+        }
+      ],
+      "feedback": {
+        "correct": "$49 = 7 \\times 7$: 7 يقسم باقي القسمة الإقليدية للعدد 1078 على 147.",
+        "incorrect": "القاسم المشترك لعددين يقسم باقي القسمة الإقليدية لأحدهما على الآخر: اقسم الباقي على 7."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $1078 = 147 \\times 7 + 49$ ومنه $49 = 1078 - 147 \\times 7$.",
+          "7 يقسم 147 فهو يقسم مضاعفه $147 \\times 7$ ، و 7 يقسم 1078.",
+          "إذن 7 يقسم الفرق $1078 - 147 \\times 7$ أي يقسم 49 (الخاصية 2).",
+          "$49 = 7 \\times 7$"
+        ],
+        "result": "49 = 7 \\times 7"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

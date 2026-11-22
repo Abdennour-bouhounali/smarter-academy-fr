@@ -1,0 +1,282 @@
+{
+  "id": "ex-4am-takrar-mujamma-l4-002",
+  "lessonCode": "takrar-mujamma",
+  "level": 4,
+  "metadata": {
+    "title": "مدة التنقل إلى المتوسطة",
+    "estimatedMinutes": 7,
+    "tags": [
+      "فئات",
+      "نسبة مئوية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-5",
+      "page": 98,
+      "section": "أوظّف تعلّماتي",
+      "number": 5
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "قامت إدارة متوسطة بسبر للآراء لمعرفة المدة (بالدقيقة) التي يقضيها كل تلميذ لقطع المسافة الفاصلة بين منزله والمتوسطة، فتحصّلت على النتائج الآتية:",
+    "table": {
+      "head": [
+        "المدة t (min)",
+        "$5 \\le t < 10$",
+        "$10 \\le t < 15$",
+        "$15 \\le t < 20$",
+        "$20 \\le t \\le 25$"
+      ],
+      "rows": [
+        [
+          "عدد التلاميذ",
+          "180",
+          "150",
+          "50",
+          "20"
+        ],
+        [
+          "التكرار المجمع الصاعد",
+          "…",
+          "…",
+          "…",
+          "…"
+        ],
+        [
+          "التكرار المجمع النازل",
+          "…",
+          "…",
+          "…",
+          "…"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "انقل الجدول ثم أكمله.",
+      "statement": "التكرار المجمع الصاعد للفئة $10 \\le t < 15$ :",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "330",
+      "misconceptionSignatures": [
+        {
+          "value": "180",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        },
+        {
+          "value": "150",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        },
+        {
+          "value": "220",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكرار المجمع الصاعد لفئة هو مجموع تكرارها وتكرارات الفئات التي قبلها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ من أول عمود في الجدول واجمع التكرارات حتى $10 \\le t < 15$ مع تكرارها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: التكرار المجمع الصاعد لآخر عمود يساوي التكرار الكلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$180 + 150 = 330$ .",
+        "incorrect": "اجمع تكرار الفئة نفسها وتكرارات الفئات التي قبلها فقط، ولا تنس تكرار الفئة نفسها."
+      },
+      "solution": {
+        "lines": [
+          "التكرار المجمع الصاعد للفئة $10 \\le t < 15$ هو مجموع تكرار الفئة $10 \\le t < 15$ وتكرارات الفئات التي قبلها:",
+          "$180 + 150 = 330$"
+        ],
+        "result": "330"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "التكرار المجمع النازل للفئة $15 \\le t < 20$ :",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "70",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        },
+        {
+          "value": "50",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        },
+        {
+          "value": "380",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكرار المجمع النازل هو مجموع تكرار هذه الفئة وتكرارات الفئات التي بعدها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع تكرار $15 \\le t < 20$ وتكرارات ما بعدها حتى آخر عمود في الجدول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: التكرار المجمع النازل لأول عمود يساوي التكرار الكلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$50 + 20 = 70$ .",
+        "incorrect": "اجمع تكرار الفئة نفسها وتكرارات الفئات التي بعدها فقط: النازل يتّجه نحو نهاية الجدول."
+      },
+      "solution": {
+        "lines": [
+          "التكرار المجمع النازل للفئة $15 \\le t < 20$ هو مجموع تكرار الفئة $15 \\le t < 20$ وتكرارات الفئات التي بعدها:",
+          "$50 + 20 = 70$"
+        ],
+        "result": "70"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما هي النسبة المئوية للتلاميذ الذين يقضون أقل من 15 دقيقة في التنقل؟",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: النسبة المئوية دون الرمز %",
+      "expectedAnswer": "82,5",
+      "misconceptionSignatures": [
+        {
+          "value": "330",
+          "id": "MISC-IHSA-TAWATUR-BILA-QISMA"
+        },
+        {
+          "value": "95",
+          "id": "MISC-IHSA-SARAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«أقل من 15 دقيقة» تستثني الحدّ 15 دقيقة نفسه: نعدّ ما هو أصغر تماما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أولا عدد الأفراد الذين يحقّقون الشرط (تكرار مجمع)، ثم اقسمه على التكرار الكلي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب التواتر الناتج في 100 لتحصل على النسبة المئوية."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{330}{400} \\times 100 = 82{,}5$ ، أي $82{,}5\\%$ .",
+        "incorrect": "عدّ أولا الأفراد الذين يحقّقون الشرط بدقة (انتبه إلى الحدّ)، ثم اقسم على التكرار الكلي واضرب في 100."
+      },
+      "solution": {
+        "lines": [
+          "عدد الأفراد المعنيين: $180 + 150 = 330$",
+          "$\\dfrac{330}{400} = 0{,}825$",
+          "$0{,}825 \\times 100 = 82{,}5$"
+        ],
+        "result": "82{,}5\\%"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "تقرّر الإدارة توفير النقل المدرسي للتلاميذ الذين تساوي مدة تنقّلهم 15 دقيقة أو تفوقها، بحافلات تتّسع كل واحدة لـ 30 تلميذا. ما هو أصغر عدد ممكن من الحافلات؟",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد التلاميذ المعنيين هو التكرار المجمع النازل للفئة $15 \\le t < 20$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم هذا العدد على سعة الحافلة، ثم انتبه: لا يبقى أي تلميذ بلا مقعد."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{70}{30} \\approx 2{,}33$ : حافلتان لا تكفيان، فنحتاج إلى 3 حافلات.",
+        "incorrect": "عدد الحافلات عدد طبيعي يكفي لنقل كل التلاميذ المعنيين: إذا لم تكن القسمة تامة نأخذ العدد الطبيعي الموالي."
+      },
+      "solution": {
+        "lines": [
+          "عدد التلاميذ المعنيين: $50 + 20 = 70$",
+          "$\\dfrac{70}{30} \\approx 2{,}33$",
+          "حافلتان تنقلان 60 تلميذا فقط، إذن نحتاج إلى 3 حافلات."
+        ],
+        "result": "3"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-talis-l3-003",
+  "lessonCode": "wadiya-idmajiya-talis",
+  "level": 3,
+  "metadata": {
+    "title": "مخروط آخر والحالة h = r",
+    "estimatedMinutes": 12,
+    "tags": [
+      "أسطوانة",
+      "مخروط",
+      "معادلة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-talis_P2",
+      "modelledOn": "situation"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أسطوانة دوران محاطة بمخروط دوران ارتفاعه $10\\,\\mathrm{cm}$ ونصف قطر قاعدته $5\\,\\mathrm{cm}$ (قاعدتها على قاعدة المخروط ودائرتها العليا على سطحه)، وارتفاعها يساوي نصف قطرها: $h = r$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب نصف قطر الأسطوانة $r$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "10/3",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-TALIS-HALL-MUADALA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في نصف المقطع المحوري: $\\dfrac{r}{5} = \\dfrac{10 - h}{10}$ (خاصية طالس)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $h$ بـ $r$ ، ثم اضرب الطرفين في $10$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود التي فيها $r$ في طرف واحد، ثم اقسم."
+        }
+      ],
+      "feedback": {
+        "correct": "$10r = 50 - 5r$ ، أي $15r = 50$ ومنه $r = \\dfrac{10}{3}\\,\\mathrm{cm}$ .",
+        "incorrect": "عند نقل الحدّ الذي فيه $r$ من طرف إلى آخر تتغيّر إشارته."
+      },
+      "solution": {
+        "lines": [
+          "حسب خاصية طالس في نصف المقطع المحوري: $\\dfrac{r}{5} = \\dfrac{10 - h}{10}$",
+          "بما أن $h = r$ : $\\dfrac{r}{5} = \\dfrac{10 - r}{10}$",
+          "$10r = 5(10 - r)$",
+          "$10r = 50 - 5r$",
+          "$15r = 50$",
+          "$r = \\dfrac{50}{15}$"
+        ],
+        "result": "r = \\dfrac{10}{3}\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "نكتب حجم الأسطوانة على الشكل $V = k\\pi\\,\\mathrm{cm}^3$ . أعط العدد $k$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $k$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "1000/27",
+      "misconceptionSignatures": [
+        {
+          "value": "100/9",
+          "id": "MISC-TALIS-TARBI-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$V = \\pi \\times r^2 \\times h$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$V = \\pi \\times \\dfrac{10}{3}^2 \\times \\dfrac{10}{3} = \\dfrac{1000}{27}\\pi\\,\\mathrm{cm}^3$ .",
+        "incorrect": "في $V = \\pi r^2 h$ يُربَّع نصف القطر وحده، ولا نستعمل القطر."
+      },
+      "solution": {
+        "lines": [
+          "$V = \\pi \\times r^2 \\times h$",
+          "$V = \\pi \\times \\dfrac{10}{3}^2 \\times \\dfrac{10}{3}$"
+        ],
+        "result": "V = \\dfrac{1000}{27}\\pi\\,\\mathrm{cm}^3"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل يمكن وضع هذه الأسطوانة قائمة في علبة ارتفاعها الداخلي $3\\,\\mathrm{cm}$ ؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-MULAAMA-WAQI"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارتفاع الأسطوانة يساوي نصف قطرها: قارن $\\dfrac{10}{3}$ بـ $3$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$h = \\dfrac{10}{3} \\approx 3{,}33\\,\\mathrm{cm}$ أكبر من $3\\,\\mathrm{cm}$ .",
+        "incorrect": "قارن ارتفاع الأسطوانة (القيمة المضبوطة) بارتفاع العلبة قبل أن تقرّر."
+      },
+      "solution": {
+        "lines": [
+          "ارتفاع الأسطوانة $h = r = \\dfrac{10}{3}\\,\\mathrm{cm} \\approx 3{,}33\\,\\mathrm{cm}$ ،",
+          "و $\\dfrac{10}{3} > 3$ لأن $10 > 9$ ، إذن لا تدخل الأسطوانة قائمة في العلبة."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

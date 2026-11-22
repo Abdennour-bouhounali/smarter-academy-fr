@@ -1,0 +1,188 @@
+{
+  "id": "ex-4am-inshaat-talis-l5-006",
+  "lessonCode": "inshaat-talis",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2012 — صورة مجلة المتوسطة",
+    "estimatedMinutes": 20,
+    "tags": [
+      "وضعية إدماجية",
+      "الرابع المتناسب",
+      "تصغير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_inshaat-talis_P2",
+      "modelledOn": "BEM 2012 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2012",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "صورة مستطيلة الشكل $ABCD$ بعداها $AB = 15\\,\\mathrm{cm}$ و $AD = 10\\,\\mathrm{cm}$ ، يراد تصغيرها لمجلة المتوسطة التي يحرّرها التلاميذ متعاونين بحيث يصبح طولها $6\\,\\mathrm{cm}$ مع الحفاظ على تناسب البعدين. لإيجاد العرض الجديد دون حساب، عيّن تلميذ على $[AB]$ النقطة $B'$ حيث $AB' = 6\\,\\mathrm{cm}$ ، ورسم الموازي للمستقيم $(BD)$ المارّ بـ $B'$ فقطع $[AD]$ في $D'$ .\n• تكلفة طبع الصورة $0{,}5DA$ للسنتيمتر المربع، وتطبع المجلة في $300$ نسخة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب العرض الجديد $x$ للصورة المصغّرة.",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "1",
+          "id": "MISC-TALIS-JAMA-BADAL-DARB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "البعدان متناسبان: $\\dfrac{15}{6} = \\dfrac{10}{x}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{6 \\times 10}{15} = 4\\,\\mathrm{cm}$ .",
+        "incorrect": "اكتب تناسب الطولين والعرضين ثم الجداء المتصالب."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{15}{6} = \\dfrac{10}{x}$",
+          "$x = \\dfrac{6 \\times 10}{15}$"
+        ],
+        "result": "x = 4\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب $AD'$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$B' \\in [AB]$ و $D' \\in [AD]$ و $(B'D') \\parallel (BD)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\dfrac{AB'}{AB} = \\dfrac{AD'}{AD}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AD' = \\dfrac{6}{15} \\times 10 = 4\\,\\mathrm{cm}$ .",
+        "incorrect": "النسبة $\\dfrac{AB'}{AB}$ تنتقل إلى $\\dfrac{AD'}{AD}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$B' \\in [AB]$ و $D' \\in [AD]$ و $(B'D') \\parallel (BD)$ ، حسب خاصية طالس: $\\dfrac{AB'}{AB} = \\dfrac{AD'}{AD}$",
+          "$\\dfrac{6}{15} = \\dfrac{AD'}{10}$"
+        ],
+        "result": "AD' = 4\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "برّر أن $AD'$ هو العرض المطلوب.",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن $AD'$ بالنتيجة $x$ من السؤال 01، واذكر الخاصية المستعملة."
+        }
+      ],
+      "feedback": {
+        "correct": "$AD' = \\dfrac{AB' \\times AD}{AB}$ : هو الرابع المتناسب نفسه، فـ $AD' = x$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي: المعطيات، ثم التوازي، ثم النسب المتساوية وذكر الخاصية المستعملة."
+      },
+      "solution": {
+        "lines": [
+          "حسب خاصية طالس: $\\dfrac{AD'}{AD} = \\dfrac{AB'}{AB}$ أي $\\dfrac{AB}{AB'} = \\dfrac{AD}{AD'}$ : هذا هو تناسب البعدين $\\dfrac{15}{6} = \\dfrac{10}{x}$ .",
+          "إذن $AD' = x$ : الإنشاء يعطي العرض المطلوب دون حساب، مهما كان الطول الجديد."
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "☜ ما تكلفة طبع الصورة المصغّرة في نسخ المجلة كلها؟",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: التكلفة بـ DA",
+      "expectedAnswer": "3600",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة الصورة المصغّرة: $6 \\times 4$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 \\times 4 = 24\\,\\mathrm{cm^2}$ ، $24 \\times 0{,}5 = 12DA$ للنسخة، و $12 \\times 300 = 3600DA$ .",
+        "incorrect": "احسب مساحة الصورة المصغّرة، ثم تكلفة النسخة، ثم النسخ كلها."
+      },
+      "solution": {
+        "lines": [
+          "المساحة: $6 \\times 4 = 24\\,\\mathrm{cm^2}$",
+          "النسخة: $24 \\times 0{,}5 = 12DA$",
+          "المجموع: $12 \\times 300$"
+        ],
+        "result": "3600DA"
+      },
+      "timeSeconds": 180,
+      "counted": false
+    }
+  ]
+}

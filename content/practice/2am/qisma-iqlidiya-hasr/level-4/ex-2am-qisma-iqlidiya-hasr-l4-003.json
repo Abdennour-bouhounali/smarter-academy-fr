@@ -1,0 +1,254 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l4-003",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — خط الكسر والقسمة الإقليدية",
+    "estimatedMinutes": 9,
+    "tags": [
+      "خط الكسر",
+      "قسمة إقليدية",
+      "حصر"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-74",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العدد $A = \\frac{125 + 98}{3 \\times 5}$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب $A$ بكسر بسطه ومقامه عددان طبيعيان.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$A = \\frac{223}{8}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-HISAB"
+        },
+        {
+          "id": "B",
+          "content": "$A = \\frac{223}{15}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$A = \\frac{125}{113}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-HISAB"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خط الكسر يجمع البسط كله والمقام كله."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب البسط وحده ثم المقام وحده."
+        }
+      ],
+      "feedback": {
+        "correct": "$125 + 98 = 223$ و $3 \\times 5 = 15$.",
+        "incorrect": "خط الكسر بمثابة قوسين حول البسط وقوسين حول المقام."
+      },
+      "solution": {
+        "lines": [
+          "$125 + 98 = 223$ و $3 \\times 5 = 15$",
+          "$A = \\frac{223}{15}$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اختر المساواة التي تعبّر عن القسمة الإقليدية للعدد 223 على 15.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$223 = 15 \\times 14 + 13$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$223 = 15 \\times 13 + 28$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "id": "C",
+          "content": "$223 = 15 \\times 13 + 14$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "id": "D",
+          "content": "$223 = 15 \\times 15 + 13$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-HISAB"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق من صحة كل مساواة بالحساب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في القسمة الإقليدية على 15 يكون الباقي أصغر من 15."
+        }
+      ],
+      "feedback": {
+        "correct": "$15 \\times 14 + 13 = 223$ و $13 < 15$.",
+        "incorrect": "ابحث عن المساواة الصحيحة التي باقيها أصغر من 15."
+      },
+      "solution": {
+        "lines": [
+          "$15 \\times 14 = 210$ و $210 + 13 = 223$",
+          "$13 < 15$ ، إذن $223 = 15 \\times 14 + 13$ هي القسمة الإقليدية للعدد 223 على 15."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "استنتج حصرًا للعدد $A$ بين عددين طبيعيين متتاليين.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$13 < \\frac{223}{15} < 14$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        },
+        {
+          "id": "B",
+          "content": "$15 < \\frac{223}{15} < 16$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        },
+        {
+          "id": "C",
+          "content": "$14 < \\frac{223}{15} < 15$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 223 على 15."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من $15 \\times q \\le 223 < 15 \\times (q + 1)$ نقسم الأطراف على 15."
+        }
+      ],
+      "feedback": {
+        "correct": "$223 = 15 \\times 14 + 13$ والباقي غير معدوم، فـ $\\frac{223}{15}$ يقع تمامًا بين 14 و 15.",
+        "incorrect": "احصر 223 بين مضاعفين متتاليين للعدد 15 ثم اقسم على 15؛ وإذا كان الباقي معدومًا فحاصل القسمة عدد طبيعي."
+      },
+      "solution": {
+        "lines": [
+          "$223 = 15 \\times 14 + 13$",
+          "$15 \\times 14 < 223 < 15 \\times 15$ ، نقسم على 15: $14 < \\frac{223}{15} < 15$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}001$ بالنقصان للعدد $A$.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "14.866",
+      "misconceptionSignatures": [
+        {
+          "value": "14.867",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة العشرية للعدد 223 على 15."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "توقّف عند الرقم الثالث بعد الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$223 \\div 15 = 14{,}8666\\ldots$",
+        "incorrect": "بالنقصان: نحتفظ بثلاثة أرقام بعد الفاصلة دون تدوير."
+      },
+      "solution": {
+        "lines": [
+          "$223 \\div 15 = 14{,}8666\\ldots$",
+          "$14{,}866 < A < 14{,}867$"
+        ],
+        "result": "14{,}866"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

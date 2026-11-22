@@ -1,0 +1,226 @@
+{
+  "id": "ex-4am-amaliyat-judhur-l4-001",
+  "lessonCode": "amaliyat-judhur",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين — حاصل قسمة جذرين",
+    "estimatedMinutes": 8,
+    "tags": [
+      "حاصل قسمة جذرين"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-21",
+      "page": 27,
+      "section": "أوظّف تعلّماتي",
+      "number": 21
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن الأعداد $A$ ، $B$ ، $C$ ، $D$ حيث:",
+    "formulas": [
+      "A = \\dfrac{\\sqrt{2}}{\\sqrt{18}}",
+      "B = \\dfrac{\\sqrt{3}}{\\sqrt{48}}",
+      "C = \\dfrac{\\sqrt{6875}}{\\sqrt{1100}}",
+      "D = \\dfrac{\\sqrt{7}}{\\sqrt{448}}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "اكتب كلًّا من العددين $A$ و $B$ على شكل كسر غير قابل للاختزال.",
+      "statement": "العدد $A$",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "1/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1/9",
+          "id": "MISC-QISMA-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب حاصل قسمة الجذرين تحت جذر واحد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختزل الكسر تحت الجذر."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = \\sqrt{\\dfrac{2}{18}} = \\sqrt{\\dfrac{1}{9}} = \\dfrac{1}{3}$",
+        "incorrect": "اكتب $A = \\sqrt{\\dfrac{2}{18}}$ ثم اختزل قبل حساب الجذر.",
+        "notIrreducible": "القيمة صحيحة لكن الكسر ما زال قابلًا للاختزال: اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\sqrt{\\dfrac{2}{18}}$",
+          "$A = \\sqrt{\\dfrac{1}{9}}$"
+        ],
+        "result": "A = \\dfrac{1}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $B$",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "1/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب حاصل قسمة الجذرين تحت جذر واحد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختزل الكسر تحت الجذر."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = \\sqrt{\\dfrac{3}{48}} = \\sqrt{\\dfrac{1}{16}} = \\dfrac{1}{4}$",
+        "incorrect": "اكتب $B = \\sqrt{\\dfrac{3}{48}}$ ثم اختزل قبل حساب الجذر.",
+        "notIrreducible": "القيمة صحيحة لكن الكسر ما زال قابلًا للاختزال: اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "$B = \\sqrt{\\dfrac{3}{48}}$",
+          "$B = \\sqrt{\\dfrac{1}{16}}$"
+        ],
+        "result": "B = \\dfrac{1}{4}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "اكتب كلًّا من العددين $C$ و $D$ على شكل كسر غير قابل للاختزال.",
+      "statement": "العدد $C$",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "5/2",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب حاصل قسمة الجذرين تحت جذر واحد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $6875 \\div 1100$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب حاصل القسمة كسرًا عشريًا ثم احسب جذره."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = \\sqrt{6{,}25} = 2{,}5 = \\dfrac{5}{2}$",
+        "incorrect": "اكتب $C = \\sqrt{\\dfrac{6875}{1100}}$ وأجرِ القسمة تحت الجذر.",
+        "notIrreducible": "القيمة صحيحة لكن الكسر ما زال قابلًا للاختزال: اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "$C = \\sqrt{\\dfrac{6875}{1100}}$",
+          "$C = \\sqrt{6{,}25}$",
+          "$C = 2{,}5$"
+        ],
+        "result": "C = \\dfrac{5}{2}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "العدد $D$",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "1/8",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب حاصل قسمة الجذرين تحت جذر واحد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كم مرة يحوي 448 العدد 7؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$D = \\sqrt{\\dfrac{7}{448}} = \\sqrt{\\dfrac{1}{64}} = \\dfrac{1}{8}$",
+        "incorrect": "اختزل $\\dfrac{7}{448}$ تحت الجذر قبل حساب الجذر.",
+        "notIrreducible": "القيمة صحيحة لكن الكسر ما زال قابلًا للاختزال: اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "$D = \\sqrt{\\dfrac{7}{448}}$",
+          "$D = \\sqrt{\\dfrac{1}{64}}$"
+        ],
+        "result": "D = \\dfrac{1}{8}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

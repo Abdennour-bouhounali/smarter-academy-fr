@@ -1,0 +1,252 @@
+{
+  "id": "ex-1am-talim-mustaqim-mudarraj-l3-010",
+  "lessonCode": "talim-mustaqim-mudarraj",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — تعليم وحدة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "وحدة",
+      "جهة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "ننقل الوحدة نفسها من جهتي المبدإ $O$ لنعلّم النقط."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "على مستقيم مدرّج ننطلق من المبدإ $O$ ونعدّ الاتجاه الموجب نحو اليمين. النقطة $A(-0{,}5)$ تقع:",
+      "learningPoints": [
+        {
+          "code": "1am_talim-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "على يمين المبدإ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM1-SIGNSIDE"
+        },
+        {
+          "id": "B",
+          "content": "على يسار المبدإ",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "عند المبدإ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM1-SIGNSIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع الأعداد على مستقيم مدرّج وانظر أين تقع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأعداد تكبر نحو اليمين وتصغر نحو اليسار."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن مواضع النقط لا أحجام الأرقام المكتوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "فاصلة $-0{,}5$ : النقطة على يسار المبدإ.",
+        "incorrect": "الإشارة − تعني الجهة اليسرى والإشارة + (المحذوفة) الجهة اليمنى."
+      },
+      "solution": {
+        "lines": [
+          "$-0{,}5$ سالب",
+          "على يسار المبدإ"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "تقع النقطة $B$ على يسار المبدإ $O$ على بعد وحدة واحدة و تدريجتين صغيرتين (كلّ وحدة مقسّمة إلى 5 أجزاء متساوية). ما فاصلتها؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "-1.4",
+      "misconceptionSignatures": [
+        {
+          "value": "1.4",
+          "id": "MISC-TALIM1-SIGNSIDE"
+        },
+        {
+          "value": "-0.6",
+          "id": "MISC-TALIM1-FRACDIR"
+        },
+        {
+          "value": "-1.2",
+          "id": "MISC-TALIM1-TICKDIV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى الجهة التي تقع عليها النقطة من المبدإ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفاصلة هي المسافة إلى المبدإ مع إشارة الجهة: − على يسار المبدإ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الوحدات الكاملة ثمّ أضف التدريجات الصغيرة، وضع الإشارة في الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة $-1{,}4$ : الجهة تعطي الإشارة والبعد يعطي العدد.",
+        "incorrect": "اقرأ الجهة من المبدإ ثمّ احسب البعد، ولا تنسَ قيمة التدريجة."
+      },
+      "solution": {
+        "lines": [
+          "على يسار المبدإ: الإشارة −",
+          "البعد: $1$ وحدات و $2$ تدريجات من $5$ : $1{,}4$",
+          "الفاصلة: $-1{,}4$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "على شريط ورقيّ يبعد المبدإ $O$ عن طرفه الأيسر $10$ cm وعن طرفه الأيمن $18$ cm . نريد تعليم النقطتين $A(-4)$ و $B(6)$ ونحمل الوحدة نفسها على الجهتين. ما أكبر طول للوحدة بالسنتيمتر يُدخل النقطتين على الشريط؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-mustaqim-mudarraj_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "2.5",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-TALIM1-ONESIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نحمل الوحدة نفسها من جهتي المبدإ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب لكلّ جهة أكبر طول يتّسع لها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خذ الأصغر من الطولين لتتّسع الجهتان معًا."
+        }
+      ],
+      "feedback": {
+        "correct": "أكبر طول للوحدة $2{,}5$ cm : الجهة الأضيق هي التي تحدّده.",
+        "incorrect": "اقرأ الجهة من المبدإ ثمّ احسب البعد، ولا تنسَ قيمة التدريجة."
+      },
+      "solution": {
+        "lines": [
+          "جهة اليسار: $10\\div 4=2{,}5$",
+          "جهة اليمين: $18\\div 6=3$",
+          "نأخذ الأصغر ليتّسع الشريط للجهتين: $2{,}5$ cm"
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "نعلّم النقطة $C(-1{,}5)$ على مستقيم مدرّج طول وحدته $4$ cm . كم تبعد عن المبدإ $O$ بالسنتيمتر؟ نكتب العدد موجبًا إن كانت على يمين $O$ وسالبًا إن كانت على يسارها.",
+      "learningPoints": [
+        {
+          "code": "1am_talim-mustaqim-mudarraj_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "-6",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-TALIM1-SIGNSIDE"
+        },
+        {
+          "value": "-1.5",
+          "id": "MISC-TALIM1-UNITIGNORED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفاصلة تعطي عدد الوحدات من المبدإ، وطول الوحدة معطى بالسنتيمتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب الفاصلة في طول الوحدة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ما على يسار المبدإ يأخذ إشارة −."
+        }
+      ],
+      "feedback": {
+        "correct": "موضع $C$ : $-6$ cm من $O$ .",
+        "incorrect": "اقرأ الجهة من المبدإ ثمّ احسب البعد، ولا تنسَ قيمة التدريجة."
+      },
+      "solution": {
+        "lines": [
+          "عدد الوحدات من $O$ : $1{,}5$ ، وكلّ وحدة $4$ cm",
+          "$1{,}5\\times 4=6$ cm",
+          "على يسار المبدإ: $-6$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

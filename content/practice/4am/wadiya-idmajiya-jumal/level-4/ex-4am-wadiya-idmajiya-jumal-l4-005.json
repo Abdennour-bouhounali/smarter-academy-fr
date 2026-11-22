@@ -1,0 +1,221 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-jumal-l4-005",
+  "lessonCode": "wadiya-idmajiya-jumal",
+  "level": 4,
+  "metadata": {
+    "title": "عرض الهاتف النقال",
+    "estimatedMinutes": 11,
+    "tags": [
+      "ترييض",
+      "مبلغ ثابت",
+      "متراجحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-jumal_P1"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "يقترح متعامل للهاتف النقال عرضا شهريا: مبلغ ثابت $y$ DA يضاف إليه $x$ DA عن كل $1Go$ مستهلك. استهلك ريان $4Go$ في مراجعة دروسه فدفع 1400DA، واستهلكت سارة $7Go$ فدفعت 1850DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن $x$ و $y$ يحققان الجملة: $\\begin{cases} 4x + y = 1400 \\\\ 7x + y = 1850 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ المدفوع = عدد الـ Go × ثمن 1Go + المبلغ الثابت."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "ريان: $4x + y = 1400$",
+          "سارة: $7x + y = 1850$",
+          "ومنه: $\\begin{cases} 4x + y = 1400 \\\\ 7x + y = 1850 \\end{cases}$"
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حل هذه الجملة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": {
+        "x": "150",
+        "y": "800"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "800",
+            "y": "150"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل $y$ هو نفسه في المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح إحدى المعادلتين من الأخرى طرفا لطرف لتحذف $y$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض قيمة $x$ في إحدى المعادلتين لتجد $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن $1Go$ هو $150DA$ والمبلغ الثابت $800DA$ .",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} 4x + y = 1400 & ...(1) \\\\ 7x + y = 1850 & ...(2) \\end{cases}$",
+          "بطرح المعادلة (1) من المعادلة (2) طرفا لطرف نجد:",
+          "$3x = 450$",
+          "$x = 150$",
+          "بتعويض $x$ بـ $150$ في المعادلة (1) نجد: $4 \\times 150 + y = 1400$",
+          "$y = 800$",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(150 ; 800)"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كم يدفع من يستهلك $10Go$ في الشهر؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "2300",
+      "misconceptionSignatures": [
+        {
+          "value": "1500",
+          "id": "MISC-WADIYA-TARJAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا تنس المبلغ الثابت."
+        }
+      ],
+      "feedback": {
+        "correct": "$10 \\times 150 + 800 = 2300$ .",
+        "incorrect": "المبلغ = عدد الـ Go × ثمن 1Go + المبلغ الثابت."
+      },
+      "solution": {
+        "lines": [
+          "$10 \\times 150 + 800 = 1500 + 800 = 2300$",
+          "يدفع $2300DA$ ."
+        ],
+        "result": "2300\\,DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "☜ خصّص أمين 3000DA لهذا العرض في الشهر. ما هو أكبر عدد من الـ Go (عدد طبيعي) يمكنه استهلاكه؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-WADIYA-QIMAT-TASAWI"
+        },
+        {
+          "value": "20",
+          "id": "MISC-WADIYA-TARJAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب متراجحة: المبلغ المدفوع لا يتجاوز 3000DA."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حل المتراجحة ثم خذ أكبر عدد طبيعي."
+        }
+      ],
+      "feedback": {
+        "correct": "$150 \\times 14 + 800 = 2900 \\leq 3000$ .",
+        "incorrect": "اطرح المبلغ الثابت من 3000 ثم اقسم على ثمن 1Go، واختر عددا طبيعيا."
+      },
+      "solution": {
+        "lines": [
+          "نبحث عن العدد الطبيعي $n$ بحيث: $150n + 800 \\leq 3000$",
+          "$150n \\leq 2200$",
+          "$n \\leq \\dfrac{2200}{150}$ أي $n \\leq 14{,}66...$",
+          "أكبر عدد طبيعي يحقق ذلك هو 14."
+        ],
+        "result": "14\\,Go"
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

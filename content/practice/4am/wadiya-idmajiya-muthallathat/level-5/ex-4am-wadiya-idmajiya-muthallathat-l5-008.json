@@ -1,0 +1,391 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muthallathat-l5-008",
+  "lessonCode": "wadiya-idmajiya-muthallathat",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2022 — زاوية التسديد في حصة تدريب",
+    "estimatedMinutes": 30,
+    "tags": [
+      "وضعية إدماجية",
+      "خاصية فيثاغورس",
+      "جيب التمام",
+      "الظل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-muthallathat_P3",
+      "modelledOn": "BEM 2022 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في حصة تدريب، يقف لاعب في النقطة $P$ أمام خط المرمى، خارج المرمى من جهة. القائمان $A$ و $B$ للمرمى على خط المرمى، و $H$ النقطة من خط المرمى حيث $(PH)$ عمودي على خط المرمى (الشكل المقابل): $PH = 12\\,\\mathrm{m}$ ، $HA = 5\\,\\mathrm{m}$ و $AB = 7\\,\\mathrm{m}$ . زاوية التسديد هي الزاوية $\\widehat{APB}$ . يلعب اللاعبون بروح رياضية ويتعاونون فيما بينهم على التحسّن.",
+    "figure": {
+      "points": {
+        "H": [
+          0,
+          0
+        ],
+        "A": [
+          5,
+          0
+        ],
+        "B": [
+          12,
+          0
+        ],
+        "P": [
+          0,
+          -12
+        ]
+      },
+      "segments": [
+        {
+          "from": "H",
+          "to": "A",
+          "label": "5 m"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "label": "7 m"
+        },
+        {
+          "from": "P",
+          "to": "H",
+          "label": "12 m"
+        },
+        [
+          "P",
+          "A"
+        ],
+        [
+          "P",
+          "B"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "P",
+          "H",
+          "A"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "P",
+          "from": "A",
+          "to": "B"
+        }
+      ],
+      "labels": {
+        "H": "nw",
+        "A": "n",
+        "B": "ne",
+        "P": "sw"
+      },
+      "ariaLabel": "خط المرمى أفقي فيه H و A و B؛ HA = 5 m و AB = 7 m؛ اللاعب P تحت H و PH = 12 m عمودي على خط المرمى؛ زاوية التسديد APB",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب المسافة $PA$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P2",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "value": "17",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $PHA$ قائم في $H$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خاصية فيثاغورس."
+        }
+      ],
+      "feedback": {
+        "correct": "$PA^2 = 144 + 25 = 169$ ومنه $PA = 13\\,\\mathrm{m}$ .",
+        "incorrect": "نجمع المربعين ثم نأخذ الجذر."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $PHA$ قائم في $H$ : $PA^2 = PH^2 + HA^2 = 144 + 25 = 169$",
+          "$PA = \\sqrt{169}$"
+        ],
+        "result": "PA = 13\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب القيمة المضبوطة لـ $\\cos\\widehat{HPA}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P2",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "12/13",
+      "misconceptionSignatures": [
+        {
+          "value": "13/12",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        },
+        {
+          "value": "5/13",
+          "id": "MISC-MUTH-MUQABIL-MUJAWIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\widehat{HPA}$ رأسها $P$ : $[PH]$ مجاور و $[PA]$ وتر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\cos\\widehat{HPA} = \\dfrac{12}{13}$ .",
+        "incorrect": "جيب التمام = المجاور على الوتر."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $PHA$ القائم في $H$ : $\\cos\\widehat{HPA} = \\dfrac{PH}{PA} = \\dfrac{12}{13}$"
+        ],
+        "result": "\\cos\\widehat{HPA} = \\dfrac{12}{13}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "احسب قيس الزاوية $\\widehat{HPB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: القيس بالدرجة",
+      "expectedAnswer": "45",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-MUTH-NISBA-BADAL-QAYS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $PHB$ قائم في $H$ و $HB = HA + AB$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $\\tan\\widehat{HPB}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$HB = 12$ و $\\tan\\widehat{HPB} = \\dfrac{12}{12} = 1$ ومنه $\\widehat{HPB} = 45^{\\circ}$ .",
+        "incorrect": "المسافة $HB$ هي $HA + AB$ ؛ والظل $1$ يقابله القيس $45^{\\circ}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$HB = HA + AB = 5 + 7 = 12$",
+          "في المثلث $PHB$ القائم في $H$ : $\\tan\\widehat{HPB} = \\dfrac{HB}{PH} = \\dfrac{12}{12} = 1$"
+        ],
+        "result": "\\widehat{HPB} = 45^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "استنتج قيس زاوية التسديد $\\widehat{APB}$ بالتدوير إلى الوحدة من الدرجة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: القيس بالدرجة مدوّرا إلى الوحدة",
+      "expectedAnswer": "22",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\widehat{APB} = \\widehat{HPB} - \\widehat{HPA}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $\\widehat{HPA}$ بالآلة الحاسبة من نسبته المضبوطة، ولا تدوّر إلا في الأخير."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{APB} = 45^{\\circ} - \\widehat{HPA} \\approx 45 - 22{,}62 = 22{,}38$ ، أي $22^{\\circ}$ .",
+        "incorrect": "الزاوية المطلوبة فرق زاويتين لهما الضلع $[PH]$ نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\widehat{HPA} \\approx 22{,}6199^{\\circ}$ (من $\\cos\\widehat{HPA} = \\dfrac{12}{13}$ )",
+          "$\\widehat{APB} = \\widehat{HPB} - \\widehat{HPA} \\approx 45 - 22{,}6199 = 22{,}3801$"
+        ],
+        "result": "\\widehat{APB} \\approx 22^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "sub": "ا",
+      "lead": "☜ يتقدّم اللاعب نحو خط المرمى على المستقيم $(PH)$ إلى النقطة $Q$ حيث $QH = 9\\,\\mathrm{m}$ .",
+      "statement": "احسب زاوية التسديد الجديدة $\\widehat{AQB}$ بالتدوير إلى الوحدة من الدرجة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: القيس بالدرجة مدوّرا إلى الوحدة",
+      "expectedAnswer": "24",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلثين $QHB$ و $QHA$ القائمين في $H$ : $\\tan\\widehat{HQB} = \\dfrac{12}{9}$ و $\\tan\\widehat{HQA} = \\dfrac{5}{9}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\widehat{AQB} = \\widehat{HQB} - \\widehat{HQA}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{AQB} \\approx 53{,}13 - 29{,}05 = 24{,}08$ ، أي $24^{\\circ}$ .",
+        "incorrect": "احسب الزاويتين عند $Q$ بالظل ثم اطرح، دون تدوير مبكّر."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan\\widehat{HQB} = \\dfrac{12}{9}$ ومنه $\\widehat{HQB} \\approx 53{,}1301^{\\circ}$",
+          "$\\tan\\widehat{HQA} = \\dfrac{5}{9}$ ومنه $\\widehat{HQA} \\approx 29{,}0546^{\\circ}$",
+          "$\\widehat{AQB} \\approx 24{,}0755^{\\circ}$"
+        ],
+        "result": "\\widehat{AQB} \\approx 24^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "sub": "ب",
+      "statement": "هل تكبر زاوية التسديد أم تصغر عندما يتقدّم اللاعب من $P$ إلى $Q$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "تكبر",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "تصغر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-SHAKL-BURHAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن القيسين اللذين حسبتهما."
+        }
+      ],
+      "feedback": {
+        "correct": "تكبر: نحو $24^{\\circ}$ بدل نحو $22^{\\circ}$ .",
+        "incorrect": "قارن القيسين المحسوبين ولا تعتمد على مظهر الشكل."
+      },
+      "solution": {
+        "lines": [
+          "$\\widehat{AQB} \\approx 24^{\\circ}$ و $\\widehat{APB} \\approx 22^{\\circ}$",
+          "إذن زاوية التسديد تكبر عندما يتقدّم اللاعب إلى $Q$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

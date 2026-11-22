@@ -1,0 +1,191 @@
+{
+  "id": "ex-3am-qawaid-quwa-ashara-l2-004",
+  "lessonCode": "qawaid-quwa-ashara",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — سطور سلمى",
+    "estimatedMinutes": 6,
+    "tags": [
+      "القواعد الثلاث",
+      "تصحيح"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "كتبت سلمى سطرين في دفترها وتريد التأكّد منهما."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "هل المساواة $10^{-3}\\times10^{-2} = 10^{-5}$ صحيحة؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل كلّ اقتراح إلى قوة واحدة للعدد 10 مستعملًا القاعدة المناسبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر اقتراحًا واحدًا في كلّ مرّة، وانتبه إلى أنّ القواعد الثلاث لا تخصّ الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا شككت في قاعدة فجرّبها على قوة صغيرة تعرف قيمتها العشرية."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QAWAID-ISHARA"
+        }
+      ],
+      "feedback": {
+        "correct": "المساواة صحيحة: $-3 + (-2) = -5$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب قيمته أو بتطبيق القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "في الجداء نجمع الأسّين: $-3 + (-2) = -5$ .",
+          "$10^{-3}\\times10^{-2} = 10^{-5}$ ، فالمساواة صحيحة."
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل المساواة $(10^{-3})^{2} = 10^{-5}$ صحيحة؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل كلّ اقتراح إلى قوة واحدة للعدد 10 مستعملًا القاعدة المناسبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر اقتراحًا واحدًا في كلّ مرّة، وانتبه إلى أنّ القواعد الثلاث لا تخصّ الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا شككت في قاعدة فجرّبها على قوة صغيرة تعرف قيمتها العشرية."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QAWAID-QUWA-JAM"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "المساواة خاطئة: $(10^{-3})^{2} = 10^{-6}$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب قيمته أو بتطبيق القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "في قوة لقوة نضرب الأسّين: $(-3) \\times 2 = -6$ لا $-5$ .",
+          "$(10^{-3})^{2} = 10^{-6}$ ، فالمساواة خاطئة."
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "$A = (10^{-3})^{2} = 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوة الداخلية وأسّها، ثمّ الأسّ الخارجي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في قوة لقوة للعدد 10 نجري عملية واحدة على الأسّين: هل هي الجمع أم غيره؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر أنّ $(10^{2})^{3}$ جداء ثلاثة عوامل كلّ عامل منها $10^{2}$ ."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-6",
+      "misconceptionSignatures": [
+        {
+          "value": "-1",
+          "id": "MISC-QAWAID-QUWA-JAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$A = (10^{-3})^{2} = 10^{-6}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "في قوة لقوة نضرب الأسّين: $(-3) \\times 2 = -6$ .",
+          "$(10^{-3})^{2} = 10^{-6}$ ."
+        ],
+        "result": "n = -6"
+      }
+    }
+  ]
+}

@@ -1,0 +1,289 @@
+{
+  "id": "ex-4am-mafhum-jumla-l5-007",
+  "lessonCode": "mafhum-jumla",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2019 — نادي الفروسية بتيارت",
+    "estimatedMinutes": 20,
+    "tags": [
+      "جملة",
+      "ثنائية",
+      "صيغتان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mafhum-jumla_P1",
+      "modelledOn": "BEM 2019 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2019",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يقترح نادي الفروسية بتيارت، الذي يحافظ على تراث الفروسية الجزائرية، صيغتين لتعلّم ركوب الخيل:\n• الصيغة الأولى: 600DA للحصة الواحدة.\n• الصيغة الثانية: اشتراك قدره 3000DA ، ثم 450DA للحصة الواحدة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب المبلغ المدفوع من أجل 10 حصص حسب كل صيغة.",
+      "statement": "المبلغ حسب الصيغة الأولى:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "6000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب ثمن الحصة في عدد الحصص."
+        }
+      ],
+      "feedback": {
+        "correct": "$600 \\times 10 = 6000$ ، أي 6000DA .",
+        "incorrect": "اضرب ثمن الحصة في 10."
+      },
+      "solution": {
+        "lines": [
+          "$600 \\times 10 = 6000$"
+        ],
+        "result": "6000\\,DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "المبلغ حسب الصيغة الثانية:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "7500",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أضف ثمن الحصص إلى الاشتراك."
+        }
+      ],
+      "feedback": {
+        "correct": "$3000 + 450 \\times 10 = 7500$ ، أي 7500DA .",
+        "incorrect": "أضف ثمن الحصص العشر إلى الاشتراك."
+      },
+      "solution": {
+        "lines": [
+          "$3000 + 450 \\times 10 = 7500$"
+        ],
+        "result": "7500\\,DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ليكن $x$ عدد الحصص الذي يتساوى من أجله المبلغان، و $y$ هذا المبلغ (بالدينار). تحقق الثنائية $(x ; y)$ جملة من الشكل $\\begin{cases} 600x - y = 0 \\\\ 450x - y = c \\end{cases}$ . أعط العدد $c$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $c$ فقط (انتبه إلى الإشارة)",
+      "expectedAnswer": "-3000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حسب الصيغة الثانية: $y = 450x + 3000$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل $y$ إلى الطرف الأول و 3000 إلى الطرف الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "$y = 450x + 3000$ تعطي $450x - y = -3000$ .",
+        "incorrect": "اكتب المبلغ حسب الصيغة الثانية ثم انقل الحدود مع تغيير الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "حسب الصيغة الأولى: $y = 600x$ أي $600x - y = 0$",
+          "حسب الصيغة الثانية: $y = 450x + 3000$ أي $450x - y = -3000$"
+        ],
+        "result": "c = -3000"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "statement": "هل الثنائية $(15 ; 9000)$ حل لهذه الجملة؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-MUADALA-WAHIDA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $15$ و $y$ بـ $9000$ في كل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الثنائية حل للجملة إذا حققت المعادلتين في آن واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$600 \\times 15 - 9000 = 0$ ؛ $450 \\times 15 - 9000 = -2250 \\neq -3000$ : الثنائية ليست حلا للجملة.",
+        "incorrect": "العدد الأول في الثنائية قيمة $x$ والثاني قيمة $y$ ؛ عوّض في المعادلتين معا وقارن كل نتيجة بالطرف الثاني."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $x$ بـ $15$ و $y$ بـ $9000$ :",
+          "$600 \\times 15 - 9000 = 0$",
+          "$450 \\times 15 - 9000 = -2250 \\neq -3000$",
+          "ومنه الثنائية $(15 ; 9000)$ ليست حلا للجملة (لا تحقق المعادلتين معا)."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "هل الثنائية $(20 ; 12000)$ حل لهذه الجملة؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $20$ و $y$ بـ $12000$ في كل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الثنائية حل للجملة إذا حققت المعادلتين في آن واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$600 \\times 20 - 12000 = 0$ ؛ $450 \\times 20 - 12000 = -3000$ : الثنائية حل للجملة.",
+        "incorrect": "العدد الأول في الثنائية قيمة $x$ والثاني قيمة $y$ ؛ عوّض في المعادلتين معا وقارن كل نتيجة بالطرف الثاني."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $x$ بـ $20$ و $y$ بـ $12000$ :",
+          "$600 \\times 20 - 12000 = 0$",
+          "$450 \\times 20 - 12000 = -3000$",
+          "ومنه الثنائية $(20 ; 12000)$ حل للجملة."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "☜ يريد سفيان حضور 24 حصة. أيّ الصيغتين أقل تكلفة له؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الصيغة الأولى",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "الصيغة الثانية",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المبلغ حسب كل صيغة من أجل 24 حصة."
+        }
+      ],
+      "feedback": {
+        "correct": "$600 \\times 24 = 14400$ و $3000 + 450 \\times 24 = 13800$ .",
+        "incorrect": "احسب المبلغين من أجل 24 حصة ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "الصيغة الأولى: $600 \\times 24 = 14400$ أي 14400DA .",
+          "الصيغة الثانية: $3000 + 450 \\times 24 = 13800$ أي 13800DA .",
+          "ومنه الصيغة الثانية أقل تكلفة لسفيان."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

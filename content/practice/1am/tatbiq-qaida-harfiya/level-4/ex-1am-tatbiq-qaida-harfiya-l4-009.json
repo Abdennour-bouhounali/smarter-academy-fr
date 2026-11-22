@@ -1,0 +1,242 @@
+{
+  "id": "ex-1am-tatbiq-qaida-harfiya-l4-009",
+  "lessonCode": "tatbiq-qaida-harfiya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — حافلتان وسعران",
+    "estimatedMinutes": 10,
+    "tags": [
+      "قاعدتان",
+      "مقارنة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثالث",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "ثمن رحلة مدرسية بالدينار لـ $n$ تلميذًا في الحافلة الأولى $P=70\\times n+500$ وفي الثانية $Q=95\\times n$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $P$ من أجل $n=16$ .",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "1620",
+      "misconceptionSignatures": [
+        {
+          "value": "586",
+          "id": "MISC-TATBIQ-PLUS"
+        },
+        {
+          "value": "7516",
+          "id": "MISC-TATBIQ-GLUED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما قيمة كلّ حرف؟ وفي كم موضع يظهر كلّ حرف في العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع القيمة في كلّ موضع يظهر فيه الحرف، وأعد إشارة الضرب بين العددين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب بالأولويات: ما بين القوسين، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: النتيجة $1620$ .",
+        "incorrect": "حذف إشارة الضرب لا يعني الجمع: $3x$ تعني $3\\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "نكتب القاعدة: $P=70\\times n+500$ .",
+          "نضع قيمة كلّ حرف في كلّ موضع يظهر فيه: $P=70\\times 16+500$ .",
+          "نحسب: $P=1120+500$ .",
+          "نحسب: $P=1620$ .",
+          "الجواب: $P=1620$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $Q$ من أجل $n=16$ .",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "1520",
+      "misconceptionSignatures": [
+        {
+          "value": "9516",
+          "id": "MISC-TATBIQ-GLUED"
+        },
+        {
+          "value": "111",
+          "id": "MISC-TATBIQ-PLUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما قيمة كلّ حرف؟ وفي كم موضع يظهر كلّ حرف في العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع القيمة في كلّ موضع يظهر فيه الحرف، وأعد إشارة الضرب بين العددين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب بالأولويات: ما بين القوسين، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: النتيجة $1520$ .",
+        "incorrect": "بين العدد والحرف إشارة ضرب لا تُكتب: عند التعويض نُعيدها، فنحسب جداءً لا عددًا من رقمين."
+      },
+      "solution": {
+        "lines": [
+          "نكتب القاعدة: $Q=95\\times n$ .",
+          "نضع قيمة كلّ حرف في كلّ موضع يظهر فيه: $Q=95\\times 16$ .",
+          "نحسب: $Q=1520$ .",
+          "الجواب: $Q=1520$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أيّ الحافلتين أرخص لـ $16$ تلميذًا؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الحافلة الأولى",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-GLUED"
+        },
+        {
+          "id": "B",
+          "content": "الحافلة الثانية",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما القاعدة في كلّ حالة؟ وما القيم المعطاة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القيمتين كلتيهما بالقاعدة المناسبة لكلّ حالة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن النتيجتين ثمّ أجب عن السؤال."
+        }
+      ],
+      "feedback": {
+        "correct": "قارنّا القيمتين المحسوبتين بالقاعدتين.",
+        "incorrect": "بين العدد والحرف إشارة ضرب لا تُكتب: عند التعويض نُعيدها، فنحسب جداءً لا عددًا من رقمين."
+      },
+      "solution": {
+        "lines": [
+          "الحافلة الأولى: $70\\times 16+500=1620$ .",
+          "الحافلة الثانية: $95\\times 16=1520$ .",
+          "نقارن: الأقلّ هو الحافلة الثانية ."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "بكم يختلف الثمنان بالدينار ( $1\\,620$ و $1\\,520$ )؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "100",
+      "misconceptionSignatures": [],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما قيمة كلّ حرف؟ وفي كم موضع يظهر كلّ حرف في العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع القيمة في كلّ موضع يظهر فيه الحرف، وأعد إشارة الضرب بين العددين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب بالأولويات: ما بين القوسين، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: النتيجة $100$ .",
+        "incorrect": "نضع القيمة في كلّ موضع ثمّ نحسب بالأولويات."
+      },
+      "solution": {
+        "lines": [
+          "نكتب العبارة: $1620-1520$ .",
+          "نحسب: $100$ .",
+          "الجواب: $100$ ."
+        ]
+      },
+      "timeSeconds": 90,
+      "counted": false
+    }
+  ]
+}

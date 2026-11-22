@@ -1,183 +1,110 @@
-import React, { useCallback, useContext, useMemo, useState } from 'react';
+import { getAllGrades } from '@smarter-academy/core';
+import { useCallback, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { Dumbbell } from 'lucide-react';
-import AdminPage from '../../../components/admin/AdminPage';
+import { AdminPage, useAdminLabels, Num } from '../adminUi';
 import DataTable from '../../../components/admin/ui/DataTable';
 import { FilterBar, SearchInput, SelectFilter, Pagination } from '../../../components/admin/ui/FilterBar';
 import { EmptyState } from '../../../components/admin/ui/states';
-import PublicationControl from '../../../components/admin/PublicationControl';
-import TierControl from '../../../components/admin/TierControl';
-import BulkActionBar from '../../../components/admin/BulkActionBar';
-import { buildContentBulkActions } from '../../../components/admin/bulkContentActions';
-import { CONTENT_NOUNS } from '../../../components/admin/contentNouns';
+import ExerciseBankControl from '../../../components/admin/ExerciseBankControl';
 import { useAdminResource } from '../../../hooks/useAdminResource';
-import { useBulkSelection } from '../../../hooks/useBulkSelection';
-import { AuthContext } from '../../../context/AuthContext';
-import { fetchExercises } from '../../../services/admin/contentService';
+import { fetchLessons } from '../../../services/admin/contentService';
 import { useDocumentMeta } from '../../../hooks/useDocumentMeta';
 import { useDebounced } from '../../../hooks/useDebounced';
 
-const GRADES = ['6e', '5e', '4e', '3e', 'seconde'];
+// Le filtre ne propose que les classes du catalogue ACTIF (activeGrades.js).
+const GRADES = getAllGrades().map((g) => g.id);
 
+/**
+ * « التمارين » — organisée PAR LEÇON (propriétaire, 2026-11-11).
+ *
+ * On ne publie pas les exercices un par un : on choisit une leçon et on donne
+ * un état à TOUTE sa banque d'exercices, d'un seul geste
+ * (`ExerciseBankControl` → `PATCH …/lesson/{id}/exercises-status`). Chaque
+ * ligne résume la banque par état (`exerciseStatusCounts`). Masquer UN
+ * exercice reste possible depuis la fiche de la leçon (lien du titre).
+ * Changer l'état de la LEÇON elle-même le donne aussi à ses exercices.
+ */
 export default function AdminExercises() {
-  useDocumentMeta('Exercices — Administration');
-
-  const { token } = useContext(AuthContext);
+  const { t } = useTranslation('admin');
+  const L = useAdminLabels();
+  useDocumentMeta(t('exercises.metaTitle'));
 
   const [search, setSearch] = useState('');
   const [grade, setGrade] = useState();
-  const [level, setLevel] = useState();
-  const [status, setStatus] = useState();
+  const [unit, setUnit] = useState();
   const [page, setPage] = useState(1);
   const debouncedSearch = useDebounced(search, 300);
 
   const loader = useCallback(
-    (token) => fetchExercises(token, { search: debouncedSearch, grade, level, status, page }),
-    [debouncedSearch, grade, level, status, page],
+    (token) => fetchLessons(token, {
+      search: debouncedSearch, grade, unit, page, withExercises: 1, sort: 'code',
+    }),
+    [debouncedSearch, grade, unit, page],
   );
-  const { data, loading, error, reload, setData } = useAdminResource(loader, [loader]);
+  const { data, loading, error, reload } = useAdminResource(loader, [loader]);
 
   const rows = data?.data ?? [];
-  const selection = useBulkSelection(rows);
-
-  /**
-   * Un exercice a un palier PROPRE, et en plus « hérite de sa leçon » —
-   * exactement les trois choix du menu unitaire (voir TierControl), ni un de
-   * plus.
-   */
-  const bulkActions = useMemo(
-    () => buildContentBulkActions({
-      type: 'exercise',
-      token,
-      titleOf: (row) => row.title ?? row.exerciseCode,
-      withTier: true,
-      withTierInherit: true,
-    }),
-    [token],
-  );
-
-  const applyBulkOutcome = (outcome) => {
-    const touched = new Set(outcome.applied);
-    setData((current) => current && ({
-      ...current,
-      data: current.data.map((row) => (touched.has(row.id) ? { ...row, ...outcome.patch } : row)),
-    }));
-  };
-
-  const patchRow = (id, changes) => {
-    setData((current) => current && ({
-      ...current,
-      data: current.data.map((row) => (row.id === id ? { ...row, ...changes } : row)),
-    }));
-  };
-
+  const units = data?.units ?? [];
   const resetPage = (setter) => (value) => { setter(value); setPage(1); };
 
   return (
     <AdminPage
-      eyebrow="Contenu"
-      title="Exercices"
-      subtitle="Retirer un exercice le fait disparaître de la liste de l’élève — sans effacer aucune tentative déjà enregistrée."
+      eyebrow={t('exercises.eyebrow')}
+      title={t('exercises.title')}
+      subtitle={t('exercises.subtitleByLesson')}
     >
       <div className="space-y-3">
         <FilterBar>
           <SearchInput
             value={search}
             onChange={resetPage(setSearch)}
-            placeholder="Identifiant, titre, ou leçon…"
+            placeholder={t('exercises.searchLessonPlaceholder')}
+            label={L.filters.searchLabel}
           />
           <SelectFilter
-            label="Classe" allLabel="Toutes les classes" value={grade}
+            label={t('common.grade')} allLabel={t('exercises.allGrades')} value={grade}
             onChange={resetPage(setGrade)}
             options={GRADES.map((g) => ({ value: g, label: g }))}
           />
           <SelectFilter
-            label="Niveau" allLabel="Tous les niveaux" value={level}
-            onChange={resetPage(setLevel)}
-            options={[1, 2, 3, 4, 5].map((n) => ({ value: String(n), label: `Niveau ${n}` }))}
-          />
-          <SelectFilter
-            label="Publication" allLabel="Tous les états" value={status}
-            onChange={resetPage(setStatus)}
-            options={[
-              { value: 'published', label: 'Publié' },
-              { value: 'hidden', label: 'Masqué' },
-              { value: 'draft', label: 'Brouillon' },
-              { value: 'archived', label: 'Archivé' },
-            ]}
+            label={t('lessons.columnUnit')} allLabel={t('lessons.allUnits')} value={unit}
+            onChange={resetPage(setUnit)}
+            options={units.map((u) => ({ value: u.code, label: u.title }))}
           />
         </FilterBar>
 
-        <BulkActionBar
-          count={selection.count}
-          noun={CONTENT_NOUNS.exercise}
-          actions={bulkActions}
-          selectedRows={selection.selectedRows}
-          onClear={selection.clear}
-          onSelectAllVisible={selection.toggleAll}
-          allSelected={selection.allSelected}
-          visibleCount={selection.visibleCount}
-          onDone={applyBulkOutcome}
-        />
-
         <DataTable
-          selection={selection}
-          selectionLabel={(row) => `Sélectionner l’exercice ${row.title ?? row.exerciseCode}`}
+          labels={L.table}
           columns={[
             {
-              key: 'exerciseCode',
-              label: 'Exercice',
-              cellClassName: 'min-w-[240px]',
+              key: 'lesson',
+              label: t('exercises.columnLesson'),
+              cellClassName: 'min-w-[220px]',
               render: (row) => (
                 <div>
-                  <span className="font-semibold text-slate-900">{row.title ?? row.exerciseCode}</span>
-                  <span className="block font-mono-jetbrains text-xs text-slate-400">{row.exerciseCode}</span>
+                  <Link
+                    to={`/admin/contenu/lecons/${encodeURIComponent(row.code)}`}
+                    className="font-semibold text-slate-900 hover:underline"
+                  >
+                    {row.title}
+                  </Link>
+                  {row.unitTitle && <span className="block text-xs text-slate-400">{row.unitTitle}</span>}
                 </div>
               ),
             },
+            { key: 'grade', label: t('common.grade'), render: (row) => row.grade ?? t('common.dash') },
             {
-              key: 'lesson',
-              label: 'Leçon',
-              cellClassName: 'min-w-[180px]',
-              render: (row) => (
-                <Link
-                  to={`/admin/contenu/lecons/${encodeURIComponent(row.lessonCode)}`}
-                  className="hover:underline"
-                >
-                  {row.lessonTitle ?? row.lessonCode}
-                </Link>
-              ),
-            },
-            { key: 'grade', label: 'Classe', render: (row) => row.grade ?? '—' },
-            { key: 'level', label: 'Niveau', render: (row) => row.level },
-            { key: 'questionCount', label: 'Questions', render: (row) => row.questionCount ?? '—' },
-            {
-              key: 'tier',
-              label: 'Accès',
-              cellClassName: 'min-w-[210px]',
-              render: (row) => (
-                <TierControl
-                  type="exercise"
-                  id={row.id}
-                  tier={row.tier}
-                  lessonTier={row.lessonTier}
-                  onChanged={(next) => patchRow(row.id, { tier: next })}
-                  compact
-                />
-              ),
+              key: 'exercisesCount',
+              label: t('exercises.columnCount'),
+              render: (row) => <Num>{row.exercisesCount ?? 0}</Num>,
             },
             {
-              key: 'publicationStatus',
-              label: 'Publication',
-              render: (row) => (
-                <PublicationControl
-                  type="exercise"
-                  id={row.id}
-                  status={row.publicationStatus}
-                  onChanged={(next) => patchRow(row.id, { publicationStatus: next })}
-                  compact
-                />
-              ),
+              key: 'bank',
+              label: t('exercises.columnPublication'),
+              cellClassName: 'min-w-[320px]',
+              render: (row) => <ExerciseBankControl lesson={row} onChanged={() => reload()} />,
             },
           ]}
           rows={rows}
@@ -187,13 +114,13 @@ export default function AdminExercises() {
           empty={(
             <EmptyState
               icon={Dumbbell}
-              title="Aucun exercice"
-              hint="Le moteur d’exercices s’active leçon par leçon (content/practice/active.json) : peu de leçons en ont aujourd’hui, ce n’est pas une erreur."
+              title={t('exercises.emptyTitle')}
+              hint={t('exercises.emptyEngineHint')}
             />
           )}
         />
 
-        <Pagination meta={data} onPage={setPage} />
+        <Pagination meta={data} onPage={setPage} labels={L.pagination} />
       </div>
     </AdminPage>
   );

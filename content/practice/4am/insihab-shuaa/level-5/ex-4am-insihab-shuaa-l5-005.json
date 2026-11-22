@@ -1,0 +1,64 @@
+{
+  "id": "ex-4am-insihab-shuaa-l5-005",
+  "lessonCode": "insihab-shuaa",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — نزهة في الطاسيلي",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الطول"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_insihab-shuaa_P2",
+      "modelledOn": "know-1"
+    }
+  },
+  "statement": {
+    "content": "في نزهة بالطاسيلي ناجر، تطبيق GPS يرسم خريطة مرصوفة ضلع مربعها 1 km. انتقل الفوج 3 مربعات نحو الشرق و 4 مربعات نحو الشمال في خط مستقيم."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما طول الشعاع الذي يمثّل هذا الانتقال (بالكيلومتر)؟",
+      "learningPoints": [
+        {
+          "code": "4am_insihab-shuaa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الطول لا يتعلق بالجهة: نعدّ المربعات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "سهم مائل: الحركة الأفقية والحركة الشاقولية ضلعا مثلث قائم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق خاصية فيثاغورس: الطول² = (الأفقي)² + (الشاقولي)²."
+        }
+      ],
+      "feedback": {
+        "correct": "الطول² = 3² + 4² = 25، فالطول 5 km.",
+        "incorrect": "الطول ليس 3 + 4 = 7: الخط المستقيم وتر مثلث قائم."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SHUAA-JAM-ATWAL",
+          "value": "7"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l2-008",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — مبدأ شعاع",
+    "estimatedMinutes": 2,
+    "tags": [
+      "نقطة مجهولة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hisab-murakkibatay_P3",
+      "modelledOn": "ex-8"
+    }
+  },
+  "statement": {
+    "content": "$B(4\\,;\\,-1)$ و $\\overrightarrow{AB}\\begin{pmatrix} 6 \\\\ -3 \\end{pmatrix}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا A:",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "point",
+      "answerFormat": "الإحداثيتان (x ; y) — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "-2",
+        "y": "2"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "10",
+            "y": "-4"
+          },
+          "id": "MISC-MAALAM-MAJHUL-AMALIYA"
+        },
+        {
+          "value": {
+            "x": "6",
+            "y": "-3"
+          },
+          "id": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النهاية B معلومة والمبدأ A مجهول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$x_B - x_A$ يساوي المركبة الأولى: اكتب المعادلة وحلّها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المبدأ = النهاية ناقص المركبتين، في كل إحداثية."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 - x_A = 6$ ومنه $x_A = -2$ ؛ $-1 - y_A = -3$ ومنه $y_A = 2$ .",
+        "incorrect": "B هي النهاية: المبدأ A = B ناقص المركبتين."
+      }
+    }
+  ]
+}

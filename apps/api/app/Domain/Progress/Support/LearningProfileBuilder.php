@@ -47,6 +47,20 @@ class LearningProfileBuilder
                 'attempts' => $row['attempts'],
                 'correctCount' => $row['correctCount'],
                 'lastEvidenceAt' => $row['lastEvidenceAt'],
+                // Mastery V2 — la raison du statut, les compteurs de preuve,
+                // la fraîcheur dérivée, la version du moteur. Absents sur une
+                // ligne qui ne les porte pas (tests, anciens appelants).
+                'statusReason' => $row['statusReason'] ?? null,
+                'partialCount' => $row['partialCount'] ?? 0,
+                'failureCount' => $row['failureCount'] ?? 0,
+                'distinctItemsSuccess' => $row['distinctItemsSuccess'] ?? 0,
+                'distinctItemsAttempted' => $row['distinctItemsAttempted'] ?? 0,
+                'assessmentSuccessCount' => $row['assessmentSuccessCount'] ?? 0,
+                'maxDifficultySuccess' => $row['maxDifficultySuccess'] ?? 0,
+                'lastSuccessAt' => $row['lastSuccessAt'] ?? null,
+                'lastFailureAt' => $row['lastFailureAt'] ?? null,
+                'freshness' => $row['freshness'] ?? null,
+                'engineVersion' => $row['engineVersion'] ?? null,
                 // Advisory link into the diagnostic's skill vocabulary, when a
                 // verified correspondence exists — lets a client show "the
                 // diagnostic also looked at this" without conflating the two.

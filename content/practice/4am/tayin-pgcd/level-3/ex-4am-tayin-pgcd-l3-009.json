@@ -1,0 +1,165 @@
+{
+  "id": "ex-4am-tayin-pgcd-l3-009",
+  "lessonCode": "tayin-pgcd",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2023 — A = 270/45 و B = √45 + √20",
+    "estimatedMinutes": 8,
+    "tags": [
+      "PGCD",
+      "قاسم للعدد الآخر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tayin-pgcd_P3",
+      "modelledOn": "BEM 2023 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن الأعداد A و B حيث:",
+    "formulas": [
+      "A = \\dfrac{270}{45}",
+      "B = \\sqrt{45} + \\sqrt{20}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب PGCD(270 ; 45).",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "45",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العددين: هل العدد الأصغر قاسم للعدد الأكبر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد الأكبر على العدد الأصغر وانظر إلى الباقي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان $b$ قاسمًا للعدد $a$ فإن PGCD$(a ; b) = b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$270 = 45 \\times 6$ : العدد 45 قاسم للعدد 270، فهو قاسمهما المشترك الأكبر.",
+        "incorrect": "لا داعي لقائمتين طويلتين: تحقّق أولًا هل أحد العددين قاسم للآخر."
+      },
+      "solution": {
+        "lines": [
+          "$270 = 45 \\times 6$ ، إذن العدد 45 قاسم للعدد 270.",
+          "وبما أن 45 قاسم للعدد 270 فإن:"
+        ],
+        "result": "PGCD(270 ; 45) = 45"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب العدد A على أبسط شكل ممكن.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال السابق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 45.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال السابق."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{270}{45} = \\dfrac{270 \\div 45}{45 \\div 45}$"
+        ],
+        "result": "A = \\dfrac{270}{45} = 6"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اكتب العدد $B$ على الشكل $a\\sqrt{5}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب كل عدد تحت الجذر على شكل جداء مربع تام في 5."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل $\\sqrt{k^2 \\times m} = k\\sqrt{m}$ ثم اجمع المعاملات."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 5\\sqrt{5}$",
+        "incorrect": "فكّك كل جذر إلى الشكل $k\\sqrt{5}$ قبل الجمع: لا تجمع الأعداد تحت الجذور."
+      },
+      "solution": {
+        "lines": [
+          "$B = \\sqrt{45} + \\sqrt{20}$",
+          "$B = \\sqrt{9 \\times 5} + \\sqrt{4 \\times 5}$",
+          "$B = 3\\sqrt{5} + 2\\sqrt{5}$"
+        ],
+        "result": "B = 5\\sqrt{5}"
+      },
+      "timeSeconds": 240
+    }
+  ]
+}

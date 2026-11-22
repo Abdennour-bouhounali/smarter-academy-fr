@@ -1,0 +1,248 @@
+{
+  "id": "ex-3am-nashr-jabri-3am-l2-003",
+  "lessonCode": "nashr-jabri-3am",
+  "level": 2,
+  "metadata": {
+    "title": "نشر جداء قوسين فيهما إشارة سالبة",
+    "estimatedMinutes": 7,
+    "tags": [
+      "نشر",
+      "جداء قوسين"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-17",
+      "page": 63,
+      "section": "نشر العبارة (a+b)(c+d)",
+      "number": 17
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "انشر ثم بسّط كلًّا من العبارتين $E$ و $F$ .",
+    "formulas": [
+      "E = (-3x + 2)(2x - 5)",
+      "F = (4x - 3)(-2x + 6)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انشر ثم بسّط العبارة $E = (-3x + 2)(2x - 5)$ .",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $ax^2 + bx + c$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "-6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني: أربعة جداءات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات الأربعة واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء الأصلي وفي النتيجة: يجب أن تجد العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = -6x^2 + 19x - 10$ إذن $a = -6$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$E = (-3x + 2)(2x - 5)$",
+          "$E = -3x \\times 2x + 3x \\times 5 + 2 \\times 2x - 2 \\times 5$",
+          "$E = -6x^2 + 19x - 10$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "19",
+      "misconceptionSignatures": [
+        {
+          "value": "-11",
+          "id": "MISC-NASHR-NEG-NEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني: أربعة جداءات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات الأربعة واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء الأصلي وفي النتيجة: يجب أن تجد العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = -6x^2 + 19x - 10$ إذن $b = 19$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$E = (-3x + 2)(2x - 5)$",
+          "$E = -3x \\times 2x + 3x \\times 5 + 2 \\times 2x - 2 \\times 5$",
+          "$E = -6x^2 + 19x - 10$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "العدد $c$ :",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $ax^2 + bx + c$ : اكتب العدد $c$ فقط",
+      "expectedAnswer": "-10",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-NASHR-NEG-NEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني: أربعة جداءات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات الأربعة واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء الأصلي وفي النتيجة: يجب أن تجد العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = -6x^2 + 19x - 10$ إذن $c = -10$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$E = (-3x + 2)(2x - 5)$",
+          "$E = -3x \\times 2x + 3x \\times 5 + 2 \\times 2x - 2 \\times 5$",
+          "$E = -6x^2 + 19x - 10$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "انشر ثم بسّط العبارة $F = (4x - 3)(-2x + 6)$ . الشكل الصحيح هو:",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$F = -8x^2 + 30x - 18$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$F = -8x^2 + 30x + 18$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-NEG-NEG"
+        },
+        {
+          "id": "C",
+          "content": "$F = -8x^2 + 18x - 18$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-SIGN-NEG"
+        },
+        {
+          "id": "D",
+          "content": "$F = -8x^2 - 18$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-PRODUCT-MISSING"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني: أربعة جداءات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات الأربعة واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء الأصلي وفي النتيجة: يجب أن تجد العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$F = -8x^2 + 30x - 18$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$F = (4x - 3)(-2x + 6)$",
+          "$F = -4x \\times 2x + 4x \\times 6 + 3 \\times 2x - 3 \\times 6$",
+          "$F = -8x^2 + 30x - 18$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

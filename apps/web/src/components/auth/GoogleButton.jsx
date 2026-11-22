@@ -16,12 +16,12 @@ import { googleRedirectUrl } from '../../services/authService';
  * une page de connexion ne doit pas dépendre d'un tiers pour s'afficher, et
  * charger une image chez Google signalerait la visite avant tout clic.
  */
-export default function GoogleButton({ label = 'Continuer avec Google', disabled = false }) {
+export default function GoogleButton({ label = 'Continuer avec Google', disabled = false, accountType = 'student' }) {
   return (
     <a
-      href={disabled ? undefined : googleRedirectUrl()}
+      href={disabled ? undefined : googleRedirectUrl(accountType)}
       aria-disabled={disabled || undefined}
-      className={`flex w-full items-center justify-center gap-3 rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm transition-colors hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
+      className={`flex h-12 w-full items-center justify-center gap-3 rounded-xl border border-slate-300 bg-white px-4 text-[15px] font-medium text-slate-700 shadow-sm transition-colors hover:border-slate-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-nav-accent focus:ring-offset-2 ${
         disabled ? 'pointer-events-none opacity-60' : ''
       }`}
     >

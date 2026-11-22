@@ -1,0 +1,149 @@
+{
+  "id": "ex-4am-tarrid-taalufi-l2-008",
+  "lessonCode": "tarrid-taalufi",
+  "level": 2,
+  "metadata": {
+    "title": "قاعة رياضة — 12 حصة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "مقارنة",
+      "أفضل صيغة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-taalufi_P2",
+      "modelledOn": "act-4",
+      "adaptedFrom": "ex-4am-tarrid-taalufi-l2-008"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "قاعة رياضة: الصيغة الأولى اشتراك شهري 1500DA ثم 100DA للحصة، والصيغة الثانية 250DA للحصة دون اشتراك."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "تحضر نسرين 12 حصة في الشهر. احسب المبلغ بكل صيغة.",
+      "statement": "الصيغة الأولى:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "2700",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAALUFI-NISYAN-B",
+          "value": "1200"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثمن الحصص ثم الاشتراك."
+        }
+      ],
+      "feedback": {
+        "correct": "$100 \\times 12 + 1500$ .",
+        "incorrect": "لا تنس الاشتراك الشهري."
+      },
+      "solution": {
+        "lines": [
+          "الصيغة الأولى: $100 \\times 12 + 1500 = 2700DA$"
+        ],
+        "result": "2700DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "الصيغة الثانية:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "3000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثمن الحصص فقط."
+        }
+      ],
+      "feedback": {
+        "correct": "$250 \\times 12$ .",
+        "incorrect": "اضرب عدد الحصص في ثمن الحصة."
+      },
+      "solution": {
+        "lines": [
+          "الصيغة الثانية: $250 \\times 12 = 3000DA$"
+        ],
+        "result": "3000DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما هي الصيغة الأقل تكلفة لنسرين؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الصيغة الأولى",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الصيغة الثانية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المبلغين."
+        }
+      ],
+      "feedback": {
+        "correct": "2700DA أقل من 3000DA .",
+        "incorrect": "الأقل تكلفة هي التي مبلغها أصغر."
+      },
+      "solution": {
+        "lines": [
+          "الصيغة الأولى: $100 \\times 12 + 1500 = 2700DA$",
+          "الصيغة الثانية: $250 \\times 12 = 3000DA$",
+          "إذا من أجل 12 حصة الصيغة الأولى (بالاشتراك) أقل تكلفة."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

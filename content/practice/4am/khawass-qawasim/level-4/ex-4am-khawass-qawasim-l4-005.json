@@ -1,0 +1,165 @@
+{
+  "id": "ex-4am-khawass-qawasim-l4-005",
+  "lessonCode": "khawass-qawasim",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2010 — شريط معدني",
+    "estimatedMinutes": 10,
+    "tags": [
+      "خاصية 2",
+      "برهان",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_khawass-qawasim_P3",
+      "modelledOn": "BEM 2010 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2010",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أجرِ القسمة الإقليدية للعدد 1836 على 476.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الباقي فقط (عدد طبيعي)",
+      "expectedAnswer": "408",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أكبر مضاعف للعدد 476 لا يتجاوز 1836."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي هو الفرق بين 1836 وهذا المضاعف، ويجب أن يكون أصغر تمامًا من 476."
+        }
+      ],
+      "feedback": {
+        "correct": "$1836 = 476 \\times 3 + 408$ مع $408 < 476$.",
+        "incorrect": "في القسمة الإقليدية $1836 = 476 \\times q + r$ يكون الباقي $r$ أصغر تمامًا من 476."
+      },
+      "solution": {
+        "lines": [
+          "$476 \\times 3 = 1428$ و $476 \\times 4 = 1904 > 1836$",
+          "$1836 - 1428 = 408$",
+          "إذن $1836 = 476 \\times 3 + 408$ مع $408 < 476$."
+        ],
+        "result": "1836 = 476 \\times 3 + 408"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "$a$ ، $b$ و $n$ أعداد طبيعية غير معدومة حيث $a > b$ ، و $r$ باقي القسمة الإقليدية للعدد $a$ على $b$. برهن أنه إذا كان $n$ يقسم كلا من $a$ و $b$ فإن $n$ يقسم $r$.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب القسمة الإقليدية: $a = b \\times q + r$ ، ومنه $r = a - b \\times q$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم المعطيات: $a = n \\times k$ و $b = n \\times k'$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض في عبارة $r$ وأخرج $n$ عاملًا مشتركًا."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك سطرًا بسطر بالحل النموذجي، وانتبه إلى كل مرحلة من مراحل الاستدلال."
+      },
+      "solution": {
+        "lines": [
+          "المعطيات: $n$ يقسم كلا من $a$ و $b$ ، و $a = b \\times q + r$ مع $r < b$.",
+          "المطلوب: $n$ يقسم $r$.",
+          "يوجد عددان طبيعيان $k$ و $k'$ حيث $a = n \\times k$ و $b = n \\times k'$.",
+          "ومنه $r = a - b \\times q = n \\times k - n \\times k' \\times q = n(k - k' q)$.",
+          "و $k - k' q$ عدد طبيعي لأن $r \\geq 0$ و $n \\neq 0$ ، إذن $n$ يقسم $r$."
+        ],
+        "result": "r = n(k - k'q)"
+      },
+      "timeSeconds": 300
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "قصّ حرفي مقتصد لا يُبذّر المواد من شريط معدني طوله 1836mm ثلاث قطع طول كل منها 476mm. علمًا أن 68 يقسم كلا من 1836 و 476، بيّن باستعمال السؤال 02 أن الجزء المتبقي يُقطَّع إلى قطع طولها 68mm دون ضياع، وأعط عدد هذه القطع.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد القطع)",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الباقي على الشكل $r = 1836 - 476 \\times 3$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "68 يقسم 476 فهو يقسم $476 \\times 3$؛ وهو يقسم 1836، فيقسم الفرق (الخاصية 2)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم الباقي على 68 للحصول على $k$."
+        }
+      ],
+      "feedback": {
+        "correct": "$408 = 68 \\times 6$: 68 يقسم باقي القسمة الإقليدية للعدد 1836 على 476.",
+        "incorrect": "القاسم المشترك لعددين يقسم باقي القسمة الإقليدية لأحدهما على الآخر: اقسم الباقي على 68."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $1836 = 476 \\times 3 + 408$ ومنه $408 = 1836 - 476 \\times 3$.",
+          "68 يقسم 476 فهو يقسم مضاعفه $476 \\times 3$ ، و 68 يقسم 1836.",
+          "إذن 68 يقسم الفرق $1836 - 476 \\times 3$ أي يقسم 408 (الخاصية 2).",
+          "$408 = 68 \\times 6$"
+        ],
+        "result": "408 = 68 \\times 6"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "id": "ex-4am-dala-khattiya-l3-005",
+  "lessonCode": "dala-khattiya",
+  "level": 3,
+  "metadata": {
+    "title": "دالة خطية معاملها كسري",
+    "estimatedMinutes": 5,
+    "tags": [
+      "تعيين دالة خطية",
+      "كسور"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "adaptedFrom": "ex-4am-dala-khattiya-l3-005"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$h$ دالة خطية حيث:",
+    "formulas": [
+      "h(6) = -4"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن الدالة الخطية $h$ ، أي معاملها $a$ حيث $h(x) = ax$ .",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-2/3",
+      "misconceptionSignatures": [
+        {
+          "value": "-1,5",
+          "id": "MISC-KHATTIYA-MUAMIL-MAQLUB"
+        },
+        {
+          "value": "2/3",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$h$ دالة خطية: $h(x) = ax$ ، و $h(6) = -4$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب المعادلة $a \\times 6 = -4$ ثم حلّها."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{-4}{6} = -\\dfrac{2}{3}$ ، إذن $h(x) = -\\dfrac{2}{3}x$ .",
+        "incorrect": "المعامل هو الصورة مقسومة على العدد (وليس العكس)، مع الانتباه إلى الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "$h$ دالة خطية، إذن $h(x) = ax$ .",
+          "$h(6) = -4$ معناه $a \\times 6 = -4$",
+          "$a = \\dfrac{-4}{6} = -\\dfrac{2}{3}$"
+        ],
+        "result": "h(x) = -\\dfrac{2}{3}x"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $h(9)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-6",
+      "misconceptionSignatures": [
+        {
+          "value": "-13,5",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "6",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "صورة العدد $x$ بالدالة الخطية $h$ هي $h(x) = -\\dfrac{2}{3} \\times x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $x$ بالعدد $9$ ثم احسب الجداء، وانتبه إلى الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$h(9) = \\left(-\\dfrac{2}{3}\\right) \\times 9 = -6$ .",
+        "incorrect": "الصورة جداء المعامل في العدد: $h(x) = -\\dfrac{2}{3} \\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$h(9) = \\left(-\\dfrac{2}{3}\\right) \\times 9$",
+          "$h(9) = -6$"
+        ],
+        "result": "h(9) = -6"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "جد العدد الذي صورته $10$ بالدالة $h$ .",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-15",
+      "misconceptionSignatures": [
+        {
+          "value": "-20/3",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "15",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد المطلوب $x$ يحقق $h(x) = 10$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المعادلة $-\\dfrac{2}{3}x = 10$ : اقسم الطرفين على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{10}{-\\dfrac{2}{3}} = -15$ .",
+        "incorrect": "لا تحسب صورة العدد المعطى: ابحث عن العدد $x$ الذي صورته هذا العدد."
+      },
+      "solution": {
+        "lines": [
+          "$h(x) = 10$ معناه $-\\dfrac{2}{3}x = 10$",
+          "$x = \\dfrac{10}{-\\dfrac{2}{3}} = -15$"
+        ],
+        "result": "x = -15"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,392 @@
+/* « جزيرة المهمّات »: the home of a unit's last lesson, over its island. Reading sizes: nothing under 18 px. */
+[data-gameworld='mission-isle'] .di-keys {
+  display: none; /* this world has no keys */
+}
+.mi-home,
+.mi-panel {
+  position: absolute;
+  inset: 4.6rem 1.5rem 1.2rem;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'Cairo', 'Tajawal', system-ui, sans-serif;
+  font-size: 1.125rem;
+  color: #eef5ff;
+}
+.mi-home > header {
+  padding: 0.5rem 2rem;
+  border-radius: 1.2rem;
+  background: rgba(11, 27, 63, 0.92);
+  text-align: center;
+}
+.di-root .mi-home h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+}
+.di-root .mi-home > header p {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #a5f3fc;
+}
+.mi-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 22rem));
+  gap: 1.2rem;
+  justify-content: center;
+  width: 100%;
+}
+.mi-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.6rem 1.2rem 1.2rem;
+  border-radius: 1.3rem;
+  border: 2px solid rgba(165, 243, 252, 0.45);
+  background: rgba(11, 27, 63, 0.94);
+  box-shadow: 0 14px 34px rgba(3, 10, 30, 0.45);
+  text-align: center;
+}
+.mi-card.is-next {
+  border-color: #fbbf24;
+}
+.mi-card__n {
+  position: absolute;
+  top: -1.2rem;
+  display: grid;
+  place-items: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  background: #fbbf24;
+  color: #072042;
+  font-size: 1.4rem;
+}
+.di-root .mi-card h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fff;
+}
+.di-root .mi-card p {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #dbe9ff;
+}
+.di-root .mi-card .mi-card__need {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.15rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 244, 214, 0.96);
+  color: #3b2a06;
+  font-weight: 800;
+}
+.mi-card__new {
+  color: #fde9b0;
+  font-weight: 800;
+}
+.mi-stars svg {
+  color: rgba(255, 255, 255, 0.28);
+}
+.mi-stars svg.is-on {
+  color: #fbbf24;
+  fill: #fbbf24;
+}
+.mi-btn,
+.mi-door,
+.mi-level {
+  font: inherit;
+  cursor: pointer;
+}
+.mi-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.3rem;
+  padding: 0.5rem 1.4rem;
+  border: 0;
+  border-radius: 0.9rem;
+  background: #fbbf24;
+  color: #072042;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+.mi-card.is-done .mi-btn {
+  background: transparent;
+  border: 1.5px solid #a5f3fc;
+  color: #a5f3fc;
+}
+.mi-doors {
+  display: flex;
+  gap: 1rem;
+}
+.mi-door {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.6rem;
+  border-radius: 999px;
+  border: 1.5px solid #a5f3fc;
+  background: rgba(11, 27, 63, 0.94);
+  color: #a5f3fc;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+.mi-panel {
+  align-items: stretch;
+  inset: 4.6rem 12% 1.2rem;
+  padding: 1rem 1.6rem;
+  border-radius: 1.3rem;
+  border: 1.5px solid rgba(165, 243, 252, 0.45);
+  background: rgba(11, 27, 63, 0.96);
+}
+.mi-panel--recap {
+  inset: 4.6rem 3% 1.2rem;
+}
+.mi-panel > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.di-root .mi-panel h2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fff;
+}
+.di-root .mi-panel p {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #dbe9ff;
+}
+.mi-x {
+  display: grid;
+  place-items: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  border: 1.5px solid #a5f3fc;
+  background: transparent;
+  color: #a5f3fc;
+  cursor: pointer;
+}
+.mi-levels {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+.mi-level {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1rem 0.6rem;
+  border-radius: 1rem;
+  border: 1.5px solid #fbbf24;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font-size: 1.125rem;
+}
+.mi-level b {
+  font-size: 1.3rem;
+}
+.mi-level small {
+  font-size: 1.125rem;
+  color: #fde9b0;
+}
+.mi-level:disabled {
+  border-color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.6);
+  cursor: default;
+}
+.mi-recap {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+.mi-recap article {
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.07);
+}
+.di-root .mi-recap h3 {
+  margin: 0 0 0.2rem;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #fde9b0;
+}
+.mi-recap ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.di-root .mi-recap li {
+  display: flex;
+  gap: 0.4rem;
+  font-size: 1.125rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.6);
+}
+.di-root .mi-recap li.is-mine {
+  color: #fff;
+}
+.mi-stars {
+  display: inline-flex;
+  gap: 0.3rem;
+}
+
+/* « سباق الأعداد » — the endless game. Reading sizes; the gates' numbers are the biggest thing on the screen. */
+.mi-run {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  font-family: 'Cairo', 'Tajawal', system-ui, sans-serif;
+  font-size: 1.125rem;
+  color: #eef5ff;
+  pointer-events: none;
+}
+.mi-run button {
+  pointer-events: auto;
+}
+.mi-run--card {
+  display: grid;
+  place-items: center;
+  background: rgba(5, 14, 36, 0.55);
+  pointer-events: auto;
+}
+.mi-runcard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  width: min(92%, 38rem);
+  padding: 1.6rem 2rem;
+  border-radius: 1.4rem;
+  border: 2px solid #fbbf24;
+  background: #0b1b3f;
+  text-align: center;
+}
+.mi-runcard > svg {
+  color: #fbbf24;
+}
+.di-root .mi-runcard h2 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #fff;
+}
+.di-root .mi-runcard p {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: #dbe9ff;
+}
+.di-root .mi-runcard .mi-runcard__best,
+.di-root .mi-runcard .mi-runcard__score {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fde9b0;
+  font-weight: 800;
+}
+.di-root .mi-runcard .mi-runcard__score {
+  font-size: 2rem;
+}
+/* the kit's `di-dash` screen of lesson 1's run, at this world's reading sizes */
+.mi-run .di-dash__meta {
+  font-size: 1.2rem;
+  pointer-events: auto;
+  white-space: nowrap; /* one line: a second one would push the order over the far gates */
+}
+.mi-run .di-dash__say small {
+  font-size: 1.125rem;
+  opacity: 0.75;
+}
+.mi-run .di-dash__say strong {
+  font-size: 2.1rem;
+}
+.di-root .mi-run .di-dash__say.mi-why strong {
+  max-width: 44rem;
+  font-size: 1.5rem;
+  line-height: 1.7;
+  white-space: normal;
+  text-align: center;
+  color: #b91c1c;
+}
+.mi-quit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.1rem 0.8rem;
+  border-radius: 999px;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+/* the numbers over the arches, drawn as lesson 1 draws them: big, white, outlined — no card */
+.mi-gate {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-shadow:
+    0 0 6px rgba(8, 20, 48, 0.95),
+    2px 2px 0 rgba(8, 20, 48, 0.9),
+    -2px -2px 0 rgba(8, 20, 48, 0.9),
+    2px -2px 0 rgba(8, 20, 48, 0.9),
+    -2px 2px 0 rgba(8, 20, 48, 0.9);
+  will-change: transform;
+}
+.mi-gate.is-right {
+  color: #6ef3a5;
+}
+.mi-gate.is-wrong {
+  color: #ff8b9c;
+}
+.mi-up {
+  position: absolute;
+  left: 50%;
+  bottom: 1.4rem;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 0.5rem 1.4rem;
+  border-radius: 1rem;
+  background: #0b1b3f;
+  border: 2px solid #34d399;
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+.di-root .mi-run .mi-up {
+  color: #fde9b0;
+}
+.mi-door--game {
+  border-color: #fbbf24;
+  color: #fbbf24;
+}
+
+.mi-paused {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  display: grid;
+  place-items: center;
+  background: rgba(5, 14, 36, 0.55);
+  pointer-events: auto;
+}

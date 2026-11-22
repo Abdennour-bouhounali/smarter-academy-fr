@@ -1,0 +1,215 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-quwa-nisbiya-l4-006",
+  "lessonCode": "wadiya-idmajiya-quwa-nisbiya",
+  "level": 4,
+  "metadata": {
+    "title": "تضاعف عشري",
+    "estimatedMinutes": 9,
+    "tags": [
+      "قوى العدد 10",
+      "الكتابة العلمية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثاني",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "في مخبر يصير عدد البكتيريا في عيّنة $10^{1}$ أمثاله كل ساعة. عند بداية الملاحظة كان عددها $4 \\times 10^{2}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بعد $6$ ساعات يصير العدد $a \\times 10^{n}$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-WQ-MULEXP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين تضع الفاصلة ليبقى رقم واحد غير معدوم قبلها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $a$ من $1$ إلى أقل من $10$ ، والأسّ $n$ هو عدد رتب إزاحة الفاصلة (موجب للأعداد الكبيرة وسالب للصغيرة)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة الضرب في $10^{n}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $8$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الأسّ هو عدد رتب إزاحة الفاصلة: موجب لأنّ العدد كبير .",
+          "$4 \\times 10^{2} \\times 10^{6}$ = $4 \\times 10^{8}$ ، إذن $n = 8$ ."
+        ],
+        "result": "8"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "وما قيمة العدد $a$ في الكتابة العلمية نفسها ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "العدد $a$ (عدد عشري)",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين تضع الفاصلة ليبقى رقم واحد غير معدوم قبلها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $a$ من $1$ إلى أقل من $10$ ، والأسّ $n$ هو عدد رتب إزاحة الفاصلة (موجب للأعداد الكبيرة وسالب للصغيرة)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة الضرب في $10^{n}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $4$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نُزيح الفاصلة حتى يبقى رقم واحد غير معدوم قبلها: $a = 4$ .",
+          "$4 \\times 10^{2} \\times 10^{6}$ = $4 \\times 10^{8}$ ."
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما أوّل عدد صحيح من الساعات يبلغ فيه العدد $10^{10}$ على الأقل ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الساعات",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-WQ-FIRST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين تضع الفاصلة ليبقى رقم واحد غير معدوم قبلها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $a$ من $1$ إلى أقل من $10$ ، والأسّ $n$ هو عدد رتب إزاحة الفاصلة (موجب للأعداد الكبيرة وسالب للصغيرة)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة الضرب في $10^{n}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $8$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "بعد $7$ ساعات: العدد أصغر من $10^{10}$ ، وبعد $8$ ساعات: العدد $4 \\times 10^{2} \\times 10^{8} \\ge 10^{10}$ ."
+        ],
+        "result": "8"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "كم مرّة العدد بعد $6$ ساعات أكبر منه بعد $3$ ساعات ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "1000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة النتيجة، وكم عاملًا في الجداء ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد العوامل السالبة الزوجي يعطي ناتجًا موجبًا؛ والأسّ السالب يعني مقلوب القوة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الإشارة ثمّ احسب القيمة."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $1000$ .",
+        "incorrect": "انتبه إلى إشارة القوة وإلى الأسّ السالب، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$(4 \\times 10^{2} \\times 10^{6}) \\div (4 \\times 10^{2} \\times 10^{3})$ = $1000$ ."
+        ],
+        "result": "1000"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

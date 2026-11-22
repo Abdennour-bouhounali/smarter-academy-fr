@@ -1,0 +1,216 @@
+{
+  "id": "ex-3am-jidaa-adadayn-nisbiyayn-l3-006",
+  "lessonCode": "jidaa-adadayn-nisbiyayn",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — اشتراك نادي المطالعة",
+    "estimatedMinutes": 9,
+    "tags": [
+      "سياق",
+      "رصيد",
+      "جداء"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يدفع نادي المطالعة في المدرسة 450 دج كل شهر ثمنًا لاشتراك الأنترنت. نعتبر رصيد النادي اليوم مرجعًا (0)، ونرمز بـ $n$ لعدد الأشهر: تغيّر الرصيد هو $(−450) \\times n$ دج، و $n$ سالب للأشهر الماضية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "في المستقبل.",
+      "statement": "ما تغيّر الرصيد (بالدينار) بعد 4 أشهر، أي $n = 4$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-1800",
+      "misconceptionSignatures": [
+        {
+          "value": "-446",
+          "id": "MISC-JIDAA-ADD"
+        },
+        {
+          "value": "446",
+          "id": "MISC-JIDAA-SUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في النص العددين اللذين يُضربان، وأعطِ كلًّا منهما إشارته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السرعة أو التغيّر بالنقصان عدد سالب، والزمن قبل اللحظة المرجعية عدد سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء بالإشارتين، ثم طبّق قاعدة الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−450) \\times 4 = −1800$ : العاملان مختلفا الإشارة (سالب وموجب)، إذن الجداء سالب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العاملان مختلفا الإشارة (سالب وموجب)، إذن الجداء سالب.",
+          "$450 \\times 4 = 1800$",
+          "$(−450) \\times 4 = −1800$"
+        ],
+        "result": "−1800"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "في الماضي.",
+      "statement": "ما تغيّر الرصيد قبل 3 أشهر، أي $n = −3$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "1350",
+      "misconceptionSignatures": [
+        {
+          "value": "-1350",
+          "id": "MISC-JIDAA-TIME"
+        },
+        {
+          "value": "-453",
+          "id": "MISC-JIDAA-ADD"
+        },
+        {
+          "value": "447",
+          "id": "MISC-JIDAA-SUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في النص العددين اللذين يُضربان، وأعطِ كلًّا منهما إشارته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السرعة أو التغيّر بالنقصان عدد سالب، والزمن قبل اللحظة المرجعية عدد سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء بالإشارتين، ثم طبّق قاعدة الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−450) \\times (−3) = 1350$ : العاملان سالبان، إذن الجداء موجب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "قبل 3 أشهر كان الرصيد أكبر مما هو عليه اليوم.",
+          "العاملان سالبان، إذن الجداء موجب.",
+          "$450 \\times 3 = 1350$",
+          "$(−450) \\times (−3) = 1350$"
+        ],
+        "result": "1350"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "بعد كم شهرًا يصبح تغيّر الرصيد $−2700$ دج؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$6$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$−6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDAA-NEGNEG"
+        },
+        {
+          "id": "C",
+          "content": "$0{,}6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDAA-DECIMAL"
+        },
+        {
+          "id": "D",
+          "content": "$60$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDAA-DECIMAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في النص العددين اللذين يُضربان، وأعطِ كلًّا منهما إشارته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السرعة أو التغيّر بالنقصان عدد سالب، والزمن قبل اللحظة المرجعية عدد سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء بالإشارتين، ثم طبّق قاعدة الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−450) \\times 6 = −2700$ .",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "$(−450) \\times 6 = −2700$",
+          "$(−450) \\times (−6) = 2700$ وليس $−2700$ ."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

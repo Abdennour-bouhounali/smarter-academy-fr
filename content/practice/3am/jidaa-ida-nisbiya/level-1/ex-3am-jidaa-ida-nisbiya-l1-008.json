@@ -1,0 +1,310 @@
+{
+  "id": "ex-3am-jidaa-ida-nisbiya-l1-008",
+  "lessonCode": "jidaa-ida-nisbiya",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — جداء فيه عامل معدوم",
+    "estimatedMinutes": 8,
+    "tags": [
+      "عامل معدوم",
+      "إشارة الجداء"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "عيّن إشارة كل جداء، ثم احسبه.",
+    "formulas": [
+      "A = (−3) \\times 5 \\times 0 \\times (−8) \\times 2",
+      "B = (−3) \\times 5 \\times (−1) \\times (−8) \\times 2",
+      "C = (−2) \\times (+3) \\times (−4) \\times 0 \\times (−1)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجداء $A$ .",
+      "statement": "ما إشارة $A$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "معدوم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "سالب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IDA-ZERO"
+        },
+        {
+          "id": "C",
+          "content": "موجب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IDA-ZERO"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن عامل يساوي $0$ في الجداء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان أحد العوامل $0$ فالجداء $0$ مهما كانت العوامل الأخرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا حاجة إلى عدّ العوامل السالبة حين يوجد عامل معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "أحد العوامل معدوم، إذن الجداء معدوم.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "أحد العوامل يساوي $0$ ، إذن الجداء معدوم: لا هو سالب ولا هو موجب."
+        ]
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $A$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "0",
+      "misconceptionSignatures": [
+        {
+          "value": "240",
+          "id": "MISC-IDA-ZERO"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن عامل يساوي $0$ في الجداء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان أحد العوامل $0$ فالجداء $0$ مهما كانت العوامل الأخرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا حاجة إلى عدّ العوامل السالبة حين يوجد عامل معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−3) \\times 5 \\times 0 \\times (−8) \\times 2 = 0$ : أحد العوامل معدوم، إذن الجداء معدوم.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "أحد العوامل يساوي $0$ ، إذن الجداء معدوم.",
+          "$A = 0$"
+        ],
+        "result": "A = 0"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجداء $B$ .",
+      "statement": "ما إشارة $B$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "سالب",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "موجب",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ العوامل السالبة في الجداء: كم عاملًا إشارته (−) ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد زوجي من العوامل السالبة يعطي جداءً موجبًا، وعدد فردي يعطي جداءً سالبًا (ما دام لا عامل معدوم)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الإشارة وحدها مطلوبة: لا تحسب شيئًا، ولا يهمّ ترتيب العوامل."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد العوامل السالبة في $B$ هو 3 (عدد فردي)، إذن الجداء سالب.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "عدد العوامل السالبة هو $3$ ، وهو عدد فردي.",
+          "إذن الجداء سالب."
+        ]
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب $B$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-240",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ العوامل السالبة أولًا، فهي التي تعيّن إشارة الجداء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عدد العوامل السالبة زوجيًا فالجداء موجب، وإذا كان فرديًا فهو سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب المسافات إلى الصفر، ويمكنك تغيير ترتيب العوامل لتجمع ما يسهّل الحساب (مثل $4 \\times 25$)."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−3) \\times 5 \\times (−1) \\times (−8) \\times 2 = −240$ : عدد العوامل السالبة $3$ (عدد فردي)، إذن الجداء سالب.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "عدد العوامل السالبة هو $3$ ، وهو عدد فردي، إذن الجداء سالب.",
+          "نضرب المسافات إلى الصفر: $3 \\times 5 \\times 1 \\times 8 \\times 2 = 240$",
+          "$B = −240$"
+        ],
+        "result": "B = −240"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "lead": "الجداء $C$ .",
+      "statement": "ما إشارة $C$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "موجب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IDA-ZERO"
+        },
+        {
+          "id": "B",
+          "content": "معدوم",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "سالب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IDA-ZERO"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن عامل يساوي $0$ في الجداء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان أحد العوامل $0$ فالجداء $0$ مهما كانت العوامل الأخرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا حاجة إلى عدّ العوامل السالبة حين يوجد عامل معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "أحد العوامل معدوم، إذن الجداء معدوم.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "أحد العوامل يساوي $0$ ، إذن الجداء معدوم: لا هو سالب ولا هو موجب."
+        ]
+      },
+      "timeSeconds": 45
+    }
+  ]
+}

@@ -1,0 +1,195 @@
+{
+  "id": "ex-4am-tanasub-taghayyurat-l3-003",
+  "lessonCode": "tanasub-taghayyurat",
+  "level": 3,
+  "metadata": {
+    "title": "أعداد عشرية",
+    "estimatedMinutes": 6,
+    "tags": [
+      "أعداد عشرية",
+      "تعيين دالة تآلفية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tanasub-taghayyurat_P1",
+      "modelledOn": "act-4",
+      "adaptedFrom": "ex-4am-tanasub-taghayyurat-l3-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$g$ دالة تآلفية حيث: $g(2) = 3{,}5$ و $g(6) = 5{,}5$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عيّن العبارة الجبرية للدالة $g$ .",
+      "statement": "أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "0,5",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-TAGHAYYUR-BIDUN-QISMA"
+        },
+        {
+          "value": "-0,5",
+          "id": "MISC-TAGHAYYUR-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خاصية تناسب التغيّرات: المعامل $a$ هو حاصل قسمة فرق الصورتين على فرق العددين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $\\dfrac{g(6) - g(2)}{6 - 2}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح بالترتيب نفسه في البسط والمقام، وانتبه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{2}{4} = 0{,}5$ .",
+        "incorrect": "اقسم فرق الصورتين على فرق العددين، واطرح بالترتيب نفسه في البسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "العبارة الجبرية للدالة التآلفية $g$ هي: $g(x) = ax + b$ .",
+          "إيجاد العدد $a$ (خاصية تناسب التغيّرات):",
+          "$a = \\dfrac{g(x_2) - g(x_1)}{x_2 - x_1}$",
+          "$a = \\dfrac{5{,}5 - 3{,}5}{6 - 2}$",
+          "$a = \\dfrac{2}{4}$",
+          "$a = 0{,}5$"
+        ],
+        "result": "a = 0{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "2,5",
+      "misconceptionSignatures": [
+        {
+          "value": "1,75",
+          "id": "MISC-TAGHAYYUR-B-NISBA"
+        },
+        {
+          "value": "0,5",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$g(2) = 3{,}5$ و $g(x) = ax + b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $a$ بقيمته و $x$ بالعدد $2$ ، ثم حلّ المعادلة التي مجهولها $b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$b = 3{,}5 - 1 = 2{,}5$ .",
+        "incorrect": "بعد حساب $a$ : $b = g(x_1) - a x_1$ ، وليس حاصل قسمة الصورة على العدد."
+      },
+      "solution": {
+        "lines": [
+          "إيجاد العدد $b$ (الترتيب إلى المبدأ):",
+          "لدينا: $g(2) = 3{,}5$",
+          "أي: $0{,}5 \\times 2 + b = 3{,}5$",
+          "$1 + b = 3{,}5$",
+          "$b = 3{,}5 - 1$",
+          "$b = 2{,}5$",
+          "ومنه العبارة الجبرية للدالة $g$ هي: $g(x) = 0{,}5x + 2{,}5$"
+        ],
+        "result": "g(x) = 0{,}5x + 2{,}5"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب $g(10)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "7,5",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد $10$ في عبارة $g(x)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب أولا في المعامل، ثم أضف الحدّ الثابت بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$g(10) = 5 + 2{,}5 = 7{,}5$ .",
+        "incorrect": "اضرب العدد في المعامل ثم أضف الحدّ الثابت بإشارته، ولا تنسه."
+      },
+      "solution": {
+        "lines": [
+          "$g(10) = 0{,}5 \\times 10 + 2{,}5$",
+          "$g(10) = 5 + 2{,}5$",
+          "$g(10) = 7{,}5$"
+        ],
+        "result": "g(10) = 7{,}5"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

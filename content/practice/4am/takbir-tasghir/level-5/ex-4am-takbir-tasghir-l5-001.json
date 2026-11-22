@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-takbir-tasghir-l5-001",
+  "lessonCode": "takbir-tasghir",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — تكبير ثم تصغير",
+    "estimatedMinutes": 4,
+    "tags": [
+      "التكبير والتصغير",
+      "الحجم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takbir-tasghir_P2",
+      "modelledOn": "act-6"
+    }
+  },
+  "statement": {
+    "content": "متوازي المستطيلات ABCDEFGH (AB = 5cm ؛ BC = 4cm ؛ AE = 3cm) حجمه $60\\,\\mathrm{cm}^3$ . نكبّره بالنسبة $2$ ، ثم نصغّر المجسّم الناتج بالنسبة $\\dfrac{3}{5}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "احسب حجم المجسّم الأخير بالسنتيمتر المكعب.",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة مثل 1,25 ، أو كسر مثل 4/7)",
+      "expectedAnswer": "103,68",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAKBIR-HAJM-K",
+          "value": "72"
+        },
+        {
+          "id": "MISC-TAKBIR-HAJM-K",
+          "value": "86,4"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الأبعاد الأخيرة: $5 \\times 2 \\times \\dfrac{3}{5}$ ، …"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التكبير ثم التصغير يساويان تكبيرا بالنسبة $2 \\times \\dfrac{3}{5} = \\dfrac{6}{5}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب $\\left(\\dfrac{6}{5}\\right)^3 \\times 60$ ، أو $6 \\times 4{,}8 \\times 3{,}6$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 \\times 4{,}8 \\times 3{,}6 = 103{,}68\\,\\mathrm{cm}^3 = \\left(\\dfrac{6}{5}\\right)^3 \\times 60$ .",
+        "incorrect": "النسبة الإجمالية $\\dfrac{6}{5}$ ، والحجم يُضرب في مكعّبها."
+      }
+    }
+  ]
+}

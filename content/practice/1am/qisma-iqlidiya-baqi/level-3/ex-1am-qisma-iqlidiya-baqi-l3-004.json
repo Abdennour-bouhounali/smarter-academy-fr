@@ -1,0 +1,215 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l3-004",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — المقسوم المجهول",
+    "estimatedMinutes": 8,
+    "tags": [
+      "المقسوم",
+      "شرط الباقي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في قسمة إقليدية، المقسوم عليه 12 والحاصل 25 والباقي 9."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب المقسوم.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "309",
+      "misconceptionSignatures": [
+        {
+          "value": "300",
+          "id": "MISC-IQLIDIYA-JUDA"
+        },
+        {
+          "value": "46",
+          "id": "MISC-IQLIDIYA-ADWAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المساواة $a = b \\times q + r$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض b و q و r بقيمها."
+        }
+      ],
+      "feedback": {
+        "correct": "$12 \\times 25 + 9 = 300 + 9$.",
+        "incorrect": "المقسوم = المقسوم عليه × الحاصل + الباقي: لا تنسَ الباقي."
+      },
+      "solution": {
+        "lines": [
+          "$a = 12 \\times 25 + 9$",
+          "$a = 300 + 9 = 309$"
+        ],
+        "result": "a = 309"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل يمكن أن يكون الباقي 14 في قسمة إقليدية على 12؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 14 بالمقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$14 > 12$: يكفي لمجموعة أخرى.",
+        "incorrect": "الباقي أصغر دائمًا من المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$14 > 12$ ، إذن لا يمكن."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما أكبر باقٍ ممكن في قسمة إقليدية على 12؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي أصغر من المقسوم عليه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما أكبر عدد طبيعي أصغر من 12؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الباقي أصغر من 12 ، فأكبره 11.",
+        "incorrect": "الباقي يجب أن يكون أصغر من 12 تمامًا."
+      },
+      "solution": {
+        "lines": [
+          "$r < 12$ ، إذن أكبر باقٍ ممكن هو 11."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "ما أكبر مقسوم يكون حاصل قسمته الإقليدية على 12 هو 25؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "311",
+      "misconceptionSignatures": [
+        {
+          "value": "312",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        },
+        {
+          "value": "309",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل يبقى 25 ما دام الباقي أصغر من 12."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل أكبر باقٍ ممكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$12 \\times 25 + 11 = 311$ ، و $312 = 12 \\times 26$ حاصله 26.",
+        "incorrect": "استعمل أكبر باقٍ ممكن في القسمة على 12."
+      },
+      "solution": {
+        "lines": [
+          "$a = 12 \\times 25 + r$ مع $r < 12$.",
+          "أكبر قيمة لـ r هي 11 ، إذن $a = 300 + 11 = 311$."
+        ],
+        "result": "a = 311"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

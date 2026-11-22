@@ -1,0 +1,78 @@
+{
+  "id": "ex-4am-jidhr-tarbii-l1-009",
+  "lessonCode": "jidhr-tarbii",
+  "level": 1,
+  "metadata": {
+    "title": "جذر 0 وجذر 1",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الرمز √"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_jidhr-tarbii_P2",
+      "modelledOn": "ex-4",
+      "adaptedFrom": "ex-4am-jidhr-tarbii-l1-009"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد A حيث:",
+    "formulas": [
+      "A = \\sqrt{1} + \\sqrt{0} \\times \\sqrt{100} + \\sqrt{100}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب العدد $A$ .",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-JIDHR-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$0^2 = 0$ و $1^2 = 1$: ما هو $\\sqrt{0}$ و $\\sqrt{1}$؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أيضا $\\sqrt{100}$، ثم الجداء قبل الجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 1 + 0 \\times 10 + 10 = 11$.",
+        "incorrect": "احسب كل جذر على حدة ($\\sqrt{0}$ و $\\sqrt{1}$ و $\\sqrt{100}$)، وابدأ بالجداء قبل الجمع."
+      },
+      "solution": {
+        "lines": [
+          "$\\sqrt{1} = 1$ ، $\\sqrt{0} = 0$ ، $\\sqrt{100} = 10$",
+          "$A = 1 + 0 \\times 10 + 10$"
+        ],
+        "result": "A = 11"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

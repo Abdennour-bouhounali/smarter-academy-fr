@@ -1,0 +1,181 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l1-001",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 1,
+  "metadata": {
+    "title": "القسمة الإقليدية للعدد 137 على 5",
+    "estimatedMinutes": 5,
+    "tags": [
+      "قسمة إقليدية",
+      "الباقي"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "prep",
+      "page": 7,
+      "section": "أستعدّ"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعتبر المساواة:",
+    "formulas": [
+      "137 = 5 \\times 25 + 12"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل هذه المساواة تعبّر عن القسمة الإقليدية للعدد 137 على 5؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QISMA-BAQI-KABIR"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الباقي 12 بالمقسوم عليه 5."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في القسمة الإقليدية $a = b \\times q + r$ يكون الباقي $r$ أصغر تمامًا من $b$."
+        }
+      ],
+      "feedback": {
+        "correct": "المساواة صحيحة حسابيًا، لكن $12 > 5$: ليست قسمة إقليدية.",
+        "incorrect": "في القسمة الإقليدية يجب أن يكون الباقي أصغر تمامًا من المقسوم عليه: قارن 12 بـ 5."
+      },
+      "solution": {
+        "lines": [
+          "$5 \\times 25 + 12 = 137$ صحيحة حسابيًا، لكن الباقي 12 ليس أصغر من 5.",
+          "إذن هذه المساواة لا تعبّر عن القسمة الإقليدية للعدد 137 على 5."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "اكتب المساواة التي تعبّر عن القسمة الإقليدية للعدد 137 على 5.",
+      "statement": "حاصل القسمة:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "27",
+      "misconceptionSignatures": [
+        {
+          "value": "25",
+          "id": "MISC-QISMA-BAQI-KABIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أكبر مضاعف للعدد 5 لا يتجاوز 137."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل القسمة هو أكبر عدد طبيعي $q$ يحقق $5 \\times q \\leq 137$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الباقي أصغر تمامًا من 5."
+        }
+      ],
+      "feedback": {
+        "correct": "$137 = 5 \\times 27 + 2$ مع $2 < 5$.",
+        "incorrect": "ابحث عن أكبر مضاعف للعدد 5 لا يتجاوز 137، ثم اطرحه من 137."
+      },
+      "solution": {
+        "lines": [
+          "$5 \\times 27 = 135$ و $5 \\times 28 = 140$ أكبر من 137.",
+          "$137 - 135 = 2$ و $2 < 5$",
+          "إذن المساواة التي تعبّر عن القسمة الإقليدية هي:"
+        ],
+        "result": "137 = 5 \\times 27 + 2"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "الباقي:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى من 137 بعد طرح أكبر مضاعف للعدد 5 لا يتجاوزه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي عدد طبيعي أصغر تمامًا من 5."
+        }
+      ],
+      "feedback": {
+        "correct": "$137 = 5 \\times 27 + 2$: الباقي 2.",
+        "incorrect": "اطرح من 137 أكبر مضاعف للعدد 5 لا يتجاوزه."
+      },
+      "solution": {
+        "lines": [
+          "$137 - 5 \\times 27 = 2$"
+        ],
+        "result": "r = 2"
+      },
+      "timeSeconds": 60,
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-QISMA-BAQI-KABIR"
+        }
+      ]
+    }
+  ]
+}

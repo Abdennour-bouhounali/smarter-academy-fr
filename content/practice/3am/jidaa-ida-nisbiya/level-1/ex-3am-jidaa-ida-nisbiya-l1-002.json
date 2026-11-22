@@ -1,0 +1,356 @@
+{
+  "id": "ex-3am-jidaa-ida-nisbiya-l1-002",
+  "lessonCode": "jidaa-ida-nisbiya",
+  "level": 1,
+  "metadata": {
+    "title": "أعيّن الإشارة ثم أحسب",
+    "estimatedMinutes": 7,
+    "tags": [
+      "إشارة الجداء",
+      "جداء أعداد صحيحة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-9",
+      "page": 14,
+      "section": "ضرب الأعداد النسبية",
+      "number": 9
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "عيّن إشارة كل جداء من الجداءات الآتية، ثم أنجز الحساب.",
+    "formulas": [
+      "A = (−8) \\times (−8)",
+      "B = (−4) \\times (−5) \\times (−6)",
+      "C = (−3) \\times (−3) \\times (−3) \\times (−3)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجداء $A$ .",
+      "statement": "ما إشارة $A$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "سالب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IDA-MORENEG"
+        },
+        {
+          "id": "B",
+          "content": "موجب",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ العوامل السالبة في الجداء: كم عاملًا إشارته (−) ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد زوجي من العوامل السالبة يعطي جداءً موجبًا، وعدد فردي يعطي جداءً سالبًا (ما دام لا عامل معدوم)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الإشارة وحدها مطلوبة: لا تحسب شيئًا، ولا يهمّ ترتيب العوامل."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد العوامل السالبة في $A$ هو 2 (عدد زوجي)، إذن الجداء موجب.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "عدد العوامل السالبة هو $2$ ، وهو عدد زوجي.",
+          "إذن الجداء موجب."
+        ]
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $A$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "64",
+      "misconceptionSignatures": [
+        {
+          "value": "-64",
+          "id": "MISC-IDA-MORENEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ العوامل السالبة أولًا، فهي التي تعيّن إشارة الجداء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عدد العوامل السالبة زوجيًا فالجداء موجب، وإذا كان فرديًا فهو سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب المسافات إلى الصفر، ويمكنك تغيير ترتيب العوامل لتجمع ما يسهّل الحساب (مثل $4 \\times 25$)."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−8) \\times (−8) = 64$ : عدد العوامل السالبة $2$ (عدد زوجي)، إذن الجداء موجب.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "عدد العوامل السالبة هو $2$ ، وهو عدد زوجي، إذن الجداء موجب.",
+          "نضرب المسافات إلى الصفر: $8 \\times 8 = 64$",
+          "$A = 64$"
+        ],
+        "result": "A = 64"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجداء $B$ .",
+      "statement": "ما إشارة $B$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "موجب",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "سالب",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ العوامل السالبة في الجداء: كم عاملًا إشارته (−) ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد زوجي من العوامل السالبة يعطي جداءً موجبًا، وعدد فردي يعطي جداءً سالبًا (ما دام لا عامل معدوم)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الإشارة وحدها مطلوبة: لا تحسب شيئًا، ولا يهمّ ترتيب العوامل."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد العوامل السالبة في $B$ هو 3 (عدد فردي)، إذن الجداء سالب.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "عدد العوامل السالبة هو $3$ ، وهو عدد فردي.",
+          "إذن الجداء سالب."
+        ]
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب $B$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-120",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ العوامل السالبة أولًا، فهي التي تعيّن إشارة الجداء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عدد العوامل السالبة زوجيًا فالجداء موجب، وإذا كان فرديًا فهو سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب المسافات إلى الصفر، ويمكنك تغيير ترتيب العوامل لتجمع ما يسهّل الحساب (مثل $4 \\times 25$)."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−4) \\times (−5) \\times (−6) = −120$ : عدد العوامل السالبة $3$ (عدد فردي)، إذن الجداء سالب.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "عدد العوامل السالبة هو $3$ ، وهو عدد فردي، إذن الجداء سالب.",
+          "نضرب المسافات إلى الصفر: $4 \\times 5 \\times 6 = 120$",
+          "$B = −120$"
+        ],
+        "result": "B = −120"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ا",
+      "lead": "الجداء $C$ .",
+      "statement": "ما إشارة $C$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "سالب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IDA-MORENEG"
+        },
+        {
+          "id": "B",
+          "content": "موجب",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ العوامل السالبة في الجداء: كم عاملًا إشارته (−) ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد زوجي من العوامل السالبة يعطي جداءً موجبًا، وعدد فردي يعطي جداءً سالبًا (ما دام لا عامل معدوم)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الإشارة وحدها مطلوبة: لا تحسب شيئًا، ولا يهمّ ترتيب العوامل."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد العوامل السالبة في $C$ هو 4 (عدد زوجي)، إذن الجداء موجب.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "عدد العوامل السالبة هو $4$ ، وهو عدد زوجي.",
+          "إذن الجداء موجب."
+        ]
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ب",
+      "statement": "احسب $C$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "81",
+      "misconceptionSignatures": [
+        {
+          "value": "-81",
+          "id": "MISC-IDA-MORENEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ العوامل السالبة أولًا، فهي التي تعيّن إشارة الجداء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عدد العوامل السالبة زوجيًا فالجداء موجب، وإذا كان فرديًا فهو سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب المسافات إلى الصفر، ويمكنك تغيير ترتيب العوامل لتجمع ما يسهّل الحساب (مثل $4 \\times 25$)."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−3) \\times (−3) \\times (−3) \\times (−3) = 81$ : عدد العوامل السالبة $4$ (عدد زوجي)، إذن الجداء موجب.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "عدد العوامل السالبة هو $4$ ، وهو عدد زوجي، إذن الجداء موجب.",
+          "نضرب المسافات إلى الصفر: $3 \\times 3 \\times 3 \\times 3 = 81$",
+          "$C = 81$"
+        ],
+        "result": "C = 81"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

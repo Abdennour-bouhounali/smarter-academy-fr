@@ -1,0 +1,99 @@
+{
+  "id": "ex-4am-majmu-shuaayn-l5-002",
+  "lessonCode": "majmu-shuaayn",
+  "level": 5,
+  "generator": {
+    "tool": "unit11-majmu-gen.py",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — سائق توصيل في وهران",
+    "estimatedMinutes": 4,
+    "tags": [
+      "علاقة شال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_majmu-shuaayn_P2",
+      "modelledOn": "act-4"
+    }
+  },
+  "statement": {
+    "content": "سائق توصيل أمين في وهران ينطلق من المطعم R نحو الزبون S على بعد $4\\,\\mathrm{km}$ شرقا، ثم نحو الزبون T على بعد $3\\,\\mathrm{km}$ شمالا من S."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "طول الشعاع $\\overrightarrow{RS} + \\overrightarrow{ST}$ بالكيلومتر:",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالكيلومتر)",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى نهاية الشعاع الأول ومبدأ الشعاع الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "علاقة شال تتطلب أن تكون نهاية الأول مبدأ الثاني؛ يمكن تبديل ترتيب الحدّين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع يبدأ من مبدأ الأول وينتهي عند نهاية الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{RS} + \\overrightarrow{ST} = \\overrightarrow{RT}$ والمثلث RST قائم في S: $RT = \\sqrt{4^2 + 3^2} = 5\\,\\mathrm{km}$ .",
+        "incorrect": "علاقة شال: نهاية الأول مبدأ الثاني، والمجموع من مبدأ الأول إلى نهاية الثاني."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "بكم كيلومترا يزيد ما قطعه السائق على المسافة المستقيمة RT ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالكيلومتر)",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى نهاية الشعاع الأول ومبدأ الشعاع الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "علاقة شال تتطلب أن تكون نهاية الأول مبدأ الثاني؛ يمكن تبديل ترتيب الحدّين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع يبدأ من مبدأ الأول وينتهي عند نهاية الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "قطع $4 + 3 = 7\\,\\mathrm{km}$ والمسافة المستقيمة $5\\,\\mathrm{km}$ : الفرق $2\\,\\mathrm{km}$ .",
+        "incorrect": "علاقة شال: نهاية الأول مبدأ الثاني، والمجموع من مبدأ الأول إلى نهاية الثاني."
+      }
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "id": "ex-1am-hasil-qisma-kasr-l2-003",
+  "lessonCode": "hasil-qisma-kasr",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — انقل وأتمم ثم احكم",
+    "estimatedMinutes": 6,
+    "tags": [
+      "العدد الناقص",
+      "عدد عشري"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 3,
+      "file": "1am-s3-37",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "انقل وأتمم، وأعطِ العدد الناقص على شكل كسر عندما لا يكون عددًا طبيعيًا."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "$28 \\times \\ldots = 90$",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b (أو عدد)",
+      "expectedAnswer": "45/14",
+      "misconceptionSignatures": [
+        {
+          "value": "62",
+          "id": "MISC-HASIL-TARH"
+        },
+        {
+          "value": "2520",
+          "id": "MISC-HASIL-DARB"
+        },
+        {
+          "value": "28/90",
+          "id": "MISC-HASIL-QALB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد الناقص هو الذي نضربه في العامل المعروف لنحصل على الجداء المعطى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كيف نجد أحد عاملي جداء إذا عرفنا الجداء والعامل الآخر؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العدد الناقص على شكل حاصل قسمة، ثم على شكل كسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$28 \\times \\dfrac{90}{28} = 90$ : العدد الناقص هو $\\dfrac{90}{28}$ ، ونتركه كما هو في هذا الدرس.",
+        "incorrect": "العدد الذي نضربه في $b$ لنحصل على $a$ هو حاصل قسمة $a$ على $b$ ، أي $\\dfrac{a}{b}$ ؛ لا نطرح العددين ولا نضربهما."
+      },
+      "solution": {
+        "lines": [
+          "العدد الناقص هو حاصل القسمة $90 \\div 28 = \\dfrac{90}{28}$",
+          "تحقّق : $28 \\times \\dfrac{90}{28} = 90$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "$\\dfrac{\\ldots}{17} \\times 17 = 31$",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "31",
+      "misconceptionSignatures": [
+        {
+          "value": "14",
+          "id": "MISC-HASIL-TARH"
+        },
+        {
+          "value": "527",
+          "id": "MISC-HASIL-DARB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما مقام الكسر ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كسر مضروب في مقامه يعطي بسطه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ما البسط الذي يعطي النتيجة المكتوبة ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{31}{17} \\times 17 = 31$ : البسط الناقص هو 31.",
+        "incorrect": "العدد الذي نضربه في $b$ لنحصل على $a$ هو حاصل قسمة $a$ على $b$ ، أي $\\dfrac{a}{b}$ ؛ لا نطرح العددين ولا نضربهما."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{31}{17} \\times 17 = 31$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "حاصل قسمة العدد 90 على 28 هو عدد عشري.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASIL-KULL-ASHRI"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجعل المقام 10 أو 100 أو 1000 بالضرب في عدد مناسب، أو أجرِ القسمة العشرية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل تتوقّف الأرقام بعد الفاصلة أم تتكرّر بلا نهاية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نتحدّث عن عدد عشري عندما تتوقّف الأرقام بعد الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$90 \\div 28$ = $\\dfrac{90}{28}$ : الأرقام تتكرّر بلا نهاية.",
+        "incorrect": "حاصل القسمة عدد عشري إذا انتهت أرقامه بعد الفاصلة ؛ وإلاّ فالكسر هو الكتابة المضبوطة له."
+      },
+      "solution": {
+        "lines": [
+          "$90 \\div 28$ = $\\dfrac{90}{28}$",
+          "نكتب الأرقام بعد الفاصلة : $3{,}2142$… وهي تتكرّر بلا نهاية.",
+          "التصحيح : حاصل قسمة 90 على 28 ليس عددًا عشريًا، الكتابة المضبوطة له هي الكسر $\\dfrac{90}{28}$."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

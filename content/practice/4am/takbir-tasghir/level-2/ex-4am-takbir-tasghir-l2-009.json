@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-takbir-tasghir-l2-009",
+  "lessonCode": "takbir-tasghir",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — جلّة مصغّرة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "التصغير",
+      "حجم الجلة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takbir-tasghir_P2",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "جلّة نصف قطرها $6\\,\\mathrm{cm}$ حجمها $288\\pi\\,\\mathrm{cm}^3$ ، نصغّرها بالنسبة $\\dfrac{1}{2}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "حجم الجلّة الناتجة:",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$144\\pi\\,\\mathrm{cm}^3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-HAJM-K"
+        },
+        {
+          "id": "B",
+          "content": "$72\\pi\\,\\mathrm{cm}^3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-HAJM-K"
+        },
+        {
+          "id": "C",
+          "content": "$36\\pi\\,\\mathrm{cm}^3$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحجم ثلاثة أبعاد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأطوال تُضرب في $k$ ، والمساحات في $k^2$ ، والحجوم في $k^3$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\left(\\dfrac{1}{2}\\right)^3 = \\dfrac{1}{8}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{8} \\times 288\\pi = 36\\pi = \\dfrac{4}{3}\\pi \\times 3^3$ .",
+        "incorrect": "الحجم يُضرب في $k^3$ ."
+      }
+    }
+  ]
+}

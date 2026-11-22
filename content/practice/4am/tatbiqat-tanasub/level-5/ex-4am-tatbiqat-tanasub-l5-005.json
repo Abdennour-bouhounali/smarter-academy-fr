@@ -1,0 +1,207 @@
+{
+  "id": "ex-4am-tatbiqat-tanasub-l5-005",
+  "lessonCode": "tatbiqat-tanasub",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2023 — مكيّف هوائي لعائلة بورقلة",
+    "estimatedMinutes": 13,
+    "tags": [
+      "وضعية إدماجية",
+      "الطاقة",
+      "انخفاض"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tatbiqat-tanasub_P2",
+      "modelledOn": "BEM 2023 II 02"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تريد عائلة بورقلة شراء مكيّف هوائي، فاقترح عليها البائع نموذجين:\n– النموذج (أ): استطاعته $2{,}5kW$ .\n– النموذج (ب): أغلى من النموذج (أ) بـ 5580DA ، ويستهلك طاقة أقل بنسبة 30% لنفس مدة الاشتغال.\nيشتغل المكيّف 8 ساعات يوميا خلال شهر جويلية (31 يوما)، وثمن $1kWh$ هو 5DA ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب الطاقة التي يستهلكها النموذج (أ) في يوم واحد.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الطاقة بـ kWh (عدد فقط)",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "0,3125",
+          "id": "MISC-MAQADIR-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$E = P \\times t$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الاستطاعة بـ kW والمدة بالساعات."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 2{,}5 \\times 8 = 20kWh$ .",
+        "incorrect": "الطاقة جداء الاستطاعة في المدة."
+      },
+      "solution": {
+        "lines": [
+          "$E = P \\times t = 2{,}5 \\times 8 = 20$",
+          "يستهلك النموذج (أ) $20kWh$ في اليوم."
+        ],
+        "result": "E = 20kWh"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب ثمن الطاقة التي يستهلكها النموذج (أ) خلال شهر جويلية.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "3100",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الطاقة المستهلكة في 31 يوما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اضربها في ثمن الكيلوواط ساعي الواحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$20 \\times 31 = 620kWh$ ، و $620 \\times 5 = 3100DA$ .",
+        "incorrect": "احسب الطاقة الشهرية أولا ثم ثمنها."
+      },
+      "solution": {
+        "lines": [
+          "الطاقة في الشهر: $20 \\times 31 = 620kWh$",
+          "الثمن: $620 \\times 5 = 3100$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "استنتج ثمن الطاقة التي يستهلكها النموذج (ب) خلال الشهر نفسه.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "2170",
+      "misconceptionSignatures": [
+        {
+          "value": "930",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        },
+        {
+          "value": "3070",
+          "id": "MISC-NISBA-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الانخفاض بـ 30% ضرب في $1 - \\dfrac{30}{100}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الثمن متناسب مع الطاقة المستهلكة."
+        }
+      ],
+      "feedback": {
+        "correct": "$3100 \\times 0{,}7 = 2170$ ، أي 2170DA .",
+        "incorrect": "بعد انخفاض 30% يبقى 70%."
+      },
+      "solution": {
+        "lines": [
+          "$3100 \\times \\left(1 - \\dfrac{30}{100}\\right) = 3100 \\times 0{,}7 = 2170$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "☜ بعد كم شهرا من استعمال مماثل لاستعمال شهر جويلية يعوّض الاقتصاد في الطاقة فرق الثمن بين النموذجين؟",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد الأشهر)",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الاقتصاد الشهري في ثمن الطاقة بالنموذج (ب)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كم مرة يحتوي فرق الثمن على هذا الاقتصاد؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الاقتصاد الشهري $3100 - 2170 = 930DA$ ، و $\\dfrac{5580}{930} = 6$ أشهر.",
+        "incorrect": "اقسم فرق الثمن على الاقتصاد الشهري."
+      },
+      "solution": {
+        "lines": [
+          "الاقتصاد في الشهر: $3100 - 2170 = 930DA$",
+          "$\\dfrac{5580}{930} = 6$",
+          "يُعوَّض فرق الثمن بعد 6 أشهر."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l3-002",
+  "lessonCode": "maqati-mustawiya",
+  "level": 3,
+  "metadata": {
+    "title": "نشاط 2 — المقطع عند x = 2,8",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مقطع كرة",
+      "تدوير"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-2",
+      "page": 164,
+      "section": "أنشطة"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 164): كرة مركزها O ونصف قطرها $3$ ، والمستوي (P) عمودي على القطر $[NS]$ في I حيث $OI = 2{,}8$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أعط نصف قطر المقطع $IM$ مدوّرا إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري مدوّر إلى الجزء من مائة",
+      "expectedAnswer": "1.08",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAQTA-TARH",
+          "value": "0.2"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$IM^2 = 9 - 2{,}8^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$2{,}8^2 = 7{,}84$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب $\\sqrt{1{,}16}$ ثم دوّر."
+        }
+      ],
+      "feedback": {
+        "correct": "$IM^2 = 9 - 7{,}84 = 1{,}16$ ، $IM = \\dfrac{\\sqrt{29}}{5} \\approx 1{,}08$ .",
+        "incorrect": "ندوّر في آخر الحساب، و $3 - 2{,}8 = 0{,}2$ ليس نصف القطر."
+      },
+      "difficulty": 3
+    }
+  ]
+}

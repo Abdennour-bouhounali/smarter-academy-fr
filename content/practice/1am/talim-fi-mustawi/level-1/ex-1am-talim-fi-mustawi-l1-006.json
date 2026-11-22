@@ -1,0 +1,230 @@
+{
+  "id": "ex-1am-talim-fi-mustawi-l1-006",
+  "lessonCode": "talim-fi-mustawi",
+  "level": 1,
+  "metadata": {
+    "title": "فوق أم تحت، يمين أم يسار؟",
+    "estimatedMinutes": 6,
+    "tags": [
+      "إشارات",
+      "محوران"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد نضع ثلاث نقط ونحدّد موضع كلّ منها بالنسبة إلى المحورين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أين تقع النقطة $(2\\,;\\,-1)$ بالنسبة إلى المحورين؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "تحت محور الفواصل وعلى يمين محور التراتيب",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "تحت محور الفواصل وعلى يسار محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNX"
+        },
+        {
+          "id": "C",
+          "content": "فوق محور الفواصل وعلى يمين محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNY"
+        },
+        {
+          "id": "D",
+          "content": "فوق محور الفواصل وعلى يسار محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفاصلة تقول الجهة على الخط الأفقي: يمين أو يسار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الترتيب يقول الجهة على الخط الشاقولي: فوق أو تحت."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد السالب: يسار (للفاصلة) أو تحت (للترتيب)."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة تعيّن اليمين أو اليسار والترتيب يعيّن الفوق أو التحت.",
+        "incorrect": "انظر إلى إشارة كلّ إحداثي على حدة."
+      },
+      "solution": {
+        "lines": [
+          "إشارة الفاصلة موجبة: يمين محور التراتيب",
+          "إشارة الترتيب سالبة: تحت محور الفواصل"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أين تقع النقطة $(-3\\,;\\,1)$ بالنسبة إلى المحورين؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "فوق محور الفواصل وعلى يمين محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNX"
+        },
+        {
+          "id": "B",
+          "content": "تحت محور الفواصل وعلى يسار محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNY"
+        },
+        {
+          "id": "C",
+          "content": "تحت محور الفواصل وعلى يمين محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNBOTH"
+        },
+        {
+          "id": "D",
+          "content": "فوق محور الفواصل وعلى يسار محور التراتيب",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفاصلة تقول الجهة على الخط الأفقي: يمين أو يسار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الترتيب يقول الجهة على الخط الشاقولي: فوق أو تحت."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد السالب: يسار (للفاصلة) أو تحت (للترتيب)."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة تعيّن اليمين أو اليسار والترتيب يعيّن الفوق أو التحت.",
+        "incorrect": "انظر إلى إشارة كلّ إحداثي على حدة."
+      },
+      "solution": {
+        "lines": [
+          "إشارة الفاصلة سالبة: يسار محور التراتيب",
+          "إشارة الترتيب موجبة: فوق محور الفواصل"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أين تقع النقطة $(-1\\,;\\,-2)$ بالنسبة إلى المحورين؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "فوق محور الفواصل وعلى يسار محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNY"
+        },
+        {
+          "id": "B",
+          "content": "فوق محور الفواصل وعلى يمين محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNBOTH"
+        },
+        {
+          "id": "C",
+          "content": "تحت محور الفواصل وعلى يسار محور التراتيب",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "تحت محور الفواصل وعلى يمين محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNX"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفاصلة تقول الجهة على الخط الأفقي: يمين أو يسار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الترتيب يقول الجهة على الخط الشاقولي: فوق أو تحت."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد السالب: يسار (للفاصلة) أو تحت (للترتيب)."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة تعيّن اليمين أو اليسار والترتيب يعيّن الفوق أو التحت.",
+        "incorrect": "انظر إلى إشارة كلّ إحداثي على حدة."
+      },
+      "solution": {
+        "lines": [
+          "إشارة الفاصلة سالبة: يسار محور التراتيب",
+          "إشارة الترتيب سالبة: تحت محور الفواصل"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

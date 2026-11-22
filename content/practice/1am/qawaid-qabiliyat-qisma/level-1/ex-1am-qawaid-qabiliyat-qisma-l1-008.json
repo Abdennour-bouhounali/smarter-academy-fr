@@ -1,0 +1,134 @@
+{
+  "id": "ex-1am-qawaid-qabiliyat-qisma-l1-008",
+  "lessonCode": "qawaid-qabiliyat-qisma",
+  "level": 1,
+  "metadata": {
+    "title": "جداء ومضاعفات",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مضاعف",
+      "باقٍ معدوم"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "prep",
+      "page": 36,
+      "section": "استحضر مكتسباتي",
+      "number": 10
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعلم أن $6 \\times 9 = 54$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ماذا تعني هذه المساواة؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "54 يقبل القسمة على 6 وعلى 9",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "54 يقبل القسمة على 6 فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-ADWAR"
+        },
+        {
+          "id": "C",
+          "content": "6 يقبل القسمة على 54",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-ADWAR"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الجداء $6 \\times 9$ يمكن قراءته $9 \\times 6$ أيضًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل 54 مضاعف للعدد 6؟ وللعدد 9؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$54 = 6 \\times 9 = 9 \\times 6$: العدد 54 مضاعف لكل من 6 و 9.",
+        "incorrect": "من $6 \\times 9 = 54$ نقرأ: 54 مضاعف للعدد 6 ومضاعف للعدد 9."
+      },
+      "solution": {
+        "lines": [
+          "$54 = 6 \\times 9 + 0$: باقي قسمة 54 على 6 معدوم.",
+          "$54 = 9 \\times 6 + 0$: باقي قسمة 54 على 9 معدوم.",
+          "إذن 54 يقبل القسمة على 6 وعلى 9."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب باقي القسمة الإقليدية للعدد 54 على 9.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "0",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-QABILIYA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية عموديًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي عدد طبيعي أصغر من 9."
+        }
+      ],
+      "feedback": {
+        "correct": "$54 = 9 \\times 6 + 0$ و $0 < 9$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 9."
+      },
+      "solution": {
+        "lines": [
+          "$54 = 9 \\times 6 + 0$",
+          "$0 < 9$ ، إذن الباقي هو 0، و 54 يقبل القسمة على 9."
+        ],
+        "result": "r = 0"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

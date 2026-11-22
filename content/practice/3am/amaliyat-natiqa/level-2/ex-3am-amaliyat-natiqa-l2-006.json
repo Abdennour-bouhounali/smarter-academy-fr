@@ -1,0 +1,279 @@
+{
+  "id": "ex-3am-amaliyat-natiqa-l2-006",
+  "lessonCode": "amaliyat-natiqa",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أعداد صحيحة أم لا ؟",
+    "estimatedMinutes": 14,
+    "tags": [
+      "العمليات على الأعداد الناطقة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نحسب كلّ عدد ثمّ نحكم على طبيعته ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "هل العدد $A = \\left(\\dfrac{3}{4} - \\dfrac{1}{4}\\right) \\div \\left(\\dfrac{1}{6}\\right)$ عدد صحيح نسبي ؟",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "timeSeconds": 90,
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AMAL-NOFLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب العبارة بخطوات قصيرة قبل أن تحكم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب النتيجة على أبسط شكل ثمّ انظر إلى مقامها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد ناطق هو عدد صحيح نسبي إذا كان مقام كتابته المختزلة يساوي الواحد."
+        }
+      ],
+      "feedback": {
+        "correct": "الإجابة الصحيحة: نعم .",
+        "incorrect": "أنهِ الحساب واختزل ثمّ انظر إلى المقام، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "$\\dfrac{3}{4} - \\dfrac{1}{4} = \\dfrac{3}{4} + \\left(-\\dfrac{1}{4}\\right)$ (طرح عدد هو جمع معاكسه).",
+          "العددان $\\dfrac{3}{4}$ و $-\\dfrac{1}{4}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $\\dfrac{3}{4}$ ، فإشارة المجموع موجبة.",
+          "$\\dfrac{3}{4} + \\left(-\\dfrac{1}{4}\\right) = \\dfrac{3 - 1}{4} = \\dfrac{1}{2}$ .",
+          "القسمة على $\\dfrac{1}{6}$ هي الضرب في مقلوبه، ومقلوب $\\dfrac{1}{6}$ هو $6$ (يحتفظ بالإشارة نفسها).",
+          "$\\dfrac{1}{2} \\div \\dfrac{1}{6} = \\dfrac{1}{2} \\times 6$ .",
+          "العاملان موجبان: الجداء موجب.",
+          "$\\dfrac{1}{2} \\times 6 = \\dfrac{1 \\times 6}{2} = \\dfrac{6}{2} = 3$ .",
+          "$A = 3$ ، وهذا العدد يمثّل عددًا صحيح نسبي."
+        ],
+        "result": "A = 3"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل العدد $B = \\left(-\\dfrac{5}{6} + \\dfrac{1}{3}\\right) \\times \\left(-4\\right)$ عدد طبيعي ؟",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "timeSeconds": 90,
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AMAL-SUMSIGN"
+        },
+        {
+          "id": "B",
+          "content": "نعم",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب العبارة بخطوات قصيرة قبل أن تحكم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب النتيجة على أبسط شكل ثمّ انظر إلى مقامها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد ناطق هو عدد صحيح نسبي إذا كان مقام كتابته المختزلة يساوي الواحد."
+        }
+      ],
+      "feedback": {
+        "correct": "الإجابة الصحيحة: نعم .",
+        "incorrect": "أنهِ الحساب واختزل ثمّ انظر إلى المقام، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "العددان $-\\dfrac{5}{6}$ و $\\dfrac{1}{3}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $-\\dfrac{5}{6}$ ، فإشارة المجموع سالبة.",
+          "$-\\dfrac{5}{6} + \\dfrac{1}{3} = -\\dfrac{5}{6} + \\dfrac{2}{6} = \\dfrac{-5 + 2}{6} = -\\dfrac{1}{2}$ .",
+          "العاملان سالبان: الجداء موجب.",
+          "$-\\dfrac{1}{2} \\times \\left(-4\\right) = \\dfrac{1 \\times 4}{2} = \\dfrac{4}{2} = 2$ .",
+          "$B = 2$ ، وهذا العدد يمثّل عددًا طبيعي."
+        ],
+        "result": "B = 2"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "هل العدد $C = \\left(\\dfrac{7}{10} - \\dfrac{1}{5}\\right) \\div \\left(-\\dfrac{3}{4}\\right)$ عدد صحيح نسبي ؟",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "timeSeconds": 90,
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AMAL-NOFLIP"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب العبارة بخطوات قصيرة قبل أن تحكم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب النتيجة على أبسط شكل ثمّ انظر إلى مقامها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد ناطق هو عدد صحيح نسبي إذا كان مقام كتابته المختزلة يساوي الواحد."
+        }
+      ],
+      "feedback": {
+        "correct": "الإجابة الصحيحة: لا .",
+        "incorrect": "أنهِ الحساب واختزل ثمّ انظر إلى المقام، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "$\\dfrac{7}{10} - \\dfrac{1}{5} = \\dfrac{7}{10} + \\left(-\\dfrac{1}{5}\\right)$ (طرح عدد هو جمع معاكسه).",
+          "العددان $\\dfrac{7}{10}$ و $-\\dfrac{1}{5}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $\\dfrac{7}{10}$ ، فإشارة المجموع موجبة.",
+          "$\\dfrac{7}{10} + \\left(-\\dfrac{1}{5}\\right) = \\dfrac{7}{10} - \\dfrac{2}{10} = \\dfrac{7 - 2}{10} = \\dfrac{1}{2}$ .",
+          "القسمة على $-\\dfrac{3}{4}$ هي الضرب في مقلوبه، ومقلوب $-\\dfrac{3}{4}$ هو $-\\dfrac{4}{3}$ (يحتفظ بالإشارة نفسها).",
+          "$\\dfrac{1}{2} \\div \\left(-\\dfrac{3}{4}\\right) = \\dfrac{1}{2} \\times \\left(-\\dfrac{4}{3}\\right)$ .",
+          "العاملان من إشارتين مختلفتين: الجداء سالب.",
+          "$\\dfrac{1}{2} \\times \\left(-\\dfrac{4}{3}\\right) = -\\dfrac{1 \\times 4}{2 \\times 3} = -\\dfrac{4}{6} = -\\dfrac{2}{3}$ .",
+          "$C = -\\dfrac{2}{3}$ ، وهذا العدد لا يمثّل عددًا صحيح نسبي."
+        ],
+        "result": "C = -\\dfrac{2}{3}"
+      }
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل العدد $D = \\left(-\\dfrac{8}{9}\\right) \\times \\left(-\\dfrac{3}{4}\\right) - \\dfrac{1}{2}$ عدد صحيح نسبي ؟",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "timeSeconds": 90,
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AMAL-PRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب العبارة بخطوات قصيرة قبل أن تحكم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب النتيجة على أبسط شكل ثمّ انظر إلى مقامها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد ناطق هو عدد صحيح نسبي إذا كان مقام كتابته المختزلة يساوي الواحد."
+        }
+      ],
+      "feedback": {
+        "correct": "الإجابة الصحيحة: لا .",
+        "incorrect": "أنهِ الحساب واختزل ثمّ انظر إلى المقام، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "العاملان سالبان: الجداء موجب.",
+          "$-\\dfrac{8}{9} \\times \\left(-\\dfrac{3}{4}\\right) = \\dfrac{8 \\times 3}{9 \\times 4} = \\dfrac{24}{36} = \\dfrac{2}{3}$ .",
+          "$\\dfrac{2}{3} - \\dfrac{1}{2} = \\dfrac{2}{3} + \\left(-\\dfrac{1}{2}\\right)$ (طرح عدد هو جمع معاكسه).",
+          "العددان $\\dfrac{2}{3}$ و $-\\dfrac{1}{2}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $\\dfrac{2}{3}$ ، فإشارة المجموع موجبة.",
+          "$\\dfrac{2}{3} + \\left(-\\dfrac{1}{2}\\right) = \\dfrac{4}{6} - \\dfrac{3}{6} = \\dfrac{4 - 3}{6} = \\dfrac{1}{6}$ .",
+          "$D = \\dfrac{1}{6}$ ، وهذا العدد لا يمثّل عددًا صحيح نسبي."
+        ],
+        "result": "D = \\dfrac{1}{6}"
+      }
+    }
+  ]
+}

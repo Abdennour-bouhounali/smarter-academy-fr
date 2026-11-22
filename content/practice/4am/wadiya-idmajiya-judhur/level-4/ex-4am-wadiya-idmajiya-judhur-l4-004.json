@@ -1,0 +1,153 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-judhur-l4-004",
+  "lessonCode": "wadiya-idmajiya-judhur",
+  "level": 4,
+  "metadata": {
+    "title": "مثلث أضلاعه جذور",
+    "estimatedMinutes": 10,
+    "tags": [
+      "فيثاغورس",
+      "a√2",
+      "مساحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-judhur_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$ABC$ مثلث حيث: $AB = \\sqrt{3}cm$ ، $AC = \\sqrt{6}cm$ و $BC = 3cm$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن المثلث $ABC$ قائم في $A$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $AB^2 + AC^2$ و $BC^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل الخاصية العكسية لفيثاغورس."
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك سطرًا بسطر بالحل النموذجي."
+      },
+      "solution": {
+        "lines": [
+          "$AB^2 + AC^2 = (\\sqrt{3})^2 + (\\sqrt{6})^2 = 3 + 6 = 9$",
+          "$BC^2 = 3^2 = 9$",
+          "بما أن $AB^2 + AC^2 = BC^2$ فإن المثلث $ABC$ قائم في $A$ حسب الخاصية العكسية لفيثاغورس."
+        ],
+        "result": "المثلث ABC قائم في A"
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب مساحة المثلث $ABC$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "المساحة على الشكل $\\dfrac{a\\sqrt{2}}{2}$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-JIDHR-MURABBA-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث قائم في $A$ : ضلعاه القائمان هما $[AB]$ و $[AC]$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\sqrt{3} \\times \\sqrt{6} = \\sqrt{18}$ ، ثم بسّط."
+        }
+      ],
+      "feedback": {
+        "correct": "المساحة $\\dfrac{\\sqrt{3} \\times \\sqrt{6}}{2} = \\dfrac{\\sqrt{18}}{2} = \\dfrac{3\\sqrt{2}}{2}cm^2$ .",
+        "incorrect": "مساحة المثلث القائم نصف جداء الضلعين القائمين؛ اكتب $\\sqrt{18}$ على الشكل $k\\sqrt{2}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\mathcal{A} = \\dfrac{AB \\times AC}{2} = \\dfrac{\\sqrt{3} \\times \\sqrt{6}}{2} = \\dfrac{\\sqrt{18}}{2}$",
+          "$= \\dfrac{\\sqrt{9 \\times 2}}{2}$"
+        ],
+        "result": "\\mathcal{A} = \\dfrac{3\\sqrt{2}}{2}\\,cm^2"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ليكن $H$ المسقط العمودي للنقطة $A$ على $(BC)$ . بيّن أن $AH = \\sqrt{2}cm$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المساحة تساوي أيضًا $\\dfrac{BC \\times AH}{2}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل نتيجة السؤال 02 ثم اقسم على 3."
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك سطرًا بسطر بالحل النموذجي."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{BC \\times AH}{2} = \\dfrac{3\\sqrt{2}}{2}$ يعني $3 \\times AH = 3\\sqrt{2}$"
+        ],
+        "result": "AH = \\sqrt{2}\\,cm"
+      },
+      "timeSeconds": 210
+    }
+  ]
+}

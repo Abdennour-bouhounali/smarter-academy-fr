@@ -1,0 +1,404 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l5-004",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — سباق العدو الريفي",
+    "estimatedMinutes": 25,
+    "tags": [
+      "وضعية إدماجية",
+      "خاصية فيثاغورس",
+      "تناسبية الأطوال",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-72",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "نظّمت المتوسطة سباقا في العدو الريفي بمشاركة التلاميذ والأولياء، وتطوّع تلاميذ القسم لتعليم المسار. ينطلق العدّاؤون من $A$ ويصلون إلى $E$ عبر المسار $A \\to B \\to C \\to D \\to E$ المبيّن في الشكل، حيث $(AB) \\perp (AD)$ ، $(BC) \\parallel (DE)$ ، $AB = 240\\,\\mathrm{m}$ ، $AC = 180\\,\\mathrm{m}$ و $AE = 3 \\times AB$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          5.4
+        ],
+        "B": [
+          2.4,
+          5.4
+        ],
+        "E": [
+          7.2,
+          5.4
+        ],
+        "C": [
+          0,
+          3.6
+        ],
+        "D": [
+          0,
+          0
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "240 m"
+        },
+        {
+          "from": "B",
+          "to": "E",
+          "dashed": true
+        },
+        {
+          "from": "A",
+          "to": "C",
+          "label": "180 m"
+        },
+        {
+          "from": "C",
+          "to": "D"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "arrows": 1,
+          "tone": "indigo",
+          "bold": true
+        },
+        {
+          "from": "D",
+          "to": "E",
+          "arrows": 1,
+          "tone": "indigo",
+          "bold": true
+        }
+      ],
+      "rightAngles": [
+        [
+          "B",
+          "A",
+          "C"
+        ]
+      ],
+      "labels": {
+        "A": "nw",
+        "E": "ne",
+        "D": "sw",
+        "C": "w",
+        "B": "n"
+      },
+      "ariaLabel": "مسار سباق A ثم B ثم C ثم D ثم E، حيث (AB) عمودي على (AD)، و (BC) يوازي (DE)، AB = 240 m و AC = 180 m و AE = 3 × AB",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "الجزء الأول:",
+      "statement": "احسب الطول $BC$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m",
+      "expectedAnswer": "300",
+      "misconceptionSignatures": [
+        {
+          "value": "420",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "90000",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولا مربع الطول، ثم خذ جذره التربيعي بالآلة الحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC^2 = 240^2 + 180^2 = 90000$ ، إذن $BC = 300\\,\\mathrm{m}$ .",
+        "incorrect": "ابدأ بتحديد الوتر، ثم اكتب مساواة فيثاغورس، وتذكّر أن ما تحسبه أولا هو مربع الطول لا الطول نفسه."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $A$ ، حسب خاصية فيثاغورس: $BC^2 = AB^2 + AC^2$",
+          "$BC^2 = 240^2 + 180^2$",
+          "$BC^2 = 57600 + 32400 = 90000$",
+          "$BC = \\sqrt{90000} = 300\\,\\mathrm{m}$"
+        ],
+        "result": "BC = 300\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بيّن أن $AD = 540\\,\\mathrm{m}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AE = 3 \\times AB$ ، و $(BC) \\parallel (DE)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تناسبية الأطوال في المثلث: $\\dfrac{AC}{AD} = \\dfrac{AB}{AE}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AD = 3 \\times AC = 540\\,\\mathrm{m}$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "$C \\in [AD]$ و $B \\in [AE]$ و $(BC) \\parallel (DE)$ : أطوال المثلثين $ABC$ و $AED$ متناسبة.",
+          "$\\dfrac{AC}{AD} = \\dfrac{AB}{AE} = \\dfrac{1}{3}$ ، إذن $AD = 3 \\times AC = 3 \\times 180 = 540\\,\\mathrm{m}$"
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "استنتج الطول $CD$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بـ m",
+      "expectedAnswer": "360",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$C$ بين $A$ و $D$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح $AC$ من $AD$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$540 - 180 = 360\\,\\mathrm{m}$ .",
+        "incorrect": "$CD = AD - AC$ ."
+      },
+      "solution": {
+        "lines": [
+          "$CD = AD - AC = 540 - 180 = 360\\,\\mathrm{m}$"
+        ],
+        "result": "CD = 360\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "lead": "الجزء الثاني:",
+      "statement": "$AE = 3 \\times AB = 720\\,\\mathrm{m}$ . احسب الطول $DE$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m",
+      "expectedAnswer": "900",
+      "misconceptionSignatures": [
+        {
+          "value": "1260",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "810000",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولا مربع الطول، ثم خذ جذره التربيعي بالآلة الحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$DE^2 = 540^2 + 720^2 = 810000$ ، إذن $DE = 900\\,\\mathrm{m}$ .",
+        "incorrect": "ابدأ بتحديد الوتر، ثم اكتب مساواة فيثاغورس، وتذكّر أن ما تحسبه أولا هو مربع الطول لا الطول نفسه."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ADE$ قائم في $A$ ، حسب خاصية فيثاغورس: $DE^2 = AD^2 + AE^2$",
+          "$DE^2 = 540^2 + 720^2$",
+          "$DE^2 = 291600 + 518400 = 810000$",
+          "$DE = \\sqrt{810000} = 900\\,\\mathrm{m}$"
+        ],
+        "result": "DE = 900\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "احسب الطول الكلي للمسار $A \\to B \\to C \\to D \\to E$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بـ m",
+      "expectedAnswer": "1800",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسار أربعة مقاطع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الأطوال الأربعة."
+        }
+      ],
+      "feedback": {
+        "correct": "$240 + 300 + 360 + 900 = 1\\,800\\,\\mathrm{m}$ .",
+        "incorrect": "المسار يمرّ بـ $B$ ثم $C$ ثم $D$ : لا تنس أي مقطع."
+      },
+      "solution": {
+        "lines": [
+          "$AB + BC + CD + DE = 240 + 300 + 360 + 900 = 1\\,800\\,\\mathrm{m}$"
+        ],
+        "result": "1\\,800\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "06",
+      "statement": "أعلن المنظّمون أن طول السباق $2\\,\\mathrm{km}$ . هل الإعلان صحيح؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأن $1\\,800\\,\\mathrm{m}$ قريب من $2\\,\\mathrm{km}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-LOOKS-RIGHT"
+        },
+        {
+          "id": "B",
+          "content": "لا، طوله $1{,}8\\,\\mathrm{km}$ فقط",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نعم، لأن $AE + AD = 720 + 540 = 1\\,260$ و $1\\,260 + 740 = 2\\,000$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل الطول الكلي إلى الكيلومتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن بالطول المعلن."
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\,800\\,\\mathrm{m} = 1{,}8\\,\\mathrm{km} \\neq 2\\,\\mathrm{km}$ .",
+        "incorrect": "الإعلان يجب أن يطابق الطول المحسوب تماما."
+      },
+      "solution": {
+        "lines": [
+          "الطول الكلي $1\\,800\\,\\mathrm{m} = 1{,}8\\,\\mathrm{km}$ .",
+          "$1{,}8 \\neq 2$ : الإعلان غير صحيح، ويجب تصحيحه بأمانة."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

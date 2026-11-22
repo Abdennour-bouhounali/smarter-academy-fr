@@ -1,0 +1,144 @@
+{
+  "id": "ex-4am-tawzif-khawass-judhur-l2-009",
+  "lessonCode": "tawzif-khawass-judhur",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2009 — مجموع وجداء",
+    "estimatedMinutes": 6,
+    "tags": [
+      "a√b",
+      "الخاصية التوزيعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tawzif-khawass-judhur_P2",
+      "modelledOn": "BEM 2009 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان A و B حيث:",
+    "formulas": [
+      "A = \\sqrt{20}",
+      "B = 3\\sqrt{45}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب A + B على الشكل $a\\sqrt{5}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tawzif-khawass-judhur_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-MUAMIL-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب كل جذر على الشكل $x\\sqrt{5}$: ابحث عن أكبر مربع تامّ يقسم العدد الذي تحت الجذر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل $\\sqrt{m \\times 5} = \\sqrt{m} \\times \\sqrt{5}$ ثم احسب جذر المربع التامّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع المعاملات بإشاراتها بالخاصية التوزيعية: $x\\sqrt{5} + y\\sqrt{5} = (x + y)\\sqrt{5}$."
+        }
+      ],
+      "feedback": {
+        "correct": "$A + B = 2\\sqrt{5} + 9\\sqrt{5} = 11\\sqrt{5}$.",
+        "incorrect": "اكتب كلا من A و B على الشكل $x\\sqrt{5}$ (لا تنسَ المعامل 3)، ثم اجمع."
+      },
+      "solution": {
+        "lines": [
+          "$A + B = \\sqrt{20} + 3\\sqrt{45}$",
+          "$A + B = \\sqrt{4} \\times \\sqrt{5} + 3\\sqrt{9} \\times \\sqrt{5}$",
+          "$A + B = 2\\sqrt{5} + 3 \\times 3\\sqrt{5}$",
+          "$A + B = (2 + 9)\\sqrt{5}$"
+        ],
+        "result": "A + B = 11\\sqrt{5}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بين أن A × B هو عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة الجداء A × B (عدد طبيعي)",
+      "expectedAnswer": "90",
+      "misconceptionSignatures": [
+        {
+          "value": "450",
+          "id": "MISC-JIDHR-FI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $A = x\\sqrt{5}$ و $B = y\\sqrt{5}$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب المعاملين معًا والجذرين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\sqrt{5} \\times \\sqrt{5} = 5$"
+        }
+      ],
+      "feedback": {
+        "correct": "$A \\times B = 2\\sqrt{5} \\times 9\\sqrt{5} = 18 \\times 5 = 90$: عدد طبيعي.",
+        "incorrect": "اضرب المعاملين ثم استعمل $\\sqrt{5} \\times \\sqrt{5} = 5$."
+      },
+      "solution": {
+        "lines": [
+          "$A \\times B = \\sqrt{20} \\times 3\\sqrt{45}$",
+          "$= 2\\sqrt{5} \\times 9\\sqrt{5}$",
+          "$= 18 \\times \\sqrt{5} \\times \\sqrt{5}$",
+          "$= 18 \\times 5$"
+        ],
+        "result": "A \\times B = 90"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "id": "ex-2am-masafa-nuqtatayn-l2-001",
+  "lessonCode": "masafa-nuqtatayn",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مسافة ومنتصف قطعة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مسافة بين نقطتين",
+      "منتصف قطعة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-69",
+      "exercise": 4
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعلّم على مستقيم مدرّج النقطتين $F(+7)$ و $E(-5)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "النقطتان $E(-5)$ و $F(+7)$ على مستقيم مدرّج. احسب المسافة $EF$ .",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "2"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-12"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن أوّلًا أيّ الفاصلتين أكبر: الأكبر هي الأبعد إلى اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى مطروحًا منها الصغرى؛ وإذا كانت الصغرى سالبة فنطرح عددًا سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا: إن وجدت ناتجًا سالبًا فقد قلبت ترتيب الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$EF=12$ : النقطتان على جهتين من المبدأ فنجمع المسافتين إلى الصفر.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى هي $+7$ والفاصلة الصغرى هي $-5$",
+          "$EF=(+7)-(-5)=(+7)+(+5)=12$"
+        ],
+        "result": "12"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "$F(+7)$ و $E(-5)$ نقطتان على مستقيم مدرّج، و $G$ منتصف القطعة $[FE]$ . ما فاصلة $G$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-HALFDIST",
+          "value": "6"
+        },
+        {
+          "id": "MISC-MASAFA2-SUMNOHALF",
+          "value": "2"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أوّلًا المسافة بين طرفي القطعة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المنتصف يبعد عن كلّ طرف بنصف هذه المسافة: انطلق من الطرف الأصغر فاصلة وتقدّم بنصف المسافة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: المسافة من المنتصف إلى كلّ طرف يجب أن تكون نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$G(+1)$ : يبعد عن كلّ طرف بـ $6$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$FE=12$ ونصفها $6$",
+          "فاصلة $G$ = الفاصلة الصغرى + نصف المسافة = $-5+6=+1$"
+        ],
+        "result": "1"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "برّر : هل المسافة $FE$ هي نفسها المسافة $EF$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب جملة أو جملتين: الفكرة ثمّ الحساب الذي يدعمها."
+        }
+      ],
+      "feedback": {
+        "correct": "المسافة هي الفاصلة الكبرى مطروحًا منها الصغرى مهما كان ترتيب الحرفين، فالمسافتان متساويتان",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$EF=(+7)-(-5)=12$ و $FE=(+7)-(-5)=12$ أيضًا",
+          "المسافة هي الفاصلة الكبرى مطروحًا منها الصغرى مهما كان ترتيب الحرفين، فالمسافتان متساويتان"
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

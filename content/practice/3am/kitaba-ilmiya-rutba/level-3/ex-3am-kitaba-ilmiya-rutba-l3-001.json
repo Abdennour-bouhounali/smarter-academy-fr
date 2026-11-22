@@ -1,0 +1,349 @@
+{
+  "id": "ex-3am-kitaba-ilmiya-rutba-l3-001",
+  "lessonCode": "kitaba-ilmiya-rutba",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — كتابة علمية ورتبة قدر",
+    "estimatedMinutes": 11,
+    "tags": [
+      "كتابة علمية",
+      "حصر",
+      "رتبة قدر"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-72",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$E$ و $F$ عددان عشريان حيث:",
+    "formulas": [
+      "E = 3\\times10^{-11}\\times0{,}05",
+      "F = \\dfrac{380}{4\\times10^{-9}}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "الكتابة العلمية للعدد $E$ هي $a\\times10^{n}$ حيث $1\\le a<10$ : ما قيمة $a$ ؟",
+      "answerType": "rational",
+      "answerFormat": "العدد $a$ (عدد عشري)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد أوّل رقم غير معدوم في العدد وانظر أين تقع الفاصلة بالنسبة إليه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في الكتابة العلمية $a\\times10^{n}$ يكون $a$ من 1 إلى أقلّ تمامًا من 10: ضع الفاصلة بعد أوّل رقم غير معدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: ضرب $a$ في $10^{n}$ يجب أن يعيد العدد المعطى."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "1.5",
+      "feedback": {
+        "correct": "$E = 1{,}5\\times10^{-12}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $E$ على الشكل $a\\times10^{n}$ مع $1\\le a<10$ .",
+          "$E = 1{,}5\\times10^{-12}$ ، إذن $a = 1{,}5$ ."
+        ],
+        "result": "a = 1.5"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "الكتابة العلمية للعدد $E$ هي $a\\times10^{n}$ حيث $1\\le a<10$ : ما قيمة الأسّ $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العدد بـ 1 وبـ 10: هل هو كبير جدًّا أم صغير جدًّا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد المراتب التي تنقل بها الفاصلة هو $|n|$ ؛ الأسّ موجب إن كان العدد كبيرًا وسالب إن كان العدد أصغر من 1."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: $10^{n}$ هي أكبر قوة للعدد 10 لا تتجاوز العدد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-12",
+      "misconceptionSignatures": [
+        {
+          "value": "-13",
+          "id": "MISC-ILMIYA-FASILA"
+        },
+        {
+          "value": "-11",
+          "id": "MISC-ILMIYA-K"
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 1{,}5\\times10^{-12}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $E$ على الشكل $a\\times10^{n}$ مع $1\\le a<10$ .",
+          "$E = 1{,}5\\times10^{-12}$ ، إذن $n = -12$ ."
+        ],
+        "result": "n = -12"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "نحصر العدد $E$ بين قوتين متتاليتين للعدد 10 : $10^{n}\\le E<10^{n+1}$ . ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العدد كتابة علمية $a\\times10^{n}$ أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما دام $1\\le a<10$ فإنّ $10^{n}\\le a\\times10^{n}<10^{n+1}$ : الأسّ $n$ هو نفسه أسّ الكتابة العلمية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ العدد أكبر من أو يساوي $10^{n}$ وأصغر تمامًا من $10^{n+1}$ ."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-12",
+      "misconceptionSignatures": [
+        {
+          "value": "-11",
+          "id": "MISC-ILMIYA-HASR"
+        },
+        {
+          "value": "-13",
+          "id": "MISC-ILMIYA-HASR"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{-12}\\le E<10^{-11}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$E = 1{,}5\\times10^{-12}$ مع $1\\le 1{,}5<10$ .",
+          "إذن $10^{-12}\\le E<10^{-11}$ ، فـ $n = -12$ ."
+        ],
+        "result": "n = -12"
+      }
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "statement": "الكتابة العلمية للعدد $F$ هي $a\\times10^{n}$ حيث $1\\le a<10$ : ما قيمة $a$ ؟",
+      "answerType": "rational",
+      "answerFormat": "العدد $a$ (عدد عشري)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد أوّل رقم غير معدوم في العدد وانظر أين تقع الفاصلة بالنسبة إليه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في الكتابة العلمية $a\\times10^{n}$ يكون $a$ من 1 إلى أقلّ تمامًا من 10: ضع الفاصلة بعد أوّل رقم غير معدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: ضرب $a$ في $10^{n}$ يجب أن يعيد العدد المعطى."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "9.5",
+      "feedback": {
+        "correct": "$F = 9{,}5\\times10^{10}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $F$ على الشكل $a\\times10^{n}$ مع $1\\le a<10$ .",
+          "$F = 9{,}5\\times10^{10}$ ، إذن $a = 9{,}5$ ."
+        ],
+        "result": "a = 9.5"
+      }
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "الكتابة العلمية للعدد $F$ هي $a\\times10^{n}$ حيث $1\\le a<10$ : ما قيمة الأسّ $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العدد بـ 1 وبـ 10: هل هو كبير جدًّا أم صغير جدًّا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد المراتب التي تنقل بها الفاصلة هو $|n|$ ؛ الأسّ موجب إن كان العدد كبيرًا وسالب إن كان العدد أصغر من 1."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: $10^{n}$ هي أكبر قوة للعدد 10 لا تتجاوز العدد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-ILMIYA-K"
+        }
+      ],
+      "feedback": {
+        "correct": "$F = 9{,}5\\times10^{10}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $F$ على الشكل $a\\times10^{n}$ مع $1\\le a<10$ .",
+          "$F = 9{,}5\\times10^{10}$ ، إذن $n = 10$ ."
+        ],
+        "result": "n = 10"
+      }
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ج",
+      "statement": "رتبة قدر العدد $F$ هي:",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_kitaba-ilmiya-rutba_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل كلّ اقتراح إلى عدد عشري أو إلى الكتابة العلمية لتقارنه بالمعطى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكتابة العلمية $a\\times10^{n}$ تشترط $1\\le a<10$ ؛ وفي المقارنة تُقارَن الأسّ أوّلًا ثمّ العدد $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر كلّ اقتراح على حدة وأسقط الخاطئ منها."
+        }
+      ],
+      "timeSeconds": 100,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$1\\times10^{11}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$9\\times10^{10}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ILMIYA-BATR"
+        },
+        {
+          "id": "C",
+          "content": "$10\\times10^{10}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ILMIYA-K"
+        }
+      ],
+      "feedback": {
+        "correct": "رتبة القدر هي $1\\times10^{11}$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب قيمته أو بتطبيق القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$F = 9{,}5\\times10^{10}$ .",
+          "تدوير $9{,}5$ إلى الوحدة يعطي 10 ، و $10\\times10^{10} = 1\\times10^{11}$ ، فرتبة القدر $1\\times10^{11}$ ."
+        ]
+      }
+    }
+  ]
+}

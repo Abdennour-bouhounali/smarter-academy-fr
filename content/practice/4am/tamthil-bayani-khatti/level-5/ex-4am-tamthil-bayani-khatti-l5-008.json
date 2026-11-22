@@ -1,0 +1,328 @@
+{
+  "id": "ex-4am-tamthil-bayani-khatti-l5-008",
+  "lessonCode": "tamthil-bayani-khatti",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2009 — مضختان لسقي حقل قمح بأدرار",
+    "estimatedMinutes": 20,
+    "tags": [
+      "وضعية إدماجية",
+      "تدفق",
+      "قراءة بيانية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tamthil-bayani-khatti_P2",
+      "modelledOn": "BEM 2009 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "لسقي حقل قمح بأدرار، يملك فلاح، يحبّ أرضه ويقتصد في مائها، مضختين. يمثّل نصف المستقيم $(D)$ في المعلم التالي كمية الماء $y$ (بعشرات الأمتار المكعبة) التي تضخّها المضخة الأولى بدلالة المدة $x$ (بالساعات). أما المضخة الثانية فتضخّ $12{,}5m^3$ في الساعة.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "H": [
+          8,
+          6
+        ]
+      },
+      "rays": [
+        {
+          "from": "O",
+          "through": "H",
+          "name": "(D)",
+          "tone": "sky",
+          "extend": 0.06
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw"
+      },
+      "hidden": [
+        "H"
+      ],
+      "ariaLabel": "معلم على ورقة مرصوفة: نصف المستقيم (D) ينطلق من المبدأ O ويمثّل كمية الماء التي تضخّها المضخة الأولى",
+      "caption": "محور الفواصل: المدة بالساعات — محور التراتيب: كمية الماء بعشرات الأمتار المكعبة"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "بقراءة بيانية:",
+      "statement": "عيّن كمية الماء (بالمتر المكعب) التي تضخّها المضخة الأولى في 4 ساعات.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الكمية بـ m³",
+      "expectedAnswer": "30",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ من العدد المعطى على محور الفواصل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اتجه عموديا حتى المستقيم $(D)$ ، ثم أفقيا حتى محور التراتيب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الصورة هي ترتيب نقطة المستقيم التي فاصلتها هذا العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة من $(D)$ التي فاصلتها $4$ ترتيبها $3$ .",
+        "incorrect": "الصورة تُقرأ على محور التراتيب: ترتيب نقطة المستقيم، لا فاصلتها."
+      },
+      "solution": {
+        "lines": [
+          "النقطة من المستقيم $(D)$ التي فاصلتها $4$ ترتيبها $3$ .",
+          "الترتيب 3 يعني 3 عشرات من الأمتار المكعبة، أي $30m^3$ ."
+        ],
+        "result": "f(4) = 3"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "عيّن المدة اللازمة لتضخّ المضخة الأولى $60m^3$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدة بالساعات",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ من العدد المعطى على محور التراتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اتجه أفقيا حتى المستقيم $(D)$ ، ثم عموديا حتى محور الفواصل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد المطلوب هو فاصلة نقطة المستقيم التي ترتيبها الصورة المعطاة."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة من $(D)$ التي ترتيبها $6$ فاصلتها $8$ .",
+        "incorrect": "العدد الذي علمت صورته يُقرأ على محور الفواصل: فاصلة نقطة المستقيم التي ترتيبها الصورة المعطاة."
+      },
+      "solution": {
+        "lines": [
+          "النقطة من المستقيم $(D)$ التي ترتيبها $6$ فاصلتها $8$ .",
+          "$60m^3$ هي 6 عشرات: تضخّها المضخة الأولى في 8 ساعات."
+        ],
+        "result": "f(8) = 6"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "الكمية (بعشرات الأمتار المكعبة) التي تضخّها المضخة الأولى $f(x)$ حيث $f$ دالة خطية. عيّن عبارة $f(x)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "0,75",
+      "misconceptionSignatures": [
+        {
+          "value": "4/3",
+          "id": "MISC-KHATTIYA-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$f$ دالة خطية: $f(x) = ax$ ، وتمثيلها يشمل النقطة ذات الإحداثيين $(4 ; 3)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب المعادلة $a \\times 4 = 3$ ثم حلّها: الترتيب على الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{3}{4} = 0{,}75$ ، إذن $f(x) = 0{,}75x$ .",
+        "incorrect": "المعامل هو الترتيب مقسوما على الفاصلة (وليس العكس)، مع الانتباه إلى الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "$f$ دالة خطية، إذن $f(x) = ax$ .",
+          "$f(4) = 3$ معناه $a \\times 4 = 3$",
+          "$a = \\dfrac{3}{4} = 0{,}75$"
+        ],
+        "result": "f(x) = 0{,}75x"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "لتكن $g(x)$ الكمية (بعشرات الأمتار المكعبة) التي تضخّها المضخة الثانية في $x$ ساعة. عبّر عن $g(x)$ بدلالة $x$ على الشكل $g(x) = ax$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "1,25",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$12{,}5m^3$ في الساعة: كم عشرة من الأمتار المكعبة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$12{,}5m^3 = 1{,}25$ عشرة، إذن $g(x) = 1{,}25x$ .",
+        "incorrect": "عبّر عن $12{,}5m^3$ بعشرات الأمتار المكعبة قبل كتابة المعامل."
+      },
+      "solution": {
+        "lines": [
+          "$12{,}5m^3$ هي $1{,}25$ عشرة من الأمتار المكعبة.",
+          "إذن $g(x) = 1{,}25x$ ."
+        ],
+        "result": "g(x) = 1{,}25x"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ج",
+      "statement": "مثّل بيانيا الدالة $g$ في المعلم نفسه، ثم بيّن أيّ المضختين أسرع.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التمثيل البياني لدالة خطية مستقيم يشمل المبدأ $O$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يكفي تعيين نقطة ثانية من التمثيل بحساب صورة عدد غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "تمثيل $g$ نصف مستقيم ينطلق من المبدأ ويشمل النقطة $(4 ; 5)$ لأن $g(4) = 5$ .",
+          "معامل $g$ ( $1{,}25$ ) أكبر من معامل $f$ ( $0{,}75$ ): تمثيل $g$ فوق $(D)$ ، والمضخة الثانية أسرع."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "☜ يحتاج الحقل يوميا إلى $90m^3$ من الماء، فيشغّل الفلاح المضختين معا. ما هي المدة اللازمة لذلك؟",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدة بالساعات (عشري بالفاصلة إن لزم)",
+      "expectedAnswer": "4,5",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في ساعة واحدة تضخّ المضختان معا $0{,}75 + 1{,}25$ عشرة من الأمتار المكعبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$90m^3$ هي 9 عشرات."
+        }
+      ],
+      "feedback": {
+        "correct": "$2x = 9$ ، إذن $x = 4{,}5$ : أربع ساعات ونصف.",
+        "incorrect": "اجمع ما تضخّه المضختان في الساعة، ثم اقسم الكمية المطلوبة عليه."
+      },
+      "solution": {
+        "lines": [
+          "في ساعة واحدة تضخّ المضختان معا $0{,}75 + 1{,}25 = 2$ عشرة، أي $20m^3$ .",
+          "$90 \\div 20 = 4{,}5$",
+          "يلزم الفلاح 4 ساعات ونصف."
+        ],
+        "result": "4{,}5h"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

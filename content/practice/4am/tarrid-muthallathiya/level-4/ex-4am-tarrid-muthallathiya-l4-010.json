@@ -1,0 +1,389 @@
+{
+  "id": "ex-4am-tarrid-muthallathiya-l4-010",
+  "lessonCode": "tarrid-muthallathiya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2011 — هيكل سقف المستودع",
+    "estimatedMinutes": 12,
+    "tags": [
+      "ترييض وضعية",
+      "جيب التمام",
+      "مثلثان قائمان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tarrid-muthallathiya_P1",
+      "modelledOn": "BEM 2011 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2011",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "هيكل سقف مستودع: العارضتان المائلتان $[AB]$ و $[AC]$ متعامدتان في القمة $A$ ، والعارضة الأفقية $[BC]$ طولها $10\\,\\mathrm{m}$ ، و $[AH]$ عمود شاقولي حيث $H$ من $[BC]$ ، و $AB = 6\\,\\mathrm{m}$ (الشكل المقابل). ويحرص عمال البناء على إتقان العمل لأن السقف يحمي ما يُخزَّن تحته من مؤونة الحيّ.",
+    "figure": {
+      "points": {
+        "B": [
+          0.0,
+          0.0
+        ],
+        "C": [
+          10.0,
+          0.0
+        ],
+        "A": [
+          3.6,
+          4.8
+        ],
+        "H": [
+          3.6,
+          0.0
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "6 m"
+        },
+        [
+          "A",
+          "C"
+        ],
+        {
+          "from": "B",
+          "to": "C",
+          "label": "10 m",
+          "labelSide": -1
+        },
+        {
+          "from": "A",
+          "to": "H",
+          "dashed": true,
+          "tone": "rose"
+        }
+      ],
+      "rightAngles": [
+        [
+          "B",
+          "A",
+          "C"
+        ],
+        [
+          "A",
+          "H",
+          "C"
+        ]
+      ],
+      "labels": {
+        "A": "n",
+        "B": "sw",
+        "C": "se",
+        "H": "s"
+      },
+      "ariaLabel": "هيكل السقف: العارضتان [AB] و [AC] متعامدتان في A، والعارضة الأفقية [BC] طولها 10 m، والعمود الشاقولي [AH] حيث H على [BC]؛ AB = 6 m",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $\\cos\\widehat{ABC}$ في المثلث $ABC$ القائم في $A$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري أو كسر",
+      "expectedAnswer": "0.6",
+      "misconceptionSignatures": [
+        {
+          "value": "5/3",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        },
+        {
+          "value": "0.8",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الوتر في المثلث $ABC$ هو $[BC]$ (يقابل الزاوية القائمة في $A$)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جيب التمام = المجاور على الوتر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\cos\\widehat{ABC} = \\dfrac{AB}{BC} = \\dfrac{6}{10} = 0{,}6$ .",
+        "incorrect": "الوتر في المقام؛ المجاور للزاوية $B$ في المثلث $ABC$ هو $[AB]$ ."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $A$ : $\\cos\\widehat{ABC} = \\dfrac{AB}{BC} = \\dfrac{6}{10}$"
+        ],
+        "result": "\\cos\\widehat{ABC} = 0{,}6"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج قيس زاوية ميل العارضة $[AB]$ على الأفق بالتدوير إلى الوحدة من الدرجة.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-muthallathiya_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيس الزاوية بالدرجة مدوّرا إلى الوحدة",
+      "expectedAnswer": "53",
+      "misconceptionSignatures": [
+        {
+          "value": "37",
+          "id": "MISC-MUTH-ZAWIYA-KHATI"
+        },
+        {
+          "value": "0.6",
+          "id": "MISC-MUTH-NISBA-BADAL-QAYS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "زاوية الميل هي $\\widehat{ABC}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اللمسة العكسية ⁦cos⁻¹⁩ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{ABC} \\approx 53{,}13^{\\circ} \\approx 53^{\\circ}$ .",
+        "incorrect": "النسبة ليست القيس: ⁦cos⁻¹⁩ ثم التدوير."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال الآلة الحاسبة: ⁦2nd cos⁻¹ 0,6 =⁩ يظهر $\\widehat{ABC} \\approx 53{,}1301^{\\circ}$"
+        ],
+        "result": "\\widehat{ABC} \\approx 53^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اكتب $\\cos\\widehat{ABH}$ في المثلث $ABH$ القائم في $H$ ، ثم استنتج الطول $BH$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-muthallathiya_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m",
+      "expectedAnswer": "3.6",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        },
+        {
+          "value": "4.8",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الزاوية $\\widehat{ABH}$ هي $\\widehat{ABC}$ نفسها لأن $H \\in [BC]$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في المثلث $ABH$ الوتر هو $[AB]$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجهول في البسط: اضرب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\cos\\widehat{ABH} = \\dfrac{BH}{AB}$ ، ومنه $BH = 6 \\times 0{,}6 = 3{,}6\\,\\mathrm{m}$ .",
+        "incorrect": "في المثلث الثاني يتغيّر الوتر: هو $[AB]$ هذه المرة."
+      },
+      "solution": {
+        "lines": [
+          "$H \\in [BC]$ ، فالزاوية $\\widehat{ABH}$ هي $\\widehat{ABC}$ . في المثلث $ABH$ القائم في $H$ : $\\cos\\widehat{ABH} = \\dfrac{BH}{AB}$",
+          "$BH = AB \\times \\cos\\widehat{ABC} = 6 \\times 0{,}6$"
+        ],
+        "result": "BH = 3{,}6\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "sub": "ا",
+      "statement": "احسب طول العارضة $AC$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خاصية فيثاغورس في المثلث $ABC$ القائم في $A$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC = \\sqrt{100 - 36} = 8\\,\\mathrm{m}$ .",
+        "incorrect": "الوتر هو $[BC]$ : نطرح مربع $AB$ من مربع $BC$ ."
+      },
+      "solution": {
+        "lines": [
+          "$AC^2 = BC^2 - AB^2 = 100 - 36 = 64$"
+        ],
+        "result": "AC = 8\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "sub": "ب",
+      "statement": "احسب ارتفاع العمود $AH$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m",
+      "expectedAnswer": "4.8",
+      "misconceptionSignatures": [
+        {
+          "value": "3.6",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "7.5",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $ABH$ : $[AH]$ مقابل للزاوية $\\widehat{ABC}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $\\sin\\widehat{ABC}$ بالضبط في المثلث $ABC$ : $\\dfrac{AC}{BC}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin\\widehat{ABC} = \\dfrac{8}{10}$ ، ومنه $AH = 6 \\times 0{,}8 = 4{,}8\\,\\mathrm{m}$ .",
+        "incorrect": "الطول المطلوب في بسط النسبة: نضرب الطول المعلوم في النسبة المثلثية ولا نقسم عليها؛ والآلة الحاسبة مبرمجة على الدرجة."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $ABC$ : $\\sin\\widehat{ABC} = \\dfrac{AC}{BC} = 0{,}8$ ، وفي المثلث $ABH$ : $\\sin\\widehat{ABH} = \\dfrac{AH}{AB}$",
+          "$AH = 6 \\times 0{,}8$",
+          "طريقة ثانية: $AH = \\dfrac{AB \\times AC}{BC} = \\dfrac{6 \\times 8}{10}$ (المساحة بطريقتين)."
+        ],
+        "result": "AH = 4{,}8\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "بيّن أن $AB^2 = BH \\times BC$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $\\cos\\widehat{ABC}$ في المثلثين $ABC$ و $ABH$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ساوِ بين الكتابتين ثم استعمل الجداء المتصالب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AB}{BC} = \\dfrac{BH}{AB}$ ومنه $AB^2 = BH \\times BC$ ؛ وبالأعداد: $36 = 3{,}6 \\times 10$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $ABC$ : $\\cos\\widehat{ABC} = \\dfrac{AB}{BC}$ ، وفي المثلث $ABH$ : $\\cos\\widehat{ABH} = \\dfrac{BH}{AB}$ ، وهما الزاوية نفسها.",
+          "إذن $\\dfrac{AB}{BC} = \\dfrac{BH}{AB}$ ، وبالجداء المتصالب: $AB^2 = BH \\times BC$ .",
+          "تحقّق بالأعداد: $6^2 = 36$ و $3{,}6 \\times 10 = 36$ ."
+        ]
+      },
+      "timeSeconds": 240
+    }
+  ]
+}

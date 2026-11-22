@@ -1,0 +1,165 @@
+{
+  "id": "ex-4am-mutatabiqat-shahira-l2-006",
+  "lessonCode": "mutatabiqat-shahira",
+  "level": 2,
+  "metadata": {
+    "title": "جداء مجموع وفرق، وفرق مربعين",
+    "estimatedMinutes": 5,
+    "tags": [
+      "جداء مجموع وفرق",
+      "حساب ذهني"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-2c",
+      "page": 33,
+      "section": "أنشطة",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $A$ حيث:",
+    "formulas": [
+      "A = (2x - 5)(2x + 5)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انشر ثم بسّط العبارة $A$ .",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $mx^2 + n$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-MUTATABIQA-MURABBA-MUAMIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على جداء مجموع حدّين وفرقهما: $(a + b)(a - b) = a^2 - b^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن الحدّين $a$ و $b$ ، ثم احسب مربع كل منهما: إذا كان $a = 3x$ فإن $a^2 = 9x^2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 4x^2 - 25$ إذن $m = 4$ .",
+        "incorrect": "طبّق المتطابقة الشهيرة حدًّا حدًّا (مربع كل حد والحد المضاعف)، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$A = (2x - 5)(2x + 5)$",
+          "$A = (2x)^2 - 5^2$"
+        ],
+        "result": "A = 4x^2 - 25"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $mx^2 + n$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "-25",
+      "misconceptionSignatures": [
+        {
+          "value": "25",
+          "id": "MISC-JIDAA-MAJMU-FARQ-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 4x^2 - 25$ إذن $n = -25$ .",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $n$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$A = 4x^2 - 25$"
+        ],
+        "result": "n = -25"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب ذهنيا (دون وضع العملية) العدد $97^2 - 3^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "9400",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على فرق مربعين: $a^2 - b^2 = (a + b)(a - b)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب المجموع والفرق أولًا، ثم اضرب النتيجتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$97^2 - 3^2 = 9400$ .",
+        "incorrect": "اكتب العدد بدلالة عدد مدوّر، ثم طبّق المتطابقة الشهيرة المناسبة حدًّا حدًّا."
+      },
+      "solution": {
+        "lines": [
+          "$97^2 - 3^2 = (97 + 3)(97 - 3)$",
+          "$= 100 \\times 94$"
+        ],
+        "result": "97^2 - 3^2 = 9400"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

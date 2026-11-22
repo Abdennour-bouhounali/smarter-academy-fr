@@ -1,4 +1,5 @@
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { AuthContext } from '../../context/AuthContext';
 import { changeContentTier } from '../../services/admin/contentService';
 import StatusBadge from './ui/StatusBadge';
@@ -22,6 +23,7 @@ import { ConfirmDialog } from './ui/Modal';
  * de la règle, le serveur refuse donc `null` pour elle.
  */
 export default function TierControl({ type, id, tier, lessonTier, onChanged, compact = false }) {
+  const { t } = useTranslation('admin');
   const { token } = useContext(AuthContext);
   const [pending, setPending] = useState(null);
   const [busy, setBusy] = useState(false);
@@ -34,9 +36,9 @@ export default function TierControl({ type, id, tier, lessonTier, onChanged, com
   const INHERIT = '__inherit__';
 
   const options = [
-    { value: 'free', label: 'Rendre gratuit' },
-    { value: 'premium', label: 'Rendre payant' },
-    ...(isExercise ? [{ value: INHERIT, label: 'Hériter de la leçon' }] : []),
+    { value: 'free', label: t('bulk.setFree') },
+    { value: 'premium', label: t('bulk.setPremium') },
+    ...(isExercise ? [{ value: INHERIT, label: t('bulk.inherit') }] : []),
   ];
 
   const apply = async (next) => {
@@ -74,16 +76,16 @@ export default function TierControl({ type, id, tier, lessonTier, onChanged, com
   return (
     <div className={compact ? 'flex items-center gap-2' : 'flex flex-wrap items-center gap-2'}>
       <StatusBadge status={effective} />
-      {inherits && <span className="font-inter text-xs text-slate-400">hérité</span>}
+      {inherits && <span className="font-inter text-xs text-slate-400">{t('status.inherited')}</span>}
 
       <select
-        aria-label="Changer le palier d’accès"
+        aria-label={t('bulk.changeTierLabel')}
         value=""
         disabled={busy}
         onChange={(event) => request(event.target.value)}
         className="rounded-lg border border-slate-300 bg-white px-2 py-1 font-inter text-xs text-slate-700 disabled:opacity-50"
       >
-        <option value="">Changer…</option>
+        <option value="">{t('bulk.changePlaceholder')}</option>
         {options
           .filter((option) => option.value !== (tier ?? INHERIT))
           .map((option) => (
@@ -99,20 +101,22 @@ export default function TierControl({ type, id, tier, lessonTier, onChanged, com
         onConfirm={() => apply(pending)}
         busy={busy}
         tone="danger"
-        title="Rendre ce contenu payant ?"
-        confirmLabel="Rendre payant"
+        cancelLabel={t('common.cancel')}
+        busyLabel={t('common.busy')}
+        closeLabel={t('common.close')}
+        title={t('bulk.confirmPremiumOneTitle')}
+        confirmLabel={t('bulk.setPremium')}
         message={
           <>
             <p>
-              Les élèves <strong>sans abonnement</strong> n’y auront plus accès. Le contenu reste visible
-              au catalogue, avec la mention « Premium ».
+              {t('bulk.premiumOneMessageBefore')} <strong>{t('bulk.withoutSubscription')}</strong>{' '}
+              {t('bulk.premiumOneMessageAfter')}
             </p>
             <p className="mt-2">
-              <strong>Aucune donnée d’apprentissage n’est supprimée</strong> : les progressions déjà
-              enregistrées sont conservées et réapparaîtront si l’accès revient.
+              <strong>{t('bulk.noLearningDataLost')}</strong>{t('bulk.premiumOneDataKept')}
             </p>
             <p className="mt-2">
-              L’état de publication n’est pas modifié.
+              {t('bulk.publicationUnchanged')}
             </p>
           </>
         }

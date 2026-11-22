@@ -1,0 +1,246 @@
+{
+  "id": "ex-4am-takrar-mujamma-l3-004",
+  "lessonCode": "takrar-mujamma",
+  "level": 3,
+  "metadata": {
+    "title": "مخطط دائري للقامات",
+    "estimatedMinutes": 6,
+    "tags": [
+      "التواتر المجمع",
+      "نسب مئوية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-4",
+      "page": 98,
+      "section": "أوظّف تعلّماتي",
+      "number": 4
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يمثّل المخطط الدائري الآتي أطوال قامات تلاميذ قسم بإحدى المتوسطات، والنسب المئوية مكتوبة على قطاعاته، إلا نسبة القطاع 144cm فهي غير مكتوبة:",
+    "figure": {
+      "kind": "chart",
+      "type": "pie",
+      "show": "percent",
+      "ariaLabel": "مخطط دائري للقامات: 152cm 20%، 155cm 40%، 160cm 25%، وقطاع 144cm بلا نسبة",
+      "parts": [
+        {
+          "label": "144cm",
+          "value": 15,
+          "missing": true
+        },
+        {
+          "label": "152cm",
+          "value": 20
+        },
+        {
+          "label": "155cm",
+          "value": 40
+        },
+        {
+          "label": "160cm",
+          "value": 25
+        }
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب النسبة المئوية لتلاميذ القسم الذين قامتهم 144cm .",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: النسبة المئوية دون الرمز %",
+      "expectedAnswer": "15",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النسب المئوية لكل قطاعات المخطط الدائري مجموعها 100%."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح من 100 مجموع النسب المعلومة."
+        }
+      ],
+      "feedback": {
+        "correct": "$100 - (20 + 40 + 25) = 15$ .",
+        "incorrect": "مجموع كل النسب 100%: اطرح منه النسب الثلاث المعلومة."
+      },
+      "solution": {
+        "lines": [
+          "$20 + 40 + 25 = 85$",
+          "$100 - 85 = 15$"
+        ],
+        "result": "15\\%"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب التواتر المجمع الصاعد للقامة 155cm (بالنسبة المئوية).",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: النسبة المئوية دون الرمز %",
+      "expectedAnswer": "75",
+      "misconceptionSignatures": [
+        {
+          "value": "65",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        },
+        {
+          "value": "35",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التواتر المجمع الصاعد = مجموع نسبة القامة ونسب القامات الأصغر منها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل نسبة القامة 144cm التي وجدتها في السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "$15 + 20 + 40 = 75$ .",
+        "incorrect": "اجمع نسبة 155cm ونسب القامات الأصغر منها فقط."
+      },
+      "solution": {
+        "lines": [
+          "$15 + 20 + 40 = 75$"
+        ],
+        "result": "75\\%"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب التواتر المجمع النازل للقامة 155cm (بالنسبة المئوية).",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: النسبة المئوية دون الرمز %",
+      "expectedAnswer": "65",
+      "misconceptionSignatures": [
+        {
+          "value": "75",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        },
+        {
+          "value": "40",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التواتر المجمع النازل = مجموع نسبة القامة ونسب القامات الأكبر منها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع نسبتي القطاعين 155cm و 160cm في المخطط."
+        }
+      ],
+      "feedback": {
+        "correct": "$40 + 25 = 65$ .",
+        "incorrect": "اجمع نسبة 155cm ونسب القامات الأكبر منها فقط."
+      },
+      "solution": {
+        "lines": [
+          "$40 + 25 = 65$"
+        ],
+        "result": "65\\%"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "ما هي النسبة المئوية للتلاميذ الذين قاماتهم 152cm على الأكثر؟",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: النسبة المئوية دون الرمز %",
+      "expectedAnswer": "35",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-IHSA-SARAMA"
+        },
+        {
+          "value": "85",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«152cm على الأكثر» تعني 152cm أو أقل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هذه النسبة هي التواتر المجمع الصاعد للقامة 152cm."
+        }
+      ],
+      "feedback": {
+        "correct": "$15 + 20 = 35$ ، أي $35\\%$ .",
+        "incorrect": "اجمع نسب القامات التي لا تتجاوز 152cm، مع 152cm نفسها."
+      },
+      "solution": {
+        "lines": [
+          "القامتان المعنيتان: 144cm و 152cm .",
+          "$15 + 20 = 35$"
+        ],
+        "result": "35\\%"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

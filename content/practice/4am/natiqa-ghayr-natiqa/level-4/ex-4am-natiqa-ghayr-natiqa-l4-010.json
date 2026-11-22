@@ -1,0 +1,216 @@
+{
+  "id": "ex-4am-natiqa-ghayr-natiqa-l4-010",
+  "lessonCode": "natiqa-ghayr-natiqa",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2009 — اختزال قبل الحكم",
+    "estimatedMinutes": 10,
+    "tags": [
+      "عدد ناطق",
+      "اختزال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_natiqa-ghayr-natiqa_P2",
+      "modelledOn": "BEM 2009 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن الأعداد $C$ ، $B$ ، $A$ حيث:",
+    "formulas": [
+      "A = \\sqrt{\\dfrac{50}{8}} \\quad ; \\quad B = \\sqrt{\\dfrac{8}{18}} \\quad ; \\quad C = \\sqrt{0{,}4}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "اكتب كلا من العددين $A$ و $B$ على شكل كسر غير قابل للاختزال.",
+      "statement": "$A$",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "5/2",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "25/4",
+          "id": "MISC-JIDHR-MURABBA-KHALT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختزل الكسر $\\dfrac{50}{8}$ أولًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل الكسر المختزل مربع لكسر؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{50}{8} = \\dfrac{25}{4} = \\left(\\dfrac{5}{2}\\right)^2$ .",
+        "incorrect": "اختزل الكسر الذي تحت الجذر قبل الحكم، ثم خذ جذر البسط وجذر المقام.",
+        "notIrreducible": "القيمة صحيحة لكن الكسر ما زال قابلًا للاختزال."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{50}{8} = \\dfrac{25}{4}$ و $\\left(\\dfrac{5}{2}\\right)^2 = \\dfrac{25}{4}$"
+        ],
+        "result": "A = \\dfrac{5}{2}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$B$",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "2/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "4/9",
+          "id": "MISC-JIDHR-MURABBA-KHALT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختزل الكسر $\\dfrac{8}{18}$ أولًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{8}{18} = \\dfrac{4}{9} = \\left(\\dfrac{2}{3}\\right)^2$ .",
+        "incorrect": "اختزل الكسر الذي تحت الجذر، ثم خذ جذر البسط وجذر المقام.",
+        "notIrreducible": "القيمة صحيحة لكن الكسر ما زال قابلًا للاختزال."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{8}{18} = \\dfrac{4}{9}$ و $\\left(\\dfrac{2}{3}\\right)^2 = \\dfrac{4}{9}$"
+        ],
+        "result": "B = \\dfrac{2}{3}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "بيّن أن $A \\times B$ عدد ناطق.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة الجداء $A \\times B$ على شكل كسر",
+      "expectedAnswer": "5/3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتائج السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "$A \\times B = \\dfrac{5}{2} \\times \\dfrac{2}{3} = \\dfrac{5}{3}$ .",
+        "incorrect": "عوّض $A$ و $B$ بالكسرين اللذين وجدتهما ثم اضرب."
+      },
+      "solution": {
+        "lines": [
+          "$A \\times B = \\dfrac{5}{2} \\times \\dfrac{2}{3} = \\dfrac{10}{6} = \\dfrac{5}{3}$",
+          "إذن $A \\times B$ عدد ناطق."
+        ],
+        "result": "A \\times B = \\dfrac{5}{3}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "هل $C$ عدد ناطق؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDHR-FASILA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر جوابك، ثم قارن تبريرك بالحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب 0,4 على شكل كسر غير قابل للاختزال."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$0{,}2^2 = 0{,}04$ : هل يساوي 0,4؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}4 = \\dfrac{2}{5}$ ليس مربعًا لعدد ناطق: $C$ ليس ناطقًا.",
+        "incorrect": "لا تخلط بين $\\sqrt{0{,}4}$ و $\\sqrt{0{,}04}$ : تحقّق بالتربيع."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}4 = \\dfrac{4}{10} = \\dfrac{2}{5}$ (غير قابل للاختزال)، و 2 و 5 ليسا مربعين لعددين طبيعيين.",
+          "إذن $\\dfrac{2}{5}$ ليس مربعًا لعدد ناطق، و $C = \\sqrt{0{,}4}$ ليس عددًا ناطقًا."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

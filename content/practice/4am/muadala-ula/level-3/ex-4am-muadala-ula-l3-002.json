@@ -1,0 +1,179 @@
+{
+  "id": "ex-4am-muadala-ula-l3-002",
+  "lessonCode": "muadala-ula",
+  "level": 3,
+  "metadata": {
+    "title": "برنامج حساب: عدد مصطفى",
+    "estimatedMinutes": 7,
+    "tags": [
+      "برنامج حساب",
+      "ترجمة إلى معادلة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-1",
+      "page": 44,
+      "section": "أنشطة",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "برنامج حساب يعطي العدد $9x + 1$ عند اختيار العدد $x$ . حصل مصطفى على ضعف العدد الذي اختاره."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب معادلة تترجم هذه المعطيات.",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضعف العدد المختار $x$ هو $2x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النتيجة $9x + 1$ تساوي هذا الضعف."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن معادلتك بالحل النموذجي: الطرف الأول نتيجة البرنامج، والطرف الثاني ضعف العدد المختار."
+      },
+      "solution": {
+        "lines": [
+          "النتيجة $9x + 1$ تساوي ضعف العدد المختار $2x$ :"
+        ],
+        "result": "9x + 1 = 2x"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حل هذه المعادلة.",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب حل المعادلة: عدد صحيح أو كسر على الشكل a/b (يُقبل العدد العشري)",
+      "expectedAnswer": "-1/7",
+      "misconceptionSignatures": [
+        {
+          "value": "-7",
+          "id": "MISC-MUADALA-QISMA-MAQLUBA"
+        },
+        {
+          "value": "1/7",
+          "id": "MISC-MUADALA-NAQL-ISHARA"
+        },
+        {
+          "value": "-1/11",
+          "id": "MISC-MUADALA-NAQL-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المجهول في الطرفين: انقل الحدود التي فيها $x$ إلى طرف والأعداد إلى الطرف الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحدّ الذي يُنقل إلى الطرف الآخر تتغيّر إشارته (نطرحه من الطرفين)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جمّع الحدود المتشابهة حتى الشكل $ax = b$ ثم اقسم على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = -\\dfrac{1}{7}$ .",
+        "incorrect": "انقل كل حدّ بإشارة معاكسة، وجمّع الحدود المتشابهة، ثم اقسم على معامل $x$ بإشارته. تحقّق بالتعويض."
+      },
+      "solution": {
+        "lines": [
+          "$9x - 2x = -1$",
+          "$7x = -1$",
+          "$x = \\dfrac{-1}{7}$"
+        ],
+        "result": "x = -\\dfrac{1}{7}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل العدد الذي اختاره مصطفى عدد طبيعي؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى الحل الذي وجدته: إشارته وشكله."
+        }
+      ],
+      "feedback": {
+        "correct": "لا: الحل $-\\dfrac{1}{7}$ ليس عددًا طبيعيًا.",
+        "incorrect": "العدد الطبيعي عدد صحيح موجب: قارن به الحل الذي وجدته."
+      },
+      "solution": {
+        "lines": [
+          "$x = -\\dfrac{1}{7}$ عدد سالب وليس عددًا صحيحًا،",
+          "إذن العدد الذي اختاره مصطفى ليس عددًا طبيعيًا."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

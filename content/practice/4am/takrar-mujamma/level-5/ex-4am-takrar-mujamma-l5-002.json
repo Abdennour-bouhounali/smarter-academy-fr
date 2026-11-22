@@ -1,0 +1,418 @@
+{
+  "id": "ex-4am-takrar-mujamma-l5-002",
+  "lessonCode": "takrar-mujamma",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2012 — استهلاك الماء بحيّ في وهران",
+    "estimatedMinutes": 10,
+    "tags": [
+      "وضعية إدماجية",
+      "فئات",
+      "التواتر المجمع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_takrar-mujamma_P3",
+      "modelledOn": "BEM 2012 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2012",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في إطار حملة لترشيد استهلاك الماء، سجّلت مؤسسة توزيع المياه بوهران الاستهلاك الشهري لـ 40 أسرة من حيّ واحد (بالمتر المكعب):",
+    "table": {
+      "head": [
+        "الاستهلاك v (بـ $m^3$)",
+        "عدد الأسر",
+        "التكرار المجمع الصاعد"
+      ],
+      "rows": [
+        [
+          "$0 \\le v < 5$",
+          "4",
+          "…"
+        ],
+        [
+          "$5 \\le v < 10$",
+          "10",
+          "…"
+        ],
+        [
+          "$10 \\le v < 15$",
+          "14",
+          "…"
+        ],
+        [
+          "$15 \\le v < 20$",
+          "8",
+          "…"
+        ],
+        [
+          "$20 \\le v \\le 25$",
+          "4",
+          "…"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "انقل الجدول ثم أكمل عمود التكرار المجمع الصاعد.",
+      "statement": "التكرار المجمع الصاعد للفئة $5 \\le v < 10$ :",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        },
+        {
+          "value": "10",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        },
+        {
+          "value": "36",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكرار المجمع الصاعد لفئة هو مجموع تكرارها وتكرارات الفئات التي قبلها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ من أول عمود في الجدول واجمع التكرارات حتى $5 \\le v < 10$ مع تكرارها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: التكرار المجمع الصاعد لآخر عمود يساوي التكرار الكلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 + 10 = 14$ .",
+        "incorrect": "اجمع تكرار الفئة نفسها وتكرارات الفئات التي قبلها فقط، ولا تنس تكرار الفئة نفسها."
+      },
+      "solution": {
+        "lines": [
+          "التكرار المجمع الصاعد للفئة $5 \\le v < 10$ هو مجموع تكرار الفئة $5 \\le v < 10$ وتكرارات الفئات التي قبلها:",
+          "$4 + 10 = 14$"
+        ],
+        "result": "14"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "التكرار المجمع الصاعد للفئة $10 \\le v < 15$ :",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "28",
+      "misconceptionSignatures": [
+        {
+          "value": "14",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        },
+        {
+          "value": "26",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكرار المجمع الصاعد لفئة هو مجموع تكرارها وتكرارات الفئات التي قبلها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ من أول عمود في الجدول واجمع التكرارات حتى $10 \\le v < 15$ مع تكرارها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: التكرار المجمع الصاعد لآخر عمود يساوي التكرار الكلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 + 10 + 14 = 28$ .",
+        "incorrect": "اجمع تكرار الفئة نفسها وتكرارات الفئات التي قبلها فقط، ولا تنس تكرار الفئة نفسها."
+      },
+      "solution": {
+        "lines": [
+          "التكرار المجمع الصاعد للفئة $10 \\le v < 15$ هو مجموع تكرار الفئة $10 \\le v < 15$ وتكرارات الفئات التي قبلها:",
+          "$4 + 10 + 14 = 28$"
+        ],
+        "result": "28"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "التكرار المجمع الصاعد للفئة $15 \\le v < 20$ :",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "36",
+      "misconceptionSignatures": [
+        {
+          "value": "28",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        },
+        {
+          "value": "8",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        },
+        {
+          "value": "12",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكرار المجمع الصاعد لفئة هو مجموع تكرارها وتكرارات الفئات التي قبلها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ من أول عمود في الجدول واجمع التكرارات حتى $15 \\le v < 20$ مع تكرارها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: التكرار المجمع الصاعد لآخر عمود يساوي التكرار الكلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 + 10 + 14 + 8 = 36$ .",
+        "incorrect": "اجمع تكرار الفئة نفسها وتكرارات الفئات التي قبلها فقط، ولا تنس تكرار الفئة نفسها."
+      },
+      "solution": {
+        "lines": [
+          "التكرار المجمع الصاعد للفئة $15 \\le v < 20$ هو مجموع تكرار الفئة $15 \\le v < 20$ وتكرارات الفئات التي قبلها:",
+          "$4 + 10 + 14 + 8 = 36$"
+        ],
+        "result": "36"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب التواتر المجمع الصاعد للفئة $10 \\le v < 15$ .",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة أو كسر على الشكل a/b",
+      "expectedAnswer": "0,7",
+      "misconceptionSignatures": [
+        {
+          "value": "28",
+          "id": "MISC-IHSA-TAWATUR-BILA-QISMA"
+        },
+        {
+          "value": "0,65",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        },
+        {
+          "value": "0,35",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التواتر المجمع الصاعد هو التكرار المجمع الصاعد مقسوما على التكرار الكلي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أولا التكرار المجمع الصاعد ثم اقسمه على التكرار الكلي للسلسلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: التواتر عدد بين 0 و 1، والتواتر المجمع الصاعد لآخر عمود يساوي 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{28}{40} = 0{,}7$ .",
+        "incorrect": "لا تكتف بالتكرار المجمع: اقسمه على التكرار الكلي للسلسلة."
+      },
+      "solution": {
+        "lines": [
+          "التواتر المجمع الصاعد = التكرار المجمع الصاعد ÷ التكرار الكلي:",
+          "$\\dfrac{28}{40} = 0{,}7$"
+        ],
+        "result": "0{,}7"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب التواتر المجمع النازل للفئة $15 \\le v < 20$ .",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة أو كسر على الشكل a/b",
+      "expectedAnswer": "0,3",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-IHSA-TAWATUR-BILA-QISMA"
+        },
+        {
+          "value": "0,9",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        },
+        {
+          "value": "0,1",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التواتر المجمع النازل هو التكرار المجمع النازل مقسوما على التكرار الكلي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أولا التكرار المجمع النازل ثم اقسمه على التكرار الكلي للسلسلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: التواتر عدد بين 0 و 1، والتواتر المجمع الصاعد لآخر عمود يساوي 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{12}{40} = 0{,}3$ .",
+        "incorrect": "لا تكتف بالتكرار المجمع: اقسمه على التكرار الكلي للسلسلة."
+      },
+      "solution": {
+        "lines": [
+          "التكرار المجمع النازل للفئة $15 \\le v < 20$ : $8 + 4 = 12$",
+          "التواتر المجمع النازل = التكرار المجمع النازل ÷ التكرار الكلي:",
+          "$\\dfrac{12}{40} = 0{,}3$"
+        ],
+        "result": "0{,}3"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "تطبّق المؤسسة تسعيرة مرتفعة على كل أسرة يبلغ استهلاكها $15m^3$ أو أكثر. ما هو عدد هذه الأسر؟",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-IHSA-SARAMA"
+        },
+        {
+          "value": "36",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«$15m^3$ على الأقل» تعني: $15m^3$ أو أكثر؛ الحدّ نفسه داخل في العدّ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هذا العدد هو التكرار المجمع النازل: اجمع تكرار الحدّ وتكرارات ما بعده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حدّد في الجدول الأعمدة التي تحقّق الشرط، ثم اجمع تكراراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$8 + 4 = 12$ .",
+        "incorrect": "اقرأ الحدّ بعناية: هل هو داخل في العدّ أم لا؟ ثم اجمع تكرارات الأعمدة التي تحقّق الشرط فقط."
+      },
+      "solution": {
+        "lines": [
+          "الفئات المعنية: $15 \\le v < 20$ ؛ $20 \\le v \\le 25$ .",
+          "$8 + 4 = 12$"
+        ],
+        "result": "12"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

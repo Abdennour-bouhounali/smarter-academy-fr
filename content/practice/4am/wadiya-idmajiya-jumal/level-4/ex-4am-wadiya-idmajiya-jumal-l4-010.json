@@ -1,0 +1,234 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-jumal-l4-010",
+  "lessonCode": "wadiya-idmajiya-jumal",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2009 — علب الغرس بتقرت",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جملة",
+      "PGCD",
+      "ترييض"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-jumal_P2",
+      "modelledOn": "BEM 2009 I-4"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "حل الجملة: $\\begin{cases} x + y = 24 \\\\ x + 4y = 45 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": {
+        "x": "17",
+        "y": "7"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "7",
+            "y": "17"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل $x$ هو نفسه في المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح المعادلة الأولى من الثانية طرفا لطرف لتجد $y$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض قيمة $y$ في المعادلة الأولى."
+        }
+      ],
+      "feedback": {
+        "correct": "الثنائية $(17 ; 7)$ تحقق المعادلتين معا: هي حل الجملة.",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} x + y = 24 & ...(1) \\\\ x + 4y = 45 & ...(2) \\end{cases}$",
+          "من المعادلة (1) نجد: $y = 24 - x$",
+          "بالتعويض في المعادلة (2) نجد: $x + 4(24 - x) = 45$",
+          "$-3x + 96 = 45$",
+          "$-3x = -51$",
+          "$x = 17$",
+          "ومنه: $y = 24 - 17 = 7$",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(17 ; 7)"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "جد القاسم المشترك الأكبر للعددين 600 و 150.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط",
+      "expectedAnswer": "150",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل يقسم أحد العددين الآخر؟"
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(600 ; 150) = 150 لأن 150 يقسم 600.",
+        "incorrect": "أجرِ القسمة الإقليدية للعدد الأكبر على الأصغر وانظر إلى الباقي."
+      },
+      "solution": {
+        "lines": [
+          "$600 = 150 \\times 4 + 0$",
+          "آخر باقٍ غير معدوم هو القاسم $150$ ، إذن:"
+        ],
+        "result": "PGCD(600 ; 150) = 150"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "ملأت تعاونية للتمور بتقرت $6750g$ من الغرس (عجينة التمر) في علب من صنف $150g$ وصنف $600g$ . إذا علمت أن العدد الكلي للعلب هو 24، جِد عدد العلب لكل صنف (لاحظ أن $6750 = 150 \\times 45$ ).",
+      "statement": "عدد العلب من صنف $150g$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط",
+      "expectedAnswer": "17",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "سمِّ $x$ عدد علب $150g$ و $y$ عدد علب $600g$ ، واكتب معادلة للعدد وأخرى للكتلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم طرفي معادلة الكتلة على 150 وقارن بجملة السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد العلب من صنف $150g$ هو 17.",
+        "incorrect": "معادلة الكتلة $150x + 600y = 6750$ تؤول بالقسمة على 150 إلى المعادلة الثانية لجملة السؤال 01."
+      },
+      "solution": {
+        "lines": [
+          "نسمّي $x$ عدد العلب من صنف $150g$ و $y$ عدد العلب من صنف $600g$ .",
+          "العدد الكلي للعلب: $x + y = 24$",
+          "الكتلة: $150x + 600y = 6750$ ، وبقسمة الطرفين على 150 (لأن $6750 = 150 \\times 45$ و $600 = 150 \\times 4$ ): $x + 4y = 45$",
+          "نحصل على جملة السؤال 01، وحلها: $x = 17$ و $y = 7$",
+          "التحقق: $150 \\times 17 + 600 \\times 7 = 2550 + 4200 = 6750$",
+          "إذن 17 علبة من صنف $150g$ و 7 علب من صنف $600g$ ."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "عدد العلب من صنف $600g$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "17",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$y$ هو العدد الثاني في حل جملة السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد العلب من صنف $600g$ هو 7، ونتحقق: $150 \\times 17 + 600 \\times 7 = 6750$ .",
+        "incorrect": "استعمل حل جملة السؤال 01: $y$ هو عدد علب $600g$ ."
+      },
+      "solution": {
+        "lines": [
+          "نسمّي $x$ عدد العلب من صنف $150g$ و $y$ عدد العلب من صنف $600g$ .",
+          "العدد الكلي للعلب: $x + y = 24$",
+          "الكتلة: $150x + 600y = 6750$ ، وبقسمة الطرفين على 150 (لأن $6750 = 150 \\times 45$ و $600 = 150 \\times 4$ ): $x + 4y = 45$",
+          "نحصل على جملة السؤال 01، وحلها: $x = 17$ و $y = 7$",
+          "التحقق: $150 \\times 17 + 600 \\times 7 = 2550 + 4200 = 6750$",
+          "إذن 17 علبة من صنف $150g$ و 7 علب من صنف $600g$ ."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

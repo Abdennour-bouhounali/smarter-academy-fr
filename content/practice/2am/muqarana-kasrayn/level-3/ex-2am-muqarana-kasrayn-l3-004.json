@@ -1,0 +1,254 @@
+{
+  "id": "ex-2am-muqarana-kasrayn-l3-004",
+  "lessonCode": "muqarana-kasrayn",
+  "level": 3,
+  "metadata": {
+    "title": "عدد محصور بين كسرين",
+    "estimatedMinutes": 10,
+    "tags": [
+      "كسر بين كسرين",
+      "مقارنة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-23",
+      "page": 32,
+      "section": "أوظّف تعلّماتي",
+      "number": 23
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "06"
+    }
+  },
+  "statement": {
+    "content": "أجب عن الأسئلة التالية دون حساب قيمة عشرية :"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أيّ الكسور التالية محصور بين $\\dfrac{3}{8}$ و $\\dfrac{3}{5}$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{3}{4}$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{3}{9}$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{3}{7}$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{3}{10}$",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن كلّ خيار بالكسر الأصغر ثمّ بالكسر الأكبر ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "وحّد المقامات إن أمكن أو قارن المقامات إذا تساوت البسوط ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{7}$ .",
+        "incorrect": "اختبر كلّ خيار مع الكسرين معًا : يجب أن يكون أكبر من الأوّل وأصغر من الثاني ."
+      },
+      "solution": {
+        "lines": [
+          "نقارن الكسر المقترح بكلّ من الكسرين المعطيين بحسب حالته .",
+          "إذن $\\dfrac{3}{8} < \\dfrac{3}{7} < \\dfrac{3}{5}$ ."
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "قارن بين $\\dfrac{9}{5}$ و $\\dfrac{9{,}4}{5}$ :",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{9}{5} > \\dfrac{9{,}4}{5}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-REVERSED"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{9}{5} < \\dfrac{9{,}4}{5}$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المقامان في الكسرين ؟ هل هما متساويان ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا تساوى المقامان فالأكبر هو الكسر الذي بسطه أكبر ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بين البسطين فقط ثمّ اكتب الرمز المناسب ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9}{5} < \\dfrac{9{,}4}{5}$ .",
+        "incorrect": "اختر طريقة المقارنة المناسبة للحالة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "المقامان متساويان ($5$) ، إذن الأكبر هو الكسر الذي بسطه أكبر .",
+          "$9 < 9{,}4$ ، ومنه $\\dfrac{9}{5} < \\dfrac{9{,}4}{5}$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "قارن بين $\\dfrac{9}{5}$ و $\\dfrac{9}{7}$ :",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{9}{5} < \\dfrac{9}{7}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-BIGDEN"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{9}{5} > \\dfrac{9}{7}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{9}{5} = \\dfrac{9}{7}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-NUMONLY"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما البسطان في الكسرين ؟ هل هما متساويان ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا تساوى البسطان فالأكبر هو الكسر الذي مقامه أصغر ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بين المقامين ثمّ تذكّر : كلّما كبر المقام صغرت الحصّة ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9}{5} > \\dfrac{9}{7}$ .",
+        "incorrect": "اختر طريقة المقارنة المناسبة للحالة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "البسطان متساويان ($9$) ، إذن الأكبر هو الكسر الذي مقامه أصغر (قطعه أكبر) .",
+          "$5 < 7$ ، ومنه $\\dfrac{9}{5} > \\dfrac{9}{7}$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "كم عددًا طبيعيًّا $x$ يحقّق $\\dfrac{2}{9} < \\dfrac{x}{9} < \\dfrac{7}{9}$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المقام المشترك الذي يجعل المقارنة بين بسطين فقط ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسرين المعطيين بمقام $x$ نفسه ثمّ عدّ البسوط الطبيعية بينهما ."
+        }
+      ],
+      "feedback": {
+        "correct": "$4$ .",
+        "incorrect": "وحّد المقامات ثمّ عدّ الأعداد الطبيعية المحصورة تمامًا بين البسطين وأعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "نكتب الكسرين بمقام $9$ : $\\dfrac{2}{9} = \\dfrac{2}{9}$ و $\\dfrac{7}{9} = \\dfrac{7}{9}$ .",
+          "نبحث عن الأعداد الطبيعية $x$ المحصورة بين البسطين : $3$ ، $4$ ، $5$ ، $6$ .",
+          "عددها $4$ ."
+        ],
+        "result": "4"
+      },
+      "work": "optional",
+      "timeSeconds": 100
+    }
+  ]
+}

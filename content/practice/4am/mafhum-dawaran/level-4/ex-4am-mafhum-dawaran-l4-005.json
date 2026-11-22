@@ -1,0 +1,117 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l4-005",
+  "lessonCode": "mafhum-dawaran",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — دورانان متتاليان",
+    "estimatedMinutes": 2,
+    "tags": [
+      "تركيب دورانين",
+      "زوايا"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mafhum-dawaran_P1",
+      "modelledOn": "ex-3"
+    }
+  },
+  "statement": {
+    "content": "دوّرنا النقطة M حول O بزاوية $70^\\circ$ في الاتجاه المباشر فحصلنا على $M_1$ ، ثم دوّرنا $M_1$ حول O بزاوية $50^\\circ$ في الاتجاه المباشر فحصلنا على $M_2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "$M_2$ صورة M بالدوران الذي مركزه O وزاويته (بالدرجات):",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجات)",
+      "expectedAnswer": "120",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-JAM-ZAWAYA",
+          "value": "20"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدورانان حول نفس المركز."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "وفي نفس الاتجاه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تتابع الزاويتان."
+        }
+      ],
+      "feedback": {
+        "correct": "$70^\\circ + 50^\\circ = 120^\\circ$ في الاتجاه المباشر.",
+        "incorrect": "دورانان متتاليان حول نفس المركز وفي نفس الاتجاه: تتابع الزاويتين."
+      },
+      "difficulty": 3
+    },
+    {
+      "id": "q2",
+      "statement": "اتجاه هذا الدوران:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الاتجاه غير المباشر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ITTIJAH"
+        },
+        {
+          "id": "B",
+          "content": "يتغيّر من نقطة إلى أخرى",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ITTIJAH"
+        },
+        {
+          "id": "C",
+          "content": "الاتجاه المباشر",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اتجاه الدورانين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لم يتغيّر الاتجاه بين الدورانين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الدوران الثاني يكمل الأول في نفس الجهة حول O."
+        }
+      ],
+      "feedback": {
+        "correct": "الدورانان مباشران: المحصّلة في الاتجاه المباشر.",
+        "incorrect": "لم يدر أي منهما مع عقارب الساعة."
+      },
+      "difficulty": 2
+    }
+  ]
+}

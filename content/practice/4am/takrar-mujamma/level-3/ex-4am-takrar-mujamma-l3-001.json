@@ -1,0 +1,303 @@
+{
+  "id": "ex-4am-takrar-mujamma-l3-001",
+  "lessonCode": "takrar-mujamma",
+  "level": 3,
+  "metadata": {
+    "title": "علامات استجواب الرياضيات",
+    "estimatedMinutes": 8,
+    "tags": [
+      "التواتر المجمع",
+      "نسبة مئوية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-2",
+      "page": 92,
+      "section": "أنشطة",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "الجدول الآتي يبيّن توزيع علامات استجواب الرياضيات لقسم يتكوّن من 30 تلميذا:",
+    "table": {
+      "head": [
+        "العلامة n",
+        "عدد التلاميذ"
+      ],
+      "rows": [
+        [
+          "9",
+          "3"
+        ],
+        [
+          "10",
+          "7"
+        ],
+        [
+          "12",
+          "8"
+        ],
+        [
+          "13",
+          "5"
+        ],
+        [
+          "15",
+          "4"
+        ],
+        [
+          "17",
+          "2"
+        ],
+        [
+          "20",
+          "1"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب التكرار المجمع الصاعد للعلامة 13.",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "23",
+      "misconceptionSignatures": [
+        {
+          "value": "18",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        },
+        {
+          "value": "5",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        },
+        {
+          "value": "12",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكرار المجمع الصاعد لقيمة هو مجموع تكرارها وتكرارات القيم الأصغر منها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ من أول عمود في الجدول واجمع التكرارات حتى 13 مع تكرارها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: التكرار المجمع الصاعد لآخر عمود يساوي التكرار الكلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 + 7 + 8 + 5 = 23$ .",
+        "incorrect": "اجمع تكرار القيمة نفسها وتكرارات القيم الأصغر منها فقط، ولا تنس تكرار القيمة نفسها."
+      },
+      "solution": {
+        "lines": [
+          "التكرار المجمع الصاعد للعلامة 13 هو مجموع تكرار القيمة 13 وتكرارات القيم الأصغر منها:",
+          "$3 + 7 + 8 + 5 = 23$"
+        ],
+        "result": "23"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "استنتج التواتر المجمع الصاعد للعلامة 13.",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "23/30",
+      "misconceptionSignatures": [
+        {
+          "value": "23",
+          "id": "MISC-IHSA-TAWATUR-BILA-QISMA"
+        },
+        {
+          "value": "0,4",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        },
+        {
+          "value": "0,6",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التواتر المجمع الصاعد هو التكرار المجمع الصاعد مقسوما على التكرار الكلي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أولا التكرار المجمع الصاعد ثم اقسمه على التكرار الكلي للسلسلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: التواتر عدد بين 0 و 1، والتواتر المجمع الصاعد لآخر عمود يساوي 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{23}{30}$ .",
+        "incorrect": "لا تكتف بالتكرار المجمع: اقسمه على التكرار الكلي للسلسلة."
+      },
+      "solution": {
+        "lines": [
+          "التواتر المجمع الصاعد = التكرار المجمع الصاعد ÷ التكرار الكلي:",
+          "$\\dfrac{23}{30}$"
+        ],
+        "result": "\\dfrac{23}{30}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب التواتر المجمع النازل للعلامة 12.",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "2/3",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-IHSA-TAWATUR-BILA-QISMA"
+        },
+        {
+          "value": "0,6",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        },
+        {
+          "value": "0,4",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التواتر المجمع النازل هو التكرار المجمع النازل مقسوما على التكرار الكلي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أولا التكرار المجمع النازل ثم اقسمه على التكرار الكلي للسلسلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: التواتر عدد بين 0 و 1، والتواتر المجمع الصاعد لآخر عمود يساوي 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{20}{30} = \\dfrac{2}{3}$ .",
+        "incorrect": "لا تكتف بالتكرار المجمع: اقسمه على التكرار الكلي للسلسلة."
+      },
+      "solution": {
+        "lines": [
+          "التكرار المجمع النازل للعلامة 12: $8 + 5 + 4 + 2 + 1 = 20$",
+          "التواتر المجمع النازل = التكرار المجمع النازل ÷ التكرار الكلي:",
+          "$\\dfrac{20}{30} = \\dfrac{2}{3}$"
+        ],
+        "result": "\\dfrac{2}{3}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "ما هي النسبة المئوية للتلاميذ الذين تحصّلوا على علامة أقل من 15؟",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: النسبة المئوية دون الرمز %",
+      "expectedAnswer": "230/3",
+      "misconceptionSignatures": [
+        {
+          "value": "23",
+          "id": "MISC-IHSA-TAWATUR-BILA-QISMA"
+        },
+        {
+          "value": "90",
+          "id": "MISC-IHSA-SARAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«أقل من 15» تستثني الحدّ 15 نفسه: نعدّ ما هو أصغر تماما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أولا عدد الأفراد الذين يحقّقون الشرط (تكرار مجمع)، ثم اقسمه على التكرار الكلي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب التواتر الناتج في 100 لتحصل على النسبة المئوية."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{23}{30} \\times 100 = \\dfrac{230}{3}$ ، أي $\\dfrac{230}{3}\\%$ .",
+        "incorrect": "عدّ أولا الأفراد الذين يحقّقون الشرط بدقة (انتبه إلى الحدّ)، ثم اقسم على التكرار الكلي واضرب في 100."
+      },
+      "solution": {
+        "lines": [
+          "عدد الأفراد المعنيين: $3 + 7 + 8 + 5 = 23$",
+          "$\\dfrac{23}{30} = \\dfrac{23}{30}$",
+          "$\\dfrac{23}{30} \\times 100 = \\dfrac{230}{3}$"
+        ],
+        "result": "\\dfrac{230}{3}\\%"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

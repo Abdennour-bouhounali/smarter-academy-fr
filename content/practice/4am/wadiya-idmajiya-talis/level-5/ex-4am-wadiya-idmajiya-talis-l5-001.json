@@ -1,0 +1,551 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-talis-l5-001",
+  "lessonCode": "wadiya-idmajiya-talis",
+  "level": 5,
+  "metadata": {
+    "title": "BEM 2016 — الوضعية الإدماجية",
+    "estimatedMinutes": 45,
+    "tags": [
+      "وضعية إدماجية",
+      "خاصية طالس",
+      "دوران",
+      "كتابة علمية"
+    ],
+    "source": {
+      "type": "bem",
+      "year": 2016,
+      "part": 2,
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "official",
+      "badge": "BEM 2016",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "لجدك قطعةٌ أرض لها الشكل المقابل حيث: $ABCD$ مستطيل أبعاده $50m$ و $40m$ و $M$ نقطة من $[DC]$ حيث: $DM = 20m$ .\n$N$ نقطة تقاطع $(BC)$ و $(AM)$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0.0,
+          40.0
+        ],
+        "B": [
+          50.0,
+          40.0
+        ],
+        "C": [
+          50.0,
+          0.0
+        ],
+        "D": [
+          0.0,
+          0.0
+        ],
+        "M": [
+          20.0,
+          0.0
+        ],
+        "N": [
+          50.0,
+          -60.0
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "50m"
+        },
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "N"
+        ],
+        {
+          "from": "D",
+          "to": "M",
+          "label": "20m"
+        },
+        [
+          "M",
+          "C"
+        ],
+        {
+          "from": "A",
+          "to": "D",
+          "label": "40m"
+        },
+        [
+          "A",
+          "M"
+        ],
+        [
+          "M",
+          "N"
+        ]
+      ],
+      "labels": {
+        "A": "nw",
+        "B": "ne",
+        "C": "e",
+        "D": "sw",
+        "M": "ne",
+        "N": "se"
+      },
+      "ariaLabel": "قطعة الأرض: المستطيل ABCD حيث AB = 50m و AD = 40m، M نقطة من [DC]، و N نقطة تقاطع (BC) و (AM)",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "الجزء الأول:\nبين أن : $\\dfrac{MA}{MN} = \\dfrac{2}{3}$ .",
+      "statement": "احسب النسبة $\\dfrac{MD}{MC}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "2/3",
+      "misconceptionSignatures": [
+        {
+          "value": "3/2",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(NC) \\parallel (AD)$ و $(DC)$ و $(AN)$ متقاطعان في $M$ : وضعية الفراشة، و $MC = DC - DM$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $MD$ على $MC$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{MD}{MC} = \\dfrac{20}{30} = \\dfrac{2}{3}$ .",
+        "incorrect": "النسبة $\\dfrac{MD}{MC}$ : الطول $MD$ على الطول $MC$ ، وكلاهما من النقطة $M$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$MC = DC - DM = 50 - 20 = 30m$",
+          "$\\dfrac{MD}{MC} = \\dfrac{20}{30} = \\dfrac{2}{3}$"
+        ],
+        "result": "\\dfrac{MD}{MC} = \\dfrac{2}{3}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "اكتب البرهان.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المستقيمان المتوازيان؟ وأين يتقاطع $(DC)$ و $(AN)$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب تساوي النسب الثلاث، ثم عوّض بـ $MD$ و $MC$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اذكر الخاصية المستعملة (خاصية طالس) واختم بالاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "$(NC) \\parallel (AD)$ و $\\dfrac{MA}{MN} = \\dfrac{MD}{MC} = \\dfrac{20}{30}$ .",
+        "incorrect": "قارن ما كتبته بالحل النموذجي خطوة خطوة، ثم صحّح الخطوة التي تختلف."
+      },
+      "solution": {
+        "lines": [
+          "بما أن المستقيمين $(NC)$ و $(AD)$ متوازيان (لأن $ABCD$ مستطيل)،",
+          "و المستقيمين $(DC)$ و $(AN)$ متقاطعان في النقطة $M$ ،",
+          "فإن: $\\dfrac{MA}{MN} = \\dfrac{MD}{MC} = \\dfrac{AD}{NC}$ حسب خاصية طالس.",
+          "لدينا: $\\dfrac{MA}{MN} = \\dfrac{MD}{MC}$ ، بالتعويض نجد: $\\dfrac{MA}{MN} = \\dfrac{20}{30}$",
+          "بالاختزال نجد: $\\dfrac{MA}{MN} = \\dfrac{2}{3}$ و هو المطلوب.",
+          "أعادت المنصّة رسم شكل الموضوع بالأبعاد الحقيقية (الشكل المطبوع غير متناسب)، بنفس المعطيات."
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب الطول: $BN$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "100",
+      "misconceptionSignatures": [
+        {
+          "value": "60",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        },
+        {
+          "value": "200/3",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من الجواب الأول: $\\dfrac{AD}{NC} = \\dfrac{2}{3}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $NC$ ثم $BN = BC + CN$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$NC = \\dfrac{40 \\times 3}{2} = 60m$ و $BN = 60 + 40 = 100m$ .",
+        "incorrect": "$\\dfrac{AD}{NC} = \\dfrac{2}{3}$ تعطي $NC$ ، و $BN$ هو $BC + CN$ ( $C$ بين $B$ و $N$ )."
+      },
+      "solution": {
+        "lines": [
+          "حساب الطول $NC$ : لدينا من الجواب الأول: $\\dfrac{AD}{NC} = \\dfrac{2}{3}$",
+          "و منه: $NC = \\dfrac{AD \\times 3}{2}$ ، أي: $NC = \\dfrac{40 \\times 3}{2} = 60m$",
+          "$BN = 60 + 40$"
+        ],
+        "result": "BN = 100m"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب بالتدوير إلى الوحدة من الدرجة قيس الزاوية: $\\widehat{MAD}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الدرجات فقط (عدد طبيعي)",
+      "expectedAnswer": "27",
+      "misconceptionSignatures": [
+        {
+          "value": "63",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $MAD$ قائم في $D$ : $\\tan\\widehat{MAD} = \\dfrac{MD}{AD}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل $\\tan^{-1}$ في الآلة الحاسبة ثم دوّر إلى الوحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan\\widehat{MAD} = \\dfrac{20}{40} = 0{,}5$ و $\\widehat{MAD} \\approx 26{,}57^{\\circ}$ ، أي $27^{\\circ}$ .",
+        "incorrect": "الضلع المقابل للزاوية $\\widehat{MAD}$ هو $[MD]$ والمجاور $[AD]$ ."
+      },
+      "solution": {
+        "lines": [
+          "بما أن المثلث $MAD$ قائم في $D$ فإنّ: $\\tan\\widehat{MAD} = \\dfrac{MD}{AD}$",
+          "$\\tan\\widehat{MAD} = \\dfrac{20}{40} = 0{,}5$",
+          "باستعمال الآلة الحاسبة نجد: $\\widehat{MAD} = 27^{\\circ}$"
+        ],
+        "result": "\\widehat{MAD} = 27^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "lead": "الجزء الثاني:\nوهب جدك لأبيك وعمك القطعة $MCN$ ليتقاسماها بينهما بالعدل.\nاقترح عمك أن تكون النقطة $E$ صورة النقطة $M$ بالدوران الذي مركزه $C$ وزاويته $90^{\\circ}$ في الاتجاه الموجب هي بداية الخط الفاصل $[EM]$ بين القطعتين $MNE$ و $MCE$ الناتجتين عن هذه القسمة.\n- أثبت أنه كان محقا في اختياره.",
+      "statement": "احسب الطول $CE$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "30",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدوران يحفظ المسافات: $CE = CM$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$CE = CM = 30m$ .",
+        "incorrect": "الدوران الذي مركزه $C$ يحفظ المسافة إلى $C$ ."
+      },
+      "solution": {
+        "lines": [
+          "$E$ صورة $M$ بالدوران الذي مركزه $C$ : $CE = CM = 30m$"
+        ],
+        "result": "CE = 30m"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "احسب مساحتي القطعتين $MCE$ و $MNE$ ، ابدأ بـ $MCE$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المساحة بـ $m^2$",
+      "expectedAnswer": "450",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $MCE$ قائم في $C$ ، ضلعاه القائمان $CM$ و $CE$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$S_{EMC} = \\dfrac{30 \\times 30}{2} = 450m^2$ .",
+        "incorrect": "مساحة المثلث القائم: نصف جداء ضلعيه القائمين."
+      },
+      "solution": {
+        "lines": [
+          "بما أنّ النقطة $E$ صورة النقطة $M$ بالدوران الذي مركزه $C$ و زاويته $90^{\\circ}$ فإنّ: $CM = CE$ ، أي: $CE = 30m$ ،",
+          "و $E$ على $[CN]$ (لأن $(CM) \\perp (CN)$ والدوران في الاتجاه الموجب)، و $NC = 60m$ ، أي أنّ: $CE = \\dfrac{1}{2} \\times NC$ ،",
+          "معناه أنّ: النقطة $E$ منتصف $[NC]$ .",
+          "الطريقة 1: المتوسط $[EM]$ المتعلق بالضلع $[NC]$ يقسم المثلث $MCN$ إلى مثلثين لهما نفس المساحة (من خواص المتوسطات في مثلث).",
+          "الطريقة 2: $S_{EMC} = \\dfrac{30 \\times 30}{2} = 450m^2$ و $S_{EMN} = \\dfrac{30 \\times 30}{2} = 450m^2$ .",
+          "إذا، للقطعتين نفس المساحة، و منه القسمة عادلة و العمّ كان محقا في اختياره."
+        ],
+        "result": "S_{EMC} = 450m^2"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "statement": "ثم $MNE$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المساحة بـ $m^2$",
+      "expectedAnswer": "450",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $MNE$ : قاعدته $[EN]$ وارتفاعه المتعلق بها $MC$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$S_{EMN} = \\dfrac{30 \\times 30}{2} = 450m^2$ : القسمة عادلة.",
+        "incorrect": "$EN = NC - CE$ ، والارتفاع هو $MC$ ."
+      },
+      "solution": {
+        "lines": [
+          "بما أنّ النقطة $E$ صورة النقطة $M$ بالدوران الذي مركزه $C$ و زاويته $90^{\\circ}$ فإنّ: $CM = CE$ ، أي: $CE = 30m$ ،",
+          "و $E$ على $[CN]$ (لأن $(CM) \\perp (CN)$ والدوران في الاتجاه الموجب)، و $NC = 60m$ ، أي أنّ: $CE = \\dfrac{1}{2} \\times NC$ ،",
+          "معناه أنّ: النقطة $E$ منتصف $[NC]$ .",
+          "الطريقة 1: المتوسط $[EM]$ المتعلق بالضلع $[NC]$ يقسم المثلث $MCN$ إلى مثلثين لهما نفس المساحة (من خواص المتوسطات في مثلث).",
+          "الطريقة 2: $S_{EMC} = \\dfrac{30 \\times 30}{2} = 450m^2$ و $S_{EMN} = \\dfrac{30 \\times 30}{2} = 450m^2$ .",
+          "إذا، للقطعتين نفس المساحة، و منه القسمة عادلة و العمّ كان محقا في اختياره."
+        ],
+        "result": "S_{EMN} = 450m^2"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q8",
+      "step": "05",
+      "lead": "تحصل أبوك على مبلغ $5{,}4 \\times 10^{6}DA$ من عملية بيع قطعته الأرضية $MNE$ بعد دفعه ضريبة نسبتها $20\\%$ على المبلغ الإجمالي للقطعة.\n- حدد سعر المتر المربع الواحد لهذه القطعة واكتبه كتابة علمية.",
+      "statement": "سعر المتر المربع الواحد:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: السعر بـ DA (دون كتابة علمية)",
+      "expectedAnswer": "15000",
+      "misconceptionSignatures": [
+        {
+          "value": "14400",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ المحصّل هو $80\\%$ من المبلغ الإجمالي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب المبلغ الإجمالي ثم اقسمه على مساحة $MNE$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{6{,}75 \\times 10^{6}}{450} = 15000DA$ .",
+        "incorrect": "المبلغ المحصّل بعد دفع الضريبة هو $80\\%$ من المبلغ الإجمالي: احسب المبلغ الإجمالي أولا، ثم اقسمه على مساحة القطعة $MNE$ ."
+      },
+      "solution": {
+        "lines": [
+          "ليكن $x$ هو المبلغ الإجمالي لبيع القطعة الأرضية. تُقدّر الضريبة بـ $\\dfrac{20}{100} \\times x\\,DA$ .",
+          "تحصّل الأب على مبلغ $5{,}4 \\times 10^{6}$ بعد دفعه الضريبة، معناه: $x - \\dfrac{20}{100} \\times x = 5{,}4 \\times 10^{6}$",
+          "$\\dfrac{80}{100} \\times x = 5{,}4 \\times 10^{6}$ ، أي: $x = 5{,}4 \\times 10^{6} \\times \\dfrac{100}{80} = 0{,}0675 \\times 10^{8}$",
+          "المبلغ الإجمالي لبيع القطعة الأرضية هو: $0{,}0675 \\times 10^{8}DA$ (أي $6{,}75 \\times 10^{6}DA$ ).",
+          "مساحة القطعة $MNE$ هي $450m^2$ : $0{,}0675 \\times 10^{8} \\div 450 = 0{,}00015 \\times 10^{8} = 1{,}5 \\times 10^{-4} \\times 10^{8} = 1{,}5 \\times 10^{4}$",
+          "إذا سعر المتر المربع الواحد هو: $1{,}5 \\times 10^{4}DA$ ."
+        ],
+        "result": "1{,}5 \\times 10^{4}DA"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q9",
+      "step": "05",
+      "statement": "كتابته العلمية $a \\times 10^{n}$ : أعط العدد $a$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عشري بالفاصلة، $1 \\leqslant a < 10$ )",
+      "expectedAnswer": "1,5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في الكتابة العلمية: $1 \\leqslant a < 10$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$15000 = 1{,}5 \\times 10^{4}$ .",
+        "incorrect": "في الكتابة العلمية يحقق العدد $a$ : $1 \\leqslant a < 10$ ."
+      },
+      "solution": {
+        "lines": [
+          "ليكن $x$ هو المبلغ الإجمالي لبيع القطعة الأرضية. تُقدّر الضريبة بـ $\\dfrac{20}{100} \\times x\\,DA$ .",
+          "تحصّل الأب على مبلغ $5{,}4 \\times 10^{6}$ بعد دفعه الضريبة، معناه: $x - \\dfrac{20}{100} \\times x = 5{,}4 \\times 10^{6}$",
+          "$\\dfrac{80}{100} \\times x = 5{,}4 \\times 10^{6}$ ، أي: $x = 5{,}4 \\times 10^{6} \\times \\dfrac{100}{80} = 0{,}0675 \\times 10^{8}$",
+          "المبلغ الإجمالي لبيع القطعة الأرضية هو: $0{,}0675 \\times 10^{8}DA$ (أي $6{,}75 \\times 10^{6}DA$ ).",
+          "مساحة القطعة $MNE$ هي $450m^2$ : $0{,}0675 \\times 10^{8} \\div 450 = 0{,}00015 \\times 10^{8} = 1{,}5 \\times 10^{-4} \\times 10^{8} = 1{,}5 \\times 10^{4}$",
+          "إذا سعر المتر المربع الواحد هو: $1{,}5 \\times 10^{4}DA$ ."
+        ],
+        "result": "1{,}5 \\times 10^{4}DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q10",
+      "step": "05",
+      "statement": "ثم الأس $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $n$ فقط (عدد صحيح)",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بكم مرتبة تنتقل الفاصلة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$15000 = 1{,}5 \\times 10^{4}$ .",
+        "incorrect": "عدّ المراتب التي تنتقل بها الفاصلة من $15000$ إلى $1{,}5$ ."
+      },
+      "solution": {
+        "lines": [
+          "ليكن $x$ هو المبلغ الإجمالي لبيع القطعة الأرضية. تُقدّر الضريبة بـ $\\dfrac{20}{100} \\times x\\,DA$ .",
+          "تحصّل الأب على مبلغ $5{,}4 \\times 10^{6}$ بعد دفعه الضريبة، معناه: $x - \\dfrac{20}{100} \\times x = 5{,}4 \\times 10^{6}$",
+          "$\\dfrac{80}{100} \\times x = 5{,}4 \\times 10^{6}$ ، أي: $x = 5{,}4 \\times 10^{6} \\times \\dfrac{100}{80} = 0{,}0675 \\times 10^{8}$",
+          "المبلغ الإجمالي لبيع القطعة الأرضية هو: $0{,}0675 \\times 10^{8}DA$ (أي $6{,}75 \\times 10^{6}DA$ ).",
+          "مساحة القطعة $MNE$ هي $450m^2$ : $0{,}0675 \\times 10^{8} \\div 450 = 0{,}00015 \\times 10^{8} = 1{,}5 \\times 10^{-4} \\times 10^{8} = 1{,}5 \\times 10^{4}$",
+          "إذا سعر المتر المربع الواحد هو: $1{,}5 \\times 10^{4}DA$ ."
+        ],
+        "result": "1{,}5 \\times 10^{4}DA"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

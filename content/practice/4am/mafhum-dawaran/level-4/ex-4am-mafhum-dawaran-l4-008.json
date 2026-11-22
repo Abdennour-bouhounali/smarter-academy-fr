@@ -1,0 +1,86 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l4-008",
+  "lessonCode": "mafhum-dawaran",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — النقطة التي صورتها N",
+    "estimatedMinutes": 3,
+    "tags": [
+      "صورة نقطة",
+      "المرصوفة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mafhum-dawaran_P2",
+      "modelledOn": "ex-1"
+    }
+  },
+  "statement": {
+    "content": "على المرصوفة: $O(0\\,;\\,0)$ و $N(-2\\,;\\,5)$ . N هي صورة النقطة M بالدوران الذي مركزه O وزاويته $90^\\circ$ في الاتجاه المباشر.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "N": [
+          -2,
+          5
+        ]
+      },
+      "grid": true,
+      "maxWidth": 420,
+      "ariaLabel": "ورقة مرصوفة عليها O و N"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما هما إحداثيتا M؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الإحداثيتان (x ; y) — عددان صحيحان",
+      "expectedAnswer": {
+        "x": "5",
+        "y": "2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-SABIQA",
+          "value": {
+            "x": "-5",
+            "y": "-2"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المطلوب نقطة الانطلاق لا الوصول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نعود من N إلى M بالدوران المعاكس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ربع دورة في اتجاه عقارب الساعة: (a ; b) تصبح (b ; −a)."
+        }
+      ],
+      "feedback": {
+        "correct": "نعود بربع دورة غير مباشر: (−2 ; 5) تصبح (5 ; 2)، وتحقّق: ربع دورة مباشر يعيد (5 ; 2) إلى (−2 ; 5).",
+        "incorrect": "لا تحسب صورة N: المطلوب النقطة التي صورتها N."
+      },
+      "difficulty": 4
+    }
+  ]
+}

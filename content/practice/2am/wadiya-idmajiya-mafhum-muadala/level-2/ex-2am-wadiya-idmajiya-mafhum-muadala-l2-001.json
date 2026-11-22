@@ -1,0 +1,205 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-mafhum-muadala-l2-001",
+  "lessonCode": "wadiya-idmajiya-mafhum-muadala",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — كراء قاعة بالساعة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "جزء ثابت",
+      "قيمة",
+      "متباينة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يكترئ نادٍ رياضيّ قاعة : $4000$ DA مبلغًا ثابتًا مهما كانت المدّة ، و $250$ DA عن كلّ ساعة . نسمّي $h$ عدد الساعات ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اختر العبارة التي تعطي ما يدفعه النادي بالدينار .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$4250h$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SYN-MUAD2-ADDCOEF"
+        },
+        {
+          "id": "B",
+          "content": "$250+4000h$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SYN-MUAD2-ROLE"
+        },
+        {
+          "id": "C",
+          "content": "$4000+250h$",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "$4000+250h$ .",
+        "incorrect": "اكتب الجزء الثابت مرّة واحدة والجزء المتكرّر مضروبًا في عدده، ثمّ اختبر عبارتك على عدد صغير."
+      },
+      "solution": {
+        "lines": [
+          "المبلغ الثابت يُدفع مرّة واحدة : $4000$ .",
+          "وعن الساعات : $250h$ .",
+          "المجموع : $4000+250h$ ."
+        ]
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في الوضعيّة ما يتغيّر (وهو الحرف) وما يبقى ثابتًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب ما يُدفع أو يُحسب مرّة واحدة، ثمّ ما يتكرّر مضروبًا في عدد مرّاته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر العبارة على عدد صغير مثل اثنين قبل أن تختار."
+        }
+      ],
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب ما يدفعه النادي من أجل $h = 6$ ساعات .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "5500",
+      "misconceptionSignatures": [
+        {
+          "value": "1500",
+          "id": "MISC-SYN-MUAD2-FIXED"
+        },
+        {
+          "value": "25500",
+          "id": "MISC-SYN-MUAD2-ADDCOEF"
+        },
+        {
+          "value": "24250",
+          "id": "MISC-SYN-MUAD2-ROLE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بقيمته المعلومة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات : الضرب والقسمة قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة."
+        }
+      ],
+      "feedback": {
+        "correct": "النتيجة $5500$ .",
+        "incorrect": "عوّض بالقيم المعلومة واحسب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$4000+250 \\times 6 = 5500$ ."
+        ],
+        "result": "5500"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ميزانيّة النادي $5800$ DA . هل هي كافية لاستعمال القاعة $8$ ساعات ، أي هل $4000+250h \\le 5800$ من أجل $h = 8$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم",
+          "isCorrect": false
+        }
+      ],
+      "feedback": {
+        "correct": "لا .",
+        "incorrect": "عوّض الحرف في الطرفين، احسب كلّ طرف ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل : $4000+250 \\times 8 = 6000$ .",
+          "الطرف الثاني : $5800 = 5800$ .",
+          "$6000 \\le 5800$ : العلاقة خاطئة ."
+        ]
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بقيمته المعطاة في الطرفين معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة ثمّ قارن الناتجين بالرمز المكتوب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الرمز « أصغر أو يساوي » يقبل التساوي، والرمز « أصغر تمامًا » لا يقبله."
+        }
+      ],
+      "timeSeconds": 70
+    }
+  ]
+}

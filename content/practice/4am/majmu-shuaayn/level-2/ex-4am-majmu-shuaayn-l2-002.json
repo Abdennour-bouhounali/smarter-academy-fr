@@ -1,0 +1,256 @@
+{
+  "id": "ex-4am-majmu-shuaayn-l2-002",
+  "lessonCode": "majmu-shuaayn",
+  "level": 2,
+  "metadata": {
+    "title": "تمرين 13 — بسّط",
+    "estimatedMinutes": 3,
+    "tags": [
+      "علاقة شال",
+      "الشعاع المعدوم"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-13",
+      "page": 135,
+      "section": "مجموع شعاعين - علاقة شال",
+      "number": 13
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (تمرين 13): ABC مثلث مركز ثقله G ، و A′ و B′ و C′ منتصفات [BC] و [AC] و [AB] (الشكل).",
+    "figure": {
+      "points": {
+        "A": [
+          6,
+          6
+        ],
+        "B": [
+          0,
+          0
+        ],
+        "C": [
+          9,
+          -3
+        ],
+        "A′": [
+          4.5,
+          -1.5
+        ],
+        "B′": [
+          7.5,
+          1.5
+        ],
+        "C′": [
+          3,
+          3
+        ],
+        "G": [
+          5,
+          1
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "A"
+        ],
+        {
+          "from": "A",
+          "to": "A′",
+          "tone": "slate"
+        },
+        {
+          "from": "B",
+          "to": "B′",
+          "tone": "slate"
+        },
+        {
+          "from": "C",
+          "to": "C′",
+          "tone": "slate"
+        }
+      ],
+      "labels": {
+        "A": "n",
+        "B": "w",
+        "C": "se",
+        "A′": "s",
+        "B′": "e",
+        "C′": "nw",
+        "G": "n"
+      },
+      "ariaLabel": "مثلث ABC و A′ و B′ و C′ منتصفات [BC] و [AC] و [AB] ، والمتوسطات تتقاطع في G مركز الثقل",
+      "maxWidth": 480
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "$\\overrightarrow{AA'} + \\overrightarrow{A'B} =$",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{BA}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-AKS"
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{AA'}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSIHAB-NISYAN"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{AB}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى نهاية الشعاع الأول ومبدأ الشعاع الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "علاقة شال تتطلب أن تكون نهاية الأول مبدأ الثاني؛ يمكن تبديل ترتيب الحدّين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع يبدأ من مبدأ الأول وينتهي عند نهاية الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "متعاقبان: $\\overrightarrow{AA'} + \\overrightarrow{A'B} = \\overrightarrow{AB}$ .",
+        "incorrect": "علاقة شال: نهاية الأول مبدأ الثاني، والمجموع من مبدأ الأول إلى نهاية الثاني."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "$\\overrightarrow{BB'} + \\overrightarrow{CB} =$",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{CB'}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{B'C}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-AKS"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{BB'}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSIHAB-NISYAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى نهاية الشعاع الأول ومبدأ الشعاع الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "علاقة شال تتطلب أن تكون نهاية الأول مبدأ الثاني؛ يمكن تبديل ترتيب الحدّين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع يبدأ من مبدأ الأول وينتهي عند نهاية الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "نبدّل الترتيب: $\\overrightarrow{CB} + \\overrightarrow{BB'} = \\overrightarrow{CB'}$ .",
+        "incorrect": "علاقة شال: نهاية الأول مبدأ الثاني، والمجموع من مبدأ الأول إلى نهاية الثاني."
+      }
+    },
+    {
+      "id": "q3",
+      "statement": "$\\overrightarrow{AC} + \\overrightarrow{AA} =$ (كما في الكتاب)",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2\\overrightarrow{AC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-JAM-ATWAL"
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{AC}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\vec{0}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SIFR-ADAD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المنحى والاتجاه والطول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "شعاعان متعاكسان لهما نفس المنحى ونفس الطول واتجاهان متعاكسان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الذهاب ثم العودة إلى نفس النقطة يعطي الشعاع المعدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AA} = \\vec{0}$ لا يغيّر المجموع: $\\overrightarrow{AC} + \\vec{0} = \\overrightarrow{AC}$ .",
+        "incorrect": "الشعاعان المتعاكسان مجموعهما الشعاع المعدوم؛ لا نجمع الأطوال."
+      }
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "id": "ex-4am-takrar-mujamma-l1-004",
+  "lessonCode": "takrar-mujamma",
+  "level": 1,
+  "metadata": {
+    "title": "أعمار تلاميذ متوسطة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "التكرار المجمع الصاعد",
+      "التكرار المجمع النازل"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-1",
+      "page": 92,
+      "section": "أنشطة",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "يمثّل المخطط بالأعمدة الآتي توزيع تلاميذ إحدى المتوسطات حسب أعمارهم:",
+    "figure": {
+      "kind": "chart",
+      "type": "bar",
+      "ariaLabel": "مخطط بالأعمدة لأعمار تلاميذ متوسطة: 11 سنة، 12 سنة، 13 سنة، 14 سنة",
+      "xTitle": "العمر (سنة)",
+      "yTitle": "عدد التلاميذ",
+      "y": {
+        "max": 80,
+        "step": 10
+      },
+      "bars": [
+        {
+          "label": "11",
+          "value": 40
+        },
+        {
+          "label": "12",
+          "value": 50
+        },
+        {
+          "label": "13",
+          "value": 80
+        },
+        {
+          "label": "14",
+          "value": 30
+        }
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن التكرار المجمع الصاعد الموافق للقيمة 12.",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "90",
+      "misconceptionSignatures": [
+        {
+          "value": "40",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        },
+        {
+          "value": "50",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        },
+        {
+          "value": "160",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكرار المجمع الصاعد لقيمة هو مجموع تكرارها وتكرارات القيم الأصغر منها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ من أول عمود في المخطط (11 سنة) واجمع التكرارات حتى 12 مع تكرارها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: التكرار المجمع الصاعد لآخر عمود يساوي التكرار الكلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$40 + 50 = 90$ .",
+        "incorrect": "اجمع تكرار القيمة نفسها وتكرارات القيم الأصغر منها فقط، ولا تنس تكرار القيمة نفسها."
+      },
+      "solution": {
+        "lines": [
+          "التكرار المجمع الصاعد للقيمة 12 هو مجموع تكرار القيمة 12 وتكرارات القيم الأصغر منها:",
+          "$40 + 50 = 90$"
+        ],
+        "result": "90"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عيّن التكرار المجمع النازل الموافق للقيمة 13.",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "110",
+      "misconceptionSignatures": [
+        {
+          "value": "30",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        },
+        {
+          "value": "80",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        },
+        {
+          "value": "170",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكرار المجمع النازل هو مجموع تكرار هذه القيمة وتكرارات القيم الأكبر منها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع تكرار 13 وتكرارات ما بعدها حتى آخر عمود في المخطط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: التكرار المجمع النازل لأول عمود يساوي التكرار الكلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$80 + 30 = 110$ .",
+        "incorrect": "اجمع تكرار القيمة نفسها وتكرارات القيم الأكبر منها فقط: النازل يتّجه نحو آخر عمود في المخطط."
+      },
+      "solution": {
+        "lines": [
+          "التكرار المجمع النازل للقيمة 13 هو مجموع تكرار القيمة 13 وتكرارات القيم الأكبر منها:",
+          "$80 + 30 = 110$"
+        ],
+        "result": "110"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

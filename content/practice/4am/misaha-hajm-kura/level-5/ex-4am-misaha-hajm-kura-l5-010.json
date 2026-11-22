@@ -1,0 +1,133 @@
+{
+  "id": "ex-4am-misaha-hajm-kura-l5-010",
+  "lessonCode": "misaha-hajm-kura",
+  "level": 5,
+  "metadata": {
+    "title": "أرخميدس — الفراغ يعطي الجلة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "أرخميدس",
+      "حجم الجلة",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_misaha-hajm-kura_P2",
+      "modelledOn": "intro-archimedes"
+    }
+  },
+  "statement": {
+    "content": "كرة موضوعة في علبة أسطوانية على مقاسها تماما (نصف قطر القاعدة $R$ والارتفاع $2R$، الشكل). حجم الفراغ في العلبة حول الكرة $18\\pi\\,\\mathrm{cm}^3$ . اكتب حجم الجلة على الشكل $k\\pi\\,\\mathrm{cm}^3$ ثم أعط $k$ .",
+    "figure": {
+      "kind": "space",
+      "view": {
+        "azimuth": -62,
+        "elevation": 16
+      },
+      "points": {
+        "O": [
+          0,
+          0,
+          0
+        ],
+        "N": [
+          0,
+          0,
+          1
+        ],
+        "S": [
+          0,
+          0,
+          -1
+        ],
+        "M": [
+          1,
+          0,
+          0
+        ]
+      },
+      "hidden": [
+        "N",
+        "S",
+        "M"
+      ],
+      "solids": [
+        {
+          "type": "cylinder",
+          "base": "S",
+          "top": "N",
+          "radius": 1,
+          "tone": "sky"
+        },
+        {
+          "type": "sphere",
+          "center": "O",
+          "radius": 1,
+          "tone": "rose"
+        }
+      ],
+      "segments": [
+        {
+          "from": "O",
+          "to": "M",
+          "label": "R",
+          "dashed": true
+        },
+        {
+          "from": "S",
+          "to": "N",
+          "dashed": true
+        }
+      ],
+      "labels": {
+        "O": "nw"
+      },
+      "ariaLabel": "كرة نصف قطرها R داخل أسطوانة دوران نصف قطر قاعدتها R وارتفاعها 2R: الكرة تمسّ القاعدتين والسطح الجانبي",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قيمة $k$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_misaha-hajm-kura_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة (مثل 2,5) أو عدد طبيعي",
+      "expectedAnswer": "36",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الجلة ثلثا العلبة، فالفراغ ثلثها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفراغ $18\\pi$ هو الثلث."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الجلة ضعف الفراغ."
+        }
+      ],
+      "feedback": {
+        "correct": "العلبة $54\\pi$ ، والجلة $\\frac{2}{3} \\times 54\\pi = 36\\pi\\,\\mathrm{cm}^3$ .",
+        "incorrect": "الفراغ ثلث العلبة والجلة ثلثاها."
+      },
+      "difficulty": 5,
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-HAJM-MUAMIL",
+          "value": "18"
+        }
+      ]
+    }
+  ]
+}

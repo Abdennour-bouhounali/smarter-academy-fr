@@ -1,0 +1,203 @@
+{
+  "id": "ex-4am-mada-wasit-mutawassit-l2-010",
+  "lessonCode": "mada-wasit-mutawassit",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2024 — ساعات التطوّع في نادي البيئة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "الوسيط",
+      "المتوسط",
+      "تفسير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mada-wasit-mutawassit_P3",
+      "modelledOn": "BEM 2024 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "عدد الساعات التي تطوّع بها سبعة أعضاء من نادي البيئة في حملة تشجير: 6 ، 9 ، 4 ، 12 ، 7 ، 9 ، 15 ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "قال رئيس النادي: «نصف الأعضاء على الأقل تطوّعوا 9 ساعات أو أكثر». هل قوله صحيح؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رتّب القيم ثم عيّن وسيط السلسلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "50% على الأقل من القيم أكبر من الوسيط أو تساويه."
+        }
+      ],
+      "feedback": {
+        "correct": "الوسيط 9، فأربعة أعضاء من سبعة تطوّعوا 9 ساعات أو أكثر.",
+        "incorrect": "عيّن الوسيط ثم عُدّ الأعضاء الذين تطوّعوا 9 ساعات أو أكثر."
+      },
+      "solution": {
+        "lines": [
+          "الترتيب التصاعدي: 4 ، 6 ، 7 ، 9 ، 9 ، 12 ، 15",
+          "عدد القيم 7، والوسيط هو القيمة ذات الرتبة 4: $Med = 9$",
+          "القيم 9 ، 9 ، 12 ، 15 أكبر من 9 أو تساويها: 4 أعضاء من 7، وهذا أكثر من النصف.",
+          "قول الرئيس صحيح."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "وقال أيضا: «متوسط ساعات التطوّع يفوق 9 ساعات». هل قوله صحيح؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-WASIT-MUTAWASSIT"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب متوسط السلسلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن المتوسط بالعدد 9: «يفوق» تعني أكبر تماما."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{62}{7} \\approx 8{,}86 < 9$ .",
+        "incorrect": "لا تخلط بين الوسيط والمتوسط: احسب المتوسط ثم قارنه بـ 9."
+      },
+      "solution": {
+        "lines": [
+          "مجموع القيم: $6 + 9 + 4 + 12 + 7 + 9 + 15 = 62$",
+          "$m = \\dfrac{62}{7} \\approx 8{,}86$",
+          "$8{,}86 < 9$ ، فقوله خاطئ."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "التحق بالنادي عضو ثامن تطوّع 3 ساعات. عيّن وسيط السلسلة الجديدة.",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة العشرية إن لزم)",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "9,5",
+          "id": "MISC-IHSA-WASIT-BILA-TARTIB"
+        },
+        {
+          "value": "7",
+          "id": "MISC-IHSA-WASIT-RUTBA"
+        },
+        {
+          "value": "9",
+          "id": "MISC-IHSA-WASIT-RUTBA"
+        },
+        {
+          "value": "8,125",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا يُقرأ الوسيط إلا بعد ترتيب قيم السلسلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب القيم تصاعديا، ثم عُدّها: هل عددها N فردي أم زوجي؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان N فرديا فالوسيط هو القيمة ذات الرتبة $\\dfrac{N + 1}{2}$ ، وإذا كان زوجيا فهو نصف مجموع القيمتين ذواتي الرتبتين $\\dfrac{N}{2}$ و $\\dfrac{N}{2} + 1$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$Med = 8$ .",
+        "incorrect": "رتّب القيم أولا، ثم عيّن الرتبة الوسطى (أو الرتبتين الوسطيين إذا كان عدد القيم زوجيا)."
+      },
+      "solution": {
+        "lines": [
+          "الترتيب التصاعدي: 3 ، 4 ، 6 ، 7 ، 9 ، 9 ، 12 ، 15",
+          "عدد القيم 8 عدد زوجي، فالوسيط هو نصف مجموع القيمتين ذواتي الرتبتين 4 و 5 (7 و 9):",
+          "$Med = \\dfrac{7 + 9}{2} = 8$"
+        ],
+        "result": "Med = 8"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

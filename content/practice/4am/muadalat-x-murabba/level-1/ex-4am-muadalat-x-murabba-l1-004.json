@@ -1,0 +1,221 @@
+{
+  "id": "ex-4am-muadalat-x-murabba-l1-004",
+  "lessonCode": "muadalat-x-murabba",
+  "level": 1,
+  "metadata": {
+    "title": "عدد حلول معادلات من الشكل x² = a",
+    "estimatedMinutes": 4,
+    "tags": [
+      "إشارة a",
+      "عدد الحلول"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_muadalat-x-murabba_P1",
+      "modelledOn": "know-3"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "إليك المعادلات:",
+    "formulas": [
+      "x^2 = -7 \\quad ; \\quad x^2 = 0 \\quad ; \\quad x^2 = 7 \\quad ; \\quad x^2 = 0{,}7"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "عيّن عدد حلول المعادلة $x^2 = -7$.",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "0",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-HALL-SALIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة العدد $-7$؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع أي عدد موجب أو معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "مربع أي عدد لا يكون سالبًا: المعادلة لا تقبل أي حل.",
+        "incorrect": "انظر إلى إشارة الطرف الثاني: هل يوجد عدد مربعه سالب؟"
+      },
+      "solution": {
+        "lines": [
+          "$-7 < 0$ ومربع أي عدد موجب أو معدوم،",
+          "إذن المعادلة $x^2 = -7$ لا تقبل أي حل."
+        ],
+        "result": "0"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "عيّن عدد حلول المعادلة $x^2 = 0$.",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-HALL-SIFR"
+        },
+        {
+          "value": "0",
+          "id": "MISC-HALL-SIFR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما هو العدد الذي مربعه 0؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل لهذا العدد معاكس مختلف عنه؟"
+        }
+      ],
+      "feedback": {
+        "correct": "المعادلة $x^2 = 0$ تقبل حلا واحدا هو 0.",
+        "incorrect": "العدد 0 هو معاكس نفسه: كم عددًا مربعه 0؟"
+      },
+      "solution": {
+        "lines": [
+          "$x^2 = 0$ يعني $x = 0$،",
+          "إذن المعادلة $x^2 = 0$ تقبل حلا واحدا هو 0."
+        ],
+        "result": "1"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "عيّن عدد حلول المعادلة $x^2 = 7$.",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-HALL-WAHID"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة العدد 7؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "للمعادلة $x^2 = a$ حيث $a > 0$ عددان متعاكسان مربع كل منهما $a$."
+        }
+      ],
+      "feedback": {
+        "correct": "المعادلة $x^2 = 7$ تقبل حلين متعاكسين هما $\\sqrt{7}$ و $-\\sqrt{7}$.",
+        "incorrect": "لعددين متعاكسين نفس المربع: لا تنسَ الحل السالب."
+      },
+      "solution": {
+        "lines": [
+          "$7 > 0$، إذن المعادلة $x^2 = 7$ تقبل حلين متعاكسين:",
+          "$x = \\sqrt{7}$ أو $x = -\\sqrt{7}$"
+        ],
+        "result": "2"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "عيّن عدد حلول المعادلة $x^2 = 0{,}7$.",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-HALL-WAHID"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة العدد $0{,}7$؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كون العدد عشريًا لا يغيّر شيئًا: المهم إشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "المعادلة $x^2 = 0{,}7$ تقبل حلين متعاكسين هما $\\sqrt{0{,}7}$ و $-\\sqrt{0{,}7}$.",
+        "incorrect": "المهم هو إشارة الطرف الثاني: لا تنسَ الحل السالب."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}7 > 0$، إذن المعادلة $x^2 = 0{,}7$ تقبل حلين متعاكسين:",
+          "$x = \\sqrt{0{,}7}$ أو $x = -\\sqrt{0{,}7}$"
+        ],
+        "result": "2"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

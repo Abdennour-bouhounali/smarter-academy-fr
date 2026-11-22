@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-muntasaf-masafa-l3-006",
+  "lessonCode": "muntasaf-masafa",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — جذر يُبسَّط",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المسافة",
+      "قيمة مضبوطة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_muntasaf-masafa_P2",
+      "modelledOn": "ex-15"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس: $E(1\\,;\\,-2)$ و $F(4\\,;\\,1)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "القيمة المضبوطة للمسافة EF:",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3\\sqrt{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-JAM"
+        },
+        {
+          "id": "C",
+          "content": "$18$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-NASI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الفرقين: فرق الفاصلتين وفرق الترتيبين (النهاية ناقص المبدأ)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ربّع كل فرق ثم اجمع المربعين: هذا مربع المسافة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خذ الجذر التربيعي في الأخير، وبسّطه إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$EF = \\sqrt{3^2 + 3^2} = \\sqrt{18} = \\sqrt{9 \\times 2} = 3\\sqrt{2}$ .",
+        "incorrect": "الجذر لا يوزَّع على المجموع."
+      }
+    }
+  ]
+}

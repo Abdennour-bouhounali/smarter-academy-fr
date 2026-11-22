@@ -1,0 +1,361 @@
+{
+  "id": "ex-2am-talim-mustaqim-mudarraj-2-l5-009",
+  "lessonCode": "talim-mustaqim-mudarraj-2",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مسار الدرّاجات",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "مسار",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "06"
+    }
+  },
+  "statement": {
+    "content": "في حديقة مدينة، مسار دراجات مستقيم تقاس مواضع علاماته بالأمتار انطلاقًا من نقطة الانطلاق $O$ : $A(-60)$ ، $B(+45)$ ، $C(+90)$ ، $D(-15)$ . تُعدّ لوحة فيها $6$ تدريجات على الأكثر في كلّ جهة.\nالجزء الأول: اختيار التدريجة.\nالجزء الثاني: القراءة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "نريد وضع النقط التي فواصلها $-60$ ؛ $45$ ؛ $90$ ؛ $-15\\,\\mathrm{m}$ على مستقيم مدرّج فيه $6$ تدريجات على الأكثر في كلّ جهة من المبدأ. ما التدريجة المناسبة (قيمة التدريجة الواحدة) ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$5\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM2-TOOSMALL"
+        },
+        {
+          "id": "B",
+          "content": "$10\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM2-TOOBIG"
+        },
+        {
+          "id": "C",
+          "content": "$15\\,\\mathrm{m}$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$30\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM2-TOOBIG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أبعد عدد عن الصفر يحدّد أكبر عدد من التدريجات يلزم عدّها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التدريجة المناسبة تُبقي كلّ النقط داخل المستقيم وتجعل كلّ فاصلة على تدريجة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قسّم كلّ فاصلة على قيمة التدريجة المقترحة وانظر إلى النتيجة."
+        }
+      ],
+      "feedback": {
+        "correct": "التدريجة $15$ تضع كلّ النقط على تدريجات وداخل المستقيم.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "أبعد فاصلة عن الصفر هي $90$",
+          "مع التدريجة $15$ : $-60 \\div 15 = -4$ ؛ $45 \\div 15 = 3$ ؛ $90 \\div 15 = 6$ ؛ $-15 \\div 15 = -1$",
+          "كلّ فاصلة على تدريجة وأبعدها على $6$ تدريجات: التدريجة المناسبة هي $15$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "نريد وضع النقطة $A(-60)$ على مستقيم مدرّج، وقيمة التدريجة الواحدة $15\\,\\mathrm{m}$. كم تدريجة تعدّ من المبدأ؟ اكتب العدد سالبًا إذا كانت النقطة على يسار المبدأ.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "value": "-60",
+          "id": "MISC-TALIM2-UNITIGNORED"
+        },
+        {
+          "value": "4",
+          "id": "MISC-TALIM2-SIGNSIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد التدريجات = الفاصلة ÷ قيمة التدريجة الواحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أمّا الجهة فتحدّدها الإشارة: سالبة على اليسار، موجبة على اليمين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب عدد التدريجات في قيمة التدريجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$-60 \\div 15 = -4$ : عدد التدريجات مسبوق بالإشارة.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$-60 \\div 15 = -4$",
+          "$4$ تدريجات إلى يسار المبدأ"
+        ],
+        "result": "-4"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "برّر : لماذا لا تصلح التدريجة $10\\,\\mathrm{m}$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب جملة أو جملتين: الفكرة ثمّ الحساب الذي يدعمها."
+        }
+      ],
+      "feedback": {
+        "correct": "فلا يمكن وضعها على تدريجة.",
+        "incorrect": "قارن تبريرك بالحلّ النموذجي: الفكرة ثمّ الحساب الذي يدعمها."
+      },
+      "solution": {
+        "lines": [
+          "$45 \\div 10 = 4{,}5$ : العلامة $B$ تقع بين تدريجتين.",
+          "فلا يمكن وضعها على تدريجة."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "statement": "النقطة $E$ على 4 تدريجات إلى يمين المبدأ، وقيمة التدريجة الواحدة $15\\,\\mathrm{m}$. ما فاصلة $E$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$60\\,\\mathrm{m}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$19\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM2-ADDSTEP"
+        },
+        {
+          "id": "C",
+          "content": "$4\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM2-UNITIGNORED"
+        },
+        {
+          "id": "D",
+          "content": "$-60\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM2-SIGNSIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ التدريجات بين المبدأ والنقطة، ثم انظر إلى جهتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفاصلة = عدد التدريجات × قيمة التدريجة الواحدة، وإشارتها حسب الجهة: يمين المبدأ موجبة، يسار المبدأ سالبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء أوّلًا ثم ضع الإشارة المناسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$E(60)$ : $4$ تدريجات × $15\\,\\mathrm{m}$ ، في الجهة اليمنى فالإشارة موجبة.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "عدد التدريجات $4$ ، قيمة التدريجة $15\\,\\mathrm{m}$",
+          "النقطة على يمين المبدأ فالإشارة موجبة",
+          "$E(60)$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما معاكس العدد $-15$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "-15",
+          "id": "MISC-TALIM2-OPPSAME"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العددان المتعاكسان لهما المسافة نفسها إلى الصفر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "معاكس عدد يُحصل عليه بتغيير إشارته فقط، ولا يتغيّر ما بعد الإشارة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: مجموع العددين المتعاكسين يساوي الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "معاكس $-15$ هو $15$ : المسافة نفسها إلى الصفر، والإشارة مختلفة.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "معاكس $-15$ هو العدد الذي له المسافة نفسها إلى الصفر وإشارته مخالفة",
+          "$15$"
+        ],
+        "result": "15"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ج",
+      "statement": "ما المسافة إلى الصفر للعدد $-60$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد موجب أو معدوم",
+      "expectedAnswer": "60",
+      "misconceptionSignatures": [
+        {
+          "value": "-60",
+          "id": "MISC-TALIM2-NEGDIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة إلى الصفر هي عدد التدريجات مضروبًا في قيمتها، ولا تكون سالبة أبدًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احذف الإشارة وأبقِ العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة إلى الصفر لعددين متعاكسين واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "المسافة إلى الصفر للعدد $-60$ هي $60$ : لا تكون سالبة.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "المسافة إلى الصفر هي العدد دون إشارته",
+          "$60$"
+        ],
+        "result": "60"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

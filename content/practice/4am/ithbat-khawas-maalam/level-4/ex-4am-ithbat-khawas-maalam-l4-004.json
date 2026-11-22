@@ -1,0 +1,95 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l4-004",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 4,
+  "metadata": {
+    "title": "من الكتاب — التمرين 19 (ص 147)",
+    "estimatedMinutes": 4,
+    "tags": [
+      "متقايس الأضلاع",
+      "دائرة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-19",
+      "page": 147,
+      "section": "إحداثيتا منتصف قطعة - المسافة بين نقطتين",
+      "number": 19
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 147): المستوي مزود بمعلم متعامد ومتجانس، مبدؤه النقطة O. $A(1\\,;\\,0)$ ، $B\\left(-\\dfrac{1}{2}\\,;\\,\\dfrac{\\sqrt{3}}{2}\\right)$ ، $C\\left(-\\dfrac{1}{2}\\,;\\,-\\dfrac{\\sqrt{3}}{2}\\right)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "احسب $AB^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مركبتا $\\overrightarrow{AB}$ : $-\\dfrac{3}{2}$ و $\\dfrac{\\sqrt{3}}{2}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\left(\\dfrac{\\sqrt{3}}{2}\\right)^2 = \\dfrac{3}{4}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الكسرين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9}{4} + \\dfrac{3}{4} = 3$ ، وكذلك $BC^2 = AC^2 = 3$ : متقايس الأضلاع.",
+        "incorrect": "مربع $\\sqrt{3}$ هو 3."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "احسب $OB^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مركبتا $\\overrightarrow{OB}$ هما إحداثيتا B."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ربّع كلا منهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{4} + \\dfrac{3}{4} = 1 = OA^2$ : O مركز الدائرة المحيطة.",
+        "incorrect": "ربّع الكسرين ثم اجمع."
+      }
+    }
+  ]
+}

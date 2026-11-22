@@ -1,0 +1,100 @@
+{
+  "id": "ex-4am-zawiya-muhitiya-l4-008",
+  "lessonCode": "zawiya-muhitiya",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — زاويتان بدلالة x",
+    "estimatedMinutes": 4,
+    "tags": [
+      "خاصية 2",
+      "معادلة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_zawiya-muhitiya_P3",
+      "modelledOn": "know-4"
+    }
+  },
+  "statement": {
+    "content": "$\\widehat{AMB}$ و $\\widehat{ANB}$ زاويتان محيطيتان في دائرة تحصران نفس القوس، حيث $\\widehat{AMB} = (2x - 5)^\\circ$ و $\\widehat{ANB} = (x + 30)^\\circ$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قيمة x؟",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "35",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الزاويتان تحصران نفس القوس: اكتب العلاقة بينهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض كل زاوية بعبارتها بدلالة x، تحصل على معادلة من الدرجة الأولى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة ثم تحقّق بالتعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "$2x - 5 = x + 30$ ومنه $x = 35$ .",
+        "incorrect": "الزاويتان متقايستان: اكتب المعادلة."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "ما قيس كل من الزاويتين بالدرجة؟",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "65",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الزاويتان تحصران نفس القوس: اكتب العلاقة بينهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض كل زاوية بعبارتها بدلالة x، تحصل على معادلة من الدرجة الأولى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة ثم تحقّق بالتعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "$35 + 30 = 65^\\circ$ ، و $2 \\times 35 - 5 = 65^\\circ$ .",
+        "incorrect": "عوّض x في إحدى العبارتين وتحقّق بالأخرى."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-JUZ",
+          "value": "35"
+        }
+      ]
+    }
+  ]
+}

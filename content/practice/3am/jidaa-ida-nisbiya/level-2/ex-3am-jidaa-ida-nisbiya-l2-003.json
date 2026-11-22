@@ -1,0 +1,181 @@
+{
+  "id": "ex-3am-jidaa-ida-nisbiya-l2-003",
+  "lessonCode": "jidaa-ida-nisbiya",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — جداءات وسلسلة عوامل",
+    "estimatedMinutes": 8,
+    "tags": [
+      "جداء عدة أعداد",
+      "إشارة الجداء"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 1,
+      "file": "3am-s1-2",
+      "exercise": 6
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "احسب كلًّا من الأعداد $A$ و $B$ و $C$ حيث:",
+    "formulas": [
+      "A = (−7) \\times (−11)",
+      "B = (+6) \\times (−10) \\div (−2)",
+      "C = (−3) \\times (−1) \\times (+2) \\times (+10) \\times (−5) \\times (+1)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $A$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "77",
+      "misconceptionSignatures": [
+        {
+          "value": "-77",
+          "id": "MISC-IDA-MORENEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ العوامل السالبة أولًا، فهي التي تعيّن إشارة الجداء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عدد العوامل السالبة زوجيًا فالجداء موجب، وإذا كان فرديًا فهو سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب المسافات إلى الصفر، ويمكنك تغيير ترتيب العوامل لتجمع ما يسهّل الحساب (مثل $4 \\times 25$)."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−7) \\times (−11) = 77$ : عدد العوامل السالبة $2$ (عدد زوجي)، إذن الجداء موجب.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "عدد العوامل السالبة هو $2$ ، وهو عدد زوجي، إذن الجداء موجب.",
+          "نضرب المسافات إلى الصفر: $7 \\times 11 = 77$",
+          "$A = 77$"
+        ],
+        "result": "A = 77"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $B$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "30",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في سلسلة عمليات من الضرب والقسمة نحسب من اليسار إلى اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قسمة عددين سالبين تعطي عددًا موجبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الجداء $6 \\times (−10)$ أولًا ثم اقسم نتيجته على $(−2)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 6 \\times (−10) \\div (−2) = 30$ .",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "$6 \\times (−10) = −60$",
+          "$−60 \\div (−2) = 30$ لأنّ $(−2) \\times 30 = −60$ .",
+          "$B = 30$"
+        ],
+        "result": "B = 30"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "احسب $C$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-300",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ العوامل السالبة أولًا، فهي التي تعيّن إشارة الجداء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عدد العوامل السالبة زوجيًا فالجداء موجب، وإذا كان فرديًا فهو سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب المسافات إلى الصفر، ويمكنك تغيير ترتيب العوامل لتجمع ما يسهّل الحساب (مثل $4 \\times 25$)."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−3) \\times (−1) \\times (+2) \\times (+10) \\times (−5) \\times (+1) = −300$ : عدد العوامل السالبة $3$ (عدد فردي)، إذن الجداء سالب.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "عدد العوامل السالبة هو $3$ ، وهو عدد فردي، إذن الجداء سالب.",
+          "نضرب المسافات إلى الصفر: $3 \\times 1 \\times 2 \\times 10 \\times 5 \\times 1 = 300$",
+          "$C = −300$"
+        ],
+        "result": "C = −300"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

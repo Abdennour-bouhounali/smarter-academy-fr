@@ -1,0 +1,287 @@
+{
+  "id": "ex-3am-adad-natiq-l3-007",
+  "lessonCode": "adad-natiq",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — إشارة وكتابة معيارية وعدد عشري",
+    "estimatedMinutes": 12,
+    "tags": [
+      "العدد الناطق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد $E=\\dfrac{-2{,}8}{-8}$ الذي سجّلته نور بدقّة في دفتر القياسات."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما إشارة العدد $E$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "موجب",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "سالب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-TWONEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر إشارة حاصل قسمة عددين نسبيين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العدد بمقام موجب ثمّ اقرأ إشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: موجب .",
+        "incorrect": "قارن إشارتي البسط والمقام ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "البسط والمقام سالبان.",
+          "حاصل قسمة عددين سالبين موجب : $E>0$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اكتب العدد $E=\\dfrac{-2{,}8}{-8}$ على أبسط شكل بمقام موجب .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "7/20",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "-7/20",
+          "id": "MISC-NATIQ-TWONEG"
+        },
+        {
+          "value": "20/7",
+          "id": "MISC-NATIQ-INVERT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة الحاصل؟ قارن إشارتي البسط والمقام."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل الإشارة إلى أمام الكسر حتى يصير المقام موجبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل بقسمة البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = \\dfrac{7}{20}$ .",
+        "incorrect": "تذكّر أنّ المقام في الكتابة المعيارية موجب، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$E=\\dfrac{2{,}8}{8}=\\dfrac{28}{80}$ .",
+          "نختزل على $4$ : $E=\\dfrac{7}{20}$ ."
+        ],
+        "result": "E = \\dfrac{7}{20}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "هل العدد $E$ عشري ؟",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-DECIMAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّل مقام الكسر المختزل إلى جداء عوامل أوّلية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الكسر المختزل له كتابة عشرية تامّة إذا لم يظهر في مقامه إلّا العاملان الأوّليان اللذان يقسمان العدد عشرة."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: نعم .",
+        "incorrect": "اختزل ثمّ حلّل المقام، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$E=\\dfrac{7}{20}$ و $20=2^2\\times 5$ ، ليس في مقامه إلّا العاملان $2$ و $5$ .",
+          "إذن للعدد كتابة عشرية تامّة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "اكتب العدد $E$ على الشكل العشري .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "0.35",
+      "misconceptionSignatures": [
+        {
+          "value": "-0.35",
+          "id": "MISC-NATIQ-TWONEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختزل الكسر أوّلًا إن أمكن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّل مقام الكسر المختزل إلى جداء عوامل أوّلية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الكسر المختزل له كتابة عشرية تامّة إذا لم يظهر في مقامه إلّا العاملان الأوّليان اللذان يقسمان العدد عشرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}35$ .",
+        "incorrect": "اختزل ثمّ حلّل المقام، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{7}{20}=\\dfrac{35}{100}$ .",
+          "$E=0{,}35$ ."
+        ],
+        "result": "0{,}35"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "برّر أنّ $E$ عدد ناطق .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثمّ اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجب أن تبرّره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اذكر القاعدة التي تستعملها في كلّ سطر."
+        }
+      ],
+      "feedback": {
+        "correct": "تطابق تبريرك مع الحل النموذجي .",
+        "incorrect": "قارن تبريرك بالحل النموذجي سطرًا سطرًا، ثمّ قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "$E=\\dfrac{-2{,}8}{-8}=\\dfrac{7}{20}$ حاصل قسمة عددين صحيحين مقامه غير معدوم.",
+          "إذن $E$ عدد ناطق، وهو عشري أيضًا."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

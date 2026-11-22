@@ -13,6 +13,10 @@ import { useState, useEffect, useRef, useCallback } from 'react';
  */
 export function useCountdownTimer(durationSeconds, { defaultEnabled = false, onExpire } = {}) {
   const [enabled, setEnabled] = useState(defaultEnabled);
+  // `enabled` lu au MOMENT de start() : la bascule « activer puis démarrer » se fait dans le même clic (TimerToggle :
+  // setEnabled(true) puis start()) — avec l'état seul, start() lisait encore `false` et le minuteur ne partait JAMAIS
+  // (signalé par le propriétaire, 2026-11-08).
+  const enabledRef = useRef(defaultEnabled);
   const [remaining, setRemaining] = useState(durationSeconds);
   const [running, setRunning] = useState(false);
   const onExpireRef = useRef(onExpire);
@@ -36,14 +40,15 @@ export function useCountdownTimer(durationSeconds, { defaultEnabled = false, onE
   }, [enabled, running, remaining]);
 
   const start = useCallback(() => {
-    if (!enabled) return;
+    if (!enabledRef.current) return;
     setRemaining(durationSeconds);
     setRunning(true);
-  }, [enabled, durationSeconds]);
+  }, [durationSeconds]);
 
   const stop = useCallback(() => setRunning(false), []);
 
   const toggleEnabled = useCallback((next) => {
+    enabledRef.current = next;
     setEnabled(next);
     setRunning(false);
     setRemaining(durationSeconds);

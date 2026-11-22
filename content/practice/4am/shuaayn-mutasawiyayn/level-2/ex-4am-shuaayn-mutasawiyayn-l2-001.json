@@ -1,0 +1,127 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l2-001",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 2,
+  "metadata": {
+    "title": "تمرين 6 — صورتان بانسحابين",
+    "estimatedMinutes": 4,
+    "tags": [
+      "انسحاب",
+      "المنتصف"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-6",
+      "page": 134,
+      "section": "الأشعة ومتوازي الأضلاع",
+      "number": 6
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 134): OAB مثلث. M صورة O بالانسحاب الذي شعاعه $\\overrightarrow{AO}$ ، و N صورة A بالانسحاب الذي شعاعه $\\overrightarrow{BM}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "بالنسبة إلى القطعة [AM]، النقطة O هي:",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "منتصف [AM]",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "أحد طرفي [AM] فقط",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "نقطة من [AM] أقرب إلى A",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TUL-FAQAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المساواة الشعاعية التي تعطيها صورة O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\overrightarrow{OM} = \\overrightarrow{AO}$ ، أي $\\overrightarrow{AO} = \\overrightarrow{OM}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارنها بخاصية معارف 3."
+        }
+      ],
+      "feedback": {
+        "correct": "الشعاعان AO و OM متساويان: O منتصف [AM].",
+        "incorrect": "صورة O هي M: الشعاع OM يساوي الشعاع AO."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "N صورة A بالانسحاب الذي شعاعه BM يعني:",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{NA} = \\overrightarrow{BM}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSIHAB-SURA"
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{AM} = \\overrightarrow{BN}$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{AN} = \\overrightarrow{BM}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من النقطة إلى صورتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من A نتحرّك كما نتحرّك من B إلى M."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الشعاع يبدأ من A وينتهي عند N."
+        }
+      ],
+      "feedback": {
+        "correct": "صورة A هي N: الشعاع AN يساوي الشعاع BM، فالرباعي BMNA متوازي أضلاع.",
+        "incorrect": "الشعاع يبدأ من النقطة وينتهي عند صورتها."
+      }
+    }
+  ]
+}

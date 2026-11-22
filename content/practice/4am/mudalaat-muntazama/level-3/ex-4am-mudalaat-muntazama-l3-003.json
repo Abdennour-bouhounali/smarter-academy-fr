@@ -1,0 +1,66 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l3-003",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 3,
+  "metadata": {
+    "title": "دوري الآن — زاوية السباعي",
+    "estimatedMinutes": 3,
+    "tags": [
+      "زاوية المضلع",
+      "المدوّر"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "now-157",
+      "page": 157,
+      "section": "دوري الآن",
+      "number": 1
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 157): ABCDEFG سباعي منتظم مركزه O."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المدوّر إلى الوحدة للزاوية $\\widehat{ABC}$ (بالدرجات):",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح (بالدرجات)",
+      "expectedAnswer": "129",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUNTAZAM-MARKAZIYA",
+          "value": "51"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالزاوية المركزية التي تحصر ضلعا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المثلث الذي رأسه المركز وقاعدته ضلع متساوي الساقين: احسب زاويتي قاعدته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زاوية المضلع ضعف زاوية قاعدة هذا المثلث."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{ABC} = 180^\\circ - \\dfrac{360^\\circ}{7} = \\dfrac{900^\\circ}{7} \\approx 128{,}57^\\circ$ .",
+        "incorrect": "زاوية المضلع = الدورة النصفية ناقص الزاوية المركزية، ثم ندوّر."
+      },
+      "difficulty": 3
+    }
+  ]
+}

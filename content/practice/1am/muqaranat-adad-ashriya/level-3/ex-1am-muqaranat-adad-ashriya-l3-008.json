@@ -1,0 +1,206 @@
+{
+  "id": "ex-1am-muqaranat-adad-ashriya-l3-008",
+  "lessonCode": "muqaranat-adad-ashriya",
+  "level": 3,
+  "metadata": {
+    "title": "رتّب تنازليًا",
+    "estimatedMinutes": 6,
+    "tags": [
+      "ترتيب تنازلي"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-20",
+      "page": 18,
+      "section": "أتمرّن",
+      "number": 20
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "رتّب تنازليًّا أعدادًا عشرية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "رتّب الأعداد تنازليًا (من الأكبر إلى الأصغر): $61{,}5$ ، $615$ ، $61{,}05$ ، $61{,}505$ ، $61{,}49$. أيّ السلاسل الآتية صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$615 > 61{,}505 > 61{,}49 > 61{,}5 > 61{,}05$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-DIGITS-AS-NATURAL"
+        },
+        {
+          "id": "B",
+          "content": "$615 > 61{,}505 > 61{,}49 > 61{,}05 > 61{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-LONGER-BIGGER"
+        },
+        {
+          "id": "C",
+          "content": "$615 > 61{,}505 > 61{,}5 > 61{,}49 > 61{,}05$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$61{,}505 > 61{,}5 > 61{,}49 > 61{,}05 > 615$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-IGNORE-WHOLE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن عددين عددين، وابحث عن الأصغر (أو الأكبر) أولًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ بالجزء الصحيح، فهو يفرز الأعداد إلى مجموعات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "داخل المجموعة الواحدة قارن الأعشار ثم الأجزاء من مائة، ثم تحقق من الترتيب كاملًا."
+        }
+      ],
+      "feedback": {
+        "correct": "الترتيب التنازلي : $615 > 61{,}505 > 61{,}5 > 61{,}49 > 61{,}05$",
+        "incorrect": "نقارن العددين اثنين اثنين، ونبدأ بالجزء الصحيح ثم الأعشار فالأجزاء من مائة، ثم نكتب السلسلة كاملة ونتحقق من كل رمز."
+      },
+      "solution": {
+        "lines": [
+          "نقارن الأعداد اثنين اثنين ونرتّبها: $615 > 61{,}505 > 61{,}5 > 61{,}49 > 61{,}05$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هو أكبر عدد من بين الأعداد: $61{,}5$ ، $615$ ، $61{,}05$ ، $61{,}505$ ، $61{,}49$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "615",
+      "misconceptionSignatures": [
+        {
+          "value": "61,505",
+          "id": "MISC-MUQARANA-IGNORE-WHOLE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الأعداد عددين عددين، واحتفظ في كل مرة بالأكبر (أو الأصغر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الجزء الصحيح أولًا، ثم الأعشار، ثم الأجزاء من مائة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يكفي أن يكون في العدد أرقام كثيرة بعد الفاصلة ليكون أكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "أكبر عدد هو $615$ ؛ الترتيب: $61{,}05 < 61{,}49 < 61{,}5 < 61{,}505 < 615$.",
+        "incorrect": "نقارن الأعداد الواحد بالآخر رتبةً رتبةً؛ وليس العدد الأطول (أرقامه أكثر بعد الفاصلة) هو الأكبر دائمًا."
+      },
+      "solution": {
+        "lines": [
+          "نرتّب الأعداد: $61{,}05 < 61{,}49 < 61{,}5 < 61{,}505 < 615$",
+          "إذن أكبر عدد هو $615$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ضع الرمز المناسب ($<$ أو $=$ أو $>$) مكان النقط: $61{,}505 \\ldots 61{,}5$",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الرمز المناسب",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$<$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-SYMBOL-SWAP"
+        },
+        {
+          "id": "B",
+          "content": "$=$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-ZERO-PLACE"
+        },
+        {
+          "id": "C",
+          "content": "$>$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا تقرأ الأرقام بعد الفاصلة على أنها عدد طبيعي منفصل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أتمم الأرقام بأصفار غير ضرورية لتتساوى عدد الأرقام بعد الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الأعشار أولًا: الرتبة الأعلى تحسم قبل الرتب الأدنى."
+        }
+      ],
+      "feedback": {
+        "correct": "الجزآن الصحيحان متساويان؛ نقارن عددَي أجزاء من ألف: $505$ و $500$، إذن $61{,}505 > 61{,}5$.",
+        "incorrect": "عدد الأرقام بعد الفاصلة لا يحدّد كِبَر العدد: نقارن الأعشار قبل الأجزاء من مائة. مثال: $3{,}2 = 3{,}20$ أكبر من $3{,}14$ لأنّ 20 جزءًا من مائة أكثر من 14."
+      },
+      "solution": {
+        "lines": [
+          "نتمم بأصفار لنساوي عدد الأرقام بعد الفاصلة: $61{,}505$ و $61{,}500$.",
+          "الجزآن الصحيحان متساويان؛ نقارن عددَي أجزاء من ألف: $505$ و $500$، إذن $61{,}505 > 61{,}5$."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

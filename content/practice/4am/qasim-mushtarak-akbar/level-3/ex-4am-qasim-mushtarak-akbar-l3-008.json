@@ -1,0 +1,172 @@
+{
+  "id": "ex-4am-qasim-mushtarak-akbar-l3-008",
+  "lessonCode": "qasim-mushtarak-akbar",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2023 — A = 210/294",
+    "estimatedMinutes": 9,
+    "tags": [
+      "PGCD",
+      "كسر",
+      "قواسم مشتركة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-mushtarak-akbar_P2",
+      "modelledOn": "BEM 2023 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد A حيث:",
+    "formulas": [
+      "A = \\dfrac{210}{294}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب PGCD(210 ; 294).",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "42",
+      "misconceptionSignatures": [
+        {
+          "value": "21",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قائمة قواسم كل من العددين 210 و 294."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استخرج القواسم المشتركة: الأعداد الموجودة في القائمتين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاسم المشترك الأكبر هو أكبر القواسم المشتركة، لا أيّ واحد منها."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 210 و 294 هي 1 ، 2 ، 3 ، 6 ، 7 ، 14 ، 21 ، 42، وأكبرها 42.",
+        "incorrect": "اكتب قائمتي القواسم كاملتين، ثم خذ أكبر عدد يظهر في القائمتين معًا."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 210 هي: 1 ، 2 ، 3 ، 5 ، 6 ، 7 ، 10 ، 14 ، 15 ، 21 ، 30 ، 35 ، 42 ، 70 ، 105 ، 210",
+          "قواسم العدد 294 هي: 1 ، 2 ، 3 ، 6 ، 7 ، 14 ، 21 ، 42 ، 49 ، 98 ، 147 ، 294",
+          "القواسم المشتركة للعددين 210 و 294 هي: 1 ، 2 ، 3 ، 6 ، 7 ، 14 ، 21 ، 42",
+          "أكبرها هو 42، إذن:"
+        ],
+        "result": "PGCD(210 ; 294) = 42"
+      },
+      "work": "optional",
+      "timeSeconds": 330
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب العدد A على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "5/7",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 42: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال 01.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{210}{294} = \\dfrac{210 \\div 42}{294 \\div 42}$"
+        ],
+        "result": "\\dfrac{210}{294} = \\dfrac{5}{7}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "استنتج عدد القواسم المشتركة للعددين 210 و 294.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد القواسم المشتركة)",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القواسم المشتركة لعددين هي قواسم قاسمهما المشترك الأكبر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل قواسم العدد الذي وجدته في السؤال 01، ثم عدّها."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة هي قواسم 42: 1 ، 2 ، 3 ، 6 ، 7 ، 14 ، 21 ، 42 ، أي 8 قواسم.",
+        "incorrect": "عدّ قواسم القاسم المشترك الأكبر كلها، ولا تنسَ 1 والعدد نفسه."
+      },
+      "solution": {
+        "lines": [
+          "القواسم المشتركة للعددين 210 و 294 هي قواسم PGCD(210 ; 294) = 42 .",
+          "$42 = 1 \\times 42$ ، $42 = 2 \\times 21$ ، $42 = 3 \\times 14$ ، $42 = 6 \\times 7$",
+          "قواسم 42 هي: 1 ، 2 ، 3 ، 6 ، 7 ، 14 ، 21 ، 42",
+          "إذن للعددين 210 و 294 ثمانية قواسم مشتركة."
+        ],
+        "result": "8"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

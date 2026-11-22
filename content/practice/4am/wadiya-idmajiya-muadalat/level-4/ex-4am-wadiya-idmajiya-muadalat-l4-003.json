@@ -1,0 +1,364 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muadalat-l4-003",
+  "lessonCode": "wadiya-idmajiya-muadalat",
+  "level": 4,
+  "metadata": {
+    "title": "متراجحتان معًا",
+    "estimatedMinutes": 12,
+    "tags": [
+      "متراجحة",
+      "حصر"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-42",
+      "page": 53,
+      "section": "أتعمّق",
+      "number": 42
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "نبحث عن قيم $x$ التي تتحقّق من أجلها المتراجحتان الآتيتان معًا:",
+    "formulas": [
+      "-3x + 1 > 7x + 11",
+      "\\dfrac{1}{2}x - 3 \\leqslant x - 1"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "حلّ المتراجحة: $-3x + 1 > 7x + 11$ .",
+      "statement": "حدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x < k$ أو $x \\leqslant k$ أو $x > k$ أو $x \\geqslant k$ : اكتب العدد $k$ فقط (عدد صحيح أو كسر a/b، قد يكون سالبًا)",
+      "expectedAnswer": "-1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر، كما في حل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إضافة عدد إلى الطرفين أو طرحه منهما لا تغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحدّ هو العدد الذي يحقّق المعادلة المرفقة (نضع «=» مكان رمز المتباينة): اقسم في الأخير على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "حدّ الحلول هو $k = -1$ .",
+        "incorrect": "أعد الحل سطرًا سطرًا: العملية نفسها على الطرفين، ثم القسمة على معامل $x$ في الأخير."
+      },
+      "solution": {
+        "lines": [
+          "حدّ الحلول هو حلّ المعادلة المرفقة: $-3x + 1 = 7x + 11$",
+          "$-3x - 7x = 11 - 1$",
+          "$-10x = 10$",
+          "$x = \\dfrac{10}{-10}$",
+          "إذن حدّ الحلول هو $-1$ ."
+        ],
+        "result": "k = -1"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < -1$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$x \\leqslant -1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        },
+        {
+          "id": "C",
+          "content": "$x > -1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-SALIB-BILA-QALB"
+        },
+        {
+          "id": "D",
+          "content": "$x \\geqslant -1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-SALIB-BILA-QALB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارة معامل $x$ في آخر سطر قبل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد موجب تحافظ على الاتجاه، والقسمة على عدد سالب تغيّره."
+        }
+      ],
+      "feedback": {
+        "correct": "$x < -1$ .",
+        "incorrect": "تتبّع سطور الحل: الاتجاه يتغيّر فقط عند الضرب أو القسمة على عدد سالب، ونوع المتباينة (تامة أو غير تامة) لا يتغيّر أبدًا."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $-3x + 1 > 7x + 11$",
+          "$-3x - 7x > 11 - 1$",
+          "$-10x > 10$",
+          "نقسم الطرفين على العدد السالب $-10$ فنغيّر اتجاه المتباينة:",
+          "$\\dfrac{-10x}{-10} < \\dfrac{10}{-10}$",
+          "إذن حلول المتراجحة هي كل قيم $x$ الأصغر تماما من $-1$ ."
+        ],
+        "result": "x < -1"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "حلّ المتراجحة: $\\dfrac{1}{2}x - 3 \\leqslant x - 1$ .",
+      "statement": "حدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x < k$ أو $x \\leqslant k$ أو $x > k$ أو $x \\geqslant k$ : اكتب العدد $k$ فقط (عدد صحيح أو كسر a/b، قد يكون سالبًا)",
+      "expectedAnswer": "-4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر، كما في حل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إضافة عدد إلى الطرفين أو طرحه منهما لا تغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحدّ هو العدد الذي يحقّق المعادلة المرفقة (نضع «=» مكان رمز المتباينة): اقسم في الأخير على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "حدّ الحلول هو $k = -4$ .",
+        "incorrect": "أعد الحل سطرًا سطرًا: العملية نفسها على الطرفين، ثم القسمة على معامل $x$ في الأخير."
+      },
+      "solution": {
+        "lines": [
+          "حدّ الحلول هو حلّ المعادلة المرفقة: $\\dfrac{1}{2}x - 3 = x - 1$",
+          "$\\dfrac{1}{2}x - x = -1 + 3$",
+          "$-\\dfrac{1}{2}x = 2$",
+          "نضرب الطرفين في $-2$ :",
+          "$x = 2 \\times \\left(-2\\right)$",
+          "إذن حدّ الحلول هو $-4$ ."
+        ],
+        "result": "k = -4"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < -4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-SALIB-BILA-QALB"
+        },
+        {
+          "id": "B",
+          "content": "$x \\leqslant -4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-SALIB-BILA-QALB"
+        },
+        {
+          "id": "C",
+          "content": "$x > -4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        },
+        {
+          "id": "D",
+          "content": "$x \\geqslant -4$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارة معامل $x$ في آخر سطر قبل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد موجب تحافظ على الاتجاه، والقسمة على عدد سالب تغيّره."
+        }
+      ],
+      "feedback": {
+        "correct": "$x \\geqslant -4$ .",
+        "incorrect": "تتبّع سطور الحل: الاتجاه يتغيّر فقط عند الضرب أو القسمة على عدد سالب، ونوع المتباينة (تامة أو غير تامة) لا يتغيّر أبدًا."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $\\dfrac{1}{2}x - 3 \\leqslant x - 1$",
+          "$\\dfrac{1}{2}x - x \\leqslant -1 + 3$",
+          "$-\\dfrac{1}{2}x \\leqslant 2$",
+          "نضرب الطرفين في العدد السالب $-2$ فنغيّر اتجاه المتباينة:",
+          "$x \\geqslant 2 \\times \\left(-2\\right)$",
+          "إذن حلول المتراجحة هي كل قيم $x$ الأكبر من أو تساوي $-4$ ."
+        ],
+        "result": "x \\geqslant -4"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ا",
+      "lead": "استنتج قيم $x$ التي تحقّق المتراجحتين معًا.",
+      "statement": "قيم $x$ التي تحقّق المتراجحتين معًا هي:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-4 \\leqslant x < -1$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$-4 < x \\leqslant -1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        },
+        {
+          "id": "C",
+          "content": "$x < -4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        },
+        {
+          "id": "D",
+          "content": "$x \\geqslant -1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الأعداد المطلوبة تحقّق الشرطين معًا: ارسمهما على مستقيم مدرّج واحد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحدّ حلّ إذا كانت المتباينة غير تامة."
+        }
+      ],
+      "feedback": {
+        "correct": "$-4 \\leqslant x < -1$ .",
+        "incorrect": "خذ الأعداد المشتركة بين حلول المتراجحتين، وانتبه إلى الحدّين: أيهما حلّ؟"
+      },
+      "solution": {
+        "lines": [
+          "حلول الأولى: $x < -1$ ، وحلول الثانية: $x \\geqslant -4$ .",
+          "الأعداد التي تحقّقهما معًا: $-4 \\leqslant x < -1$"
+        ],
+        "result": "$-4 \\leqslant x < -1$"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ب",
+      "statement": "كم عددًا صحيحًا يحقّق المتراجحتين معًا؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الصحيحة المحصورة، وانتبه إلى الحدّين."
+        }
+      ],
+      "feedback": {
+        "correct": "$3$ أعداد: $-4$ ، $-3$ و $-2$ .",
+        "incorrect": "عدّ الأعداد الصحيحة المحصورة، وانتبه: أي الحدّين حلّ؟"
+      },
+      "solution": {
+        "lines": [
+          "الأعداد الصحيحة التي تحقّق $-4 \\leqslant x < -1$ هي: $-4$ ، $-3$ ، $-2$ ."
+        ],
+        "result": "3"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

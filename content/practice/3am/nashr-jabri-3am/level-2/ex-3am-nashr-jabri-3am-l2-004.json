@@ -1,0 +1,222 @@
+{
+  "id": "ex-3am-nashr-jabri-3am-l2-004",
+  "lessonCode": "nashr-jabri-3am",
+  "level": 2,
+  "metadata": {
+    "title": "نشر ثم حساب القيمة بطريقتين",
+    "estimatedMinutes": 7,
+    "tags": [
+      "نشر",
+      "تحقق بقيمة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-20",
+      "page": 63,
+      "section": "نشر العبارة (a+b)(c+d)",
+      "number": 20
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $E = (4x - 6)(x + 3)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انشر ثم بسّط العبارة $E = (4x - 6)(x + 3)$ ، واكتبها على الشكل $ax^2 + bx + c$ .",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-NASHR-PRODUCT-MISSING"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني: أربعة جداءات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات الأربعة واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء الأصلي وفي النتيجة: يجب أن تجد العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 4x^2 + 6x - 18$ إذن $b = 6$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$E = (4x - 6)(x + 3)$",
+          "$E = 4x \\times x + 4x \\times 3 - 6 \\times x - 6 \\times 3$",
+          "$E = 4x^2 + 6x - 18$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $c$ :",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $ax^2 + bx + c$ : اكتب العدد $c$ فقط",
+      "expectedAnswer": "-18",
+      "misconceptionSignatures": [
+        {
+          "value": "18",
+          "id": "MISC-NASHR-NEG-NEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني: أربعة جداءات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات الأربعة واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء الأصلي وفي النتيجة: يجب أن تجد العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 4x^2 + 6x - 18$ إذن $c = -18$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$E = (4x - 6)(x + 3)$",
+          "$E = 4x \\times x + 4x \\times 3 - 6 \\times x - 6 \\times 3$",
+          "$E = 4x^2 + 6x - 18$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب قيمة $E$ من أجل $x = \\frac{1}{2}$ باستعمال العبارة الأصلية $(4x - 6)(x + 3)$ .",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "-14",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى واحترم أولويات العمليات والإشارات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القوسين أولًا، ثم الجداءات، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يمكنك التعويض في الشكل المبسّط، ثم تحقّق بالتعويض في الشكل الأصلي."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل $x = \\frac{1}{2}$ القيمة هي $-14$ .",
+        "incorrect": "عوّض $x$ بالعدد المعطى واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$E = (4 \\times \\frac{1}{2} - 6)(\\frac{1}{2} + 3) = (2 - 6) \\times \\frac{7}{2}$",
+          "$E = -4 \\times \\frac{7}{2} = -14$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب قيمة $E$ من أجل $x = \\frac{1}{2}$ باستعمال الشكل المنشور $4x^2 + 6x - 18$ . ماذا تلاحظ؟",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "-14",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى واحترم أولويات العمليات والإشارات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القوسين أولًا، ثم الجداءات، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يمكنك التعويض في الشكل المبسّط، ثم تحقّق بالتعويض في الشكل الأصلي."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل $x = \\frac{1}{2}$ القيمة هي $-14$ .",
+        "incorrect": "عوّض $x$ بالعدد المعطى واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$4 \\times \\frac{1}{4} + 6 \\times \\frac{1}{2} - 18 = 1 + 3 - 18 = -14$",
+          "نجد القيمة نفسها: النشر لا يغيّر قيمة العبارة."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

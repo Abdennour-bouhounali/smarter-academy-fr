@@ -1,0 +1,304 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muthallathat-l3-009",
+  "lessonCode": "wadiya-idmajiya-muthallathat",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2019 — المظلّة القماشية في ساحة المتوسطة",
+    "estimatedMinutes": 14,
+    "tags": [
+      "الجيب",
+      "خاصية فيثاغورس",
+      "خاصية طالس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-muthallathat_P1",
+      "modelledOn": "BEM 2019 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2019",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في ساحة متوسطة، مظلّة قماشية على شكل مثلث $RST$ قائم في $R$ ، مشدودة إلى عمود شاقولي $[RS]$ (الشكل المقابل)، حيث $RS = 4{,}8\\,\\mathrm{m}$ و $\\sin\\widehat{RTS} = 0{,}8$ . نصبها حارس المدرسة ليستظلّ بها التلاميذ في الفرصة، ويعتني بنظافتها.",
+    "figure": {
+      "points": {
+        "R": [
+          0,
+          0
+        ],
+        "S": [
+          0,
+          4.8
+        ],
+        "T": [
+          3.6,
+          0
+        ],
+        "M": [
+          2.4,
+          0
+        ],
+        "N": [
+          2.4,
+          1.6
+        ]
+      },
+      "segments": [
+        {
+          "from": "R",
+          "to": "S",
+          "label": "4,8 m"
+        },
+        [
+          "R",
+          "T"
+        ],
+        [
+          "S",
+          "T"
+        ],
+        {
+          "from": "M",
+          "to": "N",
+          "dashed": true
+        }
+      ],
+      "rightAngles": [
+        [
+          "S",
+          "R",
+          "T"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "T",
+          "from": "R",
+          "to": "S"
+        }
+      ],
+      "labels": {
+        "R": "sw",
+        "S": "nw",
+        "T": "se",
+        "M": "s",
+        "N": "ne"
+      },
+      "ariaLabel": "مثلث RST قائم في R والعمود [RS] شاقولي طوله 4,8 m؛ M من [TR] و N من [TS] و [MN] يوازي [RS]",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب الطول $TS$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P2",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "3.84",
+          "id": "MISC-MUTH-DARB-BADAL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $RST$ القائم في $R$ : $[RS]$ مقابل للزاوية $\\widehat{RTS}$ و $[TS]$ وتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المجهول في مقام الجيب."
+        }
+      ],
+      "feedback": {
+        "correct": "$TS = \\dfrac{4{,}8}{0{,}8} = 6\\,\\mathrm{m}$ .",
+        "incorrect": "الوتر في مقام الجيب: نقسم $RS$ على $0{,}8$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\sin\\widehat{RTS} = \\dfrac{RS}{TS}$ ومنه $TS = \\dfrac{RS}{\\sin\\widehat{RTS}} = \\dfrac{4{,}8}{0{,}8}$"
+        ],
+        "result": "TS = 6\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب الطول $TR$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m",
+      "expectedAnswer": "3.6",
+      "misconceptionSignatures": [
+        {
+          "value": "1.2",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $RST$ القائم في $R$ نعرف الآن الوتر وضلعا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خاصية فيثاغورس: $TR^2 = TS^2 - RS^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$TR^2 = 36 - 23{,}04 = 12{,}96$ ومنه $TR = 3{,}6\\,\\mathrm{m}$ .",
+        "incorrect": "نطرح مربع الضلع من مربع الوتر ثم نأخذ الجذر."
+      },
+      "solution": {
+        "lines": [
+          "حسب خاصية فيثاغورس: $TR^2 = TS^2 - RS^2 = 36 - 23{,}04 = 12{,}96$",
+          "$TR = \\sqrt{12{,}96}$"
+        ],
+        "result": "TR = 3{,}6\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "تُخاط على المظلّة درزة مستقيمة $[MN]$ حيث $M$ من $[TR]$ و $N$ من $[TS]$ ، و $(MN) \\parallel (RS)$ ، و $TM = 1{,}2\\,\\mathrm{m}$ .",
+      "statement": "احسب طول الدرزة $MN$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m",
+      "expectedAnswer": "1.6",
+      "misconceptionSignatures": [
+        {
+          "value": "2.4",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(MN) \\parallel (RS)$ و $M$ من $[TR]$ و $N$ من $[TS]$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خاصية طالس: $\\dfrac{TM}{TR} = \\dfrac{MN}{RS}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$MN = 4{,}8 \\times \\dfrac{1{,}2}{3{,}6} = 1{,}6\\,\\mathrm{m}$ .",
+        "incorrect": "النسبة $\\dfrac{TM}{TR}$ تُكتب بالضلع كله $TR$ لا بالقطعة $MR$ ."
+      },
+      "solution": {
+        "lines": [
+          "$M$ من $[TR]$ و $N$ من $[TS]$ و $(MN) \\parallel (RS)$ ، حسب خاصية طالس: $\\dfrac{TM}{TR} = \\dfrac{TN}{TS} = \\dfrac{MN}{RS}$",
+          "$MN = RS \\times \\dfrac{TM}{TR} = 4{,}8 \\times \\dfrac{1{,}2}{3{,}6}$"
+        ],
+        "result": "MN = 1{,}6\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "أعط المدوّر إلى الوحدة من الدرجة لقيس الزاوية $\\widehat{RTS}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: القيس بالدرجة مدوّرا إلى الوحدة",
+      "expectedAnswer": "53",
+      "misconceptionSignatures": [
+        {
+          "value": "37",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "0.8",
+          "id": "MISC-MUTH-NISBA-BADAL-QAYS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لدينا $\\sin\\widehat{RTS} = 0{,}8$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل اللمسة العكسية للنسبة في آلة حاسبة مبرمجة على الدرجة، ثم دوّر في آخر الحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{RTS} \\approx 53{,}13^{\\circ}$ ، أي $53^{\\circ}$ .",
+        "incorrect": "العدد $0{,}8$ جيب الزاوية؛ القيس من اللمسة العكسية للجيب."
+      },
+      "solution": {
+        "lines": [
+          "$\\sin\\widehat{RTS} = 0{,}8$",
+          "باستعمال الآلة الحاسبة: $\\widehat{RTS} \\approx 53{,}1301^{\\circ}$"
+        ],
+        "result": "\\widehat{RTS} \\approx 53^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

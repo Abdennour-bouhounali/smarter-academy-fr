@@ -10,7 +10,11 @@ import { apiRequest, ApiError, classifyStatus } from '../apiClient';
 export async function call(path, options, fallbackMessage) {
   const { ok, status, data } = await apiRequest(path, options);
   if (!ok) {
-    throw new ApiError(data?.message || fallbackMessage, classifyStatus(status), status);
+    const error = new ApiError(data?.message || fallbackMessage, classifyStatus(status), status);
+    // Le MOTIF clos du domaine (`email_taken`, `director_exists`…), pour que
+    // la page choisisse sa phrase arabe plutôt que le message du serveur.
+    error.reason = data?.reason ?? null;
+    throw error;
   }
   return data;
 }

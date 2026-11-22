@@ -1,0 +1,167 @@
+{
+  "id": "ex-4am-jidhr-tarbii-l3-010",
+  "lessonCode": "jidhr-tarbii",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2019 — عددان طبيعيان",
+    "estimatedMinutes": 7,
+    "tags": [
+      "(√a)² = a",
+      "√(a²) = a"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_jidhr-tarbii_P3",
+      "modelledOn": "BEM 2019 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2019",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان الحقيقيان A و B حيث:",
+    "formulas": [
+      "A = \\dfrac{10}{7} \\times \\left(\\dfrac{5}{2} + 1\\right) \\qquad و \\qquad B = (\\sqrt{6})^2 + \\sqrt{(-8)^2} - \\sqrt{9}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن $A$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة A (عدد طبيعي)",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب ما بين القوسين: $\\dfrac{5}{2} + 1$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اضرب الكسرين واختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = \\dfrac{10}{7} \\times \\dfrac{7}{2} = \\dfrac{70}{14} = 5$.",
+        "incorrect": "احسب ما بين القوسين أولا ثم اضرب."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{10}{7} \\times \\dfrac{7}{2}$",
+          "$A = \\dfrac{70}{14}$"
+        ],
+        "result": "A = 5"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بيّن أن $B$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة B (عدد طبيعي)",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "value": "-3",
+          "id": "MISC-JIDHR-MURABBA-ISHARA"
+        },
+        {
+          "value": "12",
+          "id": "MISC-JIDHR-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(\\sqrt{6})^2 = 6$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\sqrt{(-8)^2}$ عدد موجب مربعه 64، و $\\sqrt{9} = 3$."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 6 + 8 - 3 = 11$.",
+        "incorrect": "$\\sqrt{(-8)^2}$ ليس $-8$؛ و $(\\sqrt{6})^2$ هو 6."
+      },
+      "solution": {
+        "lines": [
+          "$(\\sqrt{6})^2 = 6$ ، $\\sqrt{(-8)^2} = \\sqrt{64} = 8$ ، $\\sqrt{9} = 3$",
+          "$B = 6 + 8 - 3$"
+        ],
+        "result": "B = 11"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب $\\sqrt{A + B}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-JIDHR-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $A + B$ باستعمال النتيجتين السابقتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن العدد الموجب الذي مربعه هذا المجموع."
+        }
+      ],
+      "feedback": {
+        "correct": "$A + B = 16$ و $\\sqrt{16} = 4$.",
+        "incorrect": "احسب المجموع أولا، ثم العدد الموجب الذي مربعه هذا المجموع."
+      },
+      "solution": {
+        "lines": [
+          "$A + B = 5 + 11 = 16$",
+          "$\\sqrt{16} = 4$ لأن 4 موجب و $4^2 = 16$"
+        ],
+        "result": "\\sqrt{A + B} = 4"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

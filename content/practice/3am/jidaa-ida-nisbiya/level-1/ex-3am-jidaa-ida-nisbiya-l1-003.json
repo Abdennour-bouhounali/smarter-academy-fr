@@ -1,0 +1,229 @@
+{
+  "id": "ex-3am-jidaa-ida-nisbiya-l1-003",
+  "lessonCode": "jidaa-ida-nisbiya",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — إشارة جداء وحساب مجموع جبري",
+    "estimatedMinutes": 9,
+    "tags": [
+      "إشارة الجداء",
+      "تعليل",
+      "مجموع جبري"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 1,
+      "file": "3am-s1-1",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان $A$ و $B$ حيث:",
+    "formulas": [
+      "A = (−2)(+5)(−3)(+4)(−1)",
+      "B = (+12) + (−4) − (+7) − (−5) + (−6)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "حدّد إشارة العبارة $A$ مع التعليل.",
+      "statement": "ما إشارة $A$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "موجب",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "سالب",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ العوامل السالبة في الجداء: كم عاملًا إشارته (−) ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد زوجي من العوامل السالبة يعطي جداءً موجبًا، وعدد فردي يعطي جداءً سالبًا (ما دام لا عامل معدوم)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الإشارة وحدها مطلوبة: لا تحسب شيئًا، ولا يهمّ ترتيب العوامل."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد العوامل السالبة في $A$ هو 3 (عدد فردي)، إذن الجداء سالب.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "عدد العوامل السالبة هو $3$ ، وهو عدد فردي.",
+          "إذن الجداء سالب."
+        ]
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "علّل جوابك.",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الجداء بإشاراته ثم أحصِ العوامل السالبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "علّل بزوجية عدد العوامل السالبة، لا بعددها بالنسبة إلى العوامل الموجبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة قصيرة: «عدد العوامل السالبة هو … وهو عدد … إذن الجداء …»."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "العوامل السالبة في $A$ هي $−2$ و $−3$ و $−1$ ، أي $3$ عوامل، وهو عدد فردي.",
+          "جداء عدد فردي من العوامل السالبة (والباقي موجب) عدد سالب، إذن $A$ سالب."
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "احسب كلًّا من العددين $A$ و $B$ .",
+      "statement": "احسب $A$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-120",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ العوامل السالبة أولًا، فهي التي تعيّن إشارة الجداء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عدد العوامل السالبة زوجيًا فالجداء موجب، وإذا كان فرديًا فهو سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب المسافات إلى الصفر، ويمكنك تغيير ترتيب العوامل لتجمع ما يسهّل الحساب (مثل $4 \\times 25$)."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−2)(+5)(−3)(+4)(−1) = −120$ : عدد العوامل السالبة $3$ (عدد فردي)، إذن الجداء سالب.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "عدد العوامل السالبة هو $3$ ، وهو عدد فردي، إذن الجداء سالب.",
+          "نضرب المسافات إلى الصفر: $2 \\times 5 \\times 3 \\times 4 \\times 1 = 120$",
+          "$A = −120$"
+        ],
+        "result": "A = −120"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب $B$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب من اليسار إلى اليمين، حدًّا بعد حدّ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طرح عدد نسبي يساوي جمع معاكسه: $x - (-5) = x + 5$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل نتيجة جزئية قبل أن تنتقل إلى الحدّ الذي يليها."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 12 + (−4) − 7 + 5 + (−6) = 0$ .",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "$12 + (−4) = 8$ ثم $8 - 7 = 1$",
+          "$1 - (−5) = 1 + 5 = 6$ ثم $6 + (−6) = 0$",
+          "$B = 0$"
+        ],
+        "result": "B = 0"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

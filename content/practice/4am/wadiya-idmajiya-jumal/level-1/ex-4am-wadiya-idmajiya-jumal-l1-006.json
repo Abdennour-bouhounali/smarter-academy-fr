@@ -1,0 +1,165 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-jumal-l1-006",
+  "lessonCode": "wadiya-idmajiya-jumal",
+  "level": 1,
+  "metadata": {
+    "title": "التعبير عن مجهول بدلالة الآخر",
+    "estimatedMinutes": 6,
+    "tags": [
+      "تعويض",
+      "إشارة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 62,
+      "section": "الوضعيات",
+      "number": 6
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعتبر المعادلة:",
+    "formulas": [
+      "3x - y = 1"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "اكتب $y$ بدلالة $x$ على الشكل $y = ax + b$ .",
+      "statement": "قيمة $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "-3",
+          "id": "MISC-TAWID-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اعزل $y$ في طرف واحد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل $y$ إلى الطرف الثاني وانقل العدد 1 إلى الطرف الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "معامل $x$ هو $a = 3$ .",
+        "incorrect": "اعزل $y$ ثم اقرأ معامل $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$3x - y = 1$",
+          "نضيف $y$ إلى الطرفين ثم نطرح 1: $3x - 1 = y$",
+          "ومنه: $y = 3x - 1$"
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "قيمة $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (انتبه إلى الإشارة)",
+      "expectedAnswer": "-1",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-TAWID-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$b$ هو العدد الثابت في العبارة $ax + b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الحد الثابت هو $b = -1$ : $y = 3x - 1$ .",
+        "incorrect": "عند نقل العدد من طرف إلى آخر تتغير إشارته."
+      },
+      "solution": {
+        "lines": [
+          "$3x - y = 1$",
+          "نضيف $y$ إلى الطرفين ثم نطرح 1: $3x - 1 = y$",
+          "ومنه: $y = 3x - 1$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل المساواة $y = 3x + 1$ تنتج من المعادلة $3x - y = 1$ ؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWID-ISHARA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن هذه المساواة بالعبارة التي وجدتها في السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "لا: المعادلة تعطي $y = 3x - 1$ .",
+        "incorrect": "قارن الحد الثابت في المساواة بالحد الثابت الذي وجدته."
+      },
+      "solution": {
+        "lines": [
+          "من السؤال 01: $y = 3x - 1$",
+          "والمساواة $y = 3x + 1$ تختلف عنها في الحد الثابت (مثلا من أجل $x = 0$ نجد $-1 \\neq 1$ ).",
+          "إذن المساواة $y = 3x + 1$ لا تنتج من المعادلة $3x - y = 1$ ."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

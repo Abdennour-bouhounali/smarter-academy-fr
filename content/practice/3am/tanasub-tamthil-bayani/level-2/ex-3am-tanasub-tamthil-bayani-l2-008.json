@@ -1,0 +1,293 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l2-008",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 2,
+  "metadata": {
+    "title": "أيّ بيان يمثّل وضعية تناسبية؟",
+    "estimatedMinutes": 7,
+    "tags": [
+      "تمثيل بياني",
+      "منحنى"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "self-1",
+      "page": 97,
+      "section": "أؤكّد تعلّماتي",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "رسم ثلاثة تلاميذ على المعلم المتعامد والمتجانس نفسه ثلاثة بيانات لثلاث وضعيات عن كمية الماء المسقيّة بدلالة عدد الشتلات: $(G_1)$ مستقيم متناقص، $(G_2)$ مستقيم، $(G_3)$ منحنى.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "E": [
+          4,
+          4
+        ],
+        "F": [
+          0,
+          3
+        ],
+        "H": [
+          3,
+          0
+        ],
+        "C": [
+          5,
+          0
+        ],
+        "K": [
+          5,
+          5
+        ]
+      },
+      "lines": [
+        {
+          "through": [
+            "O",
+            "E"
+          ],
+          "name": "(G₂)",
+          "tone": "indigo",
+          "extend": [
+            0,
+            0
+          ]
+        },
+        {
+          "through": [
+            "F",
+            "H"
+          ],
+          "name": "(G₁)",
+          "tone": "emerald",
+          "extend": [
+            0,
+            0
+          ]
+        }
+      ],
+      "arcs": [
+        {
+          "center": "C",
+          "from": "O",
+          "to": "K",
+          "sweep": "cw",
+          "tone": "rose",
+          "label": "(G₃)"
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw"
+      },
+      "hidden": [
+        "E",
+        "F",
+        "H",
+        "C",
+        "K"
+      ],
+      "ariaLabel": "معلم متعامد ومتجانس: مستقيم متناقص يربط (0;3) بـ (3;0)، ومستقيم يشمل المبدأ وينتهي في (4;4)، ومنحن ينطلق من المبدأ ويرتفع بسرعة ثم يتسطّح",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: عدد الشتلات — محور التراتيب: كمية الماء"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ هذه البيانات يمثّل وضعية تناسبية؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(G_1)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-LINE-ANY"
+        },
+        {
+          "id": "B",
+          "content": "$(G_3)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-THROUGH-O-ANY"
+        },
+        {
+          "id": "C",
+          "content": "$(G_2)$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن البيان الذي هو مستقيم ويشمل المبدأ معا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$(G_3)$ ينطلق من المبدأ، فهل هو مستقيم؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$(G_2)$ هو المستقيم الوحيد الذي يشمل المبدأ.",
+        "incorrect": "لا يكفي أن يمرّ البيان بالمبدأ، ولا أن يكون مستقيما: يلزم الشرطان معا."
+      },
+      "solution": {
+        "lines": [
+          "$(G_1)$ مستقيم لا يشمل $O$ ، و $(G_3)$ يشمل $O$ لكنه ليس مستقيما.",
+          "$(G_2)$ مستقيم يشمل $O$ : هو وحده التناسبي."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "هل يمثّل $(G_3)$ وضعية تناسبية؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأنّ الترتيب يكبر كلما كبرت الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-RISING"
+        },
+        {
+          "id": "B",
+          "content": "لا، النقط ليست على مستقيم: الرسم منحنٍ",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نعم، لأنّ المنحنى يمرّ بالمبدأ $O$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-THROUGH-O-ANY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط ليست على مستقيم، فليست الوضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "$(G_3)$ يمرّ بالمبدأ $O$ لكنه منحنٍ، أي نقطه ليست على استقامة واحدة.",
+          "إذن لا يمثّل وضعية تناسبية."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل يمثّل $(G_1)$ وضعية تناسبية؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، المستقيم الذي يشمل النقط لا يشمل المبدأ $O$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم، لأنّ النقط على استقامة واحدة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-LINE-ANY"
+        },
+        {
+          "id": "C",
+          "content": "نعم، لأنّ الترتيب يكبر كلما كبرت الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-RISING"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط على استقامة واحدة لكنّ المستقيم لا يشمل المبدأ $O$ ، فليست الوضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "$(G_1)$ مستقيم لكنه يقطع محور التراتيب في النقطة $(0\\,;\\,3)$ وليس في $O$ .",
+          "إذن لا يمثّل وضعية تناسبية."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

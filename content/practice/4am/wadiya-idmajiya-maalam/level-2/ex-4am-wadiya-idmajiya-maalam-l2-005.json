@@ -1,0 +1,168 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-maalam-l2-005",
+  "lessonCode": "wadiya-idmajiya-maalam",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — نصف دائرة من قطرها",
+    "estimatedMinutes": 4,
+    "tags": [
+      "منتصف قطعة",
+      "نصف دائرة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-maalam_P3",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "مسار حول نافورة دائرية على كورنيش وهران: نصف دائرة قطرها $[EF]$ حيث $E(-1\\,;\\,0)$ و $F(5\\,;\\,0)$ (الوحدة $1\\,\\mathrm{km}$)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا مركز نصف الدائرة:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الثنائية (x ; y)",
+      "expectedAnswer": {
+        "x": "2",
+        "y": "0"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المركز منتصف القطر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\dfrac{-1 + 5}{2}$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الترتيب $\\dfrac{0 + 0}{2}$"
+        }
+      ],
+      "feedback": {
+        "correct": "المركز منتصف $[EF]$ : $(2\\,;\\,0)$ .",
+        "incorrect": "المركز منتصف القطر: نصف مجموع الإحداثيتين."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 2
+    },
+    {
+      "id": "q2",
+      "statement": "نصف قطرها (بالكيلومتر):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$EF = 6$"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نصف القطر نصف القطر الكامل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\dfrac{6}{2}$"
+        }
+      ],
+      "feedback": {
+        "correct": "$EF = 5 - (-1) = 6$ ، ونصف القطر $3$ .",
+        "incorrect": "نصف القطر هو نصف طول القطر $EF$ ."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-TALIS-QUTR-BADAL-NISF"
+        }
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "q3",
+      "statement": "طول نصف الدائرة (القوس):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3\\,\\mathrm{km}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-PI-MANSI"
+        },
+        {
+          "id": "B",
+          "content": "$6\\pi\\,\\mathrm{km}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-NISF-DAIRA-MUHIT"
+        },
+        {
+          "id": "C",
+          "content": "$9\\pi\\,\\mathrm{km}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MISAHA-BADAL-TUL"
+        },
+        {
+          "id": "D",
+          "content": "$3\\pi\\,\\mathrm{km}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\pi r$"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$r = 3$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنس $\\pi$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\pi \\times 3 = 3\\pi\\,\\mathrm{km}$ .",
+        "incorrect": "طول نصف الدائرة $\\pi r$ ."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 2
+    }
+  ]
+}

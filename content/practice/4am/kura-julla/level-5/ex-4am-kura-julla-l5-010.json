@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-kura-julla-l5-010",
+  "lessonCode": "kura-julla",
+  "level": 5,
+  "metadata": {
+    "title": "وضعية — مصباح غرفة اللاعب",
+    "estimatedMinutes": 5,
+    "tags": [
+      "الكرة",
+      "الجلة",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_kura-julla_P1",
+      "modelledOn": "know-1"
+    }
+  },
+  "statement": {
+    "content": "مصباح كروي من الزجاج في غرفة لاعب يحبّ المطالعة ليلا: كرة زجاجية رقيقة مركزها O ونصف قطرها $10\\,\\mathrm{cm}$ ، وفي مركزها مصباح LED صغير."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الزجاج الرقيق نموذج لـ ... والمصباح في O نقطة من ...",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الكرة ؛ الجلة وليس الكرة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الجلة ؛ الكرة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-JULLA"
+        },
+        {
+          "id": "C",
+          "content": "الكرة ؛ الكرة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-JULLA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الزجاج قشرة رقيقة جوفاء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المركز O يبعد عن نفسه بـ 0."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن $0$ بـ $R$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الزجاج سطح أجوف (كرة)؛ $OO = 0 < 10$ : المركز من الجلة لا من الكرة.",
+        "incorrect": "مركز الكرة ليس على سطحها، لكنه داخل الجلة."
+      }
+    }
+  ]
+}

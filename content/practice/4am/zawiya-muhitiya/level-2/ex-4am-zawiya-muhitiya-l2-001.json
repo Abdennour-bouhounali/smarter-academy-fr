@@ -1,0 +1,184 @@
+{
+  "id": "ex-4am-zawiya-muhitiya-l2-001",
+  "lessonCode": "zawiya-muhitiya",
+  "level": 2,
+  "metadata": {
+    "title": "معارف 4، مثالا 2 و 3 — بالأقياس",
+    "estimatedMinutes": 2,
+    "tags": [
+      "خاصية 1",
+      "خاصية 2"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-4",
+      "page": 156,
+      "section": "معارف",
+      "number": 4
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 156، مثالا 2 و 3): في الشكل، الزاوية المركزية $\\widehat{AOB}$ قيسها $80^\\circ$ ، والنقطتان M و N على القوس الكبير.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -1.0,
+          -1.7321
+        ],
+        "B": [
+          1.5321,
+          -1.2856
+        ],
+        "M": [
+          -1.8794,
+          0.684
+        ],
+        "N": [
+          -0.3473,
+          1.9696
+        ]
+      },
+      "circles": [
+        {
+          "center": "O",
+          "radius": 2
+        }
+      ],
+      "segments": [
+        {
+          "from": "O",
+          "to": "A",
+          "tone": "indigo"
+        },
+        {
+          "from": "O",
+          "to": "B",
+          "tone": "indigo"
+        },
+        {
+          "from": "M",
+          "to": "A",
+          "tone": "amber"
+        },
+        {
+          "from": "M",
+          "to": "B",
+          "tone": "amber"
+        },
+        {
+          "from": "N",
+          "to": "A",
+          "tone": "emerald"
+        },
+        {
+          "from": "N",
+          "to": "B",
+          "tone": "emerald"
+        }
+      ],
+      "angles": [
+        {
+          "at": "O",
+          "from": "A",
+          "to": "B",
+          "tone": "indigo",
+          "label": "80°"
+        }
+      ],
+      "ariaLabel": "دائرة مركزها O، الزاوية المركزية AOB قيسها 80 درجة، والزاويتان المحيطيتان AMB و ANB",
+      "maxWidth": 380
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قيس $\\widehat{AMB}$ بالدرجة؟",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "40",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوس الذي تحصره كل زاوية: هل هو نفس القوس؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الزاويتين: أيهما أكبر، المركزية أم المحيطية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قيس الزاوية المحيطية نصف قيس الزاوية المركزية التي تحصر معها نفس القوس."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{AMB} = \\dfrac{1}{2}\\widehat{AOB} = 40^\\circ$ .",
+        "incorrect": "المحيطية نصف المركزية."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-DIF",
+          "value": "160"
+        },
+        {
+          "id": "MISC-MUHITIYA-MUSAWIYA",
+          "value": "80"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "statement": "ما قيس $\\widehat{ANB}$ بالدرجة؟",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "40",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل الزاويتان محيطيتان (رأساهما على الدائرة)؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل تحصران نفس القوس، أي رأساهما في نفس الجهة من الوتر؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زاويتان محيطيتان تحصران نفس القوس متقايستان."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{ANB} = \\widehat{AMB} = 40^\\circ$ : تحصران نفس القوس.",
+        "incorrect": "الزاويتان المحيطيتان AMB و ANB تحصران نفس القوس."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-MUSAWIYA",
+          "value": "80"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l4-009",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2008 — 1000 و 7",
+    "estimatedMinutes": 8,
+    "tags": [
+      "قسمة إقليدية",
+      "مضاعفات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-adad-tabii_P1",
+      "modelledOn": "BEM 2008 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2008",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "جد حاصل وباقي القسمة الإقليدية للعدد 1000 على 7.",
+      "statement": "حاصل القسمة:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "142",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أكبر مضاعف للعدد 7 لا يتجاوز 1000."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل القسمة هو أكبر عدد طبيعي $q$ يحقق $7 \\times q \\leq 1000$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الباقي أصغر تمامًا من 7."
+        }
+      ],
+      "feedback": {
+        "correct": "$1000 = 7 \\times 142 + 6$ مع $6 < 7$.",
+        "incorrect": "ابحث عن أكبر مضاعف للعدد 7 لا يتجاوز 1000، ثم اطرحه من 1000."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 142 = 994$ و $7 \\times 143 = 1001$ أكبر من 1000.",
+          "$1000 - 994 = 6$ و $6 < 7$",
+          "إذن المساواة التي تعبّر عن القسمة الإقليدية هي:"
+        ],
+        "result": "1000 = 7 \\times 142 + 6"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "الباقي:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى من 1000 بعد طرح أكبر مضاعف للعدد 7 لا يتجاوزه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي عدد طبيعي أصغر تمامًا من 7."
+        }
+      ],
+      "feedback": {
+        "correct": "$1000 = 7 \\times 142 + 6$: الباقي 6.",
+        "incorrect": "اطرح من 1000 أكبر مضاعف للعدد 7 لا يتجاوزه."
+      },
+      "solution": {
+        "lines": [
+          "$1000 - 7 \\times 142 = 6$"
+        ],
+        "result": "r = 6"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "استنتج:",
+      "statement": "أكبر عدد طبيعي أصغر من 1000 يقبل القسمة على 7.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "994",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل المساواة التي وجدتها في السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح الباقي من 1000."
+        }
+      ],
+      "feedback": {
+        "correct": "$7 \\times 142 = 994$ والمضاعف التالي $7 \\times 143$ يتجاوز 1000.",
+        "incorrect": "انطلق من المساواة $1000 = 7 \\times q + r$: ما هو المضاعف $7 \\times q$؟"
+      },
+      "solution": {
+        "lines": [
+          "$1000 = 7 \\times 142 + 6$",
+          "$7 \\times 142 = 1000 - 6$"
+        ],
+        "result": "994 = 7 \\times 142"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أصغر عدد طبيعي أكبر من 1000 يقبل القسمة على 7.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1001",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المضاعف التالي للعدد 7 هو $7 \\times (q + 1)$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $7 \\times 143$."
+        }
+      ],
+      "feedback": {
+        "correct": "$7 \\times 143 = 1001$.",
+        "incorrect": "ابحث عن مضاعف العدد 7 الذي يلي $7 \\times 142$."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 143 = 7 \\times 142 + 7$",
+          "$= 994 + 7$"
+        ],
+        "result": "1001 = 7 \\times 143"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

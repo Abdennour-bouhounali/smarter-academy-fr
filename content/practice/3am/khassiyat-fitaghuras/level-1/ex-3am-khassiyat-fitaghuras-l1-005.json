@@ -1,0 +1,205 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l1-005",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — القيمة المضبوطة والقيمة المدوّرة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "خاصية فيثاغورس",
+      "اللمسة √",
+      "التدوير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$MNP$ مثلث قائم في $M$ حيث $MN = 2\\,\\mathrm{cm}$ و $MP = 5\\,\\mathrm{cm}$ .",
+    "figure": {
+      "points": {
+        "M": [
+          0.0,
+          0.0
+        ],
+        "P": [
+          5.0,
+          0.0
+        ],
+        "N": [
+          0.0,
+          2.0
+        ]
+      },
+      "segments": [
+        {
+          "from": "M",
+          "to": "P",
+          "label": "5 cm"
+        },
+        {
+          "from": "M",
+          "to": "N",
+          "label": "2 cm"
+        },
+        {
+          "from": "P",
+          "to": "N"
+        }
+      ],
+      "rightAngles": [
+        [
+          "P",
+          "M",
+          "N"
+        ]
+      ],
+      "ariaLabel": "مثلث MNP قائم في M حيث MN = 2 cm و MP = 5 cm",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما القيمة المضبوطة للطول $NP$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$29\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-NO-ROOT"
+        },
+        {
+          "id": "B",
+          "content": "$\\sqrt{29}\\,\\mathrm{cm}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\sqrt{21}\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-HYP-WRONG"
+        },
+        {
+          "id": "D",
+          "content": "$7\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-ROOT-SPLIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولا $NP^2$ بخاصية فيثاغورس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الطول هو العدد الموجب الذي مربعه يساوي القيمة التي حسبتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القيمة المضبوطة تُكتب بالرمز $\\sqrt{\\ }$ إذا لم يكن العدد مربعا تاما."
+        }
+      ],
+      "feedback": {
+        "correct": "$NP^2 = 29$ ، إذن $NP = \\sqrt{29}$ (قيمة مضبوطة).",
+        "incorrect": "لا تخلط بين مربع الطول والطول نفسه، ولا تجمع الأطوال: احسب المربع ثم خذ جذره."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $MNP$ قائم في $M$ ، حسب خاصية فيثاغورس: $NP^2 = MN^2 + MP^2$",
+          "$NP^2 = 2^2 + 5^2$",
+          "$NP^2 = 4 + 25 = 29$",
+          "$NP^2 = 29$ ، ومنه القيمة المضبوطة: $NP = \\sqrt{29}\\,\\mathrm{cm}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط قيمة مقرّبة للطول $NP$ بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm مدوّرا إلى 0,01",
+      "expectedAnswer": "5.39",
+      "misconceptionSignatures": [
+        {
+          "value": "5.38",
+          "id": "MISC-FITAGHURAS-ROUND-TRUNC"
+        },
+        {
+          "value": "7",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "29",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مربع الطول، ثم استعمل اللمسة $\\sqrt{\\ }$ ، ولا تدوّر إلا النتيجة الأخيرة (انظر إلى الرقم الموالي للرقم المطلوب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$NP^2 = 2^2 + 5^2 = 29$ ، إذن $NP \\approx 5{,}39\\,\\mathrm{cm}$ .",
+        "incorrect": "ابدأ بتحديد الوتر، ثم اكتب مساواة فيثاغورس، وتذكّر أن ما تحسبه أولا هو مربع الطول لا الطول نفسه."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $MNP$ قائم في $M$ ، حسب خاصية فيثاغورس: $NP^2 = MN^2 + MP^2$",
+          "$NP^2 = 2^2 + 5^2$",
+          "$NP^2 = 4 + 25 = 29$",
+          "$NP = \\sqrt{29}$ (القيمة المضبوطة)",
+          "باستعمال اللمسة $\\sqrt{\\ }$ للآلة الحاسبة: $\\sqrt{29} \\approx 5{,}385164807$",
+          "المدوّر إلى $0{,}01$ : $NP \\approx 5{,}39\\,\\mathrm{cm}$"
+        ],
+        "result": "NP \\approx 5{,}39\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

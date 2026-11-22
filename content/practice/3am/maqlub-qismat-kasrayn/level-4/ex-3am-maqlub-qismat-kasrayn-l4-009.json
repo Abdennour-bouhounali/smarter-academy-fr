@@ -1,0 +1,200 @@
+{
+  "id": "ex-3am-maqlub-qismat-kasrayn-l4-009",
+  "lessonCode": "maqlub-qismat-kasrayn",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — عرض مستطيل",
+    "estimatedMinutes": 9,
+    "tags": [
+      "قسمة",
+      "كسر",
+      "مساحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "قطعة أرض مستطيلة في ساحة المدرسة مساحتها $\\dfrac{35}{12}\\,\\mathrm{m}^2$ وطولها $\\dfrac{5}{3}\\,\\mathrm{m}$ .",
+      "statement": "ما عرضها بالمتر؟",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "7/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "175/36",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "4/7",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "36/175",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ الكسرين هو المقسوم وأيّهما المقسوم عليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني: نقلب المقسوم عليه وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء، اختزل العوامل المشتركة قبل الضرب، ثمّ اكتب الناتج على أبسط شكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{35}{12} \\div \\dfrac{5}{3} = \\dfrac{7}{4}$ لأنّ قسمة كسر على كسر هي ضرب الأوّل في مقلوب الثاني.",
+        "incorrect": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني فقط، ثمّ نختزل؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $\\dfrac{35}{12} \\div \\dfrac{5}{3} = \\dfrac{35}{12} \\times \\dfrac{3}{5}$ .",
+          "$= \\dfrac{35 \\times 3}{12 \\times 5} = \\dfrac{7}{4}$ ."
+        ],
+        "result": "\\dfrac{7}{4}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما محيطها بالمتر؟",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "41/6",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كل سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{41}{6}$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "العرض $\\dfrac{7}{4}$ ، فالمحيط $2 \\times \\left(\\dfrac{5}{3} + \\dfrac{7}{4}\\right) = 2 \\times \\dfrac{41}{12} = \\dfrac{41}{6}\\,\\mathrm{m}$ ."
+        ],
+        "result": "\\dfrac{41}{6}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "كم بلاطة مساحة كلّ منها $\\dfrac{7}{12}\\,\\mathrm{m}^2$ تغطّي القطعة تمامًا؟",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "245/144",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "1/5",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "144/245",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ الكسرين هو المقسوم وأيّهما المقسوم عليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني: نقلب المقسوم عليه وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء، اختزل العوامل المشتركة قبل الضرب، ثمّ اكتب الناتج على أبسط شكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{35}{12} \\div \\dfrac{7}{12} = 5$ لأنّ قسمة كسر على كسر هي ضرب الأوّل في مقلوب الثاني.",
+        "incorrect": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني فقط، ثمّ نختزل؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $\\dfrac{35}{12} \\div \\dfrac{7}{12} = \\dfrac{35}{12} \\times \\dfrac{12}{7}$ .",
+          "$= \\dfrac{35 \\times 12}{12 \\times 7} = 5$ ."
+        ],
+        "result": "5"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

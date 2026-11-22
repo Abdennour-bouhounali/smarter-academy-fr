@@ -1,0 +1,146 @@
+{
+  "id": "ex-3am-amaliyat-natiqa-l4-004",
+  "lessonCode": "amaliyat-natiqa",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — جداء عدّة أعداد نسبية",
+    "estimatedMinutes": 8,
+    "tags": [
+      "العمليات على الأعداد الناطقة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نحدّد إشارة جداء عدّة أعداد ناطقة ثمّ نحسب قيمته ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "حدّد، دون أن تحسب، إشارة العدد $P = \\left(-\\dfrac{2}{3}\\right) \\times \\left(-\\dfrac{9}{4}\\right) \\times \\left(-\\dfrac{1}{6}\\right) \\times \\left(\\dfrac{5}{7}\\right)$ .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "timeSeconds": 90,
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "العدد موجب تمامًا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AMAL-PRODSIGN"
+        },
+        {
+          "id": "B",
+          "content": "العدد سالب تمامًا",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "العدد معدوم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AMAL-PRODSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة كلّ عدد في العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في الجداء والقسمة: الإشارة موجبة إذا كان عدد العوامل السالبة زوجيًا؛ وفي الجمع: إشارة العدد الأبعد عن الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا حاجة إلى الحساب: يكفي عدّ الإشارات ومقارنة البعدين."
+        }
+      ],
+      "feedback": {
+        "correct": "الإجابة الصحيحة: العدد سالب تمامًا .",
+        "incorrect": "عدّ العوامل السالبة، أو قارن بعدَي العددين عن الصفر، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "عدد العوامل السالبة (في الجداء أو القسمة) هو $3$ ، وهو فردي، فإشارة العدد سالبة.",
+          "إذن العدد سالب تمامًا."
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $P = \\left(-\\dfrac{2}{3}\\right) \\times \\left(-\\dfrac{9}{4}\\right) \\times \\left(-\\dfrac{1}{6}\\right) \\times \\left(\\dfrac{5}{7}\\right)$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "-5/28",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "5/28",
+          "id": "MISC-AMAL-PRODSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليات الموجودة؟ وهل توجد أقواس أو كسر مركّب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح، ومع كلّ عملية نحدّد الإشارة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز عملية واحدة في كلّ سطر، ثمّ اكتب النتيجة غير القابلة للاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "$P = -\\dfrac{5}{28}$ .",
+        "incorrect": "احترم الأولويّة: الأقواس ثمّ الضرب والقسمة ثمّ الجمع والطرح، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "العاملان سالبان: الجداء موجب.",
+          "$-\\dfrac{2}{3} \\times \\left(-\\dfrac{9}{4}\\right) = \\dfrac{2 \\times 9}{3 \\times 4} = \\dfrac{18}{12} = \\dfrac{3}{2}$ .",
+          "العاملان من إشارتين مختلفتين: الجداء سالب.",
+          "$\\dfrac{3}{2} \\times \\left(-\\dfrac{1}{6}\\right) = -\\dfrac{3 \\times 1}{2 \\times 6} = -\\dfrac{3}{12} = -\\dfrac{1}{4}$ .",
+          "العاملان من إشارتين مختلفتين: الجداء سالب.",
+          "$-\\dfrac{1}{4} \\times \\dfrac{5}{7} = -\\dfrac{1 \\times 5}{4 \\times 7} = -\\dfrac{5}{28}$ ."
+        ],
+        "result": "P = -\\dfrac{5}{28}"
+      }
+    }
+  ]
+}

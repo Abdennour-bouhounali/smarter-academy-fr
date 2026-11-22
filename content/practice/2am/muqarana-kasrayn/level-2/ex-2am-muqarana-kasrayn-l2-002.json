@@ -1,0 +1,271 @@
+{
+  "id": "ex-2am-muqarana-kasrayn-l2-002",
+  "lessonCode": "muqarana-kasrayn",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أحدّد الحالة ثمّ أقارن",
+    "estimatedMinutes": 10,
+    "tags": [
+      "مقارنة كسرين",
+      "اختيار الطريقة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "حدّد في كلّ مرّة الطريقة المناسبة ثمّ قارن بين الكسرين :"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما الطريقة الأنسب لمقارنة $\\dfrac{6}{11}$ و $\\dfrac{6}{13}$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نوحّد المقامين لأنّ أحدهما مضاعف للآخر ثمّ نقارن بين البسطين",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "نقارن بين المقامين : الأصغر مقامًا هو الأكبر لأنّ البسطين متساويان",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نقارن كلاّ من الكسرين بالعدد $1$ لأنّ أحدهما أصغر من $1$ والآخر أكبر منه",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "نقارن بين البسطين لأنّ المقامين متساويان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-NUMONLY"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى البسطين وإلى المقامين : أيّها متساوٍ ؟ وهل يقسم أحدها الآخر ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لكلّ حالة طريقتها : مقامان متساويان ، بسطان متساويان ، مقام مضاعف لمقام ، أو كسران على جانبي $1$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "نقارن بين المقامين : الأصغر مقامًا هو الأكبر لأنّ البسطين متساويان .",
+        "incorrect": "حدّد الحالة التي ينتمي إليها الكسران ثمّ اختر طريقتها ."
+      },
+      "solution": {
+        "lines": [
+          "البسطان متساويان ($6$) ، إذن الأكبر هو الكسر الذي مقامه أصغر (قطعه أكبر) .",
+          "$11 < 13$ ، ومنه $\\dfrac{6}{11} > \\dfrac{6}{13}$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "قارن بين $\\dfrac{6}{11}$ و $\\dfrac{6}{13}$ :",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{6}{11} < \\dfrac{6}{13}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-BIGDEN"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{6}{11} > \\dfrac{6}{13}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{6}{11} = \\dfrac{6}{13}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-NUMONLY"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما البسطان في الكسرين ؟ هل هما متساويان ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا تساوى البسطان فالأكبر هو الكسر الذي مقامه أصغر ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بين المقامين ثمّ تذكّر : كلّما كبر المقام صغرت الحصّة ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{6}{11} > \\dfrac{6}{13}$ .",
+        "incorrect": "اختر طريقة المقارنة المناسبة للحالة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "البسطان متساويان ($6$) ، إذن الأكبر هو الكسر الذي مقامه أصغر (قطعه أكبر) .",
+          "$11 < 13$ ، ومنه $\\dfrac{6}{11} > \\dfrac{6}{13}$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما الطريقة الأنسب لمقارنة $\\dfrac{5}{7}$ و $\\dfrac{25}{28}$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نقارن كلاّ من الكسرين بالعدد $1$ لأنّ أحدهما أصغر من $1$ والآخر أكبر منه",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "نوحّد المقامين لأنّ أحدهما مضاعف للآخر ثمّ نقارن بين البسطين",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نقارن بين البسطين لأنّ المقامين متساويان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-NUMONLY"
+        },
+        {
+          "id": "D",
+          "content": "نقارن بين المقامين : الأصغر مقامًا هو الأكبر لأنّ البسطين متساويان",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى البسطين وإلى المقامين : أيّها متساوٍ ؟ وهل يقسم أحدها الآخر ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لكلّ حالة طريقتها : مقامان متساويان ، بسطان متساويان ، مقام مضاعف لمقام ، أو كسران على جانبي $1$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "نوحّد المقامين لأنّ أحدهما مضاعف للآخر ثمّ نقارن بين البسطين .",
+        "incorrect": "حدّد الحالة التي ينتمي إليها الكسران ثمّ اختر طريقتها ."
+      },
+      "solution": {
+        "lines": [
+          "$28$ مضاعف للعدد $7$ : $28 = 7 \\times 4$ .",
+          "$\\dfrac{5}{7} = \\dfrac{5 \\times 4}{7 \\times 4} = \\dfrac{20}{28}$ .",
+          "نقارن بين البسطين : $20 < 25$ ، إذن $\\dfrac{5}{7} < \\dfrac{25}{28}$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "قارن بين $\\dfrac{5}{7}$ و $\\dfrac{25}{28}$ :",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{5}{7} > \\dfrac{25}{28}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-REVERSED"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{5}{7} < \\dfrac{25}{28}$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن بين المقامين : هل أحدهما مضاعف للآخر ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسرين بالمقام الأكبر ثمّ قارن بين البسطين ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب بسط الكسر الأصغر مقامًا ومقامه في العدد نفسه حتّى يصير مقامه مساويًا للمقام الآخر ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{5}{7} < \\dfrac{25}{28}$ .",
+        "incorrect": "اختر طريقة المقارنة المناسبة للحالة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$28$ مضاعف للعدد $7$ : $28 = 7 \\times 4$ .",
+          "$\\dfrac{5}{7} = \\dfrac{5 \\times 4}{7 \\times 4} = \\dfrac{20}{28}$ .",
+          "نقارن بين البسطين : $20 < 25$ ، إذن $\\dfrac{5}{7} < \\dfrac{25}{28}$ ."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "id": "ex-2am-ikhtibar-musawat-mutabayina-l3-007",
+  "lessonCode": "ikhtibar-musawat-mutabayina",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — متباينة بالمربّع",
+    "estimatedMinutes": 6,
+    "tags": [
+      "أعداد نسبيّة",
+      "متباينة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اختبر صحّة كلّ مساواة أو متباينة من أجل القيمة المعطاة :"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل المتباينة $x^{2}\\le 2x+3$ صحيحة من أجل $x=-1$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "نعم",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بالقيمة المعطاة في الطرف الأوّل ثمّ في الطرف الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة، مع إنجاز الضرب قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الناتجين بالرمز المكتوب، وانتبه إلى حالة التساوي : هل يقبلها الرمز ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "نعم : المتباينة صحيحة .",
+        "incorrect": "عوّض الحرف في الطرفين، احسب كلّ طرف ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل : $(-1)^{2}=1$ .",
+          "الطرف الثاني : $2\\times (-1)+3=1$ .",
+          "$1\\le 1$ : المقارنة صحيحة، فالمتباينة صحيحة ."
+        ]
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل المتباينة $x^{2}\\le 2x+3$ صحيحة من أجل $x=4$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بالقيمة المعطاة في الطرف الأوّل ثمّ في الطرف الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة، مع إنجاز الضرب قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الناتجين بالرمز المكتوب، وانتبه إلى حالة التساوي : هل يقبلها الرمز ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "لا : المتباينة خاطئة .",
+        "incorrect": "عوّض الحرف في الطرفين، احسب كلّ طرف ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل : $4^{2}=16$ .",
+          "الطرف الثاني : $2\\times 4+3=11$ .",
+          "$16\\le 11$ : المقارنة خاطئة، فالمتباينة خاطئة ."
+        ]
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "من بين القيم $-2$ ، $-1$ ، $0$ ، $3$ و $4$ : ما هي القيم التي تجعل المتباينة $x^{2}\\le 2x+3$ صحيحة ؟ اختر الإجابة الصحيحة :",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$0$ فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IKHTIBAR-STRICT"
+        },
+        {
+          "id": "B",
+          "content": "$-1$ و $0$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$-1$ ، $0$ و $3$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$0$ و $3$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختبر القيم المعطاة واحدة بعد الأخرى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لكلّ قيمة احسب الطرفين ثمّ قارنهما بالرمز المكتوب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى القيمة التي يتساوى عندها الطرفان : يقبلها الرمز أم لا ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "القيم المطلوبة : $-1$ ، $0$ و $3$ .",
+        "incorrect": "اختبر كلّ قيمة على حدة، وانتبه إلى حالة تساوي الطرفين."
+      },
+      "solution": {
+        "lines": [
+          "$x=-2$ : $4\\le -1$ ← خاطئة .",
+          "$x=-1$ : $1\\le 1$ ← صحيحة .",
+          "$x=0$ : $0\\le 3$ ← صحيحة .",
+          "$x=3$ : $9\\le 9$ ← صحيحة .",
+          "$x=4$ : $16\\le 11$ ← خاطئة ."
+        ]
+      },
+      "timeSeconds": 100
+    }
+  ]
+}

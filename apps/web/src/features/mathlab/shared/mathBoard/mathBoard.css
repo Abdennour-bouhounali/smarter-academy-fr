@@ -1,0 +1,373 @@
+/* ── Le tableau qui se construit (MathBoard.jsx) ─────────────────────────
+   Tons des jetons : selected (on désigne) → operation (ce qui se fait, orange
+   #F36D21) → result (ce qui vient d'être obtenu, vert #008443) → completed.
+   Jamais la couleur seule : un jeton désigné est aussi ENCADRÉ, un résultat
+   est aussi souligné, une inversion de sens porte une icône et une marque. */
+
+.sa-ml-board {
+  /* De la place en haut : la barre des pas flotte là par défaut. */
+  padding-block-start: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  font-family: 'Cairo', 'Inter', sans-serif;
+}
+
+/* Un déroulé en cours laisse de la place SOUS le pas courant : sans elle, la
+   scène ne peut pas défiler assez pour l'amener au centre de l'écran. */
+.sa-ml-board.is-running { padding-block-end: min(38vh, 340px); }
+
+.sa-ml-board__problem {
+  align-self: center;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  padding: 6px 14px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  font-size: 1.25rem;
+}
+
+.sa-ml-board__history {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sa-ml-board__settled {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+  flex-wrap: wrap;
+  color: #475569;
+  font-size: 0.98rem;
+}
+
+.sa-ml-board__settled svg { flex: none; color: #008443; }
+.sa-ml-board__settled.is-warning svg { color: #d97706; }
+
+.sa-ml-board__current {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  padding: 12px 14px 14px;
+  border: 1px solid #f9c9ad;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 4px 16px rgba(243, 109, 33, 0.08);
+  animation: sa-ml-board-in 0.25s ease both;
+}
+
+.sa-ml-board__current.is-result {
+  border-color: #008443;
+  background: #f3faf6;
+  box-shadow: 0 4px 16px rgba(0, 132, 67, 0.12);
+}
+
+.sa-ml-board__current.is-warning {
+  border-color: #f59e0b;
+  background: #fffbeb;
+}
+
+.sa-ml-board__operation {
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 3px 12px;
+  border-radius: 999px;
+  background: #fdeee4;
+  color: #c2410c;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.sa-ml-board__current.is-warning .sa-ml-board__operation { background: #fef3c7; color: #92400e; }
+
+/* La toile : AUCUNE barre de défilement interne (demande de la propriétaire) —
+   les flèches et leurs étiquettes débordent librement, et une expression
+   longue passe à la ligne (les jetons sont mesurés après coup, donc les
+   flèches suivent). Seule la scène de l'outil défile. */
+.sa-ml-board__canvas {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  overflow: visible;
+  padding: 6px 8px;
+  font-size: 1.45rem;
+}
+
+.sa-ml-board__canvas.has-link { padding-top: 58px; }
+.sa-ml-board__canvas.has-under { padding-bottom: 52px; }
+
+.sa-ml-board__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.28em;
+  row-gap: 3.4rem;
+  max-width: 100%;
+}
+
+.sa-ml-board__token { white-space: nowrap; }
+
+.sa-ml-board__token {
+  display: inline-block;
+  padding: 1px 4px;
+  border-radius: 7px;
+  border: 2px solid transparent;
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+.sa-ml-board__token.is-selected {
+  border-color: #f36d21;
+  background: #fff4ec;
+  animation: sa-ml-board-pulse 1.1s ease 1;
+}
+
+.sa-ml-board__token.is-operation {
+  color: #c2410c;
+  background: #fdeee4;
+}
+
+.sa-ml-board__token.is-result {
+  color: #006b36;
+  background: #e6f4ec;
+  border-bottom-color: #008443;
+  animation: sa-ml-board-land 0.35s ease both;
+}
+
+.sa-ml-board__token.is-completed { color: #006b36; }
+.sa-ml-board__token.is-muted { color: #94a3b8; text-decoration: line-through; }
+
+.sa-ml-board__token.is-warning {
+  color: #b45309;
+  background: #fef3c7;
+  border-color: #f59e0b;
+}
+
+.sa-ml-board__marks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.sa-ml-board__arrow {
+  fill: none;
+  stroke: #f36d21;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: sa-ml-board-draw 0.45s ease forwards;
+}
+
+.sa-ml-board__arrowhead { fill: #f36d21; }
+
+.sa-ml-board__mark-label {
+  position: absolute;
+  transform: translateX(-50%);
+  padding: 1px 8px;
+  border-radius: 8px;
+  font-size: 0.8em;
+  white-space: nowrap;
+  animation: sa-ml-board-in 0.3s ease 0.25s both;
+}
+
+.sa-ml-board__mark-label.is-operation { color: #c2410c; background: #fdeee4; }
+.sa-ml-board__mark-label.is-result { color: #006b36; background: #e6f4ec; font-weight: 700; border: 1px solid #9fd3b7; }
+.sa-ml-board__mark-label.is-warning { color: #92400e; background: #fef3c7; border: 1px solid #f59e0b; }
+
+.sa-ml-board__mark-label.is-badge {
+  transform: translate(-50%, -50%);
+  min-width: 1.9em;
+  text-align: center;
+  border-radius: 999px;
+  border: 1.5px solid #f36d21;
+  background: #fff;
+}
+
+.sa-ml-board__text {
+  margin: 0;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #334155;
+}
+
+@keyframes sa-ml-board-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes sa-ml-board-land { from { transform: translateY(-6px); opacity: 0.2; } to { transform: none; opacity: 1; } }
+@keyframes sa-ml-board-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(243, 109, 33, 0); } 40% { box-shadow: 0 0 0 5px rgba(243, 109, 33, 0.25); } }
+@keyframes sa-ml-board-draw { to { stroke-dashoffset: 0; } }
+
+@media (max-width: 480px) {
+  .sa-ml-board__canvas { font-size: 1.2rem; }
+  .sa-ml-board__problem { font-size: 1.1rem; }
+}
+
+/* Mouvement réduit : le déroulé reste pas à pas, seules les animations tombent. */
+@media (prefers-reduced-motion: reduce) {
+  .sa-ml-board__current,
+  .sa-ml-board__token,
+  .sa-ml-board__mark-label { animation: none; transition: none; }
+  .sa-ml-board__arrow { animation: none; stroke-dashoffset: 0; }
+}
+
+/* ── « تدرّب بنفسك » : le tableau devient un exercice ───────────────────── */
+
+.sa-ml-board__practice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.sa-ml-board__practice-prompt {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.sa-ml-board__practice-prompt svg { color: #f36d21; }
+
+.sa-ml-board__practice-count {
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: #64748b;
+  font-size: 0.75rem;
+}
+
+.sa-ml-board__pick {
+  appearance: none;
+  font: inherit;
+  cursor: pointer;
+  border: 2px dashed #cbd5e1;
+  background: #fff;
+  transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
+}
+
+.sa-ml-board__pick:hover:not(:disabled) { border-color: #f36d21; background: #fff7f1; transform: translateY(-1px); }
+.sa-ml-board__pick:focus-visible { outline: 3px solid rgba(243, 109, 33, 0.55); outline-offset: 2px; }
+.sa-ml-board__pick:disabled { cursor: default; }
+.sa-ml-board__pick.is-selected { border-style: solid; border-color: #f36d21; background: #fff4ec; }
+.sa-ml-board__pick.is-hint { border-color: #008443; box-shadow: 0 0 0 4px rgba(0, 132, 67, 0.18); }
+
+.sa-ml-board__operators {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  padding: 6px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid #f9c9ad;
+  animation: sa-ml-board-in 0.25s ease both;
+}
+
+.sa-ml-board__operator {
+  appearance: none;
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  background: #fff;
+  color: #c2410c;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.sa-ml-board__operator:hover { border-color: #f36d21; background: #fff4ec; }
+.sa-ml-board__operator:focus-visible { outline: 3px solid rgba(243, 109, 33, 0.55); outline-offset: 2px; }
+.sa-ml-board__operator.is-undo { color: #64748b; font-size: 0.9rem; }
+
+.sa-ml-board__practice-feedback {
+  min-height: 1.5em;
+  margin: 0;
+  font-size: 0.86rem;
+  text-align: center;
+  color: #64748b;
+}
+
+.sa-ml-board__practice-feedback.is-error { color: #b91c1c; animation: sa-ml-board-nudge 0.35s ease; }
+.sa-ml-board__practice-feedback.is-success { color: #006b36; font-weight: 700; }
+
+@keyframes sa-ml-board-nudge { 0%, 100% { transform: none; } 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .sa-ml-board__pick, .sa-ml-board__operators, .sa-ml-board__practice-feedback.is-error { animation: none; transition: none; }
+}
+
+/* La saisie du résultat : « 2 × 3 = [ ? ] » — c'est l'élève qui calcule. */
+.sa-ml-board__answer {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid #b7dcc7;
+  animation: sa-ml-board-in 0.25s ease both;
+}
+
+.sa-ml-board__answer-expr {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3em;
+  font-size: 1.2rem;
+}
+
+.sa-ml-board__answer-part { display: inline-flex; gap: 0.3em; align-items: baseline; }
+
+.sa-ml-board__answer-input {
+  width: 5.5rem;
+  height: 40px;
+  padding: 0 10px;
+  border: 2px solid #008443;
+  border-radius: 10px;
+  font-family: 'JetBrains Mono', 'Inter', sans-serif;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.sa-ml-board__answer-input:focus-visible { outline: 3px solid rgba(0, 132, 67, 0.3); outline-offset: 1px; }
+
+.sa-ml-board__answer-check {
+  appearance: none;
+  height: 40px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+  background: #008443;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) { .sa-ml-board__answer { animation: none; } }
+.sa-ml-board__answer-context { font-size: 1.15rem; }
+.sa-ml-board__answer-arrow { color: #008443; font-weight: 700; }

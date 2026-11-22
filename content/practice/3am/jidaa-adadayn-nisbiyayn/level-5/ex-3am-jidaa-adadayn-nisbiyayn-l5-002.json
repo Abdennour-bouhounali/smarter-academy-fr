@@ -1,0 +1,326 @@
+{
+  "id": "ex-3am-jidaa-adadayn-nisbiyayn-l5-002",
+  "lessonCode": "jidaa-adadayn-nisbiyayn",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — ليلة شتوية في سطيف",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "درجة الحرارة",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: في ليلة شتاء بسطيف، تنخفض درجة الحرارة بانتظام 2,5 °C في كل ساعة، وكانت 0 °C عند منتصف الليل. درجة الحرارة (بـ °C) عند اللحظة $t$ ساعة هي $(−2{,}5) \\times t$ ، و $t$ سالب قبل منتصف الليل.\nالجزء الثاني: يريد فلاح حماية شتلاته، وهي لا تتحمل درجة حرارة أقل من 5 °C ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "ما درجة الحرارة عند الساعة 03:00 ، أي $t = 3$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-7.5",
+      "misconceptionSignatures": [
+        {
+          "value": "7.5",
+          "id": "MISC-JIDAA-LARGER"
+        },
+        {
+          "value": "0.5",
+          "id": "MISC-JIDAA-ADD"
+        },
+        {
+          "value": "-75",
+          "id": "MISC-JIDAA-DECIMAL"
+        },
+        {
+          "value": "-0.75",
+          "id": "MISC-JIDAA-DECIMAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب أولًا كأنّ العددين طبيعيان، ثم أرجع الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد الأرقام بعد الفاصلة في الجداء هو مجموع عدد الأرقام بعد الفاصلة في العاملين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عيّن الإشارة أولًا، ثم اضرب المسافتين إلى الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−2{,}5) \\times 3 = −7{,}5$ : العاملان مختلفا الإشارة (سالب وموجب)، إذن الجداء سالب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العاملان مختلفا الإشارة (سالب وموجب)، إذن الجداء سالب.",
+          "$2{,}5 \\times 3 = 7{,}5$",
+          "$(−2{,}5) \\times 3 = −7{,}5$"
+        ],
+        "result": "−7{,}5"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما درجة الحرارة عند الساعة 20:00 ، أي $t = −4$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "-10",
+          "id": "MISC-JIDAA-TIME"
+        },
+        {
+          "value": "-6.5",
+          "id": "MISC-JIDAA-ADD"
+        },
+        {
+          "value": "1.5",
+          "id": "MISC-JIDAA-SUB"
+        },
+        {
+          "value": "100",
+          "id": "MISC-JIDAA-DECIMAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في النص العددين اللذين يُضربان، وأعطِ كلًّا منهما إشارته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السرعة أو التغيّر بالنقصان عدد سالب، والزمن قبل اللحظة المرجعية عدد سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء بالإشارتين، ثم طبّق قاعدة الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−2{,}5) \\times (−4) = 10$ : العاملان سالبان، إذن الجداء موجب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العاملان سالبان، إذن الجداء موجب.",
+          "$2{,}5 \\times 4 = 10$",
+          "$(−2{,}5) \\times (−4) = 10$"
+        ],
+        "result": "10"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما درجة الحرارة عند الساعة 22:00 ، أي $t = −2$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "-5",
+          "id": "MISC-JIDAA-TIME"
+        },
+        {
+          "value": "-4.5",
+          "id": "MISC-JIDAA-ADD"
+        },
+        {
+          "value": "0.5",
+          "id": "MISC-JIDAA-SUB"
+        },
+        {
+          "value": "50",
+          "id": "MISC-JIDAA-DECIMAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في النص العددين اللذين يُضربان، وأعطِ كلًّا منهما إشارته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السرعة أو التغيّر بالنقصان عدد سالب، والزمن قبل اللحظة المرجعية عدد سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء بالإشارتين، ثم طبّق قاعدة الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−2{,}5) \\times (−2) = 5$ : العاملان سالبان، إذن الجداء موجب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العاملان سالبان، إذن الجداء موجب.",
+          "$2{,}5 \\times 2 = 5$",
+          "$(−2{,}5) \\times (−2) = 5$"
+        ],
+        "result": "5"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "هل كانت الحرارة عند الساعة 20:00 أقلّ من 5 °C ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDAA-TIME"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في النص العددين اللذين يُضربان، وأعطِ كلًّا منهما إشارته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السرعة أو التغيّر بالنقصان عدد سالب، والزمن قبل اللحظة المرجعية عدد سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء بالإشارتين، ثم طبّق قاعدة الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "الحرارة عند 20:00 كانت $10$ °C ، أي أكبر من 5 °C .",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "عند الساعة 20:00 ، $t = −4$ و $(−2{,}5) \\times (−4) = 10$ .",
+          "$10$ أكبر من 5 : لا، لم تكن الحرارة أقلّ من 5 °C ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "بكم درجة تفوق الحرارة عند 20:00 الحرارة عند 03:00 ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "17.5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط؟ اقرأ السؤال بتمعّن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الإشارات على كل جداء على حدة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من النتيجة بإعادة الحساب بترتيب آخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$10 − (−7{,}5) = 17{,}5$ : تفوقها بـ $17{,}5$ °C .",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "الحرارة عند 20:00 هي $10$ وعند 03:00 هي $−7{,}5$ .",
+          "$10 − (−7{,}5) = 17{,}5$"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

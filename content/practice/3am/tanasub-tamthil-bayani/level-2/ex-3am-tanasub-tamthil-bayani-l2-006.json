@@ -1,0 +1,221 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l2-006",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 2,
+  "metadata": {
+    "title": "كتلة علب متماثلة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "تناسبية",
+      "معامل التناسبية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-3",
+      "page": 94,
+      "section": "أوظّف تعلّماتي",
+      "number": 3
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يعبّئ متطوّعو جمعية الإحسان علبا متماثلة من التمر لتوزيعها على الأسر. وزن المتطوع فاطمة 5 علب فكانت كتلتها $3{,}5$ kg، ووزنت مريم 3 علب فكانت كتلتها $2{,}1$ kg. مثّلنا النقطتين في المعلم التالي (الفاصلة عدد العلب والترتيب الكتلة بالكيلوغرام).",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          5,
+          3.5
+        ],
+        "B": [
+          3,
+          2.1
+        ]
+      },
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw",
+        "A": "ne",
+        "B": "ne"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس: النقطتان A(5;3,5) و B(3;2,1) تقعان على مستقيم يشمل المبدأ O",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: عدد العلب — محور التراتيب: الكتلة بالكيلوغرام"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "قالت فاطمة: « الكتلة، بدلالة عدد العلب، تُمثَّل بنقط على استقامة واحدة مع المبدأ ». هل هي محقّة؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "خاطئة: لأنّ الكتلة لا تساوي عدد العلب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-EQUAL-ONLY"
+        },
+        {
+          "id": "B",
+          "content": "خاطئة: لأنّ لدينا نقطتين فقط ولا يمكن الحكم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-TWO-POINTS"
+        },
+        {
+          "id": "C",
+          "content": "صحيحة: $3{,}5 \\div 5 = 2{,}1 \\div 3 = 0{,}7$ فالناتج ثابت",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب ناتج قسمة الكتلة على عدد العلب في كل حالة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان الناتج هو نفسه فالنقط مع $O$ على استقامة واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "الناتجان متساويان ($0{,}7$ للعلبة)، فالنقطتان $A$ و $B$ و $O$ على استقامة واحدة.",
+        "incorrect": "احسب $y \\div x$ لكل نقطة وقارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3{,}5}{5} = 0{,}7$ و $\\dfrac{2{,}1}{3} = 0{,}7$ .",
+          "الناتجان متساويان إذن النقطتان $A$ و $B$ مع $O$ على استقامة واحدة: فاطمة محقّة."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "قالت مريم: « 8 علب تزن $5{,}8$ kg ». هل هذا صحيح؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح: لأنّ $3{,}5 + 2{,}1 = 5{,}6$ تقريبا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-DIFFERENCE"
+        },
+        {
+          "id": "B",
+          "content": "خاطئ: كتلة 8 علب هي $8 \\times 0{,}7 = 5{,}6$ kg",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "صحيح: لأنّ $5{,}8$ يزيد على $5{,}6$ بجزء بسيط فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل معامل التناسبية الذي وجدته: كتلة العلبة الواحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب في عدد العلب."
+        }
+      ],
+      "feedback": {
+        "correct": "$8 \\times 0{,}7 = 5{,}6$ ، والعدد $5{,}8$ ليس هو الناتج.",
+        "incorrect": "اضرب كتلة العلبة الواحدة في عدد العلب ثم قارن بالعدد المعلن."
+      },
+      "solution": {
+        "lines": [
+          "كتلة العلبة الواحدة $0{,}7$ kg.",
+          "$8 \\times 0{,}7 = 5{,}6$ kg وليس $5{,}8$ kg، إذن مريم مخطئة."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما كتلة $13$ علبة بالكيلوغرام؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الكتلة بالكيلوغرام",
+      "expectedAnswer": "9.1",
+      "misconceptionSignatures": [
+        {
+          "value": "10.7",
+          "id": "MISC-TAMTHIL-DIFFERENCE"
+        },
+        {
+          "value": "18.57",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب عدد العلب في كتلة العلبة الواحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كتلة العلبة الواحدة هي معامل التناسبية."
+        }
+      ],
+      "feedback": {
+        "correct": "$13 \\times 0{,}7 = 9{,}1$ kg.",
+        "incorrect": "استعمل $y = 0{,}7\\,x$ ولا تضف عددا إلى $13$ ."
+      },
+      "solution": {
+        "lines": [
+          "$y = 0{,}7 \\times 13 = 9{,}1$ kg."
+        ],
+        "result": "9{,}1\\ \\text{kg}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

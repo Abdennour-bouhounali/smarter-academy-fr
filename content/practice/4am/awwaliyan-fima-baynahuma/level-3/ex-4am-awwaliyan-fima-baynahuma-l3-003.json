@@ -1,0 +1,245 @@
+{
+  "id": "ex-4am-awwaliyan-fima-baynahuma-l3-003",
+  "lessonCode": "awwaliyan-fima-baynahuma",
+  "level": 3,
+  "metadata": {
+    "title": "سلسلة التفوق، تمرين 7 — 3a و 6b",
+    "estimatedMinutes": 10,
+    "tags": [
+      "استدلال",
+      "نفي"
+    ],
+    "source": {
+      "type": "worksheet",
+      "worksheetId": "tafawwuq-01",
+      "elementId": "ws01-ex-07",
+      "section": "التمارين",
+      "number": 7
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$a$ و $b$ عددان طبيعيان غير معدومين أوليان فيما بينهما."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل العددان $3a$ و $6b$ أوليان فيما بينهما؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، مهما كان العددان $a$ و $b$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم، لأن $a$ و $b$ أوليان فيما بينهما",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "لا يمكن الحكم دون معرفة قيمتي $a$ و $b$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $6b$ على الشكل $3 \\times 2b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن عدد يختلف عن 1 يقسم $3a$ و $6b$ مهما كان $a$ و $b$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يكفي قاسم مشترك واحد يختلف عن 1 لنفي أن العددين أوليان فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "3 يقسم $3a$ و $6b$ مهما كان $a$ و $b$ ، إذن $PGCD(3a ; 6b) \\neq 1$ .",
+        "incorrect": "اكتب العددين على شكل جداءين، وابحث عن عامل مشترك بينهما يختلف عن 1."
+      },
+      "solution": {
+        "lines": [
+          "$3a = 3 \\times a$ و $6b = 3 \\times 2b$",
+          "إذن 3 قاسم مشترك للعددين $3a$ و $6b$ ، و $3 \\neq 1$ .",
+          "ومنه العددان $3a$ و $6b$ ليسا أوليين فيما بينهما، مهما كان العددان $a$ و $b$ ."
+        ],
+        "result": "PGCD(3a ; 6b) \\neq 1"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "نأخذ $a = 5$ و $b = 8$ .",
+      "statement": "تحقّق أن العددين 5 و 8 أوليان فيما بينهما.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيمة PGCD(5 ; 8) التي وجدتها",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عددان أوليان فيما بينهما: احسب قاسمهما المشترك الأكبر PGCD(5 ; 8)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 8 على 5، ثم واصل القسمات المتتابعة إلى أن تجد باقيًا معدومًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن آخر باقٍ غير معدوم بما يتطلّبه تعريف عددين أوليين فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(5 ; 8) = 1: العددان 5 و 8 أوليان فيما بينهما.",
+        "incorrect": "راجع القسمات المتتابعة باقيًا باقيًا: آخر باقٍ غير معدوم هو القاسم المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$8 = 5 \\times 1 + 3$",
+          "$5 = 3 \\times 1 + 2$",
+          "$3 = 2 \\times 1 + 1$",
+          "$2 = 1 \\times 2 + 0$",
+          "آخر باقٍ غير معدوم هو 1، إذن PGCD(5 ; 8) = 1 .",
+          "ومنه العددان 5 و 8 أوليان فيما بينهما."
+        ],
+        "result": "PGCD(5 ; 8) = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب في هذه الحالة $PGCD(3a ; 6b)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 48 على 15: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (48 ; 15) بالزوج (15 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 3.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$48 = 15 \\times 3 + 3$",
+          "$15 = 3 \\times 5 + 0$",
+          "آخر باقٍ غير معدوم هو 3، إذن:"
+        ],
+        "result": "PGCD(15 ; 48) = 3"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "نأخذ $a = 4$ و $b = 3$ (عددان أوليان فيما بينهما). احسب في هذه الحالة $PGCD(3a ; 6b)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 18 على 12: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (18 ; 12) بالزوج (12 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 6.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$18 = 12 \\times 1 + 6$",
+          "$12 = 6 \\times 2 + 0$",
+          "آخر باقٍ غير معدوم هو 6، إذن:",
+          "في الحالتين 3 يقسم $PGCD(3a ; 6b)$ ، لكن القاسم المشترك الأكبر ليس دائمًا 3."
+        ],
+        "result": "PGCD(12 ; 18) = 6"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

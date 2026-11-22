@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { NumberField } from '../../../lessons/common/components/LessonUI';
 
 /**
@@ -7,6 +8,7 @@ import { NumberField } from '../../../lessons/common/components/LessonUI';
  * (comma or dot), so there's no client-side parsing to duplicate here.
  */
 export default function NumericQuestion({ question, onChange, disabled }) {
+  const { t } = useTranslation('student');
   const [value, setValue] = useState('');
 
   const handleChange = (next) => {
@@ -23,7 +25,7 @@ export default function NumericQuestion({ question, onChange, disabled }) {
         value={value}
         onChange={handleChange}
         ariaLabel={question.prompt}
-        placeholder="Ta réponse"
+        placeholder={t('diagnostic.questions.answerPlaceholder')}
       />
     </div>
   );

@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l1-006",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — طبيعة رباعي",
+    "estimatedMinutes": 3,
+    "tags": [
+      "متوازي الأضلاع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_shuaayn-mutasawiyayn_P2",
+      "modelledOn": "method-equal"
+    }
+  },
+  "statement": {
+    "content": "EFGH رباعي حيث $\\overrightarrow{EF} = \\overrightarrow{HG}$ ، والنقط E و F و G ليست على استقامة واحدة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إذن:",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "EFGH متوازي أضلاع",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "EFHG متوازي أضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        },
+        {
+          "id": "C",
+          "content": "لا يمكن الحكم دون قياس الأطوال",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TUL-FAQAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تساوي شعاعين يعطي ضلعين متوازيين ومتقايسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر: تساوي الشعاعين AB و DC يعني أن ABCD متوازي أضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طابق: A ← E، B ← F، C ← G، D ← H."
+        }
+      ],
+      "feedback": {
+        "correct": "المساواة الشعاعية تحمل المنحى والاتجاه والطول معا: EFGH متوازي أضلاع.",
+        "incorrect": "طابق الحروف مع خاصية الدرس السابق."
+      }
+    }
+  ]
+}

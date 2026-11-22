@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l4-006",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — منتصفا ضلعين متقابلين",
+    "estimatedMinutes": 3,
+    "tags": [
+      "برهان",
+      "المنتصف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_shuaayn-mutasawiyayn_P2",
+      "modelledOn": "method-equal"
+    }
+  },
+  "statement": {
+    "content": "ABCD متوازي أضلاع، I منتصف [AB] و J منتصف [DC]."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "البرهان على أن AICJ متوازي أضلاع:",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{AI} = \\overrightarrow{JC}$ ، إذن AIJC متوازي أضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        },
+        {
+          "id": "B",
+          "content": "للشعاعين AI و JC نفس المنحى ونفس الاتجاه ونفس الطول (نصفا AB و DC)، إذن $\\overrightarrow{AI} = \\overrightarrow{JC}$ : AICJ متوازي أضلاع",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{AI} = \\overrightarrow{CJ}$ ، إذن AICJ متوازي أضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "(AB) // (DC) و AB = DC."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "AI نصف AB، و JC نصف DC، وفي الاتجاه نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طابق المساواة مع ترتيب رؤوس AICJ."
+        }
+      ],
+      "feedback": {
+        "correct": "الشعاعان AI و JC متوازيان، في الاتجاه نفسه، وطول كل منهما نصف AB: هما متساويان، فالرباعي AICJ متوازي أضلاع.",
+        "incorrect": "تحقّق من الشروط الثلاثة ثم من ترتيب الرؤوس."
+      }
+    }
+  ]
+}

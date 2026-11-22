@@ -1,0 +1,212 @@
+{
+  "id": "ex-1am-kusur-ashriya-kitaba-l2-001",
+  "lessonCode": "kusur-ashriya-kitaba",
+  "level": 2,
+  "metadata": {
+    "title": "أجزاء من عشرة وأجزاء من مائة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "كسر عشري",
+      "كتابات متساوية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-2",
+      "page": 9,
+      "section": "اكتشف",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يتعاون مراد ومنى على تلوين لوحة زليج مربّعة مقسّمة إلى 100 بلاطة متماثلة في 10 أعمدة متماثلة، ويتقاسمان العمل بعدل."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "لوحة زليج مربّعة مقسّمة إلى 100 بلاطة متماثلة مرتّبة في 10 أعمدة متماثلة. الملوّن: أعمدة كاملة عددها $2$، وبلاطات منفردة عددها $5$. أتمم: الجزء الملوّن هو $\\dfrac{\\ldots}{100}$ من اللوحة.",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "25",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-KUSUR-SUM-NUM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم بلاطة في العمود الواحد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب عدد البلاطات في الأعمدة، ثم أضف البلاطات المنفردة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اللوحة كلّها تساوي 100 بلاطة."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 10 + 5 = 25$ بلاطة من 100، أي $\\dfrac{25}{100}$ من اللوحة.",
+        "incorrect": "العمود الواحد يساوي عشر بلاطات، أي جزءًا من عشرة من اللوحة، والبلاطة جزء من مائة: نحسب عدد البلاطات الملوّنة كلّها ونضعه فوق 100."
+      },
+      "solution": {
+        "lines": [
+          "عدد البلاطات في الأعمدة: $2 \\times 10 = 20$",
+          "المجموع: $20 + 5 = 25$ ، فالجزء الملوّن هو $\\dfrac{25}{100}$."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أتمم: $\\dfrac{25}{100} = \\dfrac{\\ldots}{1000}$",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "250",
+      "misconceptionSignatures": [
+        {
+          "value": "925",
+          "id": "MISC-KUSUR-EQUAL-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المقامين: كم مرّة يوجد أحدهما في الآخر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ماذا نفعل بالحدّ الآخر لنحصل على كتابة مساوية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نطبّق العملية نفسها على البسط والمقام معًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{25}{100} = \\dfrac{25 \\times 10}{100 \\times 10} = \\dfrac{250}{1000}$ : ضربنا البسط والمقام في العدد نفسه.",
+        "incorrect": "نحصل على كتابة مساوية بضرب البسط والمقام في العدد نفسه أو بقسمتهما عليه، وليس بإضافة عدد إليهما."
+      },
+      "solution": {
+        "lines": [
+          "$100 \\times 10 = 1000$ ، إذن نضرب البسط في 10 أيضًا: $25 \\times 10 = 250$",
+          "$\\dfrac{25}{100} = \\dfrac{250}{1000}$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "$1 = \\dfrac{10}{10} = \\dfrac{100}{100}$",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KUSUR-DIFF-DEN"
+        }
+      ],
+      "answerFormat": "اختر إجابة واحدة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا يمثّل $\\dfrac{10}{10}$ من اللوحة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "وماذا يمثّل $\\dfrac{100}{100}$ منها؟"
+        }
+      ],
+      "feedback": {
+        "correct": "اللوحة كلّها هي $\\dfrac{10}{10}$ وهي أيضًا $\\dfrac{100}{100}$ ، وكلاهما يساوي 1.",
+        "incorrect": "كتابتان كسريتان لهما مقامان مختلفان قد تمثّلان العدد نفسه: الوحدة كلّها هي 10 أعشار وهي أيضًا 100 جزء من مائة."
+      },
+      "solution": {
+        "lines": [
+          "العشرة أعشار هي اللوحة كلّها: $\\dfrac{10}{10} = 1$",
+          "والمائة جزء من مائة هي اللوحة كلّها أيضًا: $\\dfrac{100}{100} = 1$ ، فالعبارة صحيحة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "قال مراد: «$\\dfrac{3}{10} = \\dfrac{30}{100}$ لأنّ العمود الواحد يحوي 10 بلاطات». هل توافقه؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعن بما تعلّمته عن مراتب الأرقام بعد الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي.",
+        "incorrect": "راجع القاعدة وأعد صياغة التبرير."
+      },
+      "solution": {
+        "lines": [
+          "العمود الواحد هو جزء من عشرة من اللوحة، ويحوي 10 بلاطات وكل بلاطة جزء من مائة.",
+          "3 أعمدة = 30 بلاطة، إذن $\\dfrac{3}{10} = \\dfrac{30}{100}$ : نعم، نوافقه.",
+          "وهذا يوافق ضرب البسط والمقام في العدد نفسه: $\\dfrac{3 \\times 10}{10 \\times 10}$."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

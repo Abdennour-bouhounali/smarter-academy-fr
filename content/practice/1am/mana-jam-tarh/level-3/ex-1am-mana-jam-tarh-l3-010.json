@@ -1,0 +1,164 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l3-010",
+  "lessonCode": "mana-jam-tarh",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — تبرّعات لمكتبة المدرسة",
+    "estimatedMinutes": 7,
+    "tags": [
+      "أقل",
+      "أكثر",
+      "مجموع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "جمعت ثلاثة أقسام تبرّعات لشراء كتب لمكتبة المدرسة: جمع القسم الأول 3450 دج، وجمع القسم الثاني أقل منه بـ 575 دج، وجمع القسم الثالث أكثر من القسم الثاني بـ 1120 دج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "كم جمع القسم الثاني؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "2875",
+      "misconceptionSignatures": [
+        {
+          "value": "4025",
+          "id": "MISC-JAMTARH-KALIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القسم الثاني جمع أقل من القسم الأول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما جمعه القسم الأول هو الكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$3450 - 575 = 2875$ دج.",
+        "incorrect": "القسم الثاني جمع أقل من القسم الأول: النتيجة أصغر من 3450 دج."
+      },
+      "solution": {
+        "lines": [
+          "$3450 - 575 = 2875$"
+        ],
+        "result": "2875 \\text{ DA}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم جمع القسم الثالث؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "3995",
+      "misconceptionSignatures": [
+        {
+          "value": "1755",
+          "id": "MISC-JAMTARH-KALIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولًا ما جمعه القسم الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسم الثالث جمع أكثر من القسم الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "$2875 + 1120 = 3995$ دج.",
+        "incorrect": "ما جمعه القسم الثالث هو الكل: ما جمعه القسم الثاني + الزيادة."
+      },
+      "solution": {
+        "lines": [
+          "القسم الثاني: 2875 دج.",
+          "$2875 + 1120 = 3995$"
+        ],
+        "result": "3995 \\text{ DA}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب مجموع ما جمعته الأقسام الثلاثة.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "10320",
+      "misconceptionSignatures": [
+        {
+          "value": "6325",
+          "id": "MISC-JAMTARH-JUZ-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدود المجموع ثلاثة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب ما جمعه كل قسم ثم اجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$3450 + 2875 + 3995 = 10320$ دج.",
+        "incorrect": "المجموع يضمّ ما جمعته الأقسام الثلاثة كلها."
+      },
+      "solution": {
+        "lines": [
+          "$3450 + 2875 + 3995 = 10320$"
+        ],
+        "result": "10320 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

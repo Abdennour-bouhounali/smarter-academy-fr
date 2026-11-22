@@ -1,0 +1,238 @@
+{
+  "id": "ex-4am-tarrid-muthallathiya-l3-010",
+  "lessonCode": "tarrid-muthallathiya",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 13 (ص 123) — شكل باليد الحرة: برهن ثم احسب",
+    "estimatedMinutes": 10,
+    "tags": [
+      "برهان",
+      "جيب التمام",
+      "زاوية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-13",
+      "page": 123,
+      "section": "البرهان باستعمال النسب المثلثية",
+      "number": 13
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "إليك شكلا أُنجز باليد الحرة (الشكل المقابل): $B$ نقطة من $[AC]$ و $E$ نقطة من $[AD]$ ، حيث $CB = 1{,}25$ و $BA = 3$ و $AE = 2{,}4$ و $ED = 1$ و $CD = 2{,}55$ (الأطوال بالسنتيمتر).",
+    "figure": {
+      "points": {
+        "A": [
+          3.4,
+          0.0
+        ],
+        "C": [
+          0.0,
+          2.55
+        ],
+        "D": [
+          0.0,
+          0.0
+        ],
+        "B": [
+          1.0,
+          1.8
+        ],
+        "E": [
+          1.0,
+          0.0
+        ]
+      },
+      "segments": [
+        {
+          "from": "C",
+          "to": "B",
+          "label": "1,25"
+        },
+        {
+          "from": "B",
+          "to": "A",
+          "label": "3"
+        },
+        {
+          "from": "A",
+          "to": "E",
+          "label": "2,4",
+          "labelSide": -1
+        },
+        {
+          "from": "E",
+          "to": "D",
+          "label": "1",
+          "labelSide": -1
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "label": "2,55"
+        },
+        {
+          "from": "B",
+          "to": "E",
+          "tone": "indigo"
+        }
+      ],
+      "labels": {
+        "A": "e",
+        "C": "nw",
+        "D": "sw",
+        "B": "n",
+        "E": "s"
+      },
+      "ariaLabel": "شكل منجز باليد الحرة: B على [AC] و E على [AD]؛ CB = 1,25 و BA = 3 و AE = 2,4 و ED = 1 و CD = 2,55 (بالسنتيمتر)",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن المثلث $ACD$ قائم في $D$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولا $AC$ و $AD$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن $AC^2$ بـ $AD^2 + CD^2$ (الخاصية العكسية لخاصية فيثاغورس)."
+        }
+      ],
+      "feedback": {
+        "correct": "$AD^2 + CD^2 = 11{,}56 + 6{,}5025 = 18{,}0625 = AC^2$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي."
+      },
+      "solution": {
+        "lines": [
+          "$AC = 1{,}25 + 3 = 4{,}25$ و $AD = 2{,}4 + 1 = 3{,}4$",
+          "$AC^2 = 18{,}0625$ و $AD^2 + CD^2 = 11{,}56 + 6{,}5025 = 18{,}0625$",
+          "إذن $AC^2 = AD^2 + CD^2$ ، والمثلث $ACD$ قائم في $D$ حسب الخاصية العكسية لخاصية فيثاغورس."
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "برهن أن $(BE)$ عمودي على $(AD)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن $\\dfrac{AB}{AC}$ بـ $\\dfrac{AE}{AD}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الخاصية العكسية لخاصية طالس تعطي $(BE) \\parallel (CD)$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مستقيمان متوازيان، أحدهما عمودي على $(AD)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AB}{AC} = \\dfrac{AE}{AD} = \\dfrac{12}{17}$ ، إذن $(BE) \\parallel (CD)$ و $(CD) \\perp (AD)$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AB}{AC} = \\dfrac{3}{4{,}25} = \\dfrac{12}{17}$ و $\\dfrac{AE}{AD} = \\dfrac{2{,}4}{3{,}4} = \\dfrac{12}{17}$ ، والنقط $A, B, C$ و $A, E, D$ على استقامة وبالترتيب نفسه.",
+          "حسب الخاصية العكسية لخاصية طالس: $(BE) \\parallel (CD)$ .",
+          "وبما أن $(CD) \\perp (AD)$ (السؤال 01)، فإن $(BE) \\perp (AD)$ ."
+        ]
+      },
+      "timeSeconds": 300
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب قيس الزاوية $\\widehat{CAD}$ بالتدوير إلى الوحدة من الدرجة.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيس الزاوية بالدرجة مدوّرا إلى الوحدة",
+      "expectedAnswer": "37",
+      "misconceptionSignatures": [
+        {
+          "value": "53",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "0.8",
+          "id": "MISC-MUTH-NISBA-BADAL-QAYS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $ACD$ القائم في $D$ ، الضلعان المعلومان: ما موقع كل منهما بالنسبة إلى الزاوية $\\widehat{CAD}$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب جيب تمام الزاوية $\\widehat{CAD}$ ثم استعمل اللمسة العكسية ⁦2nd⁩ ثم ⁦cos⁻¹⁩ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الحاسبة مبرمجة على الدرجة، ثم دوّر النتيجة النهائية فقط."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\cos\\widehat{CAD} = \\dfrac{3{,}4}{4{,}25} = 0{,}8$ ، ومنه $\\widehat{CAD} \\approx 37^{\\circ}$ .",
+        "incorrect": "المجاور للزاوية $A$ هو $[AD]$ والوتر $[AC]$ ؛ ثم اللمسة العكسية."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $ACD$ القائم في $D$ : $\\cos\\widehat{CAD} = \\dfrac{AD}{AC} = \\dfrac{3{,}4}{4{,}25} = 0{,}8$",
+          "باستعمال الآلة الحاسبة (⁦cos⁻¹⁩): $\\widehat{CAD} \\approx 36{,}8699^{\\circ}$"
+        ],
+        "result": "\\widehat{CAD} \\approx 37^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

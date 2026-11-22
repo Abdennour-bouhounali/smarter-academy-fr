@@ -1,0 +1,81 @@
+{
+  "id": "ex-4am-tayin-pgcd-l1-003",
+  "lessonCode": "tayin-pgcd",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2009 — PGCD(720 ; 180)",
+    "estimatedMinutes": 3,
+    "tags": [
+      "PGCD",
+      "قاسم للعدد الآخر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tayin-pgcd_P3",
+      "modelledOn": "BEM 2009 I-4"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "جد القاسم المشترك الأكبر للعددين 720 و 180.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "180",
+      "misconceptionSignatures": [
+        {
+          "value": "90",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العددين: هل العدد الأصغر قاسم للعدد الأكبر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد الأكبر على العدد الأصغر وانظر إلى الباقي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان $b$ قاسمًا للعدد $a$ فإن PGCD$(a ; b) = b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$720 = 180 \\times 4$ : العدد 180 قاسم للعدد 720، فهو قاسمهما المشترك الأكبر.",
+        "incorrect": "لا داعي لقائمتين طويلتين: تحقّق أولًا هل أحد العددين قاسم للآخر."
+      },
+      "solution": {
+        "lines": [
+          "$720 = 180 \\times 4$ ، إذن العدد 180 قاسم للعدد 720.",
+          "وبما أن 180 قاسم للعدد 720 فإن:"
+        ],
+        "result": "PGCD(720 ; 180) = 180"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

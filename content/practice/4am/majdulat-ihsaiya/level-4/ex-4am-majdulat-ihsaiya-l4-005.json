@@ -1,0 +1,252 @@
+{
+  "id": "ex-4am-majdulat-ihsaiya-l4-005",
+  "lessonCode": "majdulat-ihsaiya",
+  "level": 4,
+  "metadata": {
+    "title": "ميزانية نادي القسم في مخطط دائري",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مخطط دائري",
+      "زاوية",
+      "إعادة الحساب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_majdulat-ihsaiya_P3",
+      "modelledOn": "ex-15",
+      "adaptedFrom": "ex-4am-majdulat-ihsaiya-l4-005"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ميزانية نادي القسم 2400DA . حجز أمين المال، الأمين على أموال النادي، المصاريف (بالدينار) في مجدول، ثم حدّد الخلايا من A1 إلى C2 واختار المخطط الدائري، فظهر المخطط الآتي:",
+    "table": {
+      "head": [
+        "",
+        "A",
+        "B",
+        "C"
+      ],
+      "rows": [
+        [
+          "1",
+          "القمصان",
+          "التنقّل",
+          "الكرات"
+        ],
+        [
+          "2",
+          "600",
+          "1200",
+          "600"
+        ]
+      ],
+      "sheet": true
+    },
+    "figure": {
+      "kind": "chart",
+      "type": "pie",
+      "show": "none",
+      "ariaLabel": "مخطط دائري لميزانية نادي القسم: القمصان والتنقّل والكرات",
+      "parts": [
+        {
+          "label": "القمصان",
+          "value": 600
+        },
+        {
+          "label": "التنقّل",
+          "value": 1200
+        },
+        {
+          "label": "الكرات",
+          "value": 600
+        }
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب زاوية قطاع القمصان.",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: قيس الزاوية بالدرجات دون الرمز °",
+      "expectedAnswer": "90",
+      "misconceptionSignatures": [
+        {
+          "value": "600",
+          "id": "MISC-IHSA-ZAWIYA-QITA"
+        },
+        {
+          "value": "270",
+          "id": "MISC-IHSA-ZAWIYA-QITA"
+        },
+        {
+          "value": "25",
+          "id": "MISC-IHSA-ZAWIYA-QITA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المخطط الدائري تتناسب زاوية كل قطاع مع تكرار جزئه، والدائرة كلها 360 درجة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب التكرار الكلي، ثم حصة القمصان منه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الزاوية = (تكرار الجزء ÷ التكرار الكلي) × 360 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{600}{2400} \\times 360 = 90$ ، أي $90^\\circ$ .",
+        "incorrect": "زاوية القطاع ليست تكرار الجزء ولا نسبته المئوية: اضرب حصة الجزء من الكلّ في 360 ."
+      },
+      "solution": {
+        "lines": [
+          "زاوية قطاع القمصان: $\\dfrac{600}{2400} \\times 360 = 90$"
+        ],
+        "result": "90^\\circ"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب زاوية قطاع التنقّل.",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: قيس الزاوية بالدرجات دون الرمز °",
+      "expectedAnswer": "180",
+      "misconceptionSignatures": [
+        {
+          "value": "1200",
+          "id": "MISC-IHSA-ZAWIYA-QITA"
+        },
+        {
+          "value": "50",
+          "id": "MISC-IHSA-ZAWIYA-QITA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المخطط الدائري تتناسب زاوية كل قطاع مع تكرار جزئه، والدائرة كلها 360 درجة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب التكرار الكلي، ثم حصة التنقّل منه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الزاوية = (تكرار الجزء ÷ التكرار الكلي) × 360 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1200}{2400} \\times 360 = 180$ ، أي $180^\\circ$ .",
+        "incorrect": "زاوية القطاع ليست تكرار الجزء ولا نسبته المئوية: اضرب حصة الجزء من الكلّ في 360 ."
+      },
+      "solution": {
+        "lines": [
+          "زاوية قطاع التنقّل: $\\dfrac{1200}{2400} \\times 360 = 180$"
+        ],
+        "result": "180^\\circ"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "أُضيف إلى ميزانية الكرات 600DA ، فحجز أمين المال 1200 في الخلية C2 (والخليتان الأخريان كما هما)، وأعاد المجدول رسم المخطط. احسب زاوية قطاع الكرات الجديدة.",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: قيس الزاوية بالدرجات دون الرمز °",
+      "expectedAnswer": "144",
+      "misconceptionSignatures": [
+        {
+          "value": "1200",
+          "id": "MISC-IHSA-ZAWIYA-QITA"
+        },
+        {
+          "value": "216",
+          "id": "MISC-IHSA-ZAWIYA-QITA"
+        },
+        {
+          "value": "40",
+          "id": "MISC-IHSA-ZAWIYA-QITA"
+        },
+        {
+          "value": "180",
+          "id": "MISC-IHSA-ZAWIYA-QITA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المخطط الدائري تتناسب زاوية كل قطاع مع تكرار جزئه، والدائرة كلها 360 درجة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الميزانية الكلية تغيّرت: احسبها من جديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الزاوية = (تكرار الجزء ÷ التكرار الكلي) × 360 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1200}{3000} \\times 360 = 144$ ، أي $144^\\circ$ .",
+        "incorrect": "زاوية القطاع ليست تكرار الجزء ولا نسبته المئوية: اضرب حصة الجزء من الكلّ في 360 ."
+      },
+      "solution": {
+        "lines": [
+          "الميزانية الجديدة: $600 + 1200 + 1200 = 3000$",
+          "زاوية قطاع الكرات: $\\dfrac{1200}{3000} \\times 360 = 144$"
+        ],
+        "result": "144^\\circ"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "ex-4am-amaliyat-judhur-l1-010",
+  "lessonCode": "amaliyat-judhur",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2011 — حساب جداء",
+    "estimatedMinutes": 3,
+    "tags": [
+      "جداء جذرين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_amaliyat-judhur_P1",
+      "modelledOn": "BEM 2011 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2011",
+      "heading": "التمرين الثاني",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد $A$ حيث:",
+    "formulas": [
+      "A = 6\\sqrt{3}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب الجداء $A \\times \\dfrac{\\sqrt{3}}{9}$ مبينا مراحل الحساب.",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في الجداء يظهر $\\sqrt{3} \\times \\sqrt{3}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما قيمة $\\sqrt{3} \\times \\sqrt{3}$ ؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب البسطين ثم اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$6\\sqrt{3} \\times \\dfrac{\\sqrt{3}}{9} = \\dfrac{6 \\times 3}{9} = 2$",
+        "incorrect": "اكتب $\\sqrt{3} \\times \\sqrt{3} = \\sqrt{9}$ ثم اختزل الكسر."
+      },
+      "solution": {
+        "lines": [
+          "$A \\times \\dfrac{\\sqrt{3}}{9} = 6\\sqrt{3} \\times \\dfrac{\\sqrt{3}}{9}$",
+          "$= \\dfrac{6 \\times \\sqrt{3} \\times \\sqrt{3}}{9}$",
+          "$= \\dfrac{6 \\times 3}{9}$",
+          "$= \\dfrac{18}{9}$"
+        ],
+        "result": "A \\times \\dfrac{\\sqrt{3}}{9} = 2"
+      },
+      "work": "required",
+      "timeSeconds": 180
+    }
+  ]
+}

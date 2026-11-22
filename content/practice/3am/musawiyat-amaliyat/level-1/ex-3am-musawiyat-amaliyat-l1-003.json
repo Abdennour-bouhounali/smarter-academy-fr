@@ -1,0 +1,253 @@
+{
+  "id": "ex-3am-musawiyat-amaliyat-l1-003",
+  "lessonCode": "musawiyat-amaliyat",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — هل المساواة صحيحة بعد الإضافة أو الطرح؟",
+    "estimatedMinutes": 5,
+    "tags": [
+      "المساويات والجمع",
+      "طرفا المساواة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "في كلّ سؤال، قرّر هل المساواة المقترحة صحيحة، مستندًا إلى خواص المساويات والعمليات."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "إذا كان $x = 5$ فإنّ $x + 3 = 8$ . هل هذه المساواة صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيحة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خاطئة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-DOUBT-OP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نضيفه (أو نطرحه)؟ وعلى أيّ طرف نطبّقه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تتغيّر المساواة إلا إذا أضفنا العدد نفسه (أو طرحناه) إلى طرفيها معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الطرف الأيمن والطرف الأيسر في سطر واحد ثم طبّق العملية على كلٍّ منهما."
+        }
+      ],
+      "feedback": {
+        "correct": "أضفنا $3$ إلى طرفي $x = 5$ معًا فبقيت المساواة صحيحة.",
+        "incorrect": "لا تتغيّر المساواة عندما نضيف إلى طرفيها معًا (أو نطرح منهما) العدد نفسه؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $x = 5$ .",
+          "بإضافة $3$ إلى طرفي المساواة نجد: $x + 3 = 8$ .",
+          "أضفنا $3$ إلى طرفي $x = 5$ معًا فبقيت المساواة صحيحة."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "إذا كان $x = 5$ فإنّ $x + 3 = 5$ . هل هذه المساواة صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيحة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-ONE-SIDE"
+        },
+        {
+          "id": "B",
+          "content": "خاطئة",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نضيفه (أو نطرحه)؟ وعلى أيّ طرف نطبّقه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تتغيّر المساواة إلا إذا أضفنا العدد نفسه (أو طرحناه) إلى طرفيها معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الطرف الأيمن والطرف الأيسر في سطر واحد ثم طبّق العملية على كلٍّ منهما."
+        }
+      ],
+      "feedback": {
+        "correct": "الطرف الأيسر زاد بـ $3$ وبقي الطرف الأيمن كما هو: العدد نفسه لم يُضَف إلى الطرفين، فلا تُحفظ المساواة.",
+        "incorrect": "لا تتغيّر المساواة عندما نضيف إلى طرفيها معًا (أو نطرح منهما) العدد نفسه؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأيسر زاد بـ $3$ وبقي الطرف الأيمن كما هو: العدد نفسه لم يُضَف إلى الطرفين، فلا تُحفظ المساواة."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "إذا كان $x = -2$ فإنّ $x - 4 = -2$ . هل هذه المساواة صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيحة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-ONE-SIDE"
+        },
+        {
+          "id": "B",
+          "content": "خاطئة",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نضيفه (أو نطرحه)؟ وعلى أيّ طرف نطبّقه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تتغيّر المساواة إلا إذا أضفنا العدد نفسه (أو طرحناه) إلى طرفيها معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الطرف الأيمن والطرف الأيسر في سطر واحد ثم طبّق العملية على كلٍّ منهما."
+        }
+      ],
+      "feedback": {
+        "correct": "طُرح $4$ من الطرف الأيسر فقط، ولم يُطرح من الطرف الأيمن.",
+        "incorrect": "لا تتغيّر المساواة عندما نضيف إلى طرفيها معًا (أو نطرح منهما) العدد نفسه؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "طُرح $4$ من الطرف الأيسر فقط، ولم يُطرح من الطرف الأيمن."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "إذا كان $a = 6$ فإنّ $a + 10 = 16$ . هل هذه المساواة صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيحة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خاطئة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-DOUBT-OP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نضيفه (أو نطرحه)؟ وعلى أيّ طرف نطبّقه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تتغيّر المساواة إلا إذا أضفنا العدد نفسه (أو طرحناه) إلى طرفيها معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الطرف الأيمن والطرف الأيسر في سطر واحد ثم طبّق العملية على كلٍّ منهما."
+        }
+      ],
+      "feedback": {
+        "correct": "أضفنا $10$ إلى طرفي $a = 6$ معًا.",
+        "incorrect": "لا تتغيّر المساواة عندما نضيف إلى طرفيها معًا (أو نطرح منهما) العدد نفسه؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $a = 6$ .",
+          "بإضافة $10$ إلى طرفي المساواة نجد: $a + 10 = 16$ .",
+          "أضفنا $10$ إلى طرفي $a = 6$ معًا."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

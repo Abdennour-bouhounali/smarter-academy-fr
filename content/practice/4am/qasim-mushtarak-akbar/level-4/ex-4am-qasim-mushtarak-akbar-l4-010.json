@@ -1,0 +1,266 @@
+{
+  "id": "ex-4am-qasim-mushtarak-akbar-l4-010",
+  "lessonCode": "qasim-mushtarak-akbar",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2009 — علب الهدايا: 450 و 270",
+    "estimatedMinutes": 11,
+    "tags": [
+      "PGCD",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-mushtarak-akbar_P2",
+      "modelledOn": "BEM 2009 I-4"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "جد القاسم المشترك الأكبر للعددين 450 و 270.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "90",
+      "misconceptionSignatures": [
+        {
+          "value": "45",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قائمة قواسم كل من العددين 450 و 270."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استخرج القواسم المشتركة: الأعداد الموجودة في القائمتين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاسم المشترك الأكبر هو أكبر القواسم المشتركة، لا أيّ واحد منها."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 450 و 270 هي 1 ، 2 ، 3 ، 5 ، 6 ، 9 ، 10 ، 15 ، 18 ، 30 ، 45 ، 90، وأكبرها 90.",
+        "incorrect": "اكتب قائمتي القواسم كاملتين، ثم خذ أكبر عدد يظهر في القائمتين معًا."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 450 هي: 1 ، 2 ، 3 ، 5 ، 6 ، 9 ، 10 ، 15 ، 18 ، 25 ، 30 ، 45 ، 50 ، 75 ، 90 ، 150 ، 225 ، 450",
+          "قواسم العدد 270 هي: 1 ، 2 ، 3 ، 5 ، 6 ، 9 ، 10 ، 15 ، 18 ، 27 ، 30 ، 45 ، 54 ، 90 ، 135 ، 270",
+          "القواسم المشتركة للعددين 450 و 270 هي: 1 ، 2 ، 3 ، 5 ، 6 ، 9 ، 10 ، 15 ، 18 ، 30 ، 45 ، 90",
+          "أكبرها هو 90، إذن:"
+        ],
+        "result": "PGCD(450 ; 270) = 90"
+      },
+      "work": "optional",
+      "timeSeconds": 330
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "يريد تاجر معروف بصدقه وحسن معاملته لزبائنه تعبئة 450 قطعة صابون و 270 قارورة عطر في علب هدايا متماثلة (نفس عدد قطع الصابون ونفس عدد قوارير العطر في كل علبة) دون أن يبقى شيء.",
+      "statement": "هل يمكنه تحضير 20 علبة ؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد العلب يجب أن يقسم 450 و 270 معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 270 على 20."
+        }
+      ],
+      "feedback": {
+        "correct": "20 لا يقسم 270، فهو ليس قاسمًا مشتركًا للعددين 450 و 270.",
+        "incorrect": "عدد العلب قاسم مشترك لعدد قطع الصابون وعدد القوارير."
+      },
+      "solution": {
+        "lines": [
+          "$450 = 20 \\times 22 + 10$ و $270 = 20 \\times 13 + 10$",
+          "العدد 20 لا يقسم 450 ولا 270، فهو ليس قاسمًا مشتركًا لهما، إذن لا يمكنه ذلك."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما هو أكبر عدد من العلب يمكنه تحضيره ؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "90",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد العلب قاسم مشترك للعددين 450 و 270."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل نتيجة السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "أكبر عدد من العلب هو PGCD(450 ; 270).",
+        "incorrect": "أكبر عدد من العلب هو أكبر قاسم مشترك لعدد قطع الصابون وعدد القوارير."
+      },
+      "solution": {
+        "lines": [
+          "عدد العلب قاسم مشترك للعددين 450 و 270، وهو أكبر ما يمكن،",
+          "إذن أكبر عدد من العلب هو PGCD(450 ; 270) = 90 علبة."
+        ],
+        "result": "90"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "ما هو عدد قطع الصابون في كل علبة ؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "90",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع قطع الصابون كلها على العلب بالتساوي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 450 على عدد العلب."
+        }
+      ],
+      "feedback": {
+        "correct": "$450 \\div 90 = 5$",
+        "incorrect": "اقسم عدد قطع الصابون على أكبر عدد من العلب."
+      },
+      "solution": {
+        "lines": [
+          "$450 \\div 90 = 5$ ، وفي كل علبة أيضًا $270 \\div 90 = 3$ قوارير عطر."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "باع التاجر كل العلب فتحصّل على 72000DA. ما هو ثمن العلبة الواحدة ؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (الثمن بالدينار)",
+      "expectedAnswer": "800",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل عدد العلب الذي وجدته في السؤال 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم المبلغ الكلي على عدد العلب."
+        }
+      ],
+      "feedback": {
+        "correct": "$72000 \\div 90$",
+        "incorrect": "اقسم المبلغ الذي تحصّل عليه على عدد العلب."
+      },
+      "solution": {
+        "lines": [
+          "$72000 \\div 90 = 800$",
+          "ثمن العلبة الواحدة 800DA."
+        ],
+        "result": "800DA"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

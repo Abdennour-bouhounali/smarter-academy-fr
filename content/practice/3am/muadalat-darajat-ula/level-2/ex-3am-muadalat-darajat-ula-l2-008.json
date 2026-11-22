@@ -1,0 +1,257 @@
+{
+  "id": "ex-3am-muadalat-darajat-ula-l2-008",
+  "lessonCode": "muadalat-darajat-ula",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — معاملات سالبة",
+    "estimatedMinutes": 7,
+    "tags": [
+      "حلّ معادلة",
+      "معاملات سالبة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر المعادلتين $(E_1)$ : $-3x + 7 = 2x - 8$ و $(E_2)$ : $-5x - 4 = 3x + 12$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما نوع الكتابة $(E_2)$ : $-5x - 4 = 3x + 12$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي تعنيه المعادلة؟ حدّد الطرفين والمجهول فيها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المعادلة من الدرجة الأولى بمجهول واحد: المجهول فيها بقوّة 1 فقط، وتتضمّن علامة المساواة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة هو العدد الذي يجعل طرفيها متساويين عند تعويضه مكان المجهول."
+        }
+      ],
+      "feedback": {
+        "correct": "$-5x - 4 = 3x + 12$ مساواة فيها مجهول واحد بقوّة 1 فقط: معادلة من الدرجة الأولى بمجهول واحد.",
+        "incorrect": "تذكّر: المعادلة مساواة فيها مجهول، وحلّها هو العدد الذي يحقّق المساواة؛ أعد المحاولة."
+      },
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "معادلة لكنّها ليست من الدرجة الأولى",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-DEGREE"
+        },
+        {
+          "id": "B",
+          "content": "معادلة من الدرجة الأولى بمجهول واحد",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "ليست معادلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-NOT-EQUATION"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "$-5x - 4 = 3x + 12$ مساواة فيها مجهول واحد بقوّة 1 فقط: معادلة من الدرجة الأولى بمجهول واحد."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "حلّ المعادلة $(E_1)$ .",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 3$ .",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر أو عدد عشري)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-MUADALA-SIGN-KEPT"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "لدينا: $-3x + 7 = 2x - 8$ .",
+          "نضيف $-2x$ إلى الطرفين (معاكس الحدّ $2x$) فنجد: $-5x + 7 = -8$ .",
+          "نضيف $-7$ إلى الطرفين (معاكس $7$) فنجد: $-5x = -15$ .",
+          "نقسم الطرفين على $-5$ فنجد: $x = 3$ .",
+          "التحقّق: من أجل $x = 3$ نجد الطرف الأيسر $-2$ والطرف الأيمن $-2$ ، فهما متساويان."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "حلّ المعادلة $(E_2)$ .",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = -2$ .",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر أو عدد عشري)",
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-MUADALA-NEG-COEF"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "لدينا: $-5x - 4 = 3x + 12$ .",
+          "نضيف $-3x$ إلى الطرفين (معاكس الحدّ $3x$) فنجد: $-8x - 4 = 12$ .",
+          "نضيف $4$ إلى الطرفين (معاكس $-4$) فنجد: $-8x = 16$ .",
+          "نقسم الطرفين على $-8$ فنجد: $x = -2$ .",
+          "التحقّق: من أجل $x = -2$ نجد الطرف الأيسر $6$ والطرف الأيمن $6$ ، فهما متساويان."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "نضيف $3x$ إلى طرفي المعادلة $(E_1)$ . ما المعادلة الناتجة؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نضيف $3x$ إلى الطرفين: $7 = 5x - 8$ .",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$7 = 2x - 8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-ONE-SIDE"
+        },
+        {
+          "id": "B",
+          "content": "$7 = 5x - 8$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$-6x + 7 = 2x - 8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-SIGN-KEPT"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "نضيف $3x$ إلى الطرفين: $-3x + 7 + 3x = 2x - 8 + 3x$ ، أي $7 = 5x - 8$ ."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

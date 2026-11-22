@@ -1,0 +1,174 @@
+{
+  "id": "ex-2am-jam-tarh-kusur-l4-010",
+  "lessonCode": "jam-tarh-kusur",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — عدد طبيعي وكسر ثمّ قيمته",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جمع كسرين",
+      "كتابة عشرية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نريد حساب $2 + \\dfrac{1}{3}$ ثمّ كتابة الناتج بالفاصلة ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $S = 2 + \\dfrac{1}{3}$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "7/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-JAMKASR-NATURAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد الطبيعي يُكتب على شكل كسر مقامه هو مقام الكسر الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب العدد الطبيعي في المقام لتحصل على البسط الجديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع (أو اطرح) البسطين مع الاحتفاظ بالمقام ثمّ اختزل إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = \\dfrac{7}{3}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$2 = \\dfrac{6}{3}$ .",
+          "$S = 2 + \\dfrac{1}{3} = \\dfrac{6 + 1}{3} = \\dfrac{7}{3}$ ."
+        ],
+        "result": "S = \\dfrac{7}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط القيمة المقرّبة بالنقصان إلى 0{,}01 للعدد $\\dfrac{7}{3}$ .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "2.33",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكسر هو حاصل قسمة بسطه على مقامه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}33$ .",
+        "incorrect": "أنجز القسمة بعد الفاصلة وتوقّف عند الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{7}{3} = 7 \\div 3$",
+          "بالنقصان: نتوقّف عند الرتبة المطلوبة دون تغيير الرقم الأخير."
+        ],
+        "result": "2{,}33"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل $2{,}33$ هي القيمة المضبوطة للناتج ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا ثمّ تحقّق منها بحساب بسيط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الناتج بمقام مشترك ثمّ قارنه بما قيل."
+        }
+      ],
+      "feedback": {
+        "correct": "لا : القسمة لا تتوقّف ، فالقيمة المضبوطة ليست عددًا عشريًّا .",
+        "incorrect": "احسب ثمّ قارن بدقّة قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{7}{3} = 7 \\div 3 = 2{,}333\\ldots$ : القسمة لا تتوقّف .",
+          "إذن $2{,}33$ قيمة مقرّبة فقط ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

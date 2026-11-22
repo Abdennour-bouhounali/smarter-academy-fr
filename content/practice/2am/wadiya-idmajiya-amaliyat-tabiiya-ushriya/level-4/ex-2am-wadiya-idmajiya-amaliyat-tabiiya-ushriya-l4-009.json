@@ -1,0 +1,235 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-amaliyat-tabiiya-ushriya-l4-009",
+  "lessonCode": "wadiya-idmajiya-amaliyat-tabiiya-ushriya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — حساب ذهني بتوزيع الضرب",
+    "estimatedMinutes": 12,
+    "tags": [
+      "توزيع الضرب",
+      "حساب ذهني",
+      "تحليل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نحسب ذهنيًا بتوزيع الضرب: نكتب أحد العاملين فرقًا أو مجموعًا بعددين سهلين، ثم نوزّع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب قيمة السلسلة $(50 - 1) \\times 15$ (وهي $49 \\times 15$ ).",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "735",
+      "misconceptionSignatures": [
+        {
+          "value": "35",
+          "id": "MISC-AQWAS-IGNORED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين وخطّ الكسر يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$(50 - 1) \\times 15 = 735$ .",
+        "incorrect": "القوسان ليسا زينة: ما بينهما يُحسب أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "$A = (50 - 1) \\times 15$",
+          "$A = 49 \\times 15$",
+          "$A = 735$"
+        ],
+        "result": "735"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $15 \\times 50 - 15 \\times 1$ ثم قارن بالسؤال السابق.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "735",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعية جملة جملة: كلّ جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب سلسلة عمليات تترجمها، وضع بين قوسين ما يجب حسابه أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب السلسلة بالترتيب الصحيح للعمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "$15 \\times 50 - 15 \\times 1 = 735$ .",
+        "incorrect": "اكتب سلسلة تترجم الوضعية جملة جملة، ثم احسبها بالترتيب الصحيح للعمليات."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $15 \\times 50 - 15 \\times 1$",
+          "$A = 15 \\times 50 - 15 \\times 1$",
+          "$A = 750 - 15$",
+          "$A = 735$"
+        ],
+        "result": "735"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أيّ سلسلة تساوي $12 \\times 25 + 8 \\times 25$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$12 \\times 8 \\times 25$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-FACTORMULT"
+        },
+        {
+          "id": "B",
+          "content": "$(12 + 8) \\times 25$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$(12 + 8) \\times 25 \\times 8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-FACTORWRONG"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المطلوب جيّدًا: ما العملية التي تُنجز في الأخير، وما الذي يُحسب قبلها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ سلسلة مقترحة بالحساب أو بالقاعدة المناسبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الجواب هو السلسلة التي تترجم المطلوب وتعطي القيمة المنتظرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$(12 + 8) \\times 25 = 500$ .",
+        "incorrect": "اختبر كلّ سلسلة بالحساب: الصحيحة هي التي تترجم المطلوب وتعطي القيمة المنتظرة، وانتبه إلى القوسين."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة الصحيحة: $(12 + 8) \\times 25$",
+          "$A = (12 + 8) \\times 25$",
+          "$A = 20 \\times 25$",
+          "$A = 500$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "اشرح كيف تحسب ذهنيًا $12 \\times 25 + 8 \\times 25$ بإخراج العامل المشترك.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب على ورقتك مرحلة مرحلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اسأل: أيّ حساب يثبت ما تقول؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تذكر القاعدة المستعملة."
+        }
+      ],
+      "feedback": {
+        "correct": "تحقّق: $12 \\times 25 + 8 \\times 25 = 300 + 200 = 500$ .",
+        "incorrect": "قارن تبريرك بالحلّ النموذجي: الفكرة ثم الحساب الذي يدعمها."
+      },
+      "solution": {
+        "lines": [
+          "العدد $25$ عامل مشترك في الحدّين: $12 \\times 25 + 8 \\times 25 = (12 + 8) \\times 25$ .",
+          "$(12 + 8) \\times 25 = 20 \\times 25 = 500$ .",
+          "تحقّق: $12 \\times 25 + 8 \\times 25 = 300 + 200 = 500$ ."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "id": "ex-4am-barahin-ashia-l3-003",
+  "lessonCode": "barahin-ashia",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 23 — منتصف [KL]",
+    "estimatedMinutes": 5,
+    "tags": [
+      "علاقة شال",
+      "منتصف"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-23",
+      "page": 137,
+      "section": "أتعمّق",
+      "number": 23
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 137، تمرين 23): M نقطة خارج مثلث ABC (الشكل). K و L نقطتان حيث $\\overrightarrow{MK} = \\overrightarrow{MA} + \\overrightarrow{BC}$ و $\\overrightarrow{ML} = \\overrightarrow{MB} + \\overrightarrow{CA}$ .",
+    "figure": {
+      "points": {
+        "A": [
+          2,
+          5
+        ],
+        "B": [
+          0,
+          0
+        ],
+        "C": [
+          6,
+          0
+        ],
+        "M": [
+          5,
+          5
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "A"
+        ]
+      ],
+      "labels": {
+        "A": "n",
+        "B": "sw",
+        "C": "se",
+        "M": "ne"
+      },
+      "ariaLabel": "مثلث ABC، والنقطة M خارجه",
+      "maxWidth": 380
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "$\\overrightarrow{MK}$ = $\\overrightarrow{MA}$ + $\\overrightarrow{BC}$ يعني:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{AK}$ = $\\overrightarrow{BC}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{KA}$ = $\\overrightarrow{BC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSIHAB-SURA"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{MK}$ = $\\overrightarrow{AC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-RABT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أدخل النقطة A في $\\overrightarrow{MK}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\overrightarrow{MK} = \\overrightarrow{MA} + \\overrightarrow{AK}$ (علاقة شال)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الكتابتين: ماذا يبقى بعد حذف $\\overrightarrow{MA}$ ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{MA} + \\overrightarrow{AK} = \\overrightarrow{MA} + \\overrightarrow{BC}$ ، فـ $\\overrightarrow{AK} = \\overrightarrow{BC}$ .",
+        "incorrect": "اكتب $\\overrightarrow{MK} = \\overrightarrow{MA} + \\overrightarrow{AK}$ ثم قارن."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "$\\overrightarrow{AL}$ = $\\overrightarrow{AB}$ + $\\overrightarrow{BL}$ = $\\overrightarrow{AB}$ + $\\overrightarrow{CA}$ ، إذن:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{AL} = \\overrightarrow{CB} = -\\overrightarrow{AK}$ و A منتصف [KL]",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{AL} = \\overrightarrow{BC} = \\overrightarrow{AK}$ و K تنطبق على L",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{AL} = \\overrightarrow{AC}$ و L تنطبق على C",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-RABT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رتّب $\\overrightarrow{AB} + \\overrightarrow{CA}$ لتتتابع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\overrightarrow{CA} + \\overrightarrow{AB} = \\overrightarrow{CB}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن $\\overrightarrow{CB}$ بـ $\\overrightarrow{AK} = \\overrightarrow{BC}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AL} = \\overrightarrow{CB} = -\\overrightarrow{AK}$ : A منتصف [KL].",
+        "incorrect": "$\\overrightarrow{CB}$ يعاكس $\\overrightarrow{BC}$ ، فـ $\\overrightarrow{AL}$ يعاكس $\\overrightarrow{AK}$ ."
+      }
+    }
+  ]
+}

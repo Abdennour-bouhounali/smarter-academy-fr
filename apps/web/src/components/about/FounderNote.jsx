@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import profileImg from '../../assets/myimage.webp';
 
 /**
@@ -7,6 +8,8 @@ import profileImg from '../../assets/myimage.webp';
  * counters, no CV timeline: one photo, one short note, one credential line.
  */
 export default function FounderNote() {
+  const { t } = useTranslation('marketing');
+
   return (
     <section className="section-wrapper">
       <div className="max-w-3xl mx-auto">
@@ -17,9 +20,9 @@ export default function FounderNote() {
           className="text-center mb-10"
         >
           <p className="font-mono-jetbrains text-blue-500 text-sm font-semibold tracking-widest uppercase mb-3">
-            Pourquoi Smarter Academy existe
+            {t('founder.eyebrow')}
           </p>
-          <h2 className="section-title">Une conviction née sur le terrain</h2>
+          <h2 className="section-title">{t('founder.title')}</h2>
         </motion.div>
 
         <motion.div
@@ -31,24 +34,21 @@ export default function FounderNote() {
           <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 items-center sm:items-start">
             <div className="flex-shrink-0">
               <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden ring-4 ring-blue-50">
-                <img src={profileImg} alt="Abdennour BOUHOUNALI, fondateur de Smarter Academy" className="w-full h-full object-cover" />
+                <img src={profileImg} alt={t('founder.alt')} className="w-full h-full object-cover" />
               </div>
             </div>
-            <div className="text-center sm:text-left">
+            <div className="text-center sm:text-start">
               <p className="font-inter text-slate-600 leading-relaxed mb-4">
-                Après plusieurs années à enseigner les mathématiques en lycée et en accompagnement individuel,
-                j'ai vu le même schéma se répéter : des élèves capables, mais convaincus d'être "nuls en maths"
-                simplement parce qu'on ne leur avait jamais laissé le temps de comprendre — seulement celui de retenir.
+                {t('founder.bio1')}
               </p>
               <p className="font-inter text-slate-600 leading-relaxed">
-                Smarter Academy est née de cette conviction : donner à chaque élève, pas seulement à ceux qui
-                peuvent se payer des heures de soutien, le temps et les outils pour vraiment comprendre.
+                {t('founder.bio2')}
               </p>
               <p className="font-space font-semibold text-slate-800 text-sm mt-5">
-                Abdennour BOUHOUNALI — Fondateur, Smarter Academy
+                {t('founder.name')}
               </p>
               <p className="font-inter text-slate-400 text-xs mt-1">
-                Ingénieur & Master 2, ancien enseignant de mathématiques
+                {t('founder.role')}
               </p>
             </div>
           </div>

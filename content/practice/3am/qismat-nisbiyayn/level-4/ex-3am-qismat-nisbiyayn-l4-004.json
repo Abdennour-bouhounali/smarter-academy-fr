@@ -1,0 +1,217 @@
+{
+  "id": "ex-3am-qismat-nisbiyayn-l4-004",
+  "lessonCode": "qismat-nisbiyayn",
+  "level": 4,
+  "metadata": {
+    "title": "حاصل قسمة غير عشري في آخر الحساب",
+    "estimatedMinutes": 4,
+    "tags": [
+      "سلسلة حسابات",
+      "كسر",
+      "حاصل قسمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "احسب كل عدد من الأعداد الآتية. إن لم يكن الناتج عشريًا فاكتبه على شكل كسر.",
+    "formulas": [
+      "A = (−7 + 3 \\times (−2)) \\div (2 \\times (−4) + 1)",
+      "B = (4 − 5 \\times 3) \\div (2 − 3 \\times (−2))",
+      "C = (9 + 4 \\times (−2)) \\div (−6 + 2 \\times (−3))"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $A$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حاصل القسمة على شكل كسر أو عدد عشري",
+      "expectedAnswer": "13/7",
+      "misconceptionSignatures": [
+        {
+          "value": "-13/7",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "7/13",
+          "id": "MISC-QISMA-ORDER"
+        },
+        {
+          "value": "-6",
+          "id": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تُنجز أولًا؟ ابدأ بما بين القوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد الأقواس: الضرب والقسمة معًا من اليسار إلى اليمين، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل خطوة في سطر، وانتبه إلى طرح عدد سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = \\dfrac{13}{7}$ .",
+        "incorrect": "راجع أولوية العمليات: الأقواس، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$A = (−7 + 3 \\times (−2)) \\div (2 \\times (−4) + 1)$",
+          "$A = (−7 + (−6)) \\div (−8 + 1)$",
+          "$A = −13 \\div (−7)$",
+          "$A = \\dfrac{13}{7}$"
+        ],
+        "result": "\\dfrac{13}{7}"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $B$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-1.375",
+      "misconceptionSignatures": [
+        {
+          "value": "1.375",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "-8/11",
+          "id": "MISC-QISMA-ORDER"
+        },
+        {
+          "value": "-19",
+          "id": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تُنجز أولًا؟ ابدأ بما بين القوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد الأقواس: الضرب والقسمة معًا من اليسار إلى اليمين، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل خطوة في سطر، وانتبه إلى طرح عدد سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = −1{,}375$ .",
+        "incorrect": "راجع أولوية العمليات: الأقواس، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$B = (4 − 5 \\times 3) \\div (2 − 3 \\times (−2))$",
+          "$B = (4 − 15) \\div (2 − (−6))$",
+          "$B = −11 \\div 8$",
+          "$B = −1{,}375$"
+        ],
+        "result": "−1{,}375"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب $C$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حاصل القسمة على شكل كسر أو عدد عشري",
+      "expectedAnswer": "-1/12",
+      "misconceptionSignatures": [
+        {
+          "value": "1/12",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "-12",
+          "id": "MISC-QISMA-ORDER"
+        },
+        {
+          "value": "13",
+          "id": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تُنجز أولًا؟ ابدأ بما بين القوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد الأقواس: الضرب والقسمة معًا من اليسار إلى اليمين، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل خطوة في سطر، وانتبه إلى طرح عدد سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = −\\dfrac{1}{12}$ .",
+        "incorrect": "راجع أولوية العمليات: الأقواس، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$C = (9 + 4 \\times (−2)) \\div (−6 + 2 \\times (−3))$",
+          "$C = (9 + (−8)) \\div (−6 + (−6))$",
+          "$C = 1 \\div (−12)$",
+          "$C = −\\dfrac{1}{12}$"
+        ],
+        "result": "−\\dfrac{1}{12}"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

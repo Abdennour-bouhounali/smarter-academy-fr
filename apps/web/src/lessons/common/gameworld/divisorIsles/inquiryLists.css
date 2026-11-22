@@ -1,0 +1,123 @@
+/* THE INVESTIGATION `lists` (InquiryLists.jsx) — two strips, then the two lists of planks one above the other, plank under
+   plank, and the links between them. It reuses the frame of the division screens (inquiry.css › .iq--div) and the strips
+   of `common`. Shapes are the brand blue; a link (a plank of both gaps) is green, a piece left amber, the longest gold —
+   as everywhere in this world. SVG text is ≥ 18 units of a 1000-wide scene; HTML text keeps the 12 px floor. */
+.iq--lists {
+  grid-template-rows: auto auto minmax(0, 1fr) auto auto auto auto;
+}
+
+/* the label of a list (above the first, under the second); the list being built is lit */
+.iq-scene text.iq-li-label {
+  font-size: 19px;
+  fill: #9fd8ff;
+  text-anchor: start;
+}
+.iq-scene text.iq-li-label.is-now {
+  fill: #7dfcff;
+}
+
+/* a plank of a list */
+.iq-li-chip {
+  transform-box: fill-box;
+  animation: iq-drop 0.3s ease-out backwards;
+}
+.iq-li-chip rect {
+  fill: rgba(47, 125, 246, 0.28);
+  stroke: #2f7df6;
+  stroke-width: 2.5;
+}
+.iq-scene .iq-li-chip text {
+  fill: #e8f6ff;
+  font-weight: 900;
+}
+.iq-li-chip.is-tap {
+  cursor: pointer;
+}
+.iq-li-chip.is-tap rect {
+  stroke: #7dfcff;
+}
+.iq-li-chip.is-tap:hover rect,
+.iq-li-chip.is-tap:focus-visible rect {
+  fill: rgba(125, 252, 255, 0.3);
+}
+.iq-li-chip:focus {
+  outline: none;
+}
+/* the plank he just laid, and its partner written by the world */
+.iq-li-chip.is-new rect {
+  fill: #2f7df6;
+  stroke: #7dfcff;
+}
+.iq-li-chip.is-partner rect {
+  fill: rgba(251, 191, 36, 0.25);
+  stroke: #fbbf24;
+}
+.iq-scene .iq-li-chip.is-partner text {
+  fill: #fbbf24;
+}
+/* a plank of both lists, linked */
+.iq-li-chip.is-linked rect {
+  fill: rgba(141, 255, 176, 0.2);
+  stroke: #8dffb0;
+}
+.iq-scene .iq-li-chip.is-linked text {
+  fill: #c9ffd9;
+}
+/* the plank tapped, while the world lays it */
+.iq-li-chip.is-now rect {
+  fill: rgba(125, 252, 255, 0.3);
+  stroke: #7dfcff;
+}
+/* a plank that did not fill the other gap: outlined amber (its division is written) */
+.iq-li-chip.is-wrong rect {
+  fill: rgba(251, 191, 36, 0.15);
+  stroke: #fbbf24;
+  stroke-dasharray: 6 4;
+}
+.iq-scene .iq-li-chip.is-wrong text {
+  fill: #ffe2a8;
+}
+/* a link that was missing, shown by the world */
+.iq-li-chip.is-hint rect {
+  fill: rgba(141, 255, 176, 0.1);
+  stroke: #8dffb0;
+  stroke-dasharray: 6 4;
+}
+/* the longest: a pick that was shorter (dim), the longer one shown, the crown */
+.iq-li-chip.is-picked {
+  opacity: 0.55;
+}
+.iq-li-chip.is-longer rect {
+  fill: rgba(141, 255, 176, 0.32);
+  stroke: #e8f6ff;
+  stroke-width: 3;
+}
+.iq-li-chip.is-crown rect {
+  fill: #fbbf24;
+  stroke: #ffe2a8;
+}
+.iq-scene .iq-li-chip.is-crown text {
+  fill: #06203f;
+}
+
+/* the links between the two lists */
+.iq-li-link {
+  stroke: #8dffb0;
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  animation: iq-drop 0.3s ease-out backwards;
+}
+.iq-li-link.is-hint {
+  stroke-dasharray: 5 5;
+}
+.iq-li-link.is-crown {
+  stroke: #fbbf24;
+  stroke-width: 5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iq-li-chip,
+  .iq-li-link {
+    animation: none;
+  }
+}

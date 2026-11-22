@@ -1,0 +1,85 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ashia-l2-009",
+  "lessonCode": "wadiya-idmajiya-ashia",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — كتابة طول المسلك",
+    "estimatedMinutes": 2,
+    "tags": [
+      "نمذجة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ashia_P2",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "B′ صورة B بالانسحاب الذي شعاعه $\\overrightarrow{NM}$ في وضعية ممر الراجلين، فـ $NB = MB'$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "طول المسلك $AM + MN + NB$ يساوي:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$AM + MB' + MN$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$AM + MB'$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MAMAR-NASI"
+        },
+        {
+          "id": "C",
+          "content": "$AB' + NB$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$AB + MN$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MAMAR-MUBASHIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض NB."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$NB = MB'$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الطول MN يبقى."
+        }
+      ],
+      "feedback": {
+        "correct": "نعوّض $NB$ بـ $MB'$ : $AM + MN + NB = AM + MB' + MN$ .",
+        "incorrect": "استبدل NB فقط، ويبقى MN."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 2
+    }
+  ]
+}

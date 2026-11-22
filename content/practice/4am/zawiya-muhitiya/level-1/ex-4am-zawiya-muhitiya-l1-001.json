@@ -1,0 +1,183 @@
+{
+  "id": "ex-4am-zawiya-muhitiya-l1-001",
+  "lessonCode": "zawiya-muhitiya",
+  "level": 1,
+  "metadata": {
+    "title": "معارف 4، مثال 1 — مركزية أم محيطية؟",
+    "estimatedMinutes": 2,
+    "tags": [
+      "الزاوية المركزية",
+      "الزاوية المحيطية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-4",
+      "page": 156,
+      "section": "معارف",
+      "number": 4
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 156، مثال 1): لاحظ الشكل.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -1.0,
+          -1.7321
+        ],
+        "B": [
+          1.5321,
+          -1.2856
+        ],
+        "M": [
+          -1.8794,
+          0.684
+        ],
+        "N": [
+          -0.3473,
+          1.9696
+        ]
+      },
+      "circles": [
+        {
+          "center": "O",
+          "radius": 2
+        }
+      ],
+      "segments": [
+        {
+          "from": "O",
+          "to": "A",
+          "tone": "indigo"
+        },
+        {
+          "from": "O",
+          "to": "B",
+          "tone": "indigo"
+        },
+        {
+          "from": "A",
+          "to": "M",
+          "tone": "amber"
+        },
+        {
+          "from": "A",
+          "to": "N",
+          "tone": "amber"
+        }
+      ],
+      "ariaLabel": "دائرة مركزها O، الزاوية AOB والزاوية MAN",
+      "maxWidth": 360
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الزاوية $\\widehat{AOB}$ هي:",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "زاوية محيطية: طرفا ضلعيها على الدائرة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-RAS"
+        },
+        {
+          "id": "B",
+          "content": "ليست مركزية ولا محيطية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-RAS"
+        },
+        {
+          "id": "C",
+          "content": "زاوية مركزية: رأسها مركز الدائرة O",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر أولا إلى رأس الزاوية: أين يقع؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الزاوية المركزية رأسها مركز الدائرة؛ والمحيطية رأسها على الدائرة وضلعاها يقطعانها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زاوية رأسها داخل الدائرة أو خارجها ليست محيطية، ولو كان طرفا ضلعيها على الدائرة."
+        }
+      ],
+      "feedback": {
+        "correct": "رأس $\\widehat{AOB}$ هو المركز O: زاوية مركزية تحصر القوس AB.",
+        "incorrect": "الرأس هو الذي يحدّد نوع الزاوية."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "الزاوية المحيطية $\\widehat{MAN}$ تحصر القوس:",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overset{\\frown}{MN}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overset{\\frown}{AB}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-QAWS"
+        },
+        {
+          "id": "C",
+          "content": "$\\overset{\\frown}{AM}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-QAWS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر أولا إلى رأس الزاوية: أين يقع؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الزاوية المركزية رأسها مركز الدائرة؛ والمحيطية رأسها على الدائرة وضلعاها يقطعانها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زاوية رأسها داخل الدائرة أو خارجها ليست محيطية، ولو كان طرفا ضلعيها على الدائرة."
+        }
+      ],
+      "feedback": {
+        "correct": "ضلعا الزاوية يقطعان الدائرة في M و N: القوس MN.",
+        "incorrect": "طرفا القوس الذي تحصره الزاوية هما نقطتا تقاطع ضلعيها مع الدائرة."
+      }
+    }
+  ]
+}

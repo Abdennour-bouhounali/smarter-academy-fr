@@ -1,0 +1,193 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-kusur-natiqa-l1-007",
+  "lessonCode": "wadiya-idmajiya-kusur-natiqa",
+  "level": 1,
+  "metadata": {
+    "title": "مقارنة كسور وفرق بينها",
+    "estimatedMinutes": 7,
+    "tags": [
+      "مقارنة كسور",
+      "ترتيب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الكسرين $a = \\dfrac{3}{5}$ و $b = \\dfrac{4}{7}$ ، والعددين $c = -\\dfrac{5}{6}$ و $d = -\\dfrac{7}{9}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أيّ العددين أكبر: $a$ أم $b$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$a = \\dfrac{3}{5}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$b = \\dfrac{4}{7}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-NUMERATORS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للكسرين المقام نفسه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "وحّد المقامات ثمّ قارن البسطين، فالكسر الأكبر له البسط الأكبر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحكم بنظرة إلى البسط وحده أو المقام وحده."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $a = \\dfrac{3}{5}$ .",
+        "incorrect": "وحّد المقامات قبل المقارنة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "المقام المشترك $35$ : $a = \\dfrac{21}{35}$ و $b = \\dfrac{20}{35}$ .",
+          "$21 > 20$ ، إذن $a > b$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $a - b$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "1/35",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "-1/12",
+          "id": "MISC-JAMTARH-ACROSS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تعبّر عن الوضعية: جمع أجزاء أم طرح جزء من الكلّ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "وحّد المقامات بأصغر مقام مشترك ثمّ اجمع أو اطرح البسطين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل النتيجة، وتحقّق بمقارنتها بالواحد."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{1}{35}$ .",
+        "incorrect": "وحّد المقامات قبل الجمع أو الطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{5} - \\dfrac{4}{7} = \\dfrac{21}{35} - \\dfrac{20}{35} = \\dfrac{1}{35}$ ."
+        ],
+        "result": "\\dfrac{1}{35}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "أيّ العددين أكبر: $c$ أم $d$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$c = -\\dfrac{5}{6}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-NEGORDER"
+        },
+        {
+          "id": "B",
+          "content": "$d = -\\dfrac{7}{9}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ إشارة كلّ عدد: أين وُضعت علامة السالب ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العدد بمقام موجب ثمّ اختزل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر: حاصل قسمة عددين سالبين موجب."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $d = -\\dfrac{7}{9}$ .",
+        "incorrect": "انتبه إلى الإشارات ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "المقام المشترك $18$ : $c = -\\dfrac{15}{18}$ و $d = -\\dfrac{14}{18}$ .",
+          "من عددين سالبين، الأكبر هو الأقرب إلى الصفر: $d > c$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

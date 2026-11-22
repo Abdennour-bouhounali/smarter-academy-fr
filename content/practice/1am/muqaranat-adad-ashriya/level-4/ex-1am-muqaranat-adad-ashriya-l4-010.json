@@ -1,0 +1,265 @@
+{
+  "id": "ex-1am-muqaranat-adad-ashriya-l4-010",
+  "lessonCode": "muqaranat-adad-ashriya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أثمان في سوق الحيّ",
+    "estimatedMinutes": 8,
+    "tags": [
+      "أثمان",
+      "ترتيب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يعرض بائع في سوق الحيّ أنواعًا من الزيتون، ويلتزم بالصدق في عرض الأسعار بالدينار لكل كيلوغرام: $85{,}5$ ، $85{,}05$ ، $8{,}55$ ، $85{,}50$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ضع الرمز المناسب ($<$ أو $=$ أو $>$) مكان النقط: $85{,}5 \\ldots 85{,}50$",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الرمز المناسب",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$<$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-ZERO-CHANGES"
+        },
+        {
+          "id": "B",
+          "content": "$=$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$>$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-ZERO-CHANGES"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أضف أصفارًا إلى يمين الجزء العشري حتى يصير للعددين عدد الأرقام نفسه بعد الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إضافة صفر في آخر الجزء العشري لا تغيّر قيمة العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعدها قارن عددين طبيعيين: عدد الأعشار أو الأجزاء من مائة أو الأجزاء من ألف."
+        }
+      ],
+      "feedback": {
+        "correct": "نتمم بأصفار: $85{,}5 = 85{,}50$، فالعددان متساويان: $85{,}5 = 85{,}50$.",
+        "incorrect": "نتمم بأصفار غير ضرورية لنساوي عدد الأرقام بعد الفاصلة (مثل $3{,}2 = 3{,}20$)، ثم نقارن عددين طبيعيين."
+      },
+      "solution": {
+        "lines": [
+          "نتمم بأصفار: $85{,}5 = 85{,}50$، فالعددان متساويان: $85{,}5 = 85{,}50$."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "رتّب الأثمان تنازليًا (من الأكبر إلى الأصغر): $85{,}5$ ، $85{,}05$ ، $8{,}55$ ، $85{,}9$. أيّ السلاسل الآتية صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$85{,}9 > 85{,}5 > 85{,}05 > 8{,}55$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$85{,}9 > 8{,}55 > 85{,}5 > 85{,}05$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-IGNORE-WHOLE"
+        },
+        {
+          "id": "C",
+          "content": "$85{,}05 > 85{,}9 > 85{,}5 > 8{,}55$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-LONGER-BIGGER"
+        },
+        {
+          "id": "D",
+          "content": "$8{,}55 > 85{,}05 > 85{,}5 > 85{,}9$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-ORDER-DIRECTION"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن عددين عددين، وابحث عن الأصغر (أو الأكبر) أولًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ بالجزء الصحيح، فهو يفرز الأعداد إلى مجموعات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "داخل المجموعة الواحدة قارن الأعشار ثم الأجزاء من مائة، ثم تحقق من الترتيب كاملًا."
+        }
+      ],
+      "feedback": {
+        "correct": "الترتيب التنازلي : $85{,}9 > 85{,}5 > 85{,}05 > 8{,}55$",
+        "incorrect": "نقارن العددين اثنين اثنين، ونبدأ بالجزء الصحيح ثم الأعشار فالأجزاء من مائة، ثم نكتب السلسلة كاملة ونتحقق من كل رمز."
+      },
+      "solution": {
+        "lines": [
+          "نقارن الأعداد اثنين اثنين ونرتّبها: $85{,}9 > 85{,}5 > 85{,}05 > 8{,}55$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "من صاحب أصغر ثمن ؟",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الاسم",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الزيتون الأخضر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-LAST-DIGIT"
+        },
+        {
+          "id": "B",
+          "content": "الزيتون الأسود",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-IGNORE-WHOLE"
+        },
+        {
+          "id": "C",
+          "content": "الزيتون المحشو",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "الزيتون المخلّل",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-LAST-DIGIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الأعداد عددين عددين، واحتفظ في كل مرة بالأكبر (أو الأصغر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الجزء الصحيح أولًا، ثم الأعشار، ثم الأجزاء من مائة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يكفي أن يكون في العدد أرقام كثيرة بعد الفاصلة ليكون أكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "أصغر ثمن هي $8{,}55$ وصاحبها الزيتون المحشو.",
+        "incorrect": "نقارن الأعداد الواحد بالآخر رتبةً رتبةً؛ وليس العدد الأطول (أرقامه أكثر بعد الفاصلة) هو الأكبر دائمًا."
+      },
+      "solution": {
+        "lines": [
+          "نرتّب القيم: $8{,}55 < 85{,}05 < 85{,}5 < 85{,}9$",
+          "أصغر قيمة هي $8{,}55$ وصاحبها الزيتون المحشو."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "احسب ثمن 100 كغ من الزيتون الذي ثمن الكيلوغرام منه $8{,}55$ دج: $8{,}55 \\times 100$",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "855",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن موضع الفاصلة في العددين: كم رتبة انتقلت، وفي أيّ اتجاه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا صار العدد أكبر فالانتقال نحو اليمين، وإذا صار أصغر فنحو اليسار."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد الرتب المنقولة يعطي عدد أصفار العدد المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$855$",
+        "incorrect": "الضرب في 10 أو 100 أو 1000 ينقل الفاصلة نحو اليمين، والقسمة تنقلها نحو اليسار، بعدد رتب يساوي عدد الأصفار."
+      },
+      "solution": {
+        "lines": [
+          "$8{,}55\\times 100 = 855$"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

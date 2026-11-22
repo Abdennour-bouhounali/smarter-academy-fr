@@ -1,0 +1,479 @@
+{
+  "id": "ex-3am-qimat-ibara-harfiya-l5-006",
+  "lessonCode": "qimat-ibara-harfiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — ارتفاع كرة مقذوفة",
+    "estimatedMinutes": 16,
+    "tags": [
+      "وضعية إدماجية",
+      "مساواة",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تُقذف كرة نحو الأعلى فيعطي ارتفاعها بالمتر بعد $t$ ثانية العلاقة $h = 30t - 5t^2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول. احسب ارتفاع الكرة في اللحظات الآتية.",
+      "statement": "احسب قيمة $h$ من أجل $t = 1$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "25",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $t = 1$ هي $25$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$h = 30 \\times 1 - 5 \\times 1^2$",
+          "$h = 30 \\times 1 - 5 \\times 1$",
+          "$h = 30 - 5$",
+          "$h = 25$"
+        ],
+        "result": "h = 25"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب قيمة $h$ من أجل $t = 2$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "40",
+      "misconceptionSignatures": [
+        {
+          "value": "-40",
+          "id": "MISC-QIMA-COEF-IN-POWER"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $t = 2$ هي $40$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$h = 30 \\times 2 - 5 \\times 2^2$",
+          "$h = 30 \\times 2 - 5 \\times 4$",
+          "$h = 60 - 20$",
+          "$h = 40$"
+        ],
+        "result": "h = 40"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "احسب قيمة $h$ من أجل $t = 6$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "0",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $t = 6$ هي $0$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$h = 30 \\times 6 - 5 \\times 6^2$",
+          "$h = 30 \\times 6 - 5 \\times 36$",
+          "$h = 180 - 180$",
+          "$h = 0$"
+        ],
+        "result": "h = 0"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "lead": "ينتصب جدار ارتفاعه $42\\ \\mathrm{m}$ .",
+      "statement": "احسب قيمة $h$ من أجل $t = 2{,}5$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "43.75",
+      "misconceptionSignatures": [
+        {
+          "value": "-81.25",
+          "id": "MISC-QIMA-COEF-IN-POWER"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $t = 2{,}5$ هي $43{,}75$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$h = 30 \\times 2{,}5 - 5 \\times 2{,}5^2$",
+          "$h = 30 \\times 2{,}5 - 5 \\times 6{,}25$",
+          "$h = 75 - 31{,}25$",
+          "$h = 43{,}75$"
+        ],
+        "result": "h = 43{,}75"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "هل تتجاوز الكرة الجدار عند اللحظة $t = 2{,}5$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، تتجاوزه",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا، لا تتجاوزه",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QIMA-COEF-IN-POWER"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد ما تطلبه كل خطوة: عبارة، أم قيمة من أجل عدد، أم قرار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بالعدد المعطى في كل مكان منه، واحترم الأقواس وأولوية العمليات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الأعداد التي حسبتها قبل أن تقرّر، وتحقّق من الوحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$h = 43{,}75 > 42$ .",
+        "incorrect": "راجع خطوات الحل: عوّض ثم احسب، وقارن الأعداد قبل أن تقرّر."
+      },
+      "solution": {
+        "lines": [
+          "$h = 30 \\times 2{,}5 - 5 \\times 2{,}5^2 = 75 - 31{,}25 = 43{,}75$ ، وهي أكبر من $42$ ."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "sub": "ا",
+      "lead": "الجزء الثاني. اقترح تلميذ الصيغة $h_2 = 5t(6 - t)$ ووجد القيمتين نفسيهما من أجل $t = 1$ ومن أجل $t = 2$ .",
+      "statement": "احسب $h_2 = 5t(6 - t)$ من أجل $t = 1$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "25",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $t = 1$ هي $25$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$h_2 = 5 \\times 1 \\times (6 - 1)$",
+          "$h_2 = 5 \\times (6 - 1)$",
+          "$h_2 = 5 \\times 5$",
+          "$h_2 = 25$"
+        ],
+        "result": "h_2 = 25"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "sub": "ب",
+      "statement": "احسب $h_2 = 5t(6 - t)$ من أجل $t = 2$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "40",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $t = 2$ هي $40$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$h_2 = 5 \\times 2 \\times (6 - 2)$",
+          "$h_2 = 10 \\times (6 - 2)$",
+          "$h_2 = 10 \\times 4$",
+          "$h_2 = 40$"
+        ],
+        "result": "h_2 = 40"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q8",
+      "step": "05",
+      "statement": "هل نستنتج من تساوي القيم أنّ $h_2 = h$ مهما كان $t$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا: تساوي القيم لا يكفي، ونثبت التساوي بنشر $h_2$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم: القيم متساوية في الحالتين",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QIMA-ONE-VALUE"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن القيمتين اللتين حسبتهما: هل اختلفتا عند قيمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قيمة واحدة تختلف عندها العبارتان تكفي لإثبات أنهما غير متساويتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أمّا تساوي القيمتين من أجل قيمة أو قيمتين فلا يثبت التساوي: لإثباته ننشر ونقارن الشكلين."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب الصحيح: لا: تساوي القيم لا يكفي، ونثبت التساوي بنشر $h_2$",
+        "incorrect": "قيمة مختلفة تكفي لإثبات عدم التساوي، أمّا القيم المتساوية فلا تكفي لإثبات التساوي."
+      },
+      "solution": {
+        "lines": [
+          "لا: تساوي القيم لا يكفي، ونثبت التساوي بنشر $h_2$"
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q9",
+      "step": "06",
+      "lead": "انشر $h_2 = 5t(6 - t)$ واكتبها على الشكل $at^2 + bt$ .",
+      "statement": "العدد $a$ :",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $h_2$ على الشكل $at^2 + bt$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "-5",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض الحرف بعدد صغير في العبارة الأصلية وفي النتيجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$h_2 = -5t^2 + 30t$ إذن $a = -5$ .",
+        "incorrect": "وزّع كل حدّ على كل حدّ مع الانتباه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$h_2 = 30t - 5t^2$ ، فالصيغتان متساويتان."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

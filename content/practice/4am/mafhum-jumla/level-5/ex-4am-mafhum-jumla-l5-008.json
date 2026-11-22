@@ -1,0 +1,218 @@
+{
+  "id": "ex-4am-mafhum-jumla-l5-008",
+  "lessonCode": "mafhum-jumla",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2012 — مدرسة لتعليم اللغات بسطيف",
+    "estimatedMinutes": 20,
+    "tags": [
+      "حالات خاصة",
+      "جملة",
+      "صيغ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mafhum-jumla_P4",
+      "modelledOn": "BEM 2012 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2012",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تقترح مدرسة خاصة لتعليم اللغات بسطيف، تشجّع على طلب العلم، ثلاث صيغ للتسجيل في دورة:\n• الصيغة (أ): 2000DA حقوق التسجيل، و 800DA للحصة الواحدة.\n• الصيغة (ب): 3500DA حقوق التسجيل، و 800DA للحصة الواحدة.\n• الصيغة (ج): 2000DA حقوق التسجيل، و 1600DA لكل حصتين.\nنسمّي $x$ عدد الحصص و $y$ المبلغ المدفوع (بالدينار)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب المبلغ المدفوع حسب الصيغة (أ) من أجل 12 حصة.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "11600",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ = حقوق التسجيل + ثمن الحصص."
+        }
+      ],
+      "feedback": {
+        "correct": "$2000 + 800 \\times 12 = 11600$ ، أي 11600DA .",
+        "incorrect": "أضف ثمن 12 حصة إلى حقوق التسجيل."
+      },
+      "solution": {
+        "lines": [
+          "$2000 + 800 \\times 12 = 11600$"
+        ],
+        "result": "11600\\,DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "يتساوى المبلغان حسب الصيغتين (أ) و (ب) من أجل $x$ حصة إذا كانت الثنائية $(x ; y)$ حلا للجملة $\\begin{cases} -800x + y = 2000 \\\\ -800x + y = 3500 \\end{cases}$ . هل لهذه الجملة حل وحيد، أم ليس لها حل، أم لها عدد غير منته من الحلول؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لها حل وحيد",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-HALAT"
+        },
+        {
+          "id": "B",
+          "content": "ليس لها حل",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لها عدد غير منته من الحلول",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-HALAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الطرفين الأولين للمعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يمكن لعدد واحد أن يساوي 2000 و 3500 معا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "ومنه الجملة ليس لها حل: لا يتساوى المبلغان أبدا (الصيغة (ب) أغلى دائما بـ 1500DA).",
+        "incorrect": "قارن المعادلتين بعد ضرب إحداهما أو قسمتها على عدد مناسب: هل تؤولان إلى معادلة واحدة، أم إلى معادلتين طرفاهما الأولان متساويان وطرفاهما الثانيان مختلفان؟"
+      },
+      "solution": {
+        "lines": [
+          "الطرفان الأولان للمعادلتين متساويان: $-800x + y$ .",
+          "لا يمكن أن يساوي العدد $-800x + y$ في آن واحد 2000 و 3500.",
+          "ومنه الجملة ليس لها حل: لا يتساوى المبلغان أبدا (الصيغة (ب) أغلى دائما بـ 1500DA)."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "بيّن أن المبلغ حسب الصيغة (ج) يحقق معادلة من الشكل $ax + 2y = 4000$ ، ثم أعط العدد $a$ .",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (انتبه إلى الإشارة)",
+      "expectedAnswer": "-1600",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثمن $x$ حصة حسب الصيغة (ج) هو $1600 \\times \\dfrac{x}{2}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب طرفي المعادلة $y = 800x + 2000$ في 2."
+        }
+      ],
+      "feedback": {
+        "correct": "$2y = 1600x + 4000$ تعطي $-1600x + 2y = 4000$ ، أي $a = -1600$ .",
+        "incorrect": "اكتب $y$ حسب الصيغة (ج)، ثم اضرب الطرفين في 2 وانقل الحد الذي فيه $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "حسب الصيغة (ج): $y = 1600 \\times \\dfrac{x}{2} + 2000$",
+          "بضرب الطرفين في 2: $2y = 1600x + 4000$",
+          "أي: $-1600x + 2y = 4000$"
+        ],
+        "result": "a = -1600"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "هل للجملة $\\begin{cases} -800x + y = 2000 \\\\ -1600x + 2y = 4000 \\end{cases}$ (الصيغتان (أ) و (ج)) حل وحيد، أم ليس لها حل، أم لها عدد غير منته من الحلول؟ فسّر النتيجة.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لها حل وحيد",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-HALAT"
+        },
+        {
+          "id": "B",
+          "content": "ليس لها حل",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-HALAT"
+        },
+        {
+          "id": "C",
+          "content": "لها عدد غير منته من الحلول",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم طرفي المعادلة الثانية على 2."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن بالمعادلة الأولى."
+        }
+      ],
+      "feedback": {
+        "correct": "التفسير: الصيغتان (أ) و (ج) تعطيان المبلغ نفسه مهما كان عدد الحصص.",
+        "incorrect": "قارن المعادلتين بعد ضرب إحداهما أو قسمتها على عدد مناسب: هل تؤولان إلى معادلة واحدة، أم إلى معادلتين طرفاهما الأولان متساويان وطرفاهما الثانيان مختلفان؟"
+      },
+      "solution": {
+        "lines": [
+          "بقسمة طرفي المعادلة الثانية على 2 نجد: $-800x + y = 2000$ ، وهي المعادلة الأولى.",
+          "الجملة تؤول إلى معادلة واحدة: لها عدد غير منته من الحلول.",
+          "التفسير: الصيغتان (أ) و (ج) تعطيان المبلغ نفسه مهما كان عدد الحصص."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

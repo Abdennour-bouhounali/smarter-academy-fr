@@ -1,0 +1,122 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-aadad-l2-002",
+  "lessonCode": "wadiya-idmajiya-aadad",
+  "level": 2,
+  "metadata": {
+    "title": "سلسلة التفوق، الوضعية 5 — صندوق صهيب 30cm و 45cm و 60cm",
+    "estimatedMinutes": 5,
+    "tags": [
+      "القاسم المشترك الأكبر",
+      "مكعبات"
+    ],
+    "source": {
+      "type": "worksheet",
+      "worksheetId": "tafawwuq-01",
+      "elementId": "ws01-sit-05",
+      "section": "الوضعيات",
+      "number": 5
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "يحرص صهيب على النظام والنظافة في غرفته، ولديه صندوق على شكل متوازي مستطيلات أبعاده 30cm و 45cm و 60cm، أراد أن يملأه دون فراغ بمكعبات متقايسة طول حرف كل منها d، حيث d عدد طبيعي بالسنتيمتر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "جد d حتى يكون عدد المكعبات التي تملأ الصندوق أصغر ما يمكن.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (بالسنتيمتر)",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "d يقسم الأبعاد الثلاثة 30 و 45 و 60."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أقل عدد من المكعبات يوافق أكبر قيمة للعدد d."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب PGCD(30 ; 45) ثم تحقّق أنه يقسم 60."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(30 ; 45) = 15 و 15 يقسم 60، إذن d = 15cm.",
+        "incorrect": "d قاسم مشترك للأبعاد الثلاثة، وهو أكبر ما يمكن."
+      },
+      "solution": {
+        "lines": [
+          "d قاسم مشترك للأعداد 30 و 45 و 60.",
+          "$45 = 30 \\times 1 + 15$ ، $30 = 15 \\times 2 + 0$ : $PGCD(30 ; 45) = 15$",
+          "$60 = 15 \\times 4$ : 15 يقسم 60 أيضًا، وهو أكبر قاسم مشترك للأعداد الثلاثة."
+        ],
+        "result": "d = 15\\,cm"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هو عندئذ عدد المكعبات؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "24",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب عدد المكعبات على كل بُعد من أبعاد الصندوق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد المكعبات = جداء الأعداد الثلاثة."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 3 \\times 4 = 24$ مكعبًا.",
+        "incorrect": "اقسم كل بُعد على d، ثم اضرب النواتج الثلاثة."
+      },
+      "solution": {
+        "lines": [
+          "$30 \\div 15 = 2$ ، $45 \\div 15 = 3$ ، $60 \\div 15 = 4$",
+          "عدد المكعبات: $2 \\times 3 \\times 4 = 24$"
+        ],
+        "result": "24"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

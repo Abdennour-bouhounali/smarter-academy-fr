@@ -1,0 +1,65 @@
+{
+  "id": "ex-4am-misaha-hajm-kura-l4-004",
+  "lessonCode": "misaha-hajm-kura",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — كرة القبة السماوية",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مساحة الكرة",
+      "القطر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_misaha-hajm-kura_P1",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "مجسّم الكرة الأرضية في القبة الفلكية للمدينة قطره $0{,}8\\,\\mathrm{m}$ . اكتب مساحة سطحه على الشكل $k\\pi\\,\\mathrm{m}^2$ ثم أعط $k$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قيمة $k$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_misaha-hajm-kura_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة (مثل 2,5) أو عدد طبيعي",
+      "expectedAnswer": "0.64",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$R = 0{,}8 \\div 2 = 0{,}4\\,\\mathrm{m}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$(0{,}4)^2 = 0{,}16$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب في 4."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\mathcal{A} = 4\\pi \\times 0{,}16 = 0{,}64\\pi\\,\\mathrm{m}^2$ .",
+        "incorrect": "نصف القطر لا القطر."
+      },
+      "difficulty": 4,
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MISAHA-QUTR",
+          "value": "2.56"
+        }
+      ]
+    }
+  ]
+}

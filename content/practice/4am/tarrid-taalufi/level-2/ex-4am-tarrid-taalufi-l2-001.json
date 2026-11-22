@@ -1,0 +1,120 @@
+{
+  "id": "ex-4am-tarrid-taalufi-l2-001",
+  "lessonCode": "tarrid-taalufi",
+  "level": 2,
+  "metadata": {
+    "title": "نشاط 4 (ص 79) — من المبلغ إلى عدد المقابلات",
+    "estimatedMinutes": 6,
+    "tags": [
+      "عدد صورته معلومة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-4",
+      "page": 79,
+      "section": "أنشطة",
+      "number": 4
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "يعرض مركّب رياضي، يحرص على نظافة مدرّجاته، على مناصري فريق المدينة اشتراكا سنويا لموسم رياضي: يدفع كل مناصر مبلغ 2000DA ، يضاف إليه مبلغ 200DA يدفعه عند كل دخول للملعب لمشاهدة مقابلة فريقه المفضّل.\nنسمّي $x$ عدد المقابلات التي يتابعها مناصر خلال الموسم و $f(x)$ المبلغ الإجمالي الذي يدفعه بـ DA.\nلدينا: $f(x) = 200x + 2000$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما هو العدد الذي صورته 2000 بالدالة $f$ ؟ فسّر النتيجة.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد المقابلات",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حل المعادلة $f(x) = 2000$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ماذا يبقى إذا دفع المناصر الاشتراك وحده؟"
+        }
+      ],
+      "feedback": {
+        "correct": "المناصر الذي يدفع الاشتراك وحده لم يتابع أي مقابلة.",
+        "incorrect": "اكتب $200x + 2000 = 2000$ ثم اعزل $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$200x + 2000 = 2000$",
+          "$200x = 0$",
+          "$x = 0$",
+          "التفسير: 2000DA هو الاشتراك وحده، أي لم يتابع المناصر أي مقابلة."
+        ],
+        "result": "x = 0"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "إذا دفع مناصر مبلغا إجماليا قدره 4800DA ، فما هو عدد المقابلات التي تابعها؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد المقابلات",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAALUFI-NISYAN-B",
+          "value": "24"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حل المعادلة $f(x) = 4800$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح الاشتراك من المبلغ ثم اقسم على ثمن الدخول."
+        }
+      ],
+      "feedback": {
+        "correct": "$(4800 - 2000) \\div 200$ .",
+        "incorrect": "اكتب $200x + 2000 = 4800$ ثم اعزل $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$200x + 2000 = 4800$",
+          "$200x = 2800$",
+          "$x = 14$",
+          "تابع المناصر 14 مقابلة."
+        ],
+        "result": "x = 14"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

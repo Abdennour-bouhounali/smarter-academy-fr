@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l4-006",
+  "lessonCode": "maqati-mustawiya",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — بعد المستوي عن المحور",
+    "estimatedMinutes": 3,
+    "tags": [
+      "أسطوانة",
+      "مسألة عكسية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_maqati-mustawiya_P3",
+      "modelledOn": "act-4"
+    }
+  },
+  "statement": {
+    "content": "أسطوانة دوران نصف قطر قاعدتها $10\\,\\mathrm{cm}$ ، يقطعها مستو موازٍ لمحورها وفق مستطيل عرضه $12\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما بعد المستوي عن المحور (بـ $\\mathrm{cm}$)؟",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر)",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAQTA-NISF",
+          "value": "4"
+        },
+        {
+          "id": "MISC-MAQTA-TARH",
+          "value": "2"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نصف العرض $6$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المثلث القائم: الوتر 10، أحد الضلعين 6."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$d^2 = 10^2 - 6^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "نصف العرض $6$ : $d^2 = 100 - 36 = 64$ ، $d = 8\\,\\mathrm{cm}$ .",
+        "incorrect": "نستعمل نصف العرض لا العرض كله."
+      },
+      "difficulty": 4
+    }
+  ]
+}

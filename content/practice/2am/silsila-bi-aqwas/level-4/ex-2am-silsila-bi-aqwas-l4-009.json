@@ -1,0 +1,182 @@
+{
+  "id": "ex-2am-silsila-bi-aqwas-l4-009",
+  "lessonCode": "silsila-bi-aqwas",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — خزّان الماء",
+    "estimatedMinutes": 12,
+    "tags": [
+      "أقواس متداخلة",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يحتوي خزّان على $300$ لتر من الماء. استُعمل منه $4$ دلاء سعة كلّ دلو $12{,}5$ لتر، ثم مرّتان $15$ لتر في كلّ مرّة. يوزَّع ما بقي بالتساوي على $4$ أحواض."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما عدد اللترات المستعملة؟ احسب $4 \\times 12{,}5 + 2 \\times 15$ .",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "80",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع إطارًا حول القوسين: ما بداخلهما يُحسب أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب ما بين القوسين وفق أولوية العمليات، ثم أعد كتابة العبارة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك عملية بعد عملية إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 4 \\times 12{,}5 + 2 \\times 15 = 80$",
+        "incorrect": "ما بين القوسين يُحسب أوّلًا، ثم نكمل العمليات باحترام أولوية الضرب والقسمة على الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$A = 4 \\times 12{,}5 + 2 \\times 15$",
+          "$A = 50 + 30$",
+          "$A = 80$"
+        ],
+        "result": "A = 80"
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم لترًا ينال كلّ حوض؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد اللترات",
+      "expectedAnswer": "55",
+      "misconceptionSignatures": [
+        {
+          "value": "257.5",
+          "id": "MISC-AQWAS-IGNORED"
+        },
+        {
+          "value": "280",
+          "id": "MISC-AQWAS-DROPOUTER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: كل جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل جملة بعملية، وضع بين قوسين ما يجب حسابه أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب بالترتيب الصحيح: القوسان أوّلًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$[300 - (4 \\times 12{,}5 + 2 \\times 15)] \\div 4 = 55$ .",
+        "incorrect": "نترجم القصة بسلسلة عمليات فيها الأقواس اللازمة ثم نحسب: ما بين القوسين أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $[300 - (4 \\times 12{,}5 + 2 \\times 15)] \\div 4$",
+          "$G = [300 - (50 + 30)] \\div 4$",
+          "$G = (300 - 80) \\div 4$",
+          "$G = 220 \\div 4$",
+          "$G = 55$"
+        ],
+        "result": "55 \\text{ L }"
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل ينال كلّ حوض أكثر من $50$ لترًا؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النتيجتين بدقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كل عبارة بالترتيب الصحيح قبل أن تحكم."
+        }
+      ],
+      "feedback": {
+        "correct": "تحقّقت من ذلك بالحساب.",
+        "incorrect": "احسب كل عبارة مرحلة مرحلة وقارن النتيجتين قبل أن تحكم."
+      },
+      "solution": {
+        "lines": [
+          "$[300 - (4 \\times 12{,}5 + 2 \\times 15)] \\div 4 = 55$",
+          "$55 > 50$"
+        ]
+      },
+      "timeSeconds": 70
+    }
+  ]
+}

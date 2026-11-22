@@ -1,0 +1,278 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-quwa-nisbiya-l5-008",
+  "lessonCode": "wadiya-idmajiya-quwa-nisbiya",
+  "level": 5,
+  "metadata": {
+    "title": "مساحة كل ساكن",
+    "estimatedMinutes": 12,
+    "tags": [
+      "وحدات المساحة",
+      "الحصر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "مساحة بلد افتراضي ثانٍ حوالي $9{,}6 \\times 10^{5}\\ \\mathrm{km}^{2}$ ، وعدد سكّانه حوالي $3{,}2 \\times 10^{7}$ نسمة. تذكّر أنّ: $1\\ \\mathrm{km}^{2} = 10^{6}\\ \\mathrm{m}^{2}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "المساحة بالمتر المربّع هي $a \\times 10^{n}$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-WQ-UNITS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين تضع الفاصلة ليبقى رقم واحد غير معدوم قبلها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $a$ من $1$ إلى أقل من $10$ ، والأسّ $n$ هو عدد رتب إزاحة الفاصلة (موجب للأعداد الكبيرة وسالب للصغيرة)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة الضرب في $10^{n}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $11$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الأسّ هو عدد رتب إزاحة الفاصلة: موجب لأنّ العدد كبير .",
+          "$(9{,}6 \\times 10^{5}) \\times 10^{6}$ = $9{,}6 \\times 10^{11}$ ، إذن $n = 11$ ."
+        ],
+        "result": "11"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "المساحة التي تعود لكل ساكن لو قُسّمت الأرض بالتساوي : $a \\times 10^{n}\\ \\mathrm{m}^{2}$ . ما قيمة $a$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "العدد $a$ (عدد عشري)",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين تضع الفاصلة ليبقى رقم واحد غير معدوم قبلها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $a$ من $1$ إلى أقل من $10$ ، والأسّ $n$ هو عدد رتب إزاحة الفاصلة (موجب للأعداد الكبيرة وسالب للصغيرة)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة الضرب في $10^{n}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $3$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نُزيح الفاصلة حتى يبقى رقم واحد غير معدوم قبلها: $a = 3$ .",
+          "$((9{,}6 \\times 10^{5}) \\times 10^{6}) \\div (3{,}2 \\times 10^{7})$ = $3 \\times 10^{4}$ ."
+        ],
+        "result": "3"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "وما قيمة الأسّ $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين تضع الفاصلة ليبقى رقم واحد غير معدوم قبلها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $a$ من $1$ إلى أقل من $10$ ، والأسّ $n$ هو عدد رتب إزاحة الفاصلة (موجب للأعداد الكبيرة وسالب للصغيرة)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة الضرب في $10^{n}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $4$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الأسّ هو عدد رتب إزاحة الفاصلة: موجب لأنّ العدد كبير .",
+          "$((9{,}6 \\times 10^{5}) \\times 10^{6}) \\div (3{,}2 \\times 10^{7})$ = $3 \\times 10^{4}$ ، إذن $n = 4$ ."
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "رتبة قدر هذه المساحة هي $a' \\times 10^{n}$ : ما قيمة $a'$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "العدد الصحيح $a'$ (من 1 إلى 9)",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أوّلًا الكتابة العلمية للعدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ندوّر $a$ إلى الوحدة ونُبقي القوة $10^{n}$ ؛ إذا صار المدوّر $10$ فهو $1 \\times 10^{n+1}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ المدوّر عدد صحيح من $1$ إلى $9$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $3$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الكتابة العلمية $((9{,}6 \\times 10^{5}) \\times 10^{6}) \\div (3{,}2 \\times 10^{7})$ = $3 \\times 10^{4}$ .",
+          "مدوّر $3$ إلى الوحدة هو $3$ ، فرتبة القدر $3 \\times 10^{4}$ ."
+        ],
+        "result": "3"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "المساحة التي تعود لكل ساكن (بالمتر المربّع) محصورة بين:",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$10^{3}$ و $10^{4}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WQ-BRACKET"
+        },
+        {
+          "id": "B",
+          "content": "$10^{5}$ و $10^{6}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WQ-DIGITS"
+        },
+        {
+          "id": "C",
+          "content": "$10^{-5}$ و $10^{-4}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WQ-BRACKET"
+        },
+        {
+          "id": "D",
+          "content": "$10^{4}$ و $10^{5}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل تستطيع حساب كل خيار على حدة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الخيارات بعد تحويلها إلى الكتابة العلمية أو إلى قوة العدد $10$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استبعد الخيارات التي تخالف قاعدة تعرفها."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $10^{4}$ و $10^{5}$ .",
+        "incorrect": "قارن الخيارات بعد تحويلها إلى شكل مشترك، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$((9{,}6 \\times 10^{5}) \\times 10^{6}) \\div (3{,}2 \\times 10^{7})$ = $3 \\times 10^{4}$ .",
+          "$10^{4} \\le ((9{,}6 \\times 10^{5}) \\times 10^{6}) \\div (3{,}2 \\times 10^{7}) < 10^{5}$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

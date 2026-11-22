@@ -1,0 +1,134 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l1-008",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — القيمتان المقرّبتان إلى الوحدة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "قيمة مقرّبة",
+      "بالنقصان",
+      "بالزيادة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعتبر حاصل القسمة $\\frac{538}{24}$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أعط القيمة المقرّبة إلى الوحدة بالنقصان لحاصل القسمة $\\frac{538}{24}$.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "22",
+      "misconceptionSignatures": [
+        {
+          "value": "23",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "value": "10",
+          "id": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احصر $\\frac{538}{24}$ بين عددين طبيعيين متتاليين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمة المقرّبة إلى الوحدة بالنقصان هي أصغر طرفي الحصر."
+        }
+      ],
+      "feedback": {
+        "correct": "$22 < \\frac{538}{24} < 23$ ، فالقيمة بالنقصان 22.",
+        "incorrect": "بالنقصان: أصغر طرفي الحصر بين عددين طبيعيين متتاليين؛ بالزيادة: أكبرهما."
+      },
+      "solution": {
+        "lines": [
+          "$538 = 24 \\times 22 + 10$",
+          "$22 < \\frac{538}{24} < 23$",
+          "القيمة المقرّبة إلى الوحدة بالنقصان هي 22."
+        ],
+        "result": "22"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط القيمة المقرّبة إلى الوحدة بالزيادة لحاصل القسمة $\\frac{538}{24}$.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "23",
+      "misconceptionSignatures": [
+        {
+          "value": "22",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "value": "24",
+          "id": "MISC-HASR-IZAHA"
+        },
+        {
+          "value": "10",
+          "id": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احصر $\\frac{538}{24}$ بين عددين طبيعيين متتاليين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمة المقرّبة إلى الوحدة بالزيادة هي أكبر طرفي الحصر."
+        }
+      ],
+      "feedback": {
+        "correct": "$22 < \\frac{538}{24} < 23$ ، فالقيمة بالزيادة 23.",
+        "incorrect": "بالزيادة: أكبر طرفي الحصر بين عددين طبيعيين متتاليين؛ بالنقصان: أصغرهما."
+      },
+      "solution": {
+        "lines": [
+          "$538 = 24 \\times 22 + 10$",
+          "$22 < \\frac{538}{24} < 23$",
+          "القيمة المقرّبة إلى الوحدة بالزيادة هي 23."
+        ],
+        "result": "23"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

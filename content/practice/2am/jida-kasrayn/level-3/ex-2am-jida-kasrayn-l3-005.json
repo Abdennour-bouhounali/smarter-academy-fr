@@ -1,0 +1,144 @@
+{
+  "id": "ex-2am-jida-kasrayn-l3-005",
+  "lessonCode": "jida-kasrayn",
+  "level": 3,
+  "metadata": {
+    "title": "العدد الدخيل",
+    "estimatedMinutes": 8,
+    "tags": [
+      "ثلاثة عوامل",
+      "العدد الدخيل"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-19",
+      "page": 31,
+      "section": "أوظّف تعلّماتي",
+      "number": 19
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "من بين نتائج العمليات الأربع التالية ثلاث نتائج متساوية :"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أيّ العمليّات تعطي ناتجًا مختلفًا عن النتائج الثلاث الأخرى ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{5}{2} \\times \\dfrac{4}{5} \\times \\dfrac{3}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{2}{3} \\times \\dfrac{9}{4} \\times \\dfrac{1}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{9}{4} \\times \\dfrac{2}{3} \\times 2$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{7}{8} \\times \\dfrac{16}{7} \\times \\dfrac{3}{2}$",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليّة بين الكسرين؟ وماذا يمثّل كلّ منهما من الكلّ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في ضرب كسرين لا نبحث عن مقام مشترك: نضرب البسطين معًا ونضرب المقامين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء على شكل كسر واحد ثمّ اختزله إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "العدد الدخيل هو الجداء الذي يختلف ناتجه عن البقيّة .",
+        "incorrect": "ضرب كسرين: بسط × بسط فوق مقام × مقام، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{2} \\times \\dfrac{4}{5} \\times \\dfrac{3}{2} = \\dfrac{60}{20} = 3$ ، $\\dfrac{9}{4} \\times \\dfrac{2}{3} \\times 2 = \\dfrac{36}{12} = 3$ ، $\\dfrac{7}{8} \\times \\dfrac{16}{7} \\times \\dfrac{3}{2} = \\dfrac{336}{112} = 3$ .",
+          "أمّا $\\dfrac{2}{3} \\times \\dfrac{9}{4} \\times \\dfrac{1}{2} = \\dfrac{18}{24} = \\dfrac{3}{4}$ فهي الدخيلة ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما قيمة العدد المشترك بين النتائج الثلاث المتساوية ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليّة بين الكسرين؟ وماذا يمثّل كلّ منهما من الكلّ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في ضرب كسرين لا نبحث عن مقام مشترك: نضرب البسطين معًا ونضرب المقامين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء على شكل كسر واحد ثمّ اختزله إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$3$ .",
+        "incorrect": "ضرب كسرين: بسط × بسط فوق مقام × مقام، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{2} \\times \\dfrac{4}{5} \\times \\dfrac{3}{2} = 3$ ."
+        ],
+        "result": "3"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

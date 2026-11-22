@@ -1,0 +1,237 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l4-002",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — قسمة إقليدية وقسمة عشرية",
+    "estimatedMinutes": 10,
+    "tags": [
+      "قسمة إقليدية",
+      "قسمة عشرية",
+      "المدوّر"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 2,
+      "file": "1am-s2-77",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "(ممنوع استعمال الآلة الحاسبة)"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أنجز القسمة الإقليدية للعدد 79 على 6: ما هو الحاصل؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "12",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "14",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 79 من 6 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 6 دون أن نتجاوز 79."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$79 = 6 \\times 13 + 1$ و $1 < 6$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 6 فلا يتجاوز الجداء 79، والباقي عندئذ أصغر من 6."
+      },
+      "solution": {
+        "lines": [
+          "$6 \\times 13 = 78$ و $6 \\times 14 = 84$",
+          "$78 \\le 79 < 84$ ، إذن الحاصل هو 13."
+        ],
+        "result": "q = 13"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ثم أتمم المساواة.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$79 = 6 \\times 13 + 1$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$79 = 6 \\times 12 + 7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "id": "C",
+          "content": "$79 = 6 \\times 1 + 13$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "id": "D",
+          "content": "$79 = 6 \\times 14 + 1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق من صحة كل مساواة بالحساب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في القسمة الإقليدية على 6، يجب أن يكون الباقي أصغر من 6."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 \\times 13 + 1 = 79$ و $1 < 6$: الشرطان محقّقان.",
+        "incorrect": "المساواة الصحيحة يجب أن تكون صحيحة حسابيًا، وأن يكون باقيها أصغر من المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$6 \\times 13 = 78$ و $78 + 1 = 79$",
+          "$1 < 6$ ، إذن:"
+        ],
+        "result": "79 = 6 \\times 13 + 1"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "أنجز القسمة العشرية للعدد 5115 على 12.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "426.25",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بعد الأرقام الصحيحة، أضف أصفارًا بعد الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "توقّف عندما يصبح الباقي معدومًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$5115 \\div 12 = 426{,}25$.",
+        "incorrect": "واصل القسمة بعد الفاصلة بإضافة أصفار."
+      },
+      "solution": {
+        "lines": [
+          "$5115 = 12 \\times 426 + 3$",
+          "$3 \\div 12 = 0{,}25$ ، إذن $5115 \\div 12 = 426{,}25$."
+        ],
+        "result": "426{,}25"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "أعطِ المدوّر إلى الوحدة لهذا الحاصل.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "426",
+      "misconceptionSignatures": [
+        {
+          "value": "427",
+          "id": "MISC-IQLIDIYA-JUDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى رقم الأجزاء من عشرة."
+        }
+      ],
+      "feedback": {
+        "correct": "رقم الأجزاء من عشرة 2 ، و $2 < 5$.",
+        "incorrect": "يحدّد رقم الأجزاء من عشرة المدوّر إلى الوحدة."
+      },
+      "solution": {
+        "lines": [
+          "$426{,}25$: رقم الأجزاء من عشرة 2 و $2 < 5$.",
+          "المدوّر إلى الوحدة هو 426."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

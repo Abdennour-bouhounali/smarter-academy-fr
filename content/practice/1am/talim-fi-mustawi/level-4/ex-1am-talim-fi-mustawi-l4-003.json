@@ -1,0 +1,195 @@
+{
+  "id": "ex-1am-talim-fi-mustawi-l4-003",
+  "lessonCode": "talim-fi-mustawi",
+  "level": 4,
+  "metadata": {
+    "title": "العدّ من نقطة معلومة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "مبدأ مخفي",
+      "عدّ"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-5",
+      "page": 74,
+      "section": "أتعمّق",
+      "number": 5
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "شبكة مربّعات أُخفي مبدؤها ومحوراها، ونعرف إحداثيي النقطة $A$ فقط."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "في شبكة مربّعات أُخفي مبدؤها ومحوراها علمتَ أنّ إحداثيي $B$ هما $(-1\\,;\\,-2)$ (الوحدة هي المربّع الواحد). كم مربّعًا يلزم أن تعدّ من $B$ نحو اليمين لتبلغ الخط الشاقولي المارّ بالمبدإ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد المربّعات",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-NEGDIST",
+          "value": "-1"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "فاصلة $B$ تقول كم مربّعًا يفصلها عن الخط الشاقولي المارّ بالمبدإ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد دون إشارته هو عدد المربّعات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الإشارة تقول في أيّ جهة يقع المبدأ بالنسبة إلى $B$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد المربّعات $1$ .",
+        "incorrect": "عدد المربّعات هو الإحداثي دون إشارته."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $B$ هي $-1$",
+          "عدد المربّعات $1$ نحو اليمين"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "في شبكة مربّعات أُخفي مبدؤها ومحوراها علمتَ أنّ إحداثيي $B$ هما $(-1\\,;\\,-2)$ (الوحدة هي المربّع الواحد). كم مربّعًا يلزم أن تعدّ من $B$ نحو الأعلى لتبلغ الخط الأفقي المارّ بالمبدإ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد المربّعات",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-NEGDIST",
+          "value": "-2"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ترتيب $B$ يقول كم مربّعًا يفصلها عن الخط الأفقي المارّ بالمبدإ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد دون إشارته هو عدد المربّعات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الإشارة تقول في أيّ جهة يقع المبدأ بالنسبة إلى $B$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد المربّعات $2$ .",
+        "incorrect": "عدد المربّعات هو الإحداثي دون إشارته."
+      },
+      "solution": {
+        "lines": [
+          "ترتيب $B$ هي $-2$",
+          "عدد المربّعات $2$ نحو الأعلى"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "في شبكة مربّعات أُخفي مبدؤها ومحوراها علمتَ أنّ إحداثيي $B$ هما $(-1\\,;\\,-2)$ . تقع النقطة $C$ على بعد 2 مربّعين نحو اليسار و 4 مربّعات نحو الأعلى من $B$ . ما إحداثيا $C$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-3",
+        "y": "2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-HIDDENOFFSET",
+          "value": {
+            "x": "-2",
+            "y": "4"
+          }
+        },
+        {
+          "id": "MISC-MUSTAWI-SWAP",
+          "value": {
+            "x": "2",
+            "y": "-3"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كلّ مربّع نحو اليمين يزيد الفاصلة بوحدة، ونحو الأعلى يزيد الترتيب بوحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ من إحداثيي $B$ وأضف التغيّر الأفقي إلى الفاصلة والتغيّر الشاقولي إلى الترتيب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الإزاحة نحو اليسار أو الأسفل تنقص الإحداثي."
+        }
+      ],
+      "feedback": {
+        "correct": "إحداثيا $C$ هما $(-3\\,;\\,2)$ .",
+        "incorrect": "أضف الإزاحة الأفقية إلى الفاصلة والإزاحة الشاقولية إلى الترتيب، ولا تكتب الإزاحة نفسها."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة: $-1-2=-3$",
+          "الترتيب: $-2+4=2$"
+        ],
+        "result": "C(-3\\,;\\,2)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l2-010",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2025 — العدد 1134",
+    "estimatedMinutes": 4,
+    "tags": [
+      "قواعد قابلية القسمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qawasim-adad-tabii_P4",
+      "modelledOn": "BEM 2025 I-2 01"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العدد 1134."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل يقبل العدد 1134 القسمة على 9؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مجموع أرقام العدد 1134."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يقبل العدد القسمة على 9 إذا كان مجموع أرقامه مضاعفا للعدد 9."
+        }
+      ],
+      "feedback": {
+        "correct": "$1 + 1 + 3 + 4 = 9$: مجموع الأرقام مضاعف للعدد 9.",
+        "incorrect": "طبّق قاعدة قابلية القسمة على 9: احسب مجموع الأرقام."
+      },
+      "solution": {
+        "lines": [
+          "$1 + 1 + 3 + 4 = 9$",
+          "مجموع أرقام العدد 1134 مضاعف للعدد 9، إذن 1134 يقبل القسمة على 9."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عيّن من بين الأعداد 2 ، 3 ، 4 ، 5 ، 9 تلك التي تقسم العدد 1134.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        2,
+        3,
+        9
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3
+          ],
+          "id": "MISC-QAWAID-HALA-WAHIDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رقم الآحاد يكفي للحكم على القسمة على 2 و 5، والعدد المكوّن من الرقمين الأخيرين يكفي للقسمة على 4."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مجموع الأرقام يكفي للحكم على القسمة على 3 و 9."
+        }
+      ],
+      "feedback": {
+        "correct": "1134 زوجي، ومجموع أرقامه 9، ورقم آحاده 4، و 34 لا يقبل القسمة على 4.",
+        "incorrect": "طبّق قاعدة قابلية القسمة الخاصة بكل عدد من الأعداد الخمسة."
+      },
+      "solution": {
+        "lines": [
+          "رقم الآحاد 4: العدد زوجي، فهو يقبل القسمة على 2، ولا يقبل القسمة على 5.",
+          "مجموع الأرقام 9: العدد يقبل القسمة على 3 وعلى 9.",
+          "$34 = 4 \\times 8 + 2$: العدد المكوّن من الرقمين الأخيرين لا يقبل القسمة على 4، إذن 1134 لا يقبل القسمة على 4.",
+          "الأعداد التي تقسم 1134 هي: 2 ، 3 ، 9."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

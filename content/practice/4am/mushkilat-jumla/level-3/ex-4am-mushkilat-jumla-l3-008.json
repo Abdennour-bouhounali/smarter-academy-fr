@@ -1,0 +1,209 @@
+{
+  "id": "ex-4am-mushkilat-jumla-l3-008",
+  "lessonCode": "mushkilat-jumla",
+  "level": 3,
+  "metadata": {
+    "title": "BEM 2007 — التمرين الثالث",
+    "estimatedMinutes": 11,
+    "tags": [
+      "جملة",
+      "ترييض",
+      "أثمان"
+    ],
+    "source": {
+      "type": "bem",
+      "year": 2007,
+      "part": 1,
+      "exercise": 3
+    },
+    "exam": {
+      "kind": "official",
+      "badge": "BEM 2007",
+      "heading": "التمرين الثالث",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "حُل الجملة : $\\begin{cases} 4x + 5y = 105 \\\\ 6x + 4y = 112 \\end{cases}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": {
+        "x": "10",
+        "y": "13"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "13",
+            "y": "10"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن معاملات $y$ (أو $x$ ) في المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب كل معادلة في عدد مناسب حتى يصبح معاملا $x$ متعاكسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع طرفا لطرف، ثم عوّض لتجد المجهول الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "الثنائية $(10 ; 13)$ تحقق المعادلتين معا: هي حل الجملة.",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} 4x + 5y = 105 & ...(1) \\\\ 6x + 4y = 112 & ...(2) \\end{cases}$",
+          "بضرب طرفي المعادلة (1) في العدد $(-6)$ ، وبضرب طرفي المعادلة (2) في العدد $(4)$ نجد:",
+          "$\\begin{cases} -24x - 30y = -630 & ...(3) \\\\ 24x + 16y = 448 & ...(4) \\end{cases}$",
+          "بجمع (3) و (4) طرفا إلى طرف نجد: $-14y = -182$",
+          "$\\dfrac{-14y}{-14} = \\dfrac{-182}{-14}$",
+          "$y = 13$",
+          "بتعويض قيمة $y$ في المعادلة (1) نجد: $4x + 5 \\times 13 = 105$",
+          "$4x = 105 - 65$",
+          "$x = \\dfrac{40}{4}$",
+          "$x = 10$",
+          "إذن حل الجملة السابقة هو:"
+        ],
+        "result": "(10 ; 13)"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "اشترى رضوان من مكتبة أربعة كراريس و خمسة أقلام بمبلغ 105DA و اشترت مريم ثلاثة كراريس و قلمين بمبلغ 56DA. جِد ثمن الكراس الواحد و ثمن القلم الواحد.",
+      "statement": "ثمن الكراس الواحد:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الثمن بـ DA (عدد فقط)",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "سمِّ $x$ ثمن الكراس و $y$ ثمن القلم، واكتب معادلة لكل مشتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب طرفي معادلة مريم في 2 وقارن بجملة السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن الكراس الواحد $10DA$ .",
+        "incorrect": "معادلة مريم $3x + 2y = 56$ ، وضعفها هو المعادلة الثانية في جملة السؤال 01."
+      },
+      "solution": {
+        "lines": [
+          "نرمز إلى ثمن الكراس الواحد بـ $x$ .",
+          "نرمز إلى ثمن القلم الواحد بـ $y$ .",
+          "اشترى رضوان 4 كراريس و 5 أقلام بـ 105DA معناه: $4x + 5y = 105$",
+          "اشترت مريم 3 كراريس و قلمين بـ 56DA معناه: $3x + 2y = 56$",
+          "و منه جملة المعادلتين المعبرة عن هذه الوضعية هي: $\\begin{cases} 4x + 5y = 105 \\\\ 3x + 2y = 56 \\end{cases}$",
+          "و بقسمة طرفي المعادلة $6x + 4y = 112$ على 2 نجد $3x + 2y = 56$ .",
+          "إذن حل الجملة الأولى هو حل كذلك للجملة الثانية.",
+          "و من حل الجملة الأولى لدينا: $x = 10$ ، $y = 13$",
+          "إذن ثمن الكراس الواحد هو: $10DA$ ، و ثمن القلم الواحد هو: $13DA$ ."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ثمن القلم الواحد:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الثمن بـ DA (عدد فقط)",
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$y$ هو العدد الثاني في حل جملة السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن القلم الواحد $13DA$ ، ونتحقق: $3 \\times 10 + 2 \\times 13 = 56$ .",
+        "incorrect": "استعمل حل جملة السؤال 01: $y$ هو ثمن القلم."
+      },
+      "solution": {
+        "lines": [
+          "نرمز إلى ثمن الكراس الواحد بـ $x$ .",
+          "نرمز إلى ثمن القلم الواحد بـ $y$ .",
+          "اشترى رضوان 4 كراريس و 5 أقلام بـ 105DA معناه: $4x + 5y = 105$",
+          "اشترت مريم 3 كراريس و قلمين بـ 56DA معناه: $3x + 2y = 56$",
+          "و منه جملة المعادلتين المعبرة عن هذه الوضعية هي: $\\begin{cases} 4x + 5y = 105 \\\\ 3x + 2y = 56 \\end{cases}$",
+          "و بقسمة طرفي المعادلة $6x + 4y = 112$ على 2 نجد $3x + 2y = 56$ .",
+          "إذن حل الجملة الأولى هو حل كذلك للجملة الثانية.",
+          "و من حل الجملة الأولى لدينا: $x = 10$ ، $y = 13$",
+          "إذن ثمن الكراس الواحد هو: $10DA$ ، و ثمن القلم الواحد هو: $13DA$ ."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

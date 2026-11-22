@@ -1,0 +1,161 @@
+{
+  "id": "ex-1am-kitabat-adad-tabii-l2-002",
+  "lessonCode": "kitabat-adad-tabii",
+  "level": 2,
+  "metadata": {
+    "title": "حصّالة سلمى",
+    "estimatedMinutes": 5,
+    "tags": [
+      "عدد المئات",
+      "نقود"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-2",
+      "page": 17,
+      "section": "أتمرّن",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "فتحت سلمى حصّالتها فوجدت فيها 2375 دج من القطع النقدية، فأرادت مبادلتها عند صاحب المكتبة بأوراق نقدية. صاحب المكتبة رجل أمين، لا يملك إلا أوراقا من فئة 100 دج، ويعيد لسلمى ما يبقى قطعا نقدية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "كم ورقة من فئة 100 دج تستلم سلمى؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "23",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-KITABA-DIGIT-COUNT"
+        },
+        {
+          "value": "2",
+          "id": "MISC-KITABA-RANKSHIFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد المئات هو عدد المجموعات من 100 التي نكوّنها من العدد كله، لا الرقم وحده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احذف الأرقام التي على يمين مرتبة المئات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: اضرب جوابك في 100 ثم أضف ما بقي."
+        }
+      ],
+      "feedback": {
+        "correct": "$2375 = 23 \\times 100 + 75$: عدد المئات هو 23، أمّا رقم المئات فهو 3.",
+        "incorrect": "رقم المرتبة هو ما يبقى فيها وحدها؛ أمّا عدد وحداتها فنحسب فيه كل ما يمكن تجميعه منها في العدد كله."
+      },
+      "solution": {
+        "lines": [
+          "$2375 = 23 \\times 100 + 75$",
+          "إذن عدد المئات في العدد 2375 هو 23، ورقم المئات هو 3."
+        ],
+        "result": "23"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم دينارا يبقى لسلمى قطعا نقدية؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "75",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المبلغ الذي تمثّله الأوراق المستلمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح هذا المبلغ من 2375 دج."
+        }
+      ],
+      "feedback": {
+        "correct": "$2375 = 23 \\times 100 + 75$: يبقى 75 دج.",
+        "incorrect": "الباقي هو ما لا يكفي لتكوين ورقة أخرى من فئة 100 دج."
+      },
+      "solution": {
+        "lines": [
+          "$2375 = 23 \\times 100 + 75$",
+          "يبقى لسلمى 75 دج قطعا نقدية."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "برّر جوابك عن عدد الأوراق باستعمال عدد المئات في 2375.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ألفان تساويان كم مئة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يكفي رقم المئات وحده؟"
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك بالحل النموذجي سطرا بسطر."
+      },
+      "solution": {
+        "lines": [
+          "كل ورقة من فئة 100 دج تعوّض مئة واحدة.",
+          "عدد المئات في 2375 هو 23 لأن $2375 = 23 \\times 100 + 75$ (رقم المئات 3 فقط).",
+          "إذن تستلم سلمى 23 ورقة ويبقى 75 دج."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

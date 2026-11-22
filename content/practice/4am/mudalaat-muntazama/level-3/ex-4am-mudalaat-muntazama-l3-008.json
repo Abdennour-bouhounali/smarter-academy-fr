@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l3-008",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — زاوية مضلع من 130°",
+    "estimatedMinutes": 3,
+    "tags": [
+      "زاوية المضلع",
+      "الانغلاق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mudalaat-muntazama_P2",
+      "modelledOn": "method-angle"
+    }
+  },
+  "statement": {
+    "content": "يريد مصمم زخارف رسم مضلع منتظم زاويته (بين ضلعين متتاليين) $130^\\circ$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "هل يوجد هذا المضلع؟",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا: زاويته المركزية تكون $50^\\circ$ و $360 \\div 50$ ليس عددا صحيحا",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم: سباعي منتظم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-DAWRA"
+        },
+        {
+          "id": "C",
+          "content": "نعم: مضلع ذو $\\dfrac{360}{130}$ ضلعا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-MARKAZIYA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الزاوية المركزية المرافقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "زاوية المضلع = $180^\\circ$ ناقص الزاوية المركزية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "هل تدخل الزاوية المركزية عددا صحيحا من المرات في الدورة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$180^\\circ - 130^\\circ = 50^\\circ$ و $360 \\div 50 = 7{,}2$ : لا يوجد مضلع منتظم زاويته $130^\\circ$ (السباعي زاويته $\\approx 128{,}6^\\circ$).",
+        "incorrect": "عدد الأضلاع يجب أن يكون عددا صحيحا."
+      },
+      "difficulty": 3
+    }
+  ]
+}

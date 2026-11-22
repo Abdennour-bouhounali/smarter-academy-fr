@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-takbir-tasghir-l2-008",
+  "lessonCode": "takbir-tasghir",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — علبة العصير الصغيرة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "التصغير",
+      "الحجم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takbir-tasghir_P2",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "علبة عصير على شكل متوازي مستطيلات حجمها $250\\,\\mathrm{cm}^3$ . علبة صغيرة هي تصغير لها بالنسبة $\\dfrac{2}{5}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "احسب حجم العلبة الصغيرة بالسنتيمتر المكعب.",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة مثل 1,25 ، أو كسر مثل 4/7)",
+      "expectedAnswer": "16",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAKBIR-HAJM-K",
+          "value": "100"
+        },
+        {
+          "id": "MISC-TAKBIR-HAJM-K",
+          "value": "40"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحجم ثلاثة أبعاد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأطوال تُضرب في $k$ ، والمساحات في $k^2$ ، والحجوم في $k^3$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\left(\\dfrac{2}{5}\\right)^3 = \\dfrac{8}{125}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{8}{125} \\times 250 = 16\\,\\mathrm{cm}^3$ .",
+        "incorrect": "الحجم يُضرب في $k^3$ لا في $k$ ."
+      }
+    }
+  ]
+}

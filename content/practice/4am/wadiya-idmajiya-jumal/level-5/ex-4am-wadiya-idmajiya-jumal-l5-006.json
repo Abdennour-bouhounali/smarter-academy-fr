@@ -1,0 +1,327 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-jumal-l5-006",
+  "lessonCode": "wadiya-idmajiya-jumal",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2023 — جزيرة مرورية بالأغواط",
+    "estimatedMinutes": 19,
+    "tags": [
+      "جملة",
+      "وضعية",
+      "تكاليف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-jumal_P1",
+      "modelledOn": "BEM 2023 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "قرّرت بلدية الأغواط، حرصا على جمال المدينة ونظافتها، تزيين جزيرة مرورية على شكل مثلث قائم طولا ضلعيه القائمين $24m$ و $32m$ ، بغرس شجيرات زينة على محيطها و 240 شجيرة ورد داخلها، وخصّصت لذلك مبلغا قدره 250000DA.\n• تُغرس شجيرة زينة في كل رأس من رؤوس المثلث، والمسافة بين كل شجيرتين متتاليتين على المحيط $8m$ .\n• ثمن شجيرتي زينة و 5 شجيرات ورد معا 12000DA، وثمن 3 شجيرات زينة وشجيرتي ورد معا 14700DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "جِد ثمن شجيرة الزينة الواحدة وثمن شجيرة الورد الواحدة.",
+      "statement": "نسمّي $x$ ثمن شجيرة الزينة الواحدة و $y$ ثمن شجيرة الورد الواحدة (بالدينار). أعط الثنائية $(x ; y)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : ثمن شجيرة الزينة ثم ثمن شجيرة الورد بـ DA",
+      "expectedAnswer": {
+        "x": "4500",
+        "y": "600"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "600",
+            "y": "4500"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن معاملات $x$ ومعاملات $y$ في المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة التعويض أو طريقة الجمع (بعد ضرب المعادلتين في عددين مناسبين) لحذف أحد المجهولين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد إيجاد أحد المجهولين، عوّضه في إحدى المعادلتين لتجد الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "شجيرة الزينة بـ $4500DA$ وشجيرة الورد بـ $600DA$ .",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "المعلومة الأولى: $2x + 5y = 12000$",
+          "المعلومة الثانية: $3x + 2y = 14700$",
+          "$\\begin{cases} 2x + 5y = 12000 & ...(1) \\\\ 3x + 2y = 14700 & ...(2) \\end{cases}$",
+          "بضرب طرفي المعادلة (1) في العدد $(-2)$ ، وبضرب طرفي المعادلة (2) في العدد $5$ نجد:",
+          "$\\begin{cases} -4x - 10y = -24000 & ...(3) \\\\ 15x + 10y = 73500 & ...(4) \\end{cases}$",
+          "بجمع (3) و (4) طرفا لطرف نجد:",
+          "$11x = 49500$",
+          "$x = 4500$",
+          "بتعويض $x$ بـ $4500$ في المعادلة (2) نجد: $3 \\times 4500 + 2y = 14700$",
+          "$2y = 1200$",
+          "$y = 600$",
+          "التحقق في النص: $2 \\times 4500 + 5 \\times 600 = 12000$ و $3 \\times 4500 + 2 \\times 600 = 14700$ .",
+          "إذن:"
+        ],
+        "result": "(4500 ; 600)"
+      },
+      "work": "optional",
+      "timeSeconds": 420
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب ثمن شجيرات الورد الـ 240.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "144000",
+      "misconceptionSignatures": [
+        {
+          "value": "1080000",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل ثمن شجيرة الورد الذي وجدته في السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "$240 \\times 600 = 144000$ .",
+        "incorrect": "اضرب عدد شجيرات الورد في ثمن الواحدة."
+      },
+      "solution": {
+        "lines": [
+          "$240 \\times 600 = 144000$ أي $144000DA$"
+        ],
+        "result": "144000\\,DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب طول وتر المثلث.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب الطول بـ m (عدد فقط)",
+      "expectedAnswer": "40",
+      "misconceptionSignatures": [
+        {
+          "value": "56",
+          "id": "MISC-JUMLA-TARJAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث قائم: استعمل خاصية فيثاغورس."
+        }
+      ],
+      "feedback": {
+        "correct": "طول الوتر $40m$ .",
+        "incorrect": "مربع الوتر = مجموع مربعي الضلعين القائمين."
+      },
+      "solution": {
+        "lines": [
+          "حسب خاصية فيثاغورس: $24^2 + 32^2 = 576 + 1024 = 1600$",
+          "$\\sqrt{1600} = 40$ : طول الوتر $40m$"
+        ],
+        "result": "40\\,m"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "استنتج عدد شجيرات الزينة اللازمة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-JUMLA-TARJAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب محيط المثلث."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "على خط مغلق، عدد الشجيرات يساوي عدد المسافات."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{96}{8} = 12$ شجيرة.",
+        "incorrect": "على محيط مغلق لا نضيف شجيرة: عدد الشجيرات يساوي عدد المسافات."
+      },
+      "solution": {
+        "lines": [
+          "محيط المثلث: $24 + 32 + 40 = 96$ أي $96m$",
+          "المحيط خط مغلق: عدد الشجيرات = عدد المسافات $= \\dfrac{96}{8} = 12$"
+        ],
+        "result": "12"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "lead": "☜ مصاريف النقل والغرس تمثل 15% من ثمن الشجيرات. هل يكفي المبلغ المخصص لإنجاز المشروع؟ برّر، ثم أعط المبلغ المتبقي.",
+      "statement": "هل يكفي المبلغ المخصص لإنجاز هذا المشروع؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "counted": false,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKHFID-NISBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب ثمن كل الشجيرات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أضف مصاريف النقل والغرس ثم قارن بالمبلغ المخصص."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم: المبلغ يكفي.",
+        "incorrect": "احسب ثمن الشجيرات ثم اضربه في $1{,}15$ وقارن بالمبلغ المخصص."
+      },
+      "solution": {
+        "lines": [
+          "ثمن الشجيرات: $12 \\times 4500 + 240 \\times 600 = 54000 + 144000 = 198000$ أي $198000DA$",
+          "مع مصاريف النقل والغرس ( $15\\%$ ): $1{,}15 \\times 198000 = 227700$ أي $227700DA$",
+          "$227700 < 250000$ : المبلغ المخصص يكفي، ويبقى $250000 - 227700 = 22300$ أي $22300DA$ ."
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "المبلغ المتبقي:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "22300",
+      "misconceptionSignatures": [
+        {
+          "value": "52000",
+          "id": "MISC-TAKHFID-NISBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ المخصص − التكلفة الكلية."
+        }
+      ],
+      "feedback": {
+        "correct": "يبقى $22300DA$ .",
+        "incorrect": "اطرح التكلفة الكلية (مع المصاريف) من المبلغ المخصص."
+      },
+      "solution": {
+        "lines": [
+          "ثمن الشجيرات: $12 \\times 4500 + 240 \\times 600 = 54000 + 144000 = 198000$ أي $198000DA$",
+          "مع مصاريف النقل والغرس ( $15\\%$ ): $1{,}15 \\times 198000 = 227700$ أي $227700DA$",
+          "$227700 < 250000$ : المبلغ المخصص يكفي، ويبقى $250000 - 227700 = 22300$ أي $22300DA$ ."
+        ],
+        "result": "22300\\,DA"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

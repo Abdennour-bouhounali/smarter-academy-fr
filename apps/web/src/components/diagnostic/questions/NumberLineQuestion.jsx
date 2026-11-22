@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import NumberLine from '../../../lessons/common/components/NumberLine';
 
 /**
@@ -8,6 +9,7 @@ import NumberLine from '../../../lessons/common/components/NumberLine';
  * place-value/number-sense check.
  */
 export default function NumberLineQuestion({ question, onChange, disabled }) {
+  const { t } = useTranslation('student');
   const { min, max, step } = question.numberLine;
   const [value, setValue] = useState(min);
   const [touched, setTouched] = useState(false);
@@ -33,7 +35,7 @@ export default function NumberLineQuestion({ question, onChange, disabled }) {
       />
       {!touched && (
         <p className="text-center text-xs font-inter text-slate-400 mt-2">
-          Touche ou fais glisser sur la ligne pour placer le nombre.
+          {t('diagnostic.questions.numberLineHint')}
         </p>
       )}
     </div>

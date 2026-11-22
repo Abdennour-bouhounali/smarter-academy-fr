@@ -1,0 +1,277 @@
+{
+  "id": "ex-2am-wasf-silsila-hisab-l5-003",
+  "lessonCode": "wasf-silsila-hisab",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — لغز سالم",
+    "estimatedMinutes": 18,
+    "tags": [
+      "برنامج حساب",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يقول سالم في ركن الألغاز بالمعرض المدرسي: «اختر عددًا، أضف إليه 8، اضرب الناتج في 3، ثم اقسم على 6. أعطني النتيجة أعطك عددك!»."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما نتيجة اللغز إذا اختار تلميذ العدد 4 ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-WASF-NOBRACKET"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد كتابة السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$(4 + 8) \\times 3 \\div 6 = 6$",
+        "incorrect": "اكتب سلسلة تترجم البرنامج خطوة خطوة: كلّ جملة «اضرب الناتج» أو «اقسم الناتج» تضع ما سبق بين قوسين."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $(4 + 8) \\times 3 \\div 6$",
+          "$12 \\times 3 \\div 6$",
+          "$6$"
+        ],
+        "result": "6"
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما نتيجة اللغز إذا اختار تلميذ العدد 10 ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "14",
+          "id": "MISC-WASF-NOBRACKET"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد كتابة السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$(10 + 8) \\times 3 \\div 6 = 9$",
+        "incorrect": "اكتب سلسلة تترجم البرنامج خطوة خطوة: كلّ جملة «اضرب الناتج» أو «اقسم الناتج» تضع ما سبق بين قوسين."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $(10 + 8) \\times 3 \\div 6$",
+          "$18 \\times 3 \\div 6$",
+          "$9$"
+        ],
+        "result": "9"
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أيّ جملة تصف السلسلة $S = (4 + 8) \\times 3 \\div 6$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مجموع العدد 4 وحاصل قسمة جداء العددين 8 و 3 على 6",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-FIRSTOP"
+        },
+        {
+          "id": "B",
+          "content": "حاصل قسمة جداء مجموع العددين 4 و 8 والعدد 3 على 6",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ باسم السلسلة: هو اسم آخر عملية تُنجز فيها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم صِف كلّ قطعة من القطعتين بالطريقة نفسها، قبل آخر عملية وبعدها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اذكر القطعة المكتوبة أوّلًا أوّلًا، وانتبه إلى كلمة «على» في حاصل القسمة."
+        }
+      ],
+      "feedback": {
+        "correct": "S هي حاصل قسمة جداء مجموع العددين 4 و 8 والعدد 3 على 6.",
+        "incorrect": "ابدأ باسم آخر عملية، ثم صِف القطعة الأولى ثم الثانية، بالترتيب الذي تُكتبان به."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية تُنجز في $(4 + 8) \\times 3 \\div 6$ هي $\\div$، فالسلسلة حاصل قسمة.",
+          "نصف كلّ قطعة بالطريقة نفسها: حاصل قسمة جداء مجموع العددين 4 و 8 والعدد 3 على 6."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "هل نتيجة اللغز للعدد 10 أكبر من 8 ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن آخر عملية تُنجز في السلسلة قبل أن تحكم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كل عبارة بالترتيب الصحيح ثم قارن اسمها بما يقوله النص."
+        }
+      ],
+      "feedback": {
+        "correct": "تحقّقت من ذلك بالحساب.",
+        "incorrect": "احسب كل عبارة مرحلة مرحلة واسمِها بآخر عملية فيها قبل أن تحكم."
+      },
+      "solution": {
+        "lines": [
+          "$(10 + 8) \\times 3 \\div 6 = 9$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "اكتب السلسلة التي تترجم اللغز لعدد البداية 10 ، ثم برّر وضع القوسين.",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب على ورقتك مرحلة مرحلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اسأل: أيّ عملية تُنجز أخيرًا ولماذا؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تذكر القاعدة المستعملة."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن سلسلتك وتبريرك بالحل النموذجي.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به سلسلتك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$(10 + 8) \\times 3 \\div 6$",
+          "القوسان لازمان: القطعة التي بينهما يجب أن تُحسب قبل آخر عملية."
+        ]
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

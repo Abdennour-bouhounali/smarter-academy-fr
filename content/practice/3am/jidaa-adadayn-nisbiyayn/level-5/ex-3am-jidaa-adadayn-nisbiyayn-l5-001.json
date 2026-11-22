@@ -1,0 +1,423 @@
+{
+  "id": "ex-3am-jidaa-adadayn-nisbiyayn-l5-001",
+  "lessonCode": "jidaa-adadayn-nisbiyayn",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — إعادة تشغيل تسجيل المصعد",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "سياق",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: في غرفة المراقبة بمركز تجاري بباب الزوار، يظهر التسجيل مصعد شحن ينزل بانتظام 3 طوابق في كل دقيقة، ومرّ بالطابق 0 (مستوى الشارع) عند اللحظة 0. طابقه عند اللحظة $t$ دقيقة هو $(−3) \\times t$ ، و $t$ سالب قبل اللحظة 0.\nالجزء الثاني: مصعد ثانٍ للزبائن يصعد بانتظام طابقين في كل دقيقة، ومرّ هو أيضًا بالطابق 0 عند اللحظة 0: طابقه عند اللحظة $t$ هو $2 \\times t$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "في أيّ طابق يكون مصعد الشحن عند اللحظة $t = 2$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-6",
+      "misconceptionSignatures": [
+        {
+          "value": "-1",
+          "id": "MISC-JIDAA-ADD"
+        },
+        {
+          "value": "1",
+          "id": "MISC-JIDAA-SUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في النص العددين اللذين يُضربان، وأعطِ كلًّا منهما إشارته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السرعة أو التغيّر بالنقصان عدد سالب، والزمن قبل اللحظة المرجعية عدد سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء بالإشارتين، ثم طبّق قاعدة الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−3) \\times 2 = −6$ : العاملان مختلفا الإشارة (سالب وموجب)، إذن الجداء سالب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العاملان مختلفا الإشارة (سالب وموجب)، إذن الجداء سالب.",
+          "$3 \\times 2 = 6$",
+          "$(−3) \\times 2 = −6$"
+        ],
+        "result": "−6"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "في أيّ طابق كان مصعد الشحن عند اللحظة $t = −2$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "-6",
+          "id": "MISC-JIDAA-TIME"
+        },
+        {
+          "value": "-5",
+          "id": "MISC-JIDAA-ADD"
+        },
+        {
+          "value": "1",
+          "id": "MISC-JIDAA-SUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في النص العددين اللذين يُضربان، وأعطِ كلًّا منهما إشارته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السرعة أو التغيّر بالنقصان عدد سالب، والزمن قبل اللحظة المرجعية عدد سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء بالإشارتين، ثم طبّق قاعدة الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−3) \\times (−2) = 6$ : العاملان سالبان، إذن الجداء موجب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العاملان سالبان، إذن الجداء موجب.",
+          "$3 \\times 2 = 6$",
+          "$(−3) \\times (−2) = 6$"
+        ],
+        "result": "6"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "في أيّ طابق كان مصعد الشحن عند اللحظة $t = −3$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "-9",
+          "id": "MISC-JIDAA-TIME"
+        },
+        {
+          "value": "-6",
+          "id": "MISC-JIDAA-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في النص العددين اللذين يُضربان، وأعطِ كلًّا منهما إشارته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السرعة أو التغيّر بالنقصان عدد سالب، والزمن قبل اللحظة المرجعية عدد سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء بالإشارتين، ثم طبّق قاعدة الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−3) \\times (−3) = 9$ : العاملان سالبان، إذن الجداء موجب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العاملان سالبان، إذن الجداء موجب.",
+          "$3 \\times 3 = 9$",
+          "$(−3) \\times (−3) = 9$"
+        ],
+        "result": "9"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "statement": "قال حارس المركز: «قبل دقيقتين من مروره بالطابق 0، كان مصعد الشحن في الطابق $−6$ .» هل هذا صحيح؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDAA-TIME"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في النص العددين اللذين يُضربان، وأعطِ كلًّا منهما إشارته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السرعة أو التغيّر بالنقصان عدد سالب، والزمن قبل اللحظة المرجعية عدد سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء بالإشارتين، ثم طبّق قاعدة الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "عند $t = −2$ كان في الطابق $6$ ، فالحارس مخطئ.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "طابقه عند $t = −2$ هو $(−3) \\times (−2) = 6$ .",
+          "إذن كان في الطابق 6 فوق الشارع، لا في الطابق $−6$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "برّر جوابك بالحساب.",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختبر العبارة بمثال عددي واحد على الأقل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يكفي مثال واحد يخالف العبارة لنقول إنّها خاطئة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق قاعدة الإشارات على أعداد صغيرة يسهل حسابها."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$(−3) \\times (−2) = 6$ لأنّ العاملين سالبان.",
+          "الطابق 6 هو غير الطابق $−6$ ، فالجواب: لا."
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "في أيّ طابق كان مصعد الزبائن عند اللحظة $t = −4$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-8",
+      "misconceptionSignatures": [
+        {
+          "value": "-2",
+          "id": "MISC-JIDAA-ADD"
+        },
+        {
+          "value": "2",
+          "id": "MISC-JIDAA-SUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في النص العددين اللذين يُضربان، وأعطِ كلًّا منهما إشارته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السرعة أو التغيّر بالنقصان عدد سالب، والزمن قبل اللحظة المرجعية عدد سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء بالإشارتين، ثم طبّق قاعدة الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times (−4) = −8$ : العاملان مختلفا الإشارة (موجب وسالب)، إذن الجداء سالب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العاملان مختلفا الإشارة (موجب وسالب)، إذن الجداء سالب.",
+          "$2 \\times 4 = 8$",
+          "$2 \\times (−4) = −8$"
+        ],
+        "result": "−8"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "sub": "ب",
+      "statement": "في أيّ طابق كان مصعد الزبائن قبل 3 دقائق؟ (اختر الطابق)",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$−6$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$−1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDAA-ADD"
+        },
+        {
+          "id": "C",
+          "content": "$1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDAA-SUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في النص العددين اللذين يُضربان، وأعطِ كلًّا منهما إشارته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السرعة أو التغيّر بالنقصان عدد سالب، والزمن قبل اللحظة المرجعية عدد سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء بالإشارتين، ثم طبّق قاعدة الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times (−3) = −6$ : العاملان مختلفا الإشارة (موجب وسالب)، إذن الجداء سالب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العاملان مختلفا الإشارة (موجب وسالب)، إذن الجداء سالب.",
+          "$2 \\times 3 = 6$",
+          "$2 \\times (−3) = −6$"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

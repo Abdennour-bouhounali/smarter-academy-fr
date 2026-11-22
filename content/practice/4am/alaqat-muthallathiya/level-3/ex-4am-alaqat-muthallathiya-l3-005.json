@@ -1,0 +1,347 @@
+{
+  "id": "ex-4am-alaqat-muthallathiya-l3-005",
+  "lessonCode": "alaqat-muthallathiya",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 19 (ص 123) — القيم المضبوطة للزاويتين 60° و 30°",
+    "estimatedMinutes": 10,
+    "tags": [
+      "القيم المضبوطة",
+      "العلاقات المثلثية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-19",
+      "page": 123,
+      "section": "العلاقات المثلثية",
+      "number": 19,
+      "adaptedFrom": "ex-4am-alaqat-muthallathiya-l3-005"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$ABC$ مثلث متقايس الأضلاع طول ضلعه 1، و $[AH]$ الارتفاع المتعلّق بالضلع $[BC]$ (الشكل المقابل).",
+    "figure": {
+      "points": {
+        "A": [
+          0.5,
+          0.8660254038
+        ],
+        "B": [
+          0,
+          0
+        ],
+        "C": [
+          1,
+          0
+        ],
+        "H": [
+          0.5,
+          0
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "1"
+        },
+        {
+          "from": "A",
+          "to": "C",
+          "label": "1"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "1"
+        },
+        [
+          "A",
+          "H"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "H",
+          "C"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "B",
+          "from": "C",
+          "to": "A",
+          "label": "60°"
+        }
+      ],
+      "labels": {
+        "A": "n",
+        "B": "sw",
+        "C": "se",
+        "H": "s"
+      },
+      "ariaLabel": "مثلث ABC متقايس الأضلاع طول ضلعه 1، و [AH] الارتفاع المتعلق بالضلع [BC]، والزاوية عند B قيسها 60 درجة",
+      "maxWidth": 260
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "برّر صحة المساواة $\\cos 60^{\\circ} = \\dfrac{1}{2}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في مثلث متقايس الأضلاع، الارتفاع $[AH]$ هو أيضا متوسط: $H$ منتصف $[BC]$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب جيب تمام الزاوية $\\widehat{ABH}$ في المثلث $ABH$ القائم في $H$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$BH = \\dfrac{1}{2}$ و $\\cos\\widehat{ABH} = \\dfrac{BH}{AB} = \\dfrac{1}{2}$ ، و $\\widehat{ABH} = 60^{\\circ}$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "زوايا المثلث المتقايس الأضلاع متقايسة، إذن $\\widehat{ABC} = 60^{\\circ}$ .",
+          "الارتفاع $[AH]$ في المثلث المتقايس الأضلاع متوسط أيضا، إذن $BH = \\dfrac{1}{2}$ .",
+          "في المثلث $ABH$ القائم في $H$ : $\\cos 60^{\\circ} = \\dfrac{BH}{AB} = \\dfrac{\\frac{1}{2}}{1} = \\dfrac{1}{2}$ ."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج القيمة المضبوطة لـ $\\sin 60^{\\circ}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{1}{2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-JAMA-NISAB"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{3}{4}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-JADHR-NASI"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{\\sqrt{3}}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{\\sqrt{3}}{4}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-TARBI-BASTI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العلاقة التي تربط جيب الزاوية وجيب تمامها هي $\\cos^2 60^{\\circ} + \\sin^2 60^{\\circ} = 1$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اعزل $\\sin^2 60^{\\circ}$ ثم عوّض جيب التمام بقيمته، ولا تنس تربيع البسط والمقام معا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\sin 60^{\\circ}$ عدد موجب تماما: خذ الجذر التربيعي الموجب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin^2 60^{\\circ} = 1 - \\dfrac{1}{4} = \\dfrac{3}{4}$ ، إذن $\\sin 60^{\\circ} = \\dfrac{\\sqrt{3}}{2}$ .",
+        "incorrect": "استعمل العلاقة بين المربعين، ثم جذر البسط على جذر المقام."
+      },
+      "solution": {
+        "lines": [
+          "$\\sin^2 60^{\\circ} = 1 - \\cos^2 60^{\\circ} = 1 - \\dfrac{1}{4} = \\dfrac{3}{4}$",
+          "$\\sin 60^{\\circ} > 0$ ، إذن $\\sin 60^{\\circ} = \\dfrac{\\sqrt{3}}{\\sqrt{4}}$"
+        ],
+        "result": "\\sin 60^{\\circ} = \\dfrac{\\sqrt{3}}{2}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "استنتج القيمة المضبوطة لـ $\\tan 60^{\\circ}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\sqrt{3}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{\\sqrt{3}}{3}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-TAN-QISMA-MAQLUBA"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{\\sqrt{3}}{4}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-DARB-BADAL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الظل هو حاصل قسمة الجيب على جيب التمام: $\\tan 60^{\\circ} = \\dfrac{\\sin 60^{\\circ}}{\\cos 60^{\\circ}}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على كسر هي الضرب في مقلوبه، ثم اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan 60^{\\circ} = \\dfrac{\\sqrt{3}}{2} \\div \\dfrac{1}{2} = \\sqrt{3}$ .",
+        "incorrect": "اقسم الجيب على جيب التمام، لا العكس ولا الضرب."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan 60^{\\circ} = \\dfrac{\\sin 60^{\\circ}}{\\cos 60^{\\circ}} = \\dfrac{\\sqrt{3}}{2} \\times 2$"
+        ],
+        "result": "\\tan 60^{\\circ} = \\sqrt{3}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "lead": "ما هو قيس الزاوية $\\widehat{BAH}$ ؟ استنتج القيمة المضبوطة لـ $\\sin 30^{\\circ}$ .",
+      "statement": "قيس الزاوية $\\widehat{BAH}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد: القيس بالدرجة",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "60",
+          "id": "MISC-MUTH-ZAWIYA-KHATI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مجموع أقياس زوايا المثلث $ABH$ هو $180^{\\circ}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{BAH} = 180^{\\circ} - 90^{\\circ} - 60^{\\circ} = 30^{\\circ}$ .",
+        "incorrect": "استعمل مجموع زوايا المثلث $ABH$ القائم في $H$ ."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $ABH$ : $\\widehat{BAH} = 180^{\\circ} - 90^{\\circ} - 60^{\\circ}$"
+        ],
+        "result": "\\widehat{BAH} = 30^{\\circ}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "$\\sin 30^{\\circ}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "1/2",
+      "misconceptionSignatures": [
+        {
+          "value": "1/4",
+          "id": "MISC-MUTH-JADHR-NASI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $ABH$ ، الضلع $[BH]$ مقابل للزاوية $\\widehat{BAH}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الجيب = المقابل على الوتر $[AB]$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin 30^{\\circ} = \\sin\\widehat{BAH} = \\dfrac{BH}{AB} = \\dfrac{1}{2}$ .",
+        "incorrect": "اكتب جيب الزاوية $\\widehat{BAH}$ في المثلث $ABH$ القائم في $H$ ."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $ABH$ القائم في $H$ : $\\sin\\widehat{BAH} = \\dfrac{BH}{AB}$",
+          "$\\sin 30^{\\circ} = \\dfrac{\\frac{1}{2}}{1}$"
+        ],
+        "result": "\\sin 30^{\\circ} = \\dfrac{1}{2}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

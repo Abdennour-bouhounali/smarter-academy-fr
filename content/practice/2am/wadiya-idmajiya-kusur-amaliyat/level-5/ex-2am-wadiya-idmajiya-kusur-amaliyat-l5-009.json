@@ -1,0 +1,285 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-kusur-amaliyat-l5-009",
+  "lessonCode": "wadiya-idmajiya-kusur-amaliyat",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — وضعيّة إدماجيّة : مطعم المدرسة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "الكلّ من جزئه",
+      "الجزء الباقي",
+      "مقارنة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "استُهلك من مخزون الأرز في مطعم المدرسة $\\dfrac{1}{3}$ يوم الأحد ، واستُهلك جزء آخر يوم الإثنين ، وبقي $\\dfrac{1}{6}$ من المخزون ، وهو $25$ kg ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "الجزء الأوّل :",
+      "statement": "ما الكسر الذي استُهلك يوم الإثنين ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "1/2",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد الطبيعي يُكتب على شكل كسر مقامه هو مقام الكسر الآخر ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب العدد الطبيعي في المقام لتحصل على البسط الجديد ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع (أو اطرح) البسطين مع الاحتفاظ بالمقام ثمّ اختزل إن أمكن ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{2}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح ، ثمّ اختزل الناتج وأعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$1 = \\dfrac{6}{6}$ .",
+          "$\\dfrac{1}{3} = \\dfrac{1 \\times 2}{3 \\times 2} = \\dfrac{2}{6}$ .",
+          "$1 - \\dfrac{1}{3} - \\dfrac{1}{6} = \\dfrac{6 - 2 - 1}{6} = \\dfrac{3}{6}$ .",
+          "نختزل بالقسمة على $3$ : $\\dfrac{3}{6} = \\dfrac{1}{2}$ ."
+        ],
+        "result": "\\dfrac{1}{2}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "في أيّ يوم استُهلكت كمّية أرزّ أكبر ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الأحد",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-BIGDEN"
+        },
+        {
+          "id": "B",
+          "content": "الإثنين",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المقامان ؟ وما البسطان ؟ وأيّة حالة من حالات المقارنة هي ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مقاما الكسرين متساويان : قارن البسطين . بسطاهما متساويان : الأكبر هو الأصغر مقامًا . أحد المقامين مضاعف للآخر : وحّد المقامين ثمّ قارن البسطين ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يمكنك أيضًا مقارنة كلّ كسر بالعدد 1 أو بالنصف ."
+        }
+      ],
+      "feedback": {
+        "correct": "الإثنين .",
+        "incorrect": "اختر طريقة المقارنة المناسبة للحالة (توحيد المقامين ، أو البسطان المتساويان ، أو المقارنة بالعدد 1) ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "نكتب الكسور بمقام مشترك لمقارنتها (أو نقارنها بطريقة مناسبة) :",
+          "الأحد : $\\dfrac{1}{3} = \\dfrac{2}{6}$ ، الإثنين : $\\dfrac{1}{2} = \\dfrac{3}{6}$ .",
+          "الجواب : الإثنين ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "الجزء الثاني :",
+      "statement": "ما كتلة المخزون كلّه بالكيلوغرام ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "150",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعطى جزء من الكلّ ، ومعه الكسر الذي يمثّله هذا الجزء ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان جزء واحد من ستّة أجزاء متساوية يساوي كمّية معلومة فالكلّ يساوي ستّة أمثالها : نضرب ولا نقسم ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بأخذ الكسر من الكلّ الذي وجدته : يجب أن تجد الجزء المعطى ."
+        }
+      ],
+      "feedback": {
+        "correct": "$150$ .",
+        "incorrect": "الكلّ هو عدد الأجزاء مضروبًا في الجزء الواحد المعلوم ؛ تحقّق بأخذ الكسر من الكلّ الذي وجدته ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{6}$ من الكلّ يساوي $25$ ، والكلّ يساوي $6$ جزءًا من هذا النوع .",
+          "الكلّ : $6 \\times 25 = 150$ ."
+        ],
+        "result": "150"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "sub": "ا",
+      "statement": "كم كيلوغرامًا استُهلك يوم الأحد ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "50",
+      "misconceptionSignatures": [
+        {
+          "value": "450",
+          "id": "MISC-JIDAKASR-FLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزء من عدد يعني جداء الكسر في العدد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي ما دام الكسر أصغر من 1 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$50$ kg .",
+        "incorrect": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ، ولا تقلب الكسر ."
+      },
+      "solution": {
+        "lines": [
+          "$150 \\div 3 = 50$ ."
+        ],
+        "result": "50"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "sub": "ب",
+      "statement": "كم كيلوغرامًا استُهلك يوم الإثنين ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "75",
+      "misconceptionSignatures": [
+        {
+          "value": "300",
+          "id": "MISC-JIDAKASR-FLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزء من عدد يعني جداء الكسر في العدد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي ما دام الكسر أصغر من 1 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$75$ kg .",
+        "incorrect": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ، ولا تقلب الكسر ."
+      },
+      "solution": {
+        "lines": [
+          "$150 \\div 2 = 75$ ."
+        ],
+        "result": "75"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

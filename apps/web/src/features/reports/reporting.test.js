@@ -2,8 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
-import { REPORT_CATEGORIES, REPORT_SOURCES, isRetryableFailure } from '../../services/reportService';
-import { ApiError } from '@smarter-academy/core';
+import { REPORT_CATEGORIES, REPORT_SOURCES } from '../../services/reportService';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const webRoot = resolve(here, '../../..');
@@ -43,101 +42,54 @@ describe('les catégories proposées à l’élève', () => {
   });
 });
 
-describe('le parcours en deux temps', () => {
+describe('un envoi unique — le clic n’envoie rien (2026-10-05)', () => {
   const service = read('src/services/reportService.js');
   const button = read('src/features/reports/ReportButton.jsx');
+  const openDialog = button.slice(button.indexOf('const openDialog'), button.indexOf('const submit'));
+  const submit = button.slice(button.indexOf('const submit'), button.indexOf('const close'));
 
-  it('expose un appel pour le signal et un autre pour la complétion', () => {
-    expect(service).toContain('export async function initiateReport');
-    expect(service).toContain('export async function completeReport');
-    expect(service).toMatch(/method: 'PATCH'/);
+  it('le service n’expose plus le signal posé au clic ni la complétion', () => {
+    expect(service).toContain('export async function submitReport');
+    expect(service).not.toContain('initiateReport');
+    expect(service).not.toContain('completeReport');
+    expect(service).not.toMatch(/method: 'PATCH'/);
   });
 
-  it('le clic pose le signal AVANT toute saisie', () => {
-    // C'est le cœur du dispositif : un formulaire abandonné doit laisser une
-    // trace. Le POST ne doit donc pas être dans le gestionnaire d'envoi.
-    const openDialog = button.slice(button.indexOf('const openDialog'), button.indexOf('const submit'));
-    expect(openDialog).toContain('initiateReport');
+  it('ouvrir la fenêtre ne fait AUCUN appel réseau', () => {
+    expect(openDialog).toContain('setOpen(true)');
+    expect(openDialog).not.toMatch(/submitReport|apiRequest|fetch\(|await /);
   });
 
-  it('l’envoi complète le signalement existant', () => {
-    const submit = button.slice(button.indexOf('const submit'), button.indexOf('const close'));
-    expect(submit).toContain('completeReport');
-  });
-
-  it('la fenêtre s’ouvre sans attendre le réseau', () => {
-    const openDialog = button.slice(button.indexOf('const openDialog'), button.indexOf('const submit'));
-    // setOpen(true) doit précéder l'await : sinon l'élève clique et rien ne
-    // se passe pendant la latence.
-    expect(openDialog.indexOf('setOpen(true)')).toBeLessThan(openDialog.indexOf('await initiateReport'));
-  });
-
-  it('se protège du double-clic', () => {
-    expect(button).toContain('opening.current');
+  it('seul l’envoi appelle le serveur, capture comprise', () => {
+    expect(submit).toContain('await submitReport(token, { source, context, category, note, screenshot })');
   });
 
   it('n’envoie jamais d’identifiant de base, seulement des codes', () => {
     expect(service).not.toMatch(/lesson_id|module_id|lessonId:/);
-    expect(service).toContain('lessonCode');
+    expect(button).toContain('context');
+  });
+
+  it('envoie en multipart sans fixer Content-Type (le navigateur pose la frontière)', () => {
+    const fn = service.slice(service.indexOf('export async function submitReport'));
+    expect(fn).toContain('new FormData()');
+    expect(fn).not.toContain("'Content-Type'");
   });
 });
 
-describe('un signal qui échoue ne fait pas perdre le signalement', () => {
+describe('réservé aux relecteurs (admin, سفير)', () => {
   const button = read('src/features/reports/ReportButton.jsx');
 
-  it('ne réessaie que ce qui vaut la peine de l’être', () => {
-    // Passager : la même requête peut aboutir plus tard.
-    expect(isRetryableFailure(new ApiError('coupé', 'NETWORK_ERROR'))).toBe(true);
-    expect(isRetryableFailure(new ApiError('502', 'SERVER_ERROR', 502))).toBe(true);
-
-    // Refus : la même requête produira la même réponse. Rejouer masquerait
-    // la vraie cause derrière un second échec.
-    expect(isRetryableFailure(new ApiError('interdit', 'AUTHORIZATION_ERROR', 403))).toBe(false);
-    expect(isRetryableFailure(new ApiError('invalide', 'VALIDATION_ERROR', 422))).toBe(false);
-    expect(isRetryableFailure(new ApiError('non connecté', 'AUTHENTICATION_ERROR', 401))).toBe(false);
+  it('ne rend rien sans `user.canReviewContent`', () => {
+    expect(button).toContain('if (!token || !user?.canReviewContent) return null;');
   });
 
-  it('traite une erreur non typée comme passagère', () => {
-    // Perdre le signalement d'un élève est pire que retenter une fois pour rien.
-    expect(isRetryableFailure(new Error('inconnue'))).toBe(true);
-    expect(isRetryableFailure(undefined)).toBe(true);
-  });
-
-  it('retient l’échec sans alarmer l’élève à l’ouverture', () => {
-    const openDialog = button.slice(button.indexOf('const openDialog'), button.indexOf('const submit'));
-    // Aucune erreur affichée : l'élève n'a encore rien demandé.
-    expect(openDialog).not.toMatch(/setError\((?!null)/);
-    expect(openDialog).toContain('setSignalPending(isRetryableFailure(caught))');
-  });
-
-  it('repose le signal à l’envoi quand l’échec était passager', () => {
+  it('garde la saisie à l’écran en cas d’échec', () => {
     const submit = button.slice(button.indexOf('const submit'), button.indexOf('const close'));
-    expect(submit).toContain('if (!signalPending)');
-    expect(submit).toContain('await initiateReport');
-  });
-
-  it('n’insiste pas quand le refus est définitif', () => {
-    const submit = button.slice(button.indexOf('const submit'), button.indexOf('const close'));
-    // Sans `signalPending`, on lève au lieu de rejouer une requête que le
-    // serveur a déjà refusée.
-    const guard = submit.indexOf('if (!signalPending)');
-    const retry = submit.indexOf('await initiateReport');
-    expect(guard).toBeGreaterThan(-1);
-    expect(guard).toBeLessThan(retry);
-  });
-
-  it('garde la saisie de l’élève à l’écran en cas d’échec', () => {
-    const submit = button.slice(button.indexOf('const submit'), button.indexOf('const close'));
-    // `setSubmitted(true)` ne doit pas être atteint dans la branche d'erreur :
-    // l'élève doit pouvoir réessayer sans retaper.
     expect(submit).toContain('setError(caught.message)');
-    const dialog = read('src/features/reports/ReportDialog.jsx');
-    expect(dialog).toContain('role="alert"');
+    expect(read('src/features/reports/ReportDialog.jsx')).toContain('role="alert"');
   });
 
   it('ne conserve rien de sensible localement', () => {
-    // Le seul état gardé est un identifiant numérique et un drapeau. Pas de
-    // stockage persistant, pas de jeton recopié.
     expect(button).not.toContain('localStorage');
     expect(button).not.toContain('sessionStorage');
   });
@@ -145,6 +97,57 @@ describe('un signal qui échoue ne fait pas perdre le signalement', () => {
   it('n’introduit ni sondage ni minuterie de relance', () => {
     expect(button).not.toContain('setInterval');
     expect(button).not.toContain('setTimeout');
+  });
+});
+
+describe('la capture d’écran dans la fenêtre', () => {
+  const dialog = read('src/features/reports/ReportDialog.jsx');
+  const screenshot = read('src/features/reports/screenshot.js');
+
+  it('propose de capturer la page ET de choisir une image', () => {
+    expect(dialog).toContain("t('report.screenshot.capture')");
+    expect(dialog).toContain("t('report.screenshot.upload')");
+    expect(dialog).toContain('accept="image/png,image/jpeg,image/webp"');
+  });
+
+  it('se RETIRE pendant la capture, comme l’outil d’un système d’exploitation', () => {
+    // La fenêtre laisse la place à l'outil de sélection, puis revient avec la région.
+    expect(dialog).toContain('if (snipping)');
+    expect(dialog).toContain('<ScreenSnipper');
+    expect(dialog).toContain('captureRegion(rect)');
+    // Le défilement n'est plus bloqué pendant la sélection.
+    expect(dialog).toContain('const active = open && !snipping;');
+    expect(dialog).toContain('if (!active) return undefined;');
+  });
+
+  it('garde la saisie (catégorie, note) pendant la capture', () => {
+    // La remise à zéro n'a lieu qu'à l'OUVERTURE, jamais en revenant de l'outil.
+    const reset = dialog.slice(dialog.indexOf('if (open) {'), dialog.indexOf('}, [open]);'));
+    expect(reset).toContain('setCategory(null)');
+    expect(dialog).not.toMatch(/setSnipping\(false\);\s*setCategory/);
+  });
+
+  it('exclut la fenêtre elle-même de la capture', () => {
+    expect(dialog).toContain('[IGNORE_ATTRIBUTE]');
+    expect(screenshot).toContain('hasAttribute(IGNORE_ATTRIBUTE)');
+  });
+
+  it('charge html-to-image À LA DEMANDE (hors bundle d’entrée)', () => {
+    expect(screenshot).toContain("await import('html-to-image')");
+    expect(screenshot).not.toMatch(/^import .*html-to-image/m);
+  });
+
+  it('brûle les cadres dans l’image envoyée', () => {
+    expect(dialog).toContain('exportAnnotated(shot, marks)');
+  });
+
+  it('une capture ratée propose l’alternative au lieu de bloquer', () => {
+    expect(dialog).toContain("t('report.screenshot.captureFailed')");
+  });
+
+  it('repart sans capture à chaque ouverture', () => {
+    expect(dialog).toContain('setShot(null)');
+    expect(dialog).toContain('setMarks([])');
   });
 });
 
@@ -165,7 +168,9 @@ describe('la cible tactile de l’icône', () => {
     // Une icône seule au milieu du bandeau se lit comme un ornement. La
     // bordure et le fond la rangent avec les autres repères du module.
     expect(iconVariant).toContain('border');
-    expect(iconVariant).toContain('Signaler');
+    // Le mot est rendu par i18n (locales/ar/common.json → report.triggerShort),
+    // pas écrit en dur : c'est sa PRÉSENCE qu'on vérifie, pas sa langue.
+    expect(iconVariant).toContain("t('report.triggerShort')");
   });
 
   it('masque le mot sur téléphone, où la barre du haut n’a pas la place', () => {
@@ -279,7 +284,7 @@ describe('mobile et cibles tactiles', () => {
     const dialog = read('src/features/reports/ReportDialog.jsx');
     expect(dialog).toContain('items-end');
     expect(dialog).toContain('sm:items-center');
-    expect(dialog).toContain('w-full max-w-lg');
+    expect(dialog).toContain('w-full max-w-3xl');
     expect(dialog).toContain('max-h-[92dvh]');
     expect(dialog).toContain('overflow-y-auto');
   });
@@ -296,7 +301,7 @@ describe('confirmation et non-interruption', () => {
   const dialog = read('src/features/reports/ReportDialog.jsx');
 
   it('confirme sans quitter la leçon', () => {
-    expect(dialog).toContain('Merci ! Ton signalement a bien été envoyé.');
+    expect(dialog).toContain("t('report.successTitle')");
     // Aucune navigation : l'élève reste exactement où il était.
     expect(dialog).not.toContain('useNavigate');
     expect(dialog).not.toContain('window.location');
@@ -304,5 +309,30 @@ describe('confirmation et non-interruption', () => {
 
   it('repart d’une page blanche à chaque ouverture', () => {
     expect(dialog).toContain('setCategory(null)');
+  });
+});
+
+describe('le message d’abord (2026-10-08)', () => {
+  const dialog = read('src/features/reports/ReportDialog.jsx');
+
+  it('rend le message obligatoire et la catégorie facultative', () => {
+    expect(dialog).toContain('required');
+    expect(dialog).toContain('disabled={!noteReady || busy}');
+    expect(dialog).not.toContain('disabled={!category || busy}');
+    // Sans choix, le serveur reçoit « other ».
+    expect(dialog).toContain("category: category ?? 'other'");
+  });
+
+  it('place le message et la capture AVANT les types de problème', () => {
+    const note = dialog.indexOf('id="report-note"');
+    const shot = dialog.indexOf('id="report-screenshot-title"');
+    const categories = dialog.indexOf('role="radiogroup"');
+    expect(note).toBeLessThan(shot);
+    expect(shot).toBeLessThan(categories);
+  });
+
+  it('accepte une image collée ou déposée', () => {
+    expect(dialog).toContain('onPaste={pasteImage}');
+    expect(dialog).toContain('onDrop={dropImage}');
   });
 });

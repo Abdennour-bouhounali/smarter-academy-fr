@@ -1,0 +1,181 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l3-007",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — كمّيات مكتوبة بقوة للعدد 10",
+    "estimatedMinutes": 6,
+    "tags": [
+      "k × قوة 10",
+      "الوحدات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اكتب كلّ كمّية على الشكل $k \\times 10^{n}$ ، حيث $k$ هو العدد المعطى، ثمّ أعطِ الأسّ $n$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "$45\\,000 = 45 \\times 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $45\\,000$ على شكل $45$ مضروبًا في عدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما العدد الذي نضرب فيه 45 لنحصل على $45\\,000$ ؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدّ الأصفار التي تلي العدد 45."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-ASHARA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$45\\,000 = 45 \\times 1\\,000 = 45 \\times 10^{3}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$45\\,000 = 45 \\times 1\\,000$ .",
+          "$1\\,000 = 10^{3}$ ."
+        ],
+        "result": "n = 3"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$0{,}0007 = 7 \\times 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $0{,}0007$ على شكل $7$ مضروبًا في عدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في أيّ رتبة بعد الفاصلة يقع الرقم 7؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الرتبة بعد الفاصلة هي القيمة المطلقة للأسّ."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "value": "-3",
+          "id": "MISC-ASHARA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}0007 = 7 \\times 0{,}0001 = 7 \\times 10^{-4}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الرقم 7 في الرتبة الرابعة بعد الفاصلة.",
+          "$0{,}0007 = 7 \\times 10^{-4}$ ."
+        ],
+        "result": "n = -4"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "كتلة شاحنة $52$ ألف كيلوغرام. نكتبها $52 \\times 10^{n}$ كيلوغرام : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«ألف» يساوي $1\\,000$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "«ألف» $= 10^{n}$ : كم صفرًا؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$52$ ألف يعني $52$ مضروبة في «ألف»."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-ASHARA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$52$ ألف $= 52 \\times 1\\,000 = 52 \\times 10^{3}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "«ألف» $= 1\\,000 = 10^{3}$ .",
+          "$52$ ألف $= 52 \\times 10^{3}$ ."
+        ],
+        "result": "n = 3"
+      }
+    }
+  ]
+}

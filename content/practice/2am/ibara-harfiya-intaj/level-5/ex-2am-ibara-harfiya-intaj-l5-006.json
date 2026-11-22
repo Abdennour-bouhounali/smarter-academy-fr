@@ -1,0 +1,244 @@
+{
+  "id": "ex-2am-ibara-harfiya-intaj-l5-006",
+  "lessonCode": "ibara-harfiya-intaj",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — أرضيّة قسم وغرفة ملحقة",
+    "estimatedMinutes": 7,
+    "tags": [
+      "وضعيّة إدماجيّة",
+      "مساحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تُبلَّط أرضيّة قسم مستطيل عرضه $x$ m وطوله $8$ m ، وتُلحق به غرفة مستطيلة مساحتها $48\\ \\mathrm{m}^{2}$ . تحتاج حصّة المطالعة إلى مساحة لا تقلّ عن $100\\ \\mathrm{m}^{2}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما مساحة القسم والغرفة معًا بالمتر المربّع بدلالة $x$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$56x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-PERCELL"
+        },
+        {
+          "id": "B",
+          "content": "$8x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-NOFIRST"
+        },
+        {
+          "id": "C",
+          "content": "$8x + 48$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعيّة وحدّد ما يتغيّر (الحرف) وما يبقى ثابتًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ خيار بقيمة بسيطة للحرف ثمّ قارن بالعدّ المباشر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاعدة الصحيحة تعطي العدد نفسه الذي تجده بالعدّ في كلّ مرّة تجرّبها."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتابة الصحيحة هي $8x + 48$ .",
+        "incorrect": "جرّب كلّ خيار على قيمة بسيطة للحرف وقارن بالعدّ المباشر قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "$8x + 48$ : مساحة القسم $8x$ ومساحة الغرفة $48$ ، ونجمعهما.",
+          "عند $x = 3$ : $8 \\times 3 + 48 = 72$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "إذا كان $x = 9$ m ، فما المساحة ؟ احسب $S = 8x + 48$ .",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "120",
+      "misconceptionSignatures": [
+        {
+          "value": "137",
+          "id": "MISC-IBARA2-JUXTA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بالقيمة المعطاة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ احترم أولويّة العمليّات : الضرب قبل الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة قبل أن تجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = 120$ .",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ أعد الحساب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$8 \\times 9 + 48 = 120$ ."
+        ],
+        "result": "120"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "وإذا كان $x = 14$ m ؟ احسب $S = 8x + 48$ .",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "160",
+      "misconceptionSignatures": [
+        {
+          "value": "862",
+          "id": "MISC-IBARA2-JUXTA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بالقيمة المعطاة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ احترم أولويّة العمليّات : الضرب قبل الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة قبل أن تجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = 160$ .",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ أعد الحساب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$8 \\times 14 + 48 = 160$ ."
+        ],
+        "result": "160"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "عندما يكون $x = 9$ ، هل تكفي المساحة لحصّة المطالعة التي تحتاج إلى $100\\ \\mathrm{m}^{2}$ على الأقلّ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "نعم",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب كلّ عبارة بالقيمة المعطاة وحدها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات في كلّ حساب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن العددين الناتجين."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم : الشرط محقّق.",
+        "incorrect": "احسب كلّ عبارة من أجل القيمة المعطاة ثمّ قارن العددين."
+      },
+      "solution": {
+        "lines": [
+          "$8 \\times 9 + 48 = 120$ .",
+          "الشرط محقّق."
+        ]
+      },
+      "timeSeconds": 70
+    }
+  ]
+}

@@ -1,0 +1,504 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-talis-l5-008",
+  "lessonCode": "wadiya-idmajiya-talis",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2023 — الزلّاقة في حديقة الألعاب",
+    "estimatedMinutes": 40,
+    "tags": [
+      "وضعية إدماجية",
+      "خاصية طالس",
+      "الخاصية العكسية",
+      "ربح"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-talis_P1",
+      "modelledOn": "BEM 2023 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في حديقة ألعاب زلّاقة: سلّمها $[AH]$ شاقولي ارتفاعه $AH = 2{,}4\\,\\mathrm{m}$ ، ومنزلقها $[AB]$ مستقيم ينتهي في $B$ على الأرض الأفقية حيث $HB = 3{,}2\\,\\mathrm{m}$ . تحت المنزلق دعامة شاقولية $[MN]$ ، حيث $M$ من $[AB]$ و $N$ من $[HB]$ و $NB = 1{,}2\\,\\mathrm{m}$ (الشكل المقابل).",
+    "figure": {
+      "points": {
+        "H": [
+          0.0,
+          0.0
+        ],
+        "A": [
+          0.0,
+          2.4
+        ],
+        "B": [
+          3.2,
+          0.0
+        ],
+        "N": [
+          2.0,
+          0.0
+        ],
+        "M": [
+          2.0,
+          0.9
+        ],
+        "P": [
+          1.2,
+          1.5
+        ],
+        "Q": [
+          0.0,
+          1.5
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "Q",
+          "label": "0,9"
+        },
+        [
+          "Q",
+          "H"
+        ],
+        [
+          "H",
+          "N"
+        ],
+        {
+          "from": "N",
+          "to": "B",
+          "label": "1,2"
+        },
+        {
+          "from": "A",
+          "to": "P",
+          "label": "1,5"
+        },
+        [
+          "P",
+          "M"
+        ],
+        [
+          "M",
+          "B"
+        ],
+        {
+          "from": "M",
+          "to": "N",
+          "bold": true,
+          "tone": "indigo"
+        },
+        {
+          "from": "P",
+          "to": "Q",
+          "bold": true,
+          "tone": "indigo"
+        }
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "H",
+          "B"
+        ],
+        [
+          "M",
+          "N",
+          "B"
+        ]
+      ],
+      "labels": {
+        "H": "sw",
+        "A": "n",
+        "B": "se",
+        "N": "s",
+        "M": "ne",
+        "P": "ne",
+        "Q": "w"
+      },
+      "ariaLabel": "الزلّاقة: السلّم [AH] شاقولي، المنزلق [AB]، الدعامة الشاقولية [MN] حيث NB = 1,2، والعارضة [PQ] حيث AP = 1,5 و AQ = 0,9",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب طول المنزلق $AB$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "5.6",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $AHB$ قائم في $H$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB^2 = 5{,}76 + 10{,}24 = 16$ ومنه $AB = 4\\,\\mathrm{m}$ .",
+        "incorrect": "$AB^2 = AH^2 + HB^2$ ثم الجذر التربيعي."
+      },
+      "solution": {
+        "lines": [
+          "حسب خاصية فيثاغورس في المثلث $AHB$ القائم في $H$ : $AB^2 = AH^2 + HB^2$",
+          "$AB^2 = 2{,}4^2 + 3{,}2^2 = 16$",
+          "$AB = \\sqrt{16}$"
+        ],
+        "result": "AB = 4\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب طول الدعامة $MN$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "0,9",
+      "misconceptionSignatures": [
+        {
+          "value": "1.5",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        },
+        {
+          "value": "6.4",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(MN)$ و $(AH)$ شاقوليان: متوازيان، والمثلثان $BNM$ و $BHA$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $\\dfrac{BN}{BH} = \\dfrac{NM}{HA}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$MN = \\dfrac{1{,}2 \\times 2{,}4}{3{,}2} = 0{,}9\\,\\mathrm{m}$ .",
+        "incorrect": "في كل نسبة: طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "$(MN) \\perp (HB)$ و $(AH) \\perp (HB)$ ، إذن $(MN) \\parallel (AH)$",
+          "حسب خاصية طالس: $\\dfrac{BN}{BH} = \\dfrac{BM}{BA} = \\dfrac{NM}{HA}$",
+          "$\\dfrac{1{,}2}{3{,}2} = \\dfrac{MN}{2{,}4}$",
+          "$MN = \\dfrac{1{,}2 \\times 2{,}4}{3{,}2}$"
+        ],
+        "result": "MN = 0{,}9\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "lead": "تُثبَّت عارضة تقوية $[PQ]$ حيث $P$ من $[AB]$ و $Q$ من $[AH]$ ، و $AP = 1{,}5\\,\\mathrm{m}$ و $AQ = 0{,}9\\,\\mathrm{m}$ .",
+      "statement": "احسب النسبة $\\dfrac{AP}{AB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "3/8",
+      "misconceptionSignatures": [
+        {
+          "value": "8/3",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AP$ و $AB$ طولان يُقاسان من النقطة $A$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $AP$ على $AB$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AP}{AB} = \\dfrac{1{,}5}{4} = \\dfrac{3}{8}$ .",
+        "incorrect": "النسبة $\\dfrac{AP}{AB}$ : الطول $AP$ على الطول $AB$ ، وكلاهما من النقطة $A$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AP}{AB} = \\dfrac{1{,}5}{4} = \\dfrac{3}{8}$"
+        ],
+        "result": "\\dfrac{AP}{AB} = \\dfrac{3}{8}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "statement": "احسب النسبة $\\dfrac{AQ}{AH}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "3/8",
+      "misconceptionSignatures": [
+        {
+          "value": "8/3",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "3/5",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AQ$ و $AH$ طولان يُقاسان من النقطة $A$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $AQ$ على $AH$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AQ}{AH} = \\dfrac{0{,}9}{2{,}4} = \\dfrac{3}{8}$ .",
+        "incorrect": "النسبة $\\dfrac{AQ}{AH}$ : الطول $AQ$ على الطول $AH$ ، وكلاهما من النقطة $A$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AQ}{AH} = \\dfrac{0{,}9}{2{,}4} = \\dfrac{3}{8}$"
+        ],
+        "result": "\\dfrac{AQ}{AH} = \\dfrac{3}{8}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "هل العارضة $[PQ]$ أفقية (موازية لـ $(HB)$ )؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-AKS-BIDUN-TASAWI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النسبتين بقيمهما المضبوطة (الجداء المتصالب)، لا بقيم مقرّبة ولا بمظهر الشكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق أيضا من ترتيب النقط على المستقيمين المتقاطعين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AP}{AB} = \\dfrac{AQ}{AH} = 0{,}375$ والترتيب نفسه: $(PQ) \\parallel (HB)$ .",
+        "incorrect": "الخاصية العكسية تتطلب شرطين معا: تساوي النسبتين بقيم مضبوطة، وترتيب النقط نفسه على المستقيمين."
+      },
+      "solution": {
+        "lines": [
+          "بما أن النقط $A$ ، $P$ ، $B$ و $A$ ، $Q$ ، $H$ في استقامية وبنفس الترتيب،",
+          "و بما أن: $\\dfrac{AP}{AB} = \\dfrac{AQ}{AH} = \\dfrac{3}{8}$",
+          "فإن المستقيمين $(PQ)$ و $(HB)$ متوازيان حسب خاصية طالس العكسية: العارضة أفقية."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "احسب طول العارضة $PQ$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "1,2",
+      "misconceptionSignatures": [
+        {
+          "value": "128/15",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(PQ) \\parallel (HB)$ : المثلثان $APQ$ و $ABH$ في وضعية طالس."
+        }
+      ],
+      "feedback": {
+        "correct": "$PQ = \\dfrac{3}{8} \\times 3{,}2 = 1{,}2\\,\\mathrm{m}$ .",
+        "incorrect": "في كل نسبة: طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "$(PQ) \\parallel (HB)$ ، حسب خاصية طالس: $\\dfrac{AP}{AB} = \\dfrac{AQ}{AH} = \\dfrac{PQ}{BH}$",
+          "$\\dfrac{1{,}5}{4} = \\dfrac{PQ}{3{,}2}$",
+          "$PQ = \\dfrac{1{,}5 \\times 3{,}2}{4}$"
+        ],
+        "result": "PQ = 1{,}2\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q7",
+      "step": "05",
+      "sub": "ا",
+      "lead": "☜ يصنع مقاول ست زلّاقات من هذا النوع لحدائق البلدية. ثمن المتر من الأنبوب الحديدي $900DA$ ، ويبيع المقاول الدعامات والعوارض بربح $20\\%$ من تكلفتها.",
+      "statement": "تكلفة الأنابيب:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "11340",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الطولان $MN$ و $PQ$ من السؤالين 02 و 04."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 \\times (0{,}9 + 1{,}2) \\times 900 = 11340DA$ .",
+        "incorrect": "رتّب الحساب: الكمية اللازمة أولا، ثم اضربها في سعر الوحدة، ثم أضف المصاريف الثابتة إن وُجدت."
+      },
+      "solution": {
+        "lines": [
+          "طول الأنابيب لزلّاقة واحدة: $MN + PQ = 0{,}9 + 1{,}2 = 2{,}1\\,\\mathrm{m}$",
+          "لست زلّاقات: $6 \\times 2{,}1 = 12{,}6\\,\\mathrm{m}$",
+          "التكلفة: $12{,}6 \\times 900$"
+        ],
+        "result": "11340\\,DA"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q8",
+      "step": "05",
+      "sub": "ب",
+      "statement": "ثمن البيع:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "13608",
+      "misconceptionSignatures": [
+        {
+          "value": "9072",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الربح $20\\%$ من التكلفة يُضاف إليها."
+        }
+      ],
+      "feedback": {
+        "correct": "$11340 \\times 1{,}2 = 13608DA$ .",
+        "incorrect": "رتّب الحساب: الكمية اللازمة أولا، ثم اضربها في سعر الوحدة، ثم أضف المصاريف الثابتة إن وُجدت."
+      },
+      "solution": {
+        "lines": [
+          "ثمن البيع: $11340 + \\dfrac{20}{100} \\times 11340 = 11340 \\times 1{,}2$"
+        ],
+        "result": "13608\\,DA"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "id": "ex-4am-jidhr-tarbii-l2-001",
+  "lessonCode": "jidhr-tarbii",
+  "level": 2,
+  "metadata": {
+    "title": "كتابة عشرية",
+    "estimatedMinutes": 4,
+    "tags": [
+      "الرمز √",
+      "أعداد عشرية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-3",
+      "page": 26,
+      "section": "أوظّف تعلّماتي",
+      "number": 3
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "اكتب كل عدد من الأعداد التالية كتابة عشرية:"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "$\\sqrt{289}$",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "17",
+      "misconceptionSignatures": [
+        {
+          "value": "144.5",
+          "id": "MISC-JIDHR-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$17^2$؟ احسب مربعات الأعداد بين 15 و 20."
+        }
+      ],
+      "feedback": {
+        "correct": "$17^2 = 289$: $\\sqrt{289} = 17$.",
+        "incorrect": "ابحث عن العدد الموجب الذي مربعه 289."
+      },
+      "solution": {
+        "lines": [
+          "17 موجب و $17^2 = 289$"
+        ],
+        "result": "\\sqrt{289} = 17"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$\\sqrt{1{,}44}$",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "1.2",
+      "misconceptionSignatures": [
+        {
+          "value": "0.12",
+          "id": "MISC-JIDHR-FASILA"
+        },
+        {
+          "value": "12",
+          "id": "MISC-JIDHR-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$1{,}44 = \\dfrac{144}{100}$."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}2^2 = 1{,}44$: $\\sqrt{1{,}44} = 1{,}2$.",
+        "incorrect": "انتبه إلى موضع الفاصلة: تحقّق بتربيع العدد الذي وجدته."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}44 = \\dfrac{144}{100}$ و $1{,}2^2 = 1{,}44$"
+        ],
+        "result": "\\sqrt{1{,}44} = 1{,}2"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "$\\sqrt{0{,}0001}$",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "0.01",
+      "misconceptionSignatures": [
+        {
+          "value": "0.001",
+          "id": "MISC-JIDHR-FASILA"
+        },
+        {
+          "value": "0.1",
+          "id": "MISC-JIDHR-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$0{,}0001 = \\dfrac{1}{10000}$."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}01^2 = 0{,}0001$: $\\sqrt{0{,}0001} = 0{,}01$.",
+        "incorrect": "عدد الأرقام بعد الفاصلة في المربع ضعف عددها في العدد: تحقّق بالتربيع."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}0001 = \\dfrac{1}{10000}$ و $0{,}01^2 = 0{,}0001$"
+        ],
+        "result": "\\sqrt{0{,}0001} = 0{,}01"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

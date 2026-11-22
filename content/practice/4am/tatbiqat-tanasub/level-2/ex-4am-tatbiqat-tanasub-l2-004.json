@@ -1,0 +1,181 @@
+{
+  "id": "ex-4am-tatbiqat-tanasub-l2-004",
+  "lessonCode": "tatbiqat-tanasub",
+  "level": 2,
+  "metadata": {
+    "title": "تمرين 5 — الماء يتجمّد",
+    "estimatedMinutes": 5,
+    "tags": [
+      "زيادة",
+      "الدالة المرفقة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-5",
+      "page": 72,
+      "section": "أوظّف تعلّماتي",
+      "number": 5,
+      "adaptedFrom": "ex-4am-tatbiqat-tanasub-l2-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "عندما يتجمّد الماء يزداد حجمه بنحو 8%. نسمّي $f$ الدالة التي ترفق بكل حجم $x$ (بـ $cm^3$ ) من الماء الحجم $f(x)$ للجليد الناتج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "في أي عدد يجب ضرب حجم الماء للحصول على حجم الجليد؟",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة",
+      "expectedAnswer": "1,08",
+      "misconceptionSignatures": [
+        {
+          "value": "0,08",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحجم يزداد بـ 8%: الزيادة بـ $t\\%$ ضرب في $1 + \\dfrac{t}{100}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $t$ بالعدد 8 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$1 + \\dfrac{8}{100} = 1{,}08$ .",
+        "incorrect": "الحجم يزداد: العدد المطلوب أكبر من 1 ."
+      },
+      "solution": {
+        "lines": [
+          "$1 + \\dfrac{8}{100} = 1{,}08$",
+          "نضرب حجم الماء في $1{,}08$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل $f$ دالة خطية؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NISBA-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدالة الخطية من الشكل $x \\longmapsto ax$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب عبارة $f(x)$ باستعمال العدد السابق."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(x) = 1{,}08x$ من الشكل $ax$ : $f$ دالة خطية.",
+        "incorrect": "اكتب $f(x)$ ثم قارنها بالشكل $ax$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 1{,}08x$",
+          "من الشكل $ax$ مع $a = 1{,}08$ ، إذن $f$ دالة خطية."
+        ],
+        "result": "دالة خطية"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب حجم الجليد الناتج عن تجمّد $250cm^3$ من الماء.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الحجم بـ $cm^3$ (عدد فقط)",
+      "expectedAnswer": "270",
+      "misconceptionSignatures": [
+        {
+          "value": "258",
+          "id": "MISC-NISBA-JAM"
+        },
+        {
+          "value": "20",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حجم الجليد هو $f(250)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب 250 في العدد الذي وجدته."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(250) = 1{,}08 \\times 250 = 270cm^3$ .",
+        "incorrect": "اضرب حجم الماء في معامل الدالة، ولا تضف العدد 8 ."
+      },
+      "solution": {
+        "lines": [
+          "$f(250) = 1{,}08 \\times 250$",
+          "$f(250) = 270$",
+          "حجم الجليد $270cm^3$ ."
+        ],
+        "result": "f(250) = 270cm^3"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

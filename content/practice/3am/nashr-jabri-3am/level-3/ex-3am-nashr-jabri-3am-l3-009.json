@@ -1,0 +1,196 @@
+{
+  "id": "ex-3am-nashr-jabri-3am-l3-009",
+  "lessonCode": "nashr-jabri-3am",
+  "level": 3,
+  "metadata": {
+    "title": "نشر جداء ثلاثة عوامل",
+    "estimatedMinutes": 7,
+    "tags": [
+      "نشر",
+      "حرف في جداء"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-23",
+      "page": 64,
+      "section": "نشر العبارة (a+b)(c+d)",
+      "number": 23
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نريد نشر العبارة $A = x(x + 3)(x - 4)$ على مرحلتين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "انشر وبسّط $(x + 3)(x - 4)$ : ما هو معامل $x$ في الشكل المبسّط؟",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "-1",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-NASHR-PRODUCT-MISSING"
+        },
+        {
+          "value": "7",
+          "id": "MISC-NASHR-SIGN-NEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني: أربعة جداءات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات الأربعة واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء الأصلي وفي النتيجة: يجب أن تجد العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$(x+3)(x-4) = x^2 - x - 12$ ، إذن المعامل هو $-1$ .",
+        "incorrect": "عوّض $x$ بالعدد المعطى واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$(x + 3)(x - 4)$",
+          "$x \\times x - x \\times 4 + 3 \\times x - 3 \\times 4$",
+          "$x^2 - x - 12$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "انشر ثم بسّط العبارة $A = x(x + 3)(x - 4)$ . الشكل الصحيح هو:",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$A = x^3 - x^2 - 12x$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$A = x^3 + x^2 - 12x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-SIGN-NEG"
+        },
+        {
+          "id": "C",
+          "content": "$A = x^3 - x - 12$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-FIRST-ONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر كل جداء على حدة وسجّل كل الحدود الناتجة بإشاراتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الحدود المتشابهة فقط (الجزء الحرفي نفسه)، ثم رتّب الحدود: $x^2$ ثم $x$ ثم العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في العبارة الأصلية وفي المبسّطة: يجب أن تجد القيمة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = x^3 - x^2 - 12x$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$A = x \\times (x^2 - x - 12)$",
+          "$A = x^3 - x^2 - 12x$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $ax^3 + bx^2 + cx$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "-1",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-NASHR-SIGN-NEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر كل جداء على حدة وسجّل كل الحدود الناتجة بإشاراتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الحدود المتشابهة فقط (الجزء الحرفي نفسه)، ثم رتّب الحدود: $x^2$ ثم $x$ ثم العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في العبارة الأصلية وفي المبسّطة: يجب أن تجد القيمة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = x^3 - x^2 - 12x$ إذن $b = -1$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$A = x(x + 3)(x - 4)$",
+          "$A = x \\times x \\times x - x \\times x \\times 4 + x \\times 3 \\times x - x \\times 3 \\times 4$",
+          "$A = x^3 - x^2 - 12x$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,329 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l5-009",
+  "lessonCode": "mana-jam-tarh",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مكتبة المتوسطة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "أكثر",
+      "أقل",
+      "مجموع",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تبرّع تلاميذ المتوسطة بكتب لمكتبة المدرسة حبًّا في القراءة.\nالجزء الأول: قدّم تلاميذ السنة الأولى 238 كتابًا، وقدّم تلاميذ السنة الثانية أكثر منهم بـ 47 كتابًا، وقدّم تلاميذ السنة الثالثة أقل من تلاميذ السنة الثانية بـ 62 كتابًا، وقدّم تلاميذ السنة الرابعة 196 كتابًا.\nالجزء الثاني: تتّسع رفوف المكتبة الفارغة لـ 950 كتابًا، ووعد الأولياء بإهداء 15 كتابًا أخرى."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "كم كتابًا قدّم تلاميذ السنة الثانية؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "285",
+      "misconceptionSignatures": [
+        {
+          "value": "191",
+          "id": "MISC-JAMTARH-KALIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "السنة الثانية قدّمت أكثر."
+        }
+      ],
+      "feedback": {
+        "correct": "$238 + 47 = 285$.",
+        "incorrect": "تلاميذ السنة الثانية قدّموا أكثر من 238 كتابًا."
+      },
+      "solution": {
+        "lines": [
+          "$238 + 47 = 285$"
+        ],
+        "result": "285"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كم كتابًا قدّم تلاميذ السنة الثالثة؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "223",
+      "misconceptionSignatures": [
+        {
+          "value": "347",
+          "id": "MISC-JAMTARH-KALIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولًا ما قدّمته السنة الثانية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السنة الثالثة قدّمت أقل منها."
+        }
+      ],
+      "feedback": {
+        "correct": "$285 - 62 = 223$.",
+        "incorrect": "السنة الثالثة قدّمت أقل من السنة الثانية: اطرح."
+      },
+      "solution": {
+        "lines": [
+          "السنة الثانية: 285",
+          "$285 - 62 = 223$"
+        ],
+        "result": "223"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "في المخطط بأقواس الذي يقارن السنة الثانية بالسنة الثالثة، الكل هو:",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "عدد كتب السنة الثانية",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "عدد كتب السنة الثالثة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        },
+        {
+          "id": "C",
+          "content": "الفرق 62",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ السنتين قدّمت أكثر؟"
+        }
+      ],
+      "feedback": {
+        "correct": "كتب السنة الثانية = كتب السنة الثالثة + 62: هي الكل.",
+        "incorrect": "الأكبر يضمّ الأصغر والفرق."
+      },
+      "solution": {
+        "lines": [
+          "السنة الثالثة قدّمت أقل من السنة الثانية، إذن عدد كتب السنة الثانية هو الكل."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب مجموع الكتب التي قدّمها التلاميذ.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "942",
+      "misconceptionSignatures": [
+        {
+          "value": "746",
+          "id": "MISC-JAMTARH-JUZ-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدود المجموع أربعة."
+        }
+      ],
+      "feedback": {
+        "correct": "$238 + 285 + 223 + 196 = 942$.",
+        "incorrect": "اجمع ما قدّمته السنوات الأربع كلها."
+      },
+      "solution": {
+        "lines": [
+          "$238 + 285 + 223 + 196 = 942$"
+        ],
+        "result": "942"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "كم مكانًا يبقى فارغًا في الرفوف بعد ترتيب هذه الكتب؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "1892",
+          "id": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "سعة الرفوف هي الكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$950 - 942 = 8$.",
+        "incorrect": "الأماكن الفارغة جزء من السعة: اطرح عدد الكتب."
+      },
+      "solution": {
+        "lines": [
+          "$950 - 942 = 8$"
+        ],
+        "result": "8"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "هل تتّسع الرفوف لكتب الأولياء أيضًا؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-JUZ-NAQIS"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الأماكن الفارغة بعدد كتب الأولياء."
+        }
+      ],
+      "feedback": {
+        "correct": "$8 < 15$: لا تتّسع.",
+        "incorrect": "احسب الأماكن الفارغة بعد ترتيب كتب التلاميذ، ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "بقي 8 مكانًا فارغًا، و $8 < 15$ ، إذن لا تتّسع الرفوف لكل كتب الأولياء."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q7",
+      "step": "06",
+      "statement": "كم كتابًا من كتب الأولياء يبقى دون مكان؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "23",
+          "id": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد كتب الأولياء هو الكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$15 - 8 = 7$.",
+        "incorrect": "اطرح عدد الأماكن الفارغة من عدد كتب الأولياء."
+      },
+      "solution": {
+        "lines": [
+          "$15 - 8 = 7$"
+        ],
+        "result": "7"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

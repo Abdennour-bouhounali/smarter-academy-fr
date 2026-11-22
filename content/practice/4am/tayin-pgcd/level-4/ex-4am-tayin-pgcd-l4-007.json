@@ -1,0 +1,133 @@
+{
+  "id": "ex-4am-tayin-pgcd-l4-007",
+  "lessonCode": "tayin-pgcd",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2021 — PGCD(84 ; 21) ثم PGCD(a ; 21) = 7",
+    "estimatedMinutes": 8,
+    "tags": [
+      "PGCD",
+      "قاسم للعدد الآخر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tayin-pgcd_P3",
+      "modelledOn": "BEM 2021 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 84 و 21.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "21",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العددين: هل العدد الأصغر قاسم للعدد الأكبر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد الأكبر على العدد الأصغر وانظر إلى الباقي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان $b$ قاسمًا للعدد $a$ فإن PGCD$(a ; b) = b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$84 = 21 \\times 4$ : العدد 21 قاسم للعدد 84، فهو قاسمهما المشترك الأكبر.",
+        "incorrect": "لا داعي لقائمتين طويلتين: تحقّق أولًا هل أحد العددين قاسم للآخر."
+      },
+      "solution": {
+        "lines": [
+          "$84 = 21 \\times 4$ ، إذن العدد 21 قاسم للعدد 84.",
+          "وبما أن 21 قاسم للعدد 84 فإن:"
+        ],
+        "result": "PGCD(84 ; 21) = 21"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عيّن العدد الطبيعي $a$ المحصور تمامًا بين 30 و 45 والذي يحقّق: PGCD$(a ; 21) = 7$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "35",
+      "misconceptionSignatures": [
+        {
+          "value": "42",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "إذا كان PGCD$(a ; 21) = 7$ فإن 7 قاسم للعدد $a$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب مضاعفات 7 المحصورة تمامًا بين 30 و 45، ثم احسب PGCD كل منها مع 21."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استبعد كل مضاعف للعدد 21: عندها يكون 21 قاسمًا له، والقاسم المشترك الأكبر هو 21 نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 35$ : مضاعف للعدد 7 وليس مضاعفًا للعدد 21.",
+        "incorrect": "ابحث عن مضاعف للعدد 7 ليس مضاعفًا للعدد 21."
+      },
+      "solution": {
+        "lines": [
+          "PGCD$(a ; 21) = 7$ يعني أن 7 قاسم للعدد $a$ ، أي أن $a$ مضاعف للعدد 7.",
+          "مضاعفات 7 المحصورة تمامًا بين 30 و 45 هي: 35 ، 42",
+          "$42 = 21 \\times 2$ : العدد 21 قاسم للعدد 42، إذن PGCD(42 ; 21) = 21 وليس 7.",
+          "قواسم 35 هي: 1 ، 5 ، 7 ، 35؛ قواسم 21 هي: 1 ، 3 ، 7 ، 21؛ القواسم المشتركة: 1 ، 7، إذن PGCD(35 ; 21) = 7."
+        ],
+        "result": "a = 35"
+      },
+      "timeSeconds": 300
+    }
+  ]
+}

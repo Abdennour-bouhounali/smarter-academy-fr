@@ -1,0 +1,189 @@
+{
+  "id": "ex-4am-awwaliyan-fima-baynahuma-l3-002",
+  "lessonCode": "awwaliyan-fima-baynahuma",
+  "level": 3,
+  "metadata": {
+    "title": "نشاط 7 — مريم: 27 و 36",
+    "estimatedMinutes": 8,
+    "tags": [
+      "نفي",
+      "إثبات"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-7",
+      "page": 9,
+      "section": "أنشطة",
+      "number": 7
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تقول مريم: «العددان 27 و 36 أوليان فيما بينهما»."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل مريم على صواب؟ اشرح.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن عدد يختلف عن 1 يقسم 27 و 36 معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قواعد قابلية القسمة قد لا تكشف كل القواسم المشتركة: احسب PGCD عند الشك."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يكفي قاسم مشترك واحد يختلف عن 1 لنفي أن العددين أوليان فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(27 ; 36) = 9: العددان ليسا أوليين فيما بينهما.",
+        "incorrect": "لا تكتفِ بقواعد قابلية القسمة: احسب القاسم المشترك الأكبر للعددين."
+      },
+      "solution": {
+        "lines": [
+          "مجموع أرقام 27 هو 9 ومجموع أرقام 36 هو 9، وكلاهما مضاعف للعدد 3، إذن 3 قاسم مشترك لهما يختلف عن 1.",
+          "الجواب: لا، العددان 27 و 36 ليسا أوليين فيما بينهما لأن لهما قاسمًا مشتركًا يختلف عن 1."
+        ],
+        "result": "PGCD(27 ; 36) = 9"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب: PGCD(27 ; 36).",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 36 على 27: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (36 ; 27) بالزوج (27 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 9.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$36 = 27 \\times 1 + 9$",
+          "$27 = 9 \\times 3 + 0$",
+          "آخر باقٍ غير معدوم هو 9، إذن:"
+        ],
+        "result": "PGCD(27 ; 36) = 9"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أثبت أنّ العددين 22 و 35 أوليان فيما بينهما.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيمة PGCD(22 ; 35) التي وجدتها",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عددان أوليان فيما بينهما: احسب قاسمهما المشترك الأكبر PGCD(22 ; 35)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 35 على 22، ثم واصل القسمات المتتابعة إلى أن تجد باقيًا معدومًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن آخر باقٍ غير معدوم بما يتطلّبه تعريف عددين أوليين فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(22 ; 35) = 1: العددان 22 و 35 أوليان فيما بينهما.",
+        "incorrect": "راجع القسمات المتتابعة باقيًا باقيًا: آخر باقٍ غير معدوم هو القاسم المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$35 = 22 \\times 1 + 13$",
+          "$22 = 13 \\times 1 + 9$",
+          "$13 = 9 \\times 1 + 4$",
+          "$9 = 4 \\times 2 + 1$",
+          "$4 = 1 \\times 4 + 0$",
+          "آخر باقٍ غير معدوم هو 1، إذن PGCD(22 ; 35) = 1 .",
+          "ومنه العددان 22 و 35 أوليان فيما بينهما."
+        ],
+        "result": "PGCD(22 ; 35) = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

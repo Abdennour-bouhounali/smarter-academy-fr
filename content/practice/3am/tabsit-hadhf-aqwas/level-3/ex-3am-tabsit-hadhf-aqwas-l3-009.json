@@ -1,0 +1,238 @@
+{
+  "id": "ex-3am-tabsit-hadhf-aqwas-l3-009",
+  "lessonCode": "tabsit-hadhf-aqwas",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — تبسيط ثم معادلة",
+    "estimatedMinutes": 9,
+    "tags": [
+      "جداء",
+      "حذف الأقواس"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 3,
+      "file": "3am-s3-49",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن $K$ عبارة جبرية حيث:",
+    "formulas": [
+      "K = 4x \\times 2x + 4x \\times 3 - (x + 5)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب الجداء $4x \\times 2x$ على أبسط شكل.",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$8x^2$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$8x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-PRODUCT-LETTER"
+        },
+        {
+          "id": "C",
+          "content": "$6x^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-PRODUCT-COEF-ADDED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في جداء حدّين نضرب الأعداد معًا والحروف معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أن $x \\times x$ يُكتب $x^2$، وطبّق قاعدة إشارة الجداء."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء وفي النتيجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$8x^2$.",
+        "incorrect": "راجع إشارة كل حدّ وما يسبق القوسين، ثم اجمع الحدود المتشابهة فقط."
+      },
+      "solution": {
+        "lines": [
+          "$4x \\times 2x = (4 \\times 2)(x \\times x) = 8x^2$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "بسّط العبارة $K$ .",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $K$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-TABSIT-MINUS-KEPT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة التي تسبق القوسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوسان مسبوقان بالإشارة $-$ يُحذفان مع تغيير إشارة كل حدّ بينهما، لا الحدّ الأول وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العبارة بدون أقواس حدًّا حدًّا، ثم اجمع الحدود المتشابهة، وتحقّق بتعويض $x$ بعدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$K = 8x^2 + 11x - 5$ إذن $b = 11$.",
+        "incorrect": "اجمع الحدود المتشابهة بإشاراتها بعد حذف الأقواس، ثم اقرأ العدد المطلوب في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$K = 8x^2 + 12x - x - 5$",
+          "$K = 8x^2 + 11x - 5$"
+        ],
+        "result": "b = 11"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "العدد $c$ :",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $K$ على الشكل $ax^2 + bx + c$ : اكتب العدد $c$ فقط",
+      "expectedAnswer": "-5",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-TABSIT-MINUS-FIRST-ONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة التي تسبق القوسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوسان مسبوقان بالإشارة $-$ يُحذفان مع تغيير إشارة كل حدّ بينهما، لا الحدّ الأول وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العبارة بدون أقواس حدًّا حدًّا، ثم اجمع الحدود المتشابهة، وتحقّق بتعويض $x$ بعدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$K = 8x^2 + 11x - 5$ إذن $c = -5$.",
+        "incorrect": "اجمع الحدود المتشابهة بإشاراتها بعد حذف الأقواس، ثم اقرأ العدد المطلوب في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$K = 8x^2 + 11x - 5$"
+        ],
+        "result": "c = -5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "حلّ المعادلة $K - 8x^2 = 9x + 1$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $K$ بشكلها المبسّط: $8x^2$ يختفي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$11x - 5 = 9x + 1$ تعطي $x = 3$ .",
+        "incorrect": "ابدأ بالشكل المبسّط لـ $K$ ثم انقل الحدود."
+      },
+      "solution": {
+        "lines": [
+          "$K - 8x^2 = 11x - 5$",
+          "$11x - 5 = 9x + 1$",
+          "$2x = 6$",
+          "$x = 3$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

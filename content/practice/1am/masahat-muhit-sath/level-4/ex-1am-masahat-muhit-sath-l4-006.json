@@ -1,0 +1,280 @@
+{
+  "id": "ex-1am-masahat-muhit-sath-l4-006",
+  "lessonCode": "masahat-muhit-sath",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — حقلان للأخوين",
+    "estimatedMinutes": 10,
+    "tags": [
+      "محيط",
+      "مقارنة أعداد عشرية",
+      "ثمن سياج"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثالث",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "ورث الأخوان رشيد وكمال حقلين، وقسّماهما بالعدل بحيث لا يغبن أحدهما. أطوال أضلاع الحقل الأول بالمتر: $24{,}5$ ، $18{,}75$ ، $24{,}5$ ، $18{,}75$ ، وأطوال أضلاع الحقل الثاني: $30$ ، $12{,}6$ ، $30$ ، $12{,}6$. يريد كل منهما إحاطة حقله بسياج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما محيط الحقل الأول بالمتر؟",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "86,5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المحيط هو مجموع أطوال الأضلاع كلها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الأطوال بالتدريج وانتبه إلى مواضع الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة الجمع بترتيب آخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$86{,}5\\,\\mathrm{m}$.",
+        "incorrect": "نجمع الأضلاع الأربعة."
+      },
+      "solution": {
+        "lines": [
+          "$24{,}5 + 18{,}75 + 24{,}5 + 18{,}75 = 86{,}5$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما محيط الحقل الثاني بالمتر؟",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "85,2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المحيط هو مجموع أطوال الأضلاع كلها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الأطوال بالتدريج وانتبه إلى مواضع الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة الجمع بترتيب آخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$85{,}2\\,\\mathrm{m}$.",
+        "incorrect": "نجمع الأضلاع الأربعة."
+      },
+      "solution": {
+        "lines": [
+          "$30 + 12{,}6 + 30 + 12{,}6 = 85{,}2$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أيّ الحقلين يحتاج إلى سياج أقصر؟ ضع الرمز المناسب في $P_1 \\ldots P_2$.",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$<$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MASAHA-LONGER-BIGGER"
+        },
+        {
+          "id": "B",
+          "content": "$=$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MASAHA-EQUAL-AREA-EQUAL-PERIM"
+        },
+        {
+          "id": "C",
+          "content": "$>$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العددين العشريين: الجزء الصحيح أولًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إن تساوى الجزآن الصحيحان قارن الأعشار."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر أن $86{,}5$ و $85{,}2$ عددان عشريان."
+        }
+      ],
+      "feedback": {
+        "correct": "$86{,}5 > 85{,}2$: سياج الحقل الثاني أقصر.",
+        "incorrect": "نقارن الجزأين الصحيحين: 86 و 85."
+      },
+      "solution": {
+        "lines": [
+          "86 > 85، إذن 86,5 > 85,2.",
+          "الحقل الثاني أقصر سياجًا."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "ثمن المتر من السياج 200 دج. ما ثمن سياج الحقل الثاني بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "17040",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الثمن = طول السياج × ثمن المتر الواحد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أولًا الطول الذي ستسيّجه فعلًا، ثم اضرب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من أنك ضربت في طول السياج الجديد لا في المحيط الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "$85{,}2$ × $200$ = $17040$ دج.",
+        "incorrect": "الطول × ثمن المتر."
+      },
+      "solution": {
+        "lines": [
+          "$85{,}2 \\times 200 = 17040$ دج."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "هل نستنتج أنّ الحقل الأقصر سياجًا أصغر مساحة؟",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، فالأقصر محيطًا أصغر مساحة دائمًا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MASAHA-LONGER-BIGGER"
+        },
+        {
+          "id": "B",
+          "content": "لا، لا نستطيع الحكم على المساحة من المحيط وحده",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لا، لأنّ مساحتي الحقلين متساويتان حتمًا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MASAHA-EQUAL-PERIM-EQUAL-AREA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القياس الذي تتحدث عنه: المساحة أم المحيط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل في جوابك العددين اللذين وجدتهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تامة: \"لأن … و …\"."
+        }
+      ],
+      "feedback": {
+        "correct": "لا يتعيّن عدد البلاطات بالمحيط وحده: قد تختلف المساحة أو تتساوى.",
+        "incorrect": "المحيط لا يحدّد المساحة، فلا نستنتج شيئًا عنها."
+      },
+      "solution": {
+        "lines": [
+          "المعطى هو أطوال الأضلاع فقط، أي المحيط.",
+          "ولا يكفي ذلك لمعرفة المساحة التي تعدّ بالبلاطات."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

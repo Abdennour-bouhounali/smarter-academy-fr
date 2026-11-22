@@ -1,0 +1,339 @@
+{
+  "id": "ex-3am-qismat-nisbiyayn-l5-010",
+  "lessonCode": "qismat-nisbiyayn",
+  "level": 5,
+  "metadata": {
+    "title": "غرفة التبريد",
+    "estimatedMinutes": 8,
+    "tags": [
+      "وضعية إدماجية",
+      "سياق",
+      "حاصل القسمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في مخزن لحفظ الخضر ببسكرة غرفة تبريد درجة حرارتها الابتدائية $10$ °C . منذ تشغيل المبرّد تتغيّر الحرارة بانتظام بمقدار $−2{,}5$ °C في كل ساعة، أي أنّ التغيّر الكلّي بعد $t$ ساعة هو $(−2{,}5) \\times t$ ، و $t$ سالب قبل لحظة التشغيل."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول: غرفة التبريد بعد أربع ساعات.",
+      "statement": "ما التغيّر الكلّي للحرارة بعد $4$ ساعات؟",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في النص العددين اللذين نقسم أحدهما على الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن إشارة كل عدد: النقصان عدد سالب والزيادة عدد موجب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق قاعدة إشارات القسمة، ثم قسمة المسافتين إلى الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "التغيّر الكلّي هو $−10$ °C .",
+        "incorrect": "راجع قاعدة الإشارات وحدّد العددين المقسومين في النص."
+      },
+      "solution": {
+        "lines": [
+          "$(−2{,}5) \\times 4 = −10$"
+        ],
+        "result": "−10"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما درجة الحرارة بعد $4$ ساعات؟",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في النص العددين اللذين نقسم أحدهما على الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن إشارة كل عدد: النقصان عدد سالب والزيادة عدد موجب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق قاعدة إشارات القسمة، ثم قسمة المسافتين إلى الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "الحرارة هي $0$ °C .",
+        "incorrect": "راجع قاعدة الإشارات وحدّد العددين المقسومين في النص."
+      },
+      "solution": {
+        "lines": [
+          "الحرارة الابتدائية $10$ والتغيّر $−10$ : $10 + (−10) = 0$ ."
+        ],
+        "result": "0"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني: مدّة التبريد.",
+      "statement": "بعد كم ساعة يبلغ التغيّر الكلّي $−15$ °C ؟ أي أوجد $t$ حيث $(−2{,}5) \\times t = −15$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "-6",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "-12.5",
+          "id": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المساواة: المطلوب عدد ناقص في عملية ضرب أو قسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الناقص في جداء هو حاصل قسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعملية: ضع العدد في مكان الفراغ وتأكّد من صحة المساواة."
+        }
+      ],
+      "feedback": {
+        "correct": "$t = 6$ ساعات.",
+        "incorrect": "راجع الربط بين الضرب والقسمة: العدد الناقص هو حاصل قسمة، ثم تحقّق بالضرب."
+      },
+      "solution": {
+        "lines": [
+          "$t$ هو حاصل قسمة $−15$ على $−2{,}5$ : عددان سالبان، فالحاصل موجب.",
+          "$15 \\div 2{,}5 = 6$",
+          "تحقّق: $(−2{,}5) \\times 6 = −15$ ."
+        ],
+        "result": "6"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "إذا كان التغيّر الكلّي $(−2{,}5) \\times t$ موجبًا فما إشارة $t$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "موجب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QISMA-SIGN"
+        },
+        {
+          "id": "B",
+          "content": "سالب",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة كل من العددين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن إشارتي العددين: أمتماثلتان أم مختلفتان؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق قاعدة الإشارات: هي نفسها في الضرب وفي القسمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$t$ سالب: العاملان لهما الإشارة نفسها.",
+        "incorrect": "راجع قاعدة الإشارات: لهما الإشارة نفسها أم إشارتان مختلفتان؟"
+      },
+      "solution": {
+        "lines": [
+          "الجداء $(−2{,}5) \\times t$ موجب و $−2{,}5$ سالب: العاملان لهما الإشارة نفسها، فـ $t$ سالب."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ج",
+      "statement": "احسب قيمة $t$ التي تعطي تغيّرًا كلّيًّا $+10$ °C .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "-0.25",
+          "id": "MISC-QISMA-ORDER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في النص العددين اللذين نقسم أحدهما على الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن إشارة كل عدد: النقصان عدد سالب والزيادة عدد موجب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق قاعدة إشارات القسمة، ثم قسمة المسافتين إلى الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "$t = −4$ : قبل التشغيل بأربع ساعات.",
+        "incorrect": "راجع قاعدة الإشارات وحدّد العددين المقسومين في النص."
+      },
+      "solution": {
+        "lines": [
+          "$t = 10 \\div (−2{,}5)$ : إشارتان مختلفتان، فالحاصل سالب.",
+          "$10 \\div 2{,}5 = 4$ ، إذن $t = −4$ ."
+        ],
+        "result": "−4"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "lead": "الجزء الثالث: غرفة أخرى.",
+      "statement": "في غرفة ثانية انخفضت الحرارة بمقدار $18$ °C خلال $8$ ساعات بانتظام. احسب التغيّر في كل ساعة.",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-2.25",
+      "misconceptionSignatures": [
+        {
+          "value": "2.25",
+          "id": "MISC-QISMA-SIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في النص العددين اللذين نقسم أحدهما على الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن إشارة كل عدد: النقصان عدد سالب والزيادة عدد موجب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق قاعدة إشارات القسمة، ثم قسمة المسافتين إلى الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "التغيّر في الساعة هو $−2{,}25$ °C .",
+        "incorrect": "راجع قاعدة الإشارات وحدّد العددين المقسومين في النص."
+      },
+      "solution": {
+        "lines": [
+          "الانخفاض عدد سالب: $−18$ في $8$ ساعات.",
+          "$(−18) \\div 8 = −2{,}25$"
+        ],
+        "result": "−2{,}25"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

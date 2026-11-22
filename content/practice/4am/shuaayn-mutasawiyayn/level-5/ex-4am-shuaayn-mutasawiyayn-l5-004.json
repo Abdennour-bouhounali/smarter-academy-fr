@@ -1,0 +1,110 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l5-004",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — تطبيق توصيل في وهران",
+    "estimatedMinutes": 4,
+    "tags": [
+      "وضعية",
+      "المنتصف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_shuaayn-mutasawiyayn_P1",
+      "modelledOn": "know-3"
+    }
+  },
+  "statement": {
+    "content": "في تطبيق توصيل بوهران، يسير الموزّع في خط مستقيم من المطعم R إلى الزبون C، ويتوقف في النقطة M حيث للشعاعين RM و MC نفس القيمة. سجّل التطبيق RM = 1,35 km."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ماذا تمثّل M بالنسبة إلى [RC]؟",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نظيرة R بالنسبة إلى C",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "منتصف [RC]",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نقطة أقرب إلى R",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TUL-FAQAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الشعاعين RM و MC."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "معارف 3."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نقطة في الوسط تماما."
+        }
+      ],
+      "feedback": {
+        "correct": "الشعاعان RM و MC متساويان: M منتصف [RC].",
+        "incorrect": "طبّق معارف 3."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "احسب المسافة RC (بالكيلومتر).",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالكيلومتر)",
+      "expectedAnswer": "2.7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "M منتصف [RC]."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "RC ضعف RM."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "RC = RM + MC."
+        }
+      ],
+      "feedback": {
+        "correct": "RC = 1,35 + 1,35 = 2,7 km.",
+        "incorrect": "المنتصف يقسم المسار إلى نصفين متساويين."
+      }
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-kusur-natiqa-l3-005",
+  "lessonCode": "wadiya-idmajiya-kusur-natiqa",
+  "level": 3,
+  "metadata": {
+    "title": "جني التمر على ثلاثة أيّام",
+    "estimatedMinutes": 9,
+    "tags": [
+      "كسر من الباقي",
+      "مقارنة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الرابع",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "جنى فلّاح $2700$ kg من التمر في ثلاثة أيّام: في اليوم الأوّل $\\dfrac{4}{9}$ من المحصول، وفي اليوم الثاني $\\dfrac{3}{5}$ من الباقي، وفي اليوم الثالث ما تبقّى ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما الكسر الذي يمثّل ما جناه في اليوم الثاني من المحصول كلّه ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "1/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "3/5",
+          "id": "MISC-SYN-KUSUR-WHOLE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكسر الأخير يُؤخذ من أيّ كمّية: من الكلّ أم ممّا بقي ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أوّلًا ما بقي بعد الجزء الأوّل، ثمّ خذ الكسر من هذا الباقي وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ مجموع الأجزاء والباقي يساوي الكلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{1}{3}$ .",
+        "incorrect": "تذكّر أنّ الكسر الثاني يُؤخذ ممّا بقي لا من الكلّ؛ احسب الباقي أوّلًا ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "بعد اليوم الأوّل بقي $\\dfrac{5}{9}$ .",
+          "$\\dfrac{3}{5} \\times \\dfrac{5}{9} = \\dfrac{15}{45} = \\dfrac{1}{3}$ ."
+        ],
+        "result": "\\dfrac{1}{3}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما الكسر الذي يمثّل ما جناه في اليوم الثالث ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "2/9",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "-2/45",
+          "id": "MISC-SYN-KUSUR-WHOLE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكلّ الذي نقارن به ؟ وما الأجزاء المأخوذة منه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما بقي هو الكلّ ناقص مجموع الأجزاء المأخوذة، أي واحد ناقص مجموع الكسور."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الباقي موجب وأنّه أصغر من الكلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{2}{9}$ .",
+        "incorrect": "تذكّر أنّ الكسر الثاني يُؤخذ ممّا بقي لا من الكلّ؛ احسب الباقي أوّلًا ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$1 - \\dfrac{4}{9} - \\dfrac{3}{9} = \\dfrac{2}{9}$ ."
+        ],
+        "result": "\\dfrac{2}{9}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "كم كيلوغرامًا جنى في اليوم الثالث ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "600",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من أيّ كمّية يُؤخذ الكسر في هذه الوضعية ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كسر من كمّية يعني جداء الكسر في الكمّية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ النتيجة أصغر من الكمّية الأصلية، ثمّ اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $600$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2}{9} \\times 2700 = 600$ kg ."
+        ],
+        "result": "600"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل جنى في اليوم الثاني أكثر ممّا جناه في اليوم الثالث ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-NUMERATORS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للكسرين المقام نفسه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "وحّد المقامات ثمّ قارن البسطين، فالكسر الأكبر له البسط الأكبر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحكم بنظرة إلى البسط وحده أو المقام وحده."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم .",
+        "incorrect": "وحّد المقامات قبل المقارنة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{3} = \\dfrac{3}{9}$ و $\\dfrac{3}{9} > \\dfrac{2}{9}$ .",
+          "نعم، جنى في اليوم الثاني أكثر."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "id": "ex-2am-masafa-nuqtatayn-l3-003",
+  "lessonCode": "masafa-nuqtatayn",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مسافتان ومنتصف قطعة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "مسافة بين نقطتين",
+      "منتصف قطعة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-66",
+      "exercise": 3
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعلّم على مستقيم مدرّج مبدؤه $O$ ووحدته $1\\,\\mathrm{cm}$ النقط $A(-9)$ و $B(-5)$ و $C(+4)$ ، ونسمّي $E$ منتصف القطعة $[AC]$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "النقطتان $A(-9)$ و $B(-5)$ على مستقيم مدرّج. احسب المسافة $AB$ .",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-ADDSAME",
+          "value": "14"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-4"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن أوّلًا أيّ الفاصلتين أكبر: الأكبر هي الأبعد إلى اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى مطروحًا منها الصغرى؛ وإذا كانت الصغرى سالبة فنطرح عددًا سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا: إن وجدت ناتجًا سالبًا فقد قلبت ترتيب الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB=4$ : نطرح الفاصلة الصغرى من الفاصلة الكبرى.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى هي $-5$ والفاصلة الصغرى هي $-9$",
+          "$AB=(-5)-(-9)=(-5)+(+9)=4$"
+        ],
+        "result": "4"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "النقطتان $B(-5)$ و $C(+4)$ على مستقيم مدرّج. احسب المسافة $BC$ .",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "1"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-9"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن أوّلًا أيّ الفاصلتين أكبر: الأكبر هي الأبعد إلى اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى مطروحًا منها الصغرى؛ وإذا كانت الصغرى سالبة فنطرح عددًا سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا: إن وجدت ناتجًا سالبًا فقد قلبت ترتيب الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC=9$ : النقطتان على جهتين من المبدأ فنجمع المسافتين إلى الصفر.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى هي $+4$ والفاصلة الصغرى هي $-5$",
+          "$BC=(+4)-(-5)=(+4)+(+5)=9$"
+        ],
+        "result": "9"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "$A(-9)$ و $C(+4)$ نقطتان على مستقيم مدرّج، و $E$ منتصف القطعة $[AC]$ . ما فاصلة $E$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-2.5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-HALFDIST",
+          "value": "6.5"
+        },
+        {
+          "id": "MISC-MASAFA2-SUMNOHALF",
+          "value": "-5"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أوّلًا المسافة بين طرفي القطعة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المنتصف يبعد عن كلّ طرف بنصف هذه المسافة: انطلق من الطرف الأصغر فاصلة وتقدّم بنصف المسافة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: المسافة من المنتصف إلى كلّ طرف يجب أن تكون نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$E(-2{,}5)$ : يبعد عن كلّ طرف بـ $6{,}5$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$AC=13$ ونصفها $6{,}5$",
+          "فاصلة $E$ = الفاصلة الصغرى + نصف المسافة = $-9+6{,}5=-2{,}5$"
+        ],
+        "result": "-2.5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

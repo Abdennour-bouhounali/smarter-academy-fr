@@ -1,0 +1,202 @@
+{
+  "id": "ex-2am-muqarana-nisbiya-l4-002",
+  "lessonCode": "muqarana-nisbiya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أعداد صحيحة بين فاصلتي نقطتين",
+    "estimatedMinutes": 9,
+    "tags": [
+      "عدد محصور",
+      "فاصلة نقطة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "على مستقيم مدرّج مبدؤه $O$ ، فاصلة النقطة $E$ هي $-7$ وفاصلة النقطة $F$ هي $+2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما عدد الأعداد الصحيحة النسبية المحصورة بين فاصلتي $E$ و $F$ (دون الطرفين) ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-MUQARANA-NISBIYA-EI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الصحيحة الواقعة بين الحدّين واحدًا واحدًا على المستقيم المدرّج."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المتباينة صارمة: الحدّان نفسهما لا يُحسبان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ الصفر والأعداد الصحيحة السالبة."
+        }
+      ],
+      "feedback": {
+        "correct": "الأعداد: $-6, -5, -4, -3, -2, -1, 0, 1$ وعددها 8 .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$-7 < x < 2$",
+          "الأعداد الصحيحة: $-6$ إلى $1$",
+          "عددها 8"
+        ],
+        "result": "8"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما أكبر عدد صحيح نسبي محصور بين فاصلتي $E$ و $F$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-MUQARANA-NISBIYA-EI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الصحيحة الواقعة بين الحدّين واحدًا واحدًا على المستقيم المدرّج."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المتباينة صارمة: الحدّان نفسهما لا يُحسبان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ الصفر والأعداد الصحيحة السالبة."
+        }
+      ],
+      "feedback": {
+        "correct": "أكبر عدد صحيح أصغر تمامًا من $2$ هو $1$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$x < 2$ بصرامة",
+          "الأكبر هو $1$"
+        ],
+        "result": "1"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "أيّ العدد الآتي محصور بين $-7$ و $2$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-EI"
+        },
+        {
+          "id": "B",
+          "content": "$-6{,}5$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$2{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-SI"
+        },
+        {
+          "id": "D",
+          "content": "$-7{,}2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-BDG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج وحدّد الجزء الواقع بينهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد محصور بين عددين: أكبر من أحدهما وأصغر من الآخر في الوقت نفسه، دون أن يساوي أيًّا منهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب كل عدد مقترح: هل يحقق المتباينتين معًا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$-7 < -6{,}5 < 2$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$-7 < -6{,}5$ لأن $6{,}5 < 7$",
+          "$-6{,}5 < 2$"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

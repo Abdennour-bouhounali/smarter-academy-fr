@@ -1,0 +1,257 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l5-006",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2022 — نقل حزم التبن",
+    "estimatedMinutes": 10,
+    "tags": [
+      "قاسم",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-adad-tabii_P1",
+      "modelledOn": "BEM 2022 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "جمع فلاح بسيدي بلعباس، بمساعدة جيرانه المتعاونين، 1650 حزمة من التبن، ويريد نقلها كلها إلى مخزنه بشاحنة، في رحلات تنقل كل منها نفس العدد من الحزم."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "هل يمكن أن تنقل الشاحنة 120 حزمة في كل رحلة؟ 150 حزمة؟ برّر إجابتك.",
+      "statement": "120 حزمة في كل رحلة.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 1650 على 120."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "120 قاسم للعدد 1650 إذا وفقط إذا كان باقي هذه القسمة معدومًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$1650 = 120 \\times 13 + 90$: الباقي غير معدوم.",
+        "incorrect": "أجرِ القسمة الإقليدية للعدد 1650 على 120، وانظر هل الباقي معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$1650 = 120 \\times 13 + 90$ مع $90 < 120$",
+          "الباقي 90 غير معدوم، إذن 120 ليس قاسمًا للعدد 1650: لا يمكن ذلك."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "150 حزمة في كل رحلة.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 1650 على 150."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "150 قاسم للعدد 1650 إذا وفقط إذا كان باقي هذه القسمة معدومًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$1650 = 150 \\times 11$: الباقي معدوم.",
+        "incorrect": "أجرِ القسمة الإقليدية للعدد 1650 على 150، وانظر هل الباقي معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$1650 = 150 \\times 11$ (الباقي معدوم).",
+          "إذن 150 قاسم للعدد 1650: يمكن ذلك."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "اعتمد الفلاح 150 حزمة في كل رحلة. أوجد عدد الرحلات.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "11",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نبحث عن عدد طبيعي $q$ حيث $1650 = 150 \\times q$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أجرِ القسمة الإقليدية للعدد 1650 على 150."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان الباقي معدومًا فإن حاصل القسمة هو العدد المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$1650 = 150 \\times 11$.",
+        "incorrect": "اقسم 1650 على 150: حاصل القسمة هو العدد $q$ إذا كان الباقي معدومًا."
+      },
+      "solution": {
+        "lines": [
+          "$150 \\times 11 = 1650$",
+          "إذن $1650 = 150 \\times 11$"
+        ],
+        "result": "1650 = 150 \\times 11"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "تكلفة الرحلة الواحدة 4500DA، ويبيع الفلاح الحزمة الواحدة بـ 350DA.",
+      "statement": "احسب المبلغ الذي يتحصل عليه من بيع كل الحزم.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (DA)",
+      "expectedAnswer": "577500",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ = عدد الحزم × ثمن الحزمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$1650 \\times 350 = 577500$ أي 577500DA.",
+        "incorrect": "اضرب عدد الحزم في ثمن الحزمة الواحدة."
+      },
+      "solution": {
+        "lines": [
+          "$1650 \\times 350$"
+        ],
+        "result": "577500 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "☜ ما هو ربح الفلاح بعد طرح تكاليف النقل؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (DA)",
+      "expectedAnswer": "528000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تكاليف النقل = عدد الرحلات × تكلفة الرحلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح تكاليف النقل من مبلغ البيع."
+        }
+      ],
+      "feedback": {
+        "correct": "تكاليف النقل $11 \\times 4500 = 49500$DA، والربح $577500 - 49500 = 528000$DA.",
+        "incorrect": "احسب تكاليف النقل بعدد الرحلات الذي وجدته، ثم اطرحها من مبلغ البيع."
+      },
+      "solution": {
+        "lines": [
+          "تكاليف النقل: $11 \\times 4500 = 49500$ أي 49500DA.",
+          "الربح: $577500 - 49500$"
+        ],
+        "result": "528000 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,288 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-jumal-l5-009",
+  "lessonCode": "wadiya-idmajiya-jumal",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2018 — كراء قارب صيد بالقالة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "جملة",
+      "وضعية",
+      "مقارنة صيغتين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-jumal_P2",
+      "modelledOn": "BEM 2018 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2018",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يقترح صاحب قوارب بميناء القالة، المعروف بأمانته مع زبائنه، على هواة الصيد صيغتين لكراء قارب:\n- الصيغة الأولى: 2500DA للساعة الواحدة.\n- الصيغة الثانية: 6000DA مبلغا ثابتا إضافة إلى 1500DA للساعة الواحدة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "احسب ثمن كراء قارب لمدة 4 ساعات حسب كل صيغة.",
+      "statement": "حسب الصيغة الأولى:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "10000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب العدد المعطى في المبلغ الذي يقابل الوحدة الواحدة، وأضف المبلغ الثابت إن وُجد."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 2500 = 10000$ .",
+        "incorrect": "اقرأ الصيغة جيدا: ما الذي يُدفع عن كل وحدة وما الذي يُدفع مرة واحدة؟"
+      },
+      "solution": {
+        "lines": [
+          "الصيغة الأولى: $4 \\times 2500 = 10000$ أي $10000DA$",
+          "الصيغة الثانية: $4 \\times 1500 + 6000 = 12000$ أي $12000DA$"
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "حسب الصيغة الثانية:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "12000",
+      "misconceptionSignatures": [
+        {
+          "value": "6000",
+          "id": "MISC-WADIYA-TARJAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا تنس المبلغ الثابت."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 1500 + 6000 = 12000$ .",
+        "incorrect": "المبلغ = العدد × المبلغ عن الوحدة + المبلغ الثابت."
+      },
+      "solution": {
+        "lines": [
+          "الصيغة الأولى: $4 \\times 2500 = 10000$ أي $10000DA$",
+          "الصيغة الثانية: $4 \\times 1500 + 6000 = 12000$ أي $12000DA$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "ليكن $x$ عدد ساعات الكراء و $y$ ثمن الكراء (بالدينار).",
+      "statement": "بيّن أنه إذا تساوى المبلغان حسب الصيغتين، فإن الثنائية $(x ; y)$ حل للجملة: $\\begin{cases} y = 2500x \\\\ y = 1500x + 6000 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عبّر عن المبلغ حسب كل صيغة بدلالة $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "الثمن حسب الصيغة الأولى: $2500x$",
+          "الثمن حسب الصيغة الثانية: $1500x + 6000$",
+          "المبلغان متساويان ويساويان $y$ ، ومنه الثنائية $(x ; y)$ حل للجملة: $\\begin{cases} y = 2500x \\\\ y = 1500x + 6000 \\end{cases}$"
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "حل هذه الجملة، ثم فسّر النتيجة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : عدد الساعات ثم الثمن بـ DA",
+      "expectedAnswer": {
+        "x": "6",
+        "y": "15000"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "15000",
+            "y": "6"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$y$ معزول في المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ساوِ بين الطرفين الثانيين للمعادلتين ثم احسب $x$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض قيمة $x$ في إحدى المعادلتين لتجد $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الثنائية $(6 ; 15000)$ : كراء القارب لمدة 6 ساعات يكلّف $15000DA$ حسب الصيغتين.",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} y = 2500x & ...(1) \\\\ y = 1500x + 6000 & ...(2) \\end{cases}$",
+          "بما أن $y$ معزول في المعادلتين، نساوي بين الطرفين الثانيين: $2500x = 1500x + 6000$",
+          "$1000x = 6000$",
+          "$x = 6$",
+          "بالتعويض في المعادلة (1): $y = 2500 \\times 6 = 15000$",
+          "كراء القارب لمدة 6 ساعات يكلّف $15000DA$ حسب الصيغتين.",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(6 ; 15000)"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "lead": "☜ يملك فوج من هواة الصيد 21000DA. ما هو أكبر عدد من الساعات (عدد طبيعي) يمكنهم كراء القارب خلالها حسب كل صيغة؟",
+      "statement": "حسب الصيغة الأولى:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب عدد الساعات فقط",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب متراجحة: ثمن الكراء لا يتجاوز 21000DA."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خذ أكبر عدد طبيعي يحقق المتراجحة."
+        }
+      ],
+      "feedback": {
+        "correct": "8 ساعات على الأكثر حسب الصيغة الأولى.",
+        "incorrect": "اقسم المبلغ على ثمن الساعة، ثم خذ الجزء الصحيح."
+      },
+      "solution": {
+        "lines": [
+          "الصيغة الأولى: $2500n \\leq 21000$ أي $n \\leq 8{,}4$ ، ومنه 8 ساعات على الأكثر.",
+          "الصيغة الثانية: $1500n + 6000 \\leq 21000$ أي $1500n \\leq 15000$ ومنه $n \\leq 10$ : 10 ساعات على الأكثر."
+        ],
+        "result": "8"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "حسب الصيغة الثانية:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب عدد الساعات فقط",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "14",
+          "id": "MISC-WADIYA-TARJAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح المبلغ الثابت أولا."
+        }
+      ],
+      "feedback": {
+        "correct": "10 ساعات على الأكثر حسب الصيغة الثانية: $1500 \\times 10 + 6000 = 21000$ .",
+        "incorrect": "اطرح المبلغ الثابت من 21000 ثم اقسم على ثمن الساعة."
+      },
+      "solution": {
+        "lines": [
+          "الصيغة الأولى: $2500n \\leq 21000$ أي $n \\leq 8{,}4$ ، ومنه 8 ساعات على الأكثر.",
+          "الصيغة الثانية: $1500n + 6000 \\leq 21000$ أي $1500n \\leq 15000$ ومنه $n \\leq 10$ : 10 ساعات على الأكثر."
+        ],
+        "result": "10"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

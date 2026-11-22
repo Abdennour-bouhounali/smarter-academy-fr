@@ -1,0 +1,191 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muthallathat-l1-002",
+  "lessonCode": "wadiya-idmajiya-muthallathat",
+  "level": 1,
+  "metadata": {
+    "title": "جيب الزاوية L ثم قيسها",
+    "estimatedMinutes": 5,
+    "tags": [
+      "الجيب",
+      "الآلة الحاسبة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 124,
+      "section": "الوضعيات",
+      "number": 2,
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-muthallathat-l1-002"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل: $LMN$ مثلث قائم في $M$ حيث $LN = 10\\,\\mathrm{cm}$ و $MN = 7\\,\\mathrm{cm}$ .",
+    "figure": {
+      "points": {
+        "L": [
+          0,
+          7.1414
+        ],
+        "M": [
+          0,
+          0
+        ],
+        "N": [
+          7,
+          0
+        ]
+      },
+      "segments": [
+        [
+          "L",
+          "M"
+        ],
+        {
+          "from": "M",
+          "to": "N",
+          "label": "7 cm"
+        },
+        {
+          "from": "L",
+          "to": "N",
+          "label": "10 cm"
+        }
+      ],
+      "rightAngles": [
+        [
+          "L",
+          "M",
+          "N"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "L",
+          "from": "M",
+          "to": "N"
+        }
+      ],
+      "labels": {
+        "L": "nw",
+        "M": "sw",
+        "N": "se"
+      },
+      "ariaLabel": "مثلث LMN قائم في M: L في الأعلى و M تحتها و N على اليمين؛ LN = 10 cm و MN = 7 cm",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $\\sin\\widehat{L}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P2",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري",
+      "expectedAnswer": "7/10",
+      "misconceptionSignatures": [
+        {
+          "value": "10/7",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الوتر، ثم الضلع المقابل للزاوية $\\widehat{L}$ (الذي لا يمرّ برأسها)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جيب زاوية حادة هو طول الضلع المقابل لها مقسوما على طول الوتر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin\\widehat{L} = \\dfrac{MN}{LN} = \\dfrac{7}{10} = 0{,}7$ .",
+        "incorrect": "الوتر $[LN]$ في المقام، والضلع المقابل للزاوية $\\widehat{L}$ هو ضلع الزاوية القائمة الذي لا يمرّ بـ $L$ ."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $LMN$ قائم في $M$ : وتره $[LN]$ ، والضلع المقابل للزاوية $\\widehat{L}$ هو $[MN]$ .",
+          "$\\sin\\widehat{L} = \\dfrac{MN}{LN} = \\dfrac{7}{10}$"
+        ],
+        "result": "\\sin\\widehat{L} = \\dfrac{7}{10} = 0{,}7"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط المدوّر إلى الوحدة من الدرجة لقيس الزاوية $\\widehat{L}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: القيس بالدرجة مدوّرا إلى الوحدة",
+      "expectedAnswer": "44",
+      "misconceptionSignatures": [
+        {
+          "value": "46",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "0.7",
+          "id": "MISC-MUTH-NISBA-BADAL-QAYS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نعرف جيب الزاوية $\\widehat{L}$ ، ونبحث عن قيسها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل اللمسة العكسية للنسبة في آلة حاسبة مبرمجة على الدرجة، ثم دوّر في آخر الحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{L} \\approx 44{,}43^{\\circ}$ ، والمدوّر إلى الوحدة $44^{\\circ}$ .",
+        "incorrect": "استعمل اللمسة العكسية للجيب (وليس لجيب التمام)، والآلة مبرمجة على الدرجة."
+      },
+      "solution": {
+        "lines": [
+          "$\\sin\\widehat{L} = 0{,}7$",
+          "باستعمال الآلة الحاسبة (اللمسة العكسية للجيب): $\\widehat{L} \\approx 44{,}427^{\\circ}$"
+        ],
+        "result": "\\widehat{L} \\approx 44^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

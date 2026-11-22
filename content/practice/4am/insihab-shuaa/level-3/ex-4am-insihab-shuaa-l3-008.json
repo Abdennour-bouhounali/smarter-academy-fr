@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-insihab-shuaa-l3-008",
+  "lessonCode": "insihab-shuaa",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — في متوازي الأضلاع EFGH",
+    "estimatedMinutes": 2,
+    "tags": [
+      "متوازي الأضلاع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_insihab-shuaa_P3",
+      "modelledOn": "know-2"
+    }
+  },
+  "statement": {
+    "content": "EFGH متوازي أضلاع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الشعاع المساوي للشعاع $\\overrightarrow{EF}$ هو:",
+      "learningPoints": [
+        {
+          "code": "4am_insihab-shuaa_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{HG}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{GH}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{FG}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MANHA-MUSTAQIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{AB} = \\overrightarrow{DC}$ يعني ABCD متوازي أضلاع: اقرأ A ثم B ثم نهاية الشعاع الثاني ثم مبدأه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في متوازي الأضلاع، كل ضلعين متقابلين يعطيان شعاعين متساويين إذا قرأناهما في نفس الجهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارسم الرباعي على ورقة وضع السهمين لتتحقق من الجهة."
+        }
+      ],
+      "feedback": {
+        "correct": "EFGH متوازي أضلاع يعني $\\overrightarrow{EF}$ = $\\overrightarrow{HG}$ .",
+        "incorrect": "$\\overrightarrow{GH}$ له نفس المنحى والطول لكن اتجاها معاكسا."
+      },
+      "difficulty": 3
+    }
+  ]
+}

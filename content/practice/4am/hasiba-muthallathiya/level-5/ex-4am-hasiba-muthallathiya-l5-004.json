@@ -1,0 +1,357 @@
+{
+  "id": "ex-4am-hasiba-muthallathiya-l5-004",
+  "lessonCode": "hasiba-muthallathiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2011 — زلاقة المسبح البلدي",
+    "estimatedMinutes": 22,
+    "tags": [
+      "وضعية إدماجية",
+      "الجيب",
+      "اللمسات العكسية",
+      "تكلفة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_hasiba-muthallathiya_P2",
+      "modelledOn": "BEM 2011 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2011",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في مسبح بلدي بتيبازة، زلاقة مستقيمة $[TB]$ طولها $9\\,\\mathrm{m}$ تنطلق من قمة منصة ارتفاعها $TH = 4{,}2\\,\\mathrm{m}$ وتنتهي عند النقطة $B$ من سطح الماء الأفقي (الشكل المقابل). يشترط مكتب المراقبة ألّا يتجاوز قيس الزاوية $\\widehat{TBH}$ للزلاقات المخصّصة للأطفال $30^{\\circ}$ . ويراقب المنقذ المسبح بأمانة حفاظًا على سلامة الأطفال.",
+    "figure": {
+      "points": {
+        "H": [
+          0,
+          0
+        ],
+        "T": [
+          0,
+          4.2
+        ],
+        "B": [
+          7.9599,
+          0
+        ]
+      },
+      "segments": [
+        {
+          "from": "H",
+          "to": "T",
+          "label": "4,2 m"
+        },
+        {
+          "from": "T",
+          "to": "B",
+          "label": "9 m"
+        },
+        [
+          "H",
+          "B"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "T",
+          "H",
+          "B"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "B",
+          "from": "H",
+          "to": "T",
+          "label": "?"
+        }
+      ],
+      "ariaLabel": "الزلاقة TB طولها 9 m تنطلق من قمة منصة TH ارتفاعها 4,2 m، والزاوية المطلوبة TBH عند B على سطح الماء",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب قيس الزاوية $\\widehat{TBH}$ بالتدوير إلى الوحدة من الدرجة.",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيس الزاوية بالدرجة، مدوّرا إلى الوحدة",
+      "expectedAnswer": "28",
+      "misconceptionSignatures": [
+        {
+          "value": "27",
+          "id": "MISC-MUTH-TADWIR-BATR"
+        },
+        {
+          "value": "62",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "0",
+          "id": "MISC-MUTH-HASIBA-RAD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $THB$ قائم في $H$ : الزلاقة هي الوتر و $[TH]$ يقابل الزاوية $\\widehat{TBH}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اللمسة العكسية: ⁦2nd⁩ ثم ⁦sin⁻¹⁩ ثم النسبة ثم ⁦=⁩."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الحرف ⁦D⁩ (الدرجة)، ثم دوّر إلى الوحدة: انظر إلى الرقم الموالي للرقم الأخير الذي تحتفظ به."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{TBH} \\approx 27{,}81813928^{\\circ} \\approx 28^{\\circ}$ .",
+        "incorrect": "النسبة ليست القيس: القيس يُعيَّن باللمسة العكسية المناسبة والحاسبة مبرمجة بالدرجة، ثم يُدوَّر (لا يُبتر) إلى الوحدة."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $THB$ القائم في $H$ : $\\sin\\widehat{TBH} = \\dfrac{TH}{TB} = \\dfrac{4{,}2}{9}$",
+          "باستعمال الحاسبة المبرمجة بالدرجة: ⁦ON 2nd sin⁻¹ ( 4,2 ÷ 9 ) =⁩ يظهر على الشاشة $27{,}81813928$ .",
+          "الرقم الذي يلي رقم الوحدات هو 8، وهو أكبر من 5: نضيف 1 إلى رقم الوحدات."
+        ],
+        "result": "\\widehat{TBH} \\approx 28^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب المسافة الأفقية $HB$ بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m مدوّرا إلى 0,1",
+      "expectedAnswer": "8.0",
+      "misconceptionSignatures": [
+        {
+          "value": "7.9",
+          "id": "MISC-MUTH-TADWIR-BATR"
+        },
+        {
+          "value": "10.2",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$[HB]$ يجاور الزاوية $\\widehat{TBH}$ والزلاقة هي الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل جيب التمام بالقيمة غير المدوّرة للزاوية (أو خاصية فيثاغورس)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تدوّر إلا النتيجة النهائية."
+        }
+      ],
+      "feedback": {
+        "correct": "$HB = 9 \\times \\cos\\widehat{TBH} \\approx 7{,}959899497 \\approx 8{,}0\\,\\mathrm{m}$ .",
+        "incorrect": "المسافة الأفقية في بسط جيب التمام: نضرب طول الزلاقة في جيب تمام الزاوية بكل أرقام الشاشة."
+      },
+      "solution": {
+        "lines": [
+          "$\\cos\\widehat{TBH} = \\dfrac{HB}{TB}$ ومنه $HB = 9 \\times \\cos\\widehat{TBH}$",
+          "بكل أرقام الشاشة: $HB \\approx 7{,}959899497$",
+          "(بالقيس المدوّر $28^{\\circ}$ نجد $7{,}946528336$ : تدوير مبكّر.)"
+        ],
+        "result": "HB \\approx 8{,}0\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل الزلاقة مناسبة للأطفال؟",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-ZAWIYA-KHATI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن قيس الزاوية $\\widehat{TBH}$ بـ $30^{\\circ}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$28^{\\circ} < 30^{\\circ}$ : الزلاقة مناسبة للأطفال.",
+        "incorrect": "قارن الزاوية بين الزلاقة وسطح الماء بالحد المسموح."
+      },
+      "solution": {
+        "lines": [
+          "$\\widehat{TBH} \\approx 28^{\\circ}$ و $28^{\\circ} < 30^{\\circ}$",
+          "الزلاقة مناسبة للأطفال."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "sub": "ا",
+      "lead": "☜ تريد البلدية منصة جديدة ارتفاعها $5{,}4\\,\\mathrm{m}$ مع احترام الشرط وبأقصر زلاقة ممكنة. تُركّب الزلاقة من قطع طول كل منها $1{,}5\\,\\mathrm{m}$ وثمن القطعة $18500\\,\\mathrm{DA}$ . ما طول الزلاقة الجديدة وما تكلفتها؟",
+      "statement": "أقصر طول للزلاقة الجديدة (بالمتر):",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m مدوّرا إلى 0,1",
+      "expectedAnswer": "10.8",
+      "misconceptionSignatures": [
+        {
+          "value": "2.7",
+          "id": "MISC-MUTH-DARB-BADAL-QISMA"
+        },
+        {
+          "value": "6.2",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الطول يكون أقصر ما يمكن عندما تكون الزاوية أكبر ما يمكن، أي $30^{\\circ}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الارتفاع يقابل الزاوية والزلاقة هي الوتر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة بجيب الزاوية واعزل طول الزلاقة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\ell = \\dfrac{5{,}4}{\\sin 30^{\\circ}} = \\dfrac{5{,}4}{0{,}5} = 10{,}8\\,\\mathrm{m}$ .",
+        "incorrect": "الزلاقة وتر: نقسم الارتفاع على $\\sin 30^{\\circ}$ ولا نضرب فيه."
+      },
+      "solution": {
+        "lines": [
+          "أقصر زلاقة توافق الزاوية القصوى $30^{\\circ}$ : $\\sin 30^{\\circ} = \\dfrac{5{,}4}{\\ell}$",
+          "$\\ell = \\dfrac{5{,}4}{\\sin 30^{\\circ}} = \\dfrac{5{,}4}{0{,}5}$"
+        ],
+        "result": "\\ell = 10{,}8\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "sub": "ب",
+      "statement": "تكلفة الزلاقة الجديدة:",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "148000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب عدد القطع اللازمة (عدد طبيعي) لتغطية الطول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا يمكن شراء جزء من قطعة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{10{,}8}{1{,}5} = 7{,}2$ ، أي $8$ قطع، والتكلفة $8 \\times 18500 = 148000\\,\\mathrm{DA}$ .",
+        "incorrect": "عدد القطع عدد طبيعي يغطّي الطول كله، ثم نضربه في ثمن القطعة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{10{,}8}{1{,}5} = 7{,}2$ : 7 قطع لا تكفي، نحتاج إلى 8 قطع.",
+          "التكلفة: $8 \\times 18500$"
+        ],
+        "result": "148000\\,\\mathrm{DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

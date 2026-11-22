@@ -1,0 +1,247 @@
+{
+  "id": "ex-2am-jam-tarh-kusur-l2-008",
+  "lessonCode": "jam-tarh-kusur",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — ثلاث عمليّات وتحقّق من الاختزال",
+    "estimatedMinutes": 6,
+    "tags": [
+      "جمع كسرين",
+      "اختزال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "احسب كلّا ممّا يلي واكتب النتيجة على أبسط شكل :"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $A = \\dfrac{7}{15} + \\dfrac{8}{15}$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "1",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1/2",
+          "id": "MISC-JAMKASR-DENSUM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى المقامين: هل هما متساويان؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حين يتساوى المقامان نحتفظ بالمقام نفسه ونجمع (أو نطرح) البسطين فقط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تجمع المقامين، ثمّ اختزل الناتج إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 1$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{7}{15} + \\dfrac{8}{15} = \\dfrac{7 + 8}{15} = \\dfrac{15}{15}$ .",
+          "نختزل بالقسمة على $15$ : $\\dfrac{15}{15} = 1$ ."
+        ],
+        "result": "A = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $B = \\dfrac{11}{18} + \\dfrac{1}{18}$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "2/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1/3",
+          "id": "MISC-JAMKASR-DENSUM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى المقامين: هل هما متساويان؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حين يتساوى المقامان نحتفظ بالمقام نفسه ونجمع (أو نطرح) البسطين فقط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تجمع المقامين، ثمّ اختزل الناتج إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = \\dfrac{2}{3}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$B = \\dfrac{11}{18} + \\dfrac{1}{18} = \\dfrac{11 + 1}{18} = \\dfrac{12}{18}$ .",
+          "نختزل بالقسمة على $6$ : $\\dfrac{12}{18} = \\dfrac{2}{3}$ ."
+        ],
+        "result": "B = \\dfrac{2}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "احسب $C = \\dfrac{5}{6} + \\dfrac{1}{12}$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "11/12",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1/3",
+          "id": "MISC-JAMKASR-ACROSS"
+        },
+        {
+          "value": "1/2",
+          "id": "MISC-JAMKASR-NOSCALE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليّة المطلوبة؟ وهل المقامان متساويان، أم أنّ أحدهما مضاعف للآخر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا اختلف المقامان فاكتب الكسر ذا المقام الأصغر بالمقام الأكبر: اضرب حدّيه في العدد نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع (أو اطرح) البسطين وأبقِ المقام كما هو، ثمّ اختزل الناتج إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = \\dfrac{11}{12}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{6} = \\dfrac{5 \\times 2}{6 \\times 2} = \\dfrac{10}{12}$ .",
+          "$C = \\dfrac{5}{6} + \\dfrac{1}{12} = \\dfrac{10 + 1}{12} = \\dfrac{11}{12}$ ."
+        ],
+        "result": "C = \\dfrac{11}{12}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "هل الكسر الناتج في السؤال (ج) قابل للاختزال ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا ثمّ تحقّق منها بحساب بسيط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الناتج بمقام مشترك ثمّ قارنه بما قيل."
+        }
+      ],
+      "feedback": {
+        "correct": "لا : $11$ و $12$ ليس لهما قاسم مشترك أكبر من $1$ .",
+        "incorrect": "احسب ثمّ قارن بدقّة قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{10}{12} + \\dfrac{1}{12} = \\dfrac{11}{12}$ .",
+          "$11$ عدد أوّلي لا يقسم $12$ : الكسر غير قابل للاختزال ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

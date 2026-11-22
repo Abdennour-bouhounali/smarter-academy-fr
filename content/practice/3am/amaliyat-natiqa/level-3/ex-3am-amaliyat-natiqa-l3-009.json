@@ -1,0 +1,192 @@
+{
+  "id": "ex-3am-amaliyat-natiqa-l3-009",
+  "lessonCode": "amaliyat-natiqa",
+  "level": 3,
+  "metadata": {
+    "title": "جداء عوامل متتالية",
+    "estimatedMinutes": 8,
+    "tags": [
+      "العمليات على الأعداد الناطقة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-66",
+      "page": 34,
+      "section": "أتعمّق",
+      "number": 66
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نحسب جداءات عوامل من الشكل $1 - \\dfrac{1}{n}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $A = \\left(1 - \\dfrac{1}{2}\\right) \\times \\left(1 - \\dfrac{1}{3}\\right) \\times \\left(1 - \\dfrac{1}{4}\\right) \\times \\left(1 - \\dfrac{1}{5}\\right) \\times \\left(1 - \\dfrac{1}{6}\\right) \\times \\left(1 - \\dfrac{1}{7}\\right)$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "1/7",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "-1/7",
+          "id": "MISC-AMAL-PRODSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليات الموجودة؟ وهل توجد أقواس أو كسر مركّب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح، ومع كلّ عملية نحدّد الإشارة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز عملية واحدة في كلّ سطر، ثمّ اكتب النتيجة غير القابلة للاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = \\dfrac{1}{7}$ .",
+        "incorrect": "احترم الأولويّة: الأقواس ثمّ الضرب والقسمة ثمّ الجمع والطرح، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "$1 - \\dfrac{1}{2} = 1 + \\left(-\\dfrac{1}{2}\\right)$ (طرح عدد هو جمع معاكسه).",
+          "العددان $1$ و $-\\dfrac{1}{2}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $1$ ، فإشارة المجموع موجبة.",
+          "$1 + \\left(-\\dfrac{1}{2}\\right) = \\dfrac{2}{2} - \\dfrac{1}{2} = \\dfrac{2 - 1}{2} = \\dfrac{1}{2}$ .",
+          "$1 - \\dfrac{1}{3} = 1 + \\left(-\\dfrac{1}{3}\\right)$ (طرح عدد هو جمع معاكسه).",
+          "العددان $1$ و $-\\dfrac{1}{3}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $1$ ، فإشارة المجموع موجبة.",
+          "$1 + \\left(-\\dfrac{1}{3}\\right) = \\dfrac{3}{3} - \\dfrac{1}{3} = \\dfrac{3 - 1}{3} = \\dfrac{2}{3}$ .",
+          "العاملان موجبان: الجداء موجب.",
+          "$\\dfrac{1}{2} \\times \\dfrac{2}{3} = \\dfrac{1 \\times 2}{2 \\times 3} = \\dfrac{2}{6} = \\dfrac{1}{3}$ .",
+          "$1 - \\dfrac{1}{4} = 1 + \\left(-\\dfrac{1}{4}\\right)$ (طرح عدد هو جمع معاكسه).",
+          "العددان $1$ و $-\\dfrac{1}{4}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $1$ ، فإشارة المجموع موجبة.",
+          "$1 + \\left(-\\dfrac{1}{4}\\right) = \\dfrac{4}{4} - \\dfrac{1}{4} = \\dfrac{4 - 1}{4} = \\dfrac{3}{4}$ .",
+          "العاملان موجبان: الجداء موجب.",
+          "$\\dfrac{1}{3} \\times \\dfrac{3}{4} = \\dfrac{1 \\times 3}{3 \\times 4} = \\dfrac{3}{12} = \\dfrac{1}{4}$ .",
+          "$1 - \\dfrac{1}{5} = 1 + \\left(-\\dfrac{1}{5}\\right)$ (طرح عدد هو جمع معاكسه).",
+          "العددان $1$ و $-\\dfrac{1}{5}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $1$ ، فإشارة المجموع موجبة.",
+          "$1 + \\left(-\\dfrac{1}{5}\\right) = \\dfrac{5}{5} - \\dfrac{1}{5} = \\dfrac{5 - 1}{5} = \\dfrac{4}{5}$ .",
+          "العاملان موجبان: الجداء موجب.",
+          "$\\dfrac{1}{4} \\times \\dfrac{4}{5} = \\dfrac{1 \\times 4}{4 \\times 5} = \\dfrac{4}{20} = \\dfrac{1}{5}$ .",
+          "$1 - \\dfrac{1}{6} = 1 + \\left(-\\dfrac{1}{6}\\right)$ (طرح عدد هو جمع معاكسه).",
+          "العددان $1$ و $-\\dfrac{1}{6}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $1$ ، فإشارة المجموع موجبة.",
+          "$1 + \\left(-\\dfrac{1}{6}\\right) = \\dfrac{6}{6} - \\dfrac{1}{6} = \\dfrac{6 - 1}{6} = \\dfrac{5}{6}$ .",
+          "العاملان موجبان: الجداء موجب.",
+          "$\\dfrac{1}{5} \\times \\dfrac{5}{6} = \\dfrac{1 \\times 5}{5 \\times 6} = \\dfrac{5}{30} = \\dfrac{1}{6}$ .",
+          "$1 - \\dfrac{1}{7} = 1 + \\left(-\\dfrac{1}{7}\\right)$ (طرح عدد هو جمع معاكسه).",
+          "العددان $1$ و $-\\dfrac{1}{7}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $1$ ، فإشارة المجموع موجبة.",
+          "$1 + \\left(-\\dfrac{1}{7}\\right) = \\dfrac{7}{7} - \\dfrac{1}{7} = \\dfrac{7 - 1}{7} = \\dfrac{6}{7}$ .",
+          "العاملان موجبان: الجداء موجب.",
+          "$\\dfrac{1}{6} \\times \\dfrac{6}{7} = \\dfrac{1 \\times 6}{6 \\times 7} = \\dfrac{6}{42} = \\dfrac{1}{7}$ ."
+        ],
+        "result": "A = \\dfrac{1}{7}"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $B = \\left(1 - \\dfrac{1}{4}\\right) \\times \\left(1 - \\dfrac{1}{5}\\right) \\times \\left(1 - \\dfrac{1}{6}\\right) \\times \\left(1 - \\dfrac{1}{7}\\right) \\times \\left(1 - \\dfrac{1}{8}\\right) \\times \\left(1 - \\dfrac{1}{9}\\right)$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "1/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "-1/3",
+          "id": "MISC-AMAL-PRODSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليات الموجودة؟ وهل توجد أقواس أو كسر مركّب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح، ومع كلّ عملية نحدّد الإشارة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز عملية واحدة في كلّ سطر، ثمّ اكتب النتيجة غير القابلة للاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = \\dfrac{1}{3}$ .",
+        "incorrect": "احترم الأولويّة: الأقواس ثمّ الضرب والقسمة ثمّ الجمع والطرح، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "$1 - \\dfrac{1}{4} = 1 + \\left(-\\dfrac{1}{4}\\right)$ (طرح عدد هو جمع معاكسه).",
+          "العددان $1$ و $-\\dfrac{1}{4}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $1$ ، فإشارة المجموع موجبة.",
+          "$1 + \\left(-\\dfrac{1}{4}\\right) = \\dfrac{4}{4} - \\dfrac{1}{4} = \\dfrac{4 - 1}{4} = \\dfrac{3}{4}$ .",
+          "$1 - \\dfrac{1}{5} = 1 + \\left(-\\dfrac{1}{5}\\right)$ (طرح عدد هو جمع معاكسه).",
+          "العددان $1$ و $-\\dfrac{1}{5}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $1$ ، فإشارة المجموع موجبة.",
+          "$1 + \\left(-\\dfrac{1}{5}\\right) = \\dfrac{5}{5} - \\dfrac{1}{5} = \\dfrac{5 - 1}{5} = \\dfrac{4}{5}$ .",
+          "العاملان موجبان: الجداء موجب.",
+          "$\\dfrac{3}{4} \\times \\dfrac{4}{5} = \\dfrac{3 \\times 4}{4 \\times 5} = \\dfrac{12}{20} = \\dfrac{3}{5}$ .",
+          "$1 - \\dfrac{1}{6} = 1 + \\left(-\\dfrac{1}{6}\\right)$ (طرح عدد هو جمع معاكسه).",
+          "العددان $1$ و $-\\dfrac{1}{6}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $1$ ، فإشارة المجموع موجبة.",
+          "$1 + \\left(-\\dfrac{1}{6}\\right) = \\dfrac{6}{6} - \\dfrac{1}{6} = \\dfrac{6 - 1}{6} = \\dfrac{5}{6}$ .",
+          "العاملان موجبان: الجداء موجب.",
+          "$\\dfrac{3}{5} \\times \\dfrac{5}{6} = \\dfrac{3 \\times 5}{5 \\times 6} = \\dfrac{15}{30} = \\dfrac{1}{2}$ .",
+          "$1 - \\dfrac{1}{7} = 1 + \\left(-\\dfrac{1}{7}\\right)$ (طرح عدد هو جمع معاكسه).",
+          "العددان $1$ و $-\\dfrac{1}{7}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $1$ ، فإشارة المجموع موجبة.",
+          "$1 + \\left(-\\dfrac{1}{7}\\right) = \\dfrac{7}{7} - \\dfrac{1}{7} = \\dfrac{7 - 1}{7} = \\dfrac{6}{7}$ .",
+          "العاملان موجبان: الجداء موجب.",
+          "$\\dfrac{1}{2} \\times \\dfrac{6}{7} = \\dfrac{1 \\times 6}{2 \\times 7} = \\dfrac{6}{14} = \\dfrac{3}{7}$ .",
+          "$1 - \\dfrac{1}{8} = 1 + \\left(-\\dfrac{1}{8}\\right)$ (طرح عدد هو جمع معاكسه).",
+          "العددان $1$ و $-\\dfrac{1}{8}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $1$ ، فإشارة المجموع موجبة.",
+          "$1 + \\left(-\\dfrac{1}{8}\\right) = \\dfrac{8}{8} - \\dfrac{1}{8} = \\dfrac{8 - 1}{8} = \\dfrac{7}{8}$ .",
+          "العاملان موجبان: الجداء موجب.",
+          "$\\dfrac{3}{7} \\times \\dfrac{7}{8} = \\dfrac{3 \\times 7}{7 \\times 8} = \\dfrac{21}{56} = \\dfrac{3}{8}$ .",
+          "$1 - \\dfrac{1}{9} = 1 + \\left(-\\dfrac{1}{9}\\right)$ (طرح عدد هو جمع معاكسه).",
+          "العددان $1$ و $-\\dfrac{1}{9}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $1$ ، فإشارة المجموع موجبة.",
+          "$1 + \\left(-\\dfrac{1}{9}\\right) = \\dfrac{9}{9} - \\dfrac{1}{9} = \\dfrac{9 - 1}{9} = \\dfrac{8}{9}$ .",
+          "العاملان موجبان: الجداء موجب.",
+          "$\\dfrac{3}{8} \\times \\dfrac{8}{9} = \\dfrac{3 \\times 8}{8 \\times 9} = \\dfrac{24}{72} = \\dfrac{1}{3}$ ."
+        ],
+        "result": "B = \\dfrac{1}{3}"
+      }
+    }
+  ]
+}

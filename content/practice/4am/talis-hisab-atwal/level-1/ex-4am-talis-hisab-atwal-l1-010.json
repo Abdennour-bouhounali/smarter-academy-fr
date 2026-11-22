@@ -1,0 +1,182 @@
+{
+  "id": "ex-4am-talis-hisab-atwal-l1-010",
+  "lessonCode": "talis-hisab-atwal",
+  "level": 1,
+  "metadata": {
+    "title": "النسبة AN/AC ثم AN",
+    "estimatedMinutes": 4,
+    "tags": [
+      "النسب المتساوية",
+      "خاصية طالس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_talis-hisab-atwal_P1",
+      "modelledOn": "know-1"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل، $M \\in [AB]$ و $N \\in [AC]$ و $(MN) \\parallel (BC)$ ، و $\\dfrac{AM}{AB} = \\dfrac{2}{5}$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0.0,
+          0.0
+        ],
+        "B": [
+          4.240240480782,
+          2.649596321166
+        ],
+        "C": [
+          5.099511200117,
+          -2.060336263788
+        ],
+        "M": [
+          1.696096192313,
+          1.059838528466
+        ],
+        "N": [
+          2.039804480047,
+          -0.824134505515
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B"
+        },
+        {
+          "from": "A",
+          "to": "C"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "arrows": 1
+        },
+        {
+          "from": "M",
+          "to": "N",
+          "arrows": 1
+        }
+      ],
+      "labels": {
+        "A": "w"
+      },
+      "ariaLabel": "المثلث ABC، M من [AB] و N من [AC]، و (MN) يوازي (BC)",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب النسبة $\\dfrac{AN}{AC}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر مثل 3/4 أو عدد عشري",
+      "expectedAnswer": "0,4",
+      "misconceptionSignatures": [
+        {
+          "value": "2/3",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        },
+        {
+          "value": "2,5",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلثان $AMN$ و $ABC$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خاصية طالس: النسب الثلاث متساوية."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AN}{AC} = \\dfrac{AM}{AB} = \\dfrac{2}{5}$ .",
+        "incorrect": "النسب الثلاث $\\dfrac{AM}{AB}$ ، $\\dfrac{AN}{AC}$ ، $\\dfrac{MN}{BC}$ متساوية في وضعية طالس."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: النقط $A$ ، $M$ ، $B$ على استقامة واحدة، والنقط $A$ ، $N$ ، $C$ على استقامة واحدة، و $(MN) \\parallel (BC)$ (من المعطيات) .",
+          "حسب خاصية طالس: $\\dfrac{AM}{AB} = \\dfrac{AN}{AC} = \\dfrac{MN}{BC}$",
+          "ومنه $\\dfrac{AN}{AC} = \\dfrac{AM}{AB}$"
+        ],
+        "result": "\\dfrac{AN}{AC} = \\dfrac{2}{5}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "إذا كان $AC = 10$ ، احسب $AN$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (عشري بالفاصلة مثل 2,75 أو كسر مثل 7/9)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "25",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل النسبة التي وجدتها في السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$AN = \\dfrac{2}{5} \\times AC$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AN = \\dfrac{2}{5} \\times 10 = 4$ .",
+        "incorrect": "$\\dfrac{AN}{AC}$ معلومة: اضرب $AC$ في هذه النسبة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AN}{AC} = \\dfrac{2}{5}$ و $AC = 10$",
+          "$AN = \\dfrac{2 \\times 10}{5}$"
+        ],
+        "result": "AN = 4"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l1-004",
+  "lessonCode": "maqati-mustawiya",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — مستو بعيد",
+    "estimatedMinutes": 1,
+    "tags": [
+      "h > R"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_maqati-mustawiya_P1",
+      "modelledOn": "know-3"
+    }
+  },
+  "statement": {
+    "content": "كرة نصف قطرها $5\\,\\mathrm{cm}$ ، ومستو يبعد عن مركزها بـ $8\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مقطع الكرة بهذا المستوي:",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نقطة واحدة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQTA-MUMAS"
+        },
+        {
+          "id": "B",
+          "content": "دائرة نصف قطرها $3\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQTA-TARH"
+        },
+        {
+          "id": "C",
+          "content": "لا يقطع المستوي الكرة",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 8 و 5."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أقرب نقطة من المستوي إلى المركز تبعد عنه بـ $8\\,\\mathrm{cm}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نقط الكرة كلها على بعد $5\\,\\mathrm{cm}$ من المركز."
+        }
+      ],
+      "feedback": {
+        "correct": "$h = 8 > R = 5$ : المستوي لا يقطع الكرة.",
+        "incorrect": "$8 - 5 = 3$ لا معنى له هنا: المستوي بعيد عن الكرة."
+      },
+      "difficulty": 1
+    }
+  ]
+}

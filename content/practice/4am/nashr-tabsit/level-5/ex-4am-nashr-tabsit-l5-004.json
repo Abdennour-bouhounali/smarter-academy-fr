@@ -1,0 +1,300 @@
+{
+  "id": "ex-4am-nashr-tabsit-l5-004",
+  "lessonCode": "nashr-tabsit",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2023 — طلاء قاعة المطالعة",
+    "estimatedMinutes": 13,
+    "tags": [
+      "مساحة",
+      "k(a + b)",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_nashr-tabsit_P2",
+      "modelledOn": "BEM 2023 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تريد إدارة متوسطة، تشجيعًا للتلاميذ على المطالعة، طلاء جدران قاعة المطالعة (شكلها متوازي مستطيلات) طولها $(x + 6)$ m وعرضها $x$ m وارتفاعها 3 m . بالقاعة باب ونوافذ مساحتها الكلية $10\\ m^2$ لا تُطلى."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "بيّن أن مساحة الجدران الأربعة هي $W = 2 \\times 3(x + 6) + 2 \\times 3x$ ، ثم اكتبها على شكل مجموع مبسّط.",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P4",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $W$ على الشكل $ax + b$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب العامل الذي أمام القوس في كل حد من حدود القوس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى إشارة كل حد عند كتابة الجداءات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x$ معًا، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$W = 12x + 36$ إذن $a = 12$.",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "جداران مساحة كل منهما $3(x + 6)$ ، وجداران مساحة كل منهما $3x$ :",
+          "$W = 2 \\times 3(x + 6) + 2 \\times 3x$",
+          "$W = 6(x + 6) + 6x$",
+          "$W = 6 \\times x + 6 \\times 6 + 6x$",
+          "$W = 6x + 36 + 6x$"
+        ],
+        "result": "W = 12x + 36"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P4",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $W$ على الشكل $ax + b$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "36",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-NASHR-HAD-WAHID"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$W = 12x + 36$ إذن $b = 36$.",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $b$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$W = 12x + 36$"
+        ],
+        "result": "b = 36"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "استنتج بدلالة $x$ المساحة $T$ التي ستُطلى فعلًا.",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P4",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $T$ على الشكل $ax + b$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب العامل الذي أمام القوس في كل حد من حدود القوس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى إشارة كل حد عند كتابة الجداءات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x$ معًا، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$T = 12x + 26$ إذن $a = 12$.",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$T = W - 10$",
+          "$T = 12x + 36 - 10$"
+        ],
+        "result": "T = 12x + 26"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P4",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $T$ على الشكل $ax + b$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "26",
+      "misconceptionSignatures": [
+        {
+          "value": "-4",
+          "id": "MISC-NASHR-HAD-WAHID"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$T = 12x + 26$ إذن $b = 26$.",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $b$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$T = 12x + 26$"
+        ],
+        "result": "b = 26"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "احسب المساحة التي ستُطلى من أجل $x = 7$ .",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (بالمتر المربع)",
+      "expectedAnswer": "110",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى في الشكل المبسّط الذي وجدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$T = 110$.",
+        "incorrect": "عوّض $x$ في كل حد، واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$T = 12 \\times 7 + 26$",
+          "$T = 84 + 26$"
+        ],
+        "result": "T = 110\\ m^2"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "☜ تكفي علبة دهن واحدة لطلاء $22\\ m^2$ ، وثمنها 2400DA . أعط ثمن الدهن اللازم لطلاء القاعة (من أجل $x = 7$).",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدينار DA)",
+      "expectedAnswer": "12000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب عدد العلب: قسّم المساحة التي تُطلى على 22."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب عدد العلب في ثمن العلبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$110 \\div 22 = 5$ علب، و $5 \\times 2400 = 12000$ DA .",
+        "incorrect": "لا تنسَ طرح مساحة الباب والنوافذ قبل حساب عدد العلب."
+      },
+      "solution": {
+        "lines": [
+          "عدد العلب: $110 \\div 22 = 5$",
+          "الثمن: $5 \\times 2400 = 12000$ DA"
+        ],
+        "result": "12000\\ DA"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

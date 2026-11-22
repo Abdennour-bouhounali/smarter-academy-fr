@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-kura-julla-l1-007",
+  "lessonCode": "kura-julla",
+  "level": 1,
+  "metadata": {
+    "title": "أستعدّ 2 — مساحة قرص",
+    "estimatedMinutes": 2,
+    "tags": [
+      "الدائرة الكبرى",
+      "المساحة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "prep",
+      "page": 163,
+      "section": "أستعدّ",
+      "number": 2
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 163): «مساحة قرص نصف قطره 3cm هو $9\\pi\\,\\mathrm{cm}^2$» — صحيح. كرة مركزها O ونصف قطرها $3\\,\\mathrm{cm}$ ، وقرص تحدّه إحدى دوائرها الكبرى."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مساحة هذا القرص على الشكل $k\\pi\\,\\mathrm{cm}^2$ . ما هو العدد k؟",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد k (معامل π)",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-KURA-MUHIT",
+          "value": "6"
+        },
+        {
+          "id": "MISC-KURA-DAIRA-KUBRA",
+          "value": "3"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدائرة الكبرى لها نفس نصف قطر الكرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحة قرص نصف قطره r هي $\\pi r^2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض r بنصف قطر الكرة."
+        }
+      ],
+      "feedback": {
+        "correct": "نصف قطر الدائرة الكبرى $3\\,\\mathrm{cm}$ ، فالمساحة $\\pi \\times 3^2 = 9\\pi\\,\\mathrm{cm}^2$ .",
+        "incorrect": "لا تخلط بين المحيط $2\\pi r$ والمساحة $\\pi r^2$ ، والدائرة الكبرى نصف قطرها نصف قطر الكرة."
+      }
+    }
+  ]
+}

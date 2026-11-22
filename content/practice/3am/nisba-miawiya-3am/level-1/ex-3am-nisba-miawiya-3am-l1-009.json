@@ -1,0 +1,273 @@
+{
+  "id": "ex-3am-nisba-miawiya-3am-l1-009",
+  "lessonCode": "nisba-miawiya-3am",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — معاملات الزيادة والتخفيض",
+    "estimatedMinutes": 5,
+    "tags": [
+      "معامل",
+      "زيادة وتخفيض"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "لحساب ناتج زيادة أو تخفيض نختار العدد الذي نضرب فيه الكمية الأصلية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما العدد الذي نضرب فيه ثمنا لنحصل على ثمنه بعد زيادة بـ $15\\,\\%$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$0{,}15$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NISBA3-COEF-INC"
+        },
+        {
+          "id": "B",
+          "content": "$1{,}15$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$15$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NISBA3-ADD-T"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل الكمية تزداد أم تنقص؟ وما النسبة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "زيادة بنسبة معيّنة تُبقي حصص الأصل كلها وتضيف إليها حصصا، وتخفيضها يسحب حصصا منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عبّر عن الأصل بمئة حصّة ثم عدّ الحصص بعد التغيّر."
+        }
+      ],
+      "feedback": {
+        "correct": "المعامل هو $1{,}15$ .",
+        "incorrect": "الزيادة تضيف حصصا إلى مئة حصّة الأصل والتخفيض يسحب منها؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "زيادة بـ $15\\,\\%$ تُبقي مئة حصّة وتضيف 15 حصّة (أو تسحبها)، فالمعامل هو $1 + \\dfrac{15}{100} = 1{,}15$ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما العدد الذي نضرب فيه ثمنا لنحصل على ثمنه بعد تخفيض بـ $20\\,\\%$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$0{,}2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NISBA3-COEF-DEC"
+        },
+        {
+          "id": "B",
+          "content": "$1{,}2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NISBA3-COEF-DEC"
+        },
+        {
+          "id": "C",
+          "content": "$0{,}8$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل الكمية تزداد أم تنقص؟ وما النسبة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "زيادة بنسبة معيّنة تُبقي حصص الأصل كلها وتضيف إليها حصصا، وتخفيضها يسحب حصصا منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عبّر عن الأصل بمئة حصّة ثم عدّ الحصص بعد التغيّر."
+        }
+      ],
+      "feedback": {
+        "correct": "المعامل هو $0{,}8$ .",
+        "incorrect": "الزيادة تضيف حصصا إلى مئة حصّة الأصل والتخفيض يسحب منها؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "تخفيض بـ $20\\,\\%$ تُبقي مئة حصّة وتضيف 20 حصّة (أو تسحبها)، فالمعامل هو $1 - \\dfrac{20}{100} = 0{,}8$ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما العدد الذي نضرب فيه عدد سكان لنحصل على عددهم بعد زيادة بـ $7\\,\\%$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$1{,}07$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$1{,}7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NISBA3-DECIMAL-SHIFT"
+        },
+        {
+          "id": "C",
+          "content": "$0{,}07$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NISBA3-COEF-INC"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل الكمية تزداد أم تنقص؟ وما النسبة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "زيادة بنسبة معيّنة تُبقي حصص الأصل كلها وتضيف إليها حصصا، وتخفيضها يسحب حصصا منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عبّر عن الأصل بمئة حصّة ثم عدّ الحصص بعد التغيّر."
+        }
+      ],
+      "feedback": {
+        "correct": "المعامل هو $1{,}07$ .",
+        "incorrect": "الزيادة تضيف حصصا إلى مئة حصّة الأصل والتخفيض يسحب منها؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "زيادة بـ $7\\,\\%$ تُبقي مئة حصّة وتضيف 7 حصّة (أو تسحبها)، فالمعامل هو $1 + \\dfrac{7}{100} = 1{,}07$ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "ما العدد الذي نضرب فيه كتلة لنحصل عليها بعد نقصان بـ $5\\,\\%$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$0{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NISBA3-DECIMAL-SHIFT"
+        },
+        {
+          "id": "B",
+          "content": "$0{,}95$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$1{,}05$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NISBA3-COEF-DEC"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل الكمية تزداد أم تنقص؟ وما النسبة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "زيادة بنسبة معيّنة تُبقي حصص الأصل كلها وتضيف إليها حصصا، وتخفيضها يسحب حصصا منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عبّر عن الأصل بمئة حصّة ثم عدّ الحصص بعد التغيّر."
+        }
+      ],
+      "feedback": {
+        "correct": "المعامل هو $0{,}95$ .",
+        "incorrect": "الزيادة تضيف حصصا إلى مئة حصّة الأصل والتخفيض يسحب منها؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "تخفيض بـ $5\\,\\%$ تُبقي مئة حصّة وتضيف 5 حصّة (أو تسحبها)، فالمعامل هو $1 - \\dfrac{5}{100} = 0{,}95$ ."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

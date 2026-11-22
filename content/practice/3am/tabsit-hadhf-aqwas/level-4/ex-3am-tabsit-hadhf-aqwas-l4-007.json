@@ -1,0 +1,234 @@
+{
+  "id": "ex-3am-tabsit-hadhf-aqwas-l4-007",
+  "lessonCode": "tabsit-hadhf-aqwas",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — انشر ثم استنتج",
+    "estimatedMinutes": 9,
+    "tags": [
+      "نشر",
+      "حذف الأقواس"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-70",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$A$ عبارة حرفية حيث:",
+    "formulas": [
+      "A = 2(x + 5) + (x + 1)(x + 2)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "انشر كلًّا من العبارتين:",
+      "statement": "$2(x + 5)$ تُكتب $2x + b$ ، العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $2(x + 5)$ على الشكل $2x + b$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر حدًّا حدًّا: اضرب كل حدّ من القوس الأول في كل حدّ من القوس الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الحدود المتشابهة في النتيجة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بالعبارة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$2(x + 5) = 2x + 10$ إذن $b = 10$.",
+        "incorrect": "اجمع الحدود المتشابهة بإشاراتها بعد حذف الأقواس، ثم اقرأ العدد المطلوب في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$2(x + 5) = 2x + 10$"
+        ],
+        "result": "b = 10"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$(x + 1)(x + 2)$ تُكتب $x^2 + bx + 2$ ، العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $(x + 1)(x + 2)$ على الشكل $x^2 + bx + 2$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر حدًّا حدًّا: اضرب كل حدّ من القوس الأول في كل حدّ من القوس الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الحدود المتشابهة في النتيجة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بالعبارة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$(x + 1)(x + 2) = x^2 + 3x + 2$ إذن $b = 3$.",
+        "incorrect": "اجمع الحدود المتشابهة بإشاراتها بعد حذف الأقواس، ثم اقرأ العدد المطلوب في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$(x + 1)(x + 2) = x^2 + 2x + x + 2 = x^2 + 3x + 2$"
+        ],
+        "result": "b = 3"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "استنتج تبسيطًا للعبارة $A$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$A = x^2 + 5x + 12$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$A = -x^2 - x + 8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-PLUS-CHANGED"
+        },
+        {
+          "id": "C",
+          "content": "$A = 6x^2 + 12$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-X-X2-MERGED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة التي تسبق القوسين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوسان مسبوقان بالإشارة $+$ (وغير متبوعين بـ $\\times$ أو $\\div$) يُحذفان دون تغيير أي إشارة بينهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العبارة بدون أقواس حدًّا حدًّا، ثم اجمع الحدود المتشابهة."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = x^2 + 5x + 12$.",
+        "incorrect": "راجع إشارة كل حدّ وما يسبق القوسين، ثم اجمع الحدود المتشابهة فقط."
+      },
+      "solution": {
+        "lines": [
+          "$A = (2x + 10) + (x^2 + 3x + 2)$",
+          "$A = 2x + 10 + x^2 + 3x + 2$",
+          "$A = x^2 + 5x + 12$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب قيمة العبارة $A$ من أجل $x = -1$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى، ويُستحسن أن تعوّض في الشكل المبسّط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويات العمليات: القوى، ثم الضرب، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالتعويض في العبارة قبل تبسيطها: القيمة لا تتغيّر."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل $x = -1$ نجد $A = 8$.",
+        "incorrect": "عوّض $x$ بالعدد المعطى في الشكل المبسّط واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$A = x^2 + 5x + 12$",
+          "من أجل $x = -1$ : $A = (-1)^2 + 5(-1) + 12 = 8$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-mafhum-muadala-l1-005",
+  "lessonCode": "wadiya-idmajiya-mafhum-muadala",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — القيم التي تجعل متباينة صحيحة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "متباينة",
+      "قيم صحيحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر المتباينة $3x+4 < 22$ والقيم $2$ ، $4$ ، $6$ ، $8$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "كم قيمة من القيم $2$ ، $4$ ، $6$ ، $8$ تجعل المتباينة $3x+4 < 22$ صحيحة ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-IKHTIBAR-BOUNDARY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ قيمة من القيم المعطاة على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الطرفين من أجل كلّ قيمة ثمّ قارن بالرمز المكتوب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عُدّ القيم التي تجعل المتباينة صحيحة فقط، وانتبه إلى حالة تساوي الطرفين."
+        }
+      ],
+      "feedback": {
+        "correct": "$2$ .",
+        "incorrect": "اختبر كلّ قيمة على حدة وانتبه إلى حالة تساوي الطرفين."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $x = 2$ : $3 \\times 2+4 = 10$ و $22 = 22$ ، فالعلاقة صحيحة .",
+          "من أجل $x = 4$ : $3 \\times 4+4 = 16$ و $22 = 22$ ، فالعلاقة صحيحة .",
+          "من أجل $x = 6$ : $3 \\times 6+4 = 22$ و $22 = 22$ ، فالعلاقة خاطئة .",
+          "من أجل $x = 8$ : $3 \\times 8+4 = 28$ و $22 = 22$ ، فالعلاقة خاطئة .",
+          "عدد القيم : $2$ ."
+        ],
+        "result": "2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

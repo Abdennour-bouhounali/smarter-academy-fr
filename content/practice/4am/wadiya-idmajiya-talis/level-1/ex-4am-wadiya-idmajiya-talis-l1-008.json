@@ -1,0 +1,124 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-talis-l1-008",
+  "lessonCode": "wadiya-idmajiya-talis",
+  "level": 1,
+  "metadata": {
+    "title": "نتيجة غير ملائمة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "التحقق من النتيجة",
+      "أسطوانة",
+      "مخروط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-talis_P3",
+      "modelledOn": "situation",
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-talis-l1-008"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "أسطوانة دوران ارتفاعها $h = 3\\,\\mathrm{cm}$ محاطة بمخروط دوران ارتفاعه $12\\,\\mathrm{cm}$ ونصف قطر قاعدته $4\\,\\mathrm{cm}$ (قاعدتها على قاعدة المخروط ودائرتها العليا على سطحه)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "وجد تلميذ أن نصف قطر هذه الأسطوانة $r = 7\\,\\mathrm{cm}$ . هل يمكن أن تكون نتيجته صحيحة؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-MULAAMA-WAQI"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النتيجة بنصف قطر قاعدة المخروط."
+        }
+      ],
+      "feedback": {
+        "correct": "الأسطوانة المحاطة لا تتجاوز المخروط: $r < 4$ ، فالنتيجة $7$ مستحيلة.",
+        "incorrect": "قبل قبول نتيجة، تحقّق أنها ممكنة في الوضعية: الأسطوانة محاطة بالمخروط."
+      },
+      "solution": {
+        "lines": [
+          "الأسطوانة داخل المخروط، فنصف قطرها أصغر من نصف قطر قاعدة المخروط: $r < 4\\,\\mathrm{cm}$ .",
+          "بما أن $7 > 4$ فالنتيجة غير ملائمة: في الحساب خطأ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب نصف القطر الصحيح $r$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في نصف المقطع المحوري: $\\dfrac{r}{4} = \\dfrac{12 - h}{12}$ (خاصية طالس)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض بـ $h = 3$ ثم احسب $r$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{r}{4} = \\dfrac{9}{12}$ ومنه $r = 3\\,\\mathrm{cm}$ .",
+        "incorrect": "في كل نسبة: طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "حسب خاصية طالس في نصف المقطع المحوري: $\\dfrac{r}{4} = \\dfrac{12 - 3}{12}$",
+          "$r = \\dfrac{9 \\times 4}{12}$"
+        ],
+        "result": "r = 3\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

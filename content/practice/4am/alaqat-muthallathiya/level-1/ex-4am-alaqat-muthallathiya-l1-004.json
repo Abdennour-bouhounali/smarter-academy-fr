@@ -1,0 +1,120 @@
+{
+  "id": "ex-4am-alaqat-muthallathiya-l1-004",
+  "lessonCode": "alaqat-muthallathiya",
+  "level": 1,
+  "metadata": {
+    "title": "الظل من الجيب وجيب التمام",
+    "estimatedMinutes": 4,
+    "tags": [
+      "العلاقات المثلثية",
+      "الظل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_alaqat-muthallathiya_P1",
+      "modelledOn": "know-4"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "$x$ قيس زاوية حادة حيث $\\sin x = 0{,}6$ و $\\cos x = 0{,}8$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $\\tan x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "0.75",
+      "misconceptionSignatures": [
+        {
+          "value": "4/3",
+          "id": "MISC-MUTH-TAN-QISMA-MAQLUBA"
+        },
+        {
+          "value": "0.48",
+          "id": "MISC-MUTH-DARB-BADAL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الظل هو حاصل قسمة الجيب على جيب التمام: $\\tan x = \\dfrac{\\sin x}{\\cos x}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على كسر هي الضرب في مقلوبه، ثم اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan x = \\dfrac{0{,}6}{0{,}8} = \\dfrac{3}{4} = 0{,}75$ .",
+        "incorrect": "الظل = الجيب ÷ جيب التمام (الجيب في البسط)."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan x = \\dfrac{\\sin x}{\\cos x} = \\dfrac{0{,}6}{0{,}8}$"
+        ],
+        "result": "\\tan x = 0{,}75"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "تحقّق أن $\\cos^2 x + \\sin^2 x = 1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب كل مربع على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المربعين."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}8^2 + 0{,}6^2 = 0{,}64 + 0{,}36 = 1$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "$\\cos^2 x + \\sin^2 x = 0{,}8^2 + 0{,}6^2$",
+          "$= 0{,}64 + 0{,}36$",
+          "$= 1$",
+          "إذن العلاقة محقّقة."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

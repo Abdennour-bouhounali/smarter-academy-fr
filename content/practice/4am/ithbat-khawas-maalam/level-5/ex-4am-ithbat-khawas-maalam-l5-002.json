@@ -1,0 +1,68 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l5-002",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — الحارس في الزاوية القائمة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "مجهول"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_ithbat-khawas-maalam_P1",
+      "modelledOn": "method-unknown"
+    }
+  },
+  "generator": {
+    "tool": "u1x-ithbat-khawas-maalam/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "قائمتا مرمى في $A(1\\,;\\,1)$ و $B(5\\,;\\,1)$ ، وحارس في $C(3\\,;\\,y)$ حيث $y > 1$ (معلم متعامد ومتجانس)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "عيّن y حتى يكون المثلث ABC قائما في C.",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-ISHARA",
+          "value": "-1"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قائم في C : الضلع المقابل [AB]."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$CA^2 + CB^2 = AB^2$ ، و $CA^2 = CB^2 = 4 + (y - 1)^2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$2(4 + (y - 1)^2) = 16$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$(y - 1)^2 = 4$ و $y > 1$ : $y - 1 = 2$ ، $y = 3$ .",
+        "incorrect": "الضلع الوحيد هو [AB] المقابل لـ C."
+      }
+    }
+  ]
+}

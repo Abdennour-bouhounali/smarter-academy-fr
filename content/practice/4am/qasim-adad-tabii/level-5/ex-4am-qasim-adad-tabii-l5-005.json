@@ -1,0 +1,264 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l5-005",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2022 — دورة في كرة اليد",
+    "estimatedMinutes": 12,
+    "tags": [
+      "الباقي",
+      "قاسم",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-adad-tabii_P1",
+      "modelledOn": "BEM 2022 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "سجّل 156 تلميذًا في دورة لكرة اليد تنظمها مديرية التربية لولاية سطيف، تشجيعًا للشباب على الرياضة والأخلاق الرياضية. يريد المنظمون تقسيمهم إلى فرق تضم كلها نفس العدد من التلاميذ، دون أن يبقى أي تلميذ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "هل يمكن تكوين فرق من 7 تلاميذ؟ من 12 تلميذًا؟ برّر إجابتك.",
+      "statement": "فرق من 7 تلاميذ.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 156 على 7."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "7 قاسم للعدد 156 إذا وفقط إذا كان باقي هذه القسمة معدومًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$156 = 7 \\times 22 + 2$: الباقي غير معدوم.",
+        "incorrect": "أجرِ القسمة الإقليدية للعدد 156 على 7، وانظر هل الباقي معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$156 = 7 \\times 22 + 2$ مع $2 < 7$",
+          "الباقي 2 غير معدوم، إذن 7 ليس قاسمًا للعدد 156: يبقى تلميذان دون فريق."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "فرق من 12 تلميذًا.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 156 على 12."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "12 قاسم للعدد 156 إذا وفقط إذا كان باقي هذه القسمة معدومًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$156 = 12 \\times 13$: الباقي معدوم.",
+        "incorrect": "أجرِ القسمة الإقليدية للعدد 156 على 12، وانظر هل الباقي معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$156 = 12 \\times 13$ (الباقي معدوم).",
+          "إذن 12 قاسم للعدد 156: يمكن ذلك."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "كم تلميذًا آخر يجب أن يسجَّل على الأقل حتى يمكن تكوين فرق من 7 تلاميذ دون أن يبقى أي تلميذ؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل باقي قسمة 156 على 7."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفريق الأخير ناقص: كم تلميذًا ينقصه؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$156 + 5 = 161 = 7 \\times 23$.",
+        "incorrect": "الفريق الأخير يضم الباقي فقط: احسب ما ينقصه ليضم 7 تلاميذ."
+      },
+      "solution": {
+        "lines": [
+          "$156 = 7 \\times 22 + 2$",
+          "ينقص الفريق الأخير $7 - 2 = 5$ تلاميذ.",
+          "وبالفعل $161 = 7 \\times 23$."
+        ],
+        "result": "5"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "اعتمد المنظمون فرقًا من 12 تلميذًا.",
+      "statement": "ما هو عدد الفرق؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "13",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نبحث عن عدد طبيعي $q$ حيث $156 = 12 \\times q$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أجرِ القسمة الإقليدية للعدد 156 على 12."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان الباقي معدومًا فإن حاصل القسمة هو العدد المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$156 = 12 \\times 13$.",
+        "incorrect": "اقسم 156 على 12: حاصل القسمة هو العدد $q$ إذا كان الباقي معدومًا."
+      },
+      "solution": {
+        "lines": [
+          "$12 \\times 13 = 156$",
+          "إذن $156 = 12 \\times 13$"
+        ],
+        "result": "156 = 12 \\times 13"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "☜ ثمن القميص الرياضي الواحد 1200DA، ويقدَّم لكل فريق كرة ثمنها 2500DA. خصّصت المديرية لذلك 225000DA. احسب المبلغ المتبقي.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (DA)",
+      "expectedAnswer": "5300",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لكل تلميذ قميص، ولكل فريق كرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب مجموع التكاليف ثم اطرحه من المبلغ المخصص."
+        }
+      ],
+      "feedback": {
+        "correct": "التكاليف $187200 + 32500 = 219700$DA، فيبقى $5300$DA.",
+        "incorrect": "احسب ثمن القمصان (لكل التلاميذ) وثمن الكرات (لكل الفرق)، ثم اطرح مجموعهما من 225000DA."
+      },
+      "solution": {
+        "lines": [
+          "ثمن القمصان: $156 \\times 1200 = 187200$ أي 187200DA.",
+          "ثمن الكرات: $13 \\times 2500 = 32500$ أي 32500DA.",
+          "المجموع: $187200 + 32500 = 219700$ أي 219700DA.",
+          "المتبقي: $225000 - 219700$"
+        ],
+        "result": "5300 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

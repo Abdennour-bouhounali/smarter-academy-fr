@@ -1,0 +1,733 @@
+/* ── Le مختبر الأشعة ───────────────────────────────────────────────────────
+   Le plan prend tout ce qu'il peut ; le panneau se range sur le bord de
+   départ (à droite en arabe) sur grand écran, et devient un TIROIR en bas
+   sous 768 px (§33). Le plan est LTR par nature — c'est des mathématiques
+   (§35) ; le panneau suit la direction de la page.
+
+   Les conventions sont celles du grapheur (functionGrapher.css) : mêmes
+   teintes, mêmes rayons, mêmes familles — les deux instruments doivent se
+   ressembler. */
+
+.sa-ml-vec {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  background: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .sa-ml-vec { flex-direction: row; }
+}
+
+/* ── Le plan ───────────────────────────────────────────────────────────── */
+
+.sa-ml-vec__stage {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+}
+
+.sa-ml-vec__plane {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #ffffff;
+  /* Le doigt DESSINE, il ne fait pas défiler la page (§34). */
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: crosshair;
+}
+
+.sa-ml-vec__plane:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: -2px;
+}
+
+/* mafs aux couleurs de la plateforme : un plan calme, blanc, gris clair.
+   mafs livre un thème SOMBRE par défaut (--mafs-bg: black, --mafs-fg: white,
+   node_modules/mafs/core.css) : sans ces variables le repère serait noir et
+   les étiquettes blanches sur blanc. Ce sont EXACTEMENT les valeurs du
+   grapheur (functionGrapher.css) — les deux instruments partagent un seul
+   repère, donc une seule apparence. */
+.sa-ml-vec__plane .MafsView {
+  position: absolute;
+  inset: 0;
+  font-family: 'JetBrains Mono', 'Inter', sans-serif;
+  font-size: 12px;
+  --mafs-bg: #ffffff;
+  --mafs-fg: #0f172a;
+  --mafs-origin-color: #334155;
+  --mafs-line-color: #cbd5e1;
+  --grid-line-subdivision-color: #eef2f7;
+  --mafs-axis-stroke-width: 1.5px;
+  --mafs-line-stroke-dash-style: 6, 4;
+}
+
+/* La grille éteinte : on garde les axes, on retire le quadrillage. */
+.sa-ml-vec__plane--nogrid .MafsView {
+  --mafs-line-color: transparent;
+  --grid-line-subdivision-color: transparent;
+}
+
+.sa-ml-vec__plane .mafs-axis text { fill: #475569; }
+
+.sa-ml-vec__axisnames text {
+  font-family: 'Inter', 'Cairo', serif;
+  font-size: 15px;
+  fill: #334155;
+}
+
+/* ── Les أشعة ──────────────────────────────────────────────────────────── */
+
+.sa-ml-vec__arrow { pointer-events: none; }
+.sa-ml-vec__arrow--pickable { cursor: pointer; }
+
+/* La bande de PRISE du trait : invisible, large de 24 px — on vise une
+   flèche au doigt, pas un trait de 2 px (§34). */
+.sa-ml-vec__pick {
+  stroke: transparent;
+  stroke-width: 24;
+  stroke-linecap: round;
+  fill: none;
+  pointer-events: stroke;
+  touch-action: none;
+}
+
+.sa-ml-vec__arrowlabel {
+  font-family: 'JetBrains Mono', 'Space Grotesk', monospace;
+  font-size: 0.9375rem;
+  font-style: italic;
+  font-weight: 600;
+  paint-order: stroke;
+  stroke: #ffffff;
+  stroke-width: 3.5px;
+  stroke-linejoin: round;
+}
+
+.sa-ml-vec__arrowcoords {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ── LE شعاع EN COLONNE, SUR LE PLAN ───────────────────────────────────────
+   VectorColumnSvg dessine un <g> : les deux composantes en <text> et les
+   deux délimiteurs en <path>. Le halo blanc qui détachait l'ancienne ligne
+   de coordonnées du quadrillage est donc porté par les GLYPHES, pas par le
+   groupe — `paint-order: stroke` peint le contour avant le remplissage, de
+   sorte que le trait blanc reste derrière le chiffre. Les délimiteurs
+   prennent la couleur du شعاع par `currentColor` : le groupe la reçoit de
+   l'attribut `fill` posé par VectorArrow. */
+.sa-ml-vec__columnvalue {
+  font-family: 'JetBrains Mono', monospace;
+  fill: currentColor;
+  paint-order: stroke;
+  stroke: #ffffff;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+.sa-ml-vec__columndelim {
+  stroke: currentColor;
+  stroke-linecap: round;
+}
+
+.sa-ml-vec__columnlabel {
+  font-family: 'JetBrains Mono', monospace;
+  fill: currentColor;
+  paint-order: stroke;
+  stroke: #ffffff;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+/* ── Les poignées (§34) ────────────────────────────────────────────────── */
+
+.sa-ml-vec__handle { cursor: grab; touch-action: none; }
+.sa-ml-vec__handle--dragging { cursor: grabbing; }
+.sa-ml-vec__handle--fixed { cursor: default; }
+
+/* La cible TACTILE : invisible, large (44 px de diamètre), seule à écouter. */
+.sa-ml-vec__hit {
+  fill: transparent;
+  stroke: none;
+  pointer-events: all;
+}
+
+.sa-ml-vec__dot {
+  pointer-events: none;
+  transition: r 120ms ease;
+}
+
+.sa-ml-vec__handle--dragging .sa-ml-vec__dot { r: 8; }
+
+.sa-ml-vec__halo {
+  fill: none;
+  stroke-width: 2;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.sa-ml-vec__handle:focus { outline: none; }
+.sa-ml-vec__handle:focus-visible .sa-ml-vec__dot {
+  stroke: #3b82f6;
+  stroke-width: 3.5;
+}
+
+.sa-ml-vec__handlelabel {
+  font-family: 'JetBrains Mono', 'Space Grotesk', monospace;
+  font-size: 0.875rem;
+  font-weight: 700;
+  pointer-events: none;
+  paint-order: stroke;
+  stroke: #ffffff;
+  stroke-width: 3.5px;
+  stroke-linejoin: round;
+}
+
+.sa-ml-vec__pointcoords {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  pointer-events: none;
+  paint-order: stroke;
+  stroke: #ffffff;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+/* ── Les constructions ─────────────────────────────────────────────────── */
+
+.sa-ml-vec__parallelogram {
+  fill-opacity: 0.1;
+  stroke: none;
+  pointer-events: none;
+}
+
+.sa-ml-vec__guide,
+.sa-ml-vec__collinear {
+  stroke-width: 1.5;
+  stroke-dasharray: 6 6;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.sa-ml-vec__rightangle {
+  stroke-width: 2;
+  pointer-events: none;
+}
+
+.sa-ml-vec__anglearc,
+.sa-ml-vec__anglebase {
+  stroke-width: 1.5;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.sa-ml-vec__anglebase { stroke-dasharray: 4 4; }
+
+.sa-ml-vec__anglelabel,
+.sa-ml-vec__leglabel,
+.sa-ml-vec__seglabel {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  pointer-events: none;
+  paint-order: stroke;
+  stroke: #ffffff;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+.sa-ml-vec__legs line {
+  stroke-width: 1.5;
+  stroke-dasharray: 5 4;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.sa-ml-vec__segment {
+  stroke-width: 2;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.sa-ml-vec__polygon {
+  fill-opacity: 0.12;
+  stroke-width: 2;
+  pointer-events: none;
+}
+
+.sa-ml-vec__polygon--image {
+  fill-opacity: 0.08;
+  stroke-dasharray: 7 5;
+}
+
+.sa-ml-vec__polylabel {
+  font-family: 'JetBrains Mono', 'Space Grotesk', monospace;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+/* ── Les commandes posées sur le plan ──────────────────────────────────── */
+
+.sa-ml-vec__zoom,
+.sa-ml-vec__history {
+  position: absolute;
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+}
+
+.sa-ml-vec__zoom {
+  inset-block-end: 0.75rem;
+  inset-inline-end: 0.75rem;
+  flex-direction: column;
+}
+
+.sa-ml-vec__history {
+  inset-block-start: 0.75rem;
+  inset-inline-start: 0.75rem;
+}
+
+.sa-ml-vec__zoombtn,
+.sa-ml-vec__histbtn {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+/* ── Le panneau ────────────────────────────────────────────────────────── */
+
+.sa-ml-vec__panel {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  min-height: 0;
+  /* Le tiroir ne mange jamais plus de 38 % de la place que la coquille a
+     laissée (--sa-ml-avail, posée par MathLabShell) : sur un téléphone,
+     c'est le PLAN qui doit avoir la plus grande part (§33 — « workspace
+     gets maximum space »), pas la lecture. */
+  max-height: max(9rem, calc(var(--sa-ml-avail, 100dvh) * 0.38));
+  border-top: 1px solid #e2e8f0;
+  background: #ffffff;
+  font-family: 'Inter', 'Cairo', 'Tajawal', sans-serif;
+}
+
+@media (min-width: 768px) {
+  .sa-ml-vec__panel {
+    flex: 0 0 21rem;
+    max-height: none;
+    border-top: 0;
+    border-inline-end: 1px solid #e2e8f0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .sa-ml-vec__panel { flex-basis: 23rem; }
+}
+
+.sa-ml-vec__panel--collapsed .sa-ml-vec__panel-body { display: none; }
+.sa-ml-vec__panel--collapsed { max-height: none; }
+
+.sa-ml-vec__panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex: none;
+  padding: 0.375rem 0.75rem;
+}
+
+.sa-ml-vec__panel-title {
+  margin: 0;
+  font-family: 'Space Grotesk', 'Cairo', 'Tajawal', sans-serif;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: #0f172a;
+}
+
+.sa-ml-vec__collapse { display: inline-flex; }
+@media (min-width: 768px) { .sa-ml-vec__collapse { display: none; } }
+
+.sa-ml-vec__panel-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 0 0.75rem 1rem;
+}
+
+/* ── Les cartes de lecture (§25) ───────────────────────────────────────── */
+
+.sa-ml-vec__inspector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sa-ml-vec__card {
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 0.625rem 0.75rem;
+  background: #f8fafc;
+}
+
+.sa-ml-vec__card--relation { background: #f1f5f9; }
+
+.sa-ml-vec__cardhead {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sa-ml-vec__cardtitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1 1 auto;
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.sa-ml-vec__vecname {
+  position: relative;
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-style: italic;
+}
+
+/* La flèche du nom : un trait dessiné, pas U+20D7 — les polices arabes le
+   placent mal (voir vectorFormat.js). */
+.sa-ml-vec__arrowhat {
+  position: absolute;
+  inset-inline: -1px;
+  top: -0.45em;
+  height: 0.5em;
+  border-top: 1.5px solid currentColor;
+}
+
+.sa-ml-vec__arrowhat::after {
+  content: '';
+  position: absolute;
+  inset-inline-end: -1px;
+  top: -2.5px;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-inline-start: 4px solid currentColor;
+}
+
+.sa-ml-vec__kind {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.sa-ml-vec__swatch {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 0.25rem;
+  flex: none;
+}
+
+.sa-ml-vec__remove { width: 1.75rem; height: 1.75rem; flex: none; }
+
+.sa-ml-vec__readings {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.125rem 0.75rem;
+  margin: 0.5rem 0 0;
+}
+
+.sa-ml-vec__reading { display: contents; }
+
+.sa-ml-vec__reading dt {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.sa-ml-vec__reading dd {
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #0f172a;
+  /* Une écriture mathématique se lit toujours de gauche à droite (§35). */
+  text-align: left;
+}
+
+.sa-ml-vec__approx { font-weight: 400; color: #64748b; }
+.sa-ml-vec__special { font-family: 'Cairo', 'Tajawal', sans-serif; color: #b45309; font-weight: 600; }
+
+.sa-ml-vec__relations {
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.8125rem;
+  color: #0f172a;
+}
+
+.sa-ml-vec__relations li::before {
+  content: '';
+  display: inline-block;
+  width: 0.375rem;
+  height: 0.375rem;
+  margin-inline-end: 0.5rem;
+  border-radius: 50%;
+  background: #059669;
+  vertical-align: middle;
+}
+
+.sa-ml-vec__relations--none { color: #64748b; }
+.sa-ml-vec__relations--none::before { background: #cbd5e1 !important; }
+
+.sa-ml-vec__factor {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  color: #1d4ed8;
+}
+
+.sa-ml-vec__verdict {
+  margin: 0.375rem 0 0;
+  font-size: 0.8125rem;
+  color: #64748b;
+}
+
+.sa-ml-vec__verdict--true { color: #047857; font-weight: 600; }
+
+/* ── Le curseur k (§15) ────────────────────────────────────────────────── */
+
+.sa-ml-vec__scalar {
+  margin-top: 0.625rem;
+  padding-top: 0.625rem;
+  border-top: 1px dashed #cbd5e1;
+}
+
+.sa-ml-vec__scalarhead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.sa-ml-vec__scalarlabel {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #1d4ed8;
+}
+
+.sa-ml-vec__scalarformula {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.sa-ml-vec__slider {
+  width: 100%;
+  margin: 0.375rem 0 0;
+  accent-color: #2563eb;
+  /* Le pouce doit rester attrapable au doigt (§33). */
+  height: 1.75rem;
+  touch-action: pan-y;
+}
+
+.sa-ml-vec__scalarticks {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.125rem;
+}
+
+.sa-ml-vec__tick {
+  border: 0;
+  background: none;
+  padding: 0.125rem 0.25rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6875rem;
+  color: #94a3b8;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+
+.sa-ml-vec__tick--on { color: #1d4ed8; font-weight: 700; background: #dbeafe; }
+
+.sa-ml-vec__scalarstate {
+  margin: 0.375rem 0 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.sa-ml-vec__scalarstate[data-ml-scalar-state="zero"] { color: #b45309; }
+.sa-ml-vec__scalarstate[data-ml-scalar-state="reversed"] { color: #be123c; }
+
+/* ── Les commandes ─────────────────────────────────────────────────────── */
+
+.sa-ml-vec__controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.sa-ml-vec__section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.sa-ml-vec__sectionhead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.sa-ml-vec__heading {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin: 0;
+  font-family: 'Space Grotesk', 'Cairo', 'Tajawal', sans-serif;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  color: #334155;
+}
+
+.sa-ml-vec__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.sa-ml-vec__action {
+  flex: 1 1 auto;
+  min-width: 7rem;
+  gap: 0.375rem;
+  font-size: 0.8125rem;
+  /* La cible tactile minimale, même en liste serrée (§34). */
+  min-height: 2.5rem;
+}
+
+.sa-ml-vec__hint {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: #64748b;
+}
+
+.sa-ml-vec__toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.875rem;
+}
+
+.sa-ml-vec__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.8125rem;
+  color: #334155;
+  cursor: pointer;
+  min-height: 2rem;
+}
+
+.sa-ml-vec__toggle input { width: 1rem; height: 1rem; accent-color: #2563eb; }
+
+.sa-ml-vec__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sa-ml-vec__fieldlabel { font-size: 0.75rem; color: #64748b; }
+
+.sa-ml-vec__select {
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  padding: 0.375rem 0.5rem;
+  font-family: inherit;
+  font-size: 0.8125rem;
+  color: #0f172a;
+  background: #ffffff;
+  min-height: 2.25rem;
+}
+
+.sa-ml-vec__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.sa-ml-vec__chip {
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  padding: 0.3125rem 0.75rem;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #475569;
+  background: #ffffff;
+  cursor: pointer;
+  min-height: 2rem;
+}
+
+.sa-ml-vec__chip:hover { background: #f1f5f9; color: #0f172a; }
+.sa-ml-vec__chip--on { background: #dbeafe; border-color: #bfdbfe; color: #1d4ed8; }
+.sa-ml-vec__chip:focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; }
+
+.sa-ml-vec__explorer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 0.5rem 0.625rem;
+  background: #f8fafc;
+}
+
+.sa-ml-vec__explorerformula {
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #1d4ed8;
+}
+
+.sa-ml-vec__componentslider { display: flex; flex-direction: column; }
+
+.sa-ml-vec__sliderlabel {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #475569;
+}
+
+/* Réservé aux lecteurs d'écran. */
+.sa-ml-vec__sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sa-ml-vec__dot { transition: none; }
+}

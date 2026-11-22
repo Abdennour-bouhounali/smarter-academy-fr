@@ -1,0 +1,165 @@
+{
+  "id": "ex-4am-mutatabiqat-shahira-l2-009",
+  "lessonCode": "mutatabiqat-shahira",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2016 — جداء مجموع وفرق بعامل",
+    "estimatedMinutes": 6,
+    "tags": [
+      "جداء مجموع وفرق",
+      "قيمة عبارة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mutatabiqat-shahira_P3",
+      "modelledOn": "BEM 2016 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $A$ حيث:",
+    "formulas": [
+      "A = 3(4x - 1)(4x + 1)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انشر و بسّط العبارة $A$ .",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $mx^2 + n$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "48",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-MUTATABIQA-MURABBA-MUAMIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على جداء مجموع حدّين وفرقهما: $(a + b)(a - b) = a^2 - b^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن الحدّين $a$ و $b$ ، ثم احسب مربع كل منهما: إذا كان $a = 3x$ فإن $a^2 = 9x^2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 48x^2 - 3$ إذن $m = 48$ .",
+        "incorrect": "طبّق المتطابقة الشهيرة حدًّا حدًّا (مربع كل حد والحد المضاعف)، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$A = 3(4x - 1)(4x + 1)$",
+          "$A = 3\\left[(4x)^2 - 1^2\\right]$",
+          "$A = 3(16x^2 - 1)$"
+        ],
+        "result": "A = 48x^2 - 3"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $mx^2 + n$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-JIDAA-MAJMU-FARQ-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 48x^2 - 3$ إذن $n = -3$ .",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $n$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$A = 48x^2 - 3$"
+        ],
+        "result": "n = -3"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب قيمة العبارة $A$ من أجل $x = \\dfrac{1}{4}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يمكنك التعويض في الشكل المعطى: ماذا يساوي أحد العاملين من أجل هذه القيمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 0$.",
+        "incorrect": "عوّض $x$ في كل حد، واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال الشكل المعطى: $A = 3\\left(4 \\times \\dfrac{1}{4} - 1\\right)\\left(4 \\times \\dfrac{1}{4} + 1\\right) = 3 \\times 0 \\times 2$",
+          "أو باستعمال الشكل المنشور: $A = 48 \\times \\dfrac{1}{16} - 3 = 3 - 3$"
+        ],
+        "result": "A = 0"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

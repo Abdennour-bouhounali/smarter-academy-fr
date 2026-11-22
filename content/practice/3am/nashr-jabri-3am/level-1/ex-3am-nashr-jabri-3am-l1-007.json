@@ -1,0 +1,227 @@
+{
+  "id": "ex-3am-nashr-jabri-3am-l1-007",
+  "lessonCode": "nashr-jabri-3am",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — نشر عبارة من الشكل x(a+b)",
+    "estimatedMinutes": 5,
+    "tags": [
+      "نشر",
+      "جداء حرف في قوسين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "انشر كلًّا من العبارات التالية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "انشر $A = x(x + 5)$ . الشكل الصحيح هو:",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$A = x^2 + 5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-FIRST-ONLY"
+        },
+        {
+          "id": "B",
+          "content": "$A = 2x + 5x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-LETTER-NOT-SQUARED"
+        },
+        {
+          "id": "C",
+          "content": "$A = x^2 + 5x$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد (أو الحرف) الذي أمام القوسين يضرب كل حدّ من الحدود التي بينهما، وليس الحدّ الأول وحده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب في كل حدّ مع إشارته: جداء عددين لهما الإشارة نفسها موجب، وجداء عددين إشارتاهما مختلفتان سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير (مثل $1$ أو $2$) في العبارة قبل النشر وبعده: يجب أن تجد العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = x^2 + 5x$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$A = x(x + 5)$",
+          "$A = x \\times x + x \\times 5$",
+          "$A = x^2 + 5x$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "انشر $B = 3x(2x - 1)$ . الشكل الصحيح هو:",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$B = 6x^2 - 1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-FIRST-ONLY"
+        },
+        {
+          "id": "B",
+          "content": "$B = 6x^2 + 3x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-NEG-NEG"
+        },
+        {
+          "id": "C",
+          "content": "$B = 6x^2 - 3x$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$B = 6x - 3x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-LETTER-NOT-SQUARED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد (أو الحرف) الذي أمام القوسين يضرب كل حدّ من الحدود التي بينهما، وليس الحدّ الأول وحده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب في كل حدّ مع إشارته: جداء عددين لهما الإشارة نفسها موجب، وجداء عددين إشارتاهما مختلفتان سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير (مثل $1$ أو $2$) في العبارة قبل النشر وبعده: يجب أن تجد العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 6x^2 - 3x$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$B = 3x(2x - 1)$",
+          "$B = 3x \\times 2x - 3x \\times 1$",
+          "$B = 6x^2 - 3x$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "انشر $C = -x(4 - x)$ . الشكل الصحيح هو:",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$C = -4x - x^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-NEG-NEG"
+        },
+        {
+          "id": "B",
+          "content": "$C = 4x - x^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-SIGN-NEG"
+        },
+        {
+          "id": "C",
+          "content": "$C = -4 + x^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-FIRST-ONLY"
+        },
+        {
+          "id": "D",
+          "content": "$C = x^2 - 4x$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد (أو الحرف) الذي أمام القوسين يضرب كل حدّ من الحدود التي بينهما، وليس الحدّ الأول وحده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب في كل حدّ مع إشارته: جداء عددين لهما الإشارة نفسها موجب، وجداء عددين إشارتاهما مختلفتان سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير (مثل $1$ أو $2$) في العبارة قبل النشر وبعده: يجب أن تجد العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = x^2 - 4x$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$C = -x(4 - x)$",
+          "$C = -x \\times 4 + x \\times x$",
+          "$C = x^2 - 4x$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-kusur-amaliyat-l1-003",
+  "lessonCode": "wadiya-idmajiya-kusur-amaliyat",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — قسمة عدد على عدد عشري",
+    "estimatedMinutes": 6,
+    "tags": [
+      "القسمة على عدد عشري",
+      "القيمة المقرّبة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نريد إنجاز القسمة $17{,}4 \\div 2{,}3$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما العدد الذي نضرب فيه حدّي الكتابة الكسرية $\\dfrac{17{,}4}{2{,}3}$ ليصير مقامها عددًا طبيعيًّا ؟ (أصغر قوّة للعدد $10$ تفي بالغرض)",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم رقمًا بعد الفاصلة في المقسوم عليه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نضرب الحدّين في 10 أو 100 … ليصير المقسوم عليه عددًا طبيعيًّا ، وتبقى قيمة الحاصل كما هي ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أصغر قوّة للعدد 10 تفي بالغرض ."
+        }
+      ],
+      "feedback": {
+        "correct": "$10$ : $\\dfrac{17{,}4}{2{,}3} = \\dfrac{174}{23}$ .",
+        "incorrect": "اضرب الحدّين في 10 أو 100 … حتى يصير المقسوم عليه عددًا طبيعيًّا ."
+      },
+      "solution": {
+        "lines": [
+          "في $2{,}3$ رقم واحد بعد الفاصلة ، فنضرب الحدّين في $10$ .",
+          "$\\dfrac{17{,}4}{2{,}3} = \\dfrac{174}{23}$ ."
+        ],
+        "result": "10"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}1$ بالنقصان لحاصل القسمة $17{,}4 \\div 2{,}3$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "7.5",
+      "misconceptionSignatures": [
+        {
+          "value": "7.6",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "7.56",
+          "id": "MISC-QARIBA-RANK"
+        },
+        {
+          "value": "7.13",
+          "id": "MISC-QARIBA-REMCOMMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "إن كان المقسوم عليه عشريًّا فاضرب المقسوم والمقسوم عليه في العدد نفسه (10 أو 100 …) لتحصل على قسمة على عدد طبيعي ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة : بالنقصان نُبقي الأرقام كما هي ، وبالزيادة نزيد وحدة على آخر رقم ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا نقرّب إلى الأقرب : القيمة بالنقصان لا تتجاوز الحاصل والقيمة بالزيادة تتجاوزه ."
+        }
+      ],
+      "feedback": {
+        "correct": "$7{,}5$ .",
+        "incorrect": "أنجز القسمة بعد الفاصلة وتوقّف عند الرتبة المطلوبة : بالنقصان دون تغيير آخر رقم ، وبالزيادة بإضافة وحدة إلى آخر رقم ."
+      },
+      "solution": {
+        "lines": [
+          "نضرب الحدّين في $10$ : $17{,}4 \\div 2{,}3 = 174 \\div 23$ .",
+          "بإنجاز القسمة حتى رقم بعد الفاصلة ثمّ ما يليه : $17{,}4 \\div 2{,}3 = 7{,}56\\ldots$ .",
+          "القيمة المقرّبة إلى $0{,}1$ بالنقصان : $7{,}5$ ."
+        ],
+        "result": "7{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}1$ بالزيادة لحاصل القسمة $17{,}4 \\div 2{,}3$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "7.6",
+      "misconceptionSignatures": [
+        {
+          "value": "7.5",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "7.57",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "إن كان المقسوم عليه عشريًّا فاضرب المقسوم والمقسوم عليه في العدد نفسه (10 أو 100 …) لتحصل على قسمة على عدد طبيعي ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة : بالنقصان نُبقي الأرقام كما هي ، وبالزيادة نزيد وحدة على آخر رقم ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا نقرّب إلى الأقرب : القيمة بالنقصان لا تتجاوز الحاصل والقيمة بالزيادة تتجاوزه ."
+        }
+      ],
+      "feedback": {
+        "correct": "$7{,}6$ .",
+        "incorrect": "أنجز القسمة بعد الفاصلة وتوقّف عند الرتبة المطلوبة : بالنقصان دون تغيير آخر رقم ، وبالزيادة بإضافة وحدة إلى آخر رقم ."
+      },
+      "solution": {
+        "lines": [
+          "نضرب الحدّين في $10$ : $17{,}4 \\div 2{,}3 = 174 \\div 23$ .",
+          "بإنجاز القسمة حتى رقم بعد الفاصلة ثمّ ما يليه : $17{,}4 \\div 2{,}3 = 7{,}56\\ldots$ .",
+          "القيمة المقرّبة إلى $0{,}1$ بالزيادة : $7{,}6$ ."
+        ],
+        "result": "7{,}6"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "id": "ex-4am-talis-hisab-atwal-l2-004",
+  "lessonCode": "talis-hisab-atwal",
+  "level": 2,
+  "metadata": {
+    "title": "احسب AP و LP",
+    "estimatedMinutes": 6,
+    "tags": [
+      "خاصية طالس",
+      "حساب طول"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-8",
+      "page": 110,
+      "section": "خاصية طالس",
+      "number": 8
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "(وحدة الطول هي السنتيمتر) $(NP) \\parallel (ML)$ ، والمستقيمان $(MN)$ و $(LP)$ يتقاطعان في $A$ ؛ $M$ بين $A$ و $N$ ، و $L$ بين $A$ و $P$ ؛ $AN = 15$ ، $AM = 9$ و $AL = 6$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0.0,
+          0.0
+        ],
+        "M": [
+          0.93560260868,
+          4.401664203302
+        ],
+        "N": [
+          1.559337681133,
+          7.336107005504
+        ],
+        "L": [
+          2.457456132867,
+          1.720729309053
+        ],
+        "P": [
+          4.095760221445,
+          2.867882181755
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "N"
+        },
+        {
+          "from": "A",
+          "to": "P"
+        },
+        {
+          "from": "M",
+          "to": "L",
+          "arrows": 1
+        },
+        {
+          "from": "N",
+          "to": "P",
+          "arrows": 1
+        }
+      ],
+      "labels": {
+        "A": "s"
+      },
+      "ariaLabel": "A و M و N على استقامة (M بين A و N) و A و L و P على استقامة (L بين A و P)؛ AN = 15 و AM = 9 و AL = 6، و (NP) يوازي (ML)",
+      "caption": "AN = 15 ، AM = 9 ، AL = 6",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $AP$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (عشري بالفاصلة مثل 2,75 أو كسر مثل 7/9)",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "3,6",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقط $A$ ، $M$ ، $N$ على استقامة والنقط $A$ ، $L$ ، $P$ على استقامة، و $(ML) \\parallel (NP)$ : المثلثان $AML$ و $ANP$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب النسب الثلاث المتساوية $\\dfrac{AM}{AN} = \\dfrac{AL}{AP} = \\dfrac{ML}{NP}$ ، واحتفظ بالمساواة التي فيها $AP$ وثلاثة أطوال معلومة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الطول المجهول بالجداء المتصالب (الرابع المتناسب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9}{15} = \\dfrac{6}{AP}$ ومنه $AP = 10\\,\\mathrm{cm}$ .",
+        "incorrect": "راجع المساواة المختارة: في كل نسبة طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: النقط $A$ ، $M$ ، $N$ على استقامة واحدة، والنقط $A$ ، $L$ ، $P$ على استقامة واحدة، و $(ML) \\parallel (NP)$ .",
+          "حسب خاصية طالس: $\\dfrac{AM}{AN} = \\dfrac{AL}{AP} = \\dfrac{ML}{NP}$",
+          "$\\dfrac{AM}{AN} = \\dfrac{AL}{AP}$ أي $\\dfrac{9}{15} = \\dfrac{6}{AP}$",
+          "$AP = \\dfrac{15 \\times 6}{9}$"
+        ],
+        "result": "AP = 10\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $LP$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (عشري بالفاصلة مثل 2,75 أو كسر مثل 7/9)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$L$ بين $A$ و $P$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل الطول $AP$ الذي وجدته."
+        }
+      ],
+      "feedback": {
+        "correct": "$LP = AP - AL = 10 - 6 = 4\\,\\mathrm{cm}$ .",
+        "incorrect": "$L$ بين $A$ و $P$ : الطول $LP$ فرق بين طولين."
+      },
+      "solution": {
+        "lines": [
+          "$L$ بين $A$ و $P$ إذن $LP = AP - AL$",
+          "$LP = 10 - 6$"
+        ],
+        "result": "LP = 4\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

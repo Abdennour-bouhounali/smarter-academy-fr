@@ -1,0 +1,192 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-kusur-natiqa-l4-009",
+  "lessonCode": "wadiya-idmajiya-kusur-natiqa",
+  "level": 4,
+  "metadata": {
+    "title": "مثلث بأضلاع كسرية",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مساحة مثلث",
+      "جمع كسور"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-61",
+      "page": 34,
+      "section": "أتعمّق",
+      "number": 61
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين الرابع",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$ABC$ مثلث، و $H$ نقطة من $[BC]$ بحيث $[AH]$ هو ارتفاع المثلث المتعلّق بالضلع $[BC]$ ، مع $AH = \\dfrac{4}{3}$ m و $BH = \\dfrac{5}{6}$ m و $HC = \\dfrac{7}{4}$ m ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب الطول $BC$ بالمتر .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "31/12",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "6/5",
+          "id": "MISC-JAMTARH-ACROSS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تعبّر عن الوضعية: جمع أجزاء أم طرح جزء من الكلّ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "وحّد المقامات بأصغر مقام مشترك ثمّ اجمع أو اطرح البسطين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل النتيجة، وتحقّق بمقارنتها بالواحد."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{31}{12}$ .",
+        "incorrect": "وحّد المقامات قبل الجمع أو الطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$H$ تنتمي إلى $[BC]$ ، فـ $BC = BH + HC$ .",
+          "$\\dfrac{5}{6} + \\dfrac{7}{4} = \\dfrac{10}{12} + \\dfrac{21}{12} = \\dfrac{31}{12}$ m ."
+        ],
+        "result": "\\dfrac{31}{12}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب مساحة المثلث $ABC$ بالمتر المربّع .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "31/18",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "31/9",
+          "id": "MISC-SYN-KUSUR-NOHALF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم الشكل واكتب بُعديه عليه بالوحدة نفسها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحة المستطيل جداء بُعديه، ومساحة المثلث نصف جداء قاعدته في ارتفاعه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل النتيجة واذكر الوحدة المناسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{31}{18}$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "المساحة $= \\dfrac{1}{2} \\times BC \\times AH$ .",
+          "$\\dfrac{1}{2} \\times \\dfrac{31}{12} \\times \\dfrac{4}{3} = \\dfrac{124}{72} = \\dfrac{31}{18}$ m² ."
+        ],
+        "result": "\\dfrac{31}{18}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب مساحة المثلث $ABH$ بالمتر المربّع .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "5/9",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "10/9",
+          "id": "MISC-SYN-KUSUR-NOHALF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم الشكل واكتب بُعديه عليه بالوحدة نفسها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحة المستطيل جداء بُعديه، ومساحة المثلث نصف جداء قاعدته في ارتفاعه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل النتيجة واذكر الوحدة المناسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{5}{9}$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "قاعدة المثلث $ABH$ هي $BH$ وارتفاعه $AH$ .",
+          "$\\dfrac{1}{2} \\times \\dfrac{5}{6} \\times \\dfrac{4}{3} = \\dfrac{20}{36} = \\dfrac{5}{9}$ m² ."
+        ],
+        "result": "\\dfrac{5}{9}"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

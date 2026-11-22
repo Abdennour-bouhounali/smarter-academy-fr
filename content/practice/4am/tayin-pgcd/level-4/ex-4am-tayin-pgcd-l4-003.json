@@ -1,0 +1,166 @@
+{
+  "id": "ex-4am-tayin-pgcd-l4-003",
+  "lessonCode": "tayin-pgcd",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2015 — PGCD(234 ; 156) والعدد P",
+    "estimatedMinutes": 12,
+    "tags": [
+      "PGCD",
+      "حصر القواسم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tayin-pgcd_P1",
+      "modelledOn": "BEM 2015 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 234 و 156 مع كتابة مراحل الحساب.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "78",
+      "misconceptionSignatures": [
+        {
+          "value": "39",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قائمة قواسم كل من العددين 234 و 156، مثنى مثنى (1 مع العدد نفسه، ثم 2 …) حتى لا يفوتك قاسم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استخرج القواسم المشتركة: الأعداد الموجودة في القائمتين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاسم المشترك الأكبر هو أكبر القواسم المشتركة، لا أيّ واحد منها."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 234 و 156 هي 1 ، 2 ، 3 ، 6 ، 13 ، 26 ، 39 ، 78، وأكبرها 78.",
+        "incorrect": "اكتب قائمتي القواسم كاملتين، ثم خذ أكبر عدد يظهر في القائمتين معًا."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 234 هي: 1 ، 2 ، 3 ، 6 ، 9 ، 13 ، 18 ، 26 ، 39 ، 78 ، 117 ، 234",
+          "قواسم العدد 156 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 12 ، 13 ، 26 ، 39 ، 52 ، 78 ، 156",
+          "القواسم المشتركة للعددين 234 و 156 هي: 1 ، 2 ، 3 ، 6 ، 13 ، 26 ، 39 ، 78",
+          "أكبرها هو 78، إذن:"
+        ],
+        "result": "PGCD(234 ; 156) = 78"
+      },
+      "work": "required",
+      "timeSeconds": 450
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب $\\dfrac{234}{156}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "3/2",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال السابق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 78.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال السابق.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{234}{156} = \\dfrac{234 \\div 78}{156 \\div 78}$"
+        ],
+        "result": "\\dfrac{234}{156} = \\dfrac{3}{2}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب العدد $P$ حيث: $P = \\dfrac{234}{156} - \\dfrac{5}{6} \\times \\dfrac{3}{5}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال على الشكل a/b أو عدد",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $\\dfrac{234}{156}$ بالكسر غير القابل للاختزال الذي وجدته في السؤال 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب أولوي: احسب الجداء أولًا، ثم وحّد المقامات."
+        }
+      ],
+      "feedback": {
+        "correct": "$P = \\dfrac{3}{2} - \\dfrac{1}{2} = 1$",
+        "incorrect": "الضرب أولوي على الطرح والجمع: احسب الجداء ثم وحّد المقامات."
+      },
+      "solution": {
+        "lines": [
+          "$P = \\dfrac{3}{2} - \\dfrac{5 \\times 3}{6 \\times 5}$",
+          "$P = \\dfrac{3}{2} - \\dfrac{1}{2}$"
+        ],
+        "result": "P = 1"
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

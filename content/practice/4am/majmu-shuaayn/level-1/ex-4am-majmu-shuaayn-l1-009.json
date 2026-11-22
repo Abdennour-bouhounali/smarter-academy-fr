@@ -1,0 +1,80 @@
+{
+  "id": "ex-4am-majmu-shuaayn-l1-009",
+  "lessonCode": "majmu-shuaayn",
+  "level": 1,
+  "generator": {
+    "tool": "unit11-majmu-gen.py",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — دراجة كهربائية في العاصمة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "انسحابان متتابعان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_majmu-shuaayn_P1",
+      "modelledOn": "act-3"
+    }
+  },
+  "statement": {
+    "content": "ياسين يستأجر دراجة كهربائية في الجزائر العاصمة ليساعد والدته في قضاء حاجاتها: يقطع مشوارا من المحطة A إلى المحطة B ، ثم مشوارا من B إلى المحطة C."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "انتقاله الفعلي من نقطة البداية يمثّله الشعاع",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{CA}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-AKS"
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{BC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSIHAB-NISYAN"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{AC}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم الانتقالين واحدا بعد الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انسحابان متتابعان يعطيان انسحابا واحدا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "شعاع الانسحاب الناتج يذهب من نقطة البداية إلى نقطة الوصول النهائية."
+        }
+      ],
+      "feedback": {
+        "correct": "المشواران المتتابعان انتقال واحد من A إلى C : $\\overrightarrow{AB} + \\overrightarrow{BC} = \\overrightarrow{AC}$ .",
+        "incorrect": "انسحابان متتابعان = انسحاب واحد شعاعه مجموع الشعاعين: من نقطة البداية إلى نقطة الوصول."
+      }
+    }
+  ]
+}

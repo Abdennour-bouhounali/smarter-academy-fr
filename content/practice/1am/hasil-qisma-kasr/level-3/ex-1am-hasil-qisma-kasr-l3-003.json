@@ -1,0 +1,190 @@
+{
+  "id": "ex-1am-hasil-qisma-kasr-l3-003",
+  "lessonCode": "hasil-qisma-kasr",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — انقل وأتمم",
+    "estimatedMinutes": 9,
+    "tags": [
+      "العدد الناقص",
+      "عدد عشري"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 3,
+      "file": "1am-s3-37",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "انقل وأتمم، وعبّر عن العدد الناقص بكسر عندما لا يكون عددًا طبيعيًا."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "$42 \\times \\ldots = 105$",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b (أو عدد)",
+      "expectedAnswer": "5/2",
+      "misconceptionSignatures": [
+        {
+          "value": "63",
+          "id": "MISC-HASIL-TARH"
+        },
+        {
+          "value": "4410",
+          "id": "MISC-HASIL-DARB"
+        },
+        {
+          "value": "42/105",
+          "id": "MISC-HASIL-QALB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد الناقص هو الذي نضربه في العامل المعروف لنحصل على الجداء المعطى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كيف نجد أحد عاملي جداء إذا عرفنا الجداء والعامل الآخر؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العدد الناقص على شكل حاصل قسمة، ثم على شكل كسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$42 \\times \\dfrac{105}{42} = 105$ : العدد الناقص هو $\\dfrac{105}{42}$.",
+        "incorrect": "العدد الذي نضربه في $b$ لنحصل على $a$ هو حاصل قسمة $a$ على $b$ ، أي $\\dfrac{a}{b}$ ؛ لا نطرح العددين ولا نضربهما."
+      },
+      "solution": {
+        "lines": [
+          "العدد الناقص هو حاصل القسمة $105 \\div 42 = \\dfrac{105}{42}$",
+          "تحقّق : $42 \\times \\dfrac{105}{42} = 105$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "$\\dfrac{\\ldots}{23} \\times 23 = 18$",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "18",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-HASIL-TARH"
+        },
+        {
+          "value": "414",
+          "id": "MISC-HASIL-DARB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما مقام الكسر ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كسر مضروب في مقامه يعطي بسطه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ما البسط الذي يعطي النتيجة المكتوبة ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{18}{23} \\times 23 = 18$ : البسط الناقص هو 18.",
+        "incorrect": "العدد الذي نضربه في $b$ لنحصل على $a$ هو حاصل قسمة $a$ على $b$ ، أي $\\dfrac{a}{b}$ ؛ لا نطرح العددين ولا نضربهما."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{18}{23} \\times 23 = 18$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اكتب العدد الناقص في السؤال الأول على شكل عدد عشري.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة)",
+      "expectedAnswer": "2,5",
+      "misconceptionSignatures": [
+        {
+          "value": "105,42",
+          "id": "MISC-HASIL-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجعل المقام 10 أو 100 أو 1000 بالضرب في عدد مناسب، أو أجرِ القسمة العشرية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل تتوقّف الأرقام بعد الفاصلة أم تتكرّر بلا نهاية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نتحدّث عن عدد عشري عندما تتوقّف الأرقام بعد الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{105}{42}$ = $2{,}5$",
+        "incorrect": "حاصل القسمة عدد عشري إذا انتهت أرقامه بعد الفاصلة ؛ وإلاّ فالكسر هو الكتابة المضبوطة له."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{105}{42}$ = $\\dfrac{5}{2}$",
+          "$\\dfrac{5}{2} = \\dfrac{5 \\times 5}{2 \\times 5} = \\dfrac{25}{10}$ (نضرب الحدّين في العدد نفسه)",
+          "$\\dfrac{25}{10}$ = $2{,}5$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

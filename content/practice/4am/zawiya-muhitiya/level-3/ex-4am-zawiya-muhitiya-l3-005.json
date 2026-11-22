@@ -1,0 +1,109 @@
+{
+  "id": "ex-4am-zawiya-muhitiya-l3-005",
+  "lessonCode": "zawiya-muhitiya",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — المثلث AOB متساوي الساقين",
+    "estimatedMinutes": 3,
+    "tags": [
+      "خاصية 1"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_zawiya-muhitiya_P2",
+      "modelledOn": "act-4"
+    }
+  },
+  "statement": {
+    "content": "ABC مثلث مرسوم في دائرة مركزها O، و $\\widehat{BAC} = 70^\\circ$ (A على القوس الكبير BC)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قيس $\\widehat{BOC}$ بالدرجة؟",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "140",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوس الذي تحصره كل زاوية: هل هو نفس القوس؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الزاويتين: أيهما أكبر، المركزية أم المحيطية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قيس الزاوية المحيطية نصف قيس الزاوية المركزية التي تحصر معها نفس القوس."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{BOC} = 2 \\times 70^\\circ = 140^\\circ$ .",
+        "incorrect": "المركزية ضعف المحيطية."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-DIF",
+          "value": "35"
+        },
+        {
+          "id": "MISC-MUHITIYA-MUSAWIYA",
+          "value": "70"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "statement": "ما قيس $\\widehat{OBC}$ بالدرجة؟",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "20",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالزوايا التي تعطيها خاصيتا الزاوية المحيطية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم استعمل مجموع أقياس زوايا المثلث، أو الزاوية المستقيمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل زاوية بدلالة القوس الذي تحصره قبل أن تحسب."
+        }
+      ],
+      "feedback": {
+        "correct": "OBC متساوي الساقين ($OB = OC$): $\\dfrac{180^\\circ - 140^\\circ}{2} = 20^\\circ$ .",
+        "incorrect": "زاويتا القاعدة [BC] متقايستان، ومجموع الزوايا 180 درجة."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-JUZ",
+          "value": "40"
+        }
+      ]
+    }
+  ]
+}

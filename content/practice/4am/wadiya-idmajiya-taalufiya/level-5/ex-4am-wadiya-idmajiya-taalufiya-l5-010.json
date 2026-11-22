@@ -1,0 +1,398 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-taalufiya-l5-010",
+  "lessonCode": "wadiya-idmajiya-taalufiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2011 — ثلاثة مصابيح لقاعة مطالعة بالبويرة",
+    "estimatedMinutes": 35,
+    "tags": [
+      "وضعية إدماجية",
+      "ثلاث صيغ",
+      "تمثيل بياني"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-taalufiya_P2",
+      "modelledOn": "BEM 2011 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2011",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تريد بلدية بالبويرة تجديد مصابيح قاعة المطالعة، وتُستعمل القاعة 6 ساعات في اليوم. عُرضت عليها ثلاثة أنواع من المصابيح:\n- مصباح عادي: ثمنه 120DA ، ويستهلك ما قيمته 3DA من الكهرباء في اليوم.\n- مصباح اقتصادي: ثمنه 420DA ، ويستهلك ما قيمته 1,5DA في اليوم.\n- مصباح LED: ثمنه 720DA ، ويستهلك ما قيمته 0,5DA في اليوم.\nنسمّي $x$ عدد أيام الاستعمال، و $f(x)$ ، $h(x)$ ، $g(x)$ التكلفة بـ DA (الشراء والاستهلاك) للمصباح العادي والاقتصادي و LED على الترتيب، حيث: $f(x) = 3x + 120$ و $h(x) = 1{,}5x + 420$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عبّر عن $g(x)$ بدلالة $x$ .",
+      "statement": "أعط العددين $a$ و $b$ حيث: $g(x) = ax + b$ ، ابدأ بالعدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "1/2",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "720"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما يُستهلك في كل يوم."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة الاستهلاك اليومي هي معامل $x$ .",
+        "incorrect": "معامل $x$ هو ما يتكرّر كل يوم، لا ثمن المصباح."
+      },
+      "solution": {
+        "lines": [
+          "$g(x) = 0{,}5x + 720$"
+        ],
+        "result": "g(x) = 0{,}5x + 720"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "ثم العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "720",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "1/2"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما يُدفع مرّة واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن المصباح هو الحدّ الثابت.",
+        "incorrect": "الحدّ الثابت لا يتعلّق بعدد الأيام."
+      },
+      "solution": {
+        "lines": [
+          "$g(x) = 0{,}5x + 720$"
+        ],
+        "result": "g(x) = 0{,}5x + 720"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "احسب تكلفة كل مصباح بعد 100 يوم من الاستعمال.",
+      "statement": "المصباح العادي:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: التكلفة بـ DA",
+      "expectedAnswer": "420",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAALUFI-NISYAN-B",
+          "value": "300"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $f(100)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 \\times 100 + 120$ .",
+        "incorrect": "لا تنس ثمن الشراء."
+      },
+      "solution": {
+        "lines": [
+          "$f(100) = 300 + 120 = 420DA$",
+          "$h(100) = 150 + 420 = 570DA$",
+          "$g(100) = 50 + 720 = 770DA$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "المصباح الاقتصادي:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: التكلفة بـ DA",
+      "expectedAnswer": "570",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAALUFI-NISYAN-B",
+          "value": "150"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $h(100)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}5 \\times 100 + 420$ .",
+        "incorrect": "لا تنس ثمن الشراء."
+      },
+      "solution": {
+        "lines": [
+          "$f(100) = 300 + 120 = 420DA$",
+          "$h(100) = 150 + 420 = 570DA$",
+          "$g(100) = 50 + 720 = 770DA$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "statement": "مصباح LED:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: التكلفة بـ DA",
+      "expectedAnswer": "770",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAALUFI-NISYAN-B",
+          "value": "50"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $g(100)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}5 \\times 100 + 720$ .",
+        "incorrect": "لا تنس ثمن الشراء."
+      },
+      "solution": {
+        "lines": [
+          "$f(100) = 300 + 120 = 420DA$",
+          "$h(100) = 150 + 420 = 570DA$",
+          "$g(100) = 50 + 720 = 770DA$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ا",
+      "lead": "حلّ المعادلتين الآتيتين، ثم فسّر كل حل.",
+      "statement": "$f(x) = h(x)$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الأيام",
+      "expectedAnswer": "200",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$3x + 120 = 1{,}5x + 420$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}5x = 300$ .",
+        "incorrect": "اجمع حدود $x$ في طرف واحد."
+      },
+      "solution": {
+        "lines": [
+          "$3x + 120 = 1{,}5x + 420$",
+          "$1{,}5x = 300$",
+          "$x = 200$",
+          "بعد 200 يوم تتساوى تكلفتا المصباح العادي والاقتصادي."
+        ],
+        "result": "x = 200"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "sub": "ب",
+      "statement": "$h(x) = g(x)$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الأيام",
+      "expectedAnswer": "300",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$1{,}5x + 420 = 0{,}5x + 720$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 720 - 420$ .",
+        "incorrect": "اجمع حدود $x$ في طرف واحد."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}5x + 420 = 0{,}5x + 720$",
+          "$x = 300$",
+          "بعد 300 يوم تتساوى تكلفتا المصباح الاقتصادي و LED."
+        ],
+        "result": "x = 300"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q8",
+      "step": "04",
+      "lead": "المستوي منسوب إلى معلم متعامد $(O, \\vec{i} , \\vec{j})$ .",
+      "statement": "مثّل بيانيا الدوال $f$ و $h$ و $g$ من أجل $0 \\leqslant x \\leqslant 400$ .\n(نأخذ 1cm على محور الفواصل يمثل 50 يوما، و 1cm على محور التراتيب يمثل 100DA)",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب صورتي العددين 0 و 400 بكل دالة."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(400) = 1320$ ، $h(400) = 1020$ ، $g(400) = 920$ .",
+        "incorrect": "علّم نقطتين من كل تمثيل بالوحدتين المعطاتين."
+      },
+      "solution": {
+        "lines": [
+          "تمثيل $f$ : من $(0 ; 120)$ إلى $(400 ; 1320)$ .",
+          "تمثيل $h$ : من $(0 ; 420)$ إلى $(400 ; 1020)$ .",
+          "تمثيل $g$ : من $(0 ; 720)$ إلى $(400 ; 920)$ ."
+        ]
+      },
+      "timeSeconds": 420
+    },
+    {
+      "id": "q9",
+      "step": "05",
+      "statement": "☜ تُستعمل المصابيح سنة كاملة (365 يوما) قبل المراجعة. ما هو المصباح الأقل تكلفة؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "المصباح العادي",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        },
+        {
+          "id": "B",
+          "content": "المصباح الاقتصادي",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        },
+        {
+          "id": "C",
+          "content": "مصباح LED",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "365 أكبر من حلّي المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب التكاليف الثلاث من أجل 365 يوما."
+        }
+      ],
+      "feedback": {
+        "correct": "1215DA و 967,5DA و 902,5DA .",
+        "incorrect": "احسب $f(365)$ و $h(365)$ و $g(365)$ ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "$f(365) = 3 \\times 365 + 120 = 1215DA$",
+          "$h(365) = 1{,}5 \\times 365 + 420 = 967{,}5DA$",
+          "$g(365) = 0{,}5 \\times 365 + 720 = 902{,}5DA$",
+          "إذن مصباح LED هو الأقل تكلفة لسنة (قبل 200 يوم: العادي، بين 200 و 300 يوم: الاقتصادي، بعد 300 يوم: LED)."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l4-003",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — الرأس الرابع بأعداد سالبة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "متوازي أضلاع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hisab-murakkibatay_P3",
+      "modelledOn": "ex-14"
+    }
+  },
+  "statement": {
+    "content": "$A(-3\\,;\\,-2)$ ، $B(2\\,;\\,-4)$ ، $C(4\\,;\\,1)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا D حيث ABCD متوازي أضلاع:",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "point",
+      "answerFormat": "الإحداثيتان (x ; y) — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "-1",
+        "y": "3"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "9",
+            "y": "-1"
+          },
+          "id": "MISC-MAALAM-TARTIB-NUQAT"
+        },
+        {
+          "value": {
+            "x": "-5",
+            "y": "-7"
+          },
+          "id": "MISC-SHUAA-TARTIB-RUUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المساواة الشعاعية لمتوازي الأضلاع ABCD بترتيب رؤوسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع الأول ومقابله في الاتجاه نفسه: $\\overrightarrow{AB} = \\overrightarrow{DC}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب معادلتين (للفاصلة وللترتيب) وحلّهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AB}\\begin{pmatrix} 5 \\\\ -2 \\end{pmatrix}$ ؛ $4 - x_D = 5$ و $1 - y_D = -2$ ، إذن $D(-1\\,;\\,3)$ .",
+        "incorrect": "اكتب AB = DC ثم حلّ معادلتين."
+      }
+    }
+  ]
+}

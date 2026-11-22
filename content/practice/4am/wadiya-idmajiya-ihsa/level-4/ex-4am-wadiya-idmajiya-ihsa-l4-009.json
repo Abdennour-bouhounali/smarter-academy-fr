@@ -1,0 +1,239 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ihsa-l4-009",
+  "lessonCode": "wadiya-idmajiya-ihsa",
+  "level": 4,
+  "metadata": {
+    "title": "أعمار المتسابقين في مسابقة ولائية",
+    "estimatedMinutes": 10,
+    "tags": [
+      "مخطط بالأعمدة",
+      "التكرار المجمع الصاعد",
+      "التواتر",
+      "الوسيط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ihsa_P1"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "يمثّل المخطط بالأعمدة الآتي أعمار المتسابقين في مسابقة رياضيات ولائية تشجّع على العلم والاجتهاد:",
+    "figure": {
+      "kind": "chart",
+      "type": "bar",
+      "ariaLabel": "مخطط بالأعمدة لأعمار 40 متسابقا: 13 و 14 و 15 و 16 سنة",
+      "xTitle": "العمر (سنة)",
+      "yTitle": "عدد المتسابقين",
+      "y": {
+        "max": 16,
+        "step": 2
+      },
+      "bars": [
+        {
+          "label": "13",
+          "value": 10
+        },
+        {
+          "label": "14",
+          "value": 14
+        },
+        {
+          "label": "15",
+          "value": 10
+        },
+        {
+          "label": "16",
+          "value": 6
+        }
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب عدد المتسابقين.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "40",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-IHSA-QIRAA-MUKHATTAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ ارتفاع كل عمود: الأعداد مكتوبة كل 2 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$10 + 14 + 10 + 6 = 40$ .",
+        "incorrect": "اقرأ كل عمود على التدريج بدقة ثم اجمع."
+      },
+      "solution": {
+        "lines": [
+          "القراءة: 10 ، 14 ، 10 ، 6 .",
+          "$10 + 14 + 10 + 6 = 40$"
+        ],
+        "result": "40"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "نهتمّ بالمتسابقين الذين عمرهم 14 سنة على الأكثر.",
+      "statement": "احسب عددهم.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "24",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-IHSA-SARAMA"
+        },
+        {
+          "value": "14",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        },
+        {
+          "value": "30",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«14 سنة على الأكثر» تعني 13 أو 14 سنة."
+        }
+      ],
+      "feedback": {
+        "correct": "$10 + 14 = 24$ .",
+        "incorrect": "هذا العدد هو التكرار المجمع الصاعد للقيمة 14 ."
+      },
+      "solution": {
+        "lines": [
+          "$10 + 14 = 24$"
+        ],
+        "result": "24"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب النسبة المئوية التي يمثّلونها.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: النسبة المئوية دون الرمز %",
+      "expectedAnswer": "60",
+      "misconceptionSignatures": [
+        {
+          "value": "24",
+          "id": "MISC-IHSA-TAWATUR-BILA-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم على التكرار الكلي ثم اضرب في 100 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{24}{40} \\times 100 = 60$ .",
+        "incorrect": "اقسم عددهم على التكرار الكلي، ثم اضرب في 100 ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{24}{40} \\times 100 = 60$"
+        ],
+        "result": "60\\%"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "عيّن وسيط أعمار المتسابقين.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة إن لزم)",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "value": "14,5",
+          "id": "MISC-IHSA-WASIT-QIMA-WUSTA-JADWAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الرتبتان الوسطيان 20 و 21 ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل التكرارات المجمعة الصاعدة."
+        }
+      ],
+      "feedback": {
+        "correct": "الرتبتان 20 و 21 تقعان في العمر 14 ، فالوسيط 14 .",
+        "incorrect": "حدّد العمر الذي تقع فيه الرتبتان 20 و 21 بالتكرارات المجمعة الصاعدة."
+      },
+      "solution": {
+        "lines": [
+          "التكرارات المجمعة الصاعدة: 10 ، 24 ، 34 ، 40 .",
+          "الرتب من 11 إلى 24 للعمر 14 .",
+          "$\\dfrac{14 + 14}{2} = 14$"
+        ],
+        "result": "14"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

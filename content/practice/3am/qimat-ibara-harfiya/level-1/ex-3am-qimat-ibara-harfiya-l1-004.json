@@ -1,0 +1,253 @@
+{
+  "id": "ex-3am-qimat-ibara-harfiya-l1-004",
+  "lessonCode": "qimat-ibara-harfiya",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مربّع عدد سالب",
+    "estimatedMinutes": 7,
+    "tags": [
+      "قوة",
+      "عدد سالب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نريد حساب قيمة العبارة $x^2$ من أجل $x = -3$ ثم قيم عبارات أخرى."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ سطر يحسب $x^2$ من أجل $x = -3$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(-3)^2$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$-3^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QIMA-NEG-POWER"
+        },
+        {
+          "id": "C",
+          "content": "$(-3) \\times 2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QIMA-SQUARE-DOUBLE"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كل سطر وانظر كيف كُتب العدد المعوَّض."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تأكّد من علامة الضرب المضمَرة ومن الأقواس حول العدد السالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب قيمة كل سطر واحتفظ بالسطر الذي يحترم قواعد التعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "السطر $(-3)^2$ هو الصحيح، وقيمته $9$ .",
+        "incorrect": "أعد قراءة كل سطر: هل أُظهرت علامة الضرب؟ وهل وُضع العدد السالب بين قوسين؟"
+      },
+      "solution": {
+        "lines": [
+          "السطر الصحيح هو $(-3)^2$ ، لأنّ العدد المعوَّض يظهر في كل مكان من الحرف، وعلامة الضرب ظاهرة، والعدد السالب بين قوسين.",
+          "$(-3)^2 = 9$"
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب قيمة العبارة $x^2 + 1$ من أجل $x = -4$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "17",
+      "misconceptionSignatures": [
+        {
+          "value": "-15",
+          "id": "MISC-QIMA-NEG-POWER"
+        },
+        {
+          "value": "-7",
+          "id": "MISC-QIMA-SQUARE-DOUBLE"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = -4$ هي $17$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$x^2 + 1 = (-4)^2 + 1$",
+          "$= 16 + 1$",
+          "$= 17$"
+        ],
+        "result": "17"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب قيمة العبارة $10 - x^2$ من أجل $x = -2$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "14",
+          "id": "MISC-QIMA-SQUARE-DOUBLE"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = -2$ هي $6$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$10 - x^2 = 10 - (-2)^2$",
+          "$= 10 - 4$",
+          "$= 6$"
+        ],
+        "result": "6"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب قيمة العبارة $x^2 - 9$ من أجل $x = -5$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "16",
+      "misconceptionSignatures": [
+        {
+          "value": "-34",
+          "id": "MISC-QIMA-NEG-POWER"
+        },
+        {
+          "value": "-19",
+          "id": "MISC-QIMA-SQUARE-DOUBLE"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = -5$ هي $16$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$x^2 - 9 = (-5)^2 - 9$",
+          "$= 25 - 9$",
+          "$= 16$"
+        ],
+        "result": "16"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

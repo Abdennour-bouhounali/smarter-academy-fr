@@ -1,0 +1,236 @@
+{
+  "id": "ex-1am-bahth-adad-naqisa-l4-001",
+  "lessonCode": "bahth-adad-naqisa",
+  "level": 4,
+  "metadata": {
+    "title": "طابعة النادي",
+    "estimatedMinutes": 10,
+    "tags": [
+      "مقدّم",
+      "دفعات"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-1",
+      "page": 86,
+      "section": "أتعمّق — إنتاج واستعمال عبارات حرفية",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "اشترى نادي القسم حاسوبًا ثمنه 84 000 دج. دفع 24 000 دج مقدّمًا واتفق على دفع الباقي بـ 12 دفعة شهرية متساوية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما المبلغ الباقي دفعه بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "60000",
+      "misconceptionSignatures": [
+        {
+          "value": "108000",
+          "id": "MISC-NAQISA-SAMEOP"
+        },
+        {
+          "value": "-60000",
+          "id": "MISC-NAQISA-REVSUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للجمع هي الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $60000+24000=84000$ ، فالعدد الناقص هو $60000$ .",
+        "incorrect": "في مجموع نطرح العدد المعلوم من الناتج: لا نجمع مرّة أخرى."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square+24000=84000$ .",
+          "نُرجع بالعملية العكسية: $\\square=84000-24000=60000$ .",
+          "نتحقّق: $60000+24000=84000$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما مبلغ الدفعة الشهرية بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "5000",
+      "misconceptionSignatures": [
+        {
+          "value": "720000",
+          "id": "MISC-NAQISA-MULAGAIN"
+        },
+        {
+          "value": "0.0002",
+          "id": "MISC-NAQISA-DIVREV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للضرب هي القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $5000\\times 12=60000$ ، فالعدد الناقص هو $5000$ .",
+        "incorrect": "في جداء نقسم الناتج على العدد المعلوم: لا نضربه فيه ولا نقسم المعلوم على الناتج."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square\\times 12=60000$ .",
+          "نُرجع بالعملية العكسية: $\\square=60000\\div 12=5000$ .",
+          "نتحقّق: $5000\\times 12=60000$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "تحقّق: احسب 12 دفعة من 5 000 دج بالدينار.",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "60000",
+      "misconceptionSignatures": [],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تربط الأعداد المعطاة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب بالترتيب المناسب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن نتيجتك بالناتج المعلوم في الوضعية."
+        }
+      ],
+      "feedback": {
+        "correct": "$12\\times 5000=60000$ .",
+        "incorrect": "أعد الحساب بعناية."
+      },
+      "solution": {
+        "lines": [
+          "$12\\times 5000=60000$ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "لو دُفع الباقي على 10 دفعات متساوية، فما مبلغ الدفعة بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "6000",
+      "misconceptionSignatures": [
+        {
+          "value": "600000",
+          "id": "MISC-NAQISA-MULAGAIN"
+        },
+        {
+          "value": "1/6000",
+          "id": "MISC-NAQISA-DIVREV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للضرب هي القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $6000\\times 10=60000$ ، فالعدد الناقص هو $6000$ .",
+        "incorrect": "في جداء نقسم الناتج على العدد المعلوم: لا نضربه فيه ولا نقسم المعلوم على الناتج."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square\\times 10=60000$ .",
+          "نُرجع بالعملية العكسية: $\\square=60000\\div 10=6000$ .",
+          "نتحقّق: $6000\\times 10=60000$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

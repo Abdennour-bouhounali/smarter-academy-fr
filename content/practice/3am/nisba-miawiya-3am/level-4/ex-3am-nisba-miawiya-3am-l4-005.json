@@ -1,0 +1,223 @@
+{
+  "id": "ex-3am-nisba-miawiya-3am-l4-005",
+  "lessonCode": "nisba-miawiya-3am",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — كسر ونسبة مئوية",
+    "estimatedMinutes": 11,
+    "tags": [
+      "كسر من كمية",
+      "نسبة مئوية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "توزّع جمعية خيرية $240$ كتابا على مكتبات الأحياء، وتعبّر عن حصص التوزيع بكسور ثم بنسب مئوية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "تُوزّع $\\dfrac{3}{5}$ من الكتب على مكتبات الحيّ الشمالي. ما عدد هذه الكتب؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "144",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كل سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بالتعويض أو بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$144$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{5} \\times 240 = 144$ كتابا."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "ما النسبة المئوية لهذه الحصّة من الكتب كلّها؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "النسبة المئوية (بدون الرمز %)",
+      "expectedAnswer": "60",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الجزء؟ وما الكلّ الذي نقارن به؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نبحث عن العدد الذي يجعل الكسر «الجزء على الكلّ» مساويا للكسر «هذا العدد على مئة»."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع الكلّ تحت مئة في جدول تناسبية وضع الجزء تحت العدد المجهول، ثم أتمّم."
+        }
+      ],
+      "feedback": {
+        "correct": "$60$ .",
+        "incorrect": "النسبة المئوية هي العدد الذي يساوي الكسر «الجزء على الكلّ» حين نكتبه مقامه مئة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $\\dfrac{144}{240} = \\dfrac{t}{100}$ ، فنجد $t = \\dfrac{100 \\times 144}{240} = 60$ .",
+          "إذن النسبة المئوية هي $60\\,\\%$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "تُوزَّع $\\dfrac{1}{8}$ من الكتب على الحيّ الشرقي، أي $30$ كتابا. عبّر عن هذه الحصّة بنسبة مئوية.",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "النسبة المئوية (بدون الرمز %)",
+      "expectedAnswer": "12.5",
+      "misconceptionSignatures": [
+        {
+          "value": "800",
+          "id": "MISC-NISBA3-PART-WHOLE-SWAP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الجزء؟ وما الكلّ الذي نقارن به؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نبحث عن العدد الذي يجعل الكسر «الجزء على الكلّ» مساويا للكسر «هذا العدد على مئة»."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع الكلّ تحت مئة في جدول تناسبية وضع الجزء تحت العدد المجهول، ثم أتمّم."
+        }
+      ],
+      "feedback": {
+        "correct": "$12{,}5$ .",
+        "incorrect": "النسبة المئوية هي العدد الذي يساوي الكسر «الجزء على الكلّ» حين نكتبه مقامه مئة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $\\dfrac{30}{240} = \\dfrac{t}{100}$ ، فنجد $t = \\dfrac{100 \\times 30}{240} = 12{,}5$ .",
+          "إذن النسبة المئوية هي $12{,}5\\,\\%$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "تخصّص الجمعية $12{,}5\\,\\%$ من الكتب لمكتبة المستشفى. ما عدد هذه الكتب؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "2.4",
+          "id": "MISC-NISBA3-DIV100-ONLY"
+        },
+        {
+          "value": "3000",
+          "id": "MISC-NISBA3-MULT-T"
+        },
+        {
+          "value": "252.5",
+          "id": "MISC-NISBA3-ADD-T"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نأخذ منه النسبة؟ وما هي هذه النسبة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نسبة مئوية من عدد: نضرب هذا العدد في النسبة مقسومة على مئة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب النسبة على شكل كسر مقامه مئة، ثم احسب جداء العدد في هذا الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$30$ .",
+        "incorrect": "لحساب نسبة مئوية من عدد نضرب العدد في النسبة مقسومة على مئة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$12{,}5\\,\\%$ من $240$ هي $240 \\times \\dfrac{12{,}5}{100} = 30$ ."
+        ],
+        "result": "240 \\times \\dfrac{12{,}5}{100} = 30"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

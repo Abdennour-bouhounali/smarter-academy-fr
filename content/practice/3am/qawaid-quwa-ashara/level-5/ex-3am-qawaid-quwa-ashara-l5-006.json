@@ -1,0 +1,185 @@
+{
+  "id": "ex-3am-qawaid-quwa-ashara-l5-006",
+  "lessonCode": "qawaid-quwa-ashara",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — الخزّان والمزرعة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مسألة",
+      "وحدات",
+      "قوة لقوة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "فوق سطح بيت أمين خزّان ماء مكعّب حرفه $1\\ \\mathrm{m}$ ، وفي سهل متيجة مزرعة مساحتها $1\\ \\mathrm{km}^{2}$ . نعلم أنّ $1\\ \\mathrm{m} = 10^{2}\\ \\mathrm{cm}$ وأنّ $1\\ \\mathrm{km}^{2} = 10^{6}\\ \\mathrm{m}^{2}$ و $1\\ \\mathrm{ha} = 10^{4}\\ \\mathrm{m}^{2}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "الجزء الأول. حجم الخزّان بـ $\\mathrm{cm}^{3}$ هو $(10^{2})^{3} = 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوة الداخلية وأسّها، ثمّ الأسّ الخارجي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في قوة لقوة للعدد 10 نجري عملية واحدة على الأسّين: هل هي الجمع أم غيره؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر أنّ $(10^{2})^{3}$ جداء ثلاثة عوامل كلّ عامل منها $10^{2}$ ."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-QAWAID-QUWA-JAM"
+        },
+        {
+          "value": "8",
+          "id": "MISC-QAWAID-QUWA-ASS"
+        }
+      ],
+      "feedback": {
+        "correct": "$(10^{2})^{3} = 10^{6}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "حرف الخزّان $10^{2}\\ \\mathrm{cm}$ ، فحجمه $(10^{2})^{3}\\ \\mathrm{cm}^{3}$ .",
+          "نضرب الأسّين: $2 \\times 3 = 6$ ، أي $10^{6}\\ \\mathrm{cm}^{3}$ ."
+        ],
+        "result": "n = 6"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "قطرة الماء حجمها $5\\times10^{-2}\\ \\mathrm{cm}^{3}$ تقريبًا. عدد القطرات في الخزّان $\\dfrac{10^{6}}{5\\times10^{-2}} = 2\\times10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع الأعداد مع الأعداد، وقوى العدد 10 مع قوى العدد 10 (كلّ في مجموعته)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الأعداد وحدها ثمّ طبّق قاعدة قوى العدد 10 على الأسّين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اترك النتيجة على الشكل $k \\times 10^{n}$ كما تخرج دون تغيير العدد $k$ ، ما لم يُطلب منك غير ذلك."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-QAWAID-ISHARA"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{10^{6}}{5\\times10^{-2}} = 2\\times10^{7}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "قوى العدد 10: $\\dfrac{10^{6}}{10^{-2}} = 10^{6-(-2)} = 10^{8}$ ، والعدد: $\\dfrac{1}{5} = 0{,}2 = 2\\times10^{-1}$ .",
+          "$2\\times10^{-1}\\times10^{8} = 2\\times10^{-1+8} = 2\\times10^{7}$ قطرة."
+        ],
+        "result": "n = 7"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "الجزء الثاني. عدد الهكتارات في المزرعة: $\\dfrac{10^{6}}{10^{4}} = 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد البسط والمقام وأسّ كلّ منهما (انتبه إلى إشارة الأسّ)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في حاصل قسمة قوتين للعدد 10 نجري عملية واحدة على الأسّين: ما هي، وبأيّ ترتيب؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر أنّ $\\dfrac{10^{2}}{10^{1}}$ هو $\\dfrac{10\\times10}{10}$ ، وأنّ طرح أسّ سالب يعني جمع عدد موجب."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-QAWAID-DARB-ASS"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{10^{6}}{10^{4}} = 10^{2}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نطرح الأسّين: $6 - 4 = 2$ .",
+          "المزرعة $10^{2} = 100$ هكتار."
+        ],
+        "result": "n = 2"
+      }
+    }
+  ]
+}

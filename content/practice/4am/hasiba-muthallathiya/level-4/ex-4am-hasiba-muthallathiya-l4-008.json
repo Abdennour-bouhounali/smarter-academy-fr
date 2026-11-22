@@ -1,0 +1,212 @@
+{
+  "id": "ex-4am-hasiba-muthallathiya-l4-008",
+  "lessonCode": "hasiba-muthallathiya",
+  "level": 4,
+  "metadata": {
+    "title": "برنامج أحمد: زاوية ظلها 2,4 ورسالة خطأ رياضي",
+    "estimatedMinutes": 9,
+    "tags": [
+      "اللمسات العكسية",
+      "الظل",
+      "تصويب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hasiba-muthallathiya_P2",
+      "modelledOn": "ex-23"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يبحث أحمد عن الزاوية الحادة $x$ حيث $\\tan x = 2{,}4$ . ضغط ⁦ON tan 2,4 =⁩ فوجد على الشاشة $0{,}04191 \\ldots$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما الخطأ الذي ارتكبه أحمد؟",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الحاسبة مبرمجة بالراديان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-HASIBA-RAD"
+        },
+        {
+          "id": "B",
+          "content": "حسب ظل زاوية قيسها $2{,}4^{\\circ}$ ؛ كان عليه أن يضغط ⁦2nd⁩ ثم ⁦tan⁻¹⁩",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لا خطأ: $x \\approx 0{,}04^{\\circ}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-NISBA-BADAL-QAYS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الزاوية مجهولة والنسبة معلومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ماذا تحسب اللمسة المباشرة ⁦tan⁩ ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "اللمسة المباشرة تحسب نسبة زاوية معلومة؛ والمطلوب زاوية من نسبتها.",
+        "incorrect": "ميّز بين حساب نسبة زاوية معلومة وتعيين زاوية من نسبتها."
+      },
+      "solution": {
+        "lines": [
+          "البرنامج ⁦ON tan 2,4 =⁩ يحسب $\\tan 2{,}4^{\\circ} \\approx 0{,}0419$ : أحمد عامل $2{,}4$ كأنه قيس زاوية.",
+          "لتعيين $x$ من $\\tan x = 2{,}4$ نستعمل اللمسة العكسية ⁦2nd⁩ ثم ⁦tan⁻¹⁩ ."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب قيس $x$ بالتدوير إلى الوحدة من الدرجة.",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيس الزاوية بالدرجة، مدوّرا إلى الوحدة",
+      "expectedAnswer": "67",
+      "misconceptionSignatures": [
+        {
+          "value": "23",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        },
+        {
+          "value": "1",
+          "id": "MISC-MUTH-HASIBA-RAD"
+        },
+        {
+          "value": "2",
+          "id": "MISC-MUTH-NISBA-BADAL-QAYS"
+        },
+        {
+          "value": "0",
+          "id": "MISC-MUTH-AKS-BADAL-MUBASHIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لدينا $\\tan\\,x = 2{,}4$ : نعرف النسبة ونبحث عن القيس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اللمسة العكسية: ⁦2nd⁩ ثم ⁦tan⁻¹⁩ ثم النسبة ثم ⁦=⁩."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الحرف ⁦D⁩ (الدرجة)، ثم دوّر إلى الوحدة: انظر إلى الرقم الموالي للرقم الأخير الذي تحتفظ به."
+        }
+      ],
+      "feedback": {
+        "correct": "$x \\approx 67{,}38013505^{\\circ} \\approx 67^{\\circ}$ .",
+        "incorrect": "النسبة ليست القيس: القيس يُعيَّن باللمسة العكسية المناسبة والحاسبة مبرمجة بالدرجة، ثم يُدوَّر (لا يُبتر) إلى الوحدة."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال الحاسبة المبرمجة بالدرجة: ⁦ON 2nd tan⁻¹ 2,4 =⁩ يظهر على الشاشة $67{,}38013505$ .",
+          "الرقم الذي يلي رقم الوحدات هو 3، وهو أصغر من 5: نُبقي رقم الوحدات كما هو."
+        ],
+        "result": "x \\approx 67^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "جرّب أحمد بعد ذلك ⁦ON 2nd sin⁻¹ 2,4 =⁩ فظهرت رسالة «خطأ رياضي». ما السبب؟",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "كان عليه ألّا يضغط ⁦2nd⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-AKS-BADAL-MUBASHIR"
+        },
+        {
+          "id": "B",
+          "content": "الحاسبة مبرمجة بالراديان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-HASIBA-RAD"
+        },
+        {
+          "id": "C",
+          "content": "لا توجد زاوية حادة جيبها $2{,}4$ ، لأن جيب زاوية حادة أصغر من 1",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الجيب نسبة المقابل إلى الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن طول الوتر بطول أي ضلع آخر في المثلث القائم."
+        }
+      ],
+      "feedback": {
+        "correct": "الوتر أطول الأضلاع، فجيب زاوية حادة محصور بين 0 و 1.",
+        "incorrect": "فكّر في قيم الجيب الممكنة لزاوية حادة."
+      },
+      "solution": {
+        "lines": [
+          "الوتر أطول أضلاع المثلث القائم، فالجيب (المقابل على الوتر) محصور تماما بين 0 و 1.",
+          "لا توجد زاوية حادة جيبها $2{,}4$ ، لذلك تعرض الحاسبة «خطأ رياضي».",
+          "أما الظل فيمكن أن يكون أكبر من 1، لذلك يقبل ⁦tan⁻¹⁩ العدد $2{,}4$ ."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

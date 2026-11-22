@@ -1,0 +1,192 @@
+{
+  "id": "ex-3am-tasawi-muqaranat-kasrayn-l4-006",
+  "lessonCode": "tasawi-muqaranat-kasrayn",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — تساوي حاصل قسمة وكسر",
+    "estimatedMinutes": 10,
+    "tags": [
+      "قسمة كسر",
+      "تساوي كسرين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "ليكن $A = \\dfrac{3}{5} \\div \\dfrac{9}{10}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $A$ على أبسط شكل.",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "2/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كل سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2}{3}$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{3}{5} \\times \\dfrac{10}{9} = \\dfrac{30}{45} = \\dfrac{2}{3}$ ."
+        ],
+        "result": "\\dfrac{2}{3}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "جد العدد $x$ حيث $\\dfrac{2}{3} = \\dfrac{x}{21}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-TASAWI-ADDSAME"
+        },
+        {
+          "value": "63/2",
+          "id": "MISC-TASAWI-CROSSWRONG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في أيّ موضع يوجد العدد المجهول؟ وما الكسر الآخر في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كسران متساويان جداءاهما المتصالبان متساويان: اكتب المعادلة المناسبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة كتابة المساواة بعد التعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 14$ لأنّ $2 \\times 21 = 3 \\times x$ .",
+        "incorrect": "كسران متساويان جداءاهما المتصالبان متساويان: اكتب المعادلة بدقّة وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2}{3} = \\dfrac{x}{21}$ ، إذن $2 \\times 21 = 3 \\times x$ .",
+          "$x = 14$ ."
+        ],
+        "result": "x = 14"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "هل $A$ يساوي $\\dfrac{14}{21}$ ؟",
+      "statement": "هل $\\dfrac{2}{3} = \\dfrac{14}{21}$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لأنّ $2 \\neq 14$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-NUMERATORS"
+        },
+        {
+          "id": "B",
+          "content": "لا، لأنّ $21 - 3 \\neq 14 - 2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-ADDSAME"
+        },
+        {
+          "id": "C",
+          "content": "نعم، لأنّ $2 \\times 21 = 3 \\times 14$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكسران اللذان نختبر تساويهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الجداءين المتصالبين ثمّ قارنهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كسران متساويان إذا وفقط إذا تساوى جداءاهما المتصالبان؛ لا نحكم من الفروق ولا من البسطين وحدهما."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم، لأنّ $2 \\times 21 = 3 \\times 14 = 42$ .",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$2 \\times 21 = 42$ و $3 \\times 14 = 42$ .",
+          "الجداءان المتصالبان متساويان، إذن $\\dfrac{2}{3} = \\dfrac{14}{21}$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

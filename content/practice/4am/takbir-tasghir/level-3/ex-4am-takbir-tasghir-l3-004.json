@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-takbir-tasghir-l3-004",
+  "lessonCode": "takbir-tasghir",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — الهرم الصغير",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مقطع هرم",
+      "الحجم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takbir-tasghir_P2",
+      "modelledOn": "act-5"
+    }
+  },
+  "statement": {
+    "content": "هرم حجمه $270\\,\\mathrm{cm}^3$ ، يقطعه مستو يوازي قاعدته فيعطي هرما صغيرا له نفس الرأس، ارتفاعه ثلث ارتفاع الهرم الأصلي."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "احسب حجم الهرم الصغير بالسنتيمتر المكعب.",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة مثل 1,25 ، أو كسر مثل 4/7)",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAKBIR-HAJM-K",
+          "value": "90"
+        },
+        {
+          "id": "MISC-TAKBIR-HAJM-K",
+          "value": "30"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الهرم الصغير تصغير للهرم الأصلي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نسبة التصغير $k = \\dfrac{1}{3}$ (نسبة الارتفاعين)، والحجم يُضرب في $k^3$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\left(\\dfrac{1}{3}\\right)^3 = \\dfrac{1}{27}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{27} \\times 270 = 10\\,\\mathrm{cm}^3$ .",
+        "incorrect": "الحجم لا يُقسم على 3 فقط: يُضرب في $k^3$ ."
+      }
+    }
+  ]
+}

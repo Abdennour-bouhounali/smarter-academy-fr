@@ -1,0 +1,80 @@
+{
+  "id": "ex-4am-majmu-shuaayn-l2-004",
+  "lessonCode": "majmu-shuaayn",
+  "level": 2,
+  "generator": {
+    "tool": "unit11-majmu-gen.py",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — سلسلة من ثلاثة أشعة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "علاقة شال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_majmu-shuaayn_P2",
+      "modelledOn": "know-4"
+    }
+  },
+  "statement": {
+    "content": "A و B و C و D أربع نقط."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "$\\overrightarrow{AB} + \\overrightarrow{BC} + \\overrightarrow{CD} =$",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{DA}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-AKS"
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{AD}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{AC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSIHAB-NISYAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى نهاية الشعاع الأول ومبدأ الشعاع الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "علاقة شال تتطلب أن تكون نهاية الأول مبدأ الثاني؛ يمكن تبديل ترتيب الحدّين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع يبدأ من مبدأ الأول وينتهي عند نهاية الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "شال مرتين: $\\overrightarrow{AB} + \\overrightarrow{BC} = \\overrightarrow{AC}$ ثم $\\overrightarrow{AC} + \\overrightarrow{CD} = \\overrightarrow{AD}$ .",
+        "incorrect": "علاقة شال: نهاية الأول مبدأ الثاني، والمجموع من مبدأ الأول إلى نهاية الثاني."
+      }
+    }
+  ]
+}

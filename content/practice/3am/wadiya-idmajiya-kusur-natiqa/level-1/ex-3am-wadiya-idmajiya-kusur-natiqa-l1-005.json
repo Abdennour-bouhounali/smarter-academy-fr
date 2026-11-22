@@ -1,0 +1,187 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-kusur-natiqa-l1-005",
+  "lessonCode": "wadiya-idmajiya-kusur-natiqa",
+  "level": 1,
+  "metadata": {
+    "title": "سلاسل عمليات على كسور",
+    "estimatedMinutes": 8,
+    "tags": [
+      "سلسلة عمليات",
+      "أولوية العمليات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثاني",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الأعداد الناطقة $A$ و $B$ و $C$ .",
+    "formulas": [
+      "A = \\left(\\dfrac{3}{4} - \\dfrac{1}{3}\\right) \\times \\dfrac{6}{5}",
+      "B = \\dfrac{7}{4} \\div \\left(\\dfrac{1}{2} + \\dfrac{1}{3}\\right)",
+      "C = -\\dfrac{1}{2} + \\dfrac{3}{4} \\div \\left(-\\dfrac{3}{2}\\right)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $A$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "1/2",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العمليات في العبارة وما يُنجز منها أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر واختزل في نهايتها."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{1}{2}$ .",
+        "incorrect": "احترم أولوية العمليات واحسب سطرًا بسطر، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "ما بين القوسين: $\\dfrac{3}{4} - \\dfrac{1}{3} = \\dfrac{9}{12} - \\dfrac{4}{12} = \\dfrac{5}{12}$ .",
+          "$\\dfrac{5}{12} \\times \\dfrac{6}{5} = \\dfrac{30}{60} = \\dfrac{1}{2}$ ."
+        ],
+        "result": "\\dfrac{1}{2}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $B$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "21/10",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "35/24",
+          "id": "MISC-AMAL-NOFLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نقسمه وما العدد الذي نقسم عليه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على كسر غير معدوم هي الضرب في مقلوبه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالضرب: ناتج القسمة في القاسم يعطي المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{21}{10}$ .",
+        "incorrect": "القسمة على كسر هي الضرب في مقلوبه؛ أعد الحساب بعناية."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{2} + \\dfrac{1}{3} = \\dfrac{5}{6}$ .",
+          "$\\dfrac{7}{4} \\div \\dfrac{5}{6} = \\dfrac{7}{4} \\times \\dfrac{6}{5} = \\dfrac{42}{20} = \\dfrac{21}{10}$ ."
+        ],
+        "result": "\\dfrac{21}{10}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "احسب $C$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "-1",
+      "misconceptionSignatures": [
+        {
+          "value": "-1/6",
+          "id": "MISC-AMAL-PRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العمليات في العبارة وما يُنجز منها أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كلّ خطوة في سطر واختزل في نهايتها."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $-1$ .",
+        "incorrect": "احترم أولوية العمليات واحسب سطرًا بسطر، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "القسمة قبل الجمع: $\\dfrac{3}{4} \\div \\left(-\\dfrac{3}{2}\\right) = \\dfrac{3}{4} \\times \\left(-\\dfrac{2}{3}\\right) = -\\dfrac{1}{2}$ .",
+          "$-\\dfrac{1}{2} + \\left(-\\dfrac{1}{2}\\right) = -1$ ."
+        ],
+        "result": "-1"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

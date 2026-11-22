@@ -1,0 +1,211 @@
+{
+  "id": "ex-4am-talis-hisab-atwal-l2-005",
+  "lessonCode": "talis-hisab-atwal",
+  "level": 2,
+  "metadata": {
+    "title": "التصغير بمعامل 1/3",
+    "estimatedMinutes": 5,
+    "tags": [
+      "معامل التناسبية",
+      "تصغير"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-2",
+      "page": 106,
+      "section": "معارف",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل، القطعتان $[AB]$ و $[AC]$ مقسمتان إلى ثلاث قطع متقايسة، و $M$ و $N$ أوليا نقاط التقسيم، و $(MN) \\parallel (BC)$ . المثلثان $AMN$ و $ABC$ في وضعية طالس.",
+    "figure": {
+      "points": {
+        "A": [
+          0.0,
+          0.0
+        ],
+        "B": [
+          5.563103127401,
+          2.247639560495
+        ],
+        "C": [
+          5.715767664977,
+          -3.3
+        ],
+        "M": [
+          1.854367709134,
+          0.749213186832
+        ],
+        "N": [
+          1.905255888326,
+          -1.1
+        ],
+        "P": [
+          3.708735418267,
+          1.498426373664
+        ],
+        "Q": [
+          3.810511776652,
+          -2.2
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "M",
+          "ticks": 1
+        },
+        {
+          "from": "M",
+          "to": "P",
+          "ticks": 1
+        },
+        {
+          "from": "P",
+          "to": "B",
+          "ticks": 1
+        },
+        {
+          "from": "A",
+          "to": "N",
+          "ticks": 2
+        },
+        {
+          "from": "N",
+          "to": "Q",
+          "ticks": 2
+        },
+        {
+          "from": "Q",
+          "to": "C",
+          "ticks": 2
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "arrows": 1
+        },
+        {
+          "from": "M",
+          "to": "N",
+          "arrows": 1,
+          "tone": "indigo"
+        }
+      ],
+      "labels": {
+        "A": "w"
+      },
+      "hidden": [
+        "P",
+        "Q"
+      ],
+      "ariaLabel": "القطعة [AB] مقسمة إلى ثلاث قطع متقايسة و M أولى نقاط التقسيم، و [AC] كذلك و N أولى نقاطها",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "إذا كان $BC = 12$ ، احسب $MN$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (عشري بالفاصلة مثل 2,75 أو كسر مثل 7/9)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "36",
+          "id": "MISC-TALIS-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\dfrac{AM}{AB}$ تقرأ على الشكل: كم قطعة من ثلاث؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خاصية طالس: $\\dfrac{MN}{BC} = \\dfrac{AM}{AB}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AM}{AB} = \\dfrac{1}{3}$ ومنه $MN = \\dfrac{1}{3} \\times 12 = 4$ .",
+        "incorrect": "معامل التناسبية k = (طول في المثلث الناتج) ÷ (الطول الموافق له في المثلث الأصلي)؛ راجع أي المثلثين هو الأصلي."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AM}{AB} = \\dfrac{1}{3}$ ، وحسب خاصية طالس: $\\dfrac{MN}{BC} = \\dfrac{AM}{AB} = \\dfrac{1}{3}$",
+          "$MN = \\dfrac{1}{3} \\times 12$"
+        ],
+        "result": "MN = 4"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل المثلث $AMN$ تكبير أم تصغير للمثلث $ABC$ ؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "تكبير",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-MUAMIL-MAQLUB"
+        },
+        {
+          "id": "B",
+          "content": "تصغير",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن معامل التناسبية بالعدد 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$k = \\dfrac{1}{3} < 1$ : $AMN$ تصغير للمثلث $ABC$ .",
+        "incorrect": "$k < 1$ : الأطوال تصغر ؛ $k > 1$ : الأطوال تكبر."
+      },
+      "solution": {
+        "lines": [
+          "معامل التناسبية الذي يحوّل $ABC$ إلى $AMN$ هو $k = \\dfrac{1}{3}$ و $\\dfrac{1}{3} < 1$ ،",
+          "إذن المثلث $AMN$ تصغير للمثلث $ABC$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

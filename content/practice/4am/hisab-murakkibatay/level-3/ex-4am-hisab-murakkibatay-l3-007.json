@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l3-007",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — ترامواي وهران",
+    "estimatedMinutes": 3,
+    "tags": [
+      "تساوي شعاعين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hisab-murakkibatay_P2",
+      "modelledOn": "know-equal"
+    }
+  },
+  "statement": {
+    "content": "على خريطة ترامواي وهران المزوّدة بمعلم، وسيلة نقل نظيفة تحافظ على البيئة: $K(-1\\,;\\,2)$ ، $L(3\\,;\\,5)$ ، $M(2\\,;\\,-3)$ ، $N(6\\,;\\,-1)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "هل $\\overrightarrow{KL}$ و $\\overrightarrow{MN}$ متساويان؟",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم: المركبتان الأوليان متساويتان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-TASAWI-MURAKKABA"
+        },
+        {
+          "id": "B",
+          "content": "نعم: لهما نفس الطول تقريبا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TUL-FAQAT"
+        },
+        {
+          "id": "C",
+          "content": "لا: المركبتان الأوليان متساويتان (4) لكن الثانيتين مختلفتان (3 و 2)",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مركبتي كل شعاع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن المركبة الأولى بالأولى والثانية بالثانية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يتساوى الشعاعان إذا تساوت المركبتان معا."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{KL}\\begin{pmatrix} 4 \\\\ 3 \\end{pmatrix}$ و $\\overrightarrow{MN}\\begin{pmatrix} 4 \\\\ 2 \\end{pmatrix}$ : مركبة واحدة متساوية لا تكفي.",
+        "incorrect": "التساوي يتطلب المركبتين معا."
+      }
+    }
+  ]
+}

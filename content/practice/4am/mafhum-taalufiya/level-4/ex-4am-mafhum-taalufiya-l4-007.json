@@ -1,0 +1,170 @@
+{
+  "id": "ex-4am-mafhum-taalufiya-l4-007",
+  "lessonCode": "mafhum-taalufiya",
+  "level": 4,
+  "metadata": {
+    "title": "دالة تآلفية بوسيط k",
+    "estimatedMinutes": 8,
+    "tags": [
+      "دالة خطية",
+      "دالة ثابتة",
+      "صورة عدد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "adaptedFrom": "ex-4am-mafhum-taalufiya-l4-007"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$k$ عدد معلوم، و $f$ الدالة التآلفية حيث:",
+    "formulas": [
+      "f(x) = (k - 3)x + 2k - 8"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن قيمة $k$ التي تجعل $f$ دالة خطية.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدالة التآلفية تكون خطية عندما يكون حدّها الثابت $b$ معدوما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما هو الحدّ الثابت هنا؟ اجعله يساوي 0."
+        }
+      ],
+      "feedback": {
+        "correct": "$2k - 8 = 0$ يعطي قيمة $k$ .",
+        "incorrect": "اكتب المعادلة: الحدّ الثابت $= 0$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f$ خطية معناه $b = 0$ ، أي $2k - 8 = 0$",
+          "$2k = 8$",
+          "$k = 4$",
+          "تحقق: $f(x) = (4 - 3)x + 0 = x$ دالة خطية."
+        ],
+        "result": "k = 4"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عيّن قيمة $k$ التي تجعل $f$ دالة ثابتة.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدالة التآلفية تكون ثابتة عندما يكون معاملها $a$ معدوما."
+        }
+      ],
+      "feedback": {
+        "correct": "$k - 3 = 0$ .",
+        "incorrect": "اكتب المعادلة: معامل $x$ يساوي 0."
+      },
+      "solution": {
+        "lines": [
+          "$f$ ثابتة معناه $a = 0$ ، أي $k - 3 = 0$",
+          "$k = 3$",
+          "تحقق: $f(x) = 0 \\times x + 6 - 8 = -2$ دالة ثابتة."
+        ],
+        "result": "k = 3"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "نضع $k = 5$ . احسب $f(2)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أولا عبارة $f(x)$ من أجل $k = 5$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم عوّض $x$ بـ 2."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(x) = 2x + 2$ ، إذن $f(2) = 6$ .",
+        "incorrect": "عوّض $k$ بـ 5 في المعاملين، ثم احسب الصورة."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $k = 5$ : $f(x) = (5 - 3)x + 2 \\times 5 - 8 = 2x + 2$",
+          "$f(2) = 2 \\times 2 + 2 = 6$"
+        ],
+        "result": "f(2) = 6"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

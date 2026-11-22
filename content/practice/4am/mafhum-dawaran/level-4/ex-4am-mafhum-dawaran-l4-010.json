@@ -1,0 +1,117 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l4-010",
+  "lessonCode": "mafhum-dawaran",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — قطعة ودائرة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "صورة قطعة",
+      "صورة دائرة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mafhum-dawaran_P3",
+      "modelledOn": "act-3"
+    }
+  },
+  "statement": {
+    "content": "[AB] قطعة طولها $6\\,\\mathrm{cm}$ . A′ و B′ صورتا A و B بالدوران الذي مركزه O وزاويته $37^\\circ$ في الاتجاه المباشر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما هو الطول $A'B'$ بالسنتيمتر؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-KHAWAS",
+          "value": "12"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "صورة القطعة [AB] هي [A′B′]."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الدوران يدير القطعة ولا يمدّها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بـ AB."
+        }
+      ],
+      "feedback": {
+        "correct": "$A'B' = AB = 6\\,\\mathrm{cm}$ .",
+        "incorrect": "الدوران لا يغيّر الأطوال."
+      },
+      "difficulty": 2
+    },
+    {
+      "id": "q2",
+      "statement": "صورة الدائرة التي مركزها A وتشمل B هي:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الدائرة التي مركزها A وتشمل B′",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-DAIRA"
+        },
+        {
+          "id": "B",
+          "content": "الدائرة التي مركزها A′ وتشمل B′",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "الدائرة التي مركزها B′ وتشمل A′",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مركز الصورة صورة المركز."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ونقطة منها صورة نقطة من الدائرة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "صورة A هي A′ وصورة B هي B′."
+        }
+      ],
+      "feedback": {
+        "correct": "مركز الصورة A′ و B′ عليها: نصف القطر A′B′ = AB.",
+        "incorrect": "لا تخلط بين المركز وصورته، ولا بين المركز ونقطة الدائرة."
+      },
+      "difficulty": 3
+    }
+  ]
+}

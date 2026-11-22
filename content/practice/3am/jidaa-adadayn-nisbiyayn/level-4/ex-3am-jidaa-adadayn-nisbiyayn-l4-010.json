@@ -1,0 +1,252 @@
+{
+  "id": "ex-3am-jidaa-adadayn-nisbiyayn-l4-010",
+  "lessonCode": "jidaa-adadayn-nisbiyayn",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — إشارة جداء بدلالة إشارتي العاملين",
+    "estimatedMinutes": 8,
+    "tags": [
+      "إشارة الجداء",
+      "استدلال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "عددان نسبيان $a$ و $b$ غير معدومين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "نعطي إشارة العاملين ونسأل عن إشارة الجداء.",
+      "statement": "إذا كان $a < 0$ و $b < 0$ فإنّ الجداء $a \\times b$ ...",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "موجب",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "سالب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDAA-NEGNEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارة كل عامل قبل أن تحسب أي شيء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عاملان لهما الإشارة نفسها: جداؤهما موجب. عاملان مختلفا الإشارة: جداؤهما سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يهمّ أيّ العاملين أبعد عن الصفر: الإشارة تتبع قاعدة الإشارات وحدها."
+        }
+      ],
+      "feedback": {
+        "correct": "عددان سالبان: جداؤهما موجب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "عددان سالبان: جداؤهما موجب. مثلًا $(−3) \\times (−2) = 6$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "إذا كان $a > 0$ و $b < 0$ فإنّ الجداء $a \\times b$ ...",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "موجب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDAA-LARGER"
+        },
+        {
+          "id": "B",
+          "content": "سالب",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارة كل عامل قبل أن تحسب أي شيء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عاملان لهما الإشارة نفسها: جداؤهما موجب. عاملان مختلفا الإشارة: جداؤهما سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يهمّ أيّ العاملين أبعد عن الصفر: الإشارة تتبع قاعدة الإشارات وحدها."
+        }
+      ],
+      "feedback": {
+        "correct": "عددان مختلفا الإشارة: جداؤهما سالب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "عددان مختلفا الإشارة: جداؤهما سالب. مثلًا $5 \\times (−2) = −10$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "إذا كان $a \\times b > 0$ و $a < 0$ فإنّ $b$ ...",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "سالب",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "موجب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDAA-PARTIAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارة كل عامل قبل أن تحسب أي شيء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عاملان لهما الإشارة نفسها: جداؤهما موجب. عاملان مختلفا الإشارة: جداؤهما سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يهمّ أيّ العاملين أبعد عن الصفر: الإشارة تتبع قاعدة الإشارات وحدها."
+        }
+      ],
+      "feedback": {
+        "correct": "جداء موجب: للعاملين الإشارة نفسها، إذن $b$ سالب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "جداء موجب يعني عاملين لهما الإشارة نفسها.",
+          "بما أنّ $a$ سالب فـ $b$ سالب أيضًا."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "إذا كان $a \\times b < 0$ و $b < 0$ فإنّ $a$ ...",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "سالب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDAA-NEGNEG"
+        },
+        {
+          "id": "B",
+          "content": "موجب",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارة كل عامل قبل أن تحسب أي شيء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عاملان لهما الإشارة نفسها: جداؤهما موجب. عاملان مختلفا الإشارة: جداؤهما سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يهمّ أيّ العاملين أبعد عن الصفر: الإشارة تتبع قاعدة الإشارات وحدها."
+        }
+      ],
+      "feedback": {
+        "correct": "جداء سالب: العاملان مختلفا الإشارة، إذن $a$ موجب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "جداء سالب يعني عاملين مختلفي الإشارة.",
+          "بما أنّ $b$ سالب فـ $a$ موجب."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

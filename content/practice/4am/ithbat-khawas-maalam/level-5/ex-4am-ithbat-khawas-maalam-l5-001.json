@@ -1,0 +1,65 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l5-001",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 5,
+  "metadata": {
+    "title": "من الكتاب — حساب مسافات (ص 145)",
+    "estimatedMinutes": 5,
+    "tags": [
+      "مجهول",
+      "تعامد"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-unknown",
+      "page": 145,
+      "section": "طرائق"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 145): المستوي مزود بمعلم متعامد ومتجانس، مبدؤه O. (الوحدة 1cm) $A(0\\,;\\,2)$ ، $B(-4\\,;\\,0)$ ، $C(-2\\,;\\,y)$ ثلاث نقط."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "عيّن y حتى يكون المستقيمان (AB) و (BC) متعامدين.",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح (قد يكون سالبا)",
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-ISHARA",
+          "value": "4"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التعامد في B : المثلث ABC قائم في B."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$AB^2 + BC^2 = AC^2$ مع $BC^2 = 4 + y^2$ و $AC^2 = 4 + (y - 2)^2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انشر: $y^2$ يحذف من الطرفين."
+        }
+      ],
+      "feedback": {
+        "correct": "$24 + y^2 = 8 - 4y + y^2$ ⇔ $4y = -16$ ⇔ $y = -4$ .",
+        "incorrect": "اكتب المساواة بدلالة y ثم انشر $(y - 2)^2$ بدقّة."
+      }
+    }
+  ]
+}

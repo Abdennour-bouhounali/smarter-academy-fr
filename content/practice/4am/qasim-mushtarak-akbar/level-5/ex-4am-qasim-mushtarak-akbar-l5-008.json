@@ -1,0 +1,230 @@
+{
+  "id": "ex-4am-qasim-mushtarak-akbar-l5-008",
+  "lessonCode": "qasim-mushtarak-akbar",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2020 — أطقم الفخار من معاتقة",
+    "estimatedMinutes": 14,
+    "tags": [
+      "PGCD",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-mushtarak-akbar_P3",
+      "modelledOn": "BEM 2020 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2020",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "حفاظًا على التراث الجزائري وإتقانًا لصنعته، صنع حرفي فخار بمعاتقة (تيزي وزو) 216 جرّة و 162 صحنًا، ويريد بيعها كلها في أطقم متماثلة (نفس عدد الجرار ونفس عدد الصحون في كل طقم)، بأكبر عدد ممكن من الأطقم.\n• تكلفة صنع الجرّة الواحدة 350DA، وتكلفة صنع الصحن الواحد 200DA.\n• مصاريف التغليف والنقل 1500DA مهما كان عدد الأطقم.\n• يريد الحرفي أن يحقق ربحًا لا يقل عن 28200DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما هو أكبر عدد من الأطقم يمكن تكوينه ؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد الأطقم)",
+      "expectedAnswer": "54",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        },
+        {
+          "value": "27",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الأطقم يجب أن يقسم 216 و 162 معًا: فهو قاسم مشترك لهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب قواسم 216 وقواسم 162، ثم استخرج القواسم المشتركة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أكبر عدد ممكن هو أكبر هذه القواسم المشتركة."
+        }
+      ],
+      "feedback": {
+        "correct": "أكبر عدد من الأطقم هو PGCD(216 ; 162).",
+        "incorrect": "عدد الأطقم قاسم مشترك للعددين 216 و 162؛ والمطلوب أكبرها، لا محتوى الواحدة منها."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 216 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 8 ، 9 ، 12 ، 18 ، 24 ، 27 ، 36 ، 54 ، 72 ، 108 ، 216",
+          "قواسم العدد 162 هي: 1 ، 2 ، 3 ، 6 ، 9 ، 18 ، 27 ، 54 ، 81 ، 162",
+          "القواسم المشتركة للعددين 216 و 162 هي: 1 ، 2 ، 3 ، 6 ، 9 ، 18 ، 27 ، 54",
+          "أكبرها هو 54، إذن أكبر عدد من الأطقم هو PGCD(216 ; 162) = 54."
+        ],
+        "result": "PGCD(216 ; 162) = 54"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما هو عدد الجرار في كل طقم ؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "54",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع الجرار كلها بالتساوي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 216 على العدد الذي وجدته في السؤال السابق."
+        }
+      ],
+      "feedback": {
+        "correct": "$216 \\div 54 = 4$",
+        "incorrect": "اقسم العدد الكلي (216) على أكبر عدد وجدته."
+      },
+      "solution": {
+        "lines": [
+          "$216 \\div 54 = 4$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما هو عدد الصحون في كل طقم ؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "54",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع الصحون كلها بالتساوي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 162 على العدد الذي وجدته في السؤال السابق."
+        }
+      ],
+      "feedback": {
+        "correct": "$162 \\div 54 = 3$",
+        "incorrect": "اقسم العدد الكلي (162) على أكبر عدد وجدته."
+      },
+      "solution": {
+        "lines": [
+          "$162 \\div 54 = 3$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "☜ أعط أصغر ثمن يمكن أن يبيع به الحرفي الطقم الواحد حتى يحقق الربح الذي يريده.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (الثمن بالدينار)",
+      "expectedAnswer": "2550",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المصاريف الكلية: صنع الجرار والصحون، ثم التغليف والنقل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مدخول البيع هو عدد الأطقم مضروبًا في ثمن الطقم $p$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب أن المدخول ناقص المصاريف لا يقل عن الربح المطلوب، ثم حلّ المتراجحة."
+        }
+      ],
+      "feedback": {
+        "correct": "$54p - 109500 \\geq 28200$ تعطي $p \\geq 2550$ .",
+        "incorrect": "الربح = مدخول البيع − المصاريف الكلية؛ اكتبه بدلالة ثمن الطقم ثم حلّ المتراجحة."
+      },
+      "solution": {
+        "lines": [
+          "عدد الأطقم: PGCD(216 ; 162) = 54",
+          "المصاريف: $216 \\times 350 + 162 \\times 200 + 1500 = 75600 + 32400 + 1500 = 109500$",
+          "$54p - 109500 \\geq 28200$",
+          "$54p \\geq 137700$",
+          "$p \\geq 2550$",
+          "إذن أصغر ثمن للطقم هو 2550DA."
+        ],
+        "result": "2550DA"
+      },
+      "work": "optional",
+      "timeSeconds": 420
+    }
+  ]
+}

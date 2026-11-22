@@ -1,0 +1,160 @@
+{
+  "id": "ex-4am-majdulat-ihsaiya-l2-009",
+  "lessonCode": "majdulat-ihsaiya",
+  "level": 2,
+  "metadata": {
+    "title": "أزمنة أربعة عدّائين",
+    "estimatedMinutes": 4,
+    "tags": [
+      "دستور",
+      "مدى",
+      "وسيط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_majdulat-ihsaiya_P2",
+      "modelledOn": "ex-7"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "حجز مدرّب في السطر الأول من مجدول أزمنة (بالثانية) أربعة عدّائين، ثم حجز في الخلية A2 الدستور ⁦=MAX(A1:D1)-MIN(A1:D1)⁩ وفي الخلية A3 الدستور ⁦=MEDIANE(A1:D1)⁩ :",
+    "table": {
+      "head": [
+        "",
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "rows": [
+        [
+          "1",
+          "14",
+          "9",
+          "21",
+          "17"
+        ]
+      ],
+      "sheet": true
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما هو العدد الذي يظهر في الخلية A2 ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "21",
+          "id": "MISC-IHSA-MADA-AKBAR-QIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MAX(…)-MIN(…)⁩ يحسب مدى القيم: أكبر قيمة ناقص أصغر قيمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر قيمة وأصغر قيمة في المجال ⁦A1:D1⁩."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح أصغر قيمة من أكبر قيمة، ولا تكتف بأكبر قيمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$21 - 9 = 12$ .",
+        "incorrect": "المدى فرق: أكبر قيمة في المجال ناقص أصغر قيمة فيه، والدستور يحسب هذا الفرق."
+      },
+      "solution": {
+        "lines": [
+          "أكبر قيمة في المجال ⁦A1:D1⁩: 21 ، وأصغر قيمة: 9 .",
+          "$21 - 9 = 12$",
+          "إذن يُظهر الدستور العدد 12 ."
+        ],
+        "result": "12"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هو العدد الذي يظهر في الخلية A3 ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة إن لزم)",
+      "expectedAnswer": "15,5",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-IHSA-WASIT-BILA-TARTIB"
+        },
+        {
+          "value": "15,25",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MEDIANE(…)⁩ يُظهر وسيط القيم: يرتّبها المجدول أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب القيم الـ 4 تصاعديا، ثم عيّن القيمتين اللتين تقعان في الوسط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لعدد زوجيّ من القيم، الوسيط نصف مجموع القيمتين الوسطيين."
+        }
+      ],
+      "feedback": {
+        "correct": "القيم مرتّبة: 9 ، 14 ، 17 ، 21 ، والوسيط 15,5 .",
+        "incorrect": "لا يُقرأ الوسيط إلا بعد ترتيب القيم تصاعديا، ثم نأخذ القيمة الوسطى (أو نصف مجموع القيمتين الوسطيين)."
+      },
+      "solution": {
+        "lines": [
+          "نرتّب القيم تصاعديا: 9 ، 14 ، 17 ، 21 .",
+          "عدد القيم 4 زوجيّ: الوسيط نصف مجموع القيمتين ذواتي الرتبتين 2 و 3 ، أي 14 و 17 .",
+          "$\\dfrac{14 + 17}{2} = 15{,}5$",
+          "إذن يُظهر الدستور العدد 15,5 ."
+        ],
+        "result": "15{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

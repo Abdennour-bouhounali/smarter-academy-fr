@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-takbir-tasghir-l3-003",
+  "lessonCode": "takbir-tasghir",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — k من نسبة حجمين",
+    "estimatedMinutes": 2,
+    "tags": [
+      "النسبة k",
+      "الحجم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takbir-tasghir_P1",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "حجم مجسّم ضُرب في $\\dfrac{27}{8}$ بعد تكبيره."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما نسبة التكبير $k$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة مثل 1,25 ، أو كسر مثل 4/7)",
+      "expectedAnswer": "1,5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAKBIR-JADHR",
+          "value": "27/8"
+        },
+        {
+          "id": "MISC-TAKBIR-JADHR",
+          "value": "9/8"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحجوم تُضرب في $k^3$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$k^3 = \\dfrac{27}{8}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ما العدد الذي مكعّبه 27؟ وما العدد الذي مكعّبه 8؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{2} \\times \\dfrac{3}{2} \\times \\dfrac{3}{2} = \\dfrac{27}{8}$ ، إذن $k = \\dfrac{3}{2} = 1{,}5$ .",
+        "incorrect": "نبحث عن العدد الذي مكعّبه النسبة، ولا نقسمها على 3."
+      }
+    }
+  ]
+}

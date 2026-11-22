@@ -1,0 +1,205 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-aadad-nisbiya-l4-004",
+  "lessonCode": "wadiya-idmajiya-aadad-nisbiya",
+  "level": 4,
+  "metadata": {
+    "title": "ثلاث نظائر لنقطة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "إحداثيات",
+      "نظير",
+      "محور"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد مبدؤه $O$ ، نعتبر النقطة $P(−7\\,;\\,3)$ . أوجد إحداثيتي كل من النظائر الثلاثة الآتية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "نظيرة $P$ بالنسبة إلى المبدأ $O$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "7",
+        "y": "-3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-WIDMAJ-ONECOORD",
+          "value": {
+            "x": "7",
+            "y": "3"
+          }
+        },
+        {
+          "id": "MISC-WIDMAJ-ONECOORD",
+          "value": {
+            "x": "-7",
+            "y": "-3"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الإحداثيتين المعلومتين: الفاصلة أولًا ثم الترتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر بعملية على كل إحداثية على حدة، ثم اجمع النتيجتين في ثنائية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من النتيجة بالنظر إلى موضع النقطة بالنسبة إلى محوري المعلم."
+        }
+      ],
+      "feedback": {
+        "correct": "الإحداثيتان هما $(7 ; −3)$ .",
+        "incorrect": "راجع قراءة الإحداثيات وأثر الضرب في عدد سالب على كل إحداثية."
+      },
+      "solution": {
+        "lines": [
+          "$x = 7$ ، $y = −3$"
+        ],
+        "result": "(7 ; −3)"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "نظيرة $P$ بالنسبة إلى محور التراتيب (المحور الرأسي).",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "7",
+        "y": "3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-WIDMAJ-AXIS",
+          "value": {
+            "x": "-7",
+            "y": "-3"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الإحداثيتين المعلومتين: الفاصلة أولًا ثم الترتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر بعملية على كل إحداثية على حدة، ثم اجمع النتيجتين في ثنائية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من النتيجة بالنظر إلى موضع النقطة بالنسبة إلى محوري المعلم."
+        }
+      ],
+      "feedback": {
+        "correct": "الإحداثيتان هما $(7 ; 3)$ .",
+        "incorrect": "راجع قراءة الإحداثيات وأثر الضرب في عدد سالب على كل إحداثية."
+      },
+      "solution": {
+        "lines": [
+          "$x = 7$ ، $y = 3$"
+        ],
+        "result": "(7 ; 3)"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "نظيرة $P$ بالنسبة إلى محور الفواصل (المحور الأفقي).",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-7",
+        "y": "-3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-WIDMAJ-AXIS",
+          "value": {
+            "x": "7",
+            "y": "3"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الإحداثيتين المعلومتين: الفاصلة أولًا ثم الترتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر بعملية على كل إحداثية على حدة، ثم اجمع النتيجتين في ثنائية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من النتيجة بالنظر إلى موضع النقطة بالنسبة إلى محوري المعلم."
+        }
+      ],
+      "feedback": {
+        "correct": "الإحداثيتان هما $(−7 ; −3)$ .",
+        "incorrect": "راجع قراءة الإحداثيات وأثر الضرب في عدد سالب على كل إحداثية."
+      },
+      "solution": {
+        "lines": [
+          "$x = −7$ ، $y = −3$"
+        ],
+        "result": "(−7 ; −3)"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

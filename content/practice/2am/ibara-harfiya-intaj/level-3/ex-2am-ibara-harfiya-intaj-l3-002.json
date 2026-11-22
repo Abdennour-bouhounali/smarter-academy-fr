@@ -1,0 +1,325 @@
+{
+  "id": "ex-2am-ibara-harfiya-intaj-l3-002",
+  "lessonCode": "ibara-harfiya-intaj",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — قطعة أرض : بيت وحديقة وباحة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "مساحات",
+      "عبارة حرفيّة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 2,
+      "file": "2am-s2-69",
+      "exercise": 4
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تملك عائلة قطعة الأرض الممثّلة في الشكل المقابل ، وهي مؤلّفة من بيت مستطيل ، وحديقة على شكل مثلّث قائم ، وباحة مربّعة. الأطوال بالمتر.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          12,
+          0
+        ],
+        "C": [
+          12,
+          5
+        ],
+        "D": [
+          0,
+          5
+        ],
+        "E": [
+          -8,
+          0
+        ],
+        "F": [
+          3,
+          5
+        ],
+        "G": [
+          7,
+          5
+        ],
+        "H": [
+          7,
+          9
+        ],
+        "I": [
+          3,
+          9
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "12"
+        },
+        {
+          "from": "B",
+          "to": "C"
+        },
+        {
+          "from": "C",
+          "to": "G"
+        },
+        {
+          "from": "G",
+          "to": "F"
+        },
+        {
+          "from": "F",
+          "to": "D"
+        },
+        {
+          "from": "D",
+          "to": "A",
+          "label": "x"
+        },
+        {
+          "from": "E",
+          "to": "A",
+          "label": "8"
+        },
+        {
+          "from": "E",
+          "to": "D"
+        },
+        {
+          "from": "F",
+          "to": "I"
+        },
+        {
+          "from": "I",
+          "to": "H",
+          "label": "4"
+        },
+        {
+          "from": "H",
+          "to": "G"
+        }
+      ],
+      "rightAngles": [
+        [
+          "E",
+          "A",
+          "D"
+        ]
+      ],
+      "polygons": [
+        {
+          "points": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "tone": "sky"
+        },
+        {
+          "points": [
+            "E",
+            "A",
+            "D"
+          ],
+          "tone": "emerald"
+        },
+        {
+          "points": [
+            "F",
+            "G",
+            "H",
+            "I"
+          ],
+          "tone": "amber"
+        }
+      ],
+      "ariaLabel": "قطعة أرض : بيت مستطيل ABCD طوله 12 وعرضه x ، وحديقة مثلّثة قائمة EAD ضلعاها القائمان 8 و x ، وباحة مربّعة ضلعها 4",
+      "maxWidth": 340,
+      "caption": "(الأطوال غير حقيقية)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "مساحة المثلّث القائم هي نصف جداء ضلعيه القائمين. ما عبارة مساحة الحديقة بدلالة $x$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x + 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-ADDFOR"
+        },
+        {
+          "id": "B",
+          "content": "$x^{4}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-POWER"
+        },
+        {
+          "id": "C",
+          "content": "$4x$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعيّة وحدّد ما يتغيّر (الحرف) وما يبقى ثابتًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ خيار بقيمة بسيطة للحرف ثمّ قارن بالعدّ المباشر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاعدة الصحيحة تعطي العدد نفسه الذي تجده بالعدّ في كلّ مرّة تجرّبها."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتابة الصحيحة هي $4x$ .",
+        "incorrect": "جرّب كلّ خيار على قيمة بسيطة للحرف وقارن بالعدّ المباشر قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "$4x$ : نصف $8 \\times x$ هو $4x$ .",
+          "عند $x = 3$ : $4 \\times 3 = 12$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "مساحة البيت هي $12x$ ومساحة الحديقة $4x$ ، ومساحة الباحة $16$ . ما المساحة الكلّية للقطعة بدلالة $x$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$16x + 16$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$16x^{2} + 16$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-ADDPOWERS"
+        },
+        {
+          "id": "C",
+          "content": "$48x + 16$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-MULTCOEF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعيّة وحدّد ما يتغيّر (الحرف) وما يبقى ثابتًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ خيار بقيمة بسيطة للحرف ثمّ قارن بالعدّ المباشر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاعدة الصحيحة تعطي العدد نفسه الذي تجده بالعدّ في كلّ مرّة تجرّبها."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتابة الصحيحة هي $16x + 16$ .",
+        "incorrect": "جرّب كلّ خيار على قيمة بسيطة للحرف وقارن بالعدّ المباشر قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "$16x + 16$ : $12x + 4x + 16 = (12 + 4)x + 16$ .",
+          "عند $x = 10$ : $16 \\times 10 + 16 = 176$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب المساحة الكلّية بالمتر المربّع إذا كان $x = 10$ : $S = 16x + 16$ .",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "176",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بالقيمة المعطاة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ احترم أولويّة العمليّات : الضرب قبل الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة قبل أن تجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = 176$ .",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ أعد الحساب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$16 \\times 10 + 16 = 176$ ."
+        ],
+        "result": "176"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

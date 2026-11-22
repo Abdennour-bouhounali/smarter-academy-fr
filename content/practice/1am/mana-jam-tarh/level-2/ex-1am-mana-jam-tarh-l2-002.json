@@ -1,0 +1,178 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l2-002",
+  "lessonCode": "mana-jam-tarh",
+  "level": 2,
+  "metadata": {
+    "title": "قامات الأصدقاء",
+    "estimatedMinutes": 5,
+    "tags": [
+      "يزيد",
+      "يقلّ",
+      "تمثيل بقطع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-3",
+      "page": 29,
+      "section": "أكتسب طرائق",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يتعاون ثلاثة أصدقاء في ترتيب مكتبة القسم. طول قامة سمير $138\\,\\mathrm{cm}$، وتزيد قامة وليد عن قامة سمير بـ $6\\,\\mathrm{cm}$، وتقلّ قامة نبيل عن قامة سمير بـ $9\\,\\mathrm{cm}$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب طول قامة وليد.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالسنتيمتر (cm)",
+      "expectedAnswer": "144",
+      "misconceptionSignatures": [
+        {
+          "value": "132",
+          "id": "MISC-JAMTARH-KALIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وليد أطول أم أقصر من سمير؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قامة وليد = قامة سمير + الزيادة."
+        }
+      ],
+      "feedback": {
+        "correct": "$138 + 6 = 144$ أي $144\\,\\mathrm{cm}$.",
+        "incorrect": "قامة وليد تزيد عن قامة سمير: هي أكبر من $138\\,\\mathrm{cm}$."
+      },
+      "solution": {
+        "lines": [
+          "$138 + 6 = 144$"
+        ],
+        "result": "144 \\text{ cm}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب طول قامة نبيل.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالسنتيمتر (cm)",
+      "expectedAnswer": "129",
+      "misconceptionSignatures": [
+        {
+          "value": "147",
+          "id": "MISC-JAMTARH-KALIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نبيل أطول أم أقصر من سمير؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قامة سمير هي الكل، وقامة نبيل جزء منه."
+        }
+      ],
+      "feedback": {
+        "correct": "$138 - 9 = 129$ أي $129\\,\\mathrm{cm}$.",
+        "incorrect": "قامة نبيل تقلّ عن قامة سمير: هي أصغر من $138\\,\\mathrm{cm}$."
+      },
+      "solution": {
+        "lines": [
+          "$138 - 9 = 129$"
+        ],
+        "result": "129 \\text{ cm}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "من صاحب أطول قامة؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "وليد",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "سمير",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        },
+        {
+          "id": "C",
+          "content": "نبيل",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KALIMA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مثّل القامات الثلاث بقطع مستقيمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من تزيد قامته عن قامة الآخر؟"
+        }
+      ],
+      "feedback": {
+        "correct": "قامة وليد تزيد عن قامة سمير، وقامة سمير تزيد عن قامة نبيل.",
+        "incorrect": "ارسم القطع الثلاث: من له أطول قطعة؟"
+      },
+      "solution": {
+        "lines": [
+          "قامة وليد = قامة سمير + $6\\,\\mathrm{cm}$ ، وقامة نبيل = قامة سمير − $9\\,\\mathrm{cm}$.",
+          "إذن نبيل ($129\\,\\mathrm{cm}$) < سمير ($138\\,\\mathrm{cm}$) < وليد ($144\\,\\mathrm{cm}$): وليد صاحب أطول قامة."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

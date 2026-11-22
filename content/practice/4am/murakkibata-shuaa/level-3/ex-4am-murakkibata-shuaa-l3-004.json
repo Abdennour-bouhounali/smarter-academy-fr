@@ -1,0 +1,117 @@
+{
+  "id": "ex-4am-murakkibata-shuaa-l3-004",
+  "lessonCode": "murakkibata-shuaa",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — أي سهم؟",
+    "estimatedMinutes": 2,
+    "tags": [
+      "قراءة بيانية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_murakkibata-shuaa_P1",
+      "modelledOn": "know-3"
+    }
+  },
+  "statement": {
+    "content": "على المرصوفة (الشكل) سهمان: $\\overrightarrow{PQ}$ و $\\overrightarrow{RS}$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "P": [
+          -3,
+          2
+        ],
+        "Q": [
+          0,
+          4
+        ],
+        "R": [
+          1,
+          -1
+        ],
+        "S": [
+          -2,
+          1
+        ]
+      },
+      "grid": true,
+      "axes": true,
+      "vectors": [
+        {
+          "from": "P",
+          "to": "Q",
+          "tone": "indigo"
+        },
+        {
+          "from": "R",
+          "to": "S",
+          "tone": "rose"
+        }
+      ],
+      "labels": {
+        "O": "sw"
+      },
+      "ariaLabel": "معلم على المرصوفة: سهم من P إلى Q صاعد نحو اليمين، وسهم من R إلى S صاعد نحو اليسار",
+      "maxWidth": 480
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أي شعاع مركبتاه $\\begin{pmatrix} -3 \\\\ 2 \\end{pmatrix}$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_murakkibata-shuaa_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{RS}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{PQ}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-TABDIL-X-Y"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{SR}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انطلق من مبدأ الشعاع وعُدّ المربعات بموازاة محور الفواصل، ثم بموازاة محور التراتيب، حتى نهايته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نحو اليمين أو نحو الأعلى العدد موجب، ونحو اليسار أو نحو الأسفل العدد سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب أولا الإزاحة الأفقية ثم الإزاحة العمودية، كل واحدة بإشارتها."
+        }
+      ],
+      "feedback": {
+        "correct": "من R: 3 نحو اليسار ثم 2 نحو الأعلى: $\\overrightarrow{RS}\\begin{pmatrix} -3 \\\\ 2 \\end{pmatrix}$ ؛ و $\\overrightarrow{PQ}\\begin{pmatrix} 3 \\\\ 2 \\end{pmatrix}$ .",
+        "incorrect": "اقرأ مركبتي كل سهم من مبدئه."
+      }
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l3-006",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 3,
+  "metadata": {
+    "title": "نسب أطوال على قطعة مستقيمة",
+    "estimatedMinutes": 7,
+    "tags": [
+      "نسبة",
+      "كسر"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-46",
+      "page": 35,
+      "section": "أتعمّق",
+      "number": 46
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "النقطة $M$ تنتمي إلى القطعة $[AB]$ ، حيث $AB = 12$ cm و $AM = 5$ cm ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عبّر بكسر عن النسبة $\\dfrac{AM}{AB}$ (نسبة $AM$ إلى $AB$).",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر (مثلًا 3/4)",
+      "expectedAnswer": "5/12",
+      "misconceptionSignatures": [
+        {
+          "value": "12/5",
+          "id": "MISC-QARIBA-RATIOFLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«نسبة $AM$ إلى $AB$» : $AM$ في البسط و $AB$ في المقام."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AM}{AB}=\\dfrac{5}{12}$.",
+        "incorrect": "العدد المذكور أوّلًا يُكتب في البسط."
+      },
+      "solution": {
+        "lines": [
+          "$AM = 5$ و $AB = 12$",
+          "$\\dfrac{AM}{AB} = \\dfrac{5}{12}$"
+        ],
+        "result": "\\dfrac{5}{12}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $MB$ ثمّ عبّر بكسر عن النسبة $\\dfrac{MA}{MB}$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر (مثلًا 3/4)",
+      "expectedAnswer": "5/7",
+      "misconceptionSignatures": [
+        {
+          "value": "7/5",
+          "id": "MISC-QARIBA-RATIOFLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$M$ بين $A$ و $B$: $AB = AM + MB$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد إيجاد $MB$ ضع $MA$ في البسط و $MB$ في المقام."
+        }
+      ],
+      "feedback": {
+        "correct": "$MB = 12 - 5 = 7$ ، إذن $\\dfrac{MA}{MB}=\\dfrac{5}{7}$.",
+        "incorrect": "أوجد $MB$ بطرح $AM$ من $AB$ ثمّ اكتب النسبة بترتيب الحدّين المطلوب."
+      },
+      "solution": {
+        "lines": [
+          "$MB = AB - AM = 12 - 5 = 7$",
+          "$\\dfrac{MA}{MB} = \\dfrac{5}{7}$"
+        ],
+        "result": "\\dfrac{5}{7}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "وعبّر بكسر عن النسبة $\\dfrac{BA}{BM}$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر (مثلًا 3/4)",
+      "expectedAnswer": "12/7",
+      "misconceptionSignatures": [
+        {
+          "value": "7/12",
+          "id": "MISC-QARIBA-RATIOFLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$BA = AB$ و $BM = MB$."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{BA}{BM}=\\dfrac{12}{7}$.",
+        "incorrect": "ضع $BA$ في البسط و $BM$ في المقام."
+      },
+      "solution": {
+        "lines": [
+          "$BA = 12$ و $BM = 7$",
+          "$\\dfrac{BA}{BM} = \\dfrac{12}{7}$"
+        ],
+        "result": "\\dfrac{12}{7}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

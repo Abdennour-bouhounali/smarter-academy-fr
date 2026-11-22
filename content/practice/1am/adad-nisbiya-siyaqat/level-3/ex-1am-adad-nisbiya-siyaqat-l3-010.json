@@ -1,0 +1,193 @@
+{
+  "id": "ex-1am-adad-nisbiya-siyaqat-l3-010",
+  "lessonCode": "adad-nisbiya-siyaqat",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — مخبر الأرصاد",
+    "estimatedMinutes": 8,
+    "tags": [
+      "حرارة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "مخبر الأرصاد سجّل قراءات."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "قرأ محرار خنشلة صباحًا 11 درجة تحت الصفر. اكتب هذه القراءة بعدد نسبي.",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "-11",
+      "misconceptionSignatures": [
+        {
+          "value": "11",
+          "id": "MISC-REL-SIGNLOST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "فوق الصفر أم تحته؟ وكم تدريجة تبعد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما فوق الصفر عدد موجب بلا إشارة، وما تحته عدد سالب تسبقه الإشارة − ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجهة بالإشارة ثمّ المسافة بالعدد."
+        }
+      ],
+      "feedback": {
+        "correct": "تحت الصفر : عدد سالب، $-11$.",
+        "incorrect": "الجهة من الصفر تقول الإشارة، والمسافة تقول العدد."
+      },
+      "solution": {
+        "lines": [
+          "تحت الصفر (أو المرجع)",
+          "عدد سالب، مسافته $11$ : $-11$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "سجّلت محطّة أرصاد خنشلة صباحًا القراءات الآتية : $-2$ ؛ $8$ ؛ $-7$ ؛ $0$ . أيّ هذه القراءات أبرد؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-REL-SIGNBIG"
+        },
+        {
+          "id": "B",
+          "content": "$0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-REL-SIGNBIG"
+        },
+        {
+          "id": "C",
+          "content": "$-2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-REL-NEGORDER"
+        },
+        {
+          "id": "D",
+          "content": "$-7$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الجهة التي يقع فيها كلّ عدد من الصفر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما تحت الصفر أخفض ممّا فوقه، والأبعد تحت الصفر هو الأخفض."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن مواضع المستوى لا أحجام الأعداد المكتوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "الأبرد هو أدنى مستوى للسائل : $-7$ .",
+        "incorrect": "الأبرد ليس الأكبر عددًا : العدد السالب أصغر من الصفر ومن كلّ عدد موجب."
+      },
+      "solution": {
+        "lines": [
+          "نرتّب القراءات من الأصغر إلى الأكبر",
+          "الأصغر هو الأبرد : $-7$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "في قائمة الأعداد النسبية $-2$ ؛ $8$ ؛ $-7$ ؛ $0{,}5$ ؛ $-1$ ، كم عددًا سالبًا؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-REL-COUNTPOS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ الأعداد التي تسبقها الإشارة − ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السالب هو ما يقع تحت الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقرأ القائمة عددًا عددًا وضع علامة على السالبة."
+        }
+      ],
+      "feedback": {
+        "correct": "الأعداد السالبة 3 : هي التي تسبقها الإشارة − .",
+        "incorrect": "السالب يقع تحت الصفر."
+      },
+      "solution": {
+        "lines": [
+          "نعدّ الأعداد التي تسبقها الإشارة −",
+          "3"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

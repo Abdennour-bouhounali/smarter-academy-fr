@@ -1,0 +1,199 @@
+{
+  "id": "ex-4am-tarrid-muthallathiya-l3-005",
+  "lessonCode": "tarrid-muthallathiya",
+  "level": 3,
+  "metadata": {
+    "title": "جسر سيدي مسيد من موضعين",
+    "estimatedMinutes": 9,
+    "tags": [
+      "ترييض وضعية",
+      "مثلثان قائمان",
+      "الظل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-muthallathiya_P1",
+      "modelledOn": "ex-29",
+      "adaptedFrom": "ex-4am-tarrid-muthallathiya-l3-005"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "من نقطة $O$ في قاع الوادي بقسنطينة، يُرى سطح جسر سيدي مسيد بزاوية قيسها $31^{\\circ}$ مع الأفق. النقطة $H$ في مستوى $O$ تقع شاقوليا تحت النقطة $J$ من سطح الجسر، و $OH = 290\\,\\mathrm{m}$ (المسافة الأفقية). ويقوم بالقياس تلاميذ نادي العلوم بالتعاون، وكل منهم يسجّل بأمانة ما قرأه."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب ارتفاع سطح الجسر $HJ$ فوق مستوى النقطة $O$ بالتدوير إلى الوحدة.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الارتفاع بـ m مدوّرا إلى الوحدة",
+      "expectedAnswer": "174",
+      "misconceptionSignatures": [
+        {
+          "value": "483",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        },
+        {
+          "value": "149",
+          "id": "MISC-MUTH-NISBA-GHAYR-MUNASIBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $OHJ$ القائم في $H$ ، حدّد موقع الضلع المعلوم والضلع المطلوب بالنسبة إلى الزاوية $\\widehat{JOH}$ (مجاور، مقابل أو وتر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة التي تجمع هذين الضلعين هي ظل الزاوية $\\widehat{JOH}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالآلة الحاسبة مبرمجة على الدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$HJ = 290 \\times \\tan 31^{\\circ} \\approx 174\\,\\mathrm{m}$ .",
+        "incorrect": "الطول المطلوب في بسط النسبة: نضرب الطول المعلوم في النسبة المثلثية ولا نقسم عليها؛ والآلة الحاسبة مبرمجة على الدرجة."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $OHJ$ القائم في $H$ لدينا: $\\tan\\,\\widehat{JOH} = \\dfrac{HJ}{OH}$",
+          "ومنه: $HJ = OH \\times \\tan\\,\\widehat{JOH}$",
+          "$HJ = 290 \\times \\tan 31^{\\circ}$",
+          "باستعمال الآلة الحاسبة: $HJ \\approx 174{,}2496$"
+        ],
+        "result": "HJ \\approx 174\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب طول خط النظر $OJ$ بالتدوير إلى الوحدة.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بـ m مدوّرا إلى الوحدة",
+      "expectedAnswer": "338",
+      "misconceptionSignatures": [
+        {
+          "value": "249",
+          "id": "MISC-MUTH-DARB-BADAL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $OHJ$ القائم في $H$ ، حدّد موقع الضلع المعلوم والضلع المطلوب بالنسبة إلى الزاوية $\\widehat{JOH}$ (مجاور، مقابل أو وتر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة التي تجمع هذين الضلعين هي جيب تمام الزاوية $\\widehat{JOH}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالآلة الحاسبة مبرمجة على الدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$OJ = \\dfrac{290}{\\cos 31^{\\circ}} \\approx 338\\,\\mathrm{m}$ .",
+        "incorrect": "الطول المطلوب في مقام النسبة: نقسم الطول المعلوم على النسبة المثلثية ولا نضرب فيها؛ والآلة الحاسبة مبرمجة على الدرجة."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $OHJ$ القائم في $H$ لدينا: $\\cos\\,\\widehat{JOH} = \\dfrac{OH}{OJ}$",
+          "ومنه: $OJ = \\dfrac{OH}{\\cos\\,\\widehat{JOH}}$",
+          "$OJ = \\dfrac{290}{\\cos 31^{\\circ}}$",
+          "باستعمال الآلة الحاسبة: $OJ \\approx 338{,}3237$"
+        ],
+        "result": "OJ \\approx 338\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "يتقدّم الملاحظ أفقيا نحو $H$ حتى يصير قيس زاوية النظر إلى $J$ يساوي $45^{\\circ}$ . احسب المسافة التي قطعها بالتدوير إلى الوحدة.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المسافة بـ m مدوّرة إلى الوحدة",
+      "expectedAnswer": "116",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في الموضع الجديد مثلث قائم آخر له الارتفاع $HJ$ نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بزاوية $45^{\\circ}$ يكون المثلث القائم متقايس الساقين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة المقطوعة = المسافة الأولى − المسافة الجديدة."
+        }
+      ],
+      "feedback": {
+        "correct": "المسافة الجديدة $= HJ \\approx 174{,}25\\,\\mathrm{m}$ ، فقطع $290 - 174{,}25 \\approx 116\\,\\mathrm{m}$ .",
+        "incorrect": "المثلث الجديد قائم في $H$ وزاويته $45^{\\circ}$ : ضلعا الزاوية القائمة متساويان."
+      },
+      "solution": {
+        "lines": [
+          "نسمّي $O'$ الموضع الجديد. في المثلث $O'HJ$ القائم في $H$ : $\\tan 45^{\\circ} = \\dfrac{HJ}{O'H}$ و $\\tan 45^{\\circ} = 1$ ، إذن $O'H = HJ$ .",
+          "$O'H = 290 \\times \\tan 31^{\\circ} \\approx 174{,}2496$",
+          "المسافة المقطوعة: $OO' = 290 - O'H \\approx 115{,}7504$"
+        ],
+        "result": "OO' \\approx 116\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

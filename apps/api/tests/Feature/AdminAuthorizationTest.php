@@ -30,7 +30,11 @@ class AdminAuthorizationTest extends TestCase
             }
 
             $methods = array_diff($route->methods(), ['HEAD']);
-            $uri = str_replace(['{code}', '{id}', '{type}'], ['fractions', '1', 'lesson'], $route->uri());
+            $uri = str_replace(
+                ['{code}', '{id}', '{type}', '{role}', '{requestId}', '{subscriptionId}', '{overrideId}', '{versionId}', '{studentId}', '{lessonId}', '{key}'],
+                ['fractions', '1', 'lesson', 'teachers', '1', '1', '1', '1', '1', '1', '1', 'notebook'],
+                $route->uri()
+            );
 
             foreach ($methods as $method) {
                 $routes[] = [$method, '/'.$uri];
@@ -72,6 +76,31 @@ class AdminAuthorizationTest extends TestCase
         }
     }
 
+    /**
+     * « مسيّر المكتبة » (BOOKS_STORE.md §6ter) : les commandes, les livres, les
+     * messages des livres et son propre compte — et RIEN d'autre sous /admin,
+     * pas même la gestion des gestionnaires.
+     */
+    public function test_le_gestionnaire_de_la_librairie_n_ouvre_que_les_livres(): void
+    {
+        $manager = User::factory()->create(['role' => User::ROLE_BOOK_MANAGER, 'email_verified_at' => now()]);
+        $token = $manager->createToken('books-token')->plainTextToken;
+
+        $open = 0;
+        foreach ($this->adminRoutes() as [$method, $uri]) {
+            $allowed = (bool) preg_match('#^/api/v1/admin/(books|book-orders|book-order-payments|book-messages|account|push)(/|$)#', $uri);
+            $response = $this->withHeader('Authorization', "Bearer {$token}")->json($method, $uri);
+
+            if ($allowed) {
+                $open++;
+                $this->assertNotSame(403, $response->status(), "{$method} {$uri} devrait être ouvert au gestionnaire");
+            } else {
+                $this->assertSame(403, $response->status(), "{$method} {$uri} devrait répondre 403 au gestionnaire, a répondu {$response->status()}");
+            }
+        }
+        $this->assertGreaterThan(10, $open, 'les routes de la librairie doivent être couvertes');
+    }
+
     public function test_un_admin_passe_la_porte(): void
     {
         $admin = User::factory()->create(['role' => User::ROLE_ADMIN]);
@@ -90,6 +119,7 @@ class AdminAuthorizationTest extends TestCase
     public function test_une_inscription_ne_peut_pas_se_donner_le_role_admin(): void
     {
         $response = $this->postJson('/api/v1/auth/register', [
+            'firstName' => 'أمين', 'lastName' => 'بن علي',
             'email' => 'malin@example.com',
             'password' => 'motdepasse123',
             'role' => 'admin',

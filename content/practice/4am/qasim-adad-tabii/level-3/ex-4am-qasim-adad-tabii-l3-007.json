@@ -1,0 +1,161 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l3-007",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2008 — 2431 و 17",
+    "estimatedMinutes": 6,
+    "tags": [
+      "قسمة إقليدية",
+      "كسر غير قابل للاختزال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-adad-tabii_P1",
+      "modelledOn": "BEM 2008 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2008",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "جد حاصل وباقي القسمة الإقليدية للعدد 2431 على 17.",
+      "statement": "حاصل القسمة:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "143",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أكبر مضاعف للعدد 17 لا يتجاوز 2431."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل القسمة هو أكبر عدد طبيعي $q$ يحقق $17 \\times q \\leq 2431$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الباقي أصغر تمامًا من 17."
+        }
+      ],
+      "feedback": {
+        "correct": "$2431 = 17 \\times 143 + 0$ مع $0 < 17$.",
+        "incorrect": "ابحث عن أكبر مضاعف للعدد 17 لا يتجاوز 2431، ثم اطرحه من 2431."
+      },
+      "solution": {
+        "lines": [
+          "$17 \\times 143 = 2431$ و $17 \\times 144 = 2448$ أكبر من 2431.",
+          "$2431 - 2431 = 0$ و $0 < 17$",
+          "إذن المساواة التي تعبّر عن القسمة الإقليدية هي:"
+        ],
+        "result": "2431 = 17 \\times 143 + 0"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "الباقي:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى من 2431 بعد طرح أكبر مضاعف للعدد 17 لا يتجاوزه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي عدد طبيعي أصغر تمامًا من 17."
+        }
+      ],
+      "feedback": {
+        "correct": "$2431 = 17 \\times 143 + 0$: الباقي 0، فهو معدوم.",
+        "incorrect": "اطرح من 2431 أكبر مضاعف للعدد 17 لا يتجاوزه."
+      },
+      "solution": {
+        "lines": [
+          "$2431 - 17 \\times 143 = 0$"
+        ],
+        "result": "r = 0"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "اكتب الكسر $\\dfrac{2431}{2448}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "143/144",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01، ثم اقسم 2448 على 17."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب البسط والمقام على شكل جداء أحد عامليه 17."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2431}{2448} = \\dfrac{17 \\times 143}{17 \\times 144} = \\dfrac{143}{144}$.",
+        "incorrect": "اكتب البسط والمقام على شكل جداء العدد 17 في عدد طبيعي، ثم اختزل.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال."
+      },
+      "solution": {
+        "lines": [
+          "$2431 = 17 \\times 143$ و $2448 = 17 \\times 144$",
+          "$\\dfrac{2431}{2448} = \\dfrac{17 \\times 143}{17 \\times 144}$",
+          "العددان 143 و 144 متتاليان، فلا يقبلان القسمة على أي عدد مشترك غير 1."
+        ],
+        "result": "\\dfrac{2431}{2448} = \\dfrac{143}{144}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

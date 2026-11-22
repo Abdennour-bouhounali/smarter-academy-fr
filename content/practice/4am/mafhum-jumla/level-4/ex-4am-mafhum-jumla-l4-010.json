@@ -1,0 +1,204 @@
+{
+  "id": "ex-4am-mafhum-jumla-l4-010",
+  "lessonCode": "mafhum-jumla",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2018 — خزانان يمتلئان",
+    "estimatedMinutes": 12,
+    "tags": [
+      "جملة",
+      "ثنائية",
+      "ترجمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mafhum-jumla_P3",
+      "modelledOn": "BEM 2018 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2018",
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "في مزرعة، يحرص صاحبها على عدم تبذير الماء، خزانان للماء: الخزان (A) فيه 1200L ويُصبّ فيه 50L في الدقيقة، والخزان (B) فيه 2000L ويُصبّ فيه 30L في الدقيقة. نسمّي $x$ عدد الدقائق ابتداءً من الآن."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أنه إذا احتوى الخزانان بعد $x$ دقيقة الكمية نفسها $y$ (باللتر) فإن الثنائية $(x ; y)$ حل للجملة $\\begin{cases} -50x + y = 1200 \\\\ -30x + y = 2000 \\end{cases}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عبّر عن كمية الماء في كل خزان بعد $x$ دقيقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل الحد الذي فيه $x$ إلى الطرف الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "بعد $x$ دقيقة يحتوي الخزان (A) على $1200 + 50x$ لترا، أي $y = 50x + 1200$ ، ومنه $-50x + y = 1200$ .",
+          "ويحتوي الخزان (B) على $2000 + 30x$ لترا، أي $y = 30x + 2000$ ، ومنه $-30x + y = 2000$ .",
+          "ومنه الثنائية $(x ; y)$ تحقق المعادلتين معا: هي حل للجملة."
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل الثنائية $(20 ; 2200)$ حل لهذه الجملة؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-MUADALA-WAHIDA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $20$ و $y$ بـ $2200$ في كل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الثنائية حل للجملة إذا حققت المعادلتين في آن واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$-50 \\times 20 + 2200 = 1200$ ؛ $-30 \\times 20 + 2200 = 1600 \\neq 2000$ : الثنائية ليست حلا للجملة.",
+        "incorrect": "العدد الأول في الثنائية قيمة $x$ والثاني قيمة $y$ ؛ عوّض في المعادلتين معا وقارن كل نتيجة بالطرف الثاني."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $x$ بـ $20$ و $y$ بـ $2200$ :",
+          "$-50 \\times 20 + 2200 = 1200$",
+          "$-30 \\times 20 + 2200 = 1600 \\neq 2000$",
+          "ومنه الثنائية $(20 ; 2200)$ ليست حلا للجملة (لا تحقق المعادلتين معا)."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "هل الثنائية $(40 ; 3200)$ حل لهذه الجملة؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $40$ و $y$ بـ $3200$ في كل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الثنائية حل للجملة إذا حققت المعادلتين في آن واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$-50 \\times 40 + 3200 = 1200$ ؛ $-30 \\times 40 + 3200 = 2000$ : الثنائية حل للجملة.",
+        "incorrect": "العدد الأول في الثنائية قيمة $x$ والثاني قيمة $y$ ؛ عوّض في المعادلتين معا وقارن كل نتيجة بالطرف الثاني."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $x$ بـ $40$ و $y$ بـ $3200$ :",
+          "$-50 \\times 40 + 3200 = 1200$",
+          "$-30 \\times 40 + 3200 = 2000$",
+          "ومنه الثنائية $(40 ; 3200)$ حل للجملة."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "ماذا تعني هذه النتيجة بالنسبة للخزانين؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد الأول في الثنائية عدد الدقائق، والثاني كمية الماء."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "الثنائية $(40 ; 3200)$ حل للجملة.",
+          "بعد 40 دقيقة يحتوي كل من الخزانين على 3200L : تتساوى الكميتان."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

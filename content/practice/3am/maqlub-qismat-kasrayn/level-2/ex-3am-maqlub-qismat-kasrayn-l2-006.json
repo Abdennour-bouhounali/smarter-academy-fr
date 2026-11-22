@@ -1,0 +1,221 @@
+{
+  "id": "ex-3am-maqlub-qismat-kasrayn-l2-006",
+  "lessonCode": "maqlub-qismat-kasrayn",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أيّ مساواة صحيحة؟",
+    "estimatedMinutes": 8,
+    "tags": [
+      "قسمة",
+      "كسر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "أيّ المساواتين الآتيتين صحيحة؟",
+      "statement": "اختر المساواة الصحيحة.",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{5}{6} \\div \\dfrac{10}{9} = \\dfrac{5}{6} \\times \\dfrac{9}{10}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{5}{6} \\div \\dfrac{10}{9} = \\dfrac{5}{6} \\times \\dfrac{10}{9}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{5}{6} \\div \\dfrac{10}{9} = \\dfrac{6}{5} \\times \\dfrac{10}{9}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{5}{6} \\div \\dfrac{10}{9} = \\dfrac{6}{5} \\times \\dfrac{9}{10}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الخيارات واحسب كلاّ منها بدل أن تخمّن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ خيار على الأعداد الواردة فيه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حوّل القسمة إلى جداء بمقلوب القاسم، ثمّ قارن."
+        }
+      ],
+      "feedback": {
+        "correct": "القسمة على $\\dfrac{10}{9}$ هي الضرب في مقلوبه $\\dfrac{9}{10}$ ، والمقسوم $\\dfrac{5}{6}$ يبقى كما هو.",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم على $\\dfrac{10}{9}$ بالضرب في مقلوبه $\\dfrac{9}{10}$ دون تغيير المقسوم."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "احسب.",
+      "statement": "احسب $ \\dfrac{5}{6} \\div \\dfrac{10}{9} $ .",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "3/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "25/27",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "4/3",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "27/25",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ الكسرين هو المقسوم وأيّهما المقسوم عليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني: نقلب المقسوم عليه وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء، اختزل العوامل المشتركة قبل الضرب، ثمّ اكتب الناتج على أبسط شكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{5}{6} \\div \\dfrac{10}{9} = \\dfrac{3}{4}$ لأنّ قسمة كسر على كسر هي ضرب الأوّل في مقلوب الثاني.",
+        "incorrect": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني فقط، ثمّ نختزل؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $\\dfrac{5}{6} \\div \\dfrac{10}{9} = \\dfrac{5}{6} \\times \\dfrac{9}{10}$ .",
+          "$= \\dfrac{5 \\times 9}{6 \\times 10} = \\dfrac{3}{4}$ ."
+        ],
+        "result": "\\dfrac{3}{4}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب $ \\dfrac{9}{10} \\div \\dfrac{3}{5} $ .",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "3/2",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "27/50",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "2/3",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "50/27",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ الكسرين هو المقسوم وأيّهما المقسوم عليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني: نقلب المقسوم عليه وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء، اختزل العوامل المشتركة قبل الضرب، ثمّ اكتب الناتج على أبسط شكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9}{10} \\div \\dfrac{3}{5} = \\dfrac{3}{2}$ لأنّ قسمة كسر على كسر هي ضرب الأوّل في مقلوب الثاني.",
+        "incorrect": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني فقط، ثمّ نختزل؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $\\dfrac{9}{10} \\div \\dfrac{3}{5} = \\dfrac{9}{10} \\times \\dfrac{5}{3}$ .",
+          "$= \\dfrac{9 \\times 5}{10 \\times 3} = \\dfrac{3}{2}$ ."
+        ],
+        "result": "\\dfrac{3}{2}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

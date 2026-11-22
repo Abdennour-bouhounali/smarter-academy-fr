@@ -1,0 +1,246 @@
+{
+  "id": "ex-2am-jam-tarh-nisbiya-l4-001",
+  "lessonCode": "jam-tarh-nisbiya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — حساب ثمّ مقارنة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جمع وطرح",
+      "مقارنة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 2,
+      "file": "2am-s2-71",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أحسب بتمعّن موضّحًا مراحل الحساب : $A=(+6)-(-3)$ و $B=(-11)+(+4)$ ثمّ أقارن النتيجتين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب : $A=(+6)-(-3)$ .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-JAMNISB-SUBNOFLIP"
+        },
+        {
+          "value": "-9",
+          "id": "MISC-JAMNISB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الطرح يعني إضافة المعاكس : اكتب معاكس العدد المطروح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حوّل الفرق إلى مجموع بإبدال العدد المطروح بمعاكسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثمّ طبّق قاعدة الجمع المناسبة : إشارتان متماثلتان أم مختلفتان؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$(+6)-(-3)=(+9)$ : الطرح إضافة للمعاكس ثمّ نطبّق قاعدة الجمع.",
+        "incorrect": "راجع قاعدة الحساب المناسبة (الجمع، أو الطرح بإضافة المعاكس)، ثمّ أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الطرح يعني إضافة المعاكس : معاكس $(-3)$ هو $(+3)$",
+          "$(+6)-(-3)=(+6)+(+3)$",
+          "العددان لهما الإشارة نفسها (الموجبة) : نجمع المسافتين إلى الصفر ، $6+3=9$",
+          "نحتفظ بالإشارة المشتركة (الموجبة)",
+          "$(+6)-(-3)=(+9)$"
+        ],
+        "result": "9"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب : $B=(-11)+(+4)$ .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-7",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-JAMNISB-SIGNFIRST"
+        },
+        {
+          "value": "-15",
+          "id": "MISC-JAMNISB-ADDDIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن إشارتي العددين ثمّ قارن مسافتيهما إلى الصفر : أيّهما أبعد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عند اختلاف الإشارتين نطرح المسافة الصغرى من المسافة الكبرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "النتيجة تأخذ إشارة العدد الأبعد عن الصفر ؛ وإذا تساوت المسافتان فالنتيجة معدومة."
+        }
+      ],
+      "feedback": {
+        "correct": "$(-11)+(+4)=(-7)$ : العددان من إشارتين مختلفتين فنطرح المسافتين ونأخذ إشارة الأبعد عن الصفر.",
+        "incorrect": "راجع قاعدة الحساب المناسبة (الجمع، أو الطرح بإضافة المعاكس)، ثمّ أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "العددان من إشارتين مختلفتين : المسافتان إلى الصفر $11$ و $4$ ؛ نطرح الصغرى من الكبرى : $11-4=7$",
+          "نأخذ إشارة العدد الأبعد عن الصفر وهو $(-11)$ (السالبة)",
+          "$(-11)+(+4)=(-7)$"
+        ],
+        "result": "-7"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أيّ العددين $A$ و $B$ أصغر ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$A$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$B$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب قيمة كلّ عدد أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأصغر هو الأبعد إلى يسار الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الإشارات أوّلًا ثمّ المسافات إلى الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "الأصغر هو الأبعد إلى يسار الصفر : B",
+        "incorrect": "راجع قاعدة الحساب المناسبة (الجمع، أو الطرح بإضافة المعاكس)، ثمّ أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "القيم : A : $9$ ؛ B : $-7$",
+          "الأصغر هو الأبعد إلى يسار الصفر : B"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "ما معاكس العدد $B$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أوجد قيمة النتيجة أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المعاكس له المسافة نفسها إلى الصفر وإشارة مخالفة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "غيّر إشارة النتيجة دون أن تغيّر ما بعدها."
+        }
+      ],
+      "feedback": {
+        "correct": "المعاكس هو $(+7)$",
+        "incorrect": "راجع قاعدة الحساب المناسبة (الجمع، أو الطرح بإضافة المعاكس)، ثمّ أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "معاكس عدد : العدد نفسه بإشارة مخالفة",
+          "المعاكس هو $(+7)$"
+        ],
+        "result": "7"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

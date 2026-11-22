@@ -1,0 +1,139 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l1-009",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 1,
+  "metadata": {
+    "title": "بالآلة الحاسبة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "آلة حاسبة",
+      "باقٍ"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ict",
+      "page": 50,
+      "section": "استعمل تكنولوجيات الإعلام والاتصال"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "حجزت سلمى على آلتها الحاسبة $412 \\div 15$ فظهر على الشاشة العدد 27,46666667."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما هو حاصل القسمة الإقليدية للعدد 412 على 15؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "27",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "26",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "28",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 412 من 15 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 15 دون أن نتجاوز 412."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$412 = 15 \\times 27 + 7$ و $7 < 15$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 15 فلا يتجاوز الجداء 412، والباقي عندئذ أصغر من 15."
+      },
+      "solution": {
+        "lines": [
+          "$15 \\times 27 = 405$ و $15 \\times 28 = 420$",
+          "$405 \\le 412 < 420$ ، إذن الحاصل هو 27."
+        ],
+        "result": "q = 27"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب باقي هذه القسمة.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "27",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "22",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 412."
+        }
+      ],
+      "feedback": {
+        "correct": "$412 - 15 \\times 27 = 412 - 405 = 7$ ، و $7 < 15$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 15."
+      },
+      "solution": {
+        "lines": [
+          "$412 = 15 \\times 27 + 7$",
+          "$7 < 15$ ، إذن الباقي هو 7."
+        ],
+        "result": "r = 7"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

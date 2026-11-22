@@ -1,0 +1,71 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-fada-l5-006",
+  "lessonCode": "wadiya-idmajiya-fada",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — حجم دلو التحدّي ممتلئا",
+    "estimatedMinutes": 7,
+    "tags": [
+      "المخروط المبتور",
+      "التدوير",
+      "اللتر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-fada_P3",
+      "modelledOn": "challenge"
+    }
+  },
+  "statement": {
+    "content": "دلو على شكل مخروط مبتور: نصف قطر حافته العلوية $20\\,\\mathrm{cm}$ ونصف قطر قاعه $15\\,\\mathrm{cm}$ وارتفاعه $35\\,\\mathrm{cm}$ . نكمله إلى مخروط رأسه على بعد $105\\,\\mathrm{cm}$ تحت القاع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "سعة الدلو ممتلئا باللتر، مدوّرة إلى $0{,}1$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-fada_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (باللتر، مدوّر إلى 0,1)",
+      "expectedAnswer": "33.9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "السعة = حجم المخروط الكبير − حجم الصغير."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكبير: نصف القطر 20 والارتفاع $105 + 35$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب بدلالة π ثم قسّم على 1000 ودوّر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{3}\\pi(400 \\times 140 - 225 \\times 105) = \\dfrac{32375}{3}\\pi \\approx 33\\,903\\,\\mathrm{cm}^3 \\approx 33{,}9\\,\\mathrm{L}$ .",
+        "incorrect": "الفرق بين حجمي مخروطين، ثم القسمة على 1000."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "339",
+          "id": "MISC-SAA-WAHDA"
+        },
+        {
+          "value": "58.6",
+          "id": "MISC-MABTUR-FARQ"
+        }
+      ],
+      "difficulty": 5
+    }
+  ]
+}

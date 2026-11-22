@@ -1,0 +1,123 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l3-004",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 3,
+  "metadata": {
+    "title": "معارف — مثال الشعاعين المتساويين",
+    "estimatedMinutes": 3,
+    "tags": [
+      "تساوي شعاعين"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-equal",
+      "page": 144,
+      "section": "معارف",
+      "number": 3
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 144): A، B، C، D نقط إحداثياتها $(-4\\,;\\,-1)$ ، $(3\\,;\\,-1)$ ، $(-3\\,;\\,2)$ و $(4\\,;\\,2)$ على الترتيب."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مركبتا $\\overrightarrow{AB}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "point",
+      "answerFormat": "المركبتان: الأولى ثم الثانية — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "7",
+        "y": "0"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-7",
+            "y": "0"
+          },
+          "id": "MISC-MAALAM-TARH-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبدأ A والنهاية B."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المركبة الأولى: فاصلة B ناقص فاصلة A."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المركبة الثانية: ترتيب B ناقص ترتيب A، وانتبه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 + 4 = 7$ و $-1 - (-1) = 0$ .",
+        "incorrect": "النهاية B ناقص المبدأ A."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "الشعاعان $\\overrightarrow{AB}$ و $\\overrightarrow{CD}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "غير متساويين لأن AB على ارتفاع غير ارتفاع CD",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MABDA"
+        },
+        {
+          "id": "B",
+          "content": "متساويان، والرباعي ABDC متوازي أضلاع",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "متساويان، والرباعي ABCD متوازي أضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-TARTIB-NUQAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مركبتي كل شعاع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن المركبة الأولى بالأولى والثانية بالثانية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يتساوى الشعاعان إذا تساوت المركبتان معا."
+        }
+      ],
+      "feedback": {
+        "correct": "CD مركبتاه 7 و 0 أيضا: AB = CD، أي ABDC متوازي أضلاع.",
+        "incorrect": "AB = CD يعني أن ABDC (لا ABCD) متوازي أضلاع."
+      }
+    }
+  ]
+}

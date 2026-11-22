@@ -1,0 +1,501 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-ibarat-harfiya-3-l5-008",
+  "lessonCode": "wadiya-idmajiya-ibarat-harfiya-3",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مثلّثات داخل مستطيل",
+    "estimatedMinutes": 14,
+    "tags": [
+      "مساحات",
+      "مثلثات",
+      "مقارنة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "$ABCD$ مستطيل فيه $AB = 8$ سم و $AD = 5$ سم. النقطة $E$ من $[AB]$ حيث $AE = 3$ سم، والنقطة $F$ من $[BC]$ حيث $BF = x$ سم ($0 \\leq x \\leq 5$). نرمز بـ $S$ إلى مجموع مساحات المثلثات $AED$ و $EBF$ و $DFC$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب مساحات المثلثات.",
+      "statement": "مساحة المثلث $AED$ (بالسنتيمتر المربّع) :",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "7.5",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "مساحته $7{,}5$ سم² .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $AED$ قائم في $A$ : $\\dfrac{3 \\times 5}{2}$",
+          "$7{,}5$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "مساحة المثلث $EBF$ تكتب $ux$ : العدد $u$ :",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $u$ فقط",
+      "expectedAnswer": "2.5",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحدود المتشابهة في العبارة؟ وهل يسبق قوسًا إشارة طرح أو عدد يضربه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انشر الأقواس أولًا: العدد أمام القوس يضرب كل حدّ داخله، وإشارة الطرح أمامه تغيّر إشارة كل حدّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود التي فيها الحرف معًا، ثم الأعداد معًا، وتحقّق بقيمة صغيرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$u = 2.5$ .",
+        "incorrect": "انشر الأقواس مع الانتباه إلى الإشارات ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$EB = 8 - 3 = 5$ ، و $BF = x$ .",
+          "مساحته $\\dfrac{5 \\times x}{2} = 2{,}5x$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "مساحة المثلث $DFC$ تكتب $ux + w$ : العدد $u$ :",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $u$ فقط",
+      "expectedAnswer": "-4",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحدود المتشابهة في العبارة؟ وهل يسبق قوسًا إشارة طرح أو عدد يضربه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انشر الأقواس أولًا: العدد أمام القوس يضرب كل حدّ داخله، وإشارة الطرح أمامه تغيّر إشارة كل حدّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود التي فيها الحرف معًا، ثم الأعداد معًا، وتحقّق بقيمة صغيرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$u = -4$ .",
+        "incorrect": "انشر الأقواس مع الانتباه إلى الإشارات ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$FC = 5 - x$ ، و $DC = 8$ .",
+          "مساحته $\\dfrac{8 \\times (5 - x)}{2} = -4x + 20$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "العدد $w$ :",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $w$ فقط",
+      "expectedAnswer": "20",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحدود المتشابهة في العبارة؟ وهل يسبق قوسًا إشارة طرح أو عدد يضربه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انشر الأقواس أولًا: العدد أمام القوس يضرب كل حدّ داخله، وإشارة الطرح أمامه تغيّر إشارة كل حدّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود التي فيها الحرف معًا، ثم الأعداد معًا، وتحقّق بقيمة صغيرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$w = 20$ .",
+        "incorrect": "انشر الأقواس مع الانتباه إلى الإشارات ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$-4x + 20$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ا",
+      "lead": "بسّط المجموع $S$ واكتبه على الشكل $ux + w$ .",
+      "statement": "العدد $u$ :",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $u$ فقط",
+      "expectedAnswer": "-1.5",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحدود المتشابهة في العبارة؟ وهل يسبق قوسًا إشارة طرح أو عدد يضربه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انشر الأقواس أولًا: العدد أمام القوس يضرب كل حدّ داخله، وإشارة الطرح أمامه تغيّر إشارة كل حدّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود التي فيها الحرف معًا، ثم الأعداد معًا، وتحقّق بقيمة صغيرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = -1{,}5x + 27{,}5$ إذن $u = -1.5$ .",
+        "incorrect": "انشر الأقواس مع الانتباه إلى الإشارات ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$S = 7{,}5 + 2{,}5x + (-4x + 20)$",
+          "$S = -1{,}5x + 27{,}5$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ب",
+      "statement": "العدد $w$ :",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $w$ فقط",
+      "expectedAnswer": "27.5",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحدود المتشابهة في العبارة؟ وهل يسبق قوسًا إشارة طرح أو عدد يضربه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انشر الأقواس أولًا: العدد أمام القوس يضرب كل حدّ داخله، وإشارة الطرح أمامه تغيّر إشارة كل حدّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود التي فيها الحرف معًا، ثم الأعداد معًا، وتحقّق بقيمة صغيرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$w = 27.5$ .",
+        "incorrect": "انشر الأقواس مع الانتباه إلى الإشارات ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$S = -1{,}5x + 27{,}5$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "sub": "ا",
+      "lead": "مساحة المثلث $EDF$ هي مساحة المستطيل ناقص $S$ . نأخذ $x = 2$ .",
+      "statement": "احسب $S$ من أجل $x = 2$ :",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "24.5",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = 24{,}5$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$S = -1{,}5x + 27{,}5$",
+          "$S = 24{,}5$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q8",
+      "step": "03",
+      "sub": "ب",
+      "statement": "احسب مساحة $EDF$ من أجل $x = 2$ :",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "15.5",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "مساحة $EDF$ هي $15{,}5$ سم² .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$8 \\times 5 - S = 40 - 24{,}5$",
+          "$15{,}5$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q9",
+      "step": "03",
+      "sub": "ج",
+      "statement": "من أجل $x = 2$ ، قارن $S$ ومساحة $EDF$ .",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$S$ تساوي مساحة $EDF$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SYN-HARF-DIFFSIGN"
+        },
+        {
+          "id": "B",
+          "content": "$S$ أكبر من مساحة $EDF$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$S$ أصغر من مساحة $EDF$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SYN-HARF-DIFFSIGN"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا تعلّمنا إشارة الفرق عن ترتيب العددين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب قيمة كل عبارة من أجل العدد المعطى، ثم قارن العددين، أو احسب الفرق وانظر إلى إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا انعكس ترتيب الطرح فإنّ إشارة الفرق تنعكس أيضًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$S$ أكبر من مساحة $EDF$ .",
+        "incorrect": "احسب القيمتين أو الفرق، وانتبه إلى ترتيب الطرح قبل أن تحكم على الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "$S - \\text{مساحة } EDF = 9$ .",
+          "الفرق موجب: $S$ أكبر."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q10",
+      "step": "04",
+      "lead": "نأخذ الآن $x = 4$ .",
+      "statement": "هل مجموع مساحات المثلثات الثلاثة $S$ أكبر من أو يساوي مساحة $EDF$ من أجل $x = 4$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SYN-HARF-DIFFSIGN"
+        },
+        {
+          "id": "B",
+          "content": "نعم",
+          "isCorrect": true
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد ما تطلبه كل خطوة: عبارة، أم قيمة من أجل عدد، أم قرار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بالعدد المعطى في كل مكان منه، واحترم الأقواس وأولوية العمليات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الأعداد التي حسبتها قبل أن تقرّر، وتحقّق من الوحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم: $S$ أكبر أو تساوي.",
+        "incorrect": "راجع خطوات الحل: عوّض ثم احسب، وقارن الأعداد قبل أن تقرّر."
+      },
+      "solution": {
+        "lines": [
+          "$S = 21{,}5$ و مساحة $EDF = 18{,}5$ .",
+          "$21{,}5 \\geq 18{,}5$"
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

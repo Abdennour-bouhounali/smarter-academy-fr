@@ -1,0 +1,234 @@
+{
+  "id": "ex-4am-qasim-mushtarak-akbar-l4-001",
+  "lessonCode": "qasim-mushtarak-akbar",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 10 — 155 و 141",
+    "estimatedMinutes": 7,
+    "tags": [
+      "قواسم",
+      "PGCD"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-10",
+      "page": 14,
+      "section": "أوظّف تعلّماتي",
+      "number": 10
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "عيّن قائمة قواسم كل من العددين:",
+      "statement": "العدد 155.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        5,
+        31,
+        155
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            5,
+            31
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختبر قابلية قسمة 155 على الأعداد الطبيعية التي مربعها لا يتجاوز 155."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل قسمة باقيها معدوم تعطي قاسمين: $d$ و $155 \\div d$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "قواسم العدد 155 هي: 1 ، 5 ، 31 ، 155.",
+        "incorrect": "اختبر الأعداد التي مربعها لا يتجاوز العدد، وخذ من كل قسمة باقيها معدوم القاسمين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$155 = 1 \\times 155$ ، $155 = 5 \\times 31$",
+          "إذن قواسم العدد 155 هي: 1 ، 5 ، 31 ، 155."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "العدد 141.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        3,
+        47,
+        141
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            3,
+            47
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختبر قابلية قسمة 141 على الأعداد الطبيعية التي مربعها لا يتجاوز 141."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل قسمة باقيها معدوم تعطي قاسمين: $d$ و $141 \\div d$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "قواسم العدد 141 هي: 1 ، 3 ، 47 ، 141.",
+        "incorrect": "اختبر الأعداد التي مربعها لا يتجاوز العدد، وخذ من كل قسمة باقيها معدوم القاسمين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$141 = 1 \\times 141$ ، $141 = 3 \\times 47$",
+          "إذن قواسم العدد 141 هي: 1 ، 3 ، 47 ، 141."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما هو أكبر قاسم مشترك لهما؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قائمة قواسم كل من العددين 155 و 141."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استخرج القواسم المشتركة: الأعداد الموجودة في القائمتين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاسم المشترك الأكبر هو أكبر القواسم المشتركة، لا أيّ واحد منها."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 155 و 141 هي 1، وأكبرها 1.",
+        "incorrect": "اكتب قائمتي القواسم كاملتين، ثم خذ أكبر عدد يظهر في القائمتين معًا."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 155 هي: 1 ، 5 ، 31 ، 155",
+          "قواسم العدد 141 هي: 1 ، 3 ، 47 ، 141",
+          "القواسم المشتركة للعددين 155 و 141 هي: 1",
+          "أكبرها هو 1، إذن:"
+        ],
+        "result": "PGCD(155 ; 141) = 1"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "ما هو أصغر قاسم لهما؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما هو العدد الذي يقسم كل عدد طبيعي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انظر إلى أصغر عدد في كل قائمة."
+        }
+      ],
+      "feedback": {
+        "correct": "1 قاسم لكل عدد طبيعي، فهو أصغر قاسم للعددين 155 و 141.",
+        "incorrect": "انظر إلى أول عدد في قائمة قواسم كل منهما."
+      },
+      "solution": {
+        "lines": [
+          "أصغر قاسم للعدد 155 هو 1، وأصغر قاسم للعدد 141 هو 1،",
+          "إذن أصغر قاسم لهما هو 1، وهو هنا أيضًا قاسمهما المشترك الأكبر."
+        ]
+      },
+      "timeSeconds": 45
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "id": "ex-4am-zawiya-muhitiya-l2-002",
+  "lessonCode": "zawiya-muhitiya",
+  "level": 2,
+  "metadata": {
+    "title": "تمرين 10 — المثلث المتقايس الأضلاع",
+    "estimatedMinutes": 2,
+    "tags": [
+      "خاصية 1",
+      "خاصية 2"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-10",
+      "page": 159,
+      "section": "الزوايا المحيطية و الزوايا المركزية",
+      "number": 10
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 159): ABC مثلث متقايس الأضلاع و O هي مركز الدّائرة المحيطة به. D و E نقطتان من هذه الدّائرة متناظرتان بالنسبة إلى O (الشكل).",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          1.0,
+          1.7321
+        ],
+        "B": [
+          -2.0,
+          0.0
+        ],
+        "C": [
+          1.0,
+          -1.7321
+        ],
+        "D": [
+          -1.4142,
+          1.4142
+        ],
+        "E": [
+          1.4142,
+          -1.4142
+        ]
+      },
+      "circles": [
+        {
+          "center": "O",
+          "radius": 2
+        }
+      ],
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "A"
+        ],
+        {
+          "from": "D",
+          "to": "E",
+          "tone": "indigo"
+        }
+      ],
+      "ariaLabel": "دائرة مركزها O، المثلث ABC متقايس الأضلاع مرسوم فيها، والقطر [DE]",
+      "maxWidth": 480
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "عيّن قيس الزاوية $\\widehat{BOC}$ بالدرجة.",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "120",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوس الذي تحصره كل زاوية: هل هو نفس القوس؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الزاويتين: أيهما أكبر، المركزية أم المحيطية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قيس الزاوية المحيطية نصف قيس الزاوية المركزية التي تحصر معها نفس القوس."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{BOC} = 2\\widehat{BAC} = 2 \\times 60^\\circ = 120^\\circ$ .",
+        "incorrect": "زاوية المثلث المتقايس الأضلاع $60^\\circ$ ، والمركزية ضعف المحيطية."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-DIF",
+          "value": "30"
+        },
+        {
+          "id": "MISC-MUHITIYA-MUSAWIYA",
+          "value": "60"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "statement": "عيّن قيس الزاوية $\\widehat{BDC}$ بالدرجة.",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "60",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل الزاويتان محيطيتان (رأساهما على الدائرة)؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل تحصران نفس القوس، أي رأساهما في نفس الجهة من الوتر؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زاويتان محيطيتان تحصران نفس القوس متقايستان."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{BDC} = \\widehat{BAC} = 60^\\circ$ : محيطيتان تحصران القوس BC.",
+        "incorrect": "قارن بالزاوية المحيطية BAC التي تحصر نفس القوس."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-MUSAWIYA",
+          "value": "120"
+        }
+      ]
+    }
+  ]
+}

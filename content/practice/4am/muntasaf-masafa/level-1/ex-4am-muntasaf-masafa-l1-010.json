@@ -1,0 +1,105 @@
+{
+  "id": "ex-4am-muntasaf-masafa-l1-010",
+  "lessonCode": "muntasaf-masafa",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — مسافة على المرصوفة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المسافة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_muntasaf-masafa_P2",
+      "modelledOn": "act-4"
+    }
+  },
+  "statement": {
+    "content": "لاحظ الشكل: النقطتان A و B على عقد الرصف في معلم متعامد ومتجانس.",
+    "figure": {
+      "points": {
+        "A": [
+          -2,
+          -1
+        ],
+        "B": [
+          2,
+          2
+        ],
+        "O": [
+          0,
+          0
+        ],
+        "Z0": [
+          -3,
+          -2
+        ],
+        "Z1": [
+          3,
+          3
+        ]
+      },
+      "grid": true,
+      "axes": true,
+      "hidden": [
+        "Z0",
+        "Z1"
+      ],
+      "labels": {
+        "A": "sw",
+        "B": "ne",
+        "O": "se"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس على ورقة مرصوفة: النقطة A في الأسفل على اليسار والنقطة B في الأعلى على اليمين، كلتاهما على عقدة",
+      "maxWidth": 480
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المسافة AB:",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري بالفاصلة (مثل 2,5)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MASAFA-JADHR-JAM",
+          "value": "7"
+        },
+        {
+          "id": "MISC-MAALAM-MASAFA-JADHR-NASI",
+          "value": "25"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الفرقين: فرق الفاصلتين وفرق الترتيبين (النهاية ناقص المبدأ)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ربّع كل فرق ثم اجمع المربعين: هذا مربع المسافة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خذ الجذر التربيعي في الأخير، وبسّطه إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "من A إلى B: 4 مربعات أفقيا و 3 عموديا، $AB = \\sqrt{16 + 9} = 5$ .",
+        "incorrect": "المسافة في خط مستقيم وتر المثلث القائم، لا مجموع الضلعين."
+      }
+    }
+  ]
+}

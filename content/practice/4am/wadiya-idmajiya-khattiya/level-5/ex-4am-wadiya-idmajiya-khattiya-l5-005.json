@@ -1,0 +1,333 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-khattiya-l5-005",
+  "lessonCode": "wadiya-idmajiya-khattiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2023 — طابعة ثلاثية الأبعاد لنادي العلوم بسطيف",
+    "estimatedMinutes": 25,
+    "tags": [
+      "وضعية إدماجية",
+      "الكتلة الحجمية",
+      "نسبة مئوية",
+      "ربح وخسارة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-khattiya_P3",
+      "modelledOn": "BEM 2023 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "اقتنى نادي العلوم بمتوسطة في سطيف طابعة ثلاثية الأبعاد، تصنع مجسّمات من خيط بلاستيكي كتلته الحجمية $1{,}25g/cm^3$ . ثمن بكرة الخيط ذات الكتلة 1kg هو 3200DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "يطبع النادي مجسّما لقلعة حجمه $48cm^3$ . احسب كتلته بالغرام.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الكتلة بالغرام",
+      "expectedAnswer": "60",
+      "misconceptionSignatures": [
+        {
+          "value": "38.4",
+          "id": "MISC-MAQADIR-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكتلة = الكتلة الحجمية × الحجم."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}25 \\times 48 = 60g$ .",
+        "incorrect": "اضرب الكتلة الحجمية في الحجم، لا تقسم."
+      },
+      "solution": {
+        "lines": [
+          "$m = \\rho \\times V = 1{,}25 \\times 48 = 60$",
+          "كتلة المجسّم 60g."
+        ],
+        "result": "m = 60g"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "نسمّي $p(m)$ ثمن الخيط (بـ DA) المستعمل لطبع مجسّم كتلته $m$ غرام.",
+      "statement": "عبّر عن $p(m)$ بدلالة $m$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المعامل $a$ فقط في $p(m) = am$ (عشري بالفاصلة)",
+      "expectedAnswer": "3,2",
+      "misconceptionSignatures": [
+        {
+          "value": "3200",
+          "id": "MISC-MAQADIR-WIHDA"
+        },
+        {
+          "value": "0.3125",
+          "id": "MISC-MAQADIR-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثمن 1kg، أي 1000g، هو 3200DA."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المعامل هو ثمن غرام واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$3200 \\div 1000 = 3{,}2$ DA للغرام: $p(m) = 3{,}2m$ .",
+        "incorrect": "حوّل 1kg إلى غرامات قبل القسمة."
+      },
+      "solution": {
+        "lines": [
+          "ثمن الغرام الواحد: $\\dfrac{3200}{1000} = 3{,}2$ DA.",
+          "$p(m) = 3{,}2m$"
+        ],
+        "result": "p(m) = 3{,}2m"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب ثمن الخيط المستعمل لطبع مجسّم القلعة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الثمن بـ DA",
+      "expectedAnswer": "192",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب صورة كتلة المجسّم بالدالة $p$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$p(60) = 3{,}2 \\times 60 = 192$ DA.",
+        "incorrect": "عوّض $m$ بكتلة المجسّم بالغرام."
+      },
+      "solution": {
+        "lines": [
+          "$p(60) = 3{,}2 \\times 60 = 192$"
+        ],
+        "result": "192DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "يبيع النادي في معرض المتوسطة 25 مجسّما من هذا النوع بسعر 400DA للمجسّم الواحد، ويخصّص 15% من المداخيل لمصاريف الكهرباء والتغليف.",
+      "statement": "احسب مداخيل البيع.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "10000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب عدد المجسّمات في سعر المجسّم."
+        }
+      ],
+      "feedback": {
+        "correct": "$25 \\times 400 = 10000$ DA.",
+        "incorrect": "المداخيل = العدد × السعر."
+      },
+      "solution": {
+        "lines": [
+          "$25 \\times 400 = 10000$"
+        ],
+        "result": "10000DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "احسب مبلغ مصاريف الكهرباء والتغليف.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "1500",
+      "misconceptionSignatures": [
+        {
+          "value": "8500",
+          "id": "MISC-TAKHFID-NISBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "15% من المداخيل."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}15 \\times 10000 = 1500$ DA.",
+        "incorrect": "خذ 15% من المداخيل."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{15}{100} \\times 10000 = 1500$"
+        ],
+        "result": "1500DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "sub": "ا",
+      "lead": "☜ دون احتساب ثمن الطابعة:",
+      "statement": "هل يحقّق النادي ربحا أم خسارة؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "ربحا",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خسارة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-TAFSIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المصاريف الكلية = ثمن خيط 25 مجسّما + مصاريف الكهرباء والتغليف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارنها بالمداخيل."
+        }
+      ],
+      "feedback": {
+        "correct": "المصاريف الكلية أقل من المداخيل: النادي يربح.",
+        "incorrect": "احسب ثمن خيط 25 مجسّما وأضف إليه المصاريف، ثم قارن بالمداخيل."
+      },
+      "solution": {
+        "lines": [
+          "ثمن الخيط: $25 \\times 192 = 4800$ DA.",
+          "المصاريف الكلية: $4800 + 1500 = 6300$ DA.",
+          "$6300 < 10000$ ، إذن يحقّق النادي ربحا."
+        ],
+        "result": "ربح"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "sub": "ب",
+      "statement": "احسب مقداره.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "3700",
+      "misconceptionSignatures": [
+        {
+          "value": "8500",
+          "id": "MISC-TARRID-TAFSIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الربح = المداخيل − المصاريف الكلية."
+        }
+      ],
+      "feedback": {
+        "correct": "$10000 - 6300 = 3700$ DA.",
+        "incorrect": "لا تنسَ ثمن الخيط في المصاريف."
+      },
+      "solution": {
+        "lines": [
+          "$10000 - 6300 = 3700$",
+          "ربح النادي 3700DA."
+        ],
+        "result": "3700DA"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

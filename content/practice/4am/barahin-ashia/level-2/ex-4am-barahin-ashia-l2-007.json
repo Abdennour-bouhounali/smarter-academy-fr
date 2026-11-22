@@ -1,0 +1,80 @@
+{
+  "id": "ex-4am-barahin-ashia-l2-007",
+  "lessonCode": "barahin-ashia",
+  "level": 2,
+  "generator": {
+    "tool": "gen-barahin.mjs",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — جولة كاملة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "علاقة شال",
+      "الشعاع المعدوم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_barahin-ashia_P1",
+      "modelledOn": "ex-18"
+    }
+  },
+  "statement": {
+    "content": "M و A و B ثلاث نقط."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "$\\overrightarrow{MA}$ + $\\overrightarrow{AB}$ + $\\overrightarrow{BM}$ يساوي:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{0}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{MB}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-RABT"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{AM}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-AKS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الأشعة الثلاثة متتابعة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الشعاعين الأولين ثم أضف الثالث."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أين تنتهي الرحلة التي بدأت من M ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{MA} + \\overrightarrow{AB} = \\overrightarrow{MB}$ ثم $\\overrightarrow{MB} + \\overrightarrow{BM} = \\overrightarrow{0}$ .",
+        "incorrect": "الرحلة تعود إلى M : المجموع هو الشعاع المعدوم."
+      }
+    }
+  ]
+}

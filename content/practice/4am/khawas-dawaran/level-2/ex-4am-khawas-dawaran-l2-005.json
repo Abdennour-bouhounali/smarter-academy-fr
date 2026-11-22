@@ -1,0 +1,65 @@
+{
+  "id": "ex-4am-khawas-dawaran-l2-005",
+  "lessonCode": "khawas-dawaran",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — مركز غير المبدأ",
+    "estimatedMinutes": 3,
+    "tags": [
+      "صورة نقطة",
+      "معلم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_khawas-dawaran_P3",
+      "modelledOn": "ex-4"
+    }
+  },
+  "generator": {
+    "tool": "u13-khawas-dawaran/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس: $\\Omega(1\\,;\\,1)$ و $M(4\\,;\\,2)$ . M′ صورة M بالدوران الذي مركزه Ω وزاويته $90^\\circ$ في الاتجاه غير المباشر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا M′:",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x\\,;\\,y)$ : الفاصلة ثم الترتيبة (عدد صحيح أو كسر مثل 3/2)",
+      "expectedAnswer": {
+        "x": "2",
+        "y": "-2"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من Ω إلى M: 3 يمينا و 1 نحو الأعلى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مع عقارب الساعة: «يمين» يصبح «أسفل» و«أعلى» يصبح «يمين»."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انقل الحركة الجديدة من Ω، لا من O."
+        }
+      ],
+      "feedback": {
+        "correct": "$M'(2\\,;\\,-2)$ .",
+        "incorrect": "الدوران حول Ω: ابدأ من Ω لا من المبدأ."
+      }
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "id": "ex-4am-ikhtizal-kasr-l4-008",
+  "lessonCode": "ikhtizal-kasr",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2023 — الأعداد A و B و C",
+    "estimatedMinutes": 10,
+    "tags": [
+      "كسر غير قابل للاختزال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_ikhtizal-kasr_P3",
+      "modelledOn": "BEM 2023 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن الأعداد $C$ ، $B$ ، $A$ حيث:",
+    "formulas": [
+      "A = \\dfrac{1725}{2070}",
+      "B = \\dfrac{1}{2} + \\dfrac{2}{3} \\times \\dfrac{1}{4}",
+      "C = A \\div B"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب العدد $A$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "5/6",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "575/690",
+          "id": "MISC-IKHTIZAL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث أولًا عن القاسم المشترك الأكبر للعددين 1725 و 2070."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر: يصير الكسر غير قابل للاختزال في خطوة واحدة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن البسط والمقام الناتجين أوليان فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 345: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على قاسمهما المشترك الأكبر، لا على قاسم مشترك آخر.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$2070 = 1725 \\times 1 + 345$",
+          "$1725 = 345 \\times 5 + 0$",
+          "آخر باقٍ غير معدوم هو 345، إذن PGCD(1725 ; 2070) = 345 .",
+          "$A = \\dfrac{1725}{2070} = \\dfrac{1725 \\div 345}{2070 \\div 345}$"
+        ],
+        "result": "A = \\dfrac{1725}{2070} = \\dfrac{5}{6}"
+      },
+      "work": "required",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب العدد $B$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "2/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "4/6",
+          "id": "MISC-IKHTIZAL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالعملية ذات الأولوية: ما بين القوسين، ثم الضرب أو القسمة، ثم الجمع أو الطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختزل كل كسر وسيط قبل أن تواصل، ثم وحّد المقامات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "في الأخير تحقّق أن البسط والمقام أوليان فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "حساب صحيح، والنتيجة على شكل كسر غير قابل للاختزال.",
+        "incorrect": "احترم أولوية العمليات، ثم اختزل الناتج إلى أن يصير البسط والمقام أوليين فيما بينهما.",
+        "notIrreducible": "القيمة صحيحة لكن الكسر ما زال قابلًا للاختزال: اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "$B = \\dfrac{1}{2} + \\dfrac{2}{12}$",
+          "$B = \\dfrac{1}{2} + \\dfrac{1}{6}$",
+          "$B = \\dfrac{3}{6} + \\dfrac{1}{6}$",
+          "$B = \\dfrac{4}{6}$"
+        ],
+        "result": "B = \\dfrac{2}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب العدد $C$ ، ثم اكتبه على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "5/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "15/12",
+          "id": "MISC-IKHTIZAL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجتي السؤالين 01 و 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على كسر هي الضرب في مقلوبه."
+        }
+      ],
+      "feedback": {
+        "correct": "حساب صحيح، والنتيجة على شكل كسر غير قابل للاختزال.",
+        "incorrect": "احترم أولوية العمليات، ثم اختزل الناتج إلى أن يصير البسط والمقام أوليين فيما بينهما.",
+        "notIrreducible": "القيمة صحيحة لكن الكسر ما زال قابلًا للاختزال: اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "$C = \\dfrac{5}{6} \\div \\dfrac{2}{3}$",
+          "$C = \\dfrac{5}{6} \\times \\dfrac{3}{2}$",
+          "$C = \\dfrac{15}{12}$"
+        ],
+        "result": "C = \\dfrac{5}{4}"
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

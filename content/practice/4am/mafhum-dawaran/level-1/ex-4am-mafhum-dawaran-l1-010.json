@@ -1,0 +1,65 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l1-010",
+  "lessonCode": "mafhum-dawaran",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — العجلة الدوّارة في بن عكنون",
+    "estimatedMinutes": 1,
+    "tags": [
+      "الدوران",
+      "زاوية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mafhum-dawaran_P1",
+      "modelledOn": "act-2"
+    }
+  },
+  "statement": {
+    "content": "في حديقة التسلية ببن عكنون، عجلة دوّارة عليها 8 مقصورات موزّعة بانتظام حول محورها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "بكم درجة تدور العجلة حتى تصل كل مقصورة إلى مكان المقصورة التي تليها؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجات)",
+      "expectedAnswer": "45",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-ZAWIYA-UKHRA",
+          "value": "40"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "دورة كاملة حول المحور."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الدورة الكاملة مقسّمة إلى زوايا متساوية بين المقصورات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم الدورة الكاملة على عدد المقصورات."
+        }
+      ],
+      "feedback": {
+        "correct": "$360^\\circ \\div 8 = 45^\\circ$ : دوران مركزه المحور وزاويته $45^\\circ$ .",
+        "incorrect": "الدورة الكاملة مقسّمة بالتساوي على المقصورات."
+      },
+      "difficulty": 1
+    }
+  ]
+}

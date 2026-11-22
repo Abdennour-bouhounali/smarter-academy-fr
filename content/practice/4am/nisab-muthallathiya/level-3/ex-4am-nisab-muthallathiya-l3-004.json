@@ -1,0 +1,211 @@
+{
+  "id": "ex-4am-nisab-muthallathiya-l3-004",
+  "lessonCode": "nisab-muthallathiya",
+  "level": 3,
+  "metadata": {
+    "title": "BEM 2011 — التمرين الثالث",
+    "estimatedMinutes": 8,
+    "tags": [
+      "جيب التمام",
+      "الارتفاع المتعلق بالوتر",
+      "برهان"
+    ],
+    "source": {
+      "type": "bem",
+      "year": 2011,
+      "part": 1,
+      "exercise": 3
+    },
+    "exam": {
+      "kind": "official",
+      "badge": "BEM 2011",
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$ABC$ مثلث قائم في $A$ ، $[AH]$ الارتفاع المتعلق بالوتر $[BC]$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "بيّن أن $AB^2 = BH \\times BC$ (يمكنك الاعتماد على $\\cos\\widehat{ABC}$ في كل من المثلثين $ABC$ و $ABH$).",
+      "statement": "اكتب $\\cos\\widehat{ABC}$ في المثلث $ABC$ القائم في $A$ .",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\cos\\widehat{ABC} = \\dfrac{AC}{BC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-MUQABIL-MUJAWIR"
+        },
+        {
+          "id": "B",
+          "content": "$\\cos\\widehat{ABC} = \\dfrac{BC}{AB}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-NISBA-MAQLUBA"
+        },
+        {
+          "id": "C",
+          "content": "$\\cos\\widehat{ABC} = \\dfrac{AB}{BC}$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$\\cos\\widehat{ABC} = \\dfrac{AB}{AC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-WATAR-MUQABIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الوتر هو الضلع المقابل للزاوية القائمة في $A$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بالنسبة إلى الزاوية $\\widehat{ABC}$ : الضلع المجاور لها يمرّ برأسها $B$ ، والضلع المقابل لها لا يمرّ به."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جيب تمام زاوية حادة = طول الضلع المجاور لها على طول الوتر."
+        }
+      ],
+      "feedback": {
+        "correct": "الوتر $[BC]$ ، المجاور للزاوية $[AB]$ والمقابل لها $[AC]$ ، إذن $\\cos\\widehat{ABC} = \\dfrac{AB}{BC}$ .",
+        "incorrect": "عيّن أولا الوتر (مقابل الزاوية القائمة)، ثم المجاور (يمرّ بالرأس $B$) والمقابل؛ جيب تمام زاوية حادة = طول الضلع المجاور لها على طول الوتر."
+      },
+      "solution": {
+        "lines": [
+          "لدينا في المثلث القائم $ABC$ :",
+          "$\\cos\\widehat{ABC} = \\dfrac{AB}{BC}$ .....(1)"
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "اكتب $\\cos\\widehat{ABH}$ في المثلث $ABH$ القائم في $H$ .",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\cos\\widehat{ABH} = \\dfrac{AH}{AB}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-MUQABIL-MUJAWIR"
+        },
+        {
+          "id": "B",
+          "content": "$\\cos\\widehat{ABH} = \\dfrac{BH}{AB}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\cos\\widehat{ABH} = \\dfrac{AB}{BH}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-NISBA-MAQLUBA"
+        },
+        {
+          "id": "D",
+          "content": "$\\cos\\widehat{ABH} = \\dfrac{BH}{AH}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-WATAR-MUQABIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الوتر هو الضلع المقابل للزاوية القائمة في $H$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بالنسبة إلى الزاوية $\\widehat{ABH}$ : الضلع المجاور لها يمرّ برأسها $B$ ، والضلع المقابل لها لا يمرّ به."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جيب تمام زاوية حادة = طول الضلع المجاور لها على طول الوتر."
+        }
+      ],
+      "feedback": {
+        "correct": "الوتر $[AB]$ ، المجاور للزاوية $[BH]$ والمقابل لها $[AH]$ ، إذن $\\cos\\widehat{ABH} = \\dfrac{BH}{AB}$ .",
+        "incorrect": "عيّن أولا الوتر (مقابل الزاوية القائمة)، ثم المجاور (يمرّ بالرأس $B$) والمقابل؛ جيب تمام زاوية حادة = طول الضلع المجاور لها على طول الوتر."
+      },
+      "solution": {
+        "lines": [
+          "و لدينا في المثلث القائم $ABH$ :",
+          "$\\cos\\widehat{ABH} = \\dfrac{BH}{AB}$ .....(2)"
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "استنتج أن $AB^2 = BH \\times BC$ .",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطة $H$ من $[BC]$ : الزاويتان $\\widehat{ABH}$ و $\\widehat{ABC}$ هما الزاوية نفسها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ساوِ بين الكتابتين (1) و (2) لجيب تمام الزاوية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل الجداء المتصالب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AB}{BC} = \\dfrac{BH}{AB}$ ومنه $AB \\times AB = BC \\times BH$ أي $AB^2 = BH \\times BC$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "و لدينا أيضا: $\\cos\\widehat{ABH} = \\cos\\widehat{ABC}$ (لأن $H \\in [BC]$ ، فهي الزاوية نفسها)",
+          "من (1) و (2) نستنتج أن: $\\dfrac{AB}{BC} = \\dfrac{BH}{AB}$",
+          "بضرب الطرفين في الوسطين نجد (خاصية الجداء المتصالب): $AB \\times AB = BC \\times BH$",
+          "و منه: $AB^2 = BC \\times BH$"
+        ]
+      },
+      "timeSeconds": 420
+    }
+  ]
+}

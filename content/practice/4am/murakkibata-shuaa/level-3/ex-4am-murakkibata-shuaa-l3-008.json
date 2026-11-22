@@ -1,0 +1,77 @@
+{
+  "id": "ex-4am-murakkibata-shuaa-l3-008",
+  "lessonCode": "murakkibata-shuaa",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — مركبتان كسريتان",
+    "estimatedMinutes": 2,
+    "tags": [
+      "OM",
+      "كسر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_murakkibata-shuaa_P2",
+      "modelledOn": "know-origin"
+    }
+  },
+  "statement": {
+    "content": "في معلم مبدؤه O، $M\\left(-6\\,;\\,\\dfrac{1}{2}\\right)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما مركبتا الشعاع $\\overrightarrow{OM}$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_murakkibata-shuaa_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "مركبتا الشعاع (x ; y): الأفقية ثم العمودية — عددان مثل −3 أو 2,5",
+      "expectedAnswer": {
+        "x": "-6",
+        "y": "1/2"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مبدأ هذا الشعاع هو مبدأ المعلم O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من O، الإزاحة الأفقية هي الفاصلة والإزاحة العمودية هي الترتيب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مركبتا $\\overrightarrow{OM}$ هما إحداثيتا M بنفس الترتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{OM}\\begin{pmatrix} -6 \\\\ \\dfrac{1}{2} \\end{pmatrix}$ .",
+        "incorrect": "المركبتان هما الإحداثيتان، الكسر كما هو."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "1/2",
+            "y": "-6"
+          },
+          "id": "MISC-MAALAM-TABDIL-X-Y"
+        },
+        {
+          "value": {
+            "x": "6",
+            "y": "-1/2"
+          },
+          "id": "MISC-MAALAM-ISHARA"
+        }
+      ]
+    }
+  ]
+}

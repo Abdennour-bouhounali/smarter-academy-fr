@@ -1,0 +1,127 @@
+{
+  "id": "ex-4am-natiqa-ghayr-natiqa-l1-003",
+  "lessonCode": "natiqa-ghayr-natiqa",
+  "level": 1,
+  "metadata": {
+    "title": "12 ، 20 ، 36 ، 50",
+    "estimatedMinutes": 4,
+    "tags": [
+      "عدد ناطق",
+      "مربع تام"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_natiqa-ghayr-natiqa_P2",
+      "modelledOn": "know-2"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "لتكن الأعداد الطبيعية: 12 ، 20 ، 36 ، 50."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن، من بين هذه الأعداد، العدد الذي جذره التربيعي عدد ناطق.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "اكتب العدد (أو الأعداد مفصولة بفاصلة)",
+      "expectedAnswer": [
+        36
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            12,
+            20,
+            36,
+            50
+          ],
+          "id": "MISC-NATIQ-KULL-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جذر عدد طبيعي يكون ناطقًا إذا كان هذا العدد مربعًا لعدد طبيعي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب مربعات الأعداد الطبيعية من 1 إلى 8."
+        }
+      ],
+      "feedback": {
+        "correct": "36 هو الوحيد الذي هو مربع لعدد طبيعي.",
+        "incorrect": "ليس جذر كل عدد طبيعي عددًا ناطقًا: ابحث عن المربعات التامة فقط."
+      },
+      "solution": {
+        "lines": [
+          "$3^2 = 9$ ، $4^2 = 16$ ، $5^2 = 25$ ، $6^2 = 36$ ، $7^2 = 49$",
+          "12 و 20 و 50 ليست مربعات لأعداد طبيعية، فجذورها ليست أعدادًا ناطقة.",
+          "العدد 36 مربع للعدد 6، فجذره عدد ناطق."
+        ],
+        "result": "36"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب الجذر التربيعي لهذا العدد.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "18",
+          "id": "MISC-JIDHR-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما العدد الموجب الذي مربعه هذا العدد؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sqrt{36} = 6$ لأن $6^2 = 36$ .",
+        "incorrect": "الجذر التربيعي هو العدد الموجب الذي مربعه العدد المعطى، وليس نصفه."
+      },
+      "solution": {
+        "lines": [
+          "$6^2 = 36$ و $6 > 0$"
+        ],
+        "result": "\\sqrt{36} = 6"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

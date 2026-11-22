@@ -1,0 +1,245 @@
+{
+  "id": "ex-1am-kusur-ashriya-kitaba-l3-003",
+  "lessonCode": "kusur-ashriya-kitaba",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — جدول: عدد عشري وكسر عشري وتفكيك",
+    "estimatedMinutes": 5,
+    "tags": [
+      "كسر عشري",
+      "تفكيك",
+      "جدول"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 1,
+      "file": "1am-s1-95",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "أنقل الجدول ثم أكمل الخانات الناقصة.",
+    "table": {
+      "head": [
+        "العدد العشري",
+        "الكسر العشري",
+        "التفكيك"
+      ],
+      "rows": [
+        [
+          "$58{,}214$",
+          "…",
+          "…"
+        ],
+        [
+          "…",
+          "$\\dfrac{1837}{100}$",
+          "…"
+        ],
+        [
+          "…",
+          "…",
+          "$24 + \\dfrac{3}{10} + \\dfrac{6}{100}$"
+        ],
+        [
+          "…",
+          "…",
+          "$7 + \\dfrac{5}{10} + \\dfrac{2}{1000}$"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أتمم: $58{,}214 = \\dfrac{\\ldots}{1000}$",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "58214",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم رقمًا بعد الفاصلة في هذا العدد العشري؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن ذلك بعدد الأصفار في المقام المعطى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "البسط هو العدد العشري مضروبًا في المقام."
+        }
+      ],
+      "feedback": {
+        "correct": "$58{,}214 \\times 1000 = 58214$ ، إذن $58{,}214 = \\dfrac{58214}{1000}$.",
+        "incorrect": "في الكسر العشري عدد أصفار المقام يرتبط بعدد الأرقام بعد الفاصلة: نضرب العدد العشري في المقام فنحصل على البسط، وهو عدد طبيعي."
+      },
+      "solution": {
+        "lines": [
+          "$58{,}214 \\times 1000 = 58214$",
+          "$58{,}214 = \\dfrac{58214}{1000}$ : ثلاثة أرقام بعد الفاصلة، وفي المقام ثلاثة أصفار."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب بالكتابة العشرية (بالفاصلة) الكسر العشري $\\dfrac{1837}{100}$",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة)",
+      "expectedAnswer": "18,37",
+      "misconceptionSignatures": [
+        {
+          "value": "183,7",
+          "id": "MISC-KUSUR-DEN-DIGITS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم صفرًا في المقام؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هذا العدد هو عدد الأرقام التي تأتي بعد الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عُدّ من يمين البسط بقدر ذلك العدد، وإن نقصت الأرقام فاكتب أصفارًا قبلها."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1837}{100} = 18{,}37$ : صفران في المقام، فنضع الفاصلة بعد رقمين من اليمين.",
+        "incorrect": "عدد الأرقام بعد الفاصلة يساوي عدد أصفار المقام، وإذا كان البسط أقصر من ذلك نكتب أصفارًا بين الفاصلة والبسط."
+      },
+      "solution": {
+        "lines": [
+          "المقام 100 فيه صفران، إذن رقمان بعد الفاصلة.",
+          "$\\dfrac{1837}{100} = 18{,}37$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اكتب بالكتابة العشرية: $24 + \\dfrac{3}{10} + \\dfrac{6}{100}$",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "24,36",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ يشغل مرتبة واحدة: الوحدات أو الأعشار أو الأجزاء من مائة…"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الرقم المناسب في كل مرتبة، واملأ المرتبة الفارغة بصفر. ورتّب الحدود حسب مراتبها لا حسب موضعها في المجموع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قبل الفاصلة الأجزاء الصحيحة وبعدها الأجزاء العشرية."
+        }
+      ],
+      "feedback": {
+        "correct": "$24 + \\dfrac{3}{10} + \\dfrac{6}{100} = 24{,}36$ : نضع لكل حدّ رقمه في مرتبته.",
+        "incorrect": "الرقم يأخذ معناه من مرتبته لا من ترتيب الحدّ في المجموع: نحدّد مرتبة كل حدّ (آلاف، مئات، آحاد، أعشار…) ونملأ المراتب الفارغة بصفر."
+      },
+      "solution": {
+        "lines": [
+          "$24 + \\dfrac{3}{10} + \\dfrac{6}{100}$",
+          "نضع كل رقم في مرتبته: $24{,}36$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "أتمم: $7 + \\dfrac{5}{10} + \\dfrac{2}{1000} = \\dfrac{\\ldots}{1000}$",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "7502",
+      "misconceptionSignatures": [
+        {
+          "value": "752",
+          "id": "MISC-KUSUR-ZERO-PLACE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أعط أولًا الكتابة العشرية للمجموع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كم رقمًا بعد الفاصلة؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب العدد العشري في 1000."
+        }
+      ],
+      "feedback": {
+        "correct": "$7 + \\dfrac{5}{10} + \\dfrac{2}{1000} = 7{,}502 = \\dfrac{7502}{1000}$.",
+        "incorrect": "نحوّل المجموع إلى كتابة عشرية ثم نضربه في المقام المطلوب للحصول على البسط، ونضع صفرًا في المرتبة الفارغة."
+      },
+      "solution": {
+        "lines": [
+          "$7 + \\dfrac{5}{10} + \\dfrac{2}{1000} = 7{,}502$",
+          "$7{,}502 \\times 1000 = 7502$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

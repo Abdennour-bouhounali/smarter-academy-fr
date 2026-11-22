@@ -1,0 +1,268 @@
+{
+  "id": "ex-4am-tarrid-muthallathiya-l5-002",
+  "lessonCode": "tarrid-muthallathiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2012 — ارتفاع عمارة في حيّ باب الزوار",
+    "estimatedMinutes": 20,
+    "tags": [
+      "وضعية إدماجية",
+      "الظل",
+      "مثلثان قائمان",
+      "ارتفاع غير مباشر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tarrid-muthallathiya_P1",
+      "modelledOn": "BEM 2012 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2012",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "لتقدير ارتفاع عمارة $[HS]$ في حيّ باب الزوار، وقف سامي على أرض أفقية على بعد $60\\,\\mathrm{m}$ من قاعدتها $H$ ، ونظر إلى سطحها $S$ ، فقرأ تطبيق «مقياس الميل» في هاتفه زاوية قيسها $32^{\\circ}$ . عينا سامي $E$ على ارتفاع $1{,}6\\,\\mathrm{m}$ من الأرض، و $K$ نقطة من $[HS]$ في مستوى عينيه، حيث $EK = 60\\,\\mathrm{m}$ (الشكل المقابل، في مستوى العينين). ويدوّن سامي قراءته بأمانة كما ظهرت على الشاشة.",
+    "figure": {
+      "points": {
+        "E": [
+          0.0,
+          0.0
+        ],
+        "F": [
+          28.5403,
+          0.0
+        ],
+        "K": [
+          60.0,
+          0.0
+        ],
+        "S": [
+          60.0,
+          37.4922
+        ]
+      },
+      "segments": [
+        {
+          "from": "E",
+          "to": "K",
+          "label": "60 m",
+          "labelSide": -1
+        },
+        [
+          "K",
+          "S"
+        ],
+        [
+          "E",
+          "S"
+        ],
+        [
+          "F",
+          "S"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "E",
+          "K",
+          "S"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "E",
+          "from": "K",
+          "to": "S",
+          "label": "32°",
+          "radius": 40
+        },
+        {
+          "at": "F",
+          "from": "K",
+          "to": "S",
+          "label": "50°",
+          "radius": 30
+        }
+      ],
+      "labels": {
+        "E": "sw",
+        "F": "s",
+        "K": "se",
+        "S": "ne"
+      },
+      "ariaLabel": "في مستوى العينين: E موضع العينين الأول و F الثاني على [EK]، و K نقطة من العمارة في مستوى العينين و S سطحها؛ EK = 60 m، وزاويتا النظر 32 درجة من E و 50 درجة من F",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $KS$ بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-muthallathiya_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m مدوّرا إلى 0,01",
+      "expectedAnswer": "37.49",
+      "misconceptionSignatures": [
+        {
+          "value": "96.02",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        },
+        {
+          "value": "31.80",
+          "id": "MISC-MUTH-NISBA-GHAYR-MUNASIBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $EKS$ القائم في $K$ ، حدّد موقع الضلع المعلوم والضلع المطلوب بالنسبة إلى الزاوية $\\widehat{KES}$ (مجاور، مقابل أو وتر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة التي تجمع هذين الضلعين هي ظل الزاوية $\\widehat{KES}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالآلة الحاسبة مبرمجة على الدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$KS = 60 \\times \\tan 32^{\\circ} \\approx 37{,}49\\,\\mathrm{m}$ .",
+        "incorrect": "الطول المطلوب في بسط النسبة: نضرب الطول المعلوم في النسبة المثلثية ولا نقسم عليها؛ والآلة الحاسبة مبرمجة على الدرجة."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $EKS$ القائم في $K$ لدينا: $\\tan\\,\\widehat{KES} = \\dfrac{KS}{EK}$",
+          "ومنه: $KS = EK \\times \\tan\\,\\widehat{KES}$",
+          "$KS = 60 \\times \\tan 32^{\\circ}$",
+          "باستعمال الآلة الحاسبة: $KS \\approx 37{,}4922$"
+        ],
+        "result": "KS \\approx 37{,}49\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج ارتفاع العمارة $HS$ بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الارتفاع بـ m مدوّرا إلى 0,1",
+      "expectedAnswer": "39.1",
+      "misconceptionSignatures": [
+        {
+          "value": "37.5",
+          "id": "MISC-MUTH-IRTIFA3-AYN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطة $K$ ليست على الأرض: $HK$ يساوي ارتفاع عيني سامي."
+        }
+      ],
+      "feedback": {
+        "correct": "$HS = HK + KS = 1{,}6 + 37{,}4925... \\approx 39{,}1\\,\\mathrm{m}$ .",
+        "incorrect": "المثلث القائم في مستوى العينين: أضف ارتفاع العينين."
+      },
+      "solution": {
+        "lines": [
+          "$HS = HK + KS = 1{,}6 + 60 \\times \\tan 32^{\\circ}$",
+          "$HS \\approx 39{,}0922$"
+        ],
+        "result": "HS \\approx 39{,}1\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "يتقدّم سامي نحو العمارة على الخط نفسه حتى يصير قيس زاوية النظر إلى $S$ يساوي $50^{\\circ}$ ، ونسمّي $F$ موضع عينيه الجديد. احسب المسافة $EF$ التي قطعها بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: المسافة بـ m مدوّرة إلى 0,1",
+      "expectedAnswer": "28.5",
+      "misconceptionSignatures": [
+        {
+          "value": "27.2",
+          "id": "MISC-MUTH-IRTIFA3-AYN"
+        },
+        {
+          "value": "15.3",
+          "id": "MISC-MUTH-DARB-BADAL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث الجديد $FKS$ قائم في $K$ ، وله الضلع $[KS]$ نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $FK$ بظل الزاوية $50^{\\circ}$ (المجهول في المقام)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة المقطوعة $EF = EK - FK$ ، ولا تدوّر $KS$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$FK = \\dfrac{KS}{\\tan 50^{\\circ}} \\approx 31{,}46\\,\\mathrm{m}$ ، ومنه $EF = 60 - FK \\approx 28{,}5\\,\\mathrm{m}$ .",
+        "incorrect": "استعمل $KS$ (فوق مستوى العينين) لا $HS$ ، والمجهول $FK$ في مقام الظل."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $FKS$ القائم في $K$ : $\\tan\\widehat{KFS} = \\dfrac{KS}{FK}$ ومنه $FK = \\dfrac{KS}{\\tan 50^{\\circ}} = \\dfrac{60 \\times \\tan 32^{\\circ}}{\\tan 50^{\\circ}}$",
+          "باستعمال الآلة الحاسبة: $FK \\approx 31{,}4597$",
+          "$EF = EK - FK \\approx 60 - 31{,}4597 = 28{,}5403$"
+        ],
+        "result": "EF \\approx 28{,}5\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 360
+    }
+  ]
+}

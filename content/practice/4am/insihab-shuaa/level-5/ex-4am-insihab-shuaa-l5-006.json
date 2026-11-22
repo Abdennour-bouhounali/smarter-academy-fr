@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-insihab-shuaa-l5-006",
+  "lessonCode": "insihab-shuaa",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — بلاط ساحة جامع الجزائر",
+    "estimatedMinutes": 3,
+    "tags": [
+      "متوازي الأضلاع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_insihab-shuaa_P3",
+      "modelledOn": "know-2"
+    }
+  },
+  "statement": {
+    "content": "في ساحة جامع الجزائر بلاطة على شكل متوازي أضلاع رؤوسه A و B و C و D، ورسم مهندس يتقن عمله سهما من A إلى B وسهما من D إلى C متساويين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "بأي ترتيب نقرأ متوازي الأضلاع؟",
+      "learningPoints": [
+        {
+          "code": "4am_insihab-shuaa_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "ABCD",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "ABDC",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        },
+        {
+          "id": "C",
+          "content": "ADBC",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{AB} = \\overrightarrow{DC}$ يعني ABCD متوازي أضلاع: اقرأ A ثم B ثم نهاية الشعاع الثاني ثم مبدأه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في متوازي الأضلاع، كل ضلعين متقابلين يعطيان شعاعين متساويين إذا قرأناهما في نفس الجهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارسم الرباعي على ورقة وضع السهمين لتتحقق من الجهة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AB}$ = $\\overrightarrow{DC}$ يعني ABCD متوازي أضلاع.",
+        "incorrect": "A ثم B ثم نهاية الشعاع الثاني C ثم مبدؤه D."
+      },
+      "difficulty": 5
+    }
+  ]
+}

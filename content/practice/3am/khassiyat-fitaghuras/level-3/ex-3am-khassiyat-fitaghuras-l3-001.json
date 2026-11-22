@@ -1,0 +1,419 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l3-001",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — طولان ثم: هل المثلث قائم؟",
+    "estimatedMinutes": 12,
+    "tags": [
+      "خاصية فيثاغورس",
+      "مثلث غير قائم"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-76",
+      "exercise": 3
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تمعّن في الشكل المقابل حيث النقط $B$ ، $A$ ، $D$ على استقامة واحدة بهذا الترتيب، و $(AC) \\perp (BD)$ ، و: $AC = 2{,}4\\,\\mathrm{cm}$ ، $AD = 1{,}8\\,\\mathrm{cm}$ ، $BC = 5{,}1\\,\\mathrm{cm}$ .",
+    "figure": {
+      "points": {
+        "B": [
+          -4.5,
+          0
+        ],
+        "A": [
+          0,
+          0
+        ],
+        "D": [
+          1.8,
+          0
+        ],
+        "C": [
+          0,
+          3.4
+        ]
+      },
+      "segments": [
+        {
+          "from": "B",
+          "to": "A"
+        },
+        {
+          "from": "A",
+          "to": "D",
+          "label": "1,8 cm"
+        },
+        {
+          "from": "A",
+          "to": "C",
+          "label": "2,4 cm"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "5,1 cm"
+        },
+        [
+          "C",
+          "D"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "C",
+          "A",
+          "D"
+        ]
+      ],
+      "ariaLabel": "النقط B و A و D على استقامة واحدة، (AC) عمودي على (BD) في A، حيث AC = 2,4 cm و AD = 1,8 cm و BC = 5,1 cm",
+      "maxWidth": 320,
+      "caption": "(الأطوال غير حقيقية)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب الطولين $CD$ و $AB$ .",
+      "statement": "الطول $CD$ :",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "4.2",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "9",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولا مربع الطول، ثم خذ جذره التربيعي بالآلة الحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$CD^2 = 2{,}4^2 + 1{,}8^2 = 9$ ، إذن $CD = 3\\,\\mathrm{cm}$ .",
+        "incorrect": "ابدأ بتحديد الوتر، ثم اكتب مساواة فيثاغورس، وتذكّر أن ما تحسبه أولا هو مربع الطول لا الطول نفسه."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ACD$ قائم في $A$ ، حسب خاصية فيثاغورس: $CD^2 = AC^2 + AD^2$",
+          "$CD^2 = 2{,}4^2 + 1{,}8^2$",
+          "$CD^2 = 5{,}76 + 3{,}24 = 9$",
+          "$CD = \\sqrt{9} = 3\\,\\mathrm{cm}$"
+        ],
+        "result": "CD = 3\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "الطول $AB$ :",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm",
+      "expectedAnswer": "4.5",
+      "misconceptionSignatures": [
+        {
+          "value": "5.64",
+          "id": "MISC-FITAGHURAS-LEG-ADD"
+        },
+        {
+          "value": "2.7",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "20.25",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع المطلوب ليس الوتر: مربعه يساوي مربع الوتر ناقص مربع الضلع الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولا مربع الطول، ثم خذ جذره التربيعي بالآلة الحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB^2 = 5{,}1^2 - 2{,}4^2 = 20{,}25$ ، إذن $AB = 4{,}5\\,\\mathrm{cm}$ .",
+        "incorrect": "الطول المطلوب ضلع قائم وليس وترا: نطرح مربع الضلع المعلوم من مربع الوتر، ولا نجمع."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $A$ ، حسب خاصية فيثاغورس: $BC^2 = AB^2 + AC^2$",
+          "ومنه: $AB^2 = BC^2 - AC^2$",
+          "$AB^2 = 5{,}1^2 - 2{,}4^2 = 26{,}01 - 5{,}76 = 20{,}25$",
+          "$AB = \\sqrt{20{,}25} = 4{,}5\\,\\mathrm{cm}$"
+        ],
+        "result": "AB = 4{,}5\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "هل المثلث $BCD$ قائم؟ برّر.",
+      "statement": "الطول $BD$ :",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm",
+      "expectedAnswer": "6.3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$A$ تقع بين $B$ و $D$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الطولين $BA$ و $AD$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$BD = 4{,}5 + 1{,}8 = 6{,}3\\,\\mathrm{cm}$ .",
+        "incorrect": "استعمل الطول $AB$ الذي حسبته، و $A$ بين $B$ و $D$ ."
+      },
+      "solution": {
+        "lines": [
+          "النقط $B$ ، $A$ ، $D$ على استقامة واحدة بهذا الترتيب: $BD = BA + AD = 4{,}5 + 1{,}8 = 6{,}3\\,\\mathrm{cm}$"
+        ],
+        "result": "BD = 6{,}3\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب $BD^2$ ، مربع طول أطول أضلاع المثلث $BCD$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: قيمة $BD^2$",
+      "expectedAnswer": "39.69",
+      "misconceptionSignatures": [
+        {
+          "value": "12.6",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        },
+        {
+          "value": "26.01",
+          "id": "MISC-FITAGHURAS-NOT-LONGEST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رتّب أطوال الأضلاع الثلاثة: الضلع الأطول هو الوحيد الذي يمكن أن يكون وترا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع العدد هو جداؤه في نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "أطول الأضلاع هو $[BD]$ و $BD^2 = 6{,}3^2 = 39{,}69$ .",
+        "incorrect": "تأكّد أنك اخترت الضلع الأطول، وأنك ضربت طوله في نفسه."
+      },
+      "solution": {
+        "lines": [
+          "أطول أضلاع المثلث $BCD$ هو $[BD]$ .",
+          "$BD^2 = 6{,}3^2 = 39{,}69$"
+        ],
+        "result": "BD^2 = 39{,}69"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ج",
+      "statement": "احسب $CD^2 + BC^2$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: مجموع المربعين",
+      "expectedAnswer": "35.01",
+      "misconceptionSignatures": [
+        {
+          "value": "16.2",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        },
+        {
+          "value": "8.1",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ربّع طول كل ضلع من الضلعين الأقصرين على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المربعين ولا تجمع الطولين."
+        }
+      ],
+      "feedback": {
+        "correct": "$CD^2 + BC^2 = 3^2 + 5{,}1^2 = 9 + 26{,}01 = 35{,}01$ .",
+        "incorrect": "احسب مربع كل طول أولا، ثم اجمع المربعين."
+      },
+      "solution": {
+        "lines": [
+          "$CD^2 + BC^2 = 3^2 + 5{,}1^2$",
+          "$CD^2 + BC^2 = 9 + 26{,}01 = 35{,}01$"
+        ],
+        "result": "CD^2 + BC^2 = 35{,}01"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "د",
+      "statement": "هل المثلث $BCD$ قائم؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "المثلث $BCD$ قائم لأن العددين $39{,}69$ و $35{,}01$ متقاربان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-LOOKS-RIGHT"
+        },
+        {
+          "id": "B",
+          "content": "المثلث $BCD$ ليس قائما",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لا يمكن الحكم إلا بقياس زواياه بالمنقلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-LOOKS-RIGHT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العددين اللذين حسبتهما: هل هما متساويان تماما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لو كان المثلث قائما لكان مربع طول أطول أضلاعه مساويا تماما لمجموع مربعي الضلعين الآخرين (خاصية فيثاغورس)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "التقارب لا يكفي: المساواة يجب أن تكون تامة."
+        }
+      ],
+      "feedback": {
+        "correct": "$39{,}69 \\neq 35{,}01$ : لو كان المثلث قائما لتساوى العددان حسب خاصية فيثاغورس، إذن هو ليس قائما.",
+        "incorrect": "الشكل أو تقارب العددين لا يكفيان: انظر هل المساواة محقّقة تماما أم لا."
+      },
+      "solution": {
+        "lines": [
+          "أطول الأضلاع هو $[BD]$ : $BD^2 = 39{,}69$ و $CD^2 + BC^2 = 35{,}01$ .",
+          "بما أن $BD^2 \\neq CD^2 + BC^2$ ، فحسب خاصية فيثاغورس المثلث $BCD$ ليس قائما."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

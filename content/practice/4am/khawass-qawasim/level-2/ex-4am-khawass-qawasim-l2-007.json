@@ -1,0 +1,154 @@
+{
+  "id": "ex-4am-khawass-qawasim-l2-007",
+  "lessonCode": "khawass-qawasim",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2016 — 37 و 111",
+    "estimatedMinutes": 6,
+    "tags": [
+      "خاصية 1",
+      "مضاعفات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_khawass-qawasim_P2",
+      "modelledOn": "BEM 2016 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن 37 من قواسم العدد 111: اكتب 111 على الشكل $37 \\times k$ حيث $k$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k$ فقط (عدد طبيعي)",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 111 على 37: يجب أن يكون الباقي معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل هذه القسمة هو العدد $k$ المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$111 = 37 \\times 3$ ، إذن 37 يقسم 111.",
+        "incorrect": "ابحث عن العدد الطبيعي $k$ الذي إذا ضُرب في 37 أعطى 111."
+      },
+      "solution": {
+        "lines": [
+          "$111 = 37 \\times 3$"
+        ],
+        "result": "111 = 37 \\times 3"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "استنتج، دون إجراء أي قسمة:",
+      "statement": "أن 37 يقسم 777، واكتب 777 على الشكل $37 \\times K$ حيث $K$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $K$ فقط (عدد طبيعي)",
+      "expectedAnswer": "21",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب 777 على شكل جداء يظهر فيه العدد 111."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قاسم عدد يقسم كل مضاعف له."
+        }
+      ],
+      "feedback": {
+        "correct": "$777 = 111 \\times 7 = 37 \\times 3 \\times 7 = 37 \\times 21$.",
+        "incorrect": "لاحظ أن 777 مضاعف للعدد 111، ثم استعمل كتابة 111 من السؤال 01."
+      },
+      "solution": {
+        "lines": [
+          "$777 = 111 \\times 7$",
+          "$777 = 37 \\times 3 \\times 7$",
+          "$777 = 37 \\times 21$"
+        ],
+        "result": "777 = 37 \\times 21"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أن 37 يقسم $777 + 111$ ، واكتبه على الشكل $37 \\times K'$ حيث $K'$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $K'$ فقط (عدد طبيعي)",
+      "expectedAnswer": "24",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الكتابتين $777 = 37 \\times 21$ و $111 = 37 \\times 3$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرج 37 عاملًا مشتركًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$777 + 111 = 37 \\times 21 + 37 \\times 3 = 37 \\times 24$.",
+        "incorrect": "القاسم المشترك لعددين يقسم مجموعهما: اكتب كلا منهما على الشكل $37 \\times q$."
+      },
+      "solution": {
+        "lines": [
+          "$777 + 111 = 37 \\times 21 + 37 \\times 3$",
+          "$777 + 111 = 37 \\times (21 + 3)$",
+          "$777 + 111 = 37 \\times 24$"
+        ],
+        "result": "777 + 111 = 37 \\times 24"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

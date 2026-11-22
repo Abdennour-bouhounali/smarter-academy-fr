@@ -1,0 +1,274 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l2-010",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — من الجدول إلى النقط",
+    "estimatedMinutes": 6,
+    "tags": [
+      "جدول",
+      "معلم",
+      "تناسبية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يعيد تلاميذ نادي البيئة تدوير الورق القديم ويصنعون منه كراريس لتلاميذ الأسر المعوزة. يعطي الجدول التالي عدد الكراريس المصنوعة بدلالة كتلة الورق المستعمل.",
+    "table": {
+      "head": [
+        "كتلة الورق (kg)",
+        "2",
+        "4",
+        "6",
+        "8"
+      ],
+      "rows": [
+        [
+          "عدد الكراريس",
+          "3",
+          "6",
+          "9",
+          "12"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما النقطة التي يمثّلها العمود الثالث من الجدول في معلم متعامد ومتجانس؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "النقطة التي فاصلتها $9$ وترتيبها $6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-SWAP-XY"
+        },
+        {
+          "id": "B",
+          "content": "النقطة التي فاصلتها $6$ وترتيبها $6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-SWAP-XY"
+        },
+        {
+          "id": "C",
+          "content": "النقطة التي فاصلتها $6$ وترتيبها $9$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العمود الأول من الجدول يعطي الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السطر الأول هو سطر الفواصل."
+        }
+      ],
+      "feedback": {
+        "correct": "العمود الثالث: $6$ kg و $9$ كراريس، أي النقطة $(6\\,;\\,9)$ .",
+        "incorrect": "السطر الأول هو الفواصل والسطر الثاني هو الترتيبات."
+      },
+      "solution": {
+        "lines": [
+          "العمود الثالث هو $6$ و $9$ ، فاصلته $6$ وترتيبه $9$ .",
+          "إذن النقطة $(6\\,;\\,9)$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "نمثّل كل أعمدة الجدول بنقط في معلم متعامد ومتجانس. هل تكون كل هذه النقط على استقامة واحدة مع المبدأ $O$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لأنّ المبدأ $O$ ليس من النقط المعلَّمة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-ORIGIN-DROP"
+        },
+        {
+          "id": "B",
+          "content": "نعم، النقط على استقامة واحدة مع المبدأ $O$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لا، لأنّ الترتيب لا يساوي الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-EQUAL-ONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط على استقامة واحدة مع المبدأ $O$ ، فهي تمثّل وضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "نحسب $\\dfrac{3}{2} = \\dfrac{6}{4} = \\dfrac{9}{6} = \\dfrac{12}{8} = 1{,}5$ : ناتج القسمة ثابت.",
+          "إذن النقط الأربع على استقامة واحدة مع المبدأ $O$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما معامل التناسبية (عدد الكراريس لكل كيلوغرام)؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: معامل التناسبية",
+      "expectedAnswer": "1.5",
+      "misconceptionSignatures": [
+        {
+          "value": "2/3",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        },
+        {
+          "value": "2",
+          "id": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل التناسبية هو ترتيب النقطة الذي فاصلته $1$ ، أو ناتج قسمة الترتيب على الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ إحداثيي النقطة $M$ ثم اقسم الترتيب على الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تقسم الفاصلة على الترتيب ولا تطرح أحد العددين من الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{6}{4} = 1{,}5$ .",
+        "incorrect": "المعامل هو ناتج قسمة الترتيب على الفاصلة (وليس العكس) لنقطة من المستقيم."
+      },
+      "solution": {
+        "lines": [
+          "النقطة $M(4\\,;\\,6)$ من المستقيم.",
+          "$a = \\dfrac{6}{4} = 1{,}5$"
+        ],
+        "result": "a = 1{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "كم كراسة تُصنع من $14$ kg من الورق؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الكراريس",
+      "expectedAnswer": "21",
+      "misconceptionSignatures": [
+        {
+          "value": "17",
+          "id": "MISC-TAMTHIL-DIFFERENCE"
+        },
+        {
+          "value": "9.33",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل معامل التناسبية الذي وجدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب كتلة الورق في المعامل."
+        }
+      ],
+      "feedback": {
+        "correct": "$y = 1{,}5 \\times 14 = 21$ كراسة.",
+        "incorrect": "اضرب كتلة الورق في المعامل ولا تضف إليها فرقا ثابتا."
+      },
+      "solution": {
+        "lines": [
+          "$y = 1{,}5 \\times 14 = 21$ كراسة."
+        ],
+        "result": "21"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

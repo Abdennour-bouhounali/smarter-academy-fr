@@ -1,0 +1,628 @@
+{
+  "id": "ex-4am-tarrid-taalufi-l5-001",
+  "lessonCode": "tarrid-taalufi",
+  "level": 5,
+  "metadata": {
+    "title": "BEM 2007 — الوضعية الإدماجية",
+    "estimatedMinutes": 35,
+    "tags": [
+      "وضعية إدماجية",
+      "تسعيرتان",
+      "متراجحة",
+      "أفضل تسعيرة"
+    ],
+    "source": {
+      "type": "bem",
+      "year": 2007,
+      "part": 2,
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "official",
+      "badge": "BEM 2007",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تقترح شركة لسيارات الأجرة، تلتزم بالأمانة في التسعير، التسعيرتين التاليتين:\n- التسعيرة الأولى: 15DA للكيلومتر الواحد لغير المنخرطين.\n- التسعيرة الثانية: 12DA للكيلومتر الواحد مع مشاركة شهرية قدرها 900DA.",
+    "table": {
+      "head": [
+        "المسافة (km)",
+        "60",
+        "…",
+        "…"
+      ],
+      "rows": [
+        [
+          "التسعيرة الأولى (DA)",
+          "…",
+          "…",
+          "5100"
+        ],
+        [
+          "التسعيرة الثانية (DA)",
+          "…",
+          "3060",
+          "…"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انقل الجدول على ورقة الإجابة ثم أكمله.",
+      "statement": "التسعيرة الأولى من أجل 60km :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "900",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التسعيرة الأولى: 15DA لكل كيلومتر، دون أي مبلغ آخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$60 \\times 15$ .",
+        "incorrect": "اضرب المسافة في ثمن الكيلومتر."
+      },
+      "solution": {
+        "lines": [
+          "كيفية ملأ الجدول:",
+          "$60 \\times 15 = 900$"
+        ],
+        "result": "900DA"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "التسعيرة الثانية من أجل 60km :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "1620",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAALUFI-NISYAN-B",
+          "value": "720"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التسعيرة الثانية: ثمن الكيلومترات ثم المشاركة الشهرية."
+        }
+      ],
+      "feedback": {
+        "correct": "$60 \\times 12 + 900$ .",
+        "incorrect": "لا تنس المشاركة الشهرية."
+      },
+      "solution": {
+        "lines": [
+          "كيفية ملأ الجدول:",
+          "$60 \\times 12 + 900 = 1620$"
+        ],
+        "result": "1620DA"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "المسافة إذا كان المبلغ حسب التسعيرة الثانية 3060DA :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المسافة بـ km",
+      "expectedAnswer": "180",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح المشاركة الشهرية من المبلغ أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اقسم الباقي على ثمن الكيلومتر في التسعيرة الثانية."
+        }
+      ],
+      "feedback": {
+        "correct": "$(3060 - 900) \\div 12$ .",
+        "incorrect": "المبلغ = 12 × المسافة + المشاركة: اعزل المسافة."
+      },
+      "solution": {
+        "lines": [
+          "كيفية ملأ الجدول:",
+          "$(3060 - 900) \\div 12 = 180$"
+        ],
+        "result": "180km"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "statement": "التسعيرة الأولى من أجل هذه المسافة:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "2700",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب المسافة التي وجدتها في ثمن الكيلومتر في التسعيرة الأولى."
+        }
+      ],
+      "feedback": {
+        "correct": "المسافة × 15.",
+        "incorrect": "التسعيرة الأولى: 15DA لكل كيلومتر."
+      },
+      "solution": {
+        "lines": [
+          "كيفية ملأ الجدول:",
+          "$180 \\times 15 = 2700$"
+        ],
+        "result": "2700DA"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q5",
+      "step": "01",
+      "statement": "المسافة إذا كان المبلغ حسب التسعيرة الأولى 5100DA :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المسافة بـ km",
+      "expectedAnswer": "340",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في التسعيرة الأولى المبلغ = 15 × المسافة."
+        }
+      ],
+      "feedback": {
+        "correct": "$5100 \\div 15$ .",
+        "incorrect": "اقسم المبلغ على ثمن الكيلومتر."
+      },
+      "solution": {
+        "lines": [
+          "كيفية ملأ الجدول:",
+          "$5100 \\div 15 = 340$"
+        ],
+        "result": "340km"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q6",
+      "step": "01",
+      "statement": "التسعيرة الثانية من أجل هذه المسافة:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "4980",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض المسافة التي وجدتها في التسعيرة الثانية."
+        }
+      ],
+      "feedback": {
+        "correct": "المسافة × 12 + 900.",
+        "incorrect": "اضرب المسافة في 12 ثم أضف المشاركة الشهرية."
+      },
+      "solution": {
+        "lines": [
+          "كيفية ملأ الجدول:",
+          "$340 \\times 12 + 900 = 4980$"
+        ],
+        "result": "4980DA"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q7",
+      "step": "02",
+      "sub": "ا",
+      "lead": "ليكن $x$ عدد الكيلومترات للمسافات المقطوعة.\n$y_1$ هو المبلغ حسب التسعيرة الأولى.\n$y_2$ هو المبلغ حسب التسعيرة الثانية.",
+      "statement": "عبّر عن $y_1$ و $y_2$ بدلالة $x$ .\nأعط العدد $a$ حيث: $y_1 = ax$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "15",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في التسعيرة الأولى ندفع ثمن الكيلومتر $x$ مرّة."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن الكيلومتر الواحد هو معامل $x$ .",
+        "incorrect": "المبلغ = ثمن الكيلومتر × عدد الكيلومترات."
+      },
+      "solution": {
+        "lines": [
+          "التعبير بدلالة $x$ عن $y_1$ و $y_2$ :",
+          "التسعيرة الأولى: $y_1 = 15x$",
+          "التسعيرة الثانية: $y_2 = 12x + 900$"
+        ],
+        "result": "y_1 = 15x"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q8",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أعط العددين $a$ و $b$ حيث: $y_2 = ax + b$ ، ابدأ بالعدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "900"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع عن كل كيلومتر في التسعيرة الثانية؟"
+        }
+      ],
+      "feedback": {
+        "correct": "هو ثمن الكيلومتر في التسعيرة الثانية.",
+        "incorrect": "معامل $x$ هو ما يُدفع $x$ مرّة."
+      },
+      "solution": {
+        "lines": [
+          "التعبير بدلالة $x$ عن $y_1$ و $y_2$ :",
+          "التسعيرة الأولى: $y_1 = 15x$",
+          "التسعيرة الثانية: $y_2 = 12x + 900$"
+        ],
+        "result": "y_2 = 12x + 900"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q9",
+      "step": "02",
+      "sub": "ا",
+      "statement": "ثم العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "900",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "12"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع مرّة واحدة في الشهر؟"
+        }
+      ],
+      "feedback": {
+        "correct": "المشاركة الشهرية تُدفع مرّة واحدة: هي الحدّ الثابت.",
+        "incorrect": "الحدّ الثابت هو المبلغ الذي لا يتعلّق بعدد الكيلومترات."
+      },
+      "solution": {
+        "lines": [
+          "التعبير بدلالة $x$ عن $y_1$ و $y_2$ :",
+          "التسعيرة الأولى: $y_1 = 15x$",
+          "التسعيرة الثانية: $y_2 = 12x + 900$"
+        ],
+        "result": "y_2 = 12x + 900"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q10",
+      "step": "02",
+      "sub": "ب",
+      "statement": "حل المتراجحة: $15x > 12x + 900$ .\nحدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x < k$ أو $x > k$ : اكتب العدد $k$ فقط",
+      "expectedAnswer": "300",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في الطرف الأول والأعداد في الطرف الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحدّ هو حل المعادلة المرفقة $15x = 12x + 900$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "حدّ الحلول هو حل المعادلة المرفقة.",
+        "incorrect": "انقل $12x$ إلى الطرف الأول ثم اقسم على معامل $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "حل المتراجحة: $15x > 12x + 900$",
+          "لدينا: $15x > 12x + 900$",
+          "$15x - 12x > 900$",
+          "$3x > 900$",
+          "$\\dfrac{3x}{3} > \\dfrac{900}{3}$",
+          "$x > 300$",
+          "إذا حلول المتراجحة $15x > 12x + 900$ هي كل قيم $x$ الأكبر تماما من 300."
+        ],
+        "result": "x > 300"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q11",
+      "step": "02",
+      "sub": "ب",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < 300$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QALB-ZAID"
+        },
+        {
+          "id": "B",
+          "content": "$x > 300$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قسمنا في آخر سطر على عدد موجب."
+        }
+      ],
+      "feedback": {
+        "correct": "$3x > 900$ يعطي $x > 300$ : التسعيرة الأولى أغلى عندما تتجاوز المسافة هذا الحدّ.",
+        "incorrect": "القسمة على عدد موجب لا تغيّر اتجاه المتباينة."
+      },
+      "solution": {
+        "lines": [
+          "حل المتراجحة: $15x > 12x + 900$",
+          "لدينا: $15x > 12x + 900$",
+          "$15x - 12x > 900$",
+          "$3x > 900$",
+          "$\\dfrac{3x}{3} > \\dfrac{900}{3}$",
+          "$x > 300$",
+          "إذا حلول المتراجحة $15x > 12x + 900$ هي كل قيم $x$ الأكبر تماما من 300."
+        ],
+        "result": "x > 300"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q12",
+      "step": "03",
+      "sub": "ا",
+      "lead": "في المستوي المنسوب إلى معلم متعامد و متجانس $(O, \\vec{i} , \\vec{j})$ :",
+      "statement": "مثّل بيانيا الدالتين $f$ ، $g$ حيث: $f(x) = 15x$ و $g(x) = 12x + 900$ .\n(1cm على محور الفواصل يمثل 50km ، 1cm على محور التراتيب يمثل 500DA)",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تمثيل كل دالة مستقيم: يكفي تعيين نقطتين من كل مستقيم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب صورتي عددين بكل دالة مستعملا وحدتي المحورين المعطاتين."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن عملك بالحل النموذجي ثم قيّم نفسك.",
+        "incorrect": "عيّن نقطتين لكل دالة: $f(0)$ و $g(0)$ ثم صورتي عدد آخر."
+      },
+      "solution": {
+        "lines": [
+          "تمثيل كل من $f$ و $g$ بيانيا:",
+          "جدول قيم $f$ : $f(0) = 0$ ، $f(300) = 4500$ .",
+          "جدول قيم $g$ : $g(0) = 900$ ، $g(300) = 4500$ .",
+          "تمثيل $f$ مستقيم يشمل النقطتين $(0 ; 0)$ و $(300 ; 4500)$ ، وتمثيل $g$ مستقيم يشمل النقطتين $(0 ; 900)$ و $(300 ; 4500)$ ."
+        ]
+      },
+      "timeSeconds": 420
+    },
+    {
+      "id": "q13",
+      "step": "03",
+      "sub": "ب",
+      "statement": "استعمل التمثيل البياني لتحديد أفضل تسعيرة مع الشرح.\nأفضل تسعيرة لمسافة أقل من 300km :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "التسعيرة الأولى",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "التسعيرة الثانية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أفضل تسعيرة هي التي يقع مستقيمها تحت الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انظر إلى يسار نقطة تقاطع المستقيمين."
+        }
+      ],
+      "feedback": {
+        "correct": "قبل نقطة التقاطع يقع مستقيم $f$ تحت مستقيم $g$ .",
+        "incorrect": "قبل 300km ، المستقيم الذي يقع تحت الآخر هو الذي يبدأ من المبدأ."
+      },
+      "solution": {
+        "lines": [
+          "استعمال التمثيل البياني لتحديد أفضل تسعيرة مع الشرح:",
+          "◂ إذا كانت المسافة المقطوعة خلال شهر أقل من 300km تكون التسعيرة الأولى أفضل من التسعيرة الثانية بالنسبة للزبون (لأن التمثيل البياني للدالة $f$ يقع تحت التمثيل البياني للدالة $g$) أي أن الثمن الذي يدفعه الزبون بالتسعيرة الأولى أقل من الثمن الذي يدفعه بالتسعيرة الثانية.",
+          "◂ إذا كانت المسافة المقطوعة خلال شهر تساوي 300km يكون الثمن المدفوع بالتسعيرة الأولى يساوي الثمن المدفوع بالتسعيرة الثانية.",
+          "◂ إذا كانت المسافة المقطوعة خلال شهر أكبر من 300km تكون التسعيرة الثانية أفضل من التسعيرة الأولى بالنسبة للزبون (لأن التمثيل البياني للدالة $f$ يقع فوق التمثيل البياني للدالة $g$) أي أن الثمن الذي يدفعه الزبون بالتسعيرة الأولى أكبر من الثمن الذي يدفعه بالتسعيرة الثانية."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q14",
+      "step": "03",
+      "sub": "ب",
+      "statement": "أفضل تسعيرة لمسافة أكبر من 300km :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "التسعيرة الأولى",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        },
+        {
+          "id": "B",
+          "content": "التسعيرة الثانية",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى يمين نقطة تقاطع المستقيمين."
+        }
+      ],
+      "feedback": {
+        "correct": "بعد نقطة التقاطع يقع مستقيم $g$ تحت مستقيم $f$ .",
+        "incorrect": "الصيغة الأفضل تتغيّر عند فاصلة نقطة التقاطع."
+      },
+      "solution": {
+        "lines": [
+          "استعمال التمثيل البياني لتحديد أفضل تسعيرة مع الشرح:",
+          "◂ إذا كانت المسافة المقطوعة خلال شهر أقل من 300km تكون التسعيرة الأولى أفضل من التسعيرة الثانية بالنسبة للزبون (لأن التمثيل البياني للدالة $f$ يقع تحت التمثيل البياني للدالة $g$) أي أن الثمن الذي يدفعه الزبون بالتسعيرة الأولى أقل من الثمن الذي يدفعه بالتسعيرة الثانية.",
+          "◂ إذا كانت المسافة المقطوعة خلال شهر تساوي 300km يكون الثمن المدفوع بالتسعيرة الأولى يساوي الثمن المدفوع بالتسعيرة الثانية.",
+          "◂ إذا كانت المسافة المقطوعة خلال شهر أكبر من 300km تكون التسعيرة الثانية أفضل من التسعيرة الأولى بالنسبة للزبون (لأن التمثيل البياني للدالة $f$ يقع فوق التمثيل البياني للدالة $g$) أي أن الثمن الذي يدفعه الزبون بالتسعيرة الأولى أكبر من الثمن الذي يدفعه بالتسعيرة الثانية."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

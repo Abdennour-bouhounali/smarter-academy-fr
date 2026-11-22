@@ -1,0 +1,360 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-amaliyat-tabiiya-ushriya-l5-009",
+  "lessonCode": "wadiya-idmajiya-amaliyat-tabiiya-ushriya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — حصّة كلّ تلميذ من كلفة رحلة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "خطّ الكسر",
+      "توزيع",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تنظّم مدرسة رحلة لـ $32$ تلميذًا: ثمن الحافلة ⁦6400 DA⁩ ، ودخول المتحف ⁦45 DA⁩ للتلميذ، ووجبة الغداء ⁦120 DA⁩ للتلميذ. تُقسّم الكلفة الكلّية بالتساوي على التلاميذ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "الجزء الأوّل — أيّ سلسلة تعطي ما يدفعه كلّ تلميذ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{6400 + 32 \\times (45 + 120)}{32}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$6400 + 32 \\times (45 + 120) \\div 32$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-BARSPLIT"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{6400 + 32 \\times 45 + 120}{32}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-MISPLACED"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المطلوب جيّدًا: ما العملية التي تُنجز في الأخير، وما الذي يُحسب قبلها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ سلسلة مقترحة بالحساب أو بالقاعدة المناسبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الجواب هو السلسلة التي تترجم المطلوب وتعطي القيمة المنتظرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{6400 + 32 \\times (45 + 120)}{32} = 365$ .",
+        "incorrect": "اختبر كلّ سلسلة بالحساب: الصحيحة هي التي تترجم المطلوب وتعطي القيمة المنتظرة، وانتبه إلى القوسين."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة الصحيحة: $\\dfrac{6400 + 32 \\times (45 + 120)}{32}$",
+          "$A = \\dfrac{6400 + 32 \\times (45 + 120)}{32}$",
+          "$A = \\dfrac{6400 + 32 \\times 165}{32}$",
+          "$A = \\dfrac{6400 + 5280}{32}$",
+          "$A = \\dfrac{11680}{32}$",
+          "$A = 365$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "الجزء الأوّل — كم يدفع كلّ تلميذ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "مبلغ بالدينار",
+      "expectedAnswer": "365",
+      "misconceptionSignatures": [
+        {
+          "value": "6565",
+          "id": "MISC-AQWAS-BARSPLIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعية جملة جملة: كلّ جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب سلسلة عمليات تترجمها، وضع بين قوسين ما يجب حسابه أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب السلسلة بالترتيب الصحيح للعمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{6400 + 32 \\times (45 + 120)}{32} = 365$ .",
+        "incorrect": "خطّ الكسر يقسم البسط كلّه على المقام كلّه، فنحسب البسط والمقام أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $\\dfrac{6400 + 32 \\times (45 + 120)}{32}$",
+          "$A = \\dfrac{6400 + 32 \\times (45 + 120)}{32}$",
+          "$A = \\dfrac{6400 + 32 \\times 165}{32}$",
+          "$A = \\dfrac{6400 + 5280}{32}$",
+          "$A = \\dfrac{11680}{32}$",
+          "$A = 365$"
+        ],
+        "result": "365 \\text{ DA }"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "الجزء الأوّل — احسب المبلغ نفسه بقسمة ثمن الحافلة على التلاميذ ثم إضافة ما يدفعه كلّ تلميذ مباشرة.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "مبلغ بالدينار",
+      "expectedAnswer": "365",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعية جملة جملة: كلّ جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب سلسلة عمليات تترجمها، وضع بين قوسين ما يجب حسابه أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب السلسلة بالترتيب الصحيح للعمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "$6400 \\div 32 + 45 + 120 = 365$ .",
+        "incorrect": "اكتب سلسلة تترجم الوضعية جملة جملة، ثم احسبها بالترتيب الصحيح للعمليات."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $6400 \\div 32 + 45 + 120$",
+          "$A = 6400 \\div 32 + 45 + 120$",
+          "$A = 200 + 45 + 120$",
+          "$A = 245 + 120$",
+          "$A = 365$"
+        ],
+        "result": "365 \\text{ DA }"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "الجزء الثاني — هل يكفي لكلّ تلميذ مبلغ ⁦400 DA⁩ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SILSILA-NOPRIORITY"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب كلّ طرف من الطرفين على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين الناتجين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحكم قبل أن تحسب: اختبر بالأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم، تحقّق بالحساب.",
+        "incorrect": "احسب الطرفين كلّا على حدة قبل أن تحكم."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{6400 + 32 \\times (45 + 120)}{32}$",
+          "$A = \\dfrac{6400 + 32 \\times 165}{32}$",
+          "$A = \\dfrac{6400 + 5280}{32}$",
+          "$A = \\dfrac{11680}{32}$",
+          "$A = 365$",
+          "$A = 400$",
+          "النتيجتان تحقّقان ما قيل: الجواب نعم."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "ما اسم السلسلة $\\dfrac{6400 + 32 \\times (45 + 120)}{32}$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مجموع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-FIRSTOP"
+        },
+        {
+          "id": "B",
+          "content": "حاصل قسمة",
+          "isCorrect": true
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب مرحلة مرحلة وتتبّع آخر عملية بقيت لك."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع خطًّا تحت العملية التي تُنجز في الأخير."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العملية الأخيرة هي التي تسمّي السلسلة."
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة عبارة عن حاصل قسمة: آخر عملية تُنجز فيها هي القسمة.",
+        "incorrect": "لا تسمِّ السلسلة بأوّل عملية تُنجز ولا بأوّل رمز تراه: سمِّها بآخر عملية تُنجز فيها."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{6400 + 32 \\times (45 + 120)}{32}$",
+          "$A = \\dfrac{6400 + 32 \\times 165}{32}$",
+          "$A = \\dfrac{6400 + 5280}{32}$",
+          "$A = \\dfrac{11680}{32}$",
+          "$A = 365$",
+          "آخر عملية تُنجز هي القسمة ، فالسلسلة عبارة عن حاصل قسمة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "06",
+      "statement": "الجزء الثاني — برّر أنّ الطريقتين في السؤالين الثاني والثالث تعطيان العدد نفسه.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب على ورقتك مرحلة مرحلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اسأل: أيّ حساب يثبت ما تقول؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تذكر القاعدة المستعملة."
+        }
+      ],
+      "feedback": {
+        "correct": "كلتا الطريقتين تعطي $200 + 165 = 365$ دينارًا.",
+        "incorrect": "قارن تبريرك بالحلّ النموذجي: الفكرة ثم الحساب الذي يدعمها."
+      },
+      "solution": {
+        "lines": [
+          "قسمة مجموع على عدد تُساوي مجموع قسمتي حدّيه: $(6400 + 32 \\times 165) \\div 32 = 6400 \\div 32 + 32 \\times 165 \\div 32$ .",
+          "والحدّ الثاني هو $165$ لأنّ $32$ يُختصر.",
+          "كلتا الطريقتين تعطي $200 + 165 = 365$ دينارًا."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

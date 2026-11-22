@@ -1,0 +1,385 @@
+{
+  "id": "ex-4am-tahlil-ibara-l4-004",
+  "lessonCode": "tahlil-ibara",
+  "level": 4,
+  "metadata": {
+    "title": "BEM 2008 — التمرين الثاني",
+    "estimatedMinutes": 15,
+    "tags": [
+      "مربع فرق",
+      "جذور",
+      "فرق مربعين",
+      "معادلة جداء معدوم"
+    ],
+    "source": {
+      "type": "bem",
+      "year": 2008,
+      "part": 1,
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "official",
+      "badge": "BEM 2008",
+      "heading": "التمرين الثاني",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "$A$ عدد حيث:",
+    "formulas": [
+      "A = (2 - \\sqrt{3})^2"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انشر ثم بسط $A$ .",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $a + b\\sqrt{3}$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل $(a - b)^2 = a^2 - 2ab + b^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أن $(\\sqrt{3})^2 = 3$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 7 - 4\\sqrt{3}$ إذن $a = 7$ .",
+        "incorrect": "طبّق متطابقة مربع فرق، ثم اجمع العددين $2^2$ و $(\\sqrt{3})^2$ ."
+      },
+      "solution": {
+        "lines": [
+          "$A = (2 - \\sqrt{3})^2$",
+          "$= 2^2 + (\\sqrt{3})^2 - 2 \\times 2 \\times \\sqrt{3}$",
+          "$= 4 + 3 - 4\\sqrt{3}$"
+        ],
+        "result": "A = 7 - 4\\sqrt{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $a + b\\sqrt{3}$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "-4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد المضاعف هو $-2 \\times 2 \\times \\sqrt{3}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 7 - 4\\sqrt{3}$ إذن $b = -4$ .",
+        "incorrect": "الحد المضاعف $2ab$ يعطي معامل $\\sqrt{3}$ بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$A = 7 - 4\\sqrt{3}$"
+        ],
+        "result": "b = -4"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "لتكن العبارة الجبرية $E$ حيث : $E = x^2 - (7 - 4\\sqrt{3})$ .",
+      "statement": "احسب القيمة المضبوطة للعبارة $E$ من أجل $x = \\sqrt{7}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "تُكتب النتيجة على الشكل $a\\sqrt{3}$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $\\sqrt{7}$ : $(\\sqrt{7})^2 = 7$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى «−» أمام القوس."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 4\\sqrt{3}$ إذن $a = 4$ .",
+        "incorrect": "احسب $(\\sqrt{7})^2$ أولًا، ثم اطرح القوس كله مغيّرًا إشارة كل حد منه."
+      },
+      "solution": {
+        "lines": [
+          "$E = x^2 - (7 - 4\\sqrt{3})$",
+          "$= (\\sqrt{7})^2 - 7 + 4\\sqrt{3}$",
+          "$= 4\\sqrt{3}$"
+        ],
+        "result": "E = 4\\sqrt{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "حلل $E$ إلى جداء عاملين من الدرجة الأولى.",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $(x - c)(x + c)$ حيث $c$ عدد موجب يُكتب $c$ على الشكل $m + n\\sqrt{3}$ حيث $m$ و $n$ عددان صحيحان : اكتب العدد $m$ فقط",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01: $7 - 4\\sqrt{3} = (2 - \\sqrt{3})^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل المتطابقة $a^2 - b^2 = (a + b)(a - b)$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد $2 - \\sqrt{3}$ موجب لأن $\\sqrt{3} < 2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = (x + 2 - \\sqrt{3})(x - 2 + \\sqrt{3})$ ، أي $c = 2 - \\sqrt{3}$ و $m = 2$ .",
+        "incorrect": "تعرّف على المتطابقة الشهيرة المناسبة، وعيّن $a$ و $b$ بدقّة قبل التحليل."
+      },
+      "solution": {
+        "lines": [
+          "$E = x^2 - (2 - \\sqrt{3})^2$",
+          "$= (x + 2 - \\sqrt{3})(x - 2 + \\sqrt{3})$"
+        ],
+        "result": "E = (x + 2 - \\sqrt{3})(x - 2 + \\sqrt{3})"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $(x - c)(x + c)$ حيث $c$ عدد موجب يُكتب $c$ على الشكل $m + n\\sqrt{3}$ حيث $m$ و $n$ عددان صحيحان : اكتب العدد $n$ فقط",
+      "expectedAnswer": "-1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ معامل $\\sqrt{3}$ في العدد $c$ بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$c = 2 - \\sqrt{3}$ إذن $n = -1$ .",
+        "incorrect": "تعرّف على المتطابقة الشهيرة المناسبة، وعيّن $a$ و $b$ بدقّة قبل التحليل."
+      },
+      "solution": {
+        "lines": [
+          "$E = x^2 - (2 - \\sqrt{3})^2$",
+          "$= (x + 2 - \\sqrt{3})(x - 2 + \\sqrt{3})$"
+        ],
+        "result": "c = 2 - \\sqrt{3}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ج",
+      "statement": "حل المعادلة: $(x - 2 + \\sqrt{3})(x + 2 - \\sqrt{3}) = 0$ . — الحلّ الأصغر، العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب الحلّ الأصغر على الشكل $m + n\\sqrt{3}$ حيث $m$ و $n$ عددان صحيحان : اكتب العدد $m$ فقط",
+      "expectedAnswer": "-2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يكون جداء معدومًا إذا كان أحد عامليه على الأقل معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لاحظ أن $\\sqrt{3} \\approx 1{,}73$ : أحد الحلّين موجب والآخر سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "الحلّ الأصغر هو $-2 + \\sqrt{3}$ إذن $m = -2$ .",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة، ثم قارن الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $(x - 2 + \\sqrt{3})(x + 2 - \\sqrt{3}) = 0$",
+          "يعني أنّ: $x - 2 + \\sqrt{3} = 0$ أو $x + 2 - \\sqrt{3} = 0$",
+          "أي: $x = 2 - \\sqrt{3}$ أو $x = -2 + \\sqrt{3}$",
+          "إذن للمعادلة حلّان هما $2 - \\sqrt{3}$ و $-2 + \\sqrt{3}$"
+        ],
+        "result": "x = -2 + \\sqrt{3}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q7",
+      "step": "02",
+      "sub": "ج",
+      "statement": "الحلّ الأصغر، العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب الحلّ الأصغر على الشكل $m + n\\sqrt{3}$ حيث $m$ و $n$ عددان صحيحان : اكتب العدد $n$ فقط",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ معامل $\\sqrt{3}$ في الحلّ الأصغر بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "الحلّ الأصغر هو $-2 + \\sqrt{3}$ إذن $n = 1$ .",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة، ثم قارن الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "إذن للمعادلة حلّان هما $2 - \\sqrt{3}$ و $-2 + \\sqrt{3}$"
+        ],
+        "result": "x = -2 + \\sqrt{3}"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q8",
+      "step": "02",
+      "sub": "ج",
+      "statement": "الحلّ الأكبر، العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب الحلّ الأكبر على الشكل $m + n\\sqrt{3}$ حيث $m$ و $n$ عددان صحيحان : اكتب العدد $m$ فقط",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحلّ الأكبر هو الحلّ الموجب."
+        }
+      ],
+      "feedback": {
+        "correct": "الحلّ الأكبر هو $2 - \\sqrt{3}$ إذن $m = 2$ .",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة، ثم قارن الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "إذن للمعادلة حلّان هما $2 - \\sqrt{3}$ و $-2 + \\sqrt{3}$"
+        ],
+        "result": "x = 2 - \\sqrt{3}"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q9",
+      "step": "02",
+      "sub": "ج",
+      "statement": "الحلّ الأكبر، العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب الحلّ الأكبر على الشكل $m + n\\sqrt{3}$ حيث $m$ و $n$ عددان صحيحان : اكتب العدد $n$ فقط",
+      "expectedAnswer": "-1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ معامل $\\sqrt{3}$ في الحلّ الأكبر بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "الحلّ الأكبر هو $2 - \\sqrt{3}$ إذن $n = -1$ .",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة، ثم قارن الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "إذن للمعادلة حلّان هما $2 - \\sqrt{3}$ و $-2 + \\sqrt{3}$"
+        ],
+        "result": "x = 2 - \\sqrt{3}"
+      },
+      "timeSeconds": 45
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l3-007",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — بوابات لعبة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "عكس فيثاغورس",
+      "لعبة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_ithbat-khawas-maalam_P1",
+      "modelledOn": "ex-27"
+    }
+  },
+  "generator": {
+    "tool": "u1x-ithbat-khawas-maalam/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "ثلاث بوابات في لعبة تعليمية أتقن تلميذ برمجتها: $P(-2\\,;\\,1)$ ، $Q(1\\,;\\,3)$ ، $R(3\\,;\\,0)$ في معلم متعامد ومتجانس (النقط معلّمة على المرصوفة).",
+    "figure": {
+      "grid": true,
+      "axes": true,
+      "points": {
+        "P": [
+          -2,
+          1
+        ],
+        "Q": [
+          1,
+          3
+        ],
+        "R": [
+          3,
+          0
+        ]
+      },
+      "ariaLabel": "المثلث PQR على مرصوفة",
+      "maxWidth": 420,
+      "segments": [
+        [
+          "P",
+          "Q"
+        ],
+        [
+          "Q",
+          "R"
+        ],
+        [
+          "P",
+          "R"
+        ]
+      ],
+      "labels": {
+        "P": "w",
+        "Q": "n",
+        "R": "e"
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "احسب $PR^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "26",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MASAFA-JADHR-JAM",
+          "value": "6"
+        },
+        {
+          "id": "MISC-MAALAM-MASAFA-TARBI",
+          "value": "24"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مركبتا $\\overrightarrow{PR}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$5$ و $-1$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ربّع ثم اجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$PR^2 = 25 + 1 = 26$ .",
+        "incorrect": "ربّع كل مركبة."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "مع $PQ^2 = 13$ و $QR^2 = 13$ ، المثلث PQR :",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "متقايس الأضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SAQAYN-QAIM"
+        },
+        {
+          "id": "B",
+          "content": "قائم في Q ومتساوي الساقين",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "قائم في P",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-FITHAGHURAS-WATAR"
+        },
+        {
+          "id": "D",
+          "content": "متساوي الساقين وليس قائما",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SAQAYN-QAIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أكبر مربع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$13 + 13$ ؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "والضلعان الصادران من Q ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$13 + 13 = 26$ : قائم في Q ، و $PQ = QR$ .",
+        "incorrect": "الزاوية القائمة تقابل [PR]."
+      }
+    }
+  ]
+}

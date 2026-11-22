@@ -1,0 +1,120 @@
+{
+  "id": "ex-4am-muadalat-x-murabba-l1-005",
+  "lessonCode": "muadalat-x-murabba",
+  "level": 1,
+  "metadata": {
+    "title": "المعادلتان x² = 0 و x² = −1",
+    "estimatedMinutes": 3,
+    "tags": [
+      "عدد الحلول",
+      "الصفر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_muadalat-x-murabba_P1",
+      "modelledOn": "know-3"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعتبر المعادلتين $x^2 = 0$ و $x^2 = -1$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "حل المعادلة $x^2 = 0$.",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما هو العدد الذي مربعه معدوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الوحيد الذي هو معاكس نفسه هو الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "المعادلة $x^2 = 0$ تقبل حلا واحدا هو 0.",
+        "incorrect": "جداء عدد في نفسه يكون معدومًا فقط إذا كان هذا العدد معدومًا."
+      },
+      "solution": {
+        "lines": [
+          "$x^2 = 0$ يعني $x \\times x = 0$",
+          "بالتالي $x = 0$: المعادلة تقبل حلا واحدا."
+        ],
+        "result": "x = 0"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل تقبل المعادلة $x^2 = -1$ حلولا ؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HALL-SALIB"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة مربع أي عدد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن ذلك بإشارة العدد $-1$."
+        }
+      ],
+      "feedback": {
+        "correct": "صحيح: لا يوجد عدد مربعه سالب.",
+        "incorrect": "مربع أي عدد موجب أو معدوم: هل يمكن أن يساوي $-1$؟"
+      },
+      "solution": {
+        "lines": [
+          "من أجل كل عدد $x$ لدينا $x^2 \\geq 0$، و $-1 < 0$.",
+          "إذن المعادلة $x^2 = -1$ لا تقبل أي حل."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,991 @@
+/* « مصهر القاعدة » — the mirror of island « المرايا ». Designed at 1280 × 720, zoomed to the window: nothing scrolls. Prefix rf-. */
+.rf-root {
+  position: absolute;
+  inset: 0;
+  z-index: 14;
+  overflow: hidden;
+  color: #e8f6ff;
+  font-family: 'Cairo', 'Tajawal', system-ui, sans-serif;
+  user-select: none;
+  -webkit-user-select: none;
+  animation: di-fade 0.3s;
+  background: radial-gradient(900px 500px at 75% -10%, #1d4f8f 0%, transparent 60%),
+    radial-gradient(700px 500px at 10% 110%, #2b2a78 0%, transparent 60%), linear-gradient(165deg, #0a1a3a, #0d2552);
+}
+.rf-root *,
+.rf-root *::before {
+  box-sizing: border-box;
+}
+.rf-root h2,
+.rf-root h3,
+.rf-root h4,
+.rf-root p,
+.rf-root li,
+.rf-root button,
+.rf-root input {
+  margin: 0;
+  color: inherit;
+  font-family: inherit;
+}
+.rf-root .katex {
+  white-space: nowrap;
+}
+.rf-fit {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 19rem minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 0.8rem;
+  padding: 0.9rem 1.1rem 1rem;
+}
+
+.rf-fit > [hidden] {
+  display: none;
+}
+.rf-head {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.rf-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.rf-brand i {
+  font-style: normal;
+  font-size: 2rem;
+}
+.rf-brand h2 {
+  font-size: 1.35rem;
+  font-weight: 900;
+  line-height: 1.25;
+}
+.rf-brand p {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #9fd8ff;
+}
+.rf-steps {
+  display: flex;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.rf-steps li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.22rem 0.8rem 0.22rem 0.3rem;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.07);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #9fb8dd;
+  white-space: nowrap;
+}
+.rf-steps b {
+  display: grid;
+  place-items: center;
+  width: 1.55rem;
+  height: 1.55rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  font-size: max(var(--di-min-font, 12px), 0.85rem);
+}
+.rf-steps li.is-now {
+  background: #7dfcff;
+  color: #06262c;
+}
+.rf-steps li.is-now b {
+  background: #06262c;
+  color: #7dfcff;
+}
+.rf-steps li.is-done {
+  color: #6ee7b7;
+}
+.rf-steps li.is-done b {
+  background: rgba(52, 211, 153, 0.3);
+}
+.rf-head__end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  min-width: 11rem;
+}
+.rf-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 3rem;
+  padding: 0 1.3rem;
+  border-radius: 1rem;
+  border: 2px solid rgba(159, 216, 255, 0.5);
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 1.08rem;
+  font-weight: 900;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    transform 0.12s,
+    background 0.2s;
+}
+.rf-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.17);
+}
+.rf-btn:active:not(:disabled) {
+  transform: scale(0.96);
+}
+.rf-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.rf-root .rf-btn--main {
+  background: #7dfcff;
+  border-color: #7dfcff;
+  color: #06262c;
+  min-width: 12rem;
+  min-height: 3.3rem;
+  font-size: 1.2rem;
+}
+.rf-root .rf-btn--main:hover:not(:disabled) {
+  background: #a5fdff;
+}
+.rf-btn--bot {
+  border-color: #fbbf24;
+  color: #fde68a;
+}
+.rf-btn--hold {
+  border-color: #34d399;
+  min-width: 9rem;
+  min-height: 3.4rem;
+  font-size: 1.3rem;
+}
+.rf-btn--fall {
+  border-color: #fbbf24;
+  min-width: 9rem;
+  min-height: 3.4rem;
+  font-size: 1.3rem;
+}
+.rf-root .rf-btn--hold.is-on {
+  background: #34d399;
+  color: #06262c;
+}
+.rf-root .rf-btn--fall.is-on {
+  background: #fbbf24;
+  color: #2a1c02;
+}
+
+.rf-log {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.8rem 0.75rem;
+  border-radius: 1.3rem;
+  background: rgba(6, 18, 44, 0.7);
+  border: 1.5px solid rgba(125, 252, 255, 0.25);
+  min-height: 0;
+}
+.rf-log h3 {
+  font-size: 1.08rem;
+  font-weight: 900;
+  color: #9fd8ff;
+  line-height: 1.4;
+}
+.rf-log ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.38rem;
+  /* the list takes the room the column has left, no more: RuleForge measures it and lets the oldest rows go until the
+     rest fit (never a scroll, never a row cut by the window — GAME_WORLD.md « The evidence fits its column ») */
+  flex: 1 1 0;
+  min-height: 0;
+  overflow: hidden;
+}
+.rf-log li {
+  display: grid;
+  gap: 0.12rem;
+  padding: 0.26rem 0.6rem;
+  line-height: 1.3; /* Cairo's own line height is nearly 1.9: eight lines must fit at 1280 × 720 */
+  border-radius: 0.8rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid transparent;
+  transition:
+    border-color 0.25s,
+    background 0.25s;
+}
+.rf-log li > div {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+.rf-log li strong {
+  font-size: 1.15rem;
+  font-weight: 900;
+}
+.rf-log li span {
+  color: #9fd8ff;
+}
+.rf-log li em {
+  margin-inline-start: auto;
+  font-style: normal;
+  font-size: max(var(--di-min-font, 12px), 0.85rem);
+  font-weight: 800;
+}
+.rf-log li.is-held em {
+  color: #6ee7b7;
+}
+.rf-log li.is-fell em {
+  color: #fcd34d;
+}
+.rf-log li.is-agree {
+  border-color: #34d399;
+  background: rgba(52, 211, 153, 0.12);
+}
+.rf-log li.is-refute {
+  border-color: #fb923c;
+  background: rgba(251, 146, 60, 0.2);
+  animation: rf-shake 0.4s;
+}
+.rf-log li.is-compare {
+  border-color: #fbbf24;
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.3);
+}
+.rf-mini {
+  width: 100%;
+  height: 0.8rem;
+  direction: ltr;
+}
+.rf-mini rect {
+  fill: #5b8fd6;
+}
+.rf-mini rect.is-held {
+  fill: #34d399;
+}
+.rf-mini rect.is-left {
+  fill: #fbbf24;
+}
+.rf-log li > .rf-line2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 1.1rem;
+}
+.rf-line2 .rf-mini {
+  flex: 1;
+  min-width: 0;
+}
+.rf-says {
+  flex: none;
+  font-size: max(var(--di-min-font, 12px), 0.82rem);
+  line-height: 1; /* its line is 1.1rem high: the floored size must still stand inside it */
+  font-weight: 900;
+  color: #cfe9ff;
+  white-space: nowrap;
+}
+.rf-log li.is-refute .rf-says {
+  color: #fdba74;
+}
+.rf-log li.is-agree .rf-says {
+  color: #6ee7b7;
+}
+
+/* the mirror is 15.5rem high, unless the panel under it needs that room (a build with many long tiles): it then gives
+   way, down to what it holds itself — the panel is never pushed below the window (GAME_WORLD.md « The panel fits ») */
+.rf-main {
+  display: grid;
+  grid-template-rows: minmax(min-content, 15.5rem) minmax(min-content, 1fr);
+  gap: 0.8rem;
+  min-height: 0;
+}
+.rf-mirror {
+  position: relative;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 0.3rem;
+  padding: 0.6rem 1rem;
+  border-radius: 1.6rem;
+  overflow: hidden;
+  border: 2px solid rgba(165, 243, 252, 0.55);
+  background: linear-gradient(
+    120deg,
+    rgba(165, 243, 252, 0.16),
+    rgba(255, 255, 255, 0.04) 40%,
+    rgba(165, 243, 252, 0.12)
+  );
+  box-shadow:
+    inset 0 0 60px rgba(125, 252, 255, 0.12),
+    0 14px 40px rgba(0, 0, 0, 0.35);
+}
+.rf-mirror::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.1) 45%, transparent 55%);
+  pointer-events: none;
+}
+.rf-bridge {
+  width: 100%;
+  max-width: 46rem;
+  height: 10.6rem;
+  direction: ltr;
+  overflow: visible;
+}
+.rf-bank {
+  fill: #5a6f94;
+}
+.rf-cell {
+  fill: rgba(255, 255, 255, 0.07);
+  stroke: rgba(165, 243, 252, 0.35);
+  stroke-width: 1;
+}
+.rf-cell.is-left {
+  fill: rgba(251, 191, 36, 0.5);
+  stroke: #fbbf24;
+  animation: rf-blink 0.7s infinite;
+}
+.rf-plank {
+  fill: #7dfcff;
+  stroke: #06262c;
+  stroke-width: 2;
+  opacity: 0;
+  animation: rf-lay 0.3s ease-out forwards;
+}
+.rf-plank.is-alt {
+  fill: #5eead4;
+}
+.rf-plank--sample {
+  opacity: 1;
+  animation: none;
+  fill: #fde68a;
+}
+.rf-bridge.is-held .rf-plank {
+  fill: #34d399;
+  filter: drop-shadow(0 0 8px rgba(52, 211, 153, 0.8));
+}
+.rf-bridge.is-fell .rf-plank {
+  animation: rf-fall 0.7s ease-in forwards;
+  opacity: 1;
+}
+.rf-cap {
+  fill: #cfe9ff;
+  font:
+    800 17px 'Cairo',
+    sans-serif;
+  direction: rtl;
+}
+.rf-cap--a {
+  fill: #9fd8ff;
+}
+.rf-eq {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+.rf-rule {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem 0.7rem;
+  padding: 0 1rem;
+  font-size: 1.45rem;
+  font-weight: 900;
+  text-align: center;
+  line-height: 1.9;
+}
+.rf-rule b {
+  padding: 0.1rem 0.9rem;
+  border-radius: 0.8rem;
+  background: rgba(125, 252, 255, 0.18);
+  border: 2px solid #7dfcff;
+  font-weight: 900;
+}
+.rf-rule b.is-empty {
+  border-style: dashed;
+  background: none;
+  color: #9fb8dd;
+  min-width: 8rem;
+}
+.rf-keymark {
+  font-style: normal;
+  font-size: 2.2rem;
+  animation: rf-pop 0.6s;
+}
+
+.rf-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1.2rem;
+  border-radius: 1.4rem;
+  background: rgba(6, 18, 44, 0.7);
+  border: 1.5px solid rgba(125, 252, 255, 0.25);
+  min-height: 0;
+  text-align: center;
+}
+.rf-q {
+  font-size: 1.45rem;
+  font-weight: 900;
+  line-height: 1.7;
+}
+.rf-note {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #b9dcff;
+  line-height: 1.7;
+}
+.rf-note b {
+  color: #fde68a;
+}
+.rf-row {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+.rf-fb {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #fde68a;
+  line-height: 1.7;
+  animation: rf-pop 0.4s;
+}
+/* only the fact written under a verdict (`.rf-fb > span`): a formula inside it keeps KaTeX's own inline boxes — a block
+   on every span of the formula had broken « 72 = 3 × 24 » into a column of atoms */
+.rf-fb > span {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #cfe9ff;
+}
+.rf-fb.is-right {
+  color: #6ee7b7;
+}
+.rf-fb.is-broken {
+  color: #fdba74;
+}
+.rf-streak {
+  position: absolute;
+  top: 0.8rem;
+  inset-inline-end: 1rem;
+  display: flex;
+  gap: 0.35rem;
+  direction: ltr;
+}
+.rf-streak i {
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+}
+.rf-streak i.is-on {
+  background: #34d399;
+  box-shadow: 0 0 10px #34d399;
+}
+.rf-tiles {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 0.9rem;
+  width: 100%;
+}
+.rf-tiles > div {
+  display: grid;
+  gap: 0.4rem;
+  align-content: start;
+}
+.rf-tiles h4 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #9fd8ff;
+  text-align: start;
+}
+.rf-tile {
+  min-height: 2.75rem;
+  padding: 0.2rem 0.9rem;
+  border-radius: 0.85rem;
+  border: 2px solid rgba(159, 216, 255, 0.4);
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 1.05rem;
+  font-weight: 800;
+  cursor: pointer;
+  text-align: start;
+  transition:
+    background 0.15s,
+    transform 0.12s;
+}
+.rf-tile:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+.rf-tile:active {
+  transform: scale(0.97);
+}
+.rf-root .rf-tile.is-on {
+  background: #7dfcff;
+  border-color: #7dfcff;
+  color: #06262c;
+}
+.rf-bubble {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1rem;
+  border-radius: 1rem;
+  background: rgba(251, 191, 36, 0.14);
+  border: 1.5px solid rgba(251, 191, 36, 0.6);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #fde68a;
+  line-height: 1.7;
+}
+.rf-bubble .rf-btn {
+  min-height: 2.4rem;
+  font-size: 0.98rem;
+}
+.rf-words {
+  display: grid;
+  gap: 0.3rem;
+  width: min(100%, 38rem);
+  text-align: start;
+}
+.rf-words span {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #9fd8ff;
+}
+.rf-words input {
+  height: 3rem;
+  padding: 0 1rem;
+  border-radius: 0.9rem;
+  border: 2px solid rgba(159, 216, 255, 0.5);
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 1.1rem;
+  font-weight: 700;
+  user-select: text;
+  -webkit-user-select: text;
+  outline: none;
+}
+.rf-words input:focus {
+  border-color: #7dfcff;
+}
+.rf-use {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  font-size: 2.2rem;
+  font-weight: 900;
+  line-height: 3.4rem;
+}
+.rf-use label {
+  display: grid;
+  justify-items: center;
+}
+.rf-use input {
+  width: 5.2rem;
+  height: 3.4rem;
+  border-radius: 0.9rem;
+  border: 3px solid #7dfcff;
+  background: rgba(125, 252, 255, 0.1);
+  color: #7dfcff;
+  font:
+    900 2rem 'Cairo',
+    sans-serif;
+  text-align: center;
+  outline: none;
+  user-select: text;
+  -webkit-user-select: text;
+}
+.rf-use small {
+  font-size: max(var(--di-min-font, 12px), 0.85rem);
+  font-weight: 800;
+  color: #9fd8ff;
+  line-height: 1.5;
+}
+/* a fraction of the last step (`{ frac: { n, d } }`): the look is the kit's `di-frac` (styles/trainer.css — numerator, a
+   real bar, denominator); here only its boxes are sized, a little lower than a lone box so the line stays in its panel */
+.rf-use:has(.rf-frac) {
+  align-items: center;
+}
+.rf-uselines .rf-use .rf-frac {
+  line-height: 1.15;
+}
+.rf-uselines .rf-use .rf-frac input {
+  height: 2.6rem;
+  font-size: 1.6rem;
+}
+.rf-uselines:not([data-rf-lines='1']) .rf-use .rf-frac input {
+  height: 2.1rem;
+  font-size: 1.15rem;
+}
+
+@keyframes rf-lay {
+  from {
+    opacity: 0;
+    transform: translateY(-26px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes rf-fall {
+  to {
+    transform: translateY(60px) rotate(8deg);
+    opacity: 0;
+  }
+}
+@keyframes rf-blink {
+  50% {
+    opacity: 0.45;
+  }
+}
+@keyframes rf-pop {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes rf-shake {
+  25% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rf-root *,
+  .rf-root *::before {
+    animation-duration: 0.01s !important;
+    transition-duration: 0.01s !important;
+  }
+}
+.rf-inmirror {
+  font-style: normal;
+  font-size: max(var(--di-min-font, 12px), 0.85rem);
+}
+
+/* a phone held sideways: the two columns of the forge keep a readable text and scroll, each inside its frame */
+
+/* ───────── the build: tiles of two lines and the robot's experiment above them share 720 units of height ─────────
+   A tile wraps on a compact line, the panel keeps tighter gaps, and the mirror draws its case `tight` (the world leaves
+   out the empty band above a built bridge: same scale, less height — divisorIsles/forgeParts.jsx). */
+.rf-root[data-rf='build'] .rf-panel {
+  gap: 0.6rem;
+  padding-block: 0.7rem;
+}
+.rf-tile {
+  line-height: 1.45;
+}
+.rf-bridge.is-tight {
+  height: auto;
+  max-height: 10.6rem;
+}
+
+/* ───────── a forge with three slots: three columns side by side (a third slot under the first two ran the build below
+   the window — lesson qawaid-qabiliyat-qisma, forge 4) ───────── */
+.rf-tiles[data-rf-slots='3'] {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.7rem;
+}
+
+/* ───────── a forge with four slots (one per phrasing): four narrow columns, two tiles each ───────── */
+.rf-tiles[data-rf-slots='4'] {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+}
+.rf-tiles[data-rf-slots='4'] h4 {
+  font-size: max(var(--di-min-font, 12px), 0.9rem);
+  text-align: center;
+  white-space: nowrap;
+}
+.rf-rule[data-rf-slots='4'] {
+  font-size: 1.05rem;
+  gap: 0.4rem 0.5rem;
+}
+.rf-rule[data-rf-slots='4'] b {
+  padding: 0.05rem 0.6rem;
+}
+
+/* ───────── a case that is a SENTENCE: written above the bridge it means, and in its line of evidence ───────── */
+.rf-sentence {
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: #fff;
+  text-align: center;
+  line-height: 1.5;
+}
+.rf-bridge.has-sentence {
+  max-height: 62%;
+}
+.rf-log li > .rf-line--sentence {
+  flex-wrap: nowrap;
+  align-items: center;
+  font-size: max(var(--di-min-font, 12px), 0.86rem);
+}
+/* a sentence of the evidence holds two lines at most (its verdict stays beside it, the whole sentence is its title): eight
+   long sentences, each on as many lines as it took, ran below a 900 px window (walks of 2026-11-19) */
+.rf-log li > .rf-line--sentence > span {
+  flex: 1 1 0;
+  min-width: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+/* ───────── the last step written on several lines (one sentence per line) ───────── */
+.rf-uselines {
+  display: grid;
+  gap: 0.35rem 1.6rem;
+  justify-items: center;
+}
+.rf-uselines[data-rf-lines='4'] {
+  grid-template-columns: 1fr 1fr;
+}
+.rf-uselines:not([data-rf-lines='1']) .rf-use {
+  align-items: center;
+  font-size: 1.25rem;
+  line-height: 2.4rem;
+  gap: 0.5rem;
+}
+.rf-uselines:not([data-rf-lines='1']) .rf-use input {
+  height: 2.4rem;
+  font-size: 1.25rem;
+}
+.rf-uselines[data-rf-lines='1'] .rf-use[dir='rtl'] {
+  align-items: center;
+  font-size: 1.5rem;
+}
+.rf-sentence--alone {
+  font-size: 2.3rem;
+}
+.rf-sentence__hint {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #9fd8ff;
+  text-align: center;
+}
+
+/* ───────── A PHONE HELD SIDEWAYS (2026-11-17) ─────────
+   One scale: the root font (13 px). The forge does not zoom itself there (RuleForge › isShortScreen): it is laid out for a
+   low, wide screen — a narrow list, a low mirror — and the list and the panel slide INSIDE themselves. 12 px is the floor. */
+@media (max-height: 500px) {
+  .rf-fit {
+    grid-template-columns: 13.5rem minmax(0, 1fr);
+    gap: 0.4rem;
+    padding: 0.35rem 0.6rem 0.45rem;
+  }
+  .rf-head {
+    gap: 0.5rem;
+  }
+  .rf-brand {
+    gap: 0.4rem;
+  }
+  .rf-brand i {
+    font-size: 1.3rem;
+  }
+  .rf-brand h2 {
+    font-size: 1.05rem;
+  }
+  .rf-brand p {
+    display: none;
+  }
+  .rf-steps li {
+    padding: 0.1rem 0.55rem 0.1rem 0.2rem;
+    font-size: 0.92rem;
+  }
+  .rf-btn {
+    min-height: 2.5rem;
+    padding: 0 0.9rem;
+    font-size: 1rem;
+  }
+  .rf-btn--bot {
+    min-height: 2.1rem;
+  }
+  /* the header keeps ONE row with the help button, the sound button and the ✕ in it: a step that is done shows its ✓
+     only, and the title never wraps */
+  .rf-brand h2 {
+    white-space: nowrap;
+  }
+  .rf-steps li.is-done {
+    padding: 0.1rem 0.2rem;
+  }
+  .rf-steps li.is-done span {
+    display: none;
+  }
+  /* the sound button and the ✕ keep a finger's size without making the header taller than its steps */
+  .rf-head__end {
+    gap: 0.35rem;
+    min-width: 0;
+  }
+  .rf-head__end .di-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-block: -0.25rem;
+  }
+  .rf-log {
+    padding: 0.4rem 0.4rem;
+    gap: 0.25rem;
+    border-radius: 0.9rem;
+  }
+  .rf-log h3 {
+    font-size: 0.95rem;
+  }
+  .rf-log li {
+    padding: 0.2rem 0.4rem;
+  }
+  .rf-log li > div,
+  .rf-log li > .rf-line--sentence {
+    font-size: 0.92rem;
+    flex-wrap: wrap;
+    gap: 0 0.3rem;
+  }
+  .rf-log ul,
+  .rf-panel {
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .rf-main {
+    grid-template-rows: 8.2rem minmax(0, 1fr);
+    gap: 0.4rem;
+  }
+  .rf-mirror {
+    padding: 0.25rem 0.6rem;
+    gap: 0.1rem;
+    border-radius: 1rem;
+  }
+  .rf-bridge {
+    max-height: 5.2rem;
+  }
+  .rf-bridge.has-sentence {
+    max-height: 4.2rem;
+  }
+  .rf-eq {
+    font-size: 1.05rem;
+  }
+  .rf-sentence {
+    font-size: 1.15rem;
+    line-height: 1.3;
+  }
+  .rf-sentence--alone {
+    font-size: 1.6rem;
+  }
+  .rf-rule {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    gap: 0.3rem 0.4rem;
+  }
+  .rf-rule[data-rf-slots='4'] {
+    font-size: 0.92rem;
+  }
+  .rf-rule b {
+    padding: 0 0.5rem;
+  }
+  .rf-panel {
+    justify-content: flex-start;
+    gap: 0.4rem;
+    padding: 0.5rem 0.7rem;
+    border-radius: 1rem;
+  }
+  .rf-q {
+    font-size: 1.12rem;
+    line-height: 1.5;
+  }
+  .rf-note {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .rf-fb {
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+  .rf-tiles {
+    gap: 0.5rem;
+  }
+  .rf-tiles h4,
+  .rf-tiles[data-rf-slots='4'] h4 {
+    font-size: 0.92rem;
+  }
+  .rf-tile {
+    min-height: 2.3rem;
+    padding: 0.1rem 0.6rem;
+    font-size: 0.95rem;
+  }
+  .rf-use {
+    font-size: 1.5rem;
+    line-height: 2.4rem;
+  }
+  .rf-use input {
+    height: 2.4rem;
+    font-size: 1.4rem;
+  }
+  .rf-uselines:not([data-rf-lines='1']) .rf-use {
+    font-size: 1rem;
+    line-height: 2.1rem;
+  }
+  .rf-uselines:not([data-rf-lines='1']) .rf-use input {
+    height: 2.1rem;
+    font-size: 1rem;
+  }
+}
+
+/* ───────── a forge with five slots (one per plank): five narrow columns, three short tiles each ───────── */
+.rf-tiles[data-rf-slots='5'] {
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+}
+.rf-tiles[data-rf-slots='5'] h4 {
+  font-size: 0.95rem;
+  text-align: center;
+}
+.rf-tiles[data-rf-slots='5'] .rf-tile {
+  min-height: 2.5rem;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.95rem;
+  text-align: center;
+}
+.rf-rule[data-rf-slots='5'] {
+  font-size: 1rem;
+  line-height: 1.7;
+  gap: 0.35rem 0.45rem;
+}
+.rf-rule[data-rf-slots='5'] b {
+  padding: 0.05rem 0.55rem;
+}
+@media (max-height: 500px) {
+  .rf-tiles[data-rf-slots='5'] .rf-tile {
+    min-height: 2.1rem;
+    font-size: 0.92rem;
+  }
+  .rf-rule[data-rf-slots='5'] {
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+}

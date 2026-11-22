@@ -1,0 +1,116 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-dawaran-l4-007",
+  "lessonCode": "wadiya-idmajiya-dawaran",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — ساعة البريد المركزي",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الزاوية المركزية",
+      "الزاوية المحيطية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-dawaran_P1",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "على مينا ساعة البريد المركزي بالجزائر العاصمة 12 علامة متباعدة بنفس المسافة على دائرة مركزها O. نسمّي A علامة الساعة 12، و B علامة الساعة 4، و M علامة الساعة 8. ينظر الطلبة إلى الساعة ليصلوا في الموعد، فاحترام الوقت من أخلاق التلميذ المجتهد."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "قيس الزاوية المركزية $\\widehat{AOB}$ (بالدرجة):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "120",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بين علامتين متتاليتين $30^\\circ$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من 12 إلى 4 أربعة أقواس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$4 \\times 30^\\circ$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times \\dfrac{360^\\circ}{12} = 120^\\circ$ .",
+        "incorrect": "بين كل علامتين متتاليتين $30^\\circ$ ."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "60",
+          "id": "MISC-MUNTAZAM-180"
+        }
+      ],
+      "difficulty": 4
+    },
+    {
+      "id": "q2",
+      "statement": "قيس الزاوية $\\widehat{AMB}$ (بالدرجة):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "60",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "M على الدائرة: $\\widehat{AMB}$ محيطية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحصر القوس AB الذي لا يحوي M."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المحيطية نصف المركزية."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{AMB} = \\dfrac{120^\\circ}{2} = 60^\\circ$ .",
+        "incorrect": "المحيطية نصف المركزية التي تحصر معها نفس القوس."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "240",
+          "id": "MISC-MUHITIYA-DIF"
+        },
+        {
+          "value": "120",
+          "id": "MISC-MUHITIYA-MUTASAWIYA"
+        }
+      ],
+      "difficulty": 4
+    }
+  ]
+}

@@ -1,0 +1,231 @@
+{
+  "id": "ex-4am-tayin-pgcd-l4-002",
+  "lessonCode": "tayin-pgcd",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2010 — صفيحة معدنية 2,10m × 1,40m",
+    "estimatedMinutes": 16,
+    "tags": [
+      "PGCD",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tayin-pgcd_P1",
+      "modelledOn": "BEM 2010 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2010",
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 210 و 140.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "70",
+      "misconceptionSignatures": [
+        {
+          "value": "35",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قائمة قواسم كل من العددين 210 و 140، مثنى مثنى (1 مع العدد نفسه، ثم 2 …) حتى لا يفوتك قاسم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استخرج القواسم المشتركة: الأعداد الموجودة في القائمتين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاسم المشترك الأكبر هو أكبر القواسم المشتركة، لا أيّ واحد منها."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 210 و 140 هي 1 ، 2 ، 5 ، 7 ، 10 ، 14 ، 35 ، 70، وأكبرها 70.",
+        "incorrect": "اكتب قائمتي القواسم كاملتين، ثم خذ أكبر عدد يظهر في القائمتين معًا."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 210 هي: 1 ، 2 ، 3 ، 5 ، 6 ، 7 ، 10 ، 14 ، 15 ، 21 ، 30 ، 35 ، 42 ، 70 ، 105 ، 210",
+          "قواسم العدد 140 هي: 1 ، 2 ، 4 ، 5 ، 7 ، 10 ، 14 ، 20 ، 28 ، 35 ، 70 ، 140",
+          "القواسم المشتركة للعددين 210 و 140 هي: 1 ، 2 ، 5 ، 7 ، 10 ، 14 ، 35 ، 70",
+          "أكبرها هو 70، إذن:"
+        ],
+        "result": "PGCD(210 ; 140) = 70"
+      },
+      "work": "optional",
+      "timeSeconds": 510
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "صفيحة معدنية مستطيلة الشكل بعداها 2,10m و 1,40m جُزّئت إلى مربعات متساوية بأكبر ضلع دون ضياع.",
+      "statement": "ما هو طول ضلع كل مربع ؟",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (الطول بالـ cm)",
+      "expectedAnswer": "70",
+      "misconceptionSignatures": [
+        {
+          "value": "35",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول ضلع المربع يجب أن يقسم البعدين معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "والمطلوب أكبر ضلع ممكن: هذا هو القاسم المشترك الأكبر للبعدين (بالـ cm)."
+        }
+      ],
+      "feedback": {
+        "correct": "طول الضلع هو PGCD(210 ; 140) = 70، أي 70cm.",
+        "incorrect": "حوّل البعدين إلى cm، ثم خذ القاسم المشترك الأكبر لهما."
+      },
+      "solution": {
+        "lines": [
+          "$2{,}10m = 210cm$ و $1{,}40m = 140cm$",
+          "طول ضلع المربع يجب أن يقسم البعدين 210cm و 140cm معًا حتى لا يبقى ضياع، فهو قاسم مشترك للعددين 210 و 140.",
+          "وهو أكبر ما يمكن: إذن طول الضلع هو القاسم المشترك الأكبر للعددين 210 و 140.",
+          "PGCD(210 ; 140) = 70، أي أن طول ضلع كل مربع هو 70cm."
+        ],
+        "result": "70cm"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما هو عدد المربعات الناتجة ؟",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد المربعات)",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب عدد المربعات على طول البعد الأول، ثم على طول البعد الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم كل بعد على طول ضلع المربع، ثم اضرب الناتجين."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 \\times 2 = 6$",
+        "incorrect": "عدد المربعات هو جداء عدد المربعات في الطول بعدد المربعات في العرض، وليس حاصل قسمة واحدًا."
+      },
+      "solution": {
+        "lines": [
+          "على طول البعد 210cm: $210 \\div 70 = 3$ مربعات.",
+          "على طول البعد 140cm: $140 \\div 70 = 2$ مربعات.",
+          "عدد المربعات: $3 \\times 2 = 6$"
+        ],
+        "result": "6"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "لو اكتفينا بمربعات طول ضلعها عدد طبيعي بالـ cm أكبر من 10cm (دون أن يكون أكبر ما يمكن)، ما هي كل الأطوال الممكنة للضلع ؟",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "integerSet",
+      "answerFormat": "الأطوال بالـ cm، مفصولة بفاصلة",
+      "expectedAnswer": [
+        14,
+        35,
+        70
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            70
+          ],
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول الضلع قاسم مشترك للعددين 210 و 140."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القواسم المشتركة لعددين هي قواسم قاسمهما المشترك الأكبر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب قواسم PGCD ثم احتفظ بالأكبر من 10."
+        }
+      ],
+      "feedback": {
+        "correct": "قواسم 70 الأكبر من 10 هي: 14 ، 35 ، 70.",
+        "incorrect": "اكتب كل قواسم القاسم المشترك الأكبر، ثم طبّق الشرط «أكبر من 10cm»."
+      },
+      "solution": {
+        "lines": [
+          "طول الضلع قاسم مشترك للعددين 210 و 140، أي قاسم للعدد PGCD(210 ; 140) = 70.",
+          "قواسم العدد 70 هي: 1 ، 2 ، 5 ، 7 ، 10 ، 14 ، 35 ، 70",
+          "الأطوال الأكبر من 10cm هي: 14 ، 35 ، 70"
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

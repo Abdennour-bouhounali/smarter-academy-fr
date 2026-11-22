@@ -1,0 +1,123 @@
+{
+  "id": "ex-4am-murakkibata-shuaa-l3-003",
+  "lessonCode": "murakkibata-shuaa",
+  "level": 3,
+  "metadata": {
+    "title": "طرائق — تمثيل الشعاع u(3 ; −4)",
+    "estimatedMinutes": 3,
+    "tags": [
+      "تمثيل شعاع",
+      "طريقة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-draw",
+      "page": 143,
+      "section": "طرائق"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 143): المستوي مزود بمعلم متعامد ومتجانس. لإنشاء ممثّل للشعاع $\\vec{u}\\begin{pmatrix} 3 \\\\ -4 \\end{pmatrix}$ نختار $A(-2\\,;\\,1)$ ، نحوّله بانسحاب موازٍ لمحور الفواصل بـ 3 وحدات إلى اليمين فنحصل على $A_1$ ، ثم نحوّل $A_1$ بانسحاب موازٍ لمحور التراتيب بـ 4 وحدات إلى الأسفل فنحصل على B."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما إحداثيتا $A_1$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_murakkibata-shuaa_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "إحداثيتا النقطة (x ; y) — عددان مثل −3 أو 2,5",
+      "expectedAnswer": {
+        "x": "1",
+        "y": "1"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انطلق من نقطة البداية المعطاة، لا من المبدأ O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المركبة الأولى تنقلك أفقيا والثانية عموديا، بإشارتيهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف المركبة الأولى إلى الفاصلة والمركبة الثانية إلى الترتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "3 وحدات إلى اليمين: $A_1(1\\,;\\,1)$ .",
+        "incorrect": "الانسحاب الأفقي لا يغيّر الترتيب."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-2",
+            "y": "4"
+          },
+          "id": "MISC-MAALAM-TABDIL-X-Y"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "statement": "ما إحداثيتا B؟",
+      "learningPoints": [
+        {
+          "code": "4am_murakkibata-shuaa_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "إحداثيتا النقطة (x ; y) — عددان مثل −3 أو 2,5",
+      "expectedAnswer": {
+        "x": "1",
+        "y": "-3"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انطلق من نقطة البداية المعطاة، لا من المبدأ O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المركبة الأولى تنقلك أفقيا والثانية عموديا، بإشارتيهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف المركبة الأولى إلى الفاصلة والمركبة الثانية إلى الترتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "4 وحدات إلى الأسفل من $A_1$ : $B(1\\,;\\,-3)$ ، و $\\overrightarrow{AB} = \\vec{u}$ .",
+        "incorrect": "إلى الأسفل: نطرح 4 من الترتيب."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "1",
+            "y": "5"
+          },
+          "id": "MISC-MAALAM-ISHARA"
+        },
+        {
+          "value": {
+            "x": "3",
+            "y": "-4"
+          },
+          "id": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,330 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l3-005",
+  "lessonCode": "mafhum-dawaran",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 2 — مركز وزاوية واتجاه",
+    "estimatedMinutes": 3,
+    "tags": [
+      "تعيين دوران"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-2",
+      "page": 158,
+      "section": "صورة شكل بدوران",
+      "number": 2
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 158): الشكل يتكون من أربعة مثلثات حول O. نبحث عن الدوران الذي مركزه O ويحوّل مثلثا إلى آخر.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "①": [
+          -4,
+          0
+        ],
+        "②": [
+          0,
+          4
+        ],
+        "③": [
+          4,
+          0
+        ],
+        "④": [
+          0,
+          -4
+        ],
+        "b01": [
+          -2,
+          -0.8
+        ],
+        "b02": [
+          -2,
+          0.8
+        ],
+        "b11": [
+          -0.8,
+          2
+        ],
+        "b12": [
+          0.8,
+          2
+        ],
+        "b21": [
+          2,
+          0.8
+        ],
+        "b22": [
+          2,
+          -0.8
+        ],
+        "b31": [
+          0.8,
+          -2
+        ],
+        "b32": [
+          -0.8,
+          -2
+        ],
+        "e1": [
+          -2,
+          0
+        ],
+        "e2": [
+          2,
+          0
+        ],
+        "e3": [
+          0,
+          2
+        ],
+        "e4": [
+          0,
+          -2
+        ]
+      },
+      "hidden": [
+        "b01",
+        "b02",
+        "b11",
+        "b12",
+        "b21",
+        "b22",
+        "b31",
+        "b32",
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "polygons": [
+        {
+          "points": [
+            "①",
+            "b01",
+            "b02"
+          ],
+          "tone": "amber"
+        },
+        {
+          "points": [
+            "②",
+            "b11",
+            "b12"
+          ],
+          "tone": "amber"
+        },
+        {
+          "points": [
+            "③",
+            "b21",
+            "b22"
+          ],
+          "tone": "amber"
+        },
+        {
+          "points": [
+            "④",
+            "b31",
+            "b32"
+          ],
+          "tone": "amber"
+        }
+      ],
+      "segments": [
+        [
+          "e1",
+          "e2"
+        ],
+        [
+          "e3",
+          "e4"
+        ],
+        {
+          "from": "①",
+          "to": "b01",
+          "tone": "amber"
+        },
+        {
+          "from": "b01",
+          "to": "b02",
+          "tone": "amber"
+        },
+        {
+          "from": "b02",
+          "to": "①",
+          "tone": "amber"
+        },
+        {
+          "from": "②",
+          "to": "b11",
+          "tone": "amber"
+        },
+        {
+          "from": "b11",
+          "to": "b12",
+          "tone": "amber"
+        },
+        {
+          "from": "b12",
+          "to": "②",
+          "tone": "amber"
+        },
+        {
+          "from": "③",
+          "to": "b21",
+          "tone": "amber"
+        },
+        {
+          "from": "b21",
+          "to": "b22",
+          "tone": "amber"
+        },
+        {
+          "from": "b22",
+          "to": "③",
+          "tone": "amber"
+        },
+        {
+          "from": "④",
+          "to": "b31",
+          "tone": "amber"
+        },
+        {
+          "from": "b31",
+          "to": "b32",
+          "tone": "amber"
+        },
+        {
+          "from": "b32",
+          "to": "④",
+          "tone": "amber"
+        }
+      ],
+      "rightAngles": [
+        [
+          "e2",
+          "O",
+          "e3"
+        ]
+      ],
+      "labels": {
+        "O": "se"
+      },
+      "ariaLabel": "صليب: قطعتان متعامدتان في O، وفي طرف كل ذراع مثلث رأسه نحو الخارج: المثلث 1 يسارا، 2 أعلى، 3 يمينا، 4 أسفل",
+      "maxWidth": 380
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الدوران الذي يحوّل المثلث ① إلى المثلث ④:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$90^\\circ$ في الاتجاه غير المباشر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ITTIJAH"
+        },
+        {
+          "id": "B",
+          "content": "$180^\\circ$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ZAWIYA-UKHRA"
+        },
+        {
+          "id": "C",
+          "content": "$90^\\circ$ في الاتجاه المباشر",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "① يسارا و ④ أسفل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الاتجاه المباشر هو عكس اتجاه حركة عقارب الساعة ↺، وغير المباشر في اتجاهها ↻."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "من اليسار إلى الأسفل: ربع دورة، في أي اتجاه؟"
+        }
+      ],
+      "feedback": {
+        "correct": "من اليسار إلى الأسفل عكس عقارب الساعة: $90^\\circ$ في الاتجاه المباشر.",
+        "incorrect": "تتبّع الحركة من ① إلى ④ حول O."
+      },
+      "difficulty": 2
+    },
+    {
+      "id": "q2",
+      "statement": "الدوران الذي يحوّل المثلث ① إلى المثلث ③:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$180^\\circ$ (التناظر بالنسبة إلى O)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$90^\\circ$ في الاتجاه المباشر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ZAWIYA-UKHRA"
+        },
+        {
+          "id": "C",
+          "content": "التناظر المحوري بالنسبة إلى المستقيم الشاقولي المار بـ O",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-TANAZUR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "① و ③ متقابلان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كم ربعا بينهما؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نصف دورة."
+        }
+      ],
+      "feedback": {
+        "correct": "نصف دورة حول O: التناظر بالنسبة إلى O.",
+        "incorrect": "بين ① و ③ ربعان لا ربع واحد، والدوران ليس قلبا."
+      },
+      "difficulty": 2
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+{
+  "id": "ex-2am-tawzi-darb-jam-tarh-l4-005",
+  "lessonCode": "tawzi-darb-jam-tarh",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — سلسلة فيها حرف",
+    "estimatedMinutes": 11,
+    "tags": [
+      "حرف",
+      "أولوية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $E = 6 + 3 \\times (x - 2)$ حيث $x$ عدد أكبر من أو يساوي $2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما اسم العبارة $E = 6 + 3 \\times (x - 2)$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مجموع",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "جداء",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "فرق",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-FIRSTOP"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "آخر عملية تُنجز هي الجمع فالسلسلة عبارة عن مجموع."
+        ]
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب السلسلة مرحلة مرحلة وانظر إلى آخر عملية تُنجز."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر: ما بين القوسين أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اسم السلسلة هو اسم آخر عملية تُنجز فيها."
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة عبارة عن مجموع.",
+        "incorrect": "اسم السلسلة هو اسم آخر عملية تُنجز فيها بعد ما بين القوسين والضرب والقسمة."
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب قيمة $6 + 3 \\times (x - 2)$ من أجل $x$ يساوي $5$ .",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "15",
+      "solution": {
+        "lines": [
+          "$6 + 3 \\times (5 - 2) = 15$"
+        ],
+        "result": "15"
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف $x$ بالعدد المعطى في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ وليس $a + x$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة: ما بين القوسين أوّلًا إن وُجد، ثم الضرب، ثم الجمع أو الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 + 3 \\times (5 - 2) = 15$",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$."
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب قيمة $6 + 3x - 6$ من أجل $x$ يساوي $5$ .",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "15",
+      "solution": {
+        "lines": [
+          "$6 + 3 \\times 5 - 6 = 15$"
+        ],
+        "result": "15"
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-TAWZI-NOTATION"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف $x$ بالعدد المعطى في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ وليس $a + x$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة: ما بين القوسين أوّلًا إن وُجد، ثم الضرب، ثم الجمع أو الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 + 3 \\times 5 - 6 = 15$",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$."
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "احسب قيمة $6 + 3 \\times (x - 2)$ من أجل $x$ يساوي $2$ .",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "6",
+      "solution": {
+        "lines": [
+          "$6 + 3 \\times (2 - 2) = 6$"
+        ],
+        "result": "6"
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف $x$ بالعدد المعطى في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ وليس $a + x$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة: ما بين القوسين أوّلًا إن وُجد، ثم الضرب، ثم الجمع أو الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 + 3 \\times (2 - 2) = 6$",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$."
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

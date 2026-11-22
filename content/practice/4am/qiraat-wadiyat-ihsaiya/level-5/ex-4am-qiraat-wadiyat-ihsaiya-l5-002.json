@@ -1,0 +1,372 @@
+{
+  "id": "ex-4am-qiraat-wadiyat-ihsaiya-l5-002",
+  "lessonCode": "qiraat-wadiyat-ihsaiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2010 — الألواح الشمسية لمتوسطة بورقلة",
+    "estimatedMinutes": 16,
+    "tags": [
+      "وضعية إدماجية",
+      "مضلّع",
+      "المتوسط",
+      "الوسيط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qiraat-wadiyat-ihsaiya_P1",
+      "modelledOn": "BEM 2010 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2010",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "ركّبت متوسطة بورقلة ألواحا شمسية فوق سطحها. يمثّل المضلّع الآتي الطاقة الكهربائية (بالكيلوواط ساعي kWh) التي أنتجتها الألواح في كل يوم من أيام الدراسة العشرة الأولى من شهر مارس:",
+    "figure": {
+      "kind": "chart",
+      "type": "line",
+      "ariaLabel": "مضلّع الطاقة المنتجة يوميا بالألواح الشمسية خلال عشرة أيام",
+      "xTitle": "اليوم",
+      "yTitle": "الطاقة المنتجة (kWh)",
+      "x": {
+        "min": 1,
+        "max": 10,
+        "step": 1
+      },
+      "y": {
+        "max": 30,
+        "step": 10,
+        "minor": 5
+      },
+      "points": [
+        [
+          1,
+          22
+        ],
+        [
+          2,
+          24
+        ],
+        [
+          3,
+          18
+        ],
+        [
+          4,
+          26
+        ],
+        [
+          5,
+          28
+        ],
+        [
+          6,
+          12
+        ],
+        [
+          7,
+          20
+        ],
+        [
+          8,
+          24
+        ],
+        [
+          9,
+          26
+        ],
+        [
+          10,
+          20
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "عيّن الطاقة المنتجة في اليوم السادس (يوم غائم).",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطاقة بـ kWh",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-IHSA-QIRAA-MUKHATTAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الأيام على المحور الأفقي، والطاقة على المحور العمودي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بين عددين مكتوبين (كل 10) خمس مسافات: كل تدريجة 2 kWh ."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة التي فاصلتها 6 ترتيبها 12 .",
+        "incorrect": "اقرأ ترتيب النقطة (على المحور العمودي)، لا فاصلتها."
+      },
+      "solution": {
+        "lines": [
+          "كل تدريجة على المحور العمودي تمثّل 2 kWh .",
+          "النقطة التي فاصلتها 6 ترتيبها 12 ."
+        ],
+        "result": "12\\,\\mathrm{kWh}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "عيّن اليوم الذي كان فيه الإنتاج أكبر ما يمكن (اكتب رقمه).",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: رقم اليوم",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "28",
+          "id": "MISC-IHSA-QIRAA-MUKHATTAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أعلى نقطة في المضلّع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المطلوب فاصلتها (رقم اليوم)، لا ترتيبها."
+        }
+      ],
+      "feedback": {
+        "correct": "أعلى نقطة فاصلتها 5 (28 kWh).",
+        "incorrect": "المطلوب رقم اليوم: اقرأ فاصلة أعلى نقطة على المحور الأفقي."
+      },
+      "solution": {
+        "lines": [
+          "أعلى نقطة في المضلّع هي $(5 ; 28)$ : في اليوم 5 أنتجت الألواح 28 kWh ."
+        ],
+        "result": "5"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب متوسط الإنتاج اليومي.",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطاقة بـ kWh",
+      "expectedAnswer": "22",
+      "misconceptionSignatures": [
+        {
+          "value": "23",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ ترتيب النقاط العشر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم مجموعها على 10 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{220}{10} = 22$ .",
+        "incorrect": "اجمع كل القيم ثم اقسم على عددها."
+      },
+      "solution": {
+        "lines": [
+          "$22 + 24 + 18 + 26 + 28 + 12 + 20 + 24 + 26 + 20 = 220$",
+          "$\\dfrac{220}{10} = 22$"
+        ],
+        "result": "22\\,\\mathrm{kWh}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "عيّن وسيط الإنتاج اليومي.",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطاقة بـ kWh",
+      "expectedAnswer": "23",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-IHSA-WASIT-BILA-TARTIB"
+        },
+        {
+          "value": "22",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رتّب القيم العشر ترتيبا تصاعديا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد القيم زوجي: الوسيط نصف مجموع القيمتين ذواتي الرتبتين 5 و 6 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{22 + 24}{2} = 23$ .",
+        "incorrect": "رتّب القيم أولا، ثم خذ نصف مجموع القيمتين ذواتي الرتبتين 5 و 6 ."
+      },
+      "solution": {
+        "lines": [
+          "الترتيب: 12 ، 18 ، 20 ، 20 ، 22 ، 24 ، 24 ، 26 ، 26 ، 28",
+          "$Med = \\dfrac{22 + 24}{2} = 23$"
+        ],
+        "result": "Med = 23"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "تستهلك المتوسطة 20 kWh في اليوم الدراسي. عيّن عدد الأيام التي غطّى فيها إنتاج الألواح هذا الاستهلاك كاملا.",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-IHSA-SARAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ النقاط التي ترتيبها 20 أو أكثر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "«غطّى كاملا» تشمل الأيام التي أنتجت فيها الألواح 20 kWh تماما."
+        }
+      ],
+      "feedback": {
+        "correct": "8 أيام من 10 .",
+        "incorrect": "عدّ كل الأيام التي بلغ فيها الإنتاج 20 kWh أو تجاوزها."
+      },
+      "solution": {
+        "lines": [
+          "القيم التي تساوي 20 أو أكبر: 22 ، 24 ، 26 ، 28 ، 20 ، 24 ، 26 ، 20",
+          "عددها 8 ."
+        ],
+        "result": "8"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "يُباع ما يزيد عن الاستهلاك اليومي لشركة الكهرباء بـ 5DA للكيلوواط ساعي. احسب المبلغ الذي تتحصّل عليه المتوسطة خلال هذه الأيام العشرة.",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "150",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في كل يوم، الفائض = الإنتاج − 20 (إن كان الإنتاج أكبر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الفوائض ثم اضرب في ثمن الكيلوواط ساعي."
+        }
+      ],
+      "feedback": {
+        "correct": "الفائض $30$ kWh ، و $30 \\times 5 = 150$ .",
+        "incorrect": "احسب فائض كل يوم أنتج أكثر من الاستهلاك، اجمعها، ثم اضرب في الثمن."
+      },
+      "solution": {
+        "lines": [
+          "الفوائض: $22 - 20 = 2$ ، $24 - 20 = 4$ ، $26 - 20 = 6$ ، $28 - 20 = 8$ ، $24 - 20 = 4$ ، $26 - 20 = 6$",
+          "مجموعها: $30$ kWh",
+          "$30 \\times 5 = 150$"
+        ],
+        "result": "150\\,\\mathrm{DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

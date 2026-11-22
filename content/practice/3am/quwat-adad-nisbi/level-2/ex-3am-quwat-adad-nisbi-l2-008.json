@@ -1,0 +1,236 @@
+{
+  "id": "ex-3am-quwat-adad-nisbi-l2-008",
+  "lessonCode": "quwat-adad-nisbi",
+  "level": 2,
+  "metadata": {
+    "title": "صناديق النجّار",
+    "estimatedMinutes": 6,
+    "tags": [
+      "قوة قوة",
+      "مكعب",
+      "مربع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-47",
+      "page": 48,
+      "section": "أوظّف تعلّماتي",
+      "number": 47
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يصنع نجّار يتقن عمله لوحة إعلانات مربعة لمكتبة المتوسطة مساحتها $7^{8}\\,\\mathrm{cm^2}$ ، وصندوقًا مكعب الشكل حجمه $2^{18}\\,\\mathrm{cm^3}$ لحفظ الكتب."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "طول ضلع اللوحة هو $7^n\\,\\mathrm{cm}$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-QUWA-POWER-ADD-EXP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة مربع ضلعه $c$ هي $c^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان الضلع $7^n$ فالمساحة $(7^n)^2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "في قوة القوة نضرب الأسين."
+        }
+      ],
+      "feedback": {
+        "correct": "$(7^4)^2 = 7^8$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$(7^{n})^{2} = 7^{2n} = 7^{8}$",
+          "$2n = 8$ ، إذن $n = 4$"
+        ],
+        "result": "n = 4"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "طول حرف الصندوق هو $2^n\\,\\mathrm{cm}$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-QUWA-POWER-ADD-EXP"
+        },
+        {
+          "value": "54",
+          "id": "MISC-QUWA-PRODUCT-MULTIPLY-EXP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حجم مكعب حرفه $c$ هو $c^3$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان الحرف $2^n$ فالحجم $(2^n)^3$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "في قوة القوة نضرب الأسين."
+        }
+      ],
+      "feedback": {
+        "correct": "$(2^6)^3 = 2^{18}$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$(2^{n})^{3} = 2^{3n} = 2^{18}$",
+          "$3n = 18$ ، إذن $n = 6$"
+        ],
+        "result": "n = 6"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما طول حرف الصندوق بالسنتيمتر؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الطول بـ cm",
+      "expectedAnswer": "64",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-QUWA-POWER-AS-PRODUCT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$a^n$ جداء $n$ عاملًا كلها مساوية للعدد $a$ ، وليس $a \\times n$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوة عدد سالب موجبة إذا كان الأس زوجيًا، وسالبة إذا كان الأس فرديًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه للأقواس: في $-a^n$ يخصّ الأس العدد $a$ وحده، ثم نأخذ المعاكس."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^6 = 64$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$2^{6} = 2 \\times 2 \\times 2 \\times 2 \\times 2 \\times 2$",
+          "$2^{6} = 64$"
+        ],
+        "result": "64\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "يريد النجّار تثبيت شريط معدني على كل أحرف الصندوق الاثني عشر. ما الطول الكلي للشريط بالسنتيمتر؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الطول بـ cm",
+      "expectedAnswer": "768",
+      "misconceptionSignatures": [
+        {
+          "value": "384",
+          "id": "MISC-QUWA-PRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "للمكعب 12 حرفًا متساوية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب طول الحرف في عدد الأحرف."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل طول الحرف الذي حسبته."
+        }
+      ],
+      "feedback": {
+        "correct": "$12 \\times 64 = 768$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "للمكعب 12 حرفًا طول كل منها 64 cm.",
+          "$12 \\times 64 = 768$"
+        ],
+        "result": "768\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

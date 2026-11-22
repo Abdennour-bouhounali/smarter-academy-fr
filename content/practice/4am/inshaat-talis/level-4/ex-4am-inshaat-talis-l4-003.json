@@ -1,0 +1,192 @@
+{
+  "id": "ex-4am-inshaat-talis-l4-003",
+  "lessonCode": "inshaat-talis",
+  "level": 4,
+  "metadata": {
+    "title": "النقطة الخارجية: من أي جهة؟",
+    "estimatedMinutes": 10,
+    "tags": [
+      "خارج القطعة",
+      "نقطة بنسبة معلومة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_inshaat-talis_P1",
+      "modelledOn": "method-ratio-point",
+      "adaptedFrom": "ex-4am-inshaat-talis-l4-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$N$ نقطة من المستقيم $(AB)$ لا تنتمي إلى $[AB]$ وتحقّق $\\dfrac{NA}{NB} = \\dfrac{3}{5}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل تقع $N$ بعد $B$ (من جهة $B$ ) ؟",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-JIHA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن $NA$ و $NB$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "لا: $NA < NB$ ، فـ $N$ أقرب إلى $A$ : هي قبل $A$ .",
+        "incorrect": "بعد $B$ يكون $NA > NB$ ، بينما $\\dfrac{NA}{NB} < 1$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{NA}{NB} = \\dfrac{3}{5} < 1$ ومنه $NA < NB$ : $N$ قبل $A$ ( $A$ بين $N$ و $B$ )."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب النسبة $\\dfrac{AN}{AB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "1,5",
+      "misconceptionSignatures": [
+        {
+          "value": "0,375",
+          "id": "MISC-TALIS-JIHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$A$ بين $N$ و $B$ : $AB = NB - NA$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = 5u - 3u = 2u$ ، فـ $\\dfrac{AN}{AB} = \\dfrac{3}{2}$ .",
+        "incorrect": "خارج القطعة: $AB$ هو الفرق بين $NB$ و $NA$ ."
+      },
+      "solution": {
+        "lines": [
+          "$NA = 3u$ و $NB = 5u$ و $A \\in [NB]$ ومنه $AB = 2u$",
+          "$\\dfrac{AN}{AB} = \\dfrac{3u}{2u}$"
+        ],
+        "result": "\\dfrac{AN}{AB} = \\dfrac{3}{2}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أنشئ النقطة $N$ دون استعمال مسطرة مدرّجة.",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب خطوات الإنشاء مرقّمة (أو صوّر ورقتك)، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "موازيان مدرّجان بنفس الوحدة يشملان $A$ و $B$ ، والعلامتان في نفس الجهة."
+        }
+      ],
+      "feedback": {
+        "correct": "$AF = 3$ و $BE = 5$ في نفس الجهة، و $(EF)$ يقطع $(AB)$ في $N$ قبل $A$ .",
+        "incorrect": "قارن إنشاءك بالحل النموذجي خطوة خطوة، ثم صحّح الخطوة التي تختلف."
+      },
+      "solution": {
+        "lines": [
+          "1) نرسم مستقيمين متوازيين $(d_1)$ و $(d_2)$ يشملان $A$ و $B$ على الترتيب.",
+          "2) بنفس فتحة المدور نعيّن على $(d_1)$ النقطة $F$ حيث $AF = 3$ وحدات، وعلى $(d_2)$ النقطة $E$ حيث $BE = 5$ وحدات، في نفس الجهة من المستقيم $(AB)$ .",
+          "3) المستقيم $(EF)$ يقطع المستقيم $(AB)$ خارج $[AB]$ في $N$ .",
+          "التبرير: $(AF) \\parallel (BE)$ ، فحسب خاصية طالس في المثلثين $NAF$ و $NBE$ : $\\dfrac{NA}{NB} = \\dfrac{AF}{BE} = \\dfrac{3}{5}$ ."
+        ]
+      },
+      "timeSeconds": 360
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "إذا كان $AB = 8\\,\\mathrm{cm}$ ، احسب الطول $NB$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $AN$ ثم استعمل موقع $A$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AN = \\dfrac{3}{2} \\times 8 = 12$ ومنه $NB = 12 + 8 = 20\\,\\mathrm{cm}$ (و $\\dfrac{12}{20} = \\dfrac{3}{5}$ ).",
+        "incorrect": "$A$ بين $N$ و $B$ : $NB = NA + AB$ ."
+      },
+      "solution": {
+        "lines": [
+          "$AN = \\dfrac{3}{2}AB = 12$",
+          "$NB = NA + AB = 12 + 8$"
+        ],
+        "result": "NB = 20\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

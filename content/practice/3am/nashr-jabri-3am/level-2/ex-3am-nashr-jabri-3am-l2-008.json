@@ -1,0 +1,202 @@
+{
+  "id": "ex-3am-nashr-jabri-3am-l2-008",
+  "lessonCode": "nashr-jabri-3am",
+  "level": 2,
+  "metadata": {
+    "title": "مربّع عبارة هو جداء قوسين متساويين",
+    "estimatedMinutes": 6,
+    "tags": [
+      "نشر",
+      "مربع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-24",
+      "page": 64,
+      "section": "نشر العبارة (a+b)(c+d)",
+      "number": 24
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "انشر ثم بسّط كلًّا من العبارتين $A$ و $B$ .",
+    "formulas": [
+      "A = (x + 4)^2",
+      "B = (3x - 2)^2"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "تذكير: $a^2 = a \\times a$ ، فالعبارة $(x + 4)^2$ هي الجداء $(x + 4)(x + 4)$ . انشر ثم بسّط $A = (x + 4)^2$ . الشكل الصحيح هو:",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$A = x^2 + 16$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-SQUARE-TERMWISE"
+        },
+        {
+          "id": "B",
+          "content": "$A = x^2 + 4x + 16$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-PRODUCT-MISSING"
+        },
+        {
+          "id": "C",
+          "content": "$A = x^2 + 8x + 16$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني: أربعة جداءات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات الأربعة واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء الأصلي وفي النتيجة: يجب أن تجد العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = x^2 + 8x + 16$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$A = (x + 4)(x + 4)$",
+          "$A = x \\times x + x \\times 4 + 4 \\times x + 4 \\times 4$",
+          "$A = x^2 + 8x + 16$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "انشر ثم بسّط $B = (3x - 2)^2$ ، أي $B = (3x - 2)(3x - 2)$ ، واكتبها على الشكل $ax^2 + bx + c$ .",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $B$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "-12",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-NASHR-SQUARE-TERMWISE"
+        },
+        {
+          "value": "-6",
+          "id": "MISC-NASHR-PRODUCT-MISSING"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني: أربعة جداءات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات الأربعة واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء الأصلي وفي النتيجة: يجب أن تجد العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 9x^2 - 12x + 4$ إذن $b = -12$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$B = (3x - 2)(3x - 2)$",
+          "$B = 3x \\times 3x - 3x \\times 2 - 2 \\times 3x + 2 \\times 2$",
+          "$B = 9x^2 - 12x + 4$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "العدد $c$ :",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $B$ على الشكل $ax^2 + bx + c$ : اكتب العدد $c$ فقط",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "-4",
+          "id": "MISC-NASHR-NEG-NEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني: أربعة جداءات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات الأربعة واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء الأصلي وفي النتيجة: يجب أن تجد العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 9x^2 - 12x + 4$ إذن $c = 4$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$B = (3x - 2)(3x - 2)$",
+          "$B = 3x \\times 3x - 3x \\times 2 - 2 \\times 3x + 2 \\times 2$",
+          "$B = 9x^2 - 12x + 4$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

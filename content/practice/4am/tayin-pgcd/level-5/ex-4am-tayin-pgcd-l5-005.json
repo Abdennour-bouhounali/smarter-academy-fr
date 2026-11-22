@@ -1,0 +1,216 @@
+{
+  "id": "ex-4am-tayin-pgcd-l5-005",
+  "lessonCode": "tayin-pgcd",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2022 — كمامات ومعقّم للمؤسسات التربوية بتيارت",
+    "estimatedMinutes": 9,
+    "tags": [
+      "PGCD",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tayin-pgcd_P3",
+      "modelledOn": "BEM 2022 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "استلمت مديرية الصحة لولاية تيارت، في إطار حملة للنظافة والوقاية، 252 علبة كمامات و 84 قارورة معقّم، وتريد توزيعها على أكبر عدد ممكن من المؤسسات التربوية، بحيث تتحصل كل مؤسسة على نفس عدد العلب ونفس عدد القارورات، دون أن يبقى أي شيء.\n• ثمن علبة الكمامات 450DA وثمن قارورة المعقّم 380DA.\n• خصّصت المديرية لهذه العملية 150000DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما هو أكبر عدد من المؤسسات التي تستفيد من هذا التوزيع ؟",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد المؤسسات)",
+      "expectedAnswer": "84",
+      "misconceptionSignatures": [
+        {
+          "value": "42",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العددين: هل العدد الأصغر قاسم للعدد الأكبر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد الأكبر على العدد الأصغر وانظر إلى الباقي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان $b$ قاسمًا للعدد $a$ فإن PGCD$(a ; b) = b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$252 = 84 \\times 3$ : العدد 84 قاسم للعدد 252، فهو قاسمهما المشترك الأكبر.",
+        "incorrect": "لا داعي لقائمتين طويلتين: تحقّق أولًا هل أحد العددين قاسم للآخر."
+      },
+      "solution": {
+        "lines": [
+          "$252 = 84 \\times 3$ ، إذن العدد 84 قاسم للعدد 252.",
+          "عدد المؤسسات قاسم مشترك للعددين 252 و 84 (كل شيء يوزَّع بالتساوي)، وأكبره هو PGCD لهما.",
+          "وبما أن 84 قاسم للعدد 252 فإن:"
+        ],
+        "result": "PGCD(252 ; 84) = 84"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "lead": "ما هو نصيب كل مؤسسة ؟",
+      "statement": "عدد علب الكمامات لكل مؤسسة:",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "84",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع علب الكمامات كلها بالتساوي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد الكلي على العدد الذي وجدته في السؤال السابق."
+        }
+      ],
+      "feedback": {
+        "correct": "$252 \\div 84 = 3$",
+        "incorrect": "اقسم العدد الكلي (252) على أكبر عدد وجدته، لا العكس."
+      },
+      "solution": {
+        "lines": [
+          "$252 \\div 84 = 3$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ب",
+      "statement": "عدد قارورات المعقّم لكل مؤسسة:",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "84",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع قارورات المعقّم كلها بالتساوي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد الكلي على العدد الذي وجدته في السؤال السابق."
+        }
+      ],
+      "feedback": {
+        "correct": "$84 \\div 84 = 1$",
+        "incorrect": "اقسم العدد الكلي (84) على أكبر عدد وجدته، لا العكس."
+      },
+      "solution": {
+        "lines": [
+          "$84 \\div 84 = 1$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "☜ أعط المبلغ الذي يبقى للمديرية بعد شراء الكمامات والمعقّم.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (المبلغ بالدينار)",
+      "expectedAnswer": "4680",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب ثمن كل العلب، ثم ثمن كل القارورات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح المجموع من المبلغ المخصص."
+        }
+      ],
+      "feedback": {
+        "correct": "$150000 - (113400 + 31920) = 4680$",
+        "incorrect": "اضرب كل عدد في ثمن الوحدة، ثم اطرح المجموع من 150000DA."
+      },
+      "solution": {
+        "lines": [
+          "ثمن العلب: $252 \\times 450 = 113400$DA",
+          "ثمن القارورات: $84 \\times 380 = 31920$DA",
+          "المجموع: $145320$DA",
+          "المتبقي: $150000 - 145320 = 4680$DA"
+        ],
+        "result": "4680DA"
+      },
+      "timeSeconds": 240
+    }
+  ]
+}

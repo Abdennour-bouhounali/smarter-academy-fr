@@ -1,0 +1,207 @@
+{
+  "id": "ex-2am-masafa-nuqtatayn-l3-009",
+  "lessonCode": "masafa-nuqtatayn",
+  "level": 3,
+  "metadata": {
+    "title": "فاصلة منتصف قطعة في ثلاث حالات",
+    "estimatedMinutes": 10,
+    "tags": [
+      "منتصف قطعة",
+      "حالات مختلفة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-40",
+      "page": 50,
+      "section": "أتعمّق",
+      "number": 40
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في كلّ حالة، عيّن فاصلة منتصف القطعة $[AB]$ على المستقيم المدرّج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "$A(-18)$ و $B(+6)$ نقطتان على مستقيم مدرّج، و $I$ منتصف القطعة $[AB]$ . ما فاصلة $I$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-6",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-HALFDIST",
+          "value": "12"
+        },
+        {
+          "id": "MISC-MASAFA2-SUMNOHALF",
+          "value": "-12"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أوّلًا المسافة بين طرفي القطعة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المنتصف يبعد عن كلّ طرف بنصف هذه المسافة: انطلق من الطرف الأصغر فاصلة وتقدّم بنصف المسافة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: المسافة من المنتصف إلى كلّ طرف يجب أن تكون نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$I(-6)$ : يبعد عن كلّ طرف بـ $12$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$AB=24$ ونصفها $12$",
+          "فاصلة $I$ = الفاصلة الصغرى + نصف المسافة = $-18+12=-6$"
+        ],
+        "result": "-6"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "$A(-53)$ و $B(-29)$ نقطتان على مستقيم مدرّج، و $I$ منتصف القطعة $[AB]$ . ما فاصلة $I$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$12$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MASAFA2-HALFDIST"
+        },
+        {
+          "id": "B",
+          "content": "$-82$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MASAFA2-SUMNOHALF"
+        },
+        {
+          "id": "C",
+          "content": "$24$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$-41$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أوّلًا المسافة بين طرفي القطعة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المنتصف يبعد عن كلّ طرف بنصف هذه المسافة: انطلق من الطرف الأصغر فاصلة وتقدّم بنصف المسافة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: المسافة من المنتصف إلى كلّ طرف يجب أن تكون نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$I(-41)$ : يبعد عن كلّ طرف بـ $12$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$AB=24$ ونصفها $12$",
+          "فاصلة $I$ = الفاصلة الصغرى + نصف المسافة = $-53+12=-41$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "$A(-3{,}6)$ و $B(+1{,}2)$ نقطتان على مستقيم مدرّج، و $I$ منتصف القطعة $[AB]$ . ما فاصلة $I$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-1.2",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-HALFDIST",
+          "value": "2.4"
+        },
+        {
+          "id": "MISC-MASAFA2-SUMNOHALF",
+          "value": "-2.4"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أوّلًا المسافة بين طرفي القطعة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المنتصف يبعد عن كلّ طرف بنصف هذه المسافة: انطلق من الطرف الأصغر فاصلة وتقدّم بنصف المسافة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: المسافة من المنتصف إلى كلّ طرف يجب أن تكون نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$I(-1{,}2)$ : يبعد عن كلّ طرف بـ $2{,}4$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$AB=4{,}8$ ونصفها $2{,}4$",
+          "فاصلة $I$ = الفاصلة الصغرى + نصف المسافة = $-3{,}6+2{,}4=-1{,}2$"
+        ],
+        "result": "-1.2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

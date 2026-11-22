@@ -1,0 +1,170 @@
+{
+  "id": "ex-4am-tayin-pgcd-l4-004",
+  "lessonCode": "tayin-pgcd",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2008 — 96 ، 144 ثم PGCD(d ; 240)",
+    "estimatedMinutes": 12,
+    "tags": [
+      "PGCD",
+      "حصر القواسم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tayin-pgcd_P1",
+      "modelledOn": "BEM 2008 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2008",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نسمي $d$ القاسم المشترك الأكبر للعددين 96 و 144."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "جد العدد $d$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "48",
+      "misconceptionSignatures": [
+        {
+          "value": "24",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قائمة قواسم كل من العددين 96 و 144، مثنى مثنى (1 مع العدد نفسه، ثم 2 …) حتى لا يفوتك قاسم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استخرج القواسم المشتركة: الأعداد الموجودة في القائمتين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاسم المشترك الأكبر هو أكبر القواسم المشتركة، لا أيّ واحد منها."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 96 و 144 هي 1 ، 2 ، 3 ، 4 ، 6 ، 8 ، 12 ، 16 ، 24 ، 48، وأكبرها 48.",
+        "incorrect": "اكتب قائمتي القواسم كاملتين، ثم خذ أكبر عدد يظهر في القائمتين معًا."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 96 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 8 ، 12 ، 16 ، 24 ، 32 ، 48 ، 96",
+          "قواسم العدد 144 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 8 ، 9 ، 12 ، 16 ، 18 ، 24 ، 36 ، 48 ، 72 ، 144",
+          "القواسم المشتركة للعددين 96 و 144 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 8 ، 12 ، 16 ، 24 ، 48",
+          "أكبرها هو 48، إذن:"
+        ],
+        "result": "PGCD(96 ; 144) = 48"
+      },
+      "work": "optional",
+      "timeSeconds": 495
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب PGCD$(d ; 240)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "48",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $d$ بقيمته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل $d$ قاسم للعدد 240؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان $b$ قاسمًا للعدد $a$ فإن PGCD$(a ; b) = b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$240 = 48 \\times 5$ : العدد 48 قاسم للعدد 240.",
+        "incorrect": "تحقّق هل $d$ قاسم للعدد 240 قبل كتابة أي قائمة."
+      },
+      "solution": {
+        "lines": [
+          "$d = 48$",
+          "$240 = 48 \\times 5$ ، إذن 48 قاسم للعدد 240، ومنه:"
+        ],
+        "result": "PGCD(d ; 240) = PGCD(48 ; 240) = 48"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اكتب الكسر $\\dfrac{144}{96}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "3/2",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال السابق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 48.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال السابق.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{144}{96} = \\dfrac{144 \\div 48}{96 \\div 48}$"
+        ],
+        "result": "\\dfrac{144}{96} = \\dfrac{3}{2}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

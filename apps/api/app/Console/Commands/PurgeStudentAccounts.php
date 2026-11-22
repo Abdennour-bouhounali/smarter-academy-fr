@@ -44,7 +44,10 @@ class PurgeStudentAccounts extends Command
     {
         // Les administrateurs sont hors de portée, par construction : c'est
         // ce qui garantit qu'on ne se ferme pas la porte au nez.
-        $students = User::where('role', '!=', User::ROLE_ADMIN);
+        // Les élèves SEULEMENT : ni les administrateurs, ni les enseignants
+        // (qui possèdent des classes et ne sont pas concernés par une purge
+        // d'élèves).
+        $students = User::where('role', User::ROLE_STUDENT);
         $count = (clone $students)->count();
         $admins = User::where('role', User::ROLE_ADMIN)->count();
 

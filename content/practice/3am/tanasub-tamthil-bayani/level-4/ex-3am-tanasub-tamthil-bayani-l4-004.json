@@ -1,0 +1,393 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l4-004",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 4,
+  "metadata": {
+    "title": "ثلاثة عروض للدبابيس",
+    "estimatedMinutes": 12,
+    "tags": [
+      "تمثيل بياني",
+      "ثلاثة عروض"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-1",
+      "page": 88,
+      "section": "أنشطة 1",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين الرابع",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يحتاج أيوب إلى دبابيس لتزيين قسمه، فيختار بين ثلاثة عروض: المحل الأول $5$ دج للعلبة؛ المحل الثاني $2{,}5$ دج للعلبة زيادة على $10$ دج ثمنا ثابتا؛ المحل الثالث $5$ دج للعلبة من الأولى إلى الثامنة ثم $2$ دج للعلبة ابتداء من التاسعة. مثّلنا العروض الثلاثة في المعلم التالي بالمستقيمين $(S_1)$ و $(S_2)$ وبالخط المنكسر المنتهي بالنقطة $S_3$ (الفاصلة عدد العلب، وكل وحدة على المحور العمودي تساوي $5$ دج).",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "P": [
+          14,
+          14
+        ],
+        "R": [
+          0,
+          2
+        ],
+        "S": [
+          14,
+          9
+        ],
+        "B": [
+          8,
+          8
+        ],
+        "C": [
+          12,
+          9.6
+        ],
+        "S₃": [
+          14,
+          10.4
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "B",
+          "tone": "emerald"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "tone": "emerald"
+        },
+        {
+          "from": "C",
+          "to": "S₃",
+          "tone": "emerald"
+        }
+      ],
+      "lines": [
+        {
+          "through": [
+            "O",
+            "P"
+          ],
+          "name": "(S₁)",
+          "tone": "indigo",
+          "extend": [
+            0,
+            0
+          ]
+        },
+        {
+          "through": [
+            "R",
+            "S"
+          ],
+          "name": "(S₂)",
+          "tone": "rose",
+          "extend": [
+            0,
+            0
+          ]
+        }
+      ],
+      "grid": true,
+      "axes": {
+        "every": 2
+      },
+      "labels": {
+        "O": "sw",
+        "S₃": "se"
+      },
+      "hidden": [
+        "P",
+        "R",
+        "S",
+        "B",
+        "C"
+      ],
+      "ariaLabel": "معلم متعامد ومتجانس: (S1) مستقيم يشمل المبدأ، و(S2) مستقيم يقطع محور التراتيب في 2، والخط المنكسر الأخضر يتبع (S1) حتى 8 علب ثم يتغير ميله ويصل إلى النقطة S3(14;10,4)",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: عدد العلب — محور التراتيب: الثمن بوحدات 5 دج"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ المحلات يمثّل ثمنه وضعية تناسبية مع عدد العلب؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "المحل الثاني: لأنّ بيانه مستقيم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-LINE-ANY"
+        },
+        {
+          "id": "B",
+          "content": "المحل الثالث: لأنّ بيانه ينطلق من المبدأ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-THROUGH-O-ANY"
+        },
+        {
+          "id": "C",
+          "content": "المحل الأول",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن البيان الذي هو مستقيم ويشمل المبدأ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر الشرطين معا لكل محل."
+        }
+      ],
+      "feedback": {
+        "correct": "$(S_1)$ هو المستقيم الوحيد الذي يشمل المبدأ.",
+        "incorrect": "المرور بالمبدأ وحده لا يكفي (المحل الثالث) ولا الاستقامة وحدها (المحل الثاني)."
+      },
+      "solution": {
+        "lines": [
+          "$(S_1)$ مستقيم يشمل $O$ : تناسبي.",
+          "$(S_2)$ مستقيم لا يشمل $O$ ، والخط الثالث منكسر."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل ثمن المحل الثالث متناسب مع عدد العلب؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأنّ الترتيب يكبر كلما كبرت الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-RISING"
+        },
+        {
+          "id": "B",
+          "content": "لا، النقط ليست على استقامة واحدة",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نعم، لأنّ الرسم ينطلق من المبدأ $O$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-THROUGH-O-ANY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط ليست على استقامة واحدة، فليست الوضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "الخط الأخضر يتبع $(S_1)$ حتى $8$ علب ثم يتغير ميله.",
+          "النقط ليست على استقامة واحدة، إذن الوضعية ليست تناسبية."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "بقراءة بيانية، ما ثمن $12$ علبة في المحل الثاني بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الثمن بالدينار",
+      "expectedAnswer": "40",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-TAMTHIL-UNIT-AXIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ من $12$ على المحور الأفقي واصعد إلى $(S_2)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوحدة العمودية تساوي $5$ دج."
+        }
+      ],
+      "feedback": {
+        "correct": "الترتيب $8$ وحدات، أي $8 \\times 5 = 40$ دج.",
+        "incorrect": "اضرب القراءة في $5$ لأنّ كل وحدة عمودية تساوي $5$ دج."
+      },
+      "solution": {
+        "lines": [
+          "النقطة من $(S_2)$ التي فاصلتها $12$ ترتيبها $8$ .",
+          "$8 \\times 5 = 40$ دج."
+        ],
+        "result": "40\\ \\text{دج}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "حلّ المعادلة $5x = 2{,}5x + 10$ يعطي عدد العلب الذي يتساوى عنده ثمن المحلين الأول والثاني. ما هو؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد العلب",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انقل $2{,}5x$ إلى الطرف الأيسر مع تغيير الإشارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اقسم على المعامل المتبقي."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}5x = 10$ ، إذن $x = 4$ علب.",
+        "incorrect": "اجمع حدود $x$ في طرف واحد ثم اقسم على معاملها."
+      },
+      "solution": {
+        "lines": [
+          "$5x - 2{,}5x = 10$",
+          "$2{,}5x = 10$",
+          "$x = 4$"
+        ],
+        "result": "x = 4"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "يريد أيوب $14$ علبة. أيّ المحلات أرخص له؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "المحل الثالث: لأنّ ثمن العلبة ينخفض بعد الثامنة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-FEE-ONLY"
+        },
+        {
+          "id": "B",
+          "content": "المحل الثاني: $45$ دج مقابل $70$ و $52$ عند الآخرين",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "المحل الأول: لأنّه لا يأخذ رسما ثابتا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-FEE-ONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أو اقرأ ثمن $14$ علبة في كل محل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الأثمان الثلاثة."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 \\times 14 = 70$ و $2{,}5 \\times 14 + 10 = 45$ و $40 + 6 \\times 2 = 52$ دج.",
+        "incorrect": "احسب الثمن الكلي لـ $14$ علبة في كل محل قبل أن تقارن."
+      },
+      "solution": {
+        "lines": [
+          "المحل الأول: $5 \\times 14 = 70$ دج.",
+          "المحل الثاني: $2{,}5 \\times 14 + 10 = 45$ دج.",
+          "المحل الثالث: $5 \\times 8 + 2 \\times 6 = 52$ دج.",
+          "الأرخص هو المحل الثاني."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

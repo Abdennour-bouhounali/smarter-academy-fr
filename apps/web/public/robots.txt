@@ -1,13 +1,20 @@
-# robots.txt for Smarter Academy
+# robots.txt for Smarter Academy DZ
 #
-# Pas de ligne vide entre « User-agent » et les « Disallow » : une ligne vide
-# termine le groupe pour les analyseurs stricts, qui perdraient les refus.
-# Ces refus concernent l'EXPLORATION, pas l'accès : les espaces privés
-# restent fermés côté serveur.
+# Le sitemap doit être annoncé sur le domaine ALGÉRIEN : cette ligne pointait
+# vers smarter-academy.fr, un autre domaine, et Google ignore un sitemap
+# déclaré hors du domaine qui le sert (sauf propriété commune vérifiée dans
+# la Search Console).
+#
+# AUCUNE LIGNE VIDE dans le groupe « User-agent » ci-dessous : une ligne vide
+# termine le groupe pour les analyseurs stricts (c'est le cas de robotparser
+# en Python), qui perdraient alors les « Disallow ». Les espaces privés ne
+# sont pas indexables : ce sont des refus d'EXPLORATION, pas une protection —
+# l'accès reste fermé côté serveur.
 User-agent: *
 Allow: /
 Disallow: /admin
 Disallow: /espace
 Disallow: /auth/
+Disallow: /__qa/
 
-Sitemap: https://smarter-academy.fr/sitemap.xml
+Sitemap: https://smarter-academy.com/sitemap.xml

@@ -1,0 +1,175 @@
+{
+  "id": "ex-4am-jidhr-tarbii-l1-001",
+  "lessonCode": "jidhr-tarbii",
+  "level": 1,
+  "metadata": {
+    "title": "مربع العدد والجذر التربيعي",
+    "estimatedMinutes": 4,
+    "tags": [
+      "تعريف الجذر التربيعي"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-1",
+      "page": 26,
+      "section": "أوظّف تعلّماتي",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "انقل وأتمم الجمل الآتية:"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "13 هو الجذر التربيعي للعدد $\\ldots$",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "169",
+      "misconceptionSignatures": [
+        {
+          "value": "26",
+          "id": "MISC-MURABBA-DIF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الجذر التربيعي للعدد المجهول هو 13: ما العلاقة بين العدد ومربع جذره؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد المطلوب هو مربع 13."
+        }
+      ],
+      "feedback": {
+        "correct": "$13^2 = 13 \\times 13 = 169$ و 13 موجب، إذن 13 هو الجذر التربيعي للعدد 169.",
+        "incorrect": "الجذر التربيعي لعدد هو العدد الموجب الذي مربعه هذا العدد: احسب مربع 13 لا ضعفه."
+      },
+      "solution": {
+        "lines": [
+          "13 عدد موجب و $13^2 = 169$",
+          "إذن 13 هو الجذر التربيعي للعدد 169."
+        ],
+        "result": "\\sqrt{169} = 13"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$\\ldots$ هو مربع العدد 25.",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "625",
+      "misconceptionSignatures": [
+        {
+          "value": "50",
+          "id": "MISC-MURABBA-DIF"
+        },
+        {
+          "value": "5",
+          "id": "MISC-JIDHR-MURABBA-KHALT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مربع عدد هو جداء هذا العدد في نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $25 \\times 25$."
+        }
+      ],
+      "feedback": {
+        "correct": "$25^2 = 25 \\times 25 = 625$.",
+        "incorrect": "مربع العدد 25 هو جداؤه في نفسه، لا ضعفه ولا جذره."
+      },
+      "solution": {
+        "lines": [
+          "$25^2 = 25 \\times 25 = 625$"
+        ],
+        "result": "25^2 = 625"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "$\\ldots$ هو الجذر التربيعي للعدد 25.",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "12.5",
+          "id": "MISC-JIDHR-NISF"
+        },
+        {
+          "value": "-5",
+          "id": "MISC-JIDHR-SALIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن العدد الموجب الذي مربعه 25."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جرّب: $4^2$ ثم $5^2$."
+        }
+      ],
+      "feedback": {
+        "correct": "5 موجب و $5^2 = 25$، إذن $\\sqrt{25} = 5$.",
+        "incorrect": "الجذر التربيعي للعدد 25 هو العدد الموجب الذي مربعه 25، وليس نصف 25."
+      },
+      "solution": {
+        "lines": [
+          "5 عدد موجب و $5^2 = 25$",
+          "إذن 5 هو الجذر التربيعي للعدد 25."
+        ],
+        "result": "\\sqrt{25} = 5"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

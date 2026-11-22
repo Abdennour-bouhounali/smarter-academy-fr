@@ -1,0 +1,74 @@
+{
+  "id": "ex-4am-kura-julla-l3-009",
+  "lessonCode": "kura-julla",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — تمثيل نقطة من الجلة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "تمثيل نقطة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_kura-julla_P4",
+      "modelledOn": "method-point"
+    }
+  },
+  "statement": {
+    "content": "B نقطة من الجلة التي مركزها O ونصف قطرها R، حيث $OB < R$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "لتمثيل B:",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P4",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نرسم نصف قطر $[OM]$ للكرة يحمل B، ثم دائرة كبرى ذات نصف القطر $[OM]$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نضع B على الكفاف",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-JULLA"
+        },
+        {
+          "id": "C",
+          "content": "نرسم دائرة كبرى تمر بـ B",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-DAIRA-KUBRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "B داخل الجلة لا على الكرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الدائرة الكبرى نصف قطرها R: لا تمر بنقطة بعدها أصغر من R."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقرأ الخطوة 2 من طريقة الكتاب."
+        }
+      ],
+      "feedback": {
+        "correct": "B على نصف قطر $[OM]$ ، و M على دائرة كبرى نرسمها: هكذا نرى أن B في الداخل.",
+        "incorrect": "الكفاف ودوائر الكرة الكبرى كلها نقطها على الكرة، و B ليست عليها."
+      }
+    }
+  ]
+}

@@ -7,8 +7,10 @@ use App\Models\Grade;
 use App\Models\LearningEvidence;
 use App\Models\LearningPoint;
 use App\Models\Lesson;
+use App\Models\PracticeSession;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Str;
 use Tests\TestCase;
 
 class PruneRetiredCurriculumTest extends TestCase
@@ -31,7 +33,7 @@ class PruneRetiredCurriculumTest extends TestCase
                     'lessons' => [[
                         'code' => 'fractions-1', 'officialObjectCode' => 'fractions',
                         'title' => 'Fractions — Partie 1', 'description' => null,
-                        'status' => 'coming_soon', 'durationMinutes' => 45, 'tier' => 'premium', 'order' => 0,
+                        'status' => 'coming_soon', 'durationMinutes' => 45, 'order' => 0,
                         'learningPoints' => [
                             ['code' => '6e_fractions-1_P1', 'title' => 'Construire', 'order' => 1],
                         ],
@@ -103,6 +105,73 @@ class PruneRetiredCurriculumTest extends TestCase
 
         $this->assertDatabaseHas('lessons', ['code' => 'fractions']);
         $this->assertDatabaseHas('learning_points', ['code' => '6e_fractions_P1']);
+        // Kept for its history — but no longer served: archived, never deleted.
+        $this->assertSame(Lesson::PUB_ARCHIVED, Lesson::where('code', 'fractions')->value('publication_status'));
+        // The lesson the catalogue still declares is untouched.
+        $this->assertSame(Lesson::PUB_PUBLISHED, Lesson::where('code', 'fractions-1')->value('publication_status'));
+    }
+
+    /**
+     * Cette commande tourne à CHAQUE déploiement de production (deploy.yml),
+     * donc « aucun historique » couvre toute trace d'élève — ici une séance de
+     * pratique, sans preuve ni progression : la leçon est gardée.
+     */
+    public function test_a_lesson_a_student_practised_is_kept(): void
+    {
+        $this->makeLesson('fractions-1', ['6e_fractions-1_P1']);
+        $lesson = $this->makeLesson('fractions', ['6e_fractions_P1']);
+        PracticeSession::create([
+            'session_id' => (string) Str::uuid(),
+            'user_id' => User::factory()->create()->id,
+            'lesson_id' => $lesson->id,
+            'level' => 1,
+            'started_at' => now(),
+        ]);
+
+        $this->artisan('smarter:prune-retired-learning-points', ['--from-json' => $this->exportPath])
+            ->assertSuccessful();
+
+        $this->assertDatabaseHas('lessons', ['code' => 'fractions']);
+        $this->assertSame(Lesson::PUB_ARCHIVED, Lesson::where('code', 'fractions')->value('publication_status'));
+    }
+
+    /** L'owner supprime une leçon retirée, historique compris — en production aussi. */
+    public function test_delete_lesson_removes_a_named_retired_lesson_with_its_history(): void
+    {
+        $this->app['env'] = 'production';
+        $this->makeLesson('fractions-1', ['6e_fractions-1_P1']);
+        $old = $this->makeLesson('fractions', ['6e_fractions_P1']);
+        $other = $this->makeLesson('decimaux');
+        PracticeSession::create([
+            'session_id' => (string) Str::uuid(), 'user_id' => User::factory()->create()->id,
+            'lesson_id' => $old->id, 'level' => 1, 'started_at' => now(),
+        ]);
+
+        $args = ['--from-json' => $this->exportPath, '--delete-lesson' => ['fractions']];
+
+        // Sans --force : rien ne bouge.
+        $this->artisan('smarter:prune-retired-learning-points', $args)->assertFailed();
+        $this->assertDatabaseHas('lessons', ['code' => 'fractions']);
+
+        $this->artisan('smarter:prune-retired-learning-points', $args + ['--force' => true])->assertSuccessful();
+
+        $this->assertDatabaseMissing('lessons', ['code' => 'fractions']);
+        $this->assertDatabaseMissing('learning_points', ['code' => '6e_fractions_P1']);
+        $this->assertDatabaseMissing('practice_sessions', ['lesson_id' => $old->id]);
+        // Only the named lesson: another retired lesson is left to the normal prune.
+        $this->assertDatabaseHas('lessons', ['id' => $other->id]);
+        $this->assertDatabaseHas('lessons', ['code' => 'fractions-1']);
+    }
+
+    public function test_delete_lesson_refuses_a_lesson_the_catalogue_still_declares(): void
+    {
+        $this->makeLesson('fractions-1', ['6e_fractions-1_P1']);
+
+        $this->artisan('smarter:prune-retired-learning-points', [
+            '--from-json' => $this->exportPath, '--delete-lesson' => ['fractions-1'], '--force' => true,
+        ])->assertFailed();
+
+        $this->assertDatabaseHas('lessons', ['code' => 'fractions-1']);
     }
 
     public function test_dry_run_deletes_nothing(): void
@@ -115,5 +184,6 @@ class PruneRetiredCurriculumTest extends TestCase
         ])->assertSuccessful();
 
         $this->assertDatabaseHas('lessons', ['code' => 'fractions']);
+        $this->assertSame(Lesson::PUB_PUBLISHED, Lesson::where('code', 'fractions')->value('publication_status'));
     }
 }

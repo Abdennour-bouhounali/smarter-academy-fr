@@ -1,0 +1,203 @@
+{
+  "id": "ex-2am-rabi-mutanasib-l2-007",
+  "lessonCode": "rabi-mutanasib",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — كرّاسات التلاميذ",
+    "estimatedMinutes": 8,
+    "tags": [
+      "الرابع المتناسب",
+      "الكمية المجهولة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تحتاج مجموعة من $8$ تلاميذ إلى $12$ كرّاسًا، وعدد الكرّاسات يتناسب مع عدد التلاميذ.",
+    "table": {
+      "head": [
+        "عدد التلاميذ",
+        "8",
+        "20",
+        "…"
+      ],
+      "rows": [
+        [
+          "عدد الكرّاسات",
+          "12",
+          "…",
+          "45"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما عدد الكرّاسات اللازمة لـ $20$ تلميذًا؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "24",
+          "id": "MISC-RABI-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "تلزم $30$ كرّاسًا.",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$12 \\div 8 = 1{,}5$",
+          "$1{,}5 \\times 20 = 30$"
+        ],
+        "result": "30"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما عدد التلاميذ الذين يكفيهم $45$ كرّاسًا؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "67,5",
+          "id": "MISC-RABI-INV"
+        },
+        {
+          "value": "41",
+          "id": "MISC-RABI-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد التلاميذ $30$ .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$45 \\div 1{,}5 = 30$"
+        ],
+        "result": "30"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "كم كرّاسًا لكل تلميذ؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "1,5",
+      "misconceptionSignatures": [
+        {
+          "value": "96",
+          "id": "MISC-RABI-MULROW"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في الجدول عمودًا يحوي العددين المعلومين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "معامل التناسبية هو العدد الذي نضرب فيه كل عدد من السطر الأول لنحصل على مقابله في السطر الثاني."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم عددًا من السطر الثاني على مقابله في السطر الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "لكل تلميذ $1{,}5$ كرّاس.",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$12 \\div 8 = 1{,}5$"
+        ],
+        "result": "1{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

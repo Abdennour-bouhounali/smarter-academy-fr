@@ -1,0 +1,281 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l4-001",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 9 — مستطيل ومتوازي أضلاع",
+    "estimatedMinutes": 5,
+    "tags": [
+      "برهان",
+      "متوازي الأضلاع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-9",
+      "page": 134,
+      "section": "الأشعة ومتوازي الأضلاع",
+      "number": 9
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 134): ABCD مستطيل و CDEF متوازي أضلاع (الشكل). برهن أن الرباعي ABFE متوازي أضلاع.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          4
+        ],
+        "B": [
+          6,
+          4
+        ],
+        "C": [
+          6,
+          0
+        ],
+        "D": [
+          0,
+          0
+        ],
+        "E": [
+          -2,
+          -3
+        ],
+        "F": [
+          4,
+          -3
+        ]
+      },
+      "polygons": [
+        {
+          "points": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "tone": "rose"
+        }
+      ],
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "A"
+        ],
+        [
+          "D",
+          "E"
+        ],
+        [
+          "E",
+          "F"
+        ],
+        [
+          "F",
+          "C"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "B",
+          "A",
+          "D"
+        ],
+        [
+          "A",
+          "B",
+          "C"
+        ],
+        [
+          "B",
+          "C",
+          "D"
+        ],
+        [
+          "C",
+          "D",
+          "A"
+        ]
+      ],
+      "labels": {
+        "A": "nw",
+        "B": "ne",
+        "C": "e",
+        "D": "w",
+        "E": "sw",
+        "F": "se"
+      },
+      "ariaLabel": "مستطيل ABCD، وتحته متوازي الأضلاع CDEF",
+      "maxWidth": 440
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ABCD مستطيل (فهو متوازي أضلاع)، إذن:",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{AD} = \\overrightarrow{CB}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{AB} = \\overrightarrow{DC}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{AB} = \\overrightarrow{CD}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المستطيل متوازي أضلاع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ الضلعين المتقابلين في الاتجاه نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الضلع [AB] يقابله [DC]."
+        }
+      ],
+      "feedback": {
+        "correct": "في المستطيل ABCD الشعاعان AB و DC متساويان.",
+        "incorrect": "تتبّع الاتجاه: من A إلى B ومن D إلى C."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "CDEF متوازي أضلاع، إذن:",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{CD} = \\overrightarrow{EF}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{DE} = \\overrightarrow{FC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{DC} = \\overrightarrow{EF}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب رؤوس CDEF بترتيبها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع [CD] يقابله [FE]."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اعكس الاتجاهين معا إن احتجت."
+        }
+      ],
+      "feedback": {
+        "correct": "في CDEF: الشعاع CD يساوي FE، أي DC يساوي EF.",
+        "incorrect": "الضلع [CD] يقابله [FE] في الاتجاه نفسه."
+      }
+    },
+    {
+      "id": "q3",
+      "statement": "إذن الشعاعان AB و EF متساويان، ومنه:",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "ABFE مستطيل",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "ABFE متوازي أضلاع",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "ABEF متوازي أضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طابق المساواة مع خاصية الدرس السابق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع [AB] ومقابله في الاتجاه نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الرؤوس بحيث يأتي E بعد F."
+        }
+      ],
+      "feedback": {
+        "correct": "الشعاعان AB و EF متساويان: ABFE متوازي أضلاع.",
+        "incorrect": "رتّب الرؤوس بحيث يكون [EF] مقابلا لـ [AB] في الاتجاه نفسه."
+      }
+    }
+  ]
+}

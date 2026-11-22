@@ -1,0 +1,203 @@
+{
+  "id": "ex-4am-tawzif-khawass-judhur-l5-006",
+  "lessonCode": "tawzif-khawass-judhur",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2021 — طلاء جدران غرفة",
+    "estimatedMinutes": 13,
+    "tags": [
+      "a√b",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tawzif-khawass-judhur_P1",
+      "modelledOn": "BEM 2021 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يريد عمي رشيد، حرصًا على نظافة بيته، طلاء الجدران الأربعة لغرفة أرضيتها مربعة الشكل مساحتها $48\\,m^2$ وارتفاعها 3m (لا نطرح مساحة الباب والنافذة).\n• كل لتر من الدهن يكفي لطلاء $6\\,m^2$.\n• يُباع الدهن في علب سعة كل منها 2L، ثمن العلبة الواحدة 1350DA.\n• نأخذ $\\sqrt{3} \\approx 1{,}73$"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب طول ضلع أرضية الغرفة واكتبه على الشكل $a\\sqrt{3}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (بالمتر)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "16",
+          "id": "MISC-JIDHR-MURABBA-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول الضلع هو العدد الموجب الذي مربعه 48."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر مربع تامّ يقسم 48."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sqrt{48} = \\sqrt{16} \\times \\sqrt{3} = 4\\sqrt{3}\\,m$.",
+        "incorrect": "اكتب 48 على شكل (أكبر مربع تامّ) × 3."
+      },
+      "solution": {
+        "lines": [
+          "$c = \\sqrt{48} = \\sqrt{16} \\times \\sqrt{3}$"
+        ],
+        "result": "c = 4\\sqrt{3}\\,m"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب مساحة الجدران الأربعة واكتبها على الشكل $a\\sqrt{3}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (بالمتر المربع)",
+      "expectedAnswer": "48",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-MUAMIL-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل جدار مستطيل بُعداه ضلع الأرضية والارتفاع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المساحة = 4 × (ضلع الأرضية × الارتفاع)."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 4\\sqrt{3} \\times 3 = 48\\sqrt{3}\\,m^2$.",
+        "incorrect": "مساحة جدار واحد = ضلع الأرضية × الارتفاع، ثم اضرب في 4."
+      },
+      "solution": {
+        "lines": [
+          "مساحة جدار واحد: $4\\sqrt{3} \\times 3 = 12\\sqrt{3}\\,m^2$",
+          "مساحة الجدران الأربعة: $4 \\times 12\\sqrt{3}$"
+        ],
+        "result": "S = 48\\sqrt{3}\\,m^2"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "☜ ما هو أقل عدد من العلب يجب على عمي رشيد شراؤه؟ وكم يدفع ثمنًا لها؟",
+      "statement": "عدد العلب:",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب قيمة مقرّبة لمساحة الجدران باستعمال $\\sqrt{3} \\approx 1{,}73$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم المساحة على 6 لتجد عدد اللترات، ثم على 2 لتجد عدد العلب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يمكن شراء جزء من علبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$S \\approx 83{,}04\\,m^2$ أي حوالي $13{,}84\\,L$، فيلزم 7 علب.",
+        "incorrect": "احسب عدد اللترات اللازمة ثم عدد العلب، وتذكّر أن عدد العلب عدد طبيعي يكفي لكل الجدران."
+      },
+      "solution": {
+        "lines": [
+          "$S = 48\\sqrt{3} \\approx 48 \\times 1{,}73 = 83{,}04\\,m^2$",
+          "عدد اللترات: $83{,}04 \\div 6 = 13{,}84\\,L$",
+          "عدد العلب: $13{,}84 \\div 2 = 6{,}92$، إذن 7 علب."
+        ],
+        "result": "7"
+      },
+      "work": "optional",
+      "timeSeconds": 360
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "ثمن العلب (DA):",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (DA)",
+      "expectedAnswer": "9450",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب عدد العلب في ثمن العلبة الواحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$7 \\times 1350 = 9450$ DA.",
+        "incorrect": "اضرب عدد العلب الذي وجدته في ثمن العلبة."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 1350$"
+        ],
+        "result": "9450\\,DA"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

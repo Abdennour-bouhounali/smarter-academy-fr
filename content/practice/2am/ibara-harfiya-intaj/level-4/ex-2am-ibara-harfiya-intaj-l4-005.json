@@ -1,0 +1,239 @@
+{
+  "id": "ex-2am-ibara-harfiya-intaj-l4-005",
+  "lessonCode": "ibara-harfiya-intaj",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — كتابتان للبرنامج نفسه",
+    "estimatedMinutes": 6,
+    "tags": [
+      "كتابتان",
+      "مقارنة قيم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "برنامج الحساب : « اختر عددًا $n$ ، أضف إليه $1$ ، ثمّ ضاعف النتيجة » . كتبت سلمى العبارة $2(n + 1)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما نتيجة البرنامج للعدد $8$ ؟ احسب $R = 2(n + 1)$ من أجل $n = 8$ .",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "18",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بالقيمة المعطاة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ احترم أولويّة العمليّات : الضرب قبل الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة قبل أن تجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$R = 18$ .",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ أعد الحساب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$2 \\times (8 + 1) = 18$ ."
+        ],
+        "result": "18"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كتب أمين العبارة $2n + 2$ . هل تعطي عبارة سلمى $2(n + 1)$ وعبارة أمين العدد نفسه من أجل $n = 5$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب كلّ عبارة بالقيمة المعطاة وحدها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات في كلّ حساب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن العددين الناتجين."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم : العددان متساويان.",
+        "incorrect": "احسب كلّ عبارة من أجل القيمة المعطاة ثمّ قارن العددين."
+      },
+      "solution": {
+        "lines": [
+          "$2 \\times (5 + 1) = 12$ ،",
+          "$2 \\times 5 + 2 = 12$ .",
+          "العددان متساويان من أجل هذه القيمة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كتبت لبنى العبارة $2n + 1$ . هل تعطي عبارة سلمى $2(n + 1)$ وعبارة لبنى العدد نفسه من أجل $n = 5$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-BRACKET"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب كلّ عبارة بالقيمة المعطاة وحدها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات في كلّ حساب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن العددين الناتجين."
+        }
+      ],
+      "feedback": {
+        "correct": "لا : العددان مختلفان.",
+        "incorrect": "احسب كلّ عبارة من أجل القيمة المعطاة ثمّ قارن العددين."
+      },
+      "solution": {
+        "lines": [
+          "$2 \\times (5 + 1) = 12$ ،",
+          "$2 \\times 5 + 1 = 11$ .",
+          "العددان مختلفان : الكتابتان لا تترجمان البرنامج نفسه."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "كتب فارس العبارة $n + 2$ . هل تعطي عبارة سلمى $2(n + 1)$ وعبارة فارس العدد نفسه من أجل $n = 3$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب كلّ عبارة بالقيمة المعطاة وحدها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات في كلّ حساب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن العددين الناتجين."
+        }
+      ],
+      "feedback": {
+        "correct": "لا : العددان مختلفان.",
+        "incorrect": "احسب كلّ عبارة من أجل القيمة المعطاة ثمّ قارن العددين."
+      },
+      "solution": {
+        "lines": [
+          "$2 \\times (3 + 1) = 8$ ،",
+          "$3 + 2 = 5$ .",
+          "العددان مختلفان : الكتابتان لا تترجمان البرنامج نفسه."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

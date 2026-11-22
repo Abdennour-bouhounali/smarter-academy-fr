@@ -1,0 +1,214 @@
+{
+  "id": "ex-2am-talim-mustaqim-mudarraj-2-l4-002",
+  "lessonCode": "talim-mustaqim-mudarraj-2",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — قراءة وأكبر فاصلة ونقطتان متعاكستان",
+    "estimatedMinutes": 10,
+    "tags": [
+      "وضع نقط",
+      "ترتيب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "مستقيم مدرّج في ملعب المدرسة لقياس رمية الكرة، مبدؤه $O$ . قيمة التدريجة الواحدة $10\\,\\mathrm{m}$. $A$ على 5 تدريجات إلى يسار المبدأ، $B$ على تدريجتين إلى يمين المبدأ، $C$ على تدريجتين إلى يسار المبدأ، $D$ على 6 تدريجات إلى يمين المبدأ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما فاصلة النقطة $A$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-50",
+      "misconceptionSignatures": [
+        {
+          "value": "-5",
+          "id": "MISC-TALIM2-UNITIGNORED"
+        },
+        {
+          "value": "50",
+          "id": "MISC-TALIM2-SIGNSIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ التدريجات بين المبدأ والنقطة، ثم انظر إلى جهتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفاصلة = عدد التدريجات × قيمة التدريجة الواحدة، وإشارتها حسب الجهة: يمين المبدأ موجبة، يسار المبدأ سالبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء أوّلًا ثم ضع الإشارة المناسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$A(-50)$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$A$ على $5$ تدريجات يسار المبدأ",
+          "$5 \\times 10$ مع الإشارة المناسبة",
+          "$A(-50)$"
+        ],
+        "result": "-50"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أيّ النقط لها أكبر فاصلة؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$B$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$A$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$D$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$C$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أوجد فاصلة كلّ نقطة أوّلًا: عدد التدريجات × القيمة مع مراعاة الجهة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأصغر هو الأبعد إلى يسار المبدأ، والأكبر هو الأبعد إلى يمينه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تقارن بعدد التدريجات وحده: انظر إلى إشارة كلّ فاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$D$ هي الأكبر فاصلة : $60$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفواصل: $A(-50)$ ؛ $B(20)$ ؛ $C(-20)$ ؛ $D(60)$",
+          "الأكبر هو الأبعد إلى اليمين: $D$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أيّ نقطتين فاصلتاهما متعاكستان؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$B$ و $C$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$A$ و $C$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$A$ و $B$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$A$ و $D$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أوجد فاصلة كلّ نقطة أوّلًا: عدد التدريجات × القيمة مع مراعاة الجهة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأصغر هو الأبعد إلى يسار المبدأ، والأكبر هو الأبعد إلى يمينه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تقارن بعدد التدريجات وحده: انظر إلى إشارة كلّ فاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$B$ و $C$ : فاصلتاهما $20$ و $-20$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفواصل: $A(-50)$ ؛ $B(20)$ ؛ $C(-20)$ ؛ $D(60)$",
+          "$B$ و $C$ فاصلتاهما متعاكستان: المسافة نفسها إلى الصفر"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

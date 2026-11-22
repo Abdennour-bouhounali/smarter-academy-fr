@@ -1,0 +1,180 @@
+{
+  "id": "ex-4am-qasim-mushtarak-akbar-l5-006",
+  "lessonCode": "qasim-mushtarak-akbar",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2020 — مكتبات المدارس الابتدائية",
+    "estimatedMinutes": 12,
+    "tags": [
+      "PGCD",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-mushtarak-akbar_P3",
+      "modelledOn": "BEM 2020 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2020",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تبرّعت دار نشر بالجزائر العاصمة، تشجيعًا للتلاميذ على القراءة وحبّ العلم، بـ 315 قصة و 189 كتابًا علميًا لفائدة مكتبات المدارس الابتدائية لإحدى البلديات، على أن توزّع كلها في حصص متماثلة (نفس عدد القصص ونفس عدد الكتب العلمية لكل مدرسة) على أكبر عدد ممكن من المدارس.\n• تريد البلدية أن تمنح كل مدرسة مستفيدة خزانة كتب من نفس النوع، أثمانها من 600DA إلى 1500DA حسب نوعيتها.\n• مصاريف نقل الخزائن 2400DA مهما كان عددها.\n• خصّصت البلدية لذلك 59100DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما هو أكبر عدد من المدارس التي يمكن أن تستفيد ؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد المدارس)",
+      "expectedAnswer": "63",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        },
+        {
+          "value": "21",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد المدارس يجب أن يقسم 315 و 189 معًا: فهو قاسم مشترك لهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب قواسم 315 وقواسم 189، ثم استخرج القواسم المشتركة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أكبر عدد ممكن هو أكبر هذه القواسم المشتركة."
+        }
+      ],
+      "feedback": {
+        "correct": "أكبر عدد من المدارس هو PGCD(315 ; 189).",
+        "incorrect": "عدد المدارس قاسم مشترك للعددين 315 و 189؛ والمطلوب أكبرها، لا محتوى الواحدة منها."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 315 هي: 1 ، 3 ، 5 ، 7 ، 9 ، 15 ، 21 ، 35 ، 45 ، 63 ، 105 ، 315",
+          "قواسم العدد 189 هي: 1 ، 3 ، 7 ، 9 ، 21 ، 27 ، 63 ، 189",
+          "القواسم المشتركة للعددين 315 و 189 هي: 1 ، 3 ، 7 ، 9 ، 21 ، 63",
+          "أكبرها هو 63، إذن أكبر عدد من المدارس هو PGCD(315 ; 189) = 63."
+        ],
+        "result": "PGCD(315 ; 189) = 63"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما هو عدد القصص التي تتحصّل عليها كل مدرسة ؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "63",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع القصص كلها بالتساوي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 315 على العدد الذي وجدته في السؤال السابق."
+        }
+      ],
+      "feedback": {
+        "correct": "$315 \\div 63 = 5$",
+        "incorrect": "اقسم العدد الكلي (315) على أكبر عدد وجدته."
+      },
+      "solution": {
+        "lines": [
+          "$315 \\div 63 = 5$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "☜ أعط القيمة التي لا يمكن أن يتجاوزها ثمن الخزانة حتى يتسنى للبلدية تجهيز كل المدارس المستفيدة حسب الشروط المذكورة.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (الثمن بالدينار)",
+      "expectedAnswer": "900",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الخزائن هو عدد المدارس الذي وجدته في السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أضف مصاريف النقل مرة واحدة، ثم اكتب أن المجموع لا يتجاوز المبلغ المخصص."
+        }
+      ],
+      "feedback": {
+        "correct": "$63p + 2400 \\leq 59100$ تعطي $p \\leq 900$ .",
+        "incorrect": "اكتب المصاريف بدلالة ثمن الخزانة $p$ ، ثم المتراجحة: المصاريف لا تتجاوز 59100DA."
+      },
+      "solution": {
+        "lines": [
+          "عدد الخزائن: PGCD(315 ; 189) = 63",
+          "$63p + 2400 \\leq 59100$",
+          "$63p \\leq 56700$",
+          "$p \\leq 900$",
+          "إذن لا يمكن أن يتجاوز ثمن الخزانة 900DA."
+        ],
+        "result": "900DA"
+      },
+      "work": "optional",
+      "timeSeconds": 360
+    }
+  ]
+}

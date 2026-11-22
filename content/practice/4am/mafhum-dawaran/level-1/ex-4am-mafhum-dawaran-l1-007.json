@@ -1,0 +1,93 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l1-007",
+  "lessonCode": "mafhum-dawaran",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — ربع دورة على المرصوفة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "صورة نقطة",
+      "المرصوفة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mafhum-dawaran_P2",
+      "modelledOn": "ex-7"
+    }
+  },
+  "statement": {
+    "content": "على المرصوفة: $O(0\\,;\\,0)$ و $M(3\\,;\\,1)$ . M′ صورة M بالدوران الذي مركزه O وزاويته $90^\\circ$ في الاتجاه المباشر.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "M": [
+          3,
+          1
+        ]
+      },
+      "grid": true,
+      "maxWidth": 420,
+      "ariaLabel": "ورقة مرصوفة عليها النقطتان O و M"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما هما إحداثيتا M′؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الإحداثيتان (x ; y) — عددان صحيحان",
+      "expectedAnswer": {
+        "x": "-1",
+        "y": "3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-ITTIJAH",
+          "value": {
+            "x": "1",
+            "y": "-3"
+          }
+        },
+        {
+          "id": "MISC-DAWARAN-ZAWIYA-UKHRA",
+          "value": {
+            "x": "-3",
+            "y": "-1"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من O إلى M: 3 مربعات يمينا ومربع واحد نحو الأعلى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ربع دورة عكس عقارب الساعة يدير هذه الحركة: «يمينا» تصبح «أعلى»."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كل ربع دورة مباشر يحوّل الإزاحة (a ; b) إلى (−b ; a)."
+        }
+      ],
+      "feedback": {
+        "correct": "الإزاحة (3 ; 1) تصبح (−1 ; 3): $M'(-1\\,;\\,3)$ و $OM' = OM = \\sqrt{10}$ .",
+        "incorrect": "ربع دورة عكس عقارب الساعة: ما كان نحو اليمين يصبح نحو الأعلى."
+      },
+      "difficulty": 2
+    }
+  ]
+}

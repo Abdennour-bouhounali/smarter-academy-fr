@@ -1,0 +1,211 @@
+{
+  "id": "ex-1am-ikhtizal-kitaba-kasriya-l2-007",
+  "lessonCode": "ikhtizal-kitaba-kasriya",
+  "level": 2,
+  "metadata": {
+    "title": "حواصل قسمة على شكل كسور",
+    "estimatedMinutes": 6,
+    "tags": [
+      "حاصل قسمة",
+      "اختزال"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-23",
+      "page": 58,
+      "section": "أتمرّن",
+      "number": 23
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اكتب كل حاصل قسمة على شكل كسر بسطه ومقامه عددان طبيعيان، ثم اختزله إلى أبسط شكل ممكن."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أتمم: $\\dfrac{6{,}5}{2{,}5} = \\dfrac{\\ldots}{25}$",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "65",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بأيّ عدد نضرب 2,5 لنجد 25؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب البسط في نفس العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{6{,}5}{2{,}5} = \\dfrac{6{,}5 \\times 10}{2{,}5 \\times 10} = \\dfrac{65}{25}$.",
+        "incorrect": "نضرب البسط والمقام في نفس العدد: هنا العدد الذي يحذف الفاصلة من المقام."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{6{,}5}{2{,}5} = \\dfrac{6{,}5 \\times 10}{2{,}5 \\times 10} = \\dfrac{65}{25}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اختزل الكسر $\\dfrac{65}{25}$ إلى أبسط شكل ممكن.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b لا يقبل الاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "13/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن قاسم مشترك للبسط والمقام بقواعد قابلية القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على هذا القاسم، ثم أعد البحث في الكسر الجديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا لم تنفع القواعد، جرّب جداول الضرب (7، 11، 13…)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{65}{25} = \\dfrac{13}{5}$ ولا يقبل البسط والمقام قاسمًا مشتركًا غير 1.",
+        "incorrect": "نقسم البسط والمقام على قاسم مشترك لهما، ونعيد ذلك حتى لا يبقى قاسم مشترك غير 1.",
+        "notIrreducible": "الكتابة تساوي الكسر لكنها ما زالت قابلة للاختزال: ابحث عن قاسم مشترك آخر للبسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "$65 = 5 \\times 13$ و $25 = 5 \\times 5$ ، إذن $\\dfrac{65}{25} = \\dfrac{65 \\div 5}{25 \\div 5} = \\dfrac{13}{5}$",
+          "العددان 13 و 5 لا يقبلان قاسمًا مشتركًا غير 1: $\\dfrac{13}{5}$ في أبسط شكل ممكن."
+        ],
+        "result": "\\dfrac{65}{25} = \\dfrac{13}{5}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "اكتب $\\dfrac{5{,}6}{1{,}2}$ على شكل كسر في أبسط شكل ممكن.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b لا يقبل الاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "14/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "28/6",
+          "id": "MISC-KASRIYA-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن قاسم مشترك للبسط والمقام بقواعد قابلية القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على هذا القاسم، ثم أعد البحث في الكسر الجديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا لم تنفع القواعد، جرّب جداول الضرب (7، 11، 13…)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{56}{12} = \\dfrac{14}{3}$ ولا يقبل البسط والمقام قاسمًا مشتركًا غير 1.",
+        "incorrect": "نقسم البسط والمقام على قاسم مشترك لهما، ونعيد ذلك حتى لا يبقى قاسم مشترك غير 1.",
+        "notIrreducible": "الكتابة تساوي الكسر لكنها ما زالت قابلة للاختزال: ابحث عن قاسم مشترك آخر للبسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "$56 = 4 \\times 14$ و $12 = 4 \\times 3$ ، إذن $\\dfrac{56}{12} = \\dfrac{56 \\div 4}{12 \\div 4} = \\dfrac{14}{3}$",
+          "العددان 14 و 3 لا يقبلان قاسمًا مشتركًا غير 1: $\\dfrac{14}{3}$ في أبسط شكل ممكن."
+        ],
+        "result": "\\dfrac{56}{12} = \\dfrac{14}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "اكتب $\\dfrac{3{,}2}{0{,}1}$ على شكل عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "32",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب البسط والمقام في 10."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ماذا يصبح المقام؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3{,}2}{0{,}1} = \\dfrac{32}{1} = 32$.",
+        "incorrect": "اضرب البسط والمقام في نفس العدد لتحذف الفاصلة، ثم اقرأ الكسر الذي مقامه 1."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3{,}2}{0{,}1} = \\dfrac{3{,}2 \\times 10}{0{,}1 \\times 10} = \\dfrac{32}{1} = 32$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

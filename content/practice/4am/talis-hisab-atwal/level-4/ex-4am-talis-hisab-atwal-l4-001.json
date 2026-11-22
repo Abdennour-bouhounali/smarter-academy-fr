@@ -1,0 +1,315 @@
+{
+  "id": "ex-4am-talis-hisab-atwal-l4-001",
+  "lessonCode": "talis-hisab-atwal",
+  "level": 4,
+  "metadata": {
+    "title": "المثلث BKL — أطواله ومحيطه",
+    "estimatedMinutes": 12,
+    "tags": [
+      "خاصية طالس",
+      "معامل التصغير",
+      "المحيط"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-6",
+      "page": 110,
+      "section": "خاصية طالس",
+      "number": 6
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "(وحدة الطول هي السنتيمتر) $BEM$ مثلث حيث $BE = 12$ ، $BM = 9$ و $EM = 6$ . $K$ نقطة من $[BE]$ حيث $EK = 4$ ، والمستقيم الذي يشمل $K$ ويوازي $(EM)$ يقطع $[BM]$ في $L$ .",
+    "figure": {
+      "points": {
+        "B": [
+          0.0,
+          0.0
+        ],
+        "E": [
+          10.87569344444,
+          5.071419140888
+        ],
+        "M": [
+          5.295781147198,
+          7.276998147655
+        ],
+        "K": [
+          7.250462296293,
+          3.380946093926
+        ],
+        "L": [
+          3.530520764799,
+          4.851332098437
+        ]
+      },
+      "segments": [
+        {
+          "from": "B",
+          "to": "K"
+        },
+        {
+          "from": "K",
+          "to": "E",
+          "label": "4"
+        },
+        {
+          "from": "B",
+          "to": "M"
+        },
+        {
+          "from": "E",
+          "to": "M",
+          "label": "6",
+          "arrows": 1
+        },
+        {
+          "from": "K",
+          "to": "L",
+          "arrows": 1
+        }
+      ],
+      "ariaLabel": "المثلث BEM، K من [BE] و L من [BM]، و (KL) يوازي (EM)؛ BE = 12 و BM = 9 و EM = 6 و EK = 4",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $BL$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (عشري بالفاصلة مثل 2,75 أو كسر مثل 7/9)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        },
+        {
+          "value": "13,5",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$BK = BE - EK$ ، والمثلثان $BKL$ و $BEM$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $\\dfrac{BK}{BE} = \\dfrac{BL}{BM}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أكمل بالجداء المتصالب."
+        }
+      ],
+      "feedback": {
+        "correct": "$BK = 8$ و $BL = \\dfrac{9 \\times 8}{12} = 6$ .",
+        "incorrect": "هل استعملت ضلعًا من المثلث الكبير أم قطعة منه؟ النسب تُكتب بأطوال تُقاس من الرأس المشترك؛ اطرح أو اجمع بعد ذلك إن كان المطلوب طول قطعة."
+      },
+      "solution": {
+        "lines": [
+          "$K \\in [BE]$ إذن $BK = BE - EK = 12 - 4 = 8$",
+          "لدينا: النقط $B$ ، $K$ ، $E$ على استقامة واحدة، والنقط $B$ ، $L$ ، $M$ على استقامة واحدة، و $(KL) \\parallel (EM)$ .",
+          "حسب خاصية طالس: $\\dfrac{BK}{BE} = \\dfrac{BL}{BM} = \\dfrac{KL}{EM}$",
+          "$\\dfrac{BK}{BE} = \\dfrac{BL}{BM}$ أي $\\dfrac{8}{12} = \\dfrac{BL}{9}$",
+          "$BL = \\dfrac{9 \\times 8}{12}$"
+        ],
+        "result": "BL = 6\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $KL$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (عشري بالفاصلة مثل 2,75 أو كسر مثل 7/9)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        },
+        {
+          "value": "9",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقط $B$ ، $K$ ، $E$ على استقامة والنقط $B$ ، $L$ ، $M$ على استقامة، و $(KL) \\parallel (EM)$ : المثلثان $BKL$ و $BEM$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب النسب الثلاث المتساوية $\\dfrac{BK}{BE} = \\dfrac{BL}{BM} = \\dfrac{KL}{EM}$ ، واحتفظ بالمساواة التي فيها $KL$ وثلاثة أطوال معلومة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الطول المجهول بالجداء المتصالب (الرابع المتناسب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$KL = \\dfrac{6 \\times 8}{12} = 4$ .",
+        "incorrect": "راجع المساواة المختارة: في كل نسبة طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{BK}{BE} = \\dfrac{KL}{EM}$ أي $\\dfrac{8}{12} = \\dfrac{KL}{6}$",
+          "$KL = \\dfrac{6 \\times 8}{12}$"
+        ],
+        "result": "KL = 4\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب معامل التناسبية $k$ الذي يحوّل المثلث $BEM$ إلى المثلث $BKL$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال مثل 3/4",
+      "expectedAnswer": "2/3",
+      "misconceptionSignatures": [
+        {
+          "value": "1/3",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        },
+        {
+          "value": "1,5",
+          "id": "MISC-TALIS-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث الأصلي $BEM$ والناتج $BKL$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$k = \\dfrac{BK}{BE}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$k = \\dfrac{8}{12} = \\dfrac{2}{3}$ : تصغير.",
+        "incorrect": "معامل التناسبية k = (طول في المثلث الناتج) ÷ (الطول الموافق له في المثلث الأصلي)؛ راجع أي المثلثين هو الأصلي."
+      },
+      "solution": {
+        "lines": [
+          "$k = \\dfrac{BK}{BE} = \\dfrac{8}{12}$"
+        ],
+        "result": "k = \\dfrac{2}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب محيط المثلث $BKL$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (عشري بالفاصلة مثل 2,75 أو كسر مثل 7/9)",
+      "expectedAnswer": "18",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        },
+        {
+          "value": "40,5",
+          "id": "MISC-TALIS-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "محيط $BKL$ = $BK + KL + BL$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أو: محيط $BEM$ مضروب في $k$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$8 + 4 + 6 = 18$ ، أو $\\dfrac{2}{3} \\times 27 = 18$ .",
+        "incorrect": "اجمع أطوال أضلاع $BKL$ الثلاثة، أو اضرب محيط $BEM$ في $k$ ."
+      },
+      "solution": {
+        "lines": [
+          "محيط $BEM$ : $12 + 9 + 6 = 27$",
+          "محيط $BKL$ : $k \\times 27 = \\dfrac{2}{3} \\times 27$",
+          "(تحقّق: $BK + KL + BL = 8 + 4 + 6$)"
+        ],
+        "result": "18\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

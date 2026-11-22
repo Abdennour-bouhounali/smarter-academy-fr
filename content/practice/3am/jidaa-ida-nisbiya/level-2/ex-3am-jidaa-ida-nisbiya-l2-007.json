@@ -1,0 +1,288 @@
+{
+  "id": "ex-3am-jidaa-ida-nisbiya-l2-007",
+  "lessonCode": "jidaa-ida-nisbiya",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — غيّر ترتيب العوامل لتسهّل الحساب",
+    "estimatedMinutes": 9,
+    "tags": [
+      "تغيير الترتيب",
+      "حساب ذهني",
+      "جداء عدة أعداد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "احسب كلًّا من الأعداد الآتية، وغيّر ترتيب العوامل كلّما سهّل ذلك الحساب.",
+    "formulas": [
+      "A = (−25) \\times 17 \\times (−4)",
+      "B = (−5) \\times (−8) \\times (−20) \\times 3",
+      "C = (−2) \\times (−5) \\times (−7) \\times (−10)",
+      "D = 4 \\times (−25) \\times (−3) \\times (−7)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $A$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "1700",
+      "misconceptionSignatures": [
+        {
+          "value": "-1700",
+          "id": "MISC-IDA-MORENEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ العوامل السالبة أولًا لتعرف الإشارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يمكن تغيير ترتيب العوامل وتجميعها دون أن يتغيّر الجداء."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ابحث عن عاملين جداء مسافتيهما $10$ أو $100$ أو $1000$ ، واضرب فيهما أولًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−25) \\times 17 \\times (−4) = 1700$ : عدد العوامل السالبة $2$ (عدد زوجي)، إذن الجداء موجب.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "عدد العوامل السالبة هو $2$ ، وهو عدد زوجي، إذن الجداء موجب.",
+          "نغيّر ترتيب العوامل لنجمع ما يسهّل الحساب: $(25 \\times 4) \\times 17 = 100 \\times 17 = 1700$",
+          "$A = 1700$"
+        ],
+        "result": "A = 1700"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $B$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-2400",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ العوامل السالبة أولًا لتعرف الإشارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يمكن تغيير ترتيب العوامل وتجميعها دون أن يتغيّر الجداء."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ابحث عن عاملين جداء مسافتيهما $10$ أو $100$ أو $1000$ ، واضرب فيهما أولًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−5) \\times (−8) \\times (−20) \\times 3 = −2400$ : عدد العوامل السالبة $3$ (عدد فردي)، إذن الجداء سالب.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "عدد العوامل السالبة هو $3$ ، وهو عدد فردي، إذن الجداء سالب.",
+          "نغيّر ترتيب العوامل لنجمع ما يسهّل الحساب: $(5 \\times 20) \\times (8 \\times 3) = 100 \\times 24 = 2400$",
+          "$B = −2400$"
+        ],
+        "result": "B = −2400"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "احسب $C$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "700",
+      "misconceptionSignatures": [
+        {
+          "value": "-700",
+          "id": "MISC-IDA-MORENEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ العوامل السالبة أولًا لتعرف الإشارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يمكن تغيير ترتيب العوامل وتجميعها دون أن يتغيّر الجداء."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ابحث عن عاملين جداء مسافتيهما $10$ أو $100$ أو $1000$ ، واضرب فيهما أولًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−2) \\times (−5) \\times (−7) \\times (−10) = 700$ : عدد العوامل السالبة $4$ (عدد زوجي)، إذن الجداء موجب.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "عدد العوامل السالبة هو $4$ ، وهو عدد زوجي، إذن الجداء موجب.",
+          "نغيّر ترتيب العوامل لنجمع ما يسهّل الحساب: $(2 \\times 5 \\times 10) \\times 7 = 100 \\times 7 = 700$",
+          "$C = 700$"
+        ],
+        "result": "C = 700"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "احسب $D$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-2100",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ العوامل السالبة أولًا لتعرف الإشارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يمكن تغيير ترتيب العوامل وتجميعها دون أن يتغيّر الجداء."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ابحث عن عاملين جداء مسافتيهما $10$ أو $100$ أو $1000$ ، واضرب فيهما أولًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times (−25) \\times (−3) \\times (−7) = −2100$ : عدد العوامل السالبة $3$ (عدد فردي)، إذن الجداء سالب.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "عدد العوامل السالبة هو $3$ ، وهو عدد فردي، إذن الجداء سالب.",
+          "نغيّر ترتيب العوامل لنجمع ما يسهّل الحساب: $(4 \\times 25) \\times (3 \\times 7) = 100 \\times 21 = 2100$",
+          "$D = −2100$"
+        ],
+        "result": "D = −2100"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "lead": "الجداء $A$ .",
+      "statement": "لنكتب $A' = (−4) \\times 17 \\times (−25)$ . هل $A' = A$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IDA-ORDER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن عوامل $A$ بعوامل $A'$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل الأعداد نفسها، بإشاراتها نفسها، وإنّما اختلف ترتيبها؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تغيير ترتيب عوامل جداء لا يغيّر قيمته."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم: الترتيب لا يغيّر الجداء.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العوامل نفسها بإشاراتها: $−25$ و $17$ و $−4$ .",
+          "تغيير ترتيب العوامل لا يغيّر الجداء، إذن $A' = A = 1700$ ."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

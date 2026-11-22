@@ -1,0 +1,85 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l1-003",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — رأس المثلث متساوي الساقين",
+    "estimatedMinutes": 2,
+    "tags": [
+      "متساوي الساقين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_ithbat-khawas-maalam_P1",
+      "modelledOn": "ex-26"
+    }
+  },
+  "generator": {
+    "tool": "u1x-ithbat-khawas-maalam/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "KLM مثلث في معلم متعامد ومتجانس."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "نثبت أن KLM متساوي الساقين رأسه L إذا وجدنا أن:",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$KM^2 = LM^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SAQAYN-QAIM"
+        },
+        {
+          "id": "B",
+          "content": "$LK^2 = LM^2$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$KL^2 = KM^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SAQAYN-QAIM"
+        },
+        {
+          "id": "D",
+          "content": "$LK^2 + LM^2 = KM^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SAQAYN-QAIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الرأس هو النقطة التي يصدر منها الضلعان المتقايسان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما الضلعان الصادران من L ؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن مربعيهما."
+        }
+      ],
+      "feedback": {
+        "correct": "الضلعان الصادران من الرأس L هما [LK] و [LM] : $LK^2 = LM^2$ .",
+        "incorrect": "الرأس L : نقارن الضلعين الصادرين منه، لا غيرهما؛ ومساواة فيثاغورس تثبت زاوية قائمة لا تقايسا."
+      }
+    }
+  ]
+}

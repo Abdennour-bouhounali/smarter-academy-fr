@@ -1,0 +1,235 @@
+{
+  "id": "ex-2am-talim-nuqta-mustawi-l1-006",
+  "lessonCode": "talim-nuqta-mustawi",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — نقط على المحورين",
+    "estimatedMinutes": 6,
+    "tags": [
+      "محور الفواصل",
+      "محور التراتيب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في الشكل أربع نقط في معلم متعامد ومتجانس مبدؤه $O$ .",
+    "figure": {
+      "grid": true,
+      "axes": true,
+      "points": {
+        "A": [
+          0,
+          3
+        ],
+        "B": [
+          -2,
+          0
+        ],
+        "C": [
+          4,
+          2
+        ],
+        "D": [
+          3,
+          -1
+        ],
+        "O": [
+          0,
+          0
+        ]
+      },
+      "ariaLabel": "أربع نقط في معلم، اثنتان منها على المحورين",
+      "maxWidth": 420,
+      "labels": {
+        "O": "sw"
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ النقط المرسومة في الشكل تقع على محور التراتيب ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$B$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-ONAXIS"
+        },
+        {
+          "id": "B",
+          "content": "$A$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$C$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$D$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطة التي تقع على محور التراتيب فاصلتها معدومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النقطة التي تقع على محور الفواصل ترتيبها معدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقرأ كلّ نقطة على الشكل ولا تحكم من الاسم."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة $A$ تقع على محور التراتيب .",
+        "incorrect": "اقرأ كلّ نقطة على الشكل: التي تقع على المحور المطلوب لها إحداثية معدومة، وعليك أن تتأكّد أيّ الإحداثيتين."
+      },
+      "solution": {
+        "lines": [
+          "نبحث عن النقطة التي فاصلتها معدومة",
+          "إنّها $A$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أيّ النقط المرسومة في الشكل تقع على محور الفواصل ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$D$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$C$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$B$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$A$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-ONAXIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطة التي تقع على محور التراتيب فاصلتها معدومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النقطة التي تقع على محور الفواصل ترتيبها معدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقرأ كلّ نقطة على الشكل ولا تحكم من الاسم."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة $B$ تقع على محور الفواصل .",
+        "incorrect": "اقرأ كلّ نقطة على الشكل: التي تقع على المحور المطلوب لها إحداثية معدومة، وعليك أن تتأكّد أيّ الإحداثيتين."
+      },
+      "solution": {
+        "lines": [
+          "نبحث عن النقطة التي ترتيبها معدوم",
+          "إنّها $B$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كم نقطة من النقط المرسومة في الشكل تقع على أحد المحورين ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ النقط واحدة واحدة وطبّق الشرط على كلّ منها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تنس النقط التي على المحورين فقد يكون لها إحداثية معدومة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عُدّ النقط التي تحقّق الشرط فقط."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد هذه النقط $2$ .",
+        "incorrect": "طبّق الشرط على نقطة بعد نقطة واكتب عدد النقط التي تحقّقه."
+      },
+      "solution": {
+        "lines": [
+          "نفحص النقط واحدة واحدة",
+          "عددها $2$"
+        ],
+        "result": "2"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

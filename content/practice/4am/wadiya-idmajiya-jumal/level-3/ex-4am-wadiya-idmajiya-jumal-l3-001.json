@@ -1,0 +1,182 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-jumal-l3-001",
+  "lessonCode": "wadiya-idmajiya-jumal",
+  "level": 3,
+  "metadata": {
+    "title": "بطاقة الإخلاص",
+    "estimatedMinutes": 10,
+    "tags": [
+      "ترييض",
+      "تخفيض"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-31",
+      "page": 63,
+      "section": "الوضعيات",
+      "number": 31
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في متجر كبير يتحلّى صاحبه بالأمانة في الحساب، اشترى زبون 6 علب من الحليب وقارورة عصير ودفع 720DA. زبون آخر يملك بطاقة إخلاص تمكّنه من الاستفادة من تخفيض قدره 20% على ثمن كلّ مشترياته عند الدفع، اشترى 5 علب من الحليب و 5 قارورات عصير من النوع نفسه ودفع 1080DA بعد استظهار بطاقته.\nنسمّي $x$ ثمن علبة الحليب و $y$ ثمن قارورة العصير (بالدينار)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن $x$ و $y$ يحققان الجملة: $\\begin{cases} 6x + y = 720 \\\\ x + y = 270 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بعد تخفيض $20\\%$ يدفع الزبون $80\\%$ من الثمن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب ثمن مشتريات الزبون الثاني ثم اضربه في $0{,}8$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "الزبون الأول: $6x + y = 720$",
+          "الزبون الثاني يدفع $80\\%$ من الثمن (تخفيض $20\\%$ ): $0{,}8(5x + 5y) = 1080$",
+          "أي $4x + 4y = 1080$ ، وبقسمة الطرفين على 4: $x + y = 270$",
+          "ومنه: $\\begin{cases} 6x + y = 720 \\\\ x + y = 270 \\end{cases}$"
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حل هذه الجملة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": {
+        "x": "90",
+        "y": "180"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "180",
+            "y": "90"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل $y$ هو نفسه في المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح إحدى المعادلتين من الأخرى طرفا لطرف لتحذف $y$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض قيمة $x$ في إحدى المعادلتين لتجد $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الثنائية $(90 ; 180)$ تحقق المعادلتين معا: الحليب بـ $90DA$ والعصير بـ $180DA$ .",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} 6x + y = 720 & ...(1) \\\\ x + y = 270 & ...(2) \\end{cases}$",
+          "بطرح المعادلة (2) من المعادلة (1) طرفا لطرف نجد:",
+          "$5x = 450$",
+          "$x = 90$",
+          "بتعويض $x$ بـ $90$ في المعادلة (1) نجد: $6 \\times 90 + y = 720$",
+          "$y = 180$",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(90 ; 180)"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كم كان سيدفع الزبون الثاني لو لم يستظهر بطاقته؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "1350",
+      "misconceptionSignatures": [
+        {
+          "value": "1296",
+          "id": "MISC-TAKHFID-NISBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل السعرين اللذين وجدتهما في السؤال 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثمن 5 علب و 5 قارورات دون تخفيض."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 \\times 90 + 5 \\times 180 = 1350$ ، و $0{,}8 \\times 1350 = 1080$ .",
+        "incorrect": "لا نضيف $20\\%$ إلى 1080: احسب ثمن المشتريات من السعرين."
+      },
+      "solution": {
+        "lines": [
+          "دون تخفيض: $5 \\times 90 + 5 \\times 180 = 450 + 900 = 1350$",
+          "نتحقق: $0{,}8 \\times 1350 = 1080$ .",
+          "كان سيدفع $1350DA$ ."
+        ],
+        "result": "1350\\,DA"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

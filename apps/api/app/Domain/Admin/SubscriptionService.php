@@ -21,7 +21,7 @@ class SubscriptionService
 {
     public function subscriptions(array $filters = []): LengthAwarePaginator
     {
-        $query = Subscription::with('user:id,first_name,last_name,email,grade,account_status');
+        $query = Subscription::with(['user:id,first_name,last_name,email,grade,account_status,role', 'planVersion.plan:id,slug,name', 'grantedBy:id,first_name,last_name']);
 
         if ($status = ($filters['status'] ?? null)) {
             $query->where('status', $status);
@@ -58,10 +58,12 @@ class SubscriptionService
             'active' => Subscription::where('status', Subscription::STATUS_ACTIVE)->count(),
             'expired' => Subscription::where('status', Subscription::STATUS_EXPIRED)->count(),
             'cancelled' => Subscription::where('status', Subscription::STATUS_CANCELLED)->count(),
+            'suspended' => Subscription::where('status', Subscription::STATUS_SUSPENDED)->count(),
             'payments' => Payment::count(),
-            // Dit à l'interface POURQUOI c'est vide, pour qu'elle ne laisse
-            // pas croire à une panne de chargement.
+            // Aucun paiement en ligne : les abonnements sont activés à la main
+            // par l'administration, ou par un code d'activation lié à une offre.
             'paymentProviderIntegrated' => false,
+            'manualActivation' => true,
         ];
     }
 }

@@ -1,0 +1,298 @@
+{
+  "id": "ex-1am-talim-mustaqim-mudarraj-l5-004",
+  "lessonCode": "talim-mustaqim-mudarraj",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — سباق دراجات",
+    "estimatedMinutes": 12,
+    "tags": [
+      "وضعية إدماجية",
+      "نظيرة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في سباق للدراجات بالبليدة نقطة الانطلاق $O$ هي المبدإ؛ والاتجاه الموجب نحو الشرق ووحدة الطول 1 km . سجّل المنظّمون ثلاث نقاط مراقبة على الطريق: $A(-1{,}5)$ غرب الانطلاق و $B(2{,}5)$ و $C(-3)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما بعد النقطة $C(-3)$ عن المبدإ $O$ بالوحدات؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "-3",
+          "id": "MISC-TALIM1-DISTNEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة إلى المبدإ عدد الوحدات بين النقطة و $O$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة لا تكون سالبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احذف الإشارة تجد المسافة."
+        }
+      ],
+      "feedback": {
+        "correct": "البعد عن المبدإ $3$ ، ولا يكون سالبًا.",
+        "incorrect": "اقرأ الجهة من المبدإ ثمّ احسب البعد، ولا تنسَ قيمة التدريجة."
+      },
+      "solution": {
+        "lines": [
+          "المسافة إلى المبدإ هي الفاصلة دون إشارتها",
+          "$3$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "النقطة $A$ فاصلتها $-1{,}5$ . النقطة $A'$ نظيرتها بالنسبة إلى المبدإ $O$ (أي أنّ $O$ منتصف $[AA']$ ). ما فاصلة $A'$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-mustaqim-mudarraj_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "1.5",
+      "misconceptionSignatures": [
+        {
+          "value": "-1.5",
+          "id": "MISC-TALIM1-SYMSAME"
+        },
+        {
+          "value": "-2.5",
+          "id": "MISC-TALIM1-SYMNEXT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطة النظيرة تقع على الجهة الأخرى من المبدإ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يكون المبدإ منتصف القطعة بين النقطة ونظيرتها، فالمسافتان إلى المبدإ متساويتان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "غيّر الإشارة وأبقِ المسافة."
+        }
+      ],
+      "feedback": {
+        "correct": "نظيرة $-1{,}5$ هي $1{,}5$.",
+        "incorrect": "اقرأ الجهة من المبدإ ثمّ احسب البعد، ولا تنسَ قيمة التدريجة."
+      },
+      "solution": {
+        "lines": [
+          "المبدإ منتصف القطعة: للنقطتين المسافة نفسها إلى $O$ ، على جهتين مختلفتين",
+          "البعد: $1{,}5$ ",
+          "فاصلة $A'$ : $1{,}5$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "على مستقيم مدرّج نعلّم النقط التي فواصلها $-1{,}5$، $2{,}5$، $-3$ . أيّ فاصلة هي فاصلة النقطة التي تقع في أقصى اليسار؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-1{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM1-LEFTMAX"
+        },
+        {
+          "id": "B",
+          "content": "$-3$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$2{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM1-LEFTMAX"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع الأعداد على مستقيم مدرّج وانظر أين تقع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأعداد تكبر نحو اليمين وتصغر نحو اليسار."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن مواضع النقط لا أحجام الأرقام المكتوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "أقصى اليسار : $-3$ .",
+        "incorrect": "الأعداد تكبر نحو اليمين: الأصغر على أقصى اليسار والأكبر على أقصى اليمين."
+      },
+      "solution": {
+        "lines": [
+          "نرتّب الفواصل من الأصغر إلى الأكبر",
+          "أقصى اليسار : $-3$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "النقطة $A$ فاصلتها $-1{,}5$ . عيّن العدد الصحيح $a$ الذي يحقّق $a<-1{,}5<a+1$ .",
+      "learningPoints": [
+        {
+          "code": "1am_talim-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "-1",
+          "id": "MISC-TALIM1-BOUNDUP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العدد على المستقيم: بين أيّ علامتين صحيحتين يقع؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العلامة الصغرى هي التي على يسار النقطة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر: $-1{,}5$ يقع بين $-2$ و $-1$ لأنّ $-2<-1{,}5<-1$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$-2<-1{,}5<-1$ : $a=-2$ .",
+        "incorrect": "اقرأ الجهة من المبدإ ثمّ احسب البعد، ولا تنسَ قيمة التدريجة."
+      },
+      "solution": {
+        "lines": [
+          "نضع $-1{,}5$ على المستقيم المدرّج",
+          "يقع بين العلامتين $-2$ و $-1$",
+          "العلامة التي على اليسار: $a=-2$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "النقطتان $A(-1{,}5)$ و $B(2{,}5)$ لهما البعد نفسه عن نقطة الانطلاق.",
+      "learningPoints": [
+        {
+          "code": "1am_talim-mustaqim-mudarraj_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM1-FARSIGN"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع الأعداد على مستقيم مدرّج وانظر أين تقع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأعداد تكبر نحو اليمين وتصغر نحو اليسار."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن مواضع النقط لا أحجام الأرقام المكتوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "حكم صحيح.",
+        "incorrect": "اختبر الجملة بمثال على المستقيم المدرّج."
+      },
+      "solution": {
+        "lines": [
+          "النقطتان $A(-1{,}5)$ و $B(2{,}5)$ لهما البعد نفسه عن نقطة الانطلاق.",
+          "خطأ"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

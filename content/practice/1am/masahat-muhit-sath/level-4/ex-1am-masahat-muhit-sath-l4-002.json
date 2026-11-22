@@ -1,0 +1,295 @@
+{
+  "id": "ex-1am-masahat-muhit-sath-l4-002",
+  "lessonCode": "masahat-muhit-sath",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — ساحة المركز الثقافي",
+    "estimatedMinutes": 12,
+    "tags": [
+      "مساحة",
+      "محيط",
+      "أجور",
+      "ثمن سياج"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 2,
+      "file": "1am-s2-64",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثالث",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يبلّط عاملان ساحة المركز الثقافي بحيّنا في 7 صفوف، وفي كل صف 12 بلاطة. يضع كل عامل 6 بلاطات في الساعة، ويتقاضى 450 دج عن كل ساعة عمل، وتُدفع الأجرة كاملة بأمانة. تُحاط الساحة بسياج، وطول ضلع البلاطة 2 م، وثمن المتر الواحد من السياج 110 دج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "كم بلاطة تغطّي الساحة؟",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "84",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد البلاطات في الصف الواحد وعدد الصفوف معطيان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل صف يحمل العدد نفسه من البلاطات: اجمع الصفوف."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يمكن العدّ بالجمع المتكرر: عدد البلاطات في الصف مكرّرًا بعدد الصفوف."
+        }
+      ],
+      "feedback": {
+        "correct": "$7$ × $12$ = $84$.",
+        "incorrect": "عدد الصفوف مرّات عدد البلاطات في الصف."
+      },
+      "solution": {
+        "lines": [
+          "12 × 7 = 84 بلاطة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما محيط الساحة بوحدات الطول (أضلاع البلاطات)؟",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "38",
+      "misconceptionSignatures": [
+        {
+          "value": "84",
+          "id": "MISC-MASAHA-AREA-PERIM-CONFUSED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المحيط هو طول الحدّ الذي يحيط بالسطح: تتبّع الحافة بإصبعك."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ أضلاع البلاطات الواقعة على الحافة ضلعًا ضلعًا، دون الأضلاع الداخلية المشتركة بين بلاطتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارجع إلى نقطة البداية وتأكد أنك لم تعدّ أي ضلع مرتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$12$ + $7$ + $12$ + $7$ = $38$.",
+        "incorrect": "نجمع أطوال الأضلاع الأربعة."
+      },
+      "solution": {
+        "lines": [
+          "12 + 7 + 12 + 7 = 38 وحدة طول."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كم ساعة يلزم العاملين معًا لتبليط الساحة؟",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العاملان معًا يضعان عددًا معلومًا من البلاطات في الساعة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب ما يضعه عامل واحد في عدد العاملين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم اقسم عدد البلاطات على ما يضعانه في الساعة."
+        }
+      ],
+      "feedback": {
+        "correct": "$84$ ÷ $12$ = $7$ ساعات.",
+        "incorrect": "في الساعة 2 × 6 = 12 بلاطة؛ نقسم 84 على 12."
+      },
+      "solution": {
+        "lines": [
+          "في الساعة: 6 + 6 = 12 بلاطة.",
+          "84 ÷ 12 = 7 ساعات."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "ما مجموع أجرتي العاملين بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "6300",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرة العامل الواحد = عدد الساعات × أجرة الساعة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اضرب في عدد العاملين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من ضرب الأعداد الصحيحة."
+        }
+      ],
+      "feedback": {
+        "correct": "$7$ × $450$ × $2$ = $6300$ دج.",
+        "incorrect": "أجرة عامل ثم ضعفها."
+      },
+      "solution": {
+        "lines": [
+          "7 × 450 = 3150 دج لكل عامل.",
+          "3150 × 2 = 6300 دج."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "ما طول السياج بالمتر؟",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "76",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل وحدة طول تمثّل 2 م."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب المحيط بوحدات الطول في 2."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تأكد من الوحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$38$ × $2$ = $76$ م.",
+        "incorrect": "كل وحدة طول 2 م."
+      },
+      "solution": {
+        "lines": [
+          "38 × 2 = 76 م."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "06",
+      "statement": "ما ثمن السياج بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "1am_masahat-muhit-sath_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "8360",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الثمن = طول السياج × ثمن المتر الواحد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أولًا الطول الذي ستسيّجه فعلًا، ثم اضرب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من أنك ضربت في طول السياج الجديد لا في المحيط الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "$76$ × $110$ = $8360$ دج.",
+        "incorrect": "الثمن = الطول × ثمن المتر."
+      },
+      "solution": {
+        "lines": [
+          "76 × 110 = 8360 دج."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

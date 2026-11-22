@@ -1,0 +1,245 @@
+{
+  "id": "ex-2am-wasf-silsila-hisab-l1-002",
+  "lessonCode": "wasf-silsila-hisab",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أسمّي ثم أحسب",
+    "estimatedMinutes": 8,
+    "tags": [
+      "تسمية",
+      "حساب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "سمِّ كلّ سلسلة بآخر عملية تُنجز فيها، ثم احسبها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما اسم السلسلة $E = 6 + 24 \\div 4$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "حاصل قسمة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-FIRSTOP"
+        },
+        {
+          "id": "B",
+          "content": "مجموع",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "فرق",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع خطًّا تحت العملية التي تُنجز في الأخير، بعد انتهاء كل ما بين القوسين وكل ضرب أو قسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب السلسلة مرحلة مرحلة وتتبّع آخر عملية بقيت لك."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يبقى في الأخير عددان تربط بينهما عملية واحدة: هي التي تعطي اسم السلسلة."
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة عبارة عن مجموع: آخر عملية تُنجز فيها هي الجمع.",
+        "incorrect": "لا تسمِّ السلسلة بأوّل عملية تُنجز ولا بأوّل رمز تراه: سمِّها بآخر عملية تُنجز فيها."
+      },
+      "solution": {
+        "lines": [
+          "$E = 6 + 24 \\div 4$",
+          "$E = 6 + 6$",
+          "$E = 12$",
+          "آخر عملية تُنجز هي الجمع، فالسلسلة عبارة عن مجموع."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $E = 6 + 24 \\div 4$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد كتابة السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 6 + 24 \\div 4 = 12$",
+        "incorrect": "ما بين القوسين يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح، من اليسار نحو اليمين."
+      },
+      "solution": {
+        "lines": [
+          "$E = 6 + 24 \\div 4$",
+          "$E = 6 + 6$",
+          "$E = 12$"
+        ],
+        "result": "12"
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما اسم السلسلة $F = (6 + 24) \\div 4$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مجموع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-FIRSTWRITTEN"
+        },
+        {
+          "id": "B",
+          "content": "فرق",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "حاصل قسمة",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع خطًّا تحت العملية التي تُنجز في الأخير، بعد انتهاء كل ما بين القوسين وكل ضرب أو قسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب السلسلة مرحلة مرحلة وتتبّع آخر عملية بقيت لك."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يبقى في الأخير عددان تربط بينهما عملية واحدة: هي التي تعطي اسم السلسلة."
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة عبارة عن حاصل قسمة: آخر عملية تُنجز فيها هي القسمة.",
+        "incorrect": "لا تسمِّ السلسلة بأوّل عملية تُنجز ولا بأوّل رمز تراه: سمِّها بآخر عملية تُنجز فيها."
+      },
+      "solution": {
+        "lines": [
+          "$F = (6 + 24) \\div 4$",
+          "$F = 30 \\div 4$",
+          "$F = 7{,}5$",
+          "آخر عملية تُنجز هي القسمة، فالسلسلة عبارة عن حاصل قسمة."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "احسب $F = (6 + 24) \\div 4$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "7.5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد كتابة السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$F = (6 + 24) \\div 4 = 7{,}5$",
+        "incorrect": "ما بين القوسين يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح، من اليسار نحو اليمين."
+      },
+      "solution": {
+        "lines": [
+          "$F = (6 + 24) \\div 4$",
+          "$F = 30 \\div 4$",
+          "$F = 7{,}5$"
+        ],
+        "result": "7{,}5"
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

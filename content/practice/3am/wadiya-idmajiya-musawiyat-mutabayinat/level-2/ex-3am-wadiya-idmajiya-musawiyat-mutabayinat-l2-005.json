@@ -1,0 +1,265 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-musawiyat-mutabayinat-l2-005",
+  "lessonCode": "wadiya-idmajiya-musawiyat-mutabayinat",
+  "level": 2,
+  "metadata": {
+    "title": "حصر ثمّ قرار",
+    "estimatedMinutes": 10,
+    "tags": [
+      "الحصر",
+      "القرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثاني",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "أجب عن الأسئلة التالية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "قراءة ميزان لـ كتلة كيس دقيق هي $30{,}1\\ \\mathrm{kg}$ مدوّرة إلى $0{,}1\\ \\mathrm{kg}$ . أيّ الحصرين التاليين لقيمة القياس الحقيقي $v$ صحيح ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$30{,}05 \\le v \\le 30{,}15$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-UPPER-INCLUDED"
+        },
+        {
+          "id": "B",
+          "content": "$30{,}1 \\le v < 30{,}2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-TRUNC"
+        },
+        {
+          "id": "C",
+          "content": "$30{,}05 \\le v < 30{,}15$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$30 \\le v < 30{,}2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-WIDTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ الأرقام يلي رتبة التدوير ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد المدوّر على بعد نصف رتبة منه من الجهتين: الحدّ الأدنى مضمّن والأعلى مستبعد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارجع من الحصر إلى المدوّر للتأكّد."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $30{,}05 \\le v < 30{,}15$ .",
+        "incorrect": "انتبه إلى نصف الرتبة وإلى الطرف الأعلى المستبعد، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نصف الرتبة هو $0{,}05$ : القياس بين $30{,}1 - 0{,}05 = 30{,}05$ و $30{,}1 + 0{,}05 = 30{,}15$ .",
+          "الحدّ الأدنى مضمّن والحدّ الأعلى مستبعد."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كتلة علبة واحدة قُرئت $2{,}4\\ \\mathrm{kg}$ مدوّرة إلى $0{,}1$ ، ومجموع كتل $15$ علب مماثلة هو $S$ . حمولة الرفّ القصوى هي $39{,}75\\ \\mathrm{kg}$ . أيّ الاستنتاجات التالية صحيح ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا نستطيع الجزم: الحدّ المسموح يقع داخل الحصر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-CENTER-EXACT"
+        },
+        {
+          "id": "B",
+          "content": "$S < 39{,}75$ دائمًا: نستطيع الجزم بأنّ المجموع لا يتجاوز الحدّ",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$S > 39{,}75$ دائمًا: نستطيع الجزم بأنّ المجموع يتجاوز الحدّ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-DECISION"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل العدد الذي نضرب فيه موجب أم سالب ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب في عدد موجب يحفظ الاتجاه، وفي عدد سالب يعكسه؛ والجمع والطرح يحفظانه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بين الطرفين الأصغر والأكبر بعد كل عملية."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $S < 39{,}75$ دائمًا: نستطيع الجزم بأنّ المجموع لا يتجاوز الحدّ .",
+        "incorrect": "انتبه إلى اتجاه المتباينة عند الضرب في عدد سالب، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "القراءة $2{,}4$ مدوّرة إلى $0{,}1$ تعني $2{,}35 \\le x < 2{,}45$ ، ومنه $35{,}25 \\le S < 36{,}75$ .",
+          "كل قيم $S$ أصغر من $36{,}75$ وهو لا يتجاوز الحدّ $39{,}75$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "عرض حديقة قيس فكانت قراءة الأداة $4{,}2\\ \\mathrm{m}$ مدوّرة إلى $0{,}1$ . نسمّي $\\ell$ العرض الحقيقي، وقيمة العبارة $E = 2\\ell - 1$ . ما العدد الذي لا تبلغه $E$ (الحدّ الأعلى المستبعد) ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "7.5",
+      "misconceptionSignatures": [
+        {
+          "value": "7.4",
+          "id": "MISC-TADWIR-CENTER-EXACT"
+        },
+        {
+          "value": "7.6",
+          "id": "MISC-TADWIR-TRUNC"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ الأرقام يلي رتبة التدوير ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد المدوّر على بعد نصف رتبة منه من الجهتين: الحدّ الأدنى مضمّن والأعلى مستبعد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارجع من الحصر إلى المدوّر للتأكّد."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $7{,}5$ .",
+        "incorrect": "انتبه إلى نصف الرتبة وإلى الطرف الأعلى المستبعد، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "القراءة تعني $4{,}15 \\le \\ell < 4{,}25$ .",
+          "نضرب في $2$ ثم نضيف $-1$ : الحدّ الأعلى المستبعد هو $7{,}5$ ."
+        ],
+        "result": "7{,}5"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "تكلفة حفل عائلي هي $B(n) = 150 + 15n$ بالـ DA ، حيث $n$ هو عدد المدعوّين. المتاح $212$ DA على الأكثر. ما أكبر عدد صحيح $n$ يحقّق $B(n) \\le 212$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-MUADALA-SOLUTION-CONTEXT"
+        },
+        {
+          "value": "14",
+          "id": "MISC-MUADALA-TRANSLATE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول وما الذي يتساوى في الوضعية ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلة من كمّيتين متساويتين ثمّ حلّها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الحلّ يناسب الوضعية."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $4$ .",
+        "incorrect": "راجع الترجمة إلى معادلة ثمّ الحلّ، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الشرط $150 + 15n \\le 212$ يعطي $15n \\le 62$ (الطرح يحفظ الاتجاه).",
+          "نقسم على $15$ (موجب): $n \\le 62/15$ ، فأكبر عدد صحيح هو $4$ ."
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

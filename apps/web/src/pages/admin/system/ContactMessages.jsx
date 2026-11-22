@@ -1,13 +1,12 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Mail } from 'lucide-react';
-import AdminPage from '../../../components/admin/AdminPage';
+import { AdminPage, useAdminLabels, formatDate, Num } from '../adminUi';
 import DataTable from '../../../components/admin/ui/DataTable';
 import { EmptyState } from '../../../components/admin/ui/states';
 import { useAdminResource } from '../../../hooks/useAdminResource';
 import { fetchContactSubmissions } from '../../../services/contactService';
 import { useDocumentMeta } from '../../../hooks/useDocumentMeta';
-
-const dateFormat = new Intl.DateTimeFormat('fr-FR', { dateStyle: 'short', timeStyle: 'short' });
 
 /**
  * Les demandes envoyées par le formulaire de contact public.
@@ -17,46 +16,55 @@ const dateFormat = new Intl.DateTimeFormat('fr-FR', { dateStyle: 'short', timeSt
  * de le constituer à elle seule.
  */
 export default function AdminContactMessages() {
-  useDocumentMeta('Messages de contact — Administration');
+  const { t } = useTranslation('admin');
+  const L = useAdminLabels();
+  useDocumentMeta(t('system.messagesMetaTitle'));
 
   const loader = useCallback((token) => fetchContactSubmissions(token), []);
   const { data, loading, error, reload } = useAdminResource(loader, [loader]);
 
   return (
     <AdminPage
-      eyebrow="Système"
-      title="Messages de contact"
-      subtitle="Les demandes envoyées depuis le formulaire public."
+      eyebrow={t('system.eyebrow')}
+      title={t('system.messagesTitle')}
+      subtitle={t('system.messagesSubtitle')}
     >
       <DataTable
         rows={data ?? []}
         loading={loading}
         error={error}
         onRetry={reload}
-        empty={<EmptyState icon={Mail} title="Aucun message" hint="Aucune demande n’a été envoyée pour l’instant." />}
+        labels={L.table}
+        empty={<EmptyState icon={Mail} title={t('system.emptyMessagesTitle')} hint={t('system.emptyMessagesHint')} />}
         columns={[
           {
             key: 'name',
-            label: 'Personne',
+            label: t('system.columnSender'),
             render: (contact) => (
               <div>
                 <span className="font-semibold text-slate-900">{contact.name}</span>
-                <a href={`mailto:${contact.email}`} className="block text-xs text-blue-600 hover:underline">{contact.email}</a>
+                {/* L'adresse reste LTR : un e-mail retourné n'est plus une adresse. */}
+                <a href={`mailto:${contact.email}`} dir="ltr" className="block text-xs text-blue-600 hover:underline">{contact.email}</a>
               </div>
             ),
           },
           {
             key: 'context',
-            label: 'Contexte',
+            label: t('system.columnContext'),
             render: (contact) => (
               <span className="text-slate-600">
-                {[contact.classe, contact.objectif, contact.ville].filter(Boolean).join(' · ') || '—'}
+                {[contact.classe, contact.objectif, contact.ville].filter(Boolean).join(' · ') || t('common.dash')}
               </span>
             ),
           },
-          { key: 'phone', label: 'Téléphone', render: (contact) => contact.phone ?? '—' },
-          { key: 'message', label: 'Message', render: (contact) => <span className="line-clamp-2 max-w-md text-slate-700">{contact.message}</span> },
-          { key: 'created_at', label: 'Reçu le', render: (contact) => <span className="whitespace-nowrap text-slate-500">{dateFormat.format(new Date(contact.created_at))}</span> },
+          {
+            key: 'phone',
+            label: t('system.columnPhone'),
+            // Un numéro de téléphone est une suite de chiffres : LTR, toujours.
+            render: (contact) => (contact.phone ? <Num>{contact.phone}</Num> : t('common.dash')),
+          },
+          { key: 'message', label: t('system.columnMessage'), render: (contact) => <span className="line-clamp-2 max-w-md text-slate-700">{contact.message}</span> },
+          { key: 'created_at', label: t('system.columnReceivedAt'), render: (contact) => <span className="whitespace-nowrap text-slate-500">{formatDate(contact.created_at, { withTime: true })}</span> },
         ]}
       />
     </AdminPage>

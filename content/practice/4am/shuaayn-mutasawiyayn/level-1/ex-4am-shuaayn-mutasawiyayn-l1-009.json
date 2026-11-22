@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l1-009",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — قطران متناصفان",
+    "estimatedMinutes": 3,
+    "tags": [
+      "متوازي الأضلاع",
+      "القطران"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_shuaayn-mutasawiyayn_P2",
+      "modelledOn": "method-equal"
+    }
+  },
+  "statement": {
+    "content": "A، B، C، D أربع نقط (كل ثلاثة منها ليست على استقامة) حيث للقطعتين [AC] و [BD] نفس المنتصف."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إذن:",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{AB} = \\overrightarrow{DC}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{AB} = \\overrightarrow{CD}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{AC} = \\overrightarrow{BD}$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القطعتان [AC] و [BD] هما قطرا رباعي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رباعي قطراه متناصفان متوازي أضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب رؤوس متوازي الأضلاع بحيث يكون [AC] و [BD] قطرين."
+        }
+      ],
+      "feedback": {
+        "correct": "ABCD متوازي أضلاع (قطراه [AC] و [BD])، فالشعاعان AB و DC متساويان.",
+        "incorrect": "حدّد أولا ترتيب الرؤوس: القطران يصلان رأسين متقابلين."
+      }
+    }
+  ]
+}

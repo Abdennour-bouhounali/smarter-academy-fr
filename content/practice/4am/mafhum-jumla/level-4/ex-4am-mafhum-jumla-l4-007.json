@@ -1,0 +1,175 @@
+{
+  "id": "ex-4am-mafhum-jumla-l4-007",
+  "lessonCode": "mafhum-jumla",
+  "level": 4,
+  "metadata": {
+    "title": "نادي الشطرنج",
+    "estimatedMinutes": 10,
+    "tags": [
+      "ترجمة",
+      "جملة",
+      "ثنائية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mafhum-jumla_P2",
+      "modelledOn": "act-1"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في نادي الشطرنج، حيث يتعلّم الأعضاء الصبر والتفكير، 30 عضوا: $x$ ولدا و $y$ بنتا. غادر 4 أولاد وبنتان النادي، فأصبح عدد الأولاد مساويا لعدد البنات."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "يُترجم الشرط الثاني بالمعادلة $x - 4 = y - 2$ . اكتبها على الشكل $x - y = c$ ، ثم أعط العدد $c$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $c$ فقط",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انقل $y$ إلى الطرف الأول و $-4$ إلى الطرف الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحد الذي يُنقل تتغيّر إشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$x - y = -2 + 4 = 2$ .",
+        "incorrect": "انقل الحدود مع تغيير الإشارة ثم احسب الطرف الثاني."
+      },
+      "solution": {
+        "lines": [
+          "$x - 4 = y - 2$",
+          "$x - y = -2 + 4$"
+        ],
+        "result": "x - y = 2"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "لتكن الثنائيتان $(14 ; 16)$ و $(16 ; 14)$ . أيهما حل للجملة $\\begin{cases} x + y = 30 \\\\ x - y = 2 \\end{cases}$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mafhum-jumla_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية التي هي حل للجملة: قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر)",
+      "expectedAnswer": {
+        "x": "16",
+        "y": "14"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "14",
+            "y": "16"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جرّب كل ثنائية في المعادلتين معا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الأول في الثنائية قيمة $x$ والثاني قيمة $y$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استبعد كل ثنائية لا تحقق إحدى المعادلتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$16 + 14 = 30$ ؛ $16 - 14 = 2$.",
+        "incorrect": "الحل يحقق المعادلتين في آن واحد، والترتيب في الثنائية مهم: عوّض كل ثنائية في المعادلتين."
+      },
+      "solution": {
+        "lines": [
+          "التحقق من الثنائية $(14 ; 16)$ :",
+          "$14 + 16 = 30$",
+          "$14 - 16 = -2 \\neq 2$",
+          "ومنه الثنائية $(14 ; 16)$ ليست حلا للجملة.",
+          "التحقق من الثنائية $(16 ; 14)$ :",
+          "$16 + 14 = 30$",
+          "$16 - 14 = 2$",
+          "ومنه الثنائية $(16 ; 14)$ حل للجملة."
+        ],
+        "result": "(16 ; 14)"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "استنتج عدد الأولاد في النادي بعد المغادرة.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الأولاد قبل المغادرة هو قيمة $x$ في الثنائية حل الجملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "غادر 4 أولاد."
+        }
+      ],
+      "feedback": {
+        "correct": "$16 - 4 = 12$ ولدا (ويبقى $14 - 2 = 12$ بنتا).",
+        "incorrect": "اطرح عدد الأولاد الذين غادروا من قيمة $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "الثنائية $(16 ; 14)$ حل للجملة، إذن كان في النادي 16 ولدا.",
+          "بعد المغادرة: $16 - 4 = 12$"
+        ],
+        "result": "12"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

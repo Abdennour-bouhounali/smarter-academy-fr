@@ -1,0 +1,242 @@
+{
+  "id": "ex-4am-nashr-tabsit-l5-007",
+  "lessonCode": "nashr-tabsit",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2018 — ورشة الأحذية التقليدية",
+    "estimatedMinutes": 13,
+    "tags": [
+      "جداء قوسين",
+      "ربح",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_nashr-tabsit_P3",
+      "modelledOn": "BEM 2018 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2018",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في ورشة لصناعة الأحذية التقليدية بغرداية، يؤدّي صاحبها أجور عمّالها في وقتها، يعمل $(x + 3)$ عمّال، ويصنع كل عامل في الأسبوع $(2x + 5)$ زوجًا من الأحذية، حيث $x$ عدد طبيعي."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عبّر بدلالة $x$ عن العدد $N$ لأزواج الأحذية المصنوعة في الأسبوع، على شكل مجموع مبسّط.",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $N$ على الشكل $ax^2 + bx + c$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب كل حد من القوس الأول في كل حد من القوس الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى إشارة كل حد عند كتابة الجداءات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$N = 2x^2 + 11x + 15$ إذن $a = 2$.",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$N = (x + 3) \\times (2x + 5)$",
+          "$N = x \\times 2x + x \\times 5 + 3 \\times 2x + 3 \\times 5$",
+          "$N = 2x^2 + 5x + 6x + 15$"
+        ],
+        "result": "N = 2x^2 + 11x + 15"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $N$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-NASHR-AWWAL-AKHIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع معاملات حدود $x$ بإشاراتها بعد النشر."
+        }
+      ],
+      "feedback": {
+        "correct": "$N = 2x^2 + 11x + 15$ إذن $b = 11$.",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $b$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$N = 2x^2 + 11x + 15$"
+        ],
+        "result": "b = 11"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "العدد $c$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $N$ على الشكل $ax^2 + bx + c$ : اكتب العدد $c$ فقط",
+      "expectedAnswer": "15",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$N = 2x^2 + 11x + 15$ إذن $c = 15$.",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $c$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$N = 2x^2 + 11x + 15$"
+        ],
+        "result": "c = 15"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "احسب عدد الأزواج المصنوعة في الأسبوع من أجل $x = 4$ .",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "91",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى في الشكل المبسّط الذي وجدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$N = 91$.",
+        "incorrect": "عوّض $x$ في كل حد، واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$N = 2 \\times 4^2 + 11 \\times 4 + 15 = 32 + 44 + 15$",
+          "تحقّق: $7$ عمّال × $13$ زوجًا $= 91$"
+        ],
+        "result": "N = 91"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "☜ يربح صاحب الورشة 650DA في كل زوج، ويدفع أسبوعيًا مصاريف ثابتة (كراء وكهرباء) قدرها 25000DA . ما ربحه الصافي في الأسبوع (من أجل $x = 4$)؟",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدينار DA)",
+      "expectedAnswer": "34150",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الربح من كل الأزواج: عددها × 650."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح المصاريف الثابتة."
+        }
+      ],
+      "feedback": {
+        "correct": "$91 \\times 650 - 25000 = 59150 - 25000 = 34150$ DA .",
+        "incorrect": "اضرب عدد الأزواج في الربح عن كل زوج، ثم اطرح المصاريف الثابتة."
+      },
+      "solution": {
+        "lines": [
+          "الربح من الأزواج: $91 \\times 650 = 59150$ DA",
+          "الربح الصافي: $59150 - 25000 = 34150$ DA"
+        ],
+        "result": "34150\\ DA"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

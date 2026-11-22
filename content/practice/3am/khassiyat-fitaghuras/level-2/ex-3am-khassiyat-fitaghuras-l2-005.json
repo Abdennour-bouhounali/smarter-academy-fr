@@ -1,0 +1,249 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l2-005",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — قطر شاشة التلفاز",
+    "estimatedMinutes": 7,
+    "tags": [
+      "خاصية فيثاغورس",
+      "قطر مستطيل",
+      "التدوير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يبيع التاجر صالح الشاشات بأمانة، ولا يكتب على البطاقة إلا ما قاسه بنفسه. شاشة مستطيلة $ABCD$ عرضها $AB = 88\\,\\mathrm{cm}$ وارتفاعها $BC = 49{,}5\\,\\mathrm{cm}$ ، ويريد أن يكتب طول قطرها $[AC]$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          8.8,
+          0
+        ],
+        "C": [
+          8.8,
+          4.95
+        ],
+        "D": [
+          0,
+          4.95
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "88 cm"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "49,5 cm"
+        },
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "A"
+        ],
+        {
+          "from": "A",
+          "to": "C",
+          "tone": "indigo",
+          "bold": true
+        }
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "B",
+          "C"
+        ]
+      ],
+      "ariaLabel": "شاشة مستطيلة ABCD عرضها AB = 88 cm وارتفاعها BC = 49,5 cm، وقطرها [AC]",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $AC^2$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: قيمة $AC^2$ (بـ $cm^2$)",
+      "expectedAnswer": "10194.25",
+      "misconceptionSignatures": [
+        {
+          "value": "275",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        },
+        {
+          "value": "5293.75",
+          "id": "MISC-FITAGHURAS-HYP-WRONG"
+        },
+        {
+          "value": "137.5",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مربع العدد هو جداؤه في نفسه: $a^2 = a \\times a$ وليس $2 \\times a$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC^2 = 88^2 + 49{,}5^2 = 10194{,}25$ .",
+        "incorrect": "اكتب مساواة فيثاغورس بالوتر وحده في طرف، ثم ربّع كل طول (اضربه في نفسه) قبل الجمع."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $B$ ، حسب خاصية فيثاغورس: $AC^2 = AB^2 + BC^2$",
+          "$AC^2 = 88^2 + 49{,}5^2$",
+          "$AC^2 = 7744 + 2450{,}25 = 10194{,}25$"
+        ],
+        "result": "AC^2 = 10194{,}25"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط قيمة مقرّبة لطول القطر $AC$ بالتدوير إلى الوحدة.",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm مدوّرا إلى الوحدة",
+      "expectedAnswer": "101",
+      "misconceptionSignatures": [
+        {
+          "value": "100",
+          "id": "MISC-FITAGHURAS-ROUND-TRUNC"
+        },
+        {
+          "value": "137.5",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "10194.25",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مربع الطول، ثم استعمل اللمسة $\\sqrt{\\ }$ ، ولا تدوّر إلا النتيجة الأخيرة (انظر إلى الرقم الموالي للرقم المطلوب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC^2 = 88^2 + 49{,}5^2 = 10194{,}25$ ، إذن $AC \\approx 101\\,\\mathrm{cm}$ .",
+        "incorrect": "ابدأ بتحديد الوتر، ثم اكتب مساواة فيثاغورس، وتذكّر أن ما تحسبه أولا هو مربع الطول لا الطول نفسه."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $B$ ، حسب خاصية فيثاغورس: $AC^2 = AB^2 + BC^2$",
+          "$AC^2 = 88^2 + 49{,}5^2$",
+          "$AC^2 = 7744 + 2450{,}25 = 10194{,}25$",
+          "$AC = \\sqrt{10194{,}25}$ (القيمة المضبوطة)",
+          "باستعمال اللمسة $\\sqrt{\\ }$ للآلة الحاسبة: $\\sqrt{10194{,}25} \\approx 100{,}966578628$",
+          "المدوّر إلى الوحدة : $AC \\approx 101\\,\\mathrm{cm}$"
+        ],
+        "result": "AC \\approx 101\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "برّر لماذا يحقّ لنا استعمال خاصية فيثاغورس لحساب طول القطر.",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما طبيعة زوايا المستطيل؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القطر يقسم المستطيل إلى مثلثين: ما نوعهما؟"
+        }
+      ],
+      "feedback": {
+        "correct": "القطر وتر مثلث قائم رأس زاويته القائمة رأس من رؤوس المستطيل.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "$ABCD$ مستطيل، فزواياه الأربع قائمة، ومنها الزاوية $\\widehat{ABC}$ .",
+          "إذن المثلث $ABC$ قائم في $B$ ، وتره القطر $[AC]$ .",
+          "حسب خاصية فيثاغورس: $AC^2 = AB^2 + BC^2$ ."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "ex-4am-muntasaf-masafa-l1-005",
+  "lessonCode": "muntasaf-masafa",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — منتصف قطعة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المنتصف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_muntasaf-masafa_P1",
+      "modelledOn": "know-mid"
+    }
+  },
+  "statement": {
+    "content": "في معلم للمستوي: $A(2\\,;\\,6)$ و $B(8\\,;\\,4)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا I منتصف [AB]:",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح أو كسر مثل 1/2)",
+      "expectedAnswer": {
+        "x": "5",
+        "y": "5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MUNTASAF-NISF",
+          "value": {
+            "x": "10",
+            "y": "10"
+          }
+        },
+        {
+          "id": "MISC-MAALAM-MUNTASAF-TARH",
+          "value": {
+            "x": "3",
+            "y": "-1"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المنتصف يقع في منتصف الطريق أفقيا وفي منتصف الطريق عموديا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الفاصلتين ثم اقسم على 2، وافعل الشيء نفسه مع الترتيبين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى الإشارات: جمع عدد سالب يعني طرح قيمته."
+        }
+      ],
+      "feedback": {
+        "correct": "$x_I = \\dfrac{2 + 8}{2} = 5$ و $y_I = \\dfrac{6 + 4}{2} = 5$ .",
+        "incorrect": "متوسط الفاصلتين ثم متوسط الترتيبين."
+      }
+    }
+  ]
+}

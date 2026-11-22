@@ -1,0 +1,228 @@
+{
+  "id": "ex-4am-mutarajiha-ula-l4-008",
+  "lessonCode": "mutarajiha-ula",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2025 — عبارة، تحليل وإشارة",
+    "estimatedMinutes": 11,
+    "tags": [
+      "متراجحة",
+      "متطابقات شهيرة",
+      "تحليل",
+      "حل متراجحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mutarajiha-ula_P2",
+      "modelledOn": "BEM 2025 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تعطى العبارة:",
+    "formulas": [
+      "E = x^2 - 10x + 16"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أنه يمكن كتابة العبارة $E$ على الشكل: $E = (x - 5)^2 - 9$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mutarajiha-ula_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر $(x - 5)^2$ بالمتطابقة الشهيرة ثم بسّط."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا."
+      },
+      "solution": {
+        "lines": [
+          "$(x - 5)^2 - 9 = x^2 - 10x + 25 - 9$",
+          "$= x^2 - 10x + 16$",
+          "$= E$"
+        ],
+        "result": "E = (x - 5)^2 - 9"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "حلّل العبارة $E$ إلى جداء عاملين من الدرجة الأولى.",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutarajiha-ula_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب على الشكل $(x - 2)(x + n)$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "-8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $9$ على شكل مربع، فتصبح $E$ فرق مربعين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل $a^2 - b^2 = (a - b)(a + b)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = (x - 2)(x - 8)$ إذن $n = -8$ .",
+        "incorrect": "أخرج العامل المشترك من كل حد، ثم بسّط ما بين القوسين الكبيرين بإشاراته."
+      },
+      "solution": {
+        "lines": [
+          "$E = (x - 5)^2 - 3^2$",
+          "$= (x - 5 - 3)(x - 5 + 3)$",
+          "$= (x - 8)(x - 2)$"
+        ],
+        "result": "E = (x - 2)(x - 8)"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "احسب قيم $x$ التي من أجلها تكون العبارة $E - x^2$ موجبة تماما.",
+      "statement": "حدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutarajiha-ula_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x < k$ أو $x \\leqslant k$ أو $x > k$ أو $x \\geqslant k$ : اكتب العدد $k$ فقط (عدد صحيح أو كسر a/b، قد يكون سالبًا)",
+      "expectedAnswer": "8/5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر، كما في حل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إضافة عدد إلى الطرفين أو طرحه منهما لا تغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحدّ هو العدد الذي يحقّق المعادلة المرفقة (نضع «=» مكان رمز المتباينة): اقسم في الأخير على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "حدّ الحلول هو $k = \\dfrac{8}{5}$ .",
+        "incorrect": "أعد الحل سطرًا سطرًا: العملية نفسها على الطرفين، ثم القسمة على معامل $x$ في الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$E - x^2 = x^2 - 10x + 16 - x^2 = -10x + 16$",
+          "حدّ القيم هو حلّ المعادلة المرفقة: $-10x + 16 = 0$",
+          "$-10x = -16$",
+          "$\\dfrac{-10x}{-10} = \\dfrac{-16}{-10}$",
+          "إذن حدّ الحلول هو $\\dfrac{8}{5}$ ."
+        ],
+        "result": "k = \\dfrac{8}{5}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_mutarajiha-ula_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < \\dfrac{8}{5}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$x \\leqslant \\dfrac{8}{5}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        },
+        {
+          "id": "C",
+          "content": "$x > \\dfrac{8}{5}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-SALIB-BILA-QALB"
+        },
+        {
+          "id": "D",
+          "content": "$x \\geqslant \\dfrac{8}{5}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-SALIB-BILA-QALB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارة معامل $x$ في آخر سطر قبل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد موجب تحافظ على الاتجاه، والقسمة على عدد سالب تغيّره."
+        }
+      ],
+      "feedback": {
+        "correct": "$x < \\dfrac{8}{5}$ .",
+        "incorrect": "تتبّع سطور الحل: الاتجاه يتغيّر فقط عند الضرب أو القسمة على عدد سالب، ونوع المتباينة (تامة أو غير تامة) لا يتغيّر أبدًا."
+      },
+      "solution": {
+        "lines": [
+          "$E - x^2 = x^2 - 10x + 16 - x^2 = -10x + 16$",
+          "تكون $E - x^2$ موجبة تماما يعني: $-10x + 16 > 0$",
+          "$-10x > -16$",
+          "نقسم الطرفين على العدد السالب $-10$ فنغيّر اتجاه المتباينة:",
+          "$\\dfrac{-10x}{-10} < \\dfrac{-16}{-10}$",
+          "إذن حلول المتراجحة هي كل قيم $x$ الأصغر تماما من $\\dfrac{8}{5}$ .",
+          "قسمنا الطرفين (أو ضربناهما) في آخر خطوة على عدد سالب، فتغيّر اتجاه المتباينة وبقي نوعها."
+        ],
+        "result": "x < \\dfrac{8}{5}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

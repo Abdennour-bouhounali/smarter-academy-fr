@@ -1,0 +1,248 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l3-009",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — إطار حوض الأزهار",
+    "estimatedMinutes": 8,
+    "tags": [
+      "خاصية فيثاغورس",
+      "التدوير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "قرّر تلاميذ القسم الاعتناء بحوض أزهار مثلث $ABC$ قائم في $A$ في حديقة المدرسة، حيث $AB = 3\\,\\mathrm{m}$ و $AC = 4{,}5\\,\\mathrm{m}$ ، وإحاطته بإطار خشبي.",
+    "figure": {
+      "points": {
+        "A": [
+          0.0,
+          0.0
+        ],
+        "C": [
+          4.5,
+          0.0
+        ],
+        "B": [
+          0.0,
+          3.0
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "C",
+          "label": "4,5 m"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "label": "3 m"
+        },
+        {
+          "from": "C",
+          "to": "B"
+        }
+      ],
+      "rightAngles": [
+        [
+          "C",
+          "A",
+          "B"
+        ]
+      ],
+      "ariaLabel": "حوض أزهار مثلث ABC قائم في A حيث AB = 3 m و AC = 4,5 m",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $BC^2$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: قيمة $BC^2$ (بـ $m^2$)",
+      "expectedAnswer": "29.25",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        },
+        {
+          "value": "11.25",
+          "id": "MISC-FITAGHURAS-HYP-WRONG"
+        },
+        {
+          "value": "7.5",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مربع العدد هو جداؤه في نفسه: $a^2 = a \\times a$ وليس $2 \\times a$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC^2 = 3^2 + 4{,}5^2 = 29{,}25$ .",
+        "incorrect": "اكتب مساواة فيثاغورس بالوتر وحده في طرف، ثم ربّع كل طول (اضربه في نفسه) قبل الجمع."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $A$ ، حسب خاصية فيثاغورس: $BC^2 = AB^2 + AC^2$",
+          "$BC^2 = 3^2 + 4{,}5^2$",
+          "$BC^2 = 9 + 20{,}25 = 29{,}25$"
+        ],
+        "result": "BC^2 = 29{,}25"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط قيمة مقرّبة للطول $BC$ بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m مدوّرا إلى 0,1",
+      "expectedAnswer": "5.4",
+      "misconceptionSignatures": [
+        {
+          "value": "7.5",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "29.25",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مربع الطول، ثم استعمل اللمسة $\\sqrt{\\ }$ ، ولا تدوّر إلا النتيجة الأخيرة (انظر إلى الرقم الموالي للرقم المطلوب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC^2 = 3^2 + 4{,}5^2 = 29{,}25$ ، إذن $BC \\approx 5{,}4\\,\\mathrm{m}$ .",
+        "incorrect": "ابدأ بتحديد الوتر، ثم اكتب مساواة فيثاغورس، وتذكّر أن ما تحسبه أولا هو مربع الطول لا الطول نفسه."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $A$ ، حسب خاصية فيثاغورس: $BC^2 = AB^2 + AC^2$",
+          "$BC^2 = 3^2 + 4{,}5^2$",
+          "$BC^2 = 9 + 20{,}25 = 29{,}25$",
+          "$BC = \\sqrt{29{,}25}$ (القيمة المضبوطة)",
+          "باستعمال اللمسة $\\sqrt{\\ }$ للآلة الحاسبة: $\\sqrt{29{,}25} \\approx 5{,}408326913$",
+          "المدوّر إلى $0{,}1$ : $BC \\approx 5{,}4\\,\\mathrm{m}$"
+        ],
+        "result": "BC \\approx 5{,}4\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أعط قيمة مقرّبة إلى $0{,}01$ لمحيط الحوض.",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: المحيط بـ m مدوّرا إلى 0,01",
+      "expectedAnswer": "12.91",
+      "misconceptionSignatures": [
+        {
+          "value": "12.9",
+          "id": "MISC-FITAGHURAS-ROUND-EARLY"
+        },
+        {
+          "value": "15",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المحيط مجموع الأضلاع الثلاثة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل للطول $BC$ قيمة الآلة الحاسبة كاملة، لا القيمة المدوّرة إلى $0{,}1$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "دوّر المجموع في النهاية فقط."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 + 4{,}5 + \\sqrt{29{,}25} \\approx 12{,}91\\,\\mathrm{m}$ .",
+        "incorrect": "إذا دوّرت $BC$ قبل الجمع فقدت دقّة: اجمع بالقيمة الكاملة ثم دوّر."
+      },
+      "solution": {
+        "lines": [
+          "$P = AB + AC + BC = 3 + 4{,}5 + \\sqrt{29{,}25}$",
+          "$P \\approx 7{,}5 + 5{,}40832 \\approx 12{,}90832$",
+          "إذن $P \\approx 12{,}91\\,\\mathrm{m}$ (تدوير النتيجة الأخيرة فقط)."
+        ],
+        "result": "P \\approx 12{,}91\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

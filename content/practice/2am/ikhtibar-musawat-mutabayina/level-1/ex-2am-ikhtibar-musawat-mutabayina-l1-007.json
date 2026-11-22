@@ -1,0 +1,199 @@
+{
+  "id": "ex-2am-ikhtibar-musawat-mutabayina-l1-007",
+  "lessonCode": "ikhtibar-musawat-mutabayina",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — طرف واحد لا يكفي",
+    "estimatedMinutes": 6,
+    "tags": [
+      "اختبار مساواة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اختبر صحّة كلّ مساواة أو متباينة من أجل القيمة المعطاة :"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل المساواة $2x+3=x+9$ صحيحة من أجل $x=3$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بالقيمة المعطاة في الطرف الأوّل ثمّ في الطرف الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة، مع إنجاز الضرب قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الناتجين : إذا تساويا فالمساواة صحيحة، وإلاّ فهي خاطئة."
+        }
+      ],
+      "feedback": {
+        "correct": "لا : المساواة خاطئة .",
+        "incorrect": "عوّض الحرف في الطرفين، احسب كلّ طرف ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل : $2\\times 3+3=9$ .",
+          "الطرف الثاني : $3+9=12$ .",
+          "$9\\ne 12$ : الطرفان مختلفان، فالمساواة خاطئة ."
+        ]
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل المساواة $2x+3=x+9$ صحيحة من أجل $x=6$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "نعم",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بالقيمة المعطاة في الطرف الأوّل ثمّ في الطرف الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة، مع إنجاز الضرب قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الناتجين : إذا تساويا فالمساواة صحيحة، وإلاّ فهي خاطئة."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم : المساواة صحيحة .",
+        "incorrect": "عوّض الحرف في الطرفين، احسب كلّ طرف ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل : $2\\times 6+3=15$ .",
+          "الطرف الثاني : $6+9=15$ .",
+          "$15=15$ : الطرفان متساويان، فالمساواة صحيحة ."
+        ]
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "من بين القيم $1$ ، $3$ ، $6$ : أيّ قيمة تجعل المساواة $2x+3=x+9$ صحيحة ؟ اختر الإجابة الصحيحة :",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IKHTIBAR-ONESIDE"
+        },
+        {
+          "id": "C",
+          "content": "$6$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختبر كلّ خيار على حدة : عوّض الحرف في الطرفين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الطرف الأوّل والطرف الثاني لكلّ قيمة ثمّ قارن الناتجين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القيمة الصحيحة واحدة فقط : هي التي يتساوى عندها الطرفان."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة هي $6$ .",
+        "incorrect": "جرّب كلّ خيار في الطرفين ولا تكتف بطرف واحد."
+      },
+      "solution": {
+        "lines": [
+          "$x=1$ : $5\\ne 10$ ← خاطئة .",
+          "$x=3$ : $9\\ne 12$ ← خاطئة .",
+          "$x=6$ : $15=15$ ← صحيحة ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

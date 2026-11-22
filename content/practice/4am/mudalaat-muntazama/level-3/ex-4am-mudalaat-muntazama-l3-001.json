@@ -1,0 +1,170 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l3-001",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 3,
+  "metadata": {
+    "title": "طرائق — زاوية الخماسي المنتظم",
+    "estimatedMinutes": 3,
+    "tags": [
+      "زاوية المضلع",
+      "الخماسي"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-angle",
+      "page": 157,
+      "section": "طرائق"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 157): ABCDE خماسي منتظم مركزه O.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -1.176,
+          1.618
+        ],
+        "B": [
+          -1.902,
+          -0.618
+        ],
+        "C": [
+          0,
+          -2
+        ],
+        "D": [
+          1.902,
+          -0.618
+        ],
+        "E": [
+          1.176,
+          1.618
+        ]
+      },
+      "circles": [
+        {
+          "center": "O",
+          "radius": 2
+        }
+      ],
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "tone": "rose",
+          "bold": true
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "tone": "rose",
+          "bold": true
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "tone": "rose",
+          "bold": true
+        },
+        {
+          "from": "D",
+          "to": "E",
+          "tone": "rose",
+          "bold": true
+        },
+        {
+          "from": "E",
+          "to": "A",
+          "tone": "rose",
+          "bold": true
+        },
+        {
+          "from": "O",
+          "to": "A",
+          "dashed": true
+        },
+        {
+          "from": "O",
+          "to": "B",
+          "dashed": true
+        },
+        {
+          "from": "O",
+          "to": "C",
+          "dashed": true
+        },
+        {
+          "from": "O",
+          "to": "D",
+          "dashed": true
+        },
+        {
+          "from": "O",
+          "to": "E",
+          "dashed": true
+        }
+      ],
+      "angles": [
+        {
+          "at": "A",
+          "from": "B",
+          "to": "E",
+          "label": "?"
+        }
+      ],
+      "ariaLabel": "خماسي منتظم ABCDE في دائرته المحيطة التي مركزها O، وأنصاف الأقطار متقطعة، والزاوية BAE معلّمة",
+      "maxWidth": 360
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما هو قيس الزاوية $\\widehat{BAE}$ (بالدرجات)؟",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح (بالدرجات)",
+      "expectedAnswer": "108",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUNTAZAM-MARKAZIYA",
+          "value": "72"
+        },
+        {
+          "id": "MISC-MUNTAZAM-180",
+          "value": "54"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالزاوية المركزية التي تحصر ضلعا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المثلث الذي رأسه المركز وقاعدته ضلع متساوي الساقين: احسب زاويتي قاعدته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زاوية المضلع ضعف زاوية قاعدة هذا المثلث."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{AOE} = 72^\\circ$ ، $\\widehat{OAE} = \\dfrac{180^\\circ - 72^\\circ}{2} = 54^\\circ$ ، و $\\widehat{BAE} = 2 \\times 54^\\circ$ .",
+        "incorrect": "زاوية الخماسي ضعف زاوية قاعدة المثلث المتساوي الساقين AOE."
+      },
+      "difficulty": 3
+    }
+  ]
+}

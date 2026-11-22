@@ -1,0 +1,273 @@
+{
+  "id": "ex-2am-talim-nuqta-mustawi-l1-005",
+  "lessonCode": "talim-nuqta-mustawi",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — من الإحداثيتين إلى النقطة",
+    "estimatedMinutes": 7,
+    "tags": [
+      "وضع نقطة",
+      "ترتيب الإحداثيتين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "علّمت إيمان سبع نقط على لوحة معلم متعامد ومتجانس مبدؤه $O$ ، وكتبت أسماءها على الشكل. تريد أن تعرف أيّ نقطة تعود إلى كلّ سجلّ في دفترها.",
+    "figure": {
+      "grid": true,
+      "axes": true,
+      "points": {
+        "M": [
+          3,
+          2
+        ],
+        "N": [
+          2,
+          3
+        ],
+        "P": [
+          -3,
+          2
+        ],
+        "Q": [
+          3,
+          -2
+        ],
+        "R": [
+          -2,
+          -3
+        ],
+        "S": [
+          2,
+          -3
+        ],
+        "U": [
+          -2,
+          3
+        ],
+        "O": [
+          0,
+          0
+        ]
+      },
+      "ariaLabel": "سبع نقط في معلم متعامد ومتجانس",
+      "maxWidth": 420,
+      "labels": {
+        "O": "sw"
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ النقط $Q$، $M$، $N$، $P$ هي النقطة $A(3\\,;\\,2)$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$Q$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-SIGNAXIS"
+        },
+        {
+          "id": "B",
+          "content": "$M$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$N$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-SWAP"
+        },
+        {
+          "id": "D",
+          "content": "$P$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-SIGNLEFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الفاصلة المطلوبة وحدّد جهتها على محور الفواصل (يمين أم يسار محور التراتيب)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم حدّد الترتيب وجهته (فوق أم تحت محور الفواصل)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الفاصلة تُقرأ أوّلًا؛ لا تخلط بين نقطتين لهما العددان نفساهما بترتيب مختلف."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة $M$ هي $A(3\\,;\\,2)$ .",
+        "incorrect": "ابدأ بفاصلة النقطة المطلوبة ثم بترتيبها؛ ولا تخلط بين نقطتين لهما العددان نفساهما بترتيبين مختلفين."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $A$ هي $3$ وترتيبها $2$",
+          "نقرأ إحداثيتي كلّ نقطة مرسومة فنجد: $M$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أيّ النقط $S$، $N$، $R$، $U$ هي النقطة $B(-2\\,;\\,-3)$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$S$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-SIGNLEFT"
+        },
+        {
+          "id": "B",
+          "content": "$N$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-BOTHSIGNS"
+        },
+        {
+          "id": "C",
+          "content": "$R$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$U$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-SIGNAXIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الفاصلة المطلوبة وحدّد جهتها على محور الفواصل (يمين أم يسار محور التراتيب)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم حدّد الترتيب وجهته (فوق أم تحت محور الفواصل)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الفاصلة تُقرأ أوّلًا؛ لا تخلط بين نقطتين لهما العددان نفساهما بترتيب مختلف."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة $R$ هي $B(-2\\,;\\,-3)$ .",
+        "incorrect": "ابدأ بفاصلة النقطة المطلوبة ثم بترتيبها؛ ولا تخلط بين نقطتين لهما العددان نفساهما بترتيبين مختلفين."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $B$ هي $-2$ وترتيبها $-3$",
+          "نقرأ إحداثيتي كلّ نقطة مرسومة فنجد: $R$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أيّ النقط $N$، $P$، $R$، $S$ هي النقطة $C(2\\,;\\,-3)$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$N$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-SIGNAXIS"
+        },
+        {
+          "id": "B",
+          "content": "$P$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-SWAP"
+        },
+        {
+          "id": "C",
+          "content": "$R$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-SIGNLEFT"
+        },
+        {
+          "id": "D",
+          "content": "$S$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الفاصلة المطلوبة وحدّد جهتها على محور الفواصل (يمين أم يسار محور التراتيب)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم حدّد الترتيب وجهته (فوق أم تحت محور الفواصل)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الفاصلة تُقرأ أوّلًا؛ لا تخلط بين نقطتين لهما العددان نفساهما بترتيب مختلف."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة $S$ هي $C(2\\,;\\,-3)$ .",
+        "incorrect": "ابدأ بفاصلة النقطة المطلوبة ثم بترتيبها؛ ولا تخلط بين نقطتين لهما العددان نفساهما بترتيبين مختلفين."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $C$ هي $2$ وترتيبها $-3$",
+          "نقرأ إحداثيتي كلّ نقطة مرسومة فنجد: $S$"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

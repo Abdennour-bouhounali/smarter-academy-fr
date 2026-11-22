@@ -1,0 +1,203 @@
+{
+  "id": "ex-1am-bahth-adad-naqisa-l3-004",
+  "lessonCode": "bahth-adad-naqisa",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — التقريب لا يكفي",
+    "estimatedMinutes": 6,
+    "tags": [
+      "كسر",
+      "تقريب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الرابع",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "القسمة لا تتوقّف في بعض الحالات: نكتب الناتج كسرًا ونتحقّق به."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن العدد الناقص في $\\square\\times 7=16$ .",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b (أو عدد)",
+      "expectedAnswer": "16/7",
+      "misconceptionSignatures": [
+        {
+          "value": "112",
+          "id": "MISC-NAQISA-MULAGAIN"
+        },
+        {
+          "value": "0.4375",
+          "id": "MISC-NAQISA-DIVREV"
+        },
+        {
+          "value": "2.29",
+          "id": "MISC-NAQISA-APPROX"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للضرب هي القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $\\frac{16}{7}\\times 7=16$ ، فالعدد الناقص هو $\\frac{16}{7}$ .",
+        "incorrect": "في جداء نقسم الناتج على العدد المعلوم: لا نضربه فيه ولا نقسم المعلوم على الناتج."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square\\times 7=16$ .",
+          "نُرجع بالعملية العكسية: $\\square=16\\div 7=\\frac{16}{7}$ .",
+          "نتحقّق: $\\frac{16}{7}\\times 7=16$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أيّ كتابة تحقّق $7\\times\\square=16$ بالضبط؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\frac{16}{7}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$2{,}29$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NAQISA-APPROX"
+        },
+        {
+          "id": "C",
+          "content": "$2{,}3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NAQISA-APPROX"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ عدد مقترح مكان □ في المساواة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الناتج المطلوب هو العدد المعلوم في الطرف الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الطرف الأيسر لكلّ عدد وقارنه بالناتج."
+        }
+      ],
+      "feedback": {
+        "correct": "التعويض يؤكّد العدد الصحيح.",
+        "incorrect": "لا نقبل عددًا قبل أن نعوّضه ونجد الناتج بالضبط."
+      },
+      "solution": {
+        "lines": [
+          "المساواة: $\\square\\times 7=16$ .",
+          "العدد الصحيح $\\frac{16}{7}$ : $\\frac{16}{7}\\times 7=16$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "العدد $2{,}86$ هو العدد الناقص في $7\\times \\square=20$ .",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NAQISA-APPROX"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض العدد المعطى مكان □ في المساواة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الطرف الذي فيه □ ثمّ قارنه بالطرف الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إن لم تجد الناتج المعلوم بالضبط فالعدد خاطئ."
+        }
+      ],
+      "feedback": {
+        "correct": "التعويض يحسم الحكم.",
+        "incorrect": "نحكم بالتعويض لا بالتخمين."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $2{,}86$ في $7\\times \\square=20$ .",
+          "الحكم: خطأ"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

@@ -2,6 +2,7 @@
 
 namespace App\Domain\Identity;
 
+use App\Domain\Push\AdminPush;
 use App\Models\User;
 use App\Models\UserIdentity;
 use Illuminate\Support\Facades\DB;
@@ -121,15 +122,27 @@ final class GoogleAccountLinker
      *
      * Le compte et son identité naissent dans la MÊME transaction : un compte
      * sans identité serait un compte auquel son propriétaire ne pourrait plus
-     * se connecter (il n'a pas de mot de passe).
+     * se connecter s'il n'a pas de mot de passe.
+     *
+     * `$password` : celui que la personne a CHOISI sur l'écran de
+     * consentement (obligatoire depuis le 2026-10-22, voir
+     * GoogleAuthController::complete). NULL reste possible ici — les comptes
+     * Google créés avant cette date n'en ont pas — mais jamais un secret
+     * inventé (migration 2026_09_18_000003).
      */
-    public function createFromIdentity(GoogleIdentity $identity, LegalConsent $consent): User
+    public function createFromIdentity(GoogleIdentity $identity, LegalConsent $consent, string $role = User::ROLE_STUDENT, ?string $password = null): User
     {
         if (! $identity->emailVerified) {
             throw GoogleIdentityRejected::unverifiedEmail();
         }
 
-        return DB::transaction(function () use ($identity, $consent) {
+        // Le rôle vient d'une LISTE BLANCHE (élève ou enseignant) — jamais
+        // admin, quoi que porte la requête.
+        if (! in_array($role, User::SELF_REGISTERABLE_ROLES, true)) {
+            $role = User::ROLE_STUDENT;
+        }
+
+        return DB::transaction(function () use ($identity, $consent, $role, $password) {
             // Course possible : deux onglets, deux créations. L'unicité de
             // users.email tranche ; on relit plutôt que de supposer.
             $existing = User::query()->where('email', $identity->email)->first();
@@ -140,14 +153,15 @@ final class GoogleAccountLinker
 
             $user = User::create([
                 'email' => $identity->email,
-                // Le prénom si Google le donne — il alimente l'accueil de
-                // l'élève. Jamais obligatoire : un compte se crée sans.
+                // « الاسم و اللقب » tels que la personne les a confirmés sur
+                // l'écran de consentement (GoogleAuthController::complete) —
+                // pré-remplis depuis Google, jamais pris tels quels.
                 'first_name' => $identity->firstName,
                 'last_name' => $identity->lastName,
-                // PAS de mot de passe. Ni vide, ni aléatoire : NULL.
-                // Voir la migration 2026_09_18_000003.
-                'password' => null,
-                'role' => User::ROLE_STUDENT,
+                // Le mot de passe choisi (haché par le cast du modèle), ou NULL.
+                // Jamais vide, jamais aléatoire : migration 2026_09_18_000003.
+                'password' => $password,
+                'role' => $role,
                 ...$consent->attributes(),
             ]);
 
@@ -158,6 +172,11 @@ final class GoogleAccountLinker
 
             $this->attachIdentity($user, $identity);
 
+            // Notification au tableau de bord (AdminPush) : un élève ou un enseignant vient de s'inscrire.
+            if (in_array($user->role, [User::ROLE_STUDENT, User::ROLE_TEACHER], true)) {
+                AdminPush::later($user->role === User::ROLE_TEACHER ? 'new_teacher' : 'new_student', $user->id);
+            }
+
             return $user;
         });
     }
@@ -166,7 +185,7 @@ final class GoogleAccountLinker
      * Lie une identité Google à un compte local existant.
      *
      * @throws GoogleIdentityRejected si ce compte est déjà lié à une AUTRE
-     *         identité Google — voir plus bas.
+     *                                identité Google — voir plus bas.
      */
     private function linkExisting(User $user, GoogleIdentity $identity): User
     {

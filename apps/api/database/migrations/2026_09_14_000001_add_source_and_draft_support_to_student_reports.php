@@ -47,7 +47,12 @@ return new class extends Migration
 
         // `category` nullable. Fait en SQL brut : rendre une colonne nullable
         // avec le Blueprint exige doctrine/dbal, absent de ce projet.
-        DB::statement('ALTER TABLE student_reports MODIFY category VARCHAR(255) NULL');
+        // MySQL seulement : SQLite ne connaît pas MODIFY. Depuis 2026-10-05
+        // un signalement est envoyé en une fois, catégorie comprise : la
+        // colonne nullable n'est plus nécessaire à une base neuve.
+        if (DB::getDriverName() === 'mysql') {
+            DB::statement('ALTER TABLE student_reports MODIFY category VARCHAR(255) NULL');
+        }
 
         // Reprise des lignes existantes : un signalement déjà en base a
         // forcément été complété (l'ancien flux exigeait la catégorie), et sa
@@ -67,6 +72,8 @@ return new class extends Migration
             $table->dropColumn(['source', 'details_completed_at']);
         });
 
-        DB::statement('ALTER TABLE student_reports MODIFY category VARCHAR(255) NOT NULL');
+        if (DB::getDriverName() === 'mysql') {
+            DB::statement('ALTER TABLE student_reports MODIFY category VARCHAR(255) NOT NULL');
+        }
     }
 };

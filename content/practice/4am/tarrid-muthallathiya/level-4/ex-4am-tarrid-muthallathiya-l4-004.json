@@ -1,0 +1,239 @@
+{
+  "id": "ex-4am-tarrid-muthallathiya-l4-004",
+  "lessonCode": "tarrid-muthallathiya",
+  "level": 4,
+  "metadata": {
+    "title": "المثلث 7، 24، 25: قائم؟ ثم زاويتاه وارتفاعه",
+    "estimatedMinutes": 10,
+    "tags": [
+      "حل المثلث القائم",
+      "الظل",
+      "طرق متعددة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-muthallathiya_P3",
+      "modelledOn": "ex-13",
+      "adaptedFrom": "ex-4am-tarrid-muthallathiya-l4-010"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "$EFG$ مثلث أطوال أضلاعه $EF = 7\\,\\mathrm{cm}$ و $FG = 24\\,\\mathrm{cm}$ و $EG = 25\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل المثلث $EFG$ قائم؟ إن كان كذلك فما رأس زاويته القائمة؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 1,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، قائم في $F$ لأن $7^2 + 24^2 = 25^2$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم، قائم في $E$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-FITHAGHURAS-WATAR"
+        },
+        {
+          "id": "C",
+          "content": "لا، لأن $7 + 24 \\neq 25$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أطول الأضلاع $[EG]$ : قارن مربعه بمجموع مربعي الضلعين الآخرين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رأس الزاوية القائمة يقابل أطول الأضلاع."
+        }
+      ],
+      "feedback": {
+        "correct": "$49 + 576 = 625 = 25^2$ : قائم في $F$ ، الرأس المقابل لـ $[EG]$ .",
+        "incorrect": "الخاصية العكسية لخاصية فيثاغورس تقارن المربعات، والزاوية القائمة تقابل الوتر."
+      },
+      "solution": {
+        "lines": [
+          "$EF^2 + FG^2 = 49 + 576 = 625$ و $EG^2 = 625$",
+          "إذن المثلث $EFG$ قائم في $F$ حسب الخاصية العكسية لخاصية فيثاغورس."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب قيس الزاوية $\\widehat{FGE}$ بالتدوير إلى الوحدة من الدرجة.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيس الزاوية بالدرجة مدوّرا إلى الوحدة",
+      "expectedAnswer": "16",
+      "misconceptionSignatures": [
+        {
+          "value": "74",
+          "id": "MISC-MUTH-ZAWIYA-KHATI"
+        },
+        {
+          "value": "0.28",
+          "id": "MISC-MUTH-NISBA-BADAL-QAYS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $EFG$ القائم في $F$ ، الضلعان المعلومان: ما موقع كل منهما بالنسبة إلى الزاوية $\\widehat{FGE}$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب ظل الزاوية $\\widehat{FGE}$ ثم استعمل اللمسة العكسية ⁦2nd⁩ ثم ⁦tan⁻¹⁩ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الحاسبة مبرمجة على الدرجة، ثم دوّر النتيجة النهائية فقط."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan\\widehat{FGE} = \\dfrac{7}{24}$ ، ومنه $\\widehat{FGE} \\approx 16^{\\circ}$ .",
+        "incorrect": "المقابل للزاوية $G$ هو $[EF]$ ؛ ثم اللمسة العكسية."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $EFG$ القائم في $F$ : $\\tan\\widehat{FGE} = \\dfrac{EF}{FG} = \\dfrac{7}{24}$",
+          "باستعمال الآلة الحاسبة (⁦tan⁻¹⁩): $\\widehat{FGE} \\approx 16{,}2602^{\\circ}$"
+        ],
+        "result": "\\widehat{FGE} \\approx 16^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "استنتج قيس الزاوية $\\widehat{FEG}$ بالتدوير إلى الوحدة من الدرجة.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيس الزاوية بالدرجة مدوّرا إلى الوحدة",
+      "expectedAnswer": "74",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الزاويتان الحادتان متتامتان."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{FEG} = 90^{\\circ} - \\widehat{FGE} \\approx 74^{\\circ}$ .",
+        "incorrect": "مجموع الزاويتين الحادتين $90^{\\circ}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\widehat{FEG} = 90^{\\circ} - \\widehat{FGE} \\approx 73{,}7398^{\\circ}$"
+        ],
+        "result": "\\widehat{FEG} \\approx 74^{\\circ}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب طول الارتفاع $[FK]$ المتعلّق بالوتر $[EG]$ ($K$ من $[EG]$).",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-muthallathiya_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm",
+      "expectedAnswer": "6.72",
+      "misconceptionSignatures": [
+        {
+          "value": "600/7",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $FKG$ القائم في $K$ : $[FG]$ وتر و $[FK]$ مقابل للزاوية $\\widehat{FGE}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل القيمة المضبوطة $\\sin\\widehat{FGE} = \\dfrac{7}{25}$ (من المثلث $EFG$)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بطريقة ثانية: مساحة المثلث $EFG$ بطريقتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$FK = 24 \\times \\dfrac{7}{25} = 6{,}72\\,\\mathrm{cm}$ (وبالمساحة: $\\dfrac{7 \\times 24}{25}$).",
+        "incorrect": "الزاوية $\\widehat{FGK}$ هي $\\widehat{FGE}$ نفسها: اكتب جيبها في المثلثين $EFG$ و $FKG$ ."
+      },
+      "solution": {
+        "lines": [
+          "الزاوية $\\widehat{FGK}$ هي الزاوية $\\widehat{FGE}$ لأن $K \\in [EG]$ .",
+          "في المثلث $EFG$ : $\\sin\\widehat{FGE} = \\dfrac{EF}{EG} = \\dfrac{7}{25}$ ، وفي المثلث $FKG$ القائم في $K$ : $\\sin\\widehat{FGE} = \\dfrac{FK}{FG}$",
+          "$FK = FG \\times \\dfrac{7}{25} = 24 \\times \\dfrac{7}{25}$",
+          "طريقة ثانية (المساحة): $\\dfrac{EF \\times FG}{2} = \\dfrac{EG \\times FK}{2}$ ومنه $FK = \\dfrac{7 \\times 24}{25}$ : النتيجة نفسها."
+        ],
+        "result": "FK = 6{,}72\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

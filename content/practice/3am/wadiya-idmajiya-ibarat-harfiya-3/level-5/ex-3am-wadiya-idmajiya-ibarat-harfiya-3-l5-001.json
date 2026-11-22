@@ -1,0 +1,349 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-ibarat-harfiya-3-l5-001",
+  "lessonCode": "wadiya-idmajiya-ibarat-harfiya-3",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — انطلاقات متفاوتة في مضمار",
+    "estimatedMinutes": 16,
+    "tags": [
+      "محيط",
+      "π",
+      "فرق عبارتين",
+      "تقريب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "مضمار المدرسة يتكوّن من مستقيمين طول كلّ منهما $y$ (بالمتر) ونصفي دائرة. عرض كل رواق $1{,}2$ م، وقطر الدائرة المكوَّنة من نصفي الدائرة لخطّ الرواق الأول هو $x$ . محيط دائرة قطرها $d$ هو $\\pi \\times d$ . محيط خطّ الرواق $k$ هو إذن $P_k = 2y + \\pi \\times d_k$ حيث $d_k$ قطر دائرة ذلك الرواق، وتنتقل من رواق إلى الرواق التالي بزيادة $2{,}4$ في القطر:",
+    "formulas": [
+      "P_1 = 2y + \\pi x",
+      "P_2 = 2y + \\pi (x + 2{,}4)",
+      "P_3 = 2y + \\pi (x + 4{,}8)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "في سباق دورة كاملة تنطلق العدّاءة الثانية أمام الأولى، والثالثة أمامهما. نقارن المحيطات.",
+      "statement": "اكتب $P_2 - P_1$ على الشكل $k\\pi$ : العدد $k$ :",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $k$ فقط",
+      "expectedAnswer": "2.4",
+      "misconceptionSignatures": [
+        {
+          "value": "1.2",
+          "id": "MISC-SYN-HARF-CIRC"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين يظهر العدد $\\pi$ في العبارة؟ وماذا يضرب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انشر الأقواس ثم اجمع الحدود التي فيها $\\pi$ معًا وأبقِ العدد $\\pi$ كما هو."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب النتيجة على الشكل $a + b\\pi$ ثم اقرأ العدد المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$P_2 - P_1 = 2{,}4\\pi$ إذن $k = 2{,}4$ .",
+        "incorrect": "أبقِ العدد $\\pi$ رمزيًّا واجمع الحدود المتشابهة قبل أن تقرأ المعامل."
+      },
+      "solution": {
+        "lines": [
+          "$P_2 - P_1 = (2y + \\pi (x + 2{,}4)) - (2y + \\pi x)$",
+          "$P_2 - P_1 = \\pi x + 2{,}4\\pi - \\pi x = 2{,}4\\pi$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اكتب $P_3 - P_1$ على الشكل $k\\pi$ : العدد $k$ :",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $k$ فقط",
+      "expectedAnswer": "4.8",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين يظهر العدد $\\pi$ في العبارة؟ وماذا يضرب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انشر الأقواس ثم اجمع الحدود التي فيها $\\pi$ معًا وأبقِ العدد $\\pi$ كما هو."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب النتيجة على الشكل $a + b\\pi$ ثم اقرأ العدد المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$k = 4{,}8$ .",
+        "incorrect": "أبقِ العدد $\\pi$ رمزيًّا واجمع الحدود المتشابهة قبل أن تقرأ المعامل."
+      },
+      "solution": {
+        "lines": [
+          "$P_3 - P_1 = (2y + \\pi (x + 4{,}8)) - (2y + \\pi x)$",
+          "$P_3 - P_1 = 4{,}8\\pi$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "استعمل زرّ $\\pi$ في الحاسبة.",
+      "statement": "احسب قيمة $2{,}4\\pi$ مدوّرة إلى $0{,}01$ :",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالتدوير إلى 0,01)",
+      "expectedAnswer": "7.54",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يبقى رمزيًّا في العبارة؟ وما الذي يُحسب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ بالقيمة الدقيقة على الشكل $a + b\\pi$ ثم استعمل زرّ $\\pi$ في الحاسبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقرأ الرتبة المطلوبة ثم دوّر الناتج في آخر خطوة فقط."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}4\\pi \\approx 7{,}54$ .",
+        "incorrect": "احسب القيمة الدقيقة أولًا ثم دوّر الناتج في آخر خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$2{,}4\\pi \\approx 7{,}54$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب قيمة $4{,}8\\pi$ مدوّرة إلى $0{,}01$ :",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالتدوير إلى 0,01)",
+      "expectedAnswer": "15.08",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يبقى رمزيًّا في العبارة؟ وما الذي يُحسب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ بالقيمة الدقيقة على الشكل $a + b\\pi$ ثم استعمل زرّ $\\pi$ في الحاسبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقرأ الرتبة المطلوبة ثم دوّر الناتج في آخر خطوة فقط."
+        }
+      ],
+      "feedback": {
+        "correct": "$4{,}8\\pi \\approx 15{,}08$ .",
+        "incorrect": "احسب القيمة الدقيقة أولًا ثم دوّر الناتج في آخر خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$4{,}8\\pi \\approx 15{,}08$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ا",
+      "lead": "مضمار فيه $x = 73$ و $y = 85$ .",
+      "statement": "اكتب $P_1$ على الشكل $a + b\\pi$ : العدد $a$ :",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط",
+      "expectedAnswer": "170",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين يظهر العدد $\\pi$ في العبارة؟ وماذا يضرب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انشر الأقواس ثم اجمع الحدود التي فيها $\\pi$ معًا وأبقِ العدد $\\pi$ كما هو."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب النتيجة على الشكل $a + b\\pi$ ثم اقرأ العدد المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 170$ .",
+        "incorrect": "أبقِ العدد $\\pi$ رمزيًّا واجمع الحدود المتشابهة قبل أن تقرأ المعامل."
+      },
+      "solution": {
+        "lines": [
+          "$P_1 = 2 \\times 85 + \\pi \\times 73$",
+          "$P_1 = 170 + 73\\pi$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ب",
+      "statement": "العدد $b$ :",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط",
+      "expectedAnswer": "73",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين يظهر العدد $\\pi$ في العبارة؟ وماذا يضرب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انشر الأقواس ثم اجمع الحدود التي فيها $\\pi$ معًا وأبقِ العدد $\\pi$ كما هو."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب النتيجة على الشكل $a + b\\pi$ ثم اقرأ العدد المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$b = 73$ .",
+        "incorrect": "أبقِ العدد $\\pi$ رمزيًّا واجمع الحدود المتشابهة قبل أن تقرأ المعامل."
+      },
+      "solution": {
+        "lines": [
+          "$P_1 = 170 + 73\\pi$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "sub": "ج",
+      "statement": "قيمة $P_1$ مدوّرة إلى $0{,}01$ (بالمتر) :",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالتدوير إلى 0,01)",
+      "expectedAnswer": "399.34",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يبقى رمزيًّا في العبارة؟ وما الذي يُحسب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ بالقيمة الدقيقة على الشكل $a + b\\pi$ ثم استعمل زرّ $\\pi$ في الحاسبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقرأ الرتبة المطلوبة ثم دوّر الناتج في آخر خطوة فقط."
+        }
+      ],
+      "feedback": {
+        "correct": "$P_1 \\approx 399{,}34$ م .",
+        "incorrect": "احسب القيمة الدقيقة أولًا ثم دوّر الناتج في آخر خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$P_1 = 170 + 73\\pi \\approx 399{,}34$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

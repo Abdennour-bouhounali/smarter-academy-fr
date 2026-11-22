@@ -1,0 +1,181 @@
+{
+  "id": "ex-3am-quwat-adad-nisbi-l3-007",
+  "lessonCode": "quwat-adad-nisbi",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — قوة كسر في سلسلة حسابات",
+    "estimatedMinutes": 9,
+    "tags": [
+      "سلسلة حسابات",
+      "كسور"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-80",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الأول",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "احسب العدد $C$ ، حيث:",
+    "formulas": [
+      "C = \\left(\\dfrac{2}{3}\\right)^{2} - \\dfrac{5}{6} \\times \\dfrac{2}{15}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $\\left(\\dfrac{2}{3}\\right)^{2}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "4/9",
+      "misconceptionSignatures": [
+        {
+          "value": "4/3",
+          "id": "MISC-QUWA-FRACTION-POWER"
+        },
+        {
+          "value": "4/6",
+          "id": "MISC-QUWA-POWER-AS-PRODUCT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الأس خارج القوسين يخصّ البسط والمقام معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\left(\\dfrac{a}{b}\\right)^n = \\dfrac{a^n}{b^n}$ ، ثم حدّد الإشارة حسب زوجية الأس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب قوة البسط ثم قوة المقام."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2^2}{3^2} = \\dfrac{4}{9}$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$\\left(\\dfrac{2}{3}\\right)^{2} = \\dfrac{2^{2}}{3^{2}} = \\dfrac{4}{9}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $\\dfrac{5}{6} \\times \\dfrac{2}{15}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "1/9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هذه المرحلة حساب على الكسور (درس سابق)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لضرب كسرين نضرب البسطين ونضرب المقامين، ولقسمة كسر على كسر نضربه في مقلوبه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل النتيجة حتى لا يبقى قاسم مشترك."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{10}{90} = \\dfrac{1}{9}$ .",
+        "incorrect": "اضرب البسطين معًا والمقامين معًا، ثم اختزل."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{6} \\times \\dfrac{2}{15} = \\dfrac{10}{90} = \\dfrac{1}{9}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "استنتج قيمة $C$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "1/3",
+      "misconceptionSignatures": [
+        {
+          "value": "-7/135",
+          "id": "MISC-QUWA-PRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما أول عملية تُنجز في هذه العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأولوية: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب مرحلة واحدة في كل سطر، وتحقّق من إشارة كل حدّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = \\dfrac{4}{9} - \\dfrac{1}{9} = \\dfrac{1}{3}$ .",
+        "incorrect": "احترم أولوية العمليات: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "القوة أولًا ثم الضرب ثم الطرح:",
+          "$C = \\dfrac{4}{9} - \\dfrac{1}{9} = \\dfrac{3}{9}$",
+          "$C = \\dfrac{1}{3}$"
+        ],
+        "result": "C = \\dfrac{1}{3}"
+      },
+      "work": "required",
+      "timeSeconds": 90
+    }
+  ]
+}

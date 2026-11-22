@@ -1,0 +1,158 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-taalufiya-l2-001",
+  "lessonCode": "wadiya-idmajiya-taalufiya",
+  "level": 2,
+  "metadata": {
+    "title": "دراجة كهربائية: من عرضين إلى الثمن",
+    "estimatedMinutes": 7,
+    "tags": [
+      "تناسب التغيّرات",
+      "صورة عدد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-taalufiya_P1"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "يقترح تطبيق لكراء الدراجات الكهربائية، وهي وسيلة نقل نظيفة لا تلوّث هواء المدينة، سعرا هو دالة تآلفية $f$ لمدة الرحلة $x$ (بالدقائق): رحلة مدتها 10 دقائق ثمنها 180DA ، ورحلة مدتها 25 دقيقة ثمنها 330DA ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "أوجد العبارة الجبرية للدالة $f$ .",
+      "statement": "أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAGHAYYUR-BIDUN-QISMA",
+          "value": "150"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خاصية تناسب التغيّرات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم فرق الثمنين على فرق المدتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{150}{15}$ .",
+        "incorrect": "اقسم فرق الثمنين على فرق المدتين، بالترتيب نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$a = \\dfrac{f(25) - f(10)}{25 - 10} = \\dfrac{330 - 180}{15} = \\dfrac{150}{15} = 10$",
+          "$f(10) = 180$ أي: $10 \\times 10 + b = 180$ ، ومنه $b = 80$ .",
+          "$f(x) = 10x + 80$"
+        ],
+        "result": "f(x) = 10x + 80"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "80",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAGHAYYUR-B-NISBA",
+          "value": "18"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل $f(10) = 180$ بعد حساب $a$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$10 \\times 10 + b = 180$ .",
+        "incorrect": "$b = f(10) - 10a$ ، وليس حاصل قسمة الثمن على المدة."
+      },
+      "solution": {
+        "lines": [
+          "$a = \\dfrac{f(25) - f(10)}{25 - 10} = \\dfrac{330 - 180}{15} = \\dfrac{150}{15} = 10$",
+          "$f(10) = 180$ أي: $10 \\times 10 + b = 180$ ، ومنه $b = 80$ .",
+          "$f(x) = 10x + 80$"
+        ],
+        "result": "f(x) = 10x + 80"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب ثمن رحلة مدتها 40 دقيقة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الثمن بـ DA",
+      "expectedAnswer": "480",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAALUFI-NISYAN-B",
+          "value": "400"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $f(40)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(40) = 10 \\times 40 + 80$ .",
+        "incorrect": "عوّض $x$ بالعدد 40 ولا تنس الحدّ الثابت."
+      },
+      "solution": {
+        "lines": [
+          "$f(40) = 10 \\times 40 + 80 = 400 + 80 = 480$",
+          "ثمن رحلة مدتها 40 دقيقة هو 480DA ."
+        ],
+        "result": "480DA"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

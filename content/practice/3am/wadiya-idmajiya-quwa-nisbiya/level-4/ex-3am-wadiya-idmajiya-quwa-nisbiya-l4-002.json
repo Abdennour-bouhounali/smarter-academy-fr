@@ -1,0 +1,210 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-quwa-nisbiya-l4-002",
+  "lessonCode": "wadiya-idmajiya-quwa-nisbiya",
+  "level": 4,
+  "metadata": {
+    "title": "رقاقة من الألومنيوم",
+    "estimatedMinutes": 8,
+    "tags": [
+      "الكتابة العلمية",
+      "حاصل القسمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثاني",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "في ورشة لتصنيع الرقائق المعدنية تُستعمل رقائق من الألومنيوم سُمك الواحدة منها حوالي $3\\ \\mu\\mathrm{m}$ ، وقطر ذرّة الألومنيوم حوالي $125\\ \\mathrm{pm}$ . تذكّر أنّ: ميكرو $10^{-6}$ ، بيكو $10^{-12}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما الأسّ $n$ في الكتابة العلمية $a \\times 10^{n}$ لقطر الذرّة بالمتر ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "-10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين تضع الفاصلة ليبقى رقم واحد غير معدوم قبلها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $a$ من $1$ إلى أقل من $10$ ، والأسّ $n$ هو عدد رتب إزاحة الفاصلة (موجب للأعداد الكبيرة وسالب للصغيرة)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة الضرب في $10^{n}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $-10$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الأسّ هو عدد رتب إزاحة الفاصلة: سالب لأنّ العدد صغير .",
+          "$125 \\times 10^{-12}$ = $1{,}25 \\times 10^{-10}$ ، إذن $n = -10$ ."
+        ],
+        "result": "-10"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "وما الأسّ $n$ في الكتابة العلمية لسُمك الرقيقة بالمتر ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "-6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين تضع الفاصلة ليبقى رقم واحد غير معدوم قبلها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $a$ من $1$ إلى أقل من $10$ ، والأسّ $n$ هو عدد رتب إزاحة الفاصلة (موجب للأعداد الكبيرة وسالب للصغيرة)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة الضرب في $10^{n}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $-6$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الأسّ هو عدد رتب إزاحة الفاصلة: سالب لأنّ العدد صغير .",
+          "$3 \\times 10^{-6}$ = $3 \\times 10^{-6}$ ، إذن $n = -6$ ."
+        ],
+        "result": "-6"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كم طبقة من الذرّات في سُمك الرقيقة ؟ (اقسم السُّمك على القطر)",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "24000",
+      "misconceptionSignatures": [
+        {
+          "value": "1/24000",
+          "id": "MISC-WQ-INVDIV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة النتيجة، وكم عاملًا في الجداء ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد العوامل السالبة الزوجي يعطي ناتجًا موجبًا؛ والأسّ السالب يعني مقلوب القوة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الإشارة ثمّ احسب القيمة."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $24\\,000$ .",
+        "incorrect": "انتبه إلى إشارة القوة وإلى الأسّ السالب، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$(3 \\times 10^{-6}) \\div (125 \\times 10^{-12})$ = $24\\,000$ ."
+        ],
+        "result": "24\\,000"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "رتبة قدر عدد الطبقات هي $a' \\times 10^{n}$ : ما قيمة $a'$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "العدد الصحيح $a'$ (من 1 إلى 9)",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أوّلًا الكتابة العلمية للعدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ندوّر $a$ إلى الوحدة ونُبقي القوة $10^{n}$ ؛ إذا صار المدوّر $10$ فهو $1 \\times 10^{n+1}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ المدوّر عدد صحيح من $1$ إلى $9$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $2$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الكتابة العلمية $(3 \\times 10^{-6}) \\div (125 \\times 10^{-12})$ = $2{,}4 \\times 10^{4}$ .",
+          "مدوّر $2{,}4$ إلى الوحدة هو $2$ ، فرتبة القدر $2 \\times 10^{4}$ ."
+        ],
+        "result": "2"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

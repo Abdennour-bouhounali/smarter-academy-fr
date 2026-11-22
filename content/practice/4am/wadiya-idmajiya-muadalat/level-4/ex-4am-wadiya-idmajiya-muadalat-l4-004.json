@@ -1,0 +1,226 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muadalat-l4-004",
+  "lessonCode": "wadiya-idmajiya-muadalat",
+  "level": 4,
+  "metadata": {
+    "title": "المسبح البلدي: المتراجحة والجواب",
+    "estimatedMinutes": 8,
+    "tags": [
+      "ترييض",
+      "متراجحة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "situation",
+      "page": 52,
+      "section": "أدمج تعلّماتي"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لممارسة رياضة السباحة في المسبح البلدي، يقترح نادٍ رياضيّ على التلاميذ المتمدرسين صيغتين للاشتراك:\n– الصيغة الأولى: الدفع الفوري 75DA لكل حصة.\n– الصيغة الثانية: اشتراك سنوي قدره 560DA ودفع فوري قدره 5DA لكل حصة.\nنسمّي $x$ عدد الحصص في السنة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "تُترجَم العبارة «الصيغة الثانية أقل تكلفة» بالمتراجحة $560 + 5x < 75x$ . حلّ هذه المتراجحة.",
+      "statement": "حدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x < k$ أو $x \\leqslant k$ أو $x > k$ أو $x \\geqslant k$ : اكتب العدد $k$ فقط (عدد صحيح أو كسر a/b، قد يكون سالبًا)",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر، كما في حل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إضافة عدد إلى الطرفين أو طرحه منهما لا تغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحدّ هو العدد الذي يحقّق المعادلة المرفقة (نضع «=» مكان رمز المتباينة): اقسم في الأخير على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "حدّ الحلول هو $k = 8$ .",
+        "incorrect": "أعد الحل سطرًا سطرًا: العملية نفسها على الطرفين، ثم القسمة على معامل $x$ في الأخير."
+      },
+      "solution": {
+        "lines": [
+          "حدّ الحلول هو حلّ المعادلة المرفقة: $560 + 5x = 75x$",
+          "$5x - 75x = -560$",
+          "$-70x = -560$",
+          "$x = \\dfrac{-560}{-70}$",
+          "إذن حدّ الحلول هو $8$ ."
+        ],
+        "result": "k = 8"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < 8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-SALIB-BILA-QALB"
+        },
+        {
+          "id": "B",
+          "content": "$x \\leqslant 8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-SALIB-BILA-QALB"
+        },
+        {
+          "id": "C",
+          "content": "$x > 8$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$x \\geqslant 8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارة معامل $x$ في آخر سطر قبل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد موجب تحافظ على الاتجاه، والقسمة على عدد سالب تغيّره."
+        }
+      ],
+      "feedback": {
+        "correct": "$x > 8$ .",
+        "incorrect": "تتبّع سطور الحل: الاتجاه يتغيّر فقط عند الضرب أو القسمة على عدد سالب، ونوع المتباينة (تامة أو غير تامة) لا يتغيّر أبدًا."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $560 + 5x < 75x$",
+          "$5x - 75x < -560$",
+          "$-70x < -560$",
+          "نقسم الطرفين على العدد السالب $-70$ فنغيّر اتجاه المتباينة:",
+          "$\\dfrac{-70x}{-70} > \\dfrac{-560}{-70}$",
+          "إذن حلول المتراجحة هي كل قيم $x$ الأكبر تماما من $8$ ."
+        ],
+        "result": "x > 8"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ابتداءً من أي عدد للحصص تكون الصيغة الثانية أقل تكلفة؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الحصص",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-MUTARAJIHA-QAWS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل حلول المتراجحة: هل الحدّ نفسه حلّ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "ابتداءً من 9 حصص.",
+        "incorrect": "ابحث عن أصغر عدد طبيعي يحقّق المتراجحة (الحدّ نفسه ليس حلًّا)."
+      },
+      "solution": {
+        "lines": [
+          "حلول المتراجحة هي الأعداد $x > 8$ .",
+          "أصغر عدد طبيعي أكبر تماما من 8 هو 9 ."
+        ],
+        "result": "9"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "كم دينارًا يوفّر تلميذ يسبح 12 حصة في السنة إذا اختار الصيغة الثانية؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المبلغ بـ DA",
+      "expectedAnswer": "280",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المبلغ حسب كل صيغة من أجل 12 حصة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المبلغ الموفَّر هو الفرق بين المبلغين."
+        }
+      ],
+      "feedback": {
+        "correct": "يوفّر $280$DA .",
+        "incorrect": "أعد الحساب خطوة خطوة، مع احترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "الصيغة الأولى: $75 \\times 12 = 900$ DA",
+          "الصيغة الثانية: $560 + 5 \\times 12 = 620$ DA",
+          "$900 - 620 = 280$"
+        ],
+        "result": "280DA"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

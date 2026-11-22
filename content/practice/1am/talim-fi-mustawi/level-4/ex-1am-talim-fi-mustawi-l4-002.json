@@ -1,0 +1,207 @@
+{
+  "id": "ex-1am-talim-fi-mustawi-l4-002",
+  "lessonCode": "talim-fi-mustawi",
+  "level": 4,
+  "metadata": {
+    "title": "إزاحات في شبكة مخفية",
+    "estimatedMinutes": 6,
+    "tags": [
+      "مبدأ مخفي",
+      "إحداثيان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "شبكة مربّعات أُخفي مبدؤها، ونعرف إحداثيي النقطة $B$ ونحدّد مواضع أخرى بالنسبة إليها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "في شبكة مربّعات أُخفي مبدؤها ومحوراها علمتَ أنّ إحداثيي $B$ هما $(-3\\,;\\,2)$ . تقع النقطة $C$ على بعد 5 مربّعات نحو اليمين و 1 مربّعًا نحو الأسفل من $B$ . ما إحداثيا $C$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "2",
+        "y": "1"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-HIDDENOFFSET",
+          "value": {
+            "x": "5",
+            "y": "-1"
+          }
+        },
+        {
+          "id": "MISC-MUSTAWI-SWAP",
+          "value": {
+            "x": "1",
+            "y": "2"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كلّ مربّع نحو اليمين يزيد الفاصلة بوحدة، ونحو الأعلى يزيد الترتيب بوحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ من إحداثيي $B$ وأضف التغيّر الأفقي إلى الفاصلة والتغيّر الشاقولي إلى الترتيب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الإزاحة نحو اليسار أو الأسفل تنقص الإحداثي."
+        }
+      ],
+      "feedback": {
+        "correct": "إحداثيا $C$ هما $(2\\,;\\,1)$ .",
+        "incorrect": "أضف الإزاحة الأفقية إلى الفاصلة والإزاحة الشاقولية إلى الترتيب، ولا تكتب الإزاحة نفسها."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة: $-3+5=2$",
+          "الترتيب: $2-1=1$"
+        ],
+        "result": "C(2\\,;\\,1)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "في شبكة مربّعات أُخفي مبدؤها ومحوراها علمتَ أنّ إحداثيي $B$ هما $(-3\\,;\\,2)$ . تقع النقطة $C$ على بعد 2 مربّعين نحو اليسار و 4 مربّعات نحو الأسفل من $B$ . ما إحداثيا $C$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-5",
+        "y": "-2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-HIDDENOFFSET",
+          "value": {
+            "x": "-2",
+            "y": "-4"
+          }
+        },
+        {
+          "id": "MISC-MUSTAWI-SWAP",
+          "value": {
+            "x": "-2",
+            "y": "-5"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كلّ مربّع نحو اليمين يزيد الفاصلة بوحدة، ونحو الأعلى يزيد الترتيب بوحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ من إحداثيي $B$ وأضف التغيّر الأفقي إلى الفاصلة والتغيّر الشاقولي إلى الترتيب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الإزاحة نحو اليسار أو الأسفل تنقص الإحداثي."
+        }
+      ],
+      "feedback": {
+        "correct": "إحداثيا $C$ هما $(-5\\,;\\,-2)$ .",
+        "incorrect": "أضف الإزاحة الأفقية إلى الفاصلة والإزاحة الشاقولية إلى الترتيب، ولا تكتب الإزاحة نفسها."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة: $-3-2=-5$",
+          "الترتيب: $2-4=-2$"
+        ],
+        "result": "C(-5\\,;\\,-2)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "في شبكة مربّعات أُخفي مبدؤها ومحوراها علمتَ أنّ إحداثيي $B$ هما $(-3\\,;\\,2)$ (الوحدة هي المربّع الواحد). كم مربّعًا يلزم أن تعدّ من $B$ نحو الأسفل لتبلغ الخط الأفقي المارّ بالمبدإ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد المربّعات",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-NEGDIST",
+          "value": "-2"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ترتيب $B$ يقول كم مربّعًا يفصلها عن الخط الأفقي المارّ بالمبدإ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد دون إشارته هو عدد المربّعات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الإشارة تقول في أيّ جهة يقع المبدأ بالنسبة إلى $B$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد المربّعات $2$ .",
+        "incorrect": "عدد المربّعات هو الإحداثي دون إشارته."
+      },
+      "solution": {
+        "lines": [
+          "ترتيب $B$ هي $2$",
+          "عدد المربّعات $2$ نحو الأسفل"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,217 @@
+{
+  "id": "ex-3am-musawiyat-amaliyat-l1-007",
+  "lessonCode": "musawiyat-amaliyat",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — ماذا يحدث عند القسمة على صفر أو الضرب فيه؟",
+    "estimatedMinutes": 5,
+    "tags": [
+      "المساويات والضرب",
+      "القسمة على صفر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "خواص المساويات والعمليات على الأعداد الناطقة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "$a$ و $b$ عددان ناطقان حيث $a = b$ . في أيّ حالة لا يمكن كتابة $\\dfrac{a}{c} = \\dfrac{b}{c}$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$c = -1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-SIGN-NEG"
+        },
+        {
+          "id": "B",
+          "content": "$c = \\dfrac{1}{2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-DOUBT-OP"
+        },
+        {
+          "id": "C",
+          "content": "$c = 0$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نضرب فيه (أو نقسم عليه)؟ وهل هو معدوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نضرب (أو نقسم) الطرفين معًا، وكلّ حدّ من الطرف يتأثّر بالعملية؛ والقسمة على صفر ممنوعة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع الطرف كاملًا بين قوسين قبل أن تضرب، وانتبه لإشارة العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "لا نقسم على الصفر: $c \\neq 0$ .",
+        "incorrect": "لا تتغيّر المساواة عندما نضرب طرفيها في العدد نفسه أو نقسمهما على عدد غير معدوم؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "القسمة على عدد معدوم غير معرّفة.",
+          "أمّا $c = -1$ و $c = \\dfrac{1}{2}$ فالقسمة عليهما ممكنة وتحفظ المساواة.",
+          "إذن الحالة الممنوعة هي $c = 0$ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ضربنا طرفي المساواة $7 = 7$ في العدد $0$ . ماذا نجد؟",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$0 = 0$ وهي مساواة صحيحة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$0 = 7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-ONE-SIDE"
+        },
+        {
+          "id": "C",
+          "content": "لا يمكن الضرب في $0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-MULT-ZERO"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نضرب فيه (أو نقسم عليه)؟ وهل هو معدوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نضرب (أو نقسم) الطرفين معًا، وكلّ حدّ من الطرف يتأثّر بالعملية؛ والقسمة على صفر ممنوعة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع الطرف كاملًا بين قوسين قبل أن تضرب، وانتبه لإشارة العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$7 \\times 0 = 7 \\times 0$ أي $0 = 0$ .",
+        "incorrect": "لا تتغيّر المساواة عندما نضرب طرفيها في العدد نفسه أو نقسمهما على عدد غير معدوم؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 0 = 0$ و $7 \\times 0 = 0$ .",
+          "إذن $0 = 0$ : المساواة صحيحة، والضرب في $0$ مسموح."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "نعلم أنّ $3 \\times 0 = 5 \\times 0$ . هل نستنتج أنّ $3 = 5$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_musawiyat-amaliyat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، فالضرب في $0$ يعطي $0 = 0$ مهما كان العددان",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم، لأنّ المساواة $3 \\times 0 = 5 \\times 0$ صحيحة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-MULT-ZERO"
+        },
+        {
+          "id": "C",
+          "content": "نعم، نقسم الطرفين على $0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-DIV-ZERO"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نضرب فيه (أو نقسم عليه)؟ وهل هو معدوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نضرب (أو نقسم) الطرفين معًا، وكلّ حدّ من الطرف يتأثّر بالعملية؛ والقسمة على صفر ممنوعة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع الطرف كاملًا بين قوسين قبل أن تضرب، وانتبه لإشارة العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "الضرب في $0$ يحفظ المساواة لكنه يُضيّع المعلومة.",
+        "incorrect": "لا تتغيّر المساواة عندما نضرب طرفيها في العدد نفسه أو نقسمهما على عدد غير معدوم؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 0 = 0$ و $5 \\times 0 = 0$ .",
+          "الضرب في $0$ يُنتج $0 = 0$ فيضيع كلّ ما كان بين الطرفين من فرق؛ ولا يجوز القسمة على $0$ للعودة.",
+          "إذن لا نستنتج $3 = 5$ ."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

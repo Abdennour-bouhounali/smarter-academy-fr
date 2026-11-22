@@ -1,0 +1,125 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l2-009",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — مسيّرتان في العرض",
+    "estimatedMinutes": 2,
+    "tags": [
+      "دائرة",
+      "عرض مسيّرات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_ithbat-khawas-maalam_P3",
+      "modelledOn": "ex-19"
+    }
+  },
+  "generator": {
+    "tool": "u1x-ithbat-khawas-maalam/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "في عرض مسيّرات أتقن مبرمجوه ضبطه، الدائرة مركزها المبدأ O وتمر بالمسيّرة $D(-6\\,;\\,8)$ (معلم متعامد ومتجانس، الوحدة 1 m)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "نصف قطر الدائرة OD بالمتر:",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MASAFA-JADHR-NASI",
+          "value": "100"
+        },
+        {
+          "id": "MISC-MAALAM-MASAFA-JADHR-JAM",
+          "value": "14"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$OD^2$ أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$36 + 64$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم الجذر."
+        }
+      ],
+      "feedback": {
+        "correct": "$OD = \\sqrt{36 + 64} = \\sqrt{100} = 10$ .",
+        "incorrect": "المطلوب الطول: لا تنسَ الجذر."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "المسيّرة $E(8\\,;\\,6)$ :",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "على الدائرة لأن $8 + 6 = 14$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-JAM"
+        },
+        {
+          "id": "B",
+          "content": "على الدائرة لأن $OE^2 = 64 + 36 = OD^2$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "خارجها لأن فاصلتها 8 أكبر من 6",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SHAKL-DALIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $OE^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن بـ $OD^2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الدائرة: كل النقط على نفس البعد من المركز."
+        }
+      ],
+      "feedback": {
+        "correct": "$OE^2 = 100 = OD^2$ : E على الدائرة.",
+        "incorrect": "نقارن مربعي المسافتين لا الإحداثيات."
+      }
+    }
+  ]
+}

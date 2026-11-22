@@ -1,0 +1,65 @@
+{
+  "id": "ex-4am-khawas-dawaran-l3-009",
+  "lessonCode": "khawas-dawaran",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — المركز في معلم",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مركز الدوران",
+      "معلم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_khawas-dawaran_P3",
+      "modelledOn": "ex-18"
+    }
+  },
+  "generator": {
+    "tool": "u13-khawas-dawaran/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس: $A(1\\,;\\,0)$ و $A'(0\\,;\\,1)$ ، $B(0\\,;\\,2)$ و $B'(-2\\,;\\,0)$ . A′ و B′ صورتا A و B بدوران."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا مركز هذا الدوران:",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x\\,;\\,y)$ : الفاصلة ثم الترتيبة (عدد صحيح أو كسر مثل 3/2)",
+      "expectedAnswer": {
+        "x": "0",
+        "y": "0"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "محور [AA′]: النقط المتساوية البعد عن A و A′."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "محور [BB′] كذلك."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ابحث عن نقطة تبعد بنفس البعد عن A و A′ وعن B و B′."
+        }
+      ],
+      "feedback": {
+        "correct": "محور [AA′] ومحور [BB′] يتقاطعان في المبدأ، والدوران ربع دورة حوله في الاتجاه المباشر يحوّل A إلى A′ و B إلى B′.",
+        "incorrect": "تحقّق: $WA = WA'$ و $WB = WB'$ ثم الزاوية."
+      }
+    }
+  ]
+}

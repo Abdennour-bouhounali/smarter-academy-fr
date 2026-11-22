@@ -1,0 +1,169 @@
+{
+  "id": "ex-4am-zawiya-muhitiya-l4-005",
+  "lessonCode": "zawiya-muhitiya",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — المستطيل في الدائرة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "خاصية 1"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_zawiya-muhitiya_P2",
+      "modelledOn": "ex-11"
+    }
+  },
+  "statement": {
+    "content": "ABCD مستطيل مرسوم في دائرة مركزها O، قطراه [AC] و [BD] (الشكل). $\\widehat{ACB} = 25^\\circ$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -0.8452,
+          1.8126
+        ],
+        "B": [
+          0.8452,
+          1.8126
+        ],
+        "C": [
+          0.8452,
+          -1.8126
+        ],
+        "D": [
+          -0.8452,
+          -1.8126
+        ]
+      },
+      "circles": [
+        {
+          "center": "O",
+          "radius": 2
+        }
+      ],
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "A"
+        ],
+        {
+          "from": "A",
+          "to": "C",
+          "tone": "indigo"
+        },
+        {
+          "from": "B",
+          "to": "D",
+          "tone": "indigo"
+        }
+      ],
+      "ariaLabel": "دائرة مركزها O، المستطيل ABCD مرسوم فيها وقطراه [AC] و [BD] يتقاطعان في O",
+      "maxWidth": 380
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قيس $\\widehat{AOB}$ بالدرجة؟",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "50",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوس الذي تحصره كل زاوية: هل هو نفس القوس؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الزاويتين: أيهما أكبر، المركزية أم المحيطية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قيس الزاوية المحيطية نصف قيس الزاوية المركزية التي تحصر معها نفس القوس."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{AOB} = 2\\widehat{ACB} = 50^\\circ$ .",
+        "incorrect": "ACB و AOB تحصران القوس AB."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-DIF",
+          "value": "12,5"
+        },
+        {
+          "id": "MISC-MUHITIYA-MUSAWIYA",
+          "value": "25"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "statement": "ما قيس $\\widehat{BOC}$ بالدرجة؟",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "130",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالزوايا التي تعطيها خاصيتا الزاوية المحيطية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم استعمل مجموع أقياس زوايا المثلث، أو الزاوية المستقيمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل زاوية بدلالة القوس الذي تحصره قبل أن تحسب."
+        }
+      ],
+      "feedback": {
+        "correct": "[AC] قطر: $\\widehat{BOC} = 180^\\circ - 50^\\circ = 130^\\circ$ .",
+        "incorrect": "AOB و BOC متجاورتان على القطر [AC]."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-JUZ",
+          "value": "50"
+        }
+      ]
+    }
+  ]
+}

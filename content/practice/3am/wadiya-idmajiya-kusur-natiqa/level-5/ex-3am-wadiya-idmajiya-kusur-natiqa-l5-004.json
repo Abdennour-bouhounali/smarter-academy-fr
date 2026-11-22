@@ -1,0 +1,330 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-kusur-natiqa-l5-004",
+  "lessonCode": "wadiya-idmajiya-kusur-natiqa",
+  "level": 5,
+  "metadata": {
+    "title": "خزّان ماء لعائلة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "كسر من الباقي",
+      "جزء باقٍ",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "خزّان ماء سعته $480$ L ، مُلئ منه $\\dfrac{5}{8}$ . استهلكت عائلة $\\dfrac{1}{5}$ من الماء الموجود فيه في اليوم الأوّل، ثمّ $\\dfrac{3}{8}$ من الباقي في اليوم الثاني ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأوّل :",
+      "statement": "كم لترًا من الماء كان في الخزّان ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "300",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من أيّ كمّية يُؤخذ الكسر في هذه الوضعية ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كسر من كمّية يعني جداء الكسر في الكمّية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ النتيجة أصغر من الكمّية الأصلية، ثمّ اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $300$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{8} \\times 480 = 300$ L ."
+        ],
+        "result": "300"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كم لترًا استهلكت العائلة في اليوم الأوّل ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "60",
+      "misconceptionSignatures": [
+        {
+          "value": "96",
+          "id": "MISC-SYN-KUSUR-WHOLE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكسر الأخير يُؤخذ من أيّ كمّية: من الكلّ أم ممّا بقي ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أوّلًا ما بقي بعد الجزء الأوّل، ثمّ خذ الكسر من هذا الباقي وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ مجموع الأجزاء والباقي يساوي الكلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $60$ .",
+        "incorrect": "تذكّر أنّ الكسر الثاني يُؤخذ ممّا بقي لا من الكلّ؛ احسب الباقي أوّلًا ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الكسر $\\dfrac{1}{5}$ يُؤخذ من الماء الموجود لا من سعة الخزّان.",
+          "$\\dfrac{1}{5} \\times 300 = 60$ L ."
+        ],
+        "result": "60"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "كم لترًا استهلكت في اليوم الثاني ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "90",
+      "misconceptionSignatures": [
+        {
+          "value": "225/2",
+          "id": "MISC-SYN-KUSUR-WHOLE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكسر الأخير يُؤخذ من أيّ كمّية: من الكلّ أم ممّا بقي ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أوّلًا ما بقي بعد الجزء الأوّل، ثمّ خذ الكسر من هذا الباقي وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ مجموع الأجزاء والباقي يساوي الكلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $90$ .",
+        "incorrect": "تذكّر أنّ الكسر الثاني يُؤخذ ممّا بقي لا من الكلّ؛ احسب الباقي أوّلًا ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "بعد اليوم الأوّل بقي $300 - 60 = 240$ L .",
+          "$\\dfrac{3}{8} \\times 240 = 90$ L ."
+        ],
+        "result": "90"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "كم لترًا بقي في الخزّان بعد اليومين ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "150",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكلّ الذي نقارن به ؟ وما الأجزاء المأخوذة منه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما بقي هو الكلّ ناقص مجموع الأجزاء المأخوذة، أي واحد ناقص مجموع الكسور."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الباقي موجب وأنّه أصغر من الكلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $150$ .",
+        "incorrect": "وحّد المقامات قبل الجمع أو الطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$300 - 60 - 90 = 150$ L ."
+        ],
+        "result": "150"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ا",
+      "lead": "الجزء الثاني :",
+      "statement": "تحتاج العائلة إلى $100$ L في اليوم الثالث. هل يكفيها ما بقي ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المقداران اللذان نقارن بينهما لاتّخاذ القرار ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ مقدار بدقّة ثمّ قارن بوحدة واحدة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب القرار بجملة تذكر العددين اللذين اعتمدت عليهما."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$100 < 150$ ، فنعم يكفيها."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ب",
+      "statement": "ما الكسر الذي يمثّله ما يبقى بعد اليوم الثالث من سعة الخزّان ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "5/48",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1/3",
+          "id": "MISC-SYN-KUSUR-DIFFWHOLES"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من أيّ كمّية يُؤخذ الكسر في هذه الوضعية ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كسر من كمّية يعني جداء الكسر في الكمّية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ النتيجة أصغر من الكمّية الأصلية، ثمّ اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{5}{48}$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "يبقى $150 - 100 = 50$ L ، والكسر المطلوب منسوب إلى سعة الخزّان $480$ L .",
+          "$50 \\div 480 = \\dfrac{5}{48}$ ."
+        ],
+        "result": "\\dfrac{5}{48}"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "id": "ex-4am-aksiya-talis-l1-008",
+  "lessonCode": "aksiya-talis",
+  "level": 1,
+  "metadata": {
+    "title": "معارف 3 — مثال الكتاب",
+    "estimatedMinutes": 5,
+    "tags": [
+      "معارف 3",
+      "وضعية الفراشة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-3",
+      "page": 108,
+      "section": "معارف",
+      "number": 3
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل: النقط $M$ ، $O$ ، $R$ في استقامية، والنقط $N$ ، $O$ ، $P$ في استقامية، حيث: $OM = 3$ ، $OR = 2{,}4$ ، $ON = 5$ و $OP = 4$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "M": [
+          -1.8,
+          2.4
+        ],
+        "R": [
+          1.44,
+          -1.92
+        ],
+        "N": [
+          4,
+          3
+        ],
+        "P": [
+          -3.2,
+          -2.4
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "M",
+          "label": "3"
+        },
+        {
+          "from": "O",
+          "to": "R",
+          "label": "2,4"
+        },
+        {
+          "from": "O",
+          "to": "N",
+          "label": "5"
+        },
+        {
+          "from": "O",
+          "to": "P",
+          "label": "4"
+        },
+        [
+          "M",
+          "N"
+        ],
+        [
+          "P",
+          "R"
+        ]
+      ],
+      "ariaLabel": "M و O و R على استقامة، N و O و P على استقامة، OM = 3 و OR = 2,4 و ON = 5 و OP = 4",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب النسبة $\\dfrac{OM}{OR}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "5/4",
+      "misconceptionSignatures": [
+        {
+          "value": "4/5",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$OM$ و $OR$ طولان يُقاسان من النقطة $O$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $OM$ على $OR$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{OM}{OR} = \\dfrac{3}{2{,}4} = \\dfrac{5}{4}$ .",
+        "incorrect": "النسبة $\\dfrac{OM}{OR}$ : الطول $OM$ على الطول $OR$ ، وكلاهما من النقطة $O$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{OM}{OR} = \\dfrac{3}{2{,}4} = \\dfrac{5}{4}$"
+        ],
+        "result": "\\dfrac{OM}{OR} = \\dfrac{5}{4}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب النسبة $\\dfrac{ON}{OP}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "5/4",
+      "misconceptionSignatures": [
+        {
+          "value": "4/5",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$ON$ و $OP$ طولان يُقاسان من النقطة $O$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $ON$ على $OP$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{ON}{OP} = \\dfrac{5}{4}$ .",
+        "incorrect": "النسبة $\\dfrac{ON}{OP}$ : الطول $ON$ على الطول $OP$ ، وكلاهما من النقطة $O$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{ON}{OP} = \\dfrac{5}{4}$"
+        ],
+        "result": "\\dfrac{ON}{OP} = \\dfrac{5}{4}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل المستقيمان $(MN)$ و $(PR)$ متوازيان؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-BAYN-FAQAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النسبتين بقيمهما المضبوطة (الجداء المتصالب)، لا بقيم مقرّبة ولا بمظهر الشكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق أيضا من ترتيب النقط على المستقيمين المتقاطعين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{OM}{OR} = \\dfrac{ON}{OP} = 1{,}25$ و $O$ بين النقطتين في كل مرة: $(MN) \\parallel (PR)$ .",
+        "incorrect": "الخاصية العكسية تتطلب شرطين معا: تساوي النسبتين بقيم مضبوطة، وترتيب النقط نفسه على المستقيمين."
+      },
+      "solution": {
+        "lines": [
+          "بما أن النقط $M$ ، $O$ ، $R$ و $N$ ، $O$ ، $P$ في استقامية وبنفس الترتيب،",
+          "و بما أن: $\\dfrac{OM}{OR} = \\dfrac{ON}{OP} = \\dfrac{5}{4}$",
+          "فإن المستقيمين $(MN)$ و $(PR)$ متوازيان حسب خاصية طالس العكسية."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

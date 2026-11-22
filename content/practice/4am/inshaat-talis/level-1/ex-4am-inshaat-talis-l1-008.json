@@ -1,0 +1,150 @@
+{
+  "id": "ex-4am-inshaat-talis-l1-008",
+  "lessonCode": "inshaat-talis",
+  "level": 1,
+  "metadata": {
+    "title": "اقرأ الإنشاء: الطول AB",
+    "estimatedMinutes": 4,
+    "tags": [
+      "الرابع المتناسب",
+      "قراءة إنشاء"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_inshaat-talis_P2",
+      "modelledOn": "method-construct-length"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل: $[Ax)$ و $[Ay)$ نصفا مستقيمين مبدؤهما $A$ . $C$ و $D$ من $[Ax)$ حيث $AC = 2$ و $AD = 5$ ، و $E$ من $[Ay)$ حيث $AE = 3$ ، والموازي للمستقيم $(CE)$ المارّ بـ $D$ يقطع $[Ay)$ في $B$ (وحدة الطول هي السنتيمتر).",
+    "figure": {
+      "points": {
+        "A": [
+          0.0,
+          0.0
+        ],
+        "C": [
+          1.2,
+          1.6
+        ],
+        "D": [
+          3.0,
+          4.0
+        ],
+        "E": [
+          3.0,
+          0.0
+        ],
+        "B": [
+          7.5,
+          0.0
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "C",
+          "label": "2",
+          "labelSide": 1
+        },
+        {
+          "from": "A",
+          "to": "E",
+          "label": "3",
+          "labelSide": -1
+        },
+        {
+          "from": "C",
+          "to": "E",
+          "arrows": 1,
+          "tone": "indigo"
+        },
+        {
+          "from": "D",
+          "to": "B",
+          "arrows": 1,
+          "tone": "indigo"
+        }
+      ],
+      "rays": [
+        {
+          "from": "A",
+          "through": "D",
+          "name": "x",
+          "extend": 0.2
+        },
+        {
+          "from": "A",
+          "through": "B",
+          "name": "y",
+          "extend": 0.15
+        }
+      ],
+      "labels": {
+        "A": "sw",
+        "C": "w",
+        "D": "w",
+        "E": "s",
+        "B": "s"
+      },
+      "ariaLabel": "نصفا مستقيمين [Ax) و [Ay) مبدؤهما A، على الأول C و D حيث AC = 2 و AD = 5، وعلى الثاني E حيث AE = 3، والموازي للمستقيم (CE) المارّ بـ D يقطع [Ay) في B",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب الطول $AB$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "7,5",
+      "misconceptionSignatures": [
+        {
+          "value": "1,2",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$C \\in [AD]$ و $E \\in [AB]$ و $(CE) \\parallel (DB)$ : المثلثان $ACE$ و $ADB$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $\\dfrac{AC}{AD} = \\dfrac{AE}{AB}$ ثم استعمل الجداء المتصالب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2}{5} = \\dfrac{3}{AB}$ ومنه $AB = \\dfrac{5 \\times 3}{2} = 7{,}5\\,\\mathrm{cm}$ .",
+        "incorrect": "راجع التناسب: $AE$ يقابل $AC$ ، و $AB$ يقابل $AD$ ، والأطوال كلها تُقاس من $A$ ."
+      },
+      "solution": {
+        "lines": [
+          "$C \\in [AD]$ و $E \\in [AB]$ و $(CE) \\parallel (DB)$ ، حسب خاصية طالس: $\\dfrac{AC}{AD} = \\dfrac{AE}{AB}$",
+          "$\\dfrac{2}{5} = \\dfrac{3}{AB}$",
+          "$AB = \\dfrac{5 \\times 3}{2}$"
+        ],
+        "result": "AB = 7{,}5\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

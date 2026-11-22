@@ -1,0 +1,367 @@
+{
+  "id": "ex-4am-tarrid-mushkila-l5-006",
+  "lessonCode": "tarrid-mushkila",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2007 — النقل المدرسي بالأغواط",
+    "estimatedMinutes": 20,
+    "tags": [
+      "ترييض",
+      "متراجحة",
+      "جدول"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tarrid-mushkila_P1",
+      "modelledOn": "BEM 2007 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2007",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تقترح مؤسسة للنقل المدرسي الخاص بولاية الأغواط، حرصًا على وصول التلاميذ في الوقت، التسعيرتين التاليتين:\n– التسعيرة الأولى: 120DA للرحلة الواحدة.\n– التسعيرة الثانية: 70DA للرحلة الواحدة مع اشتراك شهري قدره 1600DA .",
+    "table": {
+      "head": [
+        "عدد الرحلات في الشهر",
+        "20",
+        "…"
+      ],
+      "rows": [
+        [
+          "المبلغ حسب التسعيرة الأولى (DA)",
+          "…",
+          "4800"
+        ],
+        [
+          "المبلغ حسب التسعيرة الثانية (DA)",
+          "3000",
+          "…"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "انقل الجدول و أكمله.",
+      "statement": "المبلغ حسب التسعيرة الأولى من أجل 20 رحلة:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المبلغ بـ DA",
+      "expectedAnswer": "2400",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب عدد الرحلات في ثمن الرحلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$2400$DA .",
+        "incorrect": "عدد الرحلات × ثمن الرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$120 \\times 20 = 2400$"
+        ],
+        "result": "2400DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "عدد الرحلات الذي يكون من أجله المبلغ حسب التسعيرة الأولى 4800DA :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الرحلات",
+      "expectedAnswer": "40",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ = 120 × عدد الرحلات: اقسم."
+        }
+      ],
+      "feedback": {
+        "correct": "$40$ رحلة.",
+        "incorrect": "اقسم المبلغ على ثمن الرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$120x = 4800$",
+          "$x = 40$"
+        ],
+        "result": "40"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "المبلغ حسب التسعيرة الثانية من أجل هذا العدد من الرحلات:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المبلغ بـ DA",
+      "expectedAnswer": "4400",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب عدد الرحلات في 70 ثم أضف الاشتراك."
+        }
+      ],
+      "feedback": {
+        "correct": "$4400$DA .",
+        "incorrect": "لا تنسَ الاشتراك الشهري."
+      },
+      "solution": {
+        "lines": [
+          "$70 \\times 40 + 1600 = 2800 + 1600$",
+          "$= 4400$"
+        ],
+        "result": "4400DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "lead": "ليكن $x$ عدد الرحلات في الشهر، و $y_1$ ، $y_2$ المبلغين حسب التسعيرتين على الترتيب، حيث $y_1 = 120x$ و $y_2 = 70x + 1600$ . حلّ المتراجحة: $120x > 70x + 1600$ .",
+      "statement": "حدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x < k$ أو $x \\leqslant k$ أو $x > k$ أو $x \\geqslant k$ : اكتب العدد $k$ فقط (عدد صحيح أو كسر a/b، قد يكون سالبًا)",
+      "expectedAnswer": "32",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر، كما في حل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إضافة عدد إلى الطرفين أو طرحه منهما لا تغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحدّ هو العدد الذي يحقّق المعادلة المرفقة (نضع «=» مكان رمز المتباينة): اقسم في الأخير على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "حدّ الحلول هو $k = 32$ .",
+        "incorrect": "أعد الحل سطرًا سطرًا: العملية نفسها على الطرفين، ثم القسمة على معامل $x$ في الأخير."
+      },
+      "solution": {
+        "lines": [
+          "حدّ الحلول هو حلّ المعادلة المرفقة: $120x = 70x + 1600$",
+          "$120x - 70x = 1600$",
+          "$50x = 1600$",
+          "$x = \\dfrac{1600}{50}$",
+          "إذن حدّ الحلول هو $32$ ."
+        ],
+        "result": "k = 32"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < 32$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QALB-ZAID"
+        },
+        {
+          "id": "B",
+          "content": "$x \\leqslant 32$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        },
+        {
+          "id": "C",
+          "content": "$x > 32$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$x \\geqslant 32$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارة معامل $x$ في آخر سطر قبل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد موجب تحافظ على الاتجاه، والقسمة على عدد سالب تغيّره."
+        }
+      ],
+      "feedback": {
+        "correct": "$x > 32$ .",
+        "incorrect": "تتبّع سطور الحل: الاتجاه يتغيّر فقط عند الضرب أو القسمة على عدد سالب، ونوع المتباينة (تامة أو غير تامة) لا يتغيّر أبدًا."
+      },
+      "solution": {
+        "lines": [
+          "$120x > 70x + 1600$",
+          "$120x - 70x > 1600$",
+          "$50x > 1600$",
+          "$\\dfrac{50x}{50} > \\dfrac{1600}{50}$",
+          "إذن حلول المتراجحة هي كل قيم $x$ الأكبر تماما من $32$ .",
+          "قسمنا الطرفين في آخر خطوة على عدد موجب، فبقي اتجاه المتباينة ونوعها."
+        ],
+        "result": "x > 32"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "lead": "تلميذ يقوم بـ 44 رحلة في الشهر.",
+      "statement": "ما هي التسعيرة الأقل تكلفة له؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "التسعيرة الأولى",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QALB-ZAID"
+        },
+        {
+          "id": "B",
+          "content": "التسعيرة الثانية",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا تعني المتراجحة $120x > 70x + 1600$ بالنسبة إلى التسعيرتين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل 44 من حلولها؟"
+        }
+      ],
+      "feedback": {
+        "correct": "التسعيرة الثانية.",
+        "incorrect": "حلول المتراجحة هي أعداد الرحلات التي تكون فيها التسعيرة الأولى أغلى."
+      },
+      "solution": {
+        "lines": [
+          "المتراجحة $120x > 70x + 1600$ تعني: التسعيرة الأولى أغلى من الثانية.",
+          "44 من حلولها لأن $44 > 32$ ، إذن التسعيرة الثانية أقل تكلفة.",
+          "التحقق: $120 \\times 44 = 5280$ و $70 \\times 44 + 1600 = 4680$ ."
+        ],
+        "result": "التسعيرة الثانية"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "statement": "كم يوفّر شهريًا باختياره هذه التسعيرة بدل الأخرى؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المبلغ بـ DA",
+      "expectedAnswer": "600",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المبلغ بالتسعيرتين من أجل 44 رحلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المبلغ الموفَّر هو الفرق بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "يوفّر 600DA شهريًا.",
+        "incorrect": "احسب المبلغين ثم اطرح الأصغر من الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "$120 \\times 44 = 5280$ DA",
+          "$70 \\times 44 + 1600 = 4680$ DA",
+          "$5280 - 4680 = 600$",
+          "إذن يوفّر 600DA شهريًا."
+        ],
+        "result": "600DA"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

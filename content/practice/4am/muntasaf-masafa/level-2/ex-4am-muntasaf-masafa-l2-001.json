@@ -1,0 +1,79 @@
+{
+  "id": "ex-4am-muntasaf-masafa-l2-001",
+  "lessonCode": "muntasaf-masafa",
+  "level": 2,
+  "metadata": {
+    "title": "تمرين 11 — مركز الدائرة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المنتصف",
+      "دائرة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-11",
+      "page": 147,
+      "section": "إحداثيتا منتصف قطعة - المسافة بين نقطتين",
+      "number": 11
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 147): نعتبر النقطتين $A(5\\,;\\,9)$ ، $B(1\\,;\\,-3)$ . [AB] قطر للدائرة (𝒞)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا K مركز الدائرة (𝒞):",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح أو كسر مثل 1/2)",
+      "expectedAnswer": {
+        "x": "3",
+        "y": "3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MUNTASAF-NISF",
+          "value": {
+            "x": "6",
+            "y": "6"
+          }
+        },
+        {
+          "id": "MISC-MAALAM-MUNTASAF-TARH",
+          "value": {
+            "x": "-2",
+            "y": "-6"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المنتصف يقع في منتصف الطريق أفقيا وفي منتصف الطريق عموديا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الفاصلتين ثم اقسم على 2، وافعل الشيء نفسه مع الترتيبين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى الإشارات: جمع عدد سالب يعني طرح قيمته."
+        }
+      ],
+      "feedback": {
+        "correct": "مركز الدائرة منتصف قطرها: $K\\left(\\dfrac{5 + 1}{2}\\,;\\,\\dfrac{9 + (-3)}{2}\\right) = (3\\,;\\,3)$ .",
+        "incorrect": "المركز هو منتصف القطر [AB]."
+      }
+    }
+  ]
+}

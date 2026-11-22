@@ -1,0 +1,131 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l1-004",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 1,
+  "metadata": {
+    "title": "القيمة المضبوطة لطول الوتر",
+    "estimatedMinutes": 3,
+    "tags": [
+      "خاصية فيثاغورس",
+      "القيمة المضبوطة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "now-1",
+      "page": 171,
+      "section": "دوري الآن",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "يعلّم يوسف أخاه الصغير قصّ الأشكال بإتقان، فرسم له مثلثا $EFG$ قائما في $F$ حيث $FG = 1{,}2\\,\\mathrm{cm}$ و $EF = 3{,}5\\,\\mathrm{cm}$ .",
+    "figure": {
+      "points": {
+        "F": [
+          0.0,
+          0.0
+        ],
+        "G": [
+          1.9,
+          0.0
+        ],
+        "E": [
+          0.0,
+          3.5
+        ]
+      },
+      "segments": [
+        {
+          "from": "F",
+          "to": "G",
+          "label": "1,2 cm"
+        },
+        {
+          "from": "F",
+          "to": "E",
+          "label": "3,5 cm"
+        },
+        {
+          "from": "G",
+          "to": "E"
+        }
+      ],
+      "rightAngles": [
+        [
+          "G",
+          "F",
+          "E"
+        ]
+      ],
+      "ariaLabel": "مثلث EFG قائم في F حيث FG = 1,2 cm و EF = 3,5 cm",
+      "maxWidth": 320,
+      "caption": "(الأطوال غير حقيقية)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القيمة المضبوطة للطول $EG$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm",
+      "expectedAnswer": "3.7",
+      "misconceptionSignatures": [
+        {
+          "value": "4.7",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "13.69",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولا مربع الطول، ثم خذ جذره التربيعي بالآلة الحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$EG^2 = 3{,}5^2 + 1{,}2^2 = 13{,}69$ ، إذن $EG = 3{,}7\\,\\mathrm{cm}$ .",
+        "incorrect": "ابدأ بتحديد الوتر، ثم اكتب مساواة فيثاغورس، وتذكّر أن ما تحسبه أولا هو مربع الطول لا الطول نفسه."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $EFG$ قائم في $F$ ، حسب خاصية فيثاغورس: $EG^2 = EF^2 + FG^2$",
+          "$EG^2 = 3{,}5^2 + 1{,}2^2$",
+          "$EG^2 = 12{,}25 + 1{,}44 = 13{,}69$",
+          "$EG = \\sqrt{13{,}69} = 3{,}7\\,\\mathrm{cm}$"
+        ],
+        "result": "EG = 3{,}7\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

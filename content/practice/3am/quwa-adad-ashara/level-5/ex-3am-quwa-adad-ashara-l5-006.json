@@ -1,0 +1,294 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l5-006",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — ترتيب الأحجام",
+    "estimatedMinutes": 6,
+    "tags": [
+      "مسألة",
+      "مقارنة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "قاس تلاميذ بعض الأحجام بالمتر: حبّة رمل $0{,}001$ ، وخلية $0{,}00001$ ، وجرثومة $0{,}000001$ ، وذرّة $0{,}0000000001$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "الجزء الأول. الذرّة: $0{,}0000000001 = 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين يقع الرقم 1 بعد الفاصلة؟ حدّد رتبته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في $10^{-n}$ يكون الرقم 1 في الرتبة $n$ بعد الفاصلة (الأعشار هي الرتبة الأولى)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأسّ سالب وقيمته المطلقة هي رتبة الرقم 1، أمّا عدد الأصفار بين الفاصلة والرقم 1 فأقلّ منها بواحد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-10",
+      "misconceptionSignatures": [
+        {
+          "value": "-9",
+          "id": "MISC-ASHARA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}0000000001 = 10^{-10}$ .",
+        "incorrect": "عدّ الأصفار (أو رتبة الرقم 1 بعد الفاصلة) بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الرقم 1 في الرتبة 10 بعد الفاصلة.",
+          "$0{,}0000000001 = \\dfrac{1}{10^{10}} = 10^{-10}$ ."
+        ],
+        "result": "n = -10"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "الخلية: $0{,}00001 = 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين يقع الرقم 1 بعد الفاصلة؟ حدّد رتبته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في $10^{-n}$ يكون الرقم 1 في الرتبة $n$ بعد الفاصلة (الأعشار هي الرتبة الأولى)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأسّ سالب وقيمته المطلقة هي رتبة الرقم 1، أمّا عدد الأصفار بين الفاصلة والرقم 1 فأقلّ منها بواحد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-5",
+      "misconceptionSignatures": [
+        {
+          "value": "-4",
+          "id": "MISC-ASHARA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}00001 = 10^{-5}$ .",
+        "incorrect": "عدّ الأصفار (أو رتبة الرقم 1 بعد الفاصلة) بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الرقم 1 في الرتبة 5 بعد الفاصلة.",
+          "$0{,}00001 = \\dfrac{1}{10^{5}} = 10^{-5}$ ."
+        ],
+        "result": "n = -5"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "الجزء الثاني. أيّ الترتيبات التالية تصاعديّ (من الأصغر إلى الأكبر)؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب كلّ حجم على شكل قوة للعدد 10."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كلّما كان الأسّ السالب أصغر كان العدد أصغر لأنّ الرقم 1 يبتعد عن الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الكتابات العشرية إن لزم."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$10^{-6} < 10^{-5} < 10^{-3} < 10^{-10}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-SALIB"
+        },
+        {
+          "id": "B",
+          "content": "$10^{-10} < 10^{-6} < 10^{-5} < 10^{-3}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$10^{-3} < 10^{-5} < 10^{-6} < 10^{-10}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-SALIB"
+        }
+      ],
+      "feedback": {
+        "correct": "الترتيب التصاعديّ: الذرّة ثمّ الجرثومة ثمّ الخلية ثمّ حبّة الرمل.",
+        "incorrect": "اختبر كلّ اقتراح بحساب الكتابة العشرية للقوة المعنية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}0000000001 < 0{,}000001 < 0{,}00001 < 0{,}001$ .",
+          "أي $10^{-10} < 10^{-6} < 10^{-5} < 10^{-3}$ ."
+        ]
+      }
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "statement": "أيّ أسّ من $-3$ و $-5$ و $-6$ يعطي أكبر قوة للعدد 10؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب كلّ قوة كتابة عشرية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أكبر عدد هو الذي يقع فيه الرقم 1 أقرب ما يمكن من الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن رتب الرقم 1."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "value": "-6",
+          "id": "MISC-ASHARA-SALIB"
+        }
+      ],
+      "feedback": {
+        "correct": "أكبر قوة هي $10^{-3} = 0{,}001$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10^{-3} = 0{,}001$ ، $10^{-5} = 0{,}00001$ ، $10^{-6} = 0{,}000001$ .",
+          "أكبرها $0{,}001$ ."
+        ],
+        "result": "n = -3"
+      }
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "كم صفرًا بين الفاصلة والرقم 1 في الكتابة العشرية لطول الذرّة؟",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الرقم 1 في طول الذرّة في الرتبة العاشرة بعد الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأصفار تسبق الرقم 1 مباشرة بعد الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عددها أقلّ بواحد من رتبة الرقم 1."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-ASHARA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "الرقم 1 في الرتبة العاشرة قبله تسعة أصفار.",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}0000000001 = 10^{-10}$ .",
+          "بين الفاصلة والرقم 1 تسعة أصفار."
+        ],
+        "result": "9"
+      }
+    }
+  ]
+}

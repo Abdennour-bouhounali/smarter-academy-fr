@@ -1,0 +1,170 @@
+{
+  "id": "ex-4am-natiqa-ghayr-natiqa-l3-009",
+  "lessonCode": "natiqa-ghayr-natiqa",
+  "level": 3,
+  "metadata": {
+    "title": "ضلع مربع مساحته 40cm²",
+    "estimatedMinutes": 6,
+    "tags": [
+      "قيمة مقربة",
+      "عدد غير ناطق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_natiqa-ghayr-natiqa_P3",
+      "modelledOn": "ex-10"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "مربع مساحته $40cm^2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل طول ضلع هذا المربع عدد ناطق؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-KULL-JIDHR"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر جوابك، ثم قارن تبريرك بالحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول الضلع هو $\\sqrt{40}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل 40 مربع لعدد ناطق؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$6^2 < 40 < 7^2$ : 40 ليس مربعًا لعدد ناطق، فـ $\\sqrt{40}$ ليس ناطقًا.",
+        "incorrect": "قارن 40 بالمربعين التامين 36 و 49."
+      },
+      "solution": {
+        "lines": [
+          "طول الضلع $\\sqrt{40}$ cm.",
+          "$6^2 = 36 < 40 < 49 = 7^2$ : 40 ليس مربعًا لعدد ناطق.",
+          "إذن طول الضلع ليس عددًا ناطقًا."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط القيمة المقربة إلى الجزء من 10 بالزيادة لطول ضلعه.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري برقم واحد بعد الفاصلة (بـ cm)",
+      "expectedAnswer": "6.4",
+      "misconceptionSignatures": [
+        {
+          "value": "6.3",
+          "id": "MISC-TAQRIB-NAQS-ZIYADA"
+        },
+        {
+          "value": "20",
+          "id": "MISC-JIDHR-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احصر $\\sqrt{40}$ بين عددين عشريين متتاليين لهما رقم واحد بعد الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمة بالزيادة هي الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$6{,}3^2 = 39{,}69 < 40 < 40{,}96 = 6{,}4^2$ .",
+        "incorrect": "القيمة بالزيادة هي العدد الأكبر من $\\sqrt{40}$ في الحصر."
+      },
+      "solution": {
+        "lines": [
+          "$6{,}3^2 = 39{,}69$ و $6{,}4^2 = 40{,}96$",
+          "$39{,}69 < 40 < 40{,}96$ إذن $6{,}3 < \\sqrt{40} < 6{,}4$"
+        ],
+        "result": "\\sqrt{40} < 6{,}4"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "استنتج القيمة المقربة إلى الجزء من 10 بالنقصان لطول ضلعه.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري برقم واحد بعد الفاصلة (بـ cm)",
+      "expectedAnswer": "6.3",
+      "misconceptionSignatures": [
+        {
+          "value": "6.4",
+          "id": "MISC-TAQRIB-NAQS-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الحصر الذي وجدته في السؤال 02."
+        }
+      ],
+      "feedback": {
+        "correct": "$6{,}3 < \\sqrt{40}$ : القيمة بالنقصان.",
+        "incorrect": "القيمة بالنقصان هي العدد الأصغر في الحصر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "من الحصر: $6{,}3 < \\sqrt{40} < 6{,}4$"
+        ],
+        "result": "6{,}3 < \\sqrt{40}"
+      },
+      "timeSeconds": 45
+    }
+  ]
+}

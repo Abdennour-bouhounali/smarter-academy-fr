@@ -1,0 +1,166 @@
+{
+  "id": "ex-4am-tayin-pgcd-l5-007",
+  "lessonCode": "tayin-pgcd",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2020 — كاميرات مراقبة لمستودع بوهران",
+    "estimatedMinutes": 12,
+    "tags": [
+      "PGCD",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tayin-pgcd_P3",
+      "modelledOn": "BEM 2020 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2020",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تريد مؤسسة بوهران، حرصًا على حفظ الأمانات والممتلكات، تركيب كاميرات مراقبة على السور المحيط بمستودعها، وهو مستطيل الشكل بُعداه 96m و 32m، بحيث تكون المسافة متساوية وأكبر ما يمكن بين كل كاميرتين متتاليتين، على أن تُركَّب كاميرا في كل ركن.\nتعرض شركة المراقبة كاميرات مختلفة، أثمانها من 8000DA إلى 30000DA حسب جودتها.\n• تكلفة تركيب كل كاميرا تمثل 25% من ثمنها.\n• ثمن الأسلاك وجهاز التسجيل 6000DA مهما كان عدد الكاميرات.\n• خصّصت المؤسسة لهذا المشروع 156000DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن المسافة بين كل كاميرتين متتاليتين.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (المسافة بالمتر)",
+      "expectedAnswer": "32",
+      "misconceptionSignatures": [
+        {
+          "value": "16",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العددين: هل العدد الأصغر قاسم للعدد الأكبر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد الأكبر على العدد الأصغر وانظر إلى الباقي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان $b$ قاسمًا للعدد $a$ فإن PGCD$(a ; b) = b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$96 = 32 \\times 3$ : العدد 32 قاسم للعدد 96، فهو قاسمهما المشترك الأكبر.",
+        "incorrect": "لا داعي لقائمتين طويلتين: تحقّق أولًا هل أحد العددين قاسم للآخر."
+      },
+      "solution": {
+        "lines": [
+          "$96 = 32 \\times 3$ ، إذن العدد 32 قاسم للعدد 96.",
+          "المسافة قاسم مشترك للبعدين 96 و 32 (كاميرا في كل ركن)، وهي أكبر ما يمكن: فهي PGCD(96 ; 32).",
+          "وبما أن 32 قاسم للعدد 96 فإن:"
+        ],
+        "result": "PGCD(96 ; 32) = 32"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب عدد الكاميرات اللازمة.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد الكاميرات)",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب محيط المستودع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "على محيط مغلق، عدد الكاميرات يساوي عدد المسافات."
+        }
+      ],
+      "feedback": {
+        "correct": "$256 \\div 32 = 8$",
+        "incorrect": "اقسم المحيط على المسافة بين كاميرتين."
+      },
+      "solution": {
+        "lines": [
+          "محيط المستودع: $2 \\times (96 + 32) = 256$m",
+          "على محيط مغلق: عدد الكاميرات = عدد المسافات.",
+          "عدد الكاميرات: $256 \\div 32 = 8$"
+        ],
+        "result": "8"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "☜ أعط القيمة التي لا يمكن أن يتجاوزها ثمن الكاميرا الواحدة حتى يتسنى للمؤسسة إنجاز المشروع حسب الشروط المذكورة.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (المبلغ بالدينار)",
+      "expectedAnswer": "15000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عبّر عن تكلفة الكاميرا الواحدة مع تركيبها بدلالة ثمنها $p$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب أن التكلفة الكلية لا تتجاوز المبلغ المخصص، ثم حلّ المتراجحة."
+        }
+      ],
+      "feedback": {
+        "correct": "$8 \\times 1{,}25p + 6000 \\leq 156000$ تعطي $p \\leq 15000$ .",
+        "incorrect": "تكلفة الكاميرا = ثمنها + 25% من ثمنها؛ الأسلاك وجهاز التسجيل يُحسبان مرة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "تكلفة الكاميرا الواحدة مع تركيبها: $p + \\dfrac{25}{100}p = 1{,}25p$",
+          "$8 \\times 1{,}25p + 6000 \\leq 156000$",
+          "$10p \\leq 150000$",
+          "$p \\leq 15000$",
+          "وهي قيمة محصورة بين 8000DA و 30000DA."
+        ],
+        "result": "15000DA"
+      },
+      "timeSeconds": 360
+    }
+  ]
+}

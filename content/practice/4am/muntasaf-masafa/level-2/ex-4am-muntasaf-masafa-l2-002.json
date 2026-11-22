@@ -1,0 +1,70 @@
+{
+  "id": "ex-4am-muntasaf-masafa-l2-002",
+  "lessonCode": "muntasaf-masafa",
+  "level": 2,
+  "metadata": {
+    "title": "تمرين 17 — نصف قطر",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المسافة",
+      "دائرة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-17",
+      "page": 147,
+      "section": "إحداثيتا منتصف قطعة - المسافة بين نقطتين",
+      "number": 17
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 147): (𝒞) الدائرة التي مركزها النقطة $P(2\\,;\\,1)$ وتشمل النقطة $M(-1\\,;\\,1)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "نصف قطر الدائرة (𝒞):",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري بالفاصلة (مثل 2,5)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-ISHARA",
+          "value": "-3"
+        },
+        {
+          "id": "MISC-MAALAM-MASAFA-JADHR-NASI",
+          "value": "9"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الفرقين: فرق الفاصلتين وفرق الترتيبين (النهاية ناقص المبدأ)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ربّع كل فرق ثم اجمع المربعين: هذا مربع المسافة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خذ الجذر التربيعي في الأخير، وبسّطه إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$PM = \\sqrt{(-1 - 2)^2 + (1 - 1)^2} = \\sqrt{9} = 3$ .",
+        "incorrect": "نصف القطر هو المسافة PM، وهي موجبة."
+      }
+    }
+  ]
+}

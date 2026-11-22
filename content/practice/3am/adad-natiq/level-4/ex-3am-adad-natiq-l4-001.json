@@ -1,0 +1,417 @@
+{
+  "id": "ex-3am-adad-natiq-l4-001",
+  "lessonCode": "adad-natiq",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — عمليات على أعداد ناطقة وإثبات أنّ عددًا ناطق",
+    "estimatedMinutes": 16,
+    "tags": [
+      "العدد الناطق"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 1,
+      "file": "3am-s1-109",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "ليكن الأعداد $A=\\dfrac{5}{12}+\\dfrac{6}{25}\\div\\dfrac{4}{5}$ ، $B=\\left(\\dfrac{5}{8}-2\\right)\\times\\left(\\dfrac{-4}{11}\\right)$ ، $C=\\dfrac{-7}{9}+\\dfrac{4}{5}\\div\\dfrac{12}{-5}$ ، $F=(-20)\\times\\left(\\dfrac{1}{4}-\\dfrac{7}{10}\\right)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $A=\\dfrac{5}{12}+\\dfrac{6}{25}\\div\\dfrac{4}{5}$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "43/60",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المطلوب بدقّة قبل أن تحسب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعن بقاعدة الدرس المناسبة وطبّقها خطوة خطوة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = \\dfrac{43}{60}$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "القسمة قبل الجمع : $\\dfrac{6}{25}\\div\\dfrac{4}{5}=\\dfrac{6}{25}\\times\\dfrac{5}{4}=\\dfrac{3}{10}$ .",
+          "المقام المشترك $60$ : $A=\\dfrac{25}{60}+\\dfrac{18}{60}=\\dfrac{43}{60}$ ."
+        ],
+        "result": "A = \\dfrac{43}{60}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $B=\\left(\\dfrac{5}{8}-2\\right)\\times\\left(\\dfrac{-4}{11}\\right)$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "1/2",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المطلوب بدقّة قبل أن تحسب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعن بقاعدة الدرس المناسبة وطبّقها خطوة خطوة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = \\dfrac{1}{2}$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{8}-2=\\dfrac{5}{8}-\\dfrac{16}{8}=-\\dfrac{11}{8}$ .",
+          "$B=\\left(-\\dfrac{11}{8}\\right)\\times\\left(-\\dfrac{4}{11}\\right)=\\dfrac{44}{88}=\\dfrac{1}{2}$ ."
+        ],
+        "result": "B = \\dfrac{1}{2}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب $F=(-20)\\times\\left(\\dfrac{1}{4}-\\dfrac{7}{10}\\right)$ .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المطلوب بدقّة قبل أن تحسب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعن بقاعدة الدرس المناسبة وطبّقها خطوة خطوة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$9$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{4}-\\dfrac{7}{10}=\\dfrac{5}{20}-\\dfrac{14}{20}=-\\dfrac{9}{20}$ .",
+          "$F=(-20)\\times\\left(-\\dfrac{9}{20}\\right)=9$ ."
+        ],
+        "result": "9"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "بيّن أنّ $F$ عدد طبيعي .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثمّ اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجب أن تبرّره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اذكر القاعدة التي تستعملها في كلّ سطر."
+        }
+      ],
+      "feedback": {
+        "correct": "تطابق تبريرك مع الحل النموذجي .",
+        "incorrect": "قارن تبريرك بالحل النموذجي سطرًا سطرًا، ثمّ قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "$F=(-20)\\times\\left(-\\dfrac{9}{20}\\right)=9$ .",
+          "$9$ عدد طبيعي، إذن $F$ عدد طبيعي."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ا",
+      "statement": "احسب $C=\\dfrac{-7}{9}+\\dfrac{4}{5}\\div\\dfrac{12}{-5}$ واكتب النتيجة على أبسط شكل بمقام موجب .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "-10/9",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المطلوب بدقّة قبل أن تحسب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعن بقاعدة الدرس المناسبة وطبّقها خطوة خطوة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = -\\dfrac{10}{9}$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{4}{5}\\div\\dfrac{12}{-5}=\\dfrac{4}{5}\\times\\dfrac{-5}{12}=-\\dfrac{1}{3}$ .",
+          "$C=\\dfrac{-7}{9}-\\dfrac{3}{9}=\\dfrac{-10}{9}=-\\dfrac{10}{9}$ ."
+        ],
+        "result": "C = -\\dfrac{10}{9}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ب",
+      "statement": "العدد $C=-\\dfrac{10}{9}$ هو :",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "عدد ناطق وليس عددًا صحيحًا نسبيًّا",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "عدد صحيح نسبي",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-NOTANUMBER"
+        },
+        {
+          "id": "C",
+          "content": "ليس ناطقًا لأنّه سالب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-NEGNOTDEC"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ كلّ عدد صحيح نسبي وكلّ عدد عشري نسبي له كتابة كسرية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العدد على الشكل a/b ثمّ اقرأ تعريف العدد الناطق."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: عدد ناطق وليس عددًا صحيحًا نسبيًّا .",
+        "incorrect": "راجع تعريف العدد الناطق ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$-\\dfrac{10}{9}$ حاصل قسمة عددين صحيحين مقامه غير معدوم : ناطق.",
+          "$9$ لا يقسم $10$ ، فهو ليس عددًا صحيحًا."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "sub": "ج",
+      "statement": "بيّن أنّ $C$ عدد ناطق .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثمّ اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجب أن تبرّره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اذكر القاعدة التي تستعملها في كلّ سطر."
+        }
+      ],
+      "feedback": {
+        "correct": "تطابق تبريرك مع الحل النموذجي .",
+        "incorrect": "قارن تبريرك بالحل النموذجي سطرًا سطرًا، ثمّ قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "$C=\\dfrac{-10}{9}$ حاصل قسمة العدد الصحيح النسبي $-10$ على العدد الصحيح النسبي غير المعدوم $9$ .",
+          "إذن $C$ عدد ناطق."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q8",
+      "step": "03",
+      "sub": "د",
+      "statement": "هل $C$ أصغر من $-1$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا، لأنّ $\\dfrac{10}{9}>1$ لكنّ العدد سالب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-NEGORDER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العددين بالمقام الموجب نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن البسطين بقواعد مقارنة الأعداد النسبية: على يسار الصفر، الأبعد عن الصفر هو الأصغر."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: نعم .",
+        "incorrect": "اكتب العددين بمقام موجب مشترك قبل أن تقارن، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$-\\dfrac{10}{9}=-1\\dfrac{1}{9}$ يقع على يسار $-1=-\\dfrac{9}{9}$ .",
+          "$-10<-9$ ، إذن $C<-1$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

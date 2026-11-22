@@ -1,0 +1,126 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-aadad-l1-007",
+  "lessonCode": "wadiya-idmajiya-aadad",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2025 — PGCD(1001 ; 455)",
+    "estimatedMinutes": 6,
+    "tags": [
+      "القاسم المشترك الأكبر",
+      "قواسم مشتركة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-aadad_P1",
+      "modelledOn": "BEM 2025 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب: $PGCD(1001 ; 455)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "91",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 1001 على 455: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (1001 ; 455) بالزوج (455 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 91.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$1001 = 455 \\times 2 + 91$",
+          "$455 = 91 \\times 5 + 0$",
+          "آخر باقٍ غير معدوم هو 91، إذن:"
+        ],
+        "result": "PGCD(1001 ; 455) = 91"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج كل القواسم المشتركة للعددين 1001 و 455.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        7,
+        13,
+        91
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القواسم المشتركة لعددين هي قواسم قاسمهما المشترك الأكبر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل قواسم العدد الذي وجدته في السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة هي قواسم 91: 1 ، 7 ، 13 ، 91.",
+        "incorrect": "اكتب كل قواسم القاسم المشترك الأكبر الذي وجدته في السؤال 01، ولا تنسَ 1 والعدد نفسه."
+      },
+      "solution": {
+        "lines": [
+          "القواسم المشتركة للعددين 1001 و 455 هي قواسم قاسمهما المشترك الأكبر 91.",
+          "قواسم 91: 1 ، 7 ، 13 ، 91"
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

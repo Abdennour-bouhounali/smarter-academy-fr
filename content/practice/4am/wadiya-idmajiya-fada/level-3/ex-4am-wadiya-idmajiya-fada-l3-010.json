@@ -1,0 +1,83 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-fada-l3-010",
+  "lessonCode": "wadiya-idmajiya-fada",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — حجم مخروط مبتور بالفرق",
+    "estimatedMinutes": 5,
+    "tags": [
+      "المخروط المبتور",
+      "حجم المخروط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-fada_P3",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "مخروط كبير نصف قطر قاعدته $8\\,\\mathrm{cm}$ وارتفاعه $12\\,\\mathrm{cm}$ ، نزعنا منه من جهة الرأس مخروطا صغيرا نصف قطر قاعدته $4\\,\\mathrm{cm}$ وارتفاعه $6\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "حجم المخروط المبتور الباقي (بالسنتيمتر المكعب):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-fada_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$224\\pi$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$128\\pi$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MABTUR-FARQ"
+        },
+        {
+          "id": "C",
+          "content": "$288\\pi$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MABTUR-FARQ"
+        },
+        {
+          "id": "D",
+          "content": "$672\\pi$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MABTUR-THULTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حجم الكبير $\\dfrac{1}{3}\\pi \\times 64 \\times 12$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حجم الصغير $\\dfrac{1}{3}\\pi \\times 16 \\times 6$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح حجم الصغير من حجم الكبير."
+        }
+      ],
+      "feedback": {
+        "correct": "$256\\pi - 32\\pi = 224\\pi\\,\\mathrm{cm}^3$ (والصغير تصغير نسبته $\\dfrac{1}{2}$ : $\\dfrac{1}{8} \\times 256\\pi = 32\\pi$ ).",
+        "incorrect": "$128\\pi$ بـ k بدل $k^3$ ، و $288\\pi$ مجموع لا فرق، و $672\\pi$ بنسيان $\\dfrac{1}{3}$ ."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 3
+    }
+  ]
+}

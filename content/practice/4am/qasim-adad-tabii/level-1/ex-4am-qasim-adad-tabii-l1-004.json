@@ -1,0 +1,125 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l1-004",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2025 — 943 و 23",
+    "estimatedMinutes": 4,
+    "tags": [
+      "الباقي المعدوم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-adad-tabii_P1",
+      "modelledOn": "BEM 2025 I-2 01"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب باقي القسمة الإقليدية للعدد 943 على 23.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $23 \\times 40$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كم يبقى من 943 بعد طرح هذا الجداء؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الباقي أصغر تمامًا من 23."
+        }
+      ],
+      "feedback": {
+        "correct": "$943 = 23 \\times 41 + 0$: الباقي معدوم.",
+        "incorrect": "اطرح من 943 أكبر مضاعف للعدد 23 لا يتجاوزه."
+      },
+      "solution": {
+        "lines": [
+          "$23 \\times 40 = 920$ و $943 - 920 = 23$",
+          "$23 \\times 41 = 943$",
+          "إذن $943 = 23 \\times 41 + 0$"
+        ],
+        "result": "r = 0"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ماذا تستنتج؟ هل 23 قاسم للعدد 943؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 943 على 23."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "23 قاسم للعدد 943 إذا وفقط إذا كان باقي هذه القسمة معدومًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$943 = 23 \\times 41$: الباقي معدوم.",
+        "incorrect": "أجرِ القسمة الإقليدية للعدد 943 على 23، وانظر هل الباقي معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$943 = 23 \\times 41$ (الباقي معدوم).",
+          "إذن 23 قاسم للعدد 943."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l3-009",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2023 — A = 3960/18",
+    "estimatedMinutes": 8,
+    "tags": [
+      "قواسم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qawasim-adad-tabii_P3",
+      "modelledOn": "BEM 2023 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد A حيث:",
+    "formulas": [
+      "A = \\dfrac{3960}{18}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب العدد A على شكل عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "220",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ قسمة 3960 على 18."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق أن الباقي معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$3960 = 18 \\times 220$.",
+        "incorrect": "اقسم 3960 على 18 وتحقّق أن الباقي معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$18 \\times 220 = 3960$",
+          "إذن A عدد طبيعي."
+        ],
+        "result": "A = 220"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عيّن كل قواسم العدد A.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        2,
+        4,
+        5,
+        10,
+        11,
+        20,
+        22,
+        44,
+        55,
+        110,
+        220
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            4,
+            5,
+            10,
+            11,
+            20,
+            22,
+            44,
+            55,
+            110
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 220 بمربعات الأعداد: إلى أي عدد يكفي أن تختبر قابلية القسمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل قسمة باقيها معدوم تعطي قاسمين: $d$ و $220 \\div d$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$220 = 1 \\times 220$ ، $220 = 2 \\times 110$ ، $220 = 4 \\times 55$ ، $220 = 5 \\times 44$ ، $220 = 10 \\times 22$ ، $220 = 11 \\times 20$.",
+        "incorrect": "اختبر الأعداد التي مربعها أصغر من العدد أو يساويه، وخذ من كل قسمة باقيها معدوم القاسمين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$14^2 = 196 \\leq 220 < 225 = 15^2$ ومنه نختبر قابلية قسمة 220 على الأعداد من 1 إلى 14.",
+          "نجد أن 220 يقبل القسمة على كل من الأعداد: 1 ، 2 ، 4 ، 5 ، 10 ، 11.",
+          "ومن المساويات: $220 = 1 \\times 220$ ، $220 = 2 \\times 110$ ، $220 = 4 \\times 55$ ، $220 = 5 \\times 44$ ، $220 = 10 \\times 22$ ، $220 = 11 \\times 20$",
+          "إذن قواسم العدد 220 هي: 1 ، 2 ، 4 ، 5 ، 10 ، 11 ، 20 ، 22 ، 44 ، 55 ، 110 ، 220."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 330
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "استنتج قواسم العدد A الفردية.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        5,
+        11,
+        55
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل قائمة القواسم التي وجدتها في السؤال 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الفردي رقم آحاده 1 أو 3 أو 5 أو 7 أو 9."
+        }
+      ],
+      "feedback": {
+        "correct": "نحتفظ من قائمة قواسم 220 بالأعداد الفردية.",
+        "incorrect": "من بين قواسم 220، احتفظ فقط بالأعداد التي لا تقبل القسمة على 2."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 220 هي: 1 ، 2 ، 4 ، 5 ، 10 ، 11 ، 20 ، 22 ، 44 ، 55 ، 110 ، 220.",
+          "القواسم الفردية هي: 1 ، 5 ، 11 ، 55."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

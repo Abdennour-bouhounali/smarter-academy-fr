@@ -1,45 +1,49 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Mail, ArrowRight } from 'lucide-react';
+import { m } from 'framer-motion';
+import { Mail } from 'lucide-react';
+import { ArrowForward } from '../common/DirectionalIcons';
+import { useTranslation } from 'react-i18next';
 import { navLinks } from '../../data/navigation';
 
 export default function Footer() {
+  const { t } = useTranslation('nav');
+  const { t: tm } = useTranslation('marketing');
   return (
     <footer className="relative z-10 bg-slate-900 text-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top row */}
         <div className="flex flex-col md:flex-row justify-between items-start gap-10 mb-12">
           {/* Brand */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="max-w-xs"
           >
             <div className="flex items-center gap-3 mb-4">
-              <img src="/smarter-academy-logo.webp" alt="Smarter Academy" className="h-12 w-auto rounded-lg object-contain bg-white/10" />
+              <img src="/brand/mark-white.svg" width="200" height="200" decoding="async" alt="Smarter Academy" className="h-12 w-12" />
               <div>
                 <p className="font-space font-bold text-white text-lg">Smarter Academy</p>
               </div>
             </div>
             <p className="font-inter text-slate-400 text-sm leading-relaxed mb-4">
-              Plateforme de mathématiques interactive — du Collège au Lycée.
+              {tm('footer.tagline')}
             </p>
 
             <p className="flex items-start gap-2 text-xs font-inter text-slate-400">
               <Mail size={13} className="text-blue-400 flex-shrink-0 mt-0.5" />
               <a href="mailto:abdennour.bouhounali@gmail.com" className="hover:text-white transition-colors break-words">abdennour.bouhounali@gmail.com</a>
             </p>
-          </motion.div>
+          </m.div>
 
           {/* Navigation */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            <h4 className="font-space font-bold text-slate-300 text-sm mb-4 uppercase tracking-widest">Navigation</h4>
+            <h4 className="font-space font-bold text-slate-300 text-sm mb-4 uppercase tracking-widest">{tm('footer.navigation')}</h4>
             <ul className="space-y-2">
               {navLinks.map((link) => (
                 <li key={link.path}>
@@ -47,42 +51,34 @@ export default function Footer() {
                     to={link.path}
                     className="font-inter text-slate-400 hover:text-white text-sm transition-colors duration-200"
                   >
-                    {link.label}
+                    {t(link.labelKey)}
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link
-                  to="/contact"
-                  className="font-inter text-slate-400 hover:text-white text-sm transition-colors duration-200"
-                >
-                  Contact
-                </Link>
-              </li>
             </ul>
-          </motion.div>
+          </m.div>
 
           {/* CTA column */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             className="max-w-xs"
           >
-            <h4 className="font-space font-bold text-slate-300 text-sm mb-4 uppercase tracking-widest">Rejoignez-nous</h4>
+            <h4 className="font-space font-bold text-slate-300 text-sm mb-4 uppercase tracking-widest">{tm('footer.joinUs')}</h4>
             <p className="font-inter text-slate-400 text-sm leading-relaxed mb-4">
-              Créez un compte gratuit et accédez tout de suite à l'expérience 6e.
+              {tm('footer.joinBody')}
             </p>
             <Link
               to="/register"
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5"
               style={{ background: 'linear-gradient(135deg, #3B82F6, #8B5CF6)' }}
             >
-              Commencer gratuitement
-              <ArrowRight size={14} />
+              {tm('footer.startFree')}
+              <ArrowForward size={14} />
             </Link>
-          </motion.div>
+          </m.div>
         </div>
 
         {/* Divider */}
@@ -90,12 +86,13 @@ export default function Footer() {
           {/* Les pages légales, dans le pied de page PARTAGÉ — donc présentes
               sur toutes les pages visiteur d'un coup, plutôt que recopiées
               page par page. C'est aussi là qu'on va les chercher. */}
-          <nav aria-label="Informations légales" className="mb-5">
+          <nav aria-label={tm('footer.legalAria')} className="mb-5">
             <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2 sm:justify-start">
               {[
-                { to: '/mentions-legales', label: 'Mentions légales' },
-                { to: '/confidentialite', label: 'Politique de confidentialité' },
-                { to: '/cgu', label: "Conditions Générales d'Utilisation" },
+                { to: '/confidentialite', label: tm('footer.privacy') },
+                { to: '/cgu', label: tm('footer.terms') },
+                // Le guide « حماية الجهاز » (PARENT_SPACE.md §6) : public, pour les parents.
+                { to: '/himaya', label: tm('footer.deviceGuide') },
               ].map((item) => (
                 <li key={item.to}>
                   <Link
@@ -111,10 +108,10 @@ export default function Footer() {
 
           <div className="flex flex-col sm:flex-row justify-between items-center gap-3">
             <p className="font-inter text-slate-500 text-sm text-center">
-              © {new Date().getFullYear()} Smarter Academy — Tous droits réservés
+              {tm('footer.rights', { year: new Date().getFullYear() })}
             </p>
             <div className="flex items-center gap-2">
-              <span className="font-inter text-slate-500 text-xs">Manipule. Découvre. Comprends. Maîtrise.</span>
+              <span className="font-inter text-slate-500 text-xs">{tm('footer.motto')}</span>
             </div>
           </div>
         </div>

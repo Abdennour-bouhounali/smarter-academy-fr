@@ -1,0 +1,136 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l1-010",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — الحصر والباقي",
+    "estimatedMinutes": 4,
+    "tags": [
+      "حصر",
+      "باقٍ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نريد حصر العدد 683 بين مضاعفين متتاليين للعدد 25."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ حصر للعدد 683 بين مضاعفين متتاليين للعدد 25 صحيح؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$25 \\times 27 \\le 683 < 25 \\times 28$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$25 \\times 26 \\le 683 < 25 \\times 27$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "id": "C",
+          "content": "$25 \\times 28 \\le 683 < 25 \\times 29$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الجداءات المقترحة وقارنها بـ 683."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الجداء الأول لا يتجاوز 683، والثاني يتجاوزه."
+        }
+      ],
+      "feedback": {
+        "correct": "$25 \\times 27 = 675$ و $25 \\times 28 = 700$ ، و $675 \\le 683 < 700$.",
+        "incorrect": "احسب كل جداء: يجب أن يكون الأول أصغر من 683 أو يساويه، والثاني أكبر منه."
+      },
+      "solution": {
+        "lines": [
+          "$25 \\times 27 = 675$ و $25 \\times 28 = 700$",
+          "$675 \\le 683 < 700$"
+        ],
+        "result": "25 \\times 27 \\le 683 < 25 \\times 28"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج باقي القسمة الإقليدية للعدد 683 على 25.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "27",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "33",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 683."
+        }
+      ],
+      "feedback": {
+        "correct": "$683 - 25 \\times 27 = 683 - 675 = 8$ ، و $8 < 25$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 25."
+      },
+      "solution": {
+        "lines": [
+          "$683 = 25 \\times 27 + 8$",
+          "$8 < 25$ ، إذن الباقي هو 8."
+        ],
+        "result": "r = 8"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

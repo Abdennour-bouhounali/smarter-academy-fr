@@ -1,0 +1,77 @@
+{
+  "id": "ex-4am-takbir-tasghir-l1-001",
+  "lessonCode": "takbir-tasghir",
+  "level": 1,
+  "metadata": {
+    "title": "نشاط 6 — تكبير أم تصغير؟",
+    "estimatedMinutes": 2,
+    "tags": [
+      "التكبير والتصغير",
+      "النسبة k"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-6",
+      "page": 165,
+      "section": "أنشطة",
+      "number": 6
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 165، نشاط 6): متوازي المستطيلات A′B′C′D′E′F′G′H′ ناتج عن تصغير متوازي المستطيلات ABCDEFGH بنسبة $\\dfrac{3}{5}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "لماذا نسمّيه تصغيرا؟",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لأن $\\dfrac{3}{5}$ كسر، وكل كسر يعطي تكبيرا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-ITTIJAH"
+        },
+        {
+          "id": "B",
+          "content": "لأننا نطرح $\\dfrac{3}{5}$ من كل طول",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-JAM"
+        },
+        {
+          "id": "C",
+          "content": "لأن $0 < \\dfrac{3}{5} < 1$ : كل طول يُضرب في عدد أصغر من 1",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النسبة $k = \\dfrac{3}{5}$ بالعدد 1."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان $k > 1$ فهو تكبير، وإذا كان $0 < k < 1$ فهو تصغير."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب طولا، مثلا $AB = 5$ ، في $\\dfrac{3}{5}$ : هل يكبر أم يصغر؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{5} < 1$ : $AB = 5$ يصير $A'B' = 3$ ، فالمجسّم يصغر.",
+        "incorrect": "التصغير ضرب كل الأطوال في عدد k بين 0 و 1."
+      }
+    }
+  ]
+}

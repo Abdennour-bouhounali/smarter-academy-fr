@@ -18,6 +18,14 @@ concurrency:
 jobs:
   deploy:
     name: Build and deploy
+    # FR REBUILD LOCK (2026-11-22). This tree is the DZ core being rebuilt for
+    # France (docs/FRANCE_REBUILD_PLAN.md). Until the owner approves the
+    # cutover it must NEVER reach French production: it would run 94 pending
+    # migrations (one of them deletes every student report), close every grade
+    # and show paying subscribers an empty catalogue. The job is skipped unless
+    # the repository variable FR_REBUILD_CUTOVER_APPROVED is exactly `yes`.
+    # Set it only at the cutover, by the owner, after the rehearsal of plan §6.
+    if: vars.FR_REBUILD_CUTOVER_APPROVED == 'yes'
     runs-on: ubuntu-latest
     environment: production
 
@@ -59,7 +67,7 @@ jobs:
           VITE_API_URL: ${{ vars.VITE_API_URL }}
         run: |
           if [ -z "${VITE_API_URL}" ]; then
-            echo "::error::The VITE_API_URL repository variable is not set. Define it under Settings > Secrets and variables > Actions > Variables (for example https://smarter-academy.fr/api/v1). apps/web/.env.production cannot supply it: it is gitignored and absent from this checkout."
+            echo "::error::The VITE_API_URL repository variable is not set. Define it under Settings > Secrets and variables > Actions > Variables (for example https://smarter-academy.com/api/v1). apps/web/.env.production cannot supply it: it is gitignored and absent from this checkout."
             exit 1
           fi
           echo "Building against ${VITE_API_URL}"
@@ -81,6 +89,25 @@ jobs:
             || { echo "::error::The built bundle does not contain ${VITE_API_URL}."; exit 1; }
           echo "Bundle points at ${VITE_API_URL}."
 
+      # ─────────────────── Export the curriculum for the server ──────────────
+      # The catalogue lives in JavaScript (packages/core, the lesson folders);
+      # the server mirrors it into MySQL with smarter:import-curriculum and
+      # smarter:import-content-registry. Hostinger disables proc_open, so the
+      # server cannot run Node itself: the two exports are built HERE and
+      # shipped with the backend, and the server imports them --from-json.
+      #
+      # They land in apps/api/database/curriculum-sync/ (gitignored). Nothing
+      # under api/ is web-served: api/.htaccess rewrites every request into
+      # public/. The registry export carries answer keys, so this matters.
+      - name: Export the curriculum and content registry
+        run: |
+          set -euo pipefail
+          mkdir -p apps/api/database/curriculum-sync
+          node packages/core/curriculum/exportCurriculum.mjs apps/api/database/curriculum-sync/curriculum-export.json
+          node packages/core/curriculum/exportContentRegistry.mjs apps/api/database/curriculum-sync/content-registry-export.json
+          test -s apps/api/database/curriculum-sync/curriculum-export.json
+          test -s apps/api/database/curriculum-sync/content-registry-export.json
+
       - name: Verify the frontend build
         run: |
           test -d apps/web/dist
@@ -89,9 +116,17 @@ jobs:
           # link (/cours/..., /progression) would 404 in production.
           test -f apps/web/dist/.htaccess
           test -d apps/web/dist/assets
+          # Long-term caching of the hashed files; without it the server sends
+          # « no-store » and every visit re-downloads the app (BUNDLE_BOUNDARIES.md §8).
+          test -f apps/web/dist/assets/.htaccess
 
       # ─────────────────────────── Build the backend ─────────────────────────
-      # 8.4 is what production serves (x-powered-by: PHP/8.4.19). vendor/ is
+      # 8.4, the version the Algerian server serves.
+      #
+      # composer.json says « php ^8.3 », but composer.lock pins symfony/* 8.1.x
+      # which requires « php >=8.4.1 » — so 8.3 cannot install this backend at
+      # all. smarter-academy.com was moved to 8.4 in hPanel accordingly.
+      # vendor/ is
       # built here rather than on the server: Hostinger shared hosting has no
       # dependable Composer, and docs/deployment/HOSTINGER_FILE_MANAGER_DEPLOYMENT.md
       # §7.2 already established building it against composer.lock for PHP 8.4.
@@ -106,6 +141,33 @@ jobs:
       # Shipping a vendor/ that contains them is harmless; shipping a
       # bootstrap/cache that REFERENCES them is what breaks the site (see the
       # exclusion list below).
+      # Le serveur doit tourner sur la MÊME version majeure que ce build.
+      # Un vendor/ construit en 8.4 et déposé sur un hôte en 8.3 ne produit
+      # aucune erreur au déploiement : le site répond 500 après coup. Le
+      # premier déploiement algérien a buté exactement là (lockfile symfony
+      # 8.1 → php >=8.4.1 contre un serveur en 8.3.33).
+      - name: Verify the production server runs a compatible PHP
+        if: ${{ vars.PRODUCTION_URL != '' }}
+        run: |
+          set -euo pipefail
+          # Un serveur lent (curl exit 28) ne doit pas faire échouer le déploiement.
+          headers="$(curl -sI --retry 2 --max-time 30 "${{ vars.PRODUCTION_URL }}/" || true)"
+          served="$(printf '%s' "$headers" \
+            | tr -d '\r' | awk -F'PHP/' '/[Xx]-[Pp]owered-[Bb]y/ {print $2}')"
+          if [ -z "$served" ]; then
+            echo "::warning::The server does not advertise its PHP version; skipping the check."
+            exit 0
+          fi
+          echo "Server advertises PHP $served."
+          major_minor="$(cut -d. -f1,2 <<<"$served")"
+          case "$major_minor" in
+            8.4|8.5)
+              echo "Compatible with the locked dependencies." ;;
+            *)
+              echo "::error::The server runs PHP $served, but composer.lock pins symfony/* which requires >=8.4.1. Raise the PHP version in hPanel (MultiPHP / PHP Configuration) before deploying."
+              exit 1 ;;
+          esac
+
       - name: Install PHP dependencies for production
         working-directory: apps/api
         run: |
@@ -128,6 +190,28 @@ jobs:
           echo "Production vendor/ verified."
 
       # ──────────────────────────────── SSH ──────────────────────────────────
+      # ──────────────── Garde-fou d'indépendance (master spec §2) ───────────
+      # Les deux produits ont des dépôts, des serveurs et des domaines
+      # séparés, mais les mêmes NOMS de secrets. Coller par erreur l'hôte
+      # français dans les secrets de ce dépôt déploierait la plateforme
+      # algérienne par-dessus la française — sans qu'aucune autre étape ne
+      # s'en aperçoive, puisque la structure des deux serveurs est identique.
+      - name: Refuse to deploy onto the French infrastructure
+        env:
+          PRODUCTION_URL: ${{ vars.PRODUCTION_URL }}
+          VITE_API_URL: ${{ vars.VITE_API_URL }}
+        run: |
+          set -euo pipefail
+          for value in "$PRODUCTION_URL" "$VITE_API_URL"; do
+            case "$value" in
+              *smarter-academy.fr*)
+                echo "::error::A French domain (smarter-academy.fr) appears in this repository's variables. The Algerian product must never deploy onto French infrastructure (master spec §2)."
+                exit 1
+                ;;
+            esac
+          done
+          echo "Variables point away from the French infrastructure."
+
       - name: Prepare SSH
         env:
           SSH_KEY: ${{ secrets.HOSTINGER_SSH_KEY }}
@@ -219,6 +303,14 @@ jobs:
             -e "ssh -i ~/.ssh/deploy_key -p $SSH_PORT" \
             apps/web/dist/ \
             "$SSH_USER@$SSH_HOST:$REMOTE_PATH/"
+          # Share pages from older builds lived at the PUBLIC path (books/, books.html,
+          # books/smart-protocol/index.html). Since 2026-10-17 they are under share/
+          # (vite-plugin-share-pages.js) — and while a books/ DIRECTORY exists,
+          # LiteSpeed answers /books/<slug> with a 301 to « …/ » before any rewrite
+          # rule runs. rsync never deletes, so remove those leftovers here. Nothing
+          # else lives there: book images are under images/books/.
+          ssh -i ~/.ssh/deploy_key -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" \
+            "rm -rf '$REMOTE_PATH/books' '$REMOTE_PATH/books.html'"
 
       # ──────────────────────── Deploy the backend ───────────────────────────
       # Also no --delete, and with an exclusion list that is the heart of the
@@ -264,16 +356,218 @@ jobs:
             apps/api/ \
             "$SSH_USER@$SSH_HOST:$REMOTE_PATH/api/"
 
-      # ───────────────────── Laravel post-deployment ─────────────────────────
-      # Deliberately NOT running migrations. This project applies schema
-      # changes as reviewed SQL through phpMyAdmin
-      # (docs/deployment/HOSTINGER_AUTH_MIGRATION.sql); making them automatic
-      # here would be a new and much riskier policy.
+      # ───────────────────── Deploy the practice content ─────────────────────
+      # The API reads content/practice/ at RUNTIME (active.json, the index, the
+      # exercise JSON, misconceptions) from config('practice.*_path'), whose
+      # default is base_path('../../content/practice') — the repository layout,
+      # where the API lives in apps/api/. The frontend bundles active.json at
+      # BUILD time. Until 2026-09-25 this workflow shipped only apps/api/, so
+      # production offered practice (bundled list) while the server had no
+      # list at all: every GET /lessons/{code}/practice/overview answered 422
+      # « La pratique n'est pas encore disponible pour cette leçon. »
       #
-      # Only caches are cleared, never warmed: `config:cache` would write
+      # Mirrored to the SAME relative place — $REMOTE_PATH/api/../../content/
+      # practice, outside the web root — so the config default resolves on the
+      # server exactly as in the repository, with no .env change. No --delete,
+      # like the other rsyncs: a removed exercise lingers as a file but leaves
+      # index.generated.json, which is the only thing the server serves from.
+      # `smarter:practice-doctor` below proves the server reads THIS copy.
+      - name: Deploy the practice content
+        env:
+          SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
+          SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
+          SSH_USER: ${{ secrets.HOSTINGER_USER }}
+          REMOTE_PATH: ${{ secrets.HOSTINGER_PATH }}
+        run: |
+          set -euo pipefail
+          test -s content/practice/active.json
+          test -s content/practice/index.generated.json
+          ssh -i ~/.ssh/deploy_key -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" \
+            "mkdir -p '$REMOTE_PATH/api/../../content/practice'"
+          rsync -rlptz --human-readable --omit-dir-times \
+            -e "ssh -i ~/.ssh/deploy_key -p $SSH_PORT" \
+            content/practice/ \
+            "$SSH_USER@$SSH_HOST:$REMOTE_PATH/api/../../content/practice/"
+
+      # ───────────────────── Deploy the thinking-lab content ─────────────────
+      # « مختبر التفكير » (docs/architecture/THINKING_LAB.md §5.3): the API reads
+      # ONE file at runtime, content/thinking-lab/index.generated.json, through
+      # config('thinking_lab.content_path') — same relative place as the practice
+      # content, outside the web root. It holds the ANSWERS: only the server reads
+      # it, the web bundle never imports it. Only that file is shipped.
+      - name: Deploy the thinking-lab content
+        env:
+          SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
+          SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
+          SSH_USER: ${{ secrets.HOSTINGER_USER }}
+          REMOTE_PATH: ${{ secrets.HOSTINGER_PATH }}
+        run: |
+          set -euo pipefail
+          test -s content/thinking-lab/index.generated.json
+          ssh -i ~/.ssh/deploy_key -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" \
+            "mkdir -p '$REMOTE_PATH/api/../../content/thinking-lab'"
+          rsync -rlptz --human-readable --omit-dir-times \
+            -e "ssh -i ~/.ssh/deploy_key -p $SSH_PORT" \
+            content/thinking-lab/index.generated.json \
+            "$SSH_USER@$SSH_HOST:$REMOTE_PATH/api/../../content/thinking-lab/"
+
+      # ───────────────────── Laravel post-deployment ─────────────────────────
+      # The schema IS applied here, since 2026-09-23. Until then this workflow
+      # deliberately never migrated, and the schema was applied by hand as
+      # reviewed SQL in phpMyAdmin. That policy failed in the way it was always
+      # going to fail: `main` caught up five releases at once, 26 migrations
+      # went unapplied, and a fully green deploy left production returning 500
+      # on /content/availability, /student/study-context, /practice/notes and
+      # /math-lab/documents. Shipping code without its schema is not safer than
+      # migrating — it is the same risk, taken silently.
+      #
+      # Two rules make this safe enough to automate:
+      #
+      #   1. A BACKUP IS A PRECONDITION. The dump runs first, in its own step.
+      #      If it fails, the job stops and the schema is never touched. No
+      #      backup, no migration — there is no flag to skip it.
+      #   2. The migration step reports `migrate:status` before and after, so
+      #      the log says exactly what changed, and fails on the first error
+      #      rather than continuing through a half-applied batch.
+      #
+      # `docs/deployment/*.sql` stays valid, and stays the way to recover a
+      # database this workflow cannot reach.
+      #
+      # Caches are cleared, never warmed: `config:cache` would write
       # bootstrap/cache/config.php, which then overrides .env. Per docs §7,
       # that file deliberately does not exist on this server so that .env
       # stays editable from the File Manager.
+      # A backup is the PRECONDITION of the migration below, not a nicety. It
+      # runs in its own step so a failure here stops the job with the schema
+      # untouched. `smarter:db-backup` prefers mysqldump and falls back to an
+      # export written through Laravel's own connection when the binary is
+      # absent, as it often is on shared hosting — so a copy always exists. The
+      # dump lands outside the web root: it contains every student record.
+      - name: Back up the database before touching the schema
+        env:
+          SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
+          SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
+          SSH_USER: ${{ secrets.HOSTINGER_USER }}
+          REMOTE_PATH: ${{ secrets.HOSTINGER_PATH }}
+        run: |
+          set -euo pipefail
+          ssh -i ~/.ssh/deploy_key -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" \
+            "REMOTE_PATH='$REMOTE_PATH' SHA='${{ github.sha }}' bash -s" <<'REMOTE'
+          set -euo pipefail
+          cd "$REMOTE_PATH/api"
+
+          # storage/ is excluded from the rsync and sits behind the api/.htaccess,
+          # so a dump here is never served over HTTP.
+          dest="storage/app/backups/pre-deploy-$(date +%Y-%m-%d_%H%M%S)-${SHA:0:8}.sql"
+          mkdir -p storage/app/backups
+
+          php artisan smarter:db-backup --out="$dest" --keep=10
+
+          # Trust the file, not the exit code alone.
+          test -s "$dest"
+          bytes=$(wc -c < "$dest")
+          if [ "$bytes" -lt 1024 ]; then
+            echo "Backup is only $bytes bytes - refusing to migrate." >&2
+            exit 1
+          fi
+          echo "Backup OK: $dest ($bytes bytes)"
+          REMOTE
+
+      # Only reached when the backup step succeeded.
+      - name: Apply database migrations
+        env:
+          SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
+          SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
+          SSH_USER: ${{ secrets.HOSTINGER_USER }}
+          REMOTE_PATH: ${{ secrets.HOSTINGER_PATH }}
+        run: |
+          set -euo pipefail
+          ssh -i ~/.ssh/deploy_key -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" \
+            "REMOTE_PATH='$REMOTE_PATH' bash -s" <<'REMOTE'
+          set -euo pipefail
+          cd "$REMOTE_PATH/api"
+
+          echo "── Pending before ──"
+          php artisan migrate:status | grep -i pending || echo "(none)"
+
+          # --force because there is no TTY to confirm at; --no-interaction so a
+          # destructive-migration prompt cannot hang the deploy forever.
+          php artisan migrate --force --no-interaction
+
+          echo "── Pending after ──"
+          if php artisan migrate:status | grep -qi pending; then
+            echo "Migrations are STILL pending after migrate - see above." >&2
+            php artisan migrate:status | grep -i pending >&2
+            exit 1
+          fi
+          echo "Schema is up to date with the deployed code."
+          REMOTE
+
+      # ─────────────────── Synchronise the curriculum mirror ─────────────────
+      # Only reached after the backup and the migrations. The database is
+      # brought in line with the catalogue that was just deployed, with the
+      # SAME commands a developer runs locally — there is no second sync:
+      #
+      #   import-curriculum        upsert grades, chapters, units, lessons and
+      #                            learning points. A NEW lesson is created
+      #                            tier = free; an EXISTING lesson's tier is
+      #                            never written. lessons.tier is the single
+      #                            source of truth and the administrator owns
+      #                            it: a deploy never resets it.
+      #   import-content-registry  upsert modules, exercises, items. New rows
+      #                            are born draft; publication_status is never
+      #                            overwritten (the admin publishes).
+      #   prune-retired-...        delete lessons the catalogue no longer
+      #                            declares, ONLY when no student ever touched
+      #                            them (no evidence, progress, attempt or
+      #                            session). --with-history is refused outside
+      #                            a local environment, and is not passed.
+      #
+      # The inventory printed at the end is the production database as it now
+      # stands: every lesson in an active grade, with its publication state and
+      # its tier.
+      - name: Synchronise the curriculum mirror
+        env:
+          SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
+          SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
+          SSH_USER: ${{ secrets.HOSTINGER_USER }}
+          REMOTE_PATH: ${{ secrets.HOSTINGER_PATH }}
+        run: |
+          set -euo pipefail
+          ssh -i ~/.ssh/deploy_key -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" \
+            "REMOTE_PATH='$REMOTE_PATH' bash -s" <<'REMOTE'
+          set -euo pipefail
+          cd "$REMOTE_PATH/api"
+          sync=database/curriculum-sync
+
+          # Tiers are captured BEFORE and compared AFTER: the sync must leave
+          # every existing lesson's tier exactly as the administrator set it.
+          # Temporary FILES, not process substitution: Hostinger has no
+          # /dev/fd, so `join <(…) <(…)` fails there ("/dev/fd/63: No such
+          # file or directory" — the first run of this step, 2026-09-25).
+          before="$(mktemp -p storage/app)"; after="$(mktemp -p storage/app)"
+          trap 'rm -f "$before" "$after"' EXIT
+          php artisan smarter:lesson-inventory --tiers-only | sort > "$before"
+
+          php artisan smarter:import-curriculum --from-json="$sync/curriculum-export.json"
+          php artisan smarter:import-content-registry --from-json="$sync/content-registry-export.json"
+          php artisan smarter:prune-retired-learning-points --from-json="$sync/curriculum-export.json"
+
+          php artisan smarter:lesson-inventory --tiers-only | sort > "$after"
+          # Only lessons present on BOTH sides are compared: a lesson created
+          # (born free) or pruned by the sync is not a tier change.
+          changed="$(join "$before" "$after" | awk '$2 != $3')"
+          if [ -n "$changed" ]; then
+            echo "The curriculum sync CHANGED the tier of existing lessons (code, before, after):" >&2
+            printf '%s\n' "$changed" >&2
+            exit 1
+          fi
+          echo "Tiers preserved: no existing lesson changed tier."
+
+          echo "── Production lesson inventory AFTER the sync ──"
+          php artisan smarter:lesson-inventory
+          REMOTE
+
       - name: Clear Laravel caches
         env:
           SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
@@ -301,6 +595,26 @@ jobs:
           php artisan view:clear
           echo "Caches cleared. Laravel will regenerate what it needs."
           REMOTE
+
+      # The server must read the practice content of THIS commit: the files
+      # exist, the active list is not empty, every active lesson has exercises
+      # and its learning points exist, and the fingerprints of active.json and
+      # index.generated.json match the ones computed here. A missing, stale or
+      # relocated copy (PRACTICE_*_PATH in .env) fails the deployment instead
+      # of turning every practice overview into a 422. Runs after the cache
+      # clear: the doctor must not read a list cached before the sync.
+      - name: Verify the practice content
+        env:
+          SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
+          SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
+          SSH_USER: ${{ secrets.HOSTINGER_USER }}
+          REMOTE_PATH: ${{ secrets.HOSTINGER_PATH }}
+        run: |
+          set -euo pipefail
+          active="$(sha256sum content/practice/active.json | cut -d' ' -f1)"
+          index="$(sha256sum content/practice/index.generated.json | cut -d' ' -f1)"
+          ssh -i ~/.ssh/deploy_key -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" \
+            "cd '$REMOTE_PATH/api' && php artisan smarter:practice-doctor --expect-active=$active --expect-index=$index"
 
       # ────────────────────────── Verification ───────────────────────────────
       - name: Verify the deployed files
@@ -416,6 +730,22 @@ jobs:
             || { echo "::error::SPA fallback broken: /progression returned $code"; exit 1; }
           echo "SPA deep-link routing works."
 
+          # The book purchase page answers DIRECTLY (no 301 to « …/ », which cost a
+          # round trip before anything showed) with its own share page — and, when
+          # the API answered during the build, the pre-rendered first screen
+          # (BOOKS_STORE.md §6bis). The query string bypasses a CDN copy of the old 301.
+          book="$(curl --silent --max-time 30 -w '\n%{http_code}' "$base/books/smart-protocol?deploy=${GITHUB_SHA::8}")"
+          code="$(tail -n1 <<<"$book")"
+          [ "$code" = "200" ] \
+            || { echo "::error::/books/smart-protocol returned $code (expected 200, no redirect)."; exit 1; }
+          grep -q 'og:image" content="[^"]*/og/smart-protocol.png' <<<"$book" \
+            || { echo "::error::/books/smart-protocol is not its share page (og:image)."; exit 1; }
+          if grep -q 'id="sa-static-shell"' <<<"$book"; then
+            echo "Book page: 200, share page, pre-rendered first screen."
+          else
+            echo "::warning::Book page has no pre-rendered first screen (API unreachable during the build?)."
+          fi
+
       # Proves Laravel is executing, not merely that a file was uploaded.
       # /api/v1/legal/versions is public, read-only, touches no database and
       # reads its answer from config - exactly what a health check should be.
@@ -439,6 +769,41 @@ jobs:
           grep -q '"success":true' <<<"$body" \
             || { echo "::error::Unexpected API payload: $body"; exit 1; }
           echo "API responded 200 with the expected JSON."
+
+      # /legal/versions touches no recent table, so it answered 200 all through
+      # the 2026-09-23 outage while four other endpoints returned 500. One
+      # endpoint is not a health check.
+      #
+      # These four are the ones that read the schema shipped since September:
+      # classrooms/plans, the cahier columns, and the Math Lab tables. They are
+      # all behind auth, so unauthenticated they must answer 401 — that alone
+      # proves the route resolved, the controller booted and its queries were
+      # reached. A 5xx is the exact signature of a missing table or column.
+      - name: Verify the endpoints that depend on the schema
+        if: ${{ vars.PRODUCTION_URL != '' }}
+        run: |
+          set -euo pipefail
+          failed=0
+          for endpoint in \
+            'content/availability' \
+            'student/study-context' \
+            'practice/notes' \
+            'math-lab/documents'
+          do
+            code="$(curl --silent --max-time 30 --location -o /dev/null \
+              -w '%{http_code}' "${{ vars.PRODUCTION_URL }}/api/v1/$endpoint")"
+            case "$code" in
+              401|403|200)
+                echo "  ok    $endpoint -> $code" ;;
+              5*)
+                echo "::error::$endpoint returned $code. This is what a missing table or column looks like; check the migration step above and docs/deployment/HOSTINGER_CATCHUP_ALL.sql."
+                failed=1 ;;
+              *)
+                echo "::warning::$endpoint returned an unexpected $code."  ;;
+            esac
+          done
+          [ "$failed" -eq 0 ] || exit 1
+          echo "Every schema-dependent endpoint answered without a server error."
 
       - name: Report a failed deployment
         if: failure()

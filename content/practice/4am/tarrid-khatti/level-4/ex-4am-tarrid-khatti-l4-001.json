@@ -1,0 +1,207 @@
+{
+  "id": "ex-4am-tarrid-khatti-l4-001",
+  "lessonCode": "tarrid-khatti",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 29 (ص 75) — زيادة ثم تخفيض بالنسبة نفسها",
+    "estimatedMinutes": 10,
+    "tags": [
+      "نمذجة",
+      "نسب متتابعة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-29",
+      "page": 75,
+      "section": "أتعمّق",
+      "number": 29,
+      "adaptedFrom": "ex-4am-tarrid-khatti-l4-001"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "كان سعر منتوج $x$ دينارا. بعد زيادة بـ $t\\%$ متبوعة بتخفيض نسبته $t\\%$ أيضا، أصبح السعر الجديد $y$ دينارا."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عبّر عن $y$ بدلالة $x$ و $t$ ، ثم بيّن أن: $y = \\left(1 - \\dfrac{t^2}{10000}\\right)x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الزيادة بـ $t\\%$ : نضرب في $1 + \\dfrac{t}{100}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التخفيض بـ $t\\%$ : نضرب في $1 - \\dfrac{t}{100}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل المتطابقة $(a + b)(a - b) = a^2 - b^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "بعد الزيادة: $x\\left(1 + \\dfrac{t}{100}\\right)$",
+          "بعد التخفيض: $y = x\\left(1 + \\dfrac{t}{100}\\right)\\left(1 - \\dfrac{t}{100}\\right)$",
+          "$y = \\left(1 - \\dfrac{t^2}{10000}\\right)x$"
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "نأخذ $t = 10$ .",
+      "statement": "عيّن معامل الدالة الخطية $f$ التي ترفق بالسعر $x$ السعر الجديد $y$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "0,99",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-NISBA-TATABU-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $t$ بـ 10 في العبارة السابقة."
+        }
+      ],
+      "feedback": {
+        "correct": "$1 - \\dfrac{100}{10000} = 0{,}99$ ، إذن $f(x) = 0{,}99x$ .",
+        "incorrect": "تغيّران متتابعان: نضرب المضاعفين، ولا نجمع النسبتين."
+      },
+      "solution": {
+        "lines": [
+          "$1 - \\dfrac{10^2}{10000} = 1 - 0{,}01 = 0{,}99$",
+          "إذن $f(x) = 0{,}99x$ ."
+        ],
+        "result": "f(x) = 0{,}99x"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب السعر الجديد لمنتوج سعره $5000DA$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: السعر بـ DA",
+      "expectedAnswer": "4950",
+      "misconceptionSignatures": [
+        {
+          "value": "5000",
+          "id": "MISC-NISBA-TATABU-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب صورة 5000 بالدالة $f$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(5000) = 0{,}99 \\times 5000 = 4950$ DA.",
+        "incorrect": "عوّض $x$ بالسعر الأول في عبارة $f(x)$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(5000) = 0{,}99 \\times 5000 = 4950$",
+          "السعر الجديد 4950DA."
+        ],
+        "result": "4950DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "هل يمكن أن يعود السعر بعد التغيّرين إلى قيمته الأولى (من أجل $t \\neq 0$)؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NISBA-TATABU-JAM"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المعامل $1 - \\dfrac{t^2}{10000}$ بالعدد 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$t^2 > 0$ ، فالمعامل أصغر من 1: السعر الجديد أصغر دائما من السعر الأول.",
+        "incorrect": "الزيادة تُحسب على السعر الأول، والتخفيض على السعر بعد الزيادة: لا يلغي أحدهما الآخر."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $t \\neq 0$ : $\\dfrac{t^2}{10000} > 0$ ، إذن $1 - \\dfrac{t^2}{10000} < 1$ .",
+          "$y < x$ : لا يعود السعر إلى قيمته الأولى."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "id": "ex-4am-tayin-pgcd-l4-008",
+  "lessonCode": "tayin-pgcd",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2023 — A = 324/108 و B = √108 + √27",
+    "estimatedMinutes": 7,
+    "tags": [
+      "PGCD",
+      "قاسم للعدد الآخر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tayin-pgcd_P3",
+      "modelledOn": "BEM 2023 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن الأعداد A و B حيث:",
+    "formulas": [
+      "A = \\dfrac{324}{108}",
+      "B = \\sqrt{108} + \\sqrt{27}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب PGCD(324 ; 108).",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "108",
+      "misconceptionSignatures": [
+        {
+          "value": "54",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العددين: هل العدد الأصغر قاسم للعدد الأكبر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد الأكبر على العدد الأصغر وانظر إلى الباقي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان $b$ قاسمًا للعدد $a$ فإن PGCD$(a ; b) = b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$324 = 108 \\times 3$ : العدد 108 قاسم للعدد 324، فهو قاسمهما المشترك الأكبر.",
+        "incorrect": "لا داعي لقائمتين طويلتين: تحقّق أولًا هل أحد العددين قاسم للآخر."
+      },
+      "solution": {
+        "lines": [
+          "$324 = 108 \\times 3$ ، إذن العدد 108 قاسم للعدد 324.",
+          "وبما أن 108 قاسم للعدد 324 فإن:"
+        ],
+        "result": "PGCD(324 ; 108) = 108"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب العدد A على أبسط شكل ممكن.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال السابق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 108.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال السابق."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{324}{108} = \\dfrac{324 \\div 108}{108 \\div 108}$"
+        ],
+        "result": "A = \\dfrac{324}{108} = 3"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "تحقّق أن: $B = 3A\\sqrt{3}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب B على الشكل $a\\sqrt{3}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض A بقيمته التي وجدتها في السؤال 02 ثم قارن."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا."
+      },
+      "solution": {
+        "lines": [
+          "$B = \\sqrt{36 \\times 3} + \\sqrt{9 \\times 3} = 6\\sqrt{3} + 3\\sqrt{3} = 9\\sqrt{3}$",
+          "$3A\\sqrt{3} = 3 \\times 3 \\times \\sqrt{3} = 9\\sqrt{3}$",
+          "إذن: $B = 3A\\sqrt{3}$"
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

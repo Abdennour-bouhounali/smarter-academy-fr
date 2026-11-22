@@ -1,0 +1,243 @@
+{
+  "id": "ex-4am-tarrid-mushkila-l3-002",
+  "lessonCode": "tarrid-mushkila",
+  "level": 3,
+  "metadata": {
+    "title": "المستطيل والمثلث فوقه",
+    "estimatedMinutes": 8,
+    "tags": [
+      "ترييض",
+      "متراجحة",
+      "محيط"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-30",
+      "page": 51,
+      "section": "أوظّف تعلّماتي",
+      "number": 30
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "مستطيل بُعداه $x$ و $6cm$ ، و فوقه مثلث متقايس الأضلاع قاعدته الضلع العلوي للمستطيل الذي طوله $x$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "ما هي قيم $x$ التي من أجلها يكون محيط المستطيل أكبر تمامًا من محيط المثلث المتقايس الأضلاع؟ ترجم ذلك بمتراجحة ثم حلّها.",
+      "statement": "حدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x < k$ أو $x \\leqslant k$ أو $x > k$ أو $x \\geqslant k$ : اكتب العدد $k$ فقط (عدد صحيح أو كسر a/b، قد يكون سالبًا)",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر، كما في حل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إضافة عدد إلى الطرفين أو طرحه منهما لا تغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحدّ هو العدد الذي يحقّق المعادلة المرفقة (نضع «=» مكان رمز المتباينة): اقسم في الأخير على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "حدّ الحلول هو $k = 12$ .",
+        "incorrect": "أعد الحل سطرًا سطرًا: العملية نفسها على الطرفين، ثم القسمة على معامل $x$ في الأخير."
+      },
+      "solution": {
+        "lines": [
+          "حدّ الحلول هو حلّ المعادلة المرفقة: $2x + 12 = 3x$",
+          "$2x - 3x = -12$",
+          "$-x = -12$",
+          "$x = \\dfrac{-12}{-1}$",
+          "إذن حدّ الحلول هو $12$ ."
+        ],
+        "result": "k = 12"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < 12$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$x \\leqslant 12$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        },
+        {
+          "id": "C",
+          "content": "$x > 12$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-SALIB-BILA-QALB"
+        },
+        {
+          "id": "D",
+          "content": "$x \\geqslant 12$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارة معامل $x$ في آخر سطر قبل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد موجب تحافظ على الاتجاه، والقسمة على عدد سالب تغيّره."
+        }
+      ],
+      "feedback": {
+        "correct": "$x < 12$ .",
+        "incorrect": "تتبّع سطور الحل: الاتجاه يتغيّر فقط عند الضرب أو القسمة على عدد سالب، ونوع المتباينة (تامة أو غير تامة) لا يتغيّر أبدًا."
+      },
+      "solution": {
+        "lines": [
+          "محيط المستطيل $2(x + 6) = 2x + 12$ ومحيط المثلث $3x$ .",
+          "$2x + 12 > 3x$",
+          "$2x - 3x > -12$",
+          "$-x > -12$",
+          "$\\dfrac{-x}{-1} < \\dfrac{-12}{-1}$",
+          "إذن حلول المتراجحة هي كل قيم $x$ الأصغر تماما من $12$ .",
+          "قسمنا الطرفين في آخر خطوة على عدد سالب، فتغيّر اتجاه المتباينة وبقي نوعها."
+        ],
+        "result": "x < 12"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما هي أكبر قيمة طبيعية لـ $x$ تحقّق هذا الشرط؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بـ cm",
+      "expectedAnswer": "11",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحلول أصغر تمامًا من الحدّ: هل الحدّ نفسه حل؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي يسبق الحدّ."
+        }
+      ],
+      "feedback": {
+        "correct": "أكبر قيمة طبيعية: 11 (محيط المستطيل $34cm$ ومحيط المثلث $33cm$).",
+        "incorrect": "المتباينة تامة: الحدّ نفسه ليس حلًّا."
+      },
+      "solution": {
+        "lines": [
+          "الحلول هي $0 < x < 12$ ، والعدد 12 ليس حلًّا.",
+          "إذن أكبر قيمة طبيعية هي 11 .",
+          "التحقق: $2 \\times 11 + 12 = 34$ و $3 \\times 11 = 33$ و $34 > 33$ ."
+        ],
+        "result": "11"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "من أجل $x = 12$ ، قارن محيطي الشكلين.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "المحيطان متساويان",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "محيط المستطيل أكبر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        },
+        {
+          "id": "C",
+          "content": "محيط المثلث أكبر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالقيمة المعطاة في عبارتي المحيطين."
+        }
+      ],
+      "feedback": {
+        "correct": "محيط المستطيل $36cm$ ومحيط المثلث $36cm$ : متساويان.",
+        "incorrect": "احسب كل محيط من أجل القيمة المعطاة ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "محيط المستطيل: $2 \\times 12 + 12 = 36$",
+          "محيط المثلث: $3 \\times 12 = 36$",
+          "إذن المحيطان متساويان: 12 هو حدّ الحلول وليس حلًّا للمتراجحة."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

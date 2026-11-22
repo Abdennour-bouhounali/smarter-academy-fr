@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l5-007",
+  "lessonCode": "maqati-mustawiya",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — لوح من جذع",
+    "estimatedMinutes": 3,
+    "tags": [
+      "أسطوانة",
+      "جذر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_maqati-mustawiya_P3",
+      "modelledOn": "now-169"
+    }
+  },
+  "statement": {
+    "content": "جذع شجرة على شكل أسطوانة دوران نصف قطرها $4\\,\\mathrm{dm}$ ، ينشره النجّار بمستو موازٍ لمحوره يبعد عنه بـ $2\\,\\mathrm{dm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "القيمة المضبوطة لعرض المقطع:",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$4\\,\\mathrm{dm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQTA-TARH"
+        },
+        {
+          "id": "B",
+          "content": "$2\\sqrt{3}\\,\\mathrm{dm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQTA-NISF"
+        },
+        {
+          "id": "C",
+          "content": "$4\\sqrt{3}\\,\\mathrm{dm}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نصف العرض ضلع في مثلث قائم وتره 4."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\sqrt{4^2 - 2^2} = \\sqrt{12}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\sqrt{12} = 2\\sqrt{3}$ والعرض ضعفه."
+        }
+      ],
+      "feedback": {
+        "correct": "نصف العرض $\\sqrt{16 - 4} = 2\\sqrt{3}$ ، العرض $4\\sqrt{3}\\,\\mathrm{dm} \\approx 6{,}93\\,\\mathrm{dm}$ .",
+        "incorrect": "$2\\sqrt{3}$ نصف العرض فقط."
+      },
+      "difficulty": 5
+    }
+  ]
+}

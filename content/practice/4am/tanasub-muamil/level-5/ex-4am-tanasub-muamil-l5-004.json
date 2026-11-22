@@ -1,0 +1,326 @@
+{
+  "id": "ex-4am-tanasub-muamil-l5-004",
+  "lessonCode": "tanasub-muamil",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2014 — مخطط شقة بالشلف",
+    "estimatedMinutes": 8,
+    "tags": [
+      "وضعية إدماجية",
+      "سلّم",
+      "جدول"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tanasub-muamil_P1",
+      "modelledOn": "BEM 2014 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2014",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "رسم مهندس مخطط شقة بالشلف، فكانت الأطوال الحقيقية متناسبة مع الأطوال على المخطط. قاس رياض بعض الأطوال:",
+    "table": {
+      "head": [
+        "الطول على المخطط (cm)",
+        "4",
+        "$6{,}5$",
+        "…"
+      ],
+      "rows": [
+        [
+          "الطول الحقيقي (m)",
+          "2",
+          "…",
+          "$4{,}5$"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب معامل التناسبية (الطول الحقيقي بالمتر على الطول على المخطط بالسنتيمتر).",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "0,5",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-TANASUB-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل التناسبية هو العدد الذي نضرب فيه أعداد السطر الأول لنحصل على أعداد السطر الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم عددا من السطر الثاني على العدد المقابل له من السطر الأول: $\\dfrac{y}{x}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2}{4} = 0{,}5$ .",
+        "incorrect": "معامل التناسبية هو $\\dfrac{y}{x}$ : السطر الثاني على السطر الأول، وليس العكس."
+      },
+      "solution": {
+        "lines": [
+          "$a = \\dfrac{2}{4} = 0{,}5$"
+        ],
+        "result": "a = 0{,}5"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "انقل الجدول وأكمله.",
+      "statement": "الطول الحقيقي الموافق لـ $6{,}5cm$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "3,25",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في جدول تناسبية نضرب في المعامل، ولا نضيف الفرق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب معامل التناسبية من عمود كامل."
+        }
+      ],
+      "feedback": {
+        "correct": "$6{,}5 \\times 0{,}5 = 3{,}25$ .",
+        "incorrect": "أعد الحساب: في جدول تناسبية حاصل القسمة ثابت، فتحقّق من جوابك بالضرب في المعامل."
+      },
+      "solution": {
+        "lines": [
+          "$6{,}5 \\times 0{,}5 = 3{,}25$"
+        ],
+        "result": "3{,}25m"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "الطول على المخطط الموافق لـ $4{,}5m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد المعلوم هنا في السطر الثاني: نبحث عن العدد المقابل له في السطر الأول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السطر الأول = السطر الثاني ÷ معامل التناسبية."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{4{,}5}{0{,}5} = 9$ .",
+        "incorrect": "اقسم الطول الحقيقي على المعامل."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{4{,}5}{0{,}5} = 9$"
+        ],
+        "result": "9cm"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "على المخطط، غرفة مستطيلة الشكل بُعداها $8cm$ و $6cm$ . نسمّي $x$ طولا على المخطط بـ cm و $y$ الطول الحقيقي الموافق له بـ m ، حيث $y = 0{,}5 \\times x$ . احسب البعدين الحقيقيين للغرفة.",
+      "statement": "الطول الحقيقي للغرفة:",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ في العلاقة."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}5 \\times 8 = 4$ .",
+        "incorrect": "$y = 0{,}5 \\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$y = 0{,}5 \\times 8 = 4$"
+        ],
+        "result": "4m"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "العرض الحقيقي للغرفة:",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ في العلاقة."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}5 \\times 6 = 3$ .",
+        "incorrect": "$y = 0{,}5 \\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$y = 0{,}5 \\times 6 = 3$"
+        ],
+        "result": "3m"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "sub": "ا",
+      "lead": "☜ قارن مساحة الغرفة على المخطط ومساحتها الحقيقية.",
+      "statement": "المساحة الحقيقية للغرفة (بـ $m^2$ ):",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المساحة بـ $m^2$",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة المستطيل = الطول × العرض."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 3 = 12$ .",
+        "incorrect": "اضرب البعدين الحقيقيين."
+      },
+      "solution": {
+        "lines": [
+          "$4 \\times 3 = 12$",
+          "المساحة الحقيقية $12m^2$ ، والمساحة على المخطط $8 \\times 6 = 48cm^2$ ."
+        ],
+        "result": "12m^2"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "sub": "ب",
+      "statement": "عيّن العدد $k$ حيث: المساحة الحقيقية (بـ $m^2$ ) $= k \\times$ المساحة على المخطط (بـ $cm^2$ ). هل $k$ يساوي معامل التناسبية؟",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $k$ فقط (عشري بالفاصلة أو كسر a/b)",
+      "expectedAnswer": "0,25",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المساحة على المخطط بـ $cm^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم المساحة الحقيقية على المساحة على المخطط."
+        }
+      ],
+      "feedback": {
+        "correct": "$k = \\dfrac{12}{48} = 0{,}25$ ، وهو مربع المعامل وليس المعامل.",
+        "incorrect": "$k$ = المساحة الحقيقية ÷ المساحة على المخطط."
+      },
+      "solution": {
+        "lines": [
+          "المساحة على المخطط: $8 \\times 6 = 48$",
+          "$k = \\dfrac{12}{48} = 0{,}25$",
+          "$0{,}25 \\neq 0{,}5$ : لا نضرب المساحة في معامل الأطوال،",
+          "بل في مربعه: $0{,}5 \\times 0{,}5 = 0{,}25$ ."
+        ],
+        "result": "k = 0{,}25"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

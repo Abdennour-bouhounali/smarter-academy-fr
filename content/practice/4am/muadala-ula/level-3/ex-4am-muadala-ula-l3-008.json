@@ -1,0 +1,92 @@
+{
+  "id": "ex-4am-muadala-ula-l3-008",
+  "lessonCode": "muadala-ula",
+  "level": 3,
+  "metadata": {
+    "title": "BEM 2010 — التمرين الأول",
+    "estimatedMinutes": 8,
+    "tags": [
+      "قانون",
+      "معادلة"
+    ],
+    "source": {
+      "type": "bem",
+      "year": 2010,
+      "part": 1,
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "official",
+      "badge": "BEM 2010",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لحساب المعدل الفصلي $m$ لمادة التربية المدنية نطبق القانون التالي: $m = \\dfrac{2a + 3b}{5}$ حيث $a$ هي علامة التقويم المستمر و $b$ هي علامة الاختبار."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "جد علامة التقويم المستمر $a$ إذا علمت أن علامة الاختبار $b = 12$ و المعدل الفصلي $m = 14$ .",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: علامة التقويم المستمر",
+      "expectedAnswer": "17",
+      "misconceptionSignatures": [
+        {
+          "value": "1/17",
+          "id": "MISC-MUADALA-QISMA-MAQLUBA"
+        },
+        {
+          "value": "53",
+          "id": "MISC-MUADALA-NAQL-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $b$ و $m$ بقيمتيهما في القانون: تحصل على معادلة مجهولها $a$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب الطرفين في 5 لتتخلّص من المقام."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اعزل $2a$ ثم اقسم على 2."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{34}{2} = 17$ .",
+        "incorrect": "اضرب كل حد من الطرفين في المقام المشترك، مع وضع البسوط بين قوسين، ثم انشر وحلّ. تحقّق بالتعويض."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $m = \\dfrac{2a + 3b}{5}$",
+          "بالتعويض نجد: $14 = \\dfrac{2a + 3 \\times 12}{5}$",
+          "و منه: $14 \\times 5 = 2a + 36$",
+          "أي: $2a = 70 - 36$",
+          "إذا:"
+        ],
+        "result": "a = \\dfrac{34}{2} = 17"
+      },
+      "work": "optional",
+      "timeSeconds": 360
+    }
+  ]
+}

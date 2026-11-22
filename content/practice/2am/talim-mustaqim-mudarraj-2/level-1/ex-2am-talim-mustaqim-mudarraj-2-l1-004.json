@@ -1,0 +1,217 @@
+{
+  "id": "ex-2am-talim-mustaqim-mudarraj-2-l1-004",
+  "lessonCode": "talim-mustaqim-mudarraj-2",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — قراءة فواصل على مسطرة (تدريجة 10)",
+    "estimatedMinutes": 6,
+    "tags": [
+      "قراءة فاصلة",
+      "تدريجة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في ورشة نجارة بسطيف مسطرة طويلة مدرّجة، مبدؤها العلامة $O$ وقيمة تدريجتها الواحدة $10$ cm . نقرأ مواضع ثلاث نقط عليها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "النقطة $P$ على 4 تدريجات إلى يسار المبدأ، وقيمة التدريجة الواحدة $10$ cm. ما فاصلة $P$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$40$ cm",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM2-SIGNSIDE"
+        },
+        {
+          "id": "B",
+          "content": "$-40$ cm",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$-4$ cm",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM2-UNITIGNORED"
+        },
+        {
+          "id": "D",
+          "content": "$-14$ cm",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM2-ADDSTEP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ التدريجات بين المبدأ والنقطة، ثم انظر إلى جهتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفاصلة = عدد التدريجات × قيمة التدريجة الواحدة، وإشارتها حسب الجهة: يمين المبدأ موجبة، يسار المبدأ سالبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء أوّلًا ثم ضع الإشارة المناسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$P(-40)$ : $4$ تدريجات × $10$ cm ، في الجهة اليسرى فالإشارة سالبة.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "عدد التدريجات $4$ ، قيمة التدريجة $10$ cm",
+          "النقطة على يسار المبدأ فالإشارة سالبة",
+          "$P(-40)$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "النقطة $Q$ على 7 تدريجات إلى يمين المبدأ، وقيمة التدريجة الواحدة $10$ cm. ما فاصلة $Q$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "70",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-TALIM2-UNITIGNORED"
+        },
+        {
+          "value": "-70",
+          "id": "MISC-TALIM2-SIGNSIDE"
+        },
+        {
+          "value": "17",
+          "id": "MISC-TALIM2-ADDSTEP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ التدريجات بين المبدأ والنقطة، ثم انظر إلى جهتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفاصلة = عدد التدريجات × قيمة التدريجة الواحدة، وإشارتها حسب الجهة: يمين المبدأ موجبة، يسار المبدأ سالبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء أوّلًا ثم ضع الإشارة المناسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$Q(70)$ : $7$ تدريجات × $10$ cm ، في الجهة اليمنى فالإشارة موجبة.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "عدد التدريجات $7$ ، قيمة التدريجة $10$ cm",
+          "النقطة على يمين المبدأ فالإشارة موجبة",
+          "$Q(70)$"
+        ],
+        "result": "70"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "النقطة $R$ على تدريجة واحدة إلى يسار المبدأ، وقيمة التدريجة الواحدة $10$ cm. ما فاصلة $R$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-10",
+      "misconceptionSignatures": [
+        {
+          "value": "-1",
+          "id": "MISC-TALIM2-UNITIGNORED"
+        },
+        {
+          "value": "10",
+          "id": "MISC-TALIM2-SIGNSIDE"
+        },
+        {
+          "value": "-11",
+          "id": "MISC-TALIM2-ADDSTEP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ التدريجات بين المبدأ والنقطة، ثم انظر إلى جهتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفاصلة = عدد التدريجات × قيمة التدريجة الواحدة، وإشارتها حسب الجهة: يمين المبدأ موجبة، يسار المبدأ سالبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء أوّلًا ثم ضع الإشارة المناسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$R(-10)$ : $1$ تدريجات × $10$ cm ، في الجهة اليسرى فالإشارة سالبة.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "عدد التدريجات $1$ ، قيمة التدريجة $10$ cm",
+          "النقطة على يسار المبدأ فالإشارة سالبة",
+          "$R(-10)$"
+        ],
+        "result": "-10"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l1-004",
+  "lessonCode": "mafhum-dawaran",
+  "level": 1,
+  "metadata": {
+    "title": "أؤكّد تعلّماتي 1 — المستطيل ABCD",
+    "estimatedMinutes": 2,
+    "tags": [
+      "صورة نقطة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 160,
+      "section": "أؤكّد تعلّماتي",
+      "number": 1
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 160): في الشكل، ABCD مستطيل قطراه يتقاطعان في O و $\\widehat{BOC} = 60^\\circ$ . نعتبر الدوران الذي مركزه O و زاويته $60^\\circ$ في الاتجاه المباشر.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          1.7321,
+          1
+        ],
+        "B": [
+          -1.7321,
+          1
+        ],
+        "C": [
+          -1.7321,
+          -1
+        ],
+        "D": [
+          1.7321,
+          -1
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "A"
+        ],
+        [
+          "A",
+          "C"
+        ],
+        [
+          "B",
+          "D"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "O",
+          "from": "B",
+          "to": "C",
+          "label": "60°",
+          "radius": 22
+        }
+      ],
+      "ariaLabel": "مستطيل ABCD قطراه [AC] و [BD] يتقاطعان في O، والزاوية BOC قيسها 60 درجة",
+      "maxWidth": 340
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "صورة D هي:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "A",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "B",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ZAWIYA-UKHRA"
+        },
+        {
+          "id": "C",
+          "content": "C",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ITTIJAH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "OA = OB = OC = OD: القطران متقايسان ومتناصفان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المثلث AOD: الزاوية $\\widehat{AOD}$ تقابل $\\widehat{BOC}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "من D انطلق عكس اتجاه عقارب الساعة بزاوية الدوران."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{DOA} = 60^\\circ$ عكس اتجاه عقارب الساعة و OA = OD: صورة D هي A.",
+        "incorrect": "ابحث عن رأس على نفس البعد من O بزاوية الدوران عكس عقارب الساعة."
+      },
+      "difficulty": 1
+    },
+    {
+      "id": "q2",
+      "statement": "صورة O هي:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "A",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MARKAZ"
+        },
+        {
+          "id": "B",
+          "content": "O",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "C",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MARKAZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "O مركز هذا الدوران."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المركز يبقى ثابتا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقرأ ملاحظة معارف 2."
+        }
+      ],
+      "feedback": {
+        "correct": "المركز صورة نفسه.",
+        "incorrect": "مركز الدوران لا يتحرّك."
+      },
+      "difficulty": 1
+    }
+  ]
+}

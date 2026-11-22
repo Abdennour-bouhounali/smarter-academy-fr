@@ -1,0 +1,163 @@
+{
+  "id": "ex-1am-talim-fi-mustawi-l4-008",
+  "lessonCode": "talim-fi-mustawi",
+  "level": 4,
+  "metadata": {
+    "title": "الربع نفسه مع عشريين",
+    "estimatedMinutes": 5,
+    "tags": [
+      "ربع",
+      "عشري"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نبحث عن النقطة التي تقع في الربع نفسه مع نقطة معلومة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ هذه النقط تقع في الربع نفسه مع $P(-1{,}5\\,;\\,2{,}5)$ (أي لإحداثييها الإشارتان نفسهما)؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(-3\\,;\\,1)$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$(2\\,;\\,4)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNX"
+        },
+        {
+          "id": "C",
+          "content": "$(-2\\,;\\,-3{,}5)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNY"
+        },
+        {
+          "id": "D",
+          "content": "$(0{,}5\\,;\\,-1)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد إشارة فاصلة $P$ وإشارة ترتيبها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن النقطة التي تحمل فاصلتها وترتيبها الإشارتين نفسيهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يكفي أن تتفق إشارة واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "لهما الإشارتان نفسهما فهما في الربع نفسه.",
+        "incorrect": "قارن إشارتي الفاصلة والترتيب معًا."
+      },
+      "solution": {
+        "lines": [
+          "إشارتا $P$ : − و +",
+          "النقطة $(-3\\,;\\,1)$ لها الإشارتان نفسهما"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أيّ هذه النقط تقع في الربع نفسه مع $P(3{,}5\\,;\\,-0{,}5)$ (أي لإحداثييها الإشارتان نفسهما)؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(5\\,;\\,-4)$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$(-3\\,;\\,3)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNBOTH"
+        },
+        {
+          "id": "C",
+          "content": "$(1\\,;\\,2)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNY"
+        },
+        {
+          "id": "D",
+          "content": "$(-2\\,;\\,-1)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNX"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد إشارة فاصلة $P$ وإشارة ترتيبها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن النقطة التي تحمل فاصلتها وترتيبها الإشارتين نفسيهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يكفي أن تتفق إشارة واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "لهما الإشارتان نفسهما فهما في الربع نفسه.",
+        "incorrect": "قارن إشارتي الفاصلة والترتيب معًا."
+      },
+      "solution": {
+        "lines": [
+          "إشارتا $P$ : + و −",
+          "النقطة $(5\\,;\\,-4)$ لها الإشارتان نفسهما"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

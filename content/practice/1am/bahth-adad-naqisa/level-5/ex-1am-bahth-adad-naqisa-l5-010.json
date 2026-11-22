@@ -1,0 +1,253 @@
+{
+  "id": "ex-1am-bahth-adad-naqisa-l5-010",
+  "lessonCode": "bahth-adad-naqisa",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مسألة شاملة",
+    "estimatedMinutes": 14,
+    "tags": [
+      "وضعية إدماجية",
+      "مجموع وفرق وجداء"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تحلّ هذه المسألة بالأعداد الناقصة وتتحقّق من كلّ نتيجة بالتعويض."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "في صندوق 48 قطعة حلوى. أخذ التلاميذ منها عددًا فبقيت 15 قطعة. كم قطعة أخذوا؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "33",
+      "misconceptionSignatures": [
+        {
+          "value": "63",
+          "id": "MISC-NAQISA-TRAPADD"
+        },
+        {
+          "value": "-33",
+          "id": "MISC-NAQISA-REVSUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المجهول هنا هو المطروح: ما أُخذ من العدد الذي بدأنا منه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $48-33=15$ ، فالعدد الناقص هو $33$ .",
+        "incorrect": "في a − □ = b المجهول هو المطروح: نطرح الناتج من a ولا نعكس الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $48-\\square=15$ .",
+          "نُرجع بالعملية العكسية: $\\square=48-15=33$ .",
+          "نتحقّق: $48-33=15$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "وُزّعت القطع المأخوذة على 11 تلميذًا بالتساوي. كم قطعة نال كلّ تلميذ؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "363",
+          "id": "MISC-NAQISA-MULAGAIN"
+        },
+        {
+          "value": "1/3",
+          "id": "MISC-NAQISA-DIVREV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للضرب هي القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $3\\times 11=33$ ، فالعدد الناقص هو $3$ .",
+        "incorrect": "في جداء نقسم الناتج على العدد المعلوم: لا نضربه فيه ولا نقسم المعلوم على الناتج."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square\\times 11=33$ .",
+          "نُرجع بالعملية العكسية: $\\square=33\\div 11=3$ .",
+          "نتحقّق: $3\\times 11=33$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أيّ العددين الآتيين يجعل $\\square+16=55$ صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$39$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$71$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NAQISA-SAMEOP"
+        },
+        {
+          "id": "C",
+          "content": "$16$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NAQISA-OPERAND"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ عدد مقترح مكان □ في المساواة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الناتج المطلوب هو العدد المعلوم في الطرف الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الطرف الأيسر لكلّ عدد وقارنه بالناتج."
+        }
+      ],
+      "feedback": {
+        "correct": "التعويض يؤكّد العدد الصحيح.",
+        "incorrect": "لا نقبل عددًا قبل أن نعوّضه ونجد الناتج بالضبط."
+      },
+      "solution": {
+        "lines": [
+          "المساواة: $\\square+16=55$ .",
+          "العدد الصحيح $39$ : $39+16=55$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "العدد $3{,}5$ هو العدد الناقص في $6\\times\\square=21$ .",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NAQISA-OPERAND"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض العدد المعطى مكان □ في المساواة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الطرف الذي فيه □ ثمّ قارنه بالطرف الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إن لم تجد الناتج المعلوم بالضبط فالعدد خاطئ."
+        }
+      ],
+      "feedback": {
+        "correct": "التعويض يحسم الحكم.",
+        "incorrect": "نحكم بالتعويض لا بالتخمين."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $3{,}5$ في $6\\times \\square=21$ .",
+          "الحكم: صحيح"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

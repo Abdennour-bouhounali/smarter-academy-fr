@@ -1,0 +1,202 @@
+{
+  "id": "ex-4am-majmu-shuaayn-l4-008",
+  "lessonCode": "majmu-shuaayn",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 13 — ممثلات",
+    "estimatedMinutes": 4,
+    "tags": [
+      "قاعدة متوازي الأضلاع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-13",
+      "page": 135,
+      "section": "مجموع شعاعين - علاقة شال",
+      "number": 13
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (تمرين 13): ABC مثلث مركز ثقله G ، و A′ و B′ و C′ منتصفات [BC] و [AC] و [AB] (الشكل).",
+    "figure": {
+      "points": {
+        "A": [
+          6,
+          6
+        ],
+        "B": [
+          0,
+          0
+        ],
+        "C": [
+          9,
+          -3
+        ],
+        "A′": [
+          4.5,
+          -1.5
+        ],
+        "B′": [
+          7.5,
+          1.5
+        ],
+        "C′": [
+          3,
+          3
+        ],
+        "G": [
+          5,
+          1
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "A"
+        ],
+        {
+          "from": "A",
+          "to": "A′",
+          "tone": "slate"
+        },
+        {
+          "from": "B",
+          "to": "B′",
+          "tone": "slate"
+        },
+        {
+          "from": "C",
+          "to": "C′",
+          "tone": "slate"
+        }
+      ],
+      "labels": {
+        "A": "n",
+        "B": "w",
+        "C": "se",
+        "A′": "s",
+        "B′": "e",
+        "C′": "nw",
+        "G": "n"
+      },
+      "ariaLabel": "مثلث ABC و A′ و B′ و C′ منتصفات [BC] و [AC] و [AB] ، والمتوسطات تتقاطع في G مركز الثقل",
+      "maxWidth": 480
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ممثل للشعاع $\\overrightarrow{AC'} + \\overrightarrow{AB'}$",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{C'B'}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-QAIDA-QUTR"
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{AA'}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{B'C'}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-QAIDA-QUTR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للشعاعين نفس المبدأ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "شعاعان لهما نفس المبدأ يُجمعان بقاعدة متوازي الأضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع هو القطر الصادر من المبدأ المشترك، لا القطر الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "AC′A′B′ متوازي أضلاع: المجموع هو القطر الصادر من A.",
+        "incorrect": "قاعدة متوازي الأضلاع: مجموع شعاعين لهما نفس المبدأ هو القطر الصادر من ذلك المبدأ."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "ممثل للشعاع $\\overrightarrow{BG} + \\overrightarrow{CG}$",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{AG}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-AKS"
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{BC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-QAIDA-QUTR"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{GA}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للشعاعين نفس المبدأ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "شعاعان لهما نفس المبدأ يُجمعان بقاعدة متوازي الأضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع هو القطر الصادر من المبدأ المشترك، لا القطر الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{BG} + \\overrightarrow{CG} = 2\\overrightarrow{A'G} = \\overrightarrow{GA}$ .",
+        "incorrect": "قاعدة متوازي الأضلاع: مجموع شعاعين لهما نفس المبدأ هو القطر الصادر من ذلك المبدأ."
+      }
+    }
+  ]
+}

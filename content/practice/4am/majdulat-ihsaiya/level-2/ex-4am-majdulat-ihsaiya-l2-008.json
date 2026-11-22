@@ -1,0 +1,199 @@
+{
+  "id": "ex-4am-majdulat-ihsaiya-l2-008",
+  "lessonCode": "majdulat-ihsaiya",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2013 — الرياضة المفضّلة بمتوسطة في ورقلة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "مخطط دائري",
+      "زاوية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_majdulat-ihsaiya_P3",
+      "modelledOn": "BEM 2013 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2013",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "سألت جمعية رياضية بورقلة، تشجّع الشباب على الرياضة وروح الفريق، 120 تلميذا عن رياضتهم المفضّلة، فحجزت النتائج في مجدول، ثم أنشأت منها المخطط الدائري الآتي:",
+    "table": {
+      "head": [
+        "",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "rows": [
+        [
+          "1",
+          "الرياضة",
+          "كرة القدم",
+          "كرة اليد",
+          "السباحة",
+          "ألعاب القوى"
+        ],
+        [
+          "2",
+          "عدد التلاميذ",
+          "54",
+          "24",
+          "30",
+          "12"
+        ]
+      ],
+      "sheet": true
+    },
+    "figure": {
+      "kind": "chart",
+      "type": "pie",
+      "show": "none",
+      "ariaLabel": "مخطط دائري للرياضة المفضّلة: كرة القدم، كرة اليد، السباحة، ألعاب القوى",
+      "parts": [
+        {
+          "label": "كرة القدم",
+          "value": 54
+        },
+        {
+          "label": "كرة اليد",
+          "value": 24
+        },
+        {
+          "label": "السباحة",
+          "value": 30
+        },
+        {
+          "label": "ألعاب القوى",
+          "value": 12
+        }
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب زاوية قطاع السباحة.",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: قيس الزاوية بالدرجات دون الرمز °",
+      "expectedAnswer": "90",
+      "misconceptionSignatures": [
+        {
+          "value": "30",
+          "id": "MISC-IHSA-ZAWIYA-QITA"
+        },
+        {
+          "value": "270",
+          "id": "MISC-IHSA-ZAWIYA-QITA"
+        },
+        {
+          "value": "25",
+          "id": "MISC-IHSA-ZAWIYA-QITA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المخطط الدائري تتناسب زاوية كل قطاع مع تكرار جزئه، والدائرة كلها 360 درجة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب التكرار الكلي، ثم حصة السباحة منه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الزاوية = (تكرار الجزء ÷ التكرار الكلي) × 360 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{30}{120} \\times 360 = 90$ ، أي $90^\\circ$ .",
+        "incorrect": "زاوية القطاع ليست تكرار الجزء ولا نسبته المئوية: اضرب حصة الجزء من الكلّ في 360 ."
+      },
+      "solution": {
+        "lines": [
+          "زاوية قطاع السباحة: $\\dfrac{30}{120} \\times 360 = 90$"
+        ],
+        "result": "90^\\circ"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب زاوية قطاع كرة القدم.",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: قيس الزاوية بالدرجات دون الرمز °",
+      "expectedAnswer": "162",
+      "misconceptionSignatures": [
+        {
+          "value": "54",
+          "id": "MISC-IHSA-ZAWIYA-QITA"
+        },
+        {
+          "value": "198",
+          "id": "MISC-IHSA-ZAWIYA-QITA"
+        },
+        {
+          "value": "45",
+          "id": "MISC-IHSA-ZAWIYA-QITA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المخطط الدائري تتناسب زاوية كل قطاع مع تكرار جزئه، والدائرة كلها 360 درجة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب التكرار الكلي، ثم حصة كرة القدم منه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الزاوية = (تكرار الجزء ÷ التكرار الكلي) × 360 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{54}{120} \\times 360 = 162$ ، أي $162^\\circ$ .",
+        "incorrect": "زاوية القطاع ليست تكرار الجزء ولا نسبته المئوية: اضرب حصة الجزء من الكلّ في 360 ."
+      },
+      "solution": {
+        "lines": [
+          "زاوية قطاع كرة القدم: $\\dfrac{54}{120} \\times 360 = 162$"
+        ],
+        "result": "162^\\circ"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

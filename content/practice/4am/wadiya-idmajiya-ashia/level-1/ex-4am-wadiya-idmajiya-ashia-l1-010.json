@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ashia-l1-010",
+  "lessonCode": "wadiya-idmajiya-ashia",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — مسلك مستقيم",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المتباينة المثلثية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ashia_P3",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "M نقطة من القطعة $[AB']$ حيث $AB' = 9\\,\\mathrm{cm}$ و $AM = 4\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما الطول $MB'$ (بالسنتيمتر)؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "M على القطعة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$AM + MB' = AB'$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$MB' = AB' - AM = 9 - 4 = 5\\,\\mathrm{cm}$ .",
+        "incorrect": "M على [AB′] فالطولان يكمّل أحدهما الآخر."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 1,
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-SHUAA-JAM-ATWAL"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "id": "ex-4am-ikhtizal-kasr-l4-010",
+  "lessonCode": "ikhtizal-kasr",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2016 — العددان 4199 و 3553",
+    "estimatedMinutes": 8,
+    "tags": [
+      "كسر غير قابل للاختزال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_ikhtizal-kasr_P3",
+      "modelledOn": "BEM 2016 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 4199 و 3553 مع كتابة مراحل الحساب.",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "323",
+      "misconceptionSignatures": [
+        {
+          "value": "19",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 4199 على 3553: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (4199 ; 3553) بالزوج (3553 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 323.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$4199 = 3553 \\times 1 + 646$",
+          "$3553 = 646 \\times 5 + 323$",
+          "$646 = 323 \\times 2 + 0$",
+          "آخر باقٍ غير معدوم هو 323، إذن:"
+        ],
+        "result": "PGCD(4199 ; 3553) = 323"
+      },
+      "work": "required",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب الكسر $\\dfrac{4199}{3553}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "13/11",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "247/209",
+          "id": "MISC-IKHTIZAL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 323: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال 01.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{4199}{3553} = \\dfrac{4199 \\div 323}{3553 \\div 323}$"
+        ],
+        "result": "\\dfrac{4199}{3553} = \\dfrac{13}{11}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "عيّن العدد الطبيعي $n$ حيث: $\\dfrac{4199}{3553} = \\dfrac{n}{44}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "52",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بأي عدد نضرب مقام الكسر غير القابل للاختزال لنحصل على 44؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$44 = 11 \\times 4$ ، إذن $n = 13 \\times 4$ .",
+        "incorrect": "اضرب بسط الكسر غير القابل للاختزال ومقامه في العدد نفسه حتى يصير المقام 44."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{4199}{3553} = \\dfrac{13}{11} = \\dfrac{13 \\times 4}{11 \\times 4} = \\dfrac{13 \\times 4}{44}$"
+        ],
+        "result": "n = 52"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

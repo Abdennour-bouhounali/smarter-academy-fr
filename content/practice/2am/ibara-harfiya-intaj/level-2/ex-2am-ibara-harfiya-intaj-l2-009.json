@@ -1,0 +1,193 @@
+{
+  "id": "ex-2am-ibara-harfiya-intaj-l2-009",
+  "lessonCode": "ibara-harfiya-intaj",
+  "level": 2,
+  "metadata": {
+    "title": "أبسّط بقدر الإمكان",
+    "estimatedMinutes": 6,
+    "tags": [
+      "كتابة مبسّطة",
+      "حدود"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-21",
+      "page": 63,
+      "section": "تبسيط حساب حرفي",
+      "number": 21
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "بسّط قدر الإمكان كلًّا من العبارتين :"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اختر الكتابة المبسّطة للعبارة $2 \\times a + 0 \\times b + 4 + a$ .",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3a + b + 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-ZEROSKIP"
+        },
+        {
+          "id": "B",
+          "content": "$7a$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$3a + 4$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى كلّ حدّ : أيّ علامة × يمكن حذفها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر : $a \\times a = a^{2}$ ، و $1 \\times a = a$ ، و $0 \\times a = 0$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر الكتابة التي اخترتها بقيمة بسيطة للحرف : يجب أن تعطي العدد نفسه الذي تعطيه العبارة الأصليّة."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتابة الصحيحة هي $3a + 4$ .",
+        "incorrect": "جرّب كلّ خيار على قيمة بسيطة للحرف وقارن بالعدّ المباشر قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "$3a + 4$ : $0 \\times b = 0$ ثمّ $2a + a = 3a$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اختر الكتابة المبسّطة للعبارة $c + c \\times c + c$ .",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2c + c^{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$3c^{2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-ADDPOWERS"
+        },
+        {
+          "id": "C",
+          "content": "$3c$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى كلّ حدّ : أيّ علامة × يمكن حذفها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر : $a \\times a = a^{2}$ ، و $1 \\times a = a$ ، و $0 \\times a = 0$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر الكتابة التي اخترتها بقيمة بسيطة للحرف : يجب أن تعطي العدد نفسه الذي تعطيه العبارة الأصليّة."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتابة الصحيحة هي $2c + c^{2}$ .",
+        "incorrect": "جرّب كلّ خيار على قيمة بسيطة للحرف وقارن بالعدّ المباشر قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "$2c + c^{2}$ : $c + c = 2c$ و $c \\times c = c^{2}$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب قيمة العبارة المبسّطة $E = 3a + 4$ من أجل $a = 5$ .",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "19",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بالقيمة المعطاة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ احترم أولويّة العمليّات : الضرب قبل الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة قبل أن تجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 19$ .",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ أعد الحساب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 5 + 4 = 19$ ."
+        ],
+        "result": "19"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

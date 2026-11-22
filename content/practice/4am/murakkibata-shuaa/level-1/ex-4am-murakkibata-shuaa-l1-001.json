@@ -1,0 +1,106 @@
+{
+  "id": "ex-4am-murakkibata-shuaa-l1-001",
+  "lessonCode": "murakkibata-shuaa",
+  "level": 1,
+  "metadata": {
+    "title": "أؤكّد تعلّماتي 1 — مركبتا شعاع على الشكل",
+    "estimatedMinutes": 2,
+    "tags": [
+      "قراءة بيانية",
+      "مركبتا شعاع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 148,
+      "section": "أؤكّد تعلّماتي",
+      "number": 1
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 148): في الشكل المقابل، مركبتا الشعاع $\\overrightarrow{AB}$ هما …",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          3,
+          2
+        ],
+        "B": [
+          -2,
+          -2
+        ]
+      },
+      "grid": true,
+      "axes": true,
+      "vectors": [
+        {
+          "from": "A",
+          "to": "B",
+          "tone": "rose"
+        }
+      ],
+      "labels": {
+        "O": "sw"
+      },
+      "ariaLabel": "معلم على المرصوفة: سهم من A فوق اليمين إلى B تحت اليسار",
+      "maxWidth": 480
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "اختر الإجابة الصحيحة:",
+      "learningPoints": [
+        {
+          "code": "4am_murakkibata-shuaa_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\begin{pmatrix} -5 \\\\ -4 \\end{pmatrix}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\begin{pmatrix} -5 \\\\ 3 \\end{pmatrix}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-ISHARA"
+        },
+        {
+          "id": "C",
+          "content": "$\\begin{pmatrix} 5 \\\\ -3 \\end{pmatrix}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انطلق من مبدأ الشعاع وعُدّ المربعات بموازاة محور الفواصل، ثم بموازاة محور التراتيب، حتى نهايته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نحو اليمين أو نحو الأعلى العدد موجب، ونحو اليسار أو نحو الأسفل العدد سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب أولا الإزاحة الأفقية ثم الإزاحة العمودية، كل واحدة بإشارتها."
+        }
+      ],
+      "feedback": {
+        "correct": "من A إلى B: 5 وحدات نحو اليسار ثم 4 نحو الأسفل: $\\overrightarrow{AB}\\begin{pmatrix} -5 \\\\ -4 \\end{pmatrix}$ .",
+        "incorrect": "الشعاع يتجه نحو اليسار ونحو الأسفل: المركبتان سالبتان."
+      }
+    }
+  ]
+}

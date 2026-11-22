@@ -1,0 +1,197 @@
+{
+  "id": "ex-4am-inshaat-talis-l3-008",
+  "lessonCode": "inshaat-talis",
+  "level": 3,
+  "metadata": {
+    "title": "خطأ ريم",
+    "estimatedMinutes": 10,
+    "tags": [
+      "تحليل خطأ",
+      "نقطة بنسبة معلومة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_inshaat-talis_P1",
+      "modelledOn": "method-ratio-point",
+      "adaptedFrom": "ex-4am-inshaat-talis-l5-008"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أرادت ريم إنشاء النقطة $M$ من $[AB]$ حيث $\\dfrac{MA}{MB} = \\dfrac{2}{3}$ ، فرسمت موازيين مدرّجين بنفس الوحدة يشملان $A$ و $B$ ، وعيّنت 3 وحدات على الموازي المارّ بـ $A$ و 2 على الموازي المارّ بـ $B$ في جهتين مختلفتين، ثم وصلت العلامتين فقطع المستقيمُ الناتج $[AB]$ في النقطة $R$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب النسبة $\\dfrac{RA}{RB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "1,5",
+      "misconceptionSignatures": [
+        {
+          "value": "2/3",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طبّق خاصية طالس في المثلثين اللذين رأسهما المشترك $R$ (وضعية الفراشة)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة $\\dfrac{RA}{RB}$ تساوي نسبة العلامات المعيّنة على الموازيين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{RA}{RB} = \\dfrac{3}{2}$ : عكس النسبة المطلوبة.",
+        "incorrect": "$RA$ يقابل عدد الوحدات المعيّنة على الموازي المارّ بـ $A$ ."
+      },
+      "solution": {
+        "lines": [
+          "الموازيان متوازيان، حسب خاصية طالس في المثلثين اللذين رأسهما $R$ : $\\dfrac{RA}{RB} = \\dfrac{3}{2}$"
+        ],
+        "result": "\\dfrac{RA}{RB} = \\dfrac{3}{2}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "هل النقطة $R$ هي النقطة $M$ المطلوبة؟",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن $\\dfrac{RA}{RB}$ بالنسبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "لا: $\\dfrac{RA}{RB} = \\dfrac{3}{2} \\neq \\dfrac{2}{3}$ ؛ قلبت ريم النسبة.",
+        "incorrect": "النسبتان $\\dfrac{3}{2}$ و $\\dfrac{2}{3}$ مختلفتان: $R$ أقرب إلى $B$ ، أما $M$ فأقرب إلى $A$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{RA}{RB} = \\dfrac{3}{2}$ بينما المطلوب $\\dfrac{MA}{MB} = \\dfrac{2}{3}$ : $R \\neq M$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "صحّح إنشاء ريم.",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب خطوات الإنشاء مرقّمة (أو صوّر ورقتك)، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العلامة على الموازي المارّ بـ $A$ تقابل $MA$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "وحدتان على الموازي المارّ بـ $A$ و 3 على الموازي المارّ بـ $B$ ، في جهتين مختلفتين.",
+        "incorrect": "قارن إنشاءك بالحل النموذجي خطوة خطوة، ثم صحّح الخطوة التي تختلف."
+      },
+      "solution": {
+        "lines": [
+          "1) نرسم مستقيمين متوازيين $(d_1)$ و $(d_2)$ يشملان $A$ و $B$ على الترتيب.",
+          "2) بنفس فتحة المدور نعيّن على $(d_1)$ النقطة $F$ حيث $AF = 2$ وحدات، وعلى $(d_2)$ النقطة $E$ حيث $BE = 3$ وحدات، في جهتين مختلفتين للمستقيم $(AB)$ .",
+          "3) المستقيم $(EF)$ يقطع $[AB]$ في $M$ .",
+          "التبرير: $(AF) \\parallel (BE)$ ، فحسب خاصية طالس في المثلثين $MAF$ و $MBE$ : $\\dfrac{MA}{MB} = \\dfrac{AF}{BE} = \\dfrac{2}{3}$ ."
+        ]
+      },
+      "timeSeconds": 300
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "إذا كان $AB = 10\\,\\mathrm{cm}$ ، احسب المسافة $RM$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $AR$ و $AM$ (كلتاهما بين $A$ و $B$ )."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نسبة الجزء إلى الكل: $\\dfrac{AR}{AB} = \\dfrac{3}{5}$ و $\\dfrac{AM}{AB} = \\dfrac{2}{5}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AR = 6$ و $AM = 4$ ومنه $RM = 2\\,\\mathrm{cm}$ .",
+        "incorrect": "احسب موقع كل نقطة ابتداءً من $A$ ثم الفرق."
+      },
+      "solution": {
+        "lines": [
+          "$AR = \\dfrac{3}{5} \\times 10 = 6$ و $AM = \\dfrac{2}{5} \\times 10 = 4$",
+          "$RM = AR - AM = 6 - 4$"
+        ],
+        "result": "RM = 2\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

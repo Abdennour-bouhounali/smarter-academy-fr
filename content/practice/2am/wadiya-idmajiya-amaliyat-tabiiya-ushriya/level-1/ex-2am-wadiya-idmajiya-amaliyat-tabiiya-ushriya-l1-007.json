@@ -1,0 +1,254 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-amaliyat-tabiiya-ushriya-l1-007",
+  "lessonCode": "wadiya-idmajiya-amaliyat-tabiiya-ushriya",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — قسمة ثم ضرب، بسط بأولويات، فرق جدائين، توزيع",
+    "estimatedMinutes": 6,
+    "tags": [
+      "ضرب وقسمة",
+      "خطّ الكسر",
+      "حساب ذهني"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "سلاسل عمليات على أعداد طبيعية وعشرية: أجب عن الأسئلة الأربعة، ولا تنسَ أنّ كلّ سلسلة تُحسب بالترتيب الصحيح للعمليات."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب قيمة السلسلة $150 \\div 6 \\times 4$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "100",
+      "misconceptionSignatures": [
+        {
+          "value": "6.25",
+          "id": "MISC-SILSILA-MULFIRST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين وخطّ الكسر يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$150 \\div 6 \\times 4 = 100$ .",
+        "incorrect": "في سلسلة ضرب وقسمة نحسب من اليسار نحو اليمين: لا نضرب قبل أن نقسم."
+      },
+      "solution": {
+        "lines": [
+          "$A = 150 \\div 6 \\times 4$",
+          "$A = 25 \\times 4$",
+          "$A = 100$"
+        ],
+        "result": "100"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب قيمة السلسلة $\\dfrac{45 - 9}{2 \\times 3 + 3}$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "34.5",
+          "id": "MISC-AQWAS-BARSPLIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين وخطّ الكسر يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{45 - 9}{2 \\times 3 + 3} = 4$ .",
+        "incorrect": "خطّ الكسر يقسم البسط كلّه على المقام كلّه، فنحسب البسط والمقام أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{45 - 9}{2 \\times 3 + 3}$",
+          "$A = \\dfrac{36}{6 + 3}$",
+          "$A = \\dfrac{36}{9}$",
+          "$A = 4$"
+        ],
+        "result": "4"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما اسم السلسلة $7 \\times 12 - 3 \\times 8$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "choices": [
+        {
+          "id": "A",
+          "content": "جداء",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-FIRSTOP"
+        },
+        {
+          "id": "B",
+          "content": "فرق",
+          "isCorrect": true
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب مرحلة مرحلة وتتبّع آخر عملية بقيت لك."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع خطًّا تحت العملية التي تُنجز في الأخير."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العملية الأخيرة هي التي تسمّي السلسلة."
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة عبارة عن فرق: آخر عملية تُنجز فيها هي الطرح.",
+        "incorrect": "لا تسمِّ السلسلة بأوّل عملية تُنجز ولا بأوّل رمز تراه: سمِّها بآخر عملية تُنجز فيها."
+      },
+      "solution": {
+        "lines": [
+          "$A = 7 \\times 12 - 3 \\times 8$",
+          "$A = 84 - 24$",
+          "$A = 60$",
+          "آخر عملية تُنجز هي الطرح ، فالسلسلة عبارة عن فرق."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "احسب ذهنيًا $6 \\times 105$ بتفكيك $105 = 100 + 5$ : أيّ العدد يساوي $6 \\times (100 + 5)$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$605$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-FIRSTONLY"
+        },
+        {
+          "id": "B",
+          "content": "$630$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$111$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-ADDK"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ السلسلة وحدّد أوّل ما يُحسب فيها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز الحساب مرحلة مرحلة ولا تحسب من اليسار نحو اليمين بلا تفكير."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن نتيجتك بالأعداد المقترحة."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 \\times (100 + 5) = 630$ .",
+        "incorrect": "راجع ترتيب العمليات ثم أعد الحساب."
+      },
+      "solution": {
+        "lines": [
+          "$A = 6 \\times (100 + 5)$",
+          "$A = 6 \\times 105$",
+          "$A = 630$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

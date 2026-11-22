@@ -1,0 +1,192 @@
+{
+  "id": "ex-1am-kitabat-adad-tabii-l3-002",
+  "lessonCode": "kitabat-adad-tabii",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مفكوك ووضع الفاصلة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مفكوك",
+      "فاصلة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 1,
+      "file": "1am-s1-95",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "❶ أكمل المفكوك النموذجي للعدد 8305.\n❷ ضع الفاصلة في العدد 694152 كما هو مطلوب في كل حالة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أكمل المفكوك النموذجي بالعدد المناسب مكان النقاط: $8305 = (8 \\times \\ldots) + (3 \\times 100) + 5$",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1000",
+      "misconceptionSignatures": [
+        {
+          "value": "10000",
+          "id": "MISC-KITABA-RANK-NAME"
+        },
+        {
+          "value": "100",
+          "id": "MISC-KITABA-RANK-NAME"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما مرتبة الرقم 8 في العدد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل رقم يُضرب في قيمة مرتبته: 1 للآحاد، 10 للعشرات…"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب مجموع الحدود."
+        }
+      ],
+      "feedback": {
+        "correct": "الرقم 8 هو رقم الآلاف، فنضربه في 1000.",
+        "incorrect": "كل رقم يُضرب في قيمة مرتبته؛ حدّد مرتبة الرقم انطلاقا من رقم الآحاد."
+      },
+      "solution": {
+        "lines": [
+          "الرقم 8 هو رقم الآلاف في 8305.",
+          "$8305 = 8 \\times 1000 + 3 \\times 100 + 5$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "ضع الفاصلة في العدد 694152 بحيث يصبح الرقم 5 رقم الأجزاء من مائة.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة)",
+      "expectedAnswer": "694.152",
+      "misconceptionSignatures": [
+        {
+          "value": "6941,52",
+          "id": "MISC-KITABA-COMMA-SHIFT"
+        },
+        {
+          "value": "69,4152",
+          "id": "MISC-KITABA-COMMA-SHIFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الرقم الذي على يسار الفاصلة مباشرة هو رقم الآحاد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد الفاصلة: الأعشار، ثم الأجزاء من مائة، ثم الأجزاء من ألف."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة تسمية مرتبة كل رقم."
+        }
+      ],
+      "feedback": {
+        "correct": "في 694,152، الرقم 5 هو رقم الأجزاء من مائة.",
+        "incorrect": "الفاصلة تُوضع مباشرة على يمين رقم الآحاد؛ ابدأ بتحديد الرقم الذي يجب أن يصبح رقم الآحاد."
+      },
+      "solution": {
+        "lines": [
+          "ليكون 5 رقم الأجزاء من مائة، يجب أن يكون الرقم 4 رقم الآحاد، فنضع الفاصلة على يمينه: 694,152.",
+          "في العدد 694,152: 6 رقم المئات، 9 رقم العشرات، 4 رقم الآحاد، 1 رقم الأعشار، 5 رقم الأجزاء من مائة، 2 رقم الأجزاء من ألف."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ضع الفاصلة في العدد 694152 بحيث يصبح الرقم 1 رقم الآحاد.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة)",
+      "expectedAnswer": "6941.52",
+      "misconceptionSignatures": [
+        {
+          "value": "69415,2",
+          "id": "MISC-KITABA-COMMA-SHIFT"
+        },
+        {
+          "value": "694,152",
+          "id": "MISC-KITABA-COMMA-SHIFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الرقم الذي على يسار الفاصلة مباشرة هو رقم الآحاد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "على يسار الآحاد: العشرات، ثم المئات، ثم الآلاف."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة تسمية مرتبة كل رقم."
+        }
+      ],
+      "feedback": {
+        "correct": "في 6941,52، الرقم 1 هو رقم الآحاد.",
+        "incorrect": "الفاصلة تُوضع مباشرة على يمين رقم الآحاد؛ ابدأ بتحديد الرقم الذي يجب أن يصبح رقم الآحاد."
+      },
+      "solution": {
+        "lines": [
+          "ليكون 1 رقم الآحاد نضع الفاصلة مباشرة على يمينه: 6941,52.",
+          "في العدد 6941,52: 6 رقم الآلاف، 9 رقم المئات، 4 رقم العشرات، 1 رقم الآحاد، 5 رقم الأعشار، 2 رقم الأجزاء من مائة."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

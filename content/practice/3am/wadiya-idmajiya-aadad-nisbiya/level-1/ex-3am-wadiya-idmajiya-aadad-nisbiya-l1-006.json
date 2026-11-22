@@ -1,0 +1,202 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-aadad-nisbiya-l1-006",
+  "lessonCode": "wadiya-idmajiya-aadad-nisbiya",
+  "level": 1,
+  "metadata": {
+    "title": "أولوية العمليات مع أعداد نسبية",
+    "estimatedMinutes": 5,
+    "tags": [
+      "أولوية العمليات",
+      "قسمة",
+      "طرح عدد سالب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "احسب كلًّا من الأعداد الآتية مع كتابة مراحل الحساب:",
+    "formulas": [
+      "A = 20 − 6 \\times (−4) \\div 8",
+      "B = (−60) \\div (−5 + 2) \\times (−3)",
+      "C = (−9) + 36 \\div (−4) − (−2) \\times 5"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $A$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "23",
+      "misconceptionSignatures": [
+        {
+          "value": "-7",
+          "id": "MISC-QISMA-PRIORITY"
+        },
+        {
+          "value": "17",
+          "id": "MISC-QISMA-SUBNEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في العبارة العملية التي تُنجز أولًا: الأقواس، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن إشارة كل جداء وكل حاصل قسمة قبل أن تحسب القيمة المطلقة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب خطوة بعد خطوة وأعد كتابة العبارة بعد كل خطوة."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 23$ .",
+        "incorrect": "راجع قاعدة الإشارات وأولوية العمليات: الأقواس أولًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$A = 20 − 6 \\times (−4) \\div 8$",
+          "$A = 20 − (−24) \\div 8$",
+          "$A = 20 − (−3)$",
+          "$A = 23$"
+        ],
+        "result": "23"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $B$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-60",
+      "misconceptionSignatures": [
+        {
+          "value": "60",
+          "id": "MISC-QISMA-SIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في العبارة العملية التي تُنجز أولًا: الأقواس، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن إشارة كل جداء وكل حاصل قسمة قبل أن تحسب القيمة المطلقة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب خطوة بعد خطوة وأعد كتابة العبارة بعد كل خطوة."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = −60$ .",
+        "incorrect": "راجع قاعدة الإشارات وأولوية العمليات: الأقواس أولًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$B = (−60) \\div (−5 + 2) \\times (−3)$",
+          "$B = (−60) \\div (−3) \\times (−3)$",
+          "$B = 20 \\times (−3)$",
+          "$B = −60$"
+        ],
+        "result": "−60"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "احسب $C$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-8",
+      "misconceptionSignatures": [
+        {
+          "value": "-23.75",
+          "id": "MISC-QISMA-PRIORITY"
+        },
+        {
+          "value": "-28",
+          "id": "MISC-QISMA-SUBNEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في العبارة العملية التي تُنجز أولًا: الأقواس، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن إشارة كل جداء وكل حاصل قسمة قبل أن تحسب القيمة المطلقة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب خطوة بعد خطوة وأعد كتابة العبارة بعد كل خطوة."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = −8$ .",
+        "incorrect": "راجع قاعدة الإشارات وأولوية العمليات: الأقواس أولًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$C = (−9) + 36 \\div (−4) − (−2) \\times 5$",
+          "$C = (−9) + (−9) − (−10)$",
+          "$C = (−18) − (−10)$",
+          "$C = −8$"
+        ],
+        "result": "−8"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

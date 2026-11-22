@@ -1,0 +1,161 @@
+{
+  "id": "ex-4am-tayin-pgcd-l4-006",
+  "lessonCode": "tayin-pgcd",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2016 — PGCD(117 ; 52) و a√13",
+    "estimatedMinutes": 10,
+    "tags": [
+      "PGCD",
+      "حصر القواسم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tayin-pgcd_P1",
+      "modelledOn": "BEM 2016 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 117 و 52.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "13",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قائمة قواسم كل من العددين 117 و 52، مثنى مثنى (1 مع العدد نفسه، ثم 2 …) حتى لا يفوتك قاسم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استخرج القواسم المشتركة: الأعداد الموجودة في القائمتين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاسم المشترك الأكبر هو أكبر القواسم المشتركة، لا أيّ واحد منها."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 117 و 52 هي 1 ، 13، وأكبرها 13.",
+        "incorrect": "اكتب قائمتي القواسم كاملتين، ثم خذ أكبر عدد يظهر في القائمتين معًا."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 117 هي: 1 ، 3 ، 9 ، 13 ، 39 ، 117",
+          "قواسم العدد 52 هي: 1 ، 2 ، 4 ، 13 ، 26 ، 52",
+          "القواسم المشتركة للعددين 117 و 52 هي: 1 ، 13",
+          "أكبرها هو 13، إذن:"
+        ],
+        "result": "PGCD(117 ; 52) = 13"
+      },
+      "work": "optional",
+      "timeSeconds": 270
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب الكسر $\\dfrac{117}{52}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "9/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال السابق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 13.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال السابق.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{117}{52} = \\dfrac{117 \\div 13}{52 \\div 13}$"
+        ],
+        "result": "\\dfrac{117}{52} = \\dfrac{9}{4}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اكتب العدد $A = 2\\sqrt{117} + \\sqrt{52} - \\sqrt{208}$ على الشكل $a\\sqrt{13}$ حيث $a$ عدد طبيعي يطلب تعيينه.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب كل عدد تحت الجذر على شكل جداء مربع تام في 13."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل $\\sqrt{k^2 \\times m} = k\\sqrt{m}$ ثم اجمع المعاملات."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 4\\sqrt{13}$",
+        "incorrect": "فكّك كل جذر إلى الشكل $k\\sqrt{13}$ قبل الجمع: لا تجمع الأعداد تحت الجذور."
+      },
+      "solution": {
+        "lines": [
+          "$A = 2\\sqrt{117} + \\sqrt{52} - \\sqrt{208}$",
+          "$A = 2 \\sqrt{9 \\times 13} + \\sqrt{4 \\times 13} - \\sqrt{16 \\times 13}$",
+          "$A = 6\\sqrt{13} + 2\\sqrt{13} - 4\\sqrt{13}$"
+        ],
+        "result": "A = 4\\sqrt{13}"
+      },
+      "timeSeconds": 240
+    }
+  ]
+}

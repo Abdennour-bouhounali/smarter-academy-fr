@@ -1,0 +1,257 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-jumal-l5-003",
+  "lessonCode": "wadiya-idmajiya-jumal",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2018 — صهاريج الماء بالجلفة",
+    "estimatedMinutes": 16,
+    "tags": [
+      "جملة",
+      "وضعية",
+      "مقارنة صيغتين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-jumal_P2",
+      "modelledOn": "BEM 2018 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2018",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "لتزويد البيوت بالماء الصالح للشرب في حي بالجلفة، حفاظا على نظافة الماء، يقترح ممونان التسعيرتين التاليتين:\n- الصيغة الأولى: 1500DA للصهريج الواحد.\n- الصيغة الثانية: اشتراك شهري قدره 4500DA إضافة إلى 1200DA للصهريج الواحد."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "احسب المبلغ الذي تدفعه عائلة تحتاج 10 صهاريج في الشهر حسب كل صيغة.",
+      "statement": "حسب الصيغة الأولى:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "15000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب العدد المعطى في المبلغ الذي يقابل الوحدة الواحدة، وأضف المبلغ الثابت إن وُجد."
+        }
+      ],
+      "feedback": {
+        "correct": "$10 \\times 1500 = 15000$ .",
+        "incorrect": "اقرأ الصيغة جيدا: ما الذي يُدفع عن كل وحدة وما الذي يُدفع مرة واحدة؟"
+      },
+      "solution": {
+        "lines": [
+          "الصيغة الأولى: $10 \\times 1500 = 15000$ أي $15000DA$",
+          "الصيغة الثانية: $10 \\times 1200 + 4500 = 16500$ أي $16500DA$"
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "حسب الصيغة الثانية:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "16500",
+      "misconceptionSignatures": [
+        {
+          "value": "12000",
+          "id": "MISC-WADIYA-TARJAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا تنس المبلغ الثابت."
+        }
+      ],
+      "feedback": {
+        "correct": "$10 \\times 1200 + 4500 = 16500$ .",
+        "incorrect": "المبلغ = العدد × المبلغ عن الوحدة + المبلغ الثابت."
+      },
+      "solution": {
+        "lines": [
+          "الصيغة الأولى: $10 \\times 1500 = 15000$ أي $15000DA$",
+          "الصيغة الثانية: $10 \\times 1200 + 4500 = 16500$ أي $16500DA$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "ليكن $x$ عدد الصهاريج في الشهر و $y$ المبلغ المدفوع (بالدينار).",
+      "statement": "بيّن أنه إذا تساوى المبلغان حسب الصيغتين، فإن الثنائية $(x ; y)$ حل للجملة: $\\begin{cases} y = 1500x \\\\ y = 1200x + 4500 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عبّر عن المبلغ حسب كل صيغة بدلالة $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "المبلغ حسب الصيغة الأولى: $1500x$",
+          "المبلغ حسب الصيغة الثانية: $1200x + 4500$",
+          "المبلغان متساويان ويساويان $y$ ، ومنه الثنائية $(x ; y)$ حل للجملة: $\\begin{cases} y = 1500x \\\\ y = 1200x + 4500 \\end{cases}$"
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "حل هذه الجملة، ثم فسّر النتيجة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : عدد الصهاريج ثم المبلغ بـ DA",
+      "expectedAnswer": {
+        "x": "15",
+        "y": "22500"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "22500",
+            "y": "15"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$y$ معزول في المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ساوِ بين الطرفين الثانيين للمعادلتين ثم احسب $x$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض قيمة $x$ في إحدى المعادلتين لتجد $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الثنائية $(15 ; 22500)$ : من أجل 15 صهريجا في الشهر يتساوى المبلغان ويساويان $22500DA$ .",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} y = 1500x & ...(1) \\\\ y = 1200x + 4500 & ...(2) \\end{cases}$",
+          "بما أن $y$ معزول في المعادلتين، نساوي بين الطرفين الثانيين: $1500x = 1200x + 4500$",
+          "$300x = 4500$",
+          "$x = 15$",
+          "بالتعويض في المعادلة (1): $y = 1500 \\times 15 = 22500$",
+          "من أجل 15 صهريجا في الشهر يتساوى المبلغان ويساويان $22500DA$ .",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(15 ; 22500)"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "☜ تحتاج عائلة سعيد 20 صهريجا في الشهر. أي الصيغتين أقل تكلفة لها؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "counted": false,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الصيغة الأولى",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WADIYA-TARJAMA"
+        },
+        {
+          "id": "B",
+          "content": "الصيغة الثانية",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المبلغ حسب كل صيغة من أجل 20 صهريجا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن المبلغين."
+        }
+      ],
+      "feedback": {
+        "correct": "الصيغة الثانية: $28500DA$ مقابل $30000DA$ .",
+        "incorrect": "احسب $20 \\times 1500$ و $4500 + 20 \\times 1200$ ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "الصيغة الأولى: $20 \\times 1500 = 30000$ أي $30000DA$",
+          "الصيغة الثانية: $4500 + 20 \\times 1200 = 4500 + 24000 = 28500$ أي $28500DA$",
+          "$28500 < 30000$ : الصيغة الثانية أقل تكلفة (بعد 15 صهريجا تصبح الصيغة الثانية أفضل)."
+        ]
+      },
+      "timeSeconds": 240
+    }
+  ]
+}

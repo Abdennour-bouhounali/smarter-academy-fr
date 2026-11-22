@@ -1,0 +1,202 @@
+{
+  "id": "ex-4am-tahlil-ibara-l5-005",
+  "lessonCode": "tahlil-ibara",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2016 — إطار لوحة الفسيفساء",
+    "estimatedMinutes": 16,
+    "tags": [
+      "فرق مربعين",
+      "عامل مشترك",
+      "مساحة",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tahlil-ibara_P2",
+      "modelledOn": "BEM 2016 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في مدخل متحف بمدينة تيبازة يحفظ تراث الوطن لوحة فسيفساء مربعة الشكل طول ضلعها $x$ cm ، يحيط بها من كل الجهات إطار من الرخام عرضه $20$ cm ، فيصبح الكل مربعًا طول ضلعه $(x + 40)$ cm ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "بيّن أن مساحة الإطار هي $M = (x + 40)^2 - x^2$ ، ثم حلّل $M$ .",
+      "statement": "العدد $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tahlil-ibara_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $M$ على الشكل $k(x + m)$ حيث $k$ عدد طبيعي : اكتب العدد $k$ فقط",
+      "expectedAnswer": "80",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$M$ فرق مربعين: عيّن $a$ و $b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد استعمال $a^2 - b^2 = (a + b)(a - b)$ ، أخرج العامل المشترك العددي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لاحظ أن $2x + 40 = 2(x + 20)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$M = 80(x + 20)$ إذن $k = 80$ .",
+        "incorrect": "تعرّف على المتطابقة الشهيرة المناسبة، وعيّن $a$ و $b$ بدقّة قبل التحليل."
+      },
+      "solution": {
+        "lines": [
+          "مساحة الإطار = مساحة المربع الكبير − مساحة اللوحة",
+          "$M = (x + 40)^2 - x^2$",
+          "$M = (x + 40 - x)(x + 40 + x)$",
+          "$M = 40(2x + 40)$",
+          "$M = 40 \\times 2(x + 20)$"
+        ],
+        "result": "M = 80(x + 20)"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tahlil-ibara_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $M$ على الشكل $k(x + m)$ حيث $k$ عدد طبيعي : اكتب العدد $m$ فقط",
+      "expectedAnswer": "20",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العدد المطلوب في الشكل المحلّل، بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$M = 80(x + 20)$ إذن $m = 20$ .",
+        "incorrect": "تعرّف على المتطابقة الشهيرة المناسبة، وعيّن $a$ و $b$ بدقّة قبل التحليل."
+      },
+      "solution": {
+        "lines": [
+          "$M = 80(x + 20)$"
+        ],
+        "result": "m = 20"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "نأخذ $x = 160$ . احسب مساحة الإطار.",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (بالسنتيمتر المربع cm²)",
+      "expectedAnswer": "14400",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى في الشكل المحلّل: الحساب أسهل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب قيمة كل عامل، ثم اضرب."
+        }
+      ],
+      "feedback": {
+        "correct": "$M = 14400\\ cm^2$ .",
+        "incorrect": "عوّض $x$ في كل عامل، واحترم الإشارات وأولويات العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$M = 80(160 + 20) = 80 \\times 180$",
+          "$M = 14400\\ cm^2 = 1{,}44\\ m^2$"
+        ],
+        "result": "M = 14400\\ cm^2"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "☜ ثمن المتر المربع من الرخام المستعمل 9000DA . ما هو ثمن رخام الإطار؟",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدينار DA)",
+      "expectedAnswer": "12960",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل المساحة إلى المتر المربع: $1\\ m^2 = 10000\\ cm^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب المساحة بالمتر المربع في ثمن المتر المربع."
+        }
+      ],
+      "feedback": {
+        "correct": "$12960\\ DA$ .",
+        "incorrect": "حوّل مساحة الإطار من $cm^2$ إلى $m^2$ (قسمة على 10000) قبل الضرب في الثمن."
+      },
+      "solution": {
+        "lines": [
+          "$14400\\ cm^2 = 1{,}44\\ m^2$",
+          "الثمن: $1{,}44 \\times 9000 = 12960$ DA"
+        ],
+        "result": "12960\\ DA"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

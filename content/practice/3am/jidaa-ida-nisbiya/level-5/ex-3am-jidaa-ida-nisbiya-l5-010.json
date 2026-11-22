@@ -1,0 +1,234 @@
+{
+  "id": "ex-3am-jidaa-ida-nisbiya-l5-010",
+  "lessonCode": "jidaa-ida-nisbiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — تحدّي الحساب الذهني",
+    "estimatedMinutes": 12,
+    "tags": [
+      "حساب ذهني",
+      "تغيير الترتيب",
+      "توزيع الضرب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يتنافس تلميذان في نادي الرياضيات في حساب الجداءات ذهنيًا، فيغيّران ترتيب العوامل أو يوزّعان الضرب."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "غيّر ترتيب العوامل.",
+      "statement": "احسب الجداء $(−2{,}5) \\times (−8) \\times 0{,}6 \\times (−4)$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-48",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ العوامل السالبة أولًا لتعرف الإشارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يمكن تغيير ترتيب العوامل وتجميعها دون أن يتغيّر الجداء."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ابحث عن عاملين جداء مسافتيهما $10$ أو $100$ أو $1000$ ، واضرب فيهما أولًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−2{,}5) \\times (−8) \\times 0{,}6 \\times (−4) = −48$ : عدد العوامل السالبة $3$ (عدد فردي)، إذن الجداء سالب.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "عدد العوامل السالبة هو $3$ ، وهو عدد فردي، إذن الجداء سالب.",
+          "نغيّر ترتيب العوامل لنجمع ما يسهّل الحساب: $(2{,}5 \\times 4) \\times (8 \\times 0{,}6) = 10 \\times 4{,}8 = 48$",
+          "الجداء يساوي $−48$ ."
+        ],
+        "result": "−48"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب الجداء $(−0{,}25) \\times (−7) \\times (−4) \\times (−8)$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "56",
+      "misconceptionSignatures": [
+        {
+          "value": "-56",
+          "id": "MISC-IDA-MORENEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ العوامل السالبة أولًا لتعرف الإشارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يمكن تغيير ترتيب العوامل وتجميعها دون أن يتغيّر الجداء."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ابحث عن عاملين جداء مسافتيهما $10$ أو $100$ أو $1000$ ، واضرب فيهما أولًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−0{,}25) \\times (−7) \\times (−4) \\times (−8) = 56$ : عدد العوامل السالبة $4$ (عدد زوجي)، إذن الجداء موجب.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "عدد العوامل السالبة هو $4$ ، وهو عدد زوجي، إذن الجداء موجب.",
+          "نغيّر ترتيب العوامل لنجمع ما يسهّل الحساب: $(0{,}25 \\times 4) \\times (7 \\times 8) = 1 \\times 56 = 56$",
+          "الجداء يساوي $56$ ."
+        ],
+        "result": "56"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "وزّع الضرب.",
+      "statement": "احسب ذهنيًا $(−18) \\times 99$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-1782",
+      "misconceptionSignatures": [
+        {
+          "value": "-1818",
+          "id": "MISC-IDA-DISTSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن العامل المشترك في الحدّين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$k \\times a + k \\times b = k \\times (a + b)$ و $k \\times a - k \\times b = k \\times (a - b)$ ، في الاتجاهين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولًا ما بين القوسين إن كان عددًا سهلًا (مثل $10$ أو $100$) ثم اضرب."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−18) \\times 99 = −1782$ .",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $99 = 100 − 1$ .",
+          "$(−18) \\times (100 − 1) = −1800 − (−18) = −1800 + 18$ .",
+          "$−1782$"
+        ],
+        "result": "−1782"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب ذهنيًا $(−35) \\times 14 + (−35) \\times 6$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-700",
+      "misconceptionSignatures": [
+        {
+          "value": "700",
+          "id": "MISC-IDA-DISTSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن العامل المشترك في الحدّين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$k \\times a + k \\times b = k \\times (a + b)$ و $k \\times a - k \\times b = k \\times (a - b)$ ، في الاتجاهين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولًا ما بين القوسين إن كان عددًا سهلًا (مثل $10$ أو $100$) ثم اضرب."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−35) \\times 14 + (−35) \\times 6 = −700$ .",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العدد $−35$ عامل مشترك.",
+          "$(−35) \\times (14 + 6) = (−35) \\times 20$ .",
+          "$−700$"
+        ],
+        "result": "−700"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

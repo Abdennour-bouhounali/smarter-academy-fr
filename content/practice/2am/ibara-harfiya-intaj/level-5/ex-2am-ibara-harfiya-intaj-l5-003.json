@@ -1,0 +1,350 @@
+{
+  "id": "ex-2am-ibara-harfiya-intaj-l5-003",
+  "lessonCode": "ibara-harfiya-intaj",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — مستودع ومخزن مربّع",
+    "estimatedMinutes": 7,
+    "tags": [
+      "وضعيّة إدماجيّة",
+      "محيط",
+      "مساحة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 3,
+      "file": "2am-s3-37",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يمثّل الشكل المقابل مخطّط مستودع : مستطيل طوله $30$ m وعرضه ضعف $x$ ، يلتصق به مخزن مربّع طول ضلعه $x$ . الأطوال بالمتر.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          3,
+          0
+        ],
+        "C": [
+          15,
+          0
+        ],
+        "D": [
+          15,
+          6
+        ],
+        "E": [
+          3,
+          6
+        ],
+        "F": [
+          3,
+          3
+        ],
+        "G": [
+          0,
+          3
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "x"
+        },
+        {
+          "from": "B",
+          "to": "C"
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "label": "2x"
+        },
+        {
+          "from": "D",
+          "to": "E",
+          "label": "30"
+        },
+        {
+          "from": "E",
+          "to": "F"
+        },
+        {
+          "from": "F",
+          "to": "B"
+        },
+        {
+          "from": "F",
+          "to": "G"
+        },
+        {
+          "from": "G",
+          "to": "A"
+        }
+      ],
+      "polygons": [
+        {
+          "points": [
+            "A",
+            "B",
+            "F",
+            "G"
+          ],
+          "tone": "amber"
+        },
+        {
+          "points": [
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "tone": "sky"
+        }
+      ],
+      "ariaLabel": "مستودع مؤلّف من مستطيل عرضه 2x وطوله 30 ، يلتصق به مخزن مربّع ضلعه x عند ركنه السفليّ الأيسر",
+      "maxWidth": 340,
+      "caption": "(الأطوال غير حقيقية)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما عبارة محيط الشكل كلّه بدلالة $x$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$7x + 60$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-PERCELL"
+        },
+        {
+          "id": "B",
+          "content": "$6x + 30$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-NOFIRST"
+        },
+        {
+          "id": "C",
+          "content": "$6x + 60$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعيّة وحدّد ما يتغيّر (الحرف) وما يبقى ثابتًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ خيار بقيمة بسيطة للحرف ثمّ قارن بالعدّ المباشر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاعدة الصحيحة تعطي العدد نفسه الذي تجده بالعدّ في كلّ مرّة تجرّبها."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتابة الصحيحة هي $6x + 60$ .",
+        "incorrect": "جرّب كلّ خيار على قيمة بسيطة للحرف وقارن بالعدّ المباشر قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "$6x + 60$ : نجمع أضلاع الحدّ الخارجيّ : $x + 30 + 2x + 30 + x + x + x$ ، والضلع المشترك بين المربّع والمستطيل في الداخل فلا يُحتسب.",
+          "عند $x = 12$ : $6 \\times 12 + 60 = 132$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "إذا كان $x = 12$ m ، فما محيط الشكل ؟ احسب $P = 6x + 60$ .",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "132",
+      "misconceptionSignatures": [
+        {
+          "value": "672",
+          "id": "MISC-IBARA2-JUXTA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بالقيمة المعطاة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ احترم أولويّة العمليّات : الضرب قبل الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة قبل أن تجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$P = 132$ .",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ أعد الحساب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$6 \\times 12 + 60 = 132$ ."
+        ],
+        "result": "132"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "مساحة المستطيل هي $60x$ ، ومساحة المربّع هي جداء ضلعه في نفسه. ما مساحة الشكل كلّه بدلالة $x$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$61x^{2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-ADDPOWERS"
+        },
+        {
+          "id": "B",
+          "content": "$x^{2} + 60x$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$2x + 60x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-SQUARE2"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعيّة وحدّد ما يتغيّر (الحرف) وما يبقى ثابتًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ خيار بقيمة بسيطة للحرف ثمّ قارن بالعدّ المباشر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاعدة الصحيحة تعطي العدد نفسه الذي تجده بالعدّ في كلّ مرّة تجرّبها."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتابة الصحيحة هي $x^{2} + 60x$ .",
+        "incorrect": "جرّب كلّ خيار على قيمة بسيطة للحرف وقارن بالعدّ المباشر قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "$x^{2} + 60x$ : مساحة المربّع $x \\times x = x^{2}$ ، ونجمعها إلى مساحة المستطيل $60x$ .",
+          "عند $x = 12$ : $12^{2} + 60 \\times 12 = 864$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب المساحة بالمتر المربّع إذا كان $x = 12$ : $S = x^{2} + 60x$ .",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "864",
+      "misconceptionSignatures": [
+        {
+          "value": "744",
+          "id": "MISC-IBARA2-SQUARE2"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بالقيمة المعطاة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ احترم أولويّة العمليّات : الضرب قبل الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة قبل أن تجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = 864$ .",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ أعد الحساب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$12^{2} + 60 \\times 12 = 864$ ."
+        ],
+        "result": "864"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

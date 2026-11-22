@@ -8,7 +8,6 @@ use App\Domain\Billing\ProviderSubscriptionAdapter;
 use App\Domain\Billing\ProviderSubscriptionState;
 use App\Domain\Billing\Stripe\StripeEventTranslator;
 use App\Models\Entitlement;
-use App\Models\ProviderEvent;
 use App\Models\Subscription;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;

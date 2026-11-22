@@ -1,0 +1,378 @@
+{
+  "id": "ex-3am-jidaa-ida-nisbiya-l4-007",
+  "lessonCode": "jidaa-ida-nisbiya",
+  "level": 4,
+  "metadata": {
+    "title": "نعوّض كل عامل بمعاكسه",
+    "estimatedMinutes": 10,
+    "tags": [
+      "معاكس عدد",
+      "زوجية",
+      "إشارة الجداء"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-44",
+      "page": 18,
+      "section": "أتعمّق",
+      "number": 44
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في جداء عدّة أعداد، نعوّض كل عامل بمعاكسه. نقارن الجداء الجديد بالجداء الأول في حالتين.",
+    "formulas": [
+      "P = (−2) \\times 5 \\times (−3)",
+      "P' = 2 \\times (−5) \\times 3",
+      "Q = (−2) \\times (−3) \\times 4 \\times 5",
+      "Q' = 2 \\times 3 \\times (−4) \\times (−5)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "جداء ثلاثة أعداد.",
+      "statement": "احسب $P$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "-30",
+          "id": "MISC-IDA-MORENEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ العوامل السالبة أولًا، فهي التي تعيّن إشارة الجداء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عدد العوامل السالبة زوجيًا فالجداء موجب، وإذا كان فرديًا فهو سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب المسافات إلى الصفر، ويمكنك تغيير ترتيب العوامل لتجمع ما يسهّل الحساب (مثل $4 \\times 25$)."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−2) \\times 5 \\times (−3) = 30$ : عدد العوامل السالبة $2$ (عدد زوجي)، إذن الجداء موجب.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "عدد العوامل السالبة هو $2$ ، وهو عدد زوجي، إذن الجداء موجب.",
+          "نضرب المسافات إلى الصفر: $2 \\times 5 \\times 3 = 30$",
+          "$P = 30$"
+        ],
+        "result": "P = 30"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $P'$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-30",
+      "misconceptionSignatures": [
+        {
+          "value": "30",
+          "id": "MISC-IDA-MORENEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ العوامل السالبة أولًا، فهي التي تعيّن إشارة الجداء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عدد العوامل السالبة زوجيًا فالجداء موجب، وإذا كان فرديًا فهو سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب المسافات إلى الصفر، ويمكنك تغيير ترتيب العوامل لتجمع ما يسهّل الحساب (مثل $4 \\times 25$)."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times (−5) \\times 3 = −30$ : عدد العوامل السالبة $1$ (عدد فردي)، إذن الجداء سالب.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "عدد العوامل السالبة هو $1$ ، وهو عدد فردي، إذن الجداء سالب.",
+          "نضرب المسافات إلى الصفر: $2 \\times 5 \\times 3 = 30$",
+          "$P' = −30$"
+        ],
+        "result": "P' = −30"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما العلاقة بين $P'$ و $P$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$P' = 2P$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$P' = −P$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$P' = P$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$P' = 0$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $P$ و $P'$ ، ثم قارن بينهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن بين إشارتيهما ثم بين مسافتيهما إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد العوامل السالبة في كل منهما هو الذي يحدّد الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$P' = −P$ .",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "$P = 30$ و $P' = −30$ .",
+          "المسافتان متساويتان والإشارتان متعاكستان، إذن $P' = −P$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "جداء أربعة أعداد.",
+      "statement": "احسب $Q$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "120",
+      "misconceptionSignatures": [
+        {
+          "value": "-120",
+          "id": "MISC-IDA-ANYNEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ العوامل السالبة أولًا، فهي التي تعيّن إشارة الجداء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عدد العوامل السالبة زوجيًا فالجداء موجب، وإذا كان فرديًا فهو سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب المسافات إلى الصفر، ويمكنك تغيير ترتيب العوامل لتجمع ما يسهّل الحساب (مثل $4 \\times 25$)."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−2) \\times (−3) \\times 4 \\times 5 = 120$ : عدد العوامل السالبة $2$ (عدد زوجي)، إذن الجداء موجب.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "عدد العوامل السالبة هو $2$ ، وهو عدد زوجي، إذن الجداء موجب.",
+          "نضرب المسافات إلى الصفر: $2 \\times 3 \\times 4 \\times 5 = 120$",
+          "$Q = 120$"
+        ],
+        "result": "Q = 120"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب $Q'$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "120",
+      "misconceptionSignatures": [
+        {
+          "value": "-120",
+          "id": "MISC-IDA-ANYNEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ العوامل السالبة أولًا، فهي التي تعيّن إشارة الجداء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عدد العوامل السالبة زوجيًا فالجداء موجب، وإذا كان فرديًا فهو سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب المسافات إلى الصفر، ويمكنك تغيير ترتيب العوامل لتجمع ما يسهّل الحساب (مثل $4 \\times 25$)."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 3 \\times (−4) \\times (−5) = 120$ : عدد العوامل السالبة $2$ (عدد زوجي)، إذن الجداء موجب.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "عدد العوامل السالبة هو $2$ ، وهو عدد زوجي، إذن الجداء موجب.",
+          "نضرب المسافات إلى الصفر: $2 \\times 3 \\times 4 \\times 5 = 120$",
+          "$Q' = 120$"
+        ],
+        "result": "Q' = 120"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ج",
+      "statement": "ما العلاقة بين $Q'$ و $Q$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$Q' = 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$Q' = Q$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$Q' = 2Q$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$Q' = −Q$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $Q$ و $Q'$ ، ثم قارن بينهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن بين إشارتيهما ثم بين مسافتيهما إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد العوامل السالبة في كل منهما هو الذي يحدّد الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$Q' = Q$ .",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "$Q = 120$ و $Q' = 120$ .",
+          "الجداءان متساويان: $Q' = Q$ ."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

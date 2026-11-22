@@ -1,0 +1,141 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l4-001",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 4,
+  "metadata": {
+    "title": "طرائق — ضلع المثلث من نصف القطر",
+    "estimatedMinutes": 3,
+    "tags": [
+      "طول الضلع",
+      "المثلث المتقايس الأضلاع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-side",
+      "page": 157,
+      "section": "طرائق"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 157): ABC مثلث متقايس الأضلاع و (E) الدّائرة المحيطة به، مركزها O و نصف قطرها $\\sqrt{3}$ . الوحدة هي السنتيمتر.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "H": [
+          -0.663,
+          -0.557
+        ],
+        "A": [
+          -1.628,
+          0.592
+        ],
+        "C": [
+          1.327,
+          1.113
+        ],
+        "B": [
+          0.301,
+          -1.706
+        ]
+      },
+      "circles": [
+        {
+          "center": "O",
+          "radius": 1.732
+        }
+      ],
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "A"
+        ],
+        {
+          "from": "O",
+          "to": "A",
+          "dashed": true
+        },
+        {
+          "from": "O",
+          "to": "B",
+          "dashed": true
+        },
+        {
+          "from": "O",
+          "to": "C",
+          "dashed": true
+        },
+        [
+          "O",
+          "H"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "H",
+          "O"
+        ]
+      ],
+      "ariaLabel": "دائرة (E) مركزها O ونصف قطرها جذر 3، ومثلث متقايس الأضلاع ABC محاط بها، و H منتصف [AB] حيث [OH] يعامد [AB]",
+      "maxWidth": 340
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "احسب القيمة المضبوطة لطول ضلع هذا المثلث بالسنتيمتر.",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUNTAZAM-DIL",
+          "value": "1.73"
+        },
+        {
+          "id": "MISC-MUTH-NISBA-UKHRA",
+          "value": "1.5"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم المثلث الذي رأسه المركز وقاعدته ضلع، ثم الارتفاع النازل من المركز."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في المثلث القائم، الزاوية في المركز نصف الزاوية المركزية، والوتر نصف القطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نصف الضلع = نصف القطر × جيب نصف الزاوية المركزية، ثم نضاعف."
+        }
+      ],
+      "feedback": {
+        "correct": "$AH = \\sqrt{3} \\times \\cos 30^\\circ = \\dfrac{3}{2}$ و $AB = 2 \\times AH = 3$ .",
+        "incorrect": "الضلع يساوي نصف القطر في السداسي فقط."
+      },
+      "difficulty": 4
+    }
+  ]
+}

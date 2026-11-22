@@ -1,0 +1,332 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-adad-nisbiya-2-l5-010",
+  "lessonCode": "wadiya-idmajiya-adad-nisbiya-2",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — وضعية إدماجية: خريطة وإحداثيات",
+    "estimatedMinutes": 14,
+    "tags": [
+      "معلم",
+      "نظيرة",
+      "مسافة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "خريطة حيّ في معلم متعامد ومتجانس وحدته $100\\,\\mathrm{m}$ : المدرسة $E$ والمسجد $F$ والمكتبة $G$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "في معلم متعامد ومتجانس، تقع النقطة $E$ على بعد $3$ وحدات يسار محور التراتيب وعلى بعد $2$ وحدة فوق محور الفواصل. ما إحداثيا $E$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-3",
+        "y": "2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "2",
+            "y": "-3"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNAXIS",
+          "value": {
+            "x": "-3",
+            "y": "-2"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNLEFT",
+          "value": {
+            "x": "3",
+            "y": "2"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفاصلة تحدّد الجهة بالنسبة إلى محور التراتيب والترتيب يحدّد الجهة بالنسبة إلى محور الفواصل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يسار محور التراتيب فاصلة سالبة، وتحت محور الفواصل ترتيب سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الفاصلة أوّلًا ثمّ الترتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "$E(-3\\,;\\,2)$ .",
+        "incorrect": "الفاصلة أوّلًا ثمّ الترتيب : راجع إشارة كلّ إحداثية."
+      },
+      "solution": {
+        "lines": [
+          "يسار محور التراتيب : الفاصلة سالبة $-3$",
+          "فوق محور الفواصل : الترتيب موجب $+2$",
+          "$E(-3\\,;\\,2)$"
+        ],
+        "result": "(-3\\,;\\,2)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "المدرسة $E$ والمسجد $F$ لهما الترتيب نفسه، وفاصلتاهما $-3$ و $4$ . احسب المسافة $EF$ بوحدات المعلم.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "1"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-7"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطتان على جهة واحدة من المبدأ أم على جهتين مختلفتين ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى ناقص الفاصلة الصغرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا : تحقّق من الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$EF=7$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى $+4$ والفاصلة الصغرى $-3$",
+          "$EF=(+4)-(-3)=7$"
+        ],
+        "result": "7"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "المسجد $F$ والمكتبة $G$ لهما الفاصلة نفسها، وترتيباهما $2$ و $-3$ . احسب المسافة $FG$ بوحدات المعلم.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "1"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-5"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطتان على جهة واحدة من المبدأ أم على جهتين مختلفتين ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى ناقص الفاصلة الصغرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا : تحقّق من الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$FG=5$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى $+2$ والفاصلة الصغرى $-3$",
+          "$FG=(+2)-(-3)=5$"
+        ],
+        "result": "5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "في معلم متعامد ومتجانس : $E(-3\\,;\\,2)$ و $F(4\\,;\\,2)$ و $G(4\\,;\\,-3)$ . عيّن إحداثيي النقطة $H$ التي تجعل $EFGH$ مستطيلًا.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-3",
+        "y": "-3"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أضلاع المستطيل توازي المحورين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$H$ تشارك $E$ في الفاصلة و $G$ في الترتيب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الفاصلة ثمّ الترتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "$H(-3\\,;\\,-3)$ .",
+        "incorrect": "الفاصلة أوّلًا ثمّ الترتيب : راجع إشارة كلّ إحداثية."
+      },
+      "solution": {
+        "lines": [
+          "$E$ و $H$ على المستقيم الرأسي نفسه فلهما الفاصلة $-3$",
+          "$G$ و $H$ على المستقيم الأفقي نفسه فلهما الترتيب $-3$",
+          "$H(-3\\,;\\,-3)$"
+        ],
+        "result": "(-3\\,;\\,-3)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "في معلم متعامد ومتجانس، ما إحداثيا نظيرة النقطة $G(4\\,;\\,-3)$ بالنسبة إلى محور الفواصل ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "4",
+        "y": "3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SYMMIX",
+          "value": {
+            "x": "-4",
+            "y": "-3"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-BOTHSIGNS",
+          "value": {
+            "x": "-4",
+            "y": "3"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "3",
+            "y": "4"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النظير بالنسبة إلى محور يبقي إحداثية ويعاكس الأخرى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بالنسبة إلى محور الفواصل تبقى الفاصلة ويصير الترتيب معاكسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من أنّ المسافة إلى المحور لم تتغيّر."
+        }
+      ],
+      "feedback": {
+        "correct": "$(4\\,;\\,3)$ .",
+        "incorrect": "الفاصلة أوّلًا ثمّ الترتيب : راجع إشارة كلّ إحداثية."
+      },
+      "solution": {
+        "lines": [
+          "النظير بالنسبة إلى محور الفواصل يبقي الفاصلة كما هي",
+          "الإحداثية الأخرى تصير معاكسها : $(4\\,;\\,3)$"
+        ],
+        "result": "(4\\,;\\,3)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

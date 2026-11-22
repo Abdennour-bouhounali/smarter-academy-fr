@@ -1,0 +1,99 @@
+{
+  "id": "ex-4am-majmu-shuaayn-l4-006",
+  "lessonCode": "majmu-shuaayn",
+  "level": 4,
+  "generator": {
+    "tool": "unit11-majmu-gen.py",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — نحو الضفة المقابلة مباشرة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "انسحابان متتابعان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_majmu-shuaayn_P1",
+      "modelledOn": "challenge"
+    }
+  },
+  "statement": {
+    "content": "سبّاح سرعته الذاتية $4\\,\\mathrm{km/h}$ يسبح عموديا على حافتي نهر عرضه $80\\,\\mathrm{m}$ ، وسرعة التيار $3\\,\\mathrm{km/h}$ موازية للحافتين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "سرعته الفعلية بـ km/h :",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد (km/h)",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للشعاعين نفس المبدأ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "شعاعان لهما نفس المبدأ يُجمعان بقاعدة متوازي الأضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع هو القطر الصادر من المبدأ المشترك، لا القطر الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "السرعتان متعامدتان: $\\sqrt{4^2 + 3^2} = 5\\,\\mathrm{km/h}$ .",
+        "incorrect": "قاعدة متوازي الأضلاع: مجموع شعاعين لهما نفس المبدأ هو القطر الصادر من ذلك المبدأ."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "على أيّ بعد (بالمتر) من النقطة المقابلة تماما لنقطة انطلاقه يصل إلى الضفة الأخرى؟",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالمتر)",
+      "expectedAnswer": "60",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم الانتقالين واحدا بعد الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انسحابان متتابعان يعطيان انسحابا واحدا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "شعاع الانسحاب الناتج يذهب من نقطة البداية إلى نقطة الوصول النهائية."
+        }
+      ],
+      "feedback": {
+        "correct": "في كل لحظة يتقدّم 4 نحو الضفة و 3 مع التيار: $80 \\times \\dfrac{3}{4} = 60\\,\\mathrm{m}$ أسفل النهر.",
+        "incorrect": "انسحابان متتابعان = انسحاب واحد شعاعه مجموع الشعاعين: من نقطة البداية إلى نقطة الوصول."
+      }
+    }
+  ]
+}

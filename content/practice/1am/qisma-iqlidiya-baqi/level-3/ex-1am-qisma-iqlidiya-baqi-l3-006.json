@@ -1,0 +1,206 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l3-006",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — موعد المسابقة",
+    "estimatedMinutes": 7,
+    "tags": [
+      "أيام الأسبوع",
+      "باقٍ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أعلن نادي المطالعة يوم الثلاثاء عن مسابقة تُجرى بعد 100 يوم بالضبط، ودعا التلاميذ إلى احترام الموعد."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "كم أسبوعًا كاملًا في 100 يوم؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الأسابيع",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "13",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "15",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 100 من 7 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 7 دون أن نتجاوز 100."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$100 = 7 \\times 14 + 2$ و $2 < 7$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 7 فلا يتجاوز الجداء 100، والباقي عندئذ أصغر من 7."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 14 = 98$ و $7 \\times 15 = 105$",
+          "$98 \\le 100 < 105$ ، إذن الحاصل هو 14."
+        ],
+        "result": "q = 14"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم يومًا يبقى بعد هذه الأسابيع؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الأيام",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "14",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "9",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 100."
+        }
+      ],
+      "feedback": {
+        "correct": "$100 - 7 \\times 14 = 100 - 98 = 2$ ، و $2 < 7$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 7."
+      },
+      "solution": {
+        "lines": [
+          "$100 = 7 \\times 14 + 2$",
+          "$2 < 7$ ، إذن الباقي هو 2."
+        ],
+        "result": "r = 2"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "في أيّ يوم من الأسبوع تُجرى المسابقة؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الخميس",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الثلاثاء",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-LA-BAQI"
+        },
+        {
+          "id": "C",
+          "content": "الجمعة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        },
+        {
+          "id": "D",
+          "content": "الأربعاء",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل 7 أيام يعود اليوم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب باقي القسمة الإقليدية للعدد 100 على 7."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأسابيع الكاملة لا تغيّر اليوم: الباقي وحده يحرّكه."
+        }
+      ],
+      "feedback": {
+        "correct": "$100 = 7 \\times 14 + 2$: بعد الأسابيع الكاملة نعود إلى يوم الثلاثاء، ثم نتقدّم بعدد أيام الباقي (2).",
+        "incorrect": "الأسابيع الكاملة تعيدنا إلى اليوم نفسه، ثم نتقدّم بعدد أيام الباقي."
+      },
+      "solution": {
+        "lines": [
+          "$100 = 7 \\times 14 + 2$",
+          "بعد 14 أسبوعًا كاملًا نعود إلى يوم الثلاثاء.",
+          "نتقدّم بعد ذلك بعدد أيام الباقي (2): نصل إلى يوم الخميس."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

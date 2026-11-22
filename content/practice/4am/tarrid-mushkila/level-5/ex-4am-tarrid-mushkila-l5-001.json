@@ -1,0 +1,532 @@
+{
+  "id": "ex-4am-tarrid-mushkila-l5-001",
+  "lessonCode": "tarrid-mushkila",
+  "level": 5,
+  "metadata": {
+    "title": "BEM 2008 — الوضعية الإدماجية",
+    "estimatedMinutes": 25,
+    "tags": [
+      "ترييض",
+      "معادلة",
+      "مساحة",
+      "نسبة مئوية"
+    ],
+    "source": {
+      "type": "bem",
+      "year": 2008,
+      "part": 2,
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "official",
+      "badge": "BEM 2008",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "قطعة أرض مستطيلة الشكل مساحتها $2400m^2$ و عرضها يساوي ثلثي طولها، أراد صاحب هذه القطعة، خدمةً لسكان الحيّ، استخدامها كحظيرة للسيارات و للشاحنات ذات الحجم الصغير.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          40
+        ],
+        "B": [
+          60,
+          40
+        ],
+        "C": [
+          60,
+          0
+        ],
+        "D": [
+          0,
+          0
+        ],
+        "M": [
+          34,
+          40
+        ],
+        "N": [
+          34,
+          0
+        ],
+        "s1": [
+          17.0,
+          20.0
+        ],
+        "s2": [
+          17.0,
+          20.0
+        ],
+        "t1": [
+          47.0,
+          20.0
+        ],
+        "t2": [
+          47.0,
+          20.0
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "M",
+          "label": "x"
+        },
+        [
+          "M",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "A"
+        ],
+        {
+          "from": "M",
+          "to": "N",
+          "dashed": true
+        },
+        {
+          "from": "s1",
+          "to": "s2",
+          "label": "S₁",
+          "labelSide": 1
+        },
+        {
+          "from": "t1",
+          "to": "t2",
+          "label": "S₂",
+          "labelSide": 1
+        }
+      ],
+      "rightAngles": [
+        [
+          "D",
+          "A",
+          "B"
+        ],
+        [
+          "A",
+          "B",
+          "C"
+        ],
+        [
+          "B",
+          "C",
+          "D"
+        ],
+        [
+          "C",
+          "D",
+          "A"
+        ]
+      ],
+      "labels": {
+        "A": "nw",
+        "M": "n",
+        "B": "ne",
+        "C": "se",
+        "D": "sw"
+      },
+      "hidden": [
+        "N",
+        "s1",
+        "s2",
+        "t1",
+        "t2"
+      ],
+      "ariaLabel": "مستطيل ABCD، النقطة M على [AB] حيث AM = x، وخط متقطع من M إلى [DC] يقسم القطعة إلى جزأين: S₁ على اليسار و S₂ على اليمين",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "احسب عرض و طول هذه القطعة.",
+      "statement": "عرض القطعة:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: العرض بـ m",
+      "expectedAnswer": "40",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "سمِّ طول القطعة، وعبّر عن عرضها بدلالته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المساحة = الطول × العرض: تحصل على معادلة فيها مربع الطول."
+        }
+      ],
+      "feedback": {
+        "correct": "عرض القطعة $40m$ .",
+        "incorrect": "عرض القطعة ثلثا طولها، ومساحتها جداء البعدين."
+      },
+      "solution": {
+        "lines": [
+          "ليكن $x$ طول هذه القطعة، و ليكن $y$ عرضها.",
+          "عرض القطعة يساوي ثلثي طولها معناه: $y = \\dfrac{2}{3}x$",
+          "و لدينا: $x \\times y = 2400$",
+          "بتعويض $y$ بما يساويه نجد: $x \\times \\dfrac{2}{3}x = 2400$",
+          "$\\dfrac{2}{3}x^2 = 2400$",
+          "$x^2 = \\dfrac{2400 \\times 3}{2}$",
+          "$x^2 = 3600$",
+          "$x = \\sqrt{3600} = 60m$",
+          "و منه عرض القطعة هو: $y = \\dfrac{2}{3} \\times 60$",
+          "$y = 40m$"
+        ],
+        "result": "y = 40\\,m"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "طول القطعة:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "60",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مربع الطول معلوم بعد التعويض: ابحث عن العدد الموجب الذي مربعه هو."
+        }
+      ],
+      "feedback": {
+        "correct": "طول القطعة $60m$ .",
+        "incorrect": "الطول عدد موجب مربعه $3600$ ."
+      },
+      "solution": {
+        "lines": [
+          "$x^2 = 3600$",
+          "$x = \\sqrt{3600} = 60m$"
+        ],
+        "result": "x = 60\\,m"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "يتم تقسيم هذه القطعة كما هو مبين في الشكل الموالي: $S_1$ الجزء المخصص للسيارات. $S_2$ الجزء المخصص للشاحنات. حيث $AM = x$ .\nعبر عن مساحتي الجزءين $S_1$ و $S_2$ بدلالة $x$ .",
+      "statement": "يُكتب $S_1$ على الشكل $mx$ : أعط العدد $m$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $m$ فقط",
+      "expectedAnswer": "40",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الجزء المخصص للسيارات مستطيل: ما هما بُعداه؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$S_1 = 40x$ .",
+        "incorrect": "الجزء $S_1$ مستطيل بُعداه $x$ و عرض القطعة."
+      },
+      "solution": {
+        "lines": [
+          "الجزء المخصص للسيارات شكله مستطيل بُعداه $x$ و $40m$ .",
+          "$S_1 = 40x$"
+        ],
+        "result": "S_1 = 40x"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "statement": "يُكتب $S_2$ على الشكل $mx + p$ : أعط العدد $m$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $m$ فقط (قد يكون سالبًا)",
+      "expectedAnswer": "-40",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الجزء المخصص للشاحنات مستطيل: عبّر عن طوله بدلالة $x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انشر ثم رتّب."
+        }
+      ],
+      "feedback": {
+        "correct": "$m = -40$ .",
+        "incorrect": "طول الجزء $S_2$ هو $60 - x$ ؛ انشر مع الانتباه إلى الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "الجزء المخصص للشاحنات شكله مستطيل بعداه $60 - x$ و $40m$ .",
+          "$S_2 = 40 \\times (60 - x)$",
+          "$S_2 = -40x + 2400$"
+        ],
+        "result": "S_2 = -40x + 2400"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أعط العدد $p$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $p$ فقط",
+      "expectedAnswer": "2400",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر $40(60 - x)$ : ما هو الحد الثابت؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$S_2 = -40x + 2400$ .",
+        "incorrect": "الحد الثابت يأتي من نشر $40(60 - x)$ ."
+      },
+      "solution": {
+        "lines": [
+          "$S_2 = 40 \\times (60 - x)$",
+          "$S_2 = -40x + 2400$"
+        ],
+        "result": "S_2 = -40x + 2400"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ب",
+      "lead": "إذا علمت أن المساحة المخصصة لسيارة واحدة هي $18m^2$ و للشاحنة الواحدة هي $30m^2$ .\nجد قيمة $x$ حتى يتسع الجزء $S_1$ لـ 80 سيارة ثم استنتج في هذه الحالة أكبر عدد للشاحنات التي يمكن توقفها في الجزء $S_2$ .",
+      "statement": "قيمة $x$ حتى يتسع الجزء $S_1$ لـ 80 سيارة:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول $AM$ بـ m",
+      "expectedAnswer": "36",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المساحة التي تشغلها 80 سيارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجعل $S_1$ يساوي هذه المساحة ثم حلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "المساحة اللازمة $1440m^2$ ، و $40x = 1440$ تعطي $x = 36m$ .",
+        "incorrect": "مساحة الجزء $S_1$ يجب أن تساوي مساحة 80 سيارة."
+      },
+      "solution": {
+        "lines": [
+          "المساحة التي تشغلها 80 سيارة هي: $80 \\times 18 = 1440$ أي $1440m^2$ .",
+          "قيمة $x$ حتى يسع الجزء $S_1$ 80 سيارة: $40x = 1440$",
+          "$1440 \\div 40 = 36$",
+          "إذن $x = 36m$ ."
+        ],
+        "result": "x = 36\\,m"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q7",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أكبر عدد للشاحنات التي يمكن توقفها في الجزء $S_2$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الشاحنات",
+      "expectedAnswer": "32",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مساحة $S_2$ من أجل القيمة التي وجدتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسمها على المساحة المخصصة لشاحنة واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "مساحة $S_2$ : $960m^2$ ، و $960 \\div 30 = 32$ شاحنة.",
+        "incorrect": "عوّض $x$ في عبارة $S_2$ ، ثم اقسم على مساحة الشاحنة الواحدة."
+      },
+      "solution": {
+        "lines": [
+          "مساحة الجزء $S_2$ في هذه الحالة هي: $S_2 = 40 \\times (60 - 36)$",
+          "$S_2 = 40 \\times 24 = 960m^2$",
+          "$960 \\div 30 = 32$",
+          "أكبر عدد من الشاحنات يمكن أن تتوقف في الجزء $S_2$ هو: 32 شاحنة."
+        ],
+        "result": "32"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q8",
+      "step": "03",
+      "lead": "المدخول اليومي للحظيرة لما تكون كل الأماكن محجوزة هو 8960DA .\nحدد تسعيرة التوقف اليومي لكل من السيارة الواحدة و الشاحنة الواحدة إذا علمت أن تسعيرة التوقف اليومي للسيارة 30% من تسعيرة التوقف اليومي للشاحنة.",
+      "statement": "تسعيرة التوقف اليومي للسيارة الواحدة (بـ DA):",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-mushkila_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: التسعيرة بـ DA",
+      "expectedAnswer": "48",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "سمِّ تسعيرة الشاحنة، وعبّر عن تسعيرة السيارة بدلالتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المدخول اليومي = 80 × تسعيرة السيارة + 32 × تسعيرة الشاحنة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض ثم حلّ المعادلة ذات المجهول الواحد."
+        }
+      ],
+      "feedback": {
+        "correct": "تسعيرة التوقف اليومي للسيارة الواحدة 48DA .",
+        "incorrect": "عبّر عن التسعيرتين بمجهول واحد، ثم اكتب أن المدخول اليومي يساوي 8960DA ."
+      },
+      "solution": {
+        "lines": [
+          "(باعتبار أن عدد السيارات 80 سيارة و عدد الشاحنات 32 شاحنة)",
+          "ليكن $a$ هو تسعيرة التوقف اليومي للسيارة.",
+          "و ليكن $b$ هو تسعيرة التوقف اليومي للشاحنة.",
+          "تسعيرة التوقف اليومي للسيارة هي 30% من تسعيرة التوقف اليومي للشاحنة معناه: $a = \\dfrac{30}{100}b$",
+          "المدخول اليومي للحظيرة لما تكون كل الأماكن محجوزة هو 8960DA معناه:",
+          "$80 \\times \\dfrac{30}{100}b + 32b = 8960$",
+          "$24b + 32b = 8960$",
+          "$56b = 8960$",
+          "$b = \\dfrac{8960}{56} = 160$",
+          "إذا تسعيرة التوقف اليومي للشاحنة الواحدة هي: 160DA .",
+          "و منه تسعيرة التوقف اليومي للسيارة هي: 48DA .",
+          "$160 \\times \\dfrac{30}{100} = 48DA$"
+        ],
+        "result": "a = 48\\,DA"
+      },
+      "work": "required",
+      "timeSeconds": 480
+    },
+    {
+      "id": "q9",
+      "step": "03",
+      "statement": "تسعيرة التوقف اليومي للشاحنة الواحدة (بـ DA):",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: التسعيرة بـ DA",
+      "expectedAnswer": "160",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل المعادلة التي كتبتها لمجموع المدخول اليومي."
+        }
+      ],
+      "feedback": {
+        "correct": "تسعيرة الشاحنة 160DA ، والتحقق: $80 \\times 48 + 32 \\times 160 = 3840 + 5120 = 8960$ .",
+        "incorrect": "حلّ المعادلة $56b = 8960$ ."
+      },
+      "solution": {
+        "lines": [
+          "$56b = 8960$",
+          "$b = 160$",
+          "التحقق: $80 \\times 48 + 32 \\times 160 = 8960$ ."
+        ],
+        "result": "b = 160\\,DA"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

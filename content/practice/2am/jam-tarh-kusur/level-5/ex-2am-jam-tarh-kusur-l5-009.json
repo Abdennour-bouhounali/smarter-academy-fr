@@ -1,0 +1,194 @@
+{
+  "id": "ex-2am-jam-tarh-kusur-l5-009",
+  "lessonCode": "jam-tarh-kusur",
+  "level": 5,
+  "metadata": {
+    "title": "بائع الورد",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جمع كسرين",
+      "الجزء الباقي"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-36",
+      "page": 34,
+      "section": "أتعمّق",
+      "number": 36
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "الوضعية الإدماجية",
+      "points": "06"
+    }
+  },
+  "statement": {
+    "content": "باع بائع ورد في الصباح $\\dfrac{3}{8}$ من باقاته ، وبعد الظهر $\\dfrac{1}{4}$ منها ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما الكسر الذي يمثّل الباقات التي بيعت في اليوم ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "5/8",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1/3",
+          "id": "MISC-JAMKASR-ACROSS"
+        },
+        {
+          "value": "1/2",
+          "id": "MISC-JAMKASR-NOSCALE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الجزءان اللذان تبحث عن مجموعهما أو عن الباقي بعدهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد ثمّ اجمع، والباقي نحصل عليه بالطرح من الكلّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل الناتج إن أمكن وتحقّق أنّه يبقى أصغر من الكلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{5}{8}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{4} = \\dfrac{1 \\times 2}{4 \\times 2} = \\dfrac{2}{8}$ .",
+          "$\\dfrac{3}{8} + \\dfrac{1}{4} = \\dfrac{3 + 2}{8} = \\dfrac{5}{8}$ ."
+        ],
+        "result": "\\dfrac{5}{8}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما الكسر الذي يمثّل الباقات التي لم تُبع إلى آخر اليوم ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "3/8",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "5/8",
+          "id": "MISC-JAMKASR-PART"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكلّ يساوي كسرًا بسطه ومقامه عدد واحد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العدد 1 على شكل كسر مقامه هو مقام الأجزاء المأخوذة ثمّ اطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الجزء الباقي هو الكلّ ناقص ما أُخذ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{8}$ : هذا هو الجزء الباقي .",
+        "incorrect": "اكتب الكلّ على شكل كسر ثمّ اطرح منه ما أُخذ، ولا تُعطِ ما أُخذ بدل الباقي."
+      },
+      "solution": {
+        "lines": [
+          "$1 = \\dfrac{8}{8}$ .",
+          "$1 - \\dfrac{3}{8} - \\dfrac{1}{4} = \\dfrac{8}{8} - \\dfrac{3}{8} - \\dfrac{2}{8} = \\dfrac{3}{8}$ ."
+        ],
+        "result": "\\dfrac{3}{8}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل ما بيع أكثر ممّا لم يُبع ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا ثمّ تحقّق منها بحساب بسيط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الناتج بمقام مشترك ثمّ قارنه بما قيل."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم : $\\dfrac{5}{8} > \\dfrac{3}{8}$ .",
+        "incorrect": "احسب ثمّ قارن بدقّة قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "البيع $\\dfrac{5}{8}$ والباقي $\\dfrac{3}{8}$ : المقامان متساويان والبسط $5$ أكبر من $3$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,644 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   LE CARNET — `sa-nb-*`
+   ─────────────────────────────────────────────────────────────────────────
+   Un vrai cahier d'écolier, tenu sobre : papier chaud, lignes d'écriture,
+   marge rouge, reliure pointillée. Le vocabulaire du reste des leçons
+   (angles arrondis, bordures nettes, violet pour l'action, vert pour
+   « enregistré », rouge pour l'erreur, bleu pour le contexte) reste le même ;
+   seule la SURFACE change — c'est un objet personnel, pas une carte de plus.
+
+   Deux tailles, en unités de fenêtre bornées par clamp() : « grand », la
+   page qu'on déplie pour rédiger — c'est ainsi qu'il s'OUVRE, toujours,
+   centré dans l'écran — et « petit », le coin de cahier qu'on garde à côté
+   de l'exercice si l'élève le réduit. En dessous de 640px il n'y a plus qu'une taille,
+   quasi plein écran — un quart d'écran de téléphone n'est pas un éditeur.
+
+   Les lignes d'écriture ont un pas de 2rem, et l'éditeur la MÊME hauteur de
+   ligne : le texte se pose sur les lignes au lieu de les traverser.
+   ───────────────────────────────────────────────────────────────────────── */
+
+.sa-nb-window {
+  --nb-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --nb-paper: #fffdf8;
+  --nb-line: rgba(96, 165, 250, 0.28);
+  --nb-margin: rgba(244, 63, 94, 0.38);
+  --nb-w: clamp(24rem, 30vw, 30rem);
+  --nb-h: clamp(28rem, 52vh, 36rem);
+
+  position: fixed;
+  z-index: 71; /* au-dessus de la fenêtre de signalement (z-60), des barres (z-50) et de la carte (z-40) */
+  /* Centré : inset 0 + marges automatiques sur une boîte de taille fixe.
+     Le passage grand ↔ petit reste centré, et le glisser part du centre. */
+  inset: 0;
+  margin: auto;
+  width: var(--nb-w);
+  height: var(--nb-h);
+  max-width: calc(100vw - 2rem);
+  max-height: calc(100dvh - 2rem);
+  color: #1e293b;
+  transition: width 260ms var(--nb-ease), height 260ms var(--nb-ease);
+  /* La position se déplace en `transform` (useNotebookDrag) : la boîte
+     ci-dessus ne bouge pas, seule sa translation change. */
+}
+
+/* Le cahier visible : radius, papier, ombre. Séparé de la boîte positionnée
+   pour que l'animation d'entrée (échelle) et le déplacement (translation)
+   vivent sur deux éléments et ne se disputent pas `transform`. */
+.sa-nb-frame {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background: var(--nb-paper);
+  box-shadow:
+    0 28px 56px -16px rgba(15, 23, 42, 0.38),
+    0 8px 20px -8px rgba(15, 23, 42, 0.18),
+    0 0 0 1px rgba(15, 23, 42, 0.08);
+  transition: box-shadow 160ms ease;
+}
+.sa-nb-window[data-dragging] .sa-nb-frame {
+  box-shadow:
+    0 36px 72px -16px rgba(15, 23, 42, 0.46),
+    0 12px 28px -8px rgba(15, 23, 42, 0.22),
+    0 0 0 1px rgba(109, 40, 217, 0.35);
+}
+/* Pendant le geste, la taille ne doit pas glisser derrière le pointeur. */
+.sa-nb-window[data-dragging] { transition: none; }
+
+.sa-nb-window[data-size="large"] {
+  --nb-w: clamp(22rem, 55vw, 58rem);
+  --nb-h: clamp(26rem, 66vh, 46rem);
+}
+
+/* Tablette : « petit » garde sa raison d'être, « grand » prend la largeur. */
+@media (max-width: 1023px) {
+  .sa-nb-window { --nb-w: clamp(24rem, 58vw, 30rem); --nb-h: clamp(28rem, 56vh, 36rem); }
+  .sa-nb-window[data-size="large"] { --nb-w: min(90vw, 58rem); --nb-h: min(76vh, 46rem); }
+}
+
+/* Téléphone : une seule taille, le cahier occupe l'écran. */
+@media (max-width: 639px) {
+  .sa-nb-window,
+  .sa-nb-window[data-size="large"] {
+    inset: 0.5rem;
+    margin: 0;
+    width: auto;
+    height: auto;
+    max-width: none;
+    max-height: none;
+  }
+  .sa-nb-frame { border-radius: 1rem; }
+  .sa-nb-size-toggle { display: none; }
+}
+
+/* ── En-tête : reliure + titre + actions ─────────────────────────────── */
+.sa-nb-binding {
+  height: 0.875rem;
+  flex: none;
+  background:
+    radial-gradient(circle at 50% 55%, #334155 0 2.6px, rgba(51, 65, 85, 0.35) 3.2px, transparent 4px) 0 0 / 1.375rem 0.875rem repeat-x,
+    linear-gradient(to bottom, #ede9fe, #f5f3ff);
+}
+
+.sa-nb-header {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.625rem 0.375rem 0.875rem;
+  background: linear-gradient(to bottom, #f5f3ff, #faf8ff);
+  border-bottom: 1px solid #ddd6fe;
+  /* La poignée : on la saisit, on ne la sélectionne pas, et le doigt ne fait
+     pas défiler la page en la déplaçant. */
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+.sa-nb-window[data-dragging] .sa-nb-header,
+.sa-nb-window[data-dragging] .sa-nb-header * { cursor: grabbing; }
+.sa-nb-header button { cursor: pointer; }
+.sa-nb-grip {
+  flex: none;
+  color: #a78bfa;
+  opacity: 0.8;
+  margin-inline-start: 0.125rem;
+}
+
+.sa-nb-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+  font-weight: 800;
+  color: #4c1d95;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+}
+.sa-nb-title span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.sa-nb-header-actions {
+  margin-inline-start: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.125rem;
+}
+
+/* Boutons d'en-tête et d'outils : CIBLE 44px, pastille visible plus douce. */
+.sa-nb-icon-btn,
+.sa-nb-tool {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  padding: 0 0.5rem;
+  border-radius: 0.75rem;
+  border: 2px solid transparent;
+  color: #475569;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  line-height: 1;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 120ms ease, color 120ms ease, border-color 120ms ease;
+}
+.sa-nb-icon-btn:hover,
+.sa-nb-tool:hover { background: rgba(139, 92, 246, 0.1); color: #1e293b; }
+.sa-nb-icon-btn:focus-visible,
+.sa-nb-tool:focus-visible,
+.sa-nb-btn:focus-visible,
+.sa-nb-swatch:focus-visible,
+.sa-nb-chip:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+}
+.sa-nb-tool[aria-pressed="true"],
+.sa-nb-tool[aria-expanded="true"] {
+  background: #ede9fe;
+  border-color: #c4b5fd;
+  color: #5b21b6;
+}
+.sa-nb-tool:disabled,
+.sa-nb-icon-btn:disabled { opacity: 0.4; cursor: default; }
+
+.sa-nb-icon-btn--danger:hover { background: rgba(244, 63, 94, 0.1); color: #be123c; }
+
+/* Le repère de contexte : où la note appartient. Une ligne discrète sous
+   l'en-tête — le cahier reste le cahier, le contexte l'accompagne. */
+.sa-nb-context {
+  flex: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.125rem 0.625rem;
+  padding: 0.25rem 0.875rem 0.375rem;
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  color: #5b21b6;
+  background: #faf8ff;
+  border-bottom: 1px solid #ede9fe;
+}
+.sa-nb-context > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  min-width: 0;
+  max-width: 100%;
+}
+.sa-nb-context > span > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sa-nb-context .sa-nb-context-place { color: #1e293b; font-weight: 700; }
+
+/* ── Le papier ────────────────────────────────────────────────────────── */
+.sa-nb-paper {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  background: var(--nb-paper);
+}
+.sa-nb-paper:focus-within { box-shadow: inset 0 0 0 2px rgba(139, 92, 246, 0.28); }
+
+/* La feuille grandit avec le texte : les lignes et la marge la couvrent
+   ENTIÈREMENT, pas seulement la partie visible. */
+.sa-nb-sheet {
+  position: relative;
+  min-height: 100%;
+  padding: 0.75rem 1rem 2rem;
+  padding-inline-start: 3rem;
+  /* Deux couches : un bandeau uni de 0.75rem en haut (le texte commence sous
+     la première ligne, pas dessus), puis les lignes au pas de 2rem. */
+  background-image:
+    linear-gradient(var(--nb-paper), var(--nb-paper)),
+    repeating-linear-gradient(to bottom, transparent 0, transparent calc(2rem - 1px), var(--nb-line) calc(2rem - 1px), var(--nb-line) 2rem);
+  background-size: 100% 0.75rem, 100% 2rem;
+  background-repeat: no-repeat, repeat;
+  background-position: 0 0, 0 0.75rem;
+}
+.sa-nb-sheet::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  inset-inline-start: 2.25rem;
+  width: 2px;
+  background: var(--nb-margin);
+  pointer-events: none;
+}
+
+/* ── L'éditeur ────────────────────────────────────────────────────────── */
+.sa-nb-editor {
+  position: relative;
+  min-height: 8rem;
+  outline: none;
+  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif;
+  font-size: 1.0625rem;
+  line-height: 2rem;
+  color: #1e293b;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  caret-color: #6d28d9;
+}
+.sa-nb-editor[data-empty="true"]::before {
+  content: attr(data-placeholder);
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0;
+  color: #94a3b8;
+  pointer-events: none;
+}
+.sa-nb-editor p,
+.sa-nb-editor li,
+.sa-nb-editor blockquote,
+.sa-nb-editor div { margin: 0; min-height: 2rem; }
+.sa-nb-editor h1,
+.sa-nb-editor h2,
+.sa-nb-editor h3 {
+  margin: 0;
+  font-weight: 800;
+  color: #312e81;
+  font-size: 1.375rem;
+  line-height: 2rem;
+}
+.sa-nb-editor h1 { font-size: 1.5rem; }
+.sa-nb-editor h3 { font-size: 1.1875rem; }
+/* Le reset de Tailwind efface les puces : on les rend, à la façon cahier. */
+.sa-nb-editor ul { list-style: disc; padding-inline-start: 1.5rem; }
+.sa-nb-editor ol { list-style: arabic-indic; padding-inline-start: 1.75rem; }
+[dir="ltr"] .sa-nb-editor ol { list-style: decimal; }
+.sa-nb-editor ul ul { list-style: circle; }
+.sa-nb-editor u { text-decoration-color: #7c3aed; text-underline-offset: 0.2em; }
+.sa-nb-editor blockquote { border-inline-start: 3px solid #cbd5e1; padding-inline-start: 0.75rem; color: #475569; }
+
+/* Le contexte, DISTINCT de l'écriture de l'élève — et pourtant éditable.
+   Bleu pour l'énoncé, rouge pour l'erreur ; l'étiquette est un mot, pas une
+   couleur seule. */
+.sa-nb-editor [data-nb="exercise"],
+.sa-nb-editor [data-nb="mistake"] {
+  border-inline-start: 4px solid #3b82f6;
+  background: rgba(59, 130, 246, 0.07);
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  margin: 0 0 0.5rem;
+  min-height: 0;
+}
+.sa-nb-editor [data-nb="mistake"] {
+  border-inline-start-color: #f43f5e;
+  background: rgba(244, 63, 94, 0.07);
+}
+/* Une connaissance ajoutée depuis la carte : violet, la couleur de la carte. */
+.sa-nb-editor [data-nb="knowledge"] {
+  border-inline-start-color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.08);
+}
+.sa-nb-editor [data-nb="knowledge"] [data-nb="label"] { color: #6d28d9; }
+.sa-nb-editor [data-nb="label"] {
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  color: #1d4ed8;
+}
+.sa-nb-editor [data-nb="mistake"] [data-nb="label"] { color: #be123c; }
+
+/* ── La barre d'outils ────────────────────────────────────────────────── */
+.sa-nb-toolbar {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.375rem 0.5rem;
+  border-top: 1px solid #e7e5e4;
+  background: #fbf9f4;
+}
+.sa-nb-tools-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.125rem;
+}
+/* Petit cahier : les outils essentiels ; le reste derrière « ⋯ ». Grand
+   cahier : tout est là. Sur téléphone la largeur manque quelle que soit la
+   taille mémorisée, donc « ⋯ » revient. */
+.sa-nb-tools-secondary { display: none; }
+.sa-nb-toolbar[data-more="true"] .sa-nb-tools-secondary { display: flex; }
+.sa-nb-window[data-size="large"] .sa-nb-tools-secondary { display: flex; }
+.sa-nb-window[data-size="large"] .sa-nb-more { display: none; }
+.sa-nb-window[data-size="small"] .sa-nb-sep { display: none; }
+@media (max-width: 639px) {
+  .sa-nb-window[data-size="large"] .sa-nb-tools-secondary { display: none; }
+  .sa-nb-window[data-size="large"] .sa-nb-toolbar[data-more="true"] .sa-nb-tools-secondary { display: flex; }
+  .sa-nb-window[data-size="large"] .sa-nb-more { display: inline-flex; }
+  .sa-nb-sep { display: none; }
+}
+.sa-nb-sep {
+  width: 1px;
+  height: 1.5rem;
+  margin: 0 0.25rem;
+  background: #e2e8f0;
+  flex: none;
+}
+/* Nuancier : une rangée de pastilles, dans la fenêtre — jamais un menu
+   flottant qui pourrait passer sous le cahier ou sortir de l'écran. */
+.sa-nb-palette {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.25rem 0.125rem;
+}
+.sa-nb-swatch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.75rem;
+  border: 2px solid transparent;
+  background: transparent;
+  cursor: pointer;
+}
+.sa-nb-swatch:hover { background: rgba(139, 92, 246, 0.1); }
+.sa-nb-swatch > span {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 9999px;
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.18);
+}
+.sa-nb-swatch--none > span {
+  background:
+    linear-gradient(135deg, transparent calc(50% - 1px), #dc2626 calc(50% - 1px), #dc2626 calc(50% + 1px), transparent calc(50% + 1px)),
+    #ffffff;
+}
+
+/* ── Pied : type d'erreur, état, enregistrer ──────────────────────────── */
+.sa-nb-footer {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  padding: 0.375rem 0.625rem 0.625rem;
+  border-top: 1px solid #e7e5e4;
+  background: #fbf9f4;
+}
+.sa-nb-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.sa-nb-chips { display: flex; flex-wrap: wrap; gap: 0.25rem; }
+.sa-nb-select {
+  flex: 1 1 8rem;
+  min-width: 0;
+  max-width: 14rem;
+  min-height: 2.75rem;
+  padding: 0 0.625rem;
+  border-radius: 0.75rem;
+  border: 2px solid #e2e8f0;
+  background: #ffffff;
+  color: #475569;
+  font-size: 0.875rem;
+  font-weight: 700;
+  font-family: inherit;
+}
+.sa-nb-select:focus-visible { outline: 2px solid #7c3aed; outline-offset: 2px; }
+.sa-nb-chip {
+  min-height: 2.25rem;
+  padding: 0 0.625rem;
+  border-radius: 0.625rem;
+  border: 2px solid #e2e8f0;
+  background: #ffffff;
+  color: #475569;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.sa-nb-chip:hover { border-color: #94a3b8; }
+.sa-nb-chip[aria-pressed="true"] { border-color: #7c3aed; background: #ede9fe; color: #4c1d95; }
+
+.sa-nb-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  min-height: 2.75rem;
+  padding: 0 1.125rem;
+  border-radius: 0.75rem;
+  font-weight: 800;
+  font-size: 0.9375rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background-color 120ms ease, transform 120ms ease;
+}
+.sa-nb-btn:active { transform: translateY(1px); }
+.sa-nb-btn--primary { background: #6d28d9; color: #ffffff; }
+.sa-nb-btn--primary:hover { background: #5b21b6; }
+.sa-nb-btn--primary:disabled { background: #c4b5fd; cursor: default; transform: none; }
+.sa-nb-btn--ghost { background: transparent; border-color: #cbd5e1; color: #475569; }
+.sa-nb-btn--ghost:hover { border-color: #94a3b8; color: #1e293b; }
+.sa-nb-btn--danger { background: #e11d48; color: #ffffff; }
+.sa-nb-btn--danger:hover { background: #be123c; }
+
+.sa-nb-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  min-height: 1.75rem;
+  padding: 0 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  white-space: nowrap;
+  color: #64748b;
+  background: #f1f5f9;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+.sa-nb-status[data-state="dirty"] { color: #b45309; background: #fef3c7; }
+.sa-nb-status[data-state="saving"] { color: #475569; background: #e2e8f0; }
+.sa-nb-status[data-state="saved"] { color: #047857; background: #d1fae5; }
+.sa-nb-status[data-state="error"] { color: #be123c; background: #ffe4e6; }
+.sa-nb-status svg { flex: none; }
+.sa-nb-status[data-state="saving"] svg { animation: sa-nb-spin 900ms linear infinite; }
+@keyframes sa-nb-spin { to { transform: rotate(360deg); } }
+
+.sa-nb-notice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-bottom: 1px solid #fde68a;
+  background: #fffbeb;
+  color: #92400e;
+}
+.sa-nb-notice--error { background: #fff1f2; border-color: #fecdd3; color: #9f1239; }
+.sa-nb-notice--info { background: #eff6ff; border-color: #bfdbfe; color: #1e40af; }
+.sa-nb-notice button {
+  min-height: 2.25rem;
+  padding: 0 0.625rem;
+  border-radius: 0.5rem;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* La confirmation « مسح الكل » : un feuillet posé SUR le papier, pas un
+   second dialogue. */
+.sa-nb-confirm {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(255, 253, 248, 0.82);
+  backdrop-filter: blur(2px);
+}
+.sa-nb-confirm-card {
+  width: min(100%, 22rem);
+  padding: 1rem 1.125rem;
+  border-radius: 1rem;
+  background: #ffffff;
+  border: 2px solid #fecdd3;
+  box-shadow: 0 16px 32px -16px rgba(15, 23, 42, 0.35);
+}
+
+/* ── Rendu d'une note enregistrée (carnet, aperçu) ────────────────────── */
+.sa-nb-content {
+  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif;
+  line-height: 1.9;
+  color: #1e293b;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+.sa-nb-content p, .sa-nb-content li { margin: 0; }
+.sa-nb-content p:empty::after { content: '\00a0'; }
+.sa-nb-content h1, .sa-nb-content h2, .sa-nb-content h3 { margin: 0.25rem 0 0; font-weight: 800; color: #312e81; font-size: 1.25rem; }
+.sa-nb-content ul { list-style: disc; padding-inline-start: 1.5rem; }
+.sa-nb-content ol { list-style: arabic-indic; padding-inline-start: 1.75rem; }
+[dir="ltr"] .sa-nb-content ol { list-style: decimal; }
+.sa-nb-content blockquote { border-inline-start: 3px solid #cbd5e1; padding-inline-start: 0.75rem; color: #475569; }
+.sa-nb-content [data-nb="exercise"],
+.sa-nb-content [data-nb="mistake"] {
+  border-inline-start: 4px solid #3b82f6;
+  background: rgba(59, 130, 246, 0.07);
+  border-radius: 0.5rem;
+  padding: 0.375rem 0.75rem;
+  margin: 0 0 0.5rem;
+}
+.sa-nb-content [data-nb="mistake"] { border-inline-start-color: #f43f5e; background: rgba(244, 63, 94, 0.07); }
+.sa-nb-content [data-nb="knowledge"] { border-inline-start-color: #8b5cf6; background: rgba(139, 92, 246, 0.08); }
+.sa-nb-content [data-nb="knowledge"] [data-nb="label"] { color: #6d28d9; }
+.sa-nb-content [data-nb="label"] { font-size: 0.8125rem; font-weight: 800; color: #1d4ed8; }
+.sa-nb-content [data-nb="mistake"] [data-nb="label"] { color: #be123c; }
+
+/* ── Le déclencheur flottant de la leçon ─────────────────────────────────
+   Même famille que « 🧠 بطاقتي » (KnowledgeMap.jsx), PHYSIQUEMENT à gauche
+   dans les deux directions — sous RTL la barre latérale occupe la droite.
+   Il occupe le HAUT de la colonne flottante (voir classroom.css pour la
+   pile complète) : le ras du coin (1.5rem) est pris par « ⛶ عرض » (mode
+   classe) et 5.5rem par la carte des connaissances ; 9.5rem laisse 1rem
+   au-dessus d'elle. */
+/* « 📓 كرّاسي » — LE déclencheur du cahier, en leçon (LessonNotebookAnchor)
+   comme en exercice (NotebookButton) : même pastille, même place. */
+.sa-nb-lesson-trigger {
+  position: fixed;
+  left: 1.5rem;
+  /* L'étage au-dessus de « بطاقتي », qui est au ras du coin (1.5rem). La
+     colonne ne compte plus que deux pastilles depuis que « وضع القسم » est
+     remonté dans la rangée de repères du محور. Sous `lg`, la pile monte
+     au-dessus de la barre de navigation du bas (`--sa-bottom-nav`, index.css). */
+  bottom: calc(5.5rem + var(--sa-bottom-nav, 0px));
+  z-index: 40;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid #ddd6fe;
+  background: #ffffff;
+  color: #4c1d95;
+  font-weight: 800;
+  font-size: 0.9375rem;
+  box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.2), 0 4px 6px -4px rgba(15, 23, 42, 0.2);
+  transition: border-color 200ms ease, box-shadow 200ms ease, transform 120ms ease;
+}
+.sa-nb-lesson-trigger:hover { border-color: #a78bfa; box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.2); }
+.sa-nb-lesson-trigger:active { transform: scale(0.97); }
+.sa-nb-lesson-trigger[aria-pressed="true"] { background: #4c1d95; color: #ffffff; border-color: #4c1d95; }
+.sa-nb-lesson-trigger:focus-visible { outline: 2px solid #7c3aed; outline-offset: 2px; }
+/* En exercice, sous `lg`, la barre collante « السؤال التالي » occupe
+   l'étage au-dessus de la barre de navigation (4rem) : la pastille monte
+   d'un étage pour ne pas s'y poser. Sur ordinateur, même place qu'en leçon. */
+@media (max-width: 1023px) {
+  .sa-nb-lesson-trigger[data-nb-trigger="practice"] { bottom: calc(8.5rem + env(safe-area-inset-bottom)); }
+}
+@media print { .sa-nb-lesson-trigger { display: none; } }
+
+/* « أضف إلى كرّاسي » — une action discrète sur une brique ou une carte. */
+.sa-nb-add {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  min-height: 2.75rem;
+  padding: 0 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid #ddd6fe;
+  background: #ffffff;
+  color: #5b21b6;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color 120ms ease, background-color 120ms ease;
+}
+.sa-nb-add:hover { border-color: #a78bfa; background: #f5f3ff; }
+.sa-nb-add:focus-visible { outline: 2px solid #7c3aed; outline-offset: 2px; }
+
+/* Le mouvement est une commodité : qui en demande moins obtient l'état
+   final tout de suite. */
+@media (prefers-reduced-motion: reduce) {
+  .sa-nb-window,
+  .sa-nb-frame,
+  .sa-nb-status,
+  .sa-nb-btn,
+  .sa-nb-tool,
+  .sa-nb-icon-btn,
+  .sa-nb-lesson-trigger,
+  .sa-nb-add { transition: none; }
+  .sa-nb-status[data-state="saving"] svg { animation: none; }
+}

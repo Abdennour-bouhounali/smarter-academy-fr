@@ -1,0 +1,164 @@
+{
+  "id": "ex-4am-tayin-pgcd-l3-008",
+  "lessonCode": "tayin-pgcd",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2009 — PGCD(1000 ; 250) وعلب القهوة",
+    "estimatedMinutes": 9,
+    "tags": [
+      "PGCD",
+      "قاسم للعدد الآخر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tayin-pgcd_P3",
+      "modelledOn": "BEM 2009 I-4"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "جد القاسم المشترك الأكبر للعددين 1000 و 250.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "250",
+      "misconceptionSignatures": [
+        {
+          "value": "125",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العددين: هل العدد الأصغر قاسم للعدد الأكبر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد الأكبر على العدد الأصغر وانظر إلى الباقي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان $b$ قاسمًا للعدد $a$ فإن PGCD$(a ; b) = b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$1000 = 250 \\times 4$ : العدد 250 قاسم للعدد 1000، فهو قاسمهما المشترك الأكبر.",
+        "incorrect": "لا داعي لقائمتين طويلتين: تحقّق أولًا هل أحد العددين قاسم للآخر."
+      },
+      "solution": {
+        "lines": [
+          "$1000 = 250 \\times 4$ ، إذن العدد 250 قاسم للعدد 1000.",
+          "وبما أن 250 قاسم للعدد 1000 فإن:"
+        ],
+        "result": "PGCD(1000 ; 250) = 250"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "ملأ تاجر 3000g من القهوة في علب من صنفين: صنف 250g وصنف 1000g. إذا علمت أن العدد الكلي للعلب هو 6، جد عدد العلب من كل صنف.",
+      "statement": "عدد علب الصنف 250g:",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "سمِّ $x$ عدد علب الصنف 250g و $y$ عدد علب الصنف 1000g، واكتب معادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الكلي للعلب يعطي معادلة، والكتلة الكلية تعطي الأخرى."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 4$ و $y = 2$",
+        "incorrect": "اكتب الجملة: العدد الكلي للعلب 6، والكتلة الكلية 3000g، ثم حلّها."
+      },
+      "solution": {
+        "lines": [
+          "نسمي $x$ عدد علب الصنف 250g و $y$ عدد علب الصنف 1000g:",
+          "$x + y = 6$ و $250x + 1000y = 3000$",
+          "بقسمة المعادلة الثانية على 250: $x + 4y = 12$",
+          "بالطرح: $3y = 6$ إذن $y = 2$ ، ثم $x = 6 - 2 = 4$",
+          "تحقّق: $250 \\times 4 + 1000 \\times 2 = 3000$"
+        ]
+      },
+      "timeSeconds": 300
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "عدد علب الصنف 1000g:",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل العدد الكلي للعلب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح عدد علب الصنف الأول من 6."
+        }
+      ],
+      "feedback": {
+        "correct": "$y = 6 - 4 = 2$",
+        "incorrect": "العدد الكلي للعلب 6: اطرح منه عدد علب الصنف 250g."
+      },
+      "solution": {
+        "lines": [
+          "$y = 6 - 4 = 2$"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

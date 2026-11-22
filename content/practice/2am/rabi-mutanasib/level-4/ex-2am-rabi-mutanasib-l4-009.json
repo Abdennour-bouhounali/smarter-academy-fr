@@ -1,0 +1,191 @@
+{
+  "id": "ex-2am-rabi-mutanasib-l4-009",
+  "lessonCode": "rabi-mutanasib",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — ثمن الخوخ",
+    "estimatedMinutes": 12,
+    "tags": [
+      "تصحيح خطأ",
+      "الرابع المتناسب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "ثمن $6$ kg من الخوخ هو $270$ DA. قال أحمد: «ثمن $8$ kg هو $272$ DA»."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما ثمن $8$ kg الصحيح؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$272$ DA",
+          "isCorrect": false,
+          "misconceptionId": "MISC-RABI-ADD"
+        },
+        {
+          "id": "B",
+          "content": "$360$ DA",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$2160$ DA",
+          "isCorrect": false,
+          "misconceptionId": "MISC-RABI-MULROW"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن ما يحدث في السطر الأول بما يحدث في السطر الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في جدول تناسبية يُضرب العددان في العدد نفسه، ولا نضيف إليهما العدد نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب الطريقة على عدد من الجدول تعرف مقابله لتتأكّد."
+        }
+      ],
+      "feedback": {
+        "correct": "الثمن $360$ DA .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$270 \\div 6 = 45$",
+          "$45 \\times 8 = 360$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما الفرق بين الثمن الصحيح وما قاله أحمد؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "88",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن ما يحدث في السطر الأول بما يحدث في السطر الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في جدول تناسبية يُضرب العددان في العدد نفسه، ولا نضيف إليهما العدد نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب الطريقة على عدد من الجدول تعرف مقابله لتتأكّد."
+        }
+      ],
+      "feedback": {
+        "correct": "الفرق $88$ DA .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$360 - 272 = 88$"
+        ],
+        "result": "88"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "كم كيلوغرامًا ثمنها $495$ DA؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "value": "231",
+          "id": "MISC-RABI-ADD"
+        },
+        {
+          "value": "22275",
+          "id": "MISC-RABI-INV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الثلاثة المعلومة وحدّد مكان العدد الناقص في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة: معامل التناسبية، أو المرور بالوحدة، أو الخاصيتين الجمعية والضربية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الجدول بعد إتمامه بقي جدول تناسبية: الخارج نفسه في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتلة $11$ kg .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$495 \\div 45 = 11$"
+        ],
+        "result": "11"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

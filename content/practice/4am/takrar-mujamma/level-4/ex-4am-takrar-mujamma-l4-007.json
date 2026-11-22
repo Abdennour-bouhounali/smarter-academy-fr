@@ -1,0 +1,224 @@
+{
+  "id": "ex-4am-takrar-mujamma-l4-007",
+  "lessonCode": "takrar-mujamma",
+  "level": 4,
+  "metadata": {
+    "title": "كتل المحافظ",
+    "estimatedMinutes": 6,
+    "tags": [
+      "فئات",
+      "التواتر المجمع النازل",
+      "نسبة مئوية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takrar-mujamma_P2",
+      "modelledOn": "method-cumul"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "سُجّلت كتل المحافظ (بالكيلوغرام) لـ 25 تلميذا من السنة الأولى متوسط:",
+    "table": {
+      "head": [
+        "الكتلة x (kg)",
+        "$2 \\le x < 4$",
+        "$4 \\le x < 6$",
+        "$6 \\le x < 8$",
+        "$8 \\le x \\le 10$"
+      ],
+      "rows": [
+        [
+          "عدد التلاميذ",
+          "3",
+          "9",
+          "8",
+          "5"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب التكرار المجمع الصاعد للفئة $4 \\le x < 6$ .",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        },
+        {
+          "value": "9",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        },
+        {
+          "value": "22",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكرار المجمع الصاعد لفئة هو مجموع تكرارها وتكرارات الفئات التي قبلها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ من أول عمود في الجدول واجمع التكرارات حتى $4 \\le x < 6$ مع تكرارها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: التكرار المجمع الصاعد لآخر عمود يساوي التكرار الكلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 + 9 = 12$ .",
+        "incorrect": "اجمع تكرار الفئة نفسها وتكرارات الفئات التي قبلها فقط، ولا تنس تكرار الفئة نفسها."
+      },
+      "solution": {
+        "lines": [
+          "التكرار المجمع الصاعد للفئة $4 \\le x < 6$ هو مجموع تكرار الفئة $4 \\le x < 6$ وتكرارات الفئات التي قبلها:",
+          "$3 + 9 = 12$"
+        ],
+        "result": "12"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب التواتر المجمع النازل للفئة $6 \\le x < 8$ .",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة أو كسر على الشكل a/b",
+      "expectedAnswer": "0,52",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-IHSA-TAWATUR-BILA-QISMA"
+        },
+        {
+          "value": "0,8",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        },
+        {
+          "value": "0,2",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التواتر المجمع النازل هو التكرار المجمع النازل مقسوما على التكرار الكلي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أولا التكرار المجمع النازل ثم اقسمه على التكرار الكلي للسلسلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: التواتر عدد بين 0 و 1، والتواتر المجمع الصاعد لآخر عمود يساوي 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{13}{25}$ .",
+        "incorrect": "لا تكتف بالتكرار المجمع: اقسمه على التكرار الكلي للسلسلة."
+      },
+      "solution": {
+        "lines": [
+          "التكرار المجمع النازل للفئة $6 \\le x < 8$ : $8 + 5 = 13$",
+          "التواتر المجمع النازل = التكرار المجمع النازل ÷ التكرار الكلي:",
+          "$\\dfrac{13}{25}$"
+        ],
+        "result": "0{,}52"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ينصح الأطباء بألّا تبلغ كتلة المحفظة 6kg. احسب النسبة المئوية للتلاميذ الذين يحترمون هذه النصيحة.",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: النسبة المئوية دون الرمز %",
+      "expectedAnswer": "48",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-IHSA-TAWATUR-BILA-QISMA"
+        },
+        {
+          "value": "80",
+          "id": "MISC-IHSA-SARAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«أقل من 6kg» تستثني الحدّ 6kg نفسه: نعدّ ما هو أصغر تماما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أولا عدد الأفراد الذين يحقّقون الشرط (تكرار مجمع)، ثم اقسمه على التكرار الكلي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب التواتر الناتج في 100 لتحصل على النسبة المئوية."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{12}{25} \\times 100 = 48$ ، أي $48\\%$ .",
+        "incorrect": "عدّ أولا الأفراد الذين يحقّقون الشرط بدقة (انتبه إلى الحدّ)، ثم اقسم على التكرار الكلي واضرب في 100."
+      },
+      "solution": {
+        "lines": [
+          "عدد الأفراد المعنيين: $3 + 9 = 12$",
+          "$\\dfrac{12}{25} = 0{,}48$",
+          "$0{,}48 \\times 100 = 48$"
+        ],
+        "result": "48\\%"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

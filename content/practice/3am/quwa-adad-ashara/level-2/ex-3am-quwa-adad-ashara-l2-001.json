@@ -1,0 +1,184 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l2-001",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — $10^{-n}$ مقلوب $10^{n}$",
+    "estimatedMinutes": 6,
+    "tags": [
+      "أسّ سالب",
+      "المقلوب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "من أجل $n$ طبيعي غير معدوم، العدد $10^{-n}$ هو مقلوب $10^{n}$ ، أي $\\dfrac{1}{10^{n}}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "$10^{-3} = \\dfrac{1}{10^{n}}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العلاقة بين $10^{-n}$ و $10^{n}$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$10^{-n}$ هو مقلوب $10^{n}$ : نضع القوة الموجبة في المقام."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأسّ في المقام هو القيمة المطلقة للأسّ السالب."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "-3",
+          "id": "MISC-ASHARA-SALIB"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{-3} = \\dfrac{1}{10^{3}}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10^{-n} = \\dfrac{1}{10^{n}}$ مع $n = 3$ ."
+        ],
+        "result": "n = 3"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما الكتابة العشرية للعدد $\\dfrac{1}{10^{5}}$ ؟",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $10^{5}$ كتابة عشرية، ثمّ ابحث عن مقلوبه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مقلوب $10^{n}$ هو العدد الذي يكون فيه الرقم 1 في الرتبة $n$ بعد الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع الفاصلة ثمّ الرقم 1 في الرتبة المطلوبة وأكمل بأصفار."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "0.00001",
+      "misconceptionSignatures": [
+        {
+          "value": "0.0001",
+          "id": "MISC-ASHARA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{10^{5}} = 0{,}00001$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{10^{5}} = \\dfrac{1}{100\\,000}$ .",
+          "الرقم 1 في الرتبة الخامسة بعد الفاصلة: $0{,}00001$ ."
+        ],
+        "result": "0{,}00001"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما الكتابة العشرية للعدد $A = 10^{-7}$ ؟",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$10^{-n}$ هو مقلوب $10^{n}$ ، أي $\\dfrac{1}{10^{n}}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في $10^{-n}$ يكون الرقم 1 في الرتبة $n$ بعد الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الفاصلة ثمّ ضع الرقم 1 في الرتبة المطلوبة، وأكمل الباقي بأصفار؛ والعدد موجب دائمًا."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "0.0000001",
+      "misconceptionSignatures": [
+        {
+          "value": "-10000000",
+          "id": "MISC-ASHARA-SALIB"
+        },
+        {
+          "value": "0.00000001",
+          "id": "MISC-ASHARA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{-7} = 0{,}0000001$ .",
+        "incorrect": "تذكّر كيف تُقرأ القوة ثمّ اكتب كتابتها العشرية بعناية وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10^{-7} = \\dfrac{1}{10^{7}}$ والرقم 1 في الرتبة 7 بعد الفاصلة.",
+          "$10^{-7} = 0{,}0000001$ ."
+        ],
+        "result": "0{,}0000001"
+      }
+    }
+  ]
+}

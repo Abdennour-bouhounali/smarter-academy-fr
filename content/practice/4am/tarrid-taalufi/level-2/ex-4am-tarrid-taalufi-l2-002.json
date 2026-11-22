@@ -1,0 +1,112 @@
+{
+  "id": "ex-4am-tarrid-taalufi-l2-002",
+  "lessonCode": "tarrid-taalufi",
+  "level": 2,
+  "metadata": {
+    "title": "شهر في قاعة الألعاب",
+    "estimatedMinutes": 6,
+    "tags": [
+      "صورة عدد",
+      "عدد صورته معلومة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-taalufi_P1",
+      "modelledOn": "act-4"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في قاعة ألعاب تربوية: بطاقة شهرية ثمنها 800DA ، ثم 120DA لكل ساعة لعب."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب المبلغ الذي يدفعه لاعب في شهر لعب فيه 5 ساعات.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "1400",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAALUFI-NISYAN-B",
+          "value": "600"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثمن الساعات ثم البطاقة."
+        }
+      ],
+      "feedback": {
+        "correct": "$120 \\times 5 + 800$ .",
+        "incorrect": "اضرب 5 في ثمن الساعة ثم أضف البطاقة."
+      },
+      "solution": {
+        "lines": [
+          "$120 \\times 5 + 800 = 600 + 800 = 1400$",
+          "المبلغ 1400DA ."
+        ],
+        "result": "1400DA"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "دفع أيمن هذا الشهر 2240DA . كم ساعة لعب؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الساعات",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح ثمن البطاقة من المبلغ أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اقسم الباقي على ثمن الساعة."
+        }
+      ],
+      "feedback": {
+        "correct": "$(2240 - 800) \\div 120$ .",
+        "incorrect": "المبلغ = 120 × عدد الساعات + 800: اعزل عدد الساعات."
+      },
+      "solution": {
+        "lines": [
+          "$120x + 800 = 2240$",
+          "$120x = 1440$",
+          "$x = 12$",
+          "لعب أيمن 12 ساعة."
+        ],
+        "result": "12"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

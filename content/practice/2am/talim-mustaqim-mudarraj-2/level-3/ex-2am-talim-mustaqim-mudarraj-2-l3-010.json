@@ -1,0 +1,185 @@
+{
+  "id": "ex-2am-talim-mustaqim-mudarraj-2-l3-010",
+  "lessonCode": "talim-mustaqim-mudarraj-2",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — قيمة التدريجة ونصف تدريجة وتغيير المبدأ",
+    "estimatedMinutes": 10,
+    "tags": [
+      "قيمة التدريجة",
+      "بين تدريجتين",
+      "تغيير المبدأ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "على مستقيم مدرّج مبدؤه $O$ ، النقطة $N$ على 6 تدريجات إلى يسار $O$ وفاصلتها $-30$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "النقطة $N$ على 6 تدريجات إلى يسار المبدأ، وفاصلتها $N(-30)$ . ما قيمة التدريجة الواحدة؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد موجب",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قيمة التدريجة = فاصلة نقطة معلومة ÷ عدد التدريجات التي تفصلها عن المبدأ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل النقطة المعلومة الفاصلة وعدّ تدريجاتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب النتيجة في عدد التدريجات."
+        }
+      ],
+      "feedback": {
+        "correct": "$30 \\div 6 = 5$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$6$ تدريجات تعطي المسافة $30$",
+          "قيمة التدريجة: $30 \\div 6 = 5$"
+        ],
+        "result": "5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "النقطة $T$ إلى اليمين من المبدأ، في منتصف المسافة بين التدريجة التي على تدريجتين من المبدأ والتي بعدها مباشرة. قيمة التدريجة الواحدة $5$. ما فاصلة $T$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "12.5",
+      "misconceptionSignatures": [
+        {
+          "value": "-12.5",
+          "id": "MISC-TALIM2-SIGNSIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطة تقع بين تدريجتين متتاليتين فلا يكفي عدّ تدريجات كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "منتصف المسافة بين تدريجتين يضيف نصف تدريجة إلى العدد الكامل من التدريجات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب فاصلتي التدريجتين المجاورتين ثم خذ ما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$T(12{,}5)$ : في منتصف $10$ و $15$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "التدريجتان المجاورتان: $10$ و $15$",
+          "منتصفهما $10$ و $15$ : $12{,}5$"
+        ],
+        "result": "12.5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "فاصلة النقطة $N$ هي $-30$ والنقطة $C$ فاصلتها $-10$ . ننقل المبدأ إلى $C$ ونبقي التدريجة نفسها. ما الفاصلة الجديدة للنقطة $N$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-20",
+      "misconceptionSignatures": [
+        {
+          "value": "-30",
+          "id": "MISC-TALIM2-ORIGINFIXED"
+        },
+        {
+          "value": "-40",
+          "id": "MISC-TALIM2-ADDORIGIN"
+        },
+        {
+          "value": "20",
+          "id": "MISC-TALIM2-SIGNSIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا تتغيّر النقطة، بل يتغيّر المبدأ الذي نبدأ منه العدّ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفاصلة الجديدة = الفاصلة القديمة − فاصلة المبدأ الجديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعدّ من المبدأ الجديد إلى النقطة."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة الجديدة $-30 - (-10) = -20$ : النقطة هي نفسها والمبدأ تغيّر.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "النقطة لم تتحرّك، وإنّما المبدأ هو الذي تحرّك",
+          "الفاصلة الجديدة = $-30 - (-10) = -20$"
+        ],
+        "result": "-20"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

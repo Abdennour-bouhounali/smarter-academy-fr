@@ -1,0 +1,144 @@
+{
+  "id": "ex-3am-jidaa-adadayn-nisbiyayn-l3-009",
+  "lessonCode": "jidaa-adadayn-nisbiyayn",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — بئر ارتوازي في ورقلة",
+    "estimatedMinutes": 9,
+    "tags": [
+      "سياق",
+      "جمع متكرر",
+      "جداء"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يحفر عمال بئرًا ارتوازيًا قرب ورقلة. نعتبر سطح الأرض مرجعًا (0)، فيكون العمق 12 m تحت سطح الأرض هو الارتفاع $−12$ m . يبلغ الحفر هذا العمق في اليوم الأول، ثم يتكرر الحفر بالقدر نفسه كل يوم."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "الجمع المتكرر.",
+      "statement": "أكمل: $(−12) + (−12) + (−12) + (−12) =$",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-48",
+      "misconceptionSignatures": [
+        {
+          "value": "48",
+          "id": "MISC-JIDAA-LARGER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الضرب في عدد طبيعي هو جمع متكرر للعدد نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العدد المطلوب بعدد مرات التكرار، ثم اجمعها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جمع أعداد سالبة يعطي عددًا سالبًا."
+        }
+      ],
+      "feedback": {
+        "correct": "أربع مرات $−12$ تعطي $−48$ : الحفر بلغ 48 m تحت الأرض.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "$(−12) + (−12) + (−12) + (−12) = −48$",
+          "ويكتب أيضًا $(−12) \\times 4 = −48$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "يطلب المهندس بلوغ 2,5 مرة العمق الأوّل (12 m).",
+      "statement": "ما ارتفاع قاع البئر بالمتر؟ احسب $(−12) \\times 2{,}5$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-30",
+      "misconceptionSignatures": [
+        {
+          "value": "-9.5",
+          "id": "MISC-JIDAA-ADD"
+        },
+        {
+          "value": "9.5",
+          "id": "MISC-JIDAA-SUB"
+        },
+        {
+          "value": "-300",
+          "id": "MISC-JIDAA-DECIMAL"
+        },
+        {
+          "value": "-3",
+          "id": "MISC-JIDAA-DECIMAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب أولًا كأنّ العددين طبيعيان، ثم أرجع الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد الأرقام بعد الفاصلة في الجداء هو مجموع عدد الأرقام بعد الفاصلة في العاملين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عيّن الإشارة أولًا، ثم اضرب المسافتين إلى الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−12) \\times 2{,}5 = −30$ : العاملان مختلفا الإشارة (سالب وموجب)، إذن الجداء سالب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العاملان مختلفا الإشارة (سالب وموجب)، إذن الجداء سالب.",
+          "$12 \\times 2{,}5 = 30$",
+          "$(−12) \\times 2{,}5 = −30$"
+        ],
+        "result": "−30"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

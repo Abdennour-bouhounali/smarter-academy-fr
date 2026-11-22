@@ -1,0 +1,208 @@
+{
+  "id": "ex-1am-hasil-qisma-kasr-l4-008",
+  "lessonCode": "hasil-qisma-kasr",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — القسمة الإقليدية وحاصل القسمة",
+    "estimatedMinutes": 11,
+    "tags": [
+      "حاصل القسمة",
+      "القسمة الإقليدية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يقتسم 6 متطوّعين 47 كيسًا من الأرزّ بالتساوي بين أسر المحتاجين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أنجز القسمة الإقليدية للعدد 47 على 6 : ما حاصلها ؟",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما أكبر مضاعف للعدد 6 لا يتجاوز 47 ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كم مرّة يوجد العدد 6 في 47 ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$47 = 6 \\times 7 + 5$ : الحاصل 7.",
+        "incorrect": "القسمة الإقليدية : $a = b \\times q + r$ مع $r < b$."
+      },
+      "solution": {
+        "lines": [
+          "$6 \\times 7 = 42$ و $6 \\times 8 = 48 > 47$",
+          "$47 = 6 \\times 7 + 5$ : الحاصل 7."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما باقي هذه القسمة الإقليدية ؟",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح من 47 أكبر مضاعف للعدد 6 لا يتجاوزه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يجب أن يكون الباقي أصغر من 6."
+        }
+      ],
+      "feedback": {
+        "correct": "$47 - 42 = 5$ : الباقي 5.",
+        "incorrect": "الباقي أصغر تمامًا من المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$47 - 6 \\times 7 = 5$ : الباقي 5."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اكتب حاصل قسمة 47 على 6 على شكل كسر.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "47/6",
+      "misconceptionSignatures": [
+        {
+          "value": "6/47",
+          "id": "MISC-HASIL-QALB"
+        },
+        {
+          "value": "47,6",
+          "id": "MISC-HASIL-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العدد الذي نقسمه والعدد الذي نقسم عليه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في الكتابة الكسرية يوضع المقسوم فوق الشرطة والمقسوم عليه تحتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب القسمة أولًا ثم حوّلها إلى كسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$47 \\div 6$ = $\\dfrac{47}{6}$ : المقسوم بسط والمقسوم عليه مقام.",
+        "incorrect": "الكسر $\\dfrac{a}{b}$ هو حاصل قسمة $a$ على $b$ : البسط هو المقسوم والمقام هو المقسوم عليه، والشرطة لا تتحوّل إلى فاصلة."
+      },
+      "solution": {
+        "lines": [
+          "$47 \\div 6$ = $\\dfrac{47}{6}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "العدد 7 هو حاصل قسمة 47 على 6.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASIL-IQLIDI"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب العدد 7 في 6 وقارن بالنتيجة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما العدد الذي إذا ضُرب في 6 أعطى 47 ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "حاصل قسمة 47 على 6 هو $\\dfrac{47}{6}$ ؛ والعدد 7 هو حاصل القسمة الإقليدية فقط.",
+        "incorrect": "حاصل القسمة الإقليدية يهمل الباقي، أمّا حاصل القسمة فهو الكسر الذي إذا ضُرب في المقسوم عليه أعطى المقسوم."
+      },
+      "solution": {
+        "lines": [
+          "$6 \\times 7 = 42 \\neq 47$ : العدد 7 ليس حاصل قسمة 47 على 6.",
+          "حاصل القسمة هو $\\dfrac{47}{6}$ لأنّ $6 \\times \\dfrac{47}{6} = 47$."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

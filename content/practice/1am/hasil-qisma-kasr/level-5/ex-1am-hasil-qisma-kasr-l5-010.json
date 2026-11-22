@@ -1,0 +1,387 @@
+{
+  "id": "ex-1am-hasil-qisma-kasr-l5-010",
+  "lessonCode": "hasil-qisma-kasr",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — حبل الفرق الرياضية",
+    "estimatedMinutes": 18,
+    "tags": [
+      "حاصل القسمة",
+      "عدد عشري",
+      "قيمة مقرّبة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يقصّ مدرّب نزيه حبلًا طوله 11 مترًا إلى أجزاء متساوية الطول ليوزّعها على فرق ناديه الرياضي.\nالجزء الأول: التقطيع إلى 6 أجزاء.\nالجزء الثاني: التقطيع إلى 4 أجزاء، ثم نقرّر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "اكتب طول الجزء الواحد (بالمتر) على شكل كسر عند التقطيع إلى 6 أجزاء.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "11/6",
+      "misconceptionSignatures": [
+        {
+          "value": "6/11",
+          "id": "MISC-HASIL-QALB"
+        },
+        {
+          "value": "11,6",
+          "id": "MISC-HASIL-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العدد الذي نقسمه والعدد الذي نقسم عليه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في الكتابة الكسرية يوضع المقسوم فوق الشرطة والمقسوم عليه تحتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب القسمة أولًا ثم حوّلها إلى كسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$11 \\div 6$ = $\\dfrac{11}{6}$ : المقسوم بسط والمقسوم عليه مقام.",
+        "incorrect": "الكسر $\\dfrac{a}{b}$ هو حاصل قسمة $a$ على $b$ : البسط هو المقسوم والمقام هو المقسوم عليه، والشرطة لا تتحوّل إلى فاصلة."
+      },
+      "solution": {
+        "lines": [
+          "$11 \\div 6$ = $\\dfrac{11}{6}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$\\dfrac{11}{6} \\times 6 = \\ldots$",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (طبيعي أو كسر)",
+      "expectedAnswer": "11",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي ضربنا الكسر فيه؟ وما مقام الكسر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكسر $\\dfrac{a}{b}$ هو العدد الذي إذا ضُرب في $b$ أعطى $a$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن العامل المضروب فيه بمقام الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{11}{6} \\times 6 = 11$ : الأجزاء الستّة تعيد الحبل كلّه.",
+        "incorrect": "العدد الذي نضربه في $b$ لنحصل على $a$ هو حاصل قسمة $a$ على $b$ ، أي $\\dfrac{a}{b}$ ؛ لا نطرح العددين ولا نضربهما."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{11}{6} \\times 6 = 11$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "طول الجزء الواحد (حاصل قسمة 11 على 6) عدد عشري.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASIL-KULL-ASHRI"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجعل المقام 10 أو 100 أو 1000 بالضرب في عدد مناسب، أو أجرِ القسمة العشرية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل تتوقّف الأرقام بعد الفاصلة أم تتكرّر بلا نهاية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نتحدّث عن عدد عشري عندما تتوقّف الأرقام بعد الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$11 \\div 6$ = $\\dfrac{11}{6}$ : الأرقام تتكرّر بلا نهاية.",
+        "incorrect": "حاصل القسمة عدد عشري إذا انتهت أرقامه بعد الفاصلة ؛ وإلاّ فالكسر هو الكتابة المضبوطة له."
+      },
+      "solution": {
+        "lines": [
+          "$11 \\div 6$ = $\\dfrac{11}{6}$",
+          "نكتب الأرقام بعد الفاصلة : $1{,}8333$… وهي تتكرّر بلا نهاية.",
+          "التصحيح : حاصل قسمة 11 على 6 ليس عددًا عشريًا، الكتابة المضبوطة له هي الكسر $\\dfrac{11}{6}$."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "أعط القيمة المقرّبة بالنقصان إلى 0,1 لطول الجزء الواحد.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بـ رقم واحد بعد الفاصلة",
+      "expectedAnswer": "1,8",
+      "misconceptionSignatures": [
+        {
+          "value": "1,9",
+          "id": "MISC-HASIL-TAQRIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أرقام حاصل القسمة بعد الفاصلة حتى المرتبة المطلوبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمة المقرّبة بالنقصان أصغر من الحاصل، والقيمة المقرّبة بالزيادة أكبر منه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زِد وحدة واحدة على آخر رقم محتفَظ به عند التقريب بالزيادة."
+        }
+      ],
+      "feedback": {
+        "correct": "$11 \\div 6$ = $1{,}8333$…، إذن القيمة المقرّبة بالنقصان هي $1{,}8$.",
+        "incorrect": "القيمة المقرّبة ليست قيمة مضبوطة : بالنقصان نحذف ما بعد المرتبة المطلوبة، وبالزيادة نزيد وحدة على آخر رقم محتفَظ به."
+      },
+      "solution": {
+        "lines": [
+          "$11 \\div 6$ = $1{,}8333$… (الأرقام لا تتوقّف)",
+          "$1{,}8$ < $\\dfrac{11}{6}$ < $1{,}9$ : بالنقصان نأخذ $1{,}8$."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ا",
+      "statement": "اكتب طول الجزء الواحد على شكل كسر عند التقطيع إلى 4 أجزاء.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "11/4",
+      "misconceptionSignatures": [
+        {
+          "value": "4/11",
+          "id": "MISC-HASIL-QALB"
+        },
+        {
+          "value": "11,4",
+          "id": "MISC-HASIL-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العدد الذي نقسمه والعدد الذي نقسم عليه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في الكتابة الكسرية يوضع المقسوم فوق الشرطة والمقسوم عليه تحتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب القسمة أولًا ثم حوّلها إلى كسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$11 \\div 4$ = $\\dfrac{11}{4}$ : المقسوم بسط والمقسوم عليه مقام.",
+        "incorrect": "الكسر $\\dfrac{a}{b}$ هو حاصل قسمة $a$ على $b$ : البسط هو المقسوم والمقام هو المقسوم عليه، والشرطة لا تتحوّل إلى فاصلة."
+      },
+      "solution": {
+        "lines": [
+          "$11 \\div 4$ = $\\dfrac{11}{4}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ب",
+      "statement": "اكتب هذا الطول على شكل عدد عشري.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة)",
+      "expectedAnswer": "2,75",
+      "misconceptionSignatures": [
+        {
+          "value": "11,4",
+          "id": "MISC-HASIL-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجعل المقام 10 أو 100 أو 1000 بالضرب في عدد مناسب، أو أجرِ القسمة العشرية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل تتوقّف الأرقام بعد الفاصلة أم تتكرّر بلا نهاية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نتحدّث عن عدد عشري عندما تتوقّف الأرقام بعد الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{11}{4}$ = $2{,}75$",
+        "incorrect": "حاصل القسمة عدد عشري إذا انتهت أرقامه بعد الفاصلة ؛ وإلاّ فالكسر هو الكتابة المضبوطة له."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{11}{4} = \\dfrac{11 \\times 25}{4 \\times 25} = \\dfrac{275}{100}$ (نضرب الحدّين في العدد نفسه)",
+          "$\\dfrac{275}{100}$ = $2{,}75$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "02",
+      "sub": "ج",
+      "statement": "أيّ التقطيعين يعطي أجزاء طول كلّ منها عدد عشري مضبوط بالمتر ؟",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "التقطيع إلى 6 أجزاء",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASIL-KULL-ASHRI"
+        },
+        {
+          "id": "B",
+          "content": "التقطيع إلى 4 أجزاء",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن بين الحالتين بالرجوع إلى ما وجدته في الأسئلة السابقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كل اقتراح على الأرقام."
+        }
+      ],
+      "feedback": {
+        "correct": "مع 4 أجزاء : $11 \\div 4 = 2{,}75$ مضبوط ؛ مع 6 أجزاء لا.",
+        "incorrect": "حاصل القسمة عدد عشري إذا انتهت أرقامه بعد الفاصلة ؛ وإلاّ فالكسر هو الكتابة المضبوطة له."
+      },
+      "solution": {
+        "lines": [
+          "$11 \\div 4 = 2{,}75$ : عدد عشري.",
+          "$11 \\div 6 = 1{,}8333\\ldots$ : لا تتوقّف الأرقام."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

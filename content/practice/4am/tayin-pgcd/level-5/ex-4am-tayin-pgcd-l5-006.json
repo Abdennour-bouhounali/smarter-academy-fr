@@ -1,0 +1,317 @@
+{
+  "id": "ex-4am-tayin-pgcd-l5-006",
+  "lessonCode": "tayin-pgcd",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2024 — رحلة تخييم إلى جرجرة",
+    "estimatedMinutes": 15,
+    "tags": [
+      "PGCD",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tayin-pgcd_P1",
+      "modelledOn": "BEM 2024 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "ينظّم نادي البيئة لمتوسطة بالبويرة، حبًّا في جمال الجزائر وحرصًا على نظافة طبيعتها، رحلة تخييم إلى الحظيرة الوطنية لجرجرة لـ 84 تلميذًا من السنة الثالثة و 112 تلميذًا من السنة الرابعة. يريد المنظمون توزيع كل التلاميذ على أفواج متماثلة (في كل فوج نفس عدد تلاميذ السنة الثالثة ونفس عدد تلاميذ السنة الرابعة) بأكبر عدد ممكن من الأفواج، وتُخصَّص لكل فوج خيمة.\nيقترح ممون ثلاثة عروض لكراء الخيم:\n• العرض 1: 900DA للخيمة الواحدة.\n• العرض 2: مبلغ جزافي قدره 12000DA، يضاف إليه 450DA للخيمة الواحدة.\n• العرض 3: مبلغ جزافي قدره 25000DA مهما كان عدد الخيم."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما هو أكبر عدد من الأفواج ؟",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد الأفواج)",
+      "expectedAnswer": "28",
+      "misconceptionSignatures": [
+        {
+          "value": "14",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        },
+        {
+          "value": "3",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد المطلوب يقسم 84 و 112 معًا: اكتب قائمة قواسم كل منهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استخرج القواسم المشتركة: الأعداد الموجودة في القائمتين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاسم المشترك الأكبر هو أكبر القواسم المشتركة، لا أيّ واحد منها."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 84 و 112 هي 1 ، 2 ، 4 ، 7 ، 14 ، 28، وأكبرها 28.",
+        "incorrect": "اكتب قائمتي القواسم كاملتين، ثم خذ أكبر عدد يظهر في القائمتين معًا."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 84 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 7 ، 12 ، 14 ، 21 ، 28 ، 42 ، 84",
+          "قواسم العدد 112 هي: 1 ، 2 ، 4 ، 7 ، 8 ، 14 ، 16 ، 28 ، 56 ، 112",
+          "القواسم المشتركة للعددين 84 و 112 هي: 1 ، 2 ، 4 ، 7 ، 14 ، 28",
+          "أكبرها هو 28، إذن أكبر عدد ممكن هو:"
+        ],
+        "result": "PGCD(84 ; 112) = 28"
+      },
+      "work": "optional",
+      "timeSeconds": 420
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "lead": "ما هو عدد تلاميذ كل سنة في الفوج الواحد ؟",
+      "statement": "عدد تلاميذ السنة الثالثة في كل فوج:",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "28",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع تلاميذ السنة الثالثة كلها بالتساوي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد الكلي على العدد الذي وجدته في السؤال السابق."
+        }
+      ],
+      "feedback": {
+        "correct": "$84 \\div 28 = 3$",
+        "incorrect": "اقسم العدد الكلي (84) على أكبر عدد وجدته، لا العكس."
+      },
+      "solution": {
+        "lines": [
+          "$84 \\div 28 = 3$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ب",
+      "statement": "عدد تلاميذ السنة الرابعة في كل فوج:",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "28",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع تلاميذ السنة الرابعة كلها بالتساوي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد الكلي على العدد الذي وجدته في السؤال السابق."
+        }
+      ],
+      "feedback": {
+        "correct": "$112 \\div 28 = 4$",
+        "incorrect": "اقسم العدد الكلي (112) على أكبر عدد وجدته، لا العكس."
+      },
+      "solution": {
+        "lines": [
+          "$112 \\div 28 = 4$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "احسب تكلفة كراء الخيم:",
+      "statement": "حسب العرض 1:",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (المبلغ بالدينار)",
+      "expectedAnswer": "25200",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الخيم يساوي عدد الأفواج."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب عدد الخيم في 900DA."
+        }
+      ],
+      "feedback": {
+        "correct": "$28 \\times 900 = 25200$",
+        "incorrect": "عدد الخيم هو عدد الأفواج الذي وجدته في السؤال 01."
+      },
+      "solution": {
+        "lines": [
+          "$28 \\times 900 = 25200$DA"
+        ],
+        "result": "25200DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "حسب العرض 2:",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (المبلغ بالدينار)",
+      "expectedAnswer": "24600",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ الجزافي يُدفع مرة واحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أضف إليه 450DA لكل خيمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$12000 + 28 \\times 450 = 24600$",
+        "incorrect": "المبلغ الجزافي يضاف مرة واحدة، و 450DA تُضرب في عدد الخيم."
+      },
+      "solution": {
+        "lines": [
+          "$12000 + 28 \\times 450 = 12000 + 12600 = 24600$DA"
+        ],
+        "result": "24600DA"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "☜ ما هو العرض الأنسب للنادي ؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "العرض 1",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "العرض 2",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "العرض 3",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن تكاليف العروض الثلاثة لنفس عدد الخيم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأنسب هو الأقل تكلفة."
+        }
+      ],
+      "feedback": {
+        "correct": "العرض 2 هو الأقل تكلفة: 24600DA.",
+        "incorrect": "رتّب التكاليف الثلاث: العرض 3 ثابت (25000DA) مهما كان عدد الخيم."
+      },
+      "solution": {
+        "lines": [
+          "العرض 1: 25200DA",
+          "العرض 2: 24600DA",
+          "العرض 3: 25000DA",
+          "$24600 < 25000 < 25200$ ، إذن العرض 2 هو الأنسب."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

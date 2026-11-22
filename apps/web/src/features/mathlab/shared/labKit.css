@@ -1,0 +1,579 @@
+/* ── L'outillage partagé des laboratoires (shared/LabSectionNav.jsx, shared/LabKit.jsx) ──
+   La palette de la plateforme : vert #008443 (le geste, la section active),
+   orange #F36D21 (ce qui vient de se passer, l'accent), encre #1A1A1A, ardoise
+   #64748B. Surfaces claires uniquement (pas de panneau sombre). */
+
+:root {
+  --sa-kit-primary: #008443;
+  --sa-kit-primary-soft: #e6f4ec;
+  --sa-kit-accent: #f36d21;
+  --sa-kit-accent-soft: #fdeee4;
+  --sa-kit-ink: #1a1a1a;
+  --sa-kit-slate: #64748b;
+  --sa-kit-line: #e2e8f0;
+  --sa-kit-surface: #ffffff;
+  --sa-kit-radius: 12px;
+}
+
+/* ── La barre des laboratoires ─────────────────────────────────────────── */
+
+.sa-ml-kit-nav {
+  flex: 0 0 auto;
+  background: var(--sa-kit-surface);
+  border-bottom: 1px solid var(--sa-kit-line);
+  font-family: 'Cairo', 'Inter', sans-serif;
+}
+
+/* Les onglets passent à la ligne ; seul un téléphone les fait glisser
+   (seize onglets empilés y repousseraient l'outil hors de l'écran). */
+.sa-ml-kit-nav__scroller {
+  overflow: visible;
+}
+
+@media (max-width: 767px) {
+  .sa-ml-kit-nav__scroller { overflow-x: auto; }
+  .sa-ml-kit-nav__list { flex-wrap: nowrap; min-width: max-content; }
+}
+
+.sa-ml-kit-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px 6px;
+}
+
+.sa-ml-kit-nav__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sa-ml-kit-nav__sep {
+  width: 1px;
+  height: 22px;
+  background: var(--sa-kit-line);
+  margin-inline: 4px;
+}
+
+.sa-ml-kit-nav__group {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--sa-kit-slate);
+  white-space: nowrap;
+}
+
+.sa-ml-kit-nav__tab {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid var(--sa-kit-line);
+  border-radius: 999px;
+  background: #f8fafc;
+  color: #334155;
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sa-ml-kit-nav__tab:hover {
+  border-color: #b7dcc7;
+  background: var(--sa-kit-primary-soft);
+  color: var(--sa-kit-primary);
+}
+
+.sa-ml-kit-nav__tab.is-active {
+  border-color: var(--sa-kit-primary);
+  background: var(--sa-kit-primary);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 132, 67, 0.25);
+}
+
+.sa-ml-kit-nav__tab:focus-visible,
+.sa-ml-kit-chip:focus-visible,
+.sa-ml-kit-disclosure__toggle:focus-visible {
+  outline: 3px solid rgba(243, 109, 33, 0.55);
+  outline-offset: 2px;
+}
+
+.sa-ml-kit-nav__description {
+  margin: 0;
+  padding: 0 14px 8px;
+  font-size: 0.8rem;
+  color: var(--sa-kit-slate);
+  line-height: 1.5;
+}
+
+/* ── Les plis « لماذا؟ » / « القاعدة » ────────────────────────────────── */
+
+.sa-ml-kit-disclosure {
+  border: 1px solid var(--sa-kit-line);
+  border-radius: var(--sa-kit-radius);
+  background: var(--sa-kit-surface);
+  overflow: hidden;
+}
+
+.sa-ml-kit-disclosure--rule { border-color: #b7dcc7; }
+.sa-ml-kit-disclosure--next { border-color: #f9c9ad; }
+
+.sa-ml-kit-disclosure__toggle {
+  appearance: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 0;
+  background: transparent;
+  color: var(--sa-kit-ink);
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-align: start;
+  cursor: pointer;
+}
+
+.sa-ml-kit-disclosure--why .sa-ml-kit-disclosure__toggle svg:first-child { color: var(--sa-kit-accent); }
+.sa-ml-kit-disclosure--rule .sa-ml-kit-disclosure__toggle svg:first-child { color: var(--sa-kit-primary); }
+.sa-ml-kit-disclosure--next .sa-ml-kit-disclosure__toggle svg:first-child { color: var(--sa-kit-accent); }
+.sa-ml-kit-disclosure--note .sa-ml-kit-disclosure__toggle svg:first-child { color: var(--sa-kit-slate); }
+
+.sa-ml-kit-disclosure__toggle span { flex: 1; }
+
+.sa-ml-kit-disclosure__chevron {
+  color: var(--sa-kit-slate);
+  transition: transform 0.2s ease;
+}
+
+.sa-ml-kit-disclosure.is-open .sa-ml-kit-disclosure__chevron { transform: rotate(180deg); }
+
+.sa-ml-kit-disclosure__body {
+  padding: 0 14px 12px;
+  font-size: 0.86rem;
+  line-height: 1.7;
+  color: #334155;
+  animation: sa-ml-kit-fade 0.2s ease;
+}
+
+/* ── Les exemples ──────────────────────────────────────────────────────── */
+
+.sa-ml-kit-examples {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sa-ml-kit-examples__title {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--sa-kit-slate);
+}
+
+.sa-ml-kit-examples__row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.sa-ml-kit-examples__level {
+  flex: 0 0 auto;
+  min-width: 3.6rem;
+  padding-top: 7px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.sa-ml-kit-examples__level--beginner { color: var(--sa-kit-primary); }
+.sa-ml-kit-examples__level--intermediate { color: #b45309; }
+.sa-ml-kit-examples__level--advanced { color: #be123c; }
+
+.sa-ml-kit-examples__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.sa-ml-kit-chip {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--sa-kit-line);
+  border-radius: 999px;
+  background: var(--sa-kit-surface);
+  color: #334155;
+  font: inherit;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.sa-ml-kit-chip:hover { border-color: var(--sa-kit-primary); }
+
+.sa-ml-kit-chip__label { unicode-bidi: isolate; }
+.sa-ml-kit-chip__label[dir='ltr'] { font-family: 'JetBrains Mono', 'Inter', sans-serif; font-size: 0.8rem; }
+
+.sa-ml-kit-chip.is-active {
+  border-color: var(--sa-kit-primary);
+  background: var(--sa-kit-primary-soft);
+  color: var(--sa-kit-primary);
+  font-weight: 700;
+}
+
+.sa-ml-kit-chip--random {
+  align-self: flex-start;
+  border-style: dashed;
+  color: var(--sa-kit-accent);
+  border-color: #f9c9ad;
+}
+
+/* ── Le pas à pas ──────────────────────────────────────────────────────── */
+
+.sa-ml-kit-steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sa-ml-kit-steps__item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 6px 10px;
+  border: 1px solid var(--sa-kit-line);
+  border-radius: 10px;
+  background: var(--sa-kit-surface);
+  animation: sa-ml-kit-rise 0.28s ease both;
+}
+
+.sa-ml-kit-steps__item.is-current {
+  border-color: var(--sa-kit-accent);
+  box-shadow: 0 0 0 3px var(--sa-kit-accent-soft);
+}
+
+.sa-ml-kit-steps__item--result {
+  border-color: var(--sa-kit-primary);
+  background: var(--sa-kit-primary-soft);
+}
+
+.sa-ml-kit-steps__item--warning {
+  border-color: #fbbf24;
+  background: #fffbeb;
+}
+
+.sa-ml-kit-steps__index {
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: #f1f5f9;
+  color: var(--sa-kit-slate);
+  font-family: 'JetBrains Mono', 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.sa-ml-kit-steps__item.is-current .sa-ml-kit-steps__index {
+  background: var(--sa-kit-accent);
+  color: #fff;
+}
+
+.sa-ml-kit-steps__content {
+  min-width: 0;
+  flex: 1;
+  /* « D'un seul regard » (MATH_LAB §3.5) : la phrase et la formule d'un pas
+     côte à côte quand la place le permet — pas l'une sous l'autre avec un
+     grand vide à côté. Elles passent à la ligne sur un écran étroit. */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 16px;
+  row-gap: 2px;
+}
+
+.sa-ml-kit-steps__content > .sa-ml-kit-steps__text { flex: 1 1 16rem; }
+.sa-ml-kit-steps__content > .sa-ml-kit-steps__math { flex: 0 1 auto; }
+.sa-ml-kit-steps__content > .sa-ml-kit-steps__note { flex: 1 1 100%; }
+
+.sa-ml-kit-steps__text,
+.sa-ml-kit-steps__note {
+  margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: #334155;
+}
+
+.sa-ml-kit-steps__note { color: var(--sa-kit-slate); font-size: 0.78rem; }
+
+.sa-ml-kit-steps__math {
+  /* Pas de défilement interne : une formule longue passe à la ligne. */
+  overflow: visible;
+  overflow-wrap: anywhere;
+  max-width: 100%;
+  padding: 2px 0;
+  font-family: 'JetBrains Mono', 'Inter', sans-serif;
+}
+
+/* ── Le déroulé pas à pas (StepPlayer) ───────────────────────────────────
+   Une PETITE barre d'icônes (demande de la propriétaire) : en place dans la
+   page, ou FLOTTANTE (position fixe, déplaçable par la poignée) quand c'est
+   le déroulé sur lequel l'élève travaille. Jamais une bande qui cache le
+   tableau. */
+
+.sa-ml-kit-player {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-self: center;
+  gap: 4px;
+  max-width: 100%;
+  padding: 4px 6px;
+  border: 1px solid #f9c9ad;
+  border-radius: 999px;
+  background: #fffaf6;
+  font-family: 'Cairo', 'Inter', sans-serif;
+}
+
+.sa-ml-kit-player.is-floating {
+  position: fixed;
+  z-index: 60;
+  flex-wrap: nowrap;
+  max-width: calc(100vw - 16px);
+  background: rgba(255, 255, 255, 0.96);
+  border-color: #f3c4a6;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.16);
+  backdrop-filter: blur(6px);
+  touch-action: none;
+}
+
+/* Écran étroit : la barre passe sur deux lignes plutôt que de sortir de l'écran. */
+@media (max-width: 480px) {
+  /* Téléphone : UNE seule ligne compacte — icônes plus serrées, pas de
+     poignée volumineuse — qui ne passe à la ligne qu'en dernier recours. */
+  .sa-ml-kit-player { padding: 3px 5px; gap: 2px; }
+  .sa-ml-kit-player.is-floating { justify-content: center; border-radius: 22px; }
+  .sa-ml-kit-player__icon { min-width: 34px; height: 34px; padding: 0 6px; }
+  .sa-ml-kit-player__icon.is-primary { min-width: 40px; }
+  .sa-ml-kit-player__grip { width: 20px; height: 34px; }
+  .sa-ml-kit-player__position { padding: 0 3px; font-size: 0.7rem; }
+  .sa-ml-kit-player__speed-text { display: none; }
+}
+
+.sa-ml-kit-player__grip {
+  appearance: none;
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 36px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--sa-kit-slate);
+  cursor: grab;
+  touch-action: none;
+}
+
+.sa-ml-kit-player__grip:active { cursor: grabbing; }
+
+.sa-ml-kit-player__modes {
+  display: inline-flex;
+  gap: 2px;
+  padding: 2px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid var(--sa-kit-line);
+}
+
+.sa-ml-kit-player__icon {
+  appearance: none;
+  display: inline-grid;
+  grid-auto-flow: column;
+  place-items: center;
+  gap: 3px;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 8px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: #334155;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.sa-ml-kit-player__modes .sa-ml-kit-player__icon { min-width: 32px; height: 32px; padding: 0 6px; }
+
+.sa-ml-kit-player__icon:hover:not(:disabled) { background: #f1f5f9; }
+
+.sa-ml-kit-player__icon.is-active {
+  background: var(--sa-kit-primary-soft);
+  color: var(--sa-kit-primary);
+}
+
+.sa-ml-kit-player__icon.is-primary {
+  min-width: 44px;
+  border-color: var(--sa-kit-primary);
+  background: var(--sa-kit-primary);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 132, 67, 0.25);
+}
+
+.sa-ml-kit-player__icon.is-primary:hover:not(:disabled) { background: #006b36; }
+
+.sa-ml-kit-player__icon.is-playing {
+  border-color: var(--sa-kit-accent);
+  background: var(--sa-kit-accent-soft);
+  color: #c2410c;
+}
+
+.sa-ml-kit-player__icon:disabled { opacity: 0.35; cursor: default; }
+
+.sa-ml-kit-player__speed-text { font-size: 0.7rem; }
+
+.sa-ml-kit-player__position {
+  padding: 0 6px;
+  font-family: 'JetBrains Mono', 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--sa-kit-slate);
+  white-space: nowrap;
+}
+
+.sa-ml-kit-player__minimize { color: var(--sa-kit-slate); }
+
+.sa-ml-kit-player button:focus-visible {
+  outline: 3px solid rgba(243, 109, 33, 0.55);
+  outline-offset: 1px;
+}
+
+.sa-ml-kit-player__sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* « الخطوة التالية » clignote doucement au début : un halo, jamais un
+   déplacement (la boîte du bouton ne bouge pas). */
+.sa-ml-kit-player__icon.is-attention { animation: sa-ml-kit-beacon 1.4s ease-in-out infinite; }
+
+@keyframes sa-ml-kit-beacon {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 132, 67, 0.45); }
+  50% { box-shadow: 0 0 0 7px rgba(0, 132, 67, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sa-ml-kit-player__icon { transition: none; }
+  .sa-ml-kit-player__icon.is-attention { animation: none; outline: 2px solid rgba(0, 132, 67, 0.5); outline-offset: 2px; }
+}
+
+/* ── L'opération d'un pas : ce qui a CHANGÉ ───────────────────────────── */
+
+.sa-ml-kit-steps__operation {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 2px 0 4px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--sa-kit-accent-soft);
+  color: #c2410c;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.sa-ml-kit-steps__item.is-current .sa-ml-kit-steps__math {
+  animation: sa-ml-kit-flash 0.9s ease;
+  border-radius: 6px;
+}
+
+@keyframes sa-ml-kit-flash {
+  0% { background: rgba(243, 109, 33, 0.18); }
+  100% { background: transparent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sa-ml-kit-steps__item.is-current .sa-ml-kit-steps__math { animation: none; }
+}
+
+/* ── Les panneaux qu'on masque (LabPanel — la règle « d'un seul regard ») ── */
+
+.sa-ml-kit-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--sa-kit-line);
+  border-radius: var(--sa-kit-radius);
+  background: var(--sa-kit-surface);
+}
+
+.sa-ml-kit-panel.is-collapsed { padding-block: 6px; background: #f8fafc; }
+
+.sa-ml-kit-panel__head { display: flex; align-items: center; gap: 8px; min-height: 32px; }
+
+.sa-ml-kit-panel__title { flex: 1; margin: 0; font-size: 0.88rem; font-weight: 700; color: var(--sa-kit-ink); }
+
+.sa-ml-kit-panel__toggle {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 32px;
+  padding: 0 10px;
+  border: 1px solid var(--sa-kit-line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--sa-kit-slate);
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.sa-ml-kit-panel__toggle:hover { border-color: var(--sa-kit-primary); color: var(--sa-kit-primary); }
+.sa-ml-kit-panel__toggle:focus-visible { outline: 3px solid rgba(243, 109, 33, 0.55); outline-offset: 2px; }
+
+/* ── Les messages ──────────────────────────────────────────────────────── */
+
+.sa-ml-kit-message {
+  margin: 0;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+.sa-ml-kit-message--error { background: #fff1f2; color: #9f1239; border: 1px solid #fecdd3; }
+.sa-ml-kit-message--info { background: #f8fafc; color: #334155; border: 1px solid var(--sa-kit-line); }
+.sa-ml-kit-message--success { background: var(--sa-kit-primary-soft); color: #065f46; border: 1px solid #b7dcc7; }
+
+@keyframes sa-ml-kit-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes sa-ml-kit-rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .sa-ml-kit-steps__item,
+  .sa-ml-kit-disclosure__body { animation: none; }
+  .sa-ml-kit-nav__tab,
+  .sa-ml-kit-disclosure__chevron { transition: none; }
+}

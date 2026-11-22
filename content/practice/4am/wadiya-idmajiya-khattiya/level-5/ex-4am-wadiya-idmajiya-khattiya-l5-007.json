@@ -1,0 +1,382 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-khattiya-l5-007",
+  "lessonCode": "wadiya-idmajiya-khattiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2017 — القمح والشعير في مستثمرة بأدرار",
+    "estimatedMinutes": 25,
+    "tags": [
+      "وضعية إدماجية",
+      "مساحة",
+      "دالة خطية",
+      "نسبة مئوية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-khattiya_P3",
+      "modelledOn": "BEM 2017 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2017",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "$ABCD$ قطعة أرض فلاحية مستطيلة الشكل بأدرار، حيث $AB = 300m$ و $BC = 200m$ . يقسمها صاحبها بالقطعة $[MN]$ الموازية لـ $[AD]$ ، حيث $M$ نقطة من $[AB]$ و $AM = x$ (بالمتر): الجزء $AMND$ لزراعة القمح، والباقي لزراعة الشعير (الشكل التالي).",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          10
+        ],
+        "B": [
+          15,
+          10
+        ],
+        "C": [
+          15,
+          0
+        ],
+        "D": [
+          0,
+          0
+        ],
+        "M": [
+          9,
+          10
+        ],
+        "N": [
+          9,
+          0
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "M",
+          "label": "x"
+        },
+        [
+          "M",
+          "B"
+        ],
+        {
+          "from": "B",
+          "to": "C",
+          "label": "200m"
+        },
+        {
+          "from": "D",
+          "to": "C",
+          "label": "300m"
+        },
+        [
+          "D",
+          "A"
+        ],
+        {
+          "from": "M",
+          "to": "N",
+          "dashed": true,
+          "tone": "emerald"
+        }
+      ],
+      "polygons": [
+        {
+          "points": [
+            "A",
+            "M",
+            "N",
+            "D"
+          ],
+          "tone": "emerald"
+        }
+      ],
+      "labels": {
+        "A": "nw",
+        "B": "ne",
+        "C": "se",
+        "D": "sw",
+        "M": "n",
+        "N": "s"
+      },
+      "ariaLabel": "مستطيل ABCD طوله 300m وعرضه 200m مقسوم بالقطعة MN الموازية لـ AD حيث AM = x، والجزء AMND ملوّن"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب مساحة القطعة الأرضية $ABCD$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المساحة بـ m²",
+      "expectedAnswer": "60000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة المستطيل = الطول × العرض."
+        }
+      ],
+      "feedback": {
+        "correct": "$300 \\times 200 = 60000m^2$ .",
+        "incorrect": "اضرب الطول في العرض."
+      },
+      "solution": {
+        "lines": [
+          "$300 \\times 200 = 60000$ ، أي $60000m^2$ ."
+        ],
+        "result": "60000m^2"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "عبّر بدلالة $x$ عن مساحة الجزء المخصص للقمح $S(x)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المعامل $a$ فقط في $S(x) = ax$",
+      "expectedAnswer": "200",
+      "misconceptionSignatures": [
+        {
+          "value": "300",
+          "id": "MISC-TARRID-NAMUDHAJ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الجزء $AMND$ مستطيل بعداه $AM$ و $AD$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$S(x) = 200x$ .",
+        "incorrect": "عرض الجزء $AMND$ هو $AD = BC$ ."
+      },
+      "solution": {
+        "lines": [
+          "$AMND$ مستطيل بعداه $AM = x$ و $AD = 200m$ .",
+          "$S(x) = 200x$ : $S$ دالة خطية."
+        ],
+        "result": "S(x) = 200x"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "عيّن $x$ حتى تكون مساحة القمح 60% من مساحة القطعة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول $AM$ بالمتر",
+      "expectedAnswer": "180",
+      "misconceptionSignatures": [
+        {
+          "value": "36000",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب 60% من مساحة القطعة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم جد العدد الذي صورته هذه المساحة بالدالة $S$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}6 \\times 60000 = 36000$ و $200x = 36000$ ومنه $x = 180$ m.",
+        "incorrect": "احسب المساحة المطلوبة ثم اقسم على المعامل."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{60}{100} \\times 60000 = 36000$",
+          "$S(x) = 36000$ معناه $200x = 36000$",
+          "$x = 180$ ، أي $AM = 180m$ ."
+        ],
+        "result": "x = 180"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "يرشّ الفلاح جزء القمح (من أجل $x = 180$) بالمبيد بواسطة طائرة دون طيار، تستهلك 0,8L من المبيد لكل $100m^2$ . نسمّي $Q(s)$ كمية المبيد (باللتر) اللازمة لمساحة $s$ (بـ $m^2$).",
+      "statement": "عبّر عن $Q(s)$ بدلالة $s$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المعامل $a$ فقط في $Q(s) = as$ (عشري بالفاصلة)",
+      "expectedAnswer": "0,008",
+      "misconceptionSignatures": [
+        {
+          "value": "0.8",
+          "id": "MISC-MAQADIR-WIHDA"
+        },
+        {
+          "value": "125",
+          "id": "MISC-MAQADIR-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكمية متناسبة مع المساحة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المعامل هو الكمية اللازمة لـ $1m^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$Q(s) = \\dfrac{0{,}8}{100}s = 0{,}008s$ .",
+        "incorrect": "اقسم 0,8 على 100 لتحصل على كمية $1m^2$ ."
+      },
+      "solution": {
+        "lines": [
+          "الكمية اللازمة لـ $1m^2$ : $\\dfrac{0{,}8}{100} = 0{,}008L$ .",
+          "$Q(s) = 0{,}008s$"
+        ],
+        "result": "Q(s) = 0{,}008s"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "احسب كمية المبيد اللازمة لجزء القمح.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الكمية باللتر",
+      "expectedAnswer": "288",
+      "misconceptionSignatures": [
+        {
+          "value": "480",
+          "id": "MISC-TARRID-TAFSIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة جزء القمح هي $S(180)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$Q(36000) = 0{,}008 \\times 36000 = 288L$ .",
+        "incorrect": "استعمل مساحة جزء القمح لا مساحة القطعة كلها."
+      },
+      "solution": {
+        "lines": [
+          "مساحة جزء القمح $36000m^2$ .",
+          "$Q(36000) = 0{,}008 \\times 36000 = 288$ ، أي $288L$ ."
+        ],
+        "result": "288L"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "☜ يُباع المبيد في عبوات سعة كل منها 20L بسعر 4500DA للعبوة. احسب تكلفة المبيد الذي يشتريه الفلاح.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: التكلفة بـ DA",
+      "expectedAnswer": "67500",
+      "misconceptionSignatures": [
+        {
+          "value": "64800",
+          "id": "MISC-TARRID-TAFSIR"
+        },
+        {
+          "value": "63000",
+          "id": "MISC-TARRID-TAFSIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب عدد العبوات اللازمة: لا تُباع أجزاء العبوة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد العبوات عدد طبيعي يكفي لـ 288L."
+        }
+      ],
+      "feedback": {
+        "correct": "$288 \\div 20 = 14{,}4$ : يشتري 15 عبوة، أي $15 \\times 4500 = 67500$ DA.",
+        "incorrect": "14 عبوة لا تكفي و 14,4 عبوة لا تُباع."
+      },
+      "solution": {
+        "lines": [
+          "$288 \\div 20 = 14{,}4$ : 14 عبوة لا تكفي، فيشتري 15 عبوة.",
+          "التكلفة: $15 \\times 4500 = 67500$ DA."
+        ],
+        "result": "67500DA"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

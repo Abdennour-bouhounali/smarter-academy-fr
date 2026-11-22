@@ -1,0 +1,279 @@
+{
+  "id": "ex-3am-amaliyat-natiqa-l3-003",
+  "lessonCode": "amaliyat-natiqa",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — عمليات ومقارنة",
+    "estimatedMinutes": 14,
+    "tags": [
+      "العمليات على الأعداد الناطقة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 1,
+      "file": "3am-s1-104",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "ليكن $D = \\left( \\dfrac{1}{2} - \\dfrac{5}{4} \\right) \\div \\dfrac{3}{16}$ و $E = \\dfrac{3}{5} - \\dfrac{2}{3} \\times \\left( -\\dfrac{9}{10} \\right)$ و $K = \\left( -\\dfrac{7}{4} + \\dfrac{1}{2} \\right) \\times \\dfrac{4}{5}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $D = \\left(\\dfrac{1}{2} - \\dfrac{5}{4}\\right) \\div \\dfrac{3}{16}$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "value": "-9/64",
+          "id": "MISC-AMAL-NOFLIP"
+        },
+        {
+          "value": "4",
+          "id": "MISC-AMAL-PRODSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليات الموجودة؟ وهل توجد أقواس أو كسر مركّب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح، ومع كلّ عملية نحدّد الإشارة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز عملية واحدة في كلّ سطر، ثمّ اكتب النتيجة غير القابلة للاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "$D = -4$ .",
+        "incorrect": "احترم الأولويّة: الأقواس ثمّ الضرب والقسمة ثمّ الجمع والطرح، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "$\\dfrac{1}{2} - \\dfrac{5}{4} = \\dfrac{1}{2} + \\left(-\\dfrac{5}{4}\\right)$ (طرح عدد هو جمع معاكسه).",
+          "العددان $\\dfrac{1}{2}$ و $-\\dfrac{5}{4}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $-\\dfrac{5}{4}$ ، فإشارة المجموع سالبة.",
+          "$\\dfrac{1}{2} + \\left(-\\dfrac{5}{4}\\right) = \\dfrac{2}{4} - \\dfrac{5}{4} = \\dfrac{2 - 5}{4} = -\\dfrac{3}{4}$ .",
+          "القسمة على $\\dfrac{3}{16}$ هي الضرب في مقلوبه، ومقلوب $\\dfrac{3}{16}$ هو $\\dfrac{16}{3}$ (يحتفظ بالإشارة نفسها).",
+          "$-\\dfrac{3}{4} \\div \\dfrac{3}{16} = -\\dfrac{3}{4} \\times \\dfrac{16}{3}$ .",
+          "العاملان من إشارتين مختلفتين: الجداء سالب.",
+          "$-\\dfrac{3}{4} \\times \\dfrac{16}{3} = -\\dfrac{3 \\times 16}{4 \\times 3} = -\\dfrac{48}{12} = -4$ ."
+        ],
+        "result": "D = -4"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $E = \\dfrac{3}{5} - \\dfrac{2}{3} \\times \\left(-\\dfrac{9}{10}\\right)$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "6/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "3/50",
+          "id": "MISC-AMAL-PRIORITY"
+        },
+        {
+          "value": "-6/5",
+          "id": "MISC-AMAL-SUMSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليات الموجودة؟ وهل توجد أقواس أو كسر مركّب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح، ومع كلّ عملية نحدّد الإشارة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز عملية واحدة في كلّ سطر، ثمّ اكتب النتيجة غير القابلة للاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = \\dfrac{6}{5}$ .",
+        "incorrect": "احترم الأولويّة: الأقواس ثمّ الضرب والقسمة ثمّ الجمع والطرح، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "العاملان من إشارتين مختلفتين: الجداء سالب.",
+          "$\\dfrac{2}{3} \\times \\left(-\\dfrac{9}{10}\\right) = -\\dfrac{2 \\times 9}{3 \\times 10} = -\\dfrac{18}{30} = -\\dfrac{3}{5}$ .",
+          "$\\dfrac{3}{5} - \\left(-\\dfrac{3}{5}\\right) = \\dfrac{3}{5} + \\dfrac{3}{5}$ (طرح عدد هو جمع معاكسه).",
+          "العددان $\\dfrac{3}{5}$ و $\\dfrac{3}{5}$ موجبان، فمجموعهما موجب.",
+          "$\\dfrac{3}{5} + \\dfrac{3}{5} = \\dfrac{3 + 3}{5} = \\dfrac{6}{5}$ ."
+        ],
+        "result": "E = \\dfrac{6}{5}"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب $K = \\left(-\\dfrac{7}{4} + \\dfrac{1}{2}\\right) \\times \\dfrac{4}{5}$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "-1",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-AMAL-PRODSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليات الموجودة؟ وهل توجد أقواس أو كسر مركّب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح، ومع كلّ عملية نحدّد الإشارة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز عملية واحدة في كلّ سطر، ثمّ اكتب النتيجة غير القابلة للاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "$K = -1$ .",
+        "incorrect": "احترم الأولويّة: الأقواس ثمّ الضرب والقسمة ثمّ الجمع والطرح، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "العددان $-\\dfrac{7}{4}$ و $\\dfrac{1}{2}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $-\\dfrac{7}{4}$ ، فإشارة المجموع سالبة.",
+          "$-\\dfrac{7}{4} + \\dfrac{1}{2} = -\\dfrac{7}{4} + \\dfrac{2}{4} = \\dfrac{-7 + 2}{4} = -\\dfrac{5}{4}$ .",
+          "العاملان من إشارتين مختلفتين: الجداء سالب.",
+          "$-\\dfrac{5}{4} \\times \\dfrac{4}{5} = -\\dfrac{5 \\times 4}{4 \\times 5} = -\\dfrac{20}{20} = -1$ ."
+        ],
+        "result": "K = -1"
+      }
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب $A = \\left(-\\dfrac{7}{4} + \\dfrac{1}{2}\\right) \\times \\dfrac{4}{5}$ و $B = \\dfrac{3}{5} - \\dfrac{2}{3} \\times \\left(-\\dfrac{9}{10}\\right)$ ثمّ اختر المقارنة الصحيحة .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "timeSeconds": 90,
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$A < B$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$A = B$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$A > B$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب كلّ عدد على حدة قبل أن تقارن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كلّ عدد على أبسط شكل بمقام موجب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بوضع الكسرين على مقام مشترك."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $A < B$ .",
+        "incorrect": "احسب كلّ عدد ثمّ قارن بينهما بمقام مشترك، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "العددان $-\\dfrac{7}{4}$ و $\\dfrac{1}{2}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $-\\dfrac{7}{4}$ ، فإشارة المجموع سالبة.",
+          "$-\\dfrac{7}{4} + \\dfrac{1}{2} = -\\dfrac{7}{4} + \\dfrac{2}{4} = \\dfrac{-7 + 2}{4} = -\\dfrac{5}{4}$ .",
+          "العاملان من إشارتين مختلفتين: الجداء سالب.",
+          "$-\\dfrac{5}{4} \\times \\dfrac{4}{5} = -\\dfrac{5 \\times 4}{4 \\times 5} = -\\dfrac{20}{20} = -1$ .",
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "العاملان من إشارتين مختلفتين: الجداء سالب.",
+          "$\\dfrac{2}{3} \\times \\left(-\\dfrac{9}{10}\\right) = -\\dfrac{2 \\times 9}{3 \\times 10} = -\\dfrac{18}{30} = -\\dfrac{3}{5}$ .",
+          "$\\dfrac{3}{5} - \\left(-\\dfrac{3}{5}\\right) = \\dfrac{3}{5} + \\dfrac{3}{5}$ (طرح عدد هو جمع معاكسه).",
+          "العددان $\\dfrac{3}{5}$ و $\\dfrac{3}{5}$ موجبان، فمجموعهما موجب.",
+          "$\\dfrac{3}{5} + \\dfrac{3}{5} = \\dfrac{3 + 3}{5} = \\dfrac{6}{5}$ .",
+          "إذن $-1 < \\dfrac{6}{5}$ ، أي $A < B$ ."
+        ],
+        "result": "A < B"
+      }
+    }
+  ]
+}

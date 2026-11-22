@@ -1,0 +1,230 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-kusur-amaliyat-l2-003",
+  "lessonCode": "wadiya-idmajiya-kusur-amaliyat",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — من ادّخرت أكثر ؟",
+    "estimatedMinutes": 6,
+    "tags": [
+      "كسر من مبلغ",
+      "مقارنة مبلغين",
+      "تبرير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ادّخرت إيمان $\\dfrac{2}{5}$ من مبلغ $2000$ DA ، وادّخرت آية $\\dfrac{3}{10}$ من مبلغ $3000$ DA ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما المبلغ الذي ادّخرته إيمان بالدينار ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "800",
+      "misconceptionSignatures": [
+        {
+          "value": "5000",
+          "id": "MISC-JIDAKASR-FLIP"
+        },
+        {
+          "value": "400",
+          "id": "MISC-JIDAKASR-HALFWAY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزء من عدد يعني جداء الكسر في العدد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي ما دام الكسر أصغر من 1 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$800$ .",
+        "incorrect": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ، ولا تقلب الكسر ."
+      },
+      "solution": {
+        "lines": [
+          "$2000 \\div 5 = 400$ .",
+          "$400 \\times 2 = 800$ ."
+        ],
+        "result": "800"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما المبلغ الذي ادّخرته آية بالدينار ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "900",
+      "misconceptionSignatures": [
+        {
+          "value": "10000",
+          "id": "MISC-JIDAKASR-FLIP"
+        },
+        {
+          "value": "300",
+          "id": "MISC-JIDAKASR-HALFWAY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزء من عدد يعني جداء الكسر في العدد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي ما دام الكسر أصغر من 1 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$900$ .",
+        "incorrect": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ، ولا تقلب الكسر ."
+      },
+      "solution": {
+        "lines": [
+          "$3000 \\div 10 = 300$ .",
+          "$300 \\times 3 = 900$ ."
+        ],
+        "result": "900"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "من ادّخرت المبلغ الأكبر ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "إيمان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SYN-KASR2-FRACONLY"
+        },
+        {
+          "id": "B",
+          "content": "آية",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزء من عدد يعني جداء الكسر في العدد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد على المقام ثمّ اضرب الناتج في البسط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الناتج أصغر من العدد الأصلي ما دام الكسر أصغر من 1 ."
+        }
+      ],
+      "feedback": {
+        "correct": "آية .",
+        "incorrect": "قارن المبلغين لا الكسرين : كلّ كسر مأخوذ من كلّ مختلف ."
+      },
+      "solution": {
+        "lines": [
+          "إيمان : $\\dfrac{2}{5} \\times 2000 = 800$ .",
+          "آية : $\\dfrac{3}{10} \\times 3000 = 900$ .",
+          "الجواب : آية ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "برّر : لماذا لا يكفي أن نقارن الكسرين $\\dfrac{2}{5}$ و $\\dfrac{3}{10}$ للإجابة ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا ، ثمّ اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي .",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب جملة أو جملتين : الفكرة ثمّ الحساب الذي يدعمها ."
+        }
+      ],
+      "feedback": {
+        "correct": "نقارن المبلغين المحسوبين لا الكسرين وحدهما .",
+        "incorrect": "قارن تبريرك بالحلّ النموذجي : الفكرة ثمّ الحساب الذي يدعمها ."
+      },
+      "solution": {
+        "lines": [
+          "الكسران مأخوذان من كلّين مختلفين ($2000$ و $3000$) ، فالكسر الأكبر لا يعطي المبلغ الأكبر .",
+          "$\\dfrac{2}{5} \\times 2000 = 800$ و $\\dfrac{3}{10} \\times 3000 = 900$ : المبلغ الأكبر هو مبلغ آية ."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

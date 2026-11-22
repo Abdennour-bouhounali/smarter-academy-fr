@@ -1,0 +1,200 @@
+{
+  "id": "ex-4am-talis-hisab-atwal-l3-007",
+  "lessonCode": "talis-hisab-atwal",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2008 — BM و EM",
+    "estimatedMinutes": 10,
+    "tags": [
+      "فيثاغورس",
+      "خاصية طالس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_talis-hisab-atwal_P2",
+      "modelledOn": "BEM 2008 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2008",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "وحدة الطول المختارة هي السنتيمتر. $ABC$ مثلث قائم في $A$ حيث: $AB = 6$ و $BC = 10$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب الطول $AC$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث قائم في $A$ : الوتر هو $[BC]$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خاصية فيثاغورس: $AC^2 = BC^2 - AB^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC^2 = 100 - 36 = 64$ ومنه $AC = 8$ .",
+        "incorrect": "الوتر هو الضلع المقابل للزاوية القائمة: $AC^2 = BC^2 - AB^2$ ، ثم الجذر التربيعي."
+      },
+      "solution": {
+        "lines": [
+          "بما أن المثلث $ABC$ قائم في $A$ فإنّ: $AB^2 + AC^2 = BC^2$ حسب خاصية فيثاغورس.",
+          "$AC^2 = BC^2 - AB^2 = 10^2 - 6^2 = 100 - 36 = 64$",
+          "$AC = \\sqrt{64}$"
+        ],
+        "result": "AC = 8\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "$E$ نقطة من $[AB]$ حيث: $AE = 2$ ، المستقيم الذي يشمل $E$ ويعامد $(AB)$ يقطع $(BC)$ في النقطة $M$ .",
+      "statement": "جد الطول $BM$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "القيمة المضبوطة: كسر مثل 7/9",
+      "expectedAnswer": "20/3",
+      "misconceptionSignatures": [
+        {
+          "value": "10/3",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        },
+        {
+          "value": "15",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(EM)$ و $(AC)$ عموديان على $(AB)$ : هما متوازيان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $BE$ ، ثم المثلثان $BEM$ و $BAC$ في وضعية طالس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب $\\dfrac{BE}{BA} = \\dfrac{BM}{BC}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$BE = 4$ و $BM = \\dfrac{10 \\times 4}{6} = \\dfrac{20}{3}$ .",
+        "incorrect": "هل استعملت ضلعًا من المثلث الكبير أم قطعة منه؟ النسب تُكتب بأطوال تُقاس من الرأس المشترك؛ اطرح أو اجمع بعد ذلك إن كان المطلوب طول قطعة."
+      },
+      "solution": {
+        "lines": [
+          "$(AC) \\perp (AB)$ (لأن المثلث $ABC$ قائم في $A$) و $(EM) \\perp (AB)$ (من المعطيات)، إذن $(EM) \\parallel (AC)$ .",
+          "$E \\in (AB)$ و $M \\in (BC)$ ، حسب خاصية طالس: $\\dfrac{BE}{BA} = \\dfrac{BM}{BC} = \\dfrac{EM}{AC}$",
+          "$BE = AB - AE = 6 - 2 = 4$",
+          "$\\dfrac{4}{6} = \\dfrac{BM}{10}$",
+          "$BM = \\dfrac{10 \\times 4}{6}$"
+        ],
+        "result": "BM = \\dfrac{20}{3}\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 270
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "جد الطول $EM$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "القيمة المضبوطة: كسر مثل 7/9",
+      "expectedAnswer": "16/3",
+      "misconceptionSignatures": [
+        {
+          "value": "8/3",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        },
+        {
+          "value": "12",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل النسب نفسها، مع الطول $AC$ من السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $\\dfrac{BE}{BA} = \\dfrac{EM}{AC}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$EM = \\dfrac{8 \\times 4}{6} = \\dfrac{16}{3}$ .",
+        "incorrect": "راجع المساواة المختارة: في كل نسبة طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{BE}{BA} = \\dfrac{EM}{AC}$ أي $\\dfrac{4}{6} = \\dfrac{EM}{8}$",
+          "$EM = \\dfrac{8 \\times 4}{6}$"
+        ],
+        "result": "EM = \\dfrac{16}{3}\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

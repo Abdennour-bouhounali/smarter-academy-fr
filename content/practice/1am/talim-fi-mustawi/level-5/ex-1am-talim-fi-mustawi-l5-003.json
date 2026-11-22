@@ -1,0 +1,278 @@
+{
+  "id": "ex-1am-talim-fi-mustawi-l5-003",
+  "lessonCode": "talim-fi-mustawi",
+  "level": 5,
+  "metadata": {
+    "title": "حديقة الحيّ",
+    "estimatedMinutes": 7,
+    "tags": [
+      "نظيرة",
+      "ربع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "في حديقة الحيّ معلم متعامد مبدؤه النافورة، وتقف شجرة عند $A(-2\\,;\\,-1)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "النقطة $M'$ نظيرة $M(-2\\,;\\,-1)$ بالنسبة إلى محور الفواصل. ما إحداثيا $M'$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-2",
+        "y": "1"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SYMMIX",
+          "value": {
+            "x": "2",
+            "y": "-1"
+          }
+        },
+        {
+          "id": "MISC-MUSTAWI-SYMBOTH",
+          "value": {
+            "x": "2",
+            "y": "1"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النظيرة بالنسبة إلى محور الفواصل تقع على الجهة الأخرى منه بالبعد نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "محور الفواصل أفقي: النظيرة فوقه أو تحته على الخط الشاقولي نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الفاصلة تبقى والترتيب يعاكسه."
+        }
+      ],
+      "feedback": {
+        "correct": "إحداثيا $M'$ هما $(-2\\,;\\,1)$ .",
+        "incorrect": "بالنسبة إلى محور الفواصل تتغيّر إشارة الترتيب وحده."
+      },
+      "solution": {
+        "lines": [
+          "النظيرة بالنسبة إلى محور الفواصل: الفاصلة نفسها والترتيب معاكس",
+          "$M'(-2\\,;\\,1)$"
+        ],
+        "result": "M'(-2\\,;\\,1)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "النقطة $M'$ نظيرة $M(-2\\,;\\,-1)$ بالنسبة إلى محور التراتيب. ما إحداثيا $M'$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "2",
+        "y": "-1"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SYMMIX",
+          "value": {
+            "x": "-2",
+            "y": "1"
+          }
+        },
+        {
+          "id": "MISC-MUSTAWI-SYMBOTH",
+          "value": {
+            "x": "2",
+            "y": "1"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النظيرة بالنسبة إلى محور التراتيب تقع على الجهة الأخرى منه بالبعد نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "محور التراتيب شاقولي: النظيرة على يمينه أو يساره على الخط الأفقي نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الترتيب يبقى والفاصلة تعاكسها."
+        }
+      ],
+      "feedback": {
+        "correct": "إحداثيا $M'$ هما $(2\\,;\\,-1)$ .",
+        "incorrect": "بالنسبة إلى محور التراتيب تتغيّر إشارة الفاصلة وحدها."
+      },
+      "solution": {
+        "lines": [
+          "النظيرة بالنسبة إلى محور التراتيب: الترتيب نفسه والفاصلة معاكسة",
+          "$M'(2\\,;\\,-1)$"
+        ],
+        "result": "M'(2\\,;\\,-1)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أيّ هذه النقط تقع في الربع نفسه مع $P(-2\\,;\\,-1)$ (أي لإحداثييها الإشارتان نفسهما)؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(3\\,;\\,-1)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNX"
+        },
+        {
+          "id": "B",
+          "content": "$(-1\\,;\\,2)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNY"
+        },
+        {
+          "id": "C",
+          "content": "$(2\\,;\\,3)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNBOTH"
+        },
+        {
+          "id": "D",
+          "content": "$(-3\\,;\\,-4)$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد إشارة فاصلة $P$ وإشارة ترتيبها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن النقطة التي تحمل فاصلتها وترتيبها الإشارتين نفسيهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يكفي أن تتفق إشارة واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "لهما الإشارتان نفسهما فهما في الربع نفسه.",
+        "incorrect": "قارن إشارتي الفاصلة والترتيب معًا."
+      },
+      "solution": {
+        "lines": [
+          "إشارتا $P$ : − و −",
+          "النقطة $(-3\\,;\\,-4)$ لها الإشارتان نفسهما"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "ما بعد النقطة $P(-2\\,;\\,-1)$ عن محور التراتيب بالوحدات؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-DISTSWAP",
+          "value": "1"
+        },
+        {
+          "id": "MISC-MUSTAWI-NEGDIST",
+          "value": "-2"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "البعد عن محور التراتيب هو عدد الوحدات نحو اليمين أو اليسار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هذه هي الفاصلة دون إشارتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "البعد لا يكون سالبًا."
+        }
+      ],
+      "feedback": {
+        "correct": "البعد هو $2$ .",
+        "incorrect": "البعد عن محور التراتيب هو الفاصلة دون إشارته."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة النقطة هي $-2$",
+          "البعد $2$ وحدات، ولا يكون سالبًا"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

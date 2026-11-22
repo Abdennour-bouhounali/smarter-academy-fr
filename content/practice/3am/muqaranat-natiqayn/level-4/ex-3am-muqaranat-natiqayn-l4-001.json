@@ -1,0 +1,269 @@
+{
+  "id": "ex-3am-muqaranat-natiqayn-l4-001",
+  "lessonCode": "muqaranat-natiqayn",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مساحة مستطيل ومساحة مربّع",
+    "estimatedMinutes": 14,
+    "tags": [
+      "نشر",
+      "مساحة",
+      "فرق عبارتين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "قطعة أرض مستطيلة بعداها $x + 4$ و $x + 2$ ، وقطعة أرض مربّعة طول ضلعها $x + 3$ (بالمتر، و $x$ عدد موجب تمامًا)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "نكتب مساحة المستطيل $S_1 = (x + 4)(x + 2)$ على الشكل $x^2 + bx + c$ . ما العدد $b$ ؟",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العبارتان؟ وكيف يُكتب فرقهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الفرق بوضع العبارة الثانية بين قوسين ثم بسّط وانتبه إلى إشارة ما بعد الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض قيمة بسيطة للحرف في الفرق وفي النتيجة."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "6",
+      "feedback": {
+        "correct": "$S_1 = x^2 + 6x + 8$ ، إذن $b = 6$ .",
+        "incorrect": "ضع العبارة الثانية بين قوسين قبل الطرح، ثمّ بسّط."
+      },
+      "solution": {
+        "lines": [
+          "$S_1 = x^2 + 2x + 4x + 8 = x^2 + 6x + 8$"
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "نكتب مساحة المربّع $S_2 = (x + 3)^2$ على الشكل $x^2 + bx + c$ . ما العدد $c$ ؟",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $c$ فقط",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العبارتان؟ وكيف يُكتب فرقهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الفرق بوضع العبارة الثانية بين قوسين ثم بسّط وانتبه إلى إشارة ما بعد الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض قيمة بسيطة للحرف في الفرق وفي النتيجة."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "9",
+      "feedback": {
+        "correct": "$S_2 = x^2 + 6x + 9$ ، إذن $c = 9$ .",
+        "incorrect": "ضع العبارة الثانية بين قوسين قبل الطرح، ثمّ بسّط."
+      },
+      "solution": {
+        "lines": [
+          "$S_2 = x^2 + 2 \\times 3 \\times x + 3^2 = x^2 + 6x + 9$"
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب $S_1 - S_2$ بعد التبسيط، فتجد عددًا ثابتًا. ما هو؟",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر مختزل)",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العبارتان؟ وكيف يُكتب فرقهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الفرق بوضع العبارة الثانية بين قوسين ثم بسّط وانتبه إلى إشارة ما بعد الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض قيمة بسيطة للحرف في الفرق وفي النتيجة."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-1",
+      "misconceptionSignatures": [
+        {
+          "value": "17",
+          "id": "MISC-MUQ-BRACKET"
+        }
+      ],
+      "feedback": {
+        "correct": "$S_1 - S_2 = -1$ .",
+        "incorrect": "ضع العبارة الثانية بين قوسين قبل الطرح، ثمّ بسّط."
+      },
+      "solution": {
+        "lines": [
+          "$S_1 - S_2 = x^2 + 6x + 8 - (x^2 + 6x + 9)$",
+          "$S_1 - S_2 = x^2 + 6x + 8 - x^2 - 6x - 9 = -1$"
+        ]
+      }
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "أيّ القطعتين مساحتها أكبر؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما هو الفرق المبسَّط؟ ومتى يكون موجبًا ومتى يكون سالبًا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن القيمة التي ينعدم عندها الفرق، ثم انظر إلى جهتيها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر قيمة من كل جهة للتأكّد من الإشارة."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "القطعة المربّعة، مهما كانت قيمة $x$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "القطعة المستطيلة، مهما كانت قيمة $x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-ORDER-SUB"
+        },
+        {
+          "id": "C",
+          "content": "لا نستطيع الحكم دون معرفة $x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-NEED-VALUES"
+        }
+      ],
+      "feedback": {
+        "correct": "الفرق ثابت وسالب، فالمربّع أكبر دائمًا.",
+        "incorrect": "ادرس إشارة الفرق المبسَّط على جهتي القيمة التي ينعدم عندها."
+      },
+      "solution": {
+        "lines": [
+          "$S_1 - S_2 = -1 < 0$ مهما كانت قيمة $x$ ، إذن $S_2 > S_1$ ."
+        ]
+      }
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "علّل: لماذا لا يتغيّر ترتيب المساحتين عندما تتغيّر قيمة $x$ ؟",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي تريد تبريره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الفرق أوّلًا ثم إشارته ثم الخلاصة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة واحدة تربط إشارة الفرق بالمقارنة."
+        }
+      ],
+      "timeSeconds": 180,
+      "feedback": {
+        "correct": "الفرق ثابت وسالب.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثمّ قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "$S_1 - S_2 = -1$ ، والعدد $-1$ لا يتعلّق بالحرف $x$ .",
+          "الفرق سالب دائمًا، إذن $S_1 < S_2$ مهما كانت قيمة $x$ ."
+        ]
+      }
+    }
+  ]
+}

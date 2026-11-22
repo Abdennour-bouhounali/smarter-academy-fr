@@ -1,0 +1,220 @@
+{
+  "id": "ex-3am-tasawi-muqaranat-kasrayn-l4-008",
+  "lessonCode": "tasawi-muqaranat-kasrayn",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — حاصل قسمة وعدد كسري",
+    "estimatedMinutes": 10,
+    "tags": [
+      "قسمة كسر",
+      "مقارنة كسرين",
+      "تعليل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "ليكن $A = \\dfrac{5}{6} \\div \\dfrac{5}{12}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $A$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كل سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$2$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{5}{6} \\times \\dfrac{12}{5} = \\dfrac{60}{30} = 2$ ."
+        ],
+        "result": "2"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "قارن $A$ و $\\dfrac{13}{6}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2 < \\dfrac{13}{6}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$2 = \\dfrac{13}{6}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-EYE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكسران المطلوب مقارنتهما؟ وهل مقاماهما أو بسطاهما متساويان؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسرين بنفس المقام، أو قارن الجداءين المتصالبين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من النتيجة بالطريقة الأخرى."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 < \\dfrac{13}{6}$ .",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "المقام المشترك $6$ : $2 = \\dfrac{12}{6}$ و $\\dfrac{13}{6} = \\dfrac{13}{6}$ .",
+          "إذن $2 < \\dfrac{13}{6}$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "جد العدد $x$ حيث $2 = \\dfrac{x}{6}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-TASAWI-ADDSAME"
+        },
+        {
+          "value": "3",
+          "id": "MISC-TASAWI-CROSSWRONG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في أيّ موضع يوجد العدد المجهول؟ وما الكسر الآخر في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كسران متساويان جداءاهما المتصالبان متساويان: اكتب المعادلة المناسبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة كتابة المساواة بعد التعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 12$ لأنّ $2 \\times 6 = 1 \\times x$ .",
+        "incorrect": "كسران متساويان جداءاهما المتصالبان متساويان: اكتب المعادلة بدقّة وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2}{1} = \\dfrac{x}{6}$ ، إذن $2 \\times 6 = 1 \\times x$ .",
+          "$x = 12$ ."
+        ],
+        "result": "x = 12"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "برّر المقارنة السابقة بكتابة $2$ بالمقام $6$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجب أن تبرّره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل الجداءين المتصالبين أو مقامًا مشتركًا، وسمِّ الطريقة التي اخترتها."
+        }
+      ],
+      "feedback": {
+        "correct": "إذن $2 < \\dfrac{13}{6}$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "$2 = \\dfrac{12}{6}$ و $12 < 13$ .",
+          "إذن $2 < \\dfrac{13}{6}$ ."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

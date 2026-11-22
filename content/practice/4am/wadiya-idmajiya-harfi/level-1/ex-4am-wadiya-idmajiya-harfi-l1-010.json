@@ -1,0 +1,126 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-harfi-l1-010",
+  "lessonCode": "wadiya-idmajiya-harfi",
+  "level": 1,
+  "metadata": {
+    "title": "فرق مربعين وحساب دون آلة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "فرق مربعين",
+      "تحليل"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 40,
+      "section": "الوضعيات",
+      "number": 11,
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-harfi-l1-010"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $E$ حيث :",
+    "formulas": [
+      "E = x^2 - 25"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "حلّل العبارة $E$ إلى جداء عاملين من الدرجة الأولى.",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $(x - m)(x + m)$ حيث $m$ عدد موجب : اكتب العدد $m$ فقط",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "25",
+          "id": "MISC-TAHLIL-FARQ-MURABBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العبارة على الشكل $a^2 - b^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل المتطابقة $a^2 - b^2 = (a - b)(a + b)$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بسّط ما بداخل كل قوس."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = (x - 5)(x + 5)$ إذن $m = 5$ .",
+        "incorrect": "تحقّق من تحليلك بنشر الجداء: يجب أن تجد العبارة الأصلية."
+      },
+      "solution": {
+        "lines": [
+          "$E = x^2 - 5^2$"
+        ],
+        "result": "E = (x - 5)(x + 5)"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج دون استعمال الآلة الحاسبة قيمة العدد $105^2 - 25$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "11000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد المطلوب هو قيمة $E$ من أجل قيمة مناسبة لـ $x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل الشكل المحلّل."
+        }
+      ],
+      "feedback": {
+        "correct": "$105^2 - 25 = 11000$ .",
+        "incorrect": "عوّض بالقيمة المعطاة في الشكل المناسب، واحسب بعناية مع احترام أولويات العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$105^2 - 25$ هو قيمة $E$ من أجل $x = 105$ :",
+          "$105^2 - 25 = (105 - 5)(105 + 5) = 100 \\times 110$"
+        ],
+        "result": "105^2 - 25 = 11000"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

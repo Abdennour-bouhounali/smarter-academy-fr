@@ -1,0 +1,120 @@
+{
+  "id": "ex-4am-mafhum-taalufiya-l1-004",
+  "lessonCode": "mafhum-taalufiya",
+  "level": 1,
+  "metadata": {
+    "title": "معاملا دالة تآلفية",
+    "estimatedMinutes": 3,
+    "tags": [
+      "المعاملان a و b"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-2",
+      "page": 78,
+      "section": "أنشطة",
+      "number": 2,
+      "adaptedFrom": "ex-4am-mafhum-taalufiya-l1-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الدالة التآلفية $f$ المعرّفة كما يلي:",
+    "formulas": [
+      "f : x \\longmapsto -2x + 1"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عيّن المعاملين $a$ و $b$ للدالة $f$ .",
+      "statement": "المعامل $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعامل $a$ هو العدد الذي يُضرب في $x$ ، أينما كُتب في العبارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب العبارة على الشكل $ax + b$ ثم اقرأ معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = -2$ : هو معامل $x$ .",
+        "incorrect": "المعامل $a$ هو العدد المضروب في $x$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = -2x + 1$ من الشكل $ax + b$ حيث: $a = -2$ و $b = 1$ ."
+        ],
+        "result": "a = -2"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "المعامل $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "-2",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحدّ الثابت $b$ هو العدد الذي لا يُضرب في $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$b = 1$ ، إذن $f(x) = -2x + 1$ .",
+        "incorrect": "$b$ هو الحدّ الذي لا يحتوي على $x$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = -2x + 1$ من الشكل $ax + b$ حيث: $a = -2$ و $b = 1$ ."
+        ],
+        "result": "b = 1"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

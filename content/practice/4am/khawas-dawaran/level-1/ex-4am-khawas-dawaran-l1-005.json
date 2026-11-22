@@ -1,0 +1,78 @@
+{
+  "id": "ex-4am-khawas-dawaran-l1-005",
+  "lessonCode": "khawas-dawaran",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — صورة المنتصف",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الاستقامية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_khawas-dawaran_P1",
+      "modelledOn": "know-3"
+    }
+  },
+  "generator": {
+    "tool": "u13-khawas-dawaran/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "M منتصف القطعة [AB]. A′ و B′ و M′ صور A و B و M بدوران مركزه O."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "النقطة M′:",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "على [A′B′] لكنها ليست منتصفها",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-KHAWAS"
+        },
+        {
+          "id": "B",
+          "content": "ليست على المستقيم (A′B′)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-KHAWAS"
+        },
+        {
+          "id": "C",
+          "content": "منتصف القطعة [A′B′]",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "A و M و B على استقامية و AM = MB."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الدوران يحافظ على الاستقامية وعلى الأطوال."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق الخاصيتين معا."
+        }
+      ],
+      "feedback": {
+        "correct": "A′ و M′ و B′ على استقامية و $A'M' = AM = MB = M'B'$ .",
+        "incorrect": "الدوران يحافظ على الاستقامية والأطوال معا."
+      }
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l4-008",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2023 — A = 4410/15",
+    "estimatedMinutes": 11,
+    "tags": [
+      "قواسم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qawasim-adad-tabii_P2",
+      "modelledOn": "BEM 2023 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد A حيث:",
+    "formulas": [
+      "A = \\dfrac{4410}{15}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب العدد A على شكل عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "294",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ قسمة 4410 على 15."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق أن الباقي معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$4410 = 15 \\times 294$.",
+        "incorrect": "اقسم 4410 على 15 وتحقّق أن الباقي معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$15 \\times 294 = 4410$",
+          "إذن A عدد طبيعي."
+        ],
+        "result": "A = 294"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عيّن كل قواسم العدد A.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        6,
+        7,
+        14,
+        21,
+        42,
+        49,
+        98,
+        147,
+        294
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            6,
+            7,
+            14,
+            21,
+            42,
+            49,
+            98,
+            147
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 294 بمربعات الأعداد: إلى أي عدد يكفي أن تختبر قابلية القسمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل قسمة باقيها معدوم تعطي قاسمين: $d$ و $294 \\div d$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$294 = 1 \\times 294$ ، $294 = 2 \\times 147$ ، $294 = 3 \\times 98$ ، $294 = 6 \\times 49$ ، $294 = 7 \\times 42$ ، $294 = 14 \\times 21$.",
+        "incorrect": "اختبر الأعداد التي مربعها أصغر من العدد أو يساويه، وخذ من كل قسمة باقيها معدوم القاسمين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$17^2 = 289 \\leq 294 < 324 = 18^2$ ومنه نختبر قابلية قسمة 294 على الأعداد من 1 إلى 17.",
+          "نجد أن 294 يقبل القسمة على كل من الأعداد: 1 ، 2 ، 3 ، 6 ، 7 ، 14.",
+          "ومن المساويات: $294 = 1 \\times 294$ ، $294 = 2 \\times 147$ ، $294 = 3 \\times 98$ ، $294 = 6 \\times 49$ ، $294 = 7 \\times 42$ ، $294 = 14 \\times 21$",
+          "إذن قواسم العدد 294 هي: 1 ، 2 ، 3 ، 6 ، 7 ، 14 ، 21 ، 42 ، 49 ، 98 ، 147 ، 294."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 330
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "استنتج قيم العدد الطبيعي $a$ التي من أجلها يكون $\\dfrac{A}{a}$ عددا طبيعيا فرديا.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        2,
+        6,
+        14,
+        42,
+        98,
+        294
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يجب أن يكون $a$ قاسما للعدد A."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $\\dfrac{294}{a}$ من أجل كل قاسم واحتفظ بالحالات التي يكون فيها فرديا."
+        }
+      ],
+      "feedback": {
+        "correct": "$294 = 2 \\times 147$ و 147 فردي: يكون $\\dfrac{294}{a}$ فرديا عندما يكون $a$ زوجيا.",
+        "incorrect": "احسب حاصل قسمة 294 على كل قاسم من قواسمه، واحتفظ بالقواسم التي يكون فيها هذا الحاصل فرديا."
+      },
+      "solution": {
+        "lines": [
+          "قواسم 294: 1 ، 2 ، 3 ، 6 ، 7 ، 14 ، 21 ، 42 ، 49 ، 98 ، 147 ، 294.",
+          "$\\dfrac{294}{2} = 147$ ، $\\dfrac{294}{6} = 49$ ، $\\dfrac{294}{14} = 21$ ، $\\dfrac{294}{42} = 7$ ، $\\dfrac{294}{98} = 3$ ، $\\dfrac{294}{294} = 1$ : أعداد فردية.",
+          "أما من أجل القواسم الفردية 1 ، 3 ، 7 ، 21 ، 49 ، 147 فالحاصل زوجي.",
+          "إذن قيم $a$ هي: 2 ، 6 ، 14 ، 42 ، 98 ، 294."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

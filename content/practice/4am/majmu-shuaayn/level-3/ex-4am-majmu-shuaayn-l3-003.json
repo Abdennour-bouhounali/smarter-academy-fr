@@ -1,0 +1,183 @@
+{
+  "id": "ex-4am-majmu-shuaayn-l3-003",
+  "lessonCode": "majmu-shuaayn",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 14 — أنشئ النقطة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "إنشاء ممثل"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-14",
+      "page": 135,
+      "section": "مجموع شعاعين - علاقة شال",
+      "number": 14
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (تمرين 14): ABC مثلث كيفي."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "النقطة E حيث $\\overrightarrow{CE} = \\overrightarrow{BC} + \\overrightarrow{CA}$ هي",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صورة A بالانسحاب الذي يحوّل B إلى C",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSIHAB-SURA"
+        },
+        {
+          "id": "B",
+          "content": "صورة C بالانسحاب الذي يحوّل B إلى A",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "النقطة A نفسها",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-RABT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى نهاية الشعاع الأول ومبدأ الشعاع الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "علاقة شال تتطلب أن تكون نهاية الأول مبدأ الثاني؛ يمكن تبديل ترتيب الحدّين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع يبدأ من مبدأ الأول وينتهي عند نهاية الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "شال: $\\overrightarrow{BC} + \\overrightarrow{CA} = \\overrightarrow{BA}$ ، فـ $\\overrightarrow{CE} = \\overrightarrow{BA}$ .",
+        "incorrect": "علاقة شال: نهاية الأول مبدأ الثاني، والمجموع من مبدأ الأول إلى نهاية الثاني."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "النقطة F حيث $\\overrightarrow{BF} = \\overrightarrow{BA} + \\overrightarrow{AC}$ هي",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "النقطة A",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSIHAB-NISYAN"
+        },
+        {
+          "id": "B",
+          "content": "نظيرة A بالنسبة إلى C",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-JAM-ATWAL"
+        },
+        {
+          "id": "C",
+          "content": "النقطة C",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى نهاية الشعاع الأول ومبدأ الشعاع الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "علاقة شال تتطلب أن تكون نهاية الأول مبدأ الثاني؛ يمكن تبديل ترتيب الحدّين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع يبدأ من مبدأ الأول وينتهي عند نهاية الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "شال: $\\overrightarrow{BA} + \\overrightarrow{AC} = \\overrightarrow{BC}$ ، فـ $\\overrightarrow{BF} = \\overrightarrow{BC}$ و $F = C$ .",
+        "incorrect": "علاقة شال: نهاية الأول مبدأ الثاني، والمجموع من مبدأ الأول إلى نهاية الثاني."
+      }
+    },
+    {
+      "id": "q3",
+      "statement": "النقطة D حيث $\\overrightarrow{BD} = \\overrightarrow{AB} + \\overrightarrow{AC}$ هي صورة B بالانسحاب الذي شعاعه",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{AX}$ حيث ABXC متوازي أضلاع",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{BC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-QAIDA-QUTR"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{AC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSIHAB-NISYAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للشعاعين نفس المبدأ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "شعاعان لهما نفس المبدأ يُجمعان بقاعدة متوازي الأضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع هو القطر الصادر من المبدأ المشترك، لا القطر الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "قاعدة متوازي الأضلاع: $\\overrightarrow{AB} + \\overrightarrow{AC} = \\overrightarrow{AX}$ حيث ABXC متوازي أضلاع.",
+        "incorrect": "قاعدة متوازي الأضلاع: مجموع شعاعين لهما نفس المبدأ هو القطر الصادر من ذلك المبدأ."
+      }
+    }
+  ]
+}

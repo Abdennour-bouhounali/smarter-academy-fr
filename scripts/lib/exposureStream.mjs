@@ -382,7 +382,12 @@ export function buildModuleStream(file, ctx) {
 
     if (steps.__mapped) {
       // `DATA.map((s, i) => ({…}))` : the template is walked once per row, so
-      // each situation's own prompt and explanation enter the stream.
+      // each situation's own prompt and explanation enter the stream. When
+      // DATA is IMPORTED (a content module, phase 8) rather than a local array
+      // literal, the rows are not statically visible: the lesson's `requires`
+      // contract on those steps cannot be read here, and we say so instead of
+      // crashing the audit for every lesson after it.
+      if (!steps.source?.elements) return { segments, unparseable: 'steps(imported data)', rootName };
       const rows = steps.source.elements.filter((el) => el?.type === 'ObjectExpression');
       const body = unwrapRender(steps.callback.body);
       const param = steps.callback.params[0];

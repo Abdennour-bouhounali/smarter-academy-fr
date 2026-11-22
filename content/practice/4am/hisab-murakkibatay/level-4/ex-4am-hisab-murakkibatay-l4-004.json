@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l4-004",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — المساواة الصحيحة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "متوازي أضلاع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hisab-murakkibatay_P3",
+      "modelledOn": "method-equal"
+    }
+  },
+  "statement": {
+    "content": "$M(0\\,;\\,2)$ ، $N(4\\,;\\,3)$ ، $P(5\\,;\\,-1)$ ، و Q نقطة مجهولة نريد أن يكون MNPQ متوازي أضلاع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المعادلتان اللتان تعطيان Q هما:",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x_Q - 5 = 4$ و $y_Q + 1 = 1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-TARTIB-NUQAT"
+        },
+        {
+          "id": "B",
+          "content": "$x_Q - 0 = 4$ و $y_Q - 2 = 3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        },
+        {
+          "id": "C",
+          "content": "$5 - x_Q = 4$ و $-1 - y_Q = 1$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المساواة الشعاعية لمتوازي الأضلاع MNPQ بترتيب رؤوسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع الأول ومقابله في الاتجاه نفسه: $\\overrightarrow{MN} = \\overrightarrow{QP}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب معادلتين (للفاصلة وللترتيب) وحلّهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{MN} = \\overrightarrow{QP}$ : $x_P - x_Q = 4$ و $y_P - y_Q = 1$ ، ومنه $Q(1\\,;\\,-2)$ .",
+        "incorrect": "MNPQ متوازي أضلاع: MN = QP، والمبدأ Q."
+      }
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-jumal-l4-009",
+  "lessonCode": "wadiya-idmajiya-jumal",
+  "level": 4,
+  "metadata": {
+    "title": "مثلث متقايس الساقين",
+    "estimatedMinutes": 11,
+    "tags": [
+      "ترييض",
+      "محيط",
+      "فيثاغورس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-jumal_P2",
+      "modelledOn": "ex-19"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "$ABC$ مثلث متقايس الساقين رأسه $A$ ، محيطه $32cm$ ، وطول كل من ساقيه يزيد عن طول قاعدته $[BC]$ بـ $4cm$ .\nنسمّي $x$ طول الساق و $y$ طول القاعدة (بالسنتيمتر)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن $x$ و $y$ يحققان الجملة: $\\begin{cases} 2x + y = 32 \\\\ x - y = 4 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "للمثلث المتقايس الساقين ضلعان متقايسان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المحيط = مجموع أطوال الأضلاع الثلاثة."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "المحيط: ساقان وقاعدة: $2x + y = 32$",
+          "الساق تزيد عن القاعدة بـ $4cm$ : $x - y = 4$",
+          "ومنه: $\\begin{cases} 2x + y = 32 \\\\ x - y = 4 \\end{cases}$"
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حل هذه الجملة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": {
+        "x": "12",
+        "y": "8"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "8",
+            "y": "12"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معاملا $y$ متعاكسان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المعادلتين طرفا لطرف."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض قيمة $x$ في المعادلة الثانية."
+        }
+      ],
+      "feedback": {
+        "correct": "الساق $12cm$ والقاعدة $8cm$ .",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} 2x + y = 32 & ...(1) \\\\ x - y = 4 & ...(2) \\end{cases}$",
+          "بجمع المعادلتين (1) و (2) طرفا لطرف نجد:",
+          "$3x = 36$",
+          "$x = 12$",
+          "بتعويض $x$ بـ $12$ في المعادلة (1) نجد: $2 \\times 12 + y = 32$",
+          "$y = 8$",
+          "التحقق في النص: $2 \\times 12 + 8 = 32$ و $12 - 8 = 4$ .",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(12 ; 8)"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "لتكن $H$ منتصف $[BC]$ .",
+      "statement": "احسب الطول $AH$ ثم اكتبه على الشكل $a\\sqrt{2}$ حيث $a$ عدد طبيعي. أعط $a$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $ABH$ قائم في $H$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق خاصية فيثاغورس ثم اكتب الجذر على أبسط شكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$AH = 8\\sqrt{2}\\,cm$ .",
+        "incorrect": "احسب $BH$ أولا (نصف القاعدة) ثم طبّق خاصية فيثاغورس."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث المتقايس الساقين، المتوسط $[AH]$ عمودي على القاعدة، و $BH = \\dfrac{8}{2} = 4$",
+          "حسب خاصية فيثاغورس في المثلث $ABH$ القائم في $H$ : $AH^2 = AB^2 - BH^2 = 144 - 16 = 128$",
+          "$AH = \\sqrt{128} = \\sqrt{64 \\times 2} = 8\\sqrt{2}$"
+        ],
+        "result": "AH = 8\\sqrt{2}\\,cm"
+      },
+      "timeSeconds": 240
+    }
+  ]
+}

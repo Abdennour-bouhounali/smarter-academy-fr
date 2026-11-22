@@ -1,0 +1,79 @@
+{
+  "id": "ex-4am-barahin-ashia-l1-005",
+  "lessonCode": "barahin-ashia",
+  "level": 1,
+  "generator": {
+    "tool": "gen-barahin.mjs",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — المنتصف بالأشعة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "منتصف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_barahin-ashia_P2",
+      "modelledOn": "method-proof"
+    }
+  },
+  "statement": {
+    "content": "E و F نقطتان متمايزتان، و I نقطة من المستوي."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "I منتصف القطعة [EF] يعني:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{EI}$ = $\\overrightarrow{IF}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{EI}$ = $\\overrightarrow{FI}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MUNTASAF-IB-IA"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{IE}$ = $\\overrightarrow{IF}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المنتصف يقسم [EF] إلى قطعتين متقايستين على استقامة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السير من E إلى I ثم من I إلى F في الاتجاه نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الشعاعان المتساويان لهما نفس المنحى ونفس الاتجاه ونفس الطول."
+        }
+      ],
+      "feedback": {
+        "correct": "I منتصف [EF] : $\\overrightarrow{EI} = \\overrightarrow{IF}$ (نفس الاتجاه من E نحو F).",
+        "incorrect": "$\\overrightarrow{FI}$ و $\\overrightarrow{IE}$ يعاكسان الاتجاه: المنتصف يعطي $\\overrightarrow{EI} = \\overrightarrow{IF}$ ."
+      }
+    }
+  ]
+}

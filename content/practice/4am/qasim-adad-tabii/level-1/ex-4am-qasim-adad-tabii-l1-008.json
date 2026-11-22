@@ -1,0 +1,162 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l1-008",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2016 — العدد 1001",
+    "estimatedMinutes": 4,
+    "tags": [
+      "الباقي",
+      "يقبل القسمة على"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-adad-tabii_P1",
+      "modelledOn": "BEM 2016 I-1 01"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد الطبيعي 1001."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب باقي القسمة الإقليدية للعدد 1001 على كلٍّ من 7 و 9.",
+      "statement": "على 7:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $7 \\times 143$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي أصغر تمامًا من 7."
+        }
+      ],
+      "feedback": {
+        "correct": "$1001 = 7 \\times 143 + 0$: الباقي معدوم.",
+        "incorrect": "اطرح من 1001 أكبر مضاعف للعدد 7 لا يتجاوزه."
+      },
+      "solution": {
+        "lines": [
+          "$1001 = 7 \\times 143 + 0$"
+        ],
+        "result": "r = 0"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "على 9:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $9 \\times 111$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي أصغر تمامًا من 9."
+        }
+      ],
+      "feedback": {
+        "correct": "$1001 = 9 \\times 111 + 2$ مع $2 < 9$.",
+        "incorrect": "اطرح من 1001 أكبر مضاعف للعدد 9 لا يتجاوزه."
+      },
+      "solution": {
+        "lines": [
+          "$9 \\times 111 = 999$",
+          "$1001 = 9 \\times 111 + 2$ مع $2 < 9$"
+        ],
+        "result": "r = 2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل العدد 1001 يقبل القسمة على 9؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 1001 على 9."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "9 قاسم للعدد 1001 إذا وفقط إذا كان باقي هذه القسمة معدومًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$1001 = 9 \\times 111 + 2$: الباقي غير معدوم.",
+        "incorrect": "أجرِ القسمة الإقليدية للعدد 1001 على 9، وانظر هل الباقي معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$1001 = 9 \\times 111 + 2$ مع $2 < 9$",
+          "الباقي 2 غير معدوم، إذن 1001 لا يقبل القسمة على 9."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

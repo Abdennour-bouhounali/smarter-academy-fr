@@ -1,0 +1,175 @@
+{
+  "id": "ex-4am-alaqat-muthallathiya-l3-008",
+  "lessonCode": "alaqat-muthallathiya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2017 — جيب 2/3: نسبة مقامها عدد ناطق",
+    "estimatedMinutes": 8,
+    "tags": [
+      "العلاقات المثلثية",
+      "الجذور"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_alaqat-muthallathiya_P2",
+      "modelledOn": "BEM 2017 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2017",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$x$ قيس زاوية حادة حيث: $\\sin x = \\dfrac{2}{3}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب $\\cos x$ على الشكل $\\dfrac{\\sqrt{a}}{3}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-MUTH-ISHARA-ALAQA"
+        },
+        {
+          "value": "3",
+          "id": "MISC-MUTH-JADHR-NASI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العلاقة التي تربط جيب الزاوية وجيب تمامها هي $\\cos^2 x + \\sin^2 x = 1$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اعزل $\\cos^2 x$ ثم عوّض الجيب بقيمته، ولا تنس تربيع البسط والمقام معا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\cos x$ عدد موجب تماما: خذ الجذر التربيعي الموجب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\cos^2 x = 1 - \\dfrac{4}{9} = \\dfrac{5}{9}$ ، إذن $\\cos x = \\dfrac{\\sqrt{5}}{3}$ .",
+        "incorrect": "احسب $\\cos^2 x$ بالعلاقة بين المربعين ثم خذ الجذر الموجب."
+      },
+      "solution": {
+        "lines": [
+          "$\\cos^2 x = 1 - \\sin^2 x = 1 - \\dfrac{4}{9} = \\dfrac{5}{9}$",
+          "$\\cos x > 0$ ، إذن $\\cos x = \\dfrac{\\sqrt{5}}{\\sqrt{9}}$"
+        ],
+        "result": "\\cos x = \\dfrac{\\sqrt{5}}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب $\\tan x$ على شكل نسبة مقامها عدد ناطق، من الشكل $\\dfrac{a\\sqrt{5}}{5}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\tan x = \\dfrac{\\sin x}{\\cos x}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد الاختزال اضرب البسط والمقام في $\\sqrt{5}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan x = \\dfrac{2}{3} \\times \\dfrac{3}{\\sqrt{5}} = \\dfrac{2}{\\sqrt{5}} = \\dfrac{2\\sqrt{5}}{5}$ .",
+        "incorrect": "اقسم الجيب على جيب التمام، ثم اجعل المقام عددا ناطقا."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan x = \\dfrac{\\sin x}{\\cos x} = \\dfrac{2}{3} \\div \\dfrac{\\sqrt{5}}{3} = \\dfrac{2}{\\sqrt{5}}$",
+          "$\\tan x = \\dfrac{2 \\times \\sqrt{5}}{\\sqrt{5} \\times \\sqrt{5}}$"
+        ],
+        "result": "\\tan x = \\dfrac{2\\sqrt{5}}{5}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ليكن العدد $C = 5\\tan^2 x + 9\\cos^2 x$ . بيّن أن $C$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $C$ (عدد طبيعي)",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "29",
+          "id": "MISC-MUTH-TARBI-BASTI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل $\\tan^2 x$ و $\\cos^2 x$ دون جذور."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع $\\dfrac{2}{\\sqrt{5}}$ هو $\\dfrac{4}{5}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = 5 \\times \\dfrac{4}{5} + 9 \\times \\dfrac{5}{9} = 4 + 5 = 9$ .",
+        "incorrect": "ربّع البسط والمقام في كل كسر، ثم احسب."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan^2 x = \\dfrac{4}{5}$ و $\\cos^2 x = \\dfrac{5}{9}$",
+          "$C = 5 \\times \\dfrac{4}{5} + 9 \\times \\dfrac{5}{9} = 4 + 5$",
+          "$C = 9$ وهو عدد طبيعي."
+        ],
+        "result": "C = 9"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

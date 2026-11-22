@@ -1,0 +1,159 @@
+{
+  "id": "ex-4am-mutatabiqat-shahira-l5-007",
+  "lessonCode": "mutatabiqat-shahira",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2021 — ورشة الزجاج",
+    "estimatedMinutes": 9,
+    "tags": [
+      "حساب ذهني",
+      "فرق مربعين",
+      "مربع فرق",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mutatabiqat-shahira_P4",
+      "modelledOn": "BEM 2021 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تصنع ورشة للزجاج بعنابة مرايا مربعة الشكل: تقطع من لوح زجاجي مربع طول ضلعه $1{,}05$ m مرآة مربعة طول ضلعها $0{,}95$ m ، ويُعاد تدوير الشريط الباقي من اللوح حفاظًا على البيئة وتجنّبًا للتبذير."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب، دون وضع العملية ومستعملا المتطابقة $a^2 - b^2 = (a + b)(a - b)$ ، مساحة الشريط الباقي من لوح واحد $1{,}05^2 - 0{,}95^2$ (بالمتر المربع).",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة)",
+      "expectedAnswer": "0.2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على فرق مربعين: $a^2 - b^2 = (a + b)(a - b)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب المجموع والفرق أولًا، ثم اضرب النتيجتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}05^2 - 0{,}95^2 = 0{,}2$ .",
+        "incorrect": "اكتب العدد بدلالة عدد مدوّر، ثم طبّق المتطابقة الشهيرة المناسبة حدًّا حدًّا."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}05^2 - 0{,}95^2 = (1{,}05 + 0{,}95)(1{,}05 - 0{,}95)$",
+          "$= 2 \\times 0{,}1$"
+        ],
+        "result": "1{,}05^2 - 0{,}95^2 = 0{,}2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب ذهنيا مساحة المرآة الواحدة $0{,}95^2$ (بالمتر المربع)، بكتابة $0{,}95 = 1 - 0{,}05$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة)",
+      "expectedAnswer": "0.9025",
+      "misconceptionSignatures": [
+        {
+          "value": "1.0025",
+          "id": "MISC-HISAB-DHIHNI-MURABBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العدد على شكل فرق عدد مدوّر وعدد صغير."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق $(a - b)^2 = a^2 - 2ab + b^2$ ، ولا تنسَ الحد المضاعف $2ab$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}95^2 = 0{,}9025$ .",
+        "incorrect": "اكتب العدد بدلالة عدد مدوّر، ثم طبّق المتطابقة الشهيرة المناسبة حدًّا حدًّا."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}95^2 = (1 - 0{,}05)^2$",
+          "$= 1^2 - 2 \\times 1 \\times 0{,}05 + (0{,}05)^2$",
+          "$= 1 - 0{,}1 + 0{,}0025$"
+        ],
+        "result": "0{,}95^2 = 0{,}9025"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "☜ تبيع الورشة المتر المربع من المرايا بـ 4000DA . ما مدخول الورشة من بيع 200 مرآة؟",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدينار DA)",
+      "expectedAnswer": "722000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المساحة الكلية للمرايا: 200 × مساحة المرآة الواحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب المساحة الكلية في ثمن المتر المربع."
+        }
+      ],
+      "feedback": {
+        "correct": "$200 \\times 0{,}9025 = 180{,}5\\ m^2$ ، و $180{,}5 \\times 4000 = 722000$ DA .",
+        "incorrect": "استعمل مساحة المرآة (لا مساحة اللوح كله)، ثم احسب المساحة الكلية للمرايا."
+      },
+      "solution": {
+        "lines": [
+          "المساحة الكلية: $200 \\times 0{,}9025 = 180{,}5\\ m^2$",
+          "المدخول: $180{,}5 \\times 4000 = 722000$ DA"
+        ],
+        "result": "722000\\ DA"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

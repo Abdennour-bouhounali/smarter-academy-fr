@@ -1,0 +1,278 @@
+{
+  "id": "ex-4am-alaqat-muthallathiya-l5-003",
+  "lessonCode": "alaqat-muthallathiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2017 — برج مراقبة الحرائق في غابة بني صالح",
+    "estimatedMinutes": 20,
+    "tags": [
+      "الوضعية الإدماجية",
+      "العلاقات المثلثية",
+      "خط النظر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_alaqat-muthallathiya_P2",
+      "modelledOn": "BEM 2017 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2017",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في غابة بني صالح بولاية الطارف برج لمراقبة الحرائق. عين الحارس في النقطة $T$ على ارتفاع $TH = 36\\,\\mathrm{m}$ من الأرض الأفقية، حيث $H$ أسفل البرج الشاقولي. يرى الحارس دخانا في النقطة $F$ من الأرض، ويعطيه منظار التصويب جيب تمام الزاوية $y = \\widehat{HTF}$ بين البرج وخط النظر $[TF]$ : $\\cos y = \\dfrac{9}{41}$ . تعليمات الحراسة: إذا كان الحريق على بعد أقل من $150\\,\\mathrm{m}$ من أسفل البرج يتدخّل فريق الحراسة الراجل، وإلا تُستدعى الحماية المدنية. ويؤدّي الحارس أمانة حماية الغابة بيقظة وإتقان."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب القيمتين المضبوطتين لـ $\\sin y$ و $\\tan y$ .",
+      "statement": "$\\sin y$ :",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "40/41",
+      "misconceptionSignatures": [
+        {
+          "value": "32/41",
+          "id": "MISC-MUTH-JAMA-NISAB"
+        },
+        {
+          "value": "1600/1681",
+          "id": "MISC-MUTH-JADHR-NASI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العلاقة التي تربط جيب الزاوية وجيب تمامها هي $\\cos^2 y + \\sin^2 y = 1$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اعزل $\\sin^2 y$ ثم عوّض جيب التمام بقيمته، ولا تنس تربيع البسط والمقام معا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\sin y$ عدد موجب تماما: خذ الجذر التربيعي الموجب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin^2 y = 1 - \\dfrac{81}{1681} = \\dfrac{1600}{1681}$ ، إذن $\\sin y = \\dfrac{40}{41}$ .",
+        "incorrect": "استعمل العلاقة $\\cos^2 x + \\sin^2 x = 1$ (بين المربعين)، ثم خذ الجذر التربيعي الموجب."
+      },
+      "solution": {
+        "lines": [
+          "$\\sin^2 y + \\cos^2 y = 1$ ، إذن $\\sin^2 y = 1 - \\left(\\dfrac{9}{41}\\right)^2 = 1 - \\dfrac{81}{1681} = \\dfrac{1600}{1681}$",
+          "$\\sin y$ عدد موجب، إذن $\\sin y = \\sqrt{\\dfrac{1600}{1681}}$"
+        ],
+        "result": "\\sin y = \\dfrac{40}{41}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$\\tan y$ :",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "40/9",
+      "misconceptionSignatures": [
+        {
+          "value": "9/40",
+          "id": "MISC-MUTH-TAN-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الظل هو حاصل قسمة الجيب على جيب التمام: $\\tan y = \\dfrac{\\sin y}{\\cos y}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على كسر هي الضرب في مقلوبه، ثم اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan y = \\dfrac{40}{41} \\div \\dfrac{9}{41} = \\dfrac{40}{9}$ .",
+        "incorrect": "الظل = الجيب ÷ جيب التمام؛ القسمة على كسر هي الضرب في مقلوبه."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan y = \\dfrac{\\sin y}{\\cos y} = \\dfrac{40}{41} \\div \\dfrac{9}{41}$"
+        ],
+        "result": "\\tan y = \\dfrac{40}{9}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب المسافة $HF$ بين أسفل البرج والحريق.",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المسافة بـ m",
+      "expectedAnswer": "160",
+      "misconceptionSignatures": [
+        {
+          "value": "81/10",
+          "id": "MISC-MUTH-TAN-QISMA-MAQLUBA"
+        },
+        {
+          "value": "1440/41",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $THF$ القائم في $H$ : بالنسبة إلى الزاوية $y$ ، $[TH]$ مجاور و $[HF]$ مقابل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الظل يربط المقابل بالمجاور."
+        }
+      ],
+      "feedback": {
+        "correct": "$HF = TH \\times \\tan y = 36 \\times \\dfrac{40}{9} = 160\\,\\mathrm{m}$ .",
+        "incorrect": "الزاوية $y$ رأسها $T$ : المقابل لها هو $[HF]$ ، والمجاور هو البرج."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $THF$ القائم في $H$ : $\\tan y = \\dfrac{HF}{TH}$",
+          "$HF = 36 \\times \\dfrac{40}{9}$"
+        ],
+        "result": "HF = 160\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب طول خط النظر $TF$ .",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "164",
+      "misconceptionSignatures": [
+        {
+          "value": "324/41",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$[TF]$ هو الوتر، و $[TH]$ مجاور للزاوية $y$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المجهول في مقام جيب التمام."
+        }
+      ],
+      "feedback": {
+        "correct": "$TF = \\dfrac{TH}{\\cos y} = 36 \\times \\dfrac{41}{9} = 164\\,\\mathrm{m}$ .",
+        "incorrect": "الوتر = المجاور ÷ جيب التمام."
+      },
+      "solution": {
+        "lines": [
+          "$\\cos y = \\dfrac{TH}{TF}$ ، إذن $TF = \\dfrac{TH}{\\cos y} = 36 \\div \\dfrac{9}{41} = 36 \\times \\dfrac{41}{9}$"
+        ],
+        "result": "TF = 164\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "من يجب أن يتدخّل حسب تعليمات الحراسة؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "فريق الحراسة الراجل",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-TAN-QISMA-MAQLUBA"
+        },
+        {
+          "id": "B",
+          "content": "الحماية المدنية",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة التي تقارن بها التعليمات هي المسافة على الأرض من أسفل البرج."
+        }
+      ],
+      "feedback": {
+        "correct": "$HF = 160\\,\\mathrm{m} \\geqslant 150\\,\\mathrm{m}$ : تُستدعى الحماية المدنية.",
+        "incorrect": "قارن المسافة $HF$ بـ $150\\,\\mathrm{m}$ ."
+      },
+      "solution": {
+        "lines": [
+          "المسافة بين أسفل البرج والحريق $HF = 160\\,\\mathrm{m}$ ، و $160 > 150$ .",
+          "إذن تُستدعى الحماية المدنية."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

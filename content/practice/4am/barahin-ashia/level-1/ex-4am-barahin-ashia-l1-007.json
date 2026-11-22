@@ -1,0 +1,80 @@
+{
+  "id": "ex-4am-barahin-ashia-l1-007",
+  "lessonCode": "barahin-ashia",
+  "level": 1,
+  "generator": {
+    "tool": "gen-barahin.mjs",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — ممثّل مجموع شعاعين",
+    "estimatedMinutes": 3,
+    "tags": [
+      "إنشاء",
+      "علاقة شال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_barahin-ashia_P3",
+      "modelledOn": "now-138"
+    }
+  },
+  "statement": {
+    "content": "$\\vec{u}$ و $\\vec{v}$ شعاعان، و O نقطة. نريد إنشاء ممثّل $\\vec{u} + \\vec{v}$ الذي مبدؤه O ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "نرسم من O ممثّل $\\vec{u}$ ، ثم:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نرسم من نهايته ممثّل $\\vec{v}$ ، فنهاية هذا الأخير نهاية المجموع",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نرسم من O ممثّل $\\vec{v}$ ونصل نهايتي الممثّلين",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSHA-MABDA"
+        },
+        {
+          "id": "C",
+          "content": "نرسم $\\vec{v}$ في مكانه ونصل O بنهايته",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSHA-MABDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "علاقة شال: الشعاعان المجموعان متتابعان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الممثّل الثاني يبدأ حيث انتهى الأول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تخيّل قطارا ينطلق من O : يسير $\\vec{u}$ ثم $\\vec{v}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الممثّلان متتابعان (علاقة شال): المجموع من O إلى نهاية الممثّل الثاني.",
+        "incorrect": "المجموع لا يُنشأ بممثّلين من النقطة نفسها مع وصل نهايتيهما: الثاني يبدأ من نهاية الأول."
+      }
+    }
+  ]
+}

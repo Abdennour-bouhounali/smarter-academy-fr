@@ -1,0 +1,223 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-jumal-l4-007",
+  "lessonCode": "wadiya-idmajiya-jumal",
+  "level": 4,
+  "metadata": {
+    "title": "خليط العصير",
+    "estimatedMinutes": 12,
+    "tags": [
+      "ترييض",
+      "خليط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-jumal_P2",
+      "modelledOn": "ex-29"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "يحضّر بائع عصير يحرص على نظافة أدواته 20 لترا من خليط عصير البرتقال وعصير المانجو. ثمن لتر البرتقال 120DA وثمن لتر المانجو 200DA، وتكلفة الخليط 2960DA.\nنسمّي $x$ عدد لترات البرتقال و $y$ عدد لترات المانجو."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن $x$ و $y$ يحققان الجملة: $\\begin{cases} x + y = 20 \\\\ 3x + 5y = 74 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "سمِّ الكميتين المجهولتين، ثم ترجم كل معلومة من النص بمعادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بسّط كل معادلة بقسمة طرفيها على عدد مناسب."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "حجم الخليط: $x + y = 20$",
+          "التكلفة: $120x + 200y = 2960$ ، وبقسمة الطرفين على 40: $3x + 5y = 74$",
+          "ومنه: $\\begin{cases} x + y = 20 \\\\ 3x + 5y = 74 \\end{cases}$"
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حل هذه الجملة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": {
+        "x": "13",
+        "y": "7"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "7",
+            "y": "13"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن معاملات $x$ ومعاملات $y$ في المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة التعويض أو طريقة الجمع (بعد ضرب المعادلتين في عددين مناسبين) لحذف أحد المجهولين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد إيجاد أحد المجهولين، عوّضه في إحدى المعادلتين لتجد الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "13 لترا من البرتقال و 7 لترات من المانجو.",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} x + y = 20 & ...(1) \\\\ 3x + 5y = 74 & ...(2) \\end{cases}$",
+          "من المعادلة (1) نجد: $y = 20 - x$",
+          "بالتعويض في المعادلة (2) نجد: $3x + 5(20 - x) = 74$",
+          "$-2x + 100 = 74$",
+          "$-2x = -26$",
+          "$x = 13$",
+          "ومنه: $y = 20 - 13 = 7$",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(13 ; 7)"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب تكلفة عصير المانجو في هذا الخليط.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "1400",
+      "misconceptionSignatures": [
+        {
+          "value": "2600",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل عدد لترات المانجو."
+        }
+      ],
+      "feedback": {
+        "correct": "$7 \\times 200 = 1400$ .",
+        "incorrect": "اضرب عدد لترات المانجو في ثمن اللتر."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 200 = 1400$",
+          "تكلفة المانجو $1400DA$ ."
+        ],
+        "result": "1400\\,DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "يبيع البائع الخليط في كؤوس سعة كل منها $0{,}25L$ بـ 80DA للكأس. احسب ربحه إذا باع الخليط كله.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب الربح بـ DA (عدد فقط)",
+      "expectedAnswer": "3440",
+      "misconceptionSignatures": [
+        {
+          "value": "6400",
+          "id": "MISC-JUMLA-TARJAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب عدد الكؤوس أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الربح = المداخيل − التكلفة."
+        }
+      ],
+      "feedback": {
+        "correct": "الربح $6400 - 2960 = 3440DA$ .",
+        "incorrect": "احسب عدد الكؤوس ثم المداخيل، واطرح منها تكلفة الخليط."
+      },
+      "solution": {
+        "lines": [
+          "عدد الكؤوس: $\\dfrac{20}{0{,}25} = 80$",
+          "المداخيل: $80 \\times 80 = 6400$",
+          "الربح: $6400 - 2960 = 3440$",
+          "ربح البائع $3440DA$ ."
+        ],
+        "result": "3440\\,DA"
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

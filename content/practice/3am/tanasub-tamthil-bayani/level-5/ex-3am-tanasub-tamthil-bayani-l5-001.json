@@ -1,0 +1,399 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l5-001",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 5,
+  "metadata": {
+    "title": "دقيق الإحسان",
+    "estimatedMinutes": 15,
+    "tags": [
+      "وضعية إدماجية",
+      "تمثيل بياني",
+      "تناسبية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-1a",
+      "page": 90,
+      "section": "معارف 1"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تشتري جمعية خيرية دقيقا لأسر الحيّ من مطحنة تحرص على أمانة الوزن. تمثّل النقط $A$ و $B$ و $C$ و $D$ في المعلم المتعامد والمتجانس التالي أربع عمليات شراء (الفاصلة كتلة الدقيق بالكيلوغرام والترتيب الثمن بمئات الدنانير).\nالجزء الأول: التمثيل البياني.\nالجزء الثاني: حسابات وقرار.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          2,
+          3
+        ],
+        "B": [
+          4,
+          6
+        ],
+        "C": [
+          6,
+          9
+        ],
+        "D": [
+          8,
+          12
+        ]
+      },
+      "lines": [
+        {
+          "through": [
+            "O",
+            "D"
+          ],
+          "name": "(D)",
+          "tone": "indigo",
+          "extend": [
+            0,
+            0.15
+          ]
+        }
+      ],
+      "grid": true,
+      "axes": {
+        "every": 2
+      },
+      "labels": {
+        "O": "sw",
+        "A": "se",
+        "B": "se",
+        "C": "se",
+        "D": "se"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس: النقط A(2;3) و B(4;6) و C(6;9) و D(8;12) على المستقيم (D) الذي يشمل المبدأ",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: كتلة الدقيق بالكيلوغرام — محور التراتيب: الثمن بمئات الدنانير"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول:",
+      "statement": "هل ثمن الدقيق متناسب مع كتلته؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لأنّ الترتيب لا يساوي الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-EQUAL-ONLY"
+        },
+        {
+          "id": "B",
+          "content": "لا، لأنّ المبدأ $O$ ليس من النقط المعلَّمة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-ORIGIN-DROP"
+        },
+        {
+          "id": "C",
+          "content": "نعم، النقط على استقامة واحدة مع المبدأ $O$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط على استقامة واحدة مع المبدأ $O$ ، فهي تمثّل وضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "النقط على المستقيم $(D)$ الذي يشمل المبدأ $O$ .",
+          "إذن ثمن الدقيق متناسب مع كتلته."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "علّل جوابك.",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تعليلك ثم قارنه بالتصحيح النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اذكر الخاصية التي تستعملها: ما شرط التناسبية على النقط؟"
+        }
+      ],
+      "feedback": {
+        "correct": "التعليل يذكر استقامة النقط ومرور المستقيم بالمبدأ $O$ .",
+        "incorrect": "قارن تعليلك بالتصحيح النموذجي، وتأكد أنك ذكرت الشرطين معا."
+      },
+      "solution": {
+        "lines": [
+          "النقط على استقامة واحدة.",
+          "والمستقيم الذي يشملها يمرّ بالمبدأ $O$ ، فالوضعية تناسبية."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "الجزء الثاني:",
+      "statement": "ما معامل التناسبية $a$ (ثمن الدقيق لكل kg بمئات الدنانير)؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: معامل التناسبية",
+      "expectedAnswer": "1.5",
+      "misconceptionSignatures": [
+        {
+          "value": "2/3",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        },
+        {
+          "value": "4",
+          "id": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل التناسبية هو ترتيب النقطة الذي فاصلته $1$ ، أو ناتج قسمة الترتيب على الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ إحداثيي النقطة $D$ ثم اقسم الترتيب على الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تقسم الفاصلة على الترتيب ولا تطرح أحد العددين من الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{12}{8} = 1{,}5$ .",
+        "incorrect": "المعامل هو ناتج قسمة الترتيب على الفاصلة (وليس العكس) لنقطة من المستقيم."
+      },
+      "solution": {
+        "lines": [
+          "النقطة $D(8\\,;\\,12)$ من المستقيم.",
+          "$a = \\dfrac{12}{8} = 1{,}5$"
+        ],
+        "result": "a = 1{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "statement": "احسب ثمن الدقيق (بالدينار) من أجل $7$ kg.",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: بالدينار",
+      "expectedAnswer": "1050",
+      "misconceptionSignatures": [
+        {
+          "value": "10.5",
+          "id": "MISC-TAMTHIL-UNIT-AXIS"
+        },
+        {
+          "value": "800",
+          "id": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل $y = a\\,x$ مع المعامل الذي وجدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الناتج بمئات الدنانير ثم حوّله."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}5 \\times 7 = 10{,}5$ مئة دج، أي $1050$ دج.",
+        "incorrect": "اضرب في المعامل (لا تضف فرقا) ثم حوّل المئات إلى دنانير."
+      },
+      "solution": {
+        "lines": [
+          "$y = 1{,}5 \\times 7 = 10{,}5$ مئة دج.",
+          "$10{,}5 \\times 100 = 1050$ دج."
+        ],
+        "result": "1050\\ \\text{دج}"
+      },
+      "work": "optional",
+      "timeSeconds": 110
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "ما عدد kg الذي يمكن الحصول عليه بمبلغ $1800$ دج؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: kg",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "18",
+          "id": "MISC-TAMTHIL-UNIT-AXIS"
+        },
+        {
+          "value": "27",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل المبلغ إلى مئات الدنانير."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اقسم على معامل التناسبية."
+        }
+      ],
+      "feedback": {
+        "correct": "$18 \\div 1{,}5 = 12$ kg.",
+        "incorrect": "لإيجاد الفاصلة نقسم الترتيب على المعامل ولا نضربه فيه."
+      },
+      "solution": {
+        "lines": [
+          "$1800$ دج $= 18$ مئة دج.",
+          "$x = 18 \\div 1{,}5 = 12$ kg."
+        ],
+        "result": "12"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "يملك المشتري $2000$ دج ويريد $14$ kg. هل يكفيه مبلغه؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لا يكفي: الثمن $2100$ دج يتجاوز $2000$ دج",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم، يكفي: لأنّ المبلغ يكاد يساوي الثمن",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-APPROX-DECISION"
+        },
+        {
+          "id": "C",
+          "content": "نعم، يكفي: لأنّ الفرق بين المبلغ والثمن صغير",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الثمن المطلوب بدقّة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارنه بالمبلغ المتوفّر: هل يتجاوزه؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الثمن $2100$ دج يتجاوز $2000$ دج.",
+        "incorrect": "قارن الثمن المحسوب بالمبلغ بدقّة، لا بالتقريب."
+      },
+      "solution": {
+        "lines": [
+          "ثمن $14$ kg: $1{,}5 \\times 14 \\times 100 = 2100$ دج.",
+          "$2100 > 2000$ : لا يكفيه مبلغه."
+        ]
+      },
+      "timeSeconds": 130
+    }
+  ]
+}

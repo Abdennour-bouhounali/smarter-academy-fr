@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-muntasaf-masafa-l4-006",
+  "lessonCode": "muntasaf-masafa",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — نقطة على دائرة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المسافة",
+      "دائرة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_muntasaf-masafa_P2",
+      "modelledOn": "ex-16"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس، (𝒞) الدائرة التي مركزها $\\Omega(2\\,;\\,-1)$ ونصف قطرها 5، و $M(5\\,;\\,3)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "هل M تنتمي إلى (𝒞)؟",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم: $\\Omega M = \\sqrt{3^2 + 4^2} = 5$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا: $\\Omega M = 7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-JAM"
+        },
+        {
+          "id": "C",
+          "content": "لا: $\\Omega M = 25$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-NASI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الفرقين: فرق الفاصلتين وفرق الترتيبين (النهاية ناقص المبدأ)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ربّع كل فرق ثم اجمع المربعين: هذا مربع المسافة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خذ الجذر التربيعي في الأخير، وبسّطه إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\Omega M^2 = 9 + 16 = 25 = 5^2$ : M على الدائرة.",
+        "incorrect": "قارن $\\Omega M$ بنصف القطر 5."
+      }
+    }
+  ]
+}

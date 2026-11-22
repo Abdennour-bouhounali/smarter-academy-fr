@@ -1,0 +1,165 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ihsa-l1-009",
+  "lessonCode": "wadiya-idmajiya-ihsa",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2025 — حصص الرياضة في الأسبوع",
+    "estimatedMinutes": 5,
+    "tags": [
+      "مخطط بالأعمدة",
+      "التكرار المجمع النازل",
+      "التواتر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-ihsa_P1",
+      "modelledOn": "BEM 2025 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "سُئل 40 تلميذا من متوسطة عن عدد حصص الرياضة التي يمارسونها في الأسبوع خارج المتوسطة، حرصًا منهم على استغلال أوقات فراغهم، فمُثّلت النتائج بالمخطط بالأعمدة الآتي:",
+    "figure": {
+      "kind": "chart",
+      "type": "bar",
+      "ariaLabel": "مخطط بالأعمدة لعدد التلاميذ حسب عدد حصص الرياضة في الأسبوع: من 0 إلى 4 حصص",
+      "xTitle": "عدد الحصص في الأسبوع",
+      "yTitle": "عدد التلاميذ",
+      "y": {
+        "max": 16,
+        "step": 2,
+        "minor": 2
+      },
+      "bars": [
+        {
+          "label": "0",
+          "value": 4
+        },
+        {
+          "label": "1",
+          "value": 10
+        },
+        {
+          "label": "2",
+          "value": 14
+        },
+        {
+          "label": "3",
+          "value": 8
+        },
+        {
+          "label": "4",
+          "value": 4
+        }
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب عدد التلاميذ الذين يمارسون حصتين على الأقل في الأسبوع.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "26",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-IHSA-SARAMA"
+        },
+        {
+          "value": "14",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        },
+        {
+          "value": "28",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«حصتين على الأقل» تعني: 2 أو 3 أو 4 حصص."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ ارتفاع كل عمود على المحور العمودي (التدريجة الرفيعة 1)."
+        }
+      ],
+      "feedback": {
+        "correct": "$14 + 8 + 4 = 26$ تلميذا.",
+        "incorrect": "اقرأ أعمدة القيم 2 و 3 و 4 واجمع ارتفاعاتها."
+      },
+      "solution": {
+        "lines": [
+          "القراءة: القيمة 2 ← 14 ، القيمة 3 ← 8 ، القيمة 4 ← 4 .",
+          "$14 + 8 + 4 = 26$"
+        ],
+        "result": "26"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج النسبة المئوية لهؤلاء التلاميذ.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: النسبة المئوية دون الرمز %",
+      "expectedAnswer": "65",
+      "misconceptionSignatures": [
+        {
+          "value": "26",
+          "id": "MISC-IHSA-TAWATUR-BILA-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التواتر = عدد هؤلاء التلاميذ ÷ التكرار الكلي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب التواتر في 100 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{26}{40} \\times 100 = 65$ ، أي $65\\%$ .",
+        "incorrect": "اقسم العدد الذي وجدته في 01 على التكرار الكلي، ثم اضرب في 100 ."
+      },
+      "solution": {
+        "lines": [
+          "التكرار الكلي: $4 + 10 + 14 + 8 + 4 = 40$",
+          "$\\dfrac{26}{40} \\times 100 = 65$"
+        ],
+        "result": "65\\%"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

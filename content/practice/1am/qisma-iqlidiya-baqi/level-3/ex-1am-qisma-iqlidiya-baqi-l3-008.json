@@ -1,0 +1,234 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l3-008",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — كتب للمدارس الريفية",
+    "estimatedMinutes": 8,
+    "tags": [
+      "صناديق",
+      "الحاصل + 1",
+      "ما ينقص"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثالث",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "تبرّعت دار نشر بـ 1000 كتاب لمكتبات المدارس الريفية، وتُرسل الكتب في صناديق يتّسع كل منها لـ 35 كتابًا."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "كم صندوقًا يُملأ تمامًا؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الصناديق",
+      "expectedAnswer": "28",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "27",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "29",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 1000 من 35 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 35 دون أن نتجاوز 1000."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$1000 = 35 \\times 28 + 20$ و $20 < 35$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 35 فلا يتجاوز الجداء 1000، والباقي عندئذ أصغر من 35."
+      },
+      "solution": {
+        "lines": [
+          "$35 \\times 28 = 980$ و $35 \\times 29 = 1015$",
+          "$980 \\le 1000 < 1015$ ، إذن الحاصل هو 28."
+        ],
+        "result": "q = 28"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم صندوقًا يلزم لإرسال كل الكتب؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد الصناديق",
+      "expectedAnswer": "29",
+      "misconceptionSignatures": [
+        {
+          "value": "28",
+          "id": "MISC-IQLIDIYA-NISYAN-ZIYADA"
+        },
+        {
+          "value": "20",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل تكفي المجموعات الكاملة لوضع كل شيء؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ماذا نفعل بالباقي إذا لم يكن معدومًا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$1000 = 35 \\times 28 + 20$: يبقى 20 بعد المجموعات الكاملة، ويحتاج إلى صندوق آخر.",
+        "incorrect": "الحاصل يعدّ المجموعات الكاملة فقط؛ إذا بقي شيء فهو يحتاج إلى مجموعة إضافية."
+      },
+      "solution": {
+        "lines": [
+          "$1000 = 35 \\times 28 + 20$",
+          "يبقى 20 بعد المجموعات الكاملة، فنحتاج إلى صندوق آخر:",
+          "$28 + 1 = 29$"
+        ],
+        "result": "29"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كم كتابًا في الصندوق الأخير؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الكتب",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "28",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "55",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 1000."
+        }
+      ],
+      "feedback": {
+        "correct": "$1000 - 35 \\times 28 = 1000 - 980 = 20$ ، و $20 < 35$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 35."
+      },
+      "solution": {
+        "lines": [
+          "$1000 = 35 \\times 28 + 20$",
+          "$20 < 35$ ، إذن الباقي هو 20."
+        ],
+        "result": "r = 20"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "كم كتابًا آخر يلزم لملء الصندوق الأخير؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد الكتب",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم يبقى بعد تشكيل المجموعات الكاملة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المجموعة الجديدة تحتاج إلى العدد الكامل للمجموعة."
+        }
+      ],
+      "feedback": {
+        "correct": "يبقى 20، والمجموعة تضمّ 35: $35 - 20 = 15$.",
+        "incorrect": "المطلوب ليس الباقي نفسه، بل ما ينقص الباقي ليصبح 35."
+      },
+      "solution": {
+        "lines": [
+          "$1000 = 35 \\times 28 + 20$",
+          "$35 - 20 = 15$"
+        ],
+        "result": "15"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

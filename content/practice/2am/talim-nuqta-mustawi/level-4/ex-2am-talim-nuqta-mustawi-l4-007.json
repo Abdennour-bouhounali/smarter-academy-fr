@@ -1,0 +1,242 @@
+{
+  "id": "ex-2am-talim-nuqta-mustawi-l4-007",
+  "lessonCode": "talim-nuqta-mustawi",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — تغيير المبدأ",
+    "estimatedMinutes": 10,
+    "tags": [
+      "تغيير المبدأ",
+      "إحداثيتان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعيّن مواقع على خريطة حيّ، ثم ننقل المبدأ إلى نقطة أخرى بدون تغيير الوحدة ولا الاتجاهين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "في المعلم الأوّل $A(3\\,;\\,-2)$ . ننقل المبدأ إلى النقطة $\\Omega(1\\,;\\,1)$ (الوحدة والاتجاهان لم يتغيّرا). ما إحداثيتا $A$ في المعلم الجديد؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "2",
+        "y": "-3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-ORIGINFIXED2",
+          "value": {
+            "x": "3",
+            "y": "-2"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-ADDORIGIN",
+          "value": {
+            "x": "4",
+            "y": "-1"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "-3",
+            "y": "2"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "إحداثيتا النقطة تُقاسان انطلاقًا من المبدأ، فتتغيّران إذا تغيّر المبدأ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ الوحدات من المبدأ الجديد إلى النقطة على كلّ اتجاه، بإشارتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح إحداثيتي المبدأ الجديد من إحداثيتي النقطة في المعلم الأوّل ثم تحقّق على رسمك."
+        }
+      ],
+      "feedback": {
+        "correct": "$A(2\\,;\\,-3)$ في المعلم الجديد.",
+        "incorrect": "إحداثيتا النقطة تُقاس من المبدأ، فتتغيّر إذا تغيّر المبدأ؛ ابدأ بعدّ الوحدات من المبدأ الجديد."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الجديدة = $3 - (1) = 2$",
+          "الترتيب الجديد = $-2 - (1) = -3$"
+        ],
+        "result": "A(2\\,;\\,-3)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "في المعلم الأوّل $B(-2\\,;\\,4)$ . ننقل المبدأ إلى النقطة $\\Omega(-2\\,;\\,1)$ (الوحدة والاتجاهان لم يتغيّرا). ما إحداثيتا $B$ في المعلم الجديد؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "0",
+        "y": "3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-ORIGINFIXED2",
+          "value": {
+            "x": "-2",
+            "y": "4"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-ADDORIGIN",
+          "value": {
+            "x": "-4",
+            "y": "5"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "3",
+            "y": "0"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "إحداثيتا النقطة تُقاسان انطلاقًا من المبدأ، فتتغيّران إذا تغيّر المبدأ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ الوحدات من المبدأ الجديد إلى النقطة على كلّ اتجاه، بإشارتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح إحداثيتي المبدأ الجديد من إحداثيتي النقطة في المعلم الأوّل ثم تحقّق على رسمك."
+        }
+      ],
+      "feedback": {
+        "correct": "$B(0\\,;\\,3)$ في المعلم الجديد.",
+        "incorrect": "إحداثيتا النقطة تُقاس من المبدأ، فتتغيّر إذا تغيّر المبدأ؛ ابدأ بعدّ الوحدات من المبدأ الجديد."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الجديدة = $-2 - (-2) = 0$",
+          "الترتيب الجديد = $4 - (1) = 3$"
+        ],
+        "result": "B(0\\,;\\,3)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "في المعلم الأوّل $C(5\\,;\\,2{,}5)$ . ننقل المبدأ إلى النقطة $\\Omega(1{,}5\\,;\\,0{,}5)$ (الوحدة والاتجاهان لم يتغيّرا). ما إحداثيتا $C$ في المعلم الجديد؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "3.5",
+        "y": "2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-ORIGINFIXED2",
+          "value": {
+            "x": "5",
+            "y": "2.5"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-ADDORIGIN",
+          "value": {
+            "x": "6.5",
+            "y": "3"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "2",
+            "y": "3.5"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "إحداثيتا النقطة تُقاسان انطلاقًا من المبدأ، فتتغيّران إذا تغيّر المبدأ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ الوحدات من المبدأ الجديد إلى النقطة على كلّ اتجاه، بإشارتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح إحداثيتي المبدأ الجديد من إحداثيتي النقطة في المعلم الأوّل ثم تحقّق على رسمك."
+        }
+      ],
+      "feedback": {
+        "correct": "$C(3{,}5\\,;\\,2)$ في المعلم الجديد.",
+        "incorrect": "إحداثيتا النقطة تُقاس من المبدأ، فتتغيّر إذا تغيّر المبدأ؛ ابدأ بعدّ الوحدات من المبدأ الجديد."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الجديدة = $5 - (1{,}5) = 3{,}5$",
+          "الترتيب الجديد = $2{,}5 - (0{,}5) = 2$"
+        ],
+        "result": "C(3{,}5\\,;\\,2)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

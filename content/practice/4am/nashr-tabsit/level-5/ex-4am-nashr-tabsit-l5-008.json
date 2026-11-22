@@ -1,0 +1,396 @@
+{
+  "id": "ex-4am-nashr-tabsit-l5-008",
+  "lessonCode": "nashr-tabsit",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2015 — مسبح بلدي وإطاره",
+    "estimatedMinutes": 20,
+    "tags": [
+      "مساحة",
+      "أقواس مسبوقة بـ −",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_nashr-tabsit_P4",
+      "modelledOn": "BEM 2015 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تنجز بلدية، حرصًا على سلامة الأطفال، مسبحًا مستطيل الشكل طوله $(2x + 5)$ m وعرضه $x$ m ، وتحيط به من كل الجهات أرضية مبلّطة على شكل إطار عرضه 2 m ، فيصبح المسبح مع الإطار مستطيلًا بعداه $(2x + 9)$ m و $(x + 4)$ m ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "عبّر بدلالة $x$ على شكل مجموع مبسّط عن:",
+      "statement": "مساحة المسبح $S$ ، العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $S$ على الشكل $ax^2 + bx$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب العامل الذي أمام القوس في كل حد من حدود القوس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى إشارة كل حد عند كتابة الجداءات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = 2x^2 + 5x$ إذن $a = 2$.",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$S = x(2x + 5)$",
+          "$S = x \\times 2x + x \\times 5$"
+        ],
+        "result": "S = 2x^2 + 5x"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ا",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $S$ على الشكل $ax^2 + bx$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-NASHR-HAD-WAHID"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع معاملات حدود $x$ بإشاراتها بعد النشر."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = 2x^2 + 5x$ إذن $b = 5$.",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $b$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$S = 2x^2 + 5x$"
+        ],
+        "result": "b = 5"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ب",
+      "statement": "المساحة الكلية $T$ (المسبح والإطار)، العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $T$ على الشكل $ax^2 + bx + c$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب كل حد من القوس الأول في كل حد من القوس الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى إشارة كل حد عند كتابة الجداءات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$T = 2x^2 + 17x + 36$ إذن $a = 2$.",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$T = (2x + 9)(x + 4)$",
+          "$T = 2x \\times x + 2x \\times 4 + 9 \\times x + 9 \\times 4$",
+          "$T = 2x^2 + 8x + 9x + 36$"
+        ],
+        "result": "T = 2x^2 + 17x + 36"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "ب",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $T$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "17",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-NASHR-AWWAL-AKHIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع معاملات حدود $x$ بإشاراتها بعد النشر."
+        }
+      ],
+      "feedback": {
+        "correct": "$T = 2x^2 + 17x + 36$ إذن $b = 17$.",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $b$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$T = 2x^2 + 17x + 36$"
+        ],
+        "result": "b = 17"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "01",
+      "sub": "ب",
+      "statement": "العدد $c$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $T$ على الشكل $ax^2 + bx + c$ : اكتب العدد $c$ فقط",
+      "expectedAnswer": "36",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$T = 2x^2 + 17x + 36$ إذن $c = 36$.",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $c$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$T = 2x^2 + 17x + 36$"
+        ],
+        "result": "c = 36"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "lead": "استنتج أن مساحة الإطار المبلّط $F = T - S$ تكتب على الشكل $ax + b$ ، وعيّن $a$ و $b$ .",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $F$ على الشكل $ax + b$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "-5",
+          "id": "MISC-NASHR-AWWAL-AKHIR"
+        },
+        {
+          "value": "17",
+          "id": "MISC-NASHR-HAD-WAHID"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب كل حد من القوس الأول في كل حد من القوس الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى الإشارات: جداء عددين مختلفين في الإشارة سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x$ معًا، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$F = 12x + 36$ إذن $a = 12$.",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$F = (2x + 9)(x + 4) - x(2x + 5)$",
+          "$F = 2x \\times x + 2x \\times 4 + 9 \\times x + 9 \\times 4 - x \\times 2x - x \\times 5$",
+          "$F = 2x^2 + 8x + 9x + 36 - 2x^2 - 5x$"
+        ],
+        "result": "F = 12x + 36"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q7",
+      "step": "02",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $F$ على الشكل $ax + b$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "36",
+      "misconceptionSignatures": [
+        {
+          "value": "41",
+          "id": "MISC-NASHR-HAD-WAHID"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$F = 12x + 36$ إذن $b = 36$.",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $b$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$F = 12x + 36$"
+        ],
+        "result": "b = 36"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q8",
+      "step": "03",
+      "statement": "☜ من أجل $x = 10$ ، ثمن المتر المربع من البلاط مع اليد العاملة 1500DA . ما تكلفة تبليط الإطار؟",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدينار DA)",
+      "expectedAnswer": "234000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مساحة الإطار من أجل $x = 10$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب في ثمن المتر المربع."
+        }
+      ],
+      "feedback": {
+        "correct": "$F = 12 \\times 10 + 36 = 156\\ m^2$ ، و $156 \\times 1500 = 234000$ DA .",
+        "incorrect": "استعمل مساحة الإطار وحده (لا المساحة الكلية)، ثم اضرب في ثمن المتر المربع."
+      },
+      "solution": {
+        "lines": [
+          "$F = 12 \\times 10 + 36 = 156\\ m^2$",
+          "تحقّق: $T - S = 29 \\times 14 - 25 \\times 10 = 406 - 250 = 156$",
+          "التكلفة: $156 \\times 1500 = 234000$ DA"
+        ],
+        "result": "234000\\ DA"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

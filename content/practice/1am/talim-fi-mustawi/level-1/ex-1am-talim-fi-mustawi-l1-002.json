@@ -1,0 +1,269 @@
+{
+  "id": "ex-1am-talim-fi-mustawi-l1-002",
+  "lessonCode": "talim-fi-mustawi",
+  "level": 1,
+  "metadata": {
+    "title": "الفاصلة والترتيب",
+    "estimatedMinutes": 7,
+    "tags": [
+      "فاصلة",
+      "ترتيب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "على خريطة حديقة الحيّ معلم متعامد ومتجانس مبدؤه بوّابة الحديقة، وعليه أربع نقط $P$ و $Q$ و $R$ و $S$ .",
+    "figure": {
+      "points": {
+        "P": [
+          3,
+          2
+        ],
+        "Q": [
+          -2,
+          -3
+        ],
+        "R": [
+          0,
+          4
+        ],
+        "S": [
+          -4,
+          0
+        ],
+        "c1": [
+          -5,
+          -5
+        ],
+        "c2": [
+          5,
+          5
+        ]
+      },
+      "grid": true,
+      "axes": true,
+      "hidden": [
+        "c1",
+        "c2"
+      ],
+      "ariaLabel": "معلم متعامد تظهر فيه أربع نقط P و Q و R و S",
+      "maxWidth": 400
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما فاصلة النقطة $P$ في الشكل؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SWAP",
+          "value": "2"
+        },
+        {
+          "id": "MISC-MUSTAWI-SIGNX",
+          "value": "-3"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفاصلة تُقرأ على الخط الأفقي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انزل من النقطة أو اصعد منها إلى الخط الأفقي واقرأ التدريجة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ الإشارة: يسار الخط الشاقولي أو تحت الخط الأفقي عدد سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "فاصلة $P$ هي $3$ .",
+        "incorrect": "اقرأ التدريجة على المحور المناسب ولا تُبدّل الفاصلة بالترتيب."
+      },
+      "solution": {
+        "lines": [
+          "نقرأ الفاصلة على الخط الأفقي: $3$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما ترتيب النقطة $Q$ في الشكل؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SWAP",
+          "value": "-2"
+        },
+        {
+          "id": "MISC-MUSTAWI-SIGNY",
+          "value": "3"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الترتيب يُقرأ على الخط الشاقولي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "سر من النقطة أفقيًّا إلى الخط الشاقولي واقرأ التدريجة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ الإشارة: يسار الخط الشاقولي أو تحت الخط الأفقي عدد سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "ترتيب $Q$ هي $-3$ .",
+        "incorrect": "اقرأ التدريجة على المحور المناسب ولا تُبدّل الفاصلة بالترتيب."
+      },
+      "solution": {
+        "lines": [
+          "نقرأ الترتيب على الخط الشاقولي: $-3$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما فاصلة النقطة $R$ في الشكل؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "0",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SWAP",
+          "value": "4"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفاصلة تُقرأ على الخط الأفقي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انزل من النقطة أو اصعد منها إلى الخط الأفقي واقرأ التدريجة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ الإشارة: يسار الخط الشاقولي أو تحت الخط الأفقي عدد سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "فاصلة $R$ هي $0$ .",
+        "incorrect": "اقرأ التدريجة على المحور المناسب ولا تُبدّل الفاصلة بالترتيب."
+      },
+      "solution": {
+        "lines": [
+          "نقرأ الفاصلة على الخط الأفقي: $0$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "ما ترتيب النقطة $S$ في الشكل؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "0",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SWAP",
+          "value": "-4"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الترتيب يُقرأ على الخط الشاقولي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "سر من النقطة أفقيًّا إلى الخط الشاقولي واقرأ التدريجة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ الإشارة: يسار الخط الشاقولي أو تحت الخط الأفقي عدد سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "ترتيب $S$ هي $0$ .",
+        "incorrect": "اقرأ التدريجة على المحور المناسب ولا تُبدّل الفاصلة بالترتيب."
+      },
+      "solution": {
+        "lines": [
+          "نقرأ الترتيب على الخط الشاقولي: $0$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

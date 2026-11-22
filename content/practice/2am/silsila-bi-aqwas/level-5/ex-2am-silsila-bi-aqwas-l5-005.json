@@ -1,0 +1,292 @@
+{
+  "id": "ex-2am-silsila-bi-aqwas-l5-005",
+  "lessonCode": "silsila-bi-aqwas",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — حديقة المدرسة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "أقواس متداخلة",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في حديقة المدرسة 9 صفوف من الشتلات، في كلّ صفّ 14 شتلة. ذبلت في 3 صفوف 6 شتلات من كلّ صفّ، وذبلت 12 شتلة أخرى. تُوزَّع الشتلات السليمة بالتساوي على 4 أقسام."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ سلسلة عمليات تعطي عدد الشتلات السليمة التي ينالها كلّ قسم؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$9 \\times 14 - (3 \\times 6 + 12) \\div 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-DROPOUTER"
+        },
+        {
+          "id": "B",
+          "content": "$9 \\times 14 - 3 \\times 6 + 12 \\div 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-IGNORED"
+        },
+        {
+          "id": "C",
+          "content": "$[9 \\times 14 - (3 \\times 6 + 12)] \\div 4$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: أيّ مقدار يجب حسابه كلّه قبل غيره؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع بين قوسين المقدار الذي يُحسب أوّلًا، ثم اختبر كل سلسلة بالحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "$[9 \\times 14 - (3 \\times 6 + 12)] \\div 4 = 24$ .",
+        "incorrect": "اكتب جمل القصة بعمليات بالترتيب نفسه، وضع بين قوسين ما يجب حسابه أوّلًا، ثم اختبر السلسلة بعدد تقريبي."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة الصحيحة: $[9 \\times 14 - (3 \\times 6 + 12)] \\div 4$",
+          "$A = [9 \\times 14 - (18 + 12)] \\div 4$",
+          "$A = (9 \\times 14 - 30) \\div 4$",
+          "$A = (126 - 30) \\div 4$",
+          "$A = 96 \\div 4$",
+          "$A = 24$"
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم شتلة سليمة ينالها كلّ قسم؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد الشتلات",
+      "expectedAnswer": "24",
+      "misconceptionSignatures": [
+        {
+          "value": "111",
+          "id": "MISC-AQWAS-IGNORED"
+        },
+        {
+          "value": "118.5",
+          "id": "MISC-AQWAS-DROPOUTER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: كل جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل جملة بعملية، وضع بين قوسين ما يجب حسابه أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب بالترتيب الصحيح: القوسان أوّلًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$[9 \\times 14 - (3 \\times 6 + 12)] \\div 4 = 24$ .",
+        "incorrect": "نترجم القصة بسلسلة عمليات فيها الأقواس اللازمة ثم نحسب: ما بين القوسين أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $[9 \\times 14 - (3 \\times 6 + 12)] \\div 4$",
+          "$S = [9 \\times 14 - (18 + 12)] \\div 4$",
+          "$S = (9 \\times 14 - 30) \\div 4$",
+          "$S = (126 - 30) \\div 4$",
+          "$S = 96 \\div 4$",
+          "$S = 24$"
+        ],
+        "result": "24"
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كم شتلة سليمة بقيت في الحديقة قبل التوزيع؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد الشتلات",
+      "expectedAnswer": "96",
+      "misconceptionSignatures": [
+        {
+          "value": "120",
+          "id": "MISC-AQWAS-IGNORED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: كل جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل جملة بعملية، وضع بين قوسين ما يجب حسابه أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب بالترتيب الصحيح: القوسان أوّلًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$9 \\times 14 - (3 \\times 6 + 12) = 96$ .",
+        "incorrect": "نترجم القصة بسلسلة عمليات فيها الأقواس اللازمة ثم نحسب: ما بين القوسين أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $9 \\times 14 - (3 \\times 6 + 12)$",
+          "$S = 9 \\times 14 - (18 + 12)$",
+          "$S = 9 \\times 14 - 30$",
+          "$S = 126 - 30$",
+          "$S = 96$"
+        ],
+        "result": "96"
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "هل ينال كلّ قسم $20$ شتلة على الأقلّ؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النتيجتين بدقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كل عبارة بالترتيب الصحيح قبل أن تحكم."
+        }
+      ],
+      "feedback": {
+        "correct": "تحقّقت من ذلك بالحساب.",
+        "incorrect": "احسب كل عبارة مرحلة مرحلة وقارن النتيجتين قبل أن تحكم."
+      },
+      "solution": {
+        "lines": [
+          "$[9 \\times 14 - (3 \\times 6 + 12)] \\div 4 = 24$",
+          "$24 > 20$"
+        ]
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "كتب زميل $9 \\times 14 - (3 \\times 6 + 12) \\div 4$ لحساب عدد الشتلات التي ينالها كلّ قسم. بيّن خطأه وصحّحه.",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب على ورقتك مرحلة مرحلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اسأل: أيّ عملية تُنجز أوّلًا ولماذا؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تذكر القاعدة المستعملة."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$9 \\times 14 - (3 \\times 6 + 12) \\div 4 = 118{,}5$ : لم تُراعَ الأقواس فحُسب ما لا يجب حسابه أوّلًا.",
+          "الصحيح: $[9 \\times 14 - (3 \\times 6 + 12)] \\div 4 = 24$ لأنّ القوسين يُحسبان قبل القسمة أو الضرب."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

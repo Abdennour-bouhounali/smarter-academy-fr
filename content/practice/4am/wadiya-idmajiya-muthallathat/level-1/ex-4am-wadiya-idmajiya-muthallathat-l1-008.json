@@ -1,0 +1,135 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muthallathat-l1-008",
+  "lessonCode": "wadiya-idmajiya-muthallathat",
+  "level": 1,
+  "metadata": {
+    "title": "ظل زاوية خط النظر إلى رأس عمود ثم قيسها",
+    "estimatedMinutes": 5,
+    "tags": [
+      "الظل",
+      "الآلة الحاسبة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-muthallathat_P3",
+      "modelledOn": "situation"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "عمود شاقولي $[PQ]$ طوله $3{,}5\\,\\mathrm{m}$ ، والنقطة $A$ من الأرض الأفقية تبعد $AP = 2{,}8\\,\\mathrm{m}$ عن قاعدته $P$ . نسمّي $x$ قيس الزاوية $\\widehat{PAQ}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $\\tan x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري",
+      "expectedAnswer": "5/4",
+      "misconceptionSignatures": [
+        {
+          "value": "4/5",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $APQ$ قائم في $P$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بالنسبة إلى $x$ : العمود $[PQ]$ مقابل و $[AP]$ مجاور؛ الظل = المقابل على المجاور."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan x = \\dfrac{PQ}{AP} = \\dfrac{3{,}5}{2{,}8} = \\dfrac{5}{4}$ .",
+        "incorrect": "في الظل: الضلع المقابل في البسط والضلع المجاور في المقام."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $APQ$ قائم في $P$ : $\\tan x = \\dfrac{PQ}{AP} = \\dfrac{3{,}5}{2{,}8} = \\dfrac{35}{28}$"
+        ],
+        "result": "\\tan x = \\dfrac{5}{4} = 1{,}25"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط المدوّر إلى الوحدة من الدرجة لقيس الزاوية $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: القيس بالدرجة مدوّرا إلى الوحدة",
+      "expectedAnswer": "51",
+      "misconceptionSignatures": [
+        {
+          "value": "39",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        },
+        {
+          "value": "1.25",
+          "id": "MISC-MUTH-NISBA-BADAL-QAYS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نعرف ظل الزاوية ونبحث عن قيسها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل اللمسة العكسية للنسبة في آلة حاسبة مبرمجة على الدرجة، ثم دوّر في آخر الحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "$x \\approx 51{,}34^{\\circ}$ ، أي $51^{\\circ}$ .",
+        "incorrect": "العدد $1{,}25$ ظل الزاوية وليس قيسها؛ اللمسة العكسية للظل تعطي القيس."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan x = 1{,}25$",
+          "باستعمال الآلة الحاسبة (اللمسة العكسية للظل): $x \\approx 51{,}3402^{\\circ}$"
+        ],
+        "result": "x \\approx 51^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

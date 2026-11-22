@@ -1,0 +1,254 @@
+{
+  "id": "ex-4am-alaqat-muthallathiya-l4-001",
+  "lessonCode": "alaqat-muthallathiya",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 18 (ص 123) — أتمم الجدول إن أمكن",
+    "estimatedMinutes": 9,
+    "tags": [
+      "العلاقات المثلثية",
+      "حصر النسب المثلثية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-18",
+      "page": 123,
+      "section": "العلاقات المثلثية",
+      "number": 18
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$x$ قيس بالدرجات لزاوية حادة. بدون حساب قيمة $x$ ، نريد أن نتمم، إن أمكن، الجدول الآتي:",
+    "table": {
+      "head": [
+        "",
+        "(1)",
+        "(2)",
+        "(3)"
+      ],
+      "rows": [
+        [
+          "$\\cos x$",
+          "$0{,}4$",
+          "…",
+          "…"
+        ],
+        [
+          "$\\sin x$",
+          "…",
+          "$\\dfrac{3}{2}$",
+          "$\\dfrac{\\sqrt{5}}{2}$"
+        ],
+        [
+          "$\\tan x$",
+          "…",
+          "…",
+          "…"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "في العمود (1)، اكتب $\\sin x$ على الشكل $\\dfrac{\\sqrt{a}}{5}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "21",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-MUTH-JADHR-NASI"
+        },
+        {
+          "value": "29",
+          "id": "MISC-MUTH-ISHARA-ALAQA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العلاقة التي تربط جيب الزاوية وجيب تمامها هي $\\cos^2 x + \\sin^2 x = 1$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اعزل $\\sin^2 x$ ثم عوّض جيب التمام بقيمته، ولا تنس تربيع البسط والمقام معا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\sin x$ عدد موجب تماما: خذ الجذر التربيعي الموجب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin^2 x = 1 - 0{,}16 = 0{,}84 = \\dfrac{21}{25}$ ، إذن $\\sin x = \\dfrac{\\sqrt{21}}{5}$ .",
+        "incorrect": "احسب $\\sin^2 x$ بالعلاقة بين المربعين، اكتبه كسرا مقامه 25، ثم خذ الجذر."
+      },
+      "solution": {
+        "lines": [
+          "$\\sin^2 x = 1 - \\cos^2 x = 1 - 0{,}16 = 0{,}84 = \\dfrac{21}{25}$",
+          "$\\sin x > 0$ ، إذن $\\sin x = \\dfrac{\\sqrt{21}}{5}$"
+        ],
+        "result": "\\sin x = \\dfrac{\\sqrt{21}}{5}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "في العمود (1)، اكتب $\\tan x$ على الشكل $\\dfrac{\\sqrt{a}}{2}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "21",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الظل هو حاصل قسمة الجيب على جيب التمام: $\\tan x = \\dfrac{\\sin x}{\\cos x}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على كسر هي الضرب في مقلوبه، ثم اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan x = \\dfrac{\\sqrt{21}}{5} \\div \\dfrac{2}{5} = \\dfrac{\\sqrt{21}}{5} \\times \\dfrac{5}{2} = \\dfrac{\\sqrt{21}}{2}$ .",
+        "incorrect": "اكتب $0{,}4$ على شكل كسر ثم اقسم الجيب على جيب التمام."
+      },
+      "solution": {
+        "lines": [
+          "$\\cos x = 0{,}4 = \\dfrac{2}{5}$",
+          "$\\tan x = \\dfrac{\\sin x}{\\cos x} = \\dfrac{\\sqrt{21}}{5} \\times \\dfrac{5}{2}$"
+        ],
+        "result": "\\tan x = \\dfrac{\\sqrt{21}}{2}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل يمكن إتمام العمود (2)؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-AKBAR-MIN-WAHID"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن $\\dfrac{3}{2}$ بالعدد 1."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جيب زاوية حادة محصور تماما بين 0 و 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{2} > 1$ ، والجيب لا يتجاوز 1: لا توجد زاوية حادة جيبها $\\dfrac{3}{2}$ .",
+        "incorrect": "الوتر أطول أضلاع المثلث القائم: ماذا تستنتج عن الجيب؟"
+      },
+      "solution": {
+        "lines": [
+          "الجيب = المقابل على الوتر، والوتر أطول أضلاع المثلث القائم، إذن $0 < \\sin x < 1$ .",
+          "$\\dfrac{3}{2} = 1{,}5 > 1$ : العمود (2) لا يمكن إتمامه."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "هل يمكن إتمام العمود (3)؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-AKBAR-MIN-WAHID"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن $\\sqrt{5}$ بالعدد 2 بمقارنة مربعيهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 > 4$ إذن $\\sqrt{5} > 2$ و $\\dfrac{\\sqrt{5}}{2} > 1$ : لا يمكن إتمام العمود (3).",
+        "incorrect": "قبل أن تحسب، قارن العدد المعطى بالعدد 1."
+      },
+      "solution": {
+        "lines": [
+          "$(\\sqrt{5})^2 = 5$ و $2^2 = 4$ ، و $5 > 4$ ، إذن $\\sqrt{5} > 2$ .",
+          "$\\dfrac{\\sqrt{5}}{2} > 1$ ، والجيب أصغر تماما من 1: العمود (3) لا يمكن إتمامه.",
+          "ملاحظة: الحساب الآلي $1 - \\dfrac{5}{4} = -\\dfrac{1}{4}$ يعطي مربعا سالبا، وهذا مستحيل أيضا."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

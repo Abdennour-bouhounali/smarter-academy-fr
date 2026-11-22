@@ -8,6 +8,7 @@ use App\Models\Lesson;
 use App\Models\LessonModule;
 use App\Models\PracticeExercise;
 use App\Models\StudentReport;
+use App\Models\Unit;
 use App\Models\User;
 use DomainException;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
@@ -38,10 +39,16 @@ class ContentService
     public function lessons(array $filters = []): LengthAwarePaginator
     {
         $query = Lesson::query()
-            ->with('chapter.grade')
+            ->with(['chapter.grade', 'unit'])
             ->withCount([
                 'modules as modules_count' => fn ($q) => $q->whereNull('retired_at'),
                 'practiceExercises as exercises_count' => fn ($q) => $q->whereNull('retired_at'),
+                // La page « التمارين » est organisée PAR LEÇON (2026-11-11) :
+                // l'état de sa banque se lit en un coup d'œil, par état.
+                'practiceExercises as exercises_published_count' => fn ($q) => $q->whereNull('retired_at')->where('publication_status', Lesson::PUB_PUBLISHED),
+                'practiceExercises as exercises_hidden_count' => fn ($q) => $q->whereNull('retired_at')->where('publication_status', Lesson::PUB_HIDDEN),
+                'practiceExercises as exercises_draft_count' => fn ($q) => $q->whereNull('retired_at')->where('publication_status', Lesson::PUB_DRAFT),
+                'practiceExercises as exercises_archived_count' => fn ($q) => $q->whereNull('retired_at')->where('publication_status', Lesson::PUB_ARCHIVED),
                 'reports as open_reports_count' => fn ($q) => $q->whereIn('status', [
                     StudentReport::STATUS_NEW,
                     StudentReport::STATUS_IN_REVIEW,
@@ -59,8 +66,23 @@ class ContentService
             $query->whereHas('chapter.grade', fn ($q) => $q->where('code', $grade));
         }
 
+        // Les classes dormantes (grades.is_active = false — activeGrades.js via
+        // l'import du catalogue) restent hors des vues d'administration par
+        // défaut (ALGERIA_PLATFORM_MASTER_SPEC.md §20). `scope=all` est un
+        // regard explicite et volontaire sur le contenu dormant, jamais le
+        // défaut. Même interrupteur que l'API élève (config enforce_active_grades).
+        if (($filters['scope'] ?? null) !== 'all' && config('curriculum.enforce_active_grades', true)) {
+            $query->whereHas('chapter.grade', fn ($q) => $q->where('is_active', true));
+        }
+
         if ($chapter = ($filters['chapter'] ?? null)) {
             $query->whereHas('chapter', fn ($q) => $q->where('code', $chapter));
+        }
+
+        // الوحدة — l'unité du manuel (units), entre le ميدان et le درس. À ne
+        // pas confondre avec le MODULE d'une leçon, qui est un المحور.
+        if ($unit = ($filters['unit'] ?? null)) {
+            $query->whereHas('unit', fn ($q) => $q->where('code', $unit));
         }
 
         if ($status = ($filters['status'] ?? null)) {
@@ -71,12 +93,49 @@ class ContentService
             $query->where('tier', $tier);
         }
 
+        // La page « التمارين » ne liste que les leçons qui ONT des exercices.
+        if (! empty($filters['withExercises'])) {
+            $query->whereHas('practiceExercises', fn ($q) => $q->whereNull('retired_at'));
+        }
+
         $sort = $filters['sort'] ?? 'title';
         $direction = ($filters['direction'] ?? 'asc') === 'desc' ? 'desc' : 'asc';
         $sortable = ['title', 'code', 'publication_status', 'updated_at', 'modules_count', 'exercises_count', 'open_reports_count'];
         $query->orderBy(in_array($sort, $sortable, true) ? $sort : 'title', $direction);
 
         return $query->paginate(min((int) ($filters['perPage'] ?? 25), 100));
+    }
+
+    /**
+     * Les UNITÉS (الوحدات) qui portent au moins une leçon, pour le filtre de
+     * la gestion des leçons. Lues en BASE, jamais listées dans l'interface :
+     * le filtre propose exactement ce qui existe, et une unité importée
+     * demain y apparaît sans code. Mêmes classes que la liste (actives, sauf
+     * regard explicite `scope=all`).
+     *
+     * @return array<int, array{code: string, title: string, grade: ?string, chapterTitle: ?string, lessonsCount: int}>
+     */
+    public function lessonUnits(array $filters = []): array
+    {
+        $query = Unit::query()
+            ->with('chapter.grade')
+            ->withCount('lessons')
+            ->has('lessons');
+
+        if (($filters['scope'] ?? null) !== 'all' && config('curriculum.enforce_active_grades', true)) {
+            $query->whereHas('chapter.grade', fn ($q) => $q->where('is_active', true));
+        }
+
+        return $query->orderBy('order')->get()
+            ->map(fn (Unit $u) => [
+                'code' => $u->code,
+                'title' => $u->title,
+                'grade' => $u->chapter?->grade?->code,
+                'chapterTitle' => $u->chapter?->title,
+                'lessonsCount' => (int) $u->lessons_count,
+            ])
+            ->values()
+            ->all();
     }
 
     /** Une leçon, ses modules et ses exercices — la vue d'inspection. */
@@ -96,70 +155,7 @@ class ContentService
         return $lesson;
     }
 
-    /**
-     * TOUS les modules, toutes leçons confondues.
-     *
-     * La vue par leçon existait déjà (voir lesson()), mais elle oblige à
-     * savoir OÙ chercher. Un administrateur qui veut « tous les modules
-     * masqués » ou « toutes les manipulations de 5e » n'a pas ce point de
-     * départ — d'où cette liste transversale, filtrable par étape et par
-     * état.
-     */
-    public function modules(array $filters = []): LengthAwarePaginator
-    {
-        // Colonnes QUALIFIÉES partout : le tri par leçon joint `lessons`, qui
-        // porte exactement les mêmes noms (publication_status, title, code).
-        // Sans préfixe, MySQL refuse la requête pour ambiguïté — et seulement
-        // quand un filtre est posé, ce qui en fait un défaut discret.
-        $query = LessonModule::query()
-            ->with(['lesson:id,code,title,chapter_id', 'lesson.chapter:id,code,title,grade_id', 'lesson.chapter.grade:id,code'])
-            ->whereNull('lesson_modules.retired_at');
-
-        if ($search = ($filters['search'] ?? null)) {
-            $query->where(fn ($q) => $q
-                ->where('lesson_modules.title', 'like', "%{$search}%")
-                ->orWhere('lesson_modules.code', 'like', "%{$search}%")
-                ->orWhereHas('lesson', fn ($l) => $l
-                    ->where('code', 'like', "%{$search}%")
-                    ->orWhere('title', 'like', "%{$search}%")));
-        }
-
-        if ($grade = ($filters['grade'] ?? null)) {
-            $query->whereHas('lesson.chapter.grade', fn ($q) => $q->where('code', $grade));
-        }
-
-        if ($lesson = ($filters['lesson'] ?? null)) {
-            $query->whereHas('lesson', fn ($q) => $q->where('code', $lesson));
-        }
-
-        if ($stage = ($filters['stage'] ?? null)) {
-            $query->where('lesson_modules.stage', $stage);
-        }
-
-        if ($status = ($filters['status'] ?? null)) {
-            $query->where('lesson_modules.publication_status', $status);
-        }
-
-        $sort = $filters['sort'] ?? 'lesson';
-        $direction = ($filters['direction'] ?? 'asc') === 'desc' ? 'desc' : 'asc';
-
-        // Trier par leçon demande une jointure : l'ordre naturel d'une liste
-        // de modules est « leçon, puis numéro », pas « id ».
-        if ($sort === 'lesson') {
-            $query->join('lessons', 'lessons.id', '=', 'lesson_modules.lesson_id')
-                ->orderBy('lessons.code', $direction)
-                ->orderBy('lesson_modules.number')
-                ->select('lesson_modules.*');
-        } else {
-            $sortable = ['number', 'title', 'stage', 'publication_status', 'updated_at'];
-            $column = in_array($sort, $sortable, true) ? $sort : 'number';
-            $query->orderBy("lesson_modules.{$column}", $direction);
-        }
-
-        return $query->paginate(min((int) ($filters['perPage'] ?? 50), 100));
-    }
-
-    /** Tous les exercices, toutes leçons confondues. Jumeau de modules(). */
+    /** Tous les exercices, toutes leçons confondues. */
     public function exercises(array $filters = []): LengthAwarePaginator
     {
         $query = PracticeExercise::query()
@@ -180,6 +176,11 @@ class ContentService
 
         if ($grade = ($filters['grade'] ?? null)) {
             $query->whereHas('lesson.chapter.grade', fn ($q) => $q->where('code', $grade));
+        }
+
+        // Voir lessons() : les classes dormantes ne sont listées que sur `scope=all`.
+        if (($filters['scope'] ?? null) !== 'all' && config('curriculum.enforce_active_grades', true)) {
+            $query->whereHas('lesson.chapter.grade', fn ($q) => $q->where('is_active', true));
         }
 
         if ($lesson = ($filters['lesson'] ?? null)) {
@@ -210,12 +211,29 @@ class ContentService
      * Un seul chemin pour les trois : c'est ce qui garantit qu'aucun d'eux ne
      * peut changer d'état sans validation ni journal.
      *
+     * UN MODULE N'A PAS D'ÉTAT PROPRE (propriétaire, 2026-11-11) : changer
+     * l'état d'une LEÇON le recopie sur TOUS ses modules en registre,
+     * dans la même transaction, avec une ligne de journal par module changé.
+     * Changer un module seul est refusé — il suit sa leçon. `modules.skipped`
+     * reste dans la réponse (toujours vide) pour la compatibilité du client.
+     *
+     * « Je publie la leçon, tout est publié » (propriétaire, 2026-11-11) : le
+     * même état est aussi donné à tous ses EXERCICES en registre, journalisés
+     * un par un (`exercises.applied` dans la réponse). Un exercice peut ensuite
+     * être masqué seul depuis la liste des تمارين.
+     *
      * Ce que cette méthode ne fait PAS, volontairement : toucher aux données
      * d'apprentissage. Masquer un module ne supprime aucune progression,
      * masquer un exercice n'efface aucune tentative (spec §12).
+     *
+     * @return array{model: mixed, changed: bool, modules?: array{applied: int[], skipped: array<int, array{id: int, message: string}>}}
      */
     public function changeStatus(User $admin, string $type, int $id, string $status): array
     {
+        if ($type === 'module') {
+            throw new DomainException('Un module n\'a pas d\'état propre : il suit sa leçon. Changez l\'état de la leçon.');
+        }
+
         $model = match ($type) {
             'lesson' => Lesson::find($id),
             'module' => LessonModule::find($id),
@@ -237,17 +255,24 @@ class ContentService
             return ['model' => $model, 'changed' => false];
         }
 
+        // La cascade, calculée AVANT la transaction : la vérification de la
+        // leçon publiée en dépend (« au moins un module publié APRÈS »).
+        $cascade = $type === 'lesson' ? $this->moduleCascade($model, $status) : null;
+        $exercises = $type === 'lesson'
+            ? $model->practiceExercises()->whereNull('retired_at')->where('publication_status', '!=', $status)->get()
+            : collect();
+
         // On ne publie que ce qui tient debout. Retirer reste toujours
         // possible : refuser de MASQUER un contenu cassé serait exactement
         // l'inverse de ce qu'on veut.
         if ($status === Lesson::PUB_PUBLISHED) {
-            $this->assertPublishable($type, $model);
+            $this->assertPublishable($type, $model, $cascade);
         }
 
         // Le changement ET sa trace dans la MÊME transaction : un journal
         // qui affirme une publication qui n'a pas eu lieu est pire que pas de
         // journal du tout — c'est un audit qui ment.
-        DB::transaction(function () use ($admin, $model, $status, $type, $before) {
+        DB::transaction(function () use ($admin, $model, $status, $type, $before, $cascade, $exercises) {
             $model->publication_status = $status;
 
             // Les horodatages n'existent que sur la leçon : c'est le seul
@@ -276,9 +301,81 @@ class ContentService
                 ['publication_status' => $before],
                 ['publication_status' => $status],
             );
+
+            foreach ($cascade['apply'] ?? [] as $module) {
+                $moduleBefore = $module->publication_status;
+                $module->publication_status = $status;
+                $module->save();
+
+                $this->log->log(
+                    $admin,
+                    ActivityLogger::PUBLISH_MODULE,
+                    'module',
+                    $module->id,
+                    ['publication_status' => $moduleBefore],
+                    ['publication_status' => $status, 'cascadeFromLesson' => $model->id],
+                );
+            }
+
+            foreach ($exercises as $exercise) {
+                $exerciseBefore = $exercise->publication_status;
+                $exercise->publication_status = $status;
+                $exercise->save();
+
+                $this->log->log(
+                    $admin,
+                    ActivityLogger::PUBLISH_EXERCISE,
+                    'exercise',
+                    $exercise->id,
+                    ['publication_status' => $exerciseBefore],
+                    ['publication_status' => $status, 'cascadeFromLesson' => $model->id],
+                );
+            }
         });
 
-        return ['model' => $model, 'changed' => true];
+        $result = ['model' => $model, 'changed' => true];
+
+        if ($cascade !== null) {
+            $result['modules'] = [
+                'applied' => $cascade['apply']->pluck('id')->values()->all(),
+                'skipped' => $cascade['skipped'],
+            ];
+            $result['exercises'] = ['applied' => $exercises->pluck('id')->values()->all()];
+        }
+
+        return $result;
+    }
+
+    /**
+     * Les modules d'une leçon qui prendront son nouvel état — TOUS, puisqu'un
+     * module n'a pas d'état propre (seuls ceux déjà dans l'état sont sautés).
+     *
+     * `sound` compte les modules en registre qui passent les contrôles
+     * structurels : publier une leçon dont AUCUN module ne tient debout
+     * reste refusé (assertPublishable).
+     *
+     * @return array{apply: \Illuminate\Support\Collection<int, LessonModule>, skipped: array<int, array{id: int, message: string}>, sound: int, registered: int}
+     */
+    private function moduleCascade(Lesson $lesson, string $status): array
+    {
+        // Les retirés n'ont plus de source ; l'import leur redonne l'état de la
+        // leçon s'ils reviennent (ContentRegistryImporter).
+        $registered = $lesson->modules()->whereNull('retired_at')->get();
+        $apply = $registered->filter(fn (LessonModule $m) => $m->publication_status !== $status)->values();
+
+        $sound = 0;
+        if ($status === Lesson::PUB_PUBLISHED) {
+            foreach ($registered as $module) {
+                try {
+                    $this->assertPublishable('module', $module->setRelation('lesson', $lesson));
+                    $sound++;
+                } catch (DomainException) {
+                    // Compté comme non publiable ; il suit quand même sa leçon.
+                }
+            }
+        }
+
+        return ['apply' => $apply, 'skipped' => [], 'sound' => $sound, 'registered' => $registered->count()];
     }
 
     /**
@@ -373,6 +470,33 @@ class ContentService
     }
 
     /**
+     * La BANQUE D'EXERCICES d'une leçon, d'un seul geste (2026-10-07).
+     *
+     * Donne `$status` à tous les exercices en registre (non retirés) de la
+     * leçon. Rien de neuf sous le capot : c'est bulkChangeStatus() sur la
+     * liste des exercices de la leçon — même validation, même transaction et
+     * même ligne de journal par exercice. Un exercice peut ensuite être
+     * changé seul (masquer UN exercice d'une banque publiée).
+     *
+     * Volontairement séparé de l'état de la leçon : changer la leçon ne
+     * touche pas aux exercices (seulement aux modules), et inversement.
+     *
+     * @return array{applied: int[], unchanged: int[], failed: array<int, array{id: int, message: string}>}
+     */
+    public function changeLessonExercisesStatus(User $admin, int $lessonId, string $status): array
+    {
+        $lesson = Lesson::find($lessonId);
+
+        if (! $lesson) {
+            throw new DomainException('Leçon introuvable.');
+        }
+
+        $ids = $lesson->practiceExercises()->whereNull('retired_at')->pluck('id')->all();
+
+        return $this->bulkChangeStatus($admin, 'exercise', $ids, $status);
+    }
+
+    /**
      * Le palier, sur plusieurs contenus. Jumeau de bulkChangeStatus(), et
      * passant par le même changeTier() que le geste unitaire — donc soumis à
      * la même règle « une leçon doit porter un palier explicite ».
@@ -439,7 +563,7 @@ class ContentService
      * leçon, et prétendre juger la qualité d'un contenu depuis la base serait
      * une promesse qu'on ne peut pas tenir.
      */
-    private function assertPublishable(string $type, $model): void
+    private function assertPublishable(string $type, $model, ?array $cascade = null): void
     {
         if ($type === 'module' || $type === 'exercise') {
             // Un contenu retiré du registre n'a plus de source : le publier
@@ -481,20 +605,15 @@ class ContentService
             // Avertissement volontairement limité au cas où la leçon a des
             // modules EN REGISTRE : une leçon « à venir » n'en a aucun, et
             // la bloquer n'aurait pas de sens.
-            $registered = $model->modules()->whereNull('retired_at')->count();
+            // Avec la cascade, c'est l'état APRÈS publication qui compte :
+            // les modules publiables seront publiés avec la leçon.
+            $cascade ??= $this->moduleCascade($model, Lesson::PUB_PUBLISHED);
 
-            if ($registered > 0) {
-                $publishable = $model->modules()
-                    ->whereNull('retired_at')
-                    ->where('publication_status', Lesson::PUB_PUBLISHED)
-                    ->count();
-
-                if ($publishable === 0) {
-                    throw new DomainException(
-                        'Aucun module de cette leçon n\'est publié : l\'élève ouvrirait une leçon vide. '
-                        .'Publiez au moins un module d\'abord.'
-                    );
-                }
+            if ($cascade['registered'] > 0 && $cascade['sound'] === 0) {
+                throw new DomainException(
+                    'Aucun module de cette leçon n\'est publiable : l\'élève ouvrirait une leçon vide. '
+                    .'Corrigez au moins un module d\'abord.'
+                );
             }
         }
     }

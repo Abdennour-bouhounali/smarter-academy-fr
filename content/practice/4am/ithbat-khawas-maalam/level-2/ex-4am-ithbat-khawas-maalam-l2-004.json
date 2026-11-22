@@ -1,0 +1,170 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l2-004",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — ركنية الملعب",
+    "estimatedMinutes": 2,
+    "tags": [
+      "عكس فيثاغورس",
+      "ملعب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_ithbat-khawas-maalam_P1",
+      "modelledOn": "method-proof"
+    }
+  },
+  "generator": {
+    "tool": "u1x-ithbat-khawas-maalam/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "ثلاثة شواخص وضعها المدرّب بإتقان في زاوية ملعب: $A(0\\,;\\,0)$ ، $B(4\\,;\\,0)$ ، $C(0\\,;\\,3)$ في معلم متعامد ومتجانس (النقط معلّمة على المرصوفة).",
+    "figure": {
+      "grid": true,
+      "axes": true,
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          4,
+          0
+        ],
+        "C": [
+          0,
+          3
+        ]
+      },
+      "ariaLabel": "ثلاثة شواخص A و B و C على مرصوفة",
+      "maxWidth": 420,
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "A",
+          "C"
+        ],
+        [
+          "B",
+          "C"
+        ]
+      ],
+      "labels": {
+        "A": "sw",
+        "B": "se",
+        "C": "nw"
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "احسب $BC^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "25",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MASAFA-JADHR-JAM",
+          "value": "7"
+        },
+        {
+          "id": "MISC-MAALAM-MASAFA-TARBI",
+          "value": "-7"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مركبتا $\\overrightarrow{BC}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$-4$ و $3$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ربّع ثم اجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC^2 = 16 + 9 = 25$ .",
+        "incorrect": "ربّع كل مركبة."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "مع $AB^2 = 16$ و $AC^2 = 9$ ، المثلث ABC :",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "قائم في B",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-FITHAGHURAS-WATAR"
+        },
+        {
+          "id": "B",
+          "content": "قائم في C",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-FITHAGHURAS-WATAR"
+        },
+        {
+          "id": "C",
+          "content": "متساوي الساقين",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SAQAYN-QAIM"
+        },
+        {
+          "id": "D",
+          "content": "قائم في A لأن $16 + 9 = BC^2$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أطول ضلع؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مجموع المربعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الزاوية القائمة تقابل أطول ضلع."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB^2 + AC^2 = 25 = BC^2$ : قائم في A.",
+        "incorrect": "الضلع [BC] وحده يقابل A."
+      }
+    }
+  ]
+}

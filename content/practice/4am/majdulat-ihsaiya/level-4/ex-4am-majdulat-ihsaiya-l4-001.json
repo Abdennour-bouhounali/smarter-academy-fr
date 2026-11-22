@@ -1,0 +1,205 @@
+{
+  "id": "ex-4am-majdulat-ihsaiya-l4-001",
+  "lessonCode": "majdulat-ihsaiya",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 23 (ص 101) — المتوسط بذاكرة الحاسبة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "ذاكرة الحاسبة",
+      "متوسط متوازن"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-23",
+      "page": 101,
+      "section": "أتعمّق",
+      "number": 23
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "استعمل اللمسات M+ ، M− ، MR ، CE/C ، = لحاسبة لتعيين متوسط السلسلة الإحصائية التالية:",
+    "table": {
+      "head": [
+        "القيم",
+        "97",
+        "104",
+        "99"
+      ],
+      "rows": [
+        [
+          "التكرار",
+          "2",
+          "3",
+          "5"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نُدخل كل جداء (القيمة × التكرار) ثم نضغط M+ . ما هو العدد الذي يُظهره MR بعد الجداءات الثلاثة؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "1001",
+      "misconceptionSignatures": [
+        {
+          "value": "300",
+          "id": "MISC-IHSA-MUTAWASSIT-BILA-TARJIH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في الحاسبة: M+ يضيف العدد الظاهر (أو نتيجة العملية) إلى الذاكرة، و MR يُظهر محتوى الذاكرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نضغط مثلا 97 × 2 ثم M+ ، وهكذا لكل قيمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "MR يُظهر مجموع الجداءات الثلاثة."
+        }
+      ],
+      "feedback": {
+        "correct": "$97 \\times 2 + 104 \\times 3 + 99 \\times 5 = 194 + 312 + 495 = 1001$ .",
+        "incorrect": "كل M+ يضيف جداء قيمة في تكرارها؛ MR يُظهر مجموع هذه الجداءات، لا مجموع القيم."
+      },
+      "solution": {
+        "lines": [
+          "الأزرار: 97 × 2 M+ 104 × 3 M+ 99 × 5 M+ ثم MR",
+          "$97 \\times 2 + 104 \\times 3 + 99 \\times 5 = 194 + 312 + 495 = 1001$"
+        ],
+        "result": "1001"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج متوسط السلسلة.",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة إن لزم)",
+      "expectedAnswer": "100,1",
+      "misconceptionSignatures": [
+        {
+          "value": "100",
+          "id": "MISC-IHSA-MUTAWASSIT-BILA-TARJIH"
+        },
+        {
+          "value": "1001/3",
+          "id": "MISC-IHSA-MUTAWASSIT-QISMA-QIYAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المتوسط = مجموع الجداءات ÷ التكرار الكلي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التكرار الكلي هو مجموع التكرارات، لا عدد القيم المختلفة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بالحاسبة: MR ÷ التكرار الكلي = ."
+        }
+      ],
+      "feedback": {
+        "correct": "التكرار الكلي $2 + 3 + 5 = 10$ ، والمتوسط $\\dfrac{1001}{10} = 100{,}1$ .",
+        "incorrect": "اقسم ما في الذاكرة على التكرار الكلي (مجموع التكرارات)، لا على عدد القيم المختلفة."
+      },
+      "solution": {
+        "lines": [
+          "التكرار الكلي: $2 + 3 + 5 = 10$",
+          "الأزرار: MR ÷ 10 =",
+          "$\\dfrac{1001}{10} = 100{,}1$"
+        ],
+        "result": "100{,}1"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "حجز تلميذ القيم 97 ، 104 ، 99 في الخلايا A1 ، B1 ، C1 من مجدول، ثم حجز الدستور ⁦=MOYENNE(A1:C1)⁩ . هل يُظهر هذا الدستور متوسط السلسلة؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MUTAWASSIT-BILA-TARJIH"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب ما يُظهره الدستور على الخلايا الثلاث."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارنه بالمتوسط الذي وجدته بالحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "لا: يُظهر 100 ، لأنه يأخذ كل قيمة مرة واحدة.",
+        "incorrect": "الدستور يأخذ كل قيمة محجوزة مرة واحدة فقط: هل هذا ما يفعله المتوسط المتوازن؟"
+      },
+      "solution": {
+        "lines": [
+          "الدستور يحسب متوسط ثلاث قيم دون تكراراتها: $\\dfrac{97 + 104 + 99}{3} = 100$ .",
+          "متوسط السلسلة يأخذ التكرارات في الحساب: 100,1 . إذن لا."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

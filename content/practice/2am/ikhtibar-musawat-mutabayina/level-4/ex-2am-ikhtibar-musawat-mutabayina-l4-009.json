@@ -1,0 +1,201 @@
+{
+  "id": "ex-2am-ikhtibar-musawat-mutabayina-l4-009",
+  "lessonCode": "ikhtibar-musawat-mutabayina",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — حيلة عدديّة بين التلاميذ",
+    "estimatedMinutes": 6,
+    "tags": [
+      "تساوي عبارتين",
+      "مثال مضادّ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "قال ياسين إنّ مجموع عدد مع نفسه يساوي جداءه في نفسه. اختبر العبارتين $n+n$ و $n\\times n$ :"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "قال ياسين : « العبارتان $n+n$ و $n\\times n$ متساويتان، لأنّهما تعطيان العدد نفسه من أجل $n=2$ » . هل استنتاجه صحيح ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IKHTIBAR-ONEVALUE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق أوّلا من أنّ العبارتين تعطيان فعلا العدد نفسه عند هذه القيمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثمّ جرّب قيمة أخرى للحرف."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "التساوي من أجل قيمة واحدة لا يثبت التساوي مهما كانت قيمة الحرف."
+        }
+      ],
+      "feedback": {
+        "correct": "لا : التساوي من أجل قيمة واحدة لا يكفي .",
+        "incorrect": "جرّب قيمة أخرى : إذا اختلفت النتيجتان فالعبارتان ليستا متساويتين."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $n=2$ : $2+2=4$ و $2\\times 2=4$ : متساويتان .",
+          "من أجل $n=1$ : $1+1=2$ و $1\\times 1=1$ .",
+          "النتيجتان مختلفتان : مثال مضادّ واحد يكفي، فالعبارتان غير متساويتين .",
+          "استنتاجه خاطئ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "العبارتان $n+n$ و $n\\times n$ تعطيان العدد نفسه من أجل بعض قيم $n$ . أيّ قيمة من القيم الآتية تبيّن أنّهما ليستا متساويتين ؟ اختر الإجابة الصحيحة :",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$5$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$2$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختبر القيم المعطاة في العبارتين معا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن القيمة التي تعطي نتيجتين مختلفتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قيمة واحدة تختلف عندها العبارتان تكفي لإثبات أنّهما ليستا متساويتين."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة $5$ تبيّن ذلك .",
+        "incorrect": "القيمة المطلوبة هي التي تعطي العبارتين نتيجتين مختلفتين."
+      },
+      "solution": {
+        "lines": [
+          "$n=0$ : $0=0$ .",
+          "$n=2$ : $4=4$ .",
+          "$n=5$ : $10\\ne 25$ .",
+          "القيمة $5$ مثال مضادّ : العبارتان ليستا متساويتين ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل العبارتان $n+n$ و $n\\times n$ متساويتان مهما كانت قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جرّب العبارتين بقيمة أو قيمتين للحرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا اختلفت النتيجتان عند قيمة واحدة فالعبارتان غير متساويتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا تساوتا عند عدّة قيم فتحقّق من القاعدة (التوزيع مثلا) قبل أن تحكم : التساوي عند بعض القيم لا يكفي."
+        }
+      ],
+      "feedback": {
+        "correct": "لا : توجد قيمة تختلف عندها العبارتان .",
+        "incorrect": "مثال مضادّ واحد يكفي لإثبات عدم التساوي، أمّا التساوي فيبرّره قاعدة معروفة."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $n=1$ : $1+1=2$ و $1\\times 1=1$ .",
+          "النتيجتان مختلفتان : مثال مضادّ واحد يكفي، فالعبارتان غير متساويتين ."
+        ]
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

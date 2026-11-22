@@ -1,7 +1,13 @@
 import React, { useEffect } from 'react';
+import { MoreToggle } from '../components/StudentFocus';
+import { useTranslation } from 'react-i18next';
 import { Feedback } from '../components/LessonUI';
 import { CATEGORIES, useLessonKnowledge } from '../knowledge';
 import ConceptVisual from '../knowledge/ConceptVisual';
+import AddToNotebookButton from '../../../features/practice/notebook/AddToNotebookButton';
+import { bidi } from '../../../utils/bidi';
+import MathLabel from '../components/MathLabel';
+import { usePredictGate, PredictPanel, PredictionEcho } from './PredictRule';
 
 /**
  * KnowledgeBrick — pose UNE connaissance à l'instant où l'élève en a besoin.
@@ -26,6 +32,14 @@ import ConceptVisual from '../knowledge/ConceptVisual';
  * Au montage, la connaissance entre dans la carte (`unlockItem`) : l'élève
  * voit sa carte grandir au moment où il apprend, pas à la fin du module.
  *
+ * « أتوقّع القاعدة » (2026-10-06, toutes les leçons) : une connaissance NOUVELLE
+ * que l'élève peut conclure (concepts, règles, méthodes, à retenir, formules —
+ * pas le vocabulaire) n'est montrée qu'après qu'il l'a écrite avec ses mots
+ * (PredictRule.jsx, predictRule.js). Jusque-là : ni titre, ni `lead`, ni corps
+ * — ils la diraient — et la carte ne la reçoit qu'à la révélation. Sa
+ * prédiction reste ensuite affichée au-dessus de la règle. Jamais pour un
+ * enseignant, un rappel, une règle déjà acquise ou déjà prédite.
+ *
  * @param {string} id            id de l'item dans LESSON_KNOWLEDGE (clé de l'audit)
  * @param {string[]} [establishes] ids de concepts rendus disponibles pour `requires` (défaut : [id])
  * @param {'new'|'rappel'|'enrichment'} [variant]
@@ -33,6 +47,8 @@ import ConceptVisual from '../knowledge/ConceptVisual';
  * @param {boolean} [unlock=true] faire entrer l'item dans la carte au montage
  * @param {boolean} [compact=false] masquer le visuel (étapes denses)
  * @param {React.ReactNode} [children] l'essai immédiat : une petite question, une manipulation
+ * @param {boolean} [predict] forcer (true) ou supprimer (false) « أتوقّع القاعدة » pour cette brique
+ * @param {string} [predictPrompt] la question qui fait conclure la règle (défaut : `item.predictPrompt`, puis générique)
  *
  * TAILLE DU VISUEL. Elle vient de l'item (`visualSize`), pas de la brique :
  * une même connaissance se lit pareil dans la brique et dans la carte.
@@ -40,19 +56,27 @@ import ConceptVisual from '../knowledge/ConceptVisual';
  */
 export default function KnowledgeBrick({
   id,
-  establishes,          // lu par scripts/audit-knowledge-dependencies.mjs
+  // establishes : lu par scripts/audit-knowledge-dependencies.mjs
   variant = 'new',
   lead,
   unlock = true,
   compact = false,
+  predict,
+  predictPrompt,
   children,
 }) {
-  const { getItem, unlockItem } = useLessonKnowledge();
+  const { t } = useTranslation('lesson');
+  const { getItem, unlockItem, lessonId } = useLessonKnowledge();
   const item = getItem(id);
+  const { gated, saved, reveal } = usePredictGate({
+    id, itemType: item?.type, itemPredict: item?.predict, brickPredict: predict, variant, ready: Boolean(item),
+    itemTitle: item?.title, itemRule: item?.summary,
+  });
 
+  // La carte ne reçoit la connaissance qu'une fois montrée (après la prédiction).
   useEffect(() => {
-    if (unlock) unlockItem(id);
-  }, [id, unlock, unlockItem]);
+    if (unlock && item && !gated) unlockItem(id);
+  }, [id, unlock, unlockItem, item, gated]);
 
   if (!item) {
     // Une brique sans item est une erreur d'auteur : l'audit la signale
@@ -65,6 +89,11 @@ export default function KnowledgeBrick({
       );
     }
     return children ?? null;
+  }
+
+  if (gated) {
+    // La palette ne propose que les symboles de CETTE règle.
+    return <PredictPanel prompt={predictPrompt ?? item.predictPrompt} onReveal={reveal} symbolsFrom={[item.title, item.summary, item.body]} data-predict-for={id} data-knowledge-brick-pending={id} />;
   }
 
   const style = VARIANTS[variant] ?? VARIANTS.new;
@@ -82,19 +111,28 @@ export default function KnowledgeBrick({
       className={`relative overflow-hidden rounded-2xl ${style.box}`}
     >
       {/* Le liseré de catégorie : la seule couleur de la carte. */}
-      {style.accent && <span aria-hidden="true" className={`absolute inset-y-0 left-0 w-[3px] ${accent}`} />}
+      {style.accent && <span aria-hidden="true" className={`absolute inset-y-0 start-0 w-[3px] ${accent}`} />}
 
-      <div className={`p-5 space-y-3 ${style.accent ? 'pl-6' : ''}`}>
-        <p className={`text-[11px] font-mono font-bold uppercase tracking-[0.14em] ${style.tag}`}>
-          <span aria-hidden="true">{style.emoji}</span> {style.label}
-          {category && <span> · {category.label}</span>}
-        </p>
+      <div className={`p-5 space-y-3 ${style.accent ? 'ps-6' : ''}`}>
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <p className={`text-[11px] font-mono font-bold uppercase tracking-[0.14em] ${style.tag}`}>
+            <span aria-hidden="true">{style.emoji}</span> {t(style.labelKey)}
+            {category && <span> · {t(category.labelKey)}</span>}
+          </p>
+          {/* Le pont EXPLICITE vers le cahier : la connaissance n'y entre que
+              si l'élève le demande, comme point de départ de SA note. La
+              carte, elle, ne bouge pas. */}
+          <AddToNotebookButton item={item} lessonCode={lessonId} categoryLabel={category ? t(category.labelKey) : null} />
+        </div>
+
+        {/* Ce que l'élève avait conclu, à comparer avec la règle. */}
+        {variant === 'new' && <PredictionEcho id={id} text={saved} />}
 
         {lead && <p className={`text-sm leading-relaxed ${style.lead}`}>{lead}</p>}
 
         <div className="space-y-1.5">
-          <h4 id={titleId} className={`font-space font-bold text-lg leading-snug ${style.title}`}>{item.title}</h4>
-          {item.summary && <p className="text-sm leading-relaxed text-slate-600">{item.summary}</p>}
+          <h4 id={titleId} className={`font-space font-bold text-lg leading-snug ${bidi(style.title)}`}><MathLabel>{item.title}</MathLabel></h4>
+          {item.summary && <p className="text-sm leading-relaxed text-slate-600"><MathLabel>{item.summary}</MathLabel></p>}
         </div>
 
         {!compact && item.visual && (
@@ -103,13 +141,18 @@ export default function KnowledgeBrick({
           </ConceptVisual>
         )}
 
-        <div className={style.body}>{item.body}</div>
+        {/* Regard « focus » : titre, résumé et dessin ; le corps et l'essai à un geste (« المزيد »). */}
+        <MoreToggle>
+          <div className="space-y-3">
+            <div className={style.body}>{item.body}</div>
 
-        {children && (
-          <div data-knowledge-brick-tryit className={`rounded-xl p-3.5 ${style.tryit}`}>
-            {children}
+            {children && (
+              <div data-knowledge-brick-tryit className={`rounded-xl p-3.5 ${style.tryit}`}>
+                {children}
+              </div>
+            )}
           </div>
-        )}
+        </MoreToggle>
       </div>
     </section>
   );
@@ -136,7 +179,7 @@ export default function KnowledgeBrick({
  */
 const VARIANTS = {
   new: {
-    emoji: '🔑', label: 'Nouveau',
+    emoji: '🔑', labelKey: 'brick.new',
     box: 'border border-slate-200 bg-white shadow-sm',
     tag: 'text-slate-400', lead: 'text-slate-500',
     title: 'text-slate-900',
@@ -145,7 +188,7 @@ const VARIANTS = {
     accent: true,
   },
   rappel: {
-    emoji: '↺', label: 'Rappel',
+    emoji: '↺', labelKey: 'brick.reminder',
     box: 'border border-slate-200 bg-slate-50/70',
     tag: 'text-slate-400', lead: 'text-slate-500',
     title: 'text-slate-800',
@@ -154,7 +197,7 @@ const VARIANTS = {
     accent: false,
   },
   enrichment: {
-    emoji: '✦', label: 'Pour aller plus loin',
+    emoji: '✦', labelKey: 'brick.goFurther',
     box: 'border border-dashed border-violet-200 bg-violet-50/40',
     tag: 'text-violet-400', lead: 'text-violet-700',
     title: 'text-slate-900',

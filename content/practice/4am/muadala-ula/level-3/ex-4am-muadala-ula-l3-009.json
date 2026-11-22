@@ -1,0 +1,133 @@
+{
+  "id": "ex-4am-muadala-ula-l3-009",
+  "lessonCode": "muadala-ula",
+  "level": 3,
+  "metadata": {
+    "title": "الحل صفر",
+    "estimatedMinutes": 5,
+    "tags": [
+      "ax + b = cx + d"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_muadala-ula_P1",
+      "modelledOn": "qcm"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "حل المعادلة $3x + 8 = 8 - 5x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب حل المعادلة: عدد صحيح أو كسر على الشكل a/b (يُقبل العدد العشري)",
+      "expectedAnswer": "0",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-MUADALA-NAQL-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المجهول في الطرفين: انقل الحدود التي فيها $x$ إلى طرف والأعداد إلى الطرف الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحدّ الذي يُنقل إلى الطرف الآخر تتغيّر إشارته (نطرحه من الطرفين)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جمّع الحدود المتشابهة حتى الشكل $ax = b$ ثم اقسم على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 0$ .",
+        "incorrect": "انقل كل حدّ بإشارة معاكسة، وجمّع الحدود المتشابهة، ثم اقسم على معامل $x$ بإشارته. تحقّق بالتعويض."
+      },
+      "solution": {
+        "lines": [
+          "$3x + 5x = 8 - 8$",
+          "$8x = 0$",
+          "$x = \\dfrac{0}{8}$"
+        ],
+        "result": "x = 0"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل العدد $0$ حل للمعادلة $7x = 2x$ ؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى في الطرفين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يكون العدد حلًّا إذا أعطى الطرفان القيمة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم: الطرفان يساويان $0$ .",
+        "incorrect": "احسب كل طرف على حدة بعد التعويض، ثم قارن: الحل وحده يجعل الطرفين متساويين."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 0 = 0$ و $2 \\times 0 = 0$",
+          "الطرفان متساويان، إذن $0$ حل للمعادلة $7x = 2x$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

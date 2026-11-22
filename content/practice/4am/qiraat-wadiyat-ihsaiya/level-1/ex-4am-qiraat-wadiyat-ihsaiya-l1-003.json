@@ -1,0 +1,155 @@
+{
+  "id": "ex-4am-qiraat-wadiyat-ihsaiya-l1-003",
+  "lessonCode": "qiraat-wadiyat-ihsaiya",
+  "level": 1,
+  "metadata": {
+    "title": "الكتب المستعارة من مكتبة المتوسطة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "قراءة مخطط بالأعمدة",
+      "خطوة التدريج"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_qiraat-wadiyat-ihsaiya_P1",
+      "modelledOn": "ex-19",
+      "adaptedFrom": "ex-4am-qiraat-wadiyat-ihsaiya-l1-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "يمثّل المخطط بالأعمدة الآتي عدد الكتب التي استعارها تلاميذ متوسطة من مكتبتها خلال أربعة أشهر:",
+    "figure": {
+      "kind": "chart",
+      "type": "bar",
+      "ariaLabel": "مخطط بالأعمدة لعدد الكتب المستعارة في أكتوبر ونوفمبر وديسمبر وجانفي",
+      "xTitle": "الشهر",
+      "yTitle": "عدد الكتب",
+      "y": {
+        "max": 600,
+        "step": 100,
+        "minor": 2
+      },
+      "bars": [
+        {
+          "label": "أكتوبر",
+          "value": 450
+        },
+        {
+          "label": "نوفمبر",
+          "value": 300
+        },
+        {
+          "label": "ديسمبر",
+          "value": 550
+        },
+        {
+          "label": "جانفي",
+          "value": 250
+        }
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن عدد الكتب المستعارة في شهر أكتوبر.",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "450",
+      "misconceptionSignatures": [
+        {
+          "value": "425",
+          "id": "MISC-IHSA-QIRAA-MUKHATTAT"
+        },
+        {
+          "value": "4,5",
+          "id": "MISC-IHSA-QIRAA-MUKHATTAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الأعداد مكتوبة على المحور العمودي كل 100 ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بين خطّين مرقّمين متتاليين خط رفيع واحد: كم يمثّل؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدّ التدريجات من 0 حتى رأس عمود أكتوبر."
+        }
+      ],
+      "feedback": {
+        "correct": "عمود أكتوبر يصل إلى 450 .",
+        "incorrect": "الخط الرفيع في منتصف المسافة بين 100 و 200 يمثّل 50 : أعد القراءة."
+      },
+      "solution": {
+        "lines": [
+          "بين كل عددين مكتوبين متتاليين خط رفيع واحد، فكل تدريجة تمثّل 50 كتابا.",
+          "رأس عمود أكتوبر عند التدريجة 450 ."
+        ],
+        "result": "450"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب العدد الكلي للكتب المستعارة خلال الأشهر الأربعة.",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1550",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ ارتفاع كل عمود من الأعمدة الأربعة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التكرار الكلي هو مجموع التكرارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$450 + 300 + 550 + 250 = 1550$ .",
+        "incorrect": "اقرأ الأعمدة الأربعة واحدا واحدا، ثم اجمع ارتفاعاتها."
+      },
+      "solution": {
+        "lines": [
+          "$450 + 300 + 550 + 250 = 1550$"
+        ],
+        "result": "1550"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

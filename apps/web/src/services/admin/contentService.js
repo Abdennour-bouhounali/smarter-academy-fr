@@ -2,7 +2,8 @@ import { call, get, send, query } from './adminClient';
 
 export function fetchLessons(token, filters = {}) {
   return call(`/admin/content/lessons${query(filters)}`, get(token), 'Impossible de charger les leçons.')
-    .then((data) => data.lessons);
+    // `units` : les options du filtre « الوحدة », lues en base par l'API.
+    .then((data) => ({ ...data.lessons, units: data.units ?? [] }));
 }
 
 export function fetchLesson(token, code) {
@@ -11,18 +12,6 @@ export function fetchLesson(token, code) {
     get(token),
     'Impossible de charger la leçon.',
   ).then((data) => data.lesson);
-}
-
-/** Tous les modules, toutes leçons confondues. */
-export function fetchModules(token, filters = {}) {
-  return call(`/admin/content/modules${query(filters)}`, get(token), 'Impossible de charger les modules.')
-    .then((data) => data.modules);
-}
-
-/** Tous les exercices, toutes leçons confondues. */
-export function fetchExercises(token, filters = {}) {
-  return call(`/admin/content/exercises${query(filters)}`, get(token), 'Impossible de charger les exercices.')
-    .then((data) => data.exercises);
 }
 
 /**
@@ -71,6 +60,18 @@ export function changeContentTier(token, type, id, tier) {
  * @param {number[]} ids
  * @returns {Promise<{applied: number[], unchanged: number[], failed: {id: number, message: string}[]}>}
  */
+/**
+ * L'état de TOUTE la banque d'exercices d'une leçon. Réponse : `applied`,
+ * `unchanged`, `failed` — comme un lot.
+ */
+export function changeLessonExercisesStatus(token, lessonId, status) {
+  return call(
+    `/admin/content/lesson/${encodeURIComponent(lessonId)}/exercises-status`,
+    send('PATCH', token, { status }),
+    'تعذّر تغيير حالة بنك التمارين.',
+  );
+}
+
 export function bulkChangeContentStatus(token, type, ids, status) {
   return call(
     `/admin/content/${encodeURIComponent(type)}/bulk-status`,

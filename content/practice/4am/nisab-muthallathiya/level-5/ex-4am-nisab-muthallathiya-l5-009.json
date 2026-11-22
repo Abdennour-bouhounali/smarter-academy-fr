@@ -1,0 +1,301 @@
+{
+  "id": "ex-4am-nisab-muthallathiya-l5-009",
+  "lessonCode": "nisab-muthallathiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2024 — ظلّ العمارة في الصباح والزوال",
+    "estimatedMinutes": 20,
+    "tags": [
+      "وضعية إدماجية",
+      "الظل",
+      "جيب التمام"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_nisab-muthallathiya_P3",
+      "modelledOn": "BEM 2024 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "على الساعة العاشرة صباحا، كان ظلّ عمارة شاقولية $[HS]$ على أرض أفقية هو القطعة $[HO]$ التي طولها $25\\,\\mathrm{m}$ ، وتصنع أشعة الشمس مع الأرض زاوية $\\widehat{HOS} = 38^{\\circ}$ ، حيث $S$ قمة العمارة و $H$ قاعدتها (الشكل المقابل). ويقيس تلاميذ القسم ذلك بالتعاون، وكلّ يسجّل نتيجته بأمانة.",
+    "figure": {
+      "points": {
+        "H": [
+          0,
+          0
+        ],
+        "S": [
+          0,
+          19.5321
+        ],
+        "O": [
+          25,
+          0
+        ]
+      },
+      "segments": [
+        {
+          "from": "H",
+          "to": "O",
+          "label": "25 m"
+        },
+        [
+          "H",
+          "S"
+        ],
+        [
+          "S",
+          "O"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "S",
+          "H",
+          "O"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "O",
+          "from": "H",
+          "to": "S",
+          "label": "38°",
+          "radius": 30
+        }
+      ],
+      "ariaLabel": "العمارة [HS] شاقولية، وظلها [HO] على الأرض طوله 25 m، وشعاع الشمس [SO] يصنع مع الأرض زاوية قيسها 38 درجة",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب ارتفاع العمارة $SH$ بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m مدوّرا إلى 0,01",
+      "expectedAnswer": "19.53",
+      "misconceptionSignatures": [
+        {
+          "value": "32.00",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        },
+        {
+          "value": "15.39",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $SHO$ القائم في $H$ ، حدّد موقع الضلع المعلوم والضلع المطلوب بالنسبة إلى الزاوية $\\widehat{HOS}$ (مجاور، مقابل أو وتر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة التي تجمع هذين الضلعين هي ظل الزاوية $\\widehat{HOS}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالآلة الحاسبة مبرمجة على الدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$SH = 25 \\times \\tan 38^{\\circ} \\approx 19{,}53\\,\\mathrm{m}$ .",
+        "incorrect": "الطول المطلوب في بسط النسبة: نضرب الطول المعلوم في النسبة المثلثية ولا نقسم عليها؛ والآلة الحاسبة مبرمجة على الدرجة."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $SHO$ القائم في $H$ لدينا: $\\tan\\,\\widehat{HOS} = \\dfrac{SH}{HO}$",
+          "ومنه: $SH = HO \\times \\tan\\,\\widehat{HOS}$",
+          "$SH = 25 \\times \\tan 38^{\\circ}$",
+          "باستعمال الآلة الحاسبة: $SH \\approx 19{,}5321$"
+        ],
+        "result": "SH \\approx 19{,}53\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب طول الشعاع $SO$ من قمة العمارة إلى طرف ظلها بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m مدوّرا إلى 0,01",
+      "expectedAnswer": "31.73",
+      "misconceptionSignatures": [
+        {
+          "value": "19.70",
+          "id": "MISC-MUTH-DARB-BADAL-QISMA"
+        },
+        {
+          "value": "40.61",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "31.72",
+          "id": "MISC-MUTH-TADWIR-BATR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $SHO$ القائم في $H$ ، حدّد موقع الضلع المعلوم والضلع المطلوب بالنسبة إلى الزاوية $\\widehat{HOS}$ (مجاور، مقابل أو وتر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة التي تجمع هذين الضلعين هي جيب تمام الزاوية $\\widehat{HOS}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالآلة الحاسبة مبرمجة على الدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$SO = \\dfrac{25}{\\cos 38^{\\circ}} \\approx 31{,}73\\,\\mathrm{m}$ .",
+        "incorrect": "الطول المطلوب في مقام النسبة: نقسم الطول المعلوم على النسبة المثلثية ولا نضرب فيها؛ والآلة الحاسبة مبرمجة على الدرجة."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $SHO$ القائم في $H$ لدينا: $\\cos\\,\\widehat{HOS} = \\dfrac{HO}{SO}$",
+          "ومنه: $SO = \\dfrac{HO}{\\cos\\,\\widehat{HOS}}$",
+          "$SO = \\dfrac{25}{\\cos 38^{\\circ}}$",
+          "باستعمال الآلة الحاسبة: $SO \\approx 31{,}7255$"
+        ],
+        "result": "SO \\approx 31{,}73\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "☜ على الساعة الثانية زوالا صارت أشعة الشمس تصنع مع الأرض زاوية قيسها $50^{\\circ}$ . بكم مترا قصر ظلّ العمارة؟",
+      "statement": "طول الظل الجديد بالتدوير إلى $0{,}01$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m مدوّرا إلى 0,01",
+      "expectedAnswer": "16.39",
+      "misconceptionSignatures": [
+        {
+          "value": "23.28",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        },
+        {
+          "value": "16.78",
+          "id": "MISC-MUTH-TADWIR-MUBAKKIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارتفاع العمارة لم يتغيّر، والظل الجديد مجاور للزاوية $50^{\\circ}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الظل (النسبة) = المقابل على المجاور: المجاور في المقام."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{SH}{\\tan 50^{\\circ}} = \\dfrac{25 \\times \\tan 38^{\\circ}}{\\tan 50^{\\circ}} \\approx 16{,}39\\,\\mathrm{m}$ .",
+        "incorrect": "طول الظل في مقام الظل (النسبة المثلثية): اقسم ارتفاع العمارة على $\\tan 50^{\\circ}$ ، بقيمة غير مدوّرة."
+      },
+      "solution": {
+        "lines": [
+          "نسمي $O'$ طرف الظل الجديد: $\\tan 50^{\\circ} = \\dfrac{SH}{HO'}$",
+          "$HO' = \\dfrac{SH}{\\tan 50^{\\circ}} = \\dfrac{25 \\times \\tan 38^{\\circ}}{\\tan 50^{\\circ}}$",
+          "باستعمال الآلة الحاسبة: $HO' \\approx 16{,}3894$"
+        ],
+        "result": "HO' \\approx 16{,}39\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "بكم مترا قصر الظل؟",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m",
+      "expectedAnswer": "8.61",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح طول الظل الجديد من 25."
+        }
+      ],
+      "feedback": {
+        "correct": "$25 - 16{,}39 = 8{,}61\\,\\mathrm{m}$ .",
+        "incorrect": "الفرق بين طولي الظلين."
+      },
+      "solution": {
+        "lines": [
+          "$25 - 16{,}39$"
+        ],
+        "result": "8{,}61\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

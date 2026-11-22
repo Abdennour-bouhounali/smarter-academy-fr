@@ -1,0 +1,259 @@
+{
+  "id": "ex-3am-tasawi-muqaranat-kasrayn-l1-002",
+  "lessonCode": "tasawi-muqaranat-kasrayn",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — هل الكسران متساويان؟",
+    "estimatedMinutes": 8,
+    "tags": [
+      "تساوي كسرين",
+      "الجداءان المتصالبان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعتبر ثلاثة أزواج من الكسور."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "في كلّ حالة، بيّن هل الكسران متساويان.",
+      "statement": "هل $\\dfrac{6}{9} = \\dfrac{10}{15}$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لأنّ $6 \\neq 10$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-NUMERATORS"
+        },
+        {
+          "id": "B",
+          "content": "نعم، لأنّ $6 \\times 15 = 9 \\times 10$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لا، لأنّ $15 - 9 \\neq 10 - 6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-ADDSAME"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكسران اللذان نختبر تساويهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الجداءين المتصالبين ثمّ قارنهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كسران متساويان إذا وفقط إذا تساوى جداءاهما المتصالبان؛ لا نحكم من الفروق ولا من البسطين وحدهما."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم، لأنّ $6 \\times 15 = 9 \\times 10 = 90$ .",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$6 \\times 15 = 90$ و $9 \\times 10 = 90$ .",
+          "الجداءان المتصالبان متساويان، إذن $\\dfrac{6}{9} = \\dfrac{10}{15}$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل $\\dfrac{4}{7} = \\dfrac{12}{20}$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأنّ $12 = 4 \\times 3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-HALFTOP"
+        },
+        {
+          "id": "B",
+          "content": "نعم، لأنّ الكسرين متقاربان جدًّا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-EYE"
+        },
+        {
+          "id": "C",
+          "content": "لا، لأنّ $4 \\times 20 \\neq 7 \\times 12$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكسران اللذان نختبر تساويهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الجداءين المتصالبين ثمّ قارنهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كسران متساويان إذا وفقط إذا تساوى جداءاهما المتصالبان؛ لا نحكم من الفروق ولا من البسطين وحدهما."
+        }
+      ],
+      "feedback": {
+        "correct": "لا، لأنّ $4 \\times 20 = 80$ يختلف عن $7 \\times 12 = 84$ .",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$4 \\times 20 = 80$ و $7 \\times 12 = 84$ .",
+          "الجداءان المتصالبان مختلفان، إذن الكسران غير متساويين."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "هل $\\dfrac{8}{12} = \\dfrac{6}{9}$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأنّ $8 \\times 9 = 12 \\times 6$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا، لأنّ $8 \\neq 6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-NUMERATORS"
+        },
+        {
+          "id": "C",
+          "content": "لا، لأنّ $9 - 12 \\neq 6 - 8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-ADDSAME"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكسران اللذان نختبر تساويهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الجداءين المتصالبين ثمّ قارنهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كسران متساويان إذا وفقط إذا تساوى جداءاهما المتصالبان؛ لا نحكم من الفروق ولا من البسطين وحدهما."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم، لأنّ $8 \\times 9 = 12 \\times 6 = 72$ .",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$8 \\times 9 = 72$ و $12 \\times 6 = 72$ .",
+          "الجداءان المتصالبان متساويان، إذن $\\dfrac{8}{12} = \\dfrac{6}{9}$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "كم زوجًا من الأزواج الثلاثة السابقة يتكوّن من كسرين متساويين؟",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كل سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$2$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الزوجان الأوّل والثالث فقط متساويان، والثاني غير ذلك."
+        ],
+        "result": "2"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

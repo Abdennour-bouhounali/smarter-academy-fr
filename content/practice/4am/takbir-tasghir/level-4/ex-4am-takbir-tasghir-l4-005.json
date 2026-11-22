@@ -1,0 +1,66 @@
+{
+  "id": "ex-4am-takbir-tasghir-l4-005",
+  "lessonCode": "takbir-tasghir",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — كرة تذكارية",
+    "estimatedMinutes": 3,
+    "tags": [
+      "التصغير",
+      "حجم الجلة",
+      "التدوير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takbir-tasghir_P2",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "كرة القدم الرسمية نصف قطرها $11\\,\\mathrm{cm}$ . كرة تذكارية صغيرة هي تصغير لها بالنسبة $\\dfrac{1}{4}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "احسب حجم الكرة التذكارية مدوّرا إلى $0{,}01$ بالسنتيمتر المكعب.",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "rational",
+      "answerFormat": "عدد عشري مدوّر إلى 0,01 (بالفاصلة)",
+      "expectedAnswer": "87,11",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAKBIR-HAJM-K",
+          "value": "1393,82"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نصف قطر الكرة التذكارية $\\dfrac{11}{4} = 2{,}75\\,\\mathrm{cm}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\mathcal{V} = \\dfrac{4}{3}\\pi R^3$ ، أو حجم الكرة الكبيرة مضروبا في $k^3$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "دوّر في النهاية فقط."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\mathcal{V} = \\dfrac{4}{3}\\pi \\times 2{,}75^3 \\approx 87{,}11\\,\\mathrm{cm}^3$ .",
+        "incorrect": "الحجم يُضرب في $k^3 = \\dfrac{1}{64}$ ، ثم ندوّر في النهاية."
+      }
+    }
+  ]
+}

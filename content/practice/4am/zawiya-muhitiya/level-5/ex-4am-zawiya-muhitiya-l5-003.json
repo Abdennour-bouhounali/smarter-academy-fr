@@ -1,0 +1,170 @@
+{
+  "id": "ex-4am-zawiya-muhitiya-l5-003",
+  "lessonCode": "zawiya-muhitiya",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — اللاعب داخل الدائرة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "زاوية رأسها داخل الدائرة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_zawiya-muhitiya_P1",
+      "modelledOn": "ex-12"
+    }
+  },
+  "statement": {
+    "content": "القائمان A و B على دائرة مرسومة في منطقة الجزاء مركزها O، و $\\widehat{AOB} = 120^\\circ$ . اللاعب P يقف داخل الدائرة (الشكل).",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -1.8794,
+          -0.684
+        ],
+        "B": [
+          1.5321,
+          -1.2856
+        ],
+        "P": [
+          -0.25,
+          -0.55
+        ]
+      },
+      "circles": [
+        {
+          "center": "O",
+          "radius": 2
+        }
+      ],
+      "segments": [
+        {
+          "from": "O",
+          "to": "A",
+          "tone": "indigo"
+        },
+        {
+          "from": "O",
+          "to": "B",
+          "tone": "indigo"
+        },
+        {
+          "from": "P",
+          "to": "A",
+          "tone": "rose"
+        },
+        {
+          "from": "P",
+          "to": "B",
+          "tone": "rose"
+        }
+      ],
+      "ariaLabel": "دائرة مركزها O، القائمان A و B عليها والزاوية المركزية AOB، واللاعب P داخل الدائرة",
+      "maxWidth": 380
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "هل $\\widehat{APB} = 60^\\circ$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم: نصف الزاوية المركزية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-RAS"
+        },
+        {
+          "id": "B",
+          "content": "لا: $\\widehat{APB}$ ليست محيطية، وقيسها أكبر من $60^\\circ$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لا: قيسها $120^\\circ$ لأن P قريب من O",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-MUSAWIYA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر أولا إلى رأس الزاوية: أين يقع؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الزاوية المركزية رأسها مركز الدائرة؛ والمحيطية رأسها على الدائرة وضلعاها يقطعانها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زاوية رأسها داخل الدائرة أو خارجها ليست محيطية، ولو كان طرفا ضلعيها على الدائرة."
+        }
+      ],
+      "feedback": {
+        "correct": "P داخل الدائرة: الخاصية 1 لا تطبّق، و $\\widehat{APB}$ أكبر من الزاوية المحيطية $60^\\circ$ .",
+        "incorrect": "الخاصية 1 تخص زاوية رأسها على الدائرة."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "ما قيس الزاوية المحيطية التي تحصر القوس AB من نقطة على القوس الكبير، بالدرجة؟",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "60",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوس الذي تحصره كل زاوية: هل هو نفس القوس؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الزاويتين: أيهما أكبر، المركزية أم المحيطية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قيس الزاوية المحيطية نصف قيس الزاوية المركزية التي تحصر معها نفس القوس."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{120^\\circ}{2} = 60^\\circ$ ، أما $\\widehat{APB}$ فأكبر منها.",
+        "incorrect": "المحيطية نصف المركزية."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-MUSAWIYA",
+          "value": "120"
+        },
+        {
+          "id": "MISC-MUHITIYA-DIF",
+          "value": "240"
+        }
+      ]
+    }
+  ]
+}

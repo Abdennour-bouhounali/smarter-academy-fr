@@ -22,16 +22,17 @@ use Tests\TestCase;
  * que le contenu vendu se récupère par ce chemin-là. Une séance ouverte
  * pendant l'abonnement ne doit pas rester une porte ouverte après.
  *
- * Le contenu est réel (fonction-affine-2nde, la seule leçon dont la pratique
- * est activée) : un exercice inventé ne prouverait rien sur le dépôt.
+ * Le contenu est réel (qasim-mushtarak-akbar, 4AM — la banque de pratique
+ * lue sur le disque ; la leçon française qui servait ici a été supprimée le
+ * 2026-09-25) : un exercice inventé ne prouverait rien sur le dépôt.
  */
 class ExercisePremiumAccessTest extends TestCase
 {
     use RefreshDatabase;
 
-    private const LESSON = 'fonction-affine-2nde';
+    private const LESSON = 'qasim-mushtarak-akbar';
 
-    private const EXERCISE = 'ex-2de-fonction-affine-l1-001';
+    private const EXERCISE = 'ex-4am-qasim-mushtarak-akbar-l1-001';
 
     private Lesson $lesson;
 
@@ -43,15 +44,15 @@ class ExercisePremiumAccessTest extends TestCase
     {
         parent::setUp();
 
-        $grade = Grade::create(['code' => 'seconde', 'name' => 'Seconde', 'level' => 'lycee']);
-        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'fonctions', 'title' => 'Fonctions', 'order' => 0]);
+        $grade = Grade::create(['code' => '4am', 'name' => 'السنة الرابعة متوسط', 'level' => 'moyen']);
+        $chapter = Chapter::create(['grade_id' => $grade->id, 'code' => 'ansab_al_aadad_wal_hisab', 'title' => 'ميدان أنساب الأعداد والحساب', 'order' => 0]);
         $this->lesson = Lesson::create([
-            'chapter_id' => $chapter->id, 'code' => self::LESSON, 'title' => 'Fonction affine',
+            'chapter_id' => $chapter->id, 'code' => self::LESSON, 'title' => 'القاسم المشترك الأكبر',
             'status' => 'available', 'order' => 0, 'tier' => 'free',
             'publication_status' => Lesson::PUB_PUBLISHED,
         ]);
         LearningPoint::create([
-            'lesson_id' => $this->lesson->id, 'code' => 'seconde_fonction-affine-2nde_P1',
+            'lesson_id' => $this->lesson->id, 'code' => '4am_qasim-mushtarak-akbar_P1',
             'title' => 'Reconnaître', 'order' => 1,
         ]);
         $this->exercise = PracticeExercise::create([
@@ -60,7 +61,7 @@ class ExercisePremiumAccessTest extends TestCase
             'publication_status' => PracticeExercise::PUB_PUBLISHED,
         ]);
 
-        $this->student = User::factory()->create(['role' => User::ROLE_STUDENT, 'grade' => 'seconde']);
+        $this->student = User::factory()->create(['role' => User::ROLE_STUDENT, 'grade' => '4am']);
         PracticeCapability::forget();
     }
 
@@ -152,7 +153,10 @@ class ExercisePremiumAccessTest extends TestCase
             ->getJson('/api/v1/lessons/'.self::LESSON.'/exercises')
             ->assertOk();
 
-        $level1 = $response->json('countsByLevel.1');
+        // Un niveau sans exercice jouable est ABSENT de `countsByLevel` : la
+        // leçon 4AM n'a qu'un exercice de niveau 1, le verrouiller vide ce
+        // niveau. Absent vaut 0.
+        $level1 = $response->json('countsByLevel.1') ?? 0;
         $unlockedLevel1 = collect($response->json('exercises'))
             ->where('level', 1)->where('locked', false)->count();
 

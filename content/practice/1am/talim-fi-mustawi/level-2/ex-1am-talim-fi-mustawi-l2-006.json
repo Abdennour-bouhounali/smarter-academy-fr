@@ -1,0 +1,157 @@
+{
+  "id": "ex-1am-talim-fi-mustawi-l2-006",
+  "lessonCode": "talim-fi-mustawi",
+  "level": 2,
+  "metadata": {
+    "title": "الرأس الرابع",
+    "estimatedMinutes": 5,
+    "tags": [
+      "مستطيل",
+      "رأس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعلّم في معلم متعامد ثلاثة رؤوس متتالية لمستطيل أضلاعه توازي المحورين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "$ABCD$ مستطيل أضلاعه توازي المحورين، ورؤوسه $A$ و $B$ و $C$ و $D$ متتالية، حيث $A(-3\\,;\\,2)$ و $B(4\\,;\\,2)$ و $C(4\\,;\\,-2)$ . ما إحداثيا الرأس $D$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-3",
+        "y": "-2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SWAP",
+          "value": {
+            "x": "-2",
+            "y": "-3"
+          }
+        },
+        {
+          "id": "MISC-MUSTAWI-SIGNY",
+          "value": {
+            "x": "-3",
+            "y": "2"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم الرؤوس الثلاثة على معلم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضلعان متقابلان على خطّين من الاتجاه نفسه: $D$ لها فاصلة $A$ وترتيب $C$ إن كان $AD$ شاقوليًّا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بأنّ $D$ تقع على خطّ شاقولي مع $A$ وعلى خطّ أفقي مع $C$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$D(-3\\,;\\,-2)$ .",
+        "incorrect": "الرأس الرابع يأخذ فاصلته من الرأس المقابل لضلع شاقولي وترتيبه من الرأس المقابل لضلع أفقي."
+      },
+      "solution": {
+        "lines": [
+          "أضلاع المستطيل توازي المحورين: كلّ رأسين متجاورين لهما فاصلة واحدة أو ترتيب واحد",
+          "$D(-3\\,;\\,-2)$"
+        ],
+        "result": "D(-3\\,;\\,-2)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "$ABCD$ مستطيل أضلاعه توازي المحورين، ورؤوسه $A$ و $B$ و $C$ و $D$ متتالية، حيث $A(-4\\,;\\,-3)$ و $B(4\\,;\\,-3)$ و $C(4\\,;\\,2)$ . ما إحداثيا الرأس $D$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-4",
+        "y": "2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SWAP",
+          "value": {
+            "x": "2",
+            "y": "-4"
+          }
+        },
+        {
+          "id": "MISC-MUSTAWI-SIGNY",
+          "value": {
+            "x": "-4",
+            "y": "-2"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم الرؤوس الثلاثة على معلم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضلعان متقابلان على خطّين من الاتجاه نفسه: $D$ لها فاصلة $A$ وترتيب $C$ إن كان $AD$ شاقوليًّا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بأنّ $D$ تقع على خطّ شاقولي مع $A$ وعلى خطّ أفقي مع $C$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$D(-4\\,;\\,2)$ .",
+        "incorrect": "الرأس الرابع يأخذ فاصلته من الرأس المقابل لضلع شاقولي وترتيبه من الرأس المقابل لضلع أفقي."
+      },
+      "solution": {
+        "lines": [
+          "أضلاع المستطيل توازي المحورين: كلّ رأسين متجاورين لهما فاصلة واحدة أو ترتيب واحد",
+          "$D(-4\\,;\\,2)$"
+        ],
+        "result": "D(-4\\,;\\,2)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

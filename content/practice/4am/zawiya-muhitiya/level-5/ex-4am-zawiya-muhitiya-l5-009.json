@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-zawiya-muhitiya-l5-009",
+  "lessonCode": "zawiya-muhitiya",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — ادّعاء ريان",
+    "estimatedMinutes": 4,
+    "tags": [
+      "زاوية رأسها خارج الدائرة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_zawiya-muhitiya_P1",
+      "modelledOn": "ex-12"
+    }
+  },
+  "statement": {
+    "content": "القائمان A و B على دائرة مركزها O، و $\\widehat{AOB} = 90^\\circ$ . ريان يقف عند نقطة R خارج الدائرة ويقول: «زاوية تسديدي $\\widehat{ARB} = 45^\\circ$ لأنها نصف $\\widehat{AOB}$ »."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ادّعاء ريان:",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-RAS"
+        },
+        {
+          "id": "B",
+          "content": "خاطئ: R ليست على الدائرة فـ $\\widehat{ARB}$ ليست محيطية، وقيسها أصغر من $45^\\circ$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "خاطئ: $\\widehat{ARB} = 90^\\circ$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-MUSAWIYA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر أولا إلى رأس الزاوية: أين يقع؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الزاوية المركزية رأسها مركز الدائرة؛ والمحيطية رأسها على الدائرة وضلعاها يقطعانها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زاوية رأسها داخل الدائرة أو خارجها ليست محيطية، ولو كان طرفا ضلعيها على الدائرة."
+        }
+      ],
+      "feedback": {
+        "correct": "الخاصية 1 تخص الرأس الذي ينتمي إلى الدائرة؛ خارجها تصغر الزاوية.",
+        "incorrect": "أين يقع رأس الزاوية؟"
+      }
+    }
+  ]
+}

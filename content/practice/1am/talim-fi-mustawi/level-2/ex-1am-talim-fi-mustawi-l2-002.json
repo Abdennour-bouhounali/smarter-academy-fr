@@ -1,0 +1,221 @@
+{
+  "id": "ex-1am-talim-fi-mustawi-l2-002",
+  "lessonCode": "talim-fi-mustawi",
+  "level": 2,
+  "metadata": {
+    "title": "نظيرة نقطة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "نظيرة",
+      "محور"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد نبحث عن نظيرات نقط بالنسبة إلى المحورين وإلى المبدإ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "النقطة $M'$ نظيرة $M(4\\,;\\,-3)$ بالنسبة إلى محور الفواصل. ما إحداثيا $M'$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "4",
+        "y": "3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SYMMIX",
+          "value": {
+            "x": "-4",
+            "y": "-3"
+          }
+        },
+        {
+          "id": "MISC-MUSTAWI-SYMBOTH",
+          "value": {
+            "x": "-4",
+            "y": "3"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النظيرة بالنسبة إلى محور الفواصل تقع على الجهة الأخرى منه بالبعد نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "محور الفواصل أفقي: النظيرة فوقه أو تحته على الخط الشاقولي نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الفاصلة تبقى والترتيب يعاكسه."
+        }
+      ],
+      "feedback": {
+        "correct": "إحداثيا $M'$ هما $(4\\,;\\,3)$ .",
+        "incorrect": "بالنسبة إلى محور الفواصل تتغيّر إشارة الترتيب وحده."
+      },
+      "solution": {
+        "lines": [
+          "النظيرة بالنسبة إلى محور الفواصل: الفاصلة نفسها والترتيب معاكس",
+          "$M'(4\\,;\\,3)$"
+        ],
+        "result": "M'(4\\,;\\,3)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "النقطة $M'$ نظيرة $M(-2\\,;\\,5)$ بالنسبة إلى محور التراتيب. ما إحداثيا $M'$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "2",
+        "y": "5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SYMMIX",
+          "value": {
+            "x": "-2",
+            "y": "-5"
+          }
+        },
+        {
+          "id": "MISC-MUSTAWI-SYMBOTH",
+          "value": {
+            "x": "2",
+            "y": "-5"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النظيرة بالنسبة إلى محور التراتيب تقع على الجهة الأخرى منه بالبعد نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "محور التراتيب شاقولي: النظيرة على يمينه أو يساره على الخط الأفقي نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الترتيب يبقى والفاصلة تعاكسها."
+        }
+      ],
+      "feedback": {
+        "correct": "إحداثيا $M'$ هما $(2\\,;\\,5)$ .",
+        "incorrect": "بالنسبة إلى محور التراتيب تتغيّر إشارة الفاصلة وحدها."
+      },
+      "solution": {
+        "lines": [
+          "النظيرة بالنسبة إلى محور التراتيب: الترتيب نفسه والفاصلة معاكسة",
+          "$M'(2\\,;\\,5)$"
+        ],
+        "result": "M'(2\\,;\\,5)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "النقطة $M'$ نظيرة $M(3\\,;\\,-1)$ بالنسبة إلى المبدأ $O$. ما إحداثيا $M'$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-3",
+        "y": "1"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SYMMIX",
+          "value": {
+            "x": "-3",
+            "y": "-1"
+          }
+        },
+        {
+          "id": "MISC-MUSTAWI-SYMMIX2",
+          "value": {
+            "x": "3",
+            "y": "1"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النظيرة بالنسبة إلى المبدإ تقع على الجهة الأخرى بالبعد نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النظيرة بالنسبة إلى المبدإ تعاكس الإحداثيين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "غيّر إشارة كلّ من الفاصلة والترتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "إحداثيا $M'$ هما $(-3\\,;\\,1)$ .",
+        "incorrect": "بالنسبة إلى المبدإ تتغيّر إشارتا الإحداثيين."
+      },
+      "solution": {
+        "lines": [
+          "النظيرة بالنسبة إلى المبدإ: الإحداثيان معاكسان",
+          "$M'(-3\\,;\\,1)$"
+        ],
+        "result": "M'(-3\\,;\\,1)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

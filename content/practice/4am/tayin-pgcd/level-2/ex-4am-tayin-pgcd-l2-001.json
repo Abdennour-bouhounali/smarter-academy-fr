@@ -1,0 +1,177 @@
+{
+  "id": "ex-4am-tayin-pgcd-l2-001",
+  "lessonCode": "tayin-pgcd",
+  "level": 2,
+  "metadata": {
+    "title": "معارف — نتائج مباشرة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "PGCD",
+      "نتائج مباشرة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-4-results",
+      "page": 12,
+      "section": "معارف",
+      "number": 4
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الأعداد الطبيعية 28 ، 7 ، 8 و 40."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب:",
+      "statement": "PGCD(28 ; 28)",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "28",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما هي القواسم المشتركة لعدد ونفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القواسم المشتركة هي قواسم العدد نفسه، وأكبر قاسم لعدد غير معدوم هو العدد نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "PGCD$(a ; a) = a$"
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(28 ; 28) = 28 لأن أكبر قاسم للعدد 28 هو 28 نفسه.",
+        "incorrect": "القواسم المشتركة لعدد ونفسه هي كل قواسمه: خذ أكبرها."
+      },
+      "solution": {
+        "lines": [
+          "القواسم المشتركة للعددين 28 و 28 هي قواسم العدد 28، وأكبرها 28 نفسه.",
+          "نطبّق النتيجة: PGCD$(a ; a) = a$"
+        ],
+        "result": "PGCD(28 ; 28) = 28"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "PGCD(7 ; 0)",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-PGCD-SIFR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل عدد طبيعي غير معدوم يقسم 0 لأن $0 = n \\times 0$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القواسم المشتركة للعددين هي إذن قواسم العدد غير المعدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "PGCD$(a ; 0) = a$"
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(7 ; 0) = 7: كل قاسم للعدد 7 يقسم 0.",
+        "incorrect": "العدد 0 يقبل القسمة على كل عدد غير معدوم: القواسم المشتركة هي قواسم العدد الآخر."
+      },
+      "solution": {
+        "lines": [
+          "$0 = 7 \\times 0$ ، إذن العدد 7 يقسم 0، وكل قاسم للعدد 7 يقسم 0.",
+          "القواسم المشتركة للعددين 7 و 0 هي إذن قواسم العدد 7، وأكبرها 7."
+        ],
+        "result": "PGCD(7 ; 0) = 7"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "PGCD(8 ; 40)",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tayin-pgcd_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل 8 قاسم للعدد 40؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان $b$ قاسمًا للعدد $a$ فإن PGCD$(a ; b) = b$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ترتيب العددين لا يهم: PGCD$(a ; b) = $ PGCD$(b ; a)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(8 ; 40) = PGCD(40 ; 8) = 8 لأن 8 قاسم للعدد 40.",
+        "incorrect": "تحقّق هل أحد العددين قاسم للآخر."
+      },
+      "solution": {
+        "lines": [
+          "$40 = 8 \\times 5$ ، إذن 8 قاسم للعدد 40.",
+          "PGCD(8 ; 40) = PGCD(40 ; 8)"
+        ],
+        "result": "PGCD(8 ; 40) = 8"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,382 @@
+{
+  "id": "ex-4am-alaqat-muthallathiya-l5-001",
+  "lessonCode": "alaqat-muthallathiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2016 — الطائرة المسيّرة لنادي التصوير",
+    "estimatedMinutes": 20,
+    "tags": [
+      "الوضعية الإدماجية",
+      "العلاقات المثلثية",
+      "طائرة مسيّرة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_alaqat-muthallathiya_P2",
+      "modelledOn": "BEM 2016 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يصوّر نادي التصوير في متوسطة بولاية المسيلة حقلا للقمح بطائرة مسيّرة. تقلع الطائرة من النقطة $A$ على الأرض الأفقية وتصعد في خط مستقيم $[AD]$ ، و $H$ المسقط العمودي للنقطة $D$ على الأرض (الشكل المقابل). يعطي جهاز الطائرة جيب زاوية الصعود $x = \\widehat{DAH}$ : $\\sin x = \\dfrac{8}{17}$ ، ويعطي نظام تحديد المواقع المسافة الأفقية $AH = 240\\,\\mathrm{m}$ . يمنع القانون تحليق الطائرات المسيّرة الترفيهية على ارتفاع يفوق $120\\,\\mathrm{m}$ . ويلتزم النادي بالقانون أمانةً، حفاظًا على خصوصية الناس وسلامتهم.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "H": [
+          240,
+          0
+        ],
+        "D": [
+          240,
+          128
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "H",
+          "label": "240 m"
+        },
+        [
+          "H",
+          "D"
+        ],
+        {
+          "from": "A",
+          "to": "D",
+          "tone": "indigo"
+        }
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "H",
+          "D"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "A",
+          "from": "H",
+          "to": "D",
+          "label": "x"
+        }
+      ],
+      "labels": {
+        "A": "sw",
+        "H": "se",
+        "D": "n"
+      },
+      "ariaLabel": "مسار الطائرة المسيّرة [AD] من النقطة A على الأرض، و H المسقط العمودي لـ D على الأرض حيث AH = 240 م، و x زاوية الصعود عند A",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب القيمتين المضبوطتين لـ $\\cos x$ و $\\tan x$ .",
+      "statement": "$\\cos x$ :",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "15/17",
+      "misconceptionSignatures": [
+        {
+          "value": "9/17",
+          "id": "MISC-MUTH-JAMA-NISAB"
+        },
+        {
+          "value": "225/289",
+          "id": "MISC-MUTH-JADHR-NASI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العلاقة التي تربط جيب الزاوية وجيب تمامها هي $\\cos^2 x + \\sin^2 x = 1$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اعزل $\\cos^2 x$ ثم عوّض الجيب بقيمته، ولا تنس تربيع البسط والمقام معا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\cos x$ عدد موجب تماما: خذ الجذر التربيعي الموجب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\cos^2 x = 1 - \\dfrac{64}{289} = \\dfrac{225}{289}$ ، إذن $\\cos x = \\dfrac{15}{17}$ .",
+        "incorrect": "استعمل العلاقة $\\cos^2 x + \\sin^2 x = 1$ (بين المربعين)، ثم خذ الجذر التربيعي الموجب."
+      },
+      "solution": {
+        "lines": [
+          "$\\cos^2 x + \\sin^2 x = 1$ ، إذن $\\cos^2 x = 1 - \\left(\\dfrac{8}{17}\\right)^2 = 1 - \\dfrac{64}{289} = \\dfrac{225}{289}$",
+          "$\\cos x$ عدد موجب، إذن $\\cos x = \\sqrt{\\dfrac{225}{289}}$"
+        ],
+        "result": "\\cos x = \\dfrac{15}{17}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$\\tan x$ :",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "8/15",
+      "misconceptionSignatures": [
+        {
+          "value": "15/8",
+          "id": "MISC-MUTH-TAN-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الظل هو حاصل قسمة الجيب على جيب التمام: $\\tan x = \\dfrac{\\sin x}{\\cos x}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على كسر هي الضرب في مقلوبه، ثم اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan x = \\dfrac{8}{17} \\div \\dfrac{15}{17} = \\dfrac{8}{15}$ .",
+        "incorrect": "الظل = الجيب ÷ جيب التمام؛ القسمة على كسر هي الضرب في مقلوبه."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan x = \\dfrac{\\sin x}{\\cos x} = \\dfrac{8}{17} \\div \\dfrac{15}{17}$"
+        ],
+        "result": "\\tan x = \\dfrac{8}{15}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب ارتفاع الطائرة $DH$ .",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الارتفاع بـ m",
+      "expectedAnswer": "128",
+      "misconceptionSignatures": [
+        {
+          "value": "1920/17",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "450",
+          "id": "MISC-MUTH-TAN-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بالنسبة إلى الزاوية $x$ : $[DH]$ مقابل و $[AH]$ مجاور."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة التي تربط المقابل بالمجاور هي الظل."
+        }
+      ],
+      "feedback": {
+        "correct": "$DH = AH \\times \\tan x = 240 \\times \\dfrac{8}{15} = 128\\,\\mathrm{m}$ .",
+        "incorrect": "المعلوم هو الضلع المجاور، والمطلوب المقابل: استعمل الظل لا الجيب."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $ADH$ القائم في $H$ : $\\tan x = \\dfrac{DH}{AH}$",
+          "$DH = AH \\times \\tan x = 240 \\times \\dfrac{8}{15}$"
+        ],
+        "result": "DH = 128\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "هل احترم النادي القانون؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الارتفاع الذي حسبته بالحدّ الذي يفرضه القانون."
+        }
+      ],
+      "feedback": {
+        "correct": "$128\\,\\mathrm{m} > 120\\,\\mathrm{m}$ : الطائرة تجاوزت الارتفاع المسموح.",
+        "incorrect": "قارن ارتفاع الطائرة بـ $120\\,\\mathrm{m}$ ."
+      },
+      "solution": {
+        "lines": [
+          "ارتفاع الطائرة $128\\,\\mathrm{m}$ ، و $128 > 120$ .",
+          "إذن لم يحترم النادي القانون (تجاوزت الطائرة الحدّ بـ $8\\,\\mathrm{m}$)."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "sub": "ا",
+      "lead": "☜ على المسار نفسه، ما أكبر مسافة أفقية $AH$ يمكن أن تبلغها الطائرة دون تجاوز $120\\,\\mathrm{m}$ ، وما طول المسار $AD$ عندئذ؟",
+      "statement": "أكبر مسافة أفقية $AH$ :",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المسافة بـ m",
+      "expectedAnswer": "225",
+      "misconceptionSignatures": [
+        {
+          "value": "64",
+          "id": "MISC-MUTH-DARB-BADAL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الارتفاع الأقصى $120\\,\\mathrm{m}$ هو الضلع المقابل، والمطلوب المجاور."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المجهول في مقام الظل."
+        }
+      ],
+      "feedback": {
+        "correct": "$AH = \\dfrac{120}{\\tan x} = 120 \\times \\dfrac{15}{8} = 225\\,\\mathrm{m}$ .",
+        "incorrect": "من $\\tan x = \\dfrac{120}{AH}$ ، المجهول في المقام: اقسم على الظل."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan x = \\dfrac{120}{AH}$ ، إذن $AH = \\dfrac{120}{\\tan x} = 120 \\div \\dfrac{8}{15} = 120 \\times \\dfrac{15}{8}$"
+        ],
+        "result": "AH = 225\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "sub": "ب",
+      "statement": "طول المسار $AD$ عندئذ:",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "255",
+      "misconceptionSignatures": [
+        {
+          "value": "3375/17",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$[AD]$ هو الوتر، و $[AH]$ مجاور للزاوية $x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المجهول في مقام جيب التمام."
+        }
+      ],
+      "feedback": {
+        "correct": "$AD = \\dfrac{AH}{\\cos x} = 225 \\times \\dfrac{17}{15} = 255\\,\\mathrm{m}$ (أو $\\dfrac{120}{\\sin x}$).",
+        "incorrect": "الوتر = المجاور ÷ جيب التمام (أو المقابل ÷ الجيب)."
+      },
+      "solution": {
+        "lines": [
+          "$\\cos x = \\dfrac{AH}{AD}$ ، إذن $AD = \\dfrac{AH}{\\cos x} = 225 \\times \\dfrac{17}{15}$",
+          "تحقّق: $\\dfrac{120}{\\sin x} = 120 \\times \\dfrac{17}{8} = 255$"
+        ],
+        "result": "AD = 255\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

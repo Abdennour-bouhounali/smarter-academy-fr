@@ -1,0 +1,233 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l4-010",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — أرض الورود",
+    "estimatedMinutes": 10,
+    "tags": [
+      "مساحة",
+      "باقات"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 2,
+      "file": "1am-s2-73",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الرابع",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "اشترت تعاونية فلاحية قطعة أرض مستطيلة الشكل طولها $32\\,\\mathrm{m}$ وعرضها $18\\,\\mathrm{m}$ لزراعة الورود."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب مساحة القطعة.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالمتر المربع (m²)",
+      "expectedAnswer": "576",
+      "misconceptionSignatures": [
+        {
+          "value": "100",
+          "id": "MISC-IQLIDIYA-JUDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة المستطيل = الطول × العرض."
+        }
+      ],
+      "feedback": {
+        "correct": "$32 \\times 18 = 576\\,\\mathrm{m}^2$.",
+        "incorrect": "المساحة جداء الطول والعرض، لا مجموعهما."
+      },
+      "solution": {
+        "lines": [
+          "$32 \\times 18 = 576$"
+        ],
+        "result": "576\\,\\mathrm{m}^2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "تُخصَّص لكل شجيرة ورد مساحة $5\\,\\mathrm{m}^2$. كم شجيرة يمكن زرعها على الأكثر؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد الشجيرات",
+      "expectedAnswer": "115",
+      "misconceptionSignatures": [
+        {
+          "value": "116",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        },
+        {
+          "value": "1",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم مرّة تحتوي المساحة الكلية على 5؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا يمكن زرع شجيرة في مساحة أصغر من المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$576 = 5 \\times 115 + 1$: 115 شجيرة ويبقى $1\\,\\mathrm{m}^2$.",
+        "incorrect": "الحاصل هو عدد المرّات الكاملة؛ الباقي لا يكفي لشجيرة أخرى."
+      },
+      "solution": {
+        "lines": [
+          "$576 = 5 \\times 115 + 1$ و $1 < 5$",
+          "يمكن زرع 115 شجيرة."
+        ],
+        "result": "115"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "أنتجت الشجيرات 1730 وردة، وُضعت في باقات من 12 وردة: احسب عدد الباقات.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الباقات",
+      "expectedAnswer": "144",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "143",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "145",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 1730 من 12 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 12 دون أن نتجاوز 1730."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$1730 = 12 \\times 144 + 2$ و $2 < 12$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 12 فلا يتجاوز الجداء 1730، والباقي عندئذ أصغر من 12."
+      },
+      "solution": {
+        "lines": [
+          "$12 \\times 144 = 1728$ و $12 \\times 145 = 1740$",
+          "$1728 \\le 1730 < 1740$ ، إذن الحاصل هو 144."
+        ],
+        "result": "q = 144"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "واحسب عدد الورود الباقية.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الورود",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "144",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "14",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 1730."
+        }
+      ],
+      "feedback": {
+        "correct": "$1730 - 12 \\times 144 = 1730 - 1728 = 2$ ، و $2 < 12$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 12."
+      },
+      "solution": {
+        "lines": [
+          "$1730 = 12 \\times 144 + 2$",
+          "$2 < 12$ ، إذن الباقي هو 2."
+        ],
+        "result": "r = 2"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

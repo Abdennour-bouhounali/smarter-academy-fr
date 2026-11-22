@@ -1,0 +1,193 @@
+{
+  "id": "ex-4am-khawass-qawasim-l4-004",
+  "lessonCode": "khawass-qawasim",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2009 — أكياس البن",
+    "estimatedMinutes": 9,
+    "tags": [
+      "خاصية 1",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_khawass-qawasim_P1",
+      "modelledOn": "BEM 2009 I-4"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان 3375 و 1250."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "بيّن أن 125 قاسم مشترك للعددين 3375 و 1250:",
+      "statement": "اكتب العدد 3375 على الشكل $125 \\times k$ حيث $k$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k$ فقط (عدد طبيعي)",
+      "expectedAnswer": "27",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 3375 على 125: يجب أن يكون الباقي معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل هذه القسمة هو العدد $k$ المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$3375 = 125 \\times 27$ ، إذن 125 يقسم 3375.",
+        "incorrect": "ابحث عن العدد الطبيعي $k$ الذي إذا ضُرب في 125 أعطى 3375."
+      },
+      "solution": {
+        "lines": [
+          "$3375 = 125 \\times 27$"
+        ],
+        "result": "3375 = 125 \\times 27"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اكتب العدد 1250 على الشكل $125 \\times k'$ حيث $k'$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k'$ فقط (عدد طبيعي)",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 1250 على 125: يجب أن يكون الباقي معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل هذه القسمة هو العدد $k'$ المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$1250 = 125 \\times 10$ ، إذن 125 يقسم 1250.",
+        "incorrect": "ابحث عن العدد الطبيعي $k'$ الذي إذا ضُرب في 125 أعطى 1250."
+      },
+      "solution": {
+        "lines": [
+          "$1250 = 125 \\times 10$"
+        ],
+        "result": "1250 = 125 \\times 10"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "استنتج، دون حساب الفرق، أن 125 يقسم $3375 - 1250$ ، ثم اكتبه على الشكل $125 \\times K$ حيث $K$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $K$ فقط (عدد طبيعي)",
+      "expectedAnswer": "17",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الكتابتين $3375 = 125 \\times 27$ و $1250 = 125 \\times 10$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرج 125 عاملًا مشتركًا: $125 \\times q - 125 \\times q' = 125 \\times (q - q')$."
+        }
+      ],
+      "feedback": {
+        "correct": "$3375 - 1250 = 125 \\times (27 - 10) = 125 \\times 17$.",
+        "incorrect": "القاسم المشترك لعددين يقسم فرقهما: اكتب كلا من العددين على الشكل $125 \\times q$ ثم أخرج 125 عاملًا مشتركًا."
+      },
+      "solution": {
+        "lines": [
+          "$3375 - 1250 = 125 \\times 27 - 125 \\times 10$",
+          "$3375 - 1250 = 125 \\times (27 - 10)$",
+          "$3375 - 1250 = 125 \\times 17$ ، إذن 125 يقسم $3375 - 1250$."
+        ],
+        "result": "3375 - 1250 = 125 \\times 17"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "عبّأ تاجر صادق في معاملته لا يغشّ في الوزن 3375g من البن المحمّص و 1250g من البن المطحون في أكياس يتسع كل منها لـ 125g، دون أن تبقى أي كمية. جد العدد الكلي للأكياس. (لاحظ أن $3375 + 1250 = 4625$)",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد الأكياس)",
+      "expectedAnswer": "37",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الكتابتين $3375 = 125 \\times 27$ و $1250 = 125 \\times 10$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرج 125 عاملًا مشتركًا: $125 \\times q + 125 \\times q' = 125 \\times (q + q')$."
+        }
+      ],
+      "feedback": {
+        "correct": "$3375 + 1250 = 125 \\times (27 + 10) = 125 \\times 37$.",
+        "incorrect": "القاسم المشترك لعددين يقسم مجموعهما: اكتب كلا من العددين على الشكل $125 \\times q$ ثم أخرج 125 عاملًا مشتركًا."
+      },
+      "solution": {
+        "lines": [
+          "$3375 + 1250 = 125 \\times 27 + 125 \\times 10$",
+          "$3375 + 1250 = 125 \\times (27 + 10)$",
+          "$3375 + 1250 = 125 \\times 37$ ، إذن 125 يقسم $3375 + 1250$."
+        ],
+        "result": "3375 + 1250 = 125 \\times 37"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

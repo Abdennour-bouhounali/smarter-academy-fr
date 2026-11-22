@@ -1,0 +1,73 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-maalam-l1-010",
+  "lessonCode": "wadiya-idmajiya-maalam",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — قيمة مقرّبة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "قيمة مقرّبة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-maalam_P3",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "طول مسار مكوّن من أنصاف دوائر هو $5\\pi\\,\\mathrm{km}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "القيمة المقرّبة إلى $0{,}01$ لهذا الطول (بالكيلومتر):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة (مدوّر إلى 0,01)",
+      "expectedAnswer": "15.71",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\pi \\approx 3{,}14159$"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$5\\pi \\approx 15{,}708$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الرقم الثالث بعد الفاصلة 8: نرفع."
+        }
+      ],
+      "feedback": {
+        "correct": "$5\\pi \\approx 15{,}70796$ ، مدوّرا إلى $0{,}01$ : $15{,}71$ .",
+        "incorrect": "استعمل π بدقة كافية ثم دوّر في الأخير."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "15.7",
+          "id": "MISC-MUTH-TADWIR-BATR"
+        },
+        {
+          "value": "5",
+          "id": "MISC-MAALAM-PI-MANSI"
+        }
+      ],
+      "difficulty": 1
+    }
+  ]
+}

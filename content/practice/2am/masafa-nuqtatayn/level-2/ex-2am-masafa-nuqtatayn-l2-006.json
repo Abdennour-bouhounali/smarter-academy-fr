@@ -1,0 +1,198 @@
+{
+  "id": "ex-2am-masafa-nuqtatayn-l2-006",
+  "lessonCode": "masafa-nuqtatayn",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — نقطتان على بعد معلوم بفاصلات عشرية",
+    "estimatedMinutes": 8,
+    "tags": [
+      "نقطة على بعد معلوم",
+      "أعداد عشرية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعلّم النقطتين $M(+1{,}25)$ و $P(-2{,}5)$ على مستقيم مدرّج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "النقطة $N$ تنتمي إلى المستقيم المدرّج نفسه، $MN=2{,}5$ ، وهي على يسار النقطة $M(+1{,}25)$ . ما فاصلة $N$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-1.25",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SIGNSWAP",
+          "value": "1.25"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة المعطاة هي المسافة بين النقطتين: النقطة المطلوبة تبعد بها عن النقطة المعلومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كانت على اليمين أضفنا المسافة إلى الفاصلة المعلومة، وإذا كانت على اليسار طرحناها منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب المسافة بين النقطتين انطلاقًا من فاصلتيهما."
+        }
+      ],
+      "feedback": {
+        "correct": "فاصلة $N$ هي $-1{,}25$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "النقطة على اليسار فنطرح المسافة من فاصلة $M$",
+          "$+1{,}25-2{,}5=-1{,}25$"
+        ],
+        "result": "-1.25"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "النقطة $N$ تنتمي إلى المستقيم المدرّج نفسه، $MN=2{,}5$ ، وهي على يمين النقطة $M(+1{,}25)$ . ما فاصلة $N$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "3.75",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SIGNSWAP",
+          "value": "-3.75"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة المعطاة هي المسافة بين النقطتين: النقطة المطلوبة تبعد بها عن النقطة المعلومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كانت على اليمين أضفنا المسافة إلى الفاصلة المعلومة، وإذا كانت على اليسار طرحناها منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب المسافة بين النقطتين انطلاقًا من فاصلتيهما."
+        }
+      ],
+      "feedback": {
+        "correct": "فاصلة $N$ هي $+3{,}75$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "النقطة على اليمين فنضيف المسافة إلى فاصلة $M$",
+          "$+1{,}25+2{,}5=+3{,}75$"
+        ],
+        "result": "3.75"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما فاصلات النقط التي تبعد $1{,}5$ عن النقطة $M(-2{,}5)$ على المستقيم المدرّج ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-4$ و $-1$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$1$ و $+4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MASAFA2-SIGNSWAP"
+        },
+        {
+          "id": "C",
+          "content": "$-1$ فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MASAFA2-ONEANSWER"
+        },
+        {
+          "id": "D",
+          "content": "$-4$ فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MASAFA2-ONEANSWER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم المستقيم وعيّن النقطة المعلومة، ثمّ تحرّك بالمسافة المعطاة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اسأل نفسك: في أيّ الجهتين يمكن أن تتحرّك انطلاقًا من النقطة المعلومة؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب المسافة بين كلّ نقطة وجدتها والنقطة المعلومة."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطتان المطلوبتان فاصلتاهما $-4$ و $-1$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "نضيف المسافة إلى الفاصلة: $-2{,}5+1{,}5=-1$",
+          "ونطرحها منها: $-2{,}5-1{,}5=-4$"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

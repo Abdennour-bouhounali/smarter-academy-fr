@@ -1,0 +1,198 @@
+{
+  "id": "ex-4am-qiraat-wadiyat-ihsaiya-l2-002",
+  "lessonCode": "qiraat-wadiyat-ihsaiya",
+  "level": 2,
+  "metadata": {
+    "title": "التمرين 14 — المدينة «ب»",
+    "estimatedMinutes": 5,
+    "tags": [
+      "الوسيط",
+      "المتوسط"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-14",
+      "page": 99,
+      "section": "أوظّف تعلّماتي",
+      "number": 14
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "يبيّن الجدول الآتي متوسط درجات الحرارة الشهرية على مدار سنة في مدينتين «أ» و «ب» (الوحدة °C):",
+    "table": {
+      "head": [
+        "الشهر",
+        "المدينة «أ»",
+        "المدينة «ب»"
+      ],
+      "rows": [
+        [
+          "جانفي",
+          "-3",
+          "6"
+        ],
+        [
+          "فيفري",
+          "-7",
+          "8"
+        ],
+        [
+          "مارس",
+          "-2",
+          "10"
+        ],
+        [
+          "أفريل",
+          "10",
+          "14"
+        ],
+        [
+          "ماي",
+          "10",
+          "16"
+        ],
+        [
+          "جوان",
+          "20",
+          "19"
+        ],
+        [
+          "جويلية",
+          "24",
+          "20"
+        ],
+        [
+          "أوت",
+          "28",
+          "22"
+        ],
+        [
+          "سبتمبر",
+          "21",
+          "17"
+        ],
+        [
+          "أكتوبر",
+          "11",
+          "14"
+        ],
+        [
+          "نوفمبر",
+          "5",
+          "8"
+        ],
+        [
+          "ديسمبر",
+          "-3",
+          "5"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن وسيط درجات حرارة المدينة «ب».",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (عشري عند الحاجة)",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "value": "19,5",
+          "id": "MISC-IHSA-WASIT-BILA-TARTIB"
+        },
+        {
+          "value": "13,25",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رتّب القيم الاثنتي عشرة ترتيبا تصاعديا أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد القيم زوجي: الوسيط نصف مجموع القيمتين ذواتي الرتبتين 6 و 7 ."
+        }
+      ],
+      "feedback": {
+        "correct": "بعد الترتيب القيمتان ذواتا الرتبتين 6 و 7 متساويتان: الوسيط 14 .",
+        "incorrect": "لا تأخذ القيمتين الوسطيين من الجدول قبل الترتيب: رتّب القيم أولا."
+      },
+      "solution": {
+        "lines": [
+          "الترتيب التصاعدي: 5 ، 6 ، 8 ، 8 ، 10 ، 14 ، 14 ، 16 ، 17 ، 19 ، 20 ، 22",
+          "عدد القيم 12 (زوجي): الوسيط نصف مجموع القيمتين ذواتي الرتبتين 6 و 7 .",
+          "$\\dfrac{14 + 14}{2} = 14$"
+        ],
+        "result": "Med = 14"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب متوسط درجات حرارة المدينة «ب».",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة",
+      "expectedAnswer": "13,25",
+      "misconceptionSignatures": [
+        {
+          "value": "14",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المتوسط = مجموع القيم ÷ عددها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع درجات الحرارة الاثنتي عشرة ثم اقسم على 12 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{159}{12} = 13{,}25$ .",
+        "incorrect": "المتوسط ليس الوسيط: اجمع كل القيم ثم اقسم على عددها."
+      },
+      "solution": {
+        "lines": [
+          "$6 + 8 + 10 + 14 + 16 + 19 + 20 + 22 + 17 + 14 + 8 + 5 = 159$",
+          "$\\dfrac{159}{12} = 13{,}25$"
+        ],
+        "result": "13{,}25\\,^{\\circ}\\mathrm{C}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

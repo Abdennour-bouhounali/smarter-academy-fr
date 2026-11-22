@@ -1,0 +1,238 @@
+{
+  "id": "ex-3am-nisba-miawiya-3am-l3-007",
+  "lessonCode": "nisba-miawiya-3am",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — معطف قبل الارتفاع",
+    "estimatedMinutes": 9,
+    "tags": [
+      "إيجاد الثمن الأصلي",
+      "زيادة ثم تخفيض"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-39",
+      "page": 99,
+      "section": "أتعمّق",
+      "number": 39
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اشترى رجل معطفا في فترة ارتفعت فيها الأسعار بنسبة $20\\,\\%$ ودفع $4\\,440$ دج، ثم انخفضت الأسعار بعد مدة بنسبة $20\\,\\%$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما ثمن المعطف قبل الارتفاع؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "المبلغ بالدينار (دج)",
+      "expectedAnswer": "3700",
+      "misconceptionSignatures": [
+        {
+          "value": "3552",
+          "id": "MISC-NISBA3-WRONG-BASE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من أيّ كمية حُسبت النسبة: الأصل أم الجديدة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة تُحسب دائما على الكمية الأصلية؛ والكمية الجديدة هي الأصل مضروبا في المعامل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب مساواة: الأصل × المعامل = الكمية الجديدة، ثم أوجد الأصل."
+        }
+      ],
+      "feedback": {
+        "correct": "$3\\,700$ .",
+        "incorrect": "النسبة تُحسب على الكمية الأصلية، والكمية الجديدة هي الأصل مضروبا في المعامل؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الثمن الأصلي $p$ يحقّق: $p \\times 1{,}2 = 4\\,440$ ، لأن معامل الزيادة بـ $20\\,\\%$ هو $1{,}2$ .",
+          "إذن $p = 4\\,440 \\div 1{,}2 = 3\\,700$ ."
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما ثمن المعطف الجديد إذا طُبّق الانخفاض على الثمن الذي دفعه الرجل؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "المبلغ بالدينار (دج)",
+      "expectedAnswer": "3552",
+      "misconceptionSignatures": [
+        {
+          "value": "5328",
+          "id": "MISC-NISBA3-COEF-DEC"
+        },
+        {
+          "value": "888",
+          "id": "MISC-NISBA3-COEF-DEC"
+        },
+        {
+          "value": "4420",
+          "id": "MISC-NISBA3-ADD-T"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل الكمية تزداد أم تنقص؟ وما الكمية الأصلية؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التخفيض يُحسب على الكمية الأصلية: الناتج هو الأصل مضروبا في معامل أصغر من الواحد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب معامل التخفيض ثم اضرب فيه الكمية الأصلية، أو احسب التخفيض ثم اطرحه من الأصل."
+        }
+      ],
+      "feedback": {
+        "correct": "$3\\,552$ .",
+        "incorrect": "النسبة تُحسب على الكمية الأصلية؛ والناتج بعد التخفيض هو الأصل مضروبا في معامل أصغر من الواحد؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "معامل التخفيض بـ $20\\,\\%$ هو $1 - \\dfrac{20}{100} = 0{,}8$ .",
+          "الناتج: $4\\,440 \\times 0{,}8 = 3\\,552$ ."
+        ],
+        "result": "4\\,440 \\times 0{,}8 = 3\\,552"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "يقول الرجل: «سأعود إلى الثمن الأصلي لأن الزيادة والانخفاض بالنسبة نفسها». هل هذا القول صحيح؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيحة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NISBA3-UNDO"
+        },
+        {
+          "id": "B",
+          "content": "خاطئة",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكمية عند البداية؟ وما التغيّر الأوّل ثم الثاني؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة الثانية تُؤخذ من الناتج الأوّل لا من الكمية الأصلية؛ والتغيّران يتتابعان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الناتج بعد التغيّر الأوّل، ثم طبّق التغيّر الثاني على هذا الناتج."
+        }
+      ],
+      "feedback": {
+        "correct": "خاطئة .",
+        "incorrect": "النسبة الثانية تُؤخذ من الناتج الأوّل؛ التغيّران يتتابعان ولا يُلغي أحدهما الآخر؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الانخفاض يُحسب على الثمن الأعلى $4\\,440$ فيصير $3\\,552$ دج، وهو يختلف عن الثمن الأصلي $3\\,700$ دج."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "بكم دينارا يقلّ الثمن الجديد عن الثمن الأصلي؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "المبلغ بالدينار (دج)",
+      "expectedAnswer": "148",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كل سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بالتعويض أو بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$148$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$3\\,700 - 3\\,552 = 148$ ."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

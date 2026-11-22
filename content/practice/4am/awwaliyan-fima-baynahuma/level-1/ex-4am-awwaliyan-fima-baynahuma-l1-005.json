@@ -1,0 +1,135 @@
+{
+  "id": "ex-4am-awwaliyan-fima-baynahuma-l1-005",
+  "lessonCode": "awwaliyan-fima-baynahuma",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2015 — العددان 437 و 342",
+    "estimatedMinutes": 6,
+    "tags": [
+      "خوارزمية إقليدس",
+      "نفي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_awwaliyan-fima-baynahuma_P2",
+      "modelledOn": "BEM 2015 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 437 و 342 مع كتابة مراحل الحساب.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "19",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 437 على 342: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (437 ; 342) بالزوج (342 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 19.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$437 = 342 \\times 1 + 95$",
+          "$342 = 95 \\times 3 + 57$",
+          "$95 = 57 \\times 1 + 38$",
+          "$57 = 38 \\times 1 + 19$",
+          "$38 = 19 \\times 2 + 0$",
+          "آخر باقٍ غير معدوم هو 19، إذن:"
+        ],
+        "result": "PGCD(437 ; 342) = 19"
+      },
+      "work": "required",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل العددان 437 و 342 أوليان فيما بينهما؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QAWAID-LA-TAKFI"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن عدد يختلف عن 1 يقسم 437 و 342 معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قواعد قابلية القسمة قد لا تكشف كل القواسم المشتركة: احسب PGCD عند الشك."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يكفي قاسم مشترك واحد يختلف عن 1 لنفي أن العددين أوليان فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(437 ; 342) = 19: العددان ليسا أوليين فيما بينهما.",
+        "incorrect": "لا تكتفِ بقواعد قابلية القسمة: احسب القاسم المشترك الأكبر للعددين."
+      },
+      "solution": {
+        "lines": [
+          "وجدنا في السؤال 01: PGCD(437 ; 342) = 19 .",
+          "الجواب: لا، العددان 437 و 342 ليسا أوليين فيما بينهما لأن لهما قاسمًا مشتركًا يختلف عن 1."
+        ],
+        "result": "PGCD(437 ; 342) = 19"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

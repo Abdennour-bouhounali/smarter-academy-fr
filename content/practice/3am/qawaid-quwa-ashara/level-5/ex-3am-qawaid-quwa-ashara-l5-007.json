@@ -1,0 +1,186 @@
+{
+  "id": "ex-3am-qawaid-quwa-ashara-l5-007",
+  "lessonCode": "qawaid-quwa-ashara",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — تحميل ملفّ",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مسألة",
+      "وحدات التخزين",
+      "حاصل القسمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "ينزّل سليم ملفًّا حجمه $5\\ \\mathrm{Go}$ على حاسوبه بسرعة $40\\ \\mathrm{Mo}$ في الثانية. نعلم أنّ $1\\ \\mathrm{Mo} = 10^{6}\\ \\mathrm{o}$ وأنّ $1\\ \\mathrm{Go} = 10^{9}\\ \\mathrm{o}$ وأنّ $1\\ \\mathrm{To} = 10^{12}\\ \\mathrm{o}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "الجزء الأول. حجم الملفّ بالميغا أكتي: $\\dfrac{5\\times10^{9}}{10^{6}} = 5\\times10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع الأعداد مع الأعداد، وقوى العدد 10 مع قوى العدد 10 (كلّ في مجموعته)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الأعداد وحدها ثمّ طبّق قاعدة قوى العدد 10 على الأسّين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اترك النتيجة على الشكل $k \\times 10^{n}$ كما تخرج دون تغيير العدد $k$ ، ما لم يُطلب منك غير ذلك."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-QAWAID-AMIL"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{5\\times10^{9}}{10^{6}} = 5\\times10^{3}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نطرح الأسّين: $9 - 6 = 3$ ، والعدد 5 لا يتغيّر.",
+          "$5\\times10^{3}\\ \\mathrm{Mo}$ ."
+        ],
+        "result": "n = 3"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "مدّة التنزيل بالثواني: $\\dfrac{5\\times10^{3}}{40}$ . ما هي المدّة؟",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العدد المعطى على شكل قوة للعدد 10، أو اكتب القوة على شكل عدد عشري."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انظر إلى موضع الفاصلة أو إلى رتبة الرقم 1 بعد الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالاتجاه المعاكس: حوّل جوابك إلى الكتابة الأخرى وقارنها بالمعطى."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "125",
+      "misconceptionSignatures": [
+        {
+          "value": "5000",
+          "id": "MISC-QAWAID-AMIL"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{5\\times10^{3}}{40} = 125$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$5\\times10^{3} = 5\\,000$ .",
+          "$\\dfrac{5\\,000}{40} = 125$ ثانية."
+        ],
+        "result": "125"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "الجزء الثاني. كم ملفًّا من هذا الحجم يتّسع له قرص سعته $1\\ \\mathrm{To}$ ؟ أحسب $\\dfrac{10^{12}}{5\\times10^{9}}$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع الأعداد مع الأعداد، وقوى العدد 10 مع قوى العدد 10 (كلّ في مجموعته)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الأعداد وحدها ثمّ طبّق قاعدة قوى العدد 10 على الأسّين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اترك النتيجة على الشكل $k \\times 10^{n}$ كما تخرج دون تغيير العدد $k$ ، ما لم يُطلب منك غير ذلك."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "200",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-QAWAID-AMIL"
+        },
+        {
+          "value": "0.2",
+          "id": "MISC-QAWAID-AMIL"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{10^{12}}{5\\times10^{9}} = 0{,}2\\times10^{3} = 200$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نطرح الأسّين: $12 - 9 = 3$ ، ونقسم الأعداد: $\\dfrac{1}{5} = 0{,}2$ .",
+          "$0{,}2\\times10^{3} = 200$ ملفًّا."
+        ],
+        "result": "200"
+      }
+    }
+  ]
+}

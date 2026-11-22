@@ -1,0 +1,212 @@
+{
+  "id": "ex-2am-talim-mustaqim-mudarraj-2-l3-005",
+  "lessonCode": "talim-mustaqim-mudarraj-2",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — قراءة ومعاكس وتغيير المبدأ",
+    "estimatedMinutes": 10,
+    "tags": [
+      "قراءة فاصلة",
+      "معاكس",
+      "تغيير المبدأ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "على شريط مدرّج مبدؤه $O$ وقيمة تدريجته الواحدة $5$ cm نقرأ مواضع نقط ونغيّر المبدأ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "النقطة $A$ على 4 تدريجات إلى يسار المبدأ، وقيمة التدريجة الواحدة $5$ cm. ما فاصلة $A$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-4$ cm",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM2-UNITIGNORED"
+        },
+        {
+          "id": "B",
+          "content": "$-20$ cm",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$-9$ cm",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM2-ADDSTEP"
+        },
+        {
+          "id": "D",
+          "content": "$20$ cm",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM2-SIGNSIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ التدريجات بين المبدأ والنقطة، ثم انظر إلى جهتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفاصلة = عدد التدريجات × قيمة التدريجة الواحدة، وإشارتها حسب الجهة: يمين المبدأ موجبة، يسار المبدأ سالبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء أوّلًا ثم ضع الإشارة المناسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$A(-20)$ : $4$ تدريجات × $5$ cm ، في الجهة اليسرى فالإشارة سالبة.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "عدد التدريجات $4$ ، قيمة التدريجة $5$ cm",
+          "النقطة على يسار المبدأ فالإشارة سالبة",
+          "$A(-20)$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "النقطة $A$ فاصلتها $-20$ . ما فاصلة معاكسها $A'$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "-20",
+          "id": "MISC-TALIM2-OPPSAME"
+        },
+        {
+          "value": "-0.05",
+          "id": "MISC-TALIM2-RECIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العددان المتعاكسان لهما المسافة نفسها إلى الصفر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "معاكس عدد يُحصل عليه بتغيير إشارته فقط، ولا يتغيّر ما بعد الإشارة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: مجموع العددين المتعاكسين يساوي الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "معاكس $-20$ هو $20$ : المسافة نفسها إلى الصفر، والإشارة مختلفة.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "معاكس $-20$ هو العدد الذي له المسافة نفسها إلى الصفر وإشارته مخالفة",
+          "$20$"
+        ],
+        "result": "20"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "فاصلة النقطة $A$ هي $-20$ cm والنقطة $C$ فاصلتها $10$ cm . ننقل المبدأ إلى $C$ ونبقي التدريجة نفسها. ما الفاصلة الجديدة للنقطة $A$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-30",
+      "misconceptionSignatures": [
+        {
+          "value": "-20",
+          "id": "MISC-TALIM2-ORIGINFIXED"
+        },
+        {
+          "value": "-10",
+          "id": "MISC-TALIM2-ADDORIGIN"
+        },
+        {
+          "value": "30",
+          "id": "MISC-TALIM2-SIGNSIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا تتغيّر النقطة، بل يتغيّر المبدأ الذي نبدأ منه العدّ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفاصلة الجديدة = الفاصلة القديمة − فاصلة المبدأ الجديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعدّ من المبدأ الجديد إلى النقطة."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة الجديدة $-20 - (10) = -30$ : النقطة هي نفسها والمبدأ تغيّر.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "النقطة لم تتحرّك، وإنّما المبدأ هو الذي تحرّك",
+          "الفاصلة الجديدة = $-20 - (10) = -30$"
+        ],
+        "result": "-30"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

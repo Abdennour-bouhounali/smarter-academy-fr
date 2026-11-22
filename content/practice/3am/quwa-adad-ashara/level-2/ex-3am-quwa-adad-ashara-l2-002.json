@@ -1,0 +1,176 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l2-002",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — $10^{0}$ و $10^{1}$",
+    "estimatedMinutes": 6,
+    "tags": [
+      "القوة ذات الأسّ المعدوم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نتذكّر ما تعلّمناه عن $10^{0}$ وعن $10^{1}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "$10^{0}$ يساوي :",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا يبقى من العدد 1 إذا لم نضرب فيه أيّ عامل 10؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القوة ذات الأسّ المعدوم عدد واحد لا يتغيّر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ليس 0 لأنّ الأسّ 0، وليس 10 لأنّ الأساس 10."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$10$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-SIFR"
+        },
+        {
+          "id": "B",
+          "content": "$1$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-SIFR"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{0} = 1$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب الكتابة العشرية للقوة المعنية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10^{0} = 1$ .",
+          "بلا عوامل نبقى عند 1."
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "نكتب العدد $1$ على الشكل $10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما قيمة جداء لا يحوي أيّ عامل 10؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عندما لا يوجد أيّ عامل 10 نبقى عند العدد 1."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر ما يُعطى للعدد $10^{0}$ ."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "0",
+      "feedback": {
+        "correct": "$1 = 10^{0}$ .",
+        "incorrect": "عدّ الأصفار (أو رتبة الرقم 1 بعد الفاصلة) بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "القوة $10^{0}$ تساوي 1.",
+          "$1 = 10^{0}$ ."
+        ],
+        "result": "n = 0"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما قيمة $10^{1}$ ؟",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم عاملًا في الجداء $10^{1}$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء عامل واحد يساوي هذا العامل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا نضيف أيّ صفر هنا."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "10",
+      "feedback": {
+        "correct": "$10^{1} = 10$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10^{1} = 10$ ."
+        ],
+        "result": "10"
+      }
+    }
+  ]
+}

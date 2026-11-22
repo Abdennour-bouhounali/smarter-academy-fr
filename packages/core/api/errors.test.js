@@ -22,6 +22,10 @@ describe('classifyStatus', () => {
     [403, 'AUTHORIZATION_ERROR'],
     [404, 'NOT_FOUND'],
     [422, 'VALIDATION_ERROR'],
+    // « Trop d'essais » est une conduite à tenir, pas une erreur inattendue :
+    // sans son propre type, l'élève limité en débit lisait « une erreur est
+    // survenue » et retapait aussitôt, rallongeant sa propre punition.
+    [429, 'RATE_LIMITED'],
     [500, 'SERVER_ERROR'],
     [503, 'SERVER_ERROR'],
     [418, 'UNEXPECTED_ERROR'],

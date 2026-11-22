@@ -1,0 +1,201 @@
+{
+  "id": "ex-4am-bahth-pgcd-l2-002",
+  "lessonCode": "bahth-pgcd",
+  "level": 2,
+  "metadata": {
+    "title": "117 و 91",
+    "estimatedMinutes": 5,
+    "tags": [
+      "الفروق المتتابعة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-differences",
+      "page": 13,
+      "section": "طرائق"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العددين الطبيعيين 117 و 91."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب الفرق $117 - 91$.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "26",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح العدد الأصغر من العدد الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$117 - 91 = 26$.",
+        "incorrect": "اطرح 91 من 117 بعناية."
+      },
+      "solution": {
+        "lines": [
+          "$117 - 91 = 26$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ب",
+      "statement": "بيّن أن $\\text{PGCD}(117 ; 91) = \\text{PGCD}(91 ; 26)$.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة الجزء (ا)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل قاسم مشترك للعددين 117 و 91 يقسم فرقهما، والعكس صحيح."
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك سطرًا بسطر بالحل النموذجي، وانتبه إلى الخاصية المستعملة."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $117 - 91 = 26$",
+          "وبما أن $\\text{PGCD}(a ; b) = \\text{PGCD}(b ; a - b)$ من أجل $a > b$، فإن:"
+        ],
+        "result": "\\text{PGCD}(117 ; 91) = \\text{PGCD}(91 ; 26)"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "باستعمال خوارزمية الفروق المتتابعة، احسب $\\text{PGCD}(117 ; 91)$.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-FURUQ-AKHIR-SIFR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "واصل من الزوج (91 ; 26)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في كل خطوة اطرح الأصغر من الأكبر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الفرق معدومًا."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر فرق غير معدوم هو 13.",
+        "incorrect": "القاسم المشترك الأكبر هو آخر فرق غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية الفروق المتتابعة:",
+          "$117 - 91 = 26$",
+          "$91 - 26 = 65$",
+          "$65 - 26 = 39$",
+          "$39 - 26 = 13$",
+          "$26 - 13 = 13$",
+          "$13 - 13 = 0$",
+          "آخر فرق غير معدوم هو 13، إذن:"
+        ],
+        "result": "\\text{PGCD}(117 ; 91) = 13"
+      },
+      "work": "required",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "اكتب الكسر $\\dfrac{117}{91}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "9/7",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل القاسم المشترك الأكبر الذي حسبته في السؤال السابق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على هذا القاسم المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 13: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال السابق.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{117}{91} = \\dfrac{117 \\div 13}{91 \\div 13}$"
+        ],
+        "result": "\\dfrac{117}{91} = \\dfrac{9}{7}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

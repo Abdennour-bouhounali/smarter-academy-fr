@@ -1,4 +1,5 @@
 import { apiRequest, ApiError, classifyStatus } from './apiClient';
+import { apiMessage } from './apiMessage';
 
 /**
  * Thin transport for cross-device lesson progression — same shape as
@@ -23,7 +24,7 @@ export async function putLessonProgress(token, lessonCode, snapshot) {
   });
 
   if (!ok) {
-    throw new ApiError(data?.message || 'Impossible d’enregistrer la progression.', classifyStatus(status), status);
+    throw new ApiError(apiMessage('progressSave', data, status), classifyStatus(status), status);
   }
 
   return data.progress;
@@ -41,7 +42,7 @@ export async function fetchAllLessonProgress(token) {
   });
 
   if (!ok) {
-    throw new ApiError(data?.message || 'Impossible de récupérer la progression.', classifyStatus(status), status);
+    throw new ApiError(apiMessage('progressLoad', data, status), classifyStatus(status), status);
   }
 
   return data.progress;

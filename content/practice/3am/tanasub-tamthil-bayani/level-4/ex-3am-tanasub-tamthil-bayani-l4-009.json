@@ -1,0 +1,253 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l4-009",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — من الجدول إلى المعادلة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جدول",
+      "تناسبية",
+      "معادلة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الرابع",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يبيع تعاوني الحيّ الزيت المعصور بأمانة، ويسجّل مبيعات اليوم في الجدول التالي.",
+    "table": {
+      "head": [
+        "الحجم (L)",
+        "2",
+        "4",
+        "6"
+      ],
+      "rows": [
+        [
+          "الثمن (مئات الدنانير)",
+          "5",
+          "10",
+          "15"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما النقطة التي يمثّلها العمود الثالث في معلم متعامد ومتجانس؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(15\\,;\\,6)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-SWAP-XY"
+        },
+        {
+          "id": "B",
+          "content": "$(6\\,;\\,1500)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-UNIT-AXIS"
+        },
+        {
+          "id": "C",
+          "content": "$(6\\,;\\,15)$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "السطر الأول هو الفواصل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السطر الثاني هو الترتيبات (بمئات الدنانير)."
+        }
+      ],
+      "feedback": {
+        "correct": "العمود الثالث: $6$ لترات و $15$ مئة دج، أي $(6\\,;\\,15)$ .",
+        "incorrect": "الفاصلة أوّلا ثم الترتيب كما في الجدول."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة النقطة $6$ وترتيبها $15$ ."
+        ],
+        "result": "(6\\,;\\,15)"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "نمثّل أعمدة الجدول بنقط. هل تقع النقط الثلاث مع $O$ على استقامة واحدة؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لأنّ المبدأ $O$ ليس من النقط المعلَّمة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-ORIGIN-DROP"
+        },
+        {
+          "id": "B",
+          "content": "نعم، النقط على استقامة واحدة مع المبدأ $O$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لا، لأنّ الترتيب لا يساوي الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-EQUAL-ONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط على استقامة واحدة مع المبدأ $O$ ، فهي تمثّل وضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{2} = \\dfrac{10}{4} = \\dfrac{15}{6} = 2{,}5$ : ناتج القسمة ثابت.",
+          "إذن النقط الثلاث مع $O$ على استقامة واحدة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "يريد زبون دفع $17{,}5$ مئة دج. حلّ المعادلة $2{,}5\\,x = 17{,}5$ يعطي عدد اللترات التي يشتريها. ما هو؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد اللترات",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$x$ مضروب في $2{,}5$ : اقسم الطرفين على $2{,}5$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 17{,}5 \\div 2{,}5 = 7$ لترات.",
+        "incorrect": "اقسم الطرفين على معامل $x$ ولا تضربهما فيه."
+      },
+      "solution": {
+        "lines": [
+          "$2{,}5\\,x = 17{,}5$",
+          "$x = \\dfrac{17{,}5}{2{,}5} = 7$ لترات."
+        ],
+        "result": "x = 7"
+      },
+      "work": "optional",
+      "timeSeconds": 100
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "ما ثمن $9$ لترات بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الثمن بالدينار",
+      "expectedAnswer": "2250",
+      "misconceptionSignatures": [
+        {
+          "value": "22.5",
+          "id": "MISC-TAMTHIL-UNIT-AXIS"
+        },
+        {
+          "value": "3.6",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل $y = a\\,x$ مع المعامل $2{,}5$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الثمن بمئات الدنانير ثم حوّله."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}5 \\times 9 = 22{,}5$ مئة دج، أي $2250$ دج.",
+        "incorrect": "احسب بمئات الدنانير ثم اضرب في $100$ ."
+      },
+      "solution": {
+        "lines": [
+          "$y = 2{,}5 \\times 9 = 22{,}5$ مئة دج.",
+          "$22{,}5 \\times 100 = 2250$ دج."
+        ],
+        "result": "2250\\ \\text{دج}"
+      },
+      "work": "optional",
+      "timeSeconds": 100
+    }
+  ]
+}

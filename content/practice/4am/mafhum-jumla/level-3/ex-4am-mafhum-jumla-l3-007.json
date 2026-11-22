@@ -1,0 +1,160 @@
+{
+  "id": "ex-4am-mafhum-jumla-l3-007",
+  "lessonCode": "mafhum-jumla",
+  "level": 3,
+  "metadata": {
+    "title": "ترجمة شرطين بجملة",
+    "estimatedMinutes": 7,
+    "tags": [
+      "ترجمة",
+      "جملة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-1",
+      "page": 56,
+      "section": "أنشطة",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يعمل في مصلحة إدارية تخدم المواطنين بإخلاص 32 عاملا، $x$ رجلا و $y$ امرأة. أُحيل 5 رجال و 3 نساء على التقاعد ولم يُعوَّضوا، فأصبح عدد النساء بالمصلحة ضعف عدد الرجال."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن الشرط الثاني يُترجم بالمعادلة $2(x - 5) = y - 3$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عبّر عن عدد الرجال الباقين وعدد النساء الباقيات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "«ضعف» يعني الضرب في 2."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "بعد الإحالة على التقاعد بقي $x - 5$ رجلا و $y - 3$ امرأة.",
+          "عدد النساء ضعف عدد الرجال: $y - 3 = 2(x - 5)$ ، أي $2(x - 5) = y - 3$ ."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب هذه المعادلة على الشكل $2x - y = c$ . أعط العدد $c$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $c$ فقط",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر $2(x - 5)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل الحدود التي فيها $y$ إلى الطرف الأول والأعداد إلى الطرف الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "$2x - 10 = y - 3$ تعطي $2x - y = 7$ .",
+        "incorrect": "انشر ثم انقل الحدود مع تغيير الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "$2(x - 5) = y - 3$",
+          "$2x - 10 = y - 3$",
+          "$2x - y = -3 + 10$"
+        ],
+        "result": "2x - y = 7"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل الثنائية $(12 ; 17)$ حل للجملة $\\begin{cases} x + y = 32 \\\\ 2x - y = 7 \\end{cases}$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-MUADALA-WAHIDA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $12$ و $y$ بـ $17$ في كل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الثنائية حل للجملة إذا حققت المعادلتين في آن واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$12 + 17 = 29 \\neq 32$ ؛ $2 \\times 12 - 17 = 7$ : الثنائية ليست حلا للجملة.",
+        "incorrect": "العدد الأول في الثنائية قيمة $x$ والثاني قيمة $y$ ؛ عوّض في المعادلتين معا وقارن كل نتيجة بالطرف الثاني."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $x$ بـ $12$ و $y$ بـ $17$ :",
+          "$12 + 17 = 29 \\neq 32$",
+          "$2 \\times 12 - 17 = 7$",
+          "ومنه الثنائية $(12 ; 17)$ ليست حلا للجملة (لا تحقق المعادلتين معا)."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

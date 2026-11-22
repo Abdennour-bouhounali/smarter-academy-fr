@@ -1,0 +1,285 @@
+{
+  "id": "ex-4am-mutatabiqat-shahira-l5-008",
+  "lessonCode": "mutatabiqat-shahira",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2022 — تشكيلة الاستعراض",
+    "estimatedMinutes": 15,
+    "tags": [
+      "مربع مجموع",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mutatabiqat-shahira_P1",
+      "modelledOn": "BEM 2022 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تحضيرًا لاستعراض رياضي بمناسبة عيد الاستقلال (5 جويلية) وفاءً لشهداء الثورة، يصفّ أستاذ التربية البدنية بمتوسطة في قسنطينة التلاميذ في تشكيلة مربعة: $n$ صفًّا في كل صف $n$ تلميذًا، حيث $n$ عدد طبيعي."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "تصبح التشكيلة $(n + 1)$ صفًّا في كل صف $(n + 1)$ تلميذًا. عبّر بدلالة $n$ عن عدد تلاميذها $T$ على شكل مجموع مبسّط.",
+      "statement": "العدد $p$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $T$ على الشكل $n^2 + pn + q$ : اكتب العدد $p$ فقط",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-MURABBA-MAJMU-BILA-2AB"
+        },
+        {
+          "value": "1",
+          "id": "MISC-MUTATABIQA-2AB-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على مربع مجموع: $(a + b)^2 = a^2 + 2ab + b^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن الحدّين $a$ و $b$ ، ولا تنسَ الحد المضاعف $2ab$ ولا تربيع المعامل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $n^2$ معًا، ثم حدود $n$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$T = n^2 + 2n + 1$ إذن $p = 2$ .",
+        "incorrect": "طبّق المتطابقة الشهيرة حدًّا حدًّا (مربع كل حد والحد المضاعف)، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$T = (n + 1) \\times (n + 1)$",
+          "$T = (n + 1)^2$",
+          "$T = n^2 + 2 \\times n \\times 1 + 1^2$"
+        ],
+        "result": "T = n^2 + 2n + 1"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $q$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $T$ على الشكل $n^2 + pn + q$ : اكتب العدد $q$ فقط",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $n$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$T = n^2 + 2n + 1$ إذن $q = 1$ .",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $q$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$T = n^2 + 2n + 1$"
+        ],
+        "result": "q = 1"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "استنتج بدلالة $n$ عدد التلاميذ $D$ الذين يجب إضافتهم إلى التشكيلة الأولى للحصول على الثانية.",
+      "statement": "العدد $p$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $D$ على الشكل $pn + q$ : اكتب العدد $p$ فقط",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-MURABBA-MAJMU-BILA-2AB"
+        },
+        {
+          "value": "1",
+          "id": "MISC-MUTATABIQA-2AB-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح عدد تلاميذ التشكيلة الأولى $n^2$ من $T$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحدّان $n^2$ و $-n^2$ يتعادمان."
+        }
+      ],
+      "feedback": {
+        "correct": "$D = 2n + 1$ إذن $p = 2$ .",
+        "incorrect": "طبّق المتطابقة الشهيرة حدًّا حدًّا (مربع كل حد والحد المضاعف)، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$D = (n + 1)^2 - n^2$",
+          "$D = n^2 + 2n + 1 - n^2$"
+        ],
+        "result": "D = 2n + 1"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "العدد $q$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $D$ على الشكل $pn + q$ : اكتب العدد $q$ فقط",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $n$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$D = 2n + 1$ إذن $q = 1$ .",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $q$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$D = 2n + 1$"
+        ],
+        "result": "q = 1"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "احسب هذا العدد من أجل $n = 24$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "49",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $n$ بالعدد المعطى في الشكل المبسّط الذي وجدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$D = 49$.",
+        "incorrect": "عوّض $n$ في كل حد، واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$D = 2 \\times 24 + 1$",
+          "تحقّق: $25^2 - 24^2 = 625 - 576 = 49$"
+        ],
+        "result": "D = 49"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "☜ يشارك في الاستعراض 600 تلميذ، صُفّ منهم 576 في تشكيلة مربعة من 24 صفًّا. كم تلميذًا ينقص لتصبح التشكيلة مربعة من 25 صفًّا يدخلها كل المشاركين؟",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "25",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب عدد التلاميذ الباقين خارج التشكيلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارنه بعدد التلاميذ اللازم إضافته الذي وجدته في السؤال 03."
+        }
+      ],
+      "feedback": {
+        "correct": "$600 - 576 = 24$ تلميذًا خارج التشكيلة، و $49 - 24 = 25$ تلميذًا ينقص.",
+        "incorrect": "التشكيلة من 25 صفًّا تحتاج 49 تلميذًا إضافيًا: قارن بعدد الباقين خارج التشكيلة."
+      },
+      "solution": {
+        "lines": [
+          "الباقون خارج التشكيلة: $600 - 576 = 24$",
+          "العدد الناقص: $49 - 24 = 25$",
+          "تحقّق: $25^2 = 625$ و $625 - 600 = 25$"
+        ],
+        "result": "25"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

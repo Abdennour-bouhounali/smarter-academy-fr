@@ -1,0 +1,273 @@
+{
+  "id": "ex-4am-hasiba-muthallathiya-l3-010",
+  "lessonCode": "hasiba-muthallathiya",
+  "level": 3,
+  "metadata": {
+    "title": "تصويب إجابة رياض ثم قيس الزاوية A",
+    "estimatedMinutes": 7,
+    "tags": [
+      "اللمسات العكسية",
+      "جيب التمام",
+      "تصويب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hasiba-muthallathiya_P2",
+      "modelledOn": "ex-23",
+      "adaptedFrom": "ex-4am-hasiba-muthallathiya-l5-001"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل، $ABC$ مثلث قائم في $C$ حيث $AC = 7\\,\\mathrm{cm}$ و $AB = 10\\,\\mathrm{cm}$ . كتب رياض: $\\cos\\widehat{A} = \\dfrac{7}{10}$ ومنه $\\widehat{A} = 0{,}7$ .",
+    "figure": {
+      "points": {
+        "C": [
+          0,
+          0
+        ],
+        "A": [
+          7,
+          0
+        ],
+        "B": [
+          0,
+          7.1414
+        ]
+      },
+      "segments": [
+        {
+          "from": "C",
+          "to": "A",
+          "label": "7 cm"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "label": "10 cm"
+        },
+        [
+          "B",
+          "C"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "C",
+          "B"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "A",
+          "from": "C",
+          "to": "B",
+          "label": "?"
+        }
+      ],
+      "ariaLabel": "المثلث ABC قائم في C حيث AC يساوي 7 سم والوتر AB يساوي 10 سم، والزاوية المطلوبة عند A",
+      "maxWidth": 280
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "صوّب الخطأ المرتكب في إجابة رياض.",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "النسبة خاطئة: $\\cos\\widehat{A} = \\dfrac{10}{7}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-NISBA-MAQLUBA"
+        },
+        {
+          "id": "B",
+          "content": "النسبة صحيحة، لكن $0{,}7$ هو جيب تمام الزاوية وليس قيسها",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "الإجابة صحيحة: $\\widehat{A} = 0{,}7^{\\circ}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-NISBA-BADAL-QAYS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$[AC]$ مجاور للزاوية $\\widehat{A}$ و $[AB]$ هو الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يُكتب قيس الزاوية بنسبة أم بالدرجة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "النسبة صحيحة، والقيس يُعيَّن باللمسة العكسية.",
+        "incorrect": "تحقّق من النسبة ثم من الخطوة الأخيرة: ما الذي كتبه رياض مكان القيس؟"
+      },
+      "solution": {
+        "lines": [
+          "$\\cos\\widehat{A} = \\dfrac{AC}{AB} = \\dfrac{7}{10} = 0{,}7$ صحيح (المجاور على الوتر).",
+          "لكن $0{,}7$ هو جيب تمام الزاوية وليس قيسها: القيس يُعيَّن باللمسة ⁦2nd⁩ ثم ⁦cos⁻¹⁩ ."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب قيس الزاوية $\\widehat{A}$ بالتدوير إلى الوحدة من الدرجة.",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيس الزاوية بالدرجة، مدوّرا إلى الوحدة",
+      "expectedAnswer": "46",
+      "misconceptionSignatures": [
+        {
+          "value": "45",
+          "id": "MISC-MUTH-TADWIR-BATR"
+        },
+        {
+          "value": "44",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "1",
+          "id": "MISC-MUTH-HASIBA-RAD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لدينا $\\cos\\,\\widehat{A} = \\dfrac{7}{10}$ : نعرف النسبة ونبحث عن القيس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اللمسة العكسية: ⁦2nd⁩ ثم ⁦cos⁻¹⁩ ثم النسبة ثم ⁦=⁩."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الحرف ⁦D⁩ (الدرجة)، ثم دوّر إلى الوحدة: انظر إلى الرقم الموالي للرقم الأخير الذي تحتفظ به."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{A} \\approx 45{,}572996^{\\circ} \\approx 46^{\\circ}$ .",
+        "incorrect": "النسبة ليست القيس: القيس يُعيَّن باللمسة العكسية المناسبة والحاسبة مبرمجة بالدرجة، ثم يُدوَّر (لا يُبتر) إلى الوحدة."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $ABC$ القائم في $C$ : $\\cos\\widehat{A} = \\dfrac{AC}{AB} = 0{,}7$",
+          "باستعمال الحاسبة المبرمجة بالدرجة: ⁦ON 2nd cos⁻¹ 0,7 =⁩ يظهر على الشاشة $45{,}572996$ .",
+          "الرقم الذي يلي رقم الوحدات هو 5، وهو يساوي 5: نضيف 1 إلى رقم الوحدات."
+        ],
+        "result": "\\widehat{A} \\approx 46^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أعط قيس الزاوية $\\widehat{A}$ بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: قيس الزاوية بالدرجة، مدوّرا إلى 0,1",
+      "expectedAnswer": "45.6",
+      "misconceptionSignatures": [
+        {
+          "value": "45.5",
+          "id": "MISC-MUTH-TADWIR-BATR"
+        },
+        {
+          "value": "44.4",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "0.8",
+          "id": "MISC-MUTH-HASIBA-RAD"
+        },
+        {
+          "value": "0.7",
+          "id": "MISC-MUTH-NISBA-BADAL-QAYS"
+        },
+        {
+          "value": "1.0",
+          "id": "MISC-MUTH-AKS-BADAL-MUBASHIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لدينا $\\cos\\,\\widehat{A} = \\dfrac{7}{10}$ : نعرف النسبة ونبحث عن القيس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اللمسة العكسية: ⁦2nd⁩ ثم ⁦cos⁻¹⁩ ثم النسبة ثم ⁦=⁩."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الحرف ⁦D⁩ (الدرجة)، ثم دوّر إلى الجزء من 10: انظر إلى الرقم الموالي للرقم الأخير الذي تحتفظ به."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{A} \\approx 45{,}572996^{\\circ} \\approx 45{,}6^{\\circ}$ .",
+        "incorrect": "النسبة ليست القيس: القيس يُعيَّن باللمسة العكسية المناسبة والحاسبة مبرمجة بالدرجة، ثم يُدوَّر (لا يُبتر) إلى الجزء من 10."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال الحاسبة المبرمجة بالدرجة: ⁦ON 2nd cos⁻¹ 0,7 =⁩ يظهر على الشاشة $45{,}572996$ .",
+          "الرقم الذي يلي رقم الأجزاء من 10 هو 7، وهو أكبر من 5: نضيف 1 إلى رقم الأجزاء من 10."
+        ],
+        "result": "\\widehat{A} \\approx 45{,}6^{\\circ}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

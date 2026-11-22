@@ -1,0 +1,133 @@
+{
+  "id": "ex-4am-barahin-ashia-l5-009",
+  "lessonCode": "barahin-ashia",
+  "level": 5,
+  "generator": {
+    "tool": "gen-barahin.mjs",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — متوازيا أضلاع متجاوران",
+    "estimatedMinutes": 5,
+    "tags": [
+      "برهان",
+      "منتصف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_barahin-ashia_P2",
+      "modelledOn": "ex-20"
+    }
+  },
+  "statement": {
+    "content": "ABCD و BEFC متوازيا أضلاع (رؤوسهما ليست على استقامة)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "$\\overrightarrow{AD}$ يساوي:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{EF}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{FE}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{BE}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TUL-FAQAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في ABCD : $\\overrightarrow{AD} = \\overrightarrow{BC}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في BEFC : $\\overrightarrow{BC} = \\overrightarrow{EF}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "شعاعان يساويان شعاعا ثالثا متساويان."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AD} = \\overrightarrow{BC} = \\overrightarrow{EF}$ .",
+        "incorrect": "استعمل متوازيي الأضلاع على التوالي: $\\overrightarrow{AD} = \\overrightarrow{BC}$ ثم $\\overrightarrow{BC} = \\overrightarrow{EF}$ ."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "إذن الرباعي ADFE:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "متوازي أضلاع",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "شبه منحرف ضلعاه [AD] و [FE] غير متقايسين",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TUL-FAQAT"
+        },
+        {
+          "id": "C",
+          "content": "متقاطع الضلعين",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{AD} = \\overrightarrow{EF}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من A إلى D كما من E إلى F : دُر حول الرباعي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "سمِّ الرباعي بالترتيب A ثم D ثم F ثم E ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AD} = \\overrightarrow{EF}$ يعني ADFE متوازي أضلاع.",
+        "incorrect": "المساواة $\\overrightarrow{AD} = \\overrightarrow{EF}$ تعطي متوازي الأضلاع ADFE."
+      }
+    }
+  ]
+}

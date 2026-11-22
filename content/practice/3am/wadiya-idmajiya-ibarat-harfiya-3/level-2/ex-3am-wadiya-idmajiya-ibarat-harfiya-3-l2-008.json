@@ -1,0 +1,192 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-ibarat-harfiya-3-l2-008",
+  "lessonCode": "wadiya-idmajiya-ibarat-harfiya-3",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مقارنة عرضين بالفرق",
+    "estimatedMinutes": 7,
+    "tags": [
+      "عرضان",
+      "مقارنة",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تقترح قاعة رياضة عرضين: العرض $A$ ثمنه $1200$ دج ثمنًا ثابتًا و $30$ دج لكل حصّة، والعرض $B$ ثمنه $1000$ دج ثمنًا ثابتًا و $40$ دج لكل حصّة. إذا رمزنا بـ $x$ إلى عدد الحصص، فإنّ ثمن العرضين هو:",
+    "formulas": [
+      "A = 1200 + 30x",
+      "B = 1000 + 40x"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "بسّط الفرق $A - B$ واكتبه على الشكل $px + q$ .",
+      "statement": "العدد $p$ :",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $p$ فقط",
+      "expectedAnswer": "-10",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحدود المتشابهة في العبارة؟ وهل يسبق قوسًا إشارة طرح أو عدد يضربه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انشر الأقواس أولًا: العدد أمام القوس يضرب كل حدّ داخله، وإشارة الطرح أمامه تغيّر إشارة كل حدّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود التي فيها الحرف معًا، ثم الأعداد معًا، وتحقّق بقيمة صغيرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$A - B = -10x + 200$ إذن $p = -10$ .",
+        "incorrect": "انشر الأقواس مع الانتباه إلى الإشارات ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$A - B = (1200 + 30x) - (1000 + 40x)$",
+          "$A - B = 1200 + 30x - 1000 - 40x$",
+          "$A - B = -10x + 200$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "العدد $q$ :",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $q$ فقط",
+      "expectedAnswer": "200",
+      "misconceptionSignatures": [
+        {
+          "value": "2200",
+          "id": "MISC-SYN-HARF-BRACKET"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحدود المتشابهة في العبارة؟ وهل يسبق قوسًا إشارة طرح أو عدد يضربه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انشر الأقواس أولًا: العدد أمام القوس يضرب كل حدّ داخله، وإشارة الطرح أمامه تغيّر إشارة كل حدّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود التي فيها الحرف معًا، ثم الأعداد معًا، وتحقّق بقيمة صغيرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$A - B = -10x + 200$ إذن $q = 200$ .",
+        "incorrect": "انشر الأقواس مع الانتباه إلى الإشارات ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$A - B = 1200 + 30x - 1000 - 40x$",
+          "$A - B = -10x + 200$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "من أجل $x = 15$ ، أيّ العبارتين أكبر؟ (قارن ثمن العرضين.)",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "العرض $A$ أغلى من العرض $B$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "العرض $A$ أرخص من العرض $B$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SYN-HARF-DIFFSIGN"
+        },
+        {
+          "id": "C",
+          "content": "العرضان بالثمن نفسه",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SYN-HARF-DIFFSIGN"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا تعلّمنا إشارة الفرق عن ترتيب العددين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب قيمة كل عبارة من أجل العدد المعطى، ثم قارن العددين، أو احسب الفرق وانظر إلى إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا انعكس ترتيب الطرح فإنّ إشارة الفرق تنعكس أيضًا."
+        }
+      ],
+      "feedback": {
+        "correct": "العرض $A$ أغلى من العرض $B$ .",
+        "incorrect": "احسب القيمتين أو الفرق، وانتبه إلى ترتيب الطرح قبل أن تحكم على الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "$A = 1650$ و $B = 1600$ .",
+          "$A - B = 50$ وهو عدد موجب .",
+          "إذن $A > B$ : العرض $A$ أغلى."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

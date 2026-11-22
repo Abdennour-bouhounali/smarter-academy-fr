@@ -1,0 +1,79 @@
+{
+  "id": "ex-4am-barahin-ashia-l2-008",
+  "lessonCode": "barahin-ashia",
+  "level": 2,
+  "generator": {
+    "tool": "gen-barahin.mjs",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — من المساواة إلى التوازي",
+    "estimatedMinutes": 3,
+    "tags": [
+      "توازي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_barahin-ashia_P2",
+      "modelledOn": "ex-20"
+    }
+  },
+  "statement": {
+    "content": "K و L و M و N أربع نقط حيث $\\overrightarrow{KL} = \\overrightarrow{MN}$ ، و M لا تقع على المستقيم (KL)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المستقيمان (KL) و (MN):",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "متوازيان",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "متعامدان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MANHA-MUSTAQIM"
+        },
+        {
+          "id": "C",
+          "content": "متقاطعان في نقطة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MANHA-MUSTAQIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "شعاعان متساويان لهما نفس المنحى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المنحى هو المستقيم الحامل أو أي مستقيم يوازيه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "M خارج (KL): هل يمكن أن ينطبق المستقيمان؟"
+        }
+      ],
+      "feedback": {
+        "correct": "نفس المنحى، و M خارج (KL): المستقيمان (KL) و (MN) متوازيان.",
+        "incorrect": "شعاعان متساويان لهما نفس المنحى: مستقيماهما متوازيان أو منطبقان."
+      }
+    }
+  ]
+}

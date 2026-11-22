@@ -1,0 +1,199 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l2-006",
+  "lessonCode": "mana-jam-tarh",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — قراءة مخطط بأقواس",
+    "estimatedMinutes": 4,
+    "tags": [
+      "مخطط بأقواس",
+      "طرح"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لاحظ المخطط بأقواس المقابل:",
+    "figure": {
+      "kind": "tape",
+      "parts": [
+        {
+          "label": "18,75",
+          "value": 18.75
+        },
+        {
+          "label": "□",
+          "unknown": true
+        }
+      ],
+      "whole": {
+        "label": "40",
+        "value": 40.0
+      },
+      "ariaLabel": "مخطط بأقواس: جزآن 18,75 و □ فوق الخط، والكل 40 تحته"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "العدد المجهول □ هو:",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "جزء (قوس فوق الخط)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الكل (القوس تحت الخط)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين يقع □: فوق الخط أم تحته؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس فوق الخط تحمل الأجزاء."
+        }
+      ],
+      "feedback": {
+        "correct": "□ على قوس فوق الخط: هو جزء.",
+        "incorrect": "القوس تحت الخط يحمل العدد 40: انظر أين وُضع □."
+      },
+      "solution": {
+        "lines": [
+          "القوس تحت الخط يحمل الكل 40.",
+          "□ على قوس فوق الخط: إذن □ جزء."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما الحساب الذي يعطي □؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$40 - 18{,}75$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$40 + 18{,}75$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        },
+        {
+          "id": "C",
+          "content": "$18{,}75 - 40$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-FARQ-MAQLUB"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "□ جزء، و 40 هو الكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كيف نجد جزءًا إذا علمنا الكل والجزء الآخر؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\square  + 18{,}75 = 40$، إذن $\\square  = 40 - 18{,}75$.",
+        "incorrect": "□ جزء من الكل 40: لا يمكن أن يكون أكبر من 40."
+      },
+      "solution": {
+        "lines": [
+          "$\\square + 18{,}75 = 40$",
+          "لإيجاد جزء نطرح الجزء الآخر من الكل:"
+        ],
+        "result": "\\square = 40 - 18{,}75"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب □.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "21.25",
+      "misconceptionSignatures": [
+        {
+          "value": "58.75",
+          "id": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب 40 على الشكل 40,00."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نطرح ثم نتحقق بالجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$40 - 18{,}75 = 21{,}25$، والتحقق: $21{,}25 + 18{,}75 = 40$.",
+        "incorrect": "□ جزء من 40: النتيجة أصغر من 40."
+      },
+      "solution": {
+        "lines": [
+          "$40 - 18{,}75 = 40{,}00 - 18{,}75 = 21{,}25$"
+        ],
+        "result": "\\square = 21{,}25"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

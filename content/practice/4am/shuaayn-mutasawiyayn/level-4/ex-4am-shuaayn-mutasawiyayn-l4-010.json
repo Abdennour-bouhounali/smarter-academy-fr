@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l4-010",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — صورة قطعة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "انسحاب",
+      "صورة شكل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_shuaayn-mutasawiyayn_P3",
+      "modelledOn": "method-image"
+    }
+  },
+  "statement": {
+    "content": "ABDC متوازي أضلاع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "صورة القطعة [AB] بالانسحاب الذي شعاعه $\\overrightarrow{AC}$ هي:",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "[AD]",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        },
+        {
+          "id": "B",
+          "content": "[CD]",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "[BD]",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أوجد صورة كل طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "صورة A هي C لأن الشعاع AC هو شعاع الانسحاب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "صورة B: النقطة X حيث BX = AC. في ABDC: BD = AC."
+        }
+      ],
+      "feedback": {
+        "correct": "صورة A هي C، وصورة B هي D (الشعاع BD يساوي AC): صورة [AB] هي [CD].",
+        "incorrect": "ابحث عن صورة كل طرف على حدة."
+      }
+    }
+  ]
+}

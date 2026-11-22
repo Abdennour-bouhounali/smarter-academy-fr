@@ -1,0 +1,256 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ashia-l5-010",
+  "lessonCode": "wadiya-idmajiya-ashia",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — جسر نحو جامع الجزائر",
+    "estimatedMinutes": 5,
+    "tags": [
+      "أقصر مسلك",
+      "موضع M"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ashia_P1",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "الحفاظ على أرواح المارّة أمانة. جسر للراجلين [MN] فوق طريق عرضه $20\\,\\mathrm{m}$ ، عمودي على حافتيه، يصل موقف حافلات A بساحة جامع الجزائر B (الشكل): A فوق الحافة العليا بـ $15\\,\\mathrm{m}$ ، و B تحت الحافة السفلى بـ $35\\,\\mathrm{m}$ ، والمسافة الأفقية بينهما $70\\,\\mathrm{m}$ . H النقطة من الحافة العليا المقابلة لـ A.",
+    "figure": {
+      "points": {
+        "R1": [
+          -10.5,
+          20
+        ],
+        "R2": [
+          80.5,
+          20
+        ],
+        "R3": [
+          80.5,
+          0
+        ],
+        "R4": [
+          -10.5,
+          0
+        ],
+        "A": [
+          0,
+          35
+        ],
+        "HA": [
+          0,
+          20
+        ],
+        "B": [
+          70,
+          -35
+        ],
+        "HB": [
+          70,
+          0
+        ],
+        "K": [
+          70,
+          20
+        ],
+        "M": [
+          50,
+          20
+        ],
+        "N": [
+          50,
+          0
+        ],
+        "W1": [
+          77.7,
+          20
+        ],
+        "W0": [
+          77.7,
+          0
+        ]
+      },
+      "polygons": [
+        {
+          "points": [
+            "R1",
+            "R2",
+            "R3",
+            "R4"
+          ],
+          "tone": "slate"
+        }
+      ],
+      "segments": [
+        {
+          "from": "R1",
+          "to": "R2",
+          "bold": true
+        },
+        {
+          "from": "R4",
+          "to": "R3",
+          "bold": true
+        },
+        {
+          "from": "A",
+          "to": "HA",
+          "dashed": true,
+          "label": "15 m"
+        },
+        {
+          "from": "HB",
+          "to": "B",
+          "dashed": true,
+          "label": "35 m"
+        },
+        {
+          "from": "HA",
+          "to": "K",
+          "dashed": true,
+          "tone": "sky",
+          "label": "70 m"
+        },
+        {
+          "from": "W1",
+          "to": "W0",
+          "label": "20 m"
+        },
+        {
+          "from": "A",
+          "to": "M",
+          "tone": "amber"
+        },
+        {
+          "from": "M",
+          "to": "N",
+          "bold": true,
+          "tone": "indigo"
+        },
+        {
+          "from": "N",
+          "to": "B",
+          "tone": "amber"
+        }
+      ],
+      "rightAngles": [
+        [
+          "R1",
+          "M",
+          "N"
+        ]
+      ],
+      "hidden": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "HA",
+        "HB",
+        "K",
+        "W1",
+        "W0"
+      ],
+      "labels": {
+        "A": "n",
+        "B": "s",
+        "M": "ne",
+        "N": "se"
+      },
+      "ariaLabel": "طريق عرضه 20 m بين حافتين متوازيتين، A فوق الحافة العليا بـ 15 m و B تحت الحافة السفلى بـ 35 m، والمسافة الأفقية بينهما 70 m، والممر [MN] عمودي على الحافتين"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "في الموضع الأمثل، ما المسافة HM (بالمتر)؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "21",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "M على $[AB']$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة الشاقولية بين A و B′: 50."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$70 \\times \\dfrac{15}{50}$"
+        }
+      ],
+      "feedback": {
+        "correct": "$HM = 70 \\times \\dfrac{15}{50} = 21\\,\\mathrm{m}$ .",
+        "incorrect": "طالس في المثلث الذي رأسه A."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 5,
+      "misconceptionSignatures": [
+        {
+          "value": "35",
+          "id": "MISC-SHUAA-MAMAR-WASAT"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "statement": "طول أقصر مسلك (بالمتر، مدوّرا إلى الوحدة):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح (مدوّر إلى الوحدة)",
+      "expectedAnswer": "106",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AB' = \\sqrt{70^2 + 50^2}$"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\approx 86{,}02$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف 20."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB' = \\sqrt{7400} \\approx 86{,}02$ و $L \\approx 106{,}02$ ، أي $106\\,\\mathrm{m}$ .",
+        "incorrect": "لا تنس طول الجسر."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 5,
+      "misconceptionSignatures": [
+        {
+          "value": "86",
+          "id": "MISC-SHUAA-MAMAR-NASI"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l1-003",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2008 — قواسم العدد 76",
+    "estimatedMinutes": 6,
+    "tags": [
+      "قواسم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qawasim-adad-tabii_P3",
+      "modelledOn": "BEM 2008 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2008",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "جد كل قواسم العدد 76.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        2,
+        4,
+        19,
+        38,
+        76
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            4,
+            19,
+            38
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 76 بمربعات الأعداد: إلى أي عدد يكفي أن تختبر قابلية القسمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل قسمة باقيها معدوم تعطي قاسمين: $d$ و $76 \\div d$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$76 = 1 \\times 76$ ، $76 = 2 \\times 38$ ، $76 = 4 \\times 19$.",
+        "incorrect": "اختبر الأعداد التي مربعها أصغر من العدد أو يساويه، وخذ من كل قسمة باقيها معدوم القاسمين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$8^2 = 64 \\leq 76 < 81 = 9^2$ ومنه نختبر قابلية قسمة 76 على الأعداد من 1 إلى 8.",
+          "نجد أن 76 يقبل القسمة على كل من الأعداد: 1 ، 2 ، 4.",
+          "ومن المساويات: $76 = 1 \\times 76$ ، $76 = 2 \\times 38$ ، $76 = 4 \\times 19$",
+          "إذن قواسم العدد 76 هي: 1 ، 2 ، 4 ، 19 ، 38 ، 76."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب الكسر $\\dfrac{19}{76}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "1/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل كتابة 76 على شكل جداء يظهر فيه العامل 19 (السؤال 01)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على 19."
+        }
+      ],
+      "feedback": {
+        "correct": "$76 = 19 \\times 4$: نقسم البسط والمقام على 19.",
+        "incorrect": "ابحث في السؤال 01 عن الجداء الذي يظهر فيه العامل 19، ثم اقسم البسط والمقام عليه.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال."
+      },
+      "solution": {
+        "lines": [
+          "$76 = 19 \\times 4$",
+          "$\\dfrac{19}{76} = \\dfrac{19 \\times 1}{19 \\times 4}$"
+        ],
+        "result": "\\dfrac{19}{76} = \\dfrac{1}{4}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

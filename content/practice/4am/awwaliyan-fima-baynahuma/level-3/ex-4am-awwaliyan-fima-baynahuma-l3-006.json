@@ -1,0 +1,182 @@
+{
+  "id": "ex-4am-awwaliyan-fima-baynahuma-l3-006",
+  "lessonCode": "awwaliyan-fima-baynahuma",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2021 — العددان 1225 و 936",
+    "estimatedMinutes": 13,
+    "tags": [
+      "إثبات",
+      "تعرّف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_awwaliyan-fima-baynahuma_P2",
+      "modelledOn": "BEM 2021 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن العددين 1225 و 936 أوليان فيما بينهما.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيمة PGCD(1225 ; 936) التي وجدتها",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عددان أوليان فيما بينهما: احسب قاسمهما المشترك الأكبر PGCD(1225 ; 936)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 1225 على 936، ثم واصل القسمات المتتابعة إلى أن تجد باقيًا معدومًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن آخر باقٍ غير معدوم بما يتطلّبه تعريف عددين أوليين فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(1225 ; 936) = 1: العددان 1225 و 936 أوليان فيما بينهما.",
+        "incorrect": "راجع القسمات المتتابعة باقيًا باقيًا: آخر باقٍ غير معدوم هو القاسم المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$1225 = 936 \\times 1 + 289$",
+          "$936 = 289 \\times 3 + 69$",
+          "$289 = 69 \\times 4 + 13$",
+          "$69 = 13 \\times 5 + 4$",
+          "$13 = 4 \\times 3 + 1$",
+          "$4 = 1 \\times 4 + 0$",
+          "آخر باقٍ غير معدوم هو 1، إذن PGCD(1225 ; 936) = 1 .",
+          "ومنه العددان 1225 و 936 أوليان فيما بينهما."
+        ],
+        "result": "PGCD(1225 ; 936) = 1"
+      },
+      "work": "required",
+      "timeSeconds": 270
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بيّن أن $\\sqrt{1225}$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيمة $\\sqrt{1225}$",
+      "expectedAnswer": "35",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن عدد طبيعي مربعه 1225."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رقم آحاد 1225 هو 5: جرّب عددًا ينتهي بـ 5."
+        }
+      ],
+      "feedback": {
+        "correct": "$35^2 = 1225$ ، إذن $\\sqrt{1225} = 35$ .",
+        "incorrect": "ابحث عن العدد الطبيعي الذي إذا ضربته في نفسه وجدت 1225."
+      },
+      "solution": {
+        "lines": [
+          "$35 \\times 35 = 1225$",
+          "إذن $\\sqrt{1225} = 35$ وهو عدد طبيعي."
+        ],
+        "result": "\\sqrt{1225} = 35"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "عيّن كل الأعداد الطبيعية $n$ حيث $20 < n < 30$ ويكون العددان $n$ و 1225 أوليين فيما بينهما.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        22,
+        23,
+        24,
+        26,
+        27,
+        29
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قواسم العدد 1225 التي تختلف عن 1 والأصغر من 30."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يُستبعد كل عدد $n$ يقبل القسمة على قاسم من قواسم 1225 يختلف عن 1."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "افحص الأعداد $n$ واحدًا واحدًا، ولا تستبعد عددًا لمجرّد أنه ليس عددًا أوليًا."
+        }
+      ],
+      "feedback": {
+        "correct": "كل عدد من هذه الأعداد قاسمه المشترك الأكبر مع 1225 يساوي 1.",
+        "incorrect": "افحص كل عدد من المجال: هل له قاسم مشترك مع 1225 يختلف عن 1؟"
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 1225 المحصورة بين 2 و 29 هي: 5 ، 7 ، 25",
+          "21: 7 قاسم مشترك للعددين 21 و 1225 ✗",
+          "22: PGCD(22 ; 1225) = 1 ✓",
+          "23: PGCD(23 ; 1225) = 1 ✓",
+          "24: PGCD(24 ; 1225) = 1 ✓",
+          "25: 5 قاسم مشترك للعددين 25 و 1225 ✗",
+          "26: PGCD(26 ; 1225) = 1 ✓",
+          "27: PGCD(27 ; 1225) = 1 ✓",
+          "28: 7 قاسم مشترك للعددين 28 و 1225 ✗",
+          "29: PGCD(29 ; 1225) = 1 ✓",
+          "الأعداد المطلوبة هي: 22 ، 23 ، 24 ، 26 ، 27 ، 29"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 360
+    }
+  ]
+}

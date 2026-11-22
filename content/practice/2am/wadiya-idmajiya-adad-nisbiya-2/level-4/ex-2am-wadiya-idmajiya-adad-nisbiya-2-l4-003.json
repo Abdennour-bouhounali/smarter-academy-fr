@@ -1,0 +1,306 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-adad-nisbiya-2-l4-003",
+  "lessonCode": "wadiya-idmajiya-adad-nisbiya-2",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مستطيل ناقص رأس",
+    "estimatedMinutes": 12,
+    "tags": [
+      "معلم",
+      "أطوال بالطرح",
+      "مساحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "06"
+    }
+  },
+  "statement": {
+    "content": "يمثّل مستطيل في معلم متعامد ومتجانس وحدته $1\\,\\mathrm{m}$ قطعة أرض : ثلاثة من رؤوسه معلومة والرابع مجهول."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "في معلم متعامد ومتجانس : $E(-2\\,;\\,3)$ و $F(5\\,;\\,3)$ و $G(5\\,;\\,-1)$ . عيّن إحداثيي النقطة $H$ التي تجعل $EFGH$ مستطيلًا.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-2",
+        "y": "-1"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "-1",
+            "y": "-2"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أضلاع المستطيل توازي المحورين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$H$ تشارك $E$ في الفاصلة و $G$ في الترتيب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الفاصلة ثمّ الترتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "$H(-2\\,;\\,-1)$ .",
+        "incorrect": "الفاصلة أوّلًا ثمّ الترتيب : راجع إشارة كلّ إحداثية."
+      },
+      "solution": {
+        "lines": [
+          "$E$ و $H$ على المستقيم الرأسي نفسه فلهما الفاصلة $-2$",
+          "$G$ و $H$ على المستقيم الأفقي نفسه فلهما الترتيب $-1$",
+          "$H(-2\\,;\\,-1)$"
+        ],
+        "result": "(-2\\,;\\,-1)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "الرأسان $E$ و $F$ لهما الترتيب نفسه، وفاصلتاهما $-2$ و $5$ . احسب الطول $EF$ بطرح الفاصلتين.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "3"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-7"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطتان على جهة واحدة من المبدأ أم على جهتين مختلفتين ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى ناقص الفاصلة الصغرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا : تحقّق من الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$EF=7$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى $+5$ والفاصلة الصغرى $-2$",
+          "$EF=(+5)-(-2)=7$"
+        ],
+        "result": "7"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "الرأسان $F$ و $G$ لهما الفاصلة نفسها، وترتيباهما $3$ و $-1$ . احسب الطول $FG$ بطرح الترتيبين.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "2"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-4"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطتان على جهة واحدة من المبدأ أم على جهتين مختلفتين ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى ناقص الفاصلة الصغرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا : تحقّق من الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$FG=4$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى $+3$ والفاصلة الصغرى $-1$",
+          "$FG=(+3)-(-1)=4$"
+        ],
+        "result": "4"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "طول المستطيل $7\\,\\mathrm{m}$ وعرضه $4\\,\\mathrm{m}$ . ما مساحته بالمتر المربّع ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد وحدات المساحة",
+      "expectedAnswer": "28",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-AREASUM",
+          "value": "11"
+        },
+        {
+          "id": "MISC-NUQTA2-AREAPERIM",
+          "value": "22"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة المستطيل جداء بعديه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب الطول في العرض."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تجمع البعدين."
+        }
+      ],
+      "feedback": {
+        "correct": "$28\\,\\mathrm{m}^2$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "المساحة $=7\\times 4$",
+          "$=28\\,\\mathrm{m}^2$"
+        ],
+        "result": "28"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "مساحة المستطيل $28\\,\\mathrm{m}^2$ وثمن تبليط المتر المربّع الواحد $350\\,\\mathrm{DA}$ . ما الثمن بالدينار ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح موجب",
+      "expectedAnswer": "9800",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-COSTADD",
+          "value": "378"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الثمن الإجمالي جداء العدد في ثمن الواحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب ولا تجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من رتبة النتيجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$9800\\,\\mathrm{DA}$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الثمن $=28\\times 350$",
+          "$=9800\\,\\mathrm{DA}$"
+        ],
+        "result": "9800"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

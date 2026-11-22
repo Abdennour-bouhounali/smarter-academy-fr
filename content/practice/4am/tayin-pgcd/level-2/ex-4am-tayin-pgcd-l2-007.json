@@ -1,0 +1,118 @@
+{
+  "id": "ex-4am-tayin-pgcd-l2-007",
+  "lessonCode": "tayin-pgcd",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2025 — PGCD(143 ; 13) ثم PGCD(13 ; 143)",
+    "estimatedMinutes": 4,
+    "tags": [
+      "PGCD",
+      "قاسم للعدد الآخر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tayin-pgcd_P3",
+      "modelledOn": "BEM 2025 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب: PGCD(143 ; 13).",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "13",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العددين: هل العدد الأصغر قاسم للعدد الأكبر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد الأكبر على العدد الأصغر وانظر إلى الباقي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان $b$ قاسمًا للعدد $a$ فإن PGCD$(a ; b) = b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$143 = 13 \\times 11$ : العدد 13 قاسم للعدد 143، فهو قاسمهما المشترك الأكبر.",
+        "incorrect": "لا داعي لقائمتين طويلتين: تحقّق أولًا هل أحد العددين قاسم للآخر."
+      },
+      "solution": {
+        "lines": [
+          "$143 = 13 \\times 11$ ، إذن العدد 13 قاسم للعدد 143.",
+          "وبما أن 13 قاسم للعدد 143 فإن:"
+        ],
+        "result": "PGCD(143 ; 13) = 13"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج PGCD(13 ; 143) دون أي حساب.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "13",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن هذا السؤال بالسؤال السابق: ما الذي تغيّر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القواسم المشتركة لعددين لا تتعلق بترتيبهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "PGCD$(a ; b) = $ PGCD$(b ; a)$"
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(13 ; 143) = PGCD(143 ; 13) = 13",
+        "incorrect": "تبديل العددين لا يغيّر قاسمهما المشترك الأكبر: استعمل نتيجة السؤال السابق."
+      },
+      "solution": {
+        "lines": [
+          "لدينا PGCD$(a ; b) = $ PGCD$(b ; a)$ ، إذن:"
+        ],
+        "result": "PGCD(13 ; 143) = PGCD(143 ; 13) = 13"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

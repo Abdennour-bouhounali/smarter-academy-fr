@@ -1,0 +1,91 @@
+{
+  "id": "ex-4am-ikhtizal-kasr-l1-003",
+  "lessonCode": "ikhtizal-kasr",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2023 — العدد A = 528/360",
+    "estimatedMinutes": 4,
+    "tags": [
+      "كسر غير قابل للاختزال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_ikhtizal-kasr_P3",
+      "modelledOn": "BEM 2023 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد $A$ حيث:",
+    "formulas": [
+      "A = \\dfrac{528}{360}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب العدد $A$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "22/15",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "264/180",
+          "id": "MISC-IKHTIZAL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث أولًا عن القاسم المشترك الأكبر للعددين 528 و 360."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر: يصير الكسر غير قابل للاختزال في خطوة واحدة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن البسط والمقام الناتجين أوليان فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 24: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على قاسمهما المشترك الأكبر، لا على قاسم مشترك آخر.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$528 = 360 \\times 1 + 168$",
+          "$360 = 168 \\times 2 + 24$",
+          "$168 = 24 \\times 7 + 0$",
+          "آخر باقٍ غير معدوم هو 24، إذن PGCD(528 ; 360) = 24 .",
+          "$A = \\dfrac{528}{360} = \\dfrac{528 \\div 24}{360 \\div 24}$"
+        ],
+        "result": "A = \\dfrac{528}{360} = \\dfrac{22}{15}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

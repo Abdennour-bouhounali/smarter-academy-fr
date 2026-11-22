@@ -1,0 +1,247 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l4-004",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2015 — 3125 و 26",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مراحل الحساب",
+      "الباقي",
+      "مضاعف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-adad-tabii_P1",
+      "modelledOn": "BEM 2015 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "اكتب المساواة التي تعبّر عن القسمة الإقليدية للعدد 3125 على 26 مع كتابة مراحل الحساب.",
+      "statement": "حاصل القسمة:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "120",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أكبر مضاعف للعدد 26 لا يتجاوز 3125."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل القسمة هو أكبر عدد طبيعي $q$ يحقق $26 \\times q \\leq 3125$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الباقي أصغر تمامًا من 26."
+        }
+      ],
+      "feedback": {
+        "correct": "$3125 = 26 \\times 120 + 5$ مع $5 < 26$.",
+        "incorrect": "ابحث عن أكبر مضاعف للعدد 26 لا يتجاوز 3125، ثم اطرحه من 3125."
+      },
+      "solution": {
+        "lines": [
+          "$26 \\times 120 = 3120$ و $26 \\times 121 = 3146$ أكبر من 3125.",
+          "$3125 - 3120 = 5$ و $5 < 26$",
+          "إذن المساواة التي تعبّر عن القسمة الإقليدية هي:"
+        ],
+        "result": "3125 = 26 \\times 120 + 5"
+      },
+      "work": "required",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "الباقي:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى من 3125 بعد طرح أكبر مضاعف للعدد 26 لا يتجاوزه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي عدد طبيعي أصغر تمامًا من 26."
+        }
+      ],
+      "feedback": {
+        "correct": "$3125 = 26 \\times 120 + 5$: الباقي 5.",
+        "incorrect": "اطرح من 3125 أكبر مضاعف للعدد 26 لا يتجاوزه."
+      },
+      "solution": {
+        "lines": [
+          "$3125 - 26 \\times 120 = 5$"
+        ],
+        "result": "r = 5"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل 26 قاسم للعدد 3125؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 3125 على 26."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "26 قاسم للعدد 3125 إذا وفقط إذا كان باقي هذه القسمة معدومًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$3125 = 26 \\times 120 + 5$: الباقي غير معدوم.",
+        "incorrect": "أجرِ القسمة الإقليدية للعدد 3125 على 26، وانظر هل الباقي معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$3125 = 26 \\times 120 + 5$ مع $5 < 26$",
+          "الباقي 5 غير معدوم، إذن 26 ليس قاسمًا للعدد 3125."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "استنتج:",
+      "statement": "أصغر عدد طبيعي يجب طرحه من 3125 ليصبح الناتج مضاعفًا للعدد 26.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل المساواة التي وجدتها في السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما هو أكبر مضاعف للعدد 26 لا يتجاوز 3125؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$3125 - 5 = 3120 = 26 \\times 120$.",
+        "incorrect": "انطلق من المساواة $3125 = 26 \\times q + r$."
+      },
+      "solution": {
+        "lines": [
+          "$3125 = 26 \\times 120 + 5$",
+          "$3125 - 5 = 3120 = 26 \\times 120$"
+        ],
+        "result": "5"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "أصغر عدد طبيعي يجب إضافته إلى 3125 ليصبح المجموع مضاعفًا للعدد 26.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "21",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما هو مضاعف العدد 26 الذي يلي 3120 مباشرة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $26 \\times 121$."
+        }
+      ],
+      "feedback": {
+        "correct": "$3125 + 21 = 3146 = 26 \\times 121$.",
+        "incorrect": "ابحث عن مضاعف العدد 26 الذي يلي 3125، ثم احسب الفرق."
+      },
+      "solution": {
+        "lines": [
+          "$26 \\times 121 = 3146$",
+          "$3146 - 3125 = 21$"
+        ],
+        "result": "21"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

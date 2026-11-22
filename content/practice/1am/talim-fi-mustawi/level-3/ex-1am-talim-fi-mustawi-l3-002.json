@@ -1,0 +1,278 @@
+{
+  "id": "ex-1am-talim-fi-mustawi-l3-002",
+  "lessonCode": "talim-fi-mustawi",
+  "level": 3,
+  "metadata": {
+    "title": "قراءة إحداثيين عشريين",
+    "estimatedMinutes": 6,
+    "tags": [
+      "عشري",
+      "قراءة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في الشكل أربع نقط على مخطّط مزرعة بمعلم متعامد، وبعضها بين خطّين من خطوط المربّعات.",
+    "figure": {
+      "points": {
+        "A": [
+          1.5,
+          2.5
+        ],
+        "B": [
+          -2.5,
+          1
+        ],
+        "C": [
+          3,
+          -1.5
+        ],
+        "D": [
+          -1,
+          -2.5
+        ],
+        "c1": [
+          -5,
+          -4
+        ],
+        "c2": [
+          5,
+          4
+        ]
+      },
+      "grid": true,
+      "axes": true,
+      "hidden": [
+        "c1",
+        "c2"
+      ],
+      "ariaLabel": "معلم متعامد تظهر فيه أربع نقط A و B و C و D بعضها بين خطّين من المربّعات",
+      "maxWidth": 400
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اقرأ إحداثيي النقطة $A$ في الشكل.",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "1.5",
+        "y": "2.5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SWAP",
+          "value": {
+            "x": "2.5",
+            "y": "1.5"
+          }
+        },
+        {
+          "id": "MISC-MUSTAWI-SIGNY",
+          "value": {
+            "x": "1.5",
+            "y": "-2.5"
+          }
+        },
+        {
+          "id": "MISC-MUSTAWI-SIGNX",
+          "value": {
+            "x": "-1.5",
+            "y": "2.5"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الفاصلة على الخط الأفقي أوّلًا ثمّ الترتيب على الخط الشاقولي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من النقطة انزل أو اصعد إلى الخط الأفقي لتقرأ الفاصلة، ثمّ سر أفقيًّا إلى الخط الشاقولي لتقرأ الترتيب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "راقب الإشارة: يسار الخط الشاقولي فاصلة سالبة، وتحت الخط الأفقي ترتيب سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "إحداثيا $A$ هما $(1{,}5\\,;\\,2{,}5)$ .",
+        "incorrect": "الفاصلة أوّلًا (على الخط الأفقي) ثمّ الترتيب (على الخط الشاقولي)، ولا تنسَ الإشارتين."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $A$ هي $1{,}5$ وترتيبها $2{,}5$",
+          "$A(1{,}5\\,;\\,2{,}5)$"
+        ],
+        "result": "A(1{,}5\\,;\\,2{,}5)"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اقرأ إحداثيي النقطة $B$ في الشكل.",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-2.5",
+        "y": "1"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SWAP",
+          "value": {
+            "x": "1",
+            "y": "-2.5"
+          }
+        },
+        {
+          "id": "MISC-MUSTAWI-SIGNY",
+          "value": {
+            "x": "-2.5",
+            "y": "-1"
+          }
+        },
+        {
+          "id": "MISC-MUSTAWI-SIGNX",
+          "value": {
+            "x": "2.5",
+            "y": "1"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الفاصلة على الخط الأفقي أوّلًا ثمّ الترتيب على الخط الشاقولي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من النقطة انزل أو اصعد إلى الخط الأفقي لتقرأ الفاصلة، ثمّ سر أفقيًّا إلى الخط الشاقولي لتقرأ الترتيب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "راقب الإشارة: يسار الخط الشاقولي فاصلة سالبة، وتحت الخط الأفقي ترتيب سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "إحداثيا $B$ هما $(-2{,}5\\,;\\,1)$ .",
+        "incorrect": "الفاصلة أوّلًا (على الخط الأفقي) ثمّ الترتيب (على الخط الشاقولي)، ولا تنسَ الإشارتين."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $B$ هي $-2{,}5$ وترتيبها $1$",
+          "$B(-2{,}5\\,;\\,1)$"
+        ],
+        "result": "B(-2{,}5\\,;\\,1)"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اقرأ إحداثيي النقطة $C$ في الشكل.",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "3",
+        "y": "-1.5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SWAP",
+          "value": {
+            "x": "-1.5",
+            "y": "3"
+          }
+        },
+        {
+          "id": "MISC-MUSTAWI-SIGNY",
+          "value": {
+            "x": "3",
+            "y": "1.5"
+          }
+        },
+        {
+          "id": "MISC-MUSTAWI-SIGNX",
+          "value": {
+            "x": "-3",
+            "y": "-1.5"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الفاصلة على الخط الأفقي أوّلًا ثمّ الترتيب على الخط الشاقولي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من النقطة انزل أو اصعد إلى الخط الأفقي لتقرأ الفاصلة، ثمّ سر أفقيًّا إلى الخط الشاقولي لتقرأ الترتيب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "راقب الإشارة: يسار الخط الشاقولي فاصلة سالبة، وتحت الخط الأفقي ترتيب سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "إحداثيا $C$ هما $(3\\,;\\,-1{,}5)$ .",
+        "incorrect": "الفاصلة أوّلًا (على الخط الأفقي) ثمّ الترتيب (على الخط الشاقولي)، ولا تنسَ الإشارتين."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $C$ هي $3$ وترتيبها $-1{,}5$",
+          "$C(3\\,;\\,-1{,}5)$"
+        ],
+        "result": "C(3\\,;\\,-1{,}5)"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

@@ -1,0 +1,396 @@
+{
+  "id": "ex-4am-tamthil-bayani-taalufi-l5-004",
+  "lessonCode": "tamthil-bayani-taalufi",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2011 — ثلاث صيغ لكراء معدات الغطس بتيبازة",
+    "estimatedMinutes": 25,
+    "tags": [
+      "وضعية إدماجية",
+      "ثلاث صيغ",
+      "قراءة بيانية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tamthil-bayani-taalufi_P2",
+      "modelledOn": "BEM 2011 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2011",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يقترح محل لكراء معدات الغطس بتيبازة، يوصي روّاده بالحفاظ على نظافة البحر، ثلاث صيغ:\n- الصيغة (أ): 1500DA لليوم الواحد.\n- الصيغة (ب): حقوق تسجيل يضاف إليها ثمن ثابت لكل يوم.\n- الصيغة (ج): مبلغ جزافي 7500DA لموسم الصيف مهما كان عدد الأيام.\nيمثّل $(D_1)$ ، $(D_2)$ ، $(D_3)$ في المعلم التالي المبلغ المدفوع حسب الصيغ (أ) ، (ب) ، (ج) على الترتيب بدلالة عدد الأيام $x$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "K1": [
+          0,
+          0
+        ],
+        "H1": [
+          9,
+          9
+        ],
+        "K2": [
+          0,
+          2
+        ],
+        "H2": [
+          10,
+          7
+        ],
+        "K3": [
+          0,
+          5
+        ],
+        "H3": [
+          10,
+          5
+        ]
+      },
+      "rays": [
+        {
+          "from": "K1",
+          "through": "H1",
+          "name": "(D₁)",
+          "tone": "sky",
+          "extend": 0
+        },
+        {
+          "from": "K2",
+          "through": "H2",
+          "name": "(D₂)",
+          "tone": "amber",
+          "extend": 0
+        },
+        {
+          "from": "K3",
+          "through": "H3",
+          "name": "(D₃)",
+          "tone": "rose",
+          "extend": 0
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw"
+      },
+      "hidden": [
+        "H1",
+        "H2",
+        "H3",
+        "K1",
+        "K2",
+        "K3"
+      ],
+      "ariaLabel": "معلم على ورقة مرصوفة: ثلاثة أنصاف مستقيمات: (D1) من المبدأ O، و (D2) من محور التراتيب فوق المبدأ، و (D3) أفقي",
+      "caption": "محور الفواصل: عدد الأيام — محور التراتيب: المبلغ (الوحدة 1500DA)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "بقراءة بيانية:",
+      "statement": "عيّن حقوق التسجيل في الصيغة (ب).",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "3000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الترتيب عند المبدأ هو ترتيب النقطة التي يقطع فيها المستقيم محور التراتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث على المستقيم عن النقطة التي فاصلتها 0، ثم اقرأ ترتيبها على محور التراتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "$(D_2)$ يقطع محور التراتيب في النقطة $(0 ; 3000)$ .",
+        "incorrect": "اقرأ ترتيب نقطة تقاطع المستقيم مع محور التراتيب، لا فاصلة تقاطعه مع محور الفواصل."
+      },
+      "solution": {
+        "lines": [
+          "$(D_2)$ يقطع محور التراتيب في نقطة ترتيبها وحدتان، أي $2 \\times 1500 = 3000$ .",
+          "من أجل 0 يوم تُدفع حقوق التسجيل فقط: $3000DA$ (الترتيب عند المبدأ)."
+        ],
+        "result": "3000DA"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "عيّن معامل توجيه المستقيم $(D_2)$ ، ثم فسّره.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "750",
+      "misconceptionSignatures": [
+        {
+          "value": "1/750",
+          "id": "MISC-BAYANI-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختر نقطتين من المستقيم تقعان على عقدتين من الشبكة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من النقطة الأولى إلى الثانية: كم تزيد الفاصلة؟ وكم يصعد المستقيم أو ينزل؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "معامل التوجيه هو تغيّر الترتيب مقسوما على تغيّر الفاصلة، ويكون سالبا إذا نزل المستقيم."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 750$ .",
+        "incorrect": "اقسم تغيّر الترتيب على تغيّر الفاصلة (وليس العكس)، وانتبه إلى الإشارة إذا نزل المستقيم."
+      },
+      "solution": {
+        "lines": [
+          "النقطتان $(0 ; 3000)$ و $(2 ; 4500)$ من $(D_2)$ .",
+          "عندما يزيد عدد الأيام بيومين، يزيد المبلغ بـ $1500DA$ .",
+          "إذن معامل التوجيه هو: $a = \\dfrac{1500}{2} = 750$ .",
+          "التفسير: في الصيغة (ب) ثمن اليوم الواحد $750DA$ ، أي $g(x) = 750x + 3000$ ."
+        ],
+        "result": "a = 750"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "بقراءة بيانية، عيّن المبلغ المدفوع حسب الصيغة (ب) من أجل 8 أيام.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "9000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ من العدد المعطى على محور الفواصل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اتجه عموديا حتى المستقيم $(D_2)$ ، ثم أفقيا حتى محور التراتيب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الصورة هي ترتيب نقطة المستقيم التي فاصلتها العدد المعطى."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة من $(D_2)$ التي فاصلتها $8$ ترتيبها $9000$ .",
+        "incorrect": "الصورة تُقرأ على محور التراتيب: ترتيب نقطة المستقيم، لا فاصلتها."
+      },
+      "solution": {
+        "lines": [
+          "النقطة من $(D_2)$ التي فاصلتها 8 ترتيبها 6 وحدات، أي $6 \\times 1500 = 9000$ .",
+          "إذن المبلغ حسب الصيغة (ب) من أجل 8 أيام هو $9000DA$ ."
+        ],
+        "result": "9000DA"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "بقراءة بيانية، عيّن عدد الأيام الذي يكون من أجله المبلغ حسب الصيغة (أ) $4500DA$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الأيام",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ من العدد المعطى على محور التراتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اتجه أفقيا حتى المستقيم $(D_1)$ ، ثم عموديا حتى محور الفواصل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد المطلوب هو فاصلة نقطة المستقيم التي ترتيبها الصورة المعطاة."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة من $(D_1)$ التي ترتيبها $4500$ فاصلتها $3$ .",
+        "incorrect": "العدد الذي عُلمت صورته يُقرأ على محور الفواصل: فاصلة نقطة المستقيم التي ترتيبها الصورة المعطاة."
+      },
+      "solution": {
+        "lines": [
+          "$4500DA$ تمثّلها 3 وحدات على محور التراتيب.",
+          "النقطة من $(D_1)$ التي ترتيبها 3 وحدات فاصلتها 3.",
+          "إذن من أجل 3 أيام يكون المبلغ حسب الصيغة (أ) $4500DA$ ."
+        ],
+        "result": "3 أيام"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "بقراءة بيانية، عيّن عدد الأيام الذي تتساوى من أجله الصيغتان (ب) و (ج).",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الأيام",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-BAYANI-FASILA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تتساوى الصيغتان عند نقطة تقاطع $(D_2)$ و $(D_3)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ فاصلة نقطة التقاطع."
+        }
+      ],
+      "feedback": {
+        "correct": "$(D_2)$ و $(D_3)$ يتقاطعان في النقطة $(6 ; 7500)$ .",
+        "incorrect": "عدد الأيام هو فاصلة نقطة تقاطع المستقيمين المعنيين."
+      },
+      "solution": {
+        "lines": [
+          "$(D_2)$ و $(D_3)$ يتقاطعان في النقطة التي فاصلتها 6 وترتيبها 5 وحدات ( $7500DA$ ).",
+          "إذن من أجل 6 أيام تتساوى الصيغتان (ب) و (ج)."
+        ],
+        "result": "6 أيام"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "☜ ما هي الصيغة الأقل تكلفة لغطّاس يكتري المعدات 7 أيام؟",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الصيغة (أ)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        },
+        {
+          "id": "B",
+          "content": "الصيغة (ب)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        },
+        {
+          "id": "C",
+          "content": "الصيغة (ج)",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من أجل 7 أيام، أيّ المستقيمات الثلاثة هو الأدنى؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أو احسب المبلغ حسب كل صيغة."
+        }
+      ],
+      "feedback": {
+        "correct": "$7500DA < 8250DA < 10500DA$ .",
+        "incorrect": "احسب المبلغ حسب كل عرض من أجل هذه المدة، ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "من أجل 7 أيام: الصيغة (أ): $1500 \\times 7 = 10500DA$ ؛ الصيغة (ب): $750 \\times 7 + 3000 = 8250DA$ ؛ الصيغة (ج): $7500DA$ .",
+          "بيانيا: من أجل $x = 7$ ، المستقيم $(D_3)$ هو الأدنى.",
+          "إذن الصيغة (ج) هي الأقل تكلفة."
+        ],
+        "result": "الصيغة (ج)"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

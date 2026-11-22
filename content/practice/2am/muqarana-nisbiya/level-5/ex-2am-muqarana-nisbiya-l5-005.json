@@ -1,0 +1,385 @@
+{
+  "id": "ex-2am-muqarana-nisbiya-l5-005",
+  "lessonCode": "muqarana-nisbiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — ممرّ المتوسطة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "فاصلة نقطة",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 2,
+      "file": "2am-s2-63",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "ممرّ مستقيم في المتوسطة مدرّج بالأمتار، مبدؤه $O$ هو البوّابة. المكتبة عند $B(-6{,}5)$ وقاعة الرياضة عند $C(-6{,}05)$ والمطعم عند $K(-2{,}5)$ والساحة عند $A(+4)$ . يحافظ التلاميذ على نظافة الممرّ كل صباح (النظافة).\nالجزء الأول: مواضع المرافق.\nالجزء الثاني: موضع حاجز."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "رتّب فواصل النقط $A$ ، $K$ ، $C$ ، $B$ ترتيبًا تنازليًّا: اختر السلسلة الصحيحة.",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$4 > -2{,}5 > -6{,}5 > -6{,}05$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-BDG"
+        },
+        {
+          "id": "B",
+          "content": "$-6{,}5 > -6{,}05 > -2{,}5 > 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-OD"
+        },
+        {
+          "id": "C",
+          "content": "$4 > -2{,}5 > -6{,}05 > -6{,}5$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بفرز الأعداد حسب إشاراتها: السالبة، ثم الصفر، ثم الموجبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب الأعداد السالبة فيما بينها حسب مسافاتها إلى الصفر: الأكبر مسافة هو الأصغر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب السلسلة كاملة بالرمز نفسه، ثم تحقّق من كل زوج متجاور."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 > -2{,}5 > -6{,}05 > -6{,}5$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$A$ موجبة وهي الأكبر",
+          "السالبة: $2{,}5 < 6{,}05 < 6{,}5$ ، فـ $-2{,}5 > -6{,}05 > -6{,}5$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "أيّ النقطتين $B$ و $C$ فاصلتها الأصغر؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "المكتبة $B$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "قاعة الرياضة $C$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-BDG"
+        },
+        {
+          "id": "C",
+          "content": "فاصلتاهما متساويتان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-DAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج: أيّهما أبعد عن الصفر؟ وفي أيّ جهة منه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددان سالبان: الأصغر هو الذي له أكبر مسافة إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن المسافتين إلى الصفر (العددين دون إشارتيهما) ثم اعكس الحكم لأن العددين سالبان."
+        }
+      ],
+      "feedback": {
+        "correct": "$-6{,}5 < -6{,}05$ ، فالمكتبة فاصلتها الأصغر.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$6{,}50 > 6{,}05$ والعددان سالبان",
+          "$-6{,}5 < -6{,}05$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "أيّ النقطتين $B$ و $C$ أقرب إلى البوّابة $O$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "المكتبة $B$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-NZS"
+        },
+        {
+          "id": "B",
+          "content": "قاعة الرياضة $C$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لهما المسافة نفسها",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-DAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة إلى الصفر هي طول المسار من الصفر إلى العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة إلى الصفر لا تكون سالبة أبدًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للحصول عليها: اكتب العدد دون إشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$OC = 6{,}05 < 6{,}5 = OB$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$OB = 6{,}5$ و $OC = 6{,}05$",
+          "$6{,}05 < 6{,}5$ ، فـ $C$ أقرب"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "ما عدد الأعداد الصحيحة المحصورة بين فاصلتي $B$ و $K$ (دون الطرفين) ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-MUQARANA-NISBIYA-EI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الصحيحة الواقعة بين الحدّين واحدًا واحدًا على المستقيم المدرّج."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المتباينة صارمة: الحدّان نفسهما لا يُحسبان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ الصفر والأعداد الصحيحة السالبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$-6, -5, -4, -3$ : أربعة أعداد.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$-6{,}5 < x < -2{,}5$",
+          "$x \\in \\{-6, -5, -4, -3\\}$",
+          "عددها 4"
+        ],
+        "result": "4"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "يُنصَّب الحاجز عند نقطة فاصلتها محصورة بين فاصلتي المكتبة والقاعة (بصرامة): أيّ الفواصل تصلح؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-6{,}3$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$-6{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-EI"
+        },
+        {
+          "id": "C",
+          "content": "$-6{,}05$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-EI"
+        },
+        {
+          "id": "D",
+          "content": "$-6{,}6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-BDG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج وحدّد الجزء الواقع بينهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد محصور بين عددين: أكبر من أحدهما وأصغر من الآخر في الوقت نفسه، دون أن يساوي أيًّا منهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب كل عدد مقترح: هل يحقق المتباينتين معًا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$-6{,}5 < -6{,}3 < -6{,}05$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$6{,}05 < 6{,}3 < 6{,}5$ والأعداد سالبة",
+          "$-6{,}5 < -6{,}3 < -6{,}05$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ج",
+      "statement": "برّر أن الفاصلة $-6{,}6$ لا تصلح لموضع الحاجز.",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج وحدّد الجزء الواقع بينهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد محصور بين عددين: أكبر من أحدهما وأصغر من الآخر في الوقت نفسه، دون أن يساوي أيًّا منهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب كل عدد مقترح: هل يحقق المتباينتين معًا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$6{,}6 > 6{,}5$ والعددان سالبان",
+          "إذن $-6{,}6 < -6{,}5$ ، فهي خارج المجال",
+          "لا تصلح"
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

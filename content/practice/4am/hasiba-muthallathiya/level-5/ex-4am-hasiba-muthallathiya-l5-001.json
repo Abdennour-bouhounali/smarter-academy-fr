@@ -1,0 +1,366 @@
+{
+  "id": "ex-4am-hasiba-muthallathiya-l5-001",
+  "lessonCode": "hasiba-muthallathiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2007 — سقف بيت في باتنة والثلج",
+    "estimatedMinutes": 22,
+    "tags": [
+      "وضعية إدماجية",
+      "الظل",
+      "اللمسات العكسية",
+      "تكلفة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_hasiba-muthallathiya_P2",
+      "modelledOn": "BEM 2007 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2007",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في باتنة، يبني عمي صالح بيتا عرضه $9{,}6\\,\\mathrm{m}$ وطوله $12\\,\\mathrm{m}$ ، سقفه بمنحدرين متناظرين. يمثّل الشكل المقابل نصف مقطع السقف: $A$ حافة الجدار، $H$ منتصف عرض البيت و $S$ قمة السقف، حيث $AH = 4{,}8\\,\\mathrm{m}$ و $HS = 2{,}8\\,\\mathrm{m}$ و $(SH) \\perp (AH)$ . ينصح المهندسون في المناطق الثلجية بألّا يقلّ قيس ميل السقف (الزاوية $\\widehat{SAH}$ ) عن $35^{\\circ}$ حتى ينزلق الثلج. ثمن المتر المربع من القرميد مع التركيب $1450\\,\\mathrm{DA}$ . ويتقن عمي صالح عمله حرصًا على سلامة أسرته.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "H": [
+          4.8,
+          0
+        ],
+        "S": [
+          4.8,
+          2.8
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "H",
+          "label": "4,8 m"
+        },
+        {
+          "from": "H",
+          "to": "S",
+          "label": "2,8 m"
+        },
+        [
+          "A",
+          "S"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "H",
+          "S"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "A",
+          "from": "H",
+          "to": "S",
+          "label": "?"
+        }
+      ],
+      "ariaLabel": "نصف مقطع السقف: A حافة الجدار و H منتصف عرض البيت و S القمة، حيث AH يساوي 4,8 m و HS يساوي 2,8 m، والزاوية المطلوبة SAH عند A",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب قيس الزاوية $\\widehat{SAH}$ بالتدوير إلى الوحدة من الدرجة.",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيس الزاوية بالدرجة، مدوّرا إلى الوحدة",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "60",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        },
+        {
+          "value": "54",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "1",
+          "id": "MISC-MUTH-HASIBA-RAD"
+        },
+        {
+          "value": "0",
+          "id": "MISC-MUTH-AKS-BADAL-MUBASHIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $AHS$ قائم في $H$ : حدّد موقع $[AH]$ و $[HS]$ بالنسبة إلى الزاوية $\\widehat{SAH}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اللمسة العكسية: ⁦2nd⁩ ثم ⁦tan⁻¹⁩ ثم النسبة ثم ⁦=⁩."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الحرف ⁦D⁩ (الدرجة)، ثم دوّر إلى الوحدة: انظر إلى الرقم الموالي للرقم الأخير الذي تحتفظ به."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{SAH} \\approx 30{,}25643716^{\\circ} \\approx 30^{\\circ}$ .",
+        "incorrect": "النسبة ليست القيس: القيس يُعيَّن باللمسة العكسية المناسبة والحاسبة مبرمجة بالدرجة، ثم يُدوَّر (لا يُبتر) إلى الوحدة."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $AHS$ القائم في $H$ : $\\tan\\widehat{SAH} = \\dfrac{HS}{AH} = \\dfrac{2{,}8}{4{,}8}$",
+          "باستعمال الحاسبة المبرمجة بالدرجة: ⁦ON 2nd tan⁻¹ ( 2,8 ÷ 4,8 ) =⁩ يظهر على الشاشة $30{,}25643716$ .",
+          "الرقم الذي يلي رقم الوحدات هو 2، وهو أصغر من 5: نُبقي رقم الوحدات كما هو."
+        ],
+        "result": "\\widehat{SAH} \\approx 30^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل يحقّق سقف عمي صالح نصيحة المهندسين؟",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-ZAWIYA-KHATI"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن قيس الميل الذي حسبته بـ $35^{\\circ}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الميل هو الزاوية بين المنحدر والأفق."
+        }
+      ],
+      "feedback": {
+        "correct": "$30^{\\circ} < 35^{\\circ}$ : الميل غير كافٍ لانزلاق الثلج.",
+        "incorrect": "قارن الزاوية بين المنحدر والأفق بالحد الأدنى المطلوب."
+      },
+      "solution": {
+        "lines": [
+          "$\\widehat{SAH} \\approx 30^{\\circ}$ و $30^{\\circ} < 35^{\\circ}$",
+          "السقف لا يحقّق النصيحة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "قرّر عمي صالح رفع القمة إلى النقطة $S'$ من $(HS)$ حتى يصير الميل $35^{\\circ}$ تماما. احسب الارتفاع الجديد $HS'$ بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m مدوّرا إلى 0,01",
+      "expectedAnswer": "3.36",
+      "misconceptionSignatures": [
+        {
+          "value": "6.86",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        },
+        {
+          "value": "2.75",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $AHS'$ ، حدّد موقع الطول المعلوم والطول المطلوب بالنسبة إلى الزاوية $\\widehat{S'AH}$ (مجاور، مقابل أو وتر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة التي تجمعهما هي ظل الزاوية $\\widehat{S'AH}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالحاسبة مبرمجة بالدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$HS' = 4{,}8 \\times \\tan 35^{\\circ} \\approx 3{,}360996183 \\approx 3{,}36\\,\\mathrm{m}$ .",
+        "incorrect": "الارتفاع في بسط الظل: نضرب $AH$ في $\\tan 35^{\\circ}$ ، والحاسبة مبرمجة بالدرجة."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $AHS'$ القائم في $H$ : $\\tan 35^{\\circ} = \\dfrac{HS'}{AH}$",
+          "ومنه $HS' = 4{,}8 \\times \\tan 35^{\\circ}$",
+          "باستعمال الحاسبة: $HS' \\approx 3{,}360996183$"
+        ],
+        "result": "HS' \\approx 3{,}36\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "sub": "ا",
+      "lead": "☜ بعد رفع القمة، ما طول المنحدر الجديد $AS'$ وما تكلفة القرميد للمنحدرين؟",
+      "statement": "طول المنحدر الجديد $AS'$ بالتدوير إلى $0{,}01$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m مدوّرا إلى 0,01",
+      "expectedAnswer": "5.86",
+      "misconceptionSignatures": [
+        {
+          "value": "5.85",
+          "id": "MISC-MUTH-TADWIR-BATR"
+        },
+        {
+          "value": "3.93",
+          "id": "MISC-MUTH-DARB-BADAL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $AHS'$ ، حدّد موقع الطول المعلوم والطول المطلوب بالنسبة إلى الزاوية $\\widehat{S'AH}$ (مجاور، مقابل أو وتر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة التي تجمعهما هي جيب تمام الزاوية $\\widehat{S'AH}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالحاسبة مبرمجة بالدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$AS' = \\dfrac{4{,}8}{\\cos 35^{\\circ}} \\approx 5{,}859718026 \\approx 5{,}86\\,\\mathrm{m}$ .",
+        "incorrect": "المنحدر وتر: نقسم $AH$ على $\\cos 35^{\\circ}$ ولا نضرب فيه."
+      },
+      "solution": {
+        "lines": [
+          "$\\cos 35^{\\circ} = \\dfrac{AH}{AS'}$ ومنه $AS' = \\dfrac{4{,}8}{\\cos 35^{\\circ}}$",
+          "باستعمال الحاسبة: $AS' \\approx 5{,}859718026$"
+        ],
+        "result": "AS' \\approx 5{,}86\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "sub": "ب",
+      "statement": "تكلفة القرميد للمنحدرين (باستعمال الطول المدوّر):",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "203928",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل منحدر مستطيل بُعداه $AS'$ وطول البيت."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المساحة الكلية ضعف مساحة منحدر واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\mathcal{A} = 2 \\times 12 \\times 5{,}86 = 140{,}64\\,\\mathrm{m}^2$ ، والتكلفة $140{,}64 \\times 1450 = 203928\\,\\mathrm{DA}$ .",
+        "incorrect": "احسب مساحة المنحدرين (مستطيلان) ثم اضربها في ثمن المتر المربع."
+      },
+      "solution": {
+        "lines": [
+          "مساحة منحدر واحد: $12 \\times 5{,}86$ ، ومساحة المنحدرين: $\\mathcal{A} = 2 \\times 12 \\times 5{,}86 = 140{,}64\\,\\mathrm{m}^2$",
+          "التكلفة: $140{,}64 \\times 1450$"
+        ],
+        "result": "203928\\,\\mathrm{DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

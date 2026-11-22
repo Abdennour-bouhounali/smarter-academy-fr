@@ -1,0 +1,283 @@
+{
+  "id": "ex-4am-mada-wasit-mutawassit-l5-001",
+  "lessonCode": "mada-wasit-mutawassit",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2009 — خلايا نحل بتيزي وزو",
+    "estimatedMinutes": 12,
+    "tags": [
+      "وضعية إدماجية",
+      "المدى",
+      "المتوسط",
+      "الوسيط",
+      "مخطط بالأعمدة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mada-wasit-mutawassit_P2",
+      "modelledOn": "BEM 2009 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يملك مربّي نحل بولاية تيزي وزو 20 خلية يعتني بها بإتقان. يمثّل المخطط بالأعمدة الآتي كمية العسل (kg) التي أنتجتها كل خلية في الموسم:",
+    "figure": {
+      "kind": "chart",
+      "type": "bar",
+      "ariaLabel": "مخطط بالأعمدة لعدد الخلايا حسب كمية العسل: 8 و 10 و 12 و 14 و 15 كيلوغراما",
+      "xTitle": "كمية العسل (kg)",
+      "yTitle": "عدد الخلايا",
+      "y": {
+        "max": 6,
+        "step": 1
+      },
+      "bars": [
+        {
+          "label": "8",
+          "value": 2
+        },
+        {
+          "label": "10",
+          "value": 5
+        },
+        {
+          "label": "12",
+          "value": 6
+        },
+        {
+          "label": "14",
+          "value": 4
+        },
+        {
+          "label": "15",
+          "value": 3
+        }
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب مدى هذه السلسلة.",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدى بـ kg",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-IHSA-MADA-AKBAR-QIMA"
+        },
+        {
+          "value": "4",
+          "id": "MISC-IHSA-MADA-TAKRAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المدى هو الفرق بين أكبر قيمة وأصغر قيمة في السلسلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن أكبر قيمة وأصغر قيمة من قيم السلسلة (لا من التكرارات)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح أصغر قيمة من أكبر قيمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$15 - 8 = 7$ .",
+        "incorrect": "المدى فرق بين قيمتين من قيم السلسلة: أكبر قيمة ناقص أصغر قيمة، ولا تُستعمل التكرارات."
+      },
+      "solution": {
+        "lines": [
+          "أكبر قيمة: 15kg ، وأصغر قيمة: 8kg",
+          "$15 - 8 = 7$"
+        ],
+        "result": "7"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب متوسط كمية العسل التي تنتجها الخلية الواحدة.",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المتوسط بـ kg",
+      "expectedAnswer": "11,95",
+      "misconceptionSignatures": [
+        {
+          "value": "11,8",
+          "id": "MISC-IHSA-MUTAWASSIT-BILA-TARJIH"
+        },
+        {
+          "value": "47,8",
+          "id": "MISC-IHSA-MUTAWASSIT-QISMA-QIYAM"
+        },
+        {
+          "value": "12",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في جدول تكرارات تُضرب كل قيمة في تكرارها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الجداءات (القيمة × التكرار)، ثم اجمع التكرارات لتحصل على التكرار الكلي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم مجموع الجداءات على التكرار الكلي، لا على عدد القيم المختلفة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{239}{20} = 11{,}95$ .",
+        "incorrect": "المتوسط المتوازن: مجموع الجداءات (القيمة × التكرار) مقسوما على التكرار الكلي."
+      },
+      "solution": {
+        "lines": [
+          "مجموع الجداءات (القيمة × التكرار):",
+          "$8 \\times 2 + 10 \\times 5 + 12 \\times 6 + 14 \\times 4 + 15 \\times 3 = 239$",
+          "التكرار الكلي:",
+          "$2 + 5 + 6 + 4 + 3 = 20$",
+          "$m = \\dfrac{239}{20} = 11{,}95$"
+        ],
+        "result": "m = 11{,}95"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "عيّن وسيط هذه السلسلة.",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الوسيط بـ kg",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "11,95",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكرار الكلي N يحدّد رتبة الوسيط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب N ثم الرتبة (أو الرتبتين) التي يقع فيها الوسيط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل التكرارات المجمعة الصاعدة لتعرف القيمة التي تشغل هذه الرتبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$Med = 12$ .",
+        "incorrect": "لا تقرأ الوسيط في وسط سطر الجدول: عيّن رتبته من التكرار الكلي، ثم ابحث عنها بالتكرارات المجمعة الصاعدة."
+      },
+      "solution": {
+        "lines": [
+          "التكرار الكلي: $N = 20$",
+          "التكرارات المجمعة الصاعدة: 2 ، 7 ، 13 ، 17 ، 20",
+          "$N$ زوجي، فالوسيط هو نصف مجموع القيمتين ذواتي الرتبتين 10 و 11، وهما 12 و 12.",
+          "$Med = \\dfrac{12 + 12}{2} = 12$"
+        ],
+        "result": "Med = 12"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "يبيع المربّي الكيلوغرام من العسل بـ 3000DA. احسب المبلغ الذي يتحصّل عليه من بيع كل إنتاج الموسم.",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "717000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الإنتاج الكلي = مجموع الجداءات (الكمية × عدد الخلايا)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يمكنك استعمال المتوسط: الإنتاج الكلي = المتوسط × 20."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب الإنتاج الكلي في ثمن الكيلوغرام."
+        }
+      ],
+      "feedback": {
+        "correct": "$239 \\times 3000 = 717000$ .",
+        "incorrect": "احسب أولا الكمية الكلية للعسل المنتج، ثم اضربها في ثمن الكيلوغرام."
+      },
+      "solution": {
+        "lines": [
+          "الإنتاج الكلي: $11{,}95 \\times 20 = 239$ kg",
+          "$ 239 \\times 3000 = 717000$"
+        ],
+        "result": "717000\\,\\mathrm{DA}"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

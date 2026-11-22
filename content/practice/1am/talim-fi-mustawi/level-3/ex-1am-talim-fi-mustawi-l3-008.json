@@ -1,0 +1,262 @@
+{
+  "id": "ex-1am-talim-fi-mustawi-l3-008",
+  "lessonCode": "talim-fi-mustawi",
+  "level": 3,
+  "metadata": {
+    "title": "أيّ نقطة بإحداثيين عشريين؟",
+    "estimatedMinutes": 6,
+    "tags": [
+      "عشري",
+      "تعيين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في الشكل أربع نقط في معلم متعامد، إحداثياها أنصاف وحدات.",
+    "figure": {
+      "points": {
+        "M": [
+          1.5,
+          2.5
+        ],
+        "N": [
+          2.5,
+          1.5
+        ],
+        "P": [
+          -1.5,
+          2.5
+        ],
+        "Q": [
+          1.5,
+          -2.5
+        ],
+        "c1": [
+          -5,
+          -4
+        ],
+        "c2": [
+          5,
+          4
+        ]
+      },
+      "grid": true,
+      "axes": true,
+      "hidden": [
+        "c1",
+        "c2"
+      ],
+      "ariaLabel": "معلم متعامد تظهر فيه أربع نقط M و N و P و Q",
+      "maxWidth": 400
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ النقط في الشكل إحداثياها $(1{,}5\\,;\\,2{,}5)$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "النقطة $M$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "النقطة $N$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SWAP"
+        },
+        {
+          "id": "C",
+          "content": "النقطة $P$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNX"
+        },
+        {
+          "id": "D",
+          "content": "النقطة $Q$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالعدد الأول: أين تقع الفاصلة على الخط الأفقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثمّ اصعد أو انزل بمقدار العدد الثاني من الخط الأفقي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن كلّ نقطة بالزوج: إن بدّلتَ العددين وصلتَ إلى نقطة أخرى."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة $M$ إحداثياها $(1{,}5\\,;\\,2{,}5)$ .",
+        "incorrect": "ابدأ بالفاصلة على الخط الأفقي ثمّ بالترتيب على الخط الشاقولي."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة $1{,}5$ على الخط الأفقي ثمّ الترتيب $2{,}5$ على الخط الشاقولي",
+          "النقطة $M$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أيّ النقط في الشكل إحداثياها $(-1{,}5\\,;\\,2{,}5)$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "النقطة $N$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "النقطة $P$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "النقطة $Q$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "النقطة $M$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNX"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالعدد الأول: أين تقع الفاصلة على الخط الأفقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثمّ اصعد أو انزل بمقدار العدد الثاني من الخط الأفقي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن كلّ نقطة بالزوج: إن بدّلتَ العددين وصلتَ إلى نقطة أخرى."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة $P$ إحداثياها $(-1{,}5\\,;\\,2{,}5)$ .",
+        "incorrect": "ابدأ بالفاصلة على الخط الأفقي ثمّ بالترتيب على الخط الشاقولي."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة $-1{,}5$ على الخط الأفقي ثمّ الترتيب $2{,}5$ على الخط الشاقولي",
+          "النقطة $P$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أيّ النقط في الشكل إحداثياها $(2{,}5\\,;\\,1{,}5)$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "النقطة $P$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "النقطة $Q$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "النقطة $M$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SWAP"
+        },
+        {
+          "id": "D",
+          "content": "النقطة $N$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالعدد الأول: أين تقع الفاصلة على الخط الأفقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثمّ اصعد أو انزل بمقدار العدد الثاني من الخط الأفقي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن كلّ نقطة بالزوج: إن بدّلتَ العددين وصلتَ إلى نقطة أخرى."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة $N$ إحداثياها $(2{,}5\\,;\\,1{,}5)$ .",
+        "incorrect": "ابدأ بالفاصلة على الخط الأفقي ثمّ بالترتيب على الخط الشاقولي."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة $2{,}5$ على الخط الأفقي ثمّ الترتيب $1{,}5$ على الخط الشاقولي",
+          "النقطة $N$"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

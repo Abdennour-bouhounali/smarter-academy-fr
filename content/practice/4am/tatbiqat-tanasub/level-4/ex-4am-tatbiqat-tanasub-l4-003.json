@@ -1,0 +1,124 @@
+{
+  "id": "ex-4am-tatbiqat-tanasub-l4-003",
+  "lessonCode": "tatbiqat-tanasub",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 24 — الغسّالة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "تخفيضان متتابعان"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-24",
+      "page": 73,
+      "section": "أوظّف تعلّماتي",
+      "number": 24,
+      "adaptedFrom": "ex-4am-tatbiqat-tanasub-l4-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تُباع غسّالة بـ $48\\,000DA$ . خضع سعرها إلى تخفيضين متتابعين قدرهما 3% ثم 4%."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب السعر الجديد للغسّالة.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد عشري بالفاصلة)",
+      "expectedAnswer": "44697,6",
+      "misconceptionSignatures": [
+        {
+          "value": "44640",
+          "id": "MISC-NISBA-TATABU-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التخفيض الثاني يُحسب على السعر بعد التخفيض الأول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب في مضاعفي التخفيضين."
+        }
+      ],
+      "feedback": {
+        "correct": "$48\\,000 \\times 0{,}97 \\times 0{,}96 = 44\\,697{,}6DA$ .",
+        "incorrect": "لا تخفّض بـ 7% مرة واحدة: اضرب في المضاعفين."
+      },
+      "solution": {
+        "lines": [
+          "$48\\,000 \\times 0{,}97 = 46\\,560$",
+          "$46\\,560 \\times 0{,}96 = 44\\,697{,}6$",
+          "السعر الجديد $44\\,697{,}6DA$ ."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هي النسبة المئوية الكلية للتخفيض؟",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $t$ فقط، دون الرمز % (عدد صحيح أو عشري بالفاصلة)",
+      "expectedAnswer": "6,88",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-NISBA-TATABU-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المضاعف الكلي $0{,}97 \\times 0{,}96$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتبه على الشكل $1 - \\dfrac{t}{100}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}97 \\times 0{,}96 = 0{,}9312 = 1 - \\dfrac{6{,}88}{100}$ : تخفيض كلي بنسبة $6{,}88\\%$ .",
+        "incorrect": "النسب المتتابعة لا تُجمع: انطلق من جداء المضاعفين."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}97 \\times 0{,}96 = 0{,}9312$",
+          "$1 - 0{,}9312 = 0{,}0688 = \\dfrac{6{,}88}{100}$",
+          "النسبة الكلية للتخفيض $6{,}88\\%$ ."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

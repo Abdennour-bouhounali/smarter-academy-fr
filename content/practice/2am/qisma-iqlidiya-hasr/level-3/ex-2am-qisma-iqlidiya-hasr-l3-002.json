@@ -1,0 +1,256 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l3-002",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — عبارة القسمة الإقليدية والحصر إلى الوحدة",
+    "estimatedMinutes": 7,
+    "tags": [
+      "قسمة إقليدية",
+      "حصر",
+      "قيمة مقرّبة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-87",
+      "exercise": 3
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العددين 251 و 17."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اختر عبارة القسمة الإقليدية للعدد 251 على 17.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$251 = 17 \\times 13 + 30$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "id": "B",
+          "content": "$251 = 17 \\times 14 + 13$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$251 = 17 \\times 13 + 14$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "id": "D",
+          "content": "$251 = 17 \\times 15 + 13$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-HISAB"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق من صحة كل مساواة بالحساب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في القسمة الإقليدية على 17 يكون الباقي أصغر من 17."
+        }
+      ],
+      "feedback": {
+        "correct": "$17 \\times 14 + 13 = 251$ و $13 < 17$.",
+        "incorrect": "ابحث عن المساواة الصحيحة التي باقيها أصغر من 17."
+      },
+      "solution": {
+        "lines": [
+          "$17 \\times 14 = 238$ و $238 + 13 = 251$",
+          "$13 < 17$ ، إذن $251 = 17 \\times 14 + 13$ هي القسمة الإقليدية للعدد 251 على 17."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أعط القيمة المقرّبة إلى الوحدة بالنقصان لحاصل القسمة $\\frac{251}{17}$.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "value": "13",
+          "id": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احصر $\\frac{251}{17}$ بين عددين طبيعيين متتاليين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمة المقرّبة إلى الوحدة بالنقصان هي أصغر طرفي الحصر."
+        }
+      ],
+      "feedback": {
+        "correct": "$14 < \\frac{251}{17} < 15$ ، فالقيمة بالنقصان 14.",
+        "incorrect": "بالنقصان: أصغر طرفي الحصر بين عددين طبيعيين متتاليين؛ بالزيادة: أكبرهما."
+      },
+      "solution": {
+        "lines": [
+          "$251 = 17 \\times 14 + 13$",
+          "$14 < \\frac{251}{17} < 15$",
+          "القيمة المقرّبة إلى الوحدة بالنقصان هي 14."
+        ],
+        "result": "14"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أعط القيمة المقرّبة إلى الوحدة بالزيادة لحاصل القسمة $\\frac{251}{17}$.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "14",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "value": "16",
+          "id": "MISC-HASR-IZAHA"
+        },
+        {
+          "value": "13",
+          "id": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احصر $\\frac{251}{17}$ بين عددين طبيعيين متتاليين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمة المقرّبة إلى الوحدة بالزيادة هي أكبر طرفي الحصر."
+        }
+      ],
+      "feedback": {
+        "correct": "$14 < \\frac{251}{17} < 15$ ، فالقيمة بالزيادة 15.",
+        "incorrect": "بالزيادة: أكبر طرفي الحصر بين عددين طبيعيين متتاليين؛ بالنقصان: أصغرهما."
+      },
+      "solution": {
+        "lines": [
+          "$251 = 17 \\times 14 + 13$",
+          "$14 < \\frac{251}{17} < 15$",
+          "القيمة المقرّبة إلى الوحدة بالزيادة هي 15."
+        ],
+        "result": "15"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "أعط حصرًا إلى الوحدة لحاصل القسمة $\\frac{251}{17}$.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$14 < \\frac{251}{17} < 15$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$13 < \\frac{251}{17} < 14$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        },
+        {
+          "id": "C",
+          "content": "$15 < \\frac{251}{17} < 16$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 251 على 17."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من $17 \\times q \\le 251 < 17 \\times (q + 1)$ نقسم الأطراف على 17."
+        }
+      ],
+      "feedback": {
+        "correct": "$251 = 17 \\times 14 + 13$ والباقي غير معدوم، فـ $\\frac{251}{17}$ يقع تمامًا بين 14 و 15.",
+        "incorrect": "احصر 251 بين مضاعفين متتاليين للعدد 17 ثم اقسم على 17؛ وإذا كان الباقي معدومًا فحاصل القسمة عدد طبيعي."
+      },
+      "solution": {
+        "lines": [
+          "$251 = 17 \\times 14 + 13$",
+          "$17 \\times 14 < 251 < 17 \\times 15$ ، نقسم على 17: $14 < \\frac{251}{17} < 15$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "id": "ex-1am-talim-fi-mustawi-l4-006",
+  "lessonCode": "talim-fi-mustawi",
+  "level": 4,
+  "metadata": {
+    "title": "طبيعة رباعي",
+    "estimatedMinutes": 5,
+    "tags": [
+      "مربع",
+      "مستطيل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعلّم في معلم متعامد رؤوس رباعيات أضلاعها توازي المحورين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نعلّم في معلم متعامد النقط $A(-3\\,;\\,-2)$ و $B(3\\,;\\,-2)$ و $C(3\\,;\\,2)$ و $D(-3\\,;\\,2)$ (وحدة الطول واحدة على المحورين). ما طبيعة الرباعي $ABCD$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مربّع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-NATSQUARE"
+        },
+        {
+          "id": "B",
+          "content": "مستطيل وليس مربّعًا",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "معيّن وليس مربّعًا",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "شبه منحرف",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "علّم النقط الأربع على معلم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أضلاعه توازي المحورين، فاحسب طول ضلعين متجاورين بعدّ الوحدات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إن تساوى الطولان فهو مربّع، وإلا فهو مستطيل."
+        }
+      ],
+      "feedback": {
+        "correct": "الضلعان المتجاوران $6$ و $4$ غير متساويين : مستطيل وليس مربّعًا .",
+        "incorrect": "عدّ وحدات ضلعين متجاورين ثمّ قارن."
+      },
+      "solution": {
+        "lines": [
+          "$AB=6$ و $BC=4$ وكلّ الزوايا قائمة لأنّ الأضلاع توازي المحورين",
+          "مستطيل وليس مربّعًا"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "نعلّم في معلم متعامد النقط $A(-2\\,;\\,1)$ و $B(2\\,;\\,1)$ و $C(2\\,;\\,-3)$ و $D(-2\\,;\\,-3)$ (وحدة الطول واحدة على المحورين). ما طبيعة الرباعي $ABCD$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مستطيل وليس مربّعًا",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "معيّن وليس مربّعًا",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "شبه منحرف",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "مربّع",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "علّم النقط الأربع على معلم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أضلاعه توازي المحورين، فاحسب طول ضلعين متجاورين بعدّ الوحدات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إن تساوى الطولان فهو مربّع، وإلا فهو مستطيل."
+        }
+      ],
+      "feedback": {
+        "correct": "الضلعان المتجاوران $4$ و $4$ متساويان : مربّع .",
+        "incorrect": "عدّ وحدات ضلعين متجاورين ثمّ قارن."
+      },
+      "solution": {
+        "lines": [
+          "$AB=4$ و $BC=4$ وكلّ الزوايا قائمة لأنّ الأضلاع توازي المحورين",
+          "مربّع"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

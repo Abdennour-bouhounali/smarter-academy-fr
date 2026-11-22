@@ -1,6 +1,8 @@
-import React, { useCallback, useState } from 'react';
+import { getAllGrades } from '@smarter-academy/core';
+import { useCallback, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import AdminPage from '../../../components/admin/AdminPage';
+import { AdminPage, useAdminLabels, Num } from '../adminUi';
 import DataTable from '../../../components/admin/ui/DataTable';
 import StatusBadge from '../../../components/admin/ui/StatusBadge';
 import { FilterBar, SelectFilter, SearchInput } from '../../../components/admin/ui/FilterBar';
@@ -11,8 +13,15 @@ import { useDocumentMeta } from '../../../hooks/useDocumentMeta';
 import { useDebounced } from '../../../hooks/useDebounced';
 
 /** Par leçon : combien commencent, combien terminent, combien signalent. */
+// Les classes du CATALOGUE, jamais une liste écrite ici : le tableau
+// français hérité ('6e', '5e', …) survivait à la bascule algérienne et
+// aurait proposé de filtrer sur des classes qui n'existent plus en base.
+const GRADE_OPTIONS = getAllGrades().map((g) => ({ value: g.id, label: g.name }));
+
 export function ContentAnalytics() {
-  useDocumentMeta('Statistiques contenu — Administration');
+  const { t } = useTranslation('admin');
+  const L = useAdminLabels();
+  useDocumentMeta(t('analytics.contentMetaTitle'));
 
   const [grade, setGrade] = useState();
   const loader = useCallback((token) => fetchContentAnalytics(token, { grade }), [grade]);
@@ -20,21 +29,20 @@ export function ContentAnalytics() {
 
   return (
     <AdminPage
-      eyebrow="Statistiques"
-      title="Contenu"
-      subtitle="Où les élèves entrent, où ils terminent, où ils signalent."
+      eyebrow={t('analytics.platformEyebrow')}
+      title={t('analytics.contentTitle')}
+      subtitle={t('analytics.contentSubtitle')}
     >
       <div className="space-y-3">
         <FilterBar>
           <SelectFilter
-            label="Classe" allLabel="Toutes les classes" value={grade} onChange={setGrade}
-            options={['6e', '5e', '4e', '3e', 'seconde'].map((g) => ({ value: g, label: g }))}
+            label={t('common.grade')} allLabel={t('analytics.allGrades')} value={grade} onChange={setGrade}
+            options={GRADE_OPTIONS}
           />
         </FilterBar>
 
         <p className="font-inter text-xs text-slate-500">
-          Les colonnes « vues », « temps moyen » et « abandon » de la spécification ne figurent pas ici :
-          rien ne les enregistre encore. Elles seraient inventées.
+          {t('analytics.missingColumnsHint')}
         </p>
 
         <DataTable
@@ -42,37 +50,43 @@ export function ContentAnalytics() {
           loading={loading}
           error={error}
           onRetry={reload}
-          empty={<EmptyState title="Aucune donnée" />}
+          labels={L.table}
+          empty={<EmptyState title={t('analytics.emptyTitle')} hint={t('analytics.emptyHint')} />}
           columns={[
             {
               key: 'title',
-              label: 'Leçon',
+              label: t('analytics.columnLesson'),
               render: (row) => (
                 <Link to={`/admin/contenu/lecons/${encodeURIComponent(row.code)}`} className="hover:underline">
                   <span className="font-semibold text-slate-900">{row.title}</span>
-                  <span className="block font-mono-jetbrains text-xs text-slate-400">{row.code}</span>
+                  {/* Le code de la leçon est un identifiant technique : latin, LTR. */}
+                  <span dir="ltr" className="block font-mono-jetbrains text-xs text-slate-400 text-start">{row.code}</span>
                 </Link>
               ),
             },
-            { key: 'grade', label: 'Classe', render: (row) => row.grade ?? '—' },
-            { key: 'starts', label: 'Commencées', render: (row) => row.starts },
-            { key: 'completions', label: 'Terminées', render: (row) => row.completions },
+            { key: 'grade', label: t('common.grade'), render: (row) => row.grade ?? t('common.dash') },
+            { key: 'starts', label: t('analytics.columnStarts'), render: (row) => <Num>{row.starts}</Num> },
+            { key: 'completions', label: t('analytics.columnCompletions'), render: (row) => <Num>{row.completions}</Num> },
             {
               key: 'completionRate',
-              label: 'Taux',
+              label: t('analytics.columnRate'),
               render: (row) => (row.completionRate === null
-                ? <span className="text-slate-400" title="Personne n’a commencé cette leçon">—</span>
-                : <span className="tabular-nums font-semibold">{row.completionRate} %</span>),
+                ? <span className="text-slate-400" title={t('analytics.noStartHint')}>{t('common.dash')}</span>
+                : <Num className="tabular-nums font-semibold">{row.completionRate} %</Num>),
             },
-            { key: 'modules', label: 'Modules', render: (row) => row.modules },
+            { key: 'modules', label: t('analytics.columnModules'), render: (row) => <Num>{row.modules}</Num> },
             {
               key: 'reports',
-              label: 'Signalements',
+              label: t('analytics.columnReports'),
               render: (row) => (row.reports > 0
-                ? <span className="font-semibold text-amber-700">{row.reports}</span>
-                : <span className="text-slate-400">0</span>),
+                ? <Num className="font-semibold text-amber-700">{row.reports}</Num>
+                : <Num className="text-slate-400">0</Num>),
             },
-            { key: 'publicationStatus', label: 'Publication', render: (row) => <StatusBadge status={row.publicationStatus} /> },
+            {
+              key: 'publicationStatus',
+              label: t('analytics.columnPublication'),
+              render: (row) => <StatusBadge status={row.publicationStatus} />,
+            },
           ]}
         />
       </div>
@@ -82,7 +96,9 @@ export function ContentAnalytics() {
 
 /** Par point d'apprentissage : qui l'a rencontré, qui le maîtrise, qui bute. */
 export function LearningPointAnalytics() {
-  useDocumentMeta('Points d’apprentissage — Administration');
+  const { t } = useTranslation('admin');
+  const L = useAdminLabels();
+  useDocumentMeta(t('analytics.pointsMetaTitle'));
 
   const [search, setSearch] = useState('');
   const [onlyExposed, setOnlyExposed] = useState('1');
@@ -96,16 +112,22 @@ export function LearningPointAnalytics() {
 
   return (
     <AdminPage
-      eyebrow="Statistiques"
-      title="Points d’apprentissage"
-      subtitle="Sur quoi les élèves butent réellement — dérivé de la maîtrise enregistrée."
+      eyebrow={t('analytics.platformEyebrow')}
+      title={t('analytics.pointsTitle')}
+      subtitle={t('analytics.pointsSubtitle')}
     >
       <div className="space-y-3">
         <FilterBar>
-          <SearchInput value={search} onChange={setSearch} placeholder="Intitulé ou code…" />
+          <SearchInput
+            value={search}
+            onChange={setSearch}
+            placeholder={t('analytics.pointsSearchPlaceholder')}
+            label={L.filters.searchLabel}
+          />
           <SelectFilter
-            label="Portée" allLabel="Tous les points" value={onlyExposed} onChange={(v) => setOnlyExposed(v ?? '')}
-            options={[{ value: '1', label: 'Seulement ceux travaillés' }]}
+            label={t('analytics.scopeLabel')} allLabel={t('analytics.allPoints')} value={onlyExposed}
+            onChange={(v) => setOnlyExposed(v ?? '')}
+            options={[{ value: '1', label: t('analytics.onlyWorked') }]}
           />
         </FilterBar>
 
@@ -114,35 +136,37 @@ export function LearningPointAnalytics() {
           loading={loading}
           error={error}
           onRetry={reload}
-          empty={<EmptyState title="Aucun point d’apprentissage" hint="Aucun point ne correspond à ce filtre." />}
+          labels={L.table}
+          empty={<EmptyState title={t('analytics.noPointsTitle')} hint={t('analytics.noPointsHint')} />}
           columns={[
             {
               key: 'title',
-              label: 'Point',
+              label: t('analytics.columnPoint'),
               render: (row) => (
                 <div>
                   <span className="font-semibold text-slate-900">{row.title}</span>
-                  <span className="block font-mono-jetbrains text-xs text-slate-400">{row.code}</span>
+                  {/* Le code du point d'apprentissage est technique : latin, LTR. */}
+                  <span dir="ltr" className="block font-mono-jetbrains text-xs text-slate-400 text-start">{row.code}</span>
                 </div>
               ),
             },
-            { key: 'lesson', label: 'Leçon', render: (row) => row.lesson ?? '—' },
-            { key: 'studentsExposed', label: 'Élèves', render: (row) => row.studentsExposed },
-            { key: 'mastered', label: 'Maîtrisé', render: (row) => <span className="text-emerald-700">{row.mastered}</span> },
-            { key: 'reinforce', label: 'À consolider', render: (row) => <span className="text-amber-700">{row.reinforce}</span> },
+            { key: 'lesson', label: t('analytics.columnLesson'), render: (row) => row.lesson ?? t('common.dash') },
+            { key: 'studentsExposed', label: t('analytics.columnStudents'), render: (row) => <Num>{row.studentsExposed}</Num> },
+            { key: 'mastered', label: t('analytics.columnMastered'), render: (row) => <Num className="text-emerald-700">{row.mastered}</Num> },
+            { key: 'reinforce', label: t('analytics.columnReinforce'), render: (row) => <Num className="text-amber-700">{row.reinforce}</Num> },
             {
               key: 'struggling',
-              label: 'En difficulté',
+              label: t('analytics.columnStruggling'),
               render: (row) => (row.struggling > 0
-                ? <span className="font-semibold text-rose-700">{row.struggling}</span>
-                : <span className="text-slate-400">0</span>),
+                ? <Num className="font-semibold text-rose-700">{row.struggling}</Num>
+                : <Num className="text-slate-400">0</Num>),
             },
             {
               key: 'masteryRate',
-              label: 'Taux de maîtrise',
+              label: t('analytics.columnMasteryRate'),
               render: (row) => (row.masteryRate === null
-                ? <span className="text-slate-400">—</span>
-                : <span className="tabular-nums font-semibold">{row.masteryRate} %</span>),
+                ? <span className="text-slate-400">{t('common.dash')}</span>
+                : <Num className="tabular-nums font-semibold">{row.masteryRate} %</Num>),
             },
           ]}
         />

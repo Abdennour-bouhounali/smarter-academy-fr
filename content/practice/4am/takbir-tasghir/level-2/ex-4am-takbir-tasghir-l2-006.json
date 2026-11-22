@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-takbir-tasghir-l2-006",
+  "lessonCode": "takbir-tasghir",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — كم مرّة المساحة؟",
+    "estimatedMinutes": 2,
+    "tags": [
+      "التكبير",
+      "المساحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takbir-tasghir_P1",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "في لعبة بناء، كبّر لاعب متقن برجا بالنسبة $k = 5$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المساحة الكلية لأوجه البرج تُضرب في كم؟",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة مثل 1,25 ، أو كسر مثل 4/7)",
+      "expectedAnswer": "25",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAKBIR-MISAHA-K",
+          "value": "5"
+        },
+        {
+          "id": "MISC-TAKBIR-BUUD",
+          "value": "125"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المساحة بعدان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأطوال تُضرب في $k$ ، والمساحات في $k^2$ ، والحجوم في $k^3$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب $5^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "المساحات تُضرب في $k^2 = 5^2 = 25$ .",
+        "incorrect": "المساحة لا تُضرب في k بل في $k^2$ ."
+      }
+    }
+  ]
+}

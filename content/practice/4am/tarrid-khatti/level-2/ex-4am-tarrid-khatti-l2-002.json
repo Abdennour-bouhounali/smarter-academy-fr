@@ -1,0 +1,193 @@
+{
+  "id": "ex-4am-tarrid-khatti-l2-002",
+  "lessonCode": "tarrid-khatti",
+  "level": 2,
+  "metadata": {
+    "title": "تحدّ (ص 65) — المركبة B",
+    "estimatedMinutes": 7,
+    "tags": [
+      "تمثيل بياني",
+      "سرعة ثابتة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "challenge",
+      "page": 65,
+      "section": "تحدّ",
+      "adaptedFrom": "ex-4am-tarrid-khatti-l2-002"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يمثّل نصف المستقيم $(D)$ في المعلم التالي المسافة $d$ (بـ km) التي قطعتها مركبة B بدلالة المدة $t$ (بالساعة) منذ انطلاقها؛ النقطتان $M$ و $N$ من $(D)$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "M": [
+          2,
+          3
+        ],
+        "N": [
+          4,
+          6
+        ]
+      },
+      "rays": [
+        {
+          "from": "O",
+          "through": "N",
+          "name": "(D)",
+          "tone": "sky",
+          "extend": 0.12
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw",
+        "M": "e",
+        "N": "e"
+      },
+      "ariaLabel": "معلم على ورقة مرصوفة: نصف مستقيم (D) من المبدأ O يشمل النقطتين M و N",
+      "caption": "محور الفواصل: المدة بالساعة — محور التراتيب: كل وحدة تمثّل 50km"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بقراءة بيانية، ما المسافة التي قطعتها المركبة B في ساعتين؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المسافة بـ km",
+      "expectedAnswer": "150",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-BAYANI-FASILA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ ترتيب النقطة $M$ التي فاصلتها 2."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل وحدة على محور التراتيب تمثّل 50km."
+        }
+      ],
+      "feedback": {
+        "correct": "ترتيب $M$ هو 3 وحدات، أي $3 \\times 50 = 150$ km.",
+        "incorrect": "اقرأ الترتيب ثم حوّله بالوحدة المعطاة على محور التراتيب."
+      },
+      "solution": {
+        "lines": [
+          "النقطة $M$ فاصلتها 2 وترتيبها 3 وحدات.",
+          "$3 \\times 50 = 150$ : قطعت المركبة 150km في ساعتين."
+        ],
+        "result": "150km"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "المسافة $d$ دالة خطية للمدة $t$ . عبّر عن $d(t)$ بدلالة $t$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "75",
+      "misconceptionSignatures": [
+        {
+          "value": "3/2",
+          "id": "MISC-BAYANI-FASILA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تمثيل $d$ مستقيم يشمل المبدأ: $d(t) = at$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل النقطة $M$ : $d(2)$ معلومة."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{150}{2} = 75$ ، إذن $d(t) = 75t$ : السرعة ثابتة 75km/h.",
+        "incorrect": "المعامل هو المسافة على المدة، والمسافة بالكيلومتر لا بالوحدات."
+      },
+      "solution": {
+        "lines": [
+          "$d(2) = 150$ معناه $2a = 150$",
+          "$a = 75$ ، إذن $d(t) = 75t$ .",
+          "المعامل 75 هو سرعة المركبة: 75km/h."
+        ],
+        "result": "d(t) = 75t"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب المسافة التي تقطعها المركبة B في 3,5 ساعات.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المسافة بـ km (عشري بالفاصلة)",
+      "expectedAnswer": "262,5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة هي صورة 3,5 بالدالة $d$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$d(3{,}5) = 75 \\times 3{,}5 = 262{,}5$ km.",
+        "incorrect": "عوّض $t$ بالمدة في عبارة $d(t)$ ."
+      },
+      "solution": {
+        "lines": [
+          "$d(3{,}5) = 75 \\times 3{,}5 = 262{,}5$",
+          "تقطع المركبة 262,5km في 3,5 ساعات."
+        ],
+        "result": "262{,}5km"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

@@ -1,9 +1,11 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { MailCheck, CheckCircle2, AlertTriangle } from 'lucide-react';
 import { AuthContext } from '../context/AuthContext';
 import { resendVerificationEmail } from '../services/authService';
+import { postAuthPath } from '../features/classJoin/pendingClassJoin';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 
 /**
@@ -14,7 +16,11 @@ import { useDocumentMeta } from '../hooks/useDocumentMeta';
  *
  *   - celui qui vient de s'inscrire et n'a encore rien cliqué ;
  *   - celui qui REVIENT du lien reçu par courriel, l'API l'ayant redirigé
- *     ici avec `?statut=…`.
+ *     ici avec `?statut=succes|deja-verifie|invalide` (`invalide` couvre
+ *     aussi le lien expiré ou altéré) ;
+ *   - celui dont le PREMIER envoi a échoué à l'inscription
+ *     (`?statut=envoi-echoue`, posé par Register.jsx) : on ne lui dit pas
+ *     « أرسلنا », on lui propose le renvoi.
  *
  * ── Ce que cette page n'est PAS ──────────────────────────────────────────
  * Elle ne garde aucune porte. La fermeture de l'espace élève est le fait du
@@ -31,6 +37,7 @@ import { useDocumentMeta } from '../hooks/useDocumentMeta';
  * une autre adresse, ou nous écrire.
  */
 export default function VerificationEmail() {
+  const { t } = useTranslation('auth');
   const { user, token, logout, refreshUser } = useContext(AuthContext);
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
@@ -41,25 +48,25 @@ export default function VerificationEmail() {
 
   const statut = searchParams.get('statut');
 
-  useDocumentMeta(
-    'Vérifiez votre adresse e-mail — Smarter Academy',
-    'Confirmez votre adresse e-mail pour accéder à votre espace Smarter Academy.',
-  );
+  useDocumentMeta(t('verifyMetaTitle'), t('verifyMetaDescription'));
 
-  // Retour depuis le lien du courriel : l'adresse vient d'être prouvée côté
-  // serveur, mais la session chargée dans cet onglet l'ignore encore. On
-  // relit le compte plutôt que de deviner — c'est le serveur qui sait.
+  // On relit le compte à CHAQUE arrivée, pas seulement au retour du lien :
+  // l'élève a pu cliquer le lien sur son téléphone, et cet onglet — renvoyé
+  // ici par ProtectedRoute en tentant d'ouvrir فضائي — croirait encore
+  // l'adresse non vérifiée. C'est le serveur qui sait ; s'il dit « vérifiée »,
+  // l'effet suivant ouvre l'espace.
   useEffect(() => {
-    if (statut !== 'succes' && statut !== 'deja-verifie') return;
     if (!token) return;
 
     refreshUser?.();
   }, [statut, token, refreshUser]);
 
-  // Vérifié : l'élève n'a plus rien à faire ici.
+  // Vérifié : l'élève n'a plus rien à faire ici. Venu du lien d'une classe,
+  // il y retourne — la page du lien rejoint seule (ou constate que la
+  // vérification l'a déjà fait côté serveur : alreadyMember).
   useEffect(() => {
     if (user?.emailVerified) {
-      navigate(user.grade ? '/espace' : '/espace/bienvenue', { replace: true });
+      navigate(postAuthPath(user, user.grade ? '/espace' : '/espace/bienvenue'), { replace: true });
     }
   }, [user, navigate]);
 
@@ -71,8 +78,8 @@ export default function VerificationEmail() {
       const data = await resendVerificationEmail(token);
       setFeedback(
         data.alreadyVerified
-          ? 'Votre adresse est déjà vérifiée.'
-          : 'E-mail envoyé. Pensez à regarder dans vos indésirables.',
+          ? t('verifyAlreadyShort')
+          : t('verifyResent'),
       );
     } catch (err) {
       setErrorMsg(err.message);
@@ -103,55 +110,55 @@ export default function VerificationEmail() {
       >
         <div className="bg-white/70 backdrop-blur-xl py-8 px-6 shadow-xl shadow-slate-200/50 sm:rounded-2xl sm:px-10 border border-white/50">
           <div className="flex justify-center">
-            <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-600">
+            <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-nav-accent-soft text-nav-accent">
               <MailCheck className="h-7 w-7" aria-hidden="true" />
             </span>
           </div>
 
           <h1 className="mt-5 text-center text-2xl font-bold tracking-tight text-slate-900 font-display">
-            Vérifiez votre adresse e-mail
+            {t('verifyTitle')}
           </h1>
 
           {statut === 'invalide' && (
             <div role="alert" className="mt-5 flex gap-3 rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-800">
               <AlertTriangle className="h-5 w-5 shrink-0" aria-hidden="true" />
-              <p>
-                Ce lien n’est plus valable — il a expiré, ou l’adresse du compte a changé depuis son
-                envoi. Demandez-en un nouveau ci-dessous.
-              </p>
+              <p>{t('verifyLinkExpired')}</p>
+            </div>
+          )}
+
+          {statut === 'envoi-echoue' && (
+            <div role="alert" className="mt-5 flex gap-3 rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-800">
+              <AlertTriangle className="h-5 w-5 shrink-0" aria-hidden="true" />
+              <p>{t('verifySendFailed')}</p>
             </div>
           )}
 
           {statut === 'deja-verifie' && (
             <div className="mt-5 flex gap-3 rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-800">
               <CheckCircle2 className="h-5 w-5 shrink-0" aria-hidden="true" />
-              <p>Cette adresse était déjà vérifiée. Vous pouvez vous connecter.</p>
+              <p>{t('verifyAlready')}</p>
             </div>
           )}
 
           {statut === 'succes' && (
             <div className="mt-5 flex gap-3 rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-800">
               <CheckCircle2 className="h-5 w-5 shrink-0" aria-hidden="true" />
-              <p>Adresse vérifiée. Bienvenue !</p>
+              <p>{t('verifyDone')}</p>
             </div>
           )}
 
-          <p className="mt-5 text-center text-sm leading-relaxed text-slate-600">
-            Nous avons envoyé un lien de confirmation
-            {user?.email ? (
-              <>
-                {' '}à <span className="font-medium text-slate-900">{user.email}</span>
-              </>
-            ) : null}
-            . Ouvrez-le pour activer votre espace.
-          </p>
+          {statut !== 'envoi-echoue' && (
+            <p className="mt-5 text-center text-sm leading-relaxed text-slate-600">
+              {t('verifySent', { email: user?.email || '—' })}
+            </p>
+          )}
 
           <p className="mt-2 text-center text-xs text-slate-500">
-            Le lien est valable 24 heures. Rien reçu ? Regardez dans vos courriers indésirables.
+            {t('verifyValidity')}
           </p>
 
           {feedback && (
-            <p role="status" className="mt-5 rounded-xl border border-blue-200 bg-blue-50 p-3 text-center text-sm text-blue-800">
+            <p role="status" className="mt-5 rounded-xl border border-blue-200 bg-nav-accent-soft p-3 text-center text-sm text-nav-accent">
               {feedback}
             </p>
           )}
@@ -171,34 +178,34 @@ export default function VerificationEmail() {
                   handleResend();
                 }}
                 disabled={sending}
-                className="flex w-full justify-center rounded-xl border border-transparent bg-blue-600 py-3 px-4 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-70"
+                className="flex w-full justify-center rounded-xl border border-transparent bg-nav-accent py-3 px-4 text-sm font-medium text-white shadow-sm transition-colors hover:bg-[#3350c4] focus:outline-none focus:ring-2 focus:ring-nav-accent focus:ring-offset-2 disabled:opacity-70"
               >
-                {sending ? 'Envoi en cours…' : 'Renvoyer l’e-mail'}
+                {sending ? t('sending') : t('resendEmail')}
               </button>
 
               <button
                 type="button"
                 onClick={handleLogout}
-                className="flex w-full justify-center rounded-xl border border-slate-300 bg-white py-3 px-4 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                className="flex w-full justify-center rounded-xl border border-slate-300 bg-white py-3 px-4 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-nav-accent focus:ring-offset-2"
               >
-                Se déconnecter
+                {t('logout')}
               </button>
             </div>
           ) : (
             <div className="mt-6">
               <Link
                 to="/login"
-                className="flex w-full justify-center rounded-xl border border-transparent bg-blue-600 py-3 px-4 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700"
+                className="flex w-full justify-center rounded-xl border border-transparent bg-nav-accent py-3 px-4 text-sm font-medium text-white shadow-sm transition-colors hover:bg-[#3350c4]"
               >
-                Se connecter
+                {t('login')}
               </Link>
             </div>
           )}
 
           <p className="mt-6 text-center text-xs text-slate-500">
-            Adresse erronée ? Écrivez-nous à{' '}
-            <a href="mailto:contact@smarter-academy.fr" className="font-medium text-blue-600 hover:text-blue-700">
-              contact@smarter-academy.fr
+            {t('wrongAddress')}{' '}
+            <a href="mailto:abdennour.bouhounali@gmail.com" className="font-medium text-nav-accent hover:text-nav-accent">
+              abdennour.bouhounali@gmail.com
             </a>
             .
           </p>

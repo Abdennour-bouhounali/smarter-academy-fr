@@ -1,0 +1,80 @@
+{
+  "id": "ex-4am-barahin-ashia-l1-003",
+  "lessonCode": "barahin-ashia",
+  "level": 1,
+  "generator": {
+    "tool": "gen-barahin.mjs",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — ذهاب وإياب",
+    "estimatedMinutes": 3,
+    "tags": [
+      "شعاعان متعاكسان",
+      "الشعاع المعدوم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_barahin-ashia_P1",
+      "modelledOn": "ex-18"
+    }
+  },
+  "statement": {
+    "content": "A و B نقطتان متمايزتان."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "$\\overrightarrow{AB}$ + $\\overrightarrow{BA}$ يساوي:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{0}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "العدد 0",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SIFR-ADAD"
+        },
+        {
+          "id": "C",
+          "content": "$2\\overrightarrow{AB}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{AB}$ و $\\overrightarrow{BA}$ لهما نفس المنحى ونفس الطول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق علاقة شال: نهاية الأول هي مبدأ الثاني."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "من A إلى B ثم العودة إلى A : أين تنتهي الرحلة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AB} + \\overrightarrow{BA} = \\overrightarrow{AA} = \\overrightarrow{0}$ : شعاعان متعاكسان.",
+        "incorrect": "الشعاعان متعاكسان، ومجموعهما شعاع (لا عدد) مبدؤه ونهايته نفس النقطة."
+      }
+    }
+  ]
+}

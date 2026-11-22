@@ -1,0 +1,231 @@
+{
+  "id": "ex-1am-kusur-ashriya-kitaba-l4-002",
+  "lessonCode": "kusur-ashriya-kitaba",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — صحيح أو خطأ في العدد العشري",
+    "estimatedMinutes": 4,
+    "tags": [
+      "مرتبة",
+      "الضرب في 10"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 1,
+      "file": "1am-s1-93",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أعد كتابة كل جملة ثم أجب بصحيح أو خطأ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "مرتبة الرقم $3$ في العدد $15{,}03$ هي الأعشار (الجزء من عشرة).",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KUSUR-RANK-NAMES"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر إجابة واحدة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عُدّ الأرقام بعد الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الرقم الأول بعد الفاصلة للأعشار، والثاني للأجزاء من مائة."
+        }
+      ],
+      "feedback": {
+        "correct": "الرقم 3 هو الثاني بعد الفاصلة: رقم الأجزاء من مائة، لا الأعشار.",
+        "incorrect": "بعد الفاصلة: الأعشار ثم الأجزاء من مائة ثم الأجزاء من ألف."
+      },
+      "solution": {
+        "lines": [
+          "في $15{,}03$ : رقم الأعشار 0 ورقم الأجزاء من مائة 3.",
+          "العبارة خاطئة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "تزن 6 صناديق من التفاح $19{,}4$ كلغ، علمًا أنّ كل صندوق يزن $3{,}2$ كلغ.",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر إجابة واحدة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب كتلة 6 صناديق بالجمع المتكرّر أو بالضرب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن النتيجة بالقيمة المعطاة."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 \\times 3{,}2 = 19{,}2$ وليس $19{,}4$.",
+        "incorrect": "نحسب كتلة 6 صناديق بضرب كتلة الصندوق في 6."
+      },
+      "solution": {
+        "lines": [
+          "$6 \\times 3{,}2 = 19{,}2$",
+          "العبارة خاطئة لأنّ $19{,}2 \\neq 19{,}4$."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "لضرب عدد عشري في 10 نزيح الفاصلة مرتبة واحدة نحو اليمين.",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KUSUR-ADD-ZERO"
+        }
+      ],
+      "answerFormat": "اختر إجابة واحدة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جرّب القاعدة على مثال: ماذا يحدث للرقم 6 عند الضرب في 10؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يصير أكبر أم أصغر؟"
+        }
+      ],
+      "feedback": {
+        "correct": "مثال: $6{,}48 \\times 10 = 64{,}8$ : الفاصلة انتقلت مرتبة نحو اليمين.",
+        "incorrect": "الضرب في 10 يجعل كل رقم يرتفع مرتبة، أي تنتقل الفاصلة مرتبة نحو اليمين."
+      },
+      "solution": {
+        "lines": [
+          "$6{,}48 \\times 10 = 64{,}8$",
+          "انتقلت الفاصلة مرتبة واحدة نحو اليمين: العبارة صحيحة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "في العدد $27{,}5$ يوجد $275$ عُشرًا.",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KUSUR-TENTHS-COUNT"
+        }
+      ],
+      "answerFormat": "اختر إجابة واحدة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم عُشرًا في الوحدة الواحدة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العدد على شكل كسر مقامه 10."
+        }
+      ],
+      "feedback": {
+        "correct": "$27{,}5 = \\dfrac{275}{10}$ ، أي 275 عُشرًا.",
+        "incorrect": "نعدّ الأعشار كلّها بما فيها التي في الوحدات الكاملة: كل وحدة تحوي 10 أعشار."
+      },
+      "solution": {
+        "lines": [
+          "$27{,}5 \\times 10 = 275$",
+          "إذن $27{,}5 = \\dfrac{275}{10}$ ، أي 275 عُشرًا: العبارة صحيحة."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

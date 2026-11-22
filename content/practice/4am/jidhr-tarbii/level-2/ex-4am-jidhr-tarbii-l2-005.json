@@ -1,0 +1,123 @@
+{
+  "id": "ex-4am-jidhr-tarbii-l2-005",
+  "lessonCode": "jidhr-tarbii",
+  "level": 2,
+  "metadata": {
+    "title": "جذور قوى العدد 10",
+    "estimatedMinutes": 4,
+    "tags": [
+      "الرمز √",
+      "قوى العدد 10"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_jidhr-tarbii_P2",
+      "modelledOn": "ex-5",
+      "adaptedFrom": "ex-4am-jidhr-tarbii-l2-005"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "اكتب كل عدد مما يلي دون استعمال الرمز $\\sqrt{\\;}$:"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "$\\sqrt{40000}$",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "200",
+      "misconceptionSignatures": [
+        {
+          "value": "20000",
+          "id": "MISC-JIDHR-NISF"
+        },
+        {
+          "value": "2000",
+          "id": "MISC-JIDHR-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$40000 = 4 \\times 10000$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما العدد الموجب الذي مربعه 4؟ والذي مربعه 10000؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$200^2 = 40000$: $\\sqrt{40000} = 200$.",
+        "incorrect": "تحقّق بتربيع العدد الذي وجدته: عدد الأصفار في المربع ضعف عددها في العدد."
+      },
+      "solution": {
+        "lines": [
+          "$200$ موجب و $200^2 = 40000$"
+        ],
+        "result": "\\sqrt{40000} = 200"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "$\\sqrt{10^{12}}$",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (يمكنك كتابته بالأرقام)",
+      "expectedAnswer": "1000000",
+      "misconceptionSignatures": [
+        {
+          "value": "500000000000",
+          "id": "MISC-JIDHR-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن قوة للعدد 10 مربعها $10^{12}$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$(10^n)^2 = 10^{2n}$."
+        }
+      ],
+      "feedback": {
+        "correct": "$(10^6)^2 = 10^{12}$: $\\sqrt{10^{12}} = 10^6 = 1000000$.",
+        "incorrect": "مربع $10^n$ هو $10^{2n}$: ابحث عن الأس المناسب."
+      },
+      "solution": {
+        "lines": [
+          "$(10^6)^2 = 10^{12}$ و $10^6$ موجب"
+        ],
+        "result": "\\sqrt{10^{12}} = 10^6"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "id": "ex-2am-talim-nuqta-mustawi-l4-010",
+  "lessonCode": "talim-nuqta-mustawi",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مستطيل على الشكل",
+    "estimatedMinutes": 9,
+    "tags": [
+      "قراءة",
+      "عدّ وحدات",
+      "مساحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يبيّن الشكل المستطيل $ABCD$ في معلم متعامد ومتجانس مبدؤه $O$ .",
+    "figure": {
+      "grid": true,
+      "axes": true,
+      "points": {
+        "A": [
+          -3,
+          2
+        ],
+        "B": [
+          4,
+          2
+        ],
+        "C": [
+          4,
+          -2
+        ],
+        "D": [
+          -3,
+          -2
+        ],
+        "O": [
+          0,
+          0
+        ]
+      },
+      "ariaLabel": "مستطيل ABCD في معلم متعامد ومتجانس",
+      "maxWidth": 420,
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "A"
+        ]
+      ],
+      "labels": {
+        "O": "sw"
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اقرأ إحداثيتي النقطة $C$ في الشكل.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "4",
+        "y": "-2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "-2",
+            "y": "4"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNAXIS",
+          "value": {
+            "x": "4",
+            "y": "2"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNLEFT",
+          "value": {
+            "x": "-4",
+            "y": "-2"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الفاصلة على محور الفواصل أوّلًا، بالنزول من النقطة أو الصعود منها عموديًّا إلى هذا المحور."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اقرأ الترتيب على محور التراتيب بالسير أفقيًّا من النقطة إلى هذا المحور؛ العدد الأوّل في الثنائية هو الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "راقب الإشارة: النقط التي على يسار محور التراتيب أو تحت محور الفواصل تأخذ عددًا سالبًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$C(4\\,;\\,-2)$ .",
+        "incorrect": "راجع قراءة الإحداثيتين: الفاصلة أوّلًا على محور الفواصل ثم الترتيب على محور التراتيب."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $C$ هي $4$ وترتيبها $-2$",
+          "$C(4\\,;\\,-2)$"
+        ],
+        "result": "C(4\\,;\\,-2)"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما طول القطعة $[AB]$ بعدّ وحدات الشبكة؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الوحدات",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-LENSUM",
+          "value": "1"
+        },
+        {
+          "id": "MISC-NUQTA2-LENOFF",
+          "value": "8"
+        },
+        {
+          "id": "MISC-NUQTA2-LENMAX",
+          "value": "4"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "علّم النقطتين وتأكّد أنّهما على خطّ واحد من الشبكة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ الوحدات بين النقطتين على الشبكة، مرورًا بالمحور إن كان القطعة تقطعه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب عدد الوحدات في طول الوحدة إن طُلبت النتيجة بالمتر أو السنتيمتر."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد الوحدات $7$ .",
+        "incorrect": "القطعة تقع على خطّ من الشبكة: عُدّ وحداتها واحدة واحدة، ومُرّ بالمحور إن كانت تقطعه."
+      },
+      "solution": {
+        "lines": [
+          "القطعة $[AB]$ توازي أحد المحورين",
+          "عدد وحداتها $7$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما مساحة المستطيل $ABCD$ بعدّ وحدات المساحة؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد وحدات المساحة",
+      "expectedAnswer": "28",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-AREASUM",
+          "value": "11"
+        },
+        {
+          "id": "MISC-NUQTA2-AREAPERIM",
+          "value": "22"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عُدّ وحدات الطول ثم وحدات العرض على الشبكة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحة المستطيل جداء الطول في العرض."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تجمع الطول مع العرض، وتذكّر الوحدة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "المساحة $28$ .",
+        "incorrect": "عُدّ وحدات الطول ثم وحدات العرض على الشبكة، ثم اضرب أحدهما في الآخر، ولا تجمعهما."
+      },
+      "solution": {
+        "lines": [
+          "بعدا المستطيل: $7$ و $4$ وحدات",
+          "المساحة $7 \\times 4 = 28$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

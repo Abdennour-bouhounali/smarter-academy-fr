@@ -1,0 +1,205 @@
+{
+  "id": "ex-2am-muqarana-nisbiya-l2-002",
+  "lessonCode": "muqarana-nisbiya",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — فواصل نقط سالبة على مستقيم مدرّج",
+    "estimatedMinutes": 6,
+    "tags": [
+      "فاصلة نقطة",
+      "عدد سالب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "على مستقيم مدرّج مبدؤه $O$ ووحدته $1\\,\\text{cm}$ : فاصلة $A$ هي $-4$ وفاصلة $B$ هي $+2{,}5$ وفاصلة $C$ هي $-1{,}5$ وفاصلة $L$ هي $-4{,}2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "قارن فاصلتي $A$ و $L$ : اختر العبارة الصحيحة.",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-4{,}2 > -4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-BDG"
+        },
+        {
+          "id": "B",
+          "content": "$-4{,}2 = -4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-DAN"
+        },
+        {
+          "id": "C",
+          "content": "$-4{,}2 < -4$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج: أيّهما أبعد عن الصفر؟ وفي أيّ جهة منه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددان سالبان: الأصغر هو الذي له أكبر مسافة إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن المسافتين إلى الصفر (العددين دون إشارتيهما) ثم اعكس الحكم لأن العددين سالبان."
+        }
+      ],
+      "feedback": {
+        "correct": "$4{,}2 > 4$ والعددان سالبان: $-4{,}2 < -4$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$4{,}2 > 4$ والعددان سالبان",
+          "$-4{,}2 < -4$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما أصغر فاصلة بين فواصل النقط الأربع؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "-4,2",
+      "misconceptionSignatures": [
+        {
+          "value": "-1,5",
+          "id": "MISC-MUQARANA-NISBIYA-BDG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج: أيّهما أبعد عن الصفر؟ وفي أيّ جهة منه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددان سالبان: الأصغر هو الذي له أكبر مسافة إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن المسافتين إلى الصفر (العددين دون إشارتيهما) ثم اعكس الحكم لأن العددين سالبان."
+        }
+      ],
+      "feedback": {
+        "correct": "الأصغر هو العدد السالب الأبعد عن الصفر: $-4{,}2$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$-4{,}2 < -4 < -1{,}5 < 2{,}5$",
+          "الأصغر هي فاصلة $L$ : $-4{,}2$"
+        ],
+        "result": "-4{,}2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "أيّ النقطتين $A$ و $L$ أبعد عن $O$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "النقطة $A$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-BDG"
+        },
+        {
+          "id": "B",
+          "content": "النقطة $L$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لا يمكن المقارنة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-SI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة إلى الصفر هي طول المسار من الصفر إلى العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة إلى الصفر لا تكون سالبة أبدًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للحصول عليها: اكتب العدد دون إشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "المسافتان إلى الصفر: $4$ و $4{,}2$ ، فـ $L$ أبعد.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$OA = 4$ و $OL = 4{,}2$",
+          "$4{,}2 > 4$ ، فـ $L$ أبعد عن $O$"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

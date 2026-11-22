@@ -1,0 +1,70 @@
+{
+  "id": "ex-4am-murakkibata-shuaa-l2-002",
+  "lessonCode": "murakkibata-shuaa",
+  "level": 2,
+  "metadata": {
+    "title": "معارف — نتيجة: مركبتا OA",
+    "estimatedMinutes": 2,
+    "tags": [
+      "OM",
+      "عدد عشري"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-origin",
+      "page": 144,
+      "section": "معارف"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 144): في مستوٍ منسوب إلى مَعلم مبدؤه O، إحداثيتا النقطة A هما $(-3\\,;\\,2{,}5)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما مركبتا الشعاع $\\overrightarrow{OA}$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_murakkibata-shuaa_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "مركبتا الشعاع (x ; y): الأفقية ثم العمودية — عددان مثل −3 أو 2,5",
+      "expectedAnswer": {
+        "x": "-3",
+        "y": "5/2"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مبدأ هذا الشعاع هو مبدأ المعلم O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من O، الإزاحة الأفقية هي الفاصلة والإزاحة العمودية هي الترتيب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مركبتا $\\overrightarrow{OM}$ هما إحداثيتا M بنفس الترتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{OA}\\begin{pmatrix} -3 \\\\ 2{,}5 \\end{pmatrix}$ : إحداثيتا A بنفس الترتيب.",
+        "incorrect": "من O: المركبتان هما الإحداثيتان."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "5/2",
+            "y": "-3"
+          },
+          "id": "MISC-MAALAM-TABDIL-X-Y"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,237 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l4-006",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — أفواج اليوم الرياضي",
+    "estimatedMinutes": 10,
+    "tags": [
+      "قابلية القسمة",
+      "أفواج",
+      "الحاصل + 1"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يشارك 156 تلميذًا في يوم رياضي تنظّمه المتوسطة، ويوزَّعون في أفواج متساوية، وروح الفريق فيه أهمّ من الفوز."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل يمكن توزيعهم في أفواج من 4 تلاميذ دون أن يبقى أحد؟ (استعمل قاعدة قابلية القسمة على 4)",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى العدد المكوّن من رقمي الآحاد والعشرات."
+        }
+      ],
+      "feedback": {
+        "correct": "56 يقبل القسمة على 4 ، إذن 156 يقبل القسمة على 4.",
+        "incorrect": "يقبل العدد القسمة على 4 إذا قبل العدد المكوّن من رقمي آحاده وعشراته القسمة على 4."
+      },
+      "solution": {
+        "lines": [
+          "$56 = 4 \\times 14$ ، إذن 156 يقبل القسمة على 4.",
+          "$156 = 4 \\times 39$: 39 فوجًا دون باقٍ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "يفضّل المنظّمون أفواجًا من 7 تلاميذ: احسب حاصل القسمة الإقليدية للعدد 156 على 7.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "22",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "21",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "23",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 156 من 7 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 7 دون أن نتجاوز 156."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$156 = 7 \\times 22 + 2$ و $2 < 7$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 7 فلا يتجاوز الجداء 156، والباقي عندئذ أصغر من 7."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 22 = 154$ و $7 \\times 23 = 161$",
+          "$154 \\le 156 < 161$ ، إذن الحاصل هو 22."
+        ],
+        "result": "q = 22"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب باقيها.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "22",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "9",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 156."
+        }
+      ],
+      "feedback": {
+        "correct": "$156 - 7 \\times 22 = 156 - 154 = 2$ ، و $2 < 7$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 7."
+      },
+      "solution": {
+        "lines": [
+          "$156 = 7 \\times 22 + 2$",
+          "$2 < 7$ ، إذن الباقي هو 2."
+        ],
+        "result": "r = 2"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "يجب أن يشارك كل التلاميذ: كم فوجًا يلزم على الأقل (قد يكون أحدها ناقصًا)؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد الأفواج",
+      "expectedAnswer": "23",
+      "misconceptionSignatures": [
+        {
+          "value": "22",
+          "id": "MISC-IQLIDIYA-NISYAN-ZIYADA"
+        },
+        {
+          "value": "2",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل تكفي المجموعات الكاملة لوضع كل شيء؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ماذا نفعل بالباقي إذا لم يكن معدومًا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$156 = 7 \\times 22 + 2$: يبقى 2 بعد المجموعات الكاملة، ويحتاج إلى فوج آخر.",
+        "incorrect": "الحاصل يعدّ المجموعات الكاملة فقط؛ إذا بقي شيء فهو يحتاج إلى مجموعة إضافية."
+      },
+      "solution": {
+        "lines": [
+          "$156 = 7 \\times 22 + 2$",
+          "يبقى 2 بعد المجموعات الكاملة، فنحتاج إلى فوج آخر:",
+          "$22 + 1 = 23$"
+        ],
+        "result": "23"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

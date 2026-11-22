@@ -1,0 +1,242 @@
+{
+  "id": "ex-3am-qawaid-quwa-ashara-l5-002",
+  "lessonCode": "qawaid-quwa-ashara",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — من الكيلومتر إلى المليمتر",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مسألة",
+      "وحدات",
+      "قوة لقوة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في قسم التكنولوجيا مسطرة تحويل. نعلم أنّ $1\\ \\mathrm{km} = 10^{3}\\ \\mathrm{m}$ وأنّ $1\\ \\mathrm{m} = 10^{3}\\ \\mathrm{mm}$ وأنّ $1\\ \\mathrm{m} = 10^{2}\\ \\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "الجزء الأول. $1\\ \\mathrm{km} = 10^{3}\\times10^{3}\\ \\mathrm{mm} = 10^{n}\\ \\mathrm{mm}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوتين المضروبتين وأسّ كلّ منهما (انتبه إلى إشارته)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في جداء قوتين للعدد 10 نجري عملية واحدة على الأسّين: ما هي؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب القاعدة على مثال صغير: $10^{2}\\times10^{1}$ هو $10\\times10\\times10$ ، فكم عاملًا 10 في الجداء؟"
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-QAWAID-DARB-ASS"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{3}\\times10^{3} = 10^{6}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نجمع الأسّين: $3 + 3 = 6$ .",
+          "$1\\ \\mathrm{km} = 10^{6}\\ \\mathrm{mm}$ ."
+        ],
+        "result": "n = 6"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$1\\ \\mathrm{km} = 10^{3}\\times10^{2}\\ \\mathrm{cm} = 10^{n}\\ \\mathrm{cm}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوتين المضروبتين وأسّ كلّ منهما (انتبه إلى إشارته)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في جداء قوتين للعدد 10 نجري عملية واحدة على الأسّين: ما هي؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب القاعدة على مثال صغير: $10^{2}\\times10^{1}$ هو $10\\times10\\times10$ ، فكم عاملًا 10 في الجداء؟"
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-QAWAID-DARB-ASS"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{3}\\times10^{2} = 10^{5}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نجمع الأسّين: $3 + 2 = 5$ .",
+          "$1\\ \\mathrm{km} = 10^{5}\\ \\mathrm{cm}$ ."
+        ],
+        "result": "n = 5"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "الجزء الثاني. مربّع ضلعه $1\\ \\mathrm{km}$ مساحته $1\\ \\mathrm{km}^{2} = (10^{3})^{2}\\ \\mathrm{m}^{2} = 10^{n}\\ \\mathrm{m}^{2}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوة الداخلية وأسّها، ثمّ الأسّ الخارجي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في قوة لقوة للعدد 10 نجري عملية واحدة على الأسّين: هل هي الجمع أم غيره؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر أنّ $(10^{2})^{3}$ جداء ثلاثة عوامل كلّ عامل منها $10^{2}$ ."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-QAWAID-QUWA-JAM"
+        },
+        {
+          "value": "9",
+          "id": "MISC-QAWAID-QUWA-ASS"
+        }
+      ],
+      "feedback": {
+        "correct": "$(10^{3})^{2} = 10^{6}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "ضلعه $10^{3}\\ \\mathrm{m}$ ، فمساحته $(10^{3})^{2}\\ \\mathrm{m}^{2}$ .",
+          "نضرب الأسّين: $3 \\times 2 = 6$ ، فـ $1\\ \\mathrm{km}^{2} = 10^{6}\\ \\mathrm{m}^{2}$ ."
+        ],
+        "result": "n = 6"
+      }
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "مكعّب حرفه $1\\ \\mathrm{m}$ حجمه $1\\ \\mathrm{m}^{3} = (10^{2})^{3}\\ \\mathrm{cm}^{3} = 10^{n}\\ \\mathrm{cm}^{3}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوة الداخلية وأسّها، ثمّ الأسّ الخارجي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في قوة لقوة للعدد 10 نجري عملية واحدة على الأسّين: هل هي الجمع أم غيره؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر أنّ $(10^{2})^{3}$ جداء ثلاثة عوامل كلّ عامل منها $10^{2}$ ."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-QAWAID-QUWA-JAM"
+        },
+        {
+          "value": "8",
+          "id": "MISC-QAWAID-QUWA-ASS"
+        }
+      ],
+      "feedback": {
+        "correct": "$(10^{2})^{3} = 10^{6}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "حرفه $10^{2}\\ \\mathrm{cm}$ ، فحجمه $(10^{2})^{3}\\ \\mathrm{cm}^{3}$ .",
+          "نضرب الأسّين: $2 \\times 3 = 6$ ، فـ $1\\ \\mathrm{m}^{3} = 10^{6}\\ \\mathrm{cm}^{3}$ ."
+        ],
+        "result": "n = 6"
+      }
+    }
+  ]
+}

@@ -1,0 +1,512 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-talis-l5-004",
+  "lessonCode": "wadiya-idmajiya-talis",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2022 — الخيمة الصحراوية والعارضة",
+    "estimatedMinutes": 40,
+    "tags": [
+      "وضعية إدماجية",
+      "الخاصية العكسية",
+      "خاصية طالس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-talis_P1",
+      "modelledOn": "BEM 2022 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "نصبت عائلة في رحلة إلى تاغيت خيمة مقطعها العرضي مثلث متساوي الساقين $SAB$ ، حيث $SA = SB = 5\\,\\mathrm{m}$ و $AB = 6\\,\\mathrm{m}$ ( $[AB]$ على الأرض المستوية)، و $H$ منتصف $[AB]$ . ثُبّتت عارضة خشبية $[MN]$ موازية لـ $(AB)$ ، حيث $M$ من $[SA]$ و $N$ من $[SB]$ و $SM = 2\\,\\mathrm{m}$ (الشكل المقابل).",
+    "figure": {
+      "points": {
+        "S": [
+          0.0,
+          4.0
+        ],
+        "A": [
+          -3.0,
+          0.0
+        ],
+        "B": [
+          3.0,
+          0.0
+        ],
+        "H": [
+          0.0,
+          0.0
+        ],
+        "M": [
+          -1.2,
+          2.4
+        ],
+        "N": [
+          1.2,
+          2.4
+        ],
+        "E": [
+          -1.8,
+          1.6
+        ],
+        "F": [
+          1.92,
+          1.44
+        ]
+      },
+      "segments": [
+        {
+          "from": "S",
+          "to": "M",
+          "label": "2"
+        },
+        [
+          "M",
+          "E"
+        ],
+        [
+          "E",
+          "A"
+        ],
+        [
+          "S",
+          "N"
+        ],
+        [
+          "N",
+          "F"
+        ],
+        [
+          "F",
+          "B"
+        ],
+        {
+          "from": "A",
+          "to": "H",
+          "label": "3"
+        },
+        {
+          "from": "H",
+          "to": "B",
+          "label": "3"
+        },
+        {
+          "from": "S",
+          "to": "H",
+          "dashed": true
+        },
+        {
+          "from": "M",
+          "to": "N",
+          "bold": true
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "tone": "amber"
+        }
+      ],
+      "rightAngles": [
+        [
+          "S",
+          "H",
+          "B"
+        ]
+      ],
+      "labels": {
+        "S": "n",
+        "A": "sw",
+        "B": "se",
+        "H": "s",
+        "M": "w",
+        "N": "e",
+        "E": "w",
+        "F": "e"
+      },
+      "ariaLabel": "المقطع العرضي للخيمة: المثلث المتساوي الساقين SAB حيث SA = SB = 5 و AB = 6، H منتصف [AB]، العارضة [MN] حيث SM = 2، والحبل [EF] بين E من [SA] و F من [SB]",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب ارتفاع الخيمة $SH$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث المتساوي الساقين، $[SH]$ عمودي على $[AB]$ في منتصفه: $AH = 3\\,\\mathrm{m}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خاصية فيثاغورس في المثلث $SHA$ القائم في $H$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$SH^2 = 25 - 9 = 16$ ومنه $SH = 4\\,\\mathrm{m}$ .",
+        "incorrect": "$SH^2 = SA^2 - AH^2$ مع $AH = 3$ (نصف القاعدة)."
+      },
+      "solution": {
+        "lines": [
+          "$H$ منتصف $[AB]$ : $AH = 3\\,\\mathrm{m}$ ، والمثلث $SHA$ قائم في $H$",
+          "حسب خاصية فيثاغورس: $SH^2 = SA^2 - AH^2 = 5^2 - 3^2 = 16$",
+          "$SH = \\sqrt{16}$"
+        ],
+        "result": "SH = 4\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب طول العارضة $MN$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "2,4",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "4",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(MN) \\parallel (AB)$ : المثلثان $SMN$ و $SAB$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $\\dfrac{SM}{SA} = \\dfrac{MN}{AB}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$MN = \\dfrac{2 \\times 6}{5} = 2{,}4\\,\\mathrm{m}$ .",
+        "incorrect": "في كل نسبة: طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "بما أن $(MN) \\parallel (AB)$ ، حسب خاصية طالس: $\\dfrac{SM}{SA} = \\dfrac{SN}{SB} = \\dfrac{MN}{AB}$",
+          "$\\dfrac{2}{5} = \\dfrac{MN}{6}$",
+          "$MN = \\dfrac{2 \\times 6}{5}$"
+        ],
+        "result": "MN = 2{,}4\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "lead": "شدّ أحد الإخوة حبلا $[EF]$ لتعليق مصباح، حيث $E$ من $[SA]$ و $F$ من $[SB]$ ، و $SE = 3\\,\\mathrm{m}$ و $SF = 3{,}2\\,\\mathrm{m}$ .",
+      "statement": "احسب النسبة $\\dfrac{SE}{SA}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "3/5",
+      "misconceptionSignatures": [
+        {
+          "value": "5/3",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "3/2",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$SE$ و $SA$ طولان يُقاسان من النقطة $S$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $SE$ على $SA$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{SE}{SA} = \\dfrac{3}{5}$ .",
+        "incorrect": "النسبة $\\dfrac{SE}{SA}$ : الطول $SE$ على الطول $SA$ ، وكلاهما من النقطة $S$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{SE}{SA} = \\dfrac{3}{5}$"
+        ],
+        "result": "\\dfrac{SE}{SA} = \\dfrac{3}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "statement": "احسب النسبة $\\dfrac{SF}{SB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "16/25",
+      "misconceptionSignatures": [
+        {
+          "value": "25/16",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "16/9",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$SF$ و $SB$ طولان يُقاسان من النقطة $S$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $SF$ على $SB$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{SF}{SB} = \\dfrac{3{,}2}{5} = \\dfrac{16}{25}$ .",
+        "incorrect": "النسبة $\\dfrac{SF}{SB}$ : الطول $SF$ على الطول $SB$ ، وكلاهما من النقطة $S$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{SF}{SB} = \\dfrac{3{,}2}{5} = \\dfrac{16}{25}$"
+        ],
+        "result": "\\dfrac{SF}{SB} = \\dfrac{16}{25}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "هل الحبل $[EF]$ أفقي (موازٍ لـ $(AB)$ )؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-SHAKL-BURHAN"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النسبتين بقيمهما المضبوطة (الجداء المتصالب)، لا بقيم مقرّبة ولا بمظهر الشكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق أيضا من ترتيب النقط على المستقيمين المتقاطعين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{SE}{SA} = 0{,}6$ و $\\dfrac{SF}{SB} = 0{,}64$ : الحبل ليس أفقيا.",
+        "incorrect": "الخاصية العكسية تتطلب شرطين معا: تساوي النسبتين بقيم مضبوطة، وترتيب النقط نفسه على المستقيمين."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 5 = 15$ و $5 \\times 3{,}2 = 16$ ، إذن $\\dfrac{SE}{SA} \\neq \\dfrac{SF}{SB}$ .",
+          "لو كان $(EF) \\parallel (AB)$ لكانت النسبتان متساويتين حسب خاصية طالس،",
+          "إذن المستقيمان $(EF)$ و $(AB)$ غير متوازيين."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "sub": "ا",
+      "statement": "يُبقي الطرف $E$ في مكانه. على أي بعد $SF$ من $S$ يجب ربط الطرف $F$ ليصبح الحبل أفقيا؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لتكون $(EF) \\parallel (AB)$ (والترتيب نفسه) يكفي أن يكون $\\dfrac{SF}{SB} = \\dfrac{SE}{SA}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$SF = \\dfrac{3 \\times 5}{5} = 3\\,\\mathrm{m}$ .",
+        "incorrect": "في كل نسبة: طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "حسب الخاصية العكسية لخاصية طالس، يكفي (مع الترتيب نفسه): $\\dfrac{SF}{SB} = \\dfrac{SE}{SA}$",
+          "$\\dfrac{SF}{5} = \\dfrac{3}{5}$",
+          "$SF = 3\\,\\mathrm{m}$"
+        ],
+        "result": "SF = 3\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "sub": "ب",
+      "statement": "احسب عندئذ طول الحبل $EF$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "3,6",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحبل الأفقي يجعل المثلثين $SEF$ و $SAB$ في وضعية طالس."
+        }
+      ],
+      "feedback": {
+        "correct": "$EF = \\dfrac{3 \\times 6}{5} = 3{,}6\\,\\mathrm{m}$ .",
+        "incorrect": "في كل نسبة: طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "$(EF) \\parallel (AB)$ ، حسب خاصية طالس: $\\dfrac{SE}{SA} = \\dfrac{EF}{AB}$",
+          "$\\dfrac{3}{5} = \\dfrac{EF}{6}$",
+          "$EF = \\dfrac{3 \\times 6}{5}$"
+        ],
+        "result": "EF = 3{,}6\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q8",
+      "step": "05",
+      "statement": "☜ ثمن المتر الواحد من العارضة الخشبية $450DA$ ومن الحبل $80DA$ . ما تكلفة العارضة $[MN]$ والحبل $[EF]$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "1368",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الطولان من السؤالين 02 و 04 (ب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}4 \\times 450 + 3{,}6 \\times 80 = 1368DA$ .",
+        "incorrect": "رتّب الحساب: الكمية اللازمة أولا، ثم اضربها في سعر الوحدة، ثم أضف المصاريف الثابتة إن وُجدت."
+      },
+      "solution": {
+        "lines": [
+          "العارضة: $2{,}4 \\times 450 = 1080DA$",
+          "الحبل: $3{,}6 \\times 80 = 288DA$",
+          "المجموع: $1080 + 288$"
+        ],
+        "result": "1368\\,DA"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

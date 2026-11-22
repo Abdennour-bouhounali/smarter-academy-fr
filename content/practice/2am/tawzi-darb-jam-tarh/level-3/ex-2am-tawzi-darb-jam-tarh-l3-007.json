@@ -1,0 +1,233 @@
+{
+  "id": "ex-2am-tawzi-darb-jam-tarh-l3-007",
+  "lessonCode": "tawzi-darb-jam-tarh",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أنشر عبارة بحرف وأحسبها",
+    "estimatedMinutes": 10,
+    "tags": [
+      "حرف",
+      "قيمة عبارة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $F = 5 \\times (x - 4)$ حيث $x$ عدد أكبر من أو يساوي $4$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ كتابة هي نشر للعبارة $F = 5 \\times (x - 4)$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$5x - 20$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$5x - 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-NOTATION"
+        },
+        {
+          "id": "C",
+          "content": "$5x + 20$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-SIGNCHANGE"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "$5 \\times (x - 4) = 5x - 20$",
+          "جداء عدد في الحرف $x$ يُكتب بحذف علامة الضرب."
+        ]
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد الذي أمام القوسين يضرب الحدّين معًا، والحرف $x$ أحدهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء عدد في الحرف $x$ يُكتب بحذف علامة الضرب: $a \\times x$ تُكتب $ax$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر نتيجتك بقيمة بسيطة للحرف $x$: يجب أن يعطي الطرفان العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتابة الصحيحة هي $5x - 20$ .",
+        "incorrect": "العدد الذي يضرب القوسين يضرب كلّ حدّ بالعملية نفسها التي بين الحدّين: راجع كلّ خيار بحساب الطرفين."
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب قيمة $5 \\times (x - 4)$ من أجل $x$ يساوي $7$ .",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "15",
+      "solution": {
+        "lines": [
+          "$5 \\times (7 - 4) = 15$"
+        ],
+        "result": "15"
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف $x$ بالعدد المعطى في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ وليس $a + x$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة: ما بين القوسين أوّلًا إن وُجد، ثم الضرب، ثم الجمع أو الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 \\times (7 - 4) = 15$",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$."
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب قيمة $5x - 20$ من أجل $x$ يساوي $7$ .",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "15",
+      "solution": {
+        "lines": [
+          "$5 \\times 7 - 20 = 15$"
+        ],
+        "result": "15"
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف $x$ بالعدد المعطى في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ وليس $a + x$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة: ما بين القوسين أوّلًا إن وُجد، ثم الضرب، ثم الجمع أو الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 \\times 7 - 20 = 15$",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$."
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "$5 \\times (x - 4) = 5x - 4$ . هل المساواة صحيحة مهما كانت قيمة $x$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-NOTATION"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "solution": {
+        "lines": [
+          "نختبر من أجل $x$ يساوي $6$ :",
+          "$5 \\times (6 - 4) = 10$",
+          "$5 \\times 6 - 4 = 26$",
+          "النتيجتان مختلفتان: المساواة خاطئة."
+        ]
+      },
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طبّق على الطرف الأيسر ما تعرفه من الخاصية التوزيعية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الطرفين حدًّا بحدّ: هل وُزّع الضرب على الحدّين معًا؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الطرفين عدديًا عند الحاجة: هل يتساويان؟"
+        }
+      ],
+      "feedback": {
+        "correct": "المساواة خاطئة: نتحقّق بحساب الطرفين.",
+        "incorrect": "احسب طرفي المساواة عدديًا وقارنهما: المساواة صحيحة فقط إذا تساوى الطرفان دائمًا."
+      },
+      "timeSeconds": 70
+    }
+  ]
+}

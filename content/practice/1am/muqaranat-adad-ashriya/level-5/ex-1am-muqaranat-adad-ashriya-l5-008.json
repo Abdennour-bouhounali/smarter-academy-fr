@@ -1,0 +1,317 @@
+{
+  "id": "ex-1am-muqaranat-adad-ashriya-l5-008",
+  "lessonCode": "muqaranat-adad-ashriya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — عروض المكتبة",
+    "estimatedMinutes": 15,
+    "tags": [
+      "وضعية إدماجية",
+      "أسعار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تريد سلمى شراء دفتر لرسوماتها، وتزور مكتبتين. المكتبة الأولى تعرض دفترًا بسعر $125{,}5$ دج، والثانية بسعر $125{,}05$ دج، والثالثة بسعر $152$ دج. تقول إنها لا تغشّ أحدًا في الحساب.\nالجزء الأول: نقارن الأسعار.\nالجزء الثاني: نقرّر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "نقارن.",
+      "statement": "ضع الرمز المناسب ($<$ أو $=$ أو $>$) مكان النقط: $125{,}5 \\ldots 125{,}05$",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الرمز المناسب",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$<$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-LONGER-BIGGER"
+        },
+        {
+          "id": "B",
+          "content": "$=$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-ZERO-PLACE"
+        },
+        {
+          "id": "C",
+          "content": "$>$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا تقرأ الأرقام بعد الفاصلة على أنها عدد طبيعي منفصل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أتمم الأرقام بأصفار غير ضرورية لتتساوى عدد الأرقام بعد الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الأعشار أولًا: الرتبة الأعلى تحسم قبل الرتب الأدنى."
+        }
+      ],
+      "feedback": {
+        "correct": "الجزآن الصحيحان متساويان؛ نقارن عددَي أجزاء من مائة: $50$ و $5$، إذن $125{,}5 > 125{,}05$.",
+        "incorrect": "عدد الأرقام بعد الفاصلة لا يحدّد كِبَر العدد: نقارن الأعشار قبل الأجزاء من مائة. مثال: $3{,}2 = 3{,}20$ أكبر من $3{,}14$ لأنّ 20 جزءًا من مائة أكثر من 14."
+      },
+      "solution": {
+        "lines": [
+          "نتمم بأصفار لنساوي عدد الأرقام بعد الفاصلة: $125{,}50$ و $125{,}05$.",
+          "الجزآن الصحيحان متساويان؛ نقارن عددَي أجزاء من مائة: $50$ و $5$، إذن $125{,}5 > 125{,}05$."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ضع الرمز المناسب ($<$ أو $=$ أو $>$) مكان النقط: $125{,}5 \\ldots 152$",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الرمز المناسب",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$<$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$=$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-LAST-DIGIT"
+        },
+        {
+          "id": "C",
+          "content": "$>$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-IGNORE-WHOLE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالجزأين الصحيحين، أي بما قبل الفاصلة في كل عدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا اختلف الجزآن الصحيحان فقد حُسم الأمر؛ وإن تساويا فقارن الأعشار، ثم الأجزاء من مائة…"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الرتبة الأولى التي يختلف فيها الرقمان هي التي تحسم المقارنة."
+        }
+      ],
+      "feedback": {
+        "correct": "الجزآن الصحيحان مختلفان: $125$ و $152$، إذن $125{,}5 < 152$.",
+        "incorrect": "نقارن الجزأين الصحيحين أولًا؛ فإن تساويا قارنّا رقم الأعشار، ثم الأجزاء من مائة، وهكذا حتى نصل إلى أول رتبة يختلف فيها الرقمان."
+      },
+      "solution": {
+        "lines": [
+          "الجزآن الصحيحان مختلفان: $125$ و $152$، إذن $125{,}5 < 152$."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "نرتّب.",
+      "statement": "رتّب الأسعار تصاعديًا (من الأصغر إلى الأكبر): $125{,}5$ ، $125{,}05$ ، $152$. أيّ السلاسل الآتية صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$152 < 125{,}5 < 125{,}05$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-ORDER-DIRECTION"
+        },
+        {
+          "id": "B",
+          "content": "$125{,}05 < 125{,}5 < 152$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$152 < 125{,}05 < 125{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-IGNORE-WHOLE"
+        },
+        {
+          "id": "D",
+          "content": "$125{,}5 < 125{,}05 < 152$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-DIGITS-AS-NATURAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن عددين عددين، وابحث عن الأصغر (أو الأكبر) أولًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ بالجزء الصحيح، فهو يفرز الأعداد إلى مجموعات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "داخل المجموعة الواحدة قارن الأعشار ثم الأجزاء من مائة، ثم تحقق من الترتيب كاملًا."
+        }
+      ],
+      "feedback": {
+        "correct": "الترتيب التصاعدي : $125{,}05 < 125{,}5 < 152$",
+        "incorrect": "نقارن العددين اثنين اثنين، ونبدأ بالجزء الصحيح ثم الأعشار فالأجزاء من مائة، ثم نكتب السلسلة كاملة ونتحقق من كل رمز."
+      },
+      "solution": {
+        "lines": [
+          "نقارن الأعداد اثنين اثنين ونرتّبها: $125{,}05 < 125{,}5 < 152$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما هو أقل سعر (بالدينار)؟",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "125,05",
+      "misconceptionSignatures": [
+        {
+          "value": "152",
+          "id": "MISC-MUQARANA-IGNORE-WHOLE"
+        },
+        {
+          "value": "125,5",
+          "id": "MISC-MUQARANA-DIGITS-AS-NATURAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الأعداد عددين عددين، واحتفظ في كل مرة بالأكبر (أو الأصغر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الجزء الصحيح أولًا، ثم الأعشار، ثم الأجزاء من مائة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يكفي أن يكون في العدد أرقام كثيرة بعد الفاصلة ليكون أكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "أصغر عدد هو $125{,}05$ ؛ الترتيب: $125{,}05 < 125{,}5 < 152$.",
+        "incorrect": "نقارن الأعداد الواحد بالآخر رتبةً رتبةً؛ وليس العدد الأطول (أرقامه أكثر بعد الفاصلة) هو الأكبر دائمًا."
+      },
+      "solution": {
+        "lines": [
+          "نرتّب الأعداد: $125{,}05 < 125{,}5 < 152$",
+          "إذن أصغر عدد هو $125{,}05$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "من أيّ مكتبة تشتري سلمى دفترها إذا أرادت أقل ثمن؟ علّل جوابك.",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اذكر الرتبة التي حسمت المقارنة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أو أتمم العددين بأصفار ثم قارن عددين طبيعيين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تامة تتضمن العددين والرمز."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي.",
+        "incorrect": "راجع التبرير وأعد صياغته: اذكر الرتبة أو الأصفار."
+      },
+      "solution": {
+        "lines": [
+          "الترتيب: $125{,}05 < 125{,}5 < 152$.",
+          "أقل سعر $125{,}05$ دج في المكتبة الثانية."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

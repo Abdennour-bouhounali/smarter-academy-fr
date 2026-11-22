@@ -1,0 +1,339 @@
+{
+  "id": "ex-3am-tabsit-hadhf-aqwas-l5-007",
+  "lessonCode": "tabsit-hadhf-aqwas",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — حديقة النادي",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "جداء",
+      "حدود متشابهة",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يزرع أعضاء نادي البيئة ثلاثة أحواض متجاورة بالتعاون: الحوض (A) مستطيل بعداه $3x$ و $2x$ ، والحوض (B) مربع ضلعه $2x$ ، والحوض (C) مستطيل بعداه $5$ و $x$ (وحدة الطول هي المتر).\nالجزء الأول: المساحات بدلالة $x$ .\nالجزء الثاني: يلزم $1\\,\\mathrm{kg}$ من السماد العضوي لكل $20\\,\\mathrm{m^2}$ ، ولدى النادي $10\\,\\mathrm{kg}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "مساحة الحوض (A) هي:",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$6x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-PRODUCT-LETTER"
+        },
+        {
+          "id": "B",
+          "content": "$5x^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-PRODUCT-COEF-ADDED"
+        },
+        {
+          "id": "C",
+          "content": "$6x^2$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في جداء حدّين نضرب الأعداد معًا والحروف معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أن $x \\times x$ يُكتب $x^2$، وطبّق قاعدة إشارة الجداء."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء وفي النتيجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$6x^2$.",
+        "incorrect": "راجع إشارة كل حدّ وما يسبق القوسين، ثم اجمع الحدود المتشابهة فقط."
+      },
+      "solution": {
+        "lines": [
+          "$3x \\times 2x = 6x^2$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "مساحة الحوض (B) تُكتب $ax^2$ . العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $S_B$ على الشكل $ax^2$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-TABSIT-PRODUCT-COEF-ADDED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في جداء حدّين نضرب الأعداد معًا والحروف معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أن $x \\times x$ يُكتب $x^2$، وطبّق قاعدة إشارة الجداء."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء وفي النتيجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$S_B = 4x^2$ إذن $a = 4$.",
+        "incorrect": "اجمع الحدود المتشابهة بإشاراتها بعد حذف الأقواس، ثم اقرأ العدد المطلوب في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$2x \\times 2x = 4x^2$"
+        ],
+        "result": "a = 4"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "المساحة الكلية $S$ للأحواض الثلاثة على أبسط شكل هي:",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$S = 10x^2 + 5x$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$S = 15x^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-X-X2-MERGED"
+        },
+        {
+          "id": "C",
+          "content": "$S = 15x^3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-X-X2-MERGED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود المتشابهة: الحدود التي لها الجزء الحرفي نفسه ($x^2$ مع $x^2$، و $x$ مع $x$، والأعداد مع الأعداد)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع معاملات كل نوع بإشاراتها، ولا تجمع حدًّا في $x$ مع حدّ في $x^2$ أو مع عدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في العبارة قبل التبسيط وبعده: يجب أن تعطيا القيمة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = 10x^2 + 5x$.",
+        "incorrect": "راجع إشارة كل حدّ وما يسبق القوسين، ثم اجمع الحدود المتشابهة فقط."
+      },
+      "solution": {
+        "lines": [
+          "$S = 6x^2 + 4x^2 + 5x$",
+          "$S = 10x^2 + 5x$ : الحدّان $10x^2$ و $5x$ غير متشابهين."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني. نأخذ $x = 4$ .",
+      "statement": "احسب المساحة الكلية بالمتر المربع.",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "180",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى، ويُستحسن أن تعوّض في الشكل المبسّط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويات العمليات: القوى، ثم الضرب، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالتعويض في العبارة قبل تبسيطها: القيمة لا تتغيّر."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل $x = 4$ : $S = 180\\,\\mathrm{m^2}$ .",
+        "incorrect": "عوّض $x$ بالعدد المعطى في الشكل المبسّط واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$S = 10x^2 + 5x$",
+          "من أجل $x = 4$ : $S = 10(4)^2 + 5(4) = 180$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "كم كيلوغرامًا من السماد يلزم؟",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالكيلوغرام)",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل $20\\,\\mathrm{m^2}$ يحتاج $1\\,\\mathrm{kg}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$180 \\div 20 = 9\\,\\mathrm{kg}$ .",
+        "incorrect": "اقسم المساحة الكلية على $20$ ."
+      },
+      "solution": {
+        "lines": [
+          "$180 \\div 20 = 9\\,\\mathrm{kg}$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "هل يكفي السماد الذي لدى النادي؟",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، يكفي",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا، لا يكفي",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-DECISION-UNCHECKED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب كل ما يلزم من أجل القيمة المعطاة لـ $x$ قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين اللذين حصلت عليهما."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم: $9 < 10$ .",
+        "incorrect": "أنجز الحسابات من أجل القيمة المعطاة ثم قارن قبل أن تقرّر."
+      },
+      "solution": {
+        "lines": [
+          "يلزم $9\\,\\mathrm{kg}$ ولدى النادي $10\\,\\mathrm{kg}$ .",
+          "إذن يكفي ويبقى $1\\,\\mathrm{kg}$ ."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

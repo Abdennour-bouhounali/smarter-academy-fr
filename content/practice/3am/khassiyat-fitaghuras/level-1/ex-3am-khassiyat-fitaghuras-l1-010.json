@@ -1,0 +1,202 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l1-010",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — سلّم الجدّ",
+    "estimatedMinutes": 5,
+    "tags": [
+      "خاصية فيثاغورس",
+      "حساب ضلع قائم",
+      "التدوير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يساعد سليم جدّه في طلاء جدار البيت. وضع سلّما $[TF]$ طوله $4{,}5\\,\\mathrm{m}$ مائلا على الجدار $[WT]$ العمودي على الأرض الأفقية، وقدمه $F$ على بعد $1{,}2\\,\\mathrm{m}$ من أسفل الجدار $W$ .",
+    "figure": {
+      "points": {
+        "W": [
+          0.0,
+          0.0
+        ],
+        "F": [
+          2.3,
+          0.0
+        ],
+        "T": [
+          0.0,
+          4.34
+        ]
+      },
+      "segments": [
+        {
+          "from": "W",
+          "to": "F",
+          "label": "1,2 m"
+        },
+        {
+          "from": "W",
+          "to": "T"
+        },
+        {
+          "from": "F",
+          "to": "T",
+          "label": "4,5 m"
+        }
+      ],
+      "rightAngles": [
+        [
+          "F",
+          "W",
+          "T"
+        ]
+      ],
+      "ariaLabel": "سلّم [TF] طوله 4,5 m مائل على جدار [WT] عمودي على الأرض، وقدمه F على بعد 1,2 m من W",
+      "maxWidth": 320,
+      "caption": "(الأطوال غير حقيقية)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما المساواة التي تسمح بحساب الارتفاع $TW$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$TW^2 = TF^2 + WF^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-LEG-ADD"
+        },
+        {
+          "id": "B",
+          "content": "$TW^2 = TF^2 - WF^2$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$TW = TF - WF$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الجدار عمودي على الأرض: أين الزاوية القائمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السلّم يقابل الزاوية القائمة، فهو الوتر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب مساواة فيثاغورس ثم اعزل مربع الطول المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$[TF]$ هو الوتر، إذن $TF^2 = TW^2 + WF^2$ ومنه $TW^2 = TF^2 - WF^2$ .",
+        "incorrect": "الارتفاع ضلع قائم وليس وترا: مربعه هو مربع الوتر ناقص مربع الضلع الآخر."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $TWF$ قائم في $W$ ، وتره $[TF]$ (السلّم).",
+          "حسب خاصية فيثاغورس: $TF^2 = TW^2 + WF^2$ ، ومنه $TW^2 = TF^2 - WF^2$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط قيمة مقرّبة للارتفاع $TW$ الذي يبلغه أعلى السلّم، بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m مدوّرا إلى 0,01",
+      "expectedAnswer": "4.34",
+      "misconceptionSignatures": [
+        {
+          "value": "4.33",
+          "id": "MISC-FITAGHURAS-ROUND-TRUNC"
+        },
+        {
+          "value": "4.66",
+          "id": "MISC-FITAGHURAS-LEG-ADD"
+        },
+        {
+          "value": "3.3",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "18.81",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع المطلوب ليس الوتر: مربعه يساوي مربع الوتر ناقص مربع الضلع الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مربع الطول، ثم استعمل اللمسة $\\sqrt{\\ }$ ، ولا تدوّر إلا النتيجة الأخيرة (انظر إلى الرقم الموالي للرقم المطلوب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$TW^2 = 4{,}5^2 - 1{,}2^2 = 18{,}81$ ، إذن $TW \\approx 4{,}34\\,\\mathrm{m}$ .",
+        "incorrect": "الطول المطلوب ضلع قائم وليس وترا: نطرح مربع الضلع المعلوم من مربع الوتر، ولا نجمع."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $TWF$ قائم في $W$ ، حسب خاصية فيثاغورس: $TF^2 = TW^2 + WF^2$",
+          "ومنه: $TW^2 = TF^2 - WF^2$",
+          "$TW^2 = 4{,}5^2 - 1{,}2^2 = 20{,}25 - 1{,}44 = 18{,}81$",
+          "$TW = \\sqrt{18{,}81}$ (القيمة المضبوطة)",
+          "باستعمال اللمسة $\\sqrt{\\ }$ للآلة الحاسبة: $\\sqrt{18{,}81} \\approx 4{,}337049688$",
+          "المدوّر إلى $0{,}01$ : $TW \\approx 4{,}34\\,\\mathrm{m}$"
+        ],
+        "result": "TW \\approx 4{,}34\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

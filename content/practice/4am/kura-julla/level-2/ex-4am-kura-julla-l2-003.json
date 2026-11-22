@@ -1,0 +1,114 @@
+{
+  "id": "ex-4am-kura-julla-l2-003",
+  "lessonCode": "kura-julla",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — مربع البعد في معلم",
+    "estimatedMinutes": 3,
+    "tags": [
+      "معلم الفضاء"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_kura-julla_P4",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس للفضاء مبدؤه O، لكل نقطة $M(x\\,;\\,y\\,;\\,z)$ لدينا $OM^2 = x^2 + y^2 + z^2$ . نعتبر النقطة $K(2\\,;\\,3\\,;\\,6)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "احسب $OK^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P4",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "49",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-KURA-MURABBA",
+          "value": "11"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ربّع كل إحداثية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المربعات الثلاثة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تجمع الإحداثيات نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$OK^2 = 4 + 9 + 36 = 49$ .",
+        "incorrect": "نجمع مربعات الإحداثيات، لا الإحداثيات."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "كرة مركزها O ونصف قطرها 7. النقطة K:",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P4",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "على الكرة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "داخل الجلة وليست على الكرة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-MASAFA"
+        },
+        {
+          "id": "C",
+          "content": "خارج الجلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-MURABBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن $OK^2$ بـ $R^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $R^2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المساواة تعني «على الكرة»."
+        }
+      ],
+      "feedback": {
+        "correct": "$OK^2 = 49 = 7^2$ : $OK = 7 = R$ ، K على الكرة.",
+        "incorrect": "قارن مربع البعد بمربع نصف القطر، لا الإحداثيات بنصف القطر."
+      }
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "id": "ex-4am-majmu-shuaayn-l5-007",
+  "lessonCode": "majmu-shuaayn",
+  "level": 5,
+  "generator": {
+    "tool": "unit11-majmu-gen.py",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — خط ميترو مستقيم",
+    "estimatedMinutes": 4,
+    "tags": [
+      "علاقة شال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_majmu-shuaayn_P2",
+      "modelledOn": "act-4"
+    }
+  },
+  "statement": {
+    "content": "ثلاث محطات P و Q و R على خط ميترو مستقيم بهذا الترتيب، حيث $PQ = 1{,}2\\,\\mathrm{km}$ و $QR = 0{,}8\\,\\mathrm{km}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "طول الشعاع $\\overrightarrow{PQ} + \\overrightarrow{QR}$ بالكيلومتر:",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالكيلومتر)",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى نهاية الشعاع الأول ومبدأ الشعاع الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "علاقة شال تتطلب أن تكون نهاية الأول مبدأ الثاني؛ يمكن تبديل ترتيب الحدّين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع يبدأ من مبدأ الأول وينتهي عند نهاية الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "Q على [PR]: $\\overrightarrow{PQ} + \\overrightarrow{QR} = \\overrightarrow{PR}$ و $PR = 1{,}2 + 0{,}8 = 2\\,\\mathrm{km}$ .",
+        "incorrect": "علاقة شال: نهاية الأول مبدأ الثاني، والمجموع من مبدأ الأول إلى نهاية الثاني."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "طول الشعاع $\\overrightarrow{PR} + \\overrightarrow{RQ}$ بالكيلومتر:",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالكيلومتر)",
+      "expectedAnswer": "1.2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المنحى والاتجاه والطول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "شعاعان متعاكسان لهما نفس المنحى ونفس الطول واتجاهان متعاكسان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الذهاب ثم العودة إلى نفس النقطة يعطي الشعاع المعدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{PR} + \\overrightarrow{RQ} = \\overrightarrow{PQ}$ ، طوله $1{,}2\\,\\mathrm{km}$ .",
+        "incorrect": "الشعاعان المتعاكسان مجموعهما الشعاع المعدوم؛ لا نجمع الأطوال."
+      }
+    }
+  ]
+}

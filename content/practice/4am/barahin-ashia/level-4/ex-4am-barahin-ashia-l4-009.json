@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-barahin-ashia-l4-009",
+  "lessonCode": "barahin-ashia",
+  "level": 4,
+  "generator": {
+    "tool": "gen-barahin.mjs",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — منتصف وطول",
+    "estimatedMinutes": 3,
+    "tags": [
+      "منتصف",
+      "طول"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_barahin-ashia_P2",
+      "modelledOn": "ex-23"
+    }
+  },
+  "statement": {
+    "content": "A و B و C ثلاث نقط حيث $\\overrightarrow{AB} = \\overrightarrow{BC}$ و $AB = 3{,}5\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الطول AC بالسنتيمتر:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة عند الحاجة",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SHUAA-MUNTASAF-IB-IA",
+          "value": "1.75"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا تمثّل B للقطعة [AC]؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المنتصف: [AC] قطعتان متقايستان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع طولي القطعتين."
+        }
+      ],
+      "feedback": {
+        "correct": "B منتصف [AC]، فـ $AC = 2 \\times 3{,}5 = 7\\,\\mathrm{cm}$ .",
+        "incorrect": "B منتصف [AC]: AC ضعف AB ."
+      }
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "id": "ex-4am-ikhtizal-kasr-l2-010",
+  "lessonCode": "ikhtizal-kasr",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2019 — العددان A و B",
+    "estimatedMinutes": 7,
+    "tags": [
+      "كسر غير قابل للاختزال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_ikhtizal-kasr_P4",
+      "modelledOn": "BEM 2019 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2019",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان $A$ و $B$ حيث:",
+    "formulas": [
+      "A = \\dfrac{15}{8} \\times \\left(\\dfrac{2}{3} + 2\\right)",
+      "B = \\dfrac{260}{364}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن $A$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيمة $A$ بعد الاختزال",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بما بين القوسين: اكتب 2 على شكل كسر مقامه 3."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب الكسرين، ثم اختزل الناتج."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{15}{8} \\times \\dfrac{8}{3} = \\dfrac{120}{24}$ ، والقسمة تامة.",
+        "incorrect": "احسب ما بين القوسين أولًا، ثم اضرب واختزل: يجب أن يصير المقام 1."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{15}{8} \\times \\left(\\dfrac{2}{3} + \\dfrac{6}{3}\\right)$",
+          "$A = \\dfrac{15}{8} \\times \\dfrac{8}{3}$",
+          "$A = \\dfrac{120}{24}$",
+          "إذن $A$ عدد طبيعي."
+        ],
+        "result": "A = 5"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب العدد $B$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "5/7",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "130/182",
+          "id": "MISC-IKHTIZAL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث أولًا عن القاسم المشترك الأكبر للعددين 260 و 364."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر: يصير الكسر غير قابل للاختزال في خطوة واحدة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن البسط والمقام الناتجين أوليان فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 52: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على قاسمهما المشترك الأكبر، لا على قاسم مشترك آخر.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$364 = 260 \\times 1 + 104$",
+          "$260 = 104 \\times 2 + 52$",
+          "$104 = 52 \\times 2 + 0$",
+          "آخر باقٍ غير معدوم هو 52، إذن PGCD(260 ; 364) = 52 .",
+          "$B = \\dfrac{260}{364} = \\dfrac{260 \\div 52}{364 \\div 52}$"
+        ],
+        "result": "B = \\dfrac{260}{364} = \\dfrac{5}{7}"
+      },
+      "timeSeconds": 240
+    }
+  ]
+}

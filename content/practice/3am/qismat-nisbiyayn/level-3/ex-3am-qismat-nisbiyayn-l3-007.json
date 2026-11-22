@@ -1,0 +1,399 @@
+{
+  "id": "ex-3am-qismat-nisbiyayn-l3-007",
+  "lessonCode": "qismat-nisbiyayn",
+  "level": 3,
+  "metadata": {
+    "title": "أعداد ناقصة قد لا تكون عشرية",
+    "estimatedMinutes": 6,
+    "tags": [
+      "عامل مجهول",
+      "كسر"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-48",
+      "page": 19,
+      "section": "أتعمّق",
+      "number": 48
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في كل حالة أوجد العدد الذي يحلّ محلّ $\\square$ . إن لم يكن عشريًا فاكتبه على شكل كسر.",
+    "formulas": [
+      "A = (−5) \\times \\square = −35",
+      "B = \\square \\times 6 = −15",
+      "C = (−12) \\times \\square = 5",
+      "D = 7 \\times \\square = −3",
+      "E = (−8) \\times \\square = −3",
+      "F = (−9) \\times \\square = 2"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أوجد العدد الذي يحلّ محلّ $\\square$ في $A$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "-7",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "1/7",
+          "id": "MISC-QISMA-ORDER"
+        },
+        {
+          "value": "-30",
+          "id": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المساواة: المطلوب عدد ناقص في عملية ضرب أو قسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الناقص في جداء هو حاصل قسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعملية: ضع العدد في مكان الفراغ وتأكّد من صحة المساواة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\square = 7$ .",
+        "incorrect": "راجع الربط بين الضرب والقسمة: العدد الناقص هو حاصل قسمة، ثم تحقّق بالضرب."
+      },
+      "solution": {
+        "lines": [
+          "العدد الناقص هو حاصل قسمة الجداء $−35$ على العامل المعلوم $(−5)$ .",
+          "$−35 \\div (−5) = 7$",
+          "تحقّق: $(−5) \\times 7 = −35$"
+        ],
+        "result": "7"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "أوجد العدد الذي يحلّ محلّ $\\square$ في $B$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-2.5",
+      "misconceptionSignatures": [
+        {
+          "value": "2.5",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "-0.4",
+          "id": "MISC-QISMA-ORDER"
+        },
+        {
+          "value": "-21",
+          "id": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المساواة: المطلوب عدد ناقص في عملية ضرب أو قسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الناقص في جداء هو حاصل قسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعملية: ضع العدد في مكان الفراغ وتأكّد من صحة المساواة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\square = −2{,}5$ .",
+        "incorrect": "راجع الربط بين الضرب والقسمة: العدد الناقص هو حاصل قسمة، ثم تحقّق بالضرب."
+      },
+      "solution": {
+        "lines": [
+          "العدد الناقص هو حاصل قسمة الجداء $−15$ على العامل المعلوم $6$ .",
+          "$−15 \\div 6 = −2{,}5$",
+          "تحقّق: $6 \\times (−2{,}5) = −15$"
+        ],
+        "result": "−2{,}5"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "أوجد العدد الذي يحلّ محلّ $\\square$ في $C$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حاصل القسمة على شكل كسر أو عدد عشري",
+      "expectedAnswer": "-5/12",
+      "misconceptionSignatures": [
+        {
+          "value": "5/12",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "-2.4",
+          "id": "MISC-QISMA-ORDER"
+        },
+        {
+          "value": "17",
+          "id": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المساواة: المطلوب عدد ناقص في عملية ضرب أو قسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الناقص في جداء هو حاصل قسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعملية: ضع العدد في مكان الفراغ وتأكّد من صحة المساواة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\square = −\\dfrac{5}{12}$ .",
+        "incorrect": "راجع الربط بين الضرب والقسمة: العدد الناقص هو حاصل قسمة، ثم تحقّق بالضرب."
+      },
+      "solution": {
+        "lines": [
+          "العدد الناقص هو حاصل قسمة الجداء $5$ على العامل المعلوم $(−12)$ .",
+          "$5 \\div (−12) = −\\dfrac{5}{12}$",
+          "تحقّق: $(−12) \\times (−\\dfrac{5}{12}) = 5$"
+        ],
+        "result": "−\\dfrac{5}{12}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "أوجد العدد الذي يحلّ محلّ $\\square$ في $D$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حاصل القسمة على شكل كسر أو عدد عشري",
+      "expectedAnswer": "-3/7",
+      "misconceptionSignatures": [
+        {
+          "value": "3/7",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "-7/3",
+          "id": "MISC-QISMA-ORDER"
+        },
+        {
+          "value": "-10",
+          "id": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المساواة: المطلوب عدد ناقص في عملية ضرب أو قسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الناقص في جداء هو حاصل قسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعملية: ضع العدد في مكان الفراغ وتأكّد من صحة المساواة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\square = −\\dfrac{3}{7}$ .",
+        "incorrect": "راجع الربط بين الضرب والقسمة: العدد الناقص هو حاصل قسمة، ثم تحقّق بالضرب."
+      },
+      "solution": {
+        "lines": [
+          "العدد الناقص هو حاصل قسمة الجداء $−3$ على العامل المعلوم $7$ .",
+          "$−3 \\div 7 = −\\dfrac{3}{7}$",
+          "تحقّق: $7 \\times (−\\dfrac{3}{7}) = −3$"
+        ],
+        "result": "−\\dfrac{3}{7}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أوجد العدد الذي يحلّ محلّ $\\square$ في $E$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "0.375",
+      "misconceptionSignatures": [
+        {
+          "value": "-0.375",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "8/3",
+          "id": "MISC-QISMA-ORDER"
+        },
+        {
+          "value": "5",
+          "id": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المساواة: المطلوب عدد ناقص في عملية ضرب أو قسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الناقص في جداء هو حاصل قسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعملية: ضع العدد في مكان الفراغ وتأكّد من صحة المساواة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\square = 0{,}375$ .",
+        "incorrect": "راجع الربط بين الضرب والقسمة: العدد الناقص هو حاصل قسمة، ثم تحقّق بالضرب."
+      },
+      "solution": {
+        "lines": [
+          "العدد الناقص هو حاصل قسمة الجداء $−3$ على العامل المعلوم $(−8)$ .",
+          "$−3 \\div (−8) = 0{,}375$",
+          "تحقّق: $(−8) \\times 0{,}375 = −3$"
+        ],
+        "result": "0{,}375"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أوجد العدد الذي يحلّ محلّ $\\square$ في $F$ .",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حاصل القسمة على شكل كسر أو عدد عشري",
+      "expectedAnswer": "-2/9",
+      "misconceptionSignatures": [
+        {
+          "value": "2/9",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "-4.5",
+          "id": "MISC-QISMA-ORDER"
+        },
+        {
+          "value": "11",
+          "id": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المساواة: المطلوب عدد ناقص في عملية ضرب أو قسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الناقص في جداء هو حاصل قسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعملية: ضع العدد في مكان الفراغ وتأكّد من صحة المساواة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\square = −\\dfrac{2}{9}$ .",
+        "incorrect": "راجع الربط بين الضرب والقسمة: العدد الناقص هو حاصل قسمة، ثم تحقّق بالضرب."
+      },
+      "solution": {
+        "lines": [
+          "العدد الناقص هو حاصل قسمة الجداء $2$ على العامل المعلوم $(−9)$ .",
+          "$2 \\div (−9) = −\\dfrac{2}{9}$",
+          "تحقّق: $(−9) \\times (−\\dfrac{2}{9}) = 2$"
+        ],
+        "result": "−\\dfrac{2}{9}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

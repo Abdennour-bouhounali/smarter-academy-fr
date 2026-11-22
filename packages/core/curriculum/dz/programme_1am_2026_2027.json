@@ -1,0 +1,70 @@
+{
+  "_comment": [
+    "Le programme officiel de mathématiques de 1AM (السنة الأولى متوسط), MINIMAL : ses ميادين et ses مقاطع,",
+    "tels que le catalogue en a besoin. Dérivé de net/official_programme_moyen.json (2026-10-14, phase 2), qui reste",
+    "l’autorité — ses items, mot pour mot, y sont ; rien n’est retapé ici que les intitulés des مقاطع.",
+    "Un ميدان = un domaine officiel (أنشطة عددية / الدوال وتنظيم المعطيات / أنشطة هندسية) sous l’id de chapitre que",
+    "les unités du manuel portent (numbers → ansab_al_aadad_wal_hisab, data → tanasubiya_duwal, geometry → handasa).",
+    "Un « sujet » (topic) = un مقطع du plan annuel 2022 (id `<g>am.m<n>`). Contrat : docs/architecture/LEARNING_NET.md."
+  ],
+  "grade": "1am",
+  "gradeLabelAr": "السنة الأولى متوسط",
+  "level": "moyen",
+  "levelLabelAr": "التعليم المتوسط",
+  "subject": "الرياضيات",
+  "generation": "الجيل الثاني",
+  "schoolYear": "2026/2027",
+  "source": "net/official_programme_moyen.json (المخطّطات السنوية 2022 + منهاج 2016).",
+  "verified": false,
+  "domains": [
+    {
+      "id": "ansab_al_aadad_wal_hisab",
+      "titleAr": "ميدان الأنشطة العددية",
+      "officialAr": "ميدان 1 — أنشطة عددية (ك خ 1)",
+      "topics": [
+        {
+          "id": "1am.m1",
+          "titleAr": "الأعداد الطبيعية والأعداد العشرية (1)"
+        },
+        {
+          "id": "1am.m3",
+          "titleAr": "الأعداد الطبيعية والأعداد العشرية (2)"
+        },
+        {
+          "id": "1am.m5",
+          "titleAr": "الكتابات الكسرية، الأعداد النسبية والحساب الحرفي"
+        }
+      ]
+    },
+    {
+      "id": "tanasubiya_duwal",
+      "titleAr": "ميدان الدوال وتنظيم المعطيات",
+      "officialAr": "ميدان 2 — الدوال وتنظيم المعطيات (ك خ 2)",
+      "topics": [
+        {
+          "id": "1am.m6",
+          "titleAr": "التناسبية وتنظيم معطيات"
+        }
+      ]
+    },
+    {
+      "id": "handasa",
+      "titleAr": "ميدان الأنشطة الهندسية",
+      "officialAr": "ميدان 3 — أنشطة هندسية (ك خ 3)",
+      "topics": [
+        {
+          "id": "1am.m2",
+          "titleAr": "إنجاز مماثلات أشكال مستوية بسيطة – السطوح المستوية: الأطوال، المحيطات، المساحات"
+        },
+        {
+          "id": "1am.m4",
+          "titleAr": "الزوايا والتناظر المحوري"
+        },
+        {
+          "id": "1am.m7",
+          "titleAr": "متوازي المستطيلات والمكعب"
+        }
+      ]
+    }
+  ]
+}

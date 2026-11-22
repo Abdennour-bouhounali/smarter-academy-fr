@@ -1,0 +1,227 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l1-002",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 1,
+  "metadata": {
+    "title": "من النقط إلى الجدول",
+    "estimatedMinutes": 4,
+    "tags": [
+      "معلم",
+      "جدول"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-1",
+      "page": 94,
+      "section": "أوظّف تعلّماتي",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يجمع نادي الحيّ ثمار الزيتون من الحقول المجاورة لتوزيعها على الأسر المحتاجة. تمثّل النقط $A$ و $B$ و $C$ في المعلم المتعامد والمتجانس التالي ثلاث عمليات جمع: الفاصلة عدد الأكياس، والترتيب كتلة الثمار بالكيلوغرام.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          1,
+          2
+        ],
+        "B": [
+          3,
+          4
+        ],
+        "C": [
+          5,
+          6
+        ]
+      },
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw",
+        "A": "nw",
+        "B": "se",
+        "C": "ne"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس: ثلاث نقط A و B و C فواصلها 1 و 3 و 5 وترتيباتها 2 و 4 و 6",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: عدد الأكياس — محور التراتيب: الكتلة بالكيلوغرام"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ جدول يمثّل هذه النقط الثلاث؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "عدد الأكياس: $2\\ ;\\ 4\\ ;\\ 6$ — الكتلة: $1\\ ;\\ 3\\ ;\\ 5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-SWAP-XY"
+        },
+        {
+          "id": "B",
+          "content": "عدد الأكياس: $1\\ ;\\ 3\\ ;\\ 5$ — الكتلة: $2\\ ;\\ 4\\ ;\\ 5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-SWAP-XY"
+        },
+        {
+          "id": "C",
+          "content": "عدد الأكياس: $1\\ ;\\ 3\\ ;\\ 5$ — الكتلة: $2\\ ;\\ 4\\ ;\\ 6$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ فاصلة كل نقطة ثم ترتيبها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "سطر عدد الأكياس هو سطر الفواصل، وسطر الكتلة هو سطر الترتيبات."
+        }
+      ],
+      "feedback": {
+        "correct": "الفواصل $1$ و $3$ و $5$ تقابلها الترتيبات $2$ و $4$ و $6$ .",
+        "incorrect": "حدّد لكل نقطة فاصلتها وترتيبها، وتأكّد أنك لم تعكس السطرين."
+      },
+      "solution": {
+        "lines": [
+          "$A(1\\,;\\,2)$ و $B(3\\,;\\,4)$ و $C(5\\,;\\,6)$ .",
+          "سطر الفواصل: $1\\ ;\\ 3\\ ;\\ 5$ وسطر الترتيبات: $2\\ ;\\ 4\\ ;\\ 6$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "ما ترتيب النقطة $B$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد: ترتيب النقطة",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-TAMTHIL-SWAP-XY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الترتيب هو العدد الثاني في زوج الإحداثيين، وتُقرأ على المحور العمودي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اذهب من النقطة أفقيا إلى المحور العمودي واقرأ العدد الذي تقع عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "ترتيب $B$ هي $4$.",
+        "incorrect": "الترتيب يُقرأ على المحور العمودي لا الأفقي، ويجب أن تحترم قيمة المربع."
+      },
+      "solution": {
+        "lines": [
+          "نمشي من $B$ أفقيا إلى محور التراتيب فنقرأ $4$ ."
+        ],
+        "result": "4"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل تمثّل هذه النقط وضعية تناسبية؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، المستقيم الذي يشمل النقط لا يشمل المبدأ $O$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم، لأنّ النقط على استقامة واحدة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-LINE-ANY"
+        },
+        {
+          "id": "C",
+          "content": "نعم، لأنّ الترتيب يكبر كلما كبرت الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-RISING"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط على استقامة واحدة لكنّ المستقيم لا يشمل المبدأ $O$ ، فليست الوضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "النقط $A$ و $B$ و $C$ على استقامة واحدة.",
+          "لكنّ المستقيم الذي يشملها لا يمرّ بالمبدأ $O$ ، إذن هذه الوضعية ليست تناسبية."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

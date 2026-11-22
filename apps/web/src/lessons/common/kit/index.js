@@ -18,16 +18,16 @@
  * restent des composants de leçon — le kit orchestre, il ne remplace pas le
  * contenu pédagogique.
  */
-export { default as ContentModule, useKit } from './ContentModule';
+export { default as ContentModule } from './ContentModule';
 export { TapQuestion, BatchChoiceQuestion, NumericQuestion } from './questions';
 export { default as BossFinal } from './BossFinal';
 export { default as PrerequisiteDiagnostic } from './PrerequisiteDiagnostic';
-// Recueil d'une prédiction SANS verdict (§6ter.3). Fichier byte-identique
-// dans les seize leçons antérieures, qui gardent leur copie ; les leçons
-// construites à partir du 2026-09-06 l'importent d'ici.
-export { default as PredictionChips } from './PredictionChips';
 // Position d'enseignement du contrat « connaissances avant la demande »
 // (docs/architecture/KNOWLEDGE_DEPENDENCY.md) : pose UNE connaissance de
 // knowledge.jsx à l'instant où l'élève en a besoin, et la fait entrer dans la
 // carte à ce moment-là.
 export { default as KnowledgeBrick } from './KnowledgeBrick';
+// « أتوقّع القاعدة » : l'élève écrit la règle avant de la lire (KnowledgeBrick l'applique
+// d'office ; PredictRule enveloppe une règle qui n'est pas une brique).
+export { default as PeerSheet } from './PeerSheet';
+export { default as PredictRule } from './PredictRule';

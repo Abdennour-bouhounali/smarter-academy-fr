@@ -1,0 +1,185 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-kusur-natiqa-l2-005",
+  "lessonCode": "wadiya-idmajiya-kusur-natiqa",
+  "level": 2,
+  "metadata": {
+    "title": "دفاتر المكتبة: الكلّ من جزئه",
+    "estimatedMinutes": 7,
+    "tags": [
+      "الكلّ من جزئه",
+      "قسمة على كسر",
+      "مقارنة بالنصف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "باعت مكتبة $\\dfrac{3}{8}$ من دفاترها يوم الأحد، فبلغ ما باعته $180$ دفترًا ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "كم دفترًا كانت تملك المكتبة قبل البيع ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "480",
+      "misconceptionSignatures": [
+        {
+          "value": "135/2",
+          "id": "MISC-AMAL-NOFLIP"
+        },
+        {
+          "value": "288",
+          "id": "MISC-SYN-KUSUR-WRONGFRAC"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعطى جزء من الكلّ، ومعه الكسر الذي يمثّله هذا الجزء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكلّ هو الجزء مقسومًا على الكسر الذي يمثّله، أي مضروبًا في مقلوبه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بأخذ الكسر من الكلّ الذي وجدته: يجب أن تجد الجزء المعطى."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $480$ .",
+        "incorrect": "الكلّ يُحسب بقسمة الجزء على الكسر الذي يمثّله؛ تحقّق بالعملية العكسية ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الـ $180$ دفترًا تمثّل $\\dfrac{3}{8}$ من الدفاتر .",
+          "$180 \\div \\dfrac{3}{8} = 180 \\times \\dfrac{8}{3} = 480$ دفترًا ."
+        ],
+        "result": "480"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كم دفترًا بقي في المكتبة بعد يوم الأحد ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "300",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكلّ الذي نقارن به ؟ وما الأجزاء المأخوذة منه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما بقي هو الكلّ ناقص مجموع الأجزاء المأخوذة، أي واحد ناقص مجموع الكسور."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الباقي موجب وأنّه أصغر من الكلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $300$ .",
+        "incorrect": "الكلّ يُحسب بقسمة الجزء على الكسر الذي يمثّله؛ تحقّق بالعملية العكسية ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "بقي $1 - \\dfrac{3}{8} = \\dfrac{5}{8}$ من الدفاتر .",
+          "$\\dfrac{5}{8} \\times 480 = 300$ دفترًا (أو $480 - 180 = 300$) ."
+        ],
+        "result": "300"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل باعت المكتبة أكثر من نصف دفاترها ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-NUMERATORS"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للكسرين المقام نفسه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "وحّد المقامات ثمّ قارن البسطين، فالكسر الأكبر له البسط الأكبر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحكم بنظرة إلى البسط وحده أو المقام وحده."
+        }
+      ],
+      "feedback": {
+        "correct": "لا .",
+        "incorrect": "وحّد المقامات قبل المقارنة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{2} = \\dfrac{4}{8}$ و $\\dfrac{3}{8} < \\dfrac{4}{8}$ .",
+          "إذن لا، باعت أقلّ من النصف."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

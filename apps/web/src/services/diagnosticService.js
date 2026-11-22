@@ -1,4 +1,5 @@
 import { apiRequest, ApiError, classifyStatus } from './apiClient';
+import { apiMessage } from './apiMessage';
 
 /**
  * The diagnostic's algorithm and every assessment decision live entirely
@@ -13,7 +14,7 @@ import { apiRequest, ApiError, classifyStatus } from './apiClient';
  * backend still enforces this independently (§2 of the brief: no 5e/4e/3e
  * diagnostic yet) — this constant only controls whether the UI offers it.
  */
-export const DIAGNOSTIC_AVAILABLE_GRADES = ['6e'];
+const DIAGNOSTIC_AVAILABLE_GRADES = ['6e'];
 
 export function isDiagnosticAvailableForGrade(grade) {
   return DIAGNOSTIC_AVAILABLE_GRADES.includes(grade);
@@ -33,7 +34,7 @@ export async function startDiagnostic(token, grade) {
   });
 
   if (!ok) {
-    throw new ApiError(data?.message || 'Impossible de démarrer le diagnostic.', classifyStatus(status), status);
+    throw new ApiError(apiMessage('diagnosticStart', data, status), classifyStatus(status), status);
   }
 
   return data;
@@ -52,7 +53,7 @@ export async function fetchCurrentDiagnostic(token, grade) {
   });
 
   if (!ok) {
-    throw new ApiError(data?.message || 'Impossible de récupérer le diagnostic.', classifyStatus(status), status);
+    throw new ApiError(apiMessage('diagnosticLoad', data, status), classifyStatus(status), status);
   }
 
   return data;
@@ -72,7 +73,7 @@ export async function submitDiagnosticResponse(token, sessionId, { questionId, a
   });
 
   if (!ok) {
-    throw new ApiError(data?.message || 'Impossible d’enregistrer la réponse.', classifyStatus(status), status);
+    throw new ApiError(apiMessage('diagnosticAnswer', data, status), classifyStatus(status), status);
   }
 
   return data;

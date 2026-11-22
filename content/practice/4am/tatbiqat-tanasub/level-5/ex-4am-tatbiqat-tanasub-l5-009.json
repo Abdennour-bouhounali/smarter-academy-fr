@@ -1,0 +1,225 @@
+{
+  "id": "ex-4am-tatbiqat-tanasub-l5-009",
+  "lessonCode": "tatbiqat-tanasub",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2016 — جرار لتعاونية فلاحية بغليزان",
+    "estimatedMinutes": 13,
+    "tags": [
+      "وضعية إدماجية",
+      "رسم على القيمة المضافة",
+      "دعم وأقساط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tatbiqat-tanasub_P1",
+      "modelledOn": "BEM 2016 II II-02"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تريد تعاونية فلاحية بغليزان، يتعاون أعضاؤها على خدمة الأرض، شراء جرار ثمنه دون رسم $3\\,200\\,000DA$ . يُضاف إلى هذا الثمن رسم على القيمة المضافة نسبته 19%. تحصّلت التعاونية على دعم من الدولة يمثّل 40% من الثمن بالرسم، وتدفع الباقي على 12 قسطا شهريا متساويا."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب ثمن الجرار بالرسم.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "3808000",
+      "misconceptionSignatures": [
+        {
+          "value": "608000",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        },
+        {
+          "value": "3200019",
+          "id": "MISC-NISBA-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "إضافة رسم 19% تعني الزيادة بـ 19%: ضرب في $1 + \\dfrac{19}{100}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّقها على الثمن دون رسم."
+        }
+      ],
+      "feedback": {
+        "correct": "$3\\,200\\,000 \\times 1{,}19 = 3\\,808\\,000DA$ .",
+        "incorrect": "اضرب الثمن دون رسم في مضاعف الزيادة."
+      },
+      "solution": {
+        "lines": [
+          "$3\\,200\\,000 \\times \\left(1 + \\dfrac{19}{100}\\right) = 3\\,200\\,000 \\times 1{,}19$",
+          "$= 3\\,808\\,000$"
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب مبلغ الدعم.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "1523200",
+      "misconceptionSignatures": [
+        {
+          "value": "1280000",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدعم يُحسب من الثمن بالرسم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخذ 40% من مقدار هو ضربه في $\\dfrac{40}{100}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$3\\,808\\,000 \\times 0{,}4 = 1\\,523\\,200DA$ .",
+        "incorrect": "خذ 40% من الثمن بالرسم، لا من الثمن دون رسم."
+      },
+      "solution": {
+        "lines": [
+          "$3\\,808\\,000 \\times \\dfrac{40}{100} = 1\\,523\\,200$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب قيمة القسط الشهري.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "190400",
+      "misconceptionSignatures": [
+        {
+          "value": "952000/3",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ الذي تدفعه التعاونية = الثمن بالرسم − الدعم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسمه على عدد الأقساط."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3\\,808\\,000 - 1\\,523\\,200}{12} = 190\\,400DA$ .",
+        "incorrect": "اطرح الدعم من الثمن بالرسم ثم اقسم على 12 ."
+      },
+      "solution": {
+        "lines": [
+          "المبلغ الباقي: $3\\,808\\,000 - 1\\,523\\,200 = 2\\,284\\,800$",
+          "(أو: $3\\,808\\,000 \\times 0{,}6$ )",
+          "$\\dfrac{2\\,284\\,800}{12} = 190\\,400$",
+          "القسط الشهري 190400DA ."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب النسبة المئوية التي تدفعها التعاونية فعلا من الثمن دون رسم.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $t$ فقط، دون الرمز % (عدد صحيح أو عشري بالفاصلة)",
+      "expectedAnswer": "71,4",
+      "misconceptionSignatures": [
+        {
+          "value": "79",
+          "id": "MISC-NISBA-TATABU-JAM"
+        },
+        {
+          "value": "60",
+          "id": "MISC-NISBA-TATABU-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن ما تدفعه التعاونية بالثمن دون رسم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أو: التغيّران المتتابعان (رسم ثم دعم) يُترجمان بجداء المضاعفين."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}19 \\times 0{,}6 = 0{,}714$ : تدفع $71{,}4\\%$ من الثمن دون رسم.",
+        "incorrect": "النسب المتتابعة لا تُجمع: احسب جداء المضاعفين."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2\\,284\\,800}{3\\,200\\,000} = 0{,}714$",
+          "(أو: $1{,}19 \\times 0{,}6 = 0{,}714$ )",
+          "تدفع التعاونية $71{,}4\\%$ من الثمن دون رسم."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

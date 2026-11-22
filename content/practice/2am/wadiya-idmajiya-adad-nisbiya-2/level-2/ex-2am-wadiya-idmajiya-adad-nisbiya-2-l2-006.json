@@ -1,0 +1,246 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-adad-nisbiya-2-l2-006",
+  "lessonCode": "wadiya-idmajiya-adad-nisbiya-2",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — منتصف ونظيرة ومسافتان",
+    "estimatedMinutes": 10,
+    "tags": [
+      "مستقيم مدرّج",
+      "منتصف",
+      "مسافة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "على مستقيم مدرّج مبدؤه $O$ ، النقط $A(-5)$ و $B(+3)$ و $C(-2)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "النقطتان $A(-5)$ و $B(+3)$ على مستقيم مدرّج، و $M$ منتصف القطعة $[AB]$ . ما فاصلة $M$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-1",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-HALFDIST",
+          "value": "4"
+        },
+        {
+          "id": "MISC-MASAFA2-SUMNOHALF",
+          "value": "-2"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المنتصف على بعد نصف المسافة من كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب المسافة بين الطرفين ثمّ خذ نصفها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ابدأ من الطرف الأصغر فاصلة وأضف نصف المسافة."
+        }
+      ],
+      "feedback": {
+        "correct": "$M(-1)$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "المسافة $AB=8$ ونصفها $4$",
+          "$M$ تبعد $4$ عن الطرف الأصغر فاصلة $-5$ ، فالفاصلة $-5+4=-1$"
+        ],
+        "result": "-1"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "النقطة $L$ نظيرة $A$ بالنسبة إلى $O$ على المستقيم المدرّج نفسه، و $A(-5)$ . ما فاصلة $L$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TALIM2-OPPSAME",
+          "value": "-5"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العددان المتعاكسان لهما المسافة نفسها إلى الصفر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "وإشارتاهما مختلفتان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مجموعهما معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$(+5)$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "العدد $(-5)$ يبعد $5$ عن الصفر",
+          "معاكسه $(+5)$ على الجهة الأخرى من الصفر"
+        ],
+        "result": "5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "النقطتان $B(+3)$ و $C(-2)$ على مستقيم مدرّج. احسب المسافة $BC$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "1"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-5"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطتان على جهة واحدة من المبدأ أم على جهتين مختلفتين ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى ناقص الفاصلة الصغرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا : تحقّق من الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC=5$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى $+3$ والفاصلة الصغرى $-2$",
+          "$BC=(+3)-(-2)=5$"
+        ],
+        "result": "5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "الفاصلتان $M(-1)$ و $L(+5)$ على المستقيم المدرّج نفسه. احسب المسافة $ML$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "4"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-6"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطتان على جهة واحدة من المبدأ أم على جهتين مختلفتين ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى ناقص الفاصلة الصغرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا : تحقّق من الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$ML=6$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى $+5$ والفاصلة الصغرى $-1$",
+          "$ML=(+5)-(-1)=6$"
+        ],
+        "result": "6"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

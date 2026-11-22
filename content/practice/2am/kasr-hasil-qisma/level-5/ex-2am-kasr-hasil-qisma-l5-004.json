@@ -1,0 +1,309 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l5-004",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — ماء مدرسة القرية",
+    "estimatedMinutes": 12,
+    "tags": [
+      "قسمة على عشري",
+      "قيم مقرّبة",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: تريد جمعية تعبئة $600$ L من الماء الصالح للشرب في قارورات سعة كلّ منها $0{,}7$ L لمدرسة القرية.\nالجزء الثاني: تريد الجمعية أن تعرف عدد القارورات التي تشتريها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "لتحويل القسمة $600 \\div 0{,}7$ إلى قسمة على عدد طبيعي نضرب الحدّين في العدد نفسه. ما أصغر قوّة للعدد $10$ تجعل المقسوم عليه عددًا طبيعيًا؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "قوّة للعدد 10",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عُدّ الأرقام التي تأتي بعد الفاصلة في المقسوم عليه وحده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كلّ رقم بعد الفاصلة يزول بالضرب في قوّة مناسبة للعدد $10$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحدّان يُضربان في العدد نفسه حتى لا يتغيّر حاصل القسمة."
+        }
+      ],
+      "feedback": {
+        "correct": "المقسوم عليه $0{,}7$ فيه رقم واحد بعد الفاصلة، فنضربه في $10$ فيصير $7$.",
+        "incorrect": "المقسوم عليه هو الذي يحدّد القوّة: عدد الأرقام التي تأتي بعد فاصلته، لا بعد فاصلة المقسوم."
+      },
+      "solution": {
+        "lines": [
+          "المقسوم عليه $0{,}7$ فيه رقم واحد بعد الفاصلة",
+          "$0{,}7 \\times 10 = 7$"
+        ],
+        "result": "10"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب حاصل القسمة الإقليدية للعدد $6000$ على العدد $7$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "857",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أكبر عدد نضربه في $7$ دون أن يتجاوز $6000$."
+        }
+      ],
+      "feedback": {
+        "correct": "$6000 = 7 \\times 857 + 1$.",
+        "incorrect": "القسمة الإقليدية: الباقي أصغر من المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$6000 = 7 \\times 857 + 1$"
+        ],
+        "result": "857"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "lead": "القيم المقرّبة:",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}1$ بالنقصان لحاصل القسمة $600 \\div 0{,}7$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "857.1",
+      "misconceptionSignatures": [
+        {
+          "value": "857.2",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "857.14",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالنقصان لا تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة دون أن تزيد شيئًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب القيمة في المقسوم عليه: يجب ألاّ يتجاوز الجداء المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$857{,}1 < \\frac{600}{0{,}7} < 857{,}2$.",
+        "incorrect": "بالنقصان: نحتفظ بالأرقام حتى الرتبة المطلوبة ونُهمل ما بعدها دون تغيير الرقم الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}7 \\times 857{,}1 = 599{,}97$",
+          "$0{,}7 \\times 857{,}2 = 600{,}04$",
+          "$599{,}97 < 600 < 600{,}04$"
+        ],
+        "result": "857{,}1"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}1$ بالزيادة لحاصل القسمة $600 \\div 0{,}7$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "857.2",
+      "misconceptionSignatures": [
+        {
+          "value": "857.1",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "857.15",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالزيادة هي أصغر قيمة من هذه الرتبة تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من القيمة بالنقصان ثم أضف وحدة واحدة من الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$857{,}1 < \\frac{600}{0{,}7} < 857{,}2$.",
+        "incorrect": "بالزيادة: هي القيمة التي تلي القيمة بالنقصان مباشرة في الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}7 \\times 857{,}2 = 600{,}04$",
+          "$600{,}04 > 600$",
+          "القيمة بالزيادة هي $857{,}2$"
+        ],
+        "result": "857{,}2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "lead": "الجزء الثاني: كم قارورة تُشترى؟",
+      "statement": "كم قارورة يلزم شراؤها لتعبئة كلّ الماء؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$858$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$857$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        },
+        {
+          "id": "C",
+          "content": "$859$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$600$",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القارورات الممتلئة تماما لا تحمل كلّ الماء."
+        }
+      ],
+      "feedback": {
+        "correct": "بالزيادة إلى الوحدة: $858$ قارورة.",
+        "incorrect": "ما يبقى من الماء بعد القارورات الممتلئة يحتاج إلى قارورة إضافية."
+      },
+      "solution": {
+        "lines": [
+          "$857 < \\dfrac{600}{0{,}7} < 858$",
+          "نحتاج $858$ قارورة"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "اشترت الجمعية $857$ قارورة. برّر أنّها لا تكفي لتعبئة كلّ الماء.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب جملة أو جملتين: الفكرة ثم الحساب الذي يدعمها."
+        }
+      ],
+      "feedback": {
+        "correct": "يبقى $0{,}1$ L من الماء بلا قارورة: تلزم قارورة إضافية.",
+        "incorrect": "قارن تبريرك بالحلّ النموذجي: الفكرة ثم الحساب الذي يدعمها."
+      },
+      "solution": {
+        "lines": [
+          "$857 \\times 0{,}7 = 599{,}9 < 600$",
+          "يبقى $0{,}1$ L من الماء بلا قارورة: تلزم قارورة إضافية."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

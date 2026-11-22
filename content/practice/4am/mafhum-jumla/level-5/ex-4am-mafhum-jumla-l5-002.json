@@ -1,0 +1,288 @@
+{
+  "id": "ex-4am-mafhum-jumla-l5-002",
+  "lessonCode": "mafhum-jumla",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2018 — قاعة رياضة بوهران",
+    "estimatedMinutes": 20,
+    "tags": [
+      "جملة",
+      "ثنائية",
+      "عرضان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mafhum-jumla_P3",
+      "modelledOn": "BEM 2018 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2018",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تقترح قاعة لكمال الأجسام بوهران، تشجّع على الرياضة وصحة البدن، على زبائنها عرضين للاشتراك:\n• العرض الأول: 1500DA عند التسجيل، و 200DA للحصة الواحدة.\n• العرض الثاني: 3000DA عند التسجيل، و 100DA للحصة الواحدة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب المبلغ الذي يدفعه زبون يحضر 10 حصص حسب كل عرض.",
+      "statement": "المبلغ حسب العرض الأول:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "3500",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ = مبلغ التسجيل + ثمن الحصص."
+        }
+      ],
+      "feedback": {
+        "correct": "$1500 + 200 \\times 10 = 3500$ ، أي 3500DA .",
+        "incorrect": "أضف ثمن الحصص العشر إلى مبلغ التسجيل."
+      },
+      "solution": {
+        "lines": [
+          "$1500 + 200 \\times 10 = 3500$"
+        ],
+        "result": "3500\\,DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "المبلغ حسب العرض الثاني:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "4000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ = مبلغ التسجيل + ثمن الحصص."
+        }
+      ],
+      "feedback": {
+        "correct": "$3000 + 100 \\times 10 = 4000$ ، أي 4000DA .",
+        "incorrect": "أضف ثمن الحصص العشر إلى مبلغ التسجيل."
+      },
+      "solution": {
+        "lines": [
+          "$3000 + 100 \\times 10 = 4000$"
+        ],
+        "result": "4000\\,DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ليكن $x$ عدد الحصص. بيّن أنه إذا تساوى المبلغان من أجل $x$ حصة وكان المبلغ المدفوع $y$ (بالدينار) فإن الثنائية $(x ; y)$ حل للجملة $\\begin{cases} -200x + y = 1500 \\\\ -100x + y = 3000 \\end{cases}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عبّر عن المبلغ $y$ بدلالة $x$ حسب كل عرض."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل الحد الذي فيه $x$ إلى الطرف الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "حسب العرض الأول: $y = 200x + 1500$ ، أي $-200x + y = 1500$ .",
+          "حسب العرض الثاني: $y = 100x + 3000$ ، أي $-100x + y = 3000$ .",
+          "الثنائية $(x ; y)$ تحقق المعادلتين معا، فهي حل للجملة."
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "statement": "هل الثنائية $(10 ; 3500)$ حل لهذه الجملة؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-MUADALA-WAHIDA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $10$ و $y$ بـ $3500$ في كل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الثنائية حل للجملة إذا حققت المعادلتين في آن واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$-200 \\times 10 + 3500 = 1500$ ؛ $-100 \\times 10 + 3500 = 2500 \\neq 3000$ : الثنائية ليست حلا للجملة.",
+        "incorrect": "العدد الأول في الثنائية قيمة $x$ والثاني قيمة $y$ ؛ عوّض في المعادلتين معا وقارن كل نتيجة بالطرف الثاني."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $x$ بـ $10$ و $y$ بـ $3500$ :",
+          "$-200 \\times 10 + 3500 = 1500$",
+          "$-100 \\times 10 + 3500 = 2500 \\neq 3000$",
+          "ومنه الثنائية $(10 ; 3500)$ ليست حلا للجملة (لا تحقق المعادلتين معا)."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "هل الثنائية $(15 ; 4500)$ حل لهذه الجملة؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $15$ و $y$ بـ $4500$ في كل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الثنائية حل للجملة إذا حققت المعادلتين في آن واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$-200 \\times 15 + 4500 = 1500$ ؛ $-100 \\times 15 + 4500 = 3000$ : الثنائية حل للجملة.",
+        "incorrect": "العدد الأول في الثنائية قيمة $x$ والثاني قيمة $y$ ؛ عوّض في المعادلتين معا وقارن كل نتيجة بالطرف الثاني."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $x$ بـ $15$ و $y$ بـ $4500$ :",
+          "$-200 \\times 15 + 4500 = 1500$",
+          "$-100 \\times 15 + 4500 = 3000$",
+          "ومنه الثنائية $(15 ; 4500)$ حل للجملة."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "☜ يريد أنس حضور 20 حصة. أيّ العرضين أقل تكلفة له؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "العرض الأول",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "العرض الثاني",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المبلغ حسب كل عرض من أجل 20 حصة."
+        }
+      ],
+      "feedback": {
+        "correct": "$1500 + 200 \\times 20 = 5500$ و $3000 + 100 \\times 20 = 5000$ .",
+        "incorrect": "احسب المبلغين من أجل 20 حصة ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "العرض الأول: $1500 + 200 \\times 20 = 5500$ أي 5500DA .",
+          "العرض الثاني: $3000 + 100 \\times 20 = 5000$ أي 5000DA .",
+          "ومنه العرض الثاني أقل تكلفة لأنس."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

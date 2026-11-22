@@ -1,0 +1,249 @@
+{
+  "id": "ex-3am-qimat-ibara-harfiya-l1-005",
+  "lessonCode": "qimat-ibara-harfiya",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — عبارة بحرفين",
+    "estimatedMinutes": 7,
+    "tags": [
+      "حرفان",
+      "تعويض"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $G = 3x - 2y$ ، وليكن $H = 5x - y$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب قيمة $G$ من أجل $x = 2$ و $y = 5$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-QIMA-LETTERS-SAME"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في هذه العبارة حرفان: ما العدد الذي يعوّض كلّ واحد منهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض كل حرف بعدده في كل مكان منه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب القوسين والقوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = 2$ و $y = 5$ هي $-4$ .",
+        "incorrect": "عوّض كل حرف بعدده، وضع كل عدد سالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$G = 3 \\times 2 - 2 \\times 5$",
+          "$G = 6 - 10$",
+          "$G = -4$"
+        ],
+        "result": "G = -4"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب قيمة $G$ من أجل $x = -2$ و $y = 3$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "-12",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-QIMA-SIGN-LOST"
+        },
+        {
+          "value": "-2",
+          "id": "MISC-QIMA-LETTERS-SAME"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في هذه العبارة حرفان: ما العدد الذي يعوّض كلّ واحد منهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض كل حرف بعدده في كل مكان منه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب القوسين والقوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = -2$ و $y = 3$ هي $-12$ .",
+        "incorrect": "عوّض كل حرف بعدده، وضع كل عدد سالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$G = 3 \\times (-2) - 2 \\times 3$",
+          "$G = -6 - 6$",
+          "$G = -12$"
+        ],
+        "result": "G = -12"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "أيّ سطر يحسب قيمة $H$ من أجل $x = 3$ و $y = -2$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$5 \\times 3 - 3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QIMA-LETTERS-SAME"
+        },
+        {
+          "id": "B",
+          "content": "$5 \\times 3 - (-2)$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$5 \\times (-2) - 3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QIMA-LETTERS-SAME"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كل سطر وانظر كيف كُتب العدد المعوَّض."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تأكّد من علامة الضرب المضمَرة ومن الأقواس حول العدد السالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب قيمة كل سطر واحتفظ بالسطر الذي يحترم قواعد التعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "السطر $5 \\times 3 - (-2)$ هو الصحيح، وقيمته $17$ .",
+        "incorrect": "أعد قراءة كل سطر: هل أُظهرت علامة الضرب؟ وهل وُضع العدد السالب بين قوسين؟"
+      },
+      "solution": {
+        "lines": [
+          "السطر الصحيح هو $5 \\times 3 - (-2)$ ، لأنّ العدد المعوَّض يظهر في كل مكان من الحرف، وعلامة الضرب ظاهرة، والعدد السالب بين قوسين.",
+          "$5 \\times 3 - (-2) = 17$"
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب قيمة العبارة $xy + x$ من أجل $x = -3$ و $y = 4$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "-15",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-QIMA-SIGN-LOST"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في هذه العبارة حرفان: ما العدد الذي يعوّض كلّ واحد منهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض كل حرف بعدده في كل مكان منه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب القوسين والقوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = -3$ و $y = 4$ هي $-15$ .",
+        "incorrect": "عوّض كل حرف بعدده، وضع كل عدد سالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$xy + x = (-3) \\times 4 + (-3)$",
+          "$= -12 + (-3)$",
+          "$= -15$"
+        ],
+        "result": "-15"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l4-009",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — أربع محطات توصيل",
+    "estimatedMinutes": 2,
+    "tags": [
+      "متوازي أضلاع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_ithbat-khawas-maalam_P2",
+      "modelledOn": "ex-24"
+    }
+  },
+  "generator": {
+    "tool": "u1x-ithbat-khawas-maalam/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "أربع نقط توقف لدرّاج توصيل: $A(-2\\,;\\,0)$ ، $B(2\\,;\\,-1)$ ، $C(4\\,;\\,3)$ ، $D(0\\,;\\,4)$ في معلم متعامد ومتجانس (النقط معلّمة على المرصوفة).",
+    "figure": {
+      "grid": true,
+      "axes": true,
+      "points": {
+        "A": [
+          -2,
+          0
+        ],
+        "B": [
+          2,
+          -1
+        ],
+        "C": [
+          4,
+          3
+        ],
+        "D": [
+          0,
+          4
+        ]
+      },
+      "ariaLabel": "الرباعي ABCD على مرصوفة",
+      "maxWidth": 420,
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "A"
+        ]
+      ],
+      "labels": {
+        "A": "w",
+        "B": "s",
+        "C": "e",
+        "D": "n"
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا منتصف [AC]:",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x\\,;\\,y)$ : الأولى ثم الثانية (عدد صحيح أو كسر مثل 5/2)",
+      "expectedAnswer": {
+        "x": "1",
+        "y": "3/2"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نصف مجموع الفاصلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نصف مجموع الترتيبين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قد يكون كسرا."
+        }
+      ],
+      "feedback": {
+        "correct": "منتصف [AC] $\\left(1\\,;\\,\\dfrac{3}{2}\\right)$ = منتصف [BD].",
+        "incorrect": "نصف المجموع."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "مع $AC^2 = 45$ ، $BD^2 = 29$ ، $AB^2 = 17$ ، $BC^2 = 20$ ، الرباعي ABCD :",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "ليس متوازي أضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "B",
+          "content": "متوازي أضلاع ليس مستطيلا ولا معيّنا",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "مستطيل",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "D",
+          "content": "معيّن",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القطران متناصفان: ماذا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القطران متقايسان؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الضلعان المتتاليان؟"
+        }
+      ],
+      "feedback": {
+        "correct": "متوازي أضلاع؛ لا القطران ولا الضلعان متقايسان.",
+        "incorrect": "تحقّق من كل دليل."
+      }
+    }
+  ]
+}

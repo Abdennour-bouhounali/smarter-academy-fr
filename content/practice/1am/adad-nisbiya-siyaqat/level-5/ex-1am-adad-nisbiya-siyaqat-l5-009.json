@@ -1,0 +1,236 @@
+{
+  "id": "ex-1am-adad-nisbiya-siyaqat-l5-009",
+  "lessonCode": "adad-nisbiya-siyaqat",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — رحلة الصحراء",
+    "estimatedMinutes": 12,
+    "tags": [
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "قطع فريق مسافة بين شطّ تحت مستوى البحر وواحة فوقه : الشطّ 35 م تحت سطح البحر والواحة 25 م فوقه."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "يقع الشطّ على ارتفاع 35 م تحت سطح البحر. اكتب ارتفاعه بعدد نسبي (سطح البحر هو الصفر).",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "-35",
+      "misconceptionSignatures": [
+        {
+          "value": "35",
+          "id": "MISC-REL-SIGNLOST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "فوق الصفر أم تحته؟ وكم تدريجة تبعد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما فوق الصفر عدد موجب بلا إشارة، وما تحته عدد سالب تسبقه الإشارة − ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجهة بالإشارة ثمّ المسافة بالعدد."
+        }
+      ],
+      "feedback": {
+        "correct": "تحت الصفر : عدد سالب، $-35$.",
+        "incorrect": "الجهة من الصفر تقول الإشارة، والمسافة تقول العدد."
+      },
+      "solution": {
+        "lines": [
+          "تحت الصفر (أو المرجع)",
+          "عدد سالب، مسافته $35$ : $-35$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "يقع الواحة على ارتفاع 25 م فوق سطح البحر. اكتب ارتفاعه بعدد نسبي (سطح البحر هو الصفر).",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "25",
+      "misconceptionSignatures": [
+        {
+          "value": "-25",
+          "id": "MISC-REL-ABOVENEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "فوق الصفر أم تحته؟ وكم تدريجة تبعد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما فوق الصفر عدد موجب بلا إشارة، وما تحته عدد سالب تسبقه الإشارة − ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجهة بالإشارة ثمّ المسافة بالعدد."
+        }
+      ],
+      "feedback": {
+        "correct": "فوق الصفر : عدد موجب يُكتب بلا إشارة، $25$.",
+        "incorrect": "الجهة من الصفر تقول الإشارة، والمسافة تقول العدد."
+      },
+      "solution": {
+        "lines": [
+          "فوق الصفر (أو المرجع)",
+          "عدد موجب، مسافته $25$ : $25$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "الشطّ والواحة. أيّ الموضعين أبعد عن سطح البحر : $-35$ م أم $25$ م ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-35$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$25$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-REL-SIGNDIST"
+        },
+        {
+          "id": "C",
+          "content": "البعد نفسه",
+          "isCorrect": false,
+          "misconceptionId": "MISC-REL-SIGNONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "البعد عن الصفر مسافة : هل تتأثّر بالإشارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب مسافة كلّ موضع إلى الصفر ثمّ قارن."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأبعد هو الأكبر مسافة ولو كان تحت الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "الأبعد هو $-35$ : مسافته $35$ وهي الأكبر.",
+        "incorrect": "البعد عن الصفر مسافة : نقارن المسافات لا الإشارات."
+      },
+      "solution": {
+        "lines": [
+          "المسافتان : $35$ و $25$",
+          "الأكبر مسافة هو $-35$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "كم عددًا نسبيًّا يبعد $35$ عن الصفر؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-REL-ONLYONE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العدد على الجهاز ثمّ انظر أين يقف ظلّه في المرآة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المعاكس له المسافة نفسها إلى الصفر على الجهة الأخرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "غيّر الإشارة وأبقِ المسافة."
+        }
+      ],
+      "feedback": {
+        "correct": "عددان : $35$ و $-35$ .",
+        "incorrect": "على كلّ جهة من الصفر نقطة تبعد المسافة نفسها."
+      },
+      "solution": {
+        "lines": [
+          "$35$ فوق الصفر و $-35$ تحته",
+          "عددان"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

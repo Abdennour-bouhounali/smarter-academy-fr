@@ -1,0 +1,403 @@
+{
+  "id": "ex-4am-mafhum-taalufiya-l5-010",
+  "lessonCode": "mafhum-taalufiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2018 — جناح في معرض الصناعات التقليدية بغرداية",
+    "estimatedMinutes": 25,
+    "tags": [
+      "وضعية إدماجية",
+      "صيغتان",
+      "العدد الذي صورته معلومة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mafhum-taalufiya_P3",
+      "modelledOn": "BEM 2018 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2018",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "لكراء جناح في معرض الصناعات التقليدية بغرداية، حفاظًا على تراث الوطن، تقترح إدارة المعرض على الحرفيين صيغتين:\n– الصيغة الأولى: 1200DA للمتر المربع.\n– الصيغة الثانية: 800DA للمتر المربع، مع مبلغ ثابت قدره 6000DA للحراسة والإنارة.\nنسمّي $x$ مساحة الجناح بـ $m^2$ ، و $f(x)$ ، $g(x)$ ثمني الكراء بـ DA حسب الصيغتين الأولى والثانية على الترتيب."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب ثمن كراء جناح مساحته $12m^2$ حسب كل صيغة.",
+      "statement": "ثمن الكراء حسب الصيغة الأولى:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الثمن بـ DA",
+      "expectedAnswer": "14400",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الثمن = 1200 × المساحة."
+        }
+      ],
+      "feedback": {
+        "correct": "$1200 \\times 12 = 14400$ .",
+        "incorrect": "اضرب المساحة في ثمن المتر المربع."
+      },
+      "solution": {
+        "lines": [
+          "$f(12) = 1200 \\times 12 = 14400$"
+        ],
+        "result": "14400DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ثمن الكراء حسب الصيغة الثانية:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الثمن بـ DA",
+      "expectedAnswer": "15600",
+      "misconceptionSignatures": [
+        {
+          "value": "9600",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا تنسَ المبلغ الثابت."
+        }
+      ],
+      "feedback": {
+        "correct": "$g(12) = 800 \\times 12 + 6000 = 15600$ .",
+        "incorrect": "اضرب المساحة في 800، ثم أضف المبلغ الثابت."
+      },
+      "solution": {
+        "lines": [
+          "$g(12) = 800 \\times 12 + 6000$",
+          "$g(12) = 9600 + 6000$",
+          "$g(12) = 15600$ أي $15600DA$ ."
+        ],
+        "result": "g(12) = 15600\\,DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "عبّر عن $g(x)$ بدلالة $x$ على الشكل $g(x) = ax + b$ .",
+      "statement": "أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "800",
+      "misconceptionSignatures": [
+        {
+          "value": "6000",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المبلغ الذي يُدفع عن كل متر مربع في الصيغة الثانية؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 800$ : هو معامل $x$ .",
+        "incorrect": "المعامل $a$ هو العدد المضروب في $x$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 1200x$ و $g(x) = 800x + 6000$ .",
+          "$g(x) = 800x + 6000$ من الشكل $ax + b$ حيث: $a = 800$ و $b = 6000$ ."
+        ],
+        "result": "a = 800"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "6000",
+      "misconceptionSignatures": [
+        {
+          "value": "800",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المبلغ الذي يُدفع مهما كانت المساحة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$b = 6000$ ، إذن $g(x) = 800x + 6000$ .",
+        "incorrect": "$b$ هو الحدّ الذي لا يحتوي على $x$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 1200x$ و $g(x) = 800x + 6000$ .",
+          "$g(x) = 800x + 6000$ من الشكل $ax + b$ حيث: $a = 800$ و $b = 6000$ ."
+        ],
+        "result": "b = 6000"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما نوع الدالة $f$ ؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "دالة خطية",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "دالة ثابتة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAALUFI-THABITA"
+        },
+        {
+          "id": "C",
+          "content": "دالة تآلفية ليست خطية وليست ثابتة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAALUFI-KHATTIYA-KHALT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب عبارة الدالة على الشكل $ax + b$ إن أمكن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الدالة الخطية: $b = 0$ ؛ الدالة الثابتة: $a = 0$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(x) = 1200x$ : $b = 0$ .",
+        "incorrect": "قارن المعاملين $a$ و $b$ بالعدد 0."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 1200x = 1200x + 0$ : $b = 0$ و $a \\neq 0$ .",
+          "إذن $f$ دالة خطية (حالة خاصة من الدالة التآلفية)."
+        ],
+        "result": "دالة خطية"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ا",
+      "statement": "خصّص حرفيّ 22000DA لكراء جناح حسب الصيغة الثانية. ما هي مساحة أكبر جناح يمكنه كراؤه؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المساحة بـ $m^2$",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "27,5",
+          "id": "MISC-TAALUFI-SABIQ-QISMA"
+        },
+        {
+          "value": "-5972,5",
+          "id": "MISC-TAALUFI-SABIQ-TARTIB"
+        },
+        {
+          "value": "17606000",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة $g(x) = 22000$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح المبلغ الثابت ثم اقسم على 800."
+        }
+      ],
+      "feedback": {
+        "correct": "$800x + 6000 = 22000$ تعطي $x = 20$ .",
+        "incorrect": "اطرح المبلغ الثابت أولا، ثم اقسم على 800."
+      },
+      "solution": {
+        "lines": [
+          "$g(x) = 22000$ معناه $800x + 6000 = 22000$",
+          "$800x = 22000 - 6000$",
+          "$800x = 16000$",
+          "$x = \\dfrac{16000}{800}$",
+          "$x = 20$ أي $20m^2$ ."
+        ],
+        "result": "x = 20\\,m^2"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "sub": "ب",
+      "statement": "جد المساحة التي يكون من أجلها ثمنا الكراء متساويين.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المساحة بـ $m^2$",
+      "expectedAnswer": "15",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المعادلة $f(x) = g(x)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الحدود التي فيها $x$ في طرف واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$1200x = 800x + 6000$ يعطي $400x = 6000$ .",
+        "incorrect": "حلّ المعادلة $1200x = 800x + 6000$ ."
+      },
+      "solution": {
+        "lines": [
+          "$1200x = 800x + 6000$",
+          "$400x = 6000$",
+          "$x = 15$",
+          "من أجل $15m^2$ يتساوى الثمنان: $f(15) = g(15) = 18000$ ."
+        ],
+        "result": "15\\,m^2"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q8",
+      "step": "04",
+      "statement": "☜ استأجر الحرفي جناحا مساحته $20m^2$ حسب الصيغة الثانية، ويبيع فيه أواني فخارية بـ 1800DA للقطعة. ما هو أقل عدد من القطع يجب أن يبيعه ليغطي ثمن الكراء؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد القطع",
+      "expectedAnswer": "13",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولا ثمن كراء جناح مساحته $20m^2$ حسب الصيغة الثانية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثمن القطع المبيعة يجب أن يكون أكبر من ثمن الكراء أو يساويه."
+        }
+      ],
+      "feedback": {
+        "correct": "$1800n \\geq 22000$ يعطي $n \\geq 12{,}2$ تقريبا.",
+        "incorrect": "اقسم ثمن الكراء على ثمن القطعة، ثم خذ العدد الطبيعي الموالي."
+      },
+      "solution": {
+        "lines": [
+          "ثمن الكراء: $g(20) = 800 \\times 20 + 6000 = 22000$ .",
+          "ليكن $n$ عدد القطع: $1800n \\geq 22000$",
+          "$n \\geq \\dfrac{22000}{1800}$ أي $n \\geq 12{,}2$ تقريبا.",
+          "$1800 \\times 12 = 21600 < 22000$ و $1800 \\times 13 = 23400$ .",
+          "أقل عدد من القطع هو 13 قطعة."
+        ],
+        "result": "13"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

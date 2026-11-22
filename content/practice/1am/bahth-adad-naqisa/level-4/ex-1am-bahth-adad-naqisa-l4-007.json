@@ -1,0 +1,245 @@
+{
+  "id": "ex-1am-bahth-adad-naqisa-l4-007",
+  "lessonCode": "bahth-adad-naqisa",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — جدار من أربعة صفوف",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جدار",
+      "فروق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الرابع",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "جدار بلاطات من أربعة صفوف: العدد على كلّ بلاطة هو مجموع العددين اللذين تحتها. على القمّة 75، وفي الصفّ الثاني اليسرى 35، وفي الصفّ الثالث اليمنى 19، وفي الأسفل اليمنى 7."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما العدد على البلاطة اليمنى من الصفّ الثاني؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "40",
+      "misconceptionSignatures": [
+        {
+          "value": "110",
+          "id": "MISC-NAQISA-SAMEOP"
+        },
+        {
+          "value": "-40",
+          "id": "MISC-NAQISA-REVSUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للجمع هي الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $40+35=75$ ، فالعدد الناقص هو $40$ .",
+        "incorrect": "في مجموع نطرح العدد المعلوم من الناتج: لا نجمع مرّة أخرى."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square+35=75$ .",
+          "نُرجع بالعملية العكسية: $\\square=75-35=40$ .",
+          "نتحقّق: $40+35=75$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما العدد على البلاطة الوسطى من الصفّ الثالث؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "21",
+      "misconceptionSignatures": [
+        {
+          "value": "59",
+          "id": "MISC-NAQISA-SAMEOP"
+        },
+        {
+          "value": "-21",
+          "id": "MISC-NAQISA-REVSUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للجمع هي الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $21+19=40$ ، فالعدد الناقص هو $21$ .",
+        "incorrect": "في مجموع نطرح العدد المعلوم من الناتج: لا نجمع مرّة أخرى."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square+19=40$ .",
+          "نُرجع بالعملية العكسية: $\\square=40-19=21$ .",
+          "نتحقّق: $21+19=40$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما العدد على البلاطة الثالثة من الصفّ الأسفل (التي على يسار البلاطة 7)؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "26",
+          "id": "MISC-NAQISA-SAMEOP"
+        },
+        {
+          "value": "-12",
+          "id": "MISC-NAQISA-REVSUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للجمع هي الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $12+7=19$ ، فالعدد الناقص هو $12$ .",
+        "incorrect": "في مجموع نطرح العدد المعلوم من الناتج: لا نجمع مرّة أخرى."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square+7=19$ .",
+          "نُرجع بالعملية العكسية: $\\square=19-7=12$ .",
+          "نتحقّق: $12+7=19$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "ما العدد على البلاطة اليسرى من الصفّ الثالث؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "value": "56",
+          "id": "MISC-NAQISA-SAMEOP"
+        },
+        {
+          "value": "-14",
+          "id": "MISC-NAQISA-REVSUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للجمع هي الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $14+21=35$ ، فالعدد الناقص هو $14$ .",
+        "incorrect": "في مجموع نطرح العدد المعلوم من الناتج: لا نجمع مرّة أخرى."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square+21=35$ .",
+          "نُرجع بالعملية العكسية: $\\square=35-21=14$ .",
+          "نتحقّق: $14+21=35$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "id": "ex-4am-barahin-ashia-l2-001",
+  "lessonCode": "barahin-ashia",
+  "level": 2,
+  "generator": {
+    "tool": "gen-barahin.mjs",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — قاعدة متوازي الأضلاع",
+    "estimatedMinutes": 3,
+    "tags": [
+      "قاعدة متوازي الأضلاع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_barahin-ashia_P1",
+      "modelledOn": "ex-20"
+    }
+  },
+  "statement": {
+    "content": "ABCD متوازي أضلاع (الشكل).",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          5,
+          0
+        ],
+        "C": [
+          7,
+          3
+        ],
+        "D": [
+          2,
+          3
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "A"
+        ]
+      ],
+      "labels": {
+        "A": "sw",
+        "B": "se",
+        "C": "ne",
+        "D": "nw"
+      },
+      "ariaLabel": "متوازي أضلاع ABCD",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "$\\overrightarrow{AB}$ + $\\overrightarrow{AD}$ يساوي:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{AC}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{BD}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-QAIDA-QUTR"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{DB}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-QAIDA-QUTR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الشعاعان لا يتتابعان: نهاية الأول B ومبدأ الثاني A ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $\\overrightarrow{AD}$ بشعاع يساويه مبدؤه B ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "في ABCD لدينا $\\overrightarrow{AD} = \\overrightarrow{BC}$ ؛ ثم علاقة شال."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AB} + \\overrightarrow{AD} = \\overrightarrow{AB} + \\overrightarrow{BC} = \\overrightarrow{AC}$ : القطر الصادر من A.",
+        "incorrect": "المجموع هو القطر الصادر من المبدأ المشترك A ، لا القطر الآخر."
+      }
+    }
+  ]
+}

@@ -1,0 +1,274 @@
+{
+  "id": "ex-3am-amaliyat-natiqa-l2-001",
+  "lessonCode": "amaliyat-natiqa",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — حساب عبارة وإشارة جداء دون حساب",
+    "estimatedMinutes": 14,
+    "tags": [
+      "العمليات على الأعداد الناطقة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 1,
+      "file": "3am-s1-4",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان $A$ و $B$ كما يلي، ثمّ عدّ العوامل السالبة في جداءين ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $A = \\dfrac{5}{6} - \\dfrac{3}{4} \\times \\dfrac{2}{9}$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "2/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1/54",
+          "id": "MISC-AMAL-PRIORITY"
+        },
+        {
+          "value": "-2/3",
+          "id": "MISC-AMAL-SUMSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليات الموجودة؟ وهل توجد أقواس أو كسر مركّب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح، ومع كلّ عملية نحدّد الإشارة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز عملية واحدة في كلّ سطر، ثمّ اكتب النتيجة غير القابلة للاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = \\dfrac{2}{3}$ .",
+        "incorrect": "احترم الأولويّة: الأقواس ثمّ الضرب والقسمة ثمّ الجمع والطرح، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "العاملان موجبان: الجداء موجب.",
+          "$\\dfrac{3}{4} \\times \\dfrac{2}{9} = \\dfrac{3 \\times 2}{4 \\times 9} = \\dfrac{6}{36} = \\dfrac{1}{6}$ .",
+          "$\\dfrac{5}{6} - \\dfrac{1}{6} = \\dfrac{5}{6} + \\left(-\\dfrac{1}{6}\\right)$ (طرح عدد هو جمع معاكسه).",
+          "العددان $\\dfrac{5}{6}$ و $-\\dfrac{1}{6}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $\\dfrac{5}{6}$ ، فإشارة المجموع موجبة.",
+          "$\\dfrac{5}{6} + \\left(-\\dfrac{1}{6}\\right) = \\dfrac{5 - 1}{6} = \\dfrac{2}{3}$ ."
+        ],
+        "result": "A = \\dfrac{2}{3}"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $B = \\left(\\dfrac{1}{2} - \\dfrac{7}{8}\\right) \\times \\left(-\\dfrac{4}{9}\\right)$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "1/6",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "-1/6",
+          "id": "MISC-AMAL-PRODSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليات الموجودة؟ وهل توجد أقواس أو كسر مركّب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح، ومع كلّ عملية نحدّد الإشارة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز عملية واحدة في كلّ سطر، ثمّ اكتب النتيجة غير القابلة للاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = \\dfrac{1}{6}$ .",
+        "incorrect": "احترم الأولويّة: الأقواس ثمّ الضرب والقسمة ثمّ الجمع والطرح، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "$\\dfrac{1}{2} - \\dfrac{7}{8} = \\dfrac{1}{2} + \\left(-\\dfrac{7}{8}\\right)$ (طرح عدد هو جمع معاكسه).",
+          "العددان $\\dfrac{1}{2}$ و $-\\dfrac{7}{8}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $-\\dfrac{7}{8}$ ، فإشارة المجموع سالبة.",
+          "$\\dfrac{1}{2} + \\left(-\\dfrac{7}{8}\\right) = \\dfrac{4}{8} - \\dfrac{7}{8} = \\dfrac{4 - 7}{8} = -\\dfrac{3}{8}$ .",
+          "العاملان سالبان: الجداء موجب.",
+          "$-\\dfrac{3}{8} \\times \\left(-\\dfrac{4}{9}\\right) = \\dfrac{3 \\times 4}{8 \\times 9} = \\dfrac{12}{72} = \\dfrac{1}{6}$ ."
+        ],
+        "result": "B = \\dfrac{1}{6}"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "حدّد، دون أن تحسب، إشارة العدد $P = \\left(-\\dfrac{3}{7}\\right) \\times 5{,}2 \\times \\left(-\\dfrac{8}{9}\\right) \\times \\left(-0{,}4\\right)$ .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "timeSeconds": 90,
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "العدد موجب تمامًا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AMAL-PRODSIGN"
+        },
+        {
+          "id": "B",
+          "content": "العدد سالب تمامًا",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "العدد معدوم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AMAL-PRODSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة كلّ عدد في العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في الجداء والقسمة: الإشارة موجبة إذا كان عدد العوامل السالبة زوجيًا؛ وفي الجمع: إشارة العدد الأبعد عن الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا حاجة إلى الحساب: يكفي عدّ الإشارات ومقارنة البعدين."
+        }
+      ],
+      "feedback": {
+        "correct": "الإجابة الصحيحة: العدد سالب تمامًا .",
+        "incorrect": "عدّ العوامل السالبة، أو قارن بعدَي العددين عن الصفر، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "عدد العوامل السالبة (في الجداء أو القسمة) هو $3$ ، وهو فردي، فإشارة العدد سالبة.",
+          "إذن العدد سالب تمامًا."
+        ]
+      }
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "حدّد، دون أن تحسب، إشارة العدد $Q = \\left(-\\dfrac{11}{4}\\right) \\div \\left(-\\dfrac{7}{9}\\right)$ .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "timeSeconds": 90,
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "العدد سالب تمامًا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AMAL-PRODSIGN"
+        },
+        {
+          "id": "B",
+          "content": "العدد معدوم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AMAL-PRODSIGN"
+        },
+        {
+          "id": "C",
+          "content": "العدد موجب تمامًا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة كلّ عدد في العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في الجداء والقسمة: الإشارة موجبة إذا كان عدد العوامل السالبة زوجيًا؛ وفي الجمع: إشارة العدد الأبعد عن الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا حاجة إلى الحساب: يكفي عدّ الإشارات ومقارنة البعدين."
+        }
+      ],
+      "feedback": {
+        "correct": "الإجابة الصحيحة: العدد موجب تمامًا .",
+        "incorrect": "عدّ العوامل السالبة، أو قارن بعدَي العددين عن الصفر، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "عدد العوامل السالبة (في الجداء أو القسمة) هو $2$ ، وهو زوجي، فإشارة العدد موجبة.",
+          "إذن العدد موجب تمامًا."
+        ]
+      }
+    }
+  ]
+}

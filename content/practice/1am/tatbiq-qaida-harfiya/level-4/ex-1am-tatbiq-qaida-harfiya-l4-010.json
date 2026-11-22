@@ -1,0 +1,258 @@
+{
+  "id": "ex-1am-tatbiq-qaida-harfiya-l4-010",
+  "lessonCode": "tatbiq-qaida-harfiya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — محيط أرضية بدلالة x",
+    "estimatedMinutes": 11,
+    "tags": [
+      "قاعدة حرفية",
+      "محيط",
+      "ثمن"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 3,
+      "file": "1am-s3-37",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "مخطّط أرضية قاعة طول كلّ ضلع فيه بالمتر، ومحيطها $P$ ، والمقدار $x$ عدد طبيعي أكبر من $20$ :",
+    "formulas": [
+      "P=(4\\times x+3)+(x+1)+20+(x+1)+45+(2\\times x+2)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $P$ من أجل $x=25$ .",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "272",
+      "misconceptionSignatures": [
+        {
+          "value": "172",
+          "id": "MISC-TATBIQ-ONCE"
+        },
+        {
+          "value": "178",
+          "id": "MISC-TATBIQ-PLUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما قيمة كلّ حرف؟ وفي كم موضع يظهر كلّ حرف في العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع القيمة في كلّ موضع يظهر فيه الحرف، وأعد إشارة الضرب بين العددين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب بالأولويات: ما بين القوسين، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: النتيجة $272$ .",
+        "incorrect": "الحرف المكتوب في موضعين يُعوَّض بقيمته في الموضعين معًا."
+      },
+      "solution": {
+        "lines": [
+          "نكتب القاعدة: $P=(4\\times x+3)+(x+1)+20+(x+1)+45+(2\\times x+2)$ .",
+          "نضع قيمة كلّ حرف في كلّ موضع يظهر فيه: $P=(4\\times 25+3)+(25+1)+20+(25+1)+45+(2\\times 25+2)$ .",
+          "نحسب: $P=(100+3)+(25+1)+20+(25+1)+45+(50+2)$ .",
+          "نحسب: $P=103+26+20+26+45+52$ .",
+          "نحسب: $P=129+20+26+45+52$ .",
+          "نحسب: $P=149+26+45+52$ .",
+          "نحسب: $P=175+45+52$ .",
+          "نحسب: $P=220+52$ .",
+          "نحسب: $P=272$ .",
+          "الجواب: $P=272$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $P$ من أجل $x=40$ .",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "392",
+      "misconceptionSignatures": [
+        {
+          "value": "232",
+          "id": "MISC-TATBIQ-ONCE"
+        },
+        {
+          "value": "238",
+          "id": "MISC-TATBIQ-PLUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما قيمة كلّ حرف؟ وفي كم موضع يظهر كلّ حرف في العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع القيمة في كلّ موضع يظهر فيه الحرف، وأعد إشارة الضرب بين العددين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب بالأولويات: ما بين القوسين، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: النتيجة $392$ .",
+        "incorrect": "الحرف المكتوب في موضعين يُعوَّض بقيمته في الموضعين معًا."
+      },
+      "solution": {
+        "lines": [
+          "نكتب القاعدة: $P=(4\\times x+3)+(x+1)+20+(x+1)+45+(2\\times x+2)$ .",
+          "نضع قيمة كلّ حرف في كلّ موضع يظهر فيه: $P=(4\\times 40+3)+(40+1)+20+(40+1)+45+(2\\times 40+2)$ .",
+          "نحسب: $P=(160+3)+(40+1)+20+(40+1)+45+(80+2)$ .",
+          "نحسب: $P=163+41+20+41+45+82$ .",
+          "نحسب: $P=204+20+41+45+82$ .",
+          "نحسب: $P=224+41+45+82$ .",
+          "نحسب: $P=265+45+82$ .",
+          "نحسب: $P=310+82$ .",
+          "نحسب: $P=392$ .",
+          "الجواب: $P=392$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ثمن المتر الواحد من الشريط $300$ دج. ما ثمن الشريط اللازم لمحيط طوله $272$ م؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "81600",
+      "misconceptionSignatures": [],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما قيمة كلّ حرف؟ وفي كم موضع يظهر كلّ حرف في العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع القيمة في كلّ موضع يظهر فيه الحرف، وأعد إشارة الضرب بين العددين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب بالأولويات: ما بين القوسين، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: النتيجة $81600$ .",
+        "incorrect": "نضع القيمة في كلّ موضع ثمّ نحسب بالأولويات."
+      },
+      "solution": {
+        "lines": [
+          "نكتب العبارة: $272\\times 300$ .",
+          "نحسب: $81600$ .",
+          "الجواب: $81600$ ."
+        ]
+      },
+      "timeSeconds": 90,
+      "counted": false
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "تملك البلديّة $80\\,000$ دج. هل تكفي لشريط محيط الأرضية التي $x=25$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-ORDER"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما القاعدة في كلّ حالة؟ وما القيم المعطاة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القيمتين كلتيهما بالقاعدة المناسبة لكلّ حالة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن النتيجتين ثمّ أجب عن السؤال."
+        }
+      ],
+      "feedback": {
+        "correct": "قارنّا القيمة المحسوبة بالمبلغ المتوفّر.",
+        "incorrect": "نحسب ما بين القوسين أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "نحسب: $((4\\times 25+3)+(25+1)+20+(25+1)+45+(2\\times 25+2))\\times 300=81600$ .",
+          "نقارن مع $80000$ : المبلغ غير كافٍ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-talis-l1-006",
+  "lessonCode": "wadiya-idmajiya-talis",
+  "level": 1,
+  "metadata": {
+    "title": "أسطوانة داخل مخروط: نصف القطر ثم الحجم",
+    "estimatedMinutes": 6,
+    "tags": [
+      "أسطوانة",
+      "مخروط",
+      "المقطع المحوري"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-talis_P2",
+      "modelledOn": null,
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-talis-l1-006"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "أسطوانة دوران ارتفاعها $h = 4\\,\\mathrm{cm}$ مرسومة داخل مخروط دوران ارتفاعه $10\\,\\mathrm{cm}$ ونصف قطر قاعدته $5\\,\\mathrm{cm}$ : قاعدتها على قاعدة المخروط، ودائرتها العليا على سطحه."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب نصف قطر الأسطوانة $r$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في نصف المقطع المحوري: المثلث الصغير فوق الأسطوانة والمثلث الكبير (نصف مقطع المخروط) في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ارتفاع المثلث الصغير هو $10 - 4$ : اكتب $\\dfrac{r}{5} = \\dfrac{10 - 4}{10}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{r}{5} = \\dfrac{6}{10}$ ومنه $r = 3\\,\\mathrm{cm}$ .",
+        "incorrect": "ارتفاع المثلث الصغير هو ارتفاع المخروط ناقص ارتفاع الأسطوانة، لا ارتفاع الأسطوانة نفسه."
+      },
+      "solution": {
+        "lines": [
+          "في نصف المقطع المحوري، حسب خاصية طالس: $\\dfrac{r}{5} = \\dfrac{10 - h}{10}$",
+          "$\\dfrac{r}{5} = \\dfrac{10 - 4}{10} = \\dfrac{6}{10}$",
+          "$r = \\dfrac{6 \\times 5}{10}$"
+        ],
+        "result": "r = 3\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "نكتب حجم الأسطوانة على الشكل $V = k\\pi\\,\\mathrm{cm}^3$ . أعط العدد $k$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $k$ فقط",
+      "expectedAnswer": "36",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-TALIS-TARBI-MANSI"
+        },
+        {
+          "value": "144",
+          "id": "MISC-TALIS-QUTR-BADAL-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$V = \\pi \\times r^2 \\times h$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض بنصف القطر الذي حسبته و $h = 4\\,\\mathrm{cm}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$V = \\pi \\times 3^2 \\times 4 = 36\\pi\\,\\mathrm{cm}^3$ .",
+        "incorrect": "في $V = \\pi r^2 h$ يُربَّع نصف القطر وحده، ولا نستعمل القطر."
+      },
+      "solution": {
+        "lines": [
+          "$V = \\pi \\times r^2 \\times h$",
+          "$V = \\pi \\times 3^2 \\times 4$"
+        ],
+        "result": "V = 36\\pi\\,\\mathrm{cm}^3"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

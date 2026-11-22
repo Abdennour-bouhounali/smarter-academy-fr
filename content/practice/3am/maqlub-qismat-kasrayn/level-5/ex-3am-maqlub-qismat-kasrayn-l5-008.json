@@ -1,0 +1,320 @@
+{
+  "id": "ex-3am-maqlub-qismat-kasrayn-l5-008",
+  "lessonCode": "maqlub-qismat-kasrayn",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — عصير حفل المدرسة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "قسمة",
+      "كسر",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: أعدّت لجنة حفل المدرسة $\\dfrac{9}{2}$ لترات من العصير، وقد تعاون أعضاؤها في تحضيره.\nالجزء الثاني: وصل عدد إضافي من الضيوف، وتريد اللجنة أن يحصل كلّ ضيف على الحصّة نفسها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "كم كوبًا سعته $\\dfrac{3}{8}$ لتر يملأ العصير؟",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "27/16",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "1/12",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "16/27",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ الكسرين هو المقسوم وأيّهما المقسوم عليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني: نقلب المقسوم عليه وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء، اختزل العوامل المشتركة قبل الضرب، ثمّ اكتب الناتج على أبسط شكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9}{2} \\div \\dfrac{3}{8} = 12$ لأنّ قسمة كسر على كسر هي ضرب الأوّل في مقلوب الثاني.",
+        "incorrect": "لقسمة كسر على كسر نضرب الأوّل في مقلوب الثاني فقط، ثمّ نختزل؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $\\dfrac{9}{2} \\div \\dfrac{3}{8} = \\dfrac{9}{2} \\times \\dfrac{8}{3}$ .",
+          "$= \\dfrac{9 \\times 8}{2 \\times 3} = 12$ ."
+        ],
+        "result": "12"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "إذا وُزّع العصير بالتساوي على $12$ ضيفًا، فما نصيب كلّ ضيف باللتر؟ اكتب الناتج على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "3/8",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "54",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "8/3",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "1/54",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المقسوم؟ وما العدد المقسوم عليه؟ وما مقلوب هذا الأخير؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد غير معدوم هي الضرب في مقلوبه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حوّل القسمة إلى جداء، واختزل قبل أن تضرب كلّما أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9}{2} \\div 12 = \\dfrac{3}{8}$ لأنّ القسمة على عدد هي الضرب في مقلوبه.",
+        "incorrect": "القسمة على عدد غير معدوم هي الضرب في مقلوبه؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $\\dfrac{9}{2} \\div 12 = \\dfrac{9}{2} \\times \\dfrac{1}{12}$ .",
+          "$= \\dfrac{9 \\times 1}{2 \\times 12} = \\dfrac{3}{8}$ ."
+        ],
+        "result": "\\dfrac{3}{8}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "حضر $15$ ضيفًا وتقاسموا العصير بالتساوي: ما نصيب كلّ ضيف باللتر؟ اكتب الناتج على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "3/10",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "135/2",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "10/3",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "2/135",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المقسوم؟ وما العدد المقسوم عليه؟ وما مقلوب هذا الأخير؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد غير معدوم هي الضرب في مقلوبه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حوّل القسمة إلى جداء، واختزل قبل أن تضرب كلّما أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9}{2} \\div 15 = \\dfrac{3}{10}$ لأنّ القسمة على عدد هي الضرب في مقلوبه.",
+        "incorrect": "القسمة على عدد غير معدوم هي الضرب في مقلوبه؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $\\dfrac{9}{2} \\div 15 = \\dfrac{9}{2} \\times \\dfrac{1}{15}$ .",
+          "$= \\dfrac{9 \\times 1}{2 \\times 15} = \\dfrac{3}{10}$ ."
+        ],
+        "result": "\\dfrac{3}{10}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "كم لترًا ينقص ليحصل كلّ ضيف من الـ $15$ على كوب سعته $\\dfrac{3}{8}$ لتر؟ اكتب الناتج على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "9/8",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كل سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9}{8}$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$15$ كوبًا تحتاج $15 \\times \\dfrac{3}{8} = \\dfrac{45}{8}$ لتر.",
+          "ينقص $\\dfrac{45}{8} - \\dfrac{9}{2} = \\dfrac{45}{8} - \\dfrac{36}{8} = \\dfrac{9}{8}$ لتر."
+        ],
+        "result": "\\dfrac{9}{8}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ج",
+      "statement": "هل يكفي العصير لـ $15$ كوبًا سعة كلّ منها $\\dfrac{3}{8}$ لتر؟",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، يكفي",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا، لا يكفي",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الخيارات واحسب كلاّ منها بدل أن تخمّن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ خيار على الأعداد الواردة فيه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حوّل القسمة إلى جداء بمقلوب القاسم، ثمّ قارن."
+        }
+      ],
+      "feedback": {
+        "correct": "العصير يملأ $12$ كوبًا فقط وهو أقلّ من $15$ .",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "العصير يملأ $12$ كوبًا فقط، و $12 < 15$ ."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

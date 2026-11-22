@@ -1,0 +1,215 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l4-007",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — برتقال الفلاح",
+    "estimatedMinutes": 10,
+    "tags": [
+      "ضرب",
+      "أكياس",
+      "باقٍ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثالث",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "جنى فلاح 36 صندوقًا من البرتقال، في كل صندوق 24 برتقالة. يعبّئها في أكياس من 50 برتقالة، ويُهدي ما يتبقّى لجيرانه."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب عدد البرتقالات المجنيّة.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "864",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الصناديق × عدد البرتقالات في الصندوق."
+        }
+      ],
+      "feedback": {
+        "correct": "$36 \\times 24 = 864$.",
+        "incorrect": "اضرب عدد الصناديق في عدد البرتقالات في كل صندوق."
+      },
+      "solution": {
+        "lines": [
+          "$36 \\times 24 = 864$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "كم كيسًا مملوءًا يحصل عليه؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الأكياس",
+      "expectedAnswer": "17",
+      "misconceptionSignatures": [
+        {
+          "value": "14",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "16",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "18",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 864 من 50 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 50 دون أن نتجاوز 864."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$864 = 50 \\times 17 + 14$ و $14 < 50$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 50 فلا يتجاوز الجداء 864، والباقي عندئذ أصغر من 50."
+      },
+      "solution": {
+        "lines": [
+          "$50 \\times 17 = 850$ و $50 \\times 18 = 900$",
+          "$850 \\le 864 < 900$ ، إذن الحاصل هو 17."
+        ],
+        "result": "q = 17"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "كم برتقالة يُهدي لجيرانه؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد البرتقالات",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "value": "17",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "64",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 864."
+        }
+      ],
+      "feedback": {
+        "correct": "$864 - 50 \\times 17 = 864 - 850 = 14$ ، و $14 < 50$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 50."
+      },
+      "solution": {
+        "lines": [
+          "$864 = 50 \\times 17 + 14$",
+          "$14 < 50$ ، إذن الباقي هو 14."
+        ],
+        "result": "r = 14"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "يبيع الكيس بـ 180 دج: احسب ثمن الأكياس المملوءة.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "3060",
+      "misconceptionSignatures": [
+        {
+          "value": "3240",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الأكياس المملوءة × ثمن الكيس."
+        }
+      ],
+      "feedback": {
+        "correct": "$17 \\times 180 = 3060$ دج.",
+        "incorrect": "يباع فقط عدد الأكياس المملوءة."
+      },
+      "solution": {
+        "lines": [
+          "$17 \\times 180 = 3060$"
+        ],
+        "result": "3060 \\text{ DA}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

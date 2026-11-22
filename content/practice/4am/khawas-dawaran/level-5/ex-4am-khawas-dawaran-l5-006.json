@@ -1,0 +1,78 @@
+{
+  "id": "ex-4am-khawas-dawaran-l5-006",
+  "lessonCode": "khawas-dawaran",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — عنفة أدرار: مثلث القمم",
+    "estimatedMinutes": 4,
+    "tags": [
+      "متقايس الأضلاع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_khawas-dawaran_P2",
+      "modelledOn": "know-3"
+    }
+  },
+  "generator": {
+    "tool": "u13-khawas-dawaran/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "قمم شفرات عنفة رياح في أدرار A و B و C: B صورة A و C صورة B بالدوران الذي مركزه O وزاويته $120^\\circ$ ، و $OA = 25\\,\\mathrm{m}$ . في المثلث OAB متساوي الساقين ($\\widehat{AOB} = 120^\\circ$) نجد $AB = 25\\sqrt{3}\\,\\mathrm{m}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "محيط المثلث ABC:",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$75\\sqrt{3}\\,\\mathrm{m}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$75\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-DIL"
+        },
+        {
+          "id": "C",
+          "content": "$25\\sqrt{3}\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-KHAWAS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "[BC] صورة [AB]، و [CA] صورة [BC]."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأضلاع الثلاثة متساوية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المحيط مجموع الأضلاع."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = BC = CA = 25\\sqrt{3}$ : المحيط $3 \\times 25\\sqrt{3}$ .",
+        "incorrect": "الضلع ليس نصف القطر، والمحيط مجموع ثلاثة أضلاع."
+      }
+    }
+  ]
+}

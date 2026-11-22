@@ -22,6 +22,7 @@ class RegistrationLegalConsentTest extends TestCase
     private function payload(array $overrides = []): array
     {
         return array_merge([
+            'firstName' => 'أمين', 'lastName' => 'بن علي',
             'email' => 'nouvelle@example.com',
             'password' => 'password123',
             'accept_legal' => true,

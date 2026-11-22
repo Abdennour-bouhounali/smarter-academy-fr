@@ -1,0 +1,366 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muthallathat-l5-009",
+  "lessonCode": "wadiya-idmajiya-muthallathat",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2010 — سلك تعليق لوحة على جدار",
+    "estimatedMinutes": 30,
+    "tags": [
+      "وضعية إدماجية",
+      "العلاقات المثلثية",
+      "جيب التمام",
+      "خاصية فيثاغورس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-muthallathat_P1",
+      "modelledOn": "BEM 2010 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2010",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "لتعليق لوحة على جدار، يُشدّ سلك طوله $70\\,\\mathrm{cm}$ بين حلقتين $A$ و $B$ مثبّتتين على الحافة العليا الأفقية للوحة حيث $AB = 50\\,\\mathrm{cm}$ ، ثم يُعلّق السلك من منتصفه على مسمار $N$ ، فيتشكّل المثلث $NAB$ المتقايس الضلعين ( $NA = NB = 35\\,\\mathrm{cm}$ ). $H$ منتصف $[AB]$ (الشكل المقابل). يعلّق أحد التلاميذ اللوحة في القسم بعد أن ينظّف الجدار.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          50,
+          0
+        ],
+        "H": [
+          25,
+          0
+        ],
+        "N": [
+          25,
+          24.4949
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "H"
+        ],
+        [
+          "H",
+          "B"
+        ],
+        {
+          "from": "N",
+          "to": "A",
+          "label": "35 cm"
+        },
+        {
+          "from": "N",
+          "to": "B",
+          "label": "35 cm"
+        },
+        {
+          "from": "N",
+          "to": "H",
+          "dashed": true
+        }
+      ],
+      "rightAngles": [
+        [
+          "N",
+          "H",
+          "B"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "A",
+          "from": "H",
+          "to": "N"
+        }
+      ],
+      "labels": {
+        "A": "sw",
+        "B": "se",
+        "H": "s",
+        "N": "n"
+      },
+      "ariaLabel": "السلك [AN] و [NB] طول كل منهما 35 cm معلّق على المسمار N؛ الحلقتان A و B على الحافة العليا للوحة و H منتصف [AB]",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $\\cos\\widehat{NAB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري",
+      "expectedAnswer": "5/7",
+      "misconceptionSignatures": [
+        {
+          "value": "7/5",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        },
+        {
+          "value": "10/7",
+          "id": "MISC-TALIS-QUTR-BADAL-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المتوسط $[NH]$ في المثلث المتقايس الضلعين عمودي على القاعدة: المثلث $NHA$ قائم في $H$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$AH = \\dfrac{AB}{2}$ ، و $[NA]$ وتر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\cos\\widehat{NAB} = \\dfrac{AH}{NA} = \\dfrac{25}{35} = \\dfrac{5}{7}$ .",
+        "incorrect": "في المثلث القائم $NHA$ الضلع المجاور هو $[AH]$ أي نصف $AB$ ."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $NAB$ متقايس الضلعين و $H$ منتصف $[AB]$ ، فـ $(NH) \\perp (AB)$ و $AH = 25$ .",
+          "في المثلث $NHA$ القائم في $H$ : $\\cos\\widehat{NAH} = \\dfrac{AH}{NA} = \\dfrac{25}{35}$"
+        ],
+        "result": "\\cos\\widehat{NAB} = \\dfrac{5}{7}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب القيمة المضبوطة لـ $\\sin\\widehat{NAB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{2\\sqrt{6}}{7}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{2}{7}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-JAMA-NISAB"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{24}{49}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-JADHR-NASI"
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{\\sqrt{24}}{49}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-TARBI-BASTI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\sin^2\\widehat{NAB} = 1 - \\cos^2\\widehat{NAB}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$1 - \\dfrac{25}{49} = \\dfrac{24}{49}$ ، ثم جذر البسط على جذر المقام، و $\\sqrt{24} = 2\\sqrt{6}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin\\widehat{NAB} = \\sqrt{\\dfrac{24}{49}} = \\dfrac{2\\sqrt{6}}{7}$ .",
+        "incorrect": "العلاقة تخص المربعين، وجذر كسر هو جذر البسط على جذر المقام."
+      },
+      "solution": {
+        "lines": [
+          "$\\sin^2\\widehat{NAB} = 1 - \\left(\\dfrac{5}{7}\\right)^2 = 1 - \\dfrac{25}{49} = \\dfrac{24}{49}$",
+          "$\\sin\\widehat{NAB}$ موجب: $\\sin\\widehat{NAB} = \\dfrac{\\sqrt{24}}{\\sqrt{49}} = \\dfrac{\\sqrt{4 \\times 6}}{7}$"
+        ],
+        "result": "\\sin\\widehat{NAB} = \\dfrac{2\\sqrt{6}}{7}"
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أعط المدوّر إلى الوحدة من الدرجة لقيس الزاوية $\\widehat{NAB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: القيس بالدرجة مدوّرا إلى الوحدة",
+      "expectedAnswer": "44",
+      "misconceptionSignatures": [
+        {
+          "value": "46",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل اللمسة العكسية للنسبة في آلة حاسبة مبرمجة على الدرجة، ثم دوّر في آخر الحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{NAB} \\approx 44{,}42^{\\circ}$ ، أي $44^{\\circ}$ .",
+        "incorrect": "اللمسة العكسية لجيب التمام بالقيمة المضبوطة $\\dfrac{5}{7}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\cos\\widehat{NAB} = \\dfrac{5}{7}$",
+          "باستعمال الآلة الحاسبة: $\\widehat{NAB} \\approx 44{,}4153^{\\circ}$"
+        ],
+        "result": "\\widehat{NAB} \\approx 44^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "احسب المسافة $NH$ بين المسمار والحافة العليا للوحة بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm مدوّرا إلى 0,1",
+      "expectedAnswer": "24.5",
+      "misconceptionSignatures": [
+        {
+          "value": "60",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $NHA$ القائم في $H$ : $[NH]$ مقابل للزاوية $\\widehat{NAB}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل $\\sin\\widehat{NAB}$ المضبوط، أو خاصية فيثاغورس."
+        }
+      ],
+      "feedback": {
+        "correct": "$NH = 35 \\times \\dfrac{2\\sqrt{6}}{7} = 10\\sqrt{6} \\approx 24{,}5\\,\\mathrm{cm}$ .",
+        "incorrect": "المقابل = الوتر × الجيب (أو $NH^2 = NA^2 - AH^2$ )."
+      },
+      "solution": {
+        "lines": [
+          "$NH = NA \\times \\sin\\widehat{NAB} = 35 \\times \\dfrac{2\\sqrt{6}}{7} = 10\\sqrt{6}$",
+          "تحقّق بخاصية فيثاغورس: $NH^2 = 35^2 - 25^2 = 600 = (10\\sqrt{6})^2$",
+          "$NH \\approx 24{,}4949$"
+        ],
+        "result": "NH \\approx 24{,}5\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "☜ يريد صاحب اللوحة أن تكون حافتها العليا على بعد $20\\,\\mathrm{cm}$ تماما تحت المسمار، مع بقاء $AB = 50\\,\\mathrm{cm}$ . احسب طول السلك اللازم بالتدوير إلى الوحدة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بـ cm مدوّرا إلى الوحدة",
+      "expectedAnswer": "64",
+      "misconceptionSignatures": [
+        {
+          "value": "90",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث القائم الجديد: $AH = 25$ و $NH = 20$ ، والسلك وتران متقايسان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الوتر بخاصية فيثاغورس ثم ضاعفه."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times \\sqrt{25^2 + 20^2} = 2\\sqrt{1025} \\approx 64{,}03$ أي $64\\,\\mathrm{cm}$ .",
+        "incorrect": "السلك نصفان، كل منهما وتر مثلث قائم ضلعاه $25$ و $20$ ."
+      },
+      "solution": {
+        "lines": [
+          "$NA^2 = AH^2 + NH^2 = 625 + 400 = 1025$ ومنه $NA = \\sqrt{1025}$",
+          "طول السلك: $2 \\times \\sqrt{1025} \\approx 64{,}0312$"
+        ],
+        "result": "L \\approx 64\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

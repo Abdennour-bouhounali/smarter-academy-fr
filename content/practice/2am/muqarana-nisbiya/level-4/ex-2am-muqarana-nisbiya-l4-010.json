@@ -1,0 +1,196 @@
+{
+  "id": "ex-2am-muqarana-nisbiya-l4-010",
+  "lessonCode": "muqarana-nisbiya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — حصر عدد بين صحيحين متتاليين ثم عدّ",
+    "estimatedMinutes": 9,
+    "tags": [
+      "حصر",
+      "عددان صحيحان متتاليان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "سجّل فريق التطوّع لتنظيف الشاطئ مناسيب ثلاث نقاط بالنسبة إلى مستوى البحر، ومن بينها $-7{,}3$ m و $-5{,}1$ m."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "اختر الحصر الصحيح للعدد $-7{,}3$ بين عددين صحيحين متتاليين.",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-7 < -7{,}3 < -8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-IBS"
+        },
+        {
+          "id": "B",
+          "content": "$-8 < -7{,}3 < -7$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$-7{,}3 < -7 < -8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-SRR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العدد على المستقيم المدرّج بين عددين صحيحين متتاليين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأكبر والأصغر يُحدَّدان بالموضع على المستقيم المدرّج، وليس بالقيمة دون إشارة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بترتيب العدد الصحيح الذي وجدته مع العدد المعطى."
+        }
+      ],
+      "feedback": {
+        "correct": "$-8 < -7{,}3 < -7$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$8 > 7{,}3 > 7$ والأعداد سالبة",
+          "$-8 < -7{,}3 < -7$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما أصغر عدد صحيح محصور بين $-7{,}3$ و $-5{,}1$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "-7",
+      "misconceptionSignatures": [
+        {
+          "value": "-8",
+          "id": "MISC-MUQARANA-NISBIYA-BDG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العدد على المستقيم المدرّج بين عددين صحيحين متتاليين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأكبر والأصغر يُحدَّدان بالموضع على المستقيم المدرّج، وليس بالقيمة دون إشارة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بترتيب العدد الصحيح الذي وجدته مع العدد المعطى."
+        }
+      ],
+      "feedback": {
+        "correct": "$-8 < -7{,}3$ فلا يصلح، والأصغر الصالح هو $-7$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$x > -7{,}3$",
+          "أصغر عدد صحيح أكبر من $-7{,}3$ هو $-7$"
+        ],
+        "result": "-7"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "كم عددًا صحيحًا محصورًا بين $-7{,}3$ و $-5{,}1$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-MUQARANA-NISBIYA-BDG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الأعداد الصحيحة الواقعة بين الحدّين واحدًا واحدًا على المستقيم المدرّج."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المتباينة صارمة: الحدّان نفسهما لا يُحسبان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ الصفر والأعداد الصحيحة السالبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$-7$ و $-6$ : عددان.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$-7{,}3 < x < -5{,}1$",
+          "$x \\in \\{-7, -6\\}$",
+          "عددان"
+        ],
+        "result": "2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

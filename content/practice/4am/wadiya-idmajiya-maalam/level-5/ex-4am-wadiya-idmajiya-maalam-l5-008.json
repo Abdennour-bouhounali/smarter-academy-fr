@@ -1,0 +1,168 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-maalam-l5-008",
+  "lessonCode": "wadiya-idmajiya-maalam",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — جولة توصيل",
+    "estimatedMinutes": 6,
+    "tags": [
+      "متوازي أضلاع",
+      "طبيعة شكل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-maalam_P3",
+      "modelledOn": "method-proof"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "جولة لسائق توصيل تمرّ بالنقط $A(-2\\,;\\,-1)$ ثم $B(2\\,;\\,2)$ ثم $C(5\\,;\\,-2)$ ثم D ثم تعود إلى A، حيث ABCD متوازي أضلاع (معلم متعامد ومتجانس، الوحدة $1\\,\\mathrm{km}$). يتحقّق السائق من كل طلبية قبل تسليمها ليؤدّي الأمانة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا D:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الثنائية (x ; y)",
+      "expectedAnswer": {
+        "x": "1",
+        "y": "-5"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{AB} = \\overrightarrow{DC}$"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\overrightarrow{AB}\\begin{pmatrix} 4 \\\\ 3 \\end{pmatrix}$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$D = C - \\overrightarrow{AB}$"
+        }
+      ],
+      "feedback": {
+        "correct": "$D(5 - 4\\,;\\,-2 - 3) = (1\\,;\\,-5)$ .",
+        "incorrect": "متوازي الأضلاع ABCD: $\\overrightarrow{AB} = \\overrightarrow{DC}$ ."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 5
+    },
+    {
+      "id": "q2",
+      "statement": "طول الجولة (بالكيلومتر):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "20",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AB = 5$"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$BC = \\sqrt{9 + 16}$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المحيط $2(AB + BC)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = BC = 5$ ، والجولة $4 \\times 5 = 20\\,\\mathrm{km}$ .",
+        "incorrect": "احسب ضلعين متتاليين ثم المحيط."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "28",
+          "id": "MISC-MAALAM-MASAFA-JADHR-JAM"
+        }
+      ],
+      "difficulty": 5
+    },
+    {
+      "id": "q3",
+      "statement": "الرباعي ABCD هو:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "متوازي أضلاع فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "B",
+          "content": "معيّن ليس مربعا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "C",
+          "content": "مستطيل ليس مربعا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "D",
+          "content": "مربع",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AB = BC$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$AC^2$ و $BD^2$ ؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$AC^2 = BD^2 = 50$"
+        }
+      ],
+      "feedback": {
+        "correct": "ضلعان متتاليان متقايسان (معيّن) وقطران متقايسان $AC^2 = BD^2 = 50$ (مستطيل): مربع.",
+        "incorrect": "معيّن + قطران متقايسان = مربع."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 5
+    }
+  ]
+}

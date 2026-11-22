@@ -1,0 +1,231 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l5-003",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — ذاكرة الهاتف",
+    "estimatedMinutes": 6,
+    "tags": [
+      "مسألة",
+      "الأوكتي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يحمل هاتف مريم ذاكرة سعتها $64\\ \\mathrm{Go}$ . نعلم أنّ $1\\ \\mathrm{Go} = 1\\,000\\,000\\,000$ أوكتي وأنّ $1\\ \\mathrm{Mo} = 1\\,000\\,000$ أوكتي. صورة مريم تشغل $4\\ \\mathrm{Mo}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "الجزء الأول. $1\\ \\mathrm{Go} = 1\\,000\\,000\\,000$ أوكتي $= 10^{n}$ أوكتي : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ الأصفار الواقعة بعد الرقم 1 في هذا العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأسّ هو عدد الأصفار بعد الرقم 1، وليس عدد أرقام العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدّ الأصفار صفرًا صفرًا بدءًا من الرقم 1 حتى آخر العدد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-ASHARA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\ \\mathrm{Go} = 10^{9}$ أوكتي.",
+        "incorrect": "عدّ الأصفار (أو رتبة الرقم 1 بعد الفاصلة) بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,000\\,000\\,000$ هو 1 متبوع بتسعة أصفار.",
+          "$1\\,000\\,000\\,000 = 10^{9}$ ."
+        ],
+        "result": "n = 9"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم أوكتي تشغل صورة مريم؟",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم أوكتي في ميغا أوكتي واحد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب 4 في ذلك العدد: أزح الفاصلة نحو اليمين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من عدد الأصفار."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "4000000",
+      "misconceptionSignatures": [
+        {
+          "value": "400000",
+          "id": "MISC-ASHARA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 1\\,000\\,000 = 4\\,000\\,000$ أوكتي.",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$4\\ \\mathrm{Mo} = 4 \\times 1\\,000\\,000$ أوكتي.",
+          "$= 4\\,000\\,000$ أوكتي."
+        ],
+        "result": "4\\,000\\,000"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "الجزء الثاني. نكتب سعة الذاكرة بالأوكتي $64 \\times 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم أوكتي في Go واحد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السعة هي 64 مضروبة في ذلك العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأسّ هو عدد أصفار $1\\ \\mathrm{Go}$ بالأوكتي."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-ASHARA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$64\\ \\mathrm{Go} = 64 \\times 10^{9}$ أوكتي.",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$1\\ \\mathrm{Go} = 10^{9}$ أوكتي.",
+          "$64\\ \\mathrm{Go} = 64 \\times 10^{9}$ أوكتي."
+        ],
+        "result": "n = 9"
+      }
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "كم ميغا أوكتي في $1\\ \\mathrm{Go}$ ؟ (اقسم $1\\,000\\,000\\,000$ على $1\\,000\\,000$)",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم أوكتي في Go؟ وكم أوكتي في Mo؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد الأول على الثاني: احذف الأصفار المشتركة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "النتيجة 1 متبوع بأصفار."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "1000",
+      "misconceptionSignatures": [
+        {
+          "value": "100",
+          "id": "MISC-ASHARA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\,000\\,000\\,000 \\div 1\\,000\\,000 = 1\\,000$ ميغا أوكتي.",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "احذف ستّة أصفار من $1\\,000\\,000\\,000$ فيبقى $1\\,000$ .",
+          "إذن $1\\ \\mathrm{Go} = 1\\,000\\ \\mathrm{Mo}$ ."
+        ],
+        "result": "1\\,000"
+      }
+    }
+  ]
+}

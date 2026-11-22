@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l1-005",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — متوازي أضلاع",
+    "estimatedMinutes": 3,
+    "tags": [
+      "متوازي الأضلاع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_shuaayn-mutasawiyayn_P2",
+      "modelledOn": "method-equal"
+    }
+  },
+  "statement": {
+    "content": "ABCD متوازي أضلاع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أيّ مساواة صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{AB} = \\overrightarrow{CD}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{AD} = \\overrightarrow{CB}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{AB} = \\overrightarrow{DC}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم متوازي الأضلاع ABCD بترتيب رؤوسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلعان المتقابلان [AB] و [DC] متوازيان ومتقايسان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقرأ الضلعين المتقابلين في الاتجاه نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "في متوازي الأضلاع ABCD: الشعاعان AB و DC يسيران في الاتجاه نفسه ولهما نفس الطول.",
+        "incorrect": "ارسم الشكل وتتبّع اتجاه كل شعاع."
+      }
+    }
+  ]
+}

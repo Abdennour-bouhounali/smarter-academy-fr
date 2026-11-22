@@ -1,0 +1,201 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-khattiya-l4-002",
+  "lessonCode": "wadiya-idmajiya-khattiya",
+  "level": 4,
+  "metadata": {
+    "title": "ثلاثة بالغين وطفلان",
+    "estimatedMinutes": 10,
+    "tags": [
+      "دالة خطية",
+      "نسبة مئوية",
+      "ميزانية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-khattiya_P2",
+      "modelledOn": "situation",
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-khattiya-l4-002"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تركب عائلة مكوّنة من 3 بالغين وطفلين المصعد الهوائي. نسمّي $x$ سعر تذكرة البالغ (بـ DA)، ويستفيد كل طفل من تخفيض 30% من $x$ . ميزانية العائلة للرحلة 2200DA، ادّخرها أفرادها بالتعاون."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عبّر عن تكلفة رحلة العائلة $C(x)$ بدلالة $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المعامل $a$ فقط في $C(x) = ax$ (عشري بالفاصلة)",
+      "expectedAnswer": "4,4",
+      "misconceptionSignatures": [
+        {
+          "value": "3.6",
+          "id": "MISC-TAKHFID-NISBA"
+        },
+        {
+          "value": "5",
+          "id": "MISC-TARRID-NAMUDHAJ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل طفل يدفع $70\\%$ من $x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع ما يدفعه البالغون وما يدفعه الطفلان."
+        }
+      ],
+      "feedback": {
+        "correct": "$C(x) = 3x + 2 \\times 0{,}7x = 4{,}4x$ .",
+        "incorrect": "الطفل يدفع $0{,}7x$ ، لا $0{,}3x$ ."
+      },
+      "solution": {
+        "lines": [
+          "يدفع كل طفل $x - 0{,}3x = 0{,}7x$ .",
+          "$C(x) = 3x + 2 \\times 0{,}7x = 3x + 1{,}4x = 4{,}4x$"
+        ],
+        "result": "C(x) = 4{,}4x"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب تكلفة الرحلة إذا كان $x = 450$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: التكلفة بـ DA",
+      "expectedAnswer": "1980",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $C(450)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$C(450) = 4{,}4 \\times 450 = 1980$ DA.",
+        "incorrect": "عوّض $x$ بـ 450."
+      },
+      "solution": {
+        "lines": [
+          "$C(450) = 4{,}4 \\times 450 = 1980$"
+        ],
+        "result": "C(450) = 1980"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "عيّن أكبر سعر لتذكرة البالغ يسمح للعائلة بالرحلة في حدود ميزانيتها.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: السعر بـ DA",
+      "expectedAnswer": "500",
+      "misconceptionSignatures": [
+        {
+          "value": "9680",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ $4{,}4x \\leq 2200$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$4{,}4x \\leq 2200$ معناه $x \\leq 500$ : أكبر سعر 500DA.",
+        "incorrect": "أكبر سعر هو العدد الذي صورته الميزانية."
+      },
+      "solution": {
+        "lines": [
+          "$4{,}4x \\leq 2200$",
+          "$x \\leq \\dfrac{2200}{4{,}4} = 500$",
+          "أكبر سعر لتذكرة البالغ 500DA."
+        ],
+        "result": "x = 500"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "كم توفّر العائلة بفضل تخفيض الطفلين إذا كان سعر تذكرة البالغ 500DA؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "300",
+      "misconceptionSignatures": [
+        {
+          "value": "150",
+          "id": "MISC-TARRID-TAFSIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن تكلفة العائلة دون تخفيض ($5x$) بتكلفتها مع التخفيض."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 \\times 500 - 4{,}4 \\times 500 = 2500 - 2200 = 300$ DA.",
+        "incorrect": "التوفير هو الفرق بين التكلفتين."
+      },
+      "solution": {
+        "lines": [
+          "دون تخفيض: $5 \\times 500 = 2500$ DA.",
+          "مع التخفيض: $4{,}4 \\times 500 = 2200$ DA.",
+          "التوفير: $2500 - 2200 = 300$ DA."
+        ],
+        "result": "300DA"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

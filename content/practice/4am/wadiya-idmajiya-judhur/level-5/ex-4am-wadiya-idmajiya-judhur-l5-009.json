@@ -1,0 +1,241 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-judhur-l5-009",
+  "lessonCode": "wadiya-idmajiya-judhur",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2017 — عارضة من جذع شجرة",
+    "estimatedMinutes": 14,
+    "tags": [
+      "المعادلة x² = a",
+      "a√2",
+      "تدوير",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-judhur_P1",
+      "modelledOn": "BEM 2017 II I-01"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2017",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في ورشة نجارة بتلمسان، يحرص النجار على إتقان عمله، فيريد أن يستخرج من جذع شجرة مقطعه دائري قطره $40cm$ عارضة مقطعها مربع أكبر ما يمكن.\nرؤوس المربع تقع على الدائرة، فيكون قطر المربع مساويًا لقطر الدائرة. نرمز بـ $c$ لطول ضلع المربع (بالسنتيمتر)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "بيّن أن: $c^2 = 800$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قطر المربع وتر في مثلث قائم و متساوي الساقين ضلعاه $c$ و $c$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك سطرًا بسطر بالحل النموذجي."
+      },
+      "solution": {
+        "lines": [
+          "حسب خاصية فيثاغورس: $c^2 + c^2 = 40^2$",
+          "$2c^2 = 1600$"
+        ],
+        "result": "c^2 = 800"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اكتب $c$ على الشكل $a\\sqrt{2}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "400",
+          "id": "MISC-JIDHR-MURABBA-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حل المعادلة $c^2 = 800$ مع $c > 0$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $800 = 400 \\times 2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$c = \\sqrt{800} = 20\\sqrt{2}\\,cm$",
+        "incorrect": "حل المعادلة، ثم أخرج جذر أكبر مربع تام من $\\sqrt{800}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$c^2 = 800$ و $c > 0$ يعني $c = \\sqrt{800} = \\sqrt{400 \\times 2}$"
+        ],
+        "result": "c = 20\\sqrt{2}\\,cm"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "أعط المدوّر إلى $0{,}1$ للطول $c$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة): الطول بـ cm",
+      "expectedAnswer": "28.3",
+      "misconceptionSignatures": [
+        {
+          "value": "28",
+          "id": "MISC-WADIYA-TADWIR-MUBAKKIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $20\\sqrt{2}$ بالحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$20\\sqrt{2} \\approx 28{,}28$ ، و مدوّره $28{,}3cm$ .",
+        "incorrect": "احسب الجداء كاملًا بالحاسبة ثم دوّر إلى رقم واحد بعد الفاصلة."
+      },
+      "solution": {
+        "lines": [
+          "$20\\sqrt{2} \\approx 28{,}284$"
+        ],
+        "result": "c \\approx 28{,}3cm"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "احسب مساحة الجزء الضائع من المقطع الدائري (نأخذ $\\pi = 3{,}14$).",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المساحة بـ $cm^2$",
+      "expectedAnswer": "456",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة القرص $\\pi r^2$ حيث $r = 20cm$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحة المربع $c^2$ معلومة من السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "$3{,}14 \\times 400 - 800 = 1256 - 800 = 456cm^2$",
+        "incorrect": "الجزء الضائع = مساحة القرص − مساحة المربع، و نصف القطر نصف القطر الكامل."
+      },
+      "solution": {
+        "lines": [
+          "مساحة القرص: $3{,}14 \\times 20^2 = 1256cm^2$",
+          "مساحة المربع: $c^2 = 800cm^2$",
+          "الجزء الضائع: $1256 - 800$"
+        ],
+        "result": "456cm^2"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "☜ يحتاج النجار عارضة أخرى مقطعها مربع مساحته $450cm^2$ . ما هو أصغر قطر لجذع الشجرة الذي يمكن أن يستخرجها منه ؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: القطر بـ cm",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-JIDHR-MURABBA-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب ضلع المربع على الشكل $a\\sqrt{2}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قطر المربع $= c\\sqrt{2}$ ، و هو أصغر قطر ممكن للجذع."
+        }
+      ],
+      "feedback": {
+        "correct": "$c = \\sqrt{450} = 15\\sqrt{2}$ ، و قطر المربع $15\\sqrt{2} \\times \\sqrt{2} = 30cm$ .",
+        "incorrect": "احسب ضلع المربع، ثم قطره $c\\sqrt{2}$ : يجب أن يساوي قطر الجذع على الأقل."
+      },
+      "solution": {
+        "lines": [
+          "$c^2 = 450$ يعني $c = \\sqrt{225 \\times 2} = 15\\sqrt{2}\\,cm$",
+          "قطر المربع: $\\sqrt{c^2 + c^2} = \\sqrt{900}$ ، أو $15\\sqrt{2} \\times \\sqrt{2}$"
+        ],
+        "result": "30cm"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

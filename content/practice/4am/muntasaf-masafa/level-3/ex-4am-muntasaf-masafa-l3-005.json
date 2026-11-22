@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-muntasaf-masafa-l3-005",
+  "lessonCode": "muntasaf-masafa",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — مسافة بجذر مبسّط",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المسافة",
+      "قيمة مضبوطة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_muntasaf-masafa_P2",
+      "modelledOn": "ex-15"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس: $A(-2\\,;\\,-1)$ و $B(4\\,;\\,3)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "القيمة المضبوطة للمسافة AB:",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2\\sqrt{13}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$10$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-JAM"
+        },
+        {
+          "id": "C",
+          "content": "$52$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-NASI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الفرقين: فرق الفاصلتين وفرق الترتيبين (النهاية ناقص المبدأ)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ربّع كل فرق ثم اجمع المربعين: هذا مربع المسافة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خذ الجذر التربيعي في الأخير، وبسّطه إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = \\sqrt{6^2 + 4^2} = \\sqrt{52} = \\sqrt{4 \\times 13} = 2\\sqrt{13}$ .",
+        "incorrect": "بسّط الجذر بإخراج المربع التام 4."
+      }
+    }
+  ]
+}

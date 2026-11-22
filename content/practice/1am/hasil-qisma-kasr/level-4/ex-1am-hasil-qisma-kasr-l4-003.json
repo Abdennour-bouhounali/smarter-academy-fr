@@ -1,0 +1,238 @@
+{
+  "id": "ex-1am-hasil-qisma-kasr-l4-003",
+  "lessonCode": "hasil-qisma-kasr",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — العدد الناقص والقيمة المقرّبة",
+    "estimatedMinutes": 11,
+    "tags": [
+      "العدد الناقص",
+      "قيمة مقرّبة",
+      "اختزال"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 3,
+      "file": "1am-s3-37",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثاني",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "انقل وأتمم، ثم أجب عن الأسئلة الأخرى."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "$36 \\times \\ldots = 100$",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b (أو عدد)",
+      "expectedAnswer": "25/9",
+      "misconceptionSignatures": [
+        {
+          "value": "64",
+          "id": "MISC-HASIL-TARH"
+        },
+        {
+          "value": "3600",
+          "id": "MISC-HASIL-DARB"
+        },
+        {
+          "value": "36/100",
+          "id": "MISC-HASIL-QALB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد الناقص هو الذي نضربه في العامل المعروف لنحصل على الجداء المعطى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كيف نجد أحد عاملي جداء إذا عرفنا الجداء والعامل الآخر؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العدد الناقص على شكل حاصل قسمة، ثم على شكل كسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$36 \\times \\dfrac{100}{36} = 100$ : العدد الناقص هو $\\dfrac{100}{36}$.",
+        "incorrect": "العدد الذي نضربه في $b$ لنحصل على $a$ هو حاصل قسمة $a$ على $b$ ، أي $\\dfrac{a}{b}$ ؛ لا نطرح العددين ولا نضربهما."
+      },
+      "solution": {
+        "lines": [
+          "العدد الناقص هو حاصل القسمة $100 \\div 36 = \\dfrac{100}{36}$",
+          "تحقّق : $36 \\times \\dfrac{100}{36} = 100$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "$\\dfrac{\\ldots}{31} \\times 31 = 20$",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "11",
+          "id": "MISC-HASIL-TARH"
+        },
+        {
+          "value": "620",
+          "id": "MISC-HASIL-DARB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما مقام الكسر ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كسر مضروب في مقامه يعطي بسطه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ما البسط الذي يعطي النتيجة المكتوبة ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{20}{31} \\times 31 = 20$ : البسط الناقص هو 20.",
+        "incorrect": "العدد الذي نضربه في $b$ لنحصل على $a$ هو حاصل قسمة $a$ على $b$ ، أي $\\dfrac{a}{b}$ ؛ لا نطرح العددين ولا نضربهما."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{20}{31} \\times 31 = 20$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اختزل العدد الناقص في السؤال الأول إلى أبسط شكل ممكن.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b لا يقبل الاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "25/9",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن قاسم مشترك للبسط والمقام بقواعد قابلية القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على هذا القاسم، ثم أعد البحث في الكسر الجديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما لا يبقى قاسم مشترك غير 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{100}{36}$ = $\\dfrac{25}{9}$ ولا يقبل البسط والمقام قاسمًا مشتركًا غير 1.",
+        "incorrect": "نقسم البسط والمقام على قاسم مشترك لهما، ونعيد ذلك حتى لا يبقى قاسم مشترك غير 1.",
+        "notIrreducible": "الكتابة تساوي الكسر لكنها ما زالت قابلة للاختزال: ابحث عن قاسم مشترك آخر للبسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "$100 = 4 \\times 25$ و $36 = 4 \\times 9$ ، إذن $\\dfrac{100}{36} = \\dfrac{100 \\div 4}{36 \\div 4} = \\dfrac{25}{9}$",
+          "العددان 25 و 9 لا يقبلان قاسمًا مشتركًا غير 1."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "أعط القيمة المقرّبة بالنقصان إلى 0,1 للعدد الناقص في السؤال الأول.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بـ رقم واحد بعد الفاصلة",
+      "expectedAnswer": "2,7",
+      "misconceptionSignatures": [
+        {
+          "value": "2,8",
+          "id": "MISC-HASIL-TAQRIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أرقام حاصل القسمة بعد الفاصلة حتى المرتبة المطلوبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمة المقرّبة بالنقصان أصغر من الحاصل، والقيمة المقرّبة بالزيادة أكبر منه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زِد وحدة واحدة على آخر رقم محتفَظ به عند التقريب بالزيادة."
+        }
+      ],
+      "feedback": {
+        "correct": "$100 \\div 36$ = $2{,}7777$…، إذن القيمة المقرّبة بالنقصان هي $2{,}7$.",
+        "incorrect": "القيمة المقرّبة ليست قيمة مضبوطة : بالنقصان نحذف ما بعد المرتبة المطلوبة، وبالزيادة نزيد وحدة على آخر رقم محتفَظ به."
+      },
+      "solution": {
+        "lines": [
+          "$100 \\div 36$ = $2{,}7777$… (الأرقام لا تتوقّف)",
+          "$2{,}7$ < $\\dfrac{100}{36}$ < $2{,}8$ : بالنقصان نأخذ $2{,}7$."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

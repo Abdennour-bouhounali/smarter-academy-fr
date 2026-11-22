@@ -1,0 +1,251 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-adad-nisbiya-2-l3-001",
+  "lessonCode": "wadiya-idmajiya-adad-nisbiya-2",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — حرارة خمسة أيام في تمنراست",
+    "estimatedMinutes": 10,
+    "tags": [
+      "ترتيب",
+      "تغيّر",
+      "مسافة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "سجّلت محطة أرصاد في تمنراست الدرجة الصغرى في خمسة أيام متتالية بالدرجة المئوية: $-3$ ، $+1$ ، $-4{,}5$ ، $0$ ، $-1$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "الدرجات الصغرى في خمسة أيام: $-3$ ، $+1$ ، $-4{,}5$ ، $0$ ، $-1$ . رتّبها تصاعديًا.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-4{,}5 < -1 < -3 < 0 < 1$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$-4{,}5 < -3 < -1 < 0 < 1$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$0 < -1 < 1 < -3 < -4{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-SBD"
+        },
+        {
+          "id": "D",
+          "content": "$1 < 0 < -1 < -3 < -4{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-OD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "السالب أصغر من الصفر وكلّ موجب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بين عددين سالبين الأصغر هو الأبعد عن الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الأعداد من الأصغر إلى الأكبر، ثمّ عكس الترتيب إن طُلب التنازلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$-4{,}5 < -3 < -1 < 0 < 1$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "السالبة أصغر من الصفر ومن الموجبة، وبين السالبة الأصغر هو الأبعد عن الصفر",
+          "الترتيب التصاعدي : $-4{,}5 < -3 < -1 < 0 < 1$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "انتقلت الصغرى من $-3$ إلى $+1$ بين اليوم الأوّل واليوم الثاني. ما تغيّرها (الجديد ناقص القديم) ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-JAMNISB-REVERSED",
+          "value": "-4"
+        },
+        {
+          "id": "MISC-JAMNISB-ADDINSTEAD",
+          "value": "-2"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الجديد هو القيمة الأخيرة والقديم هو القيمة الأولى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التغيّر هو الجديد ناقص القديم : نحوّل الطرح إلى جمع للمعاكس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إشارة النتيجة تقول هل ارتفعت القيمة أم انخفضت : تحقّق منها."
+        }
+      ],
+      "feedback": {
+        "correct": "التغيّر $(+4)$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "التغيّر $=(+1)-(-3)$",
+          "$=(+1)+(+3)=(+4)$"
+        ],
+        "result": "4"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أدنى صغرى هي $-4{,}5$ وأعلى صغرى هي $+1$ . احسب الفرق بينهما.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "5.5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "3.5"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-5.5"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطتان على جهة واحدة من المبدأ أم على جهتين مختلفتين ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى ناقص الفاصلة الصغرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا : تحقّق من الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$CD=5{,}5$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى $+1$ والفاصلة الصغرى $-4{,}5$",
+          "$CD=(+1)-(-4{,}5)=5{,}5$"
+        ],
+        "result": "5.5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "تغيّرات الصغرى بين الأيام المتتالية: $+4$ ثمّ $-5{,}5$ ثمّ $+4{,}5$ ثمّ $-1$ . احسب مجموعها الجبري.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نحوّل كلّ طرح إلى جمع لمعاكس العدد المطروح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نجمع الموجبة فيما بينها والسالبة فيما بينها، ونحسب ما بين الأقواس أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "في الأخير نجمع عددين من إشارتين مختلفتين : نأخذ إشارة الأبعد عن الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "$(+4)+(-5{,}5)+(+4{,}5)+(-1)=(+2)$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "نجمع الموجبة معًا والسالبة معًا : $(+8{,}5)+(-6{,}5)$",
+          "المجموع الجبري : $(+2)$"
+        ],
+        "result": "2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

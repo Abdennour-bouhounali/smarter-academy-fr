@@ -1,0 +1,284 @@
+{
+  "id": "ex-3am-maqlub-qismat-kasrayn-l2-007",
+  "lessonCode": "maqlub-qismat-kasrayn",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — القسمة على عدد طبيعي",
+    "estimatedMinutes": 8,
+    "tags": [
+      "قسمة",
+      "كسر",
+      "تعليل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "أيّ المساواتين الآتيتين صحيحة؟",
+      "statement": "اختر المساواة الصحيحة.",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{2}{5} \\div 8 = \\dfrac{2}{5} \\times \\dfrac{1}{8}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{2}{5} \\div 8 = \\dfrac{2}{5} \\times 8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{2}{5} \\div 8 = \\dfrac{5}{2} \\times \\dfrac{1}{8}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{2}{5} \\div 8 = \\dfrac{5}{2} \\times 8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الخيارات واحسب كلاّ منها بدل أن تخمّن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ خيار على الأعداد الواردة فيه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حوّل القسمة إلى جداء بمقلوب القاسم، ثمّ قارن."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2}{5} \\div 8 = \\dfrac{2}{5} \\times \\dfrac{1}{8} = \\dfrac{1}{20}$ .",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "القسمة على $8$ هي الضرب في $\\dfrac{1}{8}$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "احسب كلاًّ مما يلي على أبسط شكل.",
+      "statement": "احسب $ \\dfrac{2}{5} \\div 8 $ .",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "1/20",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "16/5",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "20",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "5/16",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المقسوم؟ وما العدد المقسوم عليه؟ وما مقلوب هذا الأخير؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد غير معدوم هي الضرب في مقلوبه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حوّل القسمة إلى جداء، واختزل قبل أن تضرب كلّما أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2}{5} \\div 8 = \\dfrac{1}{20}$ لأنّ القسمة على عدد هي الضرب في مقلوبه.",
+        "incorrect": "القسمة على عدد غير معدوم هي الضرب في مقلوبه؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $\\dfrac{2}{5} \\div 8 = \\dfrac{2}{5} \\times \\dfrac{1}{8}$ .",
+          "$= \\dfrac{2 \\times 1}{5 \\times 8} = \\dfrac{1}{20}$ ."
+        ],
+        "result": "\\dfrac{1}{20}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب $ \\dfrac{3}{7} \\div 6 $ .",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "1/14",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "18/7",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "14",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "7/18",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المقسوم؟ وما العدد المقسوم عليه؟ وما مقلوب هذا الأخير؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد غير معدوم هي الضرب في مقلوبه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حوّل القسمة إلى جداء، واختزل قبل أن تضرب كلّما أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{7} \\div 6 = \\dfrac{1}{14}$ لأنّ القسمة على عدد هي الضرب في مقلوبه.",
+        "incorrect": "القسمة على عدد غير معدوم هي الضرب في مقلوبه؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $\\dfrac{3}{7} \\div 6 = \\dfrac{3}{7} \\times \\dfrac{1}{6}$ .",
+          "$= \\dfrac{3 \\times 1}{7 \\times 6} = \\dfrac{1}{14}$ ."
+        ],
+        "result": "\\dfrac{1}{14}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "احسب $ \\dfrac{9}{4} \\div 12 $ .",
+      "learningPoints": [
+        {
+          "code": "3am_maqlub-qismat-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "3/16",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "27",
+          "id": "MISC-MAQLUB-NOFLIP"
+        },
+        {
+          "value": "16/3",
+          "id": "MISC-MAQLUB-FLIPFIRST"
+        },
+        {
+          "value": "1/27",
+          "id": "MISC-MAQLUB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المقسوم؟ وما العدد المقسوم عليه؟ وما مقلوب هذا الأخير؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد غير معدوم هي الضرب في مقلوبه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حوّل القسمة إلى جداء، واختزل قبل أن تضرب كلّما أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9}{4} \\div 12 = \\dfrac{3}{16}$ لأنّ القسمة على عدد هي الضرب في مقلوبه.",
+        "incorrect": "القسمة على عدد غير معدوم هي الضرب في مقلوبه؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم بضرب المقسوم في مقلوب المقسوم عليه: $\\dfrac{9}{4} \\div 12 = \\dfrac{9}{4} \\times \\dfrac{1}{12}$ .",
+          "$= \\dfrac{9 \\times 1}{4 \\times 12} = \\dfrac{3}{16}$ ."
+        ],
+        "result": "\\dfrac{3}{16}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

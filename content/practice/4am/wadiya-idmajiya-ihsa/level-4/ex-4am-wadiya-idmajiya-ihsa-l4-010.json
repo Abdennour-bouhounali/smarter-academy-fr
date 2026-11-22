@@ -1,0 +1,254 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ihsa-l4-010",
+  "lessonCode": "wadiya-idmajiya-ihsa",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2008 — نقاط فريق كرة السلة لمتوسطة بغرداية في مجدول",
+    "estimatedMinutes": 12,
+    "tags": [
+      "مجدول",
+      "المتوسط الحسابي",
+      "الوسيط",
+      "قيمة مجهولة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-ihsa_P1",
+      "modelledOn": "BEM 2008 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2008",
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "حجز مدرّب فريق كرة السلة لمتوسطة بغرداية، وهو مثال في الالتزام بالمواعيد، في السطر الأول من مجدول عدد النقاط التي سجّلها فريقه في كل مباراة من المباريات الثماني الأولى للبطولة المدرسية:",
+    "table": {
+      "head": [
+        "",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "rows": [
+        [
+          "1",
+          "62",
+          "75",
+          "58",
+          "81",
+          "70",
+          "66",
+          "79",
+          "69"
+        ]
+      ],
+      "sheet": true
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن الدستور الذي يُحجز في الخلية A2 ليُظهر متوسط النقاط في المباراة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "⁦=MOYENNE(A1:G1)⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MAJAL-KHALIYA"
+        },
+        {
+          "id": "B",
+          "content": "⁦MOYENNE(A1:H1)⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-DUSTUR-BILA-ISHARA"
+        },
+        {
+          "id": "C",
+          "content": "⁦=MEDIANE(A1:H1)⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-DUSTUR-KHATI"
+        },
+        {
+          "id": "D",
+          "content": "⁦=MOYENNE(A1:H1)⁩",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور يبدأ بالإشارة «=»."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النقاط في الخلايا من A1 إلى H1 ."
+        }
+      ],
+      "feedback": {
+        "correct": "الدستور ⁦=MOYENNE(A1:H1)⁩ يحسب متوسط الخلايا الثماني.",
+        "incorrect": "تحقّق من ثلاثة أشياء: الإشارة «=» في البداية، الدالة التي تحسب المتوسط، والمجال الذي يشمل الخلايا الثماني."
+      },
+      "solution": {
+        "lines": [
+          "النقاط الثماني في السطر 1 من A1 إلى H1 ، والمتوسط تحسبه الدالة MOYENNE .",
+          "الدستور: ⁦=MOYENNE(A1:H1)⁩ ."
+        ]
+      },
+      "timeSeconds": 90,
+      "counted": false
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "احسب ما يلي:",
+      "statement": "العدد الذي يُظهره هذا الدستور.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "70",
+      "misconceptionSignatures": [
+        {
+          "value": "491/7",
+          "id": "MISC-IHSA-MAJAL-KHALIYA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع النقاط الثماني ثم اقسم على 8 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{560}{8} = 70$ .",
+        "incorrect": "المتوسط = مجموع القيم الثماني ÷ 8 ."
+      },
+      "solution": {
+        "lines": [
+          "$62 + 75 + 58 + 81 + 70 + 66 + 79 + 69 = 560$",
+          "$\\dfrac{560}{8} = 70$"
+        ],
+        "result": "70"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "وسيط النقاط.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة",
+      "expectedAnswer": "69,5",
+      "misconceptionSignatures": [
+        {
+          "value": "75,5",
+          "id": "MISC-IHSA-WASIT-BILA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رتّب النقاط الثماني تصاعديا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددها زوجي: نصف مجموع القيمتين الرابعة والخامسة."
+        }
+      ],
+      "feedback": {
+        "correct": "الترتيب: 58 ، 62 ، 66 ، 69 ، 70 ، 75 ، 79 ، 81 ؛ $\\dfrac{69 + 70}{2} = 69{,}5$ .",
+        "incorrect": "لا تأخذ الخليتين الوسطيين D1 و E1 قبل ترتيب القيم."
+      },
+      "solution": {
+        "lines": [
+          "الترتيب التصاعدي: 58 ، 62 ، 66 ، 69 ، 70 ، 75 ، 79 ، 81",
+          "$\\dfrac{69 + 70}{2} = 69{,}5$"
+        ],
+        "result": "69{,}5"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "بعد المباراة التاسعة أصبح متوسط نقاط الفريق 71 . كم نقطة سجّل الفريق في المباراة التاسعة؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "79",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مجموع نقاط المباريات التسع = المتوسط الجديد × 9 ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح مجموع نقاط المباريات الثماني الأولى."
+        }
+      ],
+      "feedback": {
+        "correct": "$71 \\times 9 - 560 = 79$ نقطة.",
+        "incorrect": "اكتب: $\\dfrac{560 + p}{9} = 71$ ثم حلّ المعادلة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{560 + p}{9} = 71$",
+          "$560 + p = 639$",
+          "$p = 79$"
+        ],
+        "result": "p = 79"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

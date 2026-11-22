@@ -1,0 +1,134 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l1-002",
+  "lessonCode": "mana-jam-tarh",
+  "level": 1,
+  "metadata": {
+    "title": "من المخطط بأقواس إلى المساواة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مخطط بأقواس",
+      "طرح"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "self-6",
+      "page": 31,
+      "section": "أقوّم تعلّماتي",
+      "number": 6
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "اعتمادًا على المخطط بأقواس المقابل:"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اختر المساواة الصحيحة.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\square = 23{,}1 + 9{,}6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        },
+        {
+          "id": "B",
+          "content": "$\\square = 9{,}6 - 23{,}1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-FARQ-MAQLUB"
+        },
+        {
+          "id": "C",
+          "content": "$\\square = 23{,}1 - 9{,}6$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القوس تحت الخط يحمل الكل، والقوسان فوقه يحملان الجزأين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "□ في قوس فوق الخط: هل هو الكل أم جزء؟"
+        }
+      ],
+      "feedback": {
+        "correct": "□ جزء، و 23,1 هو الكل: $\\square  = 23{,}1 - 9{,}6$.",
+        "incorrect": "حدّد أولًا العدد الذي يمثّل الكل (تحت الخط)، ثم اسأل: كيف نجد جزءًا من الكل؟"
+      },
+      "solution": {
+        "lines": [
+          "القوس تحت الخط يحمل الكل 23,1، والقوسان فوقه يحملان الجزأين □ و 9,6.",
+          "إذن $\\square + 9{,}6 = 23{,}1$، ومنه:"
+        ],
+        "result": "\\square = 23{,}1 - 9{,}6"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب □.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "13.5",
+      "misconceptionSignatures": [
+        {
+          "value": "32.7",
+          "id": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "□ جزء من الكل 23,1."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لإيجاد جزء، نطرح الجزء المعلوم من الكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$23{,}1 - 9{,}6 = 13{,}5$، وللتحقق: $13{,}5 + 9{,}6 = 23{,}1$.",
+        "incorrect": "□ جزء وليس الكل: نطرح الجزء المعلوم من الكل."
+      },
+      "solution": {
+        "lines": [
+          "$\\square = 23{,}1 - 9{,}6$",
+          "التحقق: $13{,}5 + 9{,}6 = 23{,}1$"
+        ],
+        "result": "\\square = 13{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

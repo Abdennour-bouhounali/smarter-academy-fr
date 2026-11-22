@@ -1,0 +1,249 @@
+{
+  "id": "ex-4am-jidaa-maadum-l4-009",
+  "lessonCode": "jidaa-maadum",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2015 — تحقق، تحليل، معادلة، قيمة عددية",
+    "estimatedMinutes": 14,
+    "tags": [
+      "متطابقات شهيرة",
+      "تحليل",
+      "معادلة جداء معدوم",
+      "جذور"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_jidaa-maadum_P2",
+      "modelledOn": "BEM 2015 I"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "تعطى العبارة:",
+    "formulas": [
+      "F = (2x - 5)^2 - 9"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "تحقّق بالنشر أن: $F = 4x^2 - 20x + 16$ .",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر $(2x - 5)^2$ بالمتطابقة $(a - b)^2 = a^2 - 2ab + b^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "أحسنت: برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "$F = (2x - 5)^2 - 9$",
+          "$= 4x^2 - 20x + 25 - 9$",
+          "$= 4x^2 - 20x + 16$"
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "حلّل $F$ إلى جداء عاملين من الدرجة الأولى.",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $F$ على الشكل $(2x - 8)(2x - m)$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن عامل مشترك، أو عن متطابقة شهيرة من الشكل $a^2 - b^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرج العامل المشترك (أو طبّق $a^2 - b^2 = (a - b)(a + b)$ )، واكتب ما بقي بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بسّط ما بين القوسين بإشاراته، ثم قارن بالشكل المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$F = (2x - 8)(2x - 2)$ إذن $m = 2$ .",
+        "incorrect": "أخرج العامل المشترك أو طبّق المتطابقة الشهيرة، ثم بسّط ما بقي بين القوسين بإشاراته."
+      },
+      "solution": {
+        "lines": [
+          "$F = (2x - 5)^2 - 3^2$",
+          "$= [(2x - 5) - 3][(2x - 5) + 3]$"
+        ],
+        "result": "F = (2x - 8)(2x - 2)"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "حل المعادلة: $(2x - 8)(2x - 2) = 0$ .",
+      "statement": "حلول المعادلة:",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "اكتب حلول المعادلة مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        4
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يكون جداء عاملين معدومًا إذا كان أحد عامليه على الأقل معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلتين من الدرجة الأولى: كل عامل يساوي $0$ ، ثم حلّ كل واحدة منهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى الإشارة عند نقل العدد إلى الطرف الثاني، ثم رتّب الحلّين من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "للمعادلة حلّان: $1$ و $4$ .",
+        "incorrect": "كل عامل يعطي حلًّا: اكتب أن أحد العاملين معدوم، وحلّ المعادلتين، ولا تنسَ أيّ حلّ."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $(2x - 8)(2x - 2) = 0$",
+          "يعني أنّ: $2x - 8 = 0$ أو $2x - 2 = 0$",
+          "أي: $2x = 8$ أو $2x = 2$",
+          "ومنه: $x = 4$ أو $x = 1$",
+          "إذن للمعادلة حلّان هما $1$ و $4$"
+        ],
+        "result": "x = 1 \\; ; \\; x = 4"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "lead": "احسب $F$ من أجل $x = 1 + \\sqrt{2}$ واكتب النتيجة على الشكل $a + b\\sqrt{2}$ حيث $a$ و $b$ عددان نسبيان.",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $F$ على الشكل $a + b\\sqrt{2}$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولًا $2x - 5$ من أجل $x = 1 + \\sqrt{2}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انشر المربع بالمتطابقة الشهيرة مع $(\\sqrt{2})^2 = 2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الأعداد معًا، وحدود $\\sqrt{2}$ معًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$F = 8 - 12\\sqrt{2}$ إذن $a = 8$ .",
+        "incorrect": "عوّض بدقّة، وطبّق المتطابقة الشهيرة، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$2x - 5 = 2 + 2\\sqrt{2} - 5 = 2\\sqrt{2} - 3$",
+          "$F = (2\\sqrt{2} - 3)^2 - 9$",
+          "$= 8 - 12\\sqrt{2} + 9 - 9$"
+        ],
+        "result": "F = 8 - 12\\sqrt{2}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $F$ على الشكل $a + b\\sqrt{2}$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "-12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ معامل $\\sqrt{2}$ في الشكل المبسّط، بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$F = 8 - 12\\sqrt{2}$ إذن $b = -12$ .",
+        "incorrect": "عوّض بدقّة، وطبّق المتطابقة الشهيرة، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$F = 8 - 12\\sqrt{2}$"
+        ],
+        "result": "b = -12"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

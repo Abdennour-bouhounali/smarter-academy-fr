@@ -1,0 +1,428 @@
+{
+  "id": "ex-4am-aksiya-talis-l5-003",
+  "lessonCode": "aksiya-talis",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2011 — الغرفة المظلمة",
+    "estimatedMinutes": 24,
+    "tags": [
+      "وضعية إدماجية",
+      "وضعية الفراشة",
+      "الغرفة المظلمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_aksiya-talis_P1",
+      "modelledOn": "BEM 2011 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2011",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "حبًّا في العلم، صنع تلاميذ نادي العلوم «غرفة مظلمة»: علبة في أحد وجهيها ثقب صغير $O$ ، وفي الوجه المقابل شاشة ورقية. وُضعت شمعة $[AB]$ أمام الثقب، فتكوّنت على الشاشة صورتها المقلوبة $[A'B']$ : النقط $A$ ، $O$ ، $A'$ في استقامية، والنقط $B$ ، $O$ ، $B'$ في استقامية، و $O$ بين النقطتين في كل مرة. قاس التلاميذ: $OA = 25\\,\\mathrm{cm}$ ، $OB = 26\\,\\mathrm{cm}$ ، $OA' = 10\\,\\mathrm{cm}$ ، $OB' = 10{,}4\\,\\mathrm{cm}$ و $AB = 17\\,\\mathrm{cm}$ (الشكل المقابل).",
+    "figure": {
+      "points": {
+        "O": [
+          0.0,
+          0.0
+        ],
+        "A": [
+          -24.0,
+          7.0
+        ],
+        "B": [
+          -24.0,
+          -10.0
+        ],
+        "A′": [
+          9.6,
+          -2.8
+        ],
+        "B′": [
+          9.6,
+          4.0
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "17",
+          "bold": true,
+          "tone": "amber"
+        },
+        {
+          "from": "O",
+          "to": "A",
+          "label": "25"
+        },
+        {
+          "from": "O",
+          "to": "B",
+          "label": "26"
+        },
+        {
+          "from": "O",
+          "to": "A′",
+          "label": "10"
+        },
+        {
+          "from": "O",
+          "to": "B′",
+          "label": "10,4"
+        },
+        {
+          "from": "A′",
+          "to": "B′",
+          "bold": true
+        }
+      ],
+      "ariaLabel": "الغرفة المظلمة: الشمعة [AB]، الثقب O، والصورة [A′B′] على الشاشة؛ A و O و A′ على استقامة، B و O و B′ على استقامة؛ OA = 25 و OB = 26 و OA′ = 10 و OB′ = 10,4 و AB = 17",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب النسبة $\\dfrac{OA'}{OA}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "2/5",
+      "misconceptionSignatures": [
+        {
+          "value": "5/2",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$OA'$ و $OA$ طولان يُقاسان من النقطة $O$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $OA'$ على $OA$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{OA'}{OA} = \\dfrac{10}{25} = \\dfrac{2}{5}$ .",
+        "incorrect": "النسبة $\\dfrac{OA'}{OA}$ : الطول $OA'$ على الطول $OA$ ، وكلاهما من النقطة $O$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{OA'}{OA} = \\dfrac{10}{25} = \\dfrac{2}{5}$"
+        ],
+        "result": "\\dfrac{OA'}{OA} = \\dfrac{2}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب النسبة $\\dfrac{OB'}{OB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "2/5",
+      "misconceptionSignatures": [
+        {
+          "value": "5/2",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$OB'$ و $OB$ طولان يُقاسان من النقطة $O$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $OB'$ على $OB$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{OB'}{OB} = \\dfrac{10{,}4}{26} = \\dfrac{2}{5}$ .",
+        "incorrect": "النسبة $\\dfrac{OB'}{OB}$ : الطول $OB'$ على الطول $OB$ ، وكلاهما من النقطة $O$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{OB'}{OB} = \\dfrac{10{,}4}{26} = \\dfrac{2}{5}$"
+        ],
+        "result": "\\dfrac{OB'}{OB} = \\dfrac{2}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل الشاشة $(A'B')$ موازية للشمعة $(AB)$ ؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-BAYN-FAQAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النسبتين بقيمهما المضبوطة (الجداء المتصالب)، لا بقيم مقرّبة ولا بمظهر الشكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق أيضا من ترتيب النقط على المستقيمين المتقاطعين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{OA'}{OA} = \\dfrac{OB'}{OB} = 0{,}4$ و $O$ بين النقطتين في كل مرة: $(A'B') \\parallel (AB)$ .",
+        "incorrect": "الخاصية العكسية تتطلب شرطين معا: تساوي النسبتين بقيم مضبوطة، وترتيب النقط نفسه على المستقيمين."
+      },
+      "solution": {
+        "lines": [
+          "بما أن النقط $A$ ، $O$ ، $A'$ و $B$ ، $O$ ، $B'$ في استقامية وبنفس الترتيب،",
+          "و بما أن: $\\dfrac{OA'}{OA} = \\dfrac{OB'}{OB} = \\dfrac{2}{5}$",
+          "فإن المستقيمين $(A'B')$ و $(AB)$ متوازيان حسب خاصية طالس العكسية."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب طول الصورة $A'B'$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "6,8",
+      "misconceptionSignatures": [
+        {
+          "value": "42.5",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(A'B') \\parallel (AB)$ : المثلثان $OA'B'$ و $OAB$ في وضعية طالس (وضعية الفراشة)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $\\dfrac{OA'}{OA} = \\dfrac{A'B'}{AB}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$A'B' = \\dfrac{10 \\times 17}{25} = 6{,}8\\,\\mathrm{cm}$ .",
+        "incorrect": "في كل نسبة: طول من المثلث الصغير على الطول الموافق له في المثلث الكبير."
+      },
+      "solution": {
+        "lines": [
+          "بما أن $(A'B') \\parallel (AB)$ ، حسب خاصية طالس: $\\dfrac{OA'}{OA} = \\dfrac{OB'}{OB} = \\dfrac{A'B'}{AB}$",
+          "$\\dfrac{10}{25} = \\dfrac{A'B'}{17}$",
+          "$A'B' = \\dfrac{10 \\times 17}{25}$"
+        ],
+        "result": "A'B' = 6{,}8\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "sub": "ا",
+      "lead": "أمال أحد التلاميذ الشاشة، فأصبح: $OA' = 12\\,\\mathrm{cm}$ و $OB' = 12{,}6\\,\\mathrm{cm}$ .",
+      "statement": "احسب النسبة $\\dfrac{OA'}{OA}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "12/25",
+      "misconceptionSignatures": [
+        {
+          "value": "25/12",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$OA'$ و $OA$ طولان يُقاسان من النقطة $O$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $OA'$ على $OA$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{OA'}{OA} = \\dfrac{12}{25}$ .",
+        "incorrect": "النسبة $\\dfrac{OA'}{OA}$ : الطول $OA'$ على الطول $OA$ ، وكلاهما من النقطة $O$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{OA'}{OA} = \\dfrac{12}{25}$"
+        ],
+        "result": "\\dfrac{OA'}{OA} = \\dfrac{12}{25}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "sub": "ا",
+      "statement": "احسب النسبة $\\dfrac{OB'}{OB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "63/130",
+      "misconceptionSignatures": [
+        {
+          "value": "130/63",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$OB'$ و $OB$ طولان يُقاسان من النقطة $O$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $OB'$ على $OB$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{OB'}{OB} = \\dfrac{12{,}6}{26} = \\dfrac{63}{130}$ .",
+        "incorrect": "النسبة $\\dfrac{OB'}{OB}$ : الطول $OB'$ على الطول $OB$ ، وكلاهما من النقطة $O$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{OB'}{OB} = \\dfrac{12{,}6}{26} = \\dfrac{63}{130}$"
+        ],
+        "result": "\\dfrac{OB'}{OB} = \\dfrac{63}{130}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "sub": "ب",
+      "statement": "هل بقيت الشاشة موازية للشمعة؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-TAQRIB-BURHAN"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النسبتين بقيمهما المضبوطة (الجداء المتصالب)، لا بقيم مقرّبة ولا بمظهر الشكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق أيضا من ترتيب النقط على المستقيمين المتقاطعين."
+        }
+      ],
+      "feedback": {
+        "correct": "$12 \\times 26 = 312$ و $25 \\times 12{,}6 = 315$ : الشاشة لم تعد موازية للشمعة.",
+        "incorrect": "الخاصية العكسية تتطلب شرطين معا: تساوي النسبتين بقيم مضبوطة، وترتيب النقط نفسه على المستقيمين."
+      },
+      "solution": {
+        "lines": [
+          "$12 \\times 26 = 312$ و $25 \\times 12{,}6 = 315$ ، إذن $\\dfrac{OA'}{OA} \\neq \\dfrac{OB'}{OB}$ .",
+          "لو كان $(A'B') \\parallel (AB)$ لكانت النسبتان متساويتين حسب خاصية طالس،",
+          "إذن المستقيمان $(A'B')$ و $(AB)$ غير متوازيين.",
+          "(القيمتان المقرّبتان إلى $0{,}1$ متساويتان ( $\\approx 0{,}5$ ) لكن ذلك لا يثبت شيئا.)"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

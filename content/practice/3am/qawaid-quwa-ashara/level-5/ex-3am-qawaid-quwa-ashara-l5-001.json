@@ -1,0 +1,234 @@
+{
+  "id": "ex-3am-qawaid-quwa-ashara-l5-001",
+  "lessonCode": "qawaid-quwa-ashara",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — ذاكرة الهاتف",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مسألة",
+      "وحدات التخزين",
+      "جداء قوى"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في هاتف رانيا: $1\\ \\mathrm{Ko} = 10^{3}\\ \\mathrm{o}$ ، و $1\\ \\mathrm{Mo} = 10^{3}\\ \\mathrm{Ko}$ ، و $1\\ \\mathrm{Go} = 10^{3}\\ \\mathrm{Mo}$ ، و $1\\ \\mathrm{To} = 10^{3}\\ \\mathrm{Go}$ (الرمز o هو الأكتي). سعة الهاتف $128\\ \\mathrm{Go}$ وحجم الصورة الواحدة $4\\ \\mathrm{Mo}$ تقريبًا."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "الجزء الأول. عدد الأكتي في $1\\ \\mathrm{Mo}$ هو $10^{3}\\times10^{3} = 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوتين المضروبتين وأسّ كلّ منهما (انتبه إلى إشارته)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في جداء قوتين للعدد 10 نجري عملية واحدة على الأسّين: ما هي؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب القاعدة على مثال صغير: $10^{2}\\times10^{1}$ هو $10\\times10\\times10$ ، فكم عاملًا 10 في الجداء؟"
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-QAWAID-DARB-ASS"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{3}\\times10^{3} = 10^{6}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$1\\ \\mathrm{Mo} = 10^{3}\\ \\mathrm{Ko}$ و $1\\ \\mathrm{Ko} = 10^{3}\\ \\mathrm{o}$ .",
+          "نجمع الأسّين: $3 + 3 = 6$ ، فـ $1\\ \\mathrm{Mo} = 10^{6}\\ \\mathrm{o}$ ."
+        ],
+        "result": "n = 6"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "عدد الأكتي في $1\\ \\mathrm{Go}$ هو $(10^{3})^{3} = 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوة الداخلية وأسّها، ثمّ الأسّ الخارجي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في قوة لقوة للعدد 10 نجري عملية واحدة على الأسّين: هل هي الجمع أم غيره؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر أنّ $(10^{2})^{3}$ جداء ثلاثة عوامل كلّ عامل منها $10^{2}$ ."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-QAWAID-QUWA-JAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$(10^{3})^{3} = 10^{9}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$1\\ \\mathrm{Go}$ يساوي $10^{3}$ ميغا أكتي وكلّ ميغا أكتي $10^{3}$ كيلو أكتي، وكلّ كيلو أكتي $10^{3}$ أكتي.",
+          "نضرب الأسّين: $3 \\times 3 = 9$ ."
+        ],
+        "result": "n = 9"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "الجزء الثاني. كم صورة تتّسع لها ذاكرة الهاتف؟ أحسب $\\dfrac{128\\times10^{9}}{4\\times10^{6}}$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع الأعداد مع الأعداد، وقوى العدد 10 مع قوى العدد 10 (كلّ في مجموعته)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الأعداد وحدها ثمّ طبّق قاعدة قوى العدد 10 على الأسّين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اترك النتيجة على الشكل $k \\times 10^{n}$ كما تخرج دون تغيير العدد $k$ ، ما لم يُطلب منك غير ذلك."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "32000",
+      "misconceptionSignatures": [
+        {
+          "value": "32",
+          "id": "MISC-QAWAID-AMIL"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{128\\times10^{9}}{4\\times10^{6}} = 32\\times10^{3} = 32\\,000$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم الأعداد: $\\dfrac{128}{4} = 32$ ، ونطرح الأسّين: $9 - 6 = 3$ .",
+          "النتيجة $32\\times10^{3} = 32\\,000$ صورة."
+        ],
+        "result": "32\\,000"
+      }
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "كم $\\mathrm{Go}$ في $1\\ \\mathrm{To}$ ؟ نكتب $\\dfrac{10^{12}}{10^{9}} = 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد البسط والمقام وأسّ كلّ منهما (انتبه إلى إشارة الأسّ)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في حاصل قسمة قوتين للعدد 10 نجري عملية واحدة على الأسّين: ما هي، وبأيّ ترتيب؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر أنّ $\\dfrac{10^{2}}{10^{1}}$ هو $\\dfrac{10\\times10}{10}$ ، وأنّ طرح أسّ سالب يعني جمع عدد موجب."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "21",
+          "id": "MISC-QAWAID-DARB-ASS"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{10^{12}}{10^{9}} = 10^{3}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نطرح الأسّين: $12 - 9 = 3$ .",
+          "$1\\ \\mathrm{To} = 10^{3}\\ \\mathrm{Go}$ ، وهو ما قدّمه المعطى."
+        ],
+        "result": "n = 3"
+      }
+    }
+  ]
+}

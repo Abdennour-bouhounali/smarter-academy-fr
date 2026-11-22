@@ -1,0 +1,114 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l1-008",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — المنتصف على الشبكة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "المنتصف",
+      "ورقة مرصوفة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_shuaayn-mutasawiyayn_P1",
+      "modelledOn": "know-3"
+    }
+  },
+  "statement": {
+    "content": "على الورقة المرصوفة (الشكل)، القطعة [AB] والنقط K و J و L.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          6,
+          0
+        ],
+        "K": [
+          2,
+          0
+        ],
+        "J": [
+          3,
+          0
+        ],
+        "L": [
+          3,
+          2
+        ]
+      },
+      "grid": true,
+      "segments": [
+        [
+          "A",
+          "B"
+        ]
+      ],
+      "labels": {
+        "A": "s",
+        "B": "s",
+        "K": "s",
+        "J": "s",
+        "L": "n"
+      },
+      "ariaLabel": "ورقة مرصوفة: القطعة [AB] أفقية طولها 6 مربعات، والنقطتان K و J عليها، والنقطة L فوق J بمربعين"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أيّ نقطة X تحقق $\\overrightarrow{AX} = \\overrightarrow{XB}$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "J",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "K",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "L",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TUL-FAQAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عُدّ المربعات على [AB]."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نبحث عن نقطة يكون فيها للشعاعين نفس المنحى ونفس الاتجاه ونفس الطول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة وحدها لا تكفي: يجب أن تكون النقطة على القطعة."
+        }
+      ],
+      "feedback": {
+        "correct": "J على [AB] وعلى بعد 3 مربعات من كل طرف: J منتصف [AB].",
+        "incorrect": "نقطة على بعدين متساويين من A و B ليست بالضرورة على [AB]."
+      }
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l4-010",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2025 — الأعداد 4x2y",
+    "estimatedMinutes": 6,
+    "tags": [
+      "قواعد قابلية القسمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qawasim-adad-tabii_P4",
+      "modelledOn": "BEM 2025 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الأعداد الطبيعية المكتوبة على الشكل $\\overline{4x2y}$ حيث $x$ و $y$ رقمان."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن كل هذه الأعداد التي تقبل القسمة على 5 وعلى 9 في آن واحد. (اذكر كل الحالات الممكنة)",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        4320,
+        4725
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            4320
+          ],
+          "id": "MISC-QAWAID-HALA-WAHIDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القسمة على 5: رقم الآحاد $y$ هو 0 أو 5."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على 9: مجموع الأرقام $4 + x + 2 + y$ مضاعف للعدد 9."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عالج الحالتين $y = 0$ و $y = 5$ كل واحدة على حدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$y = 0$ يعطي $x = 3$ ، و $y = 5$ يعطي $x = 7$.",
+        "incorrect": "ابدأ بشرط القسمة على 5، ثم اكتب مجموع الأرقام في كل حالة."
+      },
+      "solution": {
+        "lines": [
+          "يقبل العدد القسمة على 5 إذا كان $y = 0$ أو $y = 5$.",
+          "$y = 0$: مجموع الأرقام $6 + x$ مضاعف للعدد 9 و $0 \\leq x \\leq 9$ ، إذن $x = 3$ : العدد 4320.",
+          "$y = 5$: مجموع الأرقام $11 + x$ مضاعف للعدد 9 ، إذن $x = 7$ : العدد 4725.",
+          "إذن الأعداد هي: 4320 و 4725."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل يقبل العدد 4320 القسمة على 4؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى العدد المكوّن من الرقمين الأخيرين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يقبل العدد القسمة على 4 إذا كان هذا العدد يقبل القسمة على 4."
+        }
+      ],
+      "feedback": {
+        "correct": "$20 = 4 \\times 5$: العدد المكوّن من الرقمين الأخيرين يقبل القسمة على 4.",
+        "incorrect": "طبّق قاعدة قابلية القسمة على 4 على العدد المكوّن من الرقمين الأخيرين."
+      },
+      "solution": {
+        "lines": [
+          "العدد المكوّن من الرقمين الأخيرين هو 20 و $20 = 4 \\times 5$.",
+          "إذن 4320 يقبل القسمة على 4."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

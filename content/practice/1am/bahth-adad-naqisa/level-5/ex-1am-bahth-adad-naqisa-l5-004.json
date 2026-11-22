@@ -1,0 +1,246 @@
+{
+  "id": "ex-1am-bahth-adad-naqisa-l5-004",
+  "lessonCode": "bahth-adad-naqisa",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — معصرة الزيتون",
+    "estimatedMinutes": 14,
+    "tags": [
+      "وضعية إدماجية",
+      "زيت"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "أنتجت معصرة 360 لترًا من الزيت وضعته في 24 صفيحة متماثلة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "كم لترًا في الصفيحة الواحدة؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "8640",
+          "id": "MISC-NAQISA-MULAGAIN"
+        },
+        {
+          "value": "1/15",
+          "id": "MISC-NAQISA-DIVREV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للضرب هي القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $15\\times 24=360$ ، فالعدد الناقص هو $15$ .",
+        "incorrect": "في جداء نقسم الناتج على العدد المعلوم: لا نضربه فيه ولا نقسم المعلوم على الناتج."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square\\times 24=360$ .",
+          "نُرجع بالعملية العكسية: $\\square=360\\div 24=15$ .",
+          "نتحقّق: $15\\times 24=360$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بيع من الزيت عدد من اللترات فبقي 150 لترًا. كم لترًا بيع؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "210",
+      "misconceptionSignatures": [
+        {
+          "value": "510",
+          "id": "MISC-NAQISA-TRAPADD"
+        },
+        {
+          "value": "-210",
+          "id": "MISC-NAQISA-REVSUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المجهول هنا هو المطروح: ما أُخذ من العدد الذي بدأنا منه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $360-210=150$ ، فالعدد الناقص هو $210$ .",
+        "incorrect": "في a − □ = b المجهول هو المطروح: نطرح الناتج من a ولا نعكس الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $360-\\square=150$ .",
+          "نُرجع بالعملية العكسية: $\\square=360-150=210$ .",
+          "نتحقّق: $360-210=150$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "وصلت المعصرة شحنة جديدة من 135 لترًا فصار عندها 285 لترًا. كم لترًا كان عندها قبل وصولها؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "150",
+      "misconceptionSignatures": [
+        {
+          "value": "420",
+          "id": "MISC-NAQISA-SAMEOP"
+        },
+        {
+          "value": "-150",
+          "id": "MISC-NAQISA-REVSUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للجمع هي الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $150+135=285$ ، فالعدد الناقص هو $150$ .",
+        "incorrect": "في مجموع نطرح العدد المعلوم من الناتج: لا نجمع مرّة أخرى."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square+135=285$ .",
+          "نُرجع بالعملية العكسية: $\\square=285-135=150$ .",
+          "نتحقّق: $150+135=285$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "العدد $15$ هو العدد الناقص في $24\\times \\square=360$ .",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NAQISA-OPERAND"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض العدد المعطى مكان □ في المساواة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الطرف الذي فيه □ ثمّ قارنه بالطرف الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إن لم تجد الناتج المعلوم بالضبط فالعدد خاطئ."
+        }
+      ],
+      "feedback": {
+        "correct": "التعويض يحسم الحكم.",
+        "incorrect": "نحكم بالتعويض لا بالتخمين."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $15$ في $24\\times \\square=360$ .",
+          "الحكم: صحيح"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-aadad-l5-005",
+  "lessonCode": "wadiya-idmajiya-aadad",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2022 — صناديق مصنع عصير بالبليدة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "القاسم المشترك الأكبر",
+      "كسر غير قابل للاختزال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-aadad_P1",
+      "modelledOn": "BEM 2022 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "أنتج مصنع للعصير بالبليدة في يوم واحد 1950 قارورة عصير البرتقال و 1050 قارورة عصير الليمون، ويريد تجميعها كلها في صناديق متماثلة لإهدائها إلى الأسر المحتاجة (كل صندوق يحتوي على نفس عدد قارورات البرتقال ونفس عدد قارورات الليمون)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما هو أكبر عدد من الصناديق التي يمكن تكوينها؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "150",
+      "misconceptionSignatures": [
+        {
+          "value": "75",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 1950 على 1050: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (1950 ; 1050) بالزوج (1050 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 150.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$1950 = 1050 \\times 1 + 900$",
+          "$1050 = 900 \\times 1 + 150$",
+          "$900 = 150 \\times 6 + 0$",
+          "آخر باقٍ غير معدوم هو 150، إذن:",
+          "أكبر عدد من الصناديق هو القاسم المشترك الأكبر للعددين 1950 و 1050."
+        ],
+        "result": "150"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "lead": "ما هو عدد قارورات عصير البرتقال وعدد قارورات عصير الليمون في كل صندوق؟",
+      "statement": "ما هو عدد قارورات عصير البرتقال في كل صندوق؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "13",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وُزّعت قارورات البرتقال بالتساوي على الصناديق."
+        }
+      ],
+      "feedback": {
+        "correct": "$1950 \\div 150 = 13$",
+        "incorrect": "اقسم عدد قارورات البرتقال على عدد الصناديق الذي وجدته."
+      },
+      "solution": {
+        "lines": [
+          "$1950 \\div 150 = 13$"
+        ],
+        "result": "13"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما هو عدد قارورات عصير الليمون في كل صندوق؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وُزّعت قارورات الليمون بالتساوي على الصناديق."
+        }
+      ],
+      "feedback": {
+        "correct": "$1050 \\div 150 = 7$",
+        "incorrect": "اقسم عدد قارورات الليمون على عدد الصناديق الذي وجدته."
+      },
+      "solution": {
+        "lines": [
+          "$1050 \\div 150 = 7$"
+        ],
+        "result": "7"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "اكتب الكسر $\\dfrac{1050}{1950}$ (نسبة عدد قارورات الليمون إلى عدد قارورات البرتقال) على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "7/13",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "525/975",
+          "id": "MISC-IKHTIZAL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 150: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال 01.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1050}{1950} = \\dfrac{1050 \\div 150}{1950 \\div 150}$"
+        ],
+        "result": "\\dfrac{1050}{1950} = \\dfrac{7}{13}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "☜ يبيع المصنع الصندوق الواحد بـ 1680DA. ما هو المبلغ الذي يتحصّل عليه إذا باع $\\dfrac{3}{5}$ من الصناديق؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (بالدينار)",
+      "expectedAnswer": "151200",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب عدد الصناديق المبيعة: $\\dfrac{3}{5}$ من عدد الصناديق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب عدد الصناديق المبيعة في ثمن الصندوق."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{5} \\times 150 = 90$ صندوقًا، و $90 \\times 1680 = 151200$",
+        "incorrect": "احسب أولًا عدد الصناديق المبيعة، ثم اضربه في ثمن الصندوق."
+      },
+      "solution": {
+        "lines": [
+          "عدد الصناديق المبيعة: $\\dfrac{3}{5} \\times 150 = 90$",
+          "المبلغ: $90 \\times 1680 = 151200$DA"
+        ],
+        "result": "151200\\,DA"
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

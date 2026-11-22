@@ -1,0 +1,241 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l5-002",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — عدّاد الماء",
+    "estimatedMinutes": 6,
+    "tags": [
+      "مسألة",
+      "المفكوك"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يقرأ عدّاد الماء في بيت ياسين $2\\,305{,}047\\ \\mathrm{m}^{3}$ (الأرقام السوداء بالمتر المكعّب والحمراء أجزاؤه). نعلم أنّ $1\\ \\mathrm{m}^{3} = 1\\,000\\ \\mathrm{L}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "الجزء الأول. أيّ الكتابات التالية هي مفكوك العدد $2\\,305{,}047$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب رتبة كلّ رقم بدءًا من الآحاد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأصفار تحتلّ رتبًا: العشرات والأعشار هنا فارغتان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب المجموع."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2 \\times 10^{3} + 3 \\times 10^{2} + 5 \\times 10^{1} + 4 \\times 10^{-1} + 7 \\times 10^{-2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-MAFKUK"
+        },
+        {
+          "id": "B",
+          "content": "$2 \\times 10^{4} + 3 \\times 10^{3} + 5 \\times 10^{1} + 4 \\times 10^{-1} + 7 \\times 10^{-2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-MAFKUK"
+        },
+        {
+          "id": "C",
+          "content": "$2 \\times 10^{3} + 3 \\times 10^{2} + 5 \\times 10^{0} + 4 \\times 10^{-2} + 7 \\times 10^{-3}$",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "$2\\,305{,}047 = 2 \\times 10^{3} + 3 \\times 10^{2} + 5 \\times 10^{0} + 4 \\times 10^{-2} + 7 \\times 10^{-3}$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب الكتابة العشرية للقوة المعنية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الرقم 2 في رتبة الآلاف، والرقم 3 في رتبة المئات، والرقم 5 في رتبة الوحدات.",
+          "العشرات والأعشار فارغتان، والرقم 4 في رتبة أجزاء المئة، والرقم 7 في رتبة أجزاء الألف."
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "الجزء الثاني. $0{,}047\\ \\mathrm{m}^{3}$ هو الجزء الأحمر من القراءة. كم لترًا يساوي؟",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم لترًا في المتر المكعّب الواحد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب $0{,}047$ في $1\\,000$ : أزح الفاصلة ثلاث رتب نحو اليمين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد الناتج صغير نسبيًّا."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "47",
+      "misconceptionSignatures": [
+        {
+          "value": "4.7",
+          "id": "MISC-ASHARA-WIHDA"
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}047 \\times 1\\,000 = 47\\ \\mathrm{L}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$1\\ \\mathrm{m}^{3} = 1\\,000\\ \\mathrm{L}$ .",
+          "$0{,}047 \\times 1\\,000 = 47$ ."
+        ],
+        "result": "47"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "$1\\ \\mathrm{L} = 0{,}001\\ \\mathrm{m}^{3} = 10^{n}\\ \\mathrm{m}^{3}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اللتر أصغر من المتر المكعّب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الرقم 1 في الرتبة الثالثة بعد الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأسّ سالب."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-ASHARA-WIHDA"
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\ \\mathrm{L} = 10^{-3}\\ \\mathrm{m}^{3}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}001 = \\dfrac{1}{10^{3}} = 10^{-3}$ ."
+        ],
+        "result": "n = -3"
+      }
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "الجزء الثالث. استهلك البيت في الشهر $18\\ \\mathrm{m}^{3}$ . كم لترًا استهلك؟ ($18 \\times 10^{3}$)",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $10^{3}$ كتابة عشرية ثمّ اضرب فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضرب عدد في $10^{3}$ يُزيح فاصلته ثلاث رتب نحو اليمين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا نضرب 18 في 3."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "18000",
+      "misconceptionSignatures": [
+        {
+          "value": "54",
+          "id": "MISC-ASHARA-DARB"
+        }
+      ],
+      "feedback": {
+        "correct": "$18 \\times 10^{3} = 18\\,000\\ \\mathrm{L}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10^{3} = 1\\,000$ .",
+          "$18 \\times 1\\,000 = 18\\,000$ لتر."
+        ],
+        "result": "18\\,000"
+      }
+    }
+  ]
+}

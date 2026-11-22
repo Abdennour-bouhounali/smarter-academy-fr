@@ -1,0 +1,119 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-talis-l4-010",
+  "lessonCode": "wadiya-idmajiya-talis",
+  "level": 4,
+  "metadata": {
+    "title": "هرم آخر بطريقة الظلّ",
+    "estimatedMinutes": 10,
+    "tags": [
+      "طريقة الظلّ",
+      "خاصية طالس",
+      "هرم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-talis_P1",
+      "modelledOn": "intro-thales"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "عصا شاقولية طولها $1\\,\\mathrm{m}$ ظلّها $0{,}8\\,\\mathrm{m}$ . في اللحظة نفسها يصل ظلّ رأس هرم إلى $39\\,\\mathrm{m}$ بعد حافة قاعدته المربعة التي طول ضلعها $150\\,\\mathrm{m}$ (الظلّ عمودي على الحافة، وقدم ارتفاع الهرم في مركز القاعدة)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب طول ظلّ الهرم المقيس من قدم ارتفاعه (مركز القاعدة).",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "114",
+      "misconceptionSignatures": [
+        {
+          "value": "39",
+          "id": "MISC-TALIS-ZILL-RAS-MUSHTARAK"
+        },
+        {
+          "value": "189",
+          "id": "MISC-TALIS-ZILL-RAS-MUSHTARAK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قدم الارتفاع في مركز القاعدة: المسافة منه إلى الحافة نصف طول الضلع."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{150}{2} + 39 = 75 + 39 = 114\\,\\mathrm{m}$ .",
+        "incorrect": "نقيس الظلّ من قدم الارتفاع (مركز القاعدة)، لا من حافتها ولا من طرفها البعيد."
+      },
+      "solution": {
+        "lines": [
+          "المسافة من مركز القاعدة إلى حافتها: $\\dfrac{150}{2} = 75\\,\\mathrm{m}$",
+          "طول الظلّ المستعمل: $75 + 39$"
+        ],
+        "result": "114\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب ارتفاع الهرم.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "142,5",
+      "misconceptionSignatures": [
+        {
+          "value": "91.2",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\dfrac{h}{114} = \\dfrac{1}{0{,}8}$ (خاصية طالس)."
+        }
+      ],
+      "feedback": {
+        "correct": "$h = \\dfrac{114}{0{,}8} = 142{,}5\\,\\mathrm{m}$ .",
+        "incorrect": "في كل نسبة: طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{h}{114} = \\dfrac{1}{0{,}8}$",
+          "$h = \\dfrac{114 \\times 1}{0{,}8}$"
+        ],
+        "result": "h = 142{,}5\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

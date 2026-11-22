@@ -1,0 +1,203 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l1-002",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 1,
+  "metadata": {
+    "title": "حاصل القسمة كسرًا",
+    "estimatedMinutes": 4,
+    "tags": [
+      "كسر",
+      "حاصل القسمة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "prep",
+      "page": 23,
+      "section": "أستعدّ"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "اختر الإجابة الصحيحة في كل حالة، ثم برّر اختيارك."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "حاصل القسمة $\\frac{11}{7}$ يساوي:",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$11 \\div 7$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$11{,}7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-KHATT-KASR"
+        },
+        {
+          "id": "C",
+          "content": "$7 \\div 11$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-YAQSIM-AKS"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خط الكسر يعني عملية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "البسط هو المقسوم والمقام هو المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\frac{11}{7}$ هو حاصل قسمة 11 على 7.",
+        "incorrect": "الكسر $\\frac{a}{b}$ هو حاصل قسمة البسط على المقام."
+      },
+      "solution": {
+        "lines": [
+          "$\\frac{11}{7} = 11 \\div 7$: البسط 11 هو المقسوم والمقام 7 هو المقسوم عليه."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "الكسر $\\frac{19}{5}$ يساوي:",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\frac{19}{5} = 4 + \\frac{3}{5}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "id": "B",
+          "content": "$\\frac{19}{5} = 3 + \\frac{4}{5}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\frac{19}{5} = 3 + \\frac{4}{19}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-TAFKIK"
+        },
+        {
+          "id": "D",
+          "content": "$\\frac{19}{5} = 4 + \\frac{4}{5}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 19 على 5."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من $19 = 5 \\times q + r$ نجد $\\frac{19}{5} = q + \\frac{r}{5}$."
+        }
+      ],
+      "feedback": {
+        "correct": "$19 = 5 \\times 3 + 4$ ، إذن $\\frac{19}{5} = 3 + \\frac{4}{5}$ و $\\frac{4}{5} < 1$.",
+        "incorrect": "العدد الطبيعي هو حاصل القسمة الإقليدية، والكسر هو الباقي على 5."
+      },
+      "solution": {
+        "lines": [
+          "$19 = 5 \\times 3 + 4$",
+          "$\\frac{19}{5} = \\frac{5 \\times 3}{5} + \\frac{4}{5} = 3 + \\frac{4}{5}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اختر الكتابة الصحيحة التي تحصر حاصل القسمة $\\frac{19}{5}$ بين عددين طبيعيين متتاليين (أو تعطيه إذا كان عددًا طبيعيًا).",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3 < \\frac{19}{5} < 4$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$2 < \\frac{19}{5} < 3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        },
+        {
+          "id": "C",
+          "content": "$4 < \\frac{19}{5} < 5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 19 على 5."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من $5 \\times q \\le 19 < 5 \\times (q + 1)$ نقسم الأطراف على 5."
+        }
+      ],
+      "feedback": {
+        "correct": "$19 = 5 \\times 3 + 4$ والباقي غير معدوم، فـ $\\frac{19}{5}$ يقع تمامًا بين 3 و 4.",
+        "incorrect": "احصر 19 بين مضاعفين متتاليين للعدد 5 ثم اقسم على 5؛ وإذا كان الباقي معدومًا فحاصل القسمة عدد طبيعي."
+      },
+      "solution": {
+        "lines": [
+          "$19 = 5 \\times 3 + 4$",
+          "$5 \\times 3 < 19 < 5 \\times 4$ ، نقسم على 5: $3 < \\frac{19}{5} < 4$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

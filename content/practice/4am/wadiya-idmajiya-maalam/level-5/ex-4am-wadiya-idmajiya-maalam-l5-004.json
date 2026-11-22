@@ -1,0 +1,112 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-maalam-l5-004",
+  "lessonCode": "wadiya-idmajiya-maalam",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — من الطول إلى الموضع",
+    "estimatedMinutes": 4,
+    "tags": [
+      "نصف دائرة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-maalam_P3",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "عدّاء ينطلق من $A(-5\\,;\\,0)$ ويجري على نصف دائرة طولها $4\\pi\\,\\mathrm{km}$ ، قطرها على محور الفواصل، وينتهي في نقطة B على يمين A (معلم متعامد ومتجانس، الوحدة $1\\,\\mathrm{km}$)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "نصف قطر نصف الدائرة (بالكيلومتر):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الطول $\\pi r$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\pi r = 4\\pi$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$r = 4$"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\pi r = 4\\pi$ ومنه $r = 4$ .",
+        "incorrect": "طول نصف الدائرة $\\pi r$ ."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-MAALAM-NISF-DAIRA-MUHIT"
+        },
+        {
+          "value": "8",
+          "id": "MISC-TALIS-QUTR-BADAL-NISF"
+        }
+      ],
+      "difficulty": 5
+    },
+    {
+      "id": "q2",
+      "statement": "إحداثيتا B:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الثنائية (x ; y)",
+      "expectedAnswer": {
+        "x": "3",
+        "y": "0"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القطر $AB = 2r = 8$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "B على يمين A على محور الفواصل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$-5 + 8$"
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = 8$ ، فـ $B(3\\,;\\,0)$ .",
+        "incorrect": "القطر ضعف نصف القطر."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 5
+    }
+  ]
+}

@@ -1,0 +1,292 @@
+{
+  "id": "ex-2am-tawzi-darb-jam-tarh-l2-006",
+  "lessonCode": "tawzi-darb-jam-tarh",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أعداد عشرية في مساويات صحيحة أو خاطئة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "أخطاء",
+      "أعداد عشرية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "تعلّم أن تفحص مساواة قبل أن تستعملها في الحساب."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "$2{,}5 \\times (4 + 6) = 2{,}5 \\times 4 + 2{,}5 \\times 6$ . هل المساواة صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "solution": {
+        "lines": [
+          "$2{,}5 \\times (4 + 6) = 2{,}5 \\times 4 + 2{,}5 \\times 6$",
+          "الضرب وُزّع على الحدّين معًا فالمساواة صحيحة."
+        ]
+      },
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طبّق على الطرف الأيسر ما تعرفه من الخاصية التوزيعية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الطرفين حدًّا بحدّ: هل وُزّع الضرب على الحدّين معًا؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الطرفين عدديًا عند الحاجة: هل يتساويان؟"
+        }
+      ],
+      "feedback": {
+        "correct": "المساواة صحيحة.",
+        "incorrect": "احسب طرفي المساواة عدديًا وقارنهما: المساواة صحيحة فقط إذا تساوى الطرفان دائمًا."
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "$1{,}5 \\times (8 + 2{,}4) = 1{,}5 \\times 8 + 2{,}4$ . هل المساواة صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-FIRSTONLY"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "solution": {
+        "lines": [
+          "$1{,}5 \\times (8 + 2{,}4) = 15{,}6$",
+          "$1{,}5 \\times 8 + 2{,}4 = 14{,}4$",
+          "النتيجتان مختلفتان: المساواة خاطئة."
+        ]
+      },
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طبّق على الطرف الأيسر ما تعرفه من الخاصية التوزيعية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الطرفين حدًّا بحدّ: هل وُزّع الضرب على الحدّين معًا؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الطرفين عدديًا عند الحاجة: هل يتساويان؟"
+        }
+      ],
+      "feedback": {
+        "correct": "المساواة خاطئة: نتحقّق بحساب الطرفين.",
+        "incorrect": "احسب طرفي المساواة عدديًا وقارنهما: المساواة صحيحة فقط إذا تساوى الطرفان دائمًا."
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "$3{,}5 \\times 2 + 3{,}5 \\times 6 = 3{,}5 \\times 2 \\times 6$ . هل المساواة صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-FACTORMULT"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "solution": {
+        "lines": [
+          "$3{,}5 \\times 2 + 3{,}5 \\times 6 = 28$",
+          "$3{,}5 \\times 2 \\times 6 = 42$",
+          "النتيجتان مختلفتان: المساواة خاطئة."
+        ]
+      },
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طبّق على الطرف الأيسر ما تعرفه من الخاصية التوزيعية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الطرفين حدًّا بحدّ: هل وُزّع الضرب على الحدّين معًا؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الطرفين عدديًا عند الحاجة: هل يتساويان؟"
+        }
+      ],
+      "feedback": {
+        "correct": "المساواة خاطئة: نتحقّق بحساب الطرفين.",
+        "incorrect": "احسب طرفي المساواة عدديًا وقارنهما: المساواة صحيحة فقط إذا تساوى الطرفان دائمًا."
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "$4{,}2 \\times 5 - 4{,}2 \\times 3 = 4{,}2 \\times (5 - 3)$ . هل المساواة صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "solution": {
+        "lines": [
+          "$4{,}2 \\times 5 - 4{,}2 \\times 3 = 4{,}2 \\times (5 - 3)$",
+          "الضرب وُزّع على الحدّين معًا فالمساواة صحيحة."
+        ]
+      },
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طبّق على الطرف الأيسر ما تعرفه من الخاصية التوزيعية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الطرفين حدًّا بحدّ: هل وُزّع الضرب على الحدّين معًا؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الطرفين عدديًا عند الحاجة: هل يتساويان؟"
+        }
+      ],
+      "feedback": {
+        "correct": "المساواة صحيحة.",
+        "incorrect": "احسب طرفي المساواة عدديًا وقارنهما: المساواة صحيحة فقط إذا تساوى الطرفان دائمًا."
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "اكتب ما تحصل عليه إذا حسبت طرفي المساواة الثالثة، وبيّن لماذا هي خاطئة.",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب إجابتك ثم قارنها بالحل النموذجي",
+      "solution": {
+        "lines": [
+          "$3{,}5 \\times 2 + 3{,}5 \\times 6 = 7 + 21 = 28$ .",
+          "$3{,}5 \\times 2 \\times 6 = 7 \\times 6 = 42$ .",
+          "الجداء لا يساوي المجموع : المساواة خاطئة."
+        ]
+      },
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ مساواة وقارن طرفيها بعناية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اسأل نفسك: هل وُزّع الضرب على الحدّين كليهما وبالعملية نفسها؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب النتيجة الصحيحة سطرًا بسطر ثم تحقّق منها بالحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن كتابتك بالحل النموذجي.",
+        "incorrect": "اكتب الصيغة الصحيحة سطرًا بسطر ثم قارنها بالحل النموذجي."
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

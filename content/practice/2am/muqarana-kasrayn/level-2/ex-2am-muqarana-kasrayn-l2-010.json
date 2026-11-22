@@ -1,0 +1,210 @@
+{
+  "id": "ex-2am-muqarana-kasrayn-l2-010",
+  "lessonCode": "muqarana-kasrayn",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — معصرة الزيتون",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مقارنة كسرين",
+      "معصرة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "تعصر المعصرة التعاونية الزيتون الذي يصلها كلّ يوم :"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "عصرت المعصرة $\\dfrac{4}{5}$ من الزيتون الوارد يوم السبت و $\\dfrac{9}{10}$ من الوارد يوم الأحد . في أيّ اليومين عُصر جزء أكبر ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{4}{5} > \\dfrac{9}{10}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-REVERSED"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{4}{5} = \\dfrac{9}{10}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-GAP"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{4}{5} < \\dfrac{9}{10}$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن بين المقامين : هل أحدهما مضاعف للآخر ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسرين بالمقام الأكبر ثمّ قارن بين البسطين ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب بسط الكسر الأصغر مقامًا ومقامه في العدد نفسه حتّى يصير مقامه مساويًا للمقام الآخر ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{4}{5} < \\dfrac{9}{10}$ .",
+        "incorrect": "اختر طريقة المقارنة المناسبة للحالة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$10$ مضاعف للعدد $5$ : $10 = 5 \\times 2$ .",
+          "$\\dfrac{4}{5} = \\dfrac{4 \\times 2}{5 \\times 2} = \\dfrac{8}{10}$ .",
+          "نقارن بين البسطين : $8 < 9$ ، إذن $\\dfrac{4}{5} < \\dfrac{9}{10}$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما الطريقة الأنسب لمقارنة $\\dfrac{4}{5}$ و $\\dfrac{9}{10}$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نقارن كلاّ من الكسرين بالعدد $1$ لأنّ أحدهما أصغر من $1$ والآخر أكبر منه",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "نقارن بين البسطين لأنّ المقامين متساويان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-NUMONLY"
+        },
+        {
+          "id": "C",
+          "content": "نوحّد المقامين لأنّ أحدهما مضاعف للآخر ثمّ نقارن بين البسطين",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "نقارن بين المقامين : الأصغر مقامًا هو الأكبر لأنّ البسطين متساويان",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى البسطين وإلى المقامين : أيّها متساوٍ ؟ وهل يقسم أحدها الآخر ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لكلّ حالة طريقتها : مقامان متساويان ، بسطان متساويان ، مقام مضاعف لمقام ، أو كسران على جانبي $1$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "نوحّد المقامين لأنّ أحدهما مضاعف للآخر ثمّ نقارن بين البسطين .",
+        "incorrect": "حدّد الحالة التي ينتمي إليها الكسران ثمّ اختر طريقتها ."
+      },
+      "solution": {
+        "lines": [
+          "$10$ مضاعف للعدد $5$ : $10 = 5 \\times 2$ .",
+          "$\\dfrac{4}{5} = \\dfrac{4 \\times 2}{5 \\times 2} = \\dfrac{8}{10}$ .",
+          "نقارن بين البسطين : $8 < 9$ ، إذن $\\dfrac{4}{5} < \\dfrac{9}{10}$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ورد يوم الاثنين من الزيتون ما يعادل $\\dfrac{11}{8}$ من سعة العصر في اليوم الواحد . قارن بين $\\dfrac{11}{8}$ والعدد $1$ :",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{11}{8} < 1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-REVERSED"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{11}{8} > 1$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع الكسر أمام العدد المعطى : اكتب العدد كسرًا مقامه مقام الكسر ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العدد على شكل كسر له المقام نفسه ثمّ قارن بين البسطين ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بين البسطين بعد توحيد المقامين ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{11}{8} > 1$ .",
+        "incorrect": "اختر طريقة المقارنة المناسبة للحالة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "العدد $1 = \\dfrac{8}{8}$ .",
+          "البسط أكبر من المقام : $11 > 8$ ، إذن $\\dfrac{11}{8} > 1$ ."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "id": "ex-1am-adad-nisbiya-siyaqat-l2-006",
+  "lessonCode": "adad-nisbiya-siyaqat",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — أبعد موضع عن البحر",
+    "estimatedMinutes": 5,
+    "tags": [
+      "أعداد نسبية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "قرأ فريق كشّافة موضعين على جهاز الارتفاع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "شطّ الملح على ارتفاع $-30$ م وربوة على ارتفاع $20$ م. أيّ الموضعين أبعد عن سطح البحر : $-30$ م أم $20$ م ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-30$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$20$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-REL-SIGNDIST"
+        },
+        {
+          "id": "C",
+          "content": "البعد نفسه",
+          "isCorrect": false,
+          "misconceptionId": "MISC-REL-SIGNONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "البعد عن الصفر مسافة : هل تتأثّر بالإشارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب مسافة كلّ موضع إلى الصفر ثمّ قارن."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأبعد هو الأكبر مسافة ولو كان تحت الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "الأبعد هو $-30$ : مسافته $30$ وهي الأكبر.",
+        "incorrect": "البعد عن الصفر مسافة : نقارن المسافات لا الإشارات."
+      },
+      "solution": {
+        "lines": [
+          "المسافتان : $30$ و $20$",
+          "الأكبر مسافة هو $-30$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما المسافة إلى الصفر للعدد $-30$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "-30",
+          "id": "MISC-REL-NEGDIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يقوله العدد : الجهة أم البعد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي عدد التدريجات بين المستوى والصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احذف الإشارة تجد المسافة إلى الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "المسافة إلى الصفر للعدد $-30$ هي $30$ .",
+        "incorrect": "المسافة لا تكون سالبة : هي العدد دون إشارته."
+      },
+      "solution": {
+        "lines": [
+          "المسافة هي عدد التدريجات بين $-30$ والصفر",
+          "$30$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اكتب معاكس العدد $20$ .",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "-20",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-REL-OPPSAME"
+        },
+        {
+          "value": "21",
+          "id": "MISC-REL-OPPNEXT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العدد على الجهاز ثمّ انظر أين يقف ظلّه في المرآة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المعاكس له المسافة نفسها إلى الصفر على الجهة الأخرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "غيّر الإشارة وأبقِ المسافة."
+        }
+      ],
+      "feedback": {
+        "correct": "معاكس $20$ هو $-20$ : المسافة نفسها إلى الصفر على الجهة الأخرى.",
+        "incorrect": "المعاكس يقع على الجهة الأخرى من الصفر وبالمسافة نفسها."
+      },
+      "solution": {
+        "lines": [
+          "$20$ : المسافة $20$ فوق الصفر",
+          "المعاكس : المسافة نفسها على الجهة الأخرى، $-20$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

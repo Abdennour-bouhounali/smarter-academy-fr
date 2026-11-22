@@ -1,0 +1,200 @@
+{
+  "id": "ex-2am-masafa-nuqtatayn-l2-009",
+  "lessonCode": "masafa-nuqtatayn",
+  "level": 2,
+  "metadata": {
+    "title": "فاصلة نقطة بعلم المسافة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "نقطة على بعد معلوم",
+      "حلّان"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-41",
+      "page": 50,
+      "section": "أتعمّق",
+      "number": 41
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "النقطة $M(+2{,}5)$ والنقطة $N$ تنتميان إلى المستقيم المدرّج نفسه، و $MN=4$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما فاصلات النقط التي تبعد $4$ عن النقطة $M(+2{,}5)$ على المستقيم المدرّج ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-1{,}5$ و $+6{,}5$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$-6{,}5$ و $+1{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MASAFA2-SIGNSWAP"
+        },
+        {
+          "id": "C",
+          "content": "$+6{,}5$ فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MASAFA2-ONEANSWER"
+        },
+        {
+          "id": "D",
+          "content": "$-1{,}5$ فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MASAFA2-ONEANSWER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم المستقيم وعيّن النقطة المعلومة، ثمّ تحرّك بالمسافة المعطاة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اسأل نفسك: في أيّ الجهتين يمكن أن تتحرّك انطلاقًا من النقطة المعلومة؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب المسافة بين كلّ نقطة وجدتها والنقطة المعلومة."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطتان المطلوبتان فاصلتاهما $-1{,}5$ و $+6{,}5$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "نضيف المسافة إلى الفاصلة: $+2{,}5+4=+6{,}5$",
+          "ونطرحها منها: $+2{,}5-4=-1{,}5$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "النقطة $N$ تنتمي إلى المستقيم المدرّج نفسه، $MN=4$ ، وهي على يمين النقطة $M(+2{,}5)$ . ما فاصلة $N$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "6.5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SIGNSWAP",
+          "value": "-6.5"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة المعطاة هي المسافة بين النقطتين: النقطة المطلوبة تبعد بها عن النقطة المعلومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كانت على اليمين أضفنا المسافة إلى الفاصلة المعلومة، وإذا كانت على اليسار طرحناها منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب المسافة بين النقطتين انطلاقًا من فاصلتيهما."
+        }
+      ],
+      "feedback": {
+        "correct": "فاصلة $N$ هي $+6{,}5$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "النقطة على اليمين فنضيف المسافة إلى فاصلة $M$",
+          "$+2{,}5+4=+6{,}5$"
+        ],
+        "result": "6.5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "النقطة $N$ تنتمي إلى المستقيم المدرّج نفسه، $MN=4$ ، وهي على يسار النقطة $M(+2{,}5)$ . ما فاصلة $N$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-1.5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SIGNSWAP",
+          "value": "1.5"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة المعطاة هي المسافة بين النقطتين: النقطة المطلوبة تبعد بها عن النقطة المعلومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كانت على اليمين أضفنا المسافة إلى الفاصلة المعلومة، وإذا كانت على اليسار طرحناها منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب المسافة بين النقطتين انطلاقًا من فاصلتيهما."
+        }
+      ],
+      "feedback": {
+        "correct": "فاصلة $N$ هي $-1{,}5$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "النقطة على اليسار فنطرح المسافة من فاصلة $M$",
+          "$+2{,}5-4=-1{,}5$"
+        ],
+        "result": "-1.5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

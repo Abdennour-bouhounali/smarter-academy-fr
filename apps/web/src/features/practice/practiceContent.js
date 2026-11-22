@@ -15,12 +15,8 @@ const INDEX = import.meta.glob('../../../../../content/practice/index.generated.
 
 const indexData = Object.values(INDEX)[0]?.default ?? {};
 
-/** niveau → nombre d'exercices, sans ouvrir un seul fichier. */
-export function levelCounts(lessonCode) {
-  const levels = indexData[lessonCode] ?? {};
-
-  return Object.fromEntries(Object.entries(levels).map(([level, ids]) => [Number(level), ids.length]));
-}
+// `levelCounts` vit dans practiceCounts.js (sans cet index) ; ré-exporté pour les appelants existants.
+export { levelCounts } from './practiceCounts';
 
 /** Les identifiants d'exercice d'un niveau, dans l'ordre d'écriture. */
 export function exerciseIdsFor(lessonCode, level) {

@@ -1,0 +1,305 @@
+{
+  "id": "ex-1am-talim-mustaqim-mudarraj-l5-002",
+  "lessonCode": "talim-mustaqim-mudarraj",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — شريط الأمتار",
+    "estimatedMinutes": 12,
+    "tags": [
+      "وضعية إدماجية",
+      "تعليم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يرسم نجّار شريطًا مدرّجًا مبدؤه $O$ ويحمل الوحدة نفسها على الجهتين. طول وحدته 3 cm ، والمبدإ يبعد 9 cm عن الطرف الأيسر و 21 cm عن الطرف الأيمن."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نعلّم النقطة $A(-2)$ على مستقيم مدرّج طول وحدته $3$ cm . كم تبعد عن المبدإ $O$ بالسنتيمتر؟ نكتب العدد موجبًا إن كانت على يمين $O$ وسالبًا إن كانت على يسارها.",
+      "learningPoints": [
+        {
+          "code": "1am_talim-mustaqim-mudarraj_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "-6",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-TALIM1-SIGNSIDE"
+        },
+        {
+          "value": "-2",
+          "id": "MISC-TALIM1-UNITIGNORED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفاصلة تعطي عدد الوحدات من المبدإ، وطول الوحدة معطى بالسنتيمتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب الفاصلة في طول الوحدة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ما على يسار المبدإ يأخذ إشارة −."
+        }
+      ],
+      "feedback": {
+        "correct": "موضع $A$ : $-6$ cm من $O$ .",
+        "incorrect": "اقرأ الجهة من المبدإ ثمّ احسب البعد، ولا تنسَ قيمة التدريجة."
+      },
+      "solution": {
+        "lines": [
+          "عدد الوحدات من $O$ : $2$ ، وكلّ وحدة $3$ cm",
+          "$2\\times 3=6$ cm",
+          "على يسار المبدإ: $-6$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "نعلّم النقطة $B(4{,}5)$ على مستقيم مدرّج طول وحدته $3$ cm . كم تبعد عن المبدإ $O$ بالسنتيمتر؟ نكتب العدد موجبًا إن كانت على يمين $O$ وسالبًا إن كانت على يسارها.",
+      "learningPoints": [
+        {
+          "code": "1am_talim-mustaqim-mudarraj_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "13.5",
+      "misconceptionSignatures": [
+        {
+          "value": "4.5",
+          "id": "MISC-TALIM1-UNITIGNORED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفاصلة تعطي عدد الوحدات من المبدإ، وطول الوحدة معطى بالسنتيمتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب الفاصلة في طول الوحدة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ما على يسار المبدإ يأخذ إشارة −."
+        }
+      ],
+      "feedback": {
+        "correct": "موضع $B$ : $13{,}5$ cm من $O$ .",
+        "incorrect": "اقرأ الجهة من المبدإ ثمّ احسب البعد، ولا تنسَ قيمة التدريجة."
+      },
+      "solution": {
+        "lines": [
+          "عدد الوحدات من $O$ : $4{,}5$ ، وكلّ وحدة $3$ cm",
+          "$4{,}5\\times 3=13{,}5$ cm",
+          "على يمين المبدإ: $13{,}5$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "على شريط ورقيّ يبعد المبدإ $O$ عن طرفه الأيسر $9$ cm وعن طرفه الأيمن $21$ cm . نريد تعليم النقطتين $A(-5)$ و $B(7)$ ونحمل الوحدة نفسها على الجهتين. ما أكبر طول للوحدة بالسنتيمتر يُدخل النقطتين على الشريط؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-mustaqim-mudarraj_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "1.8",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-TALIM1-ONESIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نحمل الوحدة نفسها من جهتي المبدإ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب لكلّ جهة أكبر طول يتّسع لها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خذ الأصغر من الطولين لتتّسع الجهتان معًا."
+        }
+      ],
+      "feedback": {
+        "correct": "أكبر طول للوحدة $1{,}8$ cm : الجهة الأضيق هي التي تحدّده.",
+        "incorrect": "اقرأ الجهة من المبدإ ثمّ احسب البعد، ولا تنسَ قيمة التدريجة."
+      },
+      "solution": {
+        "lines": [
+          "جهة اليسار: $9\\div 5=1{,}8$",
+          "جهة اليمين: $21\\div 7=3$",
+          "نأخذ الأصغر ليتّسع الشريط للجهتين: $1{,}8$ cm"
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "على مستقيم مدرّج ننطلق من المبدإ $O$ ونعدّ الاتجاه الموجب نحو اليمين. النقطة $A(-2)$ تقع:",
+      "learningPoints": [
+        {
+          "code": "1am_talim-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "على يمين المبدإ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM1-SIGNSIDE"
+        },
+        {
+          "id": "B",
+          "content": "عند المبدإ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM1-SIGNSIDE"
+        },
+        {
+          "id": "C",
+          "content": "على يسار المبدإ",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع الأعداد على مستقيم مدرّج وانظر أين تقع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأعداد تكبر نحو اليمين وتصغر نحو اليسار."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن مواضع النقط لا أحجام الأرقام المكتوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "فاصلة $-2$ : النقطة على يسار المبدإ.",
+        "incorrect": "الإشارة − تعني الجهة اليسرى والإشارة + (المحذوفة) الجهة اليمنى."
+      },
+      "solution": {
+        "lines": [
+          "$-2$ سالب",
+          "على يسار المبدإ"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "على مستقيم مدرّج النقطتان $A(-2)$ و $B(4{,}5)$ . أيّ الفاصلتين لنقطة أبعد عن المبدإ $O$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$4{,}5$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$-2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM1-FARSIGN"
+        },
+        {
+          "id": "C",
+          "content": "البعد عنه نفسه",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM1-FARSAME"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع الأعداد على مستقيم مدرّج وانظر أين تقع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأعداد تكبر نحو اليمين وتصغر نحو اليسار."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن مواضع النقط لا أحجام الأرقام المكتوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "الأبعد عن المبدإ هي النقطة ذات الفاصلة $4{,}5$ .",
+        "incorrect": "الأبعد عن المبدإ هي الأكبر مسافةً إليه، لا الأكبر عددًا."
+      },
+      "solution": {
+        "lines": [
+          "المسافتان: $2$ و $4{,}5$",
+          "الأبعد: $4{,}5$"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

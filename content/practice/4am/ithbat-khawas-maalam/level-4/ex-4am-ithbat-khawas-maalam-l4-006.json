@@ -1,0 +1,131 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l4-006",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — خيمة في الطاسيلي",
+    "estimatedMinutes": 2,
+    "tags": [
+      "متساوي الساقين",
+      "الطاسيلي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_ithbat-khawas-maalam_P1",
+      "modelledOn": "ex-26"
+    }
+  },
+  "generator": {
+    "tool": "u1x-ithbat-khawas-maalam/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "واجهة خيمة في الطاسيلي مثلث رؤوسه $A(-3\\,;\\,-1)$ ، $B(3\\,;\\,-1)$ ، $C(0\\,;\\,5)$ في معلم متعامد ومتجانس (الوحدة 1 m)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "احسب $CA^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "45",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MASAFA-JADHR-JAM",
+          "value": "9"
+        },
+        {
+          "id": "MISC-MAALAM-MASAFA-TARBI",
+          "value": "-27"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مركبتا $\\overrightarrow{CA}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$-3$ و $-6$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ربّع ثم اجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$CA^2 = 9 + 36 = 45$ ، و $CB^2 = 45$ ، $AB^2 = 36$ .",
+        "incorrect": "المربعات موجبة."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "المثلث ABC :",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "متقايس الأضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SAQAYN-QAIM"
+        },
+        {
+          "id": "B",
+          "content": "قائم في A",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-FITHAGHURAS-WATAR"
+        },
+        {
+          "id": "C",
+          "content": "متساوي الساقين رأسه C وليس قائما",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "قائم في C",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SAQAYN-QAIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن $CA^2$ و $CB^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$45 + 45$ و 36 ؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الزاوية القائمة تحتاج مساواة عكس فيثاغورس."
+        }
+      ],
+      "feedback": {
+        "correct": "$CA = CB$ ، و $45 + 45 \\neq 36$ : ليس قائما.",
+        "incorrect": "تقايس الساقين لا يعطي زاوية قائمة."
+      }
+    }
+  ]
+}

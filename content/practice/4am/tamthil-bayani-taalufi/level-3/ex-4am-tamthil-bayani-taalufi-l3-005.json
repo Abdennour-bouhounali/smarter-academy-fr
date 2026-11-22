@@ -1,0 +1,328 @@
+{
+  "id": "ex-4am-tamthil-bayani-taalufi-l3-005",
+  "lessonCode": "tamthil-bayani-taalufi",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2008 — المستقيم $(AB)$ ودالة ثانية",
+    "estimatedMinutes": 10,
+    "tags": [
+      "قراءة بيانية",
+      "تمثيل بياني",
+      "نقطة تقاطع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tamthil-bayani-taalufi_P2",
+      "modelledOn": "BEM 2008 I-4"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2008",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في المعلم المتعامد والمتجانس التالي، المستقيم $(AB)$ هو التمثيل البياني لدالة تآلفية $f$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "K1": [
+          -2,
+          -5
+        ],
+        "H1": [
+          3,
+          5
+        ],
+        "A": [
+          0,
+          -1
+        ],
+        "B": [
+          2,
+          3
+        ],
+        "X1": [
+          -3,
+          0
+        ],
+        "X2": [
+          4,
+          0
+        ]
+      },
+      "lines": [
+        {
+          "through": [
+            "K1",
+            "H1"
+          ],
+          "name": "(AB)",
+          "tone": "indigo",
+          "extend": [
+            0.04,
+            0.04
+          ]
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw",
+        "A": "e",
+        "B": "e"
+      },
+      "hidden": [
+        "H1",
+        "K1",
+        "X1",
+        "X2"
+      ],
+      "ariaLabel": "معلم متعامد ومتجانس على ورقة مرصوفة: المستقيم (AB) يصعد ويقطع محور التراتيب في النقطة A تحت المبدأ O"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "بقراءة بيانية، عيّن العددين $a$ و $b$ حيث: $f(x) = ax + b$ .",
+      "statement": "أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-1",
+      "misconceptionSignatures": [
+        {
+          "value": "1/2",
+          "id": "MISC-BAYANI-B-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الترتيب عند المبدأ هو ترتيب النقطة التي يقطع فيها المستقيم محور التراتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث على المستقيم عن النقطة التي فاصلتها 0، ثم اقرأ ترتيبها على محور التراتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "المستقيم $(AB)$ يقطع محور التراتيب في النقطة $(0 ; -1)$ .",
+        "incorrect": "اقرأ ترتيب نقطة تقاطع المستقيم مع محور التراتيب، لا فاصلة تقاطعه مع محور الفواصل."
+      },
+      "solution": {
+        "lines": [
+          "المستقيم $(AB)$ يقطع محور التراتيب في النقطة $(0 ; -1)$ .",
+          "إذن الترتيب عند المبدأ هو: $b = -1$ ."
+        ],
+        "result": "b = -1"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "1/2",
+          "id": "MISC-BAYANI-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختر نقطتين من المستقيم تقعان على عقدتين من الشبكة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من النقطة الأولى إلى الثانية: كم تزيد الفاصلة؟ وكم يصعد المستقيم أو ينزل؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "معامل التوجيه هو تغيّر الترتيب مقسوما على تغيّر الفاصلة، ويكون سالبا إذا نزل المستقيم."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 2$ .",
+        "incorrect": "اقسم تغيّر الترتيب على تغيّر الفاصلة (وليس العكس)، وانتبه إلى الإشارة إذا نزل المستقيم."
+      },
+      "solution": {
+        "lines": [
+          "النقطتان $(0 ; -1)$ و $(2 ; 3)$ من المستقيم $(AB)$ .",
+          "عندما نتقدّم $2$ وحدات إلى اليمين، يصعد المستقيم بـ $4$ وحدات.",
+          "إذن معامل التوجيه هو: $a = \\dfrac{4}{2} = 2$ ."
+        ],
+        "result": "a = 2"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "نعتبر الدالة $g$ حيث: $g(x) = -x + 2$ . أنشئ في نفس المعلم التمثيل البياني للدالة $g$ .",
+      "statement": "عيّن إحداثيي نقطة تقاطع التمثيل البياني للدالة $g$ مع محور التراتيب.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": {
+        "x": "0",
+        "y": "2"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "2",
+            "y": "0"
+          },
+          "id": "MISC-BAYANI-FASILA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل نقطة من محور التراتيب فاصلتها 0."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب صورة العدد 0 بالدالة $g$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$g(0) = 2$ : النقطة $(0 ; 2)$ .",
+        "incorrect": "نقطة محور التراتيب فاصلتها 0، وترتيبها صورة 0: اكتب الفاصلة أولا ثم الترتيب."
+      },
+      "solution": {
+        "lines": [
+          "نقطة تقاطع التمثيل البياني للدالة $g$ مع محور التراتيب فاصلتها 0.",
+          "$g(0) = -0 + 2 = 2$",
+          "إذن النقطة هي $(0 ; 2)$ ، و $2$ هو الترتيب عند المبدأ."
+        ],
+        "result": "(0 ; 2)"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "ارسم التمثيل البياني للدالة $g$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التمثيل البياني لدالة تآلفية مستقيم: تكفي نقطتان منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خذ النقطة $(0 ; b)$ من محور التراتيب، ثم احسب صورة عدد آخر."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "$g(0) = 2$ و $g(2) = 0$ : التمثيل البياني للدالة $g$ هو المستقيم الذي يشمل النقطتين $(0 ; 2)$ و $(2 ; 0)$ .",
+          "هذا المستقيم ينزل لأن $a = -1 < 0$ ."
+        ]
+      },
+      "timeSeconds": 300
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "بقراءة بيانية، عيّن إحداثيي نقطة تقاطع المستقيم $(AB)$ والتمثيل البياني للدالة $g$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": {
+        "x": "1",
+        "y": "1"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن عقدة الشبكة التي يتقاطع فيها المستقيمان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ فاصلتها على محور الفواصل ثم ترتيبها على محور التراتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "يتقاطع المستقيمان في النقطة $(1 ; 1)$ .",
+        "incorrect": "الإحداثيان بالترتيب $(x ; y)$ : الفاصلة أولا ثم الترتيب."
+      },
+      "solution": {
+        "lines": [
+          "المستقيمان يتقاطعان في عقدة الشبكة التي فاصلتها 1 وترتيبها 1.",
+          "تحقّق: $f(1) = 2 \\times 1 - 1 = 1$ و $g(1) = -1 + 2 = 1$ ."
+        ],
+        "result": "(1 ; 1)"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

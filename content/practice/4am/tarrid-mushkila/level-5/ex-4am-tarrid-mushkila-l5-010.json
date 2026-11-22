@@ -1,0 +1,383 @@
+{
+  "id": "ex-4am-tarrid-mushkila-l5-010",
+  "lessonCode": "tarrid-mushkila",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2015 — أرض فلاح بتلمسان",
+    "estimatedMinutes": 20,
+    "tags": [
+      "ترييض",
+      "معادلة",
+      "مساحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tarrid-mushkila_P1",
+      "modelledOn": "BEM 2015 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يملك فلاح بولاية تلمسان، يتصدّق بجزء من محصوله، قطعة أرض مستطيلة الشكل $ABCD$ مساحتها $1440m^2$ و عرضها $BC$ يساوي خُمُسَي طولها $AB$ .\n$M$ نقطة من الضلع $[DC]$ حيث $DM = x$ (بالمتر). يريد الفلاح أن يغرس الجزء $ABMD$ أشجار مشمش، و أن يبني على الجزء المثلث $BCM$ مستودعًا لعتاده الفلاحي، كما في الشكل.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          5
+        ],
+        "B": [
+          10,
+          5
+        ],
+        "C": [
+          10,
+          0
+        ],
+        "D": [
+          0,
+          0
+        ],
+        "M": [
+          4,
+          0
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        {
+          "from": "C",
+          "to": "M"
+        },
+        {
+          "from": "M",
+          "to": "D",
+          "label": "x"
+        },
+        [
+          "D",
+          "A"
+        ],
+        [
+          "B",
+          "M"
+        ]
+      ],
+      "polygons": [
+        {
+          "points": [
+            "B",
+            "C",
+            "M"
+          ],
+          "tone": "amber"
+        },
+        {
+          "points": [
+            "A",
+            "B",
+            "M",
+            "D"
+          ],
+          "tone": "emerald"
+        }
+      ],
+      "rightAngles": [
+        [
+          "D",
+          "A",
+          "B"
+        ],
+        [
+          "A",
+          "B",
+          "C"
+        ],
+        [
+          "B",
+          "C",
+          "D"
+        ],
+        [
+          "C",
+          "D",
+          "A"
+        ]
+      ],
+      "labels": {
+        "A": "nw",
+        "B": "ne",
+        "C": "se",
+        "D": "sw",
+        "M": "s"
+      },
+      "ariaLabel": "مستطيل ABCD، النقطة M على [DC] حيث DM = x، والقطعة [BM] تقسمه إلى شبه منحرف ABMD ومثلث قائم BCM",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "احسب الطول $AB$ و العرض $BC$ .",
+      "statement": "الطول $AB$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "60",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "سمِّ $AB = L$ ، فيكون $BC = \\dfrac{2}{5}L$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المساحة = الطول × العرض: تحصل على $L^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = 60m$ .",
+        "incorrect": "اكتب المساحة بدلالة الطول وحده."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2}{5}L^2 = 1440$",
+          "$L^2 = \\dfrac{1440 \\times 5}{2} = 3600$",
+          "$L = \\sqrt{3600} = 60m$"
+        ],
+        "result": "AB = 60\\,m"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العرض $BC$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: العرض بـ m",
+      "expectedAnswer": "24",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل العلاقة بين العرض والطول."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC = 24m$ .",
+        "incorrect": "العرض خُمُسا الطول."
+      },
+      "solution": {
+        "lines": [
+          "$BC = \\dfrac{2}{5} \\times 60 = 24m$"
+        ],
+        "result": "BC = 24\\,m"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "عبّر بدلالة $x$ عن مساحة المثلث $BCM$ .",
+      "statement": "تُكتب مساحة المثلث $BCM$ على الشكل $p + mx$ : أعط العدد $p$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $p$ فقط",
+      "expectedAnswer": "720",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $BCM$ قائم في $C$ : ما هما ضلعاه القائمان؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر عن $MC$ بدلالة $x$ ثم انشر."
+        }
+      ],
+      "feedback": {
+        "correct": "$p = 720$ .",
+        "incorrect": "الضلعان القائمان هما $BC$ و $MC = 60 - x$ ؛ لا تنسَ القسمة على 2 ."
+      },
+      "solution": {
+        "lines": [
+          "$MC = DC - DM = 60 - x$",
+          "مساحة المثلث $BCM$ : $\\dfrac{BC \\times MC}{2} = \\dfrac{24(60 - x)}{2}$",
+          "$= 12(60 - x) = 720 - 12x$"
+        ],
+        "result": "720 - 12x"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أعط العدد $m$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $m$ فقط (قد يكون سالبًا)",
+      "expectedAnswer": "-12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر $12(60 - x)$ : ما هو معامل $x$ ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "مساحة $BCM$ : $720 - 12x$ .",
+        "incorrect": "انتبه إلى الإشارة عند النشر."
+      },
+      "solution": {
+        "lines": [
+          "$12(60 - x) = 720 - 12x$"
+        ],
+        "result": "720 - 12x"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "lead": "استنتج بدلالة $x$ مساحة الجزء $ABMD$ .",
+      "statement": "تُكتب مساحة الجزء $ABMD$ على الشكل $p + mx$ : أعط العدد $m$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $m$ فقط (قد يكون سالبًا)",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة $ABMD$ = مساحة القطعة كلها − مساحة المثلث $BCM$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "مساحة $ABMD$ : $1440 - (720 - 12x) = 720 + 12x$ .",
+        "incorrect": "اطرح مساحة المثلث كلها (بين قوسين) من مساحة القطعة."
+      },
+      "solution": {
+        "lines": [
+          "مساحة $ABMD$ : $1440 - (720 - 12x)$",
+          "$= 1440 - 720 + 12x$",
+          "$= 720 + 12x$"
+        ],
+        "result": "720 + 12x"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "☜ عيّن الطول $DM$ بحيث تكون مساحة الجزء المغروس أشجار مشمش ثلاثة أضعاف مساحة المستودع.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-mushkila_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول $DM$ بـ m",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "60",
+          "id": "MISC-TARRID-DIF-MAJMU"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل العبارتين اللتين وجدتهما في السؤال 02 ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب «مساحة $ABMD$ = 3 × مساحة $BCM$» ثم حلّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الحل محصور بين 0 و 60 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$720 + 12x = 3(720 - 12x)$ تعطي $x = 30m$ .",
+        "incorrect": "ضع مساحة المثلث بين قوسين قبل الضرب في 3 ، ثم اجمع حدود $x$ في طرف واحد."
+      },
+      "solution": {
+        "lines": [
+          "$720 + 12x = 3(720 - 12x)$",
+          "$720 + 12x = 2160 - 36x$",
+          "$12x + 36x = 2160 - 720$",
+          "$48x = 1440$",
+          "$x = 30$",
+          "$0 \\leqslant 30 \\leqslant 60$ : الحل يلائم الوضعية.",
+          "التحقق: مساحة $ABMD$ = $720 + 360 = 1080$ ومساحة $BCM$ = $720 - 360 = 360$ ، و $1080 = 3 \\times 360$ .",
+          "إذن $DM = 30m$ ."
+        ],
+        "result": "DM = 30\\,m"
+      },
+      "work": "required",
+      "timeSeconds": 480
+    }
+  ]
+}

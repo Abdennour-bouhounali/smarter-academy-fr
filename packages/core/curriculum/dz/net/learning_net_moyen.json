@@ -1,0 +1,2408 @@
+{
+  "_comment": "Réseau des الكفاءات du cycle moyen : fils conceptuels et liens entre items du programme officiel (official_programme_moyen.json). Les leçons — publiées (available) ou à générer (coming_soon) — sont dans lessons_<grade>_*.json, qui déclarent leurs items dans `programmeItems` ; les leçons PRÉVUES de la phase 1 y ont migré le 2026-10-14. Contrat : docs/architecture/LEARNING_NET.md.",
+  "version": 1,
+  "builtOn": "2026-11-17",
+  "linkTypes": {
+    "requires": "L’item « to » ne peut être construit sans l’item « from » : lien de révision (أستعدّ).",
+    "extends": "Même notion, plus loin dans la spirale : « to » REPART de « from » et n’enseigne que addedValueAr.",
+    "consolidates": "Le programme répète « from » : « to » le rappelle et le consolide (الإرساء), sans le reconstruire."
+  },
+  "threads": [
+    {
+      "id": "naturals-decimals",
+      "titleAr": "الأعداد الطبيعية والعشرية والعمليات",
+      "domain": "numbers",
+      "items": [
+        "1am.m1.r01",
+        "1am.m1.r02",
+        "1am.m1.r03",
+        "1am.m1.r04",
+        "1am.m1.r05",
+        "1am.m1.r06",
+        "1am.m3.r03",
+        "1am.m3.r04",
+        "1am.m3.r05",
+        "1am.m5.r10",
+        "2am.m1.r01",
+        "2am.m1.r02",
+        "2am.m1.r03",
+        "2am.m1.r05",
+        "2am.m1.r06",
+        "3am.m5.x1"
+      ]
+    },
+    {
+      "id": "divisibility",
+      "titleAr": "القسمة والقواسم",
+      "domain": "numbers",
+      "items": [
+        "1am.m3.r01",
+        "1am.m3.r02",
+        "2am.m1.r04",
+        "4am.m1.r01",
+        "4am.m1.r02",
+        "4am.m1.r03",
+        "4am.m1.r04"
+      ]
+    },
+    {
+      "id": "fractions-rationals",
+      "titleAr": "الكسور والأعداد الناطقة",
+      "domain": "numbers",
+      "items": [
+        "1am.m5.r01",
+        "1am.m5.r02",
+        "1am.m5.r03",
+        "1am.m5.x1",
+        "2am.m1.r07",
+        "2am.m1.r08",
+        "2am.m1.r09",
+        "3am.m1.r03",
+        "3am.m1.r04",
+        "3am.m1.r05",
+        "3am.m1.r06",
+        "3am.m1.r07",
+        "3am.m1.r08",
+        "3am.m5.r04",
+        "4am.m1.r05"
+      ]
+    },
+    {
+      "id": "relatives-line-frame",
+      "titleAr": "الأعداد النسبية والمستقيم المدرّج والمعلم",
+      "domain": "numbers",
+      "items": [
+        "1am.m5.r04",
+        "1am.m5.r05",
+        "1am.m5.r06",
+        "1am.m5.r07",
+        "2am.m4.r01",
+        "2am.m4.r02",
+        "2am.m4.r03",
+        "2am.m4.r04",
+        "2am.m4.r05",
+        "2am.m4.r06",
+        "2am.m4.r07",
+        "3am.m1.r01",
+        "3am.m1.r02"
+      ]
+    },
+    {
+      "id": "powers-roots",
+      "titleAr": "القوى والجذور",
+      "domain": "numbers",
+      "items": [
+        "3am.m3.r01",
+        "3am.m3.r02",
+        "3am.m3.r03",
+        "3am.m3.r04",
+        "3am.m3.r05",
+        "3am.m3.r06",
+        "3am.m3.r07",
+        "3am.m3.r08",
+        "4am.m1.r06",
+        "4am.m1.r07"
+      ]
+    },
+    {
+      "id": "literal-calculus",
+      "titleAr": "الحساب الحرفي",
+      "domain": "numbers",
+      "items": [
+        "1am.m5.r08",
+        "1am.m5.r09",
+        "3am.m5.r01",
+        "3am.m5.r02",
+        "3am.m5.r03",
+        "4am.m3.r01",
+        "4am.m3.r02"
+      ]
+    },
+    {
+      "id": "equations",
+      "titleAr": "المعادلات والمتراجحات والجمل",
+      "domain": "numbers",
+      "items": [
+        "2am.m4.r08",
+        "2am.m4.r09",
+        "3am.m5.r05",
+        "3am.m5.r06",
+        "4am.m3.r03",
+        "4am.m3.r04",
+        "4am.m3.r05",
+        "4am.m5.r01",
+        "4am.m5.r02",
+        "4am.m5.r11"
+      ]
+    },
+    {
+      "id": "proportionality-functions",
+      "titleAr": "التناسبية والدوال",
+      "domain": "data",
+      "items": [
+        "1am.m6.r01",
+        "1am.m6.r02",
+        "1am.m6.r03",
+        "1am.m6.r04",
+        "1am.m6.r05",
+        "1am.m6.r06",
+        "1am.m6.r07",
+        "1am.m6.r08",
+        "2am.m6.r01",
+        "2am.m6.r02",
+        "2am.m6.r03",
+        "2am.m6.r04",
+        "2am.m6.r05",
+        "3am.m7.r01",
+        "3am.m7.r06",
+        "4am.m5.r03",
+        "4am.m5.r04",
+        "4am.m5.r05",
+        "4am.m5.r06",
+        "4am.m5.r07",
+        "4am.m5.r08",
+        "4am.m5.r09",
+        "4am.m5.r10",
+        "4am.m5.r12",
+        "4am.m5.r13",
+        "4am.m5.r14"
+      ]
+    },
+    {
+      "id": "measures-units",
+      "titleAr": "المقادير ووحداتها",
+      "domain": "data",
+      "items": [
+        "1am.m6.r09",
+        "2am.m6.r06",
+        "3am.m7.r02",
+        "3am.m7.r03",
+        "3am.m7.r04",
+        "3am.m7.r05"
+      ]
+    },
+    {
+      "id": "statistics",
+      "titleAr": "الإحصاء وتنظيم المعطيات",
+      "domain": "data",
+      "items": [
+        "1am.m6.r10",
+        "1am.m6.r11",
+        "1am.m6.r12",
+        "2am.m6.r07",
+        "2am.m6.r08",
+        "2am.m6.r09",
+        "2am.m6.r10",
+        "2am.m6.r11",
+        "2am.m6.r12",
+        "3am.m7.r07",
+        "3am.m7.r08",
+        "3am.m7.r09",
+        "3am.m7.r10",
+        "3am.m7.r11",
+        "3am.m7.r12",
+        "4am.m7.r01",
+        "4am.m7.r02",
+        "4am.m7.r03"
+      ]
+    },
+    {
+      "id": "plane-figures",
+      "titleAr": "الأشكال المستوية والإنشاءات",
+      "domain": "geometry",
+      "items": [
+        "1am.m2.r01",
+        "1am.m2.r02",
+        "1am.m2.r03",
+        "1am.m2.r04",
+        "1am.m2.r05",
+        "2am.m2.r01",
+        "2am.m3.r05",
+        "2am.m3.r07",
+        "2am.m5.r01",
+        "2am.m5.r02",
+        "4am.m6.r05"
+      ]
+    },
+    {
+      "id": "angles",
+      "titleAr": "الزوايا",
+      "domain": "geometry",
+      "items": [
+        "1am.m4.r01",
+        "1am.m4.r02",
+        "1am.m4.r03",
+        "1am.m4.r04",
+        "1am.m4.r11",
+        "2am.m3.r01",
+        "2am.m3.r02",
+        "2am.m3.r03",
+        "2am.m3.r04",
+        "4am.m6.r03",
+        "4am.m6.r04"
+      ]
+    },
+    {
+      "id": "lengths-areas",
+      "titleAr": "الأطوال والمحيطات والمساحات",
+      "domain": "geometry",
+      "items": [
+        "1am.m2.r06",
+        "1am.m2.r07",
+        "1am.m2.r08",
+        "1am.m2.r09",
+        "1am.m2.r10",
+        "2am.m3.r06",
+        "2am.m3.r08",
+        "2am.m5.r03"
+      ]
+    },
+    {
+      "id": "transformations",
+      "titleAr": "التحويلات النقطية والأشعة",
+      "domain": "geometry",
+      "items": [
+        "1am.m4.r05",
+        "1am.m4.r06",
+        "1am.m4.r07",
+        "1am.m4.r08",
+        "1am.m4.r09",
+        "1am.m4.r10",
+        "2am.m2.r02",
+        "2am.m2.r03",
+        "2am.m2.r04",
+        "2am.m2.r05",
+        "3am.m6.r01",
+        "3am.m6.r02",
+        "3am.m6.r03",
+        "4am.m4.r01",
+        "4am.m4.r02",
+        "4am.m4.r03",
+        "4am.m4.r04",
+        "4am.m4.r05",
+        "4am.m4.r06",
+        "4am.m4.r07",
+        "4am.m6.r01",
+        "4am.m6.r02"
+      ]
+    },
+    {
+      "id": "triangles-proof",
+      "titleAr": "المثلثات والبرهان",
+      "domain": "geometry",
+      "items": [
+        "3am.m2.r01",
+        "3am.m2.r02",
+        "3am.m2.r03",
+        "3am.m2.r04",
+        "3am.m2.r05",
+        "3am.m4.r01",
+        "3am.m4.r02",
+        "3am.m4.r03",
+        "3am.m4.r04",
+        "3am.m4.r05",
+        "3am.m4.r06",
+        "3am.m4.x1",
+        "4am.m2.r01"
+      ]
+    },
+    {
+      "id": "trigonometry",
+      "titleAr": "حساب المثلثات",
+      "domain": "geometry",
+      "items": [
+        "3am.m4.r07",
+        "3am.m4.r08",
+        "3am.m4.r09",
+        "4am.m2.r02",
+        "4am.m2.r03",
+        "4am.m2.r04",
+        "4am.m2.r05",
+        "4am.m2.r06"
+      ]
+    },
+    {
+      "id": "solids",
+      "titleAr": "المجسّمات والهندسة في الفضاء",
+      "domain": "geometry",
+      "items": [
+        "1am.m7.r01",
+        "1am.m7.r02",
+        "1am.m7.r03",
+        "1am.m7.r04",
+        "1am.m7.r05",
+        "2am.m7.r01",
+        "2am.m7.r02",
+        "2am.m7.r03",
+        "2am.m7.r04",
+        "2am.m7.r05",
+        "2am.m7.r06",
+        "2am.m7.r07",
+        "2am.m7.r08",
+        "3am.m6.r04",
+        "3am.m6.r05",
+        "3am.m6.r06",
+        "3am.m6.r07",
+        "3am.m6.r08",
+        "4am.m6.r06",
+        "4am.m6.r07",
+        "4am.m6.r08",
+        "4am.m6.r09",
+        "4am.m6.r10"
+      ]
+    }
+  ],
+  "links": [
+    {
+      "from": "1am.m1.r02",
+      "to": "1am.m1.r03",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m1.r02",
+      "to": "1am.m1.r04",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m1.r01",
+      "to": "1am.m1.r05",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m1.r03",
+      "to": "1am.m1.r05",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m1.r05",
+      "to": "1am.m1.r06",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m2.r02",
+      "to": "1am.m2.r01",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m2.r01",
+      "to": "1am.m2.r03",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m2.r02",
+      "to": "1am.m2.r03",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m2.r04",
+      "to": "1am.m2.r05",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m2.r06",
+      "to": "1am.m2.r07",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m2.r06",
+      "to": "1am.m2.r08",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m1.r05",
+      "to": "1am.m2.r08",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m2.r08",
+      "to": "1am.m2.r09",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m2.r03",
+      "to": "1am.m2.r09",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m2.r05",
+      "to": "1am.m2.r10",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m1.r05",
+      "to": "1am.m2.r10",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m1.r01",
+      "to": "1am.m3.r01",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m3.r01",
+      "to": "1am.m3.r02",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m3.r01",
+      "to": "1am.m3.r03",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m1.r03",
+      "to": "1am.m3.r03",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m3.r03",
+      "to": "1am.m3.r04",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m1.r04",
+      "to": "1am.m3.r04",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m1.r04",
+      "to": "1am.m3.r05",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m2.r02",
+      "to": "1am.m4.r01",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m4.r01",
+      "to": "1am.m4.r02",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m4.r01",
+      "to": "1am.m4.r03",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m4.r03",
+      "to": "1am.m4.r04",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m4.r05",
+      "to": "1am.m4.r06",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m2.r03",
+      "to": "1am.m4.r06",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m4.r06",
+      "to": "1am.m4.r07",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m2.r01",
+      "to": "1am.m4.r07",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m4.r07",
+      "to": "1am.m4.r08",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m4.r08",
+      "to": "1am.m4.r09",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m2.r03",
+      "to": "1am.m4.r09",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m4.r08",
+      "to": "1am.m4.r10",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m2.r01",
+      "to": "1am.m4.r10",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m4.r08",
+      "to": "1am.m4.r11",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m4.r04",
+      "to": "1am.m4.r11",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m1.r02",
+      "to": "1am.m5.r01",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m5.r01",
+      "to": "1am.m5.r02",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m3.r02",
+      "to": "1am.m5.r02",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m5.r01",
+      "to": "1am.m5.r03",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m1.r05",
+      "to": "1am.m5.r03",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m1.r04",
+      "to": "1am.m5.r04",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m5.r04",
+      "to": "1am.m5.r06",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m5.r05",
+      "to": "1am.m5.r06",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m5.r06",
+      "to": "1am.m5.r07",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m2.r08",
+      "to": "1am.m5.r08",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m5.r08",
+      "to": "1am.m5.r09",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m1.r05",
+      "to": "1am.m5.r10",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m5.r01",
+      "to": "1am.m5.x1",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m1.r05",
+      "to": "1am.m6.r01",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m6.r01",
+      "to": "1am.m6.r03",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m6.r02",
+      "to": "1am.m6.r03",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m6.r03",
+      "to": "1am.m6.r04",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m6.r04",
+      "to": "1am.m6.r05",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m5.r01",
+      "to": "1am.m6.r05",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m6.r04",
+      "to": "1am.m6.r06",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m5.r03",
+      "to": "1am.m6.r06",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m6.r04",
+      "to": "1am.m6.r07",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m6.r07",
+      "to": "1am.m6.r08",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m1.r03",
+      "to": "1am.m6.r09",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m6.r10",
+      "to": "1am.m6.r11",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m6.r02",
+      "to": "1am.m6.r11",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m6.r11",
+      "to": "1am.m6.r12",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m2.r03",
+      "to": "1am.m7.r01",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m7.r01",
+      "to": "1am.m7.r02",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m7.r01",
+      "to": "1am.m7.r03",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m2.r03",
+      "to": "1am.m7.r03",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m7.r03",
+      "to": "1am.m7.r04",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m7.r01",
+      "to": "1am.m7.r05",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m1.r05",
+      "to": "1am.m7.r05",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m1.r05",
+      "to": "2am.m1.r01",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m1.r01",
+      "to": "2am.m1.r02",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m1.r02",
+      "to": "2am.m1.r03",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m3.r01",
+      "to": "2am.m1.r04",
+      "type": "extends",
+      "addedValueAr": "القاسم أيّ عدد طبيعي غير معدوم، لا عدد برقم أو رقمين فقط."
+    },
+    {
+      "from": "1am.m3.r04",
+      "to": "2am.m1.r05",
+      "type": "extends",
+      "addedValueAr": "القيمة المقرّبة إلى أيّ رتبة (0,1 ؛ 0,01 …) لا إلى الوحدة فقط."
+    },
+    {
+      "from": "2am.m1.r05",
+      "to": "2am.m1.r06",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m5.r03",
+      "to": "2am.m1.r07",
+      "type": "extends",
+      "addedValueAr": "ضرب كسرين كيفيين، لا الكسور العشرية فقط."
+    },
+    {
+      "from": "1am.m5.r01",
+      "to": "2am.m1.r08",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m5.r02",
+      "to": "2am.m1.r08",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m1.r08",
+      "to": "2am.m1.r09",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m5.r03",
+      "to": "2am.m1.r09",
+      "type": "extends",
+      "addedValueAr": "جمع وطرح كسرين مقام أحدهما مضاعف لمقام الآخر، لا الكسور العشرية فقط."
+    },
+    {
+      "from": "1am.m4.r10",
+      "to": "2am.m2.r01",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m4.r11",
+      "to": "2am.m2.r01",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m2.r03",
+      "to": "2am.m2.r01",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m2.r01",
+      "to": "2am.m2.r01",
+      "type": "extends",
+      "addedValueAr": "الإنشاء بالأدوات الهندسية (الكوس، المسطرة، المدور) بدل الرسم دون التقيّد بطريقة."
+    },
+    {
+      "from": "1am.m4.r05",
+      "to": "2am.m2.r02",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m2.r02",
+      "to": "2am.m2.r03",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m2.r01",
+      "to": "2am.m2.r03",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m2.r03",
+      "to": "2am.m2.r04",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m2.r04",
+      "to": "2am.m2.r05",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m4.r08",
+      "to": "2am.m2.r05",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m4.r04",
+      "to": "2am.m3.r01",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m3.r01",
+      "to": "2am.m3.r02",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m2.r05",
+      "to": "2am.m3.r02",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m3.r01",
+      "to": "2am.m3.r03",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m2.r05",
+      "to": "2am.m3.r03",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m3.r03",
+      "to": "2am.m3.r04",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m4.r04",
+      "to": "2am.m3.r05",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m2.r01",
+      "to": "2am.m3.r05",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m2.r09",
+      "to": "2am.m3.r06",
+      "type": "extends",
+      "addedValueAr": "مساحة مثلث كيفي بالقاعدة والارتفاع، لا المثلث القائم فقط."
+    },
+    {
+      "from": "1am.m4.r10",
+      "to": "2am.m3.r07",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m2.r01",
+      "to": "2am.m3.r07",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m2.r10",
+      "to": "2am.m3.r08",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m5.r06",
+      "to": "2am.m4.r01",
+      "type": "consolidates",
+      "noteAr": "نفس الكفاءة على مستقيم مدرّج: تُستحضر وتُرسى ولا يُعاد بناؤها."
+    },
+    {
+      "from": "2am.m4.r01",
+      "to": "2am.m4.r02",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m4.r02",
+      "to": "2am.m4.r03",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m5.r07",
+      "to": "2am.m4.r04",
+      "type": "consolidates",
+      "noteAr": "الإحداثيات في معلم: تُستحضر ويُضاف إليها صراحةً المعلم المتعامد والمتجانس."
+    },
+    {
+      "from": "2am.m4.r01",
+      "to": "2am.m4.r05",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m4.r05",
+      "to": "2am.m4.r06",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m1.r02",
+      "to": "2am.m4.r06",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m4.r05",
+      "to": "2am.m4.r07",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m5.r10",
+      "to": "2am.m4.r08",
+      "type": "extends",
+      "addedValueAr": "إتمام مساواة بالقسمة ($a \\div \\ldots = b$) بأعداد عشرية."
+    },
+    {
+      "from": "1am.m5.r08",
+      "to": "2am.m4.r09",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m4.r06",
+      "to": "2am.m4.r09",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m2.r05",
+      "to": "2am.m5.r01",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m3.r03",
+      "to": "2am.m5.r01",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m5.r01",
+      "to": "2am.m5.r02",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m4.r09",
+      "to": "2am.m5.r02",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m5.r01",
+      "to": "2am.m5.r03",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m3.r06",
+      "to": "2am.m5.r03",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m6.r03",
+      "to": "2am.m6.r01",
+      "type": "consolidates",
+      "noteAr": "التعرّف على التناسبية من جدول: يُستحضر ويُرسى."
+    },
+    {
+      "from": "1am.m6.r04",
+      "to": "2am.m6.r02",
+      "type": "consolidates",
+      "noteAr": "إتمام جدول تناسبية: يُستحضر ويُرسى."
+    },
+    {
+      "from": "2am.m6.r02",
+      "to": "2am.m6.r03",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m6.r03",
+      "to": "2am.m6.r04",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m6.r06",
+      "to": "2am.m6.r04",
+      "type": "extends",
+      "addedValueAr": "حساب النسبة المئوية نفسها، لا تطبيقها فقط."
+    },
+    {
+      "from": "2am.m6.r03",
+      "to": "2am.m6.r05",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m6.r08",
+      "to": "2am.m6.r05",
+      "type": "extends",
+      "addedValueAr": "حساب المقياس نفسه، لا استعماله فقط."
+    },
+    {
+      "from": "1am.m6.r09",
+      "to": "2am.m6.r06",
+      "type": "consolidates",
+      "noteAr": "تحويلات الوحدات: تُستحضر وتُرسى في وضعيات جديدة."
+    },
+    {
+      "from": "1am.m6.r11",
+      "to": "2am.m6.r07",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m6.r07",
+      "to": "2am.m6.r08",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m6.r10",
+      "to": "2am.m6.r08",
+      "type": "extends",
+      "addedValueAr": "قراءة معطيات إحصائية في تمثيلات بيانية (منحنيات ومخطّطات)، لا في جداول فقط."
+    },
+    {
+      "from": "2am.m6.r08",
+      "to": "2am.m6.r09",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m6.r07",
+      "to": "2am.m6.r10",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m6.r04",
+      "to": "2am.m6.r10",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m4.r04",
+      "to": "2am.m6.r10",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m6.r07",
+      "to": "2am.m6.r11",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m6.r07",
+      "to": "2am.m6.r12",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m6.r04",
+      "to": "2am.m6.r12",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m7.r01",
+      "to": "2am.m7.r01",
+      "type": "extends",
+      "addedValueAr": "الموشور القائم بقاعدة كيفية: متوازي المستطيلات حالة خاصة منه."
+    },
+    {
+      "from": "2am.m7.r01",
+      "to": "2am.m7.r02",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m7.r03",
+      "to": "2am.m7.r02",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m7.r02",
+      "to": "2am.m7.r03",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m2.r05",
+      "to": "2am.m7.r04",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m7.r04",
+      "to": "2am.m7.r05",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m2.r10",
+      "to": "2am.m7.r05",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m7.r05",
+      "to": "2am.m7.r06",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m7.r02",
+      "to": "2am.m7.r07",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m7.r05",
+      "to": "2am.m7.r07",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m2.r08",
+      "to": "2am.m7.r07",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m2.r10",
+      "to": "2am.m7.r07",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m7.r01",
+      "to": "2am.m7.r08",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m7.r04",
+      "to": "2am.m7.r08",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m3.r06",
+      "to": "2am.m7.r08",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m3.r08",
+      "to": "2am.m7.r08",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m7.r05",
+      "to": "2am.m7.r08",
+      "type": "extends",
+      "addedValueAr": "الحجم = مساحة القاعدة × الارتفاع لأيّ موشور قائم ولأسطوانة الدوران."
+    },
+    {
+      "from": "2am.m4.r05",
+      "to": "3am.m1.r01",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m1.r01",
+      "to": "3am.m1.r02",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m1.r02",
+      "to": "3am.m1.r03",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m1.r07",
+      "to": "3am.m1.r03",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m1.r03",
+      "to": "3am.m1.r04",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m1.r08",
+      "to": "3am.m1.r05",
+      "type": "extends",
+      "addedValueAr": "مقارنة كسرين كيفيين بتوحيد المقامات، وبإشارات."
+    },
+    {
+      "from": "2am.m1.r09",
+      "to": "3am.m1.r06",
+      "type": "extends",
+      "addedValueAr": "جمع وطرح كسرين كيفيين بتوحيد المقامات، وبإشارات."
+    },
+    {
+      "from": "3am.m1.r02",
+      "to": "3am.m1.r07",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m5.r01",
+      "to": "3am.m1.r07",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m1.r07",
+      "to": "3am.m1.r08",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m1.r04",
+      "to": "3am.m1.r08",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m1.r06",
+      "to": "3am.m1.r08",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m1.r01",
+      "to": "3am.m1.r08",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m3.r05",
+      "to": "3am.m2.r01",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m2.r05",
+      "to": "3am.m2.r01",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m5.r01",
+      "to": "3am.m2.r02",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m2.r01",
+      "to": "3am.m2.r02",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m2.r02",
+      "to": "3am.m2.r03",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m6.r03",
+      "to": "3am.m2.r03",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m2.r01",
+      "to": "3am.m2.r04",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m3.r07",
+      "to": "3am.m2.r04",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m2.r04",
+      "to": "3am.m2.r05",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m1.r03",
+      "to": "3am.m3.r01",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m3.r01",
+      "to": "3am.m3.r02",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m3.r01",
+      "to": "3am.m3.r03",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m3.r02",
+      "to": "3am.m3.r04",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m3.r03",
+      "to": "3am.m3.r04",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m3.r04",
+      "to": "3am.m3.r05",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m1.r06",
+      "to": "3am.m3.r05",
+      "type": "extends",
+      "addedValueAr": "رتبة مقدار عدد بالكتابة العلمية، وحصره بين قوّتين للعدد 10."
+    },
+    {
+      "from": "3am.m1.r01",
+      "to": "3am.m3.r06",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m3.r06",
+      "to": "3am.m3.r07",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m3.r02",
+      "to": "3am.m3.r07",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m3.r07",
+      "to": "3am.m3.r08",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m1.r01",
+      "to": "3am.m3.r08",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m3.r07",
+      "to": "3am.m4.r01",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m5.r02",
+      "to": "3am.m4.r01",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m4.r01",
+      "to": "3am.m4.r02",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m2.r08",
+      "to": "3am.m4.r03",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m3.r06",
+      "to": "3am.m4.r03",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m2.r01",
+      "to": "3am.m4.r04",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m4.r03",
+      "to": "3am.m4.r04",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m4.r04",
+      "to": "3am.m4.r05",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m2.r05",
+      "to": "3am.m4.r05",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m4.r05",
+      "to": "3am.m4.r06",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m2.r03",
+      "to": "3am.m4.r07",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m4.r07",
+      "to": "3am.m4.r08",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m4.r08",
+      "to": "3am.m4.r09",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m6.r03",
+      "to": "3am.m4.r09",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m4.r03",
+      "to": "3am.m4.x1",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m1.r03",
+      "to": "3am.m5.r01",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m1.r08",
+      "to": "3am.m5.r01",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m5.r01",
+      "to": "3am.m5.r02",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m1.r01",
+      "to": "3am.m5.r02",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m1.r08",
+      "to": "3am.m5.r03",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m5.r08",
+      "to": "3am.m5.r03",
+      "type": "extends",
+      "addedValueAr": "قيمة عبارة حرفية من أجل قيم نسبية أو ناطقة للمتغيّرات."
+    },
+    {
+      "from": "3am.m1.r05",
+      "to": "3am.m5.r04",
+      "type": "consolidates",
+      "noteAr": "مقارنة عددين ناطقين: هي مقارنة كسرين تُوظَّف في الحساب الحرفي."
+    },
+    {
+      "from": "2am.m4.r09",
+      "to": "3am.m5.r05",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m1.r01",
+      "to": "3am.m5.r05",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m5.r05",
+      "to": "3am.m5.r06",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3am.m5.r01",
+      "to": "3am.m5.r06",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "2am.m4.r08",
+      "to": "3am.m5.r06",
+      "type": "extends",
+      "addedValueAr": "المعادلة من الدرجة الأولى بمجهول واحد في شكلها العام $ax + b = cx + d$، وترييض مشكلة بها.",
+      "weight": "support",
+      "weightNote": "The 2AM equations with a blank are a first meeting; a first-degree equation is solved with the properties of equalities."
+    },
+    {
+      "from": "1am.m3.r05",
+      "to": "3am.m5.x1",
+      "type": "extends",
+      "addedValueAr": "التدوير إلى أيّ رتبة واستعماله لحصر عدد موجب."
+    },
+    {
+      "from": "2am.m5.r01",
+      "to": "3am.m6.r01",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m6.r01",
+      "to": "3am.m6.r02",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m6.r02",
+      "to": "3am.m6.r03",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m2.r05",
+      "to": "3am.m6.r03",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m7.r01",
+      "to": "3am.m6.r04",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m7.r04",
+      "to": "3am.m6.r04",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m6.r04",
+      "to": "3am.m6.r05",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m7.r02",
+      "to": "3am.m6.r05",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m6.r04",
+      "to": "3am.m6.r06",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m7.r02",
+      "to": "3am.m6.r06",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m6.r06",
+      "to": "3am.m6.r07",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m6.r04",
+      "to": "3am.m6.r08",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m7.r08",
+      "to": "3am.m6.r08",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m6.r01",
+      "to": "3am.m7.r01",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m4.r04",
+      "to": "3am.m7.r01",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m7.r01",
+      "to": "3am.m7.r02",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m6.r06",
+      "to": "3am.m7.r03",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m7.r02",
+      "to": "3am.m7.r04",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m7.r03",
+      "to": "3am.m7.r04",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m7.r04",
+      "to": "3am.m7.r05",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m6.r06",
+      "to": "3am.m7.r05",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m6.r04",
+      "to": "3am.m7.r06",
+      "type": "consolidates",
+      "noteAr": "النسبة المئوية: تُستحضر وتُوظَّف في وضعيات تناسبية جديدة."
+    },
+    {
+      "from": "2am.m6.r11",
+      "to": "3am.m7.r07",
+      "type": "consolidates",
+      "noteAr": "التجميع في فئات: يُستحضر ويُرسى."
+    },
+    {
+      "from": "2am.m6.r12",
+      "to": "3am.m7.r08",
+      "type": "consolidates",
+      "noteAr": "حساب التكرارات: يُستحضر ويُرسى."
+    },
+    {
+      "from": "3am.m7.r07",
+      "to": "3am.m7.r09",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m6.r10",
+      "to": "3am.m7.r09",
+      "type": "extends",
+      "addedValueAr": "المدرج التكراري لسلسلة مجمّعة في فئات."
+    },
+    {
+      "from": "2am.m6.r12",
+      "to": "3am.m7.r10",
+      "type": "consolidates",
+      "noteAr": "التكرارات النسبية: تُستحضر وتُرسى."
+    },
+    {
+      "from": "3am.m7.r08",
+      "to": "3am.m7.r11",
+      "type": "requires"
+    },
+    {
+      "from": "2am.m1.r01",
+      "to": "3am.m7.r11",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m7.r09",
+      "to": "3am.m7.r12",
+      "type": "requires"
+    },
+    {
+      "from": "3am.m7.r11",
+      "to": "3am.m7.r12",
+      "type": "requires"
+    },
+    {
+      "from": "1am.m3.r01",
+      "to": "4am.m1.r01",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "1am.m3.r02",
+      "to": "4am.m1.r01",
+      "type": "extends",
+      "addedValueAr": "القاسم والمضاعف علاقةً بين عددين، لا مجرّد قواعد لقابلية القسمة.",
+      "weight": "support",
+      "weightNote": "A divisor can always be tested by dividing: the rules only make it faster."
+    },
+    {
+      "from": "4am.m1.r01",
+      "to": "4am.m1.r02",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "2am.m1.r04",
+      "to": "4am.m1.r02",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m1.r02",
+      "to": "4am.m1.r03",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "2am.m1.r04",
+      "to": "4am.m1.r03",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m1.r03",
+      "to": "4am.m1.r04",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m1.r03",
+      "to": "4am.m1.r05",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m1.r04",
+      "to": "4am.m1.r05",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Dividing both terms by the PGCD is enough to produce the irreducible form; coprimality justifies it."
+    },
+    {
+      "from": "1am.m5.r02",
+      "to": "4am.m1.r05",
+      "type": "extends",
+      "addedValueAr": "الاختزال في خطوة واحدة بالقاسم المشترك الأكبر حتى الشكل غير القابل للاختزال.",
+      "weight": "core"
+    },
+    {
+      "from": "3am.m4.r03",
+      "to": "4am.m1.r06",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Pythagoras is the situation that calls for the square root; its definition does not need it."
+    },
+    {
+      "from": "3am.m3.r06",
+      "to": "4am.m1.r06",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m1.r06",
+      "to": "4am.m1.r07",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3am.m5.r01",
+      "to": "4am.m1.r07",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3am.m1.r08",
+      "to": "4am.m2.r01",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "The lengths are found with products and quotients of rationals: needed for the computation, not for the property."
+    },
+    {
+      "from": "3am.m2.r03",
+      "to": "4am.m2.r01",
+      "type": "extends",
+      "addedValueAr": "خاصية طالس في الوضعيتين، وعكسها لإثبات التوازي، والإنشاءات (تقسيم قطعة).",
+      "weight": "core"
+    },
+    {
+      "from": "3am.m4.r07",
+      "to": "4am.m2.r02",
+      "type": "extends",
+      "addedValueAr": "الجيب والظل بعد جيب التمام.",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m2.r02",
+      "to": "4am.m2.r03",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3am.m4.r08",
+      "to": "4am.m2.r03",
+      "type": "extends",
+      "addedValueAr": "الحاسبة للجيب والظل وتعيين الزاوية بمعرفتهما.",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m2.r03",
+      "to": "4am.m2.r04",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3am.m4.r09",
+      "to": "4am.m2.r04",
+      "type": "extends",
+      "addedValueAr": "اختيار النسبة المثلثية المناسبة من بين ثلاث.",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m2.r02",
+      "to": "4am.m2.r05",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "2am.m2.r01",
+      "to": "4am.m2.r05",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m2.r02",
+      "to": "4am.m2.r06",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3am.m4.r03",
+      "to": "4am.m2.r06",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Pythagoras proves the relation; using the relation does not need it."
+    },
+    {
+      "from": "4am.m1.r07",
+      "to": "4am.m2.r06",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "The definition of the square root is enough to finish a computation; the rules on roots only tidy the result."
+    },
+    {
+      "from": "3am.m5.r02",
+      "to": "4am.m3.r01",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3am.m5.r02",
+      "to": "4am.m3.r02",
+      "type": "extends",
+      "addedValueAr": "التحليل (العامل المشترك والمتطابقات) بعد النشر.",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m3.r02",
+      "to": "4am.m3.r03",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3am.m5.r06",
+      "to": "4am.m3.r03",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3am.m5.r05",
+      "to": "4am.m3.r04",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "2am.m4.r03",
+      "to": "4am.m3.r04",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Ordering relatives serves the reading of the solutions on the graduated line, not the solving."
+    },
+    {
+      "from": "4am.m3.r03",
+      "to": "4am.m3.r05",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Most problems lead to a first-degree equation; the zero-product equation is the less frequent case."
+    },
+    {
+      "from": "4am.m3.r04",
+      "to": "4am.m3.r05",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3am.m5.r06",
+      "to": "4am.m3.r05",
+      "type": "extends",
+      "addedValueAr": "المتراجحات ومعادلات الجداء المعدوم أدواتٍ لحل المشكلات.",
+      "weight": "core"
+    },
+    {
+      "from": "3am.m6.r03",
+      "to": "4am.m4.r01",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m4.r01",
+      "to": "4am.m4.r02",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "2am.m5.r01",
+      "to": "4am.m4.r02",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m4.r02",
+      "to": "4am.m4.r03",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m4.r01",
+      "to": "4am.m4.r04",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "2am.m4.r04",
+      "to": "4am.m4.r04",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m4.r04",
+      "to": "4am.m4.r05",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "2am.m4.r07",
+      "to": "4am.m4.r05",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "The difference of two abscissas on a line prepares the difference of coordinates; the formula can be applied without it."
+    },
+    {
+      "from": "2am.m4.r04",
+      "to": "4am.m4.r06",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m4.r02",
+      "to": "4am.m4.r06",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Equal vectors prove the midpoint formula; applying it does not need them."
+    },
+    {
+      "from": "3am.m4.r03",
+      "to": "4am.m4.r07",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m1.r06",
+      "to": "4am.m4.r07",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m4.r05",
+      "to": "4am.m4.r07",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "The differences of coordinates can be computed without the notion of components."
+    },
+    {
+      "from": "3am.m5.r06",
+      "to": "4am.m5.r01",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3am.m5.r03",
+      "to": "4am.m5.r01",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Computing the value of an expression serves the check of a solution, not the solving."
+    },
+    {
+      "from": "3am.m5.r05",
+      "to": "4am.m5.r01",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m5.r01",
+      "to": "4am.m5.r02",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m3.r05",
+      "to": "4am.m5.r02",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3am.m7.r01",
+      "to": "4am.m5.r03",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "The graph of a proportionality helps to recognise a linear function; its definition is numerical."
+    },
+    {
+      "from": "2am.m6.r03",
+      "to": "4am.m5.r03",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m5.r03",
+      "to": "4am.m5.r04",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3am.m7.r01",
+      "to": "4am.m5.r04",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m5.r04",
+      "to": "4am.m5.r05",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m5.r05",
+      "to": "4am.m5.r06",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m5.r03",
+      "to": "4am.m5.r07",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3am.m5.r03",
+      "to": "4am.m5.r07",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m5.r07",
+      "to": "4am.m5.r08",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m5.r04",
+      "to": "4am.m5.r08",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m5.r08",
+      "to": "4am.m5.r09",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m5.r05",
+      "to": "4am.m5.r09",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m5.r09",
+      "to": "4am.m5.r10",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m5.r06",
+      "to": "4am.m5.r10",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m5.r01",
+      "to": "4am.m5.r11",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m5.r08",
+      "to": "4am.m5.r11",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m5.r05",
+      "to": "4am.m5.r12",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3am.m7.r01",
+      "to": "4am.m5.r12",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "The proportional case is one situation among those read here; the reading of the linear graph already carries it."
+    },
+    {
+      "from": "4am.m5.r12",
+      "to": "4am.m5.r13",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m5.r05",
+      "to": "4am.m5.r13",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m5.r03",
+      "to": "4am.m5.r14",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "The programme presents a percentage as a linear function; the problems are solved without that view."
+    },
+    {
+      "from": "3am.m7.r04",
+      "to": "4am.m5.r14",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3am.m7.r06",
+      "to": "4am.m5.r14",
+      "type": "extends",
+      "addedValueAr": "النسبة المئوية دالةً خطية (الزيادة والتخفيض: $x \\mapsto \\left(1 \\pm \\frac{t}{100}\\right)x$) والمقادير المركّبة.",
+      "weight": "core"
+    },
+    {
+      "from": "1am.m4.r04",
+      "to": "4am.m6.r01",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "2am.m2.r01",
+      "to": "4am.m6.r01",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m6.r01",
+      "to": "4am.m6.r02",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3am.m6.r03",
+      "to": "4am.m6.r02",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "The properties of the translation are an analogy (what a transformation keeps), not a need."
+    },
+    {
+      "from": "1am.m2.r05",
+      "to": "4am.m6.r03",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "1am.m4.r02",
+      "to": "4am.m6.r03",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m6.r03",
+      "to": "4am.m6.r04",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "2am.m3.r04",
+      "to": "4am.m6.r04",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "The sum of the angles of a triangle proves the relation; using it does not need it."
+    },
+    {
+      "from": "4am.m6.r02",
+      "to": "4am.m6.r05",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "The rotation explains why the polygon is regular; the construction is done with angles at the centre."
+    },
+    {
+      "from": "4am.m6.r04",
+      "to": "4am.m6.r05",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "The construction needs the angle at the centre, not the relation with the inscribed angle."
+    },
+    {
+      "from": "1am.m4.r04",
+      "to": "4am.m6.r05",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "1am.m2.r05",
+      "to": "4am.m6.r06",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "2am.m7.r04",
+      "to": "4am.m6.r06",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "The cylinder is another solid of revolution: a comparison, not a need."
+    },
+    {
+      "from": "4am.m6.r06",
+      "to": "4am.m6.r07",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "1am.m7.r02",
+      "to": "4am.m6.r07",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "The perspective drawing of a cuboid prepares the hidden lines; the sphere is drawn by its own conventions."
+    },
+    {
+      "from": "4am.m6.r06",
+      "to": "4am.m6.r08",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "2am.m3.r08",
+      "to": "4am.m6.r08",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "The area of a disc is a formula of the same family; the two new formulas are applied without it."
+    },
+    {
+      "from": "4am.m6.r06",
+      "to": "4am.m6.r09",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3am.m6.r04",
+      "to": "4am.m6.r09",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "2am.m7.r01",
+      "to": "4am.m6.r09",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "The prism is one of the familiar solids, the least used in the sections of this year."
+    },
+    {
+      "from": "1am.m7.r01",
+      "to": "4am.m6.r09",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3am.m4.r03",
+      "to": "4am.m6.r09",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m2.r01",
+      "to": "4am.m6.r10",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Thales gives the ratio when the reduction comes from a section parallel to the base; the effects on area and volume are stated with the ratio alone."
+    },
+    {
+      "from": "3am.m6.r08",
+      "to": "4am.m6.r10",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "1am.m6.r07",
+      "to": "4am.m6.r10",
+      "type": "extends",
+      "addedValueAr": "أثر معامل التكبير $k$ على المساحات ($k^2$) والحجوم ($k^3$).",
+      "weight": "core"
+    },
+    {
+      "from": "3am.m7.r08",
+      "to": "4am.m7.r01",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3am.m7.r10",
+      "to": "4am.m7.r01",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m7.r01",
+      "to": "4am.m7.r02",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3am.m7.r11",
+      "to": "4am.m7.r02",
+      "type": "extends",
+      "addedValueAr": "الوسيط والمدى بعد المتوسط: مؤشرات الموقع والتشتّت.",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m7.r02",
+      "to": "4am.m7.r03",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "3am.m7.r12",
+      "to": "4am.m7.r03",
+      "type": "extends",
+      "addedValueAr": "المجدولات لحساب المؤشرات وتمثيلها.",
+      "weight": "core"
+    },
+    {
+      "from": "3am.m5.r06",
+      "to": "4am.m3.r04",
+      "type": "requires",
+      "weight": "core"
+    },
+    {
+      "from": "4am.m3.r02",
+      "to": "4am.m3.r01",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "The identities are expansions: the lesson on expanding comes just before and re-installs the gesture; the 3AM expansion is the real need."
+    },
+    {
+      "from": "3am.m5.r06",
+      "to": "4am.m5.r03",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Finding an antecedent or the coefficient is solving a x = b."
+    },
+    {
+      "from": "3am.m5.r06",
+      "to": "4am.m5.r07",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Finding an antecedent by an affine function is solving a x + b = c."
+    },
+    {
+      "from": "4am.m5.r01",
+      "to": "4am.m5.r07",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Finding a and b from two numbers and their images is solving a system: one lesson of this item, not the whole item."
+    },
+    {
+      "from": "4am.m2.r01",
+      "to": "4am.m2.r02",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Thales is why the ratios do not depend on the size of the triangle; the definitions are used without it."
+    },
+    {
+      "from": "4am.m1.r05",
+      "to": "4am.m5.r03",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "The coefficient is often written as an irreducible fraction."
+    },
+    {
+      "from": "4am.m3.r05",
+      "to": "4am.m5.r12",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Translating a situation into mathematics was first met with equations."
+    },
+    {
+      "from": "4am.m5.r14",
+      "to": "4am.m5.r12",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "Percentages and compound quantities are among the situations translated here."
+    },
+    {
+      "from": "4am.m3.r02",
+      "to": "4am.m5.r01",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "The substitution method ends on an expression to expand and reduce."
+    },
+    {
+      "from": "4am.m2.r01",
+      "to": "4am.m6.r09",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "A section of a pyramid or a cone parallel to its base is computed with Thales."
+    },
+    {
+      "from": "4am.m6.r09",
+      "to": "4am.m6.r10",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "The reduced pyramid or cone is obtained by a section parallel to the base."
+    },
+    {
+      "from": "4am.m6.r08",
+      "to": "4am.m6.r10",
+      "type": "requires",
+      "weight": "support",
+      "weightNote": "The area of a sphere and the volume of a ball are among the quantities enlarged or reduced."
+    }
+  ]
+}

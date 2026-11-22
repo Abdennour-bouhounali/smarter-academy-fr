@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l3-005",
+  "lessonCode": "maqati-mustawiya",
+  "level": 3,
+  "metadata": {
+    "title": "نشاط 3 — مساحة المقطع MNPO",
+    "estimatedMinutes": 3,
+    "tags": [
+      "بلاطة قائمة",
+      "مساحة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-3",
+      "page": 165,
+      "section": "أنشطة"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 165): البلاطة القائمة ABCDEFGH ($DC = 25$ ، $CB = 20$ ، $CG = 6$ بالسنتيمتر) يقطعها مستو يوازي الحرف $[CG]$ وفق المستطيل MNPO، حيث M من $[DC]$ و N من $[CB]$ و $DM = 21$ و $BN = 17$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما مساحة المقطع MNPO (بـ $\\mathrm{cm}^2$)؟",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر المربع)",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAQTA-MAJMU",
+          "value": "42"
+        },
+        {
+          "id": "MISC-MAQTA-BUUD",
+          "value": "24"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أحد البعدين طول الحرف $[CG]$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "البعد الآخر MN وتر المثلث MCN."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المساحة $MN \\times MO$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$MN = 5$ و $MO = CG = 6$ : المساحة $30\\,\\mathrm{cm}^2$ .",
+        "incorrect": "$(4 + 3) \\times 6 = 42$ يستعمل مجموع الضلعين بدل الوتر."
+      },
+      "difficulty": 3
+    }
+  ]
+}

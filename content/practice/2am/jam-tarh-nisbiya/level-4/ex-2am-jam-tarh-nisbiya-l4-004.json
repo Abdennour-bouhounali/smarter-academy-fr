@@ -1,0 +1,243 @@
+{
+  "id": "ex-2am-jam-tarh-nisbiya-l4-004",
+  "lessonCode": "jam-tarh-nisbiya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — نتيجتان متعاكستان",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جمع وطرح",
+      "عددان متعاكسان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أحسب $A=(-9)+(+4)$ و $B=(+2)-(-3)$ ثمّ أدرس العلاقة بينهما."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب : $A=(-9)+(+4)$ .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-5",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-JAMNISB-SIGNFIRST"
+        },
+        {
+          "value": "-13",
+          "id": "MISC-JAMNISB-ADDDIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن إشارتي العددين ثمّ قارن مسافتيهما إلى الصفر : أيّهما أبعد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عند اختلاف الإشارتين نطرح المسافة الصغرى من المسافة الكبرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "النتيجة تأخذ إشارة العدد الأبعد عن الصفر ؛ وإذا تساوت المسافتان فالنتيجة معدومة."
+        }
+      ],
+      "feedback": {
+        "correct": "$(-9)+(+4)=(-5)$ : العددان من إشارتين مختلفتين فنطرح المسافتين ونأخذ إشارة الأبعد عن الصفر.",
+        "incorrect": "راجع قاعدة الحساب المناسبة (الجمع، أو الطرح بإضافة المعاكس)، ثمّ أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "العددان من إشارتين مختلفتين : المسافتان إلى الصفر $9$ و $4$ ؛ نطرح الصغرى من الكبرى : $9-4=5$",
+          "نأخذ إشارة العدد الأبعد عن الصفر وهو $(-9)$ (السالبة)",
+          "$(-9)+(+4)=(-5)$"
+        ],
+        "result": "-5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب : $B=(+2)-(-3)$ .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "-1",
+          "id": "MISC-JAMNISB-SUBNOFLIP"
+        },
+        {
+          "value": "-5",
+          "id": "MISC-JAMNISB-FLIPBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الطرح يعني إضافة المعاكس : اكتب معاكس العدد المطروح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حوّل الفرق إلى مجموع بإبدال العدد المطروح بمعاكسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثمّ طبّق قاعدة الجمع المناسبة : إشارتان متماثلتان أم مختلفتان؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$(+2)-(-3)=(+5)$ : الطرح إضافة للمعاكس ثمّ نطبّق قاعدة الجمع.",
+        "incorrect": "راجع قاعدة الحساب المناسبة (الجمع، أو الطرح بإضافة المعاكس)، ثمّ أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الطرح يعني إضافة المعاكس : معاكس $(-3)$ هو $(+3)$",
+          "$(+2)-(-3)=(+2)+(+3)$",
+          "العددان لهما الإشارة نفسها (الموجبة) : نجمع المسافتين إلى الصفر ، $2+3=5$",
+          "نحتفظ بالإشارة المشتركة (الموجبة)",
+          "$(+2)-(-3)=(+5)$"
+        ],
+        "result": "5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل العددان $A$ و $B$ متعاكسان ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أوجد قيمة كلّ نتيجة أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددان متعاكسان إذا كان مجموعهما معدومًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مجموعهما وقارنه بالصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "مجموعهما معدوم فهما متعاكسان",
+        "incorrect": "راجع قاعدة الحساب المناسبة (الجمع، أو الطرح بإضافة المعاكس)، ثمّ أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "القيمتان : $-5$ و $5$",
+          "مجموعهما معدوم فهما متعاكسان"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "احسب $A+B$ .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن إشارتي العددين ثمّ قارن مسافتيهما إلى الصفر : أيّهما أبعد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عند اختلاف الإشارتين نطرح المسافة الصغرى من المسافة الكبرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "النتيجة تأخذ إشارة العدد الأبعد عن الصفر ؛ وإذا تساوت المسافتان فالنتيجة معدومة."
+        }
+      ],
+      "feedback": {
+        "correct": "$(-5)+(+5)=0$ : العددان من إشارتين مختلفتين فنطرح المسافتين ونأخذ إشارة الأبعد عن الصفر.",
+        "incorrect": "راجع قاعدة الحساب المناسبة (الجمع، أو الطرح بإضافة المعاكس)، ثمّ أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "العددان متعاكسان : لهما المسافة نفسها إلى الصفر ($5$) فمجموعهما معدوم",
+          "$(-5)+(+5)=0$"
+        ],
+        "result": "0"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

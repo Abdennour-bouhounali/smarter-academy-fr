@@ -1,0 +1,289 @@
+{
+  "id": "ex-3am-qimat-ibara-harfiya-l2-008",
+  "lessonCode": "qimat-ibara-harfiya",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — مربّع مجموع ومجموع مربّعين",
+    "estimatedMinutes": 9,
+    "tags": [
+      "حرفان",
+      "مثال مضاد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارتان $A$ و $B$ حيث:",
+    "formulas": [
+      "A = (a + b)^2",
+      "B = a^2 + b^2"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب قيمة $A$ من أجل $a = 3$ و $b = 4$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "49",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في هذه العبارة حرفان: ما العدد الذي يعوّض كلّ واحد منهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض كل حرف بعدده في كل مكان منه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب القوسين والقوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $a = 3$ و $b = 4$ هي $49$ .",
+        "incorrect": "عوّض كل حرف بعدده، وضع كل عدد سالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$A = (3 + 4)^2$",
+          "$A = 7^2$",
+          "$A = 49$"
+        ],
+        "result": "A = 49"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب قيمة $B$ من أجل $a = 3$ و $b = 4$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "25",
+      "misconceptionSignatures": [
+        {
+          "value": "49",
+          "id": "MISC-QIMA-PARTIAL"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في هذه العبارة حرفان: ما العدد الذي يعوّض كلّ واحد منهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض كل حرف بعدده في كل مكان منه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب القوسين والقوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $a = 3$ و $b = 4$ هي $25$ .",
+        "incorrect": "عوّض كل حرف بعدده، وضع كل عدد سالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$B = 3^2 + 4^2$",
+          "$B = 9 + 16$",
+          "$B = 25$"
+        ],
+        "result": "B = 25"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل $A = B$ من أجل كل قيمتين للحرفين $a$ و $b$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم: لأنّهما متساويتان من أجل $a = 0$ و $b = 5$ (القيمة $25$ )",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QIMA-ONE-VALUE"
+        },
+        {
+          "id": "B",
+          "content": "لا: من أجل $a = 3$ و $b = 4$ نجد $49$ و $25$ ، وهذا مثال مضاد",
+          "isCorrect": true
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن القيمتين اللتين حسبتهما: هل اختلفتا عند قيمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قيمة واحدة تختلف عندها العبارتان تكفي لإثبات أنهما غير متساويتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أمّا تساوي القيمتين من أجل قيمة أو قيمتين فلا يثبت التساوي: لإثباته ننشر ونقارن الشكلين."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب الصحيح: لا: من أجل $a = 3$ و $b = 4$ نجد $49$ و $25$ ، وهذا مثال مضاد",
+        "incorrect": "قيمة مختلفة تكفي لإثبات عدم التساوي، أمّا القيم المتساوية فلا تكفي لإثبات التساوي."
+      },
+      "solution": {
+        "lines": [
+          "لا: من أجل $a = 3$ و $b = 4$ نجد $49$ و $25$ ، وهذا مثال مضاد"
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "statement": "احسب قيمة $A$ من أجل $a = -2$ و $b = 5$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "49",
+          "id": "MISC-QIMA-SIGN-LOST"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في هذه العبارة حرفان: ما العدد الذي يعوّض كلّ واحد منهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض كل حرف بعدده في كل مكان منه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب القوسين والقوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $a = -2$ و $b = 5$ هي $9$ .",
+        "incorrect": "عوّض كل حرف بعدده، وضع كل عدد سالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$A = (-2 + 5)^2$",
+          "$A = 3^2$",
+          "$A = 9$"
+        ],
+        "result": "A = 9"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "احسب قيمة $B$ من أجل $a = -2$ و $b = 5$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "29",
+      "misconceptionSignatures": [
+        {
+          "value": "21",
+          "id": "MISC-QIMA-NEG-POWER"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في هذه العبارة حرفان: ما العدد الذي يعوّض كلّ واحد منهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض كل حرف بعدده في كل مكان منه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب القوسين والقوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $a = -2$ و $b = 5$ هي $29$ .",
+        "incorrect": "عوّض كل حرف بعدده، وضع كل عدد سالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$B = (-2)^2 + 5^2$",
+          "$B = 4 + 25$",
+          "$B = 29$"
+        ],
+        "result": "B = 29"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

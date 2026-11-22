@@ -1,0 +1,141 @@
+{
+  "id": "ex-3am-qawaid-quwa-ashara-l4-010",
+  "lessonCode": "qawaid-quwa-ashara",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — أيّ جداء يساوي $6\\times10^{5}$ ؟",
+    "estimatedMinutes": 6,
+    "tags": [
+      "k × 10^p",
+      "كتابات متساوية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نريد معرفة أيّ جداء من الجداءات التالية يساوي العدد $6\\times10^{5}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ الجداءات التالية يساوي $6\\times10^{5}$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع الأعداد مع الأعداد، وقوى العدد 10 مع قوى العدد 10 (كلّ في مجموعته)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الأعداد وحدها ثمّ طبّق قاعدة قوى العدد 10 على الأسّين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اترك النتيجة على الشكل $k \\times 10^{n}$ كما تخرج دون تغيير العدد $k$ ، ما لم يُطلب منك غير ذلك."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2\\times10^{3}\\times3\\times10^{3}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QAWAID-AMIL"
+        },
+        {
+          "id": "B",
+          "content": "$2\\times10^{3}\\times3\\times10^{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$(2+3)\\times10^{5}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QAWAID-AMIL"
+        }
+      ],
+      "feedback": {
+        "correct": "$2\\times10^{3}\\times3\\times10^{2} = 6\\times10^{5}$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب قيمته أو بتطبيق القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$2\\times10^{3}\\times3\\times10^{2} = (2\\times3)\\times10^{3+2} = 6\\times10^{5}$ .",
+          "الجداء الثاني يعطي $6\\times10^{6}$ ، والثالث $5\\times10^{5}$ لأنّ الأعداد لا تُجمع."
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "$A = 3\\times10^{4}\\times2\\times10^{1} = 6\\times10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع الأعداد مع الأعداد، وقوى العدد 10 مع قوى العدد 10 (كلّ في مجموعته)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الأعداد وحدها ثمّ طبّق قاعدة قوى العدد 10 على الأسّين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اترك النتيجة على الشكل $k \\times 10^{n}$ كما تخرج دون تغيير العدد $k$ ، ما لم يُطلب منك غير ذلك."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-QAWAID-AMIL"
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 6\\times10^{5}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نجمع الأعداد مع الأعداد: $3\\times2 = 6$ .",
+          "ونجمع قوى العدد 10 مع قوى العدد 10: $10^{4}\\times10^{1} = 10^{4 + 1} = 10^{5}$ .",
+          "$A = 6\\times10^{5}$ ، فالأسّ هو $5$ ."
+        ],
+        "result": "n = 5"
+      }
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l3-008",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2023 — A = 1734/34",
+    "estimatedMinutes": 6,
+    "tags": [
+      "كسر",
+      "عدد طبيعي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-adad-tabii_P2",
+      "modelledOn": "BEM 2023 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان A و B حيث:",
+    "formulas": [
+      "A = \\dfrac{1734}{34}",
+      "B = \\dfrac{1734 + 34}{34}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن A عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة A (عدد طبيعي)",
+      "expectedAnswer": "51",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 1734 على 34."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان الباقي معدومًا فإن $1734 = 34 \\times q$."
+        }
+      ],
+      "feedback": {
+        "correct": "$1734 = 34 \\times 51$ إذن $A = 51$.",
+        "incorrect": "اقسم 1734 على 34 وانظر هل الباقي معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$34 \\times 51 = 1734$",
+          "$A = \\dfrac{34 \\times 51}{34}$",
+          "إذن A عدد طبيعي:"
+        ],
+        "result": "A = 51"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل العدد 1734 يقبل القسمة على 51؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "«$a$ يقبل القسمة على $b$» تعني أن $b$ قاسم للعدد $a$."
+        }
+      ],
+      "feedback": {
+        "correct": "$1734 = 51 \\times 34$: 1734 يقبل القسمة على 51.",
+        "incorrect": "اقرأ المساواة التي وجدتها في السؤال 01 في الاتجاهين."
+      },
+      "solution": {
+        "lines": [
+          "$1734 = 34 \\times 51 = 51 \\times 34$",
+          "إذن 51 قاسم للعدد 1734، أي 1734 يقبل القسمة على 51."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "بيّن أن B عدد طبيعي، وأعط قيمته.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة B (عدد طبيعي)",
+      "expectedAnswer": "52",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$1734 + 34 = 34 \\times 51 + 34 \\times 1$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل الخاصية التوزيعية لكتابة البسط على شكل جداء أحد عامليه 34."
+        }
+      ],
+      "feedback": {
+        "correct": "$1734 + 34 = 34 \\times (51 + 1) = 34 \\times 52$ إذن $B = 52$.",
+        "incorrect": "اكتب البسط $1734 + 34$ على الشكل $34 \\times k$ مستعملًا السؤال 01."
+      },
+      "solution": {
+        "lines": [
+          "$1734 + 34 = 34 \\times 51 + 34 \\times 1$",
+          "$1734 + 34 = 34 \\times (51 + 1) = 34 \\times 52$",
+          "$B = \\dfrac{34 \\times 52}{34}$"
+        ],
+        "result": "B = 52"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

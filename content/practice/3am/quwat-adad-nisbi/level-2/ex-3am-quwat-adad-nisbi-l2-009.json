@@ -1,0 +1,297 @@
+{
+  "id": "ex-3am-quwat-adad-nisbi-l2-009",
+  "lessonCode": "quwat-adad-nisbi",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — قوة جداء وقوة حاصل قسمة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "قواعد الحساب على القوى",
+      "كسور"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "احسب الأعداد الآتية باستعمال قواعد الحساب على القوى.",
+    "formulas": [
+      "A = 0{,}5^{4} \\times 8^{4}",
+      "B = \\left(\\dfrac{2}{5}\\right)^{3}",
+      "C = \\left(-\\dfrac{3}{2}\\right)^{4}",
+      "D = \\dfrac{6^{5}}{3^{5}}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $A$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "256",
+      "misconceptionSignatures": [
+        {
+          "value": "65536",
+          "id": "MISC-QUWA-MIXED-BASES"
+        },
+        {
+          "value": "16",
+          "id": "MISC-QUWA-POWER-AS-PRODUCT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للقوتين الأساس نفسه أم الأس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء قوتين لهما الأس نفسه: $a^n \\times b^n = (ab)^n$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا نجمع أسس قوى أساساتها مختلفة."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}5^4 \\times 8^4 = (0{,}5 \\times 8)^4 = 4^4 = 256$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$A = (0{,}5 \\times 8)^{4} = 4^{4}$",
+          "$A = 256$"
+        ],
+        "result": "A = 256"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $B$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "8/125",
+      "misconceptionSignatures": [
+        {
+          "value": "8/5",
+          "id": "MISC-QUWA-FRACTION-POWER"
+        },
+        {
+          "value": "6/5",
+          "id": "MISC-QUWA-POWER-AS-PRODUCT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الأس خارج القوسين يخصّ البسط والمقام معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\left(\\dfrac{a}{b}\\right)^n = \\dfrac{a^n}{b^n}$ ، ثم حدّد الإشارة حسب زوجية الأس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب قوة البسط ثم قوة المقام."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2^3}{5^3} = \\dfrac{8}{125}$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$B = \\dfrac{2^{3}}{5^{3}}$",
+          "$B = \\dfrac{8}{125}$"
+        ],
+        "result": "B = \\dfrac{8}{125}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "احسب $C$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "81/16",
+      "misconceptionSignatures": [
+        {
+          "value": "-81/16",
+          "id": "MISC-QUWA-ODD-EVEN-SIGN"
+        },
+        {
+          "value": "81/2",
+          "id": "MISC-QUWA-FRACTION-POWER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الأس خارج القوسين يخصّ البسط والمقام معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\left(\\dfrac{a}{b}\\right)^n = \\dfrac{a^n}{b^n}$ ، ثم حدّد الإشارة حسب زوجية الأس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب قوة البسط ثم قوة المقام."
+        }
+      ],
+      "feedback": {
+        "correct": "الأس زوجي: $\\dfrac{3^4}{2^4} = \\dfrac{81}{16}$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الأس 4 زوجي، فالنتيجة موجبة.",
+          "$C = \\dfrac{3^{4}}{2^{4}} = \\dfrac{81}{16}$"
+        ],
+        "result": "C = \\dfrac{81}{16}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "احسب $D$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "32",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-QUWA-QUOTIENT-EXP"
+        },
+        {
+          "value": "2",
+          "id": "MISC-QUWA-FRACTION-POWER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للقوتين الأساس نفسه أم الأس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء قوتين لهما الأس نفسه: $a^n \\times b^n = (ab)^n$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا نجمع أسس قوى أساساتها مختلفة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{6^5}{3^5} = \\left(\\dfrac{6}{3}\\right)^5 = 2^5 = 32$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$D = \\left(\\dfrac{6}{3}\\right)^{5} = 2^{5}$",
+          "$D = 32$"
+        ],
+        "result": "D = 32"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "statement": "برّر حسابك للعدد $D$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للقوتين الأساس نفسه أم الأس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء قوتين لهما الأس نفسه: $a^n \\times b^n = (ab)^n$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا نجمع أسس قوى أساساتها مختلفة."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "للقوتين الأس نفسه 5، إذن $\\dfrac{a^{n}}{b^{n}} = \\left(\\dfrac{a}{b}\\right)^{n}$",
+          "$\\dfrac{6^{5}}{3^{5}} = 2^{5} = 32$"
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-barahin-ashia-l1-008",
+  "lessonCode": "barahin-ashia",
+  "level": 1,
+  "generator": {
+    "tool": "gen-barahin.mjs",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — صورة دائرة بانسحاب",
+    "estimatedMinutes": 3,
+    "tags": [
+      "صورة دائرة",
+      "انسحاب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_barahin-ashia_P3",
+      "modelledOn": "now-138"
+    }
+  },
+  "statement": {
+    "content": "(C) دائرة مركزها O ونصف قطرها $4\\,\\mathrm{cm}$ ، و A و B نقطتان. (C′) صورة (C) بالانسحاب الذي شعاعه $\\overrightarrow{AB}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "نصف قطر (C′) بالسنتيمتر:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SHUAA-DAIRA-QUTR",
+          "value": "8"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الانسحاب ينقل كل نقطة بالشعاع نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يتغيّر البعد بين المركز ونقطة من الدائرة؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الانسحاب يحافظ على الأطوال."
+        }
+      ],
+      "feedback": {
+        "correct": "الانسحاب يحافظ على الأطوال: (C′) لها نفس نصف قطر (C).",
+        "incorrect": "صورة دائرة بانسحاب دائرة لها نفس نصف القطر ومركزها صورة المركز."
+      }
+    }
+  ]
+}

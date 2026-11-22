@@ -1,0 +1,193 @@
+{
+  "id": "ex-3am-muadalat-darajat-ula-l4-001",
+  "lessonCode": "muadalat-darajat-ula",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — نشر ومعادلة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "نشر",
+      "حلّ معادلة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 3,
+      "file": "3am-s3-49",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن $K$ عبارة جبرية حيث: $K = 3x(2x + 1) - (x - 2)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما الشكل المنشور والمبسّط للعبارة $K$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "$K = 6x^2 + 2x + 2$ .",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$6x^2 + 2x - 2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-PREREQ"
+        },
+        {
+          "id": "B",
+          "content": "$6x^2 + 4x + 2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-PREREQ"
+        },
+        {
+          "id": "C",
+          "content": "$6x^2 + 2x + 2$",
+          "isCorrect": true
+        }
+      ],
+      "solution": {
+        "lines": [
+          "ننشر: $K = 6x^2 + 3x - x + 2$ .",
+          "نبسّط: $K = 6x^2 + 2x + 2$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "استنتج حلّ المعادلة $K - 6x^2 = 5x + 8$ .",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = -2$ .",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر أو عدد عشري)",
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-MUADALA-NEG-COEF"
+        },
+        {
+          "value": "-10/3",
+          "id": "MISC-MUADALA-SIGN-KEPT"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "من النشر: $K - 6x^2 = 2x + 2$ ، فالمعادلة تصبح $2x + 2 = 5x + 8$ .",
+          "نضيف $-5x$ إلى الطرفين (معاكس الحدّ $5x$) فنجد: $-3x + 2 = 8$ .",
+          "نضيف $-2$ إلى الطرفين (معاكس $2$) فنجد: $-3x = 6$ .",
+          "نقسم الطرفين على $-3$ فنجد: $x = -2$ .",
+          "التحقّق: من أجل $x = -2$ نجد الطرف الأيسر $-2$ والطرف الأيمن $-2$ ، فهما متساويان."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "إذا علمت أنّ $y = 4$ ، أثبت أنّ $5 - 3y = -7$ .",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد المراد اختباره؟ عوّضه مكان المجهول في الطرف الأيسر ثم في الطرف الأيمن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة بدقّة (انتبه إلى الإشارات)، ثم قارن النتيجتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا تساوى الطرفان فالعدد حلّ للمعادلة، وإذا اختلفا فليس حلًّا لها."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 - 12 = -7$ .",
+        "incorrect": "للتحقّق من أنّ عددًا حلّ نعوّضه في الطرفين ونقارن القيمتين؛ أعد المحاولة."
+      },
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب إجابتك ثم قارنها بالتصحيح النموذجي",
+      "solution": {
+        "lines": [
+          "$5 - 3y = 5 - 3 \\times 4 = 5 - 12 = -7$ ."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

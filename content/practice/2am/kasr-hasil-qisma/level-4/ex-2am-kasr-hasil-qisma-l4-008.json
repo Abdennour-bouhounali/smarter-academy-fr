@@ -1,0 +1,223 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l4-008",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — قطع القماش",
+    "estimatedMinutes": 9,
+    "tags": [
+      "قسمة عشرية",
+      "قيم مقرّبة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "تقصّ خيّاطة قطعة قماش طولها $23{,}7$ m إلى $7$ قطع متساوية الطول، وطول القطعة الواحدة هو $23{,}7 \\div 7$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب حاصل القسمة الإقليدية للعدد $237$ على العدد $7$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "33",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أكبر عدد نضربه في المقسوم عليه دون أن يتجاوز المقسوم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي هو ما يبقى من المقسوم بعد طرح الجداء، وهو أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$237 = 7 \\times 33 + 6$ و $6 < 7$.",
+        "incorrect": "القسمة الإقليدية: المقسوم = المقسوم عليه × الحاصل + الباقي، والباقي أصغر من المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$237 = 7 \\times 33 + 6$",
+          "$6 < 7$"
+        ],
+        "result": "33"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أنجز القسمة العشرية $23{,}7 \\div 7$ ، واكتفِ بثلاثة أرقام بعد الفاصلة (دون تدوير).",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "3.385",
+      "misconceptionSignatures": [
+        {
+          "value": "3.386",
+          "id": "MISC-QARIBA-SWAP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل أوّلًا المقسوم عليه إلى عدد طبيعي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "واصل القسمة بعد الفاصلة بإضافة أصفار إلى الباقي، وتوقّف عند الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$23{,}7 \\div 7 = 23{,}7 \\div 7 = 3{,}385\\ldots$.",
+        "incorrect": "توقّف عند الرتبة المطلوبة دون زيادة: الأرقام الباقية تُهمل."
+      },
+      "solution": {
+        "lines": [
+          "$23{,}7 \\div 7 = 23{,}7 \\div 7$",
+          "$23{,}7 \\div 7 = 3{,}385\\ldots$"
+        ],
+        "result": "3{,}385"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}01$ بالنقصان لحاصل القسمة $23{,}7 \\div 7$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "3.38",
+      "misconceptionSignatures": [
+        {
+          "value": "3.39",
+          "id": "MISC-QARIBA-ROUNDED"
+        },
+        {
+          "value": "3.385",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالنقصان لا تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة دون أن تزيد شيئًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب القيمة في المقسوم عليه: يجب ألاّ يتجاوز الجداء المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$3{,}38 < \\frac{23{,}7}{7} < 3{,}39$.",
+        "incorrect": "بالنقصان: نحتفظ بالأرقام حتى الرتبة المطلوبة ونُهمل ما بعدها دون تغيير الرقم الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 3{,}38 = 23{,}66$",
+          "$7 \\times 3{,}39 = 23{,}73$",
+          "$23{,}66 < 23{,}7 < 23{,}73$"
+        ],
+        "result": "3{,}38"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}01$ بالزيادة لحاصل القسمة $23{,}7 \\div 7$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "3.39",
+      "misconceptionSignatures": [
+        {
+          "value": "3.38",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "3.386",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالزيادة هي أصغر قيمة من هذه الرتبة تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من القيمة بالنقصان ثم أضف وحدة واحدة من الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$3{,}38 < \\frac{23{,}7}{7} < 3{,}39$.",
+        "incorrect": "بالزيادة: هي القيمة التي تلي القيمة بالنقصان مباشرة في الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 3{,}39 = 23{,}73$",
+          "$23{,}73 > 23{,}7$",
+          "القيمة بالزيادة هي $3{,}39$"
+        ],
+        "result": "3{,}39"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

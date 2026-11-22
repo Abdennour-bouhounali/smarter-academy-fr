@@ -1,0 +1,165 @@
+{
+  "id": "ex-4am-tamthil-bayani-khatti-l2-001",
+  "lessonCode": "tamthil-bayani-khatti",
+  "level": 2,
+  "metadata": {
+    "title": "نقطتان من التمثيل ثم الرسم",
+    "estimatedMinutes": 6,
+    "tags": [
+      "نقطة من التمثيل",
+      "تمثيل بياني"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tamthil-bayani-khatti_P1",
+      "modelledOn": "method-draw",
+      "adaptedFrom": "ex-4am-tamthil-bayani-khatti-l2-001"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الدالة الخطية $f$ حيث $f(x) = 2{,}5x$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب ترتيب كل من النقطتين $A$ و $B$ من التمثيل البياني للدالة $f$ حيث:",
+      "statement": "فاصلة النقطة $A$ هي 2.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "0,8",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ترتيب النقطة هو صورة فاصلتها بالدالة $f$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $2{,}5 \\times 2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(2) = 2{,}5 \\times 2 = 5$ ، إذن $A(2 ; 5)$ .",
+        "incorrect": "اضرب الفاصلة في المعامل $2{,}5$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(2) = 2{,}5 \\times 2 = 5$",
+          "إذن $A(2 ; 5)$ ."
+        ],
+        "result": "A(2 ; 5)"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "فاصلة النقطة $B$ هي $-2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-5",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ترتيب النقطة هو صورة فاصلتها بالدالة $f$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى إشارة الجداء."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(-2) = 2{,}5 \\times \\left(-2\\right) = -5$ ، إذن $B(-2 ; -5)$ .",
+        "incorrect": "جداء عدد موجب في عدد سالب عدد سالب."
+      },
+      "solution": {
+        "lines": [
+          "$f(-2) = 2{,}5 \\times \\left(-2\\right) = -5$",
+          "إذن $B(-2 ; -5)$ ."
+        ],
+        "result": "B(-2 ; -5)"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "مثّل بيانيا الدالة $f$ في معلم متعامد ومتجانس، ثم تحقّق أن النقط $A$ و $O$ و $B$ على استقامة واحدة.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التمثيل البياني لدالة خطية مستقيم يشمل المبدأ $O$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يكفي تعيين نقطة ثانية من التمثيل بحساب صورة عدد غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "تمثيل الدالة الخطية $f$ مستقيم يشمل المبدأ $O$ .",
+          "نعلّم $A(2 ; 5)$ ونرسم المستقيم $(OA)$ .",
+          "النقطة $B(-2 ; -5)$ تقع على المستقيم $(OA)$ لأن ترتيبها صورة فاصلتها بالدالة $f$ : النقط $A$ و $O$ و $B$ على استقامة واحدة."
+        ]
+      },
+      "timeSeconds": 240
+    }
+  ]
+}

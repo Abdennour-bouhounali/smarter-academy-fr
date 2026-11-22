@@ -1,0 +1,155 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l2-003",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 2,
+  "metadata": {
+    "title": "من الكتاب — دوري الآن 2 (ص 145)",
+    "estimatedMinutes": 3,
+    "tags": [
+      "دائرة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "now-145",
+      "page": 145,
+      "section": "دوري الآن",
+      "number": 2
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 145): $A(-2\\,;\\,0)$ ، $B(0\\,;\\,-2)$ نقطتان في معلم متعامد ومتجانس، مبدؤه النقطة O. • عيّن إحداثيتي I مركز الدائرة التي قطرها [AB]. • برهن أنّ النقطة O تنتمي إلى هذه الدائرة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا I :",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x\\,;\\,y)$ : الأولى ثم الثانية (عدد صحيح أو كسر مثل 5/2)",
+      "expectedAnswer": {
+        "x": "-1",
+        "y": "-1"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مركز الدائرة التي قطرها [AB] هو منتصف [AB]."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نصف مجموع الفاصلتين، ثم نصف مجموع الترتيبين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$I\\left(\\dfrac{-2 + 0}{2}\\,;\\,\\dfrac{0 - 2}{2}\\right)$ أي $I(-1\\,;\\,-1)$ .",
+        "incorrect": "المنتصف نصف المجموع."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "احسب $OI^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MASAFA-TARBI",
+          "value": "-2"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "O هو المبدأ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مركبتا $\\overrightarrow{OI}$ هما إحداثيتا I."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ربّع ثم اجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$OI^2 = (-1)^2 + (-1)^2 = 2$ .",
+        "incorrect": "مربع −1 هو 1."
+      }
+    },
+    {
+      "id": "q3",
+      "statement": "O تنتمي إلى الدائرة لأن:",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$OA = OB$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-DAIRA-QUTR"
+        },
+        {
+          "id": "B",
+          "content": "$OI^2 = 2 = IA^2$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$OI^2 = 2$ و $AB^2 = 8$ مختلفان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-DAIRA-QUTR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما نصف قطر الدائرة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نصف القطر IA."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن $OI^2$ بـ $IA^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$IA^2 = (-1 + 2)^2 + (-1)^2 = 2 = OI^2$ : O على الدائرة.",
+        "incorrect": "نقارن بنصف القطر IA لا بالقطر AB."
+      }
+    }
+  ]
+}

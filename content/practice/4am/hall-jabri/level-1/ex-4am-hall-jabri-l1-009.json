@@ -1,0 +1,121 @@
+{
+  "id": "ex-4am-hall-jabri-l1-009",
+  "lessonCode": "hall-jabri",
+  "level": 1,
+  "metadata": {
+    "title": "نكمل الحل إلى الثنائية",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الجمع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hall-jabri_P2",
+      "modelledOn": "act-2"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "حلّ تلميذ الجملة التالية بجمع المعادلتين طرفا لطرف، فوجد $2x = 8$ أي $x = 4$ ، ثم توقّف.",
+    "formulas": [
+      "\\begin{cases} x + y = 7 \\\\ x - y = 1 \\end{cases}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أكمل حل التلميذ: احسب قيمة $y$ .",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $y$ فقط (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحل ثنائية: يلزم إيجاد المجهول الثاني أيضا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $x$ بـ $4$ في إحدى المعادلتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 + y = 7$ ومنه $y = 3$ .",
+        "incorrect": "عوّض $x$ بـ $4$ في المعادلة $x + y = 7$ ثم حل المعادلة الناتجة."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $x$ بـ $4$ في المعادلة (1): $4 + y = 7$",
+          "ومنه $y = 3$"
+        ],
+        "result": "y = 3"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب حل الجملة.",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": {
+        "x": "4",
+        "y": "3"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "3",
+            "y": "4"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحل ثنائية $(x ; y)$ : العدد الأول قيمة $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الثنائية $(4 ; 3)$ تحقق المعادلتين معا: هي حل الجملة.",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "بجمع المعادلتين طرفا لطرف نجد: $2x = 8$",
+          "ومنه $x = 4$",
+          "نعوّض $x$ بـ $4$ في المعادلة (1): $4 + y = 7$",
+          "ومنه $y = 3$",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(4 ; 3)"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

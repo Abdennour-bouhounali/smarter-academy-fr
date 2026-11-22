@@ -1,0 +1,247 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-aadad-l5-001",
+  "lessonCode": "wadiya-idmajiya-aadad",
+  "level": 5,
+  "metadata": {
+    "title": "سلسلة التفوق، الوضعية 4 — سياج حقل نخيل بأولاد جلال",
+    "estimatedMinutes": 13,
+    "tags": [
+      "قواسم مشتركة",
+      "وضعية"
+    ],
+    "source": {
+      "type": "worksheet",
+      "worksheetId": "tafawwuq-01",
+      "elementId": "ws01-sit-04",
+      "section": "الوضعيات",
+      "number": 4
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يملك عمي محمد حقل نخيل بأولاد جلال مستطيل الشكل طوله 135m وعرضه 39m، يريد تسييجه حفاظًا على نخيله الذي يتصدّق من تمره على الفقراء. لهذا الغرض يغرس أعمدة بحيث تكون المسافة بين كل عمودين متتاليين هي نفسها، وهي عدد طبيعي بالمتر أكبر من 2m، ويضع عمودًا في كل ركن من أركان الحقل.\n\n• ثمن العمود الواحد 650DA.\n\n• يشدّ على الأعمدة 4 صفوف من السلك على طول محيط الحقل، والسلك يُباع في لفّات طول كل منها 100m، ثمن اللفّة 3200DA.\n\n• خصّص عمي محمد لهذا السياج 150000DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "عيّن القواسم المشتركة للعددين 135 و 39.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        3
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القواسم المشتركة لعددين هي قواسم قاسمهما المشترك الأكبر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب PGCD(135 ; 39) بخوارزمية إقليدس."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(135 ; 39) = 3، والقواسم المشتركة هي قواسم 3.",
+        "incorrect": "احسب القاسم المشترك الأكبر للعددين، ثم اكتب كل قواسمه."
+      },
+      "solution": {
+        "lines": [
+          "$135 = 39 \\times 3 + 18$",
+          "$39 = 18 \\times 2 + 3$",
+          "$18 = 3 \\times 6 + 0$",
+          "إذن $PGCD(135 ; 39) = 3$ ، والقواسم المشتركة هي قواسم 3: 1 ، 3"
+        ]
+      },
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "استنتج المسافة بين كل عمودين متتاليين.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (بالمتر)",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة تقسم الطول والعرض معًا لأن في كل ركن عمودًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "وهي أكبر من 2m."
+        }
+      ],
+      "feedback": {
+        "correct": "القاسم المشترك الوحيد الأكبر من 2 هو 3: المسافة 3m.",
+        "incorrect": "اختر من بين القواسم المشتركة التي وجدتها القاسم الأكبر من 2."
+      },
+      "solution": {
+        "lines": [
+          "المسافة قاسم مشترك للعددين 135 و 39 (عمود في كل ركن).",
+          "القواسم المشتركة: 1 ، 3، والأكبر من 2 هو 3."
+        ],
+        "result": "3\\,m"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب عدد الأعمدة اللازمة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "116",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حول حقل مغلق، عدد الأعمدة = المحيط ÷ المسافة بين عمودين متتاليين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب محيط الحقل أولًا."
+        }
+      ],
+      "feedback": {
+        "correct": "المحيط 348m، و $348 \\div 3 = 116$ عمودًا.",
+        "incorrect": "احسب محيط المستطيل، ثم اقسمه على المسافة بين عمودين متتاليين."
+      },
+      "solution": {
+        "lines": [
+          "محيط الحقل: $2 \\times (135 + 39) = 348m$",
+          "عدد الأعمدة: $348 \\div 3 = 116$"
+        ],
+        "result": "116"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب عدد لفّات السلك التي يجب شراؤها.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "14",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب طول السلك اللازم للصفوف الأربعة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اللفّات لا تُجزّأ: إذا لم تكن القسمة تامة، تلزم لفّة إضافية."
+        }
+      ],
+      "feedback": {
+        "correct": "طول السلك $4 \\times 348 = 1392m$ ، فيلزم 14 لفّة.",
+        "incorrect": "اضرب المحيط في عدد الصفوف، ثم اقسم على طول اللفّة وخذ العدد الطبيعي الذي يكفي."
+      },
+      "solution": {
+        "lines": [
+          "طول السلك: $4 \\times 348 = 1392m$",
+          "$1392 = 100 \\times 13 + 92$ : 13 لفّة لا تكفي، إذن تلزم 14 لفّة."
+        ],
+        "result": "14"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "☜ هل يكفي المبلغ الذي خصّصه عمي محمد لإنجاز هذا السياج؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب ثمن الأعمدة ثم ثمن لفّات السلك."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن المجموع بالمبلغ المخصّص."
+        }
+      ],
+      "feedback": {
+        "correct": "التكلفة $75400 + 44800 = 120200$DA وهي أقل من 150000DA: المبلغ يكفي.",
+        "incorrect": "اجمع ثمن الأعمدة وثمن اللفّات، ثم قارن المجموع بالمبلغ الذي خصّصه عمي محمد."
+      },
+      "solution": {
+        "lines": [
+          "ثمن الأعمدة: $116 \\times 650 = 75400$DA",
+          "ثمن السلك: $14 \\times 3200 = 44800$DA",
+          "التكلفة: $75400 + 44800 = 120200$DA",
+          "$120200 < 150000$ ، إذن المبلغ يكفي (ويبقى 29800DA)."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 240
+    }
+  ]
+}

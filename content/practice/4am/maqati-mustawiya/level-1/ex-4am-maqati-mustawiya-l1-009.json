@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l1-009",
+  "lessonCode": "maqati-mustawiya",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — مقطع هرم",
+    "estimatedMinutes": 1,
+    "tags": [
+      "هرم",
+      "تصغير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_maqati-mustawiya_P4",
+      "modelledOn": "act-5"
+    }
+  },
+  "statement": {
+    "content": "هرم منتظم SABCD قاعدته المربع ABCD، يقطعه مستو موازٍ لقاعدته."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المقطع هو:",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P4",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مربع، تصغير للقاعدة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "مثلث",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQTA-SHAKL"
+        },
+        {
+          "id": "C",
+          "content": "مربع مطابق للقاعدة تماما",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQTA-HARAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تذكّر نشاط 5: المقطع EFGH."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أضلاع المقطع توازي أضلاع القاعدة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كلما اقترب المستوي من الرأس صغر المقطع."
+        }
+      ],
+      "feedback": {
+        "correct": "مقطع هرم بمستو موازٍ لقاعدته مضلع من نفس طبيعتها: مربع، وهو تصغير لها.",
+        "incorrect": "المقطع أصغر من القاعدة: نسبته $\\dfrac{SE}{SA} < 1$ ."
+      },
+      "difficulty": 1
+    }
+  ]
+}

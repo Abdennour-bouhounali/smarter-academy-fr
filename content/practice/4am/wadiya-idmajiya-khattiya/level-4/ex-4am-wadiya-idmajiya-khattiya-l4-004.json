@@ -1,0 +1,361 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-khattiya-l4-004",
+  "lessonCode": "wadiya-idmajiya-khattiya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2007 — صيغتا الاشتراك في قاعة رياضة بالبليدة",
+    "estimatedMinutes": 14,
+    "tags": [
+      "جدول",
+      "دالة خطية",
+      "مقارنة عرضين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-khattiya_P3",
+      "modelledOn": "BEM 2007 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2007",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "تقترح قاعة رياضة بالبليدة على زبائنها صيغتين:\n– الصيغة الأولى: 350DA للحصة الواحدة.\n– الصيغة الثانية: 250DA للحصة الواحدة مع اشتراك شهري قدره 1500DA.",
+    "table": {
+      "head": [
+        "عدد الحصص",
+        "5",
+        "…",
+        "…"
+      ],
+      "rows": [
+        [
+          "المبلغ حسب الصيغة الأولى (DA)",
+          "…",
+          "5600",
+          "…"
+        ],
+        [
+          "المبلغ حسب الصيغة الثانية (DA)",
+          "…",
+          "…",
+          "6500"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "انقل الجدول وأكمله (نكتفي بالخانات الآتية).",
+      "statement": "المبلغ حسب الصيغة الأولى من أجل 5 حصص:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "1750",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ حسب الصيغة الأولى متناسب مع عدد الحصص."
+        }
+      ],
+      "feedback": {
+        "correct": "$350 \\times 5 = 1750$ DA.",
+        "incorrect": "اضرب عدد الحصص في ثمن الحصة."
+      },
+      "solution": {
+        "lines": [
+          "$350 \\times 5 = 1750$"
+        ],
+        "result": "1750DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "عدد الحصص الموافق لمبلغ 5600DA حسب الصيغة الأولى:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الحصص",
+      "expectedAnswer": "16",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم المبلغ على ثمن الحصة."
+        }
+      ],
+      "feedback": {
+        "correct": "$5600 \\div 350 = 16$ حصة.",
+        "incorrect": "المطلوب عدد الحصص: اقسم المبلغ على 350."
+      },
+      "solution": {
+        "lines": [
+          "$5600 \\div 350 = 16$"
+        ],
+        "result": "16"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "عدد الحصص الموافق لمبلغ 6500DA حسب الصيغة الثانية:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الحصص",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "26",
+          "id": "MISC-TANASUB-MABLAGH-THABIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح أولا الاشتراك الشهري من المبلغ."
+        }
+      ],
+      "feedback": {
+        "correct": "$(6500 - 1500) \\div 250 = 20$ حصة.",
+        "incorrect": "الاشتراك يُدفع مرة واحدة: اطرحه قبل القسمة."
+      },
+      "solution": {
+        "lines": [
+          "$6500 - 1500 = 5000$",
+          "$5000 \\div 250 = 20$"
+        ],
+        "result": "20"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "lead": "ليكن $x$ عدد الحصص، و $y_1$ و $y_2$ المبلغين حسب الصيغتين الأولى والثانية على الترتيب، حيث $y_2 = 250x + 1500$ .",
+      "statement": "عبّر عن $y_1$ بدلالة $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المعامل $a$ فقط في $y_1 = ax$",
+      "expectedAnswer": "350",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الصيغة الأولى لا تتضمّن اشتراكا: المبلغ متناسب مع عدد الحصص."
+        }
+      ],
+      "feedback": {
+        "correct": "$y_1 = 350x$ (دالة خطية)، أما $y_2$ فليست خطية.",
+        "incorrect": "المعامل هو ثمن الحصة في الصيغة الأولى."
+      },
+      "solution": {
+        "lines": [
+          "$y_1 = 350x$",
+          "$y_2 = 250x + 1500$ (المبلغ ليس متناسبا مع عدد الحصص بسبب الاشتراك)."
+        ],
+        "result": "y_1 = 350x"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "حلّ المتراجحة $350x > 250x + 1500$ ، ثم اكتب حدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x < k$ أو $x \\leqslant k$ أو $x > k$ أو $x \\geqslant k$ : اكتب العدد $k$ فقط",
+      "expectedAnswer": "15",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم في الأخير على معامل $x$ ، وانتبه إلى إشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "أحسنت: هذا هو حدّ الحلول.",
+        "incorrect": "أعد الحل سطرًا سطرًا: العملية نفسها على الطرفين، ثم القسمة على معامل $x$ في الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$350x - 250x > 1500$",
+          "$100x > 1500$",
+          "$x > 15$ ، حدّ الحلول $k = 15$ ."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < 15$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-JIHA"
+        },
+        {
+          "id": "B",
+          "content": "$x \\leqslant 15$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-JIHA"
+        },
+        {
+          "id": "C",
+          "content": "$x > 15$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$x \\geqslant 15$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل $x$ في السطر الأخير موجب: الاتجاه لا يتغيّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المتباينة تامة أو غير تامة كما في المتراجحة المعطاة."
+        }
+      ],
+      "feedback": {
+        "correct": "صحيح: الاتجاه لا يتغيّر والمتباينة تامة.",
+        "incorrect": "تتبّع سطور الحل: الاتجاه يتغيّر فقط عند القسمة على عدد سالب، ونوع المتباينة لا يتغيّر."
+      },
+      "solution": {
+        "lines": [
+          "$100 > 0$ : الاتجاه لا يتغيّر، والحلول هي الأعداد $x > 15$ .",
+          "الصيغة الأولى أغلى من الثانية عندما يتجاوز عدد الحصص 15."
+        ],
+        "result": "x > 15"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "statement": "☜ يريد كريم حضور 12 حصة في الشهر. ما هي الصيغة الأنسب له؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الصيغة الأولى",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الصيغة الثانية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-TAFSIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 12 بحدّ حلول المتراجحة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أو احسب المبلغين من أجل 12 حصة."
+        }
+      ],
+      "feedback": {
+        "correct": "$12 < 15$ : $y_1 = 4200$ DA و $y_2 = 4500$ DA.",
+        "incorrect": "قبل 15 حصة، أيّ الصيغتين أرخص؟"
+      },
+      "solution": {
+        "lines": [
+          "$12 < 15$ : الصيغة الأولى أرخص.",
+          "التحقق: $y_1 = 350 \\times 12 = 4200$ و $y_2 = 250 \\times 12 + 1500 = 4500$ .",
+          "الصيغة الأولى أنسب لكريم."
+        ],
+        "result": "الصيغة الأولى"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+/* ── La سبّورة : Excalidraw aux couleurs de Smarter Academy ──────────────
+   Excalidraw expose ses jetons en variables CSS sur `.excalidraw` ; on ne
+   redéfinit que ce qui le ferait ressembler à un autre produit — l'accent,
+   la police d'interface, les rayons. Le canevas reste calme et blanc : le
+   contenu mathématique est ce qu'on regarde. */
+
+.sa-ml-whiteboard {
+  position: absolute;
+  inset: 0;
+}
+
+.sa-ml-whiteboard .excalidraw {
+  --color-primary: #3b82f6;
+  --color-primary-darker: #2563eb;
+  --color-primary-darkest: #1d4ed8;
+  --color-primary-hover: #2563eb;
+  --color-primary-light: #dbeafe;
+  --color-primary-light-darker: #bfdbfe;
+  --color-brand-hover: #2563eb;
+  --color-brand-active: #1d4ed8;
+  --color-surface-primary-container: #dbeafe;
+  --ui-font: 'Inter', 'Cairo', 'Tajawal', sans-serif;
+  --border-radius-lg: 0.75rem;
+  --border-radius-md: 0.5rem;
+}
+
+/* Un élève ne sort pas de la plateforme depuis sa سبّورة : le bouton qui
+   ouvre la bibliothèque publique d'excalidraw.com est retiré. */
+.sa-ml-whiteboard .excalidraw .library-menu-browse-button,
+.sa-ml-whiteboard .excalidraw .library-menu-control-buttons a[href] {
+  display: none;
+}
+
+/* ── La bibliothèque de formes ──────────────────────────────────────────
+   L'import d'un fichier passe par la coquille (« استيراد », MathLabShell),
+   pas par le « فتح » du menu ⋮ d'Excalidraw : ce dernier ouvre un sélecteur
+   sans filtre et transforme tout échec en « تعذر تحميل المكتبة ». L'entrée
+   est donc retirée.
+
+   Bibliothèque VIDE : ce menu ⋮ n'offrait que « فتح ». Il s'affichait au
+   milieu du panneau et, sous RTL (panneau à GAUCHE de l'écran), son menu
+   s'ouvrait vers la gauche, hors du panneau — coupé par `overflow: hidden`
+   et par le bord de l'écran sur mobile. Sans entrée, plus de bouton.
+   Bibliothèque garnie : le ⋮ de l'en-tête reste (exporter, vider), ancré
+   au bord du panneau, et son menu tient dans le panneau. */
+.sa-ml-whiteboard .excalidraw .layer-ui__library [data-testid="lib-dropdown--load"],
+.sa-ml-whiteboard .excalidraw .layer-ui__library .library-menu-dropdown-container:not(.library-menu-dropdown-container--in-heading) {
+  display: none;
+}
+
+/* Ceinture et bretelles pour le menu ⋮ de l'en-tête : il ne dépasse jamais
+   le panneau, quelle que soit la direction, et défile si l'écran est bas. */
+.sa-ml-whiteboard .excalidraw .layer-ui__library .library-menu-dropdown-container--in-heading .dropdown-menu .dropdown-menu-container {
+  max-width: calc(100vw - 2rem);
+  /* 12rem de barres, plus la rangée « أدوات الهندسة » (geometry.css). */
+  max-height: calc(100dvh - 16rem);
+  overflow-y: auto;
+}
+
+/* L'indice de la bibliothèque vide renvoie au « dépôt public ci-dessous »,
+   un lien retiré plus haut (pas de sortie vers un site externe pour un
+   élève) : la phrase mentirait. */
+.sa-ml-whiteboard .excalidraw .library-menu-items__no-items__hint {
+  display: none;
+}
+
+/* ── La سبّورة et son bureau de géométrie ───────────────────────────────
+   Une colonne : la barre « أدوات الهندسة » dans le flux, puis le canevas
+   qui prend tout le reste (Excalidraw veut une boîte non nulle). */
+.sa-ml-whiteboard {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.sa-ml-whiteboard__canvas {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.sa-ml-whiteboard__canvas > .excalidraw {
+  position: absolute;
+  inset: 0;
+}

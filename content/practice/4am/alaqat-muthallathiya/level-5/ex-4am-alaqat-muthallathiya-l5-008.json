@@ -1,0 +1,372 @@
+{
+  "id": "ex-4am-alaqat-muthallathiya-l5-008",
+  "lessonCode": "alaqat-muthallathiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2025 — الصاروخ المائي لنادي العلوم",
+    "estimatedMinutes": 20,
+    "tags": [
+      "الوضعية الإدماجية",
+      "العلاقات المثلثية",
+      "حساب الأطوال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_alaqat-muthallathiya_P2",
+      "modelledOn": "BEM 2025 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في نادي العلوم بمتوسطة في وهران، أطلق التلاميذ صاروخا مائيا من النقطة $A$ على أرض الملعب الأفقية. في المرحلة الأولى يصعد الصاروخ في خط مستقيم $[AR]$ يصنع مع الأرض زاوية $x$ حيث $\\cos x = \\dfrac{20}{29}$ ، وتنتهي هذه المرحلة في النقطة $R$ بعد أن يقطع $AR = 58\\,\\mathrm{m}$ ، و $H$ المسقط العمودي لـ $R$ على الأرض (الشكل المقابل). على بعد أفقي $20\\,\\mathrm{m}$ من $A$ ، في اتجاه $H$ ، شجرة ارتفاعها $20\\,\\mathrm{m}$ . ويتعاون التلاميذ على تحضير التجربة والتزام شروط السلامة.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "H": [
+          40,
+          0
+        ],
+        "R": [
+          40,
+          42
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "R",
+          "label": "58 m",
+          "tone": "indigo"
+        },
+        [
+          "A",
+          "H"
+        ],
+        [
+          "H",
+          "R"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "H",
+          "R"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "A",
+          "from": "H",
+          "to": "R",
+          "label": "x"
+        }
+      ],
+      "labels": {
+        "A": "sw",
+        "H": "se",
+        "R": "n"
+      },
+      "ariaLabel": "مسار الصاروخ المائي [AR] طوله 58 م من النقطة A على الأرض، و H المسقط العمودي لـ R على الأرض، و x زاوية المسار مع الأرض",
+      "maxWidth": 260
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب القيمتين المضبوطتين لـ $\\sin x$ و $\\tan x$ .",
+      "statement": "$\\sin x$ :",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "21/29",
+      "misconceptionSignatures": [
+        {
+          "value": "9/29",
+          "id": "MISC-MUTH-JAMA-NISAB"
+        },
+        {
+          "value": "441/841",
+          "id": "MISC-MUTH-JADHR-NASI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العلاقة التي تربط جيب الزاوية وجيب تمامها هي $\\cos^2 x + \\sin^2 x = 1$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اعزل $\\sin^2 x$ ثم عوّض جيب التمام بقيمته، ولا تنس تربيع البسط والمقام معا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\sin x$ عدد موجب تماما: خذ الجذر التربيعي الموجب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin^2 x = 1 - \\dfrac{400}{841} = \\dfrac{441}{841}$ ، إذن $\\sin x = \\dfrac{21}{29}$ .",
+        "incorrect": "استعمل العلاقة $\\cos^2 x + \\sin^2 x = 1$ (بين المربعين)، ثم خذ الجذر التربيعي الموجب."
+      },
+      "solution": {
+        "lines": [
+          "$\\sin^2 x + \\cos^2 x = 1$ ، إذن $\\sin^2 x = 1 - \\left(\\dfrac{20}{29}\\right)^2 = 1 - \\dfrac{400}{841} = \\dfrac{441}{841}$",
+          "$\\sin x$ عدد موجب، إذن $\\sin x = \\sqrt{\\dfrac{441}{841}}$"
+        ],
+        "result": "\\sin x = \\dfrac{21}{29}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$\\tan x$ :",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "21/20",
+      "misconceptionSignatures": [
+        {
+          "value": "20/21",
+          "id": "MISC-MUTH-TAN-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الظل هو حاصل قسمة الجيب على جيب التمام: $\\tan x = \\dfrac{\\sin x}{\\cos x}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على كسر هي الضرب في مقلوبه، ثم اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan x = \\dfrac{21}{29} \\div \\dfrac{20}{29} = \\dfrac{21}{20}$ .",
+        "incorrect": "الظل = الجيب ÷ جيب التمام؛ القسمة على كسر هي الضرب في مقلوبه."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan x = \\dfrac{\\sin x}{\\cos x} = \\dfrac{21}{29} \\div \\dfrac{20}{29}$"
+        ],
+        "result": "\\tan x = \\dfrac{21}{20}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "احسب الارتفاع $RH$ الذي بلغه الصاروخ في نهاية المرحلة الأولى، والمسافة الأفقية $AH$ .",
+      "statement": "الارتفاع $RH$ :",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "42",
+      "misconceptionSignatures": [
+        {
+          "value": "40",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$[RH]$ مقابل للزاوية $x$ و $[AR]$ وتر."
+        }
+      ],
+      "feedback": {
+        "correct": "$RH = 58 \\times \\dfrac{21}{29} = 42\\,\\mathrm{m}$ .",
+        "incorrect": "المقابل = الوتر × الجيب."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $ARH$ القائم في $H$ : $RH = AR \\times \\sin x = 58 \\times \\dfrac{21}{29}$"
+        ],
+        "result": "RH = 42\\,\\mathrm{m}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "المسافة الأفقية $AH$ :",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "40",
+      "misconceptionSignatures": [
+        {
+          "value": "42",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$[AH]$ مجاور للزاوية $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AH = 58 \\times \\dfrac{20}{29} = 40\\,\\mathrm{m}$ .",
+        "incorrect": "المجاور = الوتر × جيب التمام."
+      },
+      "solution": {
+        "lines": [
+          "$AH = AR \\times \\cos x = 58 \\times \\dfrac{20}{29}$"
+        ],
+        "result": "AH = 40\\,\\mathrm{m}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ا",
+      "lead": "☜ هل يمرّ الصاروخ فوق الشجرة؟",
+      "statement": "ارتفاع الصاروخ فوق قاعدة الشجرة:",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الارتفاع بـ m",
+      "expectedAnswer": "21",
+      "misconceptionSignatures": [
+        {
+          "value": "400/21",
+          "id": "MISC-MUTH-TAN-QISMA-MAQLUBA"
+        },
+        {
+          "value": "420/29",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عند المسافة الأفقية $20\\,\\mathrm{m}$ من $A$ ، ارتفاع الصاروخ هو المقابل لزاوية مجاورها $20\\,\\mathrm{m}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل الظل."
+        }
+      ],
+      "feedback": {
+        "correct": "$h = 20 \\times \\tan x = 20 \\times \\dfrac{21}{20} = 21\\,\\mathrm{m}$ .",
+        "incorrect": "المعلوم المجاور ($20\\,\\mathrm{m}$) والمطلوب المقابل: اضرب في الظل."
+      },
+      "solution": {
+        "lines": [
+          "فوق قاعدة الشجرة، الارتفاع $h$ والمسافة الأفقية $20\\,\\mathrm{m}$ ضلعا مثلث قائم زاويته $x$ :",
+          "$\\tan x = \\dfrac{h}{20}$ ، إذن $h = 20 \\times \\dfrac{21}{20}$"
+        ],
+        "result": "h = 21\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ب",
+      "statement": "هل يمرّ الصاروخ فوق الشجرة؟",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-TAN-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الارتفاع الذي حسبته بارتفاع الشجرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$21\\,\\mathrm{m} > 20\\,\\mathrm{m}$ : يمرّ فوقها بمتر واحد.",
+        "incorrect": "قارن ارتفاع الصاروخ فوق قاعدة الشجرة بارتفاعها."
+      },
+      "solution": {
+        "lines": [
+          "ارتفاع الصاروخ فوق قاعدة الشجرة $21\\,\\mathrm{m}$ وارتفاع الشجرة $20\\,\\mathrm{m}$ .",
+          "$21 > 20$ : يمرّ الصاروخ فوق الشجرة (بفارق متر واحد فقط)."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

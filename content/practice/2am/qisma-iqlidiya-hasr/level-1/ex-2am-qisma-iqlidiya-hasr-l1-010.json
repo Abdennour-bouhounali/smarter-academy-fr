@@ -1,0 +1,193 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l1-010",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مضاعف للعدد 17",
+    "estimatedMinutes": 5,
+    "tags": [
+      "مضاعف",
+      "يقسم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نبحث عن مضاعف للعدد 17 من بين الأعداد 401 و 391 و 375."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ هذه الأعداد مضاعف للعدد 17؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "401",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-HISAB"
+        },
+        {
+          "id": "B",
+          "content": "391",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "375",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-HISAB"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية لكل عدد على 17."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المضاعف هو العدد الذي باقي قسمته على 17 معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$391 = 17 \\times 23$ والباقي معدوم.",
+        "incorrect": "ابحث عن العدد الذي باقي قسمته على 17 معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$401 = 17 \\times 23 + 10$",
+          "$391 = 17 \\times 23 + 0$",
+          "$375 = 17 \\times 22 + 1$",
+          "إذن 391 مضاعف للعدد 17."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "$\\frac{391}{17}$ عدد طبيعي. احسبه.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "23",
+      "misconceptionSignatures": [
+        {
+          "value": "24",
+          "id": "MISC-HASR-SIFR-SARIM"
+        },
+        {
+          "value": "22",
+          "id": "MISC-HASR-SIFR-SARIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 391 على 17."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي معدوم: حاصل القسمة هو القيمة المضبوطة."
+        }
+      ],
+      "feedback": {
+        "correct": "$391 = 17 \\times 23$ ، إذن $\\frac{391}{17} = 23$.",
+        "incorrect": "ابحث عن العدد الطبيعي الذي إذا ضربناه في 17 نجد 391."
+      },
+      "solution": {
+        "lines": [
+          "$17 \\times 23 = 391$",
+          "إذن $\\frac{391}{17} = 23$."
+        ],
+        "result": "23"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "علمًا أنّ $391 = 17 \\times 23$ ، اختر الجملة الصحيحة.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "17 مضاعف لـ 391",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-YAQSIM-AKS"
+        },
+        {
+          "id": "B",
+          "content": "17 يقسم 391",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "17 يقبل القسمة على 391",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-YAQSIM-AKS"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كل جملة: أيّ العددين هو المقسوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "17 أصغر من 391: هل يمكن أن يقسم 391 العدد 17؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الباقي معدوم: 17 يقسم 391، و 391 مضاعف لـ 17، و 391 يقبل القسمة على 17.",
+        "incorrect": "المقسوم هو العدد الأكبر هنا؛ والعدد الذي يقسم هو المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$391 = 17 \\times 23$ والباقي معدوم.",
+          "نقول: 391 يقبل القسمة على 17، أو 391 مضاعف لـ 17، أو 17 يقسم 391."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

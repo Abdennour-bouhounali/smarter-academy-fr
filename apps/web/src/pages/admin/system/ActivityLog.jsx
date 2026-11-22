@@ -1,6 +1,7 @@
-import React, { useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ScrollText } from 'lucide-react';
-import AdminPage from '../../../components/admin/AdminPage';
+import { AdminPage, useAdminLabels, formatDate, Num } from '../adminUi';
 import DataTable from '../../../components/admin/ui/DataTable';
 import { FilterBar, SelectFilter, Pagination } from '../../../components/admin/ui/FilterBar';
 import { EmptyState } from '../../../components/admin/ui/states';
@@ -8,35 +9,57 @@ import { useAdminResource } from '../../../hooks/useAdminResource';
 import { fetchActivityLog } from '../../../services/admin/accountService';
 import { useDocumentMeta } from '../../../hooks/useDocumentMeta';
 
-const dateFormat = new Intl.DateTimeFormat('fr-FR', { dateStyle: 'short', timeStyle: 'short' });
-
-const ACTION_LABELS = {
-  'lesson.status_changed': 'Publication d’une leçon',
-  'module.status_changed': 'Publication d’un module',
-  'exercise.status_changed': 'Publication d’un exercice',
-  'student.status_changed': 'Statut d’un compte élève',
-  'report.updated': 'Signalement mis à jour',
-  'report.note_added': 'Note interne ajoutée',
-  'admin.email_changed': 'Email administrateur changé',
-  'admin.password_changed': 'Mot de passe administrateur changé',
-};
+/**
+ * Les actions journalisées, par leur CLÉ serveur.
+ *
+ * La clé (`lesson.status_changed`) est un identifiant technique : elle part
+ * telle quelle au serveur comme filtre, et ne se traduit jamais. Seul son
+ * libellé se traduit, au rendu — c'est pourquoi la liste ne porte plus que la
+ * clé du catalogue.
+ */
+const ACTION_KEYS = [
+  'lesson.status_changed',
+  'module.status_changed',
+  'exercise.status_changed',
+  'student.status_changed',
+  'report.updated',
+  'report.note_added',
+  'admin.email_changed',
+  'admin.password_changed',
+];
 
 export default function AdminActivityLog() {
-  useDocumentMeta('Journal d’activité — Administration');
+  const { t } = useTranslation('admin');
+  const L = useAdminLabels();
+  useDocumentMeta(t('system.activityMetaTitle'));
 
   const [action, setAction] = useState();
   const [page, setPage] = useState(1);
   const loader = useCallback((token) => fetchActivityLog(token, { action, page }), [action, page]);
   const { data, loading, error, reload } = useAdminResource(loader, [loader]);
 
+  /**
+   * Le libellé d'une action, ou sa clé brute si elle sort du vocabulaire.
+   * Afficher « system.actions.foo » à l'écran n'apprendrait rien : mieux vaut
+   * la clé serveur, qui au moins se cherche dans le code.
+   */
+  const actionLabel = (key) => {
+    const path = `system.actions.${key}`;
+    const translated = t(path);
+    return translated === path ? key : translated;
+  };
+
   /** Rend un avant/après lisible — les valeurs sensibles sont déjà caviardées côté serveur. */
   const renderChange = (log) => {
-    if (!log.before && !log.after) return <span className="text-slate-400">—</span>;
+    if (!log.before && !log.after) return <span className="text-slate-400">{t('common.dash')}</span>;
     const key = Object.keys(log.after ?? log.before ?? {})[0];
-    if (!key) return <span className="text-slate-400">—</span>;
+    if (!key) return <span className="text-slate-400">{t('common.dash')}</span>;
 
     return (
-      <span className="font-mono-jetbrains text-xs">
+      // `dir="ltr"` : un avant/après est une paire de VALEURS techniques
+      // (« draft → published »), et la flèche doit rester dans ce sens même au
+      // milieu d'une page RTL.
+      <span dir="ltr" className="inline-block font-mono-jetbrains text-xs">
         <span className="text-slate-400">{log.before?.[key] ?? '∅'}</span>
         <span className="mx-1 text-slate-300">→</span>
         <span className="font-semibold text-slate-700">{log.after?.[key] ?? '∅'}</span>
@@ -46,16 +69,18 @@ export default function AdminActivityLog() {
 
   return (
     <AdminPage
-      eyebrow="Système"
-      title="Journal d’activité"
-      subtitle="Qui a fait quoi, quand. Aucun mot de passe ni secret n’y est jamais écrit."
+      eyebrow={t('system.eyebrow')}
+      title={t('system.activityTitle')}
+      subtitle={t('system.activitySubtitle')}
     >
       <div className="space-y-3">
         <FilterBar>
           <SelectFilter
-            label="Action" allLabel="Toutes les actions" value={action}
+            label={t('system.columnAction')}
+            allLabel={t('system.allActions')}
+            value={action}
             onChange={(v) => { setAction(v); setPage(1); }}
-            options={Object.entries(ACTION_LABELS).map(([value, label]) => ({ value, label }))}
+            options={ACTION_KEYS.map((value) => ({ value, label: actionLabel(value) }))}
           />
         </FilterBar>
 
@@ -64,17 +89,26 @@ export default function AdminActivityLog() {
           loading={loading}
           error={error}
           onRetry={reload}
-          empty={<EmptyState icon={ScrollText} title="Journal vide" hint="Aucune action d’administration n’a encore été enregistrée." />}
+          labels={L.table}
+          empty={<EmptyState icon={ScrollText} title={t('system.emptyActivityTitle')} hint={t('system.emptyActivityHint')} />}
           columns={[
-            { key: 'createdAt', label: 'Date', render: (log) => <span className="whitespace-nowrap text-slate-500">{dateFormat.format(new Date(log.createdAt))}</span> },
-            { key: 'admin', label: 'Administrateur', render: (log) => log.admin ?? '—' },
-            { key: 'action', label: 'Action', render: (log) => <span className="font-semibold text-slate-800">{ACTION_LABELS[log.action] ?? log.action}</span> },
-            { key: 'entity', label: 'Cible', render: (log) => (log.entityType ? <span className="font-mono-jetbrains text-xs">{log.entityType} #{log.entityId}</span> : '—') },
-            { key: 'change', label: 'Changement', render: renderChange },
+            { key: 'createdAt', label: t('system.columnDate'), render: (log) => <span className="whitespace-nowrap text-slate-500">{formatDate(log.createdAt, { withTime: true })}</span> },
+            { key: 'admin', label: t('system.columnActor'), render: (log) => log.admin ?? t('common.dash') },
+            { key: 'action', label: t('system.columnAction'), render: (log) => <span className="font-semibold text-slate-800">{actionLabel(log.action)}</span> },
+            {
+              key: 'entity',
+              label: t('system.columnEntity'),
+              // Le type et l'identifiant sont des données techniques : ils
+              // restent LTR, comme partout dans le panneau.
+              render: (log) => (log.entityType
+                ? <Num className="font-mono-jetbrains text-xs">{log.entityType} #{log.entityId}</Num>
+                : t('common.dash')),
+            },
+            { key: 'change', label: t('system.columnChange'), render: renderChange },
           ]}
         />
 
-        <Pagination meta={data} onPage={setPage} />
+        <Pagination meta={data} onPage={setPage} labels={L.pagination} />
       </div>
     </AdminPage>
   );

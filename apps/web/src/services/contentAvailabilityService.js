@@ -1,4 +1,5 @@
 import { apiRequest, ApiError, classifyStatus } from './apiClient';
+import { apiMessage } from './apiMessage';
 
 /**
  * L'autorité de publication, telle que le serveur la voit.
@@ -13,12 +14,16 @@ import { apiRequest, ApiError, classifyStatus } from './apiClient';
  * = ouvert.
  */
 export async function fetchClosedContent(token) {
-  const { ok, status, data } = await apiRequest('/content/availability', {
-    headers: { Authorization: `Bearer ${token}` },
-  });
+  // Sans jeton : l'inventaire du VISITEUR (route publique, même calcul pour
+  // un utilisateur null). Le catalogue embarqué ne porte aucun palier —
+  // lessons.tier, en base, est la seule source de vérité — donc un visiteur
+  // doit lui aussi demander au serveur ce qui est premium.
+  const { ok, status, data } = token
+    ? await apiRequest('/content/availability', { headers: { Authorization: `Bearer ${token}` } })
+    : await apiRequest('/content/availability/public');
 
   if (!ok) {
-    throw new ApiError(data?.message || 'Impossible de vérifier la disponibilité.', classifyStatus(status), status);
+    throw new ApiError(apiMessage('availability', data, status), classifyStatus(status), status);
   }
 
   // `closed` ET `access` : le premier dit ce qui est retiré, le second à quoi
@@ -27,21 +32,3 @@ export async function fetchClosedContent(token) {
   return { ...data.closed, access: data.access ?? null };
 }
 
-/**
- * L'inventaire des exercices d'une leçon — servi par le REGISTRE.
- *
- * Remplace la lecture directe de l'index embarqué : un exercice masqué ne
- * doit plus apparaître dans la liste, et pas seulement échouer à l'ouverture.
- */
-export async function fetchLessonExercises(token, lessonCode) {
-  const { ok, status, data } = await apiRequest(
-    `/lessons/${encodeURIComponent(lessonCode)}/exercises`,
-    { headers: { Authorization: `Bearer ${token}` } },
-  );
-
-  if (!ok) {
-    throw new ApiError(data?.message || 'Impossible de charger les exercices.', classifyStatus(status), status);
-  }
-
-  return data;
-}

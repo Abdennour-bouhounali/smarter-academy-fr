@@ -1,0 +1,231 @@
+{
+  "id": "ex-2am-jida-kasrayn-l4-003",
+  "lessonCode": "jida-kasrayn",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — جداء ثمّ قيمة مقرّبة",
+    "estimatedMinutes": 9,
+    "tags": [
+      "جداء كسرين",
+      "قيمة مقرّبة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العدد $M = \\dfrac{3}{7} \\times \\dfrac{5}{4}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $M$ على شكل كسر غير قابل للاختزال .",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "15/28",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "8/11",
+          "id": "MISC-JIDAKASR-SUMACROSS"
+        },
+        {
+          "value": "15/11",
+          "id": "MISC-JIDAKASR-DENSUM"
+        },
+        {
+          "value": "12/35",
+          "id": "MISC-JIDAKASR-CROSS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليّة بين الكسرين؟ وماذا يمثّل كلّ منهما من الكلّ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في ضرب كسرين لا نبحث عن مقام مشترك: نضرب البسطين معًا ونضرب المقامين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء على شكل كسر واحد ثمّ اختزله إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{15}{28}$ .",
+        "incorrect": "ضرب كسرين: بسط × بسط فوق مقام × مقام، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{7} \\times \\dfrac{5}{4} = \\dfrac{3 \\times 5}{7 \\times 4} = \\dfrac{15}{28}$ ."
+        ],
+        "result": "\\dfrac{15}{28}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أعط القيمة المقرّبة بالنقصان إلى $0{,}01$ للعدد $M = \\dfrac{15}{28}$ .",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "0.53",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المعطيات ثمّ حدّد العملية المناسبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب خطوة بخطوة وراجع الوحدة في الناتج."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}53$ .",
+        "incorrect": "راجع المعطيات والعمليّة ثمّ أعد الحساب."
+      },
+      "solution": {
+        "lines": [
+          "$15 \\div 28 = 0{,}5357 \\ldots$ ، والقيمة المقرّبة بالنقصان إلى $0{,}01$ هي $0{,}53$ ."
+        ],
+        "result": "0{,}53"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أعط القيمة المقرّبة بالزيادة إلى $0{,}01$ للعدد $M = \\dfrac{15}{28}$ .",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "0.54",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المعطيات ثمّ حدّد العملية المناسبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب خطوة بخطوة وراجع الوحدة في الناتج."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}54$ .",
+        "incorrect": "راجع المعطيات والعمليّة ثمّ أعد الحساب."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}53 < \\dfrac{15}{28} < 0{,}54$ ، فالقيمة المقرّبة بالزيادة إلى $0{,}01$ هي $0{,}54$ ."
+        ],
+        "result": "0{,}54"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "أيّ الحصرين التاليين صحيح لـ $M = \\dfrac{15}{28}$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$0{,}52 < M < 0{,}53$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$0{,}53 < M < 0{,}54$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$0{,}54 < M < 0{,}55$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$0{,}55 < M < 0{,}56$",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا ثمّ تحقّق منها بحساب بسيط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الناتج بمقام مشترك ثمّ قارنه بما قيل."
+        }
+      ],
+      "feedback": {
+        "correct": "الحصر الصحيح هو الذي يحيط بالعدد مباشرةً .",
+        "incorrect": "احسب ثمّ قارن بدقّة قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}53 = \\dfrac{14{,}84}{28} < \\dfrac{15}{28} < \\dfrac{15{,}12}{28} = 0{,}54$ : الحصر الصحيح هو $0{,}53 < M < 0{,}54$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l2-005",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — حبال من 0,7 m",
+    "estimatedMinutes": 5,
+    "tags": [
+      "قسمة على عشري",
+      "حصر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نقطع من حبل طوله $5{,}2$ m قطعًا متساوية، طول كلّ منها $0{,}7$ m . عدد القطع هو $5{,}2 \\div 0{,}7$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "لتحويل القسمة $5{,}2 \\div 0{,}7$ إلى قسمة على عدد طبيعي نضرب الحدّين في العدد نفسه. ما أصغر قوّة للعدد $10$ تجعل المقسوم عليه عددًا طبيعيًا؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "قوّة للعدد 10",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عُدّ الأرقام التي تأتي بعد الفاصلة في المقسوم عليه وحده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كلّ رقم بعد الفاصلة يزول بالضرب في قوّة مناسبة للعدد $10$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحدّان يُضربان في العدد نفسه حتى لا يتغيّر حاصل القسمة."
+        }
+      ],
+      "feedback": {
+        "correct": "المقسوم عليه $0{,}7$ فيه رقم واحد بعد الفاصلة، فنضربه في $10$ فيصير $7$.",
+        "incorrect": "المقسوم عليه هو الذي يحدّد القوّة: عدد الأرقام التي تأتي بعد فاصلته، لا بعد فاصلة المقسوم."
+      },
+      "solution": {
+        "lines": [
+          "المقسوم عليه $0{,}7$ فيه رقم واحد بعد الفاصلة",
+          "$0{,}7 \\times 10 = 7$"
+        ],
+        "result": "10"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}1$ بالنقصان لحاصل القسمة $5{,}2 \\div 0{,}7$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "7.4",
+      "misconceptionSignatures": [
+        {
+          "value": "7.5",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "7.42",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالنقصان لا تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة دون أن تزيد شيئًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب القيمة في المقسوم عليه: يجب ألاّ يتجاوز الجداء المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$7{,}4 < \\frac{5{,}2}{0{,}7} < 7{,}5$.",
+        "incorrect": "بالنقصان: نحتفظ بالأرقام حتى الرتبة المطلوبة ونُهمل ما بعدها دون تغيير الرقم الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}7 \\times 7{,}4 = 5{,}18$",
+          "$0{,}7 \\times 7{,}5 = 5{,}25$",
+          "$5{,}18 < 5{,}2 < 5{,}25$"
+        ],
+        "result": "7{,}4"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اختر الحصر الصحيح للحاصل $\\dfrac{5{,}2}{0{,}7}$ إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$7{,}42 < \\dfrac{5{,}2}{0{,}7} < 7{,}43$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$7{,}43 < \\dfrac{5{,}2}{0{,}7} < 7{,}44$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-ROUNDED"
+        },
+        {
+          "id": "C",
+          "content": "$7{,}41 < \\dfrac{5{,}2}{0{,}7} < 7{,}42$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        },
+        {
+          "id": "D",
+          "content": "$7{,}44 < \\dfrac{5{,}2}{0{,}7} < 7{,}45$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحصر الصحيح: عددان متتاليان في الرتبة المطلوبة، الأوّل لا يتجاوز الحاصل والثاني يتجاوزه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ حصر بضرب طرفيه في المقسوم عليه ثم قارن بالمقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$7{,}42 < \\dfrac{5{,}2}{0{,}7} < 7{,}43$.",
+        "incorrect": "تحقّق من الطرفين: الأصغر لا يتجاوز الحاصل والأكبر يتجاوزه، وبينهما وحدة واحدة من الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}7 \\times 7{,}42 = 5{,}194 \\text{ و } 0{,}7 \\times 7{,}43 = 5{,}201$",
+          "$5{,}194 < 5{,}2 < 5{,}201$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

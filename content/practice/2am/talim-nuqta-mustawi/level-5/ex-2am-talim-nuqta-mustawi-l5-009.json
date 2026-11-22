@@ -1,0 +1,280 @@
+{
+  "id": "ex-2am-talim-nuqta-mustawi-l5-009",
+  "lessonCode": "talim-nuqta-mustawi",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — لوحة الحفرية",
+    "estimatedMinutes": 16,
+    "tags": [
+      "وضعية إدماجية",
+      "تدريجة",
+      "منطقة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يريد فريق الحفرية وضع مواقع الأشياء المكتشفة على لوحة، في معلم متعامد ومتجانس."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نريد وضع النقط التي إحداثياتها $-30$، $45$، $60$، $-15$ على ورقة نرسم عليها معلمًا متعامدًا ومتجانسًا فيه $6$ تدريجات على الأكثر في كلّ جهة من المبدأ على كلّ محور. ما قيمة التدريجة الواحدة المناسبة (هي نفسها على المحورين)؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-FRAMESMALL"
+        },
+        {
+          "id": "B",
+          "content": "$10$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-FRAMEBIG"
+        },
+        {
+          "id": "C",
+          "content": "$15$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$30$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-FRAMEBIG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كلّ إحداثية يجب أن تقع على تدريجة، فتكون مضاعفًا لقيمة التدريجة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "وأكبر إحداثية في القيمة المطلقة يجب ألّا تتجاوز عدد التدريجات الموجودة على الورقة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب كلّ اقتراح على أكبر إحداثية أوّلًا ثم على الباقي."
+        }
+      ],
+      "feedback": {
+        "correct": "التدريجة $15$ تضع كلّ الإحداثيات على تدريجات وداخل الورقة.",
+        "incorrect": "اختبر الاقتراح على أكبر إحداثية أوّلًا، ثم على الباقي."
+      },
+      "solution": {
+        "lines": [
+          "كلّ إحداثية يجب أن تكون مضاعفًا لقيمة التدريجة",
+          "التدريجة $15$ تحقّق الشرطين: $-30 \\div 15 = -2 ,\\ 45 \\div 15 = 3 ,\\ 60 \\div 15 = 4 ,\\ -15 \\div 15 = -1$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "نريد وضع نقطة فاصلتها $45$ على المحور الأفقي لمعلم قيمة تدريجته الواحدة $15$ . كم تدريجة نعدّ من المبدأ؟ اكتب العدد سالبًا إذا كانت النقطة على يسار المبدأ.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-NOSCALE",
+          "value": "45"
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNLEFT",
+          "value": "-3"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد التدريجات = الإحداثية ÷ قيمة التدريجة الواحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الجهة تحدّدها إشارة الإحداثية: موجبة يمينًا (أو أعلى)، سالبة يسارًا (أو أسفل)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب عدد التدريجات في قيمة التدريجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$45$ ÷ $15$ = $3$ .",
+        "incorrect": "قسّم الفاصلة على قيمة التدريجة الواحدة، وإشارة الفاصلة تحدّد الجهة."
+      },
+      "solution": {
+        "lines": [
+          "عدد التدريجات = الفاصلة ÷ قيمة التدريجة",
+          "$45 \\div 15 = 3$"
+        ],
+        "result": "3"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "في أيّ منطقة من المعلم تقع النقطة $Z(45\\,;\\,-15)$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "على يسار محور التراتيب وفوق محور الفواصل",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-BOTHSIGNS"
+        },
+        {
+          "id": "B",
+          "content": "على يمين محور التراتيب وتحت محور الفواصل",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "على يمين محور التراتيب وفوق محور الفواصل",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-SIGNAXIS"
+        },
+        {
+          "id": "D",
+          "content": "على يسار محور التراتيب وتحت محور الفواصل",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-SIGNLEFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "إشارة الفاصلة تحدّد جهة النقطة بالنسبة إلى محور التراتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إشارة الترتيب تحدّد جهة النقطة بالنسبة إلى محور الفواصل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الجهتين لتجد المنطقة."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة $Z$ على يمين محور التراتيب وتحت محور الفواصل .",
+        "incorrect": "اكتب إشارة الفاصلة ثم إشارة الترتيب، ثم ترجم كلًّا منهما إلى جهة بالنسبة إلى المحور المناسب."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $Z$ $45$ فهي على يمين محور التراتيب",
+          "ترتيبها $-15$ فهي تحت محور الفواصل"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "نرسم على ورقة مرصوفة معلمًا محوراه متعامدان ، ووحدة المحور الأفقي $3$ مربّعات ووحدة المحور العمودي مربّع واحد . ماذا نسمّي هذا المعلم؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "معلم متعامد ومتجانس",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-UNITIGNORED"
+        },
+        {
+          "id": "B",
+          "content": "معلم متعامد وغير متجانس",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "معلم غير متعامد",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تأمّل المحورين: هل هما متعامدان؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم قارن طول الوحدة على المحور الأفقي بطول الوحدة على المحور العمودي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المعلم المتعامد والمتجانس يجمع الشرطين معًا."
+        }
+      ],
+      "feedback": {
+        "correct": "إنّه معلم متعامد وغير متجانس .",
+        "incorrect": "المعلم المتعامد والمتجانس يستلزم محورين متعامدين ووحدة واحدة على المحورين معًا."
+      },
+      "solution": {
+        "lines": [
+          "المحوران متعامدان",
+          "وحدتا المحورين مختلفتان",
+          "إذن هو معلم متعامد وغير متجانس"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

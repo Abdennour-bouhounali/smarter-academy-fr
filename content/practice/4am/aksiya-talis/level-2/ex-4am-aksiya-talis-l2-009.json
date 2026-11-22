@@ -1,0 +1,293 @@
+{
+  "id": "ex-4am-aksiya-talis-l2-009",
+  "lessonCode": "aksiya-talis",
+  "level": 2,
+  "metadata": {
+    "title": "تمرين 13 — المثلث القائم",
+    "estimatedMinutes": 7,
+    "tags": [
+      "تمرين 13",
+      "عدم التوازي"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-13",
+      "page": 111,
+      "section": "أوظّف تعلّماتي",
+      "number": 13
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$ABD$ مثلث قائم في $A$ ، $E$ نقطة من $[AB]$ و $F$ نقطة من $[AD]$ حيث: $AB = 8$ ، $EB = 2{,}4$ ، $AD = 6$ و $AF = 1{,}2$ (الشكل المقابل).",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          -6.4,
+          -4.8
+        ],
+        "D": [
+          3.6,
+          -4.8
+        ],
+        "E": [
+          -4.48,
+          -3.36
+        ],
+        "F": [
+          0.72,
+          -0.96
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "8"
+        },
+        {
+          "from": "E",
+          "to": "B",
+          "label": "2,4"
+        },
+        {
+          "from": "A",
+          "to": "D",
+          "label": "6"
+        },
+        {
+          "from": "A",
+          "to": "F",
+          "label": "1,2"
+        },
+        [
+          "B",
+          "D"
+        ],
+        [
+          "E",
+          "F"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "B",
+          "A",
+          "D"
+        ]
+      ],
+      "ariaLabel": "مثلث ABD قائم في A، E من [AB] و F من [AD]، AB = 8 و EB = 2,4 و AD = 6 و AF = 1,2",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب الطول $AE$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (طول)",
+      "expectedAnswer": "5,6",
+      "misconceptionSignatures": [
+        {
+          "value": "10.4",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطة $E$ من القطعة $[AB]$ : $AB = AE + EB$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استخرج $AE$ من هذه المساواة."
+        }
+      ],
+      "feedback": {
+        "correct": "$AE = 8 - 2{,}4 = 5{,}6$ .",
+        "incorrect": "النقطة $E$ بين $A$ و $B$ : اطرح $EB$ من $AB$ ."
+      },
+      "solution": {
+        "lines": [
+          "$E \\in [AB]$ إذن: $AE = AB - EB$",
+          "$AE = 8 - 2{,}4$"
+        ],
+        "result": "AE = 5{,}6"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب النسبة $\\dfrac{AE}{AB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "7/10",
+      "misconceptionSignatures": [
+        {
+          "value": "10/7",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "7/3",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AE$ و $AB$ طولان يُقاسان من النقطة $A$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $AE$ على $AB$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AE}{AB} = \\dfrac{5{,}6}{8} = \\dfrac{7}{10}$ .",
+        "incorrect": "النسبة $\\dfrac{AE}{AB}$ : الطول $AE$ على الطول $AB$ ، وكلاهما من النقطة $A$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AE}{AB} = \\dfrac{5{,}6}{8} = \\dfrac{7}{10}$"
+        ],
+        "result": "\\dfrac{AE}{AB} = \\dfrac{7}{10}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب النسبة $\\dfrac{AF}{AD}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "1/5",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "1/4",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AF$ و $AD$ طولان يُقاسان من النقطة $A$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $AF$ على $AD$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AF}{AD} = \\dfrac{1{,}2}{6} = \\dfrac{1}{5}$ .",
+        "incorrect": "النسبة $\\dfrac{AF}{AD}$ : الطول $AF$ على الطول $AD$ ، وكلاهما من النقطة $A$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AF}{AD} = \\dfrac{1{,}2}{6} = \\dfrac{1}{5}$"
+        ],
+        "result": "\\dfrac{AF}{AD} = \\dfrac{1}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "هل المستقيمان $(EF)$ و $(BD)$ متوازيان؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-SHAKL-BURHAN"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النسبتين بقيمهما المضبوطة (الجداء المتصالب)، لا بقيم مقرّبة ولا بمظهر الشكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق أيضا من ترتيب النقط على المستقيمين المتقاطعين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AE}{AB} = 0{,}7$ و $\\dfrac{AF}{AD} = 0{,}2$ : النسبتان مختلفتان، فالمستقيمان غير متوازيين.",
+        "incorrect": "الخاصية العكسية تتطلب شرطين معا: تساوي النسبتين بقيم مضبوطة، وترتيب النقط نفسه على المستقيمين."
+      },
+      "solution": {
+        "lines": [
+          "$5{,}6 \\times 6 = 33{,}6$ و $8 \\times 1{,}2 = 9{,}6$ ، إذن $\\dfrac{AE}{AB} \\neq \\dfrac{AF}{AD}$ .",
+          "لو كان $(EF) \\parallel (BD)$ لكانت النسبتان متساويتين حسب خاصية طالس،",
+          "إذن المستقيمان $(EF)$ و $(BD)$ غير متوازيين."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

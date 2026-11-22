@@ -1,0 +1,203 @@
+{
+  "id": "ex-4am-mushkilat-jumla-l2-005",
+  "lessonCode": "mushkilat-jumla",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2007 — أقلام التلوين والممحاوات",
+    "estimatedMinutes": 11,
+    "tags": [
+      "جملة",
+      "ترييض",
+      "أثمان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mushkilat-jumla_P2",
+      "modelledOn": "BEM 2007 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2007",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "حُل الجملة : $\\begin{cases} 2x + 3y = 255 \\\\ 6x + 4y = 640 \\end{cases}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": {
+        "x": "90",
+        "y": "25"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "25",
+            "y": "90"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن معاملي $x$ : $6$ هو ثلاثة أضعاف $2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب المعادلة الأولى في عدد يجعل معاملي $x$ متعاكسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع طرفا لطرف، ثم عوّض لتجد المجهول الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "الثنائية $(90 ; 25)$ تحقق المعادلتين معا: هي حل الجملة.",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} 2x + 3y = 255 & ...(1) \\\\ 6x + 4y = 640 & ...(2) \\end{cases}$",
+          "بضرب طرفي المعادلة (1) في العدد $4$ وطرفي المعادلة (2) في العدد $-3$ نجد:",
+          "$\\begin{cases} 8x + 12y = 1020 \\\\ -18x - 12y = -1920 \\end{cases}$",
+          "بجمع المعادلتين طرفا لطرف نجد: $-10x = -900$",
+          "ومنه: $x = \\dfrac{-900}{-10} = 90$",
+          "بتعويض قيمة $x$ في المعادلة (1) نجد: $2 \\times 90 + 3y = 255$",
+          "$3y = 75$",
+          "$y = 25$",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(90 ; 25)"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "اشترى أيمن من مكتبة علبتي أقلام تلوين وثلاث ممحاوات بمبلغ 255DA، واشترت أخته سلمى ثلاث علب أقلام تلوين وممحاتين بمبلغ 320DA. جِد ثمن علبة أقلام التلوين الواحدة وثمن الممحاة الواحدة.",
+      "statement": "ثمن علبة أقلام التلوين الواحدة:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الثمن بـ DA (عدد فقط)",
+      "expectedAnswer": "90",
+      "misconceptionSignatures": [
+        {
+          "value": "25",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "سمِّ $x$ ثمن علبة أقلام التلوين و $y$ ثمن الممحاة، واكتب معادلة لكل مشتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب طرفي معادلة سلمى في 2 وقارن بجملة السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن علبة أقلام التلوين الواحدة $90DA$ .",
+        "incorrect": "معادلة سلمى $3x + 2y = 320$ ، وضعفها هو المعادلة الثانية في جملة السؤال 01."
+      },
+      "solution": {
+        "lines": [
+          "نرمز إلى ثمن علبة أقلام التلوين الواحدة بـ $x$ وإلى ثمن الممحاة الواحدة بـ $y$ .",
+          "اشترى أيمن علبتين و 3 ممحاوات بـ 255DA معناه: $2x + 3y = 255$",
+          "اشترت سلمى 3 علب وممحاتين بـ 320DA معناه: $3x + 2y = 320$",
+          "ومنه جملة المعادلتين المعبرة عن الوضعية: $\\begin{cases} 2x + 3y = 255 \\\\ 3x + 2y = 320 \\end{cases}$",
+          "وبضرب طرفي المعادلة $3x + 2y = 320$ في 2 نجد $6x + 4y = 640$ .",
+          "إذن حل جملة السؤال 01 هو حل لهذه الجملة: $x = 90$ و $y = 25$ .",
+          "إذن ثمن علبة أقلام التلوين الواحدة $90DA$ وثمن الممحاة الواحدة $25DA$ ."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ثمن الممحاة الواحدة:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الثمن بـ DA (عدد فقط)",
+      "expectedAnswer": "25",
+      "misconceptionSignatures": [
+        {
+          "value": "90",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$y$ هو العدد الثاني في حل جملة السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن الممحاة الواحدة $25DA$ ، ونتحقق: $3 \\times 90 + 2 \\times 25 = 320$ .",
+        "incorrect": "استعمل حل جملة السؤال 01: $y$ هو ثمن الممحاة."
+      },
+      "solution": {
+        "lines": [
+          "نرمز إلى ثمن علبة أقلام التلوين الواحدة بـ $x$ وإلى ثمن الممحاة الواحدة بـ $y$ .",
+          "اشترى أيمن علبتين و 3 ممحاوات بـ 255DA معناه: $2x + 3y = 255$",
+          "اشترت سلمى 3 علب وممحاتين بـ 320DA معناه: $3x + 2y = 320$",
+          "ومنه جملة المعادلتين المعبرة عن الوضعية: $\\begin{cases} 2x + 3y = 255 \\\\ 3x + 2y = 320 \\end{cases}$",
+          "وبضرب طرفي المعادلة $3x + 2y = 320$ في 2 نجد $6x + 4y = 640$ .",
+          "إذن حل جملة السؤال 01 هو حل لهذه الجملة: $x = 90$ و $y = 25$ .",
+          "إذن ثمن علبة أقلام التلوين الواحدة $90DA$ وثمن الممحاة الواحدة $25DA$ ."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

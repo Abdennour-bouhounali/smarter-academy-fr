@@ -1,0 +1,180 @@
+{
+  "id": "ex-4am-qasim-mushtarak-akbar-l3-002",
+  "lessonCode": "qasim-mushtarak-akbar",
+  "level": 3,
+  "metadata": {
+    "title": "معارف — ملاحظة: PGCD(a ; b) = 14",
+    "estimatedMinutes": 7,
+    "tags": [
+      "PGCD",
+      "ملاحظة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-4-def",
+      "page": 12,
+      "section": "معارف",
+      "number": 4
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "ليكن $a$ و $b$ عددين طبيعيين حيث: PGCD$(a ; b) = 14$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن كل القواسم المشتركة للعددين $a$ و $b$.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        2,
+        7,
+        14
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            7
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا تحتاج إلى معرفة $a$ و $b$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القواسم المشتركة لعددين هي قواسم قاسمهما المشترك الأكبر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل قواسم العدد 14."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين $a$ و $b$ هي قواسم 14: 1 ، 2 ، 7 ، 14.",
+        "incorrect": "مجموعة القواسم المشتركة لعددين هي مجموعة قواسم قاسمهما المشترك الأكبر: اكتب قواسم 14 كلها."
+      },
+      "solution": {
+        "lines": [
+          "مجموعة القواسم المشتركة لعددين هي مجموعة قواسم قاسمهما المشترك الأكبر.",
+          "$14 = 1 \\times 14$ ، $14 = 2 \\times 7$",
+          "إذن القواسم المشتركة للعددين $a$ و $b$ هي: 1 ، 2 ، 7 ، 14."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل يمكن أن يكون العدد 4 قاسمًا مشتركًا للعددين $a$ و $b$ ؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل قاسم مشترك للعددين $a$ و $b$ هو قاسم للعدد 14."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل 4 يقسم 14؟"
+        }
+      ],
+      "feedback": {
+        "correct": "4 لا يقسم 14، فهو ليس قاسمًا مشتركًا للعددين $a$ و $b$.",
+        "incorrect": "استعمل نتيجة السؤال 01: القواسم المشتركة هي قواسم 14 فقط."
+      },
+      "solution": {
+        "lines": [
+          "القواسم المشتركة للعددين $a$ و $b$ هي قواسم العدد 14.",
+          "$14 = 4 \\times 3 + 2$: العدد 4 لا يقسم 14،",
+          "إذن 4 ليس قاسمًا مشتركًا للعددين $a$ و $b$."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "نأخذ $a = 70$ و $b = 98$. تحقّق أن PGCD$(70 ; 98) = 14$ .",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قواسم 70 ثم قواسم 98."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استخرج القواسم المشتركة وخذ أكبرها."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 70 هي: 1 ، 2 ، 5 ، 7 ، 10 ، 14 ، 35 ، 70",
+          "قواسم العدد 98 هي: 1 ، 2 ، 7 ، 14 ، 49 ، 98",
+          "القواسم المشتركة للعددين 70 و 98 هي: 1 ، 2 ، 7 ، 14",
+          "أكبرها هو 14، إذن PGCD(70 ; 98) = 14 ."
+        ],
+        "result": "PGCD(70 ; 98) = 14"
+      },
+      "timeSeconds": 210
+    }
+  ]
+}

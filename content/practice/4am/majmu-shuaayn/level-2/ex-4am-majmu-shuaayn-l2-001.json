@@ -1,0 +1,169 @@
+{
+  "id": "ex-4am-majmu-shuaayn-l2-001",
+  "lessonCode": "majmu-shuaayn",
+  "level": 2,
+  "metadata": {
+    "title": "تمرين 15 — شعاعان معطيان",
+    "estimatedMinutes": 3,
+    "tags": [
+      "علاقة شال"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-15",
+      "page": 135,
+      "section": "مجموع شعاعين - علاقة شال",
+      "number": 15
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (تمرين 15): يعطى الشعاعان $\\overrightarrow{AB}$ و $\\overrightarrow{CD}$ (الشكل).",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          7,
+          5
+        ],
+        "C": [
+          9,
+          5
+        ],
+        "D": [
+          12,
+          3
+        ]
+      },
+      "vectors": [
+        {
+          "from": "A",
+          "to": "B",
+          "tone": "indigo"
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "tone": "rose"
+        }
+      ],
+      "labels": {
+        "A": "w",
+        "B": "n",
+        "C": "n",
+        "D": "e"
+      },
+      "ariaLabel": "سهم طويل من A إلى B وسهم قصير من C إلى D على يمين B"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ممثل للشعاع $\\overrightarrow{DC} + \\overrightarrow{AD}$ هو",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{CA}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-AKS"
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{AC}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{DA}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-RABT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى نهاية الشعاع الأول ومبدأ الشعاع الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "علاقة شال تتطلب أن تكون نهاية الأول مبدأ الثاني؛ يمكن تبديل ترتيب الحدّين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع يبدأ من مبدأ الأول وينتهي عند نهاية الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "نبدّل ترتيب الحدّين: $\\overrightarrow{AD} + \\overrightarrow{DC} = \\overrightarrow{AC}$ .",
+        "incorrect": "علاقة شال: نهاية الأول مبدأ الثاني، والمجموع من مبدأ الأول إلى نهاية الثاني."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "ممثل للشعاع $\\overrightarrow{BC} + \\overrightarrow{AB}$ هو",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{CA}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-AKS"
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{BA}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-RABT"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{AC}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى نهاية الشعاع الأول ومبدأ الشعاع الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "علاقة شال تتطلب أن تكون نهاية الأول مبدأ الثاني؛ يمكن تبديل ترتيب الحدّين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع يبدأ من مبدأ الأول وينتهي عند نهاية الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AB} + \\overrightarrow{BC} = \\overrightarrow{AC}$ (علاقة شال).",
+        "incorrect": "علاقة شال: نهاية الأول مبدأ الثاني، والمجموع من مبدأ الأول إلى نهاية الثاني."
+      }
+    }
+  ]
+}

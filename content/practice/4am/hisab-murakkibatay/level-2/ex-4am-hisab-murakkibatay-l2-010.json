@@ -1,0 +1,78 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l2-010",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — شعاع الانسحاب",
+    "estimatedMinutes": 2,
+    "tags": [
+      "مركبتا شعاع",
+      "انسحاب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hisab-murakkibatay_P1",
+      "modelledOn": "act-2"
+    }
+  },
+  "statement": {
+    "content": "انسحاب يحوّل النقطة $P(-3\\,;\\,1)$ إلى النقطة $P'(2\\,;\\,3)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مركبتا شعاع هذا الانسحاب $\\overrightarrow{PP'}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "point",
+      "answerFormat": "المركبتان: الأولى ثم الثانية — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "5",
+        "y": "2"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-5",
+            "y": "-2"
+          },
+          "id": "MISC-MAALAM-TARH-MAQLUB"
+        },
+        {
+          "value": {
+            "x": "2",
+            "y": "3"
+          },
+          "id": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "شعاع الانسحاب يبدأ من النقطة وينتهي عند صورتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المبدأ P والنهاية P′."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "النهاية ناقص المبدأ."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 - (-3) = 5$ و $3 - 1 = 2$ .",
+        "incorrect": "من النقطة إلى صورتها: النهاية هي الصورة."
+      }
+    }
+  ]
+}

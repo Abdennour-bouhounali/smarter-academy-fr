@@ -1,0 +1,311 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-jumal-l5-008",
+  "lessonCode": "wadiya-idmajiya-jumal",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2023 — صيانة مركز صحي بالبيّض",
+    "estimatedMinutes": 20,
+    "tags": [
+      "جملة",
+      "وضعية",
+      "تكاليف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-jumal_P1",
+      "modelledOn": "BEM 2023 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "خصّصت مديرية الصحة مبلغا قدره 400000DA، رعاية للمرضى وحفاظا على نظافة المكان، لصيانة سطح وواجهة مركز صحي بالبيّض، وكلّفت مقاولا بالأشغال مع شراء مادة العزل المائي لتغطية السطح والطلاء لدهن الواجهة.\nإذا علمت:\n- أن السطح مستطيل بُعداه $20m$ و $12m$\n- أن الواجهة مستطيلة بُعداها $20m$ و $7m$ ، فيها 3 نوافذ بُعدا كل منها $1{,}5m$ و $1{,}2m$ وباب بُعداه $2m$ و $2{,}5m$ (لا تُدهن)\n- وأن:\n• ثمن $3m^2$ من مادة العزل و $2m^2$ من الطلاء معا يقدّر بـ 4200DA\n• ثمن $1m^2$ من مادة العزل و $4m^2$ من الطلاء معا يقدّر بـ 3400DA"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "نسمّي $x$ سعر المتر المربع الواحد من مادة العزل و $y$ سعر المتر المربع الواحد من الطلاء (بالدينار).",
+      "statement": "بيّن أن $x$ و $y$ يحققان الجملة: $\\begin{cases} 3x + 2y = 4200 \\\\ x + 4y = 3400 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب معادلة لكل معلومة عن الثمن."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "المعلومة الأولى: $3x + 2y = 4200$",
+          "المعلومة الثانية: $x + 4y = 3400$",
+          "ومنه: $\\begin{cases} 3x + 2y = 4200 \\\\ x + 4y = 3400 \\end{cases}$"
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حل هذه الجملة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": {
+        "x": "1000",
+        "y": "600"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "600",
+            "y": "1000"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن معاملات $x$ ومعاملات $y$ في المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة التعويض أو طريقة الجمع (بعد ضرب المعادلتين في عددين مناسبين) لحذف أحد المجهولين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد إيجاد أحد المجهولين، عوّضه في إحدى المعادلتين لتجد الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "العزل بـ $1000DA$ للمتر المربع والطلاء بـ $600DA$ للمتر المربع.",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} 3x + 2y = 4200 & ...(1) \\\\ x + 4y = 3400 & ...(2) \\end{cases}$",
+          "بضرب طرفي المعادلة (1) في العدد $2$ ، وبضرب طرفي المعادلة (2) في العدد $(-1)$ نجد:",
+          "$\\begin{cases} 6x + 4y = 8400 & ...(3) \\\\ -x - 4y = -3400 & ...(4) \\end{cases}$",
+          "بجمع (3) و (4) طرفا لطرف نجد:",
+          "$5x = 5000$",
+          "$x = 1000$",
+          "بتعويض $x$ بـ $1000$ في المعادلة (1) نجد: $3 \\times 1000 + 2y = 4200$",
+          "$2y = 1200$",
+          "$y = 600$",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(1000 ; 600)"
+      },
+      "work": "optional",
+      "timeSeconds": 360
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "احسب ثمن مادة العزل اللازمة لتغطية السطح.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "240000",
+      "misconceptionSignatures": [
+        {
+          "value": "144000",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مساحة السطح أولا."
+        }
+      ],
+      "feedback": {
+        "correct": "$240 \\times 1000 = 240000$ .",
+        "incorrect": "اضرب مساحة السطح في سعر $1m^2$ من مادة العزل."
+      },
+      "solution": {
+        "lines": [
+          "مساحة السطح: $20 \\times 12 = 240$ أي $240m^2$",
+          "$240 \\times 1000 = 240000$ أي $240000DA$"
+        ],
+        "result": "240000\\,DA"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "احسب مساحة الجزء الذي يُدهن من الواجهة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب المساحة بـ $m^2$ (عدد عشري مثل 12,5)",
+      "expectedAnswer": "648/5",
+      "misconceptionSignatures": [
+        {
+          "value": "140",
+          "id": "MISC-JUMLA-TARJAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح مساحة النوافذ والباب من مساحة الواجهة."
+        }
+      ],
+      "feedback": {
+        "correct": "المساحة المدهونة $129{,}6\\,m^2$ .",
+        "incorrect": "النوافذ والباب لا تُدهن: اطرح مساحاتها من مساحة الواجهة."
+      },
+      "solution": {
+        "lines": [
+          "مساحة الواجهة: $20 \\times 7 = 140$",
+          "مساحة النوافذ: $3 \\times 1{,}5 \\times 1{,}2 = 5{,}4$",
+          "مساحة الباب: $2 \\times 2{,}5 = 5$",
+          "الجزء المدهون: $140 - 5{,}4 - 5 = 129{,}6$ أي $129{,}6m^2$"
+        ],
+        "result": "129{,}6\\,m^2"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "lead": "☜ إذا علمت أن مصاريف الإنجاز (النقل وأجرة العمال) قُدّرت بـ 20% من المبلغ المخصص، ما هو مقدار ربح أو خسارة المقاول؟ مع التبرير.",
+      "statement": "هل يحقق المقاول ربحا أم خسارة؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "counted": false,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "ربحا",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خسارة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKHFID-NISBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب ثمن العزل وثمن الطلاء ومصاريف الإنجاز."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن مجموعها بالمبلغ المخصص."
+        }
+      ],
+      "feedback": {
+        "correct": "المقاول يحقق ربحا.",
+        "incorrect": "اجمع ثمن العزل وثمن الطلاء ومصاريف الإنجاز، ثم قارن المجموع بالمبلغ المخصص."
+      },
+      "solution": {
+        "lines": [
+          "ثمن العزل: $240 \\times 1000 = 240000$ أي $240000DA$",
+          "ثمن الطلاء: $129{,}6 \\times 600 = 77760$ أي $77760DA$",
+          "مصاريف الإنجاز: $\\dfrac{20}{100} \\times 400000 = 80000$ أي $80000DA$",
+          "المجموع: $240000 + 77760 + 80000 = 397760$ أي $397760DA$",
+          "$400000 - 397760 = 2240$ : المقاول يحقق ربحا قدره $2240DA$ ."
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "مقدار الربح أو الخسارة:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "2240",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ المخصص − مجموع المصاريف."
+        }
+      ],
+      "feedback": {
+        "correct": "الربح $2240DA$ .",
+        "incorrect": "اطرح مجموع المصاريف من المبلغ المخصص."
+      },
+      "solution": {
+        "lines": [
+          "ثمن العزل: $240 \\times 1000 = 240000$ أي $240000DA$",
+          "ثمن الطلاء: $129{,}6 \\times 600 = 77760$ أي $77760DA$",
+          "مصاريف الإنجاز: $\\dfrac{20}{100} \\times 400000 = 80000$ أي $80000DA$",
+          "المجموع: $240000 + 77760 + 80000 = 397760$ أي $397760DA$",
+          "$400000 - 397760 = 2240$ : المقاول يحقق ربحا قدره $2240DA$ ."
+        ],
+        "result": "2240\\,DA"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

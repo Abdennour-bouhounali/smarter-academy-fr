@@ -1,0 +1,151 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l2-007",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2016 — العدد 1987",
+    "estimatedMinutes": 6,
+    "tags": [
+      "الباقي",
+      "يقبل القسمة على"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-adad-tabii_P1",
+      "modelledOn": "BEM 2016 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد الطبيعي 1987."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب باقي القسمة الإقليدية للعدد 1987 على 15.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $15 \\times 130$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي أصغر تمامًا من 15."
+        }
+      ],
+      "feedback": {
+        "correct": "$1987 = 15 \\times 132 + 7$ مع $7 < 15$.",
+        "incorrect": "اطرح من 1987 أكبر مضاعف للعدد 15 لا يتجاوزه."
+      },
+      "solution": {
+        "lines": [
+          "$15 \\times 132 = 1980$",
+          "$1987 = 15 \\times 132 + 7$ مع $7 < 15$"
+        ],
+        "result": "r = 7"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "استنتج:",
+      "statement": "أصغر عدد طبيعي يجب طرحه من 1987 ليصبح الناتج قابلًا للقسمة على 15.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل المساواة التي وجدتها في السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما هو أكبر مضاعف للعدد 15 أصغر من 1987؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$1987 - 7 = 1980 = 15 \\times 132$.",
+        "incorrect": "انطلق من المساواة $1987 = 15 \\times q + r$."
+      },
+      "solution": {
+        "lines": [
+          "$1987 = 15 \\times 132 + 7$",
+          "إذا طرحنا الباقي نحصل على $1980 = 15 \\times 132$ الذي يقبل القسمة على 15."
+        ],
+        "result": "7"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أصغر عدد طبيعي يجب إضافته إلى 1987 ليصبح المجموع قابلًا للقسمة على 15.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما هو أصغر مضاعف للعدد 15 أكبر من 1987؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $15 \\times 133$."
+        }
+      ],
+      "feedback": {
+        "correct": "$1987 + 8 = 1995 = 15 \\times 133$.",
+        "incorrect": "ابحث عن مضاعف العدد 15 الذي يلي 1980، ثم احسب الفرق بينه وبين 1987."
+      },
+      "solution": {
+        "lines": [
+          "$15 \\times 133 = 1995$",
+          "$1995 - 1987 = 8$"
+        ],
+        "result": "8"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l3-008",
+  "lessonCode": "maqati-mustawiya",
+  "level": 3,
+  "metadata": {
+    "title": "نشاط 5 — القطر EG",
+    "estimatedMinutes": 3,
+    "tags": [
+      "هرم",
+      "جذر"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-5",
+      "page": 165,
+      "section": "أنشطة"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 165): SABCD هرم منتظم قاعدته المربع ABCD حيث $AB = 4\\,\\mathrm{cm}$ ، ومقطعه بالمستوي الموازي للقاعدة المار بـ E من $[SA]$ حيث $SE = \\dfrac{3}{4}SA$ هو EFGH (الشكل).",
+    "figure": {
+      "kind": "space",
+      "view": {
+        "azimuth": -64,
+        "elevation": 16
+      },
+      "points": {
+        "S": [
+          0,
+          0,
+          6
+        ],
+        "A": [
+          -2,
+          -2,
+          0
+        ],
+        "B": [
+          2,
+          -2,
+          0
+        ],
+        "C": [
+          2,
+          2,
+          0
+        ],
+        "D": [
+          -2,
+          2,
+          0
+        ],
+        "E": [
+          -1.5,
+          -1.5,
+          1.5
+        ],
+        "F": [
+          1.5,
+          -1.5,
+          1.5
+        ],
+        "G": [
+          1.5,
+          1.5,
+          1.5
+        ],
+        "H": [
+          -1.5,
+          1.5,
+          1.5
+        ],
+        "P1": [
+          -2.7,
+          -2.7,
+          1.5
+        ],
+        "P2": [
+          2.7,
+          -2.7,
+          1.5
+        ],
+        "P3": [
+          2.7,
+          2.7,
+          1.5
+        ],
+        "P4": [
+          -2.7,
+          2.7,
+          1.5
+        ]
+      },
+      "solids": [
+        {
+          "type": "polyhedron",
+          "faces": [
+            [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            [
+              "S",
+              "A",
+              "B"
+            ],
+            [
+              "S",
+              "B",
+              "C"
+            ],
+            [
+              "S",
+              "C",
+              "D"
+            ],
+            [
+              "S",
+              "D",
+              "A"
+            ]
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "points": [
+            "E",
+            "F",
+            "G",
+            "H"
+          ],
+          "tone": "rose"
+        }
+      ],
+      "planes": [
+        {
+          "points": [
+            "P1",
+            "P2",
+            "P3",
+            "P4"
+          ],
+          "tone": "sky",
+          "label": "(P)"
+        }
+      ],
+      "hidden": [
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ],
+      "labels": {
+        "E": "w",
+        "F": "e",
+        "G": "ne",
+        "H": "nw"
+      },
+      "ariaLabel": "هرم منتظم SABCD قاعدته المربع ABCD، يقطعه المستوي (P) الموازي للقاعدة والذي يشمل E من [SA] وفق الرباعي EFGH",
+      "maxWidth": 480
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الطول EG:",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P4",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\sqrt{2}\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQTA-NISBA"
+        },
+        {
+          "id": "B",
+          "content": "$3\\sqrt{2}\\,\\mathrm{cm}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$4\\sqrt{2}\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQTA-HARAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب AC قطر المربع ABCD."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$AC = 4\\sqrt{2}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "في المثلث SAC: $EG = \\dfrac{3}{4} AC$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC = 4\\sqrt{2}$ و $EG = \\dfrac{3}{4} \\times 4\\sqrt{2} = 3\\sqrt{2}\\,\\mathrm{cm}$ .",
+        "incorrect": "$4\\sqrt{2}$ هو قطر القاعدة لا المقطع."
+      },
+      "difficulty": 3
+    }
+  ]
+}

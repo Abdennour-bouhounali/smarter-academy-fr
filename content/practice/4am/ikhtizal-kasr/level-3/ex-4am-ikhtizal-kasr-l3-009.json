@@ -1,0 +1,180 @@
+{
+  "id": "ex-4am-ikhtizal-kasr-l3-009",
+  "lessonCode": "ikhtizal-kasr",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2020 — العددان A و B",
+    "estimatedMinutes": 10,
+    "tags": [
+      "كسر غير قابل للاختزال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_ikhtizal-kasr_P4",
+      "modelledOn": "BEM 2020 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2020",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "إليك العددين $A$ و $B$ حيث:",
+    "formulas": [
+      "A = \\dfrac{5}{2} - \\dfrac{3}{2} \\times \\dfrac{7}{9}",
+      "B = \\dfrac{1924}{1443}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب $A$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "4/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "8/6",
+          "id": "MISC-IKHTIZAL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالعملية ذات الأولوية: ما بين القوسين، ثم الضرب أو القسمة، ثم الجمع أو الطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختزل كل كسر وسيط قبل أن تواصل، ثم وحّد المقامات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "في الأخير تحقّق أن البسط والمقام أوليان فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "حساب صحيح، والنتيجة على شكل كسر غير قابل للاختزال.",
+        "incorrect": "احترم أولوية العمليات، ثم اختزل الناتج إلى أن يصير البسط والمقام أوليين فيما بينهما.",
+        "notIrreducible": "القيمة صحيحة لكن الكسر ما زال قابلًا للاختزال: اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{5}{2} - \\dfrac{21}{18}$",
+          "$A = \\dfrac{5}{2} - \\dfrac{7}{6}$",
+          "$A = \\dfrac{15}{6} - \\dfrac{7}{6}$",
+          "$A = \\dfrac{8}{6}$"
+        ],
+        "result": "A = \\dfrac{4}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب $B$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "4/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "148/111",
+          "id": "MISC-IKHTIZAL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث أولًا عن القاسم المشترك الأكبر للعددين 1924 و 1443."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر: يصير الكسر غير قابل للاختزال في خطوة واحدة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن البسط والمقام الناتجين أوليان فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 481: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على قاسمهما المشترك الأكبر، لا على قاسم مشترك آخر.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$1924 = 1443 \\times 1 + 481$",
+          "$1443 = 481 \\times 3 + 0$",
+          "آخر باقٍ غير معدوم هو 481، إذن PGCD(1924 ; 1443) = 481 .",
+          "$B = \\dfrac{1924}{1443} = \\dfrac{1924 \\div 481}{1443 \\div 481}$"
+        ],
+        "result": "B = \\dfrac{1924}{1443} = \\dfrac{4}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "بيّن أن $A = B$ .",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الكتابتين غير القابلتين للاختزال اللتين وجدتهما."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا."
+      },
+      "solution": {
+        "lines": [
+          "وجدنا $A = \\dfrac{4}{3}$ و $B = \\dfrac{4}{3}$ .",
+          "للعددين الكتابة غير القابلة للاختزال نفسها، إذن $A = B$ ."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

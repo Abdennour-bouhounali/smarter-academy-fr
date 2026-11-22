@@ -1,0 +1,245 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l2-005",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — حافلات الرحلة في موعدها",
+    "estimatedMinutes": 6,
+    "tags": [
+      "حافلات",
+      "بالزيادة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تنظّم مدرسة رحلة لـ 457 تلميذًا في حافلات من 52 مقعدًا، وتريد الانطلاق في الموعد المحدّد دون أن يبقى أحد."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "كم حافلة تمتلئ تمامًا؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الحافلات",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "41",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "7",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "value": "9",
+          "id": "MISC-HASR-IZAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 457 من 52 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 52 دون أن نتجاوز 457."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من 52."
+        }
+      ],
+      "feedback": {
+        "correct": "$457 = 52 \\times 8 + 41$ و $41 < 52$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 52 فلا يتجاوز الجداء 457، والباقي عندئذ أصغر من 52."
+      },
+      "solution": {
+        "lines": [
+          "$52 \\times 8 = 416$ و $52 \\times 9 = 468$",
+          "$416 \\le 457 < 468$ ، إذن الحاصل هو 8."
+        ],
+        "result": "q = 8"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كم تلميذًا يبقى بعد ملء هذه الحافلات؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد التلاميذ",
+      "expectedAnswer": "41",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "93",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 457."
+        }
+      ],
+      "feedback": {
+        "correct": "$457 - 52 \\times 8 = 457 - 416 = 41$ ، و $41 < 52$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 52."
+      },
+      "solution": {
+        "lines": [
+          "$457 = 52 \\times 8 + 41$",
+          "$41 < 52$ ، إذن الباقي هو 41."
+        ],
+        "result": "r = 41"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "كم حافلة يلزم حجزها؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد الحافلات",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "value": "41",
+          "id": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 457 على 52."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يبقى شيء بعد المجموعات الكاملة؟ ماذا نفعل به؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد اللازم هو القيمة المقرّبة إلى الوحدة بالزيادة عندما لا يكون الحاصل عددًا طبيعيًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$457 = 52 \\times 8 + 41$: 8 كاملة ويبقى 41، فيلزم 9.",
+        "incorrect": "لا تنسَ ما يبقى بعد المجموعات الكاملة: يحتاج هو أيضًا إلى مكان."
+      },
+      "solution": {
+        "lines": [
+          "$457 = 52 \\times 8 + 41$",
+          "$8 < \\frac{457}{52} < 9$ ، والباقي 41 يحتاج إلى واحدة أخرى: يلزم 9 (القيمة المقرّبة بالزيادة)."
+        ],
+        "result": "9"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "قال المنظّم: «تكفي 8 حافلات». هل توافقه؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم مقعدًا في 8 حافلات؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن عدد المقاعد بعدد التلاميذ."
+        }
+      ],
+      "feedback": {
+        "correct": "$52 \\times 8 = 416 < 457$: يبقى 41 تلميذًا دون مقعد.",
+        "incorrect": "احسب عدد مقاعد 8 حافلات وقارنه بعدد التلاميذ."
+      },
+      "solution": {
+        "lines": [
+          "$52 \\times 8 = 416$ و $416 < 457$.",
+          "لا تكفي 8 حافلات: القيمة المقرّبة بالنقصان لا تكفي، ويلزم 9 حافلات."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

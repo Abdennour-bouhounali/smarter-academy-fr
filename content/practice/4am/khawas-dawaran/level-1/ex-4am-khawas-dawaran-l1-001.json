@@ -1,0 +1,170 @@
+{
+  "id": "ex-4am-khawas-dawaran-l1-001",
+  "lessonCode": "khawas-dawaran",
+  "level": 1,
+  "metadata": {
+    "title": "من الكتاب — معارف 3، المثال (ص 154)",
+    "estimatedMinutes": 3,
+    "tags": [
+      "خواص الدوران"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-3",
+      "page": 154,
+      "section": "معارف",
+      "number": 3
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 154): A′، B′، C′ هي، على الترتيب، صور النقط A، B، C بالدوران الذي مركزه O و زاويته $20^\\circ$ في الاتجاه المباشر، و A، B، C على استقامية واحدة.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          -2
+        ],
+        "A": [
+          4,
+          0
+        ],
+        "B": [
+          6,
+          0
+        ],
+        "C": [
+          8.5,
+          0
+        ],
+        "A'": [
+          3.075,
+          1.247
+        ],
+        "B'": [
+          4.954,
+          1.932
+        ],
+        "C'": [
+          7.303,
+          2.787
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "C"
+        ],
+        {
+          "from": "A'",
+          "to": "C'",
+          "tone": "indigo"
+        }
+      ],
+      "arcs": [
+        {
+          "center": "O",
+          "from": "A",
+          "to": "A'",
+          "sweep": "ccw",
+          "arrow": true,
+          "tone": "indigo"
+        }
+      ],
+      "ariaLabel": "النقط A و B و C على مستقيم وصورها A′ و B′ و C′ بدوران مركزه O وزاويته 20 درجة",
+      "maxWidth": 480
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إذا كان $AB = 2\\,\\mathrm{cm}$ ، فما الطول $A'B'$ بالسنتيمتر؟",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-KHAWAS",
+          "value": "22"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "[A′B′] صورة [AB] بهذا الدوران."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ماذا يحفظ الدوران؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الدوران لا يغيّر طول قطعة."
+        }
+      ],
+      "feedback": {
+        "correct": "الدوران يحافظ على الأطوال: $A'B' = AB = 2\\,\\mathrm{cm}$ .",
+        "incorrect": "زاوية الدوران لا تُضاف إلى الطول: الدوران يحافظ على الأطوال."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "النقط A′ و B′ و C′:",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "على استقامية واحدة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "ليست على استقامية: الدوران يفرّقها",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-KHAWAS"
+        },
+        {
+          "id": "C",
+          "content": "على استقامية مع A و B و C",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-TAWAZI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "A و B و C نقط متتالية على مستقيم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ماذا يحفظ الدوران أيضا؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر الخواص الأربع."
+        }
+      ],
+      "feedback": {
+        "correct": "الدوران يحافظ على استقامية النقط.",
+        "incorrect": "الدوران يحافظ على الاستقامية، لكن المستقيم (A′C′) يصنع مع (AC) زاوية الدوران."
+      }
+    }
+  ]
+}

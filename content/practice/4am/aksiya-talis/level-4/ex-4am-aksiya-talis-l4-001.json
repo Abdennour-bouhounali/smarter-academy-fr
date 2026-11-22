@@ -1,0 +1,311 @@
+{
+  "id": "ex-4am-aksiya-talis-l4-001",
+  "lessonCode": "aksiya-talis",
+  "level": 4,
+  "metadata": {
+    "title": "أؤكّد تعلّماتي 3 — هل (EF) يوازي (BC)؟",
+    "estimatedMinutes": 9,
+    "tags": [
+      "أؤكّد تعلّماتي",
+      "عدم التوازي"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 112,
+      "section": "أؤكّد تعلّماتي",
+      "number": 3
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل: النقط $A$ ، $B$ ، $E$ في استقامية، والنقط $A$ ، $C$ ، $F$ في استقامية، حيث: $AB = 11$ ، $BE = 22$ ، $AC = 15$ و $CF = 45$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0.0,
+          0.0
+        ],
+        "B": [
+          1.910129954336,
+          10.832885283134
+        ],
+        "E": [
+          5.730389863009,
+          32.498655849403
+        ],
+        "C": [
+          15.0,
+          0.0
+        ],
+        "F": [
+          60.0,
+          0.0
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "11"
+        },
+        {
+          "from": "B",
+          "to": "E",
+          "label": "22"
+        },
+        {
+          "from": "A",
+          "to": "C",
+          "label": "15"
+        },
+        {
+          "from": "C",
+          "to": "F",
+          "label": "45"
+        },
+        [
+          "B",
+          "C"
+        ],
+        [
+          "E",
+          "F"
+        ]
+      ],
+      "ariaLabel": "A و B و E على استقامة، A و C و F على استقامة؛ AB = 11 و BE = 22 و AC = 15 و CF = 45",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب الطول $AE$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (طول)",
+      "expectedAnswer": "33",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$B$ بين $A$ و $E$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AE = 11 + 22 = 33$ .",
+        "incorrect": "النقطة $B$ بين $A$ و $E$ : الطول $AE$ مجموع طولين."
+      },
+      "solution": {
+        "lines": [
+          "$AE = AB + BE = 11 + 22$"
+        ],
+        "result": "AE = 33"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب الطول $AF$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (طول)",
+      "expectedAnswer": "60",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$C$ بين $A$ و $F$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AF = 15 + 45 = 60$ .",
+        "incorrect": "النقطة $C$ بين $A$ و $F$ : الطول $AF$ مجموع طولين."
+      },
+      "solution": {
+        "lines": [
+          "$AF = AC + CF = 15 + 45$"
+        ],
+        "result": "AF = 60"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب النسبة $\\dfrac{AB}{AE}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "1/3",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "1/2",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AB$ و $AE$ طولان يُقاسان من النقطة $A$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $AB$ على $AE$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AB}{AE} = \\dfrac{11}{33} = \\dfrac{1}{3}$ .",
+        "incorrect": "النسبة $\\dfrac{AB}{AE}$ : الطول $AB$ على الطول $AE$ ، وكلاهما من النقطة $A$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AB}{AE} = \\dfrac{11}{33} = \\dfrac{1}{3}$"
+        ],
+        "result": "\\dfrac{AB}{AE} = \\dfrac{1}{3}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب النسبة $\\dfrac{AC}{AF}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "1/4",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "1/3",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AC$ و $AF$ طولان يُقاسان من النقطة $A$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $AC$ على $AF$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AC}{AF} = \\dfrac{15}{60} = \\dfrac{1}{4}$ .",
+        "incorrect": "النسبة $\\dfrac{AC}{AF}$ : الطول $AC$ على الطول $AF$ ، وكلاهما من النقطة $A$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AC}{AF} = \\dfrac{15}{60} = \\dfrac{1}{4}$"
+        ],
+        "result": "\\dfrac{AC}{AF} = \\dfrac{1}{4}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "هل المستقيمان $(BC)$ و $(EF)$ متوازيان؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-AKS-BIDUN-TASAWI"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النسبتين بقيمهما المضبوطة (الجداء المتصالب)، لا بقيم مقرّبة ولا بمظهر الشكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق أيضا من ترتيب النقط على المستقيمين المتقاطعين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AB}{AE} = \\dfrac{1}{3}$ و $\\dfrac{AC}{AF} = \\dfrac{1}{4}$ : المستقيمان غير متوازيين.",
+        "incorrect": "الخاصية العكسية تتطلب شرطين معا: تساوي النسبتين بقيم مضبوطة، وترتيب النقط نفسه على المستقيمين."
+      },
+      "solution": {
+        "lines": [
+          "$11 \\times 60 = 660$ و $33 \\times 15 = 495$ ، إذن $\\dfrac{AB}{AE} \\neq \\dfrac{AC}{AF}$ .",
+          "لو كان $(BC) \\parallel (EF)$ لكانت النسبتان متساويتين حسب خاصية طالس،",
+          "إذن المستقيمان $(BC)$ و $(EF)$ غير متوازيين.",
+          "أعادت المنصّة رسم شكل الكتاب بوضوح أكبر، بنفس المعطيات."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

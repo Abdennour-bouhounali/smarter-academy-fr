@@ -1,0 +1,272 @@
+{
+  "id": "ex-1am-muqaranat-adad-ashriya-l3-006",
+  "lessonCode": "muqaranat-adad-ashriya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — سلسلة من الرموز",
+    "estimatedMinutes": 6,
+    "tags": [
+      "ترتيب",
+      "رموز"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يكتب التلاميذ على السبّورة سلاسل من المقارنات، ويتحقق زميل كل واحد منهم من صحتها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ الكتابات الآتية صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الكتابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$0{,}4 < 0{,}35$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-DIGITS-AS-NATURAL"
+        },
+        {
+          "id": "B",
+          "content": "$0{,}4 > 0{,}35$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$0{,}4 = 0{,}35$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-ZERO-PLACE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ جهة يفتحها الرمز؟ إنه يفتح نحو العدد الأكبر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حدّد أولًا أيّ العددين أصغر، ثم اقرأ الجملة من اليمين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقق: هل الجملة كاملةً صحيحة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الكتابة الصحيحة هي $0{,}4 > 0{,}35$.",
+        "incorrect": "الرمز $<$ أو $>$ يفتح نحو العدد الأكبر ويشير رأسه نحو العدد الأصغر."
+      },
+      "solution": {
+        "lines": [
+          "الكتابة الصحيحة: $0{,}4 > 0{,}35$.",
+          "نتمم بأصفار لنساوي عدد الأرقام بعد الفاصلة: $0{,}40$ و $0{,}35$.",
+          "الجزآن الصحيحان متساويان؛ نقارن عددَي أجزاء من مائة: $40$ و $35$، إذن $0{,}4 > 0{,}35$."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "رتّب الأعداد تصاعديًا (من الأصغر إلى الأكبر): $1{,}5$ ، $0{,}4$ ، $1{,}04$ ، $2{,}72$ ، $3$. أيّ السلاسل الآتية صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3 < 2{,}72 < 1{,}5 < 1{,}04 < 0{,}4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-ORDER-DIRECTION"
+        },
+        {
+          "id": "B",
+          "content": "$0{,}4 < 1{,}04 < 1{,}5 < 2{,}72 < 3$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$3 < 1{,}04 < 0{,}4 < 1{,}5 < 2{,}72$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-IGNORE-WHOLE"
+        },
+        {
+          "id": "D",
+          "content": "$0{,}4 < 1{,}5 < 1{,}04 < 2{,}72 < 3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-LONGER-BIGGER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن عددين عددين، وابحث عن الأصغر (أو الأكبر) أولًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ بالجزء الصحيح، فهو يفرز الأعداد إلى مجموعات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "داخل المجموعة الواحدة قارن الأعشار ثم الأجزاء من مائة، ثم تحقق من الترتيب كاملًا."
+        }
+      ],
+      "feedback": {
+        "correct": "الترتيب التصاعدي : $0{,}4 < 1{,}04 < 1{,}5 < 2{,}72 < 3$",
+        "incorrect": "نقارن العددين اثنين اثنين، ونبدأ بالجزء الصحيح ثم الأعشار فالأجزاء من مائة، ثم نكتب السلسلة كاملة ونتحقق من كل رمز."
+      },
+      "solution": {
+        "lines": [
+          "نقارن الأعداد اثنين اثنين ونرتّبها: $0{,}4 < 1{,}04 < 1{,}5 < 2{,}72 < 3$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "رتّب الأعداد تنازليًا (من الأكبر إلى الأصغر): $5{,}2$ ، $5{,}02$ ، $5{,}19$ ، $5{,}1999$. أيّ السلاسل الآتية صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$5{,}2 > 5{,}1999 > 5{,}19 > 5{,}02$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$5{,}1999 > 5{,}19 > 5{,}2 > 5{,}02$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-DIGITS-AS-NATURAL"
+        },
+        {
+          "id": "C",
+          "content": "$5{,}1999 > 5{,}19 > 5{,}02 > 5{,}2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-LONGER-BIGGER"
+        },
+        {
+          "id": "D",
+          "content": "$5{,}02 > 5{,}19 > 5{,}1999 > 5{,}2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-ORDER-DIRECTION"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن عددين عددين، وابحث عن الأصغر (أو الأكبر) أولًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ بالجزء الصحيح، فهو يفرز الأعداد إلى مجموعات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "داخل المجموعة الواحدة قارن الأعشار ثم الأجزاء من مائة، ثم تحقق من الترتيب كاملًا."
+        }
+      ],
+      "feedback": {
+        "correct": "الترتيب التنازلي : $5{,}2 > 5{,}1999 > 5{,}19 > 5{,}02$",
+        "incorrect": "نقارن العددين اثنين اثنين، ونبدأ بالجزء الصحيح ثم الأعشار فالأجزاء من مائة، ثم نكتب السلسلة كاملة ونتحقق من كل رمز."
+      },
+      "solution": {
+        "lines": [
+          "نقارن الأعداد اثنين اثنين ونرتّبها: $5{,}2 > 5{,}1999 > 5{,}19 > 5{,}02$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "ما هو أكبر عدد من بين الأعداد: $5{,}2$ ، $5{,}02$ ، $5{,}19$ ، $5{,}1999$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "5,2",
+      "misconceptionSignatures": [
+        {
+          "value": "5,1999",
+          "id": "MISC-MUQARANA-DIGITS-AS-NATURAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الأعداد عددين عددين، واحتفظ في كل مرة بالأكبر (أو الأصغر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الجزء الصحيح أولًا، ثم الأعشار، ثم الأجزاء من مائة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يكفي أن يكون في العدد أرقام كثيرة بعد الفاصلة ليكون أكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "أكبر عدد هو $5{,}2$ ؛ الترتيب: $5{,}02 < 5{,}19 < 5{,}1999 < 5{,}2$.",
+        "incorrect": "نقارن الأعداد الواحد بالآخر رتبةً رتبةً؛ وليس العدد الأطول (أرقامه أكثر بعد الفاصلة) هو الأكبر دائمًا."
+      },
+      "solution": {
+        "lines": [
+          "نرتّب الأعداد: $5{,}02 < 5{,}19 < 5{,}1999 < 5{,}2$",
+          "إذن أكبر عدد هو $5{,}2$"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l1-009",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — قسمة على عدد من ثلاثة أرقام",
+    "estimatedMinutes": 6,
+    "tags": [
+      "قسمة إقليدية",
+      "مقسوم عليه كبير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أنجز القسمة الإقليدية للعدد 7385 على 215."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب حاصل القسمة الإقليدية للعدد 7385 على 215.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "34",
+      "misconceptionSignatures": [
+        {
+          "value": "75",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "33",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "value": "35",
+          "id": "MISC-HASR-IZAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 7385 من 215 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 215 دون أن نتجاوز 7385."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من 215."
+        }
+      ],
+      "feedback": {
+        "correct": "$7385 = 215 \\times 34 + 75$ و $75 < 215$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 215 فلا يتجاوز الجداء 7385، والباقي عندئذ أصغر من 215."
+      },
+      "solution": {
+        "lines": [
+          "$215 \\times 34 = 7310$ و $215 \\times 35 = 7525$",
+          "$7310 \\le 7385 < 7525$ ، إذن الحاصل هو 34."
+        ],
+        "result": "q = 34"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب باقي القسمة الإقليدية للعدد 7385 على 215.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "75",
+      "misconceptionSignatures": [
+        {
+          "value": "34",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "290",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 7385."
+        }
+      ],
+      "feedback": {
+        "correct": "$7385 - 215 \\times 34 = 7385 - 7310 = 75$ ، و $75 < 215$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 215."
+      },
+      "solution": {
+        "lines": [
+          "$7385 = 215 \\times 34 + 75$",
+          "$75 < 215$ ، إذن الباقي هو 75."
+        ],
+        "result": "r = 75"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اختر المساواة التي تعبّر عن القسمة الإقليدية للعدد 7385 على 215.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$7385 = 215 \\times 34 + 75$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$7385 = 215 \\times 33 + 290$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "id": "C",
+          "content": "$7385 = 215 \\times 75 + 34$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "id": "D",
+          "content": "$7385 = 215 \\times 35 + 75$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-HISAB"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق من صحة كل مساواة بالحساب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في القسمة الإقليدية على 215 يكون الباقي أصغر من 215."
+        }
+      ],
+      "feedback": {
+        "correct": "$215 \\times 34 + 75 = 7385$ و $75 < 215$.",
+        "incorrect": "ابحث عن المساواة الصحيحة التي باقيها أصغر من 215."
+      },
+      "solution": {
+        "lines": [
+          "$215 \\times 34 = 7310$ و $7310 + 75 = 7385$",
+          "$75 < 215$ ، إذن $7385 = 215 \\times 34 + 75$ هي القسمة الإقليدية للعدد 7385 على 215."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

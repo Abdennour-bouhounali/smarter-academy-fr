@@ -1,0 +1,198 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l1-008",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 1,
+  "metadata": {
+    "title": "ثمن يتغيّر بعد العلبة الثامنة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "تناسبية",
+      "نقط منكسرة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-1",
+      "page": 88,
+      "section": "أنشطة 1",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يعرض متجر القرطاسية ثمنا للعلبة الواحدة من الدبابيس يتغيّر بعد العلبة الثامنة. تمثّل النقط $A$ و $B$ و $C$ و $D$ في المعلم التالي المبلغ المدفوع (بمئات الدنانير) بدلالة عدد العلب المشتراة.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          4,
+          4
+        ],
+        "B": [
+          8,
+          8
+        ],
+        "C": [
+          12,
+          10
+        ],
+        "D": [
+          16,
+          12
+        ]
+      },
+      "segments": [
+        [
+          "O",
+          "A"
+        ],
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ]
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw",
+        "A": "nw",
+        "B": "nw",
+        "C": "se",
+        "D": "se"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس: النقط O و A(4;4) و B(8;8) و C(12;10) و D(16;12) موصولة بقطع، الميل يتغير بعد النقطة B",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: عدد العلب — محور التراتيب: المبلغ المدفوع بمئات الدنانير"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل المبلغ المدفوع متناسب مع عدد العلب؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأنّ الرسم ينطلق من المبدأ $O$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-THROUGH-O-ANY"
+        },
+        {
+          "id": "B",
+          "content": "نعم، لأنّ الترتيب يكبر كلما كبرت الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-RISING"
+        },
+        {
+          "id": "C",
+          "content": "لا، النقط ليست على استقامة واحدة",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط ليست على استقامة واحدة، فليست الوضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "النقط $O$ و $A$ و $B$ على استقامة واحدة، لكنّ $C$ و $D$ ليستا عليها.",
+          "إذن النقط ليست على استقامة واحدة والوضعية ليست تناسبية."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما أكبر عدد من العلب تبقى معه النقط على استقامة واحدة مع المبدأ $O$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد العلب",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-TAMTHIL-TWO-POINTS"
+        },
+        {
+          "value": "16",
+          "id": "MISC-TAMTHIL-THROUGH-O-ANY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن آخر نقطة تقع على المستقيم الذي يشمل $O$ و $A$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل المسطرة: أين ينكسر الرسم؟"
+        }
+      ],
+      "feedback": {
+        "correct": "آخر نقطة على المستقيم $(OA)$ هي $B$ ، فاصلتها $8$ ، وبعدها يتغيّر ميل الرسم.",
+        "incorrect": "اشمل $O$ و $A$ بالمسطرة وانظر إلى النقطة الأخيرة التي ما تزال على حافتها."
+      },
+      "solution": {
+        "lines": [
+          "المسطرة على $O$ و $A$ تمرّ بـ $B$ ولا تمرّ بـ $C$ .",
+          "آخر نقطة على المستقيم فاصلتها $8$ ."
+        ],
+        "result": "8"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

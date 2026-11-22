@@ -1,0 +1,131 @@
+{
+  "id": "ex-4am-majdulat-ihsaiya-l1-003",
+  "lessonCode": "majdulat-ihsaiya",
+  "level": 1,
+  "metadata": {
+    "title": "عدد خلايا مجال",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مجال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_majdulat-ihsaiya_P1",
+      "modelledOn": "ex-7",
+      "adaptedFrom": "ex-4am-majdulat-ihsaiya-l1-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في ورقة مجدول، المجال ⁦A1:C2⁩ هو كل الخلايا من الخلية A1 إلى الخلية C2 ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "كم خلية يضمّ المجال ⁦B2:F2⁩ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-IHSA-MAJAL-KHALIYA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المجال في سطر واحد: نعدّ أعمدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ الأعمدة من B إلى F مع العمودين B و F ."
+        }
+      ],
+      "feedback": {
+        "correct": "الأعمدة B ، C ، D ، E ، F : خمس خلايا في السطر 2 .",
+        "incorrect": "عُدّ الحرف الأول والحرف الأخير أيضا، لا الفرق بينهما فقط."
+      },
+      "solution": {
+        "lines": [
+          "المجال في السطر 2 ، من العمود B إلى العمود F .",
+          "الأعمدة: B ، C ، D ، E ، F ، أي 5 خلايا."
+        ],
+        "result": "5"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم خلية يضمّ المجال ⁦A1:C4⁩ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-IHSA-MAJAL-KHALIYA"
+        },
+        {
+          "value": "2",
+          "id": "MISC-IHSA-MAJAL-KHALIYA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هذا المجال مستطيل من الخلايا: له أعمدة وأسطر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ أعمدته (من A إلى C) وأسطره (من 1 إلى 4)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد الخلايا = عدد الأعمدة × عدد الأسطر."
+        }
+      ],
+      "feedback": {
+        "correct": "3 أعمدة (A ، B ، C) و 4 أسطر: $3 \\times 4 = 12$ خلية.",
+        "incorrect": "المجال مستطيل: اضرب عدد أعمدته في عدد أسطره، ولا تجمعهما."
+      },
+      "solution": {
+        "lines": [
+          "الأعمدة: A ، B ، C ، أي 3 أعمدة؛ الأسطر: 1 ، 2 ، 3 ، 4 ، أي 4 أسطر.",
+          "$3 \\times 4 = 12$"
+        ],
+        "result": "12"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

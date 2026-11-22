@@ -1,0 +1,383 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muthallathat-l5-004",
+  "lessonCode": "wadiya-idmajiya-muthallathat",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2014 — مصباح حديقة بسطيف",
+    "estimatedMinutes": 30,
+    "tags": [
+      "وضعية إدماجية",
+      "العلاقات المثلثية",
+      "الظل",
+      "الآلة الحاسبة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-muthallathat_P1",
+      "modelledOn": "BEM 2014 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2014",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في حديقة بسطيف، مصباح $L$ مثبّت في أعلى عمود شاقولي $[OL]$ حيث $OL = 6\\,\\mathrm{m}$ ( $O$ قاعدة العمود على الأرض الأفقية). ينير المصباح قرصا من الأرض مركزه $O$ ، والشعاع الضوئي الحدّي $[LE]$ يصنع مع العمود زاوية $\\alpha$ حيث $\\cos\\alpha = 0{,}6$ ( $E$ على حافة القرص المضاء، الشكل المقابل). يوجد مقعد في النقطة $B$ من الأرض على بعد $OB = 7\\,\\mathrm{m}$ من قاعدة العمود. تعتني البلدية بنظافة الحديقة لتكون مكانا للقراءة والراحة.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "L": [
+          0,
+          6
+        ],
+        "B": [
+          7,
+          0
+        ],
+        "E": [
+          8,
+          0
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "L",
+          "label": "6 m"
+        },
+        {
+          "from": "O",
+          "to": "B",
+          "label": "7 m"
+        },
+        [
+          "B",
+          "E"
+        ],
+        {
+          "from": "L",
+          "to": "E",
+          "dashed": true
+        }
+      ],
+      "rightAngles": [
+        [
+          "L",
+          "O",
+          "E"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "L",
+          "from": "O",
+          "to": "E",
+          "label": "α"
+        }
+      ],
+      "labels": {
+        "O": "sw",
+        "L": "nw",
+        "B": "s",
+        "E": "se"
+      },
+      "ariaLabel": "العمود [OL] شاقولي طوله 6 m والمصباح في L؛ الشعاع الحدّي [LE] يصنع مع العمود الزاوية α؛ المقعد B على الأرض و OB = 7 m",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $\\sin\\alpha$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري",
+      "expectedAnswer": "4/5",
+      "misconceptionSignatures": [
+        {
+          "value": "0.4",
+          "id": "MISC-MUTH-JAMA-NISAB"
+        },
+        {
+          "value": "0.64",
+          "id": "MISC-MUTH-JADHR-NASI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العلاقة $\\cos^2\\alpha + \\sin^2\\alpha = 1$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\sin^2\\alpha = 1 - 0{,}36$ ، ثم الجذر الموجب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin^2\\alpha = 0{,}64$ ومنه $\\sin\\alpha = 0{,}8$ .",
+        "incorrect": "العلاقة تخص المربعين، ولا ننسى الجذر."
+      },
+      "solution": {
+        "lines": [
+          "$\\sin^2\\alpha = 1 - \\cos^2\\alpha = 1 - 0{,}36 = 0{,}64$",
+          "$\\sin\\alpha$ موجب: $\\sin\\alpha = \\sqrt{0{,}64}$"
+        ],
+        "result": "\\sin\\alpha = 0{,}8"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج $\\tan\\alpha$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري",
+      "expectedAnswer": "4/3",
+      "misconceptionSignatures": [
+        {
+          "value": "3/4",
+          "id": "MISC-MUTH-TAN-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\tan\\alpha = \\dfrac{\\sin\\alpha}{\\cos\\alpha}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan\\alpha = \\dfrac{0{,}8}{0{,}6} = \\dfrac{4}{3}$ .",
+        "incorrect": "الظل = الجيب على جيب التمام."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan\\alpha = \\dfrac{\\sin\\alpha}{\\cos\\alpha} = \\dfrac{0{,}8}{0{,}6}$"
+        ],
+        "result": "\\tan\\alpha = \\dfrac{4}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب نصف قطر القرص المضاء $OE$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P2",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "4.5",
+          "id": "MISC-MUTH-ZAWIYA-KHATI"
+        },
+        {
+          "value": "4.8",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $LOE$ قائم في $O$ ، والزاوية $\\alpha$ رأسها $L$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بالنسبة إلى $\\alpha$ : $[OE]$ مقابل و $[OL]$ مجاور."
+        }
+      ],
+      "feedback": {
+        "correct": "$OE = 6 \\times \\tan\\alpha = 6 \\times \\dfrac{4}{3} = 8\\,\\mathrm{m}$ .",
+        "incorrect": "الزاوية $\\alpha$ عند المصباح: العمود مجاور لها ونصف القطر مقابل."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $LOE$ القائم في $O$ : $\\tan\\widehat{OLE} = \\dfrac{OE}{OL}$",
+          "ومنه: $OE = OL \\times \\tan\\alpha = 6 \\times \\dfrac{4}{3}$"
+        ],
+        "result": "OE = 8\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "sub": "ا",
+      "statement": "أعط المدوّر إلى الوحدة من الدرجة لقيس الزاوية $\\alpha$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: القيس بالدرجة مدوّرا إلى الوحدة",
+      "expectedAnswer": "53",
+      "misconceptionSignatures": [
+        {
+          "value": "37",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "0.6",
+          "id": "MISC-MUTH-NISBA-BADAL-QAYS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل اللمسة العكسية للنسبة في آلة حاسبة مبرمجة على الدرجة، ثم دوّر في آخر الحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\alpha \\approx 53{,}13^{\\circ}$ ، أي $53^{\\circ}$ .",
+        "incorrect": "العدد $0{,}6$ جيب تمام الزاوية لا قيسها."
+      },
+      "solution": {
+        "lines": [
+          "$\\cos\\alpha = 0{,}6$",
+          "باستعمال الآلة الحاسبة: $\\alpha \\approx 53{,}1301^{\\circ}$"
+        ],
+        "result": "\\alpha \\approx 53^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "sub": "ب",
+      "statement": "هل المقعد $B$ في الجزء المضاء من الأرض؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن $OB$ بنصف قطر القرص المضاء."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم: $OB = 7\\,\\mathrm{m} < OE = 8\\,\\mathrm{m}$ .",
+        "incorrect": "قارن $OB$ بنصف القطر $OE$ المحسوب بالظل (لا بالجيب)."
+      },
+      "solution": {
+        "lines": [
+          "$OB = 7$ و $OE = 8$ ، و $7 < 8$",
+          "إذن المقعد داخل القرص المضاء."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "☜ تريد البلدية إنارة ممرّ مستقيم طوله $100\\,\\mathrm{m}$ بأعمدة من هذا النوع مغروسة على محوره، بحيث تتلامس الأقراص المضاءة المتجاورة ويغطّي الضوء الممرّ كله. ما أقل عدد من الأعمدة اللازمة؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الأعمدة",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل عمود ينير على المحور قطعة طولها قطر القرص."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $100$ على هذا الطول، ثم خذ العدد الطبيعي الموالي إذا لم تكن القسمة تامة."
+        }
+      ],
+      "feedback": {
+        "correct": "$100 \\div 16 = 6{,}25$ ، فنحتاج إلى $7$ أعمدة.",
+        "incorrect": "كل عمود ينير $2 \\times OE$ من الممرّ؛ وعدد الأعمدة عدد طبيعي يكفي لتغطية الممرّ كله."
+      },
+      "solution": {
+        "lines": [
+          "كل عمود ينير على محور الممرّ قطعة طولها $2 \\times OE = 16\\,\\mathrm{m}$",
+          "$\\dfrac{100}{16} = 6{,}25$ : ستة أعمدة لا تكفي ( $96\\,\\mathrm{m}$ ).",
+          "إذن أقل عدد هو 7 أعمدة."
+        ],
+        "result": "7"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

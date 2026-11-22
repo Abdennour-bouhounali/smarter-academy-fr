@@ -1,0 +1,206 @@
+{
+  "id": "ex-4am-amaliyat-judhur-l5-001",
+  "lessonCode": "amaliyat-judhur",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2017 — قطعة أرض مربعة",
+    "estimatedMinutes": 15,
+    "tags": [
+      "جداء جذرين",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_amaliyat-judhur_P1",
+      "modelledOn": "BEM 2017 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2017",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يملك فلاح بولاية سطيف قطعة أرض مربعة الشكل مساحتها $432\\,m^2$ ، يعتني بها بإتقان ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب طول ضلع هذه القطعة على الشكل $a\\sqrt{3}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (طول الضلع بالمتر هو $a\\sqrt{3}$ )",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "144",
+          "id": "MISC-JIDHR-MURABBA-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول ضلع مربع مساحته $432\\,m^2$ هو $\\sqrt{432}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $432$ جداء مربع تام في $3$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل $\\sqrt{k^2 \\times 3} = k\\sqrt{3}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "طول الضلع $\\sqrt{432} = \\sqrt{144 \\times 3} = 12\\sqrt{3}$ m.",
+        "incorrect": "ابحث عن أكبر مربع تام يقسم 432، ثم أخرج جذره من تحت الجذر."
+      },
+      "solution": {
+        "lines": [
+          "ليكن $c$ طول ضلع القطعة: $c^2 = 432$ و $c > 0$ ، إذن $c = \\sqrt{432}$ .",
+          "$432 = 144 \\times 3$",
+          "$c = \\sqrt{144} \\times \\sqrt{3}$"
+        ],
+        "result": "c = 12\\sqrt{3}\\,m"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "يقتطع الفلاح من هذه القطعة جزءًا مستطيل الشكل، طوله طول ضلع القطعة وعرضه $4\\sqrt{3}\\,m$ ، ليزرعه بطاطا.",
+      "statement": "احسب مساحة الجزء المزروع بطاطا.",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المساحة بـ $m^2$",
+      "expectedAnswer": "144",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الجزء مستطيل: مساحته = الطول × العرض."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب المعاملين معًا ثم $\\sqrt{3} \\times \\sqrt{3}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "مساحة الجزء المزروع بطاطا: $12\\sqrt{3} \\times 4\\sqrt{3} = 48 \\times 3 = 144\\,m^2$ .",
+        "incorrect": "اضرب $12\\sqrt{3}$ في $4\\sqrt{3}$ مستعملًا $\\sqrt{3} \\times \\sqrt{3} = 3$ ."
+      },
+      "solution": {
+        "lines": [
+          "$S_1 = 12\\sqrt{3} \\times 4\\sqrt{3}$",
+          "$S_1 = 12 \\times 4 \\times \\sqrt{3} \\times \\sqrt{3}$",
+          "$S_1 = 48 \\times 3$"
+        ],
+        "result": "S_1 = 144\\,m^2"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "استنتج مساحة الجزء الباقي من القطعة.",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المساحة بـ $m^2$",
+      "expectedAnswer": "288",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح مساحة الجزء المزروع بطاطا من مساحة القطعة."
+        }
+      ],
+      "feedback": {
+        "correct": "مساحة الجزء الباقي: $432 - 144 = 288\\,m^2$ .",
+        "incorrect": "استعمل مساحة القطعة كلها ونتيجة (ا)."
+      },
+      "solution": {
+        "lines": [
+          "$S_2 = 432 - 144$"
+        ],
+        "result": "S_2 = 288\\,m^2"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "☜ يزرع الفلاح الجزء الباقي قمحًا. يحتاج كل $1\\,m^2$ إلى $25\\,g$ من البذور، وثمن $1\\,kg$ من البذور $120$DA. ما ثمن البذور اللازمة؟",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الثمن بالدينار (DA)",
+      "expectedAnswer": "864",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب كتلة البذور اللازمة للجزء الباقي بالغرام."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حوّل الكتلة إلى الكيلوغرام: $1\\,kg = 1000\\,g$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب الكتلة بالكيلوغرام في ثمن الكيلوغرام."
+        }
+      ],
+      "feedback": {
+        "correct": "كتلة البذور $288 \\times 25 = 7200\\,g = 7{,}2\\,kg$ ، وثمنها $7{,}2 \\times 120 = 864$DA.",
+        "incorrect": "لا تنسَ تحويل الغرامات إلى كيلوغرامات قبل الضرب في ثمن الكيلوغرام."
+      },
+      "solution": {
+        "lines": [
+          "كتلة البذور: $288 \\times 25 = 7200\\,g$ أي $7{,}2\\,kg$ .",
+          "ثمن البذور: $7{,}2 \\times 120$"
+        ],
+        "result": "864\\,DA"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

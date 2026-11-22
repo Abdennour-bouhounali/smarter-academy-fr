@@ -1,0 +1,147 @@
+{
+  "id": "ex-1am-qawaid-qabiliyat-qisma-l1-002",
+  "lessonCode": "qawaid-qabiliyat-qisma",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — رقم الآحاد يكفي",
+    "estimatedMinutes": 4,
+    "tags": [
+      "رقم الآحاد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "إليك الأعداد: 236 ، 405 ، 1170 ، 3009 ، 58 ، 7215."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "اكتب الأعداد التي تقبل القسمة على 2.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        58,
+        236,
+        1170
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            236,
+            405
+          ],
+          "id": "MISC-QABILIYA-RAQM-AWWAL"
+        },
+        {
+          "value": [
+            58,
+            236
+          ],
+          "id": "MISC-QABILIYA-SIFR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى رقم آحاد العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل رقم الآحاد من بين 0، 2، 4، 6، 8؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الأعداد التي تقبل القسمة على 2: 236 ، 1170 ، 58.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 2 إذا كان رقم آحاده 0 أو 2 أو 4 أو 6 أو 8."
+      },
+      "solution": {
+        "lines": [
+          "236: رقم آحاده 6 ← يقبل القسمة على 2.",
+          "405: رقم آحاده 5 ← لا يقبل القسمة على 2.",
+          "1170: رقم آحاده 0 ← يقبل القسمة على 2.",
+          "3009: رقم آحاده 9 ← لا يقبل القسمة على 2.",
+          "58: رقم آحاده 8 ← يقبل القسمة على 2.",
+          "7215: رقم آحاده 5 ← لا يقبل القسمة على 2."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اكتب الأعداد التي تقبل القسمة على 5.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        405,
+        1170,
+        7215
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            405,
+            7215
+          ],
+          "id": "MISC-QABILIYA-SIFR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى رقم آحاد العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما الرقمان اللذان ينتهي بهما كل مضاعف للعدد 5؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الأعداد التي تقبل القسمة على 5: 405 ، 1170 ، 7215.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 5 إذا كان رقم آحاده 0 أو 5."
+      },
+      "solution": {
+        "lines": [
+          "236: رقم آحاده 6 ← لا يقبل القسمة على 5.",
+          "405: رقم آحاده 5 ← يقبل القسمة على 5.",
+          "1170: رقم آحاده 0 ← يقبل القسمة على 5.",
+          "3009: رقم آحاده 9 ← لا يقبل القسمة على 5.",
+          "58: رقم آحاده 8 ← لا يقبل القسمة على 5.",
+          "7215: رقم آحاده 5 ← يقبل القسمة على 5."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "id": "ex-4am-qasim-mushtarak-akbar-l5-003",
+  "lessonCode": "qasim-mushtarak-akbar",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2020 — حقائب فوج كشفي بسعيدة",
+    "estimatedMinutes": 14,
+    "tags": [
+      "PGCD",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-mushtarak-akbar_P3",
+      "modelledOn": "BEM 2020 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2020",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يحضّر فوج من الكشافة الإسلامية الجزائرية بسعيدة مخيّمًا صيفيًا يتطوّع فيه أعضاؤه لتنظيف الغابة المجاورة والحفاظ على نظافة البيئة. جمع الفوج 360 علبة تونة و 270 علبة جبن، ويريد ترتيبها كلها في حقائب متماثلة (نفس عدد علب التونة ونفس عدد علب الجبن في كل حقيبة)، بأكبر عدد ممكن من الحقائب.\n• يدفع الفوج 150DA عن تغليف كل حقيبة.\n• مصاريف النقل 1500DA مهما كان عدد الحقائب.\n• خصّص الفوج لذلك 33000DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما هو أكبر عدد من الحقائب يمكن تحضيره ؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد الحقائب)",
+      "expectedAnswer": "90",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        },
+        {
+          "value": "45",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الحقائب يجب أن يقسم 360 و 270 معًا: فهو قاسم مشترك لهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب قواسم 360 وقواسم 270، ثم استخرج القواسم المشتركة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أكبر عدد ممكن هو أكبر هذه القواسم المشتركة."
+        }
+      ],
+      "feedback": {
+        "correct": "أكبر عدد من الحقائب هو PGCD(360 ; 270).",
+        "incorrect": "عدد الحقائب قاسم مشترك للعددين 360 و 270؛ والمطلوب أكبرها، لا محتوى الواحدة منها."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 360 هي: 1 ، 2 ، 3 ، 4 ، 5 ، 6 ، 8 ، 9 ، 10 ، 12 ، 15 ، 18 ، 20 ، 24 ، 30 ، 36 ، 40 ، 45 ، 60 ، 72 ، 90 ، 120 ، 180 ، 360",
+          "قواسم العدد 270 هي: 1 ، 2 ، 3 ، 5 ، 6 ، 9 ، 10 ، 15 ، 18 ، 27 ، 30 ، 45 ، 54 ، 90 ، 135 ، 270",
+          "القواسم المشتركة للعددين 360 و 270 هي: 1 ، 2 ، 3 ، 5 ، 6 ، 9 ، 10 ، 15 ، 18 ، 30 ، 45 ، 90",
+          "أكبرها هو 90، إذن أكبر عدد من الحقائب هو PGCD(360 ; 270) = 90."
+        ],
+        "result": "PGCD(360 ; 270) = 90"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما هو عدد علب التونة في كل حقيبة ؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "90",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع علب التونة كلها بالتساوي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 360 على العدد الذي وجدته في السؤال السابق."
+        }
+      ],
+      "feedback": {
+        "correct": "$360 \\div 90 = 4$",
+        "incorrect": "اقسم العدد الكلي (360) على أكبر عدد وجدته."
+      },
+      "solution": {
+        "lines": [
+          "$360 \\div 90 = 4$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما هو عدد علب الجبن في كل حقيبة ؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "90",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع علب الجبن كلها بالتساوي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 270 على العدد الذي وجدته في السؤال السابق."
+        }
+      ],
+      "feedback": {
+        "correct": "$270 \\div 90 = 3$",
+        "incorrect": "اقسم العدد الكلي (270) على أكبر عدد وجدته."
+      },
+      "solution": {
+        "lines": [
+          "$270 \\div 90 = 3$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "☜ أعط القيمة التي لا يمكن أن يتجاوزها ثمن الحقيبة الفارغة حتى يتسنى للفوج تحضير الحقائب حسب الشروط المذكورة.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (الثمن بالدينار)",
+      "expectedAnswer": "200",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الحقائب هو العدد الذي وجدته في السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل حقيبة تكلّف ثمنها $p$ زائد مصاريف التغليف؛ أضف النقل مرة واحدة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب أن المصاريف الكلية لا تتجاوز المبلغ المخصص، ثم حلّ المتراجحة."
+        }
+      ],
+      "feedback": {
+        "correct": "$90(p + 150) + 1500 \\leq 33000$ تعطي $p \\leq 200$ .",
+        "incorrect": "اكتب المصاريف بدلالة ثمن الحقيبة $p$ ، ثم المتراجحة: المصاريف لا تتجاوز 33000DA."
+      },
+      "solution": {
+        "lines": [
+          "عدد الحقائب: PGCD(360 ; 270) = 90",
+          "المصاريف: $90 \\times (p + 150) + 1500$",
+          "$90(p + 150) + 1500 \\leq 33000$",
+          "$90p + 13500 + 1500 \\leq 33000$",
+          "$90p \\leq 18000$",
+          "$p \\leq 200$"
+        ],
+        "result": "200DA"
+      },
+      "work": "optional",
+      "timeSeconds": 420
+    }
+  ]
+}

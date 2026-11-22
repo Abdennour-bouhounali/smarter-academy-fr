@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l4-008",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — ضلع المثلث من نصف القطر",
+    "estimatedMinutes": 3,
+    "tags": [
+      "طول الضلع",
+      "المثلث المتقايس الأضلاع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mudalaat-muntazama_P3",
+      "modelledOn": "method-side"
+    }
+  },
+  "statement": {
+    "content": "مثلث متقايس الأضلاع ABC محاط بدائرة مركزها O ونصف قطرها $2\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "القيمة المضبوطة لطول ضلعه:",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2\\sqrt{3}\\,\\mathrm{cm}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$2\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-DIL"
+        },
+        {
+          "id": "C",
+          "content": "$\\sqrt{3}\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الزاوية المركزية $120^\\circ$ ، ونصفها في المثلث القائم $60^\\circ$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نصف الضلع هو الضلع المقابل للزاوية $60^\\circ$ ، والوتر نصف القطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نصف الضلع = نصف القطر × جيب $60^\\circ$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "نصف الضلع $= 2 \\times \\sin 60^\\circ = \\sqrt{3}$ ، والضلع $2\\sqrt{3} \\approx 3{,}46$ .",
+        "incorrect": "$\\sqrt{3}$ هو نصف الضلع فقط، و 2 نصف القطر."
+      },
+      "difficulty": 4
+    }
+  ]
+}

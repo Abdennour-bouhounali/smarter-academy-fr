@@ -1,0 +1,118 @@
+{
+  "id": "ex-4am-tawzif-khawass-judhur-l2-008",
+  "lessonCode": "tawzif-khawass-judhur",
+  "level": 2,
+  "metadata": {
+    "title": "نسبتان على الشكل a√b",
+    "estimatedMinutes": 4,
+    "tags": [
+      "نسبة مقامها عدد ناطق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tawzif-khawass-judhur_P3",
+      "modelledOn": "method-rationalize"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان A و B حيث:",
+    "formulas": [
+      "A = \\dfrac{12}{\\sqrt{3}}",
+      "B = \\dfrac{10}{\\sqrt{5}}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب العدد A على الشكل $a\\sqrt{3}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجعل المقام عددًا ناطقًا: اضرب البسط والمقام في $\\sqrt{3}$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\sqrt{3} \\times \\sqrt{3} = 3$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل الكسر الناتج."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = \\dfrac{12\\sqrt{3}}{3} = 4\\sqrt{3}$.",
+        "incorrect": "اضرب البسط والمقام في $\\sqrt{3}$ ثم اختزل على 3."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{12 \\times \\sqrt{3}}{\\sqrt{3} \\times \\sqrt{3}}$",
+          "$A = \\dfrac{12\\sqrt{3}}{3}$"
+        ],
+        "result": "A = 4\\sqrt{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب العدد B على الشكل $a\\sqrt{5}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب البسط والمقام في $\\sqrt{5}$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختزل الكسر الناتج."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = \\dfrac{10\\sqrt{5}}{5} = 2\\sqrt{5}$.",
+        "incorrect": "اضرب البسط والمقام في $\\sqrt{5}$ ثم اختزل على 5."
+      },
+      "solution": {
+        "lines": [
+          "$B = \\dfrac{10 \\times \\sqrt{5}}{\\sqrt{5} \\times \\sqrt{5}}$",
+          "$B = \\dfrac{10\\sqrt{5}}{5}$"
+        ],
+        "result": "B = 2\\sqrt{5}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

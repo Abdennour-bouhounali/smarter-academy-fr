@@ -1,0 +1,237 @@
+{
+  "id": "ex-1am-ikhtizal-kitaba-kasriya-l4-001",
+  "lessonCode": "ikhtizal-kitaba-kasriya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — قابلية القسمة ثم الاختزال",
+    "estimatedMinutes": 11,
+    "tags": [
+      "قابلية القسمة",
+      "اختزال"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 2,
+      "file": "1am-s2-72",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الأول",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الكسر $\\dfrac{2475}{3150}$. أجب بـ «صحيح» أو «خطأ» مع التبرير، ثم اختزل الكسر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "العدد 2475 يقبل القسمة على 9.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-AHAD-3"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مجموع أرقام العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يقبل هذا المجموع القسمة على 9؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$2 + 4 + 7 + 5 = 18$ و 18 يقبل القسمة على 9.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 9 إذا كان مجموع أرقامه يقبل القسمة على 9."
+      },
+      "solution": {
+        "lines": [
+          "مجموع أرقام 2475 هو 18، و $18 = 9 \\times 2$ : صحيح."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "العدد 3150 يقبل القسمة على 4.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-ZAWJI-4"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى العدد المشكّل من رقمي الآحاد والعشرات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يقبل هذا العدد القسمة على 4؟"
+        }
+      ],
+      "feedback": {
+        "correct": "العدد المشكّل من رقمي الآحاد والعشرات هو 50، و 50 لا يقبل القسمة على 4.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 4 إذا كان العدد المشكّل من رقمي آحاده وعشراته يقبل القسمة على 4."
+      },
+      "solution": {
+        "lines": [
+          "$50 = 4 \\times 12 + 2$ : 3150 لا يقبل القسمة على 4 رغم أنه زوجي، خطأ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "أتمم: $\\dfrac{2475}{3150} = \\dfrac{275}{\\ldots}$",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "350",
+      "misconceptionSignatures": [
+        {
+          "value": "950",
+          "id": "MISC-KASRIYA-JAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الحدّين المعروفين اللذين في نفس الموضع (بسطين أو مقامين)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بأيّ عدد نضرب (أو نقسم) أحدهما لنحصل على الآخر؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق نفس العملية على الحدّ الآخر من الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2475}{3150} = \\dfrac{2475 \\div 9}{3150 \\div 9} = \\dfrac{275}{350}$ : قسمنا البسط والمقام على نفس العدد.",
+        "incorrect": "الكسر لا يتغيّر إذا ضربنا البسط والمقام في نفس العدد غير المعدوم أو قسمناهما عليه، أمّا إضافة نفس العدد إليهما فتغيّره."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2475}{3150} = \\dfrac{2475 \\div 9}{3150 \\div 9} = \\dfrac{275}{350}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "اختزل الكسر $\\dfrac{2475}{3150}$ إلى أبسط شكل ممكن.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b لا يقبل الاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "11/14",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "825/1050",
+          "id": "MISC-KASRIYA-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن قاسم مشترك للبسط والمقام بقواعد قابلية القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على هذا القاسم، ثم أعد البحث في الكسر الجديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا لم تنفع القواعد، جرّب جداول الضرب (7، 11، 13…)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2475}{3150} = \\dfrac{11}{14}$ ولا يقبل البسط والمقام قاسمًا مشتركًا غير 1.",
+        "incorrect": "نقسم البسط والمقام على قاسم مشترك لهما، ونعيد ذلك حتى لا يبقى قاسم مشترك غير 1.",
+        "notIrreducible": "الكتابة تساوي الكسر لكنها ما زالت قابلة للاختزال: ابحث عن قاسم مشترك آخر للبسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "$2475 = 9 \\times 275$ و $3150 = 9 \\times 350$ ، إذن $\\dfrac{2475}{3150} = \\dfrac{2475 \\div 9}{3150 \\div 9} = \\dfrac{275}{350}$",
+          "$275 = 25 \\times 11$ و $350 = 25 \\times 14$ ، إذن $\\dfrac{275}{350} = \\dfrac{275 \\div 25}{350 \\div 25} = \\dfrac{11}{14}$",
+          "العددان 11 و 14 لا يقبلان قاسمًا مشتركًا غير 1: $\\dfrac{11}{14}$ في أبسط شكل ممكن."
+        ],
+        "result": "\\dfrac{2475}{3150} = \\dfrac{11}{14}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

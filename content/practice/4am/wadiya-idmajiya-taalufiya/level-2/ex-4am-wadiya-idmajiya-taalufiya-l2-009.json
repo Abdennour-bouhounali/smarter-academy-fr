@@ -1,0 +1,160 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-taalufiya-l2-009",
+  "lessonCode": "wadiya-idmajiya-taalufiya",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2016 — المستقيم المار بنقطتين",
+    "estimatedMinutes": 8,
+    "tags": [
+      "تناسب التغيّرات",
+      "استقامية",
+      "العدد الذي صورته معلومة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-taalufiya_P1",
+      "modelledOn": "BEM 2016 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "$f$ دالة تآلفية تمثيلها البياني في مستو منسوب إلى معلم متعامد و متجانس $(O , \\vec{i} , \\vec{j})$\nيشمل النقطتين $A(-2 ; -11)$ و $B(3 ; 9)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن العبارة الجبرية للدالة التآلفية $f$ هي: $f(x) = 4x - 3$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المعامل $a$ بخاصية تناسب التغيّرات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم احسب $b$ باستعمال صورة إحدى النقطتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{9 - (-11)}{3 - (-2)}$ .",
+        "incorrect": "$a = \\dfrac{y_B - y_A}{x_B - x_A}$ ، ثم $b = y_A - a x_A$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = ax + b$",
+          "$a = \\dfrac{f(3) - f(-2)}{3 - (-2)} = \\dfrac{9 - (-11)}{5} = \\dfrac{20}{5} = 4$",
+          "$f(3) = 9$ أي: $4 \\times 3 + b = 9$ ، ومنه $b = -3$ .",
+          "إذن: $f(x) = 4x - 3$"
+        ],
+        "result": "f(x) = 4x - 3"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "لتكن النقطة $C(4 ; 13)$ من المستوي.",
+      "statement": "هل النقط $A$ ، $B$ ، $C$ على استقامة واحدة ؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $f(4)$ وقارنه بترتيب $C$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(4) = 13$ : $C$ تنتمي إلى المستقيم $(AB)$ .",
+        "incorrect": "تكون $C$ على المستقيم $(AB)$ إذا كان ترتيبها صورة فاصلتها بالدالة $f$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(4) = 4 \\times 4 - 3 = 13$ ، وهو ترتيب النقطة $C$ .",
+          "إذن $C$ تنتمي إلى التمثيل البياني للدالة $f$ (المستقيم $(AB)$)،",
+          "ومنه النقط $A$ ، $B$ ، $C$ على استقامة واحدة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "جد العدد الذي صورته 21 بالدالة $f$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAALUFI-SABIQ-QISMA",
+          "value": "21/4"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة $f(x) = 21$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$4x - 3 = 21$ .",
+        "incorrect": "أضف 3 إلى الطرفين قبل القسمة على 4."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 21$",
+          "$4x - 3 = 21$",
+          "$4x = 24$",
+          "$x = 6$"
+        ],
+        "result": "x = 6"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

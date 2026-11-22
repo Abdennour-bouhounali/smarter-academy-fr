@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l5-005",
+  "lessonCode": "maqati-mustawiya",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — طبقات بلاطة في الطابعة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "بلاطة قائمة",
+      "طباعة ثلاثية الأبعاد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_maqati-mustawiya_P2",
+      "modelledOn": "act-3"
+    }
+  },
+  "statement": {
+    "content": "في نادي العلوم يتعاون التلاميذ فتطبع الطابعة ثلاثية الأبعاد بلاطة قائمة قاعدتها مستطيل $8\\,\\mathrm{cm} \\times 5\\,\\mathrm{cm}$ وارتفاعها $4\\,\\mathrm{cm}$ ، طبقة أفقية بعد طبقة (كل طبقة موازية للقاعدة)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الطبقات المطبوعة:",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مستطيلات $8 \\times 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQTA-BUUD"
+        },
+        {
+          "id": "B",
+          "content": "كلها مستطيلات $8 \\times 5$ متطابقة",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "مستطيلات تصغر كلما صعدت الفوهة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQTA-HARAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل طبقة موازية للقاعدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مقطع بمستو موازٍ لوجه له نفس بعدي هذا الوجه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "هل تتغيّر القاعدة مع الارتفاع؟"
+        }
+      ],
+      "feedback": {
+        "correct": "كل طبقة مقطع بمستو موازٍ للقاعدة: مستطيل $8 \\times 5$ في كل ارتفاع.",
+        "incorrect": "الطبقات تصغر في الهرم، لا في البلاطة."
+      },
+      "difficulty": 5
+    }
+  ]
+}

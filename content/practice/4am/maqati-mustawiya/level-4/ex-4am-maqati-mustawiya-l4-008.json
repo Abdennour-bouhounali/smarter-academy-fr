@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l4-008",
+  "lessonCode": "maqati-mustawiya",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — نسبة التصغير",
+    "estimatedMinutes": 3,
+    "tags": [
+      "هرم",
+      "نسبة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_maqati-mustawiya_P4",
+      "modelledOn": "act-5"
+    }
+  },
+  "statement": {
+    "content": "هرم منتظم قاعدته مربع ضلعه $9\\,\\mathrm{cm}$ ، يقطعه مستو موازٍ لقاعدته وفق مربع ضلعه $6\\,\\mathrm{cm}$ ، و E نقطة تقاطع المستوي مع $[SA]$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما النسبة $\\dfrac{SE}{SA}$ ؟ (اكتبها كسرا مختزلا)",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P4",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "كسر (مثلا 1/2)",
+      "expectedAnswer": "2/3",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAQTA-NISBA",
+          "value": "1/3"
+        },
+        {
+          "id": "MISC-MAQTA-NISBA",
+          "value": "3/2"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المقطع تصغير للقاعدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضلع المقطع = النسبة × ضلع القاعدة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\dfrac{6}{9}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{SE}{SA} = \\dfrac{6}{9} = \\dfrac{2}{3}$ .",
+        "incorrect": "النسبة أصغر من 1، وتُقرأ من الرأس S."
+      },
+      "difficulty": 4
+    }
+  ]
+}

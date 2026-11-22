@@ -1,0 +1,216 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-talis-l4-003",
+  "lessonCode": "wadiya-idmajiya-talis",
+  "level": 4,
+  "metadata": {
+    "title": "عرض وادي الحراش",
+    "estimatedMinutes": 12,
+    "tags": [
+      "خاصية طالس",
+      "معادلة",
+      "مسافة غير مباشرة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-talis_P1",
+      "modelledOn": "ex-22"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "بروح التعاون، ولتقدير عرض وادٍ، جعل فريق من التلاميذ النقط $O$ ، $B$ ، $D$ في استقامية والنقط $O$ ، $A$ ، $C$ في استقامية ( $O$ شجرة على الضفة الأخرى و $B$ على هذه الضفة)، مع $(AB) \\parallel (CD)$ ، ثم قاسوا: $AB = 1{,}5\\,\\mathrm{m}$ ، $CD = 4\\,\\mathrm{m}$ و $BD = 10\\,\\mathrm{m}$ (الشكل المقابل).",
+    "figure": {
+      "points": {
+        "O": [
+          0.0,
+          0.0
+        ],
+        "A": [
+          4.728778558132,
+          -2.607422740591
+        ],
+        "B": [
+          5.795554957734,
+          -1.552914270615
+        ],
+        "C": [
+          12.610076155018,
+          -6.953127308243
+        ],
+        "D": [
+          15.454813220625,
+          -4.14110472164
+        ]
+      },
+      "segments": [
+        [
+          "O",
+          "B"
+        ],
+        {
+          "from": "B",
+          "to": "D",
+          "label": "10"
+        },
+        [
+          "O",
+          "A"
+        ],
+        [
+          "A",
+          "C"
+        ],
+        {
+          "from": "A",
+          "to": "B",
+          "label": "1,5",
+          "arrows": 1
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "label": "4",
+          "arrows": 1
+        }
+      ],
+      "ariaLabel": "النقطة O على الضفة الأخرى للوادي؛ O و B و D على استقامة و O و A و C على استقامة، و (AB) يوازي (CD)؛ AB = 1,5 و CD = 4 و BD = 10",
+      "caption": "O على الضفة الأخرى للوادي",
+      "maxWidth": 340
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب المسافة $OB$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "3.75",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\dfrac{OB}{OD} = \\dfrac{AB}{CD}$ (خاصية طالس) و $OD = OB + 10$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $\\dfrac{OB}{OB + 10} = \\dfrac{1{,}5}{4}$ ثم استعمل الجداء المتصالب."
+        }
+      ],
+      "feedback": {
+        "correct": "$4OB = 1{,}5OB + 15$ ومنه $2{,}5OB = 15$ ، أي $OB = 6\\,\\mathrm{m}$ .",
+        "incorrect": "$OD = OB + BD$ : المجهول $OB$ يظهر في الطرفين."
+      },
+      "solution": {
+        "lines": [
+          "بما أن $(AB) \\parallel (CD)$ ، حسب خاصية طالس: $\\dfrac{OB}{OD} = \\dfrac{OA}{OC} = \\dfrac{AB}{CD}$",
+          "$\\dfrac{OB}{OB + 10} = \\dfrac{1{,}5}{4}$",
+          "$4 \\times OB = 1{,}5 \\times OB + 15$",
+          "$2{,}5 \\times OB = 15$"
+        ],
+        "result": "OB = 6\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج المسافة $OD$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "16",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$OD = OB + BD$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$OD = 6 + 10 = 16\\,\\mathrm{m}$ .",
+        "incorrect": "أضف $BD$ إلى $OB$ ."
+      },
+      "solution": {
+        "lines": [
+          "$OD = OB + BD = 6 + 10$"
+        ],
+        "result": "OD = 16\\,\\mathrm{m}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "عرض الوادي هو المسافة $OB$ تقريبا. هل يكفي لوح خشبي طوله $5\\,\\mathrm{m}$ لعبوره؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-MULAAMA-WAQI"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن طول اللوح بالمسافة $OB$ التي حسبتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$5\\,\\mathrm{m} < 6\\,\\mathrm{m}$ : اللوح قصير.",
+        "incorrect": "الجواب يأتي من المقارنة بالمسافة المحسوبة، لا من مظهر الشكل."
+      },
+      "solution": {
+        "lines": [
+          "عرض الوادي $OB = 6\\,\\mathrm{m}$ و $5 < 6$ : اللوح لا يكفي."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

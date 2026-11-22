@@ -1,0 +1,212 @@
+{
+  "id": "ex-1am-adad-ashri-mustaqim-mudarraj-l3-001",
+  "lessonCode": "adad-ashri-mustaqim-mudarraj",
+  "level": 3,
+  "metadata": {
+    "title": "متتالية أعداد",
+    "estimatedMinutes": 5,
+    "tags": [
+      "متتالية",
+      "خطوة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-15",
+      "page": 18,
+      "section": "أتمرّن",
+      "number": 15
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نكمل متتاليات أعداد تُقرأ من اليسار إلى اليمين، في كلّ منها الفرق بين حدّين متتاليين ثابت."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "لاحظ المتتالية التي تُقرأ على نصف مستقيم مدرّج من اليسار إلى اليمين : $10$ ; $12$ ; $14$ ؛ ما هو الحدّ الثاني بعد آخر حدّ مكتوب ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "18",
+      "misconceptionSignatures": [
+        {
+          "value": "54",
+          "id": "MISC-ABSC-STEPPLACE"
+        },
+        {
+          "value": "14,4",
+          "id": "MISC-ABSC-STEPPLACE"
+        },
+        {
+          "value": "14,2",
+          "id": "MISC-ABSC-STEPPLACE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الفرق بين حدّين متتاليين : هل هو ثابت ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحدّ التالي يُعطى بإضافة الفرق نفسه أو بطرحه إن كانت المتتالية تنازلية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه لرتبة الرقم الذي يتغيّر في كلّ خطوة."
+        }
+      ],
+      "feedback": {
+        "correct": "الفرق ثابت، والحدّ المطلوب $18$.",
+        "incorrect": "في متتالية على نصف مستقيم مدرّج الفرق بين حدّين متتاليين ثابت ؛ نحسبه ثمّ نضيفه (أو نطرحه) من آخر حدّ بالانتباه إلى رتبة الأرقام."
+      },
+      "solution": {
+        "lines": [
+          "الفرق بين حدّين متتاليين : $12$ − $10$ = $2$",
+          "$14$ + $2$ = $16$ ثمّ $16$ + $2$ = $18$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "لاحظ المتتالية التي تُقرأ على نصف مستقيم مدرّج من اليسار إلى اليمين : $0$ ; $0{,}5$ ; $1$ ؛ ما هو الحدّ الثاني بعد آخر حدّ مكتوب ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "11",
+          "id": "MISC-ABSC-STEPPLACE"
+        },
+        {
+          "value": "1,1",
+          "id": "MISC-ABSC-STEPPLACE"
+        },
+        {
+          "value": "1,2",
+          "id": "MISC-ABSC-STEPPLACE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الفرق بين حدّين متتاليين : هل هو ثابت ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحدّ التالي يُعطى بإضافة الفرق نفسه أو بطرحه إن كانت المتتالية تنازلية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه لرتبة الرقم الذي يتغيّر في كلّ خطوة."
+        }
+      ],
+      "feedback": {
+        "correct": "الفرق ثابت، والحدّ المطلوب $2$.",
+        "incorrect": "في متتالية على نصف مستقيم مدرّج الفرق بين حدّين متتاليين ثابت ؛ نحسبه ثمّ نضيفه (أو نطرحه) من آخر حدّ بالانتباه إلى رتبة الأرقام."
+      },
+      "solution": {
+        "lines": [
+          "الفرق بين حدّين متتاليين : $0{,}5$ − $0$ = $0{,}5$",
+          "$1$ + $0{,}5$ = $1{,}5$ ثمّ $1{,}5$ + $0{,}5$ = $2$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "لاحظ المتتالية التي تُقرأ على نصف مستقيم مدرّج من اليسار إلى اليمين : $5{,}2$ ; $5{,}1$ ; $5$ ؛ ما هو الحدّ الثاني بعد آخر حدّ مكتوب ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-STEPPLACE"
+        },
+        {
+          "id": "B",
+          "content": "$4{,}98$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-STEPPLACE"
+        },
+        {
+          "id": "C",
+          "content": "$4{,}8$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$5{,}2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-SEQDIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الفرق بين حدّين متتاليين : هل هو ثابت ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحدّ التالي يُعطى بإضافة الفرق نفسه أو بطرحه إن كانت المتتالية تنازلية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه لرتبة الرقم الذي يتغيّر في كلّ خطوة."
+        }
+      ],
+      "feedback": {
+        "correct": "الفرق ثابت، والحدّ المطلوب $4{,}8$.",
+        "incorrect": "في متتالية على نصف مستقيم مدرّج الفرق بين حدّين متتاليين ثابت ؛ نحسبه ثمّ نضيفه (أو نطرحه) من آخر حدّ بالانتباه إلى رتبة الأرقام."
+      },
+      "solution": {
+        "lines": [
+          "الفرق بين حدّين متتاليين : $5{,}1$ − $5{,}2$ = $-0{,}1$",
+          "$5$ − $0{,}1$ = $4{,}9$ ثمّ $4{,}9$ − $0{,}1$ = $4{,}8$"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-misaha-hajm-kura-l1-004",
+  "lessonCode": "misaha-hajm-kura",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — قانون مساحة الكرة",
+    "estimatedMinutes": 1,
+    "tags": [
+      "مساحة الكرة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_misaha-hajm-kura_P1",
+      "modelledOn": "know-2"
+    }
+  },
+  "statement": {
+    "content": "كرة مركزها $O$ ونصف قطرها $R$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما هو قانون مساحة هذه الكرة؟",
+      "learningPoints": [
+        {
+          "code": "4am_misaha-hajm-kura_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\mathcal{A} = \\pi R^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MISAHA-DAIRA"
+        },
+        {
+          "id": "B",
+          "content": "$\\mathcal{A} = 2\\pi R$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MISAHA-MUHIT"
+        },
+        {
+          "id": "C",
+          "content": "$\\mathcal{A} = 4\\pi R^2$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تذكّر قشرة البرتقالة: كم قرصا كبيرا غطّت؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قرص كبير مساحته $\\pi R^2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المساحة بوحدة مربعة: فيها $R^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "القشرة تغطي أربعة أقراص كبرى: $\\mathcal{A} = 4\\pi R^2$ .",
+        "incorrect": "$\\pi R^2$ قرص واحد، و $2\\pi R$ طول."
+      },
+      "difficulty": 1
+    }
+  ]
+}

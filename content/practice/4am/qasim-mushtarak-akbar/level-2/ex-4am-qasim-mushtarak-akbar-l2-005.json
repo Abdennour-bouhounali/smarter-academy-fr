@@ -1,0 +1,199 @@
+{
+  "id": "ex-4am-qasim-mushtarak-akbar-l2-005",
+  "lessonCode": "qasim-mushtarak-akbar",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2024 — ورقة مقوّاة 66cm × 88cm",
+    "estimatedMinutes": 8,
+    "tags": [
+      "قواسم مشتركة",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-mushtarak-akbar_P1",
+      "modelledOn": "BEM 2024 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تريد مطبعة المدرسة تجزئة ورقة مقوّاة مستطيلة الشكل عرضها 66cm وطولها 88cm إلى بطاقات مربعة متقايسة دون ضياع، لتُهدى للتلاميذ المجتهدين تشجيعًا لهم على طلب العلم."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "هل يمكن أن يكون طول ضلع كل بطاقة 11cm ؟ 4cm ؟ برّر إجابتك.",
+      "statement": "هل يمكن أن يكون طول ضلع كل بطاقة 11cm ؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول الضلع يجب أن يقسم البعدين معًا حتى لا يبقى ضياع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم كلا من 66 و 88 على 11، وانظر إلى الباقي."
+        }
+      ],
+      "feedback": {
+        "correct": "11 قاسم مشترك للعددين 66 و 88.",
+        "incorrect": "يكون ذلك ممكنًا فقط إذا كان طول الضلع قاسمًا مشتركًا للبعدين."
+      },
+      "solution": {
+        "lines": [
+          "$66 = 11 \\times 6$",
+          "$88 = 11 \\times 8$",
+          "العدد 11 قاسم مشترك للعددين 66 و 88، إذن يمكن ذلك."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل يمكن أن يكون طول ضلع كل بطاقة 4cm ؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول الضلع يجب أن يقسم البعدين معًا حتى لا يبقى ضياع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم كلا من 66 و 88 على 4، وانظر إلى الباقي."
+        }
+      ],
+      "feedback": {
+        "correct": "4 ليس قاسمًا مشتركًا للعددين 66 و 88.",
+        "incorrect": "يكون ذلك ممكنًا فقط إذا كان طول الضلع قاسمًا مشتركًا للبعدين."
+      },
+      "solution": {
+        "lines": [
+          "$66 = 4 \\times 16 + 2$",
+          "$88 = 4 \\times 22$",
+          "العدد 4 لا يقسم 66، فهو ليس قاسمًا مشتركًا للعددين 66 و 88، إذن لا يمكن ذلك."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "أوجد عدد البطاقات التي يمكن الحصول عليها بحيث يكون طول ضلع كل بطاقة أكبر ما يمكن.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد البطاقات)",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "22",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أكبر طول ممكن للضلع هو القاسم المشترك الأكبر للعددين 66 و 88."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب قواسم 66 وقواسم 88، ثم خذ أكبر قاسم مشترك."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم كل بعد على طول الضلع، ثم اضرب النتيجتين."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(66 ; 88) = 22 ، ثم $3 \\times 4 = 12$ بطاقة.",
+        "incorrect": "المطلوب عدد البطاقات لا طول ضلعها: احسب PGCD ثم عدد البطاقات على الطول والعرض."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 66 هي: 1 ، 2 ، 3 ، 6 ، 11 ، 22 ، 33 ، 66",
+          "قواسم العدد 88 هي: 1 ، 2 ، 4 ، 8 ، 11 ، 22 ، 44 ، 88",
+          "القواسم المشتركة للعددين 66 و 88 هي: 1 ، 2 ، 11 ، 22",
+          "أكبر طول لضلع البطاقة هو PGCD(66 ; 88) = 22 ، أي 22cm.",
+          "$66 \\div 22 = 3$ و $88 \\div 22 = 4$",
+          "$3 \\times 4 = 12$ ، إذن عدد البطاقات هو 12 بطاقة."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 270
+    }
+  ]
+}

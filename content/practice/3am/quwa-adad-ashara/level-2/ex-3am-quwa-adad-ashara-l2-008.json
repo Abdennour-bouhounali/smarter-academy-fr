@@ -1,0 +1,195 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l2-008",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مقارنة قوى العدد 10",
+    "estimatedMinutes": 6,
+    "tags": [
+      "مقارنة",
+      "قوى العدد 10"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "قوى العدد 10 تُقارَن بكتاباتها العشرية: الرقم 1 يتحرّك نحو اليمين كلّما نقص الأسّ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ العددين أصغر؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العددين كتابة عشرية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كلّما كان الرقم 1 أبعد عن الفاصلة كان العدد أصغر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن $0{,}000001$ و $0{,}0001$ ."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$10^{-4}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-SALIB"
+        },
+        {
+          "id": "B",
+          "content": "$10^{-6}$",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{-6} = 0{,}000001 < 0{,}0001 = 10^{-4}$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب الكتابة العشرية للقوة المعنية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10^{-6} = 0{,}000001$ و $10^{-4} = 0{,}0001$ .",
+          "$0{,}000001 < 0{,}0001$ ."
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أيّ الترتيبات التالية تصاعديّ (من الأصغر إلى الأكبر)؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب كلّ عدد كتابة عشرية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر قيمة $10^{0}$ : ليست 0."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد $10^{-3}$ موجب وأصغر من 1."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$10^{0} < 10^{-3} < 10^{3}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-SIFR"
+        },
+        {
+          "id": "B",
+          "content": "$10^{3} < 10^{0} < 10^{-3}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-SALIB"
+        },
+        {
+          "id": "C",
+          "content": "$10^{-3} < 10^{0} < 10^{3}$",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{-3} = 0{,}001$ و $10^{0} = 1$ و $10^{3} = 1\\,000$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب الكتابة العشرية للقوة المعنية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}001 < 1 < 1\\,000$ .",
+          "إذن $10^{-3} < 10^{0} < 10^{3}$ ."
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أيّ أسّ من الأسّين $-2$ و $-5$ و $-7$ يعطي أصغر قوة للعدد 10؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب كلّ قوة كتابة عشرية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أصغر عدد هو الذي يقع فيه الرقم 1 أبعد ما يمكن عن الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن رتب الرقم 1."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-7",
+      "misconceptionSignatures": [
+        {
+          "value": "-2",
+          "id": "MISC-ASHARA-SALIB"
+        }
+      ],
+      "feedback": {
+        "correct": "أصغر قوة هي $10^{-7} = 0{,}0000001$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10^{-2} = 0{,}01$ ، $10^{-5} = 0{,}00001$ ، $10^{-7} = 0{,}0000001$ .",
+          "أصغرها $0{,}0000001$ ."
+        ],
+        "result": "n = -7"
+      }
+    }
+  ]
+}

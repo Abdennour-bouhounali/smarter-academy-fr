@@ -1,0 +1,107 @@
+{
+  "id": "ex-4am-khawas-dawaran-l4-005",
+  "lessonCode": "khawas-dawaran",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — طول وزاوية",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الإثبات بدوران"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_khawas-dawaran_P2",
+      "modelledOn": "method-properties"
+    }
+  },
+  "generator": {
+    "tool": "u13-khawas-dawaran/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "الدوران الذي مركزه A وزاويته $90^\\circ$ في الاتجاه المباشر يحوّل B إلى D و C إلى E، و $BC = 6$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما الطول DE؟",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-KHAWAS",
+          "value": "12"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما صورة [BC]؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "B ↦ D و C ↦ E."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأطوال محفوظة."
+        }
+      ],
+      "feedback": {
+        "correct": "[DE] صورة [BC]: $DE = BC = 6$ .",
+        "incorrect": "الدوران يحافظ على الأطوال."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "ما قيس الزاوية بين (BC) و (DE) بالدرجات؟",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "90",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-TAWAZI",
+          "value": "0"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المستقيم وصورته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما زاوية الدوران؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المستقيم وصورته يصنعان زاوية الدوران."
+        }
+      ],
+      "feedback": {
+        "correct": "(DE) صورة (BC) بدوران زاويته قائمة: متعامدان.",
+        "incorrect": "الزاوية بين المستقيم وصورته هي زاوية الدوران."
+      }
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "id": "ex-4am-bahth-pgcd-l4-006",
+  "lessonCode": "bahth-pgcd",
+  "level": 4,
+  "metadata": {
+    "title": "بلاط الغرفة — 4,6m و 3m",
+    "estimatedMinutes": 7,
+    "tags": [
+      "خوارزمية إقليدس",
+      "تبليط"
+    ],
+    "source": {
+      "type": "worksheet",
+      "worksheetId": "tafawwuq-01",
+      "elementId": "ws01-sit-03",
+      "section": "الوضعيات",
+      "number": 3,
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-aadad-l4-001"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "غرفة ياسر مستطيلة الشكل طولها 4,6m وعرضها 3m. برًّا بوالده، يساعده ياسر في أشغال البيت، ويريد معه تبليطها ببلاط مربع الشكل من نفس النوع ومن دون تقطيع، حيث طول ضلع البلاطة عدد طبيعي بالسنتيمتر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما هو طول ضلع البلاطة حتى يستعمل أقل عدد ممكن من البلاط؟",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P5",
+          "role": "primary"
+        },
+        {
+          "code": "4am_bahth-pgcd_P4",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (بالسنتيمتر)",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        },
+        {
+          "value": "0",
+          "id": "MISC-PGCD-SIFR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل البُعدين إلى السنتيمتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طول ضلع البلاطة قاسم مشترك للبُعدين، وأقل عدد من البلاط يوافق أكبر ضلع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب القاسم المشترك الأكبر للبُعدين بالسنتيمتر بخوارزمية إقليدس."
+        }
+      ],
+      "feedback": {
+        "correct": "4,6m = 460cm و 3m = 300cm، و $PGCD(460 ; 300) = 20$ cm.",
+        "incorrect": "حوّل إلى السنتيمتر أولًا، ثم ابحث عن أكبر قاسم مشترك للبُعدين."
+      },
+      "solution": {
+        "lines": [
+          "4,6m = 460cm و 3m = 300cm.",
+          "أقل عدد من البلاط يوافق أكبر ضلع ممكن، أي $PGCD(460 ; 300)$.",
+          "باستعمال خوارزمية إقليدس:",
+          "$460 = 300 \\times 1 + 160$",
+          "$300 = 160 \\times 1 + 140$",
+          "$160 = 140 \\times 1 + 20$",
+          "$140 = 20 \\times 7 + 0$",
+          "آخر باقٍ غير معدوم هو 20، إذن:"
+        ],
+        "result": "20\\,cm"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب عندئذ عدد البلاطات المستعملة.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P5",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "345",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب عدد البلاطات على الطول وعددها على العرض."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب العددين."
+        }
+      ],
+      "feedback": {
+        "correct": "$23 \\times 15 = 345$ بلاطة.",
+        "incorrect": "اقسم كل بُعد (بالسنتيمتر) على طول ضلع البلاطة، ثم اضرب النتيجتين."
+      },
+      "solution": {
+        "lines": [
+          "على الطول: $460 \\div 20 = 23$ ؛ على العرض: $300 \\div 20 = 15$",
+          "$23 \\times 15 = 345$"
+        ],
+        "result": "345"
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

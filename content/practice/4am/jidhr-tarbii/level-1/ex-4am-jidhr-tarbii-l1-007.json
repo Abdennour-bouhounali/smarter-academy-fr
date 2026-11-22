@@ -1,0 +1,111 @@
+{
+  "id": "ex-4am-jidhr-tarbii-l1-007",
+  "lessonCode": "jidhr-tarbii",
+  "level": 1,
+  "metadata": {
+    "title": "الخاصيتان",
+    "estimatedMinutes": 3,
+    "tags": [
+      "(√a)² = a",
+      "√(a²) = a"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_jidhr-tarbii_P3",
+      "modelledOn": "ex-6",
+      "adaptedFrom": "ex-4am-jidhr-tarbii-l1-007"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "احسب دون استعمال الحاسبة:"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "$(\\sqrt{19})^2$",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "19",
+      "misconceptionSignatures": [
+        {
+          "value": "361",
+          "id": "MISC-TARBI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من أجل كل عدد موجب $a$: $(\\sqrt{a})^2 = a$."
+        }
+      ],
+      "feedback": {
+        "correct": "$(\\sqrt{19})^2 = 19$ لأن 19 موجب.",
+        "incorrect": "مربع الجذر التربيعي لعدد موجب هو العدد نفسه، لا مربعه."
+      },
+      "solution": {
+        "lines": [
+          "19 عدد موجب، و $(\\sqrt{a})^2 = a$"
+        ],
+        "result": "(\\sqrt{19})^2 = 19"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$\\sqrt{23^2}$",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "23",
+      "misconceptionSignatures": [
+        {
+          "value": "529",
+          "id": "MISC-TARBI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من أجل كل عدد موجب $a$: $\\sqrt{a^2} = a$."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sqrt{23^2} = 23$ لأن 23 موجب.",
+        "incorrect": "الجذر التربيعي لمربع عدد موجب هو العدد نفسه."
+      },
+      "solution": {
+        "lines": [
+          "23 عدد موجب، و $\\sqrt{a^2} = a$"
+        ],
+        "result": "\\sqrt{23^2} = 23"
+      },
+      "timeSeconds": 45
+    }
+  ]
+}

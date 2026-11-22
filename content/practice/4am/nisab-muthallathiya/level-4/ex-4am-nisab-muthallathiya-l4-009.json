@@ -1,0 +1,284 @@
+{
+  "id": "ex-4am-nisab-muthallathiya-l4-009",
+  "lessonCode": "nisab-muthallathiya",
+  "level": 4,
+  "metadata": {
+    "title": "النسبة نفسها في مثلثين قائمين",
+    "estimatedMinutes": 12,
+    "tags": [
+      "برهان",
+      "الجيب",
+      "الظل"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-14",
+      "page": 123,
+      "section": "البرهان باستعمال النسب المثلثية",
+      "number": 14,
+      "adaptedFrom": "ex-4am-nisab-muthallathiya-l4-009"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل، $OAB$ مثلث قائم في $A$ و $OFE$ مثلث قائم في $F$ ، النقط $O$ ، $A$ ، $F$ في استقامية والنقط $O$ ، $B$ ، $E$ في استقامية، حيث $OA = 3\\,\\mathrm{cm}$ ، $AF = 3\\,\\mathrm{cm}$ و $AB = 1{,}6\\,\\mathrm{cm}$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -3,
+          0
+        ],
+        "F": [
+          -6,
+          0
+        ],
+        "B": [
+          -3,
+          1.6
+        ],
+        "E": [
+          -6,
+          3.2
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "A",
+          "label": "3"
+        },
+        {
+          "from": "A",
+          "to": "F",
+          "label": "3"
+        },
+        [
+          "O",
+          "E"
+        ],
+        {
+          "from": "A",
+          "to": "B",
+          "label": "1,6"
+        },
+        [
+          "F",
+          "E"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "O",
+          "A",
+          "B"
+        ],
+        [
+          "O",
+          "F",
+          "E"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "O",
+          "from": "A",
+          "to": "B",
+          "radius": 30
+        }
+      ],
+      "labels": {
+        "A": "s",
+        "F": "s"
+      },
+      "ariaLabel": "النقط O و A و F على استقامة أفقية، والنقط O و B و E على استقامة؛ المثلثان OAB و OFE قائمان في A و F؛ OA = 3 و AF = 3 و AB = 1,6",
+      "maxWidth": 340
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "برهن أن $\\dfrac{AB}{OB} = \\dfrac{EF}{OE}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب جيب الزاوية $\\widehat{AOB}$ في كل من المثلثين القائمين."
+        }
+      ],
+      "feedback": {
+        "correct": "كل من النسبتين تساوي $\\sin\\widehat{AOB}$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $OAB$ القائم في $A$ : $\\sin\\widehat{AOB} = \\dfrac{AB}{OB}$ ،",
+          "وفي المثلث $OFE$ القائم في $F$ : $\\sin\\widehat{FOE} = \\dfrac{EF}{OE}$ ،",
+          "والزاويتان $\\widehat{AOB}$ و $\\widehat{FOE}$ هما الزاوية نفسها، إذن: $\\dfrac{AB}{OB} = \\dfrac{EF}{OE}$ ."
+        ]
+      },
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "برهن أن $\\dfrac{AB}{OA} = \\dfrac{EF}{OF}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ نسبة مثلثية تجمع المقابل والمجاور؟"
+        }
+      ],
+      "feedback": {
+        "correct": "كل من النسبتين تساوي $\\tan\\widehat{AOB}$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $OAB$ : $\\tan\\widehat{AOB} = \\dfrac{AB}{OA}$ ، وفي المثلث $OFE$ : $\\tan\\widehat{FOE} = \\dfrac{EF}{OF}$ ،",
+          "والزاوية نفسها، إذن: $\\dfrac{AB}{OA} = \\dfrac{EF}{OF}$ ."
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "احسب $\\tan\\widehat{AOB}$ ثم استنتج الطول $EF$ .",
+      "statement": "$\\tan\\widehat{AOB}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري",
+      "expectedAnswer": "8/15",
+      "misconceptionSignatures": [
+        {
+          "value": "15/8",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $OAB$ القائم في $A$ ، عيّن بالنسبة إلى الزاوية $\\widehat{AOB}$ الوتر والضلعين المجاور والمقابل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ظل زاوية حادة = طول الضلع المقابل لها على طول الضلع المجاور لها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض بالأطوال ثم اختزل الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan\\widehat{AOB} = \\dfrac{AB}{OA} = \\dfrac{1{,}6}{3} = \\dfrac{8}{15}$ .",
+        "incorrect": "راجع الضلعين: ظل الزاوية = طول الضلع المقابل لها على طول الضلع المجاور لها، ثم اختزل."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $OAB$ القائم في $A$ لدينا: $\\tan\\widehat{AOB} = \\dfrac{AB}{OA}$",
+          "$\\tan\\widehat{AOB} = \\dfrac{1{,}6}{3}$"
+        ],
+        "result": "\\tan\\widehat{AOB} = \\dfrac{8}{15}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "الطول $EF$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm",
+      "expectedAnswer": "3.2",
+      "misconceptionSignatures": [
+        {
+          "value": "11.25",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        },
+        {
+          "value": "1.6",
+          "id": "MISC-MUTH-NISBA-GHAYR-MUNASIBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $OFE$ القائم في $F$ : $\\tan\\widehat{FOE} = \\dfrac{EF}{OF}$ ، والزاوية نفسها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$OF = OA + AF$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$EF = OF \\times \\tan\\widehat{AOB} = 6 \\times \\dfrac{8}{15} = 3{,}2\\,\\mathrm{cm}$ .",
+        "incorrect": "احسب $OF$ أولا، ثم اضرب في الظل: $[EF]$ في بسطه."
+      },
+      "solution": {
+        "lines": [
+          "$OF = OA + AF = 3 + 3 = 6$",
+          "في المثلث $OFE$ القائم في $F$ : $\\tan\\widehat{FOE} = \\dfrac{EF}{OF}$ و $\\widehat{FOE} = \\widehat{AOB}$ ،",
+          "$EF = OF \\times \\tan\\widehat{AOB} = 6 \\times \\dfrac{8}{15}$"
+        ],
+        "result": "EF = 3{,}2\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

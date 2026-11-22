@@ -1,0 +1,338 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-harfi-l4-002",
+  "lessonCode": "wadiya-idmajiya-harfi",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2012 — نشر، تحليل، معادلة، متراجحة",
+    "estimatedMinutes": 16,
+    "tags": [
+      "متطابقات شهيرة",
+      "عامل مشترك",
+      "معادلة",
+      "متراجحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-harfi_P1",
+      "modelledOn": "BEM 2012 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2012",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $E$ حيث :",
+    "formulas": [
+      "E = (2x - 5)^2 - (x + 1)(2x - 5)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انشر و بسّط العبارة $E$ .",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $ax^2 + bx + c$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-NASHR-QAWS-SALIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على المتطابقة الشهيرة المناسبة: $(a + b)^2$ أو $(a - b)^2$ أو $(a + b)(a - b)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن الحدّين $a$ و $b$ ، ولا تنسَ الحد المضاعف $2ab$ ولا تربيع المعامل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 2x^2 - 17x + 30$ إذن $a = 2$ .",
+        "incorrect": "طبّق المتطابقة الشهيرة حدًّا حدًّا (مربع كل حد والحد المضاعف)، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$(2x - 5)^2 = 4x^2 - 20x + 25$ و $(x + 1)(2x - 5) = 2x^2 - 5x + 2x - 5 = 2x^2 - 3x - 5$",
+          "$E = 4x^2 - 20x + 25 - (2x^2 - 3x - 5)$",
+          "$E = 4x^2 - 20x + 25 - 2x^2 + 3x + 5$"
+        ],
+        "result": "E = 2x^2 - 17x + 30"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "-17",
+      "misconceptionSignatures": [
+        {
+          "value": "-23",
+          "id": "MISC-NASHR-QAWS-SALIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بعد الحساب، اقرأ العدد $b$ في الشكل المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 2x^2 - 17x + 30$ إذن $b = -17$ .",
+        "incorrect": "طبّق المتطابقة الشهيرة حدًّا حدًّا (مربع كل حد والحد المضاعف)، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$E = 2x^2 - 17x + 30$"
+        ],
+        "result": "b = -17"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "العدد $c$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $ax^2 + bx + c$ : اكتب العدد $c$ فقط",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-NASHR-QAWS-SALIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بعد الحساب، اقرأ العدد $c$ في الشكل المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 2x^2 - 17x + 30$ إذن $c = 30$ .",
+        "incorrect": "طبّق المتطابقة الشهيرة حدًّا حدًّا (مربع كل حد والحد المضاعف)، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$E = 2x^2 - 17x + 30$"
+        ],
+        "result": "c = 30"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "lead": "حلّل العبارة $E$ إلى جداء عاملين من الدرجة الأولى.",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $(2x - 5)(x + m)$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "-6",
+      "misconceptionSignatures": [
+        {
+          "value": "-4",
+          "id": "MISC-TAHLIL-ISHARA-QAWS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العامل $(2x - 5)$ مشترك بين الحدّين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرجه، وانتبه إلى الإشارة − أمام الجداء الثاني."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بسّط ما بداخل القوس الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = (2x - 5)(x - 6)$ إذن $m = -6$ .",
+        "incorrect": "تحقّق من تحليلك بنشر الجداء: يجب أن تجد العبارة الأصلية."
+      },
+      "solution": {
+        "lines": [
+          "$E = (2x - 5)(2x - 5) - (x + 1)(2x - 5)$",
+          "$E = (2x - 5)[(2x - 5) - (x + 1)]$",
+          "$E = (2x - 5)(2x - 5 - x - 1)$"
+        ],
+        "result": "E = (2x - 5)(x - 6)"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "lead": "حل المعادلة: $(2x - 5)(x - 6) = 0$ .",
+      "statement": "الحلّ الأصغر:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "5/2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يكون جداء معدومًا إذا كان أحد عامليه على الأقل معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلتين من الدرجة الأولى، ثم حلّ كل واحدة منهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{5}{2}$ .",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة من الدرجة الأولى، ثم رتّب الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "$(2x - 5)(x - 6) = 0$ يعني أنّ: $2x - 5 = 0$ أو $x - 6 = 0$",
+          "أي: $x = \\dfrac{5}{2}$ أو $x = 6$",
+          "إذن للمعادلة حلّان هما $\\dfrac{5}{2}$ و $6$"
+        ],
+        "result": "x = \\dfrac{5}{2}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "الحلّ الأكبر:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة الثانية من الدرجة الأولى، ثم قارن الحلّين."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 6$ .",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة من الدرجة الأولى، ثم رتّب الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "إذن للمعادلة حلّان هما $\\dfrac{5}{2}$ و $6$"
+        ],
+        "result": "x = 6"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "statement": "حل المتراجحة: $2x^2 - 17x + 30 \\leqslant 2x^2 + 13$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة هي الأعداد $x$ حيث $x \\leq k$ أو $x \\geq k$ : اكتب العدد الحدّي $k$ فقط (عدد صحيح أو كسر a/b)",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احذف $2x^2$ من الطرفين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عند القسمة على عدد سالب يتغيّر اتجاه المتباينة."
+        }
+      ],
+      "feedback": {
+        "correct": "$x \\geqslant 1$ .",
+        "incorrect": "انقل الحدود التي تحتوي على المجهول إلى طرف والأعداد إلى الطرف الآخر، ثم اقسم على المعامل."
+      },
+      "solution": {
+        "lines": [
+          "$2x^2 - 17x + 30 \\leqslant 2x^2 + 13$",
+          "$-17x \\leqslant 13 - 30$",
+          "$-17x \\leqslant -17$",
+          "نقسم على $-17$ (عدد سالب) فيتغيّر اتجاه المتباينة: $x \\geqslant 1$"
+        ],
+        "result": "x \\geqslant 1"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

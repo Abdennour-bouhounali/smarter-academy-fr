@@ -1,0 +1,246 @@
+{
+  "id": "ex-1am-adad-nisbiya-siyaqat-l5-005",
+  "lessonCode": "adad-nisbiya-siyaqat",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — محطّة الأرصاد",
+    "estimatedMinutes": 12,
+    "tags": [
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "سجّلت محطّة أرصاد قراءات الأسبوع (بالدرجات): $5$ ؛ $-2$ ؛ $-6$ ؛ $0$ ؛ $2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "سجّلت المحطّة صباحًا القراءات الآتية : $5$ ؛ $-2$ ؛ $-6$ ؛ $0$ ؛ $2$ . أيّ هذه القراءات أبرد؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-REL-SIGNBIG"
+        },
+        {
+          "id": "B",
+          "content": "$2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-REL-SIGNBIG"
+        },
+        {
+          "id": "C",
+          "content": "$0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-REL-SIGNBIG"
+        },
+        {
+          "id": "D",
+          "content": "$-6$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الجهة التي يقع فيها كلّ عدد من الصفر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما تحت الصفر أخفض ممّا فوقه، والأبعد تحت الصفر هو الأخفض."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن مواضع المستوى لا أحجام الأعداد المكتوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "الأبرد هو أدنى مستوى للسائل : $-6$ .",
+        "incorrect": "الأبرد ليس الأكبر عددًا : العدد السالب أصغر من الصفر ومن كلّ عدد موجب."
+      },
+      "solution": {
+        "lines": [
+          "نرتّب القراءات من الأصغر إلى الأكبر",
+          "الأصغر هو الأبرد : $-6$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما المسافة إلى الصفر للعدد $-6$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "-6",
+          "id": "MISC-REL-NEGDIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يقوله العدد : الجهة أم البعد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي عدد التدريجات بين المستوى والصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احذف الإشارة تجد المسافة إلى الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "المسافة إلى الصفر للعدد $-6$ هي $6$ .",
+        "incorrect": "المسافة لا تكون سالبة : هي العدد دون إشارته."
+      },
+      "solution": {
+        "lines": [
+          "المسافة هي عدد التدريجات بين $-6$ والصفر",
+          "$6$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اكتب معاكس العدد $-2$ .",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "-2",
+          "id": "MISC-REL-OPPSAME"
+        },
+        {
+          "value": "-3",
+          "id": "MISC-REL-OPPNEXT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العدد على الجهاز ثمّ انظر أين يقف ظلّه في المرآة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المعاكس له المسافة نفسها إلى الصفر على الجهة الأخرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "غيّر الإشارة وأبقِ المسافة."
+        }
+      ],
+      "feedback": {
+        "correct": "معاكس $-2$ هو $2$ : المسافة نفسها إلى الصفر على الجهة الأخرى.",
+        "incorrect": "المعاكس يقع على الجهة الأخرى من الصفر وبالمسافة نفسها."
+      },
+      "solution": {
+        "lines": [
+          "$-2$ : المسافة $2$ تحت الصفر",
+          "المعاكس : المسافة نفسها على الجهة الأخرى، $2$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "في قائمة الأعداد النسبية $5$ ؛ $-2$ ؛ $-6$ ؛ $0{,}5$ ؛ $2$ ، كم عددًا سالبًا؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-REL-COUNTPOS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ الأعداد التي تسبقها الإشارة − ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السالب هو ما يقع تحت الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقرأ القائمة عددًا عددًا وضع علامة على السالبة."
+        }
+      ],
+      "feedback": {
+        "correct": "الأعداد السالبة 2 : هي التي تسبقها الإشارة − .",
+        "incorrect": "السالب يقع تحت الصفر."
+      },
+      "solution": {
+        "lines": [
+          "نعدّ الأعداد التي تسبقها الإشارة −",
+          "2"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

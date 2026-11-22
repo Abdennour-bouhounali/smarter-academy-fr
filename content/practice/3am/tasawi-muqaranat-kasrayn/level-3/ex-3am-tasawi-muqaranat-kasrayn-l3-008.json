@@ -1,0 +1,195 @@
+{
+  "id": "ex-3am-tasawi-muqaranat-kasrayn-l3-008",
+  "lessonCode": "tasawi-muqaranat-kasrayn",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أرتّب تنازليًا",
+    "estimatedMinutes": 10,
+    "tags": [
+      "ترتيب كسور",
+      "توحيد المقامات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الكسور $\\dfrac{3}{5} ، \\dfrac{5}{8} ، \\dfrac{7}{12} ، \\dfrac{2}{3}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "رتّب الكسور $\\dfrac{3}{5} ، \\dfrac{5}{8} ، \\dfrac{7}{12} ، \\dfrac{2}{3}$ ترتيبًا تنازليًا .",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{7}{12} > \\dfrac{5}{8} > \\dfrac{3}{5} > \\dfrac{2}{3}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-NUMERATORS"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{2}{3} > \\dfrac{5}{8} > \\dfrac{3}{5} > \\dfrac{7}{12}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكسور المطلوب ترتيبها؟ وما الترتيب المطلوب: تصاعدي أم تنازلي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور كلّها بمقام مشترك ثمّ قارن البسوط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بمقارنة كلّ كسرين متجاورين في ترتيبك."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2}{3} > \\dfrac{5}{8} > \\dfrac{3}{5} > \\dfrac{7}{12}$ .",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "المقام المشترك $120$ : $\\dfrac{3}{5} = \\dfrac{72}{120} ، \\dfrac{5}{8} = \\dfrac{75}{120} ، \\dfrac{7}{12} = \\dfrac{70}{120} ، \\dfrac{2}{3} = \\dfrac{80}{120}$ .",
+          "الترتيب التنازلي : $\\dfrac{2}{3} > \\dfrac{5}{8} > \\dfrac{3}{5} > \\dfrac{7}{12}$ ."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "اكتب بالمقام 60.",
+      "statement": "جد العدد $x$ حيث $\\dfrac{3}{5} = \\dfrac{x}{60}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "36",
+      "misconceptionSignatures": [
+        {
+          "value": "58",
+          "id": "MISC-TASAWI-ADDSAME"
+        },
+        {
+          "value": "100",
+          "id": "MISC-TASAWI-CROSSWRONG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في أيّ موضع يوجد العدد المجهول؟ وما الكسر الآخر في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كسران متساويان جداءاهما المتصالبان متساويان: اكتب المعادلة المناسبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة كتابة المساواة بعد التعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 36$ لأنّ $3 \\times 60 = 5 \\times x$ .",
+        "incorrect": "كسران متساويان جداءاهما المتصالبان متساويان: اكتب المعادلة بدقّة وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{5} = \\dfrac{x}{60}$ ، إذن $3 \\times 60 = 5 \\times x$ .",
+          "$x = 36$ ."
+        ],
+        "result": "x = 36"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "جد العدد $x$ حيث $\\dfrac{7}{12} = \\dfrac{x}{60}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "35",
+      "misconceptionSignatures": [
+        {
+          "value": "55",
+          "id": "MISC-TASAWI-ADDSAME"
+        },
+        {
+          "value": "720/7",
+          "id": "MISC-TASAWI-CROSSWRONG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في أيّ موضع يوجد العدد المجهول؟ وما الكسر الآخر في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كسران متساويان جداءاهما المتصالبان متساويان: اكتب المعادلة المناسبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة كتابة المساواة بعد التعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 35$ لأنّ $7 \\times 60 = 12 \\times x$ .",
+        "incorrect": "كسران متساويان جداءاهما المتصالبان متساويان: اكتب المعادلة بدقّة وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{7}{12} = \\dfrac{x}{60}$ ، إذن $7 \\times 60 = 12 \\times x$ .",
+          "$x = 35$ ."
+        ],
+        "result": "x = 35"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

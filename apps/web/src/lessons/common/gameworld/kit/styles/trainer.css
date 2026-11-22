@@ -1,0 +1,343 @@
+/* ───────── « تدرّب » on a card of the knowledge page: the game look and the exam look ───────── */
+.di-page__body.is-training {
+  grid-template-columns: 1.15fr 1fr;
+}
+/* while training the panel widens and the map keeps 1.15 of 2.15 instead of 1.75 of 2.75: the WHOLE map is drawn at
+   that ratio (0.84), so no card is squeezed or runs into its neighbour. Below 1101 px the cards have their own smaller
+   shape and need no scale. */
+@media (min-width: 1101px) {
+  .di-page__body.is-training .di-kmap__in {
+    zoom: 0.84;
+  }
+}
+.di-knode__stars {
+  position: absolute;
+  bottom: -9px;
+  inset-inline-end: 8px;
+  padding: 0 0.3rem;
+  border-radius: 999px;
+  background: #0d1a45;
+  border: 1px solid #fbbf24;
+  color: #fbbf24;
+  font-size: 0.6rem;
+  font-style: normal;
+  line-height: 1.5;
+}
+.di-trainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  height: 100%;
+}
+.di-trainer__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.di-trainer__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.15rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.9rem; /* 12 px or more also when a full sheet is fitted ×0.96 at 1024×768 (2026-11-19) */
+  font-weight: 800;
+}
+.di-trainer__badge.is-game {
+  background: #7dfcff;
+  color: #06202b;
+}
+.di-trainer__badge.is-exam {
+  background: #fff;
+  color: #1e293b;
+}
+.di-trainer__dots {
+  display: inline-flex;
+  gap: 5px;
+  margin-inline-start: auto;
+}
+.di-trainer__dots i {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(125, 252, 255, 0.35);
+  border: 2px solid transparent;
+}
+.di-trainer__dots i.is-exam {
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.4);
+}
+.di-trainer__dots i.is-now {
+  border-color: #fbbf24;
+  transform: scale(1.25);
+}
+.di-trainer__dots i.is-ok {
+  background: #34d399;
+}
+.di-trainer__dots i.is-late {
+  background: #fbbf24;
+}
+.di-trainer__dots i.is-ko {
+  background: #fb923c;
+}
+.di-trainer__best {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 0.9rem;
+}
+.di-tap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 1rem;
+  border-radius: 1.3rem;
+  background: radial-gradient(ellipse at 50% 0%, rgba(59, 91, 190, 0.55), rgba(6, 14, 38, 0.6));
+  border: 1.5px solid rgba(125, 252, 255, 0.4);
+}
+.di-tap__say {
+  margin: 0;
+  font-size: 1.7rem;
+  font-weight: 900;
+  text-align: center;
+}
+.di-tap__say--quote {
+  font-size: 1.45rem;
+}
+.di-tap__gates {
+  display: flex;
+  gap: 0.9rem;
+}
+.di-tap__gates button {
+  width: 5.2rem;
+  height: 5.6rem;
+  border-radius: 2.6rem 2.6rem 0.5rem 0.5rem;
+  border: 3px solid #6f9dff;
+  border-bottom-width: 7px;
+  background: rgba(111, 157, 255, 0.18);
+  color: #fff;
+  font:
+    900 2rem 'Cairo',
+    sans-serif;
+  cursor: pointer;
+  transition:
+    transform 0.12s,
+    background 0.15s;
+}
+.di-tap__gates button:hover:not(:disabled) {
+  transform: translateY(-4px);
+  background: rgba(111, 157, 255, 0.38);
+}
+.di-tap__gates button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+.di-tf {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+}
+.di-tf button {
+  min-width: 6.5rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 1rem;
+  border: 2.5px solid currentColor;
+  background: none;
+  color: inherit;
+  font:
+    800 1.15rem 'Cairo',
+    sans-serif;
+  cursor: pointer;
+  opacity: 0.85;
+}
+.di-tf button.is-on,
+.di-tf button:hover:not(:disabled) {
+  opacity: 1;
+  background: #fbbf24;
+  border-color: #fbbf24;
+  color: #3b2a06;
+}
+/* the exam look: a sheet of paper */
+.di-sheet {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 0.9rem 1.1rem 1rem;
+  border-radius: 0.5rem;
+  background: #fffdf6;
+  color: #1e293b;
+  border: 1px solid #d6d3c4;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.4);
+  background-image: repeating-linear-gradient(#fffdf6 0 2.05rem, #e7e3d2 2.05rem calc(2.05rem + 1px));
+}
+.di-sheet__q {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 2.05rem;
+}
+.di-sheet__q b {
+  margin-inline-end: 0.3rem;
+  padding: 0 0.5rem;
+  border-radius: 0.3rem;
+  background: #1e293b;
+  color: #fff;
+  font-size: 0.9rem;
+}
+.di-sheet__statement {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-align: center;
+}
+.di-sheet__line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+.di-sheet select {
+  height: 2.5rem;
+  padding: 0 0.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid #1e293b;
+  background: #fff;
+  color: #1e293b;
+  font:
+    800 1.05rem 'Cairo',
+    sans-serif;
+}
+.di-root .di-num--tr {
+  height: 2.5rem;
+  border: 2px solid #1e293b;
+  background: #fff;
+  color: #1e293b;
+  font-size: 1.35rem;
+  border-radius: 0.5rem;
+}
+.di-root .di-num--tr:focus {
+  background: #fff8db;
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.5);
+}
+/* ───────── a FRACTION in its own shape: the numerator over a real bar over the denominator ─────────
+   THE ONE PLACE of this look in the kit (2026-11-20): the trainer's form (`Trainer.jsx › FormLines`, a token
+   `{ frac: { n, d } }`) and any other screen of the kit that writes a fraction by hand (the forge's last step) use these
+   classes — `di-frac` around, `di-frac__bar` between, the numerator first. Colours follow the text (currentColor), so the
+   same rule reads on the white sheet and on a dark panel; a screen only sizes its boxes. Printed parts are <b>. */
+.di-frac {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  vertical-align: middle;
+  gap: 0.18rem;
+  margin: 0 0.2rem;
+  line-height: 1.1;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+.di-frac > b {
+  font-weight: 800;
+}
+.di-frac__bar {
+  display: block;
+  align-self: stretch;
+  min-width: 1.2em;
+  height: 3px;
+  border-radius: 2px;
+  background: currentColor;
+}
+/* on the exam sheet: a typed fraction is two boxes a little lower than a lone box, so the line keeps its height in check
+   (2 × 2.15rem + the bar); a box holds three digits */
+.di-root .di-frac .di-num--tr {
+  height: 2.15rem;
+  font-size: 1.2rem;
+}
+.di-sheet__reasons {
+  display: grid;
+  gap: 0.3rem;
+}
+.di-sheet__reasons small {
+  font-weight: 800;
+}
+.di-sheet__reasons button {
+  padding: 0.25rem 0.7rem;
+  border-radius: 0.5rem;
+  border: 1.5px solid #94a3b8;
+  background: #fff;
+  color: #1e293b;
+  font:
+    600 0.95rem/1.7 'Cairo',
+    sans-serif;
+  text-align: start;
+  cursor: pointer;
+}
+.di-sheet__reasons button.is-on {
+  border-color: #1e293b;
+  background: #fde68a;
+}
+.di-sheet .di-tf button {
+  border-color: #1e293b;
+  color: #1e293b;
+  padding: 0.25rem 1rem;
+  font-size: 1rem;
+}
+.di-sheet__check {
+  align-self: center;
+  min-height: 2.5rem;
+  background: #1e293b;
+  color: #fff;
+  border: 0;
+}
+.di-btn.di-sheet__check,
+.di-btn.di-sheet__check:hover {
+  background: #1e293b;
+  transition: opacity 0.15s;
+}
+.di-sheet__check:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.di-trainer__fb {
+  margin: 0;
+  padding: 0.5rem 0.9rem;
+  border-radius: 1rem;
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.8;
+}
+.di-trainer__fb b {
+  margin-inline-end: 0.3rem;
+}
+.di-trainer__fb.is-ok {
+  background: rgba(22, 163, 74, 0.9);
+}
+.di-trainer__fb.is-hint {
+  background: rgba(251, 191, 36, 0.16);
+  border: 1.5px solid #fbbf24;
+  color: #fde68a;
+}
+.di-trainer__fb.is-fix {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid #fb923c;
+}
+.di-trainer__next {
+  align-self: center;
+}
+.di-trainer--done {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.di-trainer--done h4 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: inherit;
+}
+.di-trainer--done p {
+  margin: 0;
+}

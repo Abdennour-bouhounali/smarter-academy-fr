@@ -1,0 +1,215 @@
+{
+  "id": "ex-3am-tabsit-hadhf-aqwas-l2-002",
+  "lessonCode": "tabsit-hadhf-aqwas",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — هل يجتمع $3x$ و $3x^2$؟",
+    "estimatedMinutes": 6,
+    "tags": [
+      "حدود متشابهة",
+      "تبرير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يقول أحد التلاميذ: « $3x + 3x^2 = 6x^2$ لأن العددين متساويان »."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب قيمة $3x + 3x^2$ من أجل $x = 2$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "18",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى، ويُستحسن أن تعوّض في الشكل المبسّط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويات العمليات: القوى، ثم الضرب، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالتعويض في العبارة قبل تبسيطها: القيمة لا تتغيّر."
+        }
+      ],
+      "feedback": {
+        "correct": "$3x + 3x^2 = 18$ من أجل $x = 2$ .",
+        "incorrect": "عوّض $x$ بالعدد المعطى في الشكل المبسّط واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 2 + 3 \\times 2^2 = 6 + 12 = 18$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "احسب قيمة $6x^2$ من أجل $x = 2$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "24",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى، ويُستحسن أن تعوّض في الشكل المبسّط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويات العمليات: القوى، ثم الضرب، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالتعويض في العبارة قبل تبسيطها: القيمة لا تتغيّر."
+        }
+      ],
+      "feedback": {
+        "correct": "$6x^2 = 24$ من أجل $x = 2$ .",
+        "incorrect": "عوّض $x$ بالعدد المعطى في الشكل المبسّط واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$6 \\times 2^2 = 6 \\times 4 = 24$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل المساواة $3x + 3x^2 = 6x^2$ صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-X-X2-MERGED"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود المتشابهة: الحدود التي لها الجزء الحرفي نفسه ($x^2$ مع $x^2$، و $x$ مع $x$، والأعداد مع الأعداد)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع معاملات كل نوع بإشاراتها، ولا تجمع حدًّا في $x$ مع حدّ في $x^2$ أو مع عدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في العبارة قبل التبسيط وبعده: يجب أن تعطيا القيمة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "لا، الطرفان عبارتان مختلفتان.",
+        "incorrect": "بسّط الطرف الأول ثم قارن، أو عوّض $x$ بعدد صغير في الطرفين."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $x = 2$ الطرف الأول يساوي $18$ والطرف الثاني يساوي $24$ .",
+          "إذن المساواة خاطئة: $3x$ و $3x^2$ حدّان غير متشابهين."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "برّر لماذا لا يمكن تبسيط العبارة $3x + 3x^2$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود المتشابهة: الحدود التي لها الجزء الحرفي نفسه ($x^2$ مع $x^2$، و $x$ مع $x$، والأعداد مع الأعداد)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع معاملات كل نوع بإشاراتها، ولا تجمع حدًّا في $x$ مع حدّ في $x^2$ أو مع عدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في العبارة قبل التبسيط وبعده: يجب أن تعطيا القيمة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الحدّان $3x$ و $3x^2$ ليس لهما الجزء الحرفي نفسه ($x$ و $x^2$): ليسا متشابهين.",
+          "لا نجمع إلا معاملات الحدود المتشابهة، و $x$ و $x^2$ لا يأخذان القيمة نفسها (من أجل $x = 2$ : $2$ و $4$).",
+          "إذن $3x + 3x^2$ مكتوبة على أبسط شكل."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

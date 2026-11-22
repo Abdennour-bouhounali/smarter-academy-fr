@@ -1,0 +1,144 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muadalat-l1-009",
+  "lessonCode": "wadiya-idmajiya-muadalat",
+  "level": 1,
+  "metadata": {
+    "title": "أي الصيغتين أقل تكلفة؟",
+    "estimatedMinutes": 3,
+    "tags": [
+      "ترييض",
+      "مقارنة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-muadalat_P2",
+      "modelledOn": "situation"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "حرصًا على صحة الشباب ونظافة المكان، تقترح قاعة رياضة صيغتين:\n– الصيغة الأولى: 40DA للحصة الواحدة.\n– الصيغة الثانية: اشتراك قدره 150DA و 10DA للحصة الواحدة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب المبلغ المدفوع حسب كل صيغة من أجل 4 حصص.",
+      "statement": "المبلغ حسب الصيغة الأولى:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المبلغ بـ DA",
+      "expectedAnswer": "160",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب عدد الحصص في ثمن الحصة."
+        }
+      ],
+      "feedback": {
+        "correct": "$160$ .",
+        "incorrect": "أعد الحساب خطوة خطوة، مع احترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$40 \\times 4 = 160$"
+        ],
+        "result": "160DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "المبلغ حسب الصيغة الثانية:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المبلغ بـ DA",
+      "expectedAnswer": "190",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب عدد الحصص في ثمن الحصة، ثم أضف الاشتراك."
+        }
+      ],
+      "feedback": {
+        "correct": "$190$ .",
+        "incorrect": "أعد الحساب خطوة خطوة، مع احترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$10 \\times 4 + 150 = 40 + 150$",
+          "$= 190$"
+        ],
+        "result": "190DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما هي الصيغة الأقل تكلفة من أجل 4 حصص؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الصيغة الأولى",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الصيغة الثانية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المبلغين المحسوبين في السؤال السابق."
+        }
+      ],
+      "feedback": {
+        "correct": "الصيغة الأولى.",
+        "incorrect": "قارن المبلغين: الأقل تكلفة هو الأصغر."
+      },
+      "solution": {
+        "lines": [
+          "$160 < 190$ ، إذن الصيغة الأولى هي الأقل تكلفة من أجل 4 حصص."
+        ],
+        "result": "الصيغة الأولى"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

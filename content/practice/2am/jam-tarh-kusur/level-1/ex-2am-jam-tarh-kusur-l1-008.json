@@ -1,0 +1,136 @@
+{
+  "id": "ex-2am-jam-tarh-kusur-l1-008",
+  "lessonCode": "jam-tarh-kusur",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مقروء قصّة في ثلاثة أيّام",
+    "estimatedMinutes": 6,
+    "tags": [
+      "جمع كسرين",
+      "طرح كسرين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "قرأت سلمى $\\dfrac{2}{9}$ من قصّة يوم الإثنين و $\\dfrac{4}{9}$ منها يوم الثلاثاء ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما الكسر الذي يمثّل ما قرأته سلمى في اليومين معًا ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "2/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1/3",
+          "id": "MISC-JAMKASR-DENSUM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الجزءان اللذان تبحث عن مجموعهما أو عن الباقي بعدهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد ثمّ اجمع، والباقي نحصل عليه بالطرح من الكلّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل الناتج إن أمكن وتحقّق أنّه يبقى أصغر من الكلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2}{3}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2}{9} + \\dfrac{4}{9} = \\dfrac{2 + 4}{9} = \\dfrac{6}{9}$ .",
+          "نختزل بالقسمة على $3$ : $\\dfrac{6}{9} = \\dfrac{2}{3}$ ."
+        ],
+        "result": "\\dfrac{2}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما الكسر الذي يمثّل الفرق بين ما قرأته يوم الثلاثاء وما قرأته يوم الإثنين ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "2/9",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1/9",
+          "id": "MISC-JAMKASR-DENSUM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الجزءان اللذان تبحث عن مجموعهما أو عن الباقي بعدهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد ثمّ اجمع، والباقي نحصل عليه بالطرح من الكلّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل الناتج إن أمكن وتحقّق أنّه يبقى أصغر من الكلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2}{9}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{4}{9} - \\dfrac{2}{9} = \\dfrac{4 - 2}{9} = \\dfrac{2}{9}$ ."
+        ],
+        "result": "\\dfrac{2}{9}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

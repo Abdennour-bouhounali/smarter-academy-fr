@@ -1,0 +1,320 @@
+{
+  "id": "ex-1am-kitabat-adad-tabii-l5-004",
+  "lessonCode": "kitabat-adad-tabii",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — نصف ماراطون المدينة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "كيلومتر",
+      "عدد الآلاف",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تنظّم المدينة نصف ماراطون في جوّ من الروح الرياضية، مسافته $21\\,097$ m.\nالجزء الأول: يريد المنظّمون كتابة المسافة على اللافتات.\nالجزء الثاني: يملك المنظّمون 1250 قارورة ماء يضعونها في صناديق من 100 قارورة، ويخصّصون صندوقا ممتلئا لكل محطة من محطات المسار الـ 15."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "كيف تُقرأ مسافة السباق بالمتر؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "واحد وعشرون ألفا وتسعمائة وسبعون",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-RANK-NAME"
+        },
+        {
+          "id": "B",
+          "content": "واحد وعشرون ألفا وسبعة وتسعون",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "اثنان واحد صفر تسعة سبعة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-DIGIT-BY-DIGIT"
+        },
+        {
+          "id": "D",
+          "content": "ألفان ومائة وسبعة وتسعون",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-ZERO-PLACE"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزّئ العدد إلى فئات من ثلاثة أرقام انطلاقا من اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ كل فئة كعدد أصغر من 1000 ثم اذكر اسم فئتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى المراتب الفارغة (الأصفار)."
+        }
+      ],
+      "feedback": {
+        "correct": "$21\\,097$ يُقرأ « واحد وعشرون ألفا وسبعة وتسعون ».",
+        "incorrect": "نجزّئ العدد إلى فئات من ثلاثة أرقام انطلاقا من اليمين، ثم نقرأ الفئات من اليسار، كل فئة باسمها."
+      },
+      "solution": {
+        "lines": [
+          "$21\\,|\\,097$",
+          "نقرأ فئة فئة: « واحد وعشرون ألفا وسبعة وتسعون »."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كم كيلومترا كاملا في مسافة السباق؟ (الكيلومتر 1000 m)",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "21",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-KITABA-DIGIT-COUNT"
+        },
+        {
+          "value": "2",
+          "id": "MISC-KITABA-RANKSHIFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الآلاف هو عدد المجموعات من 1000 التي نكوّنها من العدد كله، لا الرقم وحده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احذف الأرقام التي على يمين مرتبة الآلاف."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: اضرب جوابك في 1000 ثم أضف ما بقي."
+        }
+      ],
+      "feedback": {
+        "correct": "$21\\,097 = 21 \\times 1000 + 97$: عدد الآلاف هو 21، أمّا رقم الآلاف فهو 1.",
+        "incorrect": "رقم المرتبة هو ما يبقى فيها وحدها؛ أمّا عدد وحداتها فنحسب فيه كل ما يمكن تجميعه منها في العدد كله."
+      },
+      "solution": {
+        "lines": [
+          "$21\\,097 = 21 \\times 1000 + 97$",
+          "إذن عدد الآلاف في العدد $21\\,097$ هو 21، ورقم الآلاف هو 1."
+        ],
+        "result": "21"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "كم صندوقا ممتلئا يحضّر المنظّمون؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-KITABA-DIGIT-COUNT"
+        },
+        {
+          "value": "1",
+          "id": "MISC-KITABA-RANKSHIFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد المئات هو عدد المجموعات من 100 التي نكوّنها من العدد كله، لا الرقم وحده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احذف الأرقام التي على يمين مرتبة المئات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: اضرب جوابك في 100 ثم أضف ما بقي."
+        }
+      ],
+      "feedback": {
+        "correct": "$1250 = 12 \\times 100 + 50$: عدد المئات هو 12، أمّا رقم المئات فهو 2.",
+        "incorrect": "رقم المرتبة هو ما يبقى فيها وحدها؛ أمّا عدد وحداتها فنحسب فيه كل ما يمكن تجميعه منها في العدد كله."
+      },
+      "solution": {
+        "lines": [
+          "$1250 = 12 \\times 100 + 50$",
+          "إذن عدد المئات في العدد 1250 هو 12، ورقم المئات هو 2."
+        ],
+        "result": "12"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "كم قارورة تبقى خارج الصناديق الممتلئة؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "50",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم قارورة في الصناديق الممتلئة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$1250 = 12 \\times 100 + 50$: تبقى 50 قارورة.",
+        "incorrect": "الباقي هو ما لا يكفي لملء صندوق آخر."
+      },
+      "solution": {
+        "lines": [
+          "$1250 = 12 \\times 100 + 50$",
+          "تبقى 50 قارورة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ج",
+      "statement": "هل تكفي الصناديق الممتلئة لكل محطات المسار؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-DIGIT-COUNT"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن عدد الصناديق الممتلئة بعدد المحطات."
+        }
+      ],
+      "feedback": {
+        "correct": "لا: 12 صندوقا لـ 15 محطة.",
+        "incorrect": "عدد الصناديق هو عدد المئات في 1250."
+      },
+      "solution": {
+        "lines": [
+          "عدد المئات في 1250 هو 12.",
+          "12 < 15، إذن الصناديق الممتلئة لا تكفي."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "برّر قرارك باستعمال عدد المئات في 1250.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم مئة في 1250؟"
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك بالحل النموذجي سطرا بسطر."
+      },
+      "solution": {
+        "lines": [
+          "$1250 = 12 \\times 100 + 50$: نملأ 12 صندوقا وتبقى 50 قارورة.",
+          "المحطات 15 و 12 < 15، فتبقى 3 محطات دون صندوق ممتلئ."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

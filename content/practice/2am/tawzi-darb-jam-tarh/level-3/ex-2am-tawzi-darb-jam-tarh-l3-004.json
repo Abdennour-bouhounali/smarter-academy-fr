@@ -1,0 +1,221 @@
+{
+  "id": "ex-2am-tawzi-darb-jam-tarh-l3-004",
+  "lessonCode": "tawzi-darb-jam-tarh",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أنشر عبارة فيها حرف",
+    "estimatedMinutes": 10,
+    "tags": [
+      "حرف",
+      "نشر"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-67",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $C = 4 \\times (x - 6)$ حيث $x$ عدد أكبر من أو يساوي $6$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ كتابة هي نشر للعبارة $C = 4 \\times (x - 6)$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$4x - 6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-NOTATION"
+        },
+        {
+          "id": "B",
+          "content": "$4x - 24$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$4x + 24$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-SIGNCHANGE"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "$4 \\times (x - 6) = 4x - 24$",
+          "جداء عدد في الحرف $x$ يُكتب بحذف علامة الضرب."
+        ]
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد الذي أمام القوسين يضرب الحدّين معًا، والحرف $x$ أحدهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء عدد في الحرف $x$ يُكتب بحذف علامة الضرب: $a \\times x$ تُكتب $ax$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر نتيجتك بقيمة بسيطة للحرف $x$: يجب أن يعطي الطرفان العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتابة الصحيحة هي $4x - 24$ .",
+        "incorrect": "العدد الذي يضرب القوسين يضرب كلّ حدّ بالعملية نفسها التي بين الحدّين: راجع كلّ خيار بحساب الطرفين."
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب قيمة $4 \\times (x - 6)$ من أجل $x$ يساوي $9$ .",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "12",
+      "solution": {
+        "lines": [
+          "$4 \\times (9 - 6) = 12$"
+        ],
+        "result": "12"
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف $x$ بالعدد المعطى في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ وليس $a + x$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة: ما بين القوسين أوّلًا إن وُجد، ثم الضرب، ثم الجمع أو الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times (9 - 6) = 12$",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$."
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب قيمة $4x - 24$ من أجل $x$ يساوي $9$ .",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "12",
+      "solution": {
+        "lines": [
+          "$4 \\times 9 - 24 = 12$"
+        ],
+        "result": "12"
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف $x$ بالعدد المعطى في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ وليس $a + x$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة: ما بين القوسين أوّلًا إن وُجد، ثم الضرب، ثم الجمع أو الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 9 - 24 = 12$",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$."
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "احسب قيمة $4x - 24$ من أجل $x$ يساوي $6$ .",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "0",
+      "solution": {
+        "lines": [
+          "$4 \\times 6 - 24 = 0$"
+        ],
+        "result": "0"
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف $x$ بالعدد المعطى في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ وليس $a + x$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة: ما بين القوسين أوّلًا إن وُجد، ثم الضرب، ثم الجمع أو الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 6 - 24 = 0$",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$."
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

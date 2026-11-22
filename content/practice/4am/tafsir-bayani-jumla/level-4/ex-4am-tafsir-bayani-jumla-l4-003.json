@@ -1,0 +1,258 @@
+{
+  "id": "ex-4am-tafsir-bayani-jumla-l4-003",
+  "lessonCode": "tafsir-bayani-jumla",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2018 — حل جملة وتفسيره البياني",
+    "estimatedMinutes": 10,
+    "tags": [
+      "معامل التوجيه",
+      "حل وحيد",
+      "تفسير بياني"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tafsir-bayani-jumla_P2",
+      "modelledOn": "BEM 2018 II (II-02)"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2018",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الجملة:",
+    "formulas": [
+      "\\begin{cases} 5x - 2y = 1 \\\\ 3x + 4y = 11 \\end{cases}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "اكتب كل معادلة على الشكل $y = ax + b$ ، ثم أعط معامل توجيه المستقيم الذي يمثلها.",
+      "statement": "معامل توجيه المستقيم الممثل للمعادلة الأولى:",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "2,5",
+      "misconceptionSignatures": [
+        {
+          "value": "-2,5",
+          "id": "MISC-JUMLA-ISHARA-Y"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعادلة من الشكل $ax + by = c$ : نريد أن يبقى $y$ وحده في طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل حدّ $x$ إلى الطرف الثاني مع تغيير إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم اقسم كل الحدود على معامل $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 2{,}5$ : معامل $x$ بعد عزل $y$ .",
+        "incorrect": "انقل حدّ $x$ بتغيير إشارته، ثم اقسم الطرفين على معامل $y$ (بإشارته)."
+      },
+      "solution": {
+        "lines": [
+          "$5x - 2y = 1$",
+          "$-2y = -5x + 1$",
+          "نقسم كل الحدود على $-2$ :",
+          "$y = 2{,}5x - 0{,}5$",
+          "إذن: $a = 2{,}5$ و $b = -0{,}5$ ."
+        ],
+        "result": "y = 2{,}5x - 0{,}5"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "معامل توجيه المستقيم الممثل للمعادلة الثانية:",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-0,75",
+      "misconceptionSignatures": [
+        {
+          "value": "0,75",
+          "id": "MISC-JUMLA-ISHARA-Y"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعادلة من الشكل $ax + by = c$ : نريد أن يبقى $y$ وحده في طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل حدّ $x$ إلى الطرف الثاني مع تغيير إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم اقسم كل الحدود على معامل $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = -0{,}75$ : معامل $x$ بعد عزل $y$ .",
+        "incorrect": "انقل حدّ $x$ بتغيير إشارته، ثم اقسم الطرفين على معامل $y$ (بإشارته)."
+      },
+      "solution": {
+        "lines": [
+          "$3x + 4y = 11$",
+          "$4y = -3x + 11$",
+          "نقسم كل الحدود على $4$ :",
+          "$y = -0{,}75x + 2{,}75$",
+          "إذن: $a = -0{,}75$ و $b = 2{,}75$ ."
+        ],
+        "result": "y = -0{,}75x + 2{,}75"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "استنتج عدد حلول الجملة دون حلها.",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لها حل وحيد",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "ليس لها حل",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-HALAT"
+        },
+        {
+          "id": "C",
+          "content": "لها عدد غير منته من الحلول",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-HALAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن معاملي التوجيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مستقيمان معاملا توجيههما مختلفان: ما وضعهما؟"
+        }
+      ],
+      "feedback": {
+        "correct": "معاملا التوجيه مختلفان: المستقيمان متقاطعان.",
+        "incorrect": "إذا اختلف معاملا التوجيه فالمستقيمان متقاطعان في نقطة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{2} \\neq -\\dfrac{3}{4}$ : المستقيمان متقاطعان.",
+          "لهما نقطة مشتركة وحيدة، إذن للجملة حل وحيد."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "حل الجملة، ثم أعط تفسيرا بيانيا لهذا الحل.",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": {
+        "x": "1",
+        "y": "2"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "2",
+            "y": "1"
+          },
+          "id": "MISC-JUMLA-BAYANI-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب طرفي المعادلة الأولى في 2 ثم اجمع المعادلتين طرفا لطرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض قيمة $x$ في إحدى المعادلتين لتجد $y$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حل الجملة هو إحداثيا نقطة تقاطع المستقيمين: $(x ; y)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "هي إحداثيات نقطة تقاطع المستقيمين.",
+        "incorrect": "تخلّص من $y$ بالجمع بعد الضرب في 2، ثم احسب $y$ ، واكتب الفاصلة أولا."
+      },
+      "solution": {
+        "lines": [
+          "نضرب طرفي المعادلة الأولى في 2: $10x - 4y = 2$ .",
+          "نجمع مع المعادلة الثانية طرفا لطرف: $13x = 13$ ، إذن $x = 1$ .",
+          "نعوّض في المعادلة الثانية: $3 + 4y = 11$ ، إذن $y = 2$ .",
+          "حل الجملة هو الثنائية $(1 ; 2)$ .",
+          "التفسير البياني: المستقيمان الممثلان لمعادلتي الجملة يتقاطعان في النقطة $(1 ; 2)$ ."
+        ],
+        "result": "(1 ; 2)"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

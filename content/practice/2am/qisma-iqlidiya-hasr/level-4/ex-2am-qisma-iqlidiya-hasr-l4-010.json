@@ -1,0 +1,241 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l4-010",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — ادّخار ياسمين",
+    "estimatedMinutes": 9,
+    "tags": [
+      "ادّخار",
+      "بالزيادة",
+      "دج"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "تدّخر ياسمين 350 دج كل أسبوع. تريد شراء قاموس ثمنه 4200 دج، ثم دراجة ثمنها 7500 دج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "كم أسبوعًا تحتاج لثمن القاموس؟ (احسب $\\frac{4200}{350}$)",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الأسابيع",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-HASR-SIFR-SARIM"
+        },
+        {
+          "value": "11",
+          "id": "MISC-HASR-SIFR-SARIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 4200 على 350."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي معدوم: حاصل القسمة هو القيمة المضبوطة."
+        }
+      ],
+      "feedback": {
+        "correct": "$4200 = 350 \\times 12$ ، إذن $\\frac{4200}{350} = 12$.",
+        "incorrect": "ابحث عن العدد الطبيعي الذي إذا ضربناه في 350 نجد 4200."
+      },
+      "solution": {
+        "lines": [
+          "$350 \\times 12 = 4200$",
+          "إذن $\\frac{4200}{350} = 12$."
+        ],
+        "result": "12"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بعد شراء القاموس تبدأ الادّخار من جديد للدراجة. احسب حاصل القسمة الإقليدية للعدد 7500 على 350.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "21",
+      "misconceptionSignatures": [
+        {
+          "value": "150",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "20",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "value": "22",
+          "id": "MISC-HASR-IZAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 7500 من 350 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 350 دون أن نتجاوز 7500."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من 350."
+        }
+      ],
+      "feedback": {
+        "correct": "$7500 = 350 \\times 21 + 150$ و $150 < 350$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 350 فلا يتجاوز الجداء 7500، والباقي عندئذ أصغر من 350."
+      },
+      "solution": {
+        "lines": [
+          "$350 \\times 21 = 7350$ و $350 \\times 22 = 7700$",
+          "$7350 \\le 7500 < 7700$ ، إذن الحاصل هو 21."
+        ],
+        "result": "q = 21"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كم أسبوعًا يلزمها لتجمع ثمن الدراجة؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد الأسابيع",
+      "expectedAnswer": "22",
+      "misconceptionSignatures": [
+        {
+          "value": "21",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "value": "150",
+          "id": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 7500 على 350."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يبقى شيء بعد المجموعات الكاملة؟ ماذا نفعل به؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد اللازم هو القيمة المقرّبة إلى الوحدة بالزيادة عندما لا يكون الحاصل عددًا طبيعيًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$7500 = 350 \\times 21 + 150$: 21 كاملة ويبقى 150، فيلزم 22.",
+        "incorrect": "لا تنسَ ما يبقى بعد المجموعات الكاملة: يحتاج هو أيضًا إلى مكان."
+      },
+      "solution": {
+        "lines": [
+          "$7500 = 350 \\times 21 + 150$",
+          "$21 < \\frac{7500}{350} < 22$ ، والباقي 150 يحتاج إلى واحدة أخرى: يلزم 22 (القيمة المقرّبة بالزيادة)."
+        ],
+        "result": "22"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "كم دينارًا يبقى لها بعد شراء الدراجة؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "200",
+      "misconceptionSignatures": [
+        {
+          "value": "150",
+          "id": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب ما تدّخره في عدد الأسابيع اللازمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح منه ثمن الدراجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$350 \\times 22 = 7700$ و $7700 - 7500 = 200$ دج.",
+        "incorrect": "ما ادّخرته في الأسابيع اللازمة ناقص ثمن الدراجة."
+      },
+      "solution": {
+        "lines": [
+          "$350 \\times 22 = 7700$",
+          "$7700 - 7500 = 200$"
+        ],
+        "result": "200 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

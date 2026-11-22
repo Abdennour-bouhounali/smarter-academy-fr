@@ -1,0 +1,309 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-harfi-l5-009",
+  "lessonCode": "wadiya-idmajiya-harfi",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2008 — المدجنة",
+    "estimatedMinutes": 14,
+    "tags": [
+      "نمذجة",
+      "متطابقات شهيرة",
+      "تحليل",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-harfi_P2",
+      "modelledOn": "BEM 2008 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2008",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يريد مربٍّ للدواجن بولاية الأغواط، حريص على نظافة مدجنته وسلامة طيوره، بناء مدجنة أرضيتها مستطيلة الشكل، طولها يزيد على عرضها بـ $6$ m ، ومساحتها $432\\,m^2$ . نرمز بـ $x$ لعرضها بالمتر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عبّر بدلالة $x$ عن مساحة أرضية المدجنة على شكل مجموع مبسّط.",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "تُكتب المساحة على الشكل $x^2 + mx$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الطول $= x + 6$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المساحة = الطول × العرض، ثم انشر."
+        }
+      ],
+      "feedback": {
+        "correct": "$x^2 + 6x$ إذن $m = 6$ .",
+        "incorrect": "عبّر عن الأطوال بدلالة $x$ أولا، ثم طبّق قاعدة المساحة أو المحيط، وانشر وبسّط."
+      },
+      "solution": {
+        "lines": [
+          "المساحة $= x(x + 6)$"
+        ],
+        "result": "x^2 + 6x"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "تحقّق أنّ: $x^2 + 6x - 432 = (x + 3)^2 - 441$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر $(x + 3)^2$ بمتطابقة شهيرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح 441 وقارن."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك سطرًا بسطر بالحل النموذجي، وانتبه إلى الإشارات عند النشر."
+      },
+      "solution": {
+        "lines": [
+          "$(x + 3)^2 - 441 = x^2 + 6x + 9 - 441 = x^2 + 6x - 432$"
+        ],
+        "result": "x^2 + 6x - 432 = (x + 3)^2 - 441"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "حلّل العبارة $x^2 + 6x - 432$ إلى جداء عاملين من الدرجة الأولى — العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $x^2 + 6x - 432$ على الشكل $(x + m)(x + n)$ حيث $m < n$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "-18",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب 441 على شكل مربع عدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل $a^2 - b^2 = (a - b)(a + b)$ مع $a = x + 3$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بسّط ما بداخل كل قوس."
+        }
+      ],
+      "feedback": {
+        "correct": "$x^2 + 6x - 432 = (x - 18)(x + 24)$ إذن $m = -18$ .",
+        "incorrect": "تحقّق من تحليلك بنشر الجداء: يجب أن تجد العبارة الأصلية."
+      },
+      "solution": {
+        "lines": [
+          "$x^2 + 6x - 432 = (x + 3)^2 - 21^2$",
+          "$= (x + 3 - 21)(x + 3 + 21)$"
+        ],
+        "result": "x^2 + 6x - 432 = (x - 18)(x + 24)"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $x^2 + 6x - 432$ على الشكل $(x + m)(x + n)$ حيث $m < n$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "24",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بعد الحساب، اقرأ العدد $n$ في الشكل المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$x^2 + 6x - 432 = (x - 18)(x + 24)$ إذن $n = 24$ .",
+        "incorrect": "تحقّق من تحليلك بنشر الجداء: يجب أن تجد العبارة الأصلية."
+      },
+      "solution": {
+        "lines": [
+          "$x^2 + 6x - 432 = (x - 18)(x + 24)$"
+        ],
+        "result": "n = 24"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ا",
+      "lead": "استنتج بعدي أرضية المدجنة.",
+      "statement": "العرض:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بـ m",
+      "expectedAnswer": "18",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المساحة $432$ تعطي المعادلة $x^2 + 6x - 432 = 0$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل التحليل السابق، و $x$ موجب."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 18\\,m$ .",
+        "incorrect": "اكتب المعادلة على شكل جداء معدوم، واحتفظ بالحلّ الموجب فقط."
+      },
+      "solution": {
+        "lines": [
+          "$x^2 + 6x = 432$ يعني $(x - 18)(x + 24) = 0$",
+          "$x = 18$ أو $x = -24$ ، و $x$ موجب"
+        ],
+        "result": "x = 18\\,m"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ب",
+      "statement": "الطول:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بـ m",
+      "expectedAnswer": "24",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الطول يزيد على العرض بـ 6."
+        }
+      ],
+      "feedback": {
+        "correct": "$24\\,m$ .",
+        "incorrect": "أضف 6 إلى العرض الذي وجدته."
+      },
+      "solution": {
+        "lines": [
+          "الطول $= 18 + 6$",
+          "تحقّق: $18 \\times 24 = 432$"
+        ],
+        "result": "24\\,m"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "statement": "☜ يُركَّب على طول كل من الجدارين الطويلين مجرى للعلف، ثمن المتر الواحد منه 1300DA . ما تكلفة المجريين؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المبلغ بـ DA",
+      "expectedAnswer": "62400",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الجداران الطويلان طول كل منهما يساوي طول المدجنة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب الطول الكلي في ثمن المتر."
+        }
+      ],
+      "feedback": {
+        "correct": "$62400DA$ .",
+        "incorrect": "أعد قراءة المعطيات، واحسب كل كمية على حدة ثم اجمع."
+      },
+      "solution": {
+        "lines": [
+          "الطول الكلي للمجريين: $2 \\times 24 = 48$ m",
+          "التكلفة $= 48 \\times 1300$"
+        ],
+        "result": "62400DA"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "id": "ex-4am-inshaat-talis-l1-002",
+  "lessonCode": "inshaat-talis",
+  "level": 1,
+  "metadata": {
+    "title": "ثلاث قطع متقايسة دون قياس",
+    "estimatedMinutes": 6,
+    "tags": [
+      "تقسيم قطعة",
+      "إنشاء"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_inshaat-talis_P1",
+      "modelledOn": "method-divide",
+      "adaptedFrom": "ex-4am-inshaat-talis-l1-002"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "$[AB]$ قطعة مستقيم طولها $5\\,\\mathrm{cm}$ . نريد تقسيمها إلى ثلاث قطع متقايسة باستعمال المسطرة غير المدرّجة والمدور والكوس فقط."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أنشئ النقطتين $M$ و $N$ من $[AB]$ اللتين تقسمانها إلى ثلاث قطع متقايسة ( $M$ الأقرب إلى $A$ ).",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب خطوات الإنشاء مرقّمة (أو صوّر ورقتك)، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$5 \\div 3$ لا يُقاس بالضبط بمسطرة مدرّجة: استعمل نصف مستقيم مساعد مبدؤه $A$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كم قطعة متقايسة تعيّن عليه بالمدور؟ وأي علامة تصلها بالنقطة $B$ ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "ثلاث قطع متقايسة على نصف المستقيم، نصل الثالثة بـ $B$ ثم نرسم الموازيين المارّين بالعلامتين الأولى والثانية.",
+        "incorrect": "قارن إنشاءك بالحل النموذجي خطوة خطوة، ثم صحّح الخطوة التي تختلف."
+      },
+      "solution": {
+        "lines": [
+          "1) نرسم نصف مستقيم $[Ax)$ لا يحمل القطعة $[AB]$ .",
+          "2) نعيّن عليه بالمدور، ابتداءً من $A$ ، 3 قطع متقايسة متتالية (بفتحة مدور كيفية) تنتهي عند العلامة $P_{3}$ .",
+          "3) نصل العلامة $P_{3}$ بالنقطة $B$ .",
+          "4) نرسم بالمسطرة والكوس الموازي للمستقيم $(P_{3}B)$ المارّ بالعلامة $P_{1}$ : يقطع $[AB]$ في $M$ .",
+          "5) نرسم بالمسطرة والكوس الموازي للمستقيم $(P_{3}B)$ المارّ بالعلامة $P_{2}$ : يقطع $[AB]$ في $N$ .",
+          "التبرير: $(P_{1}M) \\parallel (P_{3}B)$ ، فحسب خاصية طالس في المثلثين $AP_{1}M$ و $AP_{3}B$ : $\\dfrac{AM}{AB} = \\dfrac{AP_{1}}{AP_{3}} = \\dfrac{1}{3}$ .",
+          "وبنفس الطريقة $\\dfrac{AN}{AB} = \\dfrac{2}{3}$ : فالقطع $[AM]$ و $[MN]$ و $[NB]$ متقايسة."
+        ]
+      },
+      "timeSeconds": 360
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب الطول $AN$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري: الطول بـ cm (قيمة مضبوطة)",
+      "expectedAnswer": "10/3",
+      "misconceptionSignatures": [
+        {
+          "value": "5/3",
+          "id": "MISC-TALIS-ADAD-AL-ALAMAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$[AN]$ تتكوّن من قطعتين من القطع الثلاث المتقايسة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طول قطعة واحدة هو $\\dfrac{5}{3}\\,\\mathrm{cm}$ ؛ لا تستعمل قيمة مقرّبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$AN = \\dfrac{2}{3} \\times 5 = \\dfrac{10}{3}\\,\\mathrm{cm}$ .",
+        "incorrect": "$AN$ قطعتان من ثلاث قطع متقايسة طولها الكلي $5\\,\\mathrm{cm}$ ؛ اكتب النتيجة كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AN}{AB} = \\dfrac{2}{3}$ (العلامة الثانية من ثلاث)",
+          "$AN = \\dfrac{2}{3} \\times 5$"
+        ],
+        "result": "AN = \\dfrac{10}{3}\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l2-001",
+  "lessonCode": "mafhum-dawaran",
+  "level": 2,
+  "metadata": {
+    "title": "تمرين 1 — أربع قطع متقايسة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "صورة قطعة",
+      "زوايا"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-1",
+      "page": 158,
+      "section": "صورة شكل بدوران",
+      "number": 1
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 158): [OA]، [OB]، [OC]، [OD] قطع مستقيم متقايسة (الشكل).",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "C": [
+          2.7816,
+          1.1238
+        ],
+        "B": [
+          1.1722,
+          2.7615
+        ],
+        "A": [
+          -1.362,
+          2.673
+        ],
+        "D": [
+          -1.1722,
+          -2.7615
+        ]
+      },
+      "segments": [
+        [
+          "O",
+          "A"
+        ],
+        [
+          "O",
+          "B"
+        ],
+        [
+          "O",
+          "C"
+        ],
+        [
+          "O",
+          "D"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "O",
+          "from": "B",
+          "to": "A",
+          "label": "50°",
+          "radius": 24
+        },
+        {
+          "at": "O",
+          "from": "C",
+          "to": "B",
+          "label": "45°",
+          "radius": 34
+        },
+        {
+          "at": "O",
+          "from": "A",
+          "to": "D",
+          "label": "130°",
+          "radius": 24
+        },
+        {
+          "at": "O",
+          "from": "D",
+          "to": "C",
+          "label": "135°",
+          "radius": 30
+        }
+      ],
+      "ariaLabel": "أربع قطع متقايسة [OA] و [OB] و [OC] و [OD]، B و O و D على استقامية؛ الزوايا AOB = 50° و BOC = 45° و COD = 135° و AOD = 130°",
+      "maxWidth": 360
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما هي صورة [OC] بالدوران الذي مركزه O وزاويته $95^\\circ$ في الاتجاه المباشر؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "[OA]",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "[OB]",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ZAWIYA-UKHRA"
+        },
+        {
+          "id": "C",
+          "content": "[OD]",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ITTIJAH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الزوايا المكتوبة على الشكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من C في الاتجاه المباشر (عكس عقارب الساعة) نلتقي B أولا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الزوايا من [OC] حتى تبلغ زاوية الدوران."
+        }
+      ],
+      "feedback": {
+        "correct": "$45^\\circ + 50^\\circ = 95^\\circ$ : صورة [OC] هي [OA].",
+        "incorrect": "اجمع الزوايا المتتالية من C عكس عقارب الساعة."
+      },
+      "difficulty": 2
+    },
+    {
+      "id": "q2",
+      "statement": "ما هي صورة [OD] بالدوران الذي مركزه O وزاويته $230^\\circ$ في الاتجاه المباشر؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "[OB]",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ZAWIYA-UKHRA"
+        },
+        {
+          "id": "B",
+          "content": "[OA]",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "[OC]",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ZAWIYA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من D عكس عقارب الساعة نلتقي C ثم B ثم A."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "B و O و D على استقامية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الزوايا المتتالية من D."
+        }
+      ],
+      "feedback": {
+        "correct": "$135^\\circ + 45^\\circ + 50^\\circ = 230^\\circ$ : صورة [OD] هي [OA].",
+        "incorrect": "اجمع زوايا الأجزاء من D حتى تبلغ زاوية الدوران."
+      },
+      "difficulty": 2
+    },
+    {
+      "id": "q3",
+      "statement": "ما هي القطعة التي صورتها [OC] بالدوران الذي مركزه O وزاويته $265^\\circ$ في الاتجاه المباشر؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "[OD]",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ZAWIYA-UKHRA"
+        },
+        {
+          "id": "B",
+          "content": "[OB]",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ZAWIYA-UKHRA"
+        },
+        {
+          "id": "C",
+          "content": "[OA]",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المطلوب نقطة الانطلاق، لا نقطة الوصول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من أي قطعة ننطلق لنصل إلى [OC] عكس عقارب الساعة؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب كل قطعة واجمع الزوايا حتى [OC]."
+        }
+      ],
+      "feedback": {
+        "correct": "من A: $130^\\circ + 135^\\circ = 265^\\circ$ نصل إلى C.",
+        "incorrect": "ابحث عن نقطة الانطلاق التي يوصل منها الدوران إلى [OC]."
+      },
+      "difficulty": 3
+    }
+  ]
+}

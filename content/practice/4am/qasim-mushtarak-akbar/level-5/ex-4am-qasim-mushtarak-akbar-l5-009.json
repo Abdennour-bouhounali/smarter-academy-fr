@@ -1,0 +1,260 @@
+{
+  "id": "ex-4am-qasim-mushtarak-akbar-l5-009",
+  "lessonCode": "qasim-mushtarak-akbar",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2022 — حملة تشجير بالشريعة",
+    "estimatedMinutes": 11,
+    "tags": [
+      "PGCD",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-mushtarak-akbar_P3",
+      "modelledOn": "BEM 2022 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "نظّمت محافظة الغابات لولاية البليدة حملة تشجير بالحظيرة الوطنية للشريعة، حبًّا في الوطن وحفاظًا على جمال بيئته، ووفّرت لها 165 شجيرة صنوبر و 110 شجيرات أرز. يُقسَّم المتطوعون إلى أفواج متماثلة، يغرس كل فوج نفس عدد شجيرات الصنوبر ونفس عدد شجيرات الأرز، بحيث تُغرس كل الشجيرات.\n• يضم كل فوج 4 متطوعين.\n• ثمن شجيرة الصنوبر 450DA، وثمن شجيرة الأرز 600DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما هو أكبر عدد من الأفواج يمكن تكوينه ؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد الأفواج)",
+      "expectedAnswer": "55",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        },
+        {
+          "value": "11",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الأفواج يجب أن يقسم 165 و 110 معًا: فهو قاسم مشترك لهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب قواسم 165 وقواسم 110، ثم استخرج القواسم المشتركة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أكبر عدد ممكن هو أكبر هذه القواسم المشتركة."
+        }
+      ],
+      "feedback": {
+        "correct": "أكبر عدد من الأفواج هو PGCD(165 ; 110).",
+        "incorrect": "عدد الأفواج قاسم مشترك للعددين 165 و 110؛ والمطلوب أكبرها، لا محتوى الواحدة منها."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 165 هي: 1 ، 3 ، 5 ، 11 ، 15 ، 33 ، 55 ، 165",
+          "قواسم العدد 110 هي: 1 ، 2 ، 5 ، 10 ، 11 ، 22 ، 55 ، 110",
+          "القواسم المشتركة للعددين 165 و 110 هي: 1 ، 5 ، 11 ، 55",
+          "أكبرها هو 55، إذن أكبر عدد من الأفواج هو PGCD(165 ; 110) = 55."
+        ],
+        "result": "PGCD(165 ; 110) = 55"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما هو عدد شجيرات الصنوبر التي يغرسها كل فوج ؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "55",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع شجيرات الصنوبر كلها بالتساوي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 165 على العدد الذي وجدته في السؤال السابق."
+        }
+      ],
+      "feedback": {
+        "correct": "$165 \\div 55 = 3$",
+        "incorrect": "اقسم العدد الكلي (165) على أكبر عدد وجدته."
+      },
+      "solution": {
+        "lines": [
+          "$165 \\div 55 = 3$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما هو عدد شجيرات الأرز التي يغرسها كل فوج ؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "55",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع شجيرات الأرز كلها بالتساوي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 110 على العدد الذي وجدته في السؤال السابق."
+        }
+      ],
+      "feedback": {
+        "correct": "$110 \\div 55 = 2$",
+        "incorrect": "اقسم العدد الكلي (110) على أكبر عدد وجدته."
+      },
+      "solution": {
+        "lines": [
+          "$110 \\div 55 = 2$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "ما هو عدد المتطوعين اللازم في هذه الحالة ؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "220",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل أكبر عدد من الأفواج."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل فوج يضم 4 متطوعين."
+        }
+      ],
+      "feedback": {
+        "correct": "$55 \\times 4$",
+        "incorrect": "اضرب عدد الأفواج في عدد المتطوعين في الفوج الواحد."
+      },
+      "solution": {
+        "lines": [
+          "$55 \\times 4 = 220$",
+          "يلزم 220 متطوعًا."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "☜ احسب ثمن كل الشجيرات المغروسة في هذه الحملة.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (بالدينار)",
+      "expectedAnswer": "140250",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب ثمن شجيرات الصنوبر ثم ثمن شجيرات الأرز."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المبلغين."
+        }
+      ],
+      "feedback": {
+        "correct": "$165 \\times 450 + 110 \\times 600$",
+        "incorrect": "اضرب عدد كل نوع في ثمن الشجيرة منه، ثم اجمع."
+      },
+      "solution": {
+        "lines": [
+          "$165 \\times 450 = 74250$",
+          "$110 \\times 600 = 66000$",
+          "$74250 + 66000 = 140250$"
+        ],
+        "result": "140250DA"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

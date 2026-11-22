@@ -1,0 +1,65 @@
+{
+  "id": "ex-4am-misaha-hajm-kura-l4-008",
+  "lessonCode": "misaha-hajm-kura",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — خزان المدينة بالمتر المكعب",
+    "estimatedMinutes": 2,
+    "tags": [
+      "حجم الجلة",
+      "التدوير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_misaha-hajm-kura_P3",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "خزان ماء كروي فوق برج المدينة، نصف قطره الداخلي $4\\,\\mathrm{m}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما حجمه بالـ $\\mathrm{m}^3$ مدوّرا إلى الوحدة؟",
+      "learningPoints": [
+        {
+          "code": "4am_misaha-hajm-kura_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "268",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\mathcal{V} = \\frac{4}{3}\\pi \\times 64$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $\\frac{256}{3}\\pi$ بالحاسبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إلى الوحدة: لا أرقام بعد الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\frac{256}{3}\\pi \\approx 268\\,\\mathrm{m}^3$ .",
+        "incorrect": "إلى الوحدة نحذف الأرقام بعد الفاصلة بعد التدوير."
+      },
+      "difficulty": 4,
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TADWIR",
+          "value": "268.1"
+        }
+      ]
+    }
+  ]
+}

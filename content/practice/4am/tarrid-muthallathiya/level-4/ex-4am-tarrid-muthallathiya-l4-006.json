@@ -1,0 +1,182 @@
+{
+  "id": "ex-4am-tarrid-muthallathiya-l4-006",
+  "lessonCode": "tarrid-muthallathiya",
+  "level": 4,
+  "metadata": {
+    "title": "المعيّن: ضلعه ثم زاويته",
+    "estimatedMinutes": 9,
+    "tags": [
+      "معيّن",
+      "الظل",
+      "التدوير المبكّر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-muthallathiya_P3",
+      "modelledOn": "ex-26",
+      "adaptedFrom": "ex-4am-tarrid-muthallathiya-l4-008"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$ABCD$ معيّن قطراه $[AC]$ و $[BD]$ يتقاطعان في $O$ ، حيث $AC = 7\\,\\mathrm{cm}$ و $BD = 4\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب طول ضلع المعيّن بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm مدوّرا إلى 0,01",
+      "expectedAnswer": "4.03",
+      "misconceptionSignatures": [
+        {
+          "value": "5.5",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قطرا المعيّن متعامدان ومتناصفان: $OA = 3{,}5$ و $OB = 2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خاصية فيثاغورس في المثلث $AOB$ القائم في $O$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = \\sqrt{3{,}5^2 + 2^2} = \\sqrt{16{,}25} \\approx 4{,}03\\,\\mathrm{cm}$ .",
+        "incorrect": "استعمل نصفي القطرين، ثم مجموع المربعين."
+      },
+      "solution": {
+        "lines": [
+          "قطرا المعيّن متعامدان ومتناصفان: المثلث $AOB$ قائم في $O$ و $OA = 3{,}5$ و $OB = 2$ .",
+          "$AB^2 = 3{,}5^2 + 2^2 = 16{,}25$",
+          "$AB = \\sqrt{16{,}25} \\approx 4{,}0311$"
+        ],
+        "result": "AB \\approx 4{,}03\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب قيس الزاوية $\\widehat{OAB}$ بالتدوير إلى $0{,}1$ من الدرجة.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: قيس الزاوية بالدرجة مدوّرا إلى 0,1",
+      "expectedAnswer": "29.7",
+      "misconceptionSignatures": [
+        {
+          "value": "60.3",
+          "id": "MISC-MUTH-ZAWIYA-KHATI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $AOB$ القائم في $O$ ، الضلعان المعلومان: ما موقع كل منهما بالنسبة إلى الزاوية $\\widehat{OAB}$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب ظل الزاوية $\\widehat{OAB}$ ثم استعمل اللمسة العكسية ⁦2nd⁩ ثم ⁦tan⁻¹⁩ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الحاسبة مبرمجة على الدرجة، ثم دوّر النتيجة النهائية فقط."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan\\widehat{OAB} = \\dfrac{2}{3{,}5}$ ، ومنه $\\widehat{OAB} \\approx 29{,}7^{\\circ}$ .",
+        "incorrect": "المقابل للزاوية $A$ في المثلث $AOB$ هو $[OB]$ والمجاور $[OA]$ ."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $AOB$ القائم في $O$ : $\\tan\\widehat{OAB} = \\dfrac{OB}{OA} = \\dfrac{2}{3{,}5}$",
+          "باستعمال الآلة الحاسبة: $\\widehat{OAB} \\approx 29{,}7449^{\\circ}$"
+        ],
+        "result": "\\widehat{OAB} \\approx 29{,}7^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "استنتج قيس الزاوية $\\widehat{BAD}$ بالتدوير إلى الوحدة من الدرجة.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيس الزاوية بالدرجة مدوّرا إلى الوحدة",
+      "expectedAnswer": "59",
+      "misconceptionSignatures": [
+        {
+          "value": "60",
+          "id": "MISC-MUTH-TADWIR-MUBAKKIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القطر $[AC]$ منصّف للزاوية $\\widehat{BAD}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضاعف القيس الذي تعطيه الحاسبة، ثم دوّر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{BAD} = 2 \\times \\widehat{OAB} \\approx 59{,}49^{\\circ} \\approx 59^{\\circ}$ .",
+        "incorrect": "ضاعف القيس غير المدوّر إلى الوحدة؛ التدوير قبل المضاعفة يغيّر النتيجة."
+      },
+      "solution": {
+        "lines": [
+          "قطر المعيّن منصّف لزاويته: $\\widehat{BAD} = 2 \\times \\widehat{OAB}$",
+          "$\\widehat{BAD} \\approx 2 \\times 29{,}7449^{\\circ} = 59{,}4898^{\\circ}$",
+          "تنبيه: لو دوّرنا $\\widehat{OAB}$ إلى $30^{\\circ}$ قبل المضاعفة لوجدنا $60^{\\circ}$ (تدوير مبكّر)."
+        ],
+        "result": "\\widehat{BAD} \\approx 59^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

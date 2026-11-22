@@ -1,0 +1,128 @@
+{
+  "id": "ex-4am-tatbiqat-tanasub-l3-001",
+  "lessonCode": "tatbiqat-tanasub",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 23 — البذلة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "تخفيض",
+      "نسبة التخفيض"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-23",
+      "page": 73,
+      "section": "أوظّف تعلّماتي",
+      "number": 23,
+      "adaptedFrom": "ex-4am-tatbiqat-tanasub-l3-001"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "سعر بذلة قبل التخفيض 4500DA ، وبعد التخفيض 4140DA ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب معامل الدالة الخطية التي ترفق بالسعر قبل التخفيض السعر بعده.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المعامل فقط (عدد عشري بالفاصلة)",
+      "expectedAnswer": "0,92",
+      "misconceptionSignatures": [
+        {
+          "value": "25/23",
+          "id": "MISC-TANASUB-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$f(4500) = 4140$ و $f(x) = ax$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المعامل $a = \\dfrac{f(x)}{x}$ (الصورة على العدد)."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{4140}{4500} = 0{,}92$ .",
+        "incorrect": "المعامل هو السعر بعد التخفيض مقسوما على السعر قبله."
+      },
+      "solution": {
+        "lines": [
+          "$a \\times 4500 = 4140$",
+          "$a = \\dfrac{4140}{4500} = 0{,}92$"
+        ],
+        "result": "f(x) = 0{,}92x"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج نسبة هذا التخفيض.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $t$ فقط، دون الرمز % (عدد صحيح أو عشري بالفاصلة)",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "92",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        },
+        {
+          "value": "360",
+          "id": "MISC-NISBA-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعامل من الشكل $1 - \\dfrac{t}{100}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $1 - a$ ثم اكتبه على شكل نسبة مئوية."
+        }
+      ],
+      "feedback": {
+        "correct": "$1 - 0{,}92 = 0{,}08 = \\dfrac{8}{100}$ : التخفيض بنسبة 8% .",
+        "incorrect": "اكتب المعامل على الشكل $1 - \\dfrac{t}{100}$ واستخرج $t$ ."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}92 = 1 - 0{,}08 = 1 - \\dfrac{8}{100}$",
+          "نسبة التخفيض 8% ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

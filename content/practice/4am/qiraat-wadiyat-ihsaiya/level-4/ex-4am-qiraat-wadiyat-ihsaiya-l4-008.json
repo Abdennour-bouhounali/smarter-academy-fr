@@ -1,0 +1,151 @@
+{
+  "id": "ex-4am-qiraat-wadiyat-ihsaiya-l4-008",
+  "lessonCode": "qiraat-wadiyat-ihsaiya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2008 — نادي الدراجات بقسنطينة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "المتوسط",
+      "نمذجة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qiraat-wadiyat-ihsaiya_P3",
+      "modelledOn": "BEM 2008 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2008",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يتدرّب درّاج من نادي الدراجات بقسنطينة استعدادا لسباق جهوي. قطع خلال 9 أيام مسافات متوسطها 32 km في اليوم."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب المسافة الكلية التي قطعها خلال الأيام الـ 9 .",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المسافة بـ km",
+      "expectedAnswer": "288",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المتوسط = المسافة الكلية ÷ عدد الأيام."
+        }
+      ],
+      "feedback": {
+        "correct": "$9 \\times 32 = 288$ .",
+        "incorrect": "اضرب المتوسط في عدد الأيام."
+      },
+      "solution": {
+        "lines": [
+          "$9 \\times 32 = 288$"
+        ],
+        "result": "288\\,\\mathrm{km}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "قطع في اليوم العاشر 52 km . احسب متوسط المسافة اليومية خلال الأيام العشرة.",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المسافة بـ km",
+      "expectedAnswer": "34",
+      "misconceptionSignatures": [
+        {
+          "value": "42",
+          "id": "MISC-IHSA-MUTAWASSIT-MUTAWASSITAYN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أضف مسافة اليوم العاشر إلى المسافة الكلية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم على عدد الأيام الجديد."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{288 + 52}{10} = 34$ .",
+        "incorrect": "لا تحسب متوسط العددين 32 و 52: اليوم العاشر يوم واحد مقابل 9 أيام."
+      },
+      "solution": {
+        "lines": [
+          "$288 + 52 = 340$",
+          "$\\dfrac{340}{10} = 34$"
+        ],
+        "result": "34\\,\\mathrm{km}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كم كيلومترا يجب أن يقطع في اليوم الحادي عشر ليصبح متوسط الأيام الأحد عشر 35 km؟",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المسافة بـ km",
+      "expectedAnswer": "45",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة الكلية اللازمة للأيام الأحد عشر = 35 × 11 ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح منها ما قطعه في الأيام العشرة الأولى."
+        }
+      ],
+      "feedback": {
+        "correct": "$35 \\times 11 - 340 = 45$ .",
+        "incorrect": "احسب المسافة الكلية التي يتطلّبها المتوسط المطلوب، ثم اطرح ما قطعه فعلا."
+      },
+      "solution": {
+        "lines": [
+          "المسافة الكلية اللازمة: $35 \\times 11 = 385$",
+          "$385 - 340 = 45$"
+        ],
+        "result": "45\\,\\mathrm{km}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

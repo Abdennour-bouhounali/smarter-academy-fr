@@ -1,0 +1,380 @@
+{
+  "id": "ex-4am-dala-khattiya-l5-009",
+  "lessonCode": "dala-khattiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2017 — قطعة أرض لأخوين بعين تموشنت",
+    "estimatedMinutes": 14,
+    "tags": [
+      "وضعية إدماجية",
+      "مساحة بدلالة x"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_dala-khattiya_P1",
+      "modelledOn": "BEM 2017 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2017",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "قطعة أرض مستطيلة الشكل $ABCD$ بعين تموشنت، بعداها $AB = 30m$ و $AD = 20m$ ، يملكها الأخوان كريم ونبيل. قسّماها بالعدل والتراضي كما في الشكل: $M$ نقطة من $[AB]$ حيث $AM = x$ (بـ m) مع $0 \\leqslant x \\leqslant 30$ ؛ الجزء $AMD$ (مثلث) لكريم، والجزء $MBCD$ لنبيل. نسمّي $f(x)$ مساحة الجزء $AMD$ و $g(x)$ مساحة الجزء $MBCD$ (بـ $m^2$).",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          20
+        ],
+        "B": [
+          30,
+          20
+        ],
+        "C": [
+          30,
+          0
+        ],
+        "D": [
+          0,
+          0
+        ],
+        "M": [
+          12,
+          20
+        ]
+      },
+      "polygons": [
+        {
+          "points": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "tone": "slate"
+        },
+        {
+          "points": [
+            "A",
+            "M",
+            "D"
+          ],
+          "tone": "emerald"
+        }
+      ],
+      "segments": [
+        {
+          "from": "A",
+          "to": "M",
+          "label": "x"
+        },
+        {
+          "from": "M",
+          "to": "B"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "20m"
+        },
+        {
+          "from": "D",
+          "to": "C",
+          "label": "30m"
+        }
+      ],
+      "rightAngles": [
+        [
+          "D",
+          "A",
+          "B"
+        ]
+      ],
+      "labels": {
+        "A": "nw",
+        "B": "ne",
+        "C": "se",
+        "D": "sw",
+        "M": "n"
+      },
+      "ariaLabel": "قطعة أرض مستطيلة ABCD بعداها 30m و 20m ، والنقطة M من الضلع [AB] حيث AM = x ، والمثلث AMD مظلّل"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب مساحة الجزء $AMD$ من أجل $x = 12$ .",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "المساحة بـ $m^2$ (عدد فقط)",
+      "expectedAnswer": "120",
+      "misconceptionSignatures": [
+        {
+          "value": "240",
+          "id": "MISC-KHATTIYA-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $AMD$ قائم في $A$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحته = نصف جداء ضلعي الزاوية القائمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{12 \\times 20}{2} = 120$ .",
+        "incorrect": "مساحة المثلث القائم هي $\\dfrac{AM \\times AD}{2}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AM \\times AD}{2} = \\dfrac{12 \\times 20}{2} = 120$"
+        ],
+        "result": "120m^2"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اكتب $f(x)$ بدلالة $x$ على الشكل $f(x) = ax$ .",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-KHATTIYA-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض 12 بـ $x$ في الحساب السابق."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(x) = \\dfrac{20x}{2} = 10x$ : $f$ دالة خطية.",
+        "incorrect": "$f(x) = \\dfrac{AM \\times AD}{2}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = \\dfrac{x \\times 20}{2} = 10x$ : $f$ دالة خطية معاملها 10 ."
+        ],
+        "result": "f(x) = 10x"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "عبّر عن $g(x)$ بدلالة $x$ . هل $g$ دالة خطية؟",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KHATTIYA-AFFINE"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$g(x)$ = مساحة المستطيل − $f(x)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $g(0)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$g(x) = 600 - 10x$ و $g(0) = 600 \\neq 0$ .",
+        "incorrect": "صورة 0 بدالة خطية معدومة."
+      },
+      "solution": {
+        "lines": [
+          "مساحة المستطيل: $30 \\times 20 = 600$",
+          "$g(x) = 600 - 10x$ ، و $g(0) = 600 \\neq 0$ : $g$ ليست دالة خطية."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "جد $x$ حتى تكون مساحة الجزء $AMD$ مساوية لـ $150m^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الطول $x$ بـ m (عدد فقط)",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "1500",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "-15",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد المطلوب $x$ يحقق $f(x) = 150$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المعادلة $10x = 150$ : اقسم الطرفين على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{150}{10} = 15$ .",
+        "incorrect": "لا تحسب صورة العدد المعطى: ابحث عن العدد $x$ الذي صورته هذا العدد."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 150$ معناه $10x = 150$",
+          "$x = \\dfrac{150}{10} = 15$"
+        ],
+        "result": "x = 15m"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "جد $x$ حتى تكون مساحة الجزء $MBCD$ ضعف مساحة الجزء $AMD$ .",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الطول $x$ بـ m (عدد فقط)",
+      "expectedAnswer": "20",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة $g(x) = 2f(x)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$600 - 10x = 20x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$30x = 600$ ، إذن $x = 20$ .",
+        "incorrect": "اكتب المعادلة $g(x) = 2 f(x)$ ثم حلّها."
+      },
+      "solution": {
+        "lines": [
+          "$600 - 10x = 2 \\times 10x$",
+          "$600 = 30x$",
+          "$x = 20$"
+        ],
+        "result": "x = 20m"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "في معلم متعامد ومتجانس، مثّل بيانيا الدالتين $f$ و $g$ من أجل $0 \\leqslant x \\leqslant 30$ (نأخذ $1cm$ لكل $5m$ على محور الفواصل و $1cm$ لكل $100m^2$ على محور التراتيب).",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تمثيل دالة خطية مستقيم يشمل المبدأ $O$ ؛ تمثيل دالة تآلفية مستقيم لا يشمله في الغالب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب صورتي 0 و 30 بكل دالة."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "تمثيل $f$ قطعة مستقيم طرفاها $O(0 ; 0)$ و $(30 ; 300)$ .",
+          "تمثيل $g$ قطعة مستقيم طرفاها $(0 ; 600)$ و $(30 ; 300)$ ."
+        ]
+      },
+      "timeSeconds": 240
+    }
+  ]
+}

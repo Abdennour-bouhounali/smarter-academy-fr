@@ -1,0 +1,200 @@
+{
+  "id": "ex-3am-nisba-miawiya-3am-l2-002",
+  "lessonCode": "nisba-miawiya-3am",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — تخفيضات نهاية الموسم",
+    "estimatedMinutes": 7,
+    "tags": [
+      "تخفيض بنسبة مئوية",
+      "علّل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يخفّض تاجر ثمن آلة خياطة بنسبة $30\\,\\%$ في نهاية الموسم ليساعد الأسر على اقتنائها. ثمنها قبل التخفيض $7\\,800$ دج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما ثمنها بعد التخفيض؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "المبلغ بالدينار (دج)",
+      "expectedAnswer": "5460",
+      "misconceptionSignatures": [
+        {
+          "value": "10140",
+          "id": "MISC-NISBA3-COEF-DEC"
+        },
+        {
+          "value": "2340",
+          "id": "MISC-NISBA3-COEF-DEC"
+        },
+        {
+          "value": "7770",
+          "id": "MISC-NISBA3-ADD-T"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل الكمية تزداد أم تنقص؟ وما الكمية الأصلية؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التخفيض يُحسب على الكمية الأصلية: الناتج هو الأصل مضروبا في معامل أصغر من الواحد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب معامل التخفيض ثم اضرب فيه الكمية الأصلية، أو احسب التخفيض ثم اطرحه من الأصل."
+        }
+      ],
+      "feedback": {
+        "correct": "$5\\,460$ .",
+        "incorrect": "النسبة تُحسب على الكمية الأصلية؛ والناتج بعد التخفيض هو الأصل مضروبا في معامل أصغر من الواحد؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "معامل التخفيض بـ $30\\,\\%$ هو $1 - \\dfrac{30}{100} = 0{,}7$ .",
+          "الناتج: $7\\,800 \\times 0{,}7 = 5\\,460$ ."
+        ],
+        "result": "7\\,800 \\times 0{,}7 = 5\\,460"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما مبلغ التخفيض بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "المبلغ بالدينار (دج)",
+      "expectedAnswer": "2340",
+      "misconceptionSignatures": [
+        {
+          "value": "78",
+          "id": "MISC-NISBA3-DIV100-ONLY"
+        },
+        {
+          "value": "234000",
+          "id": "MISC-NISBA3-MULT-T"
+        },
+        {
+          "value": "7830",
+          "id": "MISC-NISBA3-ADD-T"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نأخذ منه النسبة؟ وما هي هذه النسبة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نسبة مئوية من عدد: نضرب هذا العدد في النسبة مقسومة على مئة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب النسبة على شكل كسر مقامه مئة، ثم احسب جداء العدد في هذا الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$2\\,340$ .",
+        "incorrect": "لحساب نسبة مئوية من عدد نضرب العدد في النسبة مقسومة على مئة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$30\\,\\%$ من $7\\,800$ هي $7\\,800 \\times \\dfrac{30}{100} = 2\\,340$ ."
+        ],
+        "result": "7\\,800 \\times \\dfrac{30}{100} = 2\\,340"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "يقول سامي: «الثمن الجديد هو $7\\,800 - 30 = 7\\,770$ دج». هل هذا القول صحيح؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيحة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NISBA3-ADD-T"
+        },
+        {
+          "id": "B",
+          "content": "خاطئة",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تنقلنا من الكمية الأصلية إلى الجديدة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن بين طريقتين: إضافة نسبة كعدد، وضرب في معامل مناسب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب مثالا بأعداد بسيطة لتتأكد من الحكم."
+        }
+      ],
+      "feedback": {
+        "correct": "خاطئة .",
+        "incorrect": "القرار يُبنى على الضرب في المعامل المناسب لا على جمع النسبة كعدد؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "النسبة المئوية لا تُطرح كعدد: التخفيض هو $30\\,\\%$ من $7\\,800$ أي $2\\,340$ دج، والثمن الجديد $5\\,460$ دج."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

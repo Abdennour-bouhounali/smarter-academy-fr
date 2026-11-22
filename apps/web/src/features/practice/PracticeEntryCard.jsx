@@ -1,9 +1,13 @@
 import { useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { Dumbbell, ArrowRight } from 'lucide-react';
+import { Dumbbell } from 'lucide-react';
+import { ArrowForward } from '../../components/common/DirectionalIcons';
 import { AuthContext } from '../../context/AuthContext';
 import { practiceHubPath } from './practiceCapability';
-import { levelCounts } from './practiceContent';
+import { useLearningViewer } from '../learning/learningViewer';
+import { levelCounts } from './practiceCounts';
+import { teacherBankPath } from './teacherBank';
 
 /**
  * « Commencer à pratiquer » — le pont entre une leçon et son entraînement.
@@ -19,11 +23,23 @@ import { levelCounts } from './practiceContent';
  * découverte après coup.
  */
 export default function PracticeEntryCard({ lessonId }) {
+  // Plateforme arabophone : aucun texte français en dur dans cette carte,
+  // qui s'affiche sur CHAQUE page de leçon.
+  const { t } = useTranslation('student');
   const { token } = useContext(AuthContext);
   const counts = levelCounts(lessonId);
   const total = Object.values(counts).reduce((sum, n) => sum + n, 0);
+  // La pratique est un espace ÉLÈVE (/espace/pratique, TEACHER_CLASSROOM
+  // § 8b) : un enseignant ou un administrateur qui lit la leçon n'y a pas de
+  // route — le lien le renvoyait vers /login puis vers son accueil.
+  // `tracksProgress` = élève ou visiteur (qui reçoit l'invitation à se connecter).
+  const { tracksProgress, isTeacher } = useLearningViewer();
 
   if (total === 0) return null;
+
+  if (isTeacher) return <TeacherPracticeEntry lessonId={lessonId} total={total} />;
+
+  if (!tracksProgress) return null;
 
   const levelCount = Object.keys(counts).length;
 
@@ -31,38 +47,64 @@ export default function PracticeEntryCard({ lessonId }) {
     <section className="rounded-3xl border-2 border-indigo-200 bg-gradient-to-br from-indigo-50 to-violet-50 p-6 sm:p-8">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-5">
         <div className="space-y-2 min-w-0">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/70 border border-indigo-200 text-indigo-700 font-mono text-xs font-semibold">
-            <Dumbbell className="w-3.5 h-3.5" aria-hidden="true" /> Entraînement
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/70 border border-indigo-200 text-nav-accent font-mono text-xs font-semibold">
+            <Dumbbell className="w-3.5 h-3.5" aria-hidden="true" /> {t('practice.entryTag')}
           </div>
           <h2 className="text-xl sm:text-2xl font-space font-extrabold text-slate-900">
-            Commencer à pratiquer
+            {t('practice.entryTitle')}
           </h2>
           <p className="text-sm text-slate-600 max-w-lg">
-            {total} exercices répartis sur {levelCount} niveaux, des bases au défi type bac.
-            Ce que tu montres ici compte dans la même évaluation que le test final.
+            {t('practice.entryBody', { total, levels: levelCount })}
           </p>
         </div>
 
         {token ? (
           <Link
             to={practiceHubPath(lessonId)}
-            className="shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold min-h-[52px] transition-colors"
+            className="shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-nav-accent hover:bg-[#3350c4] text-white font-bold min-h-[52px] transition-colors"
           >
-            Commencer à pratiquer <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            {t('practice.entryStart')} <ArrowForward className="w-4 h-4" aria-hidden="true" />
           </Link>
         ) : (
           <div className="shrink-0 space-y-2 text-center">
             <Link
               to="/login"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold min-h-[52px] transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-nav-accent hover:bg-[#3350c4] text-white font-bold min-h-[52px] transition-colors"
             >
-              Se connecter pour pratiquer
+              {t('practice.entryLogin')}
             </Link>
             <p className="text-xs text-slate-500 max-w-[16rem]">
-              Tes progrès sont enregistrés sur ton compte.
+              {t('practice.entryLoginNote')}
             </p>
           </div>
         )}
+      </div>
+    </section>
+  );
+}
+
+/**
+ * L'ENSEIGNANT a son propre بنك التمارين : parcourir et essayer, sans suivi (/enseignant/pratique).
+ * L'administrateur, lui, n'a pas de carte. Composant À PART : `teacher` est un namespace à la demande
+ * (BUNDLE_BOUNDARIES.md §3) — seul un enseignant le demande, jamais l'élève qui lit la même leçon.
+ */
+function TeacherPracticeEntry({ lessonId, total }) {
+  const { t } = useTranslation('teacher');
+  return (
+    <section className="rounded-3xl border-2 border-indigo-200 bg-gradient-to-br from-indigo-50 to-violet-50 p-6 sm:p-8" data-teacher-practice-entry>
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-5">
+        <div className="space-y-2 min-w-0">
+          <h2 className="flex items-center gap-2 text-xl sm:text-2xl font-space font-extrabold text-slate-900">
+            <Dumbbell className="w-5 h-5 text-nav-accent" aria-hidden="true" /> {t('practice.entryTitle')}
+          </h2>
+          <p className="text-sm text-slate-600 max-w-lg">{t('practice.entryBody', { total })}</p>
+        </div>
+        <Link
+          to={teacherBankPath(lessonId)}
+          className="shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-nav-accent hover:bg-[#3350c4] text-white font-bold min-h-[52px] transition-colors"
+        >
+          {t('practice.entryOpen')} <ArrowForward className="w-4 h-4" aria-hidden="true" />
+        </Link>
       </div>
     </section>
   );

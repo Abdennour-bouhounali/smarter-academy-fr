@@ -1,0 +1,120 @@
+{
+  "id": "ex-4am-tarrid-mushkila-l2-001",
+  "lessonCode": "tarrid-mushkila",
+  "level": 2,
+  "metadata": {
+    "title": "الأب وأبناؤه الثلاثة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "ترييض",
+      "أعمار"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-modelling",
+      "page": 49,
+      "section": "طرائق"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "شخص عمره 36 سنة يرعى أبناءه ويحسن تربيتهم، و أعمار أبنائه الثلاثة بالسنوات هي 4 ، 6 ، 8 على التوالي."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بعد كم سنة يكون عمر الأب يساوي مجموع أعمار أبنائه الثلاثة؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد السنوات (اكتب معادلتك في «مراحل الحساب»)",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "سمِّ $x$ عدد السنوات: كل شخص من الأربعة يكبر بـ $x$ سنة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد $x$ سنة: عمر الأب $36 + x$ ، وعمر كل ابن يزيد بـ $x$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مجموع أعمار الأبناء يزيد إذن بـ $3x$ : اكتب المعادلة ثم حلّها."
+        }
+      ],
+      "feedback": {
+        "correct": "$36 + x = (4 + x) + (6 + x) + (8 + x)$ تعطي $x = 9$ .",
+        "incorrect": "كل ابن يكبر بـ $x$ سنة، فمجموع أعمار الأبناء الثلاثة يزيد بـ $3x$ لا بـ $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "نسمّي $x$ عدد السنوات.",
+          "بعد $x$ سنة: عمر الأب $36 + x$ ، ومجموع أعمار الأبناء $(4 + x) + (6 + x) + (8 + x)$ .",
+          "المعادلة: $36 + x = (4 + x) + (6 + x) + (8 + x)$",
+          "$36 + x = 18 + 3x$",
+          "$36 - 18 = 3x - x$",
+          "$18 = 2x$",
+          "$x = 9$",
+          "إذن بعد 9 سنوات."
+        ],
+        "result": "x = 9"
+      },
+      "work": "required",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "تحقّق من النتيجة: احسب حينئذ مجموع أعمار الأبناء الثلاثة.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: مجموع الأعمار بالسنوات",
+      "expectedAnswer": "45",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أضف عدد السنوات إلى عمر كل ابن، ثم اجمع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن النتيجة بعمر الأب حينئذ."
+        }
+      ],
+      "feedback": {
+        "correct": "مجموع أعمار الأبناء 45 سنة، وهو عمر الأب بعد 9 سنوات: $36 + 9 = 45$ .",
+        "incorrect": "احسب عمر كل ابن بعد عدد السنوات الذي وجدته، ثم اجمع الأعمار الثلاثة."
+      },
+      "solution": {
+        "lines": [
+          "$(4 + 9) + (6 + 9) + (8 + 9) = 13 + 15 + 17 = 45$",
+          "وعمر الأب: $36 + 9 = 45$ : النتيجة صحيحة."
+        ],
+        "result": "45"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

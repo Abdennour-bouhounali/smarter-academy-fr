@@ -1,0 +1,116 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-aadad-l2-005",
+  "lessonCode": "wadiya-idmajiya-aadad",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2021 — العددان 1147 و 1073",
+    "estimatedMinutes": 4,
+    "tags": [
+      "القسمة الإقليدية",
+      "القاسم المشترك الأكبر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-aadad_P1",
+      "modelledOn": "BEM 2021 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان 1147 و 1073."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "جد باقي القسمة الإقليدية للعدد 1147 على 1073.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (الباقي)",
+      "expectedAnswer": "74",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-QISMA-HASIL-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم مرة يحتوي 1147 على 1073؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي r يحقق $1147 = 1073 \\times q + r$ مع $r < 1073$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$1147 = 1073 \\times 1 + 74$",
+        "incorrect": "اكتب المساواة $1147 = 1073 \\times q + r$ حيث r أصغر من 1073."
+      },
+      "solution": {
+        "lines": [
+          "$1147 = 1073 \\times 1 + 74$ و $74 < 1073$"
+        ],
+        "result": "r = 74"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج $PGCD(1147 ; 1073)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "37",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$PGCD(1147 ; 1073) = PGCD(1073 ; r)$ حيث r الباقي الذي وجدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "واصل القسمات المتتابعة إلى أن تجد باقيًا معدومًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$PGCD(1147 ; 1073) = PGCD(1073 ; 74) = PGCD(74 ; 37) = 37$",
+        "incorrect": "عوّض الزوج (1147 ; 1073) بالزوج (1073 ; الباقي)، ثم واصل القسمات حتى باقٍ معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$PGCD(1147 ; 1073) = PGCD(1073 ; 74)$",
+          "$1073 = 74 \\times 14 + 37$",
+          "$74 = 37 \\times 2 + 0$",
+          "آخر باقٍ غير معدوم هو 37."
+        ],
+        "result": "PGCD(1147 ; 1073) = 37"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

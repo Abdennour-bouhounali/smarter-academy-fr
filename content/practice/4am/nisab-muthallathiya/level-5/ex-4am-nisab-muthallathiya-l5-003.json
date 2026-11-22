@@ -1,0 +1,214 @@
+{
+  "id": "ex-4am-nisab-muthallathiya-l5-003",
+  "lessonCode": "nisab-muthallathiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2015 — منحدر مدخل مكتب البريد",
+    "estimatedMinutes": 20,
+    "tags": [
+      "وضعية إدماجية",
+      "الظل",
+      "تكلفة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_nisab-muthallathiya_P1",
+      "modelledOn": "BEM 2015 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "عند مدخل مكتب البريد في الحيّ، يريد مقاول إنجاز منحدر مستقيم لذوي الاحتياجات الخاصة، يصعد من الرصيف إلى عتبة الباب المرتفعة بـ $0{,}48\\,\\mathrm{m}$ عن الرصيف، ويمتدّ أفقيا على $6{,}4\\,\\mathrm{m}$ . يشترط القانون ألّا يتجاوز ظلّ زاوية ميل المنحدر عن الأفق العدد $0{,}08$ . ويحرص المقاول على إتقان العمل لأن المنحدر سيخدم من يحتاجونه كل يوم."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $\\tan\\alpha$ ، حيث $\\alpha$ زاوية ميل المنحدر عن الأفق.",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري",
+      "expectedAnswer": "3/40",
+      "misconceptionSignatures": [
+        {
+          "value": "40/3",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $ABC$ القائم في $B$ ، عيّن بالنسبة إلى الزاوية $\\alpha$ الوتر والضلعين المجاور والمقابل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ظل زاوية حادة = طول الضلع المقابل لها على طول الضلع المجاور لها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض بالأطوال ثم اختزل الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan\\alpha = \\dfrac{BC}{AB} = \\dfrac{0{,}48}{6{,}4} = \\dfrac{3}{40}$ .",
+        "incorrect": "راجع الضلعين: ظل الزاوية = طول الضلع المقابل لها على طول الضلع المجاور لها، ثم اختزل."
+      },
+      "solution": {
+        "lines": [
+          "نسمي $A$ بداية المنحدر على الرصيف، $C$ نهايته عند العتبة، و $B$ النقطة تحت $C$ في مستوى الرصيف: المثلث $ABC$ قائم في $B$ .",
+          "في المثلث $ABC$ القائم في $B$ لدينا: $\\tan\\alpha = \\dfrac{BC}{AB}$",
+          "$\\tan\\alpha = \\dfrac{0{,}48}{6{,}4}$"
+        ],
+        "result": "\\tan\\alpha = \\dfrac{3}{40}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل يطابق هذا المنحدر شرط القانون؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن $\\tan\\alpha$ بالعدد $0{,}08$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم: $\\tan\\alpha = 0{,}075 \\leq 0{,}08$ .",
+        "incorrect": "الظل = الارتفاع على الامتداد الأفقي (لا العكس)، ثم قارنه بالحد الأقصى."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan\\alpha = \\dfrac{0{,}48}{6{,}4} = 0{,}075$",
+          "و $0{,}075 \\leq 0{,}08$ : المنحدر يطابق الشرط."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب طول سطح المنحدر $AC$ بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m مدوّرا إلى 0,01",
+      "expectedAnswer": "6.42",
+      "misconceptionSignatures": [
+        {
+          "value": "6.88",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $ABC$ قائم في $B$ : خاصية فيثاغورس."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC = \\sqrt{6{,}4^2 + 0{,}48^2} \\approx 6{,}42\\,\\mathrm{m}$ .",
+        "incorrect": "مربع الوتر يساوي مجموع مربعي الضلعين الآخرين."
+      },
+      "solution": {
+        "lines": [
+          "بتطبيق خاصية فيثاغورس: $AC^2 = AB^2 + BC^2 = 40{,}96 + 0{,}2304 = 41{,}1904$",
+          "$AC = \\sqrt{41{,}1904} \\approx 6{,}4180$"
+        ],
+        "result": "AC \\approx 6{,}42\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "☜ يُغطّى سطح المنحدر الذي عرضه $1{,}5\\,\\mathrm{m}$ ببلاط مضاد للانزلاق ثمن المتر المربع منه $2400DA$ . ما تكلفة البلاط؟ (استعمل الطول المدوّر)",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "23112",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة السطح المستطيل = الطول × العرض."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب المساحة في ثمن المتر المربع."
+        }
+      ],
+      "feedback": {
+        "correct": "$6{,}42 \\times 1{,}5 = 9{,}63\\,\\mathrm{m^2}$ و $9{,}63 \\times 2400 = 23112DA$ .",
+        "incorrect": "احسب أولا مساحة سطح المنحدر (مستطيل)، ثم اضرب في ثمن المتر المربع."
+      },
+      "solution": {
+        "lines": [
+          "مساحة السطح: $6{,}42 \\times 1{,}5 = 9{,}63\\,\\mathrm{m^2}$",
+          "التكلفة: $9{,}63 \\times 2400$"
+        ],
+        "result": "23112\\,DA"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

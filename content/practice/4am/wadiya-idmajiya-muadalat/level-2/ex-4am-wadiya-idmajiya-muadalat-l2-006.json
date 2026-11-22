@@ -1,0 +1,120 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muadalat-l2-006",
+  "lessonCode": "wadiya-idmajiya-muadalat",
+  "level": 2,
+  "metadata": {
+    "title": "عرضان للهاتف النقال",
+    "estimatedMinutes": 5,
+    "tags": [
+      "ترييض",
+      "معادلة",
+      "متراجحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-muadalat_P2",
+      "modelledOn": "situation"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "لتشجيع التواصل مع الأهل وبرّ الوالدين، يقترح متعامل للهاتف النقال عرضين:\n– العرض الأول: 3DA للدقيقة.\n– العرض الثاني: اشتراك شهري قدره 200DA و 1DA للدقيقة.\nنسمّي $x$ عدد دقائق المكالمات في الشهر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "جد $x$ حتى تتساوى تكلفتا العرضين.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الدقائق",
+      "expectedAnswer": "100",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عبّر عن تكلفة كل عرض بدلالة $x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب أن التكلفتين متساويتان، ثم حلّ المعادلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 100$ .",
+        "incorrect": "انقل حدود $x$ إلى طرف والأعداد إلى الطرف الآخر مع تغيير الإشارة، ثم اقسم على معامل $x$ . تحقّق بالتعويض."
+      },
+      "solution": {
+        "lines": [
+          "$3x - x = 200$",
+          "$2x = 200$",
+          "$x = \\dfrac{200}{2}$"
+        ],
+        "result": "x = 100"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ابتداءً من كم دقيقة (عدد طبيعي) يكون العرض الثاني أقل تكلفة من العرض الأول؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الدقائق",
+      "expectedAnswer": "101",
+      "misconceptionSignatures": [
+        {
+          "value": "100",
+          "id": "MISC-MUTARAJIHA-QAWS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العرض الثاني أقل تكلفة يعني: $x + 200 < 3x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ هذه المتراجحة، ثم ابحث عن أصغر عدد طبيعي يحقّقها."
+        }
+      ],
+      "feedback": {
+        "correct": "ابتداءً من $101$ دقيقة.",
+        "incorrect": "حلّ المتراجحة $x + 200 < 3x$ ، ثم خذ أصغر عدد طبيعي يحقّقها (الحدّ نفسه ليس حلًّا)."
+      },
+      "solution": {
+        "lines": [
+          "العرض الثاني أقل تكلفة يعني: $x + 200 < 3x$",
+          "$200 < 2x$",
+          "$x > 100$",
+          "أصغر عدد طبيعي أكبر تماما من $100$ هو $101$ ."
+        ],
+        "result": "101"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

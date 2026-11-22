@@ -1,0 +1,408 @@
+{
+  "id": "ex-4am-alaqat-muthallathiya-l5-006",
+  "lessonCode": "alaqat-muthallathiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2009 — دعم جدار متصدّع بعد هزّة أرضية",
+    "estimatedMinutes": 20,
+    "tags": [
+      "الوضعية الإدماجية",
+      "العلاقات المثلثية",
+      "حساب الأطوال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_alaqat-muthallathiya_P2",
+      "modelledOn": "BEM 2009 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "بعد هزّة أرضية في بومرداس ظهر شقّ أفقي في جدار شاقولي لبيت قديم، فقرّر بنّاء دعمه بعارضة خشبية مستقيمة $[AB]$ طولها $3{,}5\\,\\mathrm{m}$ : قدمها $A$ على الأرض الأفقية ورأسها $B$ على الجدار، و $H$ أسفل الجدار (الشكل المقابل). ينصح المهندس بأن تصنع العارضة مع الأرض زاوية $x = \\widehat{BAH}$ حيث $\\sin x = 0{,}8$ ، وبأن يلمس رأسها الجدار في الشريط المتصدّع الواقع بين $2{,}5\\,\\mathrm{m}$ و $3\\,\\mathrm{m}$ من الأرض. ويتطوّع البنّاء بجهده لمساعدة أسرة متضرّرة دون مقابل.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "H": [
+          2.1,
+          0
+        ],
+        "B": [
+          2.1,
+          2.8
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "3,5 m",
+          "tone": "indigo"
+        },
+        [
+          "A",
+          "H"
+        ],
+        [
+          "H",
+          "B"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "H",
+          "B"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "A",
+          "from": "H",
+          "to": "B",
+          "label": "x"
+        }
+      ],
+      "labels": {
+        "A": "sw",
+        "H": "se",
+        "B": "ne"
+      },
+      "ariaLabel": "العارضة [AB] طولها 3,5 م: قدمها A على الأرض ورأسها B على الجدار الشاقولي، و H أسفل الجدار، و x زاوية العارضة مع الأرض",
+      "maxWidth": 260
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب القيمتين المضبوطتين لـ $\\cos x$ و $\\tan x$ .",
+      "statement": "$\\cos x$ :",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "3/5",
+      "misconceptionSignatures": [
+        {
+          "value": "1/5",
+          "id": "MISC-MUTH-JAMA-NISAB"
+        },
+        {
+          "value": "9/25",
+          "id": "MISC-MUTH-JADHR-NASI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العلاقة التي تربط جيب الزاوية وجيب تمامها هي $\\cos^2 x + \\sin^2 x = 1$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اعزل $\\cos^2 x$ ثم عوّض الجيب بقيمته، ولا تنس تربيع البسط والمقام معا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\cos x$ عدد موجب تماما: خذ الجذر التربيعي الموجب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\cos^2 x = 1 - 0{,}64 = 0{,}36$ ، إذن $\\cos x = 0{,}6$ .",
+        "incorrect": "استعمل العلاقة $\\cos^2 x + \\sin^2 x = 1$ (بين المربعين)، ثم خذ الجذر التربيعي الموجب."
+      },
+      "solution": {
+        "lines": [
+          "$\\cos^2 x + \\sin^2 x = 1$ ، إذن $\\cos^2 x = 1 - \\left(0{,}8\\right)^2 = 1 - 0{,}64 = 0{,}36$",
+          "$\\cos x$ عدد موجب، إذن $\\cos x = \\sqrt{0{,}36}$"
+        ],
+        "result": "\\cos x = 0{,}6"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$\\tan x$ :",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "4/3",
+      "misconceptionSignatures": [
+        {
+          "value": "3/4",
+          "id": "MISC-MUTH-TAN-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الظل هو حاصل قسمة الجيب على جيب التمام: $\\tan x = \\dfrac{\\sin x}{\\cos x}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على كسر هي الضرب في مقلوبه، ثم اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan x = 0{,}8 \\div 0{,}6 = \\dfrac{4}{3}$ .",
+        "incorrect": "الظل = الجيب ÷ جيب التمام؛ القسمة على كسر هي الضرب في مقلوبه."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan x = \\dfrac{\\sin x}{\\cos x} = 0{,}8 \\div 0{,}6$"
+        ],
+        "result": "\\tan x = \\dfrac{4}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "احسب الارتفاع $HB$ الذي يلمس فيه رأس العارضة الجدار، والمسافة $AH$ بين قدمها والجدار.",
+      "statement": "الارتفاع $HB$ :",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m",
+      "expectedAnswer": "2.8",
+      "misconceptionSignatures": [
+        {
+          "value": "2.1",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$[HB]$ مقابل للزاوية $x$ و $[AB]$ وتر."
+        }
+      ],
+      "feedback": {
+        "correct": "$HB = 3{,}5 \\times 0{,}8 = 2{,}8\\,\\mathrm{m}$ .",
+        "incorrect": "المقابل = الوتر × الجيب."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $ABH$ القائم في $H$ : $HB = AB \\times \\sin x = 3{,}5 \\times 0{,}8$"
+        ],
+        "result": "HB = 2{,}8\\,\\mathrm{m}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "المسافة $AH$ :",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m",
+      "expectedAnswer": "2.1",
+      "misconceptionSignatures": [
+        {
+          "value": "2.8",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$[AH]$ مجاور للزاوية $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AH = 3{,}5 \\times 0{,}6 = 2{,}1\\,\\mathrm{m}$ .",
+        "incorrect": "المجاور = الوتر × جيب التمام."
+      },
+      "solution": {
+        "lines": [
+          "$AH = AB \\times \\cos x = 3{,}5 \\times 0{,}6$"
+        ],
+        "result": "AH = 2{,}1\\,\\mathrm{m}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "هل يلمس رأس العارضة الجدار داخل الشريط المتصدّع؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن $HB$ بحدّي الشريط."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}5 \\leqslant 2{,}8 \\leqslant 3$ : نعم.",
+        "incorrect": "تحقّق من أن $HB$ محصور بين $2{,}5\\,\\mathrm{m}$ و $3\\,\\mathrm{m}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$HB = 2{,}8\\,\\mathrm{m}$ و $2{,}5 < 2{,}8 < 3$ .",
+          "إذن رأس العارضة يلمس الجدار داخل الشريط المتصدّع."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "sub": "ا",
+      "lead": "☜ يريد البنّاء عارضة ثانية بالميل نفسه، أطول ما يمكن، يلمس رأسها الجدار داخل الشريط المتصدّع. ما طولها، وما بعد قدمها عن الجدار؟",
+      "statement": "أكبر طول للعارضة الثانية:",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m",
+      "expectedAnswer": "3.75",
+      "misconceptionSignatures": [
+        {
+          "value": "2.4",
+          "id": "MISC-MUTH-DARB-BADAL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أعلى نقطة من الشريط على ارتفاع $3\\,\\mathrm{m}$ : هذا هو الضلع المقابل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوتر في مقام الجيب."
+        }
+      ],
+      "feedback": {
+        "correct": "$L = \\dfrac{3}{\\sin x} = \\dfrac{3}{0{,}8} = 3{,}75\\,\\mathrm{m}$ .",
+        "incorrect": "المجهول هو الوتر: اقسم الارتفاع على الجيب."
+      },
+      "solution": {
+        "lines": [
+          "أطول عارضة يلمس رأسها الجدار عند الحدّ الأعلى للشريط: $3\\,\\mathrm{m}$ .",
+          "$\\sin x = \\dfrac{3}{L}$ ، إذن $L = \\dfrac{3}{0{,}8}$"
+        ],
+        "result": "L = 3{,}75\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "sub": "ب",
+      "statement": "بعد قدمها عن الجدار:",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m",
+      "expectedAnswer": "2.25",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المجاور = الوتر × جيب التمام."
+        }
+      ],
+      "feedback": {
+        "correct": "$3{,}75 \\times 0{,}6 = 2{,}25\\,\\mathrm{m}$ .",
+        "incorrect": "اضرب طول العارضة الثانية في جيب التمام."
+      },
+      "solution": {
+        "lines": [
+          "$AH' = L \\times \\cos x = 3{,}75 \\times 0{,}6$"
+        ],
+        "result": "AH' = 2{,}25\\,\\mathrm{m}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

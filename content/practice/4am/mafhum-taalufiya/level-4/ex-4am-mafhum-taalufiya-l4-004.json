@@ -1,0 +1,219 @@
+{
+  "id": "ex-4am-mafhum-taalufiya-l4-004",
+  "lessonCode": "mafhum-taalufiya",
+  "level": 4,
+  "metadata": {
+    "title": "صورة العدد −5 والعدد الذي صورته −5",
+    "estimatedMinutes": 8,
+    "tags": [
+      "المعاملان a و b",
+      "صورة عدد",
+      "العدد الذي صورته معلومة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "adaptedFrom": "ex-4am-mafhum-taalufiya-l4-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$f$ دالة تآلفية حيث:",
+    "formulas": [
+      "f(x) = 7 - 2x"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عيّن المعاملين $a$ و $b$ للدالة $f$ .",
+      "statement": "المعامل $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل $x$ هنا مسبوق بإشارة ناقص."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب العبارة على الشكل $ax + b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = -2$ : هو معامل $x$ .",
+        "incorrect": "المعامل $a$ هو العدد المضروب في $x$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = -2x + 7$ من الشكل $ax + b$ حيث: $a = -2$ و $b = 7$ ."
+        ],
+        "result": "a = -2"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "المعامل $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "-2",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحدّ الثابت $b$ هو العدد الذي لا يُضرب في $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$b = 7$ ، إذن $f(x) = -2x + 7$ .",
+        "incorrect": "$b$ هو الحدّ الذي لا يحتوي على $x$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = -2x + 7$ من الشكل $ax + b$ حيث: $a = -2$ و $b = 7$ ."
+        ],
+        "result": "b = 7"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "عيّن العدد الذي صورته $-5$ بالدالة $f$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "2,5",
+          "id": "MISC-TAALUFI-SABIQ-QISMA"
+        },
+        {
+          "value": "-4,5",
+          "id": "MISC-TAALUFI-SABIQ-TARTIB"
+        },
+        {
+          "value": "17",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن العدد $x$ الذي يحقق $f(x) = -5$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المعادلة $ax + b = m$ : اطرح الحدّ الثابت من الطرفين أولا، ثم اقسم على المعامل."
+        }
+      ],
+      "feedback": {
+        "correct": "$-2x + 7 = -5$ تعطي $x = 6$ .",
+        "incorrect": "اطرح الحدّ الثابت $b$ أولا، ثم اقسم على المعامل $a$ (البرنامج العكسي)."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = -5$ معناه $-2x + 7 = -5$",
+          "$-2x = -5 - 7$",
+          "$-2x = -12$",
+          "$x = \\dfrac{-12}{-2}$",
+          "$x = 6$"
+        ],
+        "result": "x = 6"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب $f(-5)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "17",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هنا العدد $-5$ هو $x$ : عوّض."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(-5) = -2 \\times (-5) + 7 = 17$ .",
+        "incorrect": "عوّض $x$ بـ $-5$ في العبارة، مع الانتباه إلى الإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$f(-5) = -2 \\times (-5) + 7$",
+          "$f(-5) = 10 + 7$",
+          "$f(-5) = 17$"
+        ],
+        "result": "f(-5) = 17"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

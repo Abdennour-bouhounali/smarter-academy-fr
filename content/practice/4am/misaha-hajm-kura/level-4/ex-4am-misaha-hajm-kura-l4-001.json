@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-misaha-hajm-kura-l4-001",
+  "lessonCode": "misaha-hajm-kura",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — من المساحة إلى نصف القطر",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مساحة الكرة",
+      "نصف القطر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_misaha-hajm-kura_P1",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "مساحة كرة $144\\pi\\,\\mathrm{cm}^2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما نصف قطرها بالـ $\\mathrm{cm}$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_misaha-hajm-kura_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر)",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$4\\pi R^2 = 144\\pi$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$R^2 = 144 \\div 4$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خذ الجذر التربيعي."
+        }
+      ],
+      "feedback": {
+        "correct": "$R^2 = 36$ و $R = 6\\,\\mathrm{cm}$ .",
+        "incorrect": "$36$ هو $R^2$ ، و $12 = \\sqrt{144}$ نسي القسمة على 4."
+      },
+      "difficulty": 4,
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MISAHA-JADHR",
+          "value": "36"
+        },
+        {
+          "id": "MISC-MISAHA-RUB",
+          "value": "12"
+        }
+      ]
+    }
+  ]
+}

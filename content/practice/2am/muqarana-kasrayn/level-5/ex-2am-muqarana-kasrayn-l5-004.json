@@ -1,0 +1,212 @@
+{
+  "id": "ex-2am-muqarana-kasrayn-l5-004",
+  "lessonCode": "muqarana-kasrayn",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مزرعة النخيل",
+    "estimatedMinutes": 10,
+    "tags": [
+      "مقارنة كسور",
+      "الباقي",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-83",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يملك فلّاح قطعة أرض مساحتها $12800\\ \\mathrm{m}^2$ في ولاية بسكرة : $\\dfrac{3}{8}$ منها مخصّص لزراعة القمح ، و $\\dfrac{5}{16}$ لأشجار الرمّان ، و $\\dfrac{1}{4}$ لأشجار الزيتون ، والباقي لغرس نخيل دقلة نور ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "قال الفلّاح : «أشجار الرمّان تشغل أكبر مساحة لأنّ بسطها $5$ هو الأكبر» . ما المحصول الذي تشغل أرضه أكبر مساحة ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "القمح",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الرمّان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-NUMONLY"
+        },
+        {
+          "id": "C",
+          "content": "الزيتون",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكسر الخاصّ بكلّ حالة ؟ وهل مقاماتها متساوية أو يقسم بعضها بعضًا ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور كلّها بالمقام نفسه إن اختلفت المقامات ثمّ قارن بين البسوط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحكم من البسط وحده ولا من المقام وحده ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب : القمح .",
+        "incorrect": "وحّد المقامات قبل أن تحكم ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "نكتب الكسور بالمقام $16$ : $\\dfrac{3}{8} = \\dfrac{6}{16}$ ، $\\dfrac{5}{16}$ ، $\\dfrac{1}{4} = \\dfrac{4}{16}$ .",
+          "أكبر بسط هو $6$ .",
+          "الجواب : القمح ($\\dfrac{3}{8}$) ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "وضّح هل الفلّاح على صواب وبيّن لماذا لا يكفي الحكم من البسط وحده .",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا ، ثمّ اضغط «سجّل إجابتي» لتطّلع على الحلّ النموذجي .",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب جملة أو جملتين : الطريقة المستعملة ثمّ المقارنة التي تدعمها ."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحلّ النموذجي .",
+        "incorrect": "قارن تبريرك بالحلّ النموذجي : الطريقة ثمّ المقارنة التي تدعمها ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{8} = \\dfrac{6}{16}$ و $\\dfrac{1}{4} = \\dfrac{4}{16}$ .",
+          "$6 > 5 > 4$ : مساحة القمح هي الأكبر وليست مساحة الرمّان ، فالفلّاح مخطئ لأنّ المقامات مختلفة ."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "عبّر بكسر عن المساحة المخصّصة لنخيل دقلة نور .",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "1/16",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط ؟ وما الكسور المعطاة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد قبل الجمع أو الطرح ثمّ اختزل ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{16}$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{6}{16} + \\dfrac{5}{16} + \\dfrac{4}{16} = \\dfrac{15}{16}$ .",
+          "$1 - \\dfrac{15}{16} = \\dfrac{1}{16}$ ."
+        ],
+        "result": "\\dfrac{1}{16}"
+      },
+      "work": "optional",
+      "timeSeconds": 90,
+      "counted": false
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "ما المساحة المخصّصة لنخيل دقلة نور بوحدة $\\mathrm{m}^2$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "800",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط ؟ وما الكسور المعطاة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد قبل الجمع أو الطرح ثمّ اختزل ."
+        }
+      ],
+      "feedback": {
+        "correct": "$800$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$12800 \\div 16 = 800$ ."
+        ],
+        "result": "800"
+      },
+      "work": "optional",
+      "timeSeconds": 90,
+      "counted": false
+    }
+  ]
+}

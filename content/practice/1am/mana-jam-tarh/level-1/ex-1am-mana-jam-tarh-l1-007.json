@@ -1,0 +1,207 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l1-007",
+  "lessonCode": "mana-jam-tarh",
+  "level": 1,
+  "metadata": {
+    "title": "المجموع في مخطط بأقواس",
+    "estimatedMinutes": 4,
+    "tags": [
+      "مخطط بأقواس",
+      "مجموع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-1a",
+      "page": 26,
+      "section": "أوظّف تعلّماتي",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لاحظ المخطط بأقواس المقابل:",
+    "figure": {
+      "kind": "tape",
+      "parts": [
+        {
+          "label": "31,6",
+          "value": 31.6
+        },
+        {
+          "label": "7,85",
+          "value": 7.85
+        }
+      ],
+      "whole": {
+        "label": "□",
+        "unknown": true
+      },
+      "ariaLabel": "مخطط بأقواس: جزآن 31,6 و 7,85 فوق الخط، والكل المجهول □ تحته"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما المساواة التي يمثّلها هذا المخطط؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$31{,}6 + 7{,}85 = \\square$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$31{,}6 - 7{,}85 = \\square$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        },
+        {
+          "id": "C",
+          "content": "$\\square + 7{,}85 = 31{,}6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القوس تحت الخط يحمل الكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "□ تحت الخط: هو الكل، والعددان فوق الخط جزآه."
+        }
+      ],
+      "feedback": {
+        "correct": "□ هو الكل: $\\square  = 31{,}6 + 7{,}85$.",
+        "incorrect": "انظر أين يقع □: تحت الخط أم فوقه؟"
+      },
+      "solution": {
+        "lines": [
+          "الجزآن 31,6 و 7,85 فوق الخط، والكل □ تحته.",
+          "الكل يساوي مجموع الأجزاء:"
+        ],
+        "result": "31{,}6 + 7{,}85 = \\square"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب □.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "39.45",
+      "misconceptionSignatures": [
+        {
+          "value": "23.75",
+          "id": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "□ هو الكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نجمع الجزأين بعد محاذاة الفاصلتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$31{,}6 + 7{,}85 = 39{,}45$.",
+        "incorrect": "□ هو الكل، فهو أكبر من كل جزء: نجمع."
+      },
+      "solution": {
+        "lines": [
+          "$31{,}6 + 7{,}85 = 31{,}60 + 7{,}85 = 39{,}45$"
+        ],
+        "result": "\\square = 39{,}45"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كيف نسمّي العدد □؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مجموع العددين 31,6 و 7,85",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "فرق العددين 31,6 و 7,85",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-MAJMU-FARQ"
+        },
+        {
+          "id": "C",
+          "content": "حدّ من حدّي المجموع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-HUDUD"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "□ ناتج عملية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما اسم ناتج الجمع؟"
+        }
+      ],
+      "feedback": {
+        "correct": "□ ناتج جمع 31,6 و 7,85: هو مجموعهما.",
+        "incorrect": "□ هو ناتج العملية، لا أحد العددين اللذين نجمعهما."
+      },
+      "solution": {
+        "lines": [
+          "$\\square = 31{,}6 + 7{,}85$ ناتج جمع.",
+          "إذن □ هو مجموع العددين 31,6 و 7,85، وهما حدّا المجموع."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

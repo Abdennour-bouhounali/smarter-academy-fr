@@ -1,0 +1,238 @@
+{
+  "id": "ex-3am-tabsit-hadhf-aqwas-l3-008",
+  "lessonCode": "tabsit-hadhf-aqwas",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — حدّ يختفي",
+    "estimatedMinutes": 7,
+    "tags": [
+      "حذف الأقواس",
+      "تبسيط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $R$ حيث:",
+    "formulas": [
+      "R = (2x^2 - 3x + 1) + (x^2 + 3x) - (4x^2 - 5)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب $R$ بدون أقواس.",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$R = 2x^2 - 3x + 1 + x^2 + 3x - 4x^2 + 5$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$R = 2x^2 - 3x + 1 + x^2 + 3x - 4x^2 - 5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-MINUS-FIRST-ONLY"
+        },
+        {
+          "id": "C",
+          "content": "$R = 2x^2 - 3x + 1 - x^2 - 3x - 4x^2 + 5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-PLUS-CHANGED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالأقواس: ما الإشارة التي تسبق كل زوج منها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسبوقان بـ $+$ يُحذفان كما هما، والمسبوقان بـ $-$ تتغيّر معهما إشارة كل حدّ بينهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد حذف الأقواس اجمع الحدود المتشابهة، ثم تحقّق بتعويض $x$ بعدد صغير."
+        }
+      ],
+      "feedback": {
+        "correct": "$R = 2x^2 - 3x + 1 + x^2 + 3x - 4x^2 + 5$.",
+        "incorrect": "راجع إشارة كل حدّ وما يسبق القوسين، ثم اجمع الحدود المتشابهة فقط."
+      },
+      "solution": {
+        "lines": [
+          "$R = 2x^2 - 3x + 1 + x^2 + 3x - 4x^2 + 5$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "بسّط $R$ .",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $R$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالأقواس: ما الإشارة التي تسبق كل زوج منها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسبوقان بـ $+$ يُحذفان كما هما، والمسبوقان بـ $-$ تتغيّر معهما إشارة كل حدّ بينهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد حذف الأقواس اجمع الحدود المتشابهة، ثم تحقّق بتعويض $x$ بعدد صغير."
+        }
+      ],
+      "feedback": {
+        "correct": "$R = -x^2 + 6$ إذن $b = 0$.",
+        "incorrect": "اجمع الحدود المتشابهة بإشاراتها بعد حذف الأقواس، ثم اقرأ العدد المطلوب في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "حدود $x$ : $-3x + 3x = 0$ : الحدّ ومعاكسه يُلغيان.",
+          "$R = -x^2 + 6$"
+        ],
+        "result": "b = 0"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $R$ على الشكل $ax^2 + bx + c$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "-1",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-TABSIT-MINUS-KEPT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالأقواس: ما الإشارة التي تسبق كل زوج منها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسبوقان بـ $+$ يُحذفان كما هما، والمسبوقان بـ $-$ تتغيّر معهما إشارة كل حدّ بينهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد حذف الأقواس اجمع الحدود المتشابهة، ثم تحقّق بتعويض $x$ بعدد صغير."
+        }
+      ],
+      "feedback": {
+        "correct": "$R = -x^2 + 6$ إذن $a = -1$.",
+        "incorrect": "اجمع الحدود المتشابهة بإشاراتها بعد حذف الأقواس، ثم اقرأ العدد المطلوب في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$R = (2 + 1 - 4)x^2 + 6 = -x^2 + 6$"
+        ],
+        "result": "a = -1"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "العدد $c$ :",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $R$ على الشكل $ax^2 + bx + c$ : اكتب العدد $c$ فقط",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "-4",
+          "id": "MISC-TABSIT-MINUS-FIRST-ONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالأقواس: ما الإشارة التي تسبق كل زوج منها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسبوقان بـ $+$ يُحذفان كما هما، والمسبوقان بـ $-$ تتغيّر معهما إشارة كل حدّ بينهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد حذف الأقواس اجمع الحدود المتشابهة، ثم تحقّق بتعويض $x$ بعدد صغير."
+        }
+      ],
+      "feedback": {
+        "correct": "$R = -x^2 + 6$ إذن $c = 6$.",
+        "incorrect": "اجمع الحدود المتشابهة بإشاراتها بعد حذف الأقواس، ثم اقرأ العدد المطلوب في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$R = -x^2 + 6$"
+        ],
+        "result": "c = 6"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

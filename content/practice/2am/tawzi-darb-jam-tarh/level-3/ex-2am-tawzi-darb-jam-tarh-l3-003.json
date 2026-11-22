@@ -1,0 +1,234 @@
+{
+  "id": "ex-2am-tawzi-darb-jam-tarh-l3-003",
+  "lessonCode": "tawzi-darb-jam-tarh",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أنشر عبارة فيها فرق وأحسبها",
+    "estimatedMinutes": 9,
+    "tags": [
+      "نشر",
+      "فرق"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-83",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "انشر العبارة $C = 2{,}6 \\times (5 - 1{,}5)$ ثم احسب قيمتها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ كتابة هي نشر للعبارة $2{,}6 \\times (5 - 1{,}5)$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2{,}6 \\times 5 - 2{,}6 \\times 1{,}5$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$2{,}6 \\times 5 + 2{,}6 \\times 1{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-SIGNCHANGE"
+        },
+        {
+          "id": "C",
+          "content": "$2{,}6 \\times 5 - 1{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-FIRSTONLY"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "$2{,}6 \\times (5 - 1{,}5) = 2{,}6 \\times 5 - 2{,}6 \\times 1{,}5$",
+          "الضرب يتوزّع على كلّ حدّ من حدّي القوسين."
+        ]
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد الذي يضرب القوسين يتوزّع على الحدّين معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب هذا العدد في الحدّ الأول ثم في الحدّ الثاني، واحتفظ بالعملية التي بين الحدّين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب الطرفين: يجب أن تحصل على النتيجة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتابة الصحيحة هي $2{,}6 \\times 5 - 2{,}6 \\times 1{,}5$ .",
+        "incorrect": "العدد الذي يضرب القوسين يضرب كلّ حدّ بالعملية نفسها التي بين الحدّين: راجع كلّ خيار بحساب الطرفين."
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $2{,}6 \\times 5 - 2{,}6 \\times 1{,}5$ .",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "9.1",
+      "solution": {
+        "lines": [
+          "$2{,}6 \\times 5 - 2{,}6 \\times 1{,}5 = 9{,}1$"
+        ],
+        "result": "9{,}1"
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا: أين الأقواس؟ وهل يوجد عدد مشترك بين الجداءات؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر الطريقة الأسهل: وزّع الضرب على الحدّين أو أنجز ما بين القوسين أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز الحساب مرحلة مرحلة ثم تحقّق من النتيجة بطريقة ثانية."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}6 \\times 5 - 2{,}6 \\times 1{,}5 = 9{,}1$",
+        "incorrect": "راجع حسابك مرحلة مرحلة، وتذكّر أنّ ما بين القوسين يُحسب أوّلًا وأنّ الضرب يتوزّع على كلّ حدّ."
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب $C = 2{,}6 \\times (5 - 1{,}5)$ .",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "9.1",
+      "solution": {
+        "lines": [
+          "$2{,}6 \\times (5 - 1{,}5) = 9{,}1$"
+        ],
+        "result": "9{,}1"
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا: أين الأقواس؟ وهل يوجد عدد مشترك بين الجداءات؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر الطريقة الأسهل: وزّع الضرب على الحدّين أو أنجز ما بين القوسين أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز الحساب مرحلة مرحلة ثم تحقّق من النتيجة بطريقة ثانية."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}6 \\times (5 - 1{,}5) = 9{,}1$",
+        "incorrect": "راجع حسابك مرحلة مرحلة، وتذكّر أنّ ما بين القوسين يُحسب أوّلًا وأنّ الضرب يتوزّع على كلّ حدّ."
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "$2{,}6 \\times (5 - 1{,}5) = 2{,}6 \\times 5 - 1{,}5$ . هل المساواة صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-FIRSTONLY"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "solution": {
+        "lines": [
+          "$2{,}6 \\times (5 - 1{,}5) = 9{,}1$",
+          "$2{,}6 \\times 5 - 1{,}5 = 11{,}5$",
+          "النتيجتان مختلفتان: المساواة خاطئة."
+        ]
+      },
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طبّق على الطرف الأيسر ما تعرفه من الخاصية التوزيعية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الطرفين حدًّا بحدّ: هل وُزّع الضرب على الحدّين معًا؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الطرفين عدديًا عند الحاجة: هل يتساويان؟"
+        }
+      ],
+      "feedback": {
+        "correct": "المساواة خاطئة: نتحقّق بحساب الطرفين.",
+        "incorrect": "احسب طرفي المساواة عدديًا وقارنهما: المساواة صحيحة فقط إذا تساوى الطرفان دائمًا."
+      },
+      "timeSeconds": 70
+    }
+  ]
+}

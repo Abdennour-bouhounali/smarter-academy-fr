@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>صفحة الوحدة — نموذج</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<!--
+  NOUVELLE PAGE DE VALEUR « الوحدة » (unit home) — maquette autonome pour validation du propriétaire (2026-11-09).
+  Mêmes principes que l'accueil de mission d'une leçon : une seule chose à faire maintenant (« واصل »), un chemin visible d'un coup d'œil,
+  tout le reste REPLIÉ (jamais supprimé) dans un panneau qu'on ouvre en touchant une station. Pas de défilement à 1366×768 ni à 1024×768.
+  Aucun renvoi au manuel pour l'élève (pas de « الكتاب ص … »). Les données sont celles de l'unité 1 ; l'état « في الطريق » est simulé.
+-->
+<style>
+  :root{
+    --bg:#F3F5FF; --card:#FFFFFF; --ink:#0F172A; --muted:#64748B; --line:#E2E8F0;
+    --indigo:#4F46E5; --indigo-d:#3730A3; --indigo-50:#EEF2FF; --violet:#7C3AED;
+    --green:#10B981; --green-50:#ECFDF5; --amber:#F59E0B; --amber-50:#FFFBEB; --amber-ink:#92400E;
+    --rose:#F43F5E; --teal-50:#F0FDFA;
+    --r:24px;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;font-family:'Cairo',system-ui,sans-serif;background:var(--bg);color:var(--ink);overflow:hidden}
+  button{font-family:inherit;cursor:pointer}
+
+  /* ── the app shell (simplified) ── */
+  .shell{display:grid;grid-template-columns:240px minmax(0,1fr);height:100vh}
+  .side{background:#fff;border-inline-start:1px solid var(--line);padding:18px 16px;display:flex;flex-direction:column;gap:6px}
+  .brand{font-weight:900;font-size:18px;color:var(--indigo);margin-bottom:14px;display:flex;gap:8px;align-items:center}
+  .brand i{width:28px;height:28px;border-radius:50%;border:4px solid var(--indigo);border-left-color:transparent;display:inline-block}
+  .nav{padding:9px 12px;border-radius:12px;font-weight:700;color:#334155;font-size:15px}
+  .nav.on{background:var(--indigo-50);color:var(--indigo)}
+  @media (max-width:1100px){.shell{grid-template-columns:72px minmax(0,1fr)}.side .nav span,.brand b{display:none}}
+
+  .main{height:100vh;display:flex;align-items:center;justify-content:center;padding:18px 28px 16px;min-width:0;overflow:hidden}
+  /* the page keeps its natural size, then GROWS to fill the screen (like the lesson player's fit) — never past ×1.6, never below ×0.8 */
+  .fit{width:100%;max-width:1080px;display:flex;flex-direction:column;gap:14px}
+
+  /* ── header ── */
+  .head{display:flex;align-items:center;gap:16px}
+  .crumb{font-size:13px;color:var(--muted);font-weight:600}
+  .crumb a{color:var(--muted);text-decoration:none}
+  .title{display:flex;align-items:center;gap:12px;margin-top:2px}
+  .title h1{margin:0;font-size:28px;font-weight:900;line-height:1.25}
+  .tag{background:var(--indigo-50);color:var(--indigo);font-weight:800;font-size:13px;border-radius:999px;padding:3px 12px;white-space:nowrap}
+  .head .grow{flex:1;min-width:0}
+  .stat{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:8px 14px}
+  .stat b{font-size:20px;font-weight:900}
+  .stat small{display:block;color:var(--muted);font-weight:700;font-size:12px;line-height:1.1}
+  .ring{width:46px;height:46px}
+
+  /* ── row 1 : now + challenge ── */
+  .row1{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:16px;flex:0 0 auto}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 1px 2px rgba(15,23,42,.04)}
+  .hero{display:grid;grid-template-columns:minmax(0,1fr) 200px;gap:18px;padding:20px 22px;position:relative;overflow:hidden}
+  .hero:before{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:linear-gradient(90deg,var(--violet),var(--indigo))}
+  .eyebrow{font-size:13px;font-weight:900;color:var(--indigo);letter-spacing:.2px;display:flex;align-items:center;gap:8px}
+  .eyebrow .pill{background:var(--amber-50);color:var(--amber-ink);border-radius:999px;padding:1px 10px}
+  .hero h2{margin:6px 0 2px;font-size:26px;font-weight:900;line-height:1.3}
+  .hero .mission{color:#475569;font-weight:700;font-size:15px}
+  .tools{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 14px}
+  .tool{font-size:13px;font-weight:800;border-radius:999px;padding:3px 11px;background:#F1F5F9;color:#94A3B8;white-space:nowrap}
+  .tool.on{background:#FEF3C7;color:#92400E}
+  .cta{display:flex;gap:10px}
+  .go{flex:1 0 auto;min-height:58px;border:0;border-radius:18px;background:var(--indigo);color:#fff;font-weight:900;font-size:20px;box-shadow:0 5px 0 var(--indigo-d)}
+  .go:active{transform:translateY(2px);box-shadow:0 3px 0 var(--indigo-d)}
+  .ghost{flex:0 1 auto;max-width:46%;min-height:58px;line-height:1.3;border:2px solid #DDD6FE;background:#F5F3FF;color:#5B21B6;border-radius:18px;font-weight:900;font-size:16px;padding:0 18px;}
+  .scene{border-radius:18px;background:linear-gradient(180deg,#FDF2F8,#FCE7F3);display:flex;align-items:center;justify-content:center;font-size:84px;position:relative}
+  .scene .num{position:absolute;bottom:10px;inset-inline-start:10px;background:#fff;border-radius:12px;padding:2px 10px;font-weight:900;font-size:14px;color:var(--indigo)}
+
+  .chal{padding:18px 20px;display:flex;flex-direction:column;gap:10px;background:linear-gradient(180deg,#FFFBEB,#fff 60%)}
+  .chal h3{margin:0;font-size:15px;font-weight:900;color:var(--amber-ink);display:flex;gap:8px;align-items:center}
+  .chal p{margin:0;font-size:17px;font-weight:700;line-height:1.7}
+  .n{display:inline-block;background:#FDE68A;color:#78350F;border-radius:9px;padding:0 8px;font-weight:900;direction:ltr;unicode-bidi:isolate}
+  .keys{display:flex;align-items:center;gap:8px;margin-top:auto}
+  .keys .k{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;font-size:17px;background:#F1F5F9;filter:grayscale(1);opacity:.55}
+  .keys .k.on{background:#FEF3C7;filter:none;opacity:1;box-shadow:inset 0 0 0 2px #FCD34D}
+  .keys small{font-weight:800;color:var(--muted);font-size:13px;margin-inline-start:4px;white-space:nowrap}
+  .keys .link{white-space:nowrap}
+  .link{border:0;background:none;color:var(--indigo);font-weight:800;font-size:14px;padding:0}
+
+  /* ── row 2 : the path ── */
+  .path{padding:16px 22px 18px;display:flex;flex-direction:column}
+  .path-h{display:flex;align-items:center;justify-content:space-between}
+  .path-h h3{margin:0;font-size:19px;font-weight:900}
+  .done-pill{background:var(--green-50);color:#047857;font-weight:900;border-radius:999px;padding:3px 12px;font-size:14px;white-space:nowrap}
+  .track{position:relative;display:grid;grid-template-columns:repeat(10,minmax(0,1fr));align-items:start;padding-top:6px}
+  .rail{position:absolute;top:62px;inset-inline:5%;height:6px;border-radius:6px;background:#E2E8F0}
+  .rail i{position:absolute;inset-block:0;inset-inline-start:0;border-radius:6px;background:linear-gradient(90deg,var(--green),#34D399)}
+  [dir=rtl] .rail i{background:linear-gradient(270deg,var(--green),#34D399)}
+  .st{position:relative;display:flex;flex-direction:column;align-items:center;gap:7px;border:0;background:none;padding:24px 2px 0;text-align:center;overflow:visible}
+  .dot{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font-size:28px;background:#fff;border:3px solid #E2E8F0;position:relative;transition:transform .15s}
+  .st:hover .dot{transform:translateY(-3px)}
+  .st.done .dot{border-color:var(--green);background:var(--green-50)}
+  .st.done .dot:after{content:"✓";position:absolute;top:-6px;inset-inline-end:-6px;width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff;font-size:13px;font-weight:900;display:grid;place-items:center}
+  .st.now .dot{border-color:var(--indigo);background:var(--indigo-50);box-shadow:0 0 0 7px rgba(79,70,229,.14);animation:pulse 2.2s ease-in-out infinite}
+  .st.next .dot{filter:grayscale(.85);opacity:.6}
+  .st.flag .dot{border-style:dashed;border-color:#FCD34D;background:var(--amber-50)}
+  @keyframes pulse{50%{box-shadow:0 0 0 12px rgba(79,70,229,.06)}}
+  @media (prefers-reduced-motion:reduce){.st.now .dot{animation:none}}
+  .st b{font-size:13.5px;font-weight:800;line-height:1.35;color:var(--ink);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:36px}
+  .st.next b{color:#94A3B8}
+  .st .stars{font-size:12px;letter-spacing:1px;color:var(--amber);min-height:16px}
+  .st .here{position:absolute;top:0;z-index:2;background:var(--indigo);color:#fff;font-size:11px;font-weight:900;border-radius:999px;padding:1px 9px;white-space:nowrap}
+
+  /* ── footer : folded things ── */
+  .foot{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font-weight:800;font-size:14px;color:#334155}
+  .chip:hover{border-color:#A5B4FC;color:var(--indigo)}
+
+  /* ── the WINDOW (council 2026-11-09): centred, like MissionDialog; built so it CANNOT scroll — 3 goals, the rest behind « المزيد » ── */
+  .veil{position:fixed;inset:0;background:rgba(15,23,42,.38);opacity:0;pointer-events:none;transition:opacity .15s;z-index:8}
+  .veil.on{opacity:1;pointer-events:auto}
+  .win{position:fixed;top:50%;left:50%;z-index:9;width:min(560px,90vw);max-height:86vh;overflow:hidden;background:#fff;border-radius:28px;
+    box-shadow:0 30px 80px rgba(15,23,42,.30);padding:24px 26px 22px;display:flex;flex-direction:column;gap:12px;
+    transform:translate(-50%,-50%) scale(.94);opacity:0;pointer-events:none;transition:transform .15s ease,opacity .15s ease}
+  .win.on{transform:translate(-50%,-50%) scale(1);opacity:1;pointer-events:auto}
+  @media (prefers-reduced-motion:reduce){.win,.veil{transition:none}}
+  .win .x{position:absolute;top:14px;left:14px;border:0;background:#F1F5F9;border-radius:50%;width:44px;height:44px;font-size:18px}
+  .win .top{display:flex;align-items:center;gap:14px;padding-left:44px}
+  .win .ic{width:64px;height:64px;border-radius:20px;background:var(--indigo-50);display:grid;place-items:center;font-size:34px;flex:0 0 auto}
+  .win h4{margin:0;font-size:22px;font-weight:900;line-height:1.35}
+  .win .line{color:#64748B;font-weight:800;font-size:14px;margin-top:2px}
+  .win h5{margin:2px 0 0;font-size:15px;font-weight:900;color:#334155}
+  .win ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px}
+  .win li{display:flex;gap:10px;align-items:flex-start;font-weight:700;font-size:15.5px;line-height:1.55}
+  .win li:before{content:"";flex:0 0 auto;width:20px;height:20px;margin-top:3px;border-radius:7px;border:2.5px solid #A5B4FC}
+  .win li.ok:before{background:var(--green);border-color:var(--green)}
+  .win .more{border:0;background:none;color:var(--indigo);font-weight:900;font-size:14px;padding:4px 0;align-self:flex-start}
+  .win .chips{display:flex;flex-wrap:wrap;gap:6px}
+  .win .chips span{background:#FEF3C7;color:#92400E;border-radius:999px;padding:4px 12px;font-size:13px;font-weight:800;min-height:32px;display:inline-flex;align-items:center}
+  .win .pre span{background:var(--teal-50);color:#115E59;border:1.5px solid #99F6E4}
+  .win .warn{display:flex;align-items:center;gap:8px;background:#FFF7ED;border:1.5px solid #FDBA74;border-radius:16px;padding:8px 12px;font-weight:800;font-size:14px;color:#9A3412}
+  .win .warn button{margin-inline-start:auto;border:0;background:#FB923C;color:#fff;border-radius:12px;padding:6px 12px;font-weight:900}
+  .win .go{flex:0 0 auto;min-height:58px;width:100%}
+  .win p{margin:0}
+  .st.ring .dot{box-shadow:0 0 0 6px #FDE68A !important}
+
+  /* ── mockup switch (not part of the product) ── */
+  .demo{position:fixed;bottom:14px;left:14px;background:#0F172A;color:#fff;border-radius:16px;padding:6px;display:flex;gap:4px;font-size:13px;font-weight:800;z-index:5;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+  .demo span{padding:6px 8px;color:#94A3B8}
+  .demo button{border:0;background:none;color:#CBD5E1;border-radius:11px;padding:6px 11px;font-weight:800}
+  .demo button.on{background:#fff;color:#0F172A}
+
+  /* height safety: on short screens the path labels shrink, nothing scrolls */
+  @media (max-height:700px){.hero h2{font-size:22px}.dot{width:54px;height:54px;font-size:24px}.rail{top:57px}.chal p{font-size:15.5px}}
+  /* tablet landscape (1024) : the scene tile leaves, the lesson card keeps its title, tools and button; the path tightens */
+  @media (max-width:1100px){
+    .main{padding:14px 18px 12px;gap:12px}
+    .title h1{font-size:24px}
+    .row1{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}
+    .hero{grid-template-columns:minmax(0,1fr);padding:18px}
+    .hero .scene{display:none}
+    .hero h2{font-size:22px}
+    .tools{margin:8px 0 12px}
+    .ghost{padding:0 12px;font-size:14px}
+    .chal p{font-size:15.5px;line-height:1.65}
+    .dot{width:52px;height:52px;font-size:23px}
+    .rail{top:56px}
+    .st b{font-size:12.5px}
+    .chip{padding:6px 11px;font-size:13px}
+  }
+</style>
+</head>
+<body>
+<div class="shell">
+  <aside class="side" aria-label="القائمة">
+    <div class="brand"><i></i><b>Smarter Academy</b></div>
+    <div class="nav">🏠 <span>الرئيسية</span></div>
+    <div class="nav on">📖 <span>دروسي</span></div>
+    <div class="nav">🔥 <span>التحدّي اليومي</span></div>
+    <div class="nav">🚀 <span>فضاء الألعاب</span></div>
+    <div class="nav">🧠 <span>مختبر التفكير</span></div>
+    <div class="nav">📈 <span>التقدّم</span></div>
+    <div class="nav">📓 <span>كرّاسي</span></div>
+  </aside>
+
+  <main class="main"><div class="fit" id="fit">
+    <header class="head">
+      <div class="grow">
+        <div class="crumb"><a href="#">دروسي</a> / <a href="#">ميدان أنساب الأعداد والحساب</a></div>
+        <div class="title"><span class="tag">الوحدة 1</span><h1>الأعداد الطبيعيّة والأعداد النّاطقة</h1></div>
+      </div>
+      <div class="stat" id="statLessons">
+        <svg class="ring" viewBox="0 0 46 46" aria-hidden="true"><circle cx="23" cy="23" r="19" fill="none" stroke="#E2E8F0" stroke-width="6"/><circle id="ringArc" cx="23" cy="23" r="19" fill="none" stroke="#10B981" stroke-width="6" stroke-linecap="round" transform="rotate(-90 23 23)" stroke-dasharray="119.4" stroke-dashoffset="119.4"/></svg>
+        <div><b id="statDone">3&nbsp;/&nbsp;9</b><small>دروس أنهيتها</small></div>
+      </div>
+      <div class="stat"><span style="font-size:24px">⭐</span><div><b id="statStars">21</b><small>نجمة جمعتها</small></div></div>
+    </header>
+
+    <section class="row1">
+      <!-- 1 · the ONE thing to do now -->
+      <article class="card hero" id="now"></article>
+      <!-- 2 · the unit's big question: why the unit exists -->
+      <article class="card chal">
+        <h3>🏁 تحدّي الوحدة</h3>
+        <p>اشترت البلدية <span class="n">936</span> مئزرًا ورديًّا و <span class="n">845</span> مئزرًا أزرق. على كم مدرسة على الأكثر نوزّعها بالتساوي، فتأخذ كل مدرسة العدد نفسه من كل لون؟</p>
+        <div class="keys" id="keys" aria-label="مفاتيح الحلّ"></div>
+      </article>
+    </section>
+
+    <!-- 3 · the whole unit at a glance -->
+    <section class="card path" aria-label="طريق الوحدة">
+      <div class="path-h"><h3>طريق الوحدة</h3><span class="done-pill" id="donePill"></span></div>
+      <div class="track" id="track"><div class="rail"><i id="railFill"></i></div></div>
+    </section>
+
+    <!-- 4 · what was on the old page, folded (one tap away, never deleted) -->
+    <nav class="foot" aria-label="المزيد">
+      <button class="chip" data-open="goals">🎯 ما سأتعلّمه في هذه الوحدة</button>
+      <button class="chip" data-open="challenge">🏁 التحدّي كاملًا</button>
+      <button class="chip" data-open="history">📜 من تاريخ الرياضيات: إقليدس</button>
+      <button class="chip" data-open="review">🧭 راجع قبل الوحدة</button>
+    </nav>
+  </div></main>
+</div>
+
+<div class="veil" id="veil"></div>
+<div class="win" id="win" role="dialog" aria-modal="true" aria-labelledby="dTitle">
+  <button class="x" id="close" aria-label="إغلاق">✕</button>
+  <div id="dBody" style="display:flex;flex-direction:column;gap:12px"></div>
+</div>
+
+<div class="demo" role="group" aria-label="حالة النموذج">
+  <button data-state="first">أول زيارة</button>
+  <button data-state="mid" class="on">في الطريق</button>
+  <button data-state="done">الوحدة مكتملة</button>
+</div>
+
+<script>
+/* The unit's data — titles, missions, durations and الكفاءات are the real ones of unit 1 (lesson configs). */
+const LESSONS = [
+  { n:1, t:'التعرّف على قاسم لعدد طبيعي', short:'قاسم عدد طبيعي', mission:'مكتبة 756 كتابًا', icon:'📚', min:45,
+    tools:['🔑 القاسم بالباقي','🗝️ القاسم بالجداء','🗣️ أربع جمل','⭐ 1 والعدد نفسه'],
+    skills:['التعرّف على قاسم لعدد طبيعي من خلال الباقي المعدوم للقسمة الإقليدية','التعبير عن «b قاسم لـ a» بالمساواة a = b × q','استعمال الصيغ المتكافئة: قاسم لـ، يقسم، يقبل القسمة على، مضاعف لـ','معرفة أن 1 قاسم لكل عدد طبيعي وأن كل عدد طبيعي غير معدوم قاسم لنفسه'],
+    pre:['القسمة الإقليدية · 1 متوسط','قواعد قابلية القسمة · 1 متوسط'] },
+  { n:2, t:'قواسم عدد طبيعي', short:'قواسم عدد', mission:'جدار المكتبة: 96 كتابًا', icon:'🧱', min:50,
+    tools:['🧱 جداء عاملين','🔑 تذكير: القاسم','🔍 أين نتوقّف','⚡ قواعد القسمة'],
+    skills:['كتابة عدد طبيعي على شكل جداء عاملين بكل الأشكال الممكنة','استنتاج كل قواسم عدد طبيعي من كتاباته على شكل جداء عاملين','تعيين قواسم عدد طبيعي باختبار الأعداد التي مربعها أصغر من العدد أو يساويه','توظيف قواعد قابلية القسمة على 2 و3 و4 و5 و9 في البحث عن القواسم'],
+    pre:['التعرّف على قاسم لعدد طبيعي','قواعد قابلية القسمة'] },
+  { n:3, t:'خواص قواسم عدد طبيعي', short:'خواص القواسم', mission:'ورشة البناء', icon:'🏗️', min:55,
+    tools:['🧱 n يقسم a','➕ المجموع والفرق','➗ باقي القسمة','✍️ البرهان'],
+    skills:['معرفة أن القاسم المشترك لعددين يقسم مجموعهما وفرقهما','معرفة أن قاسم عدد يقسم كل مضاعف له','معرفة أن القاسم المشترك لعددين يقسم باقي القسمة الإقليدية لأحدهما على الآخر','البرهان على خاصية من الشكل «إذا … فإنّ …»'],
+    pre:['قواسم عدد طبيعي','القسمة الإقليدية'] },
+  { n:4, t:'القاسم المشترك الأكبر لعددين طبيعيين', short:'القاسم المشترك الأكبر', mission:'محلّ الورود', icon:'💐', min:45,
+    tools:['🤝 القواسم المشتركة','🏆 أكبرها','✍️ الرمز PGCD','🔗 قواسم PGCD'],
+    skills:['تعيين القواسم المشتركة لعددين طبيعيين','التعرّف على القاسم المشترك الأكبر لعددين والترميز له بـ PGCD (a ; b)','تفسير وضعية توزيع في باقات متماثلة بلغة القواسم المشتركة','معرفة أن القواسم المشتركة لعددين هي قواسم قاسمهما المشترك الأكبر'],
+    pre:['قواسم عدد طبيعي'] },
+  { n:5, t:'تعيين القاسم المشترك الأكبر لعددين طبيعيين', short:'تعيين PGCD', mission:'حقائب التضامن', icon:'🎒', min:40,
+    tools:['📋 حصر القواسم','⚡ نتائج مباشرة','🔗 أحدهما يقسم الآخر'],
+    skills:['تعيين PGCD (a ; b) بحصر القواسم ثم المشتركة ثم أكبرها','استعمال النتائج المباشرة: PGCD(a ; a) = a ، PGCD(a ; 0) = a','معرفة أن PGCD (a ; b) = b عندما يكون b قاسمًا لـ a'],
+    pre:['القاسم المشترك الأكبر لعددين طبيعيين'] },
+  { n:6, t:'البحث عن القاسم المشترك الأكبر لعددين طبيعيين', short:'خوارزمية إقليدس', mission:'ورشة الخياطة', icon:'🧵', min:65,
+    tools:['➖ الفرق','✂️ الفروق المتتابعة','➗ الباقي','🔁 خوارزمية إقليدس','🧭 أيّ طريقة؟'],
+    skills:['حساب PGCD بخوارزمية الفروق المتتابعة','حساب PGCD بخوارزمية إقليدس (آخر باقٍ غير معدوم)','مقارنة الخوارزميتين واختيار الأنسب'],
+    pre:['خواص قواسم عدد طبيعي','تعيين القاسم المشترك الأكبر'] },
+  { n:7, t:'اختزال كسر', short:'اختزال كسر', mission:'عجينة الخبّاز', icon:'🥖', min:65,
+    tools:['➗ اختزال كسر','🔒 غير قابل للاختزال','⚡ قسمة واحدة','✅ هل انتهيت؟'],
+    skills:['اختزال كسر بالقسمة المتتابعة على قواسم مشتركة','التعرّف على الكسر غير القابل للاختزال','كتابة كسر على الشكل غير القابل للاختزال بالقسمة على PGCD'],
+    pre:['البحث عن القاسم المشترك الأكبر','الكسور المتساوية · 2 متوسط'] },
+  { n:8, t:'العددان الأوّليّان فيما بينهما', short:'أوليان فيما بينهما', mission:'لعبة الزوج الرابح', icon:'🤝', min:40,
+    tools:['🤝 أوليان فيما بينهما','✋ قاسم مشترك يكفي للنفي','⚠️ ليسا أوليين بالضرورة','✅ الإثبات بـ PGCD'],
+    skills:['التعرّف على عددين أوليين فيما بينهما (PGCD (a ; b) = 1)','إثبات ذلك بحساب القاسم المشترك الأكبر','نفيه بإظهار قاسم مشترك يختلف عن 1'],
+    pre:['البحث عن القاسم المشترك الأكبر'] },
+  { n:9, t:'أدمج تعلّماتي', short:'أدمج تعلّماتي', mission:'وضعية إدماجية', icon:'🧩', min:40,
+    tools:[], skills:['حل وضعية إدماجية بتعبئة قابلية القسمة والقواسم والقاسم المشترك الأكبر'], pre:['دروس الوحدة كلّها'] },
+];
+/* the unit's five KEYS (its الكفاءات in five words): earned when the lesson that teaches them is finished */
+const KEYS = [{ i:'🔑', l:'قاسم عدد', after:1 }, { i:'🔢', l:'قواسم عدد', after:2 }, { i:'🤝', l:'PGCD', after:6 }, { i:'✂️', l:'كسر غير قابل للاختزال', after:7 }, { i:'1️⃣', l:'أوليان فيما بينهما', after:8 }];
+const STATES = {
+  first: { done:0, starsOf:{} , tools:0 },
+  mid:   { done:3, starsOf:{1:9,2:7,3:5}, tools:2 },
+  done:  { done:9, starsOf:{1:9,2:8,3:7,4:9,5:6,6:9,7:8,8:9,9:6}, tools:4 },
+};
+let S = 'mid';
+const $ = (s) => document.querySelector(s);
+const nb = (s) => String(s).replace(' / ', ' / ');
+const starRow = (k) => '★'.repeat(Math.round(k / 3)) || '';
+
+function renderNow() {
+  const st = STATES[S]; const box = $('#now');
+  if (S === 'done') {
+    box.innerHTML = `
+      <div><div class="eyebrow">🎉 أنهيت الوحدة <span class="pill">⭐ ${total()}</span></div>
+        <h2>حلّ تحدّي الوحدة الآن</h2>
+        <div class="mission">جمعتَ المفاتيح الخمسة: المآزر تنتظرك.</div>
+        <div class="tools">${KEYS.map((k) => `<span class="tool on">${k.i} ${k.l}</span>`).join('')}</div>
+        <div class="cta"><button class="go">🏁 أحلّ التحدّي ←</button><button class="ghost">الوحدة 2: الحساب على الجذور</button></div></div>
+      <div class="scene" style="background:linear-gradient(180deg,#FEF3C7,#FDE68A)">🏆</div>`;
+    return;
+  }
+  const L = LESSONS[st.done]; const first = S === 'first';
+  box.innerHTML = `
+    <div>
+      <div class="eyebrow">${first ? '👋 ابدأ من هنا' : '▶ درسك الآن'} <span class="pill">الدرس ${L.n} من 9 · ⏱ ${L.min} د</span></div>
+      <h2>${L.t}</h2>
+      <div class="mission">المهمة: ${L.mission}</div>
+      <div class="tools">${L.tools.map((x, i) => `<span class="tool ${i < st.tools ? 'on' : ''}">${i < st.tools ? '' : '🔒 '}${x}</span>`).join('')}</div>
+      <div class="cta"><button class="go">${first ? 'ابدأ الوحدة ←' : 'واصل الدرس ←'}</button><button class="ghost" data-lesson="${L.n}">ما في الدرس؟</button></div>
+    </div>
+    <div class="scene">${L.icon}<span class="num">${nb(`${st.tools} / ${L.tools.length}`)} أدوات</span></div>`;
+}
+/* a Latin formula inside an Arabic line keeps its own direction (« PGCD (a ; b) », « a = b × q ») */
+const ltr = (s) => s.replace(/([A-Za-z(][A-Za-z0-9 ;()=×−+]*[A-Za-z0-9)])/g, '<bdi dir="ltr">$1</bdi>');
+function total() { return Object.values(STATES[S].starsOf).reduce((a, b) => a + b, 0); }
+function renderHead() {
+  const d = STATES[S].done;
+  $('#statDone').textContent = nb(`${d} / 9`);
+  $('#statStars').textContent = total();
+  $('#ringArc').setAttribute('stroke-dashoffset', String(119.4 * (1 - d / 9)));
+  $('#donePill').textContent = `✓ ${d} من 9`;
+}
+function renderKeys() {
+  const d = STATES[S].done; const got = KEYS.filter((k) => d >= k.after).length;
+  $('#keys').innerHTML = KEYS.map((k) => `<span class="k ${d >= k.after ? 'on' : ''}" title="${k.l}">${k.i}</span>`).join('')
+    + `<small>مفاتيح الحلّ: ${nb(`${got} / 5`)}</small><span style="flex:1"></span><button class="link" data-open="challenge">اقرأ التحدّي ←</button>`;
+}
+function renderTrack() {
+  const d = STATES[S].done; const track = $('#track');
+  track.querySelectorAll('.st').forEach((x) => x.remove());
+  LESSONS.forEach((L, i) => {
+    const cls = i < d ? 'done' : i === d ? 'now' : 'next';
+    const b = document.createElement('button');
+    b.className = `st ${cls}`; b.dataset.lesson = L.n;
+    b.innerHTML = `${cls === 'now' ? '<span class="here">أنت هنا</span>' : ''}<span class="dot">${L.icon}</span><b>${L.short}</b><span class="stars">${i < d ? starRow(STATES[S].starsOf[L.n] ?? 0) : `⏱ ${L.min} د`}</span>`;
+    b.setAttribute('aria-label', `الدرس ${L.n}: ${L.t}`);
+    track.appendChild(b);
+  });
+  const f = document.createElement('button');
+  f.className = `st flag ${d >= 9 ? 'now' : 'next'}`; f.dataset.open = 'challenge';
+  f.innerHTML = `<span class="dot">🏁</span><b>تحدّي الوحدة</b><span class="stars"></span>`;
+  track.appendChild(f);
+  $('#railFill').style.width = `${Math.min(100, (d / 9) * 100)}%`;
+}
+function fit() {
+  const main = $('.main'); const box = $('#fit'); const cs = getComputedStyle(main);
+  box.style.zoom = 1;
+  const W = main.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+  const H = main.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+  const z = Math.max(0.8, Math.min(1.6, W / box.offsetWidth, H / box.offsetHeight));
+  box.style.zoom = z.toFixed(3);
+}
+function render() { renderHead(); renderNow(); renderKeys(); renderTrack(); fit(); }
+addEventListener('resize', fit);
+
+/* the window: everything the old page showed at once, one tap away */
+let opener = null;
+function ringOnly(n) { document.querySelectorAll('.st').forEach((b) => b.classList.toggle('ring', n != null && b.dataset.lesson === String(n))); }
+function open(html, n = null, from = null) {
+  if (from) opener = from;
+  $('#dBody').innerHTML = html; ringOnly(n);
+  $('#win').classList.add('on'); $('#veil').classList.add('on');
+  ($('#win .go') ?? $('#close')).focus();
+}
+function closeD() { $('#win').classList.remove('on'); $('#veil').classList.remove('on'); ringOnly(null); opener?.focus(); opener = null; }
+/* the prerequisites are LESSON numbers of the unit (or earlier-year lessons): only an UNMET one shows up front (council) */
+const PRE_OF = { 2:[1], 3:[2], 4:[2], 5:[4], 6:[3,5], 7:[6], 8:[6], 9:[1,2,3,4,5,6,7,8] };
+function lessonHtml(n, more = false) {
+  const L = LESSONS[n - 1]; const d = STATES[S].done;
+  const status = n - 1 < d ? '✓ أنهيته' : n - 1 === d ? '▶ درسك الآن' : 'لاحقًا';
+  const unmet = (PRE_OF[n] ?? []).filter((k) => k > d).map((k) => LESSONS[k - 1]);
+  const goals = more ? L.skills : L.skills.slice(0, 3);
+  const rest = L.skills.length - 3;
+  return `<div class="top"><span class="ic">${L.icon}</span><div><h4 id="dTitle">${L.t}</h4>
+      <div class="line">الدرس ${L.n} من 9 · ⏱ ${L.min} د · ${status}</div></div></div>
+    <h5>ستتعلّم</h5><ul>${goals.map((g) => `<li class="${n - 1 < d ? 'ok' : ''}">${ltr(g)}</li>`).join('')}</ul>
+    ${more ? `${L.tools.length ? `<h5>🧰 الأدوات التي ستجمعها · المهمة: ${L.mission}</h5><div class="chips">${L.tools.map((x) => `<span>${x}</span>`).join('')}</div>` : ''}
+      <h5>🧭 يحتاج إلى</h5><div class="chips pre">${L.pre.map((p) => `<span>${p}</span>`).join('')}</div>
+      <button class="more" data-less="${n}">▲ أقلّ</button>`
+    : `<button class="more" data-more="${n}">▼ المزيد${rest > 0 ? ` (+${rest} ${rest === 1 ? 'هدف' : 'أهداف'}، الأدوات، ما يحتاجه)` : ' (الأدوات، ما يحتاجه)'}</button>`}
+    ${unmet.length && !more ? `<div class="warn">⚠️ راجع أولًا: ${unmet[0].short}<button data-lesson="${unmet[0].n}">افتحه</button></div>` : ''}
+    <button class="go">${n - 1 < d ? 'أعد الدرس ←' : n - 1 === d ? 'واصل الدرس ←' : 'افتح الدرس ←'}</button>`;
+}
+const PAGES = {
+  goals: `<h4 id="dTitle">🎯 ما سأتعلّمه في هذه الوحدة</h4><ul>
+    <li>التعرّف على قاسم لعدد طبيعي.</li><li>تعيين مجموعة قواسم عدد طبيعي.</li><li>تعيين القاسم المشترك الأكبر لعددين طبيعيين.</li>
+    <li>التعرّف على عددين أوليين فيما بينهما.</li><li>كتابة كسر على الشكل غير القابل للاختزال.</li></ul>`,
+  challenge: `<h4 id="dTitle">🏁 تحدّي الوحدة</h4>
+    <p style="font-size:17px;font-weight:700;line-height:1.9;margin:0">نظّمت البلدية حملة تضامن لتجهيز تلاميذ المدارس الابتدائية بالمآزر، فاشترت <span class="n">936</span> مئزرًا ورديًّا للبنات و <span class="n">845</span> مئزرًا أزرق للبنين.
+    تريد أن توزّعها بالتساوي على أكبر عدد ممكن من المدارس، بحيث تأخذ كل مدرسة العدد نفسه من المآزر الوردية والعدد نفسه من المآزر الزرقاء.</p>
+    <h5>كم مدرسة على الأكثر؟ وكم مئزرًا من كل لون تأخذ كل مدرسة؟</h5>
+    <p style="margin:0;color:#64748B;font-weight:700">فكّر في طريقة الآن. كل درس يعطيك مفتاحًا: بعد الدرس 6 تملك ما يكفي لحلّه.</p>`,
+  history: `<h4 id="dTitle">📜 إقليدس (325 – 265 ق.م)</h4>
+    <p style="font-size:16px;font-weight:600;line-height:1.9;margin:0">عالم رياضيات إغريقي عاش في الإسكندرية. الطريقة التي ستتعلّمها في الدرس 6 لحساب القاسم المشترك الأكبر تحمل اسمه: «خوارزمية إقليدس»، وما زالت تُستعمل اليوم في الحواسيب.</p>`,
+  review: `<h4 id="dTitle">🧭 راجع قبل الوحدة</h4>
+    <p style="margin:0;color:#475569;font-weight:700">تحتاج هذه الوحدة إلى درسين من السنة الأولى متوسط:</p>
+    <div class="chips pre"><span>القسمة الإقليدية · 1 متوسط ↩ راجع</span><span>قواعد قابلية القسمة · 1 متوسط ↩ راجع</span></div>`,
+};
+
+document.addEventListener('click', (e) => {
+  const st = e.target.closest('[data-state]'); if (st) { S = st.dataset.state; document.querySelectorAll('.demo button').forEach((b) => b.classList.toggle('on', b === st)); render(); return; }
+  const mo = e.target.closest('[data-more]'); if (mo) { open(lessonHtml(Number(mo.dataset.more), true), Number(mo.dataset.more)); return; }
+  const le = e.target.closest('[data-less]'); if (le) { open(lessonHtml(Number(le.dataset.less)), Number(le.dataset.less)); return; }
+  const ls = e.target.closest('[data-lesson]'); if (ls) { const n = Number(ls.dataset.lesson); open(lessonHtml(n), n, ls.closest('.st') ?? opener); return; }
+  const op = e.target.closest('[data-open]'); if (op) { open(PAGES[op.dataset.open], null, op); return; }
+  if (e.target.id === 'veil' || e.target.closest('#close')) closeD();
+});
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeD(); });
+render();
+</script>
+</body>
+</html>

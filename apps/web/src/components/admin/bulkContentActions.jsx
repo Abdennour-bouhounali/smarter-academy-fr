@@ -1,6 +1,5 @@
-import React from 'react';
-import { STATUS_LABELS } from './ui/StatusBadge';
-import { CONTENT_NOUNS, agree, countNoun } from './contentNouns';
+import i18n from '../../i18n';
+import { CONTENT_NOUNS } from './contentNouns';
 import { bulkChangeContentStatus, bulkChangeContentTier } from '../../services/admin/contentService';
 
 /**
@@ -19,76 +18,94 @@ import { bulkChangeContentStatus, bulkChangeContentTier } from '../../services/a
  * Ce module ne décide RIEN : c'est le serveur qui valide, journalise et peut
  * refuser contenu par contenu. Les `disabledReason` ci-dessous ne sont que du
  * confort — éviter de lancer un lot dont on sait déjà qu'il ne changera rien.
+ *
+ * LA LANGUE. Ce fichier n'est pas un composant : `buildContentBulkActions`
+ * est une fabrique appelée dans un `useMemo`, et un hook `useTranslation` n'y
+ * a pas sa place. On traduit donc contre l'instance i18next directement —
+ * même instance, même catalogue `admin`, même catégorie de pluriel arabe que
+ * partout ailleurs. Et la SIGNATURE de la fabrique ne bouge pas : les trois
+ * pages de contenu l'appellent déjà avec cet objet d'options, elles n'ont
+ * rien à changer.
  */
+
+/** Traduit dans le catalogue `admin`, hors composant React. */
+const t = (key, options) => i18n.t(key, { ns: 'admin', ...options });
+
+/**
+ * « 24 درساً » — le nom compté, dans la bonne catégorie de pluriel arabe.
+ *
+ * L'arabe en a six (`zero`, `one`, `two`, `few`, `many`, `other`) et c'est
+ * `Intl.PluralRules('ar-DZ')` qui choisit, jamais nous : « درسان » pour 2,
+ * « 3 دروس » pour 3, « 11 درساً » pour 11. Une concaténation ne sait pas
+ * faire ça — d'où la disparition de l'ancien `countNoun`/`agree` français.
+ */
+const counted = (count, noun) => t(`bulk.noun.${noun?.key ?? 'item'}`, { count });
+
+/**
+ * Le même nom, au CAS OBLIQUE — « أرشفة درسين » et non « أرشفة درسان ».
+ *
+ * Seul le duel distingue les deux cas en arabe, mais il les distingue
+ * toujours : un `{{counted}}` unique serait faux une fois sur six.
+ */
+const countedObj = (count, noun) => t(`bulk.nounOf.${noun?.key ?? 'item'}`, { count });
 
 /** Les quatre états, tels que les propose déjà le menu unitaire. */
 const STATUS_ACTIONS = [
   {
     status: 'published',
-    label: 'Publier',
+    labelKey: 'bulk.publish',
     tone: 'default',
     // Republier ne retire rien à personne : même asymétrie qu'à l'unité, où
     // PublicationControl applique « Publier » sans confirmation.
     confirm: {
-      title: (count, counted) => `Publier ${counted} ?`,
-      confirmLabel: (count, counted) => `Publier ${counted}`,
-      message: (count, counted, noun) => (
+      title: (count, c) => t('bulk.confirmPublishTitle', { counted: c }),
+      confirmLabel: (count, c) => t('bulk.confirmPublishAction', { counted: c }),
+      message: (count, c) => <p>{t('bulk.confirmPublishMessage', { count, counted: c })}</p>,
+    },
+  },
+  {
+    status: 'hidden',
+    labelKey: 'bulk.hide',
+    tone: 'danger',
+    confirm: {
+      title: (count, c) => t('bulk.confirmHideTitle', { counted: c }),
+      confirmLabel: (count, c) => t('bulk.confirmHideAction', { counted: c }),
+      message: (count, c) => (
         <p>
-          {count === 1 ? 'Ce contenu deviendra' : `Ces ${counted} deviendront`}{' '}
-          {agree('visible', count, false)} pour les élèves.
+          {t('bulk.confirmHideMessage', { counted: c })}{' '}
+          <strong>{t('bulk.noLearningDataLost')}</strong>{t('bulk.noLearningDataLostHide')}
         </p>
       ),
     },
   },
   {
-    status: 'hidden',
-    label: 'Masquer',
-    tone: 'danger',
-    confirm: {
-      title: (count, counted) => `Retirer ${counted} aux élèves ?`,
-      confirmLabel: (count, counted) => `Masquer ${counted}`,
-      message: (count, counted) => (
-        <>
-          <p>
-            Les élèves n’auront plus accès à ces {counted}.{' '}
-            <strong>Aucune donnée d’apprentissage n’est supprimée</strong> : les progressions et les
-            tentatives déjà enregistrées sont conservées, et réapparaîtront si vous republiez.
-          </p>
-        </>
-      ),
-    },
-  },
-  {
     status: 'draft',
-    label: 'Repasser en brouillon',
+    labelKey: 'bulk.draft',
     tone: 'danger',
     confirm: {
-      title: (count, counted) => `Repasser ${counted} en brouillon ?`,
-      confirmLabel: (count, counted) => `Repasser ${counted} en brouillon`,
-      message: (count, counted) => (
+      title: (count, c) => t('bulk.confirmDraftTitle', { counted: c }),
+      confirmLabel: (count, c) => t('bulk.confirmDraftAction', { counted: c }),
+      message: (count, c) => (
         <p>
-          Les élèves n’auront plus accès à ces {counted}.{' '}
-          <strong>Aucune donnée d’apprentissage n’est supprimée.</strong>
+          {t('bulk.confirmDraftMessage', { counted: c })}{' '}
+          <strong>{t('bulk.noLearningDataLost')}</strong>
         </p>
       ),
     },
   },
   {
     status: 'archived',
-    label: 'Archiver',
+    labelKey: 'bulk.archive',
     tone: 'danger',
     confirm: {
-      title: (count, counted) => `Archiver ${counted} ?`,
-      confirmLabel: (count, counted) => `Archiver ${counted}`,
-      message: (count, counted, noun) => (
-        <>
-          <p>
-            Les élèves n’y auront plus accès.{' '}
-            <strong>Aucune donnée d’apprentissage n’est supprimée</strong> : archiver n’est pas
-            supprimer, et {counted} {count > 1 ? 'peuvent' : 'peut'} être{' '}
-            {agree('republié', count, noun.feminine)} à tout moment.
-          </p>
-        </>
+      title: (count, c) => t('bulk.confirmArchiveTitle', { counted: c }),
+      confirmLabel: (count, c) => t('bulk.confirmArchiveAction', { counted: c }),
+      message: (count, c) => (
+        <p>
+          {t('bulk.confirmArchiveMessage')}{' '}
+          <strong>{t('bulk.noLearningDataLost')}</strong>{' '}
+          {t('bulk.confirmArchiveRepublishable', { count, counted: c })}
+        </p>
       ),
     },
   },
@@ -97,27 +114,23 @@ const STATUS_ACTIONS = [
 const TIER_ACTIONS = [
   {
     tier: 'free',
-    label: 'Rendre gratuit',
+    labelKey: 'bulk.setFree',
     tone: 'default',
     // Ouvrir un accès ne se confirme pas — comme à l'unité.
     confirm: null,
   },
   {
     tier: 'premium',
-    label: 'Rendre payant',
+    labelKey: 'bulk.setPremium',
     tone: 'danger',
     confirm: {
-      title: (count, counted, noun) => `Rendre ${counted} ${agree('payant', count, noun.feminine)} ?`,
-      confirmLabel: (count, counted, noun) => `Rendre ${agree('payant', count, noun?.feminine ?? false)}`,
-      message: (count, counted) => (
+      title: (count, c) => t('bulk.confirmPremiumTitle', { count, counted: c }),
+      confirmLabel: () => t('bulk.confirmPremiumAction'),
+      message: (count, c) => (
         <>
-          <p>
-            Les élèves <strong>sans abonnement</strong> n’auront plus accès à ces {counted}. Le
-            contenu reste visible au catalogue, avec la mention « Premium ».
-          </p>
+          <p>{t('bulk.confirmPremiumMessage', { counted: c })}</p>
           <p className="mt-2">
-            <strong>Aucune donnée d’apprentissage n’est supprimée.</strong> L’état de publication
-            n’est pas modifié.
+            <strong>{t('bulk.noLearningDataLost')}</strong> {t('bulk.publicationUnchanged')}
           </p>
         </>
       ),
@@ -140,21 +153,16 @@ const TIER_ACTIONS = [
  */
 const TIER_INHERIT_ACTION = {
   tier: null,
-  label: 'Hériter de la leçon',
+  labelKey: 'bulk.inherit',
   tone: 'default',
   confirm: {
-    title: (count, counted) => `Aligner ${counted} sur leur leçon ?`,
-    confirmLabel: (count, counted) => `Aligner ${counted}`,
-    message: (count, counted) => (
+    title: (count, c) => t('bulk.confirmInheritTitle', { counted: c }),
+    confirmLabel: (count, c) => t('bulk.confirmInheritAction', { counted: c }),
+    message: (count, c) => (
       <>
-        <p>
-          Ces {counted} suivront désormais le palier de leur leçon : ils deviendront gratuits
-          sous une leçon gratuite, payants sous une leçon payante.
-        </p>
+        <p>{t('bulk.confirmInheritMessage', { count, counted: c })}</p>
         <p className="mt-2">
-          Les leçons concernées peuvent avoir des paliers différents : l’accès peut donc s’ouvrir
-          pour certains et se fermer pour d’autres.{' '}
-          <strong>Aucune donnée d’apprentissage n’est supprimée.</strong>
+          {t('bulk.confirmInheritWarning')} <strong>{t('bulk.noLearningDataLost')}</strong>
         </p>
       </>
     ),
@@ -180,8 +188,8 @@ function nameFailures(failed, rows, titleOf) {
 /**
  * Construit la liste d'actions d'une page.
  *
- * Le nom et le genre viennent du TYPE (voir CONTENT_NOUNS) : les recopier à
- * l'appel serait la troisième occasion d'écrire « 24 leçons sélectionnés ».
+ * Le nom vient du TYPE (voir CONTENT_NOUNS) : le recopier à l'appel serait la
+ * troisième occasion d'écrire un nombre mal accordé.
  *
  * @param {object}   options
  * @param {'lesson'|'module'|'exercise'} options.type
@@ -196,15 +204,27 @@ export function buildContentBulkActions({
   const noun = CONTENT_NOUNS[type];
   const statusActions = STATUS_ACTIONS.map((action) => ({
     key: `status:${action.status}`,
-    label: action.label,
+    label: t(action.labelKey),
     tone: action.tone,
-    confirm: action.confirm,
-    runningLabel: (count) => `${action.label} — ${countNoun(count, noun)}…`,
-    successLabel: (n) => `${countNoun(n, noun)} ${agree('passé', n, noun.feminine)} en « ${STATUS_LABELS[action.status]} ».`,
+    // Une leçon recopie son état sur tous ses محاور (cascade serveur) : le
+    // dialogue le dit, quel que soit l'état choisi.
+    confirm: type === 'lesson'
+      ? {
+        ...action.confirm,
+        message: (count, c) => (
+          <>
+            {action.confirm.message(count, c)}
+            <p className="mt-2">{t('bulk.cascadeModules', { status: t(`status.${action.status}`) })}</p>
+          </>
+        ),
+      }
+      : action.confirm,
+    runningLabel: (count) => t('bulk.running', { action: t(action.labelKey), counted: countedObj(count, noun) }),
+    successLabel: (n) => t('bulk.successStatus', { count: n, counted: counted(n, noun), status: t(`status.${action.status}`) }),
     // Tout masquer quand tout est déjà masqué ne ferait qu'un rapport
     // « 25 déjà dans cet état » : on le dit avant, pas après.
     disabledReason: (rows) => (rows.length > 0 && rows.every((row) => row.publicationStatus === action.status)
-      ? `Déjà en « ${STATUS_LABELS[action.status]} ».`
+      ? t('bulk.alreadyStatus', { status: t(`status.${action.status}`) })
       : null),
     run: async (rows) => {
       const outcome = await bulkChangeContentStatus(token, type, rows.map((row) => row.id), action.status);
@@ -219,20 +239,20 @@ export function buildContentBulkActions({
     ...(withTierInherit ? [TIER_INHERIT_ACTION] : []),
   ].map((action) => ({
     key: `tier:${action.tier}`,
-    label: action.label,
+    label: t(action.labelKey),
     tone: action.tone,
     confirm: action.confirm,
-    runningLabel: (count) => `${action.label} — ${countNoun(count, noun)}…`,
+    runningLabel: (count) => t('bulk.running', { action: t(action.labelKey), counted: countedObj(count, noun) }),
     successLabel: (n) => (action.tier === null
-      ? `${countNoun(n, noun)} ${agree('aligné', n, noun.feminine)} sur le palier de leur leçon.`
-      : `${countNoun(n, noun)} ${agree('passé', n, noun.feminine)} en « ${STATUS_LABELS[action.tier]} ».`),
+      ? t('bulk.successInherit', { count: n, counted: counted(n, noun) })
+      : t('bulk.successStatus', { count: n, counted: counted(n, noun), status: t(`status.${action.tier}`) })),
     // `?? null` : un exercice qui hérite porte `tier: null`, et `undefined`
     // (champ absent) doit compter comme la même chose — sinon « Hériter »
     // resterait actif sur une sélection qui hérite déjà.
     disabledReason: (rows) => (rows.length > 0 && rows.every((row) => (row.tier ?? null) === action.tier)
       ? (action.tier === null
-        ? 'Ces contenus héritent déjà de leur leçon.'
-        : `Déjà en « ${STATUS_LABELS[action.tier]} ».`)
+        ? t('bulk.alreadyInherit')
+        : t('bulk.alreadyStatus', { status: t(`status.${action.tier}`) }))
       : null),
     run: async (rows) => {
       const outcome = await bulkChangeContentTier(token, type, rows.map((row) => row.id), action.tier);

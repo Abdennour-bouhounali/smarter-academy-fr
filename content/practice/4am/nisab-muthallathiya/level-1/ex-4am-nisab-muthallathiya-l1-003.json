@@ -1,0 +1,216 @@
+{
+  "id": "ex-4am-nisab-muthallathiya-l1-003",
+  "lessonCode": "nisab-muthallathiya",
+  "level": 1,
+  "metadata": {
+    "title": "الطول SK بجيب التمام",
+    "estimatedMinutes": 4,
+    "tags": [
+      "جيب التمام",
+      "حساب طول"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-6",
+      "page": 122,
+      "section": "النسب المثلثية - استعمال حاسبة",
+      "number": 6,
+      "adaptedFrom": "ex-4am-nisab-muthallathiya-l3-006"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل، $JSK$ مثلث قائم في $S$ حيث $JK = 10\\,\\mathrm{cm}$ و $\\widehat{JKS} = 55^{\\circ}$ .",
+    "figure": {
+      "points": {
+        "S": [
+          0,
+          0
+        ],
+        "J": [
+          -8.1915,
+          0
+        ],
+        "K": [
+          0,
+          -5.7358
+        ]
+      },
+      "segments": [
+        [
+          "J",
+          "S"
+        ],
+        [
+          "S",
+          "K"
+        ],
+        {
+          "from": "J",
+          "to": "K",
+          "label": "10 cm"
+        }
+      ],
+      "rightAngles": [
+        [
+          "J",
+          "S",
+          "K"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "K",
+          "from": "S",
+          "to": "J",
+          "label": "55°",
+          "radius": 28
+        }
+      ],
+      "ariaLabel": "مثلث JSK قائم في S حيث JK = 10 سنتيمتر والزاوية JKS قيسها 55 درجة",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب $\\cos\\widehat{JKS}$ بدلالة أطوال أضلاع المثلث $JSK$ .",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\cos\\widehat{JKS} = \\dfrac{JS}{JK}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-MUQABIL-MUJAWIR"
+        },
+        {
+          "id": "B",
+          "content": "$\\cos\\widehat{JKS} = \\dfrac{SK}{JK}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\cos\\widehat{JKS} = \\dfrac{JK}{SK}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-NISBA-MAQLUBA"
+        },
+        {
+          "id": "D",
+          "content": "$\\cos\\widehat{JKS} = \\dfrac{SK}{JS}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-WATAR-MUQABIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الوتر هو الضلع المقابل للزاوية القائمة في $S$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بالنسبة إلى الزاوية $\\widehat{JKS}$ : الضلع المجاور لها يمرّ برأسها $K$ ، والضلع المقابل لها لا يمرّ به."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جيب تمام زاوية حادة = طول الضلع المجاور لها على طول الوتر."
+        }
+      ],
+      "feedback": {
+        "correct": "الوتر $[JK]$ ، المجاور للزاوية $[SK]$ والمقابل لها $[JS]$ ، إذن $\\cos\\widehat{JKS} = \\dfrac{SK}{JK}$ .",
+        "incorrect": "عيّن أولا الوتر (مقابل الزاوية القائمة)، ثم المجاور (يمرّ بالرأس $K$) والمقابل؛ جيب تمام زاوية حادة = طول الضلع المجاور لها على طول الوتر."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $JSK$ القائم في $S$ : الوتر هو $[JK]$ ،",
+          "الضلع المجاور للزاوية $\\widehat{JKS}$ هو $[SK]$ والضلع المقابل لها هو $[JS]$ .",
+          "جيب تمام الزاوية = طول الضلع المجاور لها على طول الوتر."
+        ],
+        "result": "\\cos\\widehat{JKS} = \\dfrac{SK}{JK}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب المدوّر إلى الجزء من 100 للطول $SK$ .",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm مدوّرا إلى 0,01",
+      "expectedAnswer": "5.74",
+      "misconceptionSignatures": [
+        {
+          "value": "17.43",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        },
+        {
+          "value": "8.19",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "5.73",
+          "id": "MISC-MUTH-TADWIR-BATR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $JSK$ القائم في $S$ ، حدّد موقع الضلع المعلوم والضلع المطلوب بالنسبة إلى الزاوية $\\widehat{JKS}$ (مجاور، مقابل أو وتر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة التي تجمع هذين الضلعين هي جيب تمام الزاوية $\\widehat{JKS}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالآلة الحاسبة مبرمجة على الدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$SK = 10 \\times \\cos 55^{\\circ} \\approx 5{,}74\\,\\mathrm{cm}$ .",
+        "incorrect": "الطول المطلوب في بسط النسبة: نضرب الطول المعلوم في النسبة المثلثية ولا نقسم عليها؛ والآلة الحاسبة مبرمجة على الدرجة."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $JSK$ القائم في $S$ لدينا: $\\cos\\,\\widehat{JKS} = \\dfrac{SK}{JK}$",
+          "ومنه: $SK = JK \\times \\cos\\,\\widehat{JKS}$",
+          "$SK = 10 \\times \\cos 55^{\\circ}$",
+          "باستعمال الآلة الحاسبة: $SK \\approx 5{,}7358$"
+        ],
+        "result": "SK \\approx 5{,}74\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

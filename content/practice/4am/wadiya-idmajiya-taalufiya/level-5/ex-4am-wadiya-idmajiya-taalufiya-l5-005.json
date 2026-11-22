@@ -1,0 +1,317 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-taalufiya-l5-005",
+  "lessonCode": "wadiya-idmajiya-taalufiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2023 — مؤسسة مصغّرة لصنع المطلوع بالبليدة",
+    "estimatedMinutes": 30,
+    "tags": [
+      "وضعية إدماجية",
+      "تكلفة وإيراد",
+      "ربح"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-taalufiya_P2",
+      "modelledOn": "BEM 2023 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "أنشأ شاب ببوفاريك مؤسسة مصغّرة لصنع خبز المطلوع وبيعه، يتقن عمله ويلتزم الأمانة مع زبائنه:\n- المصاريف الثابتة (الكراء والكهرباء والغاز) 1200DA في اليوم.\n- تكلفة صنع المطلوعة الواحدة 20DA .\n- يبيع المطلوعة الواحدة بـ 35DA .\nنسمّي $x$ عدد المطلوعات المصنوعة والمبيعة في اليوم، و $C(x)$ التكلفة اليومية و $R(x)$ الإيراد اليومي بـ DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "صنع الشاب يوم الأحد 100 مطلوعة وباعها كلها.",
+      "statement": "التكلفة اليومية:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: التكلفة بـ DA",
+      "expectedAnswer": "3200",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAALUFI-NISYAN-B",
+          "value": "2000"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أضف المصاريف الثابتة إلى تكلفة صنع 100 مطلوعة."
+        }
+      ],
+      "feedback": {
+        "correct": "$20 \\times 100 + 1200$ .",
+        "incorrect": "لا تنس المصاريف الثابتة."
+      },
+      "solution": {
+        "lines": [
+          "التكلفة: $20 \\times 100 + 1200 = 3200DA$",
+          "الإيراد: $35 \\times 100 = 3500DA$",
+          "الربح: $3500 - 3200 = 300DA$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "الربح في هذا اليوم:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الربح بـ DA",
+      "expectedAnswer": "300",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-TAHAQQUQ",
+          "value": "1500"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الربح = الإيراد − التكلفة."
+        }
+      ],
+      "feedback": {
+        "correct": "$35 \\times 100 - 3200$ .",
+        "incorrect": "احسب الإيراد ثم اطرح منه التكلفة كاملة."
+      },
+      "solution": {
+        "lines": [
+          "التكلفة: $20 \\times 100 + 1200 = 3200DA$",
+          "الإيراد: $35 \\times 100 = 3500DA$",
+          "الربح: $3500 - 3200 = 300DA$"
+        ],
+        "result": "300DA"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "عبّر عن $C(x)$ و $R(x)$ بدلالة $x$ .",
+      "statement": "أعط العددين $a$ و $b$ حيث: $C(x) = ax + b$ ، ابدأ بالعدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "1200"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما يُصرف على كل مطلوعة."
+        }
+      ],
+      "feedback": {
+        "correct": "تكلفة المطلوعة هي معامل $x$ .",
+        "incorrect": "معامل $x$ هو ما يتكرّر مع كل مطلوعة."
+      },
+      "solution": {
+        "lines": [
+          "التكلفة: $C(x) = 20x + 1200$",
+          "الإيراد: $R(x) = 35x$"
+        ],
+        "result": "C(x) = 20x + 1200"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "ثم العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "1200",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "20"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المصاريف التي لا تتعلّق بعدد المطلوعات."
+        }
+      ],
+      "feedback": {
+        "correct": "المصاريف الثابتة هي الحدّ الثابت.",
+        "incorrect": "الحدّ الثابت لا يتعلّق بـ $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "التكلفة: $C(x) = 20x + 1200$",
+          "الإيراد: $R(x) = 35x$"
+        ],
+        "result": "C(x) = 20x + 1200"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "statement": "أعط العدد $a$ حيث: $R(x) = ax$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "35",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-TAHAQQUQ",
+          "value": "15"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما يُقبض عن بيع مطلوعة واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "سعر البيع هو معامل $x$ .",
+        "incorrect": "الإيراد يتعلّق بسعر البيع فقط."
+      },
+      "solution": {
+        "lines": [
+          "التكلفة: $C(x) = 20x + 1200$",
+          "الإيراد: $R(x) = 35x$"
+        ],
+        "result": "R(x) = 35x"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ا",
+      "statement": "عيّن عدد المطلوعات الذي يتساوى من أجله الإيراد والتكلفة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد المطلوعات",
+      "expectedAnswer": "80",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة $R(x) = C(x)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$35x = 20x + 1200$ .",
+        "incorrect": "ساوِ العبارتين ثم اجمع حدود $x$ في طرف."
+      },
+      "solution": {
+        "lines": [
+          "$R(x) = C(x)$",
+          "$35x = 20x + 1200$",
+          "$15x = 1200$",
+          "$x = 80$",
+          "من أجل 80 مطلوعة لا يربح الشاب ولا يخسر؛ تحت هذا العدد يخسر."
+        ],
+        "result": "x = 80"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "sub": "ب",
+      "statement": "☜ يريد الشاب ربحا يوميا لا يقل عن 1500DA . ما هو أقل عدد من المطلوعات عليه أن يصنعه ويبيعه في اليوم؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد المطلوعات",
+      "expectedAnswer": "180",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الربح $R(x) - C(x)$ يُكتب على الشكل $ax + b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المتراجحة: الربح $\\geqslant 1500$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$15x - 1200 \\geqslant 1500$ .",
+        "incorrect": "عبّر عن الربح بدلالة $x$ ثم حلّ المتراجحة."
+      },
+      "solution": {
+        "lines": [
+          "الربح: $R(x) - C(x) = 35x - 20x - 1200 = 15x - 1200$",
+          "$15x - 1200 \\geqslant 1500$",
+          "$15x \\geqslant 2700$",
+          "$x \\geqslant 180$",
+          "إذن عليه أن يصنع ويبيع 180 مطلوعة على الأقل في اليوم."
+        ],
+        "result": "180"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    }
+  ]
+}

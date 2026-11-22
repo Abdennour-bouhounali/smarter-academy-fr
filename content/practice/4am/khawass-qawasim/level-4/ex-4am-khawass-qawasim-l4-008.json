@@ -1,0 +1,152 @@
+{
+  "id": "ex-4am-khawass-qawasim-l4-008",
+  "lessonCode": "khawass-qawasim",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2021 — 4n + 15 و 2n + 3",
+    "estimatedMinutes": 10,
+    "tags": [
+      "خاصية 1",
+      "برهان",
+      "حرفي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_khawass-qawasim_P1",
+      "modelledOn": "BEM 2021 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$n$ عدد طبيعي. نضع $a = 4n + 15$ و $b = 2n + 3$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $a - 2b$.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولًا $2b = 2(2n + 3)$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح: الحد $4n$ يختفي."
+        }
+      ],
+      "feedback": {
+        "correct": "$a - 2b = 4n + 15 - 4n - 6 = 9$.",
+        "incorrect": "انشر $2b$ ثم احذف القوسين مع الانتباه إلى الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "$2b = 4n + 6$",
+          "$a - 2b = 4n + 15 - (4n + 6)$",
+          "$a - 2b = 9$"
+        ],
+        "result": "a - 2b = 9"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بيّن أن كل قاسم مشترك للعددين $a$ و $b$ يقسم 9.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ليكن $d$ قاسمًا مشتركًا للعددين $a$ و $b$. ماذا عن $2b$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القاسم المشترك للعددين $a$ و $2b$ يقسم فرقهما."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك سطرًا بسطر بالحل النموذجي، وانتبه إلى كل مرحلة من مراحل الاستدلال."
+      },
+      "solution": {
+        "lines": [
+          "ليكن $d$ قاسمًا مشتركًا للعددين $a$ و $b$.",
+          "$d$ يقسم $b$ ، فهو يقسم مضاعفه $2b$ (الخاصية 1).",
+          "$d$ يقسم كلا من $a$ و $2b$ و $a > 2b$ ، فهو يقسم الفرق $a - 2b = 9$ (الخاصية 1)."
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "عيّن كل الأعداد الطبيعية التي يمكن أن تكون قواسم مشتركة للعددين $a$ و $b$.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        3,
+        9
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل قاسم مشترك يقسم 9 حسب السؤال 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جد قواسم 9، ثم تحقّق أن كل واحد منها ممكن بقيمة مناسبة لـ $n$."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة الممكنة هي قواسم 9: 1 ، 3 ، 9 (مثلًا من أجل $n = 3$: $a = 27$ و $b = 9$).",
+        "incorrect": "القاسم المشترك يقسم 9: ابحث عن كل قواسم 9."
+      },
+      "solution": {
+        "lines": [
+          "حسب السؤال 02، كل قاسم مشترك يقسم 9، وقواسم 9 هي: 1 ، 3 ، 9.",
+          "وكلها ممكنة: من أجل $n = 3$ يكون $a = 27$ و $b = 9$ ، وقواسمهما المشتركة هي 1 و 3 و 9."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

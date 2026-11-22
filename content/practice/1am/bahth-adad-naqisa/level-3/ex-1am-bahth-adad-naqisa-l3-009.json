@@ -1,0 +1,191 @@
+{
+  "id": "ex-1am-bahth-adad-naqisa-l3-009",
+  "lessonCode": "bahth-adad-naqisa",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مخزن الدقيق",
+    "estimatedMinutes": 8,
+    "tags": [
+      "وضعية",
+      "مخزن"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الرابع",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "في مخزن مطحنة 150 كيسًا من الدقيق."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "خرج من المخزن عدد من الأكياس فبقي فيه 98 كيسًا. كم كيسًا خرج؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "52",
+      "misconceptionSignatures": [
+        {
+          "value": "248",
+          "id": "MISC-NAQISA-TRAPADD"
+        },
+        {
+          "value": "-52",
+          "id": "MISC-NAQISA-REVSUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المجهول هنا هو المطروح: ما أُخذ من العدد الذي بدأنا منه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $150-52=98$ ، فالعدد الناقص هو $52$ .",
+        "incorrect": "في a − □ = b المجهول هو المطروح: نطرح الناتج من a ولا نعكس الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $150-\\square=98$ .",
+          "نُرجع بالعملية العكسية: $\\square=150-98=52$ .",
+          "نتحقّق: $150-52=98$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بعد أن وصلت شحنة من 45 كيسًا صار في المخزن 143 كيسًا. كم كيسًا كان فيه قبل وصولها؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "98",
+      "misconceptionSignatures": [
+        {
+          "value": "188",
+          "id": "MISC-NAQISA-SAMEOP"
+        },
+        {
+          "value": "-98",
+          "id": "MISC-NAQISA-REVSUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للجمع هي الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $98+45=143$ ، فالعدد الناقص هو $98$ .",
+        "incorrect": "في مجموع نطرح العدد المعلوم من الناتج: لا نجمع مرّة أخرى."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square+45=143$ .",
+          "نُرجع بالعملية العكسية: $\\square=143-45=98$ .",
+          "نتحقّق: $98+45=143$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "وُزّعت الأكياس الـ 143 على 11 محلاًّ بالتساوي. كم كيسًا نال كلّ محلّ؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "value": "1573",
+          "id": "MISC-NAQISA-MULAGAIN"
+        },
+        {
+          "value": "1/13",
+          "id": "MISC-NAQISA-DIVREV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للضرب هي القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $13\\times 11=143$ ، فالعدد الناقص هو $13$ .",
+        "incorrect": "في جداء نقسم الناتج على العدد المعلوم: لا نضربه فيه ولا نقسم المعلوم على الناتج."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square\\times 11=143$ .",
+          "نُرجع بالعملية العكسية: $\\square=143\\div 11=13$ .",
+          "نتحقّق: $13\\times 11=143$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

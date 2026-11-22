@@ -1,0 +1,159 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l4-001",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 4,
+  "metadata": {
+    "title": "قيم a التي تجعل 24/(a + 7) عددا طبيعيا",
+    "estimatedMinutes": 6,
+    "tags": [
+      "قواسم",
+      "كسر"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-9",
+      "page": 14,
+      "section": "أوظّف تعلّماتي",
+      "number": 9
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن كل قواسم العدد 24.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        8,
+        12,
+        24
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6,
+            8,
+            12
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 24 بمربعات الأعداد: إلى أي عدد يكفي أن تختبر قابلية القسمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل قسمة باقيها معدوم تعطي قاسمين: $d$ و $24 \\div d$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$24 = 1 \\times 24$ ، $24 = 2 \\times 12$ ، $24 = 3 \\times 8$ ، $24 = 4 \\times 6$.",
+        "incorrect": "اختبر الأعداد التي مربعها أصغر من العدد أو يساويه، وخذ من كل قسمة باقيها معدوم القاسمين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$4^2 = 16 \\leq 24 < 25 = 5^2$ ومنه نختبر قابلية قسمة 24 على الأعداد من 1 إلى 4.",
+          "نجد أن 24 يقبل القسمة على كل من الأعداد: 1 ، 2 ، 3 ، 4.",
+          "ومن المساويات: $24 = 1 \\times 24$ ، $24 = 2 \\times 12$ ، $24 = 3 \\times 8$ ، $24 = 4 \\times 6$",
+          "إذن قواسم العدد 24 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 8 ، 12 ، 24."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هي قيم العدد الطبيعي $a$ التي من أجلها يكون $\\dfrac{24}{a + 7}$ عددا طبيعيا؟",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        5,
+        17
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            8,
+            12,
+            24
+          ],
+          "id": "MISC-QAWASIM-A-BADAL-A-ZAID-7"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "متى يكون $\\dfrac{24}{a + 7}$ عددا طبيعيا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يجب أن يكون $a + 7$ قاسما للعدد 24، وأكبر من 7 أو يساويه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "من كل قاسم مناسب $d$ نستنتج $a = d - 7$."
+        }
+      ],
+      "feedback": {
+        "correct": "$a + 7$ قاسم للعدد 24 أكبر من 7: 8 ، 12 ، 24.",
+        "incorrect": "المطلوب قيم $a$ لا قيم $a + 7$: عيّن قواسم 24 التي تفوق 7 أو تساويه ثم اطرح منها 7."
+      },
+      "solution": {
+        "lines": [
+          "يكون $\\dfrac{24}{a + 7}$ عددا طبيعيا إذا كان $a + 7$ قاسما للعدد 24.",
+          "قواسم العدد 24 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 8 ، 12 ، 24.",
+          "وبما أن $a + 7 \\geq 7$ فإن $a + 7$ يساوي أحد الأعداد: 8 ، 12 ، 24.",
+          "ومنه قيم $a$ هي: 1 ، 5 ، 17."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

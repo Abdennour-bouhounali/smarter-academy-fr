@@ -1,0 +1,226 @@
+{
+  "id": "ex-4am-mutarajiha-ula-l2-009",
+  "lessonCode": "mutarajiha-ula",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2013 — عبارة وإشارتها",
+    "estimatedMinutes": 8,
+    "tags": [
+      "متراجحة",
+      "حل متراجحة",
+      "تمثيل بياني"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mutarajiha-ula_P2",
+      "modelledOn": "BEM 2013 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2013",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $A$ حيث $x$ عدد حقيقي:",
+    "formulas": [
+      "A = 4x - 6"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب قيمة العبارة $A$ من أجل $x = \\dfrac{1}{2}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mutarajiha-ula_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح (قد يكون سالبًا)",
+      "expectedAnswer": "-4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض بالقيمة المعطاة ثم احسب خطوة خطوة."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = -4$ .",
+        "incorrect": "أعد الحساب خطوة خطوة، مع احترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$A = 4 \\times \\dfrac{1}{2} - 6$",
+          "$A = 2 - 6$"
+        ],
+        "result": "-4"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "حلّ المتراجحة: $A \\geqslant 0$ ثم مثّل مجموعة حلولها بيانيًا.",
+      "statement": "حدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutarajiha-ula_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x < k$ أو $x \\leqslant k$ أو $x > k$ أو $x \\geqslant k$ : اكتب العدد $k$ فقط (عدد صحيح أو كسر a/b، قد يكون سالبًا)",
+      "expectedAnswer": "3/2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر، كما في حل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إضافة عدد إلى الطرفين أو طرحه منهما لا تغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحدّ هو العدد الذي يحقّق المعادلة المرفقة (نضع «=» مكان رمز المتباينة): اقسم في الأخير على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "حدّ الحلول هو $k = \\dfrac{3}{2}$ .",
+        "incorrect": "أعد الحل سطرًا سطرًا: العملية نفسها على الطرفين، ثم القسمة على معامل $x$ في الأخير."
+      },
+      "solution": {
+        "lines": [
+          "حدّ الحلول هو حلّ المعادلة المرفقة: $4x - 6 = 0$",
+          "$4x = 6$",
+          "$\\dfrac{4x}{4} = \\dfrac{6}{4}$",
+          "إذن حدّ الحلول هو $\\dfrac{3}{2}$ ."
+        ],
+        "result": "k = \\dfrac{3}{2}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_mutarajiha-ula_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < \\dfrac{3}{2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QALB-ZAID"
+        },
+        {
+          "id": "B",
+          "content": "$x \\leqslant \\dfrac{3}{2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QALB-ZAID"
+        },
+        {
+          "id": "C",
+          "content": "$x > \\dfrac{3}{2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        },
+        {
+          "id": "D",
+          "content": "$x \\geqslant \\dfrac{3}{2}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارة معامل $x$ في آخر سطر قبل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد موجب تحافظ على الاتجاه، والقسمة على عدد سالب تغيّره."
+        }
+      ],
+      "feedback": {
+        "correct": "$x \\geqslant \\dfrac{3}{2}$ .",
+        "incorrect": "تتبّع سطور الحل: الاتجاه يتغيّر فقط عند الضرب أو القسمة على عدد سالب، ونوع المتباينة (تامة أو غير تامة) لا يتغيّر أبدًا."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $4x - 6 \\geqslant 0$",
+          "$4x \\geqslant 6$",
+          "$\\dfrac{4x}{4} \\geqslant \\dfrac{6}{4}$",
+          "إذن حلول المتراجحة هي كل قيم $x$ الأكبر من أو تساوي $\\dfrac{3}{2}$ .",
+          "قسمنا الطرفين (أو ضربناهما) في آخر خطوة على عدد موجب، فبقي اتجاه المتباينة ونوعها."
+        ],
+        "result": "x \\geqslant \\dfrac{3}{2}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "التمثيل البياني لمجموعة الحلول على مستقيم مدرّج:",
+      "learningPoints": [
+        {
+          "code": "4am_mutarajiha-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "صف تمثيلك: جهة الجزء الملوّن بالأحمر والرمز عند الحدّ (أو صوّر ورقتك)، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بحل المتراجحة لتعرف الحدّ وجهة الحلول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأعداد الأكبر من الحدّ على يمينه، والأصغر منه على يساره."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر الحدّ نفسه: إن كان حلًّا فالرمز موجّه نحو الجزء الملوّن، وإلا فهو موجّه عكسه."
+        }
+      ],
+      "feedback": {
+        "correct": "تمثيلك مطابق للحل النموذجي.",
+        "incorrect": "راجع جهة الجزء الملوّن، ثم اتجاه الرمز عند الحدّ."
+      },
+      "solution": {
+        "lines": [
+          "حلول المتراجحة هي الأعداد $x$ حيث $x \\geqslant \\dfrac{3}{2}$ .",
+          "نلوّن بالأحمر جزء المستقيم المدرّج الواقع على يمين العدد $\\dfrac{3}{2}$ .",
+          "العدد $\\dfrac{3}{2}$ حلّ للمتراجحة، فنضع عنده الرمز $[$ موجّهًا نحو الجزء الملوّن."
+        ],
+        "result": "الجزء الملوّن على يمين \\dfrac{3}{2} والرمز [ عنده"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

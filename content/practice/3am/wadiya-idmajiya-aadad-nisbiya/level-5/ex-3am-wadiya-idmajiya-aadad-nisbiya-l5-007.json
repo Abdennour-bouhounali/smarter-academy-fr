@@ -1,0 +1,241 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-aadad-nisbiya-l5-007",
+  "lessonCode": "wadiya-idmajiya-aadad-nisbiya",
+  "level": 5,
+  "metadata": {
+    "title": "السعة الحرارية بالسلّمين",
+    "estimatedMinutes": 8,
+    "tags": [
+      "وضعية إدماجية",
+      "سعة حرارية",
+      "تحويل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في مدينة الأغواط كانت أعلى حرارة في يوم $10$ °C وأدنى حرارة $−6$ °C . للمرور من درجة سيلسيوس $T_C$ إلى درجة فهرنهايت $T_F$ نستعمل القاعدة $T_F = 1{,}8 \\times T_C + 32$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "عبّر عن أعلى حرارة بالدرجة فهرنهايت.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "50",
+      "misconceptionSignatures": [
+        {
+          "value": "75.6",
+          "id": "MISC-WIDMAJ-REVCHAIN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القاعدة المعطاة وما تربطه بين الدرجتين، وأيّ الدرجتين معلومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "للتحويل من سيلسيوس إلى فهرنهايت نضرب ثم نضيف؛ وللعكس نُجري العمليتين بترتيب معاكس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة التحويل في الاتجاه المعاكس: يجب أن تجد العدد الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $50$ °F .",
+        "incorrect": "راجع قاعدة التحويل وترتيب العمليتين، ثم تحقّق بالعملية المعاكسة."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}8 \\times 10 + 32$",
+          "$= 18 + 32$",
+          "$= 50$"
+        ],
+        "result": "50"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "عبّر عن أدنى حرارة بالدرجة فهرنهايت.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "21.2",
+      "misconceptionSignatures": [
+        {
+          "value": "46.8",
+          "id": "MISC-WIDMAJ-REVCHAIN"
+        },
+        {
+          "value": "42.8",
+          "id": "MISC-WIDMAJ-DROPNEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القاعدة المعطاة وما تربطه بين الدرجتين، وأيّ الدرجتين معلومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "للتحويل من سيلسيوس إلى فهرنهايت نضرب ثم نضيف؛ وللعكس نُجري العمليتين بترتيب معاكس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة التحويل في الاتجاه المعاكس: يجب أن تجد العدد الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $21{,}2$ °F .",
+        "incorrect": "راجع قاعدة التحويل وترتيب العمليتين، ثم تحقّق بالعملية المعاكسة."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}8 \\times (−6) + 32$",
+          "$= (−10{,}8) + 32$",
+          "$= 21{,}2$"
+        ],
+        "result": "21{,}2"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب السعة الحرارية بالفهرنهايت (أعلى ناقص أدنى).",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "28.8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ النص وحدّد الأعداد المعطاة وما يعبّر عنه كل منها: ارتفاع أم انخفاض، ربح أم خسارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر عن الانخفاض أو الخسارة أو الدَّين بعدد سالب، ثم اختر العملية التي تناسب السؤال."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العملية بأعداد نسبية ثم أنجزها بقاعدة الإشارات وبأولوية العمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $28{,}8$ °F .",
+        "incorrect": "راجع ترجمة النص إلى عملية بين أعداد نسبية: أيّ عدد سالب وأيّ عملية تناسب السؤال؟"
+      },
+      "solution": {
+        "lines": [
+          "$50 − 21{,}2$",
+          "$= 28{,}8$"
+        ],
+        "result": "28{,}8"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "تحقّق: هل السعة بالفهرنهايت تساوي $1{,}8$ مرّة السعة بالسيلسيوس، أي هل $1{,}8 \\times 16 = 28{,}8$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "خطأ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDAA-ADD"
+        },
+        {
+          "id": "B",
+          "content": "صحيح",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الطرف الأيسر من المساواة بعناية قبل أن تقارنه بالطرف الأيمن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر قاعدة الإشارات وأولوية العمليات، ثم قارن القيمتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض الأعداد المعطاة وتحقّق من المساواة بدل أن تخمّن."
+        }
+      ],
+      "feedback": {
+        "correct": "المساواة صحيحة: $28{,}8 = 28{,}8$ .",
+        "incorrect": "احسب الطرف الأيسر بدقّة: قاعدة الإشارات ثم أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}8 \\times 16$",
+          "$= 28{,}8$",
+          "النتيجة $28{,}8$ تساوي $28{,}8$ : المساواة صحيحة."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-kusur-amaliyat-l1-006",
+  "lessonCode": "wadiya-idmajiya-kusur-amaliyat",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — الجزء المأخوذ والجزء الباقي",
+    "estimatedMinutes": 6,
+    "tags": [
+      "جمع ثلاثة كسور",
+      "الجزء الباقي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "قسّم فلّاح أرضه كما يلي : $\\dfrac{1}{2}$ للقمح ، و $\\dfrac{1}{6}$ للشعير ، و $\\dfrac{1}{12}$ للخضر ، والباقي للأشجار ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما الكسر الذي يمثّل الجزء المخصّص للقمح والشعير والخضر معًا ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "3/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "3/20",
+          "id": "MISC-JAMKASR-ACROSS"
+        },
+        {
+          "value": "1/4",
+          "id": "MISC-JAMKASR-NOSCALE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليّة المطلوبة ؟ وهل المقامان متساويان ، أم أنّ أحدهما مضاعف للآخر ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا اختلف المقامان فاكتب الكسر ذا المقام الأصغر بالمقام الأكبر : اضرب حدّيه في العدد نفسه ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع (أو اطرح) البسطين وأبقِ المقام كما هو ، ثمّ اختزل الناتج إن أمكن ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{4}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح ، ثمّ اختزل الناتج وأعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{2} = \\dfrac{1 \\times 6}{2 \\times 6} = \\dfrac{6}{12}$ .",
+          "$\\dfrac{1}{6} = \\dfrac{1 \\times 2}{6 \\times 2} = \\dfrac{2}{12}$ .",
+          "$\\dfrac{1}{2} + \\dfrac{1}{6} + \\dfrac{1}{12} = \\dfrac{6 + 2 + 1}{12} = \\dfrac{9}{12}$ .",
+          "نختزل بالقسمة على $3$ : $\\dfrac{9}{12} = \\dfrac{3}{4}$ ."
+        ],
+        "result": "\\dfrac{3}{4}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما الكسر الذي يمثّل الجزء المخصّص للأشجار ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "1/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "3/4",
+          "id": "MISC-JAMKASR-PART"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكلّ يساوي كسرًا بسطه ومقامه عدد واحد ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الأجزاء المأخوذة أوّلًا ثمّ اطرحها من الكلّ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الجزء الباقي هو الكلّ ناقص ما أُخذ ، وهو أصغر من الكلّ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{4}$ .",
+        "incorrect": "اجمع ما أُخذ أوّلًا ثمّ اطرحه من الكلّ ، ولا تُعطِ ما أُخذ بدل الباقي ."
+      },
+      "solution": {
+        "lines": [
+          "$1 = \\dfrac{12}{12}$ .",
+          "$\\dfrac{1}{2} = \\dfrac{1 \\times 6}{2 \\times 6} = \\dfrac{6}{12}$ .",
+          "$\\dfrac{1}{6} = \\dfrac{1 \\times 2}{6 \\times 2} = \\dfrac{2}{12}$ .",
+          "ما أُخذ : $\\dfrac{1}{2} + \\dfrac{1}{6} + \\dfrac{1}{12} = \\dfrac{6 + 2 + 1}{12} = \\dfrac{9}{12}$ .",
+          "الباقي : $1 - \\dfrac{9}{12} = \\dfrac{12}{12} - \\dfrac{9}{12} = \\dfrac{3}{12}$ .",
+          "نختزل : $\\dfrac{1}{4}$ ."
+        ],
+        "result": "\\dfrac{1}{4}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

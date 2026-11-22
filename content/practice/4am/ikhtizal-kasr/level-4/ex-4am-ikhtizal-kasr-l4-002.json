@@ -1,0 +1,253 @@
+{
+  "id": "ex-4am-ikhtizal-kasr-l4-002",
+  "lessonCode": "ikhtizal-kasr",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 32 — أربعة حسابات",
+    "estimatedMinutes": 12,
+    "tags": [
+      "كسر غير قابل للاختزال"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-32",
+      "page": 15,
+      "section": "أوظّف تعلّماتي",
+      "number": 32
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "احسب كلًّا من الأعداد التالية، وأعط النتيجة على شكل كسر غير قابل للاختزال:",
+    "formulas": [
+      "A = \\dfrac{2}{7} - \\dfrac{3}{7} \\times \\dfrac{8}{21}",
+      "B = \\left(\\dfrac{7}{6} - \\dfrac{3}{4}\\right) \\times \\dfrac{4}{5}",
+      "C = 10 \\div \\left(\\dfrac{7}{3} - \\dfrac{3}{7}\\right)",
+      "D = \\dfrac{2}{3} - \\dfrac{14}{3} \\div \\dfrac{5}{24}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "$A$",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "6/49",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالعملية ذات الأولوية: ما بين القوسين، ثم الضرب أو القسمة، ثم الجمع أو الطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختزل كل كسر وسيط قبل أن تواصل، ثم وحّد المقامات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "في الأخير تحقّق أن البسط والمقام أوليان فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "حساب صحيح، والنتيجة على شكل كسر غير قابل للاختزال.",
+        "incorrect": "احترم أولوية العمليات، ثم اختزل الناتج إلى أن يصير البسط والمقام أوليين فيما بينهما.",
+        "notIrreducible": "القيمة صحيحة لكن الكسر ما زال قابلًا للاختزال: اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{2}{7} - \\dfrac{24}{147}$",
+          "$A = \\dfrac{2}{7} - \\dfrac{8}{49}$",
+          "$A = \\dfrac{14}{49} - \\dfrac{8}{49}$"
+        ],
+        "result": "A = \\dfrac{6}{49}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$B$",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "1/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "20/60",
+          "id": "MISC-IKHTIZAL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالعملية ذات الأولوية: ما بين القوسين، ثم الضرب أو القسمة، ثم الجمع أو الطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختزل كل كسر وسيط قبل أن تواصل، ثم وحّد المقامات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "في الأخير تحقّق أن البسط والمقام أوليان فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "حساب صحيح، والنتيجة على شكل كسر غير قابل للاختزال.",
+        "incorrect": "احترم أولوية العمليات، ثم اختزل الناتج إلى أن يصير البسط والمقام أوليين فيما بينهما.",
+        "notIrreducible": "القيمة صحيحة لكن الكسر ما زال قابلًا للاختزال: اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "$B = \\left(\\dfrac{14}{12} - \\dfrac{9}{12}\\right) \\times \\dfrac{4}{5}$",
+          "$B = \\dfrac{5}{12} \\times \\dfrac{4}{5}$",
+          "$B = \\dfrac{20}{60}$"
+        ],
+        "result": "B = \\dfrac{1}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "$C$",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "21/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "210/40",
+          "id": "MISC-IKHTIZAL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالعملية ذات الأولوية: ما بين القوسين، ثم الضرب أو القسمة، ثم الجمع أو الطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختزل كل كسر وسيط قبل أن تواصل، ثم وحّد المقامات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "في الأخير تحقّق أن البسط والمقام أوليان فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "حساب صحيح، والنتيجة على شكل كسر غير قابل للاختزال.",
+        "incorrect": "احترم أولوية العمليات، ثم اختزل الناتج إلى أن يصير البسط والمقام أوليين فيما بينهما.",
+        "notIrreducible": "القيمة صحيحة لكن الكسر ما زال قابلًا للاختزال: اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "$C = 10 \\div \\left(\\dfrac{49}{21} - \\dfrac{9}{21}\\right)$",
+          "$C = 10 \\div \\dfrac{40}{21}$",
+          "$C = 10 \\times \\dfrac{21}{40}$",
+          "$C = \\dfrac{210}{40}$"
+        ],
+        "result": "C = \\dfrac{21}{4}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "$D$",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "-326/15",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالعملية ذات الأولوية: ما بين القوسين، ثم الضرب أو القسمة، ثم الجمع أو الطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختزل كل كسر وسيط قبل أن تواصل، ثم وحّد المقامات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "في الأخير تحقّق أن البسط والمقام أوليان فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "حساب صحيح، والنتيجة على شكل كسر غير قابل للاختزال.",
+        "incorrect": "احترم أولوية العمليات، ثم اختزل الناتج إلى أن يصير البسط والمقام أوليين فيما بينهما.",
+        "notIrreducible": "القيمة صحيحة لكن الكسر ما زال قابلًا للاختزال: اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "$D = \\dfrac{2}{3} - \\dfrac{14}{3} \\times \\dfrac{24}{5}$",
+          "$D = \\dfrac{2}{3} - \\dfrac{336}{15}$",
+          "$D = \\dfrac{10}{15} - \\dfrac{336}{15}$"
+        ],
+        "result": "D = -\\dfrac{326}{15}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

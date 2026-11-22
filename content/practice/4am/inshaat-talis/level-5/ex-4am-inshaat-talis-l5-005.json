@@ -1,0 +1,332 @@
+{
+  "id": "ex-4am-inshaat-talis-l5-005",
+  "lessonCode": "inshaat-talis",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2021 — الشريط على سطور الكراس",
+    "estimatedMinutes": 20,
+    "tags": [
+      "وضعية إدماجية",
+      "تقسيم قطعة",
+      "مستقيمات متوازية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_inshaat-talis_P1",
+      "modelledOn": "BEM 2021 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "سطور كراس أمين مستقيمات متوازية، والمسافة بين كل سطرين متتاليين ثابتة. أراد أمين، حرصًا على إتقان واجبه، تقسيم شريط ورقي مستقيم طوله $13\\,\\mathrm{cm}$ إلى 5 أجزاء متساوية دون قياس: وضع طرف الشريط $A$ على السطر رقم 0 وطرفه الآخر $B$ على السطر رقم 5 (الشريط مائل)، ثم علّم نقط تقاطع الشريط مع السطور 1 و 2 و 3 و 4 : $M_1$ ، $M_2$ ، $M_3$ ، $M_4$ (الشكل المقابل).",
+    "figure": {
+      "points": {
+        "O0": [
+          -1.0,
+          0.0
+        ],
+        "O1": [
+          -1.0,
+          2.0
+        ],
+        "O2": [
+          -1.0,
+          4.0
+        ],
+        "O3": [
+          -1.0,
+          6.0
+        ],
+        "O4": [
+          -1.0,
+          8.0
+        ],
+        "O5": [
+          -1.0,
+          10.0
+        ],
+        "R0": [
+          10.306623862918,
+          0.0
+        ],
+        "R1": [
+          10.306623862918,
+          2.0
+        ],
+        "R2": [
+          10.306623862918,
+          4.0
+        ],
+        "R3": [
+          10.306623862918,
+          6.0
+        ],
+        "R4": [
+          10.306623862918,
+          8.0
+        ],
+        "R5": [
+          10.306623862918,
+          10.0
+        ],
+        "A": [
+          0.0,
+          0.0
+        ],
+        "B": [
+          8.306623862918,
+          10.0
+        ],
+        "M₁": [
+          1.661324772584,
+          2.0
+        ],
+        "M₂": [
+          3.322649545167,
+          4.0
+        ],
+        "M₃": [
+          4.983974317751,
+          6.0
+        ],
+        "M₄": [
+          6.645299090334,
+          8.0
+        ]
+      },
+      "segments": [
+        {
+          "from": "O0",
+          "to": "R0",
+          "tone": "sky"
+        },
+        {
+          "from": "O1",
+          "to": "R1",
+          "tone": "sky"
+        },
+        {
+          "from": "O2",
+          "to": "R2",
+          "tone": "sky"
+        },
+        {
+          "from": "O3",
+          "to": "R3",
+          "tone": "sky"
+        },
+        {
+          "from": "O4",
+          "to": "R4",
+          "tone": "sky"
+        },
+        {
+          "from": "O5",
+          "to": "R5",
+          "tone": "sky"
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "bold": true
+        }
+      ],
+      "hidden": [
+        "O0",
+        "O1",
+        "O2",
+        "O3",
+        "O4",
+        "O5",
+        "R0",
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ],
+      "labels": {
+        "A": "sw",
+        "B": "ne",
+        "M₁": "se",
+        "M₂": "se",
+        "M₃": "se",
+        "M₄": "se"
+      },
+      "ariaLabel": "ستة سطور أفقية متوازية متساوية التباعد في كراس، وشريط [AB] مائل طرفه A على السطر الأول وطرفه B على السطر السادس، يقطع السطور الأربعة الوسطى في M1 و M2 و M3 و M4",
+      "maxWidth": 340
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "برّر أن $AM_1 = M_1M_2 = M_2M_3 = M_3M_4 = M_4B$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم مستقيما يشمل $A$ ويقطع السطور عموديا: السطور تقسمه إلى قطع متقايسة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق خاصية طالس في المثلث الذي رأسه $A$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "السطور متوازية ومتساوية التباعد: حسب خاصية طالس $\\dfrac{AM_k}{AB} = \\dfrac{k}{5}$ ، فالأجزاء متساوية.",
+        "incorrect": "قارن برهانك بالحل النموذجي: المعطيات، ثم التوازي، ثم النسب المتساوية وذكر الخاصية المستعملة."
+      },
+      "solution": {
+        "lines": [
+          "ليكن $(\\Delta)$ المستقيم العمودي على السطور المارّ بـ $A$ ، يقطعها في $H_1$ ، … ، $H_5$ حيث $AH_1 = H_1H_2 = \\ldots = H_4H_5$ (التباعد ثابت).",
+          "السطور متوازية: $(H_kM_k) \\parallel (H_5B)$ ، فحسب خاصية طالس في المثلثين $AH_kM_k$ و $AH_5B$ : $\\dfrac{AM_k}{AB} = \\dfrac{AH_k}{AH_5} = \\dfrac{k}{5}$ .",
+          "ومنه $AM_1 = \\dfrac{1}{5}AB$ ، $AM_2 = \\dfrac{2}{5}AB$ ، … : كل جزء طوله $\\dfrac{AB}{5}$ ."
+        ]
+      },
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب طول كل جزء من الشريط.",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "2,6",
+      "misconceptionSignatures": [
+        {
+          "value": "3,25",
+          "id": "MISC-TALIS-ADAD-AL-ALAMAT"
+        },
+        {
+          "value": "13/6",
+          "id": "MISC-TALIS-ADAD-AL-ALAMAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AM_1 = \\dfrac{1}{5}AB$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{13}{5} = 2{,}6\\,\\mathrm{cm}$ .",
+        "incorrect": "الشريط كله $13\\,\\mathrm{cm}$ مقسم إلى 5 أجزاء متساوية."
+      },
+      "solution": {
+        "lines": [
+          "$AM_1 = \\dfrac{AB}{5} = \\dfrac{13}{5}$"
+        ],
+        "result": "2{,}6\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "☜ يريد أمين الآن تقسيم شريط طوله $15\\,\\mathrm{cm}$ بنفس الطريقة إلى 3 أجزاء أطوالها متناسبة مع $1$ و $2$ و $3$ . يضع الطرف الأول على السطر 0 : على أي سطر يضع الطرف الآخر؟",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "رقم السطر (عدد طبيعي)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-TALIS-ADAD-AL-ALAMAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم جزءا متساويا في الشريط كله؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$1 + 2 + 3 = 6$ : يضع الطرف الآخر على السطر رقم 6 ، ويعلّم التقاطعين مع السطرين 1 و 3 .",
+        "incorrect": "اجمع الأعداد المتناسبة: كل تباعد بين سطرين يقابل جزءا واحدا."
+      },
+      "solution": {
+        "lines": [
+          "الأجزاء: $1 + 2 + 3 = 6$ تباعدات متساوية، فالطرف الآخر على السطر 6 ، ونقطتا التقسيم على السطرين 1 و $1 + 2 = 3$ ."
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "احسب طول الجزء الأطول.",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "7,5",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-TALIS-ADAD-AL-ALAMAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الجزء الأطول يقابل 3 أجزاء من 6 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{6} \\times 15 = 7{,}5\\,\\mathrm{cm}$ .",
+        "incorrect": "الجزء الأطول نسبته $\\dfrac{3}{1 + 2 + 3}$ من الشريط."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{6} \\times 15$"
+        ],
+        "result": "7{,}5\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

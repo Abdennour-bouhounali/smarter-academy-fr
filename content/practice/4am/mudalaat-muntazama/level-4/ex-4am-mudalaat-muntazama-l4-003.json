@@ -1,0 +1,226 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l4-003",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 19 — السداسي المنتظم ذو المحيط 96 m",
+    "estimatedMinutes": 3,
+    "tags": [
+      "طول الضلع",
+      "المساحة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-19",
+      "page": 161,
+      "section": "أتعمّق",
+      "number": 19
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 161): محيط السداسي المنتظم ABCDEF المرسوم هو 96m، و [OH] ارتفاع في المثلث المتقايس الأضلاع OBC.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "H": [
+          0,
+          13.856
+        ],
+        "A": [
+          -16,
+          0
+        ],
+        "B": [
+          -8,
+          13.856
+        ],
+        "C": [
+          8,
+          13.856
+        ],
+        "D": [
+          16,
+          0
+        ],
+        "E": [
+          8,
+          -13.856
+        ],
+        "F": [
+          -8,
+          -13.856
+        ]
+      },
+      "circles": [
+        {
+          "center": "O",
+          "radius": 16
+        }
+      ],
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "tone": "rose",
+          "bold": true
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "tone": "rose",
+          "bold": true
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "tone": "rose",
+          "bold": true
+        },
+        {
+          "from": "D",
+          "to": "E",
+          "tone": "rose",
+          "bold": true
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "tone": "rose",
+          "bold": true
+        },
+        {
+          "from": "F",
+          "to": "A",
+          "tone": "rose",
+          "bold": true
+        },
+        {
+          "from": "A",
+          "to": "D",
+          "dashed": true
+        },
+        {
+          "from": "B",
+          "to": "E",
+          "dashed": true
+        },
+        {
+          "from": "C",
+          "to": "F",
+          "dashed": true
+        },
+        [
+          "O",
+          "H"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "B",
+          "H",
+          "O"
+        ]
+      ],
+      "ariaLabel": "سداسي منتظم ABCDEF في دائرته المحيطة التي مركزها O، والأقطار [AD] و [BE] و [CF] تمر بـ O، و [OH] يعامد [BC] في H",
+      "maxWidth": 480
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "طول ضلع السداسي بالمتر:",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "16",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUNTAZAM-AMDA",
+          "value": "24"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "للسداسي ستة أضلاع متقايسة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المحيط مجموع الأضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم المحيط على عدد الأضلاع."
+        }
+      ],
+      "feedback": {
+        "correct": "$96 \\div 6 = 16$ : وهو أيضا نصف قطر الدائرة المحيطة.",
+        "incorrect": "للسداسي ستة أضلاع لا أربعة."
+      },
+      "difficulty": 3
+    },
+    {
+      "id": "q2",
+      "statement": "المساحة المضبوطة S للسداسي:",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$384\\sqrt{3}\\,\\mathrm{m^2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$64\\sqrt{3}\\,\\mathrm{m^2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-AMDA"
+        },
+        {
+          "id": "C",
+          "content": "$768\\sqrt{3}\\,\\mathrm{m^2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-DARB-BADAL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "السداسي ستة مثلثات متقايسة الأضلاع مثل OBC."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$OH = 8\\sqrt{3}$ ارتفاع كل مثلث."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مساحة مثلث = نصف القاعدة في الارتفاع، ثم في 6."
+        }
+      ],
+      "feedback": {
+        "correct": "مساحة OBC $= \\dfrac{16 \\times 8\\sqrt{3}}{2} = 64\\sqrt{3}$ ، و $S = 6 \\times 64\\sqrt{3}$ .",
+        "incorrect": "لا تنس عدد المثلثات، ولا نصف الجداء في مساحة المثلث."
+      },
+      "difficulty": 4
+    }
+  ]
+}

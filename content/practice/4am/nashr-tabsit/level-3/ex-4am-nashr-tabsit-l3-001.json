@@ -1,0 +1,242 @@
+{
+  "id": "ex-4am-nashr-tabsit-l3-001",
+  "lessonCode": "nashr-tabsit",
+  "level": 3,
+  "metadata": {
+    "title": "دوري الآن — انشر وبسّط",
+    "estimatedMinutes": 12,
+    "tags": [
+      "جداء قوسين",
+      "جذر تربيعي"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "now-35-1",
+      "page": 35,
+      "section": "دوري الآن",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "انشر وبسّط كلا من العبارتين:",
+    "formulas": [
+      "A = (3x - 2)(7x - 4)",
+      "B = (8 - 3x)(x + \\sqrt{7}) + (8 + 3x)(x - \\sqrt{7})"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انشر وبسّط العبارة $A$ .",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $ax^2 + bx + c$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "21",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب كل حد من القوس الأول في كل حد من القوس الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى إشارة كل حد عند كتابة الجداءات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 21x^2 - 26x + 8$ إذن $a = 21$.",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$A = (3x - 2)(7x - 4)$",
+          "$A = 3x \\times 7x - 3x \\times 4 - 2 \\times 7x + 2 \\times 4$",
+          "$A = 21x^2 - 12x - 14x + 8$"
+        ],
+        "result": "A = 21x^2 - 26x + 8"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "-26",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-NASHR-AWWAL-AKHIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع معاملات حدود $x$ بإشاراتها بعد النشر."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 21x^2 - 26x + 8$ إذن $b = -26$.",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $b$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$A = 21x^2 - 26x + 8$"
+        ],
+        "result": "b = -26"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "العدد $c$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $ax^2 + bx + c$ : اكتب العدد $c$ فقط",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 21x^2 - 26x + 8$ إذن $c = 8$.",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $c$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$A = 21x^2 - 26x + 8$"
+        ],
+        "result": "c = 8"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "lead": "انشر وبسّط العبارة $B$ ، ثم اكتبها على الشكل $(a - b\\sqrt{7})x$ حيث $a$ و $b$ عددان طبيعيان.",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P4",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "16",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر كل جداء: $(8 - 3x)(x + \\sqrt{7})$ يعطي أربعة حدود."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لاحظ أن الحدّين $-3x^2$ و $3x^2$ ، والحدّين $8\\sqrt{7}$ و $-8\\sqrt{7}$ ، يتعاكسان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع حدود $x$ التي لا تحتوي على $\\sqrt{7}$ معًا، وحدود $\\sqrt{7}x$ معًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 16x - 6\\sqrt{7}x = (16 - 6\\sqrt{7})x$ إذن $a = 16$ .",
+        "incorrect": "انشر الجداءين حدًّا حدًّا، ثم احذف الحدود المتعاكسة واجمع حدود $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$B = 8x + 8\\sqrt{7} - 3x^2 - 3\\sqrt{7}x + 8x - 8\\sqrt{7} + 3x^2 - 3\\sqrt{7}x$",
+          "$B = (8 + 8)x + (-3 - 3)\\sqrt{7}x$",
+          "$B = 16x - 6\\sqrt{7}x$"
+        ],
+        "result": "B = (16 - 6\\sqrt{7})x"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P4",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد طبيعي)",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع معاملات $\\sqrt{7}x$ بإشاراتها: من الجداء الأول ومن الجداء الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = (16 - 6\\sqrt{7})x$ إذن $b = 6$ .",
+        "incorrect": "معامل $\\sqrt{7}x$ يأتي من الجداءين معًا: اجمع المعاملين بإشارتيهما."
+      },
+      "solution": {
+        "lines": [
+          "$B = 16x - 6\\sqrt{7}x$"
+        ],
+        "result": "b = 6"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

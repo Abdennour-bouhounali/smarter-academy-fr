@@ -1,0 +1,178 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-aadad-l3-004",
+  "lessonCode": "wadiya-idmajiya-aadad",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2016 — العددان 2236 و 1548",
+    "estimatedMinutes": 9,
+    "tags": [
+      "القاسم المشترك الأكبر",
+      "قواسم مشتركة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-aadad_P1",
+      "modelledOn": "BEM 2016 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 2236 و 1548.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "172",
+      "misconceptionSignatures": [
+        {
+          "value": "86",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 2236 على 1548: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (2236 ; 1548) بالزوج (1548 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 172.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$2236 = 1548 \\times 1 + 688$",
+          "$1548 = 688 \\times 2 + 172$",
+          "$688 = 172 \\times 4 + 0$",
+          "آخر باقٍ غير معدوم هو 172، إذن:"
+        ],
+        "result": "PGCD(2236 ; 1548) = 172"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب الكسر $\\dfrac{1548}{2236}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "9/13",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "774/1118",
+          "id": "MISC-IKHTIZAL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 172: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال 01.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1548}{2236} = \\dfrac{1548 \\div 172}{2236 \\div 172}$"
+        ],
+        "result": "\\dfrac{1548}{2236} = \\dfrac{9}{13}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "عيّن كل القواسم المشتركة للعددين 2236 و 1548.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        2,
+        4,
+        43,
+        86,
+        172
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القواسم المشتركة لعددين هي قواسم قاسمهما المشترك الأكبر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل قواسم العدد الذي وجدته في السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة هي قواسم 172: 1 ، 2 ، 4 ، 43 ، 86 ، 172.",
+        "incorrect": "اكتب كل قواسم القاسم المشترك الأكبر الذي وجدته في السؤال 01، ولا تنسَ 1 والعدد نفسه."
+      },
+      "solution": {
+        "lines": [
+          "القواسم المشتركة للعددين 2236 و 1548 هي قواسم $PGCD(2236 ; 1548) = 172$ .",
+          "$172 = 1 \\times 172 = 2 \\times 86 = 4 \\times 43$",
+          "قواسم 172: 1 ، 2 ، 4 ، 43 ، 86 ، 172"
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

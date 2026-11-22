@@ -1,0 +1,90 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-maalam-l1-004",
+  "lessonCode": "wadiya-idmajiya-maalam",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — قراءة نقطة مراقبة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "قراءة إحداثيتي نقطة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-maalam_P2",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "تطبيق GPS يعرض مسار رحلة في الطاسيلي ناجر على معلم متعامد ومتجانس (الوحدة $1\\,\\mathrm{km}$): ثلاث نقط مراقبة K و L و R (الشكل). يحرص المرشد وأفواج الزوّار على ترك المكان نظيفًا.",
+    "figure": {
+      "points": {
+        "K": [
+          -3,
+          2
+        ],
+        "L": [
+          2,
+          3
+        ],
+        "R": [
+          1,
+          -2
+        ]
+      },
+      "labels": {
+        "K": "nw",
+        "L": "ne",
+        "R": "se"
+      },
+      "grid": true,
+      "axes": true,
+      "ariaLabel": "معلم متعامد ومتجانس: النقطة K يسار محور التراتيب وفوق محور الفواصل، و L أعلى اليمين، و R أسفل اليمين"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا نقطة المراقبة K هما:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الثنائية (x ; y)",
+      "expectedAnswer": {
+        "x": "-3",
+        "y": "2"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالفاصلة: يمين أم يسار محور التراتيب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "K على يسار محور التراتيب بثلاثة مربعات، وفوق محور الفواصل بمربعين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب $(x\\,;\\,y)$ : الفاصلة أولا."
+        }
+      ],
+      "feedback": {
+        "correct": "$K(-3\\,;\\,2)$ : الفاصلة $-3$ (يسار المحور) والترتيب $2$ (فوقه).",
+        "incorrect": "الفاصلة أولا (على محور الفواصل)، ثم الترتيب، مع الإشارة."
+      },
+      "cognitiveDemand": "recall",
+      "difficulty": 1
+    }
+  ]
+}

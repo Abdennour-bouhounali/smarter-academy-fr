@@ -1,0 +1,123 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-khattiya-l1-007",
+  "lessonCode": "wadiya-idmajiya-khattiya",
+  "level": 1,
+  "metadata": {
+    "title": "الكتلة الحجمية للذهب",
+    "estimatedMinutes": 4,
+    "tags": [
+      "مقادير مركبة",
+      "الكتلة الحجمية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 74,
+      "section": "الوضعيات",
+      "number": 7,
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-khattiya-l1-007"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "قطعة من الذهب حجمها $7cm^3$ وكتلتها $135{,}1g$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب الكتلة الحجمية للذهب بـ $g/cm^3$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الكتلة الحجمية بـ g/cm³ (عشري بالفاصلة)",
+      "expectedAnswer": "19,3",
+      "misconceptionSignatures": [
+        {
+          "value": "70/1351",
+          "id": "MISC-MAQADIR-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكتلة الحجمية = الكتلة ÷ الحجم."
+        }
+      ],
+      "feedback": {
+        "correct": "$135{,}1 \\div 7 = 19{,}3$ : الكتلة الحجمية $19{,}3g/cm^3$ .",
+        "incorrect": "اقسم الكتلة على الحجم، لا العكس."
+      },
+      "solution": {
+        "lines": [
+          "$\\rho = \\dfrac{m}{V} = \\dfrac{135{,}1}{7} = 19{,}3$",
+          "الكتلة الحجمية للذهب $19{,}3g/cm^3$ ."
+        ],
+        "result": "\\rho = 19{,}3g/cm^3"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عبّر عن هذه الكتلة الحجمية بـ $kg/m^3$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الكتلة الحجمية بـ kg/m³",
+      "expectedAnswer": "19300",
+      "misconceptionSignatures": [
+        {
+          "value": "19.3",
+          "id": "MISC-MAQADIR-WIHDA"
+        },
+        {
+          "value": "0.0193",
+          "id": "MISC-MAQADIR-WIHDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$1g = 0{,}001kg$ و $1cm^3 = 0{,}000001m^3$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كتلة $1m^3$ من الذهب تساوي مليون مرة كتلة $1cm^3$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$1m^3$ من الذهب كتلتها $19{,}3 \\times 1000000g = 19300kg$ .",
+        "incorrect": "حوّل الكتلة والحجم معا: $1m^3 = 1000000cm^3$ و $1kg = 1000g$ ."
+      },
+      "solution": {
+        "lines": [
+          "$19{,}3g/cm^3 = \\dfrac{19{,}3 \\times 10^{-3}kg}{10^{-6}m^3}$",
+          "$= 19{,}3 \\times 10^{3}kg/m^3 = 19300kg/m^3$"
+        ],
+        "result": "19300kg/m^3"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

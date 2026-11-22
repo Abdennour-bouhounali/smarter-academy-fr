@@ -1,0 +1,361 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-adad-nisbiya-2-l5-004",
+  "lessonCode": "wadiya-idmajiya-adad-nisbiya-2",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — وضعية إدماجية: قاعة الرياضة",
+    "estimatedMinutes": 14,
+    "tags": [
+      "معلم",
+      "مساحة",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "قاعة رياضة مستطيلة تُمثَّل في معلم متعامد ومتجانس وحدته $1\\,\\mathrm{m}$ . يُراد تبليط أرضيتها وميزانية المدرسة $60000\\,\\mathrm{DA}$ وثمن المتر المربّع الواحد $700\\,\\mathrm{DA}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "في معلم متعامد ومتجانس : $B(-6\\,;\\,4)$ و $C(5\\,;\\,4)$ و $D(5\\,;\\,-3)$ . عيّن إحداثيي النقطة $A$ التي تجعل $BCDA$ مستطيلًا.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-6",
+        "y": "-3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "-3",
+            "y": "-6"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أضلاع المستطيل توازي المحورين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$A$ تشارك $B$ في الفاصلة و $D$ في الترتيب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الفاصلة ثمّ الترتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "$A(-6\\,;\\,-3)$ .",
+        "incorrect": "الفاصلة أوّلًا ثمّ الترتيب : راجع إشارة كلّ إحداثية."
+      },
+      "solution": {
+        "lines": [
+          "$B$ و $A$ على المستقيم الرأسي نفسه فلهما الفاصلة $-6$",
+          "$D$ و $A$ على المستقيم الأفقي نفسه فلهما الترتيب $-3$",
+          "$A(-6\\,;\\,-3)$"
+        ],
+        "result": "(-6\\,;\\,-3)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "الرأسان $B$ و $C$ لهما الترتيب نفسه، وفاصلتاهما $-6$ و $5$ . احسب الطول $BC$ بطرح الفاصلتين.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "1"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-11"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطتان على جهة واحدة من المبدأ أم على جهتين مختلفتين ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى ناقص الفاصلة الصغرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا : تحقّق من الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC=11$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى $+5$ والفاصلة الصغرى $-6$",
+          "$BC=(+5)-(-6)=11$"
+        ],
+        "result": "11"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "الرأسان $C$ و $D$ لهما الفاصلة نفسها، وترتيباهما $4$ و $-3$ . احسب الطول $CD$ بطرح الترتيبين.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "1"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-7"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطتان على جهة واحدة من المبدأ أم على جهتين مختلفتين ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى ناقص الفاصلة الصغرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا : تحقّق من الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$CD=7$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى $+4$ والفاصلة الصغرى $-3$",
+          "$CD=(+4)-(-3)=7$"
+        ],
+        "result": "7"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "طول القاعة $11\\,\\mathrm{m}$ وعرضها $7\\,\\mathrm{m}$ . ما مساحتها بالمتر المربّع ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد وحدات المساحة",
+      "expectedAnswer": "77",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-AREASUM",
+          "value": "18"
+        },
+        {
+          "id": "MISC-NUQTA2-AREAPERIM",
+          "value": "36"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة المستطيل جداء بعديه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب الطول في العرض."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تجمع البعدين."
+        }
+      ],
+      "feedback": {
+        "correct": "$77\\,\\mathrm{m}^2$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "المساحة $=11\\times 7$",
+          "$=77\\,\\mathrm{m}^2$"
+        ],
+        "result": "77"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "مساحة القاعة $77\\,\\mathrm{m}^2$ وثمن المتر المربّع $700\\,\\mathrm{DA}$ . ما ثمن التبليط بالدينار ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح موجب",
+      "expectedAnswer": "53900",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-COSTADD",
+          "value": "777"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الثمن الإجمالي جداء العدد في ثمن الواحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب ولا تجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من رتبة النتيجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$53900\\,\\mathrm{DA}$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الثمن $=77\\times 700$",
+          "$=53900\\,\\mathrm{DA}$"
+        ],
+        "result": "53900"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "06",
+      "statement": "ثمن التبليط $53900\\,\\mathrm{DA}$ . هل المتباينة $53900<60000$ صحيحة، أي هل تكفي الميزانية ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "نعم",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الطرف الأوّل ثمّ الطرف الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن القيمتين مع مراعاة الإشارتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نعم إذا تحقّقت العلاقة، لا إذا لم تتحقّق."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل $53900=(+53900)$",
+          "الطرف الثاني $60000$",
+          "المتباينة صحيحة"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

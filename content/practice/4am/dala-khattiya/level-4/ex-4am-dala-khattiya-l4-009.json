@@ -1,0 +1,300 @@
+{
+  "id": "ex-4am-dala-khattiya-l4-009",
+  "lessonCode": "dala-khattiya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2009 — صهريج ماء الشرب",
+    "estimatedMinutes": 10,
+    "tags": [
+      "وضعية",
+      "تدفّق",
+      "دالة خطية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_dala-khattiya_P1",
+      "modelledOn": "BEM 2009 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "تُفرغ شاحنة صهريجية سعتها $6000L$ ماءها في خزان عمارة كان فارغا تضامنًا مع سكّانه الذين انقطع عنهم الماء، بمضخة تدفقها $40L$ في الدقيقة. نسمّي $g(x)$ كمية الماء في خزان العمارة و $f(x)$ كمية الماء المتبقية في الصهريج بعد $x$ دقيقة (باللتر)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب كمية الماء في خزان العمارة بعد 25 دقيقة.",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الكمية باللتر (عدد فقط)",
+      "expectedAnswer": "1000",
+      "misconceptionSignatures": [
+        {
+          "value": "0,625",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "-1000",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "صورة العدد $x$ بالدالة الخطية $g$ هي $g(x) = 40 \\times x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $x$ بالعدد $25$ ثم احسب الجداء، وانتبه إلى الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$g(25) = 40 \\times 25 = 1000$ .",
+        "incorrect": "الصورة جداء المعامل في العدد: $g(x) = 40 \\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$g(25) = 40 \\times 25$",
+          "$g(25) = 1000$"
+        ],
+        "result": "g(25) = 1000L"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب كمية الماء المتبقية في الصهريج بعد 25 دقيقة.",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الكمية باللتر (عدد فقط)",
+      "expectedAnswer": "5000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكمية المتبقية = السعة − الكمية المتدفقة."
+        }
+      ],
+      "feedback": {
+        "correct": "$6000 - 1000 = 5000$ .",
+        "incorrect": "اطرح ما تدفّق من سعة الصهريج."
+      },
+      "solution": {
+        "lines": [
+          "$6000 - 40 \\times 25 = 6000 - 1000 = 5000$"
+        ],
+        "result": "5000L"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "اكتب $g(x)$ بدلالة $x$ على الشكل $g(x) = ax$ .",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "40",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في كل دقيقة يتدفق $40L$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$g(x) = 40x$ : $g$ دالة خطية.",
+        "incorrect": "الكمية = التدفق × المدة."
+      },
+      "solution": {
+        "lines": [
+          "$g(x) = 40 \\times x$ أي $g(x) = 40x$ : $g$ دالة خطية."
+        ],
+        "result": "g(x) = 40x"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "اكتب $f(x)$ بدلالة $x$ . هل $f$ دالة خطية؟",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KHATTIYA-AFFINE"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$f(x) = 6000 - g(x)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $f(0)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(x) = 6000 - 40x$ و $f(0) = 6000 \\neq 0$ .",
+        "incorrect": "صورة 0 بدالة خطية معدومة: ماذا يحوي الصهريج عند البداية؟"
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 6000 - 40x$",
+          "$f(0) = 6000 \\neq 0$ ، إذن $f$ ليست دالة خطية."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "جد المدة اللازمة لإفراغ الصهريج كليا.",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "المدة بالدقائق (عدد فقط)",
+      "expectedAnswer": "150",
+      "misconceptionSignatures": [
+        {
+          "value": "240000",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "-150",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد المطلوب $x$ يحقق $g(x) = 6000$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المعادلة $40x = 6000$ : اقسم الطرفين على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{6000}{40} = 150$ .",
+        "incorrect": "لا تحسب صورة العدد المعطى: ابحث عن العدد $x$ الذي صورته هذا العدد."
+      },
+      "solution": {
+        "lines": [
+          "$g(x) = 6000$ معناه $40x = 6000$",
+          "$x = \\dfrac{6000}{40} = 150$"
+        ],
+        "result": "x = 150min"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "حلّ المعادلة $f(x) = g(x)$ . ماذا يمثّل حلّها؟",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الحل $x$ (عدد فقط)",
+      "expectedAnswer": "75",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$6000 - 40x = 40x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع حدود $x$ في طرف واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 75$ : بعد 75 دقيقة تتساوى الكميتان.",
+        "incorrect": "اجمع حدود $x$ في طرف ثم اقسم على معامل $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$6000 - 40x = 40x$",
+          "$6000 = 80x$",
+          "$x = \\dfrac{6000}{80} = 75$",
+          "بعد 75 دقيقة تكون كمية الماء في الصهريج مساوية لكمية الماء في الخزان."
+        ],
+        "result": "x = 75"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

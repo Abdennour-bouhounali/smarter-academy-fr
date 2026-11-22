@@ -2,6 +2,15 @@
 
 > Livrée le 2026-09-10. **Activée pour une seule leçon : 2nde « Fonction affine ».**
 >
+> **2026-09-25 :** cette leçon de référence, son contenu de pratique
+> (`content/practice/seconde/`), ses misconceptions `MISC-AFF-*` et ses deux
+> laboratoires (`TankLab`, `RateProbes`) ont été **supprimés** avec toutes les
+> leçons françaises. Le moteur décrit ici est inchangé et sert les 9 leçons de
+> l'unité 4AM. Le registre fermé des laboratoires
+> (`features/practice/PracticeLab.jsx`, `SUPPORT_LABS` dans
+> `scripts/validate-exercises.mjs`) est désormais **vide** : un labo s'y ajoute
+> aux deux endroits, jamais dans le contenu.
+>
 > Cible : [`EXERCISE_ENGINE_ARCHITECTURE.md`](./EXERCISE_ENGINE_ARCHITECTURE.md).
 > Audit préalable : [`EXERCISE_ENGINE_INTEGRATION_AUDIT.md`](./EXERCISE_ENGINE_INTEGRATION_AUDIT.md).
 
@@ -100,7 +109,7 @@ Douze routes, toutes sous `auth:sanctum`. Les 17 routes préexistantes sont
 **byte-identiques** (comparaison de `route:list` avant/après).
 
 ```text
-GET    /lessons/{lessonCode}/practice/overview
+GET    /lessons/{lessonCode}/practice/overview   (+ learningPoints[].practice, 2026-09-24 — EXERCISE_CONTRACT.md)
 POST   /lessons/{lessonCode}/practice/sessions
 GET    /practice/sessions/{sessionId}
 POST   /practice/sessions/{sessionId}/questions
@@ -124,6 +133,10 @@ d'autrui.
 apps/web/src/pages/student/practice/   PracticeHub · PracticeSession · PracticeSummary
 apps/web/src/features/practice/        QuestionRenderer (registre) · inputs/ ·
                                        HintPanel · FeedbackPanel · RichText ·
+                                       SessionProgress · QuestionHistory ·
+                                       QuestionContextPanel · LearningPointProgress ·
+                                       learningPointProgress ·
+                                       QuestionArrival · questionHistory · toneStyle ·
                                        LevelSelector · NotebookButton · PracticeLab ·
                                        practiceCapability · practiceContent
 apps/web/src/services/practiceService.js

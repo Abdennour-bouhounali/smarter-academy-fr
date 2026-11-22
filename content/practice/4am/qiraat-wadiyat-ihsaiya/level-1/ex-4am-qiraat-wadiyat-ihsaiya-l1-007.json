@@ -1,0 +1,111 @@
+{
+  "id": "ex-4am-qiraat-wadiyat-ihsaiya-l1-007",
+  "lessonCode": "qiraat-wadiyat-ihsaiya",
+  "level": 1,
+  "metadata": {
+    "title": "مجموعتان متساويتان",
+    "estimatedMinutes": 3,
+    "tags": [
+      "المتوسط المتوازن",
+      "مجموعات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_qiraat-wadiyat-ihsaiya_P3",
+      "modelledOn": "challenge"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في مسابقة القسم تحصّل 10 تلاميذ على متوسط 12 نقطة، وتحصّل 10 تلاميذ آخرون على متوسط 16 نقطة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب مجموع نقاط التلاميذ الـ 20 .",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "280",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مجموع نقاط مجموعة = عدد أفرادها × متوسطها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب مجموع كل مجموعة ثم اجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$10 \\times 12 + 10 \\times 16 = 280$ .",
+        "incorrect": "اضرب متوسط كل مجموعة في عدد أفرادها، ثم اجمع النتيجتين."
+      },
+      "solution": {
+        "lines": [
+          "$10 \\times 12 = 120$ و $10 \\times 16 = 160$",
+          "$120 + 160 = 280$"
+        ],
+        "result": "280"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب متوسط نقاط التلاميذ الـ 20 .",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (عشري عند الحاجة)",
+      "expectedAnswer": "14",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المتوسط = مجموع النقاط ÷ عدد الأفراد كلهم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل نتيجة 01 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{280}{20} = 14$ .",
+        "incorrect": "اقسم مجموع النقاط الذي وجدته في 01 على العدد الكلي للأفراد."
+      },
+      "solution": {
+        "lines": [
+          "عدد الأفراد: $10 + 10 = 20$",
+          "$\\dfrac{280}{20} = 14$",
+          "المجموعتان متساويتان في العدد، لذلك يساوي المتوسط هنا متوسط المتوسطين."
+        ],
+        "result": "14"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

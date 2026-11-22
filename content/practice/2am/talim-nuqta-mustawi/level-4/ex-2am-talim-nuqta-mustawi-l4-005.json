@@ -1,0 +1,206 @@
+{
+  "id": "ex-2am-talim-nuqta-mustawi-l4-005",
+  "lessonCode": "talim-nuqta-mustawi",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — تدريجة عشرية",
+    "estimatedMinutes": 10,
+    "tags": [
+      "تدريجة",
+      "عشري"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نضع في معلم متعامد ومتجانس نقطًا فواصلها وتراتيبها عشرية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نريد وضع النقط التي إحداثياتها $-3$، $1{,}5$، $4{,}5$، $-1{,}5$ على ورقة نرسم عليها معلمًا متعامدًا ومتجانسًا فيه $6$ تدريجات على الأكثر في كلّ جهة من المبدأ على كلّ محور. ما قيمة التدريجة الواحدة المناسبة (هي نفسها على المحورين)؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$0{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-FRAMESMALL"
+        },
+        {
+          "id": "B",
+          "content": "$1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-FRAMEBIG"
+        },
+        {
+          "id": "C",
+          "content": "$1{,}5$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-FRAMEBIG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كلّ إحداثية يجب أن تقع على تدريجة، فتكون مضاعفًا لقيمة التدريجة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "وأكبر إحداثية في القيمة المطلقة يجب ألّا تتجاوز عدد التدريجات الموجودة على الورقة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب كلّ اقتراح على أكبر إحداثية أوّلًا ثم على الباقي."
+        }
+      ],
+      "feedback": {
+        "correct": "التدريجة $1{,}5$ تضع كلّ الإحداثيات على تدريجات وداخل الورقة.",
+        "incorrect": "اختبر الاقتراح على أكبر إحداثية أوّلًا، ثم على الباقي."
+      },
+      "solution": {
+        "lines": [
+          "كلّ إحداثية يجب أن تكون مضاعفًا لقيمة التدريجة",
+          "التدريجة $1{,}5$ تحقّق الشرطين: $-3 \\div 1{,}5 = -2 ,\\ 1{,}5 \\div 1{,}5 = 1 ,\\ 4{,}5 \\div 1{,}5 = 3 ,\\ -1{,}5 \\div 1{,}5 = -1$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "نريد وضع نقطة فاصلتها $4{,}5$ على المحور الأفقي لمعلم قيمة تدريجته الواحدة $1{,}5$ . كم تدريجة نعدّ من المبدأ؟ اكتب العدد سالبًا إذا كانت النقطة على يسار المبدأ.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-NOSCALE",
+          "value": "4.5"
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNLEFT",
+          "value": "-3"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد التدريجات = الإحداثية ÷ قيمة التدريجة الواحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الجهة تحدّدها إشارة الإحداثية: موجبة يمينًا (أو أعلى)، سالبة يسارًا (أو أسفل)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب عدد التدريجات في قيمة التدريجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$4{,}5$ ÷ $1{,}5$ = $3$ .",
+        "incorrect": "قسّم الفاصلة على قيمة التدريجة الواحدة، وإشارة الفاصلة تحدّد الجهة."
+      },
+      "solution": {
+        "lines": [
+          "عدد التدريجات = الفاصلة ÷ قيمة التدريجة",
+          "$4{,}5 \\div 1{,}5 = 3$"
+        ],
+        "result": "3"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "نريد وضع نقطة فاصلتها $-1{,}5$ على المحور الأفقي لمعلم قيمة تدريجته الواحدة $0{,}5$ . كم تدريجة نعدّ من المبدأ؟ اكتب العدد سالبًا إذا كانت النقطة على يسار المبدأ.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-NOSCALE",
+          "value": "-1.5"
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNLEFT",
+          "value": "3"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد التدريجات = الإحداثية ÷ قيمة التدريجة الواحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الجهة تحدّدها إشارة الإحداثية: موجبة يمينًا (أو أعلى)، سالبة يسارًا (أو أسفل)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب عدد التدريجات في قيمة التدريجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$-1{,}5$ ÷ $0{,}5$ = $-3$ .",
+        "incorrect": "قسّم الفاصلة على قيمة التدريجة الواحدة، وإشارة الفاصلة تحدّد الجهة."
+      },
+      "solution": {
+        "lines": [
+          "عدد التدريجات = الفاصلة ÷ قيمة التدريجة",
+          "$-1{,}5 \\div 0{,}5 = -3$"
+        ],
+        "result": "-3"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

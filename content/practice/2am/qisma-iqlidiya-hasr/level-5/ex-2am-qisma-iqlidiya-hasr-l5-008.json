@@ -1,0 +1,354 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l5-008",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — غرس الأشجار",
+    "estimatedMinutes": 18,
+    "tags": [
+      "بيئة",
+      "مضاعف",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: تشارك البلدية والمواطنون في حماية البيئة بغرس 1155 شجيرة في صفوف متساوية.\nالجزء الثاني: تفضّل البلدية أن تكون كل الصفوف كاملة، وتتردّد بين صفوف من 35 شجيرة وصفوف من 40 شجيرة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "كم صفًّا نحصل عليه بصفوف من 35 شجيرة؟ (احسب $\\frac{1155}{35}$)",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الصفوف",
+      "expectedAnswer": "33",
+      "misconceptionSignatures": [
+        {
+          "value": "34",
+          "id": "MISC-HASR-SIFR-SARIM"
+        },
+        {
+          "value": "32",
+          "id": "MISC-HASR-SIFR-SARIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 1155 على 35."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي معدوم: حاصل القسمة هو القيمة المضبوطة."
+        }
+      ],
+      "feedback": {
+        "correct": "$1155 = 35 \\times 33$ ، إذن $\\frac{1155}{35} = 33$.",
+        "incorrect": "ابحث عن العدد الطبيعي الذي إذا ضربناه في 35 نجد 1155."
+      },
+      "solution": {
+        "lines": [
+          "$35 \\times 33 = 1155$",
+          "إذن $\\frac{1155}{35} = 33$."
+        ],
+        "result": "33"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "علمًا أنّ $1155 = 35 \\times 33$ ، اختر الجملة الصحيحة.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "1155 يقسم 35",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-YAQSIM-AKS"
+        },
+        {
+          "id": "B",
+          "content": "1155 مضاعف لـ 35",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "35 يقبل القسمة على 1155",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-YAQSIM-AKS"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كل جملة: أيّ العددين هو المقسوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "35 أصغر من 1155: هل يمكن أن يقسم 1155 العدد 35؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الباقي معدوم: 35 يقسم 1155، و 1155 مضاعف لـ 35، و 1155 يقبل القسمة على 35.",
+        "incorrect": "المقسوم هو العدد الأكبر هنا؛ والعدد الذي يقسم هو المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$1155 = 35 \\times 33$ والباقي معدوم.",
+          "نقول: 1155 يقبل القسمة على 35، أو 1155 مضاعف لـ 35، أو 35 يقسم 1155."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "بصفوف من 40 شجيرة: كم صفًّا كاملًا نحصل عليه؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الصفوف",
+      "expectedAnswer": "28",
+      "misconceptionSignatures": [
+        {
+          "value": "35",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "27",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "value": "29",
+          "id": "MISC-HASR-IZAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 1155 من 40 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 40 دون أن نتجاوز 1155."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من 40."
+        }
+      ],
+      "feedback": {
+        "correct": "$1155 = 40 \\times 28 + 35$ و $35 < 40$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 40 فلا يتجاوز الجداء 1155، والباقي عندئذ أصغر من 40."
+      },
+      "solution": {
+        "lines": [
+          "$40 \\times 28 = 1120$ و $40 \\times 29 = 1160$",
+          "$1120 \\le 1155 < 1160$ ، إذن الحاصل هو 28."
+        ],
+        "result": "q = 28"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "وكم شجيرة تبقى في صفّ ناقص؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الشجيرات",
+      "expectedAnswer": "35",
+      "misconceptionSignatures": [
+        {
+          "value": "28",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "75",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 1155."
+        }
+      ],
+      "feedback": {
+        "correct": "$1155 - 40 \\times 28 = 1155 - 1120 = 35$ ، و $35 < 40$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 40."
+      },
+      "solution": {
+        "lines": [
+          "$1155 = 40 \\times 28 + 35$",
+          "$35 < 40$ ، إذن الباقي هو 35."
+        ],
+        "result": "r = 35"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "اختر الكتابة الصحيحة التي تحصر حاصل القسمة $\\frac{1155}{40}$ بين عددين طبيعيين متتاليين (أو تعطيه إذا كان عددًا طبيعيًا).",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$28 < \\frac{1155}{40} < 29$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$27 < \\frac{1155}{40} < 28$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        },
+        {
+          "id": "C",
+          "content": "$35 < \\frac{1155}{40} < 36$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 1155 على 40."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من $40 \\times q \\le 1155 < 40 \\times (q + 1)$ نقسم الأطراف على 40."
+        }
+      ],
+      "feedback": {
+        "correct": "$1155 = 40 \\times 28 + 35$ والباقي غير معدوم، فـ $\\frac{1155}{40}$ يقع تمامًا بين 28 و 29.",
+        "incorrect": "احصر 1155 بين مضاعفين متتاليين للعدد 40 ثم اقسم على 40؛ وإذا كان الباقي معدومًا فحاصل القسمة عدد طبيعي."
+      },
+      "solution": {
+        "lines": [
+          "$1155 = 40 \\times 28 + 35$",
+          "$40 \\times 28 < 1155 < 40 \\times 29$ ، نقسم على 40: $28 < \\frac{1155}{40} < 29$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "أيّ الاختيارين يحقّق رغبة البلدية؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صفوف من 40 شجيرة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-SIFR-SARIM"
+        },
+        {
+          "id": "B",
+          "content": "صفوف من 35 شجيرة",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "متى تكون كل الصفوف كاملة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انظر إلى باقي كل قسمة."
+        }
+      ],
+      "feedback": {
+        "correct": "1155 يقبل القسمة على 35 (الباقي معدوم) ولا يقبلها على 40.",
+        "incorrect": "الصفوف كلها كاملة عندما يكون الباقي معدومًا."
+      },
+      "solution": {
+        "lines": [
+          "$1155 = 35 \\times 33$: الباقي معدوم.",
+          "$1155 = 40 \\times 28 + 35$: يبقى صفّ ناقص.",
+          "إذن صفوف من 35 شجيرة."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

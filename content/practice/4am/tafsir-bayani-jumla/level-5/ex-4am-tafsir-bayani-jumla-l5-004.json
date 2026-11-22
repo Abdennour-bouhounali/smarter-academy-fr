@@ -1,0 +1,431 @@
+{
+  "id": "ex-4am-tafsir-bayani-jumla-l5-004",
+  "lessonCode": "tafsir-bayani-jumla",
+  "level": 5,
+  "metadata": {
+    "title": "BEM 2018 — الوضعية الإدماجية",
+    "estimatedMinutes": 35,
+    "tags": [
+      "وضعية إدماجية",
+      "جملة معادلتين",
+      "تفسير بياني"
+    ],
+    "source": {
+      "type": "bem",
+      "year": 2018,
+      "part": 2,
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "official",
+      "badge": "BEM 2018",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "عبد الله و محمد عاملان يتقنان عملهما في مؤسسة لصناعة ألعاب الأطفال ، راتبهما الشهري على النحو التالي:\n- عبد الله راتبه 20000DA إضافة إلى 200DA لكل لعبة يتم صنعها.\n- محمد راتبه 30000DA إضافة إلى 100DA لكل لعبة يتم صنعها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "الجزء الأول:\nما هو الراتب الشهري الذي يتقاضاه كل منهما إذا تم صنع 120 لعبة ؟",
+      "statement": "راتب عبد الله:",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "44000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أضف إلى الراتب الثابت ما يتقاضاه عن اللعب."
+        }
+      ],
+      "feedback": {
+        "correct": "$120 \\times 200 + 20000$ .",
+        "incorrect": "اضرب عدد اللعب في 200 ثم أضف 20000."
+      },
+      "solution": {
+        "lines": [
+          "راتب كل من محمد و عبد الله إذا تم صنع 120 لعبة:",
+          "راتب عبد الله هو: $120 \\times 200 + 20000 = 44000DA$"
+        ],
+        "result": "44000DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "راتب محمد:",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "42000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أضف إلى الراتب الثابت ما يتقاضاه عن اللعب."
+        }
+      ],
+      "feedback": {
+        "correct": "$120 \\times 100 + 30000$ .",
+        "incorrect": "اضرب عدد اللعب في 100 ثم أضف 30000."
+      },
+      "solution": {
+        "lines": [
+          "راتب محمد هو: $120 \\times 100 + 30000 = 42000DA$"
+        ],
+        "result": "42000DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "ليكن $x$ عدد اللعب المصنوعة في مدة شهر.\n- عبّر بدلالة $x$ عن $y_1$، راتب عبد الله و عن $y_2$، راتب محمد.",
+      "statement": "أعط العددين $a$ و $b$ حيث: $y_1 = ax + b$ ، ابدأ بالعدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "200",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عبد الله يتقاضى مبلغا ثابتا ومبلغا عن كل لعبة."
+        }
+      ],
+      "feedback": {
+        "correct": "معامل $x$ هو ما يتقاضاه عن كل لعبة.",
+        "incorrect": "معامل $x$ هو المبلغ عن كل لعبة."
+      },
+      "solution": {
+        "lines": [
+          "التعبير بدلالة $x$ عن $y_1$ و $y_2$ :",
+          "راتب عبد الله: $y_1 = 200x + 20000$",
+          "راتب محمد: $y_2 = 100x + 30000$"
+        ],
+        "result": "y_1 = 200x + 20000"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "ثم العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "20000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو الراتب دون اللعب."
+        }
+      ],
+      "feedback": {
+        "correct": "$y_1 = 200x + 20000$ .",
+        "incorrect": "العدد $b$ هو الراتب الثابت."
+      },
+      "solution": {
+        "lines": [
+          "التعبير بدلالة $x$ عن $y_1$ و $y_2$ :",
+          "راتب عبد الله: $y_1 = 200x + 20000$",
+          "راتب محمد: $y_2 = 100x + 30000$"
+        ],
+        "result": "y_1 = 200x + 20000"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "statement": "أعط العددين $a$ و $b$ حيث: $y_2 = ax + b$ ، ابدأ بالعدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "100",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "محمد يتقاضى مبلغا ثابتا ومبلغا عن كل لعبة."
+        }
+      ],
+      "feedback": {
+        "correct": "معامل $x$ هو ما يتقاضاه محمد عن كل لعبة.",
+        "incorrect": "معامل $x$ هو المبلغ عن كل لعبة."
+      },
+      "solution": {
+        "lines": [
+          "التعبير بدلالة $x$ عن $y_1$ و $y_2$ :",
+          "راتب عبد الله: $y_1 = 200x + 20000$",
+          "راتب محمد: $y_2 = 100x + 30000$"
+        ],
+        "result": "y_2 = 100x + 30000"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "statement": "ثم العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "30000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو الراتب دون اللعب."
+        }
+      ],
+      "feedback": {
+        "correct": "$y_2 = 100x + 30000$ .",
+        "incorrect": "العدد $b$ هو الراتب الثابت."
+      },
+      "solution": {
+        "lines": [
+          "التعبير بدلالة $x$ عن $y_1$ و $y_2$ :",
+          "راتب عبد الله: $y_1 = 200x + 20000$",
+          "راتب محمد: $y_2 = 100x + 30000$"
+        ],
+        "result": "y_2 = 100x + 30000"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "lead": "الجزء الثاني:\nفي المستوي المنسوب إلى معلم متعامد و متجانس $(O, \\vec{i} , \\vec{j})$ :",
+      "statement": "- ارسم المستقيمين $(D_1)$ و $(D_2)$، ممثلا الدالتين $g$ و $h$ على الترتيب حيث: $g(x) = 200x + 20000$ و $h(x) = 100x + 30000$ .\n(نأخذ 1cm على محور الفواصل يمثل 50 لعبة ، 1cm على محور التراتيب يمثل 5000DA).",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن نقطتين من كل مستقيم مستعملا وحدتي المحورين المعطاتين."
+        }
+      ],
+      "feedback": {
+        "correct": "تمثيل كل دالة مستقيم.",
+        "incorrect": "احسب صورتي 0 و 120 مثلا بكل دالة."
+      },
+      "solution": {
+        "lines": [
+          "التمثيل البياني للدالتين $g$ و $h$ في معلم متعامد و متجانس:",
+          "جدول قيم: $h(0) = 30000$ ، $h(120) = 42000$ ؛ $g(0) = 20000$ ، $g(120) = 44000$ .",
+          "$(D_1)$ يشمل النقطتين $(0 ; 20000)$ و $(120 ; 44000)$ ، و $(D_2)$ يشمل النقطتين $(0 ; 30000)$ و $(120 ; 42000)$ ."
+        ]
+      },
+      "timeSeconds": 420
+    },
+    {
+      "id": "q8",
+      "step": "04",
+      "statement": "- حُل جملة المعادلتين التالية: $\\begin{cases} y = 200x + 20000 \\\\ y = 100x + 30000 \\end{cases}$ .\nثم أعط تفسيرا بيانيا لهذا الحل.",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": {
+        "x": "100",
+        "y": "40000"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "40000",
+            "y": "100"
+          },
+          "id": "MISC-JUMLA-BAYANI-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح المعادلتين طرفا لطرف للتخلص من $y$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض قيمة $x$ في إحدى المعادلتين لتجد $y$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحل ثنائية $(x ; y)$ : الفاصلة أولا."
+        }
+      ],
+      "feedback": {
+        "correct": "صحيح: هذه الثنائية هي حل الجملة.",
+        "incorrect": "تخلّص من $y$ (بضرب المعادلة الثانية في $-1$ ثم الجمع)، ثم عوّض لتجد $y$ ؛ واكتب الفاصلة أولا."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $y = 200x + 20000$ ...(1) و $y = 100x + 30000$ ...(2)",
+          "بضرب طرفي المعادلة (2) في $(-1)$ نجد: $-y = -100x - 30000$ ...(4)",
+          "بجمع المعادلتين (1) و (4) طرفا إلى طرف نجد: $100x - 10000 = 0$",
+          "$100x = 10000$",
+          "$x = 100$",
+          "بتعويض قيمة $x$ في المعادلة (1) نجد: $y = 200 \\times 100 + 20000$",
+          "$y = 40000$",
+          "إذا الثنائية $(100 ; 40000)$ حل للجملة السابقة.",
+          "التفسير البياني لحل الجملة السابقة: نلاحظ أن التمثيلين البيانيين للدالتين $g$ و $h$ يتقاطعان في نقطة فاصلتها 100 ، معناه أنه يتساوى راتب كل من عبد الله و محمد عند صنع 100 لعبة حيث يساوي هذا الراتب 40000DA."
+        ],
+        "result": "(100 ; 40000)"
+      },
+      "work": "optional",
+      "timeSeconds": 360
+    },
+    {
+      "id": "q9",
+      "step": "04",
+      "lead": "- بقراءة بيانية، متى يكون راتب عبد الله أكبر من راتب محمد ؟",
+      "statement": "عدد اللعب الحدّ $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "راتب عبد الله أكبر من راتب محمد عندما يكون $x < k$ أو $x > k$ : اكتب العدد $k$ فقط",
+      "expectedAnswer": "100",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن الجزء الذي يكون فيه $(D_1)$ فوق $(D_2)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحدّ هو فاصلة النقطة التي يتساوى فيها الراتبان."
+        }
+      ],
+      "feedback": {
+        "correct": "الحدّ هو فاصلة نقطة تقاطع المستقيمين.",
+        "incorrect": "الحدّ هو فاصلة نقطة تقاطع $(D_1)$ و $(D_2)$ ."
+      },
+      "solution": {
+        "lines": [
+          "يكون راتب عبد الله أكبر من راتب محمد عندما يكون عدد اللعب المصنوعة أكبر تماما من 100 لعبة ، لأن التمثيل البياني للدالة $g$ فوق التمثيل البياني للدالة $h$ (بيانيا).",
+          "أما حسابيا (و هو غير مطلوب): $200x + 20000 > 100x + 30000$",
+          "$100x > 10000$",
+          "$x > 100$"
+        ],
+        "result": "k = 100"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q10",
+      "step": "04",
+      "statement": "راتب عبد الله أكبر من راتب محمد من أجل:",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < 100$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-JIHA"
+        },
+        {
+          "id": "B",
+          "content": "$x > 100$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "على يمين نقطة التقاطع، أيّ المستقيمين فوق الآخر؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$(D_1)$ فوق $(D_2)$ على يمين نقطة التقاطع.",
+        "incorrect": "انظر أيّ المستقيمين يكون فوق الآخر بعد نقطة التقاطع: المستقيم الأعلى يمثل الراتب الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "على يمين نقطة التقاطع يكون $(D_1)$ (راتب عبد الله) فوق $(D_2)$ (راتب محمد).",
+          "إذا يكون راتب عبد الله أكبر من راتب محمد إذا تم صنع أكثر من 100 لعبة: $x > 100$ ."
+        ],
+        "result": "x > 100"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

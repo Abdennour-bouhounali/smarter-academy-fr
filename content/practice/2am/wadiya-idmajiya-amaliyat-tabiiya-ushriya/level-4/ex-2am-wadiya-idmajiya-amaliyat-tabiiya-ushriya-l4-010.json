@@ -1,0 +1,268 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-amaliyat-tabiiya-ushriya-l4-010",
+  "lessonCode": "wadiya-idmajiya-amaliyat-tabiiya-ushriya",
+  "level": 4,
+  "metadata": {
+    "title": "شبكة أعداد متقاطعة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "شبكة أعداد",
+      "سلسلة عمليات",
+      "برّر"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-37",
+      "page": 18,
+      "section": "أتعمّق",
+      "number": 37
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "شبكة أعداد متقاطعة من ثلاثة أسطر وثلاثة أعمدة: كلّ جواب عدد من ثلاثة أرقام. العدد الأفقي ① في السطر الأوّل، والأفقي ② في السطر الثالث. العدد العمودي ① يبدأ من أوّل رقم من الأفقي ① وينتهي عند أوّل رقم من الأفقي ② ، والعمودي ② يبدأ من آخر رقم من الأفقي ① وينتهي عند آخر رقم من الأفقي ② ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أفقيًا ① : احسب $3 \\times 40 + 5$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "125",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعية جملة جملة: كلّ جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب سلسلة عمليات تترجمها، وضع بين قوسين ما يجب حسابه أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب السلسلة بالترتيب الصحيح للعمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 \\times 40 + 5 = 125$ .",
+        "incorrect": "اكتب سلسلة تترجم الوضعية جملة جملة، ثم احسبها بالترتيب الصحيح للعمليات."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $3 \\times 40 + 5$",
+          "$A = 3 \\times 40 + 5$",
+          "$A = 120 + 5$",
+          "$A = 125$"
+        ],
+        "result": "125"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أفقيًا ② : احسب $1000 - 4 \\times 13$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "948",
+      "misconceptionSignatures": [
+        {
+          "value": "12948",
+          "id": "MISC-SILSILA-NOPRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعية جملة جملة: كلّ جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب سلسلة عمليات تترجمها، وضع بين قوسين ما يجب حسابه أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب السلسلة بالترتيب الصحيح للعمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "$1000 - 4 \\times 13 = 948$ .",
+        "incorrect": "الضرب والقسمة يُنجزان قبل الجمع والطرح حتى لو ظهر الجمع أو الطرح أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $1000 - 4 \\times 13$",
+          "$A = 1000 - 4 \\times 13$",
+          "$A = 1000 - 52$",
+          "$A = 948$"
+        ],
+        "result": "948"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "عموديًا ① : احسب $13 \\times 13$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "169",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعية جملة جملة: كلّ جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب سلسلة عمليات تترجمها، وضع بين قوسين ما يجب حسابه أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب السلسلة بالترتيب الصحيح للعمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "$13 \\times 13 = 169$ .",
+        "incorrect": "اكتب سلسلة تترجم الوضعية جملة جملة، ثم احسبها بالترتيب الصحيح للعمليات."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $13 \\times 13$",
+          "$A = 13 \\times 13$",
+          "$A = 169$"
+        ],
+        "result": "169"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "عموديًا ② : احسب $2 \\times 17 \\times 17$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "578",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعية جملة جملة: كلّ جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب سلسلة عمليات تترجمها، وضع بين قوسين ما يجب حسابه أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب السلسلة بالترتيب الصحيح للعمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 17 \\times 17 = 578$ .",
+        "incorrect": "اكتب سلسلة تترجم الوضعية جملة جملة، ثم احسبها بالترتيب الصحيح للعمليات."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $2 \\times 17 \\times 17$",
+          "$A = 2 \\times 17 \\times 17$",
+          "$A = 34 \\times 17$",
+          "$A = 578$"
+        ],
+        "result": "578"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "تحقّق من أنّ الأعداد الأربعة تتقاطع في الشبكة كما ينبغي.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب على ورقتك مرحلة مرحلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اسأل: أيّ حساب يثبت ما تقول؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تذكر القاعدة المستعملة."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر رقم من $169$ هو $9$ وأوّل رقم من $948$ هو $9$ ؛ وآخر رقم من $578$ هو $8$ وآخر رقم من $948$ هو $8$ : الشبكة متّسقة.",
+        "incorrect": "قارن تبريرك بالحلّ النموذجي: الفكرة ثم الحساب الذي يدعمها."
+      },
+      "solution": {
+        "lines": [
+          "الأفقي ① هو $125$ والأفقي ② هو $948$ ، والعمودي ① هو $169$ والعمودي ② هو $578$ .",
+          "أوّل رقم من $125$ هو $1$ وأوّل رقم من $169$ هو $1$ ؛ وآخر رقم من $125$ هو $5$ وأوّل رقم من $578$ هو $5$ .",
+          "آخر رقم من $169$ هو $9$ وأوّل رقم من $948$ هو $9$ ؛ وآخر رقم من $578$ هو $8$ وآخر رقم من $948$ هو $8$ : الشبكة متّسقة."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

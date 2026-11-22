@@ -1,0 +1,190 @@
+{
+  "id": "ex-2am-silsila-bi-aqwas-l2-004",
+  "lessonCode": "silsila-bi-aqwas",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أقواس غير ضرورية",
+    "estimatedMinutes": 10,
+    "tags": [
+      "أقواس غير ضرورية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أجب عن الأسئلة الآتية:"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ العبارات الآتية يمكن حذف قوسيها دون أن تتغيّر قيمتها؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$30 + (12 \\div 4)$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$(30 - 12) \\div 3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-ALLUSELESS"
+        },
+        {
+          "id": "C",
+          "content": "$30 - (12 - 4)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-ALLUSELESS"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يحدث لو حذفنا القوسين؟ هل يتغيّر ترتيب الحساب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كل عبارة بالقوسين وبدونهما ثم قارن."
+        }
+      ],
+      "feedback": {
+        "correct": "القوسان غير ضروريين إذا كانت أولوية العمليات تفرض الترتيب نفسه.",
+        "incorrect": "احذف القوسين في كل عبارة واحسب مرّة ثانية: إن تغيّرت النتيجة فالقوسان ضروريان."
+      },
+      "solution": {
+        "lines": [
+          "نحذف القوسين ونقارن النتيجتين:",
+          "$30 + (12 \\div 4)$ : نفس النتيجة",
+          "$30 - (12 - 4)$ : نتيجة أخرى",
+          "$(30 - 12) \\div 3$ : نتيجة أخرى"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أيّ العبارات الآتية تتغيّر قيمتها إذا حذفنا قوسيها؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$9 + (6 \\times 4)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-ALLNEEDED"
+        },
+        {
+          "id": "B",
+          "content": "$(9 + 6) \\times 4$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$(9 \\times 6) - 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-ALLNEEDED"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يحدث لو حذفنا القوسين؟ هل يتغيّر ترتيب الحساب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كل عبارة بالقوسين وبدونهما ثم قارن."
+        }
+      ],
+      "feedback": {
+        "correct": "القوسان ضروريان إذا غيّر حذفهما النتيجة.",
+        "incorrect": "احذف القوسين في كل عبارة واحسب مرّة ثانية: إن تغيّرت النتيجة فالقوسان ضروريان."
+      },
+      "solution": {
+        "lines": [
+          "نحذف القوسين ونقارن النتيجتين:",
+          "$(9 + 6) \\times 4$ : نتيجة أخرى",
+          "$9 + (6 \\times 4)$ : نفس النتيجة",
+          "$(9 \\times 6) - 4$ : نفس النتيجة"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب $A = 15 + (4 \\times 6) - 9$ .",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "30",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع إطارًا حول القوسين: ما بداخلهما يُحسب أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب ما بين القوسين وفق أولوية العمليات، ثم أعد كتابة العبارة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك عملية بعد عملية إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 15 + (4 \\times 6) - 9 = 30$",
+        "incorrect": "ما بين القوسين يُحسب أوّلًا، ثم نكمل العمليات باحترام أولوية الضرب والقسمة على الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$A = 15 + (4 \\times 6) - 9$",
+          "$A = 15 + 24 - 9$",
+          "$A = 39 - 9$",
+          "$A = 30$"
+        ],
+        "result": "A = 30"
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

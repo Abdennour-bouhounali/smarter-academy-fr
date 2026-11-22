@@ -1,0 +1,116 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-maalam-l2-008",
+  "lessonCode": "wadiya-idmajiya-maalam",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — مركبتا قطعة على مخطط",
+    "estimatedMinutes": 2,
+    "tags": [
+      "مركبتا شعاع",
+      "قراءة إحداثيتي نقطة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-maalam_P2",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "مخطط مبسّط لخط مترو الجزائر على معلم متعامد ومتجانس: المحطات A و B و C و D (الشكل).",
+    "figure": {
+      "points": {
+        "A": [
+          -4,
+          -1
+        ],
+        "B": [
+          -1,
+          3
+        ],
+        "C": [
+          3,
+          1
+        ],
+        "D": [
+          5,
+          4
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "tone": "emerald",
+          "bold": true
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "tone": "emerald",
+          "bold": true
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "tone": "emerald",
+          "bold": true
+        }
+      ],
+      "labels": {
+        "A": "sw",
+        "B": "n",
+        "C": "se",
+        "D": "ne"
+      },
+      "grid": true,
+      "axes": true,
+      "ariaLabel": "مخطط خط مترو على معلم متعامد ومتجانس: المحطات A ثم B ثم C ثم D موصولة بقطع مستقيمة"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مركبتا الشعاع $\\overrightarrow{BC}$ هما:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "المركبتان (x ; y)",
+      "expectedAnswer": {
+        "x": "4",
+        "y": "-2"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ إحداثيتي B ثم C."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$B(-1\\,;\\,3)$ و $C(3\\,;\\,1)$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "النهاية ناقص المبدأ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{BC}\\begin{pmatrix} 3 - (-1) \\\\ 1 - 3 \\end{pmatrix} = \\begin{pmatrix} 4 \\\\ -2 \\end{pmatrix}$ .",
+        "incorrect": "اقرأ الإحداثيات على الشكل ثم اطرح: النهاية ناقص المبدأ."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 2
+    }
+  ]
+}

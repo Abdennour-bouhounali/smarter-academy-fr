@@ -1,0 +1,261 @@
+{
+  "id": "ex-4am-tahlil-ibara-l3-007",
+  "lessonCode": "tahlil-ibara",
+  "level": 3,
+  "metadata": {
+    "title": "حلّل واذكر المتطابقة ثم استنتج",
+    "estimatedMinutes": 11,
+    "tags": [
+      "متطابقات شهيرة",
+      "عامل مشترك"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-3",
+      "page": 33,
+      "section": "أنشطة",
+      "number": 3
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "حلّل كل عبارة واذكر المتطابقة التي اعتمدت عليها:",
+    "formulas": [
+      "A = x^2 + 6x + 9",
+      "B = x^2 - 4x + 4",
+      "C = x^2 - 16"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "حلّل العبارة $A$ .",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $(x + n)^2$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على الشكل $a^2 + 2ab + b^2$ أو $a^2 - 2ab + b^2$ : عيّن $a$ و $b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق من الحد المضاعف $2ab$ قبل أن تكتب المربع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل $a^2 \\pm 2ab + b^2 = (a \\pm b)^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = (x + 3)^2$ إذن $n = 3$ .",
+        "incorrect": "تعرّف على المتطابقة الشهيرة المناسبة، وعيّن $a$ و $b$ بدقّة قبل التحليل."
+      },
+      "solution": {
+        "lines": [
+          "المتطابقة $a^2 + 2ab + b^2 = (a + b)^2$",
+          "$A = x^2 + 2 \\times x \\times 3 + 3^2$"
+        ],
+        "result": "A = (x + 3)^2"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "حلّل العبارة $B$ .",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $B$ على الشكل $(x - n)^2$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على الشكل $a^2 + 2ab + b^2$ أو $a^2 - 2ab + b^2$ : عيّن $a$ و $b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق من الحد المضاعف $2ab$ قبل أن تكتب المربع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل $a^2 \\pm 2ab + b^2 = (a \\pm b)^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = (x - 2)^2$ إذن $n = 2$ .",
+        "incorrect": "تعرّف على المتطابقة الشهيرة المناسبة، وعيّن $a$ و $b$ بدقّة قبل التحليل."
+      },
+      "solution": {
+        "lines": [
+          "المتطابقة $a^2 - 2ab + b^2 = (a - b)^2$",
+          "$B = x^2 - 2 \\times x \\times 2 + 2^2$"
+        ],
+        "result": "B = (x - 2)^2"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "حلّل العبارة $C$ .",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $C$ على الشكل $(x - n)(x + n)$ حيث $n$ عدد موجب : اكتب العدد $n$ فقط",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على الشكل $a^2 - b^2$ : عيّن $a$ و $b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل المتطابقة $a^2 - b^2 = (a + b)(a - b)$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بسّط كل قوس، وانتبه إلى الإشارات عند فتح الأقواس."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = (x - 4)(x + 4)$ إذن $n = 4$ .",
+        "incorrect": "تعرّف على المتطابقة الشهيرة المناسبة، وعيّن $a$ و $b$ بدقّة قبل التحليل."
+      },
+      "solution": {
+        "lines": [
+          "المتطابقة $a^2 - b^2 = (a + b)(a - b)$",
+          "$C = x^2 - 4^2$"
+        ],
+        "result": "C = (x - 4)(x + 4)"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "lead": "استنتج تحليلا للعبارة $D$ حيث: $D = (x^2 - 16) + (x + 4)(2x - 3)$ .",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $D$ على الشكل $(x + 4)(mx + n)$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل تحليل $C$ : يظهر العامل $(x + 4)$ في الحدّين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل $ka + kb = k(a + b)$ : أخرج العامل المشترك، واكتب ما يبقى من كل حد بين قوسين كبيرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بسّط ما بين القوسين الكبيرين بإشاراته، ثم قارن بالشكل المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$D = (x + 4)(3x - 7)$ إذن $m = 3$ .",
+        "incorrect": "أخرج العامل المشترك من كل حد، ثم بسّط ما بين القوسين الكبيرين بإشاراته (حدّ وحده يعني $1$)."
+      },
+      "solution": {
+        "lines": [
+          "$D = (x - 4)(x + 4) + (x + 4)(2x - 3)$",
+          "$D = (x + 4)(x - 4 + 2x - 3)$"
+        ],
+        "result": "D = (x + 4)(3x - 7)"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $D$ على الشكل $(x + 4)(mx + n)$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "-7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العدد المطلوب في الشكل المحلّل، بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$D = (x + 4)(3x - 7)$ إذن $n = -7$ .",
+        "incorrect": "أخرج العامل المشترك من كل حد، ثم بسّط ما بين القوسين الكبيرين بإشاراته (حدّ وحده يعني $1$)."
+      },
+      "solution": {
+        "lines": [
+          "$D = (x + 4)(3x - 7)$"
+        ],
+        "result": "n = -7"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

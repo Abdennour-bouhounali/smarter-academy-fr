@@ -1,0 +1,185 @@
+{
+  "id": "ex-4am-mushkilat-jumla-l2-004",
+  "lessonCode": "mushkilat-jumla",
+  "level": 2,
+  "metadata": {
+    "title": "حلبة كارتينغ",
+    "estimatedMinutes": 8,
+    "tags": [
+      "ترييض",
+      "كارتينغ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mushkilat-jumla_P2",
+      "modelledOn": "act-3"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "في حلبة كارتينغ، ثمن الدورة 400DA للكبار و 250DA للصغار. ركبت عائلة 12 دورة احتفالا بنجاح ابنها في الامتحان ودفعت 3750DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "نسمّي $x$ عدد دورات الكبار و $y$ عدد دورات الصغار.",
+      "statement": "ترجم المعطيات بجملة معادلتين، ثم اكتب معادلة المبلغ، بعد قسمة طرفيها على 50، على الشكل $8x + 5y = c$ . أعط العدد $c$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $c$ فقط",
+      "expectedAnswer": "75",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-JUMLA-TARJAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ المدفوع للكبار هو $400x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلة المبلغ ثم اقسم حدودها الثلاثة على 50."
+        }
+      ],
+      "feedback": {
+        "correct": "معادلة المبلغ $400x + 250y = 3750$ تؤول إلى $8x + 5y = 75$ ، والجملة: $\\begin{cases} x + y = 12 \\\\ 8x + 5y = 75 \\end{cases}$ .",
+        "incorrect": "المبلغ يُترجم بـ $400x + 250y$ ؛ اقسم الحدود الثلاثة على 50."
+      },
+      "solution": {
+        "lines": [
+          "عدد الدورات: $x + y = 12$",
+          "المبلغ: $400x + 250y = 3750$",
+          "بقسمة طرفي المعادلة الثانية على 50 نجد: $8x + 5y = 75$",
+          "ومنه الجملة: $\\begin{cases} x + y = 12 \\\\ 8x + 5y = 75 \\end{cases}$"
+        ],
+        "result": "c = 75"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "جد عدد دورات الكبار وعدد دورات الصغار.",
+      "statement": "عدد دورات الكبار:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب المعادلة الأولى في $5$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرحها من المعادلة الثانية طرفا لطرف ليختفي $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "ركب الكبار 5 دورات.",
+        "incorrect": "اضرب $x + y = 12$ في 5 ثم اطرحها من $8x + 5y = 75$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} x + y = 12 & ...(1) \\\\ 8x + 5y = 75 & ...(2) \\end{cases}$",
+          "بضرب طرفي المعادلة (1) في العدد $5$ وطرفي المعادلة (2) في العدد $-1$ نجد:",
+          "$\\begin{cases} 5x + 5y = 60 \\\\ -8x - 5y = -75 \\end{cases}$",
+          "بجمع المعادلتين طرفا لطرف نجد: $-3x = -15$",
+          "ومنه: $x = \\dfrac{-15}{-3} = 5$",
+          "بتعويض قيمة $x$ في المعادلة (1) نجد: $5 + y = 12$",
+          "$y = 7$",
+          "التحقق في النص: $5 + 7 = 12$ و $400 \\times 5 + 250 \\times 7 = 2000 + 1750 = 3750$ .",
+          "إذن ركب الكبار 5 دورات والصغار 7 دورات."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "عدد دورات الصغار:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الدورات 12 ."
+        }
+      ],
+      "feedback": {
+        "correct": "ركب الصغار 7 دورات، ونتحقق: $2000 + 1750 = 3750$ .",
+        "incorrect": "من $x + y = 12$ : $y = 12 - x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} x + y = 12 & ...(1) \\\\ 8x + 5y = 75 & ...(2) \\end{cases}$",
+          "بضرب طرفي المعادلة (1) في العدد $5$ وطرفي المعادلة (2) في العدد $-1$ نجد:",
+          "$\\begin{cases} 5x + 5y = 60 \\\\ -8x - 5y = -75 \\end{cases}$",
+          "بجمع المعادلتين طرفا لطرف نجد: $-3x = -15$",
+          "ومنه: $x = \\dfrac{-15}{-3} = 5$",
+          "بتعويض قيمة $x$ في المعادلة (1) نجد: $5 + y = 12$",
+          "$y = 7$",
+          "التحقق في النص: $5 + 7 = 12$ و $400 \\times 5 + 250 \\times 7 = 2000 + 1750 = 3750$ .",
+          "إذن ركب الكبار 5 دورات والصغار 7 دورات."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,318 @@
+{
+  "id": "ex-4am-hasiba-muthallathiya-l5-003",
+  "lessonCode": "hasiba-muthallathiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2009 — زاوية هبوط طائرة",
+    "estimatedMinutes": 22,
+    "tags": [
+      "وضعية إدماجية",
+      "الظل",
+      "اللمسات العكسية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_hasiba-muthallathiya_P2",
+      "modelledOn": "BEM 2009 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تقترب طائرة من مطار هواري بومدين في خط مستقيم نحو نقطة الملامسة $T$ على المدرج الأفقي. عندما كانت الطائرة على ارتفاع $450\\,\\mathrm{m}$ ، كانت المسافة الأفقية بين مسقطها على الأرض والنقطة $T$ تساوي $8200\\,\\mathrm{m}$ . زاوية الهبوط هي الزاوية بين مسار الطائرة والأفق؛ يجب أن يكون قيسها محصورا بين $2{,}5^{\\circ}$ و $3{,}5^{\\circ}$ ، والقيمة المثالية $3^{\\circ}$ . وينضبط الطيّار بالمواعيد والقواعد حفاظًا على أرواح المسافرين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب قيس زاوية الهبوط $x$ بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: قيس الزاوية بالدرجة، مدوّرا إلى 0,1",
+      "expectedAnswer": "3.1",
+      "misconceptionSignatures": [
+        {
+          "value": "86.9",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        },
+        {
+          "value": "0.1",
+          "id": "MISC-MUTH-HASIBA-RAD"
+        },
+        {
+          "value": "0.0",
+          "id": "MISC-MUTH-AKS-BADAL-MUBASHIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الارتفاع يقابل زاوية الهبوط عند $T$ ، والمسافة الأفقية تجاورها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اللمسة العكسية: ⁦2nd⁩ ثم ⁦tan⁻¹⁩ ثم النسبة ثم ⁦=⁩."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الحرف ⁦D⁩ (الدرجة)، ثم دوّر إلى الجزء من 10: انظر إلى الرقم الموالي للرقم الأخير الذي تحتفظ به."
+        }
+      ],
+      "feedback": {
+        "correct": "$x \\approx 3{,}141129836^{\\circ} \\approx 3{,}1^{\\circ}$ .",
+        "incorrect": "النسبة ليست القيس: القيس يُعيَّن باللمسة العكسية المناسبة والحاسبة مبرمجة بالدرجة، ثم يُدوَّر (لا يُبتر) إلى الجزء من 10."
+      },
+      "solution": {
+        "lines": [
+          "الارتفاع والمسافة الأفقية ضلعا الزاوية القائمة: $\\tan x = \\dfrac{450}{8200}$",
+          "باستعمال الحاسبة المبرمجة بالدرجة: ⁦ON 2nd tan⁻¹ ( 450 ÷ 8200 ) =⁩ يظهر على الشاشة $3{,}141129836$ .",
+          "الرقم الذي يلي رقم الأجزاء من 10 هو 4، وهو أصغر من 5: نُبقي رقم الأجزاء من 10 كما هو."
+        ],
+        "result": "x \\approx 3{,}1^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل زاوية الهبوط مقبولة؟",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن $x$ بالحدّين $2{,}5^{\\circ}$ و $3{,}5^{\\circ}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}5^{\\circ} < 3{,}1^{\\circ} < 3{,}5^{\\circ}$ : الزاوية مقبولة.",
+        "incorrect": "قارن القيس الذي حسبته بالحدّين المعطيين."
+      },
+      "solution": {
+        "lines": [
+          "$x \\approx 3{,}1^{\\circ}$ و $2{,}5^{\\circ} < 3{,}1^{\\circ} < 3{,}5^{\\circ}$",
+          "زاوية الهبوط مقبولة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "على مسار مثالي (زاوية هبوط $3^{\\circ}$ )، احسب الارتفاع الذي يجب أن تكون عليه الطائرة عندما تكون المسافة الأفقية إلى $T$ هي $5000\\,\\mathrm{m}$ ، بالتدوير إلى الوحدة.",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بـ m مدوّرا إلى الوحدة",
+      "expectedAnswer": "262",
+      "misconceptionSignatures": [
+        {
+          "value": "-713",
+          "id": "MISC-MUTH-HASIBA-RAD"
+        },
+        {
+          "value": "95406",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الارتفاع يقابل زاوية الهبوط، والمسافة الأفقية تجاورها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة التي تجمعهما هي الظل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الارتفاع، والحاسبة مبرمجة بالدرجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$h = 5000 \\times \\tan 3^{\\circ} \\approx 262{,}0388964 \\approx 262\\,\\mathrm{m}$ .",
+        "incorrect": "الارتفاع في بسط الظل: نضرب المسافة الأفقية في $\\tan 3^{\\circ}$ ، والحاسبة مبرمجة بالدرجة."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan 3^{\\circ} = \\dfrac{h}{5000}$ ومنه $h = 5000 \\times \\tan 3^{\\circ}$",
+          "باستعمال الحاسبة: $h \\approx 262{,}0388964$"
+        ],
+        "result": "h \\approx 262\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "sub": "ا",
+      "lead": "☜ في رحلة أخرى، كانت الطائرة على ارتفاع $320\\,\\mathrm{m}$ عندما كانت المسافة الأفقية إلى $T$ هي $5000\\,\\mathrm{m}$ .",
+      "statement": "قيس زاوية الهبوط $y$ في هذه الرحلة بالتدوير إلى $0{,}1$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: قيس الزاوية بالدرجة، مدوّرا إلى 0,1",
+      "expectedAnswer": "3.7",
+      "misconceptionSignatures": [
+        {
+          "value": "3.6",
+          "id": "MISC-MUTH-TADWIR-BATR"
+        },
+        {
+          "value": "86.3",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        },
+        {
+          "value": "0.1",
+          "id": "MISC-MUTH-HASIBA-RAD"
+        },
+        {
+          "value": "0.0",
+          "id": "MISC-MUTH-AKS-BADAL-MUBASHIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الارتفاع يقابل زاوية الهبوط والمسافة الأفقية تجاورها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اللمسة العكسية: ⁦2nd⁩ ثم ⁦tan⁻¹⁩ ثم النسبة ثم ⁦=⁩."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الحرف ⁦D⁩ (الدرجة)، ثم دوّر إلى الجزء من 10: انظر إلى الرقم الموالي للرقم الأخير الذي تحتفظ به."
+        }
+      ],
+      "feedback": {
+        "correct": "$y \\approx 3{,}661935576^{\\circ} \\approx 3{,}7^{\\circ}$ .",
+        "incorrect": "النسبة ليست القيس: القيس يُعيَّن باللمسة العكسية المناسبة والحاسبة مبرمجة بالدرجة، ثم يُدوَّر (لا يُبتر) إلى الجزء من 10."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan y = \\dfrac{320}{5000}$",
+          "باستعمال الحاسبة المبرمجة بالدرجة: ⁦ON 2nd tan⁻¹ ( 320 ÷ 5000 ) =⁩ يظهر على الشاشة $3{,}661935576$ .",
+          "الرقم الذي يلي رقم الأجزاء من 10 هو 6، وهو أكبر من 5: نضيف 1 إلى رقم الأجزاء من 10."
+        ],
+        "result": "y \\approx 3{,}7^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "sub": "ب",
+      "statement": "هل كان على الطيار تصحيح مساره؟",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-TADWIR-BATR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن $y$ بالحد الأعلى المسموح به."
+        }
+      ],
+      "feedback": {
+        "correct": "$3{,}7^{\\circ} > 3{,}5^{\\circ}$ : المسار شديد الانحدار، وعلى الطيار تصحيحه.",
+        "incorrect": "قارن القيس المدوّر بالحدّ الأعلى $3{,}5^{\\circ}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$y \\approx 3{,}7^{\\circ}$ و $3{,}7^{\\circ} > 3{,}5^{\\circ}$",
+          "الزاوية خارج المجال المسموح: على الطيار تصحيح مساره."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

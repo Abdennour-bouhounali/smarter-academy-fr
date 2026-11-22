@@ -1,0 +1,71 @@
+{
+  "id": "ex-4am-muntasaf-masafa-l5-005",
+  "lessonCode": "muntasaf-masafa",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — الرأس الرابع بالمنتصف",
+    "estimatedMinutes": 4,
+    "tags": [
+      "المنتصف",
+      "متوازي أضلاع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_muntasaf-masafa_P1",
+      "modelledOn": "know-mid"
+    }
+  },
+  "statement": {
+    "content": "ABCD متوازي أضلاع في معلم حيث $A(-2\\,;\\,1)$ ، $B(3\\,;\\,2)$ ، $C(4\\,;\\,-2)$ . قطراه [AC] و [BD] متناصفان."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا D:",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح أو كسر مثل 1/2)",
+      "expectedAnswer": {
+        "x": "-1",
+        "y": "-3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MUNTASAF-NISF",
+          "value": {
+            "x": "1",
+            "y": "-1/2"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "للقطرين [AC] و [BD] نفس المنتصف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب إحداثيتي منتصف [AC] أولا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ذلك المنتصف هو منتصف [BD]: استنتج D كما تستنتج طرفا علم منتصفه."
+        }
+      ],
+      "feedback": {
+        "correct": "منتصف [AC] هو $\\left(1\\,;\\,-\\dfrac{1}{2}\\right)$ ، وهو منتصف [BD]: $D(2 \\times 1 - 3\\,;\\,2 \\times (-\\dfrac{1}{2}) - 2) = (-1\\,;\\,-3)$ .",
+        "incorrect": "D ليست منتصف [AC]: هي الطرف الآخر للقطر [BD]."
+      }
+    }
+  ]
+}

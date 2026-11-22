@@ -1,0 +1,221 @@
+{
+  "id": "ex-2am-talim-nuqta-mustawi-l3-003",
+  "lessonCode": "talim-nuqta-mustawi",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مثلث قائم ومستطيل",
+    "estimatedMinutes": 11,
+    "tags": [
+      "مثلث قائم",
+      "مستطيل",
+      "مساحة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 2,
+      "file": "2am-s2-75",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نرسم معلمًا متعامدًا ومتجانسًا وحدته $1\\,\\mathrm{cm}$ ، ونعلّم فيه النقطتين $A(-2\\,;\\,-3)$ و $B(-2\\,;\\,2)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن النقطة $C$ ذات الفاصلة الموجبة بحيث يكون المثلث $ABC$ قائمًا في $A$ و $AC = 5\\,\\mathrm{cm}$ ، ثم اكتب إحداثيتيها.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "3",
+        "y": "-3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-WRONGSIDE",
+          "value": {
+            "x": "-7",
+            "y": "-3"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "-3",
+            "y": "3"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختر الاتجاه الذي يوازي أحد المحورين انطلاقًا من الرأس المعلوم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ على الشبكة عدد الوحدات المطلوبة في هذا الاتجاه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقرأ شرط إشارة الفاصلة لتختار بين الجهتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$C(3\\,;\\,-3)$ .",
+        "incorrect": "القطعة الجديدة عمودية على $[AB]$ فتوازي أحد المحورين؛ عُدّ وحداتها من $A$ في الجهة التي تعطي فاصلة موجبة."
+      },
+      "solution": {
+        "lines": [
+          "$[AB]$ عمودي على محور الفواصل فـ $[AC]$ أفقيّ",
+          "نُضيف $5$ وحدات إلى فاصلة $A$ فنجد $C(3\\,;\\,-3)$"
+        ],
+        "result": "C(3\\,;\\,-3)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عيّن النقطة $D$ بحيث يكون الرباعي $ABDC$ مستطيلًا، ثم اكتب إحداثيتيها.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "3",
+        "y": "2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "2",
+            "y": "3"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNAXIS",
+          "value": {
+            "x": "3",
+            "y": "-2"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNLEFT",
+          "value": {
+            "x": "-3",
+            "y": "2"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في مستطيل أضلاعه توازي المحورين، لكلّ ضلعين متقابلين الفاصلة نفسها أو الترتيب نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الرأس الرابع يأخذ فاصلة أحد الرؤوس المعلومة وترتيب رأس آخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارسم الرؤوس المعلومة على الشبكة وأكمل الشكل ثم اقرأ الرأس الرابع."
+        }
+      ],
+      "feedback": {
+        "correct": "$D(3\\,;\\,2)$ .",
+        "incorrect": "في مستطيل أضلاعه توازي المحورين، الرأس الرابع يأخذ فاصلة رأس وترتيب رأس آخر من الرؤوس المعلومة."
+      },
+      "solution": {
+        "lines": [
+          "نرسم الرؤوس المعلومة على الشبكة ونكمل المستطيل",
+          "$D(3\\,;\\,2)$"
+        ],
+        "result": "D(3\\,;\\,2)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما مساحة المستطيل $ABDC$ بعدّ وحدات المساحة؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد وحدات المساحة",
+      "expectedAnswer": "25",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-AREASUM",
+          "value": "10"
+        },
+        {
+          "id": "MISC-NUQTA2-AREAPERIM",
+          "value": "20"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عُدّ وحدات الطول ثم وحدات العرض على الشبكة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحة المستطيل جداء الطول في العرض."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تجمع الطول مع العرض، وتذكّر الوحدة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "المساحة $25$ .",
+        "incorrect": "عُدّ وحدات الطول ثم وحدات العرض على الشبكة، ثم اضرب أحدهما في الآخر، ولا تجمعهما."
+      },
+      "solution": {
+        "lines": [
+          "بعدا المستطيل: $5$ و $5$ وحدات",
+          "المساحة $5 \\times 5 = 25$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

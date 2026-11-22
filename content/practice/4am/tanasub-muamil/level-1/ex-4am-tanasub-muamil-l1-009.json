@@ -1,0 +1,94 @@
+{
+  "id": "ex-4am-tanasub-muamil-l1-009",
+  "lessonCode": "tanasub-muamil",
+  "level": 1,
+  "metadata": {
+    "title": "العمود الناقص",
+    "estimatedMinutes": 2,
+    "tags": [
+      "الرابع المتناسب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tanasub-muamil_P1",
+      "modelledOn": "prep"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "الجدول الآتي جدول تناسبية:",
+    "table": {
+      "head": [
+        "$x$",
+        "2",
+        "5"
+      ],
+      "rows": [
+        [
+          "$y$",
+          "8",
+          "…"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب العدد الناقص في الجدول.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر من الشكل a/b)",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "11",
+          "id": "MISC-TANASUB-RABI-JAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في جدول تناسبية نضرب في المعامل، ولا نضيف الفرق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب معامل التناسبية من عمود كامل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب العدد المعلوم في المعامل، أو استعمل تساوي الجداءين المتصالبين."
+        }
+      ],
+      "feedback": {
+        "correct": "المعامل $\\dfrac{8}{2} = 4$ ، و $5 \\times 4 = 20$ .",
+        "incorrect": "أعد الحساب: في جدول تناسبية حاصل القسمة ثابت، فتحقّق من جوابك بالضرب في المعامل."
+      },
+      "solution": {
+        "lines": [
+          "معامل التناسبية: $\\dfrac{8}{2} = 4$",
+          "$5 \\times 4 = 20$"
+        ],
+        "result": "20"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

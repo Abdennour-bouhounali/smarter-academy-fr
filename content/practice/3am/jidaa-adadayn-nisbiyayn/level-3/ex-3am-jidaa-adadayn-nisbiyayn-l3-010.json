@@ -1,0 +1,186 @@
+{
+  "id": "ex-3am-jidaa-adadayn-nisbiyayn-l3-010",
+  "lessonCode": "jidaa-adadayn-nisbiyayn",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — درج نفق الراجلين",
+    "estimatedMinutes": 9,
+    "tags": [
+      "سياق",
+      "جمع متكرر",
+      "جداء"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "في نفق للراجلين بالجزائر العاصمة درج من 36 درجة، وكل درجة تنزل 18 cm تحت الدرجة التي قبلها. نعتبر ارتفاع الرصيف مرجعًا (0): ينقص الارتفاع بـ 18 cm مع كل درجة نازلة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الارتفاع بالسنتيمتر.",
+      "statement": "ما ارتفاع آخر درجة بالسنتيمتر؟ احسب $(−18) \\times 36$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-648",
+      "misconceptionSignatures": [
+        {
+          "value": "648",
+          "id": "MISC-JIDAA-LARGER"
+        },
+        {
+          "value": "18",
+          "id": "MISC-JIDAA-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الضرب في عدد طبيعي هو جمع متكرر للعدد نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العدد المطلوب بعدد مرات التكرار، ثم اجمعها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جمع أعداد سالبة يعطي عددًا سالبًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−18) \\times 36 = −648$ : العاملان مختلفا الإشارة (سالب وموجب)، إذن الجداء سالب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العاملان مختلفا الإشارة (سالب وموجب)، إذن الجداء سالب.",
+          "$18 \\times 36 = 648$",
+          "$(−18) \\times 36 = −648$"
+        ],
+        "result": "−648"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما ارتفاع الدرجة رقم 20 بالسنتيمتر؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-360",
+      "misconceptionSignatures": [
+        {
+          "value": "360",
+          "id": "MISC-JIDAA-LARGER"
+        },
+        {
+          "value": "2",
+          "id": "MISC-JIDAA-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الضرب في عدد طبيعي هو جمع متكرر للعدد نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العدد المطلوب بعدد مرات التكرار، ثم اجمعها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جمع أعداد سالبة يعطي عددًا سالبًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−18) \\times 20 = −360$ : العاملان مختلفا الإشارة (سالب وموجب)، إذن الجداء سالب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العاملان مختلفا الإشارة (سالب وموجب)، إذن الجداء سالب.",
+          "$18 \\times 20 = 360$",
+          "$(−18) \\times 20 = −360$"
+        ],
+        "result": "−360"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما ارتفاع آخر درجة بالمتر؟ (1 m = 100 cm)",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-6.48",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط؟ اقرأ السؤال بتمعّن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الإشارات على كل جداء على حدة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من النتيجة بإعادة الحساب بترتيب آخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$−648 \\text{ cm} = −6{,}48 \\text{ m}$ .",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "$−648 \\text{ cm} = −6{,}48 \\text{ m}$"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "id": "ex-4am-majdulat-ihsaiya-l1-007",
+  "lessonCode": "majdulat-ihsaiya",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2017 — سباق 60m في حصة التربية البدنية",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مجال",
+      "مدى"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_majdulat-ihsaiya_P1",
+      "modelledOn": "BEM 2017 I-4"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2017",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "حجزت أستاذة التربية البدنية، التي تشجّع تلاميذها على الرياضة، في العمود B من مجدول الأزمنة (بالثانية) التي سجّلها ستة تلاميذ في سباق 60m :",
+    "table": {
+      "head": [
+        "",
+        "A",
+        "B"
+      ],
+      "rows": [
+        [
+          "1",
+          "التلميذ",
+          "الزمن (s)"
+        ],
+        [
+          "2",
+          "1",
+          "9,4"
+        ],
+        [
+          "3",
+          "2",
+          "10"
+        ],
+        [
+          "4",
+          "3",
+          "8,8"
+        ],
+        [
+          "5",
+          "4",
+          "9,6"
+        ],
+        [
+          "6",
+          "5",
+          "11,2"
+        ],
+        [
+          "7",
+          "6",
+          "9"
+        ]
+      ],
+      "sheet": true
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن المجال الذي حُجزت فيه الأزمنة.",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "⁦B1:B7⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MAJAL-KHALIYA"
+        },
+        {
+          "id": "B",
+          "content": "⁦A2:B7⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MAJAL-KHALIYA"
+        },
+        {
+          "id": "C",
+          "content": "⁦B2:B6⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MAJAL-KHALIYA"
+        },
+        {
+          "id": "D",
+          "content": "⁦B2:B7⁩",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المجال يُكتب: الخلية الأولى ثم « ⁦:⁩ » ثم الخلية الأخيرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حدّد الخلية التي فيها أول قيمة والخلية التي فيها آخر قيمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تُدخل في المجال خلية عنوان، ولا تنس آخر خلية."
+        }
+      ],
+      "feedback": {
+        "correct": "الأزمنة الستة في العمود B ، من الخلية B2 إلى الخلية B7 ؛ الخلية B1 فيها العنوان.",
+        "incorrect": "المجال يبدأ بخلية أول قيمة وينتهي بخلية آخر قيمة، ولا يضمّ خلايا العناوين."
+      },
+      "solution": {
+        "lines": [
+          "الخلية B1 فيها عنوان العمود « الزمن (s) »، والأزمنة الستة في الخلايا من B2 إلى B7 .",
+          "المجال: ⁦B2:B7⁩ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هو العدد الذي يُظهره الدستور ⁦=MAX(B2:B7)-MIN(B2:B7)⁩ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة إن لزم)",
+      "expectedAnswer": "2,4",
+      "misconceptionSignatures": [
+        {
+          "value": "11,2",
+          "id": "MISC-IHSA-MADA-AKBAR-QIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MAX(…)-MIN(…)⁩ يحسب مدى القيم: أكبر قيمة ناقص أصغر قيمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر قيمة وأصغر قيمة في المجال ⁦B2:B7⁩."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح أصغر قيمة من أكبر قيمة، ولا تكتف بأكبر قيمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$11{,}2 - 8{,}8 = 2{,}4$ .",
+        "incorrect": "المدى فرق: أكبر قيمة في المجال ناقص أصغر قيمة فيه، والدستور يحسب هذا الفرق."
+      },
+      "solution": {
+        "lines": [
+          "أكبر قيمة في المجال ⁦B2:B7⁩: 11,2 ، وأصغر قيمة: 8,8 .",
+          "$11{,}2 - 8{,}8 = 2{,}4$",
+          "إذن يُظهر الدستور العدد 2,4 ."
+        ],
+        "result": "2{,}4"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

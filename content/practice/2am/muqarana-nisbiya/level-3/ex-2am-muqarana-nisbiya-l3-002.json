@@ -1,0 +1,194 @@
+{
+  "id": "ex-2am-muqarana-nisbiya-l3-002",
+  "lessonCode": "muqarana-nisbiya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — ترتيب تنازلي لأربع قراءات",
+    "estimatedMinutes": 9,
+    "tags": [
+      "ترتيب تنازلي",
+      "أعداد سالبة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "سجّل أربع محطات للأرصاد في جبال الونشريس القراءات الآتية صباحًا، وسلّمها متطوّع إلى رئيس البلدية في الوقت المحدّد: $-1{,}9$ °C و $-1{,}91$ °C و $0$ °C و $-1{,}09$ °C."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "رتّب القراءات الأربع ترتيبًا تنازليًّا: اختر السلسلة الصحيحة.",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-1{,}91 > -1{,}9 > -1{,}09 > 0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-OD"
+        },
+        {
+          "id": "B",
+          "content": "$0 > -1{,}91 > -1{,}9 > -1{,}09$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-BDG"
+        },
+        {
+          "id": "C",
+          "content": "$0 > -1{,}09 > -1{,}9 > -1{,}91$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$-1{,}09 > -1{,}9 > -1{,}91 > 0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-ZS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بفرز الأعداد حسب إشاراتها: السالبة، ثم الصفر، ثم الموجبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب الأعداد السالبة فيما بينها حسب مسافاتها إلى الصفر: الأكبر مسافة هو الأصغر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب السلسلة كاملة بالرمز نفسه، ثم تحقّق من كل زوج متجاور."
+        }
+      ],
+      "feedback": {
+        "correct": "التنازلي: من الأكبر إلى الأصغر: $0 > -1{,}09 > -1{,}9 > -1{,}91$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "المسافات إلى الصفر: $1{,}90$ ، $1{,}91$ ، $0$ ، $1{,}09$",
+          "الأكبر هو الصفر ثم الأقرب إليه: $-1{,}09$ ثم $-1{,}9$ ثم $-1{,}91$",
+          "$0 > -1{,}09 > -1{,}9 > -1{,}91$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما العدد الذي يلي الصفر في الترتيب التنازلي؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "-1,09",
+      "misconceptionSignatures": [
+        {
+          "value": "-1,91",
+          "id": "MISC-MUQARANA-NISBIYA-BDG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بفرز الأعداد حسب إشاراتها: السالبة، ثم الصفر، ثم الموجبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب الأعداد السالبة فيما بينها حسب مسافاتها إلى الصفر: الأكبر مسافة هو الأصغر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب السلسلة كاملة بالرمز نفسه، ثم تحقّق من كل زوج متجاور."
+        }
+      ],
+      "feedback": {
+        "correct": "بعد الصفر يأتي أقرب عدد سالب إليه: $-1{,}09$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الترتيب التنازلي: $0 > -1{,}09 > -1{,}9 > -1{,}91$",
+          "الثاني هو $-1{,}09$"
+        ],
+        "result": "-1{,}09"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "برّر أن $-1{,}9 > -1{,}91$ .",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج: أيّهما أبعد عن الصفر؟ وفي أيّ جهة منه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددان سالبان: الأصغر هو الذي له أكبر مسافة إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن المسافتين إلى الصفر (العددين دون إشارتيهما) ثم اعكس الحكم لأن العددين سالبان."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}90 < 1{,}91$ : مسافة $-1{,}9$ إلى الصفر أصغر من مسافة $-1{,}91$",
+          "والعددان سالبان، فالأقرب إلى الصفر هو الأكبر",
+          "$-1{,}9 > -1{,}91$"
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

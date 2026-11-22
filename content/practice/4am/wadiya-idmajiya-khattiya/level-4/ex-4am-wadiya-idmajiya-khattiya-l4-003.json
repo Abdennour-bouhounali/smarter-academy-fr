@@ -1,0 +1,222 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-khattiya-l4-003",
+  "lessonCode": "wadiya-idmajiya-khattiya",
+  "level": 4,
+  "metadata": {
+    "title": "أدمج تعلّماتي — المصعد الهوائي",
+    "estimatedMinutes": 14,
+    "tags": [
+      "خاصية فيثاغورس",
+      "سرعة متوسطة",
+      "دالة خطية",
+      "نسبة مئوية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "situation",
+      "page": 74,
+      "section": "أدمج تعلّماتي",
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-khattiya-l5-001"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "ينطلق مصعد هوائي من ارتفاع 900m ليصل إلى ارتفاع 1400m. المسافة الأفقية بين نقطة الانطلاق $A$ والنقطة $H$ الواقعة على الشاقول المار بنقطة الوصول $B$ هي $AH = 2500m$ ، والمثلث $AHB$ قائم في $H$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب طول الحبل $AB$ بالتدوير إلى المتر.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بالمتر (مدوّرا إلى الوحدة)",
+      "expectedAnswer": "2550",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$HB$ هو الفرق بين الارتفاعين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق خاصية فيثاغورس في المثلث $AHB$ القائم في $H$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB^2 = 2500^2 + 500^2 = 6500000$ ومنه $AB \\approx 2550$ m.",
+        "incorrect": "$HB = 1400 - 900$ ، ثم $AB^2 = AH^2 + HB^2$ ."
+      },
+      "solution": {
+        "lines": [
+          "$HB = 1400 - 900 = 500$ m.",
+          "$AB^2 = AH^2 + HB^2 = 2500^2 + 500^2 = 6250000 + 250000 = 6500000$",
+          "$AB = \\sqrt{6500000} \\approx 2549{,}5$ ، أي $AB \\approx 2550$ m."
+        ],
+        "result": "AB \\approx 2550m"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "سرعة المصعد الهوائي 5,5m في الثانية. احسب المدة الزمنية لصعود واحد، بالتدوير إلى الثانية.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المدة بالثواني",
+      "expectedAnswer": "464",
+      "misconceptionSignatures": [
+        {
+          "value": "14025",
+          "id": "MISC-MAQADIR-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المدة = المسافة ÷ السرعة."
+        }
+      ],
+      "feedback": {
+        "correct": "$2550 \\div 5{,}5 \\approx 464$ ثانية، أي 7 دقائق و 44 ثانية تقريبا.",
+        "incorrect": "اقسم طول الحبل على السرعة."
+      },
+      "solution": {
+        "lines": [
+          "$t = \\dfrac{AB}{v} \\approx \\dfrac{2550}{5{,}5} \\approx 463{,}6$",
+          "مدة صعود واحد 464 ثانية تقريبا (حوالي 7 دقائق و 44 ثانية)."
+        ],
+        "result": "t \\approx 464s"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "lead": "ليكن $x$ سعر التذكرة لشخص بالغ لرحلة واحدة (ذهابا وإيابا).",
+      "statement": "عبّر عن تكلفة الرحلة $C(x)$ بدلالة $x$ لعائلة متكوّنة من شخصين بالغين و 3 أطفال، علما أنّ كلّ طفل يستفيد من تخفيض قدره 40% من قيمة $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المعامل $a$ فقط في $C(x) = ax$ (عشري بالفاصلة)",
+      "expectedAnswer": "3,8",
+      "misconceptionSignatures": [
+        {
+          "value": "3.2",
+          "id": "MISC-TAKHFID-NISBA"
+        },
+        {
+          "value": "5",
+          "id": "MISC-TARRID-NAMUDHAJ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل طفل يدفع $60\\%$ من $x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع ما يدفعه البالغان وما يدفعه الأطفال الثلاثة."
+        }
+      ],
+      "feedback": {
+        "correct": "$C(x) = 2x + 3 \\times 0{,}6x = 3{,}8x$ .",
+        "incorrect": "الطفل يدفع $0{,}6x$ ، لا $0{,}4x$ ."
+      },
+      "solution": {
+        "lines": [
+          "يدفع كل طفل $x - \\dfrac{40}{100}x = 0{,}6x$ .",
+          "$C(x) = 2x + 3 \\times 0{,}6x = 2x + 1{,}8x = 3{,}8x$"
+        ],
+        "result": "C(x) = 3{,}8x"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "ما هي أكبر قيمة لسعر التذكرة (بعدد طبيعي من الدنانير) التي تسمح للعائلة بدفع ثمن الرحلة في حدود المبلغ المخصص لذلك والمقدر بـ 2000DA؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: السعر بـ DA",
+      "expectedAnswer": "526",
+      "misconceptionSignatures": [
+        {
+          "value": "527",
+          "id": "MISC-TARRID-TAFSIR"
+        },
+        {
+          "value": "7600",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ $C(x) \\leq 2000$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحاصل ليس عددا طبيعيا: اختر العدد الطبيعي الذي لا يجعل التكلفة تتجاوز 2000DA."
+        }
+      ],
+      "feedback": {
+        "correct": "$x \\leq \\dfrac{2000}{3{,}8} \\approx 526{,}3$ : أكبر سعر 526DA.",
+        "incorrect": "التدوير إلى الأعلى يجعل التكلفة تتجاوز 2000DA."
+      },
+      "solution": {
+        "lines": [
+          "$3{,}8x \\leq 2000$ معناه $x \\leq \\dfrac{2000}{3{,}8} \\approx 526{,}3$",
+          "أكبر عدد طبيعي يحقق ذلك هو 526.",
+          "التحقق: $3{,}8 \\times 526 = 1998{,}8 \\leq 2000$ و $3{,}8 \\times 527 = 2002{,}6 > 2000$ ."
+        ],
+        "result": "x = 526DA"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

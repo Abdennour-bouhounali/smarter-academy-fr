@@ -1,0 +1,245 @@
+{
+  "id": "ex-4am-mutarajiha-ula-l3-001",
+  "lessonCode": "mutarajiha-ula",
+  "level": 3,
+  "metadata": {
+    "title": "نشاط 3 — حل المتراجحة −3x + 5 ≤ 20",
+    "estimatedMinutes": 8,
+    "tags": [
+      "متراجحة",
+      "حل متراجحة",
+      "تمثيل بياني"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-3b",
+      "page": 45,
+      "section": "أنشطة",
+      "number": 3
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن المتراجحة:",
+    "formulas": [
+      "-3x + 5 \\leqslant 20"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "حلّ المتراجحة: $-3x + 5 \\leqslant 20$ .",
+      "statement": "حدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutarajiha-ula_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x < k$ أو $x \\leqslant k$ أو $x > k$ أو $x \\geqslant k$ : اكتب العدد $k$ فقط (عدد صحيح أو كسر a/b، قد يكون سالبًا)",
+      "expectedAnswer": "-5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر، كما في حل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إضافة عدد إلى الطرفين أو طرحه منهما لا تغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحدّ هو العدد الذي يحقّق المعادلة المرفقة (نضع «=» مكان رمز المتباينة): اقسم في الأخير على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "حدّ الحلول هو $k = -5$ .",
+        "incorrect": "أعد الحل سطرًا سطرًا: العملية نفسها على الطرفين، ثم القسمة على معامل $x$ في الأخير."
+      },
+      "solution": {
+        "lines": [
+          "حدّ الحلول هو حلّ المعادلة المرفقة: $-3x + 5 = 20$",
+          "$-3x = 20 - 5$",
+          "$-3x = 15$",
+          "$\\dfrac{-3x}{-3} = \\dfrac{15}{-3}$",
+          "إذن حدّ الحلول هو $-5$ ."
+        ],
+        "result": "k = -5"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_mutarajiha-ula_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < -5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-SALIB-BILA-QALB"
+        },
+        {
+          "id": "B",
+          "content": "$x \\leqslant -5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-SALIB-BILA-QALB"
+        },
+        {
+          "id": "C",
+          "content": "$x > -5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        },
+        {
+          "id": "D",
+          "content": "$x \\geqslant -5$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارة معامل $x$ في آخر سطر قبل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد موجب تحافظ على الاتجاه، والقسمة على عدد سالب تغيّره."
+        }
+      ],
+      "feedback": {
+        "correct": "$x \\geqslant -5$ .",
+        "incorrect": "تتبّع سطور الحل: الاتجاه يتغيّر فقط عند الضرب أو القسمة على عدد سالب، ونوع المتباينة (تامة أو غير تامة) لا يتغيّر أبدًا."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $-3x + 5 \\leqslant 20$",
+          "$-3x \\leqslant 20 - 5$",
+          "$-3x \\leqslant 15$",
+          "نقسم الطرفين على العدد السالب $-3$ فنغيّر اتجاه المتباينة:",
+          "$\\dfrac{-3x}{-3} \\geqslant \\dfrac{15}{-3}$",
+          "إذن حلول المتراجحة هي كل قيم $x$ الأكبر من أو تساوي $-5$ .",
+          "قسمنا الطرفين (أو ضربناهما) في آخر خطوة على عدد سالب، فتغيّر اتجاه المتباينة وبقي نوعها."
+        ],
+        "result": "x \\geqslant -5"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "مثّل حلولها بيانيًا على مستقيم مدرّج.",
+      "learningPoints": [
+        {
+          "code": "4am_mutarajiha-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "صف تمثيلك: جهة الجزء الملوّن بالأحمر والرمز عند الحدّ (أو صوّر ورقتك)، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بحل المتراجحة لتعرف الحدّ وجهة الحلول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأعداد الأكبر من الحدّ على يمينه، والأصغر منه على يساره."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر الحدّ نفسه: إن كان حلًّا فالرمز موجّه نحو الجزء الملوّن، وإلا فهو موجّه عكسه."
+        }
+      ],
+      "feedback": {
+        "correct": "تمثيلك مطابق للحل النموذجي.",
+        "incorrect": "راجع جهة الجزء الملوّن، ثم اتجاه الرمز عند الحدّ."
+      },
+      "solution": {
+        "lines": [
+          "حلول المتراجحة هي الأعداد $x$ حيث $x \\geqslant -5$ .",
+          "نلوّن بالأحمر جزء المستقيم المدرّج الواقع على يمين العدد $-5$ .",
+          "العدد $-5$ حلّ للمتراجحة، فنضع عنده الرمز $[$ موجّهًا نحو الجزء الملوّن."
+        ],
+        "result": "الجزء الملوّن على يمين -5 والرمز [ عنده"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "هل العدد $-5$ حلّ لهذه المتراجحة؟",
+      "learningPoints": [
+        {
+          "code": "4am_mutarajiha-ula_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى في كل طرف من طرفي المتراجحة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كل طرف، ثم قارن العددين: هل المتباينة المحصل عليها صحيحة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$20 \\leqslant 20$ متباينة صحيحة.",
+        "incorrect": "احسب الطرفين بعد التعويض ثم قارن، وانتبه إلى نوع المتباينة (تامة أو غير تامة)."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $x = -5$ : الطرف الأول يساوي $20$ والطرف الثاني يساوي $20$ .",
+          "$20 \\leqslant 20$ متباينة صحيحة، إذن $-5$ حلّ للمتراجحة."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

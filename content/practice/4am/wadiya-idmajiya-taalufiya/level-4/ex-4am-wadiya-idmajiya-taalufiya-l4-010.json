@@ -1,0 +1,252 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-taalufiya-l4-010",
+  "lessonCode": "wadiya-idmajiya-taalufiya",
+  "level": 4,
+  "metadata": {
+    "title": "مستقيم من نقطتين ونقطة تقاطع",
+    "estimatedMinutes": 12,
+    "tags": [
+      "تعيين دالة تآلفية",
+      "نقطة التقاطع",
+      "متراجحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-taalufiya_P1"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "$f$ دالة تآلفية حيث $f(x) = 2x + 3$ ، و $(d)$ مستقيم يقطع محور التراتيب في النقطة $(0 ; 9)$ ويشمل النقطة $(3 ; 3)$ ، وهو التمثيل البياني لدالة تآلفية $g$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عيّن العبارة الجبرية للدالة $g$ .",
+      "statement": "أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-BAYANI-ISHARA-A",
+          "value": "2"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$a = \\dfrac{3 - 9}{3 - 0}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{-6}{3}$ .",
+        "incorrect": "تغيّر التراتيب على تغيّر الفواصل، وانتبه إلى الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "$(d)$ يقطع محور التراتيب في $(0 ; 9)$ : $b = 9$ .",
+          "$a = \\dfrac{3 - 9}{3 - 0} = \\dfrac{-6}{3} = -2$",
+          "$g(x) = -2x + 9$"
+        ],
+        "result": "g(x) = -2x + 9"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-BAYANI-B-FASILA",
+          "value": "3"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين يقطع $(d)$ محور التراتيب؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$b$ ترتيب نقطة التقاطع مع محور التراتيب.",
+        "incorrect": "$b$ يُقرأ على محور التراتيب."
+      },
+      "solution": {
+        "lines": [
+          "$(d)$ يقطع محور التراتيب في $(0 ; 9)$ : $b = 9$ .",
+          "$a = \\dfrac{3 - 9}{3 - 0} = \\dfrac{-6}{3} = -2$",
+          "$g(x) = -2x + 9$"
+        ],
+        "result": "g(x) = -2x + 9"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "عيّن حسابيا إحداثيي نقطة تقاطع التمثيلين البيانيين للدالتين $f$ و $g$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": {
+        "x": "3/2",
+        "y": "6"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-JUMLA-BAYANI-MAQLUB",
+          "value": {
+            "x": "6",
+            "y": "3/2"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ $f(x) = g(x)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم احسب الترتيب بإحدى الدالتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$2x + 3 = -2x + 9$ .",
+        "incorrect": "حلّ $f(x) = g(x)$ ثم اكتب الفاصلة أولا."
+      },
+      "solution": {
+        "lines": [
+          "$2x + 3 = -2x + 9$",
+          "$4x = 6$",
+          "$x = \\dfrac{3}{2}$",
+          "$f\\left(\\dfrac{3}{2}\\right) = 2 \\times \\dfrac{3}{2} + 3 = 6$",
+          "نقطة التقاطع هي $\\left(\\dfrac{3}{2} ; 6\\right)$ ."
+        ],
+        "result": "\\left(\\dfrac{3}{2} ; 6\\right)"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "حل المتراجحة: $f(x) > g(x)$ .\nحدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x < k$ أو $x > k$ : اكتب العدد $k$ فقط",
+      "expectedAnswer": "3/2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحدّ هو فاصلة نقطة التقاطع."
+        }
+      ],
+      "feedback": {
+        "correct": "$4x > 6$ .",
+        "incorrect": "اجمع حدود $x$ في طرف ثم اقسم على معامل $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$2x + 3 > -2x + 9$",
+          "$4x > 6$",
+          "$x > \\dfrac{3}{2}$",
+          "بيانيا: على يمين نقطة التقاطع يقع تمثيل $f$ فوق $(d)$ ."
+        ],
+        "result": "x > \\dfrac{3}{2}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < \\dfrac{3}{2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QALB-ZAID"
+        },
+        {
+          "id": "B",
+          "content": "$x > \\dfrac{3}{2}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قسمنا على عدد موجب."
+        }
+      ],
+      "feedback": {
+        "correct": "تمثيل $f$ فوق $(d)$ على يمين نقطة التقاطع.",
+        "incorrect": "القسمة على عدد موجب لا تغيّر اتجاه المتباينة."
+      },
+      "solution": {
+        "lines": [
+          "$2x + 3 > -2x + 9$",
+          "$4x > 6$",
+          "$x > \\dfrac{3}{2}$",
+          "بيانيا: على يمين نقطة التقاطع يقع تمثيل $f$ فوق $(d)$ ."
+        ],
+        "result": "x > \\dfrac{3}{2}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

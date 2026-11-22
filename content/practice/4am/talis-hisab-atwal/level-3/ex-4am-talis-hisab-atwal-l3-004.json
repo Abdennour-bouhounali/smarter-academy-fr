@@ -1,0 +1,244 @@
+{
+  "id": "ex-4am-talis-hisab-atwal-l3-004",
+  "lessonCode": "talis-hisab-atwal",
+  "level": 3,
+  "metadata": {
+    "title": "احسب OF و GH ومعامل التكبير",
+    "estimatedMinutes": 10,
+    "tags": [
+      "وضعية الفراشة",
+      "معامل التكبير"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-5",
+      "page": 110,
+      "section": "خاصية طالس",
+      "number": 5
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "(وحدة الطول هي السنتيمتر) في الشكل المقابل، المستقيمان $(GF)$ و $(EH)$ متقاطعان في $O$ ، و $(EF) \\parallel (GH)$ ؛ $EF = 2$ ، $OE = 1{,}3$ ، $OG = 4$ و $OH = 3{,}9$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0.0,
+          0.0
+        ],
+        "E": [
+          -0.610313031622,
+          1.147831870717
+        ],
+        "H": [
+          1.830939094865,
+          -3.44349561215
+        ],
+        "F": [
+          0.625962083715,
+          1.177263457145
+        ],
+        "G": [
+          -1.877886251144,
+          -3.531790371436
+        ]
+      },
+      "segments": [
+        {
+          "from": "E",
+          "to": "F",
+          "label": "2",
+          "arrows": 1
+        },
+        {
+          "from": "G",
+          "to": "H",
+          "arrows": 1
+        },
+        {
+          "from": "O",
+          "to": "E",
+          "label": "1,3"
+        },
+        {
+          "from": "O",
+          "to": "H",
+          "label": "3,9"
+        },
+        {
+          "from": "O",
+          "to": "G",
+          "label": "4"
+        },
+        {
+          "from": "O",
+          "to": "F"
+        }
+      ],
+      "ariaLabel": "المستقيمان (GF) و (EH) متقاطعان في O، و (EF) يوازي (GH)؛ EF = 2 و OE = 1,3 و OG = 4 و OH = 3,9",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القيمة المضبوطة للطول $OF$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "القيمة المضبوطة: كسر مثل 7/9",
+      "expectedAnswer": "4/3",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقط $O$ ، $E$ ، $H$ على استقامة والنقط $O$ ، $F$ ، $G$ على استقامة، و $(EF) \\parallel (HG)$ : المثلثان $OEF$ و $OHG$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب النسب الثلاث المتساوية $\\dfrac{OE}{OH} = \\dfrac{OF}{OG} = \\dfrac{EF}{HG}$ ، واحتفظ بالمساواة التي فيها $OF$ وثلاثة أطوال معلومة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الطول المجهول بالجداء المتصالب (الرابع المتناسب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$OF = \\dfrac{1{,}3 \\times 4}{3{,}9} = \\dfrac{4}{3}$ .",
+        "incorrect": "راجع المساواة المختارة: في كل نسبة طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: النقط $O$ ، $E$ ، $H$ على استقامة واحدة، والنقط $O$ ، $F$ ، $G$ على استقامة واحدة، و $(EF) \\parallel (HG)$ .",
+          "حسب خاصية طالس: $\\dfrac{OE}{OH} = \\dfrac{OF}{OG} = \\dfrac{EF}{HG}$",
+          "$\\dfrac{OE}{OH} = \\dfrac{OF}{OG}$ أي $\\dfrac{1{,}3}{3{,}9} = \\dfrac{OF}{4}$",
+          "$OF = \\dfrac{4 \\times 1{,}3}{3{,}9} = \\dfrac{4}{3}$"
+        ],
+        "result": "OF = \\dfrac{4}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $GH$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (عشري بالفاصلة مثل 2,75 أو كسر مثل 7/9)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "2/3",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقط $O$ ، $E$ ، $H$ على استقامة والنقط $O$ ، $F$ ، $G$ على استقامة، و $(EF) \\parallel (HG)$ : المثلثان $OEF$ و $OHG$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب النسب الثلاث المتساوية $\\dfrac{OE}{OH} = \\dfrac{OF}{OG} = \\dfrac{EF}{HG}$ ، واحتفظ بالمساواة التي فيها $GH$ وثلاثة أطوال معلومة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الطول المجهول بالجداء المتصالب (الرابع المتناسب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$GH = \\dfrac{2 \\times 3{,}9}{1{,}3} = 6$ .",
+        "incorrect": "راجع المساواة المختارة: في كل نسبة طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{OE}{OH} = \\dfrac{EF}{HG}$ أي $\\dfrac{1{,}3}{3{,}9} = \\dfrac{2}{HG}$",
+          "$HG = \\dfrac{3{,}9 \\times 2}{1{,}3}$"
+        ],
+        "result": "GH = 6"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "المثلث $OHG$ تكبير للمثلث $OEF$ . احسب معامل التكبير.",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "1/3",
+          "id": "MISC-TALIS-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$k$ = طول من $OHG$ ÷ الطول الموافق له في $OEF$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$k = \\dfrac{OH}{OE} = \\dfrac{3{,}9}{1{,}3} = 3$ .",
+        "incorrect": "معامل التناسبية k = (طول في المثلث الناتج) ÷ (الطول الموافق له في المثلث الأصلي)؛ راجع أي المثلثين هو الأصلي."
+      },
+      "solution": {
+        "lines": [
+          "$k = \\dfrac{OH}{OE} = \\dfrac{3{,}9}{1{,}3}$"
+        ],
+        "result": "k = 3"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

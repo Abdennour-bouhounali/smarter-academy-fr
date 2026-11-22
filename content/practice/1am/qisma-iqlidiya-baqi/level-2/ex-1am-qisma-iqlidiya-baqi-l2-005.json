@@ -1,0 +1,232 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l2-005",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — صحيح أم خطأ",
+    "estimatedMinutes": 6,
+    "tags": [
+      "صحيح أو خطأ",
+      "باقٍ",
+      "شرط الباقي"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 2,
+      "file": "1am-s2-72",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أجب بـ « صحيح » أو « خطأ » مع تصحيح الخطأ إن وُجد."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "باقي القسمة الإقليدية للعدد 218 على 6 هو 4.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 218 على 6."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الباقي الذي وجدته بالعدد 4."
+        }
+      ],
+      "feedback": {
+        "correct": "$218 = 6 \\times 36 + 2$: الباقي 2.",
+        "incorrect": "أنجز القسمة ثم قارن الباقي بالعدد المقترح."
+      },
+      "solution": {
+        "lines": [
+          "$6 \\times 36 = 216$ و $218 - 216 = 2$",
+          "الباقي 2 ، إذن الجملة خاطئة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "صحّح: ما هو باقي القسمة الإقليدية للعدد 218 على 6؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "36",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "8",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 218."
+        }
+      ],
+      "feedback": {
+        "correct": "$218 - 6 \\times 36 = 218 - 216 = 2$ ، و $2 < 6$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 6."
+      },
+      "solution": {
+        "lines": [
+          "$218 = 6 \\times 36 + 2$",
+          "$2 < 6$ ، إذن الباقي هو 2."
+        ],
+        "result": "r = 2"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "حاصل القسمة الإقليدية للعدد 218 على 6 هو 36.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $6 \\times 36$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل الفرق بين 218 وهذا الجداء أصغر من 6؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$6 \\times 36 = 216 \\le 218 < 222 = 6 \\times 37$.",
+        "incorrect": "احصر 218 بين مضاعفين متتاليين للعدد 6."
+      },
+      "solution": {
+        "lines": [
+          "$6 \\times 36 = 216$ و $6 \\times 37 = 222$",
+          "$216 \\le 218 < 222$ ، إذن الحاصل 36: الجملة صحيحة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "يمكن أن يكون باقي قسمة إقليدية على 6 مساويًا لـ 6.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا نفعل إذا بقي 6؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر شرط الباقي."
+        }
+      ],
+      "feedback": {
+        "correct": "الباقي أصغر من 6 دائمًا: إذا بقي 6 شكّلنا مجموعة أخرى.",
+        "incorrect": "إذا بقي 6 فهي تكفي لمجموعة أخرى من 6."
+      },
+      "solution": {
+        "lines": [
+          "في القسمة الإقليدية على 6 يكون الباقي أصغر من 6.",
+          "الباقي الممكن: 0 أو 1 أو 2 أو 3 أو 4 أو 5 فقط."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

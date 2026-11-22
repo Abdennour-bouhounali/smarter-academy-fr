@@ -1,0 +1,163 @@
+{
+  "id": "ex-4am-awwaliyan-fima-baynahuma-l2-002",
+  "lessonCode": "awwaliyan-fima-baynahuma",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2010 — لوحة خشبية 1,33m × 0,9m",
+    "estimatedMinutes": 8,
+    "tags": [
+      "خوارزمية إقليدس",
+      "مربعات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_awwaliyan-fima-baynahuma_P2",
+      "modelledOn": "BEM 2010 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2010",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 133 و 90.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 133 على 90: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (133 ; 90) بالزوج (90 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 1. العددان 133 و 90 أوليان فيما بينهما.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$133 = 90 \\times 1 + 43$",
+          "$90 = 43 \\times 2 + 4$",
+          "$43 = 4 \\times 10 + 3$",
+          "$4 = 3 \\times 1 + 1$",
+          "$3 = 1 \\times 3 + 0$",
+          "آخر باقٍ غير معدوم هو 1، إذن:"
+        ],
+        "result": "PGCD(133 ; 90) = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "لوحة خشبية مستطيلة الشكل بعداها 1,33m و 0,9m جُزّئت إلى مربعات متساوية بأكبر ضلع ممكن دون ضياع.",
+      "statement": "ما هو طول ضلع كل مربع ؟",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (طول الضلع بالسنتيمتر)",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل البعدين إلى السنتيمتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طول ضلع المربع يقسم البعدين معًا، وهو أكبر ما يمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(133 ; 90) = 1: طول ضلع المربع 1cm.",
+        "incorrect": "طول الضلع هو القاسم المشترك الأكبر للبعدين بالسنتيمتر."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}33m = 133cm$ و $0{,}9m = 90cm$",
+          "طول ضلع المربع هو PGCD(133 ; 90) = 1 (السؤال 01).",
+          "العددان 133 و 90 أوليان فيما بينهما: لا يمكن أخذ ضلع أطول من 1cm."
+        ],
+        "result": "1cm"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما هو عدد المربعات الناتجة ؟",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد المربعات)",
+      "expectedAnswer": "11970",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم مربعًا على طول اللوحة؟ وكم مربعًا على عرضها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب العددين."
+        }
+      ],
+      "feedback": {
+        "correct": "$133 \\times 90 = 11970$ مربعًا.",
+        "incorrect": "اقسم كل بعد على طول الضلع، ثم اضرب النتيجتين."
+      },
+      "solution": {
+        "lines": [
+          "على الطول: $133 \\div 1 = 133$ مربعًا ، وعلى العرض: $90 \\div 1 = 90$ مربعًا.",
+          "$133 \\times 90 = 11970$"
+        ],
+        "result": "11970"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

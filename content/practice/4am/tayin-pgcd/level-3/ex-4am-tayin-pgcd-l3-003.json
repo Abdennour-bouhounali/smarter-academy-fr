@@ -1,0 +1,166 @@
+{
+  "id": "ex-4am-tayin-pgcd-l3-003",
+  "lessonCode": "tayin-pgcd",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2015 — PGCD(156 ; 108) والعدد P",
+    "estimatedMinutes": 12,
+    "tags": [
+      "PGCD",
+      "حصر القواسم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tayin-pgcd_P1",
+      "modelledOn": "BEM 2015 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 156 و 108 مع كتابة مراحل الحساب.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قائمة قواسم كل من العددين 156 و 108، مثنى مثنى (1 مع العدد نفسه، ثم 2 …) حتى لا يفوتك قاسم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استخرج القواسم المشتركة: الأعداد الموجودة في القائمتين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاسم المشترك الأكبر هو أكبر القواسم المشتركة، لا أيّ واحد منها."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 156 و 108 هي 1 ، 2 ، 3 ، 4 ، 6 ، 12، وأكبرها 12.",
+        "incorrect": "اكتب قائمتي القواسم كاملتين، ثم خذ أكبر عدد يظهر في القائمتين معًا."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 156 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 12 ، 13 ، 26 ، 39 ، 52 ، 78 ، 156",
+          "قواسم العدد 108 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 9 ، 12 ، 18 ، 27 ، 36 ، 54 ، 108",
+          "القواسم المشتركة للعددين 156 و 108 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 12",
+          "أكبرها هو 12، إذن:"
+        ],
+        "result": "PGCD(156 ; 108) = 12"
+      },
+      "work": "required",
+      "timeSeconds": 450
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب $\\dfrac{156}{108}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "13/9",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال السابق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 12.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال السابق.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{156}{108} = \\dfrac{156 \\div 12}{108 \\div 12}$"
+        ],
+        "result": "\\dfrac{156}{108} = \\dfrac{13}{9}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب العدد $P$ حيث: $P = \\dfrac{156}{108} - \\dfrac{2}{3} \\times \\dfrac{5}{6}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال على الشكل a/b أو عدد",
+      "expectedAnswer": "8/9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $\\dfrac{156}{108}$ بالكسر غير القابل للاختزال الذي وجدته في السؤال 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب أولوي: احسب الجداء أولًا، ثم وحّد المقامات."
+        }
+      ],
+      "feedback": {
+        "correct": "$P = \\dfrac{13}{9} - \\dfrac{5}{9} = \\dfrac{8}{9}$",
+        "incorrect": "الضرب أولوي على الطرح والجمع: احسب الجداء ثم وحّد المقامات."
+      },
+      "solution": {
+        "lines": [
+          "$P = \\dfrac{13}{9} - \\dfrac{2 \\times 5}{3 \\times 6}$",
+          "$P = \\dfrac{13}{9} - \\dfrac{5}{9}$"
+        ],
+        "result": "P = \\dfrac{8}{9}"
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

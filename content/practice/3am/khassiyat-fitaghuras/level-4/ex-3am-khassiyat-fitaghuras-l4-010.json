@@ -1,0 +1,306 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l4-010",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — حبال الخيمة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "خاصية فيثاغورس",
+      "التدوير",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يتعاون أفراد فوج كشفي في نصب خيمتهم: عمودها $[ST]$ طوله $2{,}4\\,\\mathrm{m}$ عمودي على الأرض الأفقية، ويُشدّ كل حبل من رأس العمود $T$ إلى وتد $P$ على الأرض يبعد $1{,}6\\,\\mathrm{m}$ عن أسفل العمود $S$ .",
+    "figure": {
+      "points": {
+        "S": [
+          0.0,
+          0.0
+        ],
+        "P": [
+          1.6,
+          0.0
+        ],
+        "T": [
+          0.0,
+          2.4
+        ]
+      },
+      "segments": [
+        {
+          "from": "S",
+          "to": "P",
+          "label": "1,6 m"
+        },
+        {
+          "from": "S",
+          "to": "T",
+          "label": "2,4 m"
+        },
+        {
+          "from": "P",
+          "to": "T"
+        }
+      ],
+      "rightAngles": [
+        [
+          "P",
+          "S",
+          "T"
+        ]
+      ],
+      "ariaLabel": "عمود خيمة [ST] طوله 2,4 m عمودي على الأرض، وحبل [TP] مشدود إلى وتد P على بعد 1,6 m من أسفل العمود S",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $TP^2$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: قيمة $TP^2$ (بـ $m^2$)",
+      "expectedAnswer": "8.32",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        },
+        {
+          "value": "3.2",
+          "id": "MISC-FITAGHURAS-HYP-WRONG"
+        },
+        {
+          "value": "4",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مربع العدد هو جداؤه في نفسه: $a^2 = a \\times a$ وليس $2 \\times a$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$TP^2 = 2{,}4^2 + 1{,}6^2 = 8{,}32$ .",
+        "incorrect": "اكتب مساواة فيثاغورس بالوتر وحده في طرف، ثم ربّع كل طول (اضربه في نفسه) قبل الجمع."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $TSP$ قائم في $S$ ، حسب خاصية فيثاغورس: $TP^2 = ST^2 + SP^2$",
+          "$TP^2 = 2{,}4^2 + 1{,}6^2$",
+          "$TP^2 = 5{,}76 + 2{,}56 = 8{,}32$"
+        ],
+        "result": "TP^2 = 8{,}32"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط قيمة مقرّبة إلى $0{,}01$ لطول الحبل $TP$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m مدوّرا إلى 0,01",
+      "expectedAnswer": "2.88",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "8.32",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مربع الطول، ثم استعمل اللمسة $\\sqrt{\\ }$ ، ولا تدوّر إلا النتيجة الأخيرة (انظر إلى الرقم الموالي للرقم المطلوب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$TP^2 = 2{,}4^2 + 1{,}6^2 = 8{,}32$ ، إذن $TP \\approx 2{,}88\\,\\mathrm{m}$ .",
+        "incorrect": "ابدأ بتحديد الوتر، ثم اكتب مساواة فيثاغورس، وتذكّر أن ما تحسبه أولا هو مربع الطول لا الطول نفسه."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $TSP$ قائم في $S$ ، حسب خاصية فيثاغورس: $TP^2 = ST^2 + SP^2$",
+          "$TP^2 = 2{,}4^2 + 1{,}6^2$",
+          "$TP^2 = 5{,}76 + 2{,}56 = 8{,}32$",
+          "$TP = \\sqrt{8{,}32}$ (القيمة المضبوطة)",
+          "باستعمال اللمسة $\\sqrt{\\ }$ للآلة الحاسبة: $\\sqrt{8{,}32} \\approx 2{,}88444102$",
+          "المدوّر إلى $0{,}01$ : $TP \\approx 2{,}88\\,\\mathrm{m}$"
+        ],
+        "result": "TP \\approx 2{,}88\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "للخيمة أربعة حبال متماثلة. أعط قيمة مقرّبة إلى $0{,}01$ للطول الكلي للحبال.",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m مدوّرا إلى 0,01",
+      "expectedAnswer": "11.54",
+      "misconceptionSignatures": [
+        {
+          "value": "11.52",
+          "id": "MISC-FITAGHURAS-ROUND-EARLY"
+        },
+        {
+          "value": "16",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أربعة حبال لها الطول نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب في 4 قيمة الآلة الكاملة لطول الحبل، لا القيمة المدوّرة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "دوّر النتيجة الأخيرة فقط."
+        }
+      ],
+      "feedback": {
+        "correct": "$4\\sqrt{8{,}32} \\approx 11{,}54\\,\\mathrm{m}$ .",
+        "incorrect": "تدوير طول الحبل قبل الضرب في 4 يضاعف الخطأ أربع مرات."
+      },
+      "solution": {
+        "lines": [
+          "الطول الكلي $= 4 \\times \\sqrt{8{,}32}$",
+          "$4 \\times \\sqrt{8{,}32} \\approx 4 \\times 2{,}884441 \\approx 11{,}5377$",
+          "إذن الطول الكلي $\\approx 11{,}54\\,\\mathrm{m}$"
+        ],
+        "result": "\\approx 11{,}54\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "عند الفوج لفّة حبل طولها $11{,}5\\,\\mathrm{m}$ . هل تكفي لصنع الحبال الأربعة؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأن $4 \\times 2{,}8 = 11{,}2$ أصغر من $11{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-ROUND-TRUNC"
+        },
+        {
+          "id": "B",
+          "content": "لا، لأن الحبال تحتاج حوالي $11{,}54\\,\\mathrm{m}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نعم، لأن $2{,}4 + 1{,}6 = 4$ و $4 \\times 4 = 16$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الطول اللازم بطول اللفّة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل الطول الكلي الذي حسبته دون تدوير مبكّر."
+        }
+      ],
+      "feedback": {
+        "correct": "$11{,}54 > 11{,}5$ : اللفّة تنقصها بضعة سنتيمترات.",
+        "incorrect": "تدوير طول الحبل إلى $0{,}1$ أو إلى الوحدة قبل الضرب يغيّر القرار."
+      },
+      "solution": {
+        "lines": [
+          "الطول اللازم $4\\sqrt{8{,}32} \\approx 11{,}54\\,\\mathrm{m}$ ، وهو أكبر من $11{,}5\\,\\mathrm{m}$ .",
+          "إذن اللفّة لا تكفي."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

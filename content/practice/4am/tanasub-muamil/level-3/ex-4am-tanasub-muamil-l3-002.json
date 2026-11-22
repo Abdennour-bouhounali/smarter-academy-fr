@@ -1,0 +1,255 @@
+{
+  "id": "ex-4am-tanasub-muamil-l3-002",
+  "lessonCode": "tanasub-muamil",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 17 — محيط القرص ومساحته",
+    "estimatedMinutes": 6,
+    "tags": [
+      "وضعية تناسبية",
+      "وضعية غير تناسبية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-17",
+      "page": 73,
+      "section": "أوظّف تعلّماتي",
+      "number": 17
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر قرصا نصف قطره $r$ ، محيطه $P$ ومساحته $A$ حيث: $P = 2\\pi r$ و $A = \\pi r^2$ .",
+    "table": {
+      "head": [
+        "$r$",
+        "$2{,}5$",
+        "3",
+        "8",
+        "$9{,}5$"
+      ],
+      "rows": [
+        [
+          "$P$",
+          "$5\\pi$",
+          "…",
+          "…",
+          "…"
+        ],
+        [
+          "$A$",
+          "…",
+          "…",
+          "…",
+          "$90{,}25\\pi$"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "انقل الجدول وأكمل السطر الثاني (اكتب كل محيط على الشكل $k\\pi$ ).",
+      "statement": "المحيط من أجل $r = 3$ يكتب $k\\pi$ : أعط العدد $k$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $k$ فقط",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $r$ في $P = 2\\pi r$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$P = 2\\pi \\times 3 = 6\\pi$ .",
+        "incorrect": "$P = 2 \\times r \\times \\pi$ ."
+      },
+      "solution": {
+        "lines": [
+          "$P = 2\\pi \\times 3 = 6\\pi$"
+        ],
+        "result": "6\\pi"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "المحيط من أجل $r = 8$ يكتب $k\\pi$ : أعط العدد $k$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $k$ فقط",
+      "expectedAnswer": "16",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $r$ في $P = 2\\pi r$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$P = 2\\pi \\times 8 = 16\\pi$ .",
+        "incorrect": "$P = 2 \\times r \\times \\pi$ ، وليس $\\pi r^2$ ."
+      },
+      "solution": {
+        "lines": [
+          "$P = 2\\pi \\times 8 = 16\\pi$",
+          "ومن أجل $r = 9{,}5$ : $P = 19\\pi$ ."
+        ],
+        "result": "16\\pi"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل المحيط $P$ متناسب مع نصف القطر $r$ ؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $\\dfrac{P}{r}$ في كل عمود."
+        }
+      ],
+      "feedback": {
+        "correct": "حاصل القسمة $\\dfrac{P}{r}$ ثابت.",
+        "incorrect": "احسب حاصل القسمة في كل عمود قبل أن تحكم: تزايد المقدارين معا لا يكفي."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5\\pi}{2{,}5} = \\dfrac{6\\pi}{3} = \\dfrac{16\\pi}{8} = \\dfrac{19\\pi}{9{,}5} = 2\\pi$",
+          "إذن $P$ متناسب مع $r$ ومعامل التناسبية $2\\pi$ ( $P = 2\\pi \\times r$ )."
+        ],
+        "result": "متناسب"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "أكمل السطر الثالث.",
+      "statement": "المساحة من أجل $r = 3$ تكتب $k\\pi$ : أعط العدد $k$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $k$ فقط",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $r$ في $A = \\pi r^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = \\pi \\times 3^2 = 9\\pi$ .",
+        "incorrect": "$A = \\pi \\times r \\times r$ ."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\pi \\times 3^2 = 9\\pi$",
+          "ومن أجل $r = 2{,}5$ : $A = 6{,}25\\pi$ ، ومن أجل $r = 8$ : $A = 64\\pi$ ."
+        ],
+        "result": "9\\pi"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "هل المساحة $A$ متناسبة مع نصف القطر $r$ ؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $\\dfrac{A}{r}$ في عمودين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{A}{r}$ ليس ثابتا.",
+        "incorrect": "احسب حاصل القسمة في كل عمود قبل أن تحكم: تزايد المقدارين معا لا يكفي."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{6{,}25\\pi}{2{,}5} = 2{,}5\\pi$ و $\\dfrac{9\\pi}{3} = 3\\pi$",
+          "$2{,}5\\pi \\neq 3\\pi$ ، إذن $A$ غير متناسبة مع $r$ ."
+        ],
+        "result": "غير متناسبة"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

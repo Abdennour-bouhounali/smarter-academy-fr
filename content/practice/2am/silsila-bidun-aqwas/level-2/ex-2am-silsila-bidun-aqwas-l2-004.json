@@ -1,0 +1,180 @@
+{
+  "id": "ex-2am-silsila-bidun-aqwas-l2-004",
+  "lessonCode": "silsila-bidun-aqwas",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — ترتيب العمليات",
+    "estimatedMinutes": 8,
+    "tags": [
+      "أولوية",
+      "برّر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العبارة $E = 7 + 24 \\div 6 \\times 3$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "في العبارة $E = 7 + 24 \\div 6 \\times 3$ ، ما العملية التي تُنجز أوّلًا؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bidun-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$24 \\div 6$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$7 + 24$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SILSILA-NOPRIORITY"
+        },
+        {
+          "id": "C",
+          "content": "$6 \\times 3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SILSILA-RIGHTLEFT"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن عملية ضرب أو قسمة في السلسلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عمليات الضرب والقسمة تسبق الجمع والطرح، ومن اليسار نحو اليمين."
+        }
+      ],
+      "feedback": {
+        "correct": "نبدأ بـ $24 \\div 6$ .",
+        "incorrect": "أوّل ما يُنجز هو أوّل ضرب أو قسمة من اليسار، فإن لم يوجد فأوّل جمع أو طرح من اليسار."
+      },
+      "solution": {
+        "lines": [
+          "$24 \\div 6$ تُنجز أوّلًا لأنها أوّل ضرب أو قسمة من اليسار."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $E = 7 + 24 \\div 6 \\times 3$ .",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bidun-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "19",
+      "misconceptionSignatures": [
+        {
+          "value": "15.5",
+          "id": "MISC-SILSILA-NOPRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع خطًّا تحت كل عملية ضرب أو قسمة في السلسلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز عمليات الضرب والقسمة أولًا، من اليسار نحو اليمين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم أنجز الجمع والطرح الباقيين من اليسار نحو اليمين."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 7 + 24 \\div 6 \\times 3 = 19$",
+        "incorrect": "الضرب والقسمة قبل الجمع والطرح، ثم نكمل الجمع والطرح من اليسار نحو اليمين."
+      },
+      "solution": {
+        "lines": [
+          "$E = 7 + 24 \\div 6 \\times 3$",
+          "$E = 7 + 4 \\times 3$",
+          "$E = 7 + 12$",
+          "$E = 19$"
+        ],
+        "result": "E = 19"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "برّر ترتيب الحساب الذي اتّبعته في E .",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bidun-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب على ورقتك مرحلة مرحلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اسأل: أيّ عملية تُنجز أوّلًا ولماذا؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تذكر القاعدة المستعملة."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "في $7 + 24 \\div 6 \\times 3$ توجد عمليتا قسمة وضرب، فتسبقان الجمع.",
+          "القسمة والضرب عمليتان من المرتبة نفسها، فنبدأ من اليسار: $24 \\div 6 = 4$ ثم $4 \\times 3 = 12$.",
+          "ثم $7 + 12 = 19$."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

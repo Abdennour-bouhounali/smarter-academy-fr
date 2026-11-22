@@ -1,0 +1,231 @@
+{
+  "id": "ex-3am-qimat-ibara-harfiya-l5-010",
+  "lessonCode": "qimat-ibara-harfiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — حقل بطول وعرض",
+    "estimatedMinutes": 16,
+    "tags": [
+      "وضعية إدماجية",
+      "حرفان",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "حقل مستطيل طوله $a$ وعرضه $b$ (بالمتر)؛ محيطه $P = 2(a + b)$ ومساحته $S = ab$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول. احسب محيط الحقل ومساحته من أجل $a = 12{,}5$ و $b = 8$ .",
+      "statement": "احسب $P$ من أجل $a = 12{,}5$ و $b = 8$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "41",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في هذه العبارة حرفان: ما العدد الذي يعوّض كلّ واحد منهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض كل حرف بعدده في كل مكان منه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب القوسين والقوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $a = 12{,}5$ و $b = 8$ هي $41$ .",
+        "incorrect": "عوّض كل حرف بعدده، وضع كل عدد سالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$P = 2 \\times (12{,}5 + 8)$",
+          "$P = 2 \\times 20{,}5$",
+          "$P = 41$"
+        ],
+        "result": "P = 41"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $S$ من أجل $a = 12{,}5$ و $b = 8$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "100",
+      "misconceptionSignatures": [
+        {
+          "value": "156.25",
+          "id": "MISC-QIMA-LETTERS-SAME"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في هذه العبارة حرفان: ما العدد الذي يعوّض كلّ واحد منهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض كل حرف بعدده في كل مكان منه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب القوسين والقوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $a = 12{,}5$ و $b = 8$ هي $100$ .",
+        "incorrect": "عوّض كل حرف بعدده، وضع كل عدد سالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$S = 12{,}5 \\times 8$",
+          "$S = 100$"
+        ],
+        "result": "S = 100"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "الجزء الثاني. يُضاعف صاحب الحقل طوله فقط، فيصير محيطه $P_2 = 2(2a + b)$ . يملك سياجًا طوله $60\\ \\mathrm{m}$ .",
+      "statement": "احسب $P_2 = 2(2a + b)$ من أجل $a = 12{,}5$ و $b = 8$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "66",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في هذه العبارة حرفان: ما العدد الذي يعوّض كلّ واحد منهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض كل حرف بعدده في كل مكان منه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب القوسين والقوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $a = 12{,}5$ و $b = 8$ هي $66$ .",
+        "incorrect": "عوّض كل حرف بعدده، وضع كل عدد سالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$P_2 = 2 \\times (2 \\times 12{,}5 + 8)$",
+          "$P_2 = 2 \\times (25 + 8)$",
+          "$P_2 = 2 \\times 33$",
+          "$P_2 = 66$"
+        ],
+        "result": "P_2 = 66"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "هل يكفي السياج المحيط الجديد؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، يكفي",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QIMA-LETTERS-SAME"
+        },
+        {
+          "id": "B",
+          "content": "لا، لا يكفي",
+          "isCorrect": true
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد ما تطلبه كل خطوة: عبارة، أم قيمة من أجل عدد، أم قرار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بالعدد المعطى في كل مكان منه، واحترم الأقواس وأولوية العمليات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الأعداد التي حسبتها قبل أن تقرّر، وتحقّق من الوحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$P_2 = 66 > 60$ .",
+        "incorrect": "راجع خطوات الحل: عوّض ثم احسب، وقارن الأعداد قبل أن تقرّر."
+      },
+      "solution": {
+        "lines": [
+          "$P_2 = 2 \\times (2 \\times 12{,}5 + 8) = 2 \\times 33 = 66$ م.",
+          "$66 > 60$ ، إذن لا يكفي السياج."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

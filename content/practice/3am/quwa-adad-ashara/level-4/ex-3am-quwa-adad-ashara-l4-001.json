@@ -1,0 +1,201 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l4-001",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مفكوك عدد عشري بقوى العدد 10",
+    "estimatedMinutes": 6,
+    "tags": [
+      "المفكوك",
+      "قوى العدد 10"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "مفكوك عدد هو كتابته مجموعًا: كلّ رقم مضروب في قوة للعدد 10 توافق رتبته. مثال: $472 = 4 \\times 10^{2} + 7 \\times 10^{1} + 2 \\times 10^{0}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ الكتابات التالية هي مفكوك العدد $3\\,285$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما رتبة كلّ رقم في العدد $3\\,285$ : آلاف، مئات، عشرات، وحدات؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتبة الوحدات توافق $10^{0}$ ، والعشرات $10^{1}$ ، وهكذا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب المجموع."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3 \\times 10^{3} + 2 \\times 10^{2} + 8 \\times 10^{1} + 5 \\times 10^{0}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$3 \\times 10^{4} + 2 \\times 10^{3} + 8 \\times 10^{2} + 5 \\times 10^{1}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-MAFKUK"
+        },
+        {
+          "id": "C",
+          "content": "$3 \\times 10^{3} + 2 \\times 10^{2} + 8 \\times 10^{1} + 5 \\times 10^{1}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-MAFKUK"
+        }
+      ],
+      "feedback": {
+        "correct": "$3\\,285 = 3 \\times 10^{3} + 2 \\times 10^{2} + 8 \\times 10^{1} + 5 \\times 10^{0}$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب الكتابة العشرية للقوة المعنية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الرقم 3 في رتبة الآلاف: $3 \\times 10^{3}$ .",
+          "الرقم 2 في رتبة المئات: $2 \\times 10^{2}$ ، والرقم 8 في رتبة العشرات: $8 \\times 10^{1}$ ، والرقم 5 في رتبة الوحدات: $5 \\times 10^{0}$ ."
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "$3\\,285 = 3 \\times 10^{3} + 2 \\times 10^{2} + 8 \\times 10^{n} + 5 \\times 10^{0}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما رتبة الرقم 8 في العدد $3\\,285$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتبة العشرات توافق قوة العدد 10 التي أسّها 1."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد الوحدات مباشرة."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-ASHARA-MAFKUK"
+        }
+      ],
+      "feedback": {
+        "correct": "الرقم 8 في رتبة العشرات: $8 \\times 10^{1}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الرقم 8 هو رقم العشرات.",
+          "$8 \\times 10 = 8 \\times 10^{1}$ ."
+        ],
+        "result": "n = 1"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أيّ الكتابات التالية هي مفكوك العدد $0{,}407$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اذكر رتبة كلّ رقم بعد الفاصلة: أعشار، أجزاء من مئة، أجزاء من ألف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتبة الأعشار توافق $10^{-1}$ ، وبعدها $10^{-2}$ ، ثمّ $10^{-3}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تهمل الصفر: إنّه يحتلّ رتبة."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$4 \\times 10^{-1} + 7 \\times 10^{-2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-MAFKUK"
+        },
+        {
+          "id": "B",
+          "content": "$4 \\times 10^{-2} + 7 \\times 10^{-3}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-MAFKUK"
+        },
+        {
+          "id": "C",
+          "content": "$4 \\times 10^{-1} + 7 \\times 10^{-3}$",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}407 = 4 \\times 10^{-1} + 7 \\times 10^{-3}$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب الكتابة العشرية للقوة المعنية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الرقم 4 في رتبة الأعشار: $4 \\times 10^{-1}$ .",
+          "الصفر في رتبة أجزاء المئة فلا حدّ له، والرقم 7 في رتبة أجزاء الألف: $7 \\times 10^{-3}$ ."
+        ]
+      }
+    }
+  ]
+}

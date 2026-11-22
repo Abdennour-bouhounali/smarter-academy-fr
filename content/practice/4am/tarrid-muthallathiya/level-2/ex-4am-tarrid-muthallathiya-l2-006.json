@@ -1,0 +1,211 @@
+{
+  "id": "ex-4am-tarrid-muthallathiya-l2-006",
+  "lessonCode": "tarrid-muthallathiya",
+  "level": 2,
+  "metadata": {
+    "title": "طريقتان لحساب AB: التدوير المبكّر",
+    "estimatedMinutes": 7,
+    "tags": [
+      "طرق متعددة",
+      "التدوير المبكّر",
+      "الظل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-muthallathiya_P3",
+      "modelledOn": "ex-26",
+      "adaptedFrom": "ex-4am-tarrid-muthallathiya-l5-007"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$ABC$ مثلث قائم في $A$ حيث $\\widehat{ABC} = 52^{\\circ}$ و $AC = 4\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $BC$ بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm مدوّرا إلى 0,1",
+      "expectedAnswer": "5.1",
+      "misconceptionSignatures": [
+        {
+          "value": "3.2",
+          "id": "MISC-MUTH-DARB-BADAL-QISMA"
+        },
+        {
+          "value": "6.5",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $ABC$ القائم في $A$ ، حدّد موقع الضلع المعلوم والضلع المطلوب بالنسبة إلى الزاوية $\\widehat{ABC}$ (مجاور، مقابل أو وتر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة التي تجمع هذين الضلعين هي جيب الزاوية $\\widehat{ABC}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالآلة الحاسبة مبرمجة على الدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC = \\dfrac{4}{\\sin 52^{\\circ}} \\approx 5{,}1\\,\\mathrm{cm}$ .",
+        "incorrect": "الطول المطلوب في مقام النسبة: نقسم الطول المعلوم على النسبة المثلثية ولا نضرب فيها؛ والآلة الحاسبة مبرمجة على الدرجة."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $ABC$ القائم في $A$ لدينا: $\\sin\\,\\widehat{ABC} = \\dfrac{AC}{BC}$",
+          "ومنه: $BC = \\dfrac{AC}{\\sin\\,\\widehat{ABC}}$",
+          "$BC = \\dfrac{4}{\\sin 52^{\\circ}}$",
+          "باستعمال الآلة الحاسبة: $BC \\approx 5{,}0761$"
+        ],
+        "result": "BC \\approx 5{,}1\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب $AB$ باستعمال $\\tan\\widehat{ABC}$ ، بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm مدوّرا إلى 0,01",
+      "expectedAnswer": "3.13",
+      "misconceptionSignatures": [
+        {
+          "value": "3.16",
+          "id": "MISC-MUTH-TADWIR-MUBAKKIR"
+        },
+        {
+          "value": "5.12",
+          "id": "MISC-MUTH-DARB-BADAL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $ABC$ القائم في $A$ ، حدّد موقع الضلع المعلوم والضلع المطلوب بالنسبة إلى الزاوية $\\widehat{ABC}$ (مجاور، مقابل أو وتر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة التي تجمع هذين الضلعين هي ظل الزاوية $\\widehat{ABC}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالآلة الحاسبة مبرمجة على الدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = \\dfrac{4}{\\tan 52^{\\circ}} \\approx 3{,}13\\,\\mathrm{cm}$ .",
+        "incorrect": "الطول المطلوب في مقام النسبة: نقسم الطول المعلوم على النسبة المثلثية ولا نضرب فيها؛ والآلة الحاسبة مبرمجة على الدرجة."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $ABC$ القائم في $A$ لدينا: $\\tan\\,\\widehat{ABC} = \\dfrac{AC}{AB}$",
+          "ومنه: $AB = \\dfrac{AC}{\\tan\\,\\widehat{ABC}}$",
+          "$AB = \\dfrac{4}{\\tan 52^{\\circ}}$",
+          "باستعمال الآلة الحاسبة: $AB \\approx 3{,}1251$"
+        ],
+        "result": "AB \\approx 3{,}13\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "حسب أمين $AB$ بخاصية فيثاغورس انطلاقا من القيمة المدوّرة $BC \\approx 5{,}1$ فوجد $AB \\approx 3{,}16$ . ما سبب الاختلاف بين النتيجتين؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لأنه استعمل قيمة مدوّرة لـ {what} في حساب موالٍ، فتراكم الخطأ",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لأن الحاسبة لم تكن مبرمجة على الدرجة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-HASIBA-RAD"
+        },
+        {
+          "id": "C",
+          "content": "لأن هذه الطريقة لا تصلح لحساب هذا الطول",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-NISBA-GHAYR-MUNASIBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن ما أدخله أمين في الحاسبة بما أدخلته أنت."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ماذا يحدث إذا استعملنا قيمة مدوّرة في حساب موالٍ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الطريقتان صحيحتان، لكن $5{,}1$ قيمة مدوّرة: استعمالها في حساب موالٍ يراكم الخطأ.",
+        "incorrect": "خاصية فيثاغورس صالحة في المثلث القائم؛ ابحث عن القيمة التي لم تكن مضبوطة."
+      },
+      "solution": {
+        "lines": [
+          "بالقيمة المضبوطة $BC = \\dfrac{4}{\\sin 52^{\\circ}}$ تعطي خاصية فيثاغورس $AB = \\sqrt{BC^2 - 16} \\approx 3{,}13$ أيضا.",
+          "أمين استعمل $5{,}1$ : $\\sqrt{5{,}1^2 - 16} = \\sqrt{10{,}01} \\approx 3{,}16$ .",
+          "نحتفظ بكل أرقام الحاسبة ولا ندوّر إلا النتيجة النهائية."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

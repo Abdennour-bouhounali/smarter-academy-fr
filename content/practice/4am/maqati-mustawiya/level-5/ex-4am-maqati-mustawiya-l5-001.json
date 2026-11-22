@@ -1,0 +1,65 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l5-001",
+  "lessonCode": "maqati-mustawiya",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — دلّاعة السوق",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مقطع كرة",
+      "تدوير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_maqati-mustawiya_P1",
+      "modelledOn": "method-section-radius"
+    }
+  },
+  "statement": {
+    "content": "في سوق الخضر بالبليدة، دلّاعة كروية نصف قطرها $12\\,\\mathrm{cm}$ ، يقطعها البائع الأمين بسكين على بعد $4\\,\\mathrm{cm}$ من مركزها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أعط نصف قطر الشريحة الدائرية مدوّرا إلى $0{,}1\\,\\mathrm{cm}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري مدوّر إلى الجزء من عشرة",
+      "expectedAnswer": "11.3",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAQTA-TARH",
+          "value": "8"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث OAM قائم في A."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$r^2 = 12^2 - 4^2 = 128$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب $\\sqrt{128}$ بالآلة الحاسبة ثم دوّر إلى الجزء من عشرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$r = \\sqrt{144 - 16} = \\sqrt{128} = 8\\sqrt{2} \\approx 11{,}3\\,\\mathrm{cm}$ .",
+        "incorrect": "ندوّر في آخر الحساب، و $12 - 4 = 8$ ليس نصف القطر."
+      },
+      "difficulty": 5
+    }
+  ]
+}

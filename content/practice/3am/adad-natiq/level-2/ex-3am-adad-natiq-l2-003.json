@@ -1,0 +1,242 @@
+{
+  "id": "ex-3am-adad-natiq-l2-003",
+  "lessonCode": "adad-natiq",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — هل العدد سالب ؟",
+    "estimatedMinutes": 10,
+    "tags": [
+      "العدد الناطق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "كتب نذير على لوحة الصفّ العدد $\\dfrac{-16}{-28}$ وقال لزملائه : « هذا العدد سالب لأنّ فيه علامتين سالبتين » ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "هل العدد $\\dfrac{-16}{-28}$ سالب ؟",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، إنّه سالب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-TWONEG"
+        },
+        {
+          "id": "B",
+          "content": "لا، إنّه موجب",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر إشارة حاصل قسمة عددين نسبيين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العدد بمقام موجب ثمّ اقرأ إشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: لا، إنّه موجب .",
+        "incorrect": "قارن إشارتي البسط والمقام ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "البسط $-16$ والمقام $-28$ سالبان.",
+          "حاصل قسمة عددين سالبين موجب."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "برّر جوابك .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثمّ اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجب أن تبرّره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اذكر القاعدة التي تستعملها في كلّ سطر."
+        }
+      ],
+      "feedback": {
+        "correct": "تطابق تبريرك مع الحل النموذجي .",
+        "incorrect": "قارن تبريرك بالحل النموذجي سطرًا سطرًا، ثمّ قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "حاصل قسمة عددين لهما الإشارة نفسها موجب (نقصد : $\\dfrac{-a}{-b}=\\dfrac{a}{b}$).",
+          "إذن $\\dfrac{-16}{-28}=\\dfrac{16}{28}$ وهو عدد موجب.",
+          "وجود علامتين سالبتين لا يعطي عددًا سالبًا : تلغي إحداهما الأخرى."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "اكتب العدد $\\dfrac{-16}{-28}$ بمقام موجب وعلى أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "4/7",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "-4/7",
+          "id": "MISC-NATIQ-TWONEG"
+        },
+        {
+          "value": "7/4",
+          "id": "MISC-NATIQ-INVERT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة الحاصل؟ قارن إشارتي البسط والمقام."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل الإشارة إلى أمام الكسر حتى يصير المقام موجبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل بقسمة البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$N = \\dfrac{4}{7}$ .",
+        "incorrect": "تذكّر أنّ المقام في الكتابة المعيارية موجب، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "البسط والمقام سالبان، وحاصل قسمة عددين سالبين موجب : $N = \\dfrac{16}{28}$ .",
+          "نختزل بقسمة البسط والمقام على $4$ : $\\dfrac{16}{28} = \\dfrac{4}{7}$ .",
+          "$N = \\dfrac{4}{7}$ ."
+        ],
+        "result": "N = \\dfrac{4}{7}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "أيّ العددين أكبر : $\\dfrac{-16}{-28}$ أم $\\dfrac{16}{-28}$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{-16}{-28}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{16}{-28}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-NEGORDER"
+        },
+        {
+          "id": "C",
+          "content": "هما متساويان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-DROPSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العددين بالمقام الموجب نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن البسطين بقواعد مقارنة الأعداد النسبية: على يسار الصفر، الأبعد عن الصفر هو الأصغر."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $\\dfrac{-16}{-28}$ .",
+        "incorrect": "اكتب العددين بمقام موجب مشترك قبل أن تقارن، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{-16}{-28}=\\dfrac{4}{7}>0$ و $\\dfrac{16}{-28}=-\\dfrac{4}{7}<0$ .",
+          "كلّ عدد موجب أكبر من كلّ عدد سالب."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

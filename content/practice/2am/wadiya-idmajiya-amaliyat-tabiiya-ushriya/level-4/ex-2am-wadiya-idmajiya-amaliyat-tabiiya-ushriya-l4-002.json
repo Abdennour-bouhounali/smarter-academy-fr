@@ -1,0 +1,251 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-amaliyat-tabiiya-ushriya-l4-002",
+  "lessonCode": "wadiya-idmajiya-amaliyat-tabiiya-ushriya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — آلة بقوسين فقط: أقواس متداخلة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "آلة حاسبة",
+      "أقواس متداخلة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "لا تحمل الآلة الحاسبة إلّا القوسين $( )$ : نعوّض كلّ قوسين معقوفين $[ ]$ بقوسين عاديّين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب بالقلم قيمة السلسلة $[(7 + 5) \\times 3 + 4] \\div 5$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "22.8",
+          "id": "MISC-AQWAS-IGNORED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعية جملة جملة: كلّ جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب سلسلة عمليات تترجمها، وضع بين قوسين ما يجب حسابه أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب السلسلة بالترتيب الصحيح للعمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "$[(7 + 5) \\times 3 + 4] \\div 5 = 8$ .",
+        "incorrect": "القوسان ليسا زينة: ما بينهما يُحسب أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $[(7 + 5) \\times 3 + 4] \\div 5$",
+          "$A = [(7 + 5) \\times 3 + 4] \\div 5$",
+          "$A = [12 \\times 3 + 4] \\div 5$",
+          "$A = [36 + 4] \\div 5$",
+          "$A = 40 \\div 5$",
+          "$A = 8$"
+        ],
+        "result": "8"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أيّ حجز على الآلة يعطي قيمة السلسلة $[(7 + 5) \\times 3 + 4] \\div 5$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(7 + 5) \\times 3 + 4 \\div 5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-DROPOUTER"
+        },
+        {
+          "id": "B",
+          "content": "$7 + 5 \\times 3 + 4 \\div 5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-IGNORED"
+        },
+        {
+          "id": "C",
+          "content": "$((7 + 5) \\times 3 + 4) \\div 5$",
+          "isCorrect": true
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المطلوب جيّدًا: ما العملية التي تُنجز في الأخير، وما الذي يُحسب قبلها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ سلسلة مقترحة بالحساب أو بالقاعدة المناسبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الجواب هو السلسلة التي تترجم المطلوب وتعطي القيمة المنتظرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$((7 + 5) \\times 3 + 4) \\div 5 = 8$ .",
+        "incorrect": "اختبر كلّ سلسلة بالحساب: الصحيحة هي التي تترجم المطلوب وتعطي القيمة المنتظرة، وانتبه إلى القوسين."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة الصحيحة: $((7 + 5) \\times 3 + 4) \\div 5$",
+          "$A = ((7 + 5) \\times 3 + 4) \\div 5$",
+          "$A = (12 \\times 3 + 4) \\div 5$",
+          "$A = (36 + 4) \\div 5$",
+          "$A = 40 \\div 5$",
+          "$A = 8$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما اسم السلسلة $[(7 + 5) \\times 3 + 4] \\div 5$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مجموع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-FIRSTOP"
+        },
+        {
+          "id": "B",
+          "content": "حاصل قسمة",
+          "isCorrect": true
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب مرحلة مرحلة وتتبّع آخر عملية بقيت لك."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع خطًّا تحت العملية التي تُنجز في الأخير."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العملية الأخيرة هي التي تسمّي السلسلة."
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة عبارة عن حاصل قسمة: آخر عملية تُنجز فيها هي القسمة.",
+        "incorrect": "لا تسمِّ السلسلة بأوّل عملية تُنجز ولا بأوّل رمز تراه: سمِّها بآخر عملية تُنجز فيها."
+      },
+      "solution": {
+        "lines": [
+          "$A = [(7 + 5) \\times 3 + 4] \\div 5$",
+          "$A = [12 \\times 3 + 4] \\div 5$",
+          "$A = [36 + 4] \\div 5$",
+          "$A = 40 \\div 5$",
+          "$A = 8$",
+          "آخر عملية تُنجز هي القسمة ، فالسلسلة عبارة عن حاصل قسمة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "اشرح ما تحسبه الآلة إن حجزنا $7 + 5 \\times 3 + 4 \\div 5 =$ وقارنه بقيمة السلسلة.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب على ورقتك مرحلة مرحلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اسأل: أيّ حساب يثبت ما تقول؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تذكر القاعدة المستعملة."
+        }
+      ],
+      "feedback": {
+        "correct": "$((7 + 5) \\times 3 + 4) \\div 5 = 40 \\div 5 = 8$ .",
+        "incorrect": "قارن تبريرك بالحلّ النموذجي: الفكرة ثم الحساب الذي يدعمها."
+      },
+      "solution": {
+        "lines": [
+          "بلا قوسين تنجز الآلة الضرب والقسمة أوّلًا: $7 + 15 + 0{,}8 = 22{,}8$ .",
+          "أمّا السلسلة المطلوبة فتجمع $7$ و $5$ أوّلًا، ثم تضرب في $3$ وتضيف $4$ ثم تقسم على $5$ .",
+          "$((7 + 5) \\times 3 + 4) \\div 5 = 40 \\div 5 = 8$ ."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

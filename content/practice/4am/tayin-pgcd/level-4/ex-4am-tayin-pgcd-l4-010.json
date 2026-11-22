@@ -1,0 +1,221 @@
+{
+  "id": "ex-4am-tayin-pgcd-l4-010",
+  "lessonCode": "tayin-pgcd",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2009 — d = PGCD(360 ; 135) ونتائج مباشرة",
+    "estimatedMinutes": 13,
+    "tags": [
+      "PGCD",
+      "نتائج مباشرة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tayin-pgcd_P2",
+      "modelledOn": "BEM 2009 I-4"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نسمي $d$ القاسم المشترك الأكبر للعددين 360 و 135."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "جد العدد $d$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "45",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قائمة قواسم كل من العددين 360 و 135، مثنى مثنى (1 مع العدد نفسه، ثم 2 …) حتى لا يفوتك قاسم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استخرج القواسم المشتركة: الأعداد الموجودة في القائمتين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاسم المشترك الأكبر هو أكبر القواسم المشتركة، لا أيّ واحد منها."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 360 و 135 هي 1 ، 3 ، 5 ، 9 ، 15 ، 45، وأكبرها 45.",
+        "incorrect": "اكتب قائمتي القواسم كاملتين، ثم خذ أكبر عدد يظهر في القائمتين معًا."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 360 هي: 1 ، 2 ، 3 ، 4 ، 5 ، 6 ، 8 ، 9 ، 10 ، 12 ، 15 ، 18 ، 20 ، 24 ، 30 ، 36 ، 40 ، 45 ، 60 ، 72 ، 90 ، 120 ، 180 ، 360",
+          "قواسم العدد 135 هي: 1 ، 3 ، 5 ، 9 ، 15 ، 27 ، 45 ، 135",
+          "القواسم المشتركة للعددين 360 و 135 هي: 1 ، 3 ، 5 ، 9 ، 15 ، 45",
+          "أكبرها هو 45، إذن:"
+        ],
+        "result": "PGCD(360 ; 135) = 45"
+      },
+      "work": "optional",
+      "timeSeconds": 570
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب PGCD$(d ; 45)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "45",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما هي القواسم المشتركة لعدد ونفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القواسم المشتركة هي قواسم العدد نفسه، وأكبر قاسم لعدد غير معدوم هو العدد نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "PGCD$(a ; a) = a$"
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(45 ; 45) = 45 لأن أكبر قاسم للعدد 45 هو 45 نفسه.",
+        "incorrect": "القواسم المشتركة لعدد ونفسه هي كل قواسمه: خذ أكبرها."
+      },
+      "solution": {
+        "lines": [
+          "القواسم المشتركة للعددين 45 و 45 هي قواسم العدد 45، وأكبرها 45 نفسه.",
+          "نطبّق النتيجة: PGCD$(a ; a) = a$"
+        ],
+        "result": "PGCD(45 ; 45) = 45"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب PGCD$(d ; 180)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "45",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $d$ بقيمته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل $d$ قاسم للعدد 180؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان $b$ قاسمًا للعدد $a$ فإن PGCD$(a ; b) = b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$180 = 45 \\times 4$ : العدد 45 قاسم للعدد 180.",
+        "incorrect": "تحقّق هل $d$ قاسم للعدد 180."
+      },
+      "solution": {
+        "lines": [
+          "$d = 45$",
+          "$180 = 45 \\times 4$ ، إذن 45 قاسم للعدد 180، ومنه:"
+        ],
+        "result": "PGCD(d ; 180) = PGCD(45 ; 180) = 45"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "احسب PGCD$(d ; 0)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "45",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-PGCD-SIFR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل عدد طبيعي غير معدوم يقسم 0 لأن $0 = n \\times 0$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القواسم المشتركة للعددين هي إذن قواسم العدد غير المعدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "PGCD$(a ; 0) = a$"
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(45 ; 0) = 45: كل قاسم للعدد 45 يقسم 0.",
+        "incorrect": "العدد 0 يقبل القسمة على كل عدد غير معدوم: القواسم المشتركة هي قواسم العدد الآخر."
+      },
+      "solution": {
+        "lines": [
+          "$0 = 45 \\times 0$ ، إذن العدد 45 يقسم 0، وكل قاسم للعدد 45 يقسم 0.",
+          "القواسم المشتركة للعددين 45 و 0 هي إذن قواسم العدد 45، وأكبرها 45."
+        ],
+        "result": "PGCD(45 ; 0) = 45"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l1-009",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — زيت التعاونية: القيمتان إلى 0,01",
+    "estimatedMinutes": 5,
+    "tags": [
+      "قيم مقرّبة",
+      "قيمة مضبوطة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تقتسم تعاونية $16$ L من زيت الزيتون بالتساوي على $9$ قارورات."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}01$ بالنقصان لسعة القارورة الواحدة (بالتر).",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "1.77",
+      "misconceptionSignatures": [
+        {
+          "value": "1.78",
+          "id": "MISC-QARIBA-ROUNDED"
+        },
+        {
+          "value": "1.777",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالنقصان لا تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة دون أن تزيد شيئًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب القيمة في المقسوم عليه: يجب ألاّ يتجاوز الجداء المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}77 < \\frac{16}{9} < 1{,}78$.",
+        "incorrect": "بالنقصان: نحتفظ بالأرقام حتى الرتبة المطلوبة ونُهمل ما بعدها دون تغيير الرقم الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$9 \\times 1{,}77 = 15{,}93$",
+          "$9 \\times 1{,}78 = 16{,}02$",
+          "$15{,}93 < 16 < 16{,}02$"
+        ],
+        "result": "1{,}77"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "وأعط القيمة المقرّبة إلى $0{,}01$ بالزيادة.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "1.78",
+      "misconceptionSignatures": [
+        {
+          "value": "1.77",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "1.778",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالزيادة هي أصغر قيمة من هذه الرتبة تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من القيمة بالنقصان ثم أضف وحدة واحدة من الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}77 < \\frac{16}{9} < 1{,}78$.",
+        "incorrect": "بالزيادة: هي القيمة التي تلي القيمة بالنقصان مباشرة في الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$9 \\times 1{,}78 = 16{,}02$",
+          "$16{,}02 > 16$",
+          "القيمة بالزيادة هي $1{,}78$"
+        ],
+        "result": "1{,}78"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل المساواة $\\dfrac{16}{9} = 1{,}78$ صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-EXACTAPPROX"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أو قارن بدقّة قبل أن تجيب."
+        }
+      ],
+      "feedback": {
+        "correct": "لا: $9 \\times 1{,}78 = 16{,}02 \\neq 16$ ، و $1{,}78$ قيمة مقرّبة فقط.",
+        "incorrect": "اضرب $1{,}78$ في $9$ وقارن الجداء بـ $16$."
+      },
+      "solution": {
+        "lines": [
+          "$9 \\times 1{,}78 = 16{,}02$",
+          "$16{,}02 \\neq 16$ : المساواة خاطئة، و $1{,}78$ قيمة مقرّبة بالزيادة"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

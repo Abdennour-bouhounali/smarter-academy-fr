@@ -1,0 +1,279 @@
+{
+  "id": "ex-2am-wasf-silsila-hisab-l5-001",
+  "lessonCode": "wasf-silsila-hisab",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — برنامج الحساب",
+    "estimatedMinutes": 18,
+    "tags": [
+      "برنامج حساب",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تلعب ياسمين وابنة خالها لعبة الأذهان: «اختر عددًا، أضف إليه 7، اضرب الناتج في 4، ثم اطرح من الناتج 6»."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ سلسلة تترجم البرنامج لعدد البداية 5 ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(5 + 7) \\times 4 - 6$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$5 + 7 \\times 4 - 6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-NOBRACKET"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بآخر عملية في الجملة: هي الأخيرة التي تُكتب بين قطعتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كلّ قطعة على حدة، وضع بين قوسين كلّ قطعة يجب أن تُحسب قبل آخر عملية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر سلسلتك بحسابها: هل آخر عملية فيها هي التي في الجملة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة الصحيحة: $(5 + 7) \\times 4 - 6$ .",
+        "incorrect": "ابدأ بآخر عملية في الجملة، وضع بين قوسين كلّ قطعة تُحسب قبلها، وانتبه إلى ترتيب القطعتين."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية في الجملة هي $-$.",
+          "نكتب كلّ قطعة ثم نربط بينهما: $(5 + 7) \\times 4 - 6$ (القوسان لازمان لأنّ القطعة يجب أن تُحسب أوّلًا)."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما نتيجة البرنامج لعدد البداية 5 ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "42",
+      "misconceptionSignatures": [
+        {
+          "value": "27",
+          "id": "MISC-WASF-NOBRACKET"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد كتابة السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$(5 + 7) \\times 4 - 6 = 42$",
+        "incorrect": "اكتب سلسلة تترجم البرنامج خطوة خطوة: كلّ جملة «اضرب الناتج» أو «اقسم الناتج» تضع ما سبق بين قوسين."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $(5 + 7) \\times 4 - 6$",
+          "$12 \\times 4 - 6$",
+          "$48 - 6$",
+          "$42$"
+        ],
+        "result": "42"
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما نتيجة البرنامج لعدد البداية 2,5 ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "32",
+      "misconceptionSignatures": [
+        {
+          "value": "24.5",
+          "id": "MISC-WASF-NOBRACKET"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد كتابة السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$(2{,}5 + 7) \\times 4 - 6 = 32$",
+        "incorrect": "اكتب سلسلة تترجم البرنامج خطوة خطوة: كلّ جملة «اضرب الناتج» أو «اقسم الناتج» تضع ما سبق بين قوسين."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $(2{,}5 + 7) \\times 4 - 6$",
+          "$9{,}5 \\times 4 - 6$",
+          "$38 - 6$",
+          "$32$"
+        ],
+        "result": "32"
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "صِف بجملة السلسلة $S = (5 + 7) \\times 4 - 6$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب على ورقتك مرحلة مرحلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اسأل: أيّ عملية تُنجز أخيرًا ولماذا؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تذكر القاعدة المستعملة."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن جملتك بالحل النموذجي: الاسم أوّلًا ثم كلّ قطعة بالترتيب.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به جملتك قطعة قطعة."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية تُنجز هي $-$، فالسلسلة فرق.",
+          "الوصف: فرق جداء مجموع العددين 5 و 7 والعدد 4 ، والعدد 6."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "هل نتيجة البرنامج لعدد البداية 9 أكبر من 60 ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن آخر عملية تُنجز في السلسلة قبل أن تحكم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كل عبارة بالترتيب الصحيح ثم قارن اسمها بما يقوله النص."
+        }
+      ],
+      "feedback": {
+        "correct": "تحقّقت من ذلك بالحساب.",
+        "incorrect": "احسب كل عبارة مرحلة مرحلة واسمِها بآخر عملية فيها قبل أن تحكم."
+      },
+      "solution": {
+        "lines": [
+          "$(9 + 7) \\times 4 - 6 = 58$ ."
+        ]
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

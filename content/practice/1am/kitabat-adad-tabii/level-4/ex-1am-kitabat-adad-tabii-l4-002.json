@@ -1,0 +1,258 @@
+{
+  "id": "ex-1am-kitabat-adad-tabii-l4-002",
+  "lessonCode": "kitabat-adad-tabii",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — كسر عشري ومفكوك وفاصلة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "كسر عشري",
+      "مفكوك",
+      "فاصلة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 1,
+      "file": "1am-s1-95",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "❶ اكتب الكسر العشري $\\frac{3816}{100}$ كتابة عشرية.\n❷ أعط المفكوك النموذجي للعدد 5247.\n❸ ضع الفاصلة في العدد 692538 بحيث يصبح الرقم 3 رقم الأجزاء من مائة، ثم عيّن مرتبة الرقم 9 في العدد الناتج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب الكسر العشري $\\frac{3816}{100}$ كتابة عشرية (بالفاصلة).",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة)",
+      "expectedAnswer": "38.16",
+      "misconceptionSignatures": [
+        {
+          "value": "381,6",
+          "id": "MISC-KITABA-COMMA-SHIFT"
+        },
+        {
+          "value": "3,816",
+          "id": "MISC-KITABA-COMMA-SHIFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم صفرا في المقام 100؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على 100 تجعل رقمين بعد الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\frac{3816}{100} = 38{,}16$.",
+        "incorrect": "المقام 100: يكون للكتابة العشرية رقمان بعد الفاصلة."
+      },
+      "solution": {
+        "lines": [
+          "المقام 100، فنضع رقمين بعد الفاصلة.",
+          "$\\frac{3816}{100} = 38{,}16$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هو المفكوك النموذجي للعدد 5247؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$5 \\times 1000 + 2 \\times 100 + 4 \\times 10 + 7$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$5 \\times 100 + 2 \\times 10 + 4 + 7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-RANK-NAME"
+        },
+        {
+          "id": "C",
+          "content": "$5 \\times 1000 + 2 \\times 100 + 7 \\times 10 + 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-RANK-NAME"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العدد في جدول المراتب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل رقم غير معدوم يُضرب في قيمة مرتبته (1، 10، 100، 1000…)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الرقم 0 لا يظهر في المفكوك، لكنه يحفظ مراتب الأرقام الأخرى."
+        }
+      ],
+      "feedback": {
+        "correct": "$5247 = 5 \\times 1000 + 2 \\times 100 + 4 \\times 10 + 7$.",
+        "incorrect": "في المفكوك النموذجي يُضرب كل رقم في قيمة مرتبته؛ تحقّق بحساب المجموع."
+      },
+      "solution": {
+        "lines": [
+          "في العدد 5247: 5 رقم الآلاف، 2 رقم المئات، 4 رقم العشرات، 7 رقم الآحاد.",
+          "$5247 = 5 \\times 1000 + 2 \\times 100 + 4 \\times 10 + 7$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "ضع الفاصلة في العدد 692538 بحيث يصبح الرقم 3 رقم الأجزاء من مائة.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة)",
+      "expectedAnswer": "692.538",
+      "misconceptionSignatures": [
+        {
+          "value": "6925,38",
+          "id": "MISC-KITABA-COMMA-SHIFT"
+        },
+        {
+          "value": "69,2538",
+          "id": "MISC-KITABA-COMMA-SHIFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الرقم الذي على يسار الفاصلة مباشرة هو رقم الآحاد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد الفاصلة: الأعشار، ثم الأجزاء من مائة، ثم الأجزاء من ألف."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة تسمية مرتبة كل رقم."
+        }
+      ],
+      "feedback": {
+        "correct": "في 692,538، الرقم 3 هو رقم الأجزاء من مائة.",
+        "incorrect": "الفاصلة تُوضع مباشرة على يمين رقم الآحاد؛ ابدأ بتحديد الرقم الذي يجب أن يصبح رقم الآحاد."
+      },
+      "solution": {
+        "lines": [
+          "ليكون 3 رقم الأجزاء من مائة، يجب أن يكون الرقم 2 رقم الآحاد، فنضع الفاصلة على يمينه: 692,538.",
+          "في العدد 692,538: 6 رقم المئات، 9 رقم العشرات، 2 رقم الآحاد، 5 رقم الأعشار، 3 رقم الأجزاء من مائة، 8 رقم الأجزاء من ألف."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "ما هي مرتبة الرقم 9 في العدد 692,538؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "العشرات",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الأعشار",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-TENS-TENTHS"
+        },
+        {
+          "id": "C",
+          "content": "المئات",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-RANK-NAME"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد رقم الآحاد أولا: هو آخر رقم على يمين الجزء الصحيح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نعدّ المراتب انطلاقا من رقم الآحاد: نحو اليسار في الجزء الصحيح، ونحو اليمين بعد الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع العدد في جدول المراتب."
+        }
+      ],
+      "feedback": {
+        "correct": "في العدد 692,538، الرقم 9 هو رقم العشرات.",
+        "incorrect": "راجع جدول المراتب: يأخذ كل رقم معناه من موقعه في كتابة العدد."
+      },
+      "solution": {
+        "lines": [
+          "في العدد 692,538: 6 رقم المئات، 9 رقم العشرات، 2 رقم الآحاد، 5 رقم الأعشار، 3 رقم الأجزاء من مائة، 8 رقم الأجزاء من ألف.",
+          "إذن مرتبة الرقم 9 هي العشرات."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

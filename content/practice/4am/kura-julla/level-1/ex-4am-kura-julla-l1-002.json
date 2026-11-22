@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-kura-julla-l1-002",
+  "lessonCode": "kura-julla",
+  "level": 1,
+  "metadata": {
+    "title": "معارف 1 — تعريف الكرة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "الكرة",
+      "تعريف"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-1",
+      "page": 166,
+      "section": "معارف",
+      "number": 1
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 166): O نقطة من الفضاء و R عدد موجب تماما."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الكرة التي مركزها O ونصف قطرها R هي مجموعة النقط M من الفضاء حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$OM = R$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$OM \\le R$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-JULLA"
+        },
+        {
+          "id": "C",
+          "content": "$OM < R$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-JULLA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكرة سطح أجوف مثل كرة اليد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نقط السطح كلها على نفس البعد من المركز."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختر الشرط الذي لا يقبل إلا نقط السطح."
+        }
+      ],
+      "feedback": {
+        "correct": "الكرة: النقط التي تبعد عن O بالمسافة R تماما.",
+        "incorrect": "الشرطان الآخران يقبلان نقطا داخلية: ذلك وصف للجلة أو لداخلها."
+      }
+    }
+  ]
+}

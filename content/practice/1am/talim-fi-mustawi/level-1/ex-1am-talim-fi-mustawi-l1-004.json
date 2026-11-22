@@ -1,0 +1,193 @@
+{
+  "id": "ex-1am-talim-fi-mustawi-l1-004",
+  "lessonCode": "talim-fi-mustawi",
+  "level": 1,
+  "metadata": {
+    "title": "هل تبديل العددين يغيّر النقطة؟",
+    "estimatedMinutes": 6,
+    "tags": [
+      "ترتيب العددين",
+      "نقطتان مختلفتان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تقول بطاقة دليل المتحف: « تبعد القاعة عن المدخل بعددين نكتبهما بالترتيب ». نقارن زوجين من العددين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل النقطتان $A(3\\,;\\,-2)$ و $B(-2\\,;\\,3)$ هما النقطة نفسها؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SWAPSAME"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الفاصلة والترتيب في كلّ زوج."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الأول للخط الأفقي والثاني للخط الشاقولي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إن اختلف العددان فتبديلهما يعطي نقطة أخرى."
+        }
+      ],
+      "feedback": {
+        "correct": "العددان نفسهما لكن ترتيبهما مختلف: نقطتان مختلفتان.",
+        "incorrect": "قارن الفاصلتين ثمّ الترتيبين."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $A$ هي $3$ وفاصلة $B$ هي $-2$",
+          "الفاصلتان مختلفتان: نقطتان مختلفتان"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل النقطتان $A(4\\,;\\,4)$ و $B(4\\,;\\,4)$ هما النقطة نفسها؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "نعم",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الفاصلة والترتيب في كلّ زوج."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الأول للخط الأفقي والثاني للخط الشاقولي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا تساوى العددان فتبديلهما لا يغيّر شيئًا."
+        }
+      ],
+      "feedback": {
+        "correct": "العددان متساويان فهي النقطة نفسها.",
+        "incorrect": "قارن الفاصلتين ثمّ الترتيبين."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $A$ هي $4$ وفاصلة $B$ هي $4$",
+          "الفاصلتان والترتيبان متساويان: النقطة نفسها"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل النقطتان $A(-5\\,;\\,1)$ و $B(1\\,;\\,-5)$ هما النقطة نفسها؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SWAPSAME"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الفاصلة والترتيب في كلّ زوج."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الأول للخط الأفقي والثاني للخط الشاقولي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إن اختلف العددان فتبديلهما يعطي نقطة أخرى."
+        }
+      ],
+      "feedback": {
+        "correct": "العددان نفسهما لكن ترتيبهما مختلف: نقطتان مختلفتان.",
+        "incorrect": "قارن الفاصلتين ثمّ الترتيبين."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $A$ هي $-5$ وفاصلة $B$ هي $1$",
+          "الفاصلتان مختلفتان: نقطتان مختلفتان"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

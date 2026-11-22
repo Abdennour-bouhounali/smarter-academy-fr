@@ -1,0 +1,198 @@
+{
+  "_comment": "« حصّة القسم » — the DEFAULT class tests of lesson « العددان الأوّليّان فيما بينهما » (docs/architecture/CLASS_SESSION.md). `start` opens the hour: what the lesson stands on (a PGCD by Euclid, the Euclidean division, a divisor, a divisibility rule), then two questions of the NEW lesson (`teaser`: two numbers whose only common divisor is 1, a PGCD that is 1 — asked again at the end, with other numbers). `end` closes it on the three الكفاءات of the lesson (one item of the learning net, 4am.m1.r04), weighted as the bank weighs them (P1 26, P2 113, P3 41 of its 180 questions): recognising two coprime numbers (P1: e1), proving they ARE by computing their PGCD, which is 1 (P2: e2, e3, e4, e5, e8 — a PGCD that is NOT 1 although the numbers look unrelated is the trap of e3), proving they are NOT by ONE common divisor other than 1 (P3: e6) — and « I tried 2, 3 and 5 and none divides both » proves nothing (P3: e7, always false: a common divisor exists). `pool` holds more prepared questions a teacher may add to his own copy. The numbers are the platform's own: no pair of the lesson's exercise bank, none of the student's story. Every question carries a `check` from which its answer is RE-COMPUTED by a test (defaultTests.test.js): a default test never ships a wrong answer. A class test never changes a student's progress.",
+  "lesson": "awwaliyan-fima-baynahuma",
+  "grade": "4am",
+  "version": 1,
+  "start": [
+    {
+      "id": "s1",
+      "item": "4am.m1.r03",
+      "kind": "number",
+      "text": "احسب $\\mathrm{PGCD}(286 ; 154)$.",
+      "answer": 22,
+      "check": { "type": "pgcd", "a": 286, "b": 154 }
+    },
+    {
+      "id": "s2",
+      "item": "2am.m1.r04",
+      "kind": "choice",
+      "text": "أيّ مساواة هي القسمة الإقليدية للعدد 437 على 58؟",
+      "options": ["$437 = 58 \\times 6 + 89$", "$437 = 58 \\times 7 + 31$", "$437 = 58 \\times 8 - 27$"],
+      "answer": 1,
+      "check": { "type": "euclid", "a": 437, "b": 58 }
+    },
+    {
+      "id": "s3",
+      "item": "1am.m3.r02",
+      "kind": "truefalse",
+      "text": "العدد 2871 يقبل القسمة على 9.",
+      "answer": true,
+      "check": { "type": "divisible", "a": 2871, "k": 9 }
+    },
+    {
+      "id": "s4",
+      "item": "4am.m1.r02",
+      "kind": "truefalse",
+      "text": "23 قاسم للعدد 391.",
+      "answer": true,
+      "check": { "type": "divisor", "a": 391, "b": 23 }
+    },
+    {
+      "id": "s5",
+      "item": "4am.m1.r03",
+      "kind": "truefalse",
+      "text": "$\\mathrm{PGCD}(126 ; 90) = 9$.",
+      "answer": false,
+      "check": { "type": "pgcdIs", "a": 126, "b": 90, "g": 9 }
+    },
+    {
+      "id": "s6",
+      "item": "1am.m3.r02",
+      "kind": "choice",
+      "text": "أيّ عدد من هذه الأعداد يقبل القسمة على 5؟",
+      "options": ["605", "352", "731"],
+      "answer": 0,
+      "check": { "type": "pickDivisible", "k": 5 }
+    },
+    {
+      "id": "s7",
+      "item": "4am.m1.r04",
+      "teaser": true,
+      "kind": "truefalse",
+      "text": "القاسم المشترك الوحيد للعددين 34 و 55 هو 1.",
+      "answer": true,
+      "check": { "type": "coprime", "a": 34, "b": 55 }
+    },
+    {
+      "id": "s8",
+      "item": "4am.m1.r04",
+      "teaser": true,
+      "kind": "number",
+      "text": "ما هو أكبر عدد يقسم 143 ويقسم 84 معًا؟",
+      "answer": 1,
+      "check": { "type": "pgcd", "a": 143, "b": 84 }
+    }
+  ],
+  "end": [
+    {
+      "id": "e1",
+      "item": "4am.m1.r04",
+      "pairOf": "s7",
+      "kind": "truefalse",
+      "text": "العددان 49 و 90 أوّليّان فيما بينهما.",
+      "answer": true,
+      "check": { "type": "coprime", "a": 49, "b": 90 }
+    },
+    {
+      "id": "e2",
+      "item": "4am.m1.r04",
+      "pairOf": "s8",
+      "kind": "number",
+      "text": "احسب $\\mathrm{PGCD}(451 ; 180)$ بخوارزمية إقليدس.",
+      "answer": 1,
+      "check": { "type": "pgcd", "a": 451, "b": 180 }
+    },
+    {
+      "id": "e3",
+      "item": "4am.m1.r04",
+      "kind": "truefalse",
+      "text": "$\\mathrm{PGCD}(325 ; 182) = 1$.",
+      "answer": false,
+      "check": { "type": "pgcdIs", "a": 325, "b": 182, "g": 1 }
+    },
+    {
+      "id": "e4",
+      "item": "4am.m1.r04",
+      "kind": "number",
+      "text": "احسب $\\mathrm{PGCD}(616 ; 351)$، ثمّ استنتج: هل العددان أوّليّان فيما بينهما؟",
+      "answer": 1,
+      "check": { "type": "pgcd", "a": 616, "b": 351 }
+    },
+    {
+      "id": "e5",
+      "item": "4am.m1.r04",
+      "kind": "choice",
+      "text": "ما هو $\\mathrm{PGCD}(256 ; 189)$؟",
+      "options": ["1", "3", "7"],
+      "answer": 0,
+      "check": { "type": "pgcdPick", "a": 256, "b": 189 }
+    },
+    {
+      "id": "e6",
+      "item": "4am.m1.r04",
+      "kind": "choice",
+      "text": "أيّ عدد قاسم مشترك للعددين 465 و 735 يختلف عن 1؟",
+      "options": ["2", "5", "9"],
+      "answer": 1,
+      "check": { "type": "witnessPick", "a": 465, "b": 735 }
+    },
+    {
+      "id": "e7",
+      "item": "4am.m1.r04",
+      "kind": "truefalse",
+      "text": "العددان 221 و 323 لا يقبلان القسمة على 2 ولا على 3 ولا على 5، إذن هما أوّليّان فيما بينهما.",
+      "answer": false,
+      "check": { "type": "noSmallWitness", "a": 221, "b": 323, "tried": [2, 3, 5] }
+    },
+    {
+      "id": "e8",
+      "item": "4am.m1.r04",
+      "kind": "truefalse",
+      "text": "$\\mathrm{PGCD}(512 ; 375) = 1$.",
+      "answer": true,
+      "check": { "type": "pgcdIs", "a": 512, "b": 375, "g": 1 }
+    }
+  ],
+  "pool": [
+    {
+      "id": "p1",
+      "item": "4am.m1.r04",
+      "kind": "choice",
+      "text": "أيّ زوج عددان أوّليّان فيما بينهما؟",
+      "options": ["69 و 92", "69 و 94", "69 و 93"],
+      "answer": 1,
+      "check": { "type": "coprimePick" }
+    },
+    {
+      "id": "p2",
+      "item": "4am.m1.r04",
+      "kind": "choice",
+      "text": "أيّ عدد قاسم مشترك للعددين 714 و 1122 يختلف عن 1؟",
+      "options": ["4", "6", "5"],
+      "answer": 1,
+      "check": { "type": "witnessPick", "a": 714, "b": 1122 }
+    },
+    {
+      "id": "p3",
+      "item": "4am.m1.r04",
+      "kind": "number",
+      "text": "احسب $\\mathrm{PGCD}(1003 ; 600)$.",
+      "answer": 1,
+      "check": { "type": "pgcd", "a": 1003, "b": 600 }
+    },
+    {
+      "id": "p4",
+      "item": "4am.m1.r04",
+      "kind": "truefalse",
+      "text": "العددان 323 و 391 لا يقبلان القسمة على 2 ولا على 3 ولا على 5، إذن هما أوّليّان فيما بينهما.",
+      "answer": false,
+      "check": { "type": "noSmallWitness", "a": 323, "b": 391, "tried": [2, 3, 5] }
+    },
+    {
+      "id": "p5",
+      "item": "4am.m1.r04",
+      "kind": "truefalse",
+      "text": "العددان 1000 و 999 أوّليّان فيما بينهما.",
+      "answer": true,
+      "check": { "type": "coprime", "a": 1000, "b": 999 }
+    },
+    {
+      "id": "p6",
+      "item": "4am.m1.r04",
+      "kind": "truefalse",
+      "text": "$\\mathrm{PGCD}(462 ; 595) = 1$.",
+      "answer": false,
+      "check": { "type": "pgcdIs", "a": 462, "b": 595, "g": 1 }
+    }
+  ]
+}

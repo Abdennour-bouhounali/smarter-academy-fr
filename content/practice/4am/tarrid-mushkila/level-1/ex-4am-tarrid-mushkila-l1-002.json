@@ -1,0 +1,91 @@
+{
+  "id": "ex-4am-tarrid-mushkila-l1-002",
+  "lessonCode": "tarrid-mushkila",
+  "level": 1,
+  "metadata": {
+    "title": "العدد المجهول — ضعف العدد المختار",
+    "estimatedMinutes": 3,
+    "tags": [
+      "ترييض",
+      "معادلة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-11",
+      "page": 50,
+      "section": "أوظّف تعلّماتي",
+      "number": 11
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نبحث عن العدد الذي إذا ضربته في 3 و طرحت منه 21 ، تحصل على ضعف العدد الذي اخترته في البداية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "سمِّ $x$ العدد المختار، اكتب معادلة تترجم النص ثم حلّها.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-mushkila_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: قيمة $x$ (اكتب معادلتك في «مراحل الحساب»)",
+      "expectedAnswer": "21",
+      "misconceptionSignatures": [
+        {
+          "value": "63",
+          "id": "MISC-TARRID-DIF-MAJMU"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يحدث للعدد المختار؟ وما الذي نحصل عليه في الأخير؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الطرف الأول: نضرب في 3 ثم نطرح 21 . الطرف الثاني: ضعف العدد المختار $2x$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع حدود $x$ في طرف واحد والأعداد في الطرف الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "المعادلة $3x - 21 = 2x$ ، وحلها $x = 21$ .",
+        "incorrect": "الطرح يأتي بعد الضرب: لا تضع قوسين حول $x - 21$ ."
+      },
+      "solution": {
+        "lines": [
+          "نسمّي $x$ العدد المختار.",
+          "ضربه في 3 ثم طرح 21 يعطي $3x - 21$ ، وضعف العدد المختار هو $2x$ .",
+          "المعادلة: $3x - 21 = 2x$",
+          "$3x - 2x = 21$",
+          "$x = 21$",
+          "التحقق: $3 \\times 21 - 21 = 42$ و $2 \\times 21 = 42$ .",
+          "إذن العدد المختار هو 21 ."
+        ],
+        "result": "x = 21"
+      },
+      "work": "required",
+      "timeSeconds": 240
+    }
+  ]
+}

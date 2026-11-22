@@ -1,0 +1,271 @@
+{
+  "id": "ex-4am-tahlil-ibara-l5-002",
+  "lessonCode": "tahlil-ibara",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2010 — أرضية ورشة النجارة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "عامل مشترك",
+      "مساحة",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tahlil-ibara_P2",
+      "modelledOn": "BEM 2010 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2010",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يريد صاحب ورشة نجارة بمدينة بومرداس، يتقن حرفته ويعلّمها لشباب الحيّ مجانًا، تبليط أرضيتها المكوّنة من جزأين متلاصقين: جزء مربع الشكل طول ضلعه $(2x + 1)$ m ، وجزء مستطيل الشكل بُعداه $(2x + 1)$ m و $5$ m ، حيث $x$ عدد موجب."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عبّر بدلالة $x$ عن المساحة الكلية $S$ للأرضية، ثم حلّلها إلى جداء عاملين من الدرجة الأولى.",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tahlil-ibara_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $S$ على الشكل $(2x + 1)(mx + n)$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة المربع $(2x + 1)^2$ ومساحة المستطيل $5(2x + 1)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العامل $(2x + 1)$ مشترك بين المساحتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بسّط ما بين القوسين الكبيرين بإشاراته، ثم قارن بالشكل المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = (2x + 1)(2x + 6)$ إذن $m = 2$ .",
+        "incorrect": "أخرج العامل المشترك من كل حد، ثم بسّط ما بين القوسين الكبيرين بإشاراته (حدّ وحده يعني $1$)."
+      },
+      "solution": {
+        "lines": [
+          "$S = (2x + 1)^2 + 5(2x + 1)$",
+          "$S = (2x + 1)(2x + 1 + 5)$"
+        ],
+        "result": "S = (2x + 1)(2x + 6)"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tahlil-ibara_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $S$ على الشكل $(2x + 1)(mx + n)$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العدد المطلوب في الشكل المحلّل، بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = (2x + 1)(2x + 6)$ إذن $n = 6$ .",
+        "incorrect": "أخرج العامل المشترك من كل حد، ثم بسّط ما بين القوسين الكبيرين بإشاراته (حدّ وحده يعني $1$)."
+      },
+      "solution": {
+        "lines": [
+          "$S = (2x + 1)(2x + 6)$"
+        ],
+        "result": "n = 6"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "استنتج كتابة $S$ على الشكل $k(2x + 1)(x + m)$ .",
+      "statement": "العدد $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $S$ على الشكل $k(2x + 1)(x + m)$ : اكتب العدد $k$ فقط",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّل العامل $(2x + 6)$ باستخراج عامل مشترك عددي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لاحظ أن $6 = 2 \\times 3$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = 2(2x + 1)(x + 3)$ إذن $k = 2$ .",
+        "incorrect": "أخرج العامل المشترك من كل حد، ثم بسّط ما بين القوسين الكبيرين بإشاراته (حدّ وحده يعني $1$)."
+      },
+      "solution": {
+        "lines": [
+          "$2x + 6 = 2 \\times x + 2 \\times 3 = 2(x + 3)$",
+          "$S = 2(2x + 1)(x + 3)$"
+        ],
+        "result": "S = 2(2x + 1)(x + 3)"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $S$ على الشكل $k(2x + 1)(x + m)$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العدد المطلوب في الشكل المحلّل، بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = 2(2x + 1)(x + 3)$ إذن $m = 3$ .",
+        "incorrect": "أخرج العامل المشترك من كل حد، ثم بسّط ما بين القوسين الكبيرين بإشاراته (حدّ وحده يعني $1$)."
+      },
+      "solution": {
+        "lines": [
+          "$S = 2(2x + 1)(x + 3)$"
+        ],
+        "result": "m = 3"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "نأخذ $x = 4$ . احسب المساحة $S$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (بالمتر المربع)",
+      "expectedAnswer": "126",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى في الشكل المحلّل: الحساب أسهل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب قيمة كل عامل، ثم اضرب."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = 126\\ m^2$ .",
+        "incorrect": "عوّض $x$ في كل عامل، واحترم الإشارات وأولويات العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$S = 2(2 \\times 4 + 1)(4 + 3) = 2 \\times 9 \\times 7$"
+        ],
+        "result": "S = 126\\ m^2"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "☜ ثمن المتر المربع من البلاط 1250DA ، وأجرة البنّاء 450DA للمتر المربع. ما هي التكلفة الإجمالية لتبليط الأرضية؟",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدينار DA)",
+      "expectedAnswer": "214200",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب تكلفة المتر المربع الواحد (البلاط + الأجرة)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضربها في مساحة الأرضية."
+        }
+      ],
+      "feedback": {
+        "correct": "$214200\\ DA$ .",
+        "incorrect": "التكلفة لكل متر مربع تشمل البلاط والأجرة معًا؛ اضربها في المساحة الكلية."
+      },
+      "solution": {
+        "lines": [
+          "تكلفة المتر المربع الواحد: $1250 + 450 = 1700$ DA",
+          "التكلفة الإجمالية: $126 \\times 1700 = 214200$ DA"
+        ],
+        "result": "214200\\ DA"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

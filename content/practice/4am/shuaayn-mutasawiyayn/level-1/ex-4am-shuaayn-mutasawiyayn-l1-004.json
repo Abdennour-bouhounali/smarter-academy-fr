@@ -1,0 +1,74 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l1-004",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — أين المنتصف؟",
+    "estimatedMinutes": 3,
+    "tags": [
+      "المنتصف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_shuaayn-mutasawiyayn_P1",
+      "modelledOn": "know-3"
+    }
+  },
+  "statement": {
+    "content": "R، S، T ثلاث نقط حيث $\\overrightarrow{RS} = \\overrightarrow{ST}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إذن:",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "S منتصف [RT]",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "R منتصف [ST]",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MUNTASAF-IB-IA"
+        },
+        {
+          "id": "C",
+          "content": "T منتصف [RS]",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أي نقطة هي نهاية الشعاع الأول ومبدأ الثاني؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "معارف 3: إذا كان AI = IB (شعاعان) فإن I منتصف [AB]."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طابق الحروف مع الخاصية: A ← R، I ← S، B ← T."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة المشتركة S تقع في الوسط: S منتصف [RT].",
+        "incorrect": "طابق المساواة مع خاصية معارف 3 حرفا حرفا."
+      }
+    }
+  ]
+}

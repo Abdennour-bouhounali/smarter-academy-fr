@@ -1,0 +1,131 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-dawaran-l5-009",
+  "lessonCode": "wadiya-idmajiya-dawaran",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — تحليل خطأ",
+    "estimatedMinutes": 4,
+    "tags": [
+      "المسافة في المثلث القائم",
+      "المضلع المنتظم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-dawaran_P1",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "قال ياسين: «سبعة أعمدة متباعدة بنفس المسافة حول حوض نصف قطره $4\\,\\mathrm{m}$ ، فالمسافة بين عمودين متتاليين $4\\,\\mathrm{m}$ كما في السداسي.»"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "رأيك في قول ياسين:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح: المسافة بين عمودين متتاليين تساوي نصف القطر دائما",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-DIL"
+        },
+        {
+          "id": "B",
+          "content": "خاطئ: الزاوية المركزية $\\dfrac{360^\\circ}{7}$ لا $60^\\circ$ ، فالمثلث ليس متقايس الأضلاع",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "خاطئ: المسافة تساوي القطر $8\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-DAIRA-QUTR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الزاوية المركزية لسبعة أعمدة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل هي $60^\\circ$ ؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$d = r$ فقط إذا كان المثلث متقايس الأضلاع."
+        }
+      ],
+      "feedback": {
+        "correct": "الزاوية المركزية $\\dfrac{360^\\circ}{7} \\approx 51{,}4^\\circ$ : المثلث متساوي الساقين فقط، و $d < r$ .",
+        "incorrect": "$d = r$ خاص بالسداسي المنتظم."
+      },
+      "cognitiveDemand": "reason",
+      "difficulty": 5
+    },
+    {
+      "id": "q2",
+      "statement": "المسافة الصحيحة بالمتر، مدوّرة إلى $0{,}01$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة (مدوّر إلى 0,01)",
+      "expectedAnswer": "3.47",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث القائم: الزاوية عند المركز $\\dfrac{180^\\circ}{7}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نصف المسافة $= 4\\sin\\dfrac{180^\\circ}{7}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضاعف ثم دوّر في الأخير."
+        }
+      ],
+      "feedback": {
+        "correct": "$d = 8\\sin\\dfrac{180^\\circ}{7} \\approx 3{,}47\\,\\mathrm{m}$ .",
+        "incorrect": "الجيب لنصف الزاوية المركزية، ثم الضرب في $2r$ ."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-MUNTAZAM-DIL"
+        },
+        {
+          "value": "6.25",
+          "id": "MISC-MUNTAZAM-NISF-ZAWIYA"
+        },
+        {
+          "value": "3.59",
+          "id": "MISC-MUNTAZAM-QAWS-WATAR"
+        }
+      ],
+      "difficulty": 5
+    }
+  ]
+}

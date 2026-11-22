@@ -1,0 +1,193 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-mafhum-muadala-l3-007",
+  "lessonCode": "wadiya-idmajiya-mafhum-muadala",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — بطاقتا دخول لمسبح",
+    "estimatedMinutes": 11,
+    "tags": [
+      "صيغتان",
+      "مقارنة",
+      "متباينة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "البطاقة الأولى لمسبح تكلّف $2000$ DA ثابتة و $100$ DA عن كلّ زيارة ، والبطاقة الثانية $800$ DA ثابتة و $160$ DA عن كلّ زيارة . نسمّي $n$ عدد الزيارات ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل المساواة $2000+100n = 800+160n$ صحيحة من أجل $n = 20$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "feedback": {
+        "correct": "نعم .",
+        "incorrect": "عوّض الحرف في الطرفين، احسب كلّ طرف ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل : $2000+100 \\times 20 = 4000$ .",
+          "الطرف الثاني : $800+160 \\times 20 = 4000$ .",
+          "$4000 = 4000$ : الطرفان متساويان، فالمساواة صحيحة ."
+        ]
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بقيمته المعطاة في الطرفين معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة ثمّ قارن الناتجين بالرمز المكتوب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الرمز « أصغر أو يساوي » يقبل التساوي، والرمز « أصغر تمامًا » لا يقبله."
+        }
+      ],
+      "timeSeconds": 70
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم قيمة من القيم $15$ ، $20$ ، $25$ ، $30$ للزيارات تكون عندها البطاقة الثانية أرخص تمامًا من الأولى ، أي $800+160n < 2000+100n$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-IKHTIBAR-BOUNDARY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ قيمة من القيم المعطاة على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الطرفين من أجل كلّ قيمة ثمّ قارن بالرمز المكتوب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عُدّ القيم التي تجعل المتباينة صحيحة فقط، وانتبه إلى حالة تساوي الطرفين."
+        }
+      ],
+      "feedback": {
+        "correct": "$1$ .",
+        "incorrect": "اختبر كلّ قيمة على حدة وانتبه إلى حالة تساوي الطرفين."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $n = 15$ : $800+160 \\times 15 = 3200$ و $2000+100 \\times 15 = 3500$ ، فالعلاقة صحيحة .",
+          "من أجل $n = 20$ : $800+160 \\times 20 = 4000$ و $2000+100 \\times 20 = 4000$ ، فالعلاقة خاطئة .",
+          "من أجل $n = 25$ : $800+160 \\times 25 = 4800$ و $2000+100 \\times 25 = 4500$ ، فالعلاقة خاطئة .",
+          "من أجل $n = 30$ : $800+160 \\times 30 = 5600$ و $2000+100 \\times 30 = 5000$ ، فالعلاقة خاطئة .",
+          "عدد القيم : $1$ ."
+        ],
+        "result": "1"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما ثمن $n = 15$ زيارة بالبطاقة الثانية بالدينار ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "3200",
+      "misconceptionSignatures": [
+        {
+          "value": "2400",
+          "id": "MISC-SYN-MUAD2-FIXED"
+        },
+        {
+          "value": "14400",
+          "id": "MISC-SYN-MUAD2-ADDCOEF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بقيمته المعلومة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات : الضرب والقسمة قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة."
+        }
+      ],
+      "feedback": {
+        "correct": "النتيجة $3200$ .",
+        "incorrect": "عوّض بالقيم المعلومة واحسب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$800+160 \\times 15 = 3200$ ."
+        ],
+        "result": "3200"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

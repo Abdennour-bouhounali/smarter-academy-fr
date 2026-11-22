@@ -1,0 +1,123 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l1-001",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 1,
+  "metadata": {
+    "title": "معارف 3 — المنتصف وتساوي شعاعين",
+    "estimatedMinutes": 3,
+    "tags": [
+      "المنتصف"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-3",
+      "page": 132,
+      "section": "معارف",
+      "number": 3
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 132): على الشكل، I نقطة من القطعة [AB] حيث AI = IB (الترميز).",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "I": [
+          3,
+          0
+        ],
+        "B": [
+          6,
+          0
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "I",
+          "ticks": 2
+        },
+        {
+          "from": "I",
+          "to": "B",
+          "ticks": 2
+        }
+      ],
+      "vectors": [
+        {
+          "from": "A",
+          "to": "I",
+          "tone": "indigo"
+        },
+        {
+          "from": "I",
+          "to": "B",
+          "tone": "amber"
+        }
+      ],
+      "labels": {
+        "A": "s",
+        "I": "s",
+        "B": "s"
+      },
+      "ariaLabel": "قطعة [AB] و I منتصفها، والشعاعان AI و IB متساويان",
+      "maxWidth": 440
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أيّ مساواة صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{AI} = \\overrightarrow{BI}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MUNTASAF-IB-IA"
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{IA} = \\overrightarrow{IB}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{AI} = \\overrightarrow{IB}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى اتجاه كل شعاع: من مبدئه نحو نهايته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "شعاعان متساويان لهما نفس المنحى ونفس الاتجاه ونفس الطول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ابحث عن الكتابة التي يسير فيها الشعاعان كلاهما من A نحو B."
+        }
+      ],
+      "feedback": {
+        "correct": "I منتصف [AB]: الشعاعان AI و IB يتجهان كلاهما من A نحو B ولهما نفس الطول.",
+        "incorrect": "قارن الاتجاهين: أحد الشعاعين في الكتابات الأخرى يسير من B نحو A."
+      }
+    }
+  ]
+}

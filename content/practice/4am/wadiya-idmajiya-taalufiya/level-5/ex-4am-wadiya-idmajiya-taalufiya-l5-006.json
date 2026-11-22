@@ -1,0 +1,452 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-taalufiya-l5-006",
+  "lessonCode": "wadiya-idmajiya-taalufiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2013 — كراء شاليه صيفي بعين الترك",
+    "estimatedMinutes": 35,
+    "tags": [
+      "وضعية إدماجية",
+      "ثلاث صيغ",
+      "جدول"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-taalufiya_P2",
+      "modelledOn": "BEM 2013 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2013",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تريد عائلة من سطيف كراء شاليه صيفي بعين الترك لتقضي عطلة مع الجدّين برًّا بهما، فاتصل الأب بثلاث وكالات:\n- الوكالة الأولى: 5000DA لليلة الواحدة.\n- الوكالة الثانية: 3500DA لليلة الواحدة، يضاف إليها 9000DA مصاريف التنظيف والتأمين.\n- الوكالة الثالثة: 51000DA جزافيا لمدة لا تتجاوز 15 ليلة.\nنسمّي $x$ عدد الليالي، و $f(x)$ ، $g(x)$ ، $h(x)$ المبالغ بـ DA حسب الوكالات الأولى والثانية والثالثة.",
+    "table": {
+      "head": [
+        "عدد الليالي",
+        "5",
+        "10"
+      ],
+      "rows": [
+        [
+          "المبلغ حسب الوكالة الأولى (DA)",
+          "…",
+          "…"
+        ],
+        [
+          "المبلغ حسب الوكالة الثانية (DA)",
+          "…",
+          "…"
+        ],
+        [
+          "المبلغ حسب الوكالة الثالثة (DA)",
+          "51000",
+          "51000"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انقل وأكمل الجدول.",
+      "statement": "الوكالة الأولى، 5 ليال:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "25000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب عدد الليالي في ثمن الليلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$5000 \\times 5$ .",
+        "incorrect": "الوكالة الأولى: ثمن الليلة فقط."
+      },
+      "solution": {
+        "lines": [
+          "$f(5) = 5000 \\times 5 = 25000$ ، $f(10) = 50000$",
+          "$g(5) = 3500 \\times 5 + 9000 = 26500$ ، $g(10) = 44000$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "الوكالة الأولى، 10 ليال:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "50000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب عدد الليالي في ثمن الليلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$5000 \\times 10$ .",
+        "incorrect": "الوكالة الأولى: ثمن الليلة فقط."
+      },
+      "solution": {
+        "lines": [
+          "$f(5) = 5000 \\times 5 = 25000$ ، $f(10) = 50000$",
+          "$g(5) = 3500 \\times 5 + 9000 = 26500$ ، $g(10) = 44000$"
+        ]
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "الوكالة الثانية، 5 ليال:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "26500",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAALUFI-NISYAN-B",
+          "value": "17500"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثمن الليالي ثم المصاريف."
+        }
+      ],
+      "feedback": {
+        "correct": "$3500 \\times 5 + 9000$ .",
+        "incorrect": "لا تنس مصاريف التنظيف والتأمين."
+      },
+      "solution": {
+        "lines": [
+          "$f(5) = 5000 \\times 5 = 25000$ ، $f(10) = 50000$",
+          "$g(5) = 3500 \\times 5 + 9000 = 26500$ ، $g(10) = 44000$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "statement": "الوكالة الثانية، 10 ليال:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "44000",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAALUFI-NISYAN-B",
+          "value": "35000"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثمن الليالي ثم المصاريف."
+        }
+      ],
+      "feedback": {
+        "correct": "$3500 \\times 10 + 9000$ .",
+        "incorrect": "لا تنس مصاريف التنظيف والتأمين."
+      },
+      "solution": {
+        "lines": [
+          "$f(5) = 5000 \\times 5 = 25000$ ، $f(10) = 50000$",
+          "$g(5) = 3500 \\times 5 + 9000 = 26500$ ، $g(10) = 44000$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "lead": "عبّر عن $f(x)$ و $g(x)$ بدلالة $x$ .",
+      "statement": "أعط العدد $a$ حيث: $f(x) = ax$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "5000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثمن الليلة في الوكالة الأولى."
+        }
+      ],
+      "feedback": {
+        "correct": "$f$ دالة خطية.",
+        "incorrect": "معامل $x$ هو ثمن الليلة."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 5000x$",
+          "$g(x) = 3500x + 9000$",
+          "$h(x) = 51000$"
+        ],
+        "result": "f(x) = 5000x"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "statement": "أعط العددين $a$ و $b$ حيث: $g(x) = ax + b$ ، ابدأ بالعدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "3500",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "9000"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما يُدفع عن كل ليلة في الوكالة الثانية."
+        }
+      ],
+      "feedback": {
+        "correct": "معامل $x$ هو ثمن الليلة.",
+        "incorrect": "معامل $x$ هو ما يتكرّر كل ليلة، لا المصاريف."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 5000x$",
+          "$g(x) = 3500x + 9000$",
+          "$h(x) = 51000$"
+        ],
+        "result": "g(x) = 3500x + 9000"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q7",
+      "step": "02",
+      "statement": "ثم العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "9000",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "3500"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما يُدفع مرّة واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "المصاريف هي الحدّ الثابت.",
+        "incorrect": "الحدّ الثابت لا يتعلّق بعدد الليالي."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 5000x$",
+          "$g(x) = 3500x + 9000$",
+          "$h(x) = 51000$"
+        ],
+        "result": "g(x) = 3500x + 9000"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q8",
+      "step": "03",
+      "sub": "ا",
+      "lead": "حلّ المعادلتين الآتيتين، ثم فسّر كل حل.",
+      "statement": "$f(x) = g(x)$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الليالي",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$5000x = 3500x + 9000$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$1500x = 9000$ .",
+        "incorrect": "اجمع حدود $x$ في طرف واحد."
+      },
+      "solution": {
+        "lines": [
+          "$5000x = 3500x + 9000$",
+          "$1500x = 9000$",
+          "$x = 6$",
+          "من أجل 6 ليال تتساوى الوكالتان الأولى والثانية."
+        ],
+        "result": "x = 6"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q9",
+      "step": "03",
+      "sub": "ب",
+      "statement": "$g(x) = h(x)$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الليالي",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$3500x + 9000 = 51000$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$3500x = 42000$ .",
+        "incorrect": "اطرح المصاريف ثم اقسم على ثمن الليلة."
+      },
+      "solution": {
+        "lines": [
+          "$3500x + 9000 = 51000$",
+          "$3500x = 42000$",
+          "$x = 12$",
+          "من أجل 12 ليلة تتساوى الوكالتان الثانية والثالثة."
+        ],
+        "result": "x = 12"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q10",
+      "step": "04",
+      "statement": "☜ تريد العائلة قضاء أسبوعين (14 ليلة) في الشاليه. ما هي الوكالة الأقل تكلفة؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الوكالة الأولى",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        },
+        {
+          "id": "B",
+          "content": "الوكالة الثانية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        },
+        {
+          "id": "C",
+          "content": "الوكالة الثالثة",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "14 أكبر من حلّي المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب المبالغ الثلاثة من أجل 14 ليلة."
+        }
+      ],
+      "feedback": {
+        "correct": "70000DA و 58000DA و 51000DA .",
+        "incorrect": "احسب $f(14)$ و $g(14)$ و $h(14)$ ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "$f(14) = 5000 \\times 14 = 70000DA$",
+          "$g(14) = 3500 \\times 14 + 9000 = 58000DA$",
+          "$h(14) = 51000DA$",
+          "إذن الوكالة الثالثة هي الأقل تكلفة لـ 14 ليلة (ابتداء من 12 ليلة تكون الثالثة الأقل تكلفة)."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

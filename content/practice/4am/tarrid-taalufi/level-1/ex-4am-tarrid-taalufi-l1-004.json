@@ -1,0 +1,110 @@
+{
+  "id": "ex-4am-tarrid-taalufi-l1-004",
+  "lessonCode": "tarrid-taalufi",
+  "level": 1,
+  "metadata": {
+    "title": "قاعة رياضة — معنى الحدّ الثابت",
+    "estimatedMinutes": 5,
+    "tags": [
+      "نمذجة",
+      "صورة عدد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-taalufi_P1",
+      "modelledOn": "act-4",
+      "adaptedFrom": "ex-4am-tarrid-taalufi-l1-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "تكلفة شهر في قاعة رياضة هي $f(x) = 100x + 1500$ (بـ DA)، حيث $x$ عدد الحصص في الشهر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $f(0)$ ، ثم فسّر النتيجة.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "1500",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد 0."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ماذا يدفع منخرط لم يحضر أي حصة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$f(0)$ هو الجزء الثابت: الاشتراك الشهري الذي يُدفع حتى دون أي حصة.",
+        "incorrect": "عوّض $x$ بالعدد 0: يبقى الحدّ الثابت وحده."
+      },
+      "solution": {
+        "lines": [
+          "$f(0) = 100 \\times 0 + 1500 = 1500$",
+          "التفسير: 1500DA هو الاشتراك الشهري الذي يُدفع مرّة واحدة، ولو لم يحضر المنخرط أي حصة."
+        ],
+        "result": "1500DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب تكلفة شهر حضر فيه سمير 8 حصص.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "2300",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAALUFI-NISYAN-B",
+          "value": "800"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد 8 في عبارة $f(x)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$100 \\times 8 + 1500$ .",
+        "incorrect": "احسب ثمن الحصص ثم أضف الاشتراك."
+      },
+      "solution": {
+        "lines": [
+          "$f(8) = 100 \\times 8 + 1500 = 800 + 1500 = 2300$",
+          "التكلفة 2300DA ."
+        ],
+        "result": "2300DA"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l5-007",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2020 — أعمدة الإنارة في شارع",
+    "estimatedMinutes": 12,
+    "tags": [
+      "قاسم",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-adad-tabii_P1",
+      "modelledOn": "BEM 2020 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2020",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "طول شارع مستقيم بمدينة البليدة 1260m. تريد البلدية، خدمةً للمواطنين وحرصًا على سلامتهم ليلًا، وضع أعمدة إنارة على أحد جانبيه، بحيث تكون المسافة بين كل عمودين متتاليين هي نفسها، مع وضع عمود في كل طرف من طرفي الشارع.\n• ثمن العمود الواحد 18500DA.\n• تكلفة تركيب العمود الواحد 2000DA.\n• خصّصت البلدية لهذا المشروع 800000DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "هل يمكن أن تكون المسافة بين كل عمودين متتاليين 35m؟ 40m؟ برّر إجابتك.",
+      "statement": "المسافة 35m.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 1260 على 35."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "35 قاسم للعدد 1260 إذا وفقط إذا كان باقي هذه القسمة معدومًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$1260 = 35 \\times 36$: الباقي معدوم.",
+        "incorrect": "أجرِ القسمة الإقليدية للعدد 1260 على 35، وانظر هل الباقي معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$1260 = 35 \\times 36$ (الباقي معدوم).",
+          "إذن 35 قاسم للعدد 1260: يمكن ذلك."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "المسافة 40m.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 1260 على 40."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "40 قاسم للعدد 1260 إذا وفقط إذا كان باقي هذه القسمة معدومًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$1260 = 40 \\times 31 + 20$: الباقي غير معدوم.",
+        "incorrect": "أجرِ القسمة الإقليدية للعدد 1260 على 40، وانظر هل الباقي معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$1260 = 40 \\times 31 + 20$ مع $20 < 40$",
+          "الباقي 20 غير معدوم، إذن 40 ليس قاسمًا للعدد 1260: لا يمكن ذلك."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "اعتمدت البلدية مسافة 35m. أوجد عدد الأعمدة اللازمة.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "37",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم مسافة من 35m في طول الشارع؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ارسم مخططًا صغيرًا: 3 مسافات تحتاج إلى 4 أعمدة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ العمود الموجود في الطرف الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "$1260 = 35 \\times 36$: 36 مسافة، أي $36 + 1 = 37$ عمودًا.",
+        "incorrect": "احسب عدد المسافات بين الأعمدة، ثم تذكّر أن في كل طرف عمودًا."
+      },
+      "solution": {
+        "lines": [
+          "$1260 = 35 \\times 36$: في طول الشارع 36 مسافة من 35m.",
+          "في كل طرف عمود، فعدد الأعمدة يزيد بواحد على عدد المسافات:",
+          "$36 + 1$"
+        ],
+        "result": "37"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "☜ هل يكفي المبلغ المخصص؟ أعط المبلغ المتبقي.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (DA)",
+      "expectedAnswer": "41500",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تكلفة العمود الواحد مع تركيبه = ثمنه + تكلفة تركيبه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضربها في عدد الأعمدة، ثم قارن بالمبلغ المخصص."
+        }
+      ],
+      "feedback": {
+        "correct": "تكلفة العمود مع تركيبه 20500DA، وللأعمدة $37 \\times 20500 = 758500$DA، فيبقى $41500$DA.",
+        "incorrect": "احسب تكلفة العمود مع تركيبه، ثم تكلفة كل الأعمدة، ثم اطرحها من 800000DA."
+      },
+      "solution": {
+        "lines": [
+          "تكلفة العمود مع تركيبه: $18500 + 2000 = 20500$ أي 20500DA.",
+          "تكلفة كل الأعمدة: $37 \\times 20500 = 758500$ أي 758500DA.",
+          "$758500 < 800000$: المبلغ يكفي.",
+          "المتبقي: $800000 - 758500$"
+        ],
+        "result": "41500 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

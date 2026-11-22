@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-misaha-hajm-kura-l1-007",
+  "lessonCode": "misaha-hajm-kura",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — كرة نصف قطرها 1",
+    "estimatedMinutes": 1,
+    "tags": [
+      "مساحة الكرة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_misaha-hajm-kura_P1",
+      "modelledOn": "know-2"
+    }
+  },
+  "statement": {
+    "content": "كرة نصف قطرها $1\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "القيمة المضبوطة لمساحتها هي:",
+      "learningPoints": [
+        {
+          "code": "4am_misaha-hajm-kura_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\pi\\,\\mathrm{cm}^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MISAHA-DAIRA"
+        },
+        {
+          "id": "B",
+          "content": "$2\\pi\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MISAHA-MUHIT"
+        },
+        {
+          "id": "C",
+          "content": "$4\\pi\\,\\mathrm{cm}^2$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القانون $\\mathcal{A} = 4\\pi R^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$1^2 = 1$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض $R = 1$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\mathcal{A} = 4\\pi \\times 1^2 = 4\\pi\\,\\mathrm{cm}^2$ .",
+        "incorrect": "$\\pi$ مساحة القرص الكبير وحده، و $2\\pi\\,\\mathrm{cm}$ محيطه."
+      },
+      "difficulty": 1
+    }
+  ]
+}

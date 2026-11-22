@@ -1,0 +1,347 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l5-007",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — قفف التضامن",
+    "estimatedMinutes": 18,
+    "tags": [
+      "تضامن",
+      "قابلية القسمة",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: تحضّر جمعية قففًا للعائلات المعوزة: في كل قفة 12 كيلوغرامًا من السميد و 9 لترات من الزيت و 6 كيلوغرامات من السكر. لديها 2016 كيلوغرامًا من السميد و 1512 لترًا من الزيت و 1000 كيلوغرام من السكر.\nالجزء الثاني: تريد الجمعية أن تعرف كم قفة كاملة يمكنها تحضيرها، وما ينقصها لتكمل 168 قفة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "كم قفة يكفيها السميد؟ (احسب $\\frac{2016}{12}$)",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد القفف",
+      "expectedAnswer": "168",
+      "misconceptionSignatures": [
+        {
+          "value": "169",
+          "id": "MISC-HASR-SIFR-SARIM"
+        },
+        {
+          "value": "167",
+          "id": "MISC-HASR-SIFR-SARIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 2016 على 12."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي معدوم: حاصل القسمة هو القيمة المضبوطة."
+        }
+      ],
+      "feedback": {
+        "correct": "$2016 = 12 \\times 168$ ، إذن $\\frac{2016}{12} = 168$.",
+        "incorrect": "ابحث عن العدد الطبيعي الذي إذا ضربناه في 12 نجد 2016."
+      },
+      "solution": {
+        "lines": [
+          "$12 \\times 168 = 2016$",
+          "إذن $\\frac{2016}{12} = 168$."
+        ],
+        "result": "168"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل يقبل العدد 1512 القسمة على 9؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-HISAB"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 1512 على 9."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يقبل القسمة يعني: الباقي معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$1512 = 9 \\times 168$ والباقي معدوم.",
+        "incorrect": "انظر إلى باقي القسمة الإقليدية: هل هو معدوم؟"
+      },
+      "solution": {
+        "lines": [
+          "$1512 = 9 \\times 168 + 0$",
+          "الباقي معدوم، إذن 1512 يقبل القسمة على 9."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "كم قفة كاملة يكفيها السكر؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد القفف",
+      "expectedAnswer": "166",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "165",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "value": "167",
+          "id": "MISC-HASR-IZAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 1000 من 6 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 6 دون أن نتجاوز 1000."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من 6."
+        }
+      ],
+      "feedback": {
+        "correct": "$1000 = 6 \\times 166 + 4$ و $4 < 6$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 6 فلا يتجاوز الجداء 1000، والباقي عندئذ أصغر من 6."
+      },
+      "solution": {
+        "lines": [
+          "$6 \\times 166 = 996$ و $6 \\times 167 = 1002$",
+          "$996 \\le 1000 < 1002$ ، إذن الحاصل هو 166."
+        ],
+        "result": "q = 166"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "كم كيلوغرامًا من السكر يبقى؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالكيلوغرام (kg)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "166",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "10",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 1000."
+        }
+      ],
+      "feedback": {
+        "correct": "$1000 - 6 \\times 166 = 1000 - 996 = 4$ ، و $4 < 6$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 6."
+      },
+      "solution": {
+        "lines": [
+          "$1000 = 6 \\times 166 + 4$",
+          "$4 < 6$ ، إذن الباقي هو 4."
+        ],
+        "result": "r = 4"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "كم قفة كاملة يمكن تحضيرها؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "168",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "id": "B",
+          "content": "166",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "167",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-NAQS-ZIYADA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل قفة تحتاج المواد الثلاث معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المادة التي تكفي أقل عدد من القفف هي التي تحدّد."
+        }
+      ],
+      "feedback": {
+        "correct": "السميد والزيت يكفيان 168 قفة، والسكر 166 فقط: 166 قفة كاملة.",
+        "incorrect": "القفة الكاملة تحتاج السكر أيضًا؛ ابحث عن أصغر عدد."
+      },
+      "solution": {
+        "lines": [
+          "السميد: 168 قفة، الزيت: 168 قفة، السكر: 166 قفة (ويبقى 4 kg).",
+          "إذن 166 قفة كاملة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "كم كيلوغرامًا من السكر ينقص لتحضير 168 قفة كاملة؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالكيلوغرام (kg)",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "2",
+          "id": "MISC-HASR-HISAB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم كيلوغرامًا من السكر تحتاج 168 قفة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن بـ 1000."
+        }
+      ],
+      "feedback": {
+        "correct": "$168 \\times 6 = 1008$ و $1008 - 1000 = 8$ kg.",
+        "incorrect": "احسب حاجة 168 قفة من السكر ثم الفرق مع ما لدى الجمعية."
+      },
+      "solution": {
+        "lines": [
+          "$168 \\times 6 = 1008$",
+          "$1008 - 1000 = 8$"
+        ],
+        "result": "8\\,\\mathrm{kg}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

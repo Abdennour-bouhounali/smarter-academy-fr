@@ -1,0 +1,192 @@
+{
+  "_comment": "« حصّة القسم » — the DEFAULT class tests of lesson « قواعد قابلية القسمة » (1AM; docs/architecture/CLASS_SESSION.md). `start` opens the hour: what the lesson stands on (the Euclidean division, its remainder, a remainder 0), then two questions of the NEW lesson (`teaser`: divisible by 2, divisible by 3 — asked again at the end, with other numbers). `end` closes it on the four الكفاءات of the lesson: the units digit (2 and 5), the digit sum (3 and 9), the last two digits (4), divisible = remainder 0. `pool` holds more prepared questions a teacher may add to his own copy. Every question carries a `check` from which its answer is RE-COMPUTED by a test (defaultTests.test.js): a default test never ships a wrong answer. The numbers are the platform's own (none of the lesson's world). A class test never changes a student's progress.",
+  "lesson": "qawaid-qabiliyat-qisma",
+  "grade": "1am",
+  "version": 1,
+  "start": [
+    {
+      "id": "s1",
+      "item": "1am.m3.r01",
+      "kind": "number",
+      "text": "ما هو باقي القسمة الإقليدية للعدد 67 على 5؟",
+      "answer": 2,
+      "check": { "type": "remainder", "a": 67, "b": 5 }
+    },
+    {
+      "id": "s2",
+      "item": "1am.m3.r01",
+      "kind": "truefalse",
+      "text": "باقي القسمة الإقليدية للعدد 84 على 4 هو 0.",
+      "answer": true,
+      "check": { "type": "remainderIs", "a": 84, "b": 4, "r": 0 }
+    },
+    {
+      "id": "s3",
+      "item": "1am.m3.r01",
+      "kind": "choice",
+      "text": "أيّ مساواة هي القسمة الإقليدية للعدد 58 على 9؟",
+      "options": ["$58 = 9 \\times 5 + 13$", "$58 = 9 \\times 7 - 5$", "$58 = 9 \\times 6 + 4$"],
+      "answer": 2,
+      "check": { "type": "euclid", "a": 58, "b": 9 }
+    },
+    {
+      "id": "s4",
+      "item": "1am.m3.r01",
+      "kind": "truefalse",
+      "text": "باقي القسمة الإقليدية للعدد 73 على 2 هو 0.",
+      "answer": false,
+      "check": { "type": "remainderIs", "a": 73, "b": 2, "r": 0 }
+    },
+    {
+      "id": "s5",
+      "item": "1am.m3.r01",
+      "kind": "number",
+      "text": "ما هو حاصل القسمة الإقليدية للعدد 94 على 6؟",
+      "answer": 15,
+      "check": { "type": "quotient", "a": 94, "b": 6 }
+    },
+    {
+      "id": "s6",
+      "item": "1am.m3.r01",
+      "kind": "choice",
+      "text": "في قسمة إقليدية على 9، أيّ عدد يمكن أن يكون الباقي؟",
+      "options": ["9", "8", "12"],
+      "answer": 1,
+      "check": { "type": "restPick", "b": 9 }
+    },
+    {
+      "id": "s7",
+      "item": "1am.m3.r02",
+      "teaser": true,
+      "kind": "truefalse",
+      "text": "العدد 2734 يقبل القسمة على 2.",
+      "answer": true,
+      "check": { "type": "divisible", "a": 2734, "k": 2 }
+    },
+    {
+      "id": "s8",
+      "item": "1am.m3.r02",
+      "teaser": true,
+      "kind": "truefalse",
+      "text": "العدد 524 يقبل القسمة على 3.",
+      "answer": false,
+      "check": { "type": "divisible", "a": 524, "k": 3 }
+    }
+  ],
+  "end": [
+    {
+      "id": "e1",
+      "item": "1am.m3.r02",
+      "pairOf": "s7",
+      "kind": "truefalse",
+      "text": "العدد 618 يقبل القسمة على 2.",
+      "answer": true,
+      "check": { "type": "divisible", "a": 618, "k": 2 }
+    },
+    {
+      "id": "e2",
+      "item": "1am.m3.r02",
+      "pairOf": "s8",
+      "kind": "truefalse",
+      "text": "العدد 746 يقبل القسمة على 3.",
+      "answer": false,
+      "check": { "type": "divisible", "a": 746, "k": 3 }
+    },
+    {
+      "id": "e3",
+      "item": "1am.m3.r02",
+      "kind": "choice",
+      "text": "أيّ عدد يقبل القسمة على 9؟",
+      "options": ["393", "603", "539"],
+      "answer": 1,
+      "check": { "type": "pickDivisible", "k": 9 }
+    },
+    {
+      "id": "e4",
+      "item": "1am.m3.r02",
+      "kind": "choice",
+      "text": "أيّ عدد يقبل القسمة على 4؟",
+      "options": ["1316", "1318", "2142"],
+      "answer": 0,
+      "check": { "type": "pickDivisible", "k": 4 }
+    },
+    {
+      "id": "e5",
+      "item": "1am.m3.r02",
+      "kind": "choice",
+      "text": "لنعرف إن كان العدد 5728 يقبل القسمة على 4، يكفي أن ننظر إلى",
+      "options": ["رقم آحاده 8", "مجموع أرقامه 22", "العدد 28 المكوَّن من رقميه الأخيرين"],
+      "answer": 2,
+      "check": { "type": "ruleReads", "n": 5728, "k": 4, "forms": ["units", "sum", "lastTwo"] }
+    },
+    {
+      "id": "e6",
+      "item": "1am.m3.r02",
+      "kind": "number",
+      "text": "أيّ رقم نضعه مكان ▢ ليقبل العدد 47▢ القسمة على 9؟",
+      "answer": 7,
+      "check": { "type": "missingDigit", "prefix": "47", "k": 9 }
+    },
+    {
+      "id": "e7",
+      "item": "1am.m3.r02",
+      "kind": "truefalse",
+      "text": "العدد 126 يقبل القسمة على 9، إذن باقي القسمة الإقليدية للعدد 126 على 9 هو 0.",
+      "answer": true,
+      "check": { "type": "divisible", "a": 126, "k": 9 }
+    },
+    {
+      "id": "e8",
+      "item": "1am.m3.r02",
+      "kind": "choice",
+      "text": "أيّ عدد يقبل القسمة على 5؟",
+      "options": ["2354", "4517", "3470"],
+      "answer": 2,
+      "check": { "type": "pickDivisible", "k": 5 }
+    }
+  ],
+  "pool": [
+    {
+      "id": "p1",
+      "item": "1am.m3.r02",
+      "kind": "choice",
+      "text": "أيّ عدد يقبل القسمة على 5؟",
+      "options": ["752", "1205", "1351"],
+      "answer": 1,
+      "check": { "type": "pickDivisible", "k": 5 }
+    },
+    {
+      "id": "p2",
+      "item": "1am.m3.r02",
+      "kind": "number",
+      "text": "أيّ رقم نضعه مكان ▢ ليقبل العدد 13▢ القسمة على 9؟",
+      "answer": 5,
+      "check": { "type": "missingDigit", "prefix": "13", "k": 9 }
+    },
+    {
+      "id": "p3",
+      "item": "1am.m3.r02",
+      "kind": "truefalse",
+      "text": "العدد 1234 يقبل القسمة على 4.",
+      "answer": false,
+      "check": { "type": "divisible", "a": 1234, "k": 4 }
+    },
+    {
+      "id": "p4",
+      "item": "1am.m3.r02",
+      "kind": "choice",
+      "text": "لنعرف إن كان العدد 4716 يقبل القسمة على 3، يكفي أن ننظر إلى",
+      "options": ["مجموع أرقامه 18", "رقم آحاده 6", "العدد 16 المكوَّن من رقميه الأخيرين"],
+      "answer": 0,
+      "check": { "type": "ruleReads", "n": 4716, "k": 3, "forms": ["sum", "units", "lastTwo"] }
+    },
+    {
+      "id": "p5",
+      "item": "1am.m3.r02",
+      "kind": "truefalse",
+      "text": "العدد 8109 يقبل القسمة على 9.",
+      "answer": true,
+      "check": { "type": "divisible", "a": 8109, "k": 9 }
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-jumal-l2-004",
+  "lessonCode": "wadiya-idmajiya-jumal",
+  "level": 2,
+  "metadata": {
+    "title": "تذاكر الداربي",
+    "estimatedMinutes": 6,
+    "tags": [
+      "ترييض",
+      "تذاكر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-jumal_P2",
+      "modelledOn": "act-3"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "لحضور الداربي في ملعب 5 جويلية، اشترت مجموعة من الأصدقاء، تقاسموا الثمن بروح التعاون، 12 تذكرة: بعضها للمدرجات بـ 300DA للتذكرة الواحدة والباقي للمنصة بـ 500DA للتذكرة الواحدة، ودفعوا 4400DA.\nنسمّي $x$ عدد تذاكر المدرجات و $y$ عدد تذاكر المنصة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ترجم هذه المعطيات بجملة معادلتين، ثم جد عدد التذاكر من كل نوع.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : عدد تذاكر المدرجات ثم عدد تذاكر المنصة",
+      "expectedAnswer": {
+        "x": "8",
+        "y": "4"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "4",
+            "y": "8"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب معادلة لعدد التذاكر وأخرى للمبلغ المدفوع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بسّط معادلة المبلغ بقسمة طرفيها على 100."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عبّر عن $y$ بدلالة $x$ من المعادلة الأولى وعوّض في الثانية."
+        }
+      ],
+      "feedback": {
+        "correct": "8 تذاكر للمدرجات و 4 تذاكر للمنصة.",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "عدد التذاكر: $x + y = 12$",
+          "المبلغ: $300x + 500y = 4400$ ، وبقسمة الطرفين على 100: $3x + 5y = 44$",
+          "$\\begin{cases} x + y = 12 & ...(1) \\\\ 3x + 5y = 44 & ...(2) \\end{cases}$",
+          "من المعادلة (1) نجد: $y = 12 - x$",
+          "بالتعويض في المعادلة (2) نجد: $3x + 5(12 - x) = 44$",
+          "$-2x + 60 = 44$",
+          "$-2x = -16$",
+          "$x = 8$",
+          "ومنه: $y = 12 - 8 = 4$",
+          "التحقق في النص: $8 + 4 = 12$ و $300 \\times 8 + 500 \\times 4 = 4400$ .",
+          "إذن:"
+        ],
+        "result": "(8 ; 4)"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب المبلغ الذي دفعته المجموعة ثمنا لتذاكر المنصة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "2000",
+      "misconceptionSignatures": [
+        {
+          "value": "2400",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل عدد تذاكر المنصة الذي وجدته في السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 500 = 2000$ أي $2000DA$ .",
+        "incorrect": "اضرب عدد تذاكر المنصة في ثمن التذكرة الواحدة."
+      },
+      "solution": {
+        "lines": [
+          "عدد تذاكر المنصة 4، وثمن التذكرة 500DA:",
+          "$4 \\times 500 = 2000$"
+        ],
+        "result": "2000\\,DA"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

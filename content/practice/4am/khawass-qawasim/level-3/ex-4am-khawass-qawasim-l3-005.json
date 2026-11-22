@@ -1,0 +1,196 @@
+{
+  "id": "ex-4am-khawass-qawasim-l3-005",
+  "lessonCode": "khawass-qawasim",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2010 — بستانان",
+    "estimatedMinutes": 9,
+    "tags": [
+      "خاصية 1",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_khawass-qawasim_P1",
+      "modelledOn": "BEM 2010 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2010",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان 1680 و 1008."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "بيّن أن 24 قاسم مشترك للعددين 1680 و 1008:",
+      "statement": "اكتب العدد 1680 على الشكل $24 \\times k$ حيث $k$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k$ فقط (عدد طبيعي)",
+      "expectedAnswer": "70",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 1680 على 24: يجب أن يكون الباقي معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل هذه القسمة هو العدد $k$ المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$1680 = 24 \\times 70$ ، إذن 24 يقسم 1680.",
+        "incorrect": "ابحث عن العدد الطبيعي $k$ الذي إذا ضُرب في 24 أعطى 1680."
+      },
+      "solution": {
+        "lines": [
+          "$1680 = 24 \\times 70$"
+        ],
+        "result": "1680 = 24 \\times 70"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اكتب العدد 1008 على الشكل $24 \\times k'$ حيث $k'$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k'$ فقط (عدد طبيعي)",
+      "expectedAnswer": "42",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 1008 على 24: يجب أن يكون الباقي معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل هذه القسمة هو العدد $k'$ المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$1008 = 24 \\times 42$ ، إذن 24 يقسم 1008.",
+        "incorrect": "ابحث عن العدد الطبيعي $k'$ الذي إذا ضُرب في 24 أعطى 1008."
+      },
+      "solution": {
+        "lines": [
+          "$1008 = 24 \\times 42$"
+        ],
+        "result": "1008 = 24 \\times 42"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "يملك فلاح بستانين، في الأول 1680 شجيرة وفي الثاني 1008 شجيرات، غرسها كلها في صفوف يضم كل منها 24 شجيرة.",
+      "statement": "ما هو العدد الكلي للصفوف في البستانين؟",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد الصفوف)",
+      "expectedAnswer": "112",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الكتابتين $1680 = 24 \\times 70$ و $1008 = 24 \\times 42$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرج 24 عاملًا مشتركًا: $24 \\times q + 24 \\times q' = 24 \\times (q + q')$."
+        }
+      ],
+      "feedback": {
+        "correct": "$1680 + 1008 = 24 \\times (70 + 42) = 24 \\times 112$.",
+        "incorrect": "القاسم المشترك لعددين يقسم مجموعهما: اكتب كلا من العددين على الشكل $24 \\times q$ ثم أخرج 24 عاملًا مشتركًا."
+      },
+      "solution": {
+        "lines": [
+          "$1680 + 1008 = 24 \\times 70 + 24 \\times 42$",
+          "$1680 + 1008 = 24 \\times (70 + 42)$",
+          "$1680 + 1008 = 24 \\times 112$ ، إذن 24 يقسم $1680 + 1008$."
+        ],
+        "result": "1680 + 1008 = 24 \\times 112"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "بكم صفًّا يزيد عدد صفوف البستان الأول على عدد صفوف البستان الثاني؟",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد الصفوف)",
+      "expectedAnswer": "28",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الكتابتين $1680 = 24 \\times 70$ و $1008 = 24 \\times 42$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرج 24 عاملًا مشتركًا: $24 \\times q - 24 \\times q' = 24 \\times (q - q')$."
+        }
+      ],
+      "feedback": {
+        "correct": "$1680 - 1008 = 24 \\times (70 - 42) = 24 \\times 28$.",
+        "incorrect": "القاسم المشترك لعددين يقسم فرقهما: اكتب كلا من العددين على الشكل $24 \\times q$ ثم أخرج 24 عاملًا مشتركًا."
+      },
+      "solution": {
+        "lines": [
+          "$1680 - 1008 = 24 \\times 70 - 24 \\times 42$",
+          "$1680 - 1008 = 24 \\times (70 - 42)$",
+          "$1680 - 1008 = 24 \\times 28$ ، إذن 24 يقسم $1680 - 1008$."
+        ],
+        "result": "1680 - 1008 = 24 \\times 28"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

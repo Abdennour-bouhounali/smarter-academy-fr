@@ -1,0 +1,213 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-judhur-l4-007",
+  "lessonCode": "wadiya-idmajiya-judhur",
+  "level": 4,
+  "metadata": {
+    "title": "عدد بالجذور ومربعه",
+    "estimatedMinutes": 9,
+    "tags": [
+      "a√3",
+      "المعادلة x² = a"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-judhur_P1",
+      "modelledOn": "qcm"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد $A$ حيث:",
+    "formulas": [
+      "A = \\sqrt{75} - 2\\sqrt{12} + \\sqrt{27}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب العدد $A$ على الشكل $a\\sqrt{3}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-MUAMIL-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$75 = 25 \\times 3$ ، $12 = 4 \\times 3$ ، $27 = 9 \\times 3$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تنس المعامل 2 أمام $\\sqrt{12}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 5\\sqrt{3} - 4\\sqrt{3} + 3\\sqrt{3} = 4\\sqrt{3}$",
+        "incorrect": "اكتب كل حد على الشكل $k\\sqrt{3}$ و اضرب في المعامل الذي أمامه."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\sqrt{25 \\times 3} - 2\\sqrt{4 \\times 3} + \\sqrt{9 \\times 3}$",
+          "$= 5\\sqrt{3} - 4\\sqrt{3} + 3\\sqrt{3}$"
+        ],
+        "result": "A = 4\\sqrt{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $A^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "48",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-MUAMIL-DUN-TARBI"
+        },
+        {
+          "value": "144",
+          "id": "MISC-TARBI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(4\\sqrt{3})^2 = 4^2 \\times (\\sqrt{3})^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$A^2 = 16 \\times 3 = 48$",
+        "incorrect": "ربّع المعامل 4 و الجذر معًا، و تذكّر أن $(\\sqrt{3})^2 = 3$ ."
+      },
+      "solution": {
+        "lines": [
+          "$A^2 = (4\\sqrt{3})^2 = 4^2 \\times (\\sqrt{3})^2 = 16 \\times 3$"
+        ],
+        "result": "A^2 = 48"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "حل المعادلة $x^2 = A^2 - 12$ .",
+      "statement": "الحل السالب:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "-6",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-HALL-WAHID"
+        },
+        {
+          "value": "-18",
+          "id": "MISC-HALL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الطرف الثاني باستعمال نتيجة السؤال 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "للمعادلة $x^2 = a$ مع $a > 0$ حلان متعاكسان."
+        }
+      ],
+      "feedback": {
+        "correct": "$x^2 = 36$ ، و الحل السالب $x = -6$ .",
+        "incorrect": "احسب $A^2 - 12$ أولًا، ثم خذ العدد السالب الذي مربعه هذا العدد."
+      },
+      "solution": {
+        "lines": [
+          "$x^2 = 48 - 12 = 36$",
+          "$x^2 = 6^2$ يعني $x = 6$ أو $x = -6$"
+        ],
+        "result": "x = -6 \\quad ; \\quad x = 6"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "الحل الموجب:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "18",
+          "id": "MISC-HALL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحل الموجب معاكس الحل السالب."
+        }
+      ],
+      "feedback": {
+        "correct": "$6^2 = 36$ : هذا هو الحل الموجب.",
+        "incorrect": "الحل الموجب هو العدد الموجب الذي مربعه $A^2 - 12$ ."
+      },
+      "solution": {
+        "lines": [
+          "$x^2 = 36$ يعني $x = \\sqrt{36}$ أو $x = -\\sqrt{36}$"
+        ],
+        "result": "x = 6"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "id": "ex-4am-majmu-shuaayn-l3-002",
+  "lessonCode": "majmu-shuaayn",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 10 — ممثلات بمبدأ معطى",
+    "estimatedMinutes": 4,
+    "tags": [
+      "إنشاء ممثل"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-10",
+      "page": 135,
+      "section": "مجموع شعاعين - علاقة شال",
+      "number": 10
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (تمرين 10): ABC و BCD و AFC و EAB مثلثات متقايسة الأضلاع (الشكل).",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          -1,
+          -1.732
+        ],
+        "C": [
+          1,
+          -1.732
+        ],
+        "E": [
+          -2,
+          0
+        ],
+        "F": [
+          2,
+          0
+        ],
+        "D": [
+          0,
+          -3.464
+        ]
+      },
+      "segments": [
+        [
+          "E",
+          "F"
+        ],
+        [
+          "F",
+          "D"
+        ],
+        [
+          "D",
+          "E"
+        ],
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "A"
+        ]
+      ],
+      "labels": {
+        "A": "n",
+        "B": "w",
+        "C": "e",
+        "E": "nw",
+        "F": "ne",
+        "D": "s"
+      },
+      "ariaLabel": "مثلث متقايس الأضلاع EFD و A و B و C منتصفات [EF] و [ED] و [FD]: أربعة مثلثات متقايسة الأضلاع ABC و BCD و AFC و EAB"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الممثل الذي مبدؤه C للشعاع $\\overrightarrow{BC} + \\overrightarrow{CA}$",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{CF}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{CA}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSIHAB-NISYAN"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{CB}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-AKS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى نهاية الشعاع الأول ومبدأ الشعاع الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "علاقة شال تتطلب أن تكون نهاية الأول مبدأ الثاني؛ يمكن تبديل ترتيب الحدّين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع يبدأ من مبدأ الأول وينتهي عند نهاية الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{BC} + \\overrightarrow{CA} = \\overrightarrow{BA}$ ، و $\\overrightarrow{BA} = \\overrightarrow{CF}$ .",
+        "incorrect": "علاقة شال: نهاية الأول مبدأ الثاني، والمجموع من مبدأ الأول إلى نهاية الثاني."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "الممثل الذي مبدؤه A للشعاع $\\overrightarrow{BD} + \\overrightarrow{CD}$",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{DA}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-AKS"
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{AD}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\vec{0}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SIFR-ADAD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للشعاعين نفس المبدأ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "شعاعان لهما نفس المبدأ يُجمعان بقاعدة متوازي الأضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع هو القطر الصادر من المبدأ المشترك، لا القطر الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{BD} = \\overrightarrow{AC}$ و $\\overrightarrow{CD} = \\overrightarrow{AB}$ : المجموع $\\overrightarrow{AB} + \\overrightarrow{AC} = \\overrightarrow{AD}$ .",
+        "incorrect": "قاعدة متوازي الأضلاع: مجموع شعاعين لهما نفس المبدأ هو القطر الصادر من ذلك المبدأ."
+      }
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "id": "ex-4am-barahin-ashia-l3-009",
+  "lessonCode": "barahin-ashia",
+  "level": 3,
+  "generator": {
+    "tool": "gen-barahin.mjs",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — مجموع معدوم ومنتصف",
+    "estimatedMinutes": 3,
+    "tags": [
+      "منتصف",
+      "الشعاع المعدوم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_barahin-ashia_P2",
+      "modelledOn": "ex-23"
+    }
+  },
+  "statement": {
+    "content": "O و A و B ثلاث نقط حيث $\\overrightarrow{OA} + \\overrightarrow{OB} = \\overrightarrow{0}$ و A ≠ B ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "نستنتج أن:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "O منتصف [AB]",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "A منتصف [OB]",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MUNTASAF-IB-IA"
+        },
+        {
+          "id": "C",
+          "content": "O تنطبق على A",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SIFR-ADAD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{OB} = -\\overrightarrow{OA} = \\overrightarrow{AO}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ $\\overrightarrow{AO} = \\overrightarrow{OB}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ماذا يعني تساوي شعاعين متتابعين على استقامة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AO} = \\overrightarrow{OB}$ : O منتصف [AB].",
+        "incorrect": "الشعاعان من O متعاكسان: O في منتصف المسافة بين A و B ."
+      }
+    }
+  ]
+}

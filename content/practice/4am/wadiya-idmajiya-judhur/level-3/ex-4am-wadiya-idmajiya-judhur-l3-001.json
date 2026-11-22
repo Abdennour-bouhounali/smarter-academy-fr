@@ -1,0 +1,364 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-judhur-l3-001",
+  "lessonCode": "wadiya-idmajiya-judhur",
+  "level": 3,
+  "metadata": {
+    "title": "BEM 2012 — التمرين الأول",
+    "estimatedMinutes": 16,
+    "tags": [
+      "a√7 + b",
+      "جداء ناطق",
+      "نسبة مقامها ناطق"
+    ],
+    "source": {
+      "type": "bem",
+      "year": 2012,
+      "part": 1,
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "official",
+      "badge": "BEM 2012",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان الحقيقيان $m$ و $n$ حيث:",
+    "formulas": [
+      "m = \\sqrt{112} - 3\\sqrt{28} + 3\\sqrt{7} - \\sqrt{25}",
+      "n = (\\sqrt{7} + 3)(4 - \\sqrt{7})"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "اكتب كلا من العددين $m$ و $n$ على الشكل $a\\sqrt{7} + b$ حيث $a$ و $b$ عددان نسبيان.",
+      "statement": "العدد $m$ : أعط $a$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد نسبي)",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-JIDHR-MURABBA-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$112 = 16 \\times 7$ و $28 = 4 \\times 7$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل جذر على الشكل $k\\sqrt{7}$ ، و $\\sqrt{25}$ عدد طبيعي."
+        }
+      ],
+      "feedback": {
+        "correct": "$m = 4\\sqrt{7} - 6\\sqrt{7} + 3\\sqrt{7} - 5 = \\sqrt{7} - 5$ ، إذن $a = 1$ .",
+        "incorrect": "اجمع معاملات $\\sqrt{7}$ فقط؛ معامل $\\sqrt{7}$ وحده هو 1."
+      },
+      "solution": {
+        "lines": [
+          "$m = \\sqrt{112} - 3\\sqrt{28} + 3\\sqrt{7} - \\sqrt{25}$",
+          "$= \\sqrt{16} \\times \\sqrt{7} - 3\\sqrt{4} \\times \\sqrt{7} + 3\\sqrt{7} - 5$",
+          "$= 4\\sqrt{7} - 6\\sqrt{7} + 3\\sqrt{7} - 5$",
+          "$= (4 - 6 + 3)\\sqrt{7} - 5$"
+        ],
+        "result": "m = \\sqrt{7} - 5"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $m$ : أعط $b$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد نسبي)",
+      "expectedAnswer": "-5",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-JIDHR-SALIB"
+        },
+        {
+          "value": "-25",
+          "id": "MISC-TARBI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$b$ هو الحد الذي لا يحتوي على $\\sqrt{7}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما هو $\\sqrt{25}$ ؟ انتبه إلى الإشارة أمامه."
+        }
+      ],
+      "feedback": {
+        "correct": "$-\\sqrt{25} = -5$ ، إذن $b = -5$ .",
+        "incorrect": "الحد الثابت هو $-\\sqrt{25}$ : احسب الجذر و احتفظ بالإشارة."
+      },
+      "solution": {
+        "lines": [
+          "$m = \\sqrt{112} - 3\\sqrt{28} + 3\\sqrt{7} - \\sqrt{25}$",
+          "$= \\sqrt{16} \\times \\sqrt{7} - 3\\sqrt{4} \\times \\sqrt{7} + 3\\sqrt{7} - 5$",
+          "$= 4\\sqrt{7} - 6\\sqrt{7} + 3\\sqrt{7} - 5$",
+          "$= (4 - 6 + 3)\\sqrt{7} - 5$"
+        ],
+        "result": "m = \\sqrt{7} - 5"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "العدد $n$ : أعط $a$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد نسبي)",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-JIDHR-FI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر الجداء $(\\sqrt{7} + 3)(4 - \\sqrt{7})$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\sqrt{7} \\times \\sqrt{7} = 7$ ، ثم اجمع معاملات $\\sqrt{7}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$n = 4\\sqrt{7} - 7 + 12 - 3\\sqrt{7} = \\sqrt{7} + 5$ ، إذن $a = 1$ .",
+        "incorrect": "انشر الجداء حدًا حدًا، ثم اجمع الحدود التي فيها $\\sqrt{7}$ وحدها."
+      },
+      "solution": {
+        "lines": [
+          "$n = (\\sqrt{7} + 3)(4 - \\sqrt{7})$",
+          "$= 4\\sqrt{7} - \\sqrt{7} \\times \\sqrt{7} + 3 \\times 4 - 3\\sqrt{7}$",
+          "$= -7 + \\sqrt{7} + 12$"
+        ],
+        "result": "n = \\sqrt{7} + 5"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "statement": "العدد $n$ : أعط $b$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد نسبي)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "19",
+          "id": "MISC-JIDHR-FI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع الحدين الثابتين بعد النشر."
+        }
+      ],
+      "feedback": {
+        "correct": "$-7 + 12 = 5$ ، إذن $b = 5$ .",
+        "incorrect": "الحدان الثابتان هما $-\\sqrt{7} \\times \\sqrt{7}$ و $3 \\times 4$ ."
+      },
+      "solution": {
+        "lines": [
+          "$n = (\\sqrt{7} + 3)(4 - \\sqrt{7})$",
+          "$= 4\\sqrt{7} - \\sqrt{7} \\times \\sqrt{7} + 3 \\times 4 - 3\\sqrt{7}$",
+          "$= -7 + \\sqrt{7} + 12$"
+        ],
+        "result": "n = \\sqrt{7} + 5"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "statement": "بين أن الجداء $m \\times n$ عدد ناطق.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة الجداء $m \\times n$",
+      "expectedAnswer": "-18",
+      "misconceptionSignatures": [
+        {
+          "value": "32",
+          "id": "MISC-MURABBA-FARQ-ISHARA"
+        },
+        {
+          "value": "24",
+          "id": "MISC-TARBI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتائج السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الجداء من الشكل $(x + y)(x - y)$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$(x + y)(x - y) = x^2 - y^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$m \\times n = (\\sqrt{7})^2 - 5^2 = 7 - 25 = -18$ : عدد ناطق.",
+        "incorrect": "اكتب $m \\times n = (\\sqrt{7} + 5)(\\sqrt{7} - 5)$ ، ثم استعمل $(x + y)(x - y) = x^2 - y^2$ ."
+      },
+      "solution": {
+        "lines": [
+          "$m \\times n = (\\sqrt{7} + 5)(\\sqrt{7} - 5)$",
+          "$= (\\sqrt{7})^2 - 5^2$",
+          "$= 7 - 25$"
+        ],
+        "result": "m \\times n = -18"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "lead": "اجعل مقام النسبة $\\dfrac{\\sqrt{7} - 5}{\\sqrt{7}}$ عددا ناطقا.",
+      "statement": "النتيجة على الشكل $\\dfrac{a + b\\sqrt{7}}{7}$ : أعط $a$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد نسبي)",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "49",
+          "id": "MISC-JIDHR-FI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب البسط والمقام معًا في $\\sqrt{7}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انشر البسط: $(\\sqrt{7} - 5)\\sqrt{7}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{(\\sqrt{7} - 5)\\sqrt{7}}{7} = \\dfrac{7 - 5\\sqrt{7}}{7}$ ، إذن $a = 7$ .",
+        "incorrect": "بعد الضرب في $\\sqrt{7}$ : الحد الثابت في البسط هو $\\sqrt{7} \\times \\sqrt{7}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{\\sqrt{7} - 5}{\\sqrt{7}} = \\dfrac{(\\sqrt{7} - 5)\\sqrt{7}}{\\sqrt{7} \\times \\sqrt{7}}$"
+        ],
+        "result": "\\dfrac{\\sqrt{7} - 5}{\\sqrt{7}} = \\dfrac{7 - 5\\sqrt{7}}{7}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "statement": "النتيجة على الشكل $\\dfrac{a + b\\sqrt{7}}{7}$ : أعط $b$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد نسبي)",
+      "expectedAnswer": "-5",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-JIDHR-SALIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$b$ هو معامل $\\sqrt{7}$ في البسط بعد النشر."
+        }
+      ],
+      "feedback": {
+        "correct": "$-5 \\times \\sqrt{7} = -5\\sqrt{7}$ ، إذن $b = -5$ .",
+        "incorrect": "انشر $(\\sqrt{7} - 5)\\sqrt{7}$ و احتفظ بإشارة الحد الذي فيه $\\sqrt{7}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{\\sqrt{7} - 5}{\\sqrt{7}} = \\dfrac{(\\sqrt{7} - 5)\\sqrt{7}}{\\sqrt{7} \\times \\sqrt{7}}$"
+        ],
+        "result": "\\dfrac{\\sqrt{7} - 5}{\\sqrt{7}} = \\dfrac{7 - 5\\sqrt{7}}{7}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

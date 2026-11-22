@@ -1,0 +1,149 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l3-004",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2008 — قواسم العدد 228",
+    "estimatedMinutes": 7,
+    "tags": [
+      "قواسم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qawasim-adad-tabii_P3",
+      "modelledOn": "BEM 2008 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2008",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "جد كل قواسم العدد 228.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12,
+        19,
+        38,
+        57,
+        76,
+        114,
+        228
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6,
+            12,
+            19,
+            38,
+            57,
+            76,
+            114
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 228 بمربعات الأعداد: إلى أي عدد يكفي أن تختبر قابلية القسمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل قسمة باقيها معدوم تعطي قاسمين: $d$ و $228 \\div d$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$228 = 1 \\times 228$ ، $228 = 2 \\times 114$ ، $228 = 3 \\times 76$ ، $228 = 4 \\times 57$ ، $228 = 6 \\times 38$ ، $228 = 12 \\times 19$.",
+        "incorrect": "اختبر الأعداد التي مربعها أصغر من العدد أو يساويه، وخذ من كل قسمة باقيها معدوم القاسمين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$15^2 = 225 \\leq 228 < 256 = 16^2$ ومنه نختبر قابلية قسمة 228 على الأعداد من 1 إلى 15.",
+          "نجد أن 228 يقبل القسمة على كل من الأعداد: 1 ، 2 ، 3 ، 4 ، 6 ، 12.",
+          "ومن المساويات: $228 = 1 \\times 228$ ، $228 = 2 \\times 114$ ، $228 = 3 \\times 76$ ، $228 = 4 \\times 57$ ، $228 = 6 \\times 38$ ، $228 = 12 \\times 19$",
+          "إذن قواسم العدد 228 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 12 ، 19 ، 38 ، 57 ، 76 ، 114 ، 228."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 330
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب الكسر $\\dfrac{57}{228}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "1/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل كتابة 228 على شكل جداء يظهر فيه العامل 57 (السؤال 01)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على 57."
+        }
+      ],
+      "feedback": {
+        "correct": "$228 = 57 \\times 4$: نقسم البسط والمقام على 57.",
+        "incorrect": "ابحث في السؤال 01 عن الجداء الذي يظهر فيه العامل 57، ثم اقسم البسط والمقام عليه.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال."
+      },
+      "solution": {
+        "lines": [
+          "$228 = 57 \\times 4$",
+          "$\\dfrac{57}{228} = \\dfrac{57 \\times 1}{57 \\times 4}$"
+        ],
+        "result": "\\dfrac{57}{228} = \\dfrac{1}{4}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

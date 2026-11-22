@@ -1,0 +1,287 @@
+{
+  "id": "ex-1am-kitabat-adad-tabii-l5-001",
+  "lessonCode": "kitabat-adad-tabii",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — ورشة تغليف الأقلام",
+    "estimatedMinutes": 18,
+    "tags": [
+      "حزم",
+      "تضامن",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "نظّم نادي المتوسطة حملة تضامنية لجمع الأقلام لتلاميذ مدرسة جبلية. في ورشة التغليف: الحزمة 10 أقلام، والعلبة 10 حزم، والكرتونة 10 علب.\nالجزء الأول: في نهاية اليوم وجد الأعضاء 3 كراتين و 12 علبة و 15 حزمة و 8 أقلام غير مربوطة.\nالجزء الثاني: تحتاج المدرسة حزمة واحدة لكل تلميذ، وعدد تلاميذها 420."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب العدد الكلي للأقلام.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "4358",
+      "misconceptionSignatures": [
+        {
+          "value": "312158",
+          "id": "MISC-KITABA-CONCAT"
+        },
+        {
+          "value": "38",
+          "id": "MISC-KITABA-SUMCOUNTS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم قلما في الكرتونة؟ وفي العلبة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب كل عدد في قيمة وحدته ثم اجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تكتب الأعداد 3، 12، 15، 8 متجاورة."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 \\times 1000 + 12 \\times 100 + 15 \\times 10 + 8 = 4358$.",
+        "incorrect": "كل وعاء له قيمته: الكرتونة 1000 قلم، العلبة 100، الحزمة 10."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 1000 = 3000$ ؛ $12 \\times 100 = 1200$ ؛ $15 \\times 10 = 150$",
+          "$3000 + 1200 + 150 + 8 = 4358$"
+        ],
+        "result": "4358"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اكتب عدد الأقلام بالحروف.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "أربعة آلاف وثلاثمائة وخمسة وثمانون",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-RANK-NAME"
+        },
+        {
+          "id": "B",
+          "content": "أربعة ثلاثة خمسة ثمانية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-DIGIT-BY-DIGIT"
+        },
+        {
+          "id": "C",
+          "content": "أربعة آلاف وثلاثمائة وثمانية وخمسون",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "ثلاثة وأربعون ألفا وثمانية وخمسون",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-ZERO-PLACE"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزّئ العدد إلى فئات من ثلاثة أرقام انطلاقا من اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ كل فئة كعدد أصغر من 1000 ثم اذكر اسم فئتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى المراتب الفارغة (الأصفار)."
+        }
+      ],
+      "feedback": {
+        "correct": "4358 يُقرأ « أربعة آلاف وثلاثمائة وثمانية وخمسون ».",
+        "incorrect": "نجزّئ العدد إلى فئات من ثلاثة أرقام انطلاقا من اليمين، ثم نقرأ الفئات من اليسار، كل فئة باسمها."
+      },
+      "solution": {
+        "lines": [
+          "$4\\,|\\,358$",
+          "نقرأ فئة فئة: « أربعة آلاف وثلاثمائة وثمانية وخمسون »."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "إذا رُبطت كل الأقلام في حزم من 10، فكم حزمة كاملة نحصل عليها؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "435",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-KITABA-DIGIT-COUNT"
+        },
+        {
+          "value": "43",
+          "id": "MISC-KITABA-RANKSHIFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد العشرات هو عدد المجموعات من 10 التي نكوّنها من العدد كله، لا الرقم وحده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احذف الأرقام التي على يمين مرتبة العشرات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: اضرب جوابك في 10 ثم أضف ما بقي."
+        }
+      ],
+      "feedback": {
+        "correct": "$4358 = 435 \\times 10 + 8$: عدد العشرات هو 435، أمّا رقم العشرات فهو 5.",
+        "incorrect": "رقم المرتبة هو ما يبقى فيها وحدها؛ أمّا عدد وحداتها فنحسب فيه كل ما يمكن تجميعه منها في العدد كله."
+      },
+      "solution": {
+        "lines": [
+          "$4358 = 435 \\times 10 + 8$",
+          "إذن عدد العشرات في العدد 4358 هو 435، ورقم العشرات هو 5."
+        ],
+        "result": "435"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل تكفي الحزم لإعطاء كل تلميذ من تلاميذ المدرسة الـ 420 حزمة واحدة؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-DIGIT-COUNT"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل عدد الحزم، لا رقم العشرات."
+        }
+      ],
+      "feedback": {
+        "correct": "435 حزمة أكثر من 420: تكفي، وتبقى 15 حزمة.",
+        "incorrect": "قارن عدد الحزم الكاملة بعدد التلاميذ."
+      },
+      "solution": {
+        "lines": [
+          "عدد الحزم 435، وعدد التلاميذ 420.",
+          "435 > 420، إذن الحزم تكفي."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "برّر قرارك: لماذا لا يمكن الاعتماد على رقم العشرات 5 لمعرفة عدد الحزم؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم حزمة في الكرتونة الواحدة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك بالحل النموذجي سطرا بسطر."
+      },
+      "solution": {
+        "lines": [
+          "رقم العشرات 5 هو ما يبقى في مرتبة العشرات وحدها.",
+          "لكن الكراتين والعلب تحوي هي أيضا حزما: عدد الحزم هو عدد العشرات في 4358، أي 435.",
+          "لأن $4358 = 435 \\times 10 + 8$، والحزم تكفي التلاميذ الـ 420."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

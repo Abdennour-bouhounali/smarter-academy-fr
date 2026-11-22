@@ -1,0 +1,218 @@
+{
+  "id": "ex-4am-qiraat-wadiyat-ihsaiya-l4-006",
+  "lessonCode": "qiraat-wadiyat-ihsaiya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2020 — ساعات الحاسوب لتلاميذ بالوادي",
+    "estimatedMinutes": 10,
+    "tags": [
+      "قراءة مخطط بالأعمدة",
+      "المتوسط",
+      "الوسيط",
+      "قيمة متطرفة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qiraat-wadiyat-ihsaiya_P2",
+      "modelledOn": "BEM 2020 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2020",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "سأل نادي الإعلام الآلي بمتوسطة في الوادي 20 تلميذا عن عدد الساعات التي يستعملون فيها الحاسوب في الأسبوع، فمثّل النتائج بالمخطط بالأعمدة الآتي:",
+    "figure": {
+      "kind": "chart",
+      "type": "bar",
+      "ariaLabel": "مخطط بالأعمدة لعدد التلاميذ حسب عدد ساعات استعمال الحاسوب في الأسبوع: 2 و 3 و 4 و 5 و 20 ساعة",
+      "xTitle": "عدد الساعات في الأسبوع",
+      "yTitle": "عدد التلاميذ",
+      "y": {
+        "max": 8,
+        "step": 2,
+        "minor": 2
+      },
+      "bars": [
+        {
+          "label": "2",
+          "value": 6
+        },
+        {
+          "label": "3",
+          "value": 7
+        },
+        {
+          "label": "4",
+          "value": 4
+        },
+        {
+          "label": "5",
+          "value": 2
+        },
+        {
+          "label": "20",
+          "value": 1
+        }
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب متوسط عدد الساعات.",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة",
+      "expectedAnswer": "3,95",
+      "misconceptionSignatures": [
+        {
+          "value": "6,8",
+          "id": "MISC-IHSA-MUTAWASSIT-BILA-TARJIH"
+        },
+        {
+          "value": "15,8",
+          "id": "MISC-IHSA-MUTAWASSIT-QISMA-QIYAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ تكرار كل قيمة من المخطط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المتوسط المتوازن: مجموع (القيمة × التكرار) ÷ التكرار الكلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{79}{20} = 3{,}95$ .",
+        "incorrect": "كل عدد ساعات يُضرب في عدد التلاميذ الموافق، ثم يُقسم المجموع على عدد كل التلاميذ."
+      },
+      "solution": {
+        "lines": [
+          "$2 \\times 6 + 3 \\times 7 + 4 \\times 4 + 5 \\times 2 + 20 \\times 1 = 79$",
+          "$\\dfrac{79}{20} = 3{,}95$"
+        ],
+        "result": "3{,}95"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عيّن وسيط هذه السلسلة.",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-IHSA-WASIT-QIMA-WUSTA-JADWAL"
+        },
+        {
+          "value": "3,95",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكرار الكلي زوجي: ابحث عن القيمتين ذواتي الرتبتين الوسطيين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التكرارات المجمعة الصاعدة تدلّك على مكانهما."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمتان ذواتا الرتبتين 10 و 11 كلتاهما 3 .",
+        "incorrect": "الوسيط ليس القيمة الوسطى في سطر القيم: عيّن الرتبتين الوسطيين أولا."
+      },
+      "solution": {
+        "lines": [
+          "$N = 20$ : الرتبتان الوسطيان 10 و 11 .",
+          "التكرارات المجمعة الصاعدة: 6 ، 13 ، 17 ، 19 ، 20",
+          "$Med = \\dfrac{3 + 3}{2} = 3$"
+        ],
+        "result": "Med = 3"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أيّ المؤشرين يصف أفضل المدة التي يقضيها تلميذ عادي من هؤلاء أمام الحاسوب؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "المتوسط، لأنه يُحسب بكل القيم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-WASIT-MUTAWASSIT"
+        },
+        {
+          "id": "B",
+          "content": "الوسيط، لأن تلميذا واحدا بـ 20 ساعة يرفع المتوسط",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المتوسط بعدد ساعات أغلب التلاميذ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انظر إلى العمود الأخير في المخطط."
+        }
+      ],
+      "feedback": {
+        "correct": "المتوسط 3,95 ترفعه قيمة متطرفة واحدة؛ الوسيط 3 يصف التلميذ العادي.",
+        "incorrect": "قيمة متطرفة واحدة تجذب المتوسط ولا تؤثّر في الوسيط."
+      },
+      "solution": {
+        "lines": [
+          "13 تلميذا من 20 يستعملون الحاسوب 3 ساعات أو أقل، والمتوسط 3,95 أكبر من مدة أغلبهم.",
+          "التلميذ الوحيد بـ 20 ساعة يرفع المتوسط، أما الوسيط 3 فلا يتأثّر به: الوسيط هو الذي يصف التلميذ العادي."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

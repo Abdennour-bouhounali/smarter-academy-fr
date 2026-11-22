@@ -1,0 +1,78 @@
+{
+  "id": "ex-4am-khawas-dawaran-l1-010",
+  "lessonCode": "khawas-dawaran",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — نصف دورة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "التوازي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_khawas-dawaran_P2",
+      "modelledOn": "method-properties"
+    }
+  },
+  "generator": {
+    "tool": "u13-khawas-dawaran/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "(d′) صورة المستقيم (d) بالدوران الذي مركزه O وزاويته $180^\\circ$ ، و O لا تنتمي إلى (d)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المستقيمان (d) و (d′):",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "متعامدان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-TAWAZI"
+        },
+        {
+          "id": "B",
+          "content": "متقاطعان في O",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MARKAZ"
+        },
+        {
+          "id": "C",
+          "content": "متوازيان",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدوران الذي زاويته $180^\\circ$ تناظر بالنسبة إلى O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "صورة مستقيم بتناظر مركزي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "O ليست على (d)."
+        }
+      ],
+      "feedback": {
+        "correct": "الدوران الذي زاويته $180^\\circ$ يحوّل مستقيما إلى مستقيم يوازيه.",
+        "incorrect": "نصف دورة: التناظر المركزي يحوّل مستقيما لا يمر بالمركز إلى مستقيم لا يقطعه."
+      }
+    }
+  ]
+}

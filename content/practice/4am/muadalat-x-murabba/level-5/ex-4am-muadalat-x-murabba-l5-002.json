@@ -1,0 +1,246 @@
+{
+  "id": "ex-4am-muadalat-x-murabba-l5-002",
+  "lessonCode": "muadalat-x-murabba",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2015 — أرض عمي الطاهر",
+    "estimatedMinutes": 20,
+    "tags": [
+      "مساحة",
+      "مستطيل",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_muadalat-x-murabba_P2",
+      "modelledOn": "BEM 2015 II ☜"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "لِعمّي الطاهر، الذي يشارك جيرانه ثمار أرضه، قطعة أرض مستطيلة الشكل مساحتها $1960m^2$ و عرضها خُمسا $\\left(\\dfrac{2}{5}\\right)$ طولها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "جِد بُعدي هذه القطعة.",
+      "statement": "الطول:",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_muadalat-x-murabba_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بالمتر (m)",
+      "expectedAnswer": "70",
+      "misconceptionSignatures": [
+        {
+          "value": "980",
+          "id": "MISC-HALL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "سمِّ $x$ الطول: العرض إذن $\\dfrac{2}{5}x$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب أن جداء الطول في العرض يساوي المساحة، ثم اعزل $x^2$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الطول عدد موجب: احتفظ بالحل الموجب."
+        }
+      ],
+      "feedback": {
+        "correct": "من $\\dfrac{2}{5}x^2 = 1960$ نجد $x^2 = 4900$ ومنه الطول $70m$.",
+        "incorrect": "العرض هو $\\dfrac{2}{5}$ الطول: ستحصل على معادلة فيها $x^2$، احتفظ بالحل الموجب."
+      },
+      "solution": {
+        "lines": [
+          "ليكن $x$ طول القطعة، فعرضها $\\dfrac{2}{5}x$",
+          "$x \\times \\dfrac{2}{5}x = 1960$",
+          "$\\dfrac{2}{5}x^2 = 1960$",
+          "$x^2 = \\dfrac{1960 \\times 5}{2}$",
+          "$x^2 = 4900$",
+          "$x = \\sqrt{4900} = 70$ (الطول عدد موجب)"
+        ],
+        "result": "x = 70m"
+      },
+      "work": "optional",
+      "timeSeconds": 360
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العرض:",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: العرض بالمتر (m)",
+      "expectedAnswer": "28",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العرض يساوي خمسي الطول."
+        }
+      ],
+      "feedback": {
+        "correct": "العرض $\\dfrac{2}{5} \\times 70 = 28m$.",
+        "incorrect": "العرض هو $\\dfrac{2}{5}$ الطول الذي وجدته."
+      },
+      "solution": {
+        "lines": [
+          "العرض $= \\dfrac{2}{5} \\times 70$"
+        ],
+        "result": "28m"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "تنازل عمي الطاهر لأخيه عن جزء مربع الشكل من هذه القطعة مساحته $196m^2$. جِد طول ضلع هذا الجزء.",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بالمتر (m)",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "value": "98",
+          "id": "MISC-HALL-QISMA"
+        },
+        {
+          "value": "49",
+          "id": "MISC-HALL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة المربع الذي طول ضلعه $c$ هي $c^2$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حل المعادلة $c^2 = 196$ واحتفظ بالحل الموجب."
+        }
+      ],
+      "feedback": {
+        "correct": "$c^2 = 196$ و $c > 0$ يعطيان $c = 14m$.",
+        "incorrect": "مساحة المربع هي مربع طول ضلعه، وليست ضعفه."
+      },
+      "solution": {
+        "lines": [
+          "ليكن $c$ طول ضلع الجزء المربع: $c^2 = 196$",
+          "$c^2 = 14^2$ يعني $c = 14$ أو $c = -14$",
+          "وبما أن الطول موجب:"
+        ],
+        "result": "c = 14m"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "يغرس عمي الطاهر في الجزء الباقي أشجار زيتون، و يخصص لكل شجرة $36m^2$.",
+      "statement": "احسب مساحة الجزء الباقي.",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المساحة بالمتر المربع ($m^2$)",
+      "expectedAnswer": "1764",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح مساحة الجزء المتنازل عنه من مساحة القطعة."
+        }
+      ],
+      "feedback": {
+        "correct": "$1960 - 196 = 1764m^2$.",
+        "incorrect": "المساحة الباقية = مساحة القطعة − مساحة الجزء المربع."
+      },
+      "solution": {
+        "lines": [
+          "$1960 - 196$"
+        ],
+        "result": "1764m^2"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "ما هو عدد أشجار الزيتون التي يمكنه غرسها ؟",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الأشجار",
+      "expectedAnswer": "49",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم مساحة الجزء الباقي على المساحة المخصصة لشجرة واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$1764 \\div 36 = 49$ شجرة.",
+        "incorrect": "اقسم المساحة الباقية على المساحة المخصصة لكل شجرة."
+      },
+      "solution": {
+        "lines": [
+          "عدد الأشجار: $1764 \\div 36$"
+        ],
+        "result": "49"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

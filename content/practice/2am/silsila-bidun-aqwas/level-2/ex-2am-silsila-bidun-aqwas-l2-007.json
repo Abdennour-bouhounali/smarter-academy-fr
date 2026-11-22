@@ -1,0 +1,130 @@
+{
+  "id": "ex-2am-silsila-bidun-aqwas-l2-007",
+  "lessonCode": "silsila-bidun-aqwas",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — ثلاثة أجوبة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "جمع وطرح",
+      "برّر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "حسب ثلاثة تلاميذ العبارة $A = 100 - 30 - 20 + 10$ : وجد أمين $60$ ووجدت سعاد $40$ ووجد حمزة $100$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "من منهم على صواب؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bidun-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "أمين: وجد $60$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "سعاد: وجدت $40$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SILSILA-ADDFIRST"
+        },
+        {
+          "id": "C",
+          "content": "حمزة: وجد $100$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SILSILA-RIGHTLEFT"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى العمليات المكتوبة وإلى ترتيبها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز الحساب أنت أولًا مرحلة مرحلة، ثم قارنه بالعدد المقترح."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 100 - 30 - 20 + 10 = 60$ .",
+        "incorrect": "احسب أنت السلسلة بترتيبها الصحيح ثم قارن: الضرب والقسمة أوّلًا، ثم من اليسار نحو اليمين."
+      },
+      "solution": {
+        "lines": [
+          "$A = 100 - 30 - 20 + 10$",
+          "$A = 70 - 20 + 10$",
+          "$A = 50 + 10$",
+          "$A = 60$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل $30 - 12 + 8 = 30 + 8 - 12$ ؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bidun-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب على ورقتك مرحلة مرحلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اسأل: أيّ عملية تُنجز أوّلًا ولماذا؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تذكر القاعدة المستعملة."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$30 - 12 + 8 = 18 + 8 = 26$.",
+          "$30 + 8 - 12 = 38 - 12 = 26$.",
+          "المساواة صحيحة، لكن لا نبدّل ترتيب العددين عند وجود طرح قبلهما إلّا بحذر: كل عدد يحتفظ بإشارته."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

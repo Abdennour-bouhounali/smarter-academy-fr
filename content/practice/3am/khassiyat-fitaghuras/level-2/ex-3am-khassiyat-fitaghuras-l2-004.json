@@ -1,0 +1,266 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l2-004",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — يبدو قائما… فهل هو كذلك؟",
+    "estimatedMinutes": 8,
+    "tags": [
+      "خاصية فيثاغورس",
+      "مثلث غير قائم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "رسمت هبة مثلثا $XYZ$ حيث $XY = 6{,}5\\,\\mathrm{cm}$ ، $YZ = 4{,}2\\,\\mathrm{cm}$ و $XZ = 7{,}8\\,\\mathrm{cm}$ ، وقالت لزميلتها: «انظري، زاويته في $Y$ قائمة!». فاقترحت عليها زميلتها التحقّق بالحساب قبل الحكم.",
+    "figure": {
+      "points": {
+        "Y": [
+          0,
+          0
+        ],
+        "Z": [
+          4.2,
+          0
+        ],
+        "X": [
+          -0.1131,
+          6.499
+        ]
+      },
+      "segments": [
+        {
+          "from": "Y",
+          "to": "Z",
+          "label": "4,2 cm"
+        },
+        {
+          "from": "Y",
+          "to": "X",
+          "label": "6,5 cm"
+        },
+        {
+          "from": "X",
+          "to": "Z",
+          "label": "7,8 cm"
+        }
+      ],
+      "ariaLabel": "مثلث XYZ حيث XY = 6,5 cm و YZ = 4,2 cm و XZ = 7,8 cm، تبدو زاويته في Y قائمة",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $XZ^2$ ، مربع طول أطول أضلاع المثلث $XYZ$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: قيمة $XZ^2$",
+      "expectedAnswer": "60.84",
+      "misconceptionSignatures": [
+        {
+          "value": "15.6",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        },
+        {
+          "value": "42.25",
+          "id": "MISC-FITAGHURAS-NOT-LONGEST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رتّب أطوال الأضلاع الثلاثة: الضلع الأطول هو الوحيد الذي يمكن أن يكون وترا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع العدد هو جداؤه في نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "أطول الأضلاع هو $[XZ]$ و $XZ^2 = 7{,}8^2 = 60{,}84$ .",
+        "incorrect": "تأكّد أنك اخترت الضلع الأطول، وأنك ضربت طوله في نفسه."
+      },
+      "solution": {
+        "lines": [
+          "أطول أضلاع المثلث $XYZ$ هو $[XZ]$ .",
+          "$XZ^2 = 7{,}8^2 = 60{,}84$"
+        ],
+        "result": "XZ^2 = 60{,}84"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $YZ^2 + XY^2$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: مجموع المربعين",
+      "expectedAnswer": "59.89",
+      "misconceptionSignatures": [
+        {
+          "value": "21.4",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        },
+        {
+          "value": "10.7",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ربّع طول كل ضلع من الضلعين الأقصرين على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المربعين ولا تجمع الطولين."
+        }
+      ],
+      "feedback": {
+        "correct": "$YZ^2 + XY^2 = 4{,}2^2 + 6{,}5^2 = 17{,}64 + 42{,}25 = 59{,}89$ .",
+        "incorrect": "احسب مربع كل طول أولا، ثم اجمع المربعين."
+      },
+      "solution": {
+        "lines": [
+          "$YZ^2 + XY^2 = 4{,}2^2 + 6{,}5^2$",
+          "$YZ^2 + XY^2 = 17{,}64 + 42{,}25 = 59{,}89$"
+        ],
+        "result": "YZ^2 + XY^2 = 59{,}89"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل المثلث $XYZ$ قائم؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "المثلث $XYZ$ قائم لأن العددين $60{,}84$ و $59{,}89$ متقاربان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-LOOKS-RIGHT"
+        },
+        {
+          "id": "B",
+          "content": "المثلث $XYZ$ ليس قائما",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لا يمكن الحكم إلا بقياس زواياه بالمنقلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-LOOKS-RIGHT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العددين اللذين حسبتهما: هل هما متساويان تماما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لو كان المثلث قائما لكان مربع طول أطول أضلاعه مساويا تماما لمجموع مربعي الضلعين الآخرين (خاصية فيثاغورس)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "التقارب لا يكفي: المساواة يجب أن تكون تامة."
+        }
+      ],
+      "feedback": {
+        "correct": "$60{,}84 \\neq 59{,}89$ : لو كان المثلث قائما لتساوى العددان حسب خاصية فيثاغورس، إذن هو ليس قائما.",
+        "incorrect": "الشكل أو تقارب العددين لا يكفيان: انظر هل المساواة محقّقة تماما أم لا."
+      },
+      "solution": {
+        "lines": [
+          "أطول الأضلاع هو $[XZ]$ : $XZ^2 = 60{,}84$ و $YZ^2 + XY^2 = 59{,}89$ .",
+          "بما أن $XZ^2 \\neq YZ^2 + XY^2$ ، فحسب خاصية فيثاغورس المثلث $XYZ$ ليس قائما."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "برّر جوابك بكتابة الاستدلال كاملا.",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بتعيين أطول الأضلاع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن مربعه بمجموع مربعي الضلعين الآخرين، ثم استند إلى خاصية فيثاغورس."
+        }
+      ],
+      "feedback": {
+        "correct": "استدلال كامل: أطول ضلع، المقارنة، ثم الاستنتاج بخاصية فيثاغورس.",
+        "incorrect": "قارن استدلالك بالحل النموذجي: هل عيّنت أطول الأضلاع؟ هل ذكرت خاصية فيثاغورس في الاستنتاج؟"
+      },
+      "solution": {
+        "lines": [
+          "أطول الأضلاع هو $[XZ]$ : $XZ^2 = 60{,}84$ و $YZ^2 + XY^2 = 59{,}89$ .",
+          "بما أن $XZ^2 \\neq YZ^2 + XY^2$ ، فحسب خاصية فيثاغورس المثلث $XYZ$ ليس قائما."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "id": "ex-4am-hasiba-muthallathiya-l4-004",
+  "lessonCode": "hasiba-muthallathiya",
+  "level": 4,
+  "metadata": {
+    "title": "سلّم الحماية المدنية: الزاوية والارتفاع وشرط الأمان",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جيب التمام",
+      "الجيب",
+      "اللمسات العكسية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hasiba-muthallathiya_P2",
+      "modelledOn": "ex-7"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في الجزائر العاصمة، أسند رجال الحماية المدنية سلّما طوله $12\\,\\mathrm{m}$ إلى جدار شاقولي، وقاعدته على أرض أفقية على بعد $3{,}5\\,\\mathrm{m}$ من أسفل الجدار. ويحرصون على دقّة الحساب حفاظًا على سلامة من يصعد السلّم."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب قيس الزاوية $x$ بين السلّم والأرض بالتدوير إلى الوحدة من الدرجة.",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيس الزاوية بالدرجة، مدوّرا إلى الوحدة",
+      "expectedAnswer": "73",
+      "misconceptionSignatures": [
+        {
+          "value": "17",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "1",
+          "id": "MISC-MUTH-HASIBA-RAD"
+        },
+        {
+          "value": "0",
+          "id": "MISC-MUTH-NISBA-BADAL-QAYS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "السلّم هو الوتر، والمسافة إلى الجدار تجاور الزاوية $x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اللمسة العكسية: ⁦2nd⁩ ثم ⁦cos⁻¹⁩ ثم النسبة ثم ⁦=⁩."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الحرف ⁦D⁩ (الدرجة)، ثم دوّر إلى الوحدة: انظر إلى الرقم الموالي للرقم الأخير الذي تحتفظ به."
+        }
+      ],
+      "feedback": {
+        "correct": "$x \\approx 73{,}0422367^{\\circ} \\approx 73^{\\circ}$ .",
+        "incorrect": "النسبة ليست القيس: القيس يُعيَّن باللمسة العكسية المناسبة والحاسبة مبرمجة بالدرجة، ثم يُدوَّر (لا يُبتر) إلى الوحدة."
+      },
+      "solution": {
+        "lines": [
+          "$\\cos x = \\dfrac{3{,}5}{12}$ (المجاور على الوتر).",
+          "باستعمال الحاسبة المبرمجة بالدرجة: ⁦ON 2nd cos⁻¹ ( 3,5 ÷ 12 ) =⁩ يظهر على الشاشة $73{,}0422367$ .",
+          "الرقم الذي يلي رقم الوحدات هو 0، وهو أصغر من 5: نُبقي رقم الوحدات كما هو."
+        ],
+        "result": "x \\approx 73^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب الارتفاع الذي يبلغه أعلى السلّم على الجدار بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m مدوّرا إلى 0,1",
+      "expectedAnswer": "11.5",
+      "misconceptionSignatures": [
+        {
+          "value": "11.4",
+          "id": "MISC-MUTH-TADWIR-BATR"
+        },
+        {
+          "value": "3.5",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "12.5",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الارتفاع يقابل الزاوية $x$ ، والسلّم هو الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل جيب الزاوية $x$ بكل أرقام الشاشة (أو خاصية فيثاغورس)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$h = 12 \\times \\sin x \\approx 11{,}47824028 \\approx 11{,}5\\,\\mathrm{m}$ .",
+        "incorrect": "الارتفاع في بسط الجيب: نضرب طول السلّم في $\\sin x$ ، والحاسبة مبرمجة بالدرجة."
+      },
+      "solution": {
+        "lines": [
+          "$\\sin x = \\dfrac{h}{12}$ ومنه $h = 12 \\times \\sin x$",
+          "باستعمال كل أرقام الشاشة: $h \\approx 11{,}47824028$",
+          "(أو بخاصية فيثاغورس: $h = \\sqrt{12^2 - 3{,}5^2}$ )."
+        ],
+        "result": "h \\approx 11{,}5\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "لسلامة الصعود يجب أن يكون قيس الزاوية بين السلّم والأرض محصورا بين $65^{\\circ}$ و $75^{\\circ}$ . هل وُضع السلّم بأمان؟",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-ZAWIYA-KHATI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن قيس الزاوية $x$ الذي حسبته بالحدّين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الزاوية المطلوبة بين السلّم والأرض، لا بين السلّم والجدار."
+        }
+      ],
+      "feedback": {
+        "correct": "$65^{\\circ} < 73^{\\circ} < 75^{\\circ}$ : السلّم موضوع بأمان.",
+        "incorrect": "قارن الزاوية بين السلّم والأرض (لا الزاوية مع الجدار) بالحدّين المعطيين."
+      },
+      "solution": {
+        "lines": [
+          "$x \\approx 73^{\\circ}$ و $65^{\\circ} < 73^{\\circ} < 75^{\\circ}$",
+          "إذن السلّم موضوع بأمان."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

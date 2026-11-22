@@ -1,0 +1,165 @@
+{
+  "id": "ex-4am-murakkibata-shuaa-l1-004",
+  "lessonCode": "murakkibata-shuaa",
+  "level": 1,
+  "metadata": {
+    "title": "تمرين 2 — مركبتا OB و OD",
+    "estimatedMinutes": 3,
+    "tags": [
+      "OM",
+      "قراءة بيانية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-2",
+      "page": 146,
+      "section": "إحداثيتا نقطة - مركبتا شعاع",
+      "number": 2
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 146): المستوي مزوّد بمعلم متعامد ومتجانس، مبدؤه النقطة O. A، B، C، D، E، F نقط من المستوي (الشكل).",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          3,
+          3
+        ],
+        "B": [
+          -3,
+          3
+        ],
+        "C": [
+          0,
+          2
+        ],
+        "D": [
+          7,
+          -2
+        ],
+        "E": [
+          -2,
+          -2
+        ],
+        "F": [
+          0,
+          -2
+        ]
+      },
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw",
+        "C": "e",
+        "F": "e"
+      },
+      "ariaLabel": "معلم على المرصوفة والنقط A و B و C و D و E و F: C و F على محور التراتيب، و D بعيدة تحت اليمين",
+      "maxWidth": 520
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أوجد مركبتي الشعاع $\\overrightarrow{OB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_murakkibata-shuaa_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "مركبتا الشعاع (x ; y): الأفقية ثم العمودية — عددان مثل −3 أو 2,5",
+      "expectedAnswer": {
+        "x": "-3",
+        "y": "3"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مبدأ هذا الشعاع هو مبدأ المعلم O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من O، الإزاحة الأفقية هي الفاصلة والإزاحة العمودية هي الترتيب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مركبتا $\\overrightarrow{OM}$ هما إحداثيتا M بنفس الترتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "B على يسار محور التراتيب بـ 3 وفوق محور الفواصل بـ 3: $\\overrightarrow{OB}\\begin{pmatrix} -3 \\\\ 3 \\end{pmatrix}$ .",
+        "incorrect": "اقرأ إحداثيتي B: الفاصلة أولا."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "3",
+            "y": "3"
+          },
+          "id": "MISC-MAALAM-ISHARA"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "statement": "أوجد مركبتي الشعاع $\\overrightarrow{OD}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_murakkibata-shuaa_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "مركبتا الشعاع (x ; y): الأفقية ثم العمودية — عددان مثل −3 أو 2,5",
+      "expectedAnswer": {
+        "x": "7",
+        "y": "-2"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مبدأ هذا الشعاع هو مبدأ المعلم O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من O، الإزاحة الأفقية هي الفاصلة والإزاحة العمودية هي الترتيب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مركبتا $\\overrightarrow{OM}$ هما إحداثيتا M بنفس الترتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "من O: 7 نحو اليمين ثم 2 نحو الأسفل: $\\overrightarrow{OD}\\begin{pmatrix} 7 \\\\ -2 \\end{pmatrix}$ .",
+        "incorrect": "المركبة الأولى أفقية: 7."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-2",
+            "y": "7"
+          },
+          "id": "MISC-MAALAM-TABDIL-X-Y"
+        },
+        {
+          "value": {
+            "x": "7",
+            "y": "2"
+          },
+          "id": "MISC-MAALAM-ISHARA"
+        }
+      ]
+    }
+  ]
+}

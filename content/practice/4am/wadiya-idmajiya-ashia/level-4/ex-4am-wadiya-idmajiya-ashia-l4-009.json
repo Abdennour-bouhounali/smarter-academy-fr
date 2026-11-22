@@ -1,0 +1,208 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ashia-l4-009",
+  "lessonCode": "wadiya-idmajiya-ashia",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — كم نربح؟",
+    "estimatedMinutes": 5,
+    "tags": [
+      "أقصر مسلك",
+      "مقارنة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ashia_P1",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "يراجع المهندس عمله بإتقان: شارع عرضه $10\\,\\mathrm{m}$ (الشكل): A فوق الحافة العليا بـ $10\\,\\mathrm{m}$ و B تحت الحافة السفلى بـ $20\\,\\mathrm{m}$ ، والمسافة الأفقية $40\\,\\mathrm{m}$ ؛ أقصر مسلك $60\\,\\mathrm{m}$ . وُضع الممر أوّلا مقابل A مباشرة.",
+    "figure": {
+      "points": {
+        "R1": [
+          -6.0,
+          10
+        ],
+        "R2": [
+          46.0,
+          10
+        ],
+        "R3": [
+          46.0,
+          0
+        ],
+        "R4": [
+          -6.0,
+          0
+        ],
+        "A": [
+          0,
+          20
+        ],
+        "HA": [
+          0,
+          10
+        ],
+        "B": [
+          40,
+          -20
+        ],
+        "HB": [
+          40,
+          0
+        ],
+        "K": [
+          40,
+          10
+        ],
+        "M": [
+          30,
+          10
+        ],
+        "N": [
+          30,
+          0
+        ],
+        "W1": [
+          44.4,
+          10
+        ],
+        "W0": [
+          44.4,
+          0
+        ]
+      },
+      "polygons": [
+        {
+          "points": [
+            "R1",
+            "R2",
+            "R3",
+            "R4"
+          ],
+          "tone": "slate"
+        }
+      ],
+      "segments": [
+        {
+          "from": "R1",
+          "to": "R2",
+          "bold": true
+        },
+        {
+          "from": "R4",
+          "to": "R3",
+          "bold": true
+        },
+        {
+          "from": "A",
+          "to": "HA",
+          "dashed": true,
+          "label": "10 m"
+        },
+        {
+          "from": "HB",
+          "to": "B",
+          "dashed": true,
+          "label": "20 m"
+        },
+        {
+          "from": "HA",
+          "to": "K",
+          "dashed": true,
+          "tone": "sky",
+          "label": "40 m"
+        },
+        {
+          "from": "W1",
+          "to": "W0",
+          "label": "10 m"
+        },
+        {
+          "from": "A",
+          "to": "M",
+          "tone": "amber"
+        },
+        {
+          "from": "M",
+          "to": "N",
+          "bold": true,
+          "tone": "indigo"
+        },
+        {
+          "from": "N",
+          "to": "B",
+          "tone": "amber"
+        }
+      ],
+      "rightAngles": [
+        [
+          "R1",
+          "M",
+          "N"
+        ]
+      ],
+      "hidden": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "HA",
+        "HB",
+        "K",
+        "W1",
+        "W0"
+      ],
+      "labels": {
+        "A": "n",
+        "B": "s",
+        "M": "ne",
+        "N": "se"
+      },
+      "ariaLabel": "طريق عرضه 10 m بين حافتين متوازيتين، A فوق الحافة العليا بـ 10 m و B تحت الحافة السفلى بـ 20 m، والمسافة الأفقية بينهما 40 m، والممر [MN] عمودي على الحافتين"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "بكم مترا يزيد المسلك مقابل A على أقصر مسلك؟ (مدوّرا إلى 0,1)",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة (مدوّر إلى 0,1)",
+      "expectedAnswer": "4.7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مقابل A: AM = 10."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$NB = \\sqrt{40^2 + 20^2}$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع ناقص 60."
+        }
+      ],
+      "feedback": {
+        "correct": "$L = 10 + 10 + \\sqrt{2000} \\approx 64{,}72$ ، والفرق $\\approx 4{,}7\\,\\mathrm{m}$ .",
+        "incorrect": "احسب طول المسلك في ذلك الموضع أولا."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 4
+    }
+  ]
+}

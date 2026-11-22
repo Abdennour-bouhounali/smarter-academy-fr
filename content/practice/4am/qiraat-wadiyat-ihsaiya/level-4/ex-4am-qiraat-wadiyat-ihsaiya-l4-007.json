@@ -1,0 +1,141 @@
+{
+  "id": "ex-4am-qiraat-wadiyat-ihsaiya-l4-007",
+  "lessonCode": "qiraat-wadiyat-ihsaiya",
+  "level": 4,
+  "metadata": {
+    "title": "كم أنثى في القسم؟",
+    "estimatedMinutes": 10,
+    "tags": [
+      "المتوسط المتوازن",
+      "نمذجة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_qiraat-wadiyat-ihsaiya_P3",
+      "modelledOn": "challenge",
+      "adaptedFrom": "ex-4am-qiraat-wadiyat-ihsaiya-l5-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في قسم: 10 ذكور معدّلهم 9 ، ومعدّل الإناث 14 ، ومعدّل القسم كلّه 12 . نسمّي $x$ عدد الإناث."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب مجموع نقاط الذكور.",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "90",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مجموع نقاط مجموعة = عدد أفرادها × معدّلها."
+        }
+      ],
+      "feedback": {
+        "correct": "$10 \\times 9 = 90$ .",
+        "incorrect": "اضرب عدد الذكور في معدّلهم."
+      },
+      "solution": {
+        "lines": [
+          "$10 \\times 9 = 90$"
+        ],
+        "result": "90"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بيّن أن $x$ يحقّق المساواة: $90 + 14x = 12(10 + x)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب مجموع نقاط القسم بطريقتين."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "مجموع نقاط الإناث: $14x$ ، فمجموع نقاط القسم $90 + 14x$ .",
+          "عدد تلاميذ القسم $10 + x$ ومعدّله 12 ، فمجموع نقاطه أيضا $12(10 + x)$ .",
+          "ومنه: $90 + 14x = 12(10 + x)$ ."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "استنتج عدد الإناث في هذا القسم.",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "15",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر الطرف الأيمن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع حدود $x$ في طرف واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$2x = 30$ ومنه $x = 15$ .",
+        "incorrect": "انشر $12(10 + x)$ ثم اجمع حدود $x$ في طرف والأعداد في الطرف الآخر."
+      },
+      "solution": {
+        "lines": [
+          "$90 + 14x = 120 + 12x$",
+          "$2x = 30$",
+          "$x = 15$"
+        ],
+        "result": "x = 15"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

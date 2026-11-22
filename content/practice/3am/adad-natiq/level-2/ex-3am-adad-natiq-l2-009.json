@@ -1,0 +1,232 @@
+{
+  "id": "ex-3am-adad-natiq-l2-009",
+  "lessonCode": "adad-natiq",
+  "level": 2,
+  "metadata": {
+    "title": "أقارن عددين باستعمال الآلة الحاسبة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "العدد الناطق"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-29",
+      "page": 31,
+      "section": "أوظّف تعلّماتي",
+      "number": 29
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في ورشة الصيانة، قاس عاملان نسبتين كسريتين $-\\dfrac{7}{13}$ و $-\\dfrac{9}{17}$ وأرادا معرفة أيّهما الأصغر باستعمال الآلة الحاسبة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب بالآلة قيمة مقرّبة بالنقصان إلى $0{,}001$ للعدد $\\dfrac{7}{13}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "0.538",
+      "misconceptionSignatures": [
+        {
+          "value": "0.539",
+          "id": "MISC-NATIQ-APPROX"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة بالآلة أو بالطريقة العمودية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى رتبة التقريب المطلوبة وإلى كلمة بالنقصان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقطع الكتابة عند الرتبة المطلوبة دون أن تزيد الرقم الأخير."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{269}{500}$ .",
+        "incorrect": "انتبه إلى رتبة التقريب وإلى معنى بالنقصان، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$7\\div 13=0{,}53846\\ldots$ .",
+          "بالنقصان إلى $0{,}001$ : $0{,}538$ ."
+        ],
+        "result": "\\dfrac{269}{500}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب بالآلة قيمة مقرّبة بالنقصان إلى $0{,}001$ للعدد $\\dfrac{9}{17}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "0.529",
+      "misconceptionSignatures": [
+        {
+          "value": "0.53",
+          "id": "MISC-NATIQ-APPROX"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة بالآلة أو بالطريقة العمودية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى رتبة التقريب المطلوبة وإلى كلمة بالنقصان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقطع الكتابة عند الرتبة المطلوبة دون أن تزيد الرقم الأخير."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{529}{1000}$ .",
+        "incorrect": "انتبه إلى رتبة التقريب وإلى معنى بالنقصان، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$9\\div 17=0{,}52941\\ldots$ .",
+          "بالنقصان إلى $0{,}001$ : $0{,}529$ ."
+        ],
+        "result": "\\dfrac{529}{1000}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "أيّ المقارنتين صحيحة ؟",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-\\dfrac{7}{13}<-\\dfrac{9}{17}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$-\\dfrac{7}{13}>-\\dfrac{9}{17}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-NEGORDER"
+        },
+        {
+          "id": "C",
+          "content": "$-\\dfrac{7}{13}=-\\dfrac{9}{17}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-WRITINGS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العددين بالمقام الموجب نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن البسطين بقواعد مقارنة الأعداد النسبية: على يسار الصفر، الأبعد عن الصفر هو الأصغر."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $-\\dfrac{7}{13}<-\\dfrac{9}{17}$ .",
+        "incorrect": "اكتب العددين بمقام موجب مشترك قبل أن تقارن، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{7}{13}\\approx 0{,}538>\\dfrac{9}{17}\\approx 0{,}529$ .",
+          "في الجهة السالبة ينعكس الترتيب : $-\\dfrac{7}{13}<-\\dfrac{9}{17}$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "تحقّق من جوابك بكتابة العددين بمقام موجب مشترك.",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثمّ اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجب أن تبرّره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اذكر القاعدة التي تستعملها في كلّ سطر."
+        }
+      ],
+      "feedback": {
+        "correct": "تطابق تبريرك مع الحل النموذجي .",
+        "incorrect": "قارن تبريرك بالحل النموذجي سطرًا سطرًا، ثمّ قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "المقام المشترك $13\\times 17=221$ : $-\\dfrac{7}{13}=\\dfrac{-119}{221}$ و $-\\dfrac{9}{17}=\\dfrac{-117}{221}$ .",
+          "$-119<-117$ ، إذن $-\\dfrac{7}{13}<-\\dfrac{9}{17}$ ، وهذا يوافق نتيجة الآلة."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

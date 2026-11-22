@@ -1,0 +1,193 @@
+{
+  "id": "ex-1am-qawaid-qabiliyat-qisma-l2-008",
+  "lessonCode": "qawaid-qabiliyat-qisma",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — صحيح أم خطأ؟",
+    "estimatedMinutes": 6,
+    "tags": [
+      "3 و 9",
+      "مثال مضادّ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أجب بصحيح أو خطأ، ثم برّر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "كل عدد يقبل القسمة على 9 يقبل القسمة على 3.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-3-9"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $9 = 3 \\times 3$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان العدد مضاعفًا للعدد 9، فهل هو مضاعف للعدد 3؟"
+        }
+      ],
+      "feedback": {
+        "correct": "إذا كان $a = 9 \\times k$ فإن $a = 3 \\times (3 \\times k)$.",
+        "incorrect": "كل مضاعف للعدد 9 هو مضاعف للعدد 3 لأن 9 نفسه مضاعف للعدد 3."
+      },
+      "solution": {
+        "lines": [
+          "$a = 9 \\times k = 3 \\times (3 \\times k)$",
+          "إذن كل مضاعف للعدد 9 مضاعف للعدد 3."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كل عدد يقبل القسمة على 3 يقبل القسمة على 9.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-3-9"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جرّب العدد 12."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يكفي أن يقبل مجموع الأرقام القسمة على 3؟"
+        }
+      ],
+      "feedback": {
+        "correct": "12 يقبل القسمة على 3 ولا يقبل القسمة على 9.",
+        "incorrect": "يكفي مثال واحد مضادّ لنفي الجملة."
+      },
+      "solution": {
+        "lines": [
+          "$12 = 3 \\times 4$ و $12 = 9 \\times 1 + 3$.",
+          "إذن الجملة خاطئة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "أيّ عدد من الأعداد الآتية يبيّن أن الجملة (ب) خاطئة؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "33",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "90",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-3-9"
+        },
+        {
+          "id": "C",
+          "content": "27",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-3-9"
+        },
+        {
+          "id": "D",
+          "content": "81",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-3-9"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن عدد يقبل القسمة على 3 ولا يقبل القسمة على 9."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب مجموع أرقام كل عدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 + 3 = 6$: 33 يقبل القسمة على 3 ولا يقبل القسمة على 9.",
+        "incorrect": "المثال المضادّ يقبل القسمة على 3 ولا يقبل القسمة على 9."
+      },
+      "solution": {
+        "lines": [
+          "مجاميع الأرقام: 27 ← 9 ، 81 ← 9 ، 33 ← 6 ، 90 ← 9.",
+          "33 يقبل القسمة على 3 ($33 = 3 \\times 11$) ولا يقبل القسمة على 9 ($33 = 9 \\times 3 + 6$)."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,251 @@
+{
+  "id": "ex-4am-tanasub-taghayyurat-l3-001",
+  "lessonCode": "tanasub-taghayyurat",
+  "level": 3,
+  "metadata": {
+    "title": "تحدّ — العبارة والتحويلات",
+    "estimatedMinutes": 8,
+    "tags": [
+      "درجة الحرارة",
+      "تعيين دالة تآلفية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "challenge",
+      "page": 77,
+      "section": "تحدّ",
+      "adaptedFrom": "ex-4am-tanasub-taghayyurat-l3-001"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$f$ دالة تآلفية ترفق بكل درجة حرارة $x$ بالسلسيوس درجتها $f(x)$ بالفهرنهايت، حيث: $f(10) = 50$ و $f(30) = 86$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عيّن العبارة الجبرية للدالة $f$ .",
+      "statement": "أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "1,8",
+      "misconceptionSignatures": [
+        {
+          "value": "36",
+          "id": "MISC-TAGHAYYUR-BIDUN-QISMA"
+        },
+        {
+          "value": "-1,8",
+          "id": "MISC-TAGHAYYUR-TARTIB"
+        },
+        {
+          "value": "5/9",
+          "id": "MISC-BAYANI-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خاصية تناسب التغيّرات: المعامل $a$ هو حاصل قسمة فرق الصورتين على فرق العددين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $\\dfrac{f(30) - f(10)}{30 - 10}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح بالترتيب نفسه في البسط والمقام، وانتبه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{36}{20} = 1{,}8$ .",
+        "incorrect": "اقسم فرق الصورتين على فرق العددين، واطرح بالترتيب نفسه في البسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "العبارة الجبرية للدالة التآلفية $f$ هي: $f(x) = ax + b$ .",
+          "إيجاد العدد $a$ (خاصية تناسب التغيّرات):",
+          "$a = \\dfrac{f(x_2) - f(x_1)}{x_2 - x_1}$",
+          "$a = \\dfrac{86 - 50}{30 - 10}$",
+          "$a = \\dfrac{36}{20}$",
+          "$a = 1{,}8$"
+        ],
+        "result": "a = 1{,}8"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "32",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-TAGHAYYUR-B-NISBA"
+        },
+        {
+          "value": "1,8",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$f(10) = 50$ و $f(x) = ax + b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $a$ بقيمته و $x$ بالعدد $10$ ، ثم حلّ المعادلة التي مجهولها $b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$b = 50 - 18 = 32$ .",
+        "incorrect": "بعد حساب $a$ : $b = f(x_1) - a x_1$ ، وليس حاصل قسمة الصورة على العدد."
+      },
+      "solution": {
+        "lines": [
+          "إيجاد العدد $b$ (الترتيب إلى المبدأ):",
+          "لدينا: $f(10) = 50$",
+          "أي: $1{,}8 \\times 10 + b = 50$",
+          "$18 + b = 50$",
+          "$b = 50 - 18$",
+          "$b = 32$",
+          "ومنه العبارة الجبرية للدالة $f$ هي: $f(x) = 1{,}8x + 32$"
+        ],
+        "result": "f(x) = 1{,}8x + 32"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "يغلي الماء عند 100 درجة سلسيوس. احسب درجة غليان الماء بالفهرنهايت.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "212",
+      "misconceptionSignatures": [
+        {
+          "value": "180",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد $100$ في عبارة $f(x)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب أولا في المعامل، ثم أضف الحدّ الثابت بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(100) = 180 + 32 = 212$ .",
+        "incorrect": "اضرب العدد في المعامل ثم أضف الحدّ الثابت بإشارته، ولا تنسه."
+      },
+      "solution": {
+        "lines": [
+          "$f(100) = 1{,}8 \\times 100 + 32$",
+          "$f(100) = 180 + 32$",
+          "$f(100) = 212$"
+        ],
+        "result": "f(100) = 212"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "جد درجة الحرارة التي يُعبَّر عنها بالعدد نفسه بالسلسيوس وبالفهرنهايت.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-40",
+      "misconceptionSignatures": [
+        {
+          "value": "40",
+          "id": "MISC-TAALUFI-SABIQ-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن العدد $x$ الذي يحقق $f(x) = x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع حدود $x$ في طرف واحد ثم اقسم."
+        }
+      ],
+      "feedback": {
+        "correct": "$-0{,}8x = 32$ ، إذن $x = \\dfrac{32}{-0{,}8}$ .",
+        "incorrect": "حلّ المعادلة $1{,}8x + 32 = x$ ، وانتبه إلى الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "نحلّ المعادلة: $f(x) = x$",
+          "$1{,}8x + 32 = x$",
+          "$1{,}8x - x = -32$",
+          "$0{,}8x = -32$",
+          "$x = \\dfrac{-32}{0{,}8} = -40$",
+          "إذن $-40$ درجة سلسيوس تساوي $-40$ درجة فهرنهايت."
+        ],
+        "result": "x = -40"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

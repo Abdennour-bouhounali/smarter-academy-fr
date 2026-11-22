@@ -1,0 +1,279 @@
+{
+  "id": "ex-4am-dala-khattiya-l5-002",
+  "lessonCode": "dala-khattiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2016 — آلات خياطة لورشة بتلمسان",
+    "estimatedMinutes": 13,
+    "tags": [
+      "وضعية إدماجية",
+      "رسم على القيمة المضافة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_dala-khattiya_P2",
+      "modelledOn": "BEM 2016 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تريد ورشة للخياطة التقليدية بتلمسان، تحافظ على تراث الوطن، شراء آلات خياطة. يُضاف إلى ثمن كل آلة دون رسم $x$ (بـ DA) رسم على القيمة المضافة نسبته $19\\%$ . نسمّي $f(x)$ ثمن الآلة بالرسم."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "بيّن أن $f(x) = 1{,}19x$ ، واستنتج أن $f$ دالة خطية.",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الرسم يمثّل $19\\%$ من الثمن دون رسم، ويُضاف إليه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرج $x$ عاملا مشتركا."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = x + \\dfrac{19}{100}x$",
+          "$f(x) = (1 + 0{,}19)x = 1{,}19x$",
+          "من الشكل $ax$ مع $a = 1{,}19$ : $f$ دالة خطية."
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب ثمن آلة خياطة بالرسم إذا كان ثمنها دون رسم 18000DA .",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "21420",
+      "misconceptionSignatures": [
+        {
+          "value": "1800000/119",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "-21420",
+          "id": "MISC-KHATTIYA-ISHARA"
+        },
+        {
+          "value": "3420",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "صورة العدد $x$ بالدالة الخطية $f$ هي $f(x) = 1{,}19 \\times x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $x$ بالعدد $18000$ ثم احسب الجداء، وانتبه إلى الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(18000) = 1{,}19 \\times 18000 = 21420$ .",
+        "incorrect": "الصورة جداء المعامل في العدد: $f(x) = 1{,}19 \\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(18000) = 1{,}19 \\times 18000$",
+          "$f(18000) = 21420$"
+        ],
+        "result": "f(18000) = 21420DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "دفعت الورشة 26180DA ثمن آلة تطريز (بالرسم). جد ثمنها دون رسم.",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "22000",
+      "misconceptionSignatures": [
+        {
+          "value": "31154,2",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "-22000",
+          "id": "MISC-KHATTIYA-ISHARA"
+        },
+        {
+          "value": "21205,8",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد المطلوب $x$ يحقق $f(x) = 26180$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المعادلة $1{,}19x = 26180$ : اقسم الطرفين على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{26180}{1{,}19} = 22000$ .",
+        "incorrect": "لا تحسب صورة العدد المعطى: ابحث عن العدد $x$ الذي صورته هذا العدد."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 26180$ معناه $1{,}19x = 26180$",
+          "$x = \\dfrac{26180}{1{,}19} = 22000$"
+        ],
+        "result": "x = 22000DA"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "بمناسبة معرض الصناعات التقليدية، يخفّض البائع الثمن بالرسم بـ $10\\%$ لكل من يشتري أكثر من ثلاث آلات.",
+      "statement": "عبّر عن الثمن المدفوع بعد التخفيض $g(x)$ لآلة ثمنها دون رسم $x$ على الشكل $g(x) = kx$ ، وأعط $k$ .",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $k$ فقط (عدد عشري بالفاصلة)",
+      "expectedAnswer": "1,071",
+      "misconceptionSignatures": [
+        {
+          "value": "1,09",
+          "id": "MISC-NISBA-TATABU-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بعد تخفيض $10\\%$ يُدفع $90\\%$ من الثمن بالرسم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$g(x) = 0{,}9 \\times f(x)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$k = 0{,}9 \\times 1{,}19 = 1{,}071$ .",
+        "incorrect": "اضرب معامل الدالة $f$ في النسبة المدفوعة بعد التخفيض."
+      },
+      "solution": {
+        "lines": [
+          "$g(x) = 0{,}9 \\times f(x) = 0{,}9 \\times 1{,}19x$",
+          "$g(x) = 1{,}071x$"
+        ],
+        "result": "k = 1{,}071"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "☜ اشترت الورشة أربع آلات خياطة ثمن الواحدة دون رسم 18000DA . احسب المبلغ الذي دفعته.",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "77112",
+      "misconceptionSignatures": [
+        {
+          "value": "78480",
+          "id": "MISC-NISBA-TATABU-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل العبارة $g(x)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب ثمن آلة واحدة ثم اضرب في عدد الآلات."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 19278 = 77112$ .",
+        "incorrect": "احسب ثمن آلة واحدة بعد الرسم والتخفيض، ثم اضرب في 4 ."
+      },
+      "solution": {
+        "lines": [
+          "ثمن الآلة الواحدة بعد التخفيض: $1{,}071 \\times 18000 = 19278$",
+          "$4 \\times 19278 = 77112$"
+        ],
+        "result": "77112DA"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

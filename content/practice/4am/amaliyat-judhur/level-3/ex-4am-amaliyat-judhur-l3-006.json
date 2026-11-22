@@ -1,0 +1,174 @@
+{
+  "id": "ex-4am-amaliyat-judhur-l3-006",
+  "lessonCode": "amaliyat-judhur",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2022 — التمرين الأول",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جداء جذرين",
+      "نسبة مقامها ناطق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_amaliyat-judhur_P1",
+      "modelledOn": "BEM 2022 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$A$ و $B$ عددان حيث:",
+    "formulas": [
+      "A = \\sqrt{12} + 2\\sqrt{75} - 3\\sqrt{27}",
+      "B = \\dfrac{3 + \\sqrt{3}}{\\sqrt{3}}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب العدد $A$ على الشكل $a\\sqrt{3}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "21",
+          "id": "MISC-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $12 = 4 \\times 3$ ، $75 = 25 \\times 3$ ، $27 = 9 \\times 3$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل حد على الشكل $k\\sqrt{3}$ مع معامله."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع المعاملات مع إشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 2\\sqrt{3} + 10\\sqrt{3} - 9\\sqrt{3} = 3\\sqrt{3}$",
+        "incorrect": "لا تنسَ ضرب المعاملين 2 و 3 في جذري المربعين التامين."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\sqrt{4 \\times 3} + 2\\sqrt{25 \\times 3} - 3\\sqrt{9 \\times 3}$",
+          "$= 2\\sqrt{3} + 10\\sqrt{3} - 9\\sqrt{3}$"
+        ],
+        "result": "A = 3\\sqrt{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب العدد $B$ على شكل نسبة مقامها عدد ناطق.",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $B$ على الشكل $\\sqrt{3} + b$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب البسط والمقام في $\\sqrt{3}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم بسّط بالقسمة على 3."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = \\dfrac{3\\sqrt{3} + 3}{3} = \\sqrt{3} + 1$",
+        "incorrect": "اضرب كل حد من البسط في $\\sqrt{3}$ ، ثم اقسم على 3."
+      },
+      "solution": {
+        "lines": [
+          "$B = \\dfrac{(3 + \\sqrt{3}) \\times \\sqrt{3}}{\\sqrt{3} \\times \\sqrt{3}}$",
+          "$= \\dfrac{3\\sqrt{3} + 3}{3}$"
+        ],
+        "result": "B = \\sqrt{3} + 1"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "بيّن أن $B \\times (\\sqrt{3} - 1)$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة الجداء $B \\times (\\sqrt{3} - 1)$ (عدد طبيعي)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-TARBI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الجداء من الشكل $(a + b)(a - b)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$B \\times (\\sqrt{3} - 1) = (\\sqrt{3})^2 - 1^2 = 3 - 1 = 2$",
+        "incorrect": "اكتب $(\\sqrt{3} + 1)(\\sqrt{3} - 1)$ واستعمل $\\sqrt{3} \\times \\sqrt{3} = 3$ ."
+      },
+      "solution": {
+        "lines": [
+          "$B \\times (\\sqrt{3} - 1) = (\\sqrt{3} + 1)(\\sqrt{3} - 1)$",
+          "$= (\\sqrt{3})^2 - 1^2$",
+          "$= 3 - 1$"
+        ],
+        "result": "B \\times (\\sqrt{3} - 1) = 2"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "id": "ex-4am-tatbiqat-tanasub-l2-007",
+  "lessonCode": "tatbiqat-tanasub",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2025 — سباق الدراجات الهوائية",
+    "estimatedMinutes": 4,
+    "tags": [
+      "السرعة المتوسطة",
+      "المدة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tatbiqat-tanasub_P2",
+      "modelledOn": "BEM 2025 II 2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "شارك سفيان في سباق للدراجات الهوائية بمناسبة عيد الاستقلال، فقطع مسافة $45km$ في ساعة ونصف."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب السرعة المتوسطة لسفيان بـ km/h .",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب السرعة بـ km/h (عدد فقط)",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "450/13",
+          "id": "MISC-MAQADIR-WIHDA"
+        },
+        {
+          "value": "1/30",
+          "id": "MISC-MAQADIR-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ساعة ونصف تساوي $1{,}5h$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$v = \\dfrac{d}{t}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$v = \\dfrac{45}{1{,}5} = 30km/h$ .",
+        "incorrect": "حوّل المدة إلى ساعات بعدد عشري، ثم اقسم المسافة على المدة."
+      },
+      "solution": {
+        "lines": [
+          "ساعة ونصف $= 1{,}5h$",
+          "$v = \\dfrac{d}{t} = \\dfrac{45}{1{,}5}$",
+          "$v = 30km/h$"
+        ],
+        "result": "v = 30km/h"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هي المدة (بالساعة) التي يستغرقها سفيان لقطع مسافة $75km$ بالسرعة نفسها؟",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المدة بالساعة (عدد عشري بالفاصلة)",
+      "expectedAnswer": "2,5",
+      "misconceptionSignatures": [
+        {
+          "value": "0,4",
+          "id": "MISC-MAQADIR-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من $v = \\dfrac{d}{t}$ نستنتج $t = \\dfrac{d}{v}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم المسافة على السرعة المتوسطة."
+        }
+      ],
+      "feedback": {
+        "correct": "$t = \\dfrac{75}{30} = 2{,}5h$ ، أي ساعتان ونصف.",
+        "incorrect": "المدة هي المسافة مقسومة على السرعة: $t = \\dfrac{d}{v}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$t = \\dfrac{d}{v}$",
+          "$t = \\dfrac{75}{30} = 2{,}5$",
+          "يستغرق سفيان $2{,}5h$ ، أي ساعتين ونصفا."
+        ],
+        "result": "t = 2{,}5h"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

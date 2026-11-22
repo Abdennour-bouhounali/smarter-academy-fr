@@ -1,0 +1,217 @@
+{
+  "id": "ex-2am-talim-nuqta-mustawi-l3-008",
+  "lessonCode": "talim-nuqta-mustawi",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — حديقة بإحداثيات عشرية",
+    "estimatedMinutes": 10,
+    "tags": [
+      "مربّع",
+      "عشري",
+      "عدّ وحدات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "في مخطّط حديقة المدرسة (معلم متعامد ومتجانس مبدؤه $O$ ) نعلّم ثلاث زوايا لحديقة مستطيلة: $A(-2{,}5\\,;\\,3)$ و $B(-2{,}5\\,;\\,-1)$ و $C(1{,}5\\,;\\,-1)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن النقطة $D$ بحيث يكون الرباعي $ABCD$ مستطيلًا، ثم اكتب إحداثيتيها.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "1.5",
+        "y": "3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "3",
+            "y": "1.5"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNAXIS",
+          "value": {
+            "x": "1.5",
+            "y": "-3"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNLEFT",
+          "value": {
+            "x": "-1.5",
+            "y": "3"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في مستطيل أضلاعه توازي المحورين، لكلّ ضلعين متقابلين الفاصلة نفسها أو الترتيب نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الرأس الرابع يأخذ فاصلة أحد الرؤوس المعلومة وترتيب رأس آخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارسم الرؤوس المعلومة على الشبكة وأكمل الشكل ثم اقرأ الرأس الرابع."
+        }
+      ],
+      "feedback": {
+        "correct": "$D(1{,}5\\,;\\,3)$ .",
+        "incorrect": "في مستطيل أضلاعه توازي المحورين، الرأس الرابع يأخذ فاصلة رأس وترتيب رأس آخر من الرؤوس المعلومة."
+      },
+      "solution": {
+        "lines": [
+          "نرسم الرؤوس المعلومة على الشبكة ونكمل المستطيل",
+          "$D(1{,}5\\,;\\,3)$"
+        ],
+        "result": "D(1{,}5\\,;\\,3)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما طول القطعة $[AB]$ بعدّ وحدات الشبكة؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الوحدات",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-LENSUM",
+          "value": "2"
+        },
+        {
+          "id": "MISC-NUQTA2-LENOFF",
+          "value": "5"
+        },
+        {
+          "id": "MISC-NUQTA2-LENMAX",
+          "value": "3"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "علّم النقطتين وتأكّد أنّهما على خطّ واحد من الشبكة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ الوحدات بين النقطتين على الشبكة، مرورًا بالمحور إن كان القطعة تقطعه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب عدد الوحدات في طول الوحدة إن طُلبت النتيجة بالمتر أو السنتيمتر."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد الوحدات $4$ .",
+        "incorrect": "القطعة تقع على خطّ من الشبكة: عُدّ وحداتها واحدة واحدة، ومُرّ بالمحور إن كانت تقطعه."
+      },
+      "solution": {
+        "lines": [
+          "القطعة $[AB]$ توازي أحد المحورين",
+          "عدد وحداتها $4$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما طول القطعة $[BC]$ بعدّ وحدات الشبكة؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الوحدات",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-LENSUM",
+          "value": "-1"
+        },
+        {
+          "id": "MISC-NUQTA2-LENOFF",
+          "value": "5"
+        },
+        {
+          "id": "MISC-NUQTA2-LENMAX",
+          "value": "2.5"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "علّم النقطتين وتأكّد أنّهما على خطّ واحد من الشبكة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ الوحدات بين النقطتين على الشبكة، مرورًا بالمحور إن كان القطعة تقطعه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب عدد الوحدات في طول الوحدة إن طُلبت النتيجة بالمتر أو السنتيمتر."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد الوحدات $4$ .",
+        "incorrect": "القطعة تقع على خطّ من الشبكة: عُدّ وحداتها واحدة واحدة، ومُرّ بالمحور إن كانت تقطعه."
+      },
+      "solution": {
+        "lines": [
+          "القطعة $[BC]$ توازي أحد المحورين",
+          "عدد وحداتها $4$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

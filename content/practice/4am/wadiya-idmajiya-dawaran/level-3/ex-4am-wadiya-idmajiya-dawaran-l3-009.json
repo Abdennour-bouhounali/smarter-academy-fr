@@ -1,0 +1,86 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-dawaran-l3-009",
+  "lessonCode": "wadiya-idmajiya-dawaran",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — صورة دائرة بدوران",
+    "estimatedMinutes": 2,
+    "tags": [
+      "صورة دائرة بدوران"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-dawaran_P1",
+      "modelledOn": "qcm"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "في حديقة، حوض دائري صغير مركزه I ونصف قطره $1\\,\\mathrm{m}$ . نريد حوضا ثانيا هو صورته بالدوران الذي مركزه O (مركز الحديقة) وزاويته $90^\\circ$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الحوض الثاني هو الدائرة:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "التي مركزها O ونصف قطرها OI",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MARKAZ"
+        },
+        {
+          "id": "B",
+          "content": "التي مركزها I ونصف قطرها $1\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-DAIRA"
+        },
+        {
+          "id": "C",
+          "content": "التي مركزها I′ صورة I ونصف قطرها $1\\,\\mathrm{m}$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "التي مركزها I′ صورة I ونصف قطرها $2\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-DAIRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدوران يحافظ على الأطوال."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كيف نجد مركز الصورة؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "صورة دائرة: مركزها صورة المركز ونصف قطرها نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "صورة دائرة مركزها I ونصف قطرها r هي الدائرة التي مركزها I′ صورة I ونصف قطرها r.",
+        "incorrect": "الدوران ينقل المركز ويحافظ على نصف القطر."
+      },
+      "cognitiveDemand": "recall",
+      "difficulty": 3
+    }
+  ]
+}

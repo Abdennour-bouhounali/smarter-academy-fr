@@ -1,0 +1,184 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l1-007",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 1,
+  "metadata": {
+    "title": "مستقيم لا يشمل المبدأ",
+    "estimatedMinutes": 4,
+    "tags": [
+      "تناسبية",
+      "رسم ثابت"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-1",
+      "page": 88,
+      "section": "أنشطة 1",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يتطوّع شباب الحيّ لنقل الكتب إلى المرضى في المستشفى، ويدفعون للسائق رسما ثابتا على كل رحلة زيادة على ثمن الكتب المنقولة. يمثّل المستقيم $(d)$ في المعلم التالي المبلغ المدفوع بدلالة عدد الصناديق المنقولة (الترتيب بمئات الدنانير).",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          1,
+          3
+        ],
+        "B": [
+          2,
+          4
+        ],
+        "C": [
+          4,
+          6
+        ]
+      },
+      "lines": [
+        {
+          "through": [
+            "A",
+            "C"
+          ],
+          "name": "(d)",
+          "tone": "indigo",
+          "extend": [
+            0.3333,
+            0.15
+          ]
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw",
+        "A": "se",
+        "B": "se",
+        "C": "se"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس: المستقيم (d) يشمل النقط A(1;3) و B(2;4) و C(4;6) ويقطع محور التراتيب فوق المبدأ",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: عدد الصناديق — محور التراتيب: المبلغ المدفوع بمئات الدنانير"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما ترتيب نقطة تقاطع المستقيم $(d)$ مع محور التراتيب؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: ترتيب نقطة التقاطع",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-TAMTHIL-ORIGIN-DROP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نقطة التقاطع مع محور التراتيب فاصلتها $0$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اتبع المستقيم نحو اليسار حتى المحور العمودي."
+        }
+      ],
+      "feedback": {
+        "correct": "المستقيم يقطع محور التراتيب في النقطة التي ترتيبها $2$ ، أي في غير المبدأ.",
+        "incorrect": "المستقيم لا يمرّ بالمبدأ: اقرأ الترتيب الحقيقي لنقطة التقاطع."
+      },
+      "solution": {
+        "lines": [
+          "المستقيم $(d)$ يقطع محور التراتيب في النقطة $(0\\,;\\,2)$ ."
+        ],
+        "result": "2"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل يمثّل المبلغ المدفوع وضعية تناسبية مع عدد الصناديق؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأنّ الترتيب يكبر كلما كبرت الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-RISING"
+        },
+        {
+          "id": "B",
+          "content": "لا، المستقيم الذي يشمل النقط لا يشمل المبدأ $O$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نعم، لأنّ النقط على استقامة واحدة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-LINE-ANY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط على استقامة واحدة لكنّ المستقيم لا يشمل المبدأ $O$ ، فليست الوضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "النقط على استقامة واحدة، لكنّ المستقيم $(d)$ لا يشمل المبدأ $O$ .",
+          "إذن الوضعية ليست تناسبية."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

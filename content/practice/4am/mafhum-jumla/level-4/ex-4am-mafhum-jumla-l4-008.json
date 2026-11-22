@@ -1,0 +1,211 @@
+{
+  "id": "ex-4am-mafhum-jumla-l4-008",
+  "lessonCode": "mafhum-jumla",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2024 — قطعة سلك",
+    "estimatedMinutes": 12,
+    "tags": [
+      "جملة",
+      "ترجمة",
+      "ثنائية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mafhum-jumla_P2",
+      "modelledOn": "BEM 2024 I-4"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "حل الجملة التالية: $\\begin{cases} x + y = 72 \\\\ x - 1{,}25y = 0 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 2/5)",
+      "expectedAnswer": {
+        "x": "40",
+        "y": "32"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عبّر عن $x$ بدلالة $y$ من المعادلة الثانية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض في المعادلة الأولى."
+        }
+      ],
+      "feedback": {
+        "correct": "$40 + 32 = 72$ ؛ $40 - \\dfrac{5}{4} \\times 32 = 0$.",
+        "incorrect": "من المعادلة الثانية $x = 1{,}25y$ ؛ عوّض في الأولى ثم أكمل لإيجاد $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "من المعادلة الثانية: $x = 1{,}25y$",
+          "نعوّض في المعادلة الأولى: $1{,}25y + y = 72$",
+          "$2{,}25y = 72$ أي $y = 32$",
+          "ثم: $x = 1{,}25 \\times 32 = 40$",
+          "ومنه حل الجملة هو الثنائية:"
+        ],
+        "result": "(40 ; 32)"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "قطعة سلك طولها $72cm$ قُسّمت إلى قطعتين طولاهما $x$ و $y$ (بالسنتيمتر) بحيث يكون طول القطعة الأولى مرة وربع طول القطعة الثانية.",
+      "statement": "بيّن أن $x$ و $y$ يحققان جملة السؤال 01.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«مرة وربع» تعني الضرب في $1{,}25$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "مجموع الطولين: $x + y = 72$",
+          "طول القطعة الأولى مرة وربع طول الثانية: $x = 1{,}25y$ أي $x - 1{,}25y = 0$",
+          "ومنه $x$ و $y$ يحققان جملة السؤال 01."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "قال أنيس: «طول القطعة الأولى $48cm$ وطول الثانية $24cm$ ». هل الثنائية $(48 ; 24)$ حل لجملة السؤال 01؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-MUADALA-WAHIDA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $48$ و $y$ بـ $24$ في كل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الثنائية حل للجملة إذا حققت المعادلتين في آن واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$48 + 24 = 72$ ؛ $48 - 1{,}25 \\times 24 = 18 \\neq 0$ : الثنائية ليست حلا للجملة.",
+        "incorrect": "العدد الأول في الثنائية قيمة $x$ والثاني قيمة $y$ ؛ عوّض في المعادلتين معا وقارن كل نتيجة بالطرف الثاني."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $x$ بـ $48$ و $y$ بـ $24$ :",
+          "$48 + 24 = 72$",
+          "$48 - 1{,}25 \\times 24 = 18 \\neq 0$",
+          "ومنه الثنائية $(48 ; 24)$ ليست حلا للجملة (لا تحقق المعادلتين معا)."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "استنتج طول القطعة الثانية.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الطول بـ cm (عدد فقط)",
+      "expectedAnswer": "32",
+      "misconceptionSignatures": [
+        {
+          "value": "40",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول القطعة الثانية هو $y$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل حل السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "حل الجملة $(40 ; 32)$ : طول القطعة الثانية $32cm$ .",
+        "incorrect": "طول القطعة الثانية هو العدد الثاني في الثنائية حل الجملة."
+      },
+      "solution": {
+        "lines": [
+          "$x$ و $y$ يحققان جملة السؤال 01، وحلها الثنائية $(40 ; 32)$ .",
+          "ومنه طول القطعة الثانية $32cm$ ."
+        ],
+        "result": "32\\,cm"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

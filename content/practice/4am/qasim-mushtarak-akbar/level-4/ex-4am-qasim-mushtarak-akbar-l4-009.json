@@ -1,0 +1,192 @@
+{
+  "id": "ex-4am-qasim-mushtarak-akbar-l4-009",
+  "lessonCode": "qasim-mushtarak-akbar",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2025 — PGCD(306 ; 238)",
+    "estimatedMinutes": 8,
+    "tags": [
+      "PGCD",
+      "قواسم مشتركة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-mushtarak-akbar_P2",
+      "modelledOn": "BEM 2025 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب: PGCD(306 ; 238).",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "34",
+      "misconceptionSignatures": [
+        {
+          "value": "17",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قائمة قواسم كل من العددين 306 و 238."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استخرج القواسم المشتركة: الأعداد الموجودة في القائمتين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاسم المشترك الأكبر هو أكبر القواسم المشتركة، لا أيّ واحد منها."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 306 و 238 هي 1 ، 2 ، 17 ، 34، وأكبرها 34.",
+        "incorrect": "اكتب قائمتي القواسم كاملتين، ثم خذ أكبر عدد يظهر في القائمتين معًا."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 306 هي: 1 ، 2 ، 3 ، 6 ، 9 ، 17 ، 18 ، 34 ، 51 ، 102 ، 153 ، 306",
+          "قواسم العدد 238 هي: 1 ، 2 ، 7 ، 14 ، 17 ، 34 ، 119 ، 238",
+          "القواسم المشتركة للعددين 306 و 238 هي: 1 ، 2 ، 17 ، 34",
+          "أكبرها هو 34، إذن:"
+        ],
+        "result": "PGCD(306 ; 238) = 34"
+      },
+      "work": "optional",
+      "timeSeconds": 330
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج القواسم المشتركة للعددين 306 و 238.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        2,
+        17,
+        34
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            17
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال السابق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القواسم المشتركة لعددين هي قواسم قاسمهما المشترك الأكبر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل قواسم القاسم المشترك الأكبر، ولا تنسَ 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 306 و 238 هي قواسم العدد 34: 1 ، 2 ، 17 ، 34.",
+        "incorrect": "مجموعة القواسم المشتركة لعددين هي مجموعة قواسم قاسمهما المشترك الأكبر: اكتب قواسمه كلها."
+      },
+      "solution": {
+        "lines": [
+          "مجموعة القواسم المشتركة لعددين هي مجموعة قواسم قاسمهما المشترك الأكبر.",
+          "$\\text{PGCD}(306 ; 238) = 34$ وقواسم العدد 34 هي: 1 ، 2 ، 17 ، 34",
+          "إذن القواسم المشتركة للعددين 306 و 238 هي: 1 ، 2 ، 17 ، 34."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل العدد 6 قاسم مشترك للعددين 306 و 238 ؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل قاسم مشترك للعددين هو قاسم لقاسمهما المشترك الأكبر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل 6 يقسم 34؟"
+        }
+      ],
+      "feedback": {
+        "correct": "6 لا يقسم 34، فهو ليس قاسمًا مشتركًا للعددين 306 و 238.",
+        "incorrect": "استعمل قائمة القواسم المشتركة التي وجدتها في السؤال 02."
+      },
+      "solution": {
+        "lines": [
+          "القواسم المشتركة للعددين 306 و 238 هي قواسم العدد 34: 1 ، 2 ، 17 ، 34",
+          "العدد 6 ليس منها (مع أن 6 يقسم 306، فهو لا يقسم 238)،",
+          "إذن 6 ليس قاسمًا مشتركًا للعددين."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

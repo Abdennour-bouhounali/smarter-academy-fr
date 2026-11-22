@@ -1,0 +1,77 @@
+{
+  "id": "ex-4am-majmu-shuaayn-l1-006",
+  "lessonCode": "majmu-shuaayn",
+  "level": 1,
+  "metadata": {
+    "title": "معارف 6 — قاعدة متوازي الأضلاع",
+    "estimatedMinutes": 3,
+    "tags": [
+      "قاعدة متوازي الأضلاع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-6",
+      "page": 132,
+      "section": "معارف",
+      "number": 6
+    }
+  },
+  "statement": {
+    "content": "A و B و C ثلاث نقط ليست على استقامة واحدة (معارف 6)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "$\\overrightarrow{AB} + \\overrightarrow{AC} = \\overrightarrow{AD}$ معناه:",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الرباعي ABCD متوازي أضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        },
+        {
+          "id": "B",
+          "content": "D منتصف القطعة [BC]",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-QAIDA-QUTR"
+        },
+        {
+          "id": "C",
+          "content": "الرباعي ABDC متوازي أضلاع",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للشعاعين نفس المبدأ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "شعاعان لهما نفس المبدأ يُجمعان بقاعدة متوازي الأضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع هو القطر الصادر من المبدأ المشترك، لا القطر الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "قاعدة متوازي الأضلاع: $\\overrightarrow{AD}$ قطر متوازي الأضلاع ABDC الصادر من A ؛ و D نظيرة A بالنسبة إلى منتصف [BC].",
+        "incorrect": "قاعدة متوازي الأضلاع: مجموع شعاعين لهما نفس المبدأ هو القطر الصادر من ذلك المبدأ."
+      }
+    }
+  ]
+}

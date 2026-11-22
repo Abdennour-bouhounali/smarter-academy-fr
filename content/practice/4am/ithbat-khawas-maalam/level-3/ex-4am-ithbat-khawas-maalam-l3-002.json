@@ -1,0 +1,165 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l3-002",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 3,
+  "metadata": {
+    "title": "من الكتاب — التمرين 21 (ص 149)",
+    "estimatedMinutes": 4,
+    "tags": [
+      "عكس فيثاغورس"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-21",
+      "page": 149,
+      "section": "أتعمّق",
+      "number": 21
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 149، مصحّح: ثلاث نقط): المستوي منسوب إلى معلم متعامد ومتجانس مبدؤه O. (الوحدة 1cm). $A(1\\,;\\,2)$ ، $B(4\\,;\\,3)$ ، $C(6\\,;\\,-3)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مركبتا $\\overrightarrow{BC}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x\\,;\\,y)$ : الأولى ثم الثانية (عدد صحيح أو كسر مثل 5/2)",
+      "expectedAnswer": {
+        "x": "2",
+        "y": "-6"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النهاية C ناقص المبدأ B."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الترتيب ينزل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{BC}\\begin{pmatrix} 2 \\\\ -6 \\end{pmatrix}$ .",
+        "incorrect": "النهاية ناقص المبدأ؛ النزول مركبة سالبة."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "احسب $AC^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "50",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MASAFA-JADHR-JAM",
+          "value": "10"
+        },
+        {
+          "id": "MISC-MAALAM-MASAFA-TARBI",
+          "value": "0"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مركبتا $\\overrightarrow{AC}$ : $5$ و $-5$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ربّع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC^2 = 25 + 25 = 50$ .",
+        "incorrect": "ربّع ثم اجمع."
+      }
+    },
+    {
+      "id": "q3",
+      "statement": "مع $AB^2 = 10$ و $BC^2 = 40$ ، المثلث ABC :",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "قائم ومتساوي الساقين في B",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SAQAYN-QAIM"
+        },
+        {
+          "id": "B",
+          "content": "قائم في A",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-FITHAGHURAS-WATAR"
+        },
+        {
+          "id": "C",
+          "content": "متساوي الساقين رأسه B",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SAQAYN-QAIM"
+        },
+        {
+          "id": "D",
+          "content": "قائم في B وليس متساوي الساقين",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أكبر مربع $AC^2 = 50$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$10 + 40$ ؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم قارن AB و BC."
+        }
+      ],
+      "feedback": {
+        "correct": "$10 + 40 = 50$ : قائم في B ؛ $10 \\neq 40$ : ليس متساوي الساقين.",
+        "incorrect": "الزاوية القائمة تقابل [AC]، والضلعان غير متقايسين."
+      }
+    }
+  ]
+}

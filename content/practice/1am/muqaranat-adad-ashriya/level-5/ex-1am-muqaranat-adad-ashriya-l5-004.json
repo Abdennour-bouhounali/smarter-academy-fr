@@ -1,0 +1,359 @@
+{
+  "id": "ex-1am-muqaranat-adad-ashriya-l5-004",
+  "lessonCode": "muqaranat-adad-ashriya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — طرود البريد",
+    "estimatedMinutes": 15,
+    "tags": [
+      "وضعية إدماجية",
+      "ترتيب تنازلي"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 1,
+      "file": "1am-s1-106",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يرتّب موظّف في مكتب البريد خمسة طرود في رفوف، ويقرأ أوزانها بالكيلوغرام بدقة: $7{,}4$ ، $7{,}04$ ، $10{,}2$ ، $7{,}45$ ، $7{,}5$.\nالجزء الأول: نرتّب الأوزان.\nالجزء الثاني: نقارن ونقرّر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "أجب عمّا يأتي.",
+      "statement": "رتّب الأوزان تنازليًا (من الأكبر إلى الأصغر): $7{,}4$ ، $7{,}04$ ، $10{,}2$ ، $7{,}45$ ، $7{,}5$. أيّ السلاسل الآتية صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$10{,}2 > 7{,}45 > 7{,}04 > 7{,}5 > 7{,}4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-LONGER-BIGGER"
+        },
+        {
+          "id": "B",
+          "content": "$10{,}2 > 7{,}5 > 7{,}45 > 7{,}4 > 7{,}04$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$7{,}5 > 7{,}45 > 7{,}4 > 10{,}2 > 7{,}04$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-IGNORE-WHOLE"
+        },
+        {
+          "id": "D",
+          "content": "$10{,}2 > 7{,}45 > 7{,}5 > 7{,}4 > 7{,}04$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-DIGITS-AS-NATURAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن عددين عددين، وابحث عن الأصغر (أو الأكبر) أولًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ بالجزء الصحيح، فهو يفرز الأعداد إلى مجموعات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "داخل المجموعة الواحدة قارن الأعشار ثم الأجزاء من مائة، ثم تحقق من الترتيب كاملًا."
+        }
+      ],
+      "feedback": {
+        "correct": "الترتيب التنازلي : $10{,}2 > 7{,}5 > 7{,}45 > 7{,}4 > 7{,}04$",
+        "incorrect": "نقارن العددين اثنين اثنين، ونبدأ بالجزء الصحيح ثم الأعشار فالأجزاء من مائة، ثم نكتب السلسلة كاملة ونتحقق من كل رمز."
+      },
+      "solution": {
+        "lines": [
+          "نقارن الأعداد اثنين اثنين ونرتّبها: $10{,}2 > 7{,}5 > 7{,}45 > 7{,}4 > 7{,}04$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما هو وزن أخفّ طرد (بالكيلوغرام)؟",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "7,04",
+      "misconceptionSignatures": [
+        {
+          "value": "7,4",
+          "id": "MISC-MUQARANA-DIGITS-AS-NATURAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الأعداد عددين عددين، واحتفظ في كل مرة بالأكبر (أو الأصغر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الجزء الصحيح أولًا، ثم الأعشار، ثم الأجزاء من مائة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يكفي أن يكون في العدد أرقام كثيرة بعد الفاصلة ليكون أكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "أصغر عدد هو $7{,}04$ ؛ الترتيب: $7{,}04 < 7{,}4 < 7{,}45 < 7{,}5 < 10{,}2$.",
+        "incorrect": "نقارن الأعداد الواحد بالآخر رتبةً رتبةً؛ وليس العدد الأطول (أرقامه أكثر بعد الفاصلة) هو الأكبر دائمًا."
+      },
+      "solution": {
+        "lines": [
+          "نرتّب الأعداد: $7{,}04 < 7{,}4 < 7{,}45 < 7{,}5 < 10{,}2$",
+          "إذن أصغر عدد هو $7{,}04$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "نقارن.",
+      "statement": "ضع الرمز المناسب ($<$ أو $=$ أو $>$) مكان النقط: $7{,}45 \\ldots 7{,}5$",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الرمز المناسب",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$<$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$=$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-ZERO-PLACE"
+        },
+        {
+          "id": "C",
+          "content": "$>$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-DIGITS-AS-NATURAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا تقرأ الأرقام بعد الفاصلة على أنها عدد طبيعي منفصل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أتمم الأرقام بأصفار غير ضرورية لتتساوى عدد الأرقام بعد الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الأعشار أولًا: الرتبة الأعلى تحسم قبل الرتب الأدنى."
+        }
+      ],
+      "feedback": {
+        "correct": "الجزآن الصحيحان متساويان؛ نقارن عددَي أجزاء من مائة: $45$ و $50$، إذن $7{,}45 < 7{,}5$.",
+        "incorrect": "عدد الأرقام بعد الفاصلة لا يحدّد كِبَر العدد: نقارن الأعشار قبل الأجزاء من مائة. مثال: $3{,}2 = 3{,}20$ أكبر من $3{,}14$ لأنّ 20 جزءًا من مائة أكثر من 14."
+      },
+      "solution": {
+        "lines": [
+          "نتمم بأصفار لنساوي عدد الأرقام بعد الفاصلة: $7{,}45$ و $7{,}50$.",
+          "الجزآن الصحيحان متساويان؛ نقارن عددَي أجزاء من مائة: $45$ و $50$، إذن $7{,}45 < 7{,}5$."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ضع الرمز المناسب ($<$ أو $=$ أو $>$) مكان النقط: $7{,}4 \\ldots 7{,}40$",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الرمز المناسب",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$<$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-ZERO-CHANGES"
+        },
+        {
+          "id": "B",
+          "content": "$=$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$>$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-ZERO-CHANGES"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أضف أصفارًا إلى يمين الجزء العشري حتى يصير للعددين عدد الأرقام نفسه بعد الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إضافة صفر في آخر الجزء العشري لا تغيّر قيمة العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعدها قارن عددين طبيعيين: عدد الأعشار أو الأجزاء من مائة أو الأجزاء من ألف."
+        }
+      ],
+      "feedback": {
+        "correct": "نتمم بأصفار: $7{,}4 = 7{,}40$، فالعددان متساويان: $7{,}4 = 7{,}40$.",
+        "incorrect": "نتمم بأصفار غير ضرورية لنساوي عدد الأرقام بعد الفاصلة (مثل $3{,}2 = 3{,}20$)، ثم نقارن عددين طبيعيين."
+      },
+      "solution": {
+        "lines": [
+          "نتمم بأصفار: $7{,}4 = 7{,}40$، فالعددان متساويان: $7{,}4 = 7{,}40$."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ج",
+      "statement": "أتمم: $7{,}45 \\times 100 = \\ldots$",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "745",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن موضع الفاصلة في العددين: كم رتبة انتقلت، وفي أيّ اتجاه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا صار العدد أكبر فالانتقال نحو اليمين، وإذا صار أصغر فنحو اليسار."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد الرتب المنقولة يعطي عدد أصفار العدد المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$745$",
+        "incorrect": "الضرب في 10 أو 100 أو 1000 ينقل الفاصلة نحو اليمين، والقسمة تنقلها نحو اليسار، بعدد رتب يساوي عدد الأصفار."
+      },
+      "solution": {
+        "lines": [
+          "$7{,}45\\times 100 = 745$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "يجب وضع الطرود الأثقل في الرف السفلي. أيّ طرد يوضع في الأسفل؟ علّل بالمقارنة.",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اذكر الرتبة التي حسمت المقارنة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أو أتمم العددين بأصفار ثم قارن عددين طبيعيين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تامة تتضمن العددين والرمز."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي.",
+        "incorrect": "راجع التبرير وأعد صياغته: اذكر الرتبة أو الأصفار."
+      },
+      "solution": {
+        "lines": [
+          "أثقل وزن هو $10{,}2$ كغ لأنّ جزأه الصحيح 10 أكبر من 7.",
+          "إذن يوضع الطرد الذي وزنه $10{,}2$ كغ في الرف السفلي."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

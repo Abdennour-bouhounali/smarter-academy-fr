@@ -1,0 +1,74 @@
+{
+  "id": "ex-4am-kura-julla-l3-004",
+  "lessonCode": "kura-julla",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — كرة نصف قطرها 10",
+    "estimatedMinutes": 4,
+    "tags": [
+      "معلم الفضاء"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_kura-julla_P4",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس للفضاء مبدؤه O، جلة مركزها O ونصف قطرها 10، والنقطة $G(6\\,;\\,-6\\,;\\,5)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "النقطة G:",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P4",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "داخل الجلة وليست على الكرة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خارج الجلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-MURABBA"
+        },
+        {
+          "id": "C",
+          "content": "على الكرة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-MASAFA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $OG^2$ ، انتبه إلى الإشارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن بـ $R^2 = 100$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأصغر: داخل الجلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$OG^2 = 36 + 36 + 25 = 97 < 100$ : G داخل الجلة.",
+        "incorrect": "مجموع القيم المطلقة للإحداثيات ليس البعد: نجمع المربعات."
+      }
+    }
+  ]
+}

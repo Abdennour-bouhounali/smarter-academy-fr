@@ -1,0 +1,144 @@
+{
+  "id": "ex-4am-tanasub-muamil-l3-008",
+  "lessonCode": "tanasub-muamil",
+  "level": 3,
+  "metadata": {
+    "title": "ملء خزان بماء الحنفية",
+    "estimatedMinutes": 3,
+    "tags": [
+      "y = a × x",
+      "تدفق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tanasub-muamil_P3",
+      "modelledOn": "act-1",
+      "adaptedFrom": "ex-4am-tanasub-muamil-l3-008"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "يُملأ خزان بماء الحنفية دون تبذير بتدفق ثابت قدره 12 لترا في الدقيقة. نسمّي $x$ المدة بالدقائق و $y$ عدد اللترات المتدفقة، حيث $y = 12 \\times x$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "عدد اللترات بعد 25 دقيقة:",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد اللترات",
+      "expectedAnswer": "300",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالمدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$12 \\times 25 = 300$ .",
+        "incorrect": "$y = 12 \\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$y = 12 \\times 25 = 300$"
+        ],
+        "result": "300L"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "المدة اللازمة ليتدفق 180 لترا:",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدة بالدقائق",
+      "expectedAnswer": "15",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$y$ معلوم: نبحث عن $x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم عدد اللترات على 12 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{180}{12} = 15$ .",
+        "incorrect": "$12 \\times x = 180$ : اقسم على 12 ."
+      },
+      "solution": {
+        "lines": [
+          "$12 \\times x = 180$",
+          "$x = \\dfrac{180}{12} = 15$"
+        ],
+        "result": "15min"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "سعة الخزان $1{,}5m^3$ أي 1500 لتر. احسب المدة اللازمة لملئه بالدقائق.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدة بالدقائق",
+      "expectedAnswer": "125",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ $12 \\times x = 1500$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1500}{12} = 125$ دقيقة.",
+        "incorrect": "اقسم السعة باللتر على 12 ."
+      },
+      "solution": {
+        "lines": [
+          "$12 \\times x = 1500$",
+          "$x = \\dfrac{1500}{12} = 125$",
+          "يمتلئ الخزان بعد 125 دقيقة، أي ساعتين و 5 دقائق."
+        ],
+        "result": "125min"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

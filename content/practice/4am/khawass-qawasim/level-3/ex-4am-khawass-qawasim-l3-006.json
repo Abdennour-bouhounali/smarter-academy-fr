@@ -1,0 +1,161 @@
+{
+  "id": "ex-4am-khawass-qawasim-l3-006",
+  "lessonCode": "khawass-qawasim",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2015 — 3553 و 836",
+    "estimatedMinutes": 9,
+    "tags": [
+      "خاصية 1",
+      "خاصية 2",
+      "قسمة إقليدية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_khawass-qawasim_P3",
+      "modelledOn": "BEM 2015 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان 3553 و 836."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أجرِ القسمة الإقليدية للعدد 3553 على 836 مع كتابة مراحل الحساب.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الباقي فقط (عدد طبيعي)",
+      "expectedAnswer": "209",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أكبر مضاعف للعدد 836 لا يتجاوز 3553."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي هو الفرق بين 3553 وهذا المضاعف، ويجب أن يكون أصغر تمامًا من 836."
+        }
+      ],
+      "feedback": {
+        "correct": "$3553 = 836 \\times 4 + 209$ مع $209 < 836$.",
+        "incorrect": "في القسمة الإقليدية $3553 = 836 \\times q + r$ يكون الباقي $r$ أصغر تمامًا من 836."
+      },
+      "solution": {
+        "lines": [
+          "$836 \\times 4 = 3344$ و $836 \\times 5 = 4180 > 3553$",
+          "$3553 - 3344 = 209$",
+          "إذن $3553 = 836 \\times 4 + 209$ مع $209 < 836$."
+        ],
+        "result": "3553 = 836 \\times 4 + 209"
+      },
+      "work": "required",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "علمًا أن 19 يقسم كلا من 3553 و 836، استنتج دون إجراء القسمة على 19 أن 19 يقسم الباقي 209، ثم اكتبه على الشكل $19 \\times k$ حيث $k$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k$ فقط (عدد طبيعي)",
+      "expectedAnswer": "11",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الباقي على الشكل $r = 3553 - 836 \\times 4$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "19 يقسم 836 فهو يقسم $836 \\times 4$؛ وهو يقسم 3553، فيقسم الفرق (الخاصية 2)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم الباقي على 19 للحصول على $k$."
+        }
+      ],
+      "feedback": {
+        "correct": "$209 = 19 \\times 11$: 19 يقسم باقي القسمة الإقليدية للعدد 3553 على 836.",
+        "incorrect": "القاسم المشترك لعددين يقسم باقي القسمة الإقليدية لأحدهما على الآخر: اقسم الباقي على 19."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $3553 = 836 \\times 4 + 209$ ومنه $209 = 3553 - 836 \\times 4$.",
+          "19 يقسم 836 فهو يقسم مضاعفه $836 \\times 4$ ، و 19 يقسم 3553.",
+          "إذن 19 يقسم الفرق $3553 - 836 \\times 4$ أي يقسم 209 (الخاصية 2).",
+          "$209 = 19 \\times 11$"
+        ],
+        "result": "209 = 19 \\times 11"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "بيّن أن العدد $P = \\dfrac{3553 - 836}{19}$ عدد طبيعي، ثم احسبه.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $P$ فقط (عدد طبيعي)",
+      "expectedAnswer": "143",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الكتابتين $3553 = 19 \\times 187$ و $836 = 19 \\times 44$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرج 19 عاملًا مشتركًا: $19 \\times q - 19 \\times q' = 19 \\times (q - q')$."
+        }
+      ],
+      "feedback": {
+        "correct": "$3553 - 836 = 19 \\times (187 - 44) = 19 \\times 143$.",
+        "incorrect": "القاسم المشترك لعددين يقسم فرقهما: اكتب كلا من العددين على الشكل $19 \\times q$ ثم أخرج 19 عاملًا مشتركًا."
+      },
+      "solution": {
+        "lines": [
+          "$3553 - 836 = 19 \\times 187 - 19 \\times 44$",
+          "$3553 - 836 = 19 \\times (187 - 44)$",
+          "$3553 - 836 = 19 \\times 143$ ، إذن 19 يقسم $3553 - 836$.",
+          "إذن $P = \\dfrac{19 \\times 143}{19} = 143$ عدد طبيعي."
+        ],
+        "result": "P = 143"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

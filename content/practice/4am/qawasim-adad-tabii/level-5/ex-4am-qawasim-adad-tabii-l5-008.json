@@ -1,0 +1,244 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l5-008",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2022 — تحف نحاسية من قسنطينة",
+    "estimatedMinutes": 14,
+    "tags": [
+      "قواسم",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qawasim-adad-tabii_P2",
+      "modelledOn": "BEM 2022 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يريد حرفي من قسنطينة، اعتزازًا بالتراث الجزائري وإتقانًا لصنعته، عرض 252 تحفة نحاسية في معرض الصناعات التقليدية، على رفوف متماثلة تحمل كلها نفس العدد من التحف، دون أن تبقى أي تحفة.\n• يحمل الرف الواحد 15 تحفة على الأقل و 30 تحفة على الأكثر.\n• ثمن الرف الواحد 2400DA.\n• يبيع الحرفي التحفة الواحدة بـ 1800DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "عيّن كل قواسم العدد 252.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        9,
+        12,
+        14,
+        18,
+        21,
+        28,
+        36,
+        42,
+        63,
+        84,
+        126,
+        252
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6,
+            7,
+            9,
+            12,
+            14,
+            18,
+            21,
+            28,
+            36,
+            42,
+            63,
+            84,
+            126
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 252 بمربعات الأعداد: إلى أي عدد يكفي أن تختبر قابلية القسمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل قسمة باقيها معدوم تعطي قاسمين: $d$ و $252 \\div d$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$252 = 1 \\times 252$ ، $252 = 2 \\times 126$ ، $252 = 3 \\times 84$ ، $252 = 4 \\times 63$ ، $252 = 6 \\times 42$ ، $252 = 7 \\times 36$ ، $252 = 9 \\times 28$ ، $252 = 12 \\times 21$ ، $252 = 14 \\times 18$.",
+        "incorrect": "اختبر الأعداد التي مربعها أصغر من العدد أو يساويه، وخذ من كل قسمة باقيها معدوم القاسمين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$15^2 = 225 \\leq 252 < 256 = 16^2$ ومنه نختبر قابلية قسمة 252 على الأعداد من 1 إلى 15.",
+          "نجد أن 252 يقبل القسمة على كل من الأعداد: 1 ، 2 ، 3 ، 4 ، 6 ، 7 ، 9 ، 12 ، 14.",
+          "ومن المساويات: $252 = 1 \\times 252$ ، $252 = 2 \\times 126$ ، $252 = 3 \\times 84$ ، $252 = 4 \\times 63$ ، $252 = 6 \\times 42$ ، $252 = 7 \\times 36$ ، $252 = 9 \\times 28$ ، $252 = 12 \\times 21$ ، $252 = 14 \\times 18$",
+          "إذن قواسم العدد 252 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 7 ، 9 ، 12 ، 14 ، 18 ، 21 ، 28 ، 36 ، 42 ، 63 ، 84 ، 126 ، 252."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 360
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "استنتج كل الأعداد الممكنة لعدد التحف على كل رف.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        18,
+        21,
+        28
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد التحف على الرف قاسم للعدد 252."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احتفظ بالقواسم من 15 إلى 30."
+        }
+      ],
+      "feedback": {
+        "correct": "$252 = 18 \\times 14 = 21 \\times 12 = 28 \\times 9$.",
+        "incorrect": "من بين قواسم 252، احتفظ بالتي تقع من 15 إلى 30."
+      },
+      "solution": {
+        "lines": [
+          "قواسم 252: 1 ، 2 ، 3 ، 4 ، 6 ، 7 ، 9 ، 12 ، 14 ، 18 ، 21 ، 28 ، 36 ، 42 ، 63 ، 84 ، 126 ، 252.",
+          "التي تقع من 15 إلى 30: 18 ، 21 ، 28."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "يختار الحرفي أقل عدد ممكن من الرفوف. ما هو عدد الرفوف؟",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كلما حمل الرف تحفا أكثر قلّ عدد الرفوف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد الرفوف × عدد التحف على الرف = 252."
+        }
+      ],
+      "feedback": {
+        "correct": "$252 = 28 \\times 9$.",
+        "incorrect": "اختر أكبر عدد ممكن للتحف على الرف، ثم اقسم 252 عليه."
+      },
+      "solution": {
+        "lines": [
+          "أقل عدد من الرفوف يوافق أكبر عدد من التحف على الرف: 28.",
+          "$252 = 28 \\times 9$",
+          "إذن عدد الرفوف 9."
+        ],
+        "result": "9"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "☜ بعد بيع كل التحف، أعط المبلغ الذي يبقى للحرفي بعد طرح ثمن الرفوف.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (DA)",
+      "expectedAnswer": "432000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب ثمن بيع كل التحف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح منه ثمن الرفوف."
+        }
+      ],
+      "feedback": {
+        "correct": "$252 \\times 1800 - 9 \\times 2400 = 432000$.",
+        "incorrect": "ثمن بيع التحف − ثمن الرفوف."
+      },
+      "solution": {
+        "lines": [
+          "ثمن البيع: $252 \\times 1800 = 453600$ DA",
+          "ثمن الرفوف: $9 \\times 2400 = 21600$ DA",
+          "المبلغ الباقي: $453600 - 21600 = 432000$ DA"
+        ],
+        "result": "432000\\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

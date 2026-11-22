@@ -1,0 +1,248 @@
+{
+  "id": "ex-4am-mushkilat-jumla-l5-007",
+  "lessonCode": "mushkilat-jumla",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2024 — محطة تحلية مياه البحر بتيبازة",
+    "estimatedMinutes": 19,
+    "tags": [
+      "جملة",
+      "ترييض",
+      "تناسب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mushkilat-jumla_P2",
+      "modelledOn": "BEM 2024 I-4"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "التمرين",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تنتج محطة لتحلية مياه البحر بولاية تيبازة، تخدم المواطنين وتحرص على ترشيد المياه، يوميا $3600m^3$ من الماء الشروب، توزّعها كلها على بلديتين (أ) و (ب)، بحيث تكون حصة البلدية (أ) مساوية لـ $1{,}4$ مرة حصة البلدية (ب)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "نسمّي $x$ الحصة اليومية للبلدية (أ) و $y$ الحصة اليومية للبلدية (ب) بالمتر المكعب.",
+      "statement": "بيّن أن $x$ و $y$ يحققان الجملة: $\\begin{cases} x + y = 3600 \\\\ x - 1{,}4y = 0 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«1,4 مرة حصة (ب)» تكتب $1{,}4y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "المحطة توزّع كل إنتاجها: $x + y = 3600$",
+          "حصة (أ) تساوي 1,4 مرة حصة (ب): $x = 1{,}4y$ أي $x - 1{,}4y = 0$",
+          "ومنه $x$ و $y$ يحققان الجملة: $\\begin{cases} x + y = 3600 \\\\ x - 1{,}4y = 0 \\end{cases}$"
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "حل هذه الجملة، ثم استنتج الحصة اليومية لكل بلدية.",
+      "statement": "الحصة اليومية للبلدية (أ):",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الحصة بـ $m^3$ (عدد فقط)",
+      "expectedAnswer": "2100",
+      "misconceptionSignatures": [
+        {
+          "value": "1500",
+          "id": "MISC-JUMLA-MAJAHIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من المعادلة الثانية: $x = 1{,}4y$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض في المعادلة الأولى ثم احسب $y$ ، ثم $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "حصة البلدية (أ) $2100m^3$ يوميا.",
+        "incorrect": "بالتعويض: $1{,}4y + y = 3600$ أي $2{,}4y = 3600$ ؛ ثم $x = 1{,}4y$ ."
+      },
+      "solution": {
+        "lines": [
+          "من المعادلة الثانية: $x = 1{,}4y$",
+          "بالتعويض في المعادلة الأولى: $1{,}4y + y = 3600$",
+          "$2{,}4y = 3600$ ومنه $y = \\dfrac{3600}{2{,}4} = 1500$",
+          "ومنه: $x = 1{,}4 \\times 1500 = 2100$",
+          "التحقق: $2100 + 1500 = 3600$ و $1{,}4 \\times 1500 = 2100$ .",
+          "إذن حصة البلدية (أ) $2100m^3$ وحصة البلدية (ب) $1500m^3$ يوميا."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 420
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "الحصة اليومية للبلدية (ب):",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الحصة بـ $m^3$ (عدد فقط)",
+      "expectedAnswer": "1500",
+      "misconceptionSignatures": [
+        {
+          "value": "2100",
+          "id": "MISC-JUMLA-MAJAHIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$y$ هو الحصة الأصغر."
+        }
+      ],
+      "feedback": {
+        "correct": "حصة البلدية (ب) $1500m^3$ يوميا، ونتحقق: $2100 + 1500 = 3600$ .",
+        "incorrect": "من $2{,}4y = 3600$ : $y = \\dfrac{3600}{2{,}4}$ ."
+      },
+      "solution": {
+        "lines": [
+          "من المعادلة الثانية: $x = 1{,}4y$",
+          "بالتعويض في المعادلة الأولى: $1{,}4y + y = 3600$",
+          "$2{,}4y = 3600$ ومنه $y = \\dfrac{3600}{2{,}4} = 1500$",
+          "ومنه: $x = 1{,}4 \\times 1500 = 2100$",
+          "التحقق: $2100 + 1500 = 3600$ و $1{,}4 \\times 1500 = 2100$ .",
+          "إذن حصة البلدية (أ) $2100m^3$ وحصة البلدية (ب) $1500m^3$ يوميا."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "يستهلك المسكن الواحد في البلدية (أ) في المتوسط $0{,}35m^3$ من الماء يوميا. كم مسكنا تكفيه الحصة اليومية لهذه البلدية؟",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب عدد المساكن (عدد فقط)",
+      "expectedAnswer": "6000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم الحصة اليومية للبلدية (أ) على استهلاك المسكن الواحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$2100 \\div 0{,}35 = 6000$ مسكن.",
+        "incorrect": "اقسم حصة البلدية (أ) على $0{,}35$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2100}{0{,}35} = \\dfrac{210000}{35} = 6000$",
+          "إذن تكفي حصة البلدية (أ) 6000 مسكن."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "☜ تبيع المحطة المتر المكعب الواحد للبلديتين بـ 6,3DA. احسب مداخيل المحطة خلال شهر من 30 يوما.",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "680400",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المداخيل اليومية أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المحطة توزّع كل إنتاجها كل يوم."
+        }
+      ],
+      "feedback": {
+        "correct": "المداخيل اليومية $22680DA$ ، ومداخيل الشهر $680400DA$ .",
+        "incorrect": "اضرب الإنتاج اليومي في ثمن المتر المكعب، ثم في 30."
+      },
+      "solution": {
+        "lines": [
+          "المداخيل اليومية: $3600 \\times 6{,}3 = 22680$",
+          "مداخيل الشهر: $22680 \\times 30 = 680400$ أي $680400DA$ ."
+        ],
+        "result": "680400\\,DA"
+      },
+      "timeSeconds": 240
+    }
+  ]
+}

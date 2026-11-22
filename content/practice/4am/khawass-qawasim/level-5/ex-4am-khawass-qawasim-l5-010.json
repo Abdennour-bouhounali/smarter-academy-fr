@@ -1,0 +1,243 @@
+{
+  "id": "ex-4am-khawass-qawasim-l5-010",
+  "lessonCode": "khawass-qawasim",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2020 — قطار الفوسفات بتبسة",
+    "estimatedMinutes": 14,
+    "tags": [
+      "خاصية 1",
+      "برهان",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_khawass-qawasim_P1",
+      "modelledOn": "BEM 2020 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2020",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "ينقل قطار منجم الفوسفات بتبسة، ثروة من ثروات الجزائر يحرص العمّال على نقلها بإتقان وأمانة، في يوم واحد حمولتين: 1980t نحو ميناء عنابة و 1320t نحو مصنع الأسمدة. تُحمَّل الحمولتان في عربات متماثلة، تحمل كل عربة 60t بالضبط، دون خلط الحمولتين.\n• تكلفة نقل العربة الواحدة 45000DA.\n• خصّصت المؤسسة لنقل حمولتي هذا اليوم مبلغ 2500000DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "$a$ ، $b$ و $n$ أعداد طبيعية حيث $n \\neq 0$. برهن أنه إذا كان $n$ يقسم كلا من $a$ و $b$ فإن $n$ يقسم $a + b$.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لإثبات أن $n$ يقسم $a + b$ يكفي إيجاد عدد طبيعي $k$ حيث $a + b = n \\times k$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم المعطيات: $a = n \\times q$ و $b = n \\times q'$."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك سطرًا بسطر بالحل النموذجي، وانتبه إلى كل مرحلة من مراحل الاستدلال."
+      },
+      "solution": {
+        "lines": [
+          "يوجد عددان طبيعيان $q$ و $q'$ حيث $a = n \\times q$ و $b = n \\times q'$.",
+          "$a + b = n \\times q + n \\times q' = n(q + q')$",
+          "بوضع $k = q + q'$ (عدد طبيعي) نجد $a + b = n \\times k$ ، إذن $n$ يقسم $a + b$."
+        ],
+        "result": "a + b = n(q + q')"
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "بيّن أن 60 قاسم مشترك للعددين 1980 و 1320:",
+      "statement": "اكتب العدد 1980 على الشكل $60 \\times k$ حيث $k$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k$ فقط (عدد طبيعي)",
+      "expectedAnswer": "33",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 1980 على 60: يجب أن يكون الباقي معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل هذه القسمة هو العدد $k$ المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$1980 = 60 \\times 33$ ، إذن 60 يقسم 1980.",
+        "incorrect": "ابحث عن العدد الطبيعي $k$ الذي إذا ضُرب في 60 أعطى 1980."
+      },
+      "solution": {
+        "lines": [
+          "$1980 = 60 \\times 33$"
+        ],
+        "result": "1980 = 60 \\times 33"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "اكتب العدد 1320 على الشكل $60 \\times k'$ حيث $k'$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k'$ فقط (عدد طبيعي)",
+      "expectedAnswer": "22",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 1320 على 60: يجب أن يكون الباقي معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل هذه القسمة هو العدد $k'$ المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$1320 = 60 \\times 22$ ، إذن 60 يقسم 1320.",
+        "incorrect": "ابحث عن العدد الطبيعي $k'$ الذي إذا ضُرب في 60 أعطى 1320."
+      },
+      "solution": {
+        "lines": [
+          "$1320 = 60 \\times 22$"
+        ],
+        "result": "1320 = 60 \\times 22"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "استنتج، باستعمال السؤال 01 ودون حساب الحمولة الكلية، العدد الكلي للعربات.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد العربات)",
+      "expectedAnswer": "55",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الكتابتين $1980 = 60 \\times 33$ و $1320 = 60 \\times 22$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرج 60 عاملًا مشتركًا: $60 \\times q + 60 \\times q' = 60 \\times (q + q')$."
+        }
+      ],
+      "feedback": {
+        "correct": "$1980 + 1320 = 60 \\times (33 + 22) = 60 \\times 55$.",
+        "incorrect": "القاسم المشترك لعددين يقسم مجموعهما: اكتب كلا من العددين على الشكل $60 \\times q$ ثم أخرج 60 عاملًا مشتركًا."
+      },
+      "solution": {
+        "lines": [
+          "$1980 + 1320 = 60 \\times 33 + 60 \\times 22$",
+          "$1980 + 1320 = 60 \\times (33 + 22)$",
+          "$1980 + 1320 = 60 \\times 55$ ، إذن 60 يقسم $1980 + 1320$."
+        ],
+        "result": "1980 + 1320 = 60 \\times 55"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "☜ هل يكفي المبلغ الذي خصّصته المؤسسة لنقل الحمولتين؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد الكلي للعربات هو جواب السؤال 03."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب تكلفة نقل كل العربات، وقارنها بالمبلغ المخصّص."
+        }
+      ],
+      "feedback": {
+        "correct": "$55 \\times 45000 = 2475000 \\leq 2500000$: المبلغ يكفي.",
+        "incorrect": "احسب تكلفة نقل كل العربات ثم قارنها بالمبلغ المخصّص."
+      },
+      "solution": {
+        "lines": [
+          "تكلفة النقل: $55 \\times 45000 = 2475000$",
+          "$2475000 \\leq 2500000$ ، إذن المبلغ يكفي."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

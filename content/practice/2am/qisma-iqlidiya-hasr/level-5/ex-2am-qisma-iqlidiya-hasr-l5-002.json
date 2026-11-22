@@ -1,0 +1,359 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l5-002",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — رفوف مكتبة الحيّ",
+    "estimatedMinutes": 18,
+    "tags": [
+      "رفوف",
+      "حصر",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-87",
+      "exercise": 3
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: تحبّ جمعية الحيّ المطالعة وتملك 1347 كتابًا، وتضع في كل رفّ 28 كتابًا.\nالجزء الثاني: في المكتبة 50 رفًّا. ثم تبرّع محسنون بـ 85 كتابًا جديدًا."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اختر المساواة التي تعبّر عن القسمة الإقليدية للعدد 1347 على 28.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$1347 = 28 \\times 47 + 31$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "id": "B",
+          "content": "$1347 = 28 \\times 48 + 3$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$1347 = 28 \\times 3 + 48$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "id": "D",
+          "content": "$1347 = 28 \\times 49 + 3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-HISAB"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق من صحة كل مساواة بالحساب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في القسمة الإقليدية على 28 يكون الباقي أصغر من 28."
+        }
+      ],
+      "feedback": {
+        "correct": "$28 \\times 48 + 3 = 1347$ و $3 < 28$.",
+        "incorrect": "ابحث عن المساواة الصحيحة التي باقيها أصغر من 28."
+      },
+      "solution": {
+        "lines": [
+          "$28 \\times 48 = 1344$ و $1344 + 3 = 1347$",
+          "$3 < 28$ ، إذن $1347 = 28 \\times 48 + 3$ هي القسمة الإقليدية للعدد 1347 على 28."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اختر الكتابة الصحيحة التي تحصر حاصل القسمة $\\frac{1347}{28}$ بين عددين طبيعيين متتاليين (أو تعطيه إذا كان عددًا طبيعيًا).",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$47 < \\frac{1347}{28} < 48$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        },
+        {
+          "id": "B",
+          "content": "$3 < \\frac{1347}{28} < 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "id": "C",
+          "content": "$48 < \\frac{1347}{28} < 49$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 1347 على 28."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من $28 \\times q \\le 1347 < 28 \\times (q + 1)$ نقسم الأطراف على 28."
+        }
+      ],
+      "feedback": {
+        "correct": "$1347 = 28 \\times 48 + 3$ والباقي غير معدوم، فـ $\\frac{1347}{28}$ يقع تمامًا بين 48 و 49.",
+        "incorrect": "احصر 1347 بين مضاعفين متتاليين للعدد 28 ثم اقسم على 28؛ وإذا كان الباقي معدومًا فحاصل القسمة عدد طبيعي."
+      },
+      "solution": {
+        "lines": [
+          "$1347 = 28 \\times 48 + 3$",
+          "$28 \\times 48 < 1347 < 28 \\times 49$ ، نقسم على 28: $48 < \\frac{1347}{28} < 49$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كم رفًّا يلزم لترتيب كل الكتب؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد الرفوف",
+      "expectedAnswer": "49",
+      "misconceptionSignatures": [
+        {
+          "value": "48",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "value": "3",
+          "id": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 1347 على 28."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يبقى شيء بعد المجموعات الكاملة؟ ماذا نفعل به؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد اللازم هو القيمة المقرّبة إلى الوحدة بالزيادة عندما لا يكون الحاصل عددًا طبيعيًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$1347 = 28 \\times 48 + 3$: 48 كاملة ويبقى 3، فيلزم 49.",
+        "incorrect": "لا تنسَ ما يبقى بعد المجموعات الكاملة: يحتاج هو أيضًا إلى مكان."
+      },
+      "solution": {
+        "lines": [
+          "$1347 = 28 \\times 48 + 3$",
+          "$48 < \\frac{1347}{28} < 49$ ، والباقي 3 يحتاج إلى واحدة أخرى: يلزم 49 (القيمة المقرّبة بالزيادة)."
+        ],
+        "result": "49"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "هل تكفي الرفوف الخمسون قبل التبرّع؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-NAQS-ZIYADA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن عدد الرفوف اللازمة بـ 50."
+        }
+      ],
+      "feedback": {
+        "correct": "$49 \\le 50$: تكفي الرفوف.",
+        "incorrect": "قارن عدد الرفوف اللازمة بعدد الرفوف المتوفّرة."
+      },
+      "solution": {
+        "lines": [
+          "يلزم 49 رفًّا و $49 \\le 50$.",
+          "إذن تكفي الرفوف."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "أصبح عدد الكتب 1432. كم رفًّا يمتلئ تمامًا الآن؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الرفوف",
+      "expectedAnswer": "51",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "50",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "value": "52",
+          "id": "MISC-HASR-IZAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 1432 من 28 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 28 دون أن نتجاوز 1432."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من 28."
+        }
+      ],
+      "feedback": {
+        "correct": "$1432 = 28 \\times 51 + 4$ و $4 < 28$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 28 فلا يتجاوز الجداء 1432، والباقي عندئذ أصغر من 28."
+      },
+      "solution": {
+        "lines": [
+          "$28 \\times 51 = 1428$ و $28 \\times 52 = 1456$",
+          "$1428 \\le 1432 < 1456$ ، إذن الحاصل هو 51."
+        ],
+        "result": "q = 51"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "06",
+      "statement": "هل تكفي الرفوف الخمسون بعد التبرّع؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما باقي قسمة 1432 على 28؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كم رفًّا يلزم إذن؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$1432 = 28 \\times 51 + 4$: يلزم 52 رفًّا و $52 > 50$.",
+        "incorrect": "احسب عدد الرفوف اللازمة (بالزيادة) ثم قارن بـ 50."
+      },
+      "solution": {
+        "lines": [
+          "$1432 = 28 \\times 51 + 4$",
+          "يلزم 52 رفًّا و $52 > 50$: لا تكفي الرفوف."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

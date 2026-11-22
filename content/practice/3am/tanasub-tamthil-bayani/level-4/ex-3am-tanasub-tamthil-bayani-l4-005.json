@@ -1,0 +1,280 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l4-005",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 4,
+  "metadata": {
+    "title": "تسميد حقل مستطيل",
+    "estimatedMinutes": 10,
+    "tags": [
+      "تمثيل بياني",
+      "مساحة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-4",
+      "page": 94,
+      "section": "أوظّف تعلّماتي",
+      "number": 4
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين الرابع",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يسمّد مزارع حقله المستطيل الذي طوله $20$ m وعرضه $10$ m، ويحرص على ألّا يُسرف في استعمال السماد. يمثّل المستقيم $(D)$ في المعلم التالي كتلة السماد (بالكيلوغرام) بدلالة المساحة (بمئات الأمتار المربعة).",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          2,
+          3
+        ],
+        "B": [
+          4,
+          6
+        ],
+        "C": [
+          8,
+          12
+        ]
+      },
+      "lines": [
+        {
+          "through": [
+            "O",
+            "C"
+          ],
+          "name": "(D)",
+          "tone": "indigo",
+          "extend": [
+            0,
+            0.15
+          ]
+        }
+      ],
+      "grid": true,
+      "axes": {
+        "every": 2
+      },
+      "labels": {
+        "O": "sw",
+        "A": "se",
+        "B": "se",
+        "C": "se"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس: المستقيم (D) يشمل المبدأ O والنقط A(2;3) و B(4;6) و C(8;12)",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: المساحة بمئات الأمتار المربعة — محور التراتيب: كتلة السماد بالكيلوغرام"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل كتلة السماد متناسبة مع المساحة؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لأنّ الترتيب لا يساوي الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-EQUAL-ONLY"
+        },
+        {
+          "id": "B",
+          "content": "لا، لأنّ المبدأ $O$ ليس من النقط المعلَّمة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-ORIGIN-DROP"
+        },
+        {
+          "id": "C",
+          "content": "نعم، النقط على استقامة واحدة مع المبدأ $O$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط على استقامة واحدة مع المبدأ $O$ ، فهي تمثّل وضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "النقط $A$ و $B$ و $C$ على المستقيم $(D)$ الذي يشمل $O$ .",
+          "إذن كتلة السماد متناسبة مع المساحة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب مساحة الحقل بالمتر المربع.",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المساحة بالمتر المربع",
+      "expectedAnswer": "200",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة المستطيل هي جداء بعديه."
+        }
+      ],
+      "feedback": {
+        "correct": "$20 \\times 10 = 200$ m².",
+        "incorrect": "المساحة جداء الطول في العرض."
+      },
+      "solution": {
+        "lines": [
+          "$\\mathcal{A} = 20 \\times 10 = 200$ m²."
+        ],
+        "result": "200\\ \\text{m}^2"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "ما كتلة السماد اللازمة للحقل بالكيلوغرام؟ (المساحة بمئات الأمتار المربعة)",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الكتلة بالكيلوغرام",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "200",
+          "id": "MISC-TAMTHIL-UNIT-AXIS"
+        },
+        {
+          "value": "1.33",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل $200$ m² إلى مئات الأمتار المربعة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اقرأ الترتيب على المستقيم أو استعمل $y = a\\,x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$200$ m² هي $2$ مئة م²، والترتيب المقابل $3$ : يلزم $3$ kg.",
+        "incorrect": "الفاصلة بمئات الأمتار المربعة: حوّل المساحة قبل أن تقرأ."
+      },
+      "solution": {
+        "lines": [
+          "$200$ m² $= 2$ مئة م².",
+          "النقطة من $(D)$ التي فاصلتها $2$ ترتيبها $3$ : $3$ kg."
+        ],
+        "result": "3\\ \\text{kg}"
+      },
+      "work": "optional",
+      "timeSeconds": 100
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "عند المزارع $18$ kg من السماد. ما أكبر مساحة يمكن تسميدها بها بالمتر المربع؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المساحة بالمتر المربع",
+      "expectedAnswer": "1200",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-TAMTHIL-UNIT-AXIS"
+        },
+        {
+          "value": "27",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولا معامل التناسبية: كتلة السماد لكل مئة متر مربع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اقسم الكتلة المتوفرة على هذا المعامل، وتذكّر أنّ الفاصلة بمئات الأمتار المربعة."
+        }
+      ],
+      "feedback": {
+        "correct": "المعامل $1{,}5$ : $18 \\div 1{,}5 = 12$ مئة م²، أي $1200$ m².",
+        "incorrect": "لإيجاد المساحة نقسم الكتلة على المعامل ثم نحوّل الوحدة."
+      },
+      "solution": {
+        "lines": [
+          "$a = \\dfrac{3}{2} = 1{,}5$ kg لكل مئة م².",
+          "$18 \\div 1{,}5 = 12$ مئة م²، أي $1200$ m²."
+        ],
+        "result": "1200\\ \\text{m}^2"
+      },
+      "work": "optional",
+      "timeSeconds": 130
+    }
+  ]
+}

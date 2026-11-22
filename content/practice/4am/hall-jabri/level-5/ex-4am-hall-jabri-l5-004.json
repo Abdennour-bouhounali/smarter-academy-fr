@@ -1,0 +1,235 @@
+{
+  "id": "ex-4am-hall-jabri-l5-004",
+  "lessonCode": "hall-jabri",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2018 — مصوّر حفلات بالمدية",
+    "estimatedMinutes": 12,
+    "tags": [
+      "جملة",
+      "وضعية",
+      "عرضان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_hall-jabri_P1",
+      "modelledOn": "BEM 2018 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2018",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يقترح مصوّر حفلات بالمدية، يتقن عمله ويصدق مع زبائنه، عرضين لتصوير حفل زفاف:\n• العرض الأول: 15000DA إضافة إلى 200DA عن كل صورة مطبوعة.\n• العرض الثاني: 9000DA إضافة إلى 300DA عن كل صورة مطبوعة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "ما هو المبلغ الذي يدفعه زبون مقابل 40 صورة حسب كل عرض؟",
+      "statement": "حسب العرض الأول:",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "23000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ = المبلغ الثابت + ثمن الصورة × عدد الصور."
+        }
+      ],
+      "feedback": {
+        "correct": "$15000 + 200 \\times 40 = 23000$ .",
+        "incorrect": "أضف إلى المبلغ الثابت ثمن 40 صورة."
+      },
+      "solution": {
+        "lines": [
+          "العرض الأول: $15000 + 200 \\times 40 = 23000$ ، أي $23000DA$ .",
+          "العرض الثاني: $9000 + 300 \\times 40 = 21000$ ، أي $21000DA$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "حسب العرض الثاني:",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "21000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ = المبلغ الثابت + ثمن الصورة × عدد الصور."
+        }
+      ],
+      "feedback": {
+        "correct": "$9000 + 300 \\times 40 = 21000$ .",
+        "incorrect": "أضف إلى المبلغ الثابت ثمن 40 صورة."
+      },
+      "solution": {
+        "lines": [
+          "العرض الأول: $15000 + 200 \\times 40 = 23000$ ، أي $23000DA$ .",
+          "العرض الثاني: $9000 + 300 \\times 40 = 21000$ ، أي $21000DA$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "ليكن $x$ عدد الصور المطبوعة و $y$ المبلغ المدفوع (بالدينار).",
+      "statement": "حل جملة المعادلتين: $\\begin{cases} y = 200x + 15000 \\\\ y = 300x + 9000 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": {
+        "x": "60",
+        "y": "27000"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "27000",
+            "y": "60"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المجهول $y$ معبّر عنه بدلالة $x$ في المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ساوِ بين العبارتين ثم حل المعادلة ذات المجهول $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الثنائية $(60 ; 27000)$ تحقق المعادلتين معا: هي حل الجملة.",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $y$ من المعادلة (1) في المعادلة (2): $200x + 15000 = 300x + 9000$",
+          "$200x - 300x = 9000 - 15000$",
+          "$-100x = -6000$",
+          "ومنه $x = 60$",
+          "نعوّض في المعادلة (1): $y = 200 \\times 60 + 15000 = 27000$",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(60 ; 27000)"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "فسّر حل الجملة: من أجل كم صورة يدفع الزبون المبلغ نفسه في العرضين؟",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب عدد الصور (عدد طبيعي)",
+      "expectedAnswer": "60",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قيمة $x$ في الحل هي عدد الصور."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل 60 صورة يدفع $27000DA$ في كلا العرضين.",
+        "incorrect": "عدد الصور هو $x$ ، العدد الأول في الثنائية."
+      },
+      "solution": {
+        "lines": [
+          "حل الجملة الثنائية $(60 ; 27000)$ : من أجل 60 صورة يدفع الزبون $27000DA$ في كلا العرضين."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "☜ طلب عريس 75 صورة مطبوعة. أيّ العرضين أنسب له؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "العرض الأول",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "العرض الثاني",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المبلغ حسب كل عرض من أجل 75 صورة."
+        }
+      ],
+      "feedback": {
+        "correct": "$30000DA$ في العرض الأول مقابل $31500DA$ في الثاني.",
+        "incorrect": "احسب المبلغين ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "العرض الأول: $15000 + 200 \\times 75 = 30000$ ، أي $30000DA$ .",
+          "العرض الثاني: $9000 + 300 \\times 75 = 31500$ ، أي $31500DA$ .",
+          "ومنه العرض الأول أنسب له (عدد الصور أكبر من 60)."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

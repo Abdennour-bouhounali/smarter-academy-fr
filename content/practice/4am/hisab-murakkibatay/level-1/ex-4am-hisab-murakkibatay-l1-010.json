@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l1-010",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — متوازي أضلاع",
+    "estimatedMinutes": 2,
+    "tags": [
+      "متوازي أضلاع",
+      "تساوي شعاعين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hisab-murakkibatay_P3",
+      "modelledOn": "method-equal"
+    }
+  },
+  "statement": {
+    "content": "ABCD متوازي أضلاع في معلم، ونريد حساب إحداثيتي D انطلاقا من A و B و C."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المساواة التي نترجم بها «ABCD متوازي أضلاع» هي:",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{AC} = \\overrightarrow{BD}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{AB} = \\overrightarrow{DC}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{AB} = \\overrightarrow{CD}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-TARTIB-NUQAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المساواة الشعاعية لمتوازي الأضلاع ABCD بترتيب رؤوسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع الأول ومقابله في الاتجاه نفسه: $\\overrightarrow{AB} = \\overrightarrow{DC}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب معادلتين (للفاصلة وللترتيب) وحلّهما."
+        }
+      ],
+      "feedback": {
+        "correct": "ABCD متوازي أضلاع يعني AB = DC: الضلعان المتقابلان مقروءان في الاتجاه نفسه.",
+        "incorrect": "AB = CD يجعل الرباعي ABCD متقاطعا؛ والقطران ليسا متساويين كشعاعين."
+      }
+    }
+  ]
+}

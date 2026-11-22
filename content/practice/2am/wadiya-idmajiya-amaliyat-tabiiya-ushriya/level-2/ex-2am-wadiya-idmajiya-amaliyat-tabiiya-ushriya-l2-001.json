@@ -1,0 +1,270 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-amaliyat-tabiiya-ushriya-l2-001",
+  "lessonCode": "wadiya-idmajiya-amaliyat-tabiiya-ushriya",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — ما بقي من الورقة النقدية بعد التسوّق",
+    "estimatedMinutes": 6,
+    "tags": [
+      "سلسلة بأقواس",
+      "وضعية",
+      "برّر"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-75",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية (الجزء الأوّل)",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "ذهبت أمّ رشيدة إلى السوق ومعها ورقة نقدية واحدة من فئة ⁦2000 DA⁩ . اشترت $4$ kg من البرتقال بسعر ⁦120 DA⁩ للكيلوغرام، و $3$ kg من السكّر بسعر ⁦95 DA⁩ للكيلوغرام، وكيسًا من اللوز بـ ⁦350 DA⁩ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ سلسلة عمليات تعطي المبلغ الباقي مع أمّ رشيدة؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2000 - 4 \\times 120 + 3 \\times 95 + 350$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-IGNORED"
+        },
+        {
+          "id": "B",
+          "content": "$2000 - (4 \\times 120 + 3 \\times 95 + 350)$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$(2000 - 4) \\times 120 + 3 \\times 95 + 350$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-MISPLACED"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المطلوب جيّدًا: ما العملية التي تُنجز في الأخير، وما الذي يُحسب قبلها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ سلسلة مقترحة بالحساب أو بالقاعدة المناسبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الجواب هو السلسلة التي تترجم المطلوب وتعطي القيمة المنتظرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$2000 - (4 \\times 120 + 3 \\times 95 + 350) = 885$ .",
+        "incorrect": "اختبر كلّ سلسلة بالحساب: الصحيحة هي التي تترجم المطلوب وتعطي القيمة المنتظرة، وانتبه إلى القوسين."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة الصحيحة: $2000 - (4 \\times 120 + 3 \\times 95 + 350)$",
+          "$A = 2000 - (4 \\times 120 + 3 \\times 95 + 350)$",
+          "$A = 2000 - (480 + 285 + 350)$",
+          "$A = 2000 - (765 + 350)$",
+          "$A = 2000 - 1115$",
+          "$A = 885$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم دينارًا بقي مع أمّ رشيدة؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "مبلغ بالدينار",
+      "expectedAnswer": "885",
+      "misconceptionSignatures": [
+        {
+          "value": "2155",
+          "id": "MISC-AQWAS-IGNORED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعية جملة جملة: كلّ جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب سلسلة عمليات تترجمها، وضع بين قوسين ما يجب حسابه أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب السلسلة بالترتيب الصحيح للعمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "$2000 - (4 \\times 120 + 3 \\times 95 + 350) = 885$ .",
+        "incorrect": "القوسان ليسا زينة: ما بينهما يُحسب أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $2000 - (4 \\times 120 + 3 \\times 95 + 350)$",
+          "$A = 2000 - (4 \\times 120 + 3 \\times 95 + 350)$",
+          "$A = 2000 - (480 + 285 + 350)$",
+          "$A = 2000 - (765 + 350)$",
+          "$A = 2000 - 1115$",
+          "$A = 885$"
+        ],
+        "result": "885 \\text{ DA }"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما اسم السلسلة $2000 - (4 \\times 120 + 3 \\times 95 + 350)$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "choices": [
+        {
+          "id": "A",
+          "content": "فرق",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "جداء",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-FIRSTOP"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب مرحلة مرحلة وتتبّع آخر عملية بقيت لك."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع خطًّا تحت العملية التي تُنجز في الأخير."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العملية الأخيرة هي التي تسمّي السلسلة."
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة عبارة عن فرق: آخر عملية تُنجز فيها هي الطرح.",
+        "incorrect": "لا تسمِّ السلسلة بأوّل عملية تُنجز ولا بأوّل رمز تراه: سمِّها بآخر عملية تُنجز فيها."
+      },
+      "solution": {
+        "lines": [
+          "$A = 2000 - (4 \\times 120 + 3 \\times 95 + 350)$",
+          "$A = 2000 - (480 + 285 + 350)$",
+          "$A = 2000 - (765 + 350)$",
+          "$A = 2000 - 1115$",
+          "$A = 885$",
+          "آخر عملية تُنجز هي الطرح ، فالسلسلة عبارة عن فرق."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "هل يكفي المبلغ الباقي لشراء كيس دقيق ثمنه ⁦800 DA⁩ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب كلّ طرف من الطرفين على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين الناتجين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحكم قبل أن تحسب: اختبر بالأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم، تحقّق بالحساب.",
+        "incorrect": "احسب الطرفين كلّا على حدة قبل أن تحكم."
+      },
+      "solution": {
+        "lines": [
+          "$A = 2000 - (4 \\times 120 + 3 \\times 95 + 350)$",
+          "$A = 2000 - (480 + 285 + 350)$",
+          "$A = 2000 - (765 + 350)$",
+          "$A = 2000 - 1115$",
+          "$A = 885$",
+          "$A = 800$",
+          "النتيجتان تحقّقان ما قيل: الجواب نعم."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

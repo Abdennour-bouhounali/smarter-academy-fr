@@ -1,0 +1,201 @@
+{
+  "id": "ex-3am-nisba-miawiya-3am-l2-008",
+  "lessonCode": "nisba-miawiya-3am",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — أيّ المتجرين أرخص؟",
+    "estimatedMinutes": 7,
+    "tags": [
+      "تخفيض بنسبة مئوية",
+      "مقارنة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يريد أبوان اقتناء مكتب لابنهما بأقلّ تكلفة. المتجر الأوّل يعرضه بـ $12\\,000$ دج مع تخفيض $15\\,\\%$ ، والمتجر الثاني يعرضه بـ $9\\,000$ دج مع تخفيض $5\\,\\%$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما ثمنه الجديد في المتجر الأوّل؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "المبلغ بالدينار (دج)",
+      "expectedAnswer": "10200",
+      "misconceptionSignatures": [
+        {
+          "value": "13800",
+          "id": "MISC-NISBA3-COEF-DEC"
+        },
+        {
+          "value": "1800",
+          "id": "MISC-NISBA3-COEF-DEC"
+        },
+        {
+          "value": "11985",
+          "id": "MISC-NISBA3-ADD-T"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل الكمية تزداد أم تنقص؟ وما الكمية الأصلية؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التخفيض يُحسب على الكمية الأصلية: الناتج هو الأصل مضروبا في معامل أصغر من الواحد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب معامل التخفيض ثم اضرب فيه الكمية الأصلية، أو احسب التخفيض ثم اطرحه من الأصل."
+        }
+      ],
+      "feedback": {
+        "correct": "$10\\,200$ .",
+        "incorrect": "النسبة تُحسب على الكمية الأصلية؛ والناتج بعد التخفيض هو الأصل مضروبا في معامل أصغر من الواحد؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "معامل التخفيض بـ $15\\,\\%$ هو $1 - \\dfrac{15}{100} = 0{,}85$ .",
+          "الناتج: $12\\,000 \\times 0{,}85 = 10\\,200$ ."
+        ],
+        "result": "12\\,000 \\times 0{,}85 = 10\\,200"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما ثمنه الجديد في المتجر الثاني؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "المبلغ بالدينار (دج)",
+      "expectedAnswer": "8550",
+      "misconceptionSignatures": [
+        {
+          "value": "9450",
+          "id": "MISC-NISBA3-COEF-DEC"
+        },
+        {
+          "value": "450",
+          "id": "MISC-NISBA3-COEF-DEC"
+        },
+        {
+          "value": "8995",
+          "id": "MISC-NISBA3-ADD-T"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل الكمية تزداد أم تنقص؟ وما الكمية الأصلية؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التخفيض يُحسب على الكمية الأصلية: الناتج هو الأصل مضروبا في معامل أصغر من الواحد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب معامل التخفيض ثم اضرب فيه الكمية الأصلية، أو احسب التخفيض ثم اطرحه من الأصل."
+        }
+      ],
+      "feedback": {
+        "correct": "$8\\,550$ .",
+        "incorrect": "النسبة تُحسب على الكمية الأصلية؛ والناتج بعد التخفيض هو الأصل مضروبا في معامل أصغر من الواحد؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "معامل التخفيض بـ $5\\,\\%$ هو $1 - \\dfrac{5}{100} = 0{,}95$ .",
+          "الناتج: $9\\,000 \\times 0{,}95 = 8\\,550$ ."
+        ],
+        "result": "9\\,000 \\times 0{,}95 = 8\\,550"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "أيّ المتجرين يعرضه بأقلّ ثمن؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الأوّل لأن تخفيضه أكبر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NISBA3-BIGGER-RATE"
+        },
+        {
+          "id": "B",
+          "content": "الثاني",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تنقلنا من الكمية الأصلية إلى الجديدة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن بين طريقتين: إضافة نسبة كعدد، وضرب في معامل مناسب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب مثالا بأعداد بسيطة لتتأكد من الحكم."
+        }
+      ],
+      "feedback": {
+        "correct": "الثاني .",
+        "incorrect": "القرار يُبنى على الضرب في المعامل المناسب لا على جمع النسبة كعدد؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "المقارنة تكون بين الأثمان الجديدة: $10\\,200$ دج و $8\\,550$ دج، والثاني أقلّ؛ وأكبر نسبة تخفيض لا تعني دائما أقلّ ثمن."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

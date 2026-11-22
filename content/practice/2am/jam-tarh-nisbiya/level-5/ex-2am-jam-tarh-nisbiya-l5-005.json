@@ -1,0 +1,300 @@
+{
+  "id": "ex-2am-jam-tarh-nisbiya-l5-005",
+  "lessonCode": "jam-tarh-nisbiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — غوّاص في البحر",
+    "estimatedMinutes": 18,
+    "tags": [
+      "غوّاص",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "06"
+    }
+  },
+  "statement": {
+    "content": "يقيس غوّاص موضعه بالنسبة إلى سطح البحر (الصفر) : نزل إلى $-12\\,\\mathrm{m}$ ثمّ صعد $5\\,\\mathrm{m}$ ثمّ نزل $7\\,\\mathrm{m}$ ثمّ صعد $9\\,\\mathrm{m}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما موضعه بعد الصعود الأوّل ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-7",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-JAMNISB-SIGNFIRST"
+        },
+        {
+          "value": "-17",
+          "id": "MISC-JAMNISB-ADDDIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن إشارتي العددين ثمّ قارن مسافتيهما إلى الصفر : أيّهما أبعد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عند اختلاف الإشارتين نطرح المسافة الصغرى من المسافة الكبرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "النتيجة تأخذ إشارة العدد الأبعد عن الصفر ؛ وإذا تساوت المسافتان فالنتيجة معدومة."
+        }
+      ],
+      "feedback": {
+        "correct": "$(-12)+(+5)=(-7)$ : العددان من إشارتين مختلفتين فنطرح المسافتين ونأخذ إشارة الأبعد عن الصفر.",
+        "incorrect": "راجع قاعدة الحساب المناسبة (الجمع، أو الطرح بإضافة المعاكس)، ثمّ أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الصعود بـ $5$ أمتار يعني إضافة $(+5)$",
+          "العددان من إشارتين مختلفتين : المسافتان إلى الصفر $12$ و $5$ ؛ نطرح الصغرى من الكبرى : $12-5=7$",
+          "نأخذ إشارة العدد الأبعد عن الصفر وهو $(-12)$ (السالبة)",
+          "$(-12)+(+5)=(-7)$"
+        ],
+        "result": "-7"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما موضعه بعد النزول الثاني ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-14",
+      "misconceptionSignatures": [
+        {
+          "value": "14",
+          "id": "MISC-JAMNISB-SIGNLOST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن إشارتي العددين : هل هما متماثلتان؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عند تماثل الإشارتين نجمع المسافتين إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثمّ نكتب الإشارة المشتركة أمام ناتج الجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$(-7)+(-7)=(-14)$ : العددان لهما الإشارة نفسها فنجمع المسافتين ونحتفظ بالإشارة.",
+        "incorrect": "راجع قاعدة الحساب المناسبة (الجمع، أو الطرح بإضافة المعاكس)، ثمّ أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "النزول بـ $7$ أمتار يعني إضافة $(-7)$",
+          "العددان لهما الإشارة نفسها (السالبة) : نجمع المسافتين إلى الصفر ، $7+7=14$",
+          "نحتفظ بالإشارة المشتركة (السالبة)",
+          "$(-7)+(-7)=(-14)$"
+        ],
+        "result": "-14"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما موضعه في النهاية ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-5",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-JAMNISB-SIGNFIRST"
+        },
+        {
+          "value": "-23",
+          "id": "MISC-JAMNISB-ADDDIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن إشارتي العددين ثمّ قارن مسافتيهما إلى الصفر : أيّهما أبعد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عند اختلاف الإشارتين نطرح المسافة الصغرى من المسافة الكبرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "النتيجة تأخذ إشارة العدد الأبعد عن الصفر ؛ وإذا تساوت المسافتان فالنتيجة معدومة."
+        }
+      ],
+      "feedback": {
+        "correct": "$(-14)+(+9)=(-5)$ : العددان من إشارتين مختلفتين فنطرح المسافتين ونأخذ إشارة الأبعد عن الصفر.",
+        "incorrect": "راجع قاعدة الحساب المناسبة (الجمع، أو الطرح بإضافة المعاكس)، ثمّ أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الصعود بـ $9$ أمتار يعني إضافة $(+9)$",
+          "العددان من إشارتين مختلفتين : المسافتان إلى الصفر $14$ و $9$ ؛ نطرح الصغرى من الكبرى : $14-9=5$",
+          "نأخذ إشارة العدد الأبعد عن الصفر وهو $(-14)$ (السالبة)",
+          "$(-14)+(+9)=(-5)$"
+        ],
+        "result": "-5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "بكم ارتفع الغوّاص من أخفض موضع بلغه إلى موضعه النهائي ؟ (النهائي − الأخفض)",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-nisbiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "-19",
+          "id": "MISC-JAMNISB-ADDINSTEAD"
+        },
+        {
+          "value": "-9",
+          "id": "MISC-JAMNISB-REVERSED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الفرق : القيمة النهائية مطروحًا منها القيمة الابتدائية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حوّل الطرح إلى جمع معاكس العدد المطروح ثمّ طبّق قاعدة الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق : أضف التغيّر إلى القيمة الابتدائية فتجد القيمة النهائية."
+        }
+      ],
+      "feedback": {
+        "correct": "$(-5)-(-14)=(+9)$ : الفرق بين القيمة النهائية والابتدائية.",
+        "incorrect": "راجع قاعدة الحساب المناسبة (الجمع، أو الطرح بإضافة المعاكس)، ثمّ أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفرق = القيمة النهائية − القيمة الابتدائية",
+          "$(-5)-(-14)=(-5)+(+14)$",
+          "العددان من إشارتين مختلفتين : المسافتان إلى الصفر $5$ و $14$ ؛ نطرح الصغرى من الكبرى : $14-5=9$",
+          "نأخذ إشارة العدد الأبعد عن الصفر وهو $(+14)$ (الموجبة)",
+          "$(-5)-(-14)=(+9)$"
+        ],
+        "result": "9"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "ما المسافة إلى الصفر للموضع النهائي ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد موجب أو معدوم",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أوجد قيمة النتيجة أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة إلى الصفر لا تكون سالبة أبدًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احذف الإشارة وأبقِ العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$5$",
+        "incorrect": "راجع قاعدة الحساب المناسبة (الجمع، أو الطرح بإضافة المعاكس)، ثمّ أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "المسافة إلى الصفر هي العدد دون إشارته",
+          "$5$"
+        ],
+        "result": "5"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

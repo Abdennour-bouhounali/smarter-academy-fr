@@ -1,0 +1,65 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l3-010",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — مجموع زوايا السداسي المنتظم",
+    "estimatedMinutes": 3,
+    "tags": [
+      "زاوية المضلع",
+      "المجموع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mudalaat-muntazama_P2",
+      "modelledOn": "method-angle"
+    }
+  },
+  "statement": {
+    "content": "خلية نحل على شكل سداسي منتظم."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مجموع زوايا الخلية الست (بالدرجات):",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح (بالدرجات)",
+      "expectedAnswer": "720",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUNTAZAM-MARKAZIYA",
+          "value": "360"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالزاوية المركزية التي تحصر ضلعا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المثلث الذي رأسه المركز وقاعدته ضلع متساوي الساقين: احسب زاويتي قاعدته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زاوية المضلع ضعف زاوية قاعدة هذا المثلث."
+        }
+      ],
+      "feedback": {
+        "correct": "كل زاوية $120^\\circ$ ، والمجموع $6 \\times 120^\\circ$ .",
+        "incorrect": "احسب زاوية واحدة ثم اضرب في عدد الزوايا."
+      },
+      "difficulty": 3
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l2-004",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 2,
+  "metadata": {
+    "title": "دوري الآن — السباعي المنتظم",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الزاوية المركزية",
+      "القيمة المضبوطة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "now-157",
+      "page": 157,
+      "section": "دوري الآن",
+      "number": 1
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 157): ABCDEFG سباعي منتظم مركزه O."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "القيمة المضبوطة للزاوية $\\widehat{AOB}$ (كسرا، بالدرجات):",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "كسر (بالدرجات)، مثل 3/4",
+      "expectedAnswer": "360/7",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUNTAZAM-180",
+          "value": "180/7"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ أضلاع المضلع: كل ضلع تحصره زاوية مركزية واحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الزوايا المركزية متقايسة وتملأ دورة كاملة حول المركز."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم قيس الدورة الكاملة على عدد الأضلاع."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{AOB} = \\dfrac{360^\\circ}{7}$ : ليست عددا عشريا منتهيا، فنكتبها كسرا.",
+        "incorrect": "سبع زوايا مركزية متقايسة تملأ الدورة."
+      },
+      "difficulty": 2
+    },
+    {
+      "id": "q2",
+      "statement": "المدوّر إلى الوحدة للزاوية $\\widehat{AOB}$ (بالدرجات):",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح (بالدرجات)",
+      "expectedAnswer": "51",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUNTAZAM-180",
+          "value": "26"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الكسر بالآلة الحاسبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انظر إلى رقم الأعشار."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان أقل من 5 نبقي الوحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$360 \\div 7 \\approx 51{,}43$ ، فالمدوّر إلى الوحدة 51.",
+        "incorrect": "المدوّر إلى الوحدة يتبع رقم الأعشار."
+      },
+      "difficulty": 2
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l3-006",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2015 — قواسم العدد 391",
+    "estimatedMinutes": 9,
+    "tags": [
+      "قواسم",
+      "طريقة الاختبار",
+      "مراحل الحساب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qawasim-adad-tabii_P3",
+      "modelledOn": "BEM 2015 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "إلى أي عدد يكفي أن نختبر قابلية قسمة العدد 391 لتعيين كل قواسمه؟",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "19",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نختبر الأعداد التي مربعها أصغر من 391 أو يساويه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب مربعات بعض الأعداد وقارنها بالعدد المعطى."
+        }
+      ],
+      "feedback": {
+        "correct": "$19^2 = 361 \\leq 391 < 400 = 20^2$.",
+        "incorrect": "ابحث عن أكبر عدد طبيعي مربعه أصغر من 391 أو يساويه."
+      },
+      "solution": {
+        "lines": [
+          "$19^2 = 361$ و $20^2 = 400$",
+          "$19^2 \\leq 391 < 20^2$",
+          "إذن يكفي أن نختبر قابلية قسمة 391 على الأعداد من 1 إلى 19."
+        ],
+        "result": "19^2 \\leq 391 < 20^2"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عيّن كل قواسم العدد 391 مع كتابة مراحل الحساب.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        17,
+        23,
+        391
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            17,
+            23
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 391 بمربعات الأعداد: إلى أي عدد يكفي أن تختبر قابلية القسمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل قسمة باقيها معدوم تعطي قاسمين: $d$ و $391 \\div d$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$391 = 1 \\times 391$ ، $391 = 17 \\times 23$.",
+        "incorrect": "اختبر الأعداد التي مربعها أصغر من العدد أو يساويه، وخذ من كل قسمة باقيها معدوم القاسمين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$19^2 = 361 \\leq 391 < 400 = 20^2$ ومنه نختبر قابلية قسمة 391 على الأعداد من 1 إلى 19.",
+          "نجد أن 391 يقبل القسمة على كل من الأعداد: 1 ، 17.",
+          "ومن المساويات: $391 = 1 \\times 391$ ، $391 = 17 \\times 23$",
+          "إذن قواسم العدد 391 هي: 1 ، 17 ، 23 ، 391."
+        ]
+      },
+      "work": "required",
+      "timeSeconds": 360
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب العدد P حيث: $P = \\dfrac{391}{17} - \\dfrac{391}{23}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل كتابة 391 على شكل جداء عاملين التي وجدتها في السؤال 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كل حاصل قسمة على حدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{391}{17} = 23$ و $\\dfrac{391}{23} = 17$.",
+        "incorrect": "استعمل $391 = 17 \\times 23$ لحساب كل حاصل قسمة."
+      },
+      "solution": {
+        "lines": [
+          "$391 = 17 \\times 23$",
+          "$\\dfrac{391}{17} = 23$ و $\\dfrac{391}{23} = 17$",
+          "$P = 23 - 17$"
+        ],
+        "result": "P = 6"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

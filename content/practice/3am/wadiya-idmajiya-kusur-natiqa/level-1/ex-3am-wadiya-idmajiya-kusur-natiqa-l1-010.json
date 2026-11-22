@@ -1,0 +1,201 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-kusur-natiqa-l1-010",
+  "lessonCode": "wadiya-idmajiya-kusur-natiqa",
+  "level": 1,
+  "metadata": {
+    "title": "أعداد ناطقة: كتابة وجمع وقسمة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "العدد الناطق",
+      "جمع",
+      "قسمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الأعداد الناطقة $A$ و $B$ و $C$ .",
+    "formulas": [
+      "A = \\dfrac{-12}{-18}",
+      "B = -\\dfrac{4}{9} + \\dfrac{5}{-6}",
+      "C = -\\dfrac{7}{12} \\div \\left(-\\dfrac{14}{9}\\right)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "اكتب $A$ على شكل كسر غير قابل للاختزال .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "2/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "-2/3",
+          "id": "MISC-NATIQ-TWONEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ إشارة كلّ عدد: أين وُضعت علامة السالب ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العدد بمقام موجب ثمّ اختزل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر: حاصل قسمة عددين سالبين موجب."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{2}{3}$ .",
+        "incorrect": "انتبه إلى الإشارات ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "البسط والمقام سالبان: $\\dfrac{-12}{-18} = \\dfrac{12}{18}$ .",
+          "$\\dfrac{12}{18} = \\dfrac{2}{3}$ (اختزلنا بالقاسم $6$) ."
+        ],
+        "result": "\\dfrac{2}{3}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $B$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "-23/18",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "7/18",
+          "id": "MISC-NATIQ-DROPSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تعبّر عن الوضعية: جمع أجزاء أم طرح جزء من الكلّ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "وحّد المقامات بأصغر مقام مشترك ثمّ اجمع أو اطرح البسطين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل النتيجة، وتحقّق بمقارنتها بالواحد."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $-\\dfrac{23}{18}$ .",
+        "incorrect": "وحّد المقامات قبل الجمع أو الطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{-6} = -\\dfrac{5}{6}$ ، والمقام المشترك $18$ .",
+          "$-\\dfrac{4}{9} - \\dfrac{5}{6} = -\\dfrac{8}{18} - \\dfrac{15}{18} = -\\dfrac{23}{18}$ ."
+        ],
+        "result": "-\\dfrac{23}{18}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "احسب $C$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "3/8",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "-3/8",
+          "id": "MISC-AMAL-PRODSIGN"
+        },
+        {
+          "value": "49/54",
+          "id": "MISC-AMAL-NOFLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نقسمه وما العدد الذي نقسم عليه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على كسر غير معدوم هي الضرب في مقلوبه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالضرب: ناتج القسمة في القاسم يعطي المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{3}{8}$ .",
+        "incorrect": "القسمة على كسر هي الضرب في مقلوبه؛ أعد الحساب بعناية."
+      },
+      "solution": {
+        "lines": [
+          "حاصل قسمة عددين سالبين موجب: $-\\dfrac{7}{12} \\div \\left(-\\dfrac{14}{9}\\right) = \\dfrac{7}{12} \\times \\dfrac{9}{14}$ .",
+          "$\\dfrac{7}{12} \\times \\dfrac{9}{14} = \\dfrac{63}{168} = \\dfrac{3}{8}$ ."
+        ],
+        "result": "\\dfrac{3}{8}"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

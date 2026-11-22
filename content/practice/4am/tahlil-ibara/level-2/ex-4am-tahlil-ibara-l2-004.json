@@ -1,0 +1,317 @@
+{
+  "id": "ex-4am-tahlil-ibara-l2-004",
+  "lessonCode": "tahlil-ibara",
+  "level": 2,
+  "metadata": {
+    "title": "التحليل بمربع مجموع",
+    "estimatedMinutes": 10,
+    "tags": [
+      "مربع مجموع",
+      "تحليل"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-26",
+      "page": 39,
+      "section": "أوظّف تعلّماتي",
+      "number": 26
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "حلّل باستعمال المتطابقة $a^2 + 2ab + b^2 = (a + b)^2$ العبارات الآتية:",
+    "formulas": [
+      "A = x^2 + 6x + 9",
+      "B = 4x^2 + 20x + 25",
+      "C = 9x^2 + 42x + 49",
+      "D = 1 + 8x + 16x^2"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "حلّل العبارة $A$ .",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $A$ على الشكل $(x + n)^2$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على الشكل $a^2 + 2ab + b^2$ أو $a^2 - 2ab + b^2$ : عيّن $a$ و $b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق من الحد المضاعف $2ab$ قبل أن تكتب المربع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل $a^2 \\pm 2ab + b^2 = (a \\pm b)^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = (x + 3)^2$ إذن $n = 3$ .",
+        "incorrect": "تعرّف على المتطابقة الشهيرة المناسبة، وعيّن $a$ و $b$ بدقّة قبل التحليل."
+      },
+      "solution": {
+        "lines": [
+          "$A = x^2 + 2 \\times x \\times 3 + 3^2$"
+        ],
+        "result": "A = (x + 3)^2"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "حلّل العبارة $B$ .",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $B$ على الشكل $(mx + n)^2$ حيث $m$ و $n$ عددان طبيعيان : اكتب العدد $m$ فقط",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على الشكل $a^2 + 2ab + b^2$ أو $a^2 - 2ab + b^2$ : عيّن $a$ و $b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق من الحد المضاعف $2ab$ قبل أن تكتب المربع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل $a^2 \\pm 2ab + b^2 = (a \\pm b)^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = (2x + 5)^2$ إذن $m = 2$ .",
+        "incorrect": "تعرّف على المتطابقة الشهيرة المناسبة، وعيّن $a$ و $b$ بدقّة قبل التحليل."
+      },
+      "solution": {
+        "lines": [
+          "$B = (2x)^2 + 2 \\times 2x \\times 5 + 5^2$"
+        ],
+        "result": "B = (2x + 5)^2"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $B$ على الشكل $(mx + n)^2$ حيث $m$ و $n$ عددان طبيعيان : اكتب العدد $n$ فقط",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العدد المطلوب في الشكل المحلّل، بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = (2x + 5)^2$ إذن $n = 5$ .",
+        "incorrect": "تعرّف على المتطابقة الشهيرة المناسبة، وعيّن $a$ و $b$ بدقّة قبل التحليل."
+      },
+      "solution": {
+        "lines": [
+          "$B = (2x + 5)^2$"
+        ],
+        "result": "n = 5"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "lead": "حلّل العبارة $C$ .",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $C$ على الشكل $(mx + n)^2$ حيث $m$ و $n$ عددان طبيعيان : اكتب العدد $m$ فقط",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على الشكل $a^2 + 2ab + b^2$ أو $a^2 - 2ab + b^2$ : عيّن $a$ و $b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق من الحد المضاعف $2ab$ قبل أن تكتب المربع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل $a^2 \\pm 2ab + b^2 = (a \\pm b)^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = (3x + 7)^2$ إذن $m = 3$ .",
+        "incorrect": "تعرّف على المتطابقة الشهيرة المناسبة، وعيّن $a$ و $b$ بدقّة قبل التحليل."
+      },
+      "solution": {
+        "lines": [
+          "$C = (3x)^2 + 2 \\times 3x \\times 7 + 7^2$"
+        ],
+        "result": "C = (3x + 7)^2"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $C$ على الشكل $(mx + n)^2$ حيث $m$ و $n$ عددان طبيعيان : اكتب العدد $n$ فقط",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العدد المطلوب في الشكل المحلّل، بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = (3x + 7)^2$ إذن $n = 7$ .",
+        "incorrect": "تعرّف على المتطابقة الشهيرة المناسبة، وعيّن $a$ و $b$ بدقّة قبل التحليل."
+      },
+      "solution": {
+        "lines": [
+          "$C = (3x + 7)^2$"
+        ],
+        "result": "n = 7"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "lead": "حلّل العبارة $D$ .",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $D$ على الشكل $(mx + n)^2$ حيث $m$ و $n$ عددان طبيعيان : اكتب العدد $m$ فقط",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رتّب حدود $D$ حسب قوى $x$ المتناقصة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق من الحد المضاعف $2ab$ قبل أن تكتب المربع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل $a^2 \\pm 2ab + b^2 = (a \\pm b)^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$D = (4x + 1)^2$ إذن $m = 4$ .",
+        "incorrect": "تعرّف على المتطابقة الشهيرة المناسبة، وعيّن $a$ و $b$ بدقّة قبل التحليل."
+      },
+      "solution": {
+        "lines": [
+          "$D = 16x^2 + 8x + 1$",
+          "$D = (4x)^2 + 2 \\times 4x \\times 1 + 1^2$"
+        ],
+        "result": "D = (4x + 1)^2"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tahlil-ibara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $D$ على الشكل $(mx + n)^2$ حيث $m$ و $n$ عددان طبيعيان : اكتب العدد $n$ فقط",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العدد المطلوب في الشكل المحلّل، بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$D = (4x + 1)^2$ إذن $n = 1$ .",
+        "incorrect": "تعرّف على المتطابقة الشهيرة المناسبة، وعيّن $a$ و $b$ بدقّة قبل التحليل."
+      },
+      "solution": {
+        "lines": [
+          "$D = (4x + 1)^2$"
+        ],
+        "result": "n = 1"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

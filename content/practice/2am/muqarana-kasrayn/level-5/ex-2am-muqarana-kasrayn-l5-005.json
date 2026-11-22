@@ -1,0 +1,235 @@
+{
+  "id": "ex-2am-muqarana-kasrayn-l5-005",
+  "lessonCode": "muqarana-kasrayn",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — هدايا الزيت",
+    "estimatedMinutes": 10,
+    "tags": [
+      "مقارنة كسور",
+      "مقارنة بالعدد 1",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-75",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "عصرت أمّ سلمى $4\\ \\mathrm{L}$ من زيت الزيتون وأهدت جاراتها : أعطت لصفيّة $\\dfrac{1}{4}$ من الكمّية ، ولفاطمة $\\dfrac{3}{16}$ ، ولخديجة $\\dfrac{1}{8}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ الجارات أخذت أكبر كمّية من الزيت ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صفيّة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "فاطمة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-NUMONLY"
+        },
+        {
+          "id": "C",
+          "content": "خديجة",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكسر الخاصّ بكلّ حالة ؟ وهل مقاماتها متساوية أو يقسم بعضها بعضًا ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور كلّها بالمقام نفسه إن اختلفت المقامات ثمّ قارن بين البسوط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحكم من البسط وحده ولا من المقام وحده ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب : صفيّة .",
+        "incorrect": "وحّد المقامات قبل أن تحكم ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "نكتب الكسور بالمقام $16$ : $\\dfrac{1}{4} = \\dfrac{4}{16}$ ، $\\dfrac{3}{16}$ ، $\\dfrac{1}{8} = \\dfrac{2}{16}$ .",
+          "أكبر بسط هو $4$ .",
+          "الجواب : صفيّة ($\\dfrac{1}{4}$) ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما الكسر الذي يمثّل مجموع ما أُهدي ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "9/16",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط ؟ وما الكسور المعطاة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد قبل الجمع أو الطرح ثمّ اختزل ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9}{16}$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{4}{16} + \\dfrac{3}{16} + \\dfrac{2}{16} = \\dfrac{9}{16}$ ."
+        ],
+        "result": "\\dfrac{9}{16}"
+      },
+      "work": "optional",
+      "timeSeconds": 90,
+      "counted": false
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل بقي لأمّ سلمى بعض الزيت ؟ قارن بين $\\dfrac{9}{16}$ والعدد $1$ :",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{9}{16} > 1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-ONEWRONG"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{9}{16} < 1$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع الكسر أمام العدد المعطى : اكتب العدد كسرًا مقامه مقام الكسر ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العدد على شكل كسر له المقام نفسه ثمّ قارن بين البسطين ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بين البسطين بعد توحيد المقامين ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9}{16} < 1$ .",
+        "incorrect": "اختر طريقة المقارنة المناسبة للحالة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "العدد $1 = \\dfrac{16}{16}$ .",
+          "البسط أصغر من المقام : $9 < 16$ ، إذن $\\dfrac{9}{16} < 1$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "ما كمية الزيت الباقية بوحدة اللتر ؟ (اكتبها على شكل كسر مختزل)",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "7/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط ؟ وما الكسور المعطاة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد قبل الجمع أو الطرح ثمّ اختزل ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{7}{4}$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "الباقي $1 - \\dfrac{9}{16} = \\dfrac{7}{16}$ من الكمّية .",
+          "$\\dfrac{7}{16} \\times 4 = \\dfrac{28}{16} = \\dfrac{7}{4}$ ، أي $\\dfrac{7}{4}\\ \\mathrm{L}$ ."
+        ],
+        "result": "\\dfrac{7}{4}"
+      },
+      "work": "optional",
+      "timeSeconds": 90,
+      "counted": false
+    }
+  ]
+}

@@ -1,0 +1,443 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l5-002",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — بئر في الأرض المثلثة",
+    "estimatedMinutes": 25,
+    "tags": [
+      "وضعية إدماجية",
+      "خاصية فيثاغورس",
+      "الدائرة المحيطة",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-83",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يملك صالح قطعة أرض فلاحية على شكل مثلث $ABC$ قائم في $A$ حيث $AB = 60\\,\\mathrm{m}$ و $AC = 45\\,\\mathrm{m}$ ، ورثها عن أبيه ويعتني بها مع إخوته.",
+    "figure": {
+      "points": {
+        "A": [
+          0.0,
+          0.0
+        ],
+        "B": [
+          6.0,
+          0.0
+        ],
+        "C": [
+          0.0,
+          4.5
+        ],
+        "F": [
+          3,
+          2.25
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "60 m"
+        },
+        {
+          "from": "A",
+          "to": "C",
+          "label": "45 m"
+        },
+        {
+          "from": "B",
+          "to": "C"
+        },
+        {
+          "from": "A",
+          "to": "F",
+          "dashed": true
+        }
+      ],
+      "rightAngles": [
+        [
+          "B",
+          "A",
+          "C"
+        ]
+      ],
+      "labels": {
+        "F": "ne"
+      },
+      "ariaLabel": "قطعة أرض مثلثة ABC قائمة في A حيث AB = 60 m و AC = 45 m، و F منتصف [BC]",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول:",
+      "statement": "ما المساواة التي تعبّر عن خاصية فيثاغورس في المثلث $ABC$ القائم في $A$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$BC = AB + AC$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "id": "B",
+          "content": "$AB^2 = BC^2 + AC^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-HYP-WRONG"
+        },
+        {
+          "id": "C",
+          "content": "$BC^2 = AB^2 + AC^2$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الزاوية القائمة رأسها $A$ : ما الضلع المقابل لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوتر هو الضلع المقابل للزاوية القائمة، ومربعه وحده في طرف المساواة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المساواة تربط مربعات الأطوال، لا الأطوال نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "الوتر هو $[BC]$ ، المقابل للزاوية القائمة في $A$ ، إذن $BC^2 = AB^2 + AC^2$ .",
+        "incorrect": "ابحث أولا عن الوتر: هو الضلع الذي لا يمرّ برأس الزاوية القائمة، ومربعه هو مجموع مربعي الضلعين الآخرين."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $A$ ، وتره $[BC]$ (الضلع المقابل للزاوية القائمة).",
+          "حسب خاصية فيثاغورس: $BC^2 = AB^2 + AC^2$"
+        ],
+        "result": "BC^2 = AB^2 + AC^2"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب الطول $BC$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m",
+      "expectedAnswer": "75",
+      "misconceptionSignatures": [
+        {
+          "value": "105",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "5625",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولا مربع الطول، ثم خذ جذره التربيعي بالآلة الحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC^2 = 60^2 + 45^2 = 5625$ ، إذن $BC = 75\\,\\mathrm{m}$ .",
+        "incorrect": "ابدأ بتحديد الوتر، ثم اكتب مساواة فيثاغورس، وتذكّر أن ما تحسبه أولا هو مربع الطول لا الطول نفسه."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $A$ ، حسب خاصية فيثاغورس: $BC^2 = AB^2 + AC^2$",
+          "$BC^2 = 60^2 + 45^2$",
+          "$BC^2 = 3600 + 2025 = 5625$",
+          "$BC = \\sqrt{5625} = 75\\,\\mathrm{m}$"
+        ],
+        "result": "BC = 75\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب مساحة قطعة الأرض.",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المساحة بـ m²",
+      "expectedAnswer": "1350",
+      "misconceptionSignatures": [
+        {
+          "value": "2700",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث القائم، الضلعان القائمان قاعدة وارتفاع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المساحة = القاعدة × الارتفاع ÷ 2."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{60 \\times 45}{2} = 1\\,350\\,\\mathrm{m^2}$ .",
+        "incorrect": "لا تنس القسمة على 2."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $A$ : $\\mathcal{A} = \\dfrac{AB \\times AC}{2} = \\dfrac{60 \\times 45}{2} = 1\\,350\\,\\mathrm{m^2}$"
+        ],
+        "result": "\\mathcal{A} = 1\\,350\\,\\mathrm{m^2}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "lead": "الجزء الثاني:",
+      "statement": "يريد صالح حفر بئر للسقي على البعد نفسه من الأركان الثلاثة $A$ ، $B$ و $C$ . برّر أن مكان البئر هو $F$ منتصف $[BC]$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما اسم النقطة المتساوية البعد عن رؤوس مثلث؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أين يقع مركز الدائرة المحيطة بمثلث قائم؟"
+        }
+      ],
+      "feedback": {
+        "correct": "مركز الدائرة المحيطة بمثلث قائم هو منتصف وتره.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "النقطة المتساوية البعد عن رؤوس المثلث هي مركز دائرته المحيطة.",
+          "المثلث $ABC$ قائم في $A$ ، فمركز دائرته المحيطة هو منتصف وتره $[BC]$ .",
+          "إذن البئر في $F$ منتصف $[BC]$ ."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "شقّت شركة المياه طريقا $[AF]$ لوضع القنوات. احسب طوله.",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m",
+      "expectedAnswer": "37.5",
+      "misconceptionSignatures": [
+        {
+          "value": "75",
+          "id": "MISC-MAALAM-DAIRA-QUTR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$[AF]$ المتوسط المتعلّق بالوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في مثلث قائم، المتوسط المتعلّق بالوتر يساوي نصف الوتر."
+        }
+      ],
+      "feedback": {
+        "correct": "$AF = 37{,}5\\,\\mathrm{m}$ .",
+        "incorrect": "$F$ مركز الدائرة المحيطة: $FA = FB = FC$ ."
+      },
+      "solution": {
+        "lines": [
+          "$F$ منتصف الوتر $[BC]$ في المثلث القائم $ABC$ ، إذن $AF = \\dfrac{BC}{2} = \\dfrac{75}{2} = 37{,}5\\,\\mathrm{m}$"
+        ],
+        "result": "AF = 37{,}5\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "عوّضت الشركة صالحا بـ $1\\,200$ دج عن كل متر من الطريق. احسب مبلغ التعويض.",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المبلغ بالدينار",
+      "expectedAnswer": "45000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ يتناسب مع طول الطريق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب الطول في ثمن المتر."
+        }
+      ],
+      "feedback": {
+        "correct": "$37{,}5 \\times 1\\,200 = 45\\,000$ دج.",
+        "incorrect": "استعمل طول الطريق $AF$ لا طول الوتر."
+      },
+      "solution": {
+        "lines": [
+          "$37{,}5 \\times 1\\,200 = 45\\,000$ دج"
+        ],
+        "result": "45\\,000"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q7",
+      "step": "06",
+      "statement": "يريد صالح شراء مضخّة ثمنها $42\\,000$ دج بمبلغ التعويض وحده. هل يكفيه المبلغ؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، ويبقى له $3\\,000$ دج",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا، لأن طول الوتر $75\\,\\mathrm{m}$ هو طول الطريق",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-DAIRA-QUTR"
+        },
+        {
+          "id": "C",
+          "content": "لا، لأن $AF = AB + AC$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن مبلغ التعويض بثمن المضخّة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل المبلغ الذي حسبته."
+        }
+      ],
+      "feedback": {
+        "correct": "$45\\,000 > 42\\,000$ : يكفي.",
+        "incorrect": "احسب التعويض بطول الطريق $AF$ ثم قارنه بالثمن."
+      },
+      "solution": {
+        "lines": [
+          "التعويض $45\\,000$ دج ، و $45\\,000 - 42\\,000 = 3\\,000$ دج.",
+          "إذن المبلغ يكفي ويبقى $3\\,000$ دج."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l2-002",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 2,
+  "metadata": {
+    "title": "طرائق — صورة نقطة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "طرائق",
+      "صورة نقطة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-image",
+      "page": 131,
+      "section": "طرائق"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 131): ABC مثلث، و D صورة C بالانسحاب الذي شعاعه $\\overrightarrow{AB}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "النقطة D هي:",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نظيرة C بالنسبة إلى B",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "نظيرة A بالنسبة إلى منتصف [BC]",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نظيرة B بالنسبة إلى منتصف [AC]",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المساواة الشعاعية: الشعاع CD يساوي الشعاع AB."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الرباعي ABDC متوازي أضلاع: ما هما قطراه؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قطرا متوازي الأضلاع متناصفان."
+        }
+      ],
+      "feedback": {
+        "correct": "ABDC متوازي أضلاع قطراه [AD] و [BC]: D نظيرة A بالنسبة إلى منتصف [BC].",
+        "incorrect": "حدّد قطري الرباعي ABDC أولا."
+      }
+    }
+  ]
+}

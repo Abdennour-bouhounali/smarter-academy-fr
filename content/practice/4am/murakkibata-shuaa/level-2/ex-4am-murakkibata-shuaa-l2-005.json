@@ -1,0 +1,110 @@
+{
+  "id": "ex-4am-murakkibata-shuaa-l2-005",
+  "lessonCode": "murakkibata-shuaa",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — أي كتابة؟",
+    "estimatedMinutes": 2,
+    "tags": [
+      "قراءة بيانية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_murakkibata-shuaa_P1",
+      "modelledOn": "know-3"
+    }
+  },
+  "statement": {
+    "content": "على المرصوفة (الشكل) سهم يمثّل الشعاع $\\overrightarrow{MN}$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "M": [
+          -2,
+          3
+        ],
+        "N": [
+          1,
+          1
+        ]
+      },
+      "grid": true,
+      "axes": true,
+      "vectors": [
+        {
+          "from": "M",
+          "to": "N",
+          "tone": "indigo"
+        }
+      ],
+      "labels": {
+        "O": "sw"
+      },
+      "ariaLabel": "معلم على المرصوفة: سهم من M إلى N نازل قليلا نحو اليمين",
+      "maxWidth": 420
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مركبتا $\\overrightarrow{MN}$ هما:",
+      "learningPoints": [
+        {
+          "code": "4am_murakkibata-shuaa_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\begin{pmatrix} 3 \\\\ 2 \\end{pmatrix}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-ISHARA"
+        },
+        {
+          "id": "C",
+          "content": "$\\begin{pmatrix} -2 \\\\ 3 \\end{pmatrix}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-TABDIL-X-Y"
+        },
+        {
+          "id": "D",
+          "content": "$\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انطلق من مبدأ الشعاع وعُدّ المربعات بموازاة محور الفواصل، ثم بموازاة محور التراتيب، حتى نهايته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نحو اليمين أو نحو الأعلى العدد موجب، ونحو اليسار أو نحو الأسفل العدد سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب أولا الإزاحة الأفقية ثم الإزاحة العمودية، كل واحدة بإشارتها."
+        }
+      ],
+      "feedback": {
+        "correct": "من M: 3 نحو اليمين ثم 2 نحو الأسفل: $\\overrightarrow{MN}\\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix}$ .",
+        "incorrect": "عُدّ من M، الأفقي أولا ثم العمودي بإشارته."
+      }
+    }
+  ]
+}

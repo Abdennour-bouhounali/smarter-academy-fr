@@ -1,0 +1,260 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l3-005",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 3,
+  "metadata": {
+    "title": "قفزات على مستقيم مدرّج",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مستقيم مدرّج",
+      "حصر",
+      "مساواة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-2",
+      "page": 41,
+      "section": "أوظّف تعلّماتي",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يصنع حرفيّ عقودًا من 412 حبّة، في كل عقد 19 حبّة. يمثّل على مستقيم مدرّج قفزات طول كل منها 19 انطلاقًا من 0: $19 \\times 20 = 380$ ، $19 \\times 21 = 399$ ، $19 \\times 22 = 418$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما مضاعف العدد 19 الأقرب إلى 412 دون أن يتجاوزه؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "418",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-LA-BAQI"
+        },
+        {
+          "id": "B",
+          "content": "380",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "id": "C",
+          "content": "399",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ هذه الأعداد أكبر من 412؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من بين الأعداد التي لا تتجاوز 412، أيّها الأقرب إليه؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$399 \\le 412 < 418$.",
+        "incorrect": "القفزة الأخيرة لا يجب أن تتجاوز 412."
+      },
+      "solution": {
+        "lines": [
+          "$418 > 412$: القفزة 22 تتجاوز 412.",
+          "$399 \\le 412 < 418$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم عقدًا يصنع الحرفيّ؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد العقود",
+      "expectedAnswer": "21",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "20",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "22",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 412 من 19 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 19 دون أن نتجاوز 412."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$412 = 19 \\times 21 + 13$ و $13 < 19$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 19 فلا يتجاوز الجداء 412، والباقي عندئذ أصغر من 19."
+      },
+      "solution": {
+        "lines": [
+          "$19 \\times 21 = 399$ و $19 \\times 22 = 418$",
+          "$399 \\le 412 < 418$ ، إذن الحاصل هو 21."
+        ],
+        "result": "q = 21"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كم حبّة تبقى؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الحبّات",
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "value": "21",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "32",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 412."
+        }
+      ],
+      "feedback": {
+        "correct": "$412 - 19 \\times 21 = 412 - 399 = 13$ ، و $13 < 19$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 19."
+      },
+      "solution": {
+        "lines": [
+          "$412 = 19 \\times 21 + 13$",
+          "$13 < 19$ ، إذن الباقي هو 13."
+        ],
+        "result": "r = 13"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "اختر المساواة التي تعبّر عن القسمة الإقليدية للعدد 412 على 19.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$412 = 19 \\times 22 + 13$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        },
+        {
+          "id": "B",
+          "content": "$412 = 19 \\times 21 + 13$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$412 = 19 \\times 20 + 32$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "id": "D",
+          "content": "$412 = 19 \\times 13 + 21$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-HASIL"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق من صحة كل مساواة بالحساب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في القسمة الإقليدية على 19، يجب أن يكون الباقي أصغر من 19."
+        }
+      ],
+      "feedback": {
+        "correct": "$19 \\times 21 + 13 = 412$ و $13 < 19$: الشرطان محقّقان.",
+        "incorrect": "المساواة الصحيحة يجب أن تكون صحيحة حسابيًا، وأن يكون باقيها أصغر من المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$19 \\times 21 = 399$ و $399 + 13 = 412$",
+          "$13 < 19$ ، إذن:"
+        ],
+        "result": "412 = 19 \\times 21 + 13"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

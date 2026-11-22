@@ -1,0 +1,74 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-maalam-l4-004",
+  "lessonCode": "wadiya-idmajiya-maalam",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — نقطة مجهولة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "المسافة بين نقطتين",
+      "معادلة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-maalam_P1",
+      "modelledOn": "method-unknown"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس، نقطة الانطلاق $P(1\\,;\\,0)$ ونقطة مراقبة $Q(4\\,;\\,y)$ حيث $y > 0$ . المسافة PQ تساوي $5$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "قيمة y:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$PQ^2 = (4 - 1)^2 + (y - 0)^2$"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$9 + y^2 = 25$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$y^2 = 16$ و $y > 0$"
+        }
+      ],
+      "feedback": {
+        "correct": "$9 + y^2 = 25$ ، $y^2 = 16$ ، و $y > 0$ فإنّ $y = 4$ .",
+        "incorrect": "اكتب $PQ^2$ بالإحداثيات وساوه بـ $5^2$ ."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "-4",
+          "id": "MISC-MAALAM-ISHARA"
+        },
+        {
+          "value": "2",
+          "id": "MISC-MAALAM-MASAFA-JADHR-JAM"
+        }
+      ],
+      "difficulty": 4
+    }
+  ]
+}

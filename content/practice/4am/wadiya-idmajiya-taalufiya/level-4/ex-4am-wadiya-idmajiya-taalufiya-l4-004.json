@@ -1,0 +1,153 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-taalufiya-l4-004",
+  "lessonCode": "wadiya-idmajiya-taalufiya",
+  "level": 4,
+  "metadata": {
+    "title": "عرضان للإنترنت",
+    "estimatedMinutes": 12,
+    "tags": [
+      "مفاضلة",
+      "في حدود مبلغ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-taalufiya_P2"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "تقترح شركة، لتشجيع التلاميذ على البحث والمطالعة، عرضين للإنترنت، حيث $x$ عدد الجيغابايت في الشهر:\n- العرض الأول: اشتراك 600DA ثم 100DA عن كل جيغابايت.\n- العرض الثاني: 250DA عن كل جيغابايت دون اشتراك."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "من أجل كم جيغابايت يتساوى المبلغان؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الجيغابايت",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ $100x + 600 = 250x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$600 = 150x$ .",
+        "incorrect": "ساوِ المبلغين ثم اجمع حدود $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 100x + 600$ و $g(x) = 250x$",
+          "$100x + 600 = 250x$",
+          "$600 = 150x$",
+          "$x = 4$"
+        ],
+        "result": "x = 4"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "يستهلك أنس 6 جيغابايت في الشهر. ما هو العرض الأقل تكلفة له؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "العرض الأول",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "العرض الثاني",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المبلغين من أجل 6 جيغابايت."
+        }
+      ],
+      "feedback": {
+        "correct": "1200DA و 1500DA .",
+        "incorrect": "احسب $f(6)$ و $g(6)$ ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "$f(6) = 100 \\times 6 + 600 = 1200DA$",
+          "$g(6) = 250 \\times 6 = 1500DA$",
+          "العرض الأول هو الأقل تكلفة لأنس."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "خصّص أنس 1500DA للإنترنت واختار العرض الأول. ما هو أكبر عدد طبيعي من الجيغابايت يمكنه شراؤه؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الجيغابايت",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ $100x + 600 \\leqslant 1500$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خذ أكبر عدد طبيعي يحقّقها."
+        }
+      ],
+      "feedback": {
+        "correct": "$100x \\leqslant 900$ .",
+        "incorrect": "اطرح الاشتراك من 1500 ثم اقسم على 100."
+      },
+      "solution": {
+        "lines": [
+          "$100x + 600 \\leqslant 1500$",
+          "$100x \\leqslant 900$",
+          "$x \\leqslant 9$",
+          "أكبر عدد هو 9 جيغابايت ($f(9) = 1500DA$)."
+        ],
+        "result": "9"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

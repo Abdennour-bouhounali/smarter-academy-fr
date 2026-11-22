@@ -1,0 +1,175 @@
+{
+  "id": "ex-2am-silsila-bi-aqwas-l1-006",
+  "lessonCode": "silsila-bi-aqwas",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أقارن بين حسابين",
+    "estimatedMinutes": 8,
+    "tags": [
+      "أقواس",
+      "مقارنة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نقارن بين عبارتين تتشابهان في الأعداد والعمليات. احسب كلًّا منهما:"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $A = 45 - 15 \\div 3$ .",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "40",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع إطارًا حول القوسين: ما بداخلهما يُحسب أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب ما بين القوسين وفق أولوية العمليات، ثم أعد كتابة العبارة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك عملية بعد عملية إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 45 - 15 \\div 3 = 40$",
+        "incorrect": "ما بين القوسين يُحسب أوّلًا، ثم نكمل العمليات باحترام أولوية الضرب والقسمة على الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$A = 45 - 15 \\div 3$",
+          "$A = 45 - 5$",
+          "$A = 40$"
+        ],
+        "result": "A = 40"
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $B = (45 - 15) \\div 3$ .",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "40",
+          "id": "MISC-AQWAS-IGNORED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع إطارًا حول القوسين: ما بداخلهما يُحسب أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب ما بين القوسين وفق أولوية العمليات، ثم أعد كتابة العبارة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك عملية بعد عملية إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = (45 - 15) \\div 3 = 10$",
+        "incorrect": "ما بين القوسين يُحسب أوّلًا، ثم نكمل العمليات باحترام أولوية الضرب والقسمة على الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$B = (45 - 15) \\div 3$",
+          "$B = 30 \\div 3$",
+          "$B = 10$"
+        ],
+        "result": "B = 10"
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل القوسان في العبارة $B = (45 - 15) \\div 3$ ضروريان؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-ALLUSELESS"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النتيجتين بدقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كل عبارة بالترتيب الصحيح قبل أن تحكم."
+        }
+      ],
+      "feedback": {
+        "correct": "تحقّقت من ذلك بالحساب.",
+        "incorrect": "احسب كل عبارة مرحلة مرحلة وقارن النتيجتين قبل أن تحكم."
+      },
+      "solution": {
+        "lines": [
+          "$B = (45 - 15) \\div 3 = 30 \\div 3 = 10$",
+          "وبدون القوسين نجد $45 - 15 \\div 3 = 40$ : النتيجة تغيّرت، فالقوسان ضروريان."
+        ]
+      },
+      "timeSeconds": 70
+    }
+  ]
+}

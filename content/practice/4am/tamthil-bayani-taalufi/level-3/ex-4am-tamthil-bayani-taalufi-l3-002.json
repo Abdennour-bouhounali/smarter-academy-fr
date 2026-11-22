@@ -1,0 +1,263 @@
+{
+  "id": "ex-4am-tamthil-bayani-taalufi-l3-002",
+  "lessonCode": "tamthil-bayani-taalufi",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2023 — الدالة $f(x) = -4x + 1$",
+    "estimatedMinutes": 10,
+    "tags": [
+      "نقطتان من التمثيل",
+      "استقامية",
+      "تمثيل بياني"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tamthil-bayani-taalufi_P1",
+      "modelledOn": "BEM 2023 I-4"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "المستوي منسوب إلى معلم متعامد ومتجانس $(O , \\vec{i} , \\vec{j})$ . المستقيم $(d)$ هو التمثيل البياني للدالة $f$ المعرّفة بالعبارة: $f(x) = -4x + 1$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "$A(x_A ; -7)$ ، $B(-2 ; y_B)$ نقطتان من $(d)$ ، احسب كلا من $x_A$ و $y_B$ .",
+      "statement": "$x_A$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "7/4",
+          "id": "MISC-TAALUFI-SABIQ-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطة $A$ تنتمي إلى $(d)$ معناه: $f(x_A) = -7$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المعادلة $-4x_A + 1 = -7$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$-4x_A = -7 - 1$ ، أي $x_A = \\dfrac{-8}{-4}$ .",
+        "incorrect": "اكتب $f(x_A) = -7$ ثم حلّ المعادلة: انقل 1 أولا ثم اقسم على $-4$ ."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $A(x_A ; -7)$ هذا يعني أن: $f(x_A) = -7$",
+          "أي: $-4x_A + 1 = -7$",
+          "$-4x_A = -7 - 1$",
+          "ومنه: $x_A = \\dfrac{-8}{-4} = 2$"
+        ],
+        "result": "x_A = 2"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "$y_B$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطة $B$ تنتمي إلى $(d)$ معناه: $f(-2) = y_B$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب صورة العدد $-2$ بالدالة $f$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$y_B = -4 \\times (-2) + 1$ .",
+        "incorrect": "احسب $f(-2)$ : اضرب $-2$ في $-4$ ثم أضف 1."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $B(-2 ; y_B)$ هذا يعني أن: $f(-2) = y_B$",
+          "أي: $-4 \\times (-2) + 1 = y_B$",
+          "$8 + 1 = y_B$",
+          "ومنه: $y_B = 9$"
+        ],
+        "result": "y_B = 9"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "لتكن النقطتان $C(2 ; 4)$ ، $D(-2 ; -4)$ ، بيّن أن النقط $D$ ، $O$ ، $C$ في استقامية.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يكفي أن تبيّن أن $O$ منتصف القطعة $[CD]$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الشعاعين $\\overrightarrow{CO}$ و $\\overrightarrow{OD}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "نبيّن أن $O$ منتصف $[CD]$ ، أي أن: $\\overrightarrow{CO} = \\overrightarrow{OD}$ .",
+          "$\\overrightarrow{CO}\\begin{pmatrix} 0 - 2 \\\\ 0 - 4 \\end{pmatrix}$ أي $\\overrightarrow{CO}\\begin{pmatrix} -2 \\\\ -4 \\end{pmatrix}$",
+          "$\\overrightarrow{OD}\\begin{pmatrix} -2 - 0 \\\\ -4 - 0 \\end{pmatrix}$ أي $\\overrightarrow{OD}\\begin{pmatrix} -2 \\\\ -4 \\end{pmatrix}$",
+          "إذن $\\overrightarrow{CO} = \\overrightarrow{OD}$ ، فالنقطة $O$ منتصف $[CD]$ ، وبالتالي النقط $D$ ، $O$ ، $C$ في استقامية."
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "lead": "أنشئ التمثيل البياني للدالة $f$ .",
+      "statement": "عيّن إحداثيي نقطة تقاطع المستقيم $(d)$ مع محور التراتيب.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": {
+        "x": "0",
+        "y": "1"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "1",
+            "y": "0"
+          },
+          "id": "MISC-BAYANI-FASILA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل نقطة من محور التراتيب فاصلتها 0."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب صورة العدد 0 بالدالة $f$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(0) = 1$ : النقطة $(0 ; 1)$ .",
+        "incorrect": "نقطة محور التراتيب فاصلتها 0، وترتيبها صورة 0: اكتب الفاصلة أولا ثم الترتيب."
+      },
+      "solution": {
+        "lines": [
+          "نقطة تقاطع المستقيم $(d)$ مع محور التراتيب فاصلتها 0.",
+          "$f(0) = -4 \\times 0 + 1 = 1$",
+          "إذن النقطة هي $(0 ; 1)$ ، و $1$ هو الترتيب عند المبدأ."
+        ],
+        "result": "(0 ; 1)"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "ارسم المستقيم $(d)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التمثيل البياني لدالة تآلفية مستقيم: تكفي نقطتان منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خذ النقطة $(0 ; b)$ من محور التراتيب، ثم احسب صورة عدد آخر."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "$(d)$ مستقيم يشمل النقطتين $(0 ; 1)$ و $A(2 ; -7)$ (ويشمل أيضا $B(-2 ; 9)$ ).",
+          "نعلّم النقطتين $(0 ; 1)$ و $(1 ; -3)$ مثلا، ثم نرسم المستقيم الذي يشملهما: إنه ينزل ( $a = -4$ )."
+        ]
+      },
+      "timeSeconds": 300
+    }
+  ]
+}

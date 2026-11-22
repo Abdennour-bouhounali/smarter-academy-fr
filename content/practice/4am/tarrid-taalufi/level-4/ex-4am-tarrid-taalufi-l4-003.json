@@ -1,0 +1,267 @@
+{
+  "id": "ex-4am-tarrid-taalufi-l4-003",
+  "lessonCode": "tarrid-taalufi",
+  "level": 4,
+  "metadata": {
+    "title": "قاعة الألعاب — ثلاث صيغ",
+    "estimatedMinutes": 14,
+    "tags": [
+      "ثلاث صيغ",
+      "معادلة",
+      "أفضل صيغة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-taalufi_P2",
+      "modelledOn": "act-4",
+      "adaptedFrom": "ex-4am-tarrid-taalufi-l4-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "قاعة ألعاب، ثلاث صيغ للشهر (بـ DA)، حيث $x$ عدد الساعات:\nالصيغة A : الدفع بالساعة $100x$ .\nالصيغة B : بطاقة $40x + 600$ .\nالصيغة C : دون حدّ للساعات $1800$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عيّن عدد الساعات الذي تتساوى عنده كل صيغتين متتاليتين.",
+      "statement": "عدد الساعات الذي تتساوى عنده الصيغتان A و B :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الساعات",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكلفتان متساويتان: نحل معادلة من الدرجة الأولى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $100x = 40x + 600$ ثم اجمع حدود $x$ في طرف واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل هذا العدد من الساعات تتساوى الصيغتان A و B.",
+        "incorrect": "انقل حدود $x$ إلى طرف واحد والأعداد إلى الطرف الآخر، ثم اقسم على معامل $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "A = B: $100x = 40x + 600$ ، $60x = 600$ ، $x = 10$ .",
+          "B = C: $40x + 600 = 1800$ ، $40x = 1200$ ، $x = 30$ ."
+        ],
+        "result": "x = 10"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "عدد الساعات الذي تتساوى عنده الصيغتان B و C :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الساعات",
+      "expectedAnswer": "30",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكلفتان متساويتان: نحل معادلة من الدرجة الأولى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $40x + 600 = 1800$ ثم اجمع حدود $x$ في طرف واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل هذا العدد من الساعات تتساوى الصيغتان B و C.",
+        "incorrect": "انقل حدود $x$ إلى طرف واحد والأعداد إلى الطرف الآخر، ثم اقسم على معامل $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "A = B: $100x = 40x + 600$ ، $60x = 600$ ، $x = 10$ .",
+          "B = C: $40x + 600 = 1800$ ، $40x = 1200$ ، $x = 30$ ."
+        ],
+        "result": "x = 30"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "ما هي الصيغة الأقل تكلفة في كل حالة؟",
+      "statement": "تلعب سارة 5 ساعات في الشهر:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الصيغة A",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الصيغة B",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        },
+        {
+          "id": "C",
+          "content": "الصيغة C",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المبالغ الثلاثة لـ 5 ساعات، أو استعمل نتائج السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "لـ 5 ساعات: 500DA ، 800DA ، 1800DA .",
+        "incorrect": "الصيغة الأقل تكلفة هي التي مبلغها أصغر."
+      },
+      "solution": {
+        "lines": [
+          "لـ 5 ساعات: A = 500DA ، B = 800DA ، C = 1800DA .",
+          "قبل 10 ساعات الصيغة A أقل تكلفة، بين 10 و 30 ساعة الصيغة B ، وبعد 30 ساعة الصيغة C ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "يلعب سليم 20 ساعة في الشهر:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الصيغة A",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        },
+        {
+          "id": "B",
+          "content": "الصيغة B",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "الصيغة C",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المبالغ الثلاثة لـ 20 ساعة."
+        }
+      ],
+      "feedback": {
+        "correct": "لـ 20 ساعة: 2000DA ، 1400DA ، 1800DA .",
+        "incorrect": "قارن المبالغ الثلاثة."
+      },
+      "solution": {
+        "lines": [
+          "لـ 20 ساعة: A = 2000DA ، B = 1400DA ، C = 1800DA .",
+          "قبل 10 ساعات الصيغة A أقل تكلفة، بين 10 و 30 ساعة الصيغة B ، وبعد 30 ساعة الصيغة C ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ج",
+      "statement": "يلعب رامي 35 ساعة في الشهر:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الصيغة A",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        },
+        {
+          "id": "B",
+          "content": "الصيغة B",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        },
+        {
+          "id": "C",
+          "content": "الصيغة C",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المبالغ الثلاثة لـ 35 ساعة."
+        }
+      ],
+      "feedback": {
+        "correct": "لـ 35 ساعة: 3500DA ، 2000DA ، 1800DA .",
+        "incorrect": "قارن المبالغ الثلاثة."
+      },
+      "solution": {
+        "lines": [
+          "لـ 35 ساعة: A = 3500DA ، B = 2000DA ، C = 1800DA .",
+          "قبل 10 ساعات الصيغة A أقل تكلفة، بين 10 و 30 ساعة الصيغة B ، وبعد 30 ساعة الصيغة C ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

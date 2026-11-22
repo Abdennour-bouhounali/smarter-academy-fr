@@ -1,0 +1,279 @@
+{
+  "id": "ex-1am-qawaid-qabiliyat-qisma-l3-002",
+  "lessonCode": "qawaid-qabiliyat-qisma",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — صحيح أو خطأ مع التصحيح",
+    "estimatedMinutes": 8,
+    "tags": [
+      "صحيح أو خطأ",
+      "تصحيح"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 2,
+      "file": "1am-s2-72",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الأول",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "أجب بصحيح أو خطأ، مع تصحيح الخطأ إن وُجد."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "يقبل عدد طبيعي القسمة على 5 إذا كان رقم آحاده 5 فقط.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-SIFR"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل العدد 20 يقبل القسمة على 5؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما رقم آحاده؟"
+        }
+      ],
+      "feedback": {
+        "correct": "20 يقبل القسمة على 5 ورقم آحاده 0: القاعدة الصحيحة «رقم آحاده 0 أو 5».",
+        "incorrect": "جرّب مضاعفات 5 مثل 10 و 20 و 30."
+      },
+      "solution": {
+        "lines": [
+          "$20 = 5 \\times 4$ ورقم آحاده 0.",
+          "التصحيح: يقبل عدد طبيعي القسمة على 5 إذا كان رقم آحاده 0 أو 5."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "باقي القسمة الإقليدية للعدد 247 على 5 هو 3.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-BAQI"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 247 على 5."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الباقي الذي وجدته بالعدد المقترح."
+        }
+      ],
+      "feedback": {
+        "correct": "$247 = 5 \\times 49 + 2$: الباقي 2.",
+        "incorrect": "أنجز القسمة وتحقّق أن الباقي أصغر من 5."
+      },
+      "solution": {
+        "lines": [
+          "$5 \\times 49 = 245$ و $247 - 245 = 2$",
+          "الجملة خاطئة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "صحّح: ما هو باقي القسمة الإقليدية للعدد 247 على 5؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "49",
+          "id": "MISC-QABILIYA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية عموديًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي عدد طبيعي أصغر من 5."
+        }
+      ],
+      "feedback": {
+        "correct": "$247 = 5 \\times 49 + 2$ و $2 < 5$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 5."
+      },
+      "solution": {
+        "lines": [
+          "$247 = 5 \\times 49 + 2$",
+          "$2 < 5$ ، إذن الباقي هو 2، و 247 لا يقبل القسمة على 5."
+        ],
+        "result": "r = 2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "كل عدد زوجي يقبل القسمة على 4.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-ZAWJI-4"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جرّب العدد 6."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل 6 زوجي؟ هل يقبل القسمة على 4؟"
+        }
+      ],
+      "feedback": {
+        "correct": "6 زوجي و $6 = 4 \\times 1 + 2$: لا يقبل القسمة على 4.",
+        "incorrect": "يكفي مثال واحد مضادّ لنفي الجملة."
+      },
+      "solution": {
+        "lines": [
+          "$6 = 2 \\times 3$ زوجي، و $6 = 4 \\times 1 + 2$.",
+          "التصحيح: يقبل العدد القسمة على 4 إذا كان العدد المشكّل من رقميه الأخيرين يقبل القسمة على 4."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "العدد 1206 يقبل القسمة على 9.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-AHAD-3"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مجموع أرقام العدد 1206."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل هذا المجموع يقبل القسمة على 9؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$1 + 2 + 0 + 6 = 9$ ، و $1206 = 9 \\times 134$.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 9 إذا كان مجموع أرقامه يقبل القسمة على 9."
+      },
+      "solution": {
+        "lines": [
+          "$1 + 2 + 0 + 6 = 9$",
+          "$1206 = 9 \\times 134 + 0$ ، الجملة صحيحة."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,246 @@
+{
+  "id": "ex-2am-hall-mushkil-muadala-l5-006",
+  "lessonCode": "hall-mushkil-muadala",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — ورشة نجارة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "وضعيّة إدماجيّة",
+      "محيط",
+      "سياج"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "ساحة ورشة نجارة مستطيلة بعدها الثاني ضعف الأوّل، أطوال أضلاعها المتتالية بالمتر : $x$ ، $2x$ ، $x$ ، $2x$ . محيطها $150\\,\\mathrm{m}$ . يُسيَّج محيطها كلّه ما عدا بابًا عرضه $2\\,\\mathrm{m}$ ، وثمن المتر الواحد من السياج $100$ DA ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اختر العبارة التي تعبّر عن محيط الساحة بالمتر بدلالة $x$ :",
+      "learningPoints": [
+        {
+          "code": "2am_hall-mushkil-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$5x$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$6x$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$6x+10$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المحيط هو مجموع أطوال الأضلاع كلّها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الأضلاع التي فيها $x$ وحدها، ثمّ اجمع الأعداد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر الخيار بقيمة بسيطة للحرف ثمّ قارن بالجمع المباشر."
+        }
+      ],
+      "feedback": {
+        "correct": "المحيط هو $6x$ .",
+        "incorrect": "اجمع أطوال الأضلاع كلّها، ثمّ اختبر كلّ خيار بقيمة بسيطة للحرف."
+      },
+      "solution": {
+        "lines": [
+          "$x + 2x + x + 2x=6x$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أوجد $x$ بحلّ المعادلة $6\\times x=150$ .",
+      "learningPoints": [
+        {
+          "code": "2am_hall-mushkil-muadala_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "25",
+      "misconceptionSignatures": [
+        {
+          "value": "900",
+          "id": "MISC-MAJHUL-MULTDIV"
+        },
+        {
+          "value": "0.04",
+          "id": "MISC-MAJHUL-FLIP"
+        },
+        {
+          "value": "144",
+          "id": "MISC-MAJHUL-SUBFORM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في المعادلة ما يُفعل بالمجهول : ضرب أو قسمة أو جمع أو طرح، وما هي آخر عملية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العامل الناقص في جداء يُحسب بقسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من حلّك : عوّض المجهول بقيمته وأنجز العملية، فإن وجدت الطرف الآخر فالحلّ صحيح."
+        }
+      ],
+      "feedback": {
+        "correct": "$x=25$ .",
+        "incorrect": "ابحث عن العدد الذي يجعل المساواة صحيحة بالعملية العكسية، ثمّ تحقّق منه بإنجاز العملية."
+      },
+      "solution": {
+        "lines": [
+          "$x=150\\div 6=25$ .",
+          "التحقّق : $6\\times 25=150$ ."
+        ],
+        "result": "25"
+      },
+      "work": "optional",
+      "timeSeconds": 70
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما تكلفة السياج بالدينار ؟ (المحيط بعد إيجاد $x$ ثمّ ثمن الأمتار المسيَّجة)",
+      "learningPoints": [
+        {
+          "code": "2am_hall-mushkil-muadala_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "14800",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بقيمته المعلومة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات : الضرب والقسمة قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة."
+        }
+      ],
+      "feedback": {
+        "correct": "النتيجة $14800$ .",
+        "incorrect": "عوّض بالقيم المعلومة واحسب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$100\\times(150-2)=14800$ ."
+        ],
+        "result": "14800"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "ميزانيّة المالك $14500$ DA . هل تكفي لإنجاز السياج ؟",
+      "learningPoints": [
+        {
+          "code": "2am_hall-mushkil-muadala_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب العبارة بالقيمة المعلومة وحدها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات في الحساب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن العددين الناتجين."
+        }
+      ],
+      "feedback": {
+        "correct": "لا : الشرط غير محقّق.",
+        "incorrect": "احسب العبارة بالقيمة المعلومة ثمّ قارن العددين."
+      },
+      "solution": {
+        "lines": [
+          "$100\\times(150-2)=14800$ .",
+          "الشرط غير محقّق."
+        ]
+      },
+      "timeSeconds": 70
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import React, { lazy } from 'react';
+import { lazy } from 'react';
 import { LessonKnowledgeProvider } from './KnowledgeProvider';
 
 /**
@@ -32,7 +32,7 @@ import { LessonKnowledgeProvider } from './KnowledgeProvider';
  */
 const cache = new Map();
 
-export function makeLazyKnowledgeProvider(load) {
+function makeLazyKnowledgeProvider(load) {
   // Un composant `lazy` par leçon, mémorisé : en recréer un à chaque rendu
   // relancerait le chargement et remonterait tout l'arbre de la leçon.
   const cached = cache.get(load);
@@ -43,10 +43,12 @@ export function makeLazyKnowledgeProvider(load) {
   const Inner = lazy(async () => {
     const mod = await load();
     const knowledge = mod.LESSON_KNOWLEDGE;
+    // Carte PROGRESSIVE : chaque leçon l'exporte (knowledge.jsx → knowledgeGraph.js).
+    const graph = mod.KNOWLEDGE_GRAPH ?? null;
     return {
       default: function LoadedKnowledgeProvider({ children, ...props }) {
         return (
-          <LessonKnowledgeProvider {...props} knowledge={knowledge}>
+          <LessonKnowledgeProvider {...props} knowledge={knowledge} graph={graph}>
             {children}
           </LessonKnowledgeProvider>
         );

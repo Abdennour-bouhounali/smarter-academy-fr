@@ -1,0 +1,59 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l4-005",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — منتصفان متتاليان",
+    "estimatedMinutes": 3,
+    "tags": [
+      "المنتصف",
+      "طول"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_shuaayn-mutasawiyayn_P1",
+      "modelledOn": "know-3"
+    }
+  },
+  "statement": {
+    "content": "[AB] قطعة طولها 16 cm. M نقطة حيث $\\overrightarrow{AM} = \\overrightarrow{MB}$ ، و N نقطة حيث $\\overrightarrow{AN} = \\overrightarrow{NM}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "احسب الطول BN (بالسنتيمتر).",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر)",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "M منتصف [AB]، و N منتصف [AM]."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب AM ثم NM."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "BN = NM + MB."
+        }
+      ],
+      "feedback": {
+        "correct": "AM = MB = 8 cm و NM = 4 cm، إذن BN = 4 + 8 = 12 cm.",
+        "incorrect": "حدّد كل منتصف ثم اجمع الطولين NM و MB."
+      }
+    }
+  ]
+}

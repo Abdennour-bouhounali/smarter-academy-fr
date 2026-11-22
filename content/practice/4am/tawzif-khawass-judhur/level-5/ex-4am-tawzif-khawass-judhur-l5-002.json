@@ -1,0 +1,252 @@
+{
+  "id": "ex-4am-tawzif-khawass-judhur-l5-002",
+  "lessonCode": "tawzif-khawass-judhur",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2008 — أرض عرضها ثلث طولها",
+    "estimatedMinutes": 16,
+    "tags": [
+      "a√b",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tawzif-khawass-judhur_P1",
+      "modelledOn": "BEM 2008 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2008",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "قطعة أرض مستطيلة الشكل بالمسيلة مساحتها $600\\,m^2$ وعرضها يساوي ثلث طولها، أراد صاحبها تخصيصها لزراعة الخضر وتوزيع جزء من محصولها على الفقراء. نرمز إلى طولها بـ L."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن: $L^2 = 1800$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العرض يساوي ثلث الطول: اكتبه بدلالة L."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحة المستطيل = الطول × العرض."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك سطرًا بسطر بالحل النموذجي، وانتبه إلى كل مرحلة من مراحل الحساب."
+      },
+      "solution": {
+        "lines": [
+          "العرض $\\dfrac{L}{3}$ والمساحة $L \\times \\dfrac{L}{3} = 600$",
+          "$\\dfrac{L^2}{3} = 600$",
+          "$L^2 = 600 \\times 3$"
+        ],
+        "result": "L^2 = 1800"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "احسب طول القطعة وعرضها، واكتب كلا منهما على الشكل $a\\sqrt{2}$ حيث $a$ عدد طبيعي.",
+      "statement": "الطول L:",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (بالمتر)",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "900",
+          "id": "MISC-JIDHR-MURABBA-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "L عدد موجب مربعه 1800."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر مربع تامّ يقسم 1800."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب: هل 1800 يقبل القسمة على 900؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$L = \\sqrt{900} \\times \\sqrt{2} = 30\\sqrt{2}\\,m$.",
+        "incorrect": "L هو $\\sqrt{1800}$: اكتب 1800 على شكل (أكبر مربع تامّ) × 2."
+      },
+      "solution": {
+        "lines": [
+          "$L = \\sqrt{1800} = \\sqrt{900} \\times \\sqrt{2}$",
+          "$L = 30\\sqrt{2}$"
+        ],
+        "result": "L = 30\\sqrt{2}\\,m"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "العرض:",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (بالمتر)",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العرض هو ثلث الطول الذي وجدته."
+        }
+      ],
+      "feedback": {
+        "correct": "العرض $\\dfrac{30\\sqrt{2}}{3} = 10\\sqrt{2}\\,m$.",
+        "incorrect": "اقسم الطول الذي وجدته على 3."
+      },
+      "solution": {
+        "lines": [
+          "العرض $= \\dfrac{L}{3} = \\dfrac{30\\sqrt{2}}{3}$"
+        ],
+        "result": "\\dfrac{L}{3} = 10\\sqrt{2}\\,m"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب محيط القطعة واكتبه على الشكل $a\\sqrt{2}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (بالمتر)",
+      "expectedAnswer": "80",
+      "misconceptionSignatures": [
+        {
+          "value": "40",
+          "id": "MISC-MUAMIL-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "محيط المستطيل = 2 × (الطول + العرض)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الطول والعرض بالخاصية التوزيعية."
+        }
+      ],
+      "feedback": {
+        "correct": "المحيط $2 \\times (30\\sqrt{2} + 10\\sqrt{2}) = 80\\sqrt{2}\\,m$.",
+        "incorrect": "اجمع الطول والعرض (معاملي $\\sqrt{2}$) ثم اضرب في 2."
+      },
+      "solution": {
+        "lines": [
+          "$P = 2 \\times (30\\sqrt{2} + 10\\sqrt{2})$",
+          "$P = 2 \\times 40\\sqrt{2}$"
+        ],
+        "result": "P = 80\\sqrt{2}\\,m"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "☜ يريد صاحب القطعة شقّ ممرّ مستقيم على طول أحد قطريها. احسب طول هذا الممرّ واكتبه على الشكل $a\\sqrt{5}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (بالمتر)",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "400",
+          "id": "MISC-JIDHR-MURABBA-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القطر وتر في مثلث قائم ضلعاه القائمان هما الطول والعرض."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل خاصية فيثاغورس: $d^2 = L^2 + \\ell^2$، و $(10\\sqrt{2})^2 = 200$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ابحث عن أكبر مربع تامّ يقسم $d^2$."
+        }
+      ],
+      "feedback": {
+        "correct": "$d^2 = 1800 + 200 = 2000$ و $d = \\sqrt{400} \\times \\sqrt{5} = 20\\sqrt{5}\\,m$.",
+        "incorrect": "احسب مربع القطر بخاصية فيثاغورس، ثم اكتب جذره على الشكل $a\\sqrt{5}$."
+      },
+      "solution": {
+        "lines": [
+          "حسب خاصية فيثاغورس: $d^2 = L^2 + \\ell^2$",
+          "$d^2 = 1800 + (10\\sqrt{2})^2 = 1800 + 200 = 2000$",
+          "$d = \\sqrt{2000} = \\sqrt{400} \\times \\sqrt{5}$"
+        ],
+        "result": "d = 20\\sqrt{5}\\,m"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

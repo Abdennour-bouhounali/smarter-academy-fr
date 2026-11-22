@@ -1,0 +1,183 @@
+{
+  "id": "ex-4am-mushkilat-jumla-l2-006",
+  "lessonCode": "mushkilat-jumla",
+  "level": 2,
+  "metadata": {
+    "title": "محل الأحذية الرياضية",
+    "estimatedMinutes": 8,
+    "tags": [
+      "ترييض",
+      "أثمان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mushkilat-jumla_P2",
+      "modelledOn": "act-3"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "باع محل للأحذية الرياضية، يلتزم صاحبه بصدق الإعلان عن أسعاره، في يوم واحد 18 زوجا من نوعين: الزوج من النوع الأول بـ 4500DA والزوج من النوع الثاني بـ 6000DA، فبلغت مداخيل اليوم 93000DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "نسمّي $x$ عدد أزواج النوع الأول و $y$ عدد أزواج النوع الثاني.",
+      "statement": "ترجم المعطيات بجملة معادلتين، ثم اكتب معادلة المداخيل، بعد قسمة طرفيها على 1500، على الشكل $3x + 4y = c$ . أعط العدد $c$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $c$ فقط",
+      "expectedAnswer": "62",
+      "misconceptionSignatures": [
+        {
+          "value": "18",
+          "id": "MISC-JUMLA-TARJAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مداخيل النوع الأول هي $4500x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلة المداخيل ثم اقسم حدودها الثلاثة على 1500."
+        }
+      ],
+      "feedback": {
+        "correct": "معادلة المداخيل $4500x + 6000y = 93000$ تؤول إلى $3x + 4y = 62$ .",
+        "incorrect": "المداخيل تُترجم بـ $4500x + 6000y$ ؛ اقسم الحدود الثلاثة على 1500."
+      },
+      "solution": {
+        "lines": [
+          "عدد الأزواج: $x + y = 18$",
+          "المداخيل: $4500x + 6000y = 93000$",
+          "بقسمة طرفي المعادلة الثانية على 1500 نجد: $3x + 4y = 62$",
+          "ومنه الجملة: $\\begin{cases} x + y = 18 \\\\ 3x + 4y = 62 \\end{cases}$"
+        ],
+        "result": "c = 62"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "جد عدد الأزواج المبيعة من كل نوع.",
+      "statement": "عدد أزواج النوع الأول:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب المعادلة الأولى في $4$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح منها المعادلة الثانية طرفا لطرف ليختفي $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "بيع 10 أزواج من النوع الأول.",
+        "incorrect": "اضرب $x + y = 18$ في 4 ثم اطرح منها $3x + 4y = 62$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} x + y = 18 & ...(1) \\\\ 3x + 4y = 62 & ...(2) \\end{cases}$",
+          "بضرب طرفي المعادلة (1) في العدد $4$ وطرفي المعادلة (2) في العدد $-1$ نجد:",
+          "$\\begin{cases} 4x + 4y = 72 \\\\ -3x - 4y = -62 \\end{cases}$",
+          "بجمع المعادلتين طرفا لطرف نجد: $x = 10$",
+          "بتعويض قيمة $x$ في المعادلة (1) نجد: $10 + y = 18$",
+          "$y = 8$",
+          "التحقق في النص: $10 + 8 = 18$ و $4500 \\times 10 + 6000 \\times 8 = 45000 + 48000 = 93000$ .",
+          "إذن بيع 10 أزواج من النوع الأول و 8 أزواج من النوع الثاني."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "عدد أزواج النوع الثاني:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المجموع 18 زوجا."
+        }
+      ],
+      "feedback": {
+        "correct": "بيعت 8 أزواج من النوع الثاني، ونتحقق: $45000 + 48000 = 93000$ .",
+        "incorrect": "من $x + y = 18$ : $y = 18 - x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} x + y = 18 & ...(1) \\\\ 3x + 4y = 62 & ...(2) \\end{cases}$",
+          "بضرب طرفي المعادلة (1) في العدد $4$ وطرفي المعادلة (2) في العدد $-1$ نجد:",
+          "$\\begin{cases} 4x + 4y = 72 \\\\ -3x - 4y = -62 \\end{cases}$",
+          "بجمع المعادلتين طرفا لطرف نجد: $x = 10$",
+          "بتعويض قيمة $x$ في المعادلة (1) نجد: $10 + y = 18$",
+          "$y = 8$",
+          "التحقق في النص: $10 + 8 = 18$ و $4500 \\times 10 + 6000 \\times 8 = 45000 + 48000 = 93000$ .",
+          "إذن بيع 10 أزواج من النوع الأول و 8 أزواج من النوع الثاني."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

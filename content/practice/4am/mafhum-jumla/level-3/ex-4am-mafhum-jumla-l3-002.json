@@ -1,0 +1,145 @@
+{
+  "id": "ex-4am-mafhum-jumla-l3-002",
+  "lessonCode": "mafhum-jumla",
+  "level": 3,
+  "metadata": {
+    "title": "حل جملة ذهنيا",
+    "estimatedMinutes": 6,
+    "tags": [
+      "حل ذهني",
+      "جملة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-3",
+      "page": 60,
+      "section": "أوظّف تعلّماتي",
+      "number": 3
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "عيّن ذهنيا الثنائية حل كل جملة من الجملتين التاليتين:",
+      "statement": "$\\begin{cases} x = \\dfrac{1}{3} \\\\ 3x - y = 4 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 2/5)",
+      "expectedAnswer": {
+        "x": "1/3",
+        "y": "-3"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-3",
+            "y": "1/3"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قيمة $x$ معطاة في المعادلة الأولى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض قيمة $x$ في المعادلة الثانية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تبقى معادلة مجهولها $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{3} = \\dfrac{1}{3}$ ؛ $3 \\times \\dfrac{1}{3} - (-3) = 4$.",
+        "incorrect": "الحل ثنائية: لا تتوقف عند $x$ ؛ عوّض $x$ في المعادلة الثانية لتجد $y$ ."
+      },
+      "solution": {
+        "lines": [
+          "من المعادلة الأولى: $x = \\dfrac{1}{3}$",
+          "نعوّض في المعادلة الثانية: $3 \\times \\dfrac{1}{3} - y = 4$",
+          "$1 - y = 4$ أي $y = -3$",
+          "ومنه الثنائية حل الجملة هي:"
+        ],
+        "result": "\\left(\\dfrac{1}{3} ; -3\\right)"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$\\begin{cases} y = x - 1 \\\\ y = 2x \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 2/5)",
+      "expectedAnswer": {
+        "x": "-1",
+        "y": "-2"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-2",
+            "y": "-1"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الطرفان الأولان متساويان: $y$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ساوِ الطرفين الثانيين لتحصل على معادلة مجهولها $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$-(-1) + (-2) = -1$ ؛ $-2 \\times (-1) + (-2) = 0$.",
+        "incorrect": "العبارتان $x - 1$ و $2x$ تساويان العدد $y$ نفسه."
+      },
+      "solution": {
+        "lines": [
+          "المعادلتان تعطيان $y$ ، إذن: $2x = x - 1$",
+          "أي $x = -1$",
+          "ثم: $y = 2 \\times (-1) = -2$",
+          "ومنه الثنائية حل الجملة هي:"
+        ],
+        "result": "(-1 ; -2)"
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

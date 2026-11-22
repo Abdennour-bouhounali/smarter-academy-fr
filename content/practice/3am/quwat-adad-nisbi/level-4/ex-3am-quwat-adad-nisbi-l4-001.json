@@ -1,0 +1,245 @@
+{
+  "id": "ex-3am-quwat-adad-nisbi-l4-001",
+  "lessonCode": "quwat-adad-nisbi",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — سلاسل بقوى وكسور",
+    "estimatedMinutes": 9,
+    "tags": [
+      "سلسلة حسابات",
+      "كسور"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-72",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الأول",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "1) احسب العددين $a$ و $b$ .\n2) اكتب العددين $A$ و $B$ على أبسط شكل ممكن.",
+    "formulas": [
+      "a = 2 + 3^{2} \\times 4 - 6 \\times 2 + 1",
+      "b = 5 - 2^{3} \\times (-1) + (-2)^{3} \\times 2",
+      "A = \\dfrac{14}{15} \\div \\left(\\dfrac{-7}{10}\\right)",
+      "B = \\dfrac{5}{2} - \\dfrac{5}{2} \\times \\dfrac{6}{25}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $a$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "27",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-QUWA-POWER-AS-PRODUCT"
+        },
+        {
+          "value": "77",
+          "id": "MISC-QUWA-PRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما أول عملية تُنجز في هذه العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأولوية: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب مرحلة واحدة في كل سطر، وتحقّق من إشارة كل حدّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 2 + 36 - 12 + 1 = 27$ .",
+        "incorrect": "احترم أولوية العمليات: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$a = 2 + 9 \\times 4 - 6 \\times 2 + 1$",
+          "$a = 2 + 36 - 12 + 1$",
+          "$a = 27$"
+        ],
+        "result": "a = 27"
+      },
+      "work": "required",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $b$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "value": "29",
+          "id": "MISC-QUWA-ODD-EVEN-SIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما أول عملية تُنجز في هذه العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأولوية: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب مرحلة واحدة في كل سطر، وتحقّق من إشارة كل حدّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$b = 5 + 8 - 16 = -3$ .",
+        "incorrect": "احترم أولوية العمليات: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$b = 5 - 8 \\times (-1) + (-8) \\times 2$",
+          "$b = 5 + 8 - 16$",
+          "$b = -3$"
+        ],
+        "result": "b = -3"
+      },
+      "work": "required",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "اكتب $A$ على أبسط شكل ممكن.",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b لا يقبل الاختزال (يُقبل السالب)",
+      "expectedAnswer": "-4/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هذه المرحلة حساب على الكسور (درس سابق)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لضرب كسرين نضرب البسطين ونضرب المقامين، ولقسمة كسر على كسر نضربه في مقلوبه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل النتيجة حتى لا يبقى قاسم مشترك."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = \\dfrac{14}{15} \\times \\dfrac{-10}{7} = -\\dfrac{4}{3}$ .",
+        "incorrect": "القسمة على كسر هي الضرب في مقلوبه، ثم اختزل."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{14}{15} \\times \\dfrac{-10}{7}$",
+          "$A = -\\dfrac{140}{105} = -\\dfrac{4}{3}$"
+        ],
+        "result": "A = -\\dfrac{4}{3}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "اكتب $B$ على أبسط شكل ممكن.",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b لا يقبل الاختزال (يُقبل السالب)",
+      "expectedAnswer": "19/10",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هذه المرحلة حساب على الكسور (درس سابق)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لجمع كسرين أو طرحهما نوحّد المقامات أولًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل النتيجة حتى لا يبقى قاسم مشترك."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = \\dfrac{5}{2} - \\dfrac{3}{5} = \\dfrac{19}{10}$ .",
+        "incorrect": "الضرب قبل الطرح، ثم وحّد المقامين واختزل."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{2} \\times \\dfrac{6}{25} = \\dfrac{30}{50} = \\dfrac{3}{5}$",
+          "$B = \\dfrac{25}{10} - \\dfrac{6}{10} = \\dfrac{19}{10}$"
+        ],
+        "result": "B = \\dfrac{19}{10}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

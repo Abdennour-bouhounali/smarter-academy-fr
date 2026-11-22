@@ -1,0 +1,251 @@
+{
+  "id": "ex-3am-quwat-adad-nisbi-l1-004",
+  "lessonCode": "quwat-adad-nisbi",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — قوة كسر وقوة أسها 0 أو سالب",
+    "estimatedMinutes": 6,
+    "tags": [
+      "قوة عدد نسبي",
+      "أس سالب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "احسب كل عدد، واكتب النتيجة على شكل عدد صحيح أو كسر.",
+    "formulas": [
+      "E = \\left(\\dfrac{2}{3}\\right)^{3}",
+      "F = \\left(-\\dfrac{1}{2}\\right)^{4}",
+      "G = 5^{0}",
+      "H = \\left(\\dfrac{3}{4}\\right)^{-1}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $E$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "8/27",
+      "misconceptionSignatures": [
+        {
+          "value": "8/3",
+          "id": "MISC-QUWA-FRACTION-POWER"
+        },
+        {
+          "value": "2",
+          "id": "MISC-QUWA-POWER-AS-PRODUCT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الأس خارج القوسين يخصّ البسط والمقام معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\left(\\dfrac{a}{b}\\right)^n = \\dfrac{a^n}{b^n}$ ، ثم حدّد الإشارة حسب زوجية الأس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب قوة البسط ثم قوة المقام."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\left(\\dfrac{2}{3}\\right)^3 = \\dfrac{2^3}{3^3} = \\dfrac{8}{27}$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$E = \\dfrac{2^{3}}{3^{3}}$",
+          "$E = \\dfrac{8}{27}$"
+        ],
+        "result": "E = \\dfrac{8}{27}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $F$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "1/16",
+      "misconceptionSignatures": [
+        {
+          "value": "-1/16",
+          "id": "MISC-QUWA-ODD-EVEN-SIGN"
+        },
+        {
+          "value": "-2",
+          "id": "MISC-QUWA-POWER-AS-PRODUCT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الأس خارج القوسين يخصّ البسط والمقام معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\left(\\dfrac{a}{b}\\right)^n = \\dfrac{a^n}{b^n}$ ، ثم حدّد الإشارة حسب زوجية الأس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب قوة البسط ثم قوة المقام."
+        }
+      ],
+      "feedback": {
+        "correct": "الأس زوجي: $\\left(-\\dfrac{1}{2}\\right)^4 = \\dfrac{1}{16}$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الأس 4 زوجي، فالنتيجة موجبة.",
+          "$F = \\dfrac{1^{4}}{2^{4}} = \\dfrac{1}{16}$"
+        ],
+        "result": "F = \\dfrac{1}{16}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "احسب $G$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-QUWA-ZERO-ONE-EXP"
+        },
+        {
+          "value": "5",
+          "id": "MISC-QUWA-ZERO-ONE-EXP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا تعرف عن قوة أسها 0 لعدد غير معدوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من أجل $a \\neq 0$ : $a^0 = 1$ (وليس 0)، و $a^1 = a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بقاعدة القسمة: $\\dfrac{a^n}{a^n} = 1$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 \\neq 0$ ، إذن $5^0 = 1$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$5 \\neq 0$",
+          "$5^{0} = 1$"
+        ],
+        "result": "G = 1"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "احسب $H$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "4/3",
+      "misconceptionSignatures": [
+        {
+          "value": "-3/4",
+          "id": "MISC-QUWA-NEG-EXP-NEGATIVE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$a^{-n}$ هو مقلوب $a^n$ ، فهو لا يدلّ على عدد سالب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $a^n$ أولًا، ثم خذ مقلوبه، وحافظ على إشارة $a$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "من أجل $a \\neq 0$ : $a^0 = 1$ و $a^1 = a$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\left(\\dfrac{3}{4}\\right)^{-1}$ مقلوب $\\dfrac{3}{4}$ ، أي $\\dfrac{4}{3}$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$\\left(\\dfrac{3}{4}\\right)^{-1} = \\dfrac{1}{\\frac{3}{4}}$",
+          "$H = \\dfrac{4}{3}$"
+        ],
+        "result": "H = \\dfrac{4}{3}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "ex-4am-murakkibata-shuaa-l4-007",
+  "lessonCode": "murakkibata-shuaa",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — الكود نفسه من مكان آخر",
+    "estimatedMinutes": 2,
+    "tags": [
+      "تمثيل شعاع",
+      "سياق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_murakkibata-shuaa_P3",
+      "modelledOn": "act-1"
+    }
+  },
+  "statement": {
+    "content": "في تطبيق توصيل يحرص سائقوه على الأمانة، الحيّ معلم متعامد ومتجانس والمستودع هو المبدأ O. كود الرحلة من O إلى بيت ياسين هو $\\begin{pmatrix} -5 \\\\ 2 \\end{pmatrix}$ . سائق آخر ينطلق من المطعم $R(3\\,;\\,1)$ بنفس الكود."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما إحداثيتا النقطة التي يصل إليها السائق الثاني؟",
+      "learningPoints": [
+        {
+          "code": "4am_murakkibata-shuaa_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "إحداثيتا النقطة (x ; y) — عددان مثل −3 أو 2,5",
+      "expectedAnswer": {
+        "x": "-2",
+        "y": "3"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انطلق من نقطة البداية المعطاة، لا من المبدأ O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المركبة الأولى تنقلك أفقيا والثانية عموديا، بإشارتيهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف المركبة الأولى إلى الفاصلة والمركبة الثانية إلى الترتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "نفس الحركة من R: $(3 - 5\\,;\\,1 + 2) = (-2\\,;\\,3)$ .",
+        "incorrect": "الكود رحلة لا عنوان: انطلق من R."
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-5",
+            "y": "2"
+          },
+          "id": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        },
+        {
+          "value": {
+            "x": "8",
+            "y": "-1"
+          },
+          "id": "MISC-MAALAM-ISHARA"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "id": "ex-4am-tamthil-bayani-khatti-l3-009",
+  "lessonCode": "tamthil-bayani-khatti",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 12 — سعر الفواكه بدلالة الكتلة",
+    "estimatedMinutes": 7,
+    "tags": [
+      "وضعية",
+      "قراءة بيانية",
+      "تناسبية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-12",
+      "page": 72,
+      "section": "أوظّف تعلّماتي",
+      "number": 12,
+      "adaptedFrom": "ex-4am-tamthil-bayani-khatti-l3-009"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يبيّن الشكل التالي التمثيل البياني $(D)$ لسعر نوع من الفواكه تشتريه أسرة لتهديه جيرانها بدلالة كتلته: على محور الفواصل الكتلة بالكيلوغرام، وعلى محور التراتيب السعر بمئات الدنانير.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "H": [
+          5,
+          4
+        ]
+      },
+      "rays": [
+        {
+          "from": "O",
+          "through": "H",
+          "name": "(D)",
+          "tone": "emerald",
+          "extend": 0.1
+        }
+      ],
+      "grid": {
+        "step": 0.5
+      },
+      "axes": true,
+      "labels": {
+        "O": "sw"
+      },
+      "hidden": [
+        "H"
+      ],
+      "ariaLabel": "معلم على ورقة مرصوفة بنصف وحدة: نصف مستقيم من المبدأ O يمثّل سعر الفواكه بدلالة الكتلة",
+      "caption": "محور الفواصل: الكتلة بـ kg — محور التراتيب: السعر بمئات الدنانير"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بقراءة بيانية، عيّن سعر $2{,}5kg$ من هذه الفواكه بالدينار.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب السعر بـ DA (عدد فقط)",
+      "expectedAnswer": "200",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ من العدد المعطى على محور الفواصل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اتجه عموديا حتى المستقيم $(D)$ ، ثم أفقيا حتى محور التراتيب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الصورة هي ترتيب نقطة المستقيم التي فاصلتها هذا العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة من $(D)$ التي فاصلتها $2{,}5$ ترتيبها $2$ .",
+        "incorrect": "الصورة تُقرأ على محور التراتيب: ترتيب نقطة المستقيم، لا فاصلتها."
+      },
+      "solution": {
+        "lines": [
+          "النقطة من المستقيم $(D)$ التي فاصلتها $2{,}5$ ترتيبها $2$ .",
+          "إذن سعر $2{,}5kg$ هو 2 مئات من الدنانير، أي 200DA ."
+        ],
+        "result": "f(2{,}5) = 2"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "دفع زبون 400DA . بقراءة بيانية، عيّن كتلة الفواكه التي اشتراها.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الكتلة بـ kg",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "3,2",
+          "id": "MISC-BAYANI-FASILA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ من العدد المعطى على محور التراتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اتجه أفقيا حتى المستقيم $(D)$ ، ثم عموديا حتى محور الفواصل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد المطلوب هو فاصلة نقطة المستقيم التي ترتيبها الصورة المعطاة."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة من $(D)$ التي ترتيبها $4$ فاصلتها $5$ .",
+        "incorrect": "العدد الذي علمت صورته يُقرأ على محور الفواصل: فاصلة نقطة المستقيم التي ترتيبها الصورة المعطاة."
+      },
+      "solution": {
+        "lines": [
+          "النقطة من المستقيم $(D)$ التي ترتيبها $4$ فاصلتها $5$ .",
+          "400DA هي 4 مئات من الدنانير: الكتلة المشتراة $5kg$ ."
+        ],
+        "result": "f(5) = 4"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل السعر متناسب مع الكتلة؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-BAYANI-BIDUN-O"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما هي الدالة التي تمثيلها مستقيم يشمل المبدأ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انظر من أين ينطلق نصف المستقيم $(D)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "التمثيل جزء من مستقيم يشمل المبدأ: هو تمثيل دالة خطية، فالسعر متناسب مع الكتلة.",
+        "incorrect": "التمثيل البياني لوضعية تناسبية جزء من مستقيم يشمل المبدأ."
+      },
+      "solution": {
+        "lines": [
+          "التمثيل البياني جزء من مستقيم يشمل المبدأ $O$ : هو تمثيل دالة خطية.",
+          "إذن السعر متناسب مع الكتلة (معامل التناسبية 80DA للكيلوغرام)."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

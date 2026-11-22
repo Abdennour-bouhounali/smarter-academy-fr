@@ -1,0 +1,126 @@
+{
+  "id": "ex-4am-tanasub-taghayyurat-l1-002",
+  "lessonCode": "tanasub-taghayyurat",
+  "level": 1,
+  "metadata": {
+    "title": "نشاط 4 — من حاصل القسمة إلى فرق صورتين",
+    "estimatedMinutes": 3,
+    "tags": [
+      "تناسب التغيّرات",
+      "نشاط 4"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-4",
+      "page": 79,
+      "section": "أنشطة",
+      "number": 4,
+      "adaptedFrom": "ex-4am-tanasub-taghayyurat-l1-002"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الدالة التآلفية $f$ المعرفة بـ: $f(x) = 200x + 2000$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $\\dfrac{f(1) - f(0)}{1 - 0}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "200",
+      "misconceptionSignatures": [
+        {
+          "value": "-200",
+          "id": "MISC-TAGHAYYUR-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولا الصورتين $f(1)$ و $f(0)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح الصورتين، ثم اقسم الفرق على $1 - 0$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{200}{1} = 200$ .",
+        "incorrect": "لا تنسَ القسمة على $1 - 0$ بعد طرح الصورتين."
+      },
+      "solution": {
+        "lines": [
+          "$f(1) = 200 \\times 1 + 2000 = 2200$",
+          "$f(0) = 200 \\times 0 + 2000 = 2000$",
+          "$\\dfrac{f(1) - f(0)}{1 - 0} = \\dfrac{2200 - 2000}{1} = \\dfrac{200}{1} = 200$"
+        ],
+        "result": "200"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج، دون حساب الصورتين، الفرق $f(10) - f(7)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "600",
+      "misconceptionSignatures": [
+        {
+          "value": "200",
+          "id": "MISC-TAGHAYYUR-BIDUN-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خاصية تناسب التغيّرات: فرق صورتين يساوي $a$ مضروبا في فرق العددين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الفرق بين العددين، ثم اضربه في المعامل $a$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$200 \\times 3 = 600$ .",
+        "incorrect": "فرق الصورتين يساوي المعامل $a$ مضروبا في فرق العددين، لا المعامل وحده."
+      },
+      "solution": {
+        "lines": [
+          "حسب خاصية تناسب التغيّرات: $f(x_2) - f(x_1) = a(x_2 - x_1)$",
+          "$f(10) - f(7) = 200 \\times (10 - 7)$",
+          "$f(10) - f(7) = 200 \\times 3 = 600$"
+        ],
+        "result": "600"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

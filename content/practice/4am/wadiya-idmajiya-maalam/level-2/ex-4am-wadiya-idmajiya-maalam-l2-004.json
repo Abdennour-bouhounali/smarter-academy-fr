@@ -1,0 +1,74 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-maalam-l2-004",
+  "lessonCode": "wadiya-idmajiya-maalam",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — طول مدوّر",
+    "estimatedMinutes": 3,
+    "tags": [
+      "المسافة بين نقطتين",
+      "قيمة مقرّبة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-maalam_P3",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "مسار مشي في جبال جرجرة بين محطتين $A(-2\\,;\\,1)$ و $B(4\\,;\\,5)$ في معلم متعامد ومتجانس وحدته $1\\,\\mathrm{km}$ . يرسم المرشد خريطته بإتقان حتى لا يضلّ الزوّار الطريق."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الطول AB مدوّرا إلى $0{,}01$ (بالكيلومتر):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة (مدوّر إلى 0,01)",
+      "expectedAnswer": "7.21",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{AB}\\begin{pmatrix} 6 \\\\ 4 \\end{pmatrix}$"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$AB = \\sqrt{36 + 16} = \\sqrt{52}$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\sqrt{52} = 2\\sqrt{13}$ : دوّر في الأخير إلى $0{,}01$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = \\sqrt{52} = 2\\sqrt{13} \\approx 7{,}21\\,\\mathrm{km}$ .",
+        "incorrect": "المسافة جذر مجموع المربعين، ثم ندوّر."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-MAALAM-MASAFA-JADHR-JAM"
+        },
+        {
+          "value": "52",
+          "id": "MISC-MAALAM-MASAFA-JADHR-NASI"
+        }
+      ],
+      "difficulty": 2
+    }
+  ]
+}

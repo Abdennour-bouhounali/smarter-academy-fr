@@ -1,0 +1,296 @@
+{
+  "id": "ex-4am-awwaliyan-fima-baynahuma-l5-003",
+  "lessonCode": "awwaliyan-fima-baynahuma",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2020 — أشجار حقل عمي الطاهر",
+    "estimatedMinutes": 20,
+    "tags": [
+      "وضعية",
+      "إثبات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_awwaliyan-fima-baynahuma_P2",
+      "modelledOn": "BEM 2020 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2020",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يريد عمي الطاهر، وفاءً لأرضه وحبًّا لوطنه، إحاطة حقل مستطيل الشكل بُعداه 77m و 50m بأشجار من نفس النوع، بحيث تكون المسافة متساوية وأكبر ما يمكن بين كل شجرتين متتاليتين (عدد طبيعي بالمتر)، على أن يغرس في كل ركن شجرة.\n• ثمن الشجيرة الواحدة 1200DA.\n• يمكن لعمي الطاهر شراء شريط أرض مجاور للحقل، طوله 77m وعرضه 5m، بسعر 400DA للمتر المربع، فيصير بعدا الحقل 77m و 55m."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن العددين 77 و 50 أوليان فيما بينهما.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيمة PGCD(77 ; 50) التي وجدتها",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عددان أوليان فيما بينهما: احسب قاسمهما المشترك الأكبر PGCD(77 ; 50)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 77 على 50، ثم واصل القسمات المتتابعة إلى أن تجد باقيًا معدومًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن آخر باقٍ غير معدوم بما يتطلّبه تعريف عددين أوليين فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(77 ; 50) = 1: العددان 77 و 50 أوليان فيما بينهما.",
+        "incorrect": "راجع القسمات المتتابعة باقيًا باقيًا: آخر باقٍ غير معدوم هو القاسم المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$77 = 50 \\times 1 + 27$",
+          "$50 = 27 \\times 1 + 23$",
+          "$27 = 23 \\times 1 + 4$",
+          "$23 = 4 \\times 5 + 3$",
+          "$4 = 3 \\times 1 + 1$",
+          "$3 = 1 \\times 3 + 0$",
+          "آخر باقٍ غير معدوم هو 1، إذن PGCD(77 ; 50) = 1 .",
+          "ومنه العددان 77 و 50 أوليان فيما بينهما."
+        ],
+        "result": "PGCD(77 ; 50) = 1"
+      },
+      "work": "required",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "استنتج:",
+      "statement": "المسافة بين كل شجرتين متتاليتين.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (المسافة بالمتر)",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة تقسم الطول والعرض معًا (شجرة في كل ركن)، وهي أكبر ما يمكن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل نتيجة السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(77 ; 50) = 1: المسافة 1m.",
+        "incorrect": "المسافة هي القاسم المشترك الأكبر للبعدين."
+      },
+      "solution": {
+        "lines": [
+          "المسافة هي PGCD(77 ; 50) = 1 ، أي 1m."
+        ],
+        "result": "1m"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "عدد الأشجار اللازمة.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد الأشجار)",
+      "expectedAnswer": "254",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب محيط الحقل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "على محيط مغلق، عدد الأشجار يساوي عدد المسافات."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times (77 + 50) = 254$ ، و $254 \\div 1 = 254$ شجرة.",
+        "incorrect": "اقسم المحيط (لا الطول وحده) على المسافة بين شجرتين."
+      },
+      "solution": {
+        "lines": [
+          "المحيط: $2 \\times (77 + 50) = 254$ m",
+          "عدد الأشجار: $254 \\div 1 = 254$"
+        ],
+        "result": "254"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "في حالة شراء الشريط، يصير بعدا الحقل 77m و 55m.",
+      "statement": "احسب PGCD(77 ; 55)، ثم استنتج المسافة الجديدة بين كل شجرتين متتاليتين.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "11",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 77 على 55: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (77 ; 55) بالزوج (55 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 11.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$77 = 55 \\times 1 + 22$",
+          "$55 = 22 \\times 2 + 11$",
+          "$22 = 11 \\times 2 + 0$",
+          "آخر باقٍ غير معدوم هو 11، إذن:"
+        ],
+        "result": "PGCD(77 ; 55) = 11"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "ما هو عدد الأشجار اللازمة في هذه الحالة ؟",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد الأشجار)",
+      "expectedAnswer": "24",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المحيط الجديد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسمه على المسافة الجديدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times (77 + 55) = 264$ و $264 \\div 11 = 24$ .",
+        "incorrect": "المحيط الجديد مقسوم على المسافة الجديدة."
+      },
+      "solution": {
+        "lines": [
+          "المحيط: $2 \\times (77 + 55) = 264$ m",
+          "$264 \\div 11 = 24$"
+        ],
+        "result": "24"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "☜ ساعد عمي الطاهر على اختيار الحل الأقل تكلفة، ثم أعط المبلغ الذي يوفّره بهذا الاختيار.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (المبلغ بالدينار)",
+      "expectedAnswer": "122000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تكلفة الحل الأول: ثمن الأشجار فقط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تكلفة الحل الثاني: ثمن الشريط (مساحته $77 \\times 5$) وثمن الأشجار."
+        }
+      ],
+      "feedback": {
+        "correct": "الحل الثاني أقل تكلفة: $304800 - 182800 = 122000$ DA.",
+        "incorrect": "احسب تكلفة كل حل كاملة، ثم الفرق بينهما."
+      },
+      "solution": {
+        "lines": [
+          "الحل الأول (دون شراء الشريط): $254 \\times 1200 = 304800$ DA",
+          "مساحة الشريط: $77 \\times 5 = 385$ m²",
+          "الحل الثاني (مع شراء الشريط): $385 \\times 400 + 24 \\times 1200 = 154000 + 28800 = 182800$ DA",
+          "الحل الثاني (مع شراء الشريط) أقل تكلفة، ويوفّر: $304800 - 182800 = 122000$ DA"
+        ],
+        "result": "122000DA"
+      },
+      "timeSeconds": 420
+    }
+  ]
+}

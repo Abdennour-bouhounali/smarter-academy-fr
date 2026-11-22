@@ -1,0 +1,197 @@
+{
+  "id": "ex-2am-masafa-nuqtatayn-l4-001",
+  "lessonCode": "masafa-nuqtatayn",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — ترتيب أعداد ثمّ مسافة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "ترتيب",
+      "طرح",
+      "مسافة بين نقطتين"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 2,
+      "file": "2am-s2-69",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أعداد نسبية $A=2{,}4$ و $B=-3{,}5$ و $C=-5$ و $D=-0{,}6$ ، نعتبرها فاصلات نقط على مستقيم مدرّج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "على مستقيم مدرّج: $A(+2{,}4)$ و $B(-3{,}5)$ و $C(-5)$ و $D(-0{,}6)$ . أيّ هذه النقط لها أصغر فاصلة ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$A$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$C$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$B$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$D$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الفاصلات: الأكبر هي الأبعد إلى اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددان سالبان: الأصغر هو الأبعد عن الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بترتيب الفاصلات من اليسار إلى اليمين."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب : $C$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلات مرتّبة تصاعديًّا: $C(-5)$ ، $B(-3{,}5)$ ، $D(-0{,}6)$ ، $A(+2{,}4)$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب : $(+2{,}4)-(-0{,}6)$ .",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل الطرح إلى جمع معاكس العدد المطروح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثمّ طبّق قاعدة جمع عددين نسبيين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب تقريبي على المستقيم المدرّج."
+        }
+      ],
+      "feedback": {
+        "correct": "$(+2{,}4)-(-0{,}6)=(+3)$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$(+2{,}4)-(-0{,}6)=(+2{,}4)+(+0{,}6)$",
+          "$=(+3)$"
+        ],
+        "result": "3"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "النقطتان $A(+2{,}4)$ و $B(-3{,}5)$ على مستقيم مدرّج. احسب المسافة $AB$ .",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "5.9",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "1.1"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-5.9"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن أوّلًا أيّ الفاصلتين أكبر: الأكبر هي الأبعد إلى اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى مطروحًا منها الصغرى؛ وإذا كانت الصغرى سالبة فنطرح عددًا سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا: إن وجدت ناتجًا سالبًا فقد قلبت ترتيب الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB=5{,}9$ : النقطتان على جهتين من المبدأ فنجمع المسافتين إلى الصفر.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى هي $+2{,}4$ والفاصلة الصغرى هي $-3{,}5$",
+          "$AB=(+2{,}4)-(-3{,}5)=(+2{,}4)+(+3{,}5)=5{,}9$"
+        ],
+        "result": "5.9"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

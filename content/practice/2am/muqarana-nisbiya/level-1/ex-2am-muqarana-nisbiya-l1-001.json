@@ -1,0 +1,202 @@
+{
+  "id": "ex-2am-muqarana-nisbiya-l1-001",
+  "lessonCode": "muqarana-nisbiya",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مقارنة عدد سالب بعدد موجب",
+    "estimatedMinutes": 6,
+    "tags": [
+      "مقارنة",
+      "عدد سالب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "يسجّل متطوّع من نادي الأرصاد بالحيّ درجات الحرارة في أول أسبوع من الشتاء بسطيف، ليُنبّه الجيران إلى كبار السنّ الذين يحتاجون إلى التدفئة. كانت الحرارة ليلة الاثنين $-3$ °C ونهار الثلاثاء $2$ °C."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اختر المقارنة الصحيحة بين درجة الحرارة ليلًا ودرجتها نهارًا.",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-3 > 2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-SI"
+        },
+        {
+          "id": "B",
+          "content": "$-3 < 2$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$2 < -3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-SI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارتي العددين قبل أي شيء آخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد السالب أصغر من الصفر، والصفر أصغر من كل عدد موجب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عند اختلاف الإشارتين لا حاجة إلى مقارنة المسافتين إلى الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "العدد السالب أصغر من كل عدد موجب: $-3 < 2$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$-3$ سالب و $2$ موجب",
+          "العدد السالب أصغر من العدد الموجب: $-3 < 2$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما أصغر العددين $-4$ و $0$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-MUQARANA-NISBIYA-ZS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين يقع الصفر على المستقيم المدرّج بالنسبة إلى العدد السالب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الصفر أكبر من كل عدد سالب وأصغر من كل عدد موجب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بوضع العددين على المستقيم المدرّج."
+        }
+      ],
+      "feedback": {
+        "correct": "الصفر أكبر من كل عدد سالب، فالأصغر هو $-4$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الصفر أكبر من كل عدد سالب",
+          "الأصغر هو $-4$"
+        ],
+        "result": "-4"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "سجّل الجهاز في الليلة نفسها $-1$ °C. اختر العبارة الصحيحة بالنسبة إلى درجة تجمّد الماء $0$ °C.",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "أدنى منها: $-1 < 0$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "أعلى منها: $-1 > 0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-ZS"
+        },
+        {
+          "id": "C",
+          "content": "تساويها: $-1 = 0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-ZS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين يقع الصفر على المستقيم المدرّج بالنسبة إلى العدد السالب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الصفر أكبر من كل عدد سالب وأصغر من كل عدد موجب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بوضع العددين على المستقيم المدرّج."
+        }
+      ],
+      "feedback": {
+        "correct": "الصفر أكبر من كل عدد سالب: $-1 < 0$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الصفر أكبر من كل عدد سالب",
+          "$-1 < 0$"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

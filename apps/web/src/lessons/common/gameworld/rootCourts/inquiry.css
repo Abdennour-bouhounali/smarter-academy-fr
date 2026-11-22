@@ -1,0 +1,1140 @@
+/* THE INVESTIGATIONS of « قصر الساحات » (Inquiry.jsx: calc, roundtrip) — inside the forge's frame (.rf-fit, designed
+   1280 × 720 and zoomed to the window: 1.067 at 1366 × 768, so 1rem ≈ 17 px). Prefix rq-. Every text selector starts at
+   the frame (.rq-iq-frame …) so that the forge's `.rf-root p { color: inherit }` never beats it.
+   Sizes: what he reads is ≥ 1.08rem (≈ 18.4 px); nothing is under the 12 px floor (--di-min-font). Shapes are the brand
+   blue; a band is amber, an overhang violet, a platform that rides green — never black, never the red of an error. */
+.rq-iq-frame {
+  grid-column: 1 / -1;
+  min-height: 0;
+  min-width: 0;
+  display: flex;
+}
+.rq-iq-frame .rq-iq {
+  flex: 1;
+  min-height: 0;
+  min-width: 0;
+  display: grid;
+  align-content: start;
+  gap: 0.55rem;
+  overflow: hidden;
+  border-radius: 1.4rem;
+  border: 1.5px solid rgba(159, 216, 255, 0.28);
+  background: rgba(8, 20, 52, 0.72);
+  padding: 0.8rem 1.1rem;
+}
+.rq-iq-frame .rq-iq__head {
+  display: grid;
+  gap: 0.15rem;
+}
+.rq-iq-frame .rq-iq__lead {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 1.5;
+}
+.rq-iq-frame .rq-iq__count {
+  flex: none;
+  padding: 0.05rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(125, 252, 255, 0.16);
+  color: #7dfcff;
+  font-size: 1.08rem;
+  font-weight: 900;
+}
+.rq-iq-frame .rq-iq__goal {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: #9fd8ff;
+  line-height: 1.45;
+}
+.rq-iq-frame .rq-ask {
+  font-size: 1.12rem;
+  font-weight: 800;
+  line-height: 1.5;
+  text-align: center;
+}
+.rq-iq-frame .rq-fact {
+  min-height: 3.2em;
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #cfe9ff;
+  text-align: center;
+}
+.rq-iq-frame .rq-fact.is-ride {
+  color: #8dffb0;
+}
+.rq-iq-frame .rq-fact.is-band {
+  color: #fde68a;
+}
+.rq-iq-frame .rq-fact.is-jam {
+  color: #ddd6fe;
+}
+.rq-iq-frame .katex {
+  white-space: nowrap;
+}
+.rq-iq-frame .rq-n {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  unicode-bidi: isolate;
+}
+.rq-iq-frame .rq-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+/* ───────────────────────── calc ───────────────────────── */
+/* THE LAYOUT at 1366 × 768 (calc.js › CALC_LAYOUT, checked in inquiryCalc.render.test.jsx), in the panel's 1205 × 587 px:
+   row 1 the lead and the goal; row 2 the court (15.5 rem high: its square of 168 units ≈ 185 px on screen, its 27-unit
+   text ≈ 30 px), the rack (348 px) and the calculator (9 rem); row 3 the question, its buttons and the fact under the
+   court (26 rem), the table beside them (≈ 48 rem, its longest row 46). The rows share what is left over between them. */
+.rq-iq-frame .rq-iq--calc {
+  grid-template-rows: auto auto auto;
+  align-content: space-between;
+}
+.rq-iq-frame .rq-calc__stage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-width: 0;
+}
+.rq-iq-frame .rq-calc__court .crt-court {
+  height: var(--rq-court-h, 15.5rem);
+}
+.rq-iq-frame .rq-calc__bench {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.rq-iq-frame .rq-calc__low {
+  display: grid;
+  grid-template-columns: var(--rq-talk-w, 26rem) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+.rq-iq-frame .rq-calc__talk {
+  display: grid;
+  align-content: start;
+  justify-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+}
+.rq-iq-frame .rq-zoomtag {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.2rem;
+  color: #7dfcff;
+  white-space: nowrap;
+}
+
+/* the rack: the court's wall and the rods beside it (SVG text: 22 units × 0.82 × 1.067 ≈ 19.2 px) */
+.rq-rack {
+  flex: none;
+  overflow: visible;
+}
+.rq-rack__wall {
+  stroke: #e7c88f;
+  stroke-width: 8;
+  stroke-linecap: round;
+}
+.rq-rack__post {
+  fill: #c9a25e;
+}
+.rq-rack__post--far {
+  fill: #a9844a;
+}
+.rq-rack__label {
+  fill: #e8f6ff;
+  font-size: 22px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+.rq-rack__label--wall {
+  fill: #e7c88f;
+}
+.rq-rack__rod rect {
+  fill: #60a5fa;
+  opacity: 0.55;
+  transition: opacity 0.3s;
+}
+.rq-rack__rod.is-now rect {
+  fill: #7dfcff;
+  opacity: 1;
+  filter: drop-shadow(0 0 6px rgba(125, 252, 255, 0.7));
+}
+.rq-rack__rod.is-used rect {
+  opacity: 0.4;
+}
+.rq-rack__rod.is-used .rq-rack__label {
+  opacity: 0.7;
+}
+.rq-rack__mark {
+  stroke: rgba(8, 20, 52, 0.9);
+  stroke-width: 2;
+}
+.rq-rack__rod.is-band .rq-rack__mark {
+  fill: #fbbf24;
+}
+.rq-rack__rod.is-jam .rq-rack__mark {
+  fill: #a78bfa;
+}
+.rq-rack__rod.is-ride .rq-rack__mark {
+  fill: #8dffb0;
+}
+/* the rod clamped on the wall: it stretches from the corner post to the far corner */
+.rq-rack__clamp {
+  fill: #8dffb0;
+  transform-box: fill-box;
+  transform-origin: left center;
+}
+.rq-rack__clamp.is-stretching {
+  animation: rq-stretch 1.2s cubic-bezier(0.3, 0.7, 0.3, 1) both;
+}
+.rq-rack__unknown {
+  fill: #8dffb0;
+  font-size: 26px;
+  font-weight: 900;
+}
+.rq-calcicon rect {
+  fill: #93c5fd;
+}
+.rq-calcicon .rq-calcicon__screen {
+  fill: #e0f2fe;
+}
+
+/* the calculator (9 rem for its 200 units: the display's 26 ≈ 20 px, the typed line's 24 ≈ 18.4 px, a key's 18 ≈ 13.8 px) */
+.rq-calc {
+  flex: none;
+  width: 9rem;
+  height: 11.25rem;
+  opacity: 0.6;
+  transition:
+    opacity 0.3s,
+    filter 0.3s;
+}
+.rq-calc.is-now {
+  opacity: 1;
+  filter: drop-shadow(0 0 10px rgba(125, 252, 255, 0.55));
+}
+.rq-calc__body {
+  fill: #1e3a8a;
+  stroke: #60a5fa;
+  stroke-width: 3;
+}
+.rq-calc__screen {
+  fill: #dff3ff;
+}
+.rq-calc__sign {
+  fill: none;
+  stroke: #0f2147;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.rq-calc__typed {
+  fill: #0f2147;
+  font-size: 24px;
+  font-weight: 700;
+}
+.rq-calc__digits {
+  fill: #0f2147;
+  font-size: 26px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.5px;
+}
+.rq-calc__key rect {
+  fill: #2f56b5;
+  stroke: #60a5fa;
+  stroke-width: 1;
+}
+.rq-calc__key text {
+  fill: #e8f6ff;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+/* the table of what happened */
+/* 1.08rem ≈ 18.4 px; its widest row (MAX_CELL = 21 characters in two cells, the zoom's tag) ≈ 46 rem of its ≈ 48 */
+.rq-iq-frame .rq-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 1.08rem;
+  font-weight: 800;
+  text-align: center;
+}
+.rq-iq-frame .rq-table th {
+  padding: 0.15rem 0.5rem;
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: #9fd8ff;
+  border-bottom: 1.5px solid rgba(159, 216, 255, 0.35);
+}
+.rq-iq-frame .rq-table td {
+  padding: 0.12rem 0.5rem;
+  line-height: 1.35;
+  border-bottom: 1px solid rgba(159, 216, 255, 0.14);
+}
+.rq-iq-frame .rq-table tbody tr {
+  animation: rq-pop 0.3s ease-out;
+}
+.rq-iq-frame .rq-table tfoot td {
+  border-bottom: 0;
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: #c9ffd9;
+}
+.rq-iq-frame .rq-rodcell {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.rq-iq-frame .rq-rodcell__icon {
+  width: 0.9rem;
+  height: 1.2rem;
+}
+.rq-iq-frame .rq-unknown {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #8dffb0;
+}
+/* a chip never runs past its column: its word, its number and the zoom's tag are three pieces, each on one line; if the
+   column were ever narrower than the three, the tag goes under the number (never a number cut or on two lines) */
+.rq-iq-frame .rq-chip {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0 0.35rem;
+  max-width: 100%;
+  padding: 0 0.5rem;
+  border-radius: 0.6rem;
+  white-space: nowrap;
+}
+.rq-iq-frame .rq-chip--band {
+  color: #fde68a;
+  background: rgba(251, 191, 36, 0.16);
+  border: 1.5px solid rgba(251, 191, 36, 0.6);
+}
+.rq-iq-frame .rq-chip--jam {
+  color: #ddd6fe;
+  background: rgba(167, 139, 250, 0.18);
+  border: 1.5px solid rgba(167, 139, 250, 0.65);
+}
+.rq-iq-frame .rq-chip--ride {
+  color: #c9ffd9;
+  background: rgba(141, 255, 176, 0.14);
+  border: 1.5px solid rgba(141, 255, 176, 0.55);
+}
+
+/* ───────────────────────── roundtrip ───────────────────────── */
+.rq-iq-frame .rq-rt__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 20rem;
+  gap: 1rem;
+  min-height: 0;
+}
+.rq-iq-frame .rq-rt__main {
+  display: grid;
+  align-content: start;
+  gap: 0.45rem;
+  min-width: 0;
+}
+/* the scene: 17.5 rem for 330 units, so 22 units ≈ 19.9 px */
+.rq-iq-frame .rq-rt__scene {
+  width: 100%;
+  overflow: visible;
+}
+.rq-st__title {
+  fill: #9fd8ff;
+  font-size: 25px;
+  font-weight: 900;
+}
+.rq-st.is-active .rq-st__title {
+  fill: #7dfcff;
+}
+.rq-st__body {
+  fill: #163a7a;
+  stroke: #60a5fa;
+  stroke-width: 3;
+}
+.rq-st__window {
+  fill: rgba(125, 252, 255, 0.12);
+  stroke: rgba(125, 252, 255, 0.5);
+  stroke-width: 2;
+}
+.rq-st.is-running .rq-st__window {
+  animation: rq-glow 0.5s ease-in-out infinite alternate;
+}
+.rq-st__icon rect {
+  fill: #93c5fd;
+}
+.rq-st__icon .rq-st__icon-court {
+  fill: none;
+  stroke: #93c5fd;
+  stroke-width: 3;
+}
+.rq-st__slot {
+  fill: #0b1f47;
+  stroke: #60a5fa;
+  stroke-width: 2;
+}
+.rq-st__arrow {
+  fill: none;
+  stroke: rgba(159, 216, 255, 0.45);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+.rq-st:not(.is-active) {
+  opacity: 0.45;
+}
+.rq-st__wait rect {
+  fill: none;
+  stroke: rgba(159, 216, 255, 0.5);
+  stroke-width: 2.5;
+  stroke-dasharray: 8 7;
+}
+.rq-st__wait text {
+  fill: #9fd8ff;
+  font-size: 40px;
+  font-weight: 900;
+}
+/* what goes in slides into the machine */
+.rq-st__in.is-going {
+  animation: rq-into 0.6s ease-in forwards;
+}
+.rq-st__ghost {
+  fill: none;
+  stroke: rgba(159, 216, 255, 0.4);
+  stroke-width: 2;
+  stroke-dasharray: 6 6;
+}
+
+/* a court: its floor, its tiles (cut along two walls), its rim */
+.rq-court__floor {
+  fill: rgba(231, 200, 143, 0.12);
+}
+.rq-court__tile {
+  fill: #3b82f6;
+  stroke: #0b1f47;
+  stroke-width: 1;
+}
+.rq-court__tile.is-cut {
+  fill: #93c5fd;
+}
+.rq-court__rim {
+  fill: none;
+  stroke: #e7c88f;
+  stroke-width: 4;
+}
+.rq-unroll {
+  transform-box: fill-box;
+  transform-origin: center top;
+  animation: rq-unroll 0.22s ease-out backwards;
+}
+.rq-plaque rect {
+  fill: #e7c88f;
+  stroke: #a9844a;
+  stroke-width: 2;
+}
+.rq-plaque text {
+  fill: #0f2147;
+  font-size: 21px;
+  font-weight: 900;
+}
+.rq-plaque.is-stamped {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: rq-stamp 0.35s ease-out backwards;
+}
+/* a rod */
+.rq-rodp__bar {
+  fill: #7dfcff;
+}
+.rq-rodp__bar.is-growing {
+  transform-box: fill-box;
+  transform-origin: right center;
+  animation: rq-stretch 0.8s ease-out backwards;
+}
+.rq-rodp__label {
+  fill: #e8f6ff;
+  font-size: 23px;
+  font-weight: 900;
+}
+.rq-rodp__label.is-wall {
+  font-size: 20px;
+  fill: #8dffb0;
+}
+.rq-rodp__label.is-late {
+  animation: rq-fade 0.3s ease-out backwards;
+}
+/* a walk from the post */
+.rq-walk__wall {
+  stroke: #e7c88f;
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+.rq-walk__tick {
+  stroke: #e7c88f;
+  stroke-width: 1.5;
+}
+.rq-walk__stretch {
+  stroke: #7dfcff;
+  stroke-width: 7;
+  stroke-linecap: round;
+}
+.rq-walk__post {
+  fill: #c9a25e;
+}
+.rq-walk__num {
+  fill: #e8f6ff;
+  font-size: 21px;
+  font-weight: 800;
+}
+.rq-walk__num.is-mark {
+  fill: #7dfcff;
+}
+.rq-robot rect,
+.rq-robot circle {
+  fill: #93c5fd;
+}
+.rq-robot line {
+  stroke: #93c5fd;
+  stroke-width: 2;
+}
+.rq-robot .rq-robot__eye {
+  fill: #0b1f47;
+}
+
+/* the answer, in its own shape */
+.rq-iq-frame .rq-rt__answer {
+  display: grid;
+  justify-items: center;
+  gap: 0.35rem;
+}
+.rq-iq-frame .rq-rt__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+.rq-iq-frame .rq-rt__forms {
+  display: inline-flex;
+  gap: 0.35rem;
+}
+.rq-iq-frame .rq-formbtn {
+  min-height: 2.6rem;
+  padding: 0 0.9rem;
+}
+.rq-iq-frame .rq-formbtn.is-on {
+  background: #7dfcff;
+  border-color: #7dfcff;
+  color: #06203f;
+}
+.rq-iq-frame .rq-num {
+  height: 2.7rem;
+  min-width: 4ch;
+  border-radius: 0.8rem;
+  border: 2px solid #7dfcff;
+  background: rgba(125, 252, 255, 0.1);
+  color: #fff;
+  font:
+    800 1.5rem 'Cairo',
+    sans-serif;
+  text-align: center;
+  outline: none;
+}
+.rq-iq-frame .rq-num:focus {
+  background: rgba(125, 252, 255, 0.22);
+  box-shadow: 0 0 0 4px rgba(125, 252, 255, 0.25);
+}
+.rq-iq-frame .rq-fracin {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+}
+.rq-iq-frame .rq-fracin .rq-num {
+  height: 2.1rem;
+  font-size: 1.25rem;
+}
+.rq-iq-frame .rq-fracin__bar {
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  background: #e8f6ff;
+}
+.rq-iq-frame .rq-unit {
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: #9fd8ff;
+}
+.rq-iq-frame .rq-rt__plaque {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.2rem 0.8rem;
+  border-radius: 0.8rem;
+  background: rgba(231, 200, 143, 0.16);
+  border: 2px solid #e7c88f;
+}
+.rq-iq-frame .rq-rt__rodnum {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+/* « the side of the court of [ ] »: a box inside a drawn rod label — a long rounded rod with its two caps */
+.rq-iq-frame .rq-rodlabel {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 1.4rem;
+  border-radius: 999px;
+  border: 2.5px solid #8dffb0;
+  background: rgba(141, 255, 176, 0.1);
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: #c9ffd9;
+  white-space: nowrap;
+}
+.rq-iq-frame .rq-rodlabel::before,
+.rq-iq-frame .rq-rodlabel::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 0.55rem;
+  height: 1.6rem;
+  margin-top: -0.8rem;
+  border-radius: 0.3rem;
+  background: #8dffb0;
+}
+.rq-iq-frame .rq-rodlabel::before {
+  right: 0.35rem;
+}
+.rq-iq-frame .rq-rodlabel::after {
+  left: 0.35rem;
+}
+
+/* the strips of the journeys */
+.rq-iq-frame .rq-strips {
+  display: grid;
+  align-content: start;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  min-height: 0;
+}
+.rq-iq-frame .rq-strip {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.25rem;
+  padding: 0.3rem 0.45rem;
+  border-radius: 0.9rem;
+  border: 1.5px solid rgba(159, 216, 255, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+  opacity: 0.85;
+}
+.rq-iq-frame .rq-strip.is-now {
+  opacity: 1;
+  border-color: rgba(125, 252, 255, 0.6);
+  background: rgba(125, 252, 255, 0.08);
+}
+.rq-iq-frame .rq-strip__n {
+  flex: none;
+  min-width: 1.5rem;
+  font-size: max(var(--di-min-font, 12px), 0.85rem);
+  font-weight: 900;
+  color: #7dfcff;
+  text-align: center;
+}
+.rq-iq-frame .rq-strip__step {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+/* an arrow toward the left (things flow right to left, as the stations stand), with its station's mark */
+.rq-iq-frame .rq-strip__op {
+  position: relative;
+  display: inline-block;
+  width: 1.5rem;
+  height: 0.9rem;
+}
+.rq-iq-frame .rq-strip__op::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #9fd8ff;
+}
+.rq-iq-frame .rq-strip__op::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 0.45rem;
+  height: 0.45rem;
+  margin-top: -0.24rem;
+  border-left: 2px solid #9fd8ff;
+  border-bottom: 2px solid #9fd8ff;
+  transform: rotate(45deg);
+}
+.rq-iq-frame .rq-strip__op--build::before {
+  background: #93c5fd;
+  height: 3px;
+}
+.rq-iq-frame .rq-strip__op--take::before {
+  height: 0;
+  margin-top: -1.5px;
+  background: none;
+  border-top: 3px dashed #8dffb0;
+}
+.rq-iq-frame .rq-tchip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  min-width: 2.6rem;
+  height: 2.4rem;
+  padding: 0 0.4rem;
+  border-radius: 0.6rem;
+  font-size: 1.1rem;
+  font-weight: 900;
+  animation: rq-pop 0.3s ease-out;
+}
+.rq-iq-frame .rq-tchip.is-hidden {
+  color: #9fd8ff;
+  border: 1.5px dashed rgba(159, 216, 255, 0.5);
+  animation: none;
+}
+.rq-iq-frame .rq-tchip--court {
+  border: 2.5px solid #e7c88f;
+  background: rgba(59, 130, 246, 0.35);
+  color: #fff;
+}
+.rq-iq-frame .rq-tchip--rod {
+  color: #e8f6ff;
+}
+.rq-iq-frame .rq-tchip__bar {
+  display: inline-block;
+  width: 1.1rem;
+  height: 0.45rem;
+  border-radius: 0.25rem;
+  background: #7dfcff;
+}
+.rq-iq-frame .rq-tchip--rod.is-wall .rq-tchip__bar {
+  background: #8dffb0;
+}
+.rq-iq-frame .rq-tchip__court {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.1rem;
+  height: 2.1rem;
+  padding: 0 0.2rem;
+  border: 2px solid #8dffb0;
+  border-radius: 0.2rem;
+  color: #c9ffd9;
+}
+.rq-iq-frame .rq-tchip--walk {
+  color: #7dfcff;
+}
+.rq-iq-frame .rq-tchip--walk svg {
+  width: 1.6rem;
+  height: 0.7rem;
+}
+.rq-iq-frame .rq-tchip--walk svg line {
+  stroke: #e7c88f;
+  stroke-width: 3;
+}
+.rq-iq-frame .rq-tchip--walk svg rect {
+  fill: #c9a25e;
+}
+
+@keyframes rq-stretch {
+  from {
+    transform: scaleX(0);
+  }
+}
+@keyframes rq-into {
+  to {
+    transform: translateX(-130px);
+    opacity: 0;
+  }
+}
+@keyframes rq-unroll {
+  from {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+}
+@keyframes rq-stamp {
+  from {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+@keyframes rq-fade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes rq-pop {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+}
+@keyframes rq-glow {
+  to {
+    fill: rgba(125, 252, 255, 0.45);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  /* our own pieces only: the court drawing (crt-) keeps its own rule */
+  .rq-iq-frame [class*='rq-'],
+  .rq-iq-frame [class*='rq-']::before,
+  .rq-iq-frame [class*='rq-']::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
+  }
+}
+
+/* ───────────────────────── chase ───────────────────────── */
+/* THE LAYOUT at 1366 × 768 (chase.js › CHASE_LAYOUT, checked in inquiryChase.render.test.jsx), in the panel's 1205 × 587
+   px: row 1 the lead and the goal; row 2, right to left, the main column — the court (14 rem high, 18.7 rem wide, its one
+   text 26 units ≈ 26 px) and the card of numbers beside it, then the question, its buttons and the fact — and the table
+   (27.2 rem, six rows at most, each fraction over its bar). A fraction is ALWAYS over a real bar (.rq-fr), never « p/q ». */
+.rq-iq-frame .rq-iq--chase {
+  grid-template-rows: auto minmax(0, 1fr);
+}
+.rq-iq-frame .rq-ch__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--rq-ch-table-w, 27.2rem);
+  gap: 1rem;
+  align-items: start;
+  min-height: 0;
+}
+.rq-iq-frame .rq-ch__main {
+  display: grid;
+  align-content: start;
+  gap: 0.55rem;
+  min-width: 0;
+}
+.rq-iq-frame .rq-ch__stage {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 0;
+}
+.rq-iq-frame .rq-ch__courtbox {
+  flex: none;
+}
+.rq-ch__court {
+  display: block;
+  height: var(--rq-ch-court-h, 14rem);
+  width: auto;
+  overflow: visible;
+  direction: ltr;
+  font-family: 'Cairo', 'Tajawal', system-ui, sans-serif;
+}
+.rq-ch__tile {
+  fill: rgba(92, 124, 250, 0.3);
+  stroke: rgba(145, 167, 255, 0.55);
+  stroke-width: 1;
+}
+.rq-ch__tile.is-cut {
+  fill: rgba(92, 124, 250, 0.13);
+  stroke-dasharray: 4 3;
+}
+.rq-ch__wall {
+  fill: none;
+  stroke: #91a7ff;
+  stroke-width: 3.5;
+  stroke-linejoin: round;
+}
+.rq-ch__post {
+  fill: #c9a25e;
+}
+.rq-ch__rod {
+  fill: #7dfcff;
+}
+.rq-ch__ghost {
+  fill: rgba(219, 228, 255, 0.1);
+  stroke: #dbe4ff;
+  stroke-width: 2.5;
+  stroke-dasharray: 8 6;
+}
+.rq-ch__slab {
+  fill: rgba(219, 228, 255, 0.2);
+  stroke: #dbe4ff;
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+}
+.rq-ch__slab.is-lowering {
+  transform-box: fill-box;
+  transform-origin: right bottom;
+  animation: rq-ch-lower 0.9s cubic-bezier(0.3, 0.7, 0.4, 1) both;
+}
+.rq-ch__court.is-ride .rq-ch__slab {
+  fill: rgba(52, 211, 153, 0.35);
+  stroke: #34d399;
+  filter: drop-shadow(0 0 7px rgba(52, 211, 153, 0.85));
+}
+.rq-ch__court.is-jam .rq-ch__slab {
+  stroke: #a78bfa;
+}
+.rq-ch__band {
+  fill: rgba(251, 191, 36, 0.55);
+  stroke: #fbbf24;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  animation: rq-ch-pulse 1.1s ease-in-out 3;
+}
+.rq-ch__over {
+  fill: rgba(167, 139, 250, 0.55);
+  stroke: #a78bfa;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  animation: rq-ch-pulse 1.1s ease-in-out 3;
+}
+.rq-ch__court.is-fast .rq-ch__slab,
+.rq-ch__court.is-fast .rq-ch__band,
+.rq-ch__court.is-fast .rq-ch__over {
+  animation-duration: 0.01s;
+}
+/* the magnifier on the far corner */
+.rq-ch__void {
+  fill: rgba(8, 20, 52, 0.95);
+}
+.rq-ch__lensfloor {
+  fill: rgba(92, 124, 250, 0.3);
+}
+.rq-ch__lens .rq-ch__band,
+.rq-ch__lens .rq-ch__over {
+  stroke: none;
+}
+.rq-ch__wallline {
+  fill: none;
+  stroke: #91a7ff;
+  stroke-width: 3;
+}
+.rq-ch__ring {
+  fill: none;
+  stroke: #7dfcff;
+  stroke-width: 3;
+}
+.rq-ch__leader {
+  stroke: #7dfcff;
+  stroke-width: 2;
+  stroke-dasharray: 5 4;
+}
+.rq-ch__spot {
+  fill: none;
+  stroke: #7dfcff;
+  stroke-width: 2;
+}
+.rq-ch__factor {
+  fill: #7dfcff;
+  font-weight: 900;
+}
+.rq-ch__lens {
+  animation: rq-fade 0.4s ease-out 0.5s both;
+}
+
+/* the card of numbers: the rod over its bar, the small tile, the platform and the court in small tiles, the sign */
+.rq-iq-frame .rq-ch__card {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  align-content: center;
+  gap: 0.4rem;
+  font-size: 1.08rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+.rq-iq-frame .rq-ch__rodline,
+.rq-iq-frame .rq-ch__line,
+.rq-iq-frame .rq-ch__key {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  white-space: nowrap;
+}
+.rq-iq-frame .rq-ch__line {
+  min-height: 1.6em;
+}
+.rq-iq-frame .rq-ch__name {
+  color: #9fd8ff;
+  min-width: 4.2rem;
+}
+.rq-iq-frame .rq-ch__key {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: #cfe9ff;
+  white-space: normal;
+}
+.rq-iq-frame .rq-ch__keytile {
+  flex: none;
+  width: 2.2rem;
+  height: 2.2rem;
+}
+.rq-ch__keyone {
+  fill: rgba(92, 124, 250, 0.25);
+  stroke: #91a7ff;
+  stroke-width: 1.5;
+}
+.rq-ch__keygrid line {
+  stroke: rgba(145, 167, 255, 0.6);
+  stroke-width: 0.6;
+}
+.rq-ch__keysmall {
+  fill: #7dfcff;
+}
+.rq-iq-frame .rq-ch__eq {
+  unicode-bidi: isolate;
+  white-space: nowrap;
+}
+.rq-iq-frame .rq-ch__unit {
+  color: #cfe9ff;
+  font-weight: 700;
+}
+.rq-iq-frame .rq-ch__unknown {
+  color: #7dfcff;
+  font-weight: 900;
+}
+.rq-iq-frame .rq-ch__rel {
+  min-height: 1.8em;
+  font-size: 1.3rem;
+  font-weight: 900;
+  text-align: center;
+  animation: rq-pop 0.3s ease-out;
+}
+.rq-iq-frame .rq-ch__rel.is-band {
+  color: #fde68a;
+}
+.rq-iq-frame .rq-ch__rel.is-jam {
+  color: #ddd6fe;
+}
+.rq-iq-frame .rq-ch__rel.is-ride {
+  color: #8dffb0;
+}
+.rq-iq-frame .rq-ch__talk {
+  display: grid;
+  align-content: start;
+  justify-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+}
+.rq-iq-frame .rq-fact.is-count {
+  color: #c9ffd9;
+}
+
+/* where he is in the list: one dot a fraction, coloured by what its platform did */
+.rq-iq-frame .rq-ch__dots {
+  flex: none;
+  display: inline-flex;
+  gap: 0.3rem;
+  align-items: center;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(125, 252, 255, 0.12);
+}
+.rq-iq-frame .rq-ch__dot {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  border: 2px solid rgba(159, 216, 255, 0.6);
+}
+.rq-iq-frame .rq-ch__dot.is-now {
+  border-color: #7dfcff;
+  box-shadow: 0 0 6px rgba(125, 252, 255, 0.8);
+}
+.rq-iq-frame .rq-ch__dot.is-band {
+  background: #fbbf24;
+  border-color: #fbbf24;
+}
+.rq-iq-frame .rq-ch__dot.is-jam {
+  background: #a78bfa;
+  border-color: #a78bfa;
+}
+.rq-iq-frame .rq-ch__dot.is-ride {
+  background: #34d399;
+  border-color: #34d399;
+}
+
+/* a fraction over its real bar (DOM): the numerator's bottom border IS the bar */
+.rq-iq-frame .rq-fr {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+  vertical-align: middle;
+  font-size: 1.08rem;
+  font-weight: 800;
+  line-height: 1.1;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  unicode-bidi: isolate;
+}
+.rq-iq-frame .rq-fr__n {
+  padding: 0 0.2em 0.08em;
+  border-bottom: 2px solid currentColor;
+}
+.rq-iq-frame .rq-fr__d {
+  padding: 0.08em 0.2em 0;
+}
+.rq-iq-frame .rq-fr--big {
+  font-size: 1.7rem;
+  color: #7dfcff;
+}
+.rq-iq-frame .rq-fr--big .rq-fr__n {
+  border-bottom-width: 3px;
+}
+
+/* the table: four cells (rod 4.4, two whole numbers 6.2 each, the fact 10.4 rem); a row holds a stacked fraction */
+.rq-iq-frame .rq-ch__table {
+  table-layout: fixed;
+}
+.rq-iq-frame .rq-ch__table th {
+  line-height: 1.3;
+  vertical-align: bottom;
+}
+.rq-iq-frame .rq-ch__table th:nth-child(1) {
+  width: 4.4rem;
+}
+.rq-iq-frame .rq-ch__table th:nth-child(2),
+.rq-iq-frame .rq-ch__table th:nth-child(3) {
+  width: 6.2rem;
+}
+.rq-iq-frame .rq-ch__table th:nth-child(4) {
+  width: 10.4rem;
+}
+.rq-iq-frame .rq-ch__table td {
+  height: 2.7rem;
+  vertical-align: middle;
+}
+
+@keyframes rq-ch-lower {
+  from {
+    transform: scale(1.08) translate(-4px, -6px);
+    opacity: 0.3;
+  }
+}
+@keyframes rq-ch-pulse {
+  50% {
+    opacity: 0.6;
+  }
+}

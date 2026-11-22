@@ -1,0 +1,158 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l1-009",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — مسيّرة على الدائرة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "دائرة",
+      "عرض مسيّرات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_ithbat-khawas-maalam_P3",
+      "modelledOn": "now-145"
+    }
+  },
+  "generator": {
+    "tool": "u1x-ithbat-khawas-maalam/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "في عرض مسيّرات فوق خليج الجزائر احتفالًا بعيد الاستقلال، تدور المسيّرات على دائرة مركزها المبدأ O ونصف قطرها 5 (معلم متعامد ومتجانس). مسيّرة في $D(3\\,;\\,-4)$ .",
+    "figure": {
+      "grid": true,
+      "axes": true,
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "D": [
+          3,
+          -4
+        ],
+        "P": [
+          5,
+          0
+        ]
+      },
+      "ariaLabel": "دائرة مركزها O ونصف قطرها 5 ، والمسيّرة D",
+      "maxWidth": 400,
+      "labels": {
+        "O": "nw",
+        "D": "se"
+      },
+      "circles": [
+        {
+          "center": "O",
+          "through": "P"
+        }
+      ],
+      "hidden": [
+        "P"
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "احسب $OD^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "25",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MASAFA-TARBI",
+          "value": "-7"
+        },
+        {
+          "id": "MISC-MAALAM-MASAFA-JADHR-JAM",
+          "value": "7"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "O هو المبدأ: مركبتا $\\overrightarrow{OD}$ هما إحداثيتا D."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ربّع الإحداثيتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع المربعين."
+        }
+      ],
+      "feedback": {
+        "correct": "$OD^2 = 3^2 + (-4)^2 = 9 + 16 = 25$ .",
+        "incorrect": "مربع العدد السالب موجب: $(-4)^2 = 16$ ."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "إذن المسيّرة D:",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "على الدائرة لأن $OD = 5$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خارج الدائرة لأن $OD^2 = 25 > 5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-NASI"
+        },
+        {
+          "id": "C",
+          "content": "على الدائرة لأن $|3| + |-4| = 7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن OD بنصف القطر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من $OD^2$ استخرج OD بالجذر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تقارن مربعا بطول."
+        }
+      ],
+      "feedback": {
+        "correct": "$OD = \\sqrt{25} = 5 = r$ : D على الدائرة.",
+        "incorrect": "نقارن $OD^2$ بـ $r^2 = 25$ ، أو OD بـ r."
+      }
+    }
+  ]
+}

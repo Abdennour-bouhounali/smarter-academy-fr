@@ -1,0 +1,107 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muadalat-l1-007",
+  "lessonCode": "wadiya-idmajiya-muadalat",
+  "level": 1,
+  "metadata": {
+    "title": "حل معادلة ثم التحقق",
+    "estimatedMinutes": 4,
+    "tags": [
+      "معادلة",
+      "تحقّق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-muadalat_P1",
+      "modelledOn": "qcm"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "حلّ المعادلة: $3x - 4 = 2x + 5$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب حل المعادلة: عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عند نقل حدّ من طرف إلى آخر تتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم الطرفين في الأخير على معامل $x$ بإشارته، ثم تحقّق بالتعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 9$ .",
+        "incorrect": "انقل حدود $x$ إلى طرف والأعداد إلى الطرف الآخر مع تغيير الإشارة، ثم اقسم على معامل $x$ . تحقّق بالتعويض."
+      },
+      "solution": {
+        "lines": [
+          "$3x - 2x = 5 + 4$",
+          "$x = 9$"
+        ],
+        "result": "x = 9"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "تحقّق بالتعويض أن العدد الذي وجدته حلّ للمعادلة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muadalat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب كل طرف من أجل الحل الذي وجدته."
+        }
+      ],
+      "feedback": {
+        "correct": "أحسنت: برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $x = 9$ : $3 \\times 9 - 4 = 23$ و $2 \\times 9 + 5 = 23$",
+          "الطرفان متساويان، إذن $9$ حلّ للمعادلة."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

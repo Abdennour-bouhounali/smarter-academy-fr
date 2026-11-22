@@ -1,0 +1,189 @@
+{
+  "id": "ex-4am-tawzif-khawass-judhur-l3-004",
+  "lessonCode": "tawzif-khawass-judhur",
+  "level": 3,
+  "metadata": {
+    "title": "BEM 2019 — التمرين الأول",
+    "estimatedMinutes": 8,
+    "tags": [
+      "a√b",
+      "نسبة مقامها عدد ناطق"
+    ],
+    "source": {
+      "type": "bem",
+      "year": 2019,
+      "part": 1,
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "official",
+      "badge": "BEM 2019",
+      "heading": "التمرين الأول",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان الحقيقيان A و B حيث:",
+    "formulas": [
+      "A = \\dfrac{9}{7} \\times \\left(\\dfrac{10}{3} - 1\\right)",
+      "B = 5\\sqrt{3} + 3\\sqrt{12} - \\sqrt{48}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن A عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة العدد A (عدد طبيعي)",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب ما بين القوسين أولًا: اكتب 1 على شكل كسر مقامه 3."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب الكسرين واختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = \\dfrac{9}{7} \\times \\dfrac{7}{3} = 3$: عدد طبيعي.",
+        "incorrect": "احسب ما بين القوسين أولًا، ثم اضرب الكسرين واختزل."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{9}{7} \\times \\left(\\dfrac{10}{3} - \\dfrac{3}{3}\\right)$",
+          "$A = \\dfrac{9}{7} \\times \\dfrac{7}{3}$",
+          "$A = \\dfrac{3 \\times 3 \\times 7}{7 \\times 3}$"
+        ],
+        "result": "A = 3"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب العدد B على الشكل $a\\sqrt{3}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tawzif-khawass-judhur_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-MUAMIL-MANSI"
+        },
+        {
+          "value": "15",
+          "id": "MISC-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب كل جذر على الشكل $x\\sqrt{3}$: ابحث عن أكبر مربع تامّ يقسم العدد الذي تحت الجذر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل $\\sqrt{m \\times 3} = \\sqrt{m} \\times \\sqrt{3}$ ثم احسب جذر المربع التامّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع المعاملات بإشاراتها بالخاصية التوزيعية: $x\\sqrt{3} + y\\sqrt{3} = (x + y)\\sqrt{3}$."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 5\\sqrt{3} + 6\\sqrt{3} - 4\\sqrt{3} = 7\\sqrt{3}$.",
+        "incorrect": "اكتب $\\sqrt{12}$ و $\\sqrt{48}$ على الشكل $x\\sqrt{3}$ (لا تنسَ المعامل 3)، ثم اجمع المعاملات."
+      },
+      "solution": {
+        "lines": [
+          "$B = 5\\sqrt{3} + 3\\sqrt{12} - \\sqrt{48}$",
+          "$B = 5\\sqrt{3} + 3\\sqrt{4} \\times \\sqrt{3} - \\sqrt{16} \\times \\sqrt{3}$",
+          "$B = 5\\sqrt{3} + 3 \\times 2\\sqrt{3} - 4\\sqrt{3}$",
+          "$B = (5 + 6 - 4)\\sqrt{3}$"
+        ],
+        "result": "B = 7\\sqrt{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اكتب $\\dfrac{A}{B}$ على شكل نسبة مقامها عدد ناطق.",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "بسّط النتيجة واكتبها على الشكل $\\dfrac{\\sqrt{3}}{c}$، ثم أعط العدد الطبيعي $c$ فقط",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "21",
+          "id": "MISC-JIDHR-FI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض A و B بالقيمتين اللتين وجدتهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب البسط والمقام في $\\sqrt{3}$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل على 3."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{A}{B} = \\dfrac{3\\sqrt{3}}{21} = \\dfrac{\\sqrt{3}}{7}$.",
+        "incorrect": "اضرب البسط والمقام في $\\sqrt{3}$ ثم اختزل."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{A}{B} = \\dfrac{3}{7\\sqrt{3}}$",
+          "$= \\dfrac{3 \\times \\sqrt{3}}{7\\sqrt{3} \\times \\sqrt{3}}$",
+          "$= \\dfrac{3\\sqrt{3}}{7 \\times 3}$"
+        ],
+        "result": "\\dfrac{A}{B} = \\dfrac{\\sqrt{3}}{7}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-kusur-natiqa-l4-002",
+  "lessonCode": "wadiya-idmajiya-kusur-natiqa",
+  "level": 4,
+  "metadata": {
+    "title": "حديقة مستطيلة بأبعاد كسرية",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مساحة",
+      "محيط",
+      "قسمة كسرين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الرابع",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "حديقة مستطيلة طولها $\\dfrac{9}{4}$ m وعرضها $\\dfrac{5}{3}$ m ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب مساحة الحديقة بالمتر المربّع .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "15/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "47/6",
+          "id": "MISC-MASAHA-AREA-PERIM-CONFUSED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم الشكل واكتب بُعديه عليه بالوحدة نفسها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحة المستطيل جداء بُعديه، ومساحة المثلث نصف جداء قاعدته في ارتفاعه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل النتيجة واذكر الوحدة المناسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{15}{4}$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{9}{4} \\times \\dfrac{5}{3} = \\dfrac{45}{12} = \\dfrac{15}{4}$ m² ."
+        ],
+        "result": "\\dfrac{15}{4}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب محيط الحديقة بالمتر .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "47/6",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "15/4",
+          "id": "MISC-MASAHA-AREA-PERIM-CONFUSED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الأطوال التي تُجمع للحصول على المحيط ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "محيط المستطيل ضعف مجموع بُعديه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "وحّد المقامات قبل الجمع واختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{47}{6}$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "المقام المشترك $12$ : $\\dfrac{9}{4} + \\dfrac{5}{3} = \\dfrac{27}{12} + \\dfrac{20}{12} = \\dfrac{47}{12}$ .",
+          "$2 \\times \\dfrac{47}{12} = \\dfrac{47}{6}$ m ."
+        ],
+        "result": "\\dfrac{47}{6}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب خارج قسمة الطول على العرض .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "27/20",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "15/4",
+          "id": "MISC-AMAL-NOFLIP"
+        },
+        {
+          "value": "20/27",
+          "id": "MISC-MAQLUB-REVERSED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نقسمه وما العدد الذي نقسم عليه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على كسر غير معدوم هي الضرب في مقلوبه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالضرب: ناتج القسمة في القاسم يعطي المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{27}{20}$ .",
+        "incorrect": "القسمة على كسر هي الضرب في مقلوبه؛ أعد الحساب بعناية."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{9}{4} \\div \\dfrac{5}{3} = \\dfrac{9}{4} \\times \\dfrac{3}{5} = \\dfrac{27}{20}$ ."
+        ],
+        "result": "\\dfrac{27}{20}"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

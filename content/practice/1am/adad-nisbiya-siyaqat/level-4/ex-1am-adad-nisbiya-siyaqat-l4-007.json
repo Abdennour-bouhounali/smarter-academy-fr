@@ -1,0 +1,258 @@
+{
+  "id": "ex-1am-adad-nisbiya-siyaqat-l4-007",
+  "lessonCode": "adad-nisbiya-siyaqat",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — أبرد يوم وأبعده",
+    "estimatedMinutes": 8,
+    "tags": [
+      "حرارة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "أسبوع من القراءات في مدينة عالية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "سجّلت محطّة أرصاد الأغواط صباحًا القراءات الآتية : $2$ ؛ $-6$ ؛ $4$ ؛ $-2$ ؛ $0$ . أيّ هذه القراءات أبرد؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-6$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-REL-SIGNBIG"
+        },
+        {
+          "id": "C",
+          "content": "$2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-REL-SIGNBIG"
+        },
+        {
+          "id": "D",
+          "content": "$0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-REL-SIGNBIG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الجهة التي يقع فيها كلّ عدد من الصفر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما تحت الصفر أخفض ممّا فوقه، والأبعد تحت الصفر هو الأخفض."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن مواضع المستوى لا أحجام الأعداد المكتوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "الأبرد هو أدنى مستوى للسائل : $-6$ .",
+        "incorrect": "الأبرد ليس الأكبر عددًا : العدد السالب أصغر من الصفر ومن كلّ عدد موجب."
+      },
+      "solution": {
+        "lines": [
+          "نرتّب القراءات من الأصغر إلى الأكبر",
+          "الأصغر هو الأبرد : $-6$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "يومان قراءتاهما $-6$ و $4$ : أيّ الموضعين أبعد عن الصفر : $-6$  أم $4$  ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-REL-SIGNDIST"
+        },
+        {
+          "id": "B",
+          "content": "البعد نفسه",
+          "isCorrect": false,
+          "misconceptionId": "MISC-REL-SIGNONLY"
+        },
+        {
+          "id": "C",
+          "content": "$-6$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "البعد عن الصفر مسافة : هل تتأثّر بالإشارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب مسافة كلّ موضع إلى الصفر ثمّ قارن."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأبعد هو الأكبر مسافة ولو كان تحت الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "الأبعد هو $-6$ : مسافته $6$ وهي الأكبر.",
+        "incorrect": "البعد عن الصفر مسافة : نقارن المسافات لا الإشارات."
+      },
+      "solution": {
+        "lines": [
+          "المسافتان : $6$ و $4$",
+          "الأكبر مسافة هو $-6$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما المسافة إلى الصفر للعدد $-6$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "-6",
+          "id": "MISC-REL-NEGDIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يقوله العدد : الجهة أم البعد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي عدد التدريجات بين المستوى والصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احذف الإشارة تجد المسافة إلى الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "المسافة إلى الصفر للعدد $-6$ هي $6$ .",
+        "incorrect": "المسافة لا تكون سالبة : هي العدد دون إشارته."
+      },
+      "solution": {
+        "lines": [
+          "المسافة هي عدد التدريجات بين $-6$ والصفر",
+          "$6$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "اكتب معاكس العدد $-6$ .",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "-6",
+          "id": "MISC-REL-OPPSAME"
+        },
+        {
+          "value": "-7",
+          "id": "MISC-REL-OPPNEXT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العدد على الجهاز ثمّ انظر أين يقف ظلّه في المرآة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المعاكس له المسافة نفسها إلى الصفر على الجهة الأخرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "غيّر الإشارة وأبقِ المسافة."
+        }
+      ],
+      "feedback": {
+        "correct": "معاكس $-6$ هو $6$ : المسافة نفسها إلى الصفر على الجهة الأخرى.",
+        "incorrect": "المعاكس يقع على الجهة الأخرى من الصفر وبالمسافة نفسها."
+      },
+      "solution": {
+        "lines": [
+          "$-6$ : المسافة $6$ تحت الصفر",
+          "المعاكس : المسافة نفسها على الجهة الأخرى، $6$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

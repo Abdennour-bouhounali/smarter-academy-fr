@@ -1,0 +1,86 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-dawaran-l1-010",
+  "lessonCode": "wadiya-idmajiya-dawaran",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — النخلات الثلاث لمقام الشهيد",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المضلع المنتظم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-dawaran_P2",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "تقف النخلات الثلاث لمقام الشهيد بالجزائر العاصمة متباعدة بانتظام حول محور شاقولي: كل نخلة صورة الأخرى بدوران زاويته $120^\\circ$ حول المحور. ننظر إلى أقدامها الثلاث من الأعلى. يزور تلاميذ المتوسطة المقام إجلالًا لشهداء الوطن."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أقدام النخلات الثلاث هي رؤوس:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مثلث متساوي الساقين فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-ADLA"
+        },
+        {
+          "id": "B",
+          "content": "مثلث متقايس الأضلاع",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "مثلث قائم ومتساوي الساقين",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-MARKAZIYA"
+        },
+        {
+          "id": "D",
+          "content": "ثلاث نقط على استقامة واحدة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-180"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدوران يحافظ على الأطوال."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثلاث نقط متباعدة بنفس المسافة على دائرة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المضلع المنتظم ذو ثلاثة أضلاع."
+        }
+      ],
+      "feedback": {
+        "correct": "الدوران يحافظ على الأطوال: الأضلاع الثلاثة متقايسة، فهو مثلث متقايس الأضلاع (مضلع منتظم).",
+        "incorrect": "ثلاث نقط على دائرة كل منها صورة الأخرى بدوران $120^\\circ$ متباعدة بنفس المسافة."
+      },
+      "cognitiveDemand": "recall",
+      "difficulty": 1
+    }
+  ]
+}

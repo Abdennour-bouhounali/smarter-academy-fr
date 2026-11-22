@@ -1,0 +1,185 @@
+{
+  "id": "ex-4am-mushkilat-jumla-l1-008",
+  "lessonCode": "mushkilat-jumla",
+  "level": 1,
+  "metadata": {
+    "title": "رؤوس وسيقان في مزرعة",
+    "estimatedMinutes": 7,
+    "tags": [
+      "ترييض",
+      "مزرعة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-20",
+      "page": 61,
+      "section": "أوظّف تعلّماتي",
+      "number": 20
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "يريد فلاح يعتني بحيواناته كل صباح أن يعرف عدد الأرانب وعدد الدجاج في مزرعته. عندما عدّ الرؤوس وجد 36 رأسا، وعندما عدّ السيقان وجد 90 ساقا."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "نسمّي $x$ عدد الأرانب و $y$ عدد الدجاج.",
+      "statement": "ترجم المعطيات بجملة معادلتين مجهولاها $x$ و $y$ ، ثم اكتب معادلة السيقان، بعد قسمة طرفيها على 2، على الشكل $2x + y = c$ . أعط العدد $c$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $c$ فقط",
+      "expectedAnswer": "45",
+      "misconceptionSignatures": [
+        {
+          "value": "90",
+          "id": "MISC-JUMLA-TARJAMA"
+        },
+        {
+          "value": "36",
+          "id": "MISC-JUMLA-TARJAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لكل حيوان رأس واحد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "للأرنب 4 سيقان وللدجاجة ساقان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب معادلة السيقان ثم اقسم حدودها على 2."
+        }
+      ],
+      "feedback": {
+        "correct": "معادلة السيقان $4x + 2y = 90$ تؤول إلى $2x + y = 45$ ، والجملة: $\\begin{cases} x + y = 36 \\\\ 2x + y = 45 \\end{cases}$ .",
+        "incorrect": "السيقان تُترجم بـ $4x + 2y$ ، لا بـ $x + y$ ؛ ثم اقسم الطرفين على 2."
+      },
+      "solution": {
+        "lines": [
+          "عدد الرؤوس: $x + y = 36$",
+          "عدد السيقان: $4x + 2y = 90$",
+          "بقسمة طرفي المعادلة الثانية على 2 نجد: $2x + y = 45$",
+          "ومنه الجملة: $\\begin{cases} x + y = 36 \\\\ 2x + y = 45 \\end{cases}$"
+        ],
+        "result": "c = 45"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "جد عدد الأرانب وعدد الدجاج في المزرعة.",
+      "statement": "عدد الأرانب:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "27",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن معاملي $y$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح المعادلة الأولى من الثانية طرفا لطرف."
+        }
+      ],
+      "feedback": {
+        "correct": "في المزرعة 9 أرانب.",
+        "incorrect": "بطرح $x + y = 36$ من $2x + y = 45$ طرفا لطرف تجد $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "بطرح المعادلة الأولى من الثانية طرفا لطرف: $x = 45 - 36 = 9$",
+          "بالتعويض في المعادلة الأولى: $9 + y = 36$ ومنه $y = 27$",
+          "التحقق في النص: $9 + 27 = 36$ رأسا و $4 \\times 9 + 2 \\times 27 = 36 + 54 = 90$ ساقا.",
+          "إذن في المزرعة 9 أرانب و 27 دجاجة."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "عدد الدجاج:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط",
+      "expectedAnswer": "27",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الرؤوس 36."
+        }
+      ],
+      "feedback": {
+        "correct": "في المزرعة 27 دجاجة، ونتحقق: $4 \\times 9 + 2 \\times 27 = 36 + 54 = 90$ ساقا.",
+        "incorrect": "من $x + y = 36$ : $y = 36 - x$ ."
+      },
+      "solution": {
+        "lines": [
+          "بطرح المعادلة الأولى من الثانية طرفا لطرف: $x = 45 - 36 = 9$",
+          "بالتعويض في المعادلة الأولى: $9 + y = 36$ ومنه $y = 27$",
+          "التحقق في النص: $9 + 27 = 36$ رأسا و $4 \\times 9 + 2 \\times 27 = 36 + 54 = 90$ ساقا.",
+          "إذن في المزرعة 9 أرانب و 27 دجاجة."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l1-002",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 1,
+  "metadata": {
+    "title": "نشاط 2 ب — منتصف مشترك",
+    "estimatedMinutes": 4,
+    "tags": [
+      "منتصف مشترك",
+      "نقط على استقامة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-2",
+      "page": 129,
+      "section": "أنشطة",
+      "number": 2
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 129): A، B، C، D، O نقط من المستقيم (d) كما في الشكل، حيث CA = DB و AO = OD (الترميز).",
+    "figure": {
+      "points": {
+        "C": [
+          -3,
+          0
+        ],
+        "A": [
+          -1,
+          0
+        ],
+        "O": [
+          0,
+          0
+        ],
+        "D": [
+          1,
+          0
+        ],
+        "B": [
+          3,
+          0
+        ],
+        "e1": [
+          -3.8,
+          0
+        ],
+        "e2": [
+          3.8,
+          0
+        ]
+      },
+      "segments": [
+        {
+          "from": "e1",
+          "to": "C"
+        },
+        {
+          "from": "C",
+          "to": "A",
+          "ticks": 1
+        },
+        {
+          "from": "A",
+          "to": "O",
+          "ticks": 2
+        },
+        {
+          "from": "O",
+          "to": "D",
+          "ticks": 2
+        },
+        {
+          "from": "D",
+          "to": "B",
+          "ticks": 1
+        },
+        {
+          "from": "B",
+          "to": "e2"
+        }
+      ],
+      "hidden": [
+        "e1",
+        "e2"
+      ],
+      "labels": {
+        "C": "s",
+        "A": "s",
+        "O": "s",
+        "D": "s",
+        "B": "s"
+      },
+      "ariaLabel": "المستقيم (d) عليه بالترتيب من اليسار C ثم A ثم O ثم D ثم B، مع CA = DB و AO = OD",
+      "maxWidth": 440
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "O منتصف [AD]. أيّ مساواة صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{AO} = \\overrightarrow{OD}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{AO} = \\overrightarrow{DO}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MUNTASAF-IB-IA"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{OA} = \\overrightarrow{OD}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "O بين A و D والمسافتان متساويتان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المنتصف: الشعاع من الطرف الأول إلى المنتصف يساوي الشعاع من المنتصف إلى الطرف الثاني."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الشعاعين في الاتجاه نفسه، من A نحو D."
+        }
+      ],
+      "feedback": {
+        "correct": "الشعاعان AO و OD لهما نفس المنحى ونفس الاتجاه (نحو D) ونفس الطول.",
+        "incorrect": "في الكتابتين الأخريين يسير أحد الشعاعين نحو A والآخر نحو D."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "للقطعتين [BC] و [AD] نفس المنتصف O. العلاقة بين الشعاعين AB و CD هي:",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{AB} = \\overrightarrow{DC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        },
+        {
+          "id": "B",
+          "content": "AB = CD في الطول فقط، والشعاعان مختلفان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TUL-FAQAT"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{AB} = \\overrightarrow{CD}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الشعاعان على المستقيم (d) نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الاتجاهين: من A نحو B، ومن C نحو D."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "منتصف مشترك للقطعتين [AD] و [BC]: اقرأ الرباعي ABDC."
+        }
+      ],
+      "feedback": {
+        "correct": "ABDC «متوازي أضلاع مسطّح»: للشعاعين AB و CD نفس المنحى ونفس الاتجاه ونفس الطول.",
+        "incorrect": "الشعاع DC يسير في الاتجاه المعاكس لـ AB."
+      }
+    }
+  ]
+}

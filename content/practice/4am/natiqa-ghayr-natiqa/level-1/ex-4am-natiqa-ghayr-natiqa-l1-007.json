@@ -1,0 +1,133 @@
+{
+  "id": "ex-4am-natiqa-ghayr-natiqa-l1-007",
+  "lessonCode": "natiqa-ghayr-natiqa",
+  "level": 1,
+  "metadata": {
+    "title": "ما تعرضه الحاسبة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "قيمة مقربة",
+      "الحاسبة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_natiqa-ghayr-natiqa_P3",
+      "modelledOn": "ict-sqrt2"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "تعرض الحاسبة للعدد $\\sqrt{3}$ القيمة 1,732050808."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب بدون حاسبة $1{,}732^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "2.999824",
+      "misconceptionSignatures": [
+        {
+          "value": "3.464",
+          "id": "MISC-MURABBA-DIF"
+        },
+        {
+          "value": "3",
+          "id": "MISC-HASIBA-MUDBUTA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$1{,}732^2 = 1{,}732 \\times 1{,}732$ : لا تضرب في 2."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $1732 \\times 1732$ ثم ضع الفاصلة: ستة أرقام بعد الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}732^2 = 2{,}999824$ : لا يساوي 3.",
+        "incorrect": "المربع هو جداء العدد في نفسه، وعدد الأرقام بعد الفاصلة يتضاعف."
+      },
+      "solution": {
+        "lines": [
+          "$1732 \\times 1732 = 2999824$",
+          "إذن $1{,}732^2 = 2{,}999824$"
+        ],
+        "result": "1{,}732^2 = 2{,}999824"
+      },
+      "work": "required",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل العدد 1,732050808 هو القيمة المضبوطة للعدد $\\sqrt{3}$ ؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASIBA-MUDBUTA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر جوابك، ثم قارن تبريرك بالحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل 3 مربع لعدد ناطق؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد 1,732050808 عدد عشري، فهو ناطق."
+        }
+      ],
+      "feedback": {
+        "correct": "3 ليس مربعًا لعدد ناطق، فـ $\\sqrt{3}$ ليس عددًا ناطقًا؛ والحاسبة تعرض قيمة مقرّبة فقط.",
+        "incorrect": "ما تعرضه الحاسبة عدد عشري: هل يمكن أن يساوي عددًا غير ناطق؟"
+      },
+      "solution": {
+        "lines": [
+          "$1^2 = 1 < 3 < 4 = 2^2$ : العدد 3 ليس مربعًا لعدد ناطق، إذن $\\sqrt{3}$ ليس عددًا ناطقًا.",
+          "أما 1,732050808 فعدد عشري، أي عدد ناطق؛ فلا يمكن أن يساوي $\\sqrt{3}$ .",
+          "إذن 1,732050808 قيمة مقرّبة للعدد $\\sqrt{3}$ وليست قيمته المضبوطة."
+        ],
+        "result": "قيمة مقرّبة"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

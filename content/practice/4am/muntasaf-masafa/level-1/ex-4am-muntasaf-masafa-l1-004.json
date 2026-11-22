@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-muntasaf-masafa-l1-004",
+  "lessonCode": "muntasaf-masafa",
+  "level": 1,
+  "metadata": {
+    "title": "معارف — مثال المسافة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المسافة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-dist",
+      "page": 144,
+      "section": "معارف",
+      "number": 3
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 144): $A(2\\,;\\,5)$ ، $B(-1\\,;\\,1)$ نقطتان من مستوٍ مزود بمعلم متعامد ومتجانس (الوحدة $1\\,\\mathrm{cm}$)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المسافة AB بالسنتيمتر:",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري بالفاصلة (مثل 2,5)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MASAFA-JADHR-JAM",
+          "value": "7"
+        },
+        {
+          "id": "MISC-MAALAM-MASAFA-JADHR-NASI",
+          "value": "25"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الفرقين: فرق الفاصلتين وفرق الترتيبين (النهاية ناقص المبدأ)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ربّع كل فرق ثم اجمع المربعين: هذا مربع المسافة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خذ الجذر التربيعي في الأخير، وبسّطه إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = \\sqrt{(-3)^2 + (-4)^2} = \\sqrt{25} = 5$ .",
+        "incorrect": "المسافة هي الجذر التربيعي لمجموع مربعي الفرقين."
+      }
+    }
+  ]
+}

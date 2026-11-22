@@ -1,0 +1,221 @@
+{
+  "id": "ex-4am-qiraat-wadiyat-ihsaiya-l3-004",
+  "lessonCode": "qiraat-wadiyat-ihsaiya",
+  "level": 3,
+  "metadata": {
+    "title": "تحدّ الكتاب — أيّ القسمين نتائجه أفضل؟",
+    "estimatedMinutes": 8,
+    "tags": [
+      "المتوسط المتوازن",
+      "المقارنة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "challenge",
+      "page": 91,
+      "section": "تحدّ"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يقدّم الجدول الآتي نتائج تلاميذ قسمين في امتحان حسب عدد الذكور والإناث والمعدّل:",
+    "table": {
+      "head": [
+        "",
+        "ذكور — العدد",
+        "ذكور — المعدّل",
+        "إناث — العدد",
+        "إناث — المعدّل"
+      ],
+      "rows": [
+        [
+          "القسم (أ)",
+          "15",
+          "10",
+          "18",
+          "13"
+        ],
+        [
+          "القسم (ب)",
+          "14",
+          "12,5",
+          "19",
+          "11"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب معدّل كل قسم، واكتبه على شكل كسر.",
+      "statement": "القسم (أ).",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "128/11",
+      "misconceptionSignatures": [
+        {
+          "value": "11,5",
+          "id": "MISC-IHSA-MUTAWASSIT-MUTAWASSITAYN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعدّل = مجموع النقاط ÷ عدد التلاميذ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مجموع نقاط مجموعة = عدد أفرادها × معدّلها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحسب متوسط المعدّلين: العددان مختلفان."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{15 \\times 10 + 18 \\times 13}{33} = \\dfrac{384}{33}$ .",
+        "incorrect": "اضرب كل معدّل في عدد أفراد مجموعته، اجمع، ثم اقسم على عدد تلاميذ القسم."
+      },
+      "solution": {
+        "lines": [
+          "مجموع نقاط القسم (أ): $15 \\times 10 + 18 \\times 13 = 384$",
+          "عدد التلاميذ: $15 + 18 = 33$",
+          "المعدّل: $\\dfrac{384}{33} = \\dfrac{128}{11} \\approx 11{,}64$"
+        ],
+        "result": "\\dfrac{128}{11}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "القسم (ب).",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "128/11",
+      "misconceptionSignatures": [
+        {
+          "value": "11,75",
+          "id": "MISC-IHSA-MUTAWASSIT-MUTAWASSITAYN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعدّل = مجموع النقاط ÷ عدد التلاميذ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مجموع نقاط مجموعة = عدد أفرادها × معدّلها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحسب متوسط المعدّلين: العددان مختلفان."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{14 \\times 12{,}5 + 19 \\times 11}{33} = \\dfrac{384}{33}$ .",
+        "incorrect": "اضرب كل معدّل في عدد أفراد مجموعته، اجمع، ثم اقسم على عدد تلاميذ القسم."
+      },
+      "solution": {
+        "lines": [
+          "مجموع نقاط القسم (ب): $14 \\times 12{,}5 + 19 \\times 11 = 384$",
+          "عدد التلاميذ: $14 + 19 = 33$",
+          "المعدّل: $\\dfrac{384}{33} = \\dfrac{128}{11} \\approx 11{,}64$"
+        ],
+        "result": "\\dfrac{128}{11}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "أيّ القسمين نتائجه أفضل؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "القسم (ب)، لأن متوسط معدّلَي ذكوره وإناثه 11,75 أكبر من 11,5",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MUTAWASSIT-MUTAWASSITAYN"
+        },
+        {
+          "id": "B",
+          "content": "القسم (أ)، لأن إناثه أفضل من إناث القسم (ب) وعددهن أكبر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MUTAWASSIT-MUTAWASSITAYN"
+        },
+        {
+          "id": "C",
+          "content": "للقسمين المعدّل نفسه، فنتائجهما متكافئة",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المعدّلين اللذين حسبتهما في 01 ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المقارنة مجموعة بمجموعة (الذكور ثم الإناث) لا تحسم."
+        }
+      ],
+      "feedback": {
+        "correct": "للقسمين المعدّل نفسه $\\dfrac{384}{33} \\approx 11{,}64$ .",
+        "incorrect": "لا تقارن المجموعات واحدة واحدة ولا متوسطات المعدّلات: قارن معدّلَي القسمين كاملين."
+      },
+      "solution": {
+        "lines": [
+          "في القسمين مجموع النقاط 384 وعدد التلاميذ 33 .",
+          "للقسمين المعدّل نفسه $\\dfrac{384}{33} \\approx 11{,}64$ .",
+          "ذكور القسم (ب) أفضل وإناث القسم (أ) أفضل، لكن المعدّل المتوازن لكل قسم كاملا هو نفسه."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

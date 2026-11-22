@@ -1,0 +1,254 @@
+{
+  "id": "ex-3am-tasawi-muqaranat-kasrayn-l5-007",
+  "lessonCode": "tasawi-muqaranat-kasrayn",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — ألوان الجدارية",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "تساوي كسرين",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: يطلي أعضاء نادي الفنّ جدارية المدرسة، فخلط أمين $7$ طلقات أزرق مع $12$ علبة أبيض، وخلط يوسف $5$ طلقات أزرق مع $9$ علب أبيض.\nالجزء الثاني: يريدان أن يطابق لون خليط يوسف لون خليط أمين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول. نقارن نسبة الأزرق إلى الأبيض في الخليطين.",
+      "statement": "هل $\\dfrac{7}{12} = \\dfrac{5}{9}$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لأنّ $7 \\times 9 \\neq 12 \\times 5$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم، لأنّ الكسرين متقاربان جدًّا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-EYE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكسران اللذان نختبر تساويهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الجداءين المتصالبين ثمّ قارنهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كسران متساويان إذا وفقط إذا تساوى جداءاهما المتصالبان؛ لا نحكم من الفروق ولا من البسطين وحدهما."
+        }
+      ],
+      "feedback": {
+        "correct": "لا، لأنّ $7 \\times 9 = 63$ يختلف عن $12 \\times 5 = 60$ .",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 9 = 63$ و $12 \\times 5 = 60$ .",
+          "الجداءان المتصالبان مختلفان، إذن الكسران غير متساويين."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "قارن $\\dfrac{7}{12}$ و $\\dfrac{5}{9}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{7}{12} = \\dfrac{5}{9}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-EYE"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{7}{12} > \\dfrac{5}{9}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكسران المطلوب مقارنتهما؟ وهل مقاماهما أو بسطاهما متساويان؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسرين بنفس المقام، أو قارن الجداءين المتصالبين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من النتيجة بالطريقة الأخرى."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{7}{12} > \\dfrac{5}{9}$ .",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "المقام المشترك $36$ : $\\dfrac{7}{12} = \\dfrac{21}{36}$ و $\\dfrac{5}{9} = \\dfrac{20}{36}$ .",
+          "إذن $\\dfrac{7}{12} > \\dfrac{5}{9}$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "كم طلقة أزرق يضع يوسف مع $24$ علبة أبيض ليطابق لون أمين؟ أي جد $x$ حيث $\\dfrac{7}{12} = \\dfrac{x}{24}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "value": "19",
+          "id": "MISC-TASAWI-ADDSAME"
+        },
+        {
+          "value": "288/7",
+          "id": "MISC-TASAWI-CROSSWRONG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في أيّ موضع يوجد العدد المجهول؟ وما الكسر الآخر في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كسران متساويان جداءاهما المتصالبان متساويان: اكتب المعادلة المناسبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة كتابة المساواة بعد التعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 14$ لأنّ $7 \\times 24 = 12 \\times x$ .",
+        "incorrect": "كسران متساويان جداءاهما المتصالبان متساويان: اكتب المعادلة بدقّة وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{7}{12} = \\dfrac{x}{24}$ ، إذن $7 \\times 24 = 12 \\times x$ .",
+          "$x = 14$ ."
+        ],
+        "result": "x = 14"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "وإن وضع $18$ علبة أبيض، فكم طلقة يلزم؟ أي جد $x$ حيث $\\dfrac{7}{12} = \\dfrac{x}{18}$ (قد لا يكون العدد صحيحًا).",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "21/2",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-TASAWI-ADDSAME"
+        },
+        {
+          "value": "216/7",
+          "id": "MISC-TASAWI-CROSSWRONG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في أيّ موضع يوجد العدد المجهول؟ وما الكسر الآخر في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كسران متساويان جداءاهما المتصالبان متساويان: اكتب المعادلة المناسبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة كتابة المساواة بعد التعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 21/2$ لأنّ $7 \\times 18 = 12 \\times x$ .",
+        "incorrect": "كسران متساويان جداءاهما المتصالبان متساويان: اكتب المعادلة بدقّة وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{7}{12} = \\dfrac{x}{18}$ ، إذن $7 \\times 18 = 12 \\times x$ .",
+          "$x = 21/2$ ."
+        ],
+        "result": "x = 21/2"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

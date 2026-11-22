@@ -1,0 +1,1008 @@
+/* ── الاحتمالات والإحصاء — le laboratoire des probabilités et statistiques ──
+   Le pupitre sur le bord de départ (à droite en arabe), les graphiques qui
+   prennent tout le reste. Sous 768 px : les graphiques en haut, le pupitre
+   en bas, repliable. Les graphiques sont LTR par nature (un axe de valeurs
+   croissantes va de gauche à droite en mathématiques) ; le pupitre suit la
+   direction de la page. */
+
+/* La barre des sections (shared/LabSectionNav) en haut, puis le cadre de la
+   section : pupitre + scène (SectionFrame.jsx). */
+.sa-ml-ps {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+}
+
+.sa-ml-ps__body {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+@media (min-width: 768px) {
+  .sa-ml-ps__body { flex-direction: row; }
+}
+
+@media (max-width: 479px) {
+  .sa-ml-ps .sa-ml-kit-nav__description { font-size: 0.75rem; padding-bottom: 6px; }
+}
+
+/* ── Le pupitre ────────────────────────────────────────────────────────── */
+
+.sa-ml-ps__panel {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  min-height: 0;
+  max-height: 48%;
+  border-top: 1px solid #e2e8f0;
+  background: #ffffff;
+  font-family: 'Inter', 'Cairo', 'Tajawal', sans-serif;
+}
+
+@media (min-width: 768px) {
+  .sa-ml-ps__panel {
+    flex: 0 0 19rem;
+    max-height: none;
+    border-top: 0;
+    border-inline-end: 1px solid #e2e8f0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .sa-ml-ps__panel { flex-basis: 22rem; }
+}
+
+.sa-ml-ps__panel--collapsed .sa-ml-ps__panel-body { display: none; }
+.sa-ml-ps__panel--collapsed { max-height: none; }
+
+.sa-ml-ps__panel-head {
+  display: flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex: none;
+  padding: 0.5rem 0.75rem 0.375rem;
+}
+
+.sa-ml-ps__collapse { display: inline-flex; }
+@media (min-width: 768px) { .sa-ml-ps__collapse { display: none; } }
+
+.sa-ml-ps__panel-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0 0.75rem 0.875rem;
+}
+
+/* Le titre du pupitre : le nom de la section (la barre du haut dit déjà laquelle est active). */
+.sa-ml-ps__panel-title {
+  margin: 0;
+  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+/* ── Les champs ────────────────────────────────────────────────────────── */
+
+.sa-ml-ps__controls { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.sa-ml-ps__section { display: flex; flex-direction: column; gap: 0.375rem; }
+
+.sa-ml-ps__field { display: flex; flex-direction: column; gap: 0.25rem; }
+
+.sa-ml-ps__field-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.sa-ml-ps__heading {
+  margin: 0;
+  font-family: 'Space Grotesk', 'Cairo', 'Tajawal', sans-serif;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  color: #475569;
+}
+
+.sa-ml-ps__select {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  background: #f8fafc;
+  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f172a;
+  cursor: pointer;
+}
+
+.sa-ml-ps__select:focus { outline: none; border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); background: #ffffff; }
+
+.sa-ml-ps__range {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  padding: 0.625rem;
+  border-radius: 0.75rem;
+  background: #f8fafc;
+}
+
+.sa-ml-ps__bound { display: flex; flex-direction: column; gap: 0.1875rem; }
+.sa-ml-ps__bound--draws { margin-top: 0.5rem; }
+
+.sa-ml-ps__number {
+  width: 6rem;
+  min-height: 2.5rem;
+  padding: 0 0.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f172a;
+  background: #ffffff;
+  text-align: center;
+}
+
+.sa-ml-ps__number:focus { outline: none; border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); }
+.sa-ml-ps__number--invalid { border-color: #fda4af; }
+
+/* ── Le nombre de tirages : des pastilles, pour passer de 10 à 10 000 ──── */
+
+.sa-ml-ps__draws { border: 0; margin: 0; padding: 0; min-width: 0; }
+
+.sa-ml-ps__chips { display: flex; flex-wrap: wrap; gap: 0.3125rem; margin-top: 0.3125rem; }
+
+.sa-ml-ps__chip {
+  min-height: 2.25rem;
+  padding: 0 0.625rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 9999px;
+  background: #ffffff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #475569;
+  cursor: pointer;
+}
+
+.sa-ml-ps__chip--on { border-color: #2563eb; background: #eff6ff; color: #1d4ed8; }
+.sa-ml-ps__chip:focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; }
+
+.sa-ml-ps__actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+.sa-ml-ps__run, .sa-ml-ps__reset {
+  flex: 1 1 auto;
+  justify-content: center;
+  min-height: 2.75rem;
+  gap: 0.375rem;
+}
+
+.sa-ml-ps__reset {
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  background: #ffffff;
+  color: #475569;
+  font-weight: 700;
+}
+
+.sa-ml-ps__reset:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.sa-ml-ps__hint {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #64748b;
+}
+
+.sa-ml-ps__error {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: #be123c;
+}
+
+/* ── Les cases à cocher ────────────────────────────────────────────────── */
+
+.sa-ml-ps__options { display: flex; flex-direction: column; }
+
+.sa-ml-ps__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.5rem;
+  font-size: 0.9375rem;
+  color: #334155;
+  cursor: pointer;
+}
+
+.sa-ml-ps__toggle input { width: 1.125rem; height: 1.125rem; accent-color: #2563eb; }
+.sa-ml-ps__toggle input:focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; }
+
+/* ── La saisie de la série ─────────────────────────────────────────────── */
+
+.sa-ml-ps__dataset { display: flex; flex-direction: column; gap: 0.3125rem; }
+
+.sa-ml-ps__textarea {
+  width: 100%;
+  min-height: 5rem;
+  padding: 0.5rem 0.625rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  background: #ffffff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #0f172a;
+  resize: vertical;
+}
+
+.sa-ml-ps__textarea:focus { outline: none; border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); }
+.sa-ml-ps__textarea--invalid { border-color: #fda4af; }
+
+/* ── Le résumé statistique ─────────────────────────────────────────────── */
+
+.sa-ml-ps__stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.375rem;
+  margin: 0;
+}
+
+.sa-ml-ps__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.0625rem;
+  padding: 0.4375rem 0.5rem;
+  border-radius: 0.625rem;
+  background: #f8fafc;
+}
+
+.sa-ml-ps__stat--strong { background: #eff6ff; }
+
+.sa-ml-ps__stat dt {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3125rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.sa-ml-ps__stat-symbol {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  color: #1d4ed8;
+  unicode-bidi: isolate;
+}
+
+.sa-ml-ps__stat dd {
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: #0f172a;
+  unicode-bidi: isolate;
+}
+
+.sa-ml-ps__stat--strong dd { color: #1d4ed8; }
+
+/* ── La scène : les graphiques ─────────────────────────────────────────── */
+
+.sa-ml-ps__stage {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 12rem;
+  background: #ffffff;
+}
+
+/* L'attribut HTML `dir` ne s'applique PAS aux éléments SVG : sans cette
+   règle, le graphique hérite du `direction: rtl` de la page, et
+   `text-anchor: start` fait courir les légendes vers la GAUCHE (par-dessus
+   les étiquettes d'axe) tandis que `end` sort du cadre à droite. Un axe de
+   valeurs croissantes est LTR par nature ; les textes arabes qu'il porte
+   restent des passages RTL, rendus correctement par l'algorithme bidi. */
+.sa-ml-ps__chart { direction: ltr; }
+
+.sa-ml-ps__scroll {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  padding: 0.875rem 1rem 1.25rem;
+}
+
+.sa-ml-ps__stage-title {
+  margin: 0;
+  font-family: 'Space Grotesk', 'Cairo', 'Tajawal', sans-serif;
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: #0f172a;
+}
+
+/* Un graphique ne déborde jamais : il se met à l'échelle de sa colonne. */
+.sa-ml-ps__chart {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 46rem;
+  overflow: visible;
+  user-select: none;
+}
+
+.sa-ml-ps__chart--convergence { max-width: 46rem; }
+
+.sa-ml-ps__bar { fill: #2563eb; }
+
+/* Le trait théorique : plein, épais, ambre — distinct de la barre par sa
+   FORME autant que par sa couleur (§ 13). */
+.sa-ml-ps__theoretical {
+  stroke: #b45309;
+  stroke-width: 3;
+  stroke-linecap: round;
+  fill: none;
+}
+
+.sa-ml-ps__trajectory {
+  stroke: #2563eb;
+  stroke-width: 2.2;
+  fill: none;
+  stroke-linejoin: round;
+}
+
+.sa-ml-ps__chart-tick, .sa-ml-ps__chart-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  fill: #64748b;
+}
+
+.sa-ml-ps__chart-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  fill: #1d4ed8;
+}
+
+.sa-ml-ps__chart-legend {
+  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif;
+  font-size: 12px;
+  fill: #475569;
+}
+
+.sa-ml-ps__chart-legend--theoretical { fill: #b45309; font-weight: 700; }
+
+/* Sous 768 px le viewBox est étroit (440 unités) ; les textes prennent un
+   corps un peu plus grand pour rester lisibles une fois mis à l'échelle. */
+@media (max-width: 767px) {
+  .sa-ml-ps__chart-tick, .sa-ml-ps__chart-label, .sa-ml-ps__chart-value { font-size: 13px; }
+  .sa-ml-ps__chart-legend, .sa-ml-ps__marker-label { font-size: 14px; }
+}
+
+/* La moyenne : trait plein. La médiane : pointillé. Deux repères qu'on
+   distingue sans voir la couleur. */
+.sa-ml-ps__mean-line { stroke: #dc2626; stroke-width: 2.5; }
+.sa-ml-ps__median-line { stroke: #7c3aed; stroke-width: 2.5; stroke-dasharray: 7 4; }
+
+.sa-ml-ps__marker-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.sa-ml-ps__marker-label--mean { fill: #dc2626; }
+.sa-ml-ps__marker-label--median { fill: #7c3aed; }
+
+.sa-ml-ps__empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 9rem;
+  margin: 0;
+  padding: 1rem;
+  border: 2px dashed #e2e8f0;
+  border-radius: 1rem;
+  text-align: center;
+  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif;
+  font-size: 0.9375rem;
+  color: #94a3b8;
+}
+
+/* ── La table d'expérience : le dé, les dés, la pièce ─────────────────── */
+
+/* Un bloc de hauteur fixe qui accueille le canevas three.js ; la caméra est
+   cadrée pour que le vol le plus haut et deux dés écartés y tiennent, quel
+   que soit le format. La scène est LTR par nature (c'est une table). */
+.sa-ml-ps__dice {
+  position: relative;
+  /* Enfant d'une colonne flex qui déborde : sans `flex: none` il se comprimerait à quelques pixels. */
+  flex: none;
+  width: 100%;
+  max-width: 46rem;
+  height: 15rem;
+  border-radius: 1rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  overflow: hidden;
+  direction: ltr;
+}
+
+@media (max-width: 767px) {
+  .sa-ml-ps__dice { height: 11rem; }
+}
+
+.sa-ml-ps__dice-canvas { display: block; width: 100% !important; height: 100% !important; }
+
+.sa-ml-ps__dice-unsupported {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 1rem 2rem;
+  text-align: center;
+  direction: rtl;
+  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif;
+  font-size: 0.9375rem;
+  color: #475569;
+}
+
+/* Le résultat, en grand, sous la table : ce que l'élève vient de voir tomber. */
+.sa-ml-ps__result {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.375rem 0.625rem;
+  margin: 0;
+  min-height: 2.25rem;
+  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #475569;
+}
+
+.sa-ml-ps__result-value {
+  font-family: 'JetBrains Mono', 'Cairo', monospace;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  unicode-bidi: isolate;
+}
+
+.sa-ml-ps__result--pending { color: #94a3b8; font-style: italic; }
+
+/* ── La lecture en clair : l'issue suivie, et la question ──────────────── */
+
+.sa-ml-ps__tracked {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.375rem 0.625rem;
+  margin: 0;
+  padding: 0.625rem 0.75rem;
+  border-radius: 0.875rem;
+  background: #f8fafc;
+  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif;
+  font-size: 0.9375rem;
+  color: #475569;
+}
+
+.sa-ml-ps__tracked-name { font-weight: 700; color: #0f172a; }
+
+.sa-ml-ps__tracked-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1d4ed8;
+  unicode-bidi: isolate;
+}
+
+.sa-ml-ps__tracked-vs { font-size: 0.8125rem; color: #94a3b8; }
+
+.sa-ml-ps__tracked-theoretical {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: #b45309;
+  unicode-bidi: isolate;
+}
+
+.sa-ml-ps__convergence { display: flex; flex-direction: column; gap: 0.375rem; }
+
+.sa-ml-ps__prompt {
+  margin: 0;
+  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #64748b;
+}
+
+/* ── Le tableau, second par rapport au graphique ───────────────────────── */
+
+.sa-ml-ps__table-wrap { max-width: 46rem; overflow: visible; }
+
+.sa-ml-ps__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif;
+  font-size: 0.875rem;
+}
+
+.sa-ml-ps__table-caption {
+  padding-bottom: 0.375rem;
+  text-align: start;
+  font-size: 0.8125rem;
+  color: #64748b;
+}
+
+.sa-ml-ps__table th, .sa-ml-ps__table td {
+  padding: 0.375rem 0.625rem;
+  text-align: start;
+  border-bottom: 1px solid #f1f5f9;
+  white-space: nowrap;
+}
+
+.sa-ml-ps__table thead th {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.sa-ml-ps__table tbody th {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.sa-ml-ps__fraction {
+  display: inline-block;
+  margin-inline-end: 0.375rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  color: #b45309;
+  unicode-bidi: isolate;
+}
+
+.sa-ml-ps__percent {
+  font-family: 'JetBrains Mono', monospace;
+  color: #64748b;
+  unicode-bidi: isolate;
+}
+
+.sa-ml-ps__percent--strong { font-weight: 700; color: #1d4ed8; }
+
+/* ══ V2 — الإحصاء الوصفي, شجرة الاحتمالات, التوزيع الطبيعي ════════════════
+   Palette de la plateforme via les jetons du kit (--sa-kit-*) : vert = ce que
+   l'élève touche et ce qui est juste, orange = ce qui est mis en évidence.
+   Surfaces claires uniquement. */
+
+.sa-ml-ps__small-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  min-height: 2.5rem;
+  padding: 0 0.75rem;
+  border: 1px solid var(--sa-kit-line, #e2e8f0);
+  border-radius: 0.75rem;
+  background: #ffffff;
+  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--sa-kit-primary, #008443);
+  cursor: pointer;
+}
+
+.sa-ml-ps__small-btn:hover:not(:disabled) { background: var(--sa-kit-primary-soft, #e6f4ec); border-color: var(--sa-kit-primary, #008443); }
+.sa-ml-ps__small-btn--accent { color: #c2410c; }
+.sa-ml-ps__small-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.sa-ml-ps__icon-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--sa-kit-line, #e2e8f0);
+  border-radius: 0.625rem;
+  background: #ffffff;
+  color: #334155;
+  cursor: pointer;
+}
+
+.sa-ml-ps__icon-btn:hover:not(:disabled) { border-color: var(--sa-kit-primary, #008443); color: var(--sa-kit-primary, #008443); }
+.sa-ml-ps__icon-btn--danger:hover:not(:disabled) { border-color: #be123c; color: #be123c; }
+.sa-ml-ps__icon-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.sa-ml-ps__small-btn:focus-visible,
+.sa-ml-ps__icon-btn:focus-visible,
+.sa-ml-ps__chart-type:focus-visible,
+.sa-ml-ps__value-chip button:focus-visible,
+.sa-ml-ps__strip-item:focus-visible,
+.sa-ml-ps__table--freq tbody tr:focus-visible {
+  outline: 3px solid rgba(243, 109, 33, 0.55);
+  outline-offset: 2px;
+}
+
+.sa-ml-ps__bar-glyph { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 1rem; }
+.sa-ml-ps__inline-value { font-family: 'JetBrains Mono', monospace; font-weight: 700; unicode-bidi: isolate; margin-inline-start: 0.25rem; }
+
+/* ── Le choix du graphique / de la question ───────────────────────────── */
+
+.sa-ml-ps__chart-types { display: flex; flex-wrap: wrap; gap: 0.375rem; }
+
+.sa-ml-ps__chart-type {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  min-height: 2.5rem;
+  padding: 0 0.75rem;
+  border: 1px solid var(--sa-kit-line, #e2e8f0);
+  border-radius: 999px;
+  background: #ffffff;
+  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+}
+
+.sa-ml-ps__chart-type.is-active {
+  border-color: var(--sa-kit-primary, #008443);
+  background: var(--sa-kit-primary-soft, #e6f4ec);
+  color: var(--sa-kit-primary, #008443);
+  font-weight: 700;
+}
+
+.sa-ml-ps__chart-type:disabled { opacity: 0.45; cursor: not-allowed; text-decoration: line-through; }
+
+/* ── Les pastilles de valeurs ──────────────────────────────────────────── */
+
+.sa-ml-ps__chips-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3125rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* max-height retiré : pas de défilement interne */
+  overflow: visible;
+}
+
+.sa-ml-ps__value-chip {
+  display: inline-flex;
+  align-items: stretch;
+  border: 1px solid var(--sa-kit-line, #e2e8f0);
+  border-radius: 999px;
+  background: #f8fafc;
+  overflow: hidden;
+}
+
+.sa-ml-ps__value-chip.is-invalid { border-color: #fda4af; background: #fff1f2; }
+
+.sa-ml-ps__value-chip-text,
+.sa-ml-ps__value-chip-remove {
+  min-height: 2.5rem;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.sa-ml-ps__value-chip-text {
+  padding: 0 0.25rem 0 0.625rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.sa-ml-ps__value-chip.is-invalid .sa-ml-ps__value-chip-text { color: #be123c; text-decoration: wavy underline; }
+.sa-ml-ps__value-chip-remove { display: grid; place-items: center; width: 2rem; color: #64748b; }
+.sa-ml-ps__value-chip-remove:hover { color: #be123c; }
+
+.sa-ml-ps__chip-input {
+  width: 6rem;
+  min-height: 2.5rem;
+  padding: 0 0.5rem;
+  border: 1px solid var(--sa-kit-primary, #008443);
+  border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.sa-ml-ps__chip-add { display: flex; gap: 0.375rem; align-items: center; margin-top: 0.25rem; }
+.sa-ml-ps__chip-add .sa-ml-ps__chip-input { border-color: var(--sa-kit-line, #e2e8f0); }
+
+/* ── La série ordonnée ─────────────────────────────────────────────────── */
+
+.sa-ml-ps__strip-block { display: flex; flex-direction: column; gap: 0.375rem; max-width: 46rem; }
+
+.sa-ml-ps__strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sa-ml-ps__strip-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 2.5rem;
+  padding: 0.125rem 0.25rem 0.25rem;
+  border: 1px solid var(--sa-kit-line, #e2e8f0);
+  border-radius: 0.5rem;
+  background: #ffffff;
+  cursor: default;
+}
+
+.sa-ml-ps__strip-item.is-marked { border-color: var(--sa-kit-primary, #008443); background: var(--sa-kit-primary-soft, #e6f4ec); }
+.sa-ml-ps__strip-item.is-highlighted { border-color: var(--sa-kit-accent, #f36d21); background: var(--sa-kit-accent-soft, #fdeee4); }
+.sa-ml-ps__strip-rank { font-size: 0.625rem; color: #94a3b8; font-family: 'JetBrains Mono', monospace; }
+.sa-ml-ps__strip-value { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 0.875rem; color: #0f172a; }
+.sa-ml-ps__strip-tags { font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; font-weight: 700; color: var(--sa-kit-primary, #008443); }
+
+/* ── Le résumé V2 : douze indicateurs, en grille ───────────────────────── */
+
+@media (min-width: 560px) {
+  .sa-ml-ps__stage .sa-ml-ps__stats { grid-template-columns: repeat(4, minmax(0, 1fr)); max-width: 46rem; }
+}
+
+.sa-ml-ps__explanations { display: flex; flex-direction: column; gap: 0.375rem; max-width: 46rem; }
+.sa-ml-ps__explanations p { margin: 0.25rem 0; }
+
+.sa-ml-ps__formula {
+  max-width: 100%;
+  overflow: visible;
+  overflow-y: hidden;
+  padding: 0.25rem 0;
+  text-align: left;
+}
+
+/* ── Le lien tableau ↔ dessin ──────────────────────────────────────────── */
+
+.sa-ml-ps__table--freq tbody tr { cursor: default; }
+.sa-ml-ps__table tbody tr.is-highlighted,
+.sa-ml-ps__table--freq tbody tr:focus-visible { background: var(--sa-kit-accent-soft, #fdeee4); }
+.sa-ml-ps__table tfoot th, .sa-ml-ps__table tfoot td { font-weight: 700; color: #334155; border-top: 1px solid #e2e8f0; }
+
+g.is-highlighted .sa-ml-ps__bar { fill: var(--sa-kit-accent, #f36d21); }
+.sa-ml-ps__chart-block { max-width: 46rem; }
+
+/* ── Diagramme circulaire ──────────────────────────────────────────────── */
+
+.sa-ml-ps__pie { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.25rem; max-width: 46rem; }
+.sa-ml-ps__chart--pie { max-width: 20rem; }
+.sa-ml-ps__pie g { transition: transform 0.2s ease; }
+.sa-ml-ps__pie g.is-highlighted path { stroke: #1a1a1a; stroke-width: 2.5; }
+.sa-ml-ps__pie-label { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; fill: #ffffff; paint-order: stroke; stroke: rgba(0, 0, 0, 0.35); stroke-width: 2px; }
+.sa-ml-ps__pie-label--out { fill: #1a1a1a; stroke: #ffffff; stroke-width: 3px; }
+
+.sa-ml-ps__legend { display: flex; flex-direction: column; gap: 0.25rem; margin: 0; padding: 0; list-style: none; }
+.sa-ml-ps__legend li { display: flex; align-items: center; gap: 0.5rem; padding: 0.125rem 0.375rem; border-radius: 0.5rem; }
+.sa-ml-ps__legend li.is-highlighted { background: var(--sa-kit-accent-soft, #fdeee4); }
+.sa-ml-ps__swatch { width: 0.875rem; height: 0.875rem; border-radius: 0.25rem; flex: none; }
+.sa-ml-ps__legend-value { font-family: 'JetBrains Mono', monospace; font-weight: 700; unicode-bidi: isolate; }
+.sa-ml-ps__legend-meta { font-family: 'JetBrains Mono', monospace; font-size: 0.8125rem; color: #64748b; unicode-bidi: isolate; }
+
+/* ── Boîte à moustaches, effectifs cumulés ─────────────────────────────── */
+
+.sa-ml-ps__box-body { fill: var(--sa-kit-primary-soft, #e6f4ec); stroke: var(--sa-kit-primary, #008443); stroke-width: 2; }
+.sa-ml-ps__box-whisker { stroke: #334155; stroke-width: 2; }
+.sa-ml-ps__box-median { stroke: #7c3aed; stroke-width: 3; stroke-dasharray: 6 3; }
+.sa-ml-ps__box-mean { fill: #dc2626; }
+.sa-ml-ps__box-name { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; fill: #334155; }
+
+.sa-ml-ps__cumulative { fill: none; stroke: var(--sa-kit-primary, #008443); stroke-width: 2.5; stroke-linejoin: round; }
+.sa-ml-ps__point { fill: #ffffff; stroke: var(--sa-kit-primary, #008443); stroke-width: 2; transition: r 0.15s ease; }
+.sa-ml-ps__point.is-highlighted { fill: var(--sa-kit-accent, #f36d21); stroke: var(--sa-kit-accent, #f36d21); }
+.sa-ml-ps__half-line { stroke: #94a3b8; stroke-width: 1.5; stroke-dasharray: 5 4; }
+
+@media (max-width: 767px) {
+  .sa-ml-ps__box-name { font-size: 14px; }
+  .sa-ml-ps__pie-label { font-size: 15px; }
+}
+
+/* ── شجرة الاحتمالات ──────────────────────────────────────────────────── */
+
+.sa-ml-ps__tree-scroll { max-width: 46rem; }
+.sa-ml-ps-tree { max-width: 46rem; }
+
+.sa-ml-ps-tree__edge {
+  stroke: #94a3b8;
+  stroke-width: 2;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+  animation: sa-ml-ps-grow 0.45s ease both;
+}
+
+.sa-ml-ps-tree__hit { stroke: transparent; stroke-width: 16; cursor: pointer; }
+
+.sa-ml-ps-tree__branch.is-secondary .sa-ml-ps-tree__edge { stroke: var(--sa-kit-primary, #008443); stroke-width: 2.5; stroke-dasharray: 0.04 0.02; animation: none; }
+.sa-ml-ps-tree__branch.is-primary .sa-ml-ps-tree__edge {
+  stroke: var(--sa-kit-accent, #f36d21);
+  stroke-width: 4;
+  stroke-dasharray: 0.06 0.03;
+  animation: sa-ml-ps-flow 1.2s linear infinite;
+}
+
+.sa-ml-ps-tree__p {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  fill: #334155;
+  paint-order: stroke;
+  stroke: #ffffff;
+  stroke-width: 4px;
+}
+
+.sa-ml-ps-tree__p.is-invalid { fill: #be123c; text-decoration: underline; }
+.sa-ml-ps-tree__branch.is-primary .sa-ml-ps-tree__p { fill: #c2410c; }
+
+.sa-ml-ps-tree__node, .sa-ml-ps-tree__root { cursor: pointer; }
+.sa-ml-ps-tree__node:focus, .sa-ml-ps-tree__root:focus { outline: none; }
+.sa-ml-ps-tree__pill { fill: #ffffff; stroke: #64748b; stroke-width: 1.5; transition: stroke 0.15s ease, fill 0.15s ease; }
+.sa-ml-ps-tree__node:hover .sa-ml-ps-tree__pill { stroke: var(--sa-kit-primary, #008443); }
+.sa-ml-ps-tree__node.is-secondary .sa-ml-ps-tree__pill { stroke: var(--sa-kit-primary, #008443); fill: var(--sa-kit-primary-soft, #e6f4ec); }
+.sa-ml-ps-tree__node.is-primary .sa-ml-ps-tree__pill { stroke: var(--sa-kit-accent, #f36d21); stroke-width: 2.5; fill: var(--sa-kit-accent-soft, #fdeee4); }
+.sa-ml-ps-tree__node.is-selected .sa-ml-ps-tree__pill,
+.sa-ml-ps-tree__root.is-selected circle { stroke: var(--sa-kit-primary, #008443); stroke-width: 3; stroke-dasharray: 4 2; }
+.sa-ml-ps-tree__node:focus-visible .sa-ml-ps-tree__pill,
+.sa-ml-ps-tree__root:focus-visible circle { stroke: var(--sa-kit-accent, #f36d21); stroke-width: 4; }
+.sa-ml-ps-tree__root circle { fill: #1a1a1a; stroke: #1a1a1a; stroke-width: 1; }
+.sa-ml-ps-tree__label { font-family: 'JetBrains Mono', 'Cairo', monospace; font-size: 13px; font-weight: 700; fill: #1a1a1a; pointer-events: none; }
+.sa-ml-ps-tree__bar { stroke: #1a1a1a; stroke-width: 1.6; pointer-events: none; }
+.sa-ml-ps-tree__result { font-family: 'JetBrains Mono', monospace; font-size: 12.5px; font-weight: 700; fill: var(--sa-kit-primary, #008443); }
+.sa-ml-ps-tree__result.is-pending { fill: #94a3b8; }
+.sa-ml-ps-tree__node.is-primary .sa-ml-ps-tree__result { fill: #c2410c; }
+.sa-ml-ps-tree__issue path { fill: #fbbf24; stroke: #b45309; stroke-width: 1; }
+.sa-ml-ps-tree__issue text { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 800; fill: #1a1a1a; }
+
+@media (max-width: 767px) {
+  .sa-ml-ps-tree__label { font-size: 14px; }
+  .sa-ml-ps-tree__p, .sa-ml-ps-tree__result { font-size: 13px; }
+}
+
+@keyframes sa-ml-ps-grow { from { stroke-dasharray: 1; stroke-dashoffset: 1; } to { stroke-dasharray: 1; stroke-dashoffset: 0; } }
+@keyframes sa-ml-ps-flow { from { stroke-dashoffset: 0.09; } to { stroke-dashoffset: 0; } }
+
+.sa-ml-ps__tree-actions { display: flex; flex-wrap: wrap; gap: 0.375rem; }
+.sa-ml-ps__tree-branches { display: flex; flex-direction: column; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+
+.sa-ml-ps__tree-branch {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem;
+  border: 1px solid var(--sa-kit-line, #e2e8f0);
+  border-radius: 0.75rem;
+  background: #f8fafc;
+}
+
+.sa-ml-ps__tree-fields { display: flex; gap: 0.375rem; flex: 1 1 10rem; min-width: 0; }
+.sa-ml-ps__tree-branch-actions { display: flex; gap: 0.25rem; }
+.sa-ml-ps__tree-branch .sa-ml-ps__error { flex-basis: 100%; }
+
+.sa-ml-ps__tree-input {
+  min-width: 0;
+  min-height: 2.5rem;
+  padding: 0 0.5rem;
+  border: 1px solid var(--sa-kit-line, #e2e8f0);
+  border-radius: 0.5rem;
+  background: #ffffff;
+  font-family: 'JetBrains Mono', 'Cairo', monospace;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.sa-ml-ps__tree-input--label { flex: 1 1 4.5rem; }
+.sa-ml-ps__tree-input--p { flex: 1 1 5rem; text-align: center; }
+.sa-ml-ps__tree-input:focus { outline: none; border-color: var(--sa-kit-primary, #008443); box-shadow: 0 0 0 3px rgba(0, 132, 67, 0.18); }
+
+.sa-ml-ps__event-picker { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0.5rem; border: 1px solid var(--sa-kit-line, #e2e8f0); border-radius: 0.75rem; }
+.sa-ml-ps__event-field { display: flex; flex-direction: column; gap: 0.125rem; flex: 1 1 6rem; font-size: 0.8125rem; color: #475569; }
+
+.sa-ml-ps__independence {
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  border-inline-start: 4px solid var(--sa-kit-primary, #008443);
+  border-radius: 0.5rem;
+  background: #f8fafc;
+  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: #1a1a1a;
+  max-width: 46rem;
+}
+
+/* ── التوزيع الطبيعي ──────────────────────────────────────────────────── */
+
+.sa-ml-ps__param { display: flex; flex-direction: column; gap: 0.25rem; }
+.sa-ml-ps__param-head { display: flex; align-items: baseline; gap: 0.375rem; font-size: 0.875rem; font-weight: 600; color: #334155; }
+.sa-ml-ps__param-row { display: flex; align-items: center; gap: 0.5rem; }
+.sa-ml-ps__slider { flex: 1 1 auto; min-width: 0; min-height: 2.5rem; accent-color: var(--sa-kit-primary, #008443); direction: ltr; }
+.sa-ml-ps__param .sa-ml-ps__number { width: 6.5rem; flex: none; }
+
+.sa-ml-ps__normal-wrap { max-width: 46rem; }
+.sa-ml-ps__normal-line { fill: none; stroke: #1a1a1a; stroke-width: 2.5; stroke-linejoin: round; }
+.sa-ml-ps__normal-area { fill: rgba(0, 132, 67, 0.22); transition: d 0.3s ease; }
+.sa-ml-ps__normal-area-hatch { transition: d 0.3s ease; }
+.sa-ml-ps__normal-wrap.is-still .sa-ml-ps__normal-area,
+.sa-ml-ps__normal-wrap.is-still .sa-ml-ps__normal-area-hatch { transition: none; }
+.sa-ml-ps__normal-mu { stroke: #1a1a1a; stroke-width: 1.5; }
+.sa-ml-ps__normal-tick { stroke: #64748b; stroke-width: 1.5; }
+.sa-ml-ps__normal-sigma-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: #94a3b8; }
+.sa-ml-ps__normal-bound { stroke: var(--sa-kit-accent, #f36d21); stroke-width: 2.5; stroke-dasharray: 6 3; }
+.sa-ml-ps__normal-bound-label { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; fill: #c2410c; paint-order: stroke; stroke: #ffffff; stroke-width: 3px; }
+
+.sa-ml-ps__normal-result {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.375rem 0.75rem;
+  margin: 0;
+  padding: 0.625rem 0.75rem;
+  border-radius: 0.875rem;
+  background: var(--sa-kit-primary-soft, #e6f4ec);
+  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif;
+  color: #065f46;
+  max-width: 46rem;
+}
+
+.sa-ml-ps__normal-result-value { font-family: 'JetBrains Mono', monospace; font-size: 1.25rem; font-weight: 700; unicode-bidi: isolate; }
+
+/* Le déroulé (2026-09-30) : avant le dernier frame, le bandeau pose la QUESTION —
+   neutre, pas le vert d'un résultat ; l'aire et une feuille écrite apparaissent en fondu. */
+.sa-ml-ps__normal-result:not(.is-answered) { background: #f8fafc; color: #334155; border: 1px dashed #cbd5e1; }
+.sa-ml-ps__normal-result:not(.is-answered) .sa-ml-ps__normal-result-value { font-family: inherit; font-size: 1.05rem; }
+[data-ml-ps-normal-area] { animation: sa-ml-ps-fade 420ms ease-out; }
+.sa-ml-ps-tree__result.is-written { animation: sa-ml-ps-fade 420ms ease-out; }
+.sa-ml-ps__table-pending { color: #94a3b8; text-align: center; font-size: 0.8125rem; }
+.sa-ml-ps__derivation { display: flex; flex-direction: column; gap: 0.5rem; margin: 0.5rem 0; }
+@keyframes sa-ml-ps-fade { from { opacity: 0; } to { opacity: 1; } }
+
+@media (max-width: 767px) {
+  .sa-ml-ps__normal-sigma-label { font-size: 12px; }
+  .sa-ml-ps__normal-bound-label { font-size: 13px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sa-ml-ps-tree__edge,
+  .sa-ml-ps-tree__branch.is-primary .sa-ml-ps-tree__edge { animation: none; }
+  .sa-ml-ps__normal-area, .sa-ml-ps__normal-area-hatch, .sa-ml-ps__pie g, .sa-ml-ps__point { transition: none; }
+  [data-ml-ps-normal-area], .sa-ml-ps-tree__result.is-written { animation: none; }
+}
+
+/* Pas de barre de défilement DANS un élément (demande de la propriétaire,
+   2026-09-30) : formules, résultats, tableaux, arbres passent à la ligne ou
+   s'étendent ; seule la scène — l'écran de l'outil — défile. */
+
+/* ── Téléphone : UN seul défilement, celui de l'écran ──────────────────────
+   Sous 768 px, plus de scène ni de panneau qui défilent chacun dans leur
+   boîte : l'outil entier devient une colonne qui défile (scène d'abord), et
+   les barres « الحل خطوة بخطوة » restent collées en haut de l'écran. */
+@media (max-width: 767px) {
+  .sa-ml-ps { overflow-y: auto; overflow-x: hidden; }
+  .sa-ml-ps__body { flex: none; min-height: auto; }
+  .sa-ml-ps__panel { flex: none; max-height: none; }
+  .sa-ml-ps__panel-body { overflow: visible; }
+  .sa-ml-ps__stage { flex: none; min-height: 0; }
+  .sa-ml-ps__scroll { position: static; overflow: visible; }
+}

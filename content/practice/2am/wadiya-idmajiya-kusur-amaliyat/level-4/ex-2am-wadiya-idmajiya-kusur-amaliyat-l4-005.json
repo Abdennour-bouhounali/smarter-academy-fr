@@ -1,0 +1,254 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-kusur-amaliyat-l4-005",
+  "lessonCode": "wadiya-idmajiya-kusur-amaliyat",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — ثمن المتر المربّع : حصر",
+    "estimatedMinutes": 10,
+    "tags": [
+      "المساحة",
+      "ثمن المتر المربّع",
+      "حصر حاصل قسمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "06"
+    }
+  },
+  "statement": {
+    "content": "اشترى مستثمر قطعة أرض مستطيلة طولها $16$ m وعرضها $11$ m بمبلغ $560000$ DA ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب مساحة القطعة بالمتر المربّع .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "176",
+      "misconceptionSignatures": [
+        {
+          "value": "54",
+          "id": "MISC-SYN-KASR2-PERIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المستطيل : ما العمليّة التي تعطي مساحته ؟ وما التي تعطي محيطه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المساحة = الطول × العرض ، والمحيط = 2 × (الطول + العرض) ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى الوحدة : المساحة بالمتر المربّع والمحيط بالمتر ."
+        }
+      ],
+      "feedback": {
+        "correct": "$176\\,\\mathrm{m}^2$ .",
+        "incorrect": "المساحة جداء البعدين والمحيط مجموع الأضلاع الأربعة : لا تخلط بينهما وانتبه إلى الوحدة ."
+      },
+      "solution": {
+        "lines": [
+          "$16 \\times 11 = 176$ ، أي $176\\,\\mathrm{m}^2$ ."
+        ],
+        "result": "176\\,\\mathrm{m}^2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "ثمن المتر المربّع هو $\\dfrac{560000}{176}$ DA . أعط القيمة المقرّبة إلى $0{,}01$ بالنقصان لهذا الثمن .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "3181.81",
+      "misconceptionSignatures": [
+        {
+          "value": "3181.82",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "3181.818",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم العدد على المقسوم عليه حتى الرتبة المطلوبة بعد الفاصلة ثمّ ما يليها ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أوقف القسمة عند الرتبة المطلوبة : بالنقصان نُبقي الأرقام كما هي ، وبالزيادة نزيد وحدة على آخر رقم ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا نقرّب إلى الأقرب : القيمة بالنقصان لا تتجاوز الحاصل والقيمة بالزيادة تتجاوزه ."
+        }
+      ],
+      "feedback": {
+        "correct": "$3181{,}81$ .",
+        "incorrect": "أنجز القسمة بعد الفاصلة وتوقّف عند الرتبة المطلوبة : بالنقصان دون تغيير آخر رقم ، وبالزيادة بإضافة وحدة إلى آخر رقم ."
+      },
+      "solution": {
+        "lines": [
+          "بإنجاز القسمة حتى رقمين بعد الفاصلة ثمّ ما يليه : $560000 \\div 176 = 3181{,}818\\ldots$ .",
+          "القيمة المقرّبة إلى $0{,}01$ بالنقصان : $3181{,}81$ ."
+        ],
+        "result": "3181{,}81"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "وأعط القيمة المقرّبة إلى $0{,}01$ بالزيادة .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "3181.82",
+      "misconceptionSignatures": [
+        {
+          "value": "3181.81",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "3181.819",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم العدد على المقسوم عليه حتى الرتبة المطلوبة بعد الفاصلة ثمّ ما يليها ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أوقف القسمة عند الرتبة المطلوبة : بالنقصان نُبقي الأرقام كما هي ، وبالزيادة نزيد وحدة على آخر رقم ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا نقرّب إلى الأقرب : القيمة بالنقصان لا تتجاوز الحاصل والقيمة بالزيادة تتجاوزه ."
+        }
+      ],
+      "feedback": {
+        "correct": "$3181{,}82$ .",
+        "incorrect": "أنجز القسمة بعد الفاصلة وتوقّف عند الرتبة المطلوبة : بالنقصان دون تغيير آخر رقم ، وبالزيادة بإضافة وحدة إلى آخر رقم ."
+      },
+      "solution": {
+        "lines": [
+          "بإنجاز القسمة حتى رقمين بعد الفاصلة ثمّ ما يليه : $560000 \\div 176 = 3181{,}818\\ldots$ .",
+          "القيمة المقرّبة إلى $0{,}01$ بالزيادة : $3181{,}82$ ."
+        ],
+        "result": "3181{,}82"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "اختر الحصر الصحيح للحاصل $\\dfrac{560000}{176}$ إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3181{,}82 < \\dfrac{560000}{176} < 3181{,}83$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        },
+        {
+          "id": "B",
+          "content": "$3181{,}81 < \\dfrac{560000}{176} < 3181{,}82$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$3181{,}8 < \\dfrac{560000}{176} < 3181{,}81$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحصر إلى الرتبة المطلوبة : عددان متتاليان في هذه الرتبة ، الأوّل لا يتجاوز الحاصل والثاني يتجاوزه ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة حتى الرتبة المطلوبة ثمّ ابدأ بالقيمة بالنقصان ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب طرفي الحصر في المقسوم عليه وقارن بالمقسوم للتأكّد ."
+        }
+      ],
+      "feedback": {
+        "correct": "$3181{,}81 < \\dfrac{560000}{176} < 3181{,}82$ .",
+        "incorrect": "أنجز القسمة بعد الفاصلة وتوقّف عند الرتبة المطلوبة : بالنقصان دون تغيير آخر رقم ، وبالزيادة بإضافة وحدة إلى آخر رقم ."
+      },
+      "solution": {
+        "lines": [
+          "$560000 \\div 176 = 3181{,}818\\ldots$ .",
+          "$3181{,}81 < \\dfrac{560000}{176} < 3181{,}82$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

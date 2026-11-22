@@ -1,0 +1,139 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muthallathat-l2-003",
+  "lessonCode": "wadiya-idmajiya-muthallathat",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2013 — الطريق الصاعد إلى قلعة بني حمّاد",
+    "estimatedMinutes": 5,
+    "tags": [
+      "الظل",
+      "الآلة الحاسبة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-muthallathat_P3",
+      "modelledOn": "BEM 2013 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2013",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "يصعد مقطع مستقيم من الطريق المؤدّي إلى قلعة بني حمّاد بالمسيلة ارتفاعا قدره $45\\,\\mathrm{m}$ ، والمسافة الأفقية التي يقطعها هذا المقطع $300\\,\\mathrm{m}$ . نسمّي $\\alpha$ قيس زاوية ميل الطريق على الأفق. يرتاد الزوّار هذا الطريق ليتعرّفوا على تاريخ وطنهم."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $\\tan\\alpha$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري",
+      "expectedAnswer": "3/20",
+      "misconceptionSignatures": [
+        {
+          "value": "20/3",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم مثلثا قائما: المسافة الأفقية، الارتفاع، والطريق وترا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الارتفاع مقابل للزاوية $\\alpha$ والمسافة الأفقية مجاورة لها."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan\\alpha = \\dfrac{45}{300} = \\dfrac{3}{20} = 0{,}15$ .",
+        "incorrect": "في الظل: المقابل (الارتفاع) في البسط والمجاور (المسافة الأفقية) في المقام."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث القائم الذي يمثّل المقطع: $\\tan\\alpha = \\dfrac{45}{300}$"
+        ],
+        "result": "\\tan\\alpha = \\dfrac{3}{20} = 0{,}15"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج قيس الزاوية $\\alpha$ بالتدوير إلى الوحدة من الدرجة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: القيس بالدرجة مدوّرا إلى الوحدة",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-MUTH-TADWIR-BATR"
+        },
+        {
+          "value": "0.15",
+          "id": "MISC-MUTH-NISBA-BADAL-QAYS"
+        },
+        {
+          "value": "81",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نعرف ظل الزاوية ونبحث عن قيسها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل اللمسة العكسية للنسبة في آلة حاسبة مبرمجة على الدرجة، ثم دوّر في آخر الحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\alpha \\approx 8{,}53^{\\circ}$ ، أي $9^{\\circ}$ .",
+        "incorrect": "التدوير ليس بترا، و $0{,}15$ ظل الزاوية لا قيسها."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan\\alpha = 0{,}15$",
+          "باستعمال الآلة الحاسبة (اللمسة العكسية للظل): $\\alpha \\approx 8{,}5308^{\\circ}$"
+        ],
+        "result": "\\alpha \\approx 9^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

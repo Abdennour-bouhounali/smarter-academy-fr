@@ -1,0 +1,202 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l2-002",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 2,
+  "metadata": {
+    "title": "مساواة لا تعبّر عن قسمة إقليدية",
+    "estimatedMinutes": 6,
+    "tags": [
+      "شرط الباقي",
+      "مساواة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-16",
+      "page": 45,
+      "section": "أتمرّن",
+      "number": 16
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر المساويات الثلاث الآتية، وكلها صحيحة: $1500 = 35 \\times 42 + 30$ ؛ $1500 = 28 \\times 50 + 100$ ؛ $1500 = 37 \\times 40 + 20$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "إحدى هذه المساويات لا تعبّر عن أيّ قسمة إقليدية. حدّدها.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$1500 = 35 \\times 42 + 30$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-QIRAA"
+        },
+        {
+          "id": "B",
+          "content": "$1500 = 28 \\times 50 + 100$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$1500 = 37 \\times 40 + 20$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-QIRAA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في كل مساواة، قارن العدد المضاف بالعددين المضروبين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تعبّر المساواة عن قسمة إقليدية إذا كان الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$100 > 28$ و $100 > 50$: لا تعبّر عن القسمة على 28 ولا على 50.",
+        "incorrect": "ابحث عن المساواة التي يكون فيها العدد المضاف أكبر من العددين المضروبين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$30 < 35$ و $30 < 42$ ؛ $20 < 37$ و $20 < 40$.",
+          "$100 > 28$ و $100 > 50$ ، إذن المساواة $1500 = 28 \\times 50 + 100$ لا تعبّر عن قسمة إقليدية."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب حاصل القسمة الإقليدية للعدد 1500 على 28.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "53",
+      "misconceptionSignatures": [
+        {
+          "value": "50",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "16",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "52",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "54",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 1500 من 28 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 28 دون أن نتجاوز 1500."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$1500 = 28 \\times 53 + 16$ و $16 < 28$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 28 فلا يتجاوز الجداء 1500، والباقي عندئذ أصغر من 28."
+      },
+      "solution": {
+        "lines": [
+          "$28 \\times 53 = 1484$ و $28 \\times 54 = 1512$",
+          "$1484 \\le 1500 < 1512$ ، إذن الحاصل هو 53."
+        ],
+        "result": "q = 53"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب باقيها.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "16",
+      "misconceptionSignatures": [
+        {
+          "value": "53",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "44",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 1500."
+        }
+      ],
+      "feedback": {
+        "correct": "$1500 - 28 \\times 53 = 1500 - 1484 = 16$ ، و $16 < 28$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 28."
+      },
+      "solution": {
+        "lines": [
+          "$1500 = 28 \\times 53 + 16$",
+          "$16 < 28$ ، إذن الباقي هو 16."
+        ],
+        "result": "r = 16"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

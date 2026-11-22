@@ -1,0 +1,191 @@
+{
+  "id": "ex-1am-bahth-adad-naqisa-l2-009",
+  "lessonCode": "bahth-adad-naqisa",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — ثمن وباقٍ",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مال",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الرابع",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اقرأ كلّ وضعية وأوجد العدد الناقص."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ثمن دفتر وقلم معًا 135 دج، وثمن القلم 45 دج. ما ثمن الدفتر؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "90",
+      "misconceptionSignatures": [
+        {
+          "value": "180",
+          "id": "MISC-NAQISA-SAMEOP"
+        },
+        {
+          "value": "-90",
+          "id": "MISC-NAQISA-REVSUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للجمع هي الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $90+45=135$ ، فالعدد الناقص هو $90$ .",
+        "incorrect": "في مجموع نطرح العدد المعلوم من الناتج: لا نجمع مرّة أخرى."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square+45=135$ .",
+          "نُرجع بالعملية العكسية: $\\square=135-45=90$ .",
+          "نتحقّق: $90+45=135$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "دفع تلميذ 200 دج لشراء أدوات، فأعاد له البائع 65 دج. كم كان ثمن مشترياته؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "135",
+      "misconceptionSignatures": [
+        {
+          "value": "265",
+          "id": "MISC-NAQISA-TRAPADD"
+        },
+        {
+          "value": "-135",
+          "id": "MISC-NAQISA-REVSUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المجهول هنا هو المطروح: ما أُخذ من العدد الذي بدأنا منه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $200-135=65$ ، فالعدد الناقص هو $135$ .",
+        "incorrect": "في a − □ = b المجهول هو المطروح: نطرح الناتج من a ولا نعكس الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $200-\\square=65$ .",
+          "نُرجع بالعملية العكسية: $\\square=200-65=135$ .",
+          "نتحقّق: $200-135=65$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ثمن 4 كرّاسات متماثلة 380 دج. كم ثمن الكرّاس الواحد؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "95",
+      "misconceptionSignatures": [
+        {
+          "value": "1520",
+          "id": "MISC-NAQISA-MULAGAIN"
+        },
+        {
+          "value": "1/95",
+          "id": "MISC-NAQISA-DIVREV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للضرب هي القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $95\\times 4=380$ ، فالعدد الناقص هو $95$ .",
+        "incorrect": "في جداء نقسم الناتج على العدد المعلوم: لا نضربه فيه ولا نقسم المعلوم على الناتج."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square\\times 4=380$ .",
+          "نُرجع بالعملية العكسية: $\\square=380\\div 4=95$ .",
+          "نتحقّق: $95\\times 4=380$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

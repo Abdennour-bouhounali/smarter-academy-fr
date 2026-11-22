@@ -1,0 +1,22 @@
+/* A case of a rule forge that is a PAIR of gaps (forgeParts.jsx › `c.pair`): two bridges, one plank laid on both. The
+   scene keeps the single bridge's box (`.rf-bridge`, kit/ruleForge.css); each bridge has its own held / fell look. */
+.rf-pairrow.is-held .rf-plank {
+  fill: #34d399;
+  filter: drop-shadow(0 0 8px rgba(52, 211, 153, 0.8));
+}
+.rf-pairrow.is-fell .rf-plank {
+  animation: rf-fall 0.7s ease-in forwards;
+  opacity: 1;
+}
+
+/* its line of evidence: « 198 و 234 · لوح 9 · 24 لوحًا » on ONE line — the two gaps, the plank, the tag never wrap */
+.rf-log li > .rf-line--pair {
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+.rf-pairhead {
+  flex: none;
+}
+.rf-log li > .rf-line--pair em {
+  flex: none;
+}

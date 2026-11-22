@@ -2,18 +2,40 @@
 
 namespace App\Http\Controllers;
 
+use App\Domain\Classroom\PendingClassJoin;
 use App\Domain\Identity\LegalConsent;
+use App\Domain\Identity\PersonName;
+use App\Domain\Push\AdminPush;
+use App\Domain\Registration\RegistrationGate;
 use App\Models\User;
 use App\Notifications\VerifyEmailAddress;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules\Password;
 
 class AuthController extends Controller
 {
     public function register(Request $request)
     {
+        // LES INSCRIPTIONS FERMÉES (config/registration.php) : aucun compte ne naît ici, sauf l'élève invité par le
+        // lien valide d'une classe. Décidé AVANT toute validation : la page n'a rien à corriger, elle a un message à lire.
+        $gate = app(RegistrationGate::class);
+        if (! $gate->allows($request->input('accountType'), $request->input('classJoinLink'), $request->boolean('classJoinConsent'))) {
+            return response()->json([
+                'success' => false,
+                'code' => RegistrationGate::CLOSED_CODE,
+                'message' => RegistrationGate::CLOSED_MESSAGE,
+            ], 403);
+        }
+
+        PersonName::normalizeRequest($request);
+
         $validated = $request->validate([
+            // « الاسم و اللقب » — obligatoires dès la naissance du compte :
+            // c'est ainsi que l'enseignant reconnaîtra l'élève (jamais par
+            // son courriel). Même règle que le profil et Google (PersonName).
+            ...PersonName::rules(),
             'email' => 'required|email|unique:users,email',
             'password' => ['required', Password::min(8)->letters()->numbers()],
             // LE CONSENTEMENT — obligatoire, et réduit à un booléen.
@@ -25,6 +47,16 @@ class AuthController extends Controller
             // n'existe volontairement aucun chemin de code lisant une version
             // depuis la requête.
             'accept_legal' => 'required|accepted',
+            // Le TYPE de compte, dans une liste blanche : élève (défaut) ou
+            // enseignant. Jamais admin — cette valeur n'est pas dans la liste,
+            // donc un client qui l'enverrait est refusé en 422, pas ignoré.
+            'accountType' => ['nullable', 'string', Rule::in(User::SELF_REGISTERABLE_ROLES)],
+            // Arrivé par le LIEN d'une classe, après avoir accepté le texte de
+            // partage sur sa page : l'adhésion attendra l'adresse vérifiée
+            // (PendingClassJoin). Le jeton est revalidé côté serveur ; un
+            // lien périmé est ignoré, il ne fait jamais échouer l'inscription.
+            'classJoinLink' => 'nullable|string|max:64',
+            'classJoinConsent' => 'nullable|boolean',
         ], [
             'email.unique' => 'Un compte existe déjà avec cet email.',
             'email.email' => 'Format email invalide.',
@@ -33,27 +65,50 @@ class AuthController extends Controller
             'password.numbers' => 'Le mot de passe doit contenir au moins un chiffre.',
             'accept_legal.required' => "Vous devez accepter les Conditions Générales d'Utilisation et la Politique de confidentialité.",
             'accept_legal.accepted' => "Vous devez accepter les Conditions Générales d'Utilisation et la Politique de confidentialité.",
+            ...PersonName::messages(),
         ]);
 
-        // role is never taken from client input: every self-registration is a student
-        // (the only account type this phase implements — see User model note on future
-        // 'famille'/'enseignant' values). The only way to provision an admin is the
-        // CreateAdmin CLI command. first_name/last_name/grade are intentionally not
-        // collected here — the account is created from email+password alone, and
-        // grade is set afterwards via PATCH /auth/grade during onboarding.
+        // Le rôle vient d'une LISTE BLANCHE (student par défaut, teacher sur
+        // demande explicite) — jamais d'une valeur libre du client. Le seul
+        // moyen de créer un administrateur reste la commande CreateAdmin.
+        // Le nom naît avec le compte ; la classe scolaire (grade) est choisie
+        // juste après, à l'accueil (/espace/bienvenue).
+        //
+        // Un enseignant n'a pas de classe scolaire (grade) : il possède des
+        // classes (Classroom), chacune avec la sienne. Il est immédiatement
+        // sur l'offre enseignant PAR DÉFAUT (gratuite) — aucune ligne, aucune
+        // approbation (voir PlanEntitlementResolver).
         //
         // Le consentement naît avec le compte, dans le même INSERT : il
         // n'existe pas d'instant où un compte existe sans lui.
         $user = User::create([
+            'first_name' => $validated['firstName'],
+            'last_name' => $validated['lastName'],
             'email' => $validated['email'],
             'password' => $validated['password'],
-            'role' => 'student',
+            'role' => $validated['accountType'] ?? User::ROLE_STUDENT,
             ...LegalConsent::current()->attributes(),
         ]);
 
+        // Notification au tableau de bord (AdminPush) : un élève ou un enseignant vient de s'inscrire.
+        if (in_array($user->role, [User::ROLE_STUDENT, User::ROLE_TEACHER], true)) {
+            AdminPush::later($user->role === User::ROLE_TEACHER ? 'new_teacher' : 'new_student', $user->id);
+        }
+
+        if (! empty($validated['classJoinLink'])) {
+            app(PendingClassJoin::class)->remember($user, $validated['classJoinLink'], (bool) ($validated['classJoinConsent'] ?? false));
+        }
+
         // L'adresse n'est PAS vérifiée (email_verified_at reste nul) : le
         // courriel qui suit est la seule façon de la prouver.
-        $user->notify(new VerifyEmailAddress);
+        //
+        // Un échec d'envoi (SMTP en panne, identifiants faux) ne fait PAS
+        // échouer l'inscription : le compte existe déjà. Répondre 500 ici
+        // laissait l'élève sans jeton, et sa nouvelle tentative butait sur
+        // « adresse déjà utilisée » — enfermé dehors. On répond 201, et
+        // `verificationEmailSent: false` dit au frontend de proposer le
+        // renvoi tout de suite.
+        $sent = VerifyEmailAddress::sendTo($user);
 
         // Un jeton est tout de même délivré — mais il n'ouvre pas l'espace
         // élève. Le middleware `email.verified` refuse chaque route
@@ -67,6 +122,7 @@ class AuthController extends Controller
             'success' => true,
             'token' => $token,
             'user' => UserPresenter::format($user),
+            'verificationEmailSent' => $sent,
         ], 201);
     }
 
@@ -151,6 +207,29 @@ class AuthController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'Déconnecté.',
+        ]);
+    }
+
+    /**
+     * « الاسم و اللقب » — le seul geste par lequel un élève ou un enseignant
+     * change son propre nom (profil, ou l'étape d'accueil qui le demande à
+     * un compte qui n'en a pas encore). Les deux parties, toujours ensemble :
+     * un nom à moitié rempli ne sortirait pas l'utilisateur de l'étape.
+     */
+    public function updateProfile(Request $request)
+    {
+        PersonName::normalizeRequest($request);
+        $validated = $request->validate(PersonName::rules(), PersonName::messages());
+
+        $user = $request->user();
+        $user->update([
+            'first_name' => $validated['firstName'],
+            'last_name' => $validated['lastName'],
+        ]);
+
+        return response()->json([
+            'success' => true,
+            'user' => UserPresenter::format($user),
         ]);
     }
 

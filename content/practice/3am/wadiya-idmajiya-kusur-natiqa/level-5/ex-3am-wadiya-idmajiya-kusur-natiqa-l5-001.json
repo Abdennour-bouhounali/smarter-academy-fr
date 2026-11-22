@@ -1,0 +1,396 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-kusur-natiqa-l5-001",
+  "lessonCode": "wadiya-idmajiya-kusur-natiqa",
+  "level": 5,
+  "metadata": {
+    "title": "ثلاثة أصدقاء يشترون قطعة أرض",
+    "estimatedMinutes": 14,
+    "tags": [
+      "كسر من كسر",
+      "جزء باقٍ",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 1,
+      "file": "3am-s1-104",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "اشترك ثلاثة أصدقاء في شراء قطعة أرض ثمنها $2400000$ DA : دفع سمير $\\dfrac{3}{10}$ من الثمن، ودفع كريم $\\dfrac{2}{3}$ ممّا دفعه سمير، ودفع ياسر ضعف ما دفعه كريم ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأوّل :",
+      "statement": "ما الكسر الذي يمثّل ما دفعه كريم من الثمن ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "1/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من أيّ كمّية يُؤخذ الكسر في هذه الوضعية ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كسر من كمّية يعني جداء الكسر في الكمّية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ النتيجة أصغر من الكمّية الأصلية، ثمّ اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{1}{5}$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "كريم دفع $\\dfrac{2}{3}$ ممّا دفعه سمير لا من الثمن كلّه.",
+          "$\\dfrac{2}{3} \\times \\dfrac{3}{10} = \\dfrac{6}{30} = \\dfrac{1}{5}$ ."
+        ],
+        "result": "\\dfrac{1}{5}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما الكسر الذي يمثّل ما دفعه ياسر ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "2/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من أيّ كمّية يُؤخذ الكسر في هذه الوضعية ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كسر من كمّية يعني جداء الكسر في الكمّية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ النتيجة أصغر من الكمّية الأصلية، ثمّ اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{2}{5}$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$2 \\times \\dfrac{1}{5} = \\dfrac{2}{5}$ ."
+        ],
+        "result": "\\dfrac{2}{5}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "من دفع أقلّ مبلغ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "كريم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "ياسر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-EYE"
+        },
+        {
+          "id": "C",
+          "content": "سمير",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-EYE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للكسرين المقام نفسه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "وحّد المقامات ثمّ قارن البسطين، فالكسر الأكبر له البسط الأكبر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحكم بنظرة إلى البسط وحده أو المقام وحده."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: كريم .",
+        "incorrect": "وحّد المقامات قبل المقارنة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "بالمقام $10$ : $\\dfrac{3}{10}$ و $\\dfrac{2}{10}$ و $\\dfrac{4}{10}$ .",
+          "$2 < 3 < 4$ ، فأقلّ مبلغ دفعه كريم."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما الكسر الذي يمثّل المبلغ الناقص لشراء قطعة الأرض ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "1/10",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "9/10",
+          "id": "MISC-JAMTARH-MAJMU-FARQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكلّ الذي نقارن به ؟ وما الأجزاء المأخوذة منه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما بقي هو الكلّ ناقص مجموع الأجزاء المأخوذة، أي واحد ناقص مجموع الكسور."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الباقي موجب وأنّه أصغر من الكلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{1}{10}$ .",
+        "incorrect": "وحّد المقامات قبل الجمع أو الطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "المجموع $\\dfrac{3}{10} + \\dfrac{2}{10} + \\dfrac{4}{10} = \\dfrac{9}{10}$ .",
+          "$1 - \\dfrac{9}{10} = \\dfrac{1}{10}$ ."
+        ],
+        "result": "\\dfrac{1}{10}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ج",
+      "statement": "ما المبلغ الناقص بالدينار ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "240000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من أيّ كمّية يُؤخذ الكسر في هذه الوضعية ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كسر من كمّية يعني جداء الكسر في الكمّية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ النتيجة أصغر من الكمّية الأصلية، ثمّ اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $240000$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{10} \\times 2400000 = 240000$ DA ."
+        ],
+        "result": "240000"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ا",
+      "lead": "الجزء الثاني :",
+      "statement": "اتّفق الأصدقاء الثلاثة على تحمّل المبلغ الناقص بالتساوي. كم يدفع كلّ منهم إضافة ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "80000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المقدار المعطى وما المقدار المطلوب ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حوّل المسألة إلى عملية على كسور ثمّ أنجزها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بعملية عكسية."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $80000$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$240000 \\div 3 = 80000$ DA ."
+        ],
+        "result": "80000"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "sub": "ب",
+      "statement": "من يدفع في النهاية أكبر مبلغ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "سمير",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-EYE"
+        },
+        {
+          "id": "B",
+          "content": "كريم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-EYE"
+        },
+        {
+          "id": "C",
+          "content": "ياسر",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المقداران اللذان نقارن بينهما لاتّخاذ القرار ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ مقدار بدقّة ثمّ قارن بوحدة واحدة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب القرار بجملة تذكر العددين اللذين اعتمدت عليهما."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: ياسر .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "سمير: $720000 + 80000 = 800000$ DA .",
+          "كريم: $480000 + 80000 = 560000$ DA .",
+          "ياسر: $960000 + 80000 = 1040000$ DA ، فهو الأكبر."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

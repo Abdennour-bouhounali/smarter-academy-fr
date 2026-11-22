@@ -1,0 +1,184 @@
+{
+  "id": "ex-4am-mafhum-taalufiya-l2-001",
+  "lessonCode": "mafhum-taalufiya",
+  "level": 2,
+  "metadata": {
+    "title": "أجرة عامل — الأجرة لا تتناسب مع الساعات",
+    "estimatedMinutes": 5,
+    "tags": [
+      "صورة عدد",
+      "جدول",
+      "دالة خطية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-1",
+      "page": 78,
+      "section": "أنشطة",
+      "number": 1,
+      "adaptedFrom": "ex-4am-mafhum-taalufiya-l2-001"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "عامل يخصّص جزءًا من أجرته للتكافل مع جيرانه؛ أجرته الشهرية: أجرة قاعدية قدرها 35000DA ، يضاف إليها 185DA عن كل ساعة إضافية. نسمّي $x$ عدد الساعات الإضافية و $S(x)$ الأجرة الشهرية بـ DA ، حيث $S(x) = 185x + 35000$ .",
+    "table": {
+      "head": [
+        "عدد الساعات الإضافية $x$",
+        "12",
+        "15"
+      ],
+      "rows": [
+        [
+          "الأجرة $S(x)$ (DA)",
+          "…",
+          "…"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انقل الجدول وأكمله.",
+      "statement": "الأجرة من أجل 12 ساعة إضافية:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الأجرة بـ DA",
+      "expectedAnswer": "37220",
+      "misconceptionSignatures": [
+        {
+          "value": "2220",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $S(12)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$S(12) = 185 \\times 12 + 35000 = 37220$ .",
+        "incorrect": "اضرب عدد الساعات في 185 ثم أضف الأجرة القاعدية."
+      },
+      "solution": {
+        "lines": [
+          "$S(12) = 185 \\times 12 + 35000$",
+          "$S(12) = 2220 + 35000$",
+          "$S(12) = 37220$ أي $37220DA$ ."
+        ],
+        "result": "S(12) = 37220\\,DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "الأجرة من أجل 15 ساعة إضافية:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الأجرة بـ DA",
+      "expectedAnswer": "37775",
+      "misconceptionSignatures": [
+        {
+          "value": "2775",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $S(15)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$S(15) = 185 \\times 15 + 35000 = 37775$ .",
+        "incorrect": "اضرب عدد الساعات في 185 ثم أضف الأجرة القاعدية."
+      },
+      "solution": {
+        "lines": [
+          "$S(15) = 185 \\times 15 + 35000$",
+          "$S(15) = 2775 + 35000$",
+          "$S(15) = 37775$ أي $37775DA$ ."
+        ],
+        "result": "S(15) = 37775\\,DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل الأجرة $S(x)$ متناسبة مع عدد الساعات الإضافية $x$ ؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAALUFI-KHATTIYA-KHALT"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن حاصلي القسمة $\\dfrac{S(12)}{12}$ و $\\dfrac{S(15)}{15}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في وضعية تناسبية يكون حاصل القسمة ثابتا، وتكون صورة 0 معدومة."
+        }
+      ],
+      "feedback": {
+        "correct": "حاصلا القسمة مختلفان و $S(0) = 35000 \\neq 0$ : $S$ ليست دالة خطية.",
+        "incorrect": "احسب $S(0)$ : هل هي معدومة؟"
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{37220}{12} \\approx 3101{,}7$ و $\\dfrac{37775}{15} \\approx 2518{,}3$ : حاصلا القسمة مختلفان.",
+          "وأيضا $S(0) = 35000 \\neq 0$ .",
+          "إذن الأجرة ليست متناسبة مع عدد الساعات الإضافية: $S$ دالة تآلفية ليست خطية."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "id": "ex-4am-misaha-hajm-kura-l2-009",
+  "lessonCode": "misaha-hajm-kura",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — حجم مدوّر",
+    "estimatedMinutes": 2,
+    "tags": [
+      "حجم الجلة",
+      "التدوير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_misaha-hajm-kura_P3",
+      "modelledOn": "know-2"
+    }
+  },
+  "statement": {
+    "content": "جلة نصف قطرها $3\\,\\mathrm{cm}$ ، حجمها $36\\pi\\,\\mathrm{cm}^3$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أعط حجمها بالـ $\\mathrm{cm}^3$ مدوّرا إلى الجزء من عشرة.",
+      "learningPoints": [
+        {
+          "code": "4am_misaha-hajm-kura_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة (مثل 2,5) أو عدد طبيعي",
+      "expectedAnswer": "113.1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب 36 في $\\pi$ بالحاسبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رقم واحد بعد الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انظر إلى الرقم الثاني بعد الفاصلة لتدوّر."
+        }
+      ],
+      "feedback": {
+        "correct": "$36\\pi = 113{,}097\\ldots \\approx 113{,}1\\,\\mathrm{cm}^3$ .",
+        "incorrect": "لا تنس الضرب في $\\pi$ قبل التدوير."
+      },
+      "difficulty": 2,
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TADWIR",
+          "value": "36"
+        }
+      ]
+    }
+  ]
+}

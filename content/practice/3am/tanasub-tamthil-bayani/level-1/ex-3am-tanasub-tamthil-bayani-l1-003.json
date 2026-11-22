@@ -1,0 +1,229 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l1-003",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — قراءة نقطة والمربع يمثّل وحدتين",
+    "estimatedMinutes": 4,
+    "tags": [
+      "معلم",
+      "تدريج"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في ورشة المدرسة، يصنع التلاميذ صناديق لجمع النفايات القابلة للتدوير حفاظا على نظافة الحيّ. يمثّل المعلم المتعامد والمتجانس التالي النقطتين $M$ و $N$ ؛ كل مربّع من الشبكة يمثّل وحدتين على كل محور.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "M": [
+          6,
+          4
+        ],
+        "N": [
+          2,
+          8
+        ]
+      },
+      "grid": {
+        "step": 2
+      },
+      "axes": {
+        "every": 2
+      },
+      "labels": {
+        "O": "sw",
+        "M": "se",
+        "N": "ne"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس كل مربع فيه يمثل وحدتين: النقطة M فاصلتها 6 وترتيبها 4، والنقطة N فاصلتها 2 وترتيبها 8",
+      "maxWidth": 340,
+      "caption": "كل مربّع من الشبكة يمثّل وحدتين على كل محور"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما فاصلة النقطة $M$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد: فاصلة النقطة",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-TAMTHIL-SWAP-XY"
+        },
+        {
+          "value": "3",
+          "id": "MISC-TAMTHIL-SCALE-READ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفاصلة هي العدد الأوّل في زوج الإحداثيين، وتُقرأ على المحور الأفقي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انزل من النقطة عموديا إلى المحور الأفقي واقرأ العدد الذي تقع عليه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قبل أن تقرأ، احسب كم وحدة يمثّل المربع الواحد من الشبكة."
+        }
+      ],
+      "feedback": {
+        "correct": "فاصلة $M$ هي $6$.",
+        "incorrect": "الفاصلة تُقرأ على المحور الأفقي لا العمودي، ويجب أن تحترم قيمة المربع."
+      },
+      "solution": {
+        "lines": [
+          "ننزل من $M$ عموديا إلى محور الفواصل فنقرأ $6$ ."
+        ],
+        "result": "6"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما ترتيب النقطة $M$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد: ترتيب النقطة",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-TAMTHIL-SWAP-XY"
+        },
+        {
+          "value": "2",
+          "id": "MISC-TAMTHIL-SCALE-READ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الترتيب هو العدد الثاني في زوج الإحداثيين، وتُقرأ على المحور العمودي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اذهب من النقطة أفقيا إلى المحور العمودي واقرأ العدد الذي تقع عليه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قبل أن تقرأ، احسب كم وحدة يمثّل المربع الواحد من الشبكة."
+        }
+      ],
+      "feedback": {
+        "correct": "ترتيب $M$ هي $4$.",
+        "incorrect": "الترتيب يُقرأ على المحور العمودي لا الأفقي، ويجب أن تحترم قيمة المربع."
+      },
+      "solution": {
+        "lines": [
+          "نمشي من $M$ أفقيا إلى محور التراتيب فنقرأ $4$ ."
+        ],
+        "result": "4"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما هي إحداثيا النقطة $N$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$N(2\\,;\\,8)$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$N(1\\,;\\,4)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-SCALE-READ"
+        },
+        {
+          "id": "C",
+          "content": "$N(8\\,;\\,2)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-SWAP-XY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الفاصلة والترتيب بالأعداد المكتوبة على المحورين لا بعدد المربعات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل مربع يساوي وحدتين: ضاعف عدد المربعات."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة $N$ على بعد مربع واحد أفقيا وأربعة مربعات عموديا، أي $N(2\\,;\\,8)$ .",
+        "incorrect": "لا تعدّ المربعات فقط: كل مربع يمثّل وحدتين، وقدّم الفاصلة قبل الترتيب."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $N$ هي $2$ وترتيبها $8$ (نقرأ الأعداد المكتوبة على المحورين).",
+          "إذن $N(2\\,;\\,8)$ ."
+        ],
+        "result": "N(2\\,;\\,8)"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

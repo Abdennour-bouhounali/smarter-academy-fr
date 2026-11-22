@@ -1,0 +1,135 @@
+{
+  "id": "ex-4am-alaqat-muthallathiya-l2-005",
+  "lessonCode": "alaqat-muthallathiya",
+  "level": 2,
+  "metadata": {
+    "title": "تمرين 17 (ص 123) — الجيب √3/2",
+    "estimatedMinutes": 5,
+    "tags": [
+      "العلاقات المثلثية",
+      "القيمة المضبوطة",
+      "التدوير"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-17",
+      "page": 123,
+      "section": "العلاقات المثلثية",
+      "number": 17
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "$x$ هو قيس زاوية حادة حيث $\\sin x = \\dfrac{\\sqrt{3}}{2}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بدون استعمال حاسبة، عيّن القيمة المضبوطة للعدد $\\cos x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "1/2",
+      "misconceptionSignatures": [
+        {
+          "value": "1/4",
+          "id": "MISC-MUTH-JADHR-NASI"
+        },
+        {
+          "value": "-1/2",
+          "id": "MISC-MUTH-AKBAR-MIN-WAHID"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العلاقة التي تربط جيب الزاوية وجيب تمامها هي $\\cos^2 x + \\sin^2 x = 1$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اعزل $\\cos^2 x$ ثم عوّض الجيب بقيمته، ولا تنس تربيع البسط والمقام معا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\cos x$ عدد موجب تماما: خذ الجذر التربيعي الموجب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\cos^2 x = 1 - \\dfrac{3}{4} = \\dfrac{1}{4}$ ، إذن $\\cos x = \\dfrac{1}{2}$ .",
+        "incorrect": "بعد حساب $\\cos^2 x$ خذ الجذر الموجب."
+      },
+      "solution": {
+        "lines": [
+          "$\\cos^2 x = 1 - \\sin^2 x = 1 - \\left(\\dfrac{\\sqrt{3}}{2}\\right)^2 = 1 - \\dfrac{3}{4} = \\dfrac{1}{4}$",
+          "$\\cos x > 0$ ، إذن $\\cos x = \\sqrt{\\dfrac{1}{4}}$"
+        ],
+        "result": "\\cos x = \\dfrac{1}{2}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج قيمة مقربة للعدد $\\tan x$ ، تدوّر النتيجة إلى الجزء من 100.",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري مدوّر إلى 0,01",
+      "expectedAnswer": "1.73",
+      "misconceptionSignatures": [
+        {
+          "value": "0.58",
+          "id": "MISC-MUTH-TAN-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولا القيمة المضبوطة $\\tan x = \\dfrac{\\sin x}{\\cos x}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم استعمل الحاسبة ودوّر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan x = \\dfrac{\\sqrt{3}}{2} \\times 2 = \\sqrt{3} \\simeq 1{,}732$ ، إذن $\\tan x \\approx 1{,}73$ .",
+        "incorrect": "الجيب في البسط وجيب التمام في المقام، ثم دوّر."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan x = \\dfrac{\\sin x}{\\cos x} = \\dfrac{\\sqrt{3}}{2} \\div \\dfrac{1}{2} = \\sqrt{3}$",
+          "بالحاسبة: $\\sqrt{3} \\simeq 1{,}7320508$"
+        ],
+        "result": "\\tan x \\approx 1{,}73"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

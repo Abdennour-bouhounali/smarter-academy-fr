@@ -1,0 +1,178 @@
+{
+  "id": "ex-4am-tatbiqat-tanasub-l4-010",
+  "lessonCode": "tatbiqat-tanasub",
+  "level": 4,
+  "metadata": {
+    "title": "الدرّاج",
+    "estimatedMinutes": 6,
+    "tags": [
+      "السرعة",
+      "تحويل الوحدات",
+      "المدة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tatbiqat-tanasub_P3",
+      "modelledOn": "act-6",
+      "adaptedFrom": "ex-4am-tatbiqat-tanasub-l4-010"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يسير درّاج بسرعة متوسطة ثابتة قدرها $5m/s$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عبّر عن هذه السرعة بـ km/h .",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب السرعة بـ km/h (عدد فقط)",
+      "expectedAnswer": "18",
+      "misconceptionSignatures": [
+        {
+          "value": "25/18",
+          "id": "MISC-MAQADIR-WIHDA"
+        },
+        {
+          "value": "300",
+          "id": "MISC-MAQADIR-WIHDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في ساعة واحدة $3600s$ ، و $1km = 1000m$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب المسافة المقطوعة في $3600s$ ثم حوّلها إلى km ."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 \\times 3600 = 18\\,000m = 18km$ في الساعة، أي $18km/h$ .",
+        "incorrect": "$1m/s = 3{,}6km/h$ : حوّل البسط والمقام كلا على حدة."
+      },
+      "solution": {
+        "lines": [
+          "في $1h$ يقطع $5 \\times 3600 = 18\\,000m = 18km$",
+          "السرعة $18km/h$ ."
+        ],
+        "result": "v = 18km/h"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب المسافة التي يقطعها في ساعتين.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المسافة بـ km (عدد فقط)",
+      "expectedAnswer": "36",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-MAQADIR-WIHDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$d = v \\times t$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل السرعة بـ km/h والمدة بالساعات."
+        }
+      ],
+      "feedback": {
+        "correct": "$d = 18 \\times 2 = 36km$ .",
+        "incorrect": "اضرب السرعة بـ km/h في المدة بالساعات."
+      },
+      "solution": {
+        "lines": [
+          "$d = 18 \\times 2 = 36$",
+          "يقطع الدرّاج 36km في ساعتين."
+        ],
+        "result": "d = 36km"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما هي المدة اللازمة لقطع مسافة $45km$ بالسرعة نفسها؟",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المدة بالساعة (عدد عشري بالفاصلة)",
+      "expectedAnswer": "2,5",
+      "misconceptionSignatures": [
+        {
+          "value": "0,4",
+          "id": "MISC-MAQADIR-QISMA-MAQLUBA"
+        },
+        {
+          "value": "9",
+          "id": "MISC-MAQADIR-WIHDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$t = \\dfrac{d}{v}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم المسافة على السرعة بـ km/h ."
+        }
+      ],
+      "feedback": {
+        "correct": "$t = \\dfrac{45}{18} = 2{,}5h$ ، أي ساعتان ونصف.",
+        "incorrect": "المدة هي المسافة مقسومة على السرعة."
+      },
+      "solution": {
+        "lines": [
+          "$t = \\dfrac{d}{v} = \\dfrac{45}{18}$",
+          "$t = 2{,}5h$ ، أي ساعتان و 30 دقيقة."
+        ],
+        "result": "t = 2{,}5h"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

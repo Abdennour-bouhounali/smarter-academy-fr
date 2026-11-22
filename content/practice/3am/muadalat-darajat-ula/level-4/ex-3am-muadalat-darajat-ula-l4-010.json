@@ -1,0 +1,235 @@
+{
+  "id": "ex-3am-muadalat-darajat-ula-l4-010",
+  "lessonCode": "muadalat-darajat-ula",
+  "level": 4,
+  "metadata": {
+    "title": "مساهمات رحلة مدرسية",
+    "estimatedMinutes": 12,
+    "tags": [
+      "ترييض",
+      "التعاون"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-65",
+      "page": 83,
+      "section": "أتعمّق",
+      "number": 65
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ينظّم المتوسط رحلة إلى متحف المدينة ويتعاون التلاميذ في تسديد كلفتها. إذا ساهم كلّ تلميذ بـ $60$ دج فينقص $900$ دج عن الكلفة، وإذا ساهم كلّ واحد بـ $90$ دج فيزيد المبلغ عن الكلفة بـ $450$ دج. نسمّي $n$ عدد التلاميذ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما المعادلة التي تُترجم بها الوضعية؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "الكلفة $= 60n + 900 = 90n - 450$ .",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$60n + 900 = 90n - 450$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$60n - 900 = 90n + 450$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        },
+        {
+          "id": "C",
+          "content": "$60n + 900 = 90n + 450$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-TRANSLATE"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "الكلفة $60n + 900$ (ينقص $900$) وهي أيضًا $90n - 450$ (يزيد $450$) : $60n + 900 = 90n - 450$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما عدد التلاميذ؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد التلاميذ $45$ .",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "عدد التلاميذ",
+      "expectedAnswer": "45",
+      "misconceptionSignatures": [
+        {
+          "value": "-45",
+          "id": "MISC-MUADALA-NEG-COEF"
+        },
+        {
+          "value": "5",
+          "id": "MISC-MUADALA-SIGN-KEPT"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "لدينا: $60n + 900 = 90n - 450$ .",
+          "نضيف $-90n$ إلى الطرفين (معاكس الحدّ $90n$) فنجد: $-30n + 900 = -450$ .",
+          "نضيف $-900$ إلى الطرفين (معاكس $900$) فنجد: $-30n = -1350$ .",
+          "نقسم الطرفين على $-30$ فنجد: $n = 45$ .",
+          "التحقّق: من أجل $n = 45$ نجد الطرف الأيسر $3600$ والطرف الأيمن $3600$ ، فهما متساويان."
+        ]
+      },
+      "timeSeconds": 105
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما كلفة الرحلة بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "كلفة الرحلة $3\\,600$ دج.",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "الكلفة بالدينار",
+      "expectedAnswer": "3600",
+      "solution": {
+        "lines": [
+          "الكلفة $60 \\times 45 + 900 = 3\\,600$ دج."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "تحقّق من النتيجة في القصة.",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المجهول في هذه الوضعية؟ سمِّه بحرف وحدّد وحدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم كلّ معطى بدلالة المجهول، ثم اكتب مساواة بين عبارتين تعبّران عن الكمية نفسها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة، صرّح بالحلّ في جملة مع وحدته، ثم تحقّق منه داخل القصة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "الشرطان محقّقان.",
+        "incorrect": "اختر المجهول مع وحدته، ترجم المعطيات إلى معادلة، حلّها ثم تحقّق من الحلّ في القصة؛ أعد المحاولة."
+      },
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب إجابتك ثم قارنها بالتصحيح النموذجي",
+      "solution": {
+        "lines": [
+          "بـ $60$ دج: $60 \\times 45 = 2\\,700$ وينقص $3\\,600 - 2\\,700 = 900$ .",
+          "بـ $90$ دج: $90 \\times 45 = 4\\,050$ ويزيد $4\\,050 - 3\\,600 = 450$ ."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

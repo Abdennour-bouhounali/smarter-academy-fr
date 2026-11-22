@@ -1,0 +1,238 @@
+{
+  "id": "ex-3am-quwat-adad-nisbi-l3-004",
+  "lessonCode": "quwat-adad-nisbi",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — عددان متساويان",
+    "estimatedMinutes": 9,
+    "tags": [
+      "قواعد الحساب على القوى",
+      "سلسلة حسابات"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-76",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "إليك الأعداد $R$ و $M$ و $L$ حيث:",
+    "formulas": [
+      "R = \\dfrac{8 \\times 2^{4}}{32 \\times 2^{-3}}",
+      "M = (4 + 2^{3}) \\times 3 - 3^{2} + \\dfrac{1}{2^{-4}}",
+      "L = (5^{2} - 9) \\times 3 - 2^{3} + 3^{1}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب $R$ على الشكل $2^n$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "-1",
+          "id": "MISC-QUWA-EXP-SIGN-SLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب كل عدد على شكل قوة للأساس نفسه (مثلًا العدد 8 قوة للعدد 2)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تنسَ أن $a = a^1$ ، ثم طبّق قواعد الحساب على القوى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أس البسط ثم أس المقام، ثم اطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$R = \\dfrac{2^7}{2^2} = 2^5$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$8 = 2^{3}$ و $32 = 2^{5}$",
+          "$R = \\dfrac{2^{3} \\times 2^{4}}{2^{5} \\times 2^{-3}} = \\dfrac{2^{7}}{2^{2}}$",
+          "$R = 2^{5}$"
+        ],
+        "result": "R = 2^{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب $M$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "43",
+      "misconceptionSignatures": [
+        {
+          "value": "11",
+          "id": "MISC-QUWA-NEG-EXP-NEGATIVE"
+        },
+        {
+          "value": "433/16",
+          "id": "MISC-QUWA-NEG-EXP-NEGATIVE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما أول عملية تُنجز في هذه العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأولوية: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب مرحلة واحدة في كل سطر، وتحقّق من إشارة كل حدّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$M = 36 - 9 + 16 = 43$ .",
+        "incorrect": "احترم أولوية العمليات: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{2^{-4}} = 2^{4} = 16$",
+          "$M = 12 \\times 3 - 9 + 16$",
+          "$M = 36 - 9 + 16 = 43$"
+        ],
+        "result": "M = 43"
+      },
+      "work": "required",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب $L$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "43",
+      "misconceptionSignatures": [
+        {
+          "value": "41",
+          "id": "MISC-QUWA-ZERO-ONE-EXP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما أول عملية تُنجز في هذه العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأولوية: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب مرحلة واحدة في كل سطر، وتحقّق من إشارة كل حدّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$L = 48 - 8 + 3 = 43$ .",
+        "incorrect": "احترم أولوية العمليات: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$L = (25 - 9) \\times 3 - 8 + 3$",
+          "$L = 48 - 8 + 3 = 43$"
+        ],
+        "result": "L = 43"
+      },
+      "work": "required",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "بيّن أن $M = L$ .",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما أول عملية تُنجز في هذه العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأولوية: ما بين الأقواس، ثم القوى، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب مرحلة واحدة في كل سطر، وتحقّق من إشارة كل حدّ."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "وجدنا $M = 43$ و $L = 43$",
+          "إذن $M = L$"
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

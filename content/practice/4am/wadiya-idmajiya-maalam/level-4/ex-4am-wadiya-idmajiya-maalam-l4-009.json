@@ -1,0 +1,73 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-maalam-l4-009",
+  "lessonCode": "wadiya-idmajiya-maalam",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — قراءة السلّم",
+    "estimatedMinutes": 2,
+    "tags": [
+      "السلّم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-maalam_P2",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "على خريطة التيليفيريك بقسنطينة، $1\\,\\mathrm{cm}$ على المعلم يمثّل $2\\,\\mathrm{km}$ في الواقع. طول خط التيليفيريك على الخريطة $1{,}5\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "طوله الحقيقي (بالكيلومتر):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل سنتيمتر يمثّل 2 كيلومتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$1{,}5 \\times 2$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب في السلّم."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}5 \\times 2 = 3\\,\\mathrm{km}$ .",
+        "incorrect": "الطول الحقيقي = الطول على الخريطة × ما يمثّله السنتيمتر."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "0.75",
+          "id": "MISC-MAALAM-SULLAM"
+        },
+        {
+          "value": "1.5",
+          "id": "MISC-MAALAM-SULLAM"
+        }
+      ],
+      "difficulty": 4
+    }
+  ]
+}

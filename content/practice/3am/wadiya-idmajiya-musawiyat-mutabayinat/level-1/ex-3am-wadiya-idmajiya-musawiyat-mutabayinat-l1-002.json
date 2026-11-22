@@ -1,0 +1,246 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-musawiyat-mutabayinat-l1-002",
+  "lessonCode": "wadiya-idmajiya-musawiyat-mutabayinat",
+  "level": 1,
+  "metadata": {
+    "title": "خواص المساويات: الضرب",
+    "estimatedMinutes": 8,
+    "tags": [
+      "خواص المساويات",
+      "الضرب في الطرفين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الأوّل",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "أجب عن الأسئلة التالية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "إذا كان $5x + 9 = 24$ فاحسب $15x + 27$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "72",
+      "misconceptionSignatures": [
+        {
+          "value": "54",
+          "id": "MISC-MUSAWIYA-TERM-LOST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تُجرى على الطرفين معًا ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نفس العدد يُضاف أو يُطرح أو يُضرب فيه الطرفان، فتبقى المساواة صحيحة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل سطر من الحساب ثمّ تحقّق منه بالتعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $72$ .",
+        "incorrect": "انتبه: العملية تُجرى على الطرفين معًا، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضرب الطرفين في $3$ : $15x + 27 = 3 \\times (24)$ .",
+          "فالقيمة هي $72$ ."
+        ],
+        "result": "72"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "إذا كان $3x + 9 = 15$ فاحسب $15x + 45$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "75",
+      "misconceptionSignatures": [
+        {
+          "value": "39",
+          "id": "MISC-MUSAWIYA-TERM-LOST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تُجرى على الطرفين معًا ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نفس العدد يُضاف أو يُطرح أو يُضرب فيه الطرفان، فتبقى المساواة صحيحة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل سطر من الحساب ثمّ تحقّق منه بالتعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $75$ .",
+        "incorrect": "انتبه: العملية تُجرى على الطرفين معًا، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضرب الطرفين في $5$ : $15x + 45 = 5 \\times (15)$ .",
+          "فالقيمة هي $75$ ."
+        ],
+        "result": "75"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "إذا كان $2x + 5 = 13$ فأيّ المساويات التالية صحيحة ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2x = 8$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$2x = 18$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-SIGN-KEPT"
+        },
+        {
+          "id": "C",
+          "content": "$2x + 2 = 13$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-ONE-SIDE"
+        },
+        {
+          "id": "D",
+          "content": "$x = 8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSAWIYA-TERM-LOST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تُجرى على الطرفين معًا ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نفس العدد يُضاف أو يُطرح أو يُضرب فيه الطرفان، فتبقى المساواة صحيحة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل سطر من الحساب ثمّ تحقّق منه بالتعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $2x = 8$ .",
+        "incorrect": "انتبه: العملية تُجرى على الطرفين معًا، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نطرح $5$ من الطرفين معًا: $2x = 13 - 5 = 8$ .",
+          "الخيارات الأخرى تُجري العملية على طرف واحد أو تضيف بدل أن تطرح أو تنسى القسمة على المعامل."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "إذا كان $2x + 5 = 15$ فاحسب $-4x - 10$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-musawiyat-mutabayinat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "-30",
+      "misconceptionSignatures": [
+        {
+          "value": "-15",
+          "id": "MISC-MUSAWIYA-TERM-LOST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تُجرى على الطرفين معًا ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نفس العدد يُضاف أو يُطرح أو يُضرب فيه الطرفان، فتبقى المساواة صحيحة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل سطر من الحساب ثمّ تحقّق منه بالتعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $-30$ .",
+        "incorrect": "انتبه: العملية تُجرى على الطرفين معًا، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نضرب الطرفين في $-2$ : $-4x - 10 = -2 \\times (15)$ .",
+          "فالقيمة هي $-30$ ."
+        ],
+        "result": "-30"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

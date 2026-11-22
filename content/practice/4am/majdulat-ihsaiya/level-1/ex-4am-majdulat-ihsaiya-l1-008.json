@@ -1,0 +1,145 @@
+{
+  "id": "ex-4am-majdulat-ihsaiya-l1-008",
+  "lessonCode": "majdulat-ihsaiya",
+  "level": 1,
+  "metadata": {
+    "title": "عدد الإخوة: التمثيل المناسب",
+    "estimatedMinutes": 4,
+    "tags": [
+      "تمثيل بياني",
+      "مخطط بالأعمدة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_majdulat-ihsaiya_P3",
+      "modelledOn": "ex-1",
+      "adaptedFrom": "ex-4am-majdulat-ihsaiya-l1-008"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "سُئل تلاميذ قسم عن عدد إخوتهم، فكانت النتائج كما يلي:",
+    "table": {
+      "head": [
+        "عدد الإخوة",
+        "0",
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "rows": [
+        [
+          "عدد التلاميذ",
+          "3",
+          "8",
+          "10",
+          "6",
+          "3"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما نوع التمثيل البياني المناسب لهذه السلسلة؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مدرّج تكراري",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MUKHATTAT-GHAYR-MUNASIB"
+        },
+        {
+          "id": "B",
+          "content": "مخطط بالأعمدة",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "مخطط دائري",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MUKHATTAT-GHAYR-MUNASIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اسأل نفسك: هل المعطيات قيم منفصلة، أم فئات متلاصقة، أم أجزاء من كلّ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المخطط بالأعمدة لقيم منفصلة، والمدرّج التكراري لفئات متلاصقة، والمخطط الدائري لتوزيع كلّ على أجزائه."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد الإخوة قيم منفصلة (0 ، 1 ، 2 ، 3 ، 4): نمثّلها بمخطط بالأعمدة، عمود لكل قيمة ارتفاعه تكرارها.",
+        "incorrect": "اختر التمثيل حسب طبيعة المعطيات: قيم منفصلة، فئات متلاصقة، أو أجزاء من كلّ."
+      },
+      "solution": {
+        "lines": [
+          "عدد الإخوة قيم منفصلة (0 ، 1 ، 2 ، 3 ، 4): نمثّلها بمخطط بالأعمدة، عمود لكل قيمة ارتفاعه تكرارها."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "مثّل هذه السلسلة بمخطط بالأعمدة.",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب كيف تمثّل السلسلة (المحوران وارتفاع كل عمود)، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "على المحور الأفقي القيم، وعلى المحور العمودي التكرارات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ارتفاع كل عمود يساوي تكرار قيمته."
+        }
+      ],
+      "feedback": {
+        "correct": "إجابتك مطابقة للحل النموذجي.",
+        "incorrect": "قارن إجابتك بالحل النموذجي سطرا سطرا."
+      },
+      "solution": {
+        "lines": [
+          "نرسم محورين: القيم 0 ، 1 ، 2 ، 3 ، 4 على المحور الأفقي، وعدد التلاميذ على المحور العمودي (مثلا 1cm لكل تلميذين).",
+          "نرسم فوق كل قيمة عمودا منفصلا ارتفاعه تكرارها: 3 ، 8 ، 10 ، 6 ، 3 .",
+          "الأعمدة متساوية العرض ومنفصلة، لأن القيم منفصلة."
+        ]
+      },
+      "timeSeconds": 240
+    }
+  ]
+}

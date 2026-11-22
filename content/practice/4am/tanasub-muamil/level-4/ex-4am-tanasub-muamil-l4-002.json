@@ -1,0 +1,233 @@
+{
+  "id": "ex-4am-tanasub-muamil-l4-002",
+  "lessonCode": "tanasub-muamil",
+  "level": 4,
+  "metadata": {
+    "title": "العدد m مرتين في الجدول",
+    "estimatedMinutes": 6,
+    "tags": [
+      "الجداءان المتصالبان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tanasub-muamil_P1",
+      "modelledOn": "ex-16"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "الجدول الآتي جدول تناسبية:",
+    "table": {
+      "head": [
+        "$x$",
+        "$m$",
+        "9"
+      ],
+      "rows": [
+        [
+          "$y$",
+          "4",
+          "$m$"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن $m^2 = 36$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الجداءان المتصالبان متساويان."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "الجدول جدول تناسبية، إذن الجداءان المتصالبان متساويان:",
+          "$m \\times m = 9 \\times 4$",
+          "$m^2 = 36$"
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "استنتج القيمتين الممكنتين للعدد $m$ .",
+      "statement": "القيمة الأصغر:",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب القيمة الأصغر (عدد صحيح، قد يكون سالبا)",
+      "expectedAnswer": "-6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "للمعادلة $m^2 = 36$ حلان."
+        }
+      ],
+      "feedback": {
+        "correct": "صحيح: هذه هي القيمة الأصغر.",
+        "incorrect": "للمعادلة $X^2 = 36$ حلان متعاكسان."
+      },
+      "solution": {
+        "lines": [
+          "$m^2 = 36$ معناه $m = 6$ أو $m = -6$"
+        ],
+        "result": "m = -6"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "القيمة الأكبر:",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب القيمة الأكبر (عدد صحيح)",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "للمعادلة $m^2 = 36$ حلان."
+        }
+      ],
+      "feedback": {
+        "correct": "$m = 6$ .",
+        "incorrect": "للمعادلة $X^2 = 36$ حلان متعاكسان."
+      },
+      "solution": {
+        "lines": [
+          "$m^2 = 36$ معناه $m = 6$ أو $m = -6$"
+        ],
+        "result": "m = 6"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "احسب معامل التناسبية في كل حالة.",
+      "statement": "من أجل $m = 6$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر a/b",
+      "expectedAnswer": "2/3",
+      "misconceptionSignatures": [
+        {
+          "value": "3/2",
+          "id": "MISC-TANASUB-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $m$ في الجدول، ثم احسب $\\dfrac{y}{x}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{4}{6} = \\dfrac{6}{9} = \\dfrac{2}{3}$ .",
+        "incorrect": "معامل التناسبية هو $\\dfrac{y}{x}$ : السطر الثاني على السطر الأول، وليس العكس."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{4}{6} = \\dfrac{6}{9} = \\dfrac{2}{3}$"
+        ],
+        "result": "a = \\dfrac{2}{3}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "من أجل $m = -6$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر a/b (قد يكون سالبا)",
+      "expectedAnswer": "-2/3",
+      "misconceptionSignatures": [
+        {
+          "value": "-3/2",
+          "id": "MISC-TANASUB-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $m$ في الجدول، وانتبه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{4}{-6} = \\dfrac{-6}{9} = -\\dfrac{2}{3}$ .",
+        "incorrect": "معامل التناسبية هو $\\dfrac{y}{x}$ : السطر الثاني على السطر الأول، وليس العكس."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{4}{-6} = \\dfrac{-6}{9} = -\\dfrac{2}{3}$"
+        ],
+        "result": "a = -\\dfrac{2}{3}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

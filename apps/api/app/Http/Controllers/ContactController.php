@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Domain\Push\AdminPush;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 
@@ -23,7 +24,8 @@ class ContactController extends Controller
             'message.min' => 'Le message est trop court',
         ]);
 
-        Contact::create($validated);
+        $contact = Contact::create($validated);
+        AdminPush::later('contact_message', $contact->id);
 
         return response()->json([
             'success' => true,

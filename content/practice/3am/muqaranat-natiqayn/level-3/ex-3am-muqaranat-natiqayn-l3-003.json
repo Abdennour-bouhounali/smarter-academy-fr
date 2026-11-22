@@ -1,0 +1,291 @@
+{
+  "id": "ex-3am-muqaranat-natiqayn-l3-003",
+  "lessonCode": "muqaranat-natiqayn",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — هل المعامل الأكبر يعني العبارة الأكبر؟",
+    "estimatedMinutes": 12,
+    "tags": [
+      "عبارتان",
+      "فرق",
+      "مثال مضاد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارتان $A = 5x + 2$ و $B = 3x + 14$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "من أجل $x = 0$ ، أيّ العبارتين أكبر؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العددان؟ وأيّهما الأول في الفرق؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا حاجة إلى حساب كلّ شيء: قارن العددين أوّلًا ثم استنتج إشارة الفرق."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب الفرق إذا لزم الأمر."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$A$ ، لأنّ معامل $x$ فيها أكبر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-COEF"
+        },
+        {
+          "id": "B",
+          "content": "$B$ ، لأنّ قيمتها $14$ وقيمة $A$ هي $2$",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل $x = 0$ : $B > A$ .",
+        "incorrect": "قارن العددين أوّلًا ثمّ استنتج إشارة الفرق."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $x = 0$ : $A = 2$ و $B = 14$ ، إذن $B > A$ ."
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "من أجل $x = 10$ ، أيّ العبارتين أكبر؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العددان؟ وأيّهما الأول في الفرق؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا حاجة إلى حساب كلّ شيء: قارن العددين أوّلًا ثم استنتج إشارة الفرق."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب الفرق إذا لزم الأمر."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$A$ ، لأنّ قيمتها $52$ وقيمة $B$ هي $44$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$B$ ، لأنّها كانت الأكبر عند $x = 0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-ORDER-SUB"
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل $x = 10$ : $A > B$ .",
+        "incorrect": "قارن العددين أوّلًا ثمّ استنتج إشارة الفرق."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $x = 10$ : $A = 52$ و $B = 44$ ، إذن $A > B$ ."
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "بسّط $A - B$ واكتبه على الشكل $2x + c$ . ما العدد $c$ ؟",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $c$ فقط",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العبارتان؟ وكيف يُكتب فرقهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الفرق بوضع العبارة الثانية بين قوسين ثم بسّط وانتبه إلى إشارة ما بعد الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض قيمة بسيطة للحرف في الفرق وفي النتيجة."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-12",
+      "misconceptionSignatures": [
+        {
+          "value": "16",
+          "id": "MISC-MUQ-BRACKET"
+        }
+      ],
+      "feedback": {
+        "correct": "$A - B = 2x - 12$ ، إذن $c = -12$ .",
+        "incorrect": "ضع العبارة الثانية بين قوسين قبل الطرح، ثمّ بسّط."
+      },
+      "solution": {
+        "lines": [
+          "$A - B = 5x + 2 - (3x + 14)$",
+          "$A - B = 5x + 2 - 3x - 14 = 2x - 12$"
+        ]
+      }
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "أيّ الجمل التالية صحيحة؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما هو الفرق المبسَّط؟ ومتى يكون موجبًا ومتى يكون سالبًا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن القيمة التي ينعدم عندها الفرق، ثم انظر إلى جهتيها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر قيمة من كل جهة للتأكّد من الإشارة."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$A > B$ من أجل $x > 6$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$A > B$ مهما كانت قيمة $x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-COEF"
+        },
+        {
+          "id": "C",
+          "content": "$A < B$ من أجل $x > 6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-ORDER-SUB"
+        }
+      ],
+      "feedback": {
+        "correct": "$A > B$ عندما $x > 6$ .",
+        "incorrect": "ادرس إشارة الفرق المبسَّط على جهتي القيمة التي ينعدم عندها."
+      },
+      "solution": {
+        "lines": [
+          "$A - B = 2x - 12 = 2(x - 6)$ موجب من أجل $x > 6$ وسالب من أجل $x < 6$ ."
+        ]
+      }
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "علّل: لماذا لا نستطيع القول إنّ $A$ أكبر من $B$ دائمًا رغم أنّ $5 > 3$ ؟",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي تريد تبريره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الفرق أوّلًا ثم إشارته ثم الخلاصة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة واحدة تربط إشارة الفرق بالمقارنة."
+        }
+      ],
+      "timeSeconds": 180,
+      "feedback": {
+        "correct": "قيمة واحدة تناقض الحكم.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثمّ قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $x = 0$ : $A = 2$ و $B = 14$ ، إذن $A < B$ .",
+          "مثال واحد يكفي لنفي أنّ $A > B$ دائمًا. والفرق $A - B = 2x - 12$ يتغيّر إشارته عند $x = 6$ ."
+        ]
+      }
+    }
+  ]
+}

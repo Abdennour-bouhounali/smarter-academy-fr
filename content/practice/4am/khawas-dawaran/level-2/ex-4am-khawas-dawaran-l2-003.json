@@ -1,0 +1,217 @@
+{
+  "id": "ex-4am-khawas-dawaran-l2-003",
+  "lessonCode": "khawas-dawaran",
+  "level": 2,
+  "metadata": {
+    "title": "من الكتاب — التمرين 8 (ص 159)",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مركز وزاوية واتجاه"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-8",
+      "page": 159,
+      "section": "صورة شكل بدوران",
+      "number": 8
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 159): BCDE مربع مركزه O، و ABC مثلث متقايس الأضلاع، و M و N على المستقيم (ED) حيث $ME = EB$ و $DN = DC$ .",
+    "figure": {
+      "points": {
+        "B": [
+          -1,
+          1
+        ],
+        "C": [
+          1,
+          1
+        ],
+        "D": [
+          1,
+          -1
+        ],
+        "E": [
+          -1,
+          -1
+        ],
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          0,
+          2.732
+        ],
+        "M": [
+          -3,
+          -1
+        ],
+        "N": [
+          3,
+          -1
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "A",
+          "C"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "E"
+        ],
+        [
+          "E",
+          "B"
+        ],
+        {
+          "from": "B",
+          "to": "D",
+          "dashed": true
+        },
+        {
+          "from": "C",
+          "to": "E",
+          "dashed": true
+        },
+        [
+          "M",
+          "E"
+        ],
+        [
+          "D",
+          "N"
+        ],
+        [
+          "M",
+          "B"
+        ],
+        [
+          "N",
+          "C"
+        ]
+      ],
+      "labels": {
+        "O": "s",
+        "B": "w",
+        "C": "e",
+        "E": "s",
+        "D": "s"
+      },
+      "ariaLabel": "المربع BCDE مركزه O والمثلث ABC والنقطتان M و N",
+      "maxWidth": 440
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "E هي صورة B بالدوران الذي مركزه O وزاويته $90^\\circ$ في الاتجاه:",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "المباشر",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "غير المباشر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ITTIJAH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد B ثم E حول O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل تدور من B إلى E مع عقارب الساعة أم عكسها؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "B في الأعلى يسارا، E في الأسفل يسارا."
+        }
+      ],
+      "feedback": {
+        "correct": "من B إلى E عكس عقارب الساعة حول O: الاتجاه المباشر.",
+        "incorrect": "من B إلى E حول O: قارن جهة الدوران بجهة عقارب الساعة."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "M هي صورة D بالدوران الذي:",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مركزه E وزاويته $180^\\circ$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "مركزه E وزاويته $90^\\circ$ في الاتجاه المباشر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-RAS-ZAWIYA"
+        },
+        {
+          "id": "C",
+          "content": "مركزه O وزاويته $180^\\circ$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MARKAZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن EM و ED."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل M و E و D على استقامية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "E منتصف [MD]."
+        }
+      ],
+      "feedback": {
+        "correct": "$EM = ED$ و M و E و D على استقامية: التناظر بالنسبة إلى E.",
+        "incorrect": "E منتصف [MD]: دوران مركزه E بنصف دورة."
+      }
+    }
+  ]
+}

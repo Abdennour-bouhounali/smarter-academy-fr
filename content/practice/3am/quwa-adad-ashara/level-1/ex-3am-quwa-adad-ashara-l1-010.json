@@ -1,0 +1,175 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l1-010",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — القوة جداء عوامل",
+    "estimatedMinutes": 6,
+    "tags": [
+      "تعريف القوة",
+      "عوامل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "القوة $10^{n}$ ، من أجل $n$ طبيعي غير معدوم، هي جداء $n$ عاملًا كلّها تساوي 10."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما قيمة $10^{1}$ ؟",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم عاملًا في الجداء $10^{1}$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء عامل واحد يساوي هذا العامل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا ننتظر هنا عملية ضرب."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "10",
+      "feedback": {
+        "correct": "$10^{1} = 10$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10^{1}$ جداء عامل واحد هو 10.",
+          "$10^{1} = 10$ ."
+        ],
+        "result": "10"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "العدد $10\\,000$ يساوي جداء عدّة عوامل كلّها تساوي 10. كم عاملًا؟",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ الأصفار بعد الرقم 1."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كلّ عامل 10 يُضيف صفرًا واحدًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد العوامل هو عدد الأصفار، لا عدد الأرقام."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-ASHARA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$10\\,000 = 10 \\times 10 \\times 10 \\times 10$ : أربعة عوامل.",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10\\,000 = 10 \\times 10 \\times 10 \\times 10$ .",
+          "أربعة أصفار إذن أربعة عوامل."
+        ],
+        "result": "4"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "نكتب الجداء $10 \\times 10 \\times 10 \\times 10 \\times 10 \\times 10 \\times 10$ على الشكل $10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ العوامل المكتوبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأسّ هو عدد العوامل التي تساوي 10."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدّها عاملًا عاملًا دون نسيان."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "70",
+          "id": "MISC-ASHARA-DARB"
+        }
+      ],
+      "feedback": {
+        "correct": "$10 \\times 10 \\times 10 \\times 10 \\times 10 \\times 10 \\times 10 = 10^{7}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "سبعة عوامل كلّها 10 إذن الأسّ 7.",
+          "$10^{7}$ ."
+        ],
+        "result": "n = 7"
+      }
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "id": "ex-2am-muqarana-nisbiya-l1-009",
+  "lessonCode": "muqarana-nisbiya",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — أصغر عدد وأكبر عدد",
+    "estimatedMinutes": 6,
+    "tags": [
+      "مقارنة",
+      "ترتيب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "ثلاثة تلاميذ يتعاونون على ترتيب بطاقات كتب عليها أعداد نسبية في مكتبة القسم."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما أصغر الأعداد $3{,}2$ ، $-1{,}4$ ، $0$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "-1,4",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-MUQARANA-NISBIYA-ZS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارتي العددين قبل أي شيء آخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد السالب أصغر من الصفر، والصفر أصغر من كل عدد موجب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عند اختلاف الإشارتين لا حاجة إلى مقارنة المسافتين إلى الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "العدد السالب أصغر من الصفر ومن كل عدد موجب: $-1{,}4$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$-1{,}4 < 0 < 3{,}2$",
+          "الأصغر هو $-1{,}4$"
+        ],
+        "result": "-1{,}4"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما أكبر الأعداد $-6$ ، $-0{,}6$ ، $-60$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "-0,6",
+      "misconceptionSignatures": [
+        {
+          "value": "-60",
+          "id": "MISC-MUQARANA-NISBIYA-BDG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العددين على المستقيم المدرّج: أيّهما أبعد عن الصفر؟ وفي أيّ جهة منه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددان سالبان: الأصغر هو الذي له أكبر مسافة إلى الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن المسافتين إلى الصفر (العددين دون إشارتيهما) ثم اعكس الحكم لأن العددين سالبان."
+        }
+      ],
+      "feedback": {
+        "correct": "الأكبر بين أعداد سالبة هو الأقرب إلى الصفر: $-0{,}6$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "المسافات إلى الصفر: 6 و 0,6 و 60",
+          "الأكبر هو $-0{,}6$"
+        ],
+        "result": "-0{,}6"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما أكبر الأعداد $-3{,}5$ ، $0$ ، $-0{,}1$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "0",
+      "misconceptionSignatures": [
+        {
+          "value": "-3,5",
+          "id": "MISC-MUQARANA-NISBIYA-BDG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين يقع الصفر على المستقيم المدرّج بالنسبة إلى العدد السالب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الصفر أكبر من كل عدد سالب وأصغر من كل عدد موجب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بوضع العددين على المستقيم المدرّج."
+        }
+      ],
+      "feedback": {
+        "correct": "الصفر أكبر من كل عدد سالب.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد المقارنة خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$-3{,}5 < -0{,}1 < 0$",
+          "الأكبر هو $0$"
+        ],
+        "result": "0"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

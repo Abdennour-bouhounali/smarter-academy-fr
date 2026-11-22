@@ -1,0 +1,261 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muthallathat-l2-001",
+  "lessonCode": "wadiya-idmajiya-muthallathat",
+  "level": 2,
+  "metadata": {
+    "title": "أدمج تعلّماتي — ارتفاع «مقام الشهيد»",
+    "estimatedMinutes": 12,
+    "tags": [
+      "وضعية",
+      "خاصية طالس",
+      "الظل"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "situation",
+      "page": 124,
+      "section": "أدمج تعلّماتي"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يريد أريس قياس ارتفاع المعلم التاريخي «مقام الشهيد» المتواجد بالجزائر العاصمة. لإنجاز هذه المهمة، استعان بعمود كهربائي $[PQ]$ طوله $2{,}30\\,\\mathrm{m}$ ووقف في مكان $A$ حيث يشاهد قمة العمود الكهربائي $Q$ وقمة «مقام الشهيد» $S$ على استقامة واحدة (الشكل المقابل؛ نهمل طول أريس). $M$ قاعدة المقام، و $h$ ارتفاعه.",
+    "figure": {
+      "points": {
+        "M": [
+          0,
+          0
+        ],
+        "S": [
+          0,
+          9.3878
+        ],
+        "P": [
+          7,
+          0
+        ],
+        "Q": [
+          7,
+          2.8163
+        ],
+        "A": [
+          10,
+          0
+        ]
+      },
+      "segments": [
+        {
+          "from": "M",
+          "to": "P",
+          "label": "95,65 m"
+        },
+        {
+          "from": "P",
+          "to": "A",
+          "label": "2,45 m"
+        },
+        {
+          "from": "P",
+          "to": "Q",
+          "label": "2,30 m",
+          "labelSide": -1
+        },
+        {
+          "from": "M",
+          "to": "S",
+          "label": "h"
+        },
+        {
+          "from": "A",
+          "to": "S",
+          "dashed": true
+        }
+      ],
+      "rightAngles": [
+        [
+          "S",
+          "M",
+          "P"
+        ],
+        [
+          "Q",
+          "P",
+          "A"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "A",
+          "from": "P",
+          "to": "Q",
+          "label": "x"
+        }
+      ],
+      "labels": {
+        "M": "s",
+        "S": "n",
+        "P": "s",
+        "Q": "n",
+        "A": "s"
+      },
+      "ariaLabel": "المقام [MS] ارتفاعه h والعمود [PQ] طوله 2,30 m عموديان على الأرض؛ MP = 95,65 m و PA = 2,45 m؛ خط النظر من A يمر بالقمة Q ويصل القمة S؛ x الزاوية بين الأرض وخط النظر",
+      "caption": "الشكل غير مرسوم بالأبعاد الحقيقية",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب المسافة $AM$ بين أريس وقاعدة المقام.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: المسافة بـ m",
+      "expectedAnswer": "98.1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقط $A$ ، $P$ ، $M$ على استقامة واحدة، و $P$ بين $A$ و $M$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AM = 95{,}65 + 2{,}45 = 98{,}1\\,\\mathrm{m}$ .",
+        "incorrect": "العمود بين أريس والمقام: المسافة الكلية مجموع المسافتين."
+      },
+      "solution": {
+        "lines": [
+          "$P$ بين $A$ و $M$ ، إذن: $AM = AP + PM = 2{,}45 + 95{,}65$"
+        ],
+        "result": "AM = 98{,}1\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ساعد أريس على إيجاد ارتفاع المقام $h$ بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الارتفاع بـ m مدوّرا إلى 0,01",
+      "expectedAnswer": "92.09",
+      "misconceptionSignatures": [
+        {
+          "value": "89.79",
+          "id": "MISC-MUTH-TALIS-NAZAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العمود والمقام عموديان على الأرض فهما متوازيان، و $A$ ، $Q$ ، $S$ على استقامة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المثلثان $APQ$ و $AMS$ في وضعية طالس: $\\dfrac{MS}{PQ} = \\dfrac{AM}{AP}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض ثم اعزل $h$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$h = \\dfrac{2{,}30 \\times 98{,}1}{2{,}45} \\approx 92{,}09\\,\\mathrm{m}$ .",
+        "incorrect": "المسافة الكلية من أريس إلى المقام هي $AM$ لا $PM$ ، والنسبة تُكتب بين أطوال متقابلة في المثلثين."
+      },
+      "solution": {
+        "lines": [
+          "$(PQ) \\parallel (MS)$ لأنهما عموديان على الأرض، والنقط $A$ ، $Q$ ، $S$ في استقامية وكذلك $A$ ، $P$ ، $M$ .",
+          "حسب خاصية طالس: $\\dfrac{AP}{AM} = \\dfrac{PQ}{MS}$ أي $\\dfrac{2{,}45}{98{,}1} = \\dfrac{2{,}30}{h}$",
+          "ومنه: $h = \\dfrac{2{,}30 \\times 98{,}1}{2{,}45} \\approx 92{,}0939$"
+        ],
+        "result": "h \\approx 92{,}09\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "عيّن المدوّر إلى الدرجة لقيس الزاوية $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: القيس بالدرجة مدوّرا إلى الوحدة",
+      "expectedAnswer": "43",
+      "misconceptionSignatures": [
+        {
+          "value": "47",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        },
+        {
+          "value": "0.94",
+          "id": "MISC-MUTH-NISBA-BADAL-QAYS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $APQ$ قائم في $P$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بالنسبة إلى $x$ : $[PQ]$ مقابل و $[AP]$ مجاور."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل اللمسة العكسية للنسبة في آلة حاسبة مبرمجة على الدرجة، ثم دوّر في آخر الحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan x = \\dfrac{2{,}30}{2{,}45}$ ومنه $x \\approx 43{,}19^{\\circ}$ ، أي $43^{\\circ}$ .",
+        "incorrect": "الظل = المقابل على المجاور، ثم اللمسة العكسية للظل (بالدرجة) تعطي القيس."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $APQ$ القائم في $P$ : $\\tan x = \\dfrac{PQ}{AP} = \\dfrac{2{,}30}{2{,}45}$",
+          "باستعمال الآلة الحاسبة: $x \\approx 43{,}1913^{\\circ}$"
+        ],
+        "result": "x \\approx 43^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

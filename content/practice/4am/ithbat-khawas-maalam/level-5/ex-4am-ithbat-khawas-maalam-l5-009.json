@@ -1,0 +1,85 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l5-009",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — تقرير الحكم",
+    "estimatedMinutes": 2,
+    "tags": [
+      "أدلة كافية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_ithbat-khawas-maalam_P2",
+      "modelledOn": "now-145"
+    }
+  },
+  "generator": {
+    "tool": "u1x-ithbat-khawas-maalam/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "كتب حَكَم دورة الأحياء عن ميدان EFGH : $\\overrightarrow{EF} = \\overrightarrow{HG}$ ، $EF = FG$ ، $EG = FH$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "نستنتج أن EFGH :",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "معيّن فقط، لأن $EF = FG$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "B",
+          "content": "مستطيل فقط، لأن $EG = FH$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "C",
+          "content": "لا نستطيع الحكم دون رسم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SHAKL-DALIL"
+        },
+        {
+          "id": "D",
+          "content": "مربّع: متوازي أضلاع، ضلعان متتاليان متقايسان، قطران متقايسان",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدليل الأول: متوازي أضلاع؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الثاني: معيّن؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الثالث: مستطيل؟"
+        }
+      ],
+      "feedback": {
+        "correct": "متوازي أضلاع ومعيّن ومستطيل معا: مربّع.",
+        "incorrect": "الأدلة الثلاثة كافية."
+      }
+    }
+  ]
+}

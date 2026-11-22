@@ -1,0 +1,220 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-harfi-l3-001",
+  "lessonCode": "wadiya-idmajiya-harfi",
+  "level": 3,
+  "metadata": {
+    "title": "الوتر بدلالة x",
+    "estimatedMinutes": 9,
+    "tags": [
+      "خاصية فيثاغورس",
+      "متطابقات شهيرة",
+      "نشر"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-34",
+      "page": 39,
+      "section": "أوظّف تعلّماتي",
+      "number": 34
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ABC مثلث قائم في $B$ حيث $AB = x + 4$ و $BC = 4x$ ، و $x$ عدد موجب، ووحدة الطول هي السنتيمتر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "باستعمال خاصية فيثاغورس، عبّر بدلالة $x$ عن $AC^2$ ، ثم اكتبه على شكل نشر مبسّط.",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $AC^2$ على الشكل $ax^2 + bx + c$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "17",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-MUTATABIQA-MURABBA-MUAMIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث قائم في $B$ : الوتر هو $[AC]$ ، إذن $AC^2 = AB^2 + BC^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انشر $(x + 4)^2$ بمتطابقة شهيرة، ولا تنسَ أنّ $(4x)^2 = 16x^2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC^2 = 17x^2 + 8x + 16$ إذن $a = 17$ .",
+        "incorrect": "طبّق المتطابقة الشهيرة حدًّا حدًّا (مربع كل حد والحد المضاعف)، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $B$ ، حسب خاصية فيثاغورس: $AC^2 = AB^2 + BC^2$",
+          "$AC^2 = (x + 4)^2 + (4x)^2$",
+          "$AC^2 = x^2 + 8x + 16 + 16x^2$"
+        ],
+        "result": "AC^2 = 17x^2 + 8x + 16"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $AC^2$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-MURABBA-MAJMU-BILA-2AB"
+        },
+        {
+          "value": "4",
+          "id": "MISC-MUTATABIQA-2AB-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بعد الحساب، اقرأ العدد $b$ في الشكل المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC^2 = 17x^2 + 8x + 16$ إذن $b = 8$ .",
+        "incorrect": "طبّق المتطابقة الشهيرة حدًّا حدًّا (مربع كل حد والحد المضاعف)، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$AC^2 = 17x^2 + 8x + 16$"
+        ],
+        "result": "b = 8"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "العدد $c$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $AC^2$ على الشكل $ax^2 + bx + c$ : اكتب العدد $c$ فقط",
+      "expectedAnswer": "16",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بعد الحساب، اقرأ العدد $c$ في الشكل المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC^2 = 17x^2 + 8x + 16$ إذن $c = 16$ .",
+        "incorrect": "طبّق المتطابقة الشهيرة حدًّا حدًّا (مربع كل حد والحد المضاعف)، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$AC^2 = 17x^2 + 8x + 16$"
+        ],
+        "result": "c = 16"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "احسب الطول $AC$ من أجل $x = 2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بـ cm",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "100",
+          "id": "MISC-SHAKL-GHAYR-MUNASIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $AC^2$ من أجل هذه القيمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الطول $AC$ موجب: هو الجذر التربيعي لـ $AC^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC = 10\\,cm$ .",
+        "incorrect": "احسب أولا $AC^2$ من أجل القيمة المعطاة، ثم استنتج الطول $AC$ (عدد موجب)."
+      },
+      "solution": {
+        "lines": [
+          "$AC^2 = 17 \\times 2^2 + 8 \\times 2 + 16 = 68 + 16 + 16 = 100$",
+          "$AC > 0$ إذن $AC = \\sqrt{100}$",
+          "تحقّق: $AB = 6$ و $BC = 8$ ، و $6^2 + 8^2 = 100$"
+        ],
+        "result": "AC = 10\\,cm"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

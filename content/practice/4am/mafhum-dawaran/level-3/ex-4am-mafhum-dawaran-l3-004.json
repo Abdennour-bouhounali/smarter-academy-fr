@@ -1,0 +1,159 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l3-004",
+  "lessonCode": "mafhum-dawaran",
+  "level": 3,
+  "metadata": {
+    "title": "نشاط 3 — نصف مستقيم وقول غنيمة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "صورة نصف مستقيم",
+      "صورة مستقيم"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-3",
+      "page": 153,
+      "section": "أنشطة",
+      "number": 3
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 153): O مركز الدوران الذي زاويته $72^\\circ$ في الاتجاه المباشر. [Ax) نصف مستقيم و B نقطة منه تختلف عن A.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -3,
+          0
+        ],
+        "B": [
+          -1.5,
+          1.5
+        ]
+      },
+      "rays": [
+        {
+          "from": "A",
+          "through": "B",
+          "name": "x",
+          "extend": 0.5
+        }
+      ],
+      "labels": {
+        "O": "s",
+        "A": "s"
+      },
+      "ariaLabel": "نصف مستقيم [Ax) يبدأ من A ويمر بالنقطة B، والنقطة O على يمينه",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "صورة نصف المستقيم [Ax) هي:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نصف المستقيم [A′B′)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نصف المستقيم [B′A′)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-TARTIB"
+        },
+        {
+          "id": "C",
+          "content": "المستقيم (A′B′)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نصف المستقيم له مبدأ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "صورة المبدأ A هي A′."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الصورة تبدأ من صورة المبدأ وتمرّ بـ B′."
+        }
+      ],
+      "feedback": {
+        "correct": "صورة [Ax) هي [A′B′) الذي مبدؤه A′.",
+        "incorrect": "المبدأ يبقى مبدأ: انطلق من A′."
+      },
+      "difficulty": 2
+    },
+    {
+      "id": "q2",
+      "statement": "قالت غنيمة: «لإنشاء صورة مستقيم (d) لا يشمل O يكفي…». أكمل:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "إنشاء صورة نقطة واحدة ثم رسم الموازي لـ (d)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-TAWAZI"
+        },
+        {
+          "id": "B",
+          "content": "إنشاء صورتي نقطتين مختلفتين من (d)",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "إنشاء صورة نقطة A من (d) ورسم (OA′)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MARKAZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "صورة مستقيم مستقيم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كم نقطة تعيّن مستقيما؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الصورة لا توازي (d)."
+        }
+      ],
+      "feedback": {
+        "correct": "نقطتان تعيّنان مستقيما: نكتفي بصورتي نقطتين.",
+        "incorrect": "صورة المستقيم لا توازيه ولا تمرّ بـ O هنا."
+      },
+      "difficulty": 2
+    }
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l4-005",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 15 — خمسة دورانات حول A",
+    "estimatedMinutes": 3,
+    "tags": [
+      "طول الضلع",
+      "الخماسي"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-15",
+      "page": 161,
+      "section": "أتعمّق",
+      "number": 15
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 161، بعد تصحيح المنصّة: BCDEF): A و B نقطتان حيث AB = 4cm. C صورة B بالدّوران الذي مركزه A وزاويته $72^\\circ$ في الاتجاه المباشر، و D صورة C، و E صورة D، و F صورة E بنفس الدوران.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          4,
+          0
+        ],
+        "C": [
+          1.236,
+          3.804
+        ],
+        "D": [
+          -3.236,
+          2.351
+        ],
+        "E": [
+          -3.236,
+          -2.351
+        ],
+        "F": [
+          1.236,
+          -3.804
+        ]
+      },
+      "circles": [
+        {
+          "center": "A",
+          "radius": 4
+        }
+      ],
+      "segments": [
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "E"
+        ],
+        [
+          "E",
+          "F"
+        ],
+        [
+          "F",
+          "B"
+        ],
+        {
+          "from": "A",
+          "to": "B",
+          "dashed": true
+        },
+        {
+          "from": "A",
+          "to": "C",
+          "dashed": true
+        }
+      ],
+      "arcs": [
+        {
+          "center": "A",
+          "from": "B",
+          "to": "C",
+          "sweep": "ccw",
+          "arrow": true,
+          "label": "72°",
+          "tone": "emerald"
+        }
+      ],
+      "ariaLabel": "نقطة A مركز دائرة نصف قطرها 4، و B عليها، و C و D و E و F صور متتالية بالدوران الذي مركزه A وزاويته 72 درجة في الاتجاه المباشر: الخماسي BCDEF",
+      "maxWidth": 420
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "احسب FB مدوّرا إلى 0,01 بالسنتيمتر.",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "4.70",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUNTAZAM-DIL",
+          "value": "4.00"
+        },
+        {
+          "id": "MISC-MUTH-NISBA-UKHRA",
+          "value": "6.47"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم المثلث الذي رأسه المركز وقاعدته ضلع، ثم الارتفاع النازل من المركز."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في المثلث القائم، الزاوية في المركز نصف الزاوية المركزية، والوتر نصف القطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نصف الضلع = نصف القطر × جيب نصف الزاوية المركزية، ثم نضاعف."
+        }
+      ],
+      "feedback": {
+        "correct": "صورة F هي B ($5 \\times 72^\\circ = 360^\\circ$)، فـ FB ضلع مثل BC: $2 \\times 4 \\times \\sin 36^\\circ \\approx 4{,}70$ .",
+        "incorrect": "الضلع يساوي نصف القطر في السداسي فقط."
+      },
+      "difficulty": 4
+    },
+    {
+      "id": "q2",
+      "statement": "المضلع BCDEF:",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "خماسي منتظم مركزه A",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خماسي غير منتظم لأن A ليست رأسا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-ZAWAYA"
+        },
+        {
+          "id": "C",
+          "content": "المضلع ABCDEF منتظم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-ADLA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين تقع B و C و D و E و F بالنسبة إلى A؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الدوران يحافظ على الأطوال والزوايا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "هل الأضلاع متقايسة؟ والزوايا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "رؤوسه على الدائرة التي مركزها A ونصف قطرها 4، وزواياه المركزية كلها $72^\\circ$ : أضلاعه متقايسة وزواياه متقايسة.",
+        "incorrect": "ABCDEF ليس منتظما: AB = 4 لا يساوي BC."
+      },
+      "difficulty": 3
+    }
+  ]
+}

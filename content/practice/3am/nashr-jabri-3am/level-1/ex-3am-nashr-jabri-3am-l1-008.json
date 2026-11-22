@@ -1,0 +1,159 @@
+{
+  "id": "ex-3am-nashr-jabri-3am-l1-008",
+  "lessonCode": "nashr-jabri-3am",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — نشر مسبوق بعدد",
+    "estimatedMinutes": 5,
+    "tags": [
+      "نشر",
+      "أولوية العمليات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "انشر ثم بسّط كلًّا من العبارتين التاليتين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "انشر ثم بسّط $A = 3 + 5(x - 2)$ . الشكل الصحيح هو:",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$A = 5x - 7$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$A = 8(x - 2)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-PRIORITY"
+        },
+        {
+          "id": "C",
+          "content": "$A = 5x + 1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-FIRST-ONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد (أو الحرف) الذي أمام القوسين يضرب كل حدّ من الحدود التي بينهما، وليس الحدّ الأول وحده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب في كل حدّ مع إشارته: جداء عددين لهما الإشارة نفسها موجب، وجداء عددين إشارتاهما مختلفتان سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير (مثل $1$ أو $2$) في العبارة قبل النشر وبعده: يجب أن تجد العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 5x - 7$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$A = 3 + 5(x - 2)$",
+          "$A = 3 + 5x - 10$",
+          "$A = 5x - 7$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "انشر ثم بسّط $B = 7 - 2(x + 3)$ . الشكل الصحيح هو:",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$B = 2x + 13$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-SIGN-NEG"
+        },
+        {
+          "id": "B",
+          "content": "$B = -2x + 1$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$B = -2x + 10$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-FIRST-ONLY"
+        },
+        {
+          "id": "D",
+          "content": "$B = 5(x + 3)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-PRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد (أو الحرف) الذي أمام القوسين يضرب كل حدّ من الحدود التي بينهما، وليس الحدّ الأول وحده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب في كل حدّ مع إشارته: جداء عددين لهما الإشارة نفسها موجب، وجداء عددين إشارتاهما مختلفتان سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير (مثل $1$ أو $2$) في العبارة قبل النشر وبعده: يجب أن تجد العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = -2x + 1$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$B = 7 - 2(x + 3)$",
+          "$B = 7 - 2x - 6$",
+          "$B = -2x + 1$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

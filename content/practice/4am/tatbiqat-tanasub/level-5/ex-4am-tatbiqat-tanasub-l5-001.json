@@ -1,0 +1,220 @@
+{
+  "id": "ex-4am-tatbiqat-tanasub-l5-001",
+  "lessonCode": "tatbiqat-tanasub",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2016 — قطعة أرض موروثة بالمدية",
+    "estimatedMinutes": 13,
+    "tags": [
+      "وضعية إدماجية",
+      "ضريبة",
+      "سعر المتر المربع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tatbiqat-tanasub_P1",
+      "modelledOn": "BEM 2016 II II-02"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "ورث السيد رشيد قطعة أرض مستطيلة الشكل بالمدية، طولها 80m وعرضها 45m ، فقرّر بيعها. بعد دفعه ضريبة نسبتها 15% من المبلغ الإجمالي للبيع، بقي له مبلغ $7{,}65 \\times 10^{6}DA$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب مساحة هذه القطعة.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المساحة بـ $m^2$ (عدد فقط)",
+      "expectedAnswer": "3600",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القطعة مستطيلة الشكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحة المستطيل = الطول × العرض."
+        }
+      ],
+      "feedback": {
+        "correct": "$80 \\times 45 = 3600m^2$ .",
+        "incorrect": "اضرب الطول في العرض."
+      },
+      "solution": {
+        "lines": [
+          "$S = 80 \\times 45 = 3600$",
+          "مساحة القطعة $3600m^2$ ."
+        ],
+        "result": "S = 3600m^2"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب المبلغ الإجمالي لبيع القطعة.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط، دون كتابة علمية)",
+      "expectedAnswer": "9000000",
+      "misconceptionSignatures": [
+        {
+          "value": "8797500",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بعد دفع الضريبة يبقى $85\\%$ من المبلغ الإجمالي $x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المعادلة $0{,}85x = 7\\,650\\,000$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{7\\,650\\,000}{0{,}85} = 9\\,000\\,000DA$ .",
+        "incorrect": "المبلغ الباقي هو 85% من المبلغ الإجمالي: اقسم، ولا تضف 15% إليه."
+      },
+      "solution": {
+        "lines": [
+          "$7{,}65 \\times 10^{6} = 7\\,650\\,000$",
+          "$x\\left(1 - \\dfrac{15}{100}\\right) = 7\\,650\\,000$",
+          "$0{,}85x = 7\\,650\\,000$",
+          "$x = \\dfrac{7\\,650\\,000}{0{,}85} = 9\\,000\\,000$"
+        ],
+        "result": "x = 9\\,000\\,000DA"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "حدّد سعر المتر المربع الواحد لهذه القطعة.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب السعر بـ DA (عدد فقط)",
+      "expectedAnswer": "2500",
+      "misconceptionSignatures": [
+        {
+          "value": "2125",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        },
+        {
+          "value": "0,0004",
+          "id": "MISC-MAQADIR-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "سعر المتر المربع مقدار حاصل قسمة: المبلغ على المساحة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل المبلغ الإجمالي للبيع."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9\\,000\\,000}{3600} = 2500DA$ للمتر المربع.",
+        "incorrect": "اقسم المبلغ الإجمالي على المساحة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{9\\,000\\,000}{3600} = 2500$",
+          "سعر المتر المربع 2500DA ."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "تبرّع رشيد بـ 5% من المبلغ الذي بقي له لجمعية خيرية، ووضع الباقي في حساب ادخار. احسب المبلغ الذي وضعه في الحساب.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "7267500",
+      "misconceptionSignatures": [
+        {
+          "value": "8550000",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        },
+        {
+          "value": "382500",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التبرّع يُحسب من المبلغ الذي بقي له بعد الضريبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد التبرّع بـ 5% يبقى $95\\%$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$7\\,650\\,000 \\times 0{,}95 = 7\\,267\\,500DA$ .",
+        "incorrect": "اضرب المبلغ الباقي بعد الضريبة في مضاعف التخفيض."
+      },
+      "solution": {
+        "lines": [
+          "$7\\,650\\,000 \\times \\left(1 - \\dfrac{5}{100}\\right) = 7\\,650\\,000 \\times 0{,}95$",
+          "$= 7\\,267\\,500$",
+          "وضع رشيد 7267500DA في حساب الادخار."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

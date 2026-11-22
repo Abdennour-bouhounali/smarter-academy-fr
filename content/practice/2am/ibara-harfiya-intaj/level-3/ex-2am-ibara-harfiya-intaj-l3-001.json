@@ -1,0 +1,317 @@
+{
+  "id": "ex-2am-ibara-harfiya-intaj-l3-001",
+  "lessonCode": "ibara-harfiya-intaj",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — قاعة رياضة بدلالة x",
+    "estimatedMinutes": 7,
+    "tags": [
+      "محيط",
+      "مساحة",
+      "عبارة حرفيّة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 3,
+      "file": "2am-s3-39",
+      "exercise": 4
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل مخطّط قاعة رياضة مؤلّفة من مستطيل $ABDE$ ومثلّث متساوي الساقين $BCD$ . الأطوال بالمتر.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          6
+        ],
+        "B": [
+          8,
+          6
+        ],
+        "D": [
+          8,
+          0
+        ],
+        "E": [
+          0,
+          0
+        ],
+        "C": [
+          12,
+          3
+        ],
+        "M": [
+          8,
+          3
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "x+4"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "x+3",
+          "ticks": 1
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "ticks": 1
+        },
+        {
+          "from": "D",
+          "to": "E"
+        },
+        {
+          "from": "E",
+          "to": "A",
+          "label": "10"
+        },
+        {
+          "from": "B",
+          "to": "D"
+        },
+        {
+          "from": "M",
+          "to": "C",
+          "label": "x",
+          "dashed": true
+        }
+      ],
+      "rightAngles": [
+        [
+          "B",
+          "M",
+          "C"
+        ]
+      ],
+      "ariaLabel": "قاعة رياضة مؤلّفة من مستطيل ABDE ومثلّث متساوي الساقين BCD ؛ AB = DE = x+4 و AE = BD = 10 و BC = CD = x+3 وارتفاع المثلّث x",
+      "maxWidth": 340,
+      "caption": "(الأطوال غير حقيقية)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما عبارة محيط القاعة $ABCDE$ بدلالة $x$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$4x + 34$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-PERCELL"
+        },
+        {
+          "id": "B",
+          "content": "$4x + 24$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$4x + 14$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-NOFIRST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعيّة وحدّد ما يتغيّر (الحرف) وما يبقى ثابتًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ خيار بقيمة بسيطة للحرف ثمّ قارن بالعدّ المباشر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاعدة الصحيحة تعطي العدد نفسه الذي تجده بالعدّ في كلّ مرّة تجرّبها."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتابة الصحيحة هي $4x + 24$ .",
+        "incorrect": "جرّب كلّ خيار على قيمة بسيطة للحرف وقارن بالعدّ المباشر قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "$4x + 24$ : نجمع أضلاع الحدّ الخارجيّ AB و BC و CD و DE و EA ، والضلع BD في الداخل فلا يُحتسب.",
+          "عند $x = 8$ : $4 \\times 8 + 24 = 56$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "يريد صاحب القاعة تثبيت سجّادها من الأطراف بشريط لاصق. إذا كان $x = 8$ فما طول الشريط بالمتر ؟ احسب $P = 4x + 24$ .",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "56",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بالقيمة المعطاة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ احترم أولويّة العمليّات : الضرب قبل الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة قبل أن تجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$P = 56$ .",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ أعد الحساب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$4 \\times 8 + 24 = 56$ ."
+        ],
+        "result": "56"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "مساحة المستطيل $ABDE$ هي $10x + 40$ ومساحة المثلّث $BCD$ هي $5x$ . ما مساحة القاعة كلّها بدلالة $x$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$15x + 40$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$15x^{2} + 40$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-ADDPOWERS"
+        },
+        {
+          "id": "C",
+          "content": "$50x + 40$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-MULTCOEF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعيّة وحدّد ما يتغيّر (الحرف) وما يبقى ثابتًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ خيار بقيمة بسيطة للحرف ثمّ قارن بالعدّ المباشر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاعدة الصحيحة تعطي العدد نفسه الذي تجده بالعدّ في كلّ مرّة تجرّبها."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتابة الصحيحة هي $15x + 40$ .",
+        "incorrect": "جرّب كلّ خيار على قيمة بسيطة للحرف وقارن بالعدّ المباشر قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "$15x + 40$ : نجمع المساحتين : $10x + 40 + 5x = (10 + 5)x + 40$ .",
+          "عند $x = 8$ : $15 \\times 8 + 40 = 160$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "ما مساحة القاعة بالمتر المربّع إذا كان $x = 8$ ؟ احسب $S = 15x + 40$ .",
+      "learningPoints": [
+        {
+          "code": "2am_ibara-harfiya-intaj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "160",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بالقيمة المعطاة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ احترم أولويّة العمليّات : الضرب قبل الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة قبل أن تجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = 160$ .",
+        "incorrect": "عوّض الحرف في كلّ مكان يظهر فيه، وتذكّر أنّ $ax$ تعني $a \\times x$ ، ثمّ أعد الحساب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$15 \\times 8 + 40 = 160$ ."
+        ],
+        "result": "160"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

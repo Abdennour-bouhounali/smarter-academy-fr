@@ -1,0 +1,231 @@
+{
+  "id": "ex-4am-aksiya-talis-l1-006",
+  "lessonCode": "aksiya-talis",
+  "level": 1,
+  "metadata": {
+    "title": "تمرين 12 — النسبتان ثم التوازي",
+    "estimatedMinutes": 5,
+    "tags": [
+      "تمرين 12",
+      "وضعية الفراشة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-12",
+      "page": 111,
+      "section": "أوظّف تعلّماتي",
+      "number": 12
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل: النقط $A$ ، $E$ ، $C$ في استقامية، والنقط $D$ ، $E$ ، $B$ في استقامية، حيث: $EA = 1{,}2$ ، $EC = 1{,}8$ ، $ED = 3{,}2$ و $EB = 4{,}8$ .",
+    "figure": {
+      "points": {
+        "E": [
+          0.0,
+          0.0
+        ],
+        "A": [
+          -0.507141914089,
+          1.087569344444
+        ],
+        "C": [
+          0.760712871133,
+          -1.631354016666
+        ],
+        "D": [
+          2.900184918517,
+          1.35237843757
+        ],
+        "B": [
+          -4.350277377776,
+          -2.028567656355
+        ]
+      },
+      "segments": [
+        {
+          "from": "E",
+          "to": "A",
+          "label": "1,2"
+        },
+        {
+          "from": "E",
+          "to": "C",
+          "label": "1,8"
+        },
+        {
+          "from": "E",
+          "to": "D",
+          "label": "3,2"
+        },
+        {
+          "from": "E",
+          "to": "B",
+          "label": "4,8"
+        },
+        [
+          "A",
+          "D"
+        ],
+        [
+          "B",
+          "C"
+        ]
+      ],
+      "ariaLabel": "A و E و C على استقامة، D و E و B على استقامة، و E بين النقطتين في كل مرة؛ EA = 1,2 و EC = 1,8 و ED = 3,2 و EB = 4,8",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب النسبة $\\dfrac{EA}{EC}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "2/3",
+      "misconceptionSignatures": [
+        {
+          "value": "3/2",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$EA$ و $EC$ طولان يُقاسان من النقطة $E$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $EA$ على $EC$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{EA}{EC} = \\dfrac{1{,}2}{1{,}8} = \\dfrac{2}{3}$ .",
+        "incorrect": "النسبة $\\dfrac{EA}{EC}$ : الطول $EA$ على الطول $EC$ ، وكلاهما من النقطة $E$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{EA}{EC} = \\dfrac{1{,}2}{1{,}8} = \\dfrac{2}{3}$"
+        ],
+        "result": "\\dfrac{EA}{EC} = \\dfrac{2}{3}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب النسبة $\\dfrac{ED}{EB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "2/3",
+      "misconceptionSignatures": [
+        {
+          "value": "3/2",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$ED$ و $EB$ طولان يُقاسان من النقطة $E$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $ED$ على $EB$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{ED}{EB} = \\dfrac{3{,}2}{4{,}8} = \\dfrac{2}{3}$ .",
+        "incorrect": "النسبة $\\dfrac{ED}{EB}$ : الطول $ED$ على الطول $EB$ ، وكلاهما من النقطة $E$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{ED}{EB} = \\dfrac{3{,}2}{4{,}8} = \\dfrac{2}{3}$"
+        ],
+        "result": "\\dfrac{ED}{EB} = \\dfrac{2}{3}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل المستقيمان $(AD)$ و $(BC)$ متوازيان؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-BAYN-FAQAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النسبتين بقيمهما المضبوطة (الجداء المتصالب)، لا بقيم مقرّبة ولا بمظهر الشكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق أيضا من ترتيب النقط على المستقيمين المتقاطعين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{EA}{EC} = \\dfrac{ED}{EB}$ و $E$ بين النقطتين في كل مرة: $(AD) \\parallel (BC)$ .",
+        "incorrect": "الخاصية العكسية تتطلب شرطين معا: تساوي النسبتين بقيم مضبوطة، وترتيب النقط نفسه على المستقيمين."
+      },
+      "solution": {
+        "lines": [
+          "بما أن النقط $A$ ، $E$ ، $C$ و $D$ ، $E$ ، $B$ في استقامية وبنفس الترتيب،",
+          "و بما أن: $\\dfrac{EA}{EC} = \\dfrac{ED}{EB} = \\dfrac{2}{3}$",
+          "فإن المستقيمين $(AD)$ و $(BC)$ متوازيان حسب خاصية طالس العكسية.",
+          "أعادت المنصّة رسم شكل الكتاب بوضوح أكبر، بنفس المعطيات."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

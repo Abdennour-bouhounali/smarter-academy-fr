@@ -1,0 +1,199 @@
+{
+  "id": "ex-4am-tafsir-bayani-jumla-l2-002",
+  "lessonCode": "tafsir-bayani-jumla",
+  "level": 2,
+  "metadata": {
+    "title": "من المعادلة إلى نقطة التقاطع",
+    "estimatedMinutes": 6,
+    "tags": [
+      "y = ax + b",
+      "نقطة التقاطع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tafsir-bayani-jumla_P1",
+      "modelledOn": "act-5",
+      "adaptedFrom": "ex-4am-tafsir-bayani-jumla-l2-002"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الجملة:",
+    "formulas": [
+      "\\begin{cases} 3x + y = 10 \\\\ y = 2x \\end{cases}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "اكتب المعادلة الأولى على الشكل $y = ax + b$ .",
+      "statement": "أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-JUMLA-ISHARA-Y"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعادلة من الشكل $ax + by = c$ : نريد أن يبقى $y$ وحده في طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل حدّ $x$ إلى الطرف الثاني مع تغيير إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم اقسم كل الحدود على معامل $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = -3$ : معامل $x$ بعد عزل $y$ .",
+        "incorrect": "انقل حدّ $x$ بتغيير إشارته، ثم اقسم الطرفين على معامل $y$ (بإشارته)."
+      },
+      "solution": {
+        "lines": [
+          "$3x + y = 10$",
+          "$y = -3x + 10$",
+          "$y = -3x + 10$",
+          "إذن: $a = -3$ و $b = 10$ ."
+        ],
+        "result": "y = -3x + 10"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "-10",
+          "id": "MISC-JUMLA-ISHARA-Y"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعادلة من الشكل $ax + by = c$ : نريد أن يبقى $y$ وحده في طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $b$ هو الحد الذي لا يحوي $x$ بعد عزل $y$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم اقسم كل الحدود على معامل $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$y = -3x + 10$ .",
+        "incorrect": "العدد $b$ هو الطرف الثاني مقسوما على معامل $y$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$3x + y = 10$",
+          "$y = -3x + 10$",
+          "$y = -3x + 10$",
+          "إذن: $a = -3$ و $b = 10$ ."
+        ],
+        "result": "y = -3x + 10"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "استنتج إحداثيي نقطة تقاطع المستقيمين الممثلين لمعادلتي الجملة.",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": {
+        "x": "2",
+        "y": "4"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "4",
+            "y": "2"
+          },
+          "id": "MISC-JUMLA-BAYANI-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "فاصلة نقطة التقاطع تجعل العبارتين متساويتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حل المعادلة التي تساوي بين العبارتين، ثم عوّض الحل في إحدى العبارتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الثنائية $(x ; y)$ : الفاصلة أولا ثم الترتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "هي إحداثيات نقطة تقاطع المستقيمين، أي حل الجملة.",
+        "incorrect": "ساوِ بين العبارتين لإيجاد الفاصلة، ثم احسب الترتيب بالتعويض؛ واكتب الفاصلة أولا."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة نقطة التقاطع تحقق: $-3x + 10 = 2x$",
+          "$5x = 10$",
+          "$x = 2$",
+          "نعوّض: $y = -3 \\times 2 + 10 = 4$",
+          "تحقق: $2 \\times 2 = 4$",
+          "إذن نقطة التقاطع هي $(2 ; 4)$ ، وهي حل الجملة."
+        ],
+        "result": "(2 ; 4)"
+      },
+      "timeSeconds": 210
+    }
+  ]
+}

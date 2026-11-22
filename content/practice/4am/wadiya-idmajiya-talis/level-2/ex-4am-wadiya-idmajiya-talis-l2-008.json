@@ -1,0 +1,118 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-talis-l2-008",
+  "lessonCode": "wadiya-idmajiya-talis",
+  "level": 2,
+  "metadata": {
+    "title": "ارتفاع عمود كهربائي: نتيجة غير ملائمة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "طريقة الظلّ",
+      "التحقق من النتيجة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-talis_P3",
+      "modelledOn": "challenge",
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-talis-l2-008"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في اللحظة نفسها، ظلّ عمود كهربائي شاقولي $6\\,\\mathrm{m}$ ، وظلّ عصا شاقولية طولها $1\\,\\mathrm{m}$ هو $0{,}8\\,\\mathrm{m}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "وجد تلميذ أن ارتفاع العمود $4{,}8\\,\\mathrm{m}$ . هل نتيجته ملائمة؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-MULAAMA-WAQI"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن طول العصا بطول ظلّها، ثم قارن ارتفاع العمود المقترح بطول ظلّه."
+        }
+      ],
+      "feedback": {
+        "correct": "العصا أطول من ظلّها، فالعمود أطول من ظلّه ( $6\\,\\mathrm{m}$ ): $4{,}8$ مستحيل.",
+        "incorrect": "في اللحظة نفسها النسبة «الطول على الظلّ» واحدة: هل يحترمها الارتفاع المقترح؟"
+      },
+      "solution": {
+        "lines": [
+          "ظلّ العصا ( $0{,}8\\,\\mathrm{m}$ ) أقصر من طولها ( $1\\,\\mathrm{m}$ )، فكل جسم شاقولي في اللحظة نفسها أطول من ظلّه.",
+          "ظلّ العمود $6\\,\\mathrm{m}$ ، إذن ارتفاعه أكبر من $6\\,\\mathrm{m}$ : النتيجة $4{,}8\\,\\mathrm{m}$ غير ملائمة (التلميذ قلب النسبة)."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب الارتفاع الصحيح للعمود.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "7,5",
+      "misconceptionSignatures": [
+        {
+          "value": "4.8",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\dfrac{h}{6} = \\dfrac{1}{0{,}8}$ (خاصية طالس)."
+        }
+      ],
+      "feedback": {
+        "correct": "$h = \\dfrac{6 \\times 1}{0{,}8} = 7{,}5\\,\\mathrm{m}$ .",
+        "incorrect": "في كل نسبة: طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{h}{6} = \\dfrac{1}{0{,}8}$",
+          "$h = \\dfrac{6 \\times 1}{0{,}8}$"
+        ],
+        "result": "h = 7{,}5\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

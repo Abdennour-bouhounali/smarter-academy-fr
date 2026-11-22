@@ -1,0 +1,153 @@
+{
+  "id": "ex-4am-barahin-ashia-l4-002",
+  "lessonCode": "barahin-ashia",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 21 (مصحّح) — منتصف [ED]",
+    "estimatedMinutes": 3,
+    "tags": [
+      "برهان",
+      "منتصف"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-21",
+      "page": 137,
+      "section": "أتعمّق",
+      "number": 21
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 137، تمرين 21، بعد تصحيح خطأ مطبعي): A، B، K ثلاث نقط ليست في استقامية. L منتصف [AB]، D النقطة التي من أجلها يكون الرباعي BLKD متوازي أضلاع، و E النقطة حيث $\\overrightarrow{LE} = \\overrightarrow{LA} + \\overrightarrow{LK}$ (الشكل).",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          6,
+          0
+        ],
+        "K": [
+          2,
+          4
+        ],
+        "L": [
+          3,
+          0
+        ],
+        "D": [
+          5,
+          4
+        ],
+        "E": [
+          -1,
+          4
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "L",
+          "K"
+        ],
+        [
+          "K",
+          "D"
+        ],
+        [
+          "D",
+          "B"
+        ],
+        {
+          "from": "L",
+          "to": "A",
+          "tone": "amber"
+        },
+        {
+          "from": "A",
+          "to": "E",
+          "dashed": true
+        },
+        {
+          "from": "E",
+          "to": "K",
+          "dashed": true
+        },
+        {
+          "from": "E",
+          "to": "D",
+          "tone": "indigo"
+        }
+      ],
+      "labels": {
+        "A": "sw",
+        "B": "se",
+        "K": "n",
+        "L": "s",
+        "D": "ne",
+        "E": "nw"
+      },
+      "ariaLabel": "النقط A و B و K، و L منتصف [AB]، و BLKD متوازي أضلاع، و LAEK متوازي أضلاع، والقطعة [ED]",
+      "maxWidth": 380
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "منتصف القطعة [ED] هو:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "K",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "L",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAKL-BURHAN"
+        },
+        {
+          "id": "C",
+          "content": "A",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MUNTASAF-IB-IA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "BLKD متوازي أضلاع: $\\overrightarrow{KD} = \\overrightarrow{LB}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قاعدة متوازي الأضلاع: $\\overrightarrow{KE} = \\overrightarrow{LA}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "L منتصف [AB]: قارن $\\overrightarrow{LA}$ بـ $\\overrightarrow{LB}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{KE} = \\overrightarrow{LA} = -\\overrightarrow{LB} = -\\overrightarrow{KD}$ : K منتصف [ED].",
+        "incorrect": "احسب $\\overrightarrow{KE}$ و $\\overrightarrow{KD}$ بالمعطيات: هما متعاكسان."
+      }
+    }
+  ]
+}

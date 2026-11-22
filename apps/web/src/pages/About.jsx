@@ -1,24 +1,25 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Search, Hand, FlaskConical, XCircle, Lightbulb, Brain, Quote } from 'lucide-react';
 import ClosingStatement from '../components/home/ClosingStatement';
 import FounderNote from '../components/about/FounderNote';
 import CtaBanner from '../components/common/CtaBanner';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 
+// Seules les clés vivent ici : les libellés sont résolus via t() au rendu.
 const wants = [
-  { icon: Search, label: 'chercher' },
-  { icon: Hand, label: 'manipuler' },
-  { icon: FlaskConical, label: 'expérimenter' },
-  { icon: XCircle, label: 'se tromper' },
-  { icon: Lightbulb, label: 'découvrir' },
-  { icon: Brain, label: 'comprendre' },
+  { icon: Search, key: 'about.wantSearch' },
+  { icon: Hand, key: 'about.wantManipulate' },
+  { icon: FlaskConical, key: 'about.wantExperiment' },
+  { icon: XCircle, key: 'about.wantFail' },
+  { icon: Lightbulb, key: 'about.wantDiscover' },
+  { icon: Brain, key: 'about.wantUnderstand' },
 ];
 
 export default function AboutPage() {
-  useDocumentMeta(
-    'Notre mission',
-    "Notre mission : rendre une éducation mathématique exceptionnelle accessible au plus grand nombre — au-delà des notes."
-  );
+  const { t } = useTranslation('marketing');
+
+  useDocumentMeta(t('about.metaTitle'), t('about.metaDescription'));
 
   return (
     <div className="pt-16">
@@ -32,13 +33,13 @@ export default function AboutPage() {
           className="relative max-w-3xl mx-auto"
         >
           <p className="font-mono-jetbrains text-blue-500 text-sm font-semibold tracking-widest uppercase mb-6">
-            Notre mission
+            {t('about.eyebrow')}
           </p>
           <h1 className="font-space font-bold text-3xl sm:text-4xl lg:text-5xl text-slate-900 leading-tight text-balance mb-8">
-            Et si apprendre les mathématiques pouvait changer bien plus que les notes ?
+            {t('about.title')}
           </h1>
           <p className="font-inter text-slate-600 text-lg leading-relaxed max-w-xl mx-auto">
-            Les mathématiques ne sont pas faites pour être récitées. Elles sont faites pour être comprises.
+            {t('about.subtitle')}
           </p>
         </motion.div>
       </section>
@@ -52,13 +53,13 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="font-inter text-slate-500 text-base mb-8"
           >
-            Nous voulons que chaque élève ose
+            {t('about.wantsLead')}
           </motion.p>
 
           <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
             {wants.map((w, i) => (
               <motion.span
-                key={w.label}
+                key={w.key}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -66,7 +67,7 @@ export default function AboutPage() {
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white border border-slate-200 shadow-sm font-space font-semibold text-slate-700 text-sm sm:text-base"
               >
                 <w.icon size={16} className="text-blue-500" />
-                {w.label}
+                {t(w.key)}
               </motion.span>
             ))}
           </div>
@@ -79,19 +80,19 @@ export default function AboutPage() {
           >
             <Quote size={22} className="text-blue-300" />
             <p className="font-space font-bold text-2xl sm:text-3xl gradient-text-blue-purple">
-              « Je sais pourquoi. »
+              {t('about.quote')}
             </p>
             <p className="font-inter text-slate-400 text-xs uppercase tracking-widest font-semibold">
-              Le sentiment que nous visons
+              {t('about.quoteCaption')}
             </p>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <p className="font-space font-bold text-2xl sm:text-3xl text-slate-900 leading-snug text-balance mb-3">
-              Nous ne voulons pas seulement préparer des élèves à réussir leurs examens.
+              {t('about.missionLead')}
             </p>
             <p className="font-space font-bold text-2xl sm:text-3xl gradient-text leading-snug text-balance">
-              Former une génération capable de comprendre, d'imaginer et de construire.
+              {t('about.missionPunch')}
             </p>
           </motion.div>
         </div>
@@ -107,13 +108,13 @@ export default function AboutPage() {
           className="relative max-w-2xl mx-auto"
         >
           <p className="font-mono-jetbrains text-blue-400 text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase mb-6">
-            Ce que nous voulons construire
+            {t('about.buildTitle')}
           </p>
           <p className="font-space font-bold text-3xl sm:text-4xl text-white leading-snug text-balance">
-            Une éducation exceptionnelle.
+            {t('about.buildLine1')}
           </p>
           <p className="font-space font-bold text-3xl sm:text-4xl gradient-text leading-snug text-balance mt-1">
-            Accessible au plus grand nombre.
+            {t('about.buildLine2')}
           </p>
         </motion.div>
       </section>
@@ -123,10 +124,10 @@ export default function AboutPage() {
       <ClosingStatement />
 
       <CtaBanner
-        eyebrow="Rejoignez l'aventure"
-        title="Aide-nous à donner le goût d'apprendre"
-        subtitle="Crée ton compte gratuit et fais partie des premiers élèves Smarter Academy."
-        primaryLabel="Commencer gratuitement"
+        eyebrow={t('about.ctaEyebrow')}
+        title={t('about.ctaTitle')}
+        subtitle={t('about.ctaBody')}
+        primaryLabel={t('about.ctaButton')}
         primaryTo="/register"
       />
     </div>

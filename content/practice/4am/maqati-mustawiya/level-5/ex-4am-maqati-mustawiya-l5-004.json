@@ -1,0 +1,65 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l5-004",
+  "lessonCode": "maqati-mustawiya",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — كعكة العيد",
+    "estimatedMinutes": 3,
+    "tags": [
+      "بلاطة قائمة",
+      "موازٍ لحرف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_maqati-mustawiya_P2",
+      "modelledOn": "act-3"
+    }
+  },
+  "statement": {
+    "content": "كعكة العيد على شكل بلاطة قائمة ارتفاعها $6\\,\\mathrm{cm}$ . تقطع الجدة ركنا منها لتهديه إلى الجيران، بسكين شاقولية توازي الحرف الشاقولي للركن، وتمرّ على بعد $18\\,\\mathrm{cm}$ و $24\\,\\mathrm{cm}$ من هذا الركن على الحرفين الأفقيين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما مساحة المقطع (بـ $\\mathrm{cm}^2$)؟",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر المربع)",
+      "expectedAnswer": "180",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAQTA-MAJMU",
+          "value": "252"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المقطع مستطيل أحد بعديه $6$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "البعد الآخر وتر مثلث قائم ضلعاه 18 و 24."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\sqrt{18^2 + 24^2} = 30$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "البعد الأفقي $\\sqrt{324 + 576} = 30$ : المساحة $30 \\times 6 = 180\\,\\mathrm{cm}^2$ .",
+        "incorrect": "$(18 + 24) \\times 6 = 252$ يستعمل المجموع بدل الوتر."
+      },
+      "difficulty": 5
+    }
+  ]
+}

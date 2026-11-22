@@ -1,0 +1,135 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l4-004",
+  "lessonCode": "mafhum-dawaran",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — أي تحويل؟",
+    "estimatedMinutes": 3,
+    "tags": [
+      "تعيين دوران",
+      "المرصوفة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mafhum-dawaran_P1",
+      "modelledOn": "ex-7"
+    }
+  },
+  "statement": {
+    "content": "على المرصوفة: المثلث PQR حيث $P(1\\,;\\,1)$ و $Q(3\\,;\\,1)$ و $R(1\\,;\\,2)$ ، والمثلث $P'Q'R'$ حيث $P'(-1\\,;\\,-1)$ و $Q'(-3\\,;\\,-1)$ و $R'(-1\\,;\\,-2)$ ، والنقطة $O(0\\,;\\,0)$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "P": [
+          1,
+          1
+        ],
+        "Q": [
+          3,
+          1
+        ],
+        "R": [
+          1,
+          2
+        ],
+        "P'": [
+          -1,
+          -1
+        ],
+        "Q'": [
+          -3,
+          -1
+        ],
+        "R'": [
+          -1,
+          -2
+        ]
+      },
+      "grid": true,
+      "maxWidth": 420,
+      "polygons": [
+        {
+          "points": [
+            "P",
+            "Q",
+            "R"
+          ],
+          "tone": "indigo"
+        },
+        {
+          "points": [
+            "P'",
+            "Q'",
+            "R'"
+          ],
+          "tone": "emerald"
+        }
+      ],
+      "ariaLabel": "ورقة مرصوفة عليها O والمثلثان PQR و P′Q′R′",
+      "labels": {
+        "P'": "ne",
+        "P": "sw",
+        "R": "n",
+        "R'": "s"
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المثلث $P'Q'R'$ صورة المثلث PQR بـ:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الدوران الذي مركزه O وزاويته $90^\\circ$ في الاتجاه المباشر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ZAWIYA-UKHRA"
+        },
+        {
+          "id": "B",
+          "content": "الدوران الذي مركزه O وزاويته $180^\\circ$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "انسحاب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-INSIHAB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن كل نقطة بصورتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "O منتصف [PP′]؟ و [QQ′]؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الانسحاب لا يقلب اتجاه الأضلاع."
+        }
+      ],
+      "feedback": {
+        "correct": "O منتصف [PP′] و [QQ′] و [RR′]: نصف دورة حول O.",
+        "incorrect": "الضلع [PQ] نحو اليمين وصورته نحو اليسار: ليس انسحابا، والزاوية ليست قائمة."
+      },
+      "difficulty": 3
+    }
+  ]
+}

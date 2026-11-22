@@ -1,0 +1,222 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-aadad-nisbiya-l1-010",
+  "lessonCode": "wadiya-idmajiya-aadad-nisbiya",
+  "level": 1,
+  "metadata": {
+    "title": "تفكيك عدد سالب إلى جداء",
+    "estimatedMinutes": 6,
+    "tags": [
+      "تفكيك",
+      "جداء",
+      "قواسم"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "challenge",
+      "page": 6,
+      "section": "تحدّي",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نريد كتابة العدد $−30$ على شكل جداء عددين صحيحين نسبيين. لا نعتبر ترتيب العاملين: $(−2) \\times 15$ و $15 \\times (−2)$ تفكيك واحد."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "كم تفكيكًا ممكنًا لـ $−30$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث أوّلًا عن قواسم العدد $30$ ثم وزّع الإشارة السالبة على أحد العاملين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لكل قاسم موجب $d$ تفكيكان: $(−d) \\times \\dfrac{30}{d}$ و $d \\times \\left(−\\dfrac{30}{d}\\right)$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب التفكيكات في قائمة منظّمة ولا تُكرّر تفكيكًا بترتيب مختلف."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب $8$ .",
+        "incorrect": "راجع الربط بين الضرب والقسمة وقاعدة إشارات الحاصل، ثم تحقّق بالضرب."
+      },
+      "solution": {
+        "lines": [
+          "قواسم $30$ الموجبة: $1$ ، $2$ ، $3$ ، $5$ ، $6$ ، $10$ ، $15$ ، $30$ .",
+          "نضع الإشارة السالبة على العامل الأصغر في القيمة المطلقة أو على الأكبر؛ التفكيكات: $(−1) \\times 30$ ، $(−2) \\times 15$ ، $(−3) \\times 10$ ، $(−5) \\times 6$ ، $1 \\times (−30)$ ، $2 \\times (−15)$ ، $3 \\times (−10)$ ، $5 \\times (−6)$ ."
+        ],
+        "result": "8"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما أصغر مجموع ممكن لعاملي تفكيك لـ $−30$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "-29",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث أوّلًا عن قواسم العدد $30$ ثم وزّع الإشارة السالبة على أحد العاملين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لكل قاسم موجب $d$ تفكيكان: $(−d) \\times \\dfrac{30}{d}$ و $d \\times \\left(−\\dfrac{30}{d}\\right)$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب التفكيكات في قائمة منظّمة ولا تُكرّر تفكيكًا بترتيب مختلف."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب $−29$ .",
+        "incorrect": "راجع الربط بين الضرب والقسمة وقاعدة إشارات الحاصل، ثم تحقّق بالضرب."
+      },
+      "solution": {
+        "lines": [
+          "المجاميع: $29$ ، $13$ ، $7$ ، $1$ ، $−29$ ، $−13$ ، $−7$ ، $−1$ .",
+          "أصغرها $−29$ وهو مجموع عاملي $1 \\times (−30)$ ."
+        ],
+        "result": "−29"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "كم تفكيكًا مجموع عامليه معدوم؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث أوّلًا عن قواسم العدد $30$ ثم وزّع الإشارة السالبة على أحد العاملين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لكل قاسم موجب $d$ تفكيكان: $(−d) \\times \\dfrac{30}{d}$ و $d \\times \\left(−\\dfrac{30}{d}\\right)$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب التفكيكات في قائمة منظّمة ولا تُكرّر تفكيكًا بترتيب مختلف."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب $0$ .",
+        "incorrect": "راجع الربط بين الضرب والقسمة وقاعدة إشارات الحاصل، ثم تحقّق بالضرب."
+      },
+      "solution": {
+        "lines": [
+          "مجموع عددين معدوم إذا كان أحدهما معاكس الآخر، فجداؤهما $−a^2$ .",
+          "هل $30$ مربّع عدد صحيح؟ لا، إذن لا يوجد تفكيك مجموع عامليه معدوم."
+        ],
+        "result": "0"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "أكمل: $(−2) \\times (−3) \\times \\square = −30$",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-5",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "-0.2",
+          "id": "MISC-QISMA-ORDER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العددين اللذين نقسم أحدهما على الآخر وعيّن إشارة كل منهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عاملان مجهولان فالعامل الناقص هو حاصل قسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعملية العكسية: اضرب نتيجتك في العامل المعلوم."
+        }
+      ],
+      "feedback": {
+        "correct": "العدد الناقص هو $−5$ .",
+        "incorrect": "راجع الربط بين الضرب والقسمة وقاعدة إشارات الحاصل، ثم تحقّق بالضرب."
+      },
+      "solution": {
+        "lines": [
+          "العامل الناقص هو حاصل قسمة $−30$ على $6$ :",
+          "$−30 \\div 6 = −5$",
+          "تحقّق: نضع $−5$ مكان الفراغ فنجد $−30$ ."
+        ],
+        "result": "−5"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

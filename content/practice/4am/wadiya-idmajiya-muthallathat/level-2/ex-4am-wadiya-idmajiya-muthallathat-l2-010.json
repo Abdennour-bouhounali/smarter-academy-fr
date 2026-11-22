@@ -1,0 +1,141 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muthallathat-l2-010",
+  "lessonCode": "wadiya-idmajiya-muthallathat",
+  "level": 2,
+  "metadata": {
+    "title": "سلّم مستند إلى جدار: زاويته ثم الارتفاع الذي يبلغه",
+    "estimatedMinutes": 6,
+    "tags": [
+      "جيب التمام",
+      "خاصية فيثاغورس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-muthallathat_P3",
+      "modelledOn": "situation"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "سلّم $[AB]$ طوله $4\\,\\mathrm{m}$ مستند إلى جدار شاقولي: طرفه $B$ على الجدار وقدمه $A$ على أرض أفقية على بعد $1{,}5\\,\\mathrm{m}$ من أسفل الجدار $H$ . يثبّت شاب السلّم لجارته المسنّة ويعينها على الصعود بأمان."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أعط المدوّر إلى الوحدة من الدرجة لقيس الزاوية $\\widehat{BAH}$ بين السلّم والأرض.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: القيس بالدرجة مدوّرا إلى الوحدة",
+      "expectedAnswer": "68",
+      "misconceptionSignatures": [
+        {
+          "value": "22",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "0.375",
+          "id": "MISC-MUTH-NISBA-BADAL-QAYS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $ABH$ قائم في $H$ ، والسلّم وتره."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة $AH$ مجاورة للزاوية: استعمل جيب التمام."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل اللمسة العكسية للنسبة في آلة حاسبة مبرمجة على الدرجة، ثم دوّر في آخر الحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\cos\\widehat{BAH} = \\dfrac{1{,}5}{4}$ ومنه $\\widehat{BAH} \\approx 67{,}98^{\\circ}$ ، أي $68^{\\circ}$ .",
+        "incorrect": "المجاور على الوتر هو جيب التمام؛ واللمسة العكسية لجيب التمام تعطي القيس."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $ABH$ القائم في $H$ : $\\cos\\widehat{BAH} = \\dfrac{AH}{AB} = \\dfrac{1{,}5}{4} = 0{,}375$",
+          "باستعمال الآلة الحاسبة: $\\widehat{BAH} \\approx 67{,}9757^{\\circ}$"
+        ],
+        "result": "\\widehat{BAH} \\approx 68^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب الارتفاع $BH$ الذي يبلغه السلّم على الجدار بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الارتفاع بـ m مدوّرا إلى 0,01",
+      "expectedAnswer": "3.71",
+      "misconceptionSignatures": [
+        {
+          "value": "2.5",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $ABH$ القائم في $H$ نعرف الوتر وضلعا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خاصية فيثاغورس: $BH^2 = AB^2 - AH^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$BH = \\sqrt{16 - 2{,}25} = \\sqrt{13{,}75} \\approx 3{,}71\\,\\mathrm{m}$ .",
+        "incorrect": "الوتر هو الأطول: نطرح مربع الضلع المعلوم من مربع الوتر."
+      },
+      "solution": {
+        "lines": [
+          "حسب خاصية فيثاغورس: $BH^2 = AB^2 - AH^2 = 16 - 2{,}25 = 13{,}75$",
+          "$BH = \\sqrt{13{,}75} \\approx 3{,}7081$"
+        ],
+        "result": "BH \\approx 3{,}71\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

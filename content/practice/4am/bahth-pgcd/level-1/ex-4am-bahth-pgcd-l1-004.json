@@ -1,0 +1,136 @@
+{
+  "id": "ex-4am-bahth-pgcd-l1-004",
+  "lessonCode": "bahth-pgcd",
+  "level": 1,
+  "metadata": {
+    "title": "الفروق المتتالية — 84 و 48",
+    "estimatedMinutes": 4,
+    "tags": [
+      "طريقة الفروق المتتالية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-8",
+      "page": 9,
+      "section": "أنشطة",
+      "number": 8,
+      "adaptedFrom": "ex-4am-ikhtizal-kasr-l2-002"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان 84 و 48."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $PGCD(84 ; 48)$ بطريقة الفروق المتتالية.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بحساب الفرق 84 − 48."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض العدد الأكبر بالفرق، واحتفظ بالعدد الأصغر، ثم أعد الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الفرق معدومًا: القاسم المشترك الأكبر هو آخر فرق غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر فرق غير معدوم هو 12.",
+        "incorrect": "أجرِ الطرح المتتابع إلى أن تجد فرقًا معدومًا؛ القاسم المشترك الأكبر هو آخر فرق غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال طريقة الفروق المتتالية:",
+          "$84 - 48 = 36$",
+          "$48 - 36 = 12$",
+          "$36 - 12 = 24$",
+          "$24 - 12 = 12$",
+          "$12 - 12 = 0$",
+          "آخر فرق غير معدوم هو 12، إذن:"
+        ],
+        "result": "PGCD(84 ; 48) = 12"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب الكسر $\\dfrac{84}{48}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "7/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "14/8",
+          "id": "MISC-IKHTIZAL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 12: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال 01.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم البسط والمقام على القاسم المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{84}{48} = \\dfrac{84 \\div 12}{48 \\div 12}$"
+        ],
+        "result": "\\dfrac{84}{48} = \\dfrac{7}{4}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

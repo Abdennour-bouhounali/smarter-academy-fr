@@ -1,0 +1,274 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l2-005",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 2,
+  "metadata": {
+    "title": "كمية السكر في العصير",
+    "estimatedMinutes": 8,
+    "tags": [
+      "تمثيل بياني",
+      "قراءة بيانية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-2",
+      "page": 94,
+      "section": "أوظّف تعلّماتي",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تحرص جمعية الصحة المدرسية على ألّا يتجاوز السكر في عصير التلاميذ 9 غرامات. يمثّل المستقيم $(D)$ في المعلم التالي كتلة السكر (بالغرام) بدلالة حجم العصير (بالديسيلتر).",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          2,
+          3
+        ],
+        "B": [
+          4,
+          6
+        ],
+        "C": [
+          8,
+          12
+        ]
+      },
+      "lines": [
+        {
+          "through": [
+            "O",
+            "C"
+          ],
+          "name": "(D)",
+          "tone": "indigo",
+          "extend": [
+            0,
+            0.1
+          ]
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw",
+        "A": "se",
+        "B": "se",
+        "C": "se"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس: المستقيم (D) يشمل المبدأ O والنقط A(2;3) و B(4;6) و C(8;12)",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: حجم العصير بالديسيلتر — محور التراتيب: كتلة السكر بالغرام"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "هل كتلة السكر متناسبة مع حجم العصير؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لأنّ الترتيب لا يساوي الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-EQUAL-ONLY"
+        },
+        {
+          "id": "B",
+          "content": "لا، لأنّ المبدأ $O$ ليس من النقط المعلَّمة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-ORIGIN-DROP"
+        },
+        {
+          "id": "C",
+          "content": "نعم، النقط على استقامة واحدة مع المبدأ $O$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط على استقامة واحدة مع المبدأ $O$ ، فهي تمثّل وضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "النقط $A$ و $B$ و $C$ على المستقيم $(D)$ الذي يشمل المبدأ $O$ .",
+          "إذن كتلة السكر متناسبة مع حجم العصير."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "علّل جوابك.",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تعليلك ثم قارنه بالتصحيح النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اذكر الخاصية التي تستعملها: ما شرط التناسبية على النقط؟"
+        }
+      ],
+      "feedback": {
+        "correct": "التعليل يذكر استقامة النقط ومرور المستقيم بالمبدأ $O$ .",
+        "incorrect": "قارن تعليلك بالتصحيح النموذجي، وتأكد أنك ذكرت الشرطين معا."
+      },
+      "solution": {
+        "lines": [
+          "المستقيم $(D)$ يشمل المبدأ $O$ ونقطه $A$ و $B$ و $C$ على استقامة واحدة معه.",
+          "إذن الوضعية تناسبية."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "بقراءة بيانية، ما أكبر حجم من العصير (بالديسيلتر) يمكن شربه دون أن يتعدى السكر $9$ غ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الحجم بالديسيلتر",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "13.5",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        },
+        {
+          "value": "9",
+          "id": "MISC-TAMTHIL-SWAP-XY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ من الترتيب $9$ على المحور العمودي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اذهب أفقيا إلى المستقيم $(D)$ ثم انزل إلى المحور الأفقي."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة ذات الترتيب $9$ فاصلتها $6$ : لا يتجاوز الحجم $6$ ديسيلترات.",
+        "incorrect": "ابدأ من الكتلة $9$ على المحور العمودي واقرأ الفاصلة على المحور الأفقي."
+      },
+      "solution": {
+        "lines": [
+          "النقطة من $(D)$ التي ترتيبها $9$ فاصلتها $6$ ."
+        ],
+        "result": "6"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب كتلة السكر في $25$ dL من هذا العصير.",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الكتلة بالغرام",
+      "expectedAnswer": "37.5",
+      "misconceptionSignatures": [
+        {
+          "value": "26",
+          "id": "MISC-TAMTHIL-DIFFERENCE"
+        },
+        {
+          "value": "16.67",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العلاقة $y = a\\,x$ بعد حساب $a$ من نقطة معلومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $x$ بالعدد $25$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$y = 1{,}5 \\times 25 = 37{,}5$ غ.",
+        "incorrect": "اضرب الحجم في معامل التناسبية بدل أن تضيف إليه عددا."
+      },
+      "solution": {
+        "lines": [
+          "معامل التناسبية: $a = \\dfrac{3}{2} = 1{,}5$ .",
+          "$y = 1{,}5 \\times 25 = 37{,}5$ غ."
+        ],
+        "result": "37{,}5\\ \\text{g}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

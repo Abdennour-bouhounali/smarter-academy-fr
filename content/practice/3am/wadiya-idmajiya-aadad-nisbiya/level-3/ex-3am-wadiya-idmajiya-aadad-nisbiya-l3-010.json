@@ -1,0 +1,261 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-aadad-nisbiya-l3-010",
+  "lessonCode": "wadiya-idmajiya-aadad-nisbiya",
+  "level": 3,
+  "metadata": {
+    "title": "مثلّث المجاميع",
+    "estimatedMinutes": 7,
+    "tags": [
+      "مثلث سحري",
+      "جمع",
+      "جداء"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-38",
+      "page": 18,
+      "section": "أتعمّق",
+      "number": 38
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "في مثلث $ABC$ كتبنا عددًا في كل رأس وعددًا في منتصف كل ضلع: $M$ منتصف $[AB]$ و $N$ منتصف $[AC]$ و $P$ منتصف $[BC]$. مجموع الأعداد الثلاثة المكتوبة على كل ضلع هو $−1$ . مكتوب في $M$ العدد $3$ وفي $B$ العدد $−4$ . املأ الدوائر $A$ و $C$ و $N$ و $P$ بالأعداد $0$ و $4$ و $−5$ و $−1$ ، كلّ عدد مرّة واحدة.",
+    "formulas": [
+      "A + M + B = −1",
+      "A + N + C = −1",
+      "B + P + C = −1"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما العدد المكتوب في الرأس $A$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب مجموع الأعداد الثلاثة على الضلع الذي يحوي هذه الدائرة وحدّد العددين المعلومين فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الناقص هو مجموع الضلع ناقصًا مجموع العددين الآخرين؛ ثم تأكّد أنّه من الأعداد المقترحة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: اجمع الأعداد الثلاثة على الضلع فيجب أن تجد المجموع المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "العدد هو $0$ .",
+        "incorrect": "اجمع العددين المعلومين على الضلع واطرح المجموع من المجموع المطلوب، ثم اختر من الأعداد المقترحة."
+      },
+      "solution": {
+        "lines": [
+          "$A + 3 + (−4) = −1$ ، أي $A − 1 = −1$ ، إذن $A = 0$ ."
+        ],
+        "result": "0"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما العدد المكتوب في الرأس $C$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب مجموع الأعداد الثلاثة على الضلع الذي يحوي هذه الدائرة وحدّد العددين المعلومين فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الناقص هو مجموع الضلع ناقصًا مجموع العددين الآخرين؛ ثم تأكّد أنّه من الأعداد المقترحة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: اجمع الأعداد الثلاثة على الضلع فيجب أن تجد المجموع المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "العدد هو $4$ .",
+        "incorrect": "اجمع العددين المعلومين على الضلع واطرح المجموع من المجموع المطلوب، ثم اختر من الأعداد المقترحة."
+      },
+      "solution": {
+        "lines": [
+          "$B + P + C = −1$ مع $B = −4$ يعطي $P + C = 3$ ؛ و $A + N + C = −1$ مع $A = 0$ يعطي $N + C = −1$ .",
+          "من الأعداد $4$ و $−5$ و $−1$ : $P + C = 3$ لا يصلح إلا بـ $4$ و $−1$ ، و $N + C = −1$ يفرض $C = 4$ و $N = −5$ ، فيكون $P = −1$ ."
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما العدد المكتوب في $N$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب مجموع الأعداد الثلاثة على الضلع الذي يحوي هذه الدائرة وحدّد العددين المعلومين فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الناقص هو مجموع الضلع ناقصًا مجموع العددين الآخرين؛ ثم تأكّد أنّه من الأعداد المقترحة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: اجمع الأعداد الثلاثة على الضلع فيجب أن تجد المجموع المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "العدد هو $−5$ .",
+        "incorrect": "اجمع العددين المعلومين على الضلع واطرح المجموع من المجموع المطلوب، ثم اختر من الأعداد المقترحة."
+      },
+      "solution": {
+        "lines": [
+          "$A + N + C = −1$ مع $A = 0$ و $C = 4$ يعطي $N = −1 − 4 = −5$ ."
+        ],
+        "result": "−5"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب جداء الأعداد الثلاثة المكتوبة على الضلع $[BC]$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "16",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الأعداد الثلاثة المكتوبة على هذا الضلع بعد أن ملأت الدوائر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن إشارة الجداء بعدّ العوامل السالبة قبل أن تحسب القيمة المطلقة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر أنّ جداء أيّ عدد في الصفر يساوي الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "الجداء يساوي $16$ .",
+        "incorrect": "راجع قاعدة إشارة الجداء: تتبع إشارته زوجية عدد العوامل السالبة."
+      },
+      "solution": {
+        "lines": [
+          "$(−4) \\times (−1) \\times 4 = 16$"
+        ],
+        "result": "16"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب جداء الأعداد الثلاثة المكتوبة على الضلع $[AB]$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الأعداد الثلاثة المكتوبة على هذا الضلع بعد أن ملأت الدوائر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن إشارة الجداء بعدّ العوامل السالبة قبل أن تحسب القيمة المطلقة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر أنّ جداء أيّ عدد في الصفر يساوي الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "الجداء يساوي $0$ .",
+        "incorrect": "راجع قاعدة إشارة الجداء: تتبع إشارته زوجية عدد العوامل السالبة."
+      },
+      "solution": {
+        "lines": [
+          "$0 \\times 3 \\times (−4) = 0$"
+        ],
+        "result": "0"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

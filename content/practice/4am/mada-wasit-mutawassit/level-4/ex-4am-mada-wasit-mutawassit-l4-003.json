@@ -1,0 +1,263 @@
+{
+  "id": "ex-4am-mada-wasit-mutawassit-l4-003",
+  "lessonCode": "mada-wasit-mutawassit",
+  "level": 4,
+  "metadata": {
+    "title": "قواسم العدد 225",
+    "estimatedMinutes": 12,
+    "tags": [
+      "المتوسط",
+      "الوسيط",
+      "المدى",
+      "قواسم"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "now-97",
+      "page": 97,
+      "section": "دوري الآن",
+      "adaptedFrom": "ex-4am-mada-wasit-mutawassit-l5-002"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نبحث عن سلسلة إحصائية قيمها أصغر من 46 وهي قواسم مختلفة للعدد الطبيعي 225، إذا علمت أن متوسطها 15,4 ووسيطها 9 وتكرارها الكلي 5 ومداها 42."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب كل قواسم العدد 225 الأصغر من 46.",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "أعداد طبيعية مفصولة بفواصل",
+      "expectedAnswer": [
+        1,
+        3,
+        5,
+        9,
+        15,
+        25,
+        45
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب 225 على شكل جداء عوامل أولية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جرّب القسمة على 1 ، 3 ، 5 ، 9 ، … حتى 45."
+        }
+      ],
+      "feedback": {
+        "correct": "$225 = 3^2 \\times 5^2$ .",
+        "incorrect": "ابحث عن كل الأعداد التي تقسم 225 قسمة تامة، ولا تتجاوز 45."
+      },
+      "solution": {
+        "lines": [
+          "$225 = 3^2 \\times 5^2$",
+          "قواسم 225: 1 ، 3 ، 5 ، 9 ، 15 ، 25 ، 45 ، 75 ، 225",
+          "الأصغر من 46: 1 ، 3 ، 5 ، 9 ، 15 ، 25 ، 45"
+        ],
+        "result": "1 ; 3 ; 5 ; 9 ; 15 ; 25 ; 45"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب مجموع قيم السلسلة المطلوبة.",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة العشرية إن لزم)",
+      "expectedAnswer": "77",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المتوسط = مجموع القيم ÷ عددها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب المتوسط في التكرار الكلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$15{,}4 \\times 5 = 77$ .",
+        "incorrect": "مجموع القيم يساوي المتوسط مضروبا في التكرار الكلي."
+      },
+      "solution": {
+        "lines": [
+          "$15{,}4 \\times 5 = 77$"
+        ],
+        "result": "77"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "عيّن أصغر قيمة في السلسلة.",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-IHSA-MADA-AKBAR-QIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المدى 42: ابحث بين القواسم عن قاسمين الفرق بينهما 42."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جرّب الأزواج التي يكون أكبرها 45."
+        }
+      ],
+      "feedback": {
+        "correct": "$45 - 3 = 42$ .",
+        "incorrect": "ابحث بين القواسم عن زوج يكون الفرق بين عدديه مساويا للمدى."
+      },
+      "solution": {
+        "lines": [
+          "بين القواسم 1 ، 3 ، 5 ، 9 ، 15 ، 25 ، 45 ، الزوج الوحيد الذي فرقه 42 هو (3 ; 45).",
+          "أصغر قيمة 3 وأكبر قيمة 45."
+        ],
+        "result": "3"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "عيّن أكبر قيمة في السلسلة.",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "45",
+      "misconceptionSignatures": [
+        {
+          "value": "42",
+          "id": "MISC-IHSA-MADA-AKBAR-QIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أكبر قيمة = أصغر قيمة + المدى."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 + 42 = 45$ .",
+        "incorrect": "أكبر قيمة = أصغر قيمة + المدى."
+      },
+      "solution": {
+        "lines": [
+          "$3 + 42 = 45$"
+        ],
+        "result": "45"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "استنتج قيم هذه السلسلة.",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "integerSet",
+      "answerFormat": "أعداد طبيعية مفصولة بفواصل",
+      "expectedAnswer": [
+        3,
+        5,
+        9,
+        15,
+        45
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة المركزية (الرتبة 3) هي الوسيط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمتان الباقيتان: واحدة بين 3 و 9 والأخرى بين 9 و 45، ومجموعهما يُستنتج من مجموع القيم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ابحث عنهما بين القواسم."
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة 3 ، 5 ، 9 ، 15 ، 45 تحقّق كل الشروط.",
+        "incorrect": "استعمل المجموع والوسيط وأصغر قيمة وأكبر قيمة لتجد القيمتين الباقيتين بين القواسم."
+      },
+      "solution": {
+        "lines": [
+          "بعد الترتيب: 3 ، $b$ ، 9 ، $d$ ، 45 حيث $3 < b < 9 < d < 45$ (قواسم مختلفة).",
+          "$b + d = 77 - 3 - 9 - 45 = 20$",
+          "القاسم الوحيد بين 3 و 9 هو 5، إذن $d = 15$ وهو قاسم للعدد 225.",
+          "السلسلة: 3 ، 5 ، 9 ، 15 ، 45 ."
+        ],
+        "result": "3 ; 5 ; 9 ; 15 ; 45"
+      },
+      "timeSeconds": 240
+    }
+  ]
+}

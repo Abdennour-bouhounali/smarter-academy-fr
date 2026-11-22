@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 /**
  * LA CASE DE CONSENTEMENT — une seule, obligatoire, et la même partout.
@@ -29,6 +30,7 @@ export default function LegalConsentCheckbox({
   disabled = false,
   id = 'accept-legal',
 }) {
+  const { t } = useTranslation('marketing');
   const errorId = `${id}-error`;
 
   return (
@@ -43,30 +45,30 @@ export default function LegalConsentCheckbox({
           onChange={(e) => onChange(e.target.checked)}
           aria-invalid={error ? 'true' : undefined}
           aria-describedby={error ? errorId : undefined}
-          className="mt-0.5 h-6 w-6 shrink-0 cursor-pointer rounded border-slate-300 text-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-60"
+          className="mt-0.5 h-6 w-6 shrink-0 cursor-pointer rounded border-slate-300 text-nav-accent focus:ring-2 focus:ring-nav-accent focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-60"
         />
         <label htmlFor={id} className="text-sm leading-relaxed text-slate-700 cursor-pointer select-none">
-          J’accepte les{' '}
+          {t('consent.iAccept')}{' '}
           <Link
             to="/cgu"
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="font-medium text-blue-600 underline underline-offset-2 hover:text-blue-700"
+            className="font-medium text-nav-accent underline underline-offset-2 hover:text-nav-accent"
           >
-            Conditions Générales d’Utilisation
+            {t('consent.terms')}
           </Link>{' '}
-          et la{' '}
+          {t('consent.and')}{' '}
           <Link
             to="/confidentialite"
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="font-medium text-blue-600 underline underline-offset-2 hover:text-blue-700"
+            className="font-medium text-nav-accent underline underline-offset-2 hover:text-nav-accent"
           >
-            Politique de confidentialité
+            {t('consent.privacy')}
           </Link>{' '}
-          de Smarter Academy.
+          {t('consent.ofPlatform')}
         </label>
       </div>
 

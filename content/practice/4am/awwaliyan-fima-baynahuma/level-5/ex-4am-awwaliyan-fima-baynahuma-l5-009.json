@@ -1,0 +1,318 @@
+{
+  "id": "ex-4am-awwaliyan-fima-baynahuma-l5-009",
+  "lessonCode": "awwaliyan-fima-baynahuma",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2022 — أدوات رابطة ألعاب القوى بتمنراست",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية",
+      "نفي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_awwaliyan-fima-baynahuma_P3",
+      "modelledOn": "BEM 2022 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تلقّت رابطة ألعاب القوى لولاية تمنراست 286 قميصًا رياضيًا و 195 قبعة، تبرّع بها محسنون ابتغاءَ الأجر، وتريد توزيعها كلها على أكبر عدد ممكن من النوادي، بحيث يتحصّل كل نادٍ على نفس عدد القمصان ونفس عدد القبعات."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب PGCD(286 ; 195).",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "13",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 286 على 195: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (286 ; 195) بالزوج (195 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 13.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$286 = 195 \\times 1 + 91$",
+          "$195 = 91 \\times 2 + 13$",
+          "$91 = 13 \\times 7 + 0$",
+          "آخر باقٍ غير معدوم هو 13، إذن:"
+        ],
+        "result": "PGCD(286 ; 195) = 13"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل العددان 286 و 195 أوليان فيما بينهما؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QAWAID-LA-TAKFI"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن عدد يختلف عن 1 يقسم 286 و 195 معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قواعد قابلية القسمة قد لا تكشف كل القواسم المشتركة: احسب PGCD عند الشك."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يكفي قاسم مشترك واحد يختلف عن 1 لنفي أن العددين أوليان فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(286 ; 195) = 13: العددان ليسا أوليين فيما بينهما.",
+        "incorrect": "لا تكتفِ بقواعد قابلية القسمة: احسب القاسم المشترك الأكبر للعددين."
+      },
+      "solution": {
+        "lines": [
+          "وجدنا في السؤال 01 (ا): PGCD(286 ; 195) = 13 .",
+          "الجواب: لا، العددان 286 و 195 ليسا أوليين فيما بينهما لأن لهما قاسمًا مشتركًا يختلف عن 1."
+        ],
+        "result": "PGCD(286 ; 195) = 13"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "استنتج عدد النوادي، ثم:",
+      "statement": "ما هو عدد القمصان التي يتحصّل عليها كل نادٍ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "22",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع 286 قميصًا على عدد الحصص الذي وجدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 286 على عدد الحصص."
+        }
+      ],
+      "feedback": {
+        "correct": "$286 \\div 13 = 22$",
+        "incorrect": "اقسم العدد الكلي (286) على عدد الحصص، لا العكس."
+      },
+      "solution": {
+        "lines": [
+          "$286 \\div 13 = 22$"
+        ],
+        "result": "22"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "statement": "ما هو عدد القبعات التي يتحصّل عليها كل نادٍ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع 195 قبعة على عدد الحصص الذي وجدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 195 على عدد الحصص."
+        }
+      ],
+      "feedback": {
+        "correct": "$195 \\div 13 = 15$",
+        "incorrect": "اقسم العدد الكلي (195) على عدد الحصص، لا العكس."
+      },
+      "solution": {
+        "lines": [
+          "$195 \\div 13 = 15$"
+        ],
+        "result": "15"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "بيّن أن العددين 22 و 15 أوليان فيما بينهما.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيمة PGCD(22 ; 15) التي وجدتها",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عددان أوليان فيما بينهما: احسب قاسمهما المشترك الأكبر PGCD(22 ; 15)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 22 على 15، ثم واصل القسمات المتتابعة إلى أن تجد باقيًا معدومًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن آخر باقٍ غير معدوم بما يتطلّبه تعريف عددين أوليين فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(22 ; 15) = 1: العددان 22 و 15 أوليان فيما بينهما.",
+        "incorrect": "راجع القسمات المتتابعة باقيًا باقيًا: آخر باقٍ غير معدوم هو القاسم المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$22 = 15 \\times 1 + 7$",
+          "$15 = 7 \\times 2 + 1$",
+          "$7 = 1 \\times 7 + 0$",
+          "آخر باقٍ غير معدوم هو 1، إذن PGCD(22 ; 15) = 1 .",
+          "ومنه العددان 22 و 15 أوليان فيما بينهما."
+        ],
+        "result": "PGCD(22 ; 15) = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "☜ ثمن القميص 1400DA وثمن القبعة 600DA. تتحمّل بلدية تمنراست 40% من ثمن الأدوات كلها، وتدفع الرابطة الباقي. ما هو المبلغ الذي تدفعه الرابطة ؟",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (المبلغ بالدينار)",
+      "expectedAnswer": "310440",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب ثمن كل القمصان والقبعات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الرابطة تدفع 60% من هذا الثمن."
+        }
+      ],
+      "feedback": {
+        "correct": "$517400 \\times 0{,}6 = 310440$",
+        "incorrect": "احسب الثمن الكلي، ثم خذ 60% منه (لا 40%)."
+      },
+      "solution": {
+        "lines": [
+          "الثمن الكلي: $286 \\times 1400 + 195 \\times 600 = 400400 + 117000 = 517400$ DA",
+          "تدفع الرابطة: $517400 \\times \\dfrac{60}{100} = 310440$ DA"
+        ],
+        "result": "310440DA"
+      },
+      "timeSeconds": 300
+    }
+  ]
+}

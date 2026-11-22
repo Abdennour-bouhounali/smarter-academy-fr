@@ -1,0 +1,212 @@
+{
+  "id": "ex-1am-ikhtizal-kitaba-kasriya-l3-003",
+  "lessonCode": "ikhtizal-kitaba-kasriya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — لماذا تتساوى الكتابتان؟",
+    "estimatedMinutes": 9,
+    "tags": [
+      "حاصل قسمة",
+      "اختزال"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 3,
+      "file": "1am-s3-43",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أجب عن الأسئلة الآتية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أتمم: $\\dfrac{4{,}8}{0{,}6} = \\dfrac{48}{\\ldots}$",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بأيّ عدد ضُرب البسط 4,8 ليصبح 48؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب المقام في نفس العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{4{,}8}{0{,}6} = \\dfrac{4{,}8 \\times 10}{0{,}6 \\times 10} = \\dfrac{48}{6}$",
+        "incorrect": "نضرب البسط والمقام في نفس العدد: ابحث بأيّ عدد ضُرب 4,8."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{4{,}8}{0{,}6} = \\dfrac{4{,}8 \\times 10}{0{,}6 \\times 10} = \\dfrac{48}{6}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "استنتج حاصل القسمة $4{,}8 \\div 0{,}6$ على شكل عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b لا يقبل الاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "8",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "24/3",
+          "id": "MISC-KASRIYA-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن قاسم مشترك للبسط والمقام بقواعد قابلية القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على هذا القاسم، ثم أعد البحث في الكسر الجديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا لم تنفع القواعد، جرّب جداول الضرب (7، 11، 13…)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{48}{6} = 8$ ولا يقبل البسط والمقام قاسمًا مشتركًا غير 1.",
+        "incorrect": "نقسم البسط والمقام على قاسم مشترك لهما، ونعيد ذلك حتى لا يبقى قاسم مشترك غير 1.",
+        "notIrreducible": "الكتابة تساوي الكسر لكنها ما زالت قابلة للاختزال: ابحث عن قاسم مشترك آخر للبسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "$48 = 2 \\times 24$ و $6 = 2 \\times 3$ ، إذن $\\dfrac{48}{6} = \\dfrac{48 \\div 2}{6 \\div 2} = \\dfrac{24}{3}$",
+          "$24 = 3 \\times 8$ و $3 = 3 \\times 1$ ، إذن $\\dfrac{24}{3} = \\dfrac{24 \\div 3}{3 \\div 3} = \\dfrac{8}{1}$",
+          "إذن $\\dfrac{48}{6} = 8$."
+        ],
+        "result": "\\dfrac{48}{6} = 8"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "اشرح لماذا $\\dfrac{37}{2{,}5} = \\dfrac{370}{25}$.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 37 بالعدد 370، و 2,5 بالعدد 25."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل ضربنا الحدّين في نفس العدد؟"
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي.",
+        "incorrect": "راجع الخاصية وأعد صياغة التبرير."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{37}{2{,}5} = \\dfrac{37 \\times 10}{2{,}5 \\times 10} = \\dfrac{370}{25}$",
+          "ضربنا البسط والمقام في نفس العدد غير المعدوم 10، فلا يتغيّر حاصل القسمة."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "اختزل الكسر $\\dfrac{370}{25}$ إلى أبسط شكل ممكن.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b لا يقبل الاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "74/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن قاسم مشترك للبسط والمقام بقواعد قابلية القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على هذا القاسم، ثم أعد البحث في الكسر الجديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا لم تنفع القواعد، جرّب جداول الضرب (7، 11، 13…)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{370}{25} = \\dfrac{74}{5}$ ولا يقبل البسط والمقام قاسمًا مشتركًا غير 1.",
+        "incorrect": "نقسم البسط والمقام على قاسم مشترك لهما، ونعيد ذلك حتى لا يبقى قاسم مشترك غير 1.",
+        "notIrreducible": "الكتابة تساوي الكسر لكنها ما زالت قابلة للاختزال: ابحث عن قاسم مشترك آخر للبسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "$370 = 5 \\times 74$ و $25 = 5 \\times 5$ ، إذن $\\dfrac{370}{25} = \\dfrac{370 \\div 5}{25 \\div 5} = \\dfrac{74}{5}$",
+          "العددان 74 و 5 لا يقبلان قاسمًا مشتركًا غير 1: $\\dfrac{74}{5}$ في أبسط شكل ممكن."
+        ],
+        "result": "\\dfrac{370}{25} = \\dfrac{74}{5}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

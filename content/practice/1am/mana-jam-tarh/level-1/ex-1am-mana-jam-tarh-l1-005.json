@@ -1,0 +1,137 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l1-005",
+  "lessonCode": "mana-jam-tarh",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — علامة سلمى",
+    "estimatedMinutes": 3,
+    "tags": [
+      "زاد",
+      "اختيار العملية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "راجعت ريم دروسها بانتظام، فتحصّلت على العلامة 16,5 في فرض الرياضيات، وبذلك زادت علامتها عن علامة أختها سلمى بـ 2,75."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما الحساب الذي يعطي علامة سلمى؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$16{,}5 + 2{,}75$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KALIMA"
+        },
+        {
+          "id": "B",
+          "content": "$16{,}5 - 2{,}75$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$2{,}75 - 16{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-FARQ-MAQLUB"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من علامتها أكبر: ريم أم سلمى؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "علامة ريم هي الكل: علامة سلمى جزء، والزيادة جزء آخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كلمة « زادت » لا تقرّر العملية وحدها."
+        }
+      ],
+      "feedback": {
+        "correct": "علامة سلمى أقل من علامة ريم بـ 2,75: نطرح.",
+        "incorrect": "علامة ريم هي الأكبر، فعلامة سلمى أصغر منها: هل نجدها بالجمع؟"
+      },
+      "solution": {
+        "lines": [
+          "علامة ريم تزيد عن علامة سلمى، إذن علامة ريم هي الكل.",
+          "علامة سلمى جزء: نطرح الجزء 2,75 من الكل 16,5."
+        ],
+        "result": "16{,}5 - 2{,}75"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب علامة سلمى.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "13.75",
+      "misconceptionSignatures": [
+        {
+          "value": "19.25",
+          "id": "MISC-JAMTARH-KALIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "علامة سلمى أصغر من علامة ريم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح الزيادة من علامة ريم، بعد محاذاة الفاصلتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$16{,}5 - 2{,}75 = 13{,}75$.",
+        "incorrect": "علامة سلمى أصغر من علامة ريم، والنتيجة يجب أن تكون أقل من 16,5."
+      },
+      "solution": {
+        "lines": [
+          "$16{,}5 - 2{,}75 = 16{,}50 - 2{,}75$",
+          "$= 13{,}75$"
+        ],
+        "result": "13{,}75"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

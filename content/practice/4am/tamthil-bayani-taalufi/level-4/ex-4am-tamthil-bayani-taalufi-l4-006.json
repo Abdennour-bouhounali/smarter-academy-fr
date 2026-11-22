@@ -1,0 +1,218 @@
+{
+  "id": "ex-4am-tamthil-bayani-taalufi-l4-006",
+  "lessonCode": "tamthil-bayani-taalufi",
+  "level": 4,
+  "metadata": {
+    "title": "المستقيم الموازي لتمثيل دالة خطية",
+    "estimatedMinutes": 10,
+    "tags": [
+      "الترتيب عند المبدأ",
+      "معامل التوجيه",
+      "مستقيمان متوازيان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tamthil-bayani-taalufi_P1",
+      "adaptedFrom": "ex-4am-tamthil-bayani-taalufi-l4-006"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$(d)$ مستقيم يشمل المبدأ $O$ والنقطة $(2 ; 5)$ ، وهو التمثيل البياني لدالة خطية $g$ . المستقيم $(d')$ يوازي $(d)$ ويقطع محور التراتيب في النقطة $(0 ; -3)$ ، وهو التمثيل البياني لدالة تآلفية $f$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن ترتيب النقطة من $(d')$ التي فاصلتها $2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المستقيم $(d')$ هو $(d)$ منقولا بـ $-3$ : كل نقطة منه تنزل 3 وحدات عن نقطة $(d)$ التي لها نفس الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترتيب نقطة $(d)$ التي فاصلتها 2 معلوم من المعطيات."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 - 3 = 2$ .",
+        "incorrect": "انطلق من ترتيب نقطة $(d)$ التي لها نفس الفاصلة، ثم أضف الترتيب عند المبدأ $-3$ ."
+      },
+      "solution": {
+        "lines": [
+          "المستقيمان متوازيان: $(d')$ هو $(d)$ منقولا بـ $-3$ على محور التراتيب.",
+          "النقطة من $(d)$ التي فاصلتها 2 ترتيبها 5.",
+          "إذن النقطة من $(d')$ التي فاصلتها 2 ترتيبها: $5 - 3 = 2$ ."
+        ],
+        "result": "(2 ; 2)"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "اكتب $f(x)$ على الشكل $ax + b$ .",
+      "statement": "أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "5/2",
+      "misconceptionSignatures": [
+        {
+          "value": "2/5",
+          "id": "MISC-BAYANI-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لمستقيمين متوازيين نفس معامل التوجيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "معامل توجيه $(d)$ : من $O$ إلى $(2 ; 5)$ نتقدّم وحدتين فيصعد المستقيم 5 وحدات."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{5}{2}$ : نفس معامل توجيه $(d)$ .",
+        "incorrect": "معامل التوجيه هو تغيّر الترتيب مقسوما على تغيّر الفاصلة، و $(d')$ له نفس معامل $(d)$ ."
+      },
+      "solution": {
+        "lines": [
+          "معامل توجيه $(d)$ : $\\dfrac{5}{2}$ ، أي $g(x) = \\dfrac{5}{2}x$ .",
+          "$(d')$ يوازي $(d)$ ، إذن له نفس معامل التوجيه: $a = \\dfrac{5}{2}$ .",
+          "$(d')$ يقطع محور التراتيب في $(0 ; -3)$ ، إذن $b = -3$ .",
+          "ومنه: $f(x) = \\dfrac{5}{2}x - 3$ ."
+        ],
+        "result": "a = \\dfrac{5}{2}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-BAYANI-TAALUFI-MABDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$b$ هو ترتيب نقطة تقاطع $(d')$ مع محور التراتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(x) = \\dfrac{5}{2}x - 3$ .",
+        "incorrect": "$b$ هو الترتيب عند المبدأ: ترتيب النقطة التي يقطع فيها $(d')$ محور التراتيب."
+      },
+      "solution": {
+        "lines": [
+          "$(d')$ يقطع محور التراتيب في $(0 ; -3)$ ، إذن $b = -3$ .",
+          "ومنه: $f(x) = \\dfrac{5}{2}x - 3$ ."
+        ],
+        "result": "b = -3"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب فاصلة نقطة تقاطع $(d')$ مع محور الفواصل.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "6/5",
+      "misconceptionSignatures": [
+        {
+          "value": "-6/5",
+          "id": "MISC-TAALUFI-SABIQ-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نقطة محور الفواصل ترتيبها 0."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المعادلة $f(x) = 0$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{5}{2}x = 3$ ، إذن $x = 3 \\times \\dfrac{2}{5}$ .",
+        "incorrect": "حلّ المعادلة $\\dfrac{5}{2}x - 3 = 0$ : انقل $-3$ ثم اقسم على $\\dfrac{5}{2}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 0$ معناه $\\dfrac{5}{2}x - 3 = 0$",
+          "$\\dfrac{5}{2}x = 3$",
+          "$x = 3 \\times \\dfrac{2}{5} = \\dfrac{6}{5}$",
+          "إذن $(d')$ يقطع محور الفواصل في النقطة $(1{,}2 ; 0)$ ."
+        ],
+        "result": "x = \\dfrac{6}{5}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

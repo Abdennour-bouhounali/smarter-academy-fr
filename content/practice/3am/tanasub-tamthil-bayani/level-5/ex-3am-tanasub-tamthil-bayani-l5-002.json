@@ -1,0 +1,403 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l5-002",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — عصر الزيتون",
+    "estimatedMinutes": 15,
+    "tags": [
+      "وضعية إدماجية",
+      "تمثيل بياني",
+      "تناسبية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يعصر فلاحون زيتونهم في معصرة الحيّ التي تتقن عملها وتأخذ ثمنا يتناسب مع الكتلة. تمثّل النقط $A$ و $B$ و $C$ و $D$ و $E$ خمس عمليات عصر (الفاصلة بمئات الكيلوغرامات والترتيب بمئات الدنانير).\nالجزء الأول: التمثيل البياني.\nالجزء الثاني: حسابات وقرار.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          1,
+          2
+        ],
+        "B": [
+          2,
+          4
+        ],
+        "C": [
+          3,
+          6
+        ],
+        "D": [
+          4,
+          8
+        ],
+        "E": [
+          5,
+          10
+        ]
+      },
+      "lines": [
+        {
+          "through": [
+            "O",
+            "E"
+          ],
+          "name": "(D)",
+          "tone": "indigo",
+          "extend": [
+            0,
+            0.15
+          ]
+        }
+      ],
+      "grid": true,
+      "axes": {
+        "every": 2
+      },
+      "labels": {
+        "O": "sw",
+        "A": "se",
+        "B": "se",
+        "C": "se",
+        "D": "se",
+        "E": "se"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس: خمس نقط على المستقيم (D) الذي يشمل المبدأ، فواصلها من 1 إلى 5 وترتيباتها 2 و4 و6 و8 و10",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: كتلة الزيتون بمئات الكيلوغرامات — محور التراتيب: الثمن بمئات الدنانير"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول:",
+      "statement": "هل ثمن العصر متناسب مع كتلة الزيتون؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لأنّ الترتيب لا يساوي الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-EQUAL-ONLY"
+        },
+        {
+          "id": "B",
+          "content": "لا، لأنّ المبدأ $O$ ليس من النقط المعلَّمة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-ORIGIN-DROP"
+        },
+        {
+          "id": "C",
+          "content": "نعم، النقط على استقامة واحدة مع المبدأ $O$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط على استقامة واحدة مع المبدأ $O$ ، فهي تمثّل وضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "النقط على المستقيم $(D)$ الذي يشمل المبدأ $O$ .",
+          "إذن ثمن العصر متناسب مع كتلة الزيتون."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "علّل جوابك.",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تعليلك ثم قارنه بالتصحيح النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اذكر الخاصية التي تستعملها: ما شرط التناسبية على النقط؟"
+        }
+      ],
+      "feedback": {
+        "correct": "التعليل يذكر استقامة النقط ومرور المستقيم بالمبدأ $O$ .",
+        "incorrect": "قارن تعليلك بالتصحيح النموذجي، وتأكد أنك ذكرت الشرطين معا."
+      },
+      "solution": {
+        "lines": [
+          "النقط على استقامة واحدة.",
+          "والمستقيم الذي يشملها يمرّ بالمبدأ $O$ ، فالوضعية تناسبية."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "الجزء الثاني:",
+      "statement": "ما معامل التناسبية $a$ (ثمن العصر لكل مئة كيلوغرام بمئات الدنانير)؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: معامل التناسبية",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "1/2",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        },
+        {
+          "value": "5",
+          "id": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل التناسبية هو ترتيب النقطة الذي فاصلته $1$ ، أو ناتج قسمة الترتيب على الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ إحداثيي النقطة $E$ ثم اقسم الترتيب على الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تقسم الفاصلة على الترتيب ولا تطرح أحد العددين من الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{10}{5} = 2$ .",
+        "incorrect": "المعامل هو ناتج قسمة الترتيب على الفاصلة (وليس العكس) لنقطة من المستقيم."
+      },
+      "solution": {
+        "lines": [
+          "النقطة $E(5\\,;\\,10)$ من المستقيم.",
+          "$a = \\dfrac{10}{5} = 2$"
+        ],
+        "result": "a = 2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "statement": "احسب ثمن العصر (بالدينار) من أجل $6$ مئة كيلوغرام.",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: بالدينار",
+      "expectedAnswer": "1200",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-TAMTHIL-UNIT-AXIS"
+        },
+        {
+          "value": "700",
+          "id": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل $y = a\\,x$ مع المعامل الذي وجدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الناتج بمئات الدنانير ثم حوّله."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 6 = 12$ مئة دج، أي $1200$ دج.",
+        "incorrect": "اضرب في المعامل (لا تضف فرقا) ثم حوّل المئات إلى دنانير."
+      },
+      "solution": {
+        "lines": [
+          "$y = 2 \\times 6 = 12$ مئة دج.",
+          "$12 \\times 100 = 1200$ دج."
+        ],
+        "result": "1200\\ \\text{دج}"
+      },
+      "work": "optional",
+      "timeSeconds": 110
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "ما عدد مئة كيلوغرام الذي يمكن الحصول عليه بمبلغ $1600$ دج؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: مئة كيلوغرام",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "16",
+          "id": "MISC-TAMTHIL-UNIT-AXIS"
+        },
+        {
+          "value": "32",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل المبلغ إلى مئات الدنانير."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اقسم على معامل التناسبية."
+        }
+      ],
+      "feedback": {
+        "correct": "$16 \\div 2 = 8$ مئة كيلوغرام.",
+        "incorrect": "لإيجاد الفاصلة نقسم الترتيب على المعامل ولا نضربه فيه."
+      },
+      "solution": {
+        "lines": [
+          "$1600$ دج $= 16$ مئة دج.",
+          "$x = 16 \\div 2 = 8$ مئة كيلوغرام."
+        ],
+        "result": "8"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "يملك المشتري $2000$ دج ويريد $9$ مئة كيلوغرام. هل يكفيه مبلغه؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، يكفي: الثمن $1800$ دج لا يتجاوز $2000$ دج",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا، لا يكفي: لأنّ المبلغ يبدو أصغر من الثمن",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-APPROX-DECISION"
+        },
+        {
+          "id": "C",
+          "content": "لا، لا يكفي: لأنّ الوضعية ليست تناسبية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-EQUAL-ONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الثمن المطلوب بدقّة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارنه بالمبلغ المتوفّر: هل يتجاوزه؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الثمن $1800$ دج لا يتجاوز $2000$ دج.",
+        "incorrect": "قارن الثمن المحسوب بالمبلغ بدقّة، لا بالتقريب."
+      },
+      "solution": {
+        "lines": [
+          "ثمن $9$ مئة كيلوغرام: $2 \\times 9 \\times 100 = 1800$ دج.",
+          "$1800 \\leq 2000$ : يكفيه مبلغه."
+        ]
+      },
+      "timeSeconds": 130
+    }
+  ]
+}

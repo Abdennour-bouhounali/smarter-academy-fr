@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 function Stepper({ label, value, onChange, min, max, disabled }) {
+  const { t } = useTranslation('student');
+
   return (
     <div className="flex flex-col items-center gap-2">
       <span className="text-[11px] font-mono-jetbrains font-bold text-slate-400 uppercase tracking-wider">{label}</span>
@@ -9,8 +12,8 @@ function Stepper({ label, value, onChange, min, max, disabled }) {
           type="button"
           disabled={disabled || value <= min}
           onClick={() => onChange(value - 1)}
-          className="w-11 h-11 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-xl hover:border-blue-400 hover:bg-blue-50 active:scale-95 transition-all disabled:opacity-40 disabled:pointer-events-none focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-          aria-label={`Diminuer ${label}`}
+          className="w-11 h-11 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-xl hover:border-blue-400 hover:bg-nav-accent-soft active:scale-95 transition-all disabled:opacity-40 disabled:pointer-events-none focus:outline-none focus-visible:ring-2 focus-visible:ring-nav-accent"
+          aria-label={t('diagnostic.questions.decrease', { label })}
         >
           −
         </button>
@@ -21,8 +24,8 @@ function Stepper({ label, value, onChange, min, max, disabled }) {
           type="button"
           disabled={disabled || value >= max}
           onClick={() => onChange(value + 1)}
-          className="w-11 h-11 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-xl hover:border-blue-400 hover:bg-blue-50 active:scale-95 transition-all disabled:opacity-40 disabled:pointer-events-none focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-          aria-label={`Augmenter ${label}`}
+          className="w-11 h-11 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-xl hover:border-blue-400 hover:bg-nav-accent-soft active:scale-95 transition-all disabled:opacity-40 disabled:pointer-events-none focus:outline-none focus-visible:ring-2 focus-visible:ring-nav-accent"
+          aria-label={t('diagnostic.questions.increase', { label })}
         >
           +
         </button>
@@ -40,6 +43,7 @@ function Stepper({ label, value, onChange, min, max, disabled }) {
  * there's no "empty" state to wait for like a text field.
  */
 export default function FractionQuestion({ question, onChange, disabled }) {
+  const { t } = useTranslation('student');
   const [numerator, setNumerator] = useState(1);
   const [denominator, setDenominator] = useState(2);
 
@@ -56,9 +60,9 @@ export default function FractionQuestion({ question, onChange, disabled }) {
 
   return (
     <div className="flex items-center justify-center gap-6 py-4" aria-label={question.prompt}>
-      <Stepper label="Numérateur" value={numerator} onChange={(v) => update(v, denominator)} min={0} max={20} disabled={disabled} />
+      <Stepper label={t('diagnostic.questions.numerator')} value={numerator} onChange={(v) => update(v, denominator)} min={0} max={20} disabled={disabled} />
       <span className="text-3xl font-bold text-slate-300" aria-hidden="true">/</span>
-      <Stepper label="Dénominateur" value={denominator} onChange={(v) => update(numerator, v)} min={1} max={20} disabled={disabled} />
+      <Stepper label={t('diagnostic.questions.denominator')} value={denominator} onChange={(v) => update(numerator, v)} min={1} max={20} disabled={disabled} />
     </div>
   );
 }

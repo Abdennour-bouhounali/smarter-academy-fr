@@ -1,0 +1,261 @@
+{
+  "id": "ex-4am-mafhum-jumla-l5-003",
+  "lessonCode": "mafhum-jumla",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2008 — فندق بتلمسان",
+    "estimatedMinutes": 20,
+    "tags": [
+      "جملة",
+      "ترجمة",
+      "نسبة مئوية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mafhum-jumla_P1",
+      "modelledOn": "BEM 2008 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2008",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يضمّ فندق بتلمسان، المعروف بكرم الضيافة، 12 غرفة فردية و 18 غرفة مزدوجة. عندما تكون كل الغرف محجوزة يكون المدخول اليومي للفندق 113400DA .\nثمن الليلة في الغرفة الفردية يمثل 60% من ثمن الليلة في الغرفة المزدوجة.\nنسمّي $x$ ثمن الليلة في الغرفة الفردية و $y$ ثمن الليلة في الغرفة المزدوجة (بالدينار)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "ترجم المعطيات بجملة معادلتين، ثم اكتب المعادلة التي تترجم النسبة المئوية على الشكل $x + by = 0$ . أعط العدد $b$ .",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ : عدد عشري أو كسر غير قابل للاختزال",
+      "expectedAnswer": "-3/5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "60% من $y$ هي $0{,}6y$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل الحد الذي فيه $y$ إلى الطرف الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 0{,}6y$ تعطي $x - 0{,}6y = 0$ ، أي $b = -0{,}6$ .",
+        "incorrect": "اكتب «ثمن الفردية = 60% من ثمن المزدوجة» ثم انقل الحدّ مع تغيير إشارته."
+      },
+      "solution": {
+        "lines": [
+          "$x = \\dfrac{60}{100}y = 0{,}6y$",
+          "$x - 0{,}6y = 0$"
+        ],
+        "result": "b = -0{,}6"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اكتب المعادلة التي تترجم المدخول اليومي، ثم اقسم طرفيها على 6 لتكتبها على الشكل $2x + 3y = c$ . أعط العدد $c$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $c$ فقط",
+      "expectedAnswer": "18900",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مدخول الغرف الفردية $12x$ ومدخول الغرف المزدوجة $18y$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم كل الحدود على 6."
+        }
+      ],
+      "feedback": {
+        "correct": "$12x + 18y = 113400$ تعطي بالقسمة على 6: $2x + 3y = 18900$ .",
+        "incorrect": "اكتب المدخول اليومي بدلالة $x$ و $y$ ثم اقسم الطرفين على 6."
+      },
+      "solution": {
+        "lines": [
+          "$12x + 18y = 113400$",
+          "بالقسمة على 6: $2x + 3y = 18900$"
+        ],
+        "result": "2x + 3y = 18900"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "هل الثنائية $(3240 ; 4140)$ حل للجملة $\\begin{cases} 12x + 18y = 113400 \\\\ x - 0{,}6y = 0 \\end{cases}$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-MUADALA-WAHIDA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $3240$ و $y$ بـ $4140$ في كل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الثنائية حل للجملة إذا حققت المعادلتين في آن واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$12 \\times 3240 + 18 \\times 4140 = 113400$ ؛ $3240 - 0{,}6 \\times 4140 = 756 \\neq 0$ : الثنائية ليست حلا للجملة.",
+        "incorrect": "العدد الأول في الثنائية قيمة $x$ والثاني قيمة $y$ ؛ عوّض في المعادلتين معا وقارن كل نتيجة بالطرف الثاني."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $x$ بـ $3240$ و $y$ بـ $4140$ :",
+          "$12 \\times 3240 + 18 \\times 4140 = 113400$",
+          "$3240 - 0{,}6 \\times 4140 = 756 \\neq 0$",
+          "ومنه الثنائية $(3240 ; 4140)$ ليست حلا للجملة (لا تحقق المعادلتين معا)."
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل الثنائية $(2700 ; 4500)$ حل لهذه الجملة؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $2700$ و $y$ بـ $4500$ في كل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الثنائية حل للجملة إذا حققت المعادلتين في آن واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$12 \\times 2700 + 18 \\times 4500 = 113400$ ؛ $2700 - 0{,}6 \\times 4500 = 0$ : الثنائية حل للجملة.",
+        "incorrect": "العدد الأول في الثنائية قيمة $x$ والثاني قيمة $y$ ؛ عوّض في المعادلتين معا وقارن كل نتيجة بالطرف الثاني."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $x$ بـ $2700$ و $y$ بـ $4500$ :",
+          "$12 \\times 2700 + 18 \\times 4500 = 113400$",
+          "$2700 - 0{,}6 \\times 4500 = 0$",
+          "ومنه الثنائية $(2700 ; 4500)$ حل للجملة."
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "☜ في نهاية أسبوع، حُجزت كل الغرف المزدوجة ونصف الغرف الفردية لمدة ليلتين. احسب مدخول الفندق خلال الليلتين.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "194400",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نصف الغرف الفردية: 6 غرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل ثمني الليلة الموافقين لحل الجملة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ أن المدة ليلتان."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times (6 \\times 2700 + 18 \\times 4500) = 194400$ ، أي 194400DA .",
+        "incorrect": "احسب مدخول ليلة واحدة (6 غرف فردية و 18 غرفة مزدوجة) ثم اضربه في 2."
+      },
+      "solution": {
+        "lines": [
+          "الثنائية $(2700 ; 4500)$ حل للجملة: $x = 2700$ و $y = 4500$ .",
+          "مدخول ليلة واحدة: $6 \\times 2700 + 18 \\times 4500 = 16200 + 81000 = 97200$",
+          "مدخول ليلتين: $2 \\times 97200 = 194400$ أي 194400DA ."
+        ],
+        "result": "194400\\,DA"
+      },
+      "timeSeconds": 240
+    }
+  ]
+}

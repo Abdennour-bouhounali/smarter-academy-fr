@@ -1,0 +1,1226 @@
+/* ── Le مختبر المثلثات ─────────────────────────────────────────────────────
+   Le dessin prend tout ce qu'il peut ; le panneau se range sur le bord de
+   départ (à droite en arabe) sur grand écran, et devient un TIROIR en bas
+   sous 768 px (§35). Le dessin est LTR par nature — c'est des mathématiques
+   (§36) ; le panneau suit la direction de la page.
+
+   Les conventions sont celles du grapheur et des أشعة (functionGrapher.css,
+   vectors.css) : mêmes teintes, mêmes rayons, mêmes familles — les
+   instruments du مختبر doivent se ressembler. */
+
+.sa-ml-trig {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  background: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .sa-ml-trig { flex-direction: row; }
+}
+
+/* ── La scène ─────────────────────────────────────────────────────────── */
+
+.sa-ml-trig__stage {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+}
+
+.sa-ml-trig__stage-svg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #ffffff;
+  /* Le doigt TIRE le point, il ne fait pas défiler la page (§35). */
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.sa-ml-trig__svg { display: block; }
+
+.sa-ml-trig__stage-svg--dragging { cursor: grabbing; }
+
+/* ── Le repère ────────────────────────────────────────────────────────── */
+
+.sa-ml-trig__gridline {
+  stroke: #eef2f7;
+  stroke-width: 1;
+}
+
+.sa-ml-trig__gridline--half {
+  stroke: #f5f7fa;
+  stroke-dasharray: 3 4;
+}
+
+.sa-ml-trig__axis {
+  stroke: #94a3b8;
+  stroke-width: 1.5;
+}
+
+.sa-ml-trig__arrowhead { fill: #94a3b8; }
+
+.sa-ml-trig__axisname {
+  font-family: 'Inter', 'Cairo', serif;
+  font-style: italic;
+  font-size: 15px;
+  fill: #334155;
+}
+
+/* Les graduations tombent SUR le cercle (±1 est exactement là où il passe) :
+   le liseré blanc les détache au lieu de les laisser se confondre avec le
+   trait — un défaut que seule la QA visuelle montre. */
+.sa-ml-trig__tick {
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 11px;
+  fill: #64748b;
+  paint-order: stroke;
+  stroke: #ffffff;
+  stroke-width: 3.5px;
+  stroke-linejoin: round;
+}
+
+.sa-ml-trig__circle {
+  fill: none;
+  stroke: #1e293b;
+  stroke-width: 2;
+}
+
+/* ── L'angle ──────────────────────────────────────────────────────────── */
+
+.sa-ml-trig__arc {
+  fill: none;
+  stroke: #7c3aed;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+.sa-ml-trig__radius {
+  stroke: #0f172a;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+.sa-ml-trig__quadrant {
+  fill: #7c3aed;
+  opacity: 0.07;
+}
+
+/* Les angles remarquables : des repères discrets, cliquables (§6). */
+.sa-ml-trig__marker { cursor: pointer; }
+.sa-ml-trig__marker-hit { fill: transparent; }
+.sa-ml-trig__marker-dot { fill: #cbd5e1; }
+.sa-ml-trig__marker:hover .sa-ml-trig__marker-dot { fill: #7c3aed; }
+
+/* ── Les lectures : sin en bleu, cos en ambre, tan en rose ────────────────
+   §37 : la couleur ne porte JAMAIS seule l'information. Chaque segment a
+   aussi une épaisseur et un style de trait propres, et chaque valeur est
+   nommée en toutes lettres dans le panneau. */
+
+.sa-ml-trig__sin {
+  stroke: #2563eb;
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.sa-ml-trig__cos {
+  stroke: #d97706;
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.sa-ml-trig__seg--on { stroke-width: 7; }
+.sa-ml-trig__seg--off { opacity: 0.25; }
+
+.sa-ml-trig__proj {
+  stroke: #94a3b8;
+  stroke-width: 1.5;
+  stroke-dasharray: 4 4;
+}
+
+.sa-ml-trig__tri-fill {
+  fill: #7c3aed;
+  fill-opacity: 0.08;
+  stroke: #7c3aed;
+  stroke-width: 1.5;
+}
+
+.sa-ml-trig__rightangle {
+  fill: none;
+  stroke: #7c3aed;
+  stroke-width: 1.5;
+}
+
+.sa-ml-trig__pointlabel {
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  fill: #0f172a;
+  paint-order: stroke;
+  stroke: #ffffff;
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+
+/* ── La poignée : un disque visible, une cible large (§35) ─────────────── */
+
+.sa-ml-trig__hit {
+  fill: transparent;
+  cursor: grab;
+}
+
+.sa-ml-trig__handle--dragging .sa-ml-trig__hit { cursor: grabbing; }
+
+.sa-ml-trig__halo {
+  fill: #7c3aed;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.sa-ml-trig__dot {
+  fill: #7c3aed;
+  stroke: #ffffff;
+  stroke-width: 2.5;
+  pointer-events: none;
+}
+
+.sa-ml-trig__handle:focus-visible { outline: none; }
+
+.sa-ml-trig__handle:focus-visible .sa-ml-trig__halo {
+  opacity: 0.35;
+  stroke: #1d4ed8;
+  stroke-width: 3;
+}
+
+/* ── La tangente (§11) ────────────────────────────────────────────────── */
+
+.sa-ml-trig__tangentline {
+  stroke: #db2777;
+  stroke-width: 1.5;
+  stroke-dasharray: 5 4;
+  opacity: 0.6;
+}
+
+.sa-ml-trig__tangentray {
+  stroke: #db2777;
+  stroke-width: 1.5;
+  stroke-dasharray: 3 3;
+  opacity: 0.55;
+}
+
+.sa-ml-trig__tangentseg {
+  stroke: #db2777;
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.sa-ml-trig__tangentdot { fill: #db2777; }
+.sa-ml-trig__tangentray-dot { fill: #db2777; opacity: 0.6; }
+
+.sa-ml-trig__tangentlabel {
+  font-family: 'Cairo', 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  fill: #be185d;
+  paint-order: stroke;
+  stroke: #ffffff;
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+
+.sa-ml-trig__tangent--undefined .sa-ml-trig__tangentline {
+  stroke: #be185d;
+  stroke-width: 2.5;
+  opacity: 1;
+}
+
+/* ── La comparaison et la symétrie ────────────────────────────────────── */
+
+.sa-ml-trig__compare-radius,
+.sa-ml-trig__symmetry-radius {
+  stroke: #0891b2;
+  stroke-width: 2;
+  stroke-dasharray: 6 4;
+}
+
+.sa-ml-trig__compare-arc {
+  fill: none;
+  stroke: #0891b2;
+  stroke-width: 2;
+  opacity: 0.6;
+}
+
+.sa-ml-trig__compare-dot,
+.sa-ml-trig__symmetry-dot {
+  fill: #0891b2;
+  stroke: #ffffff;
+  stroke-width: 2;
+}
+
+.sa-ml-trig__symmetry-link {
+  stroke: #0891b2;
+  stroke-width: 1.5;
+  stroke-dasharray: 3 3;
+  opacity: 0.55;
+}
+
+.sa-ml-trig__compare-label {
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  fill: #0e7490;
+  paint-order: stroke;
+  stroke: #ffffff;
+  stroke-width: 4px;
+}
+
+/* ── Le graphe (§12) ──────────────────────────────────────────────────── */
+
+.sa-ml-trig__graphbg {
+  fill: #f8fafc;
+  stroke: #e2e8f0;
+  stroke-width: 1;
+}
+
+.sa-ml-trig__graphaxis { stroke: #94a3b8; stroke-width: 1.5; }
+.sa-ml-trig__graphtick { stroke: #e2e8f0; stroke-width: 1; }
+
+.sa-ml-trig__graphticklabel,
+.sa-ml-trig__graphaxislabel {
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 10px;
+  fill: #64748b;
+}
+
+.sa-ml-trig__wave { fill: none; stroke-width: 2.5; stroke-linecap: round; }
+.sa-ml-trig__wave--sin { stroke: #2563eb; }
+.sa-ml-trig__wave--cos { stroke: #d97706; }
+
+/* Le « fantôme » : la courbe entière, pâle, derrière celle qui se dessine —
+   on voit où l'on va sans perdre l'effet de tracé progressif (§13). */
+.sa-ml-trig__wave--ghost {
+  stroke: #cbd5e1;
+  stroke-width: 1.5;
+  stroke-dasharray: 4 5;
+}
+
+.sa-ml-trig__graphcursor {
+  stroke: #7c3aed;
+  stroke-width: 1.5;
+  stroke-dasharray: 3 3;
+}
+
+.sa-ml-trig__graphdot { stroke: #ffffff; stroke-width: 2; }
+.sa-ml-trig__graphdot--sin { fill: #2563eb; }
+.sa-ml-trig__graphdot--cos { fill: #d97706; }
+
+.sa-ml-trig__graphsurface {
+  fill: transparent;
+  cursor: ew-resize;
+  touch-action: none;
+}
+
+/* ── Le triangle libre (§9) ───────────────────────────────────────────── */
+
+.sa-ml-trig__side { stroke-width: 4; stroke-linecap: round; }
+.sa-ml-trig__side--opp { stroke: #2563eb; }
+.sa-ml-trig__side--adj { stroke: #d97706; }
+.sa-ml-trig__side--hyp { stroke: #0f172a; }
+.sa-ml-trig__side--on { stroke-width: 8; }
+.sa-ml-trig__side--off { opacity: 0.2; }
+
+.sa-ml-trig__tri-arc { fill: none; stroke: #7c3aed; stroke-width: 2; }
+
+.sa-ml-trig__tri-theta,
+.sa-ml-trig__tri-anglelabel {
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 14px;
+  font-weight: 600;
+  fill: #6d28d9;
+}
+
+.sa-ml-trig__sidelabel {
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  fill: #334155;
+  paint-order: stroke;
+  stroke: #ffffff;
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+
+.sa-ml-trig__impossible {
+  position: absolute;
+  inset-inline-start: 50%;
+  top: 50%;
+  transform: translate(50%, -50%);
+  max-width: 22rem;
+  padding: 0.85rem 1.1rem;
+  border-radius: 0.75rem;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* La formule SOH-CAH-TOA, posée sous le triangle (§10). */
+.sa-ml-trig__formula {
+  position: absolute;
+  inset-inline: 1rem;
+  bottom: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  padding: 0.6rem 0.9rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid #e2e8f0;
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 0.95rem;
+  color: #0f172a;
+}
+
+.sa-ml-trig__formula-name { font-weight: 700; color: #6d28d9; }
+.sa-ml-trig__formula-eq { color: #64748b; }
+.sa-ml-trig__formula-value { font-weight: 700; }
+.sa-ml-trig__formula-value--undef {
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.85rem;
+  color: #be185d;
+}
+
+/* Une fraction écrite comme au tableau : numérateur, barre, dénominateur. */
+.sa-ml-trig__formula-frac {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.15;
+}
+
+.sa-ml-trig__formula-num,
+.sa-ml-trig__formula-den {
+  font-size: 0.8rem;
+  font-family: 'Cairo', 'JetBrains Mono', sans-serif;
+  padding: 0 0.25rem;
+}
+
+.sa-ml-trig__formula-bar {
+  display: block;
+  width: 100%;
+  min-width: 2.5rem;
+  height: 1.5px;
+  background: #334155;
+  margin: 0.12rem 0;
+}
+
+/* ── L'invitation et les micro-explications (§46, §47) ────────────────── */
+
+.sa-ml-trig__invite {
+  position: absolute;
+  inset-inline-start: 0.9rem;
+  top: 0.8rem;
+  margin: 0;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(124, 58, 237, 0.08);
+  color: #6d28d9;
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.sa-ml-trig__micro {
+  position: absolute;
+  inset-inline: 0.9rem;
+  bottom: 0.8rem;
+  margin: 0;
+  padding: 0.55rem 0.85rem;
+  border-radius: 0.7rem;
+  background: rgba(15, 23, 42, 0.9);
+  color: #f8fafc;
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.83rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* L'expérience guidée (§29) : posée sur le dessin, toujours refermable. */
+.sa-ml-trig__guide {
+  position: absolute;
+  inset-inline-end: 0.9rem;
+  top: 0.8rem;
+  max-width: 19rem;
+  padding: 0.8rem 0.95rem;
+  border-radius: 0.8rem;
+  background: #ffffff;
+  border: 1px solid #ddd6fe;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1);
+  font-family: 'Cairo', sans-serif;
+}
+
+.sa-ml-trig__guide-question {
+  margin: 0 0 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #5b21b6;
+}
+
+.sa-ml-trig__guide-step {
+  margin: 0 0 0.6rem;
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: #334155;
+}
+
+.sa-ml-trig__guide-actions { display: flex; gap: 0.4rem; align-items: center; }
+
+/* ── Le panneau ───────────────────────────────────────────────────────── */
+
+.sa-ml-trig__panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex: 0 0 auto;
+  max-height: 52%;
+  border-top: 1px solid #e2e8f0;
+  background: #ffffff;
+  font-family: 'Cairo', sans-serif;
+}
+
+@media (min-width: 768px) {
+  .sa-ml-trig__panel {
+    flex: 0 0 21rem;
+    max-height: none;
+    border-top: none;
+    border-inline-start: 1px solid #e2e8f0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .sa-ml-trig__panel { flex-basis: 23.5rem; }
+}
+
+.sa-ml-trig__panel--collapsed { max-height: 3rem; }
+@media (min-width: 768px) { .sa-ml-trig__panel--collapsed { max-height: none; } }
+
+.sa-ml-trig__panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.7rem 0.9rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.sa-ml-trig__panel-title {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+@media (min-width: 768px) { .sa-ml-trig__collapse { display: none; } }
+
+.sa-ml-trig__panel-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0.8rem 0.9rem 1.4rem;
+}
+
+/* ── L'inspecteur (§31) ───────────────────────────────────────────────── */
+
+.sa-ml-trig__inspector { margin-bottom: 0.9rem; }
+
+.sa-ml-trig__theta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.7rem;
+  background: #f5f3ff;
+  margin-bottom: 0.5rem;
+}
+
+.sa-ml-trig__theta-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #6d28d9;
+}
+
+.sa-ml-trig__theta-main {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.sa-ml-trig__theta-alt {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  color: #7c3aed;
+  margin-inline-start: auto;
+}
+
+.sa-ml-trig__equivalent {
+  margin: 0 0 0.6rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: 0.6rem;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  font-size: 0.82rem;
+  color: #92400e;
+}
+
+.sa-ml-trig__turns { color: #b45309; }
+
+.sa-ml-trig__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.3rem 0;
+  font-size: 0.85rem;
+}
+
+.sa-ml-trig__row-label { color: #64748b; }
+
+.sa-ml-trig__row-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* Les trois rapports, cliquables (§10). */
+.sa-ml-trig__ratios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.4rem;
+  margin: 0.6rem 0;
+}
+
+.sa-ml-trig__ratio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.55rem 0.3rem;
+  border-radius: 0.65rem;
+  border: 1.5px solid #e2e8f0;
+  background: #ffffff;
+  cursor: pointer;
+  /* §37 : 44 px de haut, la cible tactile recommandée. */
+  min-height: 44px;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.sa-ml-trig__ratio:hover { border-color: #c4b5fd; }
+
+.sa-ml-trig__ratio--on {
+  border-color: #7c3aed;
+  background: #f5f3ff;
+}
+
+.sa-ml-trig__ratio-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.sa-ml-trig__ratio-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.sa-ml-trig__ratio--undefined .sa-ml-trig__ratio-value {
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.72rem;
+  color: #be185d;
+}
+
+.sa-ml-trig__ratio-approx {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: #94a3b8;
+}
+
+/* Le quadrant et ses signes (§5, §20). */
+.sa-ml-trig__quadbox {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 0.65rem;
+  background: #f8fafc;
+  margin-bottom: 0.6rem;
+}
+
+.sa-ml-trig__quadname { font-size: 0.85rem; color: #0f172a; }
+
+.sa-ml-trig__signs { display: flex; gap: 0.35rem; margin-inline-start: auto; }
+
+.sa-ml-trig__signchip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.4rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+}
+
+.sa-ml-trig__signchip-name { color: #94a3b8; }
+.sa-ml-trig__signchip-value { font-weight: 700; }
+.sa-ml-trig__signchip-value--pos { color: #15803d; }
+.sa-ml-trig__signchip-value--neg { color: #b91c1c; }
+.sa-ml-trig__signchip-value--zero { color: #64748b; }
+.sa-ml-trig__signchip-value--undef { color: #be185d; }
+
+/* Les tables (§18, §20, §21, §33). */
+.sa-ml-trig__signtable,
+.sa-ml-trig__minitable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+  margin-bottom: 0.7rem;
+}
+
+.sa-ml-trig__caption {
+  text-align: start;
+  font-size: 0.78rem;
+  color: #64748b;
+  padding-bottom: 0.3rem;
+}
+
+.sa-ml-trig__signtable th,
+.sa-ml-trig__signtable td,
+.sa-ml-trig__minitable th,
+.sa-ml-trig__minitable td {
+  padding: 0.35rem 0.4rem;
+  border-bottom: 1px solid #f1f5f9;
+  text-align: center;
+}
+
+.sa-ml-trig__signtable thead th,
+.sa-ml-trig__minitable thead th {
+  font-family: 'JetBrains Mono', monospace;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.sa-ml-trig__signtable tbody th,
+.sa-ml-trig__minitable tbody th {
+  text-align: start;
+  font-weight: 600;
+  color: #334155;
+}
+
+.sa-ml-trig__minitable td {
+  font-family: 'JetBrains Mono', monospace;
+  color: #0f172a;
+}
+
+/* La ligne courante : un fond ET une bordure ET un mot pour le lecteur
+   d'écran — jamais la couleur seule (§37). */
+.sa-ml-trig__signrow--current {
+  background: #f5f3ff;
+  outline: 2px solid #c4b5fd;
+  outline-offset: -2px;
+}
+
+.sa-ml-trig__cell--pos { color: #15803d; font-weight: 700; }
+.sa-ml-trig__cell--neg { color: #b91c1c; font-weight: 700; }
+
+/* tan = sin/cos, et l'identité (§22, §23). */
+.sa-ml-trig__tanpanel,
+.sa-ml-trig__identity {
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.7rem;
+  background: #f8fafc;
+  margin-bottom: 0.7rem;
+}
+
+.sa-ml-trig__subheading {
+  margin: 0 0 0.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+.sa-ml-trig__tanline {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+}
+
+/* La balance de §22 : deux parts qui remplissent exactement la barre. */
+.sa-ml-trig__bar {
+  display: flex;
+  width: 100%;
+  height: 1.4rem;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  background: #e2e8f0;
+  margin-bottom: 0.5rem;
+}
+
+.sa-ml-trig__bar-sin { background: #2563eb; transition: width 0.08s linear; }
+.sa-ml-trig__bar-cos { background: #d97706; transition: width 0.08s linear; }
+
+.sa-ml-trig__identity-rows {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.3rem;
+  margin: 0;
+}
+
+.sa-ml-trig__identity-rows div { text-align: center; }
+
+.sa-ml-trig__identity-rows dt {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: #64748b;
+}
+
+.sa-ml-trig__identity-rows dd {
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.sa-ml-trig__identity-sum dd { color: #15803d; }
+
+/* ── Les contrôles ────────────────────────────────────────────────────── */
+
+.sa-ml-trig__section {
+  border-top: 1px solid #f1f5f9;
+}
+
+.sa-ml-trig__section-head { margin: 0; }
+
+.sa-ml-trig__section-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0.5rem;
+  padding: 0.65rem 0.2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: start;
+  min-height: 44px;
+}
+
+.sa-ml-trig__section-sign { color: #94a3b8; display: inline-flex; }
+
+.sa-ml-trig__section-body { padding: 0 0.2rem 0.85rem; }
+
+.sa-ml-trig__field {
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+.sa-ml-trig__field-label {
+  display: block;
+  font-size: 0.78rem;
+  color: #64748b;
+  margin-bottom: 0.25rem;
+}
+
+.sa-ml-trig__input,
+.sa-ml-trig__select {
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  border-radius: 0.55rem;
+  border: 1.5px solid #e2e8f0;
+  background: #ffffff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  color: #0f172a;
+  min-height: 44px;
+}
+
+.sa-ml-trig__select { font-family: 'Cairo', sans-serif; }
+
+.sa-ml-trig__input:focus-visible,
+.sa-ml-trig__select:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 1px;
+  border-color: #7c3aed;
+}
+
+.sa-ml-trig__input--answer { font-size: 1.05rem; text-align: center; }
+
+.sa-ml-trig__slider {
+  width: 100%;
+  accent-color: #7c3aed;
+  min-height: 24px;
+}
+
+.sa-ml-trig__unitswitch {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.2rem;
+  border-radius: 0.6rem;
+  background: #f1f5f9;
+  margin-bottom: 0.6rem;
+}
+
+.sa-ml-trig__seg {
+  flex: 1 1 0;
+  padding: 0.45rem 0.4rem;
+  border: none;
+  border-radius: 0.45rem;
+  background: transparent;
+  cursor: pointer;
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.82rem;
+  color: #475569;
+  min-height: 40px;
+}
+
+.sa-ml-trig__seg--active {
+  background: #ffffff;
+  color: #6d28d9;
+  font-weight: 700;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.1);
+}
+
+.sa-ml-trig__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.sa-ml-trig__chip {
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.5rem;
+  border: 1.5px solid #e2e8f0;
+  background: #ffffff;
+  cursor: pointer;
+  font-family: 'Cairo', 'JetBrains Mono', sans-serif;
+  font-size: 0.8rem;
+  color: #334155;
+  /* §35 : les cibles tactiles ne descendent pas sous 36 px, et les boutons
+     principaux sont à 44 px. */
+  min-height: 36px;
+}
+
+.sa-ml-trig__chip:hover { border-color: #c4b5fd; }
+
+.sa-ml-trig__chip--active {
+  border-color: #7c3aed;
+  background: #f5f3ff;
+  color: #6d28d9;
+  font-weight: 700;
+}
+
+.sa-ml-trig__nudges { display: flex; flex-wrap: wrap; gap: 0.25rem; margin-bottom: 0.6rem; }
+
+.sa-ml-trig__nudge {
+  flex: 1 1 auto;
+  min-width: 3rem;
+  min-height: 40px;
+  padding: 0.35rem 0.3rem;
+  border-radius: 0.45rem;
+  border: 1.5px solid #e2e8f0;
+  background: #ffffff;
+  cursor: pointer;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: #334155;
+}
+
+.sa-ml-trig__nudge:hover { border-color: #c4b5fd; background: #faf5ff; }
+
+.sa-ml-trig__playbar {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.sa-ml-trig__speed { flex: 1 1 auto; display: flex; }
+.sa-ml-trig__speed input { width: 100%; accent-color: #7c3aed; }
+
+.sa-ml-trig__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 0.55rem;
+  border: 1.5px solid #e2e8f0;
+  background: #ffffff;
+  cursor: pointer;
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.82rem;
+  color: #334155;
+  min-height: 44px;
+}
+
+.sa-ml-trig__btn:hover:not(:disabled) { border-color: #c4b5fd; }
+.sa-ml-trig__btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.sa-ml-trig__btn--primary {
+  background: #7c3aed;
+  border-color: #7c3aed;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.sa-ml-trig__btn--primary:hover:not(:disabled) { background: #6d28d9; border-color: #6d28d9; }
+.sa-ml-trig__btn--on { background: #5b21b6; border-color: #5b21b6; }
+
+.sa-ml-trig__btn--icon { padding: 0.5rem; min-width: 44px; }
+.sa-ml-trig__btn--wide { width: 100%; margin-bottom: 0.5rem; }
+
+.sa-ml-trig__layergroup {
+  border: none;
+  margin: 0 0 0.6rem;
+  padding: 0;
+}
+
+.sa-ml-trig__layergroup legend {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #64748b;
+  padding: 0 0 0.25rem;
+}
+
+.sa-ml-trig__check {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.3rem 0;
+  font-size: 0.82rem;
+  color: #334155;
+  cursor: pointer;
+  min-height: 34px;
+}
+
+.sa-ml-trig__check input { accent-color: #7c3aed; width: 1rem; height: 1rem; }
+
+.sa-ml-trig__hint,
+.sa-ml-trig__note {
+  margin: 0 0 0.5rem;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: #64748b;
+}
+
+.sa-ml-trig__note--warn {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.35rem;
+  padding: 0.45rem 0.6rem;
+  border-radius: 0.5rem;
+  background: #fdf2f8;
+  color: #9d174d;
+}
+
+/* `dir="ltr"` fixe l'ORDRE des caractères, pas l'ALIGNEMENT : dans une page
+   arabe le bloc reste collé au bord droit et la formule paraît lue à
+   l'envers. `text-align: left` est ce qui la remet à sa place — c'est la
+   même paire que §36 demande partout où une notation est posée. */
+.sa-ml-trig__arcreadout {
+  display: block;
+  margin-top: 0.35rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  color: #0f172a;
+  text-align: left;
+}
+
+/* Toute notation posée en ltr dans le panneau suit la même règle. */
+.sa-ml-trig__theta-main,
+.sa-ml-trig__theta-alt,
+.sa-ml-trig__row-value,
+.sa-ml-trig__tanline,
+.sa-ml-trig__explain-answer {
+  unicode-bidi: isolate;
+}
+
+.sa-ml-trig__solutions { margin-top: 0.5rem; }
+.sa-ml-trig__score { margin: 0.4rem 0 0; font-size: 0.8rem; color: #6d28d9; font-weight: 600; }
+
+/* ── L'entraînement (§25) ─────────────────────────────────────────────── */
+
+.sa-ml-trig__practice {
+  padding: 0.8rem 0.85rem;
+  border-radius: 0.8rem;
+  border: 1.5px solid #ddd6fe;
+  background: #faf5ff;
+  margin-bottom: 0.9rem;
+}
+
+.sa-ml-trig__practice-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.sa-ml-trig__practice-title {
+  margin: 0;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #5b21b6;
+}
+
+.sa-ml-trig__practice-score {
+  margin-inline-start: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: #7c3aed;
+}
+
+.sa-ml-trig__question {
+  margin: 0 0 0.6rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.sa-ml-trig__signpicker { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 0.5rem; }
+
+.sa-ml-trig__signpick { display: flex; align-items: center; gap: 0.35rem; }
+
+.sa-ml-trig__signpick-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  color: #64748b;
+  min-width: 2.2rem;
+}
+
+.sa-ml-trig__hintline,
+.sa-ml-trig__verdict {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  margin: 0 0 0.5rem;
+  padding: 0.5rem 0.65rem;
+  border-radius: 0.55rem;
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.sa-ml-trig__hintline { background: #fffbeb; color: #92400e; }
+
+.sa-ml-trig__verdict--ok { background: #f0fdf4; color: #15803d; font-weight: 600; }
+.sa-ml-trig__verdict--no { background: #fef2f2; color: #b91c1c; }
+.sa-ml-trig__verdict--unreadable { background: #f8fafc; color: #64748b; }
+
+.sa-ml-trig__explain {
+  padding: 0.6rem 0.7rem;
+  border-radius: 0.6rem;
+  background: #ffffff;
+  border: 1px solid #e9d5ff;
+  margin-bottom: 0.5rem;
+}
+
+.sa-ml-trig__explain-answer {
+  margin: 0 0 0.35rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #6d28d9;
+  text-align: center;
+}
+
+.sa-ml-trig__explain-text {
+  margin: 0 0 0.3rem;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: #334155;
+}
+
+.sa-ml-trig__practice-actions { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+.sa-ml-trig__practice-actions .sa-ml-trig__btn { flex: 1 1 auto; }
+
+/* ── Accessibilité ────────────────────────────────────────────────────── */
+
+.sa-ml-trig__sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.sa-ml-trig__section-btn:focus-visible,
+.sa-ml-trig__chip:focus-visible,
+.sa-ml-trig__btn:focus-visible,
+.sa-ml-trig__seg:focus-visible,
+.sa-ml-trig__nudge:focus-visible,
+.sa-ml-trig__ratio:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+}
+
+/* ── Mouvement réduit (§38) ───────────────────────────────────────────────
+   Les transitions tombent ; la MATHÉMATIQUE ne change pas d'un pixel. La
+   rotation continue, elle, est arrêtée par le composant lui-même — une
+   règle CSS ne saurait pas l'empêcher de tourner. */
+@media (prefers-reduced-motion: reduce) {
+  .sa-ml-trig__bar-sin,
+  .sa-ml-trig__bar-cos,
+  .sa-ml-trig__ratio {
+    transition: none;
+  }
+}
+
+/* ── « حلّ المثلث خطوة بخطوة » — le raisonnement déroulé (StepPlayer + StepList) ── */
+
+.sa-ml-trig__solve {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 0 0 0.9rem;
+}
+
+.sa-ml-trig__solve .sa-ml-kit-steps__math {
+  overflow-x: auto;
+  text-align: left;
+}
+
+/* ── « D'un seul regard » (MATH_LAB §3.5) : les tables de référence sont des
+   LabPanel — le titre du panneau remplace la légende et le sous-titre. ── */
+.sa-ml-trig__labpanel { margin-bottom: 0.7rem; }
+.sa-ml-trig__labpanel .sa-ml-trig__caption {
+  position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+}
+.sa-ml-trig__labpanel .sa-ml-trig__tanpanel,
+.sa-ml-trig__labpanel .sa-ml-trig__identity { margin: 0; padding: 0; background: transparent; }
+.sa-ml-trig__labpanel .sa-ml-trig__signtable { margin: 0; }

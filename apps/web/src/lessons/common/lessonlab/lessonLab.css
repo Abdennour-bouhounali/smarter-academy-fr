@@ -1,0 +1,1470 @@
+/* « مختبري » — the lab of a lesson: a workbench on graph paper. Designed at 1280 × 720, zoomed to the window: nothing scrolls. */
+.ll-root {
+  position: fixed;
+  inset: 0;
+  z-index: 1300;
+  overflow: hidden;
+  color: #eafcff;
+  font-family: 'Cairo', 'Tajawal', system-ui, sans-serif;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+  background: radial-gradient(1200px 700px at 78% -10%, #17525c 0%, transparent 60%),
+    linear-gradient(160deg, #0d2b33, #071a20);
+}
+.ll-root--inline {
+  position: absolute;
+  z-index: 40;
+}
+.ll-root::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: linear-gradient(rgba(125, 252, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(125, 252, 255, 0.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+.ll-root *,
+.ll-root *::before,
+.ll-root *::after {
+  box-sizing: border-box;
+}
+.ll-root h2,
+.ll-root h3,
+.ll-root h4,
+.ll-root p,
+.ll-root li,
+.ll-root button,
+.ll-root input {
+  color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+.ll-root input {
+  user-select: text;
+  -webkit-user-select: text;
+}
+.ll-root .katex {
+  white-space: nowrap;
+}
+.ll-fit {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 15.5rem minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 0.8rem;
+  padding: 0.9rem 1.1rem;
+}
+
+.ll-head {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.ll-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-width: 0;
+}
+.ll-brand i {
+  font-style: normal;
+  font-size: 2.3rem;
+  filter: drop-shadow(0 0 12px rgba(52, 211, 153, 0.6));
+}
+.ll-brand h2 {
+  font-size: 1.7rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+.ll-brand p {
+  font-size: 0.88rem;
+  font-weight: 700;
+  opacity: 0.75;
+  line-height: 1.45;
+  max-width: 21rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.ll-nums {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.8rem;
+  padding: 0.45rem 0.9rem 0.55rem;
+  border-radius: 1.2rem;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1.5px solid rgba(125, 252, 255, 0.3);
+}
+.ll-nums em {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1rem;
+  color: #7dfcff;
+  align-self: center;
+}
+.ll-num {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  opacity: 0.95;
+}
+.ll-num__box {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.ll-num__box button {
+  display: grid;
+  place-items: center;
+  width: 2.3rem;
+  height: 2.5rem;
+  border-radius: 0.7rem;
+  border: 0;
+  background: rgba(125, 252, 255, 0.16);
+  cursor: pointer;
+}
+.ll-num__box button:hover {
+  background: rgba(125, 252, 255, 0.32);
+}
+.ll-num__box input {
+  width: 5.2rem;
+  height: 2.5rem;
+  border-radius: 0.7rem;
+  border: 2px solid rgba(125, 252, 255, 0.55);
+  background: #062026;
+  text-align: center;
+  font-size: 1.55rem;
+  font-weight: 900;
+  outline: none;
+}
+.ll-num__box input:focus {
+  border-color: #fbbf24;
+}
+.ll-dice {
+  display: grid;
+  place-items: center;
+  width: 2.7rem;
+  height: 2.5rem;
+  border-radius: 0.7rem;
+  border: 0;
+  background: #fbbf24;
+  color: #3b2a06 !important;
+  cursor: pointer;
+}
+.ll-dice:hover {
+  transform: rotate(-12deg) scale(1.06);
+}
+.ll-head__end {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.ll-stars {
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(251, 191, 36, 0.16);
+  border: 1.5px solid rgba(251, 191, 36, 0.5);
+  font-weight: 900;
+  font-size: 1.05rem;
+}
+.ll-icon {
+  display: grid;
+  place-items: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.07);
+  cursor: pointer;
+}
+.ll-icon:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.18);
+}
+.ll-icon:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.ll-rail {
+  grid-row: 2 / 4;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 0.8rem 0.7rem;
+  border-radius: 1.4rem;
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  min-height: 0;
+}
+.ll-rail h3 {
+  font-size: 0.9rem;
+  font-weight: 900;
+  color: #7dfcff;
+  margin-top: 0.15rem;
+}
+/* the group « أدوات هذا الدرس »: a hook for the walks, laid out as if its children stood in the rail */
+.ll-rail__mine {
+  display: contents;
+}
+.ll-rail__none {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  opacity: 0.8;
+}
+.ll-tile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  width: 100%;
+  min-height: 3.5rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  text-align: start;
+  transition:
+    transform 0.12s,
+    border-color 0.15s,
+    background 0.15s;
+}
+.ll-tile:hover {
+  transform: translateX(-3px);
+  border-color: rgba(125, 252, 255, 0.6);
+}
+.ll-tile.is-on {
+  border-color: #34d399;
+  background: rgba(52, 211, 153, 0.16);
+  box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.2);
+}
+.ll-tile i {
+  font-style: normal;
+  font-size: 1.6rem;
+}
+.ll-tile strong {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+.ll-tile__dots {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.ll-tile__dots b {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+}
+.ll-tile__dots b.is-on {
+  background: #fbbf24;
+}
+.ll-cabinet-btn {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.7rem;
+  border-radius: 1.1rem;
+  border: 2px dashed rgba(251, 191, 36, 0.7);
+  background: rgba(251, 191, 36, 0.1);
+  cursor: pointer;
+  text-align: start;
+}
+.ll-cabinet-btn:hover {
+  background: rgba(251, 191, 36, 0.22);
+}
+.ll-cabinet-btn i {
+  font-style: normal;
+  font-size: 1.9rem;
+}
+.ll-cabinet-btn strong {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #fde68a;
+}
+.ll-cabinet-btn small {
+  font-size: 0.78rem;
+  font-weight: 700;
+  opacity: 0.85;
+}
+
+.ll-bench {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-height: 0;
+  min-width: 0;
+}
+.ll-toolhead {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+.ll-toolhead i {
+  font-style: normal;
+  font-size: 1.5rem;
+}
+.ll-toolhead h3 {
+  font-size: 1.35rem;
+  font-weight: 900;
+  white-space: nowrap;
+}
+.ll-toolhead p {
+  font-size: 1.02rem;
+  font-weight: 600;
+  opacity: 0.85;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+.ll-toolhead em {
+  margin-inline-start: auto;
+  font-style: normal;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 0.15rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(251, 191, 36, 0.18);
+  color: #fde68a;
+  white-space: nowrap;
+}
+.ll-stage {
+  flex: 1;
+  min-height: 0;
+  border-radius: 1.4rem;
+  background: rgba(4, 20, 25, 0.72);
+  border: 1.5px solid rgba(125, 252, 255, 0.25);
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+.ll-loading {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  opacity: 0.7;
+}
+.ll-tool {
+  height: 100%;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+}
+.ll-draw {
+  min-height: 0;
+  padding: 0.4rem 0.6rem 0;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+/* numbers and equalities are written left to right; an Arabic label sets direction="rtl" on itself */
+.ll-draw > svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+  direction: ltr;
+}
+.ll-draw text {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 800;
+  fill: #eafcff;
+}
+/* one line, a fixed height: the drawing above never moves when the reading changes */
+.ll-reading {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  height: 4.3rem;
+  padding: 0.45rem 1rem;
+  border-top: 1.5px solid rgba(125, 252, 255, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+}
+.ll-reading__text {
+  flex: 1;
+  min-width: 0;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+.ll-reading--good {
+  background: rgba(52, 211, 153, 0.14);
+}
+.ll-reading--warm {
+  background: rgba(251, 191, 36, 0.1);
+}
+.ll-math {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.ll-reading .ll-math {
+  color: #fff;
+}
+.ll-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.15rem 0.8rem;
+  border-radius: 999px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.ll-chip--good {
+  background: #34d399;
+  color: #052e22 !important;
+}
+.ll-chip--warm {
+  background: #fbbf24;
+  color: #3b2a06 !important;
+}
+.ll-chip--dim {
+  background: rgba(255, 255, 255, 0.12);
+}
+/* what a platform holds MORE than its court (« منصّة الكسر »): the world's violet of a jam, never the red of an error */
+.ll-chip--jam {
+  background: #c4b5fd;
+  color: #2e1065 !important;
+}
+.ll-actions {
+  display: flex;
+  gap: 0.45rem;
+  flex: none;
+}
+.ll-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 2.7rem;
+  padding: 0 1.1rem;
+  border-radius: 0.9rem;
+  border: 0;
+  background: #7dfcff;
+  color: #06262c !important;
+  font-size: 1.05rem;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #3aa7ad;
+  white-space: nowrap;
+}
+.ll-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #3aa7ad;
+}
+.ll-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.ll-btn--ghost {
+  background: rgba(255, 255, 255, 0.1);
+  color: #eafcff !important;
+  box-shadow: none;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+}
+/* a button that was never pressed calls the hand (« مِنضدة القائمتين »: the first try) */
+.ll-btn--call {
+  animation: ll-call 1.4s ease-in-out infinite;
+}
+@keyframes ll-call {
+  0%,
+  100% {
+    box-shadow:
+      0 4px 0 #3aa7ad,
+      0 0 0 0 rgba(125, 252, 255, 0.55);
+  }
+  50% {
+    box-shadow:
+      0 4px 0 #3aa7ad,
+      0 0 0 10px rgba(125, 252, 255, 0);
+  }
+}
+/* the two lists: a written divisor is tapped to see the equalities that place it */
+.ll-lchip {
+  cursor: pointer;
+}
+
+.ll-quests {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.55rem 1rem;
+  border-radius: 1.2rem;
+  background: rgba(251, 191, 36, 0.08);
+  border: 1.5px solid rgba(251, 191, 36, 0.35);
+  min-height: 4.4rem;
+}
+.ll-quests h4 {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #fde68a;
+  white-space: nowrap;
+}
+.ll-quests ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+.ll-quests li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.ll-quests li b {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.45rem;
+  border: 2px solid rgba(251, 191, 36, 0.7);
+  color: #052e22;
+}
+.ll-quests li.is-done {
+  color: #a7f3d0;
+}
+.ll-quests li.is-done b {
+  background: #34d399;
+  border-color: #34d399;
+}
+.ll-quests li.is-fresh {
+  animation: ll-pop 0.7s ease-out;
+}
+@keyframes ll-pop {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1.08);
+    filter: brightness(1.6);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.ll-cabinet {
+  position: absolute;
+  inset: 5.6rem 1.1rem 0.9rem 17.4rem;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 1.1rem 1.3rem;
+  border-radius: 1.5rem;
+  background: linear-gradient(170deg, #3b2a12, #23180a);
+  border: 2px solid #fbbf24;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+  animation: ll-rise 0.25s ease-out;
+}
+@keyframes ll-rise {
+  from {
+    transform: translateY(18px);
+    opacity: 0;
+  }
+}
+.ll-cabinet header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.ll-cabinet h3 {
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: #fde68a;
+}
+.ll-cabinet header p {
+  font-size: 1rem;
+  opacity: 0.85;
+}
+.ll-cabinet__tabs {
+  display: flex;
+  gap: 0.5rem;
+}
+.ll-cabinet__tabs button {
+  padding: 0.35rem 1.1rem;
+  border-radius: 999px;
+  border: 2px solid rgba(251, 191, 36, 0.5);
+  background: none;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+.ll-cabinet__tabs button.is-on {
+  background: #fbbf24;
+  color: #3b2a06 !important;
+}
+.ll-cabinet__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.ll-cabinet__list li {
+  display: grid;
+  grid-template-columns: 12.5rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.55rem 0.8rem;
+  border-radius: 1.1rem;
+  background: rgba(255, 255, 255, 0.06);
+}
+.ll-cabinet__list li > p {
+  font-size: 1.02rem;
+  font-weight: 800;
+  line-height: 1.5;
+  color: #fde68a;
+}
+.ll-cabinet__list li > div {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+.ll-card {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 1rem;
+  border: 2px solid rgba(125, 252, 255, 0.45);
+  background: rgba(125, 252, 255, 0.08);
+  cursor: pointer;
+  text-align: start;
+  flex: 0 1 21rem;
+  min-width: 0;
+  transition: transform 0.12s;
+}
+.ll-card:hover {
+  transform: translateY(-3px);
+  background: rgba(125, 252, 255, 0.2);
+}
+.ll-card i {
+  font-style: normal;
+  font-size: 1.8rem;
+}
+.ll-card strong {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 900;
+}
+.ll-card small {
+  font-size: 0.8rem;
+  font-weight: 600;
+  opacity: 0.85;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.ll-card span {
+  min-width: 0;
+}
+.ll-cabinet footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  font-weight: 800;
+}
+
+/* ── the drawings ── */
+.ll-handle {
+  cursor: grab;
+  touch-action: none;
+}
+.ll-handle:active {
+  cursor: grabbing;
+}
+.ll-pulse {
+  animation: ll-pulse 1.4s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+@keyframes ll-pulse {
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.25);
+  }
+}
+.ll-counter {
+  transition:
+    transform 0.28s cubic-bezier(0.3, 1.4, 0.5, 1),
+    fill 0.2s;
+}
+.ll-shake {
+  animation: ll-shake 0.35s;
+}
+@keyframes ll-shake {
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+.ll-glow {
+  filter: drop-shadow(0 0 10px rgba(52, 211, 153, 0.9));
+}
+.ll-arc {
+  fill: none;
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+.ll-arc--in {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: ll-draw 0.45s ease-out forwards;
+}
+@keyframes ll-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* sentences */
+.ll-sent {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 17rem minmax(0, 1fr);
+  gap: 1.2rem;
+  align-items: center;
+  padding: 0.6rem 0.8rem;
+}
+.ll-sent__machine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem;
+  border-radius: 1.4rem;
+  background: linear-gradient(#17424b, #0c2a31);
+  border: 2px solid rgba(125, 252, 255, 0.4);
+}
+.ll-sent__nums {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+.ll-sent__nums > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+.ll-sent__nums b {
+  display: grid;
+  place-items: center;
+  min-width: 5.2rem;
+  height: 4.6rem;
+  padding: 0 0.5rem;
+  border-radius: 1rem;
+  background: #062026;
+  border: 2px solid #7dfcff;
+  font-size: 2.3rem;
+  font-weight: 900;
+}
+.ll-sent__nums b.is-second {
+  border-color: #fbbf24;
+}
+.ll-sent__nums span {
+  font-size: 0.8rem;
+  font-weight: 800;
+  opacity: 0.8;
+}
+.ll-sent__cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+}
+.ll-sent__card {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 6.6rem;
+  padding: 0.7rem 1.1rem;
+  border-radius: 1.2rem;
+  border: 2.5px solid;
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.5;
+  animation: ll-flip 0.35s ease-out;
+}
+@keyframes ll-flip {
+  from {
+    transform: rotateX(70deg);
+    opacity: 0;
+  }
+}
+.ll-sent__card.is-ok {
+  border-color: #34d399;
+  background: rgba(52, 211, 153, 0.15);
+}
+.ll-sent__card.is-ko {
+  border-color: #f87171;
+  background: rgba(248, 113, 113, 0.1);
+}
+.ll-sent__card.is-ko span {
+  opacity: 0.8;
+}
+.ll-sent__card i {
+  font-style: normal;
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  font-weight: 900;
+  text-decoration: none;
+}
+.ll-sent__card.is-ok i {
+  background: #34d399;
+  color: #052e22;
+}
+.ll-sent__card.is-ko i {
+  background: #f87171;
+  color: #450a0a;
+}
+
+/* common divisors */
+/* « ساحة العدد »: the court and its ruler on one side, what the court is on the other (its facts are DOM text: the
+   sign √ through MathText) */
+.ll-court {
+  width: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 22rem;
+  gap: 0.8rem;
+  align-items: stretch;
+}
+.ll-court > svg {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  display: block;
+  overflow: visible;
+  direction: ltr;
+}
+.ll-court__facts {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.9rem 1rem;
+  border-radius: 1.2rem;
+  border: 2px solid rgba(125, 252, 255, 0.35);
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1.55;
+}
+.ll-court__facts p {
+  margin: 0;
+  white-space: nowrap;
+}
+.ll-court__facts .ll-math {
+  font-size: 1.35rem;
+}
+.ll-court__title {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #7dfcff;
+}
+.ll-court__facts[data-ll-court-facts='settled'] {
+  border-color: #34d399;
+}
+.ll-court__wait {
+  white-space: normal !important;
+  opacity: 0.85;
+}
+.ll-court__proof .ll-math {
+  font-size: 1.2rem;
+}
+.ll-common {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr 1fr;
+  gap: 0.8rem;
+  padding: 0.7rem 0.4rem;
+}
+.ll-zone {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.7rem;
+  border-radius: 1.3rem;
+  border: 2px solid rgba(125, 252, 255, 0.35);
+  background: rgba(125, 252, 255, 0.06);
+  min-height: 0;
+}
+.ll-zone--both {
+  border-color: #fbbf24;
+  background: rgba(251, 191, 36, 0.1);
+}
+.ll-zone h5 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 900;
+  text-align: center;
+  color: #7dfcff;
+}
+.ll-zone--both h5 {
+  color: #fde68a;
+}
+.ll-zone > div {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  gap: 0.45rem;
+  direction: ltr;
+}
+.ll-dchip {
+  min-width: 3rem;
+  height: 2.8rem;
+  padding: 0 0.5rem;
+  border-radius: 0.8rem;
+  border: 2px solid rgba(125, 252, 255, 0.5);
+  background: #062026;
+  font-size: 1.3rem;
+  font-weight: 900;
+  cursor: pointer;
+  animation: ll-flip 0.3s ease-out;
+}
+.ll-dchip.is-sel {
+  outline: 3px solid #fff;
+}
+.ll-zone--both .ll-dchip {
+  border-color: #fbbf24;
+}
+.ll-dchip.is-top {
+  margin-top: 1.1rem;
+  min-width: 4.2rem;
+  height: 3.8rem;
+  font-size: 1.8rem;
+  background: #fbbf24;
+  color: #3b2a06 !important;
+  box-shadow: 0 0 22px rgba(251, 191, 36, 0.7);
+  position: relative;
+}
+.ll-dchip.is-top::after {
+  content: '👑';
+  position: absolute;
+  top: -1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+}
+
+/* paper division */
+.ll-paper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 1rem;
+  padding: 0.7rem 0.6rem;
+}
+.ll-sheet {
+  direction: ltr;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0;
+  padding: 1rem 1.2rem;
+  border-radius: 1rem;
+  background: #fdfaf0;
+  color: #1f2937;
+  background-image: linear-gradient(rgba(59, 130, 246, 0.18) 1px, transparent 1px);
+  background-size: 100% 2.6rem;
+  font-family: 'Cairo', monospace;
+}
+.ll-sheet * {
+  color: #1f2937 !important;
+}
+.ll-sheet__left {
+  display: grid;
+  grid-auto-rows: 2.6rem;
+  justify-items: center;
+  align-items: center;
+  padding-inline-end: 0.9rem;
+  font-size: 1.9rem;
+  font-weight: 800;
+}
+.ll-sheet__left span {
+  width: 1.5rem;
+  text-align: center;
+}
+.ll-sheet__left .is-minus {
+  border-bottom: 3px solid #1f2937;
+}
+.ll-sheet__left .is-sign {
+  color: #dc2626 !important;
+}
+.ll-sheet__left .is-new {
+  color: #2563eb !important;
+  animation: ll-flip 0.3s;
+}
+.ll-sheet__left .is-rest {
+  color: #dc2626 !important;
+}
+.ll-sheet__right {
+  border-inline-start: 3px solid #1f2937;
+  min-width: 7rem;
+  font-size: 1.9rem;
+  font-weight: 800;
+}
+.ll-sheet__right div {
+  height: 2.6rem;
+  display: flex;
+  align-items: center;
+  padding: 0 0.9rem;
+}
+.ll-sheet__right div:first-child {
+  border-bottom: 3px solid #1f2937;
+}
+.ll-sheet__right div:last-child {
+  color: #2563eb !important;
+  letter-spacing: 0.12em;
+}
+.ll-think {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.8rem 1rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.7;
+}
+.ll-think h5 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 900;
+  color: #7dfcff;
+}
+.ll-think p {
+  animation: ll-flip 0.3s;
+}
+
+/* divisibility rules */
+.ll-lamps__cap {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #7dfcff;
+  text-align: center;
+}
+.ll-rules {
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr);
+  gap: 0.6rem;
+  padding: 0.6rem;
+}
+.ll-lock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.9rem;
+  direction: ltr;
+}
+.ll-wheel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+.ll-wheel button {
+  width: 4rem;
+  height: 1.7rem;
+  border-radius: 0.6rem;
+  border: 0;
+  background: rgba(125, 252, 255, 0.18);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+.ll-wheel button:hover {
+  background: rgba(125, 252, 255, 0.4);
+}
+.ll-wheel b {
+  display: grid;
+  place-items: center;
+  width: 4rem;
+  height: 4.3rem;
+  border-radius: 0.9rem;
+  background: linear-gradient(#0a2f37, #051c22);
+  border: 2.5px solid rgba(125, 252, 255, 0.5);
+  font-size: 2.8rem;
+  font-weight: 900;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s,
+    transform 0.15s;
+}
+.ll-wheel.is-read b {
+  border-color: #fbbf24;
+  box-shadow: 0 0 18px rgba(251, 191, 36, 0.6);
+  transform: translateY(-3px);
+}
+.ll-wheel.is-pad b {
+  opacity: 0.35;
+}
+.ll-lock__side {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.ll-lamps {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.6rem;
+}
+.ll-lamp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  padding: 0.4rem;
+  border-radius: 1.1rem;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+}
+.ll-lamp i {
+  font-style: normal;
+  display: grid;
+  place-items: center;
+  width: 4.2rem;
+  height: 4.2rem;
+  border-radius: 50%;
+  background: #1b2f35;
+  font-size: 2rem;
+  transition:
+    background 0.25s,
+    box-shadow 0.25s;
+  filter: grayscale(1) brightness(0.6);
+}
+.ll-lamp.is-ok i {
+  background: #fde68a;
+  box-shadow: 0 0 26px 6px rgba(251, 191, 36, 0.75);
+  filter: none;
+}
+.ll-lamp strong {
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+.ll-lamp.is-sel {
+  border-color: #7dfcff;
+  background: rgba(125, 252, 255, 0.12);
+}
+
+/* ── a 4:3 screen (tablet): the same lab, designed at 1000 × 740 — narrower pieces, a reading line of two rows ── */
+.ll-root--narrow .ll-fit {
+  grid-template-columns: 14rem minmax(0, 1fr);
+  gap: 0.6rem;
+  padding: 0.7rem 0.8rem;
+}
+.ll-root--narrow .ll-nums em {
+  display: none;
+}
+.ll-root--narrow .ll-nums {
+  gap: 0.5rem;
+  padding: 0.4rem 0.6rem 0.5rem;
+}
+.ll-root--narrow .ll-num__box input {
+  width: 4.4rem;
+}
+.ll-root--narrow .ll-num__box button {
+  width: 2rem;
+}
+.ll-root--narrow .ll-brand i {
+  font-size: 1.9rem;
+}
+.ll-root--narrow .ll-brand h2 {
+  font-size: 1.45rem;
+}
+.ll-root--narrow .ll-brand p {
+  max-width: 11rem;
+  font-size: 0.8rem;
+}
+.ll-root--narrow .ll-toolhead {
+  flex-wrap: wrap;
+  row-gap: 0;
+}
+.ll-root--narrow .ll-toolhead p {
+  flex-basis: 100%;
+  order: 3;
+  font-size: 0.95rem;
+}
+.ll-root--narrow .ll-reading {
+  height: 5.9rem;
+}
+.ll-root--narrow .ll-reading__text {
+  flex-wrap: wrap;
+  white-space: normal;
+  row-gap: 0.15rem;
+  align-content: center;
+}
+.ll-root--narrow .ll-chip {
+  font-size: 0.98rem;
+}
+.ll-root--narrow .ll-math {
+  font-size: 1.35rem;
+}
+.ll-root--narrow .ll-quests {
+  padding: 0.45rem 0.7rem;
+  gap: 0.6rem;
+}
+.ll-root--narrow .ll-quests li {
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+.ll-root--narrow .ll-cabinet {
+  inset: 5.2rem 0.8rem 0.7rem 15.4rem;
+}
+.ll-root--narrow .ll-cabinet__list li {
+  grid-template-columns: 1fr;
+  gap: 0.3rem;
+  padding: 0.45rem 0.7rem;
+}
+.ll-root--narrow .ll-card small {
+  -webkit-line-clamp: 2;
+}
+.ll-root--narrow .ll-sent {
+  grid-template-columns: 13.5rem minmax(0, 1fr);
+  gap: 0.8rem;
+}
+.ll-root--narrow .ll-sent__card {
+  font-size: 1.15rem;
+  min-height: 5.6rem;
+  padding: 0.5rem 0.7rem;
+}
+.ll-root--narrow .ll-sent__nums b {
+  min-width: 4.4rem;
+  height: 4rem;
+  font-size: 1.9rem;
+}
+.ll-root--narrow .ll-paper {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: 0.6rem;
+}
+.ll-root--narrow .ll-think {
+  font-size: 0.98rem;
+  line-height: 1.55;
+  padding: 0.6rem 0.7rem;
+  gap: 0.25rem;
+}
+.ll-root--narrow .ll-sheet {
+  padding: 0.7rem 0.5rem;
+}
+.ll-root--narrow .ll-zone {
+  padding: 0.5rem;
+}
+.ll-root--narrow .ll-dchip {
+  min-width: 2.6rem;
+  height: 2.5rem;
+  font-size: 1.15rem;
+}
+.ll-root--narrow .ll-wheel b {
+  width: 3.5rem;
+  height: 3.7rem;
+  font-size: 2.4rem;
+}
+.ll-root--narrow .ll-wheel button {
+  width: 3.5rem;
+}
+.ll-root--narrow .ll-lamp i {
+  width: 3.3rem;
+  height: 3.3rem;
+  font-size: 1.6rem;
+}
+.ll-root--narrow .ll-lamp strong {
+  font-size: 1.1rem;
+}
+
+/* a phone held sideways (no zoom there): what is taller than the screen scrolls inside its panel */
+@media (max-height: 500px) {
+  .ll-fit > * {
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+}
+/* a phone held sideways: THE INSTRUMENT GETS THE ROOM. The quests go beside the instrument's rail (first column, under the
+   tools) instead of a third row, and the head is one thin line — the drawing was a stamp in the middle of the screen. */
+@media (max-height: 500px) {
+  .ll-fit {
+    grid-template-columns: 12.5rem minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+    gap: 0.45rem;
+    padding: 0.45rem 0.6rem;
+  }
+  .ll-fit > .ll-quests {
+    grid-column: 1 / -1;
+    min-height: 0;
+    padding: 0.25rem 0.7rem;
+    gap: 0.6rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .ll-quests ul {
+    display: flex;
+    gap: 1rem;
+  }
+  .ll-quests li {
+    flex: none;
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+  /* THE RAIL FITS: three instruments and « خزانتي » in the height of a phone — the cabinet's button was cut and the
+     rail slid. A tile is one tight line; the cabinet says its name only. */
+  .ll-rail {
+    gap: 0.3rem;
+    padding: 0.4rem 0.5rem;
+  }
+  .ll-rail h4 {
+    font-size: 0.92rem;
+  }
+  .ll-tile {
+    min-height: 0;
+    gap: 0.4rem;
+    padding: 0.22rem 0.5rem;
+  }
+  .ll-tile i {
+    font-size: 1.25rem;
+  }
+  .ll-tile strong {
+    font-size: 0.95rem;
+    line-height: 1.2;
+  }
+  .ll-cabinet-btn {
+    gap: 0.4rem;
+    padding: 0.25rem 0.5rem;
+  }
+  .ll-cabinet-btn strong {
+    font-size: 0.95rem;
+  }
+  .ll-cabinet-btn small {
+    display: none;
+  }
+  /* AN INSTRUMENT TALLER THAN ITS TABLE slides INSIDE the table, above the reading line: the sheet of a long division
+     and the lamps of the divisibility rules ran UNDER that line, with their last rows and their buttons */
+  .ll-draw {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    align-items: flex-start;
+  }
+  /* « خزانتي »: its title is one line and its shelves are tighter — the second shelf was cut at the bottom */
+  .ll-cabinet {
+    gap: 0.35rem;
+    padding: 0.5rem 0.8rem;
+  }
+  .ll-cabinet h3 {
+    font-size: 1.15rem;
+  }
+  .ll-cabinet header p {
+    display: none;
+  }
+  .ll-cabinet__list {
+    gap: 0.35rem;
+  }
+  .ll-cabinet__list li {
+    gap: 0.5rem;
+    padding: 0.3rem 0.6rem;
+  }
+  /* « آلة الجمل الأربع »: the four sentences and the machine stand ABOVE the reading line — at their desk size the
+     last two sentences and « اقلب العددين » were under it, and the button could not be tapped */
+  .ll-reading {
+    height: auto;
+    min-height: 2.6rem;
+    padding: 0.2rem 0.8rem;
+    gap: 0.6rem;
+  }
+  .ll-sent {
+    grid-template-columns: 12.5rem minmax(0, 1fr);
+    gap: 0.6rem;
+    padding: 0.3rem 0.5rem;
+  }
+  .ll-sent__machine {
+    gap: 0.35rem;
+    padding: 0.4rem;
+  }
+  .ll-sent__nums {
+    gap: 0.45rem;
+  }
+  .ll-sent__nums b {
+    min-width: 3.6rem;
+    height: 2.9rem;
+    font-size: 1.6rem;
+  }
+  .ll-sent__nums span {
+    font-size: 0.92rem;
+  }
+  .ll-sent__cards {
+    gap: 0.4rem;
+  }
+  .ll-sent__card {
+    min-height: 3.6rem;
+    gap: 0.45rem;
+    padding: 0.3rem 0.6rem;
+    font-size: 1.05rem;
+    line-height: 1.3;
+  }
+  .ll-sent__card i {
+    width: 1.6rem;
+    height: 1.6rem;
+    font-size: 0.95rem;
+  }
+  .ll-quests h4 {
+    font-size: 0.95rem;
+  }
+  .ll-bench {
+    gap: 0.3rem;
+  }
+}

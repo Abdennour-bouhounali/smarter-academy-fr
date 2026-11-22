@@ -1,0 +1,129 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l1-003",
+  "lessonCode": "mafhum-dawaran",
+  "level": 1,
+  "metadata": {
+    "title": "معارف 2 — حالتان خاصّتان",
+    "estimatedMinutes": 2,
+    "tags": [
+      "صورة نقطة",
+      "التناظر المركزي"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-2",
+      "page": 154,
+      "section": "معارف",
+      "number": 2
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 154): O نقطة معلومة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الدوران الذي مركزه O وزاويته $180^\\circ$ هو:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "التناظر بالنسبة إلى مستقيم يشمل O",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-TANAZUR"
+        },
+        {
+          "id": "B",
+          "content": "التناظر بالنسبة إلى النقطة O",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "الانسحاب الذي شعاعه $\\overrightarrow{OM}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-INSIHAB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نصف دورة حول O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "M و O وصورة M على استقامية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أين تقع O بالنسبة إلى M وصورتها؟"
+        }
+      ],
+      "feedback": {
+        "correct": "نصف دورة حول O: O منتصف [MM′]، فهو التناظر بالنسبة إلى O.",
+        "incorrect": "نصف دورة لا تقلب الشكل حول مستقيم، ولا تنقله بشعاع واحد."
+      },
+      "difficulty": 1
+    },
+    {
+      "id": "q2",
+      "statement": "صورة النقطة O بالدوران الذي مركزه O هي:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نقطة من الدائرة التي مركزها O",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MARKAZ"
+        },
+        {
+          "id": "B",
+          "content": "لا صورة لها",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MARKAZ"
+        },
+        {
+          "id": "C",
+          "content": "النقطة O نفسها",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المركز هو النقطة التي ندوّر حولها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل تتحرّك إبرة المدور حين ندوّر الورق؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقرأ ملاحظة معارف 2."
+        }
+      ],
+      "feedback": {
+        "correct": "المركز ثابت: صورة O هي O نفسها.",
+        "incorrect": "إبرة المدور لا تتحرّك حين ندوّر الورق حولها."
+      },
+      "difficulty": 1
+    }
+  ]
+}

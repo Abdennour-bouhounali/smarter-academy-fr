@@ -1,0 +1,281 @@
+{
+  "id": "ex-2am-silsila-bi-aqwas-l5-003",
+  "lessonCode": "silsila-bi-aqwas",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — رحلة مدرسية",
+    "estimatedMinutes": 18,
+    "tags": [
+      "خطّ الكسر",
+      "وضعية",
+      "آلة حاسبة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يشارك 40 تلميذًا من قسمين في رحلة مدرسية: ثمن الحافلة 4500 دج ورسوم الدخول 1500 دج، ويدفع كلّ تلميذ المبلغ نفسه."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ سلسلة عمليات تعطي ما يدفعه كلّ تلميذ؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$4500 + 1500 \\div 40$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-IGNORED"
+        },
+        {
+          "id": "B",
+          "content": "$(4500 + 1500 \\div 40)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-MISPLACED"
+        },
+        {
+          "id": "C",
+          "content": "$(4500 + 1500) \\div 40$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: أيّ مقدار يجب حسابه كلّه قبل غيره؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع بين قوسين المقدار الذي يُحسب أوّلًا، ثم اختبر كل سلسلة بالحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "$(4500 + 1500) \\div 40 = 150$ .",
+        "incorrect": "اكتب جمل القصة بعمليات بالترتيب نفسه، وضع بين قوسين ما يجب حسابه أوّلًا، ثم اختبر السلسلة بعدد تقريبي."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة الصحيحة: $(4500 + 1500) \\div 40$",
+          "$A = 6000 \\div 40$",
+          "$A = 150$"
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم دينارًا يدفع كلّ تلميذ؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار الجزائري",
+      "expectedAnswer": "150",
+      "misconceptionSignatures": [
+        {
+          "value": "4537.5",
+          "id": "MISC-AQWAS-IGNORED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: كل جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل جملة بعملية، وضع بين قوسين ما يجب حسابه أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب بالترتيب الصحيح: القوسان أوّلًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$(4500 + 1500) \\div 40 = 150$ .",
+        "incorrect": "نترجم القصة بسلسلة عمليات فيها الأقواس اللازمة ثم نحسب: ما بين القوسين أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $(4500 + 1500) \\div 40$",
+          "$M = 6000 \\div 40$",
+          "$M = 150$"
+        ],
+        "result": "150 \\text{ DA }"
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "لو شارك 48 تلميذًا بدل 40، فكم دينارًا يدفع كلّ تلميذ؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار الجزائري",
+      "expectedAnswer": "125",
+      "misconceptionSignatures": [
+        {
+          "value": "4531.25",
+          "id": "MISC-AQWAS-IGNORED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: كل جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل جملة بعملية، وضع بين قوسين ما يجب حسابه أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب بالترتيب الصحيح: القوسان أوّلًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$(4500 + 1500) \\div 48 = 125$ .",
+        "incorrect": "نترجم القصة بسلسلة عمليات فيها الأقواس اللازمة ثم نحسب: ما بين القوسين أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $(4500 + 1500) \\div 48$",
+          "$M = 6000 \\div 48$",
+          "$M = 125$"
+        ],
+        "result": "125 \\text{ DA }"
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "هل يدفع التلميذ أقلّ من $150$ دج عندما يشارك 48 تلميذًا؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النتيجتين بدقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كل عبارة بالترتيب الصحيح قبل أن تحكم."
+        }
+      ],
+      "feedback": {
+        "correct": "تحقّقت من ذلك بالحساب.",
+        "incorrect": "احسب كل عبارة مرحلة مرحلة وقارن النتيجتين قبل أن تحكم."
+      },
+      "solution": {
+        "lines": [
+          "$(4500 + 1500) \\div 48 = 125$",
+          "$125 < 150$"
+        ]
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "حجز زميل اللمسات $4500 + 1500 \\div 40 =$ فظهر $4537{,}5$ . بيّن خطأه وصحّح الحساب.",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب على ورقتك مرحلة مرحلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اسأل: أيّ عملية تُنجز أوّلًا ولماذا؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تذكر القاعدة المستعملة."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$4500 + 1500 \\div 40 = 4537{,}5$ : لم تُراعَ الأقواس فحُسب ما لا يجب حسابه أوّلًا.",
+          "الصحيح: $(4500 + 1500) \\div 40 = 150$ لأنّ القوسين يُحسبان قبل القسمة أو الضرب."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

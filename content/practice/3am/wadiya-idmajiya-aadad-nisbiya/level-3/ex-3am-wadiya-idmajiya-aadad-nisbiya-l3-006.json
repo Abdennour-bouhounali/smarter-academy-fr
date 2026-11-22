@@ -1,0 +1,194 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-aadad-nisbiya-l3-006",
+  "lessonCode": "wadiya-idmajiya-aadad-nisbiya",
+  "level": 3,
+  "metadata": {
+    "title": "دفتر ديون بقّال",
+    "estimatedMinutes": 6,
+    "tags": [
+      "دين",
+      "مجموع",
+      "طرح عدد سالب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يسجّل بقّال رصيد كل زبون بالدينار؛ الرصيد سالب إذا كان على الزبون دين. أرصدة خمسة زبائن: $−350$ ، $120$ ، $−80$ ، $−215$ ، $60$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب مجموع هذه الأرصدة.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-465",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ النص وحدّد الأعداد المعطاة وما يعبّر عنه كل منها: ارتفاع أم انخفاض، ربح أم خسارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر عن الانخفاض أو الخسارة أو الدَّين بعدد سالب، ثم اختر العملية التي تناسب السؤال."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العملية بأعداد نسبية ثم أنجزها بقاعدة الإشارات وبأولوية العمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $−465$ DA .",
+        "incorrect": "راجع ترجمة النص إلى عملية بين أعداد نسبية: أيّ عدد سالب وأيّ عملية تناسب السؤال؟"
+      },
+      "solution": {
+        "lines": [
+          "$(−350) + 120 + (−80) + (−215) + 60$",
+          "$= (−230) + (−80) + (−215) + 60$",
+          "$= (−310) + (−215) + 60$",
+          "$= (−525) + 60$",
+          "$= −465$"
+        ],
+        "result": "−465"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب متوسّط الأرصدة.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-93",
+      "misconceptionSignatures": [
+        {
+          "value": "93",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "-470",
+          "id": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العددين اللذين نقسم أحدهما على الآخر وعيّن إشارة كل منهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عاملان مجهولان فالعامل الناقص هو حاصل قسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعملية العكسية: اضرب نتيجتك في العامل المعلوم."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $−93$ DA .",
+        "incorrect": "راجع الربط بين الضرب والقسمة وقاعدة إشارات الحاصل، ثم تحقّق بالضرب."
+      },
+      "solution": {
+        "lines": [
+          "$((−350) + 120 + (−80) + (−215) + 60) \\div 5$",
+          "$= ((−230) + (−80) + (−215) + 60) \\div 5$",
+          "$= ((−310) + (−215) + 60) \\div 5$",
+          "$= ((−525) + 60) \\div 5$",
+          "$= (−465) \\div 5$",
+          "$= −93$"
+        ],
+        "result": "−93"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "سدّد الزبون الرابع دَينه كاملًا ($−215$ DA) . ما المجموع الجديد؟ أي $−465 − (−215)$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$−250$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$−680$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QISMA-SUBNEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في العبارة العملية التي تُنجز أولًا: الأقواس، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن إشارة كل جداء وكل حاصل قسمة قبل أن تحسب القيمة المطلقة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب خطوة بعد خطوة وأعد كتابة العبارة بعد كل خطوة."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة الصحيحة هي $−250$ .",
+        "incorrect": "راجع قاعدة الإشارات وأولوية العمليات: الأقواس أولًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "طرح عدد سالب يساوي جمع معاكسه:",
+          "$−465 − (−215) = −465 + 215 = −250$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

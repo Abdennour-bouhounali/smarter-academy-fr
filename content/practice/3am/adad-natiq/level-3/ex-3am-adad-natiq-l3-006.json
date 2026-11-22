@@ -1,0 +1,253 @@
+{
+  "id": "ex-3am-adad-natiq-l3-006",
+  "lessonCode": "adad-natiq",
+  "level": 3,
+  "metadata": {
+    "title": "مجموع عدد صحيح وكسر",
+    "estimatedMinutes": 14,
+    "tags": [
+      "العدد الناطق"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-26",
+      "page": 31,
+      "section": "أوظّف تعلّماتي",
+      "number": 26
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يكتب حسين أعدادًا ناطقة على شكل مجموع عدد صحيح نسبي وكسر أصغر من $1$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "اكتب $\\dfrac{23}{7}=n+\\dfrac{a}{7}$ حيث $n$ عدد طبيعي و $\\dfrac{a}{7}$ أصغر من $1$ ؛ ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-NATIQ-NEGPLACE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بين أيّ عددين صحيحين متتاليين يقع العدد؟ اهتم بجهته من الصفر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة الإقليدية للبسط على المقام، ثمّ انتبه إلى الإشارة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارسم المستقيم المدرّج واقرأ التدريجات الصغيرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$3$ .",
+        "incorrect": "حدّد الجهة من الصفر ثمّ العددين الصحيحين المتتاليين، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$7\\times 3=21\\le 23<28$ .",
+          "إذن $n=3$ و $\\dfrac{23}{7}=3+\\dfrac{2}{7}$ ."
+        ],
+        "result": "3"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "في الكتابة نفسها، ما قيمة $a$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لكلّ عدد ناطق كتابات كثيرة، لكنّه يقع على نقطة واحدة من المستقيم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كلّ كتابة بمقام موجب على أبسط شكل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الكتابات المعيارية: العددان متساويان إذا اتّفقت."
+        }
+      ],
+      "feedback": {
+        "correct": "$2$ .",
+        "incorrect": "قارن الكتابات المعيارية ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{23}{7}=\\dfrac{21}{7}+\\dfrac{2}{7}$ .",
+          "إذن $a=2$ ."
+        ],
+        "result": "2"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "اختر كلّ الكتابات التي تساوي $\\dfrac{-19}{8}$ وفيها كسر أصغر من $1$ بالقيمة المطلقة .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "multiChoice",
+      "answerFormat": "اختر كلّ الإجابات الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-3+\\dfrac{5}{8}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$-2+\\left(-\\dfrac{3}{8}\\right)$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$-2+\\dfrac{3}{8}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-NEGPLACE"
+        },
+        {
+          "id": "D",
+          "content": "$-3+\\left(-\\dfrac{5}{8}\\right)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-DROPSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة الإقليدية للبسط على المقام، ثمّ انتبه إلى الإشارة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارسم المستقيم المدرّج واقرأ التدريجات الصغيرة."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتابتان الأولى والثانية صحيحتان : لكلّ عدد سالب كتابتان من هذا النوع.",
+        "incorrect": "حدّد الجهة من الصفر ثمّ العددين الصحيحين المتتاليين، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{-19}{8}=-2{,}375$ .",
+          "$-3+\\dfrac{5}{8}=-\\dfrac{24}{8}+\\dfrac{5}{8}=-\\dfrac{19}{8}$ ✓ و $-2+\\left(-\\dfrac{3}{8}\\right)=-\\dfrac{16}{8}-\\dfrac{3}{8}=-\\dfrac{19}{8}$ ✓ .",
+          "أمّا $-2+\\dfrac{3}{8}=-\\dfrac{13}{8}$ و $-3+\\left(-\\dfrac{5}{8}\\right)=-\\dfrac{29}{8}$ فلا يساويانه."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "بين أيّ عددين صحيحين متتاليين يقع $\\dfrac{-19}{8}$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-3$ و $-2$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$-2$ و $-1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-NEGPLACE"
+        },
+        {
+          "id": "C",
+          "content": "$2$ و $3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-DROPSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة الإقليدية للبسط على المقام، ثمّ انتبه إلى الإشارة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارسم المستقيم المدرّج واقرأ التدريجات الصغيرة."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $-3$ و $-2$ .",
+        "incorrect": "حدّد الجهة من الصفر ثمّ العددين الصحيحين المتتاليين، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$-3<-2{,}375<-2$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

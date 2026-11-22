@@ -1,0 +1,215 @@
+{
+  "id": "ex-4am-hall-jabri-l3-009",
+  "lessonCode": "hall-jabri",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2009 — علب التوابل",
+    "estimatedMinutes": 12,
+    "tags": [
+      "جملة",
+      "PGCD",
+      "ترجمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_hall-jabri_P3",
+      "modelledOn": "BEM 2009 I-4"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "حل الجملة: $\\begin{cases} x + y = 18 \\\\ x + 3y = 40 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hall-jabri_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": {
+        "x": "7",
+        "y": "11"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "11",
+            "y": "7"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى معاملات المجهولين: هل يوجد معامل يساوي $1$ أو $-1$ ؟ هل يوجد معاملان متعاكسان أو متساويان؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مجهول معامله $1$ أو مجهول معبّر عنه بدلالة الآخر: التعويض. معاملان متعاكسان أو يصيران كذلك بضرب بسيط: الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد إيجاد المجهول الأول عوّض قيمته لتجد الثاني، ثم تحقق في المعادلتين."
+        }
+      ],
+      "feedback": {
+        "correct": "الثنائية $(7 ; 11)$ تحقق المعادلتين معا: هي حل الجملة.",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "نضرب طرفي المعادلة (1) في $-1$ :",
+          "$\\begin{cases} -x - y = -18 \\\\ x + 3y = 40 \\end{cases}$",
+          "بجمع المعادلتين طرفا لطرف نجد: $2y = 22$",
+          "ومنه $y = 11$",
+          "نعوّض $y$ بـ $11$ في المعادلة (1): $x + 11 = 18$",
+          "ومنه $x = 7$",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(7 ; 11)"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "جد القاسم المشترك الأكبر للعددين 750 و 250.",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب القاسم المشترك الأكبر (عدد طبيعي)",
+      "expectedAnswer": "250",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجر القسمة الإقليدية للعدد الأكبر على العدد الأصغر."
+        }
+      ],
+      "feedback": {
+        "correct": "$750 = 250 \\times 3$ : 250 يقسم 750.",
+        "incorrect": "طبّق خوارزمية إقليدس وانظر إلى باقي كل قسمة."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس: $750 = 250 \\times 3 + 0$",
+          "آخر باقٍ غير معدوم هو 250، إذن:"
+        ],
+        "result": "PGCD(750 ; 250) = 250"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "ملأ تاجر $10000g$ من التوابل في علب من صنف $250g$ وصنف $750g$ . إذا علمت أن العدد الكلي للعلب هو 18، جد عدد العلب لكل صنف (لاحظ أن $10000 = 250 \\times 40$).",
+      "statement": "عدد العلب من صنف $250g$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب عدد العلب (عدد طبيعي)",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "سمّ $x$ عدد علب الصنف الأول و $y$ عدد علب الصنف الثاني، واكتب معادلة للعدد ومعادلة للكتلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم معادلة الكتلة على $250$ ، ثم قارن بجملة السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "7 علب من صنف $250g$ .",
+        "incorrect": "معادلة الكتلة: $250x + 750y = 10000$ ؛ بسّطها ثم استعمل حل السؤال 01."
+      },
+      "solution": {
+        "lines": [
+          "نسمّي $x$ عدد علب الصنف $250g$ و $y$ عدد علب الصنف $750g$ .",
+          "العدد الكلي للعلب: $x + y = 18$",
+          "الكتلة الكلية: $250x + 750y = 10000$",
+          "بقسمة طرفي المعادلة الثانية على $250$ (القاسم المشترك الأكبر للعددين 250 و 750) نجد: $x + 3y = 40$",
+          "نحصل على جملة السؤال 01، وحلها الثنائية $(7 ; 11)$ .",
+          "ومنه: 7 علب من صنف $250g$ و 11 علبة من صنف $750g$ ."
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "عدد العلب من صنف $750g$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب عدد العلب (عدد طبيعي)",
+      "expectedAnswer": "11",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد العلب الكلي 18."
+        }
+      ],
+      "feedback": {
+        "correct": "11 علبة من صنف $750g$ ، ونتحقق: $250 \\times 7 + 750 \\times 11 = 10000$ .",
+        "incorrect": "عدد علب الصنف الثاني هو $y$ ، العدد الثاني في الثنائية حل جملة السؤال 01."
+      },
+      "solution": {
+        "lines": [
+          "نسمّي $x$ عدد علب الصنف $250g$ و $y$ عدد علب الصنف $750g$ .",
+          "العدد الكلي للعلب: $x + y = 18$",
+          "الكتلة الكلية: $250x + 750y = 10000$",
+          "بقسمة طرفي المعادلة الثانية على $250$ (القاسم المشترك الأكبر للعددين 250 و 750) نجد: $x + 3y = 40$",
+          "نحصل على جملة السؤال 01، وحلها الثنائية $(7 ; 11)$ .",
+          "ومنه: 7 علب من صنف $250g$ و 11 علبة من صنف $750g$ ."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

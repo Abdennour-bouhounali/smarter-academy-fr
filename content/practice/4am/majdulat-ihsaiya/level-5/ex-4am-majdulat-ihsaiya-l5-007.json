@@ -1,0 +1,387 @@
+{
+  "id": "ex-4am-majdulat-ihsaiya-l5-007",
+  "lessonCode": "majdulat-ihsaiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2019 — سعر زيت الزيتون في معاصر بجاية",
+    "estimatedMinutes": 14,
+    "tags": [
+      "وضعية إدماجية",
+      "دستور",
+      "مدى",
+      "متوسط",
+      "وسيط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_majdulat-ihsaiya_P2",
+      "modelledOn": "BEM 2019 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2019",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "حجز صاحب مطعم، الحريص على نظافة مطعمه وجودة أكله، في السطر الأول من مجدول سعر اللتر من زيت الزيتون (بالدينار) في عشر معاصر بولاية بجاية، سعر كل معصرة في خلية:",
+    "table": {
+      "head": [
+        "",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J"
+      ],
+      "rows": [
+        [
+          "1",
+          "850",
+          "900",
+          "820",
+          "880",
+          "950",
+          "900",
+          "840",
+          "920",
+          "900",
+          "940"
+        ]
+      ],
+      "sheet": true
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما هو العدد الذي يُظهره الدستور ⁦=MAX(A1:J1)-MIN(A1:J1)⁩ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "130",
+      "misconceptionSignatures": [
+        {
+          "value": "950",
+          "id": "MISC-IHSA-MADA-AKBAR-QIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MAX(…)-MIN(…)⁩ يحسب مدى القيم: أكبر قيمة ناقص أصغر قيمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر قيمة وأصغر قيمة في المجال ⁦A1:J1⁩."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح أصغر قيمة من أكبر قيمة، ولا تكتف بأكبر قيمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$950 - 820 = 130$ .",
+        "incorrect": "المدى فرق: أكبر قيمة في المجال ناقص أصغر قيمة فيه، والدستور يحسب هذا الفرق."
+      },
+      "solution": {
+        "lines": [
+          "أكبر قيمة في المجال ⁦A1:J1⁩: 950 ، وأصغر قيمة: 820 .",
+          "$950 - 820 = 130$",
+          "إذن يُظهر الدستور العدد 130 ."
+        ],
+        "result": "130"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما هو العدد الذي يُظهره الدستور ⁦=MOYENNE(A1:J1)⁩ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة إن لزم)",
+      "expectedAnswer": "890",
+      "misconceptionSignatures": [
+        {
+          "value": "900",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MOYENNE(…)⁩ يقسم مجموع القيم العددية في المجال على عددها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع القيم العددية الموجودة في المجال، وعُدّها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المتوسط = مجموع القيم ÷ عددها."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{8900}{10} = 890$ .",
+        "incorrect": "اجمع كل القيم العددية التي في المجال، ثم اقسم المجموع على عددها (لا على عدد آخر)."
+      },
+      "solution": {
+        "lines": [
+          "مجموع القيم: $8900$ ، وعددها 10 .",
+          "$\\dfrac{8900}{10} = 890$",
+          "إذن يُظهر الدستور العدد 890 ."
+        ],
+        "result": "890"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "عيّن الدستور الذي يُظهر وسيط هذه الأسعار.",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "⁦=MEDIANE(A1:J1)⁩",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "⁦=MOYENNE(A1:J1)⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-WASIT-MUTAWASSIT"
+        },
+        {
+          "id": "C",
+          "content": "⁦=MEDIANE(A1;J1)⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MAJAL-KHALIYA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل دستور يبدأ بالإشارة « ⁦=⁩ »، ثم اسم الدالة، ثم المجال بين قوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حدّد أولا المجال الذي يضمّ كل القيم المطلوبة، ولا شيئا غيرها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم اختر الدالة: MAX و MIN للمدى، MEDIANE للوسيط، MOYENNE للمتوسط، MODE للمنوال."
+        }
+      ],
+      "feedback": {
+        "correct": "⁦=MEDIANE(A1:J1)⁩ يُظهر 900 .",
+        "incorrect": "راجع ثلاثة أشياء: الإشارة « ⁦=⁩ » في البداية، الدالة المناسبة للمؤشّر، والمجال الذي يضمّ كل القيم."
+      },
+      "solution": {
+        "lines": [
+          "الوسيط تحسبه الدالة MEDIANE على الأسعار العشرة من A1 إلى J1 .",
+          "الدستور: ⁦=MEDIANE(A1:J1)⁩ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما هو العدد الذي يُظهره هذا الدستور؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة إن لزم)",
+      "expectedAnswer": "900",
+      "misconceptionSignatures": [
+        {
+          "value": "925",
+          "id": "MISC-IHSA-WASIT-BILA-TARTIB"
+        },
+        {
+          "value": "890",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MEDIANE(…)⁩ يُظهر وسيط القيم: يرتّبها المجدول أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب القيم الـ 10 تصاعديا، ثم عيّن القيمتين اللتين تقعان في الوسط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لعدد زوجيّ من القيم، الوسيط نصف مجموع القيمتين الوسطيين."
+        }
+      ],
+      "feedback": {
+        "correct": "القيم مرتّبة: 820 ، 840 ، 850 ، 880 ، 900 ، 900 ، 900 ، 920 ، 940 ، 950 ، والوسيط 900 .",
+        "incorrect": "لا يُقرأ الوسيط إلا بعد ترتيب القيم تصاعديا، ثم نأخذ القيمة الوسطى (أو نصف مجموع القيمتين الوسطيين)."
+      },
+      "solution": {
+        "lines": [
+          "نرتّب القيم تصاعديا: 820 ، 840 ، 850 ، 880 ، 900 ، 900 ، 900 ، 920 ، 940 ، 950 .",
+          "عدد القيم 10 زوجيّ: الوسيط نصف مجموع القيمتين ذواتي الرتبتين 5 و 6 ، أي 900 و 900 .",
+          "$\\dfrac{900 + 900}{2} = 900$",
+          "إذن يُظهر الدستور العدد 900 ."
+        ],
+        "result": "900"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ا",
+      "lead": "يريد صاحب المطعم شراء 120L من زيت الزيتون من وسيط يقترح عليه عرضين: الأول بسعر للتر يساوي متوسط أسعار المعاصر العشر، والثاني بسعر يساوي وسيطها. ☜ أعط العرض الأقلّ تكلفة، والمبلغ الذي يوفّره صاحب المطعم باختياره.",
+      "statement": "ما هو العرض الأقلّ تكلفة؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "العرض الأول (سعر اللتر = المتوسط)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "العرض الثاني (سعر اللتر = الوسيط)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المتوسط والوسيط اللذين وجدتهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السعر الأصغر يعطي التكلفة الأصغر للكمية نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "المتوسط 890 أصغر من الوسيط 900 : العرض الأول أقلّ تكلفة.",
+        "incorrect": "لا تفترض أنّ المتوسط والوسيط متساويان: قارن قيمتيهما."
+      },
+      "solution": {
+        "lines": [
+          "العرض الأول: 890DA للتر؛ العرض الثاني: 900DA للتر.",
+          "العرض الأول أقلّ تكلفة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ب",
+      "statement": "ما هو المبلغ الذي يوفّره صاحب المطعم باختياره هذا العرض؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "counted": false,
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "1200",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفرق بين سعري اللتر في العرضين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المبلغ الموفَّر = الفرق × الكمية المشتراة."
+        }
+      ],
+      "feedback": {
+        "correct": "$(900 - 890) \\times 120 = 1200$ ، أي 1200DA .",
+        "incorrect": "اضرب الفرق بين سعري اللتر في الكمية المشتراة."
+      },
+      "solution": {
+        "lines": [
+          "العرض الأول: $890 \\times 120 = 106800$ ؛ العرض الثاني: $900 \\times 120 = 108000$",
+          "$108000 - 106800 = 1200$"
+        ],
+        "result": "1200\\,\\mathrm{DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

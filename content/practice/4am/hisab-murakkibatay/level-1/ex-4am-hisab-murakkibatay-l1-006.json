@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l1-006",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — شعاعان متساويان",
+    "estimatedMinutes": 2,
+    "tags": [
+      "تساوي شعاعين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hisab-murakkibatay_P2",
+      "modelledOn": "know-equal"
+    }
+  },
+  "statement": {
+    "content": "$\\overrightarrow{AB}\\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix}$ و $\\overrightarrow{CD}\\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix}$ ، و $\\overrightarrow{EF}\\begin{pmatrix} -3 \\\\ 2 \\end{pmatrix}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أيّ عبارة صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الأشعة الثلاثة متساوية لأن أطوالها متساوية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TUL-FAQAT"
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{AB} = \\overrightarrow{CD}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{AB} = \\overrightarrow{EF}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مركبتي كل شعاع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن المركبة الأولى بالأولى والثانية بالثانية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يتساوى الشعاعان إذا تساوت المركبتان معا."
+        }
+      ],
+      "feedback": {
+        "correct": "AB و CD لهما نفس المركبتين فهما متساويان؛ EF مركبتاه معاكستان: هو معاكس AB.",
+        "incorrect": "قارن المركبتين مركبة مركبة، مع الإشارة."
+      }
+    }
+  ]
+}

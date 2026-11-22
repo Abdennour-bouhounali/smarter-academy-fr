@@ -1,0 +1,114 @@
+{
+  "id": "ex-4am-muntasaf-masafa-l3-002",
+  "lessonCode": "muntasaf-masafa",
+  "level": 3,
+  "metadata": {
+    "title": "أؤكّد تعلّماتي 4 — المسافة على الشكل",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المسافة",
+      "قيمة مضبوطة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 148,
+      "section": "أؤكّد تعلّماتي",
+      "number": 4
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 148)، على الشكل: النقطتان A و B في معلم متعامد ومتجانس.",
+    "figure": {
+      "points": {
+        "A": [
+          3,
+          3
+        ],
+        "B": [
+          -3,
+          -3
+        ],
+        "O": [
+          0,
+          0
+        ],
+        "Z0": [
+          -4,
+          -4
+        ],
+        "Z1": [
+          4,
+          4
+        ]
+      },
+      "grid": true,
+      "axes": true,
+      "hidden": [
+        "Z0",
+        "Z1"
+      ],
+      "labels": {
+        "A": "ne",
+        "B": "sw",
+        "O": "se"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس على ورقة مرصوفة: النقطة A في الأعلى على اليمين والنقطة B في الأسفل على اليسار",
+      "maxWidth": 480
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المسافة AB تساوي:",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$6\\sqrt{2}$ ، أي $\\sqrt{72}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$12$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-JAM"
+        },
+        {
+          "id": "C",
+          "content": "$72$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-NASI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الفرقين: فرق الفاصلتين وفرق الترتيبين (النهاية ناقص المبدأ)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ربّع كل فرق ثم اجمع المربعين: هذا مربع المسافة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خذ الجذر التربيعي في الأخير، وبسّطه إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$A(3\\,;\\,3)$ و $B(-3\\,;\\,-3)$ : $AB = \\sqrt{36 + 36} = \\sqrt{72} = 6\\sqrt{2}$ .",
+        "incorrect": "اقرأ الإحداثيات ثم طبّق القانون."
+      }
+    }
+  ]
+}

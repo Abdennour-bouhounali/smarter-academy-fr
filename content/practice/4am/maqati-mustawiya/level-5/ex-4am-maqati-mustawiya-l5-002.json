@@ -1,0 +1,65 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l5-002",
+  "lessonCode": "maqati-mustawiya",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — شرفة القبة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مقطع كرة",
+      "نصف كرة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_maqati-mustawiya_P1",
+      "modelledOn": "act-2"
+    }
+  },
+  "statement": {
+    "content": "قبة مسجد على شكل نصف كرة نصف قطرها $25\\,\\mathrm{m}$ . شرفة دائرية أفقية تحيط بالقبة من الداخل على ارتفاع $7\\,\\mathrm{m}$ فوق مستوي قاعدتها (مركز الكرة في مستوي القاعدة)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما نصف قطر الشرفة (بـ $\\mathrm{m}$)؟",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالمتر)",
+      "expectedAnswer": "24",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAQTA-TARH",
+          "value": "18"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مركز الكرة في مستوي القاعدة: بعد مستوي الشرفة عن المركز $7$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المثلث القائم وتره $25$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$r^2 = 25^2 - 7^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$r^2 = 625 - 49 = 576$ ، $r = 24\\,\\mathrm{m}$ .",
+        "incorrect": "$25 - 7 = 18$ يطرح الطولين."
+      },
+      "difficulty": 5
+    }
+  ]
+}

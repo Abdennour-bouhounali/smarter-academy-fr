@@ -1,0 +1,181 @@
+{
+  "id": "ex-4am-bahth-pgcd-l5-003",
+  "lessonCode": "bahth-pgcd",
+  "level": 5,
+  "metadata": {
+    "title": "BEM 2022 — الوضعية الإدماجية",
+    "estimatedMinutes": 10,
+    "tags": [
+      "خوارزمية إقليدس",
+      "توظيف PGCD"
+    ],
+    "source": {
+      "type": "bem",
+      "year": 2022,
+      "part": 2,
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "excerpt",
+      "badge": "BEM 2022",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "خصص فلاح قطعة أرض لإنتاج البطاطا و الجزر، فكان المحصول: 1188 صندوقٍ من البطاطا و 528 صندوقًا من الجزر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "قصد مساعدة دُور العجزة و مراكز الأيتام و ذوي الاحتياجات الخاصة، يريد هذا الفلاح أن يُجمِّع الصناديق في تشكيلات متماثلة من حيث النوع و العدد (أي كل تشكيلة تحتوي على نفس عدد الصناديق من البطاطا و نفس عدد الصناديق من الجزر).",
+      "statement": "ما هو أكبر عدد من التشكيلات التي يمكن تكوينها ؟",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P5",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "132",
+      "misconceptionSignatures": [
+        {
+          "value": "66",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        },
+        {
+          "value": "9",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد التشكيلات يقسم 1188 و 528 معًا، لأن الصناديق توزَّع بالتساوي دون باقٍ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أكبر عدد من التشكيلات هو إذن القاسم المشترك الأكبر للعددين 1188 و 528."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسبه بخوارزمية إقليدس: اقسم 1188 على 528، ثم واصل حتى يصير الباقي معدومًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$PGCD(1188 ; 528) = 132$: أكبر عدد من التشكيلات هو 132 تشكيلة.",
+        "incorrect": "عدد التشكيلات قاسم مشترك للعددين 1188 و 528، والمطلوب أكبرها."
+      },
+      "solution": {
+        "lines": [
+          "أكبر عدد من التشكيلات هو $PGCD(1188 ; 528)$.",
+          "باستعمال خوارزمية إقليدس:",
+          "$1188 = 528 \\times 2 + 132$",
+          "$528 = 132 \\times 4 + 0$",
+          "آخر باقٍ غير معدوم هو 132، إذن:"
+        ],
+        "result": "PGCD(1188 ; 528) = 132"
+      },
+      "work": "optional",
+      "timeSeconds": 270
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما هو عدد صناديق البطاطا و عدد صناديق الجزر في كل تشكيلة.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P5",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صناديق البطاطا في كل تشكيلة (عدد طبيعي)",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "132",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "توزَّع صناديق البطاطا بالتساوي على كل التشكيلات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم عدد صناديق البطاطا على عدد التشكيلات الذي وجدته في (ا)."
+        }
+      ],
+      "feedback": {
+        "correct": "1188 ÷ 132 = 9: في كل تشكيلة 9 صناديق من البطاطا.",
+        "incorrect": "عدد التشكيلات ليس ما تحويه كل تشكيلة: اقسم 1188 على عدد التشكيلات."
+      },
+      "solution": {
+        "lines": [
+          "$1188 \\div 132 = 9$"
+        ],
+        "result": "9"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ب",
+      "statement": "عدد صناديق الجزر في كل تشكيلة:",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P5",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صناديق الجزر في كل تشكيلة (عدد طبيعي)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "132",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "توزَّع صناديق الجزر بالتساوي على كل التشكيلات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم عدد صناديق الجزر على عدد التشكيلات الذي وجدته في (ا)."
+        }
+      ],
+      "feedback": {
+        "correct": "528 ÷ 132 = 4: في كل تشكيلة 4 صناديق من الجزر.",
+        "incorrect": "عدد التشكيلات ليس ما تحويه كل تشكيلة: اقسم 528 على عدد التشكيلات."
+      },
+      "solution": {
+        "lines": [
+          "$528 \\div 132 = 4$",
+          "كل تشكيلة تحتوي على 9 صناديق من البطاطا و 4 صناديق من الجزر."
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

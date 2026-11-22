@@ -1,0 +1,258 @@
+{
+  "id": "ex-2am-masafa-nuqtatayn-l5-010",
+  "lessonCode": "masafa-nuqtatayn",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — منسوب الوادي بعد الأمطار",
+    "estimatedMinutes": 12,
+    "tags": [
+      "مسافة بين نقطتين",
+      "نقطة على بعد معلوم",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يقيس حارس الغابة منسوب الوادي بالسنتيمتر بالنسبة إلى المستوى العادي: بعد الأمطار $+35$ ، وبعد فترة الجفاف $-22$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "النقطتان $S(-22)$ و $P(+35)$ على مستقيم مدرّج. احسب المسافة $SP$ .",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "57",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "13"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-57"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن أوّلًا أيّ الفاصلتين أكبر: الأكبر هي الأبعد إلى اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى مطروحًا منها الصغرى؛ وإذا كانت الصغرى سالبة فنطرح عددًا سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا: إن وجدت ناتجًا سالبًا فقد قلبت ترتيب الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$SP=57$ : النقطتان على جهتين من المبدأ فنجمع المسافتين إلى الصفر.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى هي $+35$ والفاصلة الصغرى هي $-22$",
+          "$SP=(+35)-(-22)=(+35)+(+22)=57$"
+        ],
+        "result": "57"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "في أحد الأيّام كان المنسوب أعلى من منسوب الجفاف ويبعد عنه $14$ ، النقطة $N$ تنتمي إلى المستقيم المدرّج نفسه، $SN=14$ ، وهي على يمين النقطة $S(-22)$ . ما فاصلة $N$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-8",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SIGNSWAP",
+          "value": "8"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة المعطاة هي المسافة بين النقطتين: النقطة المطلوبة تبعد بها عن النقطة المعلومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كانت على اليمين أضفنا المسافة إلى الفاصلة المعلومة، وإذا كانت على اليسار طرحناها منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب المسافة بين النقطتين انطلاقًا من فاصلتيهما."
+        }
+      ],
+      "feedback": {
+        "correct": "فاصلة $N$ هي $-8$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "النقطة على اليمين فنضيف المسافة إلى فاصلة $S$",
+          "$-22+14=-8$"
+        ],
+        "result": "-8"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما فاصلات النقط التي تبعد $14$ عن النقطة $M(-22)$ على المستقيم المدرّج ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$8$ و $+36$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MASAFA2-SIGNSWAP"
+        },
+        {
+          "id": "B",
+          "content": "$-8$ فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MASAFA2-ONEANSWER"
+        },
+        {
+          "id": "C",
+          "content": "$-36$ و $-8$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$-36$ فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MASAFA2-ONEANSWER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم المستقيم وعيّن النقطة المعلومة، ثمّ تحرّك بالمسافة المعطاة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اسأل نفسك: في أيّ الجهتين يمكن أن تتحرّك انطلاقًا من النقطة المعلومة؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب المسافة بين كلّ نقطة وجدتها والنقطة المعلومة."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطتان المطلوبتان فاصلتاهما $-36$ و $-8$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "نضيف المسافة إلى الفاصلة: $-22+14=-8$",
+          "ونطرحها منها: $-22-14=-36$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "النقطتان $N(-8)$ و $P(+35)$ على مستقيم مدرّج. احسب المسافة $NP$ .",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "43",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "27"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-43"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن أوّلًا أيّ الفاصلتين أكبر: الأكبر هي الأبعد إلى اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى مطروحًا منها الصغرى؛ وإذا كانت الصغرى سالبة فنطرح عددًا سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا: إن وجدت ناتجًا سالبًا فقد قلبت ترتيب الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$NP=43$ : النقطتان على جهتين من المبدأ فنجمع المسافتين إلى الصفر.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى هي $+35$ والفاصلة الصغرى هي $-8$",
+          "$NP=(+35)-(-8)=(+35)+(+8)=43$"
+        ],
+        "result": "43"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

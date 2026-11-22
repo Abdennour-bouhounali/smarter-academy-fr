@@ -1,0 +1,120 @@
+{
+  "id": "ex-4am-khawass-qawasim-l2-009",
+  "lessonCode": "khawass-qawasim",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2023 — A = 1057/434",
+    "estimatedMinutes": 5,
+    "tags": [
+      "خاصية 1",
+      "كسر غير قابل للاختزال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_khawass-qawasim_P1",
+      "modelledOn": "BEM 2023 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن الأعداد A و B حيث:",
+    "formulas": [
+      "A = \\dfrac{1057}{434}",
+      "B = 1057 - 434"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب العدد A على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "151/62",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن قاسم مشترك للبسط والمقام: جرّب 7."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختزل حتى لا يبقى قاسم مشترك غير 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1057}{434} = \\dfrac{7 \\times 151}{7 \\times 62} = \\dfrac{151}{62}$.",
+        "incorrect": "اقسم البسط والمقام على قاسمهما المشترك 7، ثم تحقّق أن الكسر الناتج لا يُختزل.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال."
+      },
+      "solution": {
+        "lines": [
+          "$1057 = 7 \\times 151$ و $434 = 7 \\times 62$",
+          "$\\dfrac{1057}{434} = \\dfrac{7 \\times 151}{7 \\times 62}$",
+          "151 عدد أولي لا يقسم 62."
+        ],
+        "result": "A = \\dfrac{151}{62}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بيّن، دون حساب B، أن B مضاعف للعدد 7، ثم اكتبه على الشكل $7 \\times k$ حيث $k$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k$ فقط (عدد طبيعي)",
+      "expectedAnswer": "89",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الكتابتين $1057 = 7 \\times 151$ و $434 = 7 \\times 62$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرج 7 عاملًا مشتركًا: $7 \\times q - 7 \\times q' = 7 \\times (q - q')$."
+        }
+      ],
+      "feedback": {
+        "correct": "$1057 - 434 = 7 \\times (151 - 62) = 7 \\times 89$.",
+        "incorrect": "القاسم المشترك لعددين يقسم فرقهما: اكتب كلا من العددين على الشكل $7 \\times q$ ثم أخرج 7 عاملًا مشتركًا."
+      },
+      "solution": {
+        "lines": [
+          "$1057 - 434 = 7 \\times 151 - 7 \\times 62$",
+          "$1057 - 434 = 7 \\times (151 - 62)$",
+          "$1057 - 434 = 7 \\times 89$ ، إذن 7 يقسم $1057 - 434$."
+        ],
+        "result": "1057 - 434 = 7 \\times 89"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

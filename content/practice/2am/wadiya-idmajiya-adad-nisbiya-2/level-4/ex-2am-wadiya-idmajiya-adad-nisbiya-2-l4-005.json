@@ -1,0 +1,325 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-adad-nisbiya-2-l4-005",
+  "lessonCode": "wadiya-idmajiya-adad-nisbiya-2",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — ملعب صغير في معلم",
+    "estimatedMinutes": 12,
+    "tags": [
+      "معلم",
+      "أطوال بالطرح",
+      "مساحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "06"
+    }
+  },
+  "statement": {
+    "content": "يمثّل مستطيل في معلم متعامد ومتجانس وحدته $1\\,\\mathrm{m}$ ملعبًا صغيرًا : ثلاثة من رؤوسه معلومة والرابع مجهول."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "في معلم متعامد ومتجانس : $B(-4\\,;\\,3)$ و $C(6\\,;\\,3)$ و $D(6\\,;\\,-2)$ . عيّن إحداثيي النقطة $A$ التي تجعل $BCDA$ مستطيلًا.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-4",
+        "y": "-2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "-2",
+            "y": "-4"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أضلاع المستطيل توازي المحورين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$A$ تشارك $B$ في الفاصلة و $D$ في الترتيب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الفاصلة ثمّ الترتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "$A(-4\\,;\\,-2)$ .",
+        "incorrect": "الفاصلة أوّلًا ثمّ الترتيب : راجع إشارة كلّ إحداثية."
+      },
+      "solution": {
+        "lines": [
+          "$B$ و $A$ على المستقيم الرأسي نفسه فلهما الفاصلة $-4$",
+          "$D$ و $A$ على المستقيم الأفقي نفسه فلهما الترتيب $-2$",
+          "$A(-4\\,;\\,-2)$"
+        ],
+        "result": "(-4\\,;\\,-2)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "الرأسان $B$ و $C$ لهما الترتيب نفسه، وفاصلتاهما $-4$ و $6$ . احسب الطول $BC$ بطرح الفاصلتين.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "2"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-10"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطتان على جهة واحدة من المبدأ أم على جهتين مختلفتين ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى ناقص الفاصلة الصغرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا : تحقّق من الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC=10$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى $+6$ والفاصلة الصغرى $-4$",
+          "$BC=(+6)-(-4)=10$"
+        ],
+        "result": "10"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "الرأسان $C$ و $D$ لهما الفاصلة نفسها، وترتيباهما $3$ و $-2$ . احسب الطول $CD$ بطرح الترتيبين.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "1"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-5"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطتان على جهة واحدة من المبدأ أم على جهتين مختلفتين ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى ناقص الفاصلة الصغرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا : تحقّق من الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$CD=5$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى $+3$ والفاصلة الصغرى $-2$",
+          "$CD=(+3)-(-2)=5$"
+        ],
+        "result": "5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "طول المستطيل $10\\,\\mathrm{m}$ وعرضه $5\\,\\mathrm{m}$ . ما مساحته بالمتر المربّع ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد وحدات المساحة",
+      "expectedAnswer": "50",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-AREASUM",
+          "value": "15"
+        },
+        {
+          "id": "MISC-NUQTA2-AREAPERIM",
+          "value": "30"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة المستطيل جداء بعديه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب الطول في العرض."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تجمع البعدين."
+        }
+      ],
+      "feedback": {
+        "correct": "$50\\,\\mathrm{m}^2$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "المساحة $=10\\times 5$",
+          "$=50\\,\\mathrm{m}^2$"
+        ],
+        "result": "50"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "في معلم متعامد ومتجانس، ما إحداثيا نظيرة النقطة $B(-4\\,;\\,3)$ بالنسبة إلى محور الفواصل ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-4",
+        "y": "-3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SYMMIX",
+          "value": {
+            "x": "4",
+            "y": "3"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-BOTHSIGNS",
+          "value": {
+            "x": "4",
+            "y": "-3"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "-3",
+            "y": "-4"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النظير بالنسبة إلى محور يبقي إحداثية ويعاكس الأخرى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بالنسبة إلى محور الفواصل تبقى الفاصلة ويصير الترتيب معاكسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من أنّ المسافة إلى المحور لم تتغيّر."
+        }
+      ],
+      "feedback": {
+        "correct": "$(-4\\,;\\,-3)$ .",
+        "incorrect": "الفاصلة أوّلًا ثمّ الترتيب : راجع إشارة كلّ إحداثية."
+      },
+      "solution": {
+        "lines": [
+          "النظير بالنسبة إلى محور الفواصل يبقي الفاصلة كما هي",
+          "الإحداثية الأخرى تصير معاكسها : $(-4\\,;\\,-3)$"
+        ],
+        "result": "(-4\\,;\\,-3)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

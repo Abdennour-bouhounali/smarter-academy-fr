@@ -1,0 +1,250 @@
+{
+  "id": "ex-3am-qimat-ibara-harfiya-l4-006",
+  "lessonCode": "qimat-ibara-harfiya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — جدول قيم عبارتين",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جدول قيم",
+      "مثال مضاد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يعطي الجدول الآتي قيمتي العبارتين $A = x^2 + 14$ و $B = x^2 - 5x + 14$ من أجل بعض قيم $x$ . أكمل الخانتين الناقصتين.",
+    "table": {
+      "head": [
+        "$x$",
+        "$-2$",
+        "$0$",
+        "$1$",
+        "$3$"
+      ],
+      "rows": [
+        [
+          "$A$",
+          "؟",
+          "$14$",
+          "$15$",
+          "$23$"
+        ],
+        [
+          "$B$",
+          "$28$",
+          "$14$",
+          "$10$",
+          "؟"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب قيمة $A$ من أجل $x = -2$ (الخانة الناقصة في الصف الأول).",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "18",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-QIMA-NEG-POWER"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = -2$ هي $18$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$x^2 + 14 = (-2)^2 + 14$",
+          "$= 4 + 14$",
+          "$= 18$"
+        ],
+        "result": "18"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب قيمة $B$ من أجل $x = 3$ (الخانة الناقصة في الصف الثاني).",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "8",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "قيمة العبارة من أجل $x = 3$ هي $8$ .",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$x^2 - 5x + 14 = 3^2 - 5 \\times 3 + 14$",
+          "$= 9 - 5 \\times 3 + 14$",
+          "$= 9 - 15 + 14$",
+          "$= -6 + 14$",
+          "$= 8$"
+        ],
+        "result": "8"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ماذا يبيّن الجدول بشأن $A$ و $B$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$A = B$ لأنّ لهما القيمة $14$ من أجل $x = 0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QIMA-ONE-VALUE"
+        },
+        {
+          "id": "B",
+          "content": "$A \\neq B$ لأنّ القيمتين تختلفان من أجل $x = 1$ : $15$ و $10$",
+          "isCorrect": true
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن القيمتين اللتين حسبتهما: هل اختلفتا عند قيمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قيمة واحدة تختلف عندها العبارتان تكفي لإثبات أنهما غير متساويتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أمّا تساوي القيمتين من أجل قيمة أو قيمتين فلا يثبت التساوي: لإثباته ننشر ونقارن الشكلين."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب الصحيح: $A \\neq B$ لأنّ القيمتين تختلفان من أجل $x = 1$ : $15$ و $10$",
+        "incorrect": "قيمة مختلفة تكفي لإثبات عدم التساوي، أمّا القيم المتساوية فلا تكفي لإثبات التساوي."
+      },
+      "solution": {
+        "lines": [
+          "$A \\neq B$ لأنّ القيمتين تختلفان من أجل $x = 1$ : $15$ و $10$"
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "اكتب جملة تبرّر بها جوابك.",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "learningPoints": [
+        {
+          "code": "3am_qimat-ibara-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي تريد إثباته بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب قيمة العبارتين من أجل قيمة مناسبة ثم قارن النتيجتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب القيمتين صراحةً ثم الخلاصة في جملة واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمتان مختلفتان، إذن $A \\neq B$ ؛ وتساوي القيمتين من أجل $x = 0$ لا يثبت التساوي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $x = 1$ : $A = 1 + 14 = 15$ و $B = 1 - 5 + 14 = 10$ .",
+          "القيمتان مختلفتان، إذن $A \\neq B$ ؛ وتساوي القيمتين من أجل $x = 0$ لا يثبت التساوي."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

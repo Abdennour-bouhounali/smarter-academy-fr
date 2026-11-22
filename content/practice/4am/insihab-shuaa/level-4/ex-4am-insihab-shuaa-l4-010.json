@@ -1,0 +1,102 @@
+{
+  "id": "ex-4am-insihab-shuaa-l4-010",
+  "lessonCode": "insihab-shuaa",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — تشكيلة المسيّرات",
+    "estimatedMinutes": 3,
+    "tags": [
+      "تساوي شعاعين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_insihab-shuaa_P3",
+      "modelledOn": "act-1"
+    }
+  },
+  "statement": {
+    "content": "في عرض مسيّرات بقسنطينة فوق جسر سيدي مسيد يشرف عليه متطوّعون متعاونون، صفّان من المسيّرات على شبكة (الشكل). كل سهم يربط مسيّرة بمسيّرة.",
+    "figure": {
+      "points": {
+        "P": [
+          0,
+          0
+        ],
+        "Q": [
+          2,
+          0
+        ],
+        "R": [
+          4,
+          0
+        ],
+        "U": [
+          1,
+          3
+        ],
+        "V": [
+          3,
+          3
+        ],
+        "W": [
+          5,
+          3
+        ]
+      },
+      "grid": true,
+      "vectors": [
+        {
+          "from": "P",
+          "to": "Q",
+          "tone": "amber"
+        }
+      ],
+      "ariaLabel": "شبكة: في الصف الأسفل P و Q و R بين كل اثنتين مربعان، وفي الصف الأعلى U و V و W بين كل اثنتين مربعان؛ السهم من P نحو Q",
+      "maxWidth": 420
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "كم شعاعا يساوي $\\overrightarrow{PQ}$ بين النقط المسمّاة (دون $\\overrightarrow{PQ}$ نفسه)؟",
+      "learningPoints": [
+        {
+          "code": "4am_insihab-shuaa_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن كل الأسهم التي لها نفس الحركة: نفس العدّ أفقيا وشاقوليا ونفس الجهة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من كل نقطة وتحقّق هل النقطة التي تصل إليها بنفس الحركة مسمّاة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحسب السهم المعطى نفسه، ولا الأسهم ذات الاتجاه المعاكس."
+        }
+      ],
+      "feedback": {
+        "correct": "الحركة: مربعان يمينا. في الصف الأسفل $\\overrightarrow{QR}$ ، وفي الصف الأعلى $\\overrightarrow{UV}$ و $\\overrightarrow{VW}$ : ثلاثة.",
+        "incorrect": "ابحث في الصفين عن كل نقطتين بينهما مربعان أفقيا نحو اليمين."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SHUAA-ITTIJAH-MUAKKAS",
+          "value": "6"
+        }
+      ]
+    }
+  ]
+}

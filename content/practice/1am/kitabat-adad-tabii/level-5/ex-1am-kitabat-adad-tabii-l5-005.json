@@ -1,0 +1,331 @@
+{
+  "id": "ex-1am-kitabat-adad-tabii-l5-005",
+  "lessonCode": "kitabat-adad-tabii",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — شجرة لكل ألف ساكن",
+    "estimatedMinutes": 18,
+    "tags": [
+      "أعداد كبيرة",
+      "عدد الآلاف",
+      "بيئة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يبلغ عدد سكان مدينة 1042300 نسمة.\nالجزء الأول: تكتب البلدية هذا العدد في نشرتها.\nالجزء الثاني: تقرّر البلدية، حمايةً للبيئة، غرس شجرة لكل ألف ساكن كامل، وقد حضّرت 1000 شجيرة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أعد كتابة العدد 1042300 بفئات من ثلاثة أرقام.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$1\\,04\\,23\\,00$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-CLASS-LEFT"
+        },
+        {
+          "id": "B",
+          "content": "$104\\,230\\,0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-CLASS-LEFT"
+        },
+        {
+          "id": "C",
+          "content": "$1\\,042\\,300$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من أين نبدأ تجزئة العدد إلى فئات؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ من رقم الآحاد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الفئة الأخيرة على اليسار قد تحوي رقما أو رقمين فقط."
+        }
+      ],
+      "feedback": {
+        "correct": "نجزّئ انطلاقا من اليمين: $1\\,042\\,300$.",
+        "incorrect": "نترك فراغا عقب كل ثلاثة أرقام مبتدئين من اليمين (من رقم الآحاد)، لا من اليسار."
+      },
+      "solution": {
+        "lines": [
+          "نعدّ ثلاثة أرقام انطلاقا من رقم الآحاد: $1\\,042\\,300$.",
+          "الفئة الأولى على اليسار هي 1."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كيف يُقرأ عدد السكان؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مائة وأربعة آلاف ومائتان وثلاثون",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-CLASS-LEFT"
+        },
+        {
+          "id": "B",
+          "content": "مليون وأربعمائة وعشرون ألفا وثلاثمائة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-ZERO-PLACE"
+        },
+        {
+          "id": "C",
+          "content": "مليون واثنان وأربعون ألفا وثلاثمائة",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزّئ العدد إلى فئات من ثلاثة أرقام انطلاقا من اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ كل فئة كعدد أصغر من 1000 ثم اذكر اسم فئتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى المراتب الفارغة (الأصفار)."
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\,042\\,300$ يُقرأ « مليون واثنان وأربعون ألفا وثلاثمائة ».",
+        "incorrect": "نجزّئ العدد إلى فئات من ثلاثة أرقام انطلاقا من اليمين، ثم نقرأ الفئات من اليسار، كل فئة باسمها."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,|\\,042\\,|\\,300$",
+          "نقرأ فئة فئة: « مليون واثنان وأربعون ألفا وثلاثمائة »."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما هو رقم مئات الآلاف في العدد $1\\,042\\,300$؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "رقم واحد",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد رقم الآحاد أولا: هو الرقم الأخير على اليمين في الجزء الصحيح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من رقم الآحاد وعُدّ المراتب نحو اليسار."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع العدد في جدول المراتب."
+        }
+      ],
+      "feedback": {
+        "correct": "رقم مئات الآلاف في العدد 1042300 هو 0.",
+        "incorrect": "يأخذ كل رقم معناه من موقعه في كتابة العدد: نعدّ المراتب انطلاقا من رقم الآحاد."
+      },
+      "solution": {
+        "lines": [
+          "في العدد 1042300: 1 رقم الملايين، 0 رقم مئات الآلاف، 4 رقم عشرات الآلاف، 2 رقم الآلاف، 3 رقم المئات، 0 رقم العشرات، 0 رقم الآحاد.",
+          "إذن رقم مئات الآلاف هو 0."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "statement": "كم شجرة يجب غرسها؟ (شجرة لكل ألف ساكن كامل)",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1042",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-KITABA-DIGIT-COUNT"
+        },
+        {
+          "value": "104",
+          "id": "MISC-KITABA-RANKSHIFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الآلاف هو عدد المجموعات من 1000 التي نكوّنها من العدد كله، لا الرقم وحده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احذف الأرقام التي على يمين مرتبة الآلاف."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: اضرب جوابك في 1000 ثم أضف ما بقي."
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\,042\\,300 = 1042 \\times 1000 + 300$: عدد الآلاف هو 1042، أمّا رقم الآلاف فهو 2.",
+        "incorrect": "رقم المرتبة هو ما يبقى فيها وحدها؛ أمّا عدد وحداتها فنحسب فيه كل ما يمكن تجميعه منها في العدد كله."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,042\\,300 = 1042 \\times 1000 + 300$",
+          "إذن عدد الآلاف في العدد $1\\,042\\,300$ هو 1042، ورقم الآلاف هو 2."
+        ],
+        "result": "1042"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل تكفي الشجيرات الـ 1000 المحضّرة؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-DIGIT-COUNT"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن عدد الآلاف في عدد السكان بـ 1000."
+        }
+      ],
+      "feedback": {
+        "correct": "لا: يجب غرس 1042 شجرة، وتنقص 42 شجيرة.",
+        "incorrect": "عدد الأشجار هو عدد الآلاف في عدد السكان."
+      },
+      "solution": {
+        "lines": [
+          "عدد الآلاف في $1\\,042\\,300$ هو 1042.",
+          "1042 > 1000، إذن الشجيرات لا تكفي."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "برّر قرارك، وبيّن كم شجيرة تنقص.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم ألفا في المليون؟"
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك بالحل النموذجي سطرا بسطر."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,042\\,300 = 1042 \\times 1000 + 300$: في المدينة 1042 ألفا كاملا.",
+          "يجب غرس 1042 شجرة، والمحضّر 1000، فتنقص 42 شجيرة."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

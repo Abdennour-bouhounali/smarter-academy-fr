@@ -1,0 +1,177 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-khattiya-l4-006",
+  "lessonCode": "wadiya-idmajiya-khattiya",
+  "level": 4,
+  "metadata": {
+    "title": "النترات في قارورة ماء معدني",
+    "estimatedMinutes": 9,
+    "tags": [
+      "مقادير مركبة",
+      "الكتلة الحجمية",
+      "تفسير النتيجة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-khattiya_P3",
+      "modelledOn": "ex-37",
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-khattiya-l4-006"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يجب ألّا تتجاوز الكتلة الحجمية للنترات في مياه الشرب 45mg/L. تحتوي قارورة ماء معدني سعتها 33cL على 15mg من النترات، فاختارتها أمّ لأسرتها حرصًا على صحتهم."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب الكتلة الحجمية للنترات في هذا الماء بـ mg/L (بالتدوير إلى $0{,}01$).",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة: الكتلة الحجمية بـ mg/L",
+      "expectedAnswer": "45,45",
+      "evaluationPolicy": {
+        "tolerance": "0.01"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "0.45",
+          "id": "MISC-MAQADIR-WIHDA"
+        },
+        {
+          "value": "2.2",
+          "id": "MISC-MAQADIR-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل 33cL إلى لتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكتلة الحجمية = الكتلة ÷ الحجم."
+        }
+      ],
+      "feedback": {
+        "correct": "$15 \\div 0{,}33 \\approx 45{,}45$ mg/L.",
+        "incorrect": "33cL = 0,33L: اقسم الكتلة على الحجم باللتر."
+      },
+      "solution": {
+        "lines": [
+          "$33cL = 0{,}33L$",
+          "$\\dfrac{15}{0{,}33} \\approx 45{,}45$ mg/L."
+        ],
+        "result": "\\approx 45{,}45mg/L"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل هذا الماء صالح للشرب؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-TAFSIR"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النتيجة بالحد 45mg/L، ولو كان الفرق صغيرا."
+        }
+      ],
+      "feedback": {
+        "correct": "$45{,}45 > 45$ : الحد متجاوز، فالماء غير صالح للشرب.",
+        "incorrect": "الحد لا يجب أن يُتجاوز ولو قليلا."
+      },
+      "solution": {
+        "lines": [
+          "$45{,}45 > 45$ ، إذن الكتلة الحجمية للنترات تتجاوز الحد المسموح به.",
+          "هذا الماء غير صالح للشرب."
+        ],
+        "result": "الماء غير صالح للشرب"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما هي أكبر كتلة من النترات (بـ mg) يمكن أن تحتويها هذه القارورة ليكون ماؤها صالحا للشرب؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة: الكتلة بـ mg",
+      "expectedAnswer": "14,85",
+      "misconceptionSignatures": [
+        {
+          "value": "1485",
+          "id": "MISC-MAQADIR-WIHDA"
+        },
+        {
+          "value": "136.36",
+          "id": "MISC-MAQADIR-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عند الحد، الكتلة متناسبة مع الحجم: معامل التناسب 45mg لكل لتر."
+        }
+      ],
+      "feedback": {
+        "correct": "$45 \\times 0{,}33 = 14{,}85$ mg.",
+        "incorrect": "اضرب الحد المسموح به في حجم القارورة باللتر."
+      },
+      "solution": {
+        "lines": [
+          "$45 \\times 0{,}33 = 14{,}85$",
+          "يجب ألّا تتجاوز كتلة النترات في القارورة 14,85mg."
+        ],
+        "result": "14{,}85mg"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "id": "ex-4am-qasim-mushtarak-akbar-l4-008",
+  "lessonCode": "qasim-mushtarak-akbar",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2008 — 117 و 195 — طريقتان",
+    "estimatedMinutes": 10,
+    "tags": [
+      "PGCD",
+      "كسر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-mushtarak-akbar_P2",
+      "modelledOn": "BEM 2008 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2008",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "باستعمال قوائم القواسم، جد القاسم المشترك الأكبر للعددين 117 و 195.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "39",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قائمة قواسم كل من العددين 117 و 195."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استخرج القواسم المشتركة: الأعداد الموجودة في القائمتين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاسم المشترك الأكبر هو أكبر القواسم المشتركة، لا أيّ واحد منها."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 117 و 195 هي 1 ، 3 ، 13 ، 39، وأكبرها 39.",
+        "incorrect": "اكتب قائمتي القواسم كاملتين، ثم خذ أكبر عدد يظهر في القائمتين معًا."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 117 هي: 1 ، 3 ، 9 ، 13 ، 39 ، 117",
+          "قواسم العدد 195 هي: 1 ، 3 ، 5 ، 13 ، 15 ، 39 ، 65 ، 195",
+          "القواسم المشتركة للعددين 117 و 195 هي: 1 ، 3 ، 13 ، 39",
+          "أكبرها هو 39، إذن:"
+        ],
+        "result": "PGCD(117 ; 195) = 39"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعد حساب PGCD(195 ; 117) باستعمال خوارزمية إقليدس.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "39",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم 195 على 117 قسمة إقليدية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (195 ; 117) بالزوج (117 ; الباقي)، وتوقف عندما يصير الباقي معدومًا."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم هو 39، وهي النتيجة نفسها.",
+        "incorrect": "القاسم المشترك الأكبر هو آخر باقٍ غير معدوم في القسمات المتتابعة."
+      },
+      "solution": {
+        "lines": [
+          "$195 = 117 \\times 1 + 78$",
+          "$117 = 78 \\times 1 + 39$",
+          "$78 = 39 \\times 2 + 0$",
+          "آخر باقٍ غير معدوم هو 39، إذن:"
+        ],
+        "result": "PGCD(195 ; 117) = 39"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اكتب الكسر $\\dfrac{117}{195}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "3/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 39: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال 01.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{117}{195} = \\dfrac{117 \\div 39}{195 \\div 39}$"
+        ],
+        "result": "\\dfrac{117}{195} = \\dfrac{3}{5}"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

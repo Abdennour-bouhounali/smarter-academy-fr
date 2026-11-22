@@ -1,0 +1,199 @@
+{
+  "id": "ex-4am-qasim-mushtarak-akbar-l3-009",
+  "lessonCode": "qasim-mushtarak-akbar",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2024 — لوح خشبي 132cm × 156cm",
+    "estimatedMinutes": 8,
+    "tags": [
+      "قواسم مشتركة",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-mushtarak-akbar_P1",
+      "modelledOn": "BEM 2024 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يملك نجّار معروف بإتقان عمله لوحًا خشبيًا مستطيل الشكل عرضه 132cm وطوله 156cm، يريد تجزئته إلى مربعات متقايسة دون ضياع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "هل يمكن أن يكون طول ضلع كل مربع 6cm ؟ 8cm ؟ برّر إجابتك.",
+      "statement": "هل يمكن أن يكون طول ضلع كل مربع 6cm ؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول الضلع يجب أن يقسم البعدين معًا حتى لا يبقى ضياع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم كلا من 132 و 156 على 6، وانظر إلى الباقي."
+        }
+      ],
+      "feedback": {
+        "correct": "6 قاسم مشترك للعددين 132 و 156.",
+        "incorrect": "يكون ذلك ممكنًا فقط إذا كان طول الضلع قاسمًا مشتركًا للبعدين."
+      },
+      "solution": {
+        "lines": [
+          "$132 = 6 \\times 22$",
+          "$156 = 6 \\times 26$",
+          "العدد 6 قاسم مشترك للعددين 132 و 156، إذن يمكن ذلك."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل يمكن أن يكون طول ضلع كل مربع 8cm ؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول الضلع يجب أن يقسم البعدين معًا حتى لا يبقى ضياع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم كلا من 132 و 156 على 8، وانظر إلى الباقي."
+        }
+      ],
+      "feedback": {
+        "correct": "8 ليس قاسمًا مشتركًا للعددين 132 و 156.",
+        "incorrect": "يكون ذلك ممكنًا فقط إذا كان طول الضلع قاسمًا مشتركًا للبعدين."
+      },
+      "solution": {
+        "lines": [
+          "$132 = 8 \\times 16 + 4$",
+          "$156 = 8 \\times 19 + 4$",
+          "العدد 8 لا يقسم 132، فهو ليس قاسمًا مشتركًا للعددين 132 و 156، إذن لا يمكن ذلك."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "أوجد عدد المربعات التي يمكن الحصول عليها بحيث يكون طول ضلع كل مربع أكبر ما يمكن.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد المربعات)",
+      "expectedAnswer": "143",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أكبر طول ممكن للضلع هو القاسم المشترك الأكبر للعددين 132 و 156."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب قواسم 132 وقواسم 156، ثم خذ أكبر قاسم مشترك."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم كل بعد على طول الضلع، ثم اضرب النتيجتين."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(132 ; 156) = 12 ، ثم $11 \\times 13$ مربعًا.",
+        "incorrect": "المطلوب عدد المربعات لا طول ضلعها: احسب PGCD ثم عدد المربعات على الطول والعرض."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 132 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 11 ، 12 ، 22 ، 33 ، 44 ، 66 ، 132",
+          "قواسم العدد 156 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 12 ، 13 ، 26 ، 39 ، 52 ، 78 ، 156",
+          "القواسم المشتركة للعددين 132 و 156 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 12",
+          "أكبر طول لضلع المربع هو PGCD(132 ; 156) = 12 ، أي 12cm.",
+          "$132 \\div 12 = 11$ و $156 \\div 12 = 13$",
+          "$11 \\times 13 = 143$ ، إذن عدد المربعات هو 143 مربعًا."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

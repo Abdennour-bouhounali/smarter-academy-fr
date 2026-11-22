@@ -1,0 +1,219 @@
+{
+  "id": "ex-4am-barahin-ashia-l4-001",
+  "lessonCode": "barahin-ashia",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 18 — HK = OL = AC",
+    "estimatedMinutes": 6,
+    "tags": [
+      "برهان",
+      "متوازي أضلاع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-18",
+      "page": 137,
+      "section": "أتعمّق",
+      "number": 18
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 137، تمرين 18): ABC مثلث كيفي، O منتصف [AC] و D نظيرة B بالنسبة إلى O. H و K و L النقط حيث $\\overrightarrow{BH} = \\overrightarrow{AO}$ ، $\\overrightarrow{CL} = \\overrightarrow{OC}$ و $\\overrightarrow{CK} = \\overrightarrow{AB} + \\overrightarrow{AO}$ (الشكل).",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          6,
+          0
+        ],
+        "C": [
+          2,
+          4
+        ],
+        "D": [
+          -4,
+          4
+        ],
+        "O": [
+          1,
+          2
+        ],
+        "H": [
+          7,
+          2
+        ],
+        "L": [
+          3,
+          6
+        ],
+        "K": [
+          9,
+          6
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "A"
+        ],
+        [
+          "A",
+          "C"
+        ],
+        {
+          "from": "O",
+          "to": "H",
+          "tone": "indigo"
+        },
+        {
+          "from": "H",
+          "to": "K",
+          "tone": "indigo"
+        },
+        {
+          "from": "K",
+          "to": "L",
+          "tone": "indigo"
+        },
+        {
+          "from": "L",
+          "to": "O",
+          "tone": "indigo"
+        }
+      ],
+      "labels": {
+        "A": "sw",
+        "B": "se",
+        "C": "w",
+        "D": "nw",
+        "O": "w",
+        "H": "e",
+        "L": "n",
+        "K": "ne"
+      },
+      "ariaLabel": "متوازي الأضلاع ABCD، و O منتصف [AC]، والنقط H و K و L المنشأة، والرباعي OHKL",
+      "maxWidth": 480
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "$\\overrightarrow{HK}$ = $\\overrightarrow{HB}$ + $\\overrightarrow{BC}$ + $\\overrightarrow{CK}$ يساوي:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{OA}$ + $\\overrightarrow{BC}$ + $\\overrightarrow{AB}$ + $\\overrightarrow{AO}$ = $\\overrightarrow{AC}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{AO}$ + $\\overrightarrow{BC}$ + $\\overrightarrow{AB}$ + $\\overrightarrow{AO}$ = $\\overrightarrow{AC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{OA}$ + $\\overrightarrow{BC}$ + $\\overrightarrow{AB}$ = $\\overrightarrow{AC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-RABT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من $\\overrightarrow{BH} = \\overrightarrow{AO}$ ماذا تستنتج لـ $\\overrightarrow{HB}$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $\\overrightarrow{CK}$ بتعريفه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احذف الشعاعين المتعاكسين ثم طبّق علاقة شال."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{HB} = \\overrightarrow{OA}$ و $\\overrightarrow{CK} = \\overrightarrow{AB} + \\overrightarrow{AO}$ ؛ $\\overrightarrow{OA} + \\overrightarrow{AO} = \\overrightarrow{0}$ و $\\overrightarrow{AB} + \\overrightarrow{BC} = \\overrightarrow{AC}$ .",
+        "incorrect": "انتبه إلى الاتجاه: $\\overrightarrow{HB}$ يعاكس $\\overrightarrow{BH}$ ، ولا تنسَ أي حدّ من $\\overrightarrow{CK}$ ."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "بما أن $\\overrightarrow{OL} = \\overrightarrow{HK}$ ، الرباعي OHKL:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "متوازي أضلاع",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "مستطيل",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TUL-FAQAT"
+        },
+        {
+          "id": "C",
+          "content": "رباعي ليس متوازي أضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طريقة الكتاب (ص 133) تربط تساوي شعاعين برباعي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّقها على $\\overrightarrow{OL} = \\overrightarrow{HK}$ : من O إلى L كما من H إلى K ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "هل في المعطيات زاوية قائمة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{OL} = \\overrightarrow{HK}$ يعني OLKH (أي OHKL) متوازي أضلاع؛ لا شيء يجعله مستطيلا.",
+        "incorrect": "المساواة تعطي متوازي أضلاع، ولا معطى عن زاوية قائمة."
+      }
+    }
+  ]
+}

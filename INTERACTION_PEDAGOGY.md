@@ -8,8 +8,15 @@ Academy lesson: the REAL → DISCOVER → MANIPULATE → UNDERSTAND → TOUCH TH
 AUTOMATIZE → TRANSFER progression, the taxonomy of manipulation primitives, the feedback and
 scaffolding rules, the AI-agent decision process, and the quality checklist. Read it before
 designing, generating, refactoring, or auditing any lesson. On questions of what the student
-manipulates and how feedback is worded, it is authoritative; `docs/architecture/LESSON_CONTRACT.md`
+manipulates and how feedback is worded, it is authoritative;
+[`docs/architecture/LESSON_CONTRACT.md`](./docs/architecture/LESSON_CONTRACT.md)
 stays authoritative on lesson structure and stages.
+
+**To build a lesson, start at
+[`docs/lessons/LESSON_DEVELOPMENT_GUIDE.md`](./docs/lessons/LESSON_DEVELOPMENT_GUIDE.md)**,
+which sequences this document with the other contracts. For manipulations
+specifically, the mechanical contract is
+[`docs/architecture/MANIPULATION_CONTRACT.md`](./docs/architecture/MANIPULATION_CONTRACT.md).
 
 > **Don't show the mathematics. Let the student act on it.**
 > **Don't explain what the student can discover.**

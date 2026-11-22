@@ -1,0 +1,90 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l1-010",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2025 — قواسم العدد 95",
+    "estimatedMinutes": 4,
+    "tags": [
+      "قواسم",
+      "قواعد قابلية القسمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qawasim-adad-tabii_P4",
+      "modelledOn": "BEM 2025 I-2 01"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن كل قواسم العدد 95.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        5,
+        19,
+        95
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            5,
+            19
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 95 بمربعات الأعداد: إلى أي عدد يكفي أن تختبر قابلية القسمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "95 فردي، ورقم آحاده 5، ومجموع أرقامه 14: استعمل قواعد قابلية القسمة على 2 و 3 و 5."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$95 = 1 \\times 95$ ، $95 = 5 \\times 19$.",
+        "incorrect": "اختبر الأعداد التي مربعها أصغر من العدد أو يساويه، وخذ من كل قسمة باقيها معدوم القاسمين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$9^2 = 81 \\leq 95 < 100 = 10^2$ ومنه نختبر قابلية قسمة 95 على الأعداد من 1 إلى 9.",
+          "نجد أن 95 يقبل القسمة على كل من الأعداد: 1 ، 5.",
+          "ومن المساويات: $95 = 1 \\times 95$ ، $95 = 5 \\times 19$",
+          "إذن قواسم العدد 95 هي: 1 ، 5 ، 19 ، 95."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    }
+  ]
+}

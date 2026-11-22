@@ -1,0 +1,364 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-amaliyat-tabiiya-ushriya-l5-001",
+  "lessonCode": "wadiya-idmajiya-amaliyat-tabiiya-ushriya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — تسييج قطعة أرض",
+    "estimatedMinutes": 12,
+    "tags": [
+      "محيط",
+      "كلفة",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-84",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يملك فلّاح قطعة أرض مستطيلة الشكل طولها $215$ m وعرضها $120$ m ، ويريد تسييجها. يحتاج إلى $134$ عمودًا ثمن العمود الواحد ⁦450 DA⁩ ، وإلى سلك ثمن المتر الواحد منه ⁦180 DA⁩ ، وقد خصّص لذلك ميزانية قدرها ⁦200000 DA⁩ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "الجزء الأوّل — ما محيط القطعة بالمتر؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "طول بالمتر",
+      "expectedAnswer": "670",
+      "misconceptionSignatures": [
+        {
+          "value": "550",
+          "id": "MISC-AQWAS-IGNORED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعية جملة جملة: كلّ جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب سلسلة عمليات تترجمها، وضع بين قوسين ما يجب حسابه أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب السلسلة بالترتيب الصحيح للعمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times (215 + 120) = 670$ .",
+        "incorrect": "القوسان ليسا زينة: ما بينهما يُحسب أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $2 \\times (215 + 120)$",
+          "$A = 2 \\times (215 + 120)$",
+          "$A = 2 \\times 335$",
+          "$A = 670$"
+        ],
+        "result": "670"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "الجزء الأوّل — أيّ سلسلة تعطي كلفة التسييج كلّها (الأعمدة والسلك)؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$134 \\times 450 + 2 \\times 215 + 120 \\times 180$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-IGNORED"
+        },
+        {
+          "id": "B",
+          "content": "$134 \\times 450 + 2 \\times (215 + 120) + 180$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SILSILA-STORYORDER"
+        },
+        {
+          "id": "C",
+          "content": "$134 \\times 450 + 2 \\times (215 + 120) \\times 180$",
+          "isCorrect": true
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المطلوب جيّدًا: ما العملية التي تُنجز في الأخير، وما الذي يُحسب قبلها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ سلسلة مقترحة بالحساب أو بالقاعدة المناسبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الجواب هو السلسلة التي تترجم المطلوب وتعطي القيمة المنتظرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$134 \\times 450 + 2 \\times (215 + 120) \\times 180 = 180900$ .",
+        "incorrect": "اختبر كلّ سلسلة بالحساب: الصحيحة هي التي تترجم المطلوب وتعطي القيمة المنتظرة، وانتبه إلى القوسين."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة الصحيحة: $134 \\times 450 + 2 \\times (215 + 120) \\times 180$",
+          "$A = 134 \\times 450 + 2 \\times (215 + 120) \\times 180$",
+          "$A = 134 \\times 450 + 2 \\times 335 \\times 180$",
+          "$A = 60300 + 670 \\times 180$",
+          "$A = 60300 + 120600$",
+          "$A = 180900$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "الجزء الأوّل — ما كلفة التسييج كلّها؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "مبلغ بالدينار",
+      "expectedAnswer": "180900",
+      "misconceptionSignatures": [
+        {
+          "value": "82330",
+          "id": "MISC-AQWAS-IGNORED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعية جملة جملة: كلّ جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب سلسلة عمليات تترجمها، وضع بين قوسين ما يجب حسابه أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب السلسلة بالترتيب الصحيح للعمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "$134 \\times 450 + 2 \\times (215 + 120) \\times 180 = 180900$ .",
+        "incorrect": "القوسان ليسا زينة: ما بينهما يُحسب أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $134 \\times 450 + 2 \\times (215 + 120) \\times 180$",
+          "$A = 134 \\times 450 + 2 \\times (215 + 120) \\times 180$",
+          "$A = 134 \\times 450 + 2 \\times 335 \\times 180$",
+          "$A = 60300 + 670 \\times 180$",
+          "$A = 60300 + 120600$",
+          "$A = 180900$"
+        ],
+        "result": "180900 \\text{ DA }"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "الجزء الثاني — هل تكفي الميزانية لتسييج القطعة؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SILSILA-NOPRIORITY"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب كلّ طرف من الطرفين على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين الناتجين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحكم قبل أن تحسب: اختبر بالأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم، تحقّق بالحساب.",
+        "incorrect": "احسب الطرفين كلّا على حدة قبل أن تحكم."
+      },
+      "solution": {
+        "lines": [
+          "$A = 134 \\times 450 + 2 \\times (215 + 120) \\times 180$",
+          "$A = 134 \\times 450 + 2 \\times 335 \\times 180$",
+          "$A = 60300 + 670 \\times 180$",
+          "$A = 60300 + 120600$",
+          "$A = 180900$",
+          "$A = 200000$",
+          "النتيجتان تحقّقان ما قيل: الجواب نعم."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "الجزء الثاني — كم دينارًا يبقى من الميزانية؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "مبلغ بالدينار",
+      "expectedAnswer": "19100",
+      "misconceptionSignatures": [
+        {
+          "value": "161730",
+          "id": "MISC-AQWAS-IGNORED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعية جملة جملة: كلّ جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب سلسلة عمليات تترجمها، وضع بين قوسين ما يجب حسابه أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب السلسلة بالترتيب الصحيح للعمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "$200000 - (134 \\times 450 + 2 \\times (215 + 120) \\times 180) = 19100$ .",
+        "incorrect": "القوسان ليسا زينة: ما بينهما يُحسب أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $200000 - (134 \\times 450 + 2 \\times (215 + 120) \\times 180)$",
+          "$A = 200000 - (134 \\times 450 + 2 \\times (215 + 120) \\times 180)$",
+          "$A = 200000 - (134 \\times 450 + 2 \\times 335 \\times 180)$",
+          "$A = 200000 - (60300 + 670 \\times 180)$",
+          "$A = 200000 - (60300 + 120600)$",
+          "$A = 200000 - 180900$",
+          "$A = 19100$"
+        ],
+        "result": "19100 \\text{ DA }"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "06",
+      "statement": "الجزء الثاني — برّر قرارك بسلسلة عمليات واحدة تُظهر أنّ الميزانية تكفي أو لا تكفي.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب على ورقتك مرحلة مرحلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اسأل: أيّ حساب يثبت ما تقول؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تذكر القاعدة المستعملة."
+        }
+      ],
+      "feedback": {
+        "correct": "يبقى $200000 - 180900 = 19100$ دينار: الميزانية تكفي.",
+        "incorrect": "قارن تبريرك بالحلّ النموذجي: الفكرة ثم الحساب الذي يدعمها."
+      },
+      "solution": {
+        "lines": [
+          "كلفة الأعمدة $134 \\times 450 = 60300$ ، وكلفة السلك $2 \\times (215 + 120) \\times 180 = 120600$ .",
+          "الكلفة الكلّية: $134 \\times 450 + 2 \\times (215 + 120) \\times 180 = 180900$ ، وهي أقلّ من $200000$ .",
+          "يبقى $200000 - 180900 = 19100$ دينار: الميزانية تكفي."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

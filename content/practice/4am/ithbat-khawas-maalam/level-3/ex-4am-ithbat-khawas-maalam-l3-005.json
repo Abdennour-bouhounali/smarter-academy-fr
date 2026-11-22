@@ -1,0 +1,133 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l3-005",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — قطران متقايسان فقط",
+    "estimatedMinutes": 2,
+    "tags": [
+      "أدلة كافية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_ithbat-khawas-maalam_P2",
+      "modelledOn": "ex-24"
+    }
+  },
+  "generator": {
+    "tool": "u1x-ithbat-khawas-maalam/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "$A(0\\,;\\,0)$ ، $B(4\\,;\\,0)$ ، $C(3\\,;\\,2)$ ، $D(1\\,;\\,2)$ في معلم متعامد ومتجانس (النقط معلّمة على المرصوفة). حسب كريم أن $AC^2 = BD^2 = 13$ فقال: «ABCD مستطيل».",
+    "figure": {
+      "grid": true,
+      "axes": true,
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          4,
+          0
+        ],
+        "C": [
+          3,
+          2
+        ],
+        "D": [
+          1,
+          2
+        ]
+      },
+      "ariaLabel": "الرباعي ABCD على مرصوفة",
+      "maxWidth": 400,
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "A"
+        ]
+      ],
+      "labels": {
+        "A": "sw",
+        "B": "se",
+        "C": "ne",
+        "D": "nw"
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "حكم كريم:",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح لأن قطريه متقايسان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "B",
+          "content": "صحيح لأنه يبدو مستطيلا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SHAKL-DALIL"
+        },
+        {
+          "id": "C",
+          "content": "ABCD مربّع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "D",
+          "content": "خطأ: $\\overrightarrow{AB} \\neq \\overrightarrow{DC}$ فليس متوازي أضلاع",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قبل المستطيل: هل هو متوازي أضلاع؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن مركبتي $\\overrightarrow{AB}$ و $\\overrightarrow{DC}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$(4\\,;\\,0)$ و $(2\\,;\\,0)$ ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "قطران متقايسان وحدهما لا يكفيان: هذا شبه منحرف متساوي الساقين.",
+        "incorrect": "نثبت متوازي الأضلاع أولا."
+      }
+    }
+  ]
+}

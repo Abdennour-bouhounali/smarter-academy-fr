@@ -1,0 +1,226 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l4-003",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — تبليط المرآب",
+    "estimatedMinutes": 10,
+    "tags": [
+      "علب",
+      "الحاصل + 1",
+      "ثمن"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 1,
+      "file": "1am-s1-101",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الرابع",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "قرّر السيّد كمال تبليط أرضية مرآب بيته بنفسه؛ يحتاج إلى 245 بلاطة، وتُباع البلاطات في علب تحتوي كل علبة على 12 بلاطة، وثمن العلبة 875,5 دج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب حاصل القسمة الإقليدية للعدد 245 على 12.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "19",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "21",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 245 من 12 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 12 دون أن نتجاوز 245."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$245 = 12 \\times 20 + 5$ و $5 < 12$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 12 فلا يتجاوز الجداء 245، والباقي عندئذ أصغر من 12."
+      },
+      "solution": {
+        "lines": [
+          "$12 \\times 20 = 240$ و $12 \\times 21 = 252$",
+          "$240 \\le 245 < 252$ ، إذن الحاصل هو 20."
+        ],
+        "result": "q = 20"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما عدد العلب التي سيشتريها السيّد كمال؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد العلب",
+      "expectedAnswer": "21",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-IQLIDIYA-NISYAN-ZIYADA"
+        },
+        {
+          "value": "5",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل تكفي المجموعات الكاملة لوضع كل شيء؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ماذا نفعل بالباقي إذا لم يكن معدومًا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$245 = 12 \\times 20 + 5$: يبقى 5 بعد المجموعات الكاملة، ويحتاج إلى علبة أخرى.",
+        "incorrect": "الحاصل يعدّ المجموعات الكاملة فقط؛ إذا بقي شيء فهو يحتاج إلى مجموعة إضافية."
+      },
+      "solution": {
+        "lines": [
+          "$245 = 12 \\times 20 + 5$",
+          "يبقى 5 بعد المجموعات الكاملة، فنحتاج إلى علبة أخرى:",
+          "$20 + 1 = 21$"
+        ],
+        "result": "21"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب ثمن شراء كل العلب.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "18385.5",
+      "misconceptionSignatures": [
+        {
+          "value": "17510",
+          "id": "MISC-IQLIDIYA-NISYAN-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثمن العلب = عدد العلب × ثمن العلبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$21 \\times 875{,}5 = 18385{,}5$ دج.",
+        "incorrect": "اضرب عدد العلب اللازمة (لا عدد العلب الكاملة) في ثمن العلبة."
+      },
+      "solution": {
+        "lines": [
+          "$21 \\times 875{,}5 = 18385{,}5$"
+        ],
+        "result": "18385{,}5 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "كم بلاطة تبقى دون استعمال بعد التبليط؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم بلاطة في العلب التي اشتراها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح منها ما يحتاج إليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$21 \\times 12 = 252$ و $252 - 245 = 7$.",
+        "incorrect": "احسب عدد البلاطات في كل العلب المشتراة، ثم اطرح 245."
+      },
+      "solution": {
+        "lines": [
+          "$21 \\times 12 = 252$",
+          "$252 - 245 = 7$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

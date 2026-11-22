@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-takbir-tasghir-l5-007",
+  "lessonCode": "takbir-tasghir",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — k من مساحتين",
+    "estimatedMinutes": 3,
+    "tags": [
+      "النسبة k",
+      "المساحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takbir-tasghir_P1",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "مساحة أوجه مجسّم $98\\,\\mathrm{cm}^2$ ، ومساحة أوجه تصغير له $50\\,\\mathrm{cm}^2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما نسبة التصغير $k$ ؟ (اكتبها كسرا)",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة مثل 1,25 ، أو كسر مثل 4/7)",
+      "expectedAnswer": "5/7",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAKBIR-JADHR",
+          "value": "25/49"
+        },
+        {
+          "id": "MISC-TAKBIR-JADHR",
+          "value": "25/98"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نسبة المساحتين $\\dfrac{50}{98}$ ، اختصرها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$k^2 = \\dfrac{25}{49}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ابحث عن العدد الموجب الذي مربّعه $\\dfrac{25}{49}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{50}{98} = \\dfrac{25}{49}$ و $k = \\dfrac{5}{7}$ .",
+        "incorrect": "نسبة المساحات هي $k^2$ ، فنأخذ جذرها."
+      }
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-dawaran-l3-004",
+  "lessonCode": "wadiya-idmajiya-dawaran",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — مقصورات العجلة الكبيرة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المسافة في المثلث القائم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-dawaran_P3",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "عجلة ملاهٍ نصف قطرها $10\\,\\mathrm{m}$ تحمل 12 مقصورة متباعدة بنفس المسافة على محيطها. ينتظر الأطفال دورهم في الصعود بهدوء واحترام."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المسافة المستقيمة بين مقصورتين متتاليتين بالمتر، مدوّرة إلى $0{,}01$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة (مدوّر إلى 0,01)",
+      "expectedAnswer": "5.18",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الزاوية المركزية $30^\\circ$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في المثلث القائم الزاوية عند المركز $15^\\circ$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$d = 2 \\times 10 \\times \\sin 15^\\circ$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$d = 20\\sin 15^\\circ \\approx 5{,}18\\,\\mathrm{m}$ .",
+        "incorrect": "الوتر لا القوس، ونصف الزاوية في المثلث القائم."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-MUNTAZAM-NISF-ZAWIYA"
+        },
+        {
+          "value": "5.24",
+          "id": "MISC-MUNTAZAM-QAWS-WATAR"
+        }
+      ],
+      "difficulty": 3
+    }
+  ]
+}

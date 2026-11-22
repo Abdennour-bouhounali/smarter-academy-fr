@@ -1,0 +1,238 @@
+{
+  "id": "ex-3am-tasawi-muqaranat-kasrayn-l2-008",
+  "lessonCode": "tasawi-muqaranat-kasrayn",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — رمي السلّة: من الأدقّ؟",
+    "estimatedMinutes": 9,
+    "tags": [
+      "تساوي كسرين",
+      "مقارنة كسرين",
+      "تعليل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في حصّة الرمي أصاب أمين 8 رميات من 9، وأصابت سلمى 9 رميات من 10."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "هل لهما الدقّة نفسها؟",
+      "statement": "هل $\\dfrac{8}{9} = \\dfrac{9}{10}$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأنّ $9 - 8 = 10 - 9$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-GAP"
+        },
+        {
+          "id": "B",
+          "content": "لا، لأنّ $8 \\times 10 \\neq 9 \\times 9$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نعم، لأنّ الكسرين متقاربان جدًّا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-EYE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكسران اللذان نختبر تساويهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الجداءين المتصالبين ثمّ قارنهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كسران متساويان إذا وفقط إذا تساوى جداءاهما المتصالبان؛ لا نحكم من الفروق ولا من البسطين وحدهما."
+        }
+      ],
+      "feedback": {
+        "correct": "لا، لأنّ $8 \\times 10 = 80$ يختلف عن $9 \\times 9 = 81$ .",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$8 \\times 10 = 80$ و $9 \\times 9 = 81$ .",
+          "الجداءان المتصالبان مختلفان، إذن الكسران غير متساويين."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "قارن $\\dfrac{8}{9}$ و $\\dfrac{9}{10}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{8}{9} = \\dfrac{9}{10}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-ADDSAME"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{8}{9} < \\dfrac{9}{10}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكسران المطلوب مقارنتهما؟ وهل مقاماهما أو بسطاهما متساويان؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسرين بنفس المقام، أو قارن الجداءين المتصالبين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من النتيجة بالطريقة الأخرى."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{8}{9} < \\dfrac{9}{10}$ .",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "المقام المشترك $90$ : $\\dfrac{8}{9} = \\dfrac{80}{90}$ و $\\dfrac{9}{10} = \\dfrac{81}{90}$ .",
+          "إذن $\\dfrac{8}{9} < \\dfrac{9}{10}$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "من الأدقّ منهما؟ برّر جوابك.",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجب أن تبرّره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل الجداءين المتصالبين أو مقامًا مشتركًا، وسمِّ الطريقة التي اخترتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$80 < 81$ ، إذن $\\dfrac{8}{9} < \\dfrac{9}{10}$ : سلمى هي الأدقّ.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "$8 \\times 10 = 80$ و $9 \\times 9 = 81$ .",
+          "$80 < 81$ ، إذن $\\dfrac{8}{9} < \\dfrac{9}{10}$ : سلمى هي الأدقّ."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "جد العدد $x$ حيث $\\dfrac{8}{9} = \\dfrac{x}{27}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tasawi-muqaranat-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "24",
+      "misconceptionSignatures": [
+        {
+          "value": "26",
+          "id": "MISC-TASAWI-ADDSAME"
+        },
+        {
+          "value": "243/8",
+          "id": "MISC-TASAWI-CROSSWRONG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في أيّ موضع يوجد العدد المجهول؟ وما الكسر الآخر في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كسران متساويان جداءاهما المتصالبان متساويان: اكتب المعادلة المناسبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة كتابة المساواة بعد التعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 24$ لأنّ $8 \\times 27 = 9 \\times x$ .",
+        "incorrect": "كسران متساويان جداءاهما المتصالبان متساويان: اكتب المعادلة بدقّة وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{8}{9} = \\dfrac{x}{27}$ ، إذن $8 \\times 27 = 9 \\times x$ .",
+          "$x = 24$ ."
+        ],
+        "result": "x = 24"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

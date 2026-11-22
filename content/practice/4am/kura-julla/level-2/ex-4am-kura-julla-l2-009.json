@@ -1,0 +1,74 @@
+{
+  "id": "ex-4am-kura-julla-l2-009",
+  "lessonCode": "kura-julla",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — الشكل البيضوي",
+    "estimatedMinutes": 3,
+    "tags": [
+      "التمثيل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_kura-julla_P3",
+      "modelledOn": "method-sphere-draw"
+    }
+  },
+  "statement": {
+    "content": "في تمثيل كرة نرسم داخل الكفاف شكلا بيضويا يلمسه يمينا ويسارا."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "هذا الشكل البيضوي يمثّل:",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "دائرة كبرى أفقية نراها مائلة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "دائرة صغرى",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-DAIRA-KUBRA"
+        },
+        {
+          "id": "C",
+          "content": "قطعا ناقصا مرسوما على سطح الكرة لا علاقة له بالدوائر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-TAMTHIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الشكل البيضوي يلمس الكفاف من الجهتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "دائرة نراها بشكل مائل تبدو بيضوية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ما نصف قطر هذه الدائرة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "إنها دائرة كبرى (نصف قطرها R) نراها بشكل مائل: لذلك تبدو بيضوية وتلمس الكفاف.",
+        "incorrect": "الشكل يلمس الكفاف: له نفس نصف قطر الكرة، فهو دائرة نراها مائلة."
+      }
+    }
+  ]
+}

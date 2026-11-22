@@ -1,0 +1,430 @@
+{
+  "id": "ex-4am-tanasub-muamil-l4-007",
+  "lessonCode": "tanasub-muamil",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2012 — حافلات النقل الحضري بسطيف",
+    "estimatedMinutes": 9,
+    "tags": [
+      "صيغتان",
+      "جدول",
+      "مبلغ ثابت"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tanasub-muamil_P2",
+      "modelledOn": "BEM 2012 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2012",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يقترح مدير مؤسسة للنقل الحضري بسطيف، تيسيرًا على التلاميذ والعمال، على زبائنه صيغتين لركوب الحافلة:\n– الصيغة الأولى: ثمن الرحلة الواحدة 30DA .\n– الصيغة الثانية: ثمن الرحلة الواحدة 20DA مع بطاقة اشتراك شهرية ثمنها 600DA .",
+    "table": {
+      "head": [
+        "عدد الرحلات في الشهر",
+        "20",
+        "…",
+        "…"
+      ],
+      "rows": [
+        [
+          "مبلغ الصيغة الأولى بـ DA",
+          "…",
+          "1200",
+          "…"
+        ],
+        [
+          "مبلغ الصيغة الثانية بـ DA",
+          "…",
+          "…",
+          "1600"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "انقل الجدول وأتممه.",
+      "statement": "مبلغ الصيغة الأولى من أجل 20 رحلة:",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "600",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب عدد الرحلات في ثمن الرحلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$30 \\times 20 = 600$ .",
+        "incorrect": "المبلغ = 30 × عدد الرحلات."
+      },
+      "solution": {
+        "lines": [
+          "$30 \\times 20 = 600$"
+        ],
+        "result": "600DA"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ا",
+      "statement": "مبلغ الصيغة الثانية من أجل 20 رحلة:",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "1000",
+      "misconceptionSignatures": [
+        {
+          "value": "400",
+          "id": "MISC-TANASUB-MABLAGH-THABIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الصيغة جيدا: ما الذي يُدفع عن كل وحدة، وما الذي يُدفع مرة واحدة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المبلغ = العدد × ثمن الوحدة + المبلغ الثابت."
+        }
+      ],
+      "feedback": {
+        "correct": "$20 \\times 20 + 600 = 1000$ .",
+        "incorrect": "لا تنس المبلغ الثابت: المبلغ = العدد × ثمن الوحدة + المبلغ الثابت."
+      },
+      "solution": {
+        "lines": [
+          "$20 \\times 20 + 600 = 1000$"
+        ],
+        "result": "1000DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ب",
+      "statement": "عدد الرحلات الذي يكون من أجله مبلغ الصيغة الأولى 1200DA :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الرحلات",
+      "expectedAnswer": "40",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم المبلغ على ثمن الرحلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1200}{30} = 40$ .",
+        "incorrect": "اقسم المبلغ على 30 ."
+      },
+      "solution": {
+        "lines": [
+          "$30 \\times x = 1200$",
+          "$x = \\dfrac{1200}{30} = 40$"
+        ],
+        "result": "40"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "ب",
+      "statement": "مبلغ الصيغة الثانية من أجل هذا العدد من الرحلات:",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "1400",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الصيغة جيدا: ما الذي يُدفع عن كل وحدة، وما الذي يُدفع مرة واحدة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المبلغ = العدد × ثمن الوحدة + المبلغ الثابت."
+        }
+      ],
+      "feedback": {
+        "correct": "$20 \\times 40 + 600 = 1400$ .",
+        "incorrect": "لا تنس المبلغ الثابت: المبلغ = العدد × ثمن الوحدة + المبلغ الثابت."
+      },
+      "solution": {
+        "lines": [
+          "$20 \\times 40 + 600 = 1400$"
+        ],
+        "result": "1400DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "01",
+      "sub": "ج",
+      "statement": "عدد الرحلات الذي يكون من أجله مبلغ الصيغة الثانية 1600DA :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الرحلات",
+      "expectedAnswer": "50",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح ثمن البطاقة من المبلغ أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اقسم على ثمن الرحلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1600 - 600}{20} = 50$ .",
+        "incorrect": "$20x + 600 = 1600$ : اطرح 600 ثم اقسم على 20 ."
+      },
+      "solution": {
+        "lines": [
+          "$20x + 600 = 1600$",
+          "$20x = 1000$",
+          "$x = 50$"
+        ],
+        "result": "50"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "01",
+      "sub": "ج",
+      "statement": "مبلغ الصيغة الأولى من أجل هذا العدد من الرحلات:",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "1500",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب عدد الرحلات في 30 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$30 \\times 50 = 1500$ .",
+        "incorrect": "المبلغ = 30 × عدد الرحلات."
+      },
+      "solution": {
+        "lines": [
+          "$30 \\times 50 = 1500$"
+        ],
+        "result": "1500DA"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q7",
+      "step": "02",
+      "sub": "ا",
+      "lead": "ليكن $x$ عدد الرحلات في الشهر، $y_1$ المبلغ المدفوع بالصيغة الأولى و $y_2$ المبلغ المدفوع بالصيغة الثانية.",
+      "statement": "عبّر عن $y_1$ بدلالة $x$ على الشكل $y_1 = a \\times x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "30",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في وضعية تناسبية: المقدار الثاني = معامل التناسبية × المقدار الأول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $a$ هو حاصل قسمة المقدار الثاني على المقدار الأول المقابل له."
+        }
+      ],
+      "feedback": {
+        "correct": "$y_1 = 30 \\times x$ .",
+        "incorrect": "المبلغ = ثمن الرحلة × عدد الرحلات."
+      },
+      "solution": {
+        "lines": [
+          "$y_1 = 30 \\times x$"
+        ],
+        "result": "y_1 = 30x"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q8",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل $y_2$ متناسب مع $x$ ؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TANASUB-MABLAGH-THABIT"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب حاصل القسمة $\\dfrac{y}{x}$ في كل عمود."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر ثمن بطاقة الاشتراك."
+        }
+      ],
+      "feedback": {
+        "correct": "حواصل القسمة مختلفة.",
+        "incorrect": "احسب حاصل القسمة في كل عمود قبل أن تحكم: تزايد المقدارين معا لا يكفي."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1000}{20} = 50$ ، $\\dfrac{1400}{40} = 35$ ، $\\dfrac{1600}{50} = 32$",
+          "حواصل القسمة مختلفة، إذن $y_2$ غير متناسب مع $x$ ."
+        ],
+        "result": "غير متناسب"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q9",
+      "step": "03",
+      "statement": "يقوم تلميذ بـ 46 رحلة في الشهر. ما هي الصيغة الأنسب له؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الصيغة الأولى",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الصيغة الثانية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TANASUB-MABLAGH-THABIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المبلغ المدفوع بكل صيغة من أجل 46 رحلة."
+        }
+      ],
+      "feedback": {
+        "correct": "الصيغة الأولى: 1380DA بدل 1520DA .",
+        "incorrect": "لا تنس ثمن بطاقة الاشتراك في الصيغة الثانية."
+      },
+      "solution": {
+        "lines": [
+          "$y_1 = 30 \\times 46 = 1380$",
+          "$y_2 = 20 \\times 46 + 600 = 1520$",
+          "$1380 < 1520$ ، إذن الصيغة الأولى أنسب."
+        ],
+        "result": "الصيغة الأولى"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

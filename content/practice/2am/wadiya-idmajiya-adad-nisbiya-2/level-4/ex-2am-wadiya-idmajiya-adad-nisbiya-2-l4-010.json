@@ -1,0 +1,302 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-adad-nisbiya-2-l4-010",
+  "lessonCode": "wadiya-idmajiya-adad-nisbiya-2",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — رواق في معلم",
+    "estimatedMinutes": 12,
+    "tags": [
+      "معلم",
+      "أطوال بالطرح",
+      "مساحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "06"
+    }
+  },
+  "statement": {
+    "content": "يمثّل مستطيل في معلم متعامد ومتجانس وحدته $1\\,\\mathrm{m}$ رواقًا : ثلاثة من رؤوسه معلومة والرابع مجهول."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "في معلم متعامد ومتجانس : $E(-9\\,;\\,3)$ و $F(1\\,;\\,3)$ و $G(1\\,;\\,0)$ . عيّن إحداثيي النقطة $D$ التي تجعل $EFGD$ مستطيلًا.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-9",
+        "y": "0"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "0",
+            "y": "-9"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أضلاع المستطيل توازي المحورين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$D$ تشارك $E$ في الفاصلة و $G$ في الترتيب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الفاصلة ثمّ الترتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "$D(-9\\,;\\,0)$ .",
+        "incorrect": "الفاصلة أوّلًا ثمّ الترتيب : راجع إشارة كلّ إحداثية."
+      },
+      "solution": {
+        "lines": [
+          "$E$ و $D$ على المستقيم الرأسي نفسه فلهما الفاصلة $-9$",
+          "$G$ و $D$ على المستقيم الأفقي نفسه فلهما الترتيب $0$",
+          "$D(-9\\,;\\,0)$"
+        ],
+        "result": "(-9\\,;\\,0)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "الرأسان $E$ و $F$ لهما الترتيب نفسه، وفاصلتاهما $-9$ و $1$ . احسب الطول $EF$ بطرح الفاصلتين.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "8"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-10"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطتان على جهة واحدة من المبدأ أم على جهتين مختلفتين ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى ناقص الفاصلة الصغرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا : تحقّق من الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$EF=10$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى $+1$ والفاصلة الصغرى $-9$",
+          "$EF=(+1)-(-9)=10$"
+        ],
+        "result": "10"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "الرأسان $F$ و $G$ لهما الفاصلة نفسها، وترتيباهما $3$ و $0$ . احسب الطول $FG$ بطرح الترتيبين.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-3"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطتان على جهة واحدة من المبدأ أم على جهتين مختلفتين ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى ناقص الفاصلة الصغرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا : تحقّق من الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$FG=3$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى $+3$ والفاصلة الصغرى $+0$",
+          "$FG=(+3)-0=3$"
+        ],
+        "result": "3"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "طول المستطيل $10\\,\\mathrm{m}$ وعرضه $3\\,\\mathrm{m}$ . ما مساحته بالمتر المربّع ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد وحدات المساحة",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-AREASUM",
+          "value": "13"
+        },
+        {
+          "id": "MISC-NUQTA2-AREAPERIM",
+          "value": "26"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة المستطيل جداء بعديه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب الطول في العرض."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تجمع البعدين."
+        }
+      ],
+      "feedback": {
+        "correct": "$30\\,\\mathrm{m}^2$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "المساحة $=10\\times 3$",
+          "$=30\\,\\mathrm{m}^2$"
+        ],
+        "result": "30"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "مساحة المستطيل $30\\,\\mathrm{m}^2$ وثمن تبليط المتر المربّع الواحد $260\\,\\mathrm{DA}$ . ما الثمن بالدينار ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح موجب",
+      "expectedAnswer": "7800",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-COSTADD",
+          "value": "290"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الثمن الإجمالي جداء العدد في ثمن الواحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب ولا تجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من رتبة النتيجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$7800\\,\\mathrm{DA}$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الثمن $=30\\times 260$",
+          "$=7800\\,\\mathrm{DA}$"
+        ],
+        "result": "7800"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

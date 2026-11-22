@@ -1,0 +1,264 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l3-003",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — ممر الحديقة",
+    "estimatedMinutes": 9,
+    "tags": [
+      "خاصية فيثاغورس",
+      "قطر مستطيل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لاحظ تلاميذ القسم أن زملاءهم يقطعون العشب في حديقة المدرسة المستطيلة $ABCD$ ($AB = 7{,}2\\,\\mathrm{m}$ ، $BC = 5{,}4\\,\\mathrm{m}$) ليختصروا الطريق، فاقترحوا تهيئة ممر حجري على القطر $[AC]$ حفاظا على العشب.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          7.2,
+          0
+        ],
+        "C": [
+          7.2,
+          5.4
+        ],
+        "D": [
+          0,
+          5.4
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "7,2 m"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "5,4 m"
+        },
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "A"
+        ],
+        {
+          "from": "A",
+          "to": "C",
+          "tone": "emerald",
+          "bold": true,
+          "dashed": true
+        }
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "B",
+          "C"
+        ]
+      ],
+      "ariaLabel": "حديقة مستطيلة ABCD حيث AB = 7,2 m و BC = 5,4 m، وممر قطري [AC]",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب طول الممر $AC$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "12.6",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "81",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولا مربع الطول، ثم خذ جذره التربيعي بالآلة الحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC^2 = 7{,}2^2 + 5{,}4^2 = 81$ ، إذن $AC = 9\\,\\mathrm{m}$ .",
+        "incorrect": "ابدأ بتحديد الوتر، ثم اكتب مساواة فيثاغورس، وتذكّر أن ما تحسبه أولا هو مربع الطول لا الطول نفسه."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $B$ ، حسب خاصية فيثاغورس: $AC^2 = AB^2 + BC^2$",
+          "$AC^2 = 7{,}2^2 + 5{,}4^2$",
+          "$AC^2 = 51{,}84 + 29{,}16 = 81$",
+          "$AC = \\sqrt{81} = 9\\,\\mathrm{m}$"
+        ],
+        "result": "AC = 9\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما طول المسار $A \\to B \\to C$ على حافتي الحديقة؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m",
+      "expectedAnswer": "12.6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسار يمرّ بالرأس $B$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الطولين."
+        }
+      ],
+      "feedback": {
+        "correct": "$7{,}2 + 5{,}4 = 12{,}6\\,\\mathrm{m}$ .",
+        "incorrect": "المسار على الحافتين هو مجموع الطولين $AB$ و $BC$ ."
+      },
+      "solution": {
+        "lines": [
+          "$AB + BC = 7{,}2 + 5{,}4 = 12{,}6\\,\\mathrm{m}$"
+        ],
+        "result": "12{,}6\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كم مترا يوفّر من يسلك الممر $[AC]$ بدل المسار على الحافتين؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m",
+      "expectedAnswer": "3.6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن طول المسارين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح طول الممر من طول المسار على الحافتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$12{,}6 - 9 = 3{,}6\\,\\mathrm{m}$ .",
+        "incorrect": "الفرق بين المسارين = المسار الطويل − الممر."
+      },
+      "solution": {
+        "lines": [
+          "$12{,}6 - 9 = 3{,}6\\,\\mathrm{m}$"
+        ],
+        "result": "3{,}6\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "برّر لماذا يكون الممر القطري دائما أقصر من المسار على الحافتين في هذه الحديقة.",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن $AC^2$ بـ $(AB + BC)^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يكفي أن نقارن مثلا: $9^2 = 81$ و $12{,}6^2 = 158{,}76$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "في مثلث قائم: الوتر أقصر من مجموع الضلعين الآخرين، فلا نجمع الأطوال لحسابه.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $B$ ، حسب خاصية فيثاغورس: $AC^2 = AB^2 + BC^2$ .",
+          "$(AB + BC)^2 = AB^2 + BC^2 + 2 \\times AB \\times BC$ ، وهو أكبر من $AB^2 + BC^2$ .",
+          "إذن $AC^2 < (AB + BC)^2$ ، ومنه $AC < AB + BC$ : الوتر أقصر من مجموع الضلعين الآخرين."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

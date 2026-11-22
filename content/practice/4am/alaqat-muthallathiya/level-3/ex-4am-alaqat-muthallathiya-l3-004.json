@@ -1,0 +1,178 @@
+{
+  "id": "ex-4am-alaqat-muthallathiya-l3-004",
+  "lessonCode": "alaqat-muthallathiya",
+  "level": 3,
+  "metadata": {
+    "title": "دوري الآن (ص 121) — زاوية جيب تمامها 3/4",
+    "estimatedMinutes": 8,
+    "tags": [
+      "إنشاء زاوية",
+      "العلاقات المثلثية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "now-121",
+      "page": 121,
+      "section": "دوري الآن",
+      "adaptedFrom": "ex-4am-alaqat-muthallathiya-l3-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$x$ قيس زاوية حادة حيث $\\cos x = \\dfrac{3}{4}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أنشئ، بدون استعمال منقلة، الزاوية التي قيسها $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جيب التمام = المجاور على الوتر: مثلث قائم ضلعه المجاور 3 ووتره 4."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الزاوية المطلوبة رأسها طرف القطعة التي طولها 3 (ليس رأس الزاوية القائمة)."
+        }
+      ],
+      "feedback": {
+        "correct": "$OA = 3\\,\\mathrm{cm}$ ، دائرة مركزها $A$ ونصف قطرها $4\\,\\mathrm{cm}$ تقطع الضلع الآخر في $B$ : $x = \\widehat{OAB}$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "ننشئ زاوية قائمة رأسها $O$ ، ونعيّن على أحد ضلعيها $A$ حيث $OA = 3\\,\\mathrm{cm}$ .",
+          "نرسم الدائرة التي مركزها $A$ ونصف قطرها $4\\,\\mathrm{cm}$ فتقطع الضلع الآخر في $B$ .",
+          "في المثلث $AOB$ القائم في $O$ : $\\cos\\widehat{OAB} = \\dfrac{OA}{AB} = \\dfrac{3}{4}$ ، إذن $x = \\widehat{OAB}$ ."
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب القيمة المضبوطة لـ $\\sin x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{\\sqrt{7}}{4}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{1}{4}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-JAMA-NISAB"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{7}{16}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-JADHR-NASI"
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{\\sqrt{7}}{16}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-TARBI-BASTI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العلاقة التي تربط جيب الزاوية وجيب تمامها هي $\\cos^2 x + \\sin^2 x = 1$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اعزل $\\sin^2 x$ ثم عوّض جيب التمام بقيمته، ولا تنس تربيع البسط والمقام معا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\sin x$ عدد موجب تماما: خذ الجذر التربيعي الموجب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin^2 x = 1 - \\dfrac{9}{16} = \\dfrac{7}{16}$ ، إذن $\\sin x = \\dfrac{\\sqrt{7}}{4}$ .",
+        "incorrect": "احسب $\\sin^2 x$ بالعلاقة بين المربعين، ثم خذ الجذر الموجب للبسط وللمقام."
+      },
+      "solution": {
+        "lines": [
+          "$\\sin^2 x = 1 - \\cos^2 x = 1 - \\dfrac{9}{16} = \\dfrac{7}{16}$",
+          "$\\sin x > 0$ ، إذن $\\sin x = \\dfrac{\\sqrt{7}}{\\sqrt{16}}$"
+        ],
+        "result": "\\sin x = \\dfrac{\\sqrt{7}}{4}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "تحقّق بحاسبة: أعط قيس $x$ بالتدوير إلى $0{,}1$ من الدرجة.",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: القيس بالدرجة مدوّرا إلى 0,1",
+      "expectedAnswer": "41.4",
+      "misconceptionSignatures": [
+        {
+          "value": "48.6",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اللمسة العكسية لجيب التمام والحاسبة مبرمجة بالدرجة."
+        }
+      ],
+      "feedback": {
+        "correct": "⁦2nd cos⁻¹ ( 3 ÷ 4 ) =⁩ يعطي $41{,}409\\ldots$ ، إذن $x \\approx 41{,}4^{\\circ}$ (وبالمنقلة حوالي $41^{\\circ}$).",
+        "incorrect": "استعمل اللمسة العكسية لجيب التمام لا للجيب."
+      },
+      "solution": {
+        "lines": [
+          "بالحاسبة: ⁦2nd cos⁻¹ ( 3 ÷ 4 ) =⁩ يظهر $41{,}40962211$"
+        ],
+        "result": "x \\approx 41{,}4^{\\circ}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

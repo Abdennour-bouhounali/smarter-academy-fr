@@ -1,0 +1,65 @@
+{
+  "id": "ex-4am-khawas-dawaran-l3-005",
+  "lessonCode": "khawas-dawaran",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — صورة رأس مثلث",
+    "estimatedMinutes": 3,
+    "tags": [
+      "صورة نقطة",
+      "معلم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_khawas-dawaran_P3",
+      "modelledOn": "ex-4"
+    }
+  },
+  "generator": {
+    "tool": "u13-khawas-dawaran/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "في معلم: $\\Omega(2\\,;\\,1)$ و $C(5\\,;\\,3)$ رأس مثلث. C′ صورة C بالدوران الذي مركزه Ω وزاويته $90^\\circ$ في الاتجاه المباشر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا C′:",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x\\,;\\,y)$ : الفاصلة ثم الترتيبة (عدد صحيح أو كسر مثل 3/2)",
+      "expectedAnswer": {
+        "x": "0",
+        "y": "4"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من Ω إلى C: 3 يمينا و 2 نحو الأعلى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عكس عقارب الساعة: الحركة (a ; b) تصبح (−b ; a)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انقلها من Ω."
+        }
+      ],
+      "feedback": {
+        "correct": "$C'(0\\,;\\,4)$ .",
+        "incorrect": "الحركة من Ω (3 ; 2) تصبح (−2 ; 3)، ثم نضيفها إلى Ω."
+      }
+    }
+  ]
+}

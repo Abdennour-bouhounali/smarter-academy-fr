@@ -1,0 +1,206 @@
+{
+  "id": "ex-4am-majdulat-ihsaiya-l2-010",
+  "lessonCode": "majdulat-ihsaiya",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2020 — جني الزيتون بتيزي وزو",
+    "estimatedMinutes": 4,
+    "tags": [
+      "دستور",
+      "مجال",
+      "متوسط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_majdulat-ihsaiya_P2",
+      "modelledOn": "BEM 2020 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2020",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "حجز صاحب بستان زيتون بتيزي وزو، الشاكر لتعب عماله، في العمود B من مجدول كمية الزيتون (بالكيلوغرام) التي جناها كل عامل من عماله الثمانية في يوم واحد، وفي العمود A رقم العامل:",
+    "table": {
+      "head": [
+        "",
+        "A",
+        "B"
+      ],
+      "rows": [
+        [
+          "1",
+          "العامل",
+          "الكمية (kg)"
+        ],
+        [
+          "2",
+          "1",
+          "85"
+        ],
+        [
+          "3",
+          "2",
+          "120"
+        ],
+        [
+          "4",
+          "3",
+          "96"
+        ],
+        [
+          "5",
+          "4",
+          "110"
+        ],
+        [
+          "6",
+          "5",
+          "74"
+        ],
+        [
+          "7",
+          "6",
+          "102"
+        ],
+        [
+          "8",
+          "7",
+          "88"
+        ],
+        [
+          "9",
+          "8",
+          "125"
+        ]
+      ],
+      "sheet": true
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن الدستور الذي يُحجز في الخلية D2 ليُظهر متوسط الكمية التي جناها العامل الواحد.",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "⁦=MOYENNE(A2:B9)⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MAJAL-KHALIYA"
+        },
+        {
+          "id": "B",
+          "content": "⁦=MEDIANE(B2:B9)⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-WASIT-MUTAWASSIT"
+        },
+        {
+          "id": "C",
+          "content": "⁦MOYENNE(B2:B9)⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-DUSTUR-BILA-ISHARA"
+        },
+        {
+          "id": "D",
+          "content": "⁦=MOYENNE(B2:B9)⁩",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل دستور يبدأ بالإشارة « ⁦=⁩ »، ثم اسم الدالة، ثم المجال بين قوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حدّد أولا المجال الذي يضمّ كل القيم المطلوبة، ولا شيئا غيرها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم اختر الدالة: MAX و MIN للمدى، MEDIANE للوسيط، MOYENNE للمتوسط، MODE للمنوال."
+        }
+      ],
+      "feedback": {
+        "correct": "⁦=MOYENNE(B2:B9)⁩ يُظهر 100 .",
+        "incorrect": "راجع ثلاثة أشياء: الإشارة « ⁦=⁩ » في البداية، الدالة المناسبة للمؤشّر، والمجال الذي يضمّ كل القيم."
+      },
+      "solution": {
+        "lines": [
+          "الكميات في العمود B من الخلية B2 إلى الخلية B9 ؛ العمود A فيه أرقام العمال، فلا نُدخله في المجال.",
+          "المتوسط يحسبه ⁦=MOYENNE(B2:B9)⁩ ؛ الدستور يبدأ بالإشارة « ⁦=⁩ »."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب العدد الذي يظهر في الخلية D2 .",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة إن لزم)",
+      "expectedAnswer": "100",
+      "misconceptionSignatures": [
+        {
+          "value": "99",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MOYENNE(…)⁩ يقسم مجموع القيم العددية في المجال على عددها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع القيم العددية الموجودة في المجال، وعُدّها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المتوسط = مجموع القيم ÷ عددها."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{800}{8} = 100$ .",
+        "incorrect": "اجمع كل القيم العددية التي في المجال، ثم اقسم المجموع على عددها (لا على عدد آخر)."
+      },
+      "solution": {
+        "lines": [
+          "مجموع القيم: $85 + 120 + 96 + 110 + 74 + 102 + 88 + 125 = 800$ ، وعددها 8 .",
+          "$\\dfrac{800}{8} = 100$",
+          "إذن يُظهر الدستور العدد 100 ."
+        ],
+        "result": "100"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

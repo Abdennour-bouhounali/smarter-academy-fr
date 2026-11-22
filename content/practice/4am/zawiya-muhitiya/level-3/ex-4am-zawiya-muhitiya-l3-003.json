@@ -1,0 +1,177 @@
+{
+  "id": "ex-4am-zawiya-muhitiya-l3-003",
+  "lessonCode": "zawiya-muhitiya",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 12 — الزاوية في M",
+    "estimatedMinutes": 4,
+    "tags": [
+      "زاوية رأسها داخل الدائرة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-12",
+      "page": 159,
+      "section": "الزوايا المحيطية و الزوايا المركزية",
+      "number": 12
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 159): (P) دائرة مركزها O و [BD] قطر لها، (AB) و (CD) متقاطعان في M (الشكل). على الشكل: $\\widehat{COB} = \\widehat{AOD} = 60^\\circ$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "B": [
+          -2.0,
+          0.0
+        ],
+        "D": [
+          2.0,
+          0.0
+        ],
+        "C": [
+          -1.0,
+          1.7321
+        ],
+        "A": [
+          1.0,
+          1.7321
+        ],
+        "M": [
+          0.0,
+          1.1547
+        ]
+      },
+      "circles": [
+        {
+          "center": "O",
+          "radius": 2
+        }
+      ],
+      "segments": [
+        [
+          "B",
+          "D"
+        ],
+        {
+          "from": "A",
+          "to": "B",
+          "tone": "amber"
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "tone": "emerald"
+        }
+      ],
+      "labels": {
+        "M": "n",
+        "O": "s"
+      },
+      "ariaLabel": "دائرة (P) مركزها O وقطرها [BD]، والوتران [AB] و [CD] يتقاطعان في M داخل الدائرة",
+      "maxWidth": 480
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "برهن أن:",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\widehat{AMD} = \\dfrac{1}{2}\\widehat{AOD}$ لأنها محيطية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-RAS"
+        },
+        {
+          "id": "B",
+          "content": "$\\widehat{AMD} = \\widehat{CDB} + \\widehat{ABD}$ (زاوية خارجية للمثلث MBD)",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\widehat{AMD} = \\widehat{ABD}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-JUZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالزوايا التي تعطيها خاصيتا الزاوية المحيطية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم استعمل مجموع أقياس زوايا المثلث، أو الزاوية المستقيمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل زاوية بدلالة القوس الذي تحصره قبل أن تحسب."
+        }
+      ],
+      "feedback": {
+        "correct": "في المثلث MBD: $\\widehat{AMD} = 180^\\circ - \\widehat{BMD} = \\widehat{MBD} + \\widehat{MDB}$ .",
+        "incorrect": "رأس AMD داخل الدائرة: ليست محيطية."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "استنتج قيس $\\widehat{CMB}$ بالدرجة.",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "60",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوس الذي تحصره كل زاوية: هل هو نفس القوس؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الزاويتين: أيهما أكبر، المركزية أم المحيطية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قيس الزاوية المحيطية نصف قيس الزاوية المركزية التي تحصر معها نفس القوس."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{CMB} = \\dfrac{60^\\circ + 60^\\circ}{2} = 60^\\circ$ .",
+        "incorrect": "$\\widehat{CDB} = \\dfrac{1}{2}\\widehat{COB}$ و $\\widehat{ABD} = \\dfrac{1}{2}\\widehat{AOD}$ ."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-RAS",
+          "value": "30"
+        },
+        {
+          "id": "MISC-MUHITIYA-MUSAWIYA",
+          "value": "120"
+        }
+      ]
+    }
+  ]
+}

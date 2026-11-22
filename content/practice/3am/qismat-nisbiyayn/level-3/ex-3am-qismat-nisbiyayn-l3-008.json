@@ -1,0 +1,261 @@
+{
+  "id": "ex-3am-qismat-nisbiyayn-l3-008",
+  "lessonCode": "qismat-nisbiyayn",
+  "level": 3,
+  "metadata": {
+    "title": "هرم الجداءات",
+    "estimatedMinutes": 5,
+    "tags": [
+      "هرم أعداد",
+      "حاصل القسمة",
+      "جداء"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-21",
+      "page": 15,
+      "section": "ضرب الأعداد النسبية",
+      "number": 21
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في هرم الأعداد الآتي كل خانة تساوي جداء الخانتين اللتين تحتها مباشرة. الخانات التي تحمل علامة « ؟ » مجهولة.",
+    "table": {
+      "head": [
+        "الطابق",
+        "الخانة 1",
+        "الخانة 2",
+        "الخانة 3"
+      ],
+      "rows": [
+        [
+          "الأول (القاعدة)",
+          "؟",
+          "$−4$",
+          "$5$"
+        ],
+        [
+          "الثاني",
+          "$12$",
+          "؟",
+          ""
+        ],
+        [
+          "الثالث (القمة)",
+          "؟",
+          "",
+          ""
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما العدد في الخانة 1 من الطابق الأول؟",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "-1/3",
+          "id": "MISC-QISMA-ORDER"
+        },
+        {
+          "value": "16",
+          "id": "MISC-QISMA-DIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل خانة هي جداء الخانتين اللتين تحتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا عُلمت الخانة وأحد عاملَيها فالعامل الآخر هو حاصل قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالضرب بعد أن تملأ الخانة."
+        }
+      ],
+      "feedback": {
+        "correct": "الخانة تحمل العدد $−3$ .",
+        "incorrect": "راجع قاعدة الهرم: الخانة جداء الخانتين اللتين تحتها، ثم استعمل القسمة."
+      },
+      "solution": {
+        "lines": [
+          "الخانة $12$ هي جداء العدد المجهول في $−4$ .",
+          "المجهول هو $12 \\div (−4) = −3$ ."
+        ],
+        "result": "−3"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما العدد في الخانة 2 من الطابق الثاني؟",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-20",
+      "misconceptionSignatures": [],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل خانة هي جداء الخانتين اللتين تحتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا عُلمت الخانة وأحد عاملَيها فالعامل الآخر هو حاصل قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالضرب بعد أن تملأ الخانة."
+        }
+      ],
+      "feedback": {
+        "correct": "الخانة تحمل العدد $−20$ .",
+        "incorrect": "راجع قاعدة الهرم: الخانة جداء الخانتين اللتين تحتها، ثم استعمل القسمة."
+      },
+      "solution": {
+        "lines": [
+          "هذه الخانة هي جداء $−4$ و $5$ : $(−4) \\times 5 = −20$ ."
+        ],
+        "result": "−20"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما العدد في خانة القمة؟",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-240",
+      "misconceptionSignatures": [],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل خانة هي جداء الخانتين اللتين تحتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا عُلمت الخانة وأحد عاملَيها فالعامل الآخر هو حاصل قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالضرب بعد أن تملأ الخانة."
+        }
+      ],
+      "feedback": {
+        "correct": "الخانة تحمل العدد $−240$ .",
+        "incorrect": "راجع قاعدة الهرم: الخانة جداء الخانتين اللتين تحتها، ثم استعمل القسمة."
+      },
+      "solution": {
+        "lines": [
+          "القمة هي جداء $12$ و $−20$ : $12 \\times (−20) = −240$ ."
+        ],
+        "result": "−240"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "ما حاصل قسمة عدد القمة على عدد الخانة $12$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-20",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-QISMA-SIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل خانة هي جداء الخانتين اللتين تحتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا عُلمت الخانة وأحد عاملَيها فالعامل الآخر هو حاصل قسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالضرب بعد أن تملأ الخانة."
+        }
+      ],
+      "feedback": {
+        "correct": "الخانة تحمل العدد $−20$ .",
+        "incorrect": "راجع قاعدة الهرم: الخانة جداء الخانتين اللتين تحتها، ثم استعمل القسمة."
+      },
+      "solution": {
+        "lines": [
+          "حاصل القسمة هو $(−240) \\div 12 = −20$ ، وهو العدد في الخانة الأخرى من الطابق الثاني."
+        ],
+        "result": "−20"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

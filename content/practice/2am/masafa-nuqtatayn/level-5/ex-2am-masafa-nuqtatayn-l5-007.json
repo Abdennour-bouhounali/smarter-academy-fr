@@ -1,0 +1,248 @@
+{
+  "id": "ex-2am-masafa-nuqtatayn-l5-007",
+  "lessonCode": "masafa-nuqtatayn",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مصعد بين طوابق تحت الأرض وفوقها",
+    "estimatedMinutes": 12,
+    "tags": [
+      "مسافة بين نقطتين",
+      "تدريجة",
+      "نقطة على بعد معلوم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "مصعد عمارة يمرّ بطوابق تحت الأرض وفوقها، وارتفاع كلّ طابق $3\\,\\mathrm{m}$ . ينطلق من الطابق السفلي الثاني على الارتفاع $-6\\,\\mathrm{m}$ ويصل إلى الطابق الرابع على الارتفاع $+12\\,\\mathrm{m}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "على مستقيم مدرّج قيمة تدريجته الواحدة $3$ ، النقطتان $D(-6)$ و $U(+12)$ . كم تدريجة تفصل بين النقطتين ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح موجب",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أوّلًا المسافة بين النقطتين من فاصلتيهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثمّ اسأل: كم مرّة تتّسع قيمة التدريجة الواحدة في هذه المسافة؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: عدد التدريجات × قيمة التدريجة = المسافة."
+        }
+      ],
+      "feedback": {
+        "correct": "تفصل بينهما $6$ تدريجة.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$DU=18$",
+          "$18\\div3=6$"
+        ],
+        "result": "6"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "النقطتان $D(-6)$ و $U(+12)$ على مستقيم مدرّج. احسب المسافة $DU$ .",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "18",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "6"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-18"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن أوّلًا أيّ الفاصلتين أكبر: الأكبر هي الأبعد إلى اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى مطروحًا منها الصغرى؛ وإذا كانت الصغرى سالبة فنطرح عددًا سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا: إن وجدت ناتجًا سالبًا فقد قلبت ترتيب الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$DU=18$ : النقطتان على جهتين من المبدأ فنجمع المسافتين إلى الصفر.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى هي $+12$ والفاصلة الصغرى هي $-6$",
+          "$DU=(+12)-(-6)=(+12)+(+6)=18$"
+        ],
+        "result": "18"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ينزل المصعد من الطابق الرابع $15\\,\\mathrm{m}$ نحو الأسفل. النقطة $N$ تنتمي إلى المستقيم المدرّج نفسه، $UN=15$ ، وهي على يسار النقطة $U(+12)$ . ما فاصلة $N$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SIGNSWAP",
+          "value": "3"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة المعطاة هي المسافة بين النقطتين: النقطة المطلوبة تبعد بها عن النقطة المعلومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كانت على اليمين أضفنا المسافة إلى الفاصلة المعلومة، وإذا كانت على اليسار طرحناها منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب المسافة بين النقطتين انطلاقًا من فاصلتيهما."
+        }
+      ],
+      "feedback": {
+        "correct": "فاصلة $N$ هي $-3$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "النقطة على اليسار فنطرح المسافة من فاصلة $U$",
+          "$+12-15=-3$"
+        ],
+        "result": "-3"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "ما فاصلات النقط التي تبعد $15$ عن النقطة $M(+12)$ على المستقيم المدرّج ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-3$ و $+27$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$-27$ و $+3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MASAFA2-SIGNSWAP"
+        },
+        {
+          "id": "C",
+          "content": "$+27$ فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MASAFA2-ONEANSWER"
+        },
+        {
+          "id": "D",
+          "content": "$-3$ فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MASAFA2-ONEANSWER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم المستقيم وعيّن النقطة المعلومة، ثمّ تحرّك بالمسافة المعطاة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اسأل نفسك: في أيّ الجهتين يمكن أن تتحرّك انطلاقًا من النقطة المعلومة؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب المسافة بين كلّ نقطة وجدتها والنقطة المعلومة."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطتان المطلوبتان فاصلتاهما $-3$ و $+27$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "نضيف المسافة إلى الفاصلة: $+12+15=+27$",
+          "ونطرحها منها: $+12-15=-3$"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

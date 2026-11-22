@@ -1,0 +1,190 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l2-007",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 2,
+  "metadata": {
+    "title": "أطباق البيض",
+    "estimatedMinutes": 6,
+    "tags": [
+      "أطباق",
+      "الحاصل + 1"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-20",
+      "page": 46,
+      "section": "أتمرّن",
+      "number": 20
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "جمع مربّي دواجن 250 بيضة ووضعها بعناية في أطباق، يتّسع كل طبق لـ 30 بيضة، فملأ الأطباق كلها إلا الأخير."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "كم طبقًا مملوءًا؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الأطباق",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "7",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "9",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 250 من 30 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 30 دون أن نتجاوز 250."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$250 = 30 \\times 8 + 10$ و $10 < 30$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 30 فلا يتجاوز الجداء 250، والباقي عندئذ أصغر من 30."
+      },
+      "solution": {
+        "lines": [
+          "$30 \\times 8 = 240$ و $30 \\times 9 = 270$",
+          "$240 \\le 250 < 270$ ، إذن الحاصل هو 8."
+        ],
+        "result": "q = 8"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم بيضة وضع في آخر طبق؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد البيض",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "40",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 250."
+        }
+      ],
+      "feedback": {
+        "correct": "$250 - 30 \\times 8 = 250 - 240 = 10$ ، و $10 < 30$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 30."
+      },
+      "solution": {
+        "lines": [
+          "$250 = 30 \\times 8 + 10$",
+          "$10 < 30$ ، إذن الباقي هو 10."
+        ],
+        "result": "r = 10"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كم طبقًا استعمل في المجموع؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد الأطباق",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-IQLIDIYA-NISYAN-ZIYADA"
+        },
+        {
+          "value": "10",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل تكفي المجموعات الكاملة لوضع كل شيء؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ماذا نفعل بالباقي إذا لم يكن معدومًا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$250 = 30 \\times 8 + 10$: يبقى 10 بعد المجموعات الكاملة، ويحتاج إلى طبق آخر.",
+        "incorrect": "الحاصل يعدّ المجموعات الكاملة فقط؛ إذا بقي شيء فهو يحتاج إلى مجموعة إضافية."
+      },
+      "solution": {
+        "lines": [
+          "$250 = 30 \\times 8 + 10$",
+          "يبقى 10 بعد المجموعات الكاملة، فنحتاج إلى طبق آخر:",
+          "$8 + 1 = 9$"
+        ],
+        "result": "9"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

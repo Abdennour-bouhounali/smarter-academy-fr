@@ -1,224 +1,193 @@
-import { useContext, useMemo, useState, useEffect } from 'react';
+import { lazy, Suspense, useContext, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Play, ArrowRight, Flame, CircleCheckBig, Zap, Compass, Crown, BookOpen } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { motion, MotionConfig } from 'framer-motion';
+import { Compass } from 'lucide-react';
 import { courseLevels, getAllGrades } from '@smarter-academy/core';
+import { ArrowForward } from '../../components/common/DirectionalIcons';
 import { AuthContext } from '../../context/AuthContext';
-import { getResumeLesson } from '../../lessons/common/utils/progress/getResumeLesson';
+import { useStudyContext } from '../../context/StudyContextContext';
+import { getResumeLesson, getResumeModulePath } from '../../lessons/common/utils/progress/getResumeLesson';
 import { getStudentActivity } from '../../lessons/common/utils/progress/getStudentActivity';
+import { LESSON_PROGRESS_SYNCED_EVENT } from '../../hooks/useLessonProgressSync';
 import { useDocumentMeta } from '../../hooks/useDocumentMeta';
-import { getDisplayName } from '../../utils/userDisplay';
-import DiagnosticInviteBanner from '../../components/diagnostic/DiagnosticInviteBanner';
-import StatTile from '../../components/common/StatTile';
 import { usePremiumStatus } from '../../hooks/usePremiumStatus';
+import { useContentAvailability } from '../../context/ContentAvailabilityContext';
+import { useLearningProfile } from '../../lessons/common/hooks/useLearningProfile';
+import { getDisplayName } from '../../utils/userDisplay';
+import { buildProgressionTree } from '../../features/progression/buildProgressionTree';
+import { pickCurriculumContext, indexTreeByLesson } from '../../features/home/curriculumContext';
+import HomeGreeting from '../../features/home/components/HomeGreeting';
+import JourneyStats from '../../features/home/components/JourneyStats';
+import CurriculumPreview from '../../features/home/components/CurriculumPreview';
+import RecentLearning from '../../features/home/components/RecentLearning';
+import LearningSpaceNav from '../../features/home/components/LearningSpaceNav';
+import PremiumCard from '../../features/home/components/PremiumCard';
+import DailyChallengeCard from '../../features/home/components/DailyChallengeCard';
+import { fetchCompass } from '../../services/compassService';
+import { usePrefetchLessonRuntime } from '../../lessons/common/lessonRuntimeLoader';
 
+// « بوصلتي » sur l'accueil (YEAR_COMPASS.md §6bis) : un lot PARESSEUX — réseau + calendrier n'entrent
+// pas dans le lot de l'accueil ; la page s'affiche, puis la section arrive.
+const CompassHomeSections = lazy(() => import('../../features/home/compass/CompassHomeSections'));
 
+function localToday() {
+  const d = new Date();
+  const p = (n) => String(n).padStart(2, '0');
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
+}
+
+/**
+ * « 🏠 فضائي » — l'ACCUEIL de l'espace élève, MENÉ PAR « بوصلتي » (YEAR_COMPASS.md §6bis ; maquette
+ * validée par le propriétaire le 2026-11-09, l'ancien accueil a été retiré le même jour).
+ *
+ *   qui je suis                 → salutation
+ *   ████ ce que je fais LÀ ████ → la section بوصلتي (CompassHomeSections) : la jauge, « مهمّة اليوم »,
+ *                                  la semaine et les bandes, la leçon + le défi, la bande de l'année.
+ *                                  Une classe où la jauge n'est pas encore ouverte voit la même page
+ *                                  sans la jauge (état `off`).
+ *   tout le reste                → replié sous « المزيد », jamais supprimé : quatre repères, la tranche
+ *                                  du programme, les leçons récentes, mes espaces, premium, autres classes.
+ *
+ * La page N'INVENTE rien : la reprise vient de getResumeLesson (toutes classes, ARCHITECTURE.md §10),
+ * l'activité de getStudentActivity, la maîtrise du profil serveur (useLearningProfile), l'arbre des
+ * mêmes modules que « تقدّمي », l'état de بوصلتي du serveur (GET /compass).
+ */
 export default function StudentHome() {
-  useDocumentMeta('Mon espace', 'Ton tableau de bord Smarter Academy — reprends ta leçon, suis ta progression.');
-  const { user } = useContext(AuthContext);
+  // Cette page mène à des leçons : leur runtime partagé arrive pendant l'inactivité (lessonRuntimeLoader.js).
+  usePrefetchLessonRuntime();
+  const { t } = useTranslation('student');
+  const { t: tc } = useTranslation('common');
+  useDocumentMeta(t('home.metaTitle'), t('home.metaDescription'));
+  const { user, token } = useContext(AuthContext);
+  const { studyContext } = useStudyContext();
   const { isPremium, canSeeUpgrade } = usePremiumStatus();
+  // Le palier vient du serveur (lessons.tier, décidé par l'administrateur) : le catalogue n'en porte aucun.
+  const { isLessonPremium } = useContentAvailability();
 
-  const [lastFocus, setLastFocus] = useState(Date.now());
+  // L'état de « بوصلتي » (serveur). Une erreur réseau laisse l'accueil sans la jauge (état `off`), jamais vide.
+  const [compass, setCompass] = useState(null);
+  const [compassLoaded, setCompassLoaded] = useState(false);
   useEffect(() => {
-    const onFocus = () => setLastFocus(Date.now());
-    window.addEventListener('focus', onFocus);
-    return () => window.removeEventListener('focus', onFocus);
+    if (!token) return undefined;
+    let cancelled = false;
+    fetchCompass(token)
+      .then((c) => { if (!cancelled) setCompass(c); })
+      .catch(() => {})
+      .finally(() => { if (!cancelled) setCompassLoaded(true); });
+    return () => { cancelled = true; };
+  }, [token]);
+  const today = useMemo(() => localToday(), []);
+  const classroom = studyContext?.mode === 'classroom' ? (studyContext.primary ?? studyContext.classrooms?.[0] ?? null) : null;
+
+  // L'activité est lue dans le stockage local au montage ; la fusion des lignes du serveur et le retour sur
+  // l'onglet la rendent obsolète : `tick` force le recalcul (même réflexe que « تقدّمي »).
+  const [tick, setTick] = useState(0);
+  useEffect(() => {
+    const bump = () => setTick((n) => n + 1);
+    window.addEventListener(LESSON_PROGRESS_SYNCED_EVENT, bump);
+    window.addEventListener('focus', bump);
+    return () => {
+      window.removeEventListener(LESSON_PROGRESS_SYNCED_EVENT, bump);
+      window.removeEventListener('focus', bump);
+    };
   }, []);
 
-  const grade = useMemo(() => getAllGrades().find((g) => g.id === user?.grade), [user?.grade]);
-  const level = grade ? courseLevels.find((l) => l.id === grade.levelId) : null;
+  const gradeId = user?.grade || null;
+  const grade = useMemo(() => getAllGrades().find((g) => g.id === gradeId), [gradeId]);
 
-  // Deliberately searches across all grades, matching getResumeLesson's
-  // documented, considered behavior (ARCHITECTURE.md §10) — not re-scoped
-  // to the student's current grade.
+  // Toutes classes confondues, comme getResumeLesson le documente (ARCHITECTURE.md §10).
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const continueCourse = useMemo(() => getResumeLesson(courseLevels), [lastFocus]);
-
+  const continueCourse = useMemo(() => getResumeLesson(courseLevels), [tick]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const gradeActivity = useMemo(() => getStudentActivity(courseLevels, { gradeId: user?.grade }), [user?.grade, lastFocus]);
+  const allActivity = useMemo(() => getStudentActivity(courseLevels), [tick]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const gradeActivity = useMemo(() => getStudentActivity(courseLevels, { gradeId: user?.grade }), [user?.grade, tick]);
+  // Le dernier passage dans CHAQUE leçon (toutes classes : une révision peut viser la 3AM) — coche les tâches de la semaine.
+  const visits = useMemo(() => Object.fromEntries(allActivity.lessons.map((l) => [l.lesson.id, l.lastVisitedAt])), [allActivity]);
 
-  const premiumCount = gradeActivity.lessons.filter((l) => l.lesson.tier === 'premium').length;
-  const firstLesson = gradeActivity.lessons[0];
+  // La maîtrise de SA classe (filtrée par le serveur, `?grade=`), pour les repères repliés.
+  const { profile, status, reload } = useLearningProfile(gradeId ? { grade: gradeId } : undefined);
+  const currentMastery = useMemo(() => {
+    const all = profile?.currentMastery || [];
+    return gradeId ? all.filter((g) => g.grade === gradeId) : all;
+  }, [profile, gradeId]);
+  const tree = useMemo(
+    () => buildProgressionTree(courseLevels, gradeActivity, currentMastery, { gradeId, getModulePath: getResumeModulePath }),
+    [gradeActivity, currentMastery, gradeId],
+  );
+  const treeIndex = useMemo(() => indexTreeByLesson(tree), [tree]);
+  const whereContext = useMemo(() => pickCurriculumContext(tree, continueCourse?.course?.id ?? null), [tree, continueCourse]);
+  const recent = gradeActivity.recentlyActive.slice(0, 3);
+  const premiumCount = gradeActivity.lessons.filter((l) => isLessonPremium(l.lesson.id)).length;
+
+  const enter = (delay = 0) => ({
+    initial: { opacity: 0, y: 12 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.32, ease: [0.22, 1, 0.36, 1], delay },
+  });
+  const skeleton = <div className="h-64 animate-pulse rounded-3xl bg-white/70" aria-hidden="true" />;
 
   return (
-    <div className="sa-page py-8 sm:py-10">
-      {/* Greeting */}
-      <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="mb-8">
-        <p className="font-mono-jetbrains text-blue-500 text-xs font-semibold tracking-widest uppercase mb-2">
-          Apprendre → Pratiquer → Progresser → Maîtriser
-        </p>
-        <h1 className="font-space font-bold text-2xl sm:text-3xl text-slate-900">
-          Bonjour {getDisplayName(user)} 👋
-        </h1>
-        <p className="font-inter text-slate-500 text-sm mt-1">
-          {grade ? `${level?.title} ${grade.name}` : 'Choisis ta classe dans ton profil pour commencer.'}
-        </p>
-      </motion.div>
+    <MotionConfig reducedMotion="user">
+      <div className="sa-page py-8 sm:py-10" aria-busy={!compassLoaded} data-student-home>
+        <motion.div {...enter(0)} className="mb-6 sm:mb-7">
+          <HomeGreeting name={getDisplayName(user)} gradeName={grade?.name || null} />
+        </motion.div>
 
-      <DiagnosticInviteBanner />
+        <motion.div {...enter(0.05)}>
+          {compassLoaded ? (
+            <Suspense fallback={skeleton}>
+              <CompassHomeSections
+                compass={compass ?? { enabled: false }}
+                gradeId={gradeId}
+                today={today}
+                resume={continueCourse}
+                visits={visits}
+                classroom={classroom}
+                challenge={<DailyChallengeCard />}
+              />
+            </Suspense>
+          ) : skeleton}
+        </motion.div>
 
-      {/* Continue / Start */}
-      <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }} className="mb-8">
-        {continueCourse ? (
-          <Link
-            to={continueCourse.resumePath}
-            className="group block glass-card p-6 sm:p-7 relative overflow-hidden hover:border-blue-300 transition-all"
-          >
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500" />
-            <p className="font-mono-jetbrains text-blue-500 text-xs font-semibold uppercase tracking-widest mb-3 flex items-center gap-1.5">
-              <Play size={12} /> Continue ton apprentissage
-            </p>
-            <div className="flex items-start gap-4">
-              <div className="text-4xl bg-blue-50 p-3 rounded-2xl group-hover:scale-105 transition-transform flex-shrink-0">
-                {continueCourse.course.icon}
-              </div>
-              <div className="flex-1 min-w-0">
-                <h2 className="font-space font-bold text-slate-900 text-lg sm:text-xl group-hover:text-blue-600 transition-colors">
-                  {continueCourse.course.title}
-                </h2>
-                <p className="font-inter text-slate-500 text-sm mt-0.5">
-                  {continueCourse.chapter.title} · {continueCourse.grade.name} · Module {continueCourse.resumeModule} sur {continueCourse.totalModules}
-                </p>
-                <div className="mt-4 flex items-center gap-3 max-w-sm">
-                  <div className="flex-1 h-2 bg-slate-100 rounded-full overflow-hidden">
-                    <div className="h-full rounded-full bg-blue-500 transition-all duration-500" style={{ width: `${continueCourse.progress}%` }} />
-                  </div>
-                  <span className="text-xs font-mono-jetbrains font-bold text-slate-600 tabular-nums">{continueCourse.progress}%</span>
+        {/* ── Tout le reste : replié, jamais supprimé (règle « plier, ne jamais supprimer »). ── */}
+        <details className="group mt-8 rounded-3xl bg-white ring-1 ring-slate-200" data-home-more>
+          <summary className="flex cursor-pointer list-none flex-wrap items-center justify-between gap-2 px-5 py-4 font-black text-slate-900">
+            <span>{t('compassHome.more.title')} <span className="ms-2 text-sm font-semibold text-slate-600">{t('compassHome.more.hint')}</span></span>
+            <span aria-hidden="true" className="transition group-open:rotate-180">⌄</span>
+          </summary>
+          <div className="space-y-8 px-5 pb-6">
+            {status === 'error' && (
+              <div role="alert" className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-rose-200 bg-rose-50 p-4" data-home-error>
+                <div className="min-w-0">
+                  <p className="text-sm font-bold text-rose-900">{t('home.masteryErrorTitle')}</p>
+                  <p className="mt-0.5 max-w-xl text-xs text-rose-900/80">{t('home.masteryErrorBody')}</p>
                 </div>
+                <button type="button" onClick={reload} className="min-h-[44px] rounded-xl border-2 border-rose-200 bg-white px-4 text-xs font-bold text-rose-800 hover:border-rose-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500">
+                  🔄 {tc('retry')}
+                </button>
               </div>
-              <span className="hidden sm:flex items-center gap-1.5 font-bold text-sm text-blue-600 group-hover:translate-x-1 transition-transform flex-shrink-0">
-                Continuer <ArrowRight size={15} />
-              </span>
+            )}
+            <JourneyStats activity={gradeActivity} agg={tree.agg} profileStatus={status} />
+            <div className="grid grid-cols-1 gap-4 sm:gap-5 lg:grid-cols-2">
+              <CurriculumPreview context={whereContext} />
+              <RecentLearning items={recent} treeIndex={treeIndex} />
             </div>
-          </Link>
-        ) : firstLesson ? (
-          <Link
-            to={firstLesson.lesson.path}
-            className="group block glass-card p-6 sm:p-7 relative overflow-hidden hover:border-blue-300 transition-all"
-          >
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 to-teal-500" />
-            <p className="font-mono-jetbrains text-emerald-600 text-xs font-semibold uppercase tracking-widest mb-3">
-              Prêt à commencer
-            </p>
-            <div className="flex items-start gap-4">
-              <div className="text-4xl bg-emerald-50 p-3 rounded-2xl group-hover:scale-105 transition-transform flex-shrink-0">
-                {firstLesson.lesson.icon}
-              </div>
-              <div className="flex-1">
-                <h2 className="font-space font-bold text-slate-900 text-lg sm:text-xl group-hover:text-emerald-600 transition-colors">
-                  {firstLesson.lesson.title}
-                </h2>
-                <p className="font-inter text-slate-500 text-sm mt-0.5 line-clamp-2">{firstLesson.lesson.description}</p>
-              </div>
-              <span className="hidden sm:flex items-center gap-1.5 font-bold text-sm text-emerald-600 group-hover:translate-x-1 transition-transform flex-shrink-0">
-                Commencer <ArrowRight size={15} />
-              </span>
+            <LearningSpaceNav />
+            <PremiumCard premiumCount={premiumCount} isPremium={isPremium} canSeeUpgrade={canSeeUpgrade} />
+            <div className="text-center" data-home-explore>
+              <Link
+                to="/espace/explorer"
+                className="inline-flex min-h-[44px] items-center gap-2 rounded-xl px-4 text-sm font-semibold text-slate-600 transition-colors hover:bg-white/80 hover:text-nav-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-nav-accent"
+              >
+                <Compass size={15} aria-hidden="true" /> {t('home.exploreOtherGrades')} <ArrowForward size={14} aria-hidden="true" />
+              </Link>
+              <p className="mt-1 text-xs text-slate-400">{t('home.exploreOtherGradesHint')}</p>
             </div>
-          </Link>
-        ) : (
-          <div className="glass-card p-7 text-center">
-            <p className="font-inter text-slate-500 text-sm">
-              Aucune leçon disponible pour ta classe pour l'instant. <Link to="/espace/explorer" className="text-blue-600 font-semibold hover:underline">Explore d'autres niveaux →</Link>
-            </p>
           </div>
-        )}
-      </motion.div>
-
-      {/* Stats */}
-      <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-8">
-        <StatTile icon={BookOpen} value={gradeActivity.lessons.length} label="Leçons disponibles" accent="bg-blue-50 text-blue-600" />
-        <StatTile icon={CircleCheckBig} value={gradeActivity.completedCount} label="Leçons terminées" accent="bg-emerald-50 text-emerald-600" />
-        <StatTile icon={Flame} value={gradeActivity.inProgressCount} label="En cours" accent="bg-amber-50 text-amber-600" />
-        <StatTile icon={Zap} value={gradeActivity.totalXp} label="XP gagné" accent="bg-purple-50 text-purple-600" />
-      </motion.div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-8">
-        {/* Recent activity */}
-        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }} className="glass-card p-6">
-          <h3 className="font-space font-bold text-slate-800 text-sm mb-4">Repris récemment</h3>
-          {gradeActivity.recentlyActive.length === 0 ? (
-            <p className="font-inter text-slate-400 text-sm">Rien à afficher pour l'instant — commence une leçon !</p>
-          ) : (
-            <div className="space-y-3">
-              {gradeActivity.recentlyActive.slice(0, 4).map((item) => (
-                <Link
-                  key={item.lesson.id}
-                  to={item.lesson.path}
-                  className="flex items-center gap-3 p-2.5 -mx-2.5 rounded-xl hover:bg-slate-50 transition-colors group"
-                >
-                  <span className="text-xl flex-shrink-0">{item.lesson.icon}</span>
-                  <div className="flex-1 min-w-0">
-                    <p className="font-inter font-medium text-slate-700 text-sm truncate group-hover:text-blue-600">{item.lesson.title}</p>
-                    <div className="flex items-center gap-2 mt-1">
-                      <div className="flex-1 h-1.5 bg-slate-100 rounded-full overflow-hidden max-w-[100px]">
-                        <div className={`h-full ${item.progressPercent >= 100 ? 'bg-emerald-500' : 'bg-blue-500'}`} style={{ width: `${item.progressPercent}%` }} />
-                      </div>
-                      <span className="text-[11px] font-mono-jetbrains text-slate-400 tabular-nums">{item.progressPercent}%</span>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          )}
-        </motion.div>
-
-        {/* Quick access */}
-        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="space-y-4">
-          <Link to="/espace/cours" className="group glass-card p-5 flex items-center gap-4 hover:border-blue-300 transition-colors block">
-            <div className="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0">
-              <BookOpen size={19} />
-            </div>
-            <div className="flex-1">
-              <p className="font-space font-bold text-slate-800 text-sm">Mes cours — {grade ? grade.name : 'ta classe'}</p>
-              <p className="font-inter text-slate-500 text-xs mt-0.5">Voir toutes les leçons de ton niveau</p>
-            </div>
-            <ArrowRight size={16} className="text-slate-300 group-hover:text-blue-500 group-hover:translate-x-1 transition-all flex-shrink-0" />
-          </Link>
-
-          <Link to="/espace/explorer" className="group glass-card p-5 flex items-center gap-4 hover:border-purple-300 transition-colors block">
-            <div className="w-11 h-11 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center flex-shrink-0">
-              <Compass size={19} />
-            </div>
-            <div className="flex-1">
-              <p className="font-space font-bold text-slate-800 text-sm">Explorer d'autres niveaux</p>
-              <p className="font-inter text-slate-500 text-xs mt-0.5">De la 6e à la Terminale</p>
-            </div>
-            <ArrowRight size={16} className="text-slate-300 group-hover:text-purple-500 group-hover:translate-x-1 transition-all flex-shrink-0" />
-          </Link>
-
-          {/* MÊME COMPTE, DEUX LECTURES.
-              « 3 leçons Premium » est une bonne nouvelle pour l'abonné (du
-              contenu qui l'attend) et une invitation pour qui ne l'est pas.
-              La carte disait « Débloque avec l'abonnement — 35€/an » aux
-              deux : elle redemandait 35€ à quelqu'un qui les avait payés. Le
-              chiffre reste, la destination et la phrase changent. */}
-          {premiumCount > 0 && isPremium && (
-            <Link to="/espace/cours" className="group glass-card p-5 flex items-center gap-4 border-violet-200 hover:border-violet-300 transition-colors block">
-              <div className="w-11 h-11 rounded-xl bg-violet-100 text-violet-600 flex items-center justify-center flex-shrink-0">
-                <Crown size={19} />
-              </div>
-              <div className="flex-1">
-                <p className="font-space font-bold text-slate-800 text-sm">{premiumCount} leçon{premiumCount > 1 ? 's' : ''} Premium {premiumCount > 1 ? 'ouvertes' : 'ouverte'}</p>
-                <p className="font-inter text-slate-500 text-xs mt-0.5">Incluses dans ton accès — à toi de jouer</p>
-              </div>
-              <ArrowRight size={16} className="text-slate-300 group-hover:text-violet-500 group-hover:translate-x-1 transition-all flex-shrink-0" />
-            </Link>
-          )}
-
-          {premiumCount > 0 && canSeeUpgrade && (
-            <Link to="/tarifs" className="group glass-card p-5 flex items-center gap-4 border-amber-200 hover:border-amber-300 transition-colors block bg-gradient-to-br from-amber-50/50 to-white">
-              <div className="w-11 h-11 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center flex-shrink-0">
-                <Crown size={19} />
-              </div>
-              <div className="flex-1">
-                <p className="font-space font-bold text-slate-800 text-sm">{premiumCount} leçon{premiumCount > 1 ? 's' : ''} Premium {premiumCount > 1 ? 'disponibles' : 'disponible'}</p>
-                <p className="font-inter text-slate-500 text-xs mt-0.5">Débloque avec l'abonnement — 35€/an</p>
-              </div>
-              <ArrowRight size={16} className="text-slate-300 group-hover:text-amber-500 group-hover:translate-x-1 transition-all flex-shrink-0" />
-            </Link>
-          )}
-        </motion.div>
+        </details>
       </div>
-    </div>
+    </MotionConfig>
   );
 }

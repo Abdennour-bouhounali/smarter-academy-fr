@@ -1,0 +1,187 @@
+{
+  "id": "ex-4am-mafhum-taalufiya-l3-005",
+  "lessonCode": "mafhum-taalufiya",
+  "level": 3,
+  "metadata": {
+    "title": "دالة تآلفية بمعامل كسري",
+    "estimatedMinutes": 6,
+    "tags": [
+      "صورة عدد",
+      "العدد الذي صورته معلومة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "adaptedFrom": "ex-4am-mafhum-taalufiya-l3-005"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "$f$ دالة تآلفية حيث:",
+    "formulas": [
+      "f(x) = \\dfrac{3}{4}x - 2"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب $f(8)$ و $f(-4)$ .",
+      "statement": "$f(8)$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $8$ في العبارة $f(x) = 0{,}75x - 2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب في المعامل أولا، ثم أضف الحدّ الثابت، مع الانتباه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(8) = 0{,}75 \\times 8 - 2 = 4$ .",
+        "incorrect": "اضرب العدد في المعامل $a$ ، ثم أضف الحدّ الثابت $b$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(8) = 0{,}75 \\times 8 - 2$",
+          "$f(8) = 6 - 2$",
+          "$f(8) = 4$"
+        ],
+        "result": "f(8) = 4"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$f(-4)$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-5",
+      "misconceptionSignatures": [
+        {
+          "value": "-3",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $-4$ في العبارة $f(x) = 0{,}75x - 2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب في المعامل أولا، ثم أضف الحدّ الثابت، مع الانتباه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(-4) = 0{,}75 \\times (-4) - 2 = -5$ .",
+        "incorrect": "اضرب العدد في المعامل $a$ ، ثم أضف الحدّ الثابت $b$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(-4) = 0{,}75 \\times (-4) - 2$",
+          "$f(-4) = -3 - 2$",
+          "$f(-4) = -5$"
+        ],
+        "result": "f(-4) = -5"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "عيّن العدد الذي صورته $7$ بالدالة $f$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "28/3",
+          "id": "MISC-TAALUFI-SABIQ-QISMA"
+        },
+        {
+          "value": "34/3",
+          "id": "MISC-TAALUFI-SABIQ-TARTIB"
+        },
+        {
+          "value": "3,25",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن $x$ الذي يحقق $\\dfrac{3}{4}x - 2 = 7$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أضف 2 إلى الطرفين، ثم اقسم على $\\dfrac{3}{4}$ (أي اضرب في $\\dfrac{4}{3}$ )."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}75x - 2 = 7$ تعطي $x = 12$ .",
+        "incorrect": "أضف 2 إلى الطرفين أولا، ثم اضرب في مقلوب المعامل."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 7$ معناه $0{,}75x - 2 = 7$",
+          "$0{,}75x = 7 + 2$",
+          "$0{,}75x = 9$",
+          "$x = 9 \\div 0{,}75$",
+          "$x = 12$"
+        ],
+        "result": "x = 12"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "id": "ex-1am-talim-fi-mustawi-l2-009",
+  "lessonCode": "talim-fi-mustawi",
+  "level": 2,
+  "metadata": {
+    "title": "نقط المحورين والمبدأ",
+    "estimatedMinutes": 6,
+    "tags": [
+      "مبدأ",
+      "محور"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نفحص أزواجًا من الأعداد في معلم متعامد."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "كم نقطة من النقط الآتية تقع على أحد المحورين: $A(0\\,;\\,3)$ ، $B(-2\\,;\\,0)$ ، $C(4\\,;\\,-1)$ ، $D(0\\,;\\,0)$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد النقط",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نقطة المحور لها إحداثي معدوم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن الصفر في كلّ زوج."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الزوج $(0\\,;\\,0)$ هو المبدأ وهو على المحورين معًا."
+        }
+      ],
+      "feedback": {
+        "correct": "عددها $3$ .",
+        "incorrect": "عدّ الأزواج التي فيها صفر."
+      },
+      "solution": {
+        "lines": [
+          "الأزواج التي فيها صفر: $A$ ، $B$ ، $D$",
+          "العدد $3$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أين تقع النقطة $(0\\,;\\,0)$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "ليست على أيّ من المحورين",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "على محور الفواصل",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "على محور التراتيب",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "هي المبدأ",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اسأل: أيّ الإحداثيين معدوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترتيب معدوم: لا نصعد ولا ننزل، فالنقطة على الخط الأفقي. فاصلة معدومة: لا نتحرّك أفقيًّا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إن انعدم الإحداثيان معًا فهي المبدأ، وإن لم ينعدم أيّ منهما فهي خارج المحورين."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة $(0\\,;\\,0)$ هي المبدأ .",
+        "incorrect": "ترتيب معدوم يعني محور الفواصل، وفاصلة معدومة تعني محور التراتيب."
+      },
+      "solution": {
+        "lines": [
+          "الإحداثيان معدومان",
+          "هي المبدأ"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "صحيح أم خاطئ؟ النقطة $(0\\,;\\,5)$ هي المبدأ.",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-AXISSWAP"
+        },
+        {
+          "id": "B",
+          "content": "خاطئ",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ إحداثي على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفاصلة هي العدد الأول (الخط الأفقي) والترتيب هو الثاني (الخط الشاقولي)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نقطة على محور الفواصل ترتيبها معدوم، ونقطة على محور التراتيب فاصلتها معدومة."
+        }
+      ],
+      "feedback": {
+        "correct": "الجملة خاطئة.",
+        "incorrect": "قارن الإحداثيين بما تقوله الجملة."
+      },
+      "solution": {
+        "lines": [
+          "الجملة لا تحقّق ما نعرفه عن الإحداثيين"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

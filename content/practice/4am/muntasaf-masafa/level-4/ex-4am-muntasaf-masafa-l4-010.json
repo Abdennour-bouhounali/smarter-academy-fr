@@ -1,0 +1,70 @@
+{
+  "id": "ex-4am-muntasaf-masafa-l4-010",
+  "lessonCode": "muntasaf-masafa",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — أين المدرسة؟",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المنتصف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_muntasaf-masafa_P1",
+      "modelledOn": "know-mid"
+    }
+  },
+  "statement": {
+    "content": "يسكن أمين في $A(-1\\,;\\,4)$ . في طريقه المستقيم إلى المدرسة B، وهو حريص على ألّا يتأخر، يمرّ بالكشك $I(3\\,;\\,1)$ الذي يقع تماما في منتصف الطريق."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا المدرسة B:",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح أو كسر مثل 1/2)",
+      "expectedAnswer": {
+        "x": "7",
+        "y": "-2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MUNTASAF-NISF",
+          "value": {
+            "x": "1",
+            "y": "5/2"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطة المعلومة في الوسط هي المنتصف، والمجهولة طرف من الطرفين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب قانون المنتصف لكل إحداثية واجعل إحداثية الطرف المجهول مجهولا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة: اضرب طرفيها في 2 ثم اطرح الإحداثية المعلومة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{-1 + x_B}{2} = 3$ إذن $x_B = 7$ ، و $\\dfrac{4 + y_B}{2} = 1$ إذن $y_B = -2$ .",
+        "incorrect": "الكشك هو المنتصف، والمدرسة الطرف الآخر."
+      }
+    }
+  ]
+}

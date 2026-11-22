@@ -1,0 +1,86 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-maalam-l3-007",
+  "lessonCode": "wadiya-idmajiya-maalam",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — اختيار الأداة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "اختيار استراتيجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-maalam_P2",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "نصف دائرة من مسار سباق معطاة بطرفي قطرها في معلم متعامد ومتجانس: $G(-2\\,;\\,1)$ و $H(4\\,;\\,-3)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "لحساب طولها نتّبع:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نحسب مركز نصف الدائرة فقط: إحداثيتاه هما طولها",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        },
+        {
+          "id": "B",
+          "content": "نجمع $|x_H - x_G| + |y_H - y_G|$ ثم نضرب في $\\pi$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-JAM"
+        },
+        {
+          "id": "C",
+          "content": "نحسب $GH$ بالمسافة بين نقطتين، ثم $r = \\dfrac{GH}{2}$ ، ثم الطول $\\pi r$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "نحسب $GH$ ثم الطول $2\\pi \\times GH$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-NISF-DAIRA-MUHIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يحدّد طول نصف دائرة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نصف القطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نصف القطر نصف القطر الكامل GH."
+        }
+      ],
+      "feedback": {
+        "correct": "الطول $\\pi r$ مع $r = \\dfrac{GH}{2}$ ، و $GH = \\sqrt{6^2 + (-4)^2} = 2\\sqrt{13}$ ، فالطول $\\sqrt{13}\\,\\pi$ .",
+        "incorrect": "طول نصف الدائرة يتطلّب نصف قطرها، ونصف القطر يتطلّب المسافة GH."
+      },
+      "cognitiveDemand": "reason",
+      "difficulty": 3
+    }
+  ]
+}

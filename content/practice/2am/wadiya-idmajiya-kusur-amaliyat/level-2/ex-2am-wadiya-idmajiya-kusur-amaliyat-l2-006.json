@@ -1,0 +1,195 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-kusur-amaliyat-l2-006",
+  "lessonCode": "wadiya-idmajiya-kusur-amaliyat",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — كتب في صناديق",
+    "estimatedMinutes": 6,
+    "tags": [
+      "القسمة الإقليدية",
+      "عدد الأوعية اللازمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تريد مكتبة وضع $1275$ كتابًا في صناديق ، يسع كلّ صندوق $48$ كتابًا ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "كم صندوقًا يمتلئ تمامًا ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "26",
+      "misconceptionSignatures": [
+        {
+          "value": "27",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "25",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المقسوم هو العدد الذي نقسمه والمقسوم عليه هو العدد الذي نقسم به : كم مرّة يدخل الثاني تمامًا في الأوّل ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي أصغر تمامًا من المقسوم عليه ، والمساواة المميّزة : المقسوم = المقسوم عليه × الحاصل + الباقي ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالضرب ثمّ الجمع قبل أن تجيب ."
+        }
+      ],
+      "feedback": {
+        "correct": "$26$ .",
+        "incorrect": "المقسوم عليه × الحاصل + الباقي = المقسوم ، والباقي أصغر من المقسوم عليه . تحقّق ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$1275 = 48 \\times 26 + 27$ ، و $27 < 48$ .",
+          "$48 \\times 26 = 1248$ و $1275 - 1248 = 27$ .",
+          "حاصل القسمة الإقليدية : $26$ ."
+        ],
+        "result": "26"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كم كتابًا يبقى دون صندوق ممتلئ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "27",
+      "misconceptionSignatures": [
+        {
+          "value": "26",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "75",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المقسوم هو العدد الذي نقسمه والمقسوم عليه هو العدد الذي نقسم به : كم مرّة يدخل الثاني تمامًا في الأوّل ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي أصغر تمامًا من المقسوم عليه ، والمساواة المميّزة : المقسوم = المقسوم عليه × الحاصل + الباقي ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالضرب ثمّ الجمع قبل أن تجيب ."
+        }
+      ],
+      "feedback": {
+        "correct": "$27$ .",
+        "incorrect": "المقسوم عليه × الحاصل + الباقي = المقسوم ، والباقي أصغر من المقسوم عليه . تحقّق ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$1275 = 48 \\times 26 + 27$ ، و $27 < 48$ .",
+          "$48 \\times 26 = 1248$ و $1275 - 1248 = 27$ .",
+          "باقي القسمة الإقليدية : $27$ ."
+        ],
+        "result": "27"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما عدد الصناديق اللازمة لوضع الكتب كلّها ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "27",
+      "misconceptionSignatures": [
+        {
+          "value": "26",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما عدد المجموعات الكاملة (صناديق ، حافلات ، أكياس ، شرائح …) ؟ وهل يبقى شيء يحتاج إلى مجموعة إضافية ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القسمة الإقليدية : إذا بقي شيء فلا بدّ من مجموعة إضافية ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد اللازم هو الحاصل زائد واحد عندما لا يكون الباقي معدومًا ."
+        }
+      ],
+      "feedback": {
+        "correct": "$27$ .",
+        "incorrect": "المقسوم عليه × الحاصل + الباقي = المقسوم ، والباقي أصغر من المقسوم عليه . تحقّق ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$1275 = 48 \\times 26 + 27$ ، و $27 < 48$ .",
+          "$48 \\times 26 = 1248$ و $1275 - 1248 = 27$ .",
+          "يبقى $27$ ولا يكفي لمجموعة كاملة ، فنحتاج إلى $26 + 1 = 27$ ."
+        ],
+        "result": "27"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

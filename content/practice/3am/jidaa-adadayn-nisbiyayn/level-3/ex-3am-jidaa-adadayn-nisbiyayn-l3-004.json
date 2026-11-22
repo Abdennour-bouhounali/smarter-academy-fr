@@ -1,0 +1,292 @@
+{
+  "id": "ex-3am-jidaa-adadayn-nisbiyayn-l3-004",
+  "lessonCode": "jidaa-adadayn-nisbiyayn",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — تساقط الثلج في الهضاب العليا",
+    "estimatedMinutes": 9,
+    "tags": [
+      "سياق",
+      "درجة الحرارة",
+      "أعداد عشرية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "في منطقة الهضاب العليا، تنخفض درجة الحرارة بانتظام 1,5 °C في كل ساعة ليلة تساقط الثلج، وكانت 0 °C عند منتصف الليل. درجة الحرارة (بـ °C) عند اللحظة $t$ ساعة هي $(−1{,}5) \\times t$ ، و $t$ سالب قبل منتصف الليل."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "بعد منتصف الليل.",
+      "statement": "ما درجة الحرارة عند الساعة 04:00 ، أي $t = 4$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-6",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-JIDAA-LARGER"
+        },
+        {
+          "value": "2.5",
+          "id": "MISC-JIDAA-ADD"
+        },
+        {
+          "value": "-60",
+          "id": "MISC-JIDAA-DECIMAL"
+        },
+        {
+          "value": "-0.6",
+          "id": "MISC-JIDAA-DECIMAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في النص العددين اللذين يُضربان، وأعطِ كلًّا منهما إشارته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السرعة أو التغيّر بالنقصان عدد سالب، والزمن قبل اللحظة المرجعية عدد سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء بالإشارتين، ثم طبّق قاعدة الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−1{,}5) \\times 4 = −6$ : العاملان مختلفا الإشارة (سالب وموجب)، إذن الجداء سالب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العاملان مختلفا الإشارة (سالب وموجب)، إذن الجداء سالب.",
+          "$1{,}5 \\times 4 = 6$",
+          "$(−1{,}5) \\times 4 = −6$"
+        ],
+        "result": "−6"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "قبل منتصف الليل.",
+      "statement": "ما درجة الحرارة عند الساعة 18:00 ، أي $t = −6$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "-9",
+          "id": "MISC-JIDAA-TIME"
+        },
+        {
+          "value": "-7.5",
+          "id": "MISC-JIDAA-ADD"
+        },
+        {
+          "value": "4.5",
+          "id": "MISC-JIDAA-SUB"
+        },
+        {
+          "value": "90",
+          "id": "MISC-JIDAA-DECIMAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في النص العددين اللذين يُضربان، وأعطِ كلًّا منهما إشارته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السرعة أو التغيّر بالنقصان عدد سالب، والزمن قبل اللحظة المرجعية عدد سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء بالإشارتين، ثم طبّق قاعدة الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−1{,}5) \\times (−6) = 9$ : العاملان سالبان، إذن الجداء موجب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العاملان سالبان، إذن الجداء موجب.",
+          "$1{,}5 \\times 6 = 9$",
+          "$(−1{,}5) \\times (−6) = 9$"
+        ],
+        "result": "9"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما درجة الحرارة عند الساعة 21:30 ، أي $t = −2{,}5$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "3.75",
+      "misconceptionSignatures": [
+        {
+          "value": "-3.75",
+          "id": "MISC-JIDAA-TIME"
+        },
+        {
+          "value": "-4",
+          "id": "MISC-JIDAA-ADD"
+        },
+        {
+          "value": "1",
+          "id": "MISC-JIDAA-SUB"
+        },
+        {
+          "value": "37.5",
+          "id": "MISC-JIDAA-DECIMAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب أولًا كأنّ العددين طبيعيان، ثم أرجع الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد الأرقام بعد الفاصلة في الجداء هو مجموع عدد الأرقام بعد الفاصلة في العاملين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عيّن الإشارة أولًا، ثم اضرب المسافتين إلى الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−1{,}5) \\times (−2{,}5) = 3{,}75$ : العاملان سالبان، إذن الجداء موجب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العاملان سالبان، إذن الجداء موجب.",
+          "$1{,}5 \\times 2{,}5 = 3{,}75$",
+          "$(−1{,}5) \\times (−2{,}5) = 3{,}75$"
+        ],
+        "result": "3{,}75"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "ما درجة الحرارة عند الساعة 22:00 ؟ (اختر القيمة)",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$−3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDAA-TIME"
+        },
+        {
+          "id": "B",
+          "content": "$3$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$30$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDAA-DECIMAL"
+        },
+        {
+          "id": "D",
+          "content": "$0{,}3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDAA-DECIMAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في النص العددين اللذين يُضربان، وأعطِ كلًّا منهما إشارته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السرعة أو التغيّر بالنقصان عدد سالب، والزمن قبل اللحظة المرجعية عدد سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء بالإشارتين، ثم طبّق قاعدة الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−1{,}5) \\times (−2) = 3$ : العاملان سالبان، إذن الجداء موجب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العاملان سالبان، إذن الجداء موجب.",
+          "$1{,}5 \\times 2 = 3$",
+          "$(−1{,}5) \\times (−2) = 3$"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

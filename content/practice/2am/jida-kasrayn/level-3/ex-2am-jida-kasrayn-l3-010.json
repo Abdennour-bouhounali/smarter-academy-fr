@@ -1,0 +1,191 @@
+{
+  "id": "ex-2am-jida-kasrayn-l3-010",
+  "lessonCode": "jida-kasrayn",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أين الخطأ ؟",
+    "estimatedMinutes": 7,
+    "tags": [
+      "جداء كسرين",
+      "أخطاء شائعة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "كتب تلميذان نتيجة الجداء $\\dfrac{3}{4} \\times \\dfrac{2}{5}$ :"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "كتب أنيس : $\\dfrac{3}{4} \\times \\dfrac{2}{5} = \\dfrac{6}{9}$ . هل كتابته صحيحة ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDAKASR-DENSUM"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا ثمّ تحقّق منها بحساب بسيط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الناتج بمقام مشترك ثمّ قارنه بما قيل."
+        }
+      ],
+      "feedback": {
+        "correct": "لا : المقامان يُضربان ولا يُجمعان .",
+        "incorrect": "احسب ثمّ قارن بدقّة قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{4} \\times \\dfrac{2}{5} = \\dfrac{3 \\times 2}{4 \\times 5} = \\dfrac{6}{20}$ ، وأنيس جمع المقامين ($4 + 5 = 9$) ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كتبت ريم : $\\dfrac{3}{4} \\times \\dfrac{2}{5} = \\dfrac{15}{8}$ . هل كتابتها صحيحة ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JIDAKASR-CROSS"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا ثمّ تحقّق منها بحساب بسيط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الناتج بمقام مشترك ثمّ قارنه بما قيل."
+        }
+      ],
+      "feedback": {
+        "correct": "لا : لا نقلب الكسر الثاني عند الضرب .",
+        "incorrect": "احسب ثمّ قارن بدقّة قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "ريم قلبت الكسر الثاني فضربت $3 \\times 5$ في البسط و $4 \\times 2$ في المقام ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "اكتب الناتج الصحيح للجداء $\\dfrac{3}{4} \\times \\dfrac{2}{5}$ على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "3/10",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "5/9",
+          "id": "MISC-JIDAKASR-SUMACROSS"
+        },
+        {
+          "value": "2/3",
+          "id": "MISC-JIDAKASR-DENSUM"
+        },
+        {
+          "value": "15/8",
+          "id": "MISC-JIDAKASR-CROSS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليّة بين الكسرين؟ وماذا يمثّل كلّ منهما من الكلّ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في ضرب كسرين لا نبحث عن مقام مشترك: نضرب البسطين معًا ونضرب المقامين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء على شكل كسر واحد ثمّ اختزله إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{10}$ .",
+        "incorrect": "ضرب كسرين: بسط × بسط فوق مقام × مقام، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{4} \\times \\dfrac{2}{5} = \\dfrac{3 \\times 2}{4 \\times 5} = \\dfrac{6}{20}$ .",
+          "نختزل بالقسمة على $2$ : $\\dfrac{6}{20} = \\dfrac{3}{10}$ ."
+        ],
+        "result": "\\dfrac{3}{10}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

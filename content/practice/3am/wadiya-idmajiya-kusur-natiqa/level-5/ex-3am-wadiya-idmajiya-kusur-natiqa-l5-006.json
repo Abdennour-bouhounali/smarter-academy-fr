@@ -1,0 +1,342 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-kusur-natiqa-l5-006",
+  "lessonCode": "wadiya-idmajiya-kusur-natiqa",
+  "level": 5,
+  "metadata": {
+    "title": "ثمن محصول التين",
+    "estimatedMinutes": 12,
+    "tags": [
+      "كسر من الباقي",
+      "مقارنة",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "باع ثلاثة فلّاحين محصول تين مشتركًا بمبلغ $84000$ DA ، فأخذ الأوّل $\\dfrac{2}{7}$ منه، وأخذ الثاني $\\dfrac{3}{5}$ من الباقي، وأخذ الثالث ما تبقّى ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأوّل :",
+      "statement": "ما الكسر الذي يمثّل حصّة الثاني من المبلغ كلّه ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "3/7",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "3/5",
+          "id": "MISC-SYN-KUSUR-WHOLE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكسر الأخير يُؤخذ من أيّ كمّية: من الكلّ أم ممّا بقي ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أوّلًا ما بقي بعد الجزء الأوّل، ثمّ خذ الكسر من هذا الباقي وحده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ مجموع الأجزاء والباقي يساوي الكلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{3}{7}$ .",
+        "incorrect": "تذكّر أنّ الكسر الثاني يُؤخذ ممّا بقي لا من الكلّ؛ احسب الباقي أوّلًا ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "بعد حصّة الأوّل بقي $\\dfrac{5}{7}$ .",
+          "$\\dfrac{3}{5} \\times \\dfrac{5}{7} = \\dfrac{3}{7}$ ."
+        ],
+        "result": "\\dfrac{3}{7}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما الكسر الذي يمثّل حصّة الثالث ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "2/7",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "4/35",
+          "id": "MISC-SYN-KUSUR-WHOLE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الكلّ الذي نقارن به ؟ وما الأجزاء المأخوذة منه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما بقي هو الكلّ ناقص مجموع الأجزاء المأخوذة، أي واحد ناقص مجموع الكسور."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ الباقي موجب وأنّه أصغر من الكلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $\\dfrac{2}{7}$ .",
+        "incorrect": "وحّد المقامات قبل الجمع أو الطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$1 - \\dfrac{2}{7} - \\dfrac{3}{7} = \\dfrac{2}{7}$ ."
+        ],
+        "result": "\\dfrac{2}{7}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما قيمة حصّة الثاني بالدينار ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "36000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من أيّ كمّية يُؤخذ الكسر في هذه الوضعية ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كسر من كمّية يعني جداء الكسر في الكمّية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ النتيجة أصغر من الكمّية الأصلية، ثمّ اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $36000$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{7} \\times 84000 = 36000$ DA ."
+        ],
+        "result": "36000"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "الجزء الثاني :",
+      "statement": "هل أخذ الثالث المبلغ نفسه الذي أخذه الأوّل ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للكسرين المقام نفسه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "وحّد المقامات ثمّ قارن البسطين، فالكسر الأكبر له البسط الأكبر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحكم بنظرة إلى البسط وحده أو المقام وحده."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم .",
+        "incorrect": "وحّد المقامات قبل المقارنة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "حصّة الأوّل $\\dfrac{2}{7}$ وحصّة الثالث $\\dfrac{2}{7}$ ، فهما متساويتان."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "من أخذ أكبر مبلغ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الثاني",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الثالث",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-EYE"
+        },
+        {
+          "id": "C",
+          "content": "الأوّل",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TASAWI-DENOMS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المقداران اللذان نقارن بينهما لاتّخاذ القرار ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ مقدار بدقّة ثمّ قارن بوحدة واحدة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب القرار بجملة تذكر العددين اللذين اعتمدت عليهما."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: الثاني .",
+        "incorrect": "وحّد المقامات قبل المقارنة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الحصص: $\\dfrac{2}{7}$ و $\\dfrac{3}{7}$ و $\\dfrac{2}{7}$ بالمقام نفسه، و $3 > 2$ ، فأكبر مبلغ للثاني."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ج",
+      "statement": "ما الفرق بين أكبر مبلغ وأصغر مبلغ بالدينار ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-kusur-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "12000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تعبّر عن الوضعية: جمع أجزاء أم طرح جزء من الكلّ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "وحّد المقامات بأصغر مقام مشترك ثمّ اجمع أو اطرح البسطين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل النتيجة، وتحقّق بمقارنتها بالواحد."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $12000$ .",
+        "incorrect": "وحّد المقامات قبل الجمع أو الطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "أصغر مبلغ $\\dfrac{2}{7} \\times 84000 = 24000$ DA .",
+          "$36000 - 24000 = 12000$ DA ."
+        ],
+        "result": "12000"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

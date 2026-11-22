@@ -1,0 +1,176 @@
+{
+  "id": "ex-3am-nisba-miawiya-3am-l2-006",
+  "lessonCode": "nisba-miawiya-3am",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — ثمن يرتفع",
+    "estimatedMinutes": 7,
+    "tags": [
+      "نسبة الزيادة",
+      "ثمن قديم وجديد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "كان ثمن كيس من الدقيق في الحيّ $1\\,500$ دج ثم صار $1\\,725$ دج بعد ارتفاع التكاليف. يريد التاجر أن يشرح الزيادة لزبائنه بصراحة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما مقدار الزيادة بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "المبلغ بالدينار (دج)",
+      "expectedAnswer": "225",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كل سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بالتعويض أو بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$225$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,725 - 1\\,500 = 225$ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما النسبة المئوية للزيادة؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "النسبة المئوية (بدون الرمز %)",
+      "expectedAnswer": "15",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من أيّ كمية حُسبت النسبة: الأصل أم الجديدة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة تُحسب دائما على الكمية الأصلية؛ والكمية الجديدة هي الأصل مضروبا في المعامل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب مساواة: الأصل × المعامل = الكمية الجديدة، ثم أوجد الأصل."
+        }
+      ],
+      "feedback": {
+        "correct": "$15$ .",
+        "incorrect": "النسبة تُحسب على الكمية الأصلية، والكمية الجديدة هي الأصل مضروبا في المعامل؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الزيادة : $|1\\,725 - 1\\,500| = 225$ .",
+          "النسبة تُحسب على الثمن القديم: $\\dfrac{225}{1\\,500} = \\dfrac{t}{100}$ ، فنجد $t = 15$ ."
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "أيّ الكسور يُستعمل لحساب النسبة المئوية للزيادة؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{225}{1725}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NISBA3-WRONG-BASE"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{225}{1500}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{1500}{225}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NISBA3-PART-WHOLE-SWAP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من أيّ كمية حُسبت النسبة: الأصل أم الجديدة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة تُحسب دائما على الكمية الأصلية؛ والكمية الجديدة هي الأصل مضروبا في المعامل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب مساواة: الأصل × المعامل = الكمية الجديدة، ثم أوجد الأصل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{225}{1500}$ .",
+        "incorrect": "النسبة تُحسب على الكمية الأصلية، والكمية الجديدة هي الأصل مضروبا في المعامل؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "النسبة تُحسب على الثمن القديم: $\\dfrac{225}{1500} = 0{,}15$ ."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

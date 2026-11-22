@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-kura-julla-l4-010",
+  "lessonCode": "kura-julla",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — كرة أم جلة؟",
+    "estimatedMinutes": 5,
+    "tags": [
+      "الكرة",
+      "الجلة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_kura-julla_P1",
+      "modelledOn": "know-1"
+    }
+  },
+  "statement": {
+    "content": "N نقطة حيث $ON = 4$ ، و $(\\delta)$ و $(\\beta)$ الكرة والجلة اللتان مركزهما O ونصف قطرهما 4."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "هل تنتمي N إلى الجلة $(\\beta)$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأن $ON = 4 \\le 4$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا، الجلة هي الداخل فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-INTIMA"
+        },
+        {
+          "id": "C",
+          "content": "لا، N من الكرة فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-INTIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "شرط الانتماء إلى الجلة: $OM \\le R$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل $4 \\le 4$ صحيح؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الجلة تشمل سطحها."
+        }
+      ],
+      "feedback": {
+        "correct": "$ON = 4 \\le 4$ : N من الجلة، وهي أيضا من الكرة.",
+        "incorrect": "الرمز $\\le$ يقبل المساواة: سطح الجلة جزء منها."
+      }
+    }
+  ]
+}

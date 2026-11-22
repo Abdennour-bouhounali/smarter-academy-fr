@@ -1,0 +1,112 @@
+{
+  "id": "ex-4am-tatbiqat-tanasub-l3-007",
+  "lessonCode": "tatbiqat-tanasub",
+  "level": 3,
+  "metadata": {
+    "title": "طرائق — الكثافة السكانية",
+    "estimatedMinutes": 5,
+    "tags": [
+      "الكثافة السكانية",
+      "زيادة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-compound",
+      "page": 71,
+      "section": "طرائق",
+      "adaptedFrom": "ex-4am-tatbiqat-tanasub-l3-007"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "تبلغ مساحة الجزائر $2\\,381\\,740km^2$ ، وبلغ عدد سكانها 41,2 مليون نسمة في سنة 2017."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب الكثافة السكانية للجزائر في سنة 2017 (عدد السكان في الكيلومتر المربع).",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط (نسمة في $km^2$ )، مدوّرا إلى $0{,}1$",
+      "expectedAnswer": "17,3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكثافة السكانية $= \\dfrac{\\text{عدد السكان}}{\\text{المساحة}}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "41,2 مليون $= 41\\,200\\,000$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{41\\,200\\,000}{2\\,381\\,740} \\approx 17{,}3$ نسمة في الكيلومتر المربع.",
+        "incorrect": "اقسم عدد السكان (بالآحاد) على المساحة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{41\\,200\\,000}{2\\,381\\,740} = 17{,}29\\ldots$",
+          "الكثافة السكانية $17{,}3$ نسمة في $km^2$ تقريبا."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "نفترض أن عدد السكان يزداد بنسبة 10% وتبقى المساحة نفسها. احسب الكثافة السكانية الجديدة.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط، مدوّرا إلى $0{,}1$",
+      "expectedAnswer": "19",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد السكان الجديد $= 41\\,200\\,000 \\times \\left(1 + \\dfrac{10}{100}\\right)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المساحة لم تتغيّر: اقسم عدد السكان الجديد عليها."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{45\\,320\\,000}{2\\,381\\,740} \\approx 19{,}0$ .",
+        "incorrect": "زِد عدد السكان بـ 10% (ضرب في المضاعف) ثم اقسم على المساحة."
+      },
+      "solution": {
+        "lines": [
+          "عدد السكان الجديد: $41\\,200\\,000 \\times 1{,}1 = 45\\,320\\,000$",
+          "$\\dfrac{45\\,320\\,000}{2\\,381\\,740} = 19{,}02\\ldots$",
+          "الكثافة الجديدة $19{,}0$ نسمة في $km^2$ تقريبا (وهي أيضا الكثافة الأولى مضروبة في $1{,}1$ )."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "id": "ex-1am-talim-fi-mustawi-l3-003",
+  "lessonCode": "talim-fi-mustawi",
+  "level": 3,
+  "metadata": {
+    "title": "الفاصلة والترتيب العشريان",
+    "estimatedMinutes": 6,
+    "tags": [
+      "عشري",
+      "فاصلة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في الشكل ثلاث نقط في معلم متعامد.",
+    "figure": {
+      "points": {
+        "P": [
+          2.5,
+          -1.5
+        ],
+        "Q": [
+          -3.5,
+          0.5
+        ],
+        "R": [
+          0,
+          -2.5
+        ],
+        "c1": [
+          -5,
+          -4
+        ],
+        "c2": [
+          5,
+          4
+        ]
+      },
+      "grid": true,
+      "axes": true,
+      "hidden": [
+        "c1",
+        "c2"
+      ],
+      "ariaLabel": "معلم متعامد تظهر فيه ثلاث نقط P و Q و R",
+      "maxWidth": 400
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما فاصلة النقطة $P$ في الشكل؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "2.5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SWAP",
+          "value": "-1.5"
+        },
+        {
+          "id": "MISC-MUSTAWI-SIGNX",
+          "value": "-2.5"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفاصلة تُقرأ على الخط الأفقي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انزل من النقطة أو اصعد منها إلى الخط الأفقي واقرأ التدريجة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ الإشارة: يسار الخط الشاقولي أو تحت الخط الأفقي عدد سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "فاصلة $P$ هي $2{,}5$ .",
+        "incorrect": "اقرأ التدريجة على المحور المناسب ولا تُبدّل الفاصلة بالترتيب."
+      },
+      "solution": {
+        "lines": [
+          "نقرأ الفاصلة على الخط الأفقي: $2{,}5$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما ترتيب النقطة $Q$ في الشكل؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "0.5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SWAP",
+          "value": "-3.5"
+        },
+        {
+          "id": "MISC-MUSTAWI-SIGNY",
+          "value": "-0.5"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الترتيب يُقرأ على الخط الشاقولي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "سر من النقطة أفقيًّا إلى الخط الشاقولي واقرأ التدريجة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ الإشارة: يسار الخط الشاقولي أو تحت الخط الأفقي عدد سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "ترتيب $Q$ هي $0{,}5$ .",
+        "incorrect": "اقرأ التدريجة على المحور المناسب ولا تُبدّل الفاصلة بالترتيب."
+      },
+      "solution": {
+        "lines": [
+          "نقرأ الترتيب على الخط الشاقولي: $0{,}5$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما ترتيب النقطة $R$ في الشكل؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "-2.5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SWAP",
+          "value": "0"
+        },
+        {
+          "id": "MISC-MUSTAWI-SIGNY",
+          "value": "2.5"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الترتيب يُقرأ على الخط الشاقولي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "سر من النقطة أفقيًّا إلى الخط الشاقولي واقرأ التدريجة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ الإشارة: يسار الخط الشاقولي أو تحت الخط الأفقي عدد سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "ترتيب $R$ هي $-2{,}5$ .",
+        "incorrect": "اقرأ التدريجة على المحور المناسب ولا تُبدّل الفاصلة بالترتيب."
+      },
+      "solution": {
+        "lines": [
+          "نقرأ الترتيب على الخط الشاقولي: $-2{,}5$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "id": "ex-4am-barahin-ashia-l3-004",
+  "lessonCode": "barahin-ashia",
+  "level": 3,
+  "generator": {
+    "tool": "gen-barahin.mjs",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — طول من التمرين 17",
+    "estimatedMinutes": 3,
+    "tags": [
+      "طول",
+      "تساوي شعاعين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_barahin-ashia_P1",
+      "modelledOn": "ex-17"
+    }
+  },
+  "statement": {
+    "content": "J مركز متوازي الأضلاع ABCD، و O النقطة حيث $\\overrightarrow{JO} = \\overrightarrow{JA} + \\overrightarrow{JB}$ . نعلم أن $AD = 6\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الطول JO بالسنتيمتر:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SHUAA-JAM-ATWAL",
+          "value": "12"
+        },
+        {
+          "id": "MISC-SHUAA-MUNTASAF-IB-IA",
+          "value": "3"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "J منتصف [BD] : $\\overrightarrow{JB} = \\overrightarrow{DJ}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\overrightarrow{JA} + \\overrightarrow{JB} = \\overrightarrow{DJ} + \\overrightarrow{JA}$ ، ثم علاقة شال."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "شعاعان متساويان لهما نفس الطول."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{JO} = \\overrightarrow{DJ} + \\overrightarrow{JA} = \\overrightarrow{DA}$ ، فـ $JO = DA = 6\\,\\mathrm{cm}$ .",
+        "incorrect": "بسّط $\\overrightarrow{JA} + \\overrightarrow{JB}$ إلى شعاع واحد من أضلاع متوازي الأضلاع."
+      }
+    }
+  ]
+}

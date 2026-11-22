@@ -9,112 +9,133 @@
 >
 > Le lexique est un **détecteur**, pas le juge : il signale les candidats à l'audit manuel.
 
-## Périmètre courant — 6e, 3e et 2nde
+## Périmètre courant — classes actives (1am, 2am, 3am, 4am, terminale_dz)
 
-74 leçon(s) · critiques 0 · hautes 0 · moyennes 0 · basses 0
-
-| Leçon | Carte | Bricks | requires | Contrat | C | H | M | L |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `3e:fonctions-3e` | ✅ | 17 | 41/41 | 0 | 0 | 0 | 0 | 0 |
-| `3e:fonctions-affines-3e` | ✅ | 15 | 35/35 | 0 | 0 | 0 | 0 | 0 |
-| `3e:fonctions-lineaires-3e` | ✅ | 14 | 38/38 | 0 | 0 | 0 | 0 | 0 |
-| `3e:lecture-graphique-3e` | ✅ | 14 | 35/35 | 0 | 0 | 0 | 0 | 0 |
-| `3e:modelisation-3e` | ✅ | 19 | 44/44 | 0 | 0 | 0 | 0 | 0 |
-| `3e:probabilites-3e` | ✅ | 23 | 41/41 | 0 | 0 | 0 | 0 | 0 |
-| `3e:proportionnalite-3e` | ✅ | 8 | 47/47 | 0 | 0 | 0 | 0 | 0 |
-| `3e:representation-graphique-3e` | ✅ | 15 | 36/36 | 0 | 0 | 0 | 0 | 0 |
-| `3e:statistiques-3e` | ✅ | 20 | 42/42 | 0 | 0 | 0 | 0 | 0 |
-| `3e:pythagore-3e` | ✅ | 10 | 30/30 | 0 | 0 | 0 | 0 | 0 |
-| `3e:reperage-droite-plan-3e` | ✅ | 16 | 28/28 | 0 | 0 | 0 | 0 | 0 |
-| `3e:representation-espace-3e` | ✅ | 14 | 26/26 | 0 | 0 | 0 | 0 | 0 |
-| `3e:thales-3e` | ✅ | 11 | 29/29 | 0 | 0 | 0 | 0 | 0 |
-| `3e:translations-vecteurs-3e` | ✅ | 17 | 29/29 | 0 | 0 | 0 | 0 | 0 |
-| `3e:triangles-3e` | ✅ | 10 | 27/27 | 0 | 0 | 0 | 0 | 0 |
-| `3e:trigonometrie-triangle-rectangle-3e` | ✅ | 12 | 31/31 | 0 | 0 | 0 | 0 | 0 |
-| `3e:calcul-litteral-algebrique` | ✅ | 21 | 30/30 | 0 | 0 | 0 | 0 | 0 |
-| `3e:equations-produit` | ✅ | 13 | 26/26 | 0 | 0 | 0 | 0 | 0 |
-| `3e:multiples-diviseurs` | ✅ | 9 | 31/31 | 0 | 0 | 0 | 0 | 0 |
-| `3e:nombres-rationnels` | ✅ | 17 | 36/36 | 0 | 0 | 0 | 0 | 0 |
-| `3e:puissances-3e` | ✅ | 13 | 29/29 | 0 | 0 | 0 | 0 | 0 |
-| `3e:racines-carrees-3e` | ✅ | 14 | 32/32 | 0 | 0 | 0 | 0 | 0 |
-| `3e:resolution-problemes-3e` | ✅ | 10 | 30/30 | 0 | 0 | 0 | 0 | 0 |
-| `6e:algorithmique-programmation` | ✅ | 12 | 21/21 | 0 | 0 | 0 | 0 | 0 |
-| `6e:graphiques` | ✅ | 14 | 31/31 | 0 | 0 | 0 | 0 | 0 |
-| `6e:proportionnalite` | ✅ | 12 | 30/30 | 0 | 0 | 0 | 0 | 0 |
-| `6e:tableaux` | ✅ | 11 | 34/34 | 0 | 0 | 0 | 0 | 0 |
-| `6e:constructions-geometriques` | ✅ | 12 | 27/27 | 0 | 0 | 0 | 0 | 0 |
-| `6e:droites-segments` | ✅ | 15 | 26/26 | 0 | 0 | 0 | 0 | 0 |
-| `6e:figures-planes` | ✅ | 17 | 27/27 | 0 | 0 | 0 | 0 | 0 |
-| `6e:parallelisme-perpendicularite` | ✅ | 12 | 28/28 | 0 | 0 | 0 | 0 | 0 |
-| `6e:reperage-plan` | ✅ | 14 | 27/27 | 0 | 0 | 0 | 0 | 0 |
-| `6e:solides-patrons` | ✅ | 13 | 26/26 | 0 | 0 | 0 | 0 | 0 |
-| `6e:symetrie` | ✅ | 9 | 26/26 | 0 | 0 | 0 | 0 | 0 |
-| `6e:aires` | ✅ | 10 | 32/32 | 0 | 0 | 0 | 0 | 0 |
-| `6e:angles` | ✅ | 11 | 27/27 | 0 | 0 | 0 | 0 | 0 |
-| `6e:contenances` | ✅ | 11 | 23/23 | 0 | 0 | 0 | 0 | 0 |
-| `6e:durees` | ✅ | 10 | 35/35 | 0 | 0 | 0 | 0 | 0 |
-| `6e:longueurs` | ✅ | 12 | 26/26 | 0 | 0 | 0 | 0 | 0 |
-| `6e:masses` | ✅ | 11 | 25/25 | 0 | 0 | 0 | 0 | 0 |
-| `6e:perimetres` | ✅ | 10 | 33/33 | 0 | 0 | 0 | 0 | 0 |
-| `6e:fractions` | ✅ | 14 | 23/23 | 0 | 0 | 0 | 0 | 0 |
-| `6e:nombres-decimaux` | ✅ | 15 | 30/30 | 0 | 0 | 0 | 0 | 0 |
-| `6e:nombres-entiers` | ✅ | 19 | 32/32 | 0 | 0 | 0 | 0 | 0 |
-| `6e:ordre-grandeur-estimation` | ✅ | 13 | 27/27 | 0 | 0 | 0 | 0 | 0 |
-| `6e:quatre-operations` | ✅ | 17 | 23/23 | 0 | 0 | 0 | 0 | 0 |
-| `6e:resolution-problemes` | ✅ | 14 | 26/26 | 0 | 0 | 0 | 0 | 0 |
-| `seconde:fonction-affine-2nde` | ✅ | 14 | 32/32 | 0 | 0 | 0 | 0 | 0 |
-| `seconde:fonctions-2nde` | ✅ | 23 | 43/43 | 0 | 0 | 0 | 0 | 0 |
-| `seconde:fonctions-de-reference-2nde` | ✅ | 19 | 27/27 | 0 | 0 | 0 | 0 | 0 |
-| `seconde:signe-fonctions-2nde` | ✅ | 17 | 32/32 | 0 | 0 | 0 | 0 | 0 |
-| `seconde:variations-extremums-2nde` | ✅ | 15 | 35/35 | 0 | 0 | 0 | 0 | 0 |
-| `seconde:colinearite-alignement-2nde` | ✅ | 24 | 27/27 | 0 | 0 | 0 | 0 | 0 |
-| `seconde:equations-de-droites-2nde` | ✅ | 30 | 34/34 | 0 | 0 | 0 | 0 | 0 |
-| `seconde:positions-relatives-droites-2nde` | ✅ | 21 | 29/29 | 0 | 0 | 0 | 0 | 0 |
-| `seconde:vecteurs-2nde` | ✅ | 29 | 29/29 | 0 | 0 | 0 | 0 | 0 |
-| `seconde:arithmetique-2nde` | ✅ | 16 | 32/32 | 0 | 0 | 0 | 0 | 0 |
-| `seconde:calcul-litteral-2nde` | ✅ | 19 | 30/30 | 0 | 0 | 0 | 0 | 0 |
-| `seconde:ensembles-et-intervalles-2nde` | ✅ | 23 | 29/29 | 0 | 0 | 0 | 0 | 0 |
-| `seconde:equations-et-inequations-2nde` | ✅ | 21 | 35/35 | 0 | 0 | 0 | 0 | 0 |
-| `seconde:logique-et-raisonnement-2nde` | ✅ | 18 | 29/29 | 0 | 0 | 0 | 0 | 0 |
-| `seconde:nombres-reels-2nde` | ✅ | 17 | 25/25 | 0 | 0 | 0 | 0 | 0 |
-| `seconde:valeur-absolue-distance-2nde` | ✅ | 14 | 27/27 | 0 | 0 | 0 | 0 | 0 |
-| `seconde:arbres-probabilites-2nde` | ✅ | 9 | 26/26 | 0 | 0 | 0 | 0 | 0 |
-| `seconde:boites-a-moustaches-2nde` | ✅ | 9 | 27/27 | 0 | 0 | 0 | 0 | 0 |
-| `seconde:evolutions-successives-reciproques-2nde` | ✅ | 13 | 32/32 | 0 | 0 | 0 | 0 | 0 |
-| `seconde:frequences-conditionnelles-2nde` | ✅ | 9 | 27/27 | 0 | 0 | 0 | 0 | 0 |
-| `seconde:loi-grands-nombres-2nde` | ✅ | 9 | 25/25 | 0 | 0 | 0 | 0 | 0 |
-| `seconde:probabilites-conditionnelles-2nde` | ✅ | 7 | 27/27 | 0 | 0 | 0 | 0 | 0 |
-| `seconde:proportions-pourcentages-2nde` | ✅ | 15 | 34/34 | 0 | 0 | 0 | 0 | 0 |
-| `seconde:series-regroupees-classes-2nde` | ✅ | 12 | 35/35 | 0 | 0 | 0 | 0 | 0 |
-| `seconde:statistiques-une-variable-2nde` | ✅ | 12 | 37/37 | 0 | 0 | 0 | 0 | 0 |
-| `seconde:tableaux-croises-2nde` | ✅ | 8 | 26/26 | 0 | 0 | 0 | 0 | 0 |
-| `seconde:tests-diagnostiques-probabilites-2nde` | ✅ | 9 | 30/30 | 0 | 0 | 0 | 0 | 0 |
-
-
-
-## Hors périmètre — 4e (relevé, non réparé)
-
-Ce niveau n'est pas encore traité. Les constats sont enregistrés ici pour mémoire.
-
-18 leçon(s) · critiques 1 · hautes 0 · moyennes 5 · basses 0
+83 leçon(s) · critiques 4 · hautes 0 · moyennes 8 · basses 0
 
 | Leçon | Carte | Bricks | requires | Contrat | C | H | M | L |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `4e:nombres-relatifs-4e` | ✅ | 7 | 27/27 | 0 | 0 | 0 | 0 | 0 |
-| `4e:racines-carrees-4e` | — | 0 | 0/0 | 0 | 0 | 0 | 0 | 0 |
-| `5e:probabilites-5e` | ✅ | 9 | 35/35 | 0 | 0 | 0 | 0 | 0 |
-| `5e:statistiques-5e` | ✅ | 14 | 38/38 | 0 | 0 | 0 | 0 | 0 |
-| `5e:angles-5e` | ✅ | 8 | 27/27 | 0 | 0 | 0 | 0 | 0 |
-| `5e:parallelogrammes-5e` | ✅ | 9 | 33/33 | 0 | 0 | 0 | 0 | 0 |
-| `5e:reperage-5e` | ✅ | 13 | 25/25 | 0 | 0 | 0 | 0 | 0 |
-| `5e:representations-espace-5e` | ✅ | 13 | 27/27 | 0 | 0 | 0 | 0 | 0 |
-| `5e:transformations-5e` | ✅ | 7 | 30/30 | 0 | 0 | 0 | 0 | 0 |
-| `5e:triangles-5e` | — | 0 | 0/0 | 0 | 0 | 0 | 5 | 0 |
-| `5e:calcul-litteral-5e` | ✅ | 9 | 33/33 | 0 | 0 | 0 | 0 | 0 |
-| `5e:nombres-rationnels-5e` | ✅ | 9 | 27/27 | 0 | 0 | 0 | 0 | 0 |
-| `5e:nombres-relatifs-5e` | ✅ | 10 | 30/30 | 0 | 0 | 0 | 0 | 0 |
-| `5e:operations-5e` | ✅ | 12 | 35/35 | 0 | 0 | 0 | 0 | 0 |
-| `5e:puissances-5e` | ✅ | 7 | 33/33 | 0 | 0 | 0 | 0 | 0 |
-| `5e:algorithmique-programmation-5e` | ✅ | 5 | 13/13 | 1 | 1 | 0 | 0 | 0 |
-| `5e:fonctions-5e` | ✅ | 9 | 27/27 | 0 | 0 | 0 | 0 | 0 |
-| `5e:proportionnalite-5e` | ✅ | 11 | 34/34 | 0 | 0 | 0 | 0 | 0 |
+| `1am:kitabat-adad-tabii` | ✅ | 8 | 20/20 | 0 | 0 | 0 | 0 | 0 |
+| `1am:kusur-ashriya-kitaba` | ✅ | 9 | 29/29 | 0 | 0 | 0 | 0 | 0 |
+| `1am:muqaranat-adad-ashriya` | ✅ | 5 | 24/24 | 0 | 0 | 0 | 0 | 0 |
+| `1am:qawaid-qabiliyat-qisma` | ✅ | 6 | 17/17 | 0 | 0 | 0 | 0 | 0 |
+| `1am:qisma-iqlidiya-baqi` | ✅ | 5 | 20/20 | 0 | 0 | 0 | 0 | 0 |
+| `1am:mana-jam-tarh` | ✅ | 5 | 24/24 | 0 | 0 | 0 | 0 | 0 |
+| `1am:hasil-qisma-kasr` | ✅ | 4 | 20/20 | 0 | 0 | 0 | 0 | 0 |
+| `1am:ikhtizal-kitaba-kasriya` | ✅ | 5 | 21/21 | 0 | 0 | 0 | 0 | 0 |
+| `2am:qisma-iqlidiya-hasr` | ✅ | 6 | 24/24 | 0 | 0 | 0 | 0 | 0 |
+| `4am:awwaliyan-fima-baynahuma` | ✅ | 10 | 10/14 | 0 | 0 | 0 | 0 | 0 |
+| `4am:bahth-pgcd` | ✅ | 14 | 13/16 | 0 | 0 | 0 | 0 | 0 |
+| `4am:ikhtizal-kasr` | ✅ | 15 | 11/16 | 0 | 0 | 0 | 0 | 0 |
+| `4am:khawass-qawasim` | ✅ | 5 | 15/18 | 0 | 0 | 0 | 0 | 0 |
+| `4am:qasim-adad-tabii` | ✅ | 5 | 17/18 | 0 | 0 | 0 | 0 | 0 |
+| `4am:qasim-mushtarak-akbar` | ✅ | 6 | 12/15 | 0 | 0 | 0 | 0 | 0 |
+| `4am:qawasim-adad-tabii` | ✅ | 4 | 14/17 | 0 | 0 | 0 | 1 | 0 |
+| `4am:tayin-pgcd` | ✅ | 8 | 8/12 | 0 | 0 | 0 | 0 | 0 |
+| `4am:wadiya-idmajiya-aadad` | ✅ | 2 | 11/11 | 0 | 0 | 0 | 1 | 0 |
+| `4am:mutatabiqat-shahira` | ✅ | 10 | 35/36 | 0 | 0 | 0 | 0 | 0 |
+| `4am:nashr-tabsit` | ✅ | 6 | 24/25 | 0 | 0 | 0 | 0 | 0 |
+| `4am:tahlil-ibara` | ✅ | 10 | 29/29 | 0 | 0 | 0 | 0 | 0 |
+| `4am:wadiya-idmajiya-harfi` | ✅ | 4 | 20/20 | 0 | 0 | 0 | 0 | 0 |
+| `4am:amaliyat-judhur` | ✅ | 9 | 28/28 | 0 | 0 | 0 | 0 | 0 |
+| `4am:jidhr-tarbii` | ✅ | 5 | 23/23 | 0 | 0 | 0 | 0 | 0 |
+| `4am:muadalat-x-murabba` | ✅ | 5 | 23/23 | 0 | 0 | 0 | 0 | 0 |
+| `4am:natiqa-ghayr-natiqa` | ✅ | 4 | 16/16 | 0 | 0 | 0 | 0 | 0 |
+| `4am:tawzif-khawass-judhur` | ✅ | 7 | 21/21 | 0 | 0 | 0 | 0 | 0 |
+| `4am:wadiya-idmajiya-judhur` | ✅ | 3 | 14/14 | 0 | 0 | 0 | 6 | 0 |
+| `4am:hall-jabri` | ✅ | 9 | 18/22 | 0 | 0 | 0 | 0 | 0 |
+| `4am:mafhum-jumla` | ✅ | 9 | 24/24 | 0 | 0 | 0 | 0 | 0 |
+| `4am:mushkilat-jumla` | ✅ | 7 | 18/18 | 0 | 0 | 0 | 0 | 0 |
+| `4am:wadiya-idmajiya-jumal` | ✅ | 5 | 16/16 | 0 | 0 | 0 | 0 | 0 |
+| `4am:jidaa-maadum` | ✅ | 8 | 28/29 | 0 | 0 | 0 | 0 | 0 |
+| `4am:muadala-ula` | ✅ | 7 | 20/20 | 0 | 0 | 0 | 0 | 0 |
+| `4am:mutarajiha-ula` | ✅ | 13 | 27/30 | 0 | 0 | 0 | 0 | 0 |
+| `4am:tarrid-mushkila` | ✅ | 8 | 19/20 | 0 | 0 | 0 | 0 | 0 |
+| `4am:wadiya-idmajiya-muadalat` | ✅ | 5 | 17/17 | 0 | 0 | 0 | 0 | 0 |
+| `4am:barahin-ashia` | ✅ | 10 | 23/23 | 0 | 0 | 0 | 0 | 0 |
+| `4am:insihab-shuaa` | ✅ | 9 | 23/23 | 0 | 0 | 0 | 0 | 0 |
+| `4am:majmu-shuaayn` | ✅ | 7 | 26/28 | 0 | 0 | 0 | 0 | 0 |
+| `4am:shuaayn-mutasawiyayn` | ✅ | 9 | 24/25 | 0 | 0 | 0 | 0 | 0 |
+| `4am:wadiya-idmajiya-ashia` | ✅ | 4 | 22/22 | 0 | 0 | 0 | 0 | 0 |
+| `4am:hisab-murakkibatay` | ✅ | 9 | 24/24 | 0 | 0 | 0 | 0 | 0 |
+| `4am:ithbat-khawas-maalam` | ✅ | 10 | 25/25 | 0 | 0 | 0 | 0 | 0 |
+| `4am:muntasaf-masafa` | ✅ | 6 | 18/18 | 0 | 0 | 0 | 0 | 0 |
+| `4am:murakkibata-shuaa` | ✅ | 7 | 20/23 | 0 | 0 | 0 | 0 | 0 |
+| `4am:wadiya-idmajiya-maalam` | ✅ | 5 | 21/21 | 0 | 0 | 0 | 0 | 0 |
+| `4am:khawas-dawaran` | ✅ | 9 | 21/21 | 0 | 0 | 0 | 0 | 0 |
+| `4am:mafhum-dawaran` | ✅ | 11 | 23/25 | 0 | 0 | 0 | 0 | 0 |
+| `4am:mudalaat-muntazama` | ✅ | 12 | 17/22 | 0 | 0 | 0 | 0 | 0 |
+| `4am:wadiya-idmajiya-dawaran` | ✅ | 4 | 23/23 | 0 | 0 | 0 | 0 | 0 |
+| `4am:zawiya-muhitiya` | ✅ | 10 | 17/21 | 0 | 0 | 0 | 0 | 0 |
+| `4am:kura-julla` | ✅ | 11 | 16/24 | 0 | 0 | 0 | 0 | 0 |
+| `4am:maqati-mustawiya` | ✅ | 9 | 19/25 | 0 | 0 | 0 | 0 | 0 |
+| `4am:misaha-hajm-kura` | ✅ | 9 | 15/20 | 0 | 0 | 0 | 0 | 0 |
+| `4am:takbir-tasghir` | ✅ | 9 | 16/22 | 0 | 0 | 0 | 0 | 0 |
+| `4am:wadiya-idmajiya-fada` | ✅ | 3 | 24/24 | 0 | 0 | 0 | 0 | 0 |
+| `4am:alaqat-muthallathiya` | ✅ | 11 | 27/27 | 0 | 0 | 0 | 0 | 0 |
+| `4am:hasiba-muthallathiya` | ✅ | 8 | 18/20 | 0 | 3 | 0 | 0 | 0 |
+| `4am:nisab-muthallathiya` | ✅ | 14 | 35/35 | 0 | 0 | 0 | 0 | 0 |
+| `4am:tarrid-muthallathiya` | ✅ | 10 | 22/22 | 0 | 0 | 0 | 0 | 0 |
+| `4am:wadiya-idmajiya-muthallathat` | ✅ | 5 | 20/20 | 0 | 0 | 0 | 0 | 0 |
+| `4am:aksiya-talis` | ✅ | 10 | 21/23 | 0 | 0 | 0 | 0 | 0 |
+| `4am:inshaat-talis` | ✅ | 9 | 23/23 | 0 | 0 | 0 | 0 | 0 |
+| `4am:talis-hisab-atwal` | ✅ | 9 | 24/29 | 0 | 0 | 0 | 0 | 0 |
+| `4am:wadiya-idmajiya-talis` | ✅ | 5 | 22/22 | 0 | 0 | 0 | 0 | 0 |
+| `4am:mafhum-taalufiya` | ✅ | 12 | 26/26 | 0 | 0 | 0 | 0 | 0 |
+| `4am:tafsir-bayani-jumla` | ✅ | 9 | 25/25 | 0 | 0 | 0 | 0 | 0 |
+| `4am:tamthil-bayani-taalufi` | ✅ | 8 | 33/33 | 0 | 0 | 0 | 0 | 0 |
+| `4am:tanasub-taghayyurat` | ✅ | 10 | 28/28 | 0 | 0 | 0 | 0 | 0 |
+| `4am:tarrid-taalufi` | ✅ | 10 | 25/26 | 0 | 0 | 0 | 0 | 0 |
+| `4am:wadiya-idmajiya-taalufiya` | ✅ | 7 | 27/27 | 0 | 0 | 0 | 0 | 0 |
+| `4am:mada-wasit-mutawassit` | ✅ | 11 | 27/27 | 0 | 0 | 0 | 0 | 0 |
+| `4am:majdulat-ihsaiya` | ✅ | 10 | 16/17 | 0 | 1 | 0 | 0 | 0 |
+| `4am:qiraat-wadiyat-ihsaiya` | ✅ | 12 | 17/19 | 0 | 0 | 0 | 0 | 0 |
+| `4am:takrar-mujamma` | ✅ | 10 | 23/26 | 0 | 0 | 0 | 0 | 0 |
+| `4am:wadiya-idmajiya-ihsa` | ✅ | 5 | 23/23 | 0 | 0 | 0 | 0 | 0 |
+| `4am:dala-khattiya` | ✅ | 9 | 25/25 | 0 | 0 | 0 | 0 | 0 |
+| `4am:tamthil-bayani-khatti` | ✅ | 10 | 24/24 | 0 | 0 | 0 | 0 | 0 |
+| `4am:tanasub-muamil` | ✅ | 10 | 24/24 | 0 | 0 | 0 | 0 | 0 |
+| `4am:tarrid-khatti` | ✅ | 10 | 21/21 | 0 | 0 | 0 | 0 | 0 |
+| `4am:tatbiqat-tanasub` | ✅ | 14 | 26/30 | 0 | 0 | 0 | 0 | 0 |
+| `4am:wadiya-idmajiya-khattiya` | ✅ | 5 | 23/23 | 0 | 0 | 0 | 0 | 0 |
+
+### `4am:qawasim-adad-tabii`
+
+- **MEDIUM** `W_UNPARSEABLE_STEPS` — apps/web/src/lessons/moyen/4am/ansab_al_aadad_wal_hisab/aadad-tabiiya-natiqa/qawasim-adad-tabii/modules/Module03Awazzif.jsx:0  
+  module 3: could not resolve 'steps(imported data)' to a literal array — its content is invisible to the audit
+
+### `4am:wadiya-idmajiya-aadad`
+
+- **MEDIUM** `W_PRIOR_NOT_DIAGNOSED` — apps/web/src/lessons/moyen/4am/ansab_al_aadad_wal_hisab/aadad-tabiiya-natiqa/wadiya-idmajiya-aadad/lesson.config.js:0  
+  priorKnowledge declares 'qawasim-al-pgcd' but no Module 0 question diagnoses it
+
+### `4am:wadiya-idmajiya-judhur`
+
+- **MEDIUM** `W_PRIOR_NOT_DIAGNOSED` — apps/web/src/lessons/moyen/4am/ansab_al_aadad_wal_hisab/hisab-judhur/wadiya-idmajiya-judhur/lesson.config.js:0  
+  priorKnowledge declares 'ghayr-natiq' but no Module 0 question diagnoses it
+- **MEDIUM** `W_PRIOR_NOT_DIAGNOSED` — apps/web/src/lessons/moyen/4am/ansab_al_aadad_wal_hisab/hisab-judhur/wadiya-idmajiya-judhur/lesson.config.js:0  
+  priorKnowledge declares 'qima-muqarraba' but no Module 0 question diagnoses it
+- **MEDIUM** `W_PRIOR_NOT_DIAGNOSED` — apps/web/src/lessons/moyen/4am/ansab_al_aadad_wal_hisab/hisab-judhur/wadiya-idmajiya-judhur/lesson.config.js:0  
+  priorKnowledge declares 'jidaa-jidhrayn' but no Module 0 question diagnoses it
+- **MEDIUM** `W_PRIOR_NOT_DIAGNOSED` — apps/web/src/lessons/moyen/4am/ansab_al_aadad_wal_hisab/hisab-judhur/wadiya-idmajiya-judhur/lesson.config.js:0  
+  priorKnowledge declares 'qismat-jidhrayn' but no Module 0 question diagnoses it
+- **MEDIUM** `W_PRIOR_NOT_DIAGNOSED` — apps/web/src/lessons/moyen/4am/ansab_al_aadad_wal_hisab/hisab-judhur/wadiya-idmajiya-judhur/lesson.config.js:0  
+  priorKnowledge declares 'tabsit-tawzii' but no Module 0 question diagnoses it
+- **MEDIUM** `W_PRIOR_NOT_DIAGNOSED` — apps/web/src/lessons/moyen/4am/ansab_al_aadad_wal_hisab/hisab-judhur/wadiya-idmajiya-judhur/lesson.config.js:0  
+  priorKnowledge declares 'naqt-maqam' but no Module 0 question diagnoses it
+
+### `4am:hasiba-muthallathiya`
+
+- **CRITICAL** `C_TARGET_DEMANDED_BEFORE_TAUGHT` — apps/web/src/lessons/moyen/4am/handasa/hisab-muthallathat/hasiba-muthallathiya/modules/Module01Nashat.jsx:149 · terme « cosinus »  
+  « cosinus » is a target concept of this lesson but its first appearance is q.explain (module 1, étape 1); it is only taught later at apps/web/src/lessons/moyen/4am/handasa/hisab-muthallathat/hasiba-muthallathiya/modules/Module02Maarif.jsx:70
+- **CRITICAL** `C_TARGET_DEMANDED_BEFORE_TAUGHT` — apps/web/src/lessons/moyen/4am/handasa/hisab-muthallathat/hasiba-muthallathiya/modules/Module01Nashat.jsx:191 · terme « sinus »  
+  « sinus » is a target concept of this lesson but its first appearance is q.explain (module 1, étape 2) and it is never taught in a teaching position
+- **CRITICAL** `C_TARGET_DEMANDED_BEFORE_TAUGHT` — apps/web/src/lessons/moyen/4am/handasa/hisab-muthallathat/hasiba-muthallathiya/modules/Module07Itqan.jsx:46 · terme « tangente »  
+  « tangente » is a target concept of this lesson but its first appearance is boss.explain (module 7) and it is never taught in a teaching position
+
+### `4am:majdulat-ihsaiya`
+
+- **CRITICAL** `C_TARGET_DEMANDED_BEFORE_TAUGHT` — apps/web/src/lessons/moyen/4am/tanasubiya_duwal/ihsa/majdulat-ihsaiya/modules/Module01Majdul.jsx:154 · terme « moyenne »  
+  « moyenne » is a target concept of this lesson but its first appearance is q.prompt (module 1, étape 3); it is only taught later at apps/web/src/lessons/moyen/4am/tanasubiya_duwal/ihsa/majdulat-ihsaiya/modules/Module01Majdul.jsx:175
+
+

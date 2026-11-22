@@ -1,0 +1,148 @@
+{
+  "id": "ex-4am-tarrid-muthallathiya-l1-003",
+  "lessonCode": "tarrid-muthallathiya",
+  "level": 1,
+  "metadata": {
+    "title": "ظلّ عمود إنارة في وهران",
+    "estimatedMinutes": 4,
+    "tags": [
+      "ترييض وضعية",
+      "الظل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-muthallathiya_P1",
+      "modelledOn": "ex-29",
+      "adaptedFrom": "ex-4am-tarrid-muthallathiya-l1-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في واجهة البحر بوهران، عمود إنارة شاقولي ظلّه على الأرض الأفقية طوله $8\\,\\mathrm{m}$ ، وأشعة الشمس تصنع مع الأرض زاوية قيسها $35^{\\circ}$ عند نهاية الظل. وتحرص البلدية على صيانة الإنارة ليسير الناس ليلًا في أمان."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "في المثلث القائم الذي رؤوسه قاعدة العمود ورأسه ونهاية ظلّه، ما هو الظلّ بالنسبة إلى الزاوية التي قيسها $35^{\\circ}$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الضلع المقابل",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-MUQABIL-MUJAWIR"
+        },
+        {
+          "id": "B",
+          "content": "الضلع المجاور",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "الوتر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-WATAR-MUQABIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم المثلث: العمود شاقولي والظل أفقي، والزاوية $35^{\\circ}$ عند نهاية الظل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوتر يقابل الزاوية القائمة؛ المجاور يمرّ برأس الزاوية المعلومة."
+        }
+      ],
+      "feedback": {
+        "correct": "الظل يمرّ برأس الزاوية (نهاية الظل) وليس وترا: هو الضلع المجاور.",
+        "incorrect": "الوتر هو شعاع الشمس (مقابل الزاوية القائمة عند قاعدة العمود)؛ ثم انظر هل يمرّ الظل برأس الزاوية المعلومة."
+      },
+      "solution": {
+        "lines": [
+          "الزاوية القائمة عند قاعدة العمود، فالوتر هو الشعاع الواصل بين رأس العمود ونهاية الظل.",
+          "الظل ضلع للزاوية القائمة يمرّ برأس الزاوية $35^{\\circ}$ : هو الضلع المجاور لها، والعمود هو الضلع المقابل."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب ارتفاع العمود بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-muthallathiya_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الارتفاع بـ m مدوّرا إلى 0,1",
+      "expectedAnswer": "5.6",
+      "misconceptionSignatures": [
+        {
+          "value": "11.4",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        },
+        {
+          "value": "4.6",
+          "id": "MISC-MUTH-NISBA-GHAYR-MUNASIBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الارتفاع مقابل للزاوية $35^{\\circ}$ والظل مجاور لها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة التي تجمع المقابل والمجاور هي الظل: $\\tan 35^{\\circ}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالآلة الحاسبة مبرمجة على الدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "الارتفاع $= 8 \\times \\tan 35^{\\circ} \\approx 5{,}6\\,\\mathrm{m}$ .",
+        "incorrect": "الطول المطلوب في بسط النسبة: نضرب الطول المعلوم في النسبة المثلثية ولا نقسم عليها؛ والآلة الحاسبة مبرمجة على الدرجة."
+      },
+      "solution": {
+        "lines": [
+          "نسمّي $h$ ارتفاع العمود. في المثلث القائم: $\\tan 35^{\\circ} = \\dfrac{h}{8}$",
+          "ومنه: $h = 8 \\times \\tan 35^{\\circ}$",
+          "باستعمال الآلة الحاسبة: $h \\approx 5{,}6017$"
+        ],
+        "result": "h \\approx 5{,}6\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

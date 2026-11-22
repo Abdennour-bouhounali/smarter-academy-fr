@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l4-005",
+  "lessonCode": "maqati-mustawiya",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — أي وجه؟",
+    "estimatedMinutes": 3,
+    "tags": [
+      "بلاطة قائمة",
+      "مساحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_maqati-mustawiya_P2",
+      "modelledOn": "know-3"
+    }
+  },
+  "statement": {
+    "content": "بلاطة قائمة أبعادها $9\\,\\mathrm{cm}$ و $7\\,\\mathrm{cm}$ و $6\\,\\mathrm{cm}$ . مستو موازٍ لأحد أوجهها يعطي مقطعا مساحته $54\\,\\mathrm{cm}^2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما طول الحرف العمودي على هذا المستوي (بـ $\\mathrm{cm}$)؟",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر)",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAQTA-BUUD",
+          "value": "9"
+        },
+        {
+          "id": "MISC-MAQTA-BUUD",
+          "value": "6"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحات الأوجه: $9 \\times 7$ ، $9 \\times 6$ ، $7 \\times 6$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المقطع له نفس بعدي الوجه الموازي له."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أي وجه مساحته 54؟ والحرف الثالث عمودي عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$54 = 9 \\times 6$ : المستوي يوازي الوجه $9 \\times 6$ ، والحرف العمودي عليه طوله $7\\,\\mathrm{cm}$ .",
+        "incorrect": "9 و 6 بعدا المقطع نفسه."
+      },
+      "difficulty": 4
+    }
+  ]
+}

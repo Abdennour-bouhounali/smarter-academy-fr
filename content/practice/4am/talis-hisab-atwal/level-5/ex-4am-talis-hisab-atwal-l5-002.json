@@ -1,0 +1,314 @@
+{
+  "id": "ex-4am-talis-hisab-atwal-l5-002",
+  "lessonCode": "talis-hisab-atwal",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2020 — منحدر المدخل وركائزه",
+    "estimatedMinutes": 20,
+    "tags": [
+      "وضعية إدماجية",
+      "خاصية طالس",
+      "تكلفة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_talis-hisab-atwal_P2",
+      "modelledOn": "BEM 2020 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2020",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "أمام مدخل متوسطة أُنجز بجهود متطوّعي الحيّ منحدر لذوي الاحتياجات الخاصة: سطحه المائل $[AC]$ يبدأ من الأرض في $A$ وينتهي عند عتبة الباب $C$ على ارتفاع $BC = 0{,}6\\,\\mathrm{m}$ ، حيث $B$ على الأرض و $AB = 7{,}2\\,\\mathrm{m}$ . يرتكز المنحدر على ركيزتين شاقوليتين $[MN]$ و $[PQ]$ ، حيث $M$ و $P$ على الأرض من $[AB]$ ، و $N$ و $Q$ من $[AC]$ ، و $AM = 2{,}4\\,\\mathrm{m}$ و $AP = 4{,}8\\,\\mathrm{m}$ ( الشكل غير مرسوم بالأبعاد الحقيقية).",
+    "figure": {
+      "points": {
+        "A": [
+          0.0,
+          0.0
+        ],
+        "B": [
+          7.2,
+          0.0
+        ],
+        "C": [
+          7.2,
+          3.6
+        ],
+        "M": [
+          2.4,
+          0.0
+        ],
+        "N": [
+          2.4,
+          1.2
+        ],
+        "P": [
+          4.8,
+          0.0
+        ],
+        "Q": [
+          4.8,
+          2.4
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "M",
+          "label": "2,4"
+        },
+        {
+          "from": "M",
+          "to": "P"
+        },
+        {
+          "from": "P",
+          "to": "B"
+        },
+        {
+          "from": "A",
+          "to": "C"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "0,6"
+        },
+        {
+          "from": "M",
+          "to": "N"
+        },
+        {
+          "from": "P",
+          "to": "Q"
+        }
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "B",
+          "C"
+        ],
+        [
+          "A",
+          "M",
+          "N"
+        ],
+        [
+          "A",
+          "P",
+          "Q"
+        ]
+      ],
+      "labels": {
+        "N": "nw",
+        "Q": "nw"
+      },
+      "ariaLabel": "المنحدر: الأرض [AB] أفقية و [BC] شاقولي، والسطح المائل [AC]؛ ركيزتان شاقوليتان [MN] و [PQ]؛ AM = 2,4 و AB = 7,2 و BC = 0,6",
+      "caption": "الشكل غير مرسوم بالأبعاد الحقيقية",
+      "maxWidth": 340
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "برّر أن $(MN) \\parallel (BC)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الركيزة و $[BC]$ شاقوليتان، والأرض أفقية."
+        }
+      ],
+      "feedback": {
+        "correct": "$(MN) \\perp (AB)$ و $(BC) \\perp (AB)$ ، إذن $(MN) \\parallel (BC)$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي."
+      },
+      "solution": {
+        "lines": [
+          "$(MN)$ و $(BC)$ شاقوليان، أي عموديان على الأرض $(AB)$ ،",
+          "والمستقيمان العموديان على نفس المستقيم متوازيان: $(MN) \\parallel (BC)$ (وكذلك $(PQ) \\parallel (BC)$)."
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب ارتفاع الركيزة $MN$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "0,2",
+      "misconceptionSignatures": [
+        {
+          "value": "1,8",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقط $A$ ، $M$ ، $B$ على استقامة والنقط $A$ ، $N$ ، $C$ على استقامة، و $(MN) \\parallel (BC)$ : المثلثان $AMN$ و $ABC$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب النسب الثلاث المتساوية $\\dfrac{AM}{AB} = \\dfrac{AN}{AC} = \\dfrac{MN}{BC}$ ، واحتفظ بالمساواة التي فيها $MN$ وثلاثة أطوال معلومة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الطول المجهول بالجداء المتصالب (الرابع المتناسب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$MN = \\dfrac{0{,}6 \\times 2{,}4}{7{,}2} = 0{,}2\\,\\mathrm{m}$ .",
+        "incorrect": "راجع المساواة المختارة: في كل نسبة طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: النقط $A$ ، $M$ ، $B$ على استقامة واحدة، والنقط $A$ ، $N$ ، $C$ على استقامة واحدة، و $(MN) \\parallel (BC)$ .",
+          "حسب خاصية طالس: $\\dfrac{AM}{AB} = \\dfrac{AN}{AC} = \\dfrac{MN}{BC}$",
+          "$\\dfrac{AM}{AB} = \\dfrac{MN}{BC}$ أي $\\dfrac{2{,}4}{7{,}2} = \\dfrac{MN}{0{,}6}$",
+          "$MN = \\dfrac{0{,}6 \\times 2{,}4}{7{,}2}$"
+        ],
+        "result": "MN = 0{,}2\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب ارتفاع الركيزة $PQ$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "0,4",
+      "misconceptionSignatures": [
+        {
+          "value": "0,9",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "0,2",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقط $A$ ، $P$ ، $B$ على استقامة والنقط $A$ ، $Q$ ، $C$ على استقامة، و $(PQ) \\parallel (BC)$ : المثلثان $APQ$ و $ABC$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب النسب الثلاث المتساوية $\\dfrac{AP}{AB} = \\dfrac{AQ}{AC} = \\dfrac{PQ}{BC}$ ، واحتفظ بالمساواة التي فيها $PQ$ وثلاثة أطوال معلومة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الطول المجهول بالجداء المتصالب (الرابع المتناسب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$PQ = \\dfrac{0{,}6 \\times 4{,}8}{7{,}2} = 0{,}4\\,\\mathrm{m}$ .",
+        "incorrect": "راجع المساواة المختارة: في كل نسبة طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AP}{AB} = \\dfrac{PQ}{BC}$ أي $\\dfrac{4{,}8}{7{,}2} = \\dfrac{PQ}{0{,}6}$",
+          "$PQ = \\dfrac{0{,}6 \\times 4{,}8}{7{,}2}$"
+        ],
+        "result": "PQ = 0{,}4\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "☜ تُصنع الركيزتان والعمود $[BC]$ من أنبوب حديدي ثمن المتر الواحد منه $850DA$ . ما ثمن الأنبوب اللازم؟",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الثمن بـ DA",
+      "expectedAnswer": "1020",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع أطوال القطع الثلاث $MN$ و $PQ$ و $BC$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب الطول الكلي في ثمن المتر."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}2 + 0{,}4 + 0{,}6 = 1{,}2\\,\\mathrm{m}$ و $1{,}2 \\times 850 = 1020DA$ .",
+        "incorrect": "احسب الطول الكلي للأنبوب (ثلاث قطع) ثم اضرب في 850."
+      },
+      "solution": {
+        "lines": [
+          "الطول الكلي: $MN + PQ + BC = 0{,}2 + 0{,}4 + 0{,}6 = 1{,}2\\,\\mathrm{m}$",
+          "الثمن: $1{,}2 \\times 850$"
+        ],
+        "result": "1020\\,DA"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

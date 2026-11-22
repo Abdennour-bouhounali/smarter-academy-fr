@@ -1,0 +1,370 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-kusur-amaliyat-l5-007",
+  "lessonCode": "wadiya-idmajiya-kusur-amaliyat",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — وضعيّة إدماجيّة : لوح خشب وقطعه",
+    "estimatedMinutes": 14,
+    "tags": [
+      "القسمة على عدد عشري",
+      "الحصر",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "لدى نجّار لوح طوله $43{,}8$ m ، يقصّ منه قطعًا طول كلّ قطعة $1{,}3$ m ، ويحتاج إلى $34$ قطعة ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأوّل :",
+      "statement": "ما العدد الذي نضرب فيه حدّي الكتابة الكسرية $\\dfrac{43{,}8}{1{,}3}$ ليصير مقامها عددًا طبيعيًّا ؟ (أصغر قوّة للعدد $10$ تفي بالغرض)",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم رقمًا بعد الفاصلة في المقسوم عليه ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نضرب الحدّين في 10 أو 100 … ليصير المقسوم عليه عددًا طبيعيًّا ، وتبقى قيمة الحاصل كما هي ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أصغر قوّة للعدد 10 تفي بالغرض ."
+        }
+      ],
+      "feedback": {
+        "correct": "$10$ : $\\dfrac{43{,}8}{1{,}3} = \\dfrac{438}{13}$ .",
+        "incorrect": "اضرب الحدّين في 10 أو 100 … حتى يصير المقسوم عليه عددًا طبيعيًّا ."
+      },
+      "solution": {
+        "lines": [
+          "في $1{,}3$ رقم واحد بعد الفاصلة ، فنضرب الحدّين في $10$ .",
+          "$\\dfrac{43{,}8}{1{,}3} = \\dfrac{438}{13}$ ."
+        ],
+        "result": "10"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "أنجز القسمة الإقليدية للعدد $438$ على $13$ : كم قطعة كاملة يحصل عليها ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "33",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "32",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "value": "34",
+          "id": "MISC-HASR-IZAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المقسوم هو العدد الذي نقسمه والمقسوم عليه هو العدد الذي نقسم به : كم مرّة يدخل الثاني تمامًا في الأوّل ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي أصغر تمامًا من المقسوم عليه ، والمساواة المميّزة : المقسوم = المقسوم عليه × الحاصل + الباقي ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالضرب ثمّ الجمع قبل أن تجيب ."
+        }
+      ],
+      "feedback": {
+        "correct": "$33$ .",
+        "incorrect": "المقسوم عليه × الحاصل + الباقي = المقسوم ، والباقي أصغر من المقسوم عليه . تحقّق ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$438 = 13 \\times 33 + 9$ ، و $9 < 13$ .",
+          "$13 \\times 33 = 429$ و $438 - 429 = 9$ .",
+          "حاصل القسمة الإقليدية : $33$ ."
+        ],
+        "result": "33"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "اختر الحصر الصحيح للحاصل $\\dfrac{438}{13}$ بين عددين طبيعيين متتاليين .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$34 < \\dfrac{438}{13} < 35$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        },
+        {
+          "id": "B",
+          "content": "$33 < \\dfrac{438}{13} < 34$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$32 < \\dfrac{438}{13} < 33$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        },
+        {
+          "id": "D",
+          "content": "$9 < \\dfrac{438}{13} < 10$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من القسمة الإقليدية نعرف أنّ المقسوم عليه × الحاصل لا يتجاوز المقسوم ، وأنّ المقسوم عليه × (الحاصل + 1) يتجاوزه ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحصر بين عددين طبيعيين متتاليين يبدأ بالحاصل الإقليدي ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب طرفي الحصر في المقسوم عليه وقارن بالمقسوم للتأكّد ."
+        }
+      ],
+      "feedback": {
+        "correct": "$33 < \\dfrac{438}{13} < 34$ .",
+        "incorrect": "المقسوم عليه × الحاصل + الباقي = المقسوم ، والباقي أصغر من المقسوم عليه . تحقّق ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$438 = 13 \\times 33 + 9$ ، فالحاصل الإقليدي هو $33$ .",
+          "$13 \\times 33 = 429 < 438 < 442 = 13 \\times 34$ ، ومنه $33 < \\dfrac{438}{13} < 34$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "الجزء الثاني :",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}1$ بالنقصان لحاصل القسمة $43{,}8 \\div 1{,}3$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "33.6",
+      "misconceptionSignatures": [
+        {
+          "value": "33.7",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "33.69",
+          "id": "MISC-QARIBA-RANK"
+        },
+        {
+          "value": "33.9",
+          "id": "MISC-QARIBA-REMCOMMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "إن كان المقسوم عليه عشريًّا فاضرب المقسوم والمقسوم عليه في العدد نفسه (10 أو 100 …) لتحصل على قسمة على عدد طبيعي ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة : بالنقصان نُبقي الأرقام كما هي ، وبالزيادة نزيد وحدة على آخر رقم ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا نقرّب إلى الأقرب : القيمة بالنقصان لا تتجاوز الحاصل والقيمة بالزيادة تتجاوزه ."
+        }
+      ],
+      "feedback": {
+        "correct": "$33{,}6$ .",
+        "incorrect": "أنجز القسمة بعد الفاصلة وتوقّف عند الرتبة المطلوبة : بالنقصان دون تغيير آخر رقم ، وبالزيادة بإضافة وحدة إلى آخر رقم ."
+      },
+      "solution": {
+        "lines": [
+          "نضرب الحدّين في $10$ : $43{,}8 \\div 1{,}3 = 438 \\div 13$ .",
+          "بإنجاز القسمة حتى رقم بعد الفاصلة ثمّ ما يليه : $43{,}8 \\div 1{,}3 = 33{,}69\\ldots$ .",
+          "القيمة المقرّبة إلى $0{,}1$ بالنقصان : $33{,}6$ ."
+        ],
+        "result": "33{,}6"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "وأعط القيمة المقرّبة إلى $0{,}1$ بالزيادة .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "33.7",
+      "misconceptionSignatures": [
+        {
+          "value": "33.6",
+          "id": "MISC-QARIBA-SWAP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "إن كان المقسوم عليه عشريًّا فاضرب المقسوم والمقسوم عليه في العدد نفسه (10 أو 100 …) لتحصل على قسمة على عدد طبيعي ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة : بالنقصان نُبقي الأرقام كما هي ، وبالزيادة نزيد وحدة على آخر رقم ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا نقرّب إلى الأقرب : القيمة بالنقصان لا تتجاوز الحاصل والقيمة بالزيادة تتجاوزه ."
+        }
+      ],
+      "feedback": {
+        "correct": "$33{,}7$ .",
+        "incorrect": "أنجز القسمة بعد الفاصلة وتوقّف عند الرتبة المطلوبة : بالنقصان دون تغيير آخر رقم ، وبالزيادة بإضافة وحدة إلى آخر رقم ."
+      },
+      "solution": {
+        "lines": [
+          "نضرب الحدّين في $10$ : $43{,}8 \\div 1{,}3 = 438 \\div 13$ .",
+          "بإنجاز القسمة حتى رقم بعد الفاصلة ثمّ ما يليه : $43{,}8 \\div 1{,}3 = 33{,}69\\ldots$ .",
+          "القيمة المقرّبة إلى $0{,}1$ بالزيادة : $33{,}7$ ."
+        ],
+        "result": "33{,}7"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "هل يكفي اللوح للحصول على $34$ قطعة كاملة ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا ثمّ تحقّق منها بحساب بسيط ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أو قارن بدقّة ثمّ قارن بما قيل ."
+        }
+      ],
+      "feedback": {
+        "correct": "لا .",
+        "incorrect": "احسب ثمّ قارن بدقّة قبل أن تجيب ."
+      },
+      "solution": {
+        "lines": [
+          "عدد القطع الكاملة هو الحاصل الإقليدي $33$ .",
+          "$33 < 34$ : لا يكفي ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

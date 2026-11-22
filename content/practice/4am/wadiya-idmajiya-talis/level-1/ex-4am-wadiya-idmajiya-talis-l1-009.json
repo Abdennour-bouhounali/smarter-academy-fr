@@ -1,0 +1,189 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-talis-l1-009",
+  "lessonCode": "wadiya-idmajiya-talis",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2023 — عموديان على مستقيم واحد ثم MN",
+    "estimatedMinutes": 6,
+    "tags": [
+      "التوازي",
+      "خاصية طالس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-talis_P1",
+      "modelledOn": "BEM 2023 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل: $ABC$ مثلث قائم في $B$ حيث $AB = 8\\,\\mathrm{cm}$ و $BC = 6\\,\\mathrm{cm}$ . $M$ نقطة من $[AB]$ حيث $AM = 2\\,\\mathrm{cm}$ ، والمستقيم العمودي على $(AB)$ في $M$ يقطع $[AC]$ في $N$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0.0,
+          8.0
+        ],
+        "B": [
+          0.0,
+          0.0
+        ],
+        "C": [
+          6.0,
+          0.0
+        ],
+        "M": [
+          0.0,
+          6.0
+        ],
+        "N": [
+          1.5,
+          6.0
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "M",
+          "label": "2"
+        },
+        [
+          "M",
+          "B"
+        ],
+        {
+          "from": "B",
+          "to": "C",
+          "label": "6"
+        },
+        [
+          "A",
+          "N"
+        ],
+        [
+          "N",
+          "C"
+        ],
+        {
+          "from": "M",
+          "to": "N",
+          "bold": true
+        }
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "B",
+          "C"
+        ],
+        [
+          "A",
+          "M",
+          "N"
+        ]
+      ],
+      "labels": {
+        "A": "n",
+        "B": "sw",
+        "C": "se",
+        "M": "w",
+        "N": "ne"
+      },
+      "ariaLabel": "المثلث ABC قائم في B، M من [AB] حيث AM = 2، والعمودي على (AB) في M يقطع [AC] في N؛ AB = 8 و BC = 6",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن المستقيمين $(MN)$ و $(BC)$ متوازيان.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا تعرف عن مستقيمين عموديين على مستقيم واحد؟"
+        }
+      ],
+      "feedback": {
+        "correct": "مستقيمان عموديان على المستقيم نفسه $(AB)$ متوازيان.",
+        "incorrect": "قارن ما كتبته بالحل النموذجي خطوة خطوة، ثم صحّح الخطوة التي تختلف."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $(MN) \\perp (AB)$ و $(BC) \\perp (AB)$ ،",
+          "والمستقيمان العموديان على مستقيم واحد متوازيان، إذن: $(MN) \\parallel (BC)$ ."
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب الطول $MN$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "1,5",
+      "misconceptionSignatures": [
+        {
+          "value": "24",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "2",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلثان $AMN$ و $ABC$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $\\dfrac{AM}{AB} = \\dfrac{MN}{BC}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$MN = \\dfrac{2 \\times 6}{8} = 1{,}5\\,\\mathrm{cm}$ .",
+        "incorrect": "في كل نسبة: طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "بما أن $(MN) \\parallel (BC)$ ، حسب خاصية طالس: $\\dfrac{AM}{AB} = \\dfrac{AN}{AC} = \\dfrac{MN}{BC}$",
+          "$\\dfrac{2}{8} = \\dfrac{MN}{6}$",
+          "$MN = \\dfrac{2 \\times 6}{8}$"
+        ],
+        "result": "MN = 1{,}5\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

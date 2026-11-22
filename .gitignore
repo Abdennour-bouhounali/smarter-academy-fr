@@ -1,15 +1,30 @@
 node_modules/
 dist/
 .env*
+# Templates are the one exception: a fresh clone must be able to see which
+# variables exist without inheriting any real value.
+!.env.example
 .DS_Store
 database_export.sql
 *.sql
+# Exception : les MODES OPÉRATOIRES de migration relus à la main. Ce ne sont
+# pas des dumps — aucune donnée d'élève, uniquement du DDL généré par
+# `php artisan migrate --pretend`. Le pipeline n'applique jamais les
+# migrations (deploy.yml § « Laravel post-deployment »), donc ces fichiers SONT
+# la procédure de déploiement du schéma : DZ_FIRST_DEPLOYMENT.md les cite un
+# par un, et une copie locale ne servirait à personne d'autre.
+!docs/deployment/*.sql
 
 # Generated curriculum export (build artifact of exportCurriculum.mjs)
 packages/core/curriculum/.generated/
 
 # ── Outils d'agent (config locale, pas du code du projet) ────────────────
-.claude/
+# Claude Code's local files stay out of git (settings, worktrees, skills installed on one machine) — EXCEPT the project's
+# own skill for generating lessons, which is versioned (owner, 2026-11-19): .claude/skills/lesson-v2/
+.claude/*
+!.claude/skills/
+.claude/skills/*
+!.claude/skills/lesson-v2/
 .agents/
 skills-lock.json
 
@@ -24,16 +39,6 @@ test-results/
 # Même nature que build/deploy : reconstruites à la demande, jamais versionnées.
 apps/api.zip
 apps/web/dist.zip
-# Toute archive de déploiement, où qu'elle soit : celles-ci embarquent un
-# api/.env de production (clés Stripe, APP_KEY, mot de passe de la base).
-# hostinger-deploy.zip avait été versionné par erreur — voir le rapport de
-# déploiement pour les clés à faire tourner.
-*.zip
-
-# Clés de déploiement : la clé privée SSH ne vit que dans les secrets GitHub.
-*.pem
-id_rsa*
-id_ed25519*
 
 # ── Brouillons de session ────────────────────────────────────────────────
 # Sondes Playwright jetables écrites à la racine pendant une mise au point
@@ -44,3 +49,12 @@ _shot*.mjs
 _*.html
 _*_files/
 *.log
+scripts/__pycache__/
+apps/api/database/curriculum-sync/
+
+# PDFs are never versioned (official books, exercise sheets, etc.)
+*.pdf
+*.PDF
+
+# Annales BEM 2007–2025 (sujets + corrigés) : jamais versionnées — le fichier des corrigés n’a pas d’extension .pdf
+docs/official-BREVET-exams/

@@ -1,0 +1,84 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ashia-l1-006",
+  "lessonCode": "wadiya-idmajiya-ashia",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — الثابت والمتغيّر",
+    "estimatedMinutes": 2,
+    "tags": [
+      "قراءة الوضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ashia_P2",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "حرصًا على سلامة التلاميذ، تريد بلدية باب الزوار وضع ممر للراجلين [MN] عمودي على حافتي طريق متوازيتين، بين حيّ A ومدرسة B تقعان على جهتين مختلفتين من الطريق."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "عندما نحرّك الممر على طول الطريق، أيّ طول لا يتغيّر؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الطول MN",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الطول AM",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "الطول NB",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "المجموع $AM + NB$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MAMAR-NASI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الممر عمودي على الحافتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة بين مستقيمين متوازيين ثابتة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ما الذي لا يتحرّك مع الممر؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الممر عمودي على الحافتين المتوازيتين، فطوله MN هو عرض الطريق في كل موضع.",
+        "incorrect": "AM و NB يتغيّران مع موضع الممر، وكذلك مجموعهما."
+      },
+      "cognitiveDemand": "recall",
+      "difficulty": 1
+    }
+  ]
+}

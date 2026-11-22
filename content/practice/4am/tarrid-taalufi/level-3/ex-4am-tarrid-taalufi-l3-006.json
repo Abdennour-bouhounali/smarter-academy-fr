@@ -1,0 +1,248 @@
+{
+  "id": "ex-4am-tarrid-taalufi-l3-006",
+  "lessonCode": "tarrid-taalufi",
+  "level": 3,
+  "metadata": {
+    "title": "ملعب خماسي",
+    "estimatedMinutes": 10,
+    "tags": [
+      "نمذجة",
+      "معادلة",
+      "أفضل صيغة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-taalufi_P2",
+      "modelledOn": "act-4",
+      "adaptedFrom": "ex-4am-tarrid-taalufi-l3-006"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "كراء ملعب خماسي لشباب الحيّ المتعاونين: الصيغة A بـ 3000DA للساعة، والصيغة B اشتراك 6000DA ثم 1500DA للساعة.\nنسمّي $x$ عدد الساعات، و $f(x)$ ، $g(x)$ المبلغين بـ DA حسب الصيغتين A و B."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عبّر عن $f(x)$ و $g(x)$ بدلالة $x$ .",
+      "statement": "أعط العدد $a$ حيث: $f(x) = ax$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "3000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع عن كل ساعة بالصيغة A؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هو ما يُدفع $x$ مرّة: معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "ما يُدفع عن كل ساعة بالصيغة A هو معامل $x$ .",
+        "incorrect": "معامل $x$ هو المبلغ الذي يتكرّر مع كل وحدة، لا المبلغ الذي يُدفع مرّة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "الصيغة A: $f(x) = 3000x$",
+          "الصيغة B: $g(x) = 1500x + 6000$"
+        ],
+        "result": "f(x) = 3000x"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "أعط العددين $a$ و $b$ حيث: $g(x) = ax + b$ ، ابدأ بالعدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "1500",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "6000"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع عن كل ساعة بالصيغة B؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هو ما يُدفع $x$ مرّة: معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "ما يُدفع عن كل ساعة بالصيغة B هو معامل $x$ .",
+        "incorrect": "معامل $x$ هو المبلغ الذي يتكرّر مع كل وحدة، لا المبلغ الذي يُدفع مرّة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "الصيغة A: $f(x) = 3000x$",
+          "الصيغة B: $g(x) = 1500x + 6000$"
+        ],
+        "result": "g(x) = 1500x + 6000"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "ثم العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "6000",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "1500"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع مرّة واحدة (الاشتراك)؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الاشتراك يُدفع مرّة واحدة: هو الحدّ الثابت $b$ .",
+        "incorrect": "الحدّ الثابت لا يتعلّق بعدد الوحدات $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "الصيغة A: $f(x) = 3000x$",
+          "الصيغة B: $g(x) = 1500x + 6000$"
+        ],
+        "result": "g(x) = 1500x + 6000"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "حل المعادلة $f(x) = g(x)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب حل المعادلة فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكلفتان متساويتان: نحل معادلة من الدرجة الأولى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $3000x = 1500x + 6000$ ثم اجمع حدود $x$ في طرف واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "هو عدد الساعات الذي تتساوى عنده الصيغتان.",
+        "incorrect": "انقل حدود $x$ إلى طرف واحد والأعداد إلى الطرف الآخر، ثم اقسم على معامل $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$3000x = 1500x + 6000$",
+          "$1500x = 6000$",
+          "$x = 4$",
+          "من أجل 4 ساعات تتساوى الصيغتان."
+        ],
+        "result": "x = 4"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "يكتري فريق الحي الملعب 3 ساعات. ما هي الصيغة الأقل تكلفة له؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الصيغة A",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الصيغة B",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 3 بحل المعادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أو احسب $f(3)$ و $g(3)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "لـ 3 ساعات: 9000DA مقابل 10500DA .",
+        "incorrect": "احسب المبلغين لـ 3 ساعات ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "$f(3) = 9000DA$ و $g(3) = 1500 \\times 3 + 6000 = 10500DA$ .",
+          "إذا لمدة أقل من 4 ساعات الصيغة A أقل تكلفة."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

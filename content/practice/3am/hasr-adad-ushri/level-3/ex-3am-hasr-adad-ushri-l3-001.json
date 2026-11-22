@@ -1,0 +1,282 @@
+{
+  "id": "ex-3am-hasr-adad-ushri-l3-001",
+  "lessonCode": "hasr-adad-ushri",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — جداءات ثم حصر حاصل قسمة وتدويره",
+    "estimatedMinutes": 10,
+    "tags": [
+      "حاصل قسمة",
+      "حصر",
+      "تدوير"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 1,
+      "file": "3am-s1-2",
+      "exercise": 3
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن $V$ و $E$ عبارتين حيث:",
+    "formulas": [
+      "V = (-0{,}25) \\times 4 \\times (-10) \\times (-1)",
+      "E = (-10) \\times 2 \\times 0{,}1 \\times (-7) \\times (-0{,}5)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $V$ .",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "-10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى الرقم الذي يلي الرتبة المطلوبة مباشرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إن كان هذا الرقم خمسة أو أكبر زدنا الرقم الأخير بواحد، وإلاّ تركناه كما هو."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لحصر عدد علمنا مدوّره: ارجع نصف وحدة من الرتبة إلى الخلف وتقدّم نصف وحدة إلى الأمام؛ الطرف الأدنى مشمول والطرف الأعلى مستبعد."
+        }
+      ],
+      "feedback": {
+        "correct": "$V=-10$ .",
+        "incorrect": "راجع التدوير: انظر إلى الرقم الذي يلي الرتبة المطلوبة مباشرة؛ ولحصر عدد علمنا مدوّره نرجع نصف وحدة ونتقدّم نصف وحدة، والطرف الأعلى مستبعد."
+      },
+      "solution": {
+        "lines": [
+          "$(-0{,}25)\\times4=-1$ ثم $-1\\times(-10)=10$ ثم $10\\times(-1)=-10$ .",
+          "$V=-10$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $E$ .",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "-7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى الرقم الذي يلي الرتبة المطلوبة مباشرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إن كان هذا الرقم خمسة أو أكبر زدنا الرقم الأخير بواحد، وإلاّ تركناه كما هو."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لحصر عدد علمنا مدوّره: ارجع نصف وحدة من الرتبة إلى الخلف وتقدّم نصف وحدة إلى الأمام؛ الطرف الأدنى مشمول والطرف الأعلى مستبعد."
+        }
+      ],
+      "feedback": {
+        "correct": "$E=-7$ .",
+        "incorrect": "راجع التدوير: انظر إلى الرقم الذي يلي الرتبة المطلوبة مباشرة؛ ولحصر عدد علمنا مدوّره نرجع نصف وحدة ونتقدّم نصف وحدة، والطرف الأعلى مستبعد."
+      },
+      "solution": {
+        "lines": [
+          "$(-10)\\times2=-20$ ثم $-20\\times0{,}1=-2$ ثم $-2\\times(-7)=14$ ثم $14\\times(-0{,}5)=-7$ .",
+          "$E=-7$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "تعرض الآلة الحاسبة : $10\\div7=1{,}428571429$ . ما القيمة المقرّبة بالنقصان إلى $0{,}001$ للعدد $\\dfrac{V}{E}$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "1.428",
+      "misconceptionSignatures": [
+        {
+          "value": "1.429",
+          "id": "MISC-TAQRIB-NAQS-ZIYADA"
+        },
+        {
+          "value": "1.42",
+          "id": "MISC-TADWIR-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ ما تعرضه شاشة الآلة الحاسبة، ولا تعدّه قيمة مضبوطة للحاصل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احصر الحاصل بين قيمتين مقرّبتين متتاليتين في الرتبة المطلوبة، ثم حدّد الرقم الذي يلي تلك الرتبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الحاصل بقيمتيه المقرّبتين: الأولى أصغر منه أو تساويه والثانية أكبر منه."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}428\\le\\dfrac{V}{E}<1{,}429$ ؛ القيمة بالنقصان هي $1{,}428$ .",
+        "incorrect": "لا تعدّ ما تعرضه شاشة الآلة قيمة مضبوطة للحاصل: احصره بين قيمتين مقرّبتين متتاليتين؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$V$ و $E$ سالبان؛ إذن $\\dfrac{V}{E}=\\dfrac{10}{7}>0$ .",
+          "$1{,}428\\le\\dfrac{V}{E}<1{,}429$ ؛ القيمة بالنقصان هي $1{,}428$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "وما القيمة المقرّبة بالزيادة إلى $0{,}001$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "1.429",
+      "misconceptionSignatures": [
+        {
+          "value": "1.428",
+          "id": "MISC-TAQRIB-NAQS-ZIYADA"
+        },
+        {
+          "value": "1.43",
+          "id": "MISC-TADWIR-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ ما تعرضه شاشة الآلة الحاسبة، ولا تعدّه قيمة مضبوطة للحاصل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احصر الحاصل بين قيمتين مقرّبتين متتاليتين في الرتبة المطلوبة، ثم حدّد الرقم الذي يلي تلك الرتبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الحاصل بقيمتيه المقرّبتين: الأولى أصغر منه أو تساويه والثانية أكبر منه."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}428\\le\\dfrac{V}{E}<1{,}429$ ؛ القيمة بالزيادة هي $1{,}429$ .",
+        "incorrect": "لا تعدّ ما تعرضه شاشة الآلة قيمة مضبوطة للحاصل: احصره بين قيمتين مقرّبتين متتاليتين؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}428\\le\\dfrac{V}{E}<1{,}429$ ؛ القيمة بالزيادة هي $1{,}429$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ا",
+      "statement": "أعط مدوّر العدد $\\dfrac{V}{E}$ إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "1.4",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-TADWIR-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى الرقم الذي يلي الرتبة المطلوبة مباشرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إن كان هذا الرقم خمسة أو أكبر زدنا الرقم الأخير بواحد، وإلاّ تركناه كما هو."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لحصر عدد علمنا مدوّره: ارجع نصف وحدة من الرتبة إلى الخلف وتقدّم نصف وحدة إلى الأمام؛ الطرف الأدنى مشمول والطرف الأعلى مستبعد."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{V}{E}=1{,}428\\ldots$ ؛ الرقم الذي يلي رتبة $0{,}1$ هو $2$ ، فنترك الرقم $4$ كما هو: $1{,}4$ .",
+        "incorrect": "راجع التدوير: انظر إلى الرقم الذي يلي الرتبة المطلوبة مباشرة؛ ولحصر عدد علمنا مدوّره نرجع نصف وحدة ونتقدّم نصف وحدة، والطرف الأعلى مستبعد."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{V}{E}=1{,}428\\ldots$ ؛ الرقم الذي يلي رتبة $0{,}1$ هو $2$ ، فنترك الرقم $4$ كما هو: $1{,}4$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

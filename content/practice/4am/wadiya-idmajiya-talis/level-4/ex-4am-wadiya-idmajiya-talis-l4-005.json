@@ -1,0 +1,127 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-talis-l4-005",
+  "lessonCode": "wadiya-idmajiya-talis",
+  "level": 4,
+  "metadata": {
+    "title": "أسطوانة مستحيلة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "أسطوانة",
+      "مخروط",
+      "التحقق من النتيجة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-talis_P3",
+      "modelledOn": "situation"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نبحث عن أسطوانة دوران محاطة بمخروط دوران ارتفاعه $18\\,\\mathrm{cm}$ ونصف قطر قاعدته $6\\,\\mathrm{cm}$ (قاعدتها على قاعدة المخروط ودائرتها العليا على سطحه)، يزيد ارتفاعها على نصف قطرها بـ $20\\,\\mathrm{cm}$ : $h = r + 20$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "حلّ المعادلة التي تعطيها خاصية طالس في نصف المقطع المحوري، وأعط قيمة $r$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (قد يكون سالبا)",
+      "expectedAnswer": "-0,5",
+      "misconceptionSignatures": [
+        {
+          "value": "-1",
+          "id": "MISC-TALIS-HALL-MUADALA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\dfrac{r}{6} = \\dfrac{18 - h}{18}$ و $h = r + 20$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $h$ ثم بسّط $18 - (r + 20)$ قبل الضرب في $18$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$18r = 6(-2 - r)$ ، أي $24r = -12$ ومنه $r = -0{,}5$ .",
+        "incorrect": "انتبه إلى الإشارات: $18 - (r + 20) = -2 - r$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{r}{6} = \\dfrac{18 - (r + 20)}{18} = \\dfrac{-2 - r}{18}$",
+          "$18r = 6(-2 - r)$",
+          "$18r = -12 - 6r$",
+          "$24r = -12$",
+          "$r = -\\dfrac{12}{24}$"
+        ],
+        "result": "r = -0{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل توجد أسطوانة تحقّق هذا الشرط؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-MULAAMA-WAQI"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل يمكن أن يكون الطول سالبا؟ وقارن $h$ بارتفاع المخروط."
+        }
+      ],
+      "feedback": {
+        "correct": "$r < 0$ و $h > 18$ : الشرط مستحيل.",
+        "incorrect": "تحقّق دائما أن النتيجة ممكنة في الوضعية: الطول موجب والأسطوانة داخل المخروط."
+      },
+      "solution": {
+        "lines": [
+          "نصف القطر طول، فهو عدد موجب، والمعادلة أعطت $r = -0{,}5$ .",
+          "كذلك $h = r + 20 > 18$ : الأسطوانة أعلى من المخروط نفسه.",
+          "إذن لا توجد أسطوانة محاطة بالمخروط تحقّق هذا الشرط."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

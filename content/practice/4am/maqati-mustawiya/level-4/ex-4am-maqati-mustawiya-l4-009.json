@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l4-009",
+  "lessonCode": "maqati-mustawiya",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — مساحة طبقة هرم",
+    "estimatedMinutes": 3,
+    "tags": [
+      "هرم",
+      "مساحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_maqati-mustawiya_P4",
+      "modelledOn": "act-5"
+    }
+  },
+  "statement": {
+    "content": "هرم منتظم قاعدته مربع ضلعه $10\\,\\mathrm{cm}$ ، يقطعه مستو موازٍ لقاعدته في E من $[SA]$ حيث $SE = \\dfrac{3}{5}SA$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما مساحة المقطع (بـ $\\mathrm{cm}^2$)؟",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P4",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر المربع)",
+      "expectedAnswer": "36",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAKBIR-MISAHA-K",
+          "value": "60"
+        },
+        {
+          "id": "MISC-MAQTA-HARAM",
+          "value": "100"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب ضلع المقطع أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضلع المقطع $\\dfrac{3}{5} \\times 10$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المساحة مربع الضلع."
+        }
+      ],
+      "feedback": {
+        "correct": "ضلع المقطع $6$ ، مساحته $36\\,\\mathrm{cm}^2$ .",
+        "incorrect": "$\\dfrac{3}{5} \\times 100 = 60$ يضرب المساحة في k بدل $k^2$ ."
+      },
+      "difficulty": 4
+    }
+  ]
+}

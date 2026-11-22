@@ -1,0 +1,161 @@
+{
+  "id": "ex-4am-tarrid-taalufi-l3-008",
+  "lessonCode": "tarrid-taalufi",
+  "level": 3,
+  "metadata": {
+    "title": "ملعب خماسي — أوّل ساعة رابحة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "متراجحة",
+      "عدد طبيعي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-taalufi_P2",
+      "modelledOn": "act-4",
+      "adaptedFrom": "ex-4am-tarrid-taalufi-l3-008"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "كراء ملعب خماسي لمباراة ودّية بين أبناء الحيّ تعزّز الأخوّة: الصيغة A بـ 3000DA للساعة، والصيغة B اشتراك 6000DA ثم 1500DA للساعة. يُكترى الملعب بساعات كاملة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "نسمّي $x$ عدد الساعات. نبحث متى تكون الصيغة B أقل تكلفة تماما.",
+      "statement": "حل المتراجحة: $1500x + 6000 < 3000x$ .\nحدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x < k$ أو $x > k$ : اكتب العدد $k$ فقط",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحدّ هو حل المعادلة المرفقة $1500x + 6000 = 3000x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "حدّ الحلول هو حل المعادلة المرفقة.",
+        "incorrect": "انقل حدود $x$ إلى طرف واحد ثم اقسم على معامل $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$1500x + 6000 < 3000x$",
+          "$6000 < 1500x$",
+          "$4 < x$ ، أي $x > 4$",
+          "الصيغة B أقل تكلفة تماما عندما يتجاوز عدد الساعات 4."
+        ],
+        "result": "x > 4"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QALB-ZAID"
+        },
+        {
+          "id": "B",
+          "content": "$x > 4$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قسمنا في آخر سطر على عدد موجب."
+        }
+      ],
+      "feedback": {
+        "correct": "الصيغة B أقل تكلفة تماما عندما يتجاوز عدد الساعات هذا الحدّ.",
+        "incorrect": "القسمة على عدد موجب لا تغيّر اتجاه المتباينة."
+      },
+      "solution": {
+        "lines": [
+          "$1500x + 6000 < 3000x$",
+          "$6000 < 1500x$",
+          "$4 < x$ ، أي $x > 4$"
+        ],
+        "result": "x > 4"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما هو أصغر عدد من الساعات الكاملة تكون من أجله الصيغة B أقل تكلفة تماما؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الساعات",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحلول أعداد أكبر تماما من الحدّ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خذ أول عدد طبيعي بعده."
+        }
+      ],
+      "feedback": {
+        "correct": "هو أول عدد طبيعي أكبر تماما من الحدّ.",
+        "incorrect": "الحدّ نفسه يعطي مبلغين متساويين، لا أقل تكلفة تماما."
+      },
+      "solution": {
+        "lines": [
+          "$1500x + 6000 < 3000x$",
+          "$6000 < 1500x$",
+          "$4 < x$ ، أي $x > 4$",
+          "أصغر عدد طبيعي أكبر تماما من 4 هو 5: $g(5) = 13500DA$ و $f(5) = 15000DA$ ."
+        ],
+        "result": "5"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

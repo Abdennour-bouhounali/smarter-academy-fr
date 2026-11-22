@@ -1,0 +1,74 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-fada-l1-008",
+  "lessonCode": "wadiya-idmajiya-fada",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — رأس المخروط المكتمل",
+    "estimatedMinutes": 3,
+    "tags": [
+      "خاصية طالس",
+      "المخروط المبتور"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-fada_P3",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "يتعاون تلاميذ القسم على تزيين مدرستهم بأصيص أزهار على شكل مخروط مبتور: نصف قطر قاعه $6\\,\\mathrm{cm}$ ونصف قطر فتحته $10\\,\\mathrm{cm}$ وارتفاعه $20\\,\\mathrm{cm}$ . نكمله إلى مخروط رأسه S تحت القاع، و O مركز القاع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "حسب خاصية طالس $\\dfrac{SO}{SO + 20} = \\dfrac{6}{10}$ . أوجد $SO$ (بالسنتيمتر):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-fada_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر)",
+      "expectedAnswer": "30",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب طرفي المساواة في $10(SO + 20)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$10 \\times SO = 6 \\times SO + 120$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود التي فيها SO في طرف واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$10\\,SO = 6\\,SO + 120$ ومنه $4\\,SO = 120$ و $SO = 30\\,\\mathrm{cm}$ .",
+        "incorrect": "SO بعد الرأس عن القاع، ليس ارتفاع الأصيص."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-MABTUR-RAS"
+        },
+        {
+          "value": "50",
+          "id": "MISC-MABTUR-RAS"
+        },
+        {
+          "value": "12",
+          "id": "MISC-TAKBIR-ITTIJAH"
+        }
+      ],
+      "difficulty": 1
+    }
+  ]
+}

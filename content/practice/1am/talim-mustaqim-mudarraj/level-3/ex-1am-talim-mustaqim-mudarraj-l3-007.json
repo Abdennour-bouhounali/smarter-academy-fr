@@ -1,0 +1,194 @@
+{
+  "id": "ex-1am-talim-mustaqim-mudarraj-l3-007",
+  "lessonCode": "talim-mustaqim-mudarraj",
+  "level": 3,
+  "metadata": {
+    "title": "تدريج مستقيم وتعليم نقطتين",
+    "estimatedMinutes": 8,
+    "tags": [
+      "تدريج",
+      "تعليم"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-1",
+      "page": 68,
+      "section": "أكتسب طرائق"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نريد تدريج مستقيم وتعليم النقطتين $A(-3)$ و $B(2{,}7)$ ، ونحمل الوحدة نفسها من جهتي المبدإ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نعلّم النقطة $A(-3)$ على مستقيم مدرّج طول وحدته $1{,}5$ cm . كم تبعد عن المبدإ $O$ بالسنتيمتر؟ نكتب العدد موجبًا إن كانت على يمين $O$ وسالبًا إن كانت على يسارها.",
+      "learningPoints": [
+        {
+          "code": "1am_talim-mustaqim-mudarraj_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "-4.5",
+      "misconceptionSignatures": [
+        {
+          "value": "4.5",
+          "id": "MISC-TALIM1-SIGNSIDE"
+        },
+        {
+          "value": "-3",
+          "id": "MISC-TALIM1-UNITIGNORED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفاصلة تعطي عدد الوحدات من المبدإ، وطول الوحدة معطى بالسنتيمتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب الفاصلة في طول الوحدة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ما على يسار المبدإ يأخذ إشارة −."
+        }
+      ],
+      "feedback": {
+        "correct": "موضع $A$ : $-4{,}5$ cm من $O$ .",
+        "incorrect": "اقرأ الجهة من المبدإ ثمّ احسب البعد، ولا تنسَ قيمة التدريجة."
+      },
+      "solution": {
+        "lines": [
+          "عدد الوحدات من $O$ : $3$ ، وكلّ وحدة $1{,}5$ cm",
+          "$3\\times 1{,}5=4{,}5$ cm",
+          "على يسار المبدإ: $-4{,}5$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "على مستقيم مدرّج علامات صحيحة متتالية. النقطة $B(2{,}7)$ تقع:",
+      "learningPoints": [
+        {
+          "code": "1am_talim-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "بين $1$ و $2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM1-BOUNDOUT"
+        },
+        {
+          "id": "B",
+          "content": "بين $3$ و $4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM1-BOUNDOUT"
+        },
+        {
+          "id": "C",
+          "content": "بين $2$ و $3$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع الأعداد على مستقيم مدرّج وانظر أين تقع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأعداد تكبر نحو اليمين وتصغر نحو اليسار."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن مواضع النقط لا أحجام الأرقام المكتوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}7$ يقع بين $2$ و $3$ .",
+        "incorrect": "تحقّق بالترتيب: يجب أن يكون $2{,}7$ أكبر من العلامة اليسرى وأصغر من العلامة اليمنى."
+      },
+      "solution": {
+        "lines": [
+          "$2<2{,}7<3$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "على شريط ورقيّ يبعد المبدإ $O$ عن طرفه الأيسر $6$ cm وعن طرفه الأيمن $8{,}1$ cm . نريد تعليم النقطتين $A(-3)$ و $B(2{,}7)$ ونحمل الوحدة نفسها على الجهتين. ما أكبر طول للوحدة بالسنتيمتر يُدخل النقطتين على الشريط؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-mustaqim-mudarraj_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-TALIM1-ONESIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نحمل الوحدة نفسها من جهتي المبدإ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب لكلّ جهة أكبر طول يتّسع لها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خذ الأصغر من الطولين لتتّسع الجهتان معًا."
+        }
+      ],
+      "feedback": {
+        "correct": "أكبر طول للوحدة $2$ cm : الجهة الأضيق هي التي تحدّده.",
+        "incorrect": "اقرأ الجهة من المبدإ ثمّ احسب البعد، ولا تنسَ قيمة التدريجة."
+      },
+      "solution": {
+        "lines": [
+          "جهة اليسار: $6\\div 3=2$",
+          "جهة اليمين: $8{,}1\\div 2{,}7=3$",
+          "نأخذ الأصغر ليتّسع الشريط للجهتين: $2$ cm"
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

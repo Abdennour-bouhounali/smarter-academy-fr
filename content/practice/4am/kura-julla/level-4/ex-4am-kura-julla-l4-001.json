@@ -1,0 +1,114 @@
+{
+  "id": "ex-4am-kura-julla-l4-001",
+  "lessonCode": "kura-julla",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — نقطة بعيدة على المحاور",
+    "estimatedMinutes": 5,
+    "tags": [
+      "معلم الفضاء"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_kura-julla_P4",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس للفضاء مبدؤه O، كرة مركزها O ونصف قطرها 9، والنقطة $W(1\\,;\\,4\\,;\\,8)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "احسب $OW^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P4",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "81",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-KURA-MURABBA",
+          "value": "13"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ربّع الإحداثيات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المربعات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بعد ذلك بـ $R^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$OW^2 = 1 + 16 + 64 = 81$ .",
+        "incorrect": "نجمع مربعات الإحداثيات."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "النقطة W:",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P4",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "على الكرة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "داخل الجلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-MASAFA"
+        },
+        {
+          "id": "C",
+          "content": "خارج الجلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-MURABBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن $OW^2$ بـ $9^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المساواة تعني «على الكرة»."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كل إحداثية أصغر من 9 لا يكفي للحكم."
+        }
+      ],
+      "feedback": {
+        "correct": "$OW^2 = 81 = 9^2$ : W على الكرة.",
+        "incorrect": "لا نحكم من الإحداثيات وحدها: نقارن المربعين."
+      }
+    }
+  ]
+}

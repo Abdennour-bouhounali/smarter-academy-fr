@@ -1,0 +1,164 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l2-009",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — نسبة السبّاحين في النادي",
+    "estimatedMinutes": 5,
+    "tags": [
+      "نسبة",
+      "كتابة عشرية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "من بين $40$ تلميذًا في نادي الرياضة بالمتوسطة، $14$ تلميذًا يمارسون السباحة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نسبة عدد السبّاحين إلى عدد تلاميذ النادي هي:",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{40}{14}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-RATIOFLIP"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{26}{40}$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{14}{40}$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{14}{26}$",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد المذكور أوّلًا هو الجزء، والعدد الثاني هو الكلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{14}{40}$ : الجزء في البسط والكلّ في المقام.",
+        "incorrect": "ضع الجزء (السبّاحين) في البسط والكلّ (تلاميذ النادي) في المقام."
+      },
+      "solution": {
+        "lines": [
+          "الجزء: $14$ ، الكلّ: $40$",
+          "النسبة $\\dfrac{14}{40}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب هذه النسبة على شكل عدد عشري مضبوط.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "0.35",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكسر هو حاصل قسمة بسطه على مقامه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وواصلها بعد الفاصلة حتى ينعدم الباقي."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{14}{40} = 14 \\div 40 = 0{,}35$.",
+        "incorrect": "خط الكسر هو علامة القسمة: أنجز قسمة البسط على المقام وواصلها بعد الفاصلة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{14}{40} = 14 \\div 40$",
+          "$40 \\times 0{,}35 = 14$"
+        ],
+        "result": "0{,}35"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "وإذا كان $9$ تلاميذ يمارسون الجري، فاكتب نسبتهم إلى تلاميذ النادي على شكل عدد عشري مضبوط.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "0.225",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكسر هو حاصل قسمة بسطه على مقامه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وواصلها بعد الفاصلة حتى ينعدم الباقي."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9}{40} = 9 \\div 40 = 0{,}225$.",
+        "incorrect": "خط الكسر هو علامة القسمة: أنجز قسمة البسط على المقام وواصلها بعد الفاصلة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{9}{40} = 9 \\div 40$",
+          "$40 \\times 0{,}225 = 9$"
+        ],
+        "result": "0{,}225"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

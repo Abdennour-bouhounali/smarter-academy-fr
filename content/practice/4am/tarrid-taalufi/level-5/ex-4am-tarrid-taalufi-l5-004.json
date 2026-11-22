@@ -1,0 +1,580 @@
+{
+  "id": "ex-4am-tarrid-taalufi-l5-004",
+  "lessonCode": "tarrid-taalufi",
+  "level": 5,
+  "metadata": {
+    "title": "BEM 2024 — المسألة",
+    "estimatedMinutes": 40,
+    "tags": [
+      "مسألة",
+      "ثلاثة عروض",
+      "دالة ثابتة",
+      "أفضل عرض"
+    ],
+    "source": {
+      "type": "bem",
+      "year": 2024,
+      "part": 2,
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "official",
+      "badge": "BEM 2024",
+      "heading": "المسألة",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يقترح صاحب مكتبة على زبائنه ثلاثة عروض لاستئجار الكتب خلال سنة واحدة .\nالعرض 1 : دفع 45DA لاستئجار كتاب واحد\nالعرض 2 : دفع 15DA لاستئجار كتاب واحد مع شراء بطاقة انخراط بـ : 600DA\nالعرض 3 : دفع مبلغ جزافي 1350DA مهما كان عدد الكتب المستأجرة .",
+    "table": {
+      "head": [
+        "عدد الكتب المستأجرة خلال سنة",
+        "20",
+        "…",
+        "…"
+      ],
+      "rows": [
+        [
+          "المبلغ المدفوع حسب العرض 1 بـ (DA)",
+          "…",
+          "1260",
+          "…"
+        ],
+        [
+          "المبلغ المدفوع حسب العرض 2 بـ (DA)",
+          "…",
+          "…",
+          "1350"
+        ],
+        [
+          "المبلغ المدفوع حسب العرض 3 بـ (DA)",
+          "1350",
+          "…",
+          "…"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انقل وأتمم الجدول التالي :",
+      "statement": "المبلغ حسب العرض 1 من أجل 20 كتابا:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "900",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العرض 1: ثمن الكتاب فقط."
+        }
+      ],
+      "feedback": {
+        "correct": "$45 \\times 20$ .",
+        "incorrect": "اضرب عدد الكتب في ثمن الكتاب."
+      },
+      "solution": {
+        "lines": [
+          "انقل و إتمام الجدول التالي:",
+          "◂ مبلغ 20 كتاب: العرض 01: $45 \\times 20 = 900$ ؛ العرض 02: $15 \\times 20 + 600 = 900$"
+        ],
+        "result": "900DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "المبلغ حسب العرض 2 من أجل 20 كتابا:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "900",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAALUFI-NISYAN-B",
+          "value": "300"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العرض 2: ثمن الكتب ثم بطاقة الانخراط."
+        }
+      ],
+      "feedback": {
+        "correct": "$15 \\times 20 + 600$ .",
+        "incorrect": "لا تنس بطاقة الانخراط."
+      },
+      "solution": {
+        "lines": [
+          "انقل و إتمام الجدول التالي:",
+          "◂ مبلغ 20 كتاب: العرض 01: $45 \\times 20 = 900$ ؛ العرض 02: $15 \\times 20 + 600 = 900$"
+        ],
+        "result": "900DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "عدد الكتب إذا كان المبلغ حسب العرض 1 هو 1260DA :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الكتب",
+      "expectedAnswer": "28",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في العرض 1 المبلغ = 45 × عدد الكتب."
+        }
+      ],
+      "feedback": {
+        "correct": "$1260 \\div 45$ .",
+        "incorrect": "اقسم المبلغ على ثمن الكتاب."
+      },
+      "solution": {
+        "lines": [
+          "انقل و إتمام الجدول التالي:",
+          "◂ عدد الكتب بالعرض 01: $\\dfrac{1260}{45} = 28$ أي 28 كتاب."
+        ],
+        "result": "28"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "statement": "المبلغ حسب العرض 2 من أجل هذا العدد من الكتب:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "1020",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض عدد الكتب الذي وجدته في العرض 2."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد الكتب × 15 + 600.",
+        "incorrect": "اضرب في ثمن الكتاب في العرض 2 ثم أضف بطاقة الانخراط."
+      },
+      "solution": {
+        "lines": [
+          "انقل و إتمام الجدول التالي:",
+          "◂ مبلغ 28 كتاب: العرض 02: $28 \\times 15 + 600 = 1020$ ؛ العرض 03: 1350DA"
+        ],
+        "result": "1020DA"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q5",
+      "step": "01",
+      "statement": "عدد الكتب إذا كان المبلغ حسب العرض 2 هو 1350DA :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الكتب",
+      "expectedAnswer": "50",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح ثمن بطاقة الانخراط أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اقسم على ثمن الكتاب في العرض 2."
+        }
+      ],
+      "feedback": {
+        "correct": "$(1350 - 600) \\div 15$ .",
+        "incorrect": "المبلغ = 15 × عدد الكتب + 600: اعزل عدد الكتب."
+      },
+      "solution": {
+        "lines": [
+          "انقل و إتمام الجدول التالي:",
+          "◂ عدد الكتب للعرض 02: $\\dfrac{1350 - 600}{15} = 50$"
+        ],
+        "result": "50"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "01",
+      "statement": "المبلغ حسب العرض 1 من أجل هذا العدد من الكتب:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "2250",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب عدد الكتب الذي وجدته في ثمن الكتاب في العرض 1."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد الكتب × 45.",
+        "incorrect": "العرض 1: 45DA للكتاب."
+      },
+      "solution": {
+        "lines": [
+          "انقل و إتمام الجدول التالي:",
+          "◂ مبلغ 50 كتاب: العرض 01: $45 \\times 50 = 2250$ ؛ العرض 03: 1350DA"
+        ],
+        "result": "2250DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q7",
+      "step": "01",
+      "statement": "المبلغ حسب العرض 3 في الخانتين الباقيتين:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "1350",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل يتعلّق مبلغ العرض 3 بعدد الكتب؟"
+        }
+      ],
+      "feedback": {
+        "correct": "مبلغ جزافي مهما كان عدد الكتب.",
+        "incorrect": "العرض 3 مبلغ واحد مهما كان عدد الكتب."
+      },
+      "solution": {
+        "lines": [
+          "انقل و إتمام الجدول التالي:",
+          "◂ مبلغ 28 كتاب: العرض 02: $28 \\times 15 + 600 = 1020$ ؛ العرض 03: 1350DA",
+          "◂ مبلغ 50 كتاب: العرض 01: $45 \\times 50 = 2250$ ؛ العرض 03: 1350DA"
+        ],
+        "result": "1350DA"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q8",
+      "step": "02",
+      "sub": "ا",
+      "lead": "ليكن $x$ عدد الكتب المستأجرة خلال سنة واحدة .",
+      "statement": "عبّر بدلالة $x$ عن المبلغ $f(x)$ ، $g(x)$ ، $h(x)$ المدفوع حسب العروض 1 ، 2 و 3 على الترتيب .\nأعط العدد $a$ حيث: $f(x) = ax$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "45",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في العرض 1 ندفع ثمن الكتاب $x$ مرّة."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن الكتاب الواحد هو معامل $x$ .",
+        "incorrect": "المبلغ = ثمن الكتاب × عدد الكتب."
+      },
+      "solution": {
+        "lines": [
+          "التعبير بدلالة $x$ عن المبالغ المدفوعة حسب العروض 1 ، 2 و 3 (نضع $x$ عدد الكتب المستأجرة):",
+          "• العرض 01: دالة خطية $f(x) = 45x$",
+          "• العرض 02: دالة تآلفية $g(x) = 15x + 600$",
+          "• العرض 03: دالة ثابتة $h(x) = 0x + 1350 = 1350$"
+        ],
+        "result": "f(x) = 45x"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q9",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أعط العددين $a$ و $b$ حيث: $g(x) = ax + b$ ، ابدأ بالعدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "600"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع عن كل كتاب في العرض 2؟"
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن الكتاب هو معامل $x$ .",
+        "incorrect": "معامل $x$ هو ما يُدفع $x$ مرّة."
+      },
+      "solution": {
+        "lines": [
+          "التعبير بدلالة $x$ عن المبالغ المدفوعة حسب العروض 1 ، 2 و 3 (نضع $x$ عدد الكتب المستأجرة):",
+          "• العرض 01: دالة خطية $f(x) = 45x$",
+          "• العرض 02: دالة تآلفية $g(x) = 15x + 600$",
+          "• العرض 03: دالة ثابتة $h(x) = 0x + 1350 = 1350$"
+        ],
+        "result": "g(x) = 15x + 600"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q10",
+      "step": "02",
+      "sub": "ا",
+      "statement": "ثم العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "600",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع مرّة واحدة في العرض 2؟"
+        }
+      ],
+      "feedback": {
+        "correct": "بطاقة الانخراط تُدفع مرّة واحدة.",
+        "incorrect": "الحدّ الثابت لا يتعلّق بعدد الكتب."
+      },
+      "solution": {
+        "lines": [
+          "التعبير بدلالة $x$ عن المبالغ المدفوعة حسب العروض 1 ، 2 و 3 (نضع $x$ عدد الكتب المستأجرة):",
+          "• العرض 01: دالة خطية $f(x) = 45x$",
+          "• العرض 02: دالة تآلفية $g(x) = 15x + 600$",
+          "• العرض 03: دالة ثابتة $h(x) = 0x + 1350 = 1350$"
+        ],
+        "result": "g(x) = 15x + 600"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q11",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أعط العدد $h(x)$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "1350",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العرض 3 مبلغ جزافي."
+        }
+      ],
+      "feedback": {
+        "correct": "$h$ دالة ثابتة.",
+        "incorrect": "المبلغ لا يتغيّر بتغيّر عدد الكتب."
+      },
+      "solution": {
+        "lines": [
+          "التعبير بدلالة $x$ عن المبالغ المدفوعة حسب العروض 1 ، 2 و 3 (نضع $x$ عدد الكتب المستأجرة):",
+          "• العرض 01: دالة خطية $f(x) = 45x$",
+          "• العرض 02: دالة تآلفية $g(x) = 15x + 600$",
+          "• العرض 03: دالة ثابتة $h(x) = 0x + 1350 = 1350$"
+        ],
+        "result": "h(x) = 1350"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q12",
+      "step": "02",
+      "sub": "ب",
+      "statement": "مثّل بيانيا الدوال $f$ ، $g$ ، $h$ في المستوى المزود بمعلم متعامد ومتجانس .\nنختار على محور الفواصل كل 1cm يمثل 4 كتب وعلى محور التراتيب كل 1cm يمثل 150DA",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تمثيلا $f$ و $g$ مستقيمان: عيّن نقطتين من كل منهما (يمكنك استعمال الجدول)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تمثيل $h$ مستقيم يوازي محور الفواصل."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن عملك بالحل النموذجي ثم قيّم نفسك.",
+        "incorrect": "عيّن لكل دالة نقطتين من الجدول ثم ارسم المستقيمات الثلاثة."
+      },
+      "solution": {
+        "lines": [
+          "ب) التمثيل البياني للدوال:",
+          "$f(0) = 0$ ، $f(20) = 900$ ؛ $g(0) = 600$ ، $g(20) = 900$ ؛ $h(0) = 1350$ ، $h(20) = 1350$ .",
+          "تمثيل $f$ مستقيم يشمل المبدأ ، وتمثيل $g$ مستقيم يشمل $(0 ; 600)$ ، وتمثيل $h$ مستقيم يوازي محور الفواصل."
+        ]
+      },
+      "timeSeconds": 480
+    },
+    {
+      "id": "q13",
+      "step": "02",
+      "sub": "ج",
+      "statement": "أوجد بيانيا عدد الكتب المستأجرة خلال سنة حتى يكون العرض 2 هو الأفضل للزبون من بين العروض الثلاثة .\nملاحظة : اترك آثار الإجابة على التمثيلات البيانية .\nيكون العرض 2 هو الأفضل إذا كان: $m < x < M$ . أعط العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الكتب $m$",
+      "expectedAnswer": "20",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العرض 2 هو الأفضل حيث يقع مستقيمه تحت المستقيمين الآخرين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحدّ الأول هو فاصلة نقطة تقاطع مستقيمي العرضين 1 و 2."
+        }
+      ],
+      "feedback": {
+        "correct": "قبل هذا العدد يكون العرض 1 أقل تكلفة.",
+        "incorrect": "ابحث عن فاصلة النقطة التي يلتقي فيها مستقيما العرضين 1 و 2."
+      },
+      "solution": {
+        "lines": [
+          "يكون العرض الثاني هو الأفضل للزبون من العروض الثلاثة إذا كان عدد الكتب أكثر تماما من 20 و أقل تماما من 50 ، أي عدد الكتب $x$ : $20 < x < 50$ .",
+          "لأن التمثيل البياني يقع أسفل التمثيلين البيانيين للعرضين الآخرين (1-3) أي أقل قيمة مالية منهما لاستئجار ما بين 20 و 50 كتاب."
+        ],
+        "result": "20 < x < 50"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q14",
+      "step": "02",
+      "sub": "ج",
+      "statement": "ثم العدد $M$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الكتب $M$",
+      "expectedAnswer": "50",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحدّ الثاني هو فاصلة نقطة تقاطع مستقيمي العرضين 2 و 3."
+        }
+      ],
+      "feedback": {
+        "correct": "بعد هذا العدد يكون العرض 3 أقل تكلفة.",
+        "incorrect": "ابحث أين يلتقي مستقيم العرض 2 بالمستقيم الأفقي للعرض 3."
+      },
+      "solution": {
+        "lines": [
+          "يكون العرض الثاني هو الأفضل للزبون من العروض الثلاثة إذا كان عدد الكتب أكثر تماما من 20 و أقل تماما من 50 ، أي عدد الكتب $x$ : $20 < x < 50$ .",
+          "لأن التمثيل البياني يقع أسفل التمثيلين البيانيين للعرضين الآخرين (1-3) أي أقل قيمة مالية منهما لاستئجار ما بين 20 و 50 كتاب."
+        ],
+        "result": "20 < x < 50"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

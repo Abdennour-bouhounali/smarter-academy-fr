@@ -1,0 +1,232 @@
+{
+  "id": "ex-3am-nisba-miawiya-3am-l4-006",
+  "lessonCode": "nisba-miawiya-3am",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — ميزانية بعد الارتفاع",
+    "estimatedMinutes": 11,
+    "tags": [
+      "متباينة",
+      "زيادة بنسبة مئوية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الرابع",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "تخصّص مكتبة المدرسة ميزانية قدرها $6\\,900$ دج لشراء مجموعة كتب، وارتفعت أثمان الكتب بنسبة $15\\,\\%$ . نرمز بـ $p$ إلى الثمن الأصلي للمجموعة، فيجب أن يتحقّق $1{,}15\\,p \\leq 6\\,900$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما أكبر قيمة للثمن الأصلي $p$ بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "المبلغ بالدينار (دج)",
+      "expectedAnswer": "6000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كل سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بالتعويض أو بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$6\\,000$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نقسم طرفي المتباينة على العدد الموجب $1{,}15$ فيبقى اتجاهها: $p \\leq 6\\,900 \\div 1{,}15 = 6\\,000$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "ما ثمن المجموعة الجديد إذا كان ثمنها الأصلي $6\\,000$ دج؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "المبلغ بالدينار (دج)",
+      "expectedAnswer": "6900",
+      "misconceptionSignatures": [
+        {
+          "value": "900",
+          "id": "MISC-NISBA3-COEF-INC"
+        },
+        {
+          "value": "6015",
+          "id": "MISC-NISBA3-ADD-T"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل الكمية تزداد أم تنقص؟ وما الكمية الأصلية؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الزيادة تُحسب على الكمية الأصلية: الناتج هو الأصل مضروبا في معامل أكبر من الواحد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب معامل الزيادة ثم اضرب فيه الكمية الأصلية، أو احسب الزيادة ثم أضفها إلى الأصل."
+        }
+      ],
+      "feedback": {
+        "correct": "$6\\,900$ .",
+        "incorrect": "النسبة تُحسب على الكمية الأصلية؛ والناتج بعد الزيادة هو الأصل مضروبا في معامل أكبر من الواحد؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "معامل الزيادة بـ $15\\,\\%$ هو $1 + \\dfrac{15}{100} = 1{,}15$ .",
+          "الناتج: $6\\,000 \\times 1{,}15 = 6\\,900$ ."
+        ],
+        "result": "6\\,000 \\times 1{,}15 = 6\\,900"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما الثمن الأصلي لمجموعة ثمنها الجديد $6\\,900$ دج؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "المبلغ بالدينار (دج)",
+      "expectedAnswer": "6000",
+      "misconceptionSignatures": [
+        {
+          "value": "5865",
+          "id": "MISC-NISBA3-WRONG-BASE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من أيّ كمية حُسبت النسبة: الأصل أم الجديدة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة تُحسب دائما على الكمية الأصلية؛ والكمية الجديدة هي الأصل مضروبا في المعامل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب مساواة: الأصل × المعامل = الكمية الجديدة، ثم أوجد الأصل."
+        }
+      ],
+      "feedback": {
+        "correct": "$6\\,000$ .",
+        "incorrect": "النسبة تُحسب على الكمية الأصلية، والكمية الجديدة هي الأصل مضروبا في المعامل؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الثمن الأصلي $p$ يحقّق: $p \\times 1{,}15 = 6\\,900$ ، لأن معامل الزيادة بـ $15\\,\\%$ هو $1{,}15$ .",
+          "إذن $p = 6\\,900 \\div 1{,}15 = 6\\,000$ ."
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "مجموعة ثمنها الأصلي $6\\,200$ دج تتجاوز الميزانية بعد الارتفاع. هل هذا صحيح؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيحة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خاطئة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NISBA3-ADD-T"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل الكمية تزداد أم تنقص؟ وما الكمية الأصلية؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الزيادة تُحسب على الكمية الأصلية: الناتج هو الأصل مضروبا في معامل أكبر من الواحد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب معامل الزيادة ثم اضرب فيه الكمية الأصلية، أو احسب الزيادة ثم أضفها إلى الأصل."
+        }
+      ],
+      "feedback": {
+        "correct": "صحيحة .",
+        "incorrect": "النسبة تُحسب على الكمية الأصلية؛ والناتج بعد الزيادة هو الأصل مضروبا في معامل أكبر من الواحد؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$6\\,200 \\times 1{,}15 = 7\\,130 > 6\\,900$ ، فتتجاوز الميزانية."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

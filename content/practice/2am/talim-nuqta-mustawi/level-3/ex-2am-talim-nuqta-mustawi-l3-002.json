@@ -1,0 +1,229 @@
+{
+  "id": "ex-2am-talim-nuqta-mustawi-l3-002",
+  "lessonCode": "talim-nuqta-mustawi",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — إكمال مستطيل ومركزه",
+    "estimatedMinutes": 11,
+    "tags": [
+      "مستطيل",
+      "مركز",
+      "مساحة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 2,
+      "file": "2am-s2-72",
+      "exercise": 3
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس مبدؤه $O$ نعلّم النقط $M(-3\\,;\\,3)$ ، $N(-3\\,;\\,-1)$ ، $L(4\\,;\\,-1)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن النقطة $K$ بحيث يكون الرباعي $MNLK$ مستطيلًا، ثم اكتب إحداثيتيها.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "4",
+        "y": "3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "3",
+            "y": "4"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNAXIS",
+          "value": {
+            "x": "4",
+            "y": "-3"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNLEFT",
+          "value": {
+            "x": "-4",
+            "y": "3"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في مستطيل أضلاعه توازي المحورين، لكلّ ضلعين متقابلين الفاصلة نفسها أو الترتيب نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الرأس الرابع يأخذ فاصلة أحد الرؤوس المعلومة وترتيب رأس آخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارسم الرؤوس المعلومة على الشبكة وأكمل الشكل ثم اقرأ الرأس الرابع."
+        }
+      ],
+      "feedback": {
+        "correct": "$K(4\\,;\\,3)$ .",
+        "incorrect": "في مستطيل أضلاعه توازي المحورين، الرأس الرابع يأخذ فاصلة رأس وترتيب رأس آخر من الرؤوس المعلومة."
+      },
+      "solution": {
+        "lines": [
+          "نرسم الرؤوس المعلومة على الشبكة ونكمل المستطيل",
+          "$K(4\\,;\\,3)$"
+        ],
+        "result": "K(4\\,;\\,3)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما إحداثيتا $I$ مركز المستطيل $MNLK$ ، أي نقطة تقاطع قطريه؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "0.5",
+        "y": "1"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "1",
+            "y": "0.5"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNAXIS",
+          "value": {
+            "x": "0.5",
+            "y": "-1"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNLEFT",
+          "value": {
+            "x": "-0.5",
+            "y": "1"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مركز المستطيل هو نقطة تقاطع قطريه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ إحداثيتيه على الشبكة في منتصف كلّ بعد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بعدّ الوحدات من المركز إلى كلّ ضلع."
+        }
+      ],
+      "feedback": {
+        "correct": "$I(0{,}5\\,;\\,1)$ .",
+        "incorrect": "مركز المستطيل في منتصف كلّ من بعديه."
+      },
+      "solution": {
+        "lines": [
+          "المركز في منتصف الطول وفي منتصف العرض",
+          "$I(0{,}5\\,;\\,1)$"
+        ],
+        "result": "I(0{,}5\\,;\\,1)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما مساحة المستطيل $MNLK$ بعدّ وحدات المساحة؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد وحدات المساحة",
+      "expectedAnswer": "28",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-AREASUM",
+          "value": "11"
+        },
+        {
+          "id": "MISC-NUQTA2-AREAPERIM",
+          "value": "22"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عُدّ وحدات الطول ثم وحدات العرض على الشبكة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحة المستطيل جداء الطول في العرض."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تجمع الطول مع العرض، وتذكّر الوحدة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "المساحة $28$ .",
+        "incorrect": "عُدّ وحدات الطول ثم وحدات العرض على الشبكة، ثم اضرب أحدهما في الآخر، ولا تجمعهما."
+      },
+      "solution": {
+        "lines": [
+          "بعدا المستطيل: $4$ و $7$ وحدات",
+          "المساحة $4 \\times 7 = 28$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

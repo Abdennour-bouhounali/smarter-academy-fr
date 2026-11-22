@@ -1,0 +1,89 @@
+{
+  "id": "ex-4am-bahth-pgcd-l1-008",
+  "lessonCode": "bahth-pgcd",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2009 — الفروق المتتابعة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الفروق المتتابعة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_bahth-pgcd_P2",
+      "modelledOn": "BEM 2009 I-4"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "التمرين الرابع",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "جد القاسم المشترك الأكبر للعددين 98 و 70 باستعمال طريقة الفروق المتتابعة.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        },
+        {
+          "value": "0",
+          "id": "MISC-PGCD-SIFR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بطرح العدد الأصغر من العدد الأكبر: 98 − 70."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في كل مرحلة، اطرح أصغر العددين الباقيين من أكبرهما، واحتفظ بالعدد الأصغر وبالفرق."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الفرق معدومًا: القاسم المشترك الأكبر هو آخر فرق غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر فرق غير معدوم في طريقة الفروق المتتابعة هو 14.",
+        "incorrect": "واصل الطرح إلى أن تجد فرقًا معدومًا؛ القاسم المشترك الأكبر هو آخر فرق غير معدوم، لا الفرق المعدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال طريقة الفروق المتتابعة:",
+          "$98 - 70 = 28$",
+          "$70 - 28 = 42$",
+          "$42 - 28 = 14$",
+          "$28 - 14 = 14$",
+          "$14 - 14 = 0$",
+          "آخر فرق غير معدوم هو 14، إذن:"
+        ],
+        "result": "PGCD(98 ; 70) = 14"
+      },
+      "work": "required",
+      "timeSeconds": 180
+    }
+  ]
+}

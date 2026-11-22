@@ -1,0 +1,294 @@
+{
+  "id": "ex-4am-aksiya-talis-l3-002",
+  "lessonCode": "aksiya-talis",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2015 — رباعي قطراه متعامدان",
+    "estimatedMinutes": 9,
+    "tags": [
+      "الخاصية العكسية",
+      "عدم التوازي",
+      "فيثاغورس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_aksiya-talis_P1",
+      "modelledOn": "BEM 2015 I-4"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "$ABCD$ رباعي حاملا قطريه متعامدان ومتقاطعان في $O$ حيث: $OA = 6\\,\\mathrm{cm}$ ، $OB = 8\\,\\mathrm{cm}$ ، $OC = 4\\,\\mathrm{cm}$ و $OD = 5\\,\\mathrm{cm}$ (الشكل المقابل).",
+    "figure": {
+      "points": {
+        "O": [
+          0.0,
+          0.0
+        ],
+        "C": [
+          2.0,
+          3.464101615138
+        ],
+        "A": [
+          -3.0,
+          -5.196152422707
+        ],
+        "B": [
+          6.928203230276,
+          -4.0
+        ],
+        "D": [
+          -4.330127018922,
+          2.5
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "A"
+        ],
+        {
+          "from": "O",
+          "to": "A",
+          "label": "6"
+        },
+        {
+          "from": "O",
+          "to": "B",
+          "label": "8"
+        },
+        {
+          "from": "O",
+          "to": "C",
+          "label": "4"
+        },
+        {
+          "from": "O",
+          "to": "D",
+          "label": "5"
+        }
+      ],
+      "rightAngles": [
+        [
+          "B",
+          "O",
+          "C"
+        ]
+      ],
+      "ariaLabel": "رباعي ABCD قطراه [AC] و [BD] متعامدان في O؛ OA = 6 و OB = 8 و OC = 4 و OD = 5",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب النسبة $\\dfrac{OC}{OA}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "2/3",
+      "misconceptionSignatures": [
+        {
+          "value": "3/2",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$OC$ و $OA$ طولان يُقاسان من النقطة $O$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $OC$ على $OA$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{OC}{OA} = \\dfrac{4}{6} = \\dfrac{2}{3}$ .",
+        "incorrect": "النسبة $\\dfrac{OC}{OA}$ : الطول $OC$ على الطول $OA$ ، وكلاهما من النقطة $O$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{OC}{OA} = \\dfrac{4}{6} = \\dfrac{2}{3}$"
+        ],
+        "result": "\\dfrac{OC}{OA} = \\dfrac{2}{3}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب النسبة $\\dfrac{OD}{OB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "5/8",
+      "misconceptionSignatures": [
+        {
+          "value": "8/5",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$OD$ و $OB$ طولان يُقاسان من النقطة $O$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $OD$ على $OB$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{OD}{OB} = \\dfrac{5}{8}$ .",
+        "incorrect": "النسبة $\\dfrac{OD}{OB}$ : الطول $OD$ على الطول $OB$ ، وكلاهما من النقطة $O$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{OD}{OB} = \\dfrac{5}{8}$"
+        ],
+        "result": "\\dfrac{OD}{OB} = \\dfrac{5}{8}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "هل المستقيمان $(AB)$ و $(CD)$ متوازيان؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-AKS-BIDUN-TASAWI"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النسبتين بقيمهما المضبوطة (الجداء المتصالب)، لا بقيم مقرّبة ولا بمظهر الشكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق أيضا من ترتيب النقط على المستقيمين المتقاطعين."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 8 = 32$ و $6 \\times 5 = 30$ : النسبتان مختلفتان، فالمستقيمان غير متوازيين.",
+        "incorrect": "الخاصية العكسية تتطلب شرطين معا: تساوي النسبتين بقيم مضبوطة، وترتيب النقط نفسه على المستقيمين."
+      },
+      "solution": {
+        "lines": [
+          "$4 \\times 8 = 32$ و $6 \\times 5 = 30$ ، إذن $\\dfrac{OC}{OA} \\neq \\dfrac{OD}{OB}$ .",
+          "لو كان $(AB) \\parallel (CD)$ لكانت النسبتان متساويتين حسب خاصية طالس،",
+          "إذن المستقيمان $(AB)$ و $(CD)$ غير متوازيين."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "احسب الطول $AB$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "14",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القطران متعامدان: المثلث $AOB$ قائم في $O$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خاصية فيثاغورس: $AB^2 = OA^2 + OB^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB^2 = 36 + 64 = 100$ ومنه $AB = 10\\,\\mathrm{cm}$ .",
+        "incorrect": "مربع الوتر يساوي مجموع مربعي الضلعين القائمين، ثم الجذر."
+      },
+      "solution": {
+        "lines": [
+          "بما أن المثلث $ABO$ قائم في $O$ فإن: $AB^2 = OA^2 + OB^2$ حسب خاصية فيثاغورس.",
+          "$AB^2 = 6^2 + 8^2 = 36 + 64 = 100$"
+        ],
+        "result": "AB = \\sqrt{100} = 10\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

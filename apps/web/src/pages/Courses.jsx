@@ -1,21 +1,22 @@
-import React, { useState, useContext, useEffect, useMemo } from 'react';
+import { useState, useContext, useEffect, useMemo } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, Lock, Crown, Play, Search, ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { Sparkles, Lock, Crown, Play, Search } from 'lucide-react';
+import { ArrowForward } from '../components/common/DirectionalIcons';
 import { courseLevels } from '@smarter-academy/core';
 import { getResumeLesson } from '../lessons/common/utils/progress/getResumeLesson';
-import { getLessonProgress } from '../lessons/common/utils/progress/getLessonProgress';
-import { getTotalModules } from '../lessons/registry';
+import GradeLessonSearch, { filterLessonsByQuery } from '../components/student/GradeLessonSearch';
+import CatalogueBrowser from '../components/student/CatalogueBrowser';
+import CatalogueViewToolbar from '../components/student/CatalogueViewToolbar';
+import { useCatalogueView } from '../components/student/catalogueView';
 import { storage, scopedStorage } from '../utils/storage';
 import { AuthContext } from '../context/AuthContext';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
-import LessonCard from '../components/student/LessonCard';
 
 export default function CoursesPage() {
-  useDocumentMeta(
-    'Cours',
-    "Explore le programme de mathématiques du Collège au Lycée — 6e, 5e, 4e, 3e, 2nde, 1ère, Terminale. La 6e est l'expérience la plus complète aujourd'hui."
-  );
+  const { t } = useTranslation('common');
+  useDocumentMeta(t('catalogueMetaTitle'), t('catalogueMetaDescription'));
 
   const [searchParams, setSearchParams] = useSearchParams();
   const { user, loading: authLoading } = useContext(AuthContext);
@@ -49,7 +50,13 @@ export default function CoursesPage() {
   }, []);
 
   // Helpers
-  const defaultLevelId = 'college';
+  //
+  // Le niveau de repli vient du CATALOGUE, jamais d'un identifiant écrit ici.
+  // « college » était un héritage français : sous un catalogue algérien
+  // (`moyen`, `thanawi`) il ne correspond à rien, `levelData` devenait
+  // undefined, et la page affichait « bientôt disponible » alors qu'un
+  // catalogue existait — une panne silencieuse qu'aucun test unitaire ne voit.
+  const defaultLevelId = courseLevels[0]?.id ?? null;
   const getValidLevelId = (id) => courseLevels.find(l => l.id === id) ? id : null;
   
   const effectiveLevelId = getValidLevelId(urlLevel) || getValidLevelId(profileLevel) || getValidLevelId(lsLevel) || defaultLevelId;
@@ -61,8 +68,16 @@ export default function CoursesPage() {
     return level.grades.find(g => g.id === gradeId) ? gradeId : null;
   };
 
-  const effectiveGradeId = getValidGradeId(effectiveLevelId, urlGrade) || getValidGradeId(effectiveLevelId, profileGrade) || getValidGradeId(effectiveLevelId, lsGrade) || levelData.grades[levelData.grades.length - 1].id;
-  const gradeData = levelData.grades.find(g => g.id === effectiveGradeId);
+  // courseLevels is filtered to ACTIVE_GRADE_IDS (activeGrades.js) and is
+  // currently empty — no Algerian grade exists yet (roadmap Phase 7). Every
+  // level/grade lookup above then comes back empty/null, so this page must
+  // render an explicit "nothing active yet" state rather than dereference
+  // levelData.grades below.
+  const hasActiveCurriculum = Boolean(levelData);
+  const effectiveGradeId = hasActiveCurriculum
+    ? (getValidGradeId(effectiveLevelId, urlGrade) || getValidGradeId(effectiveLevelId, profileGrade) || getValidGradeId(effectiveLevelId, lsGrade) || levelData.grades[levelData.grades.length - 1]?.id)
+    : null;
+  const gradeData = hasActiveCurriculum ? levelData.grades.find(g => g.id === effectiveGradeId) : null;
 
   const getValidChapterId = (grade, chapterId) => {
     if (!grade) return null;
@@ -76,7 +91,7 @@ export default function CoursesPage() {
   // fallback never gets permanently baked into the URL before we know
   // whether a logged-in student's profile grade should apply instead.
   useEffect(() => {
-    if (authLoading) return;
+    if (authLoading || !hasActiveCurriculum) return;
 
     let changed = false;
     const newParams = new URLSearchParams(searchParams);
@@ -125,60 +140,79 @@ export default function CoursesPage() {
       targetLessons = chapter ? chapter.lessons : [];
     }
 
-    if (!searchQuery.trim()) return targetLessons;
-    
-    const query = searchQuery.toLowerCase();
     // When searching, we search across all chapters of the grade regardless of effectiveChapterId
-    const allLessons = gradeData.chapters.flatMap(c => c.lessons);
-    return allLessons.filter(lesson => 
-      lesson.title.toLowerCase().includes(query) || 
-      lesson.description.toLowerCase().includes(query)
-    );
+    return filterLessonsByQuery(gradeData.chapters.flatMap(c => c.lessons), searchQuery) ?? targetLessons;
   }, [gradeData, effectiveChapterId, searchQuery]);
+
+  // Les chapitres dont le PROGRAMME doit être montré : ceux qui portent des
+  // sujets sans porter encore de leçon. Un chapitre qui a des leçons les
+  // montre ; un chapitre qui n'a ni l'un ni l'autre n'a rien à dire.
+  const visibleTopicChapters = useMemo(() => {
+    if (!gradeData) return [];
+    const chapters = effectiveChapterId === 'all'
+      ? gradeData.chapters
+      : gradeData.chapters.filter((c) => c.id === effectiveChapterId);
+
+    return chapters.filter((c) => (c.topics?.length ?? 0) > 0 && (c.lessons?.length ?? 0) === 0);
+  }, [gradeData, effectiveChapterId]);
 
   // "Continuer" logic
   const continueCourse = useMemo(() => {
     return getResumeLesson(courseLevels);
   }, [lastFocus]);
 
-  // Chapter Stats
-  const getChapterProgress = (chapter) => {
-    if (!chapter.lessons || chapter.lessons.length === 0) return 0;
-    const availableLessons = chapter.lessons.filter(l => l.status === 'available');
-    if (availableLessons.length === 0) return 0;
+  // La vue du catalogue (وحدات / ميادين / كل الدروس, شبكة / قائمة) —
+  // préférence partagée avec « دروسي » et « استكشاف » (catalogueView.js).
+  // Le rendu ne reçoit que les ميادين visibles ; la recherche, elle,
+  // traverse tout le niveau et s'affiche à plat.
+  const [view, setView] = useCatalogueView();
+  const visibleChapters = gradeData
+    ? (effectiveChapterId === 'all' ? gradeData.chapters : gradeData.chapters.filter((c) => c.id === effectiveChapterId))
+    : [];
+  const searchResults = searchQuery ? filteredCourses : null;
 
-    const totalPercent = availableLessons.reduce(
-      (sum, lesson) => sum + getLessonProgress(lesson.id, getTotalModules(lesson.id)).progressPercent,
-      0
+  // Chapter Stats
+
+  if (!hasActiveCurriculum) {
+    return (
+      <div className="min-h-screen bg-slate-50 pt-24 pb-20 px-4 flex items-center justify-center text-center">
+        <div className="max-w-md">
+          <h1 className="font-space font-bold text-2xl text-slate-900 mb-2">
+            {t('coursesComingSoon')}
+          </h1>
+          <p className="font-inter text-slate-500 text-sm">
+            {t('coursesComingSoonBody')}
+          </p>
+        </div>
+      </div>
     );
-    return Math.round(totalPercent / availableLessons.length);
-  };
+  }
 
   return (
     <div className={`min-h-screen bg-slate-50 pb-20 ${user ? 'pt-6 lg:pt-10' : 'pt-16'}`}>
-      
+
       {!user ? (
         <section className="bg-white border-b border-slate-200 py-10 px-4 text-center">
           <div className="max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-mono-jetbrains font-semibold uppercase tracking-wider mb-4 shadow-2xs">
-              <Sparkles size={14} className="text-blue-600 animate-pulse" />
-              Programme complet — 6e à Terminale
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-nav-accent-soft border border-blue-200 text-nav-accent text-xs font-mono-jetbrains font-semibold uppercase tracking-wider mb-4 shadow-2xs">
+              <Sparkles size={14} className="text-nav-accent animate-pulse" />
+              {t('catalogueBadge')}
             </div>
             <h1 className="font-space font-bold text-3xl sm:text-4xl text-slate-900 mb-2">
-              Cours de Mathématiques
+              {t('catalogueTitle')}
             </h1>
             <p className="font-inter text-slate-500 text-sm sm:text-base max-w-xl mx-auto mb-5">
-              2 leçons complètes offertes par niveau. La 6e est aujourd'hui la plus complète.
+              {t('catalogueSubtitle')}
             </p>
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
               <span className="flex items-center gap-1.5 text-xs font-inter font-medium text-slate-500">
-                <span className="w-2 h-2 rounded-full bg-emerald-500" /> Gratuit
+                <span className="w-2 h-2 rounded-full bg-emerald-500" /> {t('legendFree')}
               </span>
               <span className="flex items-center gap-1.5 text-xs font-inter font-medium text-slate-500">
-                <Crown size={12} className="text-violet-500" /> Premium
+                <Crown size={12} className="text-violet-500" /> {t('legendPremium')}
               </span>
               <span className="flex items-center gap-1.5 text-xs font-inter font-medium text-slate-500">
-                <Lock size={12} className="text-slate-400" /> Bientôt disponible
+                <Lock size={12} className="text-slate-400" /> {t('legendComingSoon')}
               </span>
             </div>
           </div>
@@ -187,10 +221,10 @@ export default function CoursesPage() {
         <div className="sa-page mb-6">
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}>
             <p className="font-mono-jetbrains text-blue-500 text-xs font-semibold tracking-widest uppercase mb-2">
-              Catalogue
+              {t('catalogueEyebrow')}
             </p>
             <h1 className="font-space font-bold text-2xl sm:text-3xl text-slate-900">
-              Explorer les cours
+              {t('catalogueExplore')}
             </h1>
           </motion.div>
         </div>
@@ -236,9 +270,9 @@ export default function CoursesPage() {
                     transition={{ duration: 0.15 }}
                     key={grade.id}
                     onClick={() => handleGradeChange(grade.id)}
-                    className={`flex-shrink-0 px-6 py-2.5 rounded-xl font-space font-bold text-sm transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
+                    className={`flex-shrink-0 px-6 py-2.5 rounded-xl font-space font-bold text-sm transition-all focus:outline-none focus:ring-2 focus:ring-nav-accent focus:ring-offset-2 ${
                       isSelected
-                        ? `bg-blue-100 text-blue-800 border-2 border-blue-300 shadow-sm`
+                        ? `bg-blue-100 text-nav-accent border-2 border-blue-300 shadow-sm`
                         : `bg-white text-slate-600 border border-slate-200 hover:bg-slate-50`
                     }`}
                   >
@@ -253,9 +287,9 @@ export default function CoursesPage() {
         {/* BREADCRUMB & SEARCH ROW */}
         <section className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 pb-4">
           <div className="flex items-center gap-2 font-space font-bold text-xl text-slate-900 flex-wrap">
-             <span className="text-slate-500 cursor-pointer hover:text-blue-600" onClick={() => handleChapterChange('all')}>Cours</span>
+             <span className="text-slate-500 cursor-pointer hover:text-nav-accent" onClick={() => handleChapterChange('all')}>{t('breadcrumbCourses')}</span>
              <span className="text-slate-300 font-inter">/</span>
-             <span className="text-slate-500 cursor-pointer hover:text-blue-600" onClick={() => handleChapterChange('all')}>{gradeData.name}</span>
+             <span className="text-slate-500 cursor-pointer hover:text-nav-accent" onClick={() => handleChapterChange('all')}>{gradeData.name}</span>
              {effectiveChapterId !== 'all' && (
                <>
                  <span className="text-slate-300 font-inter">/</span>
@@ -263,20 +297,28 @@ export default function CoursesPage() {
                </>
              )}
           </div>
-          <div className="relative w-full md:w-72">
-            <Search size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
-            <input 
-              type="text"
-              placeholder={`Rechercher en ${gradeData.name}...`}
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-white border border-slate-200 rounded-xl pl-10 pr-4 py-2.5 text-sm font-inter focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow shadow-sm"
-            />
-          </div>
+          <GradeLessonSearch value={searchQuery} onChange={setSearchQuery} gradeName={gradeData.name} />
         </section>
 
+        {/* CLASSE SANS PROGRAMME (invariant I2 de la phase 6F).
+            « Active » veut dire que la classe EXISTE, pas qu'il y a du
+            contenu. La terminale algérienne est dans ce cas : aucun programme
+            officiel n'a encore été fourni. Sans ce bloc, l'élève tomberait sur
+            une page vide qu'il prendrait pour une panne — d'où un message qui
+            DIT où en est sa classe, plutôt qu'un silence. */}
+        {gradeData.curriculumStatus === 'not_supplied' && (
+          <section className="bg-white border border-slate-200 rounded-xl p-6 text-center">
+            <h2 className="font-space font-bold text-lg text-slate-900 mb-2">
+              {t('gradeNotSuppliedTitle')}
+            </h2>
+            <p className="font-inter text-sm text-slate-500 max-w-md mx-auto">
+              {t('gradeNotSuppliedBody')}
+            </p>
+          </section>
+        )}
+
         {/* CHAPTERS SELECTOR (Only if no search active) */}
-        {!searchQuery && (
+        {!searchQuery && gradeData.chapters.length > 0 && (
           <section>
             <div className="flex overflow-x-auto gap-3 pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
               <button
@@ -287,25 +329,21 @@ export default function CoursesPage() {
                     : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
                 }`}
               >
-                Tous les chapitres
+                {t('allChapters')}
               </button>
               {gradeData.chapters.map((chapter) => {
                 const isSelected = chapter.id === effectiveChapterId;
-                const progress = getChapterProgress(chapter);
                 return (
                   <button
                     key={chapter.id}
                     onClick={() => handleChapterChange(chapter.id)}
-                    className={`flex-shrink-0 flex flex-col items-start px-4 py-2 rounded-lg font-inter text-sm font-medium transition-all ${
+                    className={`flex-shrink-0 inline-flex items-center px-4 py-2 rounded-lg font-inter text-sm font-medium transition-all ${
                       isSelected
-                        ? 'bg-blue-600 text-white shadow-md'
+                        ? 'bg-nav-accent text-white shadow-md'
                         : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-50'
                     }`}
                   >
-                    <span>{chapter.title}</span>
-                    <span className={`text-[10px] mt-0.5 font-bold ${isSelected ? 'text-blue-200' : 'text-slate-400'}`}>
-                      {chapter.lessons.length} leçon{chapter.lessons.length > 1 ? 's' : ''} • {progress}%
-                    </span>
+                    <span>{chapter.icon && <span className="me-1.5" aria-hidden="true">{chapter.icon}</span>}{chapter.title}</span>
                   </button>
                 );
               })}
@@ -317,28 +355,28 @@ export default function CoursesPage() {
         {continueCourse && !searchQuery && (
           <section className="mb-8">
             <h3 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-4 flex items-center gap-2">
-              <Play size={14} /> Reprendre
+              <Play size={14} /> {t('resume')}
             </h3>
             <Link
               to={continueCourse.resumePath}
               className="group block bg-white rounded-2xl border-2 border-blue-200 p-5 shadow-sm hover:shadow-md hover:border-blue-400 transition-all max-w-2xl"
             >
               <div className="flex items-start gap-4">
-                <div className="text-4xl bg-blue-50 p-3 rounded-2xl group-hover:scale-105 transition-transform">
+                <div className="text-4xl bg-nav-accent-soft p-3 rounded-2xl group-hover:scale-105 transition-transform">
                   {continueCourse.course.icon}
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center justify-between">
-                    <h4 className="font-space font-bold text-slate-900 text-lg group-hover:text-blue-600 transition-colors">
+                    <h4 className="font-space font-bold text-slate-900 text-lg group-hover:text-nav-accent transition-colors">
                       {continueCourse.course.title} — {continueCourse.grade.name}
                     </h4>
-                    <span className="text-sm font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform text-blue-600">
-                      Continuer <ArrowRight size={14} />
+                    <span className="text-sm font-bold flex items-center gap-1 group-hover:translate-x-1 group-hover:rtl:-translate-x-1 transition-transform text-nav-accent">
+                      {t('continue')} <ArrowForward size={14} />
                     </span>
                   </div>
                   
                   {continueCourse.progress > 0 ? (
-                    <p className="font-inter text-slate-500 text-sm mt-1">{continueCourse.chapter.title} · Module {continueCourse.resumeModule} sur {continueCourse.totalModules}</p>
+                    <p className="font-inter text-slate-500 text-sm mt-1">{continueCourse.chapter.title} · {t('moduleOf', { current: continueCourse.resumeModule, total: continueCourse.totalModules })}</p>
                   ) : (
                     <p className="font-inter text-slate-500 text-sm mt-1 line-clamp-1">{continueCourse.course.description}</p>
                   )}
@@ -358,26 +396,79 @@ export default function CoursesPage() {
           </section>
         )}
 
-        {/* COURSE GRID */}
-        <section>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            <AnimatePresence mode="popLayout">
-              {filteredCourses.length === 0 ? (
-                <motion.div 
-                  initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-                  className="col-span-full py-12 text-center text-slate-500"
-                >
+        {/* PROGRAMME — les SUJETS officiels, quand aucune leçon n'existe encore.
+            Une classe peut être ACTIVE sans porter de leçon : le programme 4AM
+            est arrêté, son découpage en leçons ne l'est pas (phase 7). Montrer
+            « aucun cours ne correspond » serait alors faux deux fois — il n'y a
+            pas d'erreur de sélection, et il y a bien un programme à lire. */}
+        {!searchQuery && visibleTopicChapters.length > 0 && (
+          <section className="space-y-5">
+            <div>
+              <h2 className="font-space font-bold text-lg text-slate-900">{t('chapterProgrammeTitle')}</h2>
+              <p className="font-inter text-sm text-slate-500 mt-1">{t('chapterProgrammeNote')}</p>
+            </div>
+            {visibleTopicChapters.map((chapter) => (
+              <div key={chapter.id} className="bg-white border border-slate-200 rounded-xl p-5">
+                <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-3">
+                  <h3 className="font-space font-bold text-base text-slate-900">{chapter.title}</h3>
+                  {chapter.subtitle && (
+                    <span className="font-inter text-xs text-slate-500">{chapter.subtitle}</span>
+                  )}
+                  <span className="font-mono-jetbrains text-[11px] font-semibold text-slate-400">
+                    {t('topicsCount', { count: chapter.topics.length })}
+                  </span>
+                </div>
+                <ol className="space-y-2">
+                  {chapter.topics.map((topic, index) => (
+                    <li key={topic.id} className="flex gap-3 font-inter text-sm text-slate-700">
+                      <span className="font-mono-jetbrains text-xs text-slate-400 pt-0.5 shrink-0">
+                        {index + 1}
+                      </span>
+                      <div>
+                        <span>{topic.title}</span>
+                        {(topic.namedMethods || topic.namedParts) && (
+                          <span className="block text-xs text-slate-500 mt-0.5">
+                            {(topic.namedMethods || topic.namedParts).join(' · ')}
+                          </span>
+                        )}
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+                <p className="font-inter text-xs text-slate-400 mt-4">{t('chapterLessonsPending')}</p>
+              </div>
+            ))}
+          </section>
+        )}
+
+        {/* COURSE GRID.
+            N'apparaît que s'il y a quelque chose à y montrer OU une
+            recherche active : sinon son repli « aucun cours ne correspond »
+            s'afficherait sous une classe qui n'a simplement AUCUNE leçon
+            encore (4AM : programme sans découpage — vu plus haut ; Terminale :
+            aucun chapitre du tout — invariant I2), ce qui n'est pas la même
+            chose qu'une recherche sans résultat. */}
+        {(filteredCourses.length > 0 || searchQuery || gradeData.chapters.some((c) => c.lessons.length > 0)) && (
+          <section className="space-y-5">
+            <CatalogueViewToolbar view={view} onChange={setView} count={filteredCourses.length} searching={!!searchResults} />
+            <CatalogueBrowser
+              chapters={visibleChapters}
+              gradeChapters={gradeData.chapters}
+              lessons={searchResults ? [] : filteredCourses}
+              searchResults={searchResults}
+              searchQuery={searchQuery}
+              view={view}
+              onLessonClick={(lesson) => handleCourseClick(lesson.id)}
+              gridClassName="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+              emptyMessage={(
+                <div className="py-12 text-center text-slate-500">
                   <Search size={32} className="mx-auto mb-3 opacity-20" />
-                  <p>Aucun cours ne correspond à {searchQuery ? `"${searchQuery}"` : "cette sélection"}.</p>
-                </motion.div>
-              ) : (
-                filteredCourses.map((lesson) => (
-                  <LessonCard key={lesson.id} lesson={lesson} onClick={() => handleCourseClick(lesson.id)} />
-                ))
+                  <p>{t('noCourseMatches', { query: t('thisSelection') })}</p>
+                </div>
               )}
-            </AnimatePresence>
-          </div>
-        </section>
+            />
+          </section>
+        )}
       </div>
     </div>
   );

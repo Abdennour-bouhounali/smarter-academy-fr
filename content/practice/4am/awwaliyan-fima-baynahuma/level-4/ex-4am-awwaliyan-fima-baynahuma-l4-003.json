@@ -1,0 +1,185 @@
+{
+  "id": "ex-4am-awwaliyan-fima-baynahuma-l4-003",
+  "lessonCode": "awwaliyan-fima-baynahuma",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2021 — العددان 845 و 672",
+    "estimatedMinutes": 14,
+    "tags": [
+      "إثبات",
+      "جذور",
+      "تعرّف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_awwaliyan-fima-baynahuma_P2",
+      "modelledOn": "BEM 2021 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 845 و 672، ثم استنتج أنهما أوليان فيما بينهما.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيمة PGCD(845 ; 672) التي وجدتها",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عددان أوليان فيما بينهما: احسب قاسمهما المشترك الأكبر PGCD(845 ; 672)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 845 على 672، ثم واصل القسمات المتتابعة إلى أن تجد باقيًا معدومًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن آخر باقٍ غير معدوم بما يتطلّبه تعريف عددين أوليين فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(845 ; 672) = 1: العددان 845 و 672 أوليان فيما بينهما.",
+        "incorrect": "راجع القسمات المتتابعة باقيًا باقيًا: آخر باقٍ غير معدوم هو القاسم المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$845 = 672 \\times 1 + 173$",
+          "$672 = 173 \\times 3 + 153$",
+          "$173 = 153 \\times 1 + 20$",
+          "$153 = 20 \\times 7 + 13$",
+          "$20 = 13 \\times 1 + 7$",
+          "$13 = 7 \\times 1 + 6$",
+          "$7 = 6 \\times 1 + 1$",
+          "$6 = 1 \\times 6 + 0$",
+          "آخر باقٍ غير معدوم هو 1، إذن PGCD(845 ; 672) = 1 .",
+          "ومنه العددان 845 و 672 أوليان فيما بينهما."
+        ],
+        "result": "PGCD(845 ; 672) = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 270
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب العدد $A = \\sqrt{845} - \\sqrt{320}$ على الشكل $a\\sqrt{5}$ حيث $a$ عدد طبيعي يطلب تعيينه.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: العدد $a$ في الكتابة $a\\sqrt{5}$",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب كل عدد تحت الجذر على شكل جداء مربع تام في 5."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\sqrt{k^2 \\times 5} = k\\sqrt{5}$ ، ثم اجمع المعاملات."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 5\\sqrt{5}$",
+        "incorrect": "حلّل كل عدد تحت الجذر إلى جداء مربع تام في 5، ثم اجمع المعاملات مع إشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$\\sqrt{845} = \\sqrt{169 \\times 5} = 13\\sqrt{5}$ ; $\\sqrt{320} = \\sqrt{64 \\times 5} = 8\\sqrt{5}$",
+          "$A = 13\\sqrt{5} - 8\\sqrt{5} = 5\\sqrt{5}$"
+        ],
+        "result": "A = 5\\sqrt{5}"
+      },
+      "timeSeconds": 210
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "عيّن كل الأعداد الطبيعية $n$ حيث $1 \\leq n \\leq 12$ ويكون العددان $n$ و 672 أوليين فيما بينهما.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        5,
+        11
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قواسم العدد 672 التي تختلف عن 1 والأصغر من 13."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يُستبعد كل عدد $n$ يقبل القسمة على قاسم من قواسم 672 يختلف عن 1."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "افحص الأعداد $n$ واحدًا واحدًا، ولا تستبعد عددًا لمجرّد أنه ليس عددًا أوليًا."
+        }
+      ],
+      "feedback": {
+        "correct": "كل عدد من هذه الأعداد قاسمه المشترك الأكبر مع 672 يساوي 1.",
+        "incorrect": "افحص كل عدد من المجال: هل له قاسم مشترك مع 672 يختلف عن 1؟"
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 672 المحصورة بين 2 و 12 هي: 2 ، 3 ، 4 ، 6 ، 7 ، 8 ، 12",
+          "1: PGCD(1 ; 672) = 1 ✓",
+          "2: 2 قاسم مشترك للعددين 2 و 672 ✗",
+          "3: 3 قاسم مشترك للعددين 3 و 672 ✗",
+          "4: 2 قاسم مشترك للعددين 4 و 672 ✗",
+          "5: PGCD(5 ; 672) = 1 ✓",
+          "6: 2 قاسم مشترك للعددين 6 و 672 ✗",
+          "7: 7 قاسم مشترك للعددين 7 و 672 ✗",
+          "8: 2 قاسم مشترك للعددين 8 و 672 ✗",
+          "9: 3 قاسم مشترك للعددين 9 و 672 ✗",
+          "10: 2 قاسم مشترك للعددين 10 و 672 ✗",
+          "11: PGCD(11 ; 672) = 1 ✓",
+          "12: 2 قاسم مشترك للعددين 12 و 672 ✗",
+          "الأعداد المطلوبة هي: 1 ، 5 ، 11"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 360
+    }
+  ]
+}

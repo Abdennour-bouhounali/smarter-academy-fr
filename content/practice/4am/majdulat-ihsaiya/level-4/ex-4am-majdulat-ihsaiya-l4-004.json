@@ -1,0 +1,272 @@
+{
+  "id": "ex-4am-majdulat-ihsaiya-l4-004",
+  "lessonCode": "majdulat-ihsaiya",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 7 (ص 99) — نغيّر أصغر قيمة",
+    "estimatedMinutes": 9,
+    "tags": [
+      "دستور",
+      "مدى",
+      "وسيط",
+      "متوسط",
+      "منوال"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-7",
+      "page": 99,
+      "section": "أوظّف تعلّماتي",
+      "number": 7,
+      "adaptedFrom": "ex-4am-majdulat-ihsaiya-l4-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "حجزنا سلسلة التمرين 7 في المجال ⁦A1:G1⁩ والدساتير الأربعة: المدى في B2 ، الوسيط في B3 ، المتوسط في B4 ، المنوال في B5 . ثم عوّضنا القيمة 4 في الخلية G1 بالعدد 1 ، فصار السطر الأول:",
+    "table": {
+      "head": [
+        "",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "rows": [
+        [
+          "1",
+          "4",
+          "10",
+          "8",
+          "4",
+          "3",
+          "2",
+          "1"
+        ]
+      ],
+      "sheet": true
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما هو العدد الذي يُظهره الآن الدستور ⁦=MAX(A1:G1)-MIN(A1:G1)⁩ في الخلية B2 ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-IHSA-MADA-AKBAR-QIMA"
+        },
+        {
+          "value": "8",
+          "id": "MISC-IHSA-MAJAL-KHALIYA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MAX(…)-MIN(…)⁩ يحسب مدى القيم: أكبر قيمة ناقص أصغر قيمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر قيمة وأصغر قيمة في المجال ⁦A1:G1⁩."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح أصغر قيمة من أكبر قيمة، ولا تكتف بأكبر قيمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$10 - 1 = 9$ .",
+        "incorrect": "المدى فرق: أكبر قيمة في المجال ناقص أصغر قيمة فيه، والدستور يحسب هذا الفرق."
+      },
+      "solution": {
+        "lines": [
+          "أكبر قيمة في المجال ⁦A1:G1⁩: 10 ، وأصغر قيمة: 1 .",
+          "$10 - 1 = 9$",
+          "إذن يُظهر الدستور العدد 9 ."
+        ],
+        "result": "9"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "ما هو العدد الذي يُظهره الآن الدستور ⁦=MEDIANE(A1:G1)⁩ في الخلية B3 ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة إن لزم)",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MEDIANE(…)⁩ يُظهر وسيط القيم: يرتّبها المجدول أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب القيم الـ 7 تصاعديا، ثم خذ القيمة التي تقع في الوسط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لعدد فرديّ من القيم، الرتبة الوسطى هي $\\dfrac{N + 1}{2}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "القيم مرتّبة: 1 ، 2 ، 3 ، 4 ، 4 ، 8 ، 10 ، والوسيط 4 .",
+        "incorrect": "لا يُقرأ الوسيط إلا بعد ترتيب القيم تصاعديا، ثم نأخذ القيمة الوسطى (أو نصف مجموع القيمتين الوسطيين)."
+      },
+      "solution": {
+        "lines": [
+          "نرتّب القيم تصاعديا: 1 ، 2 ، 3 ، 4 ، 4 ، 8 ، 10 .",
+          "عدد القيم 7 فرديّ: الوسيط هو القيمة ذات الرتبة $\\dfrac{7 + 1}{2} = 4$ .",
+          "الوسيط: 4",
+          "إذن يُظهر الدستور العدد 4 ."
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما هو العدد الذي يُظهره الآن الدستور ⁦=MOYENNE(A1:G1)⁩ في الخلية B4 ؟ دوّره إلى 0,01 .",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري مدوّر إلى 0,01",
+      "expectedAnswer": "4,57",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MOYENNE(…)⁩ يقسم مجموع القيم العددية في المجال على عددها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع القيم العددية الموجودة في المجال، وعُدّها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المتوسط = مجموع القيم ÷ عددها ، ثم دوّر النتيجة كما هو مطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{32}{7} \\approx 4{,}57$ .",
+        "incorrect": "اجمع كل القيم العددية التي في المجال، ثم اقسم المجموع على عددها (لا على عدد آخر)."
+      },
+      "solution": {
+        "lines": [
+          "مجموع القيم: $4 + 10 + 8 + 4 + 3 + 2 + 1 = 32$ ، وعددها 7 .",
+          "$\\dfrac{32}{7} \\approx 4{,}57$ (مدوّرا إلى $0{,}01$)",
+          "إذن يُظهر الدستور العدد 4,57 ."
+        ],
+        "result": "4{,}57"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "ما هو العدد الذي يُظهره الآن الدستور ⁦=MODE(A1:G1)⁩ في الخلية B5 ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-IHSA-DUSTUR-KHATI"
+        },
+        {
+          "value": "10",
+          "id": "MISC-IHSA-DUSTUR-KHATI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MODE(…)⁩ يُظهر المنوال: القيمة ذات أكبر تكرار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ كم مرة تظهر كل قيمة في المجال."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المنوال قيمة من قيم السلسلة، لا عدد مرات ظهورها."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة 4 تظهر مرتين، وكل قيمة أخرى أقل من ذلك.",
+        "incorrect": "المنوال هو القيمة التي تتكرّر أكثر من غيرها في المجال: اكتب القيمة نفسها لا عدد مرات تكرارها."
+      },
+      "solution": {
+        "lines": [
+          "القيمة 4 تظهر مرتين في المجال، وكل قيمة أخرى تظهر مرة واحدة على الأكثر.",
+          "إذن يُظهر الدستور العدد 4 ."
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

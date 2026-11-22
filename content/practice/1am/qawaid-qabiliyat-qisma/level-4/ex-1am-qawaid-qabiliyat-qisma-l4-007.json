@@ -1,0 +1,221 @@
+{
+  "id": "ex-1am-qawaid-qabiliyat-qisma-l4-007",
+  "lessonCode": "qawaid-qabiliyat-qisma",
+  "level": 4,
+  "metadata": {
+    "title": "سنة كبيسة وأيام الأسبوع",
+    "estimatedMinutes": 10,
+    "tags": [
+      "السنة الكبيسة",
+      "أيام الأسبوع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-8",
+      "page": 48,
+      "section": "أتعمّق",
+      "number": 8
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "تحترم سلمى مواعيدها وتدوّنها في مفكّرة. السنة الكبيسة فيها 366 يومًا: يكون عددها قابلًا للقسمة على 4، إلا القرون التي لا يقبل عددها القسمة على 400."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "هل السنة 2032 سنة كبيسة؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-ZAWJI-4"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل يقبل العدد القسمة على 4؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى السنوات التي يقبل عددها القسمة على 100."
+        }
+      ],
+      "feedback": {
+        "correct": "2032 لا يقبل القسمة على 100، إذن السنة كبيسة.",
+        "incorrect": "السنة كبيسة إذا قبل عددها القسمة على 4، إلا القرون التي لا يقبل عددها القسمة على 400."
+      },
+      "solution": {
+        "lines": [
+          "العدد المشكّل من رقمي آحاد وعشرات 2032 هو 32، و 32 يقبل القسمة على 4.",
+          "2032 لا يقبل القسمة على 100، إذن السنة كبيسة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل السنة 2100 سنة كبيسة؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-KABISA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل يقبل العدد القسمة على 4؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انتبه إلى السنوات التي يقبل عددها القسمة على 100."
+        }
+      ],
+      "feedback": {
+        "correct": "$2100 = 400 \\times 5 + 100$ ، لا يقبل القسمة على 400: السنة ليست كبيسة.",
+        "incorrect": "السنة كبيسة إذا قبل عددها القسمة على 4، إلا القرون التي لا يقبل عددها القسمة على 400."
+      },
+      "solution": {
+        "lines": [
+          "2100 يقبل القسمة على 100 (رقما آحاده وعشراته 0).",
+          "$2100 = 400 \\times 5 + 100$ ، لا يقبل القسمة على 400: السنة ليست كبيسة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "كم يومًا في السنتين 2031 و 2032 معًا؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "731",
+      "misconceptionSignatures": [
+        {
+          "value": "730",
+          "id": "MISC-QABILIYA-KABISA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل 2031 سنة كبيسة؟ وهل 2032 كبيسة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$365 + 366 = 731$.",
+        "incorrect": "أضف عدد أيام كل سنة."
+      },
+      "solution": {
+        "lines": [
+          "2031 ليست كبيسة: 365 يومًا ؛ 2032 كبيسة: 366 يومًا.",
+          "$365 + 366 = 731$"
+        ],
+        "result": "731"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب باقي القسمة الإقليدية للعدد 731 على 7 (عدد الأيام الزائدة على الأسابيع الكاملة).",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "104",
+          "id": "MISC-QABILIYA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية عموديًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي عدد طبيعي أصغر من 7."
+        }
+      ],
+      "feedback": {
+        "correct": "$731 = 7 \\times 104 + 3$ و $3 < 7$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 7."
+      },
+      "solution": {
+        "lines": [
+          "$731 = 7 \\times 104 + 3$",
+          "$3 < 7$ ، إذن الباقي هو 3، و 731 لا يقبل القسمة على 7."
+        ],
+        "result": "r = 3"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -2,6 +2,8 @@
 
 namespace App\Domain\Access;
 
+use App\Domain\Plans\TeacherCoverage;
+use App\Domain\School\SchoolCoverage;
 use App\Models\Entitlement;
 use App\Models\User;
 use Illuminate\Support\Carbon;
@@ -86,6 +88,21 @@ class EntitlementService
             return AccessDecision::deny(AccessDecision::AUTHENTICATION_REQUIRED);
         }
 
+        // L'ENSEIGNANT lit tout le contenu publié : il ne l'achète pas, il
+        // le prépare. Le rôle ouvre, sans ligne. La publication reste
+        // souveraine (ContentAccess l'a déjà vérifiée) ; la visibilité par
+        // classe ne le concerne pas (elle règle ce que SES élèves voient).
+        if ($user->isTeacher()) {
+            return AccessDecision::allow(AccessDecision::VIA_TEACHER_ROLE);
+        }
+
+        // L'ADMINISTRATEUR relit tout le contenu (ContentAccess::
+        // visibleStatuses) : le palier ne doit pas lui cacher ce que
+        // la publication lui montre.
+        if ($user->isAdmin()) {
+            return AccessDecision::allow(AccessDecision::VIA_ADMIN_ROLE);
+        }
+
         $now = Carbon::now();
 
         // Les droits sont cumulatifs et non exclusifs : on cherche s'il en
@@ -94,12 +111,15 @@ class EntitlementService
         // geste commercial pendant qu'un paiement se règle.
         $valid = $this->validEntitlements($user, $now);
 
-        // L'abonnement est examiné en PREMIER : quand les deux existent, le
-        // motif rendu doit être celui qui décrit vraiment la situation de
-        // l'élève. « Cet accès vient d'une dérogation » alors qu'il est
-        // abonné enverrait le support sur une fausse piste.
+        // L'ordre est celui de la RÉALITÉ COMMERCIALE, du plus « acheté » au
+        // plus offert : quand plusieurs droits coexistent, le motif rendu doit
+        // être celui qui décrit vraiment la situation de l'élève. « Cet accès
+        // vient d'une dérogation » alors qu'il a payé une carte enverrait le
+        // support sur une fausse piste — et lui ferait croire, à l'échéance,
+        // qu'on lui retire un cadeau plutôt qu'un dû.
         $byType = [
             Entitlement::TYPE_SUBSCRIPTION => AccessDecision::VIA_SUBSCRIPTION,
+            Entitlement::TYPE_ACTIVATION_CODE => AccessDecision::VIA_ACTIVATION_CODE,
             Entitlement::TYPE_ADMIN_OVERRIDE => AccessDecision::VIA_ADMIN_OVERRIDE,
         ];
 
@@ -109,8 +129,59 @@ class EntitlementService
             }
         }
 
+        // Le modèle C (licence d'établissement), APRÈS les droits propres et
+        // AVANT l'enseignant : c'est l'établissement qui paie ses élèves.
+        if ($this->schoolCoverageFor($user)['covered']) {
+            return AccessDecision::allow(AccessDecision::VIA_SCHOOL_LICENCE);
+        }
+
+        // Le modèle B, APRÈS les droits propres : quand un élève a payé sa
+        // carte ET est couvert par son enseignant, c'est sa carte qui
+        // explique son accès. La couverture ne produit aucune ligne ; elle
+        // se recalcule à chaque requête (mémorisée le temps de celle-ci).
+        if ($this->coverageFor($user)['covered']) {
+            return AccessDecision::allow(AccessDecision::VIA_TEACHER_SUBSCRIPTION);
+        }
+
         return AccessDecision::deny(AccessDecision::PREMIUM_REQUIRED);
     }
+
+    /**
+     * La couverture par l'offre de l'enseignant (modèle B), mémorisée par
+     * requête comme les droits. Résolue paresseusement : un élève
+     * indépendant ne coûte que la requête d'adhésion.
+     *
+     * @return array{covered: bool, teacherId: ?int, endsAt: ?Carbon}
+     */
+    private function coverageFor(User $user): array
+    {
+        if (! isset($this->coverage[$user->id])) {
+            $this->coverage[$user->id] = app(TeacherCoverage::class)->coverageFor($user);
+        }
+
+        return $this->coverage[$user->id];
+    }
+
+    /** @var array<int, array{covered: bool, teacherId: ?int, endsAt: ?Carbon}> */
+    private array $coverage = [];
+
+    /**
+     * La couverture par la licence de l'établissement (modèle C), mémorisée
+     * par requête comme la couverture de l'enseignant.
+     *
+     * @return array{covered: bool, schoolId: ?int, endsAt: ?Carbon}
+     */
+    private function schoolCoverageFor(User $user): array
+    {
+        if (! isset($this->schoolCoverage[$user->id])) {
+            $this->schoolCoverage[$user->id] = app(SchoolCoverage::class)->coverageFor($user);
+        }
+
+        return $this->schoolCoverage[$user->id];
+    }
+
+    /** @var array<int, array{covered: bool, schoolId: ?int, endsAt: ?Carbon}> */
+    private array $schoolCoverage = [];
 
     /**
      * Les droits valides d'un utilisateur, en UNE requête, mémorisés le temps
@@ -155,11 +226,13 @@ class EntitlementService
     {
         if ($user === null) {
             $this->cache = [];
+            $this->coverage = [];
+            $this->schoolCoverage = [];
 
             return;
         }
 
-        unset($this->cache[$user->id]);
+        unset($this->cache[$user->id], $this->coverage[$user->id], $this->schoolCoverage[$user->id]);
     }
 
     /**
@@ -170,7 +243,7 @@ class EntitlementService
      * connaître la référence externe d'un abonnement pour savoir qu'il est
      * actif (spec §25).
      *
-     * @return array{freeAccess: bool, subscriptionActive: bool, adminOverrideActive: bool, premiumAccess: bool, expiresAt: ?string}
+     * @return array{freeAccess: bool, subscriptionActive: bool, activationCodeActive: bool, adminOverrideActive: bool, teacherCoverageActive: bool, premiumAccess: bool, expiresAt: ?string}
      */
     public function summarize(?User $user): array
     {
@@ -178,17 +251,63 @@ class EntitlementService
         $valid = $user !== null && $user->hasActiveAccount()
             ? $this->validEntitlements($user, Carbon::now())
             : collect();
-
-        $subscription = $valid->firstWhere('type', Entitlement::TYPE_SUBSCRIPTION);
-        $override = $valid->firstWhere('type', Entitlement::TYPE_ADMIN_OVERRIDE);
+        $coverage = $user !== null && $user->hasActiveAccount()
+            ? $this->coverageFor($user)
+            : ['covered' => false, 'teacherId' => null, 'endsAt' => null];
+        $schoolCoverage = $user !== null && $user->hasActiveAccount()
+            ? $this->schoolCoverageFor($user)
+            : ['covered' => false, 'schoolId' => null, 'endsAt' => null];
 
         return [
             'freeAccess' => $this->satisfies($user, AccessTier::FREE),
-            'subscriptionActive' => $subscription !== null,
-            'adminOverrideActive' => $override !== null,
+            'subscriptionActive' => $valid->contains('type', Entitlement::TYPE_SUBSCRIPTION),
+            'activationCodeActive' => $valid->contains('type', Entitlement::TYPE_ACTIVATION_CODE),
+            'adminOverrideActive' => $valid->contains('type', Entitlement::TYPE_ADMIN_OVERRIDE),
+            // Le modèle B : couvert par l'offre de son enseignant.
+            'teacherCoverageActive' => $coverage['covered'],
+            // Le modèle C : couvert par la licence de son établissement.
+            'schoolCoverageActive' => $schoolCoverage['covered'],
             'premiumAccess' => $decision->allowed,
-            // La fin du droit qui ouvre actuellement l'accès, s'il a un terme.
-            'expiresAt' => optional(($subscription ?? $override)?->expires_at)->toIso8601String(),
+            'expiresAt' => optional($this->accessEndsAt($valid, $coverage, $schoolCoverage))->toIso8601String(),
         ];
+    }
+
+    /**
+     * Quand l'accès premium se ferme-t-il, tous droits confondus ?
+     *
+     * La question que l'élève pose est « jusqu'à quand ai-je accès ? », pas
+     * « quand ce droit-ci finit-il ». Les droits étant CUMULATIFS (decide()
+     * en cherche un qui ouvre, pas le seul), la réponse est la fin du
+     * DERNIER : deux cartes d'activation empilées prolongent l'accès, et
+     * annoncer la fin de la première ferait craindre une coupure qui n'aura
+     * pas lieu.
+     *
+     * Un seul droit sans terme suffit à rendre la question sans objet : on
+     * renvoie null plutôt qu'une date qui serait fausse. C'est aussi ce qui
+     * était rendu avant l'introduction des codes, pour un abonnement sans fin.
+     *
+     * La couverture par l'enseignant entre dans le même calcul : sa fin est
+     * celle de l'abonnement de l'enseignant (null = sans terme).
+     *
+     * @param  Collection<int, Entitlement>  $valid
+     * @param  array{covered: bool, teacherId: ?int, endsAt: ?Carbon}  $coverage
+     */
+    private function accessEndsAt($valid, array $coverage = ['covered' => false, 'teacherId' => null, 'endsAt' => null], array $schoolCoverage = ['covered' => false, 'schoolId' => null, 'endsAt' => null]): ?Carbon
+    {
+        // `toBase()` : une collection Eloquent VIDE reste Eloquent après map(),
+        // et son contains() prend alors un Carbon pour une clé de modèle.
+        $ends = $valid->toBase()->map(fn (Entitlement $e) => $e->expires_at);
+        if ($coverage['covered']) {
+            $ends->push($coverage['endsAt']);
+        }
+        if ($schoolCoverage['covered']) {
+            $ends->push($schoolCoverage['endsAt']);
+        }
+
+        if ($ends->isEmpty() || $ends->contains(null)) {
+            return null;
+        }
+
+        return $ends->max();
     }
 }

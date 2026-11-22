@@ -1,0 +1,280 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l5-006",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2023 — موقف سيارات بمستغانم",
+    "estimatedMinutes": 14,
+    "tags": [
+      "قواسم",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qawasim-adad-tabii_P2",
+      "modelledOn": "BEM 2023 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "قرّرت بلدية بمستغانم تهيئة موقف سيارات، حفاظًا على نظافة الشوارع وحسن تنظيم المدينة، يتسع لـ 198 سيارة، تُرتَّب في صفوف تضم كلها نفس العدد من الأماكن، دون أن يبقى أي مكان. كلّفت البلدية مقاولا بإنجاز المشروع مقابل مبلغ 2100000DA.\nإذا علمت أن:\n• عدد الصفوف محصور بين 5 و 15.\n• تهيئة المكان الواحد تكلّف المقاول 9500DA.\n• يضع المقاول في بداية كل صف لافتة ثمنها 12000DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "عيّن كل قواسم العدد 198.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        6,
+        9,
+        11,
+        18,
+        22,
+        33,
+        66,
+        99,
+        198
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            6,
+            9,
+            11,
+            18,
+            22,
+            33,
+            66,
+            99
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 198 بمربعات الأعداد: إلى أي عدد يكفي أن تختبر قابلية القسمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل قسمة باقيها معدوم تعطي قاسمين: $d$ و $198 \\div d$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$198 = 1 \\times 198$ ، $198 = 2 \\times 99$ ، $198 = 3 \\times 66$ ، $198 = 6 \\times 33$ ، $198 = 9 \\times 22$ ، $198 = 11 \\times 18$.",
+        "incorrect": "اختبر الأعداد التي مربعها أصغر من العدد أو يساويه، وخذ من كل قسمة باقيها معدوم القاسمين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$14^2 = 196 \\leq 198 < 225 = 15^2$ ومنه نختبر قابلية قسمة 198 على الأعداد من 1 إلى 14.",
+          "نجد أن 198 يقبل القسمة على كل من الأعداد: 1 ، 2 ، 3 ، 6 ، 9 ، 11.",
+          "ومن المساويات: $198 = 1 \\times 198$ ، $198 = 2 \\times 99$ ، $198 = 3 \\times 66$ ، $198 = 6 \\times 33$ ، $198 = 9 \\times 22$ ، $198 = 11 \\times 18$",
+          "إذن قواسم العدد 198 هي: 1 ، 2 ، 3 ، 6 ، 9 ، 11 ، 18 ، 22 ، 33 ، 66 ، 99 ، 198."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "استنتج كل الأعداد الممكنة للصفوف.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        6,
+        9,
+        11
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الصفوف قاسم للعدد 198."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احتفظ بالقواسم المحصورة بين 5 و 15."
+        }
+      ],
+      "feedback": {
+        "correct": "$198 = 6 \\times 33 = 9 \\times 22 = 11 \\times 18$.",
+        "incorrect": "من بين قواسم 198، احتفظ بالتي تقع بين 5 و 15."
+      },
+      "solution": {
+        "lines": [
+          "قواسم 198: 1 ، 2 ، 3 ، 6 ، 9 ، 11 ، 18 ، 22 ، 33 ، 66 ، 99 ، 198.",
+          "المحصورة بين 5 و 15: 6 ، 9 ، 11."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "اختارت البلدية أكبر عدد ممكن من الصفوف. ما هو عدد الأماكن في كل صف؟",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "18",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أكبر عدد ممكن للصفوف وجدته في السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد الصفوف × عدد الأماكن في الصف = 198."
+        }
+      ],
+      "feedback": {
+        "correct": "$198 = 11 \\times 18$.",
+        "incorrect": "اقسم 198 على أكبر عدد ممكن للصفوف."
+      },
+      "solution": {
+        "lines": [
+          "أكبر عدد ممكن للصفوف: 11.",
+          "$198 = 11 \\times 18$",
+          "إذن في كل صف 18 مكانا."
+        ],
+        "result": "18"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "lead": "ما هو مقدار ربح أو خسارة المقاول؟ مع التبرير.",
+      "statement": "هل يحقق المقاول ربحا أم خسارة؟",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "ربح",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خسارة",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الجواب، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب تكلفة تهيئة كل الأماكن ثم ثمن اللافتات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن التكلفة الكلية بالمبلغ الذي تدفعه البلدية."
+        }
+      ],
+      "feedback": {
+        "correct": "التكلفة الكلية 2013000DA أصغر من 2100000DA.",
+        "incorrect": "احسب التكلفة الكلية للمقاول وقارنها بمبلغ المشروع."
+      },
+      "solution": {
+        "lines": [
+          "تهيئة الأماكن: $198 \\times 9500 = 1881000$ DA",
+          "اللافتات: $11 \\times 12000 = 132000$ DA",
+          "التكلفة الكلية: $1881000 + 132000 = 2013000$ DA",
+          "$2013000 < 2100000$ : المقاول يحقق ربحا."
+        ],
+        "result": "ربح"
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "أعط مقدار هذا الربح أو هذه الخسارة.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (DA)",
+      "expectedAnswer": "87000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفرق بين مبلغ المشروع والتكلفة الكلية."
+        }
+      ],
+      "feedback": {
+        "correct": "$2100000 - 2013000 = 87000$.",
+        "incorrect": "اطرح التكلفة الكلية من مبلغ المشروع."
+      },
+      "solution": {
+        "lines": [
+          "$2100000 - 2013000 = 87000$",
+          "إذن ربح المقاول 87000DA."
+        ],
+        "result": "87000\\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,342 @@
+{
+  "id": "ex-4am-mafhum-taalufiya-l5-001",
+  "lessonCode": "mafhum-taalufiya",
+  "level": 5,
+  "metadata": {
+    "title": "BEM 2019 — الوضعية الإدماجية",
+    "estimatedMinutes": 25,
+    "tags": [
+      "وضعية إدماجية",
+      "تسعيرتان",
+      "العدد الذي صورته معلومة",
+      "تمثيل بياني"
+    ],
+    "source": {
+      "type": "bem",
+      "year": 2019,
+      "part": 2,
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "official",
+      "badge": "BEM 2019",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يقترح مدير المسبح البلدي، تشجيعًا للشباب على الرياضة، على السباحين التسعيرتين الآتيتين:\n- التسعيرة الأولى: 100DA للحصة الواحدة لغير المنخرطين.\n- التسعيرة الثانية: 80DA للحصة الواحدة مع اشتراك شهري قدره 400DA"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "ما هو عدد الحصص التي يمكنك الحصول عليها في كل تسعيرة إذا دفعت مبلغ 2800DA ؟",
+      "statement": "عدد الحصص بالتسعيرة الأولى:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الحصص",
+      "expectedAnswer": "28",
+      "misconceptionSignatures": [
+        {
+          "value": "280000",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في التسعيرة الأولى، كل حصة ثمنها 100DA ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كم مرة يحتوي المبلغ المدفوع على ثمن الحصة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$2800 \\div 100 = 28$ : 28 حصة بالتسعيرة الأولى.",
+        "incorrect": "اقسم المبلغ المدفوع على ثمن الحصة."
+      },
+      "solution": {
+        "lines": [
+          "عدد الحصص بالتسعيرة الأولى هو 28 حصة.",
+          "$2800 \\div 100 = 28$"
+        ],
+        "result": "28 حصة"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "عدد الحصص بالتسعيرة الثانية:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الحصص",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "35",
+          "id": "MISC-TAALUFI-SABIQ-QISMA"
+        },
+        {
+          "value": "-365",
+          "id": "MISC-TAALUFI-SABIQ-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في التسعيرة الثانية يُدفع الاشتراك الشهري مرة واحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح الاشتراك من المبلغ أولا، ثم اقسم على ثمن الحصة."
+        }
+      ],
+      "feedback": {
+        "correct": "$(2800 - 400) \\div 80 = 30$ : 30 حصة بالتسعيرة الثانية.",
+        "incorrect": "اطرح الاشتراك الشهري من المبلغ أولا، ثم اقسم على ثمن الحصة."
+      },
+      "solution": {
+        "lines": [
+          "عدد الحصص بالتسعيرة الثانية هو 30 حصة.",
+          "$(2800 - 400) \\div 80 = 30$"
+        ],
+        "result": "30 حصة"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "باعتبار: $x$ عدد الحصص في الشهر و بالإستعانة بتمثيل بياني، أعط أفضل التسعيرتين حسب عدد الحصص خلال شهر واحد.\nيمكنك أخذ: 1cm على محور الفواصل يمثل 4 حصص ، 1cm على محور التراتيب يمثل 400DA.",
+      "statement": "ليكن $f(x)$ المبلغ المدفوع بالتسعيرة الأولى و $g(x)$ المبلغ المدفوع بالتسعيرة الثانية. عبّر عن $g(x)$ بدلالة $x$ على الشكل $g(x) = ax + b$ ، ثم أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "80",
+      "misconceptionSignatures": [
+        {
+          "value": "400",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المبلغ الذي يُدفع عن كل حصة في التسعيرة الثانية؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 80$ : هو معامل $x$ .",
+        "incorrect": "المعامل $a$ هو العدد المضروب في $x$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "ليكن $x$ عدد الحصص.",
+          "و ليكن $f(x)$ المبلغ المدفوع بالتسعيرة الأولى و $g(x)$ المبلغ المدفوع بالتسعيرة الثانية.",
+          "التعبير عن $f(x)$ و $g(x)$ بدلالة $x$ :",
+          "المبلغ المدفوع بالتسعيرة الأولى: $f(x) = 100x$",
+          "المبلغ المدفوع بالتسعيرة الثانية: $g(x) = 80x + 400$",
+          "$g(x) = 80x + 400$ من الشكل $ax + b$ حيث: $a = 80$ و $b = 400$ ."
+        ],
+        "result": "a = 80"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "400",
+      "misconceptionSignatures": [
+        {
+          "value": "80",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المبلغ الذي يُدفع مرة واحدة في الشهر مهما كان عدد الحصص؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$b = 400$ ، إذن $g(x) = 80x + 400$ .",
+        "incorrect": "$b$ هو الحدّ الذي لا يحتوي على $x$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "ليكن $x$ عدد الحصص.",
+          "و ليكن $f(x)$ المبلغ المدفوع بالتسعيرة الأولى و $g(x)$ المبلغ المدفوع بالتسعيرة الثانية.",
+          "التعبير عن $f(x)$ و $g(x)$ بدلالة $x$ :",
+          "المبلغ المدفوع بالتسعيرة الأولى: $f(x) = 100x$",
+          "المبلغ المدفوع بالتسعيرة الثانية: $g(x) = 80x + 400$",
+          "$g(x) = 80x + 400$ من الشكل $ax + b$ حيث: $a = 80$ و $b = 400$ ."
+        ],
+        "result": "b = 400"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "statement": "مثّل بيانيا الدالتين $f$ و $g$ في معلم متعامد و متجانس (بالوحدتين المقترحتين).",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$f$ دالة خطية: تمثيلها مستقيم يشمل المبدأ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لكل دالة، احسب صورتي عددين ثم ارسم المستقيم."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "التمثيل البياني للدالتين $f$ و $g$ في معلم متعامد و متجانس $(O , \\vec{i} , \\vec{j})$ :",
+          "الدالة $f$ : من أجل $x = 0$ ، $f(x) = 0$ ؛ من أجل $x = 4$ ، $f(x) = 400$ .",
+          "الدالة $g$ : من أجل $x = 0$ ، $g(x) = 400$ ؛ من أجل $x = 4$ ، $g(x) = 720$ .",
+          "تمثيل $f$ مستقيم يشمل المبدأ $O$ والنقطة $(4 ; 400)$ .",
+          "تمثيل $g$ مستقيم يشمل النقطتين $(0 ; 400)$ و $(4 ; 720)$ .",
+          "بالوحدتين: 1cm على محور الفواصل لكل 4 حصص، و 1cm على محور التراتيب لكل 400DA ."
+        ]
+      },
+      "timeSeconds": 480
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "statement": "بقراءة بيانية، أعط فاصلة نقطة تقاطع التمثيلين البيانيين للدالتين $f$ و $g$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الحصص",
+      "expectedAnswer": "20",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في نقطة التقاطع، يتساوى المبلغان المدفوعان بالتسعيرتين."
+        }
+      ],
+      "feedback": {
+        "correct": "التمثيلان يتقاطعان في نقطة فاصلتها 20: عندها يتساوى المبلغان.",
+        "incorrect": "اقرأ فاصلة النقطة المشتركة بين المستقيمين."
+      },
+      "solution": {
+        "lines": [
+          "نلاحظ أنّ التمثيلين البيانيين للدالتين $f$ و $g$ يتقاطعان في نقطة فاصلتها 20.",
+          "معناه أنّه في الحصة 20 المبلغ المدفوع بالتسعيرة الأولى يساوي المبلغ المدفوع بالتسعيرة الثانية.",
+          "تحقّق: $f(20) = 100 \\times 20 = 2000$ و $g(20) = 80 \\times 20 + 400 = 2000$ ."
+        ],
+        "result": "20"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q7",
+      "step": "02",
+      "statement": "أعط أفضل التسعيرتين حسب عدد الحصص خلال شهر واحد.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التسعيرة الأفضل هي التي يكون تمثيلها البياني تحت الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن وضعية المستقيمين قبل نقطة التقاطع وبعدها."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "إذا كان عدد الحصص أقل من 20 حصة تكون التسعيرة الأولى أفضل من التسعيرة الثانية لأن التمثيل البياني للدالة $f$ يقع تحت التمثيل البياني للدالة $g$ .",
+          "إذا كان عدد الحصص أكبر من 20 حصة تكون التسعيرة الثانية أفضل من التسعيرة الأولى لأن التمثيل البياني للدالة $g$ يقع تحت التمثيل البياني للدالة $f$ .",
+          "في الحصة 20 يتساوى المبلغان (2000DA)."
+        ]
+      },
+      "timeSeconds": 240
+    }
+  ]
+}

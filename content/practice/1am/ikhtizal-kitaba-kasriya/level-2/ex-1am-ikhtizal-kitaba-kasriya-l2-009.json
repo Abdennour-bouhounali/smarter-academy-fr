@@ -1,0 +1,228 @@
+{
+  "id": "ex-1am-ikhtizal-kitaba-kasriya-l2-009",
+  "lessonCode": "ikhtizal-kitaba-kasriya",
+  "level": 2,
+  "metadata": {
+    "title": "اختزال كتابة كسرية خطوة بخطوة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "اختزال",
+      "قاسم مشترك"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-2",
+      "page": 56,
+      "section": "أكتسب طرائق",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نريد اختزال الكسر $\\dfrac{54}{378}$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ عدد من بين الأعداد الآتية قاسم مشترك للبسط والمقام؟",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "7",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KASRIYA-QASIM-HADD"
+        },
+        {
+          "id": "B",
+          "content": "9",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "4",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-ZAWJI-4"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل قواعد قابلية القسمة على كل من 54 و 378."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القاسم المشترك يقسم الحدّين معًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$54 = 9 \\times 6$ ، و $3 + 7 + 8 = 18$ فالعدد 378 يقبل القسمة على 9.",
+        "incorrect": "القاسم المشترك يجب أن يقسم البسط والمقام معًا، لا أحدهما فقط."
+      },
+      "solution": {
+        "lines": [
+          "مجموع أرقام 54 هو 9 ومجموع أرقام 378 هو 18: كلاهما يقبل القسمة على 9.",
+          "7 يقسم 378 ولا يقسم 54؛ و 4 لا يقسم 54 ولا 378 (54 = 4 × 13 + 2)."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أتمم: $\\dfrac{54}{378} = \\dfrac{6}{\\ldots}$",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "42",
+      "misconceptionSignatures": [
+        {
+          "value": "330",
+          "id": "MISC-KASRIYA-JAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الحدّين المعروفين اللذين في نفس الموضع (بسطين أو مقامين)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بأيّ عدد نضرب (أو نقسم) أحدهما لنحصل على الآخر؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق نفس العملية على الحدّ الآخر من الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{54}{378} = \\dfrac{54 \\div 9}{378 \\div 9} = \\dfrac{6}{42}$ : قسمنا البسط والمقام على نفس العدد.",
+        "incorrect": "الكسر لا يتغيّر إذا ضربنا البسط والمقام في نفس العدد غير المعدوم أو قسمناهما عليه، أمّا إضافة نفس العدد إليهما فتغيّره."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{54}{378} = \\dfrac{54 \\div 9}{378 \\div 9} = \\dfrac{6}{42}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اختزل الكسر $\\dfrac{54}{378}$ إلى أبسط شكل ممكن.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b لا يقبل الاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "1/7",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "27/189",
+          "id": "MISC-KASRIYA-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن قاسم مشترك للبسط والمقام بقواعد قابلية القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على هذا القاسم، ثم أعد البحث في الكسر الجديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا لم تنفع القواعد، جرّب جداول الضرب (7، 11، 13…)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{54}{378} = \\dfrac{1}{7}$ ولا يقبل البسط والمقام قاسمًا مشتركًا غير 1.",
+        "incorrect": "نقسم البسط والمقام على قاسم مشترك لهما، ونعيد ذلك حتى لا يبقى قاسم مشترك غير 1.",
+        "notIrreducible": "الكتابة تساوي الكسر لكنها ما زالت قابلة للاختزال: ابحث عن قاسم مشترك آخر للبسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "$54 = 2 \\times 27$ و $378 = 2 \\times 189$ ، إذن $\\dfrac{54}{378} = \\dfrac{54 \\div 2}{378 \\div 2} = \\dfrac{27}{189}$",
+          "$27 = 27 \\times 1$ و $189 = 27 \\times 7$ ، إذن $\\dfrac{27}{189} = \\dfrac{27 \\div 27}{189 \\div 27} = \\dfrac{1}{7}$",
+          "العددان 1 و 7 لا يقبلان قاسمًا مشتركًا غير 1: $\\dfrac{1}{7}$ في أبسط شكل ممكن."
+        ],
+        "result": "\\dfrac{54}{378} = \\dfrac{1}{7}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "برّر أنّ الكسر الذي وجدته في السؤال 03 لا يقبل الاختزال.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما هي قواسم البسط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يوجد قاسم مشترك غير 1؟"
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي.",
+        "incorrect": "راجع الخاصية وأعد صياغة التبرير."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{54}{378} = \\dfrac{6}{42} = \\dfrac{1}{7}$",
+          "بسط الكسر $\\dfrac{1}{7}$ هو 1، وقاسمه الوحيد 1: لا يمكن الاختزال أكثر."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

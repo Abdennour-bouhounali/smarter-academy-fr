@@ -1,0 +1,172 @@
+{
+  "id": "ex-4am-kura-julla-l2-001",
+  "lessonCode": "kura-julla",
+  "level": 2,
+  "metadata": {
+    "title": "معارف 1 — مثال الكتاب",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الكرة",
+      "الجلة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-1",
+      "page": 166,
+      "section": "معارف",
+      "number": 1
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 166): $(\\delta)$ هي الكرة التي مركزها O و نصف قطرها R، $(\\beta)$ هي الجلة التي مركزها O و نصف قطرها R. على الشكل: M على الكرة، P داخلها، Q خارجها.",
+    "figure": {
+      "kind": "space",
+      "view": {
+        "azimuth": -62,
+        "elevation": 18
+      },
+      "points": {
+        "O": [
+          0,
+          0,
+          0
+        ],
+        "M": [
+          -2,
+          0,
+          0
+        ],
+        "P": [
+          0.5,
+          0.75,
+          0
+        ],
+        "Q": [
+          -2.5,
+          0,
+          2.5
+        ]
+      },
+      "solids": [
+        {
+          "type": "sphere",
+          "center": "O",
+          "radius": 2,
+          "tone": "indigo"
+        }
+      ],
+      "ariaLabel": "كرة مركزها O: النقطة M على الكرة، و P داخلها، و Q خارجها",
+      "maxWidth": 320,
+      "labels": {
+        "O": "se",
+        "M": "w",
+        "P": "ne",
+        "Q": "nw"
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "النقطة P حيث $OP < R$ تنتمي:",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "إلى $(\\beta)$ فقط",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "إلى $(\\delta)$ و إلى $(\\beta)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-JULLA"
+        },
+        {
+          "id": "C",
+          "content": "لا إلى $(\\delta)$ ولا إلى $(\\beta)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-MASAFA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "P داخل الكرة، لا على سطحها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نقط $(\\delta)$ تحقّق $OM = R$ ، ونقط $(\\beta)$ تحقّق $OM \\le R$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الشرطين واحدا واحدا."
+        }
+      ],
+      "feedback": {
+        "correct": "$OP < R$ : P ليست من الكرة (السطح)، لكنها من الجلة.",
+        "incorrect": "الكرة سطح أجوف لا يضم نقط الداخل، والجلة تضمها."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "النقطة M حيث $OM = R$ تنتمي:",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "إلى $(\\delta)$ و إلى $(\\beta)$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "إلى $(\\delta)$ فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-INTIMA"
+        },
+        {
+          "id": "C",
+          "content": "إلى $(\\beta)$ فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-JULLA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "M على السطح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يحقّق $OM = R$ الشرط $OM \\le R$ ؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الشرطين."
+        }
+      ],
+      "feedback": {
+        "correct": "$OM = R$ يحقّق الشرطين: M من الكرة ومن الجلة.",
+        "incorrect": "الجلة تشمل سطحها: نقطة من الكرة هي أيضا نقطة من الجلة."
+      }
+    }
+  ]
+}

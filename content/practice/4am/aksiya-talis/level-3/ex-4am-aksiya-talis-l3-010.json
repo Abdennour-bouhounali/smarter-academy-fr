@@ -1,0 +1,281 @@
+{
+  "id": "ex-4am-aksiya-talis-l3-010",
+  "lessonCode": "aksiya-talis",
+  "level": 3,
+  "metadata": {
+    "title": "نسبتان متساويتان، جهتان مختلفتان",
+    "estimatedMinutes": 8,
+    "tags": [
+      "نفس الترتيب",
+      "عدم التوازي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_aksiya-talis_P2",
+      "modelledOn": "know-3",
+      "adaptedFrom": "ex-4am-aksiya-talis-l2-010"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$(d)$ و $(d')$ مستقيمان متقاطعان في $A$ . $B$ و $B'$ نقطتان من $(d)$ حيث $A$ بين $B$ و $B'$ ، و $C$ و $C'$ نقطتان من $(d')$ حيث $C'$ بين $A$ و $C$ ، مع: $AB = 5$ ، $AB' = 2$ ، $AC = 7{,}5$ و $AC' = 3$ (الشكل المقابل).",
+    "figure": {
+      "points": {
+        "A": [
+          0.0,
+          0.0
+        ],
+        "B": [
+          -1.710100716628,
+          -4.69846310393
+        ],
+        "B′": [
+          0.684040286651,
+          1.879385241572
+        ],
+        "C": [
+          3.75,
+          -6.495190528383
+        ],
+        "C′": [
+          1.5,
+          -2.598076211353
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "5"
+        },
+        {
+          "from": "A",
+          "to": "B′",
+          "label": "2"
+        },
+        {
+          "from": "A",
+          "to": "C′",
+          "label": "3"
+        },
+        [
+          "C′",
+          "C"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "B′",
+          "C′"
+        ]
+      ],
+      "ariaLabel": "المستقيمان (d) و (d′) متقاطعان في A؛ A بين B و B′، و C′ بين A و C؛ AB = 5 و AB′ = 2 و AC′ = 3",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب النسبة $\\dfrac{AB'}{AB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "2/5",
+      "misconceptionSignatures": [
+        {
+          "value": "5/2",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AB'$ و $AB$ طولان يُقاسان من النقطة $A$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $AB'$ على $AB$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AB'}{AB} = \\dfrac{2}{5}$ .",
+        "incorrect": "النسبة $\\dfrac{AB'}{AB}$ : الطول $AB'$ على الطول $AB$ ، وكلاهما من النقطة $A$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AB'}{AB} = \\dfrac{2}{5}$"
+        ],
+        "result": "\\dfrac{AB'}{AB} = \\dfrac{2}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب النسبة $\\dfrac{AC'}{AC}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "2/5",
+      "misconceptionSignatures": [
+        {
+          "value": "5/2",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "2/3",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AC'$ و $AC$ طولان يُقاسان من النقطة $A$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $AC'$ على $AC$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AC'}{AC} = \\dfrac{3}{7{,}5} = \\dfrac{2}{5}$ .",
+        "incorrect": "النسبة $\\dfrac{AC'}{AC}$ : الطول $AC'$ على الطول $AC$ ، وكلاهما من النقطة $A$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AC'}{AC} = \\dfrac{3}{7{,}5} = \\dfrac{2}{5}$"
+        ],
+        "result": "\\dfrac{AC'}{AC} = \\dfrac{2}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل النقط $A$ ، $B$ ، $B'$ مرتبة بنفس ترتيب النقط $A$ ، $C$ ، $C'$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-TARTIB-MANSI"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين تقع $B'$ بالنسبة إلى $A$ و $B$ ؟ وأين تقع $C'$ بالنسبة إلى $A$ و $C$ ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$B'$ من الجهة الأخرى للنقطة $A$ ، و $C'$ بين $A$ و $C$ : ترتيبان مختلفان.",
+        "incorrect": "قارن موقع النقطة الجديدة في كل مستقيم: بين الرأس والنقطة الأولى، أم من الجهة الأخرى للرأس؟"
+      },
+      "solution": {
+        "lines": [
+          "$A$ بين $B$ و $B'$ ، بينما $C'$ بين $A$ و $C$ : النقط ليست مرتبة بنفس الترتيب."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "هل المستقيمان $(BC)$ و $(B'C')$ متوازيان؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-TARTIB-MANSI"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النسبتين بقيمهما المضبوطة (الجداء المتصالب)، لا بقيم مقرّبة ولا بمظهر الشكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق أيضا من ترتيب النقط على المستقيمين المتقاطعين."
+        }
+      ],
+      "feedback": {
+        "correct": "نسبتان متساويتان وترتيب مختلف: المستقيمان غير متوازيين.",
+        "incorrect": "الخاصية العكسية تتطلب شرطين معا: تساوي النسبتين بقيم مضبوطة، وترتيب النقط نفسه على المستقيمين."
+      },
+      "solution": {
+        "lines": [
+          "النسبتان متساويتان: $\\dfrac{AB'}{AB} = \\dfrac{AC'}{AC} = \\dfrac{2}{5}$ ،",
+          "لكن النقط ليست مرتبة بنفس الترتيب (السؤال 02)، فالشرط الثاني للخاصية العكسية غير محقق،",
+          "إذن المستقيمان $(BC)$ و $(B'C')$ غير متوازيين."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

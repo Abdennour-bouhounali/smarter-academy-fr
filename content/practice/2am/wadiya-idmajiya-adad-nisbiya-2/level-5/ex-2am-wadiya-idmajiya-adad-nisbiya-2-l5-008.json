@@ -1,0 +1,312 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-adad-nisbiya-2-l5-008",
+  "lessonCode": "wadiya-idmajiya-adad-nisbiya-2",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — وضعية إدماجية: مسابقة نادي الرياضيات",
+    "estimatedMinutes": 14,
+    "tags": [
+      "مجموع جبري",
+      "مقارنة",
+      "ترتيب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في مسابقة نادي الرياضيات تمنح كلّ إجابة صحيحة $+3$ نقاط وتخصم كلّ إجابة خاطئة $-2$ نقطة. أجاب فريق $A$ بـ $5$ صحيحة و $4$ خاطئة، وفريق $B$ بـ $4$ صحيحة و $6$ خاطئة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "حصيلة الفريق $A$ : $5\\times 3=15$ نقطة و $4\\times 2=8$ نقاط تُخصم : $(+15)+(-8)$ . احسبها.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-JAMNISB-ADDDIST",
+          "value": "23"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نحوّل كلّ طرح إلى جمع لمعاكس العدد المطروح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نجمع الموجبة فيما بينها والسالبة فيما بينها، ونحسب ما بين الأقواس أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "في الأخير نجمع عددين من إشارتين مختلفتين : نأخذ إشارة الأبعد عن الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "$(+15)+(-8)=(+7)$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "نجمع الموجبة معًا والسالبة معًا : $(+15)+(-8)$",
+          "المجموع الجبري : $(+7)$"
+        ],
+        "result": "7"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حصيلة الفريق $B$ : $4\\times 3=12$ و $6\\times 2=12$ تُخصم : $(+12)+(-12)$ . احسبها.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "0",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-JAMNISB-ADDDIST",
+          "value": "-24"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نحوّل كلّ طرح إلى جمع لمعاكس العدد المطروح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نجمع الموجبة فيما بينها والسالبة فيما بينها، ونحسب ما بين الأقواس أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "في الأخير نجمع عددين من إشارتين مختلفتين : نأخذ إشارة الأبعد عن الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "$(+12)+(-12)=0$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "نجمع الموجبة معًا والسالبة معًا : $(+12)+(-12)$",
+          "المجموع الجبري : $0$"
+        ],
+        "result": "0"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "قارن حصيلة $A$ وهي $+7$ بحصيلة $B$ وهي $0$ ( $<$ أو $>$ أو $=$ ) : $7\\ \\ldots\\ 0$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$<$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$>$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$=$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة كلّ عدد ؟ السالب أصغر من الصفر ومن كلّ موجب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بين عددين سالبين الأصغر هو الأبعد عن الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن المسافتين إلى الصفر ثمّ اعكس الحكم عند السالبين."
+        }
+      ],
+      "feedback": {
+        "correct": "$7\\ >\\ 0$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "عددان موجبان : نقارن مباشرة",
+          "$7\\ >\\ 0$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "حصائل أربعة فرق: $+7$ ، $0$ ، $-4$ ، $+3$ . رتّبها تنازليًا.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$7 > -4 > 3 > 0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-SBD"
+        },
+        {
+          "id": "B",
+          "content": "$7 > 3 > 0 > -4$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$-4 > 0 > 3 > 7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-NISBIYA-OD"
+        },
+        {
+          "id": "D",
+          "content": "$7 > 0 > 3 > -4$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "السالب أصغر من الصفر وكلّ موجب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بين عددين سالبين الأصغر هو الأبعد عن الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الأعداد من الأصغر إلى الأكبر، ثمّ عكس الترتيب إن طُلب التنازلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$7 > 3 > 0 > -4$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "السالبة أصغر من الصفر ومن الموجبة، وبين السالبة الأصغر هو الأبعد عن الصفر",
+          "الترتيب التنازلي : $7 > 3 > 0 > -4$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "أسوأ حصيلة $-4$ وأحسن حصيلة $+7$ . ما الفرق بينهما ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "3"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-11"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطتان على جهة واحدة من المبدأ أم على جهتين مختلفتين ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى ناقص الفاصلة الصغرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا : تحقّق من الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB=11$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى $+7$ والفاصلة الصغرى $-4$",
+          "$AB=(+7)-(-4)=11$"
+        ],
+        "result": "11"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "id": "ex-2am-ikhtibar-musawat-mutabayina-l5-004",
+  "lessonCode": "ikhtibar-musawat-mutabayina",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — شاحنة وجسر : لا تفوق الحمولة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "وضعيّة إدماجيّة",
+      "مجهولان",
+      "متباينة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تزن شاحنة فارغة $2800\\,\\mathrm{kg}$ وتحمل أكياس إسمنت كتلة كلّ منها $35\\,\\mathrm{kg}$ وأكياس جبس كتلة كلّ منها $55\\,\\mathrm{kg}$ . لا يسمح الجسر إلاّ بمرور الشاحنة التي كتلتها لا تفوق $4900\\,\\mathrm{kg}$ ، فتترجم الوضعيّة بالمتباينة $2800+35x+55y\\le4900$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ماذا يمثّل كلّ من الحرفين $x$ و $y$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x$ عدد أكياس الجبس و $y$ عدد أكياس الإسمنت",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$x$ كتلة أكياس الإسمنت و $y$ كتلة أكياس الجبس",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$x$ عدد أكياس الإسمنت و $y$ عدد أكياس الجبس",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارجع إلى نصّ الوضعيّة : ماذا يُحمَّل على الشاحنة أو يُشترى ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اربط كلّ حرف بالكمّية التي يُضرب فيها العدد المقابل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد الذي يُضرب في الحرف هو كتلة (أو ثمن) الوحدة الواحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "اخترت الجواب الصحيح .",
+        "incorrect": "اربط كلّ حرف بالكمّية التي يتكرّر عددها في الوضعيّة."
+      },
+      "solution": {
+        "lines": [
+          "الحرف يرمز إلى عدد الوحدات : هو العدد الذي يُضرب في كتلة (أو ثمن) الوحدة الواحدة ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل المتباينة $2800+35x+55y\\le 4900$ صحيحة من أجل $x=27$ و $y=21$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "نعم",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بالقيمة المعطاة في الطرف الأوّل ثمّ في الطرف الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة، مع إنجاز الضرب قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الناتجين بالرمز المكتوب، وانتبه إلى حالة التساوي : هل يقبلها الرمز ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "نعم : المتباينة صحيحة .",
+        "incorrect": "عوّض الحرف في الطرفين، احسب كلّ طرف ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل : $2800+35\\times 27+55\\times 21=4900$ .",
+          "الطرف الثاني : $4900$ .",
+          "$4900\\le 4900$ : المقارنة صحيحة، فالمتباينة صحيحة ."
+        ]
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل المتباينة $2800+35x+55y\\le 4900$ صحيحة من أجل $x=30$ و $y=20$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بالقيمة المعطاة في الطرف الأوّل ثمّ في الطرف الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة، مع إنجاز الضرب قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الناتجين بالرمز المكتوب، وانتبه إلى حالة التساوي : هل يقبلها الرمز ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "لا : المتباينة خاطئة .",
+        "incorrect": "عوّض الحرف في الطرفين، احسب كلّ طرف ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل : $2800+35\\times 30+55\\times 20=4950$ .",
+          "الطرف الثاني : $4900$ .",
+          "$4950\\le 4900$ : المقارنة خاطئة، فالمتباينة خاطئة ."
+        ]
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "الحالة $1$ : $x=27$ و $y=21$ ؛ الحالة $2$ : $x=30$ و $y=20$ ؛ الحالة $3$ : $x=25$ و $y=22$ . في أيّ حالة تعبر الشاحنة الجسر ؟ اختر الإجابة الصحيحة :",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "في الحالة $1$ فقط",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "في الحالة $2$ فقط",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "في الحالة $3$ فقط",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "في الحالتين $1$ و $3$ فقط",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختبر كلّ حالة بتعويض قيمتي الحرفين في الطرفين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الطرفين ثمّ قارن بالرمز المكتوب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما يكون الطرفان متساويين انظر هل يقبل الرمز التساوي."
+        }
+      ],
+      "feedback": {
+        "correct": "في الحالتين $1$ و $3$ فقط .",
+        "incorrect": "اختبر كلّ حالة على حدة وانتبه إلى حالة تساوي الطرفين."
+      },
+      "solution": {
+        "lines": [
+          "الحالة $1$ : $4900\\le 4900$ ← صحيحة ، فالمرور ممكن .",
+          "الحالة $2$ : $4950\\le 4900$ ← خاطئة ، فلا مرور .",
+          "الحالة $3$ : $4885\\le 4900$ ← صحيحة ، فالمرور ممكن .",
+          "الجواب : في الحالتين $1$ و $3$ فقط ."
+        ]
+      },
+      "timeSeconds": 100
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "id": "ex-4am-kura-julla-l1-009",
+  "lessonCode": "kura-julla",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — نقطة على الكرة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "الانتماء"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_kura-julla_P4",
+      "modelledOn": "know-1"
+    }
+  },
+  "statement": {
+    "content": "بالون عيد ميلاد كروي، أهداه سمير لصديقه، مركزه O ونصف قطره $15\\,\\mathrm{cm}$ ، ونقطة A من الفضاء حيث $OA = 15\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "النقطة A:",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P4",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "على الكرة (فهي من الجلة أيضا)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "داخل الجلة وليست على الكرة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-JULLA"
+        },
+        {
+          "id": "C",
+          "content": "خارج الجلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-MASAFA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن بين $OA$ ونصف القطر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان البعد يساوي نصف القطر تماما فالنقطة على السطح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر: كل نقطة من الكرة هي من الجلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$OA = 15\\,\\mathrm{cm} = R$ : A على الكرة، والجلة تشمل الكرة.",
+        "incorrect": "البعد يساوي نصف القطر تماما: لا داخل ولا خارج."
+      }
+    }
+  ]
+}

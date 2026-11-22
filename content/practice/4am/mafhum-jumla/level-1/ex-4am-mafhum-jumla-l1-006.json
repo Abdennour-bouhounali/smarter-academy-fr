@@ -1,0 +1,134 @@
+{
+  "id": "ex-4am-mafhum-jumla-l1-006",
+  "lessonCode": "mafhum-jumla",
+  "level": 1,
+  "metadata": {
+    "title": "بطاقة موسم فريق الحي",
+    "estimatedMinutes": 4,
+    "tags": [
+      "جملة",
+      "ثنائية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mafhum-jumla_P3",
+      "modelledOn": "act-1"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "لعب فريق الحي، الذي يلتزم اللعب النظيف، 10 مباريات في البطولة دون أي هزيمة، وجمع 22 نقطة (الانتصار بـ 3 نقاط والتعادل بنقطة واحدة). نسمّي $x$ عدد الانتصارات و $y$ عدد التعادلات، فنحصل على الجملة:",
+    "formulas": [
+      "\\begin{cases} x + y = 10 \\\\ 3x + y = 22 \\end{cases}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل الثنائية $(7 ; 1)$ حل لهذه الجملة؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-MUADALA-WAHIDA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $7$ و $y$ بـ $1$ في كل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الثنائية حل للجملة إذا حققت المعادلتين في آن واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$7 + 1 = 8 \\neq 10$ ؛ $3 \\times 7 + 1 = 22$ : الثنائية ليست حلا للجملة.",
+        "incorrect": "العدد الأول في الثنائية قيمة $x$ والثاني قيمة $y$ ؛ عوّض في المعادلتين معا وقارن كل نتيجة بالطرف الثاني."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $x$ بـ $7$ و $y$ بـ $1$ :",
+          "$7 + 1 = 8 \\neq 10$",
+          "$3 \\times 7 + 1 = 22$",
+          "ومنه الثنائية $(7 ; 1)$ ليست حلا للجملة (لا تحقق المعادلتين معا)."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل الثنائية $(6 ; 4)$ حل لهذه الجملة؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $6$ و $y$ بـ $4$ في كل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الثنائية حل للجملة إذا حققت المعادلتين في آن واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 + 4 = 10$ ؛ $3 \\times 6 + 4 = 22$ : الثنائية حل للجملة.",
+        "incorrect": "العدد الأول في الثنائية قيمة $x$ والثاني قيمة $y$ ؛ عوّض في المعادلتين معا وقارن كل نتيجة بالطرف الثاني."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $x$ بـ $6$ و $y$ بـ $4$ :",
+          "$6 + 4 = 10$",
+          "$3 \\times 6 + 4 = 22$",
+          "ومنه الثنائية $(6 ; 4)$ حل للجملة."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

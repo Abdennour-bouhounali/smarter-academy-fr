@@ -1,0 +1,264 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-maalam-l4-001",
+  "lessonCode": "wadiya-idmajiya-maalam",
+  "level": 4,
+  "metadata": {
+    "title": "أتعمّق — تمرين 23",
+    "estimatedMinutes": 9,
+    "tags": [
+      "طبيعة شكل",
+      "مساحة",
+      "انسحاب"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-23",
+      "page": 149,
+      "section": "أتعمّق",
+      "number": 23
+    }
+  },
+  "statement": {
+    "content": "المستوي منسوب إلى معلم متعامد ومتجانس مبدؤه O (الوحدة $1\\,\\mathrm{cm}$). $A(-3\\,;\\,1)$ ، $B(3\\,;\\,5)$ ، $C(5\\,;\\,2)$ ثلاث نقط."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما نوع المثلث ABC؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "قائم في B",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "ليس قائما",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-FITHAGHURAS-WATAR"
+        },
+        {
+          "id": "C",
+          "content": "قائم في A",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-FITHAGHURAS-WATAR"
+        },
+        {
+          "id": "D",
+          "content": "متساوي الساقين في B",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-NASI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $AB^2$ و $BC^2$ و $AC^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أطول ضلع [AC]."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$52 + 13 = 65$"
+        }
+      ],
+      "feedback": {
+        "correct": "$AB^2 + BC^2 = 52 + 13 = 65 = AC^2$ : قائم في B.",
+        "incorrect": "قارن مربع أطول ضلع بمجموع مربعي الضلعين الآخرين."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 4
+    },
+    {
+      "id": "q2",
+      "statement": "D النقطة حيث $\\overrightarrow{BD} = \\overrightarrow{BA} + \\overrightarrow{BC}$ . إحداثيتاها:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الثنائية (x ; y)",
+      "expectedAnswer": {
+        "x": "-1",
+        "y": "-2"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{BA}\\begin{pmatrix} -6 \\\\ -4 \\end{pmatrix}$ ، $\\overrightarrow{BC}\\begin{pmatrix} 2 \\\\ -3 \\end{pmatrix}$"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\overrightarrow{BD}\\begin{pmatrix} -4 \\\\ -7 \\end{pmatrix}$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف إلى إحداثيتي B."
+        }
+      ],
+      "feedback": {
+        "correct": "$D(3 - 4\\,;\\,5 - 7) = (-1\\,;\\,-2)$ .",
+        "incorrect": "نجمع المركبات ثم نضيفها إلى إحداثيتي B."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 4
+    },
+    {
+      "id": "q3",
+      "statement": "ما نوع الرباعي ABCD؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مستطيل",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "مربع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "C",
+          "content": "متوازي أضلاع ليس له زاوية قائمة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "D",
+          "content": "معيّن",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قاعدة متوازي الأضلاع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "زاوية B قائمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$AB \\neq BC$"
+        }
+      ],
+      "feedback": {
+        "correct": "متوازي أضلاع بزاوية قائمة في B: مستطيل، وليس مربعا لأنّ $AB = 2\\sqrt{13} \\neq BC = \\sqrt{13}$ .",
+        "incorrect": "متوازي أضلاع + زاوية قائمة = مستطيل؛ مربع يتطلّب ضلعين متتاليين متقايسين."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 4
+    },
+    {
+      "id": "q4",
+      "statement": "مساحة الرباعي ABCD (بالسنتيمتر المربع):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "26",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AB = 2\\sqrt{13}$ ، $BC = \\sqrt{13}$"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المساحة $AB \\times BC$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$2 \\times 13$"
+        }
+      ],
+      "feedback": {
+        "correct": "$2\\sqrt{13} \\times \\sqrt{13} = 26\\,\\mathrm{cm^2}$ .",
+        "incorrect": "مساحة المستطيل طول × عرض."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "676",
+          "id": "MISC-MAALAM-MASAFA-JADHR-NASI"
+        }
+      ],
+      "difficulty": 4
+    },
+    {
+      "id": "q5",
+      "statement": "صورة D بالانسحاب الذي شعاعه $\\vec{u}\\begin{pmatrix} 2 \\\\ 0 \\end{pmatrix}$ هي D′. إحداثيتاها:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الثنائية (x ; y)",
+      "expectedAnswer": {
+        "x": "1",
+        "y": "-2"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نضيف المركبتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$-1 + 2$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$-2 + 0$"
+        }
+      ],
+      "feedback": {
+        "correct": "$D'(1\\,;\\,-2)$ .",
+        "incorrect": "صورة نقطة بانسحاب: نضيف مركبتي الشعاع إلى إحداثيتيها."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 4
+    }
+  ]
+}

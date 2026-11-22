@@ -1,0 +1,159 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-harfi-l1-008",
+  "lessonCode": "wadiya-idmajiya-harfi",
+  "level": 1,
+  "metadata": {
+    "title": "عبارة بشكلين",
+    "estimatedMinutes": 5,
+    "tags": [
+      "تحقق بالنشر",
+      "الشكل المناسب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-harfi_P3",
+      "modelledOn": "ex-39",
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-harfi-l1-008"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $B$ حيث :",
+    "formulas": [
+      "B = 2x^2 + 5x - 7"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "تحقّق بالنشر أنّ: $B = (x - 1)(2x + 7)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر الجداء $(x - 1)(2x + 7)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الحدود المتشابهة وقارن بالعبارة $B$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك سطرًا بسطر بالحل النموذجي، وانتبه إلى الإشارات عند النشر."
+      },
+      "solution": {
+        "lines": [
+          "$(x - 1)(2x + 7) = 2x^2 + 7x - 2x - 7$",
+          "$= 2x^2 + 5x - 7 = B$"
+        ],
+        "result": "B = (x - 1)(2x + 7)"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "احسب قيمة $B$ مستعملا الشكل المناسب:",
+      "statement": "من أجل $x = 1$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح (قد يكون سالبًا)",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالقيمة المعطاة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر الشكل الذي يُسهّل الحساب: الشكل المحلّل إذا انعدم أحد عامليه، والشكل المنشور إذا كان $x = 0$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 0$ .",
+        "incorrect": "عوّض بالقيمة المعطاة في الشكل المناسب، واحسب بعناية مع احترام أولويات العمليات."
+      },
+      "solution": {
+        "lines": [
+          "نستعمل الشكل المحلّل: $B = (1 - 1)(2 \\times 1 + 7) = 0 \\times 9$"
+        ],
+        "result": "B = 0"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "من أجل $x = 0$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح (قد يكون سالبًا)",
+      "expectedAnswer": "-7",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-NASHR-ISHARA-SALIBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالقيمة المعطاة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في الشكل المنشور يبقى الحد الثابت وحده."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = -7$ .",
+        "incorrect": "عوّض بالقيمة المعطاة في الشكل المناسب، واحسب بعناية مع احترام أولويات العمليات."
+      },
+      "solution": {
+        "lines": [
+          "نستعمل الشكل المنشور: $B = 2 \\times 0^2 + 5 \\times 0 - 7$"
+        ],
+        "result": "B = -7"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

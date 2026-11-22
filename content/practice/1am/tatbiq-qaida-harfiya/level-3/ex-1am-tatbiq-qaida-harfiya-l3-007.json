@@ -1,0 +1,261 @@
+{
+  "id": "ex-1am-tatbiq-qaida-harfiya-l3-007",
+  "lessonCode": "tatbiq-qaida-harfiya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — كتابة وتعويض وتبرير",
+    "estimatedMinutes": 10,
+    "tags": [
+      "اصطلاح",
+      "تعويض",
+      "مثال مضادّ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثاني",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العبارة $A=6\\times t+2\\times m$ ، حيث $t$ و $m$ عددان طبيعيان."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نكتب $A$ بحذف إشارتي الضرب:",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$6t+2m$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$6+t+2+m$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-PLUS"
+        },
+        {
+          "id": "C",
+          "content": "$6m+2t$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-SWAP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة المحذوفة بين العدد والحرف أو بين حرفين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حذف الإشارة يعني ضربًا، ونكتب العدد قبل الحرف."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب قيمة صغيرة للحرف في كلّ اقتراح وقارن مع العبارة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتابة المختصرة تعني الضرب.",
+        "incorrect": "حذف إشارة الضرب لا يعني الجمع: $3x$ تعني $3\\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "نحذف إشارة الضرب بين العدد والحرف، أو بين حرفين، أو أمام القوس ونكتب العدد قبل الحرف.",
+          "الكتابة المناسبة: $6t+2m$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $A$ من أجل $t=3$ و $m=4$ .",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "26",
+      "misconceptionSignatures": [
+        {
+          "value": "87",
+          "id": "MISC-TATBIQ-GLUED"
+        },
+        {
+          "value": "30",
+          "id": "MISC-TATBIQ-SWAP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما قيمة كلّ حرف؟ وفي كم موضع يظهر كلّ حرف في العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع القيمة في كلّ موضع يظهر فيه الحرف، وأعد إشارة الضرب بين العددين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب بالأولويات: ما بين القوسين، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: النتيجة $26$ .",
+        "incorrect": "بين العدد والحرف إشارة ضرب لا تُكتب: عند التعويض نُعيدها، فنحسب جداءً لا عددًا من رقمين."
+      },
+      "solution": {
+        "lines": [
+          "نكتب القاعدة: $A=6\\times t+2\\times m$ .",
+          "نضع قيمة كلّ حرف في كلّ موضع يظهر فيه: $A=6\\times 3+2\\times 4$ .",
+          "نحسب: $A=18+8$ .",
+          "نحسب: $A=26$ .",
+          "الجواب: $A=26$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "من أجل $t=5$ و $m=1$ قيمة $A$ هي $16$ .",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-SWAP"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بقيمته في كلّ موضع ولا تحذف إشارة الضرب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب ما بين القوسين أوّلًا إن وُجدا، ثمّ الضرب والقسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب القيمة بنفسك ثمّ قارنها بالاقتراحات."
+        }
+      ],
+      "feedback": {
+        "correct": "الحكم بالحساب لا بالتخمين.",
+        "incorrect": "لكلّ حرف قيمته: انتبه إلى العدد الذي يوافق كلّ حرف قبل التعويض."
+      },
+      "solution": {
+        "lines": [
+          "نكتب القاعدة: $A=6\\times t+2\\times m$ .",
+          "نضع قيمة كلّ حرف في كلّ موضع يظهر فيه: $A=6\\times 5+2\\times 1$ .",
+          "نحسب: $A=30+2$ .",
+          "نحسب: $A=32$ .",
+          "الجواب: $A=32$ .",
+          "الحكم: خطأ ، فالقيمة الصحيحة $32$ لا $16$ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "قال زميل: « $6\\times t+2\\times m=8\\times t\\times m$ دائمًا ». من أجل $t=1$ و $m=1$ نجد $8$ في الجهتين، ومن أجل $t=2$ و $m=3$ نجد $18$ و $48$ . هل يكفي المثال الثاني لإبطال قوله؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، يكفي",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا، لا يكفي",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-MANYNEED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي أثبته المثال المقدّم: هل تساوت الجهتان أم اختلفتا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مثال تصحّ فيه القاعدة لا يثبت أنّها صحيحة دائمًا، ومثال تخطئ فيه يكفي لإبطالها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الجهتين من أجل القيمة المعطاة ثمّ احكم."
+        }
+      ],
+      "feedback": {
+        "correct": "مثال مضادّ واحد يكفي.",
+        "incorrect": "مثال مضادّ واحد يكفي لإبطال القاعدة، ولا نحتاج إلى أمثلة أخرى."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $t=2$ و $m=3$ : $6\\times 2+2\\times 3=18$ بينما $8\\times 2\\times 3=48$ .",
+          "الجهتان مختلفتان: هذا مثال مضادّ، وهو يكفي وحده."
+        ]
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

@@ -1,0 +1,233 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-adad-nisbiya-2-l1-003",
+  "lessonCode": "wadiya-idmajiya-adad-nisbiya-2",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — إحداثيا نقطة في معلم",
+    "estimatedMinutes": 6,
+    "tags": [
+      "تعليم نقطة في المستوي",
+      "الإحداثيان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعمل في معلم متعامد ومتجانس."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "في معلم متعامد ومتجانس، تقع النقطة $A$ على بعد $3$ وحدات يسار محور التراتيب وعلى بعد $2$ وحدة فوق محور الفواصل. ما إحداثيا $A$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-3",
+        "y": "2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "2",
+            "y": "-3"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNAXIS",
+          "value": {
+            "x": "-3",
+            "y": "-2"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNLEFT",
+          "value": {
+            "x": "3",
+            "y": "2"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفاصلة تحدّد الجهة بالنسبة إلى محور التراتيب والترتيب يحدّد الجهة بالنسبة إلى محور الفواصل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يسار محور التراتيب فاصلة سالبة، وتحت محور الفواصل ترتيب سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الفاصلة أوّلًا ثمّ الترتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "$A(-3\\,;\\,2)$ .",
+        "incorrect": "الفاصلة أوّلًا ثمّ الترتيب : راجع إشارة كلّ إحداثية."
+      },
+      "solution": {
+        "lines": [
+          "يسار محور التراتيب : الفاصلة سالبة $-3$",
+          "فوق محور الفواصل : الترتيب موجب $+2$",
+          "$A(-3\\,;\\,2)$"
+        ],
+        "result": "(-3\\,;\\,2)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "النقطة $B(-2\\,;\\,0)$ في معلم متعامد ومتجانس تقع على :",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا هذا ولا ذاك",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-ONAXIS"
+        },
+        {
+          "id": "C",
+          "content": "محور الفواصل",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ إحداثية معدومة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الترتيب المعدوم : النقطة على محور الفواصل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الفاصلة المعدومة : النقطة على محور التراتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "$B$ على محور الفواصل .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "ترتيبها معدوم، فهي على محور الفواصل",
+          "الترتيب المعدوم يعني الوقوع على محور الفواصل والفاصلة المعدومة تعني الوقوع على محور التراتيب"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "في معلم متعامد ومتجانس، تقع النقطة $C$ على بعد $4$ وحدات يمين محور التراتيب وعلى بعد $5$ وحدات تحت محور الفواصل. ما إحداثيا $C$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-adad-nisbiya-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "4",
+        "y": "-5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "-5",
+            "y": "4"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNAXIS",
+          "value": {
+            "x": "4",
+            "y": "5"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNLEFT",
+          "value": {
+            "x": "-4",
+            "y": "-5"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفاصلة تحدّد الجهة بالنسبة إلى محور التراتيب والترتيب يحدّد الجهة بالنسبة إلى محور الفواصل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يسار محور التراتيب فاصلة سالبة، وتحت محور الفواصل ترتيب سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الفاصلة أوّلًا ثمّ الترتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "$C(4\\,;\\,-5)$ .",
+        "incorrect": "الفاصلة أوّلًا ثمّ الترتيب : راجع إشارة كلّ إحداثية."
+      },
+      "solution": {
+        "lines": [
+          "يمين محور التراتيب : الفاصلة موجبة $+4$",
+          "تحت محور الفواصل : الترتيب سالب $-5$",
+          "$C(4\\,;\\,-5)$"
+        ],
+        "result": "(4\\,;\\,-5)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

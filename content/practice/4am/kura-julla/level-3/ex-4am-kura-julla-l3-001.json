@@ -1,0 +1,197 @@
+{
+  "id": "ex-4am-kura-julla-l3-001",
+  "lessonCode": "kura-julla",
+  "level": 3,
+  "metadata": {
+    "title": "دوري الآن — مستقيم يقطع كرة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "الكرة",
+      "فيثاغورس"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "now-167",
+      "page": 167,
+      "section": "دوري الآن",
+      "number": 1
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 167): يقطع مستقيم (d) كرة مركزها O و نصف قطرها $2\\,\\mathrm{cm}$ في نقطتين A و B حيث $AB = 2\\,\\mathrm{cm}$ . I هو منتصف $[AB]$ .",
+    "figure": {
+      "kind": "space",
+      "view": {
+        "azimuth": -86,
+        "elevation": 14
+      },
+      "points": {
+        "O": [
+          0,
+          0,
+          0
+        ],
+        "A": [
+          -1,
+          0,
+          1.732051
+        ],
+        "B": [
+          1,
+          0,
+          1.732051
+        ],
+        "I": [
+          0,
+          0,
+          1.732051
+        ]
+      },
+      "solids": [
+        {
+          "type": "sphere",
+          "center": "O",
+          "radius": 2,
+          "tone": "sky"
+        }
+      ],
+      "circles": [
+        {
+          "center": "O",
+          "radius": 2,
+          "normal": "y",
+          "on": 0,
+          "tone": "indigo"
+        }
+      ],
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "tone": "rose"
+        },
+        {
+          "from": "O",
+          "to": "A"
+        },
+        {
+          "from": "O",
+          "to": "B"
+        },
+        {
+          "from": "O",
+          "to": "I",
+          "dashed": true
+        }
+      ],
+      "rightAngles": [
+        [
+          "O",
+          "I",
+          "B"
+        ]
+      ],
+      "labels": {
+        "O": "s",
+        "A": "nw",
+        "B": "ne",
+        "I": "n"
+      },
+      "ariaLabel": "كرة مركزها O، والمستقيم (d) يقطعها في A و B، و I منتصف [AB]",
+      "maxWidth": 340
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما هو قيس الزاوية $\\widehat{AOB}$ بالدرجات؟",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجات)",
+      "expectedAnswer": "60",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-KURA-WATAR",
+          "value": "90"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "A و B على الكرة: ماذا تعرف عن OA و OB؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن OA و OB و AB."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مثلث أضلاعه الثلاثة متقايسة."
+        }
+      ],
+      "feedback": {
+        "correct": "$OA = OB = AB = 2\\,\\mathrm{cm}$ : AOB متقايس الأضلاع، $\\widehat{AOB} = 60^\\circ$ .",
+        "incorrect": "A و B على الكرة، فبعدهما عن O يساوي نصف القطر."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "OI يساوي:",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\sqrt{3}\\,\\mathrm{cm}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\sqrt{5}\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-FITHAGHURIS-JAM"
+        },
+        {
+          "id": "C",
+          "content": "$1\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-QUTR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث AIO قائم في I."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خاصية فيثاغورس: $OA^2 = OI^2 + AI^2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب $AI$ ثم $OI^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$OI^2 = 2^2 - 1^2 = 3$ ، $OI = \\sqrt{3}\\,\\mathrm{cm}$ .",
+        "incorrect": "الوتر هو $[OA]$ : نطرح مربع $AI$ من مربع الوتر."
+      }
+    }
+  ]
+}

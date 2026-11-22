@@ -1,0 +1,112 @@
+{
+  "id": "ex-4am-insihab-shuaa-l1-004",
+  "lessonCode": "insihab-shuaa",
+  "level": 1,
+  "metadata": {
+    "title": "نشاط 1 — هل GL = EF؟",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المنحى"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-1",
+      "page": 128,
+      "section": "أنشطة",
+      "number": 1
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 128، الشكل أعادت المنصّة رسمه): على المرصوفة السهمان $\\overrightarrow{GL}$ و $\\overrightarrow{EF}$ .",
+    "figure": {
+      "points": {
+        "G": [
+          2,
+          4
+        ],
+        "L": [
+          0,
+          4
+        ],
+        "E": [
+          4,
+          3
+        ],
+        "F": [
+          4,
+          5
+        ]
+      },
+      "grid": true,
+      "vectors": [
+        {
+          "from": "G",
+          "to": "L",
+          "tone": "amber"
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "tone": "indigo"
+        }
+      ],
+      "ariaLabel": "ورقة مرصوفة: السهم من G نحو L أفقي نحو اليسار، والسهم من E نحو F شاقولي نحو الأعلى، وكلاهما بطول 2",
+      "caption": "أعادت المنصّة رسم شكل الكتاب بوضوح أكبر، بنفس المعطيات",
+      "maxWidth": 420
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "هل $\\overrightarrow{GL}$ = $\\overrightarrow{EF}$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_insihab-shuaa_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا: لهما نفس الطول لكن منحيين مختلفين",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم: لهما نفس الطول",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TUL-FAQAT"
+        },
+        {
+          "id": "C",
+          "content": "لا: لهما نفس المنحى لكن اتجاهين متعاكسين",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MANHA-MUSTAQIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن العناصر الثلاثة للشعاع: المنحى (المستقيم الحامل)، الاتجاه (من المبدأ نحو النهاية)، والطول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المنحى يخص المستقيمات: مستقيمان متوازيان لهما نفس المنحى؛ الاتجاه هو جهة السير عليه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن العناصر الثلاثة واحدا واحدا قبل أن تختار."
+        }
+      ],
+      "feedback": {
+        "correct": "[GL] أفقية و [EF] شاقولية: المستقيمان غير متوازيين، فالمنحيان مختلفان ولو تساوى الطولان (2).",
+        "incorrect": "المنحى يخص المستقيمين الحاملين: هل (GL) يوازي (EF)؟"
+      },
+      "difficulty": 1
+    }
+  ]
+}

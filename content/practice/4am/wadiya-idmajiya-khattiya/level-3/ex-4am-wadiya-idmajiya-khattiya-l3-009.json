@@ -1,0 +1,194 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-khattiya-l3-009",
+  "lessonCode": "wadiya-idmajiya-khattiya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2009 — آلة تعبئة بمعصرة زيت الزيتون",
+    "estimatedMinutes": 9,
+    "tags": [
+      "تدفق",
+      "دالة خطية",
+      "مقادير مركبة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-khattiya_P2",
+      "modelledOn": "BEM 2009 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في معصرة لزيت الزيتون يحرص عمّالها على نظافة الزيت وجودته، تملأ آلة خزانا كان فارغا بتدفق ثابت قدره 240L في الساعة. نسمّي $g(x)$ كمية الزيت في الخزان (باللتر) بعد $x$ ساعة من بداية الملء."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب كمية الزيت في الخزان بعد ساعتين ونصف.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الكمية باللتر",
+      "expectedAnswer": "600",
+      "misconceptionSignatures": [
+        {
+          "value": "480",
+          "id": "MISC-MAQADIR-WIHDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ساعتان ونصف = $2{,}5h$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكمية = التدفق × المدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$240 \\times 2{,}5 = 600$ L.",
+        "incorrect": "اضرب التدفق في المدة بالساعات (2,5 لا 2)."
+      },
+      "solution": {
+        "lines": [
+          "$240 \\times 2{,}5 = 600$",
+          "بعد ساعتين ونصف يحتوي الخزان على 600L."
+        ],
+        "result": "600L"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عبّر عن $g(x)$ بدلالة $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المعامل $a$ فقط في $g(x) = ax$",
+      "expectedAnswer": "240",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التدفق ثابت والخزان فارغ في البداية: الكمية متناسبة مع المدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$g(x) = 240x$ .",
+        "incorrect": "المعامل هو كمية الزيت في ساعة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "$g(x) = 240x$"
+        ],
+        "result": "g(x) = 240x"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "سعة الخزان 1500L. احسب المدة اللازمة لملئه، بالساعات.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة: المدة بالساعات",
+      "expectedAnswer": "6,25",
+      "misconceptionSignatures": [
+        {
+          "value": "360000",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جد العدد $x$ الذي صورته 1500 بالدالة $g$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$240x = 1500$ ومنه $x = 6{,}25$ h، أي 6 ساعات و 15 دقيقة.",
+        "incorrect": "اقسم السعة على التدفق."
+      },
+      "solution": {
+        "lines": [
+          "$g(x) = 1500$ معناه $240x = 1500$",
+          "$x = \\dfrac{1500}{240} = 6{,}25$",
+          "يمتلئ الخزان بعد 6 ساعات و 15 دقيقة."
+        ],
+        "result": "x = 6{,}25h"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "يُعبّأ زيت الخزان المملوء في قارورات سعة كل منها 0,75L. كم قارورة نحصل عليها؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد القارورات",
+      "expectedAnswer": "2000",
+      "misconceptionSignatures": [
+        {
+          "value": "1125",
+          "id": "MISC-MAQADIR-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم الكمية الكلية على سعة قارورة واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$1500 \\div 0{,}75 = 2000$ قارورة.",
+        "incorrect": "عدد القارورات = الكمية ÷ سعة القارورة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1500}{0{,}75} = 2000$",
+          "نحصل على 2000 قارورة."
+        ],
+        "result": "2000"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

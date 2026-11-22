@@ -1,0 +1,130 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l5-007",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — عرض المسيّرات: مثلث في السماء",
+    "estimatedMinutes": 2,
+    "tags": [
+      "عرض مسيّرات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_ithbat-khawas-maalam_P1",
+      "modelledOn": "ex-27"
+    }
+  },
+  "generator": {
+    "tool": "u1x-ithbat-khawas-maalam/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "ثلاث مسيّرات فوق خليج الجزائر في $A(-3\\,;\\,2)$ ، $B(1\\,;\\,5)$ ، $C(4\\,;\\,1)$ (معلم متعامد ومتجانس، الوحدة 10 m). يريد المنظّم الأمين على سلامة الجمهور أن يتأكد أن الشكل «زاوية قائمة متساوية الساقين»."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "احسب $AC^2$ (بالوحدة المربعة).",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "50",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MASAFA-JADHR-JAM",
+          "value": "8"
+        },
+        {
+          "id": "MISC-MAALAM-MASAFA-TARBI",
+          "value": "48"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مركبتا $\\overrightarrow{AC}$ : $7$ و $-1$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ربّع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC^2 = 49 + 1 = 50$ .",
+        "incorrect": "ربّع كل مركبة."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "مع $AB^2 = BC^2 = 25$ ، الشكل:",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "متقايس الأضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SAQAYN-QAIM"
+        },
+        {
+          "id": "B",
+          "content": "قائم ومتساوي الساقين في B",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "قائم في A",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-FITHAGHURAS-WATAR"
+        },
+        {
+          "id": "D",
+          "content": "متساوي الساقين رأسه B وليس قائما",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SAQAYN-QAIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أكبر مربع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$25 + 25$ ؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الرأس المشترك بين الضلعين المتقايسين."
+        }
+      ],
+      "feedback": {
+        "correct": "$25 + 25 = 50$ و $AB = BC$ .",
+        "incorrect": "الزاوية القائمة تقابل [AC]."
+      }
+    }
+  ]
+}

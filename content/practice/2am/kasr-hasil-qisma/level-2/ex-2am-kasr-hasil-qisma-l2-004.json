@@ -1,0 +1,150 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l2-004",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — القيمة المضبوطة والقيمة المقرّبة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "قيمة مضبوطة",
+      "برّر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "قسّم عمّال الميناء حبلًا طوله $8$ m إلى $3$ قطع متساوية، فكتب أحدهم أنّ طول القطعة يساوي $2{,}67$ m ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل المساواة $\\dfrac{8}{3} = 2{,}67$ صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-EXACTAPPROX"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أو قارن بدقّة قبل أن تجيب."
+        }
+      ],
+      "feedback": {
+        "correct": "لا: $3 \\times 2{,}67 = 8{,}01 \\neq 8$.",
+        "incorrect": "اضرب $2{,}67$ في $3$ وقارن بـ $8$."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 2{,}67 = 8{,}01$",
+          "$8{,}01 \\neq 8$ : المساواة خاطئة"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل الحصر $2{,}66 < \\dfrac{8}{3} < 2{,}67$ صحيح؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أو قارن بدقّة قبل أن تجيب."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 \\times 2{,}66 = 7{,}98$ و $3 \\times 2{,}67 = 8{,}01$ يحصران $8$.",
+        "incorrect": "اضرب كلّ طرف في المقسوم عليه وقارن الجداءين بالمقسوم."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 2{,}66 = 7{,}98$ و $3 \\times 2{,}67 = 8{,}01$",
+          "$7{,}98 < 8 < 8{,}01$: الحصر صحيح"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "برّر أنّ $2{,}67$ قيمة مقرّبة بالزيادة لحاصل القسمة $8 \\div 3$ وليست قيمته المضبوطة.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب جملة أو جملتين: الفكرة ثم الحساب الذي يدعمها."
+        }
+      ],
+      "feedback": {
+        "correct": "إذن $2{,}66 < \\dfrac{8}{3} < 2{,}67$ : $2{,}67$ قيمة مقرّبة بالزيادة، والقيمة المضبوطة هي $\\dfrac{8}{3}$.",
+        "incorrect": "قارن تبريرك بالحلّ النموذجي: الفكرة ثم الحساب الذي يدعمها."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 2{,}66 = 7{,}98 < 8$ و $3 \\times 2{,}67 = 8{,}01 > 8$",
+          "إذن $2{,}66 < \\dfrac{8}{3} < 2{,}67$ : $2{,}67$ قيمة مقرّبة بالزيادة، والقيمة المضبوطة هي $\\dfrac{8}{3}$."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

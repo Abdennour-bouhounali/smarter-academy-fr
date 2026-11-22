@@ -1,0 +1,240 @@
+{
+  "id": "ex-1am-adad-nisbiya-siyaqat-l4-004",
+  "lessonCode": "adad-nisbiya-siyaqat",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — بعثة الشطّ",
+    "estimatedMinutes": 8,
+    "tags": [
+      "أعداد نسبية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "بعثة كشّافة بين شطّ وربوة وميناء."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "يقع الشطّ على ارتفاع 40 م تحت سطح البحر. اكتب ارتفاعه بعدد نسبي (سطح البحر هو الصفر).",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "-40",
+      "misconceptionSignatures": [
+        {
+          "value": "40",
+          "id": "MISC-REL-SIGNLOST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "فوق الصفر أم تحته؟ وكم تدريجة تبعد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما فوق الصفر عدد موجب بلا إشارة، وما تحته عدد سالب تسبقه الإشارة − ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجهة بالإشارة ثمّ المسافة بالعدد."
+        }
+      ],
+      "feedback": {
+        "correct": "تحت الصفر : عدد سالب، $-40$.",
+        "incorrect": "الجهة من الصفر تقول الإشارة، والمسافة تقول العدد."
+      },
+      "solution": {
+        "lines": [
+          "تحت الصفر (أو المرجع)",
+          "عدد سالب، مسافته $40$ : $-40$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "يقع الربوة على ارتفاع 30 م فوق سطح البحر. اكتب ارتفاعه بعدد نسبي (سطح البحر هو الصفر).",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "-30",
+          "id": "MISC-REL-ABOVENEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "فوق الصفر أم تحته؟ وكم تدريجة تبعد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما فوق الصفر عدد موجب بلا إشارة، وما تحته عدد سالب تسبقه الإشارة − ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجهة بالإشارة ثمّ المسافة بالعدد."
+        }
+      ],
+      "feedback": {
+        "correct": "فوق الصفر : عدد موجب يُكتب بلا إشارة، $30$.",
+        "incorrect": "الجهة من الصفر تقول الإشارة، والمسافة تقول العدد."
+      },
+      "solution": {
+        "lines": [
+          "فوق الصفر (أو المرجع)",
+          "عدد موجب، مسافته $30$ : $30$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "الشطّ والربوة. أيّ الموضعين أبعد عن سطح البحر : $-40$ م أم $30$ م ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$30$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-REL-SIGNDIST"
+        },
+        {
+          "id": "B",
+          "content": "البعد نفسه",
+          "isCorrect": false,
+          "misconceptionId": "MISC-REL-SIGNONLY"
+        },
+        {
+          "id": "C",
+          "content": "$-40$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "البعد عن الصفر مسافة : هل تتأثّر بالإشارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب مسافة كلّ موضع إلى الصفر ثمّ قارن."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأبعد هو الأكبر مسافة ولو كان تحت الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "الأبعد هو $-40$ : مسافته $40$ وهي الأكبر.",
+        "incorrect": "البعد عن الصفر مسافة : نقارن المسافات لا الإشارات."
+      },
+      "solution": {
+        "lines": [
+          "المسافتان : $40$ و $30$",
+          "الأكبر مسافة هو $-40$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "اكتب معاكس العدد $30$ .",
+      "learningPoints": [
+        {
+          "code": "1am_adad-nisbiya-siyaqat_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "-30",
+      "misconceptionSignatures": [
+        {
+          "value": "30",
+          "id": "MISC-REL-OPPSAME"
+        },
+        {
+          "value": "31",
+          "id": "MISC-REL-OPPNEXT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع العدد على الجهاز ثمّ انظر أين يقف ظلّه في المرآة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المعاكس له المسافة نفسها إلى الصفر على الجهة الأخرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "غيّر الإشارة وأبقِ المسافة."
+        }
+      ],
+      "feedback": {
+        "correct": "معاكس $30$ هو $-30$ : المسافة نفسها إلى الصفر على الجهة الأخرى.",
+        "incorrect": "المعاكس يقع على الجهة الأخرى من الصفر وبالمسافة نفسها."
+      },
+      "solution": {
+        "lines": [
+          "$30$ : المسافة $30$ فوق الصفر",
+          "المعاكس : المسافة نفسها على الجهة الأخرى، $-30$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

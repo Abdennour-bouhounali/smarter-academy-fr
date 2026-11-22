@@ -1,0 +1,271 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-kusur-amaliyat-l4-006",
+  "lessonCode": "wadiya-idmajiya-kusur-amaliyat",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — شرائح الأرض",
+    "estimatedMinutes": 10,
+    "tags": [
+      "القسمة الإقليدية",
+      "الحصر",
+      "القيمة المقرّبة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثالث",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يقسّم مزارع حقلًا طوله $237$ m إلى شرائح عرض كلّ شريحة $8$ m ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "كم شريحة كاملة نحصل عليها ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "29",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "28",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "value": "30",
+          "id": "MISC-HASR-IZAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المقسوم هو العدد الذي نقسمه والمقسوم عليه هو العدد الذي نقسم به : كم مرّة يدخل الثاني تمامًا في الأوّل ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي أصغر تمامًا من المقسوم عليه ، والمساواة المميّزة : المقسوم = المقسوم عليه × الحاصل + الباقي ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالضرب ثمّ الجمع قبل أن تجيب ."
+        }
+      ],
+      "feedback": {
+        "correct": "$29$ .",
+        "incorrect": "المقسوم عليه × الحاصل + الباقي = المقسوم ، والباقي أصغر من المقسوم عليه . تحقّق ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$237 = 8 \\times 29 + 5$ ، و $5 < 8$ .",
+          "$8 \\times 29 = 232$ و $237 - 232 = 5$ .",
+          "حاصل القسمة الإقليدية : $29$ ."
+        ],
+        "result": "29"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كم مترًا يبقى من الطول ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "29",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "13",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المقسوم هو العدد الذي نقسمه والمقسوم عليه هو العدد الذي نقسم به : كم مرّة يدخل الثاني تمامًا في الأوّل ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي أصغر تمامًا من المقسوم عليه ، والمساواة المميّزة : المقسوم = المقسوم عليه × الحاصل + الباقي ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالضرب ثمّ الجمع قبل أن تجيب ."
+        }
+      ],
+      "feedback": {
+        "correct": "$5$ .",
+        "incorrect": "المقسوم عليه × الحاصل + الباقي = المقسوم ، والباقي أصغر من المقسوم عليه . تحقّق ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$237 = 8 \\times 29 + 5$ ، و $5 < 8$ .",
+          "$8 \\times 29 = 232$ و $237 - 232 = 5$ .",
+          "باقي القسمة الإقليدية : $5$ ."
+        ],
+        "result": "5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما عدد الشرائح اللازمة لتغطية الطول كلّه ، ولو كانت الأخيرة أضيق ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "29",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "value": "5",
+          "id": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما عدد المجموعات الكاملة (صناديق ، حافلات ، أكياس ، شرائح …) ؟ وهل يبقى شيء يحتاج إلى مجموعة إضافية ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القسمة الإقليدية : إذا بقي شيء فلا بدّ من مجموعة إضافية ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد اللازم هو الحاصل زائد واحد عندما لا يكون الباقي معدومًا ."
+        }
+      ],
+      "feedback": {
+        "correct": "$30$ .",
+        "incorrect": "المقسوم عليه × الحاصل + الباقي = المقسوم ، والباقي أصغر من المقسوم عليه . تحقّق ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$237 = 8 \\times 29 + 5$ ، و $5 < 8$ .",
+          "$8 \\times 29 = 232$ و $237 - 232 = 5$ .",
+          "يبقى $5$ ولا يكفي لمجموعة كاملة ، فنحتاج إلى $29 + 1 = 30$ ."
+        ],
+        "result": "30"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "اختر الحصر الصحيح للحاصل $\\dfrac{237}{8}$ بين عددين طبيعيين متتاليين .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$29 < \\dfrac{237}{8} < 30$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$30 < \\dfrac{237}{8} < 31$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        },
+        {
+          "id": "C",
+          "content": "$28 < \\dfrac{237}{8} < 29$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        },
+        {
+          "id": "D",
+          "content": "$5 < \\dfrac{237}{8} < 6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من القسمة الإقليدية نعرف أنّ المقسوم عليه × الحاصل لا يتجاوز المقسوم ، وأنّ المقسوم عليه × (الحاصل + 1) يتجاوزه ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحصر بين عددين طبيعيين متتاليين يبدأ بالحاصل الإقليدي ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب طرفي الحصر في المقسوم عليه وقارن بالمقسوم للتأكّد ."
+        }
+      ],
+      "feedback": {
+        "correct": "$29 < \\dfrac{237}{8} < 30$ .",
+        "incorrect": "المقسوم عليه × الحاصل + الباقي = المقسوم ، والباقي أصغر من المقسوم عليه . تحقّق ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$237 = 8 \\times 29 + 5$ ، فالحاصل الإقليدي هو $29$ .",
+          "$8 \\times 29 = 232 < 237 < 240 = 8 \\times 30$ ، ومنه $29 < \\dfrac{237}{8} < 30$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

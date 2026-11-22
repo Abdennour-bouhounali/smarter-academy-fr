@@ -1,0 +1,184 @@
+{
+  "id": "ex-2am-jam-tarh-kusur-l5-004",
+  "lessonCode": "jam-tarh-kusur",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — وضعية إدماجية : ميزانيّة نادي العلوم",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جمع كسرين",
+      "الجزء الباقي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "06"
+    }
+  },
+  "statement": {
+    "content": "خصّص نادي العلوم من ميزانيّته $\\dfrac{3}{10}$ لشراء الأدوات ، و $\\dfrac{1}{5}$ للرحلة ، و $\\dfrac{1}{10}$ للمطبوعات ، والباقي للصيانة ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما الكسر الذي يمثّل ما خُصّص للأدوات والرحلة والمطبوعات معًا ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "3/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1/5",
+          "id": "MISC-JAMKASR-ACROSS"
+        },
+        {
+          "value": "1/2",
+          "id": "MISC-JAMKASR-NOSCALE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الجزءان اللذان تبحث عن مجموعهما أو عن الباقي بعدهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد ثمّ اجمع، والباقي نحصل عليه بالطرح من الكلّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل الناتج إن أمكن وتحقّق أنّه يبقى أصغر من الكلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{5}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{5} = \\dfrac{1 \\times 2}{5 \\times 2} = \\dfrac{2}{10}$ .",
+          "$\\dfrac{3}{10} + \\dfrac{1}{5} + \\dfrac{1}{10} = \\dfrac{3 + 2 + 1}{10} = \\dfrac{6}{10}$ .",
+          "نختزل بالقسمة على $2$ : $\\dfrac{6}{10} = \\dfrac{3}{5}$ ."
+        ],
+        "result": "\\dfrac{3}{5}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما الكسر الذي يمثّل ما خُصّص للصيانة ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "2/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "3/5",
+          "id": "MISC-JAMKASR-PART"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكلّ يساوي كسرًا بسطه ومقامه عدد واحد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العدد 1 على شكل كسر مقامه هو مقام الأجزاء المأخوذة ثمّ اطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الجزء الباقي هو الكلّ ناقص ما أُخذ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2}{5}$ : هذا هو الجزء الباقي .",
+        "incorrect": "اكتب الكلّ على شكل كسر ثمّ اطرح منه ما أُخذ، ولا تُعطِ ما أُخذ بدل الباقي."
+      },
+      "solution": {
+        "lines": [
+          "$1 = \\dfrac{10}{10}$ .",
+          "$1 - \\dfrac{3}{10} - \\dfrac{1}{5} - \\dfrac{1}{10} = \\dfrac{10}{10} - \\dfrac{3}{10} - \\dfrac{2}{10} - \\dfrac{1}{10} = \\dfrac{4}{10}$ .",
+          "نختزل : $\\dfrac{2}{5}$ ."
+        ],
+        "result": "\\dfrac{2}{5}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "إذا كانت الميزانيّة $50000$ دج ، فكم خُصّص للصيانة ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "20000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزء من الكلّ يُحسب بقسمة الكلّ على المقام ثمّ الضرب في البسط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب قيمة الجزء الواحد أوّلًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$50000 \\times \\dfrac{2}{5} = 20000$ .",
+        "incorrect": "اقسم الكلّ على المقام ثمّ اضرب الناتج في البسط."
+      },
+      "solution": {
+        "lines": [
+          "$50000 \\div 5 = 10000$",
+          "$10000 \\times 2 = 20000$"
+        ],
+        "result": "20000"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

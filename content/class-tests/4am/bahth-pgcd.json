@@ -1,0 +1,296 @@
+{
+  "_comment": "« حصّة القسم » — the DEFAULT class tests of lesson « البحث عن القاسم المشترك الأكبر لعددين طبيعيين » (docs/architecture/CLASS_SESSION.md). `start` opens the hour: what the lesson stands on (the Euclidean division: its remainder, its quotient, which equality it is; the divisors of a number), then two questions of the NEW lesson (`teaser`: the PGCD kept when the greater number is replaced by the difference, a PGCD of two numbers whose lists are long — asked again at the end, with other numbers). `end` closes it on the five الكفاءات of the lesson, weighted as the bank weighs them (P1 4, P2 13, P3 3, P4 48, P5 57 of its 125 questions): PGCD(a ; b) = PGCD(b ; a − b) (P1: e1), the algorithm of successive differences (P2: e3, e6), PGCD(a ; b) = PGCD(b ; r) — the quotient taken for the remainder is the trap (P3: e4), Euclid's algorithm (P4: e2, e5, e7), the number of steps of each algorithm and the choice of the shorter (P5: e6, e7, e8). `pool` holds more prepared questions a teacher may add to his own copy. The numbers are the platform's own: no pair of the lesson's exercise bank, none of the student's story. Every question carries a `check` from which its answer is RE-COMPUTED by a test (defaultTests.test.js): a default test never ships a wrong answer. A class test never changes a student's progress.",
+  "lesson": "bahth-pgcd",
+  "grade": "4am",
+  "version": 1,
+  "start": [
+    {
+      "id": "s1",
+      "item": "2am.m1.r04",
+      "kind": "number",
+      "text": "ما هو باقي القسمة الإقليدية للعدد 389 على 27؟",
+      "answer": 11,
+      "check": {
+        "type": "remainder",
+        "a": 389,
+        "b": 27
+      }
+    },
+    {
+      "id": "s2",
+      "item": "2am.m1.r04",
+      "kind": "choice",
+      "text": "أيّ مساواة هي القسمة الإقليدية للعدد 250 على 36؟",
+      "options": ["$250 = 36 \\times 6 + 34$", "$250 = 36 \\times 7 - 2$", "$250 = 36 \\times 5 + 70$"],
+      "answer": 0,
+      "check": {
+        "type": "euclid",
+        "a": 250,
+        "b": 36
+      }
+    },
+    {
+      "id": "s3",
+      "item": "2am.m1.r04",
+      "kind": "number",
+      "text": "ما هو حاصل القسمة الإقليدية للعدد 1000 على 37؟",
+      "answer": 27,
+      "check": {
+        "type": "quotient",
+        "a": 1000,
+        "b": 37
+      }
+    },
+    {
+      "id": "s4",
+      "item": "4am.m1.r02",
+      "kind": "truefalse",
+      "text": "17 قاسم للعدد 323.",
+      "answer": true,
+      "check": {
+        "type": "divisor",
+        "a": 323,
+        "b": 17
+      }
+    },
+    {
+      "id": "s5",
+      "item": "4am.m1.r02",
+      "kind": "choice",
+      "text": "ما هي كلّ قواسم العدد 38؟",
+      "options": ["2 ، 19", "1 ، 2 ، 4 ، 19 ، 38", "1 ، 2 ، 19 ، 38"],
+      "answer": 2,
+      "check": {
+        "type": "divisorSet",
+        "a": 38
+      }
+    },
+    {
+      "id": "s6",
+      "item": "2am.m1.r04",
+      "kind": "truefalse",
+      "text": "المساواة $300 = 41 \\times 6 + 54$ هي القسمة الإقليدية للعدد 300 على 41.",
+      "answer": false,
+      "check": {
+        "type": "euclidIs",
+        "a": 300,
+        "b": 41,
+        "q": 6,
+        "r": 54
+      }
+    },
+    {
+      "id": "s7",
+      "item": "4am.m1.r03",
+      "teaser": true,
+      "kind": "truefalse",
+      "text": "$\\mathrm{PGCD}(118 ; 46) = \\mathrm{PGCD}(46 ; 72)$.",
+      "answer": true,
+      "check": {
+        "type": "pgcdEqual",
+        "a": 118,
+        "b": 46,
+        "c": 46,
+        "d": 72
+      }
+    },
+    {
+      "id": "s8",
+      "item": "4am.m1.r03",
+      "teaser": true,
+      "kind": "number",
+      "text": "ما هو أكبر عدد يقسم 84 ويقسم 147 معًا؟",
+      "answer": 21,
+      "check": {
+        "type": "pgcd",
+        "a": 84,
+        "b": 147
+      }
+    }
+  ],
+  "end": [
+    {
+      "id": "e1",
+      "item": "4am.m1.r03",
+      "pairOf": "s7",
+      "kind": "truefalse",
+      "text": "$\\mathrm{PGCD}(207 ; 92) = \\mathrm{PGCD}(92 ; 115)$.",
+      "answer": true,
+      "check": {
+        "type": "pgcdEqual",
+        "a": 207,
+        "b": 92,
+        "c": 92,
+        "d": 115
+      }
+    },
+    {
+      "id": "e2",
+      "item": "4am.m1.r03",
+      "pairOf": "s8",
+      "kind": "number",
+      "text": "احسب $\\mathrm{PGCD}(651 ; 168)$ بخوارزمية إقليدس.",
+      "answer": 21,
+      "check": {
+        "type": "pgcd",
+        "a": 651,
+        "b": 168
+      }
+    },
+    {
+      "id": "e3",
+      "item": "4am.m1.r03",
+      "kind": "number",
+      "text": "احسب $\\mathrm{PGCD}(136 ; 96)$ بخوارزمية الفروق المتتابعة.",
+      "answer": 8,
+      "check": {
+        "type": "pgcd",
+        "a": 136,
+        "b": 96
+      }
+    },
+    {
+      "id": "e4",
+      "item": "4am.m1.r03",
+      "kind": "truefalse",
+      "text": "$610 = 140 \\times 4 + 50$، إذن $\\mathrm{PGCD}(610 ; 140) = \\mathrm{PGCD}(140 ; 4)$.",
+      "answer": false,
+      "check": {
+        "type": "pgcdEqual",
+        "a": 610,
+        "b": 140,
+        "c": 140,
+        "d": 4
+      }
+    },
+    {
+      "id": "e5",
+      "item": "4am.m1.r03",
+      "kind": "choice",
+      "text": "ما هو $\\mathrm{PGCD}(1309 ; 357)$؟",
+      "options": ["238", "2", "119"],
+      "answer": 2,
+      "check": {
+        "type": "pgcdPick",
+        "a": 1309,
+        "b": 357
+      }
+    },
+    {
+      "id": "e6",
+      "item": "4am.m1.r03",
+      "kind": "number",
+      "text": "كم عملية طرح تأخذ خوارزمية الفروق المتتابعة للعددين 260 و 25 حتّى يصير الفرق 0؟",
+      "answer": 14,
+      "check": {
+        "type": "subtractions",
+        "a": 260,
+        "b": 25
+      }
+    },
+    {
+      "id": "e7",
+      "item": "4am.m1.r03",
+      "kind": "number",
+      "text": "كم قسمة تأخذ خوارزمية إقليدس للعددين 260 و 25 حتّى يصير الباقي 0؟",
+      "answer": 3,
+      "check": {
+        "type": "divisions",
+        "a": 260,
+        "b": 25
+      }
+    },
+    {
+      "id": "e8",
+      "item": "4am.m1.r03",
+      "kind": "choice",
+      "text": "للعددين 1512 و 14: أيّ خوارزمية تأخذ خطوات أقلّ؟",
+      "options": ["خوارزمية إقليدس", "خوارزمية الفروق المتتابعة", "تأخذان عدد الخطوات نفسه"],
+      "answer": 0,
+      "check": {
+        "type": "fewerSteps",
+        "a": 1512,
+        "b": 14,
+        "forms": ["euclid", "differences", "same"]
+      }
+    }
+  ],
+  "pool": [
+    {
+      "id": "p1",
+      "item": "4am.m1.r03",
+      "kind": "choice",
+      "text": "بأيّ زوج نعوّض الزوج 322 و 98 دون أن يتغيّر القاسم المشترك الأكبر؟",
+      "options": ["$\\mathrm{PGCD}(98 ; 224)$", "$\\mathrm{PGCD}(98 ; 220)$", "$\\mathrm{PGCD}(322 ; 3)$"],
+      "answer": 0,
+      "check": {
+        "type": "pgcdSame",
+        "a": 322,
+        "b": 98
+      }
+    },
+    {
+      "id": "p2",
+      "item": "4am.m1.r03",
+      "kind": "choice",
+      "text": "$875 = 120 \\times 7 + 35$. بأيّ زوج نعوّض الزوج 875 و 120 دون أن يتغيّر القاسم المشترك الأكبر؟",
+      "options": ["$\\mathrm{PGCD}(120 ; 7)$", "$\\mathrm{PGCD}(120 ; 35)$", "$\\mathrm{PGCD}(875 ; 35)$"],
+      "answer": 1,
+      "check": {
+        "type": "pgcdSame",
+        "a": 875,
+        "b": 120
+      }
+    },
+    {
+      "id": "p3",
+      "item": "4am.m1.r03",
+      "kind": "number",
+      "text": "احسب $\\mathrm{PGCD}(2737 ; 1173)$.",
+      "answer": 391,
+      "check": {
+        "type": "pgcd",
+        "a": 2737,
+        "b": 1173
+      }
+    },
+    {
+      "id": "p4",
+      "item": "4am.m1.r03",
+      "kind": "number",
+      "text": "كم عملية طرح تأخذ خوارزمية الفروق المتتابعة للعددين 98 و 63 حتّى يصير الفرق 0؟",
+      "answer": 7,
+      "check": {
+        "type": "subtractions",
+        "a": 98,
+        "b": 63
+      }
+    },
+    {
+      "id": "p5",
+      "item": "4am.m1.r03",
+      "kind": "number",
+      "text": "كم قسمة تأخذ خوارزمية إقليدس للعددين 3001 و 15 حتّى يصير الباقي 0؟",
+      "answer": 2,
+      "check": {
+        "type": "divisions",
+        "a": 3001,
+        "b": 15
+      }
+    },
+    {
+      "id": "p6",
+      "item": "4am.m1.r03",
+      "kind": "truefalse",
+      "text": "$\\mathrm{PGCD}(170 ; 64) = \\mathrm{PGCD}(64 ; 96)$.",
+      "answer": false,
+      "check": {
+        "type": "pgcdEqual",
+        "a": 170,
+        "b": 64,
+        "c": 64,
+        "d": 96
+      }
+    }
+  ]
+}

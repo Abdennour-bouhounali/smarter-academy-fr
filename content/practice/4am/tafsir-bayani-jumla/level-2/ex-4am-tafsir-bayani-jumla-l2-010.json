@@ -1,0 +1,138 @@
+{
+  "id": "ex-4am-tafsir-bayani-jumla-l2-010",
+  "lessonCode": "tafsir-bayani-jumla",
+  "level": 2,
+  "metadata": {
+    "title": "قاعة الألعاب — صيغتان ونقطة تقاطع",
+    "estimatedMinutes": 6,
+    "tags": [
+      "وضعية",
+      "نقطة التقاطع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tafsir-bayani-jumla_P2",
+      "modelledOn": "act-5"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "تقترح قاعة ألعاب إلكترونية تربوية يقصدها التلاميذ بعد إنجاز واجباتهم صيغتين: الصيغة الأولى 100DA للساعة مع اشتراك 200DA، والصيغة الثانية 150DA للساعة دون اشتراك.\nنسمّي $x$ عدد ساعات اللعب، فيكون الثمن بالصيغتين: $y = 100x + 200$ و $y = 150x$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "حل المعادلة $100x + 200 = 150x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب حل المعادلة فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع الحدود التي فيها $x$ في طرف والأعداد في الطرف الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل كل حد بتغيير إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم اقسم الطرفين على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "هذه هي فاصلة نقطة تقاطع المستقيمين.",
+        "incorrect": "اجمع حدود $x$ في طرف واحد (بتغيير الإشارة عند النقل)، ثم اقسم على معامل $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$100x + 200 = 150x$",
+          "$50x = 200$",
+          "$x = \\dfrac{200}{50}$",
+          "$x = 4$"
+        ],
+        "result": "x = 4"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج إحداثيي نقطة تقاطع المستقيمين الممثلين للصيغتين، ثم فسّر النتيجة.",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": {
+        "x": "4",
+        "y": "600"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "600",
+            "y": "4"
+          },
+          "id": "MISC-JUMLA-BAYANI-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "فاصلة نقطة التقاطع تجعل العبارتين متساويتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حل المعادلة التي تساوي بين العبارتين، ثم عوّض الحل في إحدى العبارتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الثنائية $(x ; y)$ : الفاصلة أولا ثم الترتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "هي إحداثيات نقطة تقاطع المستقيمين، أي حل الجملة.",
+        "incorrect": "ساوِ بين العبارتين لإيجاد الفاصلة، ثم احسب الترتيب بالتعويض؛ واكتب الفاصلة أولا."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة نقطة التقاطع تحقق: $100x + 200 = 150x$",
+          "$50x = 200$",
+          "$x = 4$",
+          "نعوّض: $y = 100 \\times 4 + 200 = 600$",
+          "تحقق: $150 \\times 4 = 600$",
+          "إذن نقطة التقاطع هي $(4 ; 600)$ ، وهي حل الجملة.",
+          "التفسير: من أجل 4 ساعات من اللعب يكون الثمن متساويا بالصيغتين، وهو 600DA."
+        ],
+        "result": "(4 ; 600)"
+      },
+      "timeSeconds": 210
+    }
+  ]
+}

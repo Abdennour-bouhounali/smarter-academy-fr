@@ -1,0 +1,324 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l2-001",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 2,
+  "metadata": {
+    "title": "نشاط 2 — C و D و E و F",
+    "estimatedMinutes": 5,
+    "tags": [
+      "مركبتا شعاع",
+      "تساوي شعاعين"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-2",
+      "page": 140,
+      "section": "أنشطة",
+      "number": 2
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 140): المستوي مزود بمعلم مبدؤه O. C و D نقطتان من المستوى (الشكل).",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "C": [
+          3,
+          1
+        ],
+        "D": [
+          2,
+          -5
+        ],
+        "cx": [
+          3,
+          0
+        ],
+        "cy": [
+          0,
+          1
+        ],
+        "dx": [
+          2,
+          0
+        ],
+        "dy": [
+          0,
+          -5
+        ],
+        "w": [
+          -1,
+          0
+        ],
+        "e": [
+          6,
+          0
+        ]
+      },
+      "hidden": [
+        "cx",
+        "cy",
+        "dx",
+        "dy",
+        "w",
+        "e"
+      ],
+      "segments": [
+        {
+          "from": "C",
+          "to": "cx",
+          "dashed": true
+        },
+        {
+          "from": "C",
+          "to": "cy",
+          "dashed": true
+        },
+        {
+          "from": "D",
+          "to": "dx",
+          "dashed": true
+        },
+        {
+          "from": "D",
+          "to": "dy",
+          "dashed": true
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw",
+        "C": "ne",
+        "D": "se"
+      },
+      "ariaLabel": "معلم مبدؤه O على ورقة مرصوفة: النقطة C فوق محور الفواصل على اليمين، والنقطة D بعيدة تحت محور الفواصل، مع خطوط متقطعة نحو المحورين"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "اقرأ على الشكل ثم احسب مركبتي الشعاع $\\overrightarrow{CD}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "point",
+      "answerFormat": "المركبتان: الأولى ثم الثانية — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "-1",
+        "y": "-6"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "1",
+            "y": "6"
+          },
+          "id": "MISC-MAALAM-TARH-MAQLUB"
+        },
+        {
+          "value": {
+            "x": "2",
+            "y": "-5"
+          },
+          "id": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        },
+        {
+          "value": {
+            "x": "1",
+            "y": "-6"
+          },
+          "id": "MISC-MAALAM-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ أولا: C فوق محور الفواصل، و D تحته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "C(3 ; 1) و D(2 ; −5)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "النهاية D ناقص المبدأ C."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 - 3 = -1$ و $-5 - 1 = -6$ : وحدة نحو اليسار و 6 نحو الأسفل.",
+        "incorrect": "نحو اليسار ونحو الأسفل تكون المركبة سالبة."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "E نقطة حيث مركبتا $\\overrightarrow{DE}$ هما 3 و 4. إحداثيتا E:",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "point",
+      "answerFormat": "الإحداثيتان (x ; y) — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "5",
+        "y": "-1"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-1",
+            "y": "-9"
+          },
+          "id": "MISC-MAALAM-MAJHUL-AMALIYA"
+        },
+        {
+          "value": {
+            "x": "3",
+            "y": "4"
+          },
+          "id": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبدأ D معلوم والنهاية E مجهولة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$x_E - x_D$ يساوي المركبة الأولى، و $y_E - y_D$ يساوي الثانية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف كل مركبة إلى إحداثية D الموافقة."
+        }
+      ],
+      "feedback": {
+        "correct": "$x_E = 2 + 3 = 5$ و $y_E = -5 + 4 = -1$ .",
+        "incorrect": "المبدأ D معلوم: أضف المركبتين إلى إحداثيتي D."
+      }
+    },
+    {
+      "id": "q3",
+      "statement": "$F(6\\,;\\,5)$ . مركبتا الشعاع $\\overrightarrow{CF}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "point",
+      "answerFormat": "المركبتان: الأولى ثم الثانية — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "3",
+        "y": "4"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-3",
+            "y": "-4"
+          },
+          "id": "MISC-MAALAM-TARH-MAQLUB"
+        },
+        {
+          "value": {
+            "x": "6",
+            "y": "5"
+          },
+          "id": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبدأ C والنهاية F."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المركبة الأولى: فاصلة F ناقص فاصلة C."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المركبة الثانية: ترتيب F ناقص ترتيب C، وانتبه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 - 3 = 3$ و $5 - 1 = 4$ .",
+        "incorrect": "النهاية F ناقص المبدأ C."
+      }
+    },
+    {
+      "id": "q4",
+      "statement": "الشعاعان $\\overrightarrow{DE}$ و $\\overrightarrow{CF}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "غير متساويين لأن مبدأيهما مختلفان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MABDA"
+        },
+        {
+          "id": "B",
+          "content": "متعاكسان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        },
+        {
+          "id": "C",
+          "content": "متساويان لأن لهما نفس المركبتين",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مركبتي كل شعاع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن المركبة الأولى بالأولى والثانية بالثانية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يتساوى الشعاعان إذا تساوت المركبتان معا."
+        }
+      ],
+      "feedback": {
+        "correct": "لكل منهما المركبتان 3 و 4: DE = CF، والرباعي DEFC متوازي أضلاع.",
+        "incorrect": "شعاعان متساويان قد يختلف مبدآهما: المهم المركبتان."
+      }
+    }
+  ]
+}

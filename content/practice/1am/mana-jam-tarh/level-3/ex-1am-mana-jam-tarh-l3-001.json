@@ -1,0 +1,215 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l3-001",
+  "lessonCode": "mana-jam-tarh",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — النشرة الجوية",
+    "estimatedMinutes": 7,
+    "tags": [
+      "يقلّ",
+      "يزيد",
+      "فرق"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 1,
+      "file": "1am-s1-91",
+      "exercise": 3
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "قرأ أيمن النشرة الجوية ليختار ملابس مناسبة لرحلة القسم: درجة الحرارة في تلمسان $11\\,\\mathrm{°C}$، وهي تقلّ عن درجة الحرارة في أدرار بـ $17\\,\\mathrm{°C}$، وتزيد عن درجة الحرارة في تيارت بـ $4\\,\\mathrm{°C}$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "في المخطط بأقواس الذي يربط تلمسان بأدرار، درجة الحرارة في أدرار هي:",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الكل (القوس تحت الخط)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "جزء (قوس فوق الخط)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ المدينتين أدفأ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأدفأ يضمّ درجة الأخرى والفرق."
+        }
+      ],
+      "feedback": {
+        "correct": "أدرار = تلمسان + 17: هي الكل.",
+        "incorrect": "تلمسان أبرد من أدرار: درجة أدرار تضمّ درجة تلمسان والفرق."
+      },
+      "solution": {
+        "lines": [
+          "درجة الحرارة في تلمسان تقلّ عن درجة الحرارة في أدرار، إذن أدرار أدفأ.",
+          "درجة الحرارة في أدرار هي الكل."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب درجة الحرارة في أدرار.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة °C)",
+      "expectedAnswer": "28",
+      "misconceptionSignatures": [
+        {
+          "value": "-6",
+          "id": "MISC-JAMTARH-KALIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أدرار أدفأ من تلمسان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الكل = مجموع الجزأين."
+        }
+      ],
+      "feedback": {
+        "correct": "$11 + 17 = 28\\,\\mathrm{°C}$.",
+        "incorrect": "درجة الحرارة في أدرار أكبر من $11\\,\\mathrm{°C}$: لا نطرح."
+      },
+      "solution": {
+        "lines": [
+          "$11 + 17 = 28$"
+        ],
+        "result": "28\\,°\\mathrm{C}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب درجة الحرارة في تيارت.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة °C)",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-JAMTARH-KALIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تلمسان أدفأ من تيارت."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "درجة تلمسان هي الكل، ودرجة تيارت جزء."
+        }
+      ],
+      "feedback": {
+        "correct": "$11 - 4 = 7\\,\\mathrm{°C}$.",
+        "incorrect": "درجة الحرارة في تلمسان تزيد عن درجة تيارت: تيارت أبرد."
+      },
+      "solution": {
+        "lines": [
+          "$11 - 4 = 7$"
+        ],
+        "result": "7\\,°\\mathrm{C}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "احسب فرق درجتي الحرارة في أدرار وتيارت.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة °C)",
+      "expectedAnswer": "21",
+      "misconceptionSignatures": [
+        {
+          "value": "35",
+          "id": "MISC-JAMTARH-MAJMU-FARQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب درجة الحرارة في كل من المدينتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفرق: الأكبر − الأصغر."
+        }
+      ],
+      "feedback": {
+        "correct": "$28 - 7 = 21$، أي $17 + 4$.",
+        "incorrect": "الفرق ناتج طرح، لا ناتج جمع: اطرح درجة تيارت من درجة أدرار."
+      },
+      "solution": {
+        "lines": [
+          "أدرار: $28\\,\\mathrm{°C}$ ، تيارت: $7\\,\\mathrm{°C}$.",
+          "$28 - 7 = 21$"
+        ],
+        "result": "21\\,°\\mathrm{C}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

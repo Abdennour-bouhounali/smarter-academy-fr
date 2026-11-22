@@ -1,51 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Routes publiques réelles de src/App.jsx. Toute URL ajoutée ici doit
-     correspondre à une route existante : la route « * » renvoie index.html
-     avec un 200, donc une URL fantôme est indexée comme doublon. -->
+<!-- Les URL doivent porter le domaine ALGÉRIEN. Ce fichier a longtemps listé
+     huit adresses en smarter-academy.fr (valeurs françaises héritées, comme
+     le .env serveur) : Google écarte les URL d'un autre domaine que celui qui
+     sert le sitemap, donc la plateforme algérienne ne lui fournissait aucune
+     URL valide. Les routes ci-dessous sont les routes PUBLIQUES réelles de
+     src/App.jsx — /tarifs et /contact n'existent pas ici et ont été retirées.
+     /login et /register restent hors sitemap : rien à indexer. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://smarter-academy.fr/</loc>
+    <loc>https://smarter-academy.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://smarter-academy.fr/courses</loc>
+    <loc>https://smarter-academy.com/courses</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://smarter-academy.fr/methode</loc>
+    <loc>https://smarter-academy.com/methode</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smarter-academy.fr/tarifs</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smarter-academy.fr/about</loc>
+    <loc>https://smarter-academy.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://smarter-academy.fr/faq</loc>
+    <loc>https://smarter-academy.com/faq</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smarter-academy.fr/mentions-legales</loc>
+    <loc>https://smarter-academy.com/confidentialite</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://smarter-academy.fr/confidentialite</loc>
+    <loc>https://smarter-academy.com/cgu</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://smarter-academy.fr/cgu</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://smarter-academy.com/books</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://smarter-academy.com/books/smart-protocol</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

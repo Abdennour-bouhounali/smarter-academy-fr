@@ -1,0 +1,184 @@
+{
+  "id": "ex-4am-nisab-muthallathiya-l2-004",
+  "lessonCode": "nisab-muthallathiya",
+  "level": 2,
+  "metadata": {
+    "title": "المثلث JKL وظلا زاويتيه الحادتين",
+    "estimatedMinutes": 7,
+    "tags": [
+      "الظل"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-1",
+      "page": 122,
+      "section": "النسب المثلثية - استعمال حاسبة",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "$JKL$ مثلث حيث $JK = 7{,}8\\,\\mathrm{cm}$ ، $JL = 10{,}4\\,\\mathrm{cm}$ ، $KL = 13\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "برهن أن المثلث $JKL$ قائم في $J$ .",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أطول الأضلاع هو المرشّح ليكون وترا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن مربع أطول ضلع بمجموع مربعي الضلعين الآخرين."
+        }
+      ],
+      "feedback": {
+        "correct": "$KL^2 = JK^2 + JL^2$ ، إذن المثلث $JKL$ قائم في $J$ حسب الخاصية العكسية لخاصية فيثاغورس.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $KL^2 = 13^2 = 169$",
+          "و $JK^2 + JL^2 = 7{,}8^2 + 10{,}4^2 = 60{,}84 + 108{,}16 = 169$",
+          "نلاحظ أن $KL^2 = JK^2 + JL^2$ ، إذن المثلث $JKL$ قائم في $J$ حسب الخاصية العكسية لخاصية فيثاغورس."
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب $\\tan\\widehat{JKL}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري",
+      "expectedAnswer": "4/3",
+      "misconceptionSignatures": [
+        {
+          "value": "3/4",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        },
+        {
+          "value": "4/5",
+          "id": "MISC-MUTH-WATAR-MUQABIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $JKL$ القائم في $J$ ، عيّن بالنسبة إلى الزاوية $\\widehat{JKL}$ الوتر والضلعين المجاور والمقابل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ظل زاوية حادة = طول الضلع المقابل لها على طول الضلع المجاور لها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض بالأطوال ثم اختزل الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan\\widehat{JKL} = \\dfrac{JL}{JK} = \\dfrac{10{,}4}{7{,}8} = \\dfrac{4}{3}$ .",
+        "incorrect": "راجع الضلعين: ظل الزاوية = طول الضلع المقابل لها على طول الضلع المجاور لها، ثم اختزل."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $JKL$ القائم في $J$ لدينا: $\\tan\\widehat{JKL} = \\dfrac{JL}{JK}$",
+          "$\\tan\\widehat{JKL} = \\dfrac{10{,}4}{7{,}8}$"
+        ],
+        "result": "\\tan\\widehat{JKL} = \\dfrac{4}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب $\\tan\\widehat{JLK}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري",
+      "expectedAnswer": "3/4",
+      "misconceptionSignatures": [
+        {
+          "value": "4/3",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        },
+        {
+          "value": "3/5",
+          "id": "MISC-MUTH-WATAR-MUQABIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $JKL$ القائم في $J$ ، عيّن بالنسبة إلى الزاوية $\\widehat{JLK}$ الوتر والضلعين المجاور والمقابل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ظل زاوية حادة = طول الضلع المقابل لها على طول الضلع المجاور لها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض بالأطوال ثم اختزل الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan\\widehat{JLK} = \\dfrac{JK}{JL} = \\dfrac{7{,}8}{10{,}4} = \\dfrac{3}{4}$ .",
+        "incorrect": "راجع الضلعين: ظل الزاوية = طول الضلع المقابل لها على طول الضلع المجاور لها، ثم اختزل."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $JKL$ القائم في $J$ لدينا: $\\tan\\widehat{JLK} = \\dfrac{JK}{JL}$",
+          "$\\tan\\widehat{JLK} = \\dfrac{7{,}8}{10{,}4}$"
+        ],
+        "result": "\\tan\\widehat{JLK} = \\dfrac{3}{4}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

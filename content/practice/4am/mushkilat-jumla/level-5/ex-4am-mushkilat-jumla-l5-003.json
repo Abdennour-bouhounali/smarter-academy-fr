@@ -1,0 +1,290 @@
+{
+  "id": "ex-4am-mushkilat-jumla-l5-003",
+  "lessonCode": "mushkilat-jumla",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2018 — كراء الدراجات بكورنيش جيجل",
+    "estimatedMinutes": 22,
+    "tags": [
+      "جملة",
+      "ترييض",
+      "عرضان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mushkilat-jumla_P2",
+      "modelledOn": "BEM 2018 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2018",
+      "heading": "التمرين",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يقترح محل لكراء الدراجات الهوائية على كورنيش جيجل، تشجيعا للرياضة وحماية للبيئة، صيغتين:\n• الصيغة الأولى: 150DA للساعة الواحدة.\n• الصيغة الثانية: بطاقة موسمية بـ 600DA ، ثم 90DA للساعة الواحدة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "احسب المبلغ الذي يدفعه سائح يكتري دراجة لمدة 6 ساعات حسب كل صيغة.",
+      "statement": "المبلغ حسب الصيغة الأولى:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "900",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثمن الساعة × عدد الساعات."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 \\times 150 = 900DA$ .",
+        "incorrect": "اضرب ثمن الساعة في عدد الساعات."
+      },
+      "solution": {
+        "lines": [
+          "الصيغة الأولى: $6 \\times 150 = 900$ أي $900DA$",
+          "الصيغة الثانية: $600 + 6 \\times 90 = 600 + 540 = 1140$ أي $1140DA$"
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "المبلغ حسب الصيغة الثانية:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "1140",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "البطاقة الموسمية تُدفع مرة واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$600 + 6 \\times 90 = 1140DA$ .",
+        "incorrect": "ثمن البطاقة + ثمن الساعات الست."
+      },
+      "solution": {
+        "lines": [
+          "الصيغة الأولى: $6 \\times 150 = 900$ أي $900DA$",
+          "الصيغة الثانية: $600 + 6 \\times 90 = 600 + 540 = 1140$ أي $1140DA$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "ليكن $x$ عدد الساعات و $y$ المبلغ المدفوع (بالدينار).",
+      "statement": "ترجم بجملة معادلتين مجهولاها $x$ و $y$ الحالة التي يتساوى فيها المبلغان حسب الصيغتين.",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عبّر عن المبلغ حسب كل صيغة بدلالة $x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المبلغان متساويان ويساويان $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "المبلغ حسب الصيغة الأولى: $150x$ ، والمبلغ حسب الصيغة الثانية: $90x + 600$ .",
+          "إذا تساوى المبلغان وكان كل منهما $y$ : $y = 150x$ و $y = 90x + 600$ .",
+          "ومنه الجملة: $\\begin{cases} 150x - y = 0 \\\\ 90x - y = -600 \\end{cases}$"
+        ],
+        "result": "\\begin{cases} 150x - y = 0 \\\\ 90x - y = -600 \\end{cases}"
+      },
+      "timeSeconds": 300
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "lead": "حل هذه الجملة، ثم استنتج عدد الساعات التي يتساوى من أجلها المبلغان حسب الصيغتين، وقيمة هذا المبلغ.",
+      "statement": "عدد الساعات:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل $y$ هو نفسه في المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح المعادلة الثانية من الأولى طرفا لطرف."
+        }
+      ],
+      "feedback": {
+        "correct": "يتساوى المبلغان من أجل 10 ساعات.",
+        "incorrect": "بالطرح طرفا لطرف: $60x = 600$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} 150x - y = 0 & ...(1) \\\\ 90x - y = -600 & ...(2) \\end{cases}$",
+          "بطرح المعادلة (2) من المعادلة (1) طرفا لطرف نجد: $60x = 600$ ومنه $x = 10$",
+          "بالتعويض في المعادلة (1): $y = 150 \\times 10 = 1500$",
+          "التحقق: $600 + 90 \\times 10 = 1500$ .",
+          "إذن يتساوى المبلغان من أجل 10 ساعات، ويكون المبلغ $1500DA$ ."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 420
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "المبلغ:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "1500",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض عدد الساعات في $y = 150x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "المبلغ $1500DA$ في الصيغتين: $150 \\times 10 = 600 + 90 \\times 10$ .",
+        "incorrect": "احسب $150 \\times x$ بعدد الساعات الذي وجدته."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} 150x - y = 0 & ...(1) \\\\ 90x - y = -600 & ...(2) \\end{cases}$",
+          "بطرح المعادلة (2) من المعادلة (1) طرفا لطرف نجد: $60x = 600$ ومنه $x = 10$",
+          "بالتعويض في المعادلة (1): $y = 150 \\times 10 = 1500$",
+          "التحقق: $600 + 90 \\times 10 = 1500$ .",
+          "إذن يتساوى المبلغان من أجل 10 ساعات، ويكون المبلغ $1500DA$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "☜ يريد سفيان كراء دراجة لمدة 15 ساعة خلال الصيف. أيّ الصيغتين أقل تكلفة له؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "counted": false,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الصيغة الأولى",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WADIYA-TARJAMA"
+        },
+        {
+          "id": "B",
+          "content": "الصيغة الثانية",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المبلغ حسب كل صيغة من أجل 15 ساعة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن المبلغين."
+        }
+      ],
+      "feedback": {
+        "correct": "الصيغة الثانية: $1950DA$ مقابل $2250DA$ في الصيغة الأولى.",
+        "incorrect": "احسب $15 \\times 150$ و $600 + 15 \\times 90$ ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "الصيغة الأولى: $15 \\times 150 = 2250$ أي $2250DA$",
+          "الصيغة الثانية: $600 + 15 \\times 90 = 600 + 1350 = 1950$ أي $1950DA$",
+          "$1950 < 2250$ : الصيغة الثانية أقل تكلفة لسفيان (بعد 10 ساعات تصبح الصيغة الثانية أقل تكلفة)."
+        ]
+      },
+      "timeSeconds": 240
+    }
+  ]
+}

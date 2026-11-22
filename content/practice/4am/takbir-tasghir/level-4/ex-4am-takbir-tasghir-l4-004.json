@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-takbir-tasghir-l4-004",
+  "lessonCode": "takbir-tasghir",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — دلّاعتان",
+    "estimatedMinutes": 3,
+    "tags": [
+      "النسبة k",
+      "الحجم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takbir-tasghir_P1",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "في سوق الخضر يعرض بائع أمين دلّاعة كروية نصف قطرها $15\\,\\mathrm{cm}$ وأخرى نصف قطرها $10\\,\\mathrm{cm}$ (الكبيرة تكبير للصغيرة)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "حجم الكبيرة يساوي حجم الصغيرة مضروبا في كم؟ (عدد عشري)",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة مثل 1,25 ، أو كسر مثل 4/7)",
+      "expectedAnswer": "3,375",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAKBIR-HAJM-K",
+          "value": "1,5"
+        },
+        {
+          "id": "MISC-TAKBIR-HAJM-K",
+          "value": "2,25"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$k = \\dfrac{15}{10}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحجوم تُضرب في $k^3$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$1{,}5 \\times 1{,}5 \\times 1{,}5$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$k = 1{,}5$ و $k^3 = 3{,}375$ .",
+        "incorrect": "الدلّاعة أكبر بمرّة ونصف في الطول، لكن حجمها أكبر بأكثر من ثلاث مرّات."
+      }
+    }
+  ]
+}

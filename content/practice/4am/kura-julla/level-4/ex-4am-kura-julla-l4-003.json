@@ -1,0 +1,67 @@
+{
+  "id": "ex-4am-kura-julla-l4-003",
+  "lessonCode": "kura-julla",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — إحداثية مجهولة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "معلم الفضاء"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_kura-julla_P4",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس للفضاء مبدؤه O، كرة مركزها O ونصف قطرها 13. النقطة $B(3\\,;\\,4\\,;\\,z)$ حيث $z > 0$ على الكرة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قيمة z؟",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P4",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-KURA-MURABBA",
+          "value": "6"
+        },
+        {
+          "id": "MISC-TALIS-FITHAGHURIS-JAM",
+          "value": "194"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$OB^2 = 9 + 16 + z^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "B على الكرة: $OB^2 = 169$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب $z^2$ ثم z الموجب."
+        }
+      ],
+      "feedback": {
+        "correct": "$25 + z^2 = 169$ ، $z^2 = 144$ ، $z = 12$ .",
+        "incorrect": "المعادلة على المربعات: $OB^2 = R^2$ ."
+      }
+    }
+  ]
+}

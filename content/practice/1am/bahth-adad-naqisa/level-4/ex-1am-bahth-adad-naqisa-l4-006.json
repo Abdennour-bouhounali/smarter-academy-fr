@@ -1,0 +1,246 @@
+{
+  "id": "ex-1am-bahth-adad-naqisa-l4-006",
+  "lessonCode": "bahth-adad-naqisa",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — عمارة الحيّ",
+    "estimatedMinutes": 8,
+    "tags": [
+      "وضعية",
+      "جداء"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الرابع",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "في عمارة 14 طابقًا، في كلّ طابق العدد نفسه من الشقق."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "إذا كان في العمارة 84 شقّة، فكم شقّة في الطابق الواحد؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "1176",
+          "id": "MISC-NAQISA-MULAGAIN"
+        },
+        {
+          "value": "1/6",
+          "id": "MISC-NAQISA-DIVREV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للضرب هي القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $6\\times 14=84$ ، فالعدد الناقص هو $6$ .",
+        "incorrect": "في جداء نقسم الناتج على العدد المعلوم: لا نضربه فيه ولا نقسم المعلوم على الناتج."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square\\times 14=84$ .",
+          "نُرجع بالعملية العكسية: $\\square=84\\div 14=6$ .",
+          "نتحقّق: $6\\times 14=84$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بعد أن بنوا طابقًا جديدًا صار عدد الشقق 90. كم شقّة كانت قبله؟ (□ + 6 = 90)",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "84",
+      "misconceptionSignatures": [
+        {
+          "value": "96",
+          "id": "MISC-NAQISA-SAMEOP"
+        },
+        {
+          "value": "-84",
+          "id": "MISC-NAQISA-REVSUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للجمع هي الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $84+6=90$ ، فالعدد الناقص هو $84$ .",
+        "incorrect": "في مجموع نطرح العدد المعلوم من الناتج: لا نجمع مرّة أخرى."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square+6=90$ .",
+          "نُرجع بالعملية العكسية: $\\square=90-6=84$ .",
+          "نتحقّق: $84+6=90$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "سُكنت منها عدة شقق فبقي 25 شقّة خالية من 84. كم شقّة سُكنت؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "59",
+      "misconceptionSignatures": [
+        {
+          "value": "109",
+          "id": "MISC-NAQISA-TRAPADD"
+        },
+        {
+          "value": "-59",
+          "id": "MISC-NAQISA-REVSUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المجهول هنا هو المطروح: ما أُخذ من العدد الذي بدأنا منه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $84-59=25$ ، فالعدد الناقص هو $59$ .",
+        "incorrect": "في a − □ = b المجهول هو المطروح: نطرح الناتج من a ولا نعكس الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $84-\\square=25$ .",
+          "نُرجع بالعملية العكسية: $\\square=84-25=59$ .",
+          "نتحقّق: $84-59=25$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "العدد $70$ هو العدد الناقص في $14\\times \\square=84$ .",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NAQISA-FAMILY"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض العدد المعطى مكان □ في المساواة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الطرف الذي فيه □ ثمّ قارنه بالطرف الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إن لم تجد الناتج المعلوم بالضبط فالعدد خاطئ."
+        }
+      ],
+      "feedback": {
+        "correct": "التعويض يحسم الحكم.",
+        "incorrect": "نحكم بالتعويض لا بالتخمين."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $70$ في $14\\times \\square=84$ .",
+          "الحكم: خطأ"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

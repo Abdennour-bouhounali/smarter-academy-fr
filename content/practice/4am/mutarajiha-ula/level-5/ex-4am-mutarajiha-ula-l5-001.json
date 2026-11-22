@@ -1,0 +1,379 @@
+{
+  "id": "ex-4am-mutarajiha-ula-l5-001",
+  "lessonCode": "mutarajiha-ula",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2007 — كراء حافلة لرحلة مدرسية",
+    "estimatedMinutes": 13,
+    "tags": [
+      "متراجحة",
+      "وضعية إدماجية",
+      "جدول"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mutarajiha-ula_P2",
+      "modelledOn": "BEM 2007 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2007",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تريد متوسطة بالمسيلة تنظيم رحلة مدرسية لزيارة معالم الوطن، فاتصلت بوكالتين لكراء الحافلات: الوكالة الأولى: 70DA للكيلومتر الواحد. الوكالة الثانية: 40DA للكيلومتر الواحد مع مبلغ جزافي قدره 18000DA .",
+    "table": {
+      "head": [
+        "المسافة المقطوعة (km)",
+        "200",
+        "…"
+      ],
+      "rows": [
+        [
+          "المبلغ حسب الوكالة الأولى (DA)",
+          "…",
+          "56000"
+        ],
+        [
+          "المبلغ حسب الوكالة الثانية (DA)",
+          "26000",
+          "…"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "انقل الجدول وأكمله.",
+      "statement": "المبلغ حسب الوكالة الأولى من أجل $200$ km :",
+      "learningPoints": [
+        {
+          "code": "4am_mutarajiha-ula_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المبلغ بـ DA",
+      "expectedAnswer": "14000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب عدد الكيلومترات في سعر الكيلومتر."
+        }
+      ],
+      "feedback": {
+        "correct": "$14000$DA .",
+        "incorrect": "أعد الحساب خطوة خطوة، مع احترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$70 \\times 200 = 14000$"
+        ],
+        "result": "14000DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "المسافة التي يكون من أجلها المبلغ حسب الوكالة الأولى 56000DA :",
+      "learningPoints": [
+        {
+          "code": "4am_mutarajiha-ula_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المسافة بـ km",
+      "expectedAnswer": "800",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ يساوي سعر الكيلومتر مضروبًا في المسافة: اقسم."
+        }
+      ],
+      "feedback": {
+        "correct": "$800$km .",
+        "incorrect": "أعد الحساب خطوة خطوة، مع احترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$70x = 56000$",
+          "$x = \\dfrac{56000}{70}$",
+          "$x = 800$"
+        ],
+        "result": "800km"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "المبلغ حسب الوكالة الثانية من أجل هذه المسافة:",
+      "learningPoints": [
+        {
+          "code": "4am_mutarajiha-ula_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المبلغ بـ DA",
+      "expectedAnswer": "50000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب المسافة في سعر الكيلومتر، ثم أضف المبلغ الجزافي."
+        }
+      ],
+      "feedback": {
+        "correct": "$50000$DA .",
+        "incorrect": "أعد الحساب خطوة خطوة، مع احترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$40 \\times 800 + 18000 = 32000 + 18000$",
+          "$= 50000$"
+        ],
+        "result": "50000DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "lead": "ليكن $x$ عدد الكيلومترات المقطوعة، و $y_1$ ، $y_2$ المبلغين حسب الوكالتين على الترتيب، حيث $y_1 = 70x$ و $y_2 = 40x + 18000$ . حلّ المتراجحة: $70x > 40x + 18000$ .",
+      "statement": "حدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutarajiha-ula_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x < k$ أو $x \\leqslant k$ أو $x > k$ أو $x \\geqslant k$ : اكتب العدد $k$ فقط (عدد صحيح أو كسر a/b، قد يكون سالبًا)",
+      "expectedAnswer": "600",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر، كما في حل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إضافة عدد إلى الطرفين أو طرحه منهما لا تغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحدّ هو العدد الذي يحقّق المعادلة المرفقة (نضع «=» مكان رمز المتباينة): اقسم في الأخير على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "حدّ الحلول هو $k = 600$ .",
+        "incorrect": "أعد الحل سطرًا سطرًا: العملية نفسها على الطرفين، ثم القسمة على معامل $x$ في الأخير."
+      },
+      "solution": {
+        "lines": [
+          "حدّ الحلول هو حلّ المعادلة المرفقة: $70x = 40x + 18000$",
+          "$70x - 40x = 18000$",
+          "$30x = 18000$",
+          "$\\dfrac{30x}{30} = \\dfrac{18000}{30}$",
+          "إذن حدّ الحلول هو $600$ ."
+        ],
+        "result": "k = 600"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_mutarajiha-ula_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < 600$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QALB-ZAID"
+        },
+        {
+          "id": "B",
+          "content": "$x \\leqslant 600$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QALB-ZAID"
+        },
+        {
+          "id": "C",
+          "content": "$x > 600$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$x \\geqslant 600$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارة معامل $x$ في آخر سطر قبل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد موجب تحافظ على الاتجاه، والقسمة على عدد سالب تغيّره."
+        }
+      ],
+      "feedback": {
+        "correct": "$x > 600$ .",
+        "incorrect": "تتبّع سطور الحل: الاتجاه يتغيّر فقط عند الضرب أو القسمة على عدد سالب، ونوع المتباينة (تامة أو غير تامة) لا يتغيّر أبدًا."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $70x > 40x + 18000$",
+          "$70x - 40x > 18000$",
+          "$30x > 18000$",
+          "$\\dfrac{30x}{30} > \\dfrac{18000}{30}$",
+          "إذن حلول المتراجحة هي كل قيم $x$ الأكبر تماما من $600$ .",
+          "قسمنا الطرفين (أو ضربناهما) في آخر خطوة على عدد موجب، فبقي اتجاه المتباينة ونوعها."
+        ],
+        "result": "x > 600"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ا",
+      "lead": "باستعمال حلول المتراجحة، عيّن الوكالة الأقلّ تكلفة في كل حالة.",
+      "statement": "رحلة مسافتها (ذهابًا وإيابًا) $450$ km :",
+      "learningPoints": [
+        {
+          "code": "4am_mutarajiha-ula_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الوكالة الأولى",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الوكالة الثانية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-MUSAWA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل حلول المتراجحة: هل العدد المعطى حلّ لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يمكنك أيضًا حساب التكلفة حسب كل عرض ومقارنتها."
+        }
+      ],
+      "feedback": {
+        "correct": "الوكالة الأولى هي الأقلّ تكلفة.",
+        "incorrect": "احسب التكلفة حسب كل عرض من أجل العدد المعطى، ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "الوكالة الأولى: $70 \\times 450 = 31500$ DA",
+          "الوكالة الثانية: $40 \\times 450 + 18000 = 36000$ DA",
+          "إذن الوكالة الأولى هي الأقلّ تكلفة من أجل 450 km."
+        ],
+        "result": "الوكالة الأولى"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q7",
+      "step": "03",
+      "sub": "ب",
+      "statement": "رحلة مسافتها (ذهابًا وإيابًا) $750$ km :",
+      "learningPoints": [
+        {
+          "code": "4am_mutarajiha-ula_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الوكالة الأولى",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-MUSAWA"
+        },
+        {
+          "id": "B",
+          "content": "الوكالة الثانية",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل حلول المتراجحة: هل العدد المعطى حلّ لها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يمكنك أيضًا حساب التكلفة حسب كل عرض ومقارنتها."
+        }
+      ],
+      "feedback": {
+        "correct": "الوكالة الثانية هي الأقلّ تكلفة.",
+        "incorrect": "احسب التكلفة حسب كل عرض من أجل العدد المعطى، ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "الوكالة الأولى: $70 \\times 750 = 52500$ DA",
+          "الوكالة الثانية: $40 \\times 750 + 18000 = 48000$ DA",
+          "إذن الوكالة الثانية هي الأقلّ تكلفة من أجل 750 km."
+        ],
+        "result": "الوكالة الثانية"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

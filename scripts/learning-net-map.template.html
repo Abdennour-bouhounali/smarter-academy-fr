@@ -1,0 +1,363 @@
+<!doctype html>
+<!-- Template of docs/curriculum/learning-net-map.html — filled by scripts/generate-learning-net-map.mjs. Edit HERE, never the generated file. -->
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>شبكة الكفاءات — المتوسط</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Reem+Kufi:wght@500;700&display=swap">
+<style>
+/* Layout: a curriculum chart — rows are conceptual threads grouped by ميدان, columns are the four years
+   (RTL: 1AM on the right), each official مورد a chip; a reading panel sits beside the chart. */
+:root {
+  --bg: #f3f5f6; --surface: #ffffff; --ink: #18232c; --muted: #5a6875; --line: #d7dde3; --soft: #e8ecef;
+  --num: #2b62a3; --num-soft: #e5eef8; --dat: #a8641a; --dat-soft: #f8eedf; --geo: #2d7d57; --geo-soft: #e2f2ea;
+  --req: #6b7884; --ext: #7246b8; --ext-soft: #efe8fa; --con: #138a8a; --sel: #e0a100;
+  --display: "Reem Kufi", "Noto Kufi Arabic", "Segoe UI", Tahoma, sans-serif;
+  --body: "IBM Plex Sans Arabic", "Noto Sans Arabic", "Segoe UI", Tahoma, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #11171c; --surface: #182128; --ink: #e6ecf0; --muted: #9aa8b4; --line: #2c3842; --soft: #212c34;
+  --num: #7fb0ea; --num-soft: #1b2b3d; --dat: #e2a55e; --dat-soft: #33281a; --geo: #6fcf9f; --geo-soft: #17302a;
+  --req: #8d9aa6; --ext: #b495ee; --ext-soft: #2a2140; --con: #4fd0cf; --sel: #f2c14e; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #11171c; --surface: #182128; --ink: #e6ecf0; --muted: #9aa8b4; --line: #2c3842; --soft: #212c34;
+  --num: #7fb0ea; --num-soft: #1b2b3d; --dat: #e2a55e; --dat-soft: #33281a; --geo: #6fcf9f; --geo-soft: #17302a;
+  --req: #8d9aa6; --ext: #b495ee; --ext-soft: #2a2140; --con: #4fd0cf; --sel: #f2c14e; color-scheme: dark; }
+
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.6; }
+.page { padding-inline: 16px; padding-block: 24px 48px; max-width: 1680px; margin-inline: auto; display: grid; gap: 20px; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; font-weight: 700; }
+.mono { font-family: var(--mono); font-size: 12px; direction: ltr; unicode-bidi: isolate; }
+
+header { display: grid; gap: 8px; }
+.eyebrow { color: var(--muted); font-size: 13px; letter-spacing: .02em; }
+h1 { font-size: clamp(28px, 4vw, 40px); line-height: 1.2; }
+.lede { max-width: 72ch; color: var(--muted); margin: 0; }
+.stats { display: flex; flex-wrap: wrap; gap: 6px 22px; margin: 4px 0 0; padding: 0; list-style: none; }
+.stats b { font-family: var(--display); font-size: 22px; font-variant-numeric: tabular-nums; margin-inline-end: 6px; }
+
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; }
+.search { flex: 1 1 260px; min-width: 0; max-width: 420px; position: relative; }
+.search input { width: 100%; box-sizing: border-box; font: inherit; padding: 9px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); }
+.search input:focus-visible, button:focus-visible { outline: 2px solid var(--sel); outline-offset: 2px; }
+.filters { display: flex; gap: 6px; flex-wrap: wrap; }
+.filters button { font: inherit; font-size: 13px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; min-height: 34px; }
+.filters button[aria-pressed="true"] { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--muted); align-items: center; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.sw { width: 26px; height: 0; border-top: 2px solid var(--req); display: inline-block; }
+.sw.ext { border-top: 3px solid var(--ext); } .sw.con { border-top: 2px dashed var(--con); }
+.dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; background: var(--muted); }
+.dot.planned { background: transparent; border: 1.5px solid var(--muted); box-sizing: border-box; }
+.hint { font-size: 13px; color: var(--muted); }
+
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 20px; align-items: start; }
+@media (max-width: 1100px) { .layout { grid-template-columns: minmax(0, 1fr); } }
+
+.map-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; min-width: 0; }
+.map { position: relative; display: grid; grid-template-columns: 150px repeat(4, minmax(200px, 1fr)); min-width: 980px; }
+.map > * { min-width: 0; }
+.colhead { position: sticky; top: 0; z-index: 3; background: var(--surface); border-bottom: 1px solid var(--line); padding: 12px 12px 10px; font-family: var(--display); font-size: 16px; }
+.colhead small { display: block; font-family: var(--body); font-size: 12px; color: var(--muted); font-weight: 400; }
+.domain { grid-column: 1 / -1; padding: 14px 12px 6px; font-family: var(--display); font-size: 15px; display: flex; gap: 10px; align-items: baseline; border-top: 1px solid var(--line); }
+.domain small { font-family: var(--body); color: var(--muted); font-size: 12px; }
+.domain[data-d="numbers"] { color: var(--num); } .domain[data-d="data"] { color: var(--dat); } .domain[data-d="geometry"] { color: var(--geo); }
+.tlabel { padding: 10px 12px; font-weight: 600; font-size: 13px; border-top: 1px solid var(--soft); position: sticky; inset-inline-start: 0; z-index: 2; background: var(--surface); }
+.tlabel small { display: block; font-weight: 400; color: var(--muted); font-size: 11px; }
+.cell { padding: 8px; border-top: 1px solid var(--soft); border-inline-start: 1px solid var(--soft); display: flex; flex-direction: column; gap: 6px; }
+
+.chip { all: unset; box-sizing: border-box; cursor: pointer; display: grid; grid-template-columns: auto 1fr; gap: 2px 8px; align-items: start;
+  padding: 6px 8px; border-radius: 7px; border: 1px solid var(--line); background: var(--surface); font-size: 12.5px; line-height: 1.45;
+  transition: opacity .15s, border-color .15s, background .15s; position: relative; z-index: 1; }
+.chip:hover { border-color: var(--muted); }
+.chip:focus-visible { outline: 2px solid var(--sel); outline-offset: 1px; }
+.chip .cid { grid-row: 1 / span 2; display: flex; flex-direction: column; align-items: center; gap: 4px; padding-top: 2px; }
+.chip .ctext { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.chip[data-d="numbers"] .dot { background: var(--num); border-color: var(--num); }
+.chip[data-d="data"] .dot { background: var(--dat); border-color: var(--dat); }
+.chip[data-d="geometry"] .dot { background: var(--geo); border-color: var(--geo); }
+.chip .dot.planned { background: transparent; }
+.chip.manhaj { border-style: dashed; }
+.map.focus .chip { opacity: .28; }
+.map.focus .chip.on { opacity: 1; }
+.chip.sel { border: 2px solid var(--sel); padding: 5px 7px; opacity: 1; }
+.chip.pre { background: var(--soft); }
+.chip.pre-e { background: var(--ext-soft); border-color: var(--ext); }
+.chip.post { border-color: var(--muted); }
+.chip.hit { box-shadow: inset 0 0 0 1px var(--sel); }
+.map.searching .chip:not(.hit) { opacity: .25; }
+svg.links { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; overflow: visible; }
+svg.links path { fill: none; stroke-width: 1.6; }
+svg.links path.r { stroke: var(--req); }
+svg.links path.e { stroke: var(--ext); stroke-width: 2.6; }
+svg.links path.c { stroke: var(--con); stroke-dasharray: 5 4; }
+@media (prefers-reduced-motion: no-preference) { svg.links path { animation: draw .45s ease-out both; stroke-dashoffset: 0; } }
+@keyframes draw { from { opacity: 0; } to { opacity: 1; } }
+
+aside.panel { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+  padding: 16px; display: grid; gap: 14px; max-height: calc(100vh - 32px); overflow: auto; min-width: 0; }
+@media (max-width: 1100px) { aside.panel { position: static; max-height: none; } }
+.panel h2 { font-size: 20px; }
+.panel h3 { font-size: 14px; font-family: var(--body); font-weight: 600; color: var(--muted); }
+.panel p { margin: 0; }
+.crumb { font-size: 12.5px; color: var(--muted); }
+.official { font-size: 16px; line-height: 1.7; }
+.parts { margin: 0; padding-inline-start: 20px; color: var(--ink); font-size: 14px; }
+.lessonbox { border: 1px solid var(--line); border-radius: 9px; padding: 10px 12px; display: grid; gap: 6px; }
+.pill { display: inline-block; font-size: 11.5px; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
+.pill.a { color: var(--geo); border-color: var(--geo); }
+.linkbtn { all: unset; cursor: pointer; color: var(--num); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.linkbtn:focus-visible { outline: 2px solid var(--sel); }
+.rel { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.rel li > button { all: unset; box-sizing: border-box; width: 100%; cursor: pointer; display: grid; grid-template-columns: auto 1fr; gap: 0 8px; padding: 7px 9px; border-radius: 8px; border: 1px solid var(--soft); font-size: 13px; }
+.rel li > button:hover { border-color: var(--line); background: var(--soft); }
+.rel li > button:focus-visible { outline: 2px solid var(--sel); }
+.rel .tag { font-size: 11px; color: var(--muted); }
+.rel .tag.e { color: var(--ext); } .rel .tag.c { color: var(--con); }
+.rel .added { grid-column: 2; font-size: 12.5px; color: var(--ext); }
+.rel .added.c { color: var(--con); }
+.group { display: grid; gap: 6px; }
+.group + .group { border-top: 1px solid var(--soft); padding-top: 10px; }
+.empty { color: var(--muted); font-size: 13px; }
+.picks { display: flex; flex-wrap: wrap; gap: 6px; }
+.picks button { font: inherit; font-size: 13px; padding: 5px 10px; border-radius: 7px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+.picks button:hover { background: var(--soft); }
+footer { color: var(--muted); font-size: 12.5px; max-width: 90ch; }
+</style>
+</head>
+<body>
+
+<div class="page" dir="rtl" lang="ar">
+  <header>
+    <div class="eyebrow">الرياضيات · مرحلة التعليم المتوسط · منهاج 2016 والمخطّطات السنوية 2022</div>
+    <h1>شبكة الكفاءات</h1>
+    <p class="lede">كل مورد معرفي من البرنامج الرسمي للسنوات الأربع، في موضعه من خيطه المفاهيمي، مع الروابط التي تقول ممّا ينطلق وإلى ما يؤدّي. اختر كفاءة لترى سلسلتها ودرسها.</p>
+    <ul class="stats" id="stats"></ul>
+  </header>
+
+  <div class="toolbar">
+    <div class="search"><input id="q" type="search" placeholder="ابحث: فيثاغورس، الكسور، 3am.m4…" aria-label="ابحث في الكفاءات والدروس" autocomplete="off"></div>
+    <div class="filters" id="filters" role="group" aria-label="الميادين"></div>
+    <div class="legend" aria-label="مفتاح الرموز">
+      <span><i class="sw"></i>يتطلّب</span>
+      <span><i class="sw ext"></i>يمدّد (قيمة مضافة)</span>
+      <span><i class="sw con"></i>يرسّخ دون إعادة بناء</span>
+      <span><i class="dot"></i>درس منشور</span>
+      <span><i class="dot planned"></i>درس مخطّط</span>
+    </div>
+  </div>
+
+  <div class="layout">
+    <div class="map-wrap" id="mapwrap"><div class="map" id="map"><svg class="links" id="svg" aria-hidden="true"></svg></div></div>
+    <aside class="panel" id="panel" aria-live="polite"></aside>
+  </div>
+
+  <footer>المصدر: منهاج الرياضيات في التعليم المتوسط — الجيل الثاني (2016) والمخطّطات السنوية (سبتمبر 2022). رقم الكفاءة هو رقم المقطع والمورد في المخطّط السنوي؛ الكفاءات ذات الإطار المتقطّع واردة في المنهاج دون المخطّط. الدروس المخطّطة للسنوات 1–3 تقطيع مؤقّت إلى حين توفّر الكتب المدرسية.</footer>
+</div>
+
+<script>
+const DATA = /*DATA*/;
+const DOMAINS = [
+  { id: 'numbers', t: 'الأنشطة العددية', k: 'ك خ 1' },
+  { id: 'data', t: 'الدوال وتنظيم المعطيات', k: 'ك خ 2' },
+  { id: 'geometry', t: 'الأنشطة الهندسية', k: 'ك خ 3' },
+];
+const TYPE = { r: 'يتطلّب', e: 'يمدّد', c: 'يرسّخ' };
+const G = Object.fromEntries(DATA.grades.map((g) => [g.id, g.labelAr]));
+const SEG = Object.fromEntries(DATA.segments.map((s) => [s.id, s]));
+const $ = (s, r = document) => r.querySelector(s);
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const shortId = (id) => id.slice(4).replace('.', '·');
+const into = {}, from = {};
+for (const [a, b, t, v] of DATA.links) { (into[b] ??= []).push({ id: a, t, v }); (from[a] ??= []).push({ id: b, t, v }); }
+
+// ---- stats
+const lessons = Object.values(DATA.lessons);
+$('#stats').innerHTML = [
+  [Object.keys(DATA.items).length, 'كفاءة رسمية'],
+  [DATA.links.length, 'رابطًا'],
+  [DATA.threads.length, 'خيطًا مفاهيميًا'],
+  [lessons.filter((l) => l.st === 'a').length, 'درسًا منشورًا (4 متوسط)'],
+  [lessons.filter((l) => l.st === 'p').length, 'درسًا مخطّطًا (1–3 متوسط)'],
+].map(([n, t]) => `<li><b>${n}</b>${t}</li>`).join('');
+
+// ---- map
+const map = $('#map');
+let html = '<div class="colhead">الخيط</div>' + DATA.grades.map((g) => {
+  const n = Object.values(DATA.items).filter((i) => i.g === g.id).length;
+  return `<div class="colhead">${esc(g.labelAr)}<small>${n} كفاءة · 7 مقاطع</small></div>`;
+}).join('');
+for (const d of DOMAINS) {
+  html += `<div class="domain" data-d="${d.id}" data-domain="${d.id}">${esc(d.t)} <small>${d.k}</small></div>`;
+  for (const t of DATA.threads.filter((x) => x.d === d.id)) {
+    html += `<div class="tlabel" data-domain="${d.id}">${esc(t.t)}<small>${t.items.length} كفاءة</small></div>`;
+    for (const g of DATA.grades) {
+      const ids = t.items.filter((id) => DATA.items[id].g === g.id);
+      html += `<div class="cell" data-domain="${d.id}">${ids.map(chip).join('')}</div>`;
+    }
+  }
+}
+map.insertAdjacentHTML('beforeend', html);
+function chip(id) {
+  const it = DATA.items[id];
+  const home = DATA.lessons[it.h];
+  return `<button class="chip${it.o === 'manhaj-2016' ? ' manhaj' : ''}" data-id="${id}" data-d="${it.d}" title="${esc(id + ' — ' + it.t)}">`
+    + `<span class="cid"><span class="mono">${shortId(id)}</span><i class="dot${home?.st === 'a' ? '' : ' planned'}"></i></span>`
+    + `<span class="ctext">${esc(it.t)}</span></button>`;
+}
+const chips = Object.fromEntries([...map.querySelectorAll('.chip')].map((c) => [c.dataset.id, c]));
+
+// ---- filters
+let domain = 'all';
+const fbox = $('#filters');
+fbox.innerHTML = [{ id: 'all', t: 'كل الميادين' }, ...DOMAINS].map((d) => `<button type="button" data-f="${d.id}" aria-pressed="${d.id === 'all'}">${esc(d.t)}</button>`).join('');
+fbox.addEventListener('click', (e) => {
+  const b = e.target.closest('button'); if (!b) return;
+  domain = b.dataset.f;
+  fbox.querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+  map.querySelectorAll('[data-domain]').forEach((el) => { el.hidden = domain !== 'all' && el.dataset.domain !== domain; });
+  draw();
+});
+
+// ---- search
+const norm = (s) => s.replace(/[ً-ْـ]/g, '').replace(/[أإآ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي').toLowerCase();
+$('#q').addEventListener('input', (e) => {
+  const q = norm(e.target.value.trim());
+  map.classList.toggle('searching', q.length > 1);
+  for (const [id, c] of Object.entries(chips)) {
+    const it = DATA.items[id]; const l = DATA.lessons[it.h];
+    const hay = norm(`${id} ${it.t} ${(it.p ?? []).join(' ')} ${it.h ?? ''} ${l?.t ?? ''}`);
+    c.classList.toggle('hit', q.length > 1 && hay.includes(q));
+  }
+});
+
+// ---- selection
+let current = null;
+function clearMarks() {
+  map.classList.remove('focus');
+  for (const c of Object.values(chips)) c.classList.remove('on', 'sel', 'pre', 'pre-e', 'post');
+}
+function mark(id, ...cls) { const c = chips[id]; if (c) c.classList.add('on', ...cls); }
+function selectItem(id, push = true) {
+  const it = DATA.items[id]; if (!it) return;
+  current = { kind: 'item', id };
+  clearMarks(); map.classList.add('focus'); mark(id, 'sel');
+  for (const k of into[id] ?? []) mark(k.id, k.t === 'r' ? 'pre' : 'pre-e');
+  for (const k of from[id] ?? []) mark(k.id, 'post');
+  renderItem(id); draw(); if (push) setHash(id);
+  chips[id]?.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'smooth' });
+}
+function selectLesson(code, push = true) {
+  const l = DATA.lessons[code]; if (!l) return;
+  current = { kind: 'lesson', code };
+  clearMarks(); map.classList.add('focus');
+  for (const id of l.items) mark(id, 'sel');
+  for (const [, ids] of l.rev) for (const id of ids) mark(id, 'pre');
+  renderLesson(code); draw(); if (push) setHash(code);
+  const first = l.items[0] && chips[l.items[0]]; first?.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'smooth' });
+}
+function setHash(h) { try { history.replaceState(null, '', '#' + h); } catch (_) { /* sandboxed */ } }
+map.addEventListener('click', (e) => { const c = e.target.closest('.chip'); if (c) selectItem(c.dataset.id); });
+
+// ---- links drawing
+const svg = $('#svg');
+function draw() {
+  svg.innerHTML = '';
+  if (!current) return;
+  const box = map.getBoundingClientRect();
+  svg.setAttribute('viewBox', `0 0 ${map.scrollWidth} ${map.scrollHeight}`);
+  const pairs = [];
+  if (current.kind === 'item') {
+    for (const k of into[current.id] ?? []) pairs.push([k.id, current.id, k.t]);
+    for (const k of from[current.id] ?? []) pairs.push([current.id, k.id, k.t]);
+  } else {
+    const l = DATA.lessons[current.code]; const own = new Set(l.items);
+    for (const id of l.items) for (const k of into[id] ?? []) if (!own.has(k.id)) pairs.push([k.id, id, k.t]);
+  }
+  const defs = '<defs>' + ['r', 'e', 'c'].map((t) => `<marker id="m${t}" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L8,4 L0,8 z" style="fill:var(--${t === 'r' ? 'req' : t === 'e' ? 'ext' : 'con'})"></path></marker>`).join('') + '</defs>';
+  let paths = '';
+  for (const [a, b, t] of pairs) {
+    const ca = chips[a], cb = chips[b];
+    if (!ca || !cb || ca.closest('[hidden]') || cb.closest('[hidden]')) continue;
+    const ra = ca.getBoundingClientRect(), rb = cb.getBoundingClientRect();
+    const ax = ra.left + ra.width / 2 - box.left, ay = ra.top + ra.height / 2 - box.top;
+    const bx = rb.left + rb.width / 2 - box.left, by = rb.top + rb.height / 2 - box.top;
+    // RTL time flows leftward: leave from the left edge of the earlier chip, arrive on the right edge of the later one.
+    const sameCol = Math.abs(ax - bx) < 20;
+    const x1 = sameCol ? ra.left - box.left : (bx < ax ? ra.left - box.left : ra.right - box.left);
+    const x2 = sameCol ? rb.left - box.left : (bx < ax ? rb.right - box.left : rb.left - box.left);
+    const bend = sameCol ? -40 : (x2 - x1) / 2;
+    paths += `<path class="${t}" marker-end="url(#m${t})" d="M${x1},${ay} C${x1 + bend},${ay} ${x2 - (sameCol ? -bend : bend)},${by} ${x2},${by}"></path>`;
+  }
+  svg.innerHTML = defs + paths;
+}
+let raf = 0; addEventListener('resize', () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(draw); });
+
+// ---- panel
+const panel = $('#panel');
+function itemRow(id, t, v) {
+  const it = DATA.items[id];
+  return `<li><button type="button" data-go="${id}"><span class="mono">${shortId(id)}</span><span>${esc(it.t)}<br><span class="tag ${t}">${TYPE[t]} · ${esc(G[it.g])}</span></span>`
+    + (v ? `<span class="added ${t}">${esc(v)}</span>` : '') + '</button></li>';
+}
+function lessonLine(code) {
+  const l = DATA.lessons[code]; if (!l) return '<p class="empty">لا درس.</p>';
+  return `<div class="lessonbox"><div><button type="button" class="linkbtn" data-lesson="${code}">${esc(l.t)}</button></div>`
+    + `<div class="crumb">${esc(G[l.g])} · <span class="mono">${code}</span> <span class="pill ${l.st}">${l.st === 'a' ? 'منشور' : 'مخطّط'}</span></div></div>`;
+}
+function renderItem(id) {
+  const it = DATA.items[id], s = SEG[it.s];
+  const pre = into[id] ?? [], post = from[id] ?? [];
+  const others = Object.entries(DATA.lessons).filter(([c, l]) => l.items.includes(id) && c !== it.h).map(([c]) => c);
+  panel.innerHTML = `
+    <div class="crumb">${esc(G[it.g])} · المقطع ${s.n} — ${esc(s.t)}</div>
+    <div><span class="mono">${id}</span>${it.o === 'manhaj-2016' ? ' <span class="pill">منهاج 2016</span>' : ''}</div>
+    <p class="official">${esc(it.t)}</p>
+    ${it.p ? `<ul class="parts">${it.p.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
+    <div class="group"><h3>درس الاستقبال</h3>${lessonLine(it.h)}${others.length ? `<p class="hint">تُتناول أيضًا في: ${others.map((c) => `<button type="button" class="linkbtn" data-lesson="${c}">${esc(DATA.lessons[c].t)}</button>`).join('، ')}</p>` : ''}</div>
+    <div class="group"><h3>تنطلق من (${pre.length})</h3>${pre.length ? `<ul class="rel">${pre.map((k) => itemRow(k.id, k.t, k.t === 'r' ? '' : k.v)).join('')}</ul>` : '<p class="empty">لا شيء في البرنامج: مكتسب من التعليم الابتدائي أو بداية خيط.</p>'}</div>
+    <div class="group"><h3>يُبنى عليها (${post.length})</h3>${post.length ? `<ul class="rel">${post.map((k) => itemRow(k.id, k.t, k.t === 'r' ? '' : k.v)).join('')}</ul>` : '<p class="empty">نهاية الخيط في المتوسط.</p>'}</div>`;
+}
+function renderLesson(code) {
+  const l = DATA.lessons[code];
+  const unitLessons = Object.entries(DATA.lessons).filter(([, x]) => x.u === l.u);
+  panel.innerHTML = `
+    <div class="crumb">${esc(G[l.g])} · <span class="mono">${code}</span> <span class="pill ${l.st}">${l.st === 'a' ? 'منشور' : 'مخطّط'}</span></div>
+    <h2>${esc(l.t)}</h2>
+    <div class="group"><h3>كفاءات البرنامج في هذا الدرس</h3>${l.items.length ? `<ul class="rel">${l.items.map((id) => itemRow(id, 'r', '').replace(/<span class="tag r">[^<]*<\/span>/, `<span class="tag">${esc(G[DATA.items[id].g])}</span>`)).join('')}</ul>` : '<p class="empty">درس إدماج: لا كفاءة جديدة.</p>'}</div>
+    <div class="group"><h3>راجع قبل أن تنطلق</h3>${l.rev.length ? l.rev.map(([c, ids]) => `${c ? lessonLine(c) : ''}<ul class="rel">${ids.map((id) => itemRow(id, 'r', '')).join('')}</ul>`).join('') : '<p class="empty">لا شيء قبل هذا الدرس في البرنامج.</p>'}</div>
+    <div class="group"><h3>دروس الوحدة</h3><ul class="rel">${unitLessons.map(([c, x]) => `<li><button type="button" data-lesson="${c}"><span class="mono">${x.k === 's' ? '∑' : '·'}</span><span${c === code ? ' style="font-weight:600"' : ''}>${esc(x.t)}</span></button></li>`).join('')}</ul></div>`;
+}
+function renderIntro() {
+  panel.innerHTML = `
+    <h2>كيف تُقرأ الشبكة</h2>
+    <p>كل بطاقة مورد معرفي من المخطّط السنوي برقمه الرسمي (المقطع · المورد). الأعمدة هي السنوات، والصفوف خيوط مفاهيمية تتصاعد من سنة إلى أخرى.</p>
+    <p class="hint">اختر بطاقة لترى ما تنطلق منه وما يُبنى عليها، أو اختر درسًا لترى كفاءاته وما يراجعه التلميذ قبله. رابط «يمدّد» يحمل القيمة المضافة؛ رابط «يرسّخ» يعني أن الدرس يستحضر ولا يعيد البناء.</p>
+    <div class="group"><h3>ابدأ بمثال</h3><div class="picks">
+      <button type="button" data-go="3am.m4.r03">خاصية فيثاغورس</button>
+      <button type="button" data-go="4am.m1.r05">الكسر غير القابل للاختزال</button>
+      <button type="button" data-go="4am.m5.r03">الدالة الخطية</button>
+      <button type="button" data-go="2am.m4.r01">فاصلة نقطة (يرسّخ)</button>
+      <button type="button" data-lesson="jidhr-tarbii">درس الجذر التربيعي</button>
+      <button type="button" data-lesson="kura-julla">درس الكرة والجلّة</button>
+    </div></div>`;
+}
+panel.addEventListener('click', (e) => {
+  const go = e.target.closest('[data-go]'); if (go) return selectItem(go.dataset.go);
+  const ls = e.target.closest('[data-lesson]'); if (ls) return selectLesson(ls.dataset.lesson);
+});
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && current) { current = null; clearMarks(); draw(); renderIntro(); setHash(''); } });
+
+// ---- boot
+const h = decodeURIComponent(location.hash.slice(1));
+if (DATA.items[h]) selectItem(h, false); else if (DATA.lessons[h]) selectLesson(h, false); else renderIntro();
+if (document.fonts?.ready) document.fonts.ready.then(draw);
+</script>
+
+</body>
+</html>

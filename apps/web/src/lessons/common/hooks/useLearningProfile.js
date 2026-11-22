@@ -10,13 +10,22 @@ import { fetchLearningProfile } from '../../../services/learningEvidenceService'
  * from "still loading" and "request failed" so a consumer never renders a
  * fabricated mastery state.
  *
+ * Optional filters narrow the rollup server-side (Mastery V2) : a lesson
+ * page passes `{lesson}`, a unit page `{unit}`; dashboards pass nothing and
+ * receive the whole profile. The filters are read by value, so an inline
+ * object literal does not refetch on every render.
+ *
+ * @param {{lesson?: string, unit?: string, grade?: string}} [filters]
  * @returns {{profile: {initialKnowledge: object[], currentMastery: object[]}|null,
  *            status: 'loading'|'anonymous'|'ready'|'error', reload: () => void}}
  */
-export function useLearningProfile() {
+export function useLearningProfile(filters) {
   const { token, loading: authLoading } = useContext(AuthContext);
   const [profile, setProfile] = useState(null);
   const [status, setStatus] = useState('loading');
+  const lesson = filters?.lesson ?? null;
+  const unit = filters?.unit ?? null;
+  const grade = filters?.grade ?? null;
 
   const reload = useCallback(() => {
     if (authLoading) return;
@@ -25,13 +34,13 @@ export function useLearningProfile() {
       return;
     }
     setStatus('loading');
-    fetchLearningProfile(token)
+    fetchLearningProfile(token, { lesson, unit, grade })
       .then((p) => {
         setProfile(p);
         setStatus('ready');
       })
       .catch(() => setStatus('error'));
-  }, [token, authLoading]);
+  }, [token, authLoading, lesson, unit, grade]);
 
   useEffect(() => {
     reload();

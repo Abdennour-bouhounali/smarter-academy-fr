@@ -29,8 +29,20 @@ class Entitlement extends Model
     /** La dérogation d'administration : test interne, support, geste commercial. */
     public const TYPE_ADMIN_OVERRIDE = 'admin_override';
 
+    /**
+     * Le droit né d'un CODE D'ACTIVATION vendu en espèces — le modèle
+     * commercial algérien (ALGERIA_PLATFORM_MASTER_SPEC.md §17).
+     *
+     * Écrit UNIQUEMENT par ActivationCodeRedemptionService, et porteur d'une
+     * `reference` de la forme `activation_code:{id}` : c'est elle qui, via
+     * l'index unique (type, reference), rend impossible qu'un même code
+     * ouvre deux droits — y compris si deux saisies arrivent en parallèle.
+     */
+    public const TYPE_ACTIVATION_CODE = 'activation_code';
+
     public const TYPES = [
         self::TYPE_SUBSCRIPTION,
+        self::TYPE_ACTIVATION_CODE,
         self::TYPE_ADMIN_OVERRIDE,
     ];
 

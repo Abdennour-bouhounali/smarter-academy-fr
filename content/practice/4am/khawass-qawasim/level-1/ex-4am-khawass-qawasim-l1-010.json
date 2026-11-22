@@ -1,0 +1,118 @@
+{
+  "id": "ex-4am-khawass-qawasim-l1-010",
+  "lessonCode": "khawass-qawasim",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2025 — 966 و 228",
+    "estimatedMinutes": 5,
+    "tags": [
+      "خاصية 2",
+      "قسمة إقليدية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_khawass-qawasim_P3",
+      "modelledOn": "BEM 2025 I-2 01"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أجرِ القسمة الإقليدية للعدد 966 على 228.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الباقي فقط (عدد طبيعي)",
+      "expectedAnswer": "54",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أكبر مضاعف للعدد 228 لا يتجاوز 966."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي هو الفرق بين 966 وهذا المضاعف، ويجب أن يكون أصغر تمامًا من 228."
+        }
+      ],
+      "feedback": {
+        "correct": "$966 = 228 \\times 4 + 54$ مع $54 < 228$.",
+        "incorrect": "في القسمة الإقليدية $966 = 228 \\times q + r$ يكون الباقي $r$ أصغر تمامًا من 228."
+      },
+      "solution": {
+        "lines": [
+          "$228 \\times 4 = 912$ و $228 \\times 5 = 1140 > 966$",
+          "$966 - 912 = 54$",
+          "إذن $966 = 228 \\times 4 + 54$ مع $54 < 228$."
+        ],
+        "result": "966 = 228 \\times 4 + 54"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "علمًا أن 6 يقسم كلا من 966 و 228، استنتج دون إجراء القسمة على 6 أن 6 يقسم الباقي 54، ثم اكتبه على الشكل $6 \\times k$ حيث $k$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k$ فقط (عدد طبيعي)",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الباقي على الشكل $r = 966 - 228 \\times 4$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "6 يقسم 228 فهو يقسم $228 \\times 4$؛ وهو يقسم 966، فيقسم الفرق (الخاصية 2)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم الباقي على 6 للحصول على $k$."
+        }
+      ],
+      "feedback": {
+        "correct": "$54 = 6 \\times 9$: 6 يقسم باقي القسمة الإقليدية للعدد 966 على 228.",
+        "incorrect": "القاسم المشترك لعددين يقسم باقي القسمة الإقليدية لأحدهما على الآخر: اقسم الباقي على 6."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $966 = 228 \\times 4 + 54$ ومنه $54 = 966 - 228 \\times 4$.",
+          "6 يقسم 228 فهو يقسم مضاعفه $228 \\times 4$ ، و 6 يقسم 966.",
+          "إذن 6 يقسم الفرق $966 - 228 \\times 4$ أي يقسم 54 (الخاصية 2).",
+          "$54 = 6 \\times 9$"
+        ],
+        "result": "54 = 6 \\times 9"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

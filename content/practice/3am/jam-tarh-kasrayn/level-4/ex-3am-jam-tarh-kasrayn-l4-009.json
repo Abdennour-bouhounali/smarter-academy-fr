@@ -1,0 +1,199 @@
+{
+  "id": "ex-3am-jam-tarh-kasrayn-l4-009",
+  "lessonCode": "jam-tarh-kasrayn",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — تساوي ومقارنة بعد الجمع",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جمع كسرين",
+      "تساوي كسرين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نعلم أنّ $\\dfrac{3}{4} + \\dfrac{1}{6} = \\dfrac{11}{12}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ العبارات التالية صحيحة ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jam-tarh-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{3}{4} + \\dfrac{1}{6} = \\dfrac{22}{24}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{3}{4} + \\dfrac{1}{6} = \\dfrac{4}{10}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-ACROSS"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{3}{4} + \\dfrac{1}{6} = \\dfrac{4}{24}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-NOSCALE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ خيار بحساب بالمقام المشترك بدل التخمين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استبعد الخيارات التي تجمع المقامات أو تترك البسوط دون تغيير."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{4} + \\dfrac{1}{6} = \\dfrac{22}{24}$ .",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{4} + \\dfrac{1}{6} = \\dfrac{9}{12} + \\dfrac{2}{12} = \\dfrac{11}{12}$ .",
+          "$\\dfrac{22}{24} = \\dfrac{11}{12}$ (قسمنا على $2$) ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "جد العدد $x$ حيث $\\dfrac{3}{4} + \\dfrac{1}{6} = \\dfrac{x}{12}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jam-tarh-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر)",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-JAMTARH-NOSCALE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي تغيّره عندما تضرب مقام الكسر في عدد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب البسط والمقام في العدد نفسه حتى يبقى الكسر هو نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بعد الكتابة الجديدة أنّ المقام هو المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 11$ .",
+        "incorrect": "اكتب الكسرين بمقام مشترك قبل أن تجمع أو تطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{4} + \\dfrac{1}{6} = \\dfrac{9}{12} + \\dfrac{2}{12} = \\dfrac{11}{12}$ .",
+          "إذن $x = 11$ ."
+        ],
+        "result": "x = 11"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "قارن العدد $\\dfrac{3}{4} + \\dfrac{1}{6}$ والكسر $\\dfrac{5}{6}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jam-tarh-kasrayn_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{3}{4} + \\dfrac{1}{6} > \\dfrac{5}{6}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{3}{4} + \\dfrac{1}{6} < \\dfrac{5}{6}$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{3}{4} + \\dfrac{1}{6} = \\dfrac{5}{6}$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كلّ سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{4} + \\dfrac{1}{6} > \\dfrac{5}{6}$ .",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{11}{12}$ و $\\dfrac{5}{6} = \\dfrac{10}{12}$ ، و $11 > 10$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

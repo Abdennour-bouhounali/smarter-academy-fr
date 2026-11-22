@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l1-008",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — مركز المضلع المنتظم",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الدائرة المحيطة",
+      "مركز المضلع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mudalaat-muntazama_P1",
+      "modelledOn": "know-5"
+    }
+  },
+  "statement": {
+    "content": "ABCDEF سداسي منتظم."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مركز هذا السداسي المنتظم هو:",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مركز الدائرة التي تشمل رؤوسه الستة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الرأس A",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MARKAZ"
+        },
+        {
+          "id": "C",
+          "content": "منتصف الضلع [AB]",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MASAFA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رؤوس المضلع المنتظم على دائرة واحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مركز المضلع نقطة على نفس البعد من كل الرؤوس."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أي نقطة على نفس البعد من A و B و C و D و E و F؟"
+        }
+      ],
+      "feedback": {
+        "correct": "توجد دائرة تشمل كل رؤوس المضلع المنتظم، ومركزها هو مركز المضلع (خاصية 1).",
+        "incorrect": "المركز على نفس البعد من كل الرؤوس."
+      },
+      "difficulty": 1
+    }
+  ]
+}

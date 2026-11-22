@@ -1,0 +1,243 @@
+{
+  "id": "ex-4am-tafsir-bayani-jumla-l4-010",
+  "lessonCode": "tafsir-bayani-jumla",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2007 — قاعة كرة الطاولة بدار الشباب ببسكرة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "وضعية",
+      "متراجحة",
+      "نقطة التقاطع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tafsir-bayani-jumla_P2",
+      "modelledOn": "BEM 2007 II (02، 03)"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2007",
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "تقترح قاعة كرة الطاولة بدار الشباب ببسكرة، تشجيعًا للشباب على الرياضة، على المنخرطين صيغتين:\n- الصيغة الأولى: 90DA للساعة الواحدة.\n- الصيغة الثانية: 60DA للساعة الواحدة مع اشتراك شهري قدره 150DA.\nنسمّي $x$ عدد ساعات اللعب في الشهر، و $y_1$ ، $y_2$ المبلغين حسب الصيغتين: $y_1 = 90x$ و $y_2 = 60x + 150$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "احسب المبلغ المدفوع من أجل 3 ساعات في الشهر حسب كل صيغة.",
+      "statement": "المبلغ حسب الصيغة الأولى:",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "270",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد 3 في $y_1$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$90 \\times 3$ .",
+        "incorrect": "اضرب ثمن الساعة في عدد الساعات."
+      },
+      "solution": {
+        "lines": [
+          "$y_1 = 90 \\times 3 = 270$ : 270DA."
+        ],
+        "result": "270DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "المبلغ حسب الصيغة الثانية:",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "330",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد 3 في $y_2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$60 \\times 3 + 150$ .",
+        "incorrect": "لا تنس الاشتراك الشهري."
+      },
+      "solution": {
+        "lines": [
+          "$y_2 = 60 \\times 3 + 150 = 330$ : 330DA."
+        ],
+        "result": "330DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "حل المتراجحة: $90x > 60x + 150$ .",
+      "statement": "حدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x < k$ أو $x > k$ : اكتب العدد $k$ فقط",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحدّ هو حل المعادلة $90x = 60x + 150$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "حدّ الحلول هو حل المعادلة المرفقة.",
+        "incorrect": "انقل $60x$ إلى الطرف الأول ثم اقسم على معامل $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "حدّ الحلول هو حل المعادلة $90x = 60x + 150$ :",
+          "$30x = 150$",
+          "$x = 5$"
+        ],
+        "result": "k = 5"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < 5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QALB-ZAID"
+        },
+        {
+          "id": "B",
+          "content": "$x > 5$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قسمنا في آخر سطر على عدد موجب."
+        }
+      ],
+      "feedback": {
+        "correct": "$x > 5$ .",
+        "incorrect": "القسمة على عدد موجب لا تغيّر اتجاه المتباينة."
+      },
+      "solution": {
+        "lines": [
+          "$90x > 60x + 150$",
+          "$30x > 150$",
+          "$x > 5$",
+          "معناه: من أجل أكثر من 5 ساعات تكون الصيغة الأولى أغلى."
+        ],
+        "result": "x > 5"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "في معلم متعامد ومتجانس، مثّلنا المستقيمين الممثلين لـ $y_1$ و $y_2$ . عيّن إحداثيي نقطة تقاطعهما، ثم فسّر النتيجة.",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": {
+        "x": "5",
+        "y": "450"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "450",
+            "y": "5"
+          },
+          "id": "MISC-JUMLA-BAYANI-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "فاصلة نقطة التقاطع تحقق $90x = 60x + 150$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الترتيب بالتعويض."
+        }
+      ],
+      "feedback": {
+        "correct": "هي النقطة التي يتساوى فيها المبلغان.",
+        "incorrect": "الفاصلة عدد الساعات والترتيب المبلغ بـ DA؛ الفاصلة أولا."
+      },
+      "solution": {
+        "lines": [
+          "عند نقطة التقاطع: $90x = 60x + 150$ ، أي $x = 5$ ، و $y = 90 \\times 5 = 450$ .",
+          "نقطة التقاطع هي $(5 ; 450)$ .",
+          "التفسير: من أجل 5 ساعات في الشهر يتساوى المبلغان (450DA)؛ قبلها الصيغة الأولى أقل تكلفة، وبعدها الصيغة الثانية أقل تكلفة."
+        ],
+        "result": "(5 ; 450)"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

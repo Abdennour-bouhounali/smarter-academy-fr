@@ -1,0 +1,201 @@
+{
+  "id": "ex-4am-mafhum-taalufiya-l3-004",
+  "lessonCode": "mafhum-taalufiya",
+  "level": 3,
+  "metadata": {
+    "title": "أجرة عامل — جدول ليس جدول تناسبية",
+    "estimatedMinutes": 7,
+    "tags": [
+      "دالة خطية",
+      "جدول"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-1",
+      "page": 78,
+      "section": "أنشطة",
+      "number": 1,
+      "adaptedFrom": "ex-4am-mafhum-taalufiya-l3-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "عامل يتعاون مع زملائه في الورشة؛ أجرته الشهرية: أجرة قاعدية قدرها 35000DA ، يضاف إليها 185DA عن كل ساعة إضافية. نسمّي $x$ عدد الساعات الإضافية و $S(x)$ الأجرة الشهرية بـ DA ، حيث $S(x) = 185x + 35000$ .\nأكمل عامل الجدول الآتي:",
+    "table": {
+      "head": [
+        "عدد الساعات الإضافية $x$",
+        "5",
+        "8"
+      ],
+      "rows": [
+        [
+          "الأجرة $S(x)$ (DA)",
+          "35925",
+          "36480"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب $\\dfrac{S(5)}{5}$ و $\\dfrac{S(8)}{8}$ .",
+      "statement": "$\\dfrac{S(5)}{5}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "7185",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم الأجرة على عدد الساعات في العمود الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{35925}{5} = 7185$ .",
+        "incorrect": "اقسم 35925 على 5."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{S(5)}{5} = \\dfrac{35925}{5} = 7185$"
+        ],
+        "result": "7185"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$\\dfrac{S(8)}{8}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "4560",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم الأجرة على عدد الساعات في العمود الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{36480}{8} = 4560$ .",
+        "incorrect": "اقسم 36480 على 8."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{S(8)}{8} = \\dfrac{36480}{8} = 4560$"
+        ],
+        "result": "4560"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل الجدول جدول تناسبية؟ هل $S$ دالة خطية؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAALUFI-KHATTIYA-KHALT"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في جدول تناسبية، حاصل قسمة السطر الثاني على الأول ثابت."
+        }
+      ],
+      "feedback": {
+        "correct": "حاصلا القسمة مختلفان: الجدول ليس جدول تناسبية.",
+        "incorrect": "قارن حاصلي القسمة."
+      },
+      "solution": {
+        "lines": [
+          "$7185 \\neq 4560$ : الجدول ليس جدول تناسبية.",
+          "إذن $S$ ليست دالة خطية."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب $S(0)$ . ماذا تمثّل هذه القيمة؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الأجرة بـ DA",
+      "expectedAnswer": "35000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ 0: عامل لم ينجز أي ساعة إضافية."
+        }
+      ],
+      "feedback": {
+        "correct": "$S(0) = 185 \\times 0 + 35000 = 35000$ .",
+        "incorrect": "من أجل $x = 0$ يبقى الحدّ الثابت فقط."
+      },
+      "solution": {
+        "lines": [
+          "$S(0) = 185 \\times 0 + 35000$",
+          "$S(0) = 0 + 35000$",
+          "$S(0) = 35000$ أي $35000DA$ .",
+          "$S(0)$ هي الأجرة القاعدية: أجرة عامل لم ينجز أي ساعة إضافية.",
+          "وبما أن $S(0) \\neq 0$ ، فإن $S$ ليست دالة خطية."
+        ],
+        "result": "S(0) = 35000\\,DA"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

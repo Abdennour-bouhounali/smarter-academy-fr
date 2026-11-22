@@ -1,0 +1,342 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l5-009",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — سعر يتغيّر بعد العشرين",
+    "estimatedMinutes": 15,
+    "tags": [
+      "وضعية إدماجية",
+      "نقط منكسرة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تبيع مكتبة المدرسة الكراسات بثمن واحد للكراس إلى غاية عشرة كراريس، ثم تخفّض الثمن لمن يشتري أكثر تشجيعا على التعاون. تمثّل النقط $A$ و $B$ و $C$ و $D$ في المعلم التالي المبلغ المدفوع (بمئات الدنانير) بدلالة عدد الكراريس ((الفاصلة عدد الكراريس والترتيب المبلغ)).\nالجزء الأول: التمثيل البياني.\nالجزء الثاني: حسابات وقرار.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          5,
+          5
+        ],
+        "B": [
+          10,
+          10
+        ],
+        "C": [
+          15,
+          12
+        ],
+        "D": [
+          20,
+          14
+        ]
+      },
+      "segments": [
+        [
+          "O",
+          "A"
+        ],
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ]
+      ],
+      "grid": true,
+      "axes": {
+        "every": 5
+      },
+      "labels": {
+        "O": "sw",
+        "A": "nw",
+        "B": "nw",
+        "C": "se",
+        "D": "se"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس: النقط O و A(5;5) و B(10;10) و C(15;12) و D(20;14) موصولة بقطع ويتغير الميل بعد B",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: عدد الكراريس — محور التراتيب: المبلغ بمئات الدنانير"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول:",
+      "statement": "هل المبلغ المدفوع متناسب مع عدد الكراريس؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأنّ الرسم ينطلق من المبدأ $O$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-THROUGH-O-ANY"
+        },
+        {
+          "id": "B",
+          "content": "نعم، لأنّ الترتيب يكبر كلما كبرت الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-RISING"
+        },
+        {
+          "id": "C",
+          "content": "لا، النقط ليست على استقامة واحدة",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط ليست على استقامة واحدة، فليست الوضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "$O$ و $A$ و $B$ على استقامة واحدة، لكنّ $C$ و $D$ ليستا عليها.",
+          "إذن الوضعية ليست تناسبية."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "علّل جوابك.",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تعليلك ثم قارنه بالتصحيح النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اذكر الخاصية التي تستعملها: ما شرط التناسبية على النقط؟"
+        }
+      ],
+      "feedback": {
+        "correct": "التعليل يذكر استقامة النقط ومرور المستقيم بالمبدأ $O$ .",
+        "incorrect": "قارن تعليلك بالتصحيح النموذجي، وتأكد أنك ذكرت الشرطين معا."
+      },
+      "solution": {
+        "lines": [
+          "النقط ليست على استقامة واحدة: الميل يتغير بعد $B$ .",
+          "إذن الوضعية ليست تناسبية."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "الجزء الثاني:",
+      "statement": "ما المبلغ المدفوع (بالدينار) عند شراء $20$ كراسا؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بالدينار",
+      "expectedAnswer": "1400",
+      "misconceptionSignatures": [
+        {
+          "value": "14",
+          "id": "MISC-TAMTHIL-UNIT-AXIS"
+        },
+        {
+          "value": "2000",
+          "id": "MISC-TAMTHIL-THROUGH-O-ANY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ ترتيب النقطة التي فاصلتها $20$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حوّل مئات الدنانير إلى دنانير."
+        }
+      ],
+      "feedback": {
+        "correct": "ترتيب $D$ هو $14$ مئة دج، أي $1400$ دج.",
+        "incorrect": "اقرأ ترتيب النقطة $D$ ثم حوّله إلى دنانير."
+      },
+      "solution": {
+        "lines": [
+          "ترتيب $D$ هو $14$ ، أي $1400$ دج."
+        ],
+        "result": "1400\\ \\text{دج}"
+      },
+      "work": "optional",
+      "timeSeconds": 80
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "لو بقي الثمن متناسبا بالمعامل الذي في أول عشرة كراريس، فكم يكون المبلغ (بالدينار) عند $20$ كراسا؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بالدينار",
+      "expectedAnswer": "2000",
+      "misconceptionSignatures": [
+        {
+          "value": "1400",
+          "id": "MISC-TAMTHIL-THROUGH-O-ANY"
+        },
+        {
+          "value": "20",
+          "id": "MISC-TAMTHIL-UNIT-AXIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل التناسبية على المستقيم $(OB)$ هو $10 \\div 10$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضربه في $20$ ثم حوّل."
+        }
+      ],
+      "feedback": {
+        "correct": "$1 \\times 20 = 20$ مئة دج، أي $2000$ دج، وهو أكبر من $1400$ دج الفعلي.",
+        "incorrect": "احسب المعامل من $B$ ثم اضربه في $20$ وحوّل إلى دنانير."
+      },
+      "solution": {
+        "lines": [
+          "$a = \\dfrac{10}{10} = 1$ .",
+          "$y = 1 \\times 20 = 20$ مئة دج $= 2000$ دج."
+        ],
+        "result": "2000\\ \\text{دج}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "تملك الجمعية $1300$ دج وتريد $20$ كراسا. هل يكفيها مبلغها؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، يكفي: لأنّ الفرق بين المبلغ والثمن صغير",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-DIFFERENCE"
+        },
+        {
+          "id": "B",
+          "content": "لا، لا يكفي: الثمن $1400$ دج يتجاوز $1300$ دج",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نعم، يكفي: لأنّ المبلغ يكاد يساوي الثمن",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-APPROX-DECISION"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الثمن المطلوب بدقّة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارنه بالمبلغ المتوفّر: هل يتجاوزه؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الثمن $1400$ دج يتجاوز $1300$ دج.",
+        "incorrect": "قارن الثمن المحسوب بالمبلغ بدقّة، لا بالتقريب."
+      },
+      "solution": {
+        "lines": [
+          "ثمن $20$ كراسا هو $1400$ دج (ترتيب $D$ ).",
+          "$1400 > 1300$ : لا يكفيها مبلغها."
+        ]
+      },
+      "timeSeconds": 130
+    }
+  ]
+}

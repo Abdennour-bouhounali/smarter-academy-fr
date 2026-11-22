@@ -1,0 +1,249 @@
+{
+  "id": "ex-2am-talim-nuqta-mustawi-l4-008",
+  "lessonCode": "talim-nuqta-mustawi",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — قراءة ومنطقة وترتيب",
+    "estimatedMinutes": 9,
+    "tags": [
+      "قراءة",
+      "منطقة",
+      "ترتيب أعداد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يبيّن الشكل أربع نقط في معلم متعامد ومتجانس مبدؤه $O$ .",
+    "figure": {
+      "grid": true,
+      "axes": true,
+      "points": {
+        "A": [
+          2,
+          3
+        ],
+        "B": [
+          -3,
+          1
+        ],
+        "C": [
+          -1,
+          -2
+        ],
+        "D": [
+          4,
+          -3
+        ],
+        "O": [
+          0,
+          0
+        ]
+      },
+      "ariaLabel": "أربع نقط في معلم متعامد ومتجانس",
+      "maxWidth": 420,
+      "labels": {
+        "O": "sw"
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما فاصلة النقطة $D$ في الشكل؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SIGNLEFT",
+          "value": "-4"
+        },
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": "-3"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد أيّ المحورين تقرأ عليه: الفاصلة على محور الفواصل والترتيب على محور التراتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "سِر من النقطة نحو المحور المطلوب بخطّ يوازي المحور الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى الإشارة، وإلى أنّ نقطة على أحد المحورين لها إحداثية معدومة."
+        }
+      ],
+      "feedback": {
+        "correct": "فاصلة النقطة $D$ هي $4$ .",
+        "incorrect": "راجع القراءة: الفاصلة على محور الفواصل والترتيب على محور التراتيب، وانتبه إلى الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "نقرأ فاصلة النقطة $D$ على المحور المناسب",
+          "فاصلة = $4$"
+        ],
+        "result": "4"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "في الشكل، أيّ النقط فاصلتها سالبة وترتيبها سالب ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$A$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-BOTHSIGNS"
+        },
+        {
+          "id": "B",
+          "content": "$B$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-SIGNAXIS"
+        },
+        {
+          "id": "C",
+          "content": "$C$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$D$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-SIGNLEFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد إشارة الفاصلة وإشارة الترتيب المطلوبتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم ابحث في الشكل عن النقطة التي تحقّق الإشارتين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "النقطة التي تقع على أحد المحورين ليست في أيّ من المناطق الأربع."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة $C$ فاصلتها سالبة وترتيبها سالب .",
+        "incorrect": "ابحث عن النقطة التي تحقّق إشارتي الفاصلة والترتيب معًا."
+      },
+      "solution": {
+        "lines": [
+          "نحدّد الإشارتين المطلوبتين",
+          "النقطة هي $C$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "رتّب فواصل النقط $A$، $B$، $C$، $D$ ترتيبًا تصاعديًّا : اختر السلسلة الصحيحة.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-3 < -1 < 2 < 4$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$4 < 2 < -1 < -3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-ORDERDEC"
+        },
+        {
+          "id": "C",
+          "content": "$-1 < 2 < -3 < 4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-ORDERABS"
+        },
+        {
+          "id": "D",
+          "content": "$-1 < -3 < 2 < 4$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العدد المطلوب لكلّ نقطة مع إشارته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مثّل الأعداد على مستقيم مدرّج في ذهنك: كلّما ذهبنا إلى اليمين زاد العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد السالب الأبعد عن الصفر هو الأصغر."
+        }
+      ],
+      "feedback": {
+        "correct": "الترتيب التصاعدي : $-3 < -1 < 2 < 4$ .",
+        "incorrect": "اقرأ العدد المطلوب لكلّ نقطة ثم ضعها على مستقيم مدرّج: الأعداد تزداد نحو اليمين."
+      },
+      "solution": {
+        "lines": [
+          "فواصل : $A$ : $2$، $B$ : $-3$، $C$ : $-1$، $D$ : $4$",
+          "الترتيب التصاعدي : $-3 < -1 < 2 < 4$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

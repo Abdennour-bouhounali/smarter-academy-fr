@@ -1,0 +1,255 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-amaliyat-tabiiya-ushriya-l4-008",
+  "lessonCode": "wadiya-idmajiya-amaliyat-tabiiya-ushriya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — عرضان لنقل بضاعة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "مقارنة",
+      "وضعية",
+      "برّر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "تعرض شركة نقل أولى $1500$ DA ثابتة مع ⁦60 DA⁩ للكيلومتر، وتعرض شركة ثانية $900$ DA ثابتة مع ⁦85 DA⁩ للكيلومتر. المسافة المطلوبة $28$ km ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما كلفة النقل عند الشركة الأولى؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "مبلغ بالدينار",
+      "expectedAnswer": "3180",
+      "misconceptionSignatures": [
+        {
+          "value": "43680",
+          "id": "MISC-SILSILA-NOPRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعية جملة جملة: كلّ جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب سلسلة عمليات تترجمها، وضع بين قوسين ما يجب حسابه أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب السلسلة بالترتيب الصحيح للعمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "$1500 + 60 \\times 28 = 3180$ .",
+        "incorrect": "الضرب والقسمة يُنجزان قبل الجمع والطرح حتى لو ظهر الجمع أو الطرح أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $1500 + 60 \\times 28$",
+          "$A = 1500 + 60 \\times 28$",
+          "$A = 1500 + 1680$",
+          "$A = 3180$"
+        ],
+        "result": "3180 \\text{ DA }"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "وما كلفته عند الشركة الثانية؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "مبلغ بالدينار",
+      "expectedAnswer": "3280",
+      "misconceptionSignatures": [
+        {
+          "value": "27580",
+          "id": "MISC-SILSILA-NOPRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعية جملة جملة: كلّ جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب سلسلة عمليات تترجمها، وضع بين قوسين ما يجب حسابه أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب السلسلة بالترتيب الصحيح للعمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "$900 + 85 \\times 28 = 3280$ .",
+        "incorrect": "الضرب والقسمة يُنجزان قبل الجمع والطرح حتى لو ظهر الجمع أو الطرح أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $900 + 85 \\times 28$",
+          "$A = 900 + 85 \\times 28$",
+          "$A = 900 + 2380$",
+          "$A = 3280$"
+        ],
+        "result": "3280 \\text{ DA }"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أيّ الشركتين أقلّ كلفة لهذه المسافة؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الشركة الأولى",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الشركة الثانية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SILSILA-NOPRIORITY"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب كلّ عرض (أو كلّ عدد) على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن النتيجتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختر وفق ما يطلبه السؤال: الأصغر أو الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن الناتجين: هذا هو الاختيار الصحيح.",
+        "incorrect": "احسب كلّ عرض كاملًا ثم قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "$A = 1500 + 60 \\times 28$",
+          "$A = 1500 + 1680$",
+          "$A = 3180$",
+          "$B = 900 + 85 \\times 28$",
+          "$B = 900 + 2380$",
+          "$B = 3280$",
+          "الشركة الأقلّ كلفة هي صاحبة الناتج الأصغر."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "هل الفرق بين الكلفتين أقلّ من $150$ DA ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-IGNORED"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب كلّ طرف من الطرفين على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين الناتجين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحكم قبل أن تحسب: اختبر بالأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم، تحقّق بالحساب.",
+        "incorrect": "احسب الطرفين كلّا على حدة قبل أن تحكم."
+      },
+      "solution": {
+        "lines": [
+          "$A = (900 + 85 \\times 28) - (1500 + 60 \\times 28)$",
+          "$A = (900 + 2380) - (1500 + 1680)$",
+          "$A = 3280 - 3180$",
+          "$A = 100$",
+          "$A = 150$",
+          "النتيجتان تحقّقان ما قيل: الجواب نعم."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

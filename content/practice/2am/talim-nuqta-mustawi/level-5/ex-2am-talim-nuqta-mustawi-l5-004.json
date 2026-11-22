@@ -1,0 +1,334 @@
+{
+  "id": "ex-2am-talim-nuqta-mustawi-l5-004",
+  "lessonCode": "talim-nuqta-mustawi",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — سجلّ الحفرية",
+    "estimatedMinutes": 16,
+    "tags": [
+      "وضعية إدماجية",
+      "قراءة",
+      "نظير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "سجّل فريق الحفرية مواضع أربع لُقى في معلم متعامد ومتجانس مبدؤه وتد الأصل $O$ ، ورسمها في الشكل : جرّة $J$ وقنديل $L$ وخرزة $D$ وقطعة نقدية $C$ .",
+    "figure": {
+      "grid": true,
+      "axes": true,
+      "points": {
+        "J": [
+          2,
+          1
+        ],
+        "L": [
+          -3,
+          2
+        ],
+        "D": [
+          0,
+          -2
+        ],
+        "C": [
+          3,
+          -1
+        ],
+        "O": [
+          0,
+          0
+        ]
+      },
+      "ariaLabel": "أربع لُقى في معلم متعامد ومتجانس",
+      "maxWidth": 420,
+      "labels": {
+        "O": "sw"
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اقرأ إحداثيتي النقطة $L$ في الشكل.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-3",
+        "y": "2"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "2",
+            "y": "-3"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNAXIS",
+          "value": {
+            "x": "-3",
+            "y": "-2"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNLEFT",
+          "value": {
+            "x": "3",
+            "y": "2"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الفاصلة على محور الفواصل أوّلًا، بالنزول من النقطة أو الصعود منها عموديًّا إلى هذا المحور."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اقرأ الترتيب على محور التراتيب بالسير أفقيًّا من النقطة إلى هذا المحور؛ العدد الأوّل في الثنائية هو الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "راقب الإشارة: النقط التي على يسار محور التراتيب أو تحت محور الفواصل تأخذ عددًا سالبًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$L(-3\\,;\\,2)$ .",
+        "incorrect": "راجع قراءة الإحداثيتين: الفاصلة أوّلًا على محور الفواصل ثم الترتيب على محور التراتيب."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $L$ هي $-3$ وترتيبها $2$",
+          "$L(-3\\,;\\,2)$"
+        ],
+        "result": "L(-3\\,;\\,2)"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أيّ النقط المرسومة في الشكل تقع على محور التراتيب ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$J$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$L$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$D$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$C$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقطة التي تقع على محور التراتيب فاصلتها معدومة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النقطة التي تقع على محور الفواصل ترتيبها معدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقرأ كلّ نقطة على الشكل ولا تحكم من الاسم."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة $D$ تقع على محور التراتيب .",
+        "incorrect": "اقرأ كلّ نقطة على الشكل: التي تقع على المحور المطلوب لها إحداثية معدومة، وعليك أن تتأكّد أيّ الإحداثيتين."
+      },
+      "solution": {
+        "lines": [
+          "نبحث عن النقطة التي فاصلتها معدومة",
+          "إنّها $D$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "عيّن إحداثيتي نظيرة النقطة $C(3\\,;\\,-1)$ بالنسبة إلى محور الفواصل .",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "3",
+        "y": "1"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SYMMIX",
+          "value": {
+            "x": "-3",
+            "y": "-1"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-BOTHSIGNS",
+          "value": {
+            "x": "-3",
+            "y": "1"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "1",
+            "y": "3"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النظير بالنسبة إلى محور يقع على بعد المسافة نفسها من هذا المحور في الجهة المقابلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الإحداثية المقيسة على طول المحور تبقى كما هي، والإحداثية الأخرى تتغيّر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارسم النقطة ونظيرتها وقِس كلّ منهما على الشبكة للتأكّد."
+        }
+      ],
+      "feedback": {
+        "correct": "$C1(3\\,;\\,1)$ .",
+        "incorrect": "النظير بالنسبة إلى محور يحتفظ بالإحداثية المقيسة على طول المحور ويعاكس الإحداثية الأخرى."
+      },
+      "solution": {
+        "lines": [
+          "النظير بالنسبة إلى محور الفواصل يبقي الفاصلة كما هي",
+          "الترتيب تصير معاكسها: $C1(3\\,;\\,1)$"
+        ],
+        "result": "C1(3\\,;\\,1)"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "في أيّ منطقة من المعلم تقع النقطة $J(2\\,;\\,1)$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "على يسار محور التراتيب وتحت محور الفواصل",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-BOTHSIGNS"
+        },
+        {
+          "id": "B",
+          "content": "على يمين محور التراتيب وفوق محور الفواصل",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "على يسار محور التراتيب وفوق محور الفواصل",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-SIGNLEFT"
+        },
+        {
+          "id": "D",
+          "content": "على يمين محور التراتيب وتحت محور الفواصل",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NUQTA2-SIGNAXIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "إشارة الفاصلة تحدّد جهة النقطة بالنسبة إلى محور التراتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إشارة الترتيب تحدّد جهة النقطة بالنسبة إلى محور الفواصل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الجهتين لتجد المنطقة."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة $J$ على يمين محور التراتيب وفوق محور الفواصل .",
+        "incorrect": "اكتب إشارة الفاصلة ثم إشارة الترتيب، ثم ترجم كلًّا منهما إلى جهة بالنسبة إلى المحور المناسب."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $J$ $2$ فهي على يمين محور التراتيب",
+          "ترتيبها $1$ فهي فوق محور الفواصل"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

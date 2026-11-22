@@ -1,0 +1,176 @@
+{
+  "id": "ex-1am-kitabat-adad-tabii-l1-008",
+  "lessonCode": "kitabat-adad-tabii",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — العدد الذي يلي والعدد الذي يسبق",
+    "estimatedMinutes": 3,
+    "tags": [
+      "يلي",
+      "يسبق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أجب عن الأسئلة الآتية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب بالأرقام العدد الذي يلي العدد 4999 مباشرة.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "5000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أضف وحدة واحدة إلى رقم الآحاد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عشر وحدات من مرتبة تصنع وحدة واحدة من المرتبة التي على يسارها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: الفرق بين العددين 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$4999 + 1 = 5000$.",
+        "incorrect": "عندما تبلغ مرتبةٌ عشرَ وحدات نربطها في وحدة واحدة من المرتبة التي على يسارها، وقد يتكرّر ذلك."
+      },
+      "solution": {
+        "lines": [
+          "$4999 + 1 = 5000$",
+          "إذن العدد هو 5000."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب بالأرقام العدد الذي يسبق العدد 7000 مباشرة.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "6999",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انزع وحدة واحدة من الآحاد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا لم يكن في الآحاد شيء، افتح وحدة من المرتبة التي على اليسار إلى عشر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: الفرق بين العددين 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$7000 - 1 = 6999$.",
+        "incorrect": "عندما تكون مرتبة فارغة نفتح وحدة من المرتبة التي على يسارها إلى عشر."
+      },
+      "solution": {
+        "lines": [
+          "$7000 - 1 = 6999$",
+          "إذن العدد هو 6999."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كيف يُقرأ العدد 5000؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "خمسة آلاف",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خمسمائة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-ZERO-PLACE"
+        },
+        {
+          "id": "C",
+          "content": "خمسون ألفا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KITABA-ZERO-PLACE"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزّئ العدد إلى فئات من ثلاثة أرقام انطلاقا من اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ كل فئة كعدد أصغر من 1000 ثم اذكر اسم فئتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى المراتب الفارغة (الأصفار)."
+        }
+      ],
+      "feedback": {
+        "correct": "5000 يُقرأ « خمسة آلاف ».",
+        "incorrect": "نجزّئ العدد إلى فئات من ثلاثة أرقام انطلاقا من اليمين، ثم نقرأ الفئات من اليسار، كل فئة باسمها."
+      },
+      "solution": {
+        "lines": [
+          "$5\\,|\\,000$",
+          "نقرأ فئة فئة: « خمسة آلاف »."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

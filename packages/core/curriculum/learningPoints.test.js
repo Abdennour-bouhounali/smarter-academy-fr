@@ -1,7 +1,9 @@
 import { describe, it, expect } from 'vitest';
-import { courseLevels } from './coursesData';
+// Learning-point derivation is a data-shape invariant of the Algerian
+// catalogue (the inherited French one was deleted on 2026-09-25).
+import { dzCourseLevels as allCourseLevels } from './coursesData';
 
-const allLessons = courseLevels.flatMap((level) =>
+const allLessons = allCourseLevels.flatMap((level) =>
   level.grades.flatMap((grade) =>
     grade.chapters.flatMap((chapter) =>
       chapter.lessons.map((lesson) => ({ gradeId: grade.id, lesson }))
@@ -28,13 +30,17 @@ describe('learningPoints derivation', () => {
     }
   });
 
-  it('is deterministic and matches the spec example for resolution-problemes', () => {
-    const rp = allLessons.find(({ lesson }) => lesson.id === 'resolution-problemes').lesson;
-    expect(rp.learningPoints[2]).toEqual({
-      id: '6e_resolution-problemes_P3',
-      title: 'Modéliser une situation (schéma, groupes, droite graduée, tableau)',
-      order: 3,
-    });
+  it('keeps every learning point title within the learning_points.title column (VARCHAR 255)', () => {
+    // The importer writes the title as is: a longer one crashes smarter:import-curriculum (hall-mushkil-muadala P3, 2026-10-29).
+    for (const { lesson } of allLessons) {
+      lesson.learningPoints.forEach((lp) => {
+        expect(lp.title.length, lp.id).toBeLessThanOrEqual(255);
+      });
+    }
+  });
+
+  it('has lessons to check', () => {
+    expect(allLessons.length).toBeGreaterThan(0);
   });
 
   it('produces globally unique learning point ids across the whole curriculum', () => {

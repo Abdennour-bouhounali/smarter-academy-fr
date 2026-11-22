@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l2-005",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — أين الخطأ؟",
+    "estimatedMinutes": 2,
+    "tags": [
+      "مركبتا شعاع",
+      "خطأ شائع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hisab-murakkibatay_P1",
+      "modelledOn": "know-3"
+    }
+  },
+  "statement": {
+    "content": "$K(5\\,;\\,-2)$ و $L(1\\,;\\,3)$ . كتب أنس: «$x_K - x_L = 4$ و $y_K - y_L = -5$ ، إذن $\\overrightarrow{KL}\\begin{pmatrix} 4 \\\\ -5 \\end{pmatrix}$ »."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما رأيك في عمل أنس؟",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح: ترتيب الطرح لا يهمّ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-TARH-MAQLUB"
+        },
+        {
+          "id": "B",
+          "content": "خطأ: الصحيح $\\begin{pmatrix} 1 \\\\ 3 \\end{pmatrix}$ ، إحداثيتا L",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        },
+        {
+          "id": "C",
+          "content": "خطأ: طرح المبدأ من النهاية بالعكس؛ الصحيح $\\begin{pmatrix} -4 \\\\ 5 \\end{pmatrix}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما هو المبدأ في الشعاع KL؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المبدأ K والنهاية L."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب $x_L - x_K$ و $y_L - y_K$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$1 - 5 = -4$ و $3 - (-2) = 5$ : أنس حسب مركبتي LK، الشعاع المعاكس.",
+        "incorrect": "النهاية ناقص المبدأ: $x_L - x_K$ ."
+      }
+    }
+  ]
+}

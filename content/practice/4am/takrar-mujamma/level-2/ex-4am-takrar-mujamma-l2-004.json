@@ -1,0 +1,163 @@
+{
+  "id": "ex-4am-takrar-mujamma-l2-004",
+  "lessonCode": "takrar-mujamma",
+  "level": 2,
+  "metadata": {
+    "title": "درجات الحرارة في جوان — على الأقل / على الأكثر",
+    "estimatedMinutes": 3,
+    "tags": [
+      "على الأقل",
+      "على الأكثر"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-1",
+      "page": 98,
+      "section": "أوظّف تعلّماتي",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "إليك درجات الحرارة المسجّلة بإحدى المدن خلال شهر جوان (الوحدة: °C)، منظّمة في جدول تكراري:",
+    "table": {
+      "head": [
+        "درجة الحرارة (°C)",
+        "30",
+        "32",
+        "33",
+        "34",
+        "35",
+        "36"
+      ],
+      "rows": [
+        [
+          "عدد الأيام",
+          "8",
+          "9",
+          "4",
+          "6",
+          "2",
+          "1"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما هو عدد الأيام التي سُجّلت فيها 32 درجة مئوية على الأقل؟",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "22",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-IHSA-SARAMA"
+        },
+        {
+          "value": "17",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«32 على الأقل» تعني: 32 أو أكثر؛ الحدّ نفسه داخل في العدّ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هذا العدد هو التكرار المجمع النازل: اجمع تكرار الحدّ وتكرارات ما بعده."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حدّد في الجدول الأعمدة التي تحقّق الشرط، ثم اجمع تكراراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$9 + 4 + 6 + 2 + 1 = 22$ .",
+        "incorrect": "اقرأ الحدّ بعناية: هل هو داخل في العدّ أم لا؟ ثم اجمع تكرارات الأعمدة التي تحقّق الشرط فقط."
+      },
+      "solution": {
+        "lines": [
+          "القيم المعنية: 32، 33، 34، 35، 36 .",
+          "$9 + 4 + 6 + 2 + 1 = 22$"
+        ],
+        "result": "22"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هو عدد الأيام التي سُجّلت فيها 32 درجة مئوية على الأكثر؟",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "17",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-IHSA-SARAMA"
+        },
+        {
+          "value": "22",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«32 على الأكثر» تعني: 32 أو أقل؛ الحدّ نفسه داخل في العدّ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هذا العدد هو التكرار المجمع الصاعد: اجمع التكرارات من البداية حتى الحدّ مع تكراره."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حدّد في الجدول الأعمدة التي تحقّق الشرط، ثم اجمع تكراراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$8 + 9 = 17$ .",
+        "incorrect": "اقرأ الحدّ بعناية: هل هو داخل في العدّ أم لا؟ ثم اجمع تكرارات الأعمدة التي تحقّق الشرط فقط."
+      },
+      "solution": {
+        "lines": [
+          "القيم المعنية: 30، 32 .",
+          "$8 + 9 = 17$"
+        ],
+        "result": "17"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

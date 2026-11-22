@@ -1,0 +1,199 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-ibarat-harfiya-3-l1-008",
+  "lessonCode": "wadiya-idmajiya-ibarat-harfiya-3",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — عرضان لمكتبة رقمية",
+    "estimatedMinutes": 7,
+    "tags": [
+      "عرضان",
+      "مقارنة",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تقترح مكتبة رقمية عرضين لتحميل الكتب: العرض $A$ ثمنه $1200$ دج ثمنًا ثابتًا و $30$ دج لكل كتاب، والعرض $B$ ثمنه $1000$ دج ثمنًا ثابتًا و $40$ دج لكل كتاب. إذا رمزنا بـ $x$ إلى عدد الوحدات، فإنّ ثمن العرضين هو:",
+    "formulas": [
+      "A = 1200 + 30x",
+      "B = 1000 + 40x"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب ثمن كل عرض من أجل $x = 15$ .",
+      "statement": "ثمن العرض $A$ بالدينار :",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "1650",
+      "misconceptionSignatures": [
+        {
+          "value": "450",
+          "id": "MISC-SYN-HARF-PARTIAL"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن العرض $A$ هو $1650$ دج.",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$A = 1200 + 30 \\times 15$",
+          "$A = 1200 + 450$",
+          "$A = 1650$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ثمن العرض $B$ بالدينار :",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "expectedAnswer": "1600",
+      "misconceptionSignatures": [
+        {
+          "value": "600",
+          "id": "MISC-SYN-HARF-PARTIAL"
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الحرف الذي يجب تعويضه؟ وما العدد الذي سيحلّ محلّه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الحرف بهذا العدد في كل مكان يظهر فيه، وأظهر علامة الضرب، وضع العدد السالب بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب باحترام أولوية العمليات: القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "ثمن العرض $B$ هو $1600$ دج.",
+        "incorrect": "عوّض الحرف بالعدد في كل مكان منه، وضع العدد السالب بين قوسين، ثم احسب باحترام أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$B = 1000 + 40 \\times 15$",
+          "$B = 1000 + 600$",
+          "$B = 1600$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "من أجل $x = 15$ ، أيّ العبارتين أكبر؟ (قارن ثمن العرضين.)",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "العرض $A$ أرخص من العرض $B$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SYN-HARF-DIFFSIGN"
+        },
+        {
+          "id": "B",
+          "content": "العرضان بالثمن نفسه",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SYN-HARF-DIFFSIGN"
+        },
+        {
+          "id": "C",
+          "content": "العرض $A$ أغلى من العرض $B$",
+          "isCorrect": true
+        }
+      ],
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-ibarat-harfiya-3_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا تعلّمنا إشارة الفرق عن ترتيب العددين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب قيمة كل عبارة من أجل العدد المعطى، ثم قارن العددين، أو احسب الفرق وانظر إلى إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا انعكس ترتيب الطرح فإنّ إشارة الفرق تنعكس أيضًا."
+        }
+      ],
+      "feedback": {
+        "correct": "العرض $A$ أغلى من العرض $B$ .",
+        "incorrect": "احسب القيمتين أو الفرق، وانتبه إلى ترتيب الطرح قبل أن تحكم على الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "$A = 1650$ و $B = 1600$ .",
+          "$A - B = 50$ وهو عدد موجب .",
+          "إذن $A > B$ : العرض $A$ أغلى."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

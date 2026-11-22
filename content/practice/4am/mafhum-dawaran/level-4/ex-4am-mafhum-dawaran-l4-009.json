@@ -1,0 +1,86 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l4-009",
+  "lessonCode": "mafhum-dawaran",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — نصف دورة حول نقطة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "صورة نقطة",
+      "التناظر المركزي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mafhum-dawaran_P2",
+      "modelledOn": "know-2"
+    }
+  },
+  "statement": {
+    "content": "على المرصوفة: $\\Omega(2\\,;\\,1)$ و $M(5\\,;\\,3)$ . M′ صورة M بالدوران الذي مركزه Ω وزاويته $180^\\circ$ .",
+    "figure": {
+      "points": {
+        "Ω": [
+          2,
+          1
+        ],
+        "M": [
+          5,
+          3
+        ]
+      },
+      "grid": true,
+      "maxWidth": 420,
+      "ariaLabel": "ورقة مرصوفة عليها Ω و M"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما هما إحداثيتا M′؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الإحداثيتان (x ; y) — عددان صحيحان",
+      "expectedAnswer": {
+        "x": "-1",
+        "y": "-1"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-MARKAZ",
+          "value": {
+            "x": "-5",
+            "y": "-3"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Ω منتصف [MM′]."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من Ω إلى M: 3 يمينا و 2 أعلى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "من Ω نتحرّك بالإزاحة المعاكسة."
+        }
+      ],
+      "feedback": {
+        "correct": "من Ω: (3 ; 2) تصبح (−3 ; −2): $M'(-1\\,;\\,-1)$ .",
+        "incorrect": "المركز هنا Ω: Ω منتصف [MM′]، لا مبدأ المعلم."
+      },
+      "difficulty": 3
+    }
+  ]
+}

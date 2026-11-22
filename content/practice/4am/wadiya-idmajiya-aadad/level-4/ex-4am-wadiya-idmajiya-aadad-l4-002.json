@@ -1,0 +1,211 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-aadad-l4-002",
+  "lessonCode": "wadiya-idmajiya-aadad",
+  "level": 4,
+  "metadata": {
+    "title": "سلسلة التفوق، الوضعية 10 — صفيحة زجاجية 2,64m × 1,65m",
+    "estimatedMinutes": 8,
+    "tags": [
+      "القاسم المشترك الأكبر",
+      "تجزئة إلى مربعات"
+    ],
+    "source": {
+      "type": "worksheet",
+      "worksheetId": "tafawwuq-01",
+      "elementId": "ws01-sit-10",
+      "section": "الوضعيات",
+      "number": 10,
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-aadad-l4-002"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أتقن زجّاج عمله، فجزّأ صفيحة زجاجية مستطيلة الشكل بُعداها 2,64m و 1,65m إلى مربعات متساوية بأكبر ضلع ممكن ودون ضياع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 264 و 165.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "33",
+      "misconceptionSignatures": [
+        {
+          "value": "11",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 264 على 165: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (264 ; 165) بالزوج (165 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 33.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$264 = 165 \\times 1 + 99$",
+          "$165 = 99 \\times 1 + 66$",
+          "$99 = 66 \\times 1 + 33$",
+          "$66 = 33 \\times 2 + 0$",
+          "آخر باقٍ غير معدوم هو 33، إذن:"
+        ],
+        "result": "PGCD(264 ; 165) = 33"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "ما هو طول ضلع كل مربع (بالسنتيمتر)؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (بالسنتيمتر)",
+      "expectedAnswer": "33",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل البعدين إلى السنتيمتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طول الضلع يقسم البعدين معًا وهو أكبر ما يمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$PGCD(264 ; 165) = 33$ : طول ضلع كل مربع 33cm.",
+        "incorrect": "طول الضلع قاسم مشترك للبعدين بالسنتيمتر، وهو أكبرها: استعمل نتيجة السؤال 01."
+      },
+      "solution": {
+        "lines": [
+          "$2{,}64m = 264cm$ و $1{,}65m = 165cm$",
+          "طول الضلع هو $PGCD(264 ; 165)$ ."
+        ],
+        "result": "33\\,cm"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما هو عدد المربعات الناتجة؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "40",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب عدد المربعات على الطول ثم على العرض."
+        }
+      ],
+      "feedback": {
+        "correct": "$8 \\times 5 = 40$ مربعًا.",
+        "incorrect": "اقسم كل بُعد على طول الضلع، ثم اضرب الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "على الطول: $264 \\div 33 = 8$",
+          "على العرض: $165 \\div 33 = 5$",
+          "عدد المربعات: $8 \\times 5 = 40$"
+        ],
+        "result": "40"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "اكتب الكسر $\\dfrac{165}{264}$ (نسبة عرض الصفيحة إلى طولها) على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "5/8",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "55/88",
+          "id": "MISC-IKHTIZAL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 33: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال 01.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{165}{264} = \\dfrac{165 \\div 33}{264 \\div 33}$"
+        ],
+        "result": "\\dfrac{165}{264} = \\dfrac{5}{8}"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

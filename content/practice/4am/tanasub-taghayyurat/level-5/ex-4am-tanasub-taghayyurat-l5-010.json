@@ -1,0 +1,351 @@
+{
+  "id": "ex-4am-tanasub-taghayyurat-l5-010",
+  "lessonCode": "tanasub-taghayyurat",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2024 — أعمدة الكراسي في قاعة الحفلات بتيسمسيلت",
+    "estimatedMinutes": 13,
+    "tags": [
+      "وضعية إدماجية",
+      "كراسي",
+      "تعيين دالة تآلفية",
+      "تناسب التغيّرات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tanasub-taghayyurat_P2",
+      "modelledOn": "BEM 2024 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في مخزن قاعة الحفلات البلدية بتيسمسيلت، يرتّب عامل منظّم بإتقان كراسي بلاستيكية متماثلة بوضع بعضها فوق بعض في أعمدة. لاحظ أن ارتفاع عمود من 3 كراسي هو 102cm ، وأن ارتفاع عمود من 8 كراسي هو 162cm .\nنرمز بـ $h(x)$ لارتفاع عمود من $x$ كرسيًّا (بـ cm)، و $h$ دالة تآلفية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عيّن العبارة الجبرية للدالة $h$ .",
+      "statement": "أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "60",
+          "id": "MISC-TAGHAYYUR-BIDUN-QISMA"
+        },
+        {
+          "value": "-12",
+          "id": "MISC-TAGHAYYUR-TARTIB"
+        },
+        {
+          "value": "1/12",
+          "id": "MISC-BAYANI-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خاصية تناسب التغيّرات: المعامل $a$ هو حاصل قسمة فرق الصورتين على فرق العددين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $\\dfrac{h(8) - h(3)}{8 - 3}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح بالترتيب نفسه في البسط والمقام، وانتبه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{60}{5} = 12$ .",
+        "incorrect": "اقسم فرق الصورتين على فرق العددين، واطرح بالترتيب نفسه في البسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "العبارة الجبرية للدالة التآلفية $h$ هي: $h(x) = ax + b$ .",
+          "إيجاد العدد $a$ (خاصية تناسب التغيّرات):",
+          "$a = \\dfrac{h(x_2) - h(x_1)}{x_2 - x_1}$",
+          "$a = \\dfrac{162 - 102}{8 - 3}$",
+          "$a = \\dfrac{60}{5}$",
+          "$a = 12$"
+        ],
+        "result": "a = 12"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "66",
+      "misconceptionSignatures": [
+        {
+          "value": "34",
+          "id": "MISC-TAGHAYYUR-B-NISBA"
+        },
+        {
+          "value": "12",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$h(3) = 102$ و $h(x) = ax + b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $a$ بقيمته و $x$ بالعدد $3$ ، ثم حلّ المعادلة التي مجهولها $b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$b = 102 - 36 = 66$ .",
+        "incorrect": "بعد حساب $a$ : $b = h(x_1) - a x_1$ ، وليس حاصل قسمة الصورة على العدد."
+      },
+      "solution": {
+        "lines": [
+          "إيجاد العدد $b$ (الترتيب إلى المبدأ):",
+          "لدينا: $h(3) = 102$",
+          "أي: $12 \\times 3 + b = 102$",
+          "$36 + b = 102$",
+          "$b = 102 - 36$",
+          "$b = 66$",
+          "ومنه العبارة الجبرية للدالة $h$ هي: $h(x) = 12x + 66$"
+        ],
+        "result": "h(x) = 12x + 66"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "ماذا يمثّل المعامل $a$ في هذه الوضعية؟",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الزيادة في ارتفاع العمود عند إضافة كرسي واحد",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "ارتفاع كرسي واحد",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAALUFI-KHATTIYA-KHALT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $h(x + 1) - h(x)$ بخاصية تناسب التغيّرات."
+        }
+      ],
+      "feedback": {
+        "correct": "$h(x + 1) - h(x) = a$ : الكرسي المضاف يدخل جزئيا في الذي تحته.",
+        "incorrect": "قارن $a$ بارتفاع عمود من كرسي واحد $h(1)$ ."
+      },
+      "solution": {
+        "lines": [
+          "حسب خاصية تناسب التغيّرات: $h(x + 1) - h(x) = a \\times 1 = a$",
+          "إذن $a$ هو الزيادة في ارتفاع العمود عند إضافة كرسي واحد.",
+          "وليس ارتفاع كرسي واحد: الكراسي تتداخل، والارتفاع ليس متناسبا مع عدد الكراسي."
+        ],
+        "result": "الزيادة في ارتفاع العمود عند إضافة كرسي واحد"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب $h(1)$ ، ارتفاع كرسي واحد.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الارتفاع بـ cm",
+      "expectedAnswer": "78",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد $1$ في عبارة $h(x)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب أولا في المعامل، ثم أضف الحدّ الثابت بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$h(1) = 12 + 66 = 78$ .",
+        "incorrect": "اضرب العدد في المعامل ثم أضف الحدّ الثابت بإشارته، ولا تنسه."
+      },
+      "solution": {
+        "lines": [
+          "$h(1) = 12 \\times 1 + 66$",
+          "$h(1) = 12 + 66$",
+          "$h(1) = 78$"
+        ],
+        "result": "h(1) = 78"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ا",
+      "statement": "ارتفاع سقف المخزن 2,40m . ما هو أكبر عدد من الكراسي يمكن وضعه في عمود واحد؟",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الكراسي",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "value": "14,5",
+          "id": "MISC-TAALUFI-SABIQ-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل 2,40m إلى cm ، ثم حلّ المتراجحة $h(x) \\le 240$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد الكراسي عدد طبيعي."
+        }
+      ],
+      "feedback": {
+        "correct": "$12x + 66 \\le 240$ ، إذن $x \\le 14{,}5$ .",
+        "incorrect": "حلّ $12x + 66 \\le 240$ ، ثم خذ أكبر عدد طبيعي يحققها."
+      },
+      "solution": {
+        "lines": [
+          "$2{,}40m = 240cm$",
+          "$12x + 66 \\le 240$",
+          "$12x \\le 174$",
+          "$x \\le 14{,}5$",
+          "أكبر عدد طبيعي يحقق ذلك هو 14: يمكن وضع 14 كرسيا على الأكثر في العمود."
+        ],
+        "result": "14"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ب",
+      "statement": "☜ يجب تخزين 300 كرسي. ما هو أقل عدد من الأعمدة يلزم؟",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الأعمدة",
+      "expectedAnswer": "22",
+      "misconceptionSignatures": [
+        {
+          "value": "21",
+          "id": "MISC-TAALUFI-SABIQ-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في كل عمود 14 كرسيا على الأكثر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 300 على 14 ، ثم فكّر في الكراسي الباقية."
+        }
+      ],
+      "feedback": {
+        "correct": "$300 = 14 \\times 21 + 6$ .",
+        "incorrect": "21 عمودا لا تكفي: انظر إلى باقي قسمة 300 على 14."
+      },
+      "solution": {
+        "lines": [
+          "$300 = 14 \\times 21 + 6$",
+          "21 عمودا من 14 كرسيا تأخذ 294 كرسيا، ويبقى 6 كراسي تحتاج إلى عمود آخر.",
+          "أقل عدد من الأعمدة هو $21 + 1 = 22$ ."
+        ],
+        "result": "22"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

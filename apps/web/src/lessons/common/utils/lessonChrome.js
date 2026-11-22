@@ -6,8 +6,8 @@
  *
  *   • visiteur (MainLayout)      → Navbar `fixed top-0 h-16`, à toutes les tailles
  *   • élève connecté (StudentLayout)
- *       – < lg : en-tête mobile `fixed top-0 h-14`
- *       – ≥ lg : barre latérale seule, AUCUN élément persistant en haut
+ *       – < md (768 px) : en-tête mobile `fixed top-0 h-14`
+ *       – ≥ md : barre latérale seule, AUCUN élément persistant en haut
  *
  * Tout ce qui se colle en haut d'un module (StepProgressBar) et le décalage
  * réservé en haut du module (ModuleLayout) doivent dériver d'ici, jamais
@@ -22,11 +22,11 @@
 /** Hauteur de la Navbar visiteur : `h-16` = 64 px. */
 export const VISITOR_HEADER_H = 16;
 
-/** Hauteur de l'en-tête élève mobile (< lg) : `h-14` = 56 px. */
+/** Hauteur de l'en-tête élève mobile (< md, 768 px) : `h-14` = 56 px. */
 export const STUDENT_MOBILE_HEADER_H = 14;
 
-/** Aucun élément persistant en haut : bureau élève (≥ lg). */
-export const NO_HEADER_H = 0;
+/** Aucun élément persistant en haut : bureau élève (≥ md). */
+const NO_HEADER_H = 0;
 
 // Tailwind ne peut pas interpréter `top-${n}` : les classes doivent exister
 // littéralement dans la source. Ces tables sont l'unique endroit où les
@@ -44,15 +44,15 @@ const PADDING_TOP = {
 };
 
 const LG_STICKY_TOP = {
-  0: 'lg:top-0',
-  14: 'lg:top-14',
-  16: 'lg:top-16',
+  0: 'md:top-0',
+  14: 'md:top-14',
+  16: 'md:top-16',
 };
 
 const LG_PADDING_TOP = {
-  0: 'lg:pt-0',
-  14: 'lg:pt-14',
-  16: 'lg:pt-16',
+  0: 'md:pt-0',
+  14: 'md:pt-14',
+  16: 'md:pt-16',
 };
 
 /**

@@ -1,0 +1,289 @@
+{
+  "id": "ex-2am-silsila-bidun-aqwas-l4-004",
+  "lessonCode": "silsila-bidun-aqwas",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — صندوق المخبزة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "زيادة ونقصان",
+      "سلسلة عمليات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "في صندوق مخبزة 1200 دج في بداية اليوم. باع صاحبها 6 أكياس من الخبز المجفّف، ثمن الكيس 85 دج ، ثم دفع 150 دج للنقل."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ سلسلة عمليات تعطي ما أصبح في الصندوق بعد البيع؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bidun-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$1200 + 6 \\times 85$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$1200 - 6 \\times 85$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SILSILA-STORYSIGN"
+        },
+        {
+          "id": "C",
+          "content": "$6 \\times 1200 + 85$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SILSILA-STORYORDER"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: كل جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل جملة بعملية، بالترتيب الذي جاءت به في القصة."
+        }
+      ],
+      "feedback": {
+        "correct": "$1200 + 6 \\times 85 = 1710$ .",
+        "incorrect": "اكتب جمل القصة بعمليات بالترتيب نفسه، واحرص على إشارة كل عملية: ما يُدفع أو ينقص يُطرح."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة الصحيحة: $1200 + 6 \\times 85$",
+          "$1200 + 510$",
+          "$1710$"
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم دينارًا أصبح في الصندوق بعد البيع؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bidun-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار الجزائري",
+      "expectedAnswer": "1710",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: كل جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل جملة بعملية، بالترتيب الذي جاءت به في القصة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب السلسلة مراعيًا أولوية الضرب والقسمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$1200 + 6 \\times 85 = 1710$ .",
+        "incorrect": "نترجم كل جملة من القصة بعملية بالترتيب نفسه، ثم نحسب السلسلة: الضرب والقسمة أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $1200 + 6 \\times 85$",
+          "$1200 + 510$",
+          "$1710$"
+        ],
+        "result": "1710 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 100
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ثم دفع التاجر 150 دج للنقل. أيّ سلسلة عمليات تعطي ما بقي في الصندوق؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bidun-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$1200 + 6 \\times 85 + 150$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SILSILA-STORYSIGN"
+        },
+        {
+          "id": "B",
+          "content": "$1200 - 6 \\times 85 - 150$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SILSILA-STORYSIGN"
+        },
+        {
+          "id": "C",
+          "content": "$1200 + 6 \\times 85 - 150$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: كل جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل جملة بعملية، بالترتيب الذي جاءت به في القصة."
+        }
+      ],
+      "feedback": {
+        "correct": "$1200 + 6 \\times 85 - 150 = 1560$ .",
+        "incorrect": "اكتب جمل القصة بعمليات بالترتيب نفسه، واحرص على إشارة كل عملية: ما يُدفع أو ينقص يُطرح."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة الصحيحة: $1200 + 6 \\times 85 - 150$",
+          "$1200 + 510 - 150$",
+          "$1710 - 150$",
+          "$1560$"
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "كم دينارًا بقي في الصندوق؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bidun-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار الجزائري",
+      "expectedAnswer": "1560",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: كل جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل جملة بعملية، بالترتيب الذي جاءت به في القصة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب السلسلة مراعيًا أولوية الضرب والقسمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$1200 + 6 \\times 85 - 150 = 1560$ .",
+        "incorrect": "نترجم كل جملة من القصة بعملية بالترتيب نفسه، ثم نحسب السلسلة: الضرب والقسمة أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $1200 + 6 \\times 85 - 150$",
+          "$1200 + 510 - 150$",
+          "$1710 - 150$",
+          "$1560$"
+        ],
+        "result": "1560 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 100
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "هل يكفي ما في الصندوق لدفع 1600 دج لمورّد الدقيق؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bidun-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العددين المحسوبين بدقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل ما حسبته في الأسئلة السابقة."
+        }
+      ],
+      "feedback": {
+        "correct": "تحقّقت من ذلك بالحساب.",
+        "incorrect": "قارن العددين المحسوبين بدقة قبل أن تحكم."
+      },
+      "solution": {
+        "lines": [
+          "في الصندوق $1560 \\text{ DA}$ .",
+          "$1560 < 1600$ ، إذن لا يكفي."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

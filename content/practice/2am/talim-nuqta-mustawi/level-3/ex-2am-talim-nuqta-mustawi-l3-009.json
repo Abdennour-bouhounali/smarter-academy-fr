@@ -1,0 +1,219 @@
+{
+  "id": "ex-2am-talim-nuqta-mustawi-l3-009",
+  "lessonCode": "talim-nuqta-mustawi",
+  "level": 3,
+  "metadata": {
+    "title": "مثلث قائم متقايس الضلعين ثم مربّع",
+    "estimatedMinutes": 11,
+    "tags": [
+      "مثلث قائم",
+      "مربّع",
+      "عدّ وحدات"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-55",
+      "page": 51,
+      "section": "أتعمّق",
+      "number": 55
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس مبدؤه $O$ ووحدته $1\\,\\mathrm{cm}$ ، نعلّم النقطتين $A(-4\\,;\\,1)$ و $B(-4\\,;\\,-4)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما طول القطعة $[AB]$ بالسنتيمتر ، علمًا أنّ وحدة المعلم $1\\,\\mathrm{cm}$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالسنتيمتر",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-LENSUM",
+          "value": "-3"
+        },
+        {
+          "id": "MISC-NUQTA2-LENOFF",
+          "value": "6"
+        },
+        {
+          "id": "MISC-NUQTA2-LENMAX",
+          "value": "4"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "علّم النقطتين وتأكّد أنّهما على خطّ واحد من الشبكة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ الوحدات بين النقطتين على الشبكة، مرورًا بالمحور إن كان القطعة تقطعه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب عدد الوحدات في طول الوحدة إن طُلبت النتيجة بالمتر أو السنتيمتر."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد الوحدات $5$ فالطول $5\\,\\mathrm{cm}$ .",
+        "incorrect": "القطعة تقع على خطّ من الشبكة: عُدّ وحداتها واحدة واحدة، ومُرّ بالمحور إن كانت تقطعه."
+      },
+      "solution": {
+        "lines": [
+          "القطعة $[AB]$ توازي أحد المحورين",
+          "عدد وحداتها $5$",
+          "الطول $5 \\times 1 = 5\\,\\mathrm{cm}$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عيّن النقطة $C$ ذات الفاصلة الموجبة بحيث يكون المثلث $ABC$ قائمًا في $A$ و $AC = 5\\,\\mathrm{cm}$ ، ثم اكتب إحداثيتيها.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "1",
+        "y": "1"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-WRONGSIDE",
+          "value": {
+            "x": "-9",
+            "y": "1"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختر الاتجاه الذي يوازي أحد المحورين انطلاقًا من الرأس المعلوم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ على الشبكة عدد الوحدات المطلوبة في هذا الاتجاه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقرأ شرط إشارة الفاصلة لتختار بين الجهتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$C(1\\,;\\,1)$ .",
+        "incorrect": "القطعة الجديدة عمودية على $[AB]$ فتوازي أحد المحورين؛ عُدّ وحداتها من $A$ في الجهة التي تعطي فاصلة موجبة."
+      },
+      "solution": {
+        "lines": [
+          "$[AB]$ عمودي على محور الفواصل فـ $[AC]$ أفقيّ",
+          "نُضيف $5$ وحدات إلى فاصلة $A$ فنجد $C(1\\,;\\,1)$"
+        ],
+        "result": "C(1\\,;\\,1)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "عيّن النقطة $D$ بحيث يكون الرباعي $ABDC$ مستطيلًا، ثم اكتب إحداثيتيها.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "1",
+        "y": "-4"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "-4",
+            "y": "1"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNAXIS",
+          "value": {
+            "x": "1",
+            "y": "4"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SIGNLEFT",
+          "value": {
+            "x": "-1",
+            "y": "-4"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في مستطيل أضلاعه توازي المحورين، لكلّ ضلعين متقابلين الفاصلة نفسها أو الترتيب نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الرأس الرابع يأخذ فاصلة أحد الرؤوس المعلومة وترتيب رأس آخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارسم الرؤوس المعلومة على الشبكة وأكمل الشكل ثم اقرأ الرأس الرابع."
+        }
+      ],
+      "feedback": {
+        "correct": "$D(1\\,;\\,-4)$ .",
+        "incorrect": "في مستطيل أضلاعه توازي المحورين، الرأس الرابع يأخذ فاصلة رأس وترتيب رأس آخر من الرؤوس المعلومة."
+      },
+      "solution": {
+        "lines": [
+          "نرسم الرؤوس المعلومة على الشبكة ونكمل المستطيل",
+          "$D(1\\,;\\,-4)$"
+        ],
+        "result": "D(1\\,;\\,-4)"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-aadad-l5-002",
+  "lessonCode": "wadiya-idmajiya-aadad",
+  "level": 5,
+  "metadata": {
+    "title": "سلسلة التفوق، الوضعية 9 — ساحة عمومية مثلثة بالمسيلة",
+    "estimatedMinutes": 14,
+    "tags": [
+      "القاسم المشترك الأكبر",
+      "وضعية"
+    ],
+    "source": {
+      "type": "worksheet",
+      "worksheetId": "tafawwuq-01",
+      "elementId": "ws01-sit-09",
+      "section": "الوضعيات",
+      "number": 9
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تريد بلدية بولاية المسيلة، حفاظًا على نظافة المدينة وجمالها، تهيئة ساحة عمومية مثلثة الشكل أطوال أضلاعها 32m و 60m و 68m، وإحاطتها بأشجار زينة من نفس النوع بحيث تكون في كل ركن من أركانها شجرة، والمسافة بين كل شجرتين متجاورتين هي نفسها وأكبر ما يمكن (عدد طبيعي بالمتر).\n\nالمشتلة التي قصدتها البلدية تعرض أشجارًا أثمانها من 300DA إلى 1200DA حسب نوعيتها.\n\n• تكلفة غرس كل شجرة تمثل 40% من ثمنها المعروض.\n\n• مصاريف النقل 2400DA مهما كان عدد الأشجار.\n\n• خصّصت البلدية لهذه العملية 38800DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "جد أكبر مسافة ممكنة بين شجرتين متجاورتين.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (بالمتر)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة تقسم أطوال الأضلاع الثلاثة لأن في كل ركن شجرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب PGCD(32 ; 60) ثم قاسمه المشترك الأكبر مع 68."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(60 ; 32) = 4 و 4 يقسم 68: أكبر مسافة 4m.",
+        "incorrect": "المسافة قاسم مشترك للأطوال الثلاثة، وهي أكبرها."
+      },
+      "solution": {
+        "lines": [
+          "$60 = 32 \\times 1 + 28$ ، $32 = 28 \\times 1 + 4$ ، $28 = 4 \\times 7 + 0$ : $PGCD(60 ; 32) = 4$",
+          "$68 = 4 \\times 17$ : 4 يقسم 68 أيضًا.",
+          "إذن أكبر مسافة بين شجرتين متجاورتين هي 4m."
+        ],
+        "result": "4\\,m"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب عدد الأشجار التي تُغرس حول الساحة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "40",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حول ساحة مغلقة، عدد الأشجار = المحيط ÷ المسافة بين شجرتين متجاورتين."
+        }
+      ],
+      "feedback": {
+        "correct": "المحيط 160m، و $160 \\div 4 = 40$ شجرة.",
+        "incorrect": "احسب محيط المثلث، ثم اقسمه على المسافة بين شجرتين متجاورتين."
+      },
+      "solution": {
+        "lines": [
+          "محيط الساحة: $32 + 60 + 68 = 160m$",
+          "عدد الأشجار: $160 \\div 4 = 40$"
+        ],
+        "result": "40"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "☜ أعط القيمة التي لا يمكن أن يتجاوزها ثمن الشجرة حتى تتمكن البلدية من إحاطة هذه الساحة حسب الشروط المذكورة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الثمن بالدينار (DA)",
+      "expectedAnswer": "650",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "إذا كان p ثمن الشجرة، فما تكلّفه الشجرة الواحدة (ثمن + غرس) هو p + 40% من p."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المصاريف كلها (الأشجار والغرس والنقل) لا تتجاوز المبلغ المخصّص."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب متراجحة بالمجهول p ثم حُلّها."
+        }
+      ],
+      "feedback": {
+        "correct": "$40 \\times 1{,}4\\,p + 2400 \\leq 38800$ تعطي $p \\leq 650$ .",
+        "incorrect": "لا تنسَ تكلفة الغرس (نسبة من الثمن) ولا مصاريف النقل، ثم حُلّ المتراجحة."
+      },
+      "solution": {
+        "lines": [
+          "تكلفة الشجرة الواحدة: $p + \\dfrac{40}{100}p = 1{,}4\\,p$",
+          "الشرط: $40 \\times 1{,}4\\,p + 2400 \\leq 38800$",
+          "$56\\,p \\leq 36400$",
+          "$p \\leq 36400 \\div 56$",
+          "إذن لا يمكن أن يتجاوز ثمن الشجرة 650DA."
+        ],
+        "result": "p \\leq 650\\,DA"
+      },
+      "work": "optional",
+      "timeSeconds": 480
+    }
+  ]
+}

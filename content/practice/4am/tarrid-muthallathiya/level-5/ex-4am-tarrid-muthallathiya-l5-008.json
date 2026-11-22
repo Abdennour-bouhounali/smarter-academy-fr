@@ -1,0 +1,336 @@
+{
+  "id": "ex-4am-tarrid-muthallathiya-l5-008",
+  "lessonCode": "tarrid-muthallathiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2021 — الأرجوحة في حديقة التجارب بالحامة",
+    "estimatedMinutes": 20,
+    "tags": [
+      "وضعية إدماجية",
+      "جيب التمام",
+      "الجيب",
+      "مثلثان قائمان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tarrid-muthallathiya_P1",
+      "modelledOn": "BEM 2021 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "أرجوحة في حديقة التجارب بالحامة: حبلها المشدود $[OM]$ طوله $2{,}4\\,\\mathrm{m}$ مثبّت في النقطة $O$ ، ومقعدها $M$ في وضع السكون تحت $O$ شاقوليا وعلى ارتفاع $0{,}5\\,\\mathrm{m}$ من الأرض الأفقية. يصل الحبل إلى الوضع $[OP]$ الذي يصنع زاوية قيسها $40^{\\circ}$ مع الشاقول $(OM)$ ، ثم يرجع إلى الوضع $[OQ]$ من الجهة الأخرى بزاوية قيسها $25^{\\circ}$ مع الشاقول. $H$ و $K$ المسقطان العموديان للنقطتين $P$ و $Q$ على $(OM)$ (الشكل المقابل). ويتعاون الأطفال في الحديقة فيتناوبون على الأرجوحة دون تزاحم.",
+    "figure": {
+      "points": {
+        "O": [
+          0.0,
+          0.0
+        ],
+        "M": [
+          0.0,
+          -2.4
+        ],
+        "P": [
+          1.5427,
+          -1.8385
+        ],
+        "Q": [
+          -1.0143,
+          -2.1751
+        ],
+        "H": [
+          0.0,
+          -1.8385
+        ],
+        "K": [
+          0.0,
+          -2.1751
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "P",
+          "label": "2,4 m"
+        },
+        [
+          "O",
+          "Q"
+        ],
+        {
+          "from": "O",
+          "to": "M",
+          "dashed": true
+        },
+        {
+          "from": "H",
+          "to": "P",
+          "dashed": true,
+          "tone": "rose"
+        },
+        {
+          "from": "K",
+          "to": "Q",
+          "dashed": true,
+          "tone": "rose"
+        }
+      ],
+      "rightAngles": [
+        [
+          "O",
+          "H",
+          "P"
+        ],
+        [
+          "O",
+          "K",
+          "Q"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "O",
+          "from": "M",
+          "to": "P",
+          "label": "40°",
+          "radius": 40
+        },
+        {
+          "at": "O",
+          "from": "Q",
+          "to": "M",
+          "label": "25°",
+          "radius": 30
+        }
+      ],
+      "labels": {
+        "O": "n",
+        "M": "s",
+        "P": "e",
+        "Q": "w",
+        "H": "w",
+        "K": "e"
+      },
+      "ariaLabel": "الأرجوحة: الحبل [OP] طوله 2,4 m يصنع 40 درجة مع الشاقول (OM)، والحبل [OQ] يصنع 25 درجة من الجهة الأخرى؛ H و K مسقطا P و Q على (OM)",
+      "maxWidth": 280
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "في المثلث $OHP$ القائم في $H$ ، احسب $OH$ بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-muthallathiya_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m مدوّرا إلى 0,01",
+      "expectedAnswer": "1.84",
+      "misconceptionSignatures": [
+        {
+          "value": "1.54",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "3.13",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $OHP$ القائم في $H$ ، حدّد موقع الضلع المعلوم والضلع المطلوب بالنسبة إلى الزاوية $\\widehat{HOP}$ (مجاور، مقابل أو وتر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة التي تجمع هذين الضلعين هي جيب تمام الزاوية $\\widehat{HOP}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة، اعزل الطول المجهول، ثم احسب بالآلة الحاسبة مبرمجة على الدرجة، ولا تدوّر إلا في النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$OH = 2{,}4 \\times \\cos 40^{\\circ} \\approx 1{,}84\\,\\mathrm{m}$ .",
+        "incorrect": "الطول المطلوب في بسط النسبة: نضرب الطول المعلوم في النسبة المثلثية ولا نقسم عليها؛ والآلة الحاسبة مبرمجة على الدرجة."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $OHP$ القائم في $H$ لدينا: $\\cos\\,\\widehat{HOP} = \\dfrac{OH}{OP}$",
+          "ومنه: $OH = OP \\times \\cos\\,\\widehat{HOP}$",
+          "$OH = 2{,}4 \\times \\cos 40^{\\circ}$",
+          "باستعمال الآلة الحاسبة: $OH \\approx 1{,}8385$"
+        ],
+        "result": "OH \\approx 1{,}84\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج ارتفاع المقعد عن الأرض في الوضع $P$ بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الارتفاع بـ m مدوّرا إلى 0,01",
+      "expectedAnswer": "1.06",
+      "misconceptionSignatures": [
+        {
+          "value": "0.56",
+          "id": "MISC-MUTH-IRTIFA3-AYN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المقعد في $P$ أعلى من $M$ بـ $HM = OM - OH$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تنس أن $M$ نفسها على ارتفاع $0{,}5\\,\\mathrm{m}$ من الأرض."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}5 + (2{,}4 - 2{,}4\\cos 40^{\\circ}) \\approx 1{,}06\\,\\mathrm{m}$ .",
+        "incorrect": "الارتفاع عن الأرض = ارتفاع $M$ + الفرق $HM$ ."
+      },
+      "solution": {
+        "lines": [
+          "$HM = OM - OH = 2{,}4 - 2{,}4 \\times \\cos 40^{\\circ}$",
+          "ارتفاع المقعد في $P$ : $0{,}5 + HM \\approx 0{,}5 + 0{,}5615 = 1{,}0615$"
+        ],
+        "result": "\\approx 1{,}06\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب المسافة الأفقية بين الوضعين $P$ و $Q$ بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-muthallathiya_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: المسافة بـ m مدوّرة إلى 0,01",
+      "expectedAnswer": "2.56",
+      "misconceptionSignatures": [
+        {
+          "value": "4.01",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة الأفقية = $HP + KQ$ (النقطتان على جانبي $(OM)$)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في كل مثلث، المسافة إلى $(OM)$ مقابلة للزاوية عند $O$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}4\\sin 40^{\\circ} + 2{,}4\\sin 25^{\\circ} \\approx 2{,}56\\,\\mathrm{m}$ .",
+        "incorrect": "المسافة إلى الشاقول مقابلة للزاوية عند $O$ : الجيب لا جيب التمام."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $OHP$ : $HP = 2{,}4 \\times \\sin 40^{\\circ}$ ، وفي المثلث $OKQ$ القائم في $K$ : $KQ = 2{,}4 \\times \\sin 25^{\\circ}$",
+          "$HP + KQ \\approx 1{,}5427 + 1{,}0143 = 2{,}5570$"
+        ],
+        "result": "\\approx 2{,}56\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "☜ كم يرتفع المقعد في الوضع $P$ أكثر منه في الوضع $Q$ ؟ (بالتدوير إلى $0{,}01$)",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-muthallathiya_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-muthallathiya_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الفرق بـ m مدوّرا إلى 0,01",
+      "expectedAnswer": "0.34",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المقعد أعلى كلما كان مسقطه على $(OM)$ أقرب إلى $O$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفرق $= OK - OH$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب $OK$ في المثلث $OKQ$ ، ولا تدوّر قبل النهاية."
+        }
+      ],
+      "feedback": {
+        "correct": "$OK - OH = 2{,}4\\cos 25^{\\circ} - 2{,}4\\cos 40^{\\circ} \\approx 0{,}34\\,\\mathrm{m}$ .",
+        "incorrect": "قارن بعدي المسقطين $H$ و $K$ عن $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "$OK = 2{,}4 \\times \\cos 25^{\\circ} \\approx 2{,}1751$",
+          "الفرق $= OK - OH \\approx 2{,}1751 - 1{,}8385 = 0{,}3366$"
+        ],
+        "result": "\\approx 0{,}34\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

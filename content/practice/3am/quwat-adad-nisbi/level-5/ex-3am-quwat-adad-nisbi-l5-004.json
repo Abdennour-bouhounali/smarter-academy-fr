@@ -1,0 +1,347 @@
+{
+  "id": "ex-3am-quwat-adad-nisbi-l5-004",
+  "lessonCode": "quwat-adad-nisbi",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — رقعة الشطرنج وحبّات القمح",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "قوة عدد",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "قرأ أنس في كتاب عن تاريخ الرياضيات قصة رقعة الشطرنج: نضع حبّة قمح في الخانة الأولى، وحبّتين في الثانية، و 4 في الثالثة، وهكذا نضاعف العدد في كل خانة، فيكون في الخانة رقم $n$ عدد من الحبّات يساوي $2^{n-1}$ .\nالجزء الأول: عدد الحبّات.\nالجزء الثاني: كتلة حبّة القمح حوالي $2^{-5}\\,\\mathrm{g}$ . يريد أنس أن يعرف هل تتجاوز حبّات الخانة رقم 21 وحدها كتلة كيس قمح من $25\\,\\mathrm{kg}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "كم حبّة في الخانة رقم 11؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الحبّات",
+      "expectedAnswer": "1024",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-QUWA-POWER-AS-PRODUCT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$a^n$ جداء $n$ عاملًا كلها مساوية للعدد $a$ ، وليس $a \\times n$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوة عدد سالب موجبة إذا كان الأس زوجيًا، وسالبة إذا كان الأس فرديًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه للأقواس: في $-a^n$ يخصّ الأس العدد $a$ وحده، ثم نأخذ المعاكس."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^{10} = 1024$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "في الخانة 11: $2^{11-1} = 2^{10}$",
+          "$2^{10} = 2^{5} \\times 2^{5} = 32 \\times 32 = 1024$"
+        ],
+        "result": "1024"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "عدد حبّات الخانة 21 هو عدد حبّات الخانة 11 مضروبًا في $2^n$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-QUWA-QUOTIENT-EXP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "البسط والمقام قوتان للأساس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل قسمة قوتين لهما الأساس نفسه: نطرح أس المقام من أس البسط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طرح أسّ سالب يعني إضافة معاكسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2^{20}}{2^{10}} = 2^{10}$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الخانة 21: $2^{20}$ ؛ الخانة 11: $2^{10}$",
+          "$\\dfrac{2^{20}}{2^{10}} = 2^{20-10} = 2^{10}$"
+        ],
+        "result": "n = 10"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "كم حبّة في الخانات الخمس الأولى معًا؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الحبّات",
+      "expectedAnswer": "31",
+      "misconceptionSignatures": [
+        {
+          "value": "1024",
+          "id": "MISC-QUWA-SUM-OF-POWERS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب عدد حبّات كل خانة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا نجمع الأسس عند جمع قوى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الأعداد الخمسة."
+        }
+      ],
+      "feedback": {
+        "correct": "$1 + 2 + 4 + 8 + 16 = 31$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$2^{0} + 2^{1} + 2^{2} + 2^{3} + 2^{4} = 1 + 2 + 4 + 8 + 16$",
+          "$= 31$"
+        ],
+        "result": "31"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "كتلة حبّات الخانة 21 بالغرام تكتب على الشكل $2^n$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأس $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "-100",
+          "id": "MISC-QUWA-PRODUCT-MULTIPLY-EXP"
+        },
+        {
+          "value": "25",
+          "id": "MISC-QUWA-EXP-SIGN-SLIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القوى لها الأساس نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء قوتين لهما الأساس نفسه: نجمع الأسس ولا نضربها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه لإشارة كل أس عند الجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^{20} \\times 2^{-5} = 2^{15}$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الكتلة = عدد الحبّات × كتلة حبّة",
+          "$2^{20} \\times 2^{-5} = 2^{20+(-5)} = 2^{15}$"
+        ],
+        "result": "n = 15"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب هذه الكتلة بالغرام.",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الكتلة بـ g",
+      "expectedAnswer": "32768",
+      "misconceptionSignatures": [
+        {
+          "value": "30",
+          "id": "MISC-QUWA-POWER-AS-PRODUCT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$a^n$ جداء $n$ عاملًا كلها مساوية للعدد $a$ ، وليس $a \\times n$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قوة عدد سالب موجبة إذا كان الأس زوجيًا، وسالبة إذا كان الأس فرديًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه للأقواس: في $-a^n$ يخصّ الأس العدد $a$ وحده، ثم نأخذ المعاكس."
+        }
+      ],
+      "feedback": {
+        "correct": "$2^{15} = 32768$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$2^{15} = 2^{10} \\times 2^{5} = 1024 \\times 32$",
+          "$2^{15} = 32768$"
+        ],
+        "result": "32768\\,\\mathrm{g}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "lead": "القرار.",
+      "statement": "هل تتجاوز حبّات الخانة 21 وحدها كتلة كيس من $25\\,\\mathrm{kg}$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_quwat-adad-nisbi_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QUWA-DECISION-UNCHECKED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارجع إلى القيم التي حسبتها في الأسئلة السابقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن العددين قبل أن تقرّر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القرار الصحيح يُبنى على حساب، لا على تخمين."
+        }
+      ],
+      "feedback": {
+        "correct": "$32768\\,\\mathrm{g} \\approx 32{,}8\\,\\mathrm{kg} > 25\\,\\mathrm{kg}$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$25\\,\\mathrm{kg} = 25000\\,\\mathrm{g}$",
+          "$32768 > 25000$ ، إذن نعم، تتجاوز كتلة الكيس."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

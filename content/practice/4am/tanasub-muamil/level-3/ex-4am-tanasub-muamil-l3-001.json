@@ -1,0 +1,214 @@
+{
+  "id": "ex-4am-tanasub-muamil-l3-001",
+  "lessonCode": "tanasub-muamil",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 16 — العدد b",
+    "estimatedMinutes": 8,
+    "tags": [
+      "الجداءان المتصالبان"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-16",
+      "page": 73,
+      "section": "أوظّف تعلّماتي",
+      "number": 16
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "عيّن العدد $b$ إذا علمت أن الجدول الآتي جدول تناسبية:",
+    "table": {
+      "head": [
+        "$b - 1$",
+        "4"
+      ],
+      "rows": [
+        [
+          "$-16$",
+          "$1 - b$"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن $(b - 1)^2 = 64$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في جدول تناسبية، الجداءان المتصالبان متساويان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لاحظ أن $1 - b = -(b - 1)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "الجدول جدول تناسبية، إذن الجداءان المتصالبان متساويان:",
+          "$(b - 1)(1 - b) = 4 \\times (-16)$",
+          "$-(b - 1)(b - 1) = -64$",
+          "$(b - 1)^2 = 64$"
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "استنتج القيمتين الممكنتين للعدد $b$ .",
+      "statement": "القيمة الأصغر:",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب القيمة الأصغر (عدد صحيح، قد يكون سالبا)",
+      "expectedAnswer": "-7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما هما العددان اللذان مربع كل منهما 64 ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب أن $b - 1$ يساوي كلا منهما، ثم احسب $b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "صحيح: هذه هي القيمة الأصغر.",
+        "incorrect": "للمعادلة $X^2 = 64$ حلان متعاكسان."
+      },
+      "solution": {
+        "lines": [
+          "$(b - 1)^2 = 64$ معناه $b - 1 = 8$ أو $b - 1 = -8$",
+          "$b = 9$ أو $b = -7$"
+        ],
+        "result": "b = -7"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "القيمة الأكبر:",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب القيمة الأكبر (عدد صحيح)",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ $b - 1 = 8$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$b - 1 = 8$ يعطي $b = 9$ .",
+        "incorrect": "للمعادلة $X^2 = 64$ حلان متعاكسان."
+      },
+      "solution": {
+        "lines": [
+          "$(b - 1)^2 = 64$ معناه $b - 1 = 8$ أو $b - 1 = -8$",
+          "$b = 9$ أو $b = -7$"
+        ],
+        "result": "b = 9"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "نأخذ $b = 9$ . احسب معامل التناسبية لهذا الجدول.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "-1/2",
+          "id": "MISC-TANASUB-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل التناسبية هو العدد الذي نضرب فيه أعداد السطر الأول لنحصل على أعداد السطر الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم عددا من السطر الثاني على العدد المقابل له من السطر الأول: $\\dfrac{y}{x}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض $b$ بـ 9 في الجدول أولا."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{-16}{8} = \\dfrac{-8}{4} = -2$ .",
+        "incorrect": "معامل التناسبية هو $\\dfrac{y}{x}$ : السطر الثاني على السطر الأول، وليس العكس."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $b = 9$ : $b - 1 = 8$ و $1 - b = -8$",
+          "$\\dfrac{-16}{8} = \\dfrac{-8}{4} = -2$",
+          "معامل التناسبية هو $-2$ ."
+        ],
+        "result": "a = -2"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

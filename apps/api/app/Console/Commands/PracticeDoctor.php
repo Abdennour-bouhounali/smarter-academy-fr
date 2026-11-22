@@ -17,11 +17,20 @@ use Throwable;
  * zéro niveau. Le même piège attend tout déploiement où content/ n'a pas été
  * synchronisé à côté de l'API.
  *
- *   php artisan smarter:practice-doctor [--clear]
+ *   php artisan smarter:practice-doctor [--clear] [--expect-active=SHA256] [--expect-index=SHA256]
+ *
+ * Le déploiement l'exécute après avoir synchronisé content/practice/, avec
+ * les empreintes de active.json et index.generated.json du commit déployé :
+ * un contenu absent, périmé ou lu ailleurs (PRACTICE_*_PATH) fait ÉCHOUER le
+ * déploiement au lieu de laisser chaque aperçu de pratique répondre 422
+ * (incident du 2026-09-25 — le pipeline ne livrait pas content/practice/).
  */
 class PracticeDoctor extends Command
 {
-    protected $signature = 'smarter:practice-doctor {--clear : vide le cache du contenu avant de vérifier}';
+    protected $signature = 'smarter:practice-doctor
+        {--clear : vide le cache du contenu avant de vérifier}
+        {--expect-active= : empreinte SHA-256 attendue de active.json}
+        {--expect-index= : empreinte SHA-256 attendue de index.generated.json}';
 
     protected $description = 'Diagnostique le contenu du moteur d\'exercices (chemin, index, learning points)';
 
@@ -40,6 +49,26 @@ class PracticeDoctor extends Command
             $this->warn('Sur un déploiement, synchronisez content/ ou définissez PRACTICE_CONTENT_PATH.');
 
             return self::FAILURE;
+        }
+
+        // Le serveur lit-il LE contenu du commit déployé ?
+        $fingerprints = [
+            'active.json' => [PracticeCapability::path(), $this->option('expect-active')],
+            'index.generated.json' => [$exercises->contentPath().'/index.generated.json', $this->option('expect-index')],
+        ];
+        foreach ($fingerprints as $name => [$file, $expected]) {
+            if ($file === null || ! is_file($file)) {
+                $this->error("{$name} introuvable (config practice.*_path).");
+
+                return self::FAILURE;
+            }
+            $actual = hash_file('sha256', $file);
+            $this->line(sprintf('%-22s %s  %s', $name, substr($actual, 0, 12), $file));
+            if (is_string($expected) && $expected !== '' && ! hash_equals($expected, $actual)) {
+                $this->error("{$name} ne correspond pas au commit déployé (attendu ".substr($expected, 0, 12).').');
+
+                return self::FAILURE;
+            }
         }
 
         $active = PracticeCapability::activeLessons();

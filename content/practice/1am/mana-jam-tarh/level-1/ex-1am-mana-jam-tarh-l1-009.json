@@ -1,0 +1,133 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l1-009",
+  "lessonCode": "mana-jam-tarh",
+  "level": 1,
+  "metadata": {
+    "title": "العدد الآخر",
+    "estimatedMinutes": 3,
+    "tags": [
+      "حدّا المجموع",
+      "العدد الناقص"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "self-7",
+      "page": 31,
+      "section": "أقوّم تعلّماتي",
+      "number": 7
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "مجموع عددين عشريين هو 61,2، أحد العددين هو 47,85."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "العدد الآخر المطلوب هو:",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "حدّ من حدّي المجموع",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "المجموع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-HUDUD"
+        },
+        {
+          "id": "C",
+          "content": "مجموع العددين 61,2 و 47,85",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "61,2 هو المجموع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العددان اللذان نجمعهما يسمّيان حدّي المجموع."
+        }
+      ],
+      "feedback": {
+        "correct": "نجمع 47,85 والعدد الآخر لنحصل على 61,2: العدد الآخر حدّ من حدّي المجموع.",
+        "incorrect": "المجموع معلوم، والمطلوب أحد العددين اللذين جُمعا."
+      },
+      "solution": {
+        "lines": [
+          "$\\square  + 47{,}85 = 61{,}2$: المجموع 61,2 معلوم.",
+          "العدد الآخر □ حدّ من حدّي المجموع."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب العدد الآخر.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "13.35",
+      "misconceptionSignatures": [
+        {
+          "value": "109.05",
+          "id": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد الآخر أصغر من المجموع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نطرح الحدّ المعلوم من المجموع."
+        }
+      ],
+      "feedback": {
+        "correct": "$61{,}2 - 47{,}85 = 13{,}35$، والتحقق: $13{,}35 + 47{,}85 = 61{,}2$.",
+        "incorrect": "المجموع هو الكل: لإيجاد حدّ، نطرح الحدّ الآخر من المجموع."
+      },
+      "solution": {
+        "lines": [
+          "$\\square + 47{,}85 = 61{,}2$",
+          "$\\square = 61{,}2 - 47{,}85 = 61{,}20 - 47{,}85 = 13{,}35$"
+        ],
+        "result": "13{,}35"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

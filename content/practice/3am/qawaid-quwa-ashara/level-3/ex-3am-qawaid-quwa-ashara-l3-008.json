@@ -1,0 +1,144 @@
+{
+  "id": "ex-3am-qawaid-quwa-ashara-l3-008",
+  "lessonCode": "qawaid-quwa-ashara",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — أيّ كتابة صحيحة؟",
+    "estimatedMinutes": 6,
+    "tags": [
+      "سلسلة حساب",
+      "قوة لقوة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد $K = \\dfrac{(10^{2})^{3}\\times10^{-2}}{10^{5}}$ والعدد $L = (10^{4}\\times10^{-7})^{2}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اختر الكتابة الصحيحة للعدد $K$ على شكل قوة واحدة للعدد 10.",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أوّلًا كلّ قوة على حدة وحدّد أسّها، وانتبه إلى القوى التي بين قوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز الجداءات والقوى لتحصل على قوة واحدة في البسط وقوة واحدة في المقام، ثمّ اقسم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب أسّ البسط وأسّ المقام كلًّا على حدة قبل أن تطرح، وانتبه إلى الإشارات."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$K = 10^{-1}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$K = 10^{-2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QAWAID-QUWA-JAM"
+        },
+        {
+          "id": "C",
+          "content": "$K = 10^{3}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QAWAID-ISHARA"
+        }
+      ],
+      "feedback": {
+        "correct": "$K = 10^{-1}$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب قيمته أو بتطبيق القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$(10^{2})^{3} = 10^{6}$ ، فالبسط $10^{6}\\times10^{-2} = 10^{4}$ .",
+          "$K = \\dfrac{10^{4}}{10^{5}} = 10^{4-5} = 10^{-1}$ ."
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب $L = 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أوّلًا كلّ قوة على حدة وحدّد أسّها، وانتبه إلى القوى التي بين قوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز الجداءات والقوى لتحصل على قوة واحدة في البسط وقوة واحدة في المقام، ثمّ اقسم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب أسّ البسط وأسّ المقام كلًّا على حدة قبل أن تطرح، وانتبه إلى الإشارات."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-6",
+      "misconceptionSignatures": [
+        {
+          "value": "-1",
+          "id": "MISC-QAWAID-QUWA-JAM"
+        },
+        {
+          "value": "-56",
+          "id": "MISC-QAWAID-DARB-ASS"
+        }
+      ],
+      "feedback": {
+        "correct": "$L = 10^{-6}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "داخل القوسين: $10^{4}\\times10^{-7} = 10^{-3}$ .",
+          "ثمّ $L = (10^{-3})^{2} = 10^{(-3) \\times 2} = 10^{-6}$ ."
+        ],
+        "result": "n = -6"
+      }
+    }
+  ]
+}

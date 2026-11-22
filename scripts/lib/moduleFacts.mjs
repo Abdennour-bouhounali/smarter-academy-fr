@@ -10,8 +10,8 @@
 // covered; this module only reports what is verifiably in the source.
 
 import { existsSync, readFileSync } from 'node:fs';
-import { basename, dirname, join, relative, resolve } from 'node:path';
-import { traverse, parseFile, literalValue, repoRoot } from './lessonAst.mjs';
+import { dirname, relative, resolve } from 'node:path';
+import { traverse, parseFile, repoRoot } from './lessonAst.mjs';
 import { buildModuleStream } from './exposureStream.mjs';
 
 const QUESTION_COMPONENTS = ['TapQuestion', 'BatchChoiceQuestion', 'NumericQuestion'];
@@ -93,7 +93,7 @@ function manipulationImports(ast, file) {
  * neither validate:lessons, audit:knowledge, the build nor a page-load smoke
  * reported it.
  */
-function missingKitImports(ast, source) {
+function missingKitImports(ast) {
   const KIT = ['ContentModule', 'TapQuestion', 'BatchChoiceQuestion', 'NumericQuestion',
     'KnowledgeBrick', 'BossFinal', 'PrerequisiteDiagnostic', 'PredictionChips', 'KnowledgeSnapshot'];
   const bound = new Set();

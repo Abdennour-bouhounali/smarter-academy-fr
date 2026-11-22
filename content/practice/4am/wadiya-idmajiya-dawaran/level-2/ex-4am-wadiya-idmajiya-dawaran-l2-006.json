@@ -1,0 +1,87 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-dawaran-l2-006",
+  "lessonCode": "wadiya-idmajiya-dawaran",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — أربعة أعمدة حول حوض",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المربع",
+      "خاصية فيثاغورس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-dawaran_P3",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "أربعة أعمدة إنارة متباعدة بنفس المسافة على حافة حوض دائري نصف قطره $3\\,\\mathrm{m}$ . ينجز العامل التركيب بإتقان، فمن أتقن عمله أدّى الأمانة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "القيمة المضبوطة للمسافة بين عمودين متتاليين:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$6\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-DAIRA-QUTR"
+        },
+        {
+          "id": "B",
+          "content": "$3\\sqrt{3}\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-MARKAZIYA"
+        },
+        {
+          "id": "C",
+          "content": "$3\\sqrt{2}\\,\\mathrm{m}$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$3\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-DIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الزاوية المركزية $90^\\circ$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المثلث الذي رأسه المركز قائم ومتساوي الساقين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خاصية فيثاغورس: $d^2 = 3^2 + 3^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$d^2 = 9 + 9 = 18$ ومنه $d = 3\\sqrt{2}\\,\\mathrm{m}$ .",
+        "incorrect": "$d = r$ صحيح في السداسي فقط؛ هنا المثلث قائم في المركز."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 2
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "id": "ex-4am-misaha-hajm-kura-l4-005",
+  "lessonCode": "misaha-hajm-kura",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — كريات المثلّجات",
+    "estimatedMinutes": 3,
+    "tags": [
+      "حجم الجلة",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_misaha-hajm-kura_P2",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "تصنع آلة المثلّجات كريات على شكل جلة نصف قطرها $3\\,\\mathrm{cm}$ . علبة المثلّجات تسع $1\\,\\mathrm{L} = 1000\\,\\mathrm{cm}^3$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "كم كرية كاملة على الأكثر يمكن صنعها من علبة واحدة؟",
+      "learningPoints": [
+        {
+          "code": "4am_misaha-hajm-kura_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حجم كرية: $36\\pi \\approx 113{,}1\\,\\mathrm{cm}^3$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 1000 على حجم كرية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرية ناقصة لا تُحسب: نأخذ الجزء الصحيح."
+        }
+      ],
+      "feedback": {
+        "correct": "$1000 \\div 113{,}1 \\approx 8{,}8$ : ثماني كريات كاملة.",
+        "incorrect": "لا ندوّر إلى الأعلى: الكرية التاسعة ناقصة."
+      },
+      "difficulty": 4,
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TADWIR",
+          "value": "9"
+        }
+      ]
+    }
+  ]
+}

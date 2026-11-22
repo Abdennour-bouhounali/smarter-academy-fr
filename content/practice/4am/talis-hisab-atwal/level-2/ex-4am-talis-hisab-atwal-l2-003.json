@@ -1,0 +1,198 @@
+{
+  "id": "ex-4am-talis-hisab-atwal-l2-003",
+  "lessonCode": "talis-hisab-atwal",
+  "level": 2,
+  "metadata": {
+    "title": "احسب BC ثم معامل التصغير",
+    "estimatedMinutes": 6,
+    "tags": [
+      "خاصية طالس",
+      "معامل التصغير"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-2",
+      "page": 110,
+      "section": "خاصية طالس",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل، $A$ ، $C$ ، $F$ على استقامة و $A$ ، $B$ ، $E$ على استقامة، و $(EF) \\parallel (BC)$ ؛ $AC = 4{,}5$ ، $AF = 9$ ، $AB = 3$ ، $BE = 3$ و $FE = 10$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0.0,
+          0.0
+        ],
+        "B": [
+          1.408414688358,
+          -2.648842778577
+        ],
+        "E": [
+          2.816829376715,
+          -5.297685557154
+        ],
+        "C": [
+          -2.112622032537,
+          -3.973264167865
+        ],
+        "F": [
+          -4.225244065073,
+          -7.94652833573
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "3"
+        },
+        {
+          "from": "B",
+          "to": "E",
+          "label": "3"
+        },
+        {
+          "from": "A",
+          "to": "C",
+          "label": "4,5"
+        },
+        {
+          "from": "C",
+          "to": "F"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "arrows": 1
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "label": "10",
+          "arrows": 1
+        }
+      ],
+      "ariaLabel": "A و C و F على استقامة و A و B و E على استقامة؛ AC = 4,5 و AF = 9 و AB = 3 و BE = 3 و FE = 10، و (EF) يوازي (BC)",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $BC$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (عشري بالفاصلة مثل 2,75 أو كسر مثل 7/9)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        },
+        {
+          "value": "20",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقط $A$ ، $B$ ، $E$ على استقامة والنقط $A$ ، $C$ ، $F$ على استقامة، و $(BC) \\parallel (EF)$ : المثلثان $ABC$ و $AEF$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب النسب الثلاث المتساوية $\\dfrac{AB}{AE} = \\dfrac{AC}{AF} = \\dfrac{BC}{EF}$ ، واحتفظ بالمساواة التي فيها $BC$ وثلاثة أطوال معلومة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الطول المجهول بالجداء المتصالب (الرابع المتناسب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AC}{AF} = \\dfrac{BC}{EF}$ : $BC = \\dfrac{10 \\times 4{,}5}{9} = 5$ .",
+        "incorrect": "راجع المساواة المختارة: في كل نسبة طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: النقط $A$ ، $B$ ، $E$ على استقامة واحدة، والنقط $A$ ، $C$ ، $F$ على استقامة واحدة، و $(BC) \\parallel (EF)$ .",
+          "حسب خاصية طالس: $\\dfrac{AB}{AE} = \\dfrac{AC}{AF} = \\dfrac{BC}{EF}$",
+          "$\\dfrac{AC}{AF} = \\dfrac{BC}{EF}$ أي $\\dfrac{4{,}5}{9} = \\dfrac{BC}{10}$",
+          "$BC = \\dfrac{10 \\times 4{,}5}{9}$"
+        ],
+        "result": "BC = 5"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب معامل التناسبية $k$ الذي يحوّل المثلث $AEF$ إلى المثلث $ABC$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري أو كسر",
+      "expectedAnswer": "0,5",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-TALIS-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث الأصلي $AEF$ والناتج $ABC$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$k$ = طول من $ABC$ ÷ الطول الموافق له في $AEF$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$k = \\dfrac{AC}{AF} = \\dfrac{4{,}5}{9} = 0{,}5$ : $ABC$ تصغير للمثلث $AEF$ .",
+        "incorrect": "معامل التناسبية k = (طول في المثلث الناتج) ÷ (الطول الموافق له في المثلث الأصلي)؛ راجع أي المثلثين هو الأصلي."
+      },
+      "solution": {
+        "lines": [
+          "$k = \\dfrac{AC}{AF} = \\dfrac{4{,}5}{9}$",
+          "أو $k = \\dfrac{AB}{AE} = \\dfrac{3}{6}$"
+        ],
+        "result": "k = 0{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

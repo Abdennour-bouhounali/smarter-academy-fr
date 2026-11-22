@@ -1,0 +1,91 @@
+{
+  "id": "ex-4am-ikhtizal-kasr-l1-006",
+  "lessonCode": "ikhtizal-kasr",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2023 — العدد B = 1350/1890",
+    "estimatedMinutes": 4,
+    "tags": [
+      "كسر غير قابل للاختزال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_ikhtizal-kasr_P3",
+      "modelledOn": "BEM 2023 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد $B$ حيث:",
+    "formulas": [
+      "B = \\dfrac{1350}{1890}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب العدد $B$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "5/7",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "675/945",
+          "id": "MISC-IKHTIZAL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث أولًا عن القاسم المشترك الأكبر للعددين 1350 و 1890."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر: يصير الكسر غير قابل للاختزال في خطوة واحدة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن البسط والمقام الناتجين أوليان فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 270: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على قاسمهما المشترك الأكبر، لا على قاسم مشترك آخر.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$1890 = 1350 \\times 1 + 540$",
+          "$1350 = 540 \\times 2 + 270$",
+          "$540 = 270 \\times 2 + 0$",
+          "آخر باقٍ غير معدوم هو 270، إذن PGCD(1350 ; 1890) = 270 .",
+          "$B = \\dfrac{1350}{1890} = \\dfrac{1350 \\div 270}{1890 \\div 270}$"
+        ],
+        "result": "B = \\dfrac{1350}{1890} = \\dfrac{5}{7}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

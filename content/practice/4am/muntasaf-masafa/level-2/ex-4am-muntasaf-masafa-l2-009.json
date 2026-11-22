@@ -1,0 +1,68 @@
+{
+  "id": "ex-4am-muntasaf-masafa-l2-009",
+  "lessonCode": "muntasaf-masafa",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — مربع المسافة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المسافة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_muntasaf-masafa_P2",
+      "modelledOn": "act-4"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس: $A(-1\\,;\\,4)$ و $B(4\\,;\\,2)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "احسب $AB^2$ :",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري بالفاصلة (مثل 2,5)",
+      "expectedAnswer": "29",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MASAFA-TARBI",
+          "value": "9"
+        },
+        {
+          "id": "MISC-MAALAM-ISHARA",
+          "value": "21"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الفرقين: فرق الفاصلتين وفرق الترتيبين (النهاية ناقص المبدأ)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ربّع كل فرق ثم اجمع المربعين: هذا مربع المسافة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خذ الجذر التربيعي في الأخير، وبسّطه إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB^2 = 5^2 + (-2)^2 = 25 + 4 = 29$ ، إذن $AB = \\sqrt{29}$ .",
+        "incorrect": "ربّع كل فرق: $(-2)^2 = 4$ ."
+      }
+    }
+  ]
+}

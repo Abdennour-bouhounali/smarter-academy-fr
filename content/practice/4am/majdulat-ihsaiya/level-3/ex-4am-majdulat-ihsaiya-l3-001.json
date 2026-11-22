@@ -1,0 +1,220 @@
+{
+  "id": "ex-4am-majdulat-ihsaiya-l3-001",
+  "lessonCode": "majdulat-ihsaiya",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 7 (ص 99) — دستور بمجال ناقص",
+    "estimatedMinutes": 6,
+    "tags": [
+      "دستور",
+      "مجال",
+      "متوسط"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-7",
+      "page": 99,
+      "section": "أوظّف تعلّماتي",
+      "number": 7
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "حجز أنس سلسلة التمرين 7 في المجال ⁦A1:G1⁩ ، ثم حجز في الخلية B4 الدستور ⁦=MOYENNE(A1:F1)⁩ :",
+    "table": {
+      "head": [
+        "",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "rows": [
+        [
+          "1",
+          "4",
+          "10",
+          "8",
+          "4",
+          "3",
+          "2",
+          "4"
+        ]
+      ],
+      "sheet": true
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما هو العدد الذي يُظهره المجدول في الخلية B4 ؟ دوّره إلى 0,01 .",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري مدوّر إلى 0,01",
+      "expectedAnswer": "5,17",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-IHSA-MAJAL-KHALIYA"
+        },
+        {
+          "value": "4,43",
+          "id": "MISC-IHSA-MAJAL-KHALIYA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور لا يحسب إلا على الخلايا التي في مجاله."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المجال A1:F1 ينتهي عند العمود F : اجمع القيم التي فيه فقط وعُدّها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم المجموع على عدد هذه الخلايا، ثم دوّر."
+        }
+      ],
+      "feedback": {
+        "correct": "المجال A1:F1 يضمّ ست قيم مجموعها 31 : $\\dfrac{31}{6} \\approx 5{,}17$ .",
+        "incorrect": "الدستور يحسب على خلايا مجاله فقط: لا تُدخل الخلية G1 ، واقسم على عدد خلايا المجال."
+      },
+      "solution": {
+        "lines": [
+          "المجال A1:F1 يضمّ القيم 4 ، 10 ، 8 ، 4 ، 3 ، 2 (ست قيم)، ولا يضمّ G1 .",
+          "$4 + 10 + 8 + 4 + 3 + 2 = 31$",
+          "$\\dfrac{31}{6} \\approx 5{,}17$"
+        ],
+        "result": "5{,}17"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "برّر لماذا لا يساوي هذا العدد متوسط السلسلة.",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المجال المكتوب في الدستور بالخلايا التي فيها السلسلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أيّ خلية من السلسلة بقيت خارج المجال؟"
+        }
+      ],
+      "feedback": {
+        "correct": "إجابتك مطابقة للحل النموذجي.",
+        "incorrect": "قارن إجابتك بالحل النموذجي سطرا سطرا."
+      },
+      "solution": {
+        "lines": [
+          "متوسط السلسلة يُحسب على قيمها السبع: $\\dfrac{35}{7} = 5$ .",
+          "المجال A1:F1 لا يشمل الخلية G1 (وفيها القيمة 4)، فالمجدول حسب متوسط ست قيم فقط.",
+          "المجال الصحيح يشمل كل قيم السلسلة، من A1 إلى G1 ."
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "عيّن الدستور الصحيح الذي كان على أنس أن يحجزه.",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "⁦=MEDIANE(A1:G1)⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-WASIT-MUTAWASSIT"
+        },
+        {
+          "id": "B",
+          "content": "⁦MOYENNE(A1:G1)⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-DUSTUR-BILA-ISHARA"
+        },
+        {
+          "id": "C",
+          "content": "⁦=MOYENNE(A1:G1)⁩",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "⁦=MOYENNE(B1:G1)⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MAJAL-KHALIYA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل دستور يبدأ بالإشارة « ⁦=⁩ »، ثم اسم الدالة، ثم المجال بين قوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حدّد أولا المجال الذي يضمّ كل القيم المطلوبة، ولا شيئا غيرها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم اختر الدالة: MAX و MIN للمدى، MEDIANE للوسيط، MOYENNE للمتوسط، MODE للمنوال."
+        }
+      ],
+      "feedback": {
+        "correct": "⁦=MOYENNE(A1:G1)⁩ يُظهر 5 .",
+        "incorrect": "راجع ثلاثة أشياء: الإشارة « ⁦=⁩ » في البداية، الدالة المناسبة للمؤشّر، والمجال الذي يضمّ كل القيم."
+      },
+      "solution": {
+        "lines": [
+          "المجال الصحيح ⁦A1:G1⁩ يضمّ القيم السبع، والدالة MOYENNE تحسب المتوسط.",
+          "الدستور الصحيح: ⁦=MOYENNE(A1:G1)⁩ ، ويُظهر $\\dfrac{35}{7} = 5$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

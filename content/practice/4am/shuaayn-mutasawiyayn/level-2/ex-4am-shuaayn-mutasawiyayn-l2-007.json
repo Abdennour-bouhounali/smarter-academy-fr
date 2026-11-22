@@ -1,0 +1,121 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l2-007",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — طولان متساويان لا يكفيان",
+    "estimatedMinutes": 3,
+    "tags": [
+      "متوازي الأضلاع",
+      "ورقة مرصوفة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_shuaayn-mutasawiyayn_P2",
+      "modelledOn": "method-equal"
+    }
+  },
+  "statement": {
+    "content": "على الورقة المرصوفة (الشكل)، الرباعي EFGH رؤوسه على عقد الشبكة.",
+    "figure": {
+      "points": {
+        "E": [
+          0,
+          0
+        ],
+        "F": [
+          3,
+          1
+        ],
+        "H": [
+          0,
+          3
+        ],
+        "G": [
+          1,
+          6
+        ]
+      },
+      "grid": true,
+      "segments": [
+        [
+          "E",
+          "F"
+        ],
+        [
+          "F",
+          "G"
+        ],
+        [
+          "G",
+          "H"
+        ],
+        [
+          "H",
+          "E"
+        ]
+      ],
+      "labels": {
+        "E": "sw",
+        "F": "se",
+        "G": "ne",
+        "H": "nw"
+      },
+      "ariaLabel": "ورقة مرصوفة: رباعي EFGH رؤوسه على عقد الشبكة"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "هل EFGH متوازي أضلاع؟",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم: لأن رؤوسه على عقد الشبكة",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا: EF = HG في الطول، لكن المستقيمين (EF) و (HG) غير متوازيين",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نعم: لأن EF = HG",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TUL-FAQAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عُدّ المربعات من E إلى F ومن H إلى G."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الحركتين: هل هما متطابقتان؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "شعاعان متساويان: نفس المنحى ونفس الاتجاه ونفس الطول."
+        }
+      ],
+      "feedback": {
+        "correct": "من E إلى F: 3 مربعات أفقيا ومربع عموديا؛ من H إلى G: مربع أفقيا و 3 عموديا. الطولان متساويان والمنحيان مختلفان.",
+        "incorrect": "طولان متساويان لا يكفيان: قارن المنحى."
+      }
+    }
+  ]
+}

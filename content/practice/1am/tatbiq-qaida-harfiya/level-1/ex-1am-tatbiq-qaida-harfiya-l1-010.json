@@ -1,0 +1,197 @@
+{
+  "id": "ex-1am-tatbiq-qaida-harfiya-l1-010",
+  "lessonCode": "tatbiq-qaida-harfiya",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — الأقواس لا تُحذف",
+    "estimatedMinutes": 6,
+    "tags": [
+      "حذف إشارة الضرب",
+      "أقواس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الرابع",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اختر الكتابة الصحيحة في كلّ حالة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نحذف إشارة الضرب في $4\\times(a+b)$ فنكتب:",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$4a+b$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-ORDER"
+        },
+        {
+          "id": "B",
+          "content": "$4(a+b)$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة المحذوفة بين العدد والحرف أو بين حرفين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حذف الإشارة يعني ضربًا، ونكتب العدد قبل الحرف."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب قيمة صغيرة للحرف في كلّ اقتراح وقارن مع العبارة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتابة المختصرة تعني الضرب.",
+        "incorrect": "نحسب ما بين القوسين أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "نحذف إشارة الضرب بين العدد والحرف، أو بين حرفين، أو أمام القوس ونكتب العدد قبل الحرف.",
+          "الكتابة المناسبة: $4(a+b)$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "نحذف إشارة الضرب في $3\\times x$ فنكتب:",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3x$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$3+x$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-PLUS"
+        },
+        {
+          "id": "C",
+          "content": "$x+3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-PLUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الإشارة المحذوفة بين العدد والحرف أو بين حرفين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حذف الإشارة يعني ضربًا، ونكتب العدد قبل الحرف."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب قيمة صغيرة للحرف في كلّ اقتراح وقارن مع العبارة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتابة المختصرة تعني الضرب.",
+        "incorrect": "حذف إشارة الضرب لا يعني الجمع: $3x$ تعني $3\\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "نحذف إشارة الضرب بين العدد والحرف، أو بين حرفين، أو أمام القوس ونكتب العدد قبل الحرف.",
+          "الكتابة المناسبة: $3x$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب قيمة $5(x+2)$ من أجل $x=4$ .",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "22",
+          "id": "MISC-TATBIQ-ORDER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما قيمة كلّ حرف؟ وفي كم موضع يظهر كلّ حرف في العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع القيمة في كلّ موضع يظهر فيه الحرف، وأعد إشارة الضرب بين العددين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب بالأولويات: ما بين القوسين، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: النتيجة $30$ .",
+        "incorrect": "نحسب ما بين القوسين أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "نكتب العبارة: $5(x+2)$ .",
+          "نضع قيمة كلّ حرف في كلّ موضع يظهر فيه: $5\\times (4+2)$ .",
+          "نحسب: $5\\times 6$ .",
+          "نحسب: $30$ .",
+          "الجواب: $30$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

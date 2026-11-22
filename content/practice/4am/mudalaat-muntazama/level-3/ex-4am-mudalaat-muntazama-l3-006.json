@@ -1,0 +1,64 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l3-006",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — زاوية المضلع ذي 12 ضلعا",
+    "estimatedMinutes": 3,
+    "tags": [
+      "زاوية المضلع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mudalaat-muntazama_P2",
+      "modelledOn": "method-angle"
+    }
+  },
+  "statement": {
+    "content": "زخرفة دائرية في سقف قصر الباي بقسنطينة على شكل مضلع منتظم ذي 12 ضلعا."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "قيس زاوية هذا المضلع (بين ضلعين متتاليين، بالدرجات):",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح (بالدرجات)",
+      "expectedAnswer": "150",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUNTAZAM-MARKAZIYA",
+          "value": "30"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالزاوية المركزية التي تحصر ضلعا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المثلث الذي رأسه المركز وقاعدته ضلع متساوي الساقين: احسب زاويتي قاعدته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زاوية المضلع ضعف زاوية قاعدة هذا المثلث."
+        }
+      ],
+      "feedback": {
+        "correct": "الزاوية المركزية $30^\\circ$ ، وزاوية المضلع $180^\\circ - 30^\\circ$ .",
+        "incorrect": "زاوية المضلع = $180^\\circ$ ناقص الزاوية المركزية."
+      },
+      "difficulty": 3
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "id": "ex-4am-nashr-tabsit-l4-009",
+  "lessonCode": "nashr-tabsit",
+  "level": 4,
+  "metadata": {
+    "title": "جداءان بإشارات، وحساب متمعّن",
+    "estimatedMinutes": 8,
+    "tags": [
+      "أقواس مسبوقة بـ −",
+      "حساب متمعّن"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_nashr-tabsit_P4",
+      "modelledOn": "ex-7",
+      "adaptedFrom": "ex-4am-nashr-tabsit-l4-009"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارة $S$ حيث:",
+    "formulas": [
+      "S = x(x - 4) - (x - 2)(x + 2)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انشر وبسّط العبارة $S$ (انشر كل حد في كل حد).",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P4",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $S$ على الشكل $ax + b$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-NASHR-HAD-WAHID"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب كل حد من القوس الأول في كل حد من القوس الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عند حذف قوسين مسبوقين بإشارة $-$ تتغيّر إشارة كل حد بداخلهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x$ معًا، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = -4x + 4$ إذن $a = -4$.",
+        "incorrect": "أعد النشر حدًّا حدًّا، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$S = x(x - 4) - (x - 2)(x + 2)$",
+          "$S = x \\times x - x \\times 4 - (x \\times x + x \\times 2 - 2 \\times x - 2 \\times 2)$",
+          "$S = x^2 - 4x - (x^2 + 2x - 2x - 4)$",
+          "$S = x^2 - 4x - x^2 - 2x + 2x + 4$"
+        ],
+        "result": "S = -4x + 4"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P4",
+          "role": "primary"
+        },
+        {
+          "code": "4am_nashr-tabsit_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $S$ على الشكل $ax + b$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "-4",
+          "id": "MISC-NASHR-QAWS-SALIB"
+        },
+        {
+          "value": "0",
+          "id": "MISC-NASHR-HAD-WAHID"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = -4x + 4$ إذن $b = 4$.",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $b$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$S = -4x + 4$"
+        ],
+        "result": "b = 4"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "استنتج قيمة العدد $2024 \\times 2020 - 2022 \\times 2026$ .",
+      "learningPoints": [
+        {
+          "code": "4am_nashr-tabsit_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح (قد يكون سالبًا)",
+      "expectedAnswer": "-8092",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما قيمة $x$ التي تجعل $x(x - 4) = 2024 \\times 2020$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من أجل $x = 2024$ : $x - 2 = 2022$ و $x + 2 = 2026$ ؛ عوّض في الشكل المبسّط."
+        }
+      ],
+      "feedback": {
+        "correct": "هذا العدد هو $S$ من أجل $x = 2024$ : $-4 \\times 2024 + 4$ .",
+        "incorrect": "لاحظ أن هذا العدد هو قيمة $S$ من أجل قيمة معيّنة لـ $x$ ، ثم عوّض في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $x = 2024$ : $S = 2024 \\times 2020 - 2022 \\times 2026$",
+          "وباستعمال الشكل المبسّط: $S = -4 \\times 2024 + 4 = -8096 + 4$"
+        ],
+        "result": "2024 \\times 2020 - 2022 \\times 2026 = -8092"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

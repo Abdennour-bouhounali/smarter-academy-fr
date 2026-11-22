@@ -1,0 +1,393 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l5-001",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — نقل الرمل بشاحنات صغيرة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "قسمة عشرية",
+      "جدول",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "3am-s1-112",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: تريد مصلحة البلدية نقل رمل وزنه $27{,}34$ t بواسطة شاحنات صغيرة سعة حمولة كلّ منها $4$ t . أكمل الجدول ثمّ أجب.\nالجزء الثاني: كراء الشاحنة الواحدة $3500$ دج لليوم الواحد، وميزانية البلدية $25000$ دج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أنجز القسمة $27{,}34 \\div 4$ وأعط الحاصل كاملًا.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "6.835",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل المقسوم عليه إلى عدد طبيعي بضرب الحدّين في العدد نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة على العدد الطبيعي، واضبط الفاصلة في الحاصل عند الوصول إلى الأرقام التي بعد فاصلة المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$27{,}34 \\div 4 = 27{,}34 \\div 4 = 6{,}835$.",
+        "incorrect": "اضرب الحدّين في العدد نفسه ثم أنجز القسمة على العدد الطبيعي، وتحقّق بضرب الحاصل في المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$27{,}34 \\div 4 = 27{,}34 \\div 4$",
+          "$4 \\times 6{,}835 = 27{,}34$"
+        ],
+        "result": "6{,}835"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "أكمل الجدول:",
+      "statement": "أعط القيمة المقرّبة إلى الوحدة بالنقصان لحاصل القسمة $27{,}34 \\div 4$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-QARIBA-ROUNDED"
+        },
+        {
+          "value": "6.8",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالنقصان لا تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة دون أن تزيد شيئًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب القيمة في المقسوم عليه: يجب ألاّ يتجاوز الجداء المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 < \\frac{27{,}34}{4} < 7$.",
+        "incorrect": "بالنقصان: نحتفظ بالأرقام حتى الرتبة المطلوبة ونُهمل ما بعدها دون تغيير الرقم الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$4 \\times 6 = 24$",
+          "$4 \\times 7 = 28$",
+          "$24 < 27{,}34 < 28$"
+        ],
+        "result": "6"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أعط القيمة المقرّبة إلى الوحدة بالزيادة لحاصل القسمة $27{,}34 \\div 4$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "6.9",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالزيادة هي أصغر قيمة من هذه الرتبة تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من القيمة بالنقصان ثم أضف وحدة واحدة من الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$6 < \\frac{27{,}34}{4} < 7$.",
+        "incorrect": "بالزيادة: هي القيمة التي تلي القيمة بالنقصان مباشرة في الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$4 \\times 7 = 28$",
+          "$28 > 27{,}34$",
+          "القيمة بالزيادة هي $7$"
+        ],
+        "result": "7"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}01$ بالنقصان لحاصل القسمة $27{,}34 \\div 4$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "6.83",
+      "misconceptionSignatures": [
+        {
+          "value": "6.84",
+          "id": "MISC-QARIBA-ROUNDED"
+        },
+        {
+          "value": "6.835",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالنقصان لا تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة دون أن تزيد شيئًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب القيمة في المقسوم عليه: يجب ألاّ يتجاوز الجداء المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$6{,}83 < \\frac{27{,}34}{4} < 6{,}84$.",
+        "incorrect": "بالنقصان: نحتفظ بالأرقام حتى الرتبة المطلوبة ونُهمل ما بعدها دون تغيير الرقم الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$4 \\times 6{,}83 = 27{,}32$",
+          "$4 \\times 6{,}84 = 27{,}36$",
+          "$27{,}32 < 27{,}34 < 27{,}36$"
+        ],
+        "result": "6{,}83"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "د",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}01$ بالزيادة لحاصل القسمة $27{,}34 \\div 4$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "6.84",
+      "misconceptionSignatures": [
+        {
+          "value": "6.83",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "6.835",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالزيادة هي أصغر قيمة من هذه الرتبة تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من القيمة بالنقصان ثم أضف وحدة واحدة من الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$6{,}83 < \\frac{27{,}34}{4} < 6{,}84$.",
+        "incorrect": "بالزيادة: هي القيمة التي تلي القيمة بالنقصان مباشرة في الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$4 \\times 6{,}84 = 27{,}36$",
+          "$27{,}36 > 27{,}34$",
+          "القيمة بالزيادة هي $6{,}84$"
+        ],
+        "result": "6{,}84"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "كم شاحنة صغيرة يلزم استعمالها لنقل كلّ الرمل؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        },
+        {
+          "id": "B",
+          "content": "$27$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$7$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$8$",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الشاحنات المملوءة تماما لا تنقل كلّ الرمل."
+        }
+      ],
+      "feedback": {
+        "correct": "بالزيادة إلى الوحدة: $7$ شاحنات.",
+        "incorrect": "ما يبقى من الرمل بعد الشاحنات المملوءة يحتاج إلى شاحنة أخرى."
+      },
+      "solution": {
+        "lines": [
+          "$6 < \\dfrac{27{,}34}{4} < 7$",
+          "نحتاج $7$ شاحنات"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "lead": "الجزء الثاني:",
+      "statement": "هل تكفي ميزانية البلدية لكراء هذا العدد من الشاحنات ليوم واحد؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أو قارن بدقّة قبل أن تجيب."
+        }
+      ],
+      "feedback": {
+        "correct": "$7 \\times 3500 = 24500 \\le 25000$ : نعم تكفي.",
+        "incorrect": "احسب كلفة الشاحنات السبع وقارنها بالميزانية."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 3500 = 24500$",
+          "$24500 \\le 25000$ : الميزانية تكفي"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

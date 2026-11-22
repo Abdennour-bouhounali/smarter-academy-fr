@@ -1,0 +1,217 @@
+{
+  "id": "ex-4am-awwaliyan-fima-baynahuma-l3-010",
+  "lessonCode": "awwaliyan-fima-baynahuma",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2025 — PGCD(2002 ; 1287)",
+    "estimatedMinutes": 10,
+    "tags": [
+      "خوارزمية إقليدس",
+      "إثبات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_awwaliyan-fima-baynahuma_P2",
+      "modelledOn": "BEM 2025 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب: PGCD(2002 ; 1287).",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "143",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 2002 على 1287: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (2002 ; 1287) بالزوج (1287 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 143.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$2002 = 1287 \\times 1 + 715$",
+          "$1287 = 715 \\times 1 + 572$",
+          "$715 = 572 \\times 1 + 143$",
+          "$572 = 143 \\times 4 + 0$",
+          "آخر باقٍ غير معدوم هو 143، إذن:"
+        ],
+        "result": "PGCD(2002 ; 1287) = 143"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "ليكن $d$ القاسم المشترك الأكبر الذي وجدته في 01. عيّن العددين الطبيعيين $a$ و $b$ حيث: $2002 = d \\times a$ و $1287 = d \\times b$ .",
+      "statement": "العدد $a$ .",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "14",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل قيمة $d$ التي وجدتها في 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$a = 2002 \\div d$"
+        }
+      ],
+      "feedback": {
+        "correct": "$2002 \\div 143 = 14$",
+        "incorrect": "اقسم 2002 على القاسم المشترك الأكبر الذي وجدته في 01."
+      },
+      "solution": {
+        "lines": [
+          "$a = 2002 \\div 143 = 14$"
+        ],
+        "result": "a = 14"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "العدد $b$ .",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل قيمة $d$ التي وجدتها في 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$b = 1287 \\div d$"
+        }
+      ],
+      "feedback": {
+        "correct": "$1287 \\div 143 = 9$",
+        "incorrect": "اقسم 1287 على القاسم المشترك الأكبر الذي وجدته في 01."
+      },
+      "solution": {
+        "lines": [
+          "$b = 1287 \\div 143 = 9$"
+        ],
+        "result": "b = 9"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "بيّن أن العددين $a$ و $b$ أوليان فيما بينهما.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيمة PGCD(14 ; 9) التي وجدتها",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عددان أوليان فيما بينهما: احسب قاسمهما المشترك الأكبر PGCD(14 ; 9)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 14 على 9، ثم واصل القسمات المتتابعة إلى أن تجد باقيًا معدومًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن آخر باقٍ غير معدوم بما يتطلّبه تعريف عددين أوليين فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(14 ; 9) = 1: العددان 14 و 9 أوليان فيما بينهما.",
+        "incorrect": "راجع القسمات المتتابعة باقيًا باقيًا: آخر باقٍ غير معدوم هو القاسم المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "$a = 14$ و $b = 9$ .",
+          "باستعمال خوارزمية إقليدس:",
+          "$14 = 9 \\times 1 + 5$",
+          "$9 = 5 \\times 1 + 4$",
+          "$5 = 4 \\times 1 + 1$",
+          "$4 = 1 \\times 4 + 0$",
+          "آخر باقٍ غير معدوم هو 1، إذن PGCD(14 ; 9) = 1 .",
+          "ومنه العددان 14 و 9 أوليان فيما بينهما."
+        ],
+        "result": "PGCD(14 ; 9) = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

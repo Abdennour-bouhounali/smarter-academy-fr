@@ -1,0 +1,174 @@
+{
+  "id": "ex-1am-qawaid-qabiliyat-qisma-l3-009",
+  "lessonCode": "qawaid-qabiliyat-qisma",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — القسمة على 4 مرّتان على 2",
+    "estimatedMinutes": 6,
+    "tags": [
+      "القسمة على 4",
+      "حساب ذهني"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لاحظ: $48 \\div 2 = 24$ ثم $24 \\div 2 = 12$ ، و $48 \\div 4 = 12$. لقسمة عدد على 4 يمكن قسمته على 2 مرّتين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب ذهنيًا حاصل قسمة العدد 216 على 4.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "54",
+      "misconceptionSignatures": [
+        {
+          "value": "108",
+          "id": "MISC-QABILIYA-ZAWJI-4"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم 216 على 2."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم النتيجة مرّة أخرى على 2."
+        }
+      ],
+      "feedback": {
+        "correct": "$216 \\div 2 = 108$ ثم $108 \\div 2 = 54$.",
+        "incorrect": "نقسم على 2 مرّتين، لا مرّة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "$216 \\div 2 = 108$",
+          "$108 \\div 2 = 54$ ، إذن $216 = 4 \\times 54$."
+        ],
+        "result": "54"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب ذهنيًا حاصل قسمة العدد 1048 على 4.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "262",
+      "misconceptionSignatures": [
+        {
+          "value": "524",
+          "id": "MISC-QABILIYA-ZAWJI-4"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم 1048 على 2."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم النتيجة مرّة أخرى على 2."
+        }
+      ],
+      "feedback": {
+        "correct": "$1048 \\div 2 = 524$ ثم $524 \\div 2 = 262$.",
+        "incorrect": "نقسم على 2 مرّتين، لا مرّة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "$1048 \\div 2 = 524$",
+          "$524 \\div 2 = 262$ ، إذن $1048 = 4 \\times 262$."
+        ],
+        "result": "262"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "$2018 \\div 2 = 1009$. هل يقبل العدد 2018 القسمة على 4؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-ZAWJI-4"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى العدد المشكّل من رقمي الآحاد والعشرات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل هذا العدد المكوّن من رقمين يقبل القسمة على 4؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يكفي أن يكون العدد زوجيًا."
+        }
+      ],
+      "feedback": {
+        "correct": "العدد المشكّل من رقمي آحاد وعشرات 2018 هو 18، و 18 لا يقبل القسمة على 4.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 4 إذا كان العدد المشكّل من رقمي آحاده وعشراته يقبل القسمة على 4."
+      },
+      "solution": {
+        "lines": [
+          "العدد المشكّل من رقمي آحاد وعشرات 2018 هو 18، و 18 لا يقبل القسمة على 4.",
+          "$2018 = 4 \\times 504 + 2$ ، الباقي 2 غير معدوم."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": "ex-4am-khawas-dawaran-l1-002",
+  "lessonCode": "khawas-dawaran",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — مروحة سقف في مقهى",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الأطوال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_khawas-dawaran_P1",
+      "modelledOn": "know-3"
+    }
+  },
+  "generator": {
+    "tool": "u13-khawas-dawaran/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "مروحة سقف في مقهى بوهران: الشفرة [OA] طولها $60\\,\\mathrm{cm}$ ، تدور حول المحور O بزاوية $72^\\circ$ في الاتجاه المباشر فتصل إلى [OA′]."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما الطول $OA'$ بالسنتيمتر؟",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "60",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-KHAWAS",
+          "value": "132"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "A′ صورة A بالدوران الذي مركزه O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "صورة نقطة: نفس البعد عن المركز."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الدوران لا يمطّط الشفرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$OA' = OA = 60\\,\\mathrm{cm}$ : الدوران يحافظ على الأطوال.",
+        "incorrect": "لا تُجمع زاوية الدوران مع الطول."
+      }
+    }
+  ]
+}

@@ -1,0 +1,290 @@
+{
+  "id": "ex-4am-tarrid-taalufi-l3-007",
+  "lessonCode": "tarrid-taalufi",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2007 — تسعيرتا شركة لنقل الطرود",
+    "estimatedMinutes": 12,
+    "tags": [
+      "تسعيرتان",
+      "متراجحة",
+      "أفضل تسعيرة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tarrid-taalufi_P2",
+      "modelledOn": "BEM 2007 II (02، 03)"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2007",
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "تقترح شركة لنقل الطرود بين الولايات، تلتزم بالأمانة وبمواعيدها، على التجّار التسعيرتين التاليتين:\n- التسعيرة الأولى: 30DA للكيلوغرام الواحد.\n- التسعيرة الثانية: 18DA للكيلوغرام الواحد مع اشتراك شهري قدره 1500DA .\nليكن $x$ كتلة الطرود المرسلة في الشهر بالكيلوغرام، و $y_1$ ، $y_2$ المبلغين بـ DA حسب التسعيرتين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عبّر عن $y_1$ و $y_2$ بدلالة $x$ .",
+      "statement": "أعط العدد $a$ حيث: $y_1 = ax$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "30",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع عن كل كيلوغرام في التسعيرة الأولى؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هو ما يُدفع $x$ مرّة: معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "ما يُدفع عن كل كيلوغرام في التسعيرة الأولى هو معامل $x$ .",
+        "incorrect": "معامل $x$ هو المبلغ الذي يتكرّر مع كل وحدة، لا المبلغ الذي يُدفع مرّة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "التسعيرة الأولى: $y_1 = 30x$",
+          "التسعيرة الثانية: $y_2 = 18x + 1500$"
+        ],
+        "result": "y_1 = 30x"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "أعط العددين $a$ و $b$ حيث: $y_2 = ax + b$ ، ابدأ بالعدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "18",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "1500"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع عن كل كيلوغرام في التسعيرة الثانية؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هو ما يُدفع $x$ مرّة: معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "ما يُدفع عن كل كيلوغرام في التسعيرة الثانية هو معامل $x$ .",
+        "incorrect": "معامل $x$ هو المبلغ الذي يتكرّر مع كل وحدة، لا المبلغ الذي يُدفع مرّة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "التسعيرة الأولى: $y_1 = 30x$",
+          "التسعيرة الثانية: $y_2 = 18x + 1500$"
+        ],
+        "result": "y_2 = 18x + 1500"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "ثم العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "1500",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "18"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع مرّة واحدة (الاشتراك الشهري)؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الاشتراك الشهري يُدفع مرّة واحدة: هو الحدّ الثابت $b$ .",
+        "incorrect": "الحدّ الثابت لا يتعلّق بعدد الوحدات $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "التسعيرة الأولى: $y_1 = 30x$",
+          "التسعيرة الثانية: $y_2 = 18x + 1500$"
+        ],
+        "result": "y_2 = 18x + 1500"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "حل المتراجحة: $30x > 18x + 1500$ .\nحدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x < k$ أو $x > k$ : اكتب العدد $k$ فقط",
+      "expectedAnswer": "125",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحدّ هو حل المعادلة المرفقة $30x = 18x + 1500$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "حدّ الحلول هو حل المعادلة المرفقة.",
+        "incorrect": "انقل حدود $x$ إلى طرف واحد ثم اقسم على معامل $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$30x > 18x + 1500$",
+          "$12x > 1500$",
+          "$x > 125$",
+          "التسعيرة الأولى أغلى عندما تتجاوز الكتلة 125kg ."
+        ],
+        "result": "x > 125"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < 125$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QALB-ZAID"
+        },
+        {
+          "id": "B",
+          "content": "$x > 125$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قسمنا في آخر سطر على عدد موجب."
+        }
+      ],
+      "feedback": {
+        "correct": "التسعيرة الأولى أغلى عندما تتجاوز الكتلة هذا الحدّ.",
+        "incorrect": "القسمة على عدد موجب لا تغيّر اتجاه المتباينة."
+      },
+      "solution": {
+        "lines": [
+          "$30x > 18x + 1500$",
+          "$12x > 1500$",
+          "$x > 125$",
+          "التسعيرة الأولى أغلى عندما تتجاوز الكتلة 125kg ."
+        ],
+        "result": "x > 125"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "يرسل تاجر 80kg من الطرود في الشهر. ما هي التسعيرة الأفضل له؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "التسعيرة الأولى",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "التسعيرة الثانية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 80 بحدّ حلول المتراجحة."
+        }
+      ],
+      "feedback": {
+        "correct": "لـ 80kg : 2400DA مقابل 2940DA .",
+        "incorrect": "استعمل نتيجة المتراجحة أو احسب المبلغين."
+      },
+      "solution": {
+        "lines": [
+          "$80 < 125$ : التسعيرة الأولى ليست أغلى.",
+          "تحقق: $y_1 = 30 \\times 80 = 2400DA$ و $y_2 = 18 \\times 80 + 1500 = 2940DA$ .",
+          "إذا التسعيرة الأولى أفضل لهذا التاجر."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

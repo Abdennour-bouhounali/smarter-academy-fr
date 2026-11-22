@@ -1,0 +1,107 @@
+{
+  "id": "ex-4am-khawas-dawaran-l3-002",
+  "lessonCode": "khawas-dawaran",
+  "level": 3,
+  "metadata": {
+    "title": "من الكتاب — دوري الآن (ص 155)",
+    "estimatedMinutes": 3,
+    "tags": [
+      "صورة زاوية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "now-155",
+      "page": 155,
+      "section": "دوري الآن"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 155): $\\widehat{AOB}$ زاوية قيسها $45^\\circ$ . نُنشئ صورتها $\\widehat{A'O'B'}$ بالدوران الذي مركزه K و زاويته $60^\\circ$ في الاتجاه المباشر.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          2.121,
+          2.121
+        ],
+        "B": [
+          4,
+          0
+        ],
+        "K": [
+          5,
+          -1
+        ]
+      },
+      "rays": [
+        {
+          "from": "O",
+          "through": "A"
+        },
+        {
+          "from": "O",
+          "through": "B"
+        }
+      ],
+      "angles": [
+        {
+          "at": "O",
+          "from": "B",
+          "to": "A",
+          "label": "45°"
+        }
+      ],
+      "ariaLabel": "الزاوية AOB قيسها 45 درجة والنقطة K",
+      "maxWidth": 380
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قيس الزاوية $\\widehat{A'O'B'}$ بالدرجات؟",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "45",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-KHAWAS",
+          "value": "105"
+        },
+        {
+          "id": "MISC-DAWARAN-RAS-ZAWIYA",
+          "value": "60"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ننشئ O′ ثم A′ و B′."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\widehat{A'O'B'}$ صورة $\\widehat{AOB}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زاوية الدوران ليست قيس الصورة."
+        }
+      ],
+      "feedback": {
+        "correct": "الدوران يحافظ على الزوايا: $\\widehat{A'O'B'} = \\widehat{AOB}$ .",
+        "incorrect": "لا نضيف زاوية الدوران ولا نعوّضها: الدوران يحافظ على الزوايا."
+      }
+    }
+  ]
+}

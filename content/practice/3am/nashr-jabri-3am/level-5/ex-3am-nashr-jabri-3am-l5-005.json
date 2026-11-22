@@ -1,0 +1,317 @@
+{
+  "id": "ex-3am-nashr-jabri-3am-l5-005",
+  "lessonCode": "nashr-jabri-3am",
+  "level": 5,
+  "metadata": {
+    "title": "تحدّي: نزيد كلّ بعد فتزداد المساحة",
+    "estimatedMinutes": 14,
+    "tags": [
+      "وضعية إدماجية",
+      "نشر",
+      "مساحة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "challenge",
+      "page": 54,
+      "section": "تحدّي"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "نريد أن نعرف بكم تزداد مساحة مستطيل إذا زدنا كلّ بعد من بعديه."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "مستطيل نصف محيطه $36\\ \\mathrm{m}$ : بعداه $x$ و $36 - x$ . نزيد كلّ بعد بمقدار $5\\ \\mathrm{m}$ فيصير بعداه $x + 5$ و $41 - x$ .",
+      "statement": "من أجل $x = 10$ : بعدا المستطيل القديم $10$ و $26$ ، والجديد $15$ و $31$ . بكم تزداد مساحته؟",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (m²)",
+      "expectedAnswer": "205",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى واحترم أولويات العمليات والإشارات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القوسين أولًا، ثم الجداءات، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يمكنك التعويض في الشكل المبسّط، ثم تحقّق بالتعويض في الشكل الأصلي."
+        }
+      ],
+      "feedback": {
+        "correct": "تزداد المساحة بـ $205\\ \\mathrm{m}^2$ .",
+        "incorrect": "عوّض $x$ بالعدد المعطى واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$15 \\times 31 - 10 \\times 26 = 465 - 260 = 205$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "انشر المساحة الجديدة $N = (x + 5)(41 - x)$ واكتبها على الشكل $ax^2 + bx + c$ .",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $N$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "36",
+      "misconceptionSignatures": [
+        {
+          "value": "46",
+          "id": "MISC-NASHR-SIGN-NEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني: أربعة جداءات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات الأربعة واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء الأصلي وفي النتيجة: يجب أن تجد العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$N = -x^2 + 36x + 205$ إذن $b = 36$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$N = (x + 5)(41 - x)$",
+          "$N = x \\times 41 - x \\times x + 5 \\times 41 - 5 \\times x$",
+          "$N = -x^2 + 36x + 205$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "الزيادة في المساحة هي $D = (x + 5)(41 - x) - x(36 - x)$ . انشر ثم بسّط، واكتب $D$ على الشكل $ax^2 + bx + c$ .",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $D$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "0",
+      "misconceptionSignatures": [
+        {
+          "value": "72",
+          "id": "MISC-NASHR-SIGN-NEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر كل جداء على حدة وسجّل كل الحدود الناتجة بإشاراتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الحدود المتشابهة فقط (الجزء الحرفي نفسه)، ثم رتّب الحدود: $x^2$ ثم $x$ ثم العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في العبارة الأصلية وفي المبسّطة: يجب أن تجد القيمة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$D = 205$ إذن $b = 0$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$D = (x + 5)(41 - x) - x(36 - x)$",
+          "$D = x \\times 41 - x \\times x + 5 \\times 41 - 5 \\times x - x \\times 36 + x \\times x$",
+          "$D = 205$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "العدد $c$ :",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $D$ على الشكل $ax^2 + bx + c$ : اكتب العدد $c$ فقط",
+      "expectedAnswer": "205",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر كل جداء على حدة وسجّل كل الحدود الناتجة بإشاراتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الحدود المتشابهة فقط (الجزء الحرفي نفسه)، ثم رتّب الحدود: $x^2$ ثم $x$ ثم العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في العبارة الأصلية وفي المبسّطة: يجب أن تجد القيمة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "$D = 205$ إذن $c = 205$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$D = (x + 5)(41 - x) - x(36 - x)$",
+          "$D = x \\times 41 - x \\times x + 5 \\times 41 - 5 \\times x - x \\times 36 + x \\times x$",
+          "$D = 205$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "هل الزيادة في المساحة تساوي $205\\ \\mathrm{m}^2$ مهما كانت قيمة $x$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-DIFFERENT-LOOK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر كل جداء على حدة وسجّل كل الحدود الناتجة بإشاراتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الحدود المتشابهة فقط (الجزء الحرفي نفسه)، ثم رتّب الحدود: $x^2$ ثم $x$ ثم العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في العبارة الأصلية وفي المبسّطة: يجب أن تجد القيمة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم، الطرفان عبارتان متساويتان.",
+        "incorrect": "انشر الطرفين وقارن، أو عوّض $x$ بعددين صغيرين."
+      },
+      "solution": {
+        "lines": [
+          "نعم: $D = 205$ ، عدد لا يتعلّق بـ $x$ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "فسّر بالمساحات لماذا لا تتعلّق الزيادة بـ $x$ : ماذا أضفنا إلى المستطيل القديم؟",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم المستطيل (أو تخيّله) مقسّمًا إلى أجزاء، وسمِّ كل جزء ببعديه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحة المستطيل الكبير = جداء بعديه، وهي أيضًا مجموع مساحات أجزائه (وإذا اقتطعنا جزءًا طرحنا مساحته)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا اقتُطع شريطان يتقاطعان فالمربع المشترك طُرح مرتين: أعده مرة واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "أضفنا شريطًا بعرض $5$ على الطول $x$ ، وشريطًا بعرض $5$ على الطول $36 - x$ ، ثم المربع المشترك $5 \\times 5$ .",
+          "الزيادة $= 5x + 5(36 - x) + 25 = 5 \\times 36 + 25 = 205$ ، ولا تتعلّق إلا بمجموع البعدين $36$ ."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "id": "ex-4am-qasim-mushtarak-akbar-l1-010",
+  "lessonCode": "qasim-mushtarak-akbar",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2009 — 56 و 84",
+    "estimatedMinutes": 4,
+    "tags": [
+      "PGCD"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-mushtarak-akbar_P2",
+      "modelledOn": "BEM 2009 I-4"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "جد القاسم المشترك الأكبر للعددين 56 و 84.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "28",
+      "misconceptionSignatures": [
+        {
+          "value": "14",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قائمة قواسم كل من العددين 56 و 84."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استخرج القواسم المشتركة: الأعداد الموجودة في القائمتين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاسم المشترك الأكبر هو أكبر القواسم المشتركة، لا أيّ واحد منها."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 56 و 84 هي 1 ، 2 ، 4 ، 7 ، 14 ، 28، وأكبرها 28.",
+        "incorrect": "اكتب قائمتي القواسم كاملتين، ثم خذ أكبر عدد يظهر في القائمتين معًا."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 56 هي: 1 ، 2 ، 4 ، 7 ، 8 ، 14 ، 28 ، 56",
+          "قواسم العدد 84 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 7 ، 12 ، 14 ، 21 ، 28 ، 42 ، 84",
+          "القواسم المشتركة للعددين 56 و 84 هي: 1 ، 2 ، 4 ، 7 ، 14 ، 28",
+          "أكبرها هو 28، إذن:"
+        ],
+        "result": "PGCD(56 ; 84) = 28"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

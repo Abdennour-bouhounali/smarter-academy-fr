@@ -1,0 +1,177 @@
+{
+  "id": "ex-4am-natiqa-ghayr-natiqa-l4-006",
+  "lessonCode": "natiqa-ghayr-natiqa",
+  "level": 4,
+  "metadata": {
+    "title": "قطر مستطيل",
+    "estimatedMinutes": 8,
+    "tags": [
+      "قيمة مقربة",
+      "فيثاغورس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_natiqa-ghayr-natiqa_P3",
+      "modelledOn": "ex-25"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ABCD مستطيل طوله $AB = 3cm$ وعرضه $BC = 1cm$ . نسمّي $d$ طول قطره [AC]."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $d^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بـ $cm^2$)",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "16",
+          "id": "MISC-HADD-2AB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث ABC قائم في B."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق خاصية فيثاغورس."
+        }
+      ],
+      "feedback": {
+        "correct": "$d^2 = 3^2 + 1^2 = 10$ .",
+        "incorrect": "الوتر هو [AC]: $AC^2 = AB^2 + BC^2$ ، ولا تجمع الطولين قبل التربيع."
+      },
+      "solution": {
+        "lines": [
+          "المثلث ABC قائم في B، وحسب خاصية فيثاغورس:",
+          "$AC^2 = AB^2 + BC^2 = 3^2 + 1^2 = 9 + 1$"
+        ],
+        "result": "d^2 = 10"
+      },
+      "work": "required",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل $d$ عدد ناطق؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-KULL-JIDHR"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر جوابك، ثم قارن تبريرك بالحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل 10 مربع لعدد ناطق؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$d = \\sqrt{10}$ و $9 < 10 < 16$ : $d$ ليس عددًا ناطقًا.",
+        "incorrect": "قارن 10 بالمربعين التامين 9 و 16."
+      },
+      "solution": {
+        "lines": [
+          "$d = \\sqrt{10}$ ، و $3^2 = 9 < 10 < 16 = 4^2$ : 10 ليس مربعًا لعدد ناطق.",
+          "إذن $d$ ليس عددًا ناطقًا."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أعط القيمة المقربة إلى الجزء من 100 بالنقصان للطول $d$ .",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري برقمين بعد الفاصلة (بـ cm)",
+      "expectedAnswer": "3.16",
+      "misconceptionSignatures": [
+        {
+          "value": "3.17",
+          "id": "MISC-TAQRIB-NAQS-ZIYADA"
+        },
+        {
+          "value": "5",
+          "id": "MISC-JIDHR-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الحاسبة، ثم تحقّق بالتربيع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمة بالنقصان أصغر من العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$3{,}16^2 = 9{,}9856 < 10 < 10{,}0489 = 3{,}17^2$ .",
+        "incorrect": "القيمة بالنقصان هي العدد الأصغر في الحصر إلى الجزء من 100."
+      },
+      "solution": {
+        "lines": [
+          "$3{,}16^2 = 9{,}9856$ و $3{,}17^2 = 10{,}0489$",
+          "$9{,}9856 < 10 < 10{,}0489$ إذن $3{,}16 < d < 3{,}17$"
+        ],
+        "result": "3{,}16 < d"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "id": "ex-4am-majdulat-ihsaiya-l4-008",
+  "lessonCode": "majdulat-ihsaiya",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 24 (ص 101) — سلسلة عشوائية بـ =ALEA()",
+    "estimatedMinutes": 6,
+    "tags": [
+      "دستور",
+      "ALEA",
+      "وسيط",
+      "مدى"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-24",
+      "page": 101,
+      "section": "أتعمّق",
+      "number": 24
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "عندما نحجز الدستور ⁦=ALEA()⁩ في خلية من صفحة مجدول و ننقر على اللمسة ENTER يظهر عدد عشوائي $a$ حيث $0 \\le a < 1$ . حجزنا في الخلية A1 الدستور ⁦=ALEA()⁩ ثم سحبنا الفأرة من A1 إلى A50 ، فتحصّلنا على سلسلة تكرارها الكلي 50 ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن الدستور الذي يُحجز في الخلية B1 ليُظهر وسيط هذه السلسلة.",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "⁦=MOYENNE(A1:A50)⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-WASIT-MUTAWASSIT"
+        },
+        {
+          "id": "B",
+          "content": "⁦MEDIANE(A1:A50)⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-DUSTUR-BILA-ISHARA"
+        },
+        {
+          "id": "C",
+          "content": "⁦=MEDIANE(A1:A50)⁩",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "⁦=MEDIANE(A1:G1)⁩",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MAJAL-KHALIYA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "السلسلة في العمود A ، من الخلية A1 إلى الخلية A50 ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "دالة الوسيط في الكتاب هي MEDIANE ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنس الإشارة « ⁦=⁩ »."
+        }
+      ],
+      "feedback": {
+        "correct": "المجال A1:A50 في العمود A ، والدالة MEDIANE ، والإشارة « ⁦=⁩ » في البداية.",
+        "incorrect": "راجع ثلاثة أشياء: الإشارة « ⁦=⁩ »، دالة الوسيط، والمجال الذي يضمّ الخلايا الخمسين."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة في العمود A من A1 إلى A50 : المجال A1:A50 .",
+          "الدستور: ⁦=MEDIANE(A1:A50)⁩ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ماذا يمكن أن نقول عن العدد الذي يُظهره الدستور ⁦=MAX(A1:A50)-MIN(A1:A50)⁩ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "يساوي 1 دائما",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MADA-AKBAR-QIMA"
+        },
+        {
+          "id": "B",
+          "content": "قد يتجاوز 1",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MADA-AKBAR-QIMA"
+        },
+        {
+          "id": "C",
+          "content": "أصغر من 1 دائما",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل قيمة $a$ في السلسلة تحقّق $0 \\le a < 1$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المدى = أكبر قيمة − أصغر قيمة: ما أكبر ما يمكن أن تكون عليه أكبر قيمة؟ وما أصغر ما يمكن لأصغر قيمة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "أكبر قيمة أصغر من 1 وأصغر قيمة لا تقلّ عن 0 ، فالفرق أصغر من 1 .",
+        "incorrect": "استعمل الحصر $0 \\le a < 1$ لكل قيمة، ثم اطرح."
+      },
+      "solution": {
+        "lines": [
+          "كل قيم السلسلة بين 0 و 1 : أكبر قيمة $M < 1$ وأصغر قيمة $m \\ge 0$ .",
+          "$M - m \\le M < 1$ : المدى أصغر من 1 دائما، مهما ضغطنا على F9 ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

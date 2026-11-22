@@ -1,0 +1,66 @@
+{
+  "id": "ex-4am-misaha-hajm-kura-l5-001",
+  "lessonCode": "misaha-hajm-kura",
+  "level": 5,
+  "metadata": {
+    "title": "وضعية — خزان البلدية",
+    "estimatedMinutes": 4,
+    "tags": [
+      "حجم الجلة",
+      "وحدات",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_misaha-hajm-kura_P3",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "خزان الماء الكروي للبلدية، الذي يحرص العمال على نظافته، نصف قطره الداخلي $5\\,\\mathrm{m}$ . تذكّر: $1\\,\\mathrm{m}^3 = 1000\\,\\mathrm{L}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "كم ألف لتر يسع هذا الخزان؟ (عدد الآلاف مدوّرا إلى الوحدة)",
+      "learningPoints": [
+        {
+          "code": "4am_misaha-hajm-kura_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "524",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\mathcal{V} = \\frac{4}{3}\\pi \\times 125\\,\\mathrm{m}^3$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل $1\\,\\mathrm{m}^3$ ألف لتر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\frac{500}{3}\\pi = 523{,}59\\ldots$ ثم دوّر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\frac{500}{3}\\pi \\approx 523{,}6\\,\\mathrm{m}^3$ أي حوالي $524$ ألف لتر.",
+        "incorrect": "دوّر ولا تبتر: الرقم الموالي 5."
+      },
+      "difficulty": 5,
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TADWIR",
+          "value": "523"
+        }
+      ]
+    }
+  ]
+}

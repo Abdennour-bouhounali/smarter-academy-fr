@@ -1,0 +1,26 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   L'impression A4 d'un rapport de l'établissement (SCHOOL_ADMIN_SPACE.md,
+   phase 5) — pages/school/SchoolReport.jsx. La coquille (barre, outils)
+   porte `print:hidden` ; ici, la page et sa numérotation « صفحة n / N ».
+   ───────────────────────────────────────────────────────────────────────── */
+
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm 12mm 16mm;
+
+    @bottom-center {
+      content: "صفحة " counter(page) " / " counter(pages);
+      font-family: 'Cairo', 'Inter', sans-serif;
+      font-size: 9pt;
+      color: #64748b;
+    }
+  }
+
+  body { background: #fff !important; }
+
+  [data-school-print] { font-size: 10.5pt; }
+  [data-school-print] table { page-break-inside: auto; }
+  [data-school-print] tr { break-inside: avoid; }
+  [data-school-print] thead { display: table-header-group; }
+}

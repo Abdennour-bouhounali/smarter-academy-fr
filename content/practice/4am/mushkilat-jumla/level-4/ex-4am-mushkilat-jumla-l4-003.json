@@ -1,0 +1,239 @@
+{
+  "id": "ex-4am-mushkilat-jumla-l4-003",
+  "lessonCode": "mushkilat-jumla",
+  "level": 4,
+  "metadata": {
+    "title": "شبه منحرف وخاصية طالس",
+    "estimatedMinutes": 12,
+    "tags": [
+      "ترييض",
+      "طالس",
+      "محيط"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-21",
+      "page": 61,
+      "section": "أوظّف تعلّماتي",
+      "number": 21,
+      "adaptedFrom": "ex-4am-mushkilat-jumla-l4-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل: $A$ نقطة من $[EB]$ و $D$ نقطة من $[EC]$ حيث $(AD) \\parallel (BC)$ .\nتعطى الأطوال: $EA = 6cm$ ، $AB = 4cm$ ، $DC = 5cm$ ، ونضع $BC = x$ و $AD = y$ (بالسنتيمتر).\nمحيط شبه المنحرف $ABCD$ يساوي $25cm$ .",
+    "figure": {
+      "points": {
+        "E": [
+          2.188,
+          9.758
+        ],
+        "A": [
+          0.875,
+          3.903
+        ],
+        "B": [
+          0,
+          0
+        ],
+        "D": [
+          6.875,
+          3.903
+        ],
+        "C": [
+          10,
+          0
+        ]
+      },
+      "segments": [
+        [
+          "E",
+          "B"
+        ],
+        [
+          "E",
+          "C"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "A",
+          "D"
+        ]
+      ],
+      "labels": {
+        "E": "n",
+        "A": "w",
+        "B": "sw",
+        "D": "e",
+        "C": "se"
+      },
+      "ariaLabel": "مثلث EBC، النقطة A من [EB] والنقطة D من [EC] والمستقيم (AD) يوازي (BC)؛ ABCD شبه منحرف",
+      "maxWidth": 260
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "باستعمال خاصية طالس، بيّن أن: $3x - 5y = 0$",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$A$ بين $E$ و $B$ : احسب $EB$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب النسب المتساوية في المثلث $EBC$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "النقط $E$ ، $A$ ، $B$ والنقط $E$ ، $D$ ، $C$ في استقامية وبنفس الترتيب، و $(AD) \\parallel (BC)$ .",
+          "حسب خاصية طالس: $\\dfrac{EA}{EB} = \\dfrac{ED}{EC} = \\dfrac{AD}{BC}$",
+          "$EB = EA + AB = 6 + 4 = 10$ ، ومنه: $\\dfrac{6}{10} = \\dfrac{y}{x}$",
+          "$6x = 10y$ أي $3x - 5y = 0$"
+        ]
+      },
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "اكتب جملة معادلتين مجهولاها $x$ و $y$ ، ثم جد الطولين $BC$ و $AD$ .",
+      "statement": "الطول $BC$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الطول بـ cm (عدد فقط)",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المحيط: $AB + BC + CD + DA$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المعادلة الثانية من السؤال 01."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب معادلة المحيط في $5$ ثم اجمعها مع الأخرى."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC = 10cm$ .",
+        "incorrect": "محيط $ABCD$ : $4 + x + 5 + y = 25$ أي $x + y = 16$ ، ثم استعمل معادلة السؤال 01."
+      },
+      "solution": {
+        "lines": [
+          "محيط شبه المنحرف: $4 + x + 5 + y = 25$ أي $x + y = 16$",
+          "ومع معادلة السؤال 01 نحصل على الجملة:",
+          "$\\begin{cases} x + y = 16 & ...(1) \\\\ 3x - 5y = 0 & ...(2) \\end{cases}$",
+          "بضرب طرفي المعادلة (1) في العدد $5$ نجد:",
+          "$\\begin{cases} 5x + 5y = 80 \\\\ 3x - 5y = 0 \\end{cases}$",
+          "بجمع المعادلتين طرفا لطرف نجد: $8x = 80$",
+          "ومنه: $x = \\dfrac{80}{8} = 10$",
+          "بتعويض قيمة $x$ في المعادلة (1) نجد: $10 + y = 16$",
+          "$y = 6$",
+          "التحقق: $4 + 10 + 5 + 6 = 25$ و $\\dfrac{AD}{BC} = \\dfrac{6}{10} = \\dfrac{EA}{EB}$ .",
+          "إذن $BC = 10cm$ و $AD = 6cm$ ."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 360
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "الطول $AD$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الطول بـ cm (عدد فقط)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$x + y = 16$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AD = 6cm$ ، ونتحقق: $4 + 10 + 5 + 6 = 25$ و $\\dfrac{6}{10} = \\dfrac{6}{10}$ .",
+        "incorrect": "من $x + y = 16$ : $y = 16 - x$ ."
+      },
+      "solution": {
+        "lines": [
+          "محيط شبه المنحرف: $4 + x + 5 + y = 25$ أي $x + y = 16$",
+          "ومع معادلة السؤال 01 نحصل على الجملة:",
+          "$\\begin{cases} x + y = 16 & ...(1) \\\\ 3x - 5y = 0 & ...(2) \\end{cases}$",
+          "بضرب طرفي المعادلة (1) في العدد $5$ نجد:",
+          "$\\begin{cases} 5x + 5y = 80 \\\\ 3x - 5y = 0 \\end{cases}$",
+          "بجمع المعادلتين طرفا لطرف نجد: $8x = 80$",
+          "ومنه: $x = \\dfrac{80}{8} = 10$",
+          "بتعويض قيمة $x$ في المعادلة (1) نجد: $10 + y = 16$",
+          "$y = 6$",
+          "التحقق: $4 + 10 + 5 + 6 = 25$ و $\\dfrac{AD}{BC} = \\dfrac{6}{10} = \\dfrac{EA}{EB}$ .",
+          "إذن $BC = 10cm$ و $AD = 6cm$ ."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

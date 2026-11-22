@@ -1,0 +1,177 @@
+{
+  "id": "ex-4am-bahth-pgcd-l3-006",
+  "lessonCode": "bahth-pgcd",
+  "level": 3,
+  "metadata": {
+    "title": "BEM 2015 — التمرين الأول",
+    "estimatedMinutes": 8,
+    "tags": [
+      "خوارزمية إقليدس",
+      "كسر غير قابل للاختزال"
+    ],
+    "source": {
+      "type": "bem",
+      "year": 2015,
+      "part": 1,
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "official",
+      "badge": "BEM 2015",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القاسم المشترك الأكبر للعددين 696 و 406 مع كتابة مراحل الحساب.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "58",
+      "misconceptionSignatures": [
+        {
+          "value": "116",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        },
+        {
+          "value": "0",
+          "id": "MISC-PGCD-SIFR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 696 على 406: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (696 ; 406) بالزوج (406 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 58.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$696 = 406 \\times 1 + 290$",
+          "$406 = 290 \\times 1 + 116$",
+          "$290 = 116 \\times 2 + 58$",
+          "$116 = 58 \\times 2 + 0$",
+          "آخر باقٍ غير معدوم هو 58، إذن:"
+        ],
+        "result": "PGCD(696 ; 406) = 58"
+      },
+      "work": "required",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب $\\dfrac{696}{406}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "12/7",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 58: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال 01.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{696}{406} = \\dfrac{696 \\div 58}{406 \\div 58}$"
+        ],
+        "result": "\\dfrac{696}{406} = \\dfrac{12}{7}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب العدد P حيث: $P = \\dfrac{696}{406} - \\dfrac{3}{7} \\times \\dfrac{5}{2}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b (أو عدد)",
+      "expectedAnswer": "9/14",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 02 لتعويض الكسر الأول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ بالضرب قبل الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "وحّد المقامين ثم اطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "P = 12/7 − 15/14 = 24/14 − 15/14 = 9/14.",
+        "incorrect": "الضرب أولوي على الطرح: احسب الجداء أولًا، ثم وحّد المقامات قبل الطرح."
+      },
+      "solution": {
+        "lines": [
+          "$P = \\dfrac{12}{7} - \\dfrac{15}{14}$",
+          "$P = \\dfrac{24}{14} - \\dfrac{15}{14}$"
+        ],
+        "result": "P = \\dfrac{9}{14}"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+name: Publish available content (production)
+
+# Manual only. Publishes, in the PRODUCTION database, every lesson the
+# catalogue declares `available` that is still `draft`, then the non-retired
+# `draft` modules and exercises of every published lesson
+# (`php artisan smarter:publish-available-content`). It never touches an
+# archived lesson, a `coming_soon` lesson, a retired row or a tier.
+#
+# The deploy itself never publishes (the admin owns publication_status);
+# this workflow is the owner's one-click « nothing generated stays draft »
+# for production. Run it AFTER the deploy that brought the content.
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Only count what would be published'
+        type: boolean
+        default: false
+
+# Never write to the server while a deploy does.
+concurrency:
+  group: production-deployment
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Publish available content
+    # FR REBUILD LOCK — same rule as deploy.yml: skipped until the owner sets
+    # the repository variable FR_REBUILD_CUTOVER_APPROVED to `yes`.
+    if: vars.FR_REBUILD_CUTOVER_APPROVED == 'yes'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: production
+    steps:
+      - name: Prepare SSH
+        env:
+          SSH_KEY: ${{ secrets.HOSTINGER_SSH_KEY }}
+          SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
+          SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p "$SSH_PORT" "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+          test -s ~/.ssh/known_hosts
+
+      - name: Publish
+        env:
+          SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
+          SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
+          SSH_USER: ${{ secrets.HOSTINGER_USER }}
+          REMOTE_PATH: ${{ secrets.HOSTINGER_PATH }}
+          DRY_RUN: ${{ inputs.dry_run && '--dry-run' || '' }}
+        run: |
+          set -euo pipefail
+          ssh -i ~/.ssh/deploy_key -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" \
+            "REMOTE_PATH='$REMOTE_PATH' DRY_RUN='$DRY_RUN' bash -s" <<'REMOTE'
+          set -euo pipefail
+          cd "$REMOTE_PATH/api"
+          php artisan smarter:publish-available-content $DRY_RUN
+          php artisan cache:clear
+          echo "── Production lesson inventory ──"
+          php artisan smarter:lesson-inventory
+          REMOTE

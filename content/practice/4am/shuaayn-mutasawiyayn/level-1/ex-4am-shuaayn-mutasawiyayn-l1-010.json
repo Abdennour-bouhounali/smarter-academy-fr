@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l1-010",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — نكمل متوازي أضلاع",
+    "estimatedMinutes": 3,
+    "tags": [
+      "انسحاب",
+      "متوازي الأضلاع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_shuaayn-mutasawiyayn_P3",
+      "modelledOn": "method-image"
+    }
+  },
+  "statement": {
+    "content": "A، B، C ثلاث نقط ليست على استقامة. لإنشاء D صورة C بالانسحاب الذي شعاعه $\\overrightarrow{AB}$ نكمل متوازي أضلاع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "هذا المتوازي الأضلاع هو:",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "ACBD",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "ABDC",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "ABCD",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "صورة C هي D: اكتب المساواة الشعاعية أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تساوي الشعاعين CD و AB."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقرأ الضلعين المتقابلين في الاتجاه نفسه: من A إلى B ومن C إلى D."
+        }
+      ],
+      "feedback": {
+        "correct": "الشعاعان CD و AB متساويان: الرباعي ABDC متوازي أضلاع.",
+        "incorrect": "اكتب المساواة الشعاعية ثم رتّب الرؤوس بحيث يكون الضلعان المتقابلان في الاتجاه نفسه."
+      }
+    }
+  ]
+}

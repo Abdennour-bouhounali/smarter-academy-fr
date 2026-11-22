@@ -1,0 +1,194 @@
+{
+  "id": "ex-4am-khawass-qawasim-l5-006",
+  "lessonCode": "khawass-qawasim",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2025 — سباق بعين تموشنت",
+    "estimatedMinutes": 12,
+    "tags": [
+      "خاصية 1",
+      "مضاعفات",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_khawass-qawasim_P1",
+      "modelledOn": "BEM 2025 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "بمناسبة عيد الاستقلال، وإحياءً لتضحيات الشهداء واعتزازًا بالوطن، نظّمت بلدية بعين تموشنت سباقًا على مسار دائري طول الدورة الواحدة فيه 450m، يبدأ فيه كل عدّاء سباقه وينهيه عند خط الانطلاق نفسه. شاركت فيه ثلاث فئات:\n- الفئة (ا): تلاميذ الابتدائي يقطعون 2700m.\n- الفئة (ب): تلاميذ المتوسط يقطعون 4050m.\n- الفئة (ج): تلاميذ الثانوي يقطعون 6750m."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "بيّن أن 450 يقسم كلا من 2700 و 4050:",
+      "statement": "اكتب العدد 2700 على الشكل $450 \\times k$ حيث $k$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k$ فقط (عدد طبيعي)",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 2700 على 450: يجب أن يكون الباقي معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل هذه القسمة هو العدد $k$ المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$2700 = 450 \\times 6$ ، إذن 450 يقسم 2700.",
+        "incorrect": "ابحث عن العدد الطبيعي $k$ الذي إذا ضُرب في 450 أعطى 2700."
+      },
+      "solution": {
+        "lines": [
+          "$2700 = 450 \\times 6$"
+        ],
+        "result": "2700 = 450 \\times 6"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اكتب العدد 4050 على الشكل $450 \\times k'$ حيث $k'$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k'$ فقط (عدد طبيعي)",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 4050 على 450: يجب أن يكون الباقي معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل هذه القسمة هو العدد $k'$ المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$4050 = 450 \\times 9$ ، إذن 450 يقسم 4050.",
+        "incorrect": "ابحث عن العدد الطبيعي $k'$ الذي إذا ضُرب في 450 أعطى 4050."
+      },
+      "solution": {
+        "lines": [
+          "$4050 = 450 \\times 9$"
+        ],
+        "result": "4050 = 450 \\times 9"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "لاحظ أن $6750 = 2700 + 4050$. استنتج، دون إجراء أي قسمة، عدد الدورات التي يقطعها عدّاء من الفئة (ج).",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد الدورات)",
+      "expectedAnswer": "15",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الكتابتين $2700 = 450 \\times 6$ و $4050 = 450 \\times 9$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرج 450 عاملًا مشتركًا: $450 \\times q + 450 \\times q' = 450 \\times (q + q')$."
+        }
+      ],
+      "feedback": {
+        "correct": "$2700 + 4050 = 450 \\times (6 + 9) = 450 \\times 15$.",
+        "incorrect": "القاسم المشترك لعددين يقسم مجموعهما: اكتب كلا من العددين على الشكل $450 \\times q$ ثم أخرج 450 عاملًا مشتركًا."
+      },
+      "solution": {
+        "lines": [
+          "$2700 + 4050 = 450 \\times 6 + 450 \\times 9$",
+          "$2700 + 4050 = 450 \\times (6 + 9)$",
+          "$2700 + 4050 = 450 \\times 15$ ، إذن 450 يقسم $2700 + 4050$."
+        ],
+        "result": "2700 + 4050 = 450 \\times 15"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "☜ يتناول كل عدّاء قارورة ماء عند نهاية كل دورة يقطعها. شارك 40 عدّاءً من كل فئة. كم قارورة ماء يجب أن يحضّر المنظّمون؟",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد القارورات)",
+      "expectedAnswer": "1200",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب عدد الدورات التي يقطعها عدّاء من كل فئة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد القارورات = عدد العدّائين × عدد الدورات، لكل فئة."
+        }
+      ],
+      "feedback": {
+        "correct": "$40 \\times (6 + 9 + 15) = 40 \\times 30 = 1200$ قارورة.",
+        "incorrect": "اجمع عدد دورات الفئات الثلاث، ثم اضرب في عدد العدّائين في كل فئة."
+      },
+      "solution": {
+        "lines": [
+          "عدد الدورات: 6 للفئة (ا)، 9 للفئة (ب)، 15 للفئة (ج).",
+          "$40 \\times 6 + 40 \\times 9 + 40 \\times 15 = 40 \\times 30 = 1200$"
+        ],
+        "result": "1200"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

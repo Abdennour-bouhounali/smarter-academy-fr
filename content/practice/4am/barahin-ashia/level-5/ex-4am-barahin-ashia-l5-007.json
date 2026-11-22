@@ -1,0 +1,81 @@
+{
+  "id": "ex-4am-barahin-ashia-l5-007",
+  "lessonCode": "barahin-ashia",
+  "level": 5,
+  "generator": {
+    "tool": "gen-barahin.mjs",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — نزهة في الطاسيلي",
+    "estimatedMinutes": 3,
+    "tags": [
+      "علاقة شال",
+      "تبسيط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_barahin-ashia_P1",
+      "modelledOn": "ex-20"
+    }
+  },
+  "statement": {
+    "content": "في نزهة بالطاسيلي ناجر، يسجّل تطبيق GPS انتقالات مجموعة: من المخيّم C إلى الصخرة R ، ثم من R إلى البئر W ، ثم من W إلى الكهف G . والانتقال من الصخرة R إلى الكهف G يساوي الانتقال من المخيّم C إلى البئر W ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "$\\overrightarrow{CR}$ + $\\overrightarrow{RW}$ + $\\overrightarrow{WG}$ يساوي:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{CG}$ ، ويساوي أيضا $\\overrightarrow{CR}$ + $\\overrightarrow{CW}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{GC}$ ، ويساوي أيضا $\\overrightarrow{CR}$ + $\\overrightarrow{CW}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-AKS"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{CW}$ ، لأن $\\overrightarrow{RG}$ = $\\overrightarrow{CW}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-RABT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الأشعة الثلاثة متتابعة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المعطى: $\\overrightarrow{RG} = \\overrightarrow{CW}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب $\\overrightarrow{CG} = \\overrightarrow{CR} + \\overrightarrow{RG}$ ثم عوّض."
+        }
+      ],
+      "feedback": {
+        "correct": "علاقة شال: المجموع $\\overrightarrow{CG}$ ، و $\\overrightarrow{CG} = \\overrightarrow{CR} + \\overrightarrow{RG} = \\overrightarrow{CR} + \\overrightarrow{CW}$ .",
+        "incorrect": "من C إلى G ، ثم عوّض $\\overrightarrow{RG}$ بما يساويه."
+      }
+    }
+  ]
+}

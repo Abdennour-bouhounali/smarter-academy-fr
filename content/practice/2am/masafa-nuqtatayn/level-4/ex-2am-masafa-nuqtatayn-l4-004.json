@@ -1,0 +1,193 @@
+{
+  "id": "ex-2am-masafa-nuqtatayn-l4-004",
+  "lessonCode": "masafa-nuqtatayn",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — نقطة ومعاكسها",
+    "estimatedMinutes": 10,
+    "tags": [
+      "معاكس عدد",
+      "مسافة بين نقطتين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعلّم النقطة $A(-5{,}5)$ على مستقيم مدرّج ثمّ نقطة $A'$ فاصلتها معاكس فاصلتها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "النقطة $A'$ فاصلتها معاكس فاصلة النقطة $A(-5{,}5)$ . ما فاصلة $A'$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "5.5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معاكس عدد هو العدد الذي له المسافة نفسها إلى الصفر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ولكن في الجهة الأخرى من الصفر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: مجموع العددين المتعاكسين معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$A'(+5{,}5)$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "معاكس $-5{,}5$ هو $+5{,}5$"
+        ],
+        "result": "5.5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "النقطتان $A(-5{,}5)$ و $A'(+5{,}5)$ على مستقيم مدرّج. احسب المسافة $AA'$ .",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "0"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-11"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن أوّلًا أيّ الفاصلتين أكبر: الأكبر هي الأبعد إلى اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى مطروحًا منها الصغرى؛ وإذا كانت الصغرى سالبة فنطرح عددًا سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا: إن وجدت ناتجًا سالبًا فقد قلبت ترتيب الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$AA'=11$ : النقطتان على جهتين من المبدأ فنجمع المسافتين إلى الصفر.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى هي $+5{,}5$ والفاصلة الصغرى هي $-5{,}5$",
+          "$AA'=(+5{,}5)-(-5{,}5)=(+5{,}5)+(+5{,}5)=11$"
+        ],
+        "result": "11"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "النقطة $B(+12{,}5)$ على مستقيم مدرّج، والنقطة $B'$ فاصلتها معاكس فاصلتها. ما المسافة $BB'$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$12{,}5$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$26$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$25$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب فاصلة $B'$ أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثمّ احسب المسافة بين العددين: الكبرى مطروحًا منها الصغرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: النقطتان على جهتين مختلفتين من المبدأ."
+        }
+      ],
+      "feedback": {
+        "correct": "$BB'=25$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $B'$ هي $-12{,}5$",
+          "$BB'=(+12{,}5)-(-12{,}5)=25$"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

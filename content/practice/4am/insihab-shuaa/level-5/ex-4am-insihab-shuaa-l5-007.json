@@ -1,0 +1,64 @@
+{
+  "id": "ex-4am-insihab-shuaa-l5-007",
+  "lessonCode": "insihab-shuaa",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — محيط صورة مثلث",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الانسحاب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_insihab-shuaa_P1",
+      "modelledOn": "act-1"
+    }
+  },
+  "statement": {
+    "content": "في لعبة على الهاتف، مثلث أطوال أضلاعه 3 و 4 و 5 مربعات ينسحب على الخريطة بالانسحاب الذي يحوّل A إلى A′."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما محيط صورة المثلث (بالمربعات)؟",
+      "learningPoints": [
+        {
+          "code": "4am_insihab-shuaa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "صورة نقطة بالانسحاب: نحرّكها بنفس حركة النقطة المعطاة نحو صورتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ حركة السهم المعطى (أفقيا ثم شاقوليا) وطبّقها انطلاقا من النقطة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: للسهم من النقطة نحو صورتها نفس المنحى ونفس الاتجاه ونفس الطول."
+        }
+      ],
+      "feedback": {
+        "correct": "الانسحاب يحافظ على الأطوال: الصورة مثلث أطواله 3 و 4 و 5، ومحيطه 12.",
+        "incorrect": "هل يغيّر الانسحاب طول القطع؟"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SHUAA-INSIHAB-SURA",
+          "value": "6"
+        }
+      ]
+    }
+  ]
+}

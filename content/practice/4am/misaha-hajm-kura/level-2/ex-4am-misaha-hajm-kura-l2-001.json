@@ -1,0 +1,70 @@
+{
+  "id": "ex-4am-misaha-hajm-kura-l2-001",
+  "lessonCode": "misaha-hajm-kura",
+  "level": 2,
+  "metadata": {
+    "title": "معارف 2 — مثال الكتاب: المساحة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "مساحة الكرة",
+      "مثال الكتاب"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-2",
+      "page": 166,
+      "section": "معارف",
+      "number": 2
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 166): كرة نصف قطرها $1{,}4\\,\\mathrm{cm}$ . اكتب مساحتها على الشكل $k\\pi\\,\\mathrm{cm}^2$ ثم أعط $k$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قيمة $k$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_misaha-hajm-kura_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة (مثل 2,5) أو عدد طبيعي",
+      "expectedAnswer": "7.84",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\mathcal{A} = 4\\pi R^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$(1{,}4)^2 = 1{,}4 \\times 1{,}4$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب $4 \\times 1{,}96$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\mathcal{A} = 4\\pi \\times 1{,}96 = 7{,}84\\pi\\,\\mathrm{cm}^2$ .",
+        "incorrect": "لا تنس العدد 4 ولا المربع."
+      },
+      "difficulty": 2,
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MISAHA-DAIRA",
+          "value": "1.96"
+        },
+        {
+          "id": "MISC-MISAHA-MUHIT",
+          "value": "2.8"
+        }
+      ]
+    }
+  ]
+}

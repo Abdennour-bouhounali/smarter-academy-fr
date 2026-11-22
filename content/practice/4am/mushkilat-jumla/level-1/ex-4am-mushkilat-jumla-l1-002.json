@@ -1,0 +1,117 @@
+{
+  "id": "ex-4am-mushkilat-jumla-l1-002",
+  "lessonCode": "mushkilat-jumla",
+  "level": 1,
+  "metadata": {
+    "title": "زوار المتحف",
+    "estimatedMinutes": 6,
+    "tags": [
+      "ترييض",
+      "ترجمة",
+      "متحف"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-3",
+      "page": 57,
+      "section": "أنشطة",
+      "number": 3
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "يقترح متحف، يعرّف زواره بتراث الوطن، تذكرتين: 300DA للبالغين و 150DA للصغار. في أحد الأيام، استقبل المتحف 140 زائرا وبلغت مداخيله 30300DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "نسمّي $x$ عدد البالغين و $y$ عدد الصغار الذين زاروا المتحف في هذا اليوم.",
+      "statement": "ترجم المعطيات بجملة معادلتين مجهولاها $x$ و $y$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في النص معلومتان: عدد الأشخاص، ومبلغ المال."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مداخيل تذاكر البالغين هي $300x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "عدد الزوار: $x + y = 140$",
+          "المداخيل: $300x + 150y = 30300$",
+          "ومنه الجملة: $\\begin{cases} x + y = 140 \\\\ 300x + 150y = 30300 \\end{cases}$"
+        ],
+        "result": "\\begin{cases} x + y = 140 \\\\ 300x + 150y = 30300 \\end{cases}"
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب معادلة المداخيل، بعد قسمة طرفيها على 150، على الشكل $2x + y = c$ . أعط العدد $c$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $c$ فقط",
+      "expectedAnswer": "202",
+      "misconceptionSignatures": [
+        {
+          "value": "140",
+          "id": "MISC-JUMLA-TARJAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انطلق من معادلة المداخيل $300x + 150y = 30300$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم كل حد من حدودها على 150."
+        }
+      ],
+      "feedback": {
+        "correct": "بقسمة الطرفين على 150: $2x + y = 202$ .",
+        "incorrect": "اقسم الحدود الثلاثة على 150، بما فيها الطرف الثاني."
+      },
+      "solution": {
+        "lines": [
+          "$300x + 150y = 30300$",
+          "بقسمة طرفي المعادلة على 150 نجد: $2x + y = 202$"
+        ],
+        "result": "c = 202"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

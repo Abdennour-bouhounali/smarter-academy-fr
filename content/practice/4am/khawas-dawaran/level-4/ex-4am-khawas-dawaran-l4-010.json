@@ -1,0 +1,78 @@
+{
+  "id": "ex-4am-khawas-dawaran-l4-010",
+  "lessonCode": "khawas-dawaran",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — اختيار الطريقة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الإثبات بدوران"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_khawas-dawaran_P2",
+      "modelledOn": "method-properties"
+    }
+  },
+  "generator": {
+    "tool": "u13-khawas-dawaran/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "نريد إثبات أن القطعتين [MN] و [PQ] متقايستان."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "طريقة صحيحة:",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نبيّن أن المستقيمين (MN) و (PQ) يتقاطعان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MIHWAR"
+        },
+        {
+          "id": "B",
+          "content": "نبيّن أن [PQ] صورة [MN] بدوران",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نبيّن أن $(MN) \\perp (PQ)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-TASAWI-TAAMUD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أي خاصية تعطي تساوي طولين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الدوران يحافظ على الأطوال."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ابحث عن دوران يحوّل قطعة إلى الأخرى."
+        }
+      ],
+      "feedback": {
+        "correct": "إذا كانت [PQ] صورة [MN] بدوران فإن $PQ = MN$ .",
+        "incorrect": "التعامد أو التقاطع لا يعطي تساوي الطولين."
+      }
+    }
+  ]
+}

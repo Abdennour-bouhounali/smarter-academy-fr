@@ -1,0 +1,230 @@
+{
+  "id": "ex-1am-ikhtizal-kitaba-kasriya-l4-010",
+  "lessonCode": "ikhtizal-kitaba-kasriya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مدّة حصّة الرياضة",
+    "estimatedMinutes": 11,
+    "tags": [
+      "قسمة إقليدية",
+      "اختزال",
+      "كتابة عشرية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثالث",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "دامت حصّة الرياضة في المتوسطة 135 دقيقة، والتزم كل التلاميذ بموعد بدايتها. نعلم أنّ الساعة 60 دقيقة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أنجز القسمة الإقليدية للعدد 135 على 60. ما هو الحاصل؟",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق بالضرب أنّ الباقي معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "الحاصل 2 والباقي 15.",
+        "incorrect": "ابحث عن أكبر عدد نضربه في 60 دون أن نتجاوز 135."
+      },
+      "solution": {
+        "lines": [
+          "$135 = 60 \\times 2 + 15$",
+          "الحاصل 2 والباقي 15."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عبّر عن مدّة الحصّة بالساعات على شكل كسر في أبسط شكل ممكن.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b لا يقبل الاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "9/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "45/20",
+          "id": "MISC-KASRIYA-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن قاسم مشترك للبسط والمقام بقواعد قابلية القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على هذا القاسم، ثم أعد البحث في الكسر الجديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا لم تنفع القواعد، جرّب جداول الضرب (7، 11، 13…)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{135}{60} = \\dfrac{9}{4}$ ولا يقبل البسط والمقام قاسمًا مشتركًا غير 1.",
+        "incorrect": "نقسم البسط والمقام على قاسم مشترك لهما، ونعيد ذلك حتى لا يبقى قاسم مشترك غير 1.",
+        "notIrreducible": "الكتابة تساوي الكسر لكنها ما زالت قابلة للاختزال: ابحث عن قاسم مشترك آخر للبسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "$135 = 3 \\times 45$ و $60 = 3 \\times 20$ ، إذن $\\dfrac{135}{60} = \\dfrac{135 \\div 3}{60 \\div 3} = \\dfrac{45}{20}$",
+          "$45 = 5 \\times 9$ و $20 = 5 \\times 4$ ، إذن $\\dfrac{45}{20} = \\dfrac{45 \\div 5}{20 \\div 5} = \\dfrac{9}{4}$",
+          "العددان 9 و 4 لا يقبلان قاسمًا مشتركًا غير 1: $\\dfrac{9}{4}$ في أبسط شكل ممكن."
+        ],
+        "result": "\\dfrac{135}{60} = \\dfrac{9}{4}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "أتمم: $\\dfrac{9}{4} = \\dfrac{\\ldots}{100}$",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "225",
+      "misconceptionSignatures": [
+        {
+          "value": "105",
+          "id": "MISC-KASRIYA-JAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الحدّين المعروفين اللذين في نفس الموضع (بسطين أو مقامين)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بأيّ عدد نضرب (أو نقسم) أحدهما لنحصل على الآخر؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق نفس العملية على الحدّ الآخر من الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9}{4} = \\dfrac{9 \\times 25}{4 \\times 25} = \\dfrac{225}{100}$ : ضربنا البسط والمقام في نفس العدد.",
+        "incorrect": "الكسر لا يتغيّر إذا ضربنا البسط والمقام في نفس العدد غير المعدوم أو قسمناهما عليه، أمّا إضافة نفس العدد إليهما فتغيّره."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{9}{4} = \\dfrac{9 \\times 25}{4 \\times 25} = \\dfrac{225}{100}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "استنتج مدّة الحصّة بالساعات على الشكل العشري.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة)",
+      "expectedAnswer": "2,25",
+      "misconceptionSignatures": [
+        {
+          "value": "22,5",
+          "id": "MISC-KASRIYA-FASILA"
+        },
+        {
+          "value": "9,4",
+          "id": "MISC-KASRIYA-ARQAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل المقام 10 أو 100 أو 1000؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إن لم يكن كذلك، اضرب البسط والمقام في نفس العدد لتحصل على مقام 10 أو 100 أو 1000."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد أصفار المقام هو عدد الأرقام بعد الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9}{4} = 2{,}25$.",
+        "incorrect": "في كسر عشري، عدد أصفار المقام هو عدد الأرقام بعد الفاصلة؛ وإن لم يكن المقام 10 أو 100 أو 1000 نحوّله أولًا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{9}{4} = \\dfrac{9 \\times 25}{4 \\times 25} = \\dfrac{225}{100}$",
+          "$\\dfrac{225}{100} = 2{,}25$"
+        ],
+        "result": "\\dfrac{9}{4} = 2{,}25"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

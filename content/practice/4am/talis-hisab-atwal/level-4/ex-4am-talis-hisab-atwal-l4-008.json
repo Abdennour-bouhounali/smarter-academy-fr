@@ -1,0 +1,257 @@
+{
+  "id": "ex-4am-talis-hisab-atwal-l4-008",
+  "lessonCode": "talis-hisab-atwal",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2012 — DF و AD",
+    "estimatedMinutes": 12,
+    "tags": [
+      "الدائرة",
+      "فيثاغورس",
+      "خاصية طالس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_talis-hisab-atwal_P2",
+      "modelledOn": "BEM 2012 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2012",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل، $(\\mathscr{C})$ دائرة مركزها $O$ وقطرها $[AB]$ حيث $AB = 13\\,\\mathrm{cm}$ ، و $C$ نقطة من $(\\mathscr{C})$ حيث $BC = 5\\,\\mathrm{cm}$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0.0,
+          0.0
+        ],
+        "A": [
+          -6.5,
+          0.0
+        ],
+        "B": [
+          6.5,
+          0.0
+        ],
+        "C": [
+          4.576923076923,
+          4.615384615385
+        ],
+        "F": [
+          -2.6,
+          0.0
+        ],
+        "D": [
+          -3.176923076923,
+          1.384615384615
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B"
+        },
+        {
+          "from": "A",
+          "to": "C"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "arrows": 1
+        },
+        {
+          "from": "F",
+          "to": "D",
+          "arrows": 1
+        }
+      ],
+      "labels": {
+        "O": "s",
+        "F": "s"
+      },
+      "circles": [
+        {
+          "center": "O",
+          "radius": 6.5
+        }
+      ],
+      "ariaLabel": "الدائرة (C) مركزها O وقطرها [AB]، C نقطة منها؛ F من [AB] و D من [AC] و (FD) يوازي (BC)",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن المثلث $ABC$ قائم في $C$ ثم احسب الطول $AC$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "أعط الطول $AC$ (عدد)",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$C$ نقطة من دائرة قطرها $[AB]$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المثلث قائم في $C$ : طبّق خاصية فيثاغورس."
+        }
+      ],
+      "feedback": {
+        "correct": "$ABC$ قائم في $C$ ، و $AC^2 = 169 - 25 = 144$ ومنه $AC = 12\\,\\mathrm{cm}$ .",
+        "incorrect": "الوتر هو القطر $[AB]$ : $AC^2 = AB^2 - BC^2$ ."
+      },
+      "solution": {
+        "lines": [
+          "$C$ نقطة من الدائرة التي قطرها $[AB]$ ، إذن المثلث $ABC$ قائم في $C$ .",
+          "حسب خاصية فيثاغورس: $AC^2 = AB^2 - BC^2 = 13^2 - 5^2 = 169 - 25 = 144$",
+          "$AC = \\sqrt{144}$"
+        ],
+        "result": "AC = 12\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "$F$ نقطة من $[AB]$ حيث $AF = 3{,}9\\,\\mathrm{cm}$ ، والمستقيم الذي يشمل $F$ ويوازي $(BC)$ يقطع $[AC]$ في $D$ .",
+      "statement": "احسب $DF$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (عشري بالفاصلة مثل 2,75 أو كسر مثل 7/9)",
+      "expectedAnswer": "1,5",
+      "misconceptionSignatures": [
+        {
+          "value": "50/3",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقط $A$ ، $F$ ، $B$ على استقامة والنقط $A$ ، $D$ ، $C$ على استقامة، و $(FD) \\parallel (BC)$ : المثلثان $AFD$ و $ABC$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب النسب الثلاث المتساوية $\\dfrac{AF}{AB} = \\dfrac{AD}{AC} = \\dfrac{FD}{BC}$ ، واحتفظ بالمساواة التي فيها $DF$ وثلاثة أطوال معلومة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الطول المجهول بالجداء المتصالب (الرابع المتناسب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$DF = \\dfrac{5 \\times 3{,}9}{13} = 1{,}5\\,\\mathrm{cm}$ .",
+        "incorrect": "راجع المساواة المختارة: في كل نسبة طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: النقط $A$ ، $F$ ، $B$ على استقامة واحدة، والنقط $A$ ، $D$ ، $C$ على استقامة واحدة، و $(FD) \\parallel (BC)$ .",
+          "حسب خاصية طالس: $\\dfrac{AF}{AB} = \\dfrac{AD}{AC} = \\dfrac{FD}{BC}$",
+          "$\\dfrac{AF}{AB} = \\dfrac{FD}{BC}$ أي $\\dfrac{3{,}9}{13} = \\dfrac{FD}{5}$",
+          "$FD = \\dfrac{5 \\times 3{,}9}{13}$"
+        ],
+        "result": "DF = 1{,}5\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب $AD$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (عشري بالفاصلة مثل 2,75 أو كسر مثل 7/9)",
+      "expectedAnswer": "3,6",
+      "misconceptionSignatures": [
+        {
+          "value": "40",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقط $A$ ، $F$ ، $B$ على استقامة والنقط $A$ ، $D$ ، $C$ على استقامة، و $(FD) \\parallel (BC)$ : المثلثان $AFD$ و $ABC$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب النسب الثلاث المتساوية $\\dfrac{AF}{AB} = \\dfrac{AD}{AC} = \\dfrac{FD}{BC}$ ، واحتفظ بالمساواة التي فيها $AD$ وثلاثة أطوال معلومة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الطول المجهول بالجداء المتصالب (الرابع المتناسب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$AD = \\dfrac{12 \\times 3{,}9}{13} = 3{,}6\\,\\mathrm{cm}$ .",
+        "incorrect": "راجع المساواة المختارة: في كل نسبة طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AF}{AB} = \\dfrac{AD}{AC}$ أي $\\dfrac{3{,}9}{13} = \\dfrac{AD}{12}$",
+          "$AD = \\dfrac{12 \\times 3{,}9}{13}$"
+        ],
+        "result": "AD = 3{,}6\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

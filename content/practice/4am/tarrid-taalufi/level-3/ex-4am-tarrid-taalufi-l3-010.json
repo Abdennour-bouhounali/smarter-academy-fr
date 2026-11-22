@@ -1,0 +1,299 @@
+{
+  "id": "ex-4am-tarrid-taalufi-l3-010",
+  "lessonCode": "tarrid-taalufi",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2014 — كراء دراجة كهربائية في حديقة عمومية",
+    "estimatedMinutes": 12,
+    "tags": [
+      "عرضان",
+      "قراءة بيانية",
+      "أفضل عرض"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tarrid-taalufi_P2",
+      "modelledOn": "BEM 2014 II (03، 04)"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2014",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تقترح حديقة عمومية، تدعو زوّارها إلى المحافظة على نظافتها، عرضين لكراء دراجة كهربائية:\n- العرض الأول: 100DA للساعة.\n- العرض الثاني: 300DA تُدفع مرّة واحدة، ثم 50DA للساعة.\nيمثّل نصف المستقيم $(D_1)$ المبلغ $f(x)$ حسب العرض الأول، ونصف المستقيم $(D_2)$ المبلغ $g(x)$ حسب العرض الثاني، حيث $x$ مدة الكراء بالساعات.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "K1": [
+          0,
+          0
+        ],
+        "H1": [
+          8,
+          8
+        ],
+        "K2": [
+          0,
+          3
+        ],
+        "H2": [
+          8,
+          7
+        ]
+      },
+      "rays": [
+        {
+          "from": "K1",
+          "through": "H1",
+          "name": "(D₁)",
+          "tone": "sky",
+          "extend": 0
+        },
+        {
+          "from": "K2",
+          "through": "H2",
+          "name": "(D₂)",
+          "tone": "amber",
+          "extend": 0
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw"
+      },
+      "hidden": [
+        "H1",
+        "H2",
+        "K1",
+        "K2"
+      ],
+      "ariaLabel": "معلم على ورقة مرصوفة: نصف المستقيم (D1) ينطلق من المبدأ O، ونصف المستقيم (D2) ينطلق من محور التراتيب فوق المبدأ، ويتقاطعان",
+      "caption": "محور الفواصل: المدة بالساعات — محور التراتيب: المبلغ (الوحدة 100DA)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عبّر عن $g(x)$ بدلالة $x$ .",
+      "statement": "أعط العددين $a$ و $b$ حيث: $g(x) = ax + b$ ، ابدأ بالعدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "50",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "300"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع عن كل ساعة في العرض الثاني؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هو ما يُدفع $x$ مرّة: معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "ما يُدفع عن كل ساعة في العرض الثاني هو معامل $x$ .",
+        "incorrect": "معامل $x$ هو المبلغ الذي يتكرّر مع كل وحدة، لا المبلغ الذي يُدفع مرّة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "العرض الثاني: 300DA مرّة واحدة و 50DA للساعة: $g(x) = 50x + 300$"
+        ],
+        "result": "g(x) = 50x + 300"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "ثم العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "300",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "50"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع مرّة واحدة (المبلغ الأولي)؟"
+        }
+      ],
+      "feedback": {
+        "correct": "المبلغ الأولي يُدفع مرّة واحدة: هو الحدّ الثابت $b$ .",
+        "incorrect": "الحدّ الثابت لا يتعلّق بعدد الوحدات $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "العرض الثاني: 300DA مرّة واحدة و 50DA للساعة: $g(x) = 50x + 300$"
+        ],
+        "result": "g(x) = 50x + 300"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "بقراءة بيانية، عيّن المدة التي يتساوى من أجلها المبلغان.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدة بالساعات",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يتساوى المبلغان عند نقطة تقاطع نصفي المستقيمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ فاصلة هذه النقطة."
+        }
+      ],
+      "feedback": {
+        "correct": "فاصلة نقطة التقاطع.",
+        "incorrect": "فاصلة نقطة التقاطع تُقرأ على محور الفواصل."
+      },
+      "solution": {
+        "lines": [
+          "نصفا المستقيمين يتقاطعان في النقطة $(6 ; 6)$ ، أي 6 ساعات و 600DA .",
+          "حسابيا (غير مطلوب): $100x = 50x + 300$ ، $50x = 300$ ، $x = 6$ ."
+        ],
+        "result": "6"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "بقراءة بيانية، أجب عما يلي مع الشرح.",
+      "statement": "لمدة 8 ساعات، ما هو العرض الأقل تكلفة؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "العرض الأول",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        },
+        {
+          "id": "B",
+          "content": "العرض الثاني",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر أيّ نصفي المستقيمين يقع تحت الآخر عند الفاصلة 8."
+        }
+      ],
+      "feedback": {
+        "correct": "عند 8 ساعات: 800DA مقابل 700DA .",
+        "incorrect": "الأقل تكلفة هو الذي يقع تمثيله تحت الآخر عند هذه المدة."
+      },
+      "solution": {
+        "lines": [
+          "عند الفاصلة 8 يقع $(D_2)$ تحت $(D_1)$ : $g(8) = 700DA$ و $f(8) = 800DA$ .",
+          "إذا لمدة 8 ساعات العرض الثاني أقل تكلفة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "لمدة 3 ساعات، ما هو العرض الأقل تكلفة؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "العرض الأول",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "العرض الثاني",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر أيّ نصفي المستقيمين يقع تحت الآخر عند الفاصلة 3."
+        }
+      ],
+      "feedback": {
+        "correct": "عند 3 ساعات: 300DA مقابل 450DA .",
+        "incorrect": "قبل نقطة التقاطع لا يكون الترتيب نفسه كما بعدها."
+      },
+      "solution": {
+        "lines": [
+          "عند الفاصلة 3 يقع $(D_1)$ تحت $(D_2)$ : $f(3) = 300DA$ و $g(3) = 450DA$ .",
+          "إذا لمدة 3 ساعات العرض الأول أقل تكلفة."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

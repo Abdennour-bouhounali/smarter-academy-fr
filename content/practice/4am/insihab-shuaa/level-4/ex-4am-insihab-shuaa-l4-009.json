@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-insihab-shuaa-l4-009",
+  "lessonCode": "insihab-shuaa",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — متوازيا أضلاع",
+    "estimatedMinutes": 3,
+    "tags": [
+      "تساوي شعاعين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_insihab-shuaa_P3",
+      "modelledOn": "know-2"
+    }
+  },
+  "statement": {
+    "content": "ABCD و ABEF متوازيا أضلاع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أي مساواة صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "4am_insihab-shuaa_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{DC}$ = $\\overrightarrow{FE}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{DC}$ = $\\overrightarrow{EF}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{CD}$ = $\\overrightarrow{FE}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{AB} = \\overrightarrow{DC}$ يعني ABCD متوازي أضلاع: اقرأ A ثم B ثم نهاية الشعاع الثاني ثم مبدأه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في متوازي الأضلاع، كل ضلعين متقابلين يعطيان شعاعين متساويين إذا قرأناهما في نفس الجهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارسم الرباعي على ورقة وضع السهمين لتتحقق من الجهة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{DC}$ = $\\overrightarrow{AB}$ و $\\overrightarrow{FE}$ = $\\overrightarrow{AB}$ ، فـ $\\overrightarrow{DC}$ = $\\overrightarrow{FE}$ .",
+        "incorrect": "كل من الشعاعين يساوي $\\overrightarrow{AB}$ ."
+      },
+      "difficulty": 4,
+      "cognitiveDemand": "reason"
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l2-004",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — طباعة ملصقات الحملة",
+    "estimatedMinutes": 7,
+    "tags": [
+      "تمثيل بياني",
+      "رسم ثابت"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ينظّم تلاميذ المتوسطة حملة لنظافة الشاطئ، ويطبعون ملصقاتها في مطبعة تأخذ ثمنا ثابتا على تجهيز الطبعة زيادة على ثمن كل مئة ملصقة. يمثّل المستقيم $(d)$ في المعلم التالي المبلغ المدفوع (بمئات الدنانير) بدلالة عدد المئات من الملصقات.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          2,
+          5
+        ],
+        "B": [
+          4,
+          7
+        ],
+        "C": [
+          6,
+          9
+        ]
+      },
+      "lines": [
+        {
+          "through": [
+            "A",
+            "C"
+          ],
+          "name": "(d)",
+          "tone": "indigo",
+          "extend": [
+            0.5,
+            0.2
+          ]
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw",
+        "A": "se",
+        "B": "se",
+        "C": "se"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس: المستقيم (d) يشمل النقط A(2;5) و B(4;7) و C(6;9) ويقطع محور التراتيب في النقطة (0;3)",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: عدد المئات من الملصقات — محور التراتيب: المبلغ بمئات الدنانير"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل المبلغ المدفوع متناسب مع عدد الملصقات؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأنّ النقط على استقامة واحدة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-LINE-ANY"
+        },
+        {
+          "id": "B",
+          "content": "نعم، لأنّ الترتيب يكبر كلما كبرت الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-RISING"
+        },
+        {
+          "id": "C",
+          "content": "لا، المستقيم الذي يشمل النقط لا يشمل المبدأ $O$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط على استقامة واحدة لكنّ المستقيم لا يشمل المبدأ $O$ ، فليست الوضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "النقط على استقامة واحدة، لكنّ $(d)$ لا يشمل المبدأ $O$ .",
+          "إذن المبلغ المدفوع ليس متناسبا مع عدد الملصقات."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما المبلغ (بمئات الدنانير) الذي يُدفع حتى قبل طبع أي ملصقة، أي ترتيب نقطة $(d)$ التي فاصلتها $0$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الترتيب بمئات الدنانير",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-TAMTHIL-ORIGIN-DROP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "فاصلة $0$ تعني أنّنا على محور التراتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اتبع المستقيم نحو اليسار حتى هذا المحور."
+        }
+      ],
+      "feedback": {
+        "correct": "المستقيم يقطع محور التراتيب في $3$ : المبلغ الثابت $300$ دج.",
+        "incorrect": "المستقيم لا يمرّ بالمبدأ: اقرأ ترتيب نقطة التقاطع الحقيقية."
+      },
+      "solution": {
+        "lines": [
+          "المستقيم $(d)$ يقطع محور التراتيب في النقطة $(0\\,;\\,3)$ ."
+        ],
+        "result": "3"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "علّل جوابك.",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تعليلك ثم قارنه بالتصحيح النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اذكر الخاصية التي تستعملها: ما شرط التناسبية على النقط؟"
+        }
+      ],
+      "feedback": {
+        "correct": "التعليل يذكر استقامة النقط ومرور المستقيم بالمبدأ $O$ .",
+        "incorrect": "قارن تعليلك بالتصحيح النموذجي، وتأكد أنك ذكرت الشرطين معا."
+      },
+      "solution": {
+        "lines": [
+          "المستقيم $(d)$ يقطع محور التراتيب في النقطة $(0\\,;\\,3)$ وليس في $O$ .",
+          "لو كانت الوضعية تناسبية لكان $0$ ملصقة بـ $0$ دج، إذن الوضعية ليست تناسبية."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

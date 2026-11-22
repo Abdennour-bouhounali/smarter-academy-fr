@@ -1,0 +1,68 @@
+{
+  "id": "ex-4am-takbir-tasghir-l3-001",
+  "lessonCode": "takbir-tasghir",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — k من حرفين",
+    "estimatedMinutes": 2,
+    "tags": [
+      "النسبة k"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takbir-tasghir_P1",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "مكعّب حرفه $6\\,\\mathrm{cm}$ ، وتصغيره مكعّب حرفه $4\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما نسبة التصغير $k$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة مثل 1,25 ، أو كسر مثل 4/7)",
+      "expectedAnswer": "2/3",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAKBIR-ITTIJAH",
+          "value": "3/2"
+        },
+        {
+          "id": "MISC-TAKBIR-JAM",
+          "value": "2"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من أي مكعّب إلى أي مكعّب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$k$ = طول في الناتج ÷ الطول الموافق في الأصلي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم 4 على 6 واختصر."
+        }
+      ],
+      "feedback": {
+        "correct": "$k = \\dfrac{4}{6} = \\dfrac{2}{3}$ ، و $k < 1$ : تصغير.",
+        "incorrect": "الفرق $6 - 4$ ليس نسبة."
+      }
+    }
+  ]
+}

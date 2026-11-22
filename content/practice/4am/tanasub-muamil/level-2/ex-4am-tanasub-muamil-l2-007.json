@@ -1,0 +1,168 @@
+{
+  "id": "ex-4am-tanasub-muamil-l2-007",
+  "lessonCode": "tanasub-muamil",
+  "level": 2,
+  "metadata": {
+    "title": "العمود (0 ; 20)",
+    "estimatedMinutes": 2,
+    "tags": [
+      "وضعية غير تناسبية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tanasub-muamil_P2",
+      "modelledOn": "ex-18",
+      "adaptedFrom": "ex-4am-tanasub-muamil-l2-007"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الجدول الآتي:",
+    "table": {
+      "head": [
+        "$x$",
+        "0",
+        "2",
+        "5"
+      ],
+      "rows": [
+        [
+          "$y$",
+          "20",
+          "30",
+          "45"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $\\dfrac{y}{x}$ من أجل $x = 2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر من الشكل a/b)",
+      "expectedAnswer": "15",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم عدد السطر الثاني على عدد السطر الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{30}{2} = 15$ .",
+        "incorrect": "اقسم $y$ على $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{30}{2} = 15$"
+        ],
+        "result": "15"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $\\dfrac{y}{x}$ من أجل $x = 5$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر من الشكل a/b)",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم عدد السطر الثاني على عدد السطر الأول."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{45}{5} = 9$ .",
+        "incorrect": "اقسم $y$ على $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{45}{5} = 9$"
+        ],
+        "result": "9"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل هذا الجدول جدول تناسبية؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TANASUB-MABLAGH-THABIT"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن حاصلي القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في جدول تناسبية، ما هو العدد الذي يقابل $x = 0$ ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "حاصلا القسمة مختلفان، والعدد المقابل لـ 0 ليس 0 .",
+        "incorrect": "احسب حاصل القسمة في كل عمود قبل أن تحكم: تزايد المقدارين معا لا يكفي."
+      },
+      "solution": {
+        "lines": [
+          "$15 \\neq 9$ : حواصل القسمة غير متساوية.",
+          "كذلك في جدول تناسبية يكون $y = a \\times 0 = 0$ من أجل $x = 0$ ، وهنا $y = 20$ .",
+          "إذن الجدول ليس جدول تناسبية."
+        ],
+        "result": "ليس جدول تناسبية"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

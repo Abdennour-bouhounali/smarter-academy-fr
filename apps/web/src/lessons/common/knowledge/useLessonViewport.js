@@ -96,7 +96,12 @@ export function useLessonViewport(active = true) {
     if (main) ro.observe(main);
     window.addEventListener('resize', measure);
     // La transition de la sidebar dure 300ms : on re-mesure à la fin.
-    const onTransition = (e) => { if (e.propertyName === 'padding-left') measure(); };
+    // RTL (ar-DZ — src/locale.js) : `.sa-workspace-main` réserve la barre
+    // latérale par `padding-right`, pas `padding-left` (index.css) — les deux
+    // propriétés sont donc écoutées, une seule se déclenchant selon la direction.
+    const onTransition = (e) => {
+      if (e.propertyName === 'padding-left' || e.propertyName === 'padding-right') measure();
+    };
     main?.addEventListener('transitionend', onTransition);
 
     return () => {

@@ -1,0 +1,247 @@
+{
+  "id": "ex-3am-jidaa-ida-nisbiya-l2-004",
+  "lessonCode": "jidaa-ida-nisbiya",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — جداء ثلاثة أعداد وعدد طبيعي",
+    "estimatedMinutes": 8,
+    "tags": [
+      "جداء عدة أعداد",
+      "عدد طبيعي",
+      "مجموع جبري"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 1,
+      "file": "3am-s1-109",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان $A$ و $B$ حيث:",
+    "formulas": [
+      "A = [−6 − (4 − 9) + (−12)] + (−2)",
+      "B = (−5) \\times (−6) \\times (+2{,}5)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "بيّن أنّ $A$ عدد صحيح نسبي.",
+      "statement": "احسب $A$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-15",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بما بين القوسين الداخليين ثم بالقوسين المعقوفين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طرح عدد نسبي يساوي جمع معاكسه: $-6 - (−5) = -6 + 5$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب كل نتيجة جزئية قبل أن تنتقل إلى الحدّ الذي يليها."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = −15$ ، عدد صحيح نسبي.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "$4 - 9 = −5$",
+          "$−6 - (−5) + (−12) = −6 + 5 − 12 = −13$",
+          "$A = −13 + (−2) = −15$ ، وهو عدد صحيح نسبي."
+        ],
+        "result": "A = −15"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "بيّن أنّ $B$ عدد طبيعي.",
+      "statement": "ما إشارة $B$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "موجب",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "سالب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IDA-MORENEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ العوامل السالبة في الجداء: كم عاملًا إشارته (−) ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد زوجي من العوامل السالبة يعطي جداءً موجبًا، وعدد فردي يعطي جداءً سالبًا (ما دام لا عامل معدوم)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الإشارة وحدها مطلوبة: لا تحسب شيئًا، ولا يهمّ ترتيب العوامل."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد العوامل السالبة في $B$ هو 2 (عدد زوجي)، إذن الجداء موجب.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "عدد العوامل السالبة هو $2$ ، وهو عدد زوجي.",
+          "إذن الجداء موجب."
+        ]
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب $B$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "75",
+      "misconceptionSignatures": [
+        {
+          "value": "-75",
+          "id": "MISC-IDA-MORENEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ العوامل السالبة أولًا، فهي التي تعيّن إشارة الجداء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عدد العوامل السالبة زوجيًا فالجداء موجب، وإذا كان فرديًا فهو سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب المسافات إلى الصفر، ويمكنك تغيير ترتيب العوامل لتجمع ما يسهّل الحساب (مثل $4 \\times 25$)."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−5) \\times (−6) \\times (+2{,}5) = 75$ : عدد العوامل السالبة $2$ (عدد زوجي)، إذن الجداء موجب.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "عدد العوامل السالبة هو $2$ ، وهو عدد زوجي، إذن الجداء موجب.",
+          "نضرب المسافات إلى الصفر: $5 \\times 6 \\times 2{,}5 = 75$",
+          "$B = 75$"
+        ],
+        "result": "B = 75"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "هل $B$ عدد طبيعي ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد الطبيعي هو $0$ أو $1$ أو $2$ أو ... : عدد صحيح غير سالب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $B$ أوّلًا، ثم انظر إلى إشارته وإلى كونه عددًا صحيحًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جداء عاملين سالبين موجب، ثم الضرب في $2{,}5$ قد يُنتج عددًا عشريًا: تحقّق من الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 75$ عدد طبيعي.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "$B = 75$ ، وهو عدد صحيح موجب.",
+          "إذن $B$ عدد طبيعي."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

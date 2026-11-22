@@ -1,0 +1,151 @@
+{
+  "id": "ex-4am-mafhum-jumla-l2-004",
+  "lessonCode": "mafhum-jumla",
+  "level": 2,
+  "metadata": {
+    "title": "العمّال قبل التقاعد وبعده",
+    "estimatedMinutes": 5,
+    "tags": [
+      "جملة",
+      "ثنائية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-1",
+      "page": 56,
+      "section": "أنشطة",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "يعمل في مصلحة إدارية تخدم المواطنين بإخلاص 32 عاملا، $x$ رجلا و $y$ امرأة. أُحيل 5 رجال و 3 نساء على التقاعد ولم يُعوَّضوا، فأصبح عدد النساء بالمصلحة ضعف عدد الرجال. تُرجمت هذه الوضعية بالجملة:",
+    "formulas": [
+      "\\begin{cases} x + y = 32 \\\\ 2x - y = 7 \\end{cases}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل الثنائية $(24 ; 8)$ حل لهذه الجملة؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-MUADALA-WAHIDA"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $24$ و $y$ بـ $8$ في كل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الثنائية حل للجملة إذا حققت المعادلتين في آن واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$24 + 8 = 32$ ؛ $2 \\times 24 - 8 = 40 \\neq 7$ : الثنائية ليست حلا للجملة.",
+        "incorrect": "العدد الأول في الثنائية قيمة $x$ والثاني قيمة $y$ ؛ عوّض في المعادلتين معا وقارن كل نتيجة بالطرف الثاني."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $x$ بـ $24$ و $y$ بـ $8$ :",
+          "$24 + 8 = 32$",
+          "$2 \\times 24 - 8 = 40 \\neq 7$",
+          "ومنه الثنائية $(24 ; 8)$ ليست حلا للجملة (لا تحقق المعادلتين معا)."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "لتكن الثنائيتان $(13 ; 19)$ و $(19 ; 13)$ . أيهما حل لهذه الجملة؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية التي هي حل للجملة: قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر)",
+      "expectedAnswer": {
+        "x": "13",
+        "y": "19"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "19",
+            "y": "13"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جرّب كل ثنائية في المعادلتين معا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الأول في الثنائية قيمة $x$ والثاني قيمة $y$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استبعد كل ثنائية لا تحقق إحدى المعادلتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$13 + 19 = 32$ ؛ $2 \\times 13 - 19 = 7$.",
+        "incorrect": "الحل يحقق المعادلتين في آن واحد، والترتيب في الثنائية مهم: عوّض كل ثنائية في المعادلتين."
+      },
+      "solution": {
+        "lines": [
+          "التحقق من الثنائية $(13 ; 19)$ :",
+          "$13 + 19 = 32$",
+          "$2 \\times 13 - 19 = 7$",
+          "ومنه الثنائية $(13 ; 19)$ حل للجملة.",
+          "التحقق من الثنائية $(19 ; 13)$ :",
+          "$19 + 13 = 32$",
+          "$2 \\times 19 - 13 = 25 \\neq 7$",
+          "ومنه الثنائية $(19 ; 13)$ ليست حلا للجملة."
+        ],
+        "result": "(13 ; 19)"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

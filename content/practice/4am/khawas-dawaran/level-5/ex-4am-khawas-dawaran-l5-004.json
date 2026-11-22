@@ -1,0 +1,105 @@
+{
+  "id": "ex-4am-khawas-dawaran-l5-004",
+  "lessonCode": "khawas-dawaran",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — مثلث يدور حول نقطة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "إنشاء صورة شكل",
+      "المساحات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_khawas-dawaran_P3",
+      "modelledOn": "ex-4"
+    }
+  },
+  "generator": {
+    "tool": "u13-khawas-dawaran/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "في معلم: $\\Omega(1\\,;\\,1)$ ، $A(2\\,;\\,1)$ ، $B(4\\,;\\,1)$ ، $C(2\\,;\\,4)$ . A′B′C′ صورة المثلث ABC بالدوران الذي مركزه Ω وزاويته $90^\\circ$ في الاتجاه غير المباشر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا B′:",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x\\,;\\,y)$ : الفاصلة ثم الترتيبة (عدد صحيح أو كسر مثل 3/2)",
+      "expectedAnswer": {
+        "x": "1",
+        "y": "-2"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من Ω إلى B: الحركة (3 ; 0)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مع عقارب الساعة: (a ; b) تصبح (b ; −a)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انقلها من Ω."
+        }
+      ],
+      "feedback": {
+        "correct": "$B'(1\\,;\\,-2)$ .",
+        "incorrect": "ابدأ من Ω، ومع عقارب الساعة."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "ما مساحة المثلث A′B′C′؟",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-KHAWAS",
+          "value": "6"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ABC قائم في A."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "AB و AC."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم خاصية المساحات."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2 \\times 3}{2} = 3$ ، والدوران يحافظ على المساحات.",
+        "incorrect": "نصف جداء الضلعين القائمين، ثم المساحة محفوظة."
+      }
+    }
+  ]
+}

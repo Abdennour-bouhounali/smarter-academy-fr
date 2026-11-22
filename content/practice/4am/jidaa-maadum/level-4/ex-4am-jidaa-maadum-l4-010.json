@@ -1,0 +1,208 @@
+{
+  "id": "ex-4am-jidaa-maadum-l4-010",
+  "lessonCode": "jidaa-maadum",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2024 — تحقق، تحليل، معادلة جداء معدوم",
+    "estimatedMinutes": 12,
+    "tags": [
+      "متطابقات شهيرة",
+      "تحليل",
+      "معادلة جداء معدوم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_jidaa-maadum_P2",
+      "modelledOn": "BEM 2024 I"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تعطى العبارة:",
+    "formulas": [
+      "E = 25x^2 - 9 + (x + 2)(5x - 3)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "تحقّق بالنشر والتبسيط أن: $E = 30x^2 + 7x - 15$ .",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر الجداء $(x + 2)(5x - 3)$ ثم اجمع الحدود المتشابهة."
+        }
+      ],
+      "feedback": {
+        "correct": "أحسنت: برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "$E = 25x^2 - 9 + 5x^2 - 3x + 10x - 6$",
+          "$= 30x^2 + 7x - 15$"
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "حلّل العبارة $25x^2 - 9$ إلى جداء عاملين ثم استنتج تحليل العبارة $E$ .",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $(5x - 3)(6x + m)$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن عامل مشترك، أو عن متطابقة شهيرة من الشكل $a^2 - b^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرج العامل المشترك (أو طبّق $a^2 - b^2 = (a - b)(a + b)$ )، واكتب ما بقي بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بسّط ما بين القوسين بإشاراته، ثم قارن بالشكل المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = (5x - 3)(6x + 5)$ إذن $m = 5$ .",
+        "incorrect": "أخرج العامل المشترك أو طبّق المتطابقة الشهيرة، ثم بسّط ما بقي بين القوسين بإشاراته."
+      },
+      "solution": {
+        "lines": [
+          "$25x^2 - 9 = (5x)^2 - 3^2 = (5x - 3)(5x + 3)$",
+          "$E = (5x - 3)(5x + 3) + (x + 2)(5x - 3)$",
+          "$= (5x - 3)[(5x + 3) + (x + 2)]$"
+        ],
+        "result": "E = (5x - 3)(6x + 5)"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "حل المعادلة: $(6x + 5)(5x - 3) = 0$ .",
+      "statement": "الحلّ الأصغر:",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "-5/6",
+      "misconceptionSignatures": [
+        {
+          "value": "-3/5",
+          "id": "MISC-JIDAA-ISHARA-JADHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يكون جداء عاملين معدومًا إذا كان أحد عامليه على الأقل معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلتين من الدرجة الأولى: كل عامل يساوي $0$ ، ثم حلّ كل واحدة منهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى الإشارة عند نقل العدد إلى الطرف الثاني، ثم رتّب الحلّين من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = -\\dfrac{5}{6}$ .",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة من الدرجة الأولى بإشاراتها، ثم رتّب الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $(6x + 5)(5x - 3) = 0$",
+          "يعني أنّ: $6x + 5 = 0$ أو $5x - 3 = 0$",
+          "أي: $6x = -5$ أو $5x = 3$",
+          "ومنه: $x = -\\dfrac{5}{6}$ أو $x = \\dfrac{3}{5}$",
+          "إذن للمعادلة حلّان هما $-\\dfrac{5}{6}$ و $\\dfrac{3}{5}$"
+        ],
+        "result": "x = -\\dfrac{5}{6}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "الحلّ الأكبر:",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "3/5",
+      "misconceptionSignatures": [
+        {
+          "value": "5/6",
+          "id": "MISC-JIDAA-ISHARA-JADHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة الثانية من الدرجة الأولى، ثم قارن الحلّين."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{3}{5}$ .",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة من الدرجة الأولى بإشاراتها، ثم رتّب الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "إذن للمعادلة حلّان هما $-\\dfrac{5}{6}$ و $\\dfrac{3}{5}$"
+        ],
+        "result": "x = \\dfrac{3}{5}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

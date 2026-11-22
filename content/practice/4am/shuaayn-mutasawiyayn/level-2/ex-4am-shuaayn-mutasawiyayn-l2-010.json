@@ -1,0 +1,74 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l2-010",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — صورة بانسحاب",
+    "estimatedMinutes": 3,
+    "tags": [
+      "انسحاب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_shuaayn-mutasawiyayn_P3",
+      "modelledOn": "method-image"
+    }
+  },
+  "statement": {
+    "content": "E صورة F بالانسحاب الذي شعاعه $\\overrightarrow{GH}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "هذا يعني:",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{GE} = \\overrightarrow{HF}$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{FE} = \\overrightarrow{GH}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{EF} = \\overrightarrow{GH}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSIHAB-SURA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من النقطة إلى صورتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النقطة هنا F وصورتها E."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الشعاع يبدأ من F."
+        }
+      ],
+      "feedback": {
+        "correct": "صورة F هي E: الشعاع FE يساوي الشعاع GH.",
+        "incorrect": "الشعاع يبدأ من النقطة F وينتهي عند صورتها E."
+      }
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "id": "ex-4am-tamthil-bayani-khatti-l2-006",
+  "lessonCode": "tamthil-bayani-khatti",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2007 — طبع صور الهوية ببسكرة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "وضعية",
+      "تمثيل بياني",
+      "انتماء نقطة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tamthil-bayani-khatti_P1",
+      "modelledOn": "BEM 2007 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2007",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يطبع محل للتصوير ببسكرة صور الهوية بسعر 30DA للصورة الواحدة، ويلتزم بموعد التسليم احترامًا لوقت زبائنه. نسمّي $x$ عدد الصور المطبوعة و $f(x)$ المبلغ المدفوع بالدينار، حيث $f(x) = 30x$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب ترتيب النقطة $A$ من التمثيل البياني للدالة $f$ التي فاصلتها 12.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الترتيب: المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "360",
+      "misconceptionSignatures": [
+        {
+          "value": "0,4",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ترتيب النقطة هو صورة فاصلتها بالدالة $f$ : المبلغ مقابل 12 صورة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $30 \\times 12$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(12) = 30 \\times 12 = 360$ ، إذن $A(12 ; 360)$ .",
+        "incorrect": "الترتيب هو المبلغ: عدد الصور مضروبا في ثمن الصورة."
+      },
+      "solution": {
+        "lines": [
+          "$f(12) = 30 \\times 12 = 360$",
+          "إذن $A(12 ; 360)$ : 12 صورة بـ 360DA ."
+        ],
+        "result": "A(12 ; 360)"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "مثّل بيانيا الدالة $f$ من أجل $0 \\leqslant x \\leqslant 20$ في معلم متعامد (نأخذ $1cm$ لكل صورتين على محور الفواصل و $1cm$ لكل $60DA$ على محور التراتيب).",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التمثيل البياني لدالة خطية مستقيم يشمل المبدأ $O$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يكفي تعيين نقطة ثانية من التمثيل بحساب صورة عدد غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "$f$ دالة خطية: تمثيلها جزء من مستقيم يشمل المبدأ $O$ .",
+          "نستعمل النقطة $A(12 ; 360)$ : فاصلتها $6cm$ وترتيبها $6cm$ على الورقة.",
+          "نرسم القطعة من $O$ إلى النقطة $(20 ; 600)$ (أي $10cm$ و $10cm$ )."
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل النقطة $B(20 ; 650)$ تنتمي إلى التمثيل البياني للدالة $f$ ؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب صورة فاصلة النقطة $B$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارنها بترتيب $B$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(20) = 600 \\neq 650$ : النقطة $B$ لا تنتمي إلى التمثيل.",
+        "incorrect": "تنتمي النقطة إلى التمثيل إذا كانت صورة فاصلتها تساوي ترتيبها."
+      },
+      "solution": {
+        "lines": [
+          "$f(20) = 30 \\times 20 = 600$",
+          "$600 \\neq 650$ ، إذن $B$ لا تنتمي إلى التمثيل البياني للدالة $f$ ."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

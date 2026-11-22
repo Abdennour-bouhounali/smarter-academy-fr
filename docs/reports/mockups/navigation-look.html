@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Navigation — proposed look (mock-up, not the product)</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;800;900&display=swap" rel="stylesheet">
+<style>
+  /* THE TOKENS: every colour of the navigation and of its pages. Nothing else is allowed in them. */
+  :root {
+    --ink: #0b1b3f;        /* text, the active door of the teacher */
+    --muted: #5b6785;      /* second-level text */
+    --line: #e3e8f2;       /* borders */
+    --page: #f6f8fc;       /* behind the cards */
+    --surface: #ffffff;
+    --accent: #3b5bdb;     /* the brand blue: the student's active door, links */
+    --accent-soft: #eaefff;
+    --now: #f59e0b;        /* the next step, this week */
+    --now-soft: #fff5db;
+    --done: #12a36b;       /* finished */
+    --done-soft: #e3f7ee;
+    --alert: #d6455d;      /* needs you */
+    --alert-soft: #fde8ec;
+    --radius: 16px;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #eef1f7; color: var(--ink); font-family: 'Cairo', system-ui, sans-serif; line-height: 1.6; }
+  main { max-width: 1320px; margin: 0 auto; padding: 28px 16px 60px; }
+  h1 { font-size: 28px; font-weight: 900; margin: 0 0 4px; }
+  h2 { font-size: 20px; font-weight: 900; margin: 40px 0 6px; }
+  .note { color: var(--muted); font-weight: 700; margin: 0 0 16px; max-width: 70ch; }
+  .row { display: flex; flex-wrap: wrap; gap: 22px; align-items: flex-start; }
+  .cap { font-size: 13px; font-weight: 800; color: var(--muted); margin: 8px 0 0; text-align: center; }
+
+  /* palette */
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+  .sw { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; font-size: 13px; font-weight: 800; }
+  .sw i { display: block; height: 46px; } .sw span { display: block; padding: 6px 10px 0; } .sw small { display: block; padding: 0 10px 8px; color: var(--muted); font-weight: 700; direction: ltr; text-align: right; }
+
+  /* a phone */
+  .phone { width: 300px; height: 610px; background: var(--page); border: 8px solid #101728; border-radius: 34px; overflow: hidden; display: flex; flex-direction: column; flex: none; }
+  .screen { flex: 1; overflow: hidden; padding: 14px 14px 0; display: flex; flex-direction: column; gap: 10px; }
+  .hello { font-size: 13px; font-weight: 800; color: var(--muted); margin: 2px 2px 0; }
+  .title { font-size: 19px; font-weight: 900; margin: 0 2px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px; }
+  .next { background: var(--ink); color: #fff; border: 0; padding: 14px; }
+  .next small { display: block; font-size: 12px; font-weight: 800; color: #b9c4e4; }
+  .next strong { display: block; font-size: 18px; font-weight: 900; margin: 2px 0 8px; }
+  .bar { height: 6px; border-radius: 99px; background: rgba(255,255,255,.18); overflow: hidden; } .bar b { display: block; height: 100%; width: 38%; background: var(--now); border-radius: 99px; }
+  .go { margin-top: 12px; display: flex; align-items: center; justify-content: center; min-height: 46px; border-radius: 12px; background: var(--now); color: #2a1c02; font-size: 16px; font-weight: 900; }
+  .label { font-size: 12px; font-weight: 800; color: var(--muted); margin: 4px 2px -4px; }
+  .lesson { display: flex; align-items: center; gap: 10px; min-height: 46px; padding: 0 2px; border-bottom: 1px solid var(--line); font-size: 14px; font-weight: 800; }
+  .lesson:last-child { border-bottom: 0; }
+  .dot { flex: none; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-size: 13px; font-weight: 900; }
+  .dot.done { background: var(--done-soft); color: var(--done); } .dot.now { background: var(--now); color: #2a1c02; } .dot.wait { border: 2px solid var(--line); }
+  .lesson em { margin-inline-start: auto; font-style: normal; font-size: 11px; font-weight: 800; color: #8a5a00; background: var(--now-soft); padding: 2px 8px; border-radius: 99px; white-space: nowrap; }
+  .lesson.is-wait { color: var(--muted); }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; } .pair .card { text-align: center; padding: 10px; } .pair b { display: block; font-size: 20px; font-weight: 900; } .pair span { font-size: 12px; font-weight: 800; color: var(--muted); }
+
+  /* the bottom bar: four doors */
+  .tabs { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--surface); border-top: 1px solid var(--line); padding: 6px 6px 10px; gap: 4px; }
+  .tab { display: grid; justify-items: center; gap: 1px; min-height: 52px; align-content: center; border-radius: 14px; font-size: 12px; font-weight: 800; color: var(--muted); position: relative; }
+  .tab svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .student .tab.on { background: var(--accent-soft); color: var(--accent); }
+  .teacher .tab.on { background: var(--accent); color: #fff; }
+  .badge { position: absolute; top: 4px; inset-inline-start: 56%; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 99px; background: var(--alert); color: #fff; font-size: 11px; font-weight: 900; display: grid; place-items: center; }
+
+  /* the year map */
+  .terms { display: flex; gap: 6px; } .terms span { flex: 1; text-align: center; min-height: 38px; display: grid; place-items: center; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); font-size: 13px; font-weight: 800; color: var(--muted); }
+  .student .terms .on { background: var(--accent); border-color: var(--accent); color: #fff; } .teacher .terms .on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .unit { display: flex; justify-content: space-between; align-items: baseline; font-size: 14px; font-weight: 900; margin-bottom: 2px; } .unit small { font-size: 12px; font-weight: 800; color: var(--muted); }
+  .search { min-height: 40px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); display: flex; align-items: center; padding: 0 12px; font-size: 13px; font-weight: 700; color: var(--muted); }
+
+  /* the lesson bar */
+  .lbar { display: flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 6px 8px; font-size: 12px; font-weight: 800; }
+  .lbar .where { flex: 1; min-width: 0; } .lbar .where small { display: block; color: var(--muted); font-size: 11px; } .lbar .where b { display: block; font-size: 14px; font-weight: 900; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .lbar .nav { flex: none; min-width: 40px; min-height: 40px; display: grid; place-items: center; border-radius: 10px; border: 1px solid var(--line); font-size: 16px; }
+  .world { flex: 1; border-radius: var(--radius); background: #0b1a3a; color: #9fd8ff; display: grid; place-items: center; font-size: 13px; font-weight: 800; text-align: center; padding: 12px; }
+
+  /* the teacher's class card */
+  .klass h3 { margin: 0 0 6px; font-size: 16px; font-weight: 900; display: flex; justify-content: space-between; } .klass h3 small { font-size: 12px; font-weight: 800; color: var(--muted); }
+  .klass p { margin: 0; font-size: 13px; font-weight: 800; color: var(--muted); } .klass p b { display: block; color: var(--ink); font-size: 15px; font-weight: 900; }
+  .btns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 10px 0 8px; } .btns span { min-height: 42px; display: grid; place-items: center; border-radius: 12px; font-size: 14px; font-weight: 900; border: 1.5px solid var(--accent); color: var(--accent); }
+  .btns .main { background: var(--accent); color: #fff; }
+  .calls { display: flex; gap: 6px; flex-wrap: wrap; } .calls span { font-size: 12px; font-weight: 800; padding: 3px 9px; border-radius: 99px; } .calls .a { background: var(--alert-soft); color: #9b2238; } .calls .n { background: var(--now-soft); color: #8a5a00; }
+
+  /* REAL-SIZE SCREENS (laptop 1366×768, tablet 768×1024): drawn at their true size, then zoomed to fit the column */
+  .fit { flex: 1 1 100%; min-width: 0; }
+  .fit.half { flex: 1 1 46%; }
+  .dev { width: calc(var(--w) * 1px); height: calc(var(--h) * 1px); background: var(--page); border: 10px solid #101728; border-radius: 18px; overflow: hidden; display: flex; font-size: 15px; }
+  .dev .rail { flex: none; width: 80px; background: var(--surface); border-inline-end: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; padding: 14px 8px; }
+  .dev .rail .logo { width: 36px; height: 36px; border-radius: 50%; border: 4px solid var(--accent); border-top-color: transparent; margin: 0 auto 14px; }
+  .dev .tab { min-height: 64px; font-size: 13px; } .dev .tab svg { width: 24px; height: 24px; }
+  .dev .rail .me { margin-top: auto; width: 44px; height: 44px; border-radius: 50%; background: var(--accent); color: #fff; display: grid; place-items: center; font-weight: 900; align-self: center; }
+  .dev .body { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+  .dev .pg { flex: 1; min-height: 0; width: 100%; max-width: 1180px; margin: 0 auto; padding: 24px 32px; display: flex; flex-direction: column; gap: 16px; }
+  .top { display: flex; align-items: flex-end; gap: 16px; } .top small { display: block; font-size: 14px; font-weight: 800; color: var(--muted); } .top b { display: block; font-size: 26px; font-weight: 900; line-height: 1.3; }
+  .find { margin-inline-start: auto; width: 320px; min-height: 44px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); display: flex; align-items: center; padding: 0 14px; font-size: 14px; font-weight: 700; color: var(--muted); }
+  .grades { display: flex; gap: 6px; } .grades span { min-width: 52px; min-height: 44px; display: grid; place-items: center; border-radius: 99px; border: 1px solid var(--line); background: var(--surface); font-size: 14px; font-weight: 800; color: var(--muted); }
+  .student .grades .on { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); } .teacher .grades .on { border: 1.5px solid var(--accent); color: var(--accent); }
+  .cols { display: grid; grid-template-columns: 1.55fr 1fr; gap: 18px; align-items: start; } .stack { display: grid; gap: 14px; }
+  .dev .card { padding: 18px; } .dev .label { font-size: 14px; margin: 0 2px 6px; }
+  .dev .next { padding: 26px; } .dev .next small { font-size: 14px; } .dev .next strong { font-size: 30px; margin: 4px 0 14px; } .dev .bar { height: 8px; }
+  .dev .go { width: 220px; min-height: 52px; font-size: 18px; margin-top: 18px; }
+  .dev .lesson { min-height: 48px; font-size: 15px; gap: 12px; } .dev .dot { width: 28px; height: 28px; } .dev .lesson em { font-size: 12px; }
+  .dev .pair b { font-size: 26px; } .dev .pair span { font-size: 13px; }
+  .year { display: grid; gap: 10px; } .year div { display: grid; grid-template-columns: 70px 1fr 60px; align-items: center; gap: 10px; font-size: 14px; font-weight: 800; } .year i { display: block; height: 8px; border-radius: 99px; background: var(--line); overflow: hidden; } .year i u { display: block; height: 100%; background: var(--done); border-radius: 99px; } .year small { color: var(--muted); font-weight: 800; text-align: end; }
+  .dev .terms { max-width: 520px; } .dev .terms span { min-height: 44px; font-size: 15px; }
+  .md { flex: 1; min-height: 0; display: grid; grid-template-columns: 330px 1fr; gap: 18px; align-items: start; }
+  .units { display: grid; gap: 8px; } .unitrow { min-height: 56px; padding: 8px 14px; border-radius: 14px; border: 1px solid var(--line); background: var(--surface); display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 15px; font-weight: 800; } .unitrow small { font-size: 13px; color: var(--muted); font-weight: 800; white-space: nowrap; }
+  .student .unitrow.on { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); } .teacher .unitrow.on { border: 1.5px solid var(--accent); }
+  .dev .unit { font-size: 18px; margin-bottom: 6px; } .dev .unit small { font-size: 14px; }
+  .lesson .open { margin-inline-start: auto; font-size: 13px; font-weight: 800; color: var(--muted); white-space: nowrap; } .lesson em + .open { margin-inline-start: 10px; }
+  .chip { font-size: 12px; font-weight: 800; padding: 2px 10px; border-radius: 99px; border: 1px solid var(--ink); white-space: nowrap; } .chips { margin-inline-start: auto; display: flex; gap: 6px; } .lesson em + .chips { margin-inline-start: 10px; }
+  .classes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; } .dev .klass h3 { font-size: 19px; } .dev .klass p { font-size: 14px; } .dev .klass p b { font-size: 17px; } .dev .btns span { min-height: 46px; font-size: 15px; } .dev .calls span { font-size: 13px; }
+  .wait-row { display: flex; align-items: center; gap: 12px; min-height: 48px; border-bottom: 1px solid var(--line); font-size: 15px; font-weight: 800; } .wait-row:last-child { border-bottom: 0; } .wait-row small { color: var(--muted); font-weight: 800; } .wait-row span { margin-inline-start: auto; min-height: 40px; padding: 0 16px; display: grid; place-items: center; border-radius: 10px; border: 1.5px solid var(--ink); font-size: 14px; font-weight: 900; }
+  /* the lesson bar at full width */
+  .lb { display: flex; align-items: center; gap: 12px; background: var(--surface); border-bottom: 1px solid var(--line); padding: 8px 20px; min-height: 60px; font-size: 14px; font-weight: 800; }
+  .lb .link { min-height: 44px; padding: 0 14px; display: flex; align-items: center; border-radius: 10px; border: 1px solid var(--line); white-space: nowrap; } .lb .link small { color: var(--muted); font-weight: 800; margin-inline-end: 6px; }
+  .lb .where { flex: 1; min-width: 0; text-align: center; } .lb .where small { display: block; font-size: 12px; color: var(--muted); } .lb .where b { display: block; font-size: 17px; font-weight: 900; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .lb .tools { display: flex; gap: 4px; } .lb .tools span { min-height: 44px; padding: 0 12px; display: grid; place-items: center; border-radius: 10px; color: var(--muted); white-space: nowrap; } .lb .tools .on { background: var(--accent); color: #fff; }
+  .dev .world { margin: 16px; font-size: 16px; }
+  /* tablet upright: the same rail, ONE column */
+  .dev.up .cols, .dev.up .md { grid-template-columns: 1fr; } .dev.up .classes { grid-template-columns: 1fr 1fr; } .dev.up .find { width: 240px; } .dev.up .pg { padding: 22px 24px; }
+  .week3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; } .week3 .lesson { border: 1px solid var(--line); border-radius: 14px; padding: 0 12px; background: var(--surface); min-height: 56px; }
+  table.sizes { border-collapse: collapse; width: 100%; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; font-size: 14px; font-weight: 700; } table.sizes th, table.sizes td { padding: 9px 12px; border-bottom: 1px solid var(--line); text-align: start; vertical-align: top; } table.sizes th { font-weight: 900; background: var(--page); } table.sizes tr:last-child td { border-bottom: 0; }
+  .rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; } .rules .card b { display: block; font-weight: 900; } .rules .card span { font-size: 14px; font-weight: 700; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <h1>الملاحة — المظهر المقترح</h1>
+  <p class="note" dir="ltr" style="text-align:left">Mock-up for the owner's decision (docs/reports/NAVIGATION_REBUILD_PLAN.md). Static drawing: nothing here is the product, the lessons and numbers are examples.</p>
+
+  <h2>1 · الألوان: تسعة، لا غير</h2>
+  <p class="note">اليوم تستعمل القوائم والصفحات 12 عائلة لونية و13 تدرّجًا. المقترح: حبر واحد، لون واحد للعلامة، وثلاثة ألوان لها معنى ثابت.</p>
+  <div class="swatches">
+    <div class="sw"><i style="background:var(--ink)"></i><span>الحبر</span><small>#0B1B3F · text only</small></div>
+    <div class="sw"><i style="background:var(--accent)"></i><span>لون العلامة</span><small>#3B5BDB · buttons, active door, links</small></div>
+    <div class="sw"><i style="background:var(--now)"></i><span>الآن</span><small>#F59E0B · next step, this week</small></div>
+    <div class="sw"><i style="background:var(--done)"></i><span>أُنجز</span><small>#12A36B · finished</small></div>
+    <div class="sw"><i style="background:var(--alert)"></i><span>يحتاجك</span><small>#D6455D · needs you</small></div>
+    <div class="sw"><i style="background:var(--muted)"></i><span>نصّ ثانوي</span><small>#5B6785</small></div>
+    <div class="sw"><i style="background:var(--line)"></i><span>الخطوط</span><small>#E3E8F2</small></div>
+    <div class="sw"><i style="background:var(--page)"></i><span>خلفية الصفحة</span><small>#F6F8FC</small></div>
+    <div class="sw"><i style="background:var(--surface);border-bottom:1px solid var(--line)"></i><span>السطح</span><small>#FFFFFF</small></div>
+  </div>
+
+
+  <h2>2 · ثلاثة مقاسات، هيكل واحد</h2>
+  <p class="note">الأبواب الأربعة نفسها في كلّ مكان. ما يتغيّر هو مكان القائمة وعدد الأعمدة فقط.</p>
+  <table class="sizes">
+    <tr><th>المقاس</th><th>القائمة</th><th>الصفحة</th><th>خريطة السنة</th></tr>
+    <tr><td>الحاسوب واللوحة أفقيًّا (1024 فأكثر)</td><td>شريط رفيع على اليمين (80 بكسل)</td><td>عمودان، عرض أقصى 1180</td><td>الوحدات يمينًا، دروس الوحدة يسارًا</td></tr>
+    <tr><td>اللوحة عموديًّا (768 إلى 1023)</td><td>الشريط الرفيع نفسه</td><td>عمود واحد</td><td>عمود واحد، الوحدة الحالية مفتوحة</td></tr>
+    <tr><td>الهاتف (أقلّ من 768)</td><td>شريط سفلي بأربع خانات</td><td>عمود واحد</td><td>عمود واحد</td></tr>
+  </table>
+
+  <h2>3 · التلميذ على الحاسوب (1366×768)</h2>
+  <p class="note">الصور بمقاسها الحقيقي ثم مصغّرة لتدخل في الصفحة. اللون الممتلئ الوحيد هو الخطوة التالية.</p>
+  <div class="row student">
+    <div class="fit"><div class="dev" style="--w:1366;--h:768" data-screen="s-today"></div><p class="cap">اليوم: خطوة واحدة، ثم الأسبوع، ثم السنة</p></div>
+    <div class="fit"><div class="dev" style="--w:1366;--h:768" data-screen="s-map"></div><p class="cap">دروسي: خريطة السنة — الوحدات يمينًا، دروس الوحدة المختارة يسارًا</p></div>
+    <div class="fit"><div class="dev" style="--w:1366;--h:768" data-screen="s-lesson"></div><p class="cap">داخل الدرس: شريط الدرس فوق، والقائمة تبقى في مكانها</p></div>
+  </div>
+
+  <h2>4 · الأستاذ على الحاسوب (1366×768)</h2>
+  <p class="note">الهيكل نفسه والأزرق نفسه: الباب المضاء ممتلئ عند الأستاذ، خفيف عند التلميذ. الحبر للنصّ فقط.</p>
+  <div class="row teacher">
+    <div class="fit"><div class="dev" style="--w:1366;--h:768" data-screen="t-today"></div><p class="cap">اليوم: أسبوعه قسمًا قسمًا، ثم ما ينتظره</p></div>
+    <div class="fit"><div class="dev" style="--w:1366;--h:768" data-screen="t-map"></div><p class="cap">دروسي: الخريطة نفسها، وكلّ سطر يحمل ما هو جاهز له</p></div>
+    <div class="fit"><div class="dev" style="--w:1366;--h:768" data-screen="t-lesson"></div><p class="cap">داخل الدرس: شريط الدرس يحمل أدواته، والسابق والتالي</p></div>
+  </div>
+
+  <h2>5 · اللوحة عموديًّا (768×1024)</h2>
+  <p class="note">الشريط الرفيع نفسه، والصفحة عمود واحد. اللوحة أفقيًّا (1024×768) تأخذ شكل الحاسوب.</p>
+  <div class="row">
+    <div class="fit half student"><div class="dev up" style="--w:768;--h:1024" data-screen="s-today-up"></div><p class="cap">التلميذ · اليوم</p></div>
+    <div class="fit half student"><div class="dev up" style="--w:768;--h:1024" data-screen="s-map-up"></div><p class="cap">التلميذ · دروسي</p></div>
+    <div class="fit half teacher"><div class="dev up" style="--w:768;--h:1024" data-screen="t-today-up"></div><p class="cap">الأستاذ · اليوم</p></div>
+    <div class="fit half teacher"><div class="dev up" style="--w:768;--h:1024" data-screen="t-map-up"></div><p class="cap">الأستاذ · دروسي</p></div>
+  </div>
+
+  <h2>6 · التلميذ على الهاتف</h2>
+  <p class="note">أربعة أبواب. اللون الممتلئ الوحيد في الصفحة هو الخطوة التالية.</p>
+  <div class="row student">
+    <div><div class="phone">
+      <div class="screen">
+        <p class="hello">صباح الخير</p><p class="title">ياسين، خطوتك التالية</p>
+        <div class="card next"><small>الأعداد الطبيعية · الدرس 3 من 9</small><strong>خواص القواسم</strong><div class="bar"><b></b></div><div class="go">هيّا ←</div></div>
+        <p class="label">هذا الأسبوع</p>
+        <div class="card" style="padding:4px 12px">
+          <div class="lesson"><span class="dot done">✓</span>قواسم عدد طبيعي</div>
+          <div class="lesson"><span class="dot now">▶</span>خواص القواسم<em>الآن</em></div>
+          <div class="lesson is-wait"><span class="dot wait"></span>القاسم المشترك الأكبر</div>
+        </div>
+        <div class="pair"><div class="card"><b>🔥 3</b><span>تحدّي اليوم</span></div><div class="card"><b>★ 12</b><span>نجوم الأسبوع</span></div></div>
+      </div>
+      <div class="tabs">
+        <div class="tab on"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>اليوم</div>
+        <div class="tab"><svg viewBox="0 0 24 24"><path d="M4 5h7v15H4zM13 5h7v15h-7z"/></svg>دروسي</div>
+        <div class="tab"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="9" rx="4"/><path d="M8 11v3M6.5 12.5h3M16 12.5h.01"/></svg>أتدرّب</div>
+        <div class="tab"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg>أنا</div>
+      </div>
+    </div><p class="cap">اليوم</p></div>
+
+    <div><div class="phone">
+      <div class="screen">
+        <p class="title">دروسي · الرابعة متوسط</p>
+        <div class="search">🔍 ابحث عن درس</div>
+        <div class="terms"><span class="on">الفصل 1</span><span>الفصل 2</span><span>الفصل 3</span></div>
+        <div class="card" style="padding:10px 12px 2px">
+          <div class="unit">الأعداد الطبيعية والناطقة<small>2 / 9</small></div>
+          <div class="lesson"><span class="dot done">✓</span>التعرّف على قاسم</div>
+          <div class="lesson"><span class="dot done">✓</span>قواسم عدد طبيعي</div>
+          <div class="lesson"><span class="dot now">▶</span>خواص القواسم<em>هذا الأسبوع</em></div>
+          <div class="lesson is-wait"><span class="dot wait"></span>القاسم المشترك الأكبر</div>
+        </div>
+        <div class="card" style="padding:10px 12px"><div class="unit" style="margin:0">الحساب على الجذور<small>0 / 6</small></div></div>
+        <div class="card" style="padding:10px 12px"><div class="unit" style="margin:0">خاصية طالس<small>0 / 4</small></div></div>
+      </div>
+      <div class="tabs">
+        <div class="tab"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>اليوم</div>
+        <div class="tab on"><svg viewBox="0 0 24 24"><path d="M4 5h7v15H4zM13 5h7v15h-7z"/></svg>دروسي</div>
+        <div class="tab"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="9" rx="4"/><path d="M8 11v3M6.5 12.5h3M16 12.5h.01"/></svg>أتدرّب</div>
+        <div class="tab"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg>أنا</div>
+      </div>
+    </div><p class="cap">دروسي: خريطة السنة</p></div>
+
+    <div><div class="phone">
+      <div class="screen" style="padding-bottom:14px">
+        <div class="lbar"><span class="nav">›</span><span class="where"><small>الأعداد الطبيعية · 3 / 9</small><b>خواص القواسم</b></span><span class="nav">‹</span></div>
+        <div class="world">الدرس نفسه<br>(عالم اللعبة يحتفظ بألوانه)</div>
+      </div>
+    </div><p class="cap">داخل الدرس: شريط الدرس</p></div>
+  </div>
+
+  <h2>7 · الأستاذ على الهاتف</h2>
+  <p class="note">الهيكل نفسه والأزرق نفسه. الحبر للنصّ فقط.</p>
+  <div class="row teacher">
+    <div><div class="phone">
+      <div class="screen">
+        <p class="hello">الأسبوع 8 · الفصل 1</p><p class="title">هذا الأسبوع</p>
+        <div class="card klass"><h3>الرابعة 2 <small>32 تلميذًا</small></h3><p>درس الأسبوع<b>خواص القواسم</b></p>
+          <div class="btns"><span class="main">حصّة القسم</span><span>بطاقة الدرس</span></div>
+          <div class="calls"><span class="a">5 تلاميذ يحتاجونك</span><span class="n">3 إجابات للتصحيح</span></div></div>
+        <div class="card klass"><h3>الرابعة 3 <small>29 تلميذًا</small></h3><p>درس الأسبوع<b>قواسم عدد طبيعي</b></p>
+          <div class="btns"><span class="main">حصّة القسم</span><span>بطاقة الدرس</span></div>
+          <div class="calls"><span class="n">1 إجابة للتصحيح</span></div></div>
+      </div>
+      <div class="tabs">
+        <div class="tab on"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>اليوم</div>
+        <div class="tab"><svg viewBox="0 0 24 24"><path d="M4 5h7v15H4zM13 5h7v15h-7z"/></svg>دروسي</div>
+        <div class="tab"><svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.5"/><path d="M2.5 20c.8-3.5 3-5 6.5-5s5.700 1.500 6.500 5M16 6.500a3 3 0 0 1 0 5.500M18.500 15c1.700.700 2.700 2.200 3 5"/></svg>أقسامي<i class="badge">4</i></div>
+        <div class="tab"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L4.500 19a1.500 1.500 0 0 0 1.300 2h12.400a1.500 1.500 0 0 0 1.300-2L14 9V3"/></svg>أدواتي</div>
+      </div>
+    </div><p class="cap">اليوم: أسبوعه قسمًا قسمًا</p></div>
+
+  </div>
+
+  <h2>8 · القواعد</h2>
+  <div class="rules">
+    <div class="card"><b>اللون معنى، لا زينة</b><span>العنبري = الآن. الأخضر = أُنجز. الأحمر = يحتاجك. لا يُستعمل أيّ منها لغير ذلك.</span></div>
+    <div class="card"><b>لون ممتلئ واحد في الصفحة</b><span>الخطوة التالية عند التلميذ، الزرّ الأوّل عند الأستاذ. الباقي أبيض وخطوط.</span></div>
+    <div class="card"><b>الحالة ليست لونًا فقط</b><span>✓ و▶ و○ مع اللون دائمًا، لمن لا يميّز الألوان.</span></div>
+    <div class="card"><b>لا تدرّج ولا هالات</b><span>في القوائم والصفحات. عالم اللعبة داخل الدرس يحتفظ بألوانه.</span></div>
+    <div class="card"><b>إصبع قبل الفأرة</b><span>كلّ ما يُضغط 44 بكسل على الأقل، في الحاسوب أيضًا؛ النصّ 14 على الأقل في الهاتف و15 في اللوحة والحاسوب.</span></div>
+    <div class="card"><b>هيكل واحد، ثلاثة مقاسات</b><span>الأبواب نفسها والألوان نفسها. الشاشة الواسعة تضيف عمودًا، لا قائمة ثانية.</span></div>
+    <div class="card"><b>العرض الواسع لا يُملأ</b><span>الصفحة لا تتجاوز 1180 بكسل؛ ما زاد يبقى فراغًا هادئًا على الجانبين.</span></div>
+    <div class="card"><b>شكلان فقط</b><span>بطاقة بزوايا 16، وحبّة مستديرة. ظلّ واحد خفيف أو لا ظلّ.</span></div>
+  </div>
+</main>
+
+<script>
+  /* The big screens are built from ONE set of pieces, so the laptop and the tablet cannot drift apart. */
+  const I = {
+    today: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>',
+    map: '<svg viewBox="0 0 24 24"><path d="M4 5h7v15H4zM13 5h7v15h-7z"/></svg>',
+    train: '<svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="9" rx="4"/><path d="M8 11v3M6.5 12.5h3M16 12.5h.01"/></svg>',
+    me: '<svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg>',
+    classes: '<svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.5"/><path d="M2.5 20c.8-3.5 3-5 6.5-5s5.7 1.500 6.500 5M16 6.500a3 3 0 0 1 0 5.500M18.500 15c1.700.700 2.700 2.200 3 5"/></svg>',
+    tools: '<svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L4.500 19a1.500 1.500 0 0 0 1.300 2h12.400a1.500 1.500 0 0 0 1.300-2L14 9V3"/></svg>',
+  };
+  const DOORS = {
+    s: [['today', 'اليوم'], ['map', 'دروسي'], ['train', 'أتدرّب'], ['me', 'أنا']],
+    t: [['today', 'اليوم'], ['map', 'دروسي'], ['classes', 'أقسامي', 4], ['tools', 'أدواتي']],
+  };
+  const rail = (who, on) =>
+    '<div class="rail"><div class="logo"></div>' +
+    DOORS[who].map(([k, name, n]) => `<div class="tab${k === on ? ' on' : ''}">${I[k]}${name}${n ? `<i class="badge">${n}</i>` : ''}</div>`).join('') +
+    (who === 't' ? '<div class="me">ب</div>' : '') + '</div>';
+  const top = (small, big, extra = '') => `<div class="top"><div><small>${small}</small><b>${big}</b></div>${extra}<div class="find">🔍 ابحث عن درس، قسم، أداة…</div></div>`;
+  const grades = '<div class="grades" style="margin-inline-start:auto"><span>1م</span><span>2م</span><span>3م</span><span class="on">4م</span></div>';
+  const terms = '<div class="terms"><span class="on">الفصل 1</span><span>الفصل 2</span><span>الفصل 3</span></div>';
+  const UNITS = [['الأعداد الطبيعية والناطقة', '2 / 9', 1], ['الحساب على الجذور', '0 / 6'], ['الحساب الحرفي', '0 / 4'], ['خاصية طالس', '0 / 4'], ['حساب المثلثات', '0 / 5']];
+  const units = UNITS.map(([n, c, on]) => `<div class="unitrow${on ? ' on' : ''}">${n}<small>${c}</small></div>`).join('');
+  const LESSONS = [['done', 'التعرّف على قاسم لعدد طبيعي'], ['done', 'قواسم عدد طبيعي'], ['now', 'خواص القواسم'], ['wait', 'القاسم المشترك الأكبر'], ['wait', 'تعيين القاسم المشترك الأكبر'], ['wait', 'البحث عن القاسم المشترك الأكبر'], ['wait', 'اختزال كسر'], ['wait', 'عددان أوّليان فيما بينهما'], ['wait', 'وضعيات تدريبية']];
+  const MARK = { done: '✓', now: '▶', wait: '' };
+  const READY = [['سبّورة', 'مذكّرة', 'بطاقة'], ['سبّورة', 'مذكّرة'], ['مذكّرة'], ['مذكّرة'], ['مذكّرة'], ['مذكّرة'], ['مذكّرة'], ['مذكّرة'], ['مذكّرة']];
+  const lessons = (who, n = 9) => LESSONS.slice(0, n).map(([st, name], i) =>
+    `<div class="lesson${st === 'wait' ? ' is-wait' : ''}"><span class="dot ${st}">${MARK[st]}</span>${name}${st === 'now' ? '<em>هذا الأسبوع</em>' : ''}` +
+    (who === 't' ? `<span class="chips">${READY[i].map((c) => `<span class="chip">${c}</span>`).join('')}</span>` : '<span class="open">افتح ←</span>') + '</div>').join('');
+  const nextCard = '<div class="card next"><small>الأعداد الطبيعية والناطقة · الدرس 3 من 9</small><strong>خواص القواسم</strong><div class="bar"><b></b></div><div class="go">هيّا ←</div></div>';
+  const week = '<div class="lesson"><span class="dot done">✓</span>قواسم عدد طبيعي</div><div class="lesson"><span class="dot now">▶</span>خواص القواسم<em>الآن</em></div><div class="lesson is-wait"><span class="dot wait"></span>القاسم المشترك الأكبر</div>';
+  const stats = '<div class="pair"><div class="card"><b>🔥 3</b><span>تحدّي اليوم</span></div><div class="card"><b>★ 12</b><span>نجوم الأسبوع</span></div></div>';
+  const year = '<div class="card"><p class="label">سنتي</p><div class="year"><div>الفصل 1<i><u style="width:22%"></u></i><small>6 / 27</small></div><div>الفصل 2<i><u style="width:0"></u></i><small>0 / 25</small></div><div>الفصل 3<i><u style="width:0"></u></i><small>0 / 22</small></div></div></div>';
+  const klass = (name, n, lesson, calls) => `<div class="card klass"><h3>${name} <small>${n} تلميذًا</small></h3><p>درس الأسبوع<b>${lesson}</b></p><div class="btns"><span class="main">حصّة القسم</span><span>بطاقة الدرس</span></div><div class="calls">${calls}</div></div>`;
+  const K = [
+    klass('الرابعة 2', 32, 'خواص القواسم', '<span class="a">5 تلاميذ يحتاجونك</span><span class="n">3 إجابات للتصحيح</span>'),
+    klass('الرابعة 3', 29, 'قواسم عدد طبيعي', '<span class="n">1 إجابة للتصحيح</span>'),
+    klass('الثالثة 1', 34, 'قيد الإعداد', ''),
+  ];
+  const waiting = '<div class="card" style="padding:6px 18px"><div class="wait-row">ياسين ب. <small>الرابعة 2 · خواص القواسم · التمرين 4</small><span>صحّح</span></div><div class="wait-row">مريم ع. <small>الرابعة 2 · خواص القواسم · التمرين 7</small><span>صحّح</span></div><div class="wait-row">أنس ك. <small>الرابعة 3 · قواسم عدد طبيعي · التمرين 2</small><span>صحّح</span></div></div>';
+  const lb = (who) => '<div class="lb"><span class="link">→ خريطة السنة</span>' +
+    (who === 't' ? '<span class="tools"><span class="on">للأستاذ</span><span>المذكّرة</span><span>ملفّ الدرس</span><span>بنك التمارين</span><span>المتابعة</span><span>بطاقة المعارف</span></span>' : '') +
+    '<span class="where"><small>الأعداد الطبيعية والناطقة · 3 / 9</small><b>خواص القواسم</b></span>' +
+    '<span class="link"><small>→ السابق</small>قواسم عدد طبيعي</span><span class="link">القاسم المشترك الأكبر<small style="margin:0 6px 0 0">التالي ←</small></span></div>';
+  const page = (who, on, inner, bar = '') => rail(who, on) + `<div class="body">${bar}<div class="pg">${inner}</div></div>`;
+  const mapPage = (who, wide) => top('خريطة السنة', 'دروسي · الرابعة متوسط', grades) + terms +
+    (wide
+      ? `<div class="md"><div class="units">${units}</div><div class="card"><div class="unit">الأعداد الطبيعية والناطقة<small>2 / 9</small></div>${lessons(who)}</div></div>`
+      : `<div class="card"><div class="unit">الأعداد الطبيعية والناطقة<small>2 / 9</small></div>${lessons(who)}</div><div class="units">${UNITS.slice(1).map(([n, c]) => `<div class="unitrow">${n}<small>${c}</small></div>`).join('')}</div>`);
+  const SCREENS = {
+    's-today': page('s', 'today', top('صباح الخير', 'ياسين، خطوتك التالية') + `<div class="cols"><div class="stack">${nextCard}<div><p class="label">هذا الأسبوع</p><div class="card" style="padding:4px 18px">${week}</div></div></div><div class="stack">${stats}${year}</div></div>`),
+    's-map': page('s', 'map', mapPage('s', true)),
+    's-lesson': rail('s', 'map') + `<div class="body">${lb('s')}<div class="world">الدرس نفسه<br>(عالم اللعبة يحتفظ بألوانه، وعند الدخول في اللعب يملأ الشاشة)</div></div>`,
+    't-today': page('t', 'today', top('الأسبوع 8 · الفصل 1', 'هذا الأسبوع') + `<div class="classes">${K.join('')}</div><div><p class="label">ينتظر تصحيحك</p>${waiting}</div>`),
+    't-map': page('t', 'map', mapPage('t', true)),
+    't-lesson': rail('t', 'map') + `<div class="body">${lb('t')}<div class="pg"><div class="card" style="flex:1;display:grid;place-items:center;color:var(--muted);font-weight:800">بطاقة الأستاذ « للأستاذ » — كما هي اليوم في الدرس التجريبي</div></div></div>`,
+    's-today-up': page('s', 'today', top('صباح الخير', 'ياسين، خطوتك التالية') + nextCard + `<div><p class="label">هذا الأسبوع</p><div class="week3">${week}</div></div>` + stats + year),
+    's-map-up': page('s', 'map', mapPage('s', false)),
+    't-today-up': page('t', 'today', top('الأسبوع 8 · الفصل 1', 'هذا الأسبوع') + `<div class="classes">${K.join('')}</div><div><p class="label">ينتظر تصحيحك</p>${waiting}</div>`),
+    't-map-up': page('t', 'map', mapPage('t', false)),
+  };
+  const devices = [...document.querySelectorAll('.dev')];
+  devices.forEach((d) => { d.innerHTML = SCREENS[d.dataset.screen]; });
+  const fit = () => devices.forEach((d) => { d.style.zoom = Math.min(1, d.parentElement.clientWidth / (Number(d.style.getPropertyValue('--w')) + 20)); });
+  fit();
+  addEventListener('resize', fit);
+</script>
+</body>
+</html>

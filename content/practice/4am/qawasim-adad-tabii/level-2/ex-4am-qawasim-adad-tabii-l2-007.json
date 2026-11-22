@@ -1,0 +1,138 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l2-007",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2016 — قواسم العدد 225",
+    "estimatedMinutes": 6,
+    "tags": [
+      "قواسم",
+      "قواعد قابلية القسمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qawasim-adad-tabii_P4",
+      "modelledOn": "BEM 2016 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب كل قواسم العدد 225.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        3,
+        5,
+        9,
+        15,
+        25,
+        45,
+        75,
+        225
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            3,
+            5,
+            9,
+            15,
+            25,
+            45,
+            75
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 225 بمربعات الأعداد: إلى أي عدد يكفي أن تختبر قابلية القسمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "225 فردي ورقم آحاده 5 ومجموع أرقامه 9: استعمل قواعد قابلية القسمة على 2 و 3 و 5 و 9."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$225 = 1 \\times 225$ ، $225 = 3 \\times 75$ ، $225 = 5 \\times 45$ ، $225 = 9 \\times 25$ ، $225 = 15 \\times 15$.",
+        "incorrect": "اختبر الأعداد التي مربعها أصغر من العدد أو يساويه، وخذ من كل قسمة باقيها معدوم القاسمين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$15^2 = 225 \\leq 225 < 256 = 16^2$ ومنه نختبر قابلية قسمة 225 على الأعداد من 1 إلى 15.",
+          "نجد أن 225 يقبل القسمة على كل من الأعداد: 1 ، 3 ، 5 ، 9 ، 15.",
+          "ومن المساويات: $225 = 1 \\times 225$ ، $225 = 3 \\times 75$ ، $225 = 5 \\times 45$ ، $225 = 9 \\times 25$ ، $225 = 15 \\times 15$",
+          "إذن قواسم العدد 225 هي: 1 ، 3 ، 5 ، 9 ، 15 ، 25 ، 45 ، 75 ، 225."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 285
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هو عدد قواسم العدد 225؟",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل قائمة القواسم التي وجدتها في السؤال السابق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل جداء عاملين مختلفين يعطي قاسمين."
+        }
+      ],
+      "feedback": {
+        "correct": "قواسم 225 هي 1 ، 3 ، 5 ، 9 ، 15 ، 25 ، 45 ، 75 ، 225.",
+        "incorrect": "عُدّ القواسم في القائمة التي وجدتها، ولا تنسَ 1 والعدد نفسه."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 225 هي: 1 ، 3 ، 5 ، 9 ، 15 ، 25 ، 45 ، 75 ، 225.",
+          "إذن عدد قواسم العدد 225 هو 9."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

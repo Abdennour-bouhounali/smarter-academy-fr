@@ -1,0 +1,284 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l3-004",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — قيمة مضبوطة أم قيمة مقرّبة؟",
+    "estimatedMinutes": 9,
+    "tags": [
+      "خاصية فيثاغورس",
+      "القيمة المضبوطة",
+      "التدوير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في كل حالة من الحالتين الآتيتين، احسب الطول المطلوب، وأعط قيمته المضبوطة أو قيمة مقرّبة حسب المطلوب."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "$ABC$ مثلث قائم في $C$ حيث $AC = 1{,}6\\,\\mathrm{cm}$ و $BC = 6{,}3\\,\\mathrm{cm}$ . احسب الطول $AB$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm",
+      "expectedAnswer": "6.5",
+      "misconceptionSignatures": [
+        {
+          "value": "7.9",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "42.25",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولا مربع الطول، ثم خذ جذره التربيعي بالآلة الحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB^2 = 1{,}6^2 + 6{,}3^2 = 42{,}25$ ، إذن $AB = 6{,}5\\,\\mathrm{cm}$ .",
+        "incorrect": "ابدأ بتحديد الوتر، ثم اكتب مساواة فيثاغورس، وتذكّر أن ما تحسبه أولا هو مربع الطول لا الطول نفسه."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $C$ ، حسب خاصية فيثاغورس: $AB^2 = AC^2 + BC^2$",
+          "$AB^2 = 1{,}6^2 + 6{,}3^2$",
+          "$AB^2 = 2{,}56 + 39{,}69 = 42{,}25$",
+          "$AB = \\sqrt{42{,}25} = 6{,}5\\,\\mathrm{cm}$"
+        ],
+        "result": "AB = 6{,}5\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "$DEF$ مثلث قائم في $D$ حيث $DE = 2\\,\\mathrm{cm}$ و $EF = 4\\,\\mathrm{cm}$ .",
+      "statement": "احسب $DF^2$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: قيمة $DF^2$ (بـ $cm^2$)",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-FITAGHURAS-LEG-ADD"
+        },
+        {
+          "value": "4",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        },
+        {
+          "value": "2",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع المطلوب ليس الوتر: مربعه يساوي مربع الوتر ناقص مربع الضلع الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ربّع كل طول (اضربه في نفسه) ثم اطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$DF^2 = 4^2 - 2^2 = 12$ .",
+        "incorrect": "الضلع المطلوب ضلع قائم: اعزله في مساواة فيثاغورس ثم اطرح مربع الضلع المعلوم من مربع الوتر."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $DEF$ قائم في $D$ ، حسب خاصية فيثاغورس: $EF^2 = DF^2 + DE^2$",
+          "ومنه: $DF^2 = EF^2 - DE^2$",
+          "$DF^2 = 4^2 - 2^2 = 16 - 4 = 12$"
+        ],
+        "result": "DF^2 = 12"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما القيمة المضبوطة للطول $DF$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$12\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-NO-ROOT"
+        },
+        {
+          "id": "B",
+          "content": "$\\sqrt{20}\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-LEG-ADD"
+        },
+        {
+          "id": "C",
+          "content": "$\\sqrt{12}\\,\\mathrm{cm}$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$2\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولا $DF^2$ بخاصية فيثاغورس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الطول هو العدد الموجب الذي مربعه يساوي القيمة التي حسبتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القيمة المضبوطة تُكتب بالرمز $\\sqrt{\\ }$ إذا لم يكن العدد مربعا تاما."
+        }
+      ],
+      "feedback": {
+        "correct": "$DF^2 = 12$ ، إذن $DF = \\sqrt{12}$ (قيمة مضبوطة).",
+        "incorrect": "لا تخلط بين مربع الطول والطول نفسه، ولا تجمع الأطوال: احسب المربع ثم خذ جذره."
+      },
+      "solution": {
+        "lines": [
+          "$DF^2 = 12$ ، ومنه القيمة المضبوطة: $DF = \\sqrt{12}\\,\\mathrm{cm}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "أعط قيمة مقرّبة للطول $DF$ بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm مدوّرا إلى 0,01",
+      "expectedAnswer": "3.46",
+      "misconceptionSignatures": [
+        {
+          "value": "4.47",
+          "id": "MISC-FITAGHURAS-LEG-ADD"
+        },
+        {
+          "value": "2",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "12",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع المطلوب ليس الوتر: مربعه يساوي مربع الوتر ناقص مربع الضلع الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مربع الطول، ثم استعمل اللمسة $\\sqrt{\\ }$ ، ولا تدوّر إلا النتيجة الأخيرة (انظر إلى الرقم الموالي للرقم المطلوب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$DF^2 = 4^2 - 2^2 = 12$ ، إذن $DF \\approx 3{,}46\\,\\mathrm{cm}$ .",
+        "incorrect": "الطول المطلوب ضلع قائم وليس وترا: نطرح مربع الضلع المعلوم من مربع الوتر، ولا نجمع."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $DEF$ قائم في $D$ ، حسب خاصية فيثاغورس: $EF^2 = DF^2 + DE^2$",
+          "ومنه: $DF^2 = EF^2 - DE^2$",
+          "$DF^2 = 4^2 - 2^2 = 16 - 4 = 12$",
+          "$DF = \\sqrt{12}$ (القيمة المضبوطة)",
+          "باستعمال اللمسة $\\sqrt{\\ }$ للآلة الحاسبة: $\\sqrt{12} \\approx 3{,}464101615$",
+          "المدوّر إلى $0{,}01$ : $DF \\approx 3{,}46\\,\\mathrm{cm}$"
+        ],
+        "result": "DF \\approx 3{,}46\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

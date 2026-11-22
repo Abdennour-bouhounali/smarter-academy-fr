@@ -1,0 +1,135 @@
+{
+  "id": "ex-4am-tanasub-taghayyurat-l1-001",
+  "lessonCode": "tanasub-taghayyurat",
+  "level": 1,
+  "metadata": {
+    "title": "نشاط 4 — اشتراك المناصرين: حاصلا قسمة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "تناسب التغيّرات",
+      "نشاط 4"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-4",
+      "page": 79,
+      "section": "أنشطة",
+      "number": 4,
+      "adaptedFrom": "ex-4am-tanasub-taghayyurat-l1-001"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الدالة التآلفية $f$ المعرفة بـ: $f(x) = 200x + 2000$ ، حيث $f(x)$ هو المبلغ (بـ DA) الذي يدفعه مناصر تابع $x$ مقابلة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $\\dfrac{f(4) - f(1)}{4 - 1}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "200",
+      "misconceptionSignatures": [
+        {
+          "value": "600",
+          "id": "MISC-TAGHAYYUR-BIDUN-QISMA"
+        },
+        {
+          "value": "-200",
+          "id": "MISC-TAGHAYYUR-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولا الصورتين $f(4)$ و $f(1)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح الصورتين، ثم اقسم الفرق على $4 - 1$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{600}{3} = 200$ .",
+        "incorrect": "لا تنسَ القسمة على $4 - 1$ بعد طرح الصورتين."
+      },
+      "solution": {
+        "lines": [
+          "$f(4) = 200 \\times 4 + 2000 = 2800$",
+          "$f(1) = 200 \\times 1 + 2000 = 2200$",
+          "$\\dfrac{f(4) - f(1)}{4 - 1} = \\dfrac{2800 - 2200}{3} = \\dfrac{600}{3} = 200$"
+        ],
+        "result": "200"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $\\dfrac{f(6) - f(4)}{6 - 4}$ ، ثم قارن النتيجة بمعامل الدالة $f$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "200",
+      "misconceptionSignatures": [
+        {
+          "value": "400",
+          "id": "MISC-TAGHAYYUR-BIDUN-QISMA"
+        },
+        {
+          "value": "-200",
+          "id": "MISC-TAGHAYYUR-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولا الصورتين $f(6)$ و $f(4)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح الصورتين، ثم اقسم الفرق على $6 - 4$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{400}{2} = 200$ .",
+        "incorrect": "لا تنسَ القسمة على $6 - 4$ بعد طرح الصورتين."
+      },
+      "solution": {
+        "lines": [
+          "$f(6) = 200 \\times 6 + 2000 = 3200$",
+          "$f(4) = 200 \\times 4 + 2000 = 2800$",
+          "$\\dfrac{f(6) - f(4)}{6 - 4} = \\dfrac{3200 - 2800}{2} = \\dfrac{400}{2} = 200$",
+          "نجد العدد نفسه، وهو معامل الدالة $f$ ."
+        ],
+        "result": "200"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,246 @@
+{
+  "id": "ex-1am-bahth-adad-naqisa-l4-010",
+  "lessonCode": "bahth-adad-naqisa",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — صندوق المدرسة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "مال",
+      "ترجمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الرابع",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "في صندوق المدرسة مبلغ، أخذ منه سمير مبلغًا فبقي 135 دج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "كان في الصندوق 500 دج. كم دينارًا أخذ سمير؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "365",
+      "misconceptionSignatures": [
+        {
+          "value": "635",
+          "id": "MISC-NAQISA-TRAPADD"
+        },
+        {
+          "value": "-365",
+          "id": "MISC-NAQISA-REVSUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المجهول هنا هو المطروح: ما أُخذ من العدد الذي بدأنا منه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $500-365=135$ ، فالعدد الناقص هو $365$ .",
+        "incorrect": "في a − □ = b المجهول هو المطروح: نطرح الناتج من a ولا نعكس الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $500-\\square=135$ .",
+          "نُرجع بالعملية العكسية: $\\square=500-135=365$ .",
+          "نتحقّق: $500-365=135$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "وفي صندوق آخر أخذ زميله 120 دج فبقي 380 دج. كم كان في ذلك الصندوق؟ (□ − 120 = 380)",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "500",
+      "misconceptionSignatures": [
+        {
+          "value": "260",
+          "id": "MISC-NAQISA-SAMEOP"
+        },
+        {
+          "value": "19/6",
+          "id": "MISC-NAQISA-FAMILY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للطرح هي الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $500-120=380$ ، فالعدد الناقص هو $500$ .",
+        "incorrect": "في □ − a = b نجمع: الجمع يلغي الطرح."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square-120=380$ .",
+          "نُرجع بالعملية العكسية: $\\square=380+120=500$ .",
+          "نتحقّق: $500-120=380$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "قُسّم ما أخذه سمير على 5 تلاميذ بالتساوي. كم نال كلّ تلميذ بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "73",
+      "misconceptionSignatures": [
+        {
+          "value": "1825",
+          "id": "MISC-NAQISA-MULAGAIN"
+        },
+        {
+          "value": "1/73",
+          "id": "MISC-NAQISA-DIVREV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للضرب هي القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $73\\times 5=365$ ، فالعدد الناقص هو $73$ .",
+        "incorrect": "في جداء نقسم الناتج على العدد المعلوم: لا نضربه فيه ولا نقسم المعلوم على الناتج."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square\\times 5=365$ .",
+          "نُرجع بالعملية العكسية: $\\square=365\\div 5=73$ .",
+          "نتحقّق: $73\\times 5=365$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "العدد $635$ هو العدد الناقص في $500-\\square=135$ .",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NAQISA-TRAPADD"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض العدد المعطى مكان □ في المساواة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الطرف الذي فيه □ ثمّ قارنه بالطرف الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إن لم تجد الناتج المعلوم بالضبط فالعدد خاطئ."
+        }
+      ],
+      "feedback": {
+        "correct": "التعويض يحسم الحكم.",
+        "incorrect": "نحكم بالتعويض لا بالتخمين."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $635$ في $500-\\square=135$ .",
+          "الحكم: خطأ"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

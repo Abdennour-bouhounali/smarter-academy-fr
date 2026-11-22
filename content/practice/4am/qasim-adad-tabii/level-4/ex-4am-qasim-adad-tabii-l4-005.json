@@ -1,0 +1,170 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l4-005",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2016 — A = 6n + 15",
+    "estimatedMinutes": 6,
+    "tags": [
+      "مضاعف",
+      "حرفي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-adad-tabii_P2",
+      "modelledOn": "BEM 2016 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن n عددًا طبيعيًا، ونضع:",
+    "formulas": [
+      "A = 6n + 15"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب A من أجل $n = 4$ .",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "39",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض n بالعدد 4."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضرب قبل الجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 6 \\times 4 + 15 = 24 + 15 = 39$.",
+        "incorrect": "عوّض n بالعدد 4 ثم احسب."
+      },
+      "solution": {
+        "lines": [
+          "$A = 6 \\times 4 + 15$",
+          "$A = 24 + 15$"
+        ],
+        "result": "A = 39"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بيّن أن A مضاعف للعدد 3 مهما كان العدد الطبيعي n.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$6 = 3 \\times 2$ و $15 = 3 \\times 5$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل الخاصية التوزيعية لكتابة A على الشكل $3 \\times k$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن $k$ عدد طبيعي."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك سطرًا بسطر بالحل النموذجي، وانتبه إلى كل مرحلة من مراحل الحساب."
+      },
+      "solution": {
+        "lines": [
+          "$A = 6n + 15 = 3 \\times 2n + 3 \\times 5$",
+          "$A = 3 \\times (2n + 5)$",
+          "بما أن n عدد طبيعي فإن $2n + 5$ عدد طبيعي.",
+          "إذن A مضاعف للعدد 3."
+        ],
+        "result": "A = 3 \\times (2n + 5)"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل يمكن أن يكون A قابلًا للقسمة على 2؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$6n$ عدد زوجي مهما كان n."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما طبيعة مجموع عدد زوجي والعدد 15؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$6n = 2 \\times 3n$ زوجي و 15 فردي، فالعدد A فردي دائمًا: لا يقبل القسمة على 2.",
+        "incorrect": "ادرس زوجية $6n$ ثم زوجية المجموع $6n + 15$."
+      },
+      "solution": {
+        "lines": [
+          "$6n = 2 \\times 3n$ عدد زوجي.",
+          "$A = 6n + 15 = 2 \\times (3n + 7) + 1$",
+          "باقي قسمة A على 2 هو 1، غير معدوم مهما كان n.",
+          "إذن A لا يقبل القسمة على 2."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

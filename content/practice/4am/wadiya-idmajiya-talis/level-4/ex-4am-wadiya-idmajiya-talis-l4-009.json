@@ -1,0 +1,389 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-talis-l4-009",
+  "lessonCode": "wadiya-idmajiya-talis",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2021 — مثلث قائم ثم (KL)//(BM)",
+    "estimatedMinutes": 15,
+    "tags": [
+      "ظل الزاوية",
+      "الخاصية العكسية",
+      "خاصية طالس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-talis_P1",
+      "modelledOn": "BEM 2021 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل: $BEM$ مثلث قائم في $B$ حيث $BE = 6\\,\\mathrm{cm}$ و $\\tan\\widehat{BME} = \\dfrac{3}{4}$ . $K$ نقطة من $[EB]$ حيث $EK = 2{,}4\\,\\mathrm{cm}$ ، و $L$ نقطة من $[EM]$ حيث $EL = 4\\,\\mathrm{cm}$ .",
+    "figure": {
+      "points": {
+        "B": [
+          0.0,
+          0.0
+        ],
+        "M": [
+          8.0,
+          0.0
+        ],
+        "E": [
+          0.0,
+          6.0
+        ],
+        "K": [
+          0.0,
+          3.6
+        ],
+        "L": [
+          3.2,
+          3.6
+        ]
+      },
+      "segments": [
+        {
+          "from": "E",
+          "to": "K",
+          "label": "2,4"
+        },
+        [
+          "K",
+          "B"
+        ],
+        [
+          "B",
+          "M"
+        ],
+        {
+          "from": "E",
+          "to": "L",
+          "label": "4"
+        },
+        [
+          "L",
+          "M"
+        ],
+        {
+          "from": "K",
+          "to": "L",
+          "bold": true
+        }
+      ],
+      "rightAngles": [
+        [
+          "E",
+          "B",
+          "M"
+        ]
+      ],
+      "labels": {
+        "B": "sw",
+        "M": "se",
+        "E": "n",
+        "K": "w",
+        "L": "ne"
+      },
+      "ariaLabel": "المثلث BEM قائم في B، K من [EB] حيث EK = 2,4، و L من [EM] حيث EL = 4؛ BE = 6",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب الطول $BM$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "4.5",
+          "id": "MISC-MUTH-DARB-BADAL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $BEM$ القائم في $B$ : $\\tan\\widehat{BME} = \\dfrac{BE}{BM}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$BM = \\dfrac{6}{\\dfrac{3}{4}} = 8\\,\\mathrm{cm}$ .",
+        "incorrect": "الضلع المقابل للزاوية $\\widehat{BME}$ هو $[BE]$ والمجاور $[BM]$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan\\widehat{BME} = \\dfrac{BE}{BM}$ ، أي $\\dfrac{3}{4} = \\dfrac{6}{BM}$",
+          "$BM = \\dfrac{6 \\times 4}{3}$"
+        ],
+        "result": "BM = 8\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب الطول $ME$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "14",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خاصية فيثاغورس في المثلث $BEM$ القائم في $B$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$ME^2 = 36 + 64 = 100$ ومنه $ME = 10\\,\\mathrm{cm}$ .",
+        "incorrect": "$ME^2 = BE^2 + BM^2$ ثم الجذر التربيعي."
+      },
+      "solution": {
+        "lines": [
+          "حسب خاصية فيثاغورس: $ME^2 = BE^2 + BM^2$",
+          "$ME^2 = 6^2 + 8^2 = 100$",
+          "$ME = \\sqrt{100}$"
+        ],
+        "result": "ME = 10\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب النسبة $\\dfrac{EK}{EB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "2/5",
+      "misconceptionSignatures": [
+        {
+          "value": "5/2",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "2/3",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$EK$ و $EB$ طولان يُقاسان من النقطة $E$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $EK$ على $EB$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{EK}{EB} = \\dfrac{2{,}4}{6} = \\dfrac{2}{5}$ .",
+        "incorrect": "النسبة $\\dfrac{EK}{EB}$ : الطول $EK$ على الطول $EB$ ، وكلاهما من النقطة $E$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{EK}{EB} = \\dfrac{2{,}4}{6} = \\dfrac{2}{5}$"
+        ],
+        "result": "\\dfrac{EK}{EB} = \\dfrac{2}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب النسبة $\\dfrac{EL}{EM}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "2/5",
+      "misconceptionSignatures": [
+        {
+          "value": "5/2",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "2/3",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$EL$ و $EM$ طولان يُقاسان من النقطة $E$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $EL$ على $EM$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{EL}{EM} = \\dfrac{4}{10} = \\dfrac{2}{5}$ .",
+        "incorrect": "النسبة $\\dfrac{EL}{EM}$ : الطول $EL$ على الطول $EM$ ، وكلاهما من النقطة $E$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{EL}{EM} = \\dfrac{4}{10} = \\dfrac{2}{5}$"
+        ],
+        "result": "\\dfrac{EL}{EM} = \\dfrac{2}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل المستقيمان $(KL)$ و $(BM)$ متوازيان؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-AKS-BIDUN-TASAWI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النسبتين بقيمهما المضبوطة (الجداء المتصالب)، لا بقيم مقرّبة ولا بمظهر الشكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق أيضا من ترتيب النقط على المستقيمين المتقاطعين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{EK}{EB} = \\dfrac{EL}{EM} = 0{,}4$ والترتيب نفسه: $(KL) \\parallel (BM)$ .",
+        "incorrect": "الخاصية العكسية تتطلب شرطين معا: تساوي النسبتين بقيم مضبوطة، وترتيب النقط نفسه على المستقيمين."
+      },
+      "solution": {
+        "lines": [
+          "بما أن النقط $E$ ، $K$ ، $B$ و $E$ ، $L$ ، $M$ في استقامية وبنفس الترتيب،",
+          "و بما أن: $\\dfrac{EK}{EB} = \\dfrac{EL}{EM} = \\dfrac{2}{5}$",
+          "فإن المستقيمين $(KL)$ و $(BM)$ متوازيان حسب خاصية طالس العكسية."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "احسب الطول $KL$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "3,2",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(KL) \\parallel (BM)$ : المثلثان $EKL$ و $EBM$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $\\dfrac{EK}{EB} = \\dfrac{KL}{BM}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$KL = \\dfrac{2}{5} \\times 8 = 3{,}2\\,\\mathrm{cm}$ .",
+        "incorrect": "في كل نسبة: طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "بما أن $(KL) \\parallel (BM)$ ، حسب خاصية طالس: $\\dfrac{EK}{EB} = \\dfrac{EL}{EM} = \\dfrac{KL}{BM}$",
+          "$\\dfrac{2{,}4}{6} = \\dfrac{KL}{8}$",
+          "$KL = \\dfrac{2{,}4 \\times 8}{6}$"
+        ],
+        "result": "KL = 3{,}2\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

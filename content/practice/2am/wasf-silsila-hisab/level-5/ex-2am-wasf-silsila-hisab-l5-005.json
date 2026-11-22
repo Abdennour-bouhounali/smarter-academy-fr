@@ -1,0 +1,266 @@
+{
+  "id": "ex-2am-wasf-silsila-hisab-l5-005",
+  "lessonCode": "wasf-silsila-hisab",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — صناديق التمر",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية",
+      "تمر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في مخزن الواحة 8 صناديق تمر، في كلّ صندوق 15 كغ. بيعت منها 3 صناديق كاملة و 12 كغ أخرى، وتُوزَّع البقية بالتساوي على 7 أسر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ سلسلة تعطي ما تناله كلّ أسرة بالكيلوغرام؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$8 \\times 15 - 3 \\times 15 - 12 \\div 7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-NOBRACKET"
+        },
+        {
+          "id": "B",
+          "content": "$(8 \\times 15 - 3 \\times 15 - 12) \\div 7$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بآخر عملية في الجملة: هي الأخيرة التي تُكتب بين قطعتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كلّ قطعة على حدة، وضع بين قوسين كلّ قطعة يجب أن تُحسب قبل آخر عملية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر سلسلتك بحسابها: هل آخر عملية فيها هي التي في الجملة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة الصحيحة: $(8 \\times 15 - 3 \\times 15 - 12) \\div 7$ .",
+        "incorrect": "ابدأ بآخر عملية في الجملة، وضع بين قوسين كلّ قطعة تُحسب قبلها، وانتبه إلى ترتيب القطعتين."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية في الجملة هي $\\div$.",
+          "نكتب كلّ قطعة ثم نربط بينهما: $(8 \\times 15 - 3 \\times 15 - 12) \\div 7$ (القوسان لازمان لأنّ القطعة يجب أن تُحسب أوّلًا)."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم كيلوغرامًا بقي للتوزيع؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "63",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد كتابة السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$8 \\times 15 - 3 \\times 15 - 12 = 63$",
+        "incorrect": "ما بين القوسين يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح، من اليسار نحو اليمين."
+      },
+      "solution": {
+        "lines": [
+          "$8 \\times 15 - 3 \\times 15 - 12$",
+          "$120 - 45 - 12$",
+          "$63$"
+        ],
+        "result": "63"
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كم كيلوغرامًا تنال كلّ أسرة؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد كتابة السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$R = (8 \\times 15 - 3 \\times 15 - 12) \\div 7 = 9$",
+        "incorrect": "اكتب السلسلة بالقوسين اللازمين ثم احسبها: ما بين القوسين أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "$R = (8 \\times 15 - 3 \\times 15 - 12) \\div 7$",
+          "$R = (120 - 45 - 12) \\div 7$",
+          "$R = 63 \\div 7$",
+          "$R = 9$"
+        ],
+        "result": "9\\ \\mathrm{kg}"
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "هل تنال كلّ أسرة 10 كغ على الأقلّ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن آخر عملية تُنجز في السلسلة قبل أن تحكم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كل عبارة بالترتيب الصحيح ثم قارن اسمها بما يقوله النص."
+        }
+      ],
+      "feedback": {
+        "correct": "تحقّقت من ذلك بالحساب.",
+        "incorrect": "احسب كل عبارة مرحلة مرحلة واسمِها بآخر عملية فيها قبل أن تحكم."
+      },
+      "solution": {
+        "lines": [
+          "$(8 \\times 15 - 3 \\times 15 - 12) \\div 7 = 9$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "صِف بجملة السلسلة $R = (8 \\times 15 - 3 \\times 15 - 12) \\div 7$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب على ورقتك مرحلة مرحلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اسأل: أيّ عملية تُنجز أخيرًا ولماذا؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تذكر القاعدة المستعملة."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن جملتك بالحل النموذجي: الاسم أوّلًا ثم كلّ قطعة بالترتيب.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به جملتك قطعة قطعة."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية تُنجز هي $\\div$، فالسلسلة حاصل قسمة.",
+          "الوصف: حاصل قسمة فرق فرق جداء العددين 8 و 15 وجداء العددين 3 و 15 ، والعدد 12 على 7."
+        ]
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

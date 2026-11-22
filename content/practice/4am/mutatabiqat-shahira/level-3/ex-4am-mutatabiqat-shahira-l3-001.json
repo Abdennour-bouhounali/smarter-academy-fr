@@ -1,0 +1,271 @@
+{
+  "id": "ex-4am-mutatabiqat-shahira-l3-001",
+  "lessonCode": "mutatabiqat-shahira",
+  "level": 3,
+  "metadata": {
+    "title": "أتمم المساويات",
+    "estimatedMinutes": 6,
+    "tags": [
+      "مربع مجموع",
+      "قراءة المتطابقة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-12",
+      "page": 37,
+      "section": "أوظّف تعلّماتي",
+      "number": 12
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "انقل المساويات الآتية وأتممها باستعمال المتطابقة $a^2 + 2ab + b^2 = (a + b)^2$ :",
+    "formulas": [
+      "x^2 + \\ldots x + \\ldots = (\\ldots + 3)^2",
+      "9x^2 + \\ldots + 1 = (\\ldots + 1)^2",
+      "\\ldots + 10x + 25 = (\\ldots + \\ldots)^2"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "أتمم المساواة الأولى: $x^2 + \\ldots x + \\ldots = (\\ldots + 3)^2$ .",
+      "statement": "العدد الناقص أمام $x$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-MUTATABIQA-2AB-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الأول داخل القوسين هو $x$ لأن $x^2$ مربعه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحد الأوسط هو الحد المضاعف $2ab$ مع $a = x$ و $b = 3$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x^2 + 6x + 9 = (x + 3)^2$ .",
+        "incorrect": "الحد الأوسط هو ضعف جداء الحدّين، لا جداؤهما فقط."
+      },
+      "solution": {
+        "lines": [
+          "$2 \\times x \\times 3 = 6x$ و $3^2 = 9$"
+        ],
+        "result": "x^2 + 6x + 9 = (x + 3)^2"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "الحد الثابت الناقص:",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مربع الحد الثاني داخل القوسين."
+        }
+      ],
+      "feedback": {
+        "correct": "$3^2 = 9$ .",
+        "incorrect": "الحد الثابت هو $b^2$ : مربع الحد الثاني."
+      },
+      "solution": {
+        "lines": [
+          "$(x + 3)^2 = x^2 + 6x + 9$"
+        ],
+        "result": "b^2 = 3^2 = 9"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "أتمم المساواة الثانية: $9x^2 + \\ldots + 1 = (\\ldots + 1)^2$ .",
+      "statement": "الحد الناقص داخل القوسين يُكتب $px$ ، حيث $p$ عدد طبيعي. العدد $p$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-MUTATABIQA-MURABBA-MUAMIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن الحد الذي مربعه $9x^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$(3x)^2 = 9x^2$ إذن $p = 3$ .",
+        "incorrect": "مربع $9x$ هو $81x^2$ لا $9x^2$ : ابحث عن العدد الذي مربعه 9."
+      },
+      "solution": {
+        "lines": [
+          "$9x^2 = (3x)^2$"
+        ],
+        "result": "p = 3"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "الحد الناقص في الطرف الأول يُكتب $mx$ . العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-MUTATABIQA-2AB-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الأوسط هو $2 \\times 3x \\times 1$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$9x^2 + 6x + 1 = (3x + 1)^2$ .",
+        "incorrect": "الحد الأوسط هو ضعف جداء الحدّين."
+      },
+      "solution": {
+        "lines": [
+          "$2 \\times 3x \\times 1 = 6x$"
+        ],
+        "result": "9x^2 + 6x + 1 = (3x + 1)^2"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "lead": "أتمم المساواة الثالثة: $\\ldots + 10x + 25 = (\\ldots + \\ldots)^2$ .",
+      "statement": "العدد الثاني داخل القوسين (عدد طبيعي):",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "25",
+          "id": "MISC-MUTATABIQA-MURABBA-MUAMIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$25$ هو مربع الحد الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق بالحد الأوسط: $10x = 2 \\times x \\times b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x^2 + 10x + 25 = (x + 5)^2$ .",
+        "incorrect": "ابحث عن العدد الذي مربعه 25، ثم تحقّق بالحد الأوسط."
+      },
+      "solution": {
+        "lines": [
+          "$25 = 5^2$ و $10x = 2 \\times x \\times 5$"
+        ],
+        "result": "x^2 + 10x + 25 = (x + 5)^2"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "الحد الناقص الأول يُكتب $kx^2$ . العدد $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الأول داخل القوسين هو $x$ : ما مربعه؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$x^2 + 10x + 25 = (x + 5)^2$ إذن $k = 1$ .",
+        "incorrect": "الحد الأول في الطرف الأول هو مربع الحد الأول داخل القوسين."
+      },
+      "solution": {
+        "lines": [
+          "$x^2 = 1 \\times x^2$"
+        ],
+        "result": "k = 1"
+      },
+      "timeSeconds": 45
+    }
+  ]
+}

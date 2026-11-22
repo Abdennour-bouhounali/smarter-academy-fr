@@ -1,0 +1,229 @@
+{
+  "id": "ex-3am-adad-natiq-l2-006",
+  "lessonCode": "adad-natiq",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — البسط نفسه، المقام مختلف",
+    "estimatedMinutes": 12,
+    "tags": [
+      "العدد الناطق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يقول سليم : « $-\\dfrac{5}{7}$ أكبر من $-\\dfrac{5}{9}$ لأنّ $7$ أصغر من $9$ » ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "اكتب $-\\dfrac{5}{7}$ بمقام $63$ : ما بسط الكتابة $\\dfrac{x}{63}$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "-45",
+      "misconceptionSignatures": [
+        {
+          "value": "45",
+          "id": "MISC-NATIQ-DROPSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل العددان في الجهة نفسها من الصفر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العددين بالمقام الموجب نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن البسطين بقواعد مقارنة الأعداد النسبية: على يسار الصفر، الأبعد عن الصفر هو الأصغر."
+        }
+      ],
+      "feedback": {
+        "correct": "$-45$ .",
+        "incorrect": "اكتب العددين بمقام موجب مشترك قبل أن تقارن، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$63=7\\times 9$ ، نضرب البسط والمقام في $9$ .",
+          "$-\\dfrac{5}{7}=\\dfrac{-45}{63}$ ."
+        ],
+        "result": "-45"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اكتب $-\\dfrac{5}{9}$ بمقام $63$ : ما بسط الكتابة $\\dfrac{x}{63}$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "-35",
+      "misconceptionSignatures": [
+        {
+          "value": "35",
+          "id": "MISC-NATIQ-DROPSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل العددان في الجهة نفسها من الصفر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العددين بالمقام الموجب نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن البسطين بقواعد مقارنة الأعداد النسبية: على يسار الصفر، الأبعد عن الصفر هو الأصغر."
+        }
+      ],
+      "feedback": {
+        "correct": "$-35$ .",
+        "incorrect": "اكتب العددين بمقام موجب مشترك قبل أن تقارن، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$63=9\\times 7$ ، نضرب البسط والمقام في $7$ .",
+          "$-\\dfrac{5}{9}=\\dfrac{-35}{63}$ ."
+        ],
+        "result": "-35"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "أيّ المقارنتين صحيحة ؟",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-\\dfrac{5}{7}>-\\dfrac{5}{9}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-NEGORDER"
+        },
+        {
+          "id": "B",
+          "content": "$-\\dfrac{5}{7}<-\\dfrac{5}{9}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$-\\dfrac{5}{7}=-\\dfrac{5}{9}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-WRITINGS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العددين بالمقام الموجب نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن البسطين بقواعد مقارنة الأعداد النسبية: على يسار الصفر، الأبعد عن الصفر هو الأصغر."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $-\\dfrac{5}{7}<-\\dfrac{5}{9}$ .",
+        "incorrect": "اكتب العددين بمقام موجب مشترك قبل أن تقارن، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$-\\dfrac{45}{63}$ و $-\\dfrac{35}{63}$ .",
+          "$-45<-35$ إذن $-\\dfrac{5}{7}<-\\dfrac{5}{9}$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "بيّن خطأ سليم .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثمّ اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجب أن تبرّره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اذكر القاعدة التي تستعملها في كلّ سطر."
+        }
+      ],
+      "feedback": {
+        "correct": "تطابق تبريرك مع الحل النموذجي .",
+        "incorrect": "قارن تبريرك بالحل النموذجي سطرًا سطرًا، ثمّ قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "العددان سالبان : الجهة اليسرى من الصفر تعكس الترتيب.",
+          "$\\dfrac{5}{7}>\\dfrac{5}{9}$ (قيمتاهما المطلقتان)، فالعدد $-\\dfrac{5}{7}$ أبعد عن الصفر إلى اليسار.",
+          "إذن $-\\dfrac{5}{7}<-\\dfrac{5}{9}$ ، وقول سليم خاطئ."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

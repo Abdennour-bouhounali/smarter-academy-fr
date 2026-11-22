@@ -1,0 +1,279 @@
+{
+  "id": "ex-4am-inshaat-talis-l4-005",
+  "lessonCode": "inshaat-talis",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 21 — المثلثان EFG و ELP",
+    "estimatedMinutes": 16,
+    "tags": [
+      "تمرين 21",
+      "خاصية طالس",
+      "مساحة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-21",
+      "page": 113,
+      "section": "أتعمّق",
+      "number": 21
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "أنشئ مثلثا $EFG$ قائما في $E$ حيث $EF = 4\\,\\mathrm{cm}$ و $EG = 3\\,\\mathrm{cm}$ . $L$ نقطة من نصف المستقيم $[FE)$ لا تنتمي إلى $[FE]$ ، و $P$ نقطة من نصف المستقيم $[GE)$ لا تنتمي إلى $[GE]$ ، حيث $\\dfrac{EL}{EF} = \\dfrac{EP}{EG} = \\dfrac{2}{3}$ (أُنشئتا دون استعمال مسطرة مدرجة)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $\\mathcal{A}_1$ مساحة المثلث $EFG$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المساحة بـ cm²",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث قائم في $E$ : الضلعان القائمان قاعدة وارتفاع."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\mathcal{A}_1 = \\dfrac{4 \\times 3}{2} = 6\\,\\mathrm{cm^2}$ .",
+        "incorrect": "مساحة مثلث قائم: نصف جداء الضلعين القائمين."
+      },
+      "solution": {
+        "lines": [
+          "$\\mathcal{A}_1 = \\dfrac{EF \\times EG}{2} = \\dfrac{4 \\times 3}{2}$"
+        ],
+        "result": "\\mathcal{A}_1 = 6\\,\\mathrm{cm^2}"
+      },
+      "timeSeconds": 90,
+      "counted": false
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج أن $(GF) \\parallel (LP)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقط $L$ ، $E$ ، $F$ في استقامية والنقط $P$ ، $E$ ، $G$ في استقامية: هل الترتيب نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر الخاصية العكسية لخاصية طالس."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{EL}{EF} = \\dfrac{EP}{EG}$ والنقط بنفس الترتيب: $(GF) \\parallel (LP)$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي: المعطيات، ثم التوازي، ثم النسب المتساوية وذكر الخاصية المستعملة."
+      },
+      "solution": {
+        "lines": [
+          "النقط $L$ ، $E$ ، $F$ في استقامية والنقط $P$ ، $E$ ، $G$ في استقامية وبنفس الترتيب ( $E$ بين $L$ و $F$ ، و $E$ بين $P$ و $G$ )،",
+          "و: $\\dfrac{EL}{EF} = \\dfrac{EP}{EG} = \\dfrac{2}{3}$",
+          "إذن $(GF) \\parallel (LP)$ حسب الخاصية العكسية لخاصية طالس."
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "احسب الطول $FG$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طبّق خاصية فيثاغورس في المثلث $EFG$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$FG^2 = 16 + 9 = 25$ ومنه $FG = 5\\,\\mathrm{cm}$ .",
+        "incorrect": "مربع الوتر يساوي مجموع مربعي الضلعين القائمين."
+      },
+      "solution": {
+        "lines": [
+          "حسب خاصية فيثاغورس: $FG^2 = EF^2 + EG^2 = 16 + 9 = 25$"
+        ],
+        "result": "FG = 5\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 90,
+      "counted": false
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "احسب القيمة المضبوطة للطول $LP$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري: الطول بـ cm (قيمة مضبوطة)",
+      "expectedAnswer": "10/3",
+      "misconceptionSignatures": [
+        {
+          "value": "7,5",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(LP) \\parallel (GF)$ والمستقيمان $(LF)$ و $(PG)$ متقاطعان في $E$ (وضعية الفراشة)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل $\\dfrac{LP}{FG} = \\dfrac{EL}{EF}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{LP}{FG} = \\dfrac{EL}{EF} = \\dfrac{2}{3}$ ومنه $LP = \\dfrac{2}{3} \\times 5 = \\dfrac{10}{3}\\,\\mathrm{cm}$ .",
+        "incorrect": "$LP$ يقابل $FG$ في وضعية الفراشة، والنسبة هي $\\dfrac{EL}{EF}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$(LP) \\parallel (FG)$ ، حسب خاصية طالس: $\\dfrac{EL}{EF} = \\dfrac{EP}{EG} = \\dfrac{LP}{FG}$",
+          "$\\dfrac{LP}{5} = \\dfrac{2}{3}$"
+        ],
+        "result": "LP = \\dfrac{10}{3}\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ج",
+      "statement": "احسب ارتفاع المثلث $ELP$ المتعلّق بالرأس $E$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "1,6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $ELP$ قائم في $E$ : اكتب مساحته بطريقتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$EL \\times EP = LP \\times h$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$h = \\dfrac{EL \\times EP}{LP} = \\dfrac{\\frac{8}{3} \\times 2}{\\frac{10}{3}} = 1{,}6\\,\\mathrm{cm}$ .",
+        "incorrect": "استعمل المساحة: نصف جداء الضلعين القائمين يساوي نصف جداء الوتر في الارتفاع."
+      },
+      "solution": {
+        "lines": [
+          "$EL = \\dfrac{8}{3}$ و $EP = 2$ ، والمثلث $ELP$ قائم في $E$ : $EL \\times EP = LP \\times h$",
+          "$h = \\dfrac{\\frac{8}{3} \\times 2}{\\frac{10}{3}} = \\dfrac{16}{10}$"
+        ],
+        "result": "h = 1{,}6\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 180,
+      "counted": false
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "احسب القيمة المضبوطة لـ $\\mathcal{A}_2$ مساحة المثلث $ELP$ ، ثم تحقّق أن $\\mathcal{A}_2 = \\left(\\dfrac{2}{3}\\right)^2 \\mathcal{A}_1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر: المساحة بـ cm² (قيمة مضبوطة)",
+      "expectedAnswer": "8/3",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-TALIS-MISAHA-K"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\mathcal{A}_2 = \\dfrac{EL \\times EP}{2}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\mathcal{A}_2 = \\dfrac{\\frac{8}{3} \\times 2}{2} = \\dfrac{8}{3}$ ، و $\\left(\\dfrac{2}{3}\\right)^2 \\times 6 = \\dfrac{4}{9} \\times 6 = \\dfrac{8}{3}$ .",
+        "incorrect": "المساحة تُضرب في مربع النسبة، لا في النسبة نفسها."
+      },
+      "solution": {
+        "lines": [
+          "$\\mathcal{A}_2 = \\dfrac{EL \\times EP}{2} = \\dfrac{\\frac{8}{3} \\times 2}{2}$",
+          "التحقّق: $\\left(\\dfrac{2}{3}\\right)^2 \\mathcal{A}_1 = \\dfrac{4}{9} \\times 6 = \\dfrac{8}{3}$"
+        ],
+        "result": "\\mathcal{A}_2 = \\dfrac{8}{3}\\,\\mathrm{cm^2}"
+      },
+      "timeSeconds": 180,
+      "counted": false
+    }
+  ]
+}

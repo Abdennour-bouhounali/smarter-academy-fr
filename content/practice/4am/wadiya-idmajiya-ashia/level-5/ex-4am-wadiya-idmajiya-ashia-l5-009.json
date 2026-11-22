@@ -1,0 +1,79 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ashia-l5-009",
+  "lessonCode": "wadiya-idmajiya-ashia",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — الطولان الثابتان",
+    "estimatedMinutes": 2,
+    "tags": [
+      "نمذجة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ashia_P2",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "من بيت إلى محطة نعبر طريقا بممر [MN] ثم واديا بجسر [PQ]، كلاهما عمودي على حافتيه المتوازيتين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "طول المسلك $AM + MN + NP + PQ + QB$ : أيّ طولين لا يتغيّران مهما كان موضع الممر والجسر؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "MN و PQ",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "AM و QB",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "NP و MN",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MAMAR-NASI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عرض الطريق وعرض الوادي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الممر والجسر عموديان على الحواف."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أعد قراءة المعطيات."
+        }
+      ],
+      "feedback": {
+        "correct": "MN عرض الطريق و PQ عرض الوادي: ثابتان؛ الأطوال الأخرى تتغيّر.",
+        "incorrect": "ما يتغيّر يعتمد على موضع الممر أو الجسر."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 5
+    }
+  ]
+}

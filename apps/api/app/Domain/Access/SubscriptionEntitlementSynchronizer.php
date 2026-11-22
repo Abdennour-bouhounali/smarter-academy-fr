@@ -63,6 +63,7 @@ class SubscriptionEntitlementSynchronizer
      */
     private const GRANTING_STATUSES = [
         Subscription::STATUS_ACTIVE,
+        Subscription::STATUS_TRIALING,
         Subscription::STATUS_CANCELLED,
     ];
 

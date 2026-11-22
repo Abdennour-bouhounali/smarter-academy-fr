@@ -33,7 +33,7 @@ describe('contrat de mise en page du bandeau de leçon', () => {
     const a = getLessonChromeLayout({ authenticated: true });
     expect(a.headerHeight).toBe(STUDENT_MOBILE_HEADER_H);
     expect(a.headerHeightLg).toBe(0);
-    expect(a.stickyTopClass).toBe('top-14 lg:top-0');
+    expect(a.stickyTopClass).toBe('top-14 md:top-0');
   });
 
   it('n’utilise jamais de décalage négatif ni de translation compensatoire', () => {
@@ -75,5 +75,17 @@ describe('source unique de vérité', () => {
     expect(layout).not.toContain('justify-between pt-16');
     // Et il diffuse le contrat à ses enfants plutôt que de les laisser deviner.
     expect(layout).toContain('LessonChromeContext.Provider');
+  });
+
+  it.each([
+    'lessons/common/components/LessonIndex.jsx',
+    'pages/UnitPage.jsx',
+  ])('%s dérive aussi son décalage haut du contrat', (rel) => {
+    // Le sommaire de leçon et la page d'unité vivent sous la même coquille
+    // que les modules : un `pt-16` fixe y laissait 64 px de vide chez l'élève
+    // connecté, dont le bureau n'a pas d'en-tête.
+    const src = read(rel);
+    expect(src).toContain('chrome.contentOffsetClass');
+    expect(src).not.toMatch(/min-h-screen[^"`]*pt-16/);
   });
 });

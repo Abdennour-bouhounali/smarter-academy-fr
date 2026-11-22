@@ -1,0 +1,318 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l5-001",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — نقل محصول البطاطا",
+    "estimatedMinutes": 18,
+    "tags": [
+      "شاحنات",
+      "بالزيادة",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-77",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: جنى فلّاحو تعاونية $63{,}75$ طنًّا من البطاطا، ويريدون نقلها كلها إلى السوق. نعطي: $63{,}75 \\div 5 = 12{,}75$ و $63{,}75 \\div 8 = 7{,}96875$.\nالجزء الثاني: عرض أوّل: شاحنات حمولتها 5 أطنان بـ 4500 دج للرحلة. عرض ثانٍ: شاحنات حمولتها 8 أطنان بـ 7000 دج للرحلة. يريدون اختيار العرض الأقل كلفة دون تبذير."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اختر حصرًا بين عددين طبيعيين متتاليين للحاصل $63{,}75 \\div 5$.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$11 < 63{,}75 \\div 5 < 12$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        },
+        {
+          "id": "B",
+          "content": "$13 < 63{,}75 \\div 5 < 14$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        },
+        {
+          "id": "C",
+          "content": "$12 < 63{,}75 \\div 5 < 13$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل يساوي $12{,}75$: انظر إلى جزئه الصحيح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العددان الطبيعيان المتتاليان هما الجزء الصحيح والعدد الذي يليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$12 < 12{,}75 < 13$.",
+        "incorrect": "الحصر بين عددين طبيعيين متتاليين: الجزء الصحيح للحاصل والعدد الذي يليه."
+      },
+      "solution": {
+        "lines": [
+          "$63{,}75 \\div 5 = 12{,}75$",
+          "$12 < 12{,}75 < 13$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم رحلة تلزم بشاحنات العرض الأول؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد الرحلات",
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "value": "14",
+          "id": "MISC-HASR-IZAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "12 رحلة تنقل $60$ طنًّا فقط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما يبقى من المحصول يحتاج إلى رحلة أخرى."
+        }
+      ],
+      "feedback": {
+        "correct": "$5 \\times 12 = 60 < 63{,}75$: تلزم 13 رحلة.",
+        "incorrect": "الرحلات الممتلئة لا تنقل كل المحصول."
+      },
+      "solution": {
+        "lines": [
+          "$12 < 12{,}75 < 13$",
+          "تلزم 13 رحلة."
+        ],
+        "result": "13"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب كلفة العرض الأول.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "58500",
+      "misconceptionSignatures": [
+        {
+          "value": "54000",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الرحلات × ثمن الرحلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$13 \\times 4500 = 58500$ دج.",
+        "incorrect": "استعمل عدد الرحلات اللازمة كلها."
+      },
+      "solution": {
+        "lines": [
+          "$13 \\times 4500 = 58500$"
+        ],
+        "result": "58500 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "كم رحلة تلزم بشاحنات العرض الثاني؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد الرحلات",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "value": "9",
+          "id": "MISC-HASR-IZAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "7 رحلات تنقل $56$ طنًّا فقط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما يبقى من المحصول يحتاج إلى رحلة أخرى."
+        }
+      ],
+      "feedback": {
+        "correct": "$8 \\times 7 = 56 < 63{,}75$: تلزم 8 رحلات.",
+        "incorrect": "الرحلات الممتلئة لا تنقل كل المحصول."
+      },
+      "solution": {
+        "lines": [
+          "$7 < 7{,}96875 < 8$",
+          "تلزم 8 رحلات."
+        ],
+        "result": "8"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "احسب كلفة العرض الثاني.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "56000",
+      "misconceptionSignatures": [
+        {
+          "value": "49000",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الرحلات × ثمن الرحلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$8 \\times 7000 = 56000$ دج.",
+        "incorrect": "استعمل عدد الرحلات اللازمة كلها."
+      },
+      "solution": {
+        "lines": [
+          "$8 \\times 7000 = 56000$"
+        ],
+        "result": "56000 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "06",
+      "statement": "أيّ العرضين يختارون؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "العرض الأول",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-HISAB"
+        },
+        {
+          "id": "B",
+          "content": "العرض الثاني",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الكلفتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تنسَ الرحلة الأخيرة غير الممتلئة في كل عرض."
+        }
+      ],
+      "feedback": {
+        "correct": "$56000 < 58500$: العرض الثاني أقل كلفة.",
+        "incorrect": "احسب كل كلفة بعدد الرحلات اللازمة ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "كلفة العرض الأول: 58500 دج، وكلفة العرض الثاني: 56000 دج.",
+          "$56000 < 58500$ ، إذن يختارون العرض الثاني."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

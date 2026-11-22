@@ -1,0 +1,292 @@
+{
+  "id": "ex-4am-tawzif-khawass-judhur-l5-008",
+  "lessonCode": "tawzif-khawass-judhur",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2016 — حديقة على شكل مثلث قائم",
+    "estimatedMinutes": 13,
+    "tags": [
+      "a√b",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tawzif-khawass-judhur_P2",
+      "modelledOn": "BEM 2016 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "حديقة عمومية بتلمسان على شكل مثلث ABC قائم في A حيث $AB = \\sqrt{48}\\,m$ و $AC = \\sqrt{27}\\,m$. تريد البلدية، حبًّا في تلمسان وحرصًا على جمالها، إحاطتها بسياج وزرعها بالعشب؛ كل كيس من بذور العشب يكفي $4\\,m^2$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "اكتب كلا من الطولين AB و AC على الشكل $a\\sqrt{3}$ حيث $a$ عدد طبيعي.",
+      "statement": "$AB$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (بالمتر)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "16",
+          "id": "MISC-JIDHR-MURABBA-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أكبر مربع تامّ يقسم 48."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = \\sqrt{16} \\times \\sqrt{3} = 4\\sqrt{3}\\,m$.",
+        "incorrect": "اكتب 48 على شكل (أكبر مربع تامّ) × 3."
+      },
+      "solution": {
+        "lines": [
+          "$AB = \\sqrt{48} = \\sqrt{16} \\times \\sqrt{3}$"
+        ],
+        "result": "AB = 4\\sqrt{3}\\,m"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "$AC$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (بالمتر)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-JIDHR-MURABBA-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أكبر مربع تامّ يقسم 27."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC = \\sqrt{9} \\times \\sqrt{3} = 3\\sqrt{3}\\,m$.",
+        "incorrect": "اكتب 27 على شكل (مربع تامّ) × 3."
+      },
+      "solution": {
+        "lines": [
+          "$AC = \\sqrt{27} = \\sqrt{9} \\times \\sqrt{3}$"
+        ],
+        "result": "AC = 3\\sqrt{3}\\,m"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب الطول BC واكتبه على الشكل $a\\sqrt{3}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (بالمتر)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-JIDHR-JAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث ABC قائم في A: استعمل خاصية فيثاغورس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$BC^2 = AB^2 + AC^2 = 48 + 27$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ابحث عن أكبر مربع تامّ يقسم $BC^2$."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC^2 = 75$ و $BC = \\sqrt{25} \\times \\sqrt{3} = 5\\sqrt{3}\\,m$.",
+        "incorrect": "احسب $BC^2$ بخاصية فيثاغورس (لا تجمع الجذرين)، ثم اكتب $BC$ على الشكل $a\\sqrt{3}$."
+      },
+      "solution": {
+        "lines": [
+          "المثلث ABC قائم في A، حسب خاصية فيثاغورس:",
+          "$BC^2 = AB^2 + AC^2 = 48 + 27 = 75$",
+          "$BC = \\sqrt{75} = \\sqrt{25} \\times \\sqrt{3}$"
+        ],
+        "result": "BC = 5\\sqrt{3}\\,m"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب محيط الحديقة واكتبه على الشكل $a\\sqrt{3}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (بالمتر)",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المحيط = AB + AC + BC."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المعاملات بالخاصية التوزيعية."
+        }
+      ],
+      "feedback": {
+        "correct": "$4\\sqrt{3} + 3\\sqrt{3} + 5\\sqrt{3} = 12\\sqrt{3}\\,m$.",
+        "incorrect": "اجمع الأطوال الثلاثة بعد كتابتها على الشكل $x\\sqrt{3}$."
+      },
+      "solution": {
+        "lines": [
+          "$P = AB + AC + BC = 4\\sqrt{3} + 3\\sqrt{3} + 5\\sqrt{3}$",
+          "$P = (4 + 3 + 5)\\sqrt{3}$"
+        ],
+        "result": "P = 12\\sqrt{3}\\,m"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "lead": "☜ احسب مساحة الحديقة، ثم استنتج أقل عدد من أكياس بذور العشب يلزم لزرعها كلها.",
+      "statement": "مساحة الحديقة (بالمتر المربع):",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tawzif-khawass-judhur_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (بالمتر المربع)",
+      "expectedAnswer": "18",
+      "misconceptionSignatures": [
+        {
+          "value": "36",
+          "id": "MISC-JIDHR-FI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة المثلث القائم = (جداء الضلعين القائمين) ÷ 2."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\sqrt{3} \\times \\sqrt{3} = 3$"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{4\\sqrt{3} \\times 3\\sqrt{3}}{2} = \\dfrac{36}{2}\\,m^2$.",
+        "incorrect": "اضرب الضلعين القائمين، واستعمل $\\sqrt{3} \\times \\sqrt{3} = 3$، ثم اقسم على 2."
+      },
+      "solution": {
+        "lines": [
+          "$S = \\dfrac{AB \\times AC}{2} = \\dfrac{4\\sqrt{3} \\times 3\\sqrt{3}}{2}$",
+          "$S = \\dfrac{12 \\times 3}{2} = \\dfrac{36}{2}$"
+        ],
+        "result": "S = 18\\,m^2"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "عدد الأكياس:",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم المساحة على 4."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا يمكن شراء جزء من كيس."
+        }
+      ],
+      "feedback": {
+        "correct": "$18 \\div 4 = 4{,}5$ إذن يلزم 5 أكياس.",
+        "incorrect": "اقسم المساحة على 4، وعدد الأكياس عدد طبيعي يكفي لكل الحديقة."
+      },
+      "solution": {
+        "lines": [
+          "$18 \\div 4 = 4{,}5$",
+          "4 أكياس لا تكفي، إذن يلزم 5 أكياس."
+        ],
+        "result": "5"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l2-004",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — عرض الطائرات المسيّرة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مركبتا شعاع",
+      "أعداد عشرية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hisab-murakkibatay_P1",
+      "modelledOn": "know-3"
+    }
+  },
+  "statement": {
+    "content": "في عرض طائرات مسيّرة مضيئة فوق خليج الجزائر احتفالًا بحبّ الوطن، تنتقل طائرة من $A(-1{,}2\\,;\\,0{,}5)$ إلى $B(2{,}3\\,;\\,-1{,}5)$ (الوحدة 100 m)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مركبتا شعاع انتقالها $\\overrightarrow{AB}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "point",
+      "answerFormat": "المركبتان: الأولى ثم الثانية — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "3.5",
+        "y": "-2"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-3.5",
+            "y": "2"
+          },
+          "id": "MISC-MAALAM-TARH-MAQLUB"
+        },
+        {
+          "value": {
+            "x": "1.1",
+            "y": "-1"
+          },
+          "id": "MISC-MAALAM-JAM-IHDATHIYAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبدأ A والنهاية B."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المركبة الأولى: فاصلة B ناقص فاصلة A."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المركبة الثانية: ترتيب B ناقص ترتيب A، وانتبه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}3 - (-1{,}2) = 3{,}5$ و $-1{,}5 - 0{,}5 = -2$ .",
+        "incorrect": "النهاية ناقص المبدأ، مع الفاصلة العشرية."
+      }
+    }
+  ]
+}

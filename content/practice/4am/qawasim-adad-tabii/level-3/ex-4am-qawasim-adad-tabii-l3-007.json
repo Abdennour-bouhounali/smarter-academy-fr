@@ -1,0 +1,210 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l3-007",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2016 — العدد 210",
+    "estimatedMinutes": 13,
+    "tags": [
+      "قواسم",
+      "جداء عاملين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qawasim-adad-tabii_P1",
+      "modelledOn": "BEM 2016 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب كل قواسم العدد 210.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        10,
+        14,
+        15,
+        21,
+        30,
+        35,
+        42,
+        70,
+        105,
+        210
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            5,
+            6,
+            7,
+            10,
+            14,
+            15,
+            21,
+            30,
+            35,
+            42,
+            70,
+            105
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 210 بمربعات الأعداد: إلى أي عدد يكفي أن تختبر قابلية القسمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "210 يقبل القسمة على 2 و 5 و 10 (رقم آحاده 0) وعلى 3 (مجموع أرقامه 3)؛ اختبر أيضا 7."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$210 = 1 \\times 210$ ، $210 = 2 \\times 105$ ، $210 = 3 \\times 70$ ، $210 = 5 \\times 42$ ، $210 = 6 \\times 35$ ، $210 = 7 \\times 30$ ، $210 = 10 \\times 21$ ، $210 = 14 \\times 15$.",
+        "incorrect": "اختبر الأعداد التي مربعها أصغر من العدد أو يساويه، وخذ من كل قسمة باقيها معدوم القاسمين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$14^2 = 196 \\leq 210 < 225 = 15^2$ ومنه نختبر قابلية قسمة 210 على الأعداد من 1 إلى 14.",
+          "نجد أن 210 يقبل القسمة على كل من الأعداد: 1 ، 2 ، 3 ، 5 ، 6 ، 7 ، 10 ، 14.",
+          "ومن المساويات: $210 = 1 \\times 210$ ، $210 = 2 \\times 105$ ، $210 = 3 \\times 70$ ، $210 = 5 \\times 42$ ، $210 = 6 \\times 35$ ، $210 = 7 \\times 30$ ، $210 = 10 \\times 21$ ، $210 = 14 \\times 15$",
+          "إذن قواسم العدد 210 هي: 1 ، 2 ، 3 ، 5 ، 6 ، 7 ، 10 ، 14 ، 15 ، 21 ، 30 ، 35 ، 42 ، 70 ، 105 ، 210."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 390
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم كتابة للعدد 210 على شكل جداء عاملين؟ (دون اعتبار ترتيب العاملين)",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بـ $210 = 1 \\times 210$ ثم جرّب العامل الأول 2 ثم 3 …"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "توقّف عندما يصير العامل الأول أكبر من العامل الثاني: $14^2 \\leq 210 < 15^2$."
+        }
+      ],
+      "feedback": {
+        "correct": "$210 = 1 \\times 210$ ، $210 = 2 \\times 105$ ، $210 = 3 \\times 70$ ، $210 = 5 \\times 42$ ، $210 = 6 \\times 35$ ، $210 = 7 \\times 30$ ، $210 = 10 \\times 21$ ، $210 = 14 \\times 15$.",
+        "incorrect": "اكتب كل الجداءات $d \\times e = 210$ حيث $d \\leq e$، ولا تنسَ $210 = 1 \\times 210$."
+      },
+      "solution": {
+        "lines": [
+          "$14^2 \\leq 210 < 15^2$: نجرّب العامل الأول من 1 إلى 14.",
+          "$210 = 1 \\times 210$ ، $210 = 2 \\times 105$ ، $210 = 3 \\times 70$ ، $210 = 5 \\times 42$ ، $210 = 6 \\times 35$ ، $210 = 7 \\times 30$ ، $210 = 10 \\times 21$ ، $210 = 14 \\times 15$",
+          "إذن عدد الكتابات هو 8."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما هي قيم العدد الطبيعي $a$ التي من أجلها يكون $\\dfrac{210}{a + 11}$ عددا طبيعيا؟",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        3,
+        4,
+        10,
+        19,
+        24,
+        31,
+        59,
+        94,
+        199
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "متى يكون $\\dfrac{210}{a + 11}$ عددا طبيعيا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يجب أن يكون $a + 11$ قاسما للعدد 210، وأكبر من 11 أو يساويه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "من كل قاسم مناسب $d$ نستنتج $a = d - 11$."
+        }
+      ],
+      "feedback": {
+        "correct": "$a + 11$ قاسم للعدد 210 أكبر من 11: 14 ، 15 ، 21 ، 30 ، 35 ، 42 ، 70 ، 105 ، 210.",
+        "incorrect": "المطلوب قيم $a$ لا قيم $a + 11$: عيّن قواسم 210 التي تفوق 11 أو تساويه ثم اطرح منها 11."
+      },
+      "solution": {
+        "lines": [
+          "يكون $\\dfrac{210}{a + 11}$ عددا طبيعيا إذا كان $a + 11$ قاسما للعدد 210.",
+          "قواسم العدد 210 هي: 1 ، 2 ، 3 ، 5 ، 6 ، 7 ، 10 ، 14 ، 15 ، 21 ، 30 ، 35 ، 42 ، 70 ، 105 ، 210.",
+          "وبما أن $a + 11 \\geq 11$ فإن $a + 11$ يساوي أحد الأعداد: 14 ، 15 ، 21 ، 30 ، 35 ، 42 ، 70 ، 105 ، 210.",
+          "ومنه قيم $a$ هي: 3 ، 4 ، 10 ، 19 ، 24 ، 31 ، 59 ، 94 ، 199."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-kusur-amaliyat-l1-004",
+  "lessonCode": "wadiya-idmajiya-kusur-amaliyat",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — القيمتان المقرّبتان إلى 0,01",
+    "estimatedMinutes": 6,
+    "tags": [
+      "القيمة المقرّبة بالنقصان والزيادة",
+      "الحصر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "قُطع حبل طوله $20$ m إلى $7$ قطع متساوية الطول ، فكان طول القطعة الواحدة $\\dfrac{20}{7}$ m ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}01$ بالنقصان لطول القطعة الواحدة بالمتر .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "2.85",
+      "misconceptionSignatures": [
+        {
+          "value": "2.86",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "2.857",
+          "id": "MISC-QARIBA-RANK"
+        },
+        {
+          "value": "2.6",
+          "id": "MISC-QARIBA-REMCOMMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم العدد على المقسوم عليه حتى الرتبة المطلوبة بعد الفاصلة ثمّ ما يليها ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أوقف القسمة عند الرتبة المطلوبة : بالنقصان نُبقي الأرقام كما هي ، وبالزيادة نزيد وحدة على آخر رقم ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا نقرّب إلى الأقرب : القيمة بالنقصان لا تتجاوز الحاصل والقيمة بالزيادة تتجاوزه ."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}85$ .",
+        "incorrect": "أنجز القسمة بعد الفاصلة وتوقّف عند الرتبة المطلوبة : بالنقصان دون تغيير آخر رقم ، وبالزيادة بإضافة وحدة إلى آخر رقم ."
+      },
+      "solution": {
+        "lines": [
+          "بإنجاز القسمة حتى رقمين بعد الفاصلة ثمّ ما يليه : $20 \\div 7 = 2{,}857\\ldots$ .",
+          "القيمة المقرّبة إلى $0{,}01$ بالنقصان : $2{,}85$ ."
+        ],
+        "result": "2{,}85"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "وأعط القيمة المقرّبة إلى $0{,}01$ بالزيادة .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "2.86",
+      "misconceptionSignatures": [
+        {
+          "value": "2.85",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "2.858",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم العدد على المقسوم عليه حتى الرتبة المطلوبة بعد الفاصلة ثمّ ما يليها ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أوقف القسمة عند الرتبة المطلوبة : بالنقصان نُبقي الأرقام كما هي ، وبالزيادة نزيد وحدة على آخر رقم ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا نقرّب إلى الأقرب : القيمة بالنقصان لا تتجاوز الحاصل والقيمة بالزيادة تتجاوزه ."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}86$ .",
+        "incorrect": "أنجز القسمة بعد الفاصلة وتوقّف عند الرتبة المطلوبة : بالنقصان دون تغيير آخر رقم ، وبالزيادة بإضافة وحدة إلى آخر رقم ."
+      },
+      "solution": {
+        "lines": [
+          "بإنجاز القسمة حتى رقمين بعد الفاصلة ثمّ ما يليه : $20 \\div 7 = 2{,}857\\ldots$ .",
+          "القيمة المقرّبة إلى $0{,}01$ بالزيادة : $2{,}86$ ."
+        ],
+        "result": "2{,}86"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اختر الحصر الصحيح للحاصل $\\dfrac{20}{7}$ إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2{,}86 < \\dfrac{20}{7} < 2{,}87$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        },
+        {
+          "id": "B",
+          "content": "$2{,}84 < \\dfrac{20}{7} < 2{,}85$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        },
+        {
+          "id": "C",
+          "content": "$2{,}6 < \\dfrac{20}{7} < 2{,}61$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-REMCOMMA"
+        },
+        {
+          "id": "D",
+          "content": "$2{,}85 < \\dfrac{20}{7} < 2{,}86$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحصر إلى الرتبة المطلوبة : عددان متتاليان في هذه الرتبة ، الأوّل لا يتجاوز الحاصل والثاني يتجاوزه ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة حتى الرتبة المطلوبة ثمّ ابدأ بالقيمة بالنقصان ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب طرفي الحصر في المقسوم عليه وقارن بالمقسوم للتأكّد ."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}85 < \\dfrac{20}{7} < 2{,}86$ .",
+        "incorrect": "أنجز القسمة بعد الفاصلة وتوقّف عند الرتبة المطلوبة : بالنقصان دون تغيير آخر رقم ، وبالزيادة بإضافة وحدة إلى آخر رقم ."
+      },
+      "solution": {
+        "lines": [
+          "$20 \\div 7 = 2{,}857\\ldots$ .",
+          "$2{,}85 < \\dfrac{20}{7} < 2{,}86$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

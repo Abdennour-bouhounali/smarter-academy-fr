@@ -1,0 +1,220 @@
+{
+  "id": "ex-4am-khawas-dawaran-l3-001",
+  "lessonCode": "khawas-dawaran",
+  "level": 3,
+  "metadata": {
+    "title": "من الكتاب — طرائق (ص 155)",
+    "estimatedMinutes": 3,
+    "tags": [
+      "طريقة الإثبات بدوران"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-properties",
+      "page": 155,
+      "section": "طرائق"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 155): OAB و OCD مثلثان كل منهما قائم في O ومتساوي الساقين، و B و D في الاتجاه المباشر من A و C (كما في الشكل).",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          4,
+          -2
+        ],
+        "B": [
+          2,
+          4
+        ],
+        "C": [
+          -1,
+          2
+        ],
+        "D": [
+          -2,
+          -1
+        ]
+      },
+      "polygons": [
+        {
+          "points": [
+            "O",
+            "A",
+            "B"
+          ],
+          "tone": "emerald"
+        },
+        {
+          "points": [
+            "O",
+            "C",
+            "D"
+          ],
+          "tone": "indigo"
+        }
+      ],
+      "segments": [
+        [
+          "O",
+          "A"
+        ],
+        [
+          "O",
+          "B"
+        ],
+        [
+          "A",
+          "B"
+        ],
+        [
+          "O",
+          "C"
+        ],
+        [
+          "O",
+          "D"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        {
+          "from": "A",
+          "to": "C",
+          "tone": "amber"
+        },
+        {
+          "from": "B",
+          "to": "D",
+          "tone": "rose"
+        }
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "O",
+          "B"
+        ],
+        [
+          "C",
+          "O",
+          "D"
+        ]
+      ],
+      "labels": {
+        "O": "s"
+      },
+      "ariaLabel": "المثلثان OAB و OCD قائمان في O ومتساويا الساقين والقطعتان [AC] و [BD]",
+      "maxWidth": 440
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "[BD] صورة [AC] بالدوران الذي:",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مركزه O وزاويته $90^\\circ$ في الاتجاه المباشر",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "مركزه O وزاويته $90^\\circ$ في الاتجاه غير المباشر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ITTIJAH"
+        },
+        {
+          "id": "C",
+          "content": "مركزه A وزاويته $90^\\circ$ في الاتجاه المباشر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MARKAZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "B صورة A: ما المركز الذي تبعد عنه A و B نفس البعد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الزاوية $\\widehat{AOB}$ قائمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "من A إلى B حول O: مع عقارب الساعة أم عكسها؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$OA = OB$ و $\\widehat{AOB} = 90^\\circ$ ، وكذلك C و D، والاتجاه مباشر.",
+        "incorrect": "المركز O، والاتجاه من A إلى B عكس عقارب الساعة."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "نستنتج:",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$AC = BD$ و $(BD) \\parallel (AC)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-TAWAZI"
+        },
+        {
+          "id": "B",
+          "content": "$(BD) \\perp (AC)$ ولا نعرف إن كان $AC = BD$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-KHAWAS"
+        },
+        {
+          "id": "C",
+          "content": "$AC = BD$ و $(BD) \\perp (AC)$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "[BD] صورة [AC]."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خاصية الأطوال، ثم زاوية الدوران."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زاوية قائمة: ماذا عن المستقيم وصورته؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الدوران يحافظ على الأطوال، وزاويته قائمة فالمستقيم وصورته متعامدان.",
+        "incorrect": "الطولان متساويان بالحفاظ على الأطوال، والتعامد من زاوية الدوران القائمة."
+      }
+    }
+  ]
+}

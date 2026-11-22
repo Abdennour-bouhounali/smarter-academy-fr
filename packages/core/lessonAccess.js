@@ -51,10 +51,28 @@ export function getModuleMastery(isModuleCompleted, moduleNumber) {
  * @param {{stage?: string}} [module]   le module du lesson.config (optionnel,
  *        rétro-compatible) — seul `stage` est lu ici.
  */
-export function isModuleUnlocked(isModuleCompleted, moduleNumber, { stage } = {}) {
+export function isModuleUnlocked(isModuleCompleted, moduleNumber, { stage, firstModuleNumber, previousStage } = {}) {
   if (stage === 'evaluation') return true;
+  // UN DIAGNOSTIC NE BARRE PAS LA LEÇON. `prerequisite_check` est une
+  // vérification d'acquis ANTÉRIEURS, « client-side only, never persisted as
+  // evidence » (lessonStages.js) : la sauter est un droit. Tant qu'il servait
+  // de prédécesseur, le premier vrai module restait fermé et l'élève lisait
+  // « أتمِم المحور 00 » — un mur devant la leçon, posé par un module qui ne
+  // prétend rien enseigner.
+  if (previousStage === 'prerequisite_check') return true;
   const n = Number(moduleNumber);
-  if (!Number.isFinite(n) || n <= 1) return true;
+  if (!Number.isFinite(n)) return true;
+  // LE PREMIER MODULE EST CELUI DE LA LEÇON, pas le numéro 1.
+  //
+  // 137 leçons commencent par un module 0 (le diagnostic « أستعدّ » /
+  // « Je me teste »). Avec un premier fixé à 1, ce module 0 n'était pas
+  // reconnu comme premier : il exigeait la maîtrise d'un module « -1 », qui
+  // ne peut pas exister. La leçon entière restait donc scellée, et l'écran
+  // annonçait « أتمِم المحور -1 ». Le premier module se lit maintenant de la
+  // leçon (`firstModuleNumber`) ; à défaut, tout numéro ≤ 1 ouvre, ce qui
+  // préserve le comportement des appelants qui ne le passent pas.
+  const first = Number.isFinite(Number(firstModuleNumber)) ? Number(firstModuleNumber) : 1;
+  if (n <= first) return true;
   return getModuleMastery(isModuleCompleted, n - 1) >= MASTERY_UNLOCK_THRESHOLD;
 }
 
@@ -93,38 +111,50 @@ export function isMasteryGateSatisfied(requiresLearningPointIds, masteryStatusBy
  * appliquent les portes de maîtrise.
  * @returns {'locked'|'mastered'|'in_progress'|'unlocked'}
  */
-export function getModuleStatus({ isModuleCompleted, moduleNumber, currentModule, module, masteryStatusById }) {
-  const unlocked = isModuleUnlocked(isModuleCompleted, moduleNumber, module)
+export function getModuleStatus({ isModuleCompleted, moduleNumber, currentModule, module, masteryStatusById, firstModuleNumber, previousStage }) {
+  // CE QUI EST FAIT EST FAIT — un module déjà maîtrisé ne se referme jamais.
+  //
+  // Le verrou se calcule à partir du module PRÉCÉDENT ; il répondait donc
+  // « verrouillé » pour un module que l'élève venait pourtant de terminer,
+  // dès que le précédent, lui, ne l'était pas (arrivée par un lien direct,
+  // module d'évaluation joué d'abord, progression importée d'un autre
+  // appareil). L'élève voyait « أتمِم المحور 00 » sur un module qu'il avait
+  // fini, et ne pouvait plus y revenir. La maîtrise passe donc AVANT le
+  // verrou : le déverrouillage séquentiel guide vers la suite, il ne
+  // reprend pas ce qui est acquis.
+  if (getModuleMastery(isModuleCompleted, moduleNumber) >= MASTERY_UNLOCK_THRESHOLD) return 'mastered';
+
+  const unlocked = isModuleUnlocked(isModuleCompleted, moduleNumber, { ...module, firstModuleNumber, previousStage })
     && isMasteryGateSatisfied(module?.requiresLearningPointIds, masteryStatusById);
   if (!unlocked) return 'locked';
-  if (getModuleMastery(isModuleCompleted, moduleNumber) >= MASTERY_UNLOCK_THRESHOLD) return 'mastered';
   if (currentModule != null && Number(currentModule) === Number(moduleNumber)) return 'in_progress';
   return 'unlocked';
 }
 
-/** Message affiché sur un module verrouillé, pour que l'élève comprenne pourquoi. */
-export function lockedReason(moduleNumber) {
-  const prev = Number(moduleNumber) - 1;
-  return `Termine le module ${String(prev).padStart(2, '0')} à ${MASTERY_UNLOCK_THRESHOLD} % pour débloquer ce module.`;
+/**
+ * Les DONNÉES du verrouillage : quel module précède, et à quel seuil.
+ *
+ * `packages/core` ne formate pas de phrase destinée à l'élève — il n'a pas à
+ * connaître la langue de l'interface. C'est la couche UI qui traduit
+ * (apps/web : i18n, namespace `lesson`), à partir de ces deux nombres. Sans
+ * cela, un écran arabe affichait « Termine le module 02 à 80 % ».
+ */
+export function lockedReasonData(moduleNumber) {
+  // Jamais un numéro négatif : un module « -1 » n'existe pas, et l'afficher
+  // laissait l'élève devant une consigne impossible à satisfaire.
+  const prev = Math.max(0, Number(moduleNumber) - 1);
+  return {
+    previousModule: String(prev).padStart(2, '0'),
+    threshold: MASTERY_UNLOCK_THRESHOLD,
+  };
 }
 
 /**
- * Porte de PALIER — distincte du déverrouillage séquentiel ci-dessus.
- *
- * Une leçon `tier: 'free'` est ouverte à tous ; une leçon `tier: 'premium'`
- * exige un droit d'accès, que le SERVEUR évalue (EntitlementService) et que
- * l'appelant transmet ici via `isPremiumUser`. Le catalogue vivant dans le
- * bundle, le palier est connu côté client — mais la décision, elle, ne l'est
- * pas : elle arrive avec `GET /content/availability`.
- *
- * Cette fonction ne fait donc qu'AFFICHER une décision déjà prise ailleurs.
- * Un élève qui forcerait `isPremiumUser` à vrai dans son navigateur verrait
- * une carte cliquable et rien de plus : chaque écriture repasse par
- * ContentAccess côté serveur, qui ne lit jamais l'état du client.
- *
- * @param {{ tier?: 'free' | 'premium' }} lesson
- * @param {{ isPremiumUser?: boolean }} [ctx]
+ * @deprecated Utiliser `lockedReasonData` + i18n côté UI. Conservé pour les
+ * appelants hors application (outillage, tests hérités) ; aucune surface
+ * élève ne doit l'afficher, sa phrase est en français.
  */
-export function isLessonUnlocked(lesson, { isPremiumUser = false } = {}) {
-  return lesson?.tier !== 'premium' || isPremiumUser;
+export function lockedReason(moduleNumber) {
+  const { previousModule, threshold } = lockedReasonData(moduleNumber);
+  return `Termine le module ${previousModule} à ${threshold} % pour débloquer ce module.`;
 }

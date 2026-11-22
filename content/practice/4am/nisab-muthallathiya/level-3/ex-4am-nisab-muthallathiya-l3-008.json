@@ -1,0 +1,293 @@
+{
+  "id": "ex-4am-nisab-muthallathiya-l3-008",
+  "lessonCode": "nisab-muthallathiya",
+  "level": 3,
+  "metadata": {
+    "title": "المثلث KBC: الظل ثم القيمة المضبوطة والمدوّرة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "الظل",
+      "جيب التمام",
+      "القيمة المضبوطة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-5",
+      "page": 122,
+      "section": "النسب المثلثية - استعمال حاسبة",
+      "number": 5
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل، $KBC$ مثلث قائم في $B$ حيث $KB = 14\\,\\mathrm{cm}$ و $BC = 17\\,\\mathrm{cm}$ .",
+    "figure": {
+      "points": {
+        "B": [
+          0,
+          0
+        ],
+        "K": [
+          -13.1557,
+          -4.7883
+        ],
+        "C": [
+          5.8143,
+          -15.9748
+        ]
+      },
+      "segments": [
+        {
+          "from": "K",
+          "to": "B",
+          "label": "14 cm"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "17 cm"
+        },
+        [
+          "K",
+          "C"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "K",
+          "B",
+          "C"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "K",
+          "from": "B",
+          "to": "C"
+        }
+      ],
+      "ariaLabel": "مثلث KBC قائم في B حيث KB = 14 سنتيمتر و BC = 17 سنتيمتر، والزاوية CKB معلّمة",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $\\tan\\widehat{CKB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري",
+      "expectedAnswer": "17/14",
+      "misconceptionSignatures": [
+        {
+          "value": "14/17",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث $KBC$ القائم في $B$ ، عيّن بالنسبة إلى الزاوية $\\widehat{CKB}$ الوتر والضلعين المجاور والمقابل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ظل زاوية حادة = طول الضلع المقابل لها على طول الضلع المجاور لها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض بالأطوال ثم اختزل الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan\\widehat{CKB} = \\dfrac{BC}{KB} = \\dfrac{17}{14}$ .",
+        "incorrect": "راجع الضلعين: ظل الزاوية = طول الضلع المقابل لها على طول الضلع المجاور لها، ثم اختزل."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $KBC$ القائم في $B$ لدينا: $\\tan\\widehat{CKB} = \\dfrac{BC}{KB}$",
+          "$\\tan\\widehat{CKB} = \\dfrac{17}{14}$"
+        ],
+        "result": "\\tan\\widehat{CKB} = \\dfrac{17}{14}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أعط القيمة المضبوطة للعدد $\\cos\\widehat{CKB}$ ثم مدوّرها إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{14}{\\sqrt{485}}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{17}{\\sqrt{485}}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-MUQABIL-MUJAWIR"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{\\sqrt{485}}{14}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-NISBA-MAQLUBA"
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{14}{31}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولا الوتر $KC$ بخاصية فيثاغورس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جيب التمام = المجاور على الوتر."
+        }
+      ],
+      "feedback": {
+        "correct": "$KC = \\sqrt{14^2 + 17^2} = \\sqrt{485}$ و $\\cos\\widehat{CKB} = \\dfrac{KB}{KC} = \\dfrac{14}{\\sqrt{485}}$ .",
+        "incorrect": "الوتر لا يساوي مجموع الضلعين: احسبه بخاصية فيثاغورس، ثم ضع المجاور للزاوية في البسط."
+      },
+      "solution": {
+        "lines": [
+          "بتطبيق خاصية فيثاغورس: $KC^2 = KB^2 + BC^2 = 196 + 289 = 485$ ، إذن $KC = \\sqrt{485}$ .",
+          "في المثلث $KBC$ القائم في $B$ : $\\cos\\widehat{CKB} = \\dfrac{KB}{KC} = \\dfrac{14}{\\sqrt{485}}$ (القيمة المضبوطة)،",
+          "وباستعمال الآلة الحاسبة: $\\cos\\widehat{CKB} \\approx 0{,}6357$"
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "المدوّر إلى $0{,}01$ للعدد $\\cos\\widehat{CKB}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري مدوّر إلى 0,01",
+      "expectedAnswer": "0.64",
+      "misconceptionSignatures": [
+        {
+          "value": "0.77",
+          "id": "MISC-MUTH-MUQABIL-MUJAWIR"
+        },
+        {
+          "value": "0.63",
+          "id": "MISC-MUTH-TADWIR-BATR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الآلة الحاسبة على القيمة المضبوطة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انظر إلى الرقم الثالث بعد الفاصلة لتدوّر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\cos\\widehat{CKB} = \\dfrac{14}{\\sqrt{485}} \\approx 0{,}6357$ ، أي $0{,}64$ بالتدوير إلى $0{,}01$ .",
+        "incorrect": "التدوير يعتمد على الرقم الموالي: إذا كان 5 أو أكثر نزيد واحدا للرقم الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{14}{\\sqrt{485}} \\approx 0{,}6357$",
+          "الرقم الموالي 5، فنزيد واحدا:"
+        ],
+        "result": "\\cos\\widehat{CKB} \\approx 0{,}64"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "أعط المدوّر إلى $0{,}01$ للعدد $\\sin\\widehat{CKB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري مدوّر إلى 0,01",
+      "expectedAnswer": "0.77",
+      "misconceptionSignatures": [
+        {
+          "value": "0.64",
+          "id": "MISC-MUTH-MUQABIL-MUJAWIR"
+        },
+        {
+          "value": "1.30",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الجيب = المقابل على الوتر، والوتر $\\sqrt{485}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin\\widehat{CKB} = \\dfrac{BC}{KC} = \\dfrac{17}{\\sqrt{485}} \\approx 0{,}7719$ ، أي $0{,}77$ .",
+        "incorrect": "المقابل للزاوية $\\widehat{CKB}$ هو الضلع الذي لا يمرّ بالرأس $K$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\sin\\widehat{CKB} = \\dfrac{BC}{KC} = \\dfrac{17}{\\sqrt{485}}$",
+          "باستعمال الآلة الحاسبة: $\\sin\\widehat{CKB} \\approx 0{,}7719$"
+        ],
+        "result": "\\sin\\widehat{CKB} \\approx 0{,}77"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

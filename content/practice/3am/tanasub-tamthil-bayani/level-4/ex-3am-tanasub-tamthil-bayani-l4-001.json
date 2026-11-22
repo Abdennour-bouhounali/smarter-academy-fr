@@ -1,0 +1,423 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l4-001",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — عرضان لبيع الطماطم",
+    "estimatedMinutes": 12,
+    "tags": [
+      "تمثيل بياني",
+      "مقارنة عرضين"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 3,
+      "file": "3am-s3-56",
+      "exercise": 3
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الرابع",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يعرض فلاحان محصولهما من الطماطم في سوق الحيّ: الأول يبيع الكيلوغرام بـ $120$ دج، والثاني بـ $80$ دج للكيلوغرام لكنّه يضيف $600$ دج ثمن النقل. يمثّل $(D_1)$ و $(D_2)$ في المعلم التالي ثمن كل عرض بدلالة الكتلة (الفاصلة بالكيلوغرام والترتيب بمئات الدنانير).",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "I": [
+          15,
+          18
+        ],
+        "P": [
+          20,
+          24
+        ],
+        "R": [
+          0,
+          6
+        ],
+        "S": [
+          20,
+          22
+        ]
+      },
+      "lines": [
+        {
+          "through": [
+            "O",
+            "P"
+          ],
+          "name": "(D₁)",
+          "tone": "indigo",
+          "extend": [
+            0,
+            0
+          ]
+        },
+        {
+          "through": [
+            "R",
+            "S"
+          ],
+          "name": "(D₂)",
+          "tone": "rose",
+          "extend": [
+            0,
+            0
+          ]
+        }
+      ],
+      "grid": true,
+      "axes": {
+        "every": 5
+      },
+      "labels": {
+        "O": "sw",
+        "I": "se"
+      },
+      "hidden": [
+        "P",
+        "R",
+        "S"
+      ],
+      "ariaLabel": "معلم متعامد ومتجانس: المستقيم (D₁) يشمل المبدأ O ويمرّ بالنقطة (20;24)، والمستقيم (D₂) يقطع محور التراتيب في 6 ويمرّ بالنقطة (20;22) ويتقاطعان في النقطة I(15;18)",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: الكتلة بالكيلوغرام — محور التراتيب: الثمن بمئات الدنانير"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "هل ثمن الفلاح الأول متناسب مع الكتلة؟ (المستقيم $(D_1)$ )",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لأنّ الترتيب لا يساوي الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-EQUAL-ONLY"
+        },
+        {
+          "id": "B",
+          "content": "لا، لأنّ المبدأ $O$ ليس من النقط المعلَّمة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-ORIGIN-DROP"
+        },
+        {
+          "id": "C",
+          "content": "نعم، النقط على استقامة واحدة مع المبدأ $O$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط على استقامة واحدة مع المبدأ $O$ ، فهي تمثّل وضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "$(D_1)$ مستقيم يشمل المبدأ $O$ .",
+          "إذن ثمن الفلاح الأول متناسب مع الكتلة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل ثمن الفلاح الثاني متناسب مع الكتلة؟ (المستقيم $(D_2)$ )",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأنّ الترتيب يكبر كلما كبرت الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-RISING"
+        },
+        {
+          "id": "B",
+          "content": "لا، المستقيم الذي يشمل النقط لا يشمل المبدأ $O$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نعم، لأنّ النقط على استقامة واحدة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-LINE-ANY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط على استقامة واحدة لكنّ المستقيم لا يشمل المبدأ $O$ ، فليست الوضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "$(D_2)$ مستقيم لكنّه يقطع محور التراتيب في $6$ وليس في $O$ .",
+          "إذن ثمن الفلاح الثاني ليس متناسبا مع الكتلة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "بقراءة بيانية:",
+      "statement": "عند أيّ الكتلة (بوحدة kg) يتساوى ثمنا العرضين؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الكتلة",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "18",
+          "id": "MISC-TAMTHIL-SWAP-XY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الثمنان متساويان عند النقطة التي يتقاطع فيها المستقيمان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ فاصلة هذه النقطة."
+        }
+      ],
+      "feedback": {
+        "correct": "المستقيمان يتقاطعان في $I(15\\,;\\,18)$ : الفاصلة $15$ .",
+        "incorrect": "فاصلة نقطة التقاطع هي الكمية التي يتساوى عندها الثمنان، لا ثمنها."
+      },
+      "solution": {
+        "lines": [
+          "نقطة تقاطع $(D_1)$ و $(D_2)$ هي $I(15\\,;\\,18)$ .",
+          "الكمية المطلوبة هي فاصلتها: $15$ ."
+        ],
+        "result": "15"
+      },
+      "work": "optional",
+      "timeSeconds": 80
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما الثمن المشترك عند هذه الكمية بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الثمن بالدينار",
+      "expectedAnswer": "1800",
+      "misconceptionSignatures": [
+        {
+          "value": "18",
+          "id": "MISC-TAMTHIL-UNIT-AXIS"
+        },
+        {
+          "value": "1500",
+          "id": "MISC-TAMTHIL-SWAP-XY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ ترتيب نقطة التقاطع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الترتيب مقدّر بمئات الدنانير."
+        }
+      ],
+      "feedback": {
+        "correct": "الترتيب $18$ مئة دج، أي $1800$ دج.",
+        "incorrect": "حوّل ترتيب النقطة من مئات الدنانير إلى الدنانير."
+      },
+      "solution": {
+        "lines": [
+          "ترتيب $I$ هو $18$ ، أي $18 \\times 100 = 1800$ دج."
+        ],
+        "result": "1800\\ \\text{دج}"
+      },
+      "work": "optional",
+      "timeSeconds": 80
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "تحقّق من القراءة بحلّ المعادلة $1{,}2x = 0{,}8x + 6$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: قيمة x",
+      "expectedAnswer": "15",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انقل الحدّ الذي فيه $x$ إلى الطرف الأيمن مع تغيير إشارته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم اقسم على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 6 \\div 0{,}4 = 15$ ، وهو ما قرأناه على البيان.",
+        "incorrect": "اجمع حدود $x$ في طرف واحد ثم اقسم الطرفين على المعامل."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}2x - 0{,}8x = 6$",
+          "$0{,}4x = 6$",
+          "$x = 15$"
+        ],
+        "result": "x = 15"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "يحتاج أحدهم إلى $20$ kg. عند أيّ العرضين يدفع أقلّ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الفلاح الثاني: ثمن 20 kg عنده $22$ مئة دج مقابل $24$ عند الفلاح الأول",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الفلاح الأول: لأنّه لا يضيف رسما ثابتا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-FEE-ONLY"
+        },
+        {
+          "id": "C",
+          "content": "الثمنان متساويان: لأنّ المستقيمين يتقاطعان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-CROSS-ALWAYS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الثمن عند كل عرض أو اقرأه على البيان عند هذه الكمية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الثمنين الكليين لا ثمن الوحدة وحده."
+        }
+      ],
+      "feedback": {
+        "correct": "عند الكمية $20$ : $24$ مئة دج عند الفلاح الأول و $22$ مئة دج عند الفلاح الثاني.",
+        "incorrect": "لا يكفي النظر إلى الرسم الثابت أو إلى ثمن الوحدة: احسب الثمن الكلي عند الكمية المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "عند $x = 20$ : $(D_1)$ يعطي $24$ و $(D_2)$ يعطي $22$ مئة دج.",
+          "الأرخص هو الفلاح الثاني."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l2-004",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مساواة واحدة وقسمتان",
+    "estimatedMinutes": 6,
+    "tags": [
+      "قسمة إقليدية",
+      "قراءة المساواة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر المساواة الصحيحة: $300 = 26 \\times 11 + 14$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "هل تعبّر هذه المساواة عن القسمة الإقليدية للعدد 300 على 26؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-HISAB"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق أولًا من صحة المساواة بالحساب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم قارن العدد المضاف بالمقسوم عليه 26."
+        }
+      ],
+      "feedback": {
+        "correct": "المساواة صحيحة و $14 < 26$.",
+        "incorrect": "القسمة الإقليدية على 26: مساواة صحيحة وباقٍ أصغر من 26."
+      },
+      "solution": {
+        "lines": [
+          "$26 \\times 11 + 14 = 300$",
+          "المساواة صحيحة و $14 < 26$."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل تعبّر عن القسمة الإقليدية للعدد 300 على 11؟ (نقرأ $300 = 11 \\times 26 + 14$)",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-TABADUL"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق أولًا من صحة المساواة بالحساب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم قارن العدد المضاف بالمقسوم عليه 11."
+        }
+      ],
+      "feedback": {
+        "correct": "المساواة صحيحة لكن $14 \\ge 11$: يمكن أخذ 11 مرّة أخرى.",
+        "incorrect": "القسمة الإقليدية على 11: مساواة صحيحة وباقٍ أصغر من 11."
+      },
+      "solution": {
+        "lines": [
+          "$11 \\times 26 + 14 = 300$",
+          "المساواة صحيحة لكن $14 \\ge 11$: يمكن أخذ 11 مرّة أخرى.",
+          "القسمة الإقليدية هي $300 = 11 \\times 27 + 3$."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب حاصل القسمة الإقليدية للعدد 300 على 11.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "27",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "26",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "value": "28",
+          "id": "MISC-HASR-IZAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 300 من 11 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 11 دون أن نتجاوز 300."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من 11."
+        }
+      ],
+      "feedback": {
+        "correct": "$300 = 11 \\times 27 + 3$ و $3 < 11$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 11 فلا يتجاوز الجداء 300، والباقي عندئذ أصغر من 11."
+      },
+      "solution": {
+        "lines": [
+          "$11 \\times 27 = 297$ و $11 \\times 28 = 308$",
+          "$297 \\le 300 < 308$ ، إذن الحاصل هو 27."
+        ],
+        "result": "q = 27"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب باقي القسمة الإقليدية للعدد 300 على 11.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "27",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "14",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 300."
+        }
+      ],
+      "feedback": {
+        "correct": "$300 - 11 \\times 27 = 300 - 297 = 3$ ، و $3 < 11$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 11."
+      },
+      "solution": {
+        "lines": [
+          "$300 = 11 \\times 27 + 3$",
+          "$3 < 11$ ، إذن الباقي هو 3."
+        ],
+        "result": "r = 3"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

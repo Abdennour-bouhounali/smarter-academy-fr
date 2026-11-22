@@ -1,0 +1,339 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l5-007",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — قفف التضامن",
+    "estimatedMinutes": 18,
+    "tags": [
+      "قفف",
+      "أصغر حاصل",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "جمعت جمعية خيرية في حملة تضامنية 1236 علبة تمر و 1500 قارورة زيت، لتوزيعها في قفف متماثلة على العائلات المحتاجة.\nالجزء الأول: تضع الجمعية في كل قفّة 8 علب تمر و 9 قارورات زيت.\nالجزء الثاني: سجّلت الجمعية 160 عائلة، وتريد أن تُهدي كل عائلة قفّة كاملة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "كم قفّة تكفيها علب التمر؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد القفف",
+      "expectedAnswer": "154",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "153",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "155",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 1236 من 8 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 8 دون أن نتجاوز 1236."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$1236 = 8 \\times 154 + 4$ و $4 < 8$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 8 فلا يتجاوز الجداء 1236، والباقي عندئذ أصغر من 8."
+      },
+      "solution": {
+        "lines": [
+          "$8 \\times 154 = 1232$ و $8 \\times 155 = 1240$",
+          "$1232 \\le 1236 < 1240$ ، إذن الحاصل هو 154."
+        ],
+        "result": "q = 154"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "كم قفّة تكفيها قارورات الزيت؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد القفف",
+      "expectedAnswer": "166",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "165",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "167",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 1500 من 9 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 9 دون أن نتجاوز 1500."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$1500 = 9 \\times 166 + 6$ و $6 < 9$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 9 فلا يتجاوز الجداء 1500، والباقي عندئذ أصغر من 9."
+      },
+      "solution": {
+        "lines": [
+          "$9 \\times 166 = 1494$ و $9 \\times 167 = 1503$",
+          "$1494 \\le 1500 < 1503$ ، إذن الحاصل هو 166."
+        ],
+        "result": "q = 166"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما أكبر عدد من القفف الكاملة يمكن تشكيله؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "320",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        },
+        {
+          "id": "B",
+          "content": "154",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "166",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل قفّة تحتاج إلى التمر والزيت معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أيّ المادتين تنفد أولًا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "التمر يكفي لـ 154 قفّة فقط، و $154 < 166$.",
+        "incorrect": "القفّة الكاملة تحتاج إلى المادتين: العدد الأصغر هو الذي يحدّ."
+      },
+      "solution": {
+        "lines": [
+          "التمر: 154 قفّة ؛ الزيت: 166 قفّة.",
+          "القفّة تحتاج إلى المادتين، إذن أكبر عدد هو 154."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "هل تكفي هذه القفف للعائلات المسجّلة؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-LA-BAQI"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن عدد القفف بعدد العائلات."
+        }
+      ],
+      "feedback": {
+        "correct": "$154 < 160$.",
+        "incorrect": "قارن 154 بعدد العائلات."
+      },
+      "solution": {
+        "lines": [
+          "$154 < 160$ ، إذن لا تكفي."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "كم علبة تمر تنقص الجمعية لتُهدي 160 عائلة؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد العلب",
+      "expectedAnswer": "44",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم علبة تمر تلزم لـ 160 قفّة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن بما جمعته الجمعية."
+        }
+      ],
+      "feedback": {
+        "correct": "$160 \\times 8 = 1280$ و $1280 - 1236 = 44$.",
+        "incorrect": "احسب عدد العلب اللازمة لـ 160 قفّة، ثم الفرق مع 1236."
+      },
+      "solution": {
+        "lines": [
+          "$160 \\times 8 = 1280$",
+          "$1280 - 1236 = 44$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "هل تكفي قارورات الزيت لـ 160 قفّة؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم قارورة تلزم لـ 160 قفّة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$160 \\times 9 = 1440 < 1500$.",
+        "incorrect": "احسب عدد القارورات اللازمة وقارنه بـ 1500."
+      },
+      "solution": {
+        "lines": [
+          "$160 \\times 9 = 1440$",
+          "$1440 < 1500$ ، إذن تكفي قارورات الزيت."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l3-002",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — القسمة على 42",
+    "estimatedMinutes": 8,
+    "tags": [
+      "حصر",
+      "مساواة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 2,
+      "file": "1am-s2-80",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أنجز القسمة الإقليدية: $937 \\div 42$ ، ثم عبّر عنها بمساواة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ حصر للعدد 937 بين مضاعفين متتاليين للعدد 42 صحيح؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$42 \\times 22 \\le 937 < 42 \\times 23$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$42 \\times 21 \\le 937 < 42 \\times 22$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "id": "C",
+          "content": "$42 \\times 23 \\le 937 < 42 \\times 24$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الجداءات المقترحة وقارنها بـ 937."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الجداء الأول لا يتجاوز 937، والثاني يتجاوزه."
+        }
+      ],
+      "feedback": {
+        "correct": "$42 \\times 22 = 924$ و $42 \\times 23 = 966$ ، و $924 \\le 937 < 966$.",
+        "incorrect": "احسب كل جداء: يجب أن يكون الأول أصغر من 937 أو يساويه، والثاني أكبر منه."
+      },
+      "solution": {
+        "lines": [
+          "$42 \\times 22 = 924$ و $42 \\times 23 = 966$",
+          "$924 \\le 937 < 966$"
+        ],
+        "result": "42 \\times 22 \\le 937 < 42 \\times 23"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب حاصل القسمة الإقليدية للعدد 937 على 42.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "22",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "21",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "23",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 937 من 42 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 42 دون أن نتجاوز 937."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$937 = 42 \\times 22 + 13$ و $13 < 42$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 42 فلا يتجاوز الجداء 937، والباقي عندئذ أصغر من 42."
+      },
+      "solution": {
+        "lines": [
+          "$42 \\times 22 = 924$ و $42 \\times 23 = 966$",
+          "$924 \\le 937 < 966$ ، إذن الحاصل هو 22."
+        ],
+        "result": "q = 22"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب باقي القسمة الإقليدية للعدد 937 على 42.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "value": "22",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "55",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 937."
+        }
+      ],
+      "feedback": {
+        "correct": "$937 - 42 \\times 22 = 937 - 924 = 13$ ، و $13 < 42$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 42."
+      },
+      "solution": {
+        "lines": [
+          "$937 = 42 \\times 22 + 13$",
+          "$13 < 42$ ، إذن الباقي هو 13."
+        ],
+        "result": "r = 13"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "عبّر عن هذه القسمة بمساواة.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$937 = 42 \\times 21 + 55$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "id": "B",
+          "content": "$937 = 42 \\times 13 + 22$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "id": "C",
+          "content": "$937 = 42 \\times 23 + 13$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        },
+        {
+          "id": "D",
+          "content": "$937 = 42 \\times 22 + 13$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق من صحة كل مساواة بالحساب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في القسمة الإقليدية على 42، يجب أن يكون الباقي أصغر من 42."
+        }
+      ],
+      "feedback": {
+        "correct": "$42 \\times 22 + 13 = 937$ و $13 < 42$: الشرطان محقّقان.",
+        "incorrect": "المساواة الصحيحة يجب أن تكون صحيحة حسابيًا، وأن يكون باقيها أصغر من المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$42 \\times 22 = 924$ و $924 + 13 = 937$",
+          "$13 < 42$ ، إذن:"
+        ],
+        "result": "937 = 42 \\times 22 + 13"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

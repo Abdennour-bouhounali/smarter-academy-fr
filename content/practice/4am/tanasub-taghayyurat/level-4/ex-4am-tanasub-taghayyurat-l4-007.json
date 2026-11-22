@@ -1,0 +1,293 @@
+{
+  "id": "ex-4am-tanasub-taghayyurat-l4-007",
+  "lessonCode": "tanasub-taghayyurat",
+  "level": 4,
+  "metadata": {
+    "title": "مستقيم يشمل نقطتين",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مستقيم يمرّ بنقطتين",
+      "تعيين دالة تآلفية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tanasub-taghayyurat_P1",
+      "modelledOn": "challenge",
+      "adaptedFrom": "ex-4am-tanasub-taghayyurat-l4-007"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في المعلم المتعامد والمتجانس التالي، المستقيم $(d)$ هو التمثيل البياني لدالة تآلفية $k$ ، ويشمل النقطتين $C(-4 ; 1)$ و $D(6 ; 6)$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "C": [
+          -4,
+          1
+        ],
+        "D": [
+          6,
+          6
+        ]
+      },
+      "lines": [
+        {
+          "through": [
+            "C",
+            "D"
+          ],
+          "name": "(d)",
+          "tone": "indigo",
+          "extend": [
+            0.1,
+            0.08
+          ]
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw",
+        "C": "n",
+        "D": "se"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس على ورقة مرصوفة: المستقيم (d) يصعد ببطء ويشمل النقطتين C و D"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عيّن العبارة الجبرية للدالة $k$ .",
+      "statement": "أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "0,5",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-TAGHAYYUR-BIDUN-QISMA"
+        },
+        {
+          "value": "-0,5",
+          "id": "MISC-TAGHAYYUR-TARTIB"
+        },
+        {
+          "value": "2",
+          "id": "MISC-BAYANI-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خاصية تناسب التغيّرات: المعامل $a$ هو حاصل قسمة فرق الصورتين على فرق العددين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $\\dfrac{k(6) - k(-4)}{6 - (-4)}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح بالترتيب نفسه في البسط والمقام، وانتبه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{5}{10} = 0{,}5$ .",
+        "incorrect": "اقسم فرق الصورتين على فرق العددين، واطرح بالترتيب نفسه في البسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "العبارة الجبرية للدالة التآلفية $k$ هي: $k(x) = ax + b$ .",
+          "إيجاد العدد $a$ (خاصية تناسب التغيّرات):",
+          "$a = \\dfrac{k(x_2) - k(x_1)}{x_2 - x_1}$",
+          "$a = \\dfrac{6 - 1}{6 - (-4)}$",
+          "$a = \\dfrac{5}{10}$",
+          "$a = 0{,}5$"
+        ],
+        "result": "a = 0{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "-0,25",
+          "id": "MISC-TAGHAYYUR-B-NISBA"
+        },
+        {
+          "value": "0,5",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$k(-4) = 1$ و $k(x) = ax + b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $a$ بقيمته و $x$ بالعدد $-4$ ، ثم حلّ المعادلة التي مجهولها $b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$b = 1 - (-2) = 3$ .",
+        "incorrect": "بعد حساب $a$ : $b = k(x_1) - a x_1$ ، وليس حاصل قسمة الصورة على العدد."
+      },
+      "solution": {
+        "lines": [
+          "إيجاد العدد $b$ (الترتيب إلى المبدأ):",
+          "لدينا: $k(-4) = 1$",
+          "أي: $0{,}5 \\times (-4) + b = 1$",
+          "$-2 + b = 1$",
+          "$b = 1 - (-2)$",
+          "$b = 3$",
+          "ومنه العبارة الجبرية للدالة $k$ هي: $k(x) = 0{,}5x + 3$"
+        ],
+        "result": "k(x) = 0{,}5x + 3"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب ترتيب النقطة $E$ من $(d)$ التي فاصلتها 10.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد $10$ في عبارة $k(x)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب أولا في المعامل، ثم أضف الحدّ الثابت بإشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$k(10) = 5 + 3 = 8$ .",
+        "incorrect": "اضرب العدد في المعامل ثم أضف الحدّ الثابت بإشارته، ولا تنسه."
+      },
+      "solution": {
+        "lines": [
+          "$k(10) = 0{,}5 \\times 10 + 3$",
+          "$k(10) = 5 + 3$",
+          "$k(10) = 8$"
+        ],
+        "result": "k(10) = 8"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب فاصلة نقطة تقاطع المستقيم $(d)$ مع محور الفواصل.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-6",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-TAALUFI-SABIQ-QISMA"
+        },
+        {
+          "value": "-3",
+          "id": "MISC-TAALUFI-SABIQ-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة $k(x) = 0$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل الحدّ الثابت إلى الطرف الآخر أولا، ثم اقسم على المعامل."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}5x = -3$ ، إذن $x = \\dfrac{-3}{0{,}5}$ .",
+        "incorrect": "اطرح الحدّ الثابت من الطرفين أولا، ثم اقسم على المعامل."
+      },
+      "solution": {
+        "lines": [
+          "نحلّ المعادلة: $k(x) = 0$",
+          "$0{,}5x + 3 = 0$",
+          "$0{,}5x = 0 - 3$",
+          "$0{,}5x = -3$",
+          "$x = \\dfrac{-3}{0{,}5}$",
+          "$x = -6$"
+        ],
+        "result": "x = -6"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

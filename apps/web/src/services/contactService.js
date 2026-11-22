@@ -1,4 +1,5 @@
 import { apiRequest, ApiError, classifyStatus } from './apiClient';
+import { apiMessage } from './apiMessage';
 
 /**
  * Submits a contact-form request.
@@ -13,7 +14,7 @@ export async function submitContactRequest(formData) {
   });
 
   if (!ok) {
-    throw new ApiError(data?.message || 'Une erreur est survenue.', classifyStatus(status), status);
+    throw new ApiError(apiMessage('contact', data, status), classifyStatus(status), status);
   }
 
   return data;

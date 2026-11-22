@@ -1,0 +1,164 @@
+{
+  "id": "ex-1am-qawaid-qabiliyat-qisma-l2-009",
+  "lessonCode": "qawaid-qabiliyat-qisma",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — أفواج التشجير",
+    "estimatedMinutes": 6,
+    "tags": [
+      "القسمة على 9",
+      "أفواج"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "شارك 126 تلميذًا في حملة تشجير لحماية البيئة، وأراد المنظّمون تقسيمهم إلى أفواج من 9 تلاميذ دون أن يبقى أحد خارج الأفواج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب مجموع أرقام العدد 126.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع كل أرقام العدد، رقمًا رقمًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$1 + 2 + 6 = 9$.",
+        "incorrect": "اجمع أرقام العدد كلها، ومنها الأصفار."
+      },
+      "solution": {
+        "lines": [
+          "$1 + 2 + 6 = 9$"
+        ],
+        "result": "9"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل يمكن تشكيل أفواج من 9 تلاميذ دون أن يبقى أحد؟ برّر دون إنجاز القسمة.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-AHAD-3"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مجموع أرقام العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل هذا المجموع يقبل القسمة على 9؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يكفي أن يقبل المجموع القسمة على 3."
+        }
+      ],
+      "feedback": {
+        "correct": "مجموع أرقام العدد 126: $1 + 2 + 6 = 9$ ، و 9 يقبل القسمة على 9.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 9 إذا كان مجموع أرقامه يقبل القسمة على 9."
+      },
+      "solution": {
+        "lines": [
+          "مجموع أرقام العدد 126: $1 + 2 + 6 = 9$ ، و 9 يقبل القسمة على 9.",
+          "$126 = 9 \\times 14 + 0$ ، الباقي معدوم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب عدد الأفواج.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الأفواج",
+      "expectedAnswer": "14",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-QABILIYA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية عموديًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق بضرب الحاصل في 9."
+        }
+      ],
+      "feedback": {
+        "correct": "$126 = 9 \\times 14 + 0$.",
+        "incorrect": "ابحث عن أكبر عدد طبيعي نضربه في 9 دون أن نتجاوز 126."
+      },
+      "solution": {
+        "lines": [
+          "$126 = 9 \\times 14 + 0$",
+          "الحاصل هو 14."
+        ],
+        "result": "14"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

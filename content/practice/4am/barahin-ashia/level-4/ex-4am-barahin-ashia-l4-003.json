@@ -1,0 +1,144 @@
+{
+  "id": "ex-4am-barahin-ashia-l4-003",
+  "lessonCode": "barahin-ashia",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 24 — KM + KJ′ = KL",
+    "estimatedMinutes": 3,
+    "tags": [
+      "علاقة شال",
+      "انسحاب"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-24",
+      "page": 137,
+      "section": "أتعمّق",
+      "number": 24
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 137، تمرين 24): KLM مثلث متساوي الساقين رأسه الأساسي L ، J منتصف [KL]، و J′ صورة J بالانسحاب الذي شعاعه $\\overrightarrow{MJ}$ (الشكل).",
+    "figure": {
+      "points": {
+        "K": [
+          0,
+          0
+        ],
+        "M": [
+          6,
+          0
+        ],
+        "L": [
+          3,
+          4
+        ],
+        "I": [
+          3,
+          0
+        ],
+        "J": [
+          1.5,
+          2
+        ],
+        "J′": [
+          -3,
+          4
+        ]
+      },
+      "segments": [
+        {
+          "from": "K",
+          "to": "M",
+          "label": "6cm"
+        },
+        {
+          "from": "K",
+          "to": "L",
+          "label": "5cm"
+        },
+        [
+          "L",
+          "M"
+        ],
+        {
+          "from": "M",
+          "to": "J",
+          "dashed": true
+        }
+      ],
+      "vectors": [
+        {
+          "from": "J",
+          "to": "J′",
+          "label": "",
+          "tone": "rose"
+        }
+      ],
+      "labels": {
+        "K": "sw",
+        "M": "se",
+        "L": "n",
+        "I": "s",
+        "J": "w",
+        "J′": "nw"
+      },
+      "ariaLabel": "مثلث KLM متساوي الساقين رأسه L، و I منتصف [KM]، و J منتصف [KL]، و J′ صورة J بالانسحاب الذي شعاعه MJ",
+      "maxWidth": 380
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "لتبسيط $\\overrightarrow{KM} + \\overrightarrow{KJ'}$ نكتب:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{KM} + \\overrightarrow{KJ} + \\overrightarrow{MJ} = \\overrightarrow{KJ} + \\overrightarrow{KJ} = \\overrightarrow{KL}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{KM} + \\overrightarrow{KJ} + \\overrightarrow{JM} = \\overrightarrow{KJ} + \\overrightarrow{KM} = \\overrightarrow{KL}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSIHAB-SURA"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{KM} + \\overrightarrow{KJ} = \\overrightarrow{MJ}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-AKS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "J′ صورة J بالانسحاب الذي شعاعه $\\overrightarrow{MJ}$ : ماذا يساوي $\\overrightarrow{JJ'}$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\overrightarrow{KJ'} = \\overrightarrow{KJ} + \\overrightarrow{JJ'}$ (علاقة شال)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "J منتصف [KL]: $\\overrightarrow{KJ} = \\overrightarrow{JL}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{KJ'} = \\overrightarrow{KJ} + \\overrightarrow{MJ}$ ، ثم $\\overrightarrow{KM} + \\overrightarrow{MJ} = \\overrightarrow{KJ}$ و $\\overrightarrow{KJ} + \\overrightarrow{JL} = \\overrightarrow{KL}$ .",
+        "incorrect": "صورة J هي نهاية الشعاع $\\overrightarrow{JJ'} = \\overrightarrow{MJ}$ ، لا مبدؤه."
+      }
+    }
+  ]
+}

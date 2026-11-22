@@ -1,0 +1,188 @@
+{
+  "id": "ex-1am-muqaranat-adad-ashriya-l2-001",
+  "lessonCode": "muqaranat-adad-ashriya",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — خطأ ريم في المقارنة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "مقارنة",
+      "تعليل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تقارن ريم بين طولي شريطين: شريط أحمر طوله 5,8 م وشريط أزرق طوله 5,36 م، وهي تحرص على أن تُثبت ما تقول بالتعليل."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ضع الرمز المناسب ($<$ أو $=$ أو $>$) مكان النقط: $5{,}8 \\ldots 5{,}36$",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الرمز المناسب",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$<$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-DIGITS-AS-NATURAL"
+        },
+        {
+          "id": "B",
+          "content": "$=$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-ZERO-PLACE"
+        },
+        {
+          "id": "C",
+          "content": "$>$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا تقرأ الأرقام بعد الفاصلة على أنها عدد طبيعي منفصل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أتمم الأرقام بأصفار غير ضرورية لتتساوى عدد الأرقام بعد الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الأعشار أولًا: الرتبة الأعلى تحسم قبل الرتب الأدنى."
+        }
+      ],
+      "feedback": {
+        "correct": "الجزآن الصحيحان متساويان؛ نقارن عددَي أجزاء من مائة: $80$ و $36$، إذن $5{,}8 > 5{,}36$.",
+        "incorrect": "عدد الأرقام بعد الفاصلة لا يحدّد كِبَر العدد: نقارن الأعشار قبل الأجزاء من مائة. مثال: $3{,}2 = 3{,}20$ أكبر من $3{,}14$ لأنّ 20 جزءًا من مائة أكثر من 14."
+      },
+      "solution": {
+        "lines": [
+          "نتمم بأصفار لنساوي عدد الأرقام بعد الفاصلة: $5{,}80$ و $5{,}36$.",
+          "الجزآن الصحيحان متساويان؛ نقارن عددَي أجزاء من مائة: $80$ و $36$، إذن $5{,}8 > 5{,}36$."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "قالت ريم: «$5{,}36 > 5{,}8$ لأنّ 36 أكبر من 8». هل هذا القول صحيح؟",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر: صحيح أو خطأ",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-DIGITS-AS-NATURAL"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الرتبة الأولى التي يختلف فيها الرقمان؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن بعد ذلك بين الرقمين في تلك الرتبة فقط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر قاعدة المتعلّم على عددين تعرف ترتيبهما بيقين."
+        }
+      ],
+      "feedback": {
+        "correct": "القول خاطئ. $5{,}8 = 5{,}80$ و $5{,}80 > 5{,}36$ لأنّ 580 جزءًا من مائة أكبر من 536.",
+        "incorrect": "القاعدة الصحيحة: أول رتبة يختلف فيها الرقمان (من اليسار) هي التي تحسم المقارنة."
+      },
+      "solution": {
+        "lines": [
+          "الأرقام بعد الفاصلة ليست عددًا طبيعيًّا منفصلًا: نقارن الأعشار أولًا، 3 أعشار أقل من 8 أعشار.",
+          "$5{,}8 = 5{,}80$ و $5{,}80 > 5{,}36$ لأنّ 580 جزءًا من مائة أكبر من 536."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اشرح لريم لماذا لا يكفي أن نقارن 36 مع 8 للحكم على $5{,}36$ و $5{,}8$.",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اذكر الرتبة التي حسمت المقارنة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أو أتمم العددين بأصفار ثم قارن عددين طبيعيين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تامة تتضمن العددين والرمز."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي.",
+        "incorrect": "راجع التبرير وأعد صياغته: اذكر الرتبة أو الأصفار."
+      },
+      "solution": {
+        "lines": [
+          "الجزآن الصحيحان متساويان (5)، فننظر إلى رقم الأعشار: 8 أعشار في $5{,}8$ و 3 أعشار فقط في $5{,}36$.",
+          "أو نتمم بصفر: $5{,}8 = 5{,}80$، فنقارن 580 مع 536 جزءًا من مائة.",
+          "إذن $5{,}36 < 5{,}8$."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

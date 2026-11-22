@@ -26,8 +26,36 @@ final class AccessDecision
     /** L'accès vient d'un abonnement synchronisé. */
     public const VIA_SUBSCRIPTION = 'subscription_entitlement';
 
+    /** L'accès vient d'un code d'activation saisi par l'élève. */
+    public const VIA_ACTIVATION_CODE = 'activation_code';
+
     /** L'accès vient d'une dérogation d'administration. */
     public const VIA_ADMIN_OVERRIDE = 'admin_override';
+
+    /**
+     * L'accès vient de l'OFFRE DE L'ENSEIGNANT (modèle B) : l'élève est
+     * membre actif d'une classe dont l'enseignant couvre ses élèves.
+     * Évalué dynamiquement, jamais une ligne — voir TeacherCoverage.
+     */
+    public const VIA_TEACHER_SUBSCRIPTION = 'teacher_subscription';
+
+    /**
+     * L'accès vient de la LICENCE DE L'ÉTABLISSEMENT (modèle C, 2026-10-26) :
+     * l'élève est membre actif d'une classe active d'un établissement dont la
+     * licence court. Évalué dynamiquement — voir School\SchoolCoverage. Passe
+     * AVANT l'offre de l'enseignant : c'est l'établissement qui paie.
+     */
+    public const VIA_SCHOOL_LICENCE = 'school_licence';
+
+    /**
+     * Un compte ENSEIGNANT lit tout le contenu publié : il prépare ses cours
+     * avant de les donner, et l'unité de vente de son offre est l'élève, pas
+     * le contenu. Aucune ligne `entitlements` — c'est le rôle qui ouvre.
+     */
+    public const VIA_TEACHER_ROLE = 'teacher_role';
+
+    /** L'administrateur relit tout le contenu, payant compris. */
+    public const VIA_ADMIN_ROLE = 'admin_role';
 
     /** Refus : contenu payant, aucun droit valide. */
     public const PREMIUM_REQUIRED = 'premium_required';

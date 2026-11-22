@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-takbir-tasghir-l1-003",
+  "lessonCode": "takbir-tasghir",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — الحجم يُضرب في k³",
+    "estimatedMinutes": 2,
+    "tags": [
+      "التكبير",
+      "الحجم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takbir-tasghir_P1",
+      "modelledOn": "act-6"
+    }
+  },
+  "statement": {
+    "content": "في لعبة بناء على الهاتف، كبّر لاعب صبور مكعّبا حرفه $1\\,\\mathrm{cm}$ بالنسبة $k = 2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "كم مكعّبا حرفه $1\\,\\mathrm{cm}$ يحتاج المكعّب الناتج؟",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$8$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-HAJM-K"
+        },
+        {
+          "id": "C",
+          "content": "$4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-HAJM-K"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المكعّب الناتج حرفه $2\\,\\mathrm{cm}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كم مكعّبا في الطبقة السفلى؟ وكم طبقة؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الطبقة $2 \\times 2$ ، وطبقتان."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times 2 \\times 2 = 8$ : الحجم يُضرب في $k^3 = 8$ .",
+        "incorrect": "الطول والعرض والارتفاع كلها ضُربت في 2."
+      }
+    }
+  ]
+}

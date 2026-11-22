@@ -1,0 +1,190 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-mafhum-muadala-l3-003",
+  "lessonCode": "wadiya-idmajiya-mafhum-muadala",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مطبعتان : عدد النسخ",
+    "estimatedMinutes": 11,
+    "tags": [
+      "صيغتان",
+      "جزء ثابت",
+      "مقارنة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "تطبع مطبعة $X$ ملصقًا بـ $1500$ DA ثابتة و $25$ DA عن كلّ نسخة ، وتطبعه مطبعة $Y$ بـ $300$ DA ثابتة و $40$ DA عن كلّ نسخة . نسمّي $n$ عدد النسخ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما ثمن $n = 100$ نسخة عند المطبعة $X$ بالدينار ؟ إنّه $1500+25n$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "4000",
+      "misconceptionSignatures": [
+        {
+          "value": "2500",
+          "id": "MISC-SYN-MUAD2-FIXED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بقيمته المعلومة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات : الضرب والقسمة قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة."
+        }
+      ],
+      "feedback": {
+        "correct": "النتيجة $4000$ .",
+        "incorrect": "عوّض بالقيم المعلومة واحسب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$1500+25 \\times 100 = 4000$ ."
+        ],
+        "result": "4000"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل المساواة $1500+25n = 300+40n$ صحيحة من أجل $n = 80$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "feedback": {
+        "correct": "نعم .",
+        "incorrect": "عوّض الحرف في الطرفين، احسب كلّ طرف ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل : $1500+25 \\times 80 = 3500$ .",
+          "الطرف الثاني : $300+40 \\times 80 = 3500$ .",
+          "$3500 = 3500$ : الطرفان متساويان، فالمساواة صحيحة ."
+        ]
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بقيمته المعطاة في الطرفين معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة ثمّ قارن الناتجين بالرمز المكتوب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الرمز « أصغر أو يساوي » يقبل التساوي، والرمز « أصغر تمامًا » لا يقبله."
+        }
+      ],
+      "timeSeconds": 70
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "يريد جار $40$ نسخة . عند أيّ المطبعتين يدفع أقلّ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "المطبعة $X$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SYN-MUAD2-FIXED"
+        },
+        {
+          "id": "B",
+          "content": "المطبعة $Y$",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "المطبعة $Y$ .",
+        "incorrect": "احسب ما يدفعه الشخص في كلّ صيغة بالقيمة المعطاة ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "$X$ : $1500+25 \\times 40 = 2500$ ، $Y$ : $300+40 \\times 40 = 1900$ .",
+          "الأرخص هو المطبعة $Y$ لأنّ $1900$ أصغر من $2500$ ."
+        ]
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب ما يدفعه الشخص في كلّ صيغة من أجل القيمة المعطاة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تقارن ثمن الوحدة وحده : أضف الجزء الثابت في كلّ صيغة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختر الصيغة التي يكون ناتجها أصغر تمامًا."
+        }
+      ],
+      "timeSeconds": 90
+    }
+  ]
+}

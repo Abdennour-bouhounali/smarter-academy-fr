@@ -1,0 +1,152 @@
+{
+  "id": "ex-4am-barahin-ashia-l4-006",
+  "lessonCode": "barahin-ashia",
+  "level": 4,
+  "generator": {
+    "tool": "gen-barahin.mjs",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — مسار طائرة مسيّرة على المرصوفة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "إنشاء",
+      "مجموع عدة أشعة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_barahin-ashia_P3",
+      "modelledOn": "now-138"
+    }
+  },
+  "statement": {
+    "content": "في عرض طائرات مسيّرة فوق خليج الجزائر احتفاءً بالوطن، تنطلق طائرة من P وتنتقل بالأشعة $\\overrightarrow{AB}$ ثم $\\overrightarrow{CD}$ ثم $\\overrightarrow{EF}$ (الشكل).",
+    "figure": {
+      "points": {
+        "P": [
+          0,
+          0
+        ],
+        "A": [
+          1,
+          5
+        ],
+        "B": [
+          3,
+          6
+        ],
+        "C": [
+          5,
+          5
+        ],
+        "D": [
+          6,
+          3
+        ],
+        "E": [
+          7,
+          0
+        ],
+        "F": [
+          9,
+          1
+        ],
+        "M": [
+          5,
+          0
+        ],
+        "N": [
+          3,
+          2
+        ],
+        "Q": [
+          2,
+          1
+        ]
+      },
+      "grid": true,
+      "vectors": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "",
+          "tone": "rose"
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "label": "",
+          "tone": "indigo"
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "label": "",
+          "tone": "emerald"
+        }
+      ],
+      "labels": {
+        "P": "sw",
+        "M": "s",
+        "N": "n",
+        "Q": "se"
+      },
+      "ariaLabel": "مرصوفة عليها الأشعة AB و CD و EF والنقط P و M و N و Q"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "تصل الطائرة إلى النقطة:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "M",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "N",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSHA-MABDA"
+        },
+        {
+          "id": "C",
+          "content": "Q",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-RABT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ مربعات كل شعاع أفقيا وعموديا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع الممثّلات الثلاثة متتابعة من P ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الانتقالات الأفقية، ثم العمودية."
+        }
+      ],
+      "feedback": {
+        "correct": "أفقيا $2 + 1 + 2 = 5$ ، وعموديا $1 - 2 + 1 = 0$ : الطائرة في M .",
+        "incorrect": "لا تنسَ شعاعا، وانتبه إلى الانتقال نحو الأسفل في $\\overrightarrow{CD}$ ."
+      }
+    }
+  ]
+}

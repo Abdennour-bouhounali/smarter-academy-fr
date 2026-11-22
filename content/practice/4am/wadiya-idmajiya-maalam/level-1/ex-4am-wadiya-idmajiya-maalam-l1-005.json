@@ -1,0 +1,86 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-maalam-l1-005",
+  "lessonCode": "wadiya-idmajiya-maalam",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — طول نصف دائرة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "طول نصف دائرة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-maalam_P3",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "مسلك للجري حول بحيرة دائرية في حديقة الحامة بالجزائر العاصمة: العدّاء يجري على نصف دائرة نصف قطرها $3\\,\\mathrm{km}$ . يخرج العدّاء كل صباح في الموعد نفسه ولا يتأخّر عنه."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "طول هذا المسلك (القوس وحده) هو:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3\\,\\mathrm{km}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-PI-MANSI"
+        },
+        {
+          "id": "B",
+          "content": "$9\\pi\\,\\mathrm{km}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MISAHA-BADAL-TUL"
+        },
+        {
+          "id": "C",
+          "content": "$6\\pi\\,\\mathrm{km}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-NISF-DAIRA-MUHIT"
+        },
+        {
+          "id": "D",
+          "content": "$3\\pi\\,\\mathrm{km}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "محيط دائرة نصف قطرها $r$ هو $2\\pi r$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدّاء يجري على نصف الدائرة فقط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نصف $2\\pi r$ هو $\\pi r$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "طول نصف الدائرة $\\pi r = 3\\pi\\,\\mathrm{km} \\approx 9{,}42\\,\\mathrm{km}$ .",
+        "incorrect": "طول نصف دائرة نصف قطرها $r$ هو $\\pi r$ ، نصف محيط الدائرة."
+      },
+      "cognitiveDemand": "recall",
+      "difficulty": 1
+    }
+  ]
+}

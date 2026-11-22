@@ -1,0 +1,190 @@
+{
+  "id": "ex-4am-barahin-ashia-l3-002",
+  "lessonCode": "barahin-ashia",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 17 — من مركز متوازي الأضلاع",
+    "estimatedMinutes": 5,
+    "tags": [
+      "قاعدة متوازي الأضلاع",
+      "منتصف"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-17",
+      "page": 137,
+      "section": "أتعمّق",
+      "number": 17
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 137، تمرين 17): النقطة J هي تقاطع قطري متوازي الأضلاع ABCD (الشكل). O و M نقطتان حيث $\\overrightarrow{JO} = \\overrightarrow{JA} + \\overrightarrow{JB}$ و $\\overrightarrow{JM} = \\overrightarrow{JC} + \\overrightarrow{JD}$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          6,
+          0
+        ],
+        "C": [
+          8,
+          4
+        ],
+        "D": [
+          2,
+          4
+        ],
+        "J": [
+          4,
+          2
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "A"
+        ],
+        {
+          "from": "A",
+          "to": "C",
+          "dashed": true
+        },
+        {
+          "from": "B",
+          "to": "D",
+          "dashed": true
+        }
+      ],
+      "labels": {
+        "A": "sw",
+        "B": "se",
+        "C": "ne",
+        "D": "nw",
+        "J": "s"
+      },
+      "ariaLabel": "متوازي أضلاع ABCD قطراه يتقاطعان في J",
+      "maxWidth": 380
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "$\\overrightarrow{JO}$ = $\\overrightarrow{JA}$ + $\\overrightarrow{JB}$ يعني أن:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الرباعي JAOB متوازي أضلاع",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الرباعي JABO متوازي أضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        },
+        {
+          "id": "C",
+          "content": "O منتصف [AB]",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-QAIDA-QUTR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الشعاعان $\\overrightarrow{JA}$ و $\\overrightarrow{JB}$ لهما نفس المبدأ J ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قاعدة متوازي الأضلاع: المجموع هو القطر الصادر من المبدأ المشترك."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "سمِّ متوازي الأضلاع الذي ضلعاه [JA] و [JB] وقطره [JO]."
+        }
+      ],
+      "feedback": {
+        "correct": "قاعدة متوازي الأضلاع: JAOB متوازي أضلاع و [JO] قطره.",
+        "incorrect": "المجموع هو القطر الكامل لمتوازي الأضلاع المنشأ على [JA] و [JB]."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "$\\overrightarrow{JM}$ يساوي:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-\\overrightarrow{JO}$ ، فـ J منتصف [OM]",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{JO}$ ، فـ O و M منطبقتان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MUNTASAF-IB-IA"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{0}$ ، فـ M تنطبق على J",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SIFR-ADAD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "J منتصف [AC] ومنتصف [BD]."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\overrightarrow{JC} = -\\overrightarrow{JA}$ و $\\overrightarrow{JD} = -\\overrightarrow{JB}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض في $\\overrightarrow{JC} + \\overrightarrow{JD}$ ثم قارن بـ $\\overrightarrow{JO}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{JM} = -\\overrightarrow{JA} - \\overrightarrow{JB} = -\\overrightarrow{JO}$ : J منتصف [OM].",
+        "incorrect": "J منتصف القطرين: كل شعاع من J يعاكس الشعاع نحو الرأس المقابل."
+      }
+    }
+  ]
+}

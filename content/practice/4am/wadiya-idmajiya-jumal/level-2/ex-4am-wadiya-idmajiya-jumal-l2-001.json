@@ -1,0 +1,136 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-jumal-l2-001",
+  "lessonCode": "wadiya-idmajiya-jumal",
+  "level": 2,
+  "metadata": {
+    "title": "العسل",
+    "estimatedMinutes": 8,
+    "tags": [
+      "ترييض",
+      "كتل"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-29",
+      "page": 63,
+      "section": "الوضعيات",
+      "number": 29
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "تحصّل فلّاح مختصّ في تربية النحل، يتقن عمله ويحرص على جودة منتوجه، على $7kg$ من العسل. لتسويق هذه الكمية، وزّعها على 18 علبة زجاجية ممتلئة، بعضها من فئة $500g$ والأخرى من فئة $250g$ .\nنسمّي $x$ عدد علب فئة $500g$ و $y$ عدد علب فئة $250g$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن $x$ و $y$ يحققان الجملة: $\\begin{cases} x + y = 18 \\\\ 2x + y = 28 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل $7kg$ إلى غرامات قبل كتابة المعادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم طرفي معادلة الكتلة على 250."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "عدد العلب: $x + y = 18$",
+          "الكتلة بالغرام ( $7kg = 7000g$ ): $500x + 250y = 7000$",
+          "بقسمة الطرفين على 250: $2x + y = 28$",
+          "ومنه: $\\begin{cases} x + y = 18 \\\\ 2x + y = 28 \\end{cases}$"
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج عدد العلب من كل فئة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : عدد علب $500g$ ثم عدد علب $250g$",
+      "expectedAnswer": {
+        "x": "10",
+        "y": "8"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "8",
+            "y": "10"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل $y$ هو نفسه في المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح إحدى المعادلتين من الأخرى طرفا لطرف لتحذف $y$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض قيمة $x$ في إحدى المعادلتين لتجد $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "10 علب من فئة $500g$ و 8 علب من فئة $250g$ .",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} x + y = 18 & ...(1) \\\\ 2x + y = 28 & ...(2) \\end{cases}$",
+          "بطرح المعادلة (1) من المعادلة (2) طرفا لطرف نجد:",
+          "$x = 10$",
+          "بتعويض $x$ بـ $10$ في المعادلة (1) نجد: $10 + y = 18$",
+          "$y = 8$",
+          "التحقق في النص: $10 + 8 = 18$ و $500 \\times 10 + 250 \\times 8 = 7000$ .",
+          "إذن 10 علب من فئة $500g$ و 8 علب من فئة $250g$ :"
+        ],
+        "result": "(10 ; 8)"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l2-001",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — ضلع قائم والوتر الأطول",
+    "estimatedMinutes": 6,
+    "tags": [
+      "خاصية فيثاغورس",
+      "حساب ضلع قائم"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-83",
+      "exercise": 4
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الرابع",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$ABC$ مثلث قائم في $A$ حيث: $AB = 1{,}8\\,\\mathrm{cm}$ و $BC = 8{,}2\\,\\mathrm{cm}$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0.0,
+          0.0
+        ],
+        "B": [
+          3.6,
+          0.0
+        ],
+        "C": [
+          0.0,
+          8.0
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "1,8 cm"
+        },
+        {
+          "from": "A",
+          "to": "C"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "8,2 cm"
+        }
+      ],
+      "rightAngles": [
+        [
+          "B",
+          "A",
+          "C"
+        ]
+      ],
+      "ariaLabel": "مثلث ABC قائم في A حيث AB = 1,8 cm و BC = 8,2 cm",
+      "maxWidth": 320,
+      "caption": "(الأطوال غير حقيقية)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $AC^2$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: قيمة $AC^2$ (بـ $cm^2$)",
+      "expectedAnswer": "64",
+      "misconceptionSignatures": [
+        {
+          "value": "70.48",
+          "id": "MISC-FITAGHURAS-LEG-ADD"
+        },
+        {
+          "value": "12.8",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        },
+        {
+          "value": "6.4",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع المطلوب ليس الوتر: مربعه يساوي مربع الوتر ناقص مربع الضلع الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ربّع كل طول (اضربه في نفسه) ثم اطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC^2 = 8{,}2^2 - 1{,}8^2 = 64$ .",
+        "incorrect": "الضلع المطلوب ضلع قائم: اعزله في مساواة فيثاغورس ثم اطرح مربع الضلع المعلوم من مربع الوتر."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $A$ ، حسب خاصية فيثاغورس: $BC^2 = AC^2 + AB^2$",
+          "ومنه: $AC^2 = BC^2 - AB^2$",
+          "$AC^2 = 8{,}2^2 - 1{,}8^2 = 67{,}24 - 3{,}24 = 64$"
+        ],
+        "result": "AC^2 = 64"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب الطول $AC$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ cm",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "8.4",
+          "id": "MISC-FITAGHURAS-LEG-ADD"
+        },
+        {
+          "value": "6.4",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "64",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع المطلوب ليس الوتر: مربعه يساوي مربع الوتر ناقص مربع الضلع الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولا مربع الطول، ثم خذ جذره التربيعي بالآلة الحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC^2 = 8{,}2^2 - 1{,}8^2 = 64$ ، إذن $AC = 8\\,\\mathrm{cm}$ .",
+        "incorrect": "الطول المطلوب ضلع قائم وليس وترا: نطرح مربع الضلع المعلوم من مربع الوتر، ولا نجمع."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $A$ ، حسب خاصية فيثاغورس: $BC^2 = AC^2 + AB^2$",
+          "ومنه: $AC^2 = BC^2 - AB^2$",
+          "$AC^2 = 8{,}2^2 - 1{,}8^2 = 67{,}24 - 3{,}24 = 64$",
+          "$AC = \\sqrt{64} = 8\\,\\mathrm{cm}$"
+        ],
+        "result": "AC = 8\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "دون حساب، برّر لماذا لا يمكن أن يكون الطول $AC$ أكبر من $8{,}2\\,\\mathrm{cm}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين يقع الضلع $[BC]$ بالنسبة إلى الزاوية القائمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن $AC^2$ بـ $BC^2$ انطلاقا من مساواة فيثاغورس."
+        }
+      ],
+      "feedback": {
+        "correct": "الوتر أطول أضلاع المثلث القائم لأن مربعه مجموع مربعين موجبين.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $A$ ، حسب خاصية فيثاغورس: $BC^2 = AB^2 + AC^2$ .",
+          "إذن $AC^2 = BC^2 - AB^2$ ، أي $AC^2 < BC^2$ ، ومنه $AC < BC$ .",
+          "الوتر $[BC]$ هو أطول أضلاع المثلث القائم، فلا يمكن أن يتجاوز $AC$ الطول $8{,}2\\,\\mathrm{cm}$ ."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

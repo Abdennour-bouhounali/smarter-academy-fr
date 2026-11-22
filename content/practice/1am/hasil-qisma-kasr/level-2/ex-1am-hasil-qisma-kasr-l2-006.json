@@ -1,0 +1,167 @@
+{
+  "id": "ex-1am-hasil-qisma-kasr-l2-006",
+  "lessonCode": "hasil-qisma-kasr",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — من الكسر إلى العدد العشري",
+    "estimatedMinutes": 6,
+    "tags": [
+      "حاصل القسمة",
+      "عدد عشري"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اشترى الحاج صالح 9 أمتار من القماش ليوزّعها بالتساوي على 4 يتيمات صدقةً منه."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما طول القماش الذي تنال كلّ يتيمة على شكل كسر (بالمتر) ؟",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "9/4",
+      "misconceptionSignatures": [
+        {
+          "value": "4/9",
+          "id": "MISC-HASIL-QALB"
+        },
+        {
+          "value": "9,4",
+          "id": "MISC-HASIL-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العدد الذي نقسمه والعدد الذي نقسم عليه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في الكتابة الكسرية يوضع المقسوم فوق الشرطة والمقسوم عليه تحتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب القسمة أولًا ثم حوّلها إلى كسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$9 \\div 4$ = $\\dfrac{9}{4}$ : المقسوم بسط والمقسوم عليه مقام.",
+        "incorrect": "الكسر $\\dfrac{a}{b}$ هو حاصل قسمة $a$ على $b$ : البسط هو المقسوم والمقام هو المقسوم عليه، والشرطة لا تتحوّل إلى فاصلة."
+      },
+      "solution": {
+        "lines": [
+          "$9 \\div 4$ = $\\dfrac{9}{4}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب هذا الطول على شكل عدد عشري.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة)",
+      "expectedAnswer": "2,25",
+      "misconceptionSignatures": [
+        {
+          "value": "9,4",
+          "id": "MISC-HASIL-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجعل المقام 10 أو 100 أو 1000 بالضرب في عدد مناسب، أو أجرِ القسمة العشرية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل تتوقّف الأرقام بعد الفاصلة أم تتكرّر بلا نهاية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نتحدّث عن عدد عشري عندما تتوقّف الأرقام بعد الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{9}{4}$ = $2{,}25$",
+        "incorrect": "حاصل القسمة عدد عشري إذا انتهت أرقامه بعد الفاصلة ؛ وإلاّ فالكسر هو الكتابة المضبوطة له."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{9}{4} = \\dfrac{9 \\times 25}{4 \\times 25} = \\dfrac{225}{100}$ (نضرب الحدّين في العدد نفسه)",
+          "$\\dfrac{225}{100}$ = $2{,}25$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "برّر أنّ حاصل القسمة هذا عدد عشري.",
+      "learningPoints": [
+        {
+          "code": "1am_hasil-qisma-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن عدد نضرب فيه المقام لنحصل على 100."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما نوع الكسر الذي مقامه 10 أو 100 أو 1000 ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي.",
+        "incorrect": "راجع التعريف وأعد صياغة التبرير."
+      },
+      "solution": {
+        "lines": [
+          "المقام 4 يقسم 100 : $4 \\times 25 = 100$.",
+          "$\\dfrac{9}{4} = \\dfrac{225}{100}$ كسر عشري، إذن حاصل القسمة عدد عشري هو $2{,}25$."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

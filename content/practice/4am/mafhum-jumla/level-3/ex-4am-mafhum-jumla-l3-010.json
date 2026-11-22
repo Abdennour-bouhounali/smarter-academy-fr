@@ -1,0 +1,161 @@
+{
+  "id": "ex-4am-mafhum-jumla-l3-010",
+  "lessonCode": "mafhum-jumla",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2007 — حليب مجفف وسكر",
+    "estimatedMinutes": 9,
+    "tags": [
+      "جملة",
+      "ترجمة",
+      "ثنائية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mafhum-jumla_P3",
+      "modelledOn": "BEM 2007 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2007",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل الثنائية $(400 ; 240)$ حل للجملة $\\begin{cases} 3x + 5y = 2400 \\\\ 4x + 2y = 2080 \\end{cases}$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $400$ و $y$ بـ $240$ في كل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الثنائية حل للجملة إذا حققت المعادلتين في آن واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 \\times 400 + 5 \\times 240 = 2400$ ؛ $4 \\times 400 + 2 \\times 240 = 2080$ : الثنائية حل للجملة.",
+        "incorrect": "العدد الأول في الثنائية قيمة $x$ والثاني قيمة $y$ ؛ عوّض في المعادلتين معا وقارن كل نتيجة بالطرف الثاني."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض $x$ بـ $400$ و $y$ بـ $240$ :",
+          "$3 \\times 400 + 5 \\times 240 = 2400$",
+          "$4 \\times 400 + 2 \\times 240 = 2080$",
+          "ومنه الثنائية $(400 ; 240)$ حل للجملة."
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "اشترت جمعية خيرية 3 أكياس من الحليب المجفف و 5 أكياس من السكر بمبلغ 2400DA، ثم اشترت 4 أكياس من الحليب المجفف وكيسين من السكر بمبلغ 2080DA. نسمّي $x$ ثمن كيس الحليب المجفف و $y$ ثمن كيس السكر بالدينار.",
+      "statement": "بيّن أن $x$ و $y$ يحققان الجملة السابقة.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ترجم كل فاتورة بمعادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثمن 3 أكياس حليب هو $3x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "ثمن 3 أكياس حليب و 5 أكياس سكر: $3x + 5y = 2400$",
+          "ثمن 4 أكياس حليب وكيسين من السكر: $4x + 2y = 2080$",
+          "ومنه $x$ و $y$ يحققان جملة السؤال 01."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "جد المبلغ الذي تدفعه الجمعية ثمنا لـ 10 أكياس من الحليب المجفف و 10 أكياس من السكر.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "6400",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01: هي تعطي $x$ و $y$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المبلغ هو $10x + 10y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$10 \\times 400 + 10 \\times 240 = 6400$ ، أي 6400DA .",
+        "incorrect": "الثنائية حل الجملة تعطي ثمن الكيسين؛ ثم احسب $10x + 10y$ ."
+      },
+      "solution": {
+        "lines": [
+          "الثنائية $(400 ; 240)$ حل للجملة، ومنه $x = 400$ و $y = 240$ .",
+          "$10x + 10y = 10 \\times 400 + 10 \\times 240$"
+        ],
+        "result": "6400\\,DA"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "id": "ex-2am-jam-tarh-kusur-l4-005",
+  "lessonCode": "jam-tarh-kusur",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — عدد طبيعي ناقص كسر ثمّ قيمته",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جمع كسرين",
+      "كتابة عشرية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نريد حساب $3 - \\dfrac{7}{12}$ ثمّ كتابة الناتج بالفاصلة ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $S = 3 - \\dfrac{7}{12}$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "29/12",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد الطبيعي يُكتب على شكل كسر مقامه هو مقام الكسر الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب العدد الطبيعي في المقام لتحصل على البسط الجديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع (أو اطرح) البسطين مع الاحتفاظ بالمقام ثمّ اختزل إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = \\dfrac{29}{12}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$3 = \\dfrac{36}{12}$ .",
+          "$S = 3 - \\dfrac{7}{12} = \\dfrac{36 - 7}{12} = \\dfrac{29}{12}$ ."
+        ],
+        "result": "S = \\dfrac{29}{12}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط القيمة المقرّبة بالنقصان إلى 0{,}01 للعدد $\\dfrac{29}{12}$ .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "2.41",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكسر هو حاصل قسمة بسطه على مقامه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}41$ .",
+        "incorrect": "أنجز القسمة بعد الفاصلة وتوقّف عند الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{29}{12} = 29 \\div 12$",
+          "بالنقصان: نتوقّف عند الرتبة المطلوبة دون تغيير الرقم الأخير."
+        ],
+        "result": "2{,}41"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أعط القيمة المقرّبة بالزيادة إلى 0{,}01 للعدد $\\dfrac{29}{12}$ .",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "2.42",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكسر هو حاصل قسمة بسطه على مقامه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}42$ .",
+        "incorrect": "أنجز القسمة بعد الفاصلة وتوقّف عند الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{29}{12} = 29 \\div 12$",
+          "بالزيادة: نضيف وحدة واحدة من الرتبة المطلوبة إلى القيمة بالنقصان."
+        ],
+        "result": "2{,}42"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

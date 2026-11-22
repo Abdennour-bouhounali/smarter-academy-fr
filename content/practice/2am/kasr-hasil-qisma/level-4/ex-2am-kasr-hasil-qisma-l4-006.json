@@ -1,0 +1,227 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l4-006",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — سرعة الفريق",
+    "estimatedMinutes": 9,
+    "tags": [
+      "حاصل قسمة",
+      "حصر",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "قطع فريق الكشّافة $7$ km في $0{,}9$ ساعة بسرعة منتظمة. السرعة بالكيلومتر في الساعة هي $7 \\div 0{,}9$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "لتحويل القسمة $7 \\div 0{,}9$ إلى قسمة على عدد طبيعي نضرب الحدّين في العدد نفسه. ما أصغر قوّة للعدد $10$ تجعل المقسوم عليه عددًا طبيعيًا؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "قوّة للعدد 10",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عُدّ الأرقام التي تأتي بعد الفاصلة في المقسوم عليه وحده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كلّ رقم بعد الفاصلة يزول بالضرب في قوّة مناسبة للعدد $10$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحدّان يُضربان في العدد نفسه حتى لا يتغيّر حاصل القسمة."
+        }
+      ],
+      "feedback": {
+        "correct": "المقسوم عليه $0{,}9$ فيه رقم واحد بعد الفاصلة، فنضربه في $10$ فيصير $9$.",
+        "incorrect": "المقسوم عليه هو الذي يحدّد القوّة: عدد الأرقام التي تأتي بعد فاصلته، لا بعد فاصلة المقسوم."
+      },
+      "solution": {
+        "lines": [
+          "المقسوم عليه $0{,}9$ فيه رقم واحد بعد الفاصلة",
+          "$0{,}9 \\times 10 = 9$"
+        ],
+        "result": "10"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}1$ بالنقصان لحاصل القسمة $7 \\div 0{,}9$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "7.7",
+      "misconceptionSignatures": [
+        {
+          "value": "7.8",
+          "id": "MISC-QARIBA-ROUNDED"
+        },
+        {
+          "value": "7.77",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالنقصان لا تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة دون أن تزيد شيئًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب القيمة في المقسوم عليه: يجب ألاّ يتجاوز الجداء المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$7{,}7 < \\frac{7}{0{,}9} < 7{,}8$.",
+        "incorrect": "بالنقصان: نحتفظ بالأرقام حتى الرتبة المطلوبة ونُهمل ما بعدها دون تغيير الرقم الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}9 \\times 7{,}7 = 6{,}93$",
+          "$0{,}9 \\times 7{,}8 = 7{,}02$",
+          "$6{,}93 < 7 < 7{,}02$"
+        ],
+        "result": "7{,}7"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أعط القيمة المقرّبة إلى $0{,}1$ بالزيادة لحاصل القسمة $7 \\div 0{,}9$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "7.8",
+      "misconceptionSignatures": [
+        {
+          "value": "7.7",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "7.78",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالزيادة هي أصغر قيمة من هذه الرتبة تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من القيمة بالنقصان ثم أضف وحدة واحدة من الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$7{,}7 < \\frac{7}{0{,}9} < 7{,}8$.",
+        "incorrect": "بالزيادة: هي القيمة التي تلي القيمة بالنقصان مباشرة في الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}9 \\times 7{,}8 = 7{,}02$",
+          "$7{,}02 > 7$",
+          "القيمة بالزيادة هي $7{,}8$"
+        ],
+        "result": "7{,}8"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "هل يمكن أن نؤكّد أنّ سرعة الفريق أقلّ من $7{,}8$ km/h ؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-SWAP"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أو قارن بدقّة قبل أن تجيب."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}9 \\times 7{,}8 = 7{,}02 > 7$ : السرعة أقلّ من $7{,}8$.",
+        "incorrect": "اضرب $7{,}8$ في $0{,}9$ وقارن الجداء بـ $7$."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}9 \\times 7{,}8 = 7{,}02$",
+          "$7{,}02 > 7$ : السرعة $\\dfrac{7}{0{,}9}$ أقلّ من $7{,}8$ ، نعم"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

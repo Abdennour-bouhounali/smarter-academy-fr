@@ -1,0 +1,128 @@
+{
+  "id": "ex-4am-zawiya-muhitiya-l2-006",
+  "lessonCode": "zawiya-muhitiya",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — زاويتان على نفس القوس",
+    "estimatedMinutes": 2,
+    "tags": [
+      "خاصية 2"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_zawiya-muhitiya_P3",
+      "modelledOn": "know-4"
+    }
+  },
+  "statement": {
+    "content": "في الشكل: A و B و C و D نقط من دائرة مركزها O، و C و D على نفس القوس. $\\widehat{ACB} = 52^\\circ$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -1.3893,
+          -1.4387
+        ],
+        "B": [
+          1.7321,
+          -1.0
+        ],
+        "C": [
+          1.0,
+          1.7321
+        ],
+        "D": [
+          -1.7321,
+          1.0
+        ]
+      },
+      "circles": [
+        {
+          "center": "O",
+          "radius": 2
+        }
+      ],
+      "segments": [
+        {
+          "from": "C",
+          "to": "A",
+          "tone": "amber"
+        },
+        {
+          "from": "C",
+          "to": "B",
+          "tone": "amber"
+        },
+        {
+          "from": "D",
+          "to": "A",
+          "tone": "emerald"
+        },
+        {
+          "from": "D",
+          "to": "B",
+          "tone": "emerald"
+        }
+      ],
+      "angles": [
+        {
+          "at": "C",
+          "from": "A",
+          "to": "B",
+          "tone": "amber",
+          "label": "52°",
+          "radius": 30
+        }
+      ],
+      "ariaLabel": "دائرة مركزها O، النقطتان C و D على نفس القوس، الزاوية ACB قيسها 52 درجة",
+      "maxWidth": 380
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قيس $\\widehat{ADB}$ بالدرجة؟",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "52",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل الزاويتان محيطيتان (رأساهما على الدائرة)؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل تحصران نفس القوس، أي رأساهما في نفس الجهة من الوتر؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زاويتان محيطيتان تحصران نفس القوس متقايستان."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{ADB} = \\widehat{ACB} = 52^\\circ$ .",
+        "incorrect": "الزاويتان محيطيتان تحصران القوس AB نفسه."
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUHITIYA-MUTASAWIYA",
+          "value": "104"
+        }
+      ]
+    }
+  ]
+}

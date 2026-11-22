@@ -1,0 +1,200 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l1-002",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — من 134 ÷ 19 إلى 1,34 ÷ 0,19",
+    "estimatedMinutes": 5,
+    "tags": [
+      "قسمة عشرية",
+      "قيم مقرّبة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-87",
+      "exercise": 3
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أنجز تلميذ القسمة العشرية للعدد $134$ على العدد $19$ فوجد $134 \\div 19 = 7{,}0526\\ldots$ (القسمة لا تنتهي)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اختر القسمة بعددين طبيعيين التي لها حاصل القسمة $1{,}34 \\div 0{,}19$ نفسه.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$134 \\div 0{,}19$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-ONETERM"
+        },
+        {
+          "id": "B",
+          "content": "$1{,}34 \\div 19$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-ONETERM"
+        },
+        {
+          "id": "C",
+          "content": "$134 \\div 19$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$13{,}4 \\div 19$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-ONETERM"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضرب الحدّين في العدد نفسه لا يغيّر الحاصل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجعل المقسوم عليه طبيعيًا ثم تأكّد أنّ المقسوم ضُرب في العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "ضربنا الحدّين في $100$: $\\dfrac{1{,}34}{0{,}19}=\\dfrac{134}{19}$.",
+        "incorrect": "الحدّان يُضربان في العدد نفسه حتى يبقى الحاصل كما هو."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}19 \\times 100 = 19$ و $1{,}34 \\times 100 = 134$",
+          "$1{,}34 \\div 0{,}19 = 134 \\div 19$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج القيمة المقرّبة إلى $0{,}01$ بالنقصان لحاصل القسمة $1{,}34 \\div 0{,}19$ .",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "7.05",
+      "misconceptionSignatures": [
+        {
+          "value": "7.06",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "7.052",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالنقصان لا تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة وتوقّف عند الرتبة المطلوبة دون أن تزيد شيئًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب القيمة في المقسوم عليه: يجب ألاّ يتجاوز الجداء المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$7{,}05 < \\frac{1{,}34}{0{,}19} < 7{,}06$.",
+        "incorrect": "بالنقصان: نحتفظ بالأرقام حتى الرتبة المطلوبة ونُهمل ما بعدها دون تغيير الرقم الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}19 \\times 7{,}05 = 1{,}3395$",
+          "$0{,}19 \\times 7{,}06 = 1{,}3414$",
+          "$1{,}3395 < 1{,}34 < 1{,}3414$"
+        ],
+        "result": "7{,}05"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "واستنتج القيمة المقرّبة إلى $0{,}01$ بالزيادة لهذا الحاصل.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "7.06",
+      "misconceptionSignatures": [
+        {
+          "value": "7.05",
+          "id": "MISC-QARIBA-SWAP"
+        },
+        {
+          "value": "7.053",
+          "id": "MISC-QARIBA-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القيمة بالزيادة هي أصغر قيمة من هذه الرتبة تتجاوز حاصل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من القيمة بالنقصان ثم أضف وحدة واحدة من الرتبة المطلوبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$7{,}05 < \\frac{1{,}34}{0{,}19} < 7{,}06$.",
+        "incorrect": "بالزيادة: هي القيمة التي تلي القيمة بالنقصان مباشرة في الرتبة المطلوبة."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}19 \\times 7{,}06 = 1{,}3414$",
+          "$1{,}3414 > 1{,}34$",
+          "القيمة بالزيادة هي $7{,}06$"
+        ],
+        "result": "7{,}06"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

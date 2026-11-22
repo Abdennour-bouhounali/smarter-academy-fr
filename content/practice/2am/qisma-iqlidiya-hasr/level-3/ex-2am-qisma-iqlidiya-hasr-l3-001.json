@@ -1,0 +1,260 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l3-001",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — حاصل القسمة وحصره",
+    "estimatedMinutes": 7,
+    "tags": [
+      "قسمة إقليدية",
+      "حصر"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-79",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نريد قسمة العدد 317 على 14."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب حاصل القسمة الإقليدية للعدد 317 على 14.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "22",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "21",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "value": "23",
+          "id": "MISC-HASR-IZAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 317 من 14 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 14 دون أن نتجاوز 317."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من 14."
+        }
+      ],
+      "feedback": {
+        "correct": "$317 = 14 \\times 22 + 9$ و $9 < 14$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 14 فلا يتجاوز الجداء 317، والباقي عندئذ أصغر من 14."
+      },
+      "solution": {
+        "lines": [
+          "$14 \\times 22 = 308$ و $14 \\times 23 = 322$",
+          "$308 \\le 317 < 322$ ، إذن الحاصل هو 22."
+        ],
+        "result": "q = 22"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب باقي القسمة الإقليدية للعدد 317 على 14.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "22",
+          "id": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "value": "23",
+          "id": "MISC-HASR-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 317."
+        }
+      ],
+      "feedback": {
+        "correct": "$317 - 14 \\times 22 = 317 - 308 = 9$ ، و $9 < 14$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 14."
+      },
+      "solution": {
+        "lines": [
+          "$317 = 14 \\times 22 + 9$",
+          "$9 < 14$ ، إذن الباقي هو 9."
+        ],
+        "result": "r = 9"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "اختر المساواة التي تعبّر عن القسمة الإقليدية للعدد 317 على 14.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$317 = 14 \\times 21 + 23$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "id": "B",
+          "content": "$317 = 14 \\times 9 + 22$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "id": "C",
+          "content": "$317 = 14 \\times 23 + 9$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-HISAB"
+        },
+        {
+          "id": "D",
+          "content": "$317 = 14 \\times 22 + 9$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق من صحة كل مساواة بالحساب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في القسمة الإقليدية على 14 يكون الباقي أصغر من 14."
+        }
+      ],
+      "feedback": {
+        "correct": "$14 \\times 22 + 9 = 317$ و $9 < 14$.",
+        "incorrect": "ابحث عن المساواة الصحيحة التي باقيها أصغر من 14."
+      },
+      "solution": {
+        "lines": [
+          "$14 \\times 22 = 308$ و $308 + 9 = 317$",
+          "$9 < 14$ ، إذن $317 = 14 \\times 22 + 9$ هي القسمة الإقليدية للعدد 317 على 14."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "استنتج حصرًا لحاصل القسمة $\\frac{317}{14}$ بين عددين طبيعيين متتاليين.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$21 < \\frac{317}{14} < 22$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        },
+        {
+          "id": "B",
+          "content": "$9 < \\frac{317}{14} < 10$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "id": "C",
+          "content": "$22 < \\frac{317}{14} < 23$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 317 على 14."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من $14 \\times q \\le 317 < 14 \\times (q + 1)$ نقسم الأطراف على 14."
+        }
+      ],
+      "feedback": {
+        "correct": "$317 = 14 \\times 22 + 9$ والباقي غير معدوم، فـ $\\frac{317}{14}$ يقع تمامًا بين 22 و 23.",
+        "incorrect": "احصر 317 بين مضاعفين متتاليين للعدد 14 ثم اقسم على 14؛ وإذا كان الباقي معدومًا فحاصل القسمة عدد طبيعي."
+      },
+      "solution": {
+        "lines": [
+          "$317 = 14 \\times 22 + 9$",
+          "$14 \\times 22 < 317 < 14 \\times 23$ ، نقسم على 14: $22 < \\frac{317}{14} < 23$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

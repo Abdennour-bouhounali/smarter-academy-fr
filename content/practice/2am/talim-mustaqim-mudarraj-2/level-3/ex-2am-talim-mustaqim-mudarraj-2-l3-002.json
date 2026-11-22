@@ -1,0 +1,186 @@
+{
+  "id": "ex-2am-talim-mustaqim-mudarraj-2-l3-002",
+  "lessonCode": "talim-mustaqim-mudarraj-2",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — قيمة التدريجة ووضع نقط",
+    "estimatedMinutes": 10,
+    "tags": [
+      "قيمة التدريجة",
+      "وضع نقط"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-73",
+      "exercise": 3
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "على مستقيم مدرّج مبدؤه $O$ ، النقطة $N$ على 4 تدريجات إلى يمين $O$ وفاصلتها $+2$ . نريد وضع $A(+1{,}5)$ و $B(-1)$ و $I(+1)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "النقطة $N$ على 4 تدريجات إلى يمين المبدأ، وفاصلتها $N(2)$ . ما قيمة التدريجة الواحدة؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد موجب",
+      "expectedAnswer": "0.5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قيمة التدريجة = فاصلة نقطة معلومة ÷ عدد التدريجات التي تفصلها عن المبدأ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل النقطة المعلومة الفاصلة وعدّ تدريجاتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب النتيجة في عدد التدريجات."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\div 4 = 0{,}5$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$4$ تدريجات تعطي المسافة $2$",
+          "قيمة التدريجة: $2 \\div 4 = 0{,}5$"
+        ],
+        "result": "0.5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "نريد وضع النقطة $A(1{,}5)$ على مستقيم مدرّج، وقيمة التدريجة الواحدة $0{,}5$. كم تدريجة تعدّ من المبدأ؟ اكتب العدد سالبًا إذا كانت النقطة على يسار المبدأ.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "1.5",
+          "id": "MISC-TALIM2-UNITIGNORED"
+        },
+        {
+          "value": "-3",
+          "id": "MISC-TALIM2-SIGNSIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد التدريجات = الفاصلة ÷ قيمة التدريجة الواحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أمّا الجهة فتحدّدها الإشارة: سالبة على اليسار، موجبة على اليمين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب عدد التدريجات في قيمة التدريجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}5 \\div 0{,}5 = 3$ : عدد التدريجات مسبوق بالإشارة.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}5 \\div 0{,}5 = 3$",
+          "$3$ تدريجات إلى يمين المبدأ"
+        ],
+        "result": "3"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "نريد وضع النقطة $B(-1)$ على مستقيم مدرّج، وقيمة التدريجة الواحدة $0{,}5$. كم تدريجة تعدّ من المبدأ؟ اكتب العدد سالبًا إذا كانت النقطة على يسار المبدأ.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "-1",
+          "id": "MISC-TALIM2-UNITIGNORED"
+        },
+        {
+          "value": "2",
+          "id": "MISC-TALIM2-SIGNSIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد التدريجات = الفاصلة ÷ قيمة التدريجة الواحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أمّا الجهة فتحدّدها الإشارة: سالبة على اليسار، موجبة على اليمين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب عدد التدريجات في قيمة التدريجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$-1 \\div 0{,}5 = -2$ : عدد التدريجات مسبوق بالإشارة.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$-1 \\div 0{,}5 = -2$",
+          "$2$ تدريجات إلى يسار المبدأ"
+        ],
+        "result": "-2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

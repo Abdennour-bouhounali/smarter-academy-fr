@@ -16,4 +16,9 @@ return [
 
     // Le contenu est un fichier versionné : il ne change qu'au déploiement.
     'cache_ttl' => (int) env('PRACTICE_CONTENT_CACHE_TTL', 3600),
+
+    // Le sélecteur d'exercices (Mastery V2, phase 9 —
+    // App\Domain\Practice\ExerciseSelector). À `false`, GET …/next répond
+    // `exerciseId: null` et le client reprend l'ordre du contenu.
+    'selector_enabled' => filter_var(env('PRACTICE_SELECTOR_ENABLED', true), FILTER_VALIDATE_BOOL),
 ];

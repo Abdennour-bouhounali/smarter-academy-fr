@@ -1,0 +1,279 @@
+{
+  "id": "ex-4am-aksiya-talis-l3-004",
+  "lessonCode": "aksiya-talis",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 16 — يونس وإيناس",
+    "estimatedMinutes": 9,
+    "tags": [
+      "تمرين 16",
+      "قيم مضبوطة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-16",
+      "page": 111,
+      "section": "وضع نقط على مستقيم",
+      "number": 16
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل: النقط $M$ ، $O$ ، $A$ في استقامية، والنقط $N$ ، $O$ ، $P$ في استقامية، حيث: $OM = 9\\,\\mathrm{cm}$ ، $ON = 5\\,\\mathrm{cm}$ ، $OP = 3\\,\\mathrm{cm}$ و $OA = 5{,}4\\,\\mathrm{cm}$ . لإثبات أن $(MN) \\parallel (AP)$ كتب يونس: $\\dfrac{ON}{OP} \\approx 1{,}7$ و $\\dfrac{OM}{OA} \\approx 1{,}7$ إذن $(MN) \\parallel (AP)$ . وكتبت إيناس: $\\dfrac{OP}{ON} = 0{,}6$ و $\\dfrac{OA}{OM} = 0{,}6$ إذن $(MN) \\parallel (AP)$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0.0,
+          0.0
+        ],
+        "M": [
+          -3.078181289931,
+          8.457233587073
+        ],
+        "A": [
+          1.846908773959,
+          -5.074340152244
+        ],
+        "N": [
+          4.69846310393,
+          1.710100716628
+        ],
+        "P": [
+          -2.819077862358,
+          -1.026060429977
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "M",
+          "label": "9cm"
+        },
+        {
+          "from": "O",
+          "to": "A",
+          "label": "5,4cm"
+        },
+        {
+          "from": "O",
+          "to": "N",
+          "label": "5cm"
+        },
+        {
+          "from": "O",
+          "to": "P",
+          "label": "3cm"
+        },
+        [
+          "M",
+          "N"
+        ],
+        [
+          "A",
+          "P"
+        ]
+      ],
+      "ariaLabel": "M و O و A على استقامة، N و O و P على استقامة، OM = 9cm و ON = 5cm و OP = 3cm و OA = 5,4cm",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب النسبة $\\dfrac{OP}{ON}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "3/5",
+      "misconceptionSignatures": [
+        {
+          "value": "5/3",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$OP$ و $ON$ طولان يُقاسان من النقطة $O$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $OP$ على $ON$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{OP}{ON} = \\dfrac{3}{5}$ .",
+        "incorrect": "النسبة $\\dfrac{OP}{ON}$ : الطول $OP$ على الطول $ON$ ، وكلاهما من النقطة $O$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{OP}{ON} = \\dfrac{3}{5}$"
+        ],
+        "result": "\\dfrac{OP}{ON} = \\dfrac{3}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب النسبة $\\dfrac{OA}{OM}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "3/5",
+      "misconceptionSignatures": [
+        {
+          "value": "5/3",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$OA$ و $OM$ طولان يُقاسان من النقطة $O$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $OA$ على $OM$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{OA}{OM} = \\dfrac{5{,}4}{9} = \\dfrac{3}{5}$ .",
+        "incorrect": "النسبة $\\dfrac{OA}{OM}$ : الطول $OA$ على الطول $OM$ ، وكلاهما من النقطة $O$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{OA}{OM} = \\dfrac{5{,}4}{9} = \\dfrac{3}{5}$"
+        ],
+        "result": "\\dfrac{OA}{OM} = \\dfrac{3}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "أيّ التلميذين برهانه صحيح؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "يونس",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-TAQRIB-BURHAN"
+        },
+        {
+          "id": "B",
+          "content": "إيناس",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "كلاهما",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-TAQRIB-BURHAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ القيم مضبوطة وأيّها مقرّبة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قيمتان مقرّبتان متساويتان لا تثبتان أن النسبتين متساويتان."
+        }
+      ],
+      "feedback": {
+        "correct": "برهان إيناس صحيح: قيمتان مضبوطتان متساويتان.",
+        "incorrect": "الرمز $\\approx$ يعني قيمة مقرّبة: هل تكفي قيمتان مقرّبتان متساويتان للبرهان؟"
+      },
+      "solution": {
+        "lines": [
+          "يونس قارن قيمتين مقرّبتين ( $\\dfrac{5}{3} = 1{,}666...$ و $\\dfrac{9}{5{,}4} = 1{,}666...$ مدوّرتين): التدوير لا يثبت تساوي نسبتين.",
+          "إيناس قارنت قيمتين مضبوطتين: $\\dfrac{OP}{ON} = \\dfrac{3}{5} = 0{,}6$ و $\\dfrac{OA}{OM} = \\dfrac{5{,}4}{9} = 0{,}6$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "اكتب برهانا كاملا على أن $(MN) \\parallel (AP)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقط $M$ ، $O$ ، $A$ في استقامية، والنقط $N$ ، $O$ ، $P$ في استقامية: هل الترتيب نفسه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل النسبتين اللتين حسبتهما: هل هما متساويتان بقيمهما المضبوطة؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختم بذكر الخاصية المستعملة: الخاصية العكسية لخاصية طالس."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{OA}{OM} = \\dfrac{OP}{ON} = 0{,}6$ و $O$ بين النقطتين في كل مرة: $(MN) \\parallel (AP)$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي: الاستقامية، الترتيب نفسه، تساوي النسبتين، ثم ذكر الخاصية العكسية لخاصية طالس."
+      },
+      "solution": {
+        "lines": [
+          "بما أن النقط $M$ ، $O$ ، $A$ و $N$ ، $O$ ، $P$ في استقامية وبنفس الترتيب،",
+          "و بما أن: $\\dfrac{OA}{OM} = \\dfrac{OP}{ON} = \\dfrac{3}{5}$",
+          "فإن المستقيمين $(MN)$ و $(AP)$ متوازيان حسب خاصية طالس العكسية."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

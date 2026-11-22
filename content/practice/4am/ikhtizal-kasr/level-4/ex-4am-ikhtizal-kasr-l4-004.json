@@ -1,0 +1,213 @@
+{
+  "id": "ex-4am-ikhtizal-kasr-l4-004",
+  "lessonCode": "ikhtizal-kasr",
+  "level": 4,
+  "metadata": {
+    "title": "سلسلة التفوق، تمرين 10 — 240x = 320y",
+    "estimatedMinutes": 10,
+    "tags": [
+      "كسر غير قابل للاختزال"
+    ],
+    "source": {
+      "type": "worksheet",
+      "worksheetId": "tafawwuq-01",
+      "elementId": "ws01-ex-10",
+      "section": "التمارين",
+      "number": 10
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$x$ و $y$ عددان طبيعيان غير معدومين حيث: $240x = 320y$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب PGCD(320 ; 240).",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "80",
+      "misconceptionSignatures": [
+        {
+          "value": "40",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 320 على 240: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (320 ; 240) بالزوج (240 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 80.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$320 = 240 \\times 1 + 80$",
+          "$240 = 80 \\times 3 + 0$",
+          "آخر باقٍ غير معدوم هو 80، إذن:"
+        ],
+        "result": "PGCD(320 ; 240) = 80"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "علمًا أن $\\dfrac{x}{y} = \\dfrac{320}{240}$ ، اكتب $\\dfrac{x}{y}$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "4/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "160/120",
+          "id": "MISC-IKHTIZAL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01 (ا)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 80: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال 01 (ا).",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{x}{y} = \\dfrac{320}{240} = \\dfrac{320 \\div 80}{240 \\div 80}$"
+        ],
+        "result": "\\dfrac{x}{y} = \\dfrac{320}{240} = \\dfrac{4}{3}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "نفرض أن $x + y = 98$ .",
+      "statement": "جد $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "56",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من نتيجة السؤال 01: $x$ يُكتب $4k$ و $y$ يُكتب $3k$ حيث $k$ عدد طبيعي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض في $x + y = 98$ لتجد $k$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$4k + 3k = 98$ ، إذن $k = 14$ و $x = 4 \\times 14$ .",
+        "incorrect": "عبّر عن $x$ و $y$ بدلالة عدد واحد $k$ ، ثم استعمل المجموع."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{x}{y} = \\dfrac{4}{3}$ والعددان 4 و 3 أوليان فيما بينهما، إذن $x = 4k$ و $y = 3k$ .",
+          "$4k + 3k = 98$ ، أي $7k = 98$ ومنه $k = 14$ .",
+          "$x = 4 \\times 14$"
+        ],
+        "result": "x = 56"
+      },
+      "timeSeconds": 210
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "جد $y$ .",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "42",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل العدد $k$ الذي وجدته في (ا)."
+        }
+      ],
+      "feedback": {
+        "correct": "$y = 3 \\times 14$ ، والتحقق: $240 \\times 56 = 320 \\times 42 = 13440$ .",
+        "incorrect": "احسب $y = 3k$ ، أو $y = 98 - x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$y = 3 \\times 14$",
+          "تحقق: $240 \\times 56 = 13440$ و $320 \\times 42 = 13440$ ."
+        ],
+        "result": "y = 42"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

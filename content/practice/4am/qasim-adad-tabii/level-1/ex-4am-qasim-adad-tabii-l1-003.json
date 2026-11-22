@@ -1,0 +1,127 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l1-003",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2009 — قاسم للعدد 875",
+    "estimatedMinutes": 3,
+    "tags": [
+      "a = b × q"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-adad-tabii_P2",
+      "modelledOn": "BEM 2009 I-4 02"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2009",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "بيّن أن 125 قاسم للعدد 875، وذلك بكتابة 875 على الشكل $125 \\times q$ حيث $q$ عدد طبيعي.",
+      "statement": "العدد $q$:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $q$ فقط (عدد طبيعي)",
+      "expectedAnswer": "7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نبحث عن عدد طبيعي $q$ حيث $875 = 125 \\times q$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أجرِ القسمة الإقليدية للعدد 875 على 125."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان الباقي معدومًا فإن حاصل القسمة هو العدد المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$875 = 125 \\times 7$.",
+        "incorrect": "اقسم 875 على 125: حاصل القسمة هو العدد $q$ إذا كان الباقي معدومًا."
+      },
+      "solution": {
+        "lines": [
+          "$125 \\times 7 = 875$",
+          "إذن $875 = 125 \\times 7$",
+          "وجدنا عددًا طبيعيًا $q$ حيث $875 = 125 \\times q$، إذن 125 قاسم للعدد 875."
+        ],
+        "result": "875 = 125 \\times 7"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج: هل 875 مضاعف للعدد 125؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QASIM-MUDAAF-ITTIJAH"
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل المساواة التي وجدتها في السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "«$b$ قاسم لـ $a$» و«$a$ مضاعف لـ $b$» لهما نفس المعنى."
+        }
+      ],
+      "feedback": {
+        "correct": "$875 = 125 \\times 7$: العدد 875 مضاعف للعدد 125.",
+        "incorrect": "انتبه إلى اتجاه كلمة «مضاعف»: المضاعف هو العدد الذي يُكتب على الشكل $125 \\times q$."
+      },
+      "solution": {
+        "lines": [
+          "$875 = 125 \\times 7$",
+          "125 قاسم للعدد 875، أي 875 مضاعف للعدد 125."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

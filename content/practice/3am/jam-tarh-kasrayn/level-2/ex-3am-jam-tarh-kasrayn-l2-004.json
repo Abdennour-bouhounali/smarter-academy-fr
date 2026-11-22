@@ -1,0 +1,223 @@
+{
+  "id": "ex-3am-jam-tarh-kasrayn-l2-004",
+  "lessonCode": "jam-tarh-kasrayn",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مقامان مشتركان، نتيجة واحدة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "مقام مشترك",
+      "تعليل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "حسبت سلمى المجموع $\\dfrac{5}{8} + \\dfrac{7}{12}$ مرّتين: مرّة بالمقام $96$ ومرّة بالمقام $24$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب المجموع بالمقام $96$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_jam-tarh-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "29/24",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "29/48",
+          "id": "MISC-JAMTARH-ACROSS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي تغيّره عندما تضرب مقام الكسر في عدد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب البسط والمقام في العدد نفسه حتى يبقى الكسر هو نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بعد الكتابة الجديدة أنّ المقام هو المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{29}{24}$ .",
+        "incorrect": "اكتب الكسرين بمقام مشترك قبل أن تجمع أو تطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{8} = \\dfrac{60}{96}$ و $\\dfrac{7}{12} = \\dfrac{56}{96}$ .",
+          "$\\dfrac{60}{96} + \\dfrac{56}{96} = \\dfrac{116}{96} = \\dfrac{29}{24}$ ."
+        ],
+        "result": "\\dfrac{29}{24}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب المجموع بالمقام $24$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_jam-tarh-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "29/24",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي تغيّره عندما تضرب مقام الكسر في عدد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب البسط والمقام في العدد نفسه حتى يبقى الكسر هو نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بعد الكتابة الجديدة أنّ المقام هو المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{29}{24}$ .",
+        "incorrect": "اكتب الكسرين بمقام مشترك قبل أن تجمع أو تطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{8} = \\dfrac{15}{24}$ و $\\dfrac{7}{12} = \\dfrac{14}{24}$ .",
+          "$\\dfrac{15}{24} + \\dfrac{14}{24} = \\dfrac{29}{24}$ ."
+        ],
+        "result": "\\dfrac{29}{24}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل تختلف النتيجتان ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jam-tarh-kasrayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأنّ المقامين مختلفان فتتغيّر النتيجة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-RESULTCHANGES"
+        },
+        {
+          "id": "B",
+          "content": "لا، فهما كسران متساويان مكتوبان بشكلين",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ خيار بحساب بالمقام المشترك بدل التخمين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استبعد الخيارات التي تجمع المقامات أو تترك البسوط دون تغيير."
+        }
+      ],
+      "feedback": {
+        "correct": "لا، فهما كسران متساويان مكتوبان بشكلين .",
+        "incorrect": "احسب كلّ خيار بدقّة قبل أن تختار، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{116}{96} = \\dfrac{29}{24}$ بعد القسمة على $4$ .",
+          "المقام المشترك يغيّر شكل الكتابة لا قيمة العدد."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "برّر لماذا يفضّل الحساب بالمقام $24$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jam-tarh-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثمّ اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجب أن تبرّره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اذكر المقام الذي اخترته ولماذا يصلح، ثمّ اكتب خطوات الحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "تطابق برهانك مع الحل النموذجي .",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثمّ قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "$24$ مضاعف مشترك للعددين $8$ و $12$ وهو الأصغر بينهما: مضاعفات $12$ هي $12$ ، $24$ ، و $24 \\div 8 = 3$ .",
+          "الأعداد أصغر، فالحساب أقصر ولا نحتاج إلى اختزال كبير، والنتيجة هي نفسها."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

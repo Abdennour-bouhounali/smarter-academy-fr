@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l1-007",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — صورة نقطة بانسحاب",
+    "estimatedMinutes": 3,
+    "tags": [
+      "انسحاب",
+      "صورة نقطة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_shuaayn-mutasawiyayn_P3",
+      "modelledOn": "method-image"
+    }
+  },
+  "statement": {
+    "content": "A، B، M نقط. N صورة M بالانسحاب الذي شعاعه $\\overrightarrow{AB}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "هذا يعني:",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{AN} = \\overrightarrow{BM}$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{MN} = \\overrightarrow{AB}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{NM} = \\overrightarrow{AB}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSIHAB-SURA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الانسحاب ينقل كل نقطة بنفس الحركة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من M نتحرّك كما نتحرّك من A إلى B."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الشعاع يبدأ من النقطة وينتهي عند صورتها."
+        }
+      ],
+      "feedback": {
+        "correct": "صورة M هي N: الشعاع من M إلى N يساوي الشعاع من A إلى B.",
+        "incorrect": "انتبه إلى المبدأ والنهاية: من النقطة إلى صورتها."
+      }
+    }
+  ]
+}

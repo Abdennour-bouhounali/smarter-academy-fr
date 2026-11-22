@@ -1,0 +1,93 @@
+{
+  "id": "ex-4am-tarrid-mushkila-l2-008",
+  "lessonCode": "tarrid-mushkila",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2021 — كراريس أمين",
+    "estimatedMinutes": 7,
+    "tags": [
+      "ترييض",
+      "متراجحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tarrid-mushkila_P1",
+      "modelledOn": "BEM 2021 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يريد أمين، استعدادًا للدخول المدرسي، شراء محفظة ثمنها 850DA و عدد من الكراريس المتماثلة.\n• ثمن الكراس الواحد 45DA .\n• تغليف الكراس الواحد يكلّف 7DA .\n• خصّص أمين لذلك مبلغ 2000DA ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "☜ ما هو أكبر عدد من الكراريس يمكن لأمين شراؤه و تغليفه؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الكراريس",
+      "expectedAnswer": "22",
+      "misconceptionSignatures": [
+        {
+          "value": "575/26",
+          "id": "MISC-TARRID-TAHAQQUQ"
+        },
+        {
+          "value": "23",
+          "id": "MISC-TARRID-TAHAQQUQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "سمِّ $x$ عدد الكراريس: كم يكلّف الكراس الواحد مع تغليفه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب أن ثمن المحفظة مع تكلفة الكراريس لا يتجاوز المبلغ المخصص."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المتراجحة، ثم تذكّر أن عدد الكراريس عدد طبيعي."
+        }
+      ],
+      "feedback": {
+        "correct": "$850 + 52x \\leqslant 2000$ تعطي $x \\leqslant 22{,}1...$ : أكبر عدد هو 22 كراسًا.",
+        "incorrect": "كل كراس يكلّف ثمنه وتغليفه معًا، والجواب عدد طبيعي لا يتجاوز حلول المتراجحة."
+      },
+      "solution": {
+        "lines": [
+          "نسمّي $x$ عدد الكراريس. الكراس الواحد مع تغليفه: $45 + 7 = 52$ DA .",
+          "$850 + 52x \\leqslant 2000$",
+          "$52x \\leqslant 1150$",
+          "$x \\leqslant \\dfrac{1150}{52}$ أي $x \\leqslant 22{,}1...$",
+          "عدد الكراريس عدد طبيعي، إذن أكبر عدد يمكن شراؤه هو 22 كراسًا.",
+          "التحقق: $850 + 52 \\times 22 = 1994 \\leqslant 2000$ و $850 + 52 \\times 23 = 2046 > 2000$ ."
+        ],
+        "result": "22"
+      },
+      "work": "optional",
+      "timeSeconds": 420
+    }
+  ]
+}

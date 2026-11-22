@@ -1,0 +1,74 @@
+{
+  "id": "ex-4am-murakkibata-shuaa-l3-007",
+  "lessonCode": "murakkibata-shuaa",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — أين M؟",
+    "estimatedMinutes": 2,
+    "tags": [
+      "OM"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_murakkibata-shuaa_P2",
+      "modelledOn": "know-1"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس مبدؤه O، $\\overrightarrow{OM}\\begin{pmatrix} -4 \\\\ -3 \\end{pmatrix}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أين تقع M؟",
+      "learningPoints": [
+        {
+          "code": "4am_murakkibata-shuaa_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "على يسار محور التراتيب بـ 4 وحدات وتحت محور الفواصل بـ 3 وحدات",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "على يسار محور التراتيب بـ 3 وحدات وتحت محور الفواصل بـ 4 وحدات",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-TABDIL-X-Y"
+        },
+        {
+          "id": "C",
+          "content": "على يمين محور التراتيب بـ 4 وحدات وفوق محور الفواصل بـ 3 وحدات",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مبدأ هذا الشعاع هو مبدأ المعلم O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من O، الإزاحة الأفقية هي الفاصلة والإزاحة العمودية هي الترتيب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مركبتا $\\overrightarrow{OM}$ هما إحداثيتا M بنفس الترتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "$M(-4\\,;\\,-3)$ : فاصلة سالبة (يسار) وترتيب سالب (تحت).",
+        "incorrect": "إحداثيتا M هما مركبتا OM."
+      }
+    }
+  ]
+}

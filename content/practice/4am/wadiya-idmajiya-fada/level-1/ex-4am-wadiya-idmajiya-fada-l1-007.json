@@ -1,0 +1,164 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-fada-l1-007",
+  "lessonCode": "wadiya-idmajiya-fada",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — خاصية طالس في المقطع المحوري",
+    "estimatedMinutes": 3,
+    "tags": [
+      "خاصية طالس",
+      "المقطع المحوري"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-fada_P2",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "في المقطع المحوري لدلو مكتمل إلى مخروط رأسه S (الشكل): O مركز القاع و A من حافة القاع، و $O_1$ مركز الحافة العلوية و B من الحافة، و $(OA) \\parallel (O_1B)$ .",
+    "figure": {
+      "points": {
+        "S": [
+          0,
+          0
+        ],
+        "O": [
+          0,
+          52.5
+        ],
+        "O₁": [
+          0,
+          70.0
+        ],
+        "A": [
+          15,
+          52.5
+        ],
+        "A′": [
+          -15,
+          52.5
+        ],
+        "B": [
+          20,
+          70.0
+        ],
+        "B′": [
+          -20,
+          70.0
+        ]
+      },
+      "segments": [
+        {
+          "from": "A′",
+          "to": "A",
+          "bold": true
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "bold": true
+        },
+        {
+          "from": "B",
+          "to": "B′",
+          "bold": true
+        },
+        {
+          "from": "B′",
+          "to": "A′",
+          "bold": true
+        },
+        {
+          "from": "S",
+          "to": "A",
+          "dashed": true
+        },
+        {
+          "from": "S",
+          "to": "A′",
+          "dashed": true
+        },
+        {
+          "from": "S",
+          "to": "O₁",
+          "dashed": true
+        }
+      ],
+      "rightAngles": [
+        [
+          "S",
+          "O",
+          "A"
+        ]
+      ],
+      "labels": {
+        "S": "s",
+        "O": "w",
+        "O₁": "n",
+        "A": "e",
+        "A′": "w",
+        "B": "e",
+        "B′": "w"
+      },
+      "ariaLabel": "المقطع المحوري لدلو مكتمل إلى مخروط رأسه S: القاع [A′A] مركزه O والحافة [B′B] مركزها O₁، و (OA) يوازي (O₁B)",
+      "maxWidth": 360
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "العلاقة الصحيحة:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-fada_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{SO}{SO_1} = \\dfrac{OA}{O_1B}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{SO}{SO_1} = \\dfrac{O_1B}{OA}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-ITTIJAH"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{SO}{OO_1} = \\dfrac{OA}{O_1B}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MABTUR-RAS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلثان $SOA$ و $SO_1B$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نقارن أطوال المثلث الصغير بأطوال المثلث الكبير بالترتيب نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كل طول من المثلث الصغير في البسط."
+        }
+      ],
+      "feedback": {
+        "correct": "حسب خاصية طالس في المثلث $SO_1B$ : $\\dfrac{SO}{SO_1} = \\dfrac{OA}{O_1B}$ .",
+        "incorrect": "النسب تُكتب بالترتيب نفسه (الصغير على الكبير)، و $OO_1$ ارتفاع الدلو لا ضلع من المثلث الكبير."
+      },
+      "cognitiveDemand": "recall",
+      "difficulty": 1
+    }
+  ]
+}

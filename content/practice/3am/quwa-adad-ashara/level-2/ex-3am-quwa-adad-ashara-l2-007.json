@@ -1,0 +1,190 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l2-007",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — البادئات",
+    "estimatedMinutes": 6,
+    "tags": [
+      "البادئات",
+      "الوحدات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "البادئة «كيلو» تعني ألفًا والبادئة «ميلي» تعني جزءًا من ألف."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "$1\\ \\mathrm{km} = 1\\,000\\ \\mathrm{m} = 10^{n}\\ \\mathrm{m}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«كيلو» تعني ألفًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب 1 000 على الشكل $10^{n}$ بعدّ الأصفار."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثلاثة أصفار بعد الرقم 1."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-ASHARA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\ \\mathrm{km} = 10^{3}\\ \\mathrm{m}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,000 = 10^{3}$ ."
+        ],
+        "result": "n = 3"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$1\\ \\mathrm{mm} = 0{,}001\\ \\mathrm{m} = 10^{n}\\ \\mathrm{m}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«ميلي» تعني جزءًا من ألف: الملّيمتر أصغر من المتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الرقم 1 في الرتبة الثالثة بعد الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأسّ سالب لأنّ الوحدة أصغر من المتر."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-ASHARA-WIHDA"
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\ \\mathrm{mm} = 10^{-3}\\ \\mathrm{m}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}001 = \\dfrac{1}{10^{3}} = 10^{-3}$ ."
+        ],
+        "result": "n = -3"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "الميكرومتر ($\\mu\\mathrm{m}$) هو جزء من مليون من المتر. أيّ كتابة صحيحة؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الميكرومتر أصغر من المتر أم أكبر منه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "«جزء من مليون» يعني الرقم 1 في الرتبة السادسة بعد الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الأسّ بكتابة العدد عشريًّا."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$1\\ \\mu\\mathrm{m} = 10^{-5}\\ \\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-FASILA"
+        },
+        {
+          "id": "B",
+          "content": "$1\\ \\mu\\mathrm{m} = 10^{-6}\\ \\mathrm{m}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$1\\ \\mu\\mathrm{m} = 10^{6}\\ \\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-WIHDA"
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\ \\mu\\mathrm{m} = 0{,}000001\\ \\mathrm{m} = 10^{-6}\\ \\mathrm{m}$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب الكتابة العشرية للقوة المعنية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "«جزء من مليون» $= 0{,}000001$ .",
+          "الرقم 1 في الرتبة السادسة: $10^{-6}$ ."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,357 @@
+{
+  "id": "ex-4am-aksiya-talis-l3-009",
+  "lessonCode": "aksiya-talis",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2024 — جملة ثم (AC)//(BD)",
+    "estimatedMinutes": 13,
+    "tags": [
+      "جملة معادلتين",
+      "وضعية الفراشة",
+      "الخاصية العكسية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_aksiya-talis_P1",
+      "modelledOn": "BEM 2024 I-4"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل (وحدة الطول هي الميليمتر): المستقيمان $(AB)$ و $(CD)$ متقاطعان في النقطة $O$ ، حيث $O$ بين $A$ و $B$ وبين $C$ و $D$ ، و $OC = 54$ ، $OD = 36$ ، $OA + OB = 75$ و $OA = 1{,}5 \\times OB$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0.0,
+          0.0
+        ],
+        "A": [
+          -42.286167935366,
+          15.390906449655
+        ],
+        "B": [
+          28.190778623577,
+          -10.26060429977
+        ],
+        "C": [
+          -34.710530923073,
+          -41.366399928425
+        ],
+        "D": [
+          23.140353948715,
+          27.577599952283
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        {
+          "from": "O",
+          "to": "C",
+          "label": "54"
+        },
+        {
+          "from": "O",
+          "to": "D",
+          "label": "36"
+        },
+        [
+          "A",
+          "C"
+        ],
+        [
+          "B",
+          "D"
+        ]
+      ],
+      "ariaLabel": "المستقيمان (AB) و (CD) متقاطعان في O، و O بين A و B وبين C و D؛ OC = 54 و OD = 36",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "حل الجملة التالية: $\\begin{cases} x + y = 75 \\\\ x - 1{,}5y = 0 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "45",
+        "y": "30"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "30",
+            "y": "45"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من المعادلة الثانية: $x = 1{,}5y$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $x$ في المعادلة الأولى."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}5y = 75$ ومنه $y = 30$ ثم $x = 45$ .",
+        "incorrect": "عبّر عن $x$ بدلالة $y$ من المعادلة الثانية ثم عوّض في الأولى."
+      },
+      "solution": {
+        "lines": [
+          "من المعادلة الثانية: $x = 1{,}5y$",
+          "نعوّض في الأولى: $1{,}5y + y = 75$ أي $2{,}5y = 75$ ومنه $y = 30$",
+          "ثم $x = 1{,}5 \\times 30 = 45$",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(45 ; 30)"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أوجد الطول $OA$ (يمكنك الاستعانة بالسؤال 01).",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ mm",
+      "expectedAnswer": "45",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$OA$ و $OB$ يحققان معادلتي الجملة."
+        }
+      ],
+      "feedback": {
+        "correct": "$OA = 45\\,\\mathrm{mm}$ .",
+        "incorrect": "ضع $x = OA$ و $y = OB$ : الشرطان هما معادلتا الجملة."
+      },
+      "solution": {
+        "lines": [
+          "نضع $x = OA$ و $y = OB$ : $OA + OB = 75$ و $OA - 1{,}5\\,OB = 0$ هما جملة السؤال 01.",
+          "إذن $OA = x$"
+        ],
+        "result": "OA = 45\\,\\mathrm{mm}"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أوجد الطول $OB$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ mm",
+      "expectedAnswer": "30",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الطول $OB$ هو المجهول الثاني للجملة."
+        }
+      ],
+      "feedback": {
+        "correct": "$OB = 30\\,\\mathrm{mm}$ .",
+        "incorrect": "ضع $y = OB$ : الشرطان هما معادلتا الجملة."
+      },
+      "solution": {
+        "lines": [
+          "$OB = y$"
+        ],
+        "result": "OB = 30\\,\\mathrm{mm}"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "هل المستقيمان $(AC)$ و $(BD)$ متوازيان؟",
+      "statement": "احسب النسبة $\\dfrac{OA}{OB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "3/2",
+      "misconceptionSignatures": [
+        {
+          "value": "2/3",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$OA$ و $OB$ طولان يُقاسان من النقطة $O$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $OA$ على $OB$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{OA}{OB} = \\dfrac{45}{30} = \\dfrac{3}{2}$ .",
+        "incorrect": "النسبة $\\dfrac{OA}{OB}$ : الطول $OA$ على الطول $OB$ ، وكلاهما من النقطة $O$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{OA}{OB} = \\dfrac{45}{30} = \\dfrac{3}{2}$"
+        ],
+        "result": "\\dfrac{OA}{OB} = \\dfrac{3}{2}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ا",
+      "statement": "احسب النسبة $\\dfrac{OC}{OD}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "3/2",
+      "misconceptionSignatures": [
+        {
+          "value": "2/3",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$OC$ و $OD$ طولان يُقاسان من النقطة $O$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $OC$ على $OD$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{OC}{OD} = \\dfrac{54}{36} = \\dfrac{3}{2}$ .",
+        "incorrect": "النسبة $\\dfrac{OC}{OD}$ : الطول $OC$ على الطول $OD$ ، وكلاهما من النقطة $O$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{OC}{OD} = \\dfrac{54}{36} = \\dfrac{3}{2}$"
+        ],
+        "result": "\\dfrac{OC}{OD} = \\dfrac{3}{2}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ب",
+      "statement": "استنتج: هل $(AC) \\parallel (BD)$ ؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-BAYN-FAQAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النسبتين بقيمهما المضبوطة (الجداء المتصالب)، لا بقيم مقرّبة ولا بمظهر الشكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق أيضا من ترتيب النقط على المستقيمين المتقاطعين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{OA}{OB} = \\dfrac{OC}{OD} = 1{,}5$ و $O$ بين النقطتين في كل مرة: $(AC) \\parallel (BD)$ .",
+        "incorrect": "الخاصية العكسية تتطلب شرطين معا: تساوي النسبتين بقيم مضبوطة، وترتيب النقط نفسه على المستقيمين."
+      },
+      "solution": {
+        "lines": [
+          "بما أن النقط $A$ ، $O$ ، $B$ و $C$ ، $O$ ، $D$ في استقامية وبنفس الترتيب،",
+          "و بما أن: $\\dfrac{OA}{OB} = \\dfrac{OC}{OD} = \\dfrac{3}{2}$",
+          "فإن المستقيمين $(AC)$ و $(BD)$ متوازيان حسب خاصية طالس العكسية."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

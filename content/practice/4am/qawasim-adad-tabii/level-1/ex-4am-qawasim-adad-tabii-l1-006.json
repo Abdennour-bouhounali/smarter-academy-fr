@@ -1,0 +1,203 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l1-006",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2024 — 112 قصة في رزم",
+    "estimatedMinutes": 8,
+    "tags": [
+      "قواسم",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qawasim-adad-tabii_P2",
+      "modelledOn": "BEM 2024 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "يريد صاحب مكتبة، تشجيعًا للأطفال على القراءة، ترتيب 112 قصة في رزم تحتوي كلها على نفس العدد من القصص، دون أن تبقى أي قصة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "هل يمكن أن يكون عدد القصص في كل رزمة 14؟ 12؟ برّر إجابتك.",
+      "statement": "14 قصة في كل رزمة:",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 112 على 14."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يكون ذلك ممكنا إذا كان 14 قاسما للعدد 112، أي إذا كان الباقي معدوما."
+        }
+      ],
+      "feedback": {
+        "correct": "$112 = 14 \\times 8$: الباقي معدوم.",
+        "incorrect": "احسب باقي قسمة 112 على 14 قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "$112 = 14 \\times 8$",
+          "الباقي معدوم، إذن 14 قاسم للعدد 112: هذا ممكن."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "12 قصة في كل رزمة:",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 112 على 12."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يكون ذلك ممكنا إذا كان 12 قاسما للعدد 112، أي إذا كان الباقي معدوما."
+        }
+      ],
+      "feedback": {
+        "correct": "$112 = 12 \\times 9 + 4$: الباقي غير معدوم.",
+        "incorrect": "احسب باقي قسمة 112 على 12 قبل أن تجيب."
+      },
+      "solution": {
+        "lines": [
+          "$112 = 12 \\times 9 + 4$",
+          "الباقي 4 غير معدوم، إذن 12 ليس قاسما للعدد 112: هذا غير ممكن."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "عيّن كل قواسم العدد 112.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        2,
+        4,
+        7,
+        8,
+        14,
+        16,
+        28,
+        56,
+        112
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            4,
+            7,
+            8,
+            14,
+            16,
+            28,
+            56
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 112 بمربعات الأعداد: إلى أي عدد يكفي أن تختبر قابلية القسمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل قسمة باقيها معدوم تعطي قاسمين: $d$ و $112 \\div d$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$112 = 1 \\times 112$ ، $112 = 2 \\times 56$ ، $112 = 4 \\times 28$ ، $112 = 7 \\times 16$ ، $112 = 8 \\times 14$.",
+        "incorrect": "اختبر الأعداد التي مربعها أصغر من العدد أو يساويه، وخذ من كل قسمة باقيها معدوم القاسمين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$10^2 = 100 \\leq 112 < 121 = 11^2$ ومنه نختبر قابلية قسمة 112 على الأعداد من 1 إلى 10.",
+          "نجد أن 112 يقبل القسمة على كل من الأعداد: 1 ، 2 ، 4 ، 7 ، 8.",
+          "ومن المساويات: $112 = 1 \\times 112$ ، $112 = 2 \\times 56$ ، $112 = 4 \\times 28$ ، $112 = 7 \\times 16$ ، $112 = 8 \\times 14$",
+          "إذن قواسم العدد 112 هي: 1 ، 2 ، 4 ، 7 ، 8 ، 14 ، 16 ، 28 ، 56 ، 112."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

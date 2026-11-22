@@ -1,0 +1,167 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-judhur-l2-010",
+  "lessonCode": "wadiya-idmajiya-judhur",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2021 — معادلة بالجذور",
+    "estimatedMinutes": 7,
+    "tags": [
+      "المعادلة x² = a",
+      "جداء"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-judhur_P1",
+      "modelledOn": "BEM 2021 I-1 (03)"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب الجداء $(7 + \\sqrt{13})(7 - \\sqrt{13})$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "36",
+      "misconceptionSignatures": [
+        {
+          "value": "-120",
+          "id": "MISC-TARBI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(x + y)(x - y) = x^2 - y^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$(\\sqrt{13})^2 = 13$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$7^2 - (\\sqrt{13})^2 = 49 - 13 = 36$",
+        "incorrect": "استعمل $(x + y)(x - y) = x^2 - y^2$ مع $(\\sqrt{13})^2 = 13$ ."
+      },
+      "solution": {
+        "lines": [
+          "$(7 + \\sqrt{13})(7 - \\sqrt{13}) = 7^2 - (\\sqrt{13})^2$",
+          "$= 49 - 13$"
+        ],
+        "result": "36"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "$x$ عدد حقيقي غير معدوم. جِد قيم $x$ بحيث: $\\dfrac{x}{7 + \\sqrt{13}} = \\dfrac{7 - \\sqrt{13}}{x}$ .",
+      "statement": "الحل السالب:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "-6",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-HALL-WAHID"
+        },
+        {
+          "value": "-18",
+          "id": "MISC-HALL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الجداء المتصالب (تساوي جداءي الطرفين و الوسطين)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحصل على $x^2 = (7 + \\sqrt{13})(7 - \\sqrt{13})$ : استعمل نتيجة السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "$x^2 = 36$ ، و الحل السالب $x = -6$ .",
+        "incorrect": "الجداء المتصالب يعطي معادلة من الشكل $x^2 = a$ : للمعادلة حلان متعاكسان."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{x}{7 + \\sqrt{13}} = \\dfrac{7 - \\sqrt{13}}{x}$ يعني $x \\times x = (7 + \\sqrt{13})(7 - \\sqrt{13})$",
+          "أي $x^2 = 36$",
+          "يعني $x = 6$ أو $x = -6$"
+        ],
+        "result": "x = -6 \\quad ; \\quad x = 6"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "الحل الموجب:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "18",
+          "id": "MISC-HALL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحل الموجب معاكس الحل السالب."
+        }
+      ],
+      "feedback": {
+        "correct": "$6^2 = 36$ : هذا هو الحل الموجب.",
+        "incorrect": "الحل الموجب هو العدد الموجب الذي مربعه ناتج السؤال 01."
+      },
+      "solution": {
+        "lines": [
+          "$x^2 = 36$ يعني $x = \\sqrt{36}$ أو $x = -\\sqrt{36}$"
+        ],
+        "result": "x = 6"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "id": "ex-4am-tamthil-bayani-taalufi-l2-008",
+  "lessonCode": "tamthil-bayani-taalufi",
+  "level": 2,
+  "metadata": {
+    "title": "من $(d)$ إلى $(d')$ : مستقيم ينزل مرفوعًا",
+    "estimatedMinutes": 5,
+    "tags": [
+      "ترتيب نقطة",
+      "الترتيب عند المبدأ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tamthil-bayani-taalufi_P1",
+      "adaptedFrom": "ex-4am-tamthil-bayani-taalufi-l2-008"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الدالتين $g$ و $f$ حيث: $g(x) = -x$ و $f(x) = -x + 4$ ، و $(d)$ و $(d')$ تمثيلاهما البيانيان في معلم متعامد ومتجانس."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب ترتيب النقطة من $(d)$ التي فاصلتها $3$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ترتيب نقطة من $(d)$ هو صورة فاصلتها بالدالة $g$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب الفاصلة في المعامل $a$ ، ثم أضف $b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$g(3) = -3 = -3$ .",
+        "incorrect": "الترتيب هو صورة الفاصلة: اضرب الفاصلة في $a$ ثم أضف $b$ بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$g(3) = -3 = -3$",
+          "إذن النقطة $(3 ; -3)$ تنتمي إلى $(d)$."
+        ],
+        "result": "g(3) = -3"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج ترتيب النقطة من $(d')$ التي فاصلتها $3$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "-7",
+          "id": "MISC-BAYANI-TAALUFI-MABDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$f(x) = g(x) + 4$ : المستقيم $(d')$ هو $(d)$ مرفوعًا بـ $4$ وحدات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أضف $b$ إلى ترتيب نقطة $(d)$ التي لها نفس الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(3) = g(3) + 4 = -3 + 4$ .",
+        "incorrect": "أضف الترتيب عند المبدأ $b = 4$ إلى ترتيب نقطة $(d)$ التي لها نفس الفاصلة."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $f(x) = g(x) + 4$ ، أي أنّ $(d')$ هو $(d)$ مرفوعًا بـ $4$ .",
+          "ترتيب النقطة من $(d)$ التي فاصلتها $3$ هو $g(3) = -3$ .",
+          "إذن ترتيب النقطة من $(d')$ التي فاصلتها $3$ هو: $-3 + 4 = 1$ ."
+        ],
+        "result": "f(3) = 1"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

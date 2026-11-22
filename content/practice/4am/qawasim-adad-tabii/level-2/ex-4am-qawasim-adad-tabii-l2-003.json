@@ -1,0 +1,152 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l2-003",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2008 — قواسم العدد 132",
+    "estimatedMinutes": 7,
+    "tags": [
+      "قواسم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qawasim-adad-tabii_P3",
+      "modelledOn": "BEM 2008 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2008",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "جد كل قواسم العدد 132.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        11,
+        12,
+        22,
+        33,
+        44,
+        66,
+        132
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6,
+            11,
+            12,
+            22,
+            33,
+            44,
+            66
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 132 بمربعات الأعداد: إلى أي عدد يكفي أن تختبر قابلية القسمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل قسمة باقيها معدوم تعطي قاسمين: $d$ و $132 \\div d$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$132 = 1 \\times 132$ ، $132 = 2 \\times 66$ ، $132 = 3 \\times 44$ ، $132 = 4 \\times 33$ ، $132 = 6 \\times 22$ ، $132 = 11 \\times 12$.",
+        "incorrect": "اختبر الأعداد التي مربعها أصغر من العدد أو يساويه، وخذ من كل قسمة باقيها معدوم القاسمين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$11^2 = 121 \\leq 132 < 144 = 12^2$ ومنه نختبر قابلية قسمة 132 على الأعداد من 1 إلى 11.",
+          "نجد أن 132 يقبل القسمة على كل من الأعداد: 1 ، 2 ، 3 ، 4 ، 6 ، 11.",
+          "ومن المساويات: $132 = 1 \\times 132$ ، $132 = 2 \\times 66$ ، $132 = 3 \\times 44$ ، $132 = 4 \\times 33$ ، $132 = 6 \\times 22$ ، $132 = 11 \\times 12$",
+          "إذن قواسم العدد 132 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 11 ، 12 ، 22 ، 33 ، 44 ، 66 ، 132."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 330
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج قواسم العدد 132 الزوجية.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        2,
+        4,
+        6,
+        12,
+        22,
+        44,
+        66,
+        132
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل قائمة القواسم التي وجدتها في السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الزوجي رقم آحاده 0 أو 2 أو 4 أو 6 أو 8."
+        }
+      ],
+      "feedback": {
+        "correct": "نحتفظ من قائمة قواسم 132 بالأعداد الزوجية.",
+        "incorrect": "من بين قواسم 132، احتفظ فقط بالأعداد التي تقبل القسمة على 2."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 132 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 11 ، 12 ، 22 ، 33 ، 44 ، 66 ، 132.",
+          "القواسم الزوجية هي: 2 ، 4 ، 6 ، 12 ، 22 ، 44 ، 66 ، 132."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+{
+  "id": "ex-1am-bahth-adad-naqisa-l5-005",
+  "lessonCode": "bahth-adad-naqisa",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — بستان العائلة",
+    "estimatedMinutes": 14,
+    "tags": [
+      "وضعية إدماجية",
+      "بستان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في بستان العائلة صفوف من أشجار الزيتون، في كلّ صفّ العدد نفسه من الأشجار."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "في البستان 18 صفًّا وفيه 126 شجرة. كم شجرة في الصفّ الواحد؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "2268",
+          "id": "MISC-NAQISA-MULAGAIN"
+        },
+        {
+          "value": "1/7",
+          "id": "MISC-NAQISA-DIVREV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للضرب هي القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $7\\times 18=126$ ، فالعدد الناقص هو $7$ .",
+        "incorrect": "في جداء نقسم الناتج على العدد المعلوم: لا نضربه فيه ولا نقسم المعلوم على الناتج."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square\\times 18=126$ .",
+          "نُرجع بالعملية العكسية: $\\square=126\\div 18=7$ .",
+          "نتحقّق: $7\\times 18=126$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "غُرست 23 شجرة جديدة فصار في البستان 149 شجرة. كم شجرة كانت فيه؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "126",
+      "misconceptionSignatures": [
+        {
+          "value": "172",
+          "id": "MISC-NAQISA-SAMEOP"
+        },
+        {
+          "value": "-126",
+          "id": "MISC-NAQISA-REVSUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للجمع هي الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $126+23=149$ ، فالعدد الناقص هو $126$ .",
+        "incorrect": "في مجموع نطرح العدد المعلوم من الناتج: لا نجمع مرّة أخرى."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $\\square+23=149$ .",
+          "نُرجع بالعملية العكسية: $\\square=149-23=126$ .",
+          "نتحقّق: $126+23=149$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اقتُلعت أشجار يابسة فبقي 140 شجرة من 149. كم شجرة اقتُلعت؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "289",
+          "id": "MISC-NAQISA-TRAPADD"
+        },
+        {
+          "value": "-9",
+          "id": "MISC-NAQISA-REVSUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي فعلته العملية بالعدد المجهول؟ وأين مكان □ في المساواة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المجهول هنا هو المطروح: ما أُخذ من العدد الذي بدأنا منه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب المساواة ثمّ احسب بالعملية العكسية، وتحقّق بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: $149-9=140$ ، فالعدد الناقص هو $9$ .",
+        "incorrect": "في a − □ = b المجهول هو المطروح: نطرح الناتج من a ولا نعكس الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب المساواة: $149-\\square=140$ .",
+          "نُرجع بالعملية العكسية: $\\square=149-140=9$ .",
+          "نتحقّق: $149-9=140$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "أيّ حساب يعطي عدد الأشجار في الصفّ الواحد (□ × 18 = 126)؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$126\\times 18$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NAQISA-MULAGAIN"
+        },
+        {
+          "id": "B",
+          "content": "$18\\div 126$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NAQISA-DIVREV"
+        },
+        {
+          "id": "C",
+          "content": "$126\\div 18$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المساواة وأنظر مكان □ فيها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للضرب هي القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب كلّ حساب بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نُرجع بالعملية العكسية.",
+        "incorrect": "في جداء نقسم الناتج على العدد المعلوم: لا نضربه فيه ولا نقسم المعلوم على الناتج."
+      },
+      "solution": {
+        "lines": [
+          "المساواة: $\\square\\times 18=126$ .",
+          "الحساب: $\\square=126\\div 18=7$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

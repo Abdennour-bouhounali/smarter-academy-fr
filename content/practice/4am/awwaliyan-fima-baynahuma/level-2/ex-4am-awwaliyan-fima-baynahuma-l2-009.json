@@ -1,0 +1,129 @@
+{
+  "id": "ex-4am-awwaliyan-fima-baynahuma-l2-009",
+  "lessonCode": "awwaliyan-fima-baynahuma",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2025 — العددان 2835 و 1485",
+    "estimatedMinutes": 7,
+    "tags": [
+      "نفي",
+      "قواعد قابلية القسمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_awwaliyan-fima-baynahuma_P3",
+      "modelledOn": "BEM 2025 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان 2835 و 1485."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن، دون حساب القاسم المشترك الأكبر، أن العددين ليسا أوليين فيما بينهما: أعط أصغر قاسم مشترك لهما يختلف عن 1.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي أكبر من 1",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى رقم آحاد كل من العددين 2835 و 1485، وإلى مجموع أرقام كل منهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جرّب القواسم بالترتيب: 2 ثم 3 ثم 4 ثم 5 …، مستعملًا قواعد قابلية القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أول عدد يقسم العددين معًا هو المطلوب، ويكفي لنفي أنهما أوليان فيما بينهما."
+        }
+      ],
+      "feedback": {
+        "correct": "3 يقسم 2835 و 1485 معًا: العددان ليسا أوليين فيما بينهما.",
+        "incorrect": "طبّق قواعد قابلية القسمة على العددين معًا، بدءًا من أصغر القواسم الممكنة."
+      },
+      "solution": {
+        "lines": [
+          "2835 عدد فردي، إذن 2 لا يقسمه (ولا يقسم أيّ قاسم زوجي العددين معًا).",
+          "مجموع أرقام 2835 هو 18 ومجموع أرقام 1485 هو 18، وكلاهما مضاعف للعدد 3، إذن 3 يقسم العددين معًا.",
+          "3 قاسم مشترك للعددين يختلف عن 1، إذن العددان 2835 و 1485 ليسا أوليين فيما بينهما."
+        ],
+        "result": "3"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب: PGCD(2835 ; 1485).",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "135",
+      "misconceptionSignatures": [
+        {
+          "value": "45",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 2835 على 1485: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (2835 ; 1485) بالزوج (1485 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 135.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$2835 = 1485 \\times 1 + 1350$",
+          "$1485 = 1350 \\times 1 + 135$",
+          "$1350 = 135 \\times 10 + 0$",
+          "آخر باقٍ غير معدوم هو 135، إذن:"
+        ],
+        "result": "PGCD(2835 ; 1485) = 135"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

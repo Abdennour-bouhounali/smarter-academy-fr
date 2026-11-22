@@ -1,0 +1,114 @@
+{
+  "id": "ex-4am-jidhr-tarbii-l1-010",
+  "lessonCode": "jidhr-tarbii",
+  "level": 1,
+  "metadata": {
+    "title": "ضلع مربع معلوم المساحة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "تعريف الجذر التربيعي",
+      "مساحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_jidhr-tarbii_P1",
+      "modelledOn": "act-1",
+      "adaptedFrom": "ex-4am-jidhr-tarbii-l1-010"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "مربع مساحته $81cm^2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب طول ضلع هذا المربع.",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالسنتيمتر (cm)",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "40.5",
+          "id": "MISC-JIDHR-NISF"
+        },
+        {
+          "value": "20.25",
+          "id": "MISC-JIDHR-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة المربع هي مربع طول ضلعه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طول الضلع هو العدد الموجب الذي مربعه 81."
+        }
+      ],
+      "feedback": {
+        "correct": "طول الضلع $\\sqrt{81} = 9$ cm.",
+        "incorrect": "طول الضلع عدد موجب مربعه يساوي المساحة."
+      },
+      "solution": {
+        "lines": [
+          "ليكن $c$ طول الضلع: $c^2 = 81$ و $c$ موجب",
+          "إذن $c = \\sqrt{81} = 9$"
+        ],
+        "result": "c = 9cm"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب محيط هذا المربع.",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالسنتيمتر (cm)",
+      "expectedAnswer": "36",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "محيط المربع يساوي أربع مرات طول ضلعه."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 9 = 36$ cm.",
+        "incorrect": "اضرب طول الضلع الذي وجدته في 4."
+      },
+      "solution": {
+        "lines": [
+          "$4 \\times 9 = 36$"
+        ],
+        "result": "36cm"
+      },
+      "timeSeconds": 45
+    }
+  ]
+}

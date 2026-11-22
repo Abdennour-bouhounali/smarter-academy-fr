@@ -1,0 +1,70 @@
+{
+  "id": "ex-4am-takbir-tasghir-l4-002",
+  "lessonCode": "takbir-tasghir",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — مقام الشهيد بالنسبة 1/200",
+    "estimatedMinutes": 2,
+    "tags": [
+      "التصغير",
+      "الأطوال",
+      "الوحدات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takbir-tasghir_P2",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "ارتفاع مقام الشهيد $92\\,\\mathrm{m}$ . مجسّم سياحي له هو تصغير بالنسبة $\\dfrac{1}{200}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "احسب ارتفاع المجسّم بالسنتيمتر.",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة مثل 1,25 ، أو كسر مثل 4/7)",
+      "expectedAnswer": "46",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-WAHDA",
+          "value": "0,46"
+        },
+        {
+          "id": "MISC-TAKBIR-ITTIJAH",
+          "value": "18400"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الارتفاع طول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأطوال تُضرب في $\\dfrac{1}{200}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حوّل $92\\,\\mathrm{m}$ إلى سنتيمترات ثم اقسم على 200."
+        }
+      ],
+      "feedback": {
+        "correct": "$9200 \\div 200 = 46\\,\\mathrm{cm}$ .",
+        "incorrect": "الطول يُضرب في $k$ ، والنتيجة بالسنتيمتر."
+      }
+    }
+  ]
+}

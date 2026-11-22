@@ -1,0 +1,129 @@
+{
+  "id": "ex-4am-tatbiqat-tanasub-l2-006",
+  "lessonCode": "tatbiqat-tanasub",
+  "level": 2,
+  "metadata": {
+    "title": "نشاط 6 — تدفق المحطة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "التدفق",
+      "تحويل الوحدات"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-6",
+      "page": 67,
+      "section": "أنشطة",
+      "number": 6,
+      "adaptedFrom": "ex-4am-tatbiqat-tanasub-l2-006"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "تُوفّر محطة لتوزيع المياه الصالحة للشرب $7\\,200\\,000L$ في الساعة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عبّر عن هذا التدفق بـ $m^3/h$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط (بـ $m^3/h$ )",
+      "expectedAnswer": "7200",
+      "misconceptionSignatures": [
+        {
+          "value": "7200000000",
+          "id": "MISC-MAQADIR-WIHDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$1m^3 = 1000L$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم عدد اللترات على 1000 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$7\\,200\\,000L = 7200m^3$ ، أي $7200m^3/h$ .",
+        "incorrect": "$1m^3 = 1000L$ : لتحويل L إلى $m^3$ نقسم على 1000 ."
+      },
+      "solution": {
+        "lines": [
+          "$1m^3 = 1000L$",
+          "$\\dfrac{7\\,200\\,000}{1000} = 7200$",
+          "التدفق $7200m^3/h$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج تدفق المياه من هذه المحطة بـ $m^3/s$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط (بـ $m^3/s$ )",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "25920000",
+          "id": "MISC-MAQADIR-WIHDA"
+        },
+        {
+          "value": "120",
+          "id": "MISC-MAQADIR-WIHDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في ساعة واحدة $3600s$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم التدفق بـ $m^3/h$ على عدد الثواني في الساعة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{7200}{3600} = 2$ ، أي $2m^3/s$ .",
+        "incorrect": "الساعة 3600 ثانية: اقسم على 3600 ."
+      },
+      "solution": {
+        "lines": [
+          "$1h = 3600s$",
+          "$\\dfrac{7200}{3600} = 2$",
+          "تدفق المحطة $2m^3/s$ ."
+        ],
+        "result": "2m^3/s"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

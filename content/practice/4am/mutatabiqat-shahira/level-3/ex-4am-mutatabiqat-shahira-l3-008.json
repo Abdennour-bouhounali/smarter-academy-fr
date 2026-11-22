@@ -1,0 +1,249 @@
+{
+  "id": "ex-4am-mutatabiqat-shahira-l3-008",
+  "lessonCode": "mutatabiqat-shahira",
+  "level": 3,
+  "metadata": {
+    "title": "جدول ديكارت",
+    "estimatedMinutes": 9,
+    "tags": [
+      "مربع مجموع",
+      "جدول",
+      "حساب ذهني"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "history-descartes",
+      "page": 31,
+      "section": "ديكارت",
+      "adaptedFrom": "ex-4am-mutatabiqat-shahira-l3-005"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نظّم ديكارت حساب $(2x + 1)^2$ في جدول: كتب $2x + 1 = x + x + 1$ ، ووضع الحدود $x$ ، $x$ ، $1$ في السطر الأول وفي العمود الأول، وفي كل خانة جداء حدّي سطرها وعمودها.",
+    "table": {
+      "head": [
+        "$\\times$",
+        "$x$",
+        "$x$",
+        "$1$"
+      ],
+      "rows": [
+        [
+          "$x$",
+          "…",
+          "…",
+          "…"
+        ],
+        [
+          "$x$",
+          "…",
+          "…",
+          "…"
+        ],
+        [
+          "$1$",
+          "…",
+          "…",
+          "…"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انقل الجدول وأكمله، ثم اجمع الأعداد المسجّلة في الخانات التسع وبسّط مجموعها $S$ .",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $S$ على الشكل $mx^2 + nx + p$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في كل خانة جداء حدّين: $x \\times x = x^2$ و $x \\times 1 = x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ الخانات التي فيها $x^2$ ، ثم التي فيها $x$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = 4x^2 + 4x + 1$ إذن $m = 4$ .",
+        "incorrect": "طبّق المتطابقة الشهيرة حدًّا حدًّا (مربع كل حد والحد المضاعف)، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "الخانات: $x^2$ ، $x^2$ ، $x$ ، $x^2$ ، $x^2$ ، $x$ ، $x$ ، $x$ ، $1$",
+          "$S = x^2 + x^2 + x^2 + x^2 + x + x + x + x + 1$"
+        ],
+        "result": "S = 4x^2 + 4x + 1"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $S$ على الشكل $mx^2 + nx + p$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل $x$ يأتي من الحد المضاعف $2ab$ ومن الحدود الأخرى في $x$ ، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = 4x^2 + 4x + 1$ إذن $n = 4$ .",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $n$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$S = 4x^2 + 4x + 1$"
+        ],
+        "result": "n = 4"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "العدد $p$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $S$ على الشكل $mx^2 + nx + p$ : اكتب العدد $p$ فقط",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = 4x^2 + 4x + 1$ إذن $p = 1$ .",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $p$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$S = 4x^2 + 4x + 1$"
+        ],
+        "result": "p = 1"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "تحقّق أن $S$ هو نشر $(2x + 1)^2$ بالمتطابقة الشهيرة.",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طبّق $(a + b)^2 = a^2 + 2ab + b^2$ مع $a = 2x$ و $b = 1$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك سطرًا بسطر بالحل النموذجي، وانتبه إلى الإشارات عند النشر."
+      },
+      "solution": {
+        "lines": [
+          "$(2x + 1)^2 = (2x)^2 + 2 \\times 2x \\times 1 + 1^2 = 4x^2 + 4x + 1$",
+          "وهو المجموع $S$ نفسه."
+        ],
+        "result": "(2x + 1)^2 = 4x^2 + 4x + 1"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "استعمل النتيجة لحساب $21^2$ ذهنيا (ضع $x = 10$).",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P4",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "441",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من أجل $x = 10$ يكون $2x + 1 = 21$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القوى أولًا، ثم الجداءات، ثم الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = 441$.",
+        "incorrect": "عوّض $x$ في كل حد، واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $x = 10$ : $2x + 1 = 21$",
+          "$21^2 = 4 \\times 10^2 + 4 \\times 10 + 1 = 400 + 40 + 1$"
+        ],
+        "result": "21^2 = 441"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

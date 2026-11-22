@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-takbir-tasghir-l5-002",
+  "lessonCode": "takbir-tasghir",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — من الحجوم إلى المساحات",
+    "estimatedMinutes": 3,
+    "tags": [
+      "النسبة k",
+      "المساحة والحجم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takbir-tasghir_P1",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "حجم نموذج صغير لصهريج غاز $250\\,\\mathrm{cm}^3$ ، وحجم نموذج أكبر هو تكبير له $2000\\,\\mathrm{cm}^3$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مساحة أوجه النموذج الأكبر تساوي مساحة أوجه الصغير مضروبة في كم؟",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة مثل 1,25 ، أو كسر مثل 4/7)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAKBIR-BUUD",
+          "value": "8"
+        },
+        {
+          "id": "MISC-TAKBIR-MISAHA-K",
+          "value": "2"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نسبة الحجمين $\\dfrac{2000}{250} = 8$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$k^3 = 8$ يعطي $k$ ، ثم المساحة تُضرب في $k^2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$k = 2$ ثم احسب $k^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$k^3 = 8$ ، إذن $k = 2$ والمساحة تُضرب في $2^2 = 4$ .",
+        "incorrect": "نسبة الحجوم $k^3$ ، ونسبة المساحات $k^2$ : لا نخلطهما."
+      }
+    }
+  ]
+}

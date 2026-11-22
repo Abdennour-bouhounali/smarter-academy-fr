@@ -1,0 +1,172 @@
+{
+  "id": "ex-4am-tamthil-bayani-khatti-l3-002",
+  "lessonCode": "tamthil-bayani-khatti",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 13 — تمثيل الدالة $x \\longmapsto -\\dfrac{3}{2}x$",
+    "estimatedMinutes": 8,
+    "tags": [
+      "تمثيل بياني",
+      "عدد صورته معلومة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-13",
+      "page": 73,
+      "section": "أوظّف تعلّماتي",
+      "number": 13,
+      "adaptedFrom": "ex-4am-tamthil-bayani-khatti-l3-002"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الدالة الخطية $f$ حيث: $f(x) = -\\dfrac{3}{2}x$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب ترتيب النقطة $A$ من التمثيل البياني للدالة $f$ التي فاصلتها 2.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-KHATTIYA-ISHARA"
+        },
+        {
+          "value": "-4/3",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ترتيب $A$ هو صورة فاصلتها بالدالة $f$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $-\\dfrac{3}{2} \\times 2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(2) = -\\dfrac{3}{2} \\times 2 = -3$ ، إذن $A(2 ; -3)$ .",
+        "incorrect": "اضرب الفاصلة في المعامل، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$f(2) = -\\dfrac{3}{2} \\times 2 = -3$",
+          "إذن $A(2 ; -3)$ (اخترنا الفاصلة 2 لتبسيط الكسر)."
+        ],
+        "result": "A(2 ; -3)"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "مثّل بيانيا الدالة $f$ في معلم متعامد ومتجانس $(O, \\vec{i}, \\vec{j})$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التمثيل البياني لدالة خطية مستقيم يشمل المبدأ $O$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يكفي تعيين نقطة ثانية من التمثيل بحساب صورة عدد غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "تمثيل الدالة الخطية $f$ مستقيم يشمل المبدأ $O$ .",
+          "نعلّم $A(2 ; -3)$ ونرسم المستقيم $(OA)$ ، وهو ينزل من اليسار إلى اليمين لأن المعامل سالب."
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "النقطة $B$ من التمثيل البياني للدالة $f$ ترتيبها 6. احسب فاصلتها.",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-khatti_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "value": "-9",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "4",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "فاصلة $B$ هي العدد الذي صورته 6."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المعادلة $-\\dfrac{3}{2}x = 6$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 6 \\div \\left(-\\dfrac{3}{2}\\right) = -4$ ، إذن $B(-4 ; 6)$ .",
+        "incorrect": "الفاصلة هي العدد الذي صورته 6: اقسم الترتيب على المعامل."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 6$ معناه $-\\dfrac{3}{2}x = 6$",
+          "$x = 6 \\times \\left(-\\dfrac{2}{3}\\right) = -4$",
+          "إذن $B(-4 ; 6)$ ."
+        ],
+        "result": "B(-4 ; 6)"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

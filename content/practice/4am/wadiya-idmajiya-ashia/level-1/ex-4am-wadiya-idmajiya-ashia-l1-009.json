@@ -1,0 +1,79 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ashia-l1-009",
+  "lessonCode": "wadiya-idmajiya-ashia",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — أقصر طريق",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المتباينة المثلثية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ashia_P3",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "A و B′ نقطتان متمايزتان و M نقطة كيفية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "متى يكون $AM + MB'$ أصغر ما يمكن؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "عندما تكون M على القطعة $[AB']$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "عندما يكون $AM = MB'$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MAMAR-WASAT"
+        },
+        {
+          "id": "C",
+          "content": "عندما تكون M أقرب ما يمكن إلى A",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أقصر طريق بين نقطتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسلك من A إلى B′ مرورا بـ M."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "متى لا ينكسر هذا المسلك؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$AM + MB' \\geq AB'$ ، والمساواة فقط عندما تكون M على $[AB']$ .",
+        "incorrect": "المسلك المستقيم هو الأقصر."
+      },
+      "cognitiveDemand": "recall",
+      "difficulty": 1
+    }
+  ]
+}

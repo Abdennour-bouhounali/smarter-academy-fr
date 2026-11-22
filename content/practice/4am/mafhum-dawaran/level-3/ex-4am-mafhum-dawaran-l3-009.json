@@ -1,0 +1,65 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l3-009",
+  "lessonCode": "mafhum-dawaran",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — دورانان في نفس الاتجاه",
+    "estimatedMinutes": 2,
+    "tags": [
+      "صورة نقطة",
+      "زوايا"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mafhum-dawaran_P2",
+      "modelledOn": "ex-3"
+    }
+  },
+  "statement": {
+    "content": "E صورة M بالدوران الذي مركزه O وزاويته $110^\\circ$ في الاتجاه المباشر، و F صورة M بالدوران الذي مركزه O وزاويته $40^\\circ$ في الاتجاه المباشر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما هو قيس الزاوية $\\widehat{EOF}$ بالدرجات؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجات)",
+      "expectedAnswer": "70",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-JAM-ZAWAYA",
+          "value": "150"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "E و F على نفس الجهة من [OM)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الزاوية الصغرى داخل الكبرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الفرق بين الزاويتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{EOF} = 110^\\circ - 40^\\circ = 70^\\circ$ .",
+        "incorrect": "في نفس الاتجاه: الفرق."
+      },
+      "difficulty": 2
+    }
+  ]
+}

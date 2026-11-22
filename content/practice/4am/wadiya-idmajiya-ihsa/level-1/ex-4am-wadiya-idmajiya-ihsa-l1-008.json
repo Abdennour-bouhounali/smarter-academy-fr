@@ -1,0 +1,139 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ihsa-l1-008",
+  "lessonCode": "wadiya-idmajiya-ihsa",
+  "level": 1,
+  "metadata": {
+    "title": "أهداف فريق الحي: عدد المباريات والمتوسط",
+    "estimatedMinutes": 4,
+    "tags": [
+      "التكرار الكلي",
+      "المتوسط المتوازن"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ihsa_P2"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "يعطي الجدول الآتي عدد الأهداف التي سجّلها فريق الحي، المعروف بالتزامه بمواعيد التدريب، في مبارياته هذا الموسم:",
+    "table": {
+      "head": [
+        "عدد الأهداف",
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "rows": [
+        [
+          "عدد المباريات",
+          "4",
+          "6",
+          "3",
+          "2"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "كم مباراة لعبها الفريق هذا الموسم؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-IHSA-MADA-TAKRAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل مباراة تُعدّ مرة واحدة في السطر الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع التكرارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 + 6 + 3 + 2 = 15$ مباراة.",
+        "incorrect": "عدد المباريات هو مجموع التكرارات، لا مجموع الأهداف."
+      },
+      "solution": {
+        "lines": [
+          "$4 + 6 + 3 + 2 = 15$"
+        ],
+        "result": "15"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب متوسط عدد الأهداف في المباراة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة",
+      "expectedAnswer": "1,2",
+      "misconceptionSignatures": [
+        {
+          "value": "1,5",
+          "id": "MISC-IHSA-MUTAWASSIT-BILA-TARJIH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب العدد الإجمالي للأهداف: كل قيمة × تكرارها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم على عدد المباريات."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{0 \\times 4 + 1 \\times 6 + 2 \\times 3 + 3 \\times 2}{15} = 1{,}2$ .",
+        "incorrect": "المتوسط = مجموع (عدد الأهداف × عدد المباريات) ÷ عدد المباريات."
+      },
+      "solution": {
+        "lines": [
+          "$0 \\times 4 + 1 \\times 6 + 2 \\times 3 + 3 \\times 2 = 18$ هدفا.",
+          "$\\dfrac{18}{15} = 1{,}2$"
+        ],
+        "result": "1{,}2"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

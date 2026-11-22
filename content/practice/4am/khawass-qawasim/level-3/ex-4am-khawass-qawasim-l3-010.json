@@ -1,0 +1,172 @@
+{
+  "id": "ex-4am-khawass-qawasim-l3-010",
+  "lessonCode": "khawass-qawasim",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2024 — قارورات العصير",
+    "estimatedMinutes": 8,
+    "tags": [
+      "خاصية 1",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_khawass-qawasim_P1",
+      "modelledOn": "BEM 2024 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أنتج مصنع عصائر بسطيف، يحرص على نظافة منتجاته وجودتها، في يوم واحد 1386 قارورة عصير برتقال و 1078 قارورة عصير ليمون، ويريد تعبئة كل صنف على حدة في علب متماثلة تحتوي كلها على نفس العدد من القارورات، دون أن تبقى أي قارورة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "هل يمكن أن تحتوي كل علبة على 14 قارورة؟ على 12 قارورة؟ برّر إجابتك.",
+      "statement": "14 قارورة.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يجب أن يقسم عدد القارورات في العلبة كلا من 1386 و 1078."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أجرِ القسمتين $1386 \\div 14$ و $1078 \\div 14$."
+        }
+      ],
+      "feedback": {
+        "correct": "$1386 = 14 \\times 99$ و $1078 = 14 \\times 77$: يمكن أن تحتوي العلبة على 14 قارورة.",
+        "incorrect": "تحقّق من قابلية قسمة كلٍّ من 1386 و 1078 على 14."
+      },
+      "solution": {
+        "lines": [
+          "$1386 = 14 \\times 99$ و $1078 = 14 \\times 77$",
+          "14 قاسم مشترك للعددين، إذن يمكن ذلك."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "12 قارورة.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يجب أن يقسم عدد القارورات في العلبة كلا من 1386 و 1078."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أجرِ القسمة الإقليدية للعدد 1386 على 12."
+        }
+      ],
+      "feedback": {
+        "correct": "$1386 = 12 \\times 115 + 6$: لا يمكن أن تحتوي العلبة على 12 قارورة.",
+        "incorrect": "تحقّق من قابلية قسمة كلٍّ من 1386 و 1078 على 12."
+      },
+      "solution": {
+        "lines": [
+          "$1386 = 12 \\times 115 + 6$: الباقي غير معدوم.",
+          "12 لا يقسم 1386، إذن لا يمكن ذلك."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "في حالة علب من 14 قارورة، أوجد العدد الكلي للعلب دون حساب العدد الكلي للقارورات.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد العلب)",
+      "expectedAnswer": "176",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الكتابتين $1386 = 14 \\times 99$ و $1078 = 14 \\times 77$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرج 14 عاملًا مشتركًا: $14 \\times q + 14 \\times q' = 14 \\times (q + q')$."
+        }
+      ],
+      "feedback": {
+        "correct": "$1386 + 1078 = 14 \\times (99 + 77) = 14 \\times 176$.",
+        "incorrect": "القاسم المشترك لعددين يقسم مجموعهما: اكتب كلا من العددين على الشكل $14 \\times q$ ثم أخرج 14 عاملًا مشتركًا."
+      },
+      "solution": {
+        "lines": [
+          "$1386 + 1078 = 14 \\times 99 + 14 \\times 77$",
+          "$1386 + 1078 = 14 \\times (99 + 77)$",
+          "$1386 + 1078 = 14 \\times 176$ ، إذن 14 يقسم $1386 + 1078$."
+        ],
+        "result": "1386 + 1078 = 14 \\times 176"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

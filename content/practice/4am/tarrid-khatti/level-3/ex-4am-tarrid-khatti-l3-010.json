@@ -1,0 +1,130 @@
+{
+  "id": "ex-4am-tarrid-khatti-l3-010",
+  "lessonCode": "tarrid-khatti",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 34 (ص 75) — العرض الترويجي",
+    "estimatedMinutes": 7,
+    "tags": [
+      "تفسير النتيجة",
+      "وضعية غير تناسبية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-34",
+      "page": 75,
+      "section": "أتعمّق",
+      "number": 34,
+      "adaptedFrom": "ex-4am-tarrid-khatti-l3-010"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "قدّم تاجر العرض الترويجي التالي: تخفيض 10DA عن كل 1000DA كاملة من المشتريات. اشترى سليمان جهاز كمبيوتر لمراجعة دروسه بـ $48\\,000$ DA وقرص فلاش بـ 2400DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما هو المبلغ الذي دفعه سليمان؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "49900",
+      "misconceptionSignatures": [
+        {
+          "value": "49896",
+          "id": "MISC-TARRID-NAMUDHAJ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مبلغ المشتريات كلها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كم مرة يحتوي هذا المبلغ على 1000DA كاملة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$50\\,400 - 50 \\times 10 = 49\\,900$ DA.",
+        "incorrect": "التخفيض يُحسب عن كل 1000DA كاملة فقط من المبلغ الكلي."
+      },
+      "solution": {
+        "lines": [
+          "مبلغ المشتريات: $48\\,000 + 2400 = 50\\,400$",
+          "يحتوي على 50 ألفا كاملة: التخفيض $50 \\times 10 = 500$",
+          "المبلغ المدفوع: $50\\,400 - 500 = 49\\,900$ DA."
+        ],
+        "result": "49\\,900DA"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اشترى زبون أغراضا بـ 1999DA واشترى زبون آخر أغراضا بـ 1000DA. هل التخفيض متناسب مع مبلغ المشتريات؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-NAMUDHAJ"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب التخفيض في الحالتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في وضعية تناسبية، مبلغان مختلفان يعطيان تخفيضين مختلفين بالنسبة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "المبلغان مختلفان والتخفيض نفسه (10DA): التخفيض غير متناسب مع المبلغ.",
+        "incorrect": "قارن حاصلي قسمة التخفيض على المبلغ في الحالتين."
+      },
+      "solution": {
+        "lines": [
+          "$1999DA$ يحتوي على 1000DA كاملة مرة واحدة: التخفيض 10DA ، وكذلك $1000DA$ : التخفيض 10DA.",
+          "$\\dfrac{10}{1999} \\neq \\dfrac{10}{1000}$ ، إذن التخفيض غير متناسب مع مبلغ المشتريات."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

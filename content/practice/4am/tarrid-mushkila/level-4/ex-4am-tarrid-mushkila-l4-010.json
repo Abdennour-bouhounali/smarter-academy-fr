@@ -1,0 +1,266 @@
+{
+  "id": "ex-4am-tarrid-mushkila-l4-010",
+  "lessonCode": "tarrid-mushkila",
+  "level": 4,
+  "metadata": {
+    "title": "برنامج حساب ومتراجحة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "ترييض",
+      "برنامج حساب",
+      "متراجحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-mushkila_P1",
+      "modelledOn": "ex-37"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "إليك برنامج الحساب التالي:\n• اختر عددًا.\n• اطرح منه 4 .\n• اضرب الناتج في 3 .\nنسمّي $x$ العدد المختار."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عبّر بدلالة $x$ عن النتيجة المحصل عليها.",
+      "statement": "تُكتب النتيجة على الشكل $ax + b$ : أعط العدد $a$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طبّق البرنامج على $x$ خطوة خطوة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النتيجة هي $3(x - 4)$ : انشرها."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 3$ .",
+        "incorrect": "الضرب في 3 يشمل الناتج كله $x - 4$ ."
+      },
+      "solution": {
+        "lines": [
+          "بعد الطرح: $x - 4$",
+          "بعد الضرب: $3(x - 4) = 3x - 12$"
+        ],
+        "result": "3x - 12"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "أعط العدد $b$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (قد يكون سالبًا)",
+      "expectedAnswer": "-12",
+      "misconceptionSignatures": [
+        {
+          "value": "-4",
+          "id": "MISC-TARRID-DIF-MAJMU"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر $3(x - 4)$ : ما هو الحد الثابت؟"
+        }
+      ],
+      "feedback": {
+        "correct": "النتيجة $3x - 12$ .",
+        "incorrect": "الضرب في 3 يشمل العدد 4 أيضًا، مع إشارته."
+      },
+      "solution": {
+        "lines": [
+          "$3(x - 4) = 3x - 12$"
+        ],
+        "result": "3x - 12"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "نريد أن تكون النتيجة أكبر تمامًا من العدد المختار. ترجم ذلك بمتراجحة ثم حلّها.",
+      "statement": "حدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x < k$ أو $x \\leqslant k$ أو $x > k$ أو $x \\geqslant k$ : اكتب العدد $k$ فقط (عدد صحيح أو كسر a/b، قد يكون سالبًا)",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر، كما في حل معادلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إضافة عدد إلى الطرفين أو طرحه منهما لا تغيّر اتجاه المتباينة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحدّ هو العدد الذي يحقّق المعادلة المرفقة (نضع «=» مكان رمز المتباينة): اقسم في الأخير على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "حدّ الحلول هو $k = 6$ .",
+        "incorrect": "أعد الحل سطرًا سطرًا: العملية نفسها على الطرفين، ثم القسمة على معامل $x$ في الأخير."
+      },
+      "solution": {
+        "lines": [
+          "حدّ الحلول هو حلّ المعادلة المرفقة: $3x - 12 = x$",
+          "$3x - x = 12$",
+          "$2x = 12$",
+          "$x = \\dfrac{12}{2}$",
+          "إذن حدّ الحلول هو $6$ ."
+        ],
+        "result": "k = 6"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < 6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QALB-ZAID"
+        },
+        {
+          "id": "B",
+          "content": "$x \\leqslant 6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        },
+        {
+          "id": "C",
+          "content": "$x > 6$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$x \\geqslant 6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QAWS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارة معامل $x$ في آخر سطر قبل القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على عدد موجب تحافظ على الاتجاه، والقسمة على عدد سالب تغيّره."
+        }
+      ],
+      "feedback": {
+        "correct": "$x > 6$ .",
+        "incorrect": "تتبّع سطور الحل: الاتجاه يتغيّر فقط عند الضرب أو القسمة على عدد سالب، ونوع المتباينة (تامة أو غير تامة) لا يتغيّر أبدًا."
+      },
+      "solution": {
+        "lines": [
+          "$3x - 12 > x$",
+          "$3x - x > 12$",
+          "$2x > 12$",
+          "$\\dfrac{2x}{2} > \\dfrac{12}{2}$",
+          "إذن حلول المتراجحة هي كل قيم $x$ الأكبر تماما من $6$ .",
+          "قسمنا الطرفين في آخر خطوة على عدد موجب، فبقي اتجاه المتباينة ونوعها."
+        ],
+        "result": "x > 6"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "ما هو العدد الذي ينبغي اختياره لتكون النتيجة 21 ؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: العدد المختار",
+      "expectedAnswer": "11",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجعل عبارة النتيجة تساوي 21 ثم حلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$3x - 12 = 21$ تعطي $x = 11$ ، والتحقق: $3 \\times (11 - 4) = 21$ .",
+        "incorrect": "استعمل العبارة المنشورة للنتيجة ثم حلّ المعادلة."
+      },
+      "solution": {
+        "lines": [
+          "$3x - 12 = 21$",
+          "$3x = 33$",
+          "$x = 11$",
+          "التحقق: $3 \\times (11 - 4) = 21$ ."
+        ],
+        "result": "x = 11"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

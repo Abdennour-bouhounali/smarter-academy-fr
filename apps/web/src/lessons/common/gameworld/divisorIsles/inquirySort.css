@@ -1,0 +1,226 @@
+/* THE INVESTIGATION `sort` (InquirySort.jsx) — a hand of cards between two baskets, the card's two gaps as strips, and
+   the facts of the instrument he opened. It reuses the frame of the division screens (inquiry.css › .iq--div) and the
+   strips of `common`. Shapes are the brand blue; a plank that fills is green, what is left amber, as everywhere in this
+   world. SVG text is ≥ 18 units of a 1000-wide scene; HTML text keeps the 12 px floor of the forge's zoom. */
+.iq--sort {
+  grid-template-rows: auto auto auto minmax(0, 1fr) auto auto auto;
+}
+
+/* the tray: basket · the card and the hand · basket */
+.iqs-tray {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(9rem, auto) minmax(0, 1fr);
+  align-items: stretch;
+  gap: 0.8rem;
+}
+.iqs-basket {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.35rem;
+  min-width: 0;
+  min-height: 6.2rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 1rem;
+  border: 2px dashed rgba(159, 216, 255, 0.45);
+  background: rgba(47, 125, 246, 0.1);
+  font: inherit;
+  cursor: default;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+.iqs-basket.is-open {
+  cursor: pointer;
+}
+.iqs-basket.is-open:hover,
+.iqs-basket.is-over {
+  border-style: solid;
+  border-color: #7dfcff;
+  background: rgba(125, 252, 255, 0.16);
+}
+.iqs-basket.is-said {
+  border-color: #fbbf24;
+  animation: iq-shake 0.35s;
+}
+.iqs-basket__name {
+  font-size: max(var(--di-min-font, 12px), 0.95rem);
+  font-weight: 900;
+  line-height: 1.35;
+  text-align: center;
+}
+.rf-root .iqs-basket__name {
+  color: #9fd8ff;
+}
+.iqs-basket__cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+/* a card, small: in a basket or still in the hand */
+.iqs-mini {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2rem;
+  padding: 0.05rem 0.45rem;
+  border-radius: 0.55rem;
+  border: 1.5px solid #2f7df6;
+  background: rgba(47, 125, 246, 0.22);
+  font: inherit;
+  font-size: max(var(--di-min-font, 12px), 0.95rem);
+  font-weight: 800;
+  white-space: nowrap;
+  animation: iq-drop 0.3s ease-out backwards;
+}
+.rf-root .iqs-mini {
+  color: #e8f6ff;
+}
+/* a card the world moved to its basket */
+.iqs-mini.is-moved {
+  border-style: dashed;
+  border-color: #fbbf24;
+}
+.iqs-mini.is-hand {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.iqs-mini.is-hand[aria-disabled='true'] {
+  cursor: default;
+  opacity: 0.45;
+}
+
+/* the card on the table */
+.iqs-hand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+}
+.iqs-card {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 8.5rem;
+  min-height: 3.6rem;
+  padding: 0.2rem 1rem;
+  border-radius: 0.9rem;
+  border: 2.5px solid #7dfcff;
+  background: rgba(47, 125, 246, 0.35);
+  box-shadow: 0 0.4rem 1rem rgba(2, 10, 30, 0.45);
+  font-size: max(var(--di-min-font, 12px), 1.45rem);
+  font-weight: 900;
+  white-space: nowrap;
+  touch-action: none;
+  user-select: none;
+}
+.rf-root .iqs-card {
+  color: #e8f6ff;
+}
+.iqs-card.is-free {
+  cursor: grab;
+}
+.iqs-card.is-held {
+  z-index: 5;
+  cursor: grabbing;
+  box-shadow: 0 0.8rem 1.6rem rgba(2, 10, 30, 0.6);
+}
+.iqs-rest {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+  max-width: 16rem;
+}
+.iqs-void {
+  min-height: 0;
+}
+
+/* the panel of facts (SVG) */
+.iq-scene text.iqs-label {
+  font-size: 19px;
+  fill: #9fd8ff;
+  text-anchor: start;
+}
+.iqs-chip rect {
+  fill: rgba(47, 125, 246, 0.2);
+  stroke: #2f7df6;
+  stroke-width: 2;
+}
+.iq-scene .iqs-chip text {
+  font-size: 20px;
+  fill: #cfe9ff;
+}
+.iqs-chip {
+  animation: iq-drop 0.3s ease-out backwards;
+}
+.iqs-chip.is-common rect,
+.iqs-chip.is-fills rect {
+  fill: rgba(141, 255, 176, 0.2);
+  stroke: #8dffb0;
+}
+.iq-scene .iqs-chip.is-common text,
+.iq-scene .iqs-chip.is-fills text {
+  fill: #8dffb0;
+}
+.iqs-chip.is-no rect {
+  stroke: #7dfcff;
+}
+.iqs-chip.is-wait,
+.iqs-chip.is-untried {
+  opacity: 0.4;
+}
+.iqs-chip.is-untried rect {
+  stroke-dasharray: 4 4;
+}
+.iq-scene .iqs-chip text.iqs-under {
+  font-size: 18px;
+  fill: #fbbf24;
+}
+.iq-scene .iqs-chip text.iqs-under.is-zero {
+  fill: #8dffb0;
+}
+.iqs-tag {
+  fill: #2f7df6;
+  stroke: #7dfcff;
+  stroke-width: 2;
+}
+.iq-scene text.iqs-tagnum {
+  font-size: 20px;
+  fill: #e8f6ff;
+}
+.iq-scene text.iqs-row {
+  font-size: 20px;
+  fill: #e8f6ff;
+  animation: iq-drop 0.3s ease-out backwards;
+}
+.iqs-row .is-rest {
+  fill: #fbbf24;
+}
+.iqs-row .is-zero {
+  fill: #8dffb0;
+}
+
+@media (max-height: 500px) {
+  .iqs-basket {
+    min-height: 4.6rem;
+    padding: 0.25rem 0.5rem;
+  }
+  .iqs-card {
+    min-height: 2.8rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .iqs-mini,
+  .iqs-chip,
+  .iq-scene text.iqs-row,
+  .iqs-basket.is-said {
+    animation: none;
+  }
+}

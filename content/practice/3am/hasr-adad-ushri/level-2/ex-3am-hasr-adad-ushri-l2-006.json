@@ -1,0 +1,322 @@
+{
+  "id": "ex-3am-hasr-adad-ushri-l2-006",
+  "lessonCode": "hasr-adad-ushri",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — هل يمكن أن يكون x ؟",
+    "estimatedMinutes": 8,
+    "tags": [
+      "تدوير",
+      "حصر",
+      "صحيح أم خطأ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "العدد $x$ مدوّره إلى $0{,}1$ هو $12{,}4$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "هل يمكن أن يكون $x=12{,}35$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-HALF-DOWN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى الرقم الذي يلي الرتبة المطلوبة مباشرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إن كان هذا الرقم خمسة أو أكبر زدنا الرقم الأخير بواحد، وإلاّ تركناه كما هو."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لحصر عدد علمنا مدوّره: ارجع نصف وحدة من الرتبة إلى الخلف وتقدّم نصف وحدة إلى الأمام؛ الطرف الأدنى مشمول والطرف الأعلى مستبعد."
+        }
+      ],
+      "feedback": {
+        "correct": "إذن نعم.",
+        "incorrect": "راجع التدوير: انظر إلى الرقم الذي يلي الرتبة المطلوبة مباشرة؛ ولحصر عدد علمنا مدوّره نرجع نصف وحدة ونتقدّم نصف وحدة، والطرف الأعلى مستبعد."
+      },
+      "solution": {
+        "lines": [
+          "الرقم الذي يلي رتبة $0{,}1$ في $12{,}35$ هو $5$ ، فنزيد الرقم $3$ بواحد: $12{,}4$ .",
+          "إذن نعم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل يمكن أن يكون $x=12{,}45$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-UPPER-INCLUDED"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى الرقم الذي يلي الرتبة المطلوبة مباشرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إن كان هذا الرقم خمسة أو أكبر زدنا الرقم الأخير بواحد، وإلاّ تركناه كما هو."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لحصر عدد علمنا مدوّره: ارجع نصف وحدة من الرتبة إلى الخلف وتقدّم نصف وحدة إلى الأمام؛ الطرف الأدنى مشمول والطرف الأعلى مستبعد."
+        }
+      ],
+      "feedback": {
+        "correct": "إذن لا.",
+        "incorrect": "راجع التدوير: انظر إلى الرقم الذي يلي الرتبة المطلوبة مباشرة؛ ولحصر عدد علمنا مدوّره نرجع نصف وحدة ونتقدّم نصف وحدة، والطرف الأعلى مستبعد."
+      },
+      "solution": {
+        "lines": [
+          "الرقم الذي يلي رتبة $0{,}1$ في $12{,}45$ هو $5$ ، فنزيد الرقم $4$ بواحد: $12{,}5$ .",
+          "إذن لا."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "هل يمكن أن يكون $x=12{,}449$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-CENTER-EXACT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى الرقم الذي يلي الرتبة المطلوبة مباشرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إن كان هذا الرقم خمسة أو أكبر زدنا الرقم الأخير بواحد، وإلاّ تركناه كما هو."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لحصر عدد علمنا مدوّره: ارجع نصف وحدة من الرتبة إلى الخلف وتقدّم نصف وحدة إلى الأمام؛ الطرف الأدنى مشمول والطرف الأعلى مستبعد."
+        }
+      ],
+      "feedback": {
+        "correct": "إذن نعم.",
+        "incorrect": "راجع التدوير: انظر إلى الرقم الذي يلي الرتبة المطلوبة مباشرة؛ ولحصر عدد علمنا مدوّره نرجع نصف وحدة ونتقدّم نصف وحدة، والطرف الأعلى مستبعد."
+      },
+      "solution": {
+        "lines": [
+          "الرقم الذي يلي رتبة $0{,}1$ في $12{,}449$ هو $4$ ، فنترك الرقم $4$ : $12{,}4$ .",
+          "إذن نعم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "هل يمكن أن يكون $x=12{,}5$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-WIDTH"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى الرقم الذي يلي الرتبة المطلوبة مباشرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إن كان هذا الرقم خمسة أو أكبر زدنا الرقم الأخير بواحد، وإلاّ تركناه كما هو."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لحصر عدد علمنا مدوّره: ارجع نصف وحدة من الرتبة إلى الخلف وتقدّم نصف وحدة إلى الأمام؛ الطرف الأدنى مشمول والطرف الأعلى مستبعد."
+        }
+      ],
+      "feedback": {
+        "correct": "إذن لا.",
+        "incorrect": "راجع التدوير: انظر إلى الرقم الذي يلي الرتبة المطلوبة مباشرة؛ ولحصر عدد علمنا مدوّره نرجع نصف وحدة ونتقدّم نصف وحدة، والطرف الأعلى مستبعد."
+      },
+      "solution": {
+        "lines": [
+          "$12{,}5$ عدد من رتبة $0{,}1$ ومدوّره هو نفسه $12{,}5$ ، لا $12{,}4$ .",
+          "إذن لا."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أيّ حصر يضمّ كلّ الأعداد التي مدوّرها $12{,}4$ ولا يضمّ غيرها؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$12{,}35\\le x<12{,}45$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$12{,}3<x<12{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-WIDTH"
+        },
+        {
+          "id": "C",
+          "content": "$12{,}4\\le x<12{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-TRUNC"
+        },
+        {
+          "id": "D",
+          "content": "$12{,}35\\le x\\le 12{,}45$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-UPPER-INCLUDED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى الرقم الذي يلي الرتبة المطلوبة مباشرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إن كان هذا الرقم خمسة أو أكبر زدنا الرقم الأخير بواحد، وإلاّ تركناه كما هو."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لحصر عدد علمنا مدوّره: ارجع نصف وحدة من الرتبة إلى الخلف وتقدّم نصف وحدة إلى الأمام؛ الطرف الأدنى مشمول والطرف الأعلى مستبعد."
+        }
+      ],
+      "feedback": {
+        "correct": "$12{,}35\\le x<12{,}45$ .",
+        "incorrect": "راجع التدوير: انظر إلى الرقم الذي يلي الرتبة المطلوبة مباشرة؛ ولحصر عدد علمنا مدوّره نرجع نصف وحدة ونتقدّم نصف وحدة، والطرف الأعلى مستبعد."
+      },
+      "solution": {
+        "lines": [
+          "نرجع $0{,}05$ ونتقدّم $0{,}05$ : $12{,}35$ و $12{,}45$ .",
+          "$12{,}35\\le x<12{,}45$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

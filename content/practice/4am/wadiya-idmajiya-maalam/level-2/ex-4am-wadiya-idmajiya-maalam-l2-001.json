@@ -1,0 +1,103 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-maalam-l2-001",
+  "lessonCode": "wadiya-idmajiya-maalam",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — المسافة AB على الشكل",
+    "estimatedMinutes": 3,
+    "tags": [
+      "المسافة بين نقطتين",
+      "تبسيط جذر"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 148,
+      "section": "الوضعيات",
+      "number": 4
+    }
+  },
+  "statement": {
+    "content": "على الشكل المقابل (معلم متعامد ومتجانس على ورقة مرصوفة) النقطتان A و B.",
+    "figure": {
+      "points": {
+        "A": [
+          3,
+          3
+        ],
+        "B": [
+          -3,
+          -3
+        ]
+      },
+      "labels": {
+        "A": "ne",
+        "B": "sw"
+      },
+      "grid": true,
+      "axes": true,
+      "ariaLabel": "معلم متعامد ومتجانس على ورقة مرصوفة: النقطة A أعلى اليمين والنقطة B أسفل اليسار"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المسافة AB تساوي (قد تصحّ أكثر من إجابة في الكتاب: اختر الجواب الكامل):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\sqrt{72}$ فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SHAKL-JIDHR"
+        },
+        {
+          "id": "B",
+          "content": "$6\\sqrt{2}$ و $\\sqrt{72}$ (العددان متساويان)",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$9$ فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-QIMA-MUQARRABA"
+        },
+        {
+          "id": "D",
+          "content": "$6\\sqrt{2}$ فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SHAKL-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ $A(3\\,;\\,3)$ و $B(-3\\,;\\,-3)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\overrightarrow{AB}\\begin{pmatrix} -6 \\\\ -6 \\end{pmatrix}$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\sqrt{72} = \\sqrt{36 \\times 2}$"
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = \\sqrt{36 + 36} = \\sqrt{72} = 6\\sqrt{2}$ : الكتابتان لنفس العدد، و $9$ خاطئة ( $6\\sqrt{2} \\approx 8{,}49$ ).",
+        "incorrect": "احسب $AB$ ثم بسّط الجذر: قد يُكتب نفس العدد بطريقتين."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 2
+    }
+  ]
+}

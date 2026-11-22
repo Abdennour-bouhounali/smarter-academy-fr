@@ -1,0 +1,114 @@
+/* ───────── NO SCROLLING ANYWHERE: every panel fits its content (Fit.jsx), nothing scrolls, nothing is cut ───────── */
+.di-fitbox {
+  overflow: hidden;
+  min-height: 0;
+}
+.di-fitbox__in {
+  display: flow-root;
+}
+.di-card {
+  overflow: hidden;
+}
+.di-card > .di-fitbox {
+  width: 100%;
+}
+.di-kpanel__body {
+  overflow: hidden;
+}
+.di-trainer {
+  height: auto;
+}
+.di-step {
+  max-height: calc(100vh - 20rem);
+}
+.di-step > .di-fitbox {
+  width: 100%;
+}
+.di-step__in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+/* while training, the card's head steps back: the question needs the room */
+.di-kpanel__head.is-compact {
+  align-items: center;
+}
+.di-kpanel__head.is-compact p {
+  display: none;
+}
+.di-jcard .di-kpanel__head.is-compact > span,
+.di-kpanel__head.is-compact > span {
+  width: 2.6rem;
+  height: 2.6rem;
+  font-size: 1.4rem;
+  border-radius: 0.8rem;
+}
+.di-jcard .di-kpanel__head.is-compact h3 {
+  font-size: 1.35rem;
+}
+.di-jcard .di-kpanel__head.is-compact small {
+  font-size: 0.85rem;
+}
+.di-kpanel__head.is-compact h3 {
+  font-size: 1.1rem;
+}
+
+/* the trainer once the answer is final: a one-line recap, the correction readable, the two buttons on one row */
+.di-sheet--done {
+  gap: 0.1rem;
+  padding: 0.5rem 1rem 0.6rem;
+}
+.di-sheet--done .di-sheet__q {
+  font-size: 0.98rem;
+}
+.di-sheet__mine {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 2.05rem;
+}
+.di-sheet__mine small {
+  padding: 0 0.5rem;
+  border-radius: 0.3rem;
+  background: #fde68a;
+  font-size: 0.8rem;
+  margin-inline-end: 0.3rem;
+}
+.di-trainer__end {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.di-jcard .di-trainer__fb {
+  font-size: 1.15rem;
+}
+.di-jcard .di-tip {
+  font-size: 1.02rem;
+}
+.di-jcard .di-sheet__q {
+  font-size: 1.12rem;
+}
+.di-jcard .di-tap__say {
+  font-size: 2rem;
+}
+.di-jcard .di-review__q {
+  font-size: 1.2rem;
+}
+.di-jcard .di-review__a,
+.di-jcard .di-review__fix {
+  font-size: 1.05rem;
+}
+
+/* the map's side panel, on its memo / quiz / training tabs: more room for the panel, tighter questions */
+.di-kpanel .di-quiz {
+  gap: 0.45rem;
+}
+.di-kpanel .di-quiz__q button {
+  padding: 0.3rem 0.7rem;
+}
+.di-kpanel .di-quiz__q > div {
+  gap: 0.25rem;
+}

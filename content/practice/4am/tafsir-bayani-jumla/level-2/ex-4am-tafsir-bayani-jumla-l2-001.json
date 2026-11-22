@@ -1,0 +1,190 @@
+{
+  "id": "ex-4am-tafsir-bayani-jumla-l2-001",
+  "lessonCode": "tafsir-bayani-jumla",
+  "level": 2,
+  "metadata": {
+    "title": "نشاط 5 — شرط المبلغ",
+    "estimatedMinutes": 5,
+    "tags": [
+      "y = ax + b",
+      "نشاط 5"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-5",
+      "page": 79,
+      "section": "أنشطة",
+      "number": 5
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "في صندوق القسم الذي يحفظه أمين الصندوق بأمانة قطع نقدية من فئتي 100DA و 200DA مبلغها 5000DA. نسمّي $x$ عدد قطع 100DA و $y$ عدد قطع 200DA، فيُترجم المبلغ بالمعادلة:",
+    "formulas": [
+      "100x + 200y = 5000"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "اكتب هذه المعادلة على الشكل $y = ax + b$ .",
+      "statement": "أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-0,5",
+      "misconceptionSignatures": [
+        {
+          "value": "0,5",
+          "id": "MISC-JUMLA-ISHARA-Y"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعادلة من الشكل $ax + by = c$ : نريد أن يبقى $y$ وحده في طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل حدّ $x$ إلى الطرف الثاني مع تغيير إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم اقسم كل الحدود على معامل $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = -0{,}5$ : معامل $x$ بعد عزل $y$ .",
+        "incorrect": "انقل حدّ $x$ بتغيير إشارته، ثم اقسم الطرفين على معامل $y$ (بإشارته)."
+      },
+      "solution": {
+        "lines": [
+          "$100x + 200y = 5000$",
+          "$200y = -100x + 5000$",
+          "نقسم كل الحدود على $200$ :",
+          "$y = -0{,}5x + 25$",
+          "إذن: $a = -0{,}5$ و $b = 25$ ."
+        ],
+        "result": "y = -0{,}5x + 25"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "25",
+      "misconceptionSignatures": [
+        {
+          "value": "-25",
+          "id": "MISC-JUMLA-ISHARA-Y"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعادلة من الشكل $ax + by = c$ : نريد أن يبقى $y$ وحده في طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $b$ هو الحد الذي لا يحوي $x$ بعد عزل $y$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم اقسم كل الحدود على معامل $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$y = -0{,}5x + 25$ .",
+        "incorrect": "العدد $b$ هو الطرف الثاني مقسوما على معامل $y$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$100x + 200y = 5000$",
+          "$200y = -100x + 5000$",
+          "نقسم كل الحدود على $200$ :",
+          "$y = -0{,}5x + 25$",
+          "إذن: $a = -0{,}5$ و $b = 25$ ."
+        ],
+        "result": "y = -0{,}5x + 25"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل النقطة $E(36 ; 7)$ تنتمي إلى مستقيم هذه المعادلة؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-MUADALA-WAHIDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نقطة تنتمي إلى مستقيم إذا حققت إحداثياها معادلته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $x$ بالفاصلة و $y$ بالترتيب ثم قارن بالطرف الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "بالتعويض في المعادلة.",
+        "incorrect": "عوّض $x$ بالعدد الأول من الثنائية و $y$ بالعدد الثاني، ثم قارن بالطرف الثاني."
+      },
+      "solution": {
+        "lines": [
+          "$100 \\times 36 + 200 \\times 7 = 5000$",
+          "النقطة تحقق المعادلة $(100x + 200y = 5000)$ ، إذن فهي تنتمي إلى مستقيمها."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

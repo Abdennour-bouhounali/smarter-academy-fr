@@ -1,0 +1,129 @@
+{
+  "id": "ex-4am-mada-wasit-mutawassit-l1-002",
+  "lessonCode": "mada-wasit-mutawassit",
+  "level": 1,
+  "metadata": {
+    "title": "متوسط أربعة أعداد نسبية",
+    "estimatedMinutes": 4,
+    "tags": [
+      "المتوسط",
+      "المدى"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "prep",
+      "page": 91,
+      "section": "أستعدّ",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "لتكن السلسلة الإحصائية: $3$ ، $-3$ ، $4$ ، $-2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب متوسط هذه السلسلة.",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة العشرية إن لزم)",
+      "expectedAnswer": "0,5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المتوسط هو مجموع القيم مقسوما على عددها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع كل قيم السلسلة، ثم عُدّ هذه القيم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اقسم المجموع على عدد القيم (التكرار الكلي)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2}{4} = 0{,}5$ .",
+        "incorrect": "اجمع كل القيم ثم اقسم المجموع على عدد القيم؛ تأكّد من أنك لم تنس أي قيمة."
+      },
+      "solution": {
+        "lines": [
+          "مجموع القيم:",
+          "$3 + (-3) + 4 + (-2) = 2$",
+          "عدد القيم: 4",
+          "$m = \\dfrac{2}{4} = 0{,}5$"
+        ],
+        "result": "m = 0{,}5"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب مدى هذه السلسلة.",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة العشرية إن لزم)",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-IHSA-MADA-AKBAR-QIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المدى هو الفرق بين أكبر قيمة وأصغر قيمة في السلسلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن أكبر قيمة وأصغر قيمة من قيم السلسلة (لا من التكرارات)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح أصغر قيمة من أكبر قيمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 - (-3) = 7$ .",
+        "incorrect": "المدى فرق بين قيمتين من قيم السلسلة: أكبر قيمة ناقص أصغر قيمة، ولا تُستعمل التكرارات."
+      },
+      "solution": {
+        "lines": [
+          "أكبر قيمة: 4 ، وأصغر قيمة: $-3$",
+          "$4 - (-3) = 7$"
+        ],
+        "result": "7"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "id": "ex-4am-muntasaf-masafa-l3-003",
+  "lessonCode": "muntasaf-masafa",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 16 — نقطتان ودائرة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "المسافة",
+      "دائرة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-16",
+      "page": 147,
+      "section": "إحداثيتا منتصف قطعة - المسافة بين نقطتين",
+      "number": 16
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 147): (𝒞) الدائرة التي مركزها O مبدأ المعلم ونصف قطرها $\\sqrt{2}$ ، و $A(\\sqrt{2}\\,;\\,0)$ و $B(\\sqrt{2}\\,;\\,\\sqrt{2})$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "هل A تنتمي إلى (𝒞)؟",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم: $OA = \\sqrt{(\\sqrt{2})^2 + 0^2} = \\sqrt{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا: $OA = 2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-NASI"
+        },
+        {
+          "id": "C",
+          "content": "لا: $OA = 2\\sqrt{2}$ وهو قطر الدائرة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-DAIRA-QUTR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الفرقين: فرق الفاصلتين وفرق الترتيبين (النهاية ناقص المبدأ)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ربّع كل فرق ثم اجمع المربعين: هذا مربع المسافة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خذ الجذر التربيعي في الأخير، وبسّطه إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$OA^2 = 2 = r^2$ : A على الدائرة.",
+        "incorrect": "قارن OA بنصف القطر $\\sqrt{2}$ ."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "هل B تنتمي إلى (𝒞)؟",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا: $OB = \\sqrt{2 + 2} = 2$ و $2 \\neq \\sqrt{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم: $OB = \\sqrt{2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-TARBI"
+        },
+        {
+          "id": "C",
+          "content": "نعم: $OB = 2\\sqrt{2}$ وهو قطر الدائرة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-DAIRA-QUTR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الفرقين: فرق الفاصلتين وفرق الترتيبين (النهاية ناقص المبدأ)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ربّع كل فرق ثم اجمع المربعين: هذا مربع المسافة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خذ الجذر التربيعي في الأخير، وبسّطه إن أمكن."
+        }
+      ],
+      "feedback": {
+        "correct": "$OB^2 = (\\sqrt{2})^2 + (\\sqrt{2})^2 = 4$ ، فـ $OB = 2 \\neq \\sqrt{2}$ .",
+        "incorrect": "ربّع كل إحداثية: $(\\sqrt{2})^2 = 2$ ."
+      }
+    }
+  ]
+}

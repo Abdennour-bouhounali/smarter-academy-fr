@@ -1,0 +1,145 @@
+/* THE INVESTIGATION `summit` (InquirySummit.jsx) — two strips, the line of lengths, the planks of the shorter gap from
+   the longest down. It reuses the frame of the division screens (inquiry.css › .iq--div) and the strips of `common`.
+   Shapes are the brand blue; a plank that fills both gaps is green, what is left amber, the crowned plank gold — as
+   everywhere in this world. SVG text is ≥ 18 units of a 1000-wide scene; HTML text keeps the 12 px floor. */
+.iq--summit {
+  grid-template-rows: auto auto minmax(0, 1fr) auto auto auto auto auto;
+}
+
+/* the line of lengths */
+.iq-sum-line {
+  stroke: #2f7df6;
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+.iq-sum-line.is-tail {
+  stroke: rgba(159, 216, 255, 0.45);
+  stroke-width: 2.5;
+  stroke-dasharray: 6 6;
+}
+.iq-scene text.iq-sum-linelabel {
+  font-size: 18px;
+  fill: #9fd8ff;
+  text-anchor: start;
+}
+.iq-scene text.iq-sum-end {
+  font-size: 18px;
+  fill: #9fd8ff;
+}
+.iq-sum-mark {
+  transform-box: fill-box;
+  animation: iq-drop 0.3s ease-out backwards;
+}
+.iq-sum-mark line {
+  stroke-width: 3;
+}
+.iq-sum-mark circle {
+  stroke-width: 2;
+}
+.iq-scene .iq-sum-mark text {
+  font-size: 19px;
+}
+/* both gaps filled */
+.iq-sum-mark.is-both line,
+.iq-sum-mark.is-both circle {
+  stroke: #8dffb0;
+  fill: #8dffb0;
+}
+.iq-scene .iq-sum-mark.is-both text {
+  fill: #8dffb0;
+}
+/* the gap a only, the gap b only */
+.iq-sum-mark.is-a line,
+.iq-sum-mark.is-a circle {
+  stroke: #7dfcff;
+  fill: #2f7df6;
+}
+.iq-sum-mark.is-b line,
+.iq-sum-mark.is-b circle {
+  stroke: #2f7df6;
+  fill: #7dfcff;
+}
+.iq-scene .iq-sum-mark.is-a text,
+.iq-scene .iq-sum-mark.is-b text {
+  fill: #cfe9ff;
+}
+/* neither */
+.iq-sum-mark.is-none line,
+.iq-sum-mark.is-none circle {
+  stroke: rgba(159, 216, 255, 0.55);
+  fill: rgba(8, 20, 52, 0.9);
+}
+.iq-scene .iq-sum-mark.is-none text {
+  fill: rgba(159, 216, 255, 0.75);
+}
+/* the crowned plank */
+.iq-sum-mark.is-crown line,
+.iq-sum-mark.is-crown circle {
+  stroke: #ffe2a8;
+  fill: #fbbf24;
+}
+.iq-scene .iq-sum-mark.is-crown text {
+  fill: #fbbf24;
+  font-size: 22px;
+}
+/* the best plank so far (fills both, the longest he has seen) */
+.iq-sum-best {
+  fill: none;
+  stroke: #e8f6ff;
+  stroke-width: 2;
+  stroke-dasharray: 4 3;
+}
+
+/* the planks of the shorter gap, from the longest down */
+.iq-sum-chips {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.7rem;
+}
+.iq-sum-chips small {
+  font-size: max(var(--di-min-font, 12px), 0.95rem);
+  font-weight: 800;
+}
+.rf-root .iq-sum-chips small {
+  color: #9fd8ff;
+}
+.iq-sum-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  font-size: max(var(--di-min-font, 12px), 1.05rem);
+}
+.iq-sum-chip.is-now {
+  border-color: #7dfcff;
+  background: rgba(125, 252, 255, 0.2);
+  animation: iq-pulse 1.1s ease-in-out infinite;
+}
+.iq-sum-chip.is-no,
+.iq-sum-chip.is-shorter {
+  opacity: 0.5;
+}
+.iq-sum-chip.is-no {
+  text-decoration: line-through;
+}
+.iq-sum-chip.is-crown {
+  background: #fbbf24;
+  border-color: #ffe2a8;
+}
+.rf-root .iq-sum-chip.is-crown {
+  color: #06203f;
+}
+
+@media (max-height: 500px) {
+  .iq-sum-chips {
+    gap: 0.15rem 0.5rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .iq-sum-mark,
+  .iq-sum-chip.is-now {
+    animation: none;
+  }
+}

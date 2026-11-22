@@ -1,0 +1,162 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l2-004",
+  "lessonCode": "mana-jam-tarh",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مشتريات هدى",
+    "estimatedMinutes": 4,
+    "tags": [
+      "هل يكفي المبلغ",
+      "جمع",
+      "طرح"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تملك هدى ورقة نقدية من فئة 1000 دج. تريد شراء كتاب للمطالعة بـ 685 دج وقلم بـ 340 دج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب ثمن المشتريات.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "1025",
+      "misconceptionSignatures": [
+        {
+          "value": "345",
+          "id": "MISC-JAMTARH-MAJMU-FARQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثمن المشتريات هو الكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع ثمن الكتاب وثمن القلم."
+        }
+      ],
+      "feedback": {
+        "correct": "$685 + 340 = 1025$ دج.",
+        "incorrect": "ثمن المشتريات يضمّ ثمن الكتاب وثمن القلم معًا."
+      },
+      "solution": {
+        "lines": [
+          "$685 + 340 = 1025$"
+        ],
+        "result": "1025 \\text{ DA}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل يكفيها المبلغ الذي تملكه؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-JUZ-NAQIS"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن ثمن المشتريات بالمبلغ الذي تملكه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تنسَ أيّ ثمن من الأثمان."
+        }
+      ],
+      "feedback": {
+        "correct": "$1025 > 1000$: المبلغ لا يكفي.",
+        "incorrect": "احسب ثمن الكتاب والقلم معًا، ثم قارنه بـ 1000 دج."
+      },
+      "solution": {
+        "lines": [
+          "ثمن المشتريات 1025 دج.",
+          "$1025 > 1000$ ، إذن المبلغ لا يكفيها."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كم ينقصها لتشتري الكتاب والقلم معًا؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "25",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما ينقصها + ما تملكه = ثمن المشتريات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المجهول جزء: نطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$1025 - 1000 = 25$ دج.",
+        "incorrect": "ثمن المشتريات هو الكل، وما تملكه جزء منه: ابحث عن الجزء الآخر."
+      },
+      "solution": {
+        "lines": [
+          "$1025 - 1000 = 25$"
+        ],
+        "result": "25 \\text{ DA}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

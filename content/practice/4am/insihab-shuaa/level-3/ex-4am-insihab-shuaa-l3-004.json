@@ -1,0 +1,207 @@
+{
+  "id": "ex-4am-insihab-shuaa-l3-004",
+  "lessonCode": "insihab-shuaa",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 4 — الأشعة المساوية لـ CM",
+    "estimatedMinutes": 2,
+    "tags": [
+      "تساوي شعاعين"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-4",
+      "page": 134,
+      "section": "الأشعة والمساواة الشعاعية",
+      "number": 4
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 134): لاحظ الشكل (شجرة الصنوبر). صحّحت المنصّة خطأً مطبعيًا: الكتاب يطلب 6 أشعة ولا يوجد بين النقط المسمّاة إلا خمسة.",
+    "figure": {
+      "points": {
+        "O": [
+          3,
+          5
+        ],
+        "A": [
+          0,
+          4
+        ],
+        "M": [
+          2,
+          4
+        ],
+        "N": [
+          4,
+          4
+        ],
+        "B": [
+          6,
+          4
+        ],
+        "C": [
+          0,
+          3
+        ],
+        "P": [
+          2,
+          3
+        ],
+        "Q": [
+          4,
+          3
+        ],
+        "D": [
+          6,
+          3
+        ],
+        "E": [
+          0,
+          2
+        ],
+        "R": [
+          2,
+          2
+        ],
+        "S": [
+          4,
+          2
+        ],
+        "F": [
+          6,
+          2
+        ],
+        "H": [
+          2,
+          0
+        ],
+        "K": [
+          4,
+          0
+        ]
+      },
+      "grid": true,
+      "segments": [
+        [
+          "O",
+          "A"
+        ],
+        [
+          "O",
+          "B"
+        ],
+        [
+          "A",
+          "M"
+        ],
+        [
+          "N",
+          "B"
+        ],
+        [
+          "M",
+          "C"
+        ],
+        [
+          "N",
+          "D"
+        ],
+        [
+          "C",
+          "P"
+        ],
+        [
+          "Q",
+          "D"
+        ],
+        [
+          "P",
+          "E"
+        ],
+        [
+          "Q",
+          "F"
+        ],
+        [
+          "E",
+          "R"
+        ],
+        [
+          "S",
+          "F"
+        ],
+        [
+          "R",
+          "H"
+        ],
+        [
+          "H",
+          "K"
+        ],
+        [
+          "K",
+          "S"
+        ]
+      ],
+      "labels": {
+        "O": "n",
+        "A": "w",
+        "C": "w",
+        "E": "w",
+        "B": "e",
+        "D": "e",
+        "F": "e",
+        "H": "s",
+        "K": "s",
+        "R": "s",
+        "S": "s"
+      },
+      "ariaLabel": "شجرة صنوبر على ورقة مرصوفة: القمة O، الفروع الأفقية AM و NB و CP و QD و ER و SF، والجذع RHKS",
+      "maxWidth": 520
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "كم شعاعا مساويا للشعاع $\\overrightarrow{CM}$ يمكن رسمه بين النقط المسمّاة (دون $\\overrightarrow{CM}$ نفسه)؟",
+      "learningPoints": [
+        {
+          "code": "4am_insihab-shuaa_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن كل الأسهم التي لها نفس الحركة: نفس العدّ أفقيا وشاقوليا ونفس الجهة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انطلق من كل نقطة وتحقّق هل النقطة التي تصل إليها بنفس الحركة مسمّاة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحسب السهم المعطى نفسه، ولا الأسهم ذات الاتجاه المعاكس."
+        }
+      ],
+      "feedback": {
+        "correct": "الحركة: مربعان يمينا ومربع نحو الأعلى. الأشعة: $\\overrightarrow{EP}$ ، $\\overrightarrow{PN}$ ، $\\overrightarrow{RQ}$ ، $\\overrightarrow{SD}$ ، $\\overrightarrow{QB}$ .",
+        "incorrect": "انطلق من كل نقطة وطبّق الحركة نفسها: هل تصل إلى نقطة مسمّاة؟"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SHUAA-TUL-FAQAT",
+          "value": "6"
+        }
+      ]
+    }
+  ]
+}

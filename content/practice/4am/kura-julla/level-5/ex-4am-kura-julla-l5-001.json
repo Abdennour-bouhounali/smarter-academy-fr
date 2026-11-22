@@ -1,0 +1,126 @@
+{
+  "id": "ex-4am-kura-julla-l5-001",
+  "lessonCode": "kura-julla",
+  "level": 5,
+  "metadata": {
+    "title": "وضعية — خزان الماء الكروي",
+    "estimatedMinutes": 5,
+    "tags": [
+      "معلم الفضاء",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_kura-julla_P4",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "خزان الماء في أعلى برج المدينة كرة مركزها O ونصف قطرها $4\\,\\mathrm{m}$ . في معلم متعامد ومتجانس للفضاء مبدؤه O (الوحدة المتر) تطير طائرة بدون طيار لتصوير الخزان وفحص نظافته."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "في الموضع $D_1(2\\,;\\,2\\,;\\,2)$ الطائرة:",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P4",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "داخل الجلة (داخل الخزان!)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "على سطح الخزان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-MASAFA"
+        },
+        {
+          "id": "C",
+          "content": "خارج الخزان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-MURABBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $OD_1^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن بـ $R^2 = 16$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأصغر: داخل الجلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$OD_1^2 = 4 + 4 + 4 = 12 < 16$ : داخل الجلة — موضع مستحيل للطائرة!",
+        "incorrect": "مجموع الإحداثيات ليس البعد: نجمع المربعات ونقارن بـ 16."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "في الموضع $D_2(0\\,;\\,4\\,;\\,0)$ الطائرة:",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P4",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "تلمس سطح الخزان",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "داخل الخزان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-MASAFA"
+        },
+        {
+          "id": "C",
+          "content": "بعيدة عن الخزان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-MASAFA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $OD_2^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن بـ 16."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المساواة: على الكرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$OD_2^2 = 0 + 16 + 0 = 16$ : $OD_2 = 4 = R$ ، على سطح الخزان.",
+        "incorrect": "البعد يساوي نصف القطر تماما."
+      }
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "id": "ex-4am-khawass-qawasim-l1-002",
+  "lessonCode": "khawass-qawasim",
+  "level": 1,
+  "metadata": {
+    "title": "نشاط 3 — الحالة الثالثة: 56 و 21 و 7",
+    "estimatedMinutes": 4,
+    "tags": [
+      "نشاط",
+      "خاصية 2",
+      "قسمة إقليدية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-3",
+      "page": 8,
+      "section": "أنشطة",
+      "number": 3
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الأعداد الطبيعية $a = 56$ ، $b = 21$ و $n = 7$ ، حيث $n$ يقسم كلا من $a$ و $b$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أجرِ القسمة الإقليدية للعدد 56 على 21.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الباقي فقط (عدد طبيعي)",
+      "expectedAnswer": "14",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أكبر مضاعف للعدد 21 لا يتجاوز 56."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي هو الفرق بين 56 وهذا المضاعف، ويجب أن يكون أصغر تمامًا من 21."
+        }
+      ],
+      "feedback": {
+        "correct": "$56 = 21 \\times 2 + 14$ مع $14 < 21$.",
+        "incorrect": "في القسمة الإقليدية $56 = 21 \\times q + r$ يكون الباقي $r$ أصغر تمامًا من 21."
+      },
+      "solution": {
+        "lines": [
+          "$21 \\times 2 = 42$ و $21 \\times 3 = 63 > 56$",
+          "$56 - 42 = 14$",
+          "إذن $56 = 21 \\times 2 + 14$ مع $14 < 21$."
+        ],
+        "result": "56 = 21 \\times 2 + 14"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "تحقّق أن 7 يقسم هذا الباقي: اكتبه على الشكل $7 \\times k$ حيث $k$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k$ فقط (عدد طبيعي)",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الباقي الذي وجدته في السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم هذا الباقي على 7."
+        }
+      ],
+      "feedback": {
+        "correct": "$14 = 7 \\times 2$: العدد 7 يقسم باقي القسمة الإقليدية للعدد 56 على 21.",
+        "incorrect": "اقسم الباقي الذي وجدته في السؤال 01 على 7."
+      },
+      "solution": {
+        "lines": [
+          "$14 = 7 \\times 2$",
+          "إذن 7 يقسم باقي القسمة الإقليدية للعدد 56 على 21، كما تنص الخاصية 2."
+        ],
+        "result": "14 = 7 \\times 2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

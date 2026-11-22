@@ -1,0 +1,159 @@
+{
+  "id": "ex-4am-ikhtizal-kasr-l5-008",
+  "lessonCode": "ikhtizal-kasr",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2020 — ستائر قاعة المطالعة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "كسر غير قابل للاختزال",
+      "حساب على الكسور"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_ikhtizal-kasr_P4",
+      "modelledOn": "BEM 2020 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2020",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تشجيعًا للتلاميذ على القراءة والمطالعة، تريد متوسطة بالأغواط تجهيز قاعة المطالعة بستائر جديدة.\n• للقاعة 8 نوافذ، ولكل نافذة ستارتان.\n• يُباع القماش في لفّات، طول اللفّة $\\dfrac{21}{2}$ m.\n• تحتاج كل ستارة إلى $\\dfrac{7}{4}$ m من القماش."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب عدد الستائر التي يمكن صنعها من لفّة واحدة.",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الستائر في اللفّة الواحدة",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الستائر = طول اللفّة ÷ طول الستارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على كسر هي الضرب في مقلوبه، ثم اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{21}{2} \\div \\dfrac{7}{4} = \\dfrac{84}{14} = 6$",
+        "incorrect": "اقسم طول اللفّة على طول الستارة: اضرب في مقلوب الكسر واختزل."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{21}{2} \\div \\dfrac{7}{4} = \\dfrac{21}{2} \\times \\dfrac{4}{7}$",
+          "$= \\dfrac{84}{14}$"
+        ],
+        "result": "6"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هو أقل عدد من اللفّات يجب شراؤه؟",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولًا عدد الستائر اللازمة للقاعة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اللفّات لا تُجزّأ عند الشراء."
+        }
+      ],
+      "feedback": {
+        "correct": "16 ستارة، ولفّتان تكفيان لـ 12 فقط: يلزم 3 لفّات.",
+        "incorrect": "عدد الستائر $8 \\times 2$ ؛ كم لفّة يلزم إذا كانت كل لفّة تعطي 6 ستائر؟"
+      },
+      "solution": {
+        "lines": [
+          "عدد الستائر: $8 \\times 2 = 16$",
+          "$16 = 6 \\times 2 + 4$ : لفّتان لا تكفيان، إذن يلزم 3 لفّات."
+        ],
+        "result": "3"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "☜ ما هو طول القماش الذي يبقى بعد صنع كل الستائر؟ أعط النتيجة على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_ikhtizal-kasr_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b (بالمتر)",
+      "expectedAnswer": "7/2",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "14/4",
+          "id": "MISC-IKHTIZAL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي = طول القماش المشترى − طول القماش المستعمل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $3 \\times \\dfrac{21}{2}$ و $16 \\times \\dfrac{7}{4}$ ثم اطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "حساب صحيح، والنتيجة على شكل كسر غير قابل للاختزال.",
+        "incorrect": "احترم أولوية العمليات، ثم اختزل الناتج إلى أن يصير البسط والمقام أوليين فيما بينهما.",
+        "notIrreducible": "القيمة صحيحة لكن الكسر ما زال قابلًا للاختزال: اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "القماش المشترى: $3 \\times \\dfrac{21}{2} = \\dfrac{63}{2}$ m",
+          "القماش المستعمل: $16 \\times \\dfrac{7}{4} = \\dfrac{112}{4} = 28$ m",
+          "الباقي: $\\dfrac{63}{2} - 28 = \\dfrac{63}{2} - \\dfrac{56}{2}$"
+        ],
+        "result": "\\dfrac{7}{2}\\,m"
+      },
+      "timeSeconds": 300
+    }
+  ]
+}

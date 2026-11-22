@@ -1,0 +1,127 @@
+{
+  "id": "ex-4am-hall-jabri-l1-005",
+  "lessonCode": "hall-jabri",
+  "level": 1,
+  "metadata": {
+    "title": "أهداف الأخوين",
+    "estimatedMinutes": 5,
+    "tags": [
+      "التعويض"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hall-jabri_P1",
+      "modelledOn": "ex-10"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في دوري الحي الذي يُنظَّم بروح التعاون واللعب النظيف، سجّل رامي $x$ هدفا وسجّل أخوه يونس $y$ هدفا. أهداف يونس ضعف أهداف رامي، ومجموع أهدافهما 45 هدفا، فنحصل على الجملة:",
+    "formulas": [
+      "\\begin{cases} y = 2x \\\\ x + y = 45 \\end{cases}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "حل الجملة بطريقة التعويض.",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": {
+        "x": "15",
+        "y": "30"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "30",
+            "y": "15"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المعادلة (1) يمكن التعبير بسهولة عن $y$ بدلالة المجهول الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر عن $y$ بدلالة المجهول الآخر، ثم عوّض العبارة في المعادلة الأخرى (لا في المعادلة نفسها)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حل المعادلة ذات المجهول الواحد، ثم عوّض القيمة لتجد المجهول الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "الثنائية $(15 ; 30)$ تحقق المعادلتين معا: هي حل الجملة.",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "لدينا من المعادلة (1): $y = 2x$",
+          "نعوّض في المعادلة (2): $x + 2x = 45$",
+          "$3x = 45$",
+          "ومنه $x = 15$",
+          "نعوّض قيمة $x$ في عبارة $y$: $y = 2 \\times 15 = 30$",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(15 ; 30)"
+      },
+      "work": "required",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج عدد الأهداف التي سجّلها يونس.",
+      "learningPoints": [
+        {
+          "code": "4am_hall-jabri_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب عدد الأهداف (عدد طبيعي)",
+      "expectedAnswer": "30",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد أهداف يونس هو $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "سجّل يونس 30 هدفا، وسجّل رامي 15.",
+        "incorrect": "أهداف يونس هي $y$ ، العدد الثاني في الثنائية."
+      },
+      "solution": {
+        "lines": [
+          "يونس سجّل $y$ هدفا، و $y$ هو العدد الثاني في الثنائية حل الجملة.",
+          "ومنه سجّل يونس 30 هدفا."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

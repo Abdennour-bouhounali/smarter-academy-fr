@@ -1,0 +1,118 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-khattiya-l1-008",
+  "lessonCode": "wadiya-idmajiya-khattiya",
+  "level": 1,
+  "metadata": {
+    "title": "تخفيض بـ 10%",
+    "estimatedMinutes": 4,
+    "tags": [
+      "نسبة مئوية",
+      "تخفيض"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 74,
+      "section": "الوضعيات",
+      "number": 8,
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-khattiya-l1-008"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "يخفّض محل للأجهزة الكهرومنزلية كل أسعاره بـ 10%، تضامنًا مع الأسر محدودة الدخل قبل شهر رمضان. نسمّي $x$ سعر جهاز قبل التخفيض (بـ DA) و $f(x)$ سعره بعد التخفيض."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عبّر عن $f(x)$ بدلالة $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المعامل $a$ فقط في $f(x) = ax$ (عشري بالفاصلة)",
+      "expectedAnswer": "0,9",
+      "misconceptionSignatures": [
+        {
+          "value": "0.1",
+          "id": "MISC-TAKHFID-NISBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بعد التخفيض يدفع الزبون $(100 - 10)\\%$ من السعر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خفض مقدار بـ $t\\%$ هو ضربه في $1 - \\dfrac{t}{100}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(x) = x - 0{,}1x = 0{,}9x$ .",
+        "incorrect": "المعامل هو النسبة المدفوعة بعد التخفيض، لا نسبة التخفيض."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = x - \\dfrac{10}{100}x = (1 - 0{,}1)x = 0{,}9x$"
+        ],
+        "result": "f(x) = 0{,}9x"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب سعر جهاز بعد التخفيض إذا كان سعره قبل التخفيض 4500DA.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: السعر بـ DA",
+      "expectedAnswer": "4050",
+      "misconceptionSignatures": [
+        {
+          "value": "450",
+          "id": "MISC-TAKHFID-NISBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $f(4500)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(4500) = 0{,}9 \\times 4500 = 4050$ DA.",
+        "incorrect": "السعر الجديد هو صورة 4500 بالدالة $f$ ، لا مبلغ التخفيض."
+      },
+      "solution": {
+        "lines": [
+          "$f(4500) = 0{,}9 \\times 4500 = 4050$",
+          "سعر الجهاز بعد التخفيض 4050DA."
+        ],
+        "result": "f(4500) = 4050"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

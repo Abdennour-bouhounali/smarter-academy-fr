@@ -1,0 +1,255 @@
+{
+  "id": "ex-4am-tanasub-taghayyurat-l4-004",
+  "lessonCode": "tanasub-taghayyurat",
+  "level": 4,
+  "metadata": {
+    "title": "ملء خزان",
+    "estimatedMinutes": 8,
+    "tags": [
+      "وضعية",
+      "تعيين دالة تآلفية",
+      "تناسب التغيّرات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tanasub-taghayyurat_P1",
+      "modelledOn": "act-4",
+      "adaptedFrom": "ex-4am-tanasub-taghayyurat-l4-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يُملأ خزان فيه ماء بانتظام: بعد 3 دقائق من فتح الحنفية كان فيه 95L ، وبعد 8 دقائق صار فيه 220L . حجم الماء $V(t)$ (بـ L) بعد $t$ دقيقة دالة تآلفية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عيّن العبارة الجبرية للدالة $V$ .",
+      "statement": "أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "25",
+      "misconceptionSignatures": [
+        {
+          "value": "125",
+          "id": "MISC-TAGHAYYUR-BIDUN-QISMA"
+        },
+        {
+          "value": "-25",
+          "id": "MISC-TAGHAYYUR-TARTIB"
+        },
+        {
+          "value": "0,04",
+          "id": "MISC-BAYANI-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خاصية تناسب التغيّرات: المعامل $a$ هو حاصل قسمة فرق الصورتين على فرق العددين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $\\dfrac{V(8) - V(3)}{8 - 3}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح بالترتيب نفسه في البسط والمقام، وانتبه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{125}{5} = 25$ .",
+        "incorrect": "اقسم فرق الصورتين على فرق العددين، واطرح بالترتيب نفسه في البسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "العبارة الجبرية للدالة التآلفية $V$ هي: $V(x) = ax + b$ .",
+          "إيجاد العدد $a$ (خاصية تناسب التغيّرات):",
+          "$a = \\dfrac{V(x_2) - V(x_1)}{x_2 - x_1}$",
+          "$a = \\dfrac{220 - 95}{8 - 3}$",
+          "$a = \\dfrac{125}{5}$",
+          "$a = 25$"
+        ],
+        "result": "a = 25"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "95/3",
+          "id": "MISC-TAGHAYYUR-B-NISBA"
+        },
+        {
+          "value": "25",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$V(3) = 95$ و $V(x) = ax + b$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $a$ بقيمته و $x$ بالعدد $3$ ، ثم حلّ المعادلة التي مجهولها $b$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$b = 95 - 75 = 20$ .",
+        "incorrect": "بعد حساب $a$ : $b = V(x_1) - a x_1$ ، وليس حاصل قسمة الصورة على العدد."
+      },
+      "solution": {
+        "lines": [
+          "إيجاد العدد $b$ (الترتيب إلى المبدأ):",
+          "لدينا: $V(3) = 95$",
+          "أي: $25 \\times 3 + b = 95$",
+          "$75 + b = 95$",
+          "$b = 95 - 75$",
+          "$b = 20$",
+          "ومنه العبارة الجبرية للدالة $V$ هي: $V(x) = 25x + 20$"
+        ],
+        "result": "V(x) = 25x + 20"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "بعد كم دقيقة يصبح في الخزان 520L ؟",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدة بالدقائق",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "20,8",
+          "id": "MISC-TAALUFI-SABIQ-QISMA"
+        },
+        {
+          "value": "0,8",
+          "id": "MISC-TAALUFI-SABIQ-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة $V(x) = 520$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل الحدّ الثابت إلى الطرف الآخر أولا، ثم اقسم على المعامل."
+        }
+      ],
+      "feedback": {
+        "correct": "$25x = 500$ ، إذن $x = \\dfrac{500}{25}$ .",
+        "incorrect": "اطرح الحدّ الثابت من الطرفين أولا، ثم اقسم على المعامل."
+      },
+      "solution": {
+        "lines": [
+          "نحلّ المعادلة: $V(x) = 520$",
+          "$25x + 20 = 520$",
+          "$25x = 520 - 20$",
+          "$25x = 500$",
+          "$x = \\dfrac{500}{25}$",
+          "$x = 20$"
+        ],
+        "result": "x = 20"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "كم لترا يُصبّ في الخزان بين الدقيقة 8 والدقيقة 14 ؟",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-taghayyurat_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الحجم بـ L",
+      "expectedAnswer": "150",
+      "misconceptionSignatures": [
+        {
+          "value": "25",
+          "id": "MISC-TAGHAYYUR-BIDUN-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خاصية تناسب التغيّرات: فرق صورتين يساوي $a$ مضروبا في فرق العددين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الفرق بين العددين، ثم اضربه في المعامل $a$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$25 \\times 6 = 150$ .",
+        "incorrect": "فرق الصورتين يساوي المعامل $a$ مضروبا في فرق العددين، لا المعامل وحده."
+      },
+      "solution": {
+        "lines": [
+          "حسب خاصية تناسب التغيّرات: $V(x_2) - V(x_1) = a(x_2 - x_1)$",
+          "$V(14) - V(8) = 25 \\times (14 - 8)$",
+          "$V(14) - V(8) = 25 \\times 6 = 150$"
+        ],
+        "result": "150"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

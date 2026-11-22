@@ -1,0 +1,131 @@
+{
+  "id": "ex-4am-bahth-pgcd-l2-005",
+  "lessonCode": "bahth-pgcd",
+  "level": 2,
+  "metadata": {
+    "title": "البيوت البلاستيكية — 165m و 88m",
+    "estimatedMinutes": 6,
+    "tags": [
+      "خوارزمية إقليدس",
+      "تبليط"
+    ],
+    "source": {
+      "type": "worksheet",
+      "worksheetId": "tafawwuq-01",
+      "elementId": "ws01-sit-06",
+      "section": "الوضعيات",
+      "number": 6,
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-aadad-l2-001"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يملك عبد الرحيم، المزارع المحبّ لأرض وطنه الجزائر، قطعة أرض مستطيلة الشكل بُعداها 165m و 88m، يريد أن يقيم عليها بيوتًا بلاستيكية ذات قواعد مربعة الشكل متقايسة، طول ضلع كل قاعدة d (عدد طبيعي بالمتر)، بحيث تغطي البيوت الأرض كلها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $PGCD(165 ; 88)$ باستعمال خوارزمية إقليدس.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-PGCD-SIFR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 165 على 88: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (165 ; 88) بالزوج (88 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 11.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم، لا الباقي المعدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$165 = 88 \\times 1 + 77$",
+          "$88 = 77 \\times 1 + 11$",
+          "$77 = 11 \\times 7 + 0$",
+          "آخر باقٍ غير معدوم هو 11، إذن:"
+        ],
+        "result": "PGCD(165 ; 88) = 11"
+      },
+      "work": "required",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج قيمة d التي تجعل عدد البيوت البلاستيكية أقل ما يمكن، ثم احسب عندئذ عدد هذه البيوت.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P5",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد البيوت)",
+      "expectedAnswer": "120",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يكون عدد البيوت أقل ما يمكن عندما يكون d أكبر ما يمكن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "d يقسم 165 و 88: استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب عدد القواعد على الطول وعددها على العرض، ثم اضربهما."
+        }
+      ],
+      "feedback": {
+        "correct": "d = 11 m، و $15 \\times 8 = 120$ بيتًا.",
+        "incorrect": "عدد البيوت = (عدد القواعد على الطول) × (عدد القواعد على العرض)، مع d أكبر ما يمكن."
+      },
+      "solution": {
+        "lines": [
+          "عدد البيوت أقل ما يمكن عندما يكون d أكبر ما يمكن، أي d = $PGCD(165 ; 88) = 11$ m.",
+          "على الطول: $165 \\div 11 = 15$ ؛ على العرض: $88 \\div 11 = 8$",
+          "عدد البيوت: $15 \\times 8 = 120$"
+        ],
+        "result": "120"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

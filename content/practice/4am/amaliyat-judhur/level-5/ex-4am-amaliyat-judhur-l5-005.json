@@ -1,0 +1,196 @@
+{
+  "id": "ex-4am-amaliyat-judhur-l5-005",
+  "lessonCode": "amaliyat-judhur",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2008 — حظيرة للسيارات والدراجات",
+    "estimatedMinutes": 14,
+    "tags": [
+      "جداء جذرين",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_amaliyat-judhur_P1",
+      "modelledOn": "BEM 2008 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2008",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "قطعة أرض مستطيلة الشكل طولها $8\\sqrt{5}\\,m$ وعرضها $\\sqrt{180}\\,m$ ، أراد صاحبها، وهو أمين في تعامله مع زبائنه، استغلالها حظيرةً. قسّمها إلى جزأين مستطيلين لهما نفس العرض (عرض القطعة): الجزء الأول $S_1$ طوله $5\\sqrt{5}\\,m$ مخصص للسيارات، والجزء الثاني $S_2$ طوله $3\\sqrt{5}\\,m$ مخصص للدراجات النارية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب عرض القطعة على الشكل $a\\sqrt{5}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "36",
+          "id": "MISC-JIDHR-MURABBA-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $180$ جداء مربع تام في $5$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل $\\sqrt{k^2 \\times 5} = k\\sqrt{5}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sqrt{180} = \\sqrt{36 \\times 5} = 6\\sqrt{5}$",
+        "incorrect": "ابحث عن مربع تام يقسم 180 ويكون حاصل القسمة 5."
+      },
+      "solution": {
+        "lines": [
+          "$180 = 36 \\times 5$",
+          "$\\sqrt{180} = \\sqrt{36} \\times \\sqrt{5}$"
+        ],
+        "result": "\\sqrt{180} = 6\\sqrt{5}\\,m"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "احسب مساحة كل من الجزأين $S_1$ و $S_2$ .",
+      "statement": "مساحة الجزء $S_1$",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المساحة بـ $m^2$",
+      "expectedAnswer": "150",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة المستطيل = الطول × العرض."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل $\\sqrt{5} \\times \\sqrt{5} = 5$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$S_1 = 5\\sqrt{5} \\times 6\\sqrt{5} = 30 \\times 5 = 150\\,m^2$",
+        "incorrect": "اضرب المعاملين معًا ثم $\\sqrt{5} \\times \\sqrt{5}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$S_1 = 5\\sqrt{5} \\times 6\\sqrt{5}$",
+          "$S_1 = 30 \\times 5$"
+        ],
+        "result": "S_1 = 150\\,m^2"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "مساحة الجزء $S_2$",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المساحة بـ $m^2$",
+      "expectedAnswer": "90",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة المستطيل = الطول × العرض."
+        }
+      ],
+      "feedback": {
+        "correct": "$S_2 = 3\\sqrt{5} \\times 6\\sqrt{5} = 18 \\times 5 = 90\\,m^2$",
+        "incorrect": "اضرب المعاملين معًا ثم $\\sqrt{5} \\times \\sqrt{5}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$S_2 = 3\\sqrt{5} \\times 6\\sqrt{5}$",
+          "$S_2 = 18 \\times 5$"
+        ],
+        "result": "S_2 = 90\\,m^2"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "☜ تحتاج السيارة الواحدة إلى $12{,}5\\,m^2$ والدراجة النارية إلى $4{,}5\\,m^2$ ، وتعريفة التوقف اليومية $200$DA للسيارة و $80$DA للدراجة النارية. ما المدخول اليومي للحظيرة لما تكون كل الأماكن محجوزة؟",
+      "learningPoints": [
+        {
+          "code": "4am_amaliyat-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المدخول بالدينار (DA)",
+      "expectedAnswer": "4000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب عدد أماكن السيارات في $S_1$ وعدد أماكن الدراجات في $S_2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب كل عدد في التعريفة المناسبة ثم اجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "12 سيارة و 20 دراجة نارية: $12 \\times 200 + 20 \\times 80 = 4000$DA.",
+        "incorrect": "اقسم مساحة كل جزء على المساحة التي تحتاجها المركبة الواحدة، ثم احسب المدخول."
+      },
+      "solution": {
+        "lines": [
+          "عدد السيارات: $150 \\div 12{,}5 = 12$",
+          "عدد الدراجات النارية: $90 \\div 4{,}5 = 20$",
+          "المدخول اليومي: $12 \\times 200 + 20 \\times 80 = 2400 + 1600$"
+        ],
+        "result": "4000\\,DA"
+      },
+      "work": "optional",
+      "timeSeconds": 360
+    }
+  ]
+}

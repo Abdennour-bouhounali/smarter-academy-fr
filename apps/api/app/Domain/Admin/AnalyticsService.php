@@ -2,6 +2,7 @@
 
 namespace App\Domain\Admin;
 
+use App\Domain\Progress\Support\OutcomeStats;
 use App\Models\LearningPoint;
 use App\Models\Lesson;
 use App\Models\StudentLearningPointProgress;
@@ -147,8 +148,10 @@ class AnalyticsService
             ->groupBy('outcome')
             ->pluck('c', 'outcome');
 
-        $answered = (int) $outcomes->sum();
-        $correct = (int) ($outcomes['correct'] ?? 0);
+        // OutcomeStats : la même sémantique que le dossier et la classe.
+        $stats = OutcomeStats::fromCounts($outcomes->all());
+        $answered = $stats['answered'];
+        $correct = $stats['successes'];
 
         $masteryCounts = StudentLearningPointProgress::select('status', DB::raw('COUNT(*) as c'))
             ->groupBy('status')->pluck('c', 'status');
@@ -168,9 +171,11 @@ class AnalyticsService
                 ),
                 'questionsAnswered' => $this->value($answered),
                 'correctAnswers' => $this->value($correct),
-                'incorrectAnswers' => $this->value($answered - $correct),
-                'successRate' => $answered > 0
-                    ? $this->value(round($correct / $answered * 100, 1))
+                'partialAnswers' => $this->value($stats['partials']),
+                'incorrectAnswers' => $this->value($stats['failures']),
+                'inertAnswers' => $this->value($stats['inert']),
+                'successRate' => $stats['successRate'] !== null
+                    ? $this->value($stats['successRate'])
                     : $this->unavailable('no_data'),
                 'hints' => $this->value(DB::table('hint_events')->whereBetween('requested_at', [$start, $end])->count()),
                 'diagnosticsCompleted' => $this->value(
@@ -212,6 +217,11 @@ class AnalyticsService
 
         if ($grade = ($filters['grade'] ?? null)) {
             $lessons->whereHas('chapter.grade', fn ($q) => $q->where('code', $grade));
+        }
+
+        // Classes dormantes hors des statistiques par défaut — voir ContentService::lessons().
+        if (($filters['scope'] ?? null) !== 'all' && config('curriculum.enforce_active_grades', true)) {
+            $lessons->whereHas('chapter.grade', fn ($q) => $q->where('is_active', true));
         }
 
         $rows = $lessons->get()->map(function (Lesson $lesson) {
@@ -264,6 +274,10 @@ class AnalyticsService
                 'progress as mastered_count' => fn ($q) => $q->where('status', 'mastered'),
                 'progress as reinforce_count' => fn ($q) => $q->where('status', 'reinforce'),
                 'progress as gap_count' => fn ($q) => $q->where('status', 'gap'),
+                // Mastery V2 — pourquoi un point reste « à consolider » malgré
+                // une confiance haute : preuve insuffisante, ou pas d'évaluation.
+                'progress as insufficient_evidence_count' => fn ($q) => $q->where('status', 'reinforce')->where('status_reason', 'insufficient_evidence'),
+                'progress as needs_assessment_count' => fn ($q) => $q->where('status', 'reinforce')->where('status_reason', 'needs_assessment'),
             ]);
 
         if ($lesson = ($filters['lesson'] ?? null)) {
@@ -290,6 +304,8 @@ class AnalyticsService
                 'mastered' => $mastered,
                 'reinforce' => (int) $lp->reinforce_count,
                 'struggling' => (int) $lp->gap_count,
+                'insufficientEvidence' => (int) $lp->insufficient_evidence_count,
+                'needsAssessment' => (int) $lp->needs_assessment_count,
                 'masteryRate' => $exposed > 0 ? round($mastered / $exposed * 100, 1) : null,
             ];
         })

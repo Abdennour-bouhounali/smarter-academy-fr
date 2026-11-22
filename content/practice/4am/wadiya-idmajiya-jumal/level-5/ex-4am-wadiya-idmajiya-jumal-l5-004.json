@@ -1,0 +1,270 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-jumal-l5-004",
+  "lessonCode": "wadiya-idmajiya-jumal",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2023 — معدات الأمان لورشة بناء بالمسيلة",
+    "estimatedMinutes": 17,
+    "tags": [
+      "جملة",
+      "وضعية",
+      "تكاليف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-jumal_P1",
+      "modelledOn": "BEM 2023 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "قررت مؤسسة للبناء بالمسيلة، حفاظا على سلامة عمّالها وإتقانا للعمل، تجهيز كل عامل من عمالها الـ 25 في ورشة بخوذة واقية وزوج من أحذية الأمان، وخصّصت لذلك مبلغا قدره 140000DA.\nإذا علمت أن:\n• ثمن 4 خوذات و 3 أزواج من الأحذية معا يقدّر بـ 19200DA\n• ثمن خوذتين و 5 أزواج من الأحذية معا يقدّر بـ 26400DA"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "نسمّي $x$ ثمن الخوذة الواحدة و $y$ ثمن زوج الأحذية الواحد (بالدينار).",
+      "statement": "بيّن أن $x$ و $y$ يحققان الجملة: $\\begin{cases} 4x + 3y = 19200 \\\\ 2x + 5y = 26400 \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب معادلة لكل معلومة عن الثمن."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "4 خوذات و 3 أزواج: $4x + 3y = 19200$",
+          "خوذتان و 5 أزواج: $2x + 5y = 26400$",
+          "ومنه: $\\begin{cases} 4x + 3y = 19200 \\\\ 2x + 5y = 26400 \\end{cases}$"
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حل هذه الجملة، ثم استنتج ثمن الخوذة الواحدة وثمن زوج الأحذية الواحد.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : ثمن الخوذة ثم ثمن زوج الأحذية بـ DA",
+      "expectedAnswer": {
+        "x": "1200",
+        "y": "4800"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "4800",
+            "y": "1200"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن معاملات $x$ ومعاملات $y$ في المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة التعويض أو طريقة الجمع (بعد ضرب المعادلتين في عددين مناسبين) لحذف أحد المجهولين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد إيجاد أحد المجهولين، عوّضه في إحدى المعادلتين لتجد الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "الخوذة بـ $1200DA$ وزوج الأحذية بـ $4800DA$ .",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} 4x + 3y = 19200 & ...(1) \\\\ 2x + 5y = 26400 & ...(2) \\end{cases}$",
+          "بضرب طرفي المعادلة (1) في العدد $5$ ، وبضرب طرفي المعادلة (2) في العدد $(-3)$ نجد:",
+          "$\\begin{cases} 20x + 15y = 96000 & ...(3) \\\\ -6x - 15y = -79200 & ...(4) \\end{cases}$",
+          "بجمع (3) و (4) طرفا لطرف نجد:",
+          "$14x = 16800$",
+          "$x = 1200$",
+          "بتعويض $x$ بـ $1200$ في المعادلة (1) نجد: $4 \\times 1200 + 3y = 19200$",
+          "$3y = 14400$",
+          "$y = 4800$",
+          "التحقق في النص: $4 \\times 1200 + 3 \\times 4800 = 19200$ و $2 \\times 1200 + 5 \\times 4800 = 26400$ .",
+          "إذن الخوذة بـ $1200DA$ وزوج الأحذية بـ $4800DA$ :"
+        ],
+        "result": "(1200 ; 4800)"
+      },
+      "work": "optional",
+      "timeSeconds": 360
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "احسب ثمن تجهيز العمال الـ 25 قبل التخفيض.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "150000",
+      "misconceptionSignatures": [
+        {
+          "value": "30000",
+          "id": "MISC-JUMLA-NISF-HALL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب ثمن تجهيز عامل واحد (خوذة وزوج أحذية)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب في عدد العمال."
+        }
+      ],
+      "feedback": {
+        "correct": "$25 \\times 6000 = 150000$ .",
+        "incorrect": "كل عامل يأخذ خوذة وزوج أحذية: اجمع الثمنين ثم اضرب في 25."
+      },
+      "solution": {
+        "lines": [
+          "تجهيز عامل واحد: $1200 + 4800 = 6000$",
+          "تجهيز 25 عاملا: $25 \\times 6000 = 150000$ أي $150000DA$"
+        ],
+        "result": "150000\\,DA"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "يمنح البائع تخفيضا قدره 12% على كل طلبية يتجاوز ثمنها 100000DA. احسب المبلغ الذي تدفعه المؤسسة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "132000",
+      "misconceptionSignatures": [
+        {
+          "value": "18000",
+          "id": "MISC-TAKHFID-NISBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بعد تخفيض $12\\%$ يُدفع $88\\%$ من الثمن."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}88 \\times 150000 = 132000$ .",
+        "incorrect": "اضرب الثمن في النسبة المدفوعة لا في نسبة التخفيض."
+      },
+      "solution": {
+        "lines": [
+          "الطلبية تتجاوز 100000DA فتستفيد من التخفيض.",
+          "تدفع المؤسسة $88\\%$ من الثمن: $0{,}88 \\times 150000 = 132000$ أي $132000DA$"
+        ],
+        "result": "132000\\,DA"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "☜ تريد المؤسسة شراء سترات عاكسة ثمن الواحدة 950DA بالمبلغ المتبقي من المبلغ المخصص. ما هو أكبر عدد من السترات يمكنها شراؤه؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-WADIYA-QIMAT-TASAWI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المبلغ المتبقي أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم على ثمن السترة وخذ الجزء الصحيح."
+        }
+      ],
+      "feedback": {
+        "correct": "$950 \\times 8 = 7600 \\leq 8000$ .",
+        "incorrect": "احسب ما يبقى من المبلغ المخصص بعد الدفع، ثم اقسم على ثمن السترة."
+      },
+      "solution": {
+        "lines": [
+          "المبلغ المتبقي: $140000 - 132000 = 8000$ أي $8000DA$",
+          "نبحث عن أكبر عدد طبيعي $n$ بحيث $950n \\leq 8000$ : $n \\leq 8{,}42...$",
+          "إذن يمكنها شراء 8 سترات على الأكثر."
+        ],
+        "result": "8"
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

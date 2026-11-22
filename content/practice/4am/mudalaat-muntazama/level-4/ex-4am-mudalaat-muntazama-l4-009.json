@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l4-009",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — ضلع الخماسي المنتظم",
+    "estimatedMinutes": 3,
+    "tags": [
+      "طول الضلع",
+      "الخماسي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mudalaat-muntazama_P3",
+      "modelledOn": "method-side"
+    }
+  },
+  "statement": {
+    "content": "خماسي منتظم رؤوسه على دائرة نصف قطرها $6\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "طول ضلعه مدوّرا إلى 0,01 بالسنتيمتر:",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "7.05",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUNTAZAM-DIL",
+          "value": "6.00"
+        },
+        {
+          "id": "MISC-MUTH-NISBA-UKHRA",
+          "value": "9.71"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم المثلث الذي رأسه المركز وقاعدته ضلع، ثم الارتفاع النازل من المركز."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في المثلث القائم، الزاوية في المركز نصف الزاوية المركزية، والوتر نصف القطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نصف الضلع = نصف القطر × جيب نصف الزاوية المركزية، ثم نضاعف."
+        }
+      ],
+      "feedback": {
+        "correct": "نصف الضلع $= 6 \\times \\sin 36^\\circ$ ، والضلع $\\approx 7{,}05$ .",
+        "incorrect": "الزاوية في المثلث القائم نصف الزاوية المركزية $72^\\circ$ ."
+      },
+      "difficulty": 4
+    }
+  ]
+}

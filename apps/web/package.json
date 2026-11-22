@@ -5,23 +5,30 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "NODE_OPTIONS=--max-old-space-size=8192 vite build",
     "preview": "vite preview",
     "test": "vitest run --passWithNoTests"
   },
   "dependencies": {
     "@cortex-js/compute-engine": "^0.102.0",
+    "@excalidraw/excalidraw": "^0.18.1",
     "@smarter-academy/core": "*",
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.0",
+    "html-to-image": "^1.11.13",
+    "i18next": "^26.4.2",
     "katex": "^0.18.2",
     "lucide-react": "^0.400.0",
     "mafs": "^0.21.0",
     "mathlive": "^0.110.0",
+    "nerdamer": "^1.1.13",
+    "qrcode-generator": "1.4.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-i18next": "^17.0.14",
     "react-katex": "^3.1.0",
     "react-router-dom": "^7.18.2",
-    "recharts": "^3.10.1"
+    "recharts": "^3.10.1",
+    "three": "^0.186.0"
   }
 }

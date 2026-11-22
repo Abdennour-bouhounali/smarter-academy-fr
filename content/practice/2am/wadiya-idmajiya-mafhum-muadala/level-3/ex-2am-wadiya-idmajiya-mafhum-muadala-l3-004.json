@@ -1,0 +1,194 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-mafhum-muadala-l3-004",
+  "lessonCode": "wadiya-idmajiya-mafhum-muadala",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — سيّارتا أجرة",
+    "estimatedMinutes": 11,
+    "tags": [
+      "صيغتان",
+      "جزء ثابت",
+      "مقارنة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يطلب سائق الأجرة $A$ مبلغ $100$ DA عند الركوب و $40$ DA عن كلّ كيلومتر ، ويطلب السائق $B$ مبلغ $60$ DA و $45$ DA عن كلّ كيلومتر . نسمّي $d$ عدد الكيلومترات ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل المساواة $100+40d = 60+45d$ صحيحة من أجل $d = 8$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "feedback": {
+        "correct": "نعم .",
+        "incorrect": "عوّض الحرف في الطرفين، احسب كلّ طرف ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل : $100+40 \\times 8 = 420$ .",
+          "الطرف الثاني : $60+45 \\times 8 = 420$ .",
+          "$420 = 420$ : الطرفان متساويان، فالمساواة صحيحة ."
+        ]
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بقيمته المعطاة في الطرفين معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة ثمّ قارن الناتجين بالرمز المكتوب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الرمز « أصغر أو يساوي » يقبل التساوي، والرمز « أصغر تمامًا » لا يقبله."
+        }
+      ],
+      "timeSeconds": 70
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "مشوار طوله $5\\,\\mathrm{km}$ . عند أيّ السائقين يدفع الزبون أقلّ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "السائق $A$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SYN-MUAD2-FIXED"
+        },
+        {
+          "id": "B",
+          "content": "السائق $B$",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "السائق $B$ .",
+        "incorrect": "احسب ما يدفعه الشخص في كلّ صيغة بالقيمة المعطاة ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "$A$ : $100+40 \\times 5 = 300$ ، $B$ : $60+45 \\times 5 = 285$ .",
+          "الأرخص هو السائق $B$ لأنّ $285$ أصغر من $300$ ."
+        ]
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب ما يدفعه الشخص في كلّ صيغة من أجل القيمة المعطاة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تقارن ثمن الوحدة وحده : أضف الجزء الثابت في كلّ صيغة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختر الصيغة التي يكون ناتجها أصغر تمامًا."
+        }
+      ],
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كم قيمة من القيم $6$ ، $8$ ، $10$ ، $12$ للمسافة يكون عندها السائق $A$ أرخص تمامًا من السائق $B$ ، أي $100+40d < 60+45d$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-IKHTIBAR-BOUNDARY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ قيمة من القيم المعطاة على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الطرفين من أجل كلّ قيمة ثمّ قارن بالرمز المكتوب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عُدّ القيم التي تجعل المتباينة صحيحة فقط، وانتبه إلى حالة تساوي الطرفين."
+        }
+      ],
+      "feedback": {
+        "correct": "$2$ .",
+        "incorrect": "اختبر كلّ قيمة على حدة وانتبه إلى حالة تساوي الطرفين."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $d = 6$ : $100+40 \\times 6 = 340$ و $60+45 \\times 6 = 330$ ، فالعلاقة خاطئة .",
+          "من أجل $d = 8$ : $100+40 \\times 8 = 420$ و $60+45 \\times 8 = 420$ ، فالعلاقة خاطئة .",
+          "من أجل $d = 10$ : $100+40 \\times 10 = 500$ و $60+45 \\times 10 = 510$ ، فالعلاقة صحيحة .",
+          "من أجل $d = 12$ : $100+40 \\times 12 = 580$ و $60+45 \\times 12 = 600$ ، فالعلاقة صحيحة .",
+          "عدد القيم : $2$ ."
+        ],
+        "result": "2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

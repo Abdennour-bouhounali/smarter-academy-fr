@@ -1,0 +1,296 @@
+{
+  "id": "ex-4am-tarrid-khatti-l5-009",
+  "lessonCode": "tarrid-khatti",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2025 — نزهة في غابة بعين الدفلى",
+    "estimatedMinutes": 20,
+    "tags": [
+      "وضعية إدماجية",
+      "سرعة ثابتة",
+      "مسألة هندسية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tarrid-khatti_P3",
+      "modelledOn": "BEM 2025 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "نظّمت جمعية بيئية بعين الدفلى نزهة في غابة. ينطلق المشاركون من النقطة $A$ ويصلون إلى النقطة $C$ وفق مسارين:\n– الفوج (أ): يسير من $A$ إلى $C$ مباشرة.\n– الفوج (ب): يسير من $A$ إلى $B$ ثم من $B$ إلى $C$ .\nالمثلث $ABC$ قائم في $B$ ، حيث $AB = 2{,}4km$ و $AC = 3km$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          2.4
+        ],
+        "B": [
+          0,
+          0
+        ],
+        "C": [
+          1.8,
+          0
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "2,4km"
+        },
+        [
+          "B",
+          "C"
+        ],
+        {
+          "from": "A",
+          "to": "C",
+          "label": "3km"
+        }
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "B",
+          "C"
+        ]
+      ],
+      "labels": {
+        "A": "nw",
+        "B": "sw",
+        "C": "se"
+      },
+      "ariaLabel": "مثلث ABC قائم في B ، حيث AB = 2,4km و AC = 3km : مسارا الفوجين"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب الطول $BC$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ km (عشري بالفاصلة)",
+      "expectedAnswer": "1,8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $ABC$ قائم في $B$ : استعمل خاصية فيثاغورس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$AC^2 = AB^2 + BC^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC^2 = 9 - 5{,}76 = 3{,}24$ ، إذن $BC = 1{,}8$ km.",
+        "incorrect": "الوتر هو $[AC]$ : $BC^2 = AC^2 - AB^2$ ."
+      },
+      "solution": {
+        "lines": [
+          "$AC^2 = AB^2 + BC^2$",
+          "$BC^2 = 3^2 - 2{,}4^2 = 9 - 5{,}76 = 3{,}24$",
+          "$BC = \\sqrt{3{,}24} = 1{,}8$ km."
+        ],
+        "result": "BC = 1{,}8km"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "استنتج طول مسار الفوج (ب).",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ km (عشري بالفاصلة)",
+      "expectedAnswer": "4,2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مسار الفوج (ب) $= AB + BC$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}4 + 1{,}8 = 4{,}2$ km.",
+        "incorrect": "اجمع طولي المرحلتين."
+      },
+      "solution": {
+        "lines": [
+          "$AB + BC = 2{,}4 + 1{,}8 = 4{,}2$ km."
+        ],
+        "result": "4{,}2km"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "باستطاعة كل مشارك أن يقطع مسافة 6km في ساعة ونصف بسرعة ثابتة.",
+      "statement": "نسمّي $d(t)$ المسافة (بـ km) التي يقطعها مشارك بعد $t$ ساعة. عبّر عن $d(t)$ بدلالة $t$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "1/4",
+          "id": "MISC-MAQADIR-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "السرعة ثابتة: المسافة متناسبة مع المدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ساعة ونصف هي $1{,}5h$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{6}{1{,}5} = 4$ ، إذن $d(t) = 4t$ .",
+        "incorrect": "المعامل هو المسافة مقسومة على المدة بالساعات."
+      },
+      "solution": {
+        "lines": [
+          "$d(1{,}5) = 6$ معناه $1{,}5a = 6$",
+          "$a = 4$ ، إذن $d(t) = 4t$ ."
+        ],
+        "result": "d(t) = 4t"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما هي المدة (بالدقائق) التي يستغرقها الفوج (ب) لقطع مساره بنفس السرعة؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدة بالدقائق",
+      "expectedAnswer": "63",
+      "misconceptionSignatures": [
+        {
+          "value": "1,05",
+          "id": "MISC-MAQADIR-WIHDA"
+        },
+        {
+          "value": "105",
+          "id": "MISC-MAQADIR-WIHDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة $d(t) = 4{,}2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حوّل الساعات إلى دقائق: الساعة 60 دقيقة."
+        }
+      ],
+      "feedback": {
+        "correct": "$4t = 4{,}2$ ، $t = 1{,}05h = 63$ دقيقة.",
+        "incorrect": "احسب المدة بالساعات أولا، ثم حوّلها إلى دقائق (×60)."
+      },
+      "solution": {
+        "lines": [
+          "$4t = 4{,}2$ ، إذن $t = 1{,}05$ h.",
+          "$1{,}05 \\times 60 = 63$ دقيقة."
+        ],
+        "result": "63min"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "☜ انطلق الفوجان معا من $A$ بنفس السرعة. بكم دقيقة يصل الفوج (أ) إلى $C$ قبل الفوج (ب)؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدة بالدقائق",
+      "expectedAnswer": "18",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مدة مسار الفوج (أ) بالدقائق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح المدتين."
+        }
+      ],
+      "feedback": {
+        "correct": "مدة الفوج (أ): 45 دقيقة؛ الفرق $63 - 45 = 18$ دقيقة.",
+        "incorrect": "قارن مدتي المسارين بالدقائق."
+      },
+      "solution": {
+        "lines": [
+          "الفوج (أ): $4t = 3$ ، $t = 0{,}75h = 45$ دقيقة.",
+          "الفرق: $63 - 45 = 18$ دقيقة.",
+          "يصل الفوج (أ) قبل الفوج (ب) بـ 18 دقيقة."
+        ],
+        "result": "18min"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

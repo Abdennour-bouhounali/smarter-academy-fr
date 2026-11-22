@@ -1,0 +1,195 @@
+{
+  "id": "ex-2am-wasf-silsila-hisab-l2-004",
+  "lessonCode": "wasf-silsila-hisab",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أعبّر بكسر عن عبارة ثم أحسبها",
+    "estimatedMinutes": 10,
+    "tags": [
+      "خطّ الكسر",
+      "كتابة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-87",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "العبارة $E$ هي: «حاصل قسمة مجموع العدد 6 وجداء العددين 12 و 4 على فرق جداء العددين 4 و 5 والعدد 8»."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عبّر عن العبارة $E$ بكسر. أيّ كتابة من الآتية هي الصحيحة؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{4 \\times 5 - 8}{6 + 12 \\times 4}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-ORDERDIFF"
+        },
+        {
+          "id": "B",
+          "content": "$6 + 12 \\times 4 \\div 4 \\times 5 - 8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-NOBRACKET"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{6 + 12 \\times 4}{4 \\times 5 - 8}$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بآخر عملية في الجملة: هي الأخيرة التي تُكتب بين قطعتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كلّ قطعة على حدة، وضع بين قوسين كلّ قطعة يجب أن تُحسب قبل آخر عملية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر سلسلتك بحسابها: هل آخر عملية فيها هي التي في الجملة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة الصحيحة: $(6 + 12 \\times 4) \\div (4 \\times 5 - 8)$ .",
+        "incorrect": "ابدأ بآخر عملية في الجملة، وضع بين قوسين كلّ قطعة تُحسب قبلها، وانتبه إلى ترتيب القطعتين."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية في الجملة هي $\\div$.",
+          "نكتب كلّ قطعة ثم نربط بينهما: $(6 + 12 \\times 4) \\div (4 \\times 5 - 8)$ (القوسان لازمان لأنّ القطعة يجب أن تُحسب أوّلًا)."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب العبارة $E$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "4.5",
+      "misconceptionSignatures": [
+        {
+          "value": "58",
+          "id": "MISC-WASF-NOBRACKET"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد كتابة السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = (6 + 12 \\times 4) \\div (4 \\times 5 - 8) = 4{,}5$",
+        "incorrect": "اكتب السلسلة بالقوسين اللازمين ثم احسبها: ما بين القوسين أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "$E = (6 + 12 \\times 4) \\div (4 \\times 5 - 8)$",
+          "$E = (6 + 48) \\div (4 \\times 5 - 8)$",
+          "$E = 54 \\div (4 \\times 5 - 8)$",
+          "$E = 54 \\div (20 - 8)$",
+          "$E = 54 \\div 12$",
+          "$E = 4{,}5$"
+        ],
+        "result": "4{,}5"
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "نكتب $E$ على سطر واحد بإشارة القسمة. هل يلزم وضع قوسين حول البسط وحول المقام؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-NOBRACKET"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن آخر عملية تُنجز في السلسلة قبل أن تحكم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كل عبارة بالترتيب الصحيح ثم قارن اسمها بما يقوله النص."
+        }
+      ],
+      "feedback": {
+        "correct": "تحقّقت من ذلك بالحساب.",
+        "incorrect": "احسب كل عبارة مرحلة مرحلة واسمِها بآخر عملية فيها قبل أن تحكم."
+      },
+      "solution": {
+        "lines": [
+          "بدون قوسين تصبح السلسلة $6 + 12 \\times 4 \\div 4 \\times 5 - 8$ ، وهي فرق لا حاصل قسمة: القوسان لازمان."
+        ]
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

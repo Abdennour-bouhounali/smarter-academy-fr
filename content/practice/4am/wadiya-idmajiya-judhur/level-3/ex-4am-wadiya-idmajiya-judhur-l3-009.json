@@ -1,0 +1,160 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-judhur-l3-009",
+  "lessonCode": "wadiya-idmajiya-judhur",
+  "level": 3,
+  "metadata": {
+    "title": "جداءات بالجذور",
+    "estimatedMinutes": 7,
+    "tags": [
+      "جداء",
+      "نسبة مقامها ناطق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-judhur_P1",
+      "modelledOn": null
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان $A$ و $B$ حيث:",
+    "formulas": [
+      "A = (\\sqrt{3} + 1)(\\sqrt{3} - 1)",
+      "B = (2\\sqrt{2})^2 - (\\sqrt{5})^2"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن $A$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة العدد $A$ (عدد طبيعي)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-TARBI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(x + y)(x - y) = x^2 - y^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = (\\sqrt{3})^2 - 1^2 = 3 - 1 = 2$",
+        "incorrect": "استعمل $(x + y)(x - y) = x^2 - y^2$ و $(\\sqrt{3})^2 = 3$ ."
+      },
+      "solution": {
+        "lines": [
+          "$A = (\\sqrt{3})^2 - 1^2 = 3 - 1$"
+        ],
+        "result": "A = 2"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب العدد $B$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "-1",
+          "id": "MISC-MUAMIL-DUN-TARBI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(2\\sqrt{2})^2 = 2^2 \\times (\\sqrt{2})^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 8 - 5 = 3$",
+        "incorrect": "ربّع المعامل 2 أيضًا عند حساب $(2\\sqrt{2})^2$ ."
+      },
+      "solution": {
+        "lines": [
+          "$(2\\sqrt{2})^2 = 4 \\times 2 = 8$ و $(\\sqrt{5})^2 = 5$",
+          "$B = 8 - 5$"
+        ],
+        "result": "B = 3"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اكتب العدد $\\dfrac{A}{\\sqrt{B}}$ على شكل نسبة مقامها عدد ناطق.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "النتيجة على الشكل $\\dfrac{a\\sqrt{3}}{3}$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-JIDHR-FI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $A$ و $B$ بقيمتيهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب البسط والمقام في $\\sqrt{3}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2}{\\sqrt{3}} = \\dfrac{2\\sqrt{3}}{3}$",
+        "incorrect": "اضرب البسط والمقام معًا في $\\sqrt{3}$ ؛ و $\\sqrt{3} \\times \\sqrt{3} = 3$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{A}{\\sqrt{B}} = \\dfrac{2}{\\sqrt{3}} = \\dfrac{2 \\times \\sqrt{3}}{\\sqrt{3} \\times \\sqrt{3}}$"
+        ],
+        "result": "\\dfrac{A}{\\sqrt{B}} = \\dfrac{2\\sqrt{3}}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

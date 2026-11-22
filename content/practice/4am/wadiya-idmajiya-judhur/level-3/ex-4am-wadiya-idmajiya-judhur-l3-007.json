@@ -1,0 +1,209 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-judhur-l3-007",
+  "lessonCode": "wadiya-idmajiya-judhur",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2019 — التمرين الأول",
+    "estimatedMinutes": 9,
+    "tags": [
+      "حساب كسري",
+      "a√3",
+      "نسبة مقامها ناطق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-judhur_P1",
+      "modelledOn": "BEM 2019 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2019",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان الحقيقيان $A$ و $B$ حيث:",
+    "formulas": [
+      "A = \\dfrac{9}{4} \\times \\left(\\dfrac{11}{3} - 1\\right)",
+      "B = 4\\sqrt{3} + 2\\sqrt{27} - \\sqrt{75}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن $A$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة العدد $A$ (عدد طبيعي)",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب ما بين القوسين أولًا: $1 = \\dfrac{3}{3}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب الكسرين ثم بسّط."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = \\dfrac{9}{4} \\times \\dfrac{8}{3} = \\dfrac{72}{12} = 6$",
+        "incorrect": "احسب $\\dfrac{11}{3} - 1$ أولًا ثم اضرب في $\\dfrac{9}{4}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{9}{4} \\times \\left(\\dfrac{11}{3} - \\dfrac{3}{3}\\right) = \\dfrac{9}{4} \\times \\dfrac{8}{3}$",
+          "$A = \\dfrac{72}{12}$"
+        ],
+        "result": "A = 6"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب العدد $B$ على الشكل $a\\sqrt{3}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-MUAMIL-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$27 = 9 \\times 3$ و $75 = 25 \\times 3$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تنس المعامل 2 أمام $\\sqrt{27}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 4\\sqrt{3} + 6\\sqrt{3} - 5\\sqrt{3} = 5\\sqrt{3}$",
+        "incorrect": "اكتب كل حد على الشكل $k\\sqrt{3}$ ثم اجمع المعاملات."
+      },
+      "solution": {
+        "lines": [
+          "$B = 4\\sqrt{3} + 2\\sqrt{9 \\times 3} - \\sqrt{25 \\times 3}$",
+          "$= 4\\sqrt{3} + 6\\sqrt{3} - 5\\sqrt{3}$"
+        ],
+        "result": "B = 5\\sqrt{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "اكتب $\\dfrac{A}{B}$ على شكل نسبة مقامها عدد ناطق.",
+      "statement": "النتيجة على الشكل $\\dfrac{a\\sqrt{3}}{b}$ (كسر غير قابل للاختزال): أعط $a$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-MAQAM-DUN-BAST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب البسط والمقام في $\\sqrt{3}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بسّط الكسر الناتج."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{A}{B} = \\dfrac{6\\sqrt{3}}{15} = \\dfrac{2\\sqrt{3}}{5}$ ، إذن $a = 2$ .",
+        "incorrect": "اجعل المقام ناطقًا ثم اختزل الكسر $\\dfrac{6}{15}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{A}{B} = \\dfrac{6}{5\\sqrt{3}} = \\dfrac{6\\sqrt{3}}{5\\sqrt{3} \\times \\sqrt{3}}$",
+          "$= \\dfrac{6\\sqrt{3}}{15}$"
+        ],
+        "result": "\\dfrac{A}{B} = \\dfrac{2\\sqrt{3}}{5}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "النتيجة على الشكل $\\dfrac{a\\sqrt{3}}{b}$ (كسر غير قابل للاختزال): أعط $b$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد طبيعي)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-IKHTIZAL-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المقام بعد الضرب في $\\sqrt{3}$ هو $5 \\times 3$ ؛ اختزل بعد ذلك."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{6}{15} = \\dfrac{2}{5}$ ، إذن $b = 5$ .",
+        "incorrect": "اختزل الكسر بالقسمة على القاسم المشترك الأكبر للبسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{A}{B} = \\dfrac{6}{5\\sqrt{3}} = \\dfrac{6\\sqrt{3}}{5\\sqrt{3} \\times \\sqrt{3}}$",
+          "$= \\dfrac{6\\sqrt{3}}{15}$"
+        ],
+        "result": "\\dfrac{A}{B} = \\dfrac{2\\sqrt{3}}{5}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

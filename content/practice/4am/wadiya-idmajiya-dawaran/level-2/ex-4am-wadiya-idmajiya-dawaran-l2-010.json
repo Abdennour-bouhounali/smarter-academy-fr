@@ -1,0 +1,87 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-dawaran-l2-010",
+  "lessonCode": "wadiya-idmajiya-dawaran",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — زوايا السداسي المنتظم",
+    "estimatedMinutes": 2,
+    "tags": [
+      "الزاوية المركزية",
+      "زاوية المضلع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-dawaran_P2",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "مخطط خلية نحل في منحل بالقبائل: سداسي منتظم مركزه O. يحرص النحّال على نظافة الخلايا وحسن رعايتها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "اختر الجواب الصحيح:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الزاويتان $60^\\circ$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-MARKAZIYA"
+        },
+        {
+          "id": "B",
+          "content": "الزاوية المركزية $60^\\circ$ وزاوية السداسي $120^\\circ$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "الزاوية المركزية $120^\\circ$ وزاوية السداسي $60^\\circ$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-MARKAZIYA"
+        },
+        {
+          "id": "D",
+          "content": "الزاوية المركزية $30^\\circ$ وزاوية السداسي $150^\\circ$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-180"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الزاوية المركزية رأسها O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "زاوية السداسي رأسها رأس من رؤوسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المركزية $\\dfrac{360^\\circ}{6}$ والداخلية $180^\\circ$ ناقص المركزية."
+        }
+      ],
+      "feedback": {
+        "correct": "المركزية $\\dfrac{360^\\circ}{6} = 60^\\circ$ والداخلية $180^\\circ - 60^\\circ = 120^\\circ$ .",
+        "incorrect": "لا تخلط بين الزاوية التي رأسها المركز والزاوية التي رأسها رأس من رؤوس المضلع."
+      },
+      "cognitiveDemand": "recall",
+      "difficulty": 2
+    }
+  ]
+}

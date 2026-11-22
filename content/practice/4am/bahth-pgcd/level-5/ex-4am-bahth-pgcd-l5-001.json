@@ -1,0 +1,276 @@
+{
+  "id": "ex-4am-bahth-pgcd-l5-001",
+  "lessonCode": "bahth-pgcd",
+  "level": 5,
+  "metadata": {
+    "title": "طلبيات مصبّرات قالمة — 21957 و 43351",
+    "estimatedMinutes": 12,
+    "tags": [
+      "وضعية إدماجية",
+      "خوارزمية إقليدس",
+      "توظيف PGCD"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-21",
+      "page": 14,
+      "section": "أوظّف تعلّماتي",
+      "number": 21
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في نهاية أسبوع من موسم الطماطم، كان في مخزن وحدة لتصبير الطماطم بقالمة 21957 علبة طماطم مصبّرة و 43351 علبة هريسة.\n\n• ثمن علبة الطماطم 120DA و ثمن علبة الهريسة 85DA.\n\n• تمنح الوحدة تخفيضًا بنسبة 8% على كل طلبية يتجاوز ثمنها 10000DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "حفاظًا على الأمانة وإنصافًا لجميع الزبائن، يريد مدير الوحدة توزيع كل هذه العلب على محلات التجزئة في شكل طلبيات متماثلة (أي كل طلبية تحتوي على نفس عدد علب الطماطم و نفس عدد علب الهريسة) دون أن تبقى أي علبة.",
+      "statement": "ما هو أكبر عدد من الطلبيات التي يمكن تكوينها ؟",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P5",
+          "role": "primary"
+        },
+        {
+          "code": "4am_bahth-pgcd_P4",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "563",
+      "misconceptionSignatures": [
+        {
+          "value": "39",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        },
+        {
+          "value": "0",
+          "id": "MISC-PGCD-SIFR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الطلبيات يقسم 21957 و 43351 معًا، لأن العلب توزَّع بالتساوي دون باقٍ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أكبر عدد من الطلبيات هو إذن القاسم المشترك الأكبر للعددين 43351 و 21957."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسبه بخوارزمية إقليدس: اقسم 43351 على 21957، ثم عوّض في كل مرة الزوج بالزوج (المقسوم عليه ; الباقي) حتى يصير الباقي معدومًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$PGCD(43351 ; 21957) = 563$: أكبر عدد من الطلبيات هو 563 طلبية.",
+        "incorrect": "عدد الطلبيات قاسم مشترك للعددين 43351 و 21957، والمطلوب أكبرها: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "أكبر عدد من الطلبيات هو $PGCD(43351 ; 21957)$.",
+          "باستعمال خوارزمية إقليدس:",
+          "$43351 = 21957 \\times 1 + 21394$",
+          "$21957 = 21394 \\times 1 + 563$",
+          "$21394 = 563 \\times 38 + 0$",
+          "آخر باقٍ غير معدوم هو 563، إذن:"
+        ],
+        "result": "PGCD(43351 ; 21957) = 563"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما هو عدد علب الطماطم و عدد علب الهريسة في كل طلبية. — علب الطماطم:",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P5",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد علب الطماطم في كل طلبية (عدد طبيعي)",
+      "expectedAnswer": "39",
+      "misconceptionSignatures": [
+        {
+          "value": "563",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "توزَّع علب الطماطم بالتساوي على كل الطلبيات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم عدد علب الطماطم على عدد الطلبيات الذي وجدته في (ا)."
+        }
+      ],
+      "feedback": {
+        "correct": "$21957 \\div 563 = 39$: في كل طلبية 39 علبة طماطم.",
+        "incorrect": "عدد الطلبيات ليس ما تحويه كل طلبية: اقسم 21957 على عدد الطلبيات."
+      },
+      "solution": {
+        "lines": [
+          "$21957 \\div 563 = 39$"
+        ],
+        "result": "39"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ب",
+      "statement": "— علب الهريسة:",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P5",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد علب الهريسة في كل طلبية (عدد طبيعي)",
+      "expectedAnswer": "77",
+      "misconceptionSignatures": [
+        {
+          "value": "563",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "توزَّع علب الهريسة بالتساوي على كل الطلبيات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم عدد علب الهريسة على عدد الطلبيات الذي وجدته في (ا)."
+        }
+      ],
+      "feedback": {
+        "correct": "$43351 \\div 563 = 77$: في كل طلبية 77 علبة هريسة.",
+        "incorrect": "عدد الطلبيات ليس ما تحويه كل طلبية: اقسم 43351 على عدد الطلبيات."
+      },
+      "solution": {
+        "lines": [
+          "$43351 \\div 563 = 77$",
+          "كل طلبية تحتوي على 39 علبة طماطم و 77 علبة هريسة."
+        ],
+        "result": "77"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "احسب ثمن الطلبية الواحدة قبل التخفيض.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P5",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الثمن بالدينار (DA)",
+      "expectedAnswer": "11225",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل محتوى الطلبية الواحدة الذي وجدته في السؤال 01 (ب)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب ثمن علب الطماطم، ثم ثمن علب الهريسة، ثم اجمعهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$39 \\times 120 + 77 \\times 85 = 11225$ ، أي 11225DA للطلبية الواحدة.",
+        "incorrect": "ثمن الطلبية = (عدد علب الطماطم × 120) + (عدد علب الهريسة × 85)."
+      },
+      "solution": {
+        "lines": [
+          "ثمن علب الطماطم: $39 \\times 120 = 4680$",
+          "ثمن علب الهريسة: $77 \\times 85 = 6545$",
+          "ثمن الطلبية: $4680 + 6545 = 11225$"
+        ],
+        "result": "11225\\,DA"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "☜ اشترى صاحب محل طلبية واحدة. احسب المبلغ الذي يدفعه.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P5",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المبلغ بالدينار (DA)",
+      "expectedAnswer": "10327",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن ثمن الطلبية الذي وجدته في السؤال 02 بالمبلغ 10000DA."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا تجاوز الثمن 10000DA، احسب قيمة التخفيض: 8% من ثمن الطلبية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المبلغ المدفوع = ثمن الطلبية − قيمة التخفيض."
+        }
+      ],
+      "feedback": {
+        "correct": "الثمن 11225DA يتجاوز 10000DA، فالتخفيض 898DA، ويدفع صاحب المحل 10327DA.",
+        "incorrect": "تحقّق أولًا أن ثمن الطلبية يتجاوز 10000DA، ثم اطرح منه 8% من قيمته."
+      },
+      "solution": {
+        "lines": [
+          "ثمن الطلبية 11225DA يتجاوز 10000DA، إذن يستفيد صاحب المحل من التخفيض.",
+          "قيمة التخفيض: $11225 \\times \\dfrac{8}{100} = 898$",
+          "المبلغ المدفوع: $11225 - 898 = 10327$"
+        ],
+        "result": "10327\\,DA"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "id": "ex-4am-tarrid-mushkila-l2-007",
+  "lessonCode": "tarrid-mushkila",
+  "level": 2,
+  "metadata": {
+    "title": "ثلاثة أعداد طبيعية متتابعة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "ترييض",
+      "أعداد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-mushkila_P1",
+      "modelledOn": "ex-10"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "مجموع ثلاثة أعداد طبيعية متتابعة هو 72 ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "سمِّ $x$ أصغرها، اكتب معادلة تترجم النص ثم جد $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: أصغر الأعداد الثلاثة",
+      "expectedAnswer": "23",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "إذا كان أصغرها $x$ ، فما العددان الآخران؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الموالي لـ $x$ هو $x + 1$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x + (x + 1) + (x + 2) = 72$ تعطي $x = 23$ : الأعداد 23 ، 24 ، 25 .",
+        "incorrect": "الأعداد المتتابعة تزيد بـ 1 في كل مرة: عبّر عنها كلها بدلالة $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "الأعداد: $x$ ، $x + 1$ ، $x + 2$ .",
+          "المعادلة: $x + (x + 1) + (x + 2) = 72$",
+          "$3x + 3 = 72$",
+          "$3x = 69$",
+          "$x = 23$",
+          "الأعداد هي: 23 ، 24 ، 25 ."
+        ],
+        "result": "x = 23"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل توجد ثلاثة أعداد طبيعية متتابعة مجموعها 100 ؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-TAHAQQUQ"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المعادلة نفسها مع المجموع الجديد، ثم حلّها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل الحل عدد طبيعي؟"
+        }
+      ],
+      "feedback": {
+        "correct": "لا: المعادلة $3x + 3 = 100$ تعطي $x = \\dfrac{97}{3}$ ، وهو ليس عددًا طبيعيًا.",
+        "incorrect": "حلّ المعادلة الجديدة وتحقّق من أن حلها عدد طبيعي."
+      },
+      "solution": {
+        "lines": [
+          "$3x + 3 = 100$",
+          "$3x = 97$",
+          "$x = \\dfrac{97}{3}$ ليس عددًا طبيعيًا.",
+          "إذن لا توجد ثلاثة أعداد طبيعية متتابعة مجموعها 100 ."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

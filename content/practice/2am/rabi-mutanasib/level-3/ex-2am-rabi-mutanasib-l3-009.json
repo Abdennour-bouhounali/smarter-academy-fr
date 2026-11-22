@@ -1,0 +1,217 @@
+{
+  "id": "ex-2am-rabi-mutanasib-l3-009",
+  "lessonCode": "rabi-mutanasib",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — حليب المزرعة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "الخاصية الضربية",
+      "الخاصية الجمعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "تبيع مزرعة الحليب بسعر ثابت للتر: ثمن $6$ L هو $540$ DA.",
+    "table": {
+      "head": [
+        "الحجم (L)",
+        "6",
+        "18",
+        "24",
+        "9"
+      ],
+      "rows": [
+        [
+          "الثمن (DA)",
+          "540",
+          "…",
+          "…",
+          "…"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "اختر الحساب الذي يعطي ثمن $18$ L بالخاصية الضربية.",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$540 \\times 3$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$540 + 12$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-RABI-ADD"
+        },
+        {
+          "id": "C",
+          "content": "$540 \\times 18$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-RABI-MULROW"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن علاقة بسيطة بين عددين من السطر الأول: مجموع أو جداء أو ضعف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما يحدث في السطر الأول يحدث في السطر الثاني: المجموع يقابله مجموع، والجداء في عدد يقابله جداء في العدد نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل عددين معلومين من السطر الثاني لتركيب العدد المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "الثمن $1620$ DA .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$18 = 6 \\times 3$",
+          "$540 \\times 3 = 1620$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما ثمن $24$ L؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "2160",
+      "misconceptionSignatures": [
+        {
+          "value": "558",
+          "id": "MISC-RABI-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن علاقة بسيطة بين عددين من السطر الأول: مجموع أو جداء أو ضعف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما يحدث في السطر الأول يحدث في السطر الثاني: المجموع يقابله مجموع، والجداء في عدد يقابله جداء في العدد نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل عددين معلومين من السطر الثاني لتركيب العدد المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "الثمن $2160$ DA .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$24 = 6 \\times 4$",
+          "$540 \\times 4 = 2160$"
+        ],
+        "result": "2160"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما ثمن $9$ L؟ (استعمل $9 = 6 + 3$).",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "810",
+      "misconceptionSignatures": [
+        {
+          "value": "543",
+          "id": "MISC-RABI-ADD"
+        },
+        {
+          "value": "549",
+          "id": "MISC-RABI-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن علاقة بسيطة بين عددين من السطر الأول: مجموع أو جداء أو ضعف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما يحدث في السطر الأول يحدث في السطر الثاني: المجموع يقابله مجموع، والجداء في عدد يقابله جداء في العدد نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل عددين معلومين من السطر الثاني لتركيب العدد المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "الثمن $810$ DA .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "ثمن $3$ L هو نصف ثمن $6$ L : $270$ DA",
+          "$540 + 270 = 810$"
+        ],
+        "result": "810"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

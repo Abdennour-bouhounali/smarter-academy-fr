@@ -1,0 +1,180 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l4-007",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — الكتابة $k \\times 10^{n}$",
+    "estimatedMinutes": 6,
+    "tags": [
+      "k × قوة 10"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اكتب كلّ عدد على الشكل $k \\times 10^{n}$ ، حيث $k$ هو العدد الصحيح المعطى، وأعطِ الأسّ $n$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "$250\\,000 = 25 \\times 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم صفرًا يلي العدد 25 في $250\\,000$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد 1 متبوعًا بتلك الأصفار هو قوة للعدد 10."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب $250\\,000$ جداءً للعدد 25 في عدد يتكوّن من 1 متبوعًا بأصفار."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-ASHARA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$250\\,000 = 25 \\times 10\\,000 = 25 \\times 10^{4}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "بعد 25 أربعة أصفار.",
+          "$250\\,000 = 25 \\times 10^{4}$ ."
+        ],
+        "result": "n = 4"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$0{,}0003 = 3 \\times 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في أيّ رتبة بعد الفاصلة يقع الرقم 3؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الرتبة بعد الفاصلة هي القيمة المطلقة للأسّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأسّ سالب."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "value": "-3",
+          "id": "MISC-ASHARA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}0003 = 3 \\times 0{,}0001 = 3 \\times 10^{-4}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الرقم 3 في الرتبة الرابعة بعد الفاصلة.",
+          "$0{,}0003 = 3 \\times 10^{-4}$ ."
+        ],
+        "result": "n = -4"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "$1\\,200\\,000 = 12 \\times 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم صفرًا يلي العدد 12 في $1\\,200\\,000$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $1\\,200\\,000$ جداءً للعدد 12 في عدد يتكوّن من 1 متبوعًا بأصفار."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدّ الأصفار بعد 12."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-ASHARA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\,200\\,000 = 12 \\times 100\\,000 = 12 \\times 10^{5}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "بعد 12 خمسة أصفار.",
+          "$1\\,200\\,000 = 12 \\times 10^{5}$ ."
+        ],
+        "result": "n = 5"
+      }
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "id": "ex-4am-mafhum-taalufiya-l2-003",
+  "lessonCode": "mafhum-taalufiya",
+  "level": 2,
+  "metadata": {
+    "title": "الدالة x ⟼ x/2 − 1",
+    "estimatedMinutes": 5,
+    "tags": [
+      "المعاملان a و b",
+      "العدد الذي صورته معلومة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-2",
+      "page": 78,
+      "section": "أنشطة",
+      "number": 2,
+      "adaptedFrom": "ex-4am-mafhum-taalufiya-l2-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الدالة التآلفية $k$ المعرّفة كما يلي:",
+    "formulas": [
+      "k : x \\longmapsto \\dfrac{x}{2} - 1"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عيّن المعاملين $a$ و $b$ للدالة $k$ .",
+      "statement": "المعامل $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "0,5",
+      "misconceptionSignatures": [
+        {
+          "value": "-1",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\dfrac{x}{2}$ هو $x$ مضروبا في عدد: ما هو؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على 2 هي الضرب في مقلوب 2."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 0{,}5$ : هو معامل $x$ .",
+        "incorrect": "المعامل $a$ هو العدد المضروب في $x$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$k(x) = 0{,}5x - 1$ من الشكل $ax + b$ حيث: $a = 0{,}5$ و $b = -1$ ."
+        ],
+        "result": "a = 0{,}5"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "المعامل $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-1",
+      "misconceptionSignatures": [
+        {
+          "value": "0,5",
+          "id": "MISC-TAALUFI-A-B-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحدّ الثابت $b$ هو العدد الذي لا يُضرب في $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$b = -1$ ، إذن $k(x) = 0{,}5x - 1$ .",
+        "incorrect": "$b$ هو الحدّ الذي لا يحتوي على $x$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$k(x) = 0{,}5x - 1$ من الشكل $ax + b$ حيث: $a = 0{,}5$ و $b = -1$ ."
+        ],
+        "result": "b = -1"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "عيّن العدد الذي صورته $3$ بالدالة $k$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-TAALUFI-SABIQ-QISMA"
+        },
+        {
+          "value": "7",
+          "id": "MISC-TAALUFI-SABIQ-TARTIB"
+        },
+        {
+          "value": "0,5",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن العدد $x$ الذي يحقق $\\dfrac{x}{2} - 1 = 3$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أضف 1 إلى الطرفين أولا، ثم اضرب في 2."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}5x - 1 = 3$ تعطي $x = 8$ .",
+        "incorrect": "أضف 1 إلى الطرفين أولا، ثم اضرب في 2 (البرنامج العكسي)."
+      },
+      "solution": {
+        "lines": [
+          "$k(x) = 3$ معناه $0{,}5x - 1 = 3$",
+          "$0{,}5x = 3 + 1$",
+          "$0{,}5x = 4$",
+          "$x = 4 \\div 0{,}5$",
+          "$x = 8$"
+        ],
+        "result": "x = 8"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

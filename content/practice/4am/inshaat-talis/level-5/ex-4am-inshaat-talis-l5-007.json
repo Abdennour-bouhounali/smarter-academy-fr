@@ -1,0 +1,356 @@
+{
+  "id": "ex-4am-inshaat-talis-l5-007",
+  "lessonCode": "inshaat-talis",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2013 — أشجار الزيتون على الممرّ",
+    "estimatedMinutes": 24,
+    "tags": [
+      "وضعية إدماجية",
+      "تقسيم قطعة",
+      "خاصية طالس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_inshaat-talis_P1",
+      "modelledOn": "BEM 2013 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2013",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "حقل مستطيل الشكل $ABCD$ بعداه $AB = 60\\,\\mathrm{m}$ و $BC = 45\\,\\mathrm{m}$ ، يقطعه ممرّ مستقيم $[AC]$ (الشكل المقابل). يريد فلاح غرس 6 أشجار زيتون صدقةً جارية على طول الممرّ: الأولى في $A$ والأخيرة في $C$ ، والمسافات بين كل شجرتين متتاليتين متساوية. رسم الفلاح مخطّط الحقل بمقياس $\\dfrac{1}{1000}$ .\n• ثمن المتر من أنبوب السقي $120DA$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0.0,
+          0.0
+        ],
+        "B": [
+          60.0,
+          0.0
+        ],
+        "C": [
+          60.0,
+          45.0
+        ],
+        "D": [
+          0.0,
+          45.0
+        ],
+        "T": [
+          24.0,
+          18.0
+        ],
+        "H": [
+          24.0,
+          0.0
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "60 m"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "45 m"
+        },
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "A"
+        ],
+        {
+          "from": "A",
+          "to": "C",
+          "tone": "emerald",
+          "bold": true
+        },
+        {
+          "from": "T",
+          "to": "H",
+          "dashed": true
+        }
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "B",
+          "C"
+        ],
+        [
+          "A",
+          "H",
+          "T"
+        ]
+      ],
+      "labels": {
+        "A": "sw",
+        "B": "se",
+        "C": "ne",
+        "D": "nw",
+        "T": "nw",
+        "H": "s"
+      },
+      "ariaLabel": "حقل مستطيل ABCD حيث AB = 60 m و BC = 45 m، والممرّ القطري [AC]، والنقطة T على [AC] ومسقطها العمودي H على [AB]",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب طول الممرّ $AC$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "75",
+      "misconceptionSignatures": [
+        {
+          "value": "105",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $ABC$ قائم في $B$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC^2 = 3600 + 2025 = 5625$ ومنه $AC = 75\\,\\mathrm{m}$ .",
+        "incorrect": "طبّق خاصية فيثاغورس في المثلث $ABC$ ."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $B$ ، حسب خاصية فيثاغورس: $AC^2 = AB^2 + BC^2 = 60^2 + 45^2 = 5625$"
+        ],
+        "result": "AC = 75\\,\\mathrm{m}"
+      },
+      "timeSeconds": 150,
+      "counted": false
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "على المخطّط ( $AC = 7{,}5\\,\\mathrm{cm}$ ) عيّن مواضع الأشجار دون مسطرة مدرّجة.",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب خطوات الإنشاء مرقّمة (أو صوّر ورقتك)، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "6 أشجار تحدّد 5 مسافات متساوية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قسّم $[AC]$ إلى 5 قطع متقايسة بنصف مستقيم مساعد مبدؤه $A$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "5 قطع متقايسة على نصف مستقيم مساعد، نصل الخامسة بـ $C$ ، والموازيات المارّة بالعلامات الأربع الأخرى تعيّن الأشجار.",
+        "incorrect": "قارن إنشاءك بالحل النموذجي خطوة خطوة، ثم صحّح الخطوة التي تختلف."
+      },
+      "solution": {
+        "lines": [
+          "1) نرسم نصف مستقيم $[Ax)$ لا يحمل القطعة $[AC]$ .",
+          "2) نعيّن عليه بالمدور، ابتداءً من $A$ ، 5 قطع متقايسة متتالية (بفتحة مدور كيفية) تنتهي عند العلامة $P_{5}$ .",
+          "3) نصل العلامة $P_{5}$ بالنقطة $C$ .",
+          "4) نرسم بالمسطرة والكوس الموازي للمستقيم $(P_{5}C)$ المارّ بالعلامة $P_{1}$ : يقطع $[AC]$ في $T_1$ .",
+          "التبرير: $(P_{1}T_1) \\parallel (P_{5}C)$ ، فحسب خاصية طالس في المثلثين $AP_{1}T_1$ و $AP_{5}C$ : $\\dfrac{AT_1}{AC} = \\dfrac{AP_{1}}{AP_{5}} = \\dfrac{1}{5}$ .",
+          "وبنفس الطريقة: الموازيات المارّة بـ $P_2$ و $P_3$ و $P_4$ تعطي $T_2$ و $T_3$ و $T_4$ ، ومع $A$ و $C$ : ستة مواضع."
+        ]
+      },
+      "timeSeconds": 420
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب المسافة الحقيقية بين شجرتين متتاليتين.",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المسافة بـ m",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "12,5",
+          "id": "MISC-TALIS-ADAD-AL-ALAMAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خمس مسافات متساوية على الممرّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{75}{5} = 15\\,\\mathrm{m}$ .",
+        "incorrect": "اقسم طول الممرّ على عدد المسافات (لا عدد الأشجار)."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AT_1}{AC} = \\dfrac{1}{5}$ ومنه $AT_1 = \\dfrac{75}{5}$"
+        ],
+        "result": "15\\,\\mathrm{m}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "$T$ موضع الشجرة الثالثة ابتداءً من $A$ (أي $AT = \\dfrac{2}{5}AC$ )، و $H$ المسقط العمودي للنقطة $T$ على $(AB)$ .",
+      "statement": "احسب $AH$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "24",
+      "misconceptionSignatures": [
+        {
+          "value": "36",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(TH) \\perp (AB)$ و $(CB) \\perp (AB)$ : ماذا تستنتج؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المثلثان $AHT$ و $ABC$ في وضعية طالس."
+        }
+      ],
+      "feedback": {
+        "correct": "$(TH) \\parallel (CB)$ و $\\dfrac{AH}{AB} = \\dfrac{AT}{AC} = \\dfrac{2}{5}$ ، فـ $AH = 24\\,\\mathrm{m}$ .",
+        "incorrect": "$AH$ يقابل $AB$ ، والنسبة هي $\\dfrac{AT}{AC}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$(TH) \\perp (AB)$ و $(CB) \\perp (AB)$ ومنه $(TH) \\parallel (CB)$ .",
+          "حسب خاصية طالس: $\\dfrac{AH}{AB} = \\dfrac{AT}{AC} = \\dfrac{TH}{CB} = \\dfrac{2}{5}$",
+          "$AH = \\dfrac{2}{5} \\times 60$"
+        ],
+        "result": "AH = 24\\,\\mathrm{m}"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "احسب $TH$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "18",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل $\\dfrac{TH}{CB} = \\dfrac{2}{5}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$TH = \\dfrac{2}{5} \\times 45 = 18\\,\\mathrm{m}$ .",
+        "incorrect": "$TH$ يقابل $CB$ ."
+      },
+      "solution": {
+        "lines": [
+          "$TH = \\dfrac{2}{5} \\times 45$"
+        ],
+        "result": "TH = 18\\,\\mathrm{m}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "☜ يمدّ الفلاح أنبوب سقي مستقيما من $H$ إلى الشجرة $T$ . ما ثمن الأنبوب؟",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الثمن بـ DA",
+      "expectedAnswer": "2160",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول الأنبوب هو $TH$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$18 \\times 120 = 2160DA$ .",
+        "incorrect": "اضرب طول الأنبوب في ثمن المتر."
+      },
+      "solution": {
+        "lines": [
+          "$TH \\times 120 = 18 \\times 120$"
+        ],
+        "result": "2160DA"
+      },
+      "timeSeconds": 90,
+      "counted": false
+    }
+  ]
+}

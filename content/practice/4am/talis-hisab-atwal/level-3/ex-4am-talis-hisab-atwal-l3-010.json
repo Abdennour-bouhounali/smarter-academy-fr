@@ -1,0 +1,196 @@
+{
+  "id": "ex-4am-talis-hisab-atwal-l3-010",
+  "lessonCode": "talis-hisab-atwal",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2021 — EL و KL",
+    "estimatedMinutes": 10,
+    "tags": [
+      "فيثاغورس",
+      "خاصية طالس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_talis-hisab-atwal_P2",
+      "modelledOn": "BEM 2021 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "وحدة الطول هي السنتيمتر. $BEM$ مثلث قائم في $B$ حيث $BE = 6$ و $BM = 4{,}5$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب الطول $ME$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "7,5",
+      "misconceptionSignatures": [
+        {
+          "value": "10,5",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث قائم في $B$ : الوتر هو $[ME]$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خاصية فيثاغورس: $ME^2 = BE^2 + BM^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$ME^2 = 36 + 20{,}25 = 56{,}25$ ومنه $ME = 7{,}5$ .",
+        "incorrect": "مربع الوتر يساوي مجموع مربعي الضلعين الآخرين، ثم خذ الجذر التربيعي."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $BEM$ قائم في $B$ ، حسب خاصية فيثاغورس: $ME^2 = BE^2 + BM^2$",
+          "$ME^2 = 6^2 + 4{,}5^2 = 36 + 20{,}25 = 56{,}25$",
+          "$ME = \\sqrt{56{,}25}$"
+        ],
+        "result": "ME = 7{,}5\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "$K$ نقطة من القطعة $[EM]$ بحيث $EK = 2{,}5$ ، والمستقيم الذي يشمل $K$ ويوازي $(BM)$ يقطع $[BE]$ في $L$ .",
+      "statement": "احسب الطول $EL$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (عشري بالفاصلة مثل 2,75 أو كسر مثل 7/9)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "18",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقط $E$ ، $K$ ، $M$ على استقامة والنقط $E$ ، $L$ ، $B$ على استقامة، و $(KL) \\parallel (MB)$ : المثلثان $EKL$ و $EMB$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب النسب الثلاث المتساوية $\\dfrac{EK}{EM} = \\dfrac{EL}{EB} = \\dfrac{KL}{MB}$ ، واحتفظ بالمساواة التي فيها $EL$ وثلاثة أطوال معلومة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الطول المجهول بالجداء المتصالب (الرابع المتناسب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{EK}{EM} = \\dfrac{EL}{EB}$ : $EL = \\dfrac{6 \\times 2{,}5}{7{,}5} = 2$ .",
+        "incorrect": "راجع المساواة المختارة: في كل نسبة طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: النقط $E$ ، $K$ ، $M$ على استقامة واحدة، والنقط $E$ ، $L$ ، $B$ على استقامة واحدة، و $(KL) \\parallel (MB)$ .",
+          "حسب خاصية طالس: $\\dfrac{EK}{EM} = \\dfrac{EL}{EB} = \\dfrac{KL}{MB}$",
+          "$\\dfrac{EK}{EM} = \\dfrac{EL}{EB}$ أي $\\dfrac{2{,}5}{7{,}5} = \\dfrac{EL}{6}$",
+          "$EL = \\dfrac{6 \\times 2{,}5}{7{,}5}$"
+        ],
+        "result": "EL = 2\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب الطول $KL$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (عشري بالفاصلة مثل 2,75 أو كسر مثل 7/9)",
+      "expectedAnswer": "1,5",
+      "misconceptionSignatures": [
+        {
+          "value": "13,5",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقط $E$ ، $K$ ، $M$ على استقامة والنقط $E$ ، $L$ ، $B$ على استقامة، و $(KL) \\parallel (MB)$ : المثلثان $EKL$ و $EMB$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب النسب الثلاث المتساوية $\\dfrac{EK}{EM} = \\dfrac{EL}{EB} = \\dfrac{KL}{MB}$ ، واحتفظ بالمساواة التي فيها $KL$ وثلاثة أطوال معلومة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الطول المجهول بالجداء المتصالب (الرابع المتناسب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$KL = \\dfrac{4{,}5 \\times 2{,}5}{7{,}5} = 1{,}5$ .",
+        "incorrect": "راجع المساواة المختارة: في كل نسبة طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{EK}{EM} = \\dfrac{KL}{MB}$ أي $\\dfrac{2{,}5}{7{,}5} = \\dfrac{KL}{4{,}5}$",
+          "$KL = \\dfrac{4{,}5 \\times 2{,}5}{7{,}5}$"
+        ],
+        "result": "KL = 1{,}5\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

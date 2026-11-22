@@ -1,0 +1,304 @@
+{
+  "id": "ex-3am-muadalat-darajat-ula-l2-005",
+  "lessonCode": "muadalat-darajat-ula",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — معادلتان بالحلّ نفسه",
+    "estimatedMinutes": 7,
+    "tags": [
+      "حلّ معادلة",
+      "معادلتان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر المعادلتين: $(E_1)$ : $4x - 6 = 0$ و $(E_2)$ : $3x + 2 = -x + 8$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما نوع الكتابة $(E_1)$ : $4x - 6 = 0$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي تعنيه المعادلة؟ حدّد الطرفين والمجهول فيها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المعادلة من الدرجة الأولى بمجهول واحد: المجهول فيها بقوّة 1 فقط، وتتضمّن علامة المساواة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ المعادلة هو العدد الذي يجعل طرفيها متساويين عند تعويضه مكان المجهول."
+        }
+      ],
+      "feedback": {
+        "correct": "$4x - 6 = 0$ مساواة فيها مجهول واحد بقوّة 1 فقط: معادلة من الدرجة الأولى بمجهول واحد.",
+        "incorrect": "تذكّر: المعادلة مساواة فيها مجهول، وحلّها هو العدد الذي يحقّق المساواة؛ أعد المحاولة."
+      },
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "معادلة من الدرجة الأولى بمجهول واحد",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "معادلة لكنّها ليست من الدرجة الأولى",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-DEGREE"
+        },
+        {
+          "id": "C",
+          "content": "ليست معادلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-NOT-EQUATION"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "$4x - 6 = 0$ مساواة فيها مجهول واحد بقوّة 1 فقط: معادلة من الدرجة الأولى بمجهول واحد."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "حلّ المعادلة $(E_1)$ : $4x - 6 = 0$ .",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{3}{2}$ .",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر أو عدد عشري)",
+      "expectedAnswer": "3/2",
+      "misconceptionSignatures": [
+        {
+          "value": "-3/2",
+          "id": "MISC-MUADALA-SIGN-KEPT"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "لدينا: $4x - 6 = 0$ .",
+          "نضيف $6$ إلى الطرفين (معاكس $-6$) فنجد: $4x = 6$ .",
+          "نقسم الطرفين على $4$ فنجد: $x = \\dfrac{3}{2}$ .",
+          "التحقّق: من أجل $x = \\dfrac{3}{2}$ نجد الطرف الأيسر $0$ والطرف الأيمن $0$ ، فهما متساويان."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "حلّ المعادلة $(E_2)$ : $3x + 2 = -x + 8$ .",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الحدود التي فيها المجهول والحدود الثابتة في كلّ طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لننقل حدًّا إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، فتتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما نصل إلى الشكل $ax = n$ نقسم الطرفين على $a$ ، ثم نتحقّق بالتعويض في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{3}{2}$ .",
+        "incorrect": "لنقل حدّ إلى الطرف الآخر نضيف معاكسه إلى الطرفين معًا، ثم نقسم على معامل المجهول؛ أعد المحاولة."
+      },
+      "answerType": "rational",
+      "answerFormat": "عدد ناطق (عدد صحيح أو كسر أو عدد عشري)",
+      "expectedAnswer": "3/2",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-MUADALA-SIGN-KEPT"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "لدينا: $3x + 2 = -x + 8$ .",
+          "نضيف $x$ إلى الطرفين (معاكس الحدّ $-x$) فنجد: $4x + 2 = 8$ .",
+          "نضيف $-2$ إلى الطرفين (معاكس $2$) فنجد: $4x = 6$ .",
+          "نقسم الطرفين على $4$ فنجد: $x = \\dfrac{3}{2}$ .",
+          "التحقّق: من أجل $x = \\dfrac{3}{2}$ نجد الطرف الأيسر $\\dfrac{13}{2}$ والطرف الأيمن $\\dfrac{13}{2}$ ، فهما متساويان."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "هل للمعادلتين $(E_1)$ و $(E_2)$ الحلّ نفسه؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد المراد اختباره؟ عوّضه مكان المجهول في الطرف الأيسر ثم في الطرف الأيمن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة بدقّة (انتبه إلى الإشارات)، ثم قارن النتيجتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا تساوى الطرفان فالعدد حلّ للمعادلة، وإذا اختلفا فليس حلًّا لها."
+        }
+      ],
+      "feedback": {
+        "correct": "للمعادلتين الحلّ نفسه $\\dfrac{3}{2}$ .",
+        "incorrect": "للتحقّق من أنّ عددًا حلّ نعوّضه في الطرفين ونقارن القيمتين؛ أعد المحاولة."
+      },
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-CHECK-ONE-SIDE"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "حلّ $(E_1)$ هو $\\dfrac{3}{2}$ وحلّ $(E_2)$ هو $\\dfrac{3}{2}$ أيضًا، فلهما الحلّ نفسه."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "د",
+      "statement": "وهل للمعادلتين $5x + 1 = 0$ و $2x - 3 = x - 4$ الحلّ نفسه؟",
+      "learningPoints": [
+        {
+          "code": "3am_muadalat-darajat-ula_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد المراد اختباره؟ عوّضه مكان المجهول في الطرف الأيسر ثم في الطرف الأيمن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة بدقّة (انتبه إلى الإشارات)، ثم قارن النتيجتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا تساوى الطرفان فالعدد حلّ للمعادلة، وإذا اختلفا فليس حلًّا لها."
+        }
+      ],
+      "feedback": {
+        "correct": "الحلّان مختلفان: $-\\dfrac{1}{5}$ و $-1$ .",
+        "incorrect": "للتحقّق من أنّ عددًا حلّ نعوّضه في الطرفين ونقارن القيمتين؛ أعد المحاولة."
+      },
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUADALA-CHECK-ONE-SIDE"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "solution": {
+        "lines": [
+          "حلّ الأولى $-\\dfrac{1}{5}$ وحلّ الثانية $-1$ ، فالحلّان مختلفان."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

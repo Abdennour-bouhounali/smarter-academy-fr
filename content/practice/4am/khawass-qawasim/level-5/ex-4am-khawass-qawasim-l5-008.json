@@ -1,0 +1,158 @@
+{
+  "id": "ex-4am-khawass-qawasim-l5-008",
+  "lessonCode": "khawass-qawasim",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2021 — مياه معدنية من سعيدة",
+    "estimatedMinutes": 11,
+    "tags": [
+      "مضاعفات",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_khawass-qawasim_P2",
+      "modelledOn": "BEM 2021 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يعبّئ مصنع مياه معدنية بسعيدة قاروراته بنظافة وعناية في رزم من 6 قارورات، ويضع على كل لوح خشبي 504 قارورة. شحنت شاحنة 18 لوحًا نحو تاجر جملة.\n• مصاريف نقل الشحنة 21200DA.\n• لا يريد التاجر أن تتجاوز تكلفة الشحنة (ثمن الرزم مع مصاريف النقل) 248000DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن 6 يقسم 504، واكتب 504 على الشكل $6 \\times k$ حيث $k$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k$ فقط (عدد طبيعي)",
+      "expectedAnswer": "84",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 504 على 6: يجب أن يكون الباقي معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل هذه القسمة هو العدد $k$ المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$504 = 6 \\times 84$ ، إذن 6 يقسم 504.",
+        "incorrect": "ابحث عن العدد الطبيعي $k$ الذي إذا ضُرب في 6 أعطى 504."
+      },
+      "solution": {
+        "lines": [
+          "$504 = 6 \\times 84$"
+        ],
+        "result": "504 = 6 \\times 84"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بيّن، دون حساب العدد الكلي للقارورات، أن هذا العدد مضاعف للعدد 6، ثم أعط عدد الرزم في الشحنة.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد الرزم)",
+      "expectedAnswer": "1512",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد الكلي للقارورات هو $504 \\times 18$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "6 يقسم 504، فهو يقسم كل مضاعف له."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عوّض 504 بكتابته من السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "$504 \\times 18 = 6 \\times 84 \\times 18 = 6 \\times 1512$: في الشحنة 1512 رزمة.",
+        "incorrect": "اكتب العدد الكلي للقارورات على الشكل $504 \\times 18$ ثم استعمل كتابة 504 من السؤال 01."
+      },
+      "solution": {
+        "lines": [
+          "العدد الكلي للقارورات: $504 \\times 18$",
+          "$504 \\times 18 = 6 \\times 84 \\times 18$",
+          "$504 \\times 18 = 6 \\times 1512$",
+          "إذن العدد الكلي للقارورات مضاعف للعدد 6، وعدد الرزم 1512."
+        ],
+        "result": "504 \\times 18 = 6 \\times 1512"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "☜ أعط أكبر ثمن ممكن للرزمة الواحدة حتى لا تتجاوز تكلفة الشحنة المبلغ الذي حدّده التاجر.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (DA)",
+      "expectedAnswer": "150",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الرزم هو جواب السؤال 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان $p$ ثمن الرزمة فإن $1512p + 21200 \\leq 248000$."
+        }
+      ],
+      "feedback": {
+        "correct": "$1512p + 21200 \\leq 248000$ تعطي $p \\leq 150$: لا يتجاوز ثمن الرزمة 150DA.",
+        "incorrect": "اكتب أن ثمن الرزم مع مصاريف النقل لا يتجاوز المبلغ الذي حدّده التاجر."
+      },
+      "solution": {
+        "lines": [
+          "ليكن $p$ ثمن الرزمة (بالـ DA): $1512p + 21200 \\leq 248000$",
+          "$1512p \\leq 226800$",
+          "$p \\leq 150$"
+        ],
+        "result": "p \\leq 150 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

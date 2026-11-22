@@ -1,0 +1,189 @@
+{
+  "id": "ex-2am-jam-tarh-kusur-l5-006",
+  "lessonCode": "jam-tarh-kusur",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — وضعية إدماجية : جني الزيتون",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جمع كسرين",
+      "الجزء الباقي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "06"
+    }
+  },
+  "statement": {
+    "content": "جنت عائلة من زيتون بستانها $\\dfrac{1}{6}$ في اليوم الأوّل ، و $\\dfrac{5}{12}$ في اليوم الثاني ، و $\\dfrac{1}{12}$ في اليوم الثالث ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما الكسر الذي يمثّل ما جُني في الأيّام الثلاثة ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "2/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "7/30",
+          "id": "MISC-JAMKASR-ACROSS"
+        },
+        {
+          "value": "7/12",
+          "id": "MISC-JAMKASR-NOSCALE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الجزءان اللذان تبحث عن مجموعهما أو عن الباقي بعدهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد ثمّ اجمع، والباقي نحصل عليه بالطرح من الكلّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل الناتج إن أمكن وتحقّق أنّه يبقى أصغر من الكلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2}{3}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{6} = \\dfrac{1 \\times 2}{6 \\times 2} = \\dfrac{2}{12}$ .",
+          "$\\dfrac{1}{6} + \\dfrac{5}{12} + \\dfrac{1}{12} = \\dfrac{2 + 5 + 1}{12} = \\dfrac{8}{12}$ .",
+          "نختزل بالقسمة على $4$ : $\\dfrac{8}{12} = \\dfrac{2}{3}$ ."
+        ],
+        "result": "\\dfrac{2}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما الكسر الذي يمثّل ما بقي على الأشجار ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "1/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2/3",
+          "id": "MISC-JAMKASR-PART"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكلّ يساوي كسرًا بسطه ومقامه عدد واحد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العدد 1 على شكل كسر مقامه هو مقام الأجزاء المأخوذة ثمّ اطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الجزء الباقي هو الكلّ ناقص ما أُخذ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{3}$ : هذا هو الجزء الباقي .",
+        "incorrect": "اكتب الكلّ على شكل كسر ثمّ اطرح منه ما أُخذ، ولا تُعطِ ما أُخذ بدل الباقي."
+      },
+      "solution": {
+        "lines": [
+          "$1 = \\dfrac{12}{12}$ .",
+          "$1 - \\dfrac{1}{6} - \\dfrac{5}{12} - \\dfrac{1}{12} = \\dfrac{12}{12} - \\dfrac{2}{12} - \\dfrac{5}{12} - \\dfrac{1}{12} = \\dfrac{4}{12}$ .",
+          "نختزل : $\\dfrac{1}{3}$ ."
+        ],
+        "result": "\\dfrac{1}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اكتب الكسر الباقي بالمقام $12$ : $\\dfrac{1}{3} = \\dfrac{\\ldots}{12}$ . ما هو البسط ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-JAMKASR-NOSCALE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "للانتقال من مقام صغير إلى مقام أكبر نضرب الحدّين في العدد نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما العدد الذي ينقل المقام الأوّل إلى المقام المطلوب؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{3} = \\dfrac{1 \\times 4}{3 \\times 4} = \\dfrac{4}{12}$ .",
+        "incorrect": "اضرب حدّي الكسر في العدد نفسه حتى يتغيّر المقام ولا تتغيّر قيمة الكسر."
+      },
+      "solution": {
+        "lines": [
+          "$12 = 3 \\times 4$",
+          "$\\dfrac{1}{3} = \\dfrac{1 \\times 4}{3 \\times 4} = \\dfrac{4}{12}$"
+        ],
+        "result": "4"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

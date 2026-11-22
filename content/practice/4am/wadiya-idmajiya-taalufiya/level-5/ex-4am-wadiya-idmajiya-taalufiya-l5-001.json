@@ -1,0 +1,546 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-taalufiya-l5-001",
+  "lessonCode": "wadiya-idmajiya-taalufiya",
+  "level": 5,
+  "metadata": {
+    "title": "الوضعية الإدماجية",
+    "estimatedMinutes": 40,
+    "tags": [
+      "وضعية إدماجية",
+      "مساحات",
+      "تمثيل بياني",
+      "قراءة بيانية"
+    ],
+    "source": {
+      "type": "bem",
+      "year": 2017,
+      "part": 2,
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "official",
+      "badge": "BEM 2017",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "$ABCD$ قطعة أرض مربعة الشكل مساحتها $324m^2$ ملك للاخوين أحمد و فاطمة و مجزأة حسب المخطط المقابل.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          18
+        ],
+        "E": [
+          6,
+          18
+        ],
+        "B": [
+          18,
+          18
+        ],
+        "M": [
+          18,
+          8
+        ],
+        "C": [
+          18,
+          0
+        ],
+        "D": [
+          0,
+          0
+        ]
+      },
+      "polygons": [
+        {
+          "points": [
+            "E",
+            "B",
+            "M"
+          ],
+          "tone": "rose"
+        },
+        {
+          "points": [
+            "A",
+            "E",
+            "M",
+            "C",
+            "D"
+          ],
+          "tone": "emerald"
+        }
+      ],
+      "segments": [
+        {
+          "from": "A",
+          "to": "E"
+        },
+        {
+          "from": "E",
+          "to": "B",
+          "label": "12m"
+        },
+        {
+          "from": "B",
+          "to": "M",
+          "label": "x"
+        },
+        {
+          "from": "M",
+          "to": "C"
+        },
+        {
+          "from": "C",
+          "to": "D"
+        },
+        {
+          "from": "D",
+          "to": "A",
+          "label": "a"
+        },
+        {
+          "from": "E",
+          "to": "M",
+          "bold": true
+        }
+      ],
+      "labels": {
+        "A": "nw",
+        "E": "n",
+        "B": "ne",
+        "M": "e",
+        "C": "se",
+        "D": "sw"
+      },
+      "ariaLabel": "مربع ABCD طول ضلعه a ، النقطة E على [AB] حيث EB = 12m ، والنقطة M على [BC] حيث BM = x ، والقطعة [EM] تفصل الجزء EBM (مساحته S1) عن الجزء AEMCD (مساحته S2)",
+      "caption": "S₁ : مساحة الجزء EBM (بالوردي) — S₂ : مساحة الجزء AEMCD (بالأخضر)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "الجزء الأول:",
+      "statement": "احسب $a$، طول ضلع هذه القطعة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول $a$ بـ m",
+      "expectedAnswer": "18",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-TAHAQQUQ",
+          "value": "162"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة المربع = مربع طول ضلعه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المعادلة $a^2 = 324$ ، و $a$ طول (عدد موجب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$a^2 = 324$ .",
+        "incorrect": "المساحة ليست ضعف الضلع: اكتب $a^2 = 324$ ثم خذ الجذر التربيعي الموجب."
+      },
+      "solution": {
+        "lines": [
+          "قطعة الأرض مربعة طول ضلعها $a$ و مساحتها $324m^2$ ،",
+          "معناه: $a^2 = 324$",
+          "و منه: $a = \\sqrt{324}$",
+          "أي: $a = 18$",
+          "إذا طول ضلع قطعة الأرض هو $18m$ ."
+        ],
+        "result": "a = 18"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "$M$ نقطة متحركة على الضلع $[BC]$ حيث: $BM = x$ .\n$E$ نقطة من $[BA]$ حيث: $BE = 12m$ .\nالجزء $EBM$ تملكه فاطمة والجزء $AEMCD$ يملكه أحمد.\nليكن $S_1$ مساحة الجزء $EBM$ و $S_2$ مساحة الجزء $AEMCD$ .",
+      "statement": "☜ اكتب بدلالة $x$ كلا من المساحتين $S_1$ و $S_2$ .\nأعط العدد $a$ حيث: $S_1 = ax$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-TAHAQQUQ",
+          "value": "12"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$EBM$ مثلث قائم في $B$ ، ضلعاه القائمان $EB$ و $BM$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مساحة المثلث القائم = نصف جداء ضلعيه القائمين."
+        }
+      ],
+      "feedback": {
+        "correct": "$S_1 = \\dfrac{12 \\times x}{2}$ .",
+        "incorrect": "لا تنس القسمة على 2 في مساحة المثلث."
+      },
+      "solution": {
+        "lines": [
+          "مساحة الجزء $EBM$ :",
+          "$S_1 = \\dfrac{EB \\times BM}{2}$",
+          "$S_1 = \\dfrac{12 \\times x}{2}$",
+          "$S_1 = 6x$",
+          "مساحة الجزء $AEMCD$ :",
+          "$S_2 = S_{ABCD} - S_1$",
+          "$S_2 = 324 - 6x$"
+        ],
+        "result": "S_1 = 6x"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أعط العددين $a$ و $b$ حيث: $S_2 = ax + b$ ، ابدأ بالعدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-6",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-BAYANI-ISHARA-A",
+          "value": "6"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة قطعة أحمد = مساحة المربع − مساحة قطعة فاطمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$S_2 = S_{ABCD} - S_1$ .",
+        "incorrect": "$S_2$ تنقص عندما يكبر $x$ : انتبه إلى إشارة المعامل."
+      },
+      "solution": {
+        "lines": [
+          "مساحة الجزء $EBM$ :",
+          "$S_1 = \\dfrac{EB \\times BM}{2}$",
+          "$S_1 = \\dfrac{12 \\times x}{2}$",
+          "$S_1 = 6x$",
+          "مساحة الجزء $AEMCD$ :",
+          "$S_2 = S_{ABCD} - S_1$",
+          "$S_2 = 324 - 6x$"
+        ],
+        "result": "S_2 = 324 - 6x"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "statement": "ثم العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "324",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAALUFI-A-B-MAQLUB",
+          "value": "-6"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحدّ الثابت هو مساحة المربع كله."
+        }
+      ],
+      "feedback": {
+        "correct": "$S_{ABCD} = a^2$ .",
+        "incorrect": "الحدّ الثابت لا يتعلّق بـ $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "مساحة الجزء $EBM$ :",
+          "$S_1 = \\dfrac{EB \\times BM}{2}$",
+          "$S_1 = \\dfrac{12 \\times x}{2}$",
+          "$S_1 = 6x$",
+          "مساحة الجزء $AEMCD$ :",
+          "$S_2 = S_{ABCD} - S_1$",
+          "$S_2 = 324 - 6x$"
+        ],
+        "result": "S_2 = 324 - 6x"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ساعد الأخوين على تحديد موضع النقطة $M$ بحيث تكون مساحة قطعة أحمد ضعف مساحة قطعة فاطمة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول $BM$ بـ m",
+      "expectedAnswer": "18",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«مساحة قطعة أحمد ضعف مساحة قطعة فاطمة» تُترجم: $S_2 = 2 \\times S_1$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المعادلة من الدرجة الأولى الناتجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$324 - 6x = 2 \\times 6x$ .",
+        "incorrect": "اكتب $S_2 = 2S_1$ بالعبارتين ثم اجمع حدود $x$ في طرف واحد."
+      },
+      "solution": {
+        "lines": [
+          "مساحة قطعة أحمد $S_2$ ضعف مساحة قطعة فاطمة $S_1$ معناه:",
+          "$S_2 = 2 \\times S_1$",
+          "$324 - 6x = 2 \\times 6x$",
+          "$324 = 12x + 6x$",
+          "$324 = 18x$",
+          "$\\dfrac{324}{18} = \\dfrac{18x}{18}$",
+          "$x = 18$",
+          "عندما تنطبق النقطة $M$ على النقطة $C$ تكون مساحة قطعة أحمد $S_2$ ضعف مساحة قطعة فاطمة $S_1$ ."
+        ],
+        "result": "x = 18"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "lead": "الجزء الثاني: المستوي منسوب إلى معلم متعامد ومتجانس $(O, \\vec{i} , \\vec{j})$ .",
+      "statement": "مثل بيانيا الدالتين $f$ و $g$ حيث: $f(x) = 12x$ ، $g(x) = -6x + 324$ .\n( نأخذ: 1cm على محور الفواصل يمثل $2m$ و 1cm على محور التراتيب يمثل $36m^2$ )",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب صورتي عددين بكل دالة، مثلا 0 و 10 ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "علّم النقط بالوحدتين المعطاتين ($x$ لا يتجاوز طول الضلع $a$)."
+        }
+      ],
+      "feedback": {
+        "correct": "مثلا: $f(0) = 0$ ، $f(10) = 120$ ، $g(0) = 324$ ، $g(10) = 264$ .",
+        "incorrect": "أنجز جدول قيم لكل دالة (عددان يكفيان) ثم ارسم المستقيم المار بالنقطتين."
+      },
+      "solution": {
+        "lines": [
+          "التمثيل البياني للدالتين $f$ و $g$ في معلم متعامد و متجانس:",
+          "جدول قيم الدالة $f$ : $f(0) = 0$ و $f(18) = 216$ .",
+          "جدول قيم الدالة $g$ : $g(0) = 324$ و $g(18) = 216$ .",
+          "تمثيل $f$ هو القطعة المستقيمة من $(0 ; 0)$ إلى $(18 ; 216)$ ، وتمثيل $g$ هو القطعة المستقيمة من $(0 ; 324)$ إلى $(18 ; 216)$ ",
+          "(بالوحدتين: 1cm لكل $2m$ أفقيا و 1cm لكل $36m^2$ عموديا)."
+        ]
+      },
+      "timeSeconds": 480
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "lead": "بقراءة بيانية، فسر مساعدتك السابقة للأخوين حول تحديد موضع النقطة $M$ مع إيجاد مساحة كل من القطعتين.",
+      "statement": "إحداثيا نقطة تقاطع التمثيلين البيانيين للدالتين $f$ و $g$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": {
+        "x": "18",
+        "y": "216"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-JUMLA-BAYANI-MAQLUB",
+          "value": {
+            "x": "216",
+            "y": "18"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التمثيلان يتقاطعان حيث $f(x) = g(x)$ ، أي حيث $S_2 = 2S_1$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ فاصلة نقطة التقاطع ثم ترتيبها بالوحدتين."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة هي الطول $BM$ والترتيب هو مساحة قطعة أحمد.",
+        "incorrect": "الفاصلة تُقرأ على محور الفواصل (بـ m) والترتيب على محور التراتيب (بـ $m^2$)؛ الفاصلة أولا."
+      },
+      "solution": {
+        "lines": [
+          "التمثيل البياني للدالة $g$ يعبّر عن مساحة قطعة أحمد بدلالة $x$ .",
+          "التمثيل البياني للدالة $f$ يعبّر عن ضعف مساحة قطعة فاطمة بدلالة $x$ .",
+          "نقطة تقاطع التمثيلين البيانيين للدالتين $f$ و $g$ معناه أنّ مساحة الجزء $AEMCD$ تساوي ضعف مساحة الجزء $EMB$ .",
+          "باسقاط نقطة التقاطع على محور الفواصل نجد $x = 18m$ معناه أنّ $BM = 18m$ ، و عند إسقاطها على محور التراتيب نجد $y = 216m^2$ معناه أنّ مساحة قطعة أحمد هي $216m^2$ .",
+          "بما أنها ضعف مساحة قطعة فاطمة فإنّ مساحة الجزء $EMB$ هي $108m^2$ .",
+          "حسابيا: $S_2 = 324 - 6 \\times 18 = 216m^2$ و $S_1 = 6 \\times 18 = 108m^2$ ."
+        ],
+        "result": "(18 ; 216)"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q8",
+      "step": "04",
+      "statement": "مساحة قطعة أحمد:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المساحة بـ $m^2$",
+      "expectedAnswer": "216",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هي ترتيب نقطة التقاطع."
+        }
+      ],
+      "feedback": {
+        "correct": "$S_2 = g(18)$ .",
+        "incorrect": "مساحة قطعة أحمد هي $S_2 = g(x)$ عند فاصلة نقطة التقاطع."
+      },
+      "solution": {
+        "lines": [
+          "التمثيل البياني للدالة $g$ يعبّر عن مساحة قطعة أحمد بدلالة $x$ .",
+          "التمثيل البياني للدالة $f$ يعبّر عن ضعف مساحة قطعة فاطمة بدلالة $x$ .",
+          "نقطة تقاطع التمثيلين البيانيين للدالتين $f$ و $g$ معناه أنّ مساحة الجزء $AEMCD$ تساوي ضعف مساحة الجزء $EMB$ .",
+          "باسقاط نقطة التقاطع على محور الفواصل نجد $x = 18m$ معناه أنّ $BM = 18m$ ، و عند إسقاطها على محور التراتيب نجد $y = 216m^2$ معناه أنّ مساحة قطعة أحمد هي $216m^2$ .",
+          "بما أنها ضعف مساحة قطعة فاطمة فإنّ مساحة الجزء $EMB$ هي $108m^2$ .",
+          "حسابيا: $S_2 = 324 - 6 \\times 18 = 216m^2$ و $S_1 = 6 \\times 18 = 108m^2$ ."
+        ],
+        "result": "S_2 = 216m^2"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q9",
+      "step": "04",
+      "statement": "مساحة قطعة فاطمة:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المساحة بـ $m^2$",
+      "expectedAnswer": "108",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-TAHAQQUQ",
+          "value": "216"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التمثيل البياني للدالة $f$ يعبّر عن ضعف مساحة قطعة فاطمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$S_1 = \\dfrac{216}{2}$ .",
+        "incorrect": "ترتيب نقطة التقاطع على تمثيل $f$ هو ضعف مساحة قطعة فاطمة، لا مساحتها."
+      },
+      "solution": {
+        "lines": [
+          "التمثيل البياني للدالة $g$ يعبّر عن مساحة قطعة أحمد بدلالة $x$ .",
+          "التمثيل البياني للدالة $f$ يعبّر عن ضعف مساحة قطعة فاطمة بدلالة $x$ .",
+          "نقطة تقاطع التمثيلين البيانيين للدالتين $f$ و $g$ معناه أنّ مساحة الجزء $AEMCD$ تساوي ضعف مساحة الجزء $EMB$ .",
+          "باسقاط نقطة التقاطع على محور الفواصل نجد $x = 18m$ معناه أنّ $BM = 18m$ ، و عند إسقاطها على محور التراتيب نجد $y = 216m^2$ معناه أنّ مساحة قطعة أحمد هي $216m^2$ .",
+          "بما أنها ضعف مساحة قطعة فاطمة فإنّ مساحة الجزء $EMB$ هي $108m^2$ .",
+          "حسابيا: $S_2 = 324 - 6 \\times 18 = 216m^2$ و $S_1 = 6 \\times 18 = 108m^2$ ."
+        ],
+        "result": "S_1 = 108m^2"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

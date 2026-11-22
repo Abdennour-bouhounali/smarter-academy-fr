@@ -1,0 +1,278 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-quwa-nisbiya-l5-009",
+  "lessonCode": "wadiya-idmajiya-quwa-nisbiya",
+  "level": 5,
+  "metadata": {
+    "title": "مخزن الحبوب",
+    "estimatedMinutes": 12,
+    "tags": [
+      "الكتابة العلمية",
+      "الحصر",
+      "الطن"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في مطحنة حوالي $8 \\times 10^{7}$ من حبّات القمح، وكتلة الواحدة منها حوالي $2 \\times 10^{-5}\\ \\mathrm{kg}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "الكتلة الكلّية بالكيلوغرام هي $a \\times 10^{n}$ : ما قيمة $a$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "العدد $a$ (عدد عشري)",
+      "expectedAnswer": "1.6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين تضع الفاصلة ليبقى رقم واحد غير معدوم قبلها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $a$ من $1$ إلى أقل من $10$ ، والأسّ $n$ هو عدد رتب إزاحة الفاصلة (موجب للأعداد الكبيرة وسالب للصغيرة)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة الضرب في $10^{n}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $1{,}6$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نُزيح الفاصلة حتى يبقى رقم واحد غير معدوم قبلها: $a = 1{,}6$ .",
+          "$(8 \\times 10^{7}) \\times (2 \\times 10^{-5})$ = $1{,}6 \\times 10^{3}$ ."
+        ],
+        "result": "1{,}6"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "وما قيمة الأسّ $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "-35",
+          "id": "MISC-WQ-MULEXP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين تضع الفاصلة ليبقى رقم واحد غير معدوم قبلها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $a$ من $1$ إلى أقل من $10$ ، والأسّ $n$ هو عدد رتب إزاحة الفاصلة (موجب للأعداد الكبيرة وسالب للصغيرة)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإعادة الضرب في $10^{n}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $3$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الأسّ هو عدد رتب إزاحة الفاصلة: موجب لأنّ العدد كبير .",
+          "$(8 \\times 10^{7}) \\times (2 \\times 10^{-5})$ = $1{,}6 \\times 10^{3}$ ، إذن $n = 3$ ."
+        ],
+        "result": "3"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "رتبة قدر الكتلة هي $a' \\times 10^{n}$ : ما قيمة $a'$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "العدد الصحيح $a'$ (من 1 إلى 9)",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب أوّلًا الكتابة العلمية للعدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ندوّر $a$ إلى الوحدة ونُبقي القوة $10^{n}$ ؛ إذا صار المدوّر $10$ فهو $1 \\times 10^{n+1}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنّ المدوّر عدد صحيح من $1$ إلى $9$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $2$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الكتابة العلمية $(8 \\times 10^{7}) \\times (2 \\times 10^{-5})$ = $1{,}6 \\times 10^{3}$ .",
+          "مدوّر $1{,}6$ إلى الوحدة هو $2$ ، فرتبة القدر $2 \\times 10^{3}$ ."
+        ],
+        "result": "2"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "الكتلة الكلّية (بالكيلوغرام) محصورة بين:",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$10^{4}$ و $10^{5}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WQ-DIGITS"
+        },
+        {
+          "id": "B",
+          "content": "$10^{-4}$ و $10^{-3}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WQ-BRACKET"
+        },
+        {
+          "id": "C",
+          "content": "$10^{3}$ و $10^{4}$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$10^{2}$ و $10^{3}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WQ-BRACKET"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل تستطيع حساب كل خيار على حدة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الخيارات بعد تحويلها إلى الكتابة العلمية أو إلى قوة العدد $10$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استبعد الخيارات التي تخالف قاعدة تعرفها."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $10^{3}$ و $10^{4}$ .",
+        "incorrect": "قارن الخيارات بعد تحويلها إلى شكل مشترك، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$(8 \\times 10^{7}) \\times (2 \\times 10^{-5})$ = $1{,}6 \\times 10^{3}$ .",
+          "$10^{3} \\le (8 \\times 10^{7}) \\times (2 \\times 10^{-5}) < 10^{4}$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "كم طنًّا تساوي هذه الكتلة ؟ ($1\\ \\text{طنّ} = 10^{3}\\ \\mathrm{kg}$)",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "1.6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة النتيجة، وكم عاملًا في الجداء ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد العوامل السالبة الزوجي يعطي ناتجًا موجبًا؛ والأسّ السالب يعني مقلوب القوة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الإشارة ثمّ احسب القيمة."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $1{,}6$ .",
+        "incorrect": "انتبه إلى إشارة القوة وإلى الأسّ السالب، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$((8 \\times 10^{7}) \\times (2 \\times 10^{-5})) \\div 10^{3}$ = $1{,}6$ ."
+        ],
+        "result": "1{,}6"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

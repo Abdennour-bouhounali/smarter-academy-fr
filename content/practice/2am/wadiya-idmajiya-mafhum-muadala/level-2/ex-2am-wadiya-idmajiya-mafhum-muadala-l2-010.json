@@ -1,0 +1,139 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-mafhum-muadala-l2-010",
+  "lessonCode": "wadiya-idmajiya-mafhum-muadala",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — ميزانيّة رحلة",
+    "estimatedMinutes": 9,
+    "tags": [
+      "متباينة",
+      "جزء ثابت"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ميزانيّة رحلة مدرسيّة $6000$ DA . كراء الحافلة $1800$ DA ثابتة ، و $140$ DA عن كلّ تلميذ $x$ ، أي $1800+140x$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل المتباينة $1800+140x \\le 6000$ صحيحة من أجل $x = 30$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IKHTIBAR-STRICT"
+        },
+        {
+          "id": "B",
+          "content": "نعم",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "نعم .",
+        "incorrect": "عوّض الحرف في الطرفين، احسب كلّ طرف ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل : $1800+140 \\times 30 = 6000$ .",
+          "الطرف الثاني : $6000 = 6000$ .",
+          "$6000 \\le 6000$ : العلاقة صحيحة ."
+        ]
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بقيمته المعطاة في الطرفين معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة ثمّ قارن الناتجين بالرمز المكتوب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الرمز « أصغر أو يساوي » يقبل التساوي، والرمز « أصغر تمامًا » لا يقبله."
+        }
+      ],
+      "timeSeconds": 70
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم قيمة من القيم $25$ ، $28$ ، $30$ ، $32$ لعدد التلاميذ تجعل المتباينة $1800+140x \\le 6000$ صحيحة ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-IKHTIBAR-STRICT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ قيمة من القيم المعطاة على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الطرفين من أجل كلّ قيمة ثمّ قارن بالرمز المكتوب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عُدّ القيم التي تجعل المتباينة صحيحة فقط، وانتبه إلى حالة تساوي الطرفين."
+        }
+      ],
+      "feedback": {
+        "correct": "$3$ .",
+        "incorrect": "اختبر كلّ قيمة على حدة وانتبه إلى حالة تساوي الطرفين."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $x = 25$ : $1800+140 \\times 25 = 5300$ و $6000 = 6000$ ، فالعلاقة صحيحة .",
+          "من أجل $x = 28$ : $1800+140 \\times 28 = 5720$ و $6000 = 6000$ ، فالعلاقة صحيحة .",
+          "من أجل $x = 30$ : $1800+140 \\times 30 = 6000$ و $6000 = 6000$ ، فالعلاقة صحيحة .",
+          "من أجل $x = 32$ : $1800+140 \\times 32 = 6280$ و $6000 = 6000$ ، فالعلاقة خاطئة .",
+          "عدد القيم : $3$ ."
+        ],
+        "result": "3"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

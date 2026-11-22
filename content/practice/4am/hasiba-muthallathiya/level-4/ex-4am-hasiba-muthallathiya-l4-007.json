@@ -1,0 +1,204 @@
+{
+  "id": "ex-4am-hasiba-muthallathiya-l4-007",
+  "lessonCode": "hasiba-muthallathiya",
+  "level": 4,
+  "metadata": {
+    "title": "طائرة ورقية في السابلات: جيب 50° والارتفاع",
+    "estimatedMinutes": 9,
+    "tags": [
+      "الجيب",
+      "تدوير مبكّر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hasiba-muthallathiya_P1",
+      "modelledOn": "act-4",
+      "adaptedFrom": "ex-4am-hasiba-muthallathiya-l4-007"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يطيّر إياد طائرة ورقية في شاطئ السابلات. الخيط مشدود ومستقيم طوله $30\\,\\mathrm{m}$ ، ويصنع مع الأفق زاوية $50^{\\circ}$ ، ويد إياد على ارتفاع $1{,}2\\,\\mathrm{m}$ من الأرض. وقبل أن يطيّرها، جمع إياد القارورات المتروكة على الشاطئ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $\\sin 50^{\\circ}$ بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري مدوّر إلى 0,01",
+      "expectedAnswer": "0.77",
+      "misconceptionSignatures": [
+        {
+          "value": "0.76",
+          "id": "MISC-MUTH-TADWIR-BATR"
+        },
+        {
+          "value": "-0.26",
+          "id": "MISC-MUTH-HASIBA-RAD"
+        },
+        {
+          "value": "0.64",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق أن الحاسبة مبرمجة بالدرجة: الحرف ⁦D⁩ في أعلى الشاشة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اللمسة المباشرة: ⁦sin⁩ ثم قيس الزاوية ثم ⁦=⁩ (دون ⁦2nd⁩)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتدوير إلى الجزء من 100: انظر إلى الرقم الموالي؛ إذا كان 5 أو أكبر نضيف 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin 50^{\\circ} = 0{,}7660444431 \\approx 0{,}77$ .",
+        "incorrect": "احسب باللمسة المباشرة والحاسبة مبرمجة بالدرجة، ثم دوّر (لا تبتر) إلى الجزء من 100."
+      },
+      "solution": {
+        "lines": [
+          "الحاسبة مبرمجة بالدرجة: ⁦ON sin 50 =⁩ يظهر على الشاشة $0{,}7660444431$ .",
+          "الرقم الذي يلي رقم الأجزاء من 100 هو 6، وهو أكبر من 5: نضيف 1 إلى رقم الأجزاء من 100."
+        ],
+        "result": "\\sin 50^{\\circ} \\approx 0{,}77"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب ارتفاع الطائرة فوق مستوى يد إياد بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m مدوّرا إلى 0,1",
+      "expectedAnswer": "23.0",
+      "misconceptionSignatures": [
+        {
+          "value": "22.9",
+          "id": "MISC-MUTH-TADWIR-BATR"
+        },
+        {
+          "value": "23.1",
+          "id": "MISC-MUTH-TADWIR-MUBAKKIR"
+        },
+        {
+          "value": "19.3",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "39.2",
+          "id": "MISC-MUTH-QISMA-BADAL-DARB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الخيط هو الوتر، والارتفاع فوق اليد يقابل الزاوية $50^{\\circ}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل $\\sin 50^{\\circ}$ بكل أرقام الشاشة، لا مدوّره."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تدوّر إلا النتيجة النهائية."
+        }
+      ],
+      "feedback": {
+        "correct": "$h = 30 \\times \\sin 50^{\\circ} \\approx 22{,}98133329 \\approx 23{,}0\\,\\mathrm{m}$ .",
+        "incorrect": "الارتفاع في بسط الجيب: نضرب طول الخيط في $\\sin 50^{\\circ}$ بكل أرقام الشاشة."
+      },
+      "solution": {
+        "lines": [
+          "$\\sin 50^{\\circ} = \\dfrac{h}{30}$ ومنه $h = 30 \\times \\sin 50^{\\circ}$",
+          "بكل أرقام الشاشة: $h \\approx 22{,}98133329$",
+          "(بالمدوّر $0{,}77$ نجد $23{,}1$ : تدوير مبكّر.)"
+        ],
+        "result": "h \\approx 23{,}0\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "استنتج ارتفاع الطائرة عن الأرض بالتدوير إلى $0{,}1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الارتفاع بـ m مدوّرا إلى 0,1",
+      "expectedAnswer": "24.2",
+      "misconceptionSignatures": [
+        {
+          "value": "23.0",
+          "id": "MISC-MUTH-IRTIFA3-AYN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يد إياد ليست على الأرض."
+        }
+      ],
+      "feedback": {
+        "correct": "$H = 1{,}2 + 22{,}98133329 \\approx 24{,}2\\,\\mathrm{m}$ .",
+        "incorrect": "أضف ارتفاع اليد عن الأرض إلى الارتفاع فوق مستوى اليد."
+      },
+      "solution": {
+        "lines": [
+          "$H = 1{,}2 + h \\approx 1{,}2 + 22{,}98133329$"
+        ],
+        "result": "H \\approx 24{,}2\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

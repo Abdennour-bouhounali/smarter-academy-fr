@@ -1,0 +1,159 @@
+{
+  "id": "ex-4am-tarrid-taalufi-l4-005",
+  "lessonCode": "tarrid-taalufi",
+  "level": 4,
+  "metadata": {
+    "title": "قارب كاياك — أوّل ساعة رابحة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "متراجحة",
+      "عدد طبيعي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-taalufi_P2",
+      "modelledOn": "act-4"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "كراء قارب كاياك: بالبطاقة $f(x) = 60x + 900$ ، ودونها $g(x) = 150x$ (بـ DA)، حيث $x$ عدد الساعات الكاملة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "نبحث متى تكون البطاقة أقل تكلفة تماما.",
+      "statement": "حل المتراجحة: $60x + 900 < 150x$ .\nحدّ الحلول $k$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "حلول المتراجحة من الشكل $x < k$ أو $x > k$ : اكتب العدد $k$ فقط",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحدّ هو حل المعادلة المرفقة $60x + 900 = 150x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "حدّ الحلول هو حل المعادلة المرفقة.",
+        "incorrect": "انقل حدود $x$ إلى طرف واحد ثم اقسم على معامل $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$60x + 900 < 150x$",
+          "$900 < 90x$",
+          "$10 < x$ ، أي $x > 10$"
+        ],
+        "result": "x > 10"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "حلول المتراجحة هي الأعداد $x$ حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x < 10$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTARAJIHA-QALB-ZAID"
+        },
+        {
+          "id": "B",
+          "content": "$x > 10$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قسمنا في آخر سطر على عدد موجب."
+        }
+      ],
+      "feedback": {
+        "correct": "البطاقة أقل تكلفة تماما عندما يتجاوز عدد الساعات هذا الحدّ.",
+        "incorrect": "القسمة على عدد موجب لا تغيّر اتجاه المتباينة."
+      },
+      "solution": {
+        "lines": [
+          "$60x + 900 < 150x$",
+          "$900 < 90x$",
+          "$10 < x$ ، أي $x > 10$"
+        ],
+        "result": "x > 10"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما هو أصغر عدد من الساعات الكاملة تكون من أجله البطاقة أقل تكلفة تماما؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد الساعات",
+      "expectedAnswer": "11",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحلول أعداد أكبر تماما من الحدّ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خذ أول عدد طبيعي بعده."
+        }
+      ],
+      "feedback": {
+        "correct": "هو أول عدد طبيعي أكبر تماما من الحدّ.",
+        "incorrect": "الحدّ نفسه يعطي مبلغين متساويين، لا أقل تكلفة تماما."
+      },
+      "solution": {
+        "lines": [
+          "$60x + 900 < 150x$",
+          "$900 < 90x$",
+          "$10 < x$ ، أي $x > 10$",
+          "أصغر عدد طبيعي أكبر تماما من 10 هو 11: $f(11) = 1560DA$ و $g(11) = 1650DA$ ."
+        ],
+        "result": "11"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

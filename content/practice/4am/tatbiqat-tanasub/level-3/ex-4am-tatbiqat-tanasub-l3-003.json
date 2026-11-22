@@ -1,0 +1,117 @@
+{
+  "id": "ex-4am-tatbiqat-tanasub-l3-003",
+  "lessonCode": "tatbiqat-tanasub",
+  "level": 3,
+  "metadata": {
+    "title": "نشاط 5 — استهلاك البنزين",
+    "estimatedMinutes": 5,
+    "tags": [
+      "انخفاض",
+      "نسبة الانخفاض"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-5",
+      "page": 67,
+      "section": "أنشطة",
+      "number": 5,
+      "adaptedFrom": "ex-4am-tatbiqat-tanasub-l3-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "تستهلك سيارة $6{,}7L$ من البنزين لكل $100km$ . بعد ضبط المحرك، انخفض استهلاكها إلى $6{,}1L$ لكل $100km$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب مقدار انخفاض الاستهلاك لكل $100km$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد باللتر (عشري بالفاصلة)",
+      "expectedAnswer": "0,6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الانخفاض هو الفرق بين الاستهلاك قبل الضبط وبعده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح الاستهلاك الجديد من الاستهلاك القديم."
+        }
+      ],
+      "feedback": {
+        "correct": "$6{,}7 - 6{,}1 = 0{,}6L$ .",
+        "incorrect": "اطرح الاستهلاك الجديد من القديم."
+      },
+      "solution": {
+        "lines": [
+          "$6{,}7 - 6{,}1 = 0{,}6$",
+          "انخفض الاستهلاك بـ $0{,}6L$ لكل $100km$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب النسبة المئوية لهذا الانخفاض.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $t$ فقط دون الرمز %، مدوّرا إلى $0{,}01$",
+      "expectedAnswer": "8,96",
+      "misconceptionSignatures": [
+        {
+          "value": "9,84",
+          "id": "MISC-TANASUB-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النسبة تُحسب بالنسبة إلى الاستهلاك قبل الضبط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$t = \\dfrac{\\text{مقدار الانخفاض}}{\\text{الاستهلاك الأول}} \\times 100$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{0{,}6}{6{,}7} \\times 100 \\approx 8{,}96$ : انخفاض بنسبة $8{,}96\\%$ تقريبا.",
+        "incorrect": "اقسم مقدار الانخفاض على الاستهلاك الأول (لا الجديد) ثم اضرب في 100 ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{0{,}6}{6{,}7} \\times 100 = 8{,}955\\ldots$",
+          "نسبة الانخفاض $8{,}96\\%$ تقريبا (بالتدوير إلى $0{,}01$ )."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

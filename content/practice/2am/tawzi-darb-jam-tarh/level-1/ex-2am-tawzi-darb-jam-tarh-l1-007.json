@@ -1,0 +1,248 @@
+{
+  "id": "ex-2am-tawzi-darb-jam-tarh-l1-007",
+  "lessonCode": "tawzi-darb-jam-tarh",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أنشر عبارة فيها فرق",
+    "estimatedMinutes": 8,
+    "tags": [
+      "نشر",
+      "فرق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "انشر العبارة $D = 9 \\times (8 - 3)$ ثم احسب قيمتها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ كتابة من الكتابات الآتية هي نشر للعبارة $9 \\times (8 - 3)$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$9 \\times 8 - 9 \\times 3$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$9 \\times 8 - 3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-FIRSTONLY"
+        },
+        {
+          "id": "C",
+          "content": "$9 \\times 8 + 9 \\times 3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-SIGNCHANGE"
+        }
+      ],
+      "solution": {
+        "lines": [
+          "$9 \\times (8 - 3) = 9 \\times 8 - 9 \\times 3$",
+          "الضرب يتوزّع على كلّ حدّ من حدّي القوسين."
+        ]
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد الذي يضرب القوسين يتوزّع على الحدّين معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب هذا العدد في الحدّ الأول ثم في الحدّ الثاني، واحتفظ بالعملية التي بين الحدّين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بحساب الطرفين: يجب أن تحصل على النتيجة نفسها."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتابة الصحيحة هي $9 \\times 8 - 9 \\times 3$ .",
+        "incorrect": "العدد الذي يضرب القوسين يضرب كلّ حدّ بالعملية نفسها التي بين الحدّين: راجع كلّ خيار بحساب الطرفين."
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $9 \\times 8 - 9 \\times 3$ .",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "45",
+      "solution": {
+        "lines": [
+          "$9 \\times 8 - 9 \\times 3 = 45$"
+        ],
+        "result": "45"
+      },
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ العبارة جيّدًا: أين الأقواس؟ وهل يوجد عدد مشترك بين الجداءات؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر الطريقة الأسهل: وزّع الضرب على الحدّين أو أنجز ما بين القوسين أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز الحساب مرحلة مرحلة ثم تحقّق من النتيجة بطريقة ثانية."
+        }
+      ],
+      "feedback": {
+        "correct": "$9 \\times 8 - 9 \\times 3 = 45$",
+        "incorrect": "راجع حسابك مرحلة مرحلة، وتذكّر أنّ ما بين القوسين يُحسب أوّلًا وأنّ الضرب يتوزّع على كلّ حدّ."
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "تقول سلمى إنّ $9 \\times (8 - 3) = 9 \\times 8 + 9 \\times 3$ . هل ما كتبته صحيح؟",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAWZI-SIGNCHANGE"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "solution": {
+        "lines": [
+          "$9 \\times (8 - 3) = 45$",
+          "$9 \\times 8 + 9 \\times 3 = 99$",
+          "النتيجتان مختلفتان: المساواة خاطئة."
+        ]
+      },
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طبّق على الطرف الأيسر ما تعرفه من الخاصية التوزيعية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الطرفين حدًّا بحدّ: هل وُزّع الضرب على الحدّين معًا؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الطرفين عدديًا عند الحاجة: هل يتساويان؟"
+        }
+      ],
+      "feedback": {
+        "correct": "المساواة خاطئة: نتحقّق بحساب الطرفين.",
+        "incorrect": "احسب طرفي المساواة عدديًا وقارنهما: المساواة صحيحة فقط إذا تساوى الطرفان دائمًا."
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "أيّ خاصية تبرّر المساواة $9 \\times (8 - 3) = 9 \\times 8 - 9 \\times 3$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_tawzi-darb-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "توزيع الضرب على الجمع",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "توزيع الضرب على الطرح",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "تبديل حدّي الجمع",
+          "isCorrect": false
+        }
+      ],
+      "solution": {
+        "lines": [
+          "العملية بين الحدّين هي الطرح فالخاصية هي توزيع الضرب على الطرح.",
+          "$9 \\times (8 - 3) = 9 \\times 8 - 9 \\times 3$"
+        ]
+      },
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى العملية بين الحدّين داخل القوسين: جمع أم طرح؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الخاصية التي توزّع الضرب تحمل اسم العملية بين الحدّين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الخاصيتان الأخريان لا تُوزّعان الضرب على حدّي مجموع أو فرق."
+        }
+      ],
+      "feedback": {
+        "correct": "الخاصية هي توزيع الضرب على الطرح.",
+        "incorrect": "سمّ الخاصية بحسب العملية التي بين الحدّين داخل القوسين."
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ashia-l5-005",
+  "lessonCode": "wadiya-idmajiya-ashia",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — رباعي منتصفات مربع",
+    "estimatedMinutes": 4,
+    "tags": [
+      "مستقيم المنتصفين",
+      "مربع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ashia_P1",
+      "modelledOn": "ex-22"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "ABCD رباعي قطراه [AC] و [BD] متعامدان ومتقايسان، $AC = BD = 12\\,\\mathrm{cm}$ ، و M، N، P، Q منتصفات [DA]، [AB]، [BC]، [CD]."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما مساحة الرباعي MNPQ (بالسنتيمتر المربع)؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "36",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "MNPQ متوازي أضلاع أضلاعه أنصاف القطرين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قطران متعامدان ومتقايسان ⇒ مربع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضلعه 6."
+        }
+      ],
+      "feedback": {
+        "correct": "MNPQ مربع ضلعه $\\dfrac{12}{2} = 6$ ، ومساحته $36\\,\\mathrm{cm^2}$ .",
+        "incorrect": "ضلع MNPQ نصف القطر."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 5
+    }
+  ]
+}

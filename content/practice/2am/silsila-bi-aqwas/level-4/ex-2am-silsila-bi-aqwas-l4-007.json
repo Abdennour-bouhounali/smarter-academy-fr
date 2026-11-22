@@ -1,0 +1,190 @@
+{
+  "id": "ex-2am-silsila-bi-aqwas-l4-007",
+  "lessonCode": "silsila-bi-aqwas",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مرحلتان داخل المعقوفين",
+    "estimatedMinutes": 12,
+    "tags": [
+      "أقواس متداخلة",
+      "قسمة عشرية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "حسب ثلاثة تلاميذ العبارة $60 - [(5{,}4 + 2{,}6) \\times 3 - 8{,}4 \\div 0{,}7]$ : وجدت هبة $48$ ووجد سفيان $50{,}4$ ووجدت نور $24$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب القسمة العشرية: $8{,}4 \\div 0{,}7$ .",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع إطارًا حول القوسين: ما بداخلهما يُحسب أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب ما بين القوسين وفق أولوية العمليات، ثم أعد كتابة العبارة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك عملية بعد عملية إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 8{,}4 \\div 0{,}7 = 12$",
+        "incorrect": "ما بين القوسين يُحسب أوّلًا، ثم نكمل العمليات باحترام أولوية الضرب والقسمة على الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$A = 8{,}4 \\div 0{,}7$",
+          "$A = 12$"
+        ],
+        "result": "A = 12"
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "من منهم على صواب؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "سفيان: وجد $50{,}4$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-IGNORED"
+        },
+        {
+          "id": "B",
+          "content": "هبة: وجدت $48$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نور: وجدت $24$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-DROPOUTER"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى القوسين: ما بداخلهما يُحسب أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز الحساب أنت أولًا مرحلة مرحلة، ثم قارنه بالعدد المقترح."
+        }
+      ],
+      "feedback": {
+        "correct": "$60 - [(5{,}4 + 2{,}6) \\times 3 - 8{,}4 \\div 0{,}7] = 48$ .",
+        "incorrect": "احسب أنت العبارة مرحلة مرحلة ثم قارن: نبدأ بأعمق القوسين ثم نخرج إلى المعقوفين، وفي كل مستوى نحترم أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$A = 60 - [(5{,}4 + 2{,}6) \\times 3 - 8{,}4 \\div 0{,}7]$",
+          "$A = 60 - (8 \\times 3 - 8{,}4 \\div 0{,}7)$",
+          "$A = 60 - (24 - 12)$",
+          "$A = 60 - 12$",
+          "$A = 48$"
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب $A = 60 - [(5{,}4 + 2{,}6) \\times 3 - 8{,}4 \\div 0{,}7]$ .",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "48",
+      "misconceptionSignatures": [
+        {
+          "value": "50.4",
+          "id": "MISC-AQWAS-IGNORED"
+        },
+        {
+          "value": "24",
+          "id": "MISC-AQWAS-DROPOUTER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع خطًّا تحت أعمق القوسين: هما أوّل ما يُحسب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القوسين الداخليين ثم المعقوفين، ثم أكمل بقية العبارة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أعد كتابة العبارة بعد كل مرحلة بما بقي منها."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 60 - [(5{,}4 + 2{,}6) \\times 3 - 8{,}4 \\div 0{,}7] = 48$",
+        "incorrect": "نبدأ بأعمق القوسين ثم نخرج إلى المعقوفين، وفي كل مستوى نحترم أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$A = 60 - [(5{,}4 + 2{,}6) \\times 3 - 8{,}4 \\div 0{,}7]$",
+          "$A = 60 - (8 \\times 3 - 8{,}4 \\div 0{,}7)$",
+          "$A = 60 - (24 - 12)$",
+          "$A = 60 - 12$",
+          "$A = 48$"
+        ],
+        "result": "A = 48"
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

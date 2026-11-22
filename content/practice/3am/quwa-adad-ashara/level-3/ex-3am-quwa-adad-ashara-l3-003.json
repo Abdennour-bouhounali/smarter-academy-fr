@@ -1,0 +1,180 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l3-003",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — سعة التخزين",
+    "estimatedMinutes": 6,
+    "tags": [
+      "الأوكتي",
+      "k × قوة 10"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في الإعلام الآلي: $1\\ \\mathrm{Ko} = 1\\,000\\ \\mathrm{octets}$ و $1\\ \\mathrm{Mo} = 1\\,000\\ \\mathrm{Ko}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "كم أوكتي في $1\\ \\mathrm{Mo}$ ؟",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم أوكتي في الكيلو أوكتي الواحد؟ وكم كيلو أوكتي في الميغا أوكتي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب العددين العشريّين الموجودين في المعطيات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$1\\,000 \\times 1\\,000$ يعطي 1 متبوعًا بأصفار."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "1000000",
+      "misconceptionSignatures": [
+        {
+          "value": "100000",
+          "id": "MISC-ASHARA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\ \\mathrm{Mo} = 1\\,000\\,000\\ \\mathrm{octets}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$1\\ \\mathrm{Mo} = 1\\,000 \\times 1\\,000 = 1\\,000\\,000$ أوكتي."
+        ],
+        "result": "1\\,000\\,000"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "نكتب عدد الأوكتي في $1\\ \\mathrm{Mo}$ على الشكل $10^{n}$ : ما قيمة $n$ ؟ (انظر السؤال السابق)",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ الأصفار الواقعة بعد الرقم 1 في هذا العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأسّ هو عدد الأصفار بعد الرقم 1، وليس عدد أرقام العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدّ الأصفار صفرًا صفرًا بدءًا من الرقم 1 حتى آخر العدد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-ASHARA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\ \\mathrm{Mo} = 10^{6}\\ \\mathrm{octets}$ .",
+        "incorrect": "عدّ الأصفار (أو رتبة الرقم 1 بعد الفاصلة) بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$1\\ \\mathrm{Mo} = 1\\,000\\,000$ أوكتي.",
+          "$1\\,000\\,000 = 10^{6}$ ."
+        ],
+        "result": "n = 6"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ملفّ حجمه $25\\ \\mathrm{Mo}$ . كم أوكتي فيه؟ ($1\\ \\mathrm{Mo} = 10^{6}$ أوكتي)",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم أوكتي في ميغا أوكتي واحد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب العدد 25 في $10^{6}$ : أزح الفاصلة ستّ رتب نحو اليمين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا نضرب 25 في الأسّ 6."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "25000000",
+      "misconceptionSignatures": [
+        {
+          "value": "150",
+          "id": "MISC-ASHARA-DARB"
+        }
+      ],
+      "feedback": {
+        "correct": "$25 \\times 10^{6} = 25\\,000\\,000$ أوكتي.",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$25 \\times 10^{6} = 25 \\times 1\\,000\\,000$ .",
+          "$= 25\\,000\\,000$ ."
+        ],
+        "result": "25\\,000\\,000"
+      }
+    }
+  ]
+}

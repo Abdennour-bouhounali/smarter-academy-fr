@@ -1,0 +1,208 @@
+{
+  "id": "ex-4am-talis-hisab-atwal-l2-002",
+  "lessonCode": "talis-hisab-atwal",
+  "level": 2,
+  "metadata": {
+    "title": "وضعية الفراشة — x و y",
+    "estimatedMinutes": 6,
+    "tags": [
+      "وضعية الفراشة",
+      "حساب طول"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 112,
+      "section": "أؤكّد تعلّماتي",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل، النقط $B$ ، $A$ ، $L$ على استقامة والنقط $C$ ، $A$ ، $M$ على استقامة ( $A$ بين النقطتين في كل مرة)، و $(LM) \\parallel (BC)$ ؛ $BC = 4$ ، $AM = 3$ ، $ML = 2$ ، $AL = 2$ ، $AB = x$ و $AC = y$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0.0,
+          0.0
+        ],
+        "B": [
+          3.758770483144,
+          1.368080573303
+        ],
+        "C": [
+          5.196152422707,
+          -3.0
+        ],
+        "L": [
+          -1.879385241572,
+          -0.684040286651
+        ],
+        "M": [
+          -2.598076211353,
+          1.5
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "x"
+        },
+        {
+          "from": "A",
+          "to": "C",
+          "label": "y"
+        },
+        {
+          "from": "A",
+          "to": "L",
+          "label": "2"
+        },
+        {
+          "from": "A",
+          "to": "M",
+          "label": "3"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "4",
+          "arrows": 1
+        },
+        {
+          "from": "L",
+          "to": "M",
+          "label": "2",
+          "arrows": 1
+        }
+      ],
+      "labels": {
+        "A": "n"
+      },
+      "ariaLabel": "B و A و L على استقامة و C و A و M على استقامة (A بين النقطتين)؛ (LM) يوازي (BC)؛ BC = 4 و AM = 3 و ML = 2 و AL = 2 و AB = x و AC = y",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (عشري بالفاصلة مثل 2,75 أو كسر مثل 7/9)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقط $A$ ، $L$ ، $B$ على استقامة والنقط $A$ ، $M$ ، $C$ على استقامة، و $(LM) \\parallel (BC)$ : المثلثان $ALM$ و $ABC$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب النسب الثلاث المتساوية $\\dfrac{AL}{AB} = \\dfrac{AM}{AC} = \\dfrac{LM}{BC}$ ، واحتفظ بالمساواة التي فيها $AB$ وثلاثة أطوال معلومة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الطول المجهول بالجداء المتصالب (الرابع المتناسب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AL}{AB} = \\dfrac{LM}{BC}$ : $\\dfrac{2}{x} = \\dfrac{2}{4}$ ومنه $x = 4$ .",
+        "incorrect": "راجع المساواة المختارة: في كل نسبة طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: النقط $A$ ، $L$ ، $B$ على استقامة واحدة، والنقط $A$ ، $M$ ، $C$ على استقامة واحدة، و $(LM) \\parallel (BC)$ .",
+          "حسب خاصية طالس: $\\dfrac{AL}{AB} = \\dfrac{AM}{AC} = \\dfrac{LM}{BC}$",
+          "$\\dfrac{AL}{AB} = \\dfrac{LM}{BC}$ أي $\\dfrac{2}{x} = \\dfrac{2}{4}$",
+          "$x = \\dfrac{4 \\times 2}{2}$"
+        ],
+        "result": "x = 4"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $y$ .",
+      "learningPoints": [
+        {
+          "code": "4am_talis-hisab-atwal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_talis-hisab-atwal_P1",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (عشري بالفاصلة مثل 2,75 أو كسر مثل 7/9)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "1,5",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقط $A$ ، $L$ ، $B$ على استقامة والنقط $A$ ، $M$ ، $C$ على استقامة، و $(LM) \\parallel (BC)$ : المثلثان $ALM$ و $ABC$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب النسب الثلاث المتساوية $\\dfrac{AL}{AB} = \\dfrac{AM}{AC} = \\dfrac{LM}{BC}$ ، واحتفظ بالمساواة التي فيها $AC$ وثلاثة أطوال معلومة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الطول المجهول بالجداء المتصالب (الرابع المتناسب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AM}{AC} = \\dfrac{LM}{BC}$ : $\\dfrac{3}{y} = \\dfrac{2}{4}$ ومنه $y = 6$ .",
+        "incorrect": "راجع المساواة المختارة: في كل نسبة طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{AM}{AC} = \\dfrac{LM}{BC}$ أي $\\dfrac{3}{y} = \\dfrac{2}{4}$",
+          "$y = \\dfrac{4 \\times 3}{2}$"
+        ],
+        "result": "y = 6"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

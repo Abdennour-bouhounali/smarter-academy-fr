@@ -1,0 +1,240 @@
+{
+  "id": "ex-4am-aksiya-talis-l1-007",
+  "lessonCode": "aksiya-talis",
+  "level": 1,
+  "metadata": {
+    "title": "القطعة أم الضلع؟",
+    "estimatedMinutes": 5,
+    "tags": [
+      "النسب",
+      "القطعة بدل الضلع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_aksiya-talis_P1",
+      "modelledOn": null,
+      "adaptedFrom": "ex-4am-aksiya-talis-l3-010"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "$ABC$ مثلث، $M$ نقطة من $[AB]$ و $N$ نقطة من $[AC]$ حيث: $AM = 4$ ، $MB = 2$ ، $AN = 5$ و $NC = 3$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0.0,
+          0.0
+        ],
+        "B": [
+          -2.535709570444,
+          -5.43784672222
+        ],
+        "M": [
+          -1.690473046963,
+          -3.625231148147
+        ],
+        "C": [
+          3.380946093926,
+          -7.250462296293
+        ],
+        "N": [
+          2.113091308703,
+          -4.531538935183
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "M",
+          "label": "4"
+        },
+        {
+          "from": "M",
+          "to": "B",
+          "label": "2"
+        },
+        {
+          "from": "A",
+          "to": "N",
+          "label": "5"
+        },
+        {
+          "from": "N",
+          "to": "C",
+          "label": "3"
+        },
+        [
+          "B",
+          "C"
+        ],
+        [
+          "M",
+          "N"
+        ]
+      ],
+      "ariaLabel": "مثلث ABC، M من [AB] و N من [AC]؛ AM = 4 و MB = 2 و AN = 5 و NC = 3",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب النسبة $\\dfrac{AM}{AB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "2/3",
+      "misconceptionSignatures": [
+        {
+          "value": "3/2",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "2",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AB = AM + MB$ : في النسبة نأخذ الضلع $[AB]$ كاملا، لا القطعة $[MB]$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $AM$ على $AB$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AM}{AB} = \\dfrac{4}{6} = \\dfrac{2}{3}$ .",
+        "incorrect": "النسبة $\\dfrac{AM}{AB}$ : الطول $AM$ على الطول $AB$ ، وكلاهما من النقطة $A$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$AB = AM + MB = 4 + 2 = 6$",
+          "$\\dfrac{AM}{AB} = \\dfrac{4}{6} = \\dfrac{2}{3}$"
+        ],
+        "result": "\\dfrac{AM}{AB} = \\dfrac{2}{3}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب النسبة $\\dfrac{AN}{AC}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "5/8",
+      "misconceptionSignatures": [
+        {
+          "value": "8/5",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "5/3",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AC = AN + NC$ : الضلع كاملا من الرأس $A$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $AN$ على $AC$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AN}{AC} = \\dfrac{5}{8}$ .",
+        "incorrect": "النسبة $\\dfrac{AN}{AC}$ : الطول $AN$ على الطول $AC$ ، وكلاهما من النقطة $A$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$AC = AN + NC = 5 + 3 = 8$",
+          "$\\dfrac{AN}{AC} = \\dfrac{5}{8}$"
+        ],
+        "result": "\\dfrac{AN}{AC} = \\dfrac{5}{8}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل المستقيمان $(MN)$ و $(BC)$ متوازيان؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_aksiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-AKS-BIDUN-TASAWI"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النسبتين بقيمهما المضبوطة (الجداء المتصالب)، لا بقيم مقرّبة ولا بمظهر الشكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق أيضا من ترتيب النقط على المستقيمين المتقاطعين."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 8 = 32$ و $6 \\times 5 = 30$ : النسبتان مختلفتان، فالمستقيمان غير متوازيين.",
+        "incorrect": "الخاصية العكسية تتطلب شرطين معا: تساوي النسبتين بقيم مضبوطة، وترتيب النقط نفسه على المستقيمين."
+      },
+      "solution": {
+        "lines": [
+          "$4 \\times 8 = 32$ و $6 \\times 5 = 30$ ، إذن $\\dfrac{AM}{AB} \\neq \\dfrac{AN}{AC}$ .",
+          "لو كان $(MN) \\parallel (BC)$ لكانت النسبتان متساويتين حسب خاصية طالس،",
+          "إذن المستقيمان $(MN)$ و $(BC)$ غير متوازيين."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "id": "ex-4am-bahth-pgcd-l3-001",
+  "lessonCode": "bahth-pgcd",
+  "level": 3,
+  "metadata": {
+    "title": "765 و 135",
+    "estimatedMinutes": 6,
+    "tags": [
+      "خوارزمية إقليدس"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-6b",
+      "page": 9,
+      "section": "أنشطة",
+      "number": 6
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان الطبيعيان 765 و 135."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب باقي القسمة الإقليدية للعدد 765 على العدد 135، ثم استنتج أن $\\text{PGCD}(765 ; 135) = \\text{PGCD}(135 ; r)$ حيث r هو هذا الباقي.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "90",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما أكبر مضاعف للعدد 135 لا يتجاوز 765؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح هذا المضاعف من 765."
+        }
+      ],
+      "feedback": {
+        "correct": "$765 = 135 \\times 5 + 90$، إذن $\\text{PGCD}(765 ; 135) = \\text{PGCD}(135 ; 90)$.",
+        "incorrect": "الباقي أصغر من 135: ابحث عن أكبر مضاعف للعدد 135 لا يتجاوز 765."
+      },
+      "solution": {
+        "lines": [
+          "$765 = 135 \\times 5 + 90$",
+          "وبما أن $\\text{PGCD}(a ; b) = \\text{PGCD}(b ; r)$ حيث r باقي قسمة a على b، فإن:"
+        ],
+        "result": "\\text{PGCD}(765 ; 135) = \\text{PGCD}(135 ; 90)"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "باستعمال خوارزمية إقليدس، احسب $\\text{PGCD}(765 ; 135)$.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "45",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-PGCD-SIFR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "واصل من الزوج (135 ; 90)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم المقسوم عليه على الباقي، وكرّر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$135 = 90 \\times 1 + 45$ ، $90 = 45 \\times 2 + 0$.",
+        "incorrect": "واصل القسمات حتى تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$765 = 135 \\times 5 + 90$",
+          "$135 = 90 \\times 1 + 45$",
+          "$90 = 45 \\times 2 + 0$",
+          "آخر باقٍ غير معدوم هو 45، إذن:"
+        ],
+        "result": "\\text{PGCD}(765 ; 135) = 45"
+      },
+      "work": "required",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما هو عدد القسمات الإقليدية التي تطلّبها حساب $\\text{PGCD}(765 ; 135)$ في السؤال 02 (بما فيها قسمة السؤال 01)؟ علمًا أن خوارزمية الفروق المتتابعة تتطلّب 8 طرحات، ماذا تستنتج؟",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P5",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ أسطر القسمة التي كتبتها، من أول قسمة إلى القسمة ذات الباقي المعدوم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن هذا العدد بعدد الطرحات المذكور."
+        }
+      ],
+      "feedback": {
+        "correct": "ثلاث قسمات بدل ثماني طرحات: خوارزمية إقليدس أسرع هنا.",
+        "incorrect": "عدّ كل الأسطر من الشكل $a = b \\times q + r$، بما فيها السطر الأخير."
+      },
+      "solution": {
+        "lines": [
+          "$765 = 135 \\times 5 + 90$",
+          "$135 = 90 \\times 1 + 45$",
+          "$90 = 45 \\times 2 + 0$",
+          "تطلّب الحساب 3 قسمات مقابل 8 طرحات بالفروق المتتابعة، فخوارزمية إقليدس أسرع هنا."
+        ]
+      },
+      "work": "required",
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l4-006",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — حبل مشدود على عجلة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "خاصية فيثاغورس",
+      "المماس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في ورشة الدراجات بالحيّ، يُصلح العمّ علي الدراجات للأطفال مجّانا. شدّ حبلا من مسمار $P$ ليمسّ عجلة دائرية مركزها $O$ ونصف قطرها $OT = 2{,}5\\,\\mathrm{dm}$ في النقطة $T$ ، حيث $OP = 6{,}5\\,\\mathrm{dm}$ .",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "P": [
+          6.5,
+          0
+        ],
+        "T": [
+          0.9615,
+          2.3077
+        ]
+      },
+      "segments": [
+        {
+          "from": "O",
+          "to": "P",
+          "label": "6,5 dm"
+        },
+        {
+          "from": "O",
+          "to": "T",
+          "label": "2,5 dm"
+        },
+        {
+          "from": "T",
+          "to": "P",
+          "tone": "indigo",
+          "bold": true
+        }
+      ],
+      "rightAngles": [
+        [
+          "O",
+          "T",
+          "P"
+        ]
+      ],
+      "labels": {
+        "O": "sw",
+        "T": "n"
+      },
+      "circles": [
+        {
+          "center": "O",
+          "through": "T"
+        }
+      ],
+      "ariaLabel": "عجلة دائرية مركزها O ونصف قطرها OT = 2,5 dm، وحبل [PT] مماس لها في T حيث OP = 6,5 dm",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "برّر أن المثلث $OTP$ قائم في $T$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما وضعية الحبل بالنسبة إلى العجلة في $T$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المماس ونصف القطر في نقطة التماس."
+        }
+      ],
+      "feedback": {
+        "correct": "المماس عمودي على نصف القطر في نقطة التماس.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "الحبل $[PT]$ مماس للعجلة (الدائرة) في النقطة $T$ .",
+          "المماس لدائرة في نقطة منها عمودي على نصف القطر في هذه النقطة، إذن $(PT) \\perp (OT)$ .",
+          "ومنه المثلث $OTP$ قائم في $T$ ، ووتره $[OP]$ ."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب طول الحبل $PT$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ dm",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "6.96",
+          "id": "MISC-FITAGHURAS-LEG-ADD"
+        },
+        {
+          "value": "4",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "36",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع المطلوب ليس الوتر: مربعه يساوي مربع الوتر ناقص مربع الضلع الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولا مربع الطول، ثم خذ جذره التربيعي بالآلة الحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$PT^2 = 6{,}5^2 - 2{,}5^2 = 36$ ، إذن $PT = 6\\,\\mathrm{dm}$ .",
+        "incorrect": "الطول المطلوب ضلع قائم وليس وترا: نطرح مربع الضلع المعلوم من مربع الوتر، ولا نجمع."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $OTP$ قائم في $T$ ، حسب خاصية فيثاغورس: $OP^2 = PT^2 + OT^2$",
+          "ومنه: $PT^2 = OP^2 - OT^2$",
+          "$PT^2 = 6{,}5^2 - 2{,}5^2 = 42{,}25 - 6{,}25 = 36$",
+          "$PT = \\sqrt{36} = 6\\,\\mathrm{dm}$"
+        ],
+        "result": "PT = 6\\,\\mathrm{dm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب محيط المثلث $OTP$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: المحيط بـ dm",
+      "expectedAnswer": "15",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المحيط مجموع أطوال الأضلاع الثلاثة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل الطول $PT$ الذي حسبته."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}5 + 6 + 6{,}5 = 15\\,\\mathrm{dm}$ .",
+        "incorrect": "اجمع الأطوال الثلاثة."
+      },
+      "solution": {
+        "lines": [
+          "$OT + TP + OP = 2{,}5 + 6 + 6{,}5 = 15\\,\\mathrm{dm}$"
+        ],
+        "result": "15\\,\\mathrm{dm}"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    }
+  ]
+}

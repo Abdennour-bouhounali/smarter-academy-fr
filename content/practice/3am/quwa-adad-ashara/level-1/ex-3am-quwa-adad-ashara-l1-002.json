@@ -1,0 +1,203 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l1-002",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — قراءة $10^{n}$ وأسماؤها",
+    "estimatedMinutes": 6,
+    "tags": [
+      "قراءة القوة",
+      "أسماء الأعداد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "تعلّمنا أنّ $10^{n}$ جداء $n$ عاملًا كلّها تساوي 10، وأنّ له أسماء مألوفة: ألف، مليون، مليار."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "كيف نقرأ $10^{7}$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا نسمّي العدد الصغير المكتوب أعلى العدد 10؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القراءة تنطق الأساس ثمّ كلمة «أُسّ» ثمّ الأسّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "هذا الترميز اختصار لجداء عوامل، وليس جداء 10 في 7."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "«عشرة أُسّ سبعة»",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "«عشرة في سبعة»",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-DARB"
+        },
+        {
+          "id": "C",
+          "content": "«عدد مكتوب بسبعة أرقام»",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{7}$ تُقرأ «عشرة أُسّ سبعة»، وهي جداء سبعة عوامل كلّها تساوي 10.",
+        "incorrect": "اختبر كلّ اقتراح بحساب الكتابة العشرية للقوة المعنية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10^{7} = 10 \\times 10 \\times 10 \\times 10 \\times 10 \\times 10 \\times 10$ (سبعة عوامل).",
+          "تُقرأ «عشرة أُسّ سبعة»."
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما اسم العدد $10^{6}$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أسماء القوى: ألف، مليون، مليار. أيّها يوافق الأسّ المعطى؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد الأصفار في $10^{n}$ يساوي $n$ ، وليس عدد أرقامه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا نضرب 10 في الأسّ للحصول على القيمة."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "عشرة ملايين",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-RAQAM"
+        },
+        {
+          "id": "B",
+          "content": "ستّون",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-DARB"
+        },
+        {
+          "id": "C",
+          "content": "مليون",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{6} = 1\\,000\\,000$ وهو «مليون».",
+        "incorrect": "اختبر كلّ اقتراح بحساب الكتابة العشرية للقوة المعنية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10^{6}$ هو 1 متبوع بستّة أصفار.",
+          "$10^{6} = 1\\,000\\,000$ ، أي «مليون»."
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "نكتب «ألف» على الشكل $10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ الأصفار الواقعة بعد الرقم 1 في هذا العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأسّ هو عدد الأصفار بعد الرقم 1، وليس عدد أرقام العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدّ الأصفار صفرًا صفرًا بدءًا من الرقم 1 حتى آخر العدد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-ASHARA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "«ألف» $= 1\\,000 = 10^{3}$ .",
+        "incorrect": "عدّ الأصفار (أو رتبة الرقم 1 بعد الفاصلة) بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "«ألف» $= 1\\,000$ ، وهو 1 متبوع بثلاثة أصفار.",
+          "$1\\,000 = 10^{3}$ ."
+        ],
+        "result": "n = 3"
+      }
+    }
+  ]
+}

@@ -1,0 +1,289 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l3-010",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — شراع المركب المصغّر",
+    "estimatedMinutes": 9,
+    "tags": [
+      "خاصية فيثاغورس",
+      "مثلث غير قائم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يصنع نادي العلوم مركبا شراعيا مصغّرا، وكل عضو يتقن الجزء المكلّف به. الشراع قطعة قماش مثلثة $KLM$ حيث $KL = 2{,}5\\,\\mathrm{dm}$ ، $LM = 6\\,\\mathrm{dm}$ و $KM = 6{,}4\\,\\mathrm{dm}$ ، ويُراد خياطة ضلعيه $[LK]$ و $[LM]$ على الصاري والعارضة المتعامدين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما هو أطول أضلاع المثلث $KLM$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$[LM]$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-NOT-LONGEST"
+        },
+        {
+          "id": "B",
+          "content": "$[KM]$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$[KL]$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-NOT-LONGEST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رتّب الأطوال الثلاثة تصاعديا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في مثلث قائم، الوتر هو أطول الأضلاع: هو وحده المرشّح ليكون وترا."
+        }
+      ],
+      "feedback": {
+        "correct": "$[KM]$ هو الأطول، فهو الذي نقارن مربعه بمجموع مربعي الضلعين الآخرين.",
+        "incorrect": "قارن الأعداد العشرية رقما رقما بعد الفاصلة."
+      },
+      "solution": {
+        "lines": [
+          "نرتّب الأطوال: $2{,}5 < 6 < 6{,}4$ ، إذن أطول الأضلاع هو $[KM]$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب $KM^2$ ، مربع طول أطول أضلاع المثلث $KLM$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: قيمة $KM^2$",
+      "expectedAnswer": "40.96",
+      "misconceptionSignatures": [
+        {
+          "value": "12.8",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        },
+        {
+          "value": "36",
+          "id": "MISC-FITAGHURAS-NOT-LONGEST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رتّب أطوال الأضلاع الثلاثة: الضلع الأطول هو الوحيد الذي يمكن أن يكون وترا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع العدد هو جداؤه في نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "أطول الأضلاع هو $[KM]$ و $KM^2 = 6{,}4^2 = 40{,}96$ .",
+        "incorrect": "تأكّد أنك اخترت الضلع الأطول، وأنك ضربت طوله في نفسه."
+      },
+      "solution": {
+        "lines": [
+          "أطول أضلاع المثلث $KLM$ هو $[KM]$ .",
+          "$KM^2 = 6{,}4^2 = 40{,}96$"
+        ],
+        "result": "KM^2 = 40{,}96"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب $KL^2 + LM^2$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: مجموع المربعين",
+      "expectedAnswer": "42.25",
+      "misconceptionSignatures": [
+        {
+          "value": "17",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        },
+        {
+          "value": "8.5",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ربّع طول كل ضلع من الضلعين الأقصرين على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المربعين ولا تجمع الطولين."
+        }
+      ],
+      "feedback": {
+        "correct": "$KL^2 + LM^2 = 2{,}5^2 + 6^2 = 6{,}25 + 36 = 42{,}25$ .",
+        "incorrect": "احسب مربع كل طول أولا، ثم اجمع المربعين."
+      },
+      "solution": {
+        "lines": [
+          "$KL^2 + LM^2 = 2{,}5^2 + 6^2$",
+          "$KL^2 + LM^2 = 6{,}25 + 36 = 42{,}25$"
+        ],
+        "result": "KL^2 + LM^2 = 42{,}25"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "هل يمكن أن يُخاط هذا الشراع على الصاري بزاوية قائمة في $L$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأن $[LM]$ هو الوتر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-NOT-LONGEST"
+        },
+        {
+          "id": "B",
+          "content": "نعم، لأن العددين $40{,}96$ و $42{,}25$ متقاربان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-LOOKS-RIGHT"
+        },
+        {
+          "id": "C",
+          "content": "لا، المثلث $KLM$ ليس قائما",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العددين اللذين حسبتهما: هل هما متساويان تماما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لو كان المثلث قائما لكان مربع طول أطول أضلاعه مساويا تماما لمجموع مربعي الضلعين الآخرين (خاصية فيثاغورس)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "التقارب لا يكفي: المساواة يجب أن تكون تامة."
+        }
+      ],
+      "feedback": {
+        "correct": "$40{,}96 \\neq 42{,}25$ : لو كان المثلث قائما لتساوى العددان حسب خاصية فيثاغورس، إذن هو ليس قائما.",
+        "incorrect": "الشكل أو تقارب العددين لا يكفيان: انظر هل المساواة محقّقة تماما أم لا."
+      },
+      "solution": {
+        "lines": [
+          "أطول الأضلاع هو $[KM]$ : $KM^2 = 40{,}96$ و $KL^2 + LM^2 = 42{,}25$ .",
+          "بما أن $KM^2 \\neq KL^2 + LM^2$ ، فحسب خاصية فيثاغورس المثلث $KLM$ ليس قائما."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "برّر جوابك بكتابة الاستدلال كاملا.",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بتعيين أطول الأضلاع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن مربعه بمجموع مربعي الضلعين الآخرين، ثم استند إلى خاصية فيثاغورس."
+        }
+      ],
+      "feedback": {
+        "correct": "استدلال كامل: أطول ضلع، المقارنة، ثم الاستنتاج بخاصية فيثاغورس.",
+        "incorrect": "قارن استدلالك بالحل النموذجي: هل عيّنت أطول الأضلاع؟ هل ذكرت خاصية فيثاغورس في الاستنتاج؟"
+      },
+      "solution": {
+        "lines": [
+          "أطول الأضلاع هو $[KM]$ : $KM^2 = 40{,}96$ و $KL^2 + LM^2 = 42{,}25$ .",
+          "بما أن $KM^2 \\neq KL^2 + LM^2$ ، فحسب خاصية فيثاغورس المثلث $KLM$ ليس قائما."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

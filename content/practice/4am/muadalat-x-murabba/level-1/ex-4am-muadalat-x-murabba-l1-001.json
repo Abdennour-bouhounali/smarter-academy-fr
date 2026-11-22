@@ -1,0 +1,113 @@
+{
+  "id": "ex-4am-muadalat-x-murabba-l1-001",
+  "lessonCode": "muadalat-x-murabba",
+  "level": 1,
+  "metadata": {
+    "title": "مربعا عددين متعاكسين",
+    "estimatedMinutes": 4,
+    "tags": [
+      "مربع عدد",
+      "عددان متعاكسان"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-3",
+      "page": 20,
+      "section": "أنشطة",
+      "number": 3
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العددين $-\\dfrac{3}{2}$ و $\\dfrac{3}{2}$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $\\left(-\\dfrac{3}{2}\\right)^2$.",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "9/4",
+      "misconceptionSignatures": [
+        {
+          "value": "-9/4",
+          "id": "MISC-JIDHR-SALIB"
+        },
+        {
+          "value": "-3",
+          "id": "MISC-MURABBA-DIF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مربع عدد هو جداء هذا العدد في نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء عددين سالبين عدد موجب: اضرب البسطين ثم المقامين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\left(-\\dfrac{3}{2}\\right)^2 = \\dfrac{9}{4}$: مربع عدد سالب عدد موجب.",
+        "incorrect": "انتبه إلى الإشارة: جداء عددين سالبين موجب، ومربع العدد ليس ضعفه."
+      },
+      "solution": {
+        "lines": [
+          "$\\left(-\\dfrac{3}{2}\\right)^2 = \\left(-\\dfrac{3}{2}\\right) \\times \\left(-\\dfrac{3}{2}\\right) = \\dfrac{3 \\times 3}{2 \\times 2}$"
+        ],
+        "result": "\\left(-\\dfrac{3}{2}\\right)^2 = \\dfrac{9}{4}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بيّن أن للعددين $-\\dfrac{3}{2}$ و $\\dfrac{3}{2}$ نفس المربع.",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مربع العدد $\\dfrac{3}{2}$ وقارنه بنتيجة السؤال 01."
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك سطرًا بسطر بالحل النموذجي."
+      },
+      "solution": {
+        "lines": [
+          "$\\left(\\dfrac{3}{2}\\right)^2 = \\dfrac{3}{2} \\times \\dfrac{3}{2} = \\dfrac{9}{4}$",
+          "و $\\left(-\\dfrac{3}{2}\\right)^2 = \\dfrac{9}{4}$ (السؤال 01).",
+          "إذن للعددين المتعاكسين $-\\dfrac{3}{2}$ و $\\dfrac{3}{2}$ نفس المربع."
+        ],
+        "result": "\\left(-\\dfrac{3}{2}\\right)^2 = \\left(\\dfrac{3}{2}\\right)^2"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

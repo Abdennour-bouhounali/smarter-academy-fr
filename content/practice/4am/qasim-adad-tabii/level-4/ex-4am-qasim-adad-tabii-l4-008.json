@@ -1,0 +1,217 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l4-008",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2025 — العدد 7777",
+    "estimatedMinutes": 8,
+    "tags": [
+      "قسمة إقليدية",
+      "يقسم",
+      "مضاعف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-adad-tabii_P1",
+      "modelledOn": "BEM 2025 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد الطبيعي 7777."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "احسب حاصل وباقي القسمة الإقليدية للعدد 7777 على 7.",
+      "statement": "حاصل القسمة:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1111",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أكبر مضاعف للعدد 7 لا يتجاوز 7777."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل القسمة هو أكبر عدد طبيعي $q$ يحقق $7 \\times q \\leq 7777$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الباقي أصغر تمامًا من 7."
+        }
+      ],
+      "feedback": {
+        "correct": "$7777 = 7 \\times 1111 + 0$ مع $0 < 7$.",
+        "incorrect": "ابحث عن أكبر مضاعف للعدد 7 لا يتجاوز 7777، ثم اطرحه من 7777."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 1111 = 7777$ و $7 \\times 1112 = 7784$ أكبر من 7777.",
+          "$7777 - 7777 = 0$ و $0 < 7$",
+          "إذن المساواة التي تعبّر عن القسمة الإقليدية هي:"
+        ],
+        "result": "7777 = 7 \\times 1111 + 0"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "الباقي:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى من 7777 بعد طرح أكبر مضاعف للعدد 7 لا يتجاوزه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي عدد طبيعي أصغر تمامًا من 7."
+        }
+      ],
+      "feedback": {
+        "correct": "$7777 = 7 \\times 1111 + 0$: الباقي 0، فهو معدوم.",
+        "incorrect": "اطرح من 7777 أكبر مضاعف للعدد 7 لا يتجاوزه."
+      },
+      "solution": {
+        "lines": [
+          "$7777 - 7 \\times 1111 = 0$"
+        ],
+        "result": "r = 0"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "lead": "بيّن أن 11 يقسم 7777، ثم اكتب 7777 على الشكل $11 \\times q$ حيث $q$ عدد طبيعي.",
+      "statement": "العدد $q$:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_qasim-adad-tabii_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $q$ فقط (عدد طبيعي)",
+      "expectedAnswer": "707",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نبحث عن عدد طبيعي $q$ حيث $7777 = 11 \\times q$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أجرِ القسمة الإقليدية للعدد 7777 على 11."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان الباقي معدومًا فإن حاصل القسمة هو العدد المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$7777 = 11 \\times 707$.",
+        "incorrect": "اقسم 7777 على 11: حاصل القسمة هو العدد $q$ إذا كان الباقي معدومًا."
+      },
+      "solution": {
+        "lines": [
+          "$11 \\times 707 = 7777$",
+          "إذن $7777 = 11 \\times 707$",
+          "إذن 11 يقسم 7777."
+        ],
+        "result": "7777 = 11 \\times 707"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "هل 7777 مضاعف للعدد 77؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 7777 على 77."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "77 قاسم للعدد 7777 إذا وفقط إذا كان باقي هذه القسمة معدومًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$7777 = 77 \\times 101$: الباقي معدوم.",
+        "incorrect": "أجرِ القسمة الإقليدية للعدد 7777 على 77، وانظر هل الباقي معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$7777 = 77 \\times 101$ (الباقي معدوم).",
+          "إذن 7777 مضاعف للعدد 77."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

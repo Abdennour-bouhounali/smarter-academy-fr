@@ -1,0 +1,252 @@
+{
+  "id": "ex-3am-jidaa-adadayn-nisbiyayn-l1-009",
+  "lessonCode": "jidaa-adadayn-nisbiyayn",
+  "level": 1,
+  "metadata": {
+    "title": "أحسب الجداءات السالبة فقط",
+    "estimatedMinutes": 7,
+    "tags": [
+      "إشارة الجداء",
+      "جداء"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-8",
+      "page": 14,
+      "section": "ضرب الأعداد النسبية",
+      "number": 8
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في القائمة الآتية، عيّن الجداءات السالبة ثم احسب بعضها.",
+    "formulas": [
+      "A = (+4) \\times (−6)",
+      "B = (−7) \\times (−8)",
+      "C = (−3) \\times (+9)",
+      "D = (−15) \\times (+10)",
+      "E = (−12) \\times (+3)",
+      "F = (+8) \\times (+5)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "تعيين الجداءات السالبة.",
+      "statement": "كم جداءً سالبًا في القائمة؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى إشارة كل عامل قبل أن تحسب أي شيء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عاملان لهما الإشارة نفسها: جداؤهما موجب. عاملان مختلفا الإشارة: جداؤهما سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يهمّ أيّ العاملين أبعد عن الصفر: الإشارة تتبع قاعدة الإشارات وحدها."
+        }
+      ],
+      "feedback": {
+        "correct": "الجداءات السالبة هي $A$ و $C$ و $D$ و $E$ : أربعة جداءات.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "$A$ و $C$ و $D$ و $E$ سالبة لأنّ إشارتي عاملي كل منها مختلفتان.",
+          "$B$ موجب لأنّ عامليه سالبان، و $F$ موجب لأنّ عامليه موجبان."
+        ]
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "احسب ثلاثة منها.",
+      "statement": "احسب $A$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-24",
+      "misconceptionSignatures": [
+        {
+          "value": "-2",
+          "id": "MISC-JIDAA-ADD"
+        },
+        {
+          "value": "2",
+          "id": "MISC-JIDAA-SUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة كل عامل؟ وما بعده عن الصفر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان للعاملين الإشارة نفسها فالجداء موجب، وإذا اختلفت إشارتاهما فهو سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عيّن الإشارة أولًا، ثم اضرب المسافتين إلى الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times (−6) = −24$ : العاملان مختلفا الإشارة (موجب وسالب)، إذن الجداء سالب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العاملان مختلفا الإشارة (موجب وسالب)، إذن الجداء سالب.",
+          "$4 \\times 6 = 24$",
+          "$A = 4 \\times (−6) = −24$"
+        ],
+        "result": "A = −24"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب $D$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-150",
+      "misconceptionSignatures": [
+        {
+          "value": "-5",
+          "id": "MISC-JIDAA-ADD"
+        },
+        {
+          "value": "5",
+          "id": "MISC-JIDAA-SUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة كل عامل؟ وما بعده عن الصفر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان للعاملين الإشارة نفسها فالجداء موجب، وإذا اختلفت إشارتاهما فهو سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عيّن الإشارة أولًا، ثم اضرب المسافتين إلى الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−15) \\times 10 = −150$ : العاملان مختلفا الإشارة (سالب وموجب)، إذن الجداء سالب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العاملان مختلفا الإشارة (سالب وموجب)، إذن الجداء سالب.",
+          "$15 \\times 10 = 150$",
+          "$D = (−15) \\times 10 = −150$"
+        ],
+        "result": "D = −150"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "احسب $E$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-adadayn-nisbiyayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-36",
+      "misconceptionSignatures": [
+        {
+          "value": "-9",
+          "id": "MISC-JIDAA-ADD"
+        },
+        {
+          "value": "9",
+          "id": "MISC-JIDAA-SUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة كل عامل؟ وما بعده عن الصفر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان للعاملين الإشارة نفسها فالجداء موجب، وإذا اختلفت إشارتاهما فهو سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عيّن الإشارة أولًا، ثم اضرب المسافتين إلى الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−12) \\times 3 = −36$ : العاملان مختلفا الإشارة (سالب وموجب)، إذن الجداء سالب.",
+        "incorrect": "راجع قاعدة الإشارات، ثم أعد الحساب: الإشارة أولًا، ثم جداء المسافتين إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العاملان مختلفا الإشارة (سالب وموجب)، إذن الجداء سالب.",
+          "$12 \\times 3 = 36$",
+          "$E = (−12) \\times 3 = −36$"
+        ],
+        "result": "E = −36"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

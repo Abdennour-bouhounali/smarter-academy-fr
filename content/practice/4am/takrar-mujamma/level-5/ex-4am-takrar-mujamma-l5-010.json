@@ -1,0 +1,334 @@
+{
+  "id": "ex-4am-takrar-mujamma-l5-010",
+  "lessonCode": "takrar-mujamma",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2008 — الوثب الطويل بجيجل",
+    "estimatedMinutes": 8,
+    "tags": [
+      "وضعية إدماجية",
+      "التواتر المجمع النازل",
+      "نسبة مئوية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_takrar-mujamma_P3",
+      "modelledOn": "BEM 2008 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2008",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في يوم رياضي بمتوسطة بولاية جيجل، قيس طول قفزة كل تلميذ من 40 تلميذا شاركوا في مسابقة الوثب الطويل (بالمتر):",
+    "table": {
+      "head": [
+        "طول القفزة d (m)",
+        "عدد التلاميذ"
+      ],
+      "rows": [
+        [
+          "$3 \\le d < 3{,}5$",
+          "3"
+        ],
+        [
+          "$3{,}5 \\le d < 4$",
+          "9"
+        ],
+        [
+          "$4 \\le d < 4{,}5$",
+          "16"
+        ],
+        [
+          "$4{,}5 \\le d < 5$",
+          "8"
+        ],
+        [
+          "$5 \\le d \\le 5{,}5$",
+          "4"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب التكرار المجمع الصاعد للفئة $4 \\le d < 4{,}5$ .",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "28",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        },
+        {
+          "value": "16",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكرار المجمع الصاعد لفئة هو مجموع تكرارها وتكرارات الفئات التي قبلها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ من أول عمود في الجدول واجمع التكرارات حتى $4 \\le d < 4{,}5$ مع تكرارها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: التكرار المجمع الصاعد لآخر عمود يساوي التكرار الكلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 + 9 + 16 = 28$ .",
+        "incorrect": "اجمع تكرار الفئة نفسها وتكرارات الفئات التي قبلها فقط، ولا تنس تكرار الفئة نفسها."
+      },
+      "solution": {
+        "lines": [
+          "التكرار المجمع الصاعد للفئة $4 \\le d < 4{,}5$ هو مجموع تكرار الفئة $4 \\le d < 4{,}5$ وتكرارات الفئات التي قبلها:",
+          "$3 + 9 + 16 = 28$"
+        ],
+        "result": "28"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب التكرار المجمع النازل للفئة $4{,}5 \\le d < 5$ .",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        },
+        {
+          "value": "8",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        },
+        {
+          "value": "36",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكرار المجمع النازل هو مجموع تكرار هذه الفئة وتكرارات الفئات التي بعدها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع تكرار $4{,}5 \\le d < 5$ وتكرارات ما بعدها حتى آخر عمود في الجدول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: التكرار المجمع النازل لأول عمود يساوي التكرار الكلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$8 + 4 = 12$ .",
+        "incorrect": "اجمع تكرار الفئة نفسها وتكرارات الفئات التي بعدها فقط: النازل يتّجه نحو نهاية الجدول."
+      },
+      "solution": {
+        "lines": [
+          "التكرار المجمع النازل للفئة $4{,}5 \\le d < 5$ هو مجموع تكرار الفئة $4{,}5 \\le d < 5$ وتكرارات الفئات التي بعدها:",
+          "$8 + 4 = 12$"
+        ],
+        "result": "12"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "استنتج التواتر المجمع النازل للفئة $4{,}5 \\le d < 5$ .",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة أو كسر على الشكل a/b",
+      "expectedAnswer": "0,3",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-IHSA-TAWATUR-BILA-QISMA"
+        },
+        {
+          "value": "0,9",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        },
+        {
+          "value": "0,1",
+          "id": "MISC-IHSA-MUJAMMA-DUN-QIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التواتر المجمع النازل هو التكرار المجمع النازل مقسوما على التكرار الكلي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب أولا التكرار المجمع النازل ثم اقسمه على التكرار الكلي للسلسلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: التواتر عدد بين 0 و 1، والتواتر المجمع الصاعد لآخر عمود يساوي 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{12}{40} = 0{,}3$ .",
+        "incorrect": "لا تكتف بالتكرار المجمع: اقسمه على التكرار الكلي للسلسلة."
+      },
+      "solution": {
+        "lines": [
+          "التواتر المجمع النازل = التكرار المجمع النازل ÷ التكرار الكلي:",
+          "$\\dfrac{12}{40} = 0{,}3$"
+        ],
+        "result": "0{,}3"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "يتأهّل إلى البطولة الولائية $30\\%$ من المشاركين، وهم أصحاب أطول القفزات.",
+      "statement": "احسب عدد المتأهّلين.",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$30\\%$ من 40 تعني $\\dfrac{30}{100} \\times 40$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب عدد المشاركين في 30 ثم اقسم على 100."
+        }
+      ],
+      "feedback": {
+        "correct": "$40 \\times \\dfrac{30}{100} = 12$ .",
+        "incorrect": "عدد المتأهّلين = 30% من عدد المشاركين."
+      },
+      "solution": {
+        "lines": [
+          "$40 \\times \\dfrac{30}{100} = 12$"
+        ],
+        "result": "12"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "عيّن الفئة التي تبدأ منها قفزات المتأهّلين. برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_takrar-mujamma_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$4 \\le d < 4{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        },
+        {
+          "id": "B",
+          "content": "$4{,}5 \\le d < 5$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$5 \\le d \\le 5{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المتأهّلون أصحاب أطول القفزات: نعدّهم من آخر فئة في الجدول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن الفئة التي يساوي تكرارها المجمع النازل عدد المتأهّلين."
+        }
+      ],
+      "feedback": {
+        "correct": "التكرار المجمع النازل للفئة $4{,}5 \\le d < 5$ يساوي عدد المتأهّلين.",
+        "incorrect": "المتأهّلون هم أصحاب أطول القفزات: استعمل التكرارات المجمعة النازلة، لا تكرار فئة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "التكرار المجمع النازل للفئة $4{,}5 \\le d < 5$ : $8 + 4 = 12$ ، وهو عدد المتأهّلين.",
+          "إذن قفزات المتأهّلين هي قفزات الفئتين الأخيرتين، وتبدأ من الفئة $4{,}5 \\le d < 5$ ."
+        ],
+        "result": "4{,}5 \\le d < 5"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

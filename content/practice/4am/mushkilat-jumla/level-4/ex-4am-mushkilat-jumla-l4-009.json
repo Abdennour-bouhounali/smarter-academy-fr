@@ -1,0 +1,251 @@
+{
+  "id": "ex-4am-mushkilat-jumla-l4-009",
+  "lessonCode": "mushkilat-jumla",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2022 — مسابقة «تحدّي الأذكياء»",
+    "estimatedMinutes": 14,
+    "tags": [
+      "جملة",
+      "ترييض",
+      "تحقق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mushkilat-jumla_P2",
+      "modelledOn": "BEM 2022 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "في مسابقة «تحدّي الأذكياء» على إذاعة محلية تشجّع على طلب العلم، يُطرح على كل متسابق 20 سؤالا: كل إجابة صحيحة تمنحه 5 نقاط، وكل إجابة خاطئة تُنقص منه نقطتين. أجاب سليم عن كل الأسئلة وتحصّل على 65 نقطة.\nنسمّي $x$ عدد الإجابات الصحيحة و $y$ عدد الإجابات الخاطئة لسليم."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "لتكن الثنائيتان $(13 ; 7)$ و $(15 ; 5)$ . أيهما توافق نتيجة سليم؟",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية التي اخترتها $(x ; y)$",
+      "expectedAnswer": {
+        "x": "15",
+        "y": "5"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "5",
+            "y": "15"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الثنائيتان تعطيان 20 سؤالا: الفرق في عدد النقاط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النقاط $= 5x - 2y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "الثنائية $(15 ; 5)$ : $75 - 10 = 65$ نقطة.",
+        "incorrect": "احسب $5x - 2y$ من أجل كل ثنائية: الإجابة الخاطئة تُنقص نقطتين."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $(13 ; 7)$ : $13 + 7 = 20$ لكن $5 \\times 13 - 2 \\times 7 = 65 - 14 = 51 \\neq 65$",
+          "من أجل $(15 ; 5)$ : $15 + 5 = 20$ و $5 \\times 15 - 2 \\times 5 = 75 - 10 = 65$",
+          "إذن الثنائية التي توافق نتيجة سليم هي:"
+        ],
+        "result": "(15 ; 5)"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "في الدور النهائي طُرح على سليم 30 سؤالا بنفس القواعد، فأجاب عنها كلها وتحصّل على 87 نقطة. ترجم هذه المعطيات بجملة معادلتين، ثم جد عدد إجاباته الصحيحة وعدد إجاباته الخاطئة.",
+      "statement": "عدد الإجابات الصحيحة:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط",
+      "expectedAnswer": "21",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معادلة لعدد الأسئلة ومعادلة للنقاط: الإجابة الخاطئة تُكتب $-2y$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب معادلة عدد الأسئلة في 2 ثم اجمعها مع معادلة النقاط."
+        }
+      ],
+      "feedback": {
+        "correct": "أجاب سليم إجابة صحيحة عن 21 سؤالا.",
+        "incorrect": "الجملة: $x + y = 30$ و $5x - 2y = 87$ ؛ اجعل معاملي $y$ متعاكسين ثم اجمع."
+      },
+      "solution": {
+        "lines": [
+          "ترجمة المعطيات:",
+          "$\\begin{cases} x + y = 30 & ...(1) \\\\ 5x - 2y = 87 & ...(2) \\end{cases}$",
+          "بضرب طرفي المعادلة (1) في العدد $2$ نجد:",
+          "$\\begin{cases} 2x + 2y = 60 \\\\ 5x - 2y = 87 \\end{cases}$",
+          "بجمع المعادلتين طرفا لطرف نجد: $7x = 147$",
+          "ومنه: $x = \\dfrac{147}{7} = 21$",
+          "بتعويض قيمة $x$ في المعادلة (1) نجد: $21 + y = 30$",
+          "$y = 9$",
+          "التحقق: $21 + 9 = 30$ و $5 \\times 21 - 2 \\times 9 = 105 - 18 = 87$ .",
+          "إذن أجاب سليم إجابة صحيحة عن 21 سؤالا وأخطأ في 9 أسئلة."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 360
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "عدد الإجابات الخاطئة:",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد فقط",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "21",
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الأسئلة 30."
+        }
+      ],
+      "feedback": {
+        "correct": "أخطأ في 9 أسئلة، ونتحقق: $105 - 18 = 87$ .",
+        "incorrect": "من $x + y = 30$ : $y = 30 - x$ ."
+      },
+      "solution": {
+        "lines": [
+          "ترجمة المعطيات:",
+          "$\\begin{cases} x + y = 30 & ...(1) \\\\ 5x - 2y = 87 & ...(2) \\end{cases}$",
+          "بضرب طرفي المعادلة (1) في العدد $2$ نجد:",
+          "$\\begin{cases} 2x + 2y = 60 \\\\ 5x - 2y = 87 \\end{cases}$",
+          "بجمع المعادلتين طرفا لطرف نجد: $7x = 147$",
+          "ومنه: $x = \\dfrac{147}{7} = 21$",
+          "بتعويض قيمة $x$ في المعادلة (1) نجد: $21 + y = 30$",
+          "$y = 9$",
+          "التحقق: $21 + 9 = 30$ و $5 \\times 21 - 2 \\times 9 = 105 - 18 = 87$ .",
+          "إذن أجاب سليم إجابة صحيحة عن 21 سؤالا وأخطأ في 9 أسئلة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "هل يمكن لمتسابق أجاب عن الأسئلة الثلاثين كلها أن يتحصّل على 100 نقطة؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_mushkilat-jumla_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mushkilat-jumla_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-TAHAQQUQ-NAS"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ترجم بجملة: $x + y = 30$ و $5x - 2y = 100$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد الإجابات عدد طبيعي: هل الحل عددان طبيعيان؟"
+        }
+      ],
+      "feedback": {
+        "correct": "لا: الجملة تعطي $x = \\dfrac{160}{7}$ ، وعدد الإجابات لا يكون كسرا.",
+        "incorrect": "حل الجملة $x + y = 30$ و $5x - 2y = 100$ ، ثم تحقّق: هل عدد الإجابات عدد طبيعي؟"
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} x + y = 30 \\\\ 5x - 2y = 100 \\end{cases}$",
+          "بضرب طرفي المعادلة الأولى في 2 ثم الجمع: $7x = 160$",
+          "$x = \\dfrac{160}{7}$ ، وهو ليس عددا طبيعيا.",
+          "عدد الإجابات الصحيحة عدد طبيعي: لا يمكن الحصول على 100 نقطة."
+        ]
+      },
+      "timeSeconds": 240
+    }
+  ]
+}

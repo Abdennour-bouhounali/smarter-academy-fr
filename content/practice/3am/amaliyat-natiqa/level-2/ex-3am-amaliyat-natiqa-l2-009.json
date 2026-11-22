@@ -1,0 +1,220 @@
+{
+  "id": "ex-3am-amaliyat-natiqa-l2-009",
+  "lessonCode": "amaliyat-natiqa",
+  "level": 2,
+  "metadata": {
+    "title": "أيّ نتيجة صحيحة ؟",
+    "estimatedMinutes": 11,
+    "tags": [
+      "العمليات على الأعداد الناطقة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "self-6",
+      "page": 33,
+      "section": "أؤكّد تعلّماتي",
+      "number": 6
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نضع $A = \\dfrac{5}{6} - \\dfrac{5}{6} \\times \\dfrac{3}{7}$ ، ونحسب عددين من النمط نفسه ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $A = \\dfrac{5}{6} - \\dfrac{5}{6} \\times \\dfrac{3}{7}$ ثمّ اختر النتيجة الصحيحة .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "timeSeconds": 90,
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$0$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AMAL-PRIORITY"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{10}{21}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$-\\dfrac{10}{21}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AMAL-SUMSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليات الموجودة؟ وهل توجد أقواس أو كسر مركّب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح، ومع كلّ عملية نحدّد الإشارة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز عملية واحدة في كلّ سطر، ثمّ اكتب النتيجة غير القابلة للاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $\\dfrac{10}{21}$ .",
+        "incorrect": "احترم الأولويّة: الأقواس ثمّ الضرب والقسمة ثمّ الجمع والطرح، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "العاملان موجبان: الجداء موجب.",
+          "$\\dfrac{5}{6} \\times \\dfrac{3}{7} = \\dfrac{5 \\times 3}{6 \\times 7} = \\dfrac{15}{42} = \\dfrac{5}{14}$ .",
+          "$\\dfrac{5}{6} - \\dfrac{5}{14} = \\dfrac{5}{6} + \\left(-\\dfrac{5}{14}\\right)$ (طرح عدد هو جمع معاكسه).",
+          "العددان $\\dfrac{5}{6}$ و $-\\dfrac{5}{14}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $\\dfrac{5}{6}$ ، فإشارة المجموع موجبة.",
+          "$\\dfrac{5}{6} + \\left(-\\dfrac{5}{14}\\right) = \\dfrac{35}{42} - \\dfrac{15}{42} = \\dfrac{35 - 15}{42} = \\dfrac{10}{21}$ ."
+        ],
+        "result": "A = \\dfrac{10}{21}"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب $B = \\dfrac{4}{5} - \\dfrac{4}{5} \\times \\left(-\\dfrac{5}{8}\\right)$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "13/10",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-AMAL-PRIORITY"
+        },
+        {
+          "value": "-13/10",
+          "id": "MISC-AMAL-SUMSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليات الموجودة؟ وهل توجد أقواس أو كسر مركّب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح، ومع كلّ عملية نحدّد الإشارة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز عملية واحدة في كلّ سطر، ثمّ اكتب النتيجة غير القابلة للاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = \\dfrac{13}{10}$ .",
+        "incorrect": "احترم الأولويّة: الأقواس ثمّ الضرب والقسمة ثمّ الجمع والطرح، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "العاملان من إشارتين مختلفتين: الجداء سالب.",
+          "$\\dfrac{4}{5} \\times \\left(-\\dfrac{5}{8}\\right) = -\\dfrac{4 \\times 5}{5 \\times 8} = -\\dfrac{20}{40} = -\\dfrac{1}{2}$ .",
+          "$\\dfrac{4}{5} - \\left(-\\dfrac{1}{2}\\right) = \\dfrac{4}{5} + \\dfrac{1}{2}$ (طرح عدد هو جمع معاكسه).",
+          "العددان $\\dfrac{4}{5}$ و $\\dfrac{1}{2}$ موجبان، فمجموعهما موجب.",
+          "$\\dfrac{4}{5} + \\dfrac{1}{2} = \\dfrac{8}{10} + \\dfrac{5}{10} = \\dfrac{8 + 5}{10} = \\dfrac{13}{10}$ ."
+        ],
+        "result": "B = \\dfrac{13}{10}"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب $C = \\dfrac{2}{3} - \\dfrac{1}{2} \\times \\dfrac{4}{9}$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "4/9",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "2/27",
+          "id": "MISC-AMAL-PRIORITY"
+        },
+        {
+          "value": "-4/9",
+          "id": "MISC-AMAL-SUMSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليات الموجودة؟ وهل توجد أقواس أو كسر مركّب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح، ومع كلّ عملية نحدّد الإشارة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز عملية واحدة في كلّ سطر، ثمّ اكتب النتيجة غير القابلة للاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = \\dfrac{4}{9}$ .",
+        "incorrect": "احترم الأولويّة: الأقواس ثمّ الضرب والقسمة ثمّ الجمع والطرح، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "العاملان موجبان: الجداء موجب.",
+          "$\\dfrac{1}{2} \\times \\dfrac{4}{9} = \\dfrac{1 \\times 4}{2 \\times 9} = \\dfrac{4}{18} = \\dfrac{2}{9}$ .",
+          "$\\dfrac{2}{3} - \\dfrac{2}{9} = \\dfrac{2}{3} + \\left(-\\dfrac{2}{9}\\right)$ (طرح عدد هو جمع معاكسه).",
+          "العددان $\\dfrac{2}{3}$ و $-\\dfrac{2}{9}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $\\dfrac{2}{3}$ ، فإشارة المجموع موجبة.",
+          "$\\dfrac{2}{3} + \\left(-\\dfrac{2}{9}\\right) = \\dfrac{6}{9} - \\dfrac{2}{9} = \\dfrac{6 - 2}{9} = \\dfrac{4}{9}$ ."
+        ],
+        "result": "C = \\dfrac{4}{9}"
+      }
+    }
+  ]
+}

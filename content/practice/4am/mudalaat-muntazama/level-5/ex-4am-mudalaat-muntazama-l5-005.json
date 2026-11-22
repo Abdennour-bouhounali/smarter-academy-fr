@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l5-005",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — نخلات مقام الشهيد",
+    "estimatedMinutes": 3,
+    "tags": [
+      "المضلع المنتظم",
+      "الدوران"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mudalaat-muntazama_P1",
+      "modelledOn": "act-5"
+    }
+  },
+  "statement": {
+    "content": "نُصب مقام الشهيد بالجزائر العاصمة ثلاث نخلات متقايسة، كل واحدة صورة الأخرى بالدوران الذي مركزه محور النصب وزاويته $120^\\circ$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "رؤوس النخلات الثلاث (من الأعلى) هي رؤوس:",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مثلث متقايس الأضلاع مركزه محور النصب",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "مثلث متساوي الساقين فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-KHAWAS"
+        },
+        {
+          "id": "C",
+          "content": "مثلث قائم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-MARKAZIYA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدوران يحافظ على البعد عن المركز."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثلاث زوايا مركزية من $120^\\circ$ تملأ الدورة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ما المضلع المنتظم ذو الزاوية المركزية $120^\\circ$ ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$3 \\times 120^\\circ = 360^\\circ$ : الرؤوس الثلاثة على دائرة واحدة وأضلاع المثلث متقايسة.",
+        "incorrect": "الدوران يحافظ على الأطوال: الأضلاع الثلاثة متقايسة."
+      },
+      "difficulty": 4
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "id": "ex-4am-majdulat-ihsaiya-l2-004",
+  "lessonCode": "majdulat-ihsaiya",
+  "level": 2,
+  "metadata": {
+    "title": "مقاسات الأحذية الرياضية",
+    "estimatedMinutes": 4,
+    "tags": [
+      "دستور",
+      "منوال",
+      "إعادة الحساب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_majdulat-ihsaiya_P2",
+      "modelledOn": "ex-7"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "حجز بائع أمين في السطر الأول من مجدول مقاسات ستة أزواج من الأحذية الرياضية باعها في ساعة، ثم حجز في الخلية A2 الدستور ⁦=MODE(A1:F1)⁩ :",
+    "table": {
+      "head": [
+        "",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "rows": [
+        [
+          "1",
+          "41",
+          "43",
+          "43",
+          "40",
+          "43",
+          "41"
+        ]
+      ],
+      "sheet": true
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما هو العدد الذي يظهر في الخلية A2 ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "43",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-IHSA-DUSTUR-KHATI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MODE(…)⁩ يُظهر المنوال: القيمة ذات أكبر تكرار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ كم مرة تظهر كل قيمة في المجال."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المنوال قيمة من قيم السلسلة، لا عدد مرات ظهورها."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة 43 تظهر 3 مرات، وهو أكبر تكرار.",
+        "incorrect": "المنوال هو القيمة التي تتكرّر أكثر من غيرها في المجال: اكتب القيمة نفسها لا عدد مرات تكرارها."
+      },
+      "solution": {
+        "lines": [
+          "القيمة 43 تظهر 3 مرات في المجال، وكل قيمة أخرى تظهر أقل من ذلك.",
+          "إذن يُظهر الدستور العدد 43 ."
+        ],
+        "result": "43"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "تبيّن أنّ المقاس المحجوز في الخلية C1 خاطئ، فعوّضه البائع بالعدد 41 . ما هو العدد الذي يظهر الآن في الخلية A2 ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "41",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-IHSA-DUSTUR-KHATI"
+        },
+        {
+          "value": "43",
+          "id": "MISC-IHSA-DUSTUR-KHATI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدستور ⁦=MODE(…)⁩ يُظهر المنوال: القيمة ذات أكبر تكرار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ كم مرة تظهر كل قيمة في المجال."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المنوال قيمة من قيم السلسلة، لا عدد مرات ظهورها."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة 41 تظهر 3 مرات، وهو أكبر تكرار.",
+        "incorrect": "المنوال هو القيمة التي تتكرّر أكثر من غيرها في المجال: اكتب القيمة نفسها لا عدد مرات تكرارها."
+      },
+      "solution": {
+        "lines": [
+          "القيمة 41 تظهر 3 مرات في المجال، وكل قيمة أخرى تظهر أقل من ذلك.",
+          "إذن يُظهر الدستور العدد 41 ."
+        ],
+        "result": "41"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

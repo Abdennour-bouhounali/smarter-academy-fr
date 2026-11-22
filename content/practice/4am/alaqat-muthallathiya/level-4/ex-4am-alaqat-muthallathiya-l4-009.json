@@ -1,0 +1,199 @@
+{
+  "id": "ex-4am-alaqat-muthallathiya-l4-009",
+  "lessonCode": "alaqat-muthallathiya",
+  "level": 4,
+  "metadata": {
+    "title": "زاوية جيبها يساوي جيب تمامها",
+    "estimatedMinutes": 9,
+    "tags": [
+      "العلاقات المثلثية",
+      "القيم المضبوطة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_alaqat-muthallathiya_P2",
+      "modelledOn": "ex-16"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$x$ قيس زاوية حادة حيث $\\sin x = \\cos x$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $\\tan x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الظل هو حاصل قسمة الجيب على جيب التمام: $\\tan x = \\dfrac{\\sin x}{\\cos x}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على كسر هي الضرب في مقلوبه، ثم اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan x = \\dfrac{\\sin x}{\\cos x}$ والبسط يساوي المقام: $\\tan x = 1$ .",
+        "incorrect": "استعمل $\\tan x = \\dfrac{\\sin x}{\\cos x}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan x = \\dfrac{\\sin x}{\\cos x}$ و $\\sin x = \\cos x \\neq 0$"
+        ],
+        "result": "\\tan x = 1"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بيّن أن: $\\cos^2 x = \\dfrac{1}{2}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $\\sin x$ بـ $\\cos x$ في العلاقة $\\cos^2 x + \\sin^2 x = 1$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\cos^2 x + \\cos^2 x = 1$ أي $2\\cos^2 x = 1$ ، إذن $\\cos^2 x = \\dfrac{1}{2}$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "لدينا $\\cos^2 x + \\sin^2 x = 1$ و $\\sin x = \\cos x$ ، إذن $\\cos^2 x + \\cos^2 x = 1$ .",
+          "$2\\cos^2 x = 1$ ، ومنه $\\cos^2 x = \\dfrac{1}{2}$ ."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "استنتج القيمة المضبوطة لـ $\\cos x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{1}{2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-JADHR-NASI"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{\\sqrt{2}}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$0{,}71$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-QIMA-MUQARRABA"
+        },
+        {
+          "id": "D",
+          "content": "$\\sqrt{2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\cos x$ موجب: خذ الجذر التربيعي الموجب لـ $\\dfrac{1}{2}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجعل المقام عددا ناطقا."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\cos x = \\sqrt{\\dfrac{1}{2}} = \\dfrac{1}{\\sqrt{2}} = \\dfrac{\\sqrt{2}}{2}$ .",
+        "incorrect": "بعد حساب المربع خذ الجذر، والقيمة المضبوطة لا تُدوَّر."
+      },
+      "solution": {
+        "lines": [
+          "$\\cos x > 0$ ، إذن $\\cos x = \\sqrt{\\dfrac{1}{2}} = \\dfrac{1}{\\sqrt{2}} = \\dfrac{\\sqrt{2}}{2}$"
+        ],
+        "result": "\\cos x = \\dfrac{\\sqrt{2}}{2}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "استنتج قيس الزاوية $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: القيس بالدرجة",
+      "expectedAnswer": "45",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما هي الزاوية الحادة التي ظلها 1؟ (أو اللمسة العكسية بالحاسبة)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan x = 1$ ، إذن $x = 45^{\\circ}$ (المثلث القائم متقايس الضلعين).",
+        "incorrect": "استعمل اللمسة العكسية للظل أو لجيب التمام."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan x = 1$ : ضلعا الزاوية القائمة متقايسان، فالمثلث قائم ومتقايس الضلعين.",
+          "بالحاسبة: ⁦2nd tan⁻¹ 1 =⁩ يظهر $45$"
+        ],
+        "result": "x = 45^{\\circ}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

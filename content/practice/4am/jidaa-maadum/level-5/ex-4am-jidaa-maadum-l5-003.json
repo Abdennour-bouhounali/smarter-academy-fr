@@ -1,0 +1,255 @@
+{
+  "id": "ex-4am-jidaa-maadum-l5-003",
+  "lessonCode": "jidaa-maadum",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2024 — صفحتان متقابلتان في مسابقة القراءة",
+    "estimatedMinutes": 16,
+    "tags": [
+      "معادلة جداء معدوم",
+      "أعداد طبيعية",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_jidaa-maadum_P3",
+      "modelledOn": "BEM 2024 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في مسابقة «أصدقاء الكتاب» التي تشجّع على القراءة بمكتبة متوسطة بمدينة سطيف، فتح أيمن كتابًا على صفحتين متقابلتين وقال لزميله: «جداء رقمي هاتين الصفحتين يساوي $420$ ». نسمّي $x$ رقم الصفحة الأولى، والصفحة الثانية تحمل الرقم الموالي."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عبّر بدلالة $x$ عن رقم الصفحة الثانية، ثم بيّن أن $x$ يحقق المعادلة: $x^2 + x - 420 = 0$ .",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رقما صفحتين متقابلتين عددان طبيعيان متتاليان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب جداءهما بدلالة $x$ وساوِه بـ $420$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "أحسنت: برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثم أعد كتابته."
+      },
+      "solution": {
+        "lines": [
+          "رقم الصفحة الثانية: $x + 1$",
+          "جداء الرقمين: $x(x + 1) = 420$",
+          "أي: $x^2 + x = 420$",
+          "إذن: $x^2 + x - 420 = 0$"
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "عيّن العدد $m$ بحيث: $x^2 + x - 420 = (x - 20)(x + m)$ .",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $x^2 + x - 420$ على الشكل $(x - 20)(x + m)$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "21",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر الجداء المقترح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن معامل $x$ والحد الثابت في الطرفين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من العدد الذي وجدته بنشر الجداء من جديد."
+        }
+      ],
+      "feedback": {
+        "correct": "$x^2 + x - 420 = (x - 20)(x + 21)$ إذن $m = 21$ .",
+        "incorrect": "انشر الجداء المقترح بالعدد الذي وجدته، وقارن بالعبارة المعطاة حدًّا حدًّا."
+      },
+      "solution": {
+        "lines": [
+          "$(x - 20)(x + m) = x^2 + mx - 20x - 20m$",
+          "بالمقارنة: $-20m = -420$ و $m - 20 = 1$"
+        ],
+        "result": "x^2 + x - 420 = (x - 20)(x + 21)"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "حل المعادلة: $(x - 20)(x + 21) = 0$ .",
+      "statement": "الحلّ الأصغر:",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "-21",
+      "misconceptionSignatures": [
+        {
+          "value": "-20",
+          "id": "MISC-JIDAA-ISHARA-JADHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يكون جداء عاملين معدومًا إذا كان أحد عامليه على الأقل معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلتين من الدرجة الأولى: كل عامل يساوي $0$ ، ثم حلّ كل واحدة منهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى الإشارة عند نقل العدد إلى الطرف الثاني، ثم رتّب الحلّين من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = -21$ .",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة من الدرجة الأولى بإشاراتها، ثم رتّب الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $(x - 20)(x + 21) = 0$",
+          "يعني أنّ: $x - 20 = 0$ أو $x + 21 = 0$",
+          "ومنه: $x = 20$ أو $x = -21$",
+          "إذن للمعادلة حلّان هما $-21$ و $20$"
+        ],
+        "result": "x = -21"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "الحلّ الأكبر:",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "21",
+          "id": "MISC-JIDAA-ISHARA-JADHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة الثانية من الدرجة الأولى، ثم قارن الحلّين."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 20$ .",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة من الدرجة الأولى بإشاراتها، ثم رتّب الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "إذن للمعادلة حلّان هما $-21$ و $20$"
+        ],
+        "result": "x = 20"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "lead": "استنتج رقمي الصفحتين.",
+      "statement": "رقما الصفحتين:",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "اكتب الرقمين مفصولين بفاصلة",
+      "expectedAnswer": [
+        20,
+        21
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رقم صفحة عدد طبيعي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احتفظ بحلّ المعادلة المناسب، ثم أضف $1$ لتجد رقم الصفحة الثانية."
+        }
+      ],
+      "feedback": {
+        "correct": "الصفحتان $20$ و $21$ ، و $20 \\times 21 = 420$ .",
+        "incorrect": "رقم الصفحة عدد طبيعي: أيّ حلّي المعادلة يصلح؟ ثم الصفحة الموالية."
+      },
+      "solution": {
+        "lines": [
+          "رقم الصفحة عدد طبيعي، إذن الحل $-21$ مرفوض",
+          "الصفحة الأولى: $x = 20$ ، والثانية: $x + 1 = 21$",
+          "تحقّق: $20 \\times 21 = 420$"
+        ],
+        "result": "x = 20 \\; ; \\; x + 1 = 21"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

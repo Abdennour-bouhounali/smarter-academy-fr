@@ -1,0 +1,180 @@
+{
+  "id": "ex-4am-natiqa-ghayr-natiqa-l4-002",
+  "lessonCode": "natiqa-ghayr-natiqa",
+  "level": 4,
+  "metadata": {
+    "title": "المدوّر إلى الجزء من 100",
+    "estimatedMinutes": 7,
+    "tags": [
+      "مدوّر",
+      "الحاسبة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-35",
+      "page": 29,
+      "section": "أتعمّق",
+      "number": 35
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "استعمل حاسبة لإعطاء المدوّر إلى الجزء من 100 لكل عدد من الأعداد الآتية:",
+    "formulas": [
+      "\\sqrt{7} + 3 \\quad ; \\quad \\sqrt{54} \\quad ; \\quad \\sqrt{7} + \\sqrt{11}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "العدد $\\sqrt{7} + 3$",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري برقمين بعد الفاصلة",
+      "expectedAnswer": "5.65",
+      "misconceptionSignatures": [
+        {
+          "value": "5.64",
+          "id": "MISC-TAQRIB-NAQS-ZIYADA"
+        },
+        {
+          "value": "3.16",
+          "id": "MISC-JIDHR-JAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب بالحاسبة، واحتفظ بثلاثة أرقام على الأقل بعد الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انظر إلى الرقم الثالث بعد الفاصلة: التدوير ليس اقتطاعًا."
+        }
+      ],
+      "feedback": {
+        "correct": "الرقم الثالث بعد الفاصلة يحدّد التدوير إلى الجزء من 100.",
+        "incorrect": "إذا كان الرقم الثالث بعد الفاصلة 5 أو أكثر، نزيد 1 لرقم أجزاء المئة؛ وإلا نحذفه."
+      },
+      "solution": {
+        "lines": [
+          "$\\sqrt{7} \\approx 2{,}6457$ ، إذن $\\sqrt{7} + 3 \\approx 5{,}6457$",
+          "الرقم الثالث بعد الفاصلة 5، إذن المدوّر: 5,65"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "العدد $\\sqrt{54}$",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري برقمين بعد الفاصلة",
+      "expectedAnswer": "7.35",
+      "misconceptionSignatures": [
+        {
+          "value": "7.34",
+          "id": "MISC-TAQRIB-NAQS-ZIYADA"
+        },
+        {
+          "value": "27",
+          "id": "MISC-JIDHR-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب بالحاسبة، واحتفظ بثلاثة أرقام على الأقل بعد الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انظر إلى الرقم الثالث بعد الفاصلة: التدوير ليس اقتطاعًا."
+        }
+      ],
+      "feedback": {
+        "correct": "الرقم الثالث بعد الفاصلة يحدّد التدوير إلى الجزء من 100.",
+        "incorrect": "إذا كان الرقم الثالث بعد الفاصلة 5 أو أكثر، نزيد 1 لرقم أجزاء المئة؛ وإلا نحذفه."
+      },
+      "solution": {
+        "lines": [
+          "$\\sqrt{54} \\approx 7{,}3484$",
+          "الرقم الثالث بعد الفاصلة 8، إذن المدوّر: 7,35"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "العدد $\\sqrt{7} + \\sqrt{11}$",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري برقمين بعد الفاصلة",
+      "expectedAnswer": "5.96",
+      "misconceptionSignatures": [
+        {
+          "value": "4.24",
+          "id": "MISC-JIDHR-JAMA"
+        },
+        {
+          "value": "5.97",
+          "id": "MISC-WADIYA-TADWIR-MUBAKKIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب بالحاسبة، واحتفظ بثلاثة أرقام على الأقل بعد الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انظر إلى الرقم الثالث بعد الفاصلة: التدوير ليس اقتطاعًا."
+        }
+      ],
+      "feedback": {
+        "correct": "الرقم الثالث بعد الفاصلة يحدّد التدوير إلى الجزء من 100.",
+        "incorrect": "إذا كان الرقم الثالث بعد الفاصلة 5 أو أكثر، نزيد 1 لرقم أجزاء المئة؛ وإلا نحذفه."
+      },
+      "solution": {
+        "lines": [
+          "$\\sqrt{7} \\approx 2{,}6457$ و $\\sqrt{11} \\approx 3{,}3166$",
+          "$\\sqrt{7} + \\sqrt{11} \\approx 5{,}9623$",
+          "الرقم الثالث بعد الفاصلة 2، إذن المدوّر: 5,96",
+          "(تنبيه: $\\sqrt{7} + \\sqrt{11} \\neq \\sqrt{18}$)"
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

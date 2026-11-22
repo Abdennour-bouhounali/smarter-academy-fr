@@ -1,0 +1,380 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-talis-l3-009",
+  "lessonCode": "wadiya-idmajiya-talis",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2018 — مستطيل ثم (EF)//(AC) ثم EF",
+    "estimatedMinutes": 12,
+    "tags": [
+      "فيثاغورس",
+      "الخاصية العكسية",
+      "خاصية طالس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-talis_P1",
+      "modelledOn": "BEM 2018 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2018",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل: $ABCD$ مستطيل حيث $DC = 20\\,\\mathrm{cm}$ و $AD = 15\\,\\mathrm{cm}$ . $E$ نقطة من $[BA]$ حيث $BE = 8\\,\\mathrm{cm}$ ، و $F$ نقطة من $[BC]$ حيث $BF = 6\\,\\mathrm{cm}$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0.0,
+          15.0
+        ],
+        "B": [
+          20.0,
+          15.0
+        ],
+        "C": [
+          20.0,
+          0.0
+        ],
+        "D": [
+          0.0,
+          0.0
+        ],
+        "E": [
+          12.0,
+          15.0
+        ],
+        "F": [
+          20.0,
+          9.0
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "E"
+        ],
+        {
+          "from": "E",
+          "to": "B",
+          "label": "8"
+        },
+        {
+          "from": "B",
+          "to": "F",
+          "label": "6"
+        },
+        [
+          "F",
+          "C"
+        ],
+        {
+          "from": "C",
+          "to": "D",
+          "label": "20"
+        },
+        {
+          "from": "D",
+          "to": "A",
+          "label": "15"
+        },
+        {
+          "from": "A",
+          "to": "C",
+          "dashed": true
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "bold": true
+        }
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "B",
+          "C"
+        ],
+        [
+          "B",
+          "C",
+          "D"
+        ],
+        [
+          "C",
+          "D",
+          "A"
+        ],
+        [
+          "D",
+          "A",
+          "B"
+        ]
+      ],
+      "labels": {
+        "A": "nw",
+        "B": "ne",
+        "C": "se",
+        "D": "sw",
+        "E": "n",
+        "F": "e"
+      },
+      "ariaLabel": "مستطيل ABCD حيث DC = 20 و AD = 15، E من [BA] حيث BE = 8، F من [BC] حيث BF = 6، والقطعتان [AC] و [EF]",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب الطول $AC$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "25",
+      "misconceptionSignatures": [
+        {
+          "value": "35",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $ABC$ قائم في $B$ ( $ABCD$ مستطيل)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خاصية فيثاغورس: $AC^2 = AB^2 + BC^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC^2 = 400 + 225 = 625$ ومنه $AC = 25\\,\\mathrm{cm}$ .",
+        "incorrect": "$AC^2 = AB^2 + BC^2$ ثم الجذر التربيعي."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $B$ ، حسب خاصية فيثاغورس: $AC^2 = AB^2 + BC^2$",
+          "$AC^2 = 20^2 + 15^2 = 625$",
+          "$AC = \\sqrt{625}$"
+        ],
+        "result": "AC = 25\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب النسبة $\\dfrac{BE}{BA}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "2/5",
+      "misconceptionSignatures": [
+        {
+          "value": "5/2",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "2/3",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$BE$ و $BA$ طولان يُقاسان من النقطة $B$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $BE$ على $BA$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{BE}{BA} = \\dfrac{8}{20} = \\dfrac{2}{5}$ .",
+        "incorrect": "النسبة $\\dfrac{BE}{BA}$ : الطول $BE$ على الطول $BA$ ، وكلاهما من النقطة $B$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{BE}{BA} = \\dfrac{8}{20} = \\dfrac{2}{5}$"
+        ],
+        "result": "\\dfrac{BE}{BA} = \\dfrac{2}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب النسبة $\\dfrac{BF}{BC}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "2/5",
+      "misconceptionSignatures": [
+        {
+          "value": "5/2",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        },
+        {
+          "value": "2/3",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$BF$ و $BC$ طولان يُقاسان من النقطة $B$ على المستقيم نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم $BF$ على $BC$ ثم اختزل الكسر (قيمة مضبوطة، دون تدوير)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{BF}{BC} = \\dfrac{6}{15} = \\dfrac{2}{5}$ .",
+        "incorrect": "النسبة $\\dfrac{BF}{BC}$ : الطول $BF$ على الطول $BC$ ، وكلاهما من النقطة $B$ ؛ اكتبها كسرا مضبوطا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{BF}{BC} = \\dfrac{6}{15} = \\dfrac{2}{5}$"
+        ],
+        "result": "\\dfrac{BF}{BC} = \\dfrac{2}{5}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل المستقيمان $(EF)$ و $(AC)$ متوازيان؟ علّل.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-AKS-BIDUN-TASAWI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النسبتين بقيمهما المضبوطة (الجداء المتصالب)، لا بقيم مقرّبة ولا بمظهر الشكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق أيضا من ترتيب النقط على المستقيمين المتقاطعين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{BE}{BA} = \\dfrac{BF}{BC} = 0{,}4$ والترتيب نفسه: $(EF) \\parallel (AC)$ .",
+        "incorrect": "الخاصية العكسية تتطلب شرطين معا: تساوي النسبتين بقيم مضبوطة، وترتيب النقط نفسه على المستقيمين."
+      },
+      "solution": {
+        "lines": [
+          "بما أن النقط $B$ ، $E$ ، $A$ و $B$ ، $F$ ، $C$ في استقامية وبنفس الترتيب،",
+          "و بما أن: $\\dfrac{BE}{BA} = \\dfrac{BF}{BC} = \\dfrac{2}{5}$",
+          "فإن المستقيمين $(EF)$ و $(AC)$ متوازيان حسب خاصية طالس العكسية."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "احسب الطول $EF$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "62.5",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(EF) \\parallel (AC)$ : المثلثان $BEF$ و $BAC$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $\\dfrac{BE}{BA} = \\dfrac{EF}{AC}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$EF = \\dfrac{2}{5} \\times 25 = 10\\,\\mathrm{cm}$ .",
+        "incorrect": "في كل نسبة: طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "بما أن $(EF) \\parallel (AC)$ ، حسب خاصية طالس: $\\dfrac{BE}{BA} = \\dfrac{BF}{BC} = \\dfrac{EF}{AC}$",
+          "$\\dfrac{8}{20} = \\dfrac{EF}{25}$",
+          "$EF = \\dfrac{8 \\times 25}{20}$"
+        ],
+        "result": "EF = 10\\,\\mathrm{cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l1-006",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — أيّ المستقيمات تناسبي؟",
+    "estimatedMinutes": 5,
+    "tags": [
+      "تناسبية",
+      "مستقيم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اقترحت ثلاث تعاونيات فلاحية أسعارا لبيع التمر لأسر الحيّ. يمثّل كل مستقيم من $(D_1)$ و $(D_2)$ و $(D_3)$ في المعلم التالي ثمن التمر بدلالة كتلته.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "P": [
+          6,
+          4
+        ],
+        "R": [
+          0,
+          3
+        ],
+        "S": [
+          6,
+          6
+        ],
+        "U": [
+          0,
+          6
+        ],
+        "V": [
+          6,
+          0
+        ]
+      },
+      "lines": [
+        {
+          "through": [
+            "O",
+            "P"
+          ],
+          "name": "(D₁)",
+          "tone": "indigo",
+          "extend": [
+            0,
+            0
+          ]
+        },
+        {
+          "through": [
+            "R",
+            "S"
+          ],
+          "name": "(D₂)",
+          "tone": "rose",
+          "extend": [
+            0,
+            0
+          ]
+        },
+        {
+          "through": [
+            "U",
+            "V"
+          ],
+          "name": "(D₃)",
+          "tone": "emerald",
+          "extend": [
+            0,
+            0
+          ]
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw"
+      },
+      "hidden": [
+        "P",
+        "R",
+        "S",
+        "U",
+        "V"
+      ],
+      "ariaLabel": "معلم متعامد ومتجانس: ثلاثة مستقيمات، الأول ينطلق من المبدأ O والثاني ينطلق من النقطة (0;3) على محور التراتيب والثالث ينطلق من (0;6) وينزل",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: كتلة التمر بالكيلوغرام — محور التراتيب: الثمن بمئات الدنانير"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ هذه المستقيمات يمثّل وضعية تناسبية؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(D_2)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-LINE-ANY"
+        },
+        {
+          "id": "B",
+          "content": "$(D_3)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-LINE-ANY"
+        },
+        {
+          "id": "C",
+          "content": "$(D_1)$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن المستقيم الذي ينطلق من مبدأ المعلم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المستقيم التناسبي يشمل النقطة $O$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$(D_1)$ مستقيم يشمل المبدأ $O$ ، فهو يمثّل وضعية تناسبية.",
+        "incorrect": "كل المستقيمات مستقيمات، لكنّ التناسبية تتطلب مستقيما يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "$(D_1)$ يشمل المبدأ $O$ ، أما $(D_2)$ و $(D_3)$ فيقطعان محور التراتيب فوق $O$ .",
+          "إذن $(D_1)$ وحده يمثّل وضعية تناسبية."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل يمثّل $(D_2)$ وضعية تناسبية؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأنّ الترتيب يكبر كلما كبرت الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-RISING"
+        },
+        {
+          "id": "B",
+          "content": "لا، المستقيم الذي يشمل النقط لا يشمل المبدأ $O$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نعم، لأنّ النقط على استقامة واحدة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-LINE-ANY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط على استقامة واحدة لكنّ المستقيم لا يشمل المبدأ $O$ ، فليست الوضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "$(D_2)$ يقطع محور التراتيب في النقطة التي ترتيبها $3$ ، وليس في $O$ .",
+          "إذن لا يمثّل وضعية تناسبية."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

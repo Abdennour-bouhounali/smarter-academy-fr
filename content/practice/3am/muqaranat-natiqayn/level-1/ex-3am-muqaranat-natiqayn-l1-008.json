@@ -1,0 +1,240 @@
+{
+  "id": "ex-3am-muqaranat-natiqayn-l1-008",
+  "lessonCode": "muqaranat-natiqayn",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — متى يكون العددان متساويين؟",
+    "estimatedMinutes": 7,
+    "tags": [
+      "فرق",
+      "تساوي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "احسب الفرق $a - b$ في كلّ جزء ثمّ قارن العددين $a$ و $b$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "الجزء الأول: $a = \\dfrac{6}{9}$ و $b = \\dfrac{2}{3}$ . احسب $a - b$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر مختزل)",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العددان؟ وأيّهما يُطرح من الآخر في هذا الفرق؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح العدد الثاني من الأول واختزل النتيجة، فالإشارة هي التي تهمّنا في النهاية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد الحساب اقرأ إشارة الناتج وانتبه إلى ترتيب الطرح."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "0",
+      "misconceptionSignatures": [
+        {
+          "value": "4/6",
+          "id": "MISC-MUQ-SUB-TERMS"
+        }
+      ],
+      "feedback": {
+        "correct": "$a - b = 0$ .",
+        "incorrect": "اطرح العدد الثاني من الأول بتوحيد المقامين، واختزل، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$a - b = \\dfrac{2}{3} - \\dfrac{2}{3}$",
+          "$a - b = \\dfrac{2}{3} - \\dfrac{2}{3} = \\dfrac{2 - 2}{3}$",
+          "$a - b = 0$"
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما المقارنة الصحيحة بين $a$ و $b$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا تعلّمنا إشارة الفرق عن ترتيب العددين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اربط إشارة الفرق بالمقارنة بين العددين، وانتبه إلى أيّ العددين هو الأول في الفرق."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا انعكس ترتيب الطرح فإنّ إشارة الفرق تنعكس أيضًا."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$a < b$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-NUMERATOR"
+        },
+        {
+          "id": "B",
+          "content": "$a = b$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$a > b$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-NUMERATOR"
+        }
+      ],
+      "feedback": {
+        "correct": "$a = b$ لأنّ $a - b = 0$ .",
+        "incorrect": "اربط إشارة الفرق بالترتيب، وانتبه إلى ترتيب الطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$a - b = 0$ ، إذن $a = b$ ، وهذا طبيعي: $\\dfrac{6}{9} = \\dfrac{2}{3}$ ."
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "الجزء الثاني: $a = 0{,}375$ و $b = \\dfrac{3}{8}$ . احسب $a - b$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر مختزل)",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العددان؟ وأيّهما يُطرح من الآخر في هذا الفرق؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح العدد الثاني من الأول واختزل النتيجة، فالإشارة هي التي تهمّنا في النهاية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد الحساب اقرأ إشارة الناتج وانتبه إلى ترتيب الطرح."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "0",
+      "feedback": {
+        "correct": "$a - b = 0$ .",
+        "incorrect": "اطرح العدد الثاني من الأول بتوحيد المقامين، واختزل، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}375 = \\dfrac{375}{1000} = \\dfrac{3}{8}$",
+          "$a - b = \\dfrac{3}{8} - \\dfrac{3}{8} = 0$"
+        ]
+      }
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما المقارنة الصحيحة بين $a$ و $b$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا تعلّمنا إشارة الفرق عن ترتيب العددين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اربط إشارة الفرق بالمقارنة بين العددين، وانتبه إلى أيّ العددين هو الأول في الفرق."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا انعكس ترتيب الطرح فإنّ إشارة الفرق تنعكس أيضًا."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$a > b$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-NUMERATOR"
+        },
+        {
+          "id": "B",
+          "content": "$a = b$",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "$a = b$ لأنّ $a - b = 0$ .",
+        "incorrect": "اربط إشارة الفرق بالترتيب، وانتبه إلى ترتيب الطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$a - b = 0$ ، إذن $a = b$ ."
+        ]
+      }
+    }
+  ]
+}

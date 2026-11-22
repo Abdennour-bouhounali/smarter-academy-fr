@@ -1,4 +1,4 @@
-import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { ChevronUp, ChevronDown } from 'lucide-react';
 import { LoadingState, ErrorState, EmptyState } from './states';
 import SelectionCheckbox from './SelectionCheckbox';
@@ -20,7 +20,7 @@ import SelectionCheckbox from './SelectionCheckbox';
  *
  * La sélection multiple est OPTIONNELLE : sans la prop `selection`, ce tableau
  * rend exactement ce qu'il rendait avant, sans colonne en plus. Les listes qui
- * n'ont pas d'action groupée (élèves, signalements, abonnements) n'ont donc
+ * n'ont pas d'action groupée (signalements, abonnements) n'ont donc
  * rien à changer, et ne gagnent pas une case à cocher qui ne mènerait nulle
  * part.
  */
@@ -36,12 +36,33 @@ export default function DataTable({
   onSortChange,
   onRowClick,
   selection,
-  selectionLabel = (row) => `Sélectionner ${row.title ?? row.id}`,
+  selectionLabel,
+  /**
+   * Les libellés du tableau lui-même — ARABES par défaut, lus dans le
+   * catalogue `admin`, parce que TOUS les espaces qui montent ce tableau
+   * (administration comprise, depuis l'alignement) sont arabes. Un appelant
+   * garde la main sur chacun : `useAdminLabels()` et `useTableLabels()` les
+   * passent explicitement.
+   */
+  labels = {},
 }) {
-  if (loading) return <LoadingState rows={6} />;
-  if (error) return <ErrorState message={error} onRetry={onRetry} />;
+  const { t } = useTranslation('common');
+
+  const text = {
+    emptyTitle: t('ui.emptyTitle'),
+    emptyHint: t('ui.emptyHint'),
+    unselectAll: t('ui.unselectAllPage'),
+    selectAll: (count) => t('ui.selectAllPage', { count }),
+    retry: undefined,
+    loading: undefined,
+    ...labels,
+  };
+  const rowLabel = selectionLabel ?? ((row) => t('ui.selectRow', { title: row.title ?? row.id }));
+
+  if (loading) return <LoadingState rows={6} label={text.loading} />;
+  if (error) return <ErrorState message={error} onRetry={onRetry} retryLabel={text.retry} />;
   if (!rows?.length) {
-    return empty ?? <EmptyState title="Aucun résultat" hint="Aucune ligne ne correspond à ces filtres." />;
+    return empty ?? <EmptyState title={text.emptyTitle} hint={text.emptyHint} />;
   }
 
   const toggle = (key) => {
@@ -68,8 +89,8 @@ export default function DataTable({
                   onChange={selection.toggleAll}
                   label={
                     selection.allSelected
-                      ? 'Tout désélectionner sur cette page'
-                      : `Tout sélectionner sur cette page (${selection.visibleCount})`
+                      ? text.unselectAll
+                      : text.selectAll(selection.visibleCount)
                   }
                 />
               </th>
@@ -86,7 +107,7 @@ export default function DataTable({
                 <th
                   key={column.key}
                   scope="col"
-                  className={`px-3 py-2.5 text-left font-inter text-xs font-semibold uppercase tracking-wide text-slate-500 ${column.className ?? ''}`}
+                  className={`px-3 py-2.5 text-start font-inter text-xs font-semibold uppercase tracking-wide text-slate-500 ${column.className ?? ''}`}
                   aria-sort={active ? (sort?.direction === 'asc' ? 'ascending' : 'descending') : undefined}
                 >
                   {sortable ? (
@@ -125,7 +146,7 @@ export default function DataTable({
                   <SelectionCheckbox
                     checked={selected}
                     onChange={() => selection.toggle(row.id)}
-                    label={selectionLabel(row)}
+                    label={rowLabel(row)}
                   />
                 </td>
               )}

@@ -1,0 +1,184 @@
+{
+  "id": "ex-4am-tawzif-khawass-judhur-l4-007",
+  "lessonCode": "tawzif-khawass-judhur",
+  "level": 4,
+  "metadata": {
+    "title": "D = 3√8 − √18",
+    "estimatedMinutes": 6,
+    "tags": [
+      "a√b",
+      "الخاصية التوزيعية",
+      "نسبة مقامها عدد ناطق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tawzif-khawass-judhur_P2",
+      "modelledOn": "method-simplify",
+      "adaptedFrom": "ex-4am-tawzif-khawass-judhur-l4-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد D حيث:",
+    "formulas": [
+      "D = 3\\sqrt{8} - \\sqrt{18}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب العدد $3\\sqrt{8}$ على الشكل $a\\sqrt{2}$ حيث $a$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tawzif-khawass-judhur_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد طبيعي)",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-MUAMIL-MANSI"
+        },
+        {
+          "value": "12",
+          "id": "MISC-JIDHR-MURABBA-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $\\sqrt{8}$ على الشكل $x\\sqrt{2}$ أولًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تنسَ ضرب الناتج في المعامل 3."
+        }
+      ],
+      "feedback": {
+        "correct": "$3\\sqrt{8} = 3 \\times 2\\sqrt{2} = 6\\sqrt{2}$.",
+        "incorrect": "بسّط $\\sqrt{8}$ ثم اضرب المعامل 3 في الناتج."
+      },
+      "solution": {
+        "lines": [
+          "$3\\sqrt{8} = 3\\sqrt{4} \\times \\sqrt{2}$",
+          "$3\\sqrt{8} = 3 \\times 2\\sqrt{2}$"
+        ],
+        "result": "3\\sqrt{8} = 6\\sqrt{2}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج كتابة العدد D على الشكل $a\\sqrt{2}$ حيث $a$ عدد صحيح.",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tawzif-khawass-judhur_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "-1",
+          "id": "MISC-MUAMIL-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01، واكتب $\\sqrt{18}$ على الشكل $x\\sqrt{2}$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل الخاصية التوزيعية."
+        }
+      ],
+      "feedback": {
+        "correct": "$D = 6\\sqrt{2} - 3\\sqrt{2} = 3\\sqrt{2}$.",
+        "incorrect": "استعمل الكتابة التي وجدتها في السؤال 01 (المعامل 3 مضروب)، ثم اطرح."
+      },
+      "solution": {
+        "lines": [
+          "$D = 6\\sqrt{2} - \\sqrt{9} \\times \\sqrt{2}$",
+          "$D = 6\\sqrt{2} - 3\\sqrt{2}$",
+          "$D = (6 - 3)\\sqrt{2}$"
+        ],
+        "result": "D = 3\\sqrt{2}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "بيّن أن: $\\dfrac{D}{\\sqrt{6}} = \\sqrt{3}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض D بالكتابة التي وجدتها في السؤال 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\sqrt{6} = \\sqrt{2} \\times \\sqrt{3}$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجعل المقام عددًا ناطقًا."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك سطرًا بسطر بالحل النموذجي، وانتبه إلى كل مرحلة من مراحل الحساب."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{D}{\\sqrt{6}} = \\dfrac{3\\sqrt{2}}{\\sqrt{2} \\times \\sqrt{3}}$",
+          "$= \\dfrac{3}{\\sqrt{3}}$",
+          "$= \\dfrac{3 \\times \\sqrt{3}}{\\sqrt{3} \\times \\sqrt{3}}$",
+          "$= \\dfrac{3\\sqrt{3}}{3}$"
+        ],
+        "result": "\\dfrac{D}{\\sqrt{6}} = \\sqrt{3}"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

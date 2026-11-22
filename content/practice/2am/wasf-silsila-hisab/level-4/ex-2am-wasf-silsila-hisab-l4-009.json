@@ -1,0 +1,249 @@
+{
+  "id": "ex-2am-wasf-silsila-hisab-l4-009",
+  "lessonCode": "wasf-silsila-hisab",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — نتيجة برنامج مركّب",
+    "estimatedMinutes": 14,
+    "tags": [
+      "برنامج حساب",
+      "كتابة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "برنامج حساب: اختر عددًا، اضربه في 3، أضف إلى الناتج 9، ثم اقسم الناتج على 6."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "طبّق البرنامج على العدد 5 : ما النتيجة؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "value": "16.5",
+          "id": "MISC-WASF-NOBRACKET"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد كتابة السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$(5 \\times 3 + 9) \\div 6 = 4$",
+        "incorrect": "اكتب سلسلة تترجم البرنامج خطوة خطوة: كلّ جملة «اضرب الناتج» أو «اقسم الناتج» تضع ما سبق بين قوسين."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $(5 \\times 3 + 9) \\div 6$",
+          "$(15 + 9) \\div 6$",
+          "$24 \\div 6$",
+          "$4$"
+        ],
+        "result": "4"
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أيّ سلسلة تترجم البرنامج لعدد البداية 5 ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$5 \\times 3 + 9 \\div 6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-NOBRACKET"
+        },
+        {
+          "id": "B",
+          "content": "$(5 \\times 3 + 9) \\div 6$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بآخر عملية في الجملة: هي الأخيرة التي تُكتب بين قطعتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كلّ قطعة على حدة، وضع بين قوسين كلّ قطعة يجب أن تُحسب قبل آخر عملية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر سلسلتك بحسابها: هل آخر عملية فيها هي التي في الجملة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة الصحيحة: $(5 \\times 3 + 9) \\div 6$ .",
+        "incorrect": "ابدأ بآخر عملية في الجملة، وضع بين قوسين كلّ قطعة تُحسب قبلها، وانتبه إلى ترتيب القطعتين."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية في الجملة هي $\\div$.",
+          "نكتب كلّ قطعة ثم نربط بينهما: $(5 \\times 3 + 9) \\div 6$ (القوسان لازمان لأنّ القطعة يجب أن تُحسب أوّلًا)."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أيّ جملة تصف السلسلة $S = (5 \\times 3 + 9) \\div 6$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "حاصل قسمة مجموع جداء العددين 5 و 3 والعدد 9 على 6",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "جداء العدد 5 ومجموع العدد 3 وحاصل قسمة 9 على 6",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-FIRSTOP"
+        },
+        {
+          "id": "C",
+          "content": "حاصل قسمة 6 على مجموع جداء العددين 5 و 3 والعدد 9",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-ORDERDIFF"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ باسم السلسلة: هو اسم آخر عملية تُنجز فيها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم صِف كلّ قطعة من القطعتين بالطريقة نفسها، قبل آخر عملية وبعدها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اذكر القطعة المكتوبة أوّلًا أوّلًا، وانتبه إلى كلمة «على» في حاصل القسمة."
+        }
+      ],
+      "feedback": {
+        "correct": "S هي حاصل قسمة مجموع جداء العددين 5 و 3 والعدد 9 على 6.",
+        "incorrect": "ابدأ باسم آخر عملية، ثم صِف القطعة الأولى ثم الثانية، بالترتيب الذي تُكتبان به."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية تُنجز في $(5 \\times 3 + 9) \\div 6$ هي $\\div$، فالسلسلة حاصل قسمة.",
+          "نصف كلّ قطعة بالطريقة نفسها: حاصل قسمة مجموع جداء العددين 5 و 3 والعدد 9 على 6."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "طبّق البرنامج على العدد 12 : ما النتيجة؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "7.5",
+      "misconceptionSignatures": [
+        {
+          "value": "37.5",
+          "id": "MISC-WASF-NOBRACKET"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد كتابة السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$(12 \\times 3 + 9) \\div 6 = 7{,}5$",
+        "incorrect": "اكتب سلسلة تترجم البرنامج خطوة خطوة: كلّ جملة «اضرب الناتج» أو «اقسم الناتج» تضع ما سبق بين قوسين."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $(12 \\times 3 + 9) \\div 6$",
+          "$(36 + 9) \\div 6$",
+          "$45 \\div 6$",
+          "$7{,}5$"
+        ],
+        "result": "7{,}5"
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

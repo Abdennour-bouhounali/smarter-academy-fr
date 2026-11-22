@@ -1,0 +1,240 @@
+{
+  "id": "ex-1am-kusur-ashriya-kitaba-l3-001",
+  "lessonCode": "kusur-ashriya-kitaba",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — كسر عشري وكتابة عشرية ومفكوك",
+    "estimatedMinutes": 5,
+    "tags": [
+      "كسر عشري",
+      "مفكوك"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 1,
+      "file": "1am-s1-91",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "أجب عن الأسئلة الآتية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب بالكتابة العشرية (بالفاصلة) الكسر العشري $\\dfrac{3086}{100}$",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة)",
+      "expectedAnswer": "30,86",
+      "misconceptionSignatures": [
+        {
+          "value": "308,6",
+          "id": "MISC-KUSUR-DEN-DIGITS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم صفرًا في المقام؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هذا العدد هو عدد الأرقام التي تأتي بعد الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عُدّ من يمين البسط بقدر ذلك العدد، وإن نقصت الأرقام فاكتب أصفارًا قبلها."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3086}{100} = 30{,}86$ : صفران في المقام، فنضع الفاصلة بعد رقمين من اليمين.",
+        "incorrect": "عدد الأرقام بعد الفاصلة يساوي عدد أصفار المقام، وإذا كان البسط أقصر من ذلك نكتب أصفارًا بين الفاصلة والبسط."
+      },
+      "solution": {
+        "lines": [
+          "المقام 100 فيه صفران، إذن رقمان بعد الفاصلة.",
+          "$\\dfrac{3086}{100} = 30{,}86$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اختر المفكوك النموذجي للعدد $562{,}405$.",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$5 \\times 100 + 6 \\times 10 + 2 + \\dfrac{4}{10} + \\dfrac{5}{1000}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$5 \\times 100 + 6 \\times 10 + 2 + \\dfrac{4}{10} + \\dfrac{5}{100}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KUSUR-ZERO-PLACE"
+        },
+        {
+          "id": "C",
+          "content": "$5 \\times 100 + 6 \\times 10 + 2 + \\dfrac{405}{10}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KUSUR-SPLIT-DIGITS"
+        },
+        {
+          "id": "D",
+          "content": "$562 + 0{,}4 + 0{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KUSUR-ZERO-PLACE"
+        }
+      ],
+      "answerFormat": "اختر إجابة واحدة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد رقم كل مرتبة بعد الفاصلة: الأعشار ثم الأجزاء من مائة ثم الأجزاء من ألف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل في العدد جزء من مائة؟ تأمّل الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "$562{,}405 = 5 \\times 100 + 6 \\times 10 + 2 + \\dfrac{4}{10} + \\dfrac{5}{1000}$ : الصفر يحفظ مرتبة الأجزاء من مائة فلا حدّ لها.",
+        "incorrect": "في المفكوك النموذجي لكل رقم حدّ بحسب مرتبته، والمرتبة الفارغة (الصفر) لا حدّ لها، والأجزاء من ألف تُكتب على 1000 لا على 100."
+      },
+      "solution": {
+        "lines": [
+          "الأعشار: 4 ، الأجزاء من مائة: 0 ، الأجزاء من ألف: 5.",
+          "$562{,}405 = 5 \\times 100 + 6 \\times 10 + 2 + \\dfrac{4}{10} + \\dfrac{5}{1000}$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اكتب بالكتابة العشرية: $9 + \\dfrac{35}{10}$",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "12,5",
+      "misconceptionSignatures": [
+        {
+          "value": "9,35",
+          "id": "MISC-KUSUR-SPLIT-DIGITS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ يشغل مرتبة واحدة: الوحدات أو الأعشار أو الأجزاء من مائة…"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الرقم المناسب في كل مرتبة، واملأ المرتبة الفارغة بصفر. ورتّب الحدود حسب مراتبها لا حسب موضعها في المجموع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قبل الفاصلة الأجزاء الصحيحة وبعدها الأجزاء العشرية."
+        }
+      ],
+      "feedback": {
+        "correct": "$9 + \\dfrac{35}{10} = 12{,}5$ : نضع لكل حدّ رقمه في مرتبته.",
+        "incorrect": "الرقم يأخذ معناه من مرتبته لا من ترتيب الحدّ في المجموع: نحدّد مرتبة كل حدّ (آلاف، مئات، آحاد، أعشار…) ونملأ المراتب الفارغة بصفر."
+      },
+      "solution": {
+        "lines": [
+          "$9 + \\dfrac{35}{10}$",
+          "نضع كل رقم في مرتبته: $12{,}5$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "ما عدد الأجزاء من ألف في العدد العشري $562{,}405$؟",
+      "learningPoints": [
+        {
+          "code": "1am_kusur-ashriya-kitaba_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "562405",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-KUSUR-TENTHS-COUNT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم جزءًا من هذا النوع في الوحدة الواحدة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نعدّ كل الأجزاء بما فيها التي تأتي من الوحدات الصحيحة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الرقم الواقع في المرتبة وحده لا يعطي عدد الأجزاء."
+        }
+      ],
+      "feedback": {
+        "correct": "$562{,}405$ يحوي 562405 من الأجزاء من ألف كاملة: هي الأرقام حتى مرتبة الأجزاء من ألف، مقروءة كعدد طبيعي.",
+        "incorrect": "في الوحدة الواحدة عشرة أعشار ومائة جزء من مائة: نعدّ كل الأجزاء بما فيها التي في الوحدات الصحيحة، ولا نكتفي برقم المرتبة."
+      },
+      "solution": {
+        "lines": [
+          "$562{,}405 \\times 1000 = 562405$",
+          "عدد الأجزاء من ألف الكاملة هو الجزء الصحيح من هذا الناتج: $562405$."
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

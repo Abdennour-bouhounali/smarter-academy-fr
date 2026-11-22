@@ -1,0 +1,232 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-quwa-nisbiya-l3-001",
+  "lessonCode": "wadiya-idmajiya-quwa-nisbiya",
+  "level": 3,
+  "metadata": {
+    "title": "ثلاثة أعداد A و B و C",
+    "estimatedMinutes": 8,
+    "tags": [
+      "أولوية العمليات",
+      "قوة عدد نسبي",
+      "قوى العدد 10"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الأعداد: $A = (-2)^{3} \\times 10^{-1} + 5 \\times 10^{-2}$ ؛ $B = \\dfrac{(2^{2} \\times 5^{2})^{2}}{10^{3}}$ ؛ $C = (-1)^{5} - 3 \\times (-2)^{2}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $A$ واكتب النتيجة بالفاصلة.",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة) أو كسر",
+      "expectedAnswer": "-0.75",
+      "misconceptionSignatures": [
+        {
+          "value": "0.85",
+          "id": "MISC-WQ-SIGNTERM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة النتيجة، وكم عاملًا في الجداء ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد العوامل السالبة الزوجي يعطي ناتجًا موجبًا؛ والأسّ السالب يعني مقلوب القوة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الإشارة ثمّ احسب القيمة."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $-0{,}75$ .",
+        "incorrect": "انتبه إلى إشارة القوة وإلى الأسّ السالب، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$(-2)^{3} \\times 10^{-1} + 5 \\times 10^{-2}$ = $-0{,}75$ ."
+        ],
+        "result": "-0{,}75"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب $B$ على الشكل $10^{n}$ : ما قيمة $n$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية بين القوتين: جداء أم حاصل قسمة أم قوة قوة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الجداء يجمع الأسّين، والقسمة تطرحهما، وقوة القوة تضربهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الأسّ الجديد ثمّ تحقّق بحالة بسيطة."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $1$ .",
+        "incorrect": "راجع الحساب خطوة خطوة ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$(2^{2} \\times 5^{2})^{2} \\div 10^{3}$ = $10^{1}$ ."
+        ],
+        "result": "1"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب $C$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (يُقبل السالب)",
+      "expectedAnswer": "-13",
+      "misconceptionSignatures": [
+        {
+          "value": "-16",
+          "id": "MISC-WQ-PRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما إشارة النتيجة، وكم عاملًا في الجداء ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد العوامل السالبة الزوجي يعطي ناتجًا موجبًا؛ والأسّ السالب يعني مقلوب القوة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الإشارة ثمّ احسب القيمة."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $-13$ .",
+        "incorrect": "انتبه إلى إشارة القوة وإلى الأسّ السالب، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$(-1)^{5} - 3 \\times (-2)^{2}$ = $-13$ ."
+        ],
+        "result": "-13"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "قارن $A$ و $C$ :",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-quwa-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "العددان متساويان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WQ-EXPCMP"
+        },
+        {
+          "id": "B",
+          "content": "$(-2)^{3} \\times 10^{-1} + 5 \\times 10^{-2}$ أكبر من $(-1)^{5} - 3 \\times (-2)^{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$(-2)^{3} \\times 10^{-1} + 5 \\times 10^{-2}$ أصغر من $(-1)^{5} - 3 \\times (-2)^{2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WQ-EXPCMP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل تستطيع حساب كل خيار على حدة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الخيارات بعد تحويلها إلى الكتابة العلمية أو إلى قوة العدد $10$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استبعد الخيارات التي تخالف قاعدة تعرفها."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $(-2)^{3} \\times 10^{-1} + 5 \\times 10^{-2}$ أكبر من $(-1)^{5} - 3 \\times (-2)^{2}$ .",
+        "incorrect": "قارن الخيارات بعد تحويلها إلى شكل مشترك، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب كلًّا منهما كتابة علمية ثمّ نقارن الأسّين فالأعداد $a$ .",
+          "النتيجة: $(-2)^{3} \\times 10^{-1} + 5 \\times 10^{-2}$ أكبر من $(-1)^{5} - 3 \\times (-2)^{2}$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

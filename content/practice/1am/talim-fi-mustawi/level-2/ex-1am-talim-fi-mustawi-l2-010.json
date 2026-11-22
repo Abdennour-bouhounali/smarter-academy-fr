@@ -1,0 +1,230 @@
+{
+  "id": "ex-1am-talim-fi-mustawi-l2-010",
+  "lessonCode": "talim-fi-mustawi",
+  "level": 2,
+  "metadata": {
+    "title": "نقط بإحداثيين عشريين",
+    "estimatedMinutes": 6,
+    "tags": [
+      "عشري",
+      "موضع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "self-10",
+      "page": 73,
+      "section": "أقوّم تعلّماتي",
+      "number": 10
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعلّم في معلم متعامد النقط $A(1{,}5\\,;\\,-3)$ و $B(-3\\,;\\,0)$ و $D(2{,}5\\,;\\,-1{,}5)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أين تقع النقطة $(1{,}5\\,;\\,-3)$ بالنسبة إلى المحورين؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "فوق محور الفواصل وعلى يسار محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNBOTH"
+        },
+        {
+          "id": "B",
+          "content": "تحت محور الفواصل وعلى يمين محور التراتيب",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "تحت محور الفواصل وعلى يسار محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNX"
+        },
+        {
+          "id": "D",
+          "content": "فوق محور الفواصل وعلى يمين محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفاصلة تقول الجهة على الخط الأفقي: يمين أو يسار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الترتيب يقول الجهة على الخط الشاقولي: فوق أو تحت."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد السالب: يسار (للفاصلة) أو تحت (للترتيب)."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة تعيّن اليمين أو اليسار والترتيب يعيّن الفوق أو التحت.",
+        "incorrect": "انظر إلى إشارة كلّ إحداثي على حدة."
+      },
+      "solution": {
+        "lines": [
+          "إشارة الفاصلة موجبة: يمين محور التراتيب",
+          "إشارة الترتيب سالبة: تحت محور الفواصل"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أين تقع النقطة $(-3\\,;\\,0)$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "على محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-AXISSWAP"
+        },
+        {
+          "id": "B",
+          "content": "هي المبدأ",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "ليست على أيّ من المحورين",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "على محور الفواصل",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اسأل: أيّ الإحداثيين معدوم؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترتيب معدوم: لا نصعد ولا ننزل، فالنقطة على الخط الأفقي. فاصلة معدومة: لا نتحرّك أفقيًّا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إن انعدم الإحداثيان معًا فهي المبدأ، وإن لم ينعدم أيّ منهما فهي خارج المحورين."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة $(-3\\,;\\,0)$ على محور الفواصل .",
+        "incorrect": "ترتيب معدوم يعني محور الفواصل، وفاصلة معدومة تعني محور التراتيب."
+      },
+      "solution": {
+        "lines": [
+          "ترتيب النقطة معدوم",
+          "على محور الفواصل"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أين تقع النقطة $(2{,}5\\,;\\,-1{,}5)$ بالنسبة إلى المحورين؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "تحت محور الفواصل وعلى يمين محور التراتيب",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "تحت محور الفواصل وعلى يسار محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNX"
+        },
+        {
+          "id": "C",
+          "content": "فوق محور الفواصل وعلى يمين محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNY"
+        },
+        {
+          "id": "D",
+          "content": "فوق محور الفواصل وعلى يسار محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNBOTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفاصلة تقول الجهة على الخط الأفقي: يمين أو يسار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الترتيب يقول الجهة على الخط الشاقولي: فوق أو تحت."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد السالب: يسار (للفاصلة) أو تحت (للترتيب)."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة تعيّن اليمين أو اليسار والترتيب يعيّن الفوق أو التحت.",
+        "incorrect": "انظر إلى إشارة كلّ إحداثي على حدة."
+      },
+      "solution": {
+        "lines": [
+          "إشارة الفاصلة موجبة: يمين محور التراتيب",
+          "إشارة الترتيب سالبة: تحت محور الفواصل"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

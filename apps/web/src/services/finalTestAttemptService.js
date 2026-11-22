@@ -1,4 +1,5 @@
 import { apiRequest, ApiError, classifyStatus } from './apiClient';
+import { apiMessage } from './apiMessage';
 
 /**
  * Thin transport for the student's latest final-test (evaluation-module)
@@ -18,7 +19,7 @@ export async function fetchFinalTestAttempt(token, lessonCode) {
   });
 
   if (!ok) {
-    throw new ApiError(data?.message || 'Impossible de récupérer le résultat du test.', classifyStatus(status), status);
+    throw new ApiError(apiMessage('testLoad', data, status), classifyStatus(status), status);
   }
 
   return data.attempt;
@@ -39,7 +40,7 @@ export async function putFinalTestAttempt(token, lessonCode, attempt) {
   });
 
   if (!ok) {
-    throw new ApiError(data?.message || 'Impossible d’enregistrer le résultat du test.', classifyStatus(status), status);
+    throw new ApiError(apiMessage('testSave', data, status), classifyStatus(status), status);
   }
 
   return data.attempt;
@@ -58,6 +59,6 @@ export async function deleteFinalTestAttempt(token, lessonCode) {
   });
 
   if (!ok) {
-    throw new ApiError(data?.message || 'Impossible de réinitialiser le test.', classifyStatus(status), status);
+    throw new ApiError(apiMessage('testReset', data, status), classifyStatus(status), status);
   }
 }

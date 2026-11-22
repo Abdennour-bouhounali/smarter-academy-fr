@@ -1,10 +1,45 @@
 # Lesson Integration Guide
 
+> **⚠️ Scope (2026-09-25).** The worked example throughout this document is a
+> **French lesson that was deleted on 2026-09-25** (with every French lesson —
+> read it from git history), and §1–§4 describe the **older per-lesson wiring**:
+> a hand-written `routes.jsx` with a `MODULE_COMPONENTS` map, a twenty-line
+> `moduleContext.js`, and route registration in `App.jsx`.
+>
+> **An Algerian 4AM lesson is wired differently** — three shared factories in
+> `_unit/` (`unitMeta.js`, `buildModuleContext`, `buildLessonRoutes`) reduce
+> those files to one line each and add the Classroom shell, the notebook anchor
+> and the knowledge provider automatically. See `LESSON_CONTRACT.md`
+> § « L'unité 4AM » and, to build one,
+> [`../lessons/LESSON_DEVELOPMENT_GUIDE.md`](../lessons/LESSON_DEVELOPMENT_GUIDE.md).
+>
+> **Loading (2026-09-25).** `buildLessonRoutes` no longer imports the lesson
+> wrappers statically: the classroom shell, the access gate, the knowledge
+> provider and the notebook anchor live in ONE lazy chunk,
+> `lessons/common/lessonRuntime.jsx` (`LessonClassroomShell`,
+> `LessonPageFrame`), shared by every lesson and loaded through
+> `lessonRuntimeLoader.js`. The registry (`lessons/registry.js`) globs only
+> the active grades' `lesson.config.js`. See
+> [`BUNDLE_BOUNDARIES.md`](./BUNDLE_BOUNDARIES.md).
+>
+> **What is still accurate and worth reading here:** §5 (module-to-module
+> locking — rewritten 2026-09-29 to the current signature), §6 (step locking,
+> the formative question policy, one tap = one answer), §8 (the prerequisite
+> diagnostic), §9 (persistence). §7 (the Boss Final shape) and §11 (the lesson
+> kit) describe shared mechanisms that still hold, but their **worked
+> examples** (`nombres-entiers`, `contenances`, `Module11BossFinalV2.jsx`,
+> `Module00DiagnosticV2.jsx`) are French-era files deleted on 2026-09-25 —
+> historical; the 4AM equivalents are the `modules/Module0*Itqan.jsx` and
+> `Module00Astaidd.jsx` files. §12 (geometry) is **historical** throughout:
+> `CoordGrid.jsx`, `ShapeLab.jsx`, the 3e catalogue keys and `smaMetadata` no
+> longer exist; only `CoordPlane.jsx` (`lessons/common/components/`) remains.
+
 Practical, code-level reference for how a lesson is wired end-to-end into the
 platform — routing, module locking, step locking, learning-point evidence,
 final test, prerequisite diagnostic, and storage. Worked example throughout:
 `apps/web/src/lessons/college/6e/nombres_calculs/nombres-entiers/`, the first
-lesson with every mechanism below fully implemented.
+lesson with every mechanism below fully implemented *(historical — deleted on
+2026-09-25; read it in git history)*.
 
 This is an **integration** doc, not a **content-authoring contract**. For the
 `LESSON_CONFIG` field contract and module-authoring rules, see
@@ -88,11 +123,11 @@ Field notes not already covered by `LESSON_CONTRACT.md`:
 - **`stage`** drives one specific behavior beyond display: `stage:
   'evaluation'` makes a module *always* unlocked regardless of
   `sequentialUnlock` (the "I think I already know this" escape hatch — see
-  `isModuleUnlocked` in §5). `stage: 'prerequisite_check'` has no special
-  handling in `isModuleUnlocked` today (a `number: 0` module is unlocked
-  anyway via the `n <= 1` rule) — it exists purely as a semantic marker and
-  to keep `teachesLearningPointIds` absent by convention (a diagnostic
-  teaches nothing; it only checks).
+  `isModuleUnlocked` in §5). `stage: 'prerequisite_check'` is read by
+  `isModuleUnlocked` through `previousStage`: the module that follows a
+  diagnostic is never gated by it (see §5). It also keeps
+  `teachesLearningPointIds` absent by convention (a diagnostic teaches
+  nothing; it only checks).
 
 ---
 
@@ -171,13 +206,19 @@ Source: `packages/core/lessonAccess.js`. Consumed by `ModuleLayout.jsx` (gates
 the page itself) and `LessonIndex.jsx` (gates the roadmap card).
 
 ```js
-export function isModuleUnlocked(isModuleCompleted, moduleNumber, { stage } = {}) {
-  if (stage === 'evaluation') return true;      // final test always reachable
+export function isModuleUnlocked(isModuleCompleted, moduleNumber, { stage, firstModuleNumber, previousStage } = {}) {
+  if (stage === 'evaluation') return true;               // final test always reachable
+  if (previousStage === 'prerequisite_check') return true; // a diagnostic never bars the lesson
   const n = Number(moduleNumber);
-  if (!Number.isFinite(n) || n <= 1) return true; // module 0 AND module 1 always unlocked
+  if (!Number.isFinite(n)) return true;
+  const first = Number.isFinite(Number(firstModuleNumber)) ? Number(firstModuleNumber) : 1;
+  if (n <= first) return true;                            // the lesson's first module (0 or 1)
   return getModuleMastery(isModuleCompleted, n - 1) >= MASTERY_UNLOCK_THRESHOLD; // 80
 }
 ```
+
+The authoritative statement of these rules is `LESSON_CONTRACT.md`
+« Déverrouillage séquentiel ».
 
 - Binary mastery today: a module is "80%+ mastered" iff
   `isModuleCompleted(String(n-1))` is true — completion is currently
@@ -187,23 +228,22 @@ export function isModuleUnlocked(isModuleCompleted, moduleNumber, { stage } = {}
 - **A module never re-locks.** Once `completedModules` contains it, it
   stays unlocked forever — `isModuleUnlocked` never re-checks a completed
   module's own state, only whether the *next* one's gate is satisfied.
-- `getModuleStatus()` layers a `requiresLearningPointIds` mastery gate on
-  top (server-fed `masteryStatusById`) and an `in_progress` label when
-  `currentModule === moduleNumber` — cosmetic on the roadmap, not a lock.
-- **`n <= 1` is why module 0 doesn't hard-gate module 1.** A prerequisite
-  diagnostic (§8) is informational only by construction: there is no
-  `n <= 0` branch, so completing module 0 is never required to reach module
-  1. If a future lesson genuinely needs to gate module 1 on module 0, that
-  threshold has to change in this shared file — high blast radius, since
-  every lesson using `sequentialUnlock: true` depends on it. Don't special-
-  case a single lesson here; if it's ever needed, it needs a plan, not a
-  patch.
+- **The first module is the lesson's, not the number 1** (`firstModuleNumber`),
+  and **a diagnostic never gates what follows it** (`previousStage ===
+  'prerequisite_check'`): completing module 0 is never required.
+- **No mastery lock.** Both consumers go through
+  `apps/web/src/lessons/common/utils/moduleGate.js`
+  (`resolveModuleUnlock` / `resolveModuleStatus`), which suspends the lock
+  when presenting (وضع القسم), for a reader's `freeNavigation` (teacher), for
+  an already-done module, or when `sequentialUnlock` is off — and passes
+  `masteryStatusById: undefined` to `getModuleStatus`, so a
+  `requiresLearningPointIds` gap never closes a module (it is a soft hint,
+  `softGate.js`). `getModuleStatus` adds only the `current` label.
 
-`ModuleLayout.jsx` calls this on every module page load
-(`isModuleUnlocked(isModuleCompleted, moduleNumber, { stage })`) and renders
-a full-page "locked" screen (`lockedReason(moduleNumber)`) if it fails.
-`LessonIndex.jsx` calls `getModuleStatus()` per roadmap card and renders a
-non-clickable dashed placeholder for `status === 'locked'`.
+`ModuleLayout.jsx` calls `resolveModuleUnlock(...)` on every module page load
+and renders a full-page "locked" screen (`lockedReason(moduleNumber)`) if it
+fails. `LessonIndex.jsx` calls `resolveModuleStatus(...)` per roadmap card and
+renders a non-clickable dashed placeholder for `status === 'locked'`.
 
 ---
 
@@ -393,6 +433,14 @@ response. The click rules, by interaction type:
 - **Boss final and module 0 diagnostic are exempt**: they stay silent with
   a single global submit (§7/§8) — that one click covers the whole test
   and must not be removed per-question.
+  **On the student page.** In Classroom Mode (« وضع القسم ») both engines
+  present themselves one question at a time and offer « تحقّق من الإجابة »
+  on the current question, plus « كشف النتائج » at the end — a
+  teacher-at-the-board gesture, on a screen only presenters can open. It
+  changes nothing here: the page keeps its single silent submit, and the
+  reveal-all path *is* that same submit (same evaluator, same scoring, same
+  evidence, written once). See
+  [`CLASSROOM_MODE.md`](./CLASSROOM_MODE.md) §5 *Test*.
 
 ### Micro-celebration / engagement layer (sound, streak, XP burst)
 
@@ -462,6 +510,11 @@ Its non-negotiable rules (first fully implemented in nombres-entiers'
   once ("Valider mes N réponses", disabled until every question has an
   answer). Only then does the review screen show the score, each question,
   the student's answer, the correct answer, and the explanation.
+  This describes the **student page**. Projected in Classroom Mode the same
+  engine shows one épreuve at a time and lets the teacher reveal the current
+  one; the scoring, the evidence and the saved attempt are unchanged, and
+  still written exactly once. See [`CLASSROOM_MODE.md`](./CLASSROOM_MODE.md)
+  §5 *Test*.
 - **Every question tied to learning points.** Each épreuve carries
   `assessment: {enabled: true, type: 'assessment', learningPointIds: [...]}`
   and is submitted through `useEvidenceSubmission` at submit time — this is
@@ -535,6 +588,11 @@ Hard rules, enforced by construction, not by a runtime check:
 - **Score buckets, not pass/fail.** Three tiers by total score (`< 5`, `5–7`,
   `> 7` out of a normalized max), each with its own tone/copy/CTA label —
   never a binary "you failed, try again."
+- **Classroom Mode presents it question by question**, with per-question
+  « تحقّق من الإجابة » and a final « كشف النتائج », inherited from the engine
+  with nothing to wire. The diagnostic questions, thresholds, advice tiers and
+  non-gating behaviour are untouched. See
+  [`CLASSROOM_MODE.md`](./CLASSROOM_MODE.md) §5 *Test*."
 
 Persistence: a dedicated hook,
 `apps/web/src/lessons/common/hooks/usePrerequisiteDiagnostic.js`, modeled on
@@ -853,8 +911,8 @@ its own file header.
 ### 12.3 Dragging a point or a figure (2-D)
 
 Playbook §10.2 sanctions one drag recipe, written for `NumberLine`'s 1-D
-value. Its 2-D form is `CoordPlane.jsx` / `CoordGrid.jsx`, and it is the
-pattern to copy:
+value. Its 2-D form is `CoordPlane.jsx` (`lessons/common/components/`; the
+French-era `CoordGrid.jsx` was deleted), and it is the pattern to follow:
 
 1. **One transparent full-frame `<rect>`** carries the interaction; pointer
    coordinates become mathematics through `svgToCoord`/`svgToGrid`. The
@@ -864,13 +922,16 @@ pattern to copy:
 3. **`role="group"`** whenever a hit area exists; `role="img"` only on a
    purely visual figure.
 4. **A keyboard twin is mandatory**: arrows/Home/End/PageUp/PageDown on a
-   `role="slider"` with a French `aria-valuetext` that states the reading.
+   `role="slider"` with an Arabic `aria-valuetext` that states the reading
+   (`ARABIC_RTL_CONTRACT.md`).
 5. **Steppers and chips come first, drag second.** Drag is the twin of a
    tap-first control, never the only way in.
 
-For multi-vertex figures, `ShapeLab.jsx` (6e figures-planes) is the reference:
-copy-and-adapt it (playbook §14 ADAPT) rather than importing it, and keep its
-three reachability affordances — `axisLock`, `linkedPairs`, `snapEqualSides` /
+For multi-vertex figures, the (historical, deleted 2026-09-25) `ShapeLab.jsx`
+(6e figures-planes) was the reference; do not copy code between lessons — a
+new figure lab is a registry manipulation type or a shared component extended
+behind an optional prop (`MANIPULATION_CONTRACT.md`). Keep its three
+reachability affordances — `axisLock`, `linkedPairs`, `snapEqualSides` /
 `snapRightAngle`. **Tight tolerances need snapping, not dexterity**: with a 1°
 angular tolerance, building a rectangle by free-dragging four vertices is a
 test of mouse control, not of geometry.
@@ -904,9 +965,11 @@ export const FIGURES = {
 Each module imports what it needs and owns its own `useState`. Continuity is
 narrative (the same scene, the same names), never a store.
 
-### 12.5 Catalogue keys for a geometry lesson
+### 12.5 Catalogue keys for a geometry lesson (historical)
 
-`smaMetadata` is keyed `` `${gradeId}_${officialObjectId}` `` — the id from
+*(Historical — `smaMetadata` and the French programmes JSON no longer exist;
+the DZ catalogue is `packages/core/curriculum/dz/lessons_4am_2026_2027.json`,
+read through `coursesData.js`.)* `smaMetadata` was keyed `` `${gradeId}_${officialObjectId}` `` — the id from
 `smarter_academy_programmes_maths_2026.json`, not the lesson's own slug. A key
 that matches no official object silently produces an **empty** lesson. The 3e
 geometry keys are `3e_reperage`, `3e_representations_espace`, `3e_triangles`,

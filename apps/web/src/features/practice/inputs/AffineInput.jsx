@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import AnswerField from './AnswerField';
 
 /**
@@ -9,31 +10,32 @@ import AnswerField from './AnswerField';
  * la valeur en x = 0 » — ce qu'une chaîne LaTeX unique rend impossible.
  */
 export default function AffineInput({ value, onChange, disabled }) {
+  const { t } = useTranslation('student');
   const set = (key) => (v) => onChange({ ...value, [key]: v });
 
   return (
     <div className="flex items-end gap-4 flex-wrap">
       <label className="space-y-1">
         <span className="block text-xs font-mono font-bold text-slate-500 uppercase">
-          Coefficient directeur <span className="italic normal-case">a</span>
+          {t('practice.field.slope')}
         </span>
         <AnswerField
           value={value?.a ?? ''}
           onChange={set('a')}
-          ariaLabel="Coefficient directeur a"
-          width="w-32"
+          ariaLabel={t('practice.field.slope')}
+          width="min-w-[6rem]"
           disabled={disabled}
         />
       </label>
       <label className="space-y-1">
         <span className="block text-xs font-mono font-bold text-slate-500 uppercase">
-          Ordonnée à l’origine <span className="italic normal-case">b</span>
+          {t('practice.field.intercept')}
         </span>
         <AnswerField
           value={value?.b ?? ''}
           onChange={set('b')}
-          ariaLabel="Ordonnée à l’origine b"
-          width="w-32"
+          ariaLabel={t('practice.field.intercept')}
+          width="min-w-[6rem]"
           disabled={disabled}
         />
       </label>

@@ -94,27 +94,54 @@ class ContentRegistrySyncTest extends TestCase
     }
 
     /**
-     * LA propriété centrale. Un administrateur masque un module cassé ; le
-     * déploiement suivant resynchronise le contenu. Le module doit RESTER
-     * masqué — sinon la décision d'administration ne survit pas au prochain
-     * `git push`, et personne ne s'en aperçoit avant le signalement suivant.
+     * Un module n'a pas d'état propre (propriétaire, 2026-11-11) : la
+     * resynchro lui recopie l'état de sa LEÇON. L'état choisi par l'admin
+     * survit parce qu'il est porté par la leçon, que cette synchro ne touche pas.
      */
-    public function test_une_resynchro_ne_touche_pas_l_etat_de_publication_choisi_par_l_admin(): void
+    public function test_une_resynchro_recopie_l_etat_de_la_lecon_sur_ses_modules(): void
     {
-        $export = $this->export([$this->module('01')]);
-        $this->importer()->import($export);
+        $this->lesson->update(['publication_status' => Lesson::PUB_HIDDEN]);
+        $this->importer()->import($this->export([$this->module('01')]));
 
-        LessonModule::where('code', '01')->update(['publication_status' => LessonModule::PUB_HIDDEN]);
+        LessonModule::where('code', '01')->update(['publication_status' => LessonModule::PUB_PUBLISHED]);
 
-        // Le titre change côté contenu : la synchro a donc bien du travail,
-        // et écrit réellement la ligne — c'est le cas qui piège.
         $this->importer()->import($this->export([
             $this->module('01', ['title' => 'Titre réécrit']),
         ]));
 
         $module = LessonModule::where('code', '01')->first();
         $this->assertSame('Titre réécrit', $module->title, "l'identité doit suivre le contenu");
-        $this->assertSame(LessonModule::PUB_HIDDEN, $module->publication_status, "l'état doit rester celui de l'admin");
+        $this->assertSame(Lesson::PUB_HIDDEN, $module->publication_status, 'le module suit sa leçon');
+        $this->assertSame(Lesson::PUB_HIDDEN, $this->lesson->fresh()->publication_status, "la leçon garde l'état de l'admin");
+    }
+
+    /** Pousser en production publie (propriétaire, 2026-11-11). */
+    public function test_un_nouveau_module_nait_publie_sous_une_lecon_publiee(): void
+    {
+        $this->lesson->update(['publication_status' => Lesson::PUB_PUBLISHED]);
+
+        $this->importer()->import($this->export([$this->module('01')]));
+
+        $this->assertSame(LessonModule::PUB_PUBLISHED, LessonModule::where('code', '01')->first()->publication_status);
+    }
+
+    public function test_un_exercice_nait_publie_sous_une_lecon_publiee_et_un_masque_reste_masque(): void
+    {
+        $this->lesson->update(['publication_status' => Lesson::PUB_PUBLISHED]);
+        $export = ['lessons' => [], 'exercises' => [
+            ['lessonCode' => $this->lesson->code, 'exerciseCode' => 'ex-a', 'level' => 1, 'questionCount' => 3],
+            ['lessonCode' => $this->lesson->code, 'exerciseCode' => 'ex-b', 'level' => 1, 'questionCount' => 3],
+        ]];
+
+        $this->importer()->import($export);
+        $this->assertSame(PracticeExercise::PUB_PUBLISHED, PracticeExercise::where('exercise_code', 'ex-a')->first()->publication_status);
+
+        PracticeExercise::where('exercise_code', 'ex-a')->update(['publication_status' => PracticeExercise::PUB_HIDDEN]);
+        PracticeExercise::where('exercise_code', 'ex-b')->update(['publication_status' => PracticeExercise::PUB_DRAFT]);
+        $this->importer()->import($export);
+
+        $this->assertSame(PracticeExercise::PUB_HIDDEN, PracticeExercise::where('exercise_code', 'ex-a')->first()->publication_status, "un masquage de l'admin survit");
+        $this->assertSame(PracticeExercise::PUB_PUBLISHED, PracticeExercise::where('exercise_code', 'ex-b')->first()->publication_status, 'un draft est publié');
     }
 
     public function test_un_module_disparu_est_retire_jamais_supprime(): void

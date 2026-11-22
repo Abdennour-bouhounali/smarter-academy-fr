@@ -1,0 +1,174 @@
+{
+  "id": "ex-4am-jidaa-maadum-l3-003",
+  "lessonCode": "jidaa-maadum",
+  "level": 3,
+  "metadata": {
+    "title": "المعادلة (E): نحلّل ثم نحلّ",
+    "estimatedMinutes": 8,
+    "tags": [
+      "تحليل",
+      "جداء معدوم"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-2c",
+      "page": 44,
+      "section": "أنشطة",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر المعادلة $(E)$ :",
+    "formulas": [
+      "(1 - 4x)(x + 3) + 7(x + 3) = 0"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "حلّل الطرف الأول للمعادلة $(E)$ إلى جداء عاملين.",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $(1 - 4x)(x + 3) + 7(x + 3)$ على الشكل $(x + 3)(m - 4x)$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن عامل مشترك، أو عن متطابقة شهيرة من الشكل $a^2 - b^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرج العامل المشترك (أو طبّق $a^2 - b^2 = (a - b)(a + b)$ )، واكتب ما بقي بين قوسين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بسّط ما بين القوسين بإشاراته، ثم قارن بالشكل المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$(1 - 4x)(x + 3) + 7(x + 3) = (x + 3)(8 - 4x)$ إذن $m = 8$ .",
+        "incorrect": "أخرج العامل المشترك أو طبّق المتطابقة الشهيرة، ثم بسّط ما بقي بين القوسين بإشاراته."
+      },
+      "solution": {
+        "lines": [
+          "$(1 - 4x)(x + 3) + 7(x + 3) = (x + 3)[(1 - 4x) + 7]$"
+        ],
+        "result": "(1 - 4x)(x + 3) + 7(x + 3) = (x + 3)(8 - 4x)"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "حلّ المعادلة $(E)$ .",
+      "statement": "الحلّ الأصغر:",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "value": "-2",
+          "id": "MISC-JIDAA-ISHARA-JADHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا تنشر الطرف الأول: استعمل تحليله إلى جداء عاملين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد التحليل تصير المعادلة معادلة جداء معدوم: أحد العاملين على الأقل معدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ كل معادلة من الدرجة الأولى، ثم رتّب الحلّين من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = -3$ .",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة من الدرجة الأولى بإشاراتها، ثم رتّب الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "المعادلة تُكتب: $(x + 3)(8 - 4x) = 0$",
+          "يعني أنّ: $x + 3 = 0$ أو $8 - 4x = 0$",
+          "أي: $x = -3$ أو $-4x = -8$",
+          "ومنه: $x = -3$ أو $x = 2$",
+          "إذن للمعادلة حلّان هما $-3$ و $2$"
+        ],
+        "result": "x = -3"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "الحلّ الأكبر:",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-JIDAA-ISHARA-JADHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة الثانية من الدرجة الأولى، ثم قارن الحلّين."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 2$ .",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة من الدرجة الأولى بإشاراتها، ثم رتّب الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "إذن للمعادلة حلّان هما $-3$ و $2$"
+        ],
+        "result": "x = 2"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,444 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l5-010",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — خيمة الفوج الكشفي",
+    "estimatedMinutes": 25,
+    "tags": [
+      "وضعية إدماجية",
+      "خاصية فيثاغورس",
+      "التدوير",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يتعاون أفراد فوج كشفي على نصب خيمتهم. مقطعها الأمامي مثلث $SPQ$ متساوي الساقين رأسه $S$ حيث $SP = SQ = 2{,}6\\,\\mathrm{m}$ و $PQ = 3{,}2\\,\\mathrm{m}$ ، و $H$ منتصف $[PQ]$ حيث $(SH) \\perp (PQ)$ .",
+    "figure": {
+      "points": {
+        "P": [
+          -1.6,
+          0
+        ],
+        "Q": [
+          1.6,
+          0
+        ],
+        "H": [
+          0,
+          0
+        ],
+        "S": [
+          0,
+          2.0494
+        ]
+      },
+      "segments": [
+        {
+          "from": "P",
+          "to": "H",
+          "ticks": 1
+        },
+        {
+          "from": "H",
+          "to": "Q",
+          "ticks": 1
+        },
+        {
+          "from": "S",
+          "to": "P",
+          "label": "2,6 m"
+        },
+        {
+          "from": "S",
+          "to": "Q",
+          "label": "2,6 m"
+        },
+        {
+          "from": "S",
+          "to": "H",
+          "dashed": true
+        }
+      ],
+      "rightAngles": [
+        [
+          "S",
+          "H",
+          "Q"
+        ]
+      ],
+      "ariaLabel": "مقطع الخيمة: مثلث SPQ متساوي الساقين حيث SP = SQ = 2,6 m و PQ = 3,2 m، و H منتصف [PQ]",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "الجزء الأول: ارتفاع الخيمة",
+      "statement": "احسب الطول $PH$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m",
+      "expectedAnswer": "1.6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$H$ منتصف $[PQ]$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خذ نصف عرض الخيمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$PH = 1{,}6\\,\\mathrm{m}$ .",
+        "incorrect": "المنتصف يقسم القطعة إلى نصفين."
+      },
+      "solution": {
+        "lines": [
+          "$H$ منتصف $[PQ]$ : $PH = \\dfrac{3{,}2}{2} = 1{,}6\\,\\mathrm{m}$"
+        ],
+        "result": "PH = 1{,}6\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "ما القيمة المضبوطة للطول $SH$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$4{,}2\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-NO-ROOT"
+        },
+        {
+          "id": "B",
+          "content": "$\\sqrt{9{,}32}\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-LEG-ADD"
+        },
+        {
+          "id": "C",
+          "content": "$\\sqrt{4{,}2}\\,\\mathrm{m}$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$1\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولا $SH^2$ بخاصية فيثاغورس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الطول هو العدد الموجب الذي مربعه يساوي القيمة التي حسبتها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القيمة المضبوطة تُكتب بالرمز $\\sqrt{\\ }$ إذا لم يكن العدد مربعا تاما."
+        }
+      ],
+      "feedback": {
+        "correct": "$SH^2 = 4{,}2$ ، إذن $SH = \\sqrt{4{,}2}$ (قيمة مضبوطة).",
+        "incorrect": "لا تخلط بين مربع الطول والطول نفسه، ولا تجمع الأطوال: احسب المربع ثم خذ جذره."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $SHP$ قائم في $H$ ، حسب خاصية فيثاغورس: $SP^2 = SH^2 + PH^2$",
+          "ومنه: $SH^2 = SP^2 - PH^2$",
+          "$SH^2 = 2{,}6^2 - 1{,}6^2 = 6{,}76 - 2{,}56 = 4{,}2$",
+          "$SH^2 = 4{,}2$ ، ومنه القيمة المضبوطة: $SH = \\sqrt{4{,}2}\\,\\mathrm{m}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أعط قيمة مقرّبة للطول $SH$ بالتدوير إلى $0{,}01$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m مدوّرا إلى 0,01",
+      "expectedAnswer": "2.05",
+      "misconceptionSignatures": [
+        {
+          "value": "2.04",
+          "id": "MISC-FITAGHURAS-ROUND-TRUNC"
+        },
+        {
+          "value": "3.05",
+          "id": "MISC-FITAGHURAS-LEG-ADD"
+        },
+        {
+          "value": "1",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "4.2",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع المطلوب ليس الوتر: مربعه يساوي مربع الوتر ناقص مربع الضلع الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مربع الطول، ثم استعمل اللمسة $\\sqrt{\\ }$ ، ولا تدوّر إلا النتيجة الأخيرة (انظر إلى الرقم الموالي للرقم المطلوب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$SH^2 = 2{,}6^2 - 1{,}6^2 = 4{,}2$ ، إذن $SH \\approx 2{,}05\\,\\mathrm{m}$ .",
+        "incorrect": "الطول المطلوب ضلع قائم وليس وترا: نطرح مربع الضلع المعلوم من مربع الوتر، ولا نجمع."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $SHP$ قائم في $H$ ، حسب خاصية فيثاغورس: $SP^2 = SH^2 + PH^2$",
+          "ومنه: $SH^2 = SP^2 - PH^2$",
+          "$SH^2 = 2{,}6^2 - 1{,}6^2 = 6{,}76 - 2{,}56 = 4{,}2$",
+          "$SH = \\sqrt{4{,}2}$ (القيمة المضبوطة)",
+          "باستعمال اللمسة $\\sqrt{\\ }$ للآلة الحاسبة: $\\sqrt{4{,}2} \\approx 2{,}049390153$",
+          "المدوّر إلى $0{,}01$ : $SH \\approx 2{,}05\\,\\mathrm{m}$"
+        ],
+        "result": "SH \\approx 2{,}05\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "هل يستطيع قائد الفوج، وطوله $1{,}9\\,\\mathrm{m}$ ، أن يقف منتصبا في وسط الخيمة؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأن ارتفاع الخيمة حوالي $2{,}05\\,\\mathrm{m}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم، لأن ارتفاعها $4{,}2\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-NO-ROOT"
+        },
+        {
+          "id": "C",
+          "content": "لا، لأن ارتفاعها $2{,}6 - 1{,}6 = 1\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أعلى نقطة في الخيمة فوق وسطها $H$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن $SH$ بطول القائد."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sqrt{4{,}2} \\approx 2{,}05 > 1{,}9$ .",
+        "incorrect": "الارتفاع يُحسب بخاصية فيثاغورس لا بطرح الأطوال."
+      },
+      "solution": {
+        "lines": [
+          "ارتفاع الخيمة في وسطها $SH = \\sqrt{4{,}2} \\approx 2{,}05\\,\\mathrm{m}$ .",
+          "$2{,}05 > 1{,}9$ : يستطيع الوقوف منتصبا."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "lead": "الجزء الثاني: أرضية الخيمة",
+      "statement": "أرضية الخيمة مستطيل $ABCD$ حيث $AB = 4\\,\\mathrm{m}$ و $BC = 3{,}2\\,\\mathrm{m}$ . أعط قيمة مقرّبة إلى $0{,}01$ لطول قطرها $AC$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m مدوّرا إلى 0,01",
+      "expectedAnswer": "5.12",
+      "misconceptionSignatures": [
+        {
+          "value": "7.2",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "26.24",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مربع الطول، ثم استعمل اللمسة $\\sqrt{\\ }$ ، ولا تدوّر إلا النتيجة الأخيرة (انظر إلى الرقم الموالي للرقم المطلوب)."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC^2 = 4^2 + 3{,}2^2 = 26{,}24$ ، إذن $AC \\approx 5{,}12\\,\\mathrm{m}$ .",
+        "incorrect": "ابدأ بتحديد الوتر، ثم اكتب مساواة فيثاغورس، وتذكّر أن ما تحسبه أولا هو مربع الطول لا الطول نفسه."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ABC$ قائم في $B$ ، حسب خاصية فيثاغورس: $AC^2 = AB^2 + BC^2$",
+          "$AC^2 = 4^2 + 3{,}2^2$",
+          "$AC^2 = 16 + 10{,}24 = 26{,}24$",
+          "$AC = \\sqrt{26{,}24}$ (القيمة المضبوطة)",
+          "باستعمال اللمسة $\\sqrt{\\ }$ للآلة الحاسبة: $\\sqrt{26{,}24} \\approx 5{,}122499389$",
+          "المدوّر إلى $0{,}01$ : $AC \\approx 5{,}12\\,\\mathrm{m}$"
+        ],
+        "result": "AC \\approx 5{,}12\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "يريد الفوج إدخال عصا علم طولها $5{,}1\\,\\mathrm{m}$ ووضعها على الأرضية. هل يمكن ذلك؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لأن $5{,}1 > 4$ ، أطول ضلع للأرضية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "id": "B",
+          "content": "نعم، على القطر، لأن $5{,}1 < 5{,}12$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لا، لأن القطر $AC^2 = 26{,}24$ أقل من $5{,}1^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أطول قطعة يمكن وضعها في مستطيل هي قطره."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن طول العصا بطول القطر."
+        }
+      ],
+      "feedback": {
+        "correct": "$5{,}1 < \\sqrt{26{,}24} \\approx 5{,}12$ .",
+        "incorrect": "لا تقارن بأطول ضلع بل بالقطر."
+      },
+      "solution": {
+        "lines": [
+          "أطول مسافة على الأرضية هي قطرها $AC = \\sqrt{26{,}24} \\approx 5{,}12\\,\\mathrm{m}$ .",
+          "$5{,}1 < 5{,}12$ : توضع العصا على القطر."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

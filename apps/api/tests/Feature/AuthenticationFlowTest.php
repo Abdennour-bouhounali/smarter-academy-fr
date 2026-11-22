@@ -10,9 +10,10 @@ class AuthenticationFlowTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_a_visitor_can_register_with_only_email_and_password_and_receives_a_token_and_student_role(): void
+    public function test_a_visitor_registers_with_name_email_and_password_and_receives_a_token_and_student_role(): void
     {
         $response = $this->postJson('/api/v1/auth/register', [
+            'firstName' => 'أمين', 'lastName' => 'بن علي',
             'email' => 'alice@example.com',
             'password' => 'password123',
             'accept_legal' => true,
@@ -23,8 +24,9 @@ class AuthenticationFlowTest extends TestCase
             ->assertJsonPath('user.role', 'student')
             ->assertJsonPath('user.email', 'alice@example.com')
             ->assertJsonPath('user.grade', null)
-            ->assertJsonPath('user.firstName', null)
-            ->assertJsonPath('user.lastName', null)
+            ->assertJsonPath('user.firstName', 'أمين')
+            ->assertJsonPath('user.lastName', 'بن علي')
+            ->assertJsonPath('user.nameComplete', true)
             ->assertJsonStructure(['token']);
 
         $this->assertDatabaseHas('users', [
@@ -37,6 +39,7 @@ class AuthenticationFlowTest extends TestCase
     public function test_registration_does_not_require_a_password_confirmation(): void
     {
         $response = $this->postJson('/api/v1/auth/register', [
+            'firstName' => 'أمين', 'lastName' => 'بن علي',
             'email' => 'noconfirm@example.com',
             'password' => 'password123',
             'accept_legal' => true,
@@ -48,6 +51,7 @@ class AuthenticationFlowTest extends TestCase
     public function test_registration_cannot_be_used_to_self_assign_the_admin_role(): void
     {
         $response = $this->postJson('/api/v1/auth/register', [
+            'firstName' => 'أمين', 'lastName' => 'بن علي',
             'email' => 'eve@example.com',
             'password' => 'password123',
             'role' => 'admin',
@@ -65,6 +69,7 @@ class AuthenticationFlowTest extends TestCase
     public function test_registration_ignores_a_client_supplied_grade_until_onboarding_sets_it(): void
     {
         $response = $this->postJson('/api/v1/auth/register', [
+            'firstName' => 'أمين', 'lastName' => 'بن علي',
             'email' => 'grady@example.com',
             'password' => 'password123',
             'grade' => '6e',
@@ -81,6 +86,7 @@ class AuthenticationFlowTest extends TestCase
         User::factory()->create(['email' => 'taken@example.com']);
 
         $response = $this->postJson('/api/v1/auth/register', [
+            'firstName' => 'أمين', 'lastName' => 'بن علي',
             'email' => 'taken@example.com',
             'password' => 'password123',
         ]);
@@ -91,6 +97,7 @@ class AuthenticationFlowTest extends TestCase
     public function test_registration_rejects_a_weak_password(): void
     {
         $response = $this->postJson('/api/v1/auth/register', [
+            'firstName' => 'أمين', 'lastName' => 'بن علي',
             'email' => 'bob@example.com',
             'password' => 'short',
         ]);
@@ -188,6 +195,7 @@ class AuthenticationFlowTest extends TestCase
     public function test_a_newly_registered_student_can_set_their_grade_via_onboarding(): void
     {
         $register = $this->postJson('/api/v1/auth/register', [
+            'firstName' => 'أمين', 'lastName' => 'بن علي',
             'email' => 'onboarding@example.com',
             'password' => 'password123',
             'accept_legal' => true,

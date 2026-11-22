@@ -1,0 +1,65 @@
+{
+  "id": "ex-4am-muntasaf-masafa-l5-004",
+  "lessonCode": "muntasaf-masafa",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — نقطة على محور الفواصل على نفس البعد",
+    "estimatedMinutes": 5,
+    "tags": [
+      "المسافة",
+      "معادلة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_muntasaf-masafa_P2",
+      "modelledOn": "know-dist"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس: $A(1\\,;\\,3)$ و $B(5\\,;\\,1)$ ، و $M(x\\,;\\,0)$ نقطة من محور الفواصل بحيث $MA = MB$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "قيمة x:",
+      "learningPoints": [
+        {
+          "code": "4am_muntasaf-masafa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو عشري بالفاصلة (مثل 2,5)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MUNTASAF-NISF",
+          "value": "3"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$MA = MB$ يعني $MA^2 = MB^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $MA^2$ و $MB^2$ بدلالة x بقانون المسافة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد النشر يختفي $x^2$ من الطرفين: تبقى معادلة من الدرجة الأولى."
+        }
+      ],
+      "feedback": {
+        "correct": "$(1 - x)^2 + 9 = (5 - x)^2 + 1$ يعطي $-2x + 10 = -10x + 26$ ، أي $x = 2$ .",
+        "incorrect": "قارن المربعين لتتجنّب الجذور."
+      }
+    }
+  ]
+}

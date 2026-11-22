@@ -1,0 +1,215 @@
+{
+  "id": "ex-4am-nisab-muthallathiya-l1-007",
+  "lessonCode": "nisab-muthallathiya",
+  "level": 1,
+  "metadata": {
+    "title": "جيب الزاوية MLN وجيب تمامها",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الجيب",
+      "جيب التمام"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 124,
+      "section": "أؤكّد تعلّماتي",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل، $LMN$ مثلث قائم في $M$ .",
+    "figure": {
+      "points": {
+        "M": [
+          0,
+          0
+        ],
+        "L": [
+          0,
+          2.5
+        ],
+        "N": [
+          6,
+          0
+        ]
+      },
+      "segments": [
+        [
+          "L",
+          "M"
+        ],
+        [
+          "M",
+          "N"
+        ],
+        [
+          "L",
+          "N"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "L",
+          "M",
+          "N"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "L",
+          "from": "M",
+          "to": "N"
+        }
+      ],
+      "ariaLabel": "مثلث LMN قائم في M، والزاوية MLN معلّمة",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب $\\sin\\widehat{MLN}$ بدلالة أطوال أضلاع المثلث $LMN$ .",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\sin\\widehat{MLN} = \\dfrac{LM}{LN}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-MUQABIL-MUJAWIR"
+        },
+        {
+          "id": "B",
+          "content": "$\\sin\\widehat{MLN} = \\dfrac{LN}{MN}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-NISBA-MAQLUBA"
+        },
+        {
+          "id": "C",
+          "content": "$\\sin\\widehat{MLN} = \\dfrac{MN}{LM}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-WATAR-MUQABIL"
+        },
+        {
+          "id": "D",
+          "content": "$\\sin\\widehat{MLN} = \\dfrac{MN}{LN}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الوتر هو الضلع المقابل للزاوية القائمة في $M$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بالنسبة إلى الزاوية $\\widehat{MLN}$ : الضلع المجاور لها يمرّ برأسها $L$ ، والضلع المقابل لها لا يمرّ به."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جيب زاوية حادة = طول الضلع المقابل لها على طول الوتر."
+        }
+      ],
+      "feedback": {
+        "correct": "الوتر $[LN]$ ، المجاور للزاوية $[LM]$ والمقابل لها $[MN]$ ، إذن $\\sin\\widehat{MLN} = \\dfrac{MN}{LN}$ .",
+        "incorrect": "عيّن أولا الوتر (مقابل الزاوية القائمة)، ثم المجاور (يمرّ بالرأس $L$) والمقابل؛ جيب زاوية حادة = طول الضلع المقابل لها على طول الوتر."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $LMN$ القائم في $M$ : الوتر هو $[LN]$ ،",
+          "الضلع المجاور للزاوية $\\widehat{MLN}$ هو $[LM]$ والضلع المقابل لها هو $[MN]$ .",
+          "جيب الزاوية = طول الضلع المقابل لها على طول الوتر."
+        ],
+        "result": "\\sin\\widehat{MLN} = \\dfrac{MN}{LN}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب $\\cos\\widehat{MLN}$ بدلالة أطوال أضلاع المثلث $LMN$ .",
+      "learningPoints": [
+        {
+          "code": "4am_nisab-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\cos\\widehat{MLN} = \\dfrac{MN}{LN}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-MUQABIL-MUJAWIR"
+        },
+        {
+          "id": "B",
+          "content": "$\\cos\\widehat{MLN} = \\dfrac{LM}{LN}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\cos\\widehat{MLN} = \\dfrac{LN}{LM}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-NISBA-MAQLUBA"
+        },
+        {
+          "id": "D",
+          "content": "$\\cos\\widehat{MLN} = \\dfrac{LM}{MN}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-WATAR-MUQABIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الوتر هو الضلع المقابل للزاوية القائمة في $M$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بالنسبة إلى الزاوية $\\widehat{MLN}$ : الضلع المجاور لها يمرّ برأسها $L$ ، والضلع المقابل لها لا يمرّ به."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جيب تمام زاوية حادة = طول الضلع المجاور لها على طول الوتر."
+        }
+      ],
+      "feedback": {
+        "correct": "الوتر $[LN]$ ، المجاور للزاوية $[LM]$ والمقابل لها $[MN]$ ، إذن $\\cos\\widehat{MLN} = \\dfrac{LM}{LN}$ .",
+        "incorrect": "عيّن أولا الوتر (مقابل الزاوية القائمة)، ثم المجاور (يمرّ بالرأس $L$) والمقابل؛ جيب تمام زاوية حادة = طول الضلع المجاور لها على طول الوتر."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $LMN$ القائم في $M$ : الوتر هو $[LN]$ ،",
+          "الضلع المجاور للزاوية $\\widehat{MLN}$ هو $[LM]$ والضلع المقابل لها هو $[MN]$ .",
+          "جيب تمام الزاوية = طول الضلع المجاور لها على طول الوتر."
+        ],
+        "result": "\\cos\\widehat{MLN} = \\dfrac{LM}{LN}"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

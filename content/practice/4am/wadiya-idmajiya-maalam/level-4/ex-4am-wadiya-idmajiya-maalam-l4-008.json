@@ -1,0 +1,115 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-maalam-l4-008",
+  "lessonCode": "wadiya-idmajiya-maalam",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — مسار من قوس وقطعة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "نصف دائرة",
+      "طول خط منكسر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-maalam_P3",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "مسار تزلج على الألواح: نصف دائرة قطرها $[AB]$ حيث $A(-3\\,;\\,0)$ و $B(1\\,;\\,0)$ ، ثم قطعة مستقيمة من B إلى $C(4\\,;\\,4)$ (معلم متعامد ومتجانس، الوحدة $10\\,\\mathrm{m}$).",
+    "figure": {
+      "points": {
+        "A": [
+          -3,
+          0
+        ],
+        "B": [
+          1,
+          0
+        ],
+        "C": [
+          4,
+          4
+        ]
+      },
+      "arcs": [
+        {
+          "from": "A",
+          "to": "B",
+          "sweep": "ccw",
+          "tone": "rose",
+          "bold": true
+        }
+      ],
+      "segments": [
+        {
+          "from": "B",
+          "to": "C",
+          "tone": "rose",
+          "bold": true
+        }
+      ],
+      "labels": {
+        "A": "nw",
+        "B": "se",
+        "C": "ne"
+      },
+      "grid": true,
+      "axes": true,
+      "ariaLabel": "معلم متعامد ومتجانس: مسار نصف دائرة قطرها [AB] تحت محور الفواصل ثم قطعة من B إلى C"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "طول المسار مدوّرا إلى $0{,}01$ (بوحدة المعلم):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة (مدوّر إلى 0,01)",
+      "expectedAnswer": "11.28",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نصف القطر 2."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القوس $2\\pi$ ، والقطعة $BC = 5$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$2\\pi + 5$"
+        }
+      ],
+      "feedback": {
+        "correct": "$2\\pi + 5 \\approx 11{,}28$ وحدة، أي حوالي $112{,}8\\,\\mathrm{m}$ .",
+        "incorrect": "طول نصف الدائرة $\\pi r$ ، وطول القطعة بالمسافة، ثم نجمع."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "17.57",
+          "id": "MISC-MAALAM-NISF-DAIRA-MUHIT"
+        },
+        {
+          "value": "8.14",
+          "id": "MISC-TALIS-QUTR-BADAL-NISF"
+        }
+      ],
+      "difficulty": 4
+    }
+  ]
+}

@@ -1,0 +1,301 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l5-003",
+  "lessonCode": "mana-jam-tarh",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — خزانة العم مصطفى",
+    "estimatedMinutes": 18,
+    "tags": [
+      "مجموع",
+      "العدد الناقص",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 1,
+      "file": "1am-s1-104",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "أراد العم مصطفى صنع خزانة خشبية يرتّب فيها كتب أبنائه، وخصّص لذلك 3000 دج.\nالجزء الأول: اشترى لوحة خشبية بـ 1150,75 دج، ومنشارًا يدويًا بـ 525,5 دج، وطلاءً بـ 386,25 دج، ومطرقة، ودفع للبائع 2500 دج ثمنًا لهذه الأدوات كلها.\nالجزء الثاني: نسي العم مصطفى المسامير، فعاد واشترى 200 مسمار سعر الواحد 2,5 دج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب ثمن اللوحة الخشبية والمنشار والطلاء معًا.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "2062.5",
+      "misconceptionSignatures": [
+        {
+          "value": "1676.25",
+          "id": "MISC-JAMTARH-JUZ-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مجموع ثلاثة حدود."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاذِ الفواصل."
+        }
+      ],
+      "feedback": {
+        "correct": "$1150{,}75 + 525{,}5 + 386{,}25 = 2062{,}5$ دج.",
+        "incorrect": "اجمع الأثمان الثلاثة كلها."
+      },
+      "solution": {
+        "lines": [
+          "$1150{,}75 + 525{,}5 = 1676{,}25$",
+          "$1676{,}25 + 386{,}25 = 2062{,}5$"
+        ],
+        "result": "2062{,}5 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "في المخطط بأقواس الذي يمثّل الجزء الأول، العدد 2500 هو:",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الكل (القوس تحت الخط)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "جزء (قوس فوق الخط)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "2500 دج ثمن كل الأدوات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثمن كل الأدوات يضمّ ثمن المطرقة."
+        }
+      ],
+      "feedback": {
+        "correct": "2500 ثمن الأدوات كلها مع المطرقة: هو الكل.",
+        "incorrect": "المبلغ المدفوع يضمّ ثمن المطرقة وثمن الأدوات الأخرى."
+      },
+      "solution": {
+        "lines": [
+          "2500 = ثمن اللوحة والمنشار والطلاء + ثمن المطرقة.",
+          "إذن هو الكل."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "جد ثمن المطرقة.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "437.5",
+      "misconceptionSignatures": [
+        {
+          "value": "4562.5",
+          "id": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثمن المطرقة جزء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح ثمن الأدوات الثلاث من المبلغ المدفوع."
+        }
+      ],
+      "feedback": {
+        "correct": "$2500 - 2062{,}5 = 437{,}5$ دج.",
+        "incorrect": "ثمن المطرقة جزء من المبلغ المدفوع: هو أصغر منه."
+      },
+      "solution": {
+        "lines": [
+          "$2500 - 2062{,}5 = 437{,}5$"
+        ],
+        "result": "437{,}5 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "احسب ثمن المسامير.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "500",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد المسامير × سعر المسمار."
+        }
+      ],
+      "feedback": {
+        "correct": "$200 \\times 2{,}5 = 500$ دج.",
+        "incorrect": "اضرب عدد المسامير في سعر المسمار الواحد."
+      },
+      "solution": {
+        "lines": [
+          "$200 \\times 2{,}5 = 500$"
+        ],
+        "result": "500 \\text{ DA}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "استنتج تكلفة كل الأدوات بعد شراء المسامير.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "3000",
+      "misconceptionSignatures": [
+        {
+          "value": "2562.5",
+          "id": "MISC-JAMTARH-JUZ-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكلفة = ما دفعه في الجزء الأول + ثمن المسامير."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما دفعه في الجزء الأول يضمّ ثمن المطرقة."
+        }
+      ],
+      "feedback": {
+        "correct": "$2500 + 500 = 3000$ دج.",
+        "incorrect": "أضف ثمن المسامير إلى كل ما دفعه في الجزء الأول (مع المطرقة)."
+      },
+      "solution": {
+        "lines": [
+          "$2500 + 500 = 3000$"
+        ],
+        "result": "3000 \\text{ DA}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "06",
+      "statement": "هل تجاوز العم مصطفى المبلغ الذي خصّصه لصنع الخزانة؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-TAQDIR"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن التكلفة الكلية بالمبلغ المخصّص."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التساوي ليس تجاوزًا."
+        }
+      ],
+      "feedback": {
+        "correct": "التكلفة 3000 دج تساوي المبلغ المخصّص: لم يتجاوزه.",
+        "incorrect": "احسب التكلفة الكلية ثم قارنها بـ 3000 دج."
+      },
+      "solution": {
+        "lines": [
+          "التكلفة الكلية 3000 دج.",
+          "$3000 = 3000$ ، إذن لم يتجاوز المبلغ المخصّص (صرفه كله)."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

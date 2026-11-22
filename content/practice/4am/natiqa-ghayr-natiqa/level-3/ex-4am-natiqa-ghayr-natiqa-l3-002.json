@@ -1,0 +1,179 @@
+{
+  "id": "ex-4am-natiqa-ghayr-natiqa-l3-002",
+  "lessonCode": "natiqa-ghayr-natiqa",
+  "level": 3,
+  "metadata": {
+    "title": "ضلع مربع مساحته 12cm²",
+    "estimatedMinutes": 7,
+    "tags": [
+      "مدوّر",
+      "عدد غير ناطق"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-10",
+      "page": 26,
+      "section": "أوظّف تعلّماتي",
+      "number": 10
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "مساحة مربع هي $12cm^2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل طول ضلع هذا المربع عدد ناطق؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-KULL-JIDHR"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر جوابك، ثم قارن تبريرك بالحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول ضلع مربع مساحته $12cm^2$ هو $\\sqrt{12}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل 12 مربع لعدد ناطق؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$3^2 < 12 < 4^2$ : 12 ليس مربعًا لعدد ناطق، فطول الضلع $\\sqrt{12}$ ليس عددًا ناطقًا.",
+        "incorrect": "قارن 12 بالمربعات التامة $3^2$ و $4^2$ ."
+      },
+      "solution": {
+        "lines": [
+          "طول الضلع: $c^2 = 12$ و $c > 0$ ، إذن $c = \\sqrt{12}$ .",
+          "$3^2 = 9 < 12 < 16 = 4^2$ : 12 ليس مربعًا لعدد ناطق.",
+          "إذن طول الضلع $\\sqrt{12}$ ليس عددًا ناطقًا."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب المدوّر إلى الجزء من 10 لطول ضلع هذا المربع.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري برقم واحد بعد الفاصلة (بـ cm)",
+      "expectedAnswer": "3.5",
+      "misconceptionSignatures": [
+        {
+          "value": "3.4",
+          "id": "MISC-TAQRIB-NAQS-ZIYADA"
+        },
+        {
+          "value": "6",
+          "id": "MISC-JIDHR-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احصر $\\sqrt{12}$ إلى الجزء من 100، أو استعمل الحاسبة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المدوّر إلى الجزء من 10: انظر إلى الرقم الثاني بعد الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sqrt{12} \\approx 3{,}464$ ، ورقم أجزاء المئة 6 ≥ 5، فالمدوّر 3,5 cm.",
+        "incorrect": "التدوير ليس اقتطاعًا: إذا كان الرقم الثاني بعد الفاصلة 5 أو أكثر نزيد 1 للرقم الأول."
+      },
+      "solution": {
+        "lines": [
+          "$3{,}46^2 = 11{,}9716$ و $3{,}47^2 = 12{,}0409$ ، إذن $3{,}46 < \\sqrt{12} < 3{,}47$",
+          "رقم أجزاء المئة هو 6 (أكبر من 5 أو يساويه)، فالمدوّر إلى الجزء من 10 هو 3,5."
+        ],
+        "result": "\\sqrt{12} \\approx 3{,}5 \\text{ cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب المدوّر إلى الجزء من 10 لمحيط هذا المربع.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري برقم واحد بعد الفاصلة (بـ cm)",
+      "expectedAnswer": "13.9",
+      "misconceptionSignatures": [
+        {
+          "value": "14",
+          "id": "MISC-WADIYA-TADWIR-MUBAKKIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المحيط المضبوط هو $4\\sqrt{12}$ cm."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا تضرب المدوّر السابق في 4: دوّر في آخر الحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "$4\\sqrt{12} \\approx 13{,}856$ ، فالمدوّر إلى الجزء من 10 هو 13,9 cm.",
+        "incorrect": "التدوير يكون في نهاية الحساب: احسب المحيط بقيمة أدق ثم دوّر."
+      },
+      "solution": {
+        "lines": [
+          "المحيط: $P = 4\\sqrt{12}$",
+          "$3{,}464 < \\sqrt{12} < 3{,}465$ إذن $13{,}856 < 4\\sqrt{12} < 13{,}86$",
+          "المدوّر إلى الجزء من 10 للمحيط هو 13,9 cm (وليس $4 \\times 3{,}5 = 14$)."
+        ],
+        "result": "P \\approx 13{,}9 \\text{ cm}"
+      },
+      "work": "required",
+      "timeSeconds": 180
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "id": "ex-4am-majdulat-ihsaiya-l1-002",
+  "lessonCode": "majdulat-ihsaiya",
+  "level": 1,
+  "metadata": {
+    "title": "كتل المحافظ في ورقة مجدول",
+    "estimatedMinutes": 3,
+    "tags": [
+      "خلية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_majdulat-ihsaiya_P1",
+      "modelledOn": "ex-7",
+      "adaptedFrom": "ex-4am-majdulat-ihsaiya-l1-002"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "يمثّل الجدول الآتي جزءا من ورقة مجدول حجز فيها أستاذ كتل (بالكيلوغرام) محافظ ستة تلاميذ:",
+    "table": {
+      "head": [
+        "",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "rows": [
+        [
+          "1",
+          "التلميذ",
+          "أنس",
+          "ريم",
+          "يونس",
+          "سارة",
+          "إلياس",
+          "مريم"
+        ],
+        [
+          "2",
+          "الكتلة (kg)",
+          "4,5",
+          "5",
+          "3,5",
+          "6",
+          "4",
+          "5,5"
+        ]
+      ],
+      "sheet": true
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما هو العدد المحجوز في الخلية D2 ؟",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة إن لزم)",
+      "expectedAnswer": "3,5",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-IHSA-MAJAL-KHALIYA"
+        },
+        {
+          "value": "6",
+          "id": "MISC-IHSA-MAJAL-KHALIYA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تُسمّى الخلية بحرف عمودها ثم رقم سطرها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن العمود D ثم انزل إلى السطر 2 ."
+        }
+      ],
+      "feedback": {
+        "correct": "العمود D هو عمود يونس، وفي سطره 2 كتلة محفظته: 3,5 .",
+        "incorrect": "اقرأ الحرف أولا (العمود) ثم الرقم (السطر)، ولا تخلط بين العمودين المتجاورين."
+      },
+      "solution": {
+        "lines": [
+          "الخلية D2 تقع في العمود D (يونس) والسطر 2 (الكتلة).",
+          "العدد المحجوز فيها: 3,5 ."
+        ],
+        "result": "3{,}5"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب اسم الخلية التي حُجزت فيها كتلة محفظة مريم.",
+      "learningPoints": [
+        {
+          "code": "4am_majdulat-ihsaiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "2G",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MAJAL-KHALIYA"
+        },
+        {
+          "id": "B",
+          "content": "G1",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MAJAL-KHALIYA"
+        },
+        {
+          "id": "C",
+          "content": "G2",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "F2",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IHSA-MAJAL-KHALIYA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اسم مريم في السطر 1 ، وكتلة محفظتها تحته مباشرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ حرف عمود مريم، ثم رقم سطر الكتل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الاسم يُكتب: الحرف أولا ثم الرقم."
+        }
+      ],
+      "feedback": {
+        "correct": "مريم في العمود G ، والكتل في السطر 2 : الخلية G2 .",
+        "incorrect": "اسم الخلية = حرف العمود ثم رقم السطر؛ والكتلة في سطر الكتل، لا في سطر الأسماء."
+      },
+      "solution": {
+        "lines": [
+          "اسم مريم في الخلية G1 ، فعمودها G .",
+          "كتلة محفظتها في السطر 2 من العمود نفسه: الخلية G2 ."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

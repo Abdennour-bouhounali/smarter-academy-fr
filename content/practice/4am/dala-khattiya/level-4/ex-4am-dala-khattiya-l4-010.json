@@ -1,0 +1,175 @@
+{
+  "id": "ex-4am-dala-khattiya-l4-010",
+  "lessonCode": "dala-khattiya",
+  "level": 4,
+  "metadata": {
+    "title": "تخفيضات نهاية الموسم: 35%",
+    "estimatedMinutes": 7,
+    "tags": [
+      "وضعية",
+      "تخفيض"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "adaptedFrom": "ex-4am-dala-khattiya-l4-010"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في تخفيضات نهاية الموسم، يخفّض محل للألعاب أسعاره بـ 35% ليفرح كل الأطفال. نسمّي $f(x)$ سعر لعبة بعد التخفيض، و $x$ سعرها قبله (بـ DA)."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن $f$ دالة خطية، ثم عيّن معاملها.",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "0,65",
+      "misconceptionSignatures": [
+        {
+          "value": "0,35",
+          "id": "MISC-TAKHFID-NISBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بعد تخفيض 35% يدفع الزبون $100\\% - 35\\%$ من السعر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $f(x)$ على الشكل $ax$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(x) = 0{,}65x$ .",
+        "incorrect": "المعامل هو النسبة التي يدفعها الزبون، لا نسبة التخفيض."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = x - \\dfrac{35}{100}x = \\left(1 - 0{,}35\\right)x$",
+          "$f(x) = 0{,}65x$ : $f$ دالة خطية معاملها $0{,}65$ ."
+        ],
+        "result": "f(x) = 0{,}65x"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $f(4200)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "2730",
+      "misconceptionSignatures": [
+        {
+          "value": "84000/13",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "-2730",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "صورة العدد $x$ بالدالة الخطية $f$ هي $f(x) = 0{,}65 \\times x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $x$ بالعدد $4200$ ثم احسب الجداء، وانتبه إلى الإشارة."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(4200) = 0{,}65 \\times 4200 = 2730$ .",
+        "incorrect": "الصورة جداء المعامل في العدد: $f(x) = 0{,}65 \\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(4200) = 0{,}65 \\times 4200$",
+          "$f(4200) = 2730$"
+        ],
+        "result": "f(4200) = 2730DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "سعر لعبة بعد التخفيض 1690DA . جد سعرها قبل التخفيض.",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "2600",
+      "misconceptionSignatures": [
+        {
+          "value": "1098,5",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        },
+        {
+          "value": "-2600",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد المطلوب $x$ يحقق $f(x) = 1690$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المعادلة $0{,}65x = 1690$ : اقسم الطرفين على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{1690}{0{,}65} = 2600$ .",
+        "incorrect": "لا تحسب صورة العدد المعطى: ابحث عن العدد $x$ الذي صورته هذا العدد."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 1690$ معناه $0{,}65x = 1690$",
+          "$x = \\dfrac{1690}{0{,}65} = 2600$"
+        ],
+        "result": "x = 2600DA"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

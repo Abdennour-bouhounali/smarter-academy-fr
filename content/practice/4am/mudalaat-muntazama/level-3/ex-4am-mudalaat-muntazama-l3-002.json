@@ -1,0 +1,177 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l3-002",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 13 — زاوية العشاري",
+    "estimatedMinutes": 3,
+    "tags": [
+      "زاوية المضلع",
+      "العشاري"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-13",
+      "page": 159,
+      "section": "المضلعات المنتظمة",
+      "number": 13
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 159): ABCDEFGHIJ عشاري منتظم مركزه O.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -0.618,
+          1.902
+        ],
+        "B": [
+          0.618,
+          1.902
+        ],
+        "C": [
+          1.618,
+          1.176
+        ],
+        "D": [
+          2,
+          0
+        ],
+        "E": [
+          1.618,
+          -1.176
+        ],
+        "F": [
+          0.618,
+          -1.902
+        ],
+        "G": [
+          -0.618,
+          -1.902
+        ],
+        "H": [
+          -1.618,
+          -1.176
+        ],
+        "I": [
+          -2,
+          0
+        ],
+        "J": [
+          -1.618,
+          1.176
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "E"
+        ],
+        [
+          "E",
+          "F"
+        ],
+        [
+          "F",
+          "G"
+        ],
+        [
+          "G",
+          "H"
+        ],
+        [
+          "H",
+          "I"
+        ],
+        [
+          "I",
+          "J"
+        ],
+        [
+          "J",
+          "A"
+        ],
+        [
+          "O",
+          "A"
+        ],
+        [
+          "O",
+          "B"
+        ],
+        [
+          "O",
+          "C"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "B",
+          "from": "A",
+          "to": "C"
+        }
+      ],
+      "ariaLabel": "عشاري منتظم ABCDEFGHIJ مركزه O، والقطع [OA] و [OB] و [OC]، والزاوية ABC معلّمة بقوس",
+      "maxWidth": 480
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "احسب القيمة المضبوطة للزاوية $\\widehat{ABC}$ (بالدرجات).",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجات)",
+      "expectedAnswer": "144",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUNTAZAM-MARKAZIYA",
+          "value": "36"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالزاوية المركزية التي تحصر ضلعا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المثلث الذي رأسه المركز وقاعدته ضلع متساوي الساقين: احسب زاويتي قاعدته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زاوية المضلع ضعف زاوية قاعدة هذا المثلث."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{OBA} = \\dfrac{180^\\circ - 36^\\circ}{2} = 72^\\circ$ ، و $\\widehat{ABC} = 2 \\times 72^\\circ$ .",
+        "incorrect": "زاوية العشاري ليست زاويته المركزية."
+      },
+      "difficulty": 3
+    }
+  ]
+}

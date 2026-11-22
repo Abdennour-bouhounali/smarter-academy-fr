@@ -1,7 +1,40 @@
-# CLAUDE.md — Smarter Academy
+# CLAUDE.md — Smarter Academy (HISTORICAL — product & pedagogy philosophy only)
 
-> This file is the primary project context and engineering constitution for Smarter Academy.
-> Read and follow it before modifying architecture, learning logic, lessons, interactions, backend models, or shared components.
+> ## ⚠️ Read this first
+>
+> **This document is NOT the project's engineering constitution, and it is not
+> a description of this codebase.** It was written for the earlier French
+> product, before the Algerian platform existed. It is kept because its
+> pedagogical reasoning (§1–§8, §18–§34, §37–§41, §56–§67) still describes how
+> Smarter Academy thinks about learning.
+>
+> **Its technical sections are wrong for this repository.** Do not follow
+> §9–§17, §42–§55 or §64 as instructions. Specifically:
+>
+> | This document says | This repository actually uses |
+> |---|---|
+> | TypeScript throughout (§9) | JavaScript + JSX; no TypeScript in `apps/web` |
+> | Zustand for lesson state (§11) | React `useState`/context; no Zustand dependency |
+> | TanStack Query for server state (§11) | a fetch-based client in `apps/web/src/services/` |
+> | NestJS + Prisma + PostgreSQL (§15) | Laravel + Eloquent + MySQL, in `apps/api` |
+> | PixiJS / Phaser / Matter.js (§12–§14) | none of them; manipulations are inline SVG + DOM |
+> | "Fractions 6e" as the reference lesson (§33–§34) | the 4AM unit-1 lessons; all French content (6e included) was deleted on 2026-09-25 |
+> | French collège/lycée students (§1, §5, §35) | Algerian المتوسط students; the UI is Arabic and RTL |
+> | `lesson.config.ts`, `Module01.tsx` (§53) | `lesson.config.js`, `Module<NN><Descriptor>.jsx` |
+>
+> **Where to go instead:** [`../README.md`](../README.md) for the documentation
+> map, [`LESSON_CONTRACT.md`](./LESSON_CONTRACT.md) for the lesson and module
+> contract, [`ARCHITECTURE.md`](./ARCHITECTURE.md) for the real system map, and
+> the root `CLAUDE.md` for the rules that actually bind this repository.
+>
+> The generic engineering advice in §46–§52 (find the source of truth, fix the
+> root cause, don't over-engineer, name things consistently) remains sound and
+> is not contradicted by anything here.
+
+---
+
+> This file was the primary project context and engineering constitution for the
+> French-era Smarter Academy.
 
 ---
 

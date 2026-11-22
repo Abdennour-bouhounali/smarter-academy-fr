@@ -1,0 +1,176 @@
+{
+  "id": "ex-4am-jidaa-maadum-l4-005",
+  "lessonCode": "jidaa-maadum",
+  "level": 4,
+  "metadata": {
+    "title": "مربع معدوم وفرق مربعين",
+    "estimatedMinutes": 9,
+    "tags": [
+      "متطابقات شهيرة",
+      "جداء معدوم"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "now-47-2",
+      "page": 47,
+      "section": "دوري الآن",
+      "number": 2
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "حل كلا من المعادلتين الآتيتين:",
+      "statement": "$(2x + 1)^2 = 0$",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب حل المعادلة: عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "-1/2",
+      "misconceptionSignatures": [
+        {
+          "value": "1/2",
+          "id": "MISC-JIDAA-ISHARA-JADHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يكون جداء عاملين معدومًا إذا كان أحد عامليه على الأقل معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلتين من الدرجة الأولى: كل عامل يساوي $0$ ، ثم حلّ كل واحدة منهما."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى الإشارة عند نقل العدد إلى الطرف الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = -\\dfrac{1}{2}$ .",
+        "incorrect": "اكتب أن العامل غير الثابت معدوم، ثم حلّ المعادلة من الدرجة الأولى بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $(2x + 1)^2 = (2x + 1)(2x + 1) = 0$",
+          "يعني أنّ: $2x + 1 = 0$",
+          "أي: $2x = -1$",
+          "ومنه: $x = -\\dfrac{1}{2}$",
+          "إذن للمعادلة حلّ وحيد هو $-\\dfrac{1}{2}$"
+        ],
+        "result": "x = -\\dfrac{1}{2}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$4x^2 - 1 = 0$ — الحلّ الأصغر:",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "-1/2",
+      "misconceptionSignatures": [
+        {
+          "value": "1/2",
+          "id": "MISC-JIDAA-HAL-WAHID"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا تنشر الطرف الأول: استعمل تحليله إلى جداء عاملين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد التحليل تصير المعادلة معادلة جداء معدوم: أحد العاملين على الأقل معدوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حلّ كل معادلة من الدرجة الأولى، ثم رتّب الحلّين من الأصغر إلى الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = -\\dfrac{1}{2}$ .",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة من الدرجة الأولى بإشاراتها، ثم رتّب الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $4x^2 - 1 = (2x)^2 - 1^2 = (2x - 1)(2x + 1)$",
+          "المعادلة تُكتب: $(2x - 1)(2x + 1) = 0$",
+          "يعني أنّ: $2x - 1 = 0$ أو $2x + 1 = 0$",
+          "ومنه: $x = \\dfrac{1}{2}$ أو $x = -\\dfrac{1}{2}$",
+          "إذن للمعادلة حلّان هما $-\\dfrac{1}{2}$ و $\\dfrac{1}{2}$"
+        ],
+        "result": "x = -\\dfrac{1}{2}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ب",
+      "statement": "الحلّ الأكبر:",
+      "learningPoints": [
+        {
+          "code": "4am_jidaa-maadum_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "1/2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة الثانية من الدرجة الأولى، ثم قارن الحلّين."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{1}{2}$ .",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة من الدرجة الأولى بإشاراتها، ثم رتّب الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "إذن للمعادلة حلّان هما $-\\dfrac{1}{2}$ و $\\dfrac{1}{2}$"
+        ],
+        "result": "x = \\dfrac{1}{2}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

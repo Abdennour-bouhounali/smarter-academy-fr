@@ -1,0 +1,286 @@
+{
+  "id": "ex-3am-jidaa-ida-nisbiya-l3-006",
+  "lessonCode": "jidaa-ida-nisbiya",
+  "level": 3,
+  "metadata": {
+    "title": "برنامجا حساب",
+    "estimatedMinutes": 8,
+    "tags": [
+      "معاكس عدد",
+      "الضرب في (−1)",
+      "برنامج حساب"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-42",
+      "page": 18,
+      "section": "أتعمّق",
+      "number": 42
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "إليك برنامجي حساب. البرنامج $A$ : اختر عددًا، خذ معاكسه، ثم اطرح $5$ . البرنامج $B$ : اختر عددًا، اضربه في $(−1)$ ، ثم أضف $(−5)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "نطبّق البرنامجين على العدد $8{,}2$ .",
+      "statement": "ما ناتج البرنامج $A$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-13.2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضرب عدد في $(-1)$ لا يغيّر بعده عن الصفر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$(-1) \\times a$ هو معاكس العدد $a$ : العدد نفسه بإشارة معاكسة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مثال: معاكس $5$ هو $-5$ ومعاكس $-5$ هو $5$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$−8{,}2 − 5 = −13{,}2$",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "معاكس $8{,}2$ هو $−8{,}2$ .",
+          "$−8{,}2 − 5 = −13{,}2$"
+        ],
+        "result": "−13{,}2"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما ناتج البرنامج $B$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-13.2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضرب عدد في $(-1)$ لا يغيّر بعده عن الصفر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$(-1) \\times a$ هو معاكس العدد $a$ : العدد نفسه بإشارة معاكسة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مثال: معاكس $5$ هو $-5$ ومعاكس $-5$ هو $5$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$−8{,}2 + (−5) = −13{,}2$",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "$8{,}2 \\times (−1) = −8{,}2$ .",
+          "$−8{,}2 + (−5) = −13{,}2$"
+        ],
+        "result": "−13{,}2"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "نطبّق البرنامجين على العدد $−3{,}6$ .",
+      "statement": "ما ناتج البرنامج $A$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-1.4",
+      "misconceptionSignatures": [
+        {
+          "value": "-8.6",
+          "id": "MISC-IDA-MINUSA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب العدد $a$ بإشارته داخل قوسين قبل أن تضع الإشارة $-$ أمامه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الإشارة $-$ أمام العدد $a$ تعني معاكس $a$ ، وهو ليس سالبًا دائمًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "معاكس عدد سالب موجب، ومعاكس عدد موجب سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "$3{,}6 − 5 = −1{,}4$",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "معاكس $−3{,}6$ هو $3{,}6$ .",
+          "$3{,}6 − 5 = −1{,}4$"
+        ],
+        "result": "−1{,}4"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما ناتج البرنامج $B$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-1.4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضرب عدد في $(-1)$ لا يغيّر بعده عن الصفر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$(-1) \\times a$ هو معاكس العدد $a$ : العدد نفسه بإشارة معاكسة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مثال: معاكس $5$ هو $-5$ ومعاكس $-5$ هو $5$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$3{,}6 + (−5) = −1{,}4$",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "$(−3{,}6) \\times (−1) = 3{,}6$ .",
+          "$3{,}6 + (−5) = −1{,}4$"
+        ],
+        "result": "−1{,}4"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "lead": "ماذا نلاحظ ؟",
+      "statement": "عند تطبيق البرنامجين على أيّ عدد، النتيجتان ...",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مختلفتان إذا كان العدد سالبًا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IDA-MINUSA"
+        },
+        {
+          "id": "B",
+          "content": "متساويتان دائمًا",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "مختلفتان إذا كان العدد موجبًا",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "متعاكستان دائمًا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضرب عدد في $(-1)$ لا يغيّر بعده عن الصفر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$(-1) \\times a$ هو معاكس العدد $a$ : العدد نفسه بإشارة معاكسة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مثال: معاكس $5$ هو $-5$ ومعاكس $-5$ هو $5$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "النتيجتان متساويتان دائمًا لأنّ معاكس عدد هو جداؤه في $(−1)$ .",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "معاكس عدد هو جداؤه في $(−1)$ ، أيًّا كانت إشارة العدد.",
+          "إذن «خذ معاكسه» و «اضربه في $(−1)$ » يعطيان العدد نفسه، وبعده نطرح $5$ أو نضيف $(−5)$ : النتيجة نفسها."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

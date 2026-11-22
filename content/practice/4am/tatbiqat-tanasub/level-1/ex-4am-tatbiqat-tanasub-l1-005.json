@@ -1,0 +1,130 @@
+{
+  "id": "ex-4am-tatbiqat-tanasub-l1-005",
+  "lessonCode": "tatbiqat-tanasub",
+  "level": 1,
+  "metadata": {
+    "title": "تخفيضات 30%",
+    "estimatedMinutes": 3,
+    "tags": [
+      "تخفيض",
+      "المضاعف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tatbiqat-tanasub_P1",
+      "modelledOn": "know-4",
+      "adaptedFrom": "ex-4am-tatbiqat-tanasub-l1-005"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في تخفيضات مركز تجاري، خُفّض سعر حذاء رياضي ثمنه 4500DA بنسبة 30%."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب العدد الذي يُضرب فيه السعر لترجمة هذا التخفيض.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة",
+      "expectedAnswer": "0,7",
+      "misconceptionSignatures": [
+        {
+          "value": "0,3",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        },
+        {
+          "value": "1,3",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التخفيض بـ $t\\%$ يُترجم بالضرب في $1 - \\dfrac{t}{100}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $t$ بالعدد 30 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$1 - \\dfrac{30}{100} = 0{,}7$ .",
+        "incorrect": "بعد التخفيض يُدفع جزء من السعر فقط: احسب هذا الجزء."
+      },
+      "solution": {
+        "lines": [
+          "$1 - \\dfrac{30}{100} = 0{,}7$",
+          "نضرب السعر في $0{,}7$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب سعر الحذاء بعد التخفيض.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "3150",
+      "misconceptionSignatures": [
+        {
+          "value": "1350",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        },
+        {
+          "value": "4470",
+          "id": "MISC-NISBA-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اضرب السعر الأول في العدد الذي وجدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $4500 \\times 0{,}7$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$4500 \\times 0{,}7 = 3150$ ، أي 3150DA .",
+        "incorrect": "اضرب 4500 في المضاعف، ولا تطرح العدد 30 ."
+      },
+      "solution": {
+        "lines": [
+          "$4500 \\times 0{,}7 = 3150$",
+          "سعر الحذاء بعد التخفيض 3150DA ."
+        ],
+        "result": "3150DA"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

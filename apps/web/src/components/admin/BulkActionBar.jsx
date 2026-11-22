@@ -1,14 +1,14 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { AlertTriangle, Check, Loader2, X } from 'lucide-react';
 import Modal from './ui/Modal';
-import { agree, countNoun } from './contentNouns';
 
 /**
  * La barre d'actions en lot : combien de contenus sont cochés, et ce qu'on
  * peut leur faire.
  *
  * Elle ne sait RIEN de la publication ni du palier. Elle reçoit une liste
- * d'actions décrites (voir bulkContentActions.js), appelle celle qu'on choisit,
+ * d'actions décrites (voir bulkContentActions.jsx), appelle celle qu'on choisit,
  * et rend compte. C'est ce qui lui permet de servir les leçons, les modules et
  * les exercices sans trois variantes — et ce qui garantit qu'aucune règle
  * métier n'est écrite ici.
@@ -18,15 +18,21 @@ import { agree, countNoun } from './contentNouns';
  *  — elle ne s'affiche PAS quand rien n'est coché : l'interface existante
  *    reste exactement ce qu'elle était ;
  *  — pendant l'exécution, TOUT est désactivé, y compris le bouton qui vient
- *    d'être cliqué : un double clic sur « Publier 24 leçons » ne doit pas
- *    lancer deux lots ;
+ *    d'être cliqué : un double clic sur « نشر 24 درساً » ne doit pas lancer
+ *    deux lots ;
  *  — le résultat distingue appliqué / déjà dans cet état / refusé, et nomme
  *    les refus. « Succès » alors que 2 contenus sur 12 ont résisté est un
  *    mensonge que la spec §9 interdit.
+ *
+ * LE NOMBRE, EN ARABE. « 24 درساً » ne s'obtient pas en collant un nombre et
+ * un pluriel : l'arabe a SIX catégories (`zero`, `one`, `two`, `few`, `many`,
+ * `other`), et c'est `t(clé, { count })` qui choisit via
+ * `Intl.PluralRules('ar-DZ')`. L'ancien accord français (`agree`/`countNoun`)
+ * a disparu avec la langue qu'il servait.
  */
 export default function BulkActionBar({
   count,
-  /** Le nom du contenu et son genre — voir CONTENT_NOUNS. */
+  /** Le nom du contenu — voir CONTENT_NOUNS, qui ne porte plus qu'une clé. */
   noun,
   actions,
   onClear,
@@ -36,21 +42,28 @@ export default function BulkActionBar({
   selectedRows,
   onDone,
 }) {
+  const { t } = useTranslation('admin');
   const [pending, setPending] = useState(null);
   const [busy, setBusy] = useState(false);
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
   const [detailOpen, setDetailOpen] = useState(false);
   // Le libellé de l'action en cours, figé au lancement : `pending` est remis à
-  // null dès la fin, et « Publication de 24 leçons… » doit survivre à ça.
+  // null dès la fin, et « نشر — 24 درساً… » doit survivre à ça.
   const runningLabel = useRef('');
 
-  // « 24 leçons », accord du nom compris.
-  const counted = countNoun(count, noun);
-  const failedCounted = (n) => countNoun(n, noun);
+  // « 24 درساً », catégorie de pluriel comprise — et CAS compris.
+  //
+  // L'arabe décline le duel : « درسان » est sujet, « درسين » est complément.
+  // `countedOf` donne la forme SUJET (« درسان محدَّدان »), `countedObjOf` la
+  // forme COMPLÉMENT (« أرشفة درسين »), et les confirmations reçoivent la
+  // seconde puisque leur nom y est toujours objet d'un geste.
+  const countedOf = (n) => t(`bulk.noun.${noun?.key ?? 'item'}`, { count: n });
+  const countedObjOf = (n) => t(`bulk.nounOf.${noun?.key ?? 'item'}`, { count: n });
+  const counted = countedObjOf(count);
 
   // Un changement de sélection périme le rapport précédent : laisser
-  // « ✓ 12 leçons publiées » au-dessus d'une nouvelle sélection ferait lire un
+  // « ✓ 12 دروس منشورة » au-dessus d'une nouvelle sélection ferait lire un
   // ancien résultat comme le résultat du prochain geste.
   useEffect(() => { setResult(null); setError(null); }, [count]);
 
@@ -60,7 +73,7 @@ export default function BulkActionBar({
     setBusy(true);
     setError(null);
     setResult(null);
-    runningLabel.current = action.runningLabel?.(count) ?? 'Traitement…';
+    runningLabel.current = action.runningLabel?.(count) ?? t('common.busy');
 
     try {
       const outcome = await action.run(selectedRows);
@@ -73,7 +86,7 @@ export default function BulkActionBar({
       if ((outcome.failed?.length ?? 0) === 0) onClear?.();
     } catch (caught) {
       // Réseau, autorisation, validation du lot : l'erreur n'est jamais avalée.
-      setError(caught.message || 'Une erreur est survenue.');
+      setError(caught.message || t('common.error'));
     } finally {
       setBusy(false);
       setPending(null);
@@ -94,10 +107,10 @@ export default function BulkActionBar({
       // souris, et il doit être annoncé sans quitter la case.
       className="sticky top-0 z-20 flex flex-wrap items-center gap-x-3 gap-y-2 rounded-xl border border-blue-200 bg-blue-50 px-3 py-2.5"
       role="region"
-      aria-label="Actions groupées"
+      aria-label={t('bulk.regionLabel')}
     >
       <p className="font-inter text-xs font-semibold text-blue-900" aria-live="polite">
-        {counted} {agree('sélectionné', count, noun.feminine)}
+        {t('bulk.selectedNoun', { count, counted: countedOf(count) })}
       </p>
 
       {/* « Tout sélectionner » dit COMBIEN et OÙ : sans le nombre, on ne sait
@@ -109,7 +122,7 @@ export default function BulkActionBar({
           disabled={busy}
           className="rounded-lg border border-blue-300 bg-white px-2.5 py-1 font-inter text-xs font-semibold text-blue-700 hover:bg-blue-100 disabled:opacity-50"
         >
-          Tout sélectionner ({visibleCount} sur cette page)
+          {t('bulk.selectAllVisible', { count: visibleCount })}
         </button>
       )}
 
@@ -140,9 +153,9 @@ export default function BulkActionBar({
         type="button"
         onClick={onClear}
         disabled={busy}
-        className="ml-auto inline-flex items-center gap-1 rounded-lg px-2 py-1 font-inter text-xs font-semibold text-slate-600 hover:bg-white disabled:opacity-50"
+        className="ms-auto inline-flex items-center gap-1 rounded-lg px-2 py-1 font-inter text-xs font-semibold text-slate-600 hover:bg-white disabled:opacity-50"
       >
-        <X size={13} /> Effacer la sélection
+        <X size={13} /> {t('bulk.cancel')}
       </button>
 
       {busy && (
@@ -173,28 +186,28 @@ export default function BulkActionBar({
               savoir que ça n'a rien eu à changer. */}
           {result.unchanged.length > 0 && (
             <p className="font-inter text-xs text-slate-600">
-              {failedCounted(result.unchanged.length)} déjà dans cet état.
+              {t('bulk.alreadyInState', { count: result.unchanged.length, counted: countedOf(result.unchanged.length) })}
             </p>
           )}
 
           {failedCount > 0 && (
             <p className="flex flex-wrap items-center gap-1.5 font-inter text-xs text-amber-800">
               <AlertTriangle size={13} />
-              {failedCounted(failedCount)} {failedCount === 1 ? 'n’a' : 'n’ont'} pas pu être {agree('modifié', failedCount, noun.feminine)}.
+              {t('bulk.notModified', { count: failedCount, counted: countedOf(failedCount) })}
               <button
                 type="button"
                 onClick={() => setDetailOpen(true)}
                 className="font-semibold text-amber-900 underline underline-offset-2 hover:text-amber-700"
               >
-                Voir le détail
+                {t('bulk.seeDetail')}
               </button>
             </p>
           )}
         </div>
       )}
 
-      {/* La confirmation porte le NOMBRE et le geste, jamais « Êtes-vous
-          sûr ? » : c'est le nombre qui permet de repérer qu'on a coché une
+      {/* La confirmation porte le NOMBRE et le geste, jamais « هل أنت
+          متأكّد ؟ » : c'est le nombre qui permet de repérer qu'on a coché une
           ligne de trop. */}
       {pending && (
         <Modal
@@ -202,6 +215,7 @@ export default function BulkActionBar({
           onClose={() => (busy ? null : setPending(null))}
           title={pending.confirm.title(count, counted, noun)}
           size="sm"
+          closeLabel={t('common.close')}
           footer={(
             <>
               <button
@@ -210,7 +224,7 @@ export default function BulkActionBar({
                 disabled={busy}
                 className="rounded-lg border border-slate-300 px-4 py-2 font-inter text-sm font-semibold text-slate-700 hover:bg-slate-50 disabled:opacity-50"
               >
-                Annuler
+                {t('common.cancel')}
               </button>
               <button
                 type="button"
@@ -220,7 +234,7 @@ export default function BulkActionBar({
                   pending.tone === 'danger' ? 'bg-rose-600 hover:bg-rose-700' : 'bg-blue-600 hover:bg-blue-700'
                 }`}
               >
-                {busy ? 'En cours…' : pending.confirm.confirmLabel(count, counted, noun)}
+                {busy ? t('common.busy') : pending.confirm.confirmLabel(count, counted, noun)}
               </button>
             </>
           )}
@@ -234,14 +248,15 @@ export default function BulkActionBar({
       <Modal
         open={detailOpen}
         onClose={() => setDetailOpen(false)}
-        title={`${failedCounted(failedCount)} non ${agree('modifié', failedCount, noun.feminine)}`}
+        title={t('bulk.failedDetailTitle', { count: failedCount, counted: countedOf(failedCount) })}
         size="md"
+        closeLabel={t('common.close')}
       >
         <ul className="space-y-2">
           {(result?.failed ?? []).map((failure) => (
             <li key={failure.id} className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2">
               <p className="font-inter text-xs font-semibold text-slate-900">
-                {failure.title ?? `#${failure.id}`}
+                {failure.title ?? <span dir="ltr">#{failure.id}</span>}
               </p>
               <p className="mt-0.5 font-inter text-xs text-amber-900">{failure.message}</p>
             </li>

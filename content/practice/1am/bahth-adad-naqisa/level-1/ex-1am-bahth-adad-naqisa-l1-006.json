@@ -1,0 +1,212 @@
+{
+  "id": "ex-1am-bahth-adad-naqisa-l1-006",
+  "lessonCode": "bahth-adad-naqisa",
+  "level": 1,
+  "metadata": {
+    "title": "أيّ حساب يُرجع العدد؟",
+    "estimatedMinutes": 6,
+    "tags": [
+      "عملية عكسية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-1",
+      "page": 82,
+      "section": "أكتسب طرائق"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اكتب المساواة وانظر مكان □ ثمّ اختر الحساب الذي يعطي العدد الناقص."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ حساب يعطي العدد الناقص في $\\square+12=40$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$40+12$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NAQISA-SAMEOP"
+        },
+        {
+          "id": "B",
+          "content": "$12-40$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NAQISA-REVSUB"
+        },
+        {
+          "id": "C",
+          "content": "$40-12$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المساواة وأنظر مكان □ فيها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للجمع هي الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب كلّ حساب بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نُرجع بالعملية العكسية.",
+        "incorrect": "في مجموع نطرح العدد المعلوم من الناتج: لا نجمع مرّة أخرى."
+      },
+      "solution": {
+        "lines": [
+          "المساواة: $\\square+12=40$ .",
+          "الحساب: $\\square=40-12=28$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أيّ حساب يعطي العدد الناقص في $\\square-15=60$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$60+15$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$60-15$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NAQISA-SAMEOP"
+        },
+        {
+          "id": "C",
+          "content": "$15-60$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NAQISA-REVSUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المساواة وأنظر مكان □ فيها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للطرح هي الجمع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب كلّ حساب بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نُرجع بالعملية العكسية.",
+        "incorrect": "في □ − a = b نجمع: الجمع يلغي الطرح."
+      },
+      "solution": {
+        "lines": [
+          "المساواة: $\\square-15=60$ .",
+          "الحساب: $\\square=60+15=75$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أيّ حساب يعطي العدد الناقص في $6\\times\\square=54$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_bahth-adad-naqisa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$54\\times 6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NAQISA-MULAGAIN"
+        },
+        {
+          "id": "B",
+          "content": "$6\\div 54$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NAQISA-DIVREV"
+        },
+        {
+          "id": "C",
+          "content": "$54\\div 6$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب المساواة وأنظر مكان □ فيها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العملية العكسية للضرب هي القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب كلّ حساب بالتعويض في المساواة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "نُرجع بالعملية العكسية.",
+        "incorrect": "في جداء نقسم الناتج على العدد المعلوم: لا نضربه فيه ولا نقسم المعلوم على الناتج."
+      },
+      "solution": {
+        "lines": [
+          "المساواة: $\\square\\times 6=54$ .",
+          "الحساب: $\\square=54\\div 6=9$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

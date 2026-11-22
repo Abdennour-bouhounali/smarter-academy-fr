@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l2-009",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — كتابة المنتصف",
+    "estimatedMinutes": 3,
+    "tags": [
+      "المنتصف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_shuaayn-mutasawiyayn_P1",
+      "modelledOn": "know-3"
+    }
+  },
+  "statement": {
+    "content": "B منتصف القطعة [AC]."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أيّ مساواة صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{BA} = \\overrightarrow{BC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MUNTASAF-IB-IA"
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{AB} = \\overrightarrow{CB}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{AB} = \\overrightarrow{BC}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم القطعة [AC] و B في وسطها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "معارف 3: إذا كان I منتصف [AB] فإن AI = IB (شعاعان)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الشعاعان يسيران كلاهما من A نحو C."
+        }
+      ],
+      "feedback": {
+        "correct": "الشعاعان AB و BC يتجهان من A نحو C ولهما نفس الطول.",
+        "incorrect": "في الكتابتين الأخريين يتعاكس الاتجاهان."
+      }
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "id": "ex-4am-zawiya-muhitiya-l1-002",
+  "lessonCode": "zawiya-muhitiya",
+  "level": 1,
+  "metadata": {
+    "title": "أؤكّد تعلّماتي 2 — الزاوية ومرافقتها",
+    "estimatedMinutes": 2,
+    "tags": [
+      "الزاوية المحيطية",
+      "الزاوية المركزية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 160,
+      "section": "أؤكّد تعلّماتي",
+      "number": 2
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 160): في الشكل الآتي، A و B و C على الدائرة التي مركزها O.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -2,
+          0
+        ],
+        "C": [
+          0.684,
+          1.8794
+        ],
+        "B": [
+          0.684,
+          -1.8794
+        ],
+        "E": [
+          0.85,
+          0
+        ],
+        "D": [
+          2.9,
+          0
+        ]
+      },
+      "circles": [
+        {
+          "center": "O",
+          "radius": 2
+        }
+      ],
+      "segments": [
+        [
+          "A",
+          "C"
+        ],
+        [
+          "A",
+          "B"
+        ],
+        [
+          "O",
+          "C"
+        ],
+        [
+          "O",
+          "B"
+        ],
+        [
+          "E",
+          "C"
+        ],
+        [
+          "E",
+          "B"
+        ],
+        [
+          "D",
+          "C"
+        ],
+        [
+          "D",
+          "B"
+        ]
+      ],
+      "ariaLabel": "دائرة مركزها O، النقط A و C و B عليها، E داخلها و D خارجها",
+      "maxWidth": 420
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "اختر الإجابة الصحيحة:",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الزاوية $\\widehat{BAC}$ محيطية و الزاوية $\\widehat{BOC}$ مركزية مرفقة بها",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الزاوية $\\widehat{BDC}$ محيطية و الزاوية $\\widehat{BEC}$ مركزية مرفقة بها",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-RAS"
+        },
+        {
+          "id": "C",
+          "content": "الزاوية $\\widehat{BDC}$ محيطية و الزاوية $\\widehat{BAC}$ مركزية مرفقة بها",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-RAS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر أولا إلى رأس الزاوية: أين يقع؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الزاوية المركزية رأسها مركز الدائرة؛ والمحيطية رأسها على الدائرة وضلعاها يقطعانها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زاوية رأسها داخل الدائرة أو خارجها ليست محيطية، ولو كان طرفا ضلعيها على الدائرة."
+        }
+      ],
+      "feedback": {
+        "correct": "A على الدائرة و O مركزها؛ أما D فخارج الدائرة و E ليست المركز.",
+        "incorrect": "تحقّق من موضع كل رأس: على الدائرة؟ في المركز؟"
+      }
+    }
+  ]
+}

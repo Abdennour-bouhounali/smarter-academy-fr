@@ -1,0 +1,122 @@
+{
+  "id": "ex-4am-bahth-pgcd-l1-001",
+  "lessonCode": "bahth-pgcd",
+  "level": 1,
+  "metadata": {
+    "title": "21 و 14",
+    "estimatedMinutes": 3,
+    "tags": [
+      "خاصية الفرق"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-4-props",
+      "page": 12,
+      "section": "معارف",
+      "number": 4
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العددين الطبيعيين 21 و 14."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن $\\text{PGCD}(21 ; 14) = \\text{PGCD}(14 ; 7)$.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العدد 7 بالفرق بين العددين 21 و 14."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل قاسم مشترك للعددين 21 و 14 يقسم فرقهما أيضًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل الخاصية $\\text{PGCD}(a ; b) = \\text{PGCD}(b ; a - b)$ مع $a > b$."
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك سطرًا بسطر بالحل النموذجي، وانتبه إلى الخاصية المستعملة."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $21 - 14 = 7$",
+          "وبما أن $\\text{PGCD}(a ; b) = \\text{PGCD}(b ; a - b)$ من أجل $a > b$، فإن:"
+        ],
+        "result": "\\text{PGCD}(21 ; 14) = \\text{PGCD}(14 ; 7)"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج $\\text{PGCD}(21 ; 14)$.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-FURUQ-AKHIR-SIFR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طبّق الخاصية نفسها على الزوج (14 ; 7)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "واصل الطرح حتى تحصل على فرق معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر فرق غير معدوم هو 7.",
+        "incorrect": "القاسم المشترك الأكبر هو آخر فرق غير معدوم، لا الفرق المعدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية الفروق المتتابعة:",
+          "$21 - 14 = 7$",
+          "$14 - 7 = 7$",
+          "$7 - 7 = 0$",
+          "آخر فرق غير معدوم هو 7، إذن:"
+        ],
+        "result": "\\text{PGCD}(21 ; 14) = 7"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

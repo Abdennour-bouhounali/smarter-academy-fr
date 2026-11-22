@@ -1,0 +1,183 @@
+{
+  "id": "ex-4am-mafhum-taalufiya-l3-007",
+  "lessonCode": "mafhum-taalufiya",
+  "level": 3,
+  "metadata": {
+    "title": "دالة تآلفية بمعامل عشري",
+    "estimatedMinutes": 7,
+    "tags": [
+      "صورة عدد",
+      "العدد الذي صورته معلومة",
+      "دالة خطية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "adaptedFrom": "ex-4am-mafhum-taalufiya-l3-007"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$f$ دالة تآلفية حيث:",
+    "formulas": [
+      "f(x) = 2{,}5x + 10"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $f(6)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "25",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $6$ في العبارة $f(x) = 2{,}5x + 10$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب في المعامل أولا، ثم أضف الحدّ الثابت، مع الانتباه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(6) = 2{,}5 \\times 6 + 10 = 25$ .",
+        "incorrect": "اضرب العدد في المعامل $a$ ، ثم أضف الحدّ الثابت $b$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(6) = 2{,}5 \\times 6 + 10$",
+          "$f(6) = 15 + 10$",
+          "$f(6) = 25$"
+        ],
+        "result": "f(6) = 25"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عيّن العدد الذي صورته $0$ بالدالة $f$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-TAALUFI-SABIQ-QISMA"
+        },
+        {
+          "value": "-10",
+          "id": "MISC-TAALUFI-SABIQ-TARTIB"
+        },
+        {
+          "value": "10",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن $x$ الذي يحقق $2{,}5x + 10 = 0$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح 10 من الطرفين ثم اقسم على 2,5."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}5x + 10 = 0$ تعطي $x = -4$ .",
+        "incorrect": "اطرح 10 من الطرفين أولا، ثم اقسم على 2,5 مع الانتباه إلى الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 0$ معناه $2{,}5x + 10 = 0$",
+          "$2{,}5x = -10$",
+          "$x = -10 \\div 2{,}5$",
+          "$x = -4$"
+        ],
+        "result": "x = -4"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل الدالة $f$ دالة خطية؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAALUFI-KHATTIYA-KHALT"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما قيمة الحدّ الثابت $b$ ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$b = 10 \\neq 0$ .",
+        "incorrect": "الدالة الخطية حدّها الثابت معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 2{,}5x + 10$ حيث $b = 10 \\neq 0$ .",
+          "إذن $f$ ليست دالة خطية."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

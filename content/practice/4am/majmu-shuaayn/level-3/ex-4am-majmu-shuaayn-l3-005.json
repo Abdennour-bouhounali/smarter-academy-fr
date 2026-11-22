@@ -1,0 +1,174 @@
+{
+  "id": "ex-4am-majmu-shuaayn-l3-005",
+  "lessonCode": "majmu-shuaayn",
+  "level": 3,
+  "metadata": {
+    "title": "طرائق — إنشاء ممثل لمجموع",
+    "estimatedMinutes": 4,
+    "tags": [
+      "إنشاء ممثل"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-sum",
+      "page": 133,
+      "section": "طرائق"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (طرائق ص 133): الرباعي ABDC (الشكل).",
+    "figure": {
+      "points": {
+        "A": [
+          6,
+          1
+        ],
+        "B": [
+          0,
+          0
+        ],
+        "C": [
+          4,
+          -3
+        ],
+        "D": [
+          8,
+          -3
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "D"
+        ],
+        [
+          "D",
+          "C"
+        ],
+        [
+          "C",
+          "A"
+        ]
+      ],
+      "labels": {
+        "A": "ne",
+        "B": "nw",
+        "C": "s",
+        "D": "se"
+      },
+      "ariaLabel": "رباعي: B في أعلى اليسار، A في أعلى اليمين، C في الأسفل في الوسط، D في أسفل اليمين"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "النقطة M حيث $\\overrightarrow{CM} = \\overrightarrow{AB}$ هي",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نظيرة A بالنسبة إلى I منتصف [BC]",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نظيرة C بالنسبة إلى B",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        },
+        {
+          "id": "C",
+          "content": "منتصف [BC]",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-QAIDA-QUTR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للشعاعين نفس المبدأ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "شعاعان لهما نفس المبدأ يُجمعان بقاعدة متوازي الأضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع هو القطر الصادر من المبدأ المشترك، لا القطر الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{CM} = \\overrightarrow{AB}$ يعني ABMC متوازي أضلاع: [AM] و [BC] لهما نفس المنتصف I.",
+        "incorrect": "قاعدة متوازي الأضلاع: مجموع شعاعين لهما نفس المبدأ هو القطر الصادر من ذلك المبدأ."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "النقطة N حيث $\\overrightarrow{AN} = \\overrightarrow{AB} + \\overrightarrow{AD}$ هي",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "النقطة D",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSIHAB-NISYAN"
+        },
+        {
+          "id": "B",
+          "content": "النقطة E حيث $\\overrightarrow{BE} = \\overrightarrow{AD}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "منتصف [BD]",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-QAIDA-QUTR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى نهاية الشعاع الأول ومبدأ الشعاع الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "علاقة شال تتطلب أن تكون نهاية الأول مبدأ الثاني؛ يمكن تبديل ترتيب الحدّين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع يبدأ من مبدأ الأول وينتهي عند نهاية الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AB} + \\overrightarrow{AD} = \\overrightarrow{AB} + \\overrightarrow{BE} = \\overrightarrow{AE}$ (شال).",
+        "incorrect": "علاقة شال: نهاية الأول مبدأ الثاني، والمجموع من مبدأ الأول إلى نهاية الثاني."
+      }
+    }
+  ]
+}

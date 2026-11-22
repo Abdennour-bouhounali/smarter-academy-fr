@@ -1,0 +1,170 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l5-003",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2021 — رحلة مدرسية إلى تيمقاد",
+    "estimatedMinutes": 14,
+    "tags": [
+      "قواسم",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qawasim-adad-tabii_P2",
+      "modelledOn": "BEM 2021 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تنظّم متوسطة بباتنة رحلة مدرسية إلى الموقع الأثري تيمقاد لـ 216 تلميذا، تعريفًا لهم بتاريخ وطنهم وحبًّا للجزائر، يوزَّعون على أفواج تضم كلها نفس العدد من التلاميذ، دون أن يبقى أي تلميذ.\n• يضم كل فوج 20 تلميذا على الأقل و 40 تلميذا على الأكثر.\n• تُخصَّص لكل فوج حافلة يكلّف كراؤها 9000DA.\n• خصّصت المتوسطة للرحلة مبلغ 118800DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن كل الأعداد الممكنة لعدد التلاميذ في كل فوج.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        24,
+        27,
+        36
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد التلاميذ في كل فوج قاسم للعدد 216."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن قواسم 216 باختبار الأعداد التي مربعها أصغر من 216 أو يساويه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احتفظ بالقواسم من 20 إلى 40."
+        }
+      ],
+      "feedback": {
+        "correct": "$216 = 1 \\times 216$ ، $216 = 2 \\times 108$ ، $216 = 3 \\times 72$ ، $216 = 4 \\times 54$ ، $216 = 6 \\times 36$ ، $216 = 8 \\times 27$ ، $216 = 9 \\times 24$ ، $216 = 12 \\times 18$.",
+        "incorrect": "عيّن كل قواسم 216، ثم احتفظ فقط بالتي تقع من 20 إلى 40."
+      },
+      "solution": {
+        "lines": [
+          "عدد التلاميذ في كل فوج قاسم للعدد 216.",
+          "$14^2 = 196 \\leq 216 < 225 = 15^2$: نختبر الأعداد من 1 إلى 14.",
+          "$216 = 1 \\times 216$ ، $216 = 2 \\times 108$ ، $216 = 3 \\times 72$ ، $216 = 4 \\times 54$ ، $216 = 6 \\times 36$ ، $216 = 8 \\times 27$ ، $216 = 9 \\times 24$ ، $216 = 12 \\times 18$",
+          "قواسم 216: 1 ، 2 ، 3 ، 4 ، 6 ، 8 ، 9 ، 12 ، 18 ، 24 ، 27 ، 36 ، 54 ، 72 ، 108 ، 216.",
+          "التي تقع من 20 إلى 40: 24 ، 27 ، 36."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 420
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "يختار المنظمون أقل عدد ممكن من الأفواج. ما هو عدد الأفواج؟",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كلما كان الفوج أكبر كان عدد الأفواج أقل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد الأفواج × عدد التلاميذ في الفوج = 216."
+        }
+      ],
+      "feedback": {
+        "correct": "$216 = 6 \\times 36$.",
+        "incorrect": "اختر أكبر عدد ممكن للتلاميذ في الفوج، ثم اقسم 216 عليه."
+      },
+      "solution": {
+        "lines": [
+          "أقل عدد من الأفواج يوافق أكبر فوج ممكن: 36 تلميذا.",
+          "$216 = 36 \\times 6$",
+          "إذن عدد الأفواج 6."
+        ],
+        "result": "6"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "☜ أعط أكبر ثمن ممكن لتذكرة دخول الموقع الأثري لكل تلميذ، حتى لا تتجاوز تكلفة الرحلة المبلغ المخصص.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (DA)",
+      "expectedAnswer": "300",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب كراء الحافلات أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثمن التذاكر + كراء الحافلات لا يتجاوز المبلغ المخصص."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان $p$ ثمن التذكرة فاكتب متراجحة بدلالة $p$."
+        }
+      ],
+      "feedback": {
+        "correct": "$216p + 54000 \\leq 118800$ تعطي $p \\leq 300$.",
+        "incorrect": "كراء الحافلات = عدد الأفواج × 9000DA؛ اكتب أن التكلفة الكلية لا تتجاوز 118800DA."
+      },
+      "solution": {
+        "lines": [
+          "كراء الحافلات: $6 \\times 9000 = 54000$ DA",
+          "ليكن $p$ ثمن التذكرة (بالـ DA):",
+          "$216p + 54000 \\leq 118800$",
+          "$216p \\leq 64800$",
+          "$p \\leq 300$"
+        ],
+        "result": "p \\leq 300\\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

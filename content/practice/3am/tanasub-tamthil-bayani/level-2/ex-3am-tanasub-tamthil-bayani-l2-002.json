@@ -1,0 +1,298 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l2-002",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — ثمن العدس مع رسم ثابت",
+    "estimatedMinutes": 9,
+    "tags": [
+      "تمثيل بياني",
+      "رسم ثابت"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 3,
+      "file": "3am-s3-56",
+      "exercise": 3
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يشتري نادي الحيّ العدس من تاجر يضيف إلى ثمن العدس رسم تعبئة ثابتا. يلخّص الجدول مشتريات النادي، ومثّلنا معطياته في المعلم المتعامد والمتجانس الموالي (الفاصلة بالكيلوغرام والترتيب بمئات الدنانير).",
+    "table": {
+      "head": [
+        "الكتلة (kg)",
+        "5",
+        "10",
+        "15",
+        "20"
+      ],
+      "rows": [
+        [
+          "الثمن (دج)",
+          "500",
+          "900",
+          "1300",
+          "1700"
+        ]
+      ]
+    },
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          5,
+          5
+        ],
+        "B": [
+          10,
+          9
+        ],
+        "C": [
+          15,
+          13
+        ],
+        "D": [
+          20,
+          17
+        ]
+      },
+      "grid": true,
+      "axes": {
+        "every": 5
+      },
+      "labels": {
+        "O": "sw",
+        "A": "nw",
+        "B": "nw",
+        "C": "nw",
+        "D": "nw"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس: أربع نقط A(5;5) و B(10;9) و C(15;13) و D(20;17) على استقامة واحدة لا تشمل المبدأ",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: الكتلة بالكيلوغرام — محور التراتيب: الثمن بمئات الدنانير"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما إحداثيا النقطة $D$ التي تمثّل العمود الأخير من الجدول؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$D(17\\,;\\,20)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-SWAP-XY"
+        },
+        {
+          "id": "B",
+          "content": "$D(20\\,;\\,1700)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-UNIT-AXIS"
+        },
+        {
+          "id": "C",
+          "content": "$D(20\\,;\\,17)$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفاصلة هي الكتلة بالكيلوغرام."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الترتيب مقدّر بمئات الدنانير."
+        }
+      ],
+      "feedback": {
+        "correct": "الكتلة $20$ والثمن $1700$ دج أي $17$ مئة دج.",
+        "incorrect": "اكتب الكتلة أوّلا ثم الثمن بمئات الدنانير."
+      },
+      "solution": {
+        "lines": [
+          "العمود الأخير: $20$ kg و $1700$ دج $= 17$ مئة دج.",
+          "إذن $D(20\\,;\\,17)$ ."
+        ],
+        "result": "D(20\\,;\\,17)"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "هل الثمن متناسب مع كتلة العدس؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأنّ الترتيب يكبر كلما كبرت الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-RISING"
+        },
+        {
+          "id": "B",
+          "content": "لا، المستقيم الذي يشمل النقط لا يشمل المبدأ $O$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نعم، لأنّ النقط على استقامة واحدة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-LINE-ANY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط على استقامة واحدة لكنّ المستقيم لا يشمل المبدأ $O$ ، فليست الوضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "النقط $A$ و $B$ و $C$ و $D$ على استقامة واحدة لكنّها لا تشمل المبدأ $O$ .",
+          "إذن الثمن ليس متناسبا مع الكتلة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "علّل جوابك.",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تعليلك ثم قارنه بالتصحيح النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اذكر الخاصية التي تستعملها: ما شرط التناسبية على النقط؟"
+        }
+      ],
+      "feedback": {
+        "correct": "التعليل يذكر استقامة النقط ومرور المستقيم بالمبدأ $O$ .",
+        "incorrect": "قارن تعليلك بالتصحيح النموذجي، وتأكد أنك ذكرت الشرطين معا."
+      },
+      "solution": {
+        "lines": [
+          "النقط على استقامة واحدة، غير أنّ هذا المستقيم لا يمرّ بالمبدأ $O$ (الترتيب $5$ عند الفاصلة $5$ لا يتضاعف إلى $10$ عند الفاصلة $10$) .",
+          "إذن الوضعية ليست تناسبية."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "تأكّد حسابيا: ناتج قسمة الثمن على الكتلة عند $A$ هو $1$ وعند $D$ هو $0{,}85$ . ماذا نستنتج؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الوضعية تناسبية لأنّ الثمن يزيد بـ $4$ كلما زادت الكتلة بـ $5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-DIFFERENCE"
+        },
+        {
+          "id": "B",
+          "content": "الوضعية تناسبية لأنّ النقط على استقامة واحدة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-LINE-ANY"
+        },
+        {
+          "id": "C",
+          "content": "الناتجان مختلفان، إذن الثمن ليس متناسبا مع الكتلة",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في الوضعية التناسبية يكون ناتج قسمة الترتيب على الفاصلة ثابتا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الناتجين اللذين تعطيك السؤال."
+        }
+      ],
+      "feedback": {
+        "correct": "$1 \\neq 0{,}85$ : لا يوجد معامل تناسبية ثابت.",
+        "incorrect": "التناسبية تتطلب ناتج قسمة ثابتا، لا فرقا ثابتا ولا استقامة فقط."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{5} = 1$ و $\\dfrac{17}{20} = 0{,}85$ .",
+          "الناتجان مختلفان، إذن الثمن ليس متناسبا مع الكتلة."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

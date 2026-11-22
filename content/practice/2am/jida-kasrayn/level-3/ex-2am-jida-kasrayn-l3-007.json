@@ -1,0 +1,179 @@
+{
+  "id": "ex-2am-jida-kasrayn-l3-007",
+  "lessonCode": "jida-kasrayn",
+  "level": 3,
+  "metadata": {
+    "title": "غلّة الطماطم",
+    "estimatedMinutes": 8,
+    "tags": [
+      "كسر من الباقي"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-39",
+      "page": 34,
+      "section": "أتعمّق",
+      "number": 39
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "باع تاجر $\\dfrac{3}{4}$ من غلّته من الطماطم صباحًا ، ثمّ باع $\\dfrac{5}{6}$ من الباقي بعد الظهر ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما الكسر الذي يمثّل الغلّة الباقية بعد البيع الصباحي ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "1/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط؟ جمع، طرح، أم مقارنة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{4}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$1 - \\dfrac{3}{4} = \\dfrac{4}{4} - \\dfrac{3}{4} = \\dfrac{1}{4}$ ."
+        ],
+        "result": "\\dfrac{1}{4}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما الكسر الذي يمثّل ما باعه بعد الظهر من الغلّة كلّها ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "5/24",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "5/6",
+          "id": "MISC-JIDAKASR-OFWHOLE"
+        },
+        {
+          "value": "5/8",
+          "id": "MISC-JIDAKASR-OFSPENT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكسر الثاني مأخوذ من الباقي، لا من الكلّ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الباقي بعد المرّة الأولى أوّلًا ثمّ خذ الكسر الثاني من هذا الباقي: هذا جداء."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل الناتج وتحقّق أنّه أصغر من الباقي."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{5}{24}$ .",
+        "incorrect": "الكسر الثاني يؤخذ من الباقي: احسب الباقي أوّلًا ثمّ اضربه في الكسر الثاني."
+      },
+      "solution": {
+        "lines": [
+          "الباقي بعد المرّة الأولى : $1 - \\dfrac{3}{4} = \\dfrac{1}{4}$ .",
+          "المأخوذ ثانيةً : $\\dfrac{5}{6} \\times \\dfrac{1}{4} = \\dfrac{5}{24}$ ."
+        ],
+        "result": "\\dfrac{5}{24}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما الكسر الذي بقي من الغلّة عند نهاية اليوم ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jida-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "1/24",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكسر الثاني مأخوذ من الباقي، لا من الكلّ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الباقي بعد المرّة الأولى أوّلًا ثمّ خذ الكسر الثاني من هذا الباقي: هذا جداء."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل الناتج وتحقّق أنّه أصغر من الباقي."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{24}$ .",
+        "incorrect": "الكسر الثاني يؤخذ من الباقي: احسب الباقي أوّلًا ثمّ اضربه في الكسر الثاني."
+      },
+      "solution": {
+        "lines": [
+          "بعد المرّة الأولى بقي $\\dfrac{1}{4}$ ، وبعد الثانية بقي منه $1 - \\dfrac{5}{6} = \\dfrac{1}{6}$ .",
+          "الباقي كلّه : $\\dfrac{1}{4} \\times \\dfrac{1}{6} = \\dfrac{1}{24}$ ."
+        ],
+        "result": "\\dfrac{1}{24}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

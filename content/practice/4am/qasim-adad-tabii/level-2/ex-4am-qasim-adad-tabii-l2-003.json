@@ -1,0 +1,165 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l2-003",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2008 — 1176 و 24",
+    "estimatedMinutes": 4,
+    "tags": [
+      "قسمة إقليدية",
+      "قاسم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-adad-tabii_P1",
+      "modelledOn": "BEM 2008 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2008",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "جد حاصل وباقي القسمة الإقليدية للعدد 1176 على 24.",
+      "statement": "حاصل القسمة:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "49",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أكبر مضاعف للعدد 24 لا يتجاوز 1176."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل القسمة هو أكبر عدد طبيعي $q$ يحقق $24 \\times q \\leq 1176$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الباقي أصغر تمامًا من 24."
+        }
+      ],
+      "feedback": {
+        "correct": "$1176 = 24 \\times 49 + 0$ مع $0 < 24$.",
+        "incorrect": "ابحث عن أكبر مضاعف للعدد 24 لا يتجاوز 1176، ثم اطرحه من 1176."
+      },
+      "solution": {
+        "lines": [
+          "$24 \\times 49 = 1176$ و $24 \\times 50 = 1200$ أكبر من 1176.",
+          "$1176 - 1176 = 0$ و $0 < 24$",
+          "إذن المساواة التي تعبّر عن القسمة الإقليدية هي:"
+        ],
+        "result": "1176 = 24 \\times 49 + 0"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "الباقي:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى من 1176 بعد طرح أكبر مضاعف للعدد 24 لا يتجاوزه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي عدد طبيعي أصغر تمامًا من 24."
+        }
+      ],
+      "feedback": {
+        "correct": "$1176 = 24 \\times 49 + 0$: الباقي 0، فهو معدوم.",
+        "incorrect": "اطرح من 1176 أكبر مضاعف للعدد 24 لا يتجاوزه."
+      },
+      "solution": {
+        "lines": [
+          "$1176 - 24 \\times 49 = 0$"
+        ],
+        "result": "r = 0"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل 49 قاسم للعدد 1176؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان $a = b \\times q$ فإن $q$ أيضًا قاسم للعدد $a$."
+        }
+      ],
+      "feedback": {
+        "correct": "$1176 = 24 \\times 49 = 49 \\times 24$: 49 قاسم للعدد 1176.",
+        "incorrect": "اقرأ المساواة التي وجدتها في السؤال 01 في الاتجاهين."
+      },
+      "solution": {
+        "lines": [
+          "$1176 = 24 \\times 49 + 0$",
+          "$1176 = 49 \\times 24$ إذن 49 قاسم للعدد 1176."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

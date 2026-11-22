@@ -1,0 +1,160 @@
+{
+  "id": "ex-4am-jidhr-tarbii-l3-001",
+  "lessonCode": "jidhr-tarbii",
+  "level": 3,
+  "metadata": {
+    "title": "مربع الجذر",
+    "estimatedMinutes": 5,
+    "tags": [
+      "(√a)² = a",
+      "الرمز √"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-7",
+      "page": 26,
+      "section": "أوظّف تعلّماتي",
+      "number": 7
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العددين: $\\sqrt{\\dfrac{100}{49}}$ و $-\\sqrt{17}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب مربع كل عدد مما يلي:",
+      "statement": "احسب مربع العدد $\\sqrt{\\dfrac{100}{49}}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "100/49",
+      "misconceptionSignatures": [
+        {
+          "value": "10/7",
+          "id": "MISC-TARBI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من أجل كل عدد موجب $a$: $(\\sqrt{a})^2 = a$."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\left(\\sqrt{\\dfrac{100}{49}}\\right)^2 = \\dfrac{100}{49}$.",
+        "incorrect": "مربع الجذر التربيعي لعدد موجب هو العدد نفسه، لا جذره."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{100}{49}$ موجب و $(\\sqrt{a})^2 = a$"
+        ],
+        "result": "\\left(\\sqrt{\\dfrac{100}{49}}\\right)^2 = \\dfrac{100}{49}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب مربع العدد $-\\sqrt{17}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "17",
+      "misconceptionSignatures": [
+        {
+          "value": "-17",
+          "id": "MISC-JIDHR-MURABBA-ISHARA"
+        },
+        {
+          "value": "289",
+          "id": "MISC-TARBI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(-\\sqrt{17})^2 = (-\\sqrt{17}) \\times (-\\sqrt{17})$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جداء عددين سالبين عدد موجب."
+        }
+      ],
+      "feedback": {
+        "correct": "$(-\\sqrt{17})^2 = (\\sqrt{17})^2 = 17$.",
+        "incorrect": "مربع عدد سالب عدد موجب."
+      },
+      "solution": {
+        "lines": [
+          "$(-\\sqrt{17})^2 = (-\\sqrt{17}) \\times (-\\sqrt{17}) = (\\sqrt{17})^2$"
+        ],
+        "result": "(-\\sqrt{17})^2 = 17"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "اكتب العدد $\\sqrt{\\dfrac{100}{49}}$ على شكل كسر.",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "10/7",
+      "misconceptionSignatures": [
+        {
+          "value": "50/49",
+          "id": "MISC-JIDHR-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن الكسر الموجب الذي مربعه $\\dfrac{100}{49}$."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\left(\\dfrac{10}{7}\\right)^2 = \\dfrac{100}{49}$ و $\\dfrac{10}{7}$ موجب.",
+        "incorrect": "تحقّق بتربيع الكسر الذي وجدته."
+      },
+      "solution": {
+        "lines": [
+          "$\\left(\\dfrac{10}{7}\\right)^2 = \\dfrac{100}{49}$ و $\\dfrac{10}{7}$ موجب"
+        ],
+        "result": "\\sqrt{\\dfrac{100}{49}} = \\dfrac{10}{7}"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

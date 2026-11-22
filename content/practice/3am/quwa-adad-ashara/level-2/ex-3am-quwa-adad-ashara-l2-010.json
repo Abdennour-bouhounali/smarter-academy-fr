@@ -1,0 +1,144 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l2-010",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — صحيح أم خطأ؟",
+    "estimatedMinutes": 6,
+    "tags": [
+      "اختيار من متعدد",
+      "قوى العدد 10"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اختر في كلّ سؤال الجواب الصحيح."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ الجمل التالية صحيحة؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $10^{-3}$ على شكل مقلوب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القوة ذات الأسّ السالب عدد موجب، والرقم 1 في الرتبة 3."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من رتبة الرقم 1."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$10^{-3} = 0{,}001$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$10^{-3} = -1\\,000$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-SALIB"
+        },
+        {
+          "id": "C",
+          "content": "$10^{-3} = 0{,}0001$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{-3} = \\dfrac{1}{1\\,000} = 0{,}001$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب الكتابة العشرية للقوة المعنية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10^{-3} = \\dfrac{1}{10^{3}} = \\dfrac{1}{1\\,000} = 0{,}001$ ."
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل $10^{0} = 10$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما قيمة جداء لا يحوي أيّ عامل 10؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القوة ذات الأسّ المعدوم تساوي 1."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$10^{1} = 10$ ، أمّا $10^{0}$ فمختلف."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-SIFR"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{0} = 1$ وليس 10.",
+        "incorrect": "اختبر كلّ اقتراح بحساب الكتابة العشرية للقوة المعنية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10^{0} = 1$ و $10^{1} = 10$ .",
+          "إذن $10^{0} \\neq 10$ ."
+        ]
+      }
+    }
+  ]
+}

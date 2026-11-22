@@ -1,0 +1,80 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ashia-l2-010",
+  "lessonCode": "wadiya-idmajiya-ashia",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — المسافة بين حافتين",
+    "estimatedMinutes": 2,
+    "tags": [
+      "قراءة الوضعية",
+      "المسافة بين مستقيمين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ashia_P2",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "حافتا طريق مستقيمان متوازيان (d) و (d′). نريد ممرا [MN] للراجلين، M على (d) و N على (d′)، أقصر ما يمكن."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الممر [MN] أقصر ما يمكن عندما يكون:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "عموديا على (d) و (d′)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "موازيا لـ [AB]",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MAMAR-MUBASHIR"
+        },
+        {
+          "id": "C",
+          "content": "مائلا بزاوية 45 درجة على الحافتين",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة بين مستقيمين متوازيين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل قطعة مائلة أطول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القطعة العمودية."
+        }
+      ],
+      "feedback": {
+        "correct": "المسافة بين مستقيمين متوازيين هي طول قطعة عمودية عليهما، وكل قطعة مائلة أطول منها.",
+        "incorrect": "قارن قطعة عمودية بقطعة مائلة."
+      },
+      "cognitiveDemand": "recall",
+      "difficulty": 2
+    }
+  ]
+}

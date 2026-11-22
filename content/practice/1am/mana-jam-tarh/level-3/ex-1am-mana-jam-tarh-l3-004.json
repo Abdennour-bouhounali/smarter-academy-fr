@@ -1,0 +1,171 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l3-004",
+  "lessonCode": "mana-jam-tarh",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أتمم بالعدد المناسب",
+    "estimatedMinutes": 7,
+    "tags": [
+      "العدد الناقص",
+      "مخطط بأقواس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "مثّل كل مساواة بمخطط بأقواس، ثم أتمم بالعدد المناسب."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "$\\square + 26{,}75 = 80$ ، احسب □.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "53.25",
+      "misconceptionSignatures": [
+        {
+          "value": "106.75",
+          "id": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "80 هو الكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نجد الجزء بطرح الجزء الآخر من الكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$80 - 26{,}75 = 53{,}25$.",
+        "incorrect": "□ جزء من الكل 80: لا نجمع."
+      },
+      "solution": {
+        "lines": [
+          "$\\square = 80 - 26{,}75 = 80{,}00 - 26{,}75 = 53{,}25$"
+        ],
+        "result": "\\square = 53{,}25"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$\\square - 39{,}6 = 12{,}45$ ، احسب □.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "52.05",
+      "misconceptionSignatures": [
+        {
+          "value": "27.15",
+          "id": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "□ هو العدد الذي نطرح منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "39,6 و 12,45 جزآن."
+        }
+      ],
+      "feedback": {
+        "correct": "$39{,}6 + 12{,}45 = 52{,}05$، والتحقق: $52{,}05 - 39{,}6 = 12{,}45$.",
+        "incorrect": "□ هو الكل: هو أكبر من 39,6."
+      },
+      "solution": {
+        "lines": [
+          "$\\square = 39{,}6 + 12{,}45 = 52{,}05$"
+        ],
+        "result": "\\square = 52{,}05"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "في المساواة $\\square - 39{,}6 = 12{,}45$ ، العدد □ في المخطط بأقواس هو:",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الكل (القوس تحت الخط)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "جزء (قوس فوق الخط)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في الطرح، العدد الذي نطرح منه يضمّ العددين الآخرين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ارسم المخطط: أين تضع □؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\square  = 39{,}6 + 12{,}45$: هو الكل.",
+        "incorrect": "العدد الذي نطرح منه يضمّ الحدّ الثاني والفرق."
+      },
+      "solution": {
+        "lines": [
+          "$\\square - 39{,}6 = 12{,}45$ يعني $\\square = 39{,}6 + 12{,}45$.",
+          "□ هو الكل (تحت الخط)."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

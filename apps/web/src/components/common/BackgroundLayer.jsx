@@ -1,13 +1,13 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { m, useScroll, useTransform } from 'framer-motion';
 
 export default function BackgroundLayer() {
   const { scrollYProgress } = useScroll();
   const yBg = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
 
   return (
-    <div style={{ position: 'fixed', inset: 0, zIndex: 0, pointerEvents: 'none', overflow: 'hidden' }}>
+    <div data-background-layer style={{ position: 'fixed', inset: 0, zIndex: 0, pointerEvents: 'none', overflow: 'hidden' }}>{/* `data-background-layer` : une règle d'impression le retire du papier (teacherBank.css) */}
       {/* Dot grid */}
-      <motion.div
+      <m.div
         style={{
           position: 'absolute',
           inset: '-50%',
@@ -20,7 +20,7 @@ export default function BackgroundLayer() {
       />
 
       {/* Blue blob — top right */}
-      <motion.div
+      <m.div
         animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
         transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
         style={{
@@ -36,7 +36,7 @@ export default function BackgroundLayer() {
       />
 
       {/* Purple blob — bottom left */}
-      <motion.div
+      <m.div
         animate={{ scale: [1, 1.5, 1], opacity: [0.2, 0.4, 0.2] }}
         transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
         style={{
@@ -52,7 +52,7 @@ export default function BackgroundLayer() {
       />
 
       {/* Cyan blob — center */}
-      <motion.div
+      <m.div
         animate={{ scale: [1, 1.3, 1], opacity: [0.15, 0.3, 0.15] }}
         transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut', delay: 5 }}
         style={{

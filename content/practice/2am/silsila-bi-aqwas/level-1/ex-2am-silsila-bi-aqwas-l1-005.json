@@ -1,0 +1,180 @@
+{
+  "id": "ex-2am-silsila-bi-aqwas-l1-005",
+  "lessonCode": "silsila-bi-aqwas",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — من على صواب؟",
+    "estimatedMinutes": 8,
+    "tags": [
+      "أقواس",
+      "برّر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "حسب تلميذان العبارة $100 - (36 + 4 \\times 7) \\div 8$ : وجد أمين $92$ ووجدت سعاد $67{,}5$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "من منهم على صواب؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "أمين: وجد $92$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "سعاد: وجدت $67{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-IGNORED"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى القوسين: ما بداخلهما يُحسب أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز الحساب أنت أولًا مرحلة مرحلة، ثم قارنه بالعدد المقترح."
+        }
+      ],
+      "feedback": {
+        "correct": "$100 - (36 + 4 \\times 7) \\div 8 = 92$ .",
+        "incorrect": "احسب أنت العبارة مرحلة مرحلة ثم قارن: ما بين القوسين يُحسب أوّلًا، ثم نكمل العمليات باحترام أولوية الضرب والقسمة على الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$A = 100 - (36 + 4 \\times 7) \\div 8$",
+          "$A = 100 - (36 + 28) \\div 8$",
+          "$A = 100 - 64 \\div 8$",
+          "$A = 100 - 8$",
+          "$A = 92$"
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $B = 90 - (15 + 3 \\times 5)$ .",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "60",
+      "misconceptionSignatures": [
+        {
+          "value": "90",
+          "id": "MISC-AQWAS-IGNORED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع إطارًا حول القوسين: ما بداخلهما يُحسب أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب ما بين القوسين وفق أولوية العمليات، ثم أعد كتابة العبارة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك عملية بعد عملية إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 90 - (15 + 3 \\times 5) = 60$",
+        "incorrect": "ما بين القوسين يُحسب أوّلًا، ثم نكمل العمليات باحترام أولوية الضرب والقسمة على الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$B = 90 - (15 + 3 \\times 5)$",
+          "$B = 90 - (15 + 15)$",
+          "$B = 90 - 30$",
+          "$B = 60$"
+        ],
+        "result": "B = 60"
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب $C = (9{,}6 - 4{,}8) \\times 5 + 2$ .",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "26",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع إطارًا حول القوسين: ما بداخلهما يُحسب أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب ما بين القوسين وفق أولوية العمليات، ثم أعد كتابة العبارة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك عملية بعد عملية إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = (9{,}6 - 4{,}8) \\times 5 + 2 = 26$",
+        "incorrect": "ما بين القوسين يُحسب أوّلًا، ثم نكمل العمليات باحترام أولوية الضرب والقسمة على الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$C = (9{,}6 - 4{,}8) \\times 5 + 2$",
+          "$C = 4{,}8 \\times 5 + 2$",
+          "$C = 24 + 2$",
+          "$C = 26$"
+        ],
+        "result": "C = 26"
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

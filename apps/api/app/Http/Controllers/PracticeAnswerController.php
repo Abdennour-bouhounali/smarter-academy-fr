@@ -51,6 +51,16 @@ class PracticeAnswerController extends Controller
                 'attemptNumber' => $attempt->attempt_number,
                 'hintsUsed' => $attempt->hints_used,
                 'answered' => $attempt->isAnswered(),
+                // La réponse ENREGISTRÉE (feuille d'examen : une étape déjà
+                // répondue se rouvre verrouillée, avec ce que l'élève avait écrit).
+                'answer' => $attempt->isAnswered() ? $attempt->submitted_answer : null,
+                'outcome' => $attempt->isAnswered() ? $attempt->outcome : null,
+                'normalized' => $attempt->isAnswered() ? $attempt->normalized_answer : null,
+                'evaluatedBy' => $attempt->isAnswered() ? $attempt->evaluated_by : null,
+                // Les photos jointes — MÊME avant la réponse : un rechargement
+                // retrouve celles déjà envoyées (3 au plus par étape).
+                'images' => $attempt->images->reject->isExpired()->map->toClient()->values()->all(),
+                'review' => $attempt->review?->toClient(),
             ],
         ]);
     }
@@ -75,17 +85,22 @@ class PracticeAnswerController extends Controller
     }
 
     /**
-     * Enregistre une réponse. L'issue est calculée par le client — même
-     * frontière de confiance que le test final. Ce que le serveur vérifie :
-     * que la tentative est bien celle du demandeur, que la question existe,
-     * et quels points d'apprentissage elle mesure (lus dans le CONTENU, pas
-     * dans la requête).
+     * Enregistre une réponse. L'issue est calculée par le SERVEUR
+     * (AnswerEvaluator, jumeau exact de l'évaluateur du client) à partir de
+     * la réponse brute et du contenu ; ce que le client déclare n'est qu'une
+     * prévision pour son affichage, comparée et journalisée en cas de
+     * désaccord. Le serveur vérifie aussi que la tentative est bien celle du
+     * demandeur, que la question existe, et quels points d'apprentissage
+     * elle mesure (lus dans le CONTENU et le registre, pas dans la requête).
+     * La réponse renvoie l'évaluation du serveur : c'est elle que l'écran
+     * affiche.
      */
     public function store(Request $request, string $sessionId)
     {
         $validated = $request->validate([
             'attemptUuid' => 'required|string|size:36',
-            'outcome' => 'required|string|max:32',
+            // Facultative : la prévision du client. Jamais décisive.
+            'outcome' => 'nullable|string|max:32',
             'answer' => 'nullable|array',
             'normalizedAnswer' => 'nullable|string|max:255',
             'misconceptionId' => 'nullable|string|max:120',
@@ -118,10 +133,24 @@ class PracticeAnswerController extends Controller
         return response()->json([
             'success' => true,
             'duplicate' => $result['duplicate'],
+            // false pour « أعِد المحاولة » : la réponse est jugée, pas enregistrée.
+            'recorded' => $result['recorded'],
             'attempt' => [
                 'attemptUuid' => $result['attempt']->attempt_uuid,
                 'outcome' => $result['attempt']->outcome,
+                'evaluatedBy' => $result['attempt']->evaluated_by,
                 'hintsUsed' => $result['attempt']->hints_used,
+            ],
+            // « تصحيح الأستاذ » : la demande de correction ouverte par cette
+            // réponse (en attente), ou null.
+            'review' => $result['attempt']->review?->toClient(),
+            // Le verdict du serveur — ce que l'écran montre.
+            'evaluation' => [
+                'outcome' => $result['evaluation']['outcome'],
+                'isCorrect' => $result['evaluation']['isCorrect'],
+                'misconceptionId' => $result['evaluation']['misconceptionId'],
+                'normalized' => $result['evaluation']['normalized'],
+                'feedbackKey' => $result['evaluation']['feedbackKey'],
             ],
         ], $result['duplicate'] ? 200 : 201);
     }

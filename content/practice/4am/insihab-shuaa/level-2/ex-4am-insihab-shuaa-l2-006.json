@@ -1,0 +1,131 @@
+{
+  "id": "ex-4am-insihab-shuaa-l2-006",
+  "lessonCode": "insihab-shuaa",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — صورة مثلث محطات",
+    "estimatedMinutes": 2,
+    "tags": [
+      "الانسحاب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_insihab-shuaa_P1",
+      "modelledOn": "act-1"
+    }
+  },
+  "statement": {
+    "content": "على خريطة مترو الجزائر المرسومة على مرصوفة، وعمّاله يُتقنون خدمة المسافرين، محطات المثلث ABC. الانسحاب يحوّل A إلى A′ (الشكل).",
+    "figure": {
+      "points": {
+        "A": [
+          1,
+          1
+        ],
+        "B": [
+          3,
+          1
+        ],
+        "C": [
+          2,
+          3
+        ],
+        "A'": [
+          4,
+          2
+        ],
+        "E": [
+          6,
+          2
+        ],
+        "F": [
+          5,
+          4
+        ],
+        "G": [
+          7,
+          4
+        ]
+      },
+      "grid": true,
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "A"
+        ]
+      ],
+      "vectors": [
+        {
+          "from": "A",
+          "to": "A'",
+          "tone": "amber"
+        }
+      ],
+      "ariaLabel": "ورقة مرصوفة: المثلث ABC، والنقاط A′ و E و F و G؛ السهم من A نحو A′",
+      "maxWidth": 480
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "صورة المثلث ABC بهذا الانسحاب هي:",
+      "learningPoints": [
+        {
+          "code": "4am_insihab-shuaa_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "A′EF",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "A′GF",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-HARAKA-UKHRA"
+        },
+        {
+          "id": "C",
+          "content": "A′EG",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-HARAKA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "صورة نقطة بالانسحاب: نحرّكها بنفس حركة النقطة المعطاة نحو صورتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ حركة السهم المعطى (أفقيا ثم شاقوليا) وطبّقها انطلاقا من النقطة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: للسهم من النقطة نحو صورتها نفس المنحى ونفس الاتجاه ونفس الطول."
+        }
+      ],
+      "feedback": {
+        "correct": "من A إلى A′: ثلاثة مربعات يمينا ومربع نحو الأعلى؛ B ↦ E و C ↦ F.",
+        "incorrect": "طبّق نفس الحركة على B ثم على C."
+      },
+      "difficulty": 2
+    }
+  ]
+}

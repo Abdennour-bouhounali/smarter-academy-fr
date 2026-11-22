@@ -1,0 +1,333 @@
+{
+  "id": "ex-4am-mutatabiqat-shahira-l3-005",
+  "lessonCode": "mutatabiqat-shahira",
+  "level": 3,
+  "metadata": {
+    "title": "BEM 2015 — التمرين الثاني",
+    "estimatedMinutes": 16,
+    "tags": [
+      "مربع فرق",
+      "تحليل",
+      "معادلة جداء معدوم",
+      "جذر تربيعي"
+    ],
+    "source": {
+      "type": "bem",
+      "year": 2015,
+      "part": 1,
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "official",
+      "badge": "BEM 2015",
+      "heading": "التمرين الثاني",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "تعطى العبارة :",
+    "formulas": [
+      "F = (2x - 3)^2 - 16"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "تحقّق بالنشر أنّ: $F = 4x^2 - 12x - 7$",
+      "statement": "نشر $(2x - 3)^2$ ، العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $(2x - 3)^2$ على الشكل $4x^2 + mx + n$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "-12",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-MURABBA-FARQ-BILA-2AB"
+        },
+        {
+          "value": "-6",
+          "id": "MISC-MUTATABIQA-2AB-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على مربع فرق: $(a - b)^2 = a^2 - 2ab + b^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن الحدّين $a$ و $b$ ، ولا تنسَ الحد المضاعف $2ab$ ولا تربيع المعامل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$(2x - 3)^2 = 4x^2 - 12x + 9$ إذن $m = -12$ .",
+        "incorrect": "طبّق المتطابقة الشهيرة حدًّا حدًّا (مربع كل حد والحد المضاعف)، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$F = (2x - 3)^2 - 16$",
+          "$= (2x)^2 + 3^2 - 2 \\times 2x \\times 3 - 16$",
+          "$= 4x^2 + 9 - 12x - 16$"
+        ],
+        "result": "F = 4x^2 - 12x - 7"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $(2x - 3)^2$ على الشكل $4x^2 + mx + n$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "-9",
+          "id": "MISC-MURABBA-FARQ-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحد الثابت هو مجموع الأعداد التي لا تحتوي على $x$ بعد النشر، بإشاراتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$(2x - 3)^2 = 4x^2 - 12x + 9$ إذن $n = 9$ .",
+        "incorrect": "بعد النشر، اجمع الحدود المتشابهة بإشاراتها ثم اقرأ العدد $n$ في الشكل المبسّط."
+      },
+      "solution": {
+        "lines": [
+          "$(2x - 3)^2 = 4x^2 - 12x + 9$"
+        ],
+        "result": "n = 9"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "حلّل $F$ إلى جداء عاملين من الدرجة الأولى.",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $16$ على شكل مربع عدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل $a^2 - b^2 = (a + b)(a - b)$ مع $a = 2x - 3$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك سطرًا بسطر بالحل النموذجي، وانتبه إلى الإشارات عند النشر."
+      },
+      "solution": {
+        "lines": [
+          "$F = (2x - 3)^2 - 16$",
+          "$= (2x - 3)^2 - 4^2$",
+          "$= (2x - 3 - 4)(2x - 3 + 4)$"
+        ],
+        "result": "F = (2x - 7)(2x + 1)"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "lead": "حل المعادلة: $(2x - 7)(2x + 1) = 0$ .",
+      "statement": "الحلّ الأصغر:",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "-1/2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يكون جداء معدومًا إذا كان أحد عامليه على الأقل معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب معادلتين من الدرجة الأولى، ثم حلّ كل واحدة منهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = -\\dfrac{1}{2}$.",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة من الدرجة الأولى، ثم رتّب الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "لدينا: $(2x - 7)(2x + 1) = 0$",
+          "يعني أنّ: $2x - 7 = 0$ أو $2x + 1 = 0$",
+          "أي: $x = \\dfrac{7}{2}$ أو $x = \\dfrac{-1}{2}$",
+          "إذن للمعادلة $(2x - 7)(2x + 1) = 0$ حلّان هما $\\dfrac{-1}{2}$ و $\\dfrac{7}{2}$"
+        ],
+        "result": "x = -\\dfrac{1}{2}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "statement": "الحلّ الأكبر:",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح أو كسر على الشكل a/b (قد يكون سالبًا)",
+      "expectedAnswer": "7/2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ المعادلة الثانية من الدرجة الأولى، ثم قارن الحلّين."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = \\dfrac{7}{2}$.",
+        "incorrect": "اكتب أن أحد العاملين معدوم، وحلّ كل معادلة من الدرجة الأولى، ثم رتّب الحلّين."
+      },
+      "solution": {
+        "lines": [
+          "إذن للمعادلة $(2x - 7)(2x + 1) = 0$ حلّان هما $\\dfrac{-1}{2}$ و $\\dfrac{7}{2}$"
+        ],
+        "result": "x = \\dfrac{7}{2}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "lead": "احسب $F$ من أجل $x = 1 + \\sqrt{2}$ و اكتب النتيجة على الشكل $a + b\\sqrt{2}$ حيث $a$ و $b$ عددان نسبيان.",
+      "statement": "العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $F$ على الشكل $a + b\\sqrt{2}$ : اكتب العدد $a$ فقط",
+      "expectedAnswer": "-7",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الشكل المحلّل: $F = (2x - 7)(2x + 1)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض $x$ بـ $1 + \\sqrt{2}$ في كل عامل، ثم انشر الجداء."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر أن $2\\sqrt{2} \\times 2\\sqrt{2} = 8$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$F = -4\\sqrt{2} - 7$ إذن $a = -7$ .",
+        "incorrect": "عوّض في كل عامل وبسّطه أولًا، ثم انشر الجداء واجمع الحدود التي فيها $\\sqrt{2}$ معًا."
+      },
+      "solution": {
+        "lines": [
+          "$F = (2x - 7)(2x + 1)$",
+          "$= [2(1 + \\sqrt{2}) - 7][2(1 + \\sqrt{2}) + 1]$",
+          "$= (2 + 2\\sqrt{2} - 7)(2 + 2\\sqrt{2} + 1)$",
+          "$= (2\\sqrt{2} - 5)(2\\sqrt{2} + 3)$",
+          "$= 2\\sqrt{2} \\times 2\\sqrt{2} + 3 \\times 2\\sqrt{2} - 5 \\times 2\\sqrt{2} - 15$",
+          "$= 8 + 6\\sqrt{2} - 10\\sqrt{2} - 15$"
+        ],
+        "result": "F = -4\\sqrt{2} - 7"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $F$ على الشكل $a + b\\sqrt{2}$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "-4",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع معاملات $\\sqrt{2}$ بإشاراتها بعد النشر."
+        }
+      ],
+      "feedback": {
+        "correct": "$F = -7 - 4\\sqrt{2}$ إذن $b = -4$ .",
+        "incorrect": "اجمع الحدّين $6\\sqrt{2}$ و $-10\\sqrt{2}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$F = -7 - 4\\sqrt{2}$"
+        ],
+        "result": "b = -4"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

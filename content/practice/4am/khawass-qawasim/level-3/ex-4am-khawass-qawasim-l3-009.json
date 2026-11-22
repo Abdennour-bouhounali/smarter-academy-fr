@@ -1,0 +1,165 @@
+{
+  "id": "ex-4am-khawass-qawasim-l3-009",
+  "lessonCode": "khawass-qawasim",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2023 — 1197 و 315",
+    "estimatedMinutes": 8,
+    "tags": [
+      "خاصية 1",
+      "كسر غير قابل للاختزال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_khawass-qawasim_P1",
+      "modelledOn": "BEM 2023 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن الأعداد C ، B ، A حيث:",
+    "formulas": [
+      "A = \\dfrac{1197}{315}",
+      "B = 1197 + 315",
+      "C = 1197 - 315"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب العدد A على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "19/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن قاسم مشترك للبسط والمقام: جرّب 9 ثم 7."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختزل حتى لا يبقى قاسم مشترك غير 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1197}{315} = \\dfrac{63 \\times 19}{63 \\times 5} = \\dfrac{19}{5}$.",
+        "incorrect": "اقسم البسط والمقام على قواسمهما المشتركة إلى أن يصير الكسر غير قابل للاختزال.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال."
+      },
+      "solution": {
+        "lines": [
+          "$1197 = 63 \\times 19$ و $315 = 63 \\times 5$",
+          "$\\dfrac{1197}{315} = \\dfrac{63 \\times 19}{63 \\times 5}$",
+          "العددان 19 و 5 ليس لهما قاسم مشترك غير 1."
+        ],
+        "result": "A = \\dfrac{19}{5}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "علمًا أن $1197 = 21 \\times 57$ و $315 = 21 \\times 15$ ، ودون حساب B و C:",
+      "statement": "اكتب B على الشكل $21 \\times k$ حيث $k$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k$ فقط (عدد طبيعي)",
+      "expectedAnswer": "72",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الكتابتين $1197 = 21 \\times 57$ و $315 = 21 \\times 15$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرج 21 عاملًا مشتركًا: $21 \\times q + 21 \\times q' = 21 \\times (q + q')$."
+        }
+      ],
+      "feedback": {
+        "correct": "$1197 + 315 = 21 \\times (57 + 15) = 21 \\times 72$.",
+        "incorrect": "القاسم المشترك لعددين يقسم مجموعهما: اكتب كلا من العددين على الشكل $21 \\times q$ ثم أخرج 21 عاملًا مشتركًا."
+      },
+      "solution": {
+        "lines": [
+          "$1197 + 315 = 21 \\times 57 + 21 \\times 15$",
+          "$1197 + 315 = 21 \\times (57 + 15)$",
+          "$1197 + 315 = 21 \\times 72$ ، إذن 21 يقسم $1197 + 315$."
+        ],
+        "result": "1197 + 315 = 21 \\times 72"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "اكتب C على الشكل $21 \\times k'$ حيث $k'$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k'$ فقط (عدد طبيعي)",
+      "expectedAnswer": "42",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الكتابتين $1197 = 21 \\times 57$ و $315 = 21 \\times 15$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرج 21 عاملًا مشتركًا: $21 \\times q - 21 \\times q' = 21 \\times (q - q')$."
+        }
+      ],
+      "feedback": {
+        "correct": "$1197 - 315 = 21 \\times (57 - 15) = 21 \\times 42$.",
+        "incorrect": "القاسم المشترك لعددين يقسم فرقهما: اكتب كلا من العددين على الشكل $21 \\times q$ ثم أخرج 21 عاملًا مشتركًا."
+      },
+      "solution": {
+        "lines": [
+          "$1197 - 315 = 21 \\times 57 - 21 \\times 15$",
+          "$1197 - 315 = 21 \\times (57 - 15)$",
+          "$1197 - 315 = 21 \\times 42$ ، إذن 21 يقسم $1197 - 315$."
+        ],
+        "result": "1197 - 315 = 21 \\times 42"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

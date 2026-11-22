@@ -1,0 +1,66 @@
+{
+  "id": "ex-4am-misaha-hajm-kura-l3-007",
+  "lessonCode": "misaha-hajm-kura",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — خزان غاز صغير باللتر",
+    "estimatedMinutes": 3,
+    "tags": [
+      "حجم الجلة",
+      "وحدات",
+      "التدوير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_misaha-hajm-kura_P3",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "خزان غاز كروي صغير لمطبخ مقهى، نصف قطره الداخلي $0{,}3\\,\\mathrm{m}$ . تذكّر: $1\\,\\mathrm{m}^3 = 1000\\,\\mathrm{L}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما سعته باللتر مدوّرة إلى الوحدة؟",
+      "learningPoints": [
+        {
+          "code": "4am_misaha-hajm-kura_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (باللتر)",
+      "expectedAnswer": "113",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الحجم بالـ $\\mathrm{m}^3$ أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$(0{,}3)^3 = 0{,}027$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب في 1000 لتحوّل إلى لتر ثم دوّر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\frac{4}{3}\\pi \\times 0{,}027 = 0{,}1131\\ldots\\,\\mathrm{m}^3 \\approx 113\\,\\mathrm{L}$ .",
+        "incorrect": "لا تنس التحويل: $1\\,\\mathrm{m}^3 = 1000\\,\\mathrm{L}$ ."
+      },
+      "difficulty": 3,
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-WAHDA",
+          "value": "0.11"
+        }
+      ]
+    }
+  ]
+}

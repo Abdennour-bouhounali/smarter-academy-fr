@@ -1,0 +1,233 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-amaliyat-tabiiya-ushriya-l2-008",
+  "lessonCode": "wadiya-idmajiya-amaliyat-tabiiya-ushriya",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — كرات النادي الرياضي",
+    "estimatedMinutes": 6,
+    "tags": [
+      "سلسلة بأقواس",
+      "الجزء الصحيح"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يملك نادٍ رياضي $120$ كرة، أعار منها $24$ كرة لمدرسة مجاورة، ثم وزّع الباقي بالتساوي على $8$ أقسام."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ سلسلة تعطي عدد الكرات التي يتسلّمها كلّ قسم؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$120 - 24 \\div 8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-NOBRACKET"
+        },
+        {
+          "id": "B",
+          "content": "$(120 - 24) \\div 8$",
+          "isCorrect": true
+        }
+      ],
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المطلوب جيّدًا: ما العملية التي تُنجز في الأخير، وما الذي يُحسب قبلها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختبر كلّ سلسلة مقترحة بالحساب أو بالقاعدة المناسبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الجواب هو السلسلة التي تترجم المطلوب وتعطي القيمة المنتظرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$(120 - 24) \\div 8 = 12$ .",
+        "incorrect": "اختبر كلّ سلسلة بالحساب: الصحيحة هي التي تترجم المطلوب وتعطي القيمة المنتظرة، وانتبه إلى القوسين."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة الصحيحة: $(120 - 24) \\div 8$",
+          "$A = (120 - 24) \\div 8$",
+          "$A = 96 \\div 8$",
+          "$A = 12$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم كرة يتسلّمها كلّ قسم؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "117",
+          "id": "MISC-AQWAS-IGNORED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الوضعية جملة جملة: كلّ جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب سلسلة عمليات تترجمها، وضع بين قوسين ما يجب حسابه أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب السلسلة بالترتيب الصحيح للعمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "$(120 - 24) \\div 8 = 12$ .",
+        "incorrect": "القوسان ليسا زينة: ما بينهما يُحسب أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $(120 - 24) \\div 8$",
+          "$A = (120 - 24) \\div 8$",
+          "$A = 96 \\div 8$",
+          "$A = 12$"
+        ],
+        "result": "12"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "يتسلّم كلّ قسم $12$ كرة، وتُعبّأ الكرات في أكياس يسع كلّ منها $5$ كرات. كم كيسًا كاملًا يملؤه نصيب قسم واحد؟",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-SYN-AMALIYAT-ROUNDUP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نريد عددًا من الأشياء الكاملة: كم مرّة يدخل العدد الصغير كاملًا في الكبير؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة واحتفظ بالجزء الصحيح من الحاصل فقط."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تقرّب الحاصل إلى عدد أكبر: الشيء الناقص لا يُحسب."
+        }
+      ],
+      "feedback": {
+        "correct": "$12 \\div 5 = 2{,}4$ ، والجزء الصحيح 2 .",
+        "incorrect": "نريد أشياء كاملة فقط: نأخذ الجزء الصحيح من الحاصل ولا نقرّبه إلى عدد أكبر."
+      },
+      "solution": {
+        "lines": [
+          "$12 \\div 5 = 2{,}4$",
+          "الجزء الصحيح للحاصل هو $2$ ، فالشيء الأخير الناقص لا يُحسب."
+        ],
+        "result": "2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "برّر لماذا لا نكتب $120 - 24 \\div 8$ لحساب نصيب القسم.",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-amaliyat-tabiiya-ushriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز الحساب على ورقتك مرحلة مرحلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اسأل: أيّ حساب يثبت ما تقول؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة تذكر القاعدة المستعملة."
+        }
+      ],
+      "feedback": {
+        "correct": "$(120 - 24) \\div 8 = 12$",
+        "incorrect": "قارن تبريرك بالحلّ النموذجي: الفكرة ثم الحساب الذي يدعمها."
+      },
+      "solution": {
+        "lines": [
+          "الباقي بعد الإعارة هو $120 - 24 = 96$ ، وهو الذي يُقسم على $8$ ، فلا بدّ من قوسين.",
+          "$120 - 24 \\div 8 = 120 - 3 = 117$ : هذا عدد لا علاقة له بالتوزيع.",
+          "$(120 - 24) \\div 8 = 12$"
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

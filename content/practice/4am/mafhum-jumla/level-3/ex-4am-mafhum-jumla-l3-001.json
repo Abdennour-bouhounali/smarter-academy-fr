@@ -1,0 +1,95 @@
+{
+  "id": "ex-4am-mafhum-jumla-l3-001",
+  "lessonCode": "mafhum-jumla",
+  "level": 3,
+  "metadata": {
+    "title": "BEM 2022 — التمرين الثالث",
+    "estimatedMinutes": 6,
+    "tags": [
+      "جملة",
+      "ثنائية"
+    ],
+    "source": {
+      "type": "bem",
+      "year": 2022,
+      "part": 1,
+      "exercise": 3
+    },
+    "exam": {
+      "kind": "excerpt",
+      "badge": "BEM 2022",
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "لتكن الثنائيتان $(10 ; 20)$ و $(20 ; 10)$ .",
+      "statement": "أيهما حل لهذه الجملة : $\\begin{cases} x + y = 30 \\\\ x + \\dfrac{5}{2}y = 45 \\end{cases}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-jumla_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_mafhum-jumla_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية التي هي حل للجملة: قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر)",
+      "expectedAnswer": {
+        "x": "20",
+        "y": "10"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "10",
+            "y": "20"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كل ثنائية في المعادلتين: العدد الأول قيمة $x$ والثاني قيمة $y$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب $x + \\dfrac{5}{2}y$ لكل ثنائية وقارنه بـ 45."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الحل يحقق المعادلتين في آن واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$20 + 10 = 30$ ؛ $20 + \\dfrac{5}{2} \\times 10 = 45$.",
+        "incorrect": "الحل يحقق المعادلتين في آن واحد، والترتيب في الثنائية مهم: عوّض كل ثنائية في المعادلتين."
+      },
+      "solution": {
+        "lines": [
+          "التحقق من الثنائية $(10 ; 20)$ حل الجملة:",
+          "$\\begin{cases} 10 + 20 = 30 \\\\ 10 + \\dfrac{5}{2} \\times 20 = 60 \\neq 45 \\end{cases}$",
+          "ومنه الثنائية $(10 ; 20)$ ليست حل للجملة.",
+          "الثنائية $(20 ; 10)$ :",
+          "$\\begin{cases} 20 + 10 = 30 \\\\ 20 + \\dfrac{5}{2} \\times 10 = 45 \\end{cases}$",
+          "ومنه الثنائية $(20 ; 10)$ حل للجملة."
+        ],
+        "result": "(20 ; 10)"
+      },
+      "timeSeconds": 300
+    }
+  ]
+}

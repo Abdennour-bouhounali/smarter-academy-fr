@@ -1,0 +1,131 @@
+{
+  "id": "ex-4am-qasim-mushtarak-akbar-l1-002",
+  "lessonCode": "qasim-mushtarak-akbar",
+  "level": 1,
+  "metadata": {
+    "title": "دوري الآن — القواسم المشتركة للعددين 65 و 78",
+    "estimatedMinutes": 4,
+    "tags": [
+      "قواسم مشتركة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "now-11-1",
+      "page": 11,
+      "section": "دوري الآن",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن القواسم المشتركة للعددين 65 و 78.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        13
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            13
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قائمة قواسم العدد 65 ثم قائمة قواسم العدد 78."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القاسم المشترك يقسم العددين في آن واحد: ابحث عن الأعداد الموجودة في القائمتين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1، فهو يقسم كل عدد طبيعي."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 65 و 78 هي: 1 ، 13.",
+        "incorrect": "اكتب قائمتي القواسم كاملتين، ثم احتفظ فقط بالأعداد التي تظهر في القائمتين معًا."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 65 هي: 1 ، 5 ، 13 ، 65",
+          "قواسم العدد 78 هي: 1 ، 2 ، 3 ، 6 ، 13 ، 26 ، 39 ، 78",
+          "القواسم المشتركة للعددين 65 و 78 هي: 1 ، 13"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج PGCD(65 ; 78).",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-mushtarak-akbar_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل القواسم المشتركة التي وجدتها في السؤال السابق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القاسم المشترك الأكبر هو أكبر هذه القواسم المشتركة."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 65 و 78 هي 1 ، 13، وأكبرها 13.",
+        "incorrect": "اكتب قائمتي القواسم كاملتين، ثم خذ أكبر عدد يظهر في القائمتين معًا."
+      },
+      "solution": {
+        "lines": [
+          "القواسم المشتركة للعددين 65 و 78 هي: 1 ، 13",
+          "أكبرها هو 13، إذن:"
+        ],
+        "result": "PGCD(65 ; 78) = 13"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

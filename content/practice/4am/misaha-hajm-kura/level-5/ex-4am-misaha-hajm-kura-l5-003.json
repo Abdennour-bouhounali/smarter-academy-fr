@@ -1,0 +1,66 @@
+{
+  "id": "ex-4am-misaha-hajm-kura-l5-003",
+  "lessonCode": "misaha-hajm-kura",
+  "level": 5,
+  "metadata": {
+    "title": "وضعية — علبة كرات الطاولة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "حجم الجلة",
+      "أرخميدس",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_misaha-hajm-kura_P2",
+      "modelledOn": "intro-archimedes"
+    }
+  },
+  "statement": {
+    "content": "علبة أسطوانية بها ثلاث كرات طاولة قطر كل منها $4\\,\\mathrm{cm}$ ، مرصوفة فوق بعضها: نصف قطر العلبة $2\\,\\mathrm{cm}$ وارتفاعها $12\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما حجم الفراغ في العلبة بالـ $\\mathrm{cm}^3$ مدوّرا إلى الجزء من عشرة؟",
+      "learningPoints": [
+        {
+          "code": "4am_misaha-hajm-kura_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة (مثل 2,5) أو عدد طبيعي",
+      "expectedAnswer": "50.3",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حجم العلبة $\\pi \\times 2^2 \\times 12 = 48\\pi$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حجم الكرات $3 \\times \\frac{4}{3}\\pi \\times 2^3 = 32\\pi$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح ثم دوّر."
+        }
+      ],
+      "feedback": {
+        "correct": "$48\\pi - 32\\pi = 16\\pi \\approx 50{,}3\\,\\mathrm{cm}^3$ : ثلث العلبة.",
+        "incorrect": "الفراغ = العلبة − الكرات."
+      },
+      "difficulty": 5,
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-HAJM-MUAMIL",
+          "value": "150.8"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l1-002",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 1,
+  "metadata": {
+    "title": "تمرين 6 — الحالة 1",
+    "estimatedMinutes": 4,
+    "tags": [
+      "مركبتا شعاع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-6",
+      "page": 146,
+      "section": "مركبتا شعاع علمت إحداثيات مبدئه ونهايته",
+      "number": 6
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 146، تمرين 6، الحالة 1): المستوي مزوّد بمعلم مبدؤه O. $M(1\\,;\\,6)$ ، $N(-2\\,;\\,-6)$ ، $P(-2\\,;\\,4)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مركبتا الشعاع $\\overrightarrow{MN}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "point",
+      "answerFormat": "المركبتان: الأولى ثم الثانية — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "-3",
+        "y": "-12"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "3",
+            "y": "12"
+          },
+          "id": "MISC-MAALAM-TARH-MAQLUB"
+        },
+        {
+          "value": {
+            "x": "3",
+            "y": "-12"
+          },
+          "id": "MISC-MAALAM-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبدأ M والنهاية N."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المركبة الأولى: فاصلة N ناقص فاصلة M."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المركبة الثانية: ترتيب N ناقص ترتيب M، وانتبه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$-2 - 1 = -3$ و $-6 - 6 = -12$ .",
+        "incorrect": "احسب $x_N - x_M$ ثم $y_N - y_M$ ."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "مركبتا الشعاع $\\overrightarrow{NP}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "point",
+      "answerFormat": "المركبتان: الأولى ثم الثانية — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "0",
+        "y": "10"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "0",
+            "y": "-10"
+          },
+          "id": "MISC-MAALAM-TARH-MAQLUB"
+        },
+        {
+          "value": {
+            "x": "-4",
+            "y": "-2"
+          },
+          "id": "MISC-MAALAM-JAM-IHDATHIYAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبدأ N والنهاية P."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المركبة الأولى: فاصلة P ناقص فاصلة N."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المركبة الثانية: ترتيب P ناقص ترتيب N، وانتبه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$-2 - (-2) = 0$ و $4 - (-6) = 10$ : المركبة الأولى معدومة (N و P على نفس الشاقول).",
+        "incorrect": "المبدأ N والنهاية P؛ طرح عدد سالب يعني جمع معاكسه."
+      }
+    },
+    {
+      "id": "q3",
+      "statement": "مركبتا الشعاع $\\overrightarrow{MP}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "answerType": "point",
+      "answerFormat": "المركبتان: الأولى ثم الثانية — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "-3",
+        "y": "-2"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "3",
+            "y": "2"
+          },
+          "id": "MISC-MAALAM-TARH-MAQLUB"
+        },
+        {
+          "value": {
+            "x": "-2",
+            "y": "4"
+          },
+          "id": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبدأ M والنهاية P."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المركبة الأولى: فاصلة P ناقص فاصلة M."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المركبة الثانية: ترتيب P ناقص ترتيب M، وانتبه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$-2 - 1 = -3$ و $4 - 6 = -2$ ؛ ونتحقق: مركبتا MN زائد مركبتي NP.",
+        "incorrect": "المبدأ M والنهاية P."
+      }
+    }
+  ]
+}

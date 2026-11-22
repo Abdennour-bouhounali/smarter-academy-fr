@@ -1,0 +1,83 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ashia-l4-002",
+  "lessonCode": "wadiya-idmajiya-ashia",
+  "level": 4,
+  "metadata": {
+    "title": "التمرين 19 — الشعاع U",
+    "estimatedMinutes": 3,
+    "tags": [
+      "علاقة شال",
+      "قاعدة متوازي الأضلاع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-19",
+      "page": 137,
+      "section": "الوضعيات",
+      "number": 19
+    }
+  },
+  "statement": {
+    "content": "في التمرين 19: EGDC مربع (F مركزه). ليكن $\\vec{U} = \\overrightarrow{EF} + \\overrightarrow{EC} + \\overrightarrow{FG}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "$\\vec{U}$ يساوي:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{ED}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{GC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-QAIDA-QUTR"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{EC}$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$\\overrightarrow{0}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SIFR-ADAD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رتّب: $\\overrightarrow{EF} + \\overrightarrow{FG}$ أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "علاقة شال: $\\overrightarrow{EG}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم قاعدة متوازي الأضلاع في EGDC."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{EF} + \\overrightarrow{FG} = \\overrightarrow{EG}$ ثم $\\overrightarrow{EG} + \\overrightarrow{EC} = \\overrightarrow{ED}$ .",
+        "incorrect": "المجموع هو القطر الصادر من المبدأ المشترك E."
+      },
+      "cognitiveDemand": "reason",
+      "difficulty": 4
+    }
+  ]
+}

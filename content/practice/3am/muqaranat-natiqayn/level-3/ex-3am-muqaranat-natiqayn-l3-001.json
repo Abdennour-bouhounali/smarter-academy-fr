@@ -1,0 +1,270 @@
+{
+  "id": "ex-3am-muqaranat-natiqayn-l3-001",
+  "lessonCode": "muqaranat-natiqayn",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — نشر وتبسيط عبارتين والفرق بينهما",
+    "estimatedMinutes": 13,
+    "tags": [
+      "نشر",
+      "فرق عبارتين",
+      "تساوي"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-69",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$E$ و $F$ عبارتان جبريتان حيث:",
+    "formulas": [
+      "E = 5x(x + 4) - (x^2 - 4x - 36)",
+      "F = (2x + 6)^2"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "انشر وبسّط $E$ ، واكتبها على الشكل $ax^2 + bx + c$ . ما العدد $b$ ؟",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العبارتان؟ وكيف يُكتب فرقهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الفرق بوضع العبارة الثانية بين قوسين ثم بسّط وانتبه إلى إشارة ما بعد الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض قيمة بسيطة للحرف في الفرق وفي النتيجة."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "24",
+      "misconceptionSignatures": [
+        {
+          "value": "16",
+          "id": "MISC-MUQ-BRACKET"
+        }
+      ],
+      "feedback": {
+        "correct": "$E = 4x^2 + 24x + 36$ ، إذن $b = 24$ .",
+        "incorrect": "ضع العبارة الثانية بين قوسين قبل الطرح، ثمّ بسّط."
+      },
+      "solution": {
+        "lines": [
+          "$E = 5x^2 + 20x - x^2 + 4x + 36$",
+          "$E = 4x^2 + 24x + 36$"
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "انشر وبسّط $F$ ، واكتبها على الشكل $ax^2 + bx + c$ . ما العدد $b$ ؟",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العبارتان؟ وكيف يُكتب فرقهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الفرق بوضع العبارة الثانية بين قوسين ثم بسّط وانتبه إلى إشارة ما بعد الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض قيمة بسيطة للحرف في الفرق وفي النتيجة."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "24",
+      "feedback": {
+        "correct": "$F = 4x^2 + 24x + 36$ ، إذن $b = 24$ .",
+        "incorrect": "ضع العبارة الثانية بين قوسين قبل الطرح، ثمّ بسّط."
+      },
+      "solution": {
+        "lines": [
+          "$F = (2x)^2 + 2 \\times 2x \\times 6 + 6^2$",
+          "$F = 4x^2 + 24x + 36$"
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "بسّط العبارة $M = E - F$ ، فتجد عددًا ثابتًا. ما هو؟",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر)",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العبارتان؟ وكيف يُكتب فرقهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الفرق بوضع العبارة الثانية بين قوسين ثم بسّط وانتبه إلى إشارة ما بعد الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض قيمة بسيطة للحرف في الفرق وفي النتيجة."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "0",
+      "feedback": {
+        "correct": "$M = 0$ .",
+        "incorrect": "ضع العبارة الثانية بين قوسين قبل الطرح، ثمّ بسّط."
+      },
+      "solution": {
+        "lines": [
+          "$M = (4x^2 + 24x + 36) - (4x^2 + 24x + 36)$",
+          "$M = 0$"
+        ]
+      }
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "ماذا تستنتج بالنسبة إلى العبارتين $E$ و $F$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا تعلّمنا إشارة الفرق عن ترتيب العددين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اربط إشارة الفرق بالمقارنة بين العددين، وانتبه إلى أيّ العددين هو الأول في الفرق."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا انعكس ترتيب الطرح فإنّ إشارة الفرق تنعكس أيضًا."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا نستطيع المقارنة بين $E$ و $F$ دون تعويض $x$ بعدد",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-NEED-VALUES"
+        },
+        {
+          "id": "B",
+          "content": "$E = F$ مهما كانت قيمة $x$",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "الفرق معدوم، إذن $E = F$ .",
+        "incorrect": "اربط إشارة الفرق بالترتيب، وانتبه إلى ترتيب الطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$E - F = 0$ مهما كانت قيمة $x$ ، إذن $E = F$ ."
+        ]
+      }
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "علّل: لماذا يكفي أن نجد $E - F = 0$ لنقول إنّ $E = F$ ؟",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي تريد تبريره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الفرق أوّلًا ثم إشارته ثم الخلاصة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة واحدة تربط إشارة الفرق بالمقارنة."
+        }
+      ],
+      "timeSeconds": 180,
+      "feedback": {
+        "correct": "الفرق معدوم، إذن العبارتان متساويتان.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثمّ قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "$E - F = 0$ تعني أنّ العددين $E$ و $F$ متساويان من أجل كلّ قيمة للحرف $x$ ."
+        ]
+      }
+    }
+  ]
+}

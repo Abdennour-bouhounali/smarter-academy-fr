@@ -1,0 +1,204 @@
+{
+  "_comment": "« حصّة القسم » — the DEFAULT class tests of lesson « الأعداد الناطقة والأعداد غير الناطقة » (docs/architecture/CLASS_SESSION.md §4). `start` opens the hour: what the lesson stands on (the power of a rational number, 3am.m3.r06: the square of a negative number, of a fraction, of a decimal, a fifth power; and what lesson 1 of the unit taught, 4am.m1.r06: a whole root, a value by default to 0,1), then two questions of the NEW lesson asked in the words of a court, never with the name of a key (`teaser`: the side of a court whose area is a fraction, the exact side of a court of 23 against a fraction and the calculator's digits — asked again at the end with other numbers and the same answer). `end` closes it on the three keys and the four الكفاءات of the lesson (one item of the learning net, 4am.m1.r06; P1 classify e5 e6, P2 the root of a square of a rational e1 e3 e4 — a fraction not reduced, a decimal —, P3 no fraction and no calculator's display is the root e2 e7, P4 the rounded value e8 — no question of the bank tests P4). `pool` holds more prepared questions a teacher may add to his own copy. The numbers are the platform's own: none of the lesson's exercise bank, none of the student's story nor of the board (scripts/lesson-bank-numbers.mjs). A number answer is a whole number (the board's keypad has digits only); a fraction, a decimal or a root is asked as a choice. Every question carries a `check` from which its answer is RE-COMPUTED, exactly, by a test (defaultTests.test.js): a default test never ships a wrong answer. A class test never changes a student's progress.",
+  "lesson": "natiqa-ghayr-natiqa",
+  "grade": "4am",
+  "version": 1,
+  "start": [
+    {
+      "id": "s1",
+      "item": "3am.m3.r06",
+      "kind": "number",
+      "text": "احسب $(-21)^2$.",
+      "answer": 441,
+      "check": { "type": "power", "base": "-21", "exp": 2 }
+    },
+    {
+      "id": "s2",
+      "item": "3am.m3.r06",
+      "kind": "choice",
+      "text": "ما قيمة $(\\dfrac{5}{6})^2$؟",
+      "options": ["$\\dfrac{25}{36}$", "$\\dfrac{10}{12}$", "$\\dfrac{25}{6}$"],
+      "answer": 0,
+      "check": { "type": "power", "base": "5/6", "exp": 2 }
+    },
+    {
+      "id": "s3",
+      "item": "3am.m3.r06",
+      "kind": "truefalse",
+      "text": "$(0{,}7)^2 = 4{,}9$.",
+      "answer": false,
+      "check": { "type": "power", "base": "0,7", "exp": 2, "claim": "4,9" }
+    },
+    {
+      "id": "s4",
+      "item": "3am.m3.r06",
+      "kind": "truefalse",
+      "text": "$(-2)^5 = -32$.",
+      "answer": true,
+      "check": { "type": "power", "base": "-2", "exp": 5, "claim": "-32" }
+    },
+    {
+      "id": "s5",
+      "item": "4am.m1.r06",
+      "kind": "number",
+      "text": "احسب $\\sqrt{2209}$.",
+      "answer": 47,
+      "check": { "type": "root", "a": "2209" }
+    },
+    {
+      "id": "s6",
+      "item": "4am.m1.r06",
+      "kind": "choice",
+      "text": "ما القيمة المقرّبة إلى $0{,}1$ بالنقصان للعدد $\\sqrt{57}$؟",
+      "options": ["$7{,}6$", "$7{,}5$", "$28{,}5$"],
+      "answer": 1,
+      "check": { "type": "rootApprox", "a": "57", "step": "0,1", "by": "below" }
+    },
+    {
+      "id": "s7",
+      "item": "4am.m1.r06",
+      "kind": "truefalse",
+      "teaser": true,
+      "text": "ساحة مربّعة مساحتها $\\dfrac{49}{81}$ بلاطة، إذن طول ضلعها $\\dfrac{7}{9}$.",
+      "answer": true,
+      "check": { "type": "root", "a": "49/81", "claim": "7/9", "court": true }
+    },
+    {
+      "id": "s8",
+      "item": "4am.m1.r06",
+      "kind": "choice",
+      "teaser": true,
+      "text": "ساحة مربّعة مساحتها 23 بلاطة. أيّ هذه الأعداد هو طول ضلعها بالضبط؟",
+      "options": ["$\\dfrac{43}{9}$", "$4{,}795831523$", "$\\sqrt{23}$"],
+      "answer": 2,
+      "check": { "type": "exactSide", "a": "23" }
+    }
+  ],
+  "end": [
+    {
+      "id": "e1",
+      "item": "4am.m1.r06",
+      "kind": "truefalse",
+      "pairOf": "s7",
+      "text": "$\\sqrt{\\dfrac{36}{289}} = \\dfrac{6}{17}$.",
+      "answer": true,
+      "check": { "type": "root", "a": "36/289", "claim": "6/17" }
+    },
+    {
+      "id": "e2",
+      "item": "4am.m1.r06",
+      "kind": "choice",
+      "pairOf": "s8",
+      "text": "ما القيمة المضبوطة لطول ضلع ساحة مربّعة مساحتها 29 بلاطة؟",
+      "options": ["$\\dfrac{70}{13}$", "$5{,}385164807$", "$\\sqrt{29}$"],
+      "answer": 2,
+      "check": { "type": "exactSide", "a": "29" }
+    },
+    {
+      "id": "e3",
+      "item": "4am.m1.r06",
+      "kind": "choice",
+      "text": "أيّ كسر يساوي العدد $\\sqrt{\\dfrac{50}{98}}$؟",
+      "options": ["$\\dfrac{25}{49}$", "$\\dfrac{5}{7}$", "$\\dfrac{25}{7}$"],
+      "answer": 1,
+      "check": { "type": "root", "a": "50/98" }
+    },
+    {
+      "id": "e4",
+      "item": "4am.m1.r06",
+      "kind": "choice",
+      "text": "احسب $\\sqrt{0{,}0361}$.",
+      "options": ["$0{,}19$", "$0{,}019$", "$1{,}9$"],
+      "answer": 0,
+      "check": { "type": "root", "a": "0,0361" }
+    },
+    {
+      "id": "e5",
+      "item": "4am.m1.r06",
+      "kind": "choice",
+      "text": "أيّ هذه الأعداد عدد ناطق؟",
+      "options": ["$\\sqrt{60}$", "$\\sqrt{\\dfrac{12}{75}}$", "$\\sqrt{0{,}9}$"],
+      "answer": 1,
+      "check": { "type": "rationalPick", "want": "rational" }
+    },
+    {
+      "id": "e6",
+      "item": "4am.m1.r06",
+      "kind": "truefalse",
+      "text": "$\\sqrt{\\dfrac{9}{20}}$ عدد ناطق.",
+      "answer": false,
+      "check": { "type": "isRational", "a": "9/20", "says": "rational" }
+    },
+    {
+      "id": "e7",
+      "item": "4am.m1.r06",
+      "kind": "truefalse",
+      "text": "تعرض الحاسبة للعدد $\\sqrt{21}$ القيمة 4,582575695، إذن $\\sqrt{21} = 4{,}582575695$.",
+      "answer": false,
+      "check": { "type": "root", "a": "21", "claim": "4,582575695" }
+    },
+    {
+      "id": "e8",
+      "item": "4am.m1.r06",
+      "kind": "choice",
+      "text": "ما المدوَّر إلى $0{,}1$ للعدد $\\sqrt{46}$؟",
+      "options": ["$6{,}7$", "$6{,}9$", "$6{,}8$"],
+      "answer": 2,
+      "check": { "type": "rounded", "a": "46", "step": "0,1" }
+    }
+  ],
+  "pool": [
+    {
+      "id": "p1",
+      "item": "4am.m1.r06",
+      "kind": "choice",
+      "text": "ما المدوَّر إلى $0{,}01$ للعدد $\\sqrt{55}$؟",
+      "options": ["$7{,}41$", "$7{,}42$", "$7{,}4$"],
+      "answer": 1,
+      "check": { "type": "rounded", "a": "55", "step": "0,01" }
+    },
+    {
+      "id": "p2",
+      "item": "4am.m1.r06",
+      "kind": "choice",
+      "text": "ما القيمة المقرّبة إلى $0{,}01$ بالزيادة للعدد $\\sqrt{46}$؟",
+      "options": ["$6{,}78$", "$6{,}79$"],
+      "answer": 1,
+      "check": { "type": "rootApprox", "a": "46", "step": "0,01", "by": "above" }
+    },
+    {
+      "id": "p3",
+      "item": "4am.m1.r06",
+      "kind": "truefalse",
+      "text": "$\\sqrt{0{,}0121}$ عدد غير ناطق.",
+      "answer": false,
+      "check": { "type": "isRational", "a": "0,0121", "says": "irrational" }
+    },
+    {
+      "id": "p4",
+      "item": "4am.m1.r06",
+      "kind": "choice",
+      "text": "أيّ هذه الأعداد عدد غير ناطق؟",
+      "options": ["$\\sqrt{\\dfrac{75}{3}}$", "$\\sqrt{0{,}0289}$", "$\\sqrt{\\dfrac{8}{27}}$"],
+      "answer": 2,
+      "check": { "type": "rationalPick", "want": "irrational" }
+    },
+    {
+      "id": "p5",
+      "item": "4am.m1.r06",
+      "kind": "number",
+      "text": "احسب $\\sqrt{\\dfrac{3969}{81}}$.",
+      "answer": 7,
+      "check": { "type": "root", "a": "3969/81" }
+    },
+    {
+      "id": "p6",
+      "item": "3am.m3.r06",
+      "kind": "choice",
+      "text": "ما قيمة $(-\\dfrac{4}{7})^2$؟",
+      "options": ["$\\dfrac{16}{49}$", "$-\\dfrac{16}{49}$", "$\\dfrac{8}{14}$"],
+      "answer": 0,
+      "check": { "type": "power", "base": "-4/7", "exp": 2 }
+    }
+  ]
+}

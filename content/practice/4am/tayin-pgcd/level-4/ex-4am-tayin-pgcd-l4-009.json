@@ -1,0 +1,202 @@
+{
+  "id": "ex-4am-tayin-pgcd-l4-009",
+  "lessonCode": "tayin-pgcd",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2025 — PGCD(275 ; 165) ونقط على استقامة",
+    "estimatedMinutes": 12,
+    "tags": [
+      "PGCD",
+      "حصر القواسم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tayin-pgcd_P1",
+      "modelledOn": "BEM 2025 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في المستوي المزوّد بمعلم متعامد ومتجانس $(O ; \\vec{i} , \\vec{j})$ ، نعتبر النقطتين $A(5 ; 3)$ و $C(275 ; 165)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب: PGCD(275 ; 165).",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "55",
+      "misconceptionSignatures": [
+        {
+          "value": "11",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب قائمة قواسم كل من العددين 275 و 165، مثنى مثنى (1 مع العدد نفسه، ثم 2 …) حتى لا يفوتك قاسم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استخرج القواسم المشتركة: الأعداد الموجودة في القائمتين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاسم المشترك الأكبر هو أكبر القواسم المشتركة، لا أيّ واحد منها."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 275 و 165 هي 1 ، 5 ، 11 ، 55، وأكبرها 55.",
+        "incorrect": "اكتب قائمتي القواسم كاملتين، ثم خذ أكبر عدد يظهر في القائمتين معًا."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 275 هي: 1 ، 5 ، 11 ، 25 ، 55 ، 275",
+          "قواسم العدد 165 هي: 1 ، 3 ، 5 ، 11 ، 15 ، 33 ، 55 ، 165",
+          "القواسم المشتركة للعددين 275 و 165 هي: 1 ، 5 ، 11 ، 55",
+          "أكبرها هو 55، إذن:"
+        ],
+        "result": "PGCD(275 ; 165) = 55"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "احسب إحداثيي النقطة $M$ منتصف القطعة $[AC]$ .",
+      "statement": "فاصلة النقطة $M$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "140",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "فاصلة المنتصف نصف مجموع فاصلتي الطرفين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع فاصلتي A و C ثم اقسم على 2."
+        }
+      ],
+      "feedback": {
+        "correct": "$x_M = \\dfrac{5 + 275}{2} = 140$",
+        "incorrect": "فاصلة المنتصف هي نصف مجموع الفاصلتين."
+      },
+      "solution": {
+        "lines": [
+          "$x_M = \\dfrac{x_A + x_C}{2} = \\dfrac{5 + 275}{2} = 140$"
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ترتيبة النقطة $M$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "84",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ترتيبة المنتصف نصف مجموع ترتيبتي الطرفين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع ترتيبتي A و C ثم اقسم على 2."
+        }
+      ],
+      "feedback": {
+        "correct": "$y_M = \\dfrac{3 + 165}{2} = 84$",
+        "incorrect": "ترتيبة المنتصف هي نصف مجموع الترتيبتين."
+      },
+      "solution": {
+        "lines": [
+          "$y_M = \\dfrac{y_A + y_C}{2} = \\dfrac{3 + 165}{2} = 84$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "بيّن أن النقط $A$ ، $M$ و $C$ تنتمي إلى التمثيل البياني لدالة خطية يطلب تعيينها.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01 لتبسيط $\\dfrac{165}{275}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "دالة خطية: $f(x) = ax$ ؛ تحقّق من كل نقطة."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا."
+      },
+      "solution": {
+        "lines": [
+          "$275 = 55 \\times 5$ و $165 = 55 \\times 3$ ، إذن $\\dfrac{165}{275} = \\dfrac{3}{5}$",
+          "نعتبر الدالة الخطية $f$ حيث: $f(x) = \\dfrac{3}{5}x$",
+          "$f(5) = 3$ ، $f(140) = 84$ ، $f(275) = 165$",
+          "إذن النقط $A$ ، $M$ و $C$ تنتمي إلى التمثيل البياني للدالة $f$ ."
+        ]
+      },
+      "timeSeconds": 240
+    }
+  ]
+}

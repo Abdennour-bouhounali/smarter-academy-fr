@@ -1,0 +1,203 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-muthallathat-l3-003",
+  "lessonCode": "wadiya-idmajiya-muthallathat",
+  "level": 3,
+  "metadata": {
+    "title": "ارتفاع كثيب رملي بتاغيت بخط النظر",
+    "estimatedMinutes": 10,
+    "tags": [
+      "الظل",
+      "ترييض",
+      "خاصية فيثاغورس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-muthallathat_P1",
+      "modelledOn": "situation",
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-muthallathat-l3-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتقدير ارتفاع كثيب رملي بتاغيت، غرست مريم عصا شاقولية $[PQ]$ طولها $1{,}2\\,\\mathrm{m}$ ، ثم استلقت في النقطة $A$ من الأرض الأفقية على بعد $AP = 2\\,\\mathrm{m}$ من العصا، بحيث ترى قمة العصا $Q$ وقمة الكثيب $S$ على استقامة واحدة. النقطة $M$ من الأرض تقع قمة الكثيب شاقوليا فوقها، و $P$ بين $A$ و $M$ حيث $AM = 100\\,\\mathrm{m}$ . دوّنت مريم قياساتها في دفترها بدقّة وأمانة علمية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أعط المدوّر إلى الوحدة من الدرجة لقيس الزاوية $\\widehat{PAQ}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P2",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: القيس بالدرجة مدوّرا إلى الوحدة",
+      "expectedAnswer": "31",
+      "misconceptionSignatures": [
+        {
+          "value": "59",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        },
+        {
+          "value": "0.6",
+          "id": "MISC-MUTH-NISBA-BADAL-QAYS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $APQ$ قائم في $P$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العصا مقابلة للزاوية و $[AP]$ مجاور لها: الظل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل اللمسة العكسية للنسبة في آلة حاسبة مبرمجة على الدرجة، ثم دوّر في آخر الحساب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan\\widehat{PAQ} = \\dfrac{1{,}2}{2} = 0{,}6$ ومنه $\\widehat{PAQ} \\approx 30{,}96^{\\circ}$ ، أي $31^{\\circ}$ .",
+        "incorrect": "الظل = المقابل على المجاور، و $0{,}6$ ظل الزاوية لا قيسها."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $APQ$ القائم في $P$ : $\\tan\\widehat{PAQ} = \\dfrac{PQ}{AP} = \\dfrac{1{,}2}{2} = 0{,}6$",
+          "باستعمال الآلة الحاسبة: $\\widehat{PAQ} \\approx 30{,}9638^{\\circ}$"
+        ],
+        "result": "\\widehat{PAQ} \\approx 31^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "في المثلث $AMS$ القائم في $M$ ، احسب ارتفاع الكثيب $MS$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P2",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الارتفاع بـ m (القيمة المضبوطة)",
+      "expectedAnswer": "60",
+      "misconceptionSignatures": [
+        {
+          "value": "60.09",
+          "id": "MISC-MUTH-TADWIR-MUBAKKIR"
+        },
+        {
+          "value": "58.8",
+          "id": "MISC-MUTH-TALIS-NAZAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$A$ ، $Q$ ، $S$ على استقامة: الزاوية $\\widehat{MAS}$ هي $\\widehat{PAQ}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل قيمتها المضبوطة $\\tan\\widehat{MAS} = 0{,}6$ لا القيس المدوّر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب $\\tan\\widehat{MAS} = \\dfrac{MS}{AM}$ ثم اعزل $MS$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$MS = 100 \\times 0{,}6 = 60\\,\\mathrm{m}$ .",
+        "incorrect": "استعمل الظل المضبوط $0{,}6$ : الحساب بالقيس المدوّر يعطي قيمة مقرّبة فقط."
+      },
+      "solution": {
+        "lines": [
+          "$\\widehat{MAS} = \\widehat{PAQ}$ ، و $\\tan\\widehat{MAS} = \\dfrac{MS}{AM}$",
+          "ومنه: $MS = AM \\times \\tan\\widehat{MAS} = 100 \\times 0{,}6$"
+        ],
+        "result": "MS = 60\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب طول خط النظر $AS$ بالتدوير إلى الوحدة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-muthallathat_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بـ m مدوّرا إلى الوحدة",
+      "expectedAnswer": "117",
+      "misconceptionSignatures": [
+        {
+          "value": "160",
+          "id": "MISC-TALIS-FITHAGHURIS-JAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$[AS]$ وتر المثلث $AMS$ القائم في $M$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خاصية فيثاغورس."
+        }
+      ],
+      "feedback": {
+        "correct": "$AS = \\sqrt{100^2 + 60^2} = \\sqrt{13600} \\approx 116{,}62$ أي $117\\,\\mathrm{m}$ .",
+        "incorrect": "نجمع المربعين ثم نأخذ الجذر."
+      },
+      "solution": {
+        "lines": [
+          "حسب خاصية فيثاغورس في المثلث $AMS$ : $AS^2 = AM^2 + MS^2 = 10000 + 3600 = 13600$",
+          "$AS = \\sqrt{13600} \\approx 116{,}619$"
+        ],
+        "result": "AS \\approx 117\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

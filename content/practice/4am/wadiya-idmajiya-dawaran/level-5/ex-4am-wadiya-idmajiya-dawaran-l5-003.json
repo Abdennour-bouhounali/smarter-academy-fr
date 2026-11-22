@@ -1,0 +1,120 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-dawaran-l5-003",
+  "lessonCode": "wadiya-idmajiya-dawaran",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — كراسي الطاولة المستديرة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الزاوية المركزية",
+      "المسافة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-dawaran_P3",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "طاولة مستديرة في مطعم بوهران، نصف قطرها $0{,}6\\,\\mathrm{m}$ ، توضع حولها 5 كراسي متباعدة بنفس المسافة، ومراكز الكراسي على حافة الطاولة. يوصي صاحب المطعم عماله بنظافة الطاولات."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الزاوية المركزية بين كرسيين متتاليين (بالدرجة):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "72",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خمسة كراسي على دائرة مغلقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خمسة أقواس متقايسة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$360^\\circ$ على 5."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{360^\\circ}{5} = 72^\\circ$ .",
+        "incorrect": "خمسة كراسي تحدّد خمسة أقواس."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "90",
+          "id": "MISC-MUNTAZAM-AMDA"
+        }
+      ],
+      "difficulty": 5
+    },
+    {
+      "id": "q2",
+      "statement": "المسافة بين مركزي كرسيين متتاليين بالمتر، مدوّرة إلى $0{,}01$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة (مدوّر إلى 0,01)",
+      "expectedAnswer": "0.71",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث القائم: $36^\\circ$ عند المركز."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نصف المسافة $= 0{,}6\\sin 36^\\circ$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضاعف ثم دوّر."
+        }
+      ],
+      "feedback": {
+        "correct": "$d = 1{,}2\\sin 36^\\circ \\approx 0{,}71\\,\\mathrm{m}$ .",
+        "incorrect": "الارتفاع ينصّف الزاوية المركزية."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "1.14",
+          "id": "MISC-MUNTAZAM-NISF-ZAWIYA"
+        },
+        {
+          "value": "0.75",
+          "id": "MISC-MUNTAZAM-QAWS-WATAR"
+        },
+        {
+          "value": "0.6",
+          "id": "MISC-MUNTAZAM-DIL"
+        }
+      ],
+      "difficulty": 5
+    }
+  ]
+}

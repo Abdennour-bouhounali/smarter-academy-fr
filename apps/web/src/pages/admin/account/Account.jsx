@@ -1,14 +1,15 @@
-import React, { useCallback, useContext, useState } from 'react';
+import { useContext, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ShieldCheck, KeyRound, Mail } from 'lucide-react';
-import AdminPage from '../../../components/admin/AdminPage';
-import { LoadingState, ErrorState } from '../../../components/admin/ui/states';
+import { AdminPage, Loading, ErrorBox, btnPrimary, btnSecondary, input as inputClass, Num } from '../adminUi';
 import { AuthContext } from '../../../context/AuthContext';
 import { useAdminResource } from '../../../hooks/useAdminResource';
 import { fetchAccount, updateProfile, updateEmail, updatePassword } from '../../../services/admin/accountService';
 import { useDocumentMeta } from '../../../hooks/useDocumentMeta';
 
 export function AdminProfile() {
-  useDocumentMeta('Profil — Administration');
+  const { t } = useTranslation('admin');
+  useDocumentMeta(t('account.profileMetaTitle'));
 
   const { token } = useContext(AuthContext);
   const { data: account, loading, error, reload, setData } = useAdminResource(fetchAccount);
@@ -28,7 +29,7 @@ export function AdminProfile() {
         lastName: lastName ?? account.lastName,
       });
       setData((current) => ({ ...current, ...updated }));
-      setFeedback({ tone: 'ok', message: 'Profil enregistré.' });
+      setFeedback({ tone: 'ok', message: t('account.profileSaved') });
     } catch (caught) {
       setFeedback({ tone: 'ko', message: caught.message });
     } finally {
@@ -37,28 +38,29 @@ export function AdminProfile() {
   };
 
   return (
-    <AdminPage eyebrow="Compte" title="Profil" subtitle="Votre identité dans l’outil d’administration.">
-      {loading && <LoadingState />}
-      {error && <ErrorState message={error} onRetry={reload} />}
+    <AdminPage eyebrow={t('account.eyebrow')} title={t('account.profileTitle')} subtitle={t('account.profileSubtitle')}>
+      {loading && <Loading />}
+      {error && <ErrorBox message={error} onRetry={reload} />}
 
       {account && (
         <form onSubmit={submit} className="max-w-xl space-y-4 rounded-xl border border-slate-200 bg-white p-5">
-          <Row label="Email">
-            <p className="font-inter text-sm text-slate-800">{account.email}</p>
-            <p className="font-inter text-xs text-slate-500">Se modifie depuis l’onglet Sécurité.</p>
+          <Row label={t('common.email')}>
+            {/* Une adresse ne se retourne pas : elle reste LTR dans une page RTL. */}
+            <p dir="ltr" className="font-inter text-sm text-slate-800">{account.email}</p>
+            <p className="font-inter text-xs text-slate-500">{t('account.emailChangesInSecurity')}</p>
           </Row>
 
-          <Field label="Prénom" value={firstName ?? account.firstName ?? ''} onChange={setFirstName} />
-          <Field label="Nom" value={lastName ?? account.lastName ?? ''} onChange={setLastName} />
+          <Field label={t('account.firstName')} value={firstName ?? account.firstName ?? ''} onChange={setFirstName} />
+          <Field label={t('account.lastName')} value={lastName ?? account.lastName ?? ''} onChange={setLastName} />
 
-          <Row label="Sessions actives">
-            <p className="font-inter text-sm text-slate-800">{account.activeSessions}</p>
+          <Row label={t('account.activeSessions')}>
+            <p className="font-inter text-sm text-slate-800"><Num>{account.activeSessions}</Num></p>
           </Row>
 
           {feedback && <Feedback {...feedback} />}
 
-          <button type="submit" disabled={busy} className="rounded-lg bg-slate-900 px-4 py-2 font-inter text-sm font-semibold text-white disabled:opacity-50">
-            {busy ? 'Enregistrement…' : 'Enregistrer'}
+          <button type="submit" disabled={busy} className={btnPrimary}>
+            {busy ? t('common.saving') : t('common.save')}
           </button>
         </form>
       )}
@@ -67,7 +69,8 @@ export function AdminProfile() {
 }
 
 export function AdminSecurity() {
-  useDocumentMeta('Sécurité — Administration');
+  const { t } = useTranslation('admin');
+  useDocumentMeta(t('account.securityMetaTitle'));
 
   const { token, logout } = useContext(AuthContext);
   const [emailForm, setEmailForm] = useState({ currentPassword: '', email: '' });
@@ -84,7 +87,10 @@ export function AdminSecurity() {
       setEmailForm({ currentPassword: '', email: '' });
       setFeedback({
         tone: 'ok',
-        message: `Email changé pour ${result.email}. ${result.revokedSessions} autre(s) session(s) fermée(s).`,
+        // Deux phrases, deux clés : la seconde compte des sessions, et
+        // l'arabe décline ce nombre en six catégories — c'est i18next qui
+        // choisit, jamais une concaténation.
+        message: `${t('account.emailChangedTo', { email: result.email })} ${t('account.sessionsRevoked', { count: result.revokedSessions })}`,
       });
     } catch (caught) {
       setFeedback({ tone: 'ko', message: caught.message });
@@ -102,7 +108,7 @@ export function AdminSecurity() {
       setPasswordForm({ currentPassword: '', password: '', passwordConfirmation: '' });
       setFeedback({
         tone: 'ok',
-        message: `Mot de passe modifié. ${result.revokedSessions} autre(s) session(s) fermée(s).`,
+        message: `${t('account.passwordChanged')} ${t('account.sessionsRevoked', { count: result.revokedSessions })}`,
       });
     } catch (caught) {
       setFeedback({ tone: 'ko', message: caught.message });
@@ -113,75 +119,70 @@ export function AdminSecurity() {
 
   return (
     <AdminPage
-      eyebrow="Compte"
-      title="Sécurité"
-      subtitle="Changer vos identifiants ferme vos autres sessions — pas celle-ci."
+      eyebrow={t('account.eyebrow')}
+      title={t('account.securityTitle')}
+      subtitle={t('account.securitySubtitle')}
     >
       <div className="grid max-w-4xl gap-5 lg:grid-cols-2">
         {feedback && <div className="lg:col-span-2"><Feedback {...feedback} /></div>}
 
         <form onSubmit={submitEmail} className="space-y-4 rounded-xl border border-slate-200 bg-white p-5">
           <h2 className="flex items-center gap-2 font-space text-sm font-bold text-slate-900">
-            <Mail size={15} /> Changer l’email
+            <Mail size={15} /> {t('account.changeEmail')}
           </h2>
 
           <Field
-            label="Nouvel email" type="email" required
+            label={t('account.newEmail')} type="email" required dir="ltr"
             value={emailForm.email}
             onChange={(value) => setEmailForm((f) => ({ ...f, email: value }))}
           />
           <Field
-            label="Mot de passe actuel" type="password" required autoComplete="current-password"
+            label={t('account.currentPassword')} type="password" required autoComplete="current-password"
             value={emailForm.currentPassword}
             onChange={(value) => setEmailForm((f) => ({ ...f, currentPassword: value }))}
           />
 
-          <button type="submit" disabled={busy} className="rounded-lg bg-slate-900 px-4 py-2 font-inter text-sm font-semibold text-white disabled:opacity-50">
-            Changer l’email
+          <button type="submit" disabled={busy} className={btnPrimary}>
+            {t('account.changeEmail')}
           </button>
         </form>
 
         <form onSubmit={submitPassword} className="space-y-4 rounded-xl border border-slate-200 bg-white p-5">
           <h2 className="flex items-center gap-2 font-space text-sm font-bold text-slate-900">
-            <KeyRound size={15} /> Changer le mot de passe
+            <KeyRound size={15} /> {t('account.changePassword')}
           </h2>
 
           <Field
-            label="Mot de passe actuel" type="password" required autoComplete="current-password"
+            label={t('account.currentPassword')} type="password" required autoComplete="current-password"
             value={passwordForm.currentPassword}
             onChange={(value) => setPasswordForm((f) => ({ ...f, currentPassword: value }))}
           />
           <Field
-            label="Nouveau mot de passe" type="password" required autoComplete="new-password"
-            hint="Au moins 10 caractères, avec lettres, chiffres et symboles."
+            label={t('account.newPassword')} type="password" required autoComplete="new-password"
+            hint={t('account.passwordRule')}
             value={passwordForm.password}
             onChange={(value) => setPasswordForm((f) => ({ ...f, password: value }))}
           />
           <Field
-            label="Confirmer" type="password" required autoComplete="new-password"
+            label={t('account.confirmPassword')} type="password" required autoComplete="new-password"
             value={passwordForm.passwordConfirmation}
             onChange={(value) => setPasswordForm((f) => ({ ...f, passwordConfirmation: value }))}
           />
 
-          <button type="submit" disabled={busy} className="rounded-lg bg-slate-900 px-4 py-2 font-inter text-sm font-semibold text-white disabled:opacity-50">
-            Changer le mot de passe
+          <button type="submit" disabled={busy} className={btnPrimary}>
+            {t('account.changePassword')}
           </button>
         </form>
 
         <div className="rounded-xl border border-slate-200 bg-slate-50 p-5 lg:col-span-2">
           <h2 className="flex items-center gap-2 font-space text-sm font-bold text-slate-900">
-            <ShieldCheck size={15} /> Sessions
+            <ShieldCheck size={15} /> {t('account.sessionsTitle')}
           </h2>
           <p className="mt-1 font-inter text-xs text-slate-600">
-            Un changement d’email ou de mot de passe révoque automatiquement toutes vos autres sessions.
-            Pour fermer aussi celle-ci, déconnectez-vous.
+            {t('account.sessionsHint')}
           </p>
-          <button
-            type="button"
-            onClick={logout}
-            className="mt-3 rounded-lg border border-slate-300 bg-white px-4 py-2 font-inter text-xs font-semibold text-slate-700 hover:bg-slate-50"
-          >
-            Me déconnecter
+          <button type="button" onClick={logout} className={`${btnSecondary} mt-3`}>
+            {t('account.logout')}
           </button>
         </div>
       </div>
@@ -189,7 +190,7 @@ export function AdminSecurity() {
   );
 }
 
-function Field({ label, value, onChange, type = 'text', required, hint, autoComplete }) {
+function Field({ label, value, onChange, type = 'text', required, hint, autoComplete, dir }) {
   return (
     <label className="block">
       <span className="font-inter text-xs font-semibold uppercase tracking-wide text-slate-500">{label}</span>
@@ -198,8 +199,11 @@ function Field({ label, value, onChange, type = 'text', required, hint, autoComp
         value={value}
         required={required}
         autoComplete={autoComplete}
+        // Une adresse ou un mot de passe se saisit en caractères latins :
+        // le champ force alors LTR, même dans une page RTL.
+        dir={dir ?? (type === 'email' || type === 'password' ? 'ltr' : undefined)}
         onChange={(event) => onChange(event.target.value)}
-        className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 font-inter text-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+        className={`${inputClass} mt-1`}
       />
       {hint && <span className="mt-1 block font-inter text-xs text-slate-400">{hint}</span>}
     </label>

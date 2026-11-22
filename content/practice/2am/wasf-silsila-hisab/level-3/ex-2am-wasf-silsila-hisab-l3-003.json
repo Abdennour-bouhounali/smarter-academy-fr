@@ -1,0 +1,322 @@
+{
+  "id": "ex-2am-wasf-silsila-hisab-l3-003",
+  "lessonCode": "wasf-silsila-hisab",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — سلسلة كاملة (3)",
+    "estimatedMinutes": 12,
+    "tags": [
+      "تسمية",
+      "وصف",
+      "كتابة",
+      "حساب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "في كلّ سؤال سلسلة عمليات: سمِّها وعيّن حدّيها وصِفها واكتب سلسلة أخرى ثم احسبها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما اسم السلسلة $A = 64 - (18 + 14)$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "فرق",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "مجموع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-FIRSTOP"
+        },
+        {
+          "id": "C",
+          "content": "جداء",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع خطًّا تحت العملية التي تُنجز في الأخير، بعد انتهاء كل ما بين القوسين وكل ضرب أو قسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب السلسلة مرحلة مرحلة وتتبّع آخر عملية بقيت لك."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يبقى في الأخير عددان تربط بينهما عملية واحدة: هي التي تعطي اسم السلسلة."
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة عبارة عن فرق: آخر عملية تُنجز فيها هي الطرح.",
+        "incorrect": "لا تسمِّ السلسلة بأوّل عملية تُنجز ولا بأوّل رمز تراه: سمِّها بآخر عملية تُنجز فيها."
+      },
+      "solution": {
+        "lines": [
+          "$A = 64 - (18 + 14)$",
+          "$A = 64 - 32$",
+          "$A = 32$",
+          "آخر عملية تُنجز هي الطرح، فالسلسلة عبارة عن فرق."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "في السلسلة $A = 64 - (18 + 14)$ ، ما الحدّ الثاني ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$18$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-PIECES"
+        },
+        {
+          "id": "B",
+          "content": "$18 + 14$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$64$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-ORDERDIFF"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد أوّلًا آخر عملية في السلسلة: العددان أو القطعتان اللتان تربط بينهما هما المقصودتان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ السلسلة قطعتين: ما كان قبل آخر عملية وما كان بعدها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "في الفرق وفي حاصل القسمة يهمّ الترتيب: المكتوب أوّلًا هو الحدّ الأول (المقسوم)."
+        }
+      ],
+      "feedback": {
+        "correct": "الحدّ الثاني هو $18 + 14$ .",
+        "incorrect": "حدّد آخر عملية أوّلًا، ثم اقرأ القطعة التي تسبقها والقطعة التي تليها كاملتين."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية في $64 - (18 + 14)$ هي $-$ فالسلسلة فرق.",
+          "قبلها $64$ وبعدها $18 + 14$ .",
+          "الحدّ الثاني هو $18 + 14$ ."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أيّ جملة تصف السلسلة $A = 64 - (18 + 14)$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مجموع فرق العددين 64 و 18 والعدد 14",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-FIRSTOP"
+        },
+        {
+          "id": "B",
+          "content": "فرق مجموع العددين 18 و 14 والعدد 64",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-ORDERDIFF"
+        },
+        {
+          "id": "C",
+          "content": "فرق العدد 64 ومجموع العددين 18 و 14",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ باسم السلسلة: هو اسم آخر عملية تُنجز فيها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم صِف كلّ قطعة من القطعتين بالطريقة نفسها، قبل آخر عملية وبعدها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اذكر القطعة المكتوبة أوّلًا أوّلًا، وانتبه إلى كلمة «على» في حاصل القسمة."
+        }
+      ],
+      "feedback": {
+        "correct": "A هي فرق العدد 64 ومجموع العددين 18 و 14.",
+        "incorrect": "ابدأ باسم آخر عملية، ثم صِف القطعة الأولى ثم الثانية، بالترتيب الذي تُكتبان به."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية تُنجز في $64 - (18 + 14)$ هي $-$، فالسلسلة فرق.",
+          "نصف كلّ قطعة بالطريقة نفسها: فرق العدد 64 ومجموع العددين 18 و 14."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "أيّ سلسلة توافق الجملة: «جداء العدد 4 وفرق العددين 15 و 9» ؟",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$4 \\times 15 - 9$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-WASF-NOBRACKET"
+        },
+        {
+          "id": "B",
+          "content": "$4 \\times (15 - 9)$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بآخر عملية في الجملة: هي الأخيرة التي تُكتب بين قطعتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كلّ قطعة على حدة، وضع بين قوسين كلّ قطعة يجب أن تُحسب قبل آخر عملية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر سلسلتك بحسابها: هل آخر عملية فيها هي التي في الجملة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "السلسلة الصحيحة: $4 \\times (15 - 9)$ .",
+        "incorrect": "ابدأ بآخر عملية في الجملة، وضع بين قوسين كلّ قطعة تُحسب قبلها، وانتبه إلى ترتيب القطعتين."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية في الجملة هي $\\times$.",
+          "نكتب كلّ قطعة ثم نربط بينهما: $4 \\times (15 - 9)$ (القوسان لازمان لأنّ القطعة يجب أن تُحسب أوّلًا)."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "اكتب السلسلة الموافقة للجملة: «جداء العدد 4 وفرق العددين 15 و 9» ثم احسبها.",
+      "learningPoints": [
+        {
+          "code": "2am_wasf-silsila-hisab_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "24",
+      "misconceptionSignatures": [
+        {
+          "value": "51",
+          "id": "MISC-WASF-NOBRACKET"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بين القوسين يُحسب أوّلًا، ثم الضرب والقسمة، ثم الجمع والطرح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أعد كتابة السلسلة بعد كل مرحلة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 4 \\times (15 - 9) = 24$",
+        "incorrect": "اكتب السلسلة بالقوسين اللازمين ثم احسبها: ما بين القوسين أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "$B = 4 \\times (15 - 9)$",
+          "$B = 4 \\times 6$",
+          "$B = 24$"
+        ],
+        "result": "24"
+      },
+      "timeSeconds": 80
+    }
+  ]
+}

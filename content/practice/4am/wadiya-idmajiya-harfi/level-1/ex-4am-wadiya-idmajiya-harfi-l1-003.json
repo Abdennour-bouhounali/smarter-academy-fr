@@ -1,0 +1,175 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-harfi-l1-003",
+  "lessonCode": "wadiya-idmajiya-harfi",
+  "level": 1,
+  "metadata": {
+    "title": "مربع مجموع ومجموع مربعين",
+    "estimatedMinutes": 6,
+    "tags": [
+      "مربع مجموع",
+      "تحليل"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "qcm",
+      "page": 40,
+      "section": "الوضعيات",
+      "number": 9,
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-harfi-l1-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارتان $E$ و $F$ حيث :",
+    "formulas": [
+      "E = (x + 5)^2",
+      "F = x^2 + 25"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انشر و بسّط العبارة $E$ .",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $x^2 + mx + n$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-MURABBA-MAJMU-BILA-2AB"
+        },
+        {
+          "value": "5",
+          "id": "MISC-MUTATABIQA-2AB-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على المتطابقة الشهيرة المناسبة: $(a + b)^2$ أو $(a - b)^2$ أو $(a + b)(a - b)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن الحدّين $a$ و $b$ ، ولا تنسَ الحد المضاعف $2ab$ ولا تربيع المعامل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = x^2 + 10x + 25$ إذن $m = 10$ .",
+        "incorrect": "طبّق المتطابقة الشهيرة حدًّا حدًّا (مربع كل حد والحد المضاعف)، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$E = (x + 5)^2 = x^2 + 2 \\times x \\times 5 + 5^2$"
+        ],
+        "result": "E = x^2 + 10x + 25"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العدد $n$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $E$ على الشكل $x^2 + mx + n$ : اكتب العدد $n$ فقط",
+      "expectedAnswer": "25",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بعد الحساب، اقرأ العدد $n$ في الشكل المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$E = x^2 + 10x + 25$ إذن $n = 25$ .",
+        "incorrect": "طبّق المتطابقة الشهيرة حدًّا حدًّا (مربع كل حد والحد المضاعف)، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$E = x^2 + 10x + 25$"
+        ],
+        "result": "n = 25"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل يمكن تحليل العبارة $F$ إلى جداء عاملين من الدرجة الأولى؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-harfi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAHLIL-MAJMU-MURABBAYN"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن $F$ بنشر $E$ الذي وجدته في 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل تنعدم $F$ من أجل قيمة ما لـ $x$ ؟ تذكّر أن $x^2 \\geq 0$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "صحيح: $x^2 + 25 \\geq 25$ لا تنعدم، فلا تقبل التحليل إلى جداء عاملين من الدرجة الأولى.",
+        "incorrect": "مجموع مربعين ليس فرق مربعين: تحقّق هل يمكن أن تنعدم العبارة."
+      },
+      "solution": {
+        "lines": [
+          "$F = x^2 + 25$ مجموع مربعين وليس فرق مربعين، و $(x + 5)^2 = x^2 + 10x + 25 \\neq F$ .",
+          "من أجل كل عدد $x$ : $x^2 \\geq 0$ إذن $F \\geq 25$ ، فالعبارة $F$ لا تنعدم أبدًا.",
+          "لو كانت $F$ جداء عاملين من الدرجة الأولى لانعدمت من أجل قيمة لـ $x$ ، وهذا غير ممكن."
+        ],
+        "result": "لا يمكن تحليل F إلى جداء عاملين من الدرجة الأولى"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

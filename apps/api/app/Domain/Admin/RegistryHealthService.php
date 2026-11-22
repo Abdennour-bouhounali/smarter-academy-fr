@@ -2,6 +2,9 @@
 
 namespace App\Domain\Admin;
 
+use App\Domain\Access\AccessTier;
+use App\Models\Chapter;
+use App\Models\Grade;
 use App\Models\LearningPoint;
 use App\Models\Lesson;
 use App\Models\LessonModule;
@@ -37,6 +40,8 @@ class RegistryHealthService
             'publication' => $this->publication(),
             'learningPoints' => $this->learningPointHealth(),
             'reporting' => $this->reportingHealth(),
+            'activation' => $this->activation(),
+            'tier' => $this->tier(),
         ];
     }
 
@@ -64,7 +69,11 @@ class RegistryHealthService
         }
 
         $sourceLessons = collect($source['lessons'] ?? [])->pluck('code')->unique();
-        $dbLessons = Lesson::pluck('code')->unique();
+        // `toBase()` : `pluck` sur un modèle rend une collection ELOQUENT, dont
+        // `diff()` compare des modèles par clé primaire et appelle getKey()
+        // sur chaque élément — ce qui lève sur des chaînes. La collection de
+        // base compare les valeurs, qui est ce qu'on veut ici.
+        $dbLessons = Lesson::pluck('code')->toBase()->unique();
 
         $sourceModules = collect($source['lessons'] ?? [])
             ->flatMap(fn ($lesson) => collect($lesson['modules'] ?? [])
@@ -76,6 +85,7 @@ class RegistryHealthService
             ->whereNull('lesson_modules.retired_at')
             ->get(['lessons.code as lesson_code', 'lesson_modules.code'])
             ->map(fn ($r) => $r->lesson_code.'/'.$r->code)
+            ->toBase()
             ->unique();
 
         $sourceExercises = collect($source['exercises'] ?? [])
@@ -87,6 +97,7 @@ class RegistryHealthService
             ->whereNull('practice_exercises.retired_at')
             ->get(['lessons.code as lesson_code', 'practice_exercises.exercise_code'])
             ->map(fn ($r) => $r->lesson_code.'/'.$r->exercise_code)
+            ->toBase()
             ->unique();
 
         return [
@@ -252,6 +263,207 @@ class RegistryHealthService
             'orphanedContext' => StudentReport::whereNull('lesson_id')
                 ->whereNotNull('lesson_code')->count(),
         ];
+    }
+
+    /**
+     * Activation des classes : la base (`grades.is_active`) doit refléter
+     * packages/core/curriculum/activeGrades.js tel qu'exporté par
+     * exportCurriculum.mjs. Une dérive signifie qu'un import est en retard —
+     * le frontend et l'API ne s'accorderaient plus sur ce qui est ouvert.
+     *
+     * @return array{active: string[], drift: array<int, array{code: string, database: bool, source: ?bool}>, sourceAvailable: bool}
+     */
+    private function activation(): array
+    {
+        $db = Grade::query()->orderBy('order')->get(['code', 'is_active']);
+
+        $export = $this->loadCurriculumExport();
+        $source = null;
+        if ($export !== null) {
+            $source = collect($export)->mapWithKeys(fn ($g) => [$g['code'] => (bool) ($g['active'] ?? false)]);
+        }
+
+        $drift = [];
+        $unexpected = [];
+        if ($source !== null) {
+            foreach ($db as $grade) {
+                $expected = $source->get($grade->code);
+
+                // ── PÉRIMÈTRE (phase 6F) ────────────────────────────────
+                // Une classe EN BASE que le catalogue ne déclare pas n'est
+                // pas une simple dérive d'activation : c'est du curriculum
+                // que le produit ne connaît pas et que personne ne peut
+                // atteindre par une surface légitime. C'est exactement ce
+                // que la base portait avant le nettoyage — 8 classes
+                // françaises invisibles du catalogue algérien.
+                //
+                // Signalé à part pour que le message le nomme pour ce qu'il
+                // est, et que la porte dise quoi faire (scope-curriculum),
+                // au lieu de conseiller un import qui ne l'effacerait pas.
+                if ($expected === null) {
+                    $unexpected[] = $grade->code;
+
+                    continue;
+                }
+
+                if ($expected !== (bool) $grade->is_active) {
+                    $drift[] = ['code' => $grade->code, 'database' => (bool) $grade->is_active, 'source' => $expected];
+                }
+            }
+            // Une classe que l'export ACTIVE mais que la base n'a pas encore : l'import
+            // est en retard (1AM–3AM, 2026-10-14 — le front les montre, l'API les refuse).
+            $known = $db->pluck('code')->all();
+            foreach ($source as $code => $active) {
+                if ($active && ! in_array($code, $known, true)) {
+                    $drift[] = ['code' => $code, 'database' => false, 'source' => true];
+                }
+            }
+        }
+
+        return [
+            'active' => $db->where('is_active', true)->pluck('code')->values()->all(),
+            'drift' => $drift,
+            'unexpectedGrades' => $unexpected,
+            'lessonsOutsideCatalogue' => $source !== null ? ($this->lessonsOutsideCatalogue() ?? []) : [],
+            'orphans' => $this->curriculumOrphans(),
+            'sourceAvailable' => $source !== null,
+        ];
+    }
+
+    /**
+     * Du curriculum rattaché à rien : un chapitre sans classe, une leçon sans
+     * chapitre, un point sans leçon.
+     *
+     * Les clés étrangères rendent cela impossible tant qu'elles sont en
+     * place — d'où l'intérêt de le vérifier : si un compte s'en trouve, c'est
+     * qu'une suppression a contourné le schéma (SQL manuel, contraintes
+     * désactivées, import d'un dump partiel), et la base ne dit plus la
+     * vérité sur ce qu'elle contient.
+     *
+     * @return array{chapters: int, lessons: int, learningPoints: int}
+     */
+    private function curriculumOrphans(): array
+    {
+        return [
+            'chapters' => Chapter::query()
+                ->leftJoin('grades', 'grades.id', '=', 'chapters.grade_id')
+                ->whereNull('grades.id')->count(),
+            'lessons' => Lesson::query()
+                ->leftJoin('chapters', 'chapters.id', '=', 'lessons.chapter_id')
+                ->whereNull('chapters.id')->count(),
+            'learningPoints' => LearningPoint::query()
+                ->leftJoin('lessons', 'lessons.id', '=', 'learning_points.lesson_id')
+                ->whereNull('lessons.id')->count(),
+        ];
+    }
+
+    /**
+     * Le PALIER COMMERCIAL, contrôlé sur SA seule autorité : la base.
+     *
+     * `lessons.tier` est la seule source de vérité du palier, et
+     * l'administrateur en est l'autorité (ContentService::changeTier). Le
+     * catalogue n'en porte aucun — l'import crée une leçon nouvelle en `free`
+     * et ne réécrit jamais celui d'une leçon existante. Comparer la base au
+     * catalogue ferait donc passer chaque décision d'administration pour une
+     * dérive : ce n'en est pas une, c'est la configuration voulue.
+     *
+     * Ce qui reste un DÉFAUT, et que ce contrôle signale : un palier absent
+     * ou inconnu (NULL, chaîne vide, faute de frappe). AccessTier::normalize()
+     * le sert comme gratuit — la protection tient — mais l'administration
+     * afficherait une valeur que personne n'a choisie. La règle de
+     * ContentService (« une leçon doit porter un palier explicite ») vaut
+     * aussi pour la base.
+     *
+     * Limité aux classes ACTIVES, comme l'activation.
+     *
+     * @return array{invalid: array<int, array{code: string, grade: string, database: ?string}>, counts: array<string, int>, checked: int, authority: string}
+     */
+    private function tier(): array
+    {
+        $rows = Lesson::query()
+            ->join('chapters', 'chapters.id', '=', 'lessons.chapter_id')
+            ->join('grades', 'grades.id', '=', 'chapters.grade_id')
+            ->where('grades.is_active', true)
+            ->get(['lessons.code', 'lessons.tier', 'grades.code as grade_code']);
+
+        $invalid = [];
+        $counts = array_fill_keys(AccessTier::TIERS, 0);
+
+        foreach ($rows as $row) {
+            if (! in_array($row->tier, AccessTier::TIERS, true)) {
+                $invalid[] = ['code' => $row->code, 'grade' => $row->grade_code, 'database' => $row->tier];
+
+                continue;
+            }
+            $counts[$row->tier]++;
+        }
+
+        return [
+            'invalid' => $invalid,
+            'counts' => $counts,
+            'checked' => $rows->count(),
+            'authority' => 'database',
+        ];
+    }
+
+    /**
+     * L'IDENTITÉ du curriculum : une leçon en base, sous une classe active,
+     * dont le catalogue ne déclare pas le code.
+     *
+     * Ce contrôle vivait jusqu'ici dans celui du palier (« source absente »).
+     * Il n'a rien à voir avec l'argent : c'est une question de périmètre — la
+     * base porte une leçon que le produit ne connaît plus. `smarter:prune-
+     * retired-learning-points` la retire si elle ne porte aucun historique.
+     *
+     * @return string[]|null null quand l'export est introuvable
+     */
+    private function lessonsOutsideCatalogue(): ?array
+    {
+        $export = $this->loadCurriculumExport();
+        if ($export === null) {
+            return null;
+        }
+
+        $known = [];
+        foreach ($export as $grade) {
+            foreach ($grade['chapters'] ?? [] as $chapter) {
+                foreach ($chapter['lessons'] ?? [] as $lesson) {
+                    $known[$lesson['code']] = true;
+                }
+            }
+        }
+
+        return Lesson::query()
+            ->join('chapters', 'chapters.id', '=', 'lessons.chapter_id')
+            ->join('grades', 'grades.id', '=', 'chapters.grade_id')
+            ->where('grades.is_active', true)
+            ->pluck('lessons.code')
+            ->reject(fn (string $code) => isset($known[$code]))
+            ->unique()
+            ->values()
+            ->all();
+    }
+
+    /**
+     * L'export du catalogue, décodé — la même source que lit l'import, donc
+     * les deux ne peuvent pas être en désaccord sur ce qu'est « la source ».
+     *
+     * Null si le fichier manque : les contrôles qui en dépendent se déclarent
+     * indisponibles plutôt que de conclure à tort.
+     *
+     * @return array<int, array<string, mixed>>|null
+     */
+    private function loadCurriculumExport(): ?array
+    {
+        $path = config('curriculum.export_output_path');
+
+        if (! is_string($path) || ! is_file($path)) {
+            return null;
+        }
+
+        $decoded = json_decode((string) file_get_contents($path), true);
+
+        return is_array($decoded) && isset($decoded['grades']) ? $decoded['grades'] : null;
     }
 
     private function loadSource(): ?array

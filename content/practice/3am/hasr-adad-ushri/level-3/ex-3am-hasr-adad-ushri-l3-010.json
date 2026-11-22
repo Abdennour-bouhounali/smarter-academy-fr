@@ -1,0 +1,250 @@
+{
+  "id": "ex-3am-hasr-adad-ushri-l3-010",
+  "lessonCode": "hasr-adad-ushri",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — تقاسم مبلغ",
+    "estimatedMinutes": 10,
+    "tags": [
+      "حاصل قسمة",
+      "تدوير",
+      "حصر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تقتسم سبع بنات مبلغ $1000\\,\\mathrm{DA}$ بالتساوي. تعرض شاشة الآلة الحاسبة : $1000\\div7=142{,}8571429$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما مدوّر نصيب البنت الواحدة إلى الوحدة (بالدينار)؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "143",
+      "misconceptionSignatures": [
+        {
+          "value": "142",
+          "id": "MISC-TADWIR-TRUNC"
+        },
+        {
+          "value": "142.9",
+          "id": "MISC-TADWIR-RANK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى الرقم الذي يلي الرتبة المطلوبة مباشرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إن كان هذا الرقم خمسة أو أكبر زدنا الرقم الأخير بواحد، وإلاّ تركناه كما هو."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لحصر عدد علمنا مدوّره: ارجع نصف وحدة من الرتبة إلى الخلف وتقدّم نصف وحدة إلى الأمام؛ الطرف الأدنى مشمول والطرف الأعلى مستبعد."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1000}{7}=142{,}857\\ldots$ ؛ الرقم الذي يلي الوحدة هو $8$ ، فنزيد رقم الوحدات بواحد: $143$ .",
+        "incorrect": "راجع التدوير: انظر إلى الرقم الذي يلي الرتبة المطلوبة مباشرة؛ ولحصر عدد علمنا مدوّره نرجع نصف وحدة ونتقدّم نصف وحدة، والطرف الأعلى مستبعد."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1000}{7}=142{,}857\\ldots$ ؛ الرقم الذي يلي الوحدة هو $8$ ، فنزيد رقم الوحدات بواحد: $143$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "أيّ حصر طرفاه عددان طبيعيان متتاليان؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$142{,}8\\le\\dfrac{1000}{7}<142{,}9$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-RANK"
+        },
+        {
+          "id": "B",
+          "content": "$143\\le\\dfrac{1000}{7}<144$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-BOUND-SHIFT"
+        },
+        {
+          "id": "C",
+          "content": "$142\\le\\dfrac{1000}{7}<143$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العددان الطبيعيان المتتاليان اللذان يقع العدد بينهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الطبيعي الأصغر هو الجزء الصحيح للعدد، والأكبر هو الذي يليه مباشرة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الحصر على المستقيم المدرّج: يقع العدد بعد الأصغر وقبل الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "$142\\le\\dfrac{1000}{7}<143$ لأنّ $7\\times142=994$ و $7\\times143=1001$ .",
+        "incorrect": "راجع: بين أيّ عددين طبيعيين متتاليين يقع العدد؟ ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$142\\le\\dfrac{1000}{7}<143$ لأنّ $7\\times142=994$ و $7\\times143=1001$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "إذا أخذت كلّ بنت $143\\,\\mathrm{DA}$ فإنّ المبلغ الكلّي يساوي $1000\\,\\mathrm{DA}$ :",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيحة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TADWIR-QUOTIENT-EXACT"
+        },
+        {
+          "id": "B",
+          "content": "خاطئة",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ ما تعرضه شاشة الآلة الحاسبة، ولا تعدّه قيمة مضبوطة للحاصل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احصر الحاصل بين قيمتين مقرّبتين متتاليتين في الرتبة المطلوبة، ثم حدّد الرقم الذي يلي تلك الرتبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الحاصل بقيمتيه المقرّبتين: الأولى أصغر منه أو تساويه والثانية أكبر منه."
+        }
+      ],
+      "feedback": {
+        "correct": "العبارة خاطئة.",
+        "incorrect": "لا تعدّ ما تعرضه شاشة الآلة قيمة مضبوطة للحاصل: احصره بين قيمتين مقرّبتين متتاليتين؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$7\\times143=1001$ وهو يختلف عن $1000$ .",
+          "العبارة خاطئة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما أكبر مبلغ صحيح بالدينار تأخذه كلّ بنت دون أن يتجاوز المبلغ الكلّي $1000\\,\\mathrm{DA}$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_hasr-adad-ushri_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "142",
+      "misconceptionSignatures": [
+        {
+          "value": "143",
+          "id": "MISC-TAQRIB-NAQS-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الرتبة المطلوبة: الوحدة أم الجزء من عشرة أم الجزء من مئة أم الجزء من ألف؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمتان المقرّبتان إلى رتبة ما عددان متتاليان في تلك الرتبة يقع العدد بينهما: الأصغر بالنقصان والأكبر بالزيادة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أبقِ الأرقام حتى الرتبة المطلوبة للحصول على القيمة بالنقصان، ثم أضف وحدة من تلك الرتبة للحصول على القيمة بالزيادة."
+        }
+      ],
+      "feedback": {
+        "correct": "أكبر مبلغ هو $142\\,\\mathrm{DA}$ ، وهو القيمة المقرّبة بالنقصان إلى الوحدة.",
+        "incorrect": "راجع القيمتين المقرّبتين: الأولى أصغر من العدد والثانية أكبر منه، وكلتاهما في الرتبة المطلوبة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$7\\times142=994\\le1000$ و $7\\times143=1001>1000$ .",
+          "أكبر مبلغ هو $142\\,\\mathrm{DA}$ ، وهو القيمة المقرّبة بالنقصان إلى الوحدة."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-fada-l1-001",
+  "lessonCode": "wadiya-idmajiya-fada",
+  "level": 1,
+  "metadata": {
+    "title": "تحدّي الوحدة — شكل الدلو",
+    "estimatedMinutes": 3,
+    "tags": [
+      "المخروط المبتور"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "challenge",
+      "page": 163,
+      "section": "تحدّ"
+    }
+  },
+  "statement": {
+    "content": "دلو على شكل مخروط مبتور فيه ماء: قطر حافته العلوية $40\\,\\mathrm{cm}$ وقطر قاعه $30\\,\\mathrm{cm}$ ، ومستوى الماء على بعد $7\\,\\mathrm{cm}$ من الحافة العلوية (الشكل).",
+    "figure": {
+      "kind": "space",
+      "view": {
+        "azimuth": -90,
+        "elevation": 14
+      },
+      "points": {
+        "O": [
+          0,
+          0,
+          0
+        ],
+        "O1": [
+          0,
+          0,
+          35
+        ],
+        "W": [
+          0,
+          0,
+          28
+        ],
+        "T1": [
+          -20,
+          0,
+          41
+        ],
+        "T2": [
+          20,
+          0,
+          41
+        ],
+        "D1": [
+          -15,
+          0,
+          -6
+        ],
+        "D2": [
+          15,
+          0,
+          -6
+        ],
+        "V0": [
+          -28,
+          0,
+          35
+        ],
+        "V1": [
+          -28,
+          0,
+          28
+        ],
+        "V2": [
+          -28,
+          0,
+          0
+        ],
+        "X0": [
+          -37,
+          0,
+          17
+        ]
+      },
+      "solids": [
+        {
+          "type": "frustum",
+          "base": "O",
+          "top": "O1",
+          "radius": 15,
+          "topRadius": 20,
+          "tone": "amber"
+        }
+      ],
+      "circles": [
+        {
+          "center": "W",
+          "radius": 19,
+          "tone": "sky",
+          "bold": true
+        }
+      ],
+      "segments": [
+        {
+          "from": "T1",
+          "to": "T2",
+          "label": "40 cm"
+        },
+        {
+          "from": "D1",
+          "to": "D2",
+          "label": "30 cm"
+        },
+        {
+          "from": "V0",
+          "to": "V1",
+          "label": "7 cm",
+          "tone": "rose",
+          "labelOffset": 24
+        },
+        {
+          "from": "V1",
+          "to": "V2",
+          "label": "28 cm",
+          "labelOffset": 27
+        }
+      ],
+      "hidden": [
+        "O",
+        "O1",
+        "W",
+        "T1",
+        "T2",
+        "D1",
+        "D2",
+        "V0",
+        "V1",
+        "V2",
+        "X0"
+      ],
+      "ariaLabel": "دلو على شكل مخروط مبتور فيه ماء: قطر الحافة العلوية 40 cm وقطر القاع 30 cm، ومن الحافة إلى سطح الماء 7 cm، ومن سطح الماء إلى القاع 28 cm",
+      "maxWidth": 420
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الدلو مجسم على شكل:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-fada_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "أسطوانة دوران",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MABTUR-SHAKL"
+        },
+        {
+          "id": "B",
+          "content": "مخروط مبتور: جزء من مخروط دوران بين قاعدته ومستو مواز لها",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "مخروط دوران رأسه مركز القاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MABTUR-SHAKL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن قطري القاعدتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قطر الحافة لا يساوي قطر القاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جسم بين دائرتين متوازيتين مختلفتين جزء من مخروط."
+        }
+      ],
+      "feedback": {
+        "correct": "قاعدتاه دائرتان متوازيتان مختلفتا القطر ( $40\\,\\mathrm{cm}$ و $30\\,\\mathrm{cm}$ ): هو مخروط مبتور.",
+        "incorrect": "الأسطوانة قاعدتاها متقايستان، والمخروط له رأس؛ الدلو قاعدتاه دائرتان مختلفتان."
+      },
+      "cognitiveDemand": "recall",
+      "difficulty": 1
+    }
+  ]
+}

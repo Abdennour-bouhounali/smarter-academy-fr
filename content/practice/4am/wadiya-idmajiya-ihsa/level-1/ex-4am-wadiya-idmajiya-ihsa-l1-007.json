@@ -1,0 +1,150 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ihsa-l1-007",
+  "lessonCode": "wadiya-idmajiya-ihsa",
+  "level": 1,
+  "metadata": {
+    "title": "مقاسات الأحذية الرياضية: على الأكثر والوسيط",
+    "estimatedMinutes": 4,
+    "tags": [
+      "التكرار المجمع الصاعد",
+      "الوسيط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ihsa_P1"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "يعطي الجدول الآتي مقاسات الأحذية الرياضية لتلاميذ قسم، سجّلتها لجنة التكافل في المتوسطة لتوزّع أحذية على المحتاجين منهم:",
+    "table": {
+      "head": [
+        "المقاس",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42"
+      ],
+      "rows": [
+        [
+          "عدد التلاميذ",
+          "2",
+          "5",
+          "8",
+          "4",
+          "1"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب عدد التلاميذ الذين مقاس حذائهم 40 على الأكثر.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-IHSA-SARAMA"
+        },
+        {
+          "value": "8",
+          "id": "MISC-IHSA-TAKRAR-BADAL-MUJAMMA"
+        },
+        {
+          "value": "13",
+          "id": "MISC-IHSA-SAID-NAZIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«40 على الأكثر» تعني 40 أو أقل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هذا العدد هو التكرار المجمع الصاعد للقيمة 40 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 + 5 + 8 = 15$ تلميذا.",
+        "incorrect": "اجمع تكرارات المقاسات الأصغر من 40 وتكرار 40 نفسه."
+      },
+      "solution": {
+        "lines": [
+          "المقاسات المعنية: 38 ، 39 ، 40 .",
+          "$2 + 5 + 8 = 15$"
+        ],
+        "result": "15"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عيّن وسيط هذه السلسلة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "40",
+      "misconceptionSignatures": [
+        {
+          "value": "39,5",
+          "id": "MISC-IHSA-WASIT-RUTBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكرار الكلي 20 : الرتبتان الوسطيان 10 و 11 ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل التكرارات المجمعة الصاعدة: 2 ، 7 ، … "
+        }
+      ],
+      "feedback": {
+        "correct": "الرتبتان 10 و 11 تقعان في المقاس 40 ، فالوسيط 40 .",
+        "incorrect": "ابحث بالتكرارات المجمعة الصاعدة عن المقاس الذي تقع فيه الرتبتان 10 و 11 ."
+      },
+      "solution": {
+        "lines": [
+          "التكرار الكلي: $2 + 5 + 8 + 4 + 1 = 20$ ، والرتبتان الوسطيان 10 و 11 .",
+          "التكرارات المجمعة الصاعدة: 2 ، 7 ، 15 ، 19 ، 20 .",
+          "الرتب من 8 إلى 15 للمقاس 40 ، إذن الوسيط $\\dfrac{40 + 40}{2} = 40$"
+        ],
+        "result": "40"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

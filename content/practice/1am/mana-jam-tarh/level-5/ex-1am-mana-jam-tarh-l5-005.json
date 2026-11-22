@@ -1,0 +1,290 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l5-005",
+  "lessonCode": "mana-jam-tarh",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أدوية الجدّ",
+    "estimatedMinutes": 18,
+    "tags": [
+      "أقل",
+      "هل يكفي المبلغ",
+      "باقٍ"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 1,
+      "file": "1am-s1-94",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "رافق كريم جدّه إلى الطبيب ثم إلى الصيدلية.\nالجزء الأول: كان مع الجدّ 2500 دج، ودفع 600 دج للطبيب مقابل الفحص. يحتاج إلى شراب للسعال بـ 612,25 دج، و 3 علب من الأقراص سعر العلبة 245,5 دج، وعبوة فيتامين بـ 405,75 دج.\nالجزء الثاني: اقترح الصيدلي عبوة فيتامين أخرى مماثلة، ثمنها أقل من ثمن العبوة الأولى بـ 98,5 دج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب ثمن علب الأقراص.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "736.5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد العلب × سعر العلبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 \\times 245{,}5 = 736{,}5$ دج.",
+        "incorrect": "اضرب سعر العلبة في عدد العلب."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 245{,}5 = 736{,}5$"
+        ],
+        "result": "736{,}5 \\text{ DA}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب ثمن الأدوية كلها.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "1754.5",
+      "misconceptionSignatures": [
+        {
+          "value": "1263.5",
+          "id": "MISC-JAMTARH-JUZ-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مجموع ثلاثة حدود."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل ثمن كل العلب."
+        }
+      ],
+      "feedback": {
+        "correct": "$612{,}25 + 736{,}5 + 405{,}75 = 1754{,}5$ دج.",
+        "incorrect": "اجمع ثمن الشراب وثمن كل العلب وثمن الفيتامين."
+      },
+      "solution": {
+        "lines": [
+          "$612{,}25 + 736{,}5 + 405{,}75 = 1754{,}5$"
+        ],
+        "result": "1754{,}5 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما المبلغ الذي بقي مع الجدّ بعد دفع ثمن الفحص؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "1900",
+      "misconceptionSignatures": [
+        {
+          "value": "3100",
+          "id": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما كان معه هو الكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نطرح ثمن الفحص."
+        }
+      ],
+      "feedback": {
+        "correct": "$2500 - 600 = 1900$ دج.",
+        "incorrect": "بعد الدفع يقلّ المبلغ: اطرح."
+      },
+      "solution": {
+        "lines": [
+          "$2500 - 600 = 1900$"
+        ],
+        "result": "1900 \\text{ DA}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "هل يكفي هذا المبلغ لشراء الأدوية كلها؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-TAQDIR"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن ما بقي معه بثمن الأدوية."
+        }
+      ],
+      "feedback": {
+        "correct": "$1900 > 1754{,}5$: المبلغ يكفي.",
+        "incorrect": "احسب ما بقي معه وثمن الأدوية بدقة، ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "بقي مع الجدّ 1900 دج، وثمن الأدوية 1754,5 دج.",
+          "$1900 > 1754{,}5$ ، إذن المبلغ يكفي."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "احسب ثمن عبوة الفيتامين الثانية.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "307.25",
+      "misconceptionSignatures": [
+        {
+          "value": "504.25",
+          "id": "MISC-JAMTARH-KALIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العبوة الثانية أرخص."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثمن العبوة الأولى هو الكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$405{,}75 - 98{,}5 = 307{,}25$ دج.",
+        "incorrect": "العبوة الثانية أقل ثمنًا: النتيجة أصغر من 405,75 دج."
+      },
+      "solution": {
+        "lines": [
+          "$405{,}75 - 98{,}5 = 307{,}25$"
+        ],
+        "result": "307{,}25 \\text{ DA}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "06",
+      "statement": "كم يبقى مع الجدّ إذا اختار العبوة الثانية؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "244",
+      "misconceptionSignatures": [
+        {
+          "value": "145.5",
+          "id": "MISC-JAMTARH-JUZ-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب ثمن الأدوية مع العبوة الثانية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرحه مما بقي مع الجدّ بعد الفحص."
+        }
+      ],
+      "feedback": {
+        "correct": "$1900 - 1656 = 244$ دج.",
+        "incorrect": "استعمل ثمن العبوة الثانية في حساب ثمن الأدوية، ثم اطرح."
+      },
+      "solution": {
+        "lines": [
+          "$612{,}25 + 736{,}5 + 307{,}25 = 1656$",
+          "$1900 - 1656 = 244$"
+        ],
+        "result": "244 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

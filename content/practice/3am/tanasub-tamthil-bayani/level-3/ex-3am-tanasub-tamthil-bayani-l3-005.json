@@ -1,0 +1,217 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l3-005",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 3,
+  "metadata": {
+    "title": "نقطتان مع المبدأ على استقامة واحدة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "تناسبية",
+      "قراءة بيانية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-32",
+      "page": 98,
+      "section": "أتعمّق",
+      "number": 32
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "وضعت فاطمة في معلم متعامد ومتجانس النقطة $A(4\\,;\\,6)$ التي تمثّل عدد صفحات (بالعشرات) وثمن طبعها (بمئات الدنانير) في مطبعة المدرسة التي تحافظ على الأمانة في الحساب، ثم أرادت أن تضع نقطة $B$ تكون مع $O$ و $A$ على استقامة واحدة.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          4,
+          6
+        ]
+      },
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw",
+        "A": "se"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس: النقطة A(4;6) والمبدأ O",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: عدد الصفحات بالعشرات — محور التراتيب: ثمن الطبع بمئات الدنانير"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "إذا كانت فاصلة $B$ هي $10$ ، فما ترتيبها؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: ترتيب النقطة $B$",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-TAMTHIL-DIFFERENCE"
+        },
+        {
+          "value": "6.67",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقط $O$ و $A$ و $B$ على استقامة واحدة: الترتيب يساوي الفاصلة مضروبة في معامل ثابت."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب هذا المعامل من النقطة $A$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 6 \\div 4 = 1{,}5$ و $y = 1{,}5 \\times 10 = 15$ .",
+        "incorrect": "احسب المعامل $6 \\div 4$ أولا ثم اضربه في فاصلة $B$ ."
+      },
+      "solution": {
+        "lines": [
+          "$A$ و $B$ مع $O$ على استقامة واحدة، إذن $y = a\\,x$ مع $a = \\dfrac{6}{4} = 1{,}5$ .",
+          "من أجل $x = 10$ : $y = 1{,}5 \\times 10 = 15$ ."
+        ],
+        "result": "15"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أيّ هذه النقط تقع على استقامة واحدة مع $O$ و $A$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(12\\,;\\,8)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-SWAP-XY"
+        },
+        {
+          "id": "B",
+          "content": "$(8\\,;\\,12)$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$(8\\,;\\,10)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختبر ناتج قسمة الترتيب على الفاصلة لكل نقطة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يجب أن يساوي هذا الناتج معامل التناسبية $1{,}5$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$12 \\div 8 = 1{,}5$ : النقطة $(8\\,;\\,12)$ على المستقيم $(OA)$ .",
+        "incorrect": "قارن ناتج القسمة بمعامل التناسبية $1{,}5$ لكل نقطة."
+      },
+      "solution": {
+        "lines": [
+          "معامل التناسبية $\\dfrac{6}{4} = 1{,}5$ .",
+          "$\\dfrac{12}{8} = 1{,}5$ ، أما $\\dfrac{10}{8} = 1{,}25$ و $\\dfrac{8}{12} \\approx 0{,}67$ ."
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل النقطة $M(12\\,;\\,17)$ على المستقيم $(OA)$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا: $\\dfrac{17}{12}$ لا يساوي $1{,}5$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم: لأنّ الفرق بين الترتيب والفاصلة ثابت",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-DIFFERENCE"
+        },
+        {
+          "id": "C",
+          "content": "نعم: لأنّ الترتيب $17$ يكاد يساوي $18$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-RISING"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $y \\div x$ للنقطة $M$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارنه بمعامل التناسبية الذي وجدته."
+        }
+      ],
+      "feedback": {
+        "correct": "$17 \\div 12 \\approx 1{,}42 \\neq 1{,}5$ : لو كانت $M$ على $(OA)$ لكان ترتيبها $18$ .",
+        "incorrect": "لا نقبل نقطة قريبة من المستقيم: يجب أن يكون ناتج القسمة مساويا تماما للمعامل."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{17}{12} \\approx 1{,}42$ ولا يساوي $1{,}5$ .",
+          "إذن $M$ ليست على $(OA)$ ."
+        ]
+      },
+      "timeSeconds": 100
+    }
+  ]
+}

@@ -1,0 +1,307 @@
+{
+  "id": "ex-1am-qawaid-qabiliyat-qisma-l5-004",
+  "lessonCode": "qawaid-qabiliyat-qisma",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — دهن محيط الملعب",
+    "estimatedMinutes": 18,
+    "tags": [
+      "محيط",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 2,
+      "file": "1am-s2-80",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "ملعب الحيّ مستطيل طوله $105\\,\\mathrm{m}$ وعرضه $70\\,\\mathrm{m}$ (الأطوال غير حقيقية)، يعتني به شبّان الحيّ تطوّعًا.\nالجزء الأول: يريدون دهن خط المحيط بعلب طلاء تكفي كل علبة لـ $5\\,\\mathrm{m}$ أو لـ $4\\,\\mathrm{m}$.\nالجزء الثاني: يختارون العلب التي لا يبقى منها طلاء ضائع، ثمن العلبة 450 دج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب محيط الملعب.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالمتر (m)",
+      "expectedAnswer": "350",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "محيط المستطيل = 2 × (الطول + العرض)."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 \\times (105 + 70) = 350$.",
+        "incorrect": "أنجز الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$105 + 70 = 175$",
+          "$2 \\times 175 = 350$"
+        ],
+        "result": "350"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "هل يقبل العدد 350 القسمة على 5؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-SIFR"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى رقم آحاد العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما الرقمان اللذان ينتهي بهما كل مضاعف للعدد 5؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بإنجاز القسمة الإقليدية على 5."
+        }
+      ],
+      "feedback": {
+        "correct": "رقم آحاد العدد 350 هو 0، إذن 350 يقبل القسمة على 5.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 5 إذا كان رقم آحاده 0 أو 5."
+      },
+      "solution": {
+        "lines": [
+          "رقم آحاد العدد 350 هو 0، إذن 350 يقبل القسمة على 5.",
+          "$350 = 5 \\times 70 + 0$ ، الباقي معدوم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل يقبل العدد 350 القسمة على 4؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-MAJMU"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى العدد المشكّل من رقمي الآحاد والعشرات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل هذا العدد المكوّن من رقمين يقبل القسمة على 4؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يكفي أن يكون العدد زوجيًا."
+        }
+      ],
+      "feedback": {
+        "correct": "العدد المشكّل من رقمي آحاد وعشرات 350 هو 50، و 50 لا يقبل القسمة على 4.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 4 إذا كان العدد المشكّل من رقمي آحاده وعشراته يقبل القسمة على 4."
+      },
+      "solution": {
+        "lines": [
+          "العدد المشكّل من رقمي آحاد وعشرات 350 هو 50، و 50 لا يقبل القسمة على 4.",
+          "$350 = 4 \\times 87 + 2$ ، الباقي 2 غير معدوم."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "أيّ العلب يختارون؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "علب تكفي لـ $5\\,\\mathrm{m}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "علب تكفي لـ $4\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-BAQI"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العلبة المناسبة: المحيط يقبل القسمة على طولها."
+        }
+      ],
+      "feedback": {
+        "correct": "350 يقبل القسمة على 5 (رقم آحاده 0) ولا يقبل القسمة على 4.",
+        "incorrect": "اختر العلبة التي باقي قسمة المحيط على طولها معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$350 = 5 \\times 70 + 0$",
+          "50 لا يقبل القسمة على 4 ($350 = 4 \\times 87 + 2$).",
+          "يختارون العلب التي تكفي لـ $5\\,\\mathrm{m}$."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "احسب عدد العلب التي تكفي كل منها لـ $5\\,\\mathrm{m}$.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد العلب",
+      "expectedAnswer": "70",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-QABILIYA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية عموديًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق بضرب الحاصل في 5."
+        }
+      ],
+      "feedback": {
+        "correct": "$350 = 5 \\times 70 + 0$.",
+        "incorrect": "ابحث عن أكبر عدد طبيعي نضربه في 5 دون أن نتجاوز 350."
+      },
+      "solution": {
+        "lines": [
+          "$350 = 5 \\times 70 + 0$",
+          "الحاصل هو 70."
+        ],
+        "result": "70"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "احسب ثمن العلب التي تكفي كل منها لـ $5\\,\\mathrm{m}$.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "31500",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب الجداء."
+        }
+      ],
+      "feedback": {
+        "correct": "$70 \\times 450 = 31500$.",
+        "incorrect": "أنجز الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$70 \\times 450 = 31500$"
+        ],
+        "result": "31500"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

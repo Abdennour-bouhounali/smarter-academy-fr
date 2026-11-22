@@ -1,0 +1,220 @@
+{
+  "id": "ex-4am-hasiba-muthallathiya-l3-006",
+  "lessonCode": "hasiba-muthallathiya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2017 — مستقيمان متعامدان: توازٍ ثم زاوية",
+    "estimatedMinutes": 7,
+    "tags": [
+      "اللمسات العكسية",
+      "الظل",
+      "عكس خاصية طالس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_hasiba-muthallathiya_P2",
+      "modelledOn": "BEM 2017 I-4"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2017",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "الشكل المقابل غير مرسوم بأبعاده الحقيقية (وحدة الطول هي الميليمتر). المستقيمان $(RP)$ و $(SQ)$ متعامدان ويتقاطعان في النقطة $K$ حيث: $KR = 20$ ، $KS = 16$ ، $KP = 30$ و $KQ = 24$ .",
+    "figure": {
+      "points": {
+        "K": [
+          0,
+          0
+        ],
+        "R": [
+          -20,
+          0
+        ],
+        "P": [
+          30,
+          0
+        ],
+        "S": [
+          0,
+          16
+        ],
+        "Q": [
+          0,
+          -24
+        ]
+      },
+      "segments": [
+        {
+          "from": "R",
+          "to": "K",
+          "label": "20"
+        },
+        {
+          "from": "K",
+          "to": "P",
+          "label": "30"
+        },
+        {
+          "from": "S",
+          "to": "K",
+          "label": "16"
+        },
+        {
+          "from": "K",
+          "to": "Q",
+          "label": "24"
+        },
+        [
+          "R",
+          "S"
+        ],
+        [
+          "P",
+          "Q"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "P",
+          "K",
+          "Q"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "P",
+          "from": "K",
+          "to": "Q",
+          "label": "?"
+        }
+      ],
+      "ariaLabel": "المستقيمان RP و SQ متعامدان في K حيث KR يساوي 20 و KS يساوي 16 و KP يساوي 30 و KQ يساوي 24، والقطعتان RS و PQ، والزاوية المطلوبة KPQ عند P",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن المستقيمين $(RS)$ و $(PQ)$ متوازيان.",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقط $R$ ، $K$ ، $P$ في استقامة، وكذلك $S$ ، $K$ ، $Q$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن النسبتين $\\dfrac{KR}{KP}$ و $\\dfrac{KS}{KQ}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل عكس خاصية طالس."
+        }
+      ],
+      "feedback": {
+        "correct": "النسبتان متساويتان والنقط بنفس الترتيب: المستقيمان متوازيان.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "النقط $R$ ، $K$ ، $P$ في استقامة والنقط $S$ ، $K$ ، $Q$ في استقامة وبنفس الترتيب.",
+          "$\\dfrac{KR}{KP} = \\dfrac{20}{30} = \\dfrac{2}{3}$ و $\\dfrac{KS}{KQ} = \\dfrac{16}{24} = \\dfrac{2}{3}$",
+          "بما أن $\\dfrac{KR}{KP} = \\dfrac{KS}{KQ}$ فحسب عكس خاصية طالس: $(RS) // (PQ)$ ."
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب قيس الزاوية $\\widehat{KPQ}$ (بالتدوير إلى الوحدة من الدرجة).",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيس الزاوية بالدرجة، مدوّرا إلى الوحدة",
+      "expectedAnswer": "39",
+      "misconceptionSignatures": [
+        {
+          "value": "38",
+          "id": "MISC-MUTH-TADWIR-BATR"
+        },
+        {
+          "value": "51",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        },
+        {
+          "value": "37",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "1",
+          "id": "MISC-MUTH-HASIBA-RAD"
+        },
+        {
+          "value": "0",
+          "id": "MISC-MUTH-AKS-BADAL-MUBASHIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $KPQ$ قائم في $K$ : حدّد موقع $[KP]$ و $[KQ]$ بالنسبة إلى الزاوية $\\widehat{KPQ}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اللمسة العكسية: ⁦2nd⁩ ثم ⁦tan⁻¹⁩ ثم النسبة ثم ⁦=⁩."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الحرف ⁦D⁩ (الدرجة)، ثم دوّر إلى الوحدة: انظر إلى الرقم الموالي للرقم الأخير الذي تحتفظ به."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{KPQ} \\approx 38{,}65980825^{\\circ} \\approx 39^{\\circ}$ .",
+        "incorrect": "النسبة ليست القيس: القيس يُعيَّن باللمسة العكسية المناسبة والحاسبة مبرمجة بالدرجة، ثم يُدوَّر (لا يُبتر) إلى الوحدة."
+      },
+      "solution": {
+        "lines": [
+          "المستقيمان متعامدان في $K$ ، فالمثلث $KPQ$ قائم في $K$ :",
+          "$\\tan\\widehat{KPQ} = \\dfrac{KQ}{KP} = \\dfrac{24}{30} = 0{,}8$",
+          "باستعمال الحاسبة المبرمجة بالدرجة: ⁦ON 2nd tan⁻¹ ( 24 ÷ 30 ) =⁩ يظهر على الشاشة $38{,}65980825$ .",
+          "الرقم الذي يلي رقم الوحدات هو 6، وهو أكبر من 5: نضيف 1 إلى رقم الوحدات."
+        ],
+        "result": "\\widehat{KPQ} \\approx 39^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

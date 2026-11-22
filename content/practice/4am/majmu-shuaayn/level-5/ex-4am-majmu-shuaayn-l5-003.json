@@ -1,0 +1,116 @@
+{
+  "id": "ex-4am-majmu-shuaayn-l5-003",
+  "lessonCode": "majmu-shuaayn",
+  "level": 5,
+  "generator": {
+    "tool": "unit11-majmu-gen.py",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — قارب يعبر وادي الشلف",
+    "estimatedMinutes": 4,
+    "tags": [
+      "قاعدة متوازي الأضلاع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_majmu-shuaayn_P3",
+      "modelledOn": "challenge"
+    }
+  },
+  "statement": {
+    "content": "قارب يقوده صيّاد يتقن عمله، سرعته الذاتية $5\\,\\mathrm{km/h}$ عمودية على حافتي وادي الشلف، والوادي عرضه $120\\,\\mathrm{m}$ وسرعة التيار $3\\,\\mathrm{km/h}$ موازية للحافتين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "على أيّ بعد (بالمتر) أسفل النقطة المقابلة لنقطة انطلاقه يرسو القارب؟",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالمتر)",
+      "expectedAnswer": "72",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للشعاعين نفس المبدأ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "شعاعان لهما نفس المبدأ يُجمعان بقاعدة متوازي الأضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع هو القطر الصادر من المبدأ المشترك، لا القطر الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "السرعة الفعلية قطر متوازي الأضلاع: لكل 5 نحو الضفة 3 مع التيار، $120 \\times \\dfrac{3}{5} = 72\\,\\mathrm{m}$ .",
+        "incorrect": "قاعدة متوازي الأضلاع: مجموع شعاعين لهما نفس المبدأ هو القطر الصادر من ذلك المبدأ."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "سرعته الفعلية",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$8\\,\\mathrm{km/h}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-JAM-ATWAL"
+        },
+        {
+          "id": "B",
+          "content": "$\\sqrt{34}\\,\\mathrm{km/h}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$4\\,\\mathrm{km/h}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TIYAR-MUBASHIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للشعاعين نفس المبدأ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "شعاعان لهما نفس المبدأ يُجمعان بقاعدة متوازي الأضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع هو القطر الصادر من المبدأ المشترك، لا القطر الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "السرعتان متعامدتان: $\\sqrt{5^2 + 3^2} = \\sqrt{34} \\approx 5{,}83$ ؛ 4 هي السرعة لو صوّب عكس التيار.",
+        "incorrect": "قاعدة متوازي الأضلاع: مجموع شعاعين لهما نفس المبدأ هو القطر الصادر من ذلك المبدأ."
+      }
+    }
+  ]
+}

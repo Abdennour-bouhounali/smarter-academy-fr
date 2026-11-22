@@ -1,0 +1,483 @@
+{
+  "id": "ex-4am-tarrid-taalufi-l5-008",
+  "lessonCode": "tarrid-taalufi",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2024 — المصعد الهوائي بتلمسان",
+    "estimatedMinutes": 35,
+    "tags": [
+      "وضعية إدماجية",
+      "ثلاثة عروض",
+      "دالة ثابتة",
+      "أفضل عرض"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tarrid-taalufi_P2",
+      "modelledOn": "BEM 2024 المسألة"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يقترح مسيّر المصعد الهوائي (التيليفيريك) بتلمسان، تيسيرًا لتنقّل التلاميذ والمسنّين، على سكان الحي ثلاثة عروض شهرية:\nالعرض 1 : دفع 50DA للرحلة الواحدة.\nالعرض 2 : دفع 25DA للرحلة الواحدة مع شراء بطاقة شهرية بـ 400DA .\nالعرض 3 : دفع مبلغ جزافي 1400DA مهما كان عدد الرحلات في الشهر.",
+    "table": {
+      "head": [
+        "عدد الرحلات في الشهر",
+        "10",
+        "…"
+      ],
+      "rows": [
+        [
+          "المبلغ حسب العرض 1 (DA)",
+          "…",
+          "1200"
+        ],
+        [
+          "المبلغ حسب العرض 2 (DA)",
+          "…",
+          "…"
+        ],
+        [
+          "المبلغ حسب العرض 3 (DA)",
+          "1400",
+          "1400"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "انقل وأتمم الجدول التالي.",
+      "statement": "المبلغ حسب العرض 1 من أجل 10 رحلات:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "500",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العرض 1: ثمن الرحلة فقط."
+        }
+      ],
+      "feedback": {
+        "correct": "$50 \\times 10$ .",
+        "incorrect": "اضرب عدد الرحلات في ثمن الرحلة."
+      },
+      "solution": {
+        "lines": [
+          "كيفية ملء الجدول:",
+          "$50 \\times 10 = 500$ ؛ $25 \\times 10 + 400 = 650$"
+        ],
+        "result": "500DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "المبلغ حسب العرض 2 من أجل 10 رحلات:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "650",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAALUFI-NISYAN-B",
+          "value": "250"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثمن الرحلات ثم البطاقة الشهرية."
+        }
+      ],
+      "feedback": {
+        "correct": "$25 \\times 10 + 400$ .",
+        "incorrect": "لا تنس البطاقة الشهرية."
+      },
+      "solution": {
+        "lines": [
+          "كيفية ملء الجدول:",
+          "$50 \\times 10 = 500$ ؛ $25 \\times 10 + 400 = 650$"
+        ],
+        "result": "650DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "statement": "عدد الرحلات إذا كان المبلغ حسب العرض 1 هو 1200DA :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الرحلات",
+      "expectedAnswer": "24",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في العرض 1 المبلغ = 50 × عدد الرحلات."
+        }
+      ],
+      "feedback": {
+        "correct": "$1200 \\div 50$ .",
+        "incorrect": "اقسم المبلغ على ثمن الرحلة."
+      },
+      "solution": {
+        "lines": [
+          "كيفية ملء الجدول:",
+          "$1200 \\div 50 = 24$"
+        ],
+        "result": "24"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "statement": "المبلغ حسب العرض 2 من أجل هذا العدد من الرحلات:",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "1000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض عدد الرحلات الذي وجدته في العرض 2."
+        }
+      ],
+      "feedback": {
+        "correct": "$24 \\times 25 + 400$ .",
+        "incorrect": "اضرب في ثمن الرحلة في العرض 2 ثم أضف البطاقة."
+      },
+      "solution": {
+        "lines": [
+          "كيفية ملء الجدول:",
+          "$25 \\times 24 + 400 = 1000$"
+        ],
+        "result": "1000DA"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ا",
+      "lead": "ليكن $x$ عدد الرحلات في الشهر.",
+      "statement": "عبّر بدلالة $x$ عن المبالغ $f(x)$ ، $g(x)$ ، $h(x)$ المدفوعة حسب العروض 1 ، 2 و 3 على الترتيب.\nأعط العدد $a$ حيث: $f(x) = ax$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "50",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع عن كل رحلة في العرض 1؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هو ما يُدفع $x$ مرّة: معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "ما يُدفع عن كل رحلة في العرض 1 هو معامل $x$ .",
+        "incorrect": "معامل $x$ هو المبلغ الذي يتكرّر مع كل وحدة، لا المبلغ الذي يُدفع مرّة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "• العرض 1: $f(x) = 50x$",
+          "• العرض 2: $g(x) = 25x + 400$",
+          "• العرض 3: $h(x) = 1400$ (دالة ثابتة)"
+        ],
+        "result": "f(x) = 50x"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أعط العددين $a$ و $b$ حيث: $g(x) = ax + b$ ، ابدأ بالعدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "25",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "400"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع عن كل رحلة في العرض 2؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هو ما يُدفع $x$ مرّة: معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "ما يُدفع عن كل رحلة في العرض 2 هو معامل $x$ .",
+        "incorrect": "معامل $x$ هو المبلغ الذي يتكرّر مع كل وحدة، لا المبلغ الذي يُدفع مرّة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "• العرض 1: $f(x) = 50x$",
+          "• العرض 2: $g(x) = 25x + 400$",
+          "• العرض 3: $h(x) = 1400$ (دالة ثابتة)"
+        ],
+        "result": "g(x) = 25x + 400"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q7",
+      "step": "02",
+      "sub": "ا",
+      "statement": "ثم العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "400",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "25"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع مرّة واحدة (البطاقة الشهرية)؟"
+        }
+      ],
+      "feedback": {
+        "correct": "البطاقة الشهرية يُدفع مرّة واحدة: هو الحدّ الثابت $b$ .",
+        "incorrect": "الحدّ الثابت لا يتعلّق بعدد الوحدات $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "• العرض 1: $f(x) = 50x$",
+          "• العرض 2: $g(x) = 25x + 400$",
+          "• العرض 3: $h(x) = 1400$ (دالة ثابتة)"
+        ],
+        "result": "g(x) = 25x + 400"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q8",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أعط العدد $h(x)$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "1400",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل يتعلّق مبلغ العرض 3 بعدد الرحلات؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$h$ دالة ثابتة.",
+        "incorrect": "العرض 3 مبلغ جزافي."
+      },
+      "solution": {
+        "lines": [
+          "• العرض 1: $f(x) = 50x$",
+          "• العرض 2: $g(x) = 25x + 400$",
+          "• العرض 3: $h(x) = 1400$ (دالة ثابتة)"
+        ],
+        "result": "h(x) = 1400"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q9",
+      "step": "02",
+      "sub": "ب",
+      "statement": "مثّل بيانيا الدوال $f$ ، $g$ ، $h$ في معلم متعامد ومتجانس.\n(على محور الفواصل 1cm يمثّل 4 رحلات، وعلى محور التراتيب 1cm يمثّل 200DA)",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تمثيلا $f$ و $g$ مستقيمان: عيّن نقطتين من كل منهما (يمكنك استعمال الجدول)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تمثيل $h$ مستقيم يوازي محور الفواصل."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن عملك بالحل النموذجي ثم قيّم نفسك.",
+        "incorrect": "عيّن لكل دالة نقطتين ثم ارسم المستقيمات الثلاثة."
+      },
+      "solution": {
+        "lines": [
+          "$f(0) = 0$ ، $f(10) = 500$ ؛ $g(0) = 400$ ، $g(10) = 650$ ؛ $h(x) = 1400$ .",
+          "تمثيل $f$ مستقيم يشمل المبدأ والنقطة $(10 ; 500)$ ، وتمثيل $g$ مستقيم يشمل $(0 ; 400)$ و $(10 ; 650)$ ، وتمثيل $h$ مستقيم يوازي محور الفواصل ويقطع محور التراتيب في 1400."
+        ]
+      },
+      "timeSeconds": 420
+    },
+    {
+      "id": "q10",
+      "step": "02",
+      "sub": "ج",
+      "statement": "أوجد بيانيا عدد الرحلات في الشهر حتى يكون العرض 2 هو الأفضل من بين العروض الثلاثة.\nيكون العرض 2 هو الأفضل إذا كان: $m < x < M$ . أعط العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الرحلات $m$",
+      "expectedAnswer": "16",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العرض 2 هو الأفضل حيث يقع مستقيمه تحت المستقيمين الآخرين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحدّ الأول هو فاصلة نقطة تقاطع مستقيمي العرضين 1 و 2."
+        }
+      ],
+      "feedback": {
+        "correct": "قبل هذا العدد يكون العرض 1 أقل تكلفة.",
+        "incorrect": "ابحث عن فاصلة النقطة التي يلتقي فيها مستقيما العرضين 1 و 2."
+      },
+      "solution": {
+        "lines": [
+          "بيانيا: مستقيم العرض 2 يقع تحت المستقيمين الآخرين بين فاصلتي نقطتي تقاطعه معهما.",
+          "حسابيا (غير مطلوب): $25x + 400 < 50x$ ، أي $400 < 25x$ ، أي $x > 16$ ؛",
+          "و $25x + 400 < 1400$ ، أي $25x < 1000$ ، أي $x < 40$ .",
+          "إذا يكون العرض 2 هو الأفضل عندما: $16 < x < 40$ ."
+        ],
+        "result": "16 < x < 40"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q11",
+      "step": "02",
+      "sub": "ج",
+      "statement": "ثم العدد $M$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الرحلات $M$",
+      "expectedAnswer": "40",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحدّ الثاني هو فاصلة نقطة تقاطع مستقيم العرض 2 مع المستقيم الأفقي للعرض 3."
+        }
+      ],
+      "feedback": {
+        "correct": "بعد هذا العدد يكون العرض 3 أقل تكلفة.",
+        "incorrect": "ابحث أين يلتقي مستقيم العرض 2 بمستقيم العرض 3."
+      },
+      "solution": {
+        "lines": [
+          "بيانيا: مستقيم العرض 2 يقع تحت المستقيمين الآخرين بين فاصلتي نقطتي تقاطعه معهما.",
+          "حسابيا (غير مطلوب): $25x + 400 < 50x$ ، أي $400 < 25x$ ، أي $x > 16$ ؛",
+          "و $25x + 400 < 1400$ ، أي $25x < 1000$ ، أي $x < 40$ .",
+          "إذا يكون العرض 2 هو الأفضل عندما: $16 < x < 40$ ."
+        ],
+        "result": "16 < x < 40"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

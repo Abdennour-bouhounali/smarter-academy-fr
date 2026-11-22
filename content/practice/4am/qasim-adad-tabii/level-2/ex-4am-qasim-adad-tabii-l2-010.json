@@ -1,0 +1,159 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l2-010",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2025 — 999 و 37",
+    "estimatedMinutes": 5,
+    "tags": [
+      "قسمة إقليدية",
+      "الباقي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-adad-tabii_P1",
+      "modelledOn": "BEM 2025 I-2 01"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "جد حاصل وباقي القسمة الإقليدية للعدد 999 على 37.",
+      "statement": "حاصل القسمة:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "27",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أكبر مضاعف للعدد 37 لا يتجاوز 999."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل القسمة هو أكبر عدد طبيعي $q$ يحقق $37 \\times q \\leq 999$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الباقي أصغر تمامًا من 37."
+        }
+      ],
+      "feedback": {
+        "correct": "$999 = 37 \\times 27 + 0$ مع $0 < 37$.",
+        "incorrect": "ابحث عن أكبر مضاعف للعدد 37 لا يتجاوز 999، ثم اطرحه من 999."
+      },
+      "solution": {
+        "lines": [
+          "$37 \\times 27 = 999$ و $37 \\times 28 = 1036$ أكبر من 999.",
+          "$999 - 999 = 0$ و $0 < 37$",
+          "إذن المساواة التي تعبّر عن القسمة الإقليدية هي:"
+        ],
+        "result": "999 = 37 \\times 27 + 0"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "الباقي:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى من 999 بعد طرح أكبر مضاعف للعدد 37 لا يتجاوزه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي عدد طبيعي أصغر تمامًا من 37."
+        }
+      ],
+      "feedback": {
+        "correct": "$999 = 37 \\times 27 + 0$: الباقي 0، فهو معدوم.",
+        "incorrect": "اطرح من 999 أكبر مضاعف للعدد 37 لا يتجاوزه."
+      },
+      "solution": {
+        "lines": [
+          "$999 - 37 \\times 27 = 0$"
+        ],
+        "result": "r = 0"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "استنتج باقي القسمة الإقليدية للعدد 1000 على 37.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$1000 = 999 + 1$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل المساواة التي وجدتها في السؤال 01."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الباقي أصغر تمامًا من 37."
+        }
+      ],
+      "feedback": {
+        "correct": "$1000 = 37 \\times 27 + 1$ مع $1 < 37$.",
+        "incorrect": "اكتب 1000 على الشكل $999 + 1$، ثم عوّض 999 بالجداء الذي وجدته."
+      },
+      "solution": {
+        "lines": [
+          "$999 = 37 \\times 27$",
+          "$1000 = 37 \\times 27 + 1$ مع $1 < 37$"
+        ],
+        "result": "r = 1"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

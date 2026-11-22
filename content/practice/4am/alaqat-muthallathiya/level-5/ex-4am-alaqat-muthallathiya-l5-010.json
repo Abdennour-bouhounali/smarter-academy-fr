@@ -1,0 +1,404 @@
+{
+  "id": "ex-4am-alaqat-muthallathiya-l5-010",
+  "lessonCode": "alaqat-muthallathiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2007 — منطاد التصوير في مهرجان تمنراست",
+    "estimatedMinutes": 20,
+    "tags": [
+      "الوضعية الإدماجية",
+      "العلاقات المثلثية",
+      "حساب الأطوال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_alaqat-muthallathiya_P2",
+      "modelledOn": "BEM 2007 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2007",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في مهرجان بتمنراست، منطاد مربوط بحبل $[AM]$ طوله $65\\,\\mathrm{m}$ مثبّت في النقطة $A$ من الأرض الأفقية. تدفع الريح المنطاد فيبقى الحبل مشدودا ومستقيما، و $H$ المسقط العمودي للمنطاد $M$ على الأرض. يقيس جهاز مثبّت في $A$ : $\\cos\\widehat{MAH} = \\dfrac{5}{13}$ . لالتقاط صور المدينة يجب أن يكون المنطاد على ارتفاع $55\\,\\mathrm{m}$ على الأقل. ويخصّص المنظّمون مداخيل المهرجان لمساعدة الأسر المحتاجة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب القيمتين المضبوطتين لـ $\\sin\\widehat{MAH}$ و $\\tan\\widehat{MAH}$ .",
+      "statement": "$\\sin \\widehat{MAH}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "12/13",
+      "misconceptionSignatures": [
+        {
+          "value": "8/13",
+          "id": "MISC-MUTH-JAMA-NISAB"
+        },
+        {
+          "value": "144/169",
+          "id": "MISC-MUTH-JADHR-NASI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العلاقة التي تربط جيب الزاوية وجيب تمامها هي $\\cos^2 \\widehat{MAH} + \\sin^2 \\widehat{MAH} = 1$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اعزل $\\sin^2 \\widehat{MAH}$ ثم عوّض جيب التمام بقيمته، ولا تنس تربيع البسط والمقام معا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\sin \\widehat{MAH}$ عدد موجب تماما: خذ الجذر التربيعي الموجب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin^2 \\widehat{MAH} = 1 - \\dfrac{25}{169} = \\dfrac{144}{169}$ ، إذن $\\sin \\widehat{MAH} = \\dfrac{12}{13}$ .",
+        "incorrect": "استعمل العلاقة $\\cos^2 x + \\sin^2 x = 1$ (بين المربعين)، ثم خذ الجذر التربيعي الموجب."
+      },
+      "solution": {
+        "lines": [
+          "$\\sin^2 \\widehat{MAH} + \\cos^2 \\widehat{MAH} = 1$ ، إذن $\\sin^2 \\widehat{MAH} = 1 - \\left(\\dfrac{5}{13}\\right)^2 = 1 - \\dfrac{25}{169} = \\dfrac{144}{169}$",
+          "$\\sin \\widehat{MAH}$ عدد موجب، إذن $\\sin \\widehat{MAH} = \\sqrt{\\dfrac{144}{169}}$"
+        ],
+        "result": "\\sin \\widehat{MAH} = \\dfrac{12}{13}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$\\tan \\widehat{MAH}$ :",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "12/5",
+      "misconceptionSignatures": [
+        {
+          "value": "5/12",
+          "id": "MISC-MUTH-TAN-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الظل هو حاصل قسمة الجيب على جيب التمام: $\\tan \\widehat{MAH} = \\dfrac{\\sin \\widehat{MAH}}{\\cos \\widehat{MAH}}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القسمة على كسر هي الضرب في مقلوبه، ثم اختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\tan \\widehat{MAH} = \\dfrac{12}{13} \\div \\dfrac{5}{13} = \\dfrac{12}{5}$ .",
+        "incorrect": "الظل = الجيب ÷ جيب التمام؛ القسمة على كسر هي الضرب في مقلوبه."
+      },
+      "solution": {
+        "lines": [
+          "$\\tan \\widehat{MAH} = \\dfrac{\\sin \\widehat{MAH}}{\\cos \\widehat{MAH}} = \\dfrac{12}{13} \\div \\dfrac{5}{13}$"
+        ],
+        "result": "\\tan \\widehat{MAH} = \\dfrac{12}{5}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب ارتفاع المنطاد $MH$ .",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الارتفاع بـ m",
+      "expectedAnswer": "60",
+      "misconceptionSignatures": [
+        {
+          "value": "25",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$[MH]$ مقابل للزاوية $\\widehat{MAH}$ والحبل $[AM]$ وتر."
+        }
+      ],
+      "feedback": {
+        "correct": "$MH = 65 \\times \\dfrac{12}{13} = 60\\,\\mathrm{m}$ .",
+        "incorrect": "المقابل = الوتر × الجيب (لا جيب التمام)."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $AMH$ القائم في $H$ : $MH = AM \\times \\sin\\widehat{MAH} = 65 \\times \\dfrac{12}{13}$"
+        ],
+        "result": "MH = 60\\,\\mathrm{m}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "هل يمكن التقاط الصور من المنطاد؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن ارتفاع المنطاد بـ $55\\,\\mathrm{m}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$60\\,\\mathrm{m} \\geqslant 55\\,\\mathrm{m}$ : نعم.",
+        "incorrect": "قارن الارتفاع الذي حسبته بالحدّ الأدنى $55\\,\\mathrm{m}$ ."
+      },
+      "solution": {
+        "lines": [
+          "ارتفاع المنطاد $60\\,\\mathrm{m}$ و $60 > 55$ .",
+          "إذن يمكن التقاط الصور."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "sub": "ا",
+      "lead": "اشتدّت الريح فصارت زاوية الحبل مع الأرض $y$ حيث $\\cos y = \\dfrac{3}{5}$ . احسب $\\sin y$ ، ثم الارتفاع الجديد للمنطاد.",
+      "statement": "$\\sin y$ :",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "4/5",
+      "misconceptionSignatures": [
+        {
+          "value": "2/5",
+          "id": "MISC-MUTH-JAMA-NISAB"
+        },
+        {
+          "value": "16/25",
+          "id": "MISC-MUTH-JADHR-NASI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العلاقة التي تربط جيب الزاوية وجيب تمامها هي $\\cos^2 y + \\sin^2 y = 1$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اعزل $\\sin^2 y$ ثم عوّض جيب التمام بقيمته، ولا تنس تربيع البسط والمقام معا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$\\sin y$ عدد موجب تماما: خذ الجذر التربيعي الموجب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin^2 y = 1 - \\dfrac{9}{25} = \\dfrac{16}{25}$ ، إذن $\\sin y = \\dfrac{4}{5}$ .",
+        "incorrect": "استعمل العلاقة بين المربعين ثم الجذر الموجب."
+      },
+      "solution": {
+        "lines": [
+          "$\\sin^2 y = 1 - \\dfrac{9}{25} = \\dfrac{16}{25}$",
+          "$\\sin y > 0$ ، إذن $\\sin y = \\dfrac{4}{5}$"
+        ],
+        "result": "\\sin y = \\dfrac{4}{5}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "sub": "ب",
+      "statement": "الارتفاع الجديد للمنطاد:",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الارتفاع بـ m",
+      "expectedAnswer": "52",
+      "misconceptionSignatures": [
+        {
+          "value": "39",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المقابل = الوتر × الجيب الجديد."
+        }
+      ],
+      "feedback": {
+        "correct": "$65 \\times \\dfrac{4}{5} = 52\\,\\mathrm{m} < 55\\,\\mathrm{m}$ : لم يعد التصوير ممكنا.",
+        "incorrect": "اضرب طول الحبل في الجيب الجديد."
+      },
+      "solution": {
+        "lines": [
+          "$65 \\times \\dfrac{4}{5} = 52\\,\\mathrm{m}$ ، و $52 < 55$ : يجب التصرّف."
+        ],
+        "result": "52\\,\\mathrm{m}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q7",
+      "step": "05",
+      "sub": "ا",
+      "lead": "☜ بكم مترا يجب إطالة الحبل ليعود المنطاد إلى ارتفاع $60\\,\\mathrm{m}$ مع بقاء الزاوية $y$ ؟",
+      "statement": "الطول الجديد للحبل:",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "75",
+      "misconceptionSignatures": [
+        {
+          "value": "48",
+          "id": "MISC-MUTH-DARB-BADAL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الارتفاع $60\\,\\mathrm{m}$ هو المقابل، والحبل هو الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المجهول في مقام الجيب."
+        }
+      ],
+      "feedback": {
+        "correct": "$L = \\dfrac{60}{\\sin y} = 60 \\times \\dfrac{5}{4} = 75\\,\\mathrm{m}$ .",
+        "incorrect": "الوتر = المقابل ÷ الجيب."
+      },
+      "solution": {
+        "lines": [
+          "$\\sin y = \\dfrac{60}{L}$ ، إذن $L = 60 \\div \\dfrac{4}{5} = 60 \\times \\dfrac{5}{4}$"
+        ],
+        "result": "L = 75\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q8",
+      "step": "05",
+      "sub": "ب",
+      "statement": "الطول الذي يجب إضافته إلى الحبل:",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح الطول الحالي للحبل من الطول الجديد."
+        }
+      ],
+      "feedback": {
+        "correct": "$75 - 65 = 10\\,\\mathrm{m}$ .",
+        "incorrect": "الفرق بين الطول الجديد والطول الحالي."
+      },
+      "solution": {
+        "lines": [
+          "$75 - 65$"
+        ],
+        "result": "10\\,\\mathrm{m}"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

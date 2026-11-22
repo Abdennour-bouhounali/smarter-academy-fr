@@ -1,0 +1,176 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l2-005",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2024 — 588 قطعة حلوى",
+    "estimatedMinutes": 4,
+    "tags": [
+      "قاسم",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-adad-tabii_P1",
+      "modelledOn": "BEM 2024 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "حضّر صاحب مخبزة 588 قطعة حلوى، ويريد ترتيبها كلها في علب متماثلة تحتوي كل منها على نفس العدد من القطع، دون أن تبقى أي قطعة، ليتصدّق بها على الأسر المحتاجة بمناسبة العيد."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "هل يمكن أن تحتوي كل علبة على 12 قطعة؟ 16 قطعة؟ برّر إجابتك.",
+      "statement": "12 قطعة في كل علبة.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 588 على 12."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "12 قاسم للعدد 588 إذا وفقط إذا كان باقي هذه القسمة معدومًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$588 = 12 \\times 49$: الباقي معدوم.",
+        "incorrect": "أجرِ القسمة الإقليدية للعدد 588 على 12، وانظر هل الباقي معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$588 = 12 \\times 49$ (الباقي معدوم).",
+          "إذن 12 قاسم للعدد 588: يمكن ذلك."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "16 قطعة في كل علبة.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 588 على 16."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "16 قاسم للعدد 588 إذا وفقط إذا كان باقي هذه القسمة معدومًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$588 = 16 \\times 36 + 12$: الباقي غير معدوم.",
+        "incorrect": "أجرِ القسمة الإقليدية للعدد 588 على 16، وانظر هل الباقي معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$588 = 16 \\times 36 + 12$ مع $12 < 16$",
+          "الباقي 12 غير معدوم، إذن 16 ليس قاسمًا للعدد 588: تبقى 12 قطعة، فلا يمكن ذلك."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "أوجد عدد العلب إذا احتوت كل علبة على 12 قطعة.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "49",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نبحث عن عدد طبيعي $q$ حيث $588 = 12 \\times q$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أجرِ القسمة الإقليدية للعدد 588 على 12."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان الباقي معدومًا فإن حاصل القسمة هو العدد المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$588 = 12 \\times 49$.",
+        "incorrect": "اقسم 588 على 12: حاصل القسمة هو العدد $q$ إذا كان الباقي معدومًا."
+      },
+      "solution": {
+        "lines": [
+          "$12 \\times 49 = 588$",
+          "إذن $588 = 12 \\times 49$"
+        ],
+        "result": "588 = 12 \\times 49"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

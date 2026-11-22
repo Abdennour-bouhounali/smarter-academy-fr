@@ -1,0 +1,343 @@
+{
+  "id": "ex-1am-ikhtizal-kitaba-kasriya-l5-009",
+  "lessonCode": "ikhtizal-kitaba-kasriya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — رفّا القصص في المكتبة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "اختزال",
+      "كتابات متساوية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في مكتبة المتوسطة رفّان: في الرفّ الأول 126 كتابًا منها 84 قصّة، وفي الرفّ الثاني 75 كتابًا منها 45 قصّة. يريد التلاميذ المتطوّعون لترتيب المكتبة معرفة الرفّ الذي فيه أكبر حصّة من القصص.\nالجزء الأول: نختزل.\nالجزء الثاني: نقارن بنفس المقام."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "عبّر في أبسط شكل ممكن عن حصّة القصص في الرفّ الأول.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b لا يقبل الاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "2/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "42/63",
+          "id": "MISC-KASRIYA-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن قاسم مشترك للبسط والمقام بقواعد قابلية القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على هذا القاسم، ثم أعد البحث في الكسر الجديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا لم تنفع القواعد، جرّب جداول الضرب (7، 11، 13…)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{84}{126} = \\dfrac{2}{3}$ ولا يقبل البسط والمقام قاسمًا مشتركًا غير 1.",
+        "incorrect": "نقسم البسط والمقام على قاسم مشترك لهما، ونعيد ذلك حتى لا يبقى قاسم مشترك غير 1.",
+        "notIrreducible": "الكتابة تساوي الكسر لكنها ما زالت قابلة للاختزال: ابحث عن قاسم مشترك آخر للبسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "$84 = 2 \\times 42$ و $126 = 2 \\times 63$ ، إذن $\\dfrac{84}{126} = \\dfrac{84 \\div 2}{126 \\div 2} = \\dfrac{42}{63}$",
+          "$42 = 3 \\times 14$ و $63 = 3 \\times 21$ ، إذن $\\dfrac{42}{63} = \\dfrac{42 \\div 3}{63 \\div 3} = \\dfrac{14}{21}$",
+          "$14 = 7 \\times 2$ و $21 = 7 \\times 3$ ، إذن $\\dfrac{14}{21} = \\dfrac{14 \\div 7}{21 \\div 7} = \\dfrac{2}{3}$",
+          "العددان 2 و 3 لا يقبلان قاسمًا مشتركًا غير 1: $\\dfrac{2}{3}$ في أبسط شكل ممكن."
+        ],
+        "result": "\\dfrac{84}{126} = \\dfrac{2}{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "عبّر في أبسط شكل ممكن عن حصّة القصص في الرفّ الثاني.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b لا يقبل الاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "3/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "15/25",
+          "id": "MISC-KASRIYA-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن قاسم مشترك للبسط والمقام بقواعد قابلية القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على هذا القاسم، ثم أعد البحث في الكسر الجديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا لم تنفع القواعد، جرّب جداول الضرب (7، 11، 13…)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{45}{75} = \\dfrac{3}{5}$ ولا يقبل البسط والمقام قاسمًا مشتركًا غير 1.",
+        "incorrect": "نقسم البسط والمقام على قاسم مشترك لهما، ونعيد ذلك حتى لا يبقى قاسم مشترك غير 1.",
+        "notIrreducible": "الكتابة تساوي الكسر لكنها ما زالت قابلة للاختزال: ابحث عن قاسم مشترك آخر للبسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "$45 = 3 \\times 15$ و $75 = 3 \\times 25$ ، إذن $\\dfrac{45}{75} = \\dfrac{45 \\div 3}{75 \\div 3} = \\dfrac{15}{25}$",
+          "$15 = 5 \\times 3$ و $25 = 5 \\times 5$ ، إذن $\\dfrac{15}{25} = \\dfrac{15 \\div 5}{25 \\div 5} = \\dfrac{3}{5}$",
+          "العددان 3 و 5 لا يقبلان قاسمًا مشتركًا غير 1: $\\dfrac{3}{5}$ في أبسط شكل ممكن."
+        ],
+        "result": "\\dfrac{45}{75} = \\dfrac{3}{5}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "نكتب الكسرين بنفس المقام 15.",
+      "statement": "أتمم: $\\dfrac{2}{3} = \\dfrac{\\ldots}{15}$",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "14",
+          "id": "MISC-KASRIYA-JAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الحدّين المعروفين اللذين في نفس الموضع (بسطين أو مقامين)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بأيّ عدد نضرب (أو نقسم) أحدهما لنحصل على الآخر؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق نفس العملية على الحدّ الآخر من الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{2}{3} = \\dfrac{2 \\times 5}{3 \\times 5} = \\dfrac{10}{15}$ : ضربنا البسط والمقام في نفس العدد.",
+        "incorrect": "الكسر لا يتغيّر إذا ضربنا البسط والمقام في نفس العدد غير المعدوم أو قسمناهما عليه، أمّا إضافة نفس العدد إليهما فتغيّره."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2}{3} = \\dfrac{2 \\times 5}{3 \\times 5} = \\dfrac{10}{15}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أتمم: $\\dfrac{3}{5} = \\dfrac{\\ldots}{15}$",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-KASRIYA-JAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الحدّين المعروفين اللذين في نفس الموضع (بسطين أو مقامين)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بأيّ عدد نضرب (أو نقسم) أحدهما لنحصل على الآخر؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق نفس العملية على الحدّ الآخر من الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{5} = \\dfrac{3 \\times 3}{5 \\times 3} = \\dfrac{9}{15}$ : ضربنا البسط والمقام في نفس العدد.",
+        "incorrect": "الكسر لا يتغيّر إذا ضربنا البسط والمقام في نفس العدد غير المعدوم أو قسمناهما عليه، أمّا إضافة نفس العدد إليهما فتغيّره."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{5} = \\dfrac{3 \\times 3}{5 \\times 3} = \\dfrac{9}{15}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "أيّ رفّ فيه أكبر حصّة من القصص؟",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الرفّ الأول",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الرفّ الثاني، لأنّ حدّي $\\dfrac{3}{5}$ أكبر من حدّي $\\dfrac{2}{3}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KASRIYA-AKBAR-ARQAM"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل جوابيك عن السؤال 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "للكسرين نفس المقام: قارن البسطين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{10}{15} > \\dfrac{9}{15}$ : الرفّ الأول.",
+        "incorrect": "نقارن كسرين بعد كتابتهما بنفس المقام."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{84}{126} = \\dfrac{2}{3} = \\dfrac{10}{15}$ و $\\dfrac{45}{75} = \\dfrac{3}{5} = \\dfrac{9}{15}$",
+          "$10 > 9$ : الرفّ الأول."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "هل يمكن كتابة حصّة القصص في الرفّ الأول على شكل كسر عشري؟",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KASRIYA-KULL-ASHRI"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب مضاعفات المقام."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يصل أحدها إلى 10 أو 100 أو 1000…؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{84}{126} = \\dfrac{2}{3}$ ولا يقسم 3 أيّ عدد من الأعداد 10، 100، 1000…",
+        "incorrect": "لا يُكتب كسر على شكل كسر عشري إلا إذا وُجد عدد نضرب فيه مقامه (بعد الاختزال) لنجد 10 أو 100 أو 1000…"
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{84}{126} = \\dfrac{2}{3}$",
+          "مجموع أرقام 10، 100، 1000… هو 1: لا تقبل القسمة على 3، الجواب: لا."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

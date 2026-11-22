@@ -1,0 +1,299 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l5-003",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أيّ محلّ أرخص؟",
+    "estimatedMinutes": 18,
+    "tags": [
+      "علب",
+      "الحاصل + 1",
+      "مقارنة",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 1,
+      "file": "1am-s1-101",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يحتاج السيّد علي إلى 230 بلاطة لتبليط أرضية مستودعه، ويقارن بين محلّين قبل الشراء.\nالجزء الأول: المحلّ الأول يبيع البلاط في علب من 12 بلاطة، ثمن العلبة 965,5 دج.\nالجزء الثاني: المحلّ الثاني يبيع البلاط في علب من 15 بلاطة، ثمن العلبة 1180 دج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "كم علبة يشتري من المحلّ الأول؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد العلب",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "19",
+          "id": "MISC-IQLIDIYA-NISYAN-ZIYADA"
+        },
+        {
+          "value": "2",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل تكفي المجموعات الكاملة لوضع كل شيء؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ماذا نفعل بالباقي إذا لم يكن معدومًا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$230 = 12 \\times 19 + 2$: يبقى 2 بعد المجموعات الكاملة، ويحتاج إلى علبة أخرى.",
+        "incorrect": "الحاصل يعدّ المجموعات الكاملة فقط؛ إذا بقي شيء فهو يحتاج إلى مجموعة إضافية."
+      },
+      "solution": {
+        "lines": [
+          "$230 = 12 \\times 19 + 2$",
+          "يبقى 2 بعد المجموعات الكاملة، فنحتاج إلى علبة أخرى:",
+          "$19 + 1 = 20$"
+        ],
+        "result": "20"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب ما يدفعه في المحلّ الأول.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "19310",
+      "misconceptionSignatures": [
+        {
+          "value": "18344.5",
+          "id": "MISC-IQLIDIYA-NISYAN-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد العلب × ثمن العلبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$20 \\times 965{,}5 = 19310$ دج.",
+        "incorrect": "اضرب عدد العلب اللازمة في ثمن العلبة."
+      },
+      "solution": {
+        "lines": [
+          "$20 \\times 965{,}5 = 19310$"
+        ],
+        "result": "19310 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كم علبة يشتري من المحلّ الثاني؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد العلب",
+      "expectedAnswer": "16",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-IQLIDIYA-NISYAN-ZIYADA"
+        },
+        {
+          "value": "5",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل تكفي المجموعات الكاملة لوضع كل شيء؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ماذا نفعل بالباقي إذا لم يكن معدومًا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$230 = 15 \\times 15 + 5$: يبقى 5 بعد المجموعات الكاملة، ويحتاج إلى علبة أخرى.",
+        "incorrect": "الحاصل يعدّ المجموعات الكاملة فقط؛ إذا بقي شيء فهو يحتاج إلى مجموعة إضافية."
+      },
+      "solution": {
+        "lines": [
+          "$230 = 15 \\times 15 + 5$",
+          "يبقى 5 بعد المجموعات الكاملة، فنحتاج إلى علبة أخرى:",
+          "$15 + 1 = 16$"
+        ],
+        "result": "16"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "احسب ما يدفعه في المحلّ الثاني.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "18880",
+      "misconceptionSignatures": [
+        {
+          "value": "17700",
+          "id": "MISC-IQLIDIYA-NISYAN-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد العلب × ثمن العلبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$16 \\times 1180 = 18880$ دج.",
+        "incorrect": "اضرب عدد العلب اللازمة في ثمن العلبة."
+      },
+      "solution": {
+        "lines": [
+          "$16 \\times 1180 = 18880$"
+        ],
+        "result": "18880 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "من أيّ محلّ يشتري ليدفع أقل؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "المحلّ الأول",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-NISYAN-ZIYADA"
+        },
+        {
+          "id": "B",
+          "content": "المحلّ الثاني",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المبلغين."
+        }
+      ],
+      "feedback": {
+        "correct": "$18880 < 19310$: المحلّ الثاني أرخص.",
+        "incorrect": "قارن المبلغين بعد حساب عدد العلب اللازمة في كل محلّ."
+      },
+      "solution": {
+        "lines": [
+          "المحلّ الأول: 19310 دج ؛ المحلّ الثاني: 18880 دج.",
+          "$18880 < 19310$ ، إذن يشتري من المحلّ الثاني."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "06",
+      "statement": "كم بلاطة تبقى دون استعمال إذا اشترى من المحلّ الثاني؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "10",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم بلاطة في العلب المشتراة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$16 \\times 15 = 240$ و $240 - 230 = 10$.",
+        "incorrect": "احسب عدد البلاطات في كل العلب، ثم اطرح 230."
+      },
+      "solution": {
+        "lines": [
+          "$16 \\times 15 = 240$",
+          "$240 - 230 = 10$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

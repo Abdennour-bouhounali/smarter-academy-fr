@@ -1,0 +1,90 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-mafhum-muadala-l1-003",
+  "lessonCode": "wadiya-idmajiya-mafhum-muadala",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — تبسيط مجموع حدّين متشابهين",
+    "estimatedMinutes": 5,
+    "tags": [
+      "تبسيط",
+      "حدود متشابهة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نريد كتابة $3a+4a-2a$ بأبسط شكل ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اختر الكتابة المبسّطة لهذه العبارة .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-mafhum-muadala_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$24a$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-MULTCOEF"
+        },
+        {
+          "id": "B",
+          "content": "$5a$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$5a \\times a$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IBARA2-ADDPOWERS"
+        }
+      ],
+      "feedback": {
+        "correct": "$5a$ .",
+        "incorrect": "اكتب الجزء الثابت مرّة واحدة والجزء المتكرّر مضروبًا في عدده، ثمّ اختبر عبارتك على عدد صغير."
+      },
+      "solution": {
+        "lines": [
+          "الحدود متشابهة، نجمع المعاملات ونطرح : $3+4-2 = 5$ .",
+          "العبارة : $5a$ ."
+        ]
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في الوضعيّة ما يتغيّر (وهو الحرف) وما يبقى ثابتًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب ما يُدفع أو يُحسب مرّة واحدة، ثمّ ما يتكرّر مضروبًا في عدد مرّاته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر العبارة على عدد صغير مثل اثنين قبل أن تختار."
+        }
+      ],
+      "timeSeconds": 80
+    }
+  ]
+}

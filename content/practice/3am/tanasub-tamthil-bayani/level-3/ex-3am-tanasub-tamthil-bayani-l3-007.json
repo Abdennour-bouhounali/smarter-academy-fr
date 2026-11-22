@@ -1,0 +1,331 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l3-007",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — مبيعات التمر المجفّف",
+    "estimatedMinutes": 10,
+    "tags": [
+      "تمثيل بياني",
+      "تناسبية",
+      "جدول"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 3,
+      "file": "3am-s3-56",
+      "exercise": 3
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تبيع تعاونية التمر المجفّف في أكياس، وتكتب في الجدول التالي ثمن كل كمية. مثّلنا النقط في المعلم المتعامد والمتجانس الموالي: الفاصلة هي الكتلة بالكيلوغرام، والترتيب هو الثمن بمئات الدنانير.",
+    "table": {
+      "head": [
+        "الكتلة (kg)",
+        "2",
+        "4",
+        "6",
+        "8"
+      ],
+      "rows": [
+        [
+          "الثمن (دج)",
+          "500",
+          "1000",
+          "1500",
+          "2000"
+        ]
+      ]
+    },
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          2,
+          5
+        ],
+        "B": [
+          4,
+          10
+        ],
+        "C": [
+          6,
+          15
+        ],
+        "D": [
+          8,
+          20
+        ]
+      },
+      "lines": [
+        {
+          "through": [
+            "O",
+            "D"
+          ],
+          "name": "(D)",
+          "tone": "indigo",
+          "extend": [
+            0,
+            0.1
+          ]
+        }
+      ],
+      "grid": true,
+      "axes": {
+        "every": 5
+      },
+      "labels": {
+        "O": "sw",
+        "A": "se",
+        "B": "se",
+        "C": "se",
+        "D": "se"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس: المستقيم (D) يشمل المبدأ O والنقط A(2;5) و B(4;10) و C(6;15) و D(8;20)",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: الكتلة بالكيلوغرام — محور التراتيب: الثمن بمئات الدنانير"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما إحداثيا النقطة $A$ التي تمثّل العمود الأول؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$A(5\\,;\\,2)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-SWAP-XY"
+        },
+        {
+          "id": "B",
+          "content": "$A(2\\,;\\,500)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-UNIT-AXIS"
+        },
+        {
+          "id": "C",
+          "content": "$A(2\\,;\\,5)$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكتلة هي الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الثمن بمئات الدنانير هو الترتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "$2$ kg و $500$ دج أي $5$ مئات: $A(2\\,;\\,5)$ .",
+        "incorrect": "الفاصلة أوّلا (الكتلة) ثم الترتيب (الثمن بمئات الدنانير)."
+      },
+      "solution": {
+        "lines": [
+          "العمود الأول: $2$ kg و $500$ دج $= 5$ مئات.",
+          "إذن $A(2\\,;\\,5)$ ."
+        ],
+        "result": "A(2\\,;\\,5)"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل الثمن متناسب مع الكتلة؟ (هذه نقط $A$ و $B$ و $C$ و $D$ )",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لأنّ المبدأ $O$ ليس من النقط المعلَّمة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-ORIGIN-DROP"
+        },
+        {
+          "id": "B",
+          "content": "نعم، النقط على استقامة واحدة مع المبدأ $O$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لا، لأنّ الترتيب لا يساوي الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-EQUAL-ONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط على استقامة واحدة مع المبدأ $O$ ، فهي تمثّل وضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "النقط $A$ و $B$ و $C$ و $D$ على المستقيم $(D)$ الذي يشمل المبدأ $O$ .",
+          "إذن الثمن متناسب مع الكتلة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "ما معامل التناسبية $a$ (ثمن الكيلوغرام بمئات الدنانير)؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: معامل التناسبية",
+      "expectedAnswer": "2.5",
+      "misconceptionSignatures": [
+        {
+          "value": "2/5",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        },
+        {
+          "value": "9",
+          "id": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل التناسبية هو ترتيب النقطة الذي فاصلته $1$ ، أو ناتج قسمة الترتيب على الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ إحداثيي النقطة $C$ ثم اقسم الترتيب على الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تقسم الفاصلة على الترتيب ولا تطرح أحد العددين من الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{15}{6} = 2{,}5$ .",
+        "incorrect": "المعامل هو ناتج قسمة الترتيب على الفاصلة (وليس العكس) لنقطة من المستقيم."
+      },
+      "solution": {
+        "lines": [
+          "النقطة $C(6\\,;\\,15)$ من المستقيم.",
+          "$a = \\dfrac{15}{6} = 2{,}5$"
+        ],
+        "result": "a = 2{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "ما ثمن $5$ kg من هذا التمر بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الثمن بالدينار",
+      "expectedAnswer": "1250",
+      "misconceptionSignatures": [
+        {
+          "value": "12.5",
+          "id": "MISC-TAMTHIL-UNIT-AXIS"
+        },
+        {
+          "value": "1000",
+          "id": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل $y = a\\,x$ مع المعامل الذي وجدته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تذكّر أنّ الترتيب بمئات الدنانير."
+        }
+      ],
+      "feedback": {
+        "correct": "$y = 2{,}5 \\times 5 = 12{,}5$ مئة دج، أي $1250$ دج.",
+        "incorrect": "حوّل النتيجة من مئات الدنانير إلى الدنانير."
+      },
+      "solution": {
+        "lines": [
+          "$y = 2{,}5 \\times 5 = 12{,}5$ مئة دج.",
+          "$12{,}5 \\times 100 = 1250$ دج."
+        ],
+        "result": "1250\\ \\text{دج}"
+      },
+      "work": "optional",
+      "timeSeconds": 100
+    }
+  ]
+}

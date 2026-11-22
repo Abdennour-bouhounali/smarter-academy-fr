@@ -1,0 +1,86 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-maalam-l2-003",
+  "lessonCode": "wadiya-idmajiya-maalam",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — طول قطعة بالقيمة المضبوطة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "المسافة بين نقطتين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-maalam_P3",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "قطعة مستقيمة من مسار درّاجة بين $P(-1\\,;\\,2)$ و $Q(2\\,;\\,-3)$ في معلم متعامد ومتجانس."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "القيمة المضبوطة للطول PQ هي:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\sqrt{34}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$8$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-JAM"
+        },
+        {
+          "id": "C",
+          "content": "$34$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-JADHR-NASI"
+        },
+        {
+          "id": "D",
+          "content": "$2\\sqrt{2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MASAFA-TARBI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{PQ}\\begin{pmatrix} 3 \\\\ -5 \\end{pmatrix}$"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$PQ = \\sqrt{3^2 + (-5)^2}$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$9 + 25 = 34$ ، و 34 ليس مربعا تاما."
+        }
+      ],
+      "feedback": {
+        "correct": "$PQ = \\sqrt{3^2 + (-5)^2} = \\sqrt{9 + 25} = \\sqrt{34}$ .",
+        "incorrect": "ربّع كل فرق ثم اجمع ثم خذ الجذر."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 2
+    }
+  ]
+}

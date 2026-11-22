@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import ChoiceQuestion from './questions/ChoiceQuestion';
 import NumericQuestion from './questions/NumericQuestion';
 import FractionQuestion from './questions/FractionQuestion';
@@ -19,12 +20,13 @@ const REGISTRY = {
 };
 
 export default function QuestionRenderer({ question, onChange, disabled }) {
+  const { t } = useTranslation('student');
   const Widget = REGISTRY[question.representation];
 
   if (!Widget) {
     return (
       <p className="text-sm text-rose-600 text-center">
-        Type de question non pris en charge ({question.representation}).
+        {t('diagnostic.unsupportedType', { type: question.representation })}
       </p>
     );
   }

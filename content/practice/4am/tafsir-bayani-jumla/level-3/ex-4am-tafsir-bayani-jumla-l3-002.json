@@ -1,0 +1,338 @@
+{
+  "id": "ex-4am-tafsir-bayani-jumla-l3-002",
+  "lessonCode": "tafsir-bayani-jumla",
+  "level": 3,
+  "metadata": {
+    "title": "الحل البياني لجملة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "y = ax + b",
+      "تمثيل بياني",
+      "قراءة بيانية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tafsir-bayani-jumla_P2",
+      "modelledOn": "act-5"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الجملة:",
+    "formulas": [
+      "\\begin{cases} 2x + y = 7 \\\\ x - y = 2 \\end{cases}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "اكتب كل معادلة من معادلتي الجملة على الشكل $y = ax + b$ .",
+      "statement": "المعادلة الأولى: أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-JUMLA-ISHARA-Y"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعادلة من الشكل $ax + by = c$ : نريد أن يبقى $y$ وحده في طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل حدّ $x$ إلى الطرف الثاني مع تغيير إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم اقسم كل الحدود على معامل $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = -2$ : معامل $x$ بعد عزل $y$ .",
+        "incorrect": "انقل حدّ $x$ بتغيير إشارته، ثم اقسم الطرفين على معامل $y$ (بإشارته)."
+      },
+      "solution": {
+        "lines": [
+          "$2x + y = 7$",
+          "$y = -2x + 7$",
+          "$y = -2x + 7$",
+          "إذن: $a = -2$ و $b = 7$ ."
+        ],
+        "result": "y = -2x + 7"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ا",
+      "statement": "المعادلة الأولى: أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "-7",
+          "id": "MISC-JUMLA-ISHARA-Y"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعادلة من الشكل $ax + by = c$ : نريد أن يبقى $y$ وحده في طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $b$ هو الحد الذي لا يحوي $x$ بعد عزل $y$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم اقسم كل الحدود على معامل $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$y = -2x + 7$ .",
+        "incorrect": "العدد $b$ هو الطرف الثاني مقسوما على معامل $y$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$2x + y = 7$",
+          "$y = -2x + 7$",
+          "$y = -2x + 7$",
+          "إذن: $a = -2$ و $b = 7$ ."
+        ],
+        "result": "y = -2x + 7"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ب",
+      "statement": "المعادلة الثانية: أعط العدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "-1",
+          "id": "MISC-JUMLA-ISHARA-Y"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعادلة من الشكل $ax + by = c$ : نريد أن يبقى $y$ وحده في طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انقل حدّ $x$ إلى الطرف الثاني مع تغيير إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم اقسم كل الحدود على معامل $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 1$ : معامل $x$ بعد عزل $y$ .",
+        "incorrect": "انقل حدّ $x$ بتغيير إشارته، ثم اقسم الطرفين على معامل $y$ (بإشارته)."
+      },
+      "solution": {
+        "lines": [
+          "$x - y = 2$",
+          "$-y = -x + 2$",
+          "نضرب الطرفين في $-1$ :",
+          "$y = x - 2$",
+          "إذن: $a = 1$ و $b = -2$ ."
+        ],
+        "result": "y = x - 2"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "ب",
+      "statement": "المعادلة الثانية: أعط العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-JUMLA-ISHARA-Y"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعادلة من الشكل $ax + by = c$ : نريد أن يبقى $y$ وحده في طرف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد $b$ هو الحد الذي لا يحوي $x$ بعد عزل $y$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم اقسم كل الحدود على معامل $y$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$y = x - 2$ .",
+        "incorrect": "العدد $b$ هو الطرف الثاني مقسوما على معامل $y$ ، بإشارته."
+      },
+      "solution": {
+        "lines": [
+          "$x - y = 2$",
+          "$-y = -x + 2$",
+          "نضرب الطرفين في $-1$ :",
+          "$y = x - 2$",
+          "إذن: $a = 1$ و $b = -2$ ."
+        ],
+        "result": "y = x - 2"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "statement": "مثّل بيانيا المستقيمين $(d_1)$ و $(d_2)$ الممثلين للمعادلتين في معلم متعامد ومتجانس.",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن نقطتين من كل مستقيم: مثلا النقطة التي فاصلتها 0 ونقطة أخرى."
+        }
+      ],
+      "feedback": {
+        "correct": "التمثيل البياني لكل معادلة مستقيم.",
+        "incorrect": "عيّن لكل مستقيم نقطتين على عقد الشبكة."
+      },
+      "solution": {
+        "lines": [
+          "$(d_1)$ : $y = -2x + 7$ يشمل النقطتين $(0 ; 7)$ و $(2 ; 3)$ .",
+          "$(d_2)$ : $y = x - 2$ يشمل النقطتين $(0 ; -2)$ و $(2 ; 0)$ ."
+        ]
+      },
+      "timeSeconds": 360
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "statement": "بقراءة بيانية، عيّن حل الجملة.",
+      "learningPoints": [
+        {
+          "code": "4am_tafsir-bayani-jumla_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : الفاصلة ثم الترتيب (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": {
+        "x": "3",
+        "y": "1"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "1",
+            "y": "3"
+          },
+          "id": "MISC-JUMLA-BAYANI-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن عقدة الشبكة التي يتقاطع فيها المستقيمان."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ فاصلتها على محور الفواصل ثم ترتيبها على محور التراتيب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "حل الجملة هو الثنائية $(x ; y)$ : الفاصلة أولا ثم الترتيب."
+        }
+      ],
+      "feedback": {
+        "correct": "هذه هي إحداثيات نقطة تقاطع المستقيمين: هي حل الجملة.",
+        "incorrect": "الثنائية تُكتب $(x ; y)$ : الفاصلة (على محور الفواصل) أولا ثم الترتيب (على محور التراتيب)."
+      },
+      "solution": {
+        "lines": [
+          "المستقيمان $(d_1)$ و $(d_2)$ يتقاطعان في النقطة $(3 ; 1)$ .",
+          "حل الجملة هو الثنائية التي تمثل إحداثيي نقطة تقاطع المستقيمين: $(3 ; 1)$ .",
+          "تحقق: $2 \\times 3 + 1 = 7$ و $3 - 1 = 2$ ."
+        ],
+        "result": "(3 ; 1)"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

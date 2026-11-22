@@ -1,0 +1,166 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l4-001",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 4,
+  "metadata": {
+    "title": "من الكتاب — التمرين 18 (ص 147)",
+    "estimatedMinutes": 4,
+    "tags": [
+      "دائرة",
+      "تعامد"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-18",
+      "page": 147,
+      "section": "إحداثيتا منتصف قطعة - المسافة بين نقطتين",
+      "number": 18
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 147): في معلم متعامد ومتجانس لمستوٍ، (الوحدة 1cm). $A(1\\,;\\,0)$ ، $B(0\\,;\\,3)$ ، $C(3\\,;\\,4)$ . (𝒞) الدائرة التي قطرها [AC] ومركزها I."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا I :",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x\\,;\\,y)$ : الأولى ثم الثانية (عدد صحيح أو كسر مثل 5/2)",
+      "expectedAnswer": {
+        "x": "2",
+        "y": "2"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "I منتصف [AC]."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نصف مجموع الفاصلتين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم نصف مجموع الترتيبين."
+        }
+      ],
+      "feedback": {
+        "correct": "$I\\left(\\dfrac{1 + 3}{2}\\,;\\,\\dfrac{0 + 4}{2}\\right)$ أي $I(2\\,;\\,2)$ .",
+        "incorrect": "المنتصف نصف المجموع."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "احسب $IB^2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-MASAFA-JADHR-JAM",
+          "value": "3"
+        },
+        {
+          "id": "MISC-MAALAM-DAIRA-QUTR",
+          "value": "20"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مركبتا $\\overrightarrow{IB}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$-2$ و $1$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ربّع ثم اجمع، وقارن بـ $IA^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$IB^2 = 4 + 1 = 5 = IA^2$ : B على (𝒞).",
+        "incorrect": "ربّع كل مركبة."
+      }
+    },
+    {
+      "id": "q3",
+      "statement": "نوع المثلث ABC ( $AB^2 = BC^2 = 10$ ، $AC^2 = 20$ ):",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "متساوي الساقين وليس قائما",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SAQAYN-QAIM"
+        },
+        {
+          "id": "B",
+          "content": "قائم في B ومتساوي الساقين",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "قائم في A",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-FITHAGHURAS-WATAR"
+        },
+        {
+          "id": "D",
+          "content": "متقايس الأضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SAQAYN-QAIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أكبر مربع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$10 + 10$ ؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "والضلعان الصادران من B؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$10 + 10 = 20$ : قائم في B ، و $BA = BC$ .",
+        "incorrect": "الزاوية القائمة تقابل [AC]."
+      }
+    }
+  ]
+}

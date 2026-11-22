@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-misaha-hajm-kura-l3-008",
+  "lessonCode": "misaha-hajm-kura",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — كرة قطرها 20",
+    "estimatedMinutes": 2,
+    "tags": [
+      "مساحة الكرة",
+      "القطر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_misaha-hajm-kura_P1",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "كرة يد قطرها $20\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "القيمة المضبوطة لمساحة سطحها:",
+      "learningPoints": [
+        {
+          "code": "4am_misaha-hajm-kura_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$100\\pi\\,\\mathrm{cm}^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MISAHA-DAIRA"
+        },
+        {
+          "id": "B",
+          "content": "$400\\pi\\,\\mathrm{cm}^2$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$1600\\pi\\,\\mathrm{cm}^2$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MISAHA-QUTR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$R = 10\\,\\mathrm{cm}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\mathcal{A} = 4\\pi R^2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$4 \\times 100$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\mathcal{A} = 4\\pi \\times 10^2 = 400\\pi\\,\\mathrm{cm}^2$ .",
+        "incorrect": "$1600\\pi$ بالقطر، و $100\\pi$ قرص واحد."
+      },
+      "difficulty": 3
+    }
+  ]
+}

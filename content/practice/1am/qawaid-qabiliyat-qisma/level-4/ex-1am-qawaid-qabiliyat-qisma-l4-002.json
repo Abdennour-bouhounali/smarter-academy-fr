@@ -1,0 +1,297 @@
+{
+  "id": "ex-1am-qawaid-qabiliyat-qisma-l4-002",
+  "lessonCode": "qawaid-qabiliyat-qisma",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — تصنيف وقسمة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "تصنيف",
+      "قسمة إقليدية"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 2,
+      "file": "1am-s2-80",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "إليك الأعداد: 234 ، 85 ، 720 ، 318 ، 2040 ، 612 ، 1515."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "صنّف: اكتب الأعداد التي تقبل القسمة على 4.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        612,
+        720,
+        2040
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            234,
+            318,
+            612,
+            720,
+            2040
+          ],
+          "id": "MISC-QABILIYA-ZAWJI-4"
+        },
+        {
+          "value": [
+            318,
+            1515
+          ],
+          "id": "MISC-QABILIYA-MAJMU"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى العدد المشكّل من رقمي الآحاد والعشرات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل هذا العدد المكوّن من رقمين يقبل القسمة على 4؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الأعداد التي تقبل القسمة على 4: 720 ، 2040 ، 612.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 4 إذا كان العدد المشكّل من رقمي آحاده وعشراته يقبل القسمة على 4."
+      },
+      "solution": {
+        "lines": [
+          "234: العدد المشكّل من رقميه الأخيرين 34 ← لا يقبل القسمة على 4.",
+          "85: العدد المشكّل من رقميه الأخيرين 85 ← لا يقبل القسمة على 4.",
+          "720: العدد المشكّل من رقميه الأخيرين 20 ← يقبل القسمة على 4.",
+          "318: العدد المشكّل من رقميه الأخيرين 18 ← لا يقبل القسمة على 4.",
+          "2040: العدد المشكّل من رقميه الأخيرين 40 ← يقبل القسمة على 4.",
+          "612: العدد المشكّل من رقميه الأخيرين 12 ← يقبل القسمة على 4.",
+          "1515: العدد المشكّل من رقميه الأخيرين 15 ← لا يقبل القسمة على 4."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اكتب الأعداد التي تقبل القسمة على 5.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        85,
+        720,
+        1515,
+        2040
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            85,
+            1515
+          ],
+          "id": "MISC-QABILIYA-SIFR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى رقم آحاد العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما الرقمان اللذان ينتهي بهما كل مضاعف للعدد 5؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الأعداد التي تقبل القسمة على 5: 85 ، 720 ، 2040 ، 1515.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 5 إذا كان رقم آحاده 0 أو 5."
+      },
+      "solution": {
+        "lines": [
+          "234: رقم آحاده 4 ← لا يقبل القسمة على 5.",
+          "85: رقم آحاده 5 ← يقبل القسمة على 5.",
+          "720: رقم آحاده 0 ← يقبل القسمة على 5.",
+          "318: رقم آحاده 8 ← لا يقبل القسمة على 5.",
+          "2040: رقم آحاده 0 ← يقبل القسمة على 5.",
+          "612: رقم آحاده 2 ← لا يقبل القسمة على 5.",
+          "1515: رقم آحاده 5 ← يقبل القسمة على 5."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "ما هي الأعداد التي تقبل القسمة على 2 و 3 و 5 في آن واحد؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        720,
+        2040
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طبّق قاعدة كل قاسم على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يجب أن تتحقّق كل القواعد معًا."
+        }
+      ],
+      "feedback": {
+        "correct": "الأعداد التي تقبل القسمة على 2 و 3 و 5: 720 ، 2040.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 2 إذا كان رقم آحاده 0 أو 2 أو 4 أو 6 أو 8. يقبل عدد طبيعي القسمة على 3 إذا كان مجموع أرقامه يقبل القسمة على 3. يقبل عدد طبيعي القسمة على 5 إذا كان رقم آحاده 0 أو 5."
+      },
+      "solution": {
+        "lines": [
+          "234: رقم آحاده 4، مجموع أرقامه 9، رقم آحاده 4 ← لا يقبل القسمة على 2 و 3 و 5.",
+          "85: رقم آحاده 5، مجموع أرقامه 13، رقم آحاده 5 ← لا يقبل القسمة على 2 و 3 و 5.",
+          "720: رقم آحاده 0، مجموع أرقامه 9، رقم آحاده 0 ← يقبل القسمة على 2 و 3 و 5.",
+          "318: رقم آحاده 8، مجموع أرقامه 12، رقم آحاده 8 ← لا يقبل القسمة على 2 و 3 و 5.",
+          "2040: رقم آحاده 0، مجموع أرقامه 6، رقم آحاده 0 ← يقبل القسمة على 2 و 3 و 5.",
+          "612: رقم آحاده 2، مجموع أرقامه 9، رقم آحاده 2 ← لا يقبل القسمة على 2 و 3 و 5.",
+          "1515: رقم آحاده 5، مجموع أرقامه 12، رقم آحاده 5 ← لا يقبل القسمة على 2 و 3 و 5."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "statement": "أنجز القسمة الإقليدية للعدد 318 على 4: ما هو الحاصل؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "79",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-QABILIYA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية عموديًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق بضرب الحاصل في 4."
+        }
+      ],
+      "feedback": {
+        "correct": "$318 = 4 \\times 79 + 2$.",
+        "incorrect": "ابحث عن أكبر عدد طبيعي نضربه في 4 دون أن نتجاوز 318."
+      },
+      "solution": {
+        "lines": [
+          "$318 = 4 \\times 79 + 2$",
+          "الحاصل هو 79."
+        ],
+        "result": "79"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "ما هو الباقي؟ وهل يتّفق مع تصنيفك؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "79",
+          "id": "MISC-QABILIYA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية عموديًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي عدد طبيعي أصغر من 4."
+        }
+      ],
+      "feedback": {
+        "correct": "$318 = 4 \\times 79 + 2$ و $2 < 4$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 4."
+      },
+      "solution": {
+        "lines": [
+          "$318 = 4 \\times 79 + 2$",
+          "$2 < 4$ ، إذن الباقي هو 2، و 318 لا يقبل القسمة على 4."
+        ],
+        "result": "r = 2"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

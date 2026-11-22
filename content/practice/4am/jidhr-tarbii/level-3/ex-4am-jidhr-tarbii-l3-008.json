@@ -1,0 +1,189 @@
+{
+  "id": "ex-4am-jidhr-tarbii-l3-008",
+  "lessonCode": "jidhr-tarbii",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2014 — مثلث أضلاعه جذور",
+    "estimatedMinutes": 6,
+    "tags": [
+      "(√a)² = a",
+      "خاصية فيثاغورس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_jidhr-tarbii_P3",
+      "modelledOn": "BEM 2014 I-4"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2014",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$ABC$ مثلث حيث: $AB = \\sqrt{52}cm$ ، $AC = \\sqrt{13}cm$ و $BC = \\sqrt{65}cm$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب $AB^2$ ، $AC^2$ و $BC^2$ .",
+      "statement": "$AB^2$",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "52",
+      "misconceptionSignatures": [
+        {
+          "value": "2704",
+          "id": "MISC-TARBI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(\\sqrt{a})^2 = a$ من أجل كل عدد موجب $a$."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB^2 = (\\sqrt{52})^2 = 52$.",
+        "incorrect": "مربع الجذر التربيعي لعدد موجب هو العدد نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$AB^2 = (\\sqrt{52})^2$"
+        ],
+        "result": "AB^2 = 52"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$AC^2$",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "13",
+      "misconceptionSignatures": [
+        {
+          "value": "169",
+          "id": "MISC-TARBI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(\\sqrt{a})^2 = a$."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC^2 = (\\sqrt{13})^2 = 13$.",
+        "incorrect": "مربع الجذر التربيعي لعدد موجب هو العدد نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$AC^2 = (\\sqrt{13})^2$"
+        ],
+        "result": "AC^2 = 13"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "$BC^2$",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "65",
+      "misconceptionSignatures": [
+        {
+          "value": "4225",
+          "id": "MISC-TARBI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(\\sqrt{a})^2 = a$."
+        }
+      ],
+      "feedback": {
+        "correct": "$BC^2 = (\\sqrt{65})^2 = 65$.",
+        "incorrect": "مربع الجذر التربيعي لعدد موجب هو العدد نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$BC^2 = (\\sqrt{65})^2$"
+        ],
+        "result": "BC^2 = 65"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "بيّن أن المثلث $ABC$ قائم.",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن $BC^2$ بالمجموع $AB^2 + AC^2$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل الخاصية العكسية لخاصية فيثاغورس."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك سطرًا بسطر بالحل النموذجي، وانتبه إلى الخاصية المستعملة."
+      },
+      "solution": {
+        "lines": [
+          "$AB^2 + AC^2 = 52 + 13 = 65$ و $BC^2 = 65$",
+          "بما أن $BC^2 = AB^2 + AC^2$ فحسب الخاصية العكسية لخاصية فيثاغورس:"
+        ],
+        "result": "المثلث ABC قائم في A"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

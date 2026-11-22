@@ -1,0 +1,178 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l4-005",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 4,
+  "metadata": {
+    "title": "من المساواة إلى المشكلة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "نص مشكلة",
+      "قسمة عشرية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "self-8",
+      "page": 47,
+      "section": "أقوّم تعلّماتي",
+      "number": 8
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نعتبر المساواة $263 = 6 \\times 43 + 5$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل تعبّر هذه المساواة عن القسمة الإقليدية للعدد 263 على 6؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-QIRAA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق من صحة المساواة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الباقي بالمقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$258 + 5 = 263$ و $5 < 6$.",
+        "incorrect": "تحقّق من الحساب ثم من شرط الباقي."
+      },
+      "solution": {
+        "lines": [
+          "$6 \\times 43 = 258$ و $258 + 5 = 263$",
+          "$5 < 6$ ، إذن تعبّر عن القسمة الإقليدية للعدد 263 على 6."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أيّ مشكلة يؤول حلّها إلى هذه القسمة؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "توضع 263 قلمًا في علب، في كل علبة 6 أقلام: كم علبة نملأ؟",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "توزّع 6 أقلام على 263 علبة: كم قلمًا في كل علبة؟",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-ADWAR"
+        },
+        {
+          "id": "C",
+          "content": "نشتري 263 علبة في كل منها 6 أقلام: كم قلمًا نشتري؟",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-ADWAR"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المساواة: ما العدد الذي نوزّعه، وما حجم كل مجموعة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المقسوم هو ما نوزّعه، والمقسوم عليه هو عدد العناصر في كل مجموعة."
+        }
+      ],
+      "feedback": {
+        "correct": "263 قلمًا (المقسوم) في علب من 6 (المقسوم عليه): 43 علبة ويبقى 5 أقلام.",
+        "incorrect": "المقسوم هو العدد الكلي الذي نوزّعه، وهو 263."
+      },
+      "solution": {
+        "lines": [
+          "المقسوم 263 هو العدد الكلي، والمقسوم عليه 6 هو عدد الأقلام في العلبة.",
+          "نملأ 43 علبة ويبقى 5 أقلام."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "استنتج الحاصل المضبوط للقسمة العشرية $263{,}4 \\div 6$.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "43.9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل المساواة: يبقى 5 ثم 0,4."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كم يعطي $5{,}4 \\div 6$؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$263{,}4 = 6 \\times 43 + 5{,}4$ و $5{,}4 \\div 6 = 0{,}9$.",
+        "incorrect": "بعد 43 مرّة يبقى 5,4 تُقسم بدورها على 6."
+      },
+      "solution": {
+        "lines": [
+          "$263{,}4 = 6 \\times 43 + 5{,}4$",
+          "$5{,}4 \\div 6 = 0{,}9$ ، إذن $263{,}4 \\div 6 = 43{,}9$."
+        ],
+        "result": "43{,}9"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "id": "ex-2am-kasr-hasil-qisma-l1-010",
+  "lessonCode": "kasr-hasil-qisma",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — متى يكون الحاصل عددًا عشريًا؟",
+    "estimatedMinutes": 5,
+    "tags": [
+      "قيمة مضبوطة",
+      "عدد عشري"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "نريد أن نعرف أيّ الكسور له كتابة عشرية مضبوطة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ هذه الكسور قيمته المضبوطة عدد عشري؟",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{7}{6}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-EXACTAPPROX"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{11}{3}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-EXACTAPPROX"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{5}{9}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-EXACTAPPROX"
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{13}{8}$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القسمة تنتهي إذا انتهت بباقٍ معدوم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قسّم ولاحظ هل يتكرّر الباقي دون أن ينعدم."
+        }
+      ],
+      "feedback": {
+        "correct": "$13 \\div 8 = 1{,}625$ : القسمة تنتهي.",
+        "incorrect": "جرّب إنجاز القسمة: إن ظهر الباقي نفسه من جديد دون أن ينعدم فلن تنتهي."
+      },
+      "solution": {
+        "lines": [
+          "$13 \\div 8 = 1{,}625$ تنتهي",
+          "أمّا $7 \\div 6$ و $11 \\div 3$ و $5 \\div 9$ فلا تنتهي"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أنجز القسمة $13 \\div 8$ وأعط الكتابة العشرية المضبوطة.",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "1.625",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حوّل المقسوم عليه إلى عدد طبيعي بضرب الحدّين في العدد نفسه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة على العدد الطبيعي، واضبط الفاصلة في الحاصل عند الوصول إلى الأرقام التي بعد فاصلة المقسوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$13 \\div 8 = 13 \\div 8 = 1{,}625$.",
+        "incorrect": "اضرب الحدّين في العدد نفسه ثم أنجز القسمة على العدد الطبيعي، وتحقّق بضرب الحاصل في المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$13 \\div 8 = 13 \\div 8$",
+          "$8 \\times 1{,}625 = 13$"
+        ],
+        "result": "1{,}625"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "للعدد $\\dfrac{11}{3}$ قيمة مضبوطة هي:",
+      "learningPoints": [
+        {
+          "code": "2am_kasr-hasil-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3{,}66$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-EXACTAPPROX"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{11}{3}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$3{,}7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-EXACTAPPROX"
+        },
+        {
+          "id": "D",
+          "content": "$3{,}67$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QARIBA-EXACTAPPROX"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد العشري المكتوب بعدد منته من الأرقام لا يساوي حاصلًا لا ينتهي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب كلّ عدد في $3$ وقارن بـ $11$."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة المضبوطة هي الكسر نفسه $\\dfrac{11}{3}$.",
+        "incorrect": "اضرب كلّ عدد في $3$: الجداء الذي يعطي $10$ بالضبط هو القيمة المضبوطة."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 3{,}66 = 10{,}98$ و $3 \\times 3{,}7 = 11{,}1$ و $3 \\times 3{,}67 = 11{,}01$",
+          "القيمة المضبوطة هي $\\dfrac{11}{3}$ ، والأعداد العشرية قيم مقرّبة"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

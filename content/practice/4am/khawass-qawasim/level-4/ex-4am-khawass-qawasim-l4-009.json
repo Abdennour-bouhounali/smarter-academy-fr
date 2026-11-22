@@ -1,0 +1,168 @@
+{
+  "id": "ex-4am-khawass-qawasim-l4-009",
+  "lessonCode": "khawass-qawasim",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2023 — A = 17 × 143",
+    "estimatedMinutes": 8,
+    "tags": [
+      "خاصية 1"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_khawass-qawasim_P1",
+      "modelledOn": "BEM 2023 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن الأعداد C ، B ، A حيث:",
+    "formulas": [
+      "A = 17 \\times 143",
+      "B = 17 \\times 98",
+      "C = A + 34"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن 17 يقسم C ، ثم اكتبه على الشكل $17 \\times k$ حيث $k$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k$ فقط (عدد طبيعي)",
+      "expectedAnswer": "145",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$34 = 17 \\times 2$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "17 قاسم مشترك للعددين A و 34، فهو يقسم مجموعهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = 17 \\times 143 + 17 \\times 2 = 17 \\times 145$.",
+        "incorrect": "اكتب كلا من A و 34 على الشكل $17 \\times q$ ثم أخرج 17 عاملًا مشتركًا."
+      },
+      "solution": {
+        "lines": [
+          "$C = A + 34 = 17 \\times 143 + 17 \\times 2$",
+          "$C = 17 \\times (143 + 2)$",
+          "$C = 17 \\times 145$"
+        ],
+        "result": "C = 17 \\times 145"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب العدد $\\dfrac{A - B}{17}$ دون حساب A و B.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "45",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "A و B مكتوبان على الشكل $17 \\times q$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرج 17 عاملًا مشتركًا في $A - B$."
+        }
+      ],
+      "feedback": {
+        "correct": "$A - B = 17 \\times (143 - 98) = 17 \\times 45$ ، ومنه $\\dfrac{A - B}{17} = 45$.",
+        "incorrect": "القاسم المشترك يقسم الفرق: اكتب $A - B$ على الشكل $17 \\times k$."
+      },
+      "solution": {
+        "lines": [
+          "$A - B = 17 \\times 143 - 17 \\times 98$",
+          "$A - B = 17 \\times (143 - 98) = 17 \\times 45$",
+          "$\\dfrac{A - B}{17} = 45$"
+        ],
+        "result": "\\dfrac{A - B}{17} = 45"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل يقسم 17 العدد $A + 15$ ؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "افترض أن 17 يقسم $A + 15$. ماذا تستنتج عن الفرق $(A + 15) - A$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يقبل 15 القسمة على 17؟"
+        }
+      ],
+      "feedback": {
+        "correct": "لو قسم 17 العدد $A + 15$ لقسم الفرق $(A + 15) - A = 15$، و 15 لا يقبل القسمة على 17.",
+        "incorrect": "استعمل الفرق مع العدد A الذي يقسمه 17."
+      },
+      "solution": {
+        "lines": [
+          "نفرض أن 17 يقسم $A + 15$.",
+          "17 يقسم A، فهو يقسم الفرق $(A + 15) - A = 15$ (الخاصية 1).",
+          "لكن $0 < 15 < 17$ ، فـ 17 لا يقسم 15. هذا تناقض.",
+          "إذن 17 لا يقسم $A + 15$."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

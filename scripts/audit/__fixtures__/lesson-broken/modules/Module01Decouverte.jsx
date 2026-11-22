@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ContentModule, TapQuestion, NumericQuestion, KnowledgeBrick } from '../../../../../apps/web/src/lessons/common/kit';
 import { Feedback } from '../../../../../apps/web/src/lessons/common/components/LessonUI';
 import MathText from '../../../../../apps/web/src/lessons/common/components/MathText';

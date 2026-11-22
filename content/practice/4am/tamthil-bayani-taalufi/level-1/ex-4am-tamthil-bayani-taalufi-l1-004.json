@@ -1,0 +1,192 @@
+{
+  "id": "ex-4am-tamthil-bayani-taalufi-l1-004",
+  "lessonCode": "tamthil-bayani-taalufi",
+  "level": 1,
+  "metadata": {
+    "title": "أستعدّ — قراءة مستقيمين يشملان المبدأ",
+    "estimatedMinutes": 4,
+    "tags": [
+      "أستعدّ",
+      "معامل التوجيه"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "prep",
+      "page": 77,
+      "section": "أستعدّ",
+      "number": 7,
+      "adaptedFrom": "ex-4am-tamthil-bayani-taalufi-l1-004"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في المعلم المتعامد والمتجانس التالي، $(d)$ و $(d')$ هما التمثيلان البيانيان لدالتين خطيتين $g$ و $h$ على الترتيب.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "K1": [
+          -3,
+          -3
+        ],
+        "H1": [
+          3,
+          3
+        ],
+        "K2": [
+          -3,
+          3
+        ],
+        "H2": [
+          3,
+          -3
+        ]
+      },
+      "lines": [
+        {
+          "through": [
+            "K1",
+            "H1"
+          ],
+          "name": "(d)",
+          "tone": "indigo",
+          "extend": [
+            0.04,
+            0.04
+          ]
+        },
+        {
+          "through": [
+            "K2",
+            "H2"
+          ],
+          "name": "(d′)",
+          "tone": "rose",
+          "extend": [
+            0.04,
+            0.04
+          ]
+        }
+      ],
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw"
+      },
+      "hidden": [
+        "H1",
+        "H2",
+        "K1",
+        "K2"
+      ],
+      "ariaLabel": "معلم متعامد ومتجانس على ورقة مرصوفة: المستقيمان (d) و (d′) يشملان المبدأ O، الأول يصعد والثاني ينزل"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بقراءة بيانية، عيّن العدد $a$ حيث: $g(x) = ax$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختر نقطتين من المستقيم تقعان على عقدتين من الشبكة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من النقطة الأولى إلى الثانية: كم تزيد الفاصلة؟ وكم يصعد المستقيم أو ينزل؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "معامل التوجيه هو تغيّر الترتيب مقسوما على تغيّر الفاصلة، ويكون سالبا إذا نزل المستقيم."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 1$ .",
+        "incorrect": "اقسم تغيّر الترتيب على تغيّر الفاصلة (وليس العكس)، وانتبه إلى الإشارة إذا نزل المستقيم."
+      },
+      "solution": {
+        "lines": [
+          "النقطتان $(0 ; 0)$ و $(1 ; 1)$ من المستقيم $(d)$ .",
+          "عندما نتقدّم $1$ وحدة إلى اليمين، يصعد المستقيم بـ $1$ وحدة.",
+          "إذن معامل التوجيه هو: $a = 1$ ."
+        ],
+        "result": "a = 1"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بقراءة بيانية، عيّن العدد $a$ حيث: $h(x) = ax$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tamthil-bayani-taalufi_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "-1",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-BAYANI-ISHARA-A"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختر نقطتين من المستقيم تقعان على عقدتين من الشبكة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من النقطة الأولى إلى الثانية: كم تزيد الفاصلة؟ وكم يصعد المستقيم أو ينزل؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "معامل التوجيه هو تغيّر الترتيب مقسوما على تغيّر الفاصلة، ويكون سالبا إذا نزل المستقيم."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = -1$ .",
+        "incorrect": "اقسم تغيّر الترتيب على تغيّر الفاصلة (وليس العكس)، وانتبه إلى الإشارة إذا نزل المستقيم."
+      },
+      "solution": {
+        "lines": [
+          "النقطتان $(0 ; 0)$ و $(1 ; -1)$ من المستقيم $(d')$ .",
+          "عندما نتقدّم $1$ وحدة إلى اليمين، ينزل المستقيم بـ $1$ وحدة.",
+          "إذن معامل التوجيه هو: $a = -1$ ."
+        ],
+        "result": "a = -1"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "id": "ex-3am-qawaid-quwa-ashara-l1-010",
+  "lessonCode": "qawaid-quwa-ashara",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — خلايا تتضاعف عشر مرّات",
+    "estimatedMinutes": 7,
+    "tags": [
+      "مسألة",
+      "جداء قوى",
+      "حاصل القسمة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في تجربة بالمخبر يصير عدد الخلايا في مزرعة عشرة أمثاله كلّ ساعة. في بداية التجربة توجد خليّة واحدة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "بعد 5 ساعات يصير عدد الخلايا $10^{5}$ ، وبعد 6 ساعات أخرى يُضرب هذا العدد في $10^{6}$ . اكتب الجداء $10^{5}\\times10^{6} = 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوتين المضروبتين وأسّ كلّ منهما (انتبه إلى إشارته)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في جداء قوتين للعدد 10 نجري عملية واحدة على الأسّين: ما هي؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب القاعدة على مثال صغير: $10^{2}\\times10^{1}$ هو $10\\times10\\times10$ ، فكم عاملًا 10 في الجداء؟"
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "value": "30",
+          "id": "MISC-QAWAID-DARB-ASS"
+        }
+      ],
+      "feedback": {
+        "correct": "$10^{5}\\times10^{6} = 10^{11}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نجمع الأسّين: $5 + 6 = 11$ .",
+          "$10^{5}\\times10^{6} = 10^{11}$ ."
+        ],
+        "result": "n = 11"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "عدد الخلايا بعد 9 ساعات هو $10^{9}$ وبعد 4 ساعات هو $10^{4}$ . كم مرّة يزيد الأوّل على الثاني؟ $\\dfrac{10^{9}}{10^{4}} = 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد البسط والمقام وأسّ كلّ منهما (انتبه إلى إشارة الأسّ)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في حاصل قسمة قوتين للعدد 10 نجري عملية واحدة على الأسّين: ما هي، وبأيّ ترتيب؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر أنّ $\\dfrac{10^{2}}{10^{1}}$ هو $\\dfrac{10\\times10}{10}$ ، وأنّ طرح أسّ سالب يعني جمع عدد موجب."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "5",
+      "feedback": {
+        "correct": "$\\dfrac{10^{9}}{10^{4}} = 10^{5}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نطرح الأسّين: $9 - 4 = 5$ .",
+          "$\\dfrac{10^{9}}{10^{4}} = 10^{5}$ ، فالزيادة بين الساعتين تساوي $10^{5}$ مرّة."
+        ],
+        "result": "n = 5"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "يُقاس عدد الخلايا أحيانًا بعد كلّ 3 ساعات فيُضرب في $(10^{3})$ . بعد 4 مراحل من 3 ساعات يصير العدد $(10^{3})^{4} = 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_qawaid-quwa-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوة الداخلية وأسّها، ثمّ الأسّ الخارجي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في قوة لقوة للعدد 10 نجري عملية واحدة على الأسّين: هل هي الجمع أم غيره؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر أنّ $(10^{2})^{3}$ جداء ثلاثة عوامل كلّ عامل منها $10^{2}$ ."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-QAWAID-QUWA-JAM"
+        },
+        {
+          "value": "81",
+          "id": "MISC-QAWAID-QUWA-ASS"
+        }
+      ],
+      "feedback": {
+        "correct": "$(10^{3})^{4} = 10^{12}$ .",
+        "incorrect": "أعد قراءة السؤال، وطبّق القاعدة المناسبة بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "في قوة لقوة نضرب الأسّين: $3 \\times 4 = 12$ .",
+          "$(10^{3})^{4} = 10^{12}$ ، وهو عدد الخلايا بعد 12 ساعة."
+        ],
+        "result": "n = 12"
+      }
+    }
+  ]
+}

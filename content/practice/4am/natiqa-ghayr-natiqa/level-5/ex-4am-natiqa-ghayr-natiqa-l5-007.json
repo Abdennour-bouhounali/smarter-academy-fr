@@ -1,0 +1,206 @@
+{
+  "id": "ex-4am-natiqa-ghayr-natiqa-l5-007",
+  "lessonCode": "natiqa-ghayr-natiqa",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2010 — ألواح شمسية على سطح",
+    "estimatedMinutes": 20,
+    "tags": [
+      "وضعية",
+      "قيمة مقربة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_natiqa-ghayr-natiqa_P3",
+      "modelledOn": "BEM 2010 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2010",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يريد صاحب ورشة، وهو يُتقن عمله ويحترم مواعيده، تركيب ألواح شمسية مربعة الشكل على سطح مستطيل الشكل بُعداه $5m$ و $3{,}7m$ ، توضع الألواح متجاورة في صفوف، أضلاعها موازية لحافتي السطح ولا تتجاوزهما.\n• النوع الأول: مساحة اللوح $1{,}44m^2$ .\n• النوع الثاني: مساحة اللوح $2m^2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب طول ضلع لوح من النوع الأول.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بـ m)",
+      "expectedAnswer": "1.2",
+      "misconceptionSignatures": [
+        {
+          "value": "0.72",
+          "id": "MISC-JIDHR-NISF"
+        },
+        {
+          "value": "0.12",
+          "id": "MISC-JIDHR-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن العدد الموجب الذي مربعه 1,44."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}2^2 = 1{,}44$ .",
+        "incorrect": "طول الضلع هو الجذر التربيعي للمساحة؛ انتبه إلى موضع الفاصلة."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}2^2 = 1{,}44$ إذن طول الضلع $\\sqrt{1{,}44} = 1{,}2$"
+        ],
+        "result": "1{,}2 \\text{ m}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هو أكبر عدد من ألواح النوع الأول يمكن تركيبه على السطح؟",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم لوحًا يوضع على طول 5m؟ وكم صفًّا على عرض 3,7m؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لا يُقبل جزء من لوح."
+        }
+      ],
+      "feedback": {
+        "correct": "4 ألواح في كل صف و 3 صفوف: $4 \\times 3 = 12$ .",
+        "incorrect": "خذ الجزء الصحيح لكل قسمة (لا يتجاوز اللوح الحافة)، ثم اضرب."
+      },
+      "solution": {
+        "lines": [
+          "$5 \\div 1{,}2 \\approx 4{,}17$ : 4 ألواح في كل صف.",
+          "$3{,}7 \\div 1{,}2 \\approx 3{,}08$ : 3 صفوف.",
+          "$4 \\times 3 = 12$"
+        ],
+        "result": "12"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "طول ضلع لوح من النوع الثاني ليس عددًا ناطقًا. أعط قيمته المقربة إلى $10^{-2}$ بالزيادة.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري برقمين بعد الفاصلة (بـ m)",
+      "expectedAnswer": "1.42",
+      "misconceptionSignatures": [
+        {
+          "value": "1.41",
+          "id": "MISC-TAQRIB-NAQS-ZIYADA"
+        },
+        {
+          "value": "1",
+          "id": "MISC-JIDHR-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول الضلع هو $\\sqrt{2}$ : استعمل الحاسبة ثم تحقّق بالتربيع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمة بالزيادة أكبر من العدد."
+        }
+      ],
+      "feedback": {
+        "correct": "$1{,}41^2 = 1{,}9881 < 2 < 2{,}0164 = 1{,}42^2$ .",
+        "incorrect": "القيمة بالزيادة هي العدد الأكبر في الحصر إلى $10^{-2}$ ."
+      },
+      "solution": {
+        "lines": [
+          "$1{,}41^2 = 1{,}9881$ و $1{,}42^2 = 2{,}0164$",
+          "إذن $1{,}41 < \\sqrt{2} < 1{,}42$"
+        ],
+        "result": "\\sqrt{2} < 1{,}42"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "ما هو أكبر عدد من ألواح النوع الثاني يمكن تركيبه على السطح؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_natiqa-ghayr-natiqa_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم كل بُعد من بُعدي السطح على طول ضلع اللوح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن مثلًا $3 \\times \\sqrt{2}$ و $4 \\times \\sqrt{2}$ بالعدد 5."
+        }
+      ],
+      "feedback": {
+        "correct": "3 ألواح في كل صف و صفّان: $3 \\times 2 = 6$ .",
+        "incorrect": "حدّد كم لوحًا يتسع له كل بُعد دون تجاوز الحافة، ثم اضرب."
+      },
+      "solution": {
+        "lines": [
+          "$3\\sqrt{2} < 3 \\times 1{,}42 = 4{,}26 < 5$ و $4\\sqrt{2} > 4 \\times 1{,}41 = 5{,}64 > 5$ : 3 ألواح في كل صف.",
+          "$2\\sqrt{2} < 2 \\times 1{,}42 = 2{,}84 < 3{,}7$ و $3\\sqrt{2} > 3 \\times 1{,}41 = 4{,}23 > 3{,}7$ : صفّان.",
+          "$3 \\times 2 = 6$"
+        ],
+        "result": "6"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

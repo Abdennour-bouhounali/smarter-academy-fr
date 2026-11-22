@@ -1,0 +1,190 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l4-006",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مفكوك عدد عشري",
+    "estimatedMinutes": 6,
+    "tags": [
+      "المفكوك",
+      "أسّ سالب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "ليكن العددان $A = 0{,}0509$ و $B = 5\\,030{,}07$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ الكتابات التالية هي مفكوك $A$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اذكر رتبة كلّ رقم بعد الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأعشار $10^{-1}$ ، ثمّ أجزاء المئة $10^{-2}$ ، ثمّ أجزاء الألف $10^{-3}$ ، ثمّ أجزاء عشرة الآلاف $10^{-4}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الصفر الأول يحتلّ رتبة الأعشار."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$5 \\times 10^{-2} + 9 \\times 10^{-4}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$5 \\times 10^{-1} + 9 \\times 10^{-3}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-MAFKUK"
+        },
+        {
+          "id": "C",
+          "content": "$5 \\times 10^{-2} + 9 \\times 10^{-3}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-MAFKUK"
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 5 \\times 10^{-2} + 9 \\times 10^{-4}$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب الكتابة العشرية للقوة المعنية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الرقم 5 في رتبة أجزاء المئة: $5 \\times 10^{-2}$ .",
+          "الرقم 9 في رتبة أجزاء عشرة الآلاف: $9 \\times 10^{-4}$ ."
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "$0{,}0509 = 5 \\times 10^{-2} + 9 \\times 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في أيّ رتبة بعد الفاصلة يقع الرقم 9؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدّ الأرقام بعد الفاصلة بدءًا من الأعشار."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأسّ سالب وقيمته المطلقة هي الرتبة."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "value": "-3",
+          "id": "MISC-ASHARA-MAFKUK"
+        }
+      ],
+      "feedback": {
+        "correct": "الرقم 9 في الرتبة الرابعة بعد الفاصلة: $9 \\times 10^{-4}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الأرقام بعد الفاصلة: 0 ثمّ 5 ثمّ 0 ثمّ 9.",
+          "الرقم 9 في الرتبة الرابعة."
+        ],
+        "result": "n = -4"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "$5\\,030{,}07 = 5 \\times 10^{3} + 3 \\times 10^{1} + 7 \\times 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في أيّ رتبة بعد الفاصلة يقع الرقم 7؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد الفاصلة: الأعشار ثمّ أجزاء المئة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الرقم 0 قبل 7 يحتلّ رتبة الأعشار."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "-1",
+          "id": "MISC-ASHARA-MAFKUK"
+        }
+      ],
+      "feedback": {
+        "correct": "الرقم 7 في رتبة أجزاء المئة: $7 \\times 10^{-2}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الرقمان بعد الفاصلة: 0 ثمّ 7.",
+          "الرقم 7 في الرتبة الثانية: $7 \\times 10^{-2}$ ."
+        ],
+        "result": "n = -2"
+      }
+    }
+  ]
+}

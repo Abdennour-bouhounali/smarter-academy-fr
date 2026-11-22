@@ -1,0 +1,77 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-fada-l3-005",
+  "lessonCode": "wadiya-idmajiya-fada",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — المعطيات اللازمة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "قراءة الوضعية",
+      "المخروط المبتور"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-fada_P2",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "نريد حساب حجم الماء في دلو على شكل مخروط مبتور (القاع في الأسفل)، دون صيغة جاهزة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المعطيات التي تكفي:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-fada_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نصف قطر الحافة وارتفاع الدلو فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MABTUR-QIRAA"
+        },
+        {
+          "id": "B",
+          "content": "نصف قطر القاع ونصف قطر الحافة وارتفاع الدلو وعمق الماء",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "قطر القاع وعمق الماء فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MABTUR-TALIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الماء مخروط مبتور آخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نحتاج قاعدتيه وارتفاعه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نصف قطر سطح الماء نجده بخاصية طالس من أبعاد الدلو."
+        }
+      ],
+      "feedback": {
+        "correct": "بأبعاد الدلو نكمل المخروط (طالس) ونجد نصف قطر سطح الماء، وبعمق الماء نحسب الفرق بين حجمي مخروطين.",
+        "incorrect": "دون نصف قطري القاعدتين لا نعرف ميل الجدار، ودون عمق الماء لا نعرف أين سطحه."
+      },
+      "cognitiveDemand": "reason",
+      "difficulty": 3
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "id": "ex-4am-tatbiqat-tanasub-l5-007",
+  "lessonCode": "tatbiqat-tanasub",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2025 — رحلة جوية من الجزائر العاصمة إلى تمنراست",
+    "estimatedMinutes": 13,
+    "tags": [
+      "وضعية إدماجية",
+      "السرعة",
+      "استهلاك الوقود"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tatbiqat-tanasub_P2",
+      "modelledOn": "BEM 2025 II 2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تقلع طائرة من مطار الجزائر العاصمة متجهة إلى تمنراست، فتقطع مسافة 1980km بسرعة متوسطة قدرها $720km/h$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب مدة الرحلة بالساعة.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المدة بالساعة (عدد عشري بالفاصلة)",
+      "expectedAnswer": "2,75",
+      "misconceptionSignatures": [
+        {
+          "value": "4/11",
+          "id": "MISC-MAQADIR-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$t = \\dfrac{d}{v}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم المسافة على السرعة المتوسطة."
+        }
+      ],
+      "feedback": {
+        "correct": "$t = \\dfrac{1980}{720} = 2{,}75h$ .",
+        "incorrect": "المدة هي المسافة مقسومة على السرعة، لا العكس."
+      },
+      "solution": {
+        "lines": [
+          "$t = \\dfrac{d}{v} = \\dfrac{1980}{720}$",
+          "$t = 2{,}75h$"
+        ],
+        "result": "t = 2{,}75h"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "عبّر عن مدة الرحلة بالدقائق.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المدة بالدقائق (عدد فقط)",
+      "expectedAnswer": "165",
+      "misconceptionSignatures": [
+        {
+          "value": "275",
+          "id": "MISC-MAQADIR-WIHDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$1h = 60min$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب عدد الساعات في 60 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}75 \\times 60 = 165min$ ، أي ساعتان و 45 دقيقة.",
+        "incorrect": "$1h = 60min$ وليس $100min$ ."
+      },
+      "solution": {
+        "lines": [
+          "$2{,}75 \\times 60 = 165$",
+          "مدة الرحلة 165 دقيقة (ساعتان و 45 دقيقة)."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "عبّر عن السرعة المتوسطة للطائرة بـ m/s .",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب السرعة بـ m/s (عدد فقط)",
+      "expectedAnswer": "200",
+      "misconceptionSignatures": [
+        {
+          "value": "2592",
+          "id": "MISC-MAQADIR-WIHDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$1km = 1000m$ و $1h = 3600s$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حوّل البسط والمقام كلا على حدة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{720\\,000}{3600} = 200m/s$ .",
+        "incorrect": "$1km/h = \\dfrac{1}{3{,}6}m/s$ : اقسم على $3{,}6$ ."
+      },
+      "solution": {
+        "lines": [
+          "$720km/h = \\dfrac{720\\,000m}{3600s}$",
+          "$= 200m/s$"
+        ],
+        "result": "v = 200m/s"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "lead": "تستهلك الطائرة $2{,}4$ طن من الوقود في كل ساعة طيران.",
+      "statement": "احسب كتلة الوقود (بالطن) التي تستهلكها الطائرة خلال هذه الرحلة.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب الكتلة بالطن (عدد عشري بالفاصلة)",
+      "expectedAnswer": "6,6",
+      "misconceptionSignatures": [
+        {
+          "value": "396",
+          "id": "MISC-MAQADIR-WIHDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الاستهلاك متناسب مع مدة الطيران."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب الاستهلاك في الساعة في مدة الرحلة بالساعات."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}4 \\times 2{,}75 = 6{,}6t$ .",
+        "incorrect": "اضرب الاستهلاك في الساعة في المدة بالساعات (لا بالدقائق)."
+      },
+      "solution": {
+        "lines": [
+          "$2{,}4 \\times 2{,}75 = 6{,}6$",
+          "تستهلك الطائرة $6{,}6$ طن من الوقود."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "كانت الطائرة تحمل 8 أطنان من الوقود عند الإقلاع. احسب النسبة المئوية للوقود الباقي عند الوصول.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $t$ فقط، دون الرمز % (عدد صحيح أو عشري بالفاصلة)",
+      "expectedAnswer": "17,5",
+      "misconceptionSignatures": [
+        {
+          "value": "82,5",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولا كتلة الوقود الباقي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة المئوية $= \\dfrac{\\text{الجزء}}{\\text{الكل}} \\times 100$ ، والكل هو 8 أطنان."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1{,}4}{8} \\times 100 = 17{,}5$ : بقي $17{,}5\\%$ من الوقود.",
+        "incorrect": "اقسم الوقود الباقي على الوقود عند الإقلاع ثم اضرب في 100 ."
+      },
+      "solution": {
+        "lines": [
+          "الوقود الباقي: $8 - 6{,}6 = 1{,}4t$",
+          "$\\dfrac{1{,}4}{8} \\times 100 = 17{,}5$",
+          "بقي $17{,}5\\%$ من الوقود."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

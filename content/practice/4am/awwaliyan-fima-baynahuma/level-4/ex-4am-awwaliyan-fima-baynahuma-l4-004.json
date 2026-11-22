@@ -1,0 +1,233 @@
+{
+  "id": "ex-4am-awwaliyan-fima-baynahuma-l4-004",
+  "lessonCode": "awwaliyan-fima-baynahuma",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2023 — A = 1463/1045",
+    "estimatedMinutes": 13,
+    "tags": [
+      "نفي",
+      "كسر",
+      "جذور"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_awwaliyan-fima-baynahuma_P3",
+      "modelledOn": "BEM 2023 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن الأعداد B ، A حيث:",
+    "formulas": [
+      "A = \\dfrac{1463}{1045}",
+      "B = \\sqrt{147} + \\sqrt{300} - \\sqrt{48}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب PGCD(1463 ; 1045)، ثم استنتج أن العددين ليسا أوليين فيما بينهما.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "209",
+      "misconceptionSignatures": [
+        {
+          "value": "19",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 1463 على 1045: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (1463 ; 1045) بالزوج (1045 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 209.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$1463 = 1045 \\times 1 + 418$",
+          "$1045 = 418 \\times 2 + 209$",
+          "$418 = 209 \\times 2 + 0$",
+          "آخر باقٍ غير معدوم هو 209، إذن:",
+          "$209 \\neq 1$ ، إذن العددان 1463 و 1045 ليسا أوليين فيما بينهما."
+        ],
+        "result": "PGCD(1463 ; 1045) = 209"
+      },
+      "work": "optional",
+      "timeSeconds": 270
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اكتب العدد A على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "7/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 01 (ا)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على قاسمهما المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "قسمنا البسط والمقام على 209: الكسر الناتج غير قابل للاختزال.",
+        "incorrect": "اقسم البسط والمقام على القاسم المشترك الأكبر الذي وجدته في السؤال 01 (ا).",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: اقسم على القاسم المشترك الأكبر نفسه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1463}{1045} = \\dfrac{1463 \\div 209}{1045 \\div 209}$"
+        ],
+        "result": "\\dfrac{1463}{1045} = \\dfrac{7}{5}"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "بيّن أن العدد B يكتب على الشكل $a\\sqrt{3}$ حيث $a$ عدد طبيعي يطلب تعيينه.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: العدد $a$ في الكتابة $a\\sqrt{3}$",
+      "expectedAnswer": "13",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب كل عدد تحت الجذر على شكل جداء مربع تام في 3."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\sqrt{k^2 \\times 3} = k\\sqrt{3}$ ، ثم اجمع المعاملات."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 13\\sqrt{3}$",
+        "incorrect": "حلّل كل عدد تحت الجذر إلى جداء مربع تام في 3، ثم اجمع المعاملات مع إشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$\\sqrt{147} = \\sqrt{49 \\times 3} = 7\\sqrt{3}$ ; $\\sqrt{300} = \\sqrt{100 \\times 3} = 10\\sqrt{3}$ ; $\\sqrt{48} = \\sqrt{16 \\times 3} = 4\\sqrt{3}$",
+          "$A = 7\\sqrt{3} + 10\\sqrt{3} - 4\\sqrt{3} = 13\\sqrt{3}$"
+        ],
+        "result": "A = 13\\sqrt{3}"
+      },
+      "timeSeconds": 210
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "هل العددان 1463 و 1464 أوليان فيما بينهما؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_awwaliyan-fima-baynahuma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AWWALIYAN-ADAD-AWWALI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل يوجد عدد يختلف عن 1 يقسم 1463 و 1464 معًا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب PGCD(1463 ; 1464) بالقسمات المتتابعة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عددان أوليان فيما بينهما يعني أن قاسمهما المشترك الأكبر يساوي 1، ولو لم يكن أيّ منهما عددًا أوليًا."
+        }
+      ],
+      "feedback": {
+        "correct": "PGCD(1463 ; 1464) = 1: العددان أوليان فيما بينهما.",
+        "incorrect": "احسب القاسم المشترك الأكبر بخوارزمية إقليدس قبل أن تحكم؛ لا يُشترط أن يكون أحد العددين عددًا أوليًا."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$1464 = 1463 \\times 1 + 1$",
+          "$1463 = 1 \\times 1463 + 0$",
+          "آخر باقٍ غير معدوم هو 1، إذن PGCD(1463 ; 1464) = 1 .",
+          "الجواب: نعم، العددان 1463 و 1464 أوليان فيما بينهما لأن قاسمهما المشترك الأكبر يساوي 1."
+        ],
+        "result": "PGCD(1463 ; 1464) = 1"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

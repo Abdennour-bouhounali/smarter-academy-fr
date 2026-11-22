@@ -170,4 +170,66 @@ describe('contrat général', () => {
     expect(feedbackFor(q, evaluateAnswer({ value: '-8' }, q), registry)).toBe('Il reste à diviser.');
     expect(feedbackFor(q, evaluateAnswer({ value: '-5' }, q), registry)).toBe('Non.');
   });
+
+  it('une réponse illisible prend le message de l\'appelant, sinon le format attendu — jamais une phrase en dur', () => {
+    const q = { id: 'q', answerType: 'rational', expectedAnswer: '-2', feedback, answerFormat: 'اكتب عددًا.' };
+    const r = evaluateAnswer({ value: 'abc' }, q);
+    expect(r.outcome).toBe(OUTCOMES.SYNTAX_ERROR);
+    expect(feedbackFor(q, r, {}, { syntaxError: 'لم أتمكّن من قراءة إجابتك.' })).toBe('لم أتمكّن من قراءة إجابتك.');
+    expect(feedbackFor(q, r)).toBe('اكتب عددًا.');
+    expect(feedbackFor({ ...q, answerFormat: undefined }, r)).toBe('');
+  });
+});
+
+describe('integerSet — ensembles de diviseurs (4AM)', () => {
+  const q = { id: 'q', answerType: 'integerSet', expectedAnswer: [1, 2, 3, 4, 6, 12], feedback,
+    misconceptionSignatures: [{ value: [2, 3, 4, 6], id: 'MISC-QAWASIM-OUBLI-1-ET-N' }] };
+
+  it('accepte l ordre libre, les doublons, les séparateurs et chiffres arabes', () => {
+    expect(evaluateAnswer({ value: '12, 6, 4, 3, 2, 1, 1' }, q).outcome).toBe(OUTCOMES.CORRECT);
+    expect(evaluateAnswer({ value: '١؛ ٢؛ ٣؛ ٤؛ ٦؛ ١٢' }, q).outcome).toBe(OUTCOMES.CORRECT);
+    expect(evaluateAnswer({ value: '1 2 3 4 6 12' }, q).normalized).toBe('1;2;3;4;6;12');
+  });
+  it('un sous-ensemble strict est partiel', () => {
+    const r = evaluateAnswer({ value: '1, 2, 3' }, q);
+    expect(r.outcome).toBe(OUTCOMES.PARTIALLY_CORRECT);
+    expect(r.feedbackKey).toBe('partial');
+  });
+  it('reconnaît la signature d une misconception (oubli de 1 et du nombre lui-même)', () => {
+    const r = evaluateAnswer({ value: '2, 3, 4, 6' }, q);
+    expect(r.outcome).toBe(OUTCOMES.INCORRECT);
+    expect(r.misconceptionId).toBe('MISC-QAWASIM-OUBLI-1-ET-N');
+  });
+  it('un élément en trop est faux, un jeton illisible est une erreur de syntaxe', () => {
+    expect(evaluateAnswer({ value: '1, 2, 3, 4, 5, 6, 12' }, q).outcome).toBe(OUTCOMES.INCORRECT);
+    expect(evaluateAnswer({ value: '1, deux' }, q).outcome).toBe(OUTCOMES.SYNTAX_ERROR);
+    expect(evaluateAnswer({ value: '' }, q).outcome).toBe(OUTCOMES.SYNTAX_ERROR);
+  });
+});
+
+describe('rational + requiredForm irreducible — اختزال كسر', () => {
+  const q = { id: 'q', answerType: 'rational', expectedAnswer: '7/4', feedback: { ...feedback, notIrreducible: 'اختزل أكثر.' },
+    evaluationPolicy: { requiredForm: 'irreducible' } };
+
+  it('7/4 est juste', () => {
+    expect(evaluateAnswer({ value: '7/4' }, q).outcome).toBe(OUTCOMES.CORRECT);
+  });
+  it('21/12 a la bonne valeur mais n est pas réduite → partiel avec message dédié', () => {
+    const r = evaluateAnswer({ value: '21/12' }, q);
+    expect(r.outcome).toBe(OUTCOMES.PARTIALLY_CORRECT);
+    expect(r.feedbackKey).toBe('notIrreducible');
+    expect(feedbackFor(q, r)).toBe('اختزل أكثر.');
+  });
+  it('84/48 non réduite → partiel ; 1,75 en décimal → partiel (pas une fraction) ; 3/2 → faux', () => {
+    expect(evaluateAnswer({ value: '84/48' }, q).outcome).toBe(OUTCOMES.PARTIALLY_CORRECT);
+    // La consigne demande une FRACTION irréductible : un décimal a la bonne
+    // valeur mais pas la forme exigée (audit d'intégrité, 2026-09-24).
+    expect(evaluateAnswer({ value: '1,75' }, q).outcome).toBe(OUTCOMES.PARTIALLY_CORRECT);
+    expect(evaluateAnswer({ value: '1,75' }, q).feedbackKey).toBe('notIrreducible');
+    expect(evaluateAnswer({ value: '3/2' }, q).outcome).toBe(OUTCOMES.INCORRECT);
+  });
+  it('sans la politique, 21/12 reste une réponse équivalente juste', () => {
+    const q2 = { ...q, evaluationPolicy: {} };
+    expect(evaluateAnswer({ value: '21/12' }, q2).outcome).toBe(OUTCOMES.EQUIVALENT_CORRECT);
+  });
 });

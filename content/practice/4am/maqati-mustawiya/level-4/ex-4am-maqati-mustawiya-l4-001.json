@@ -1,0 +1,65 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l4-001",
+  "lessonCode": "maqati-mustawiya",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — بعد المستوي عن المركز",
+    "estimatedMinutes": 3,
+    "tags": [
+      "مقطع كرة",
+      "مسألة عكسية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_maqati-mustawiya_P1",
+      "modelledOn": "method-section-radius"
+    }
+  },
+  "statement": {
+    "content": "كرة نصف قطرها $17\\,\\mathrm{cm}$ يقطعها مستو وفق دائرة نصف قطرها $8\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما بعد المستوي عن مركز الكرة (بـ $\\mathrm{cm}$)؟",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر)",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAQTA-TARH",
+          "value": "9"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المجهول هذه المرة هو $h = OA$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المثلث OAM قائم في A: $OM = 17$ ، $AM = 8$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$h^2 = 17^2 - 8^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$h^2 = 289 - 64 = 225$ ، $h = 15\\,\\mathrm{cm}$ .",
+        "incorrect": "$17 - 8 = 9$ يطرح الطولين."
+      },
+      "difficulty": 4
+    }
+  ]
+}

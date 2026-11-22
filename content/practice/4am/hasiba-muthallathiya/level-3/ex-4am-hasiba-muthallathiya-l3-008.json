@@ -1,0 +1,274 @@
+{
+  "id": "ex-4am-hasiba-muthallathiya-l3-008",
+  "lessonCode": "hasiba-muthallathiya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2016 — قطعة أرض مستطيلة وزاوية الممرّ",
+    "estimatedMinutes": 10,
+    "tags": [
+      "اللمسات العكسية",
+      "الظل",
+      "خاصية طالس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_hasiba-muthallathiya_P2",
+      "modelledOn": "BEM 2016 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "قطعة أرض مستطيلة الشكل $ABCD$ بُعداها $AB = 60\\,\\mathrm{m}$ و $AD = 45\\,\\mathrm{m}$ (الشكل المقابل). $M$ نقطة من $[DC]$ حيث $DM = 25\\,\\mathrm{m}$ ، و $N$ نقطة تقاطع المستقيمين $(AM)$ و $(BC)$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          45
+        ],
+        "B": [
+          60,
+          45
+        ],
+        "C": [
+          60,
+          0
+        ],
+        "D": [
+          0,
+          0
+        ],
+        "M": [
+          25,
+          0
+        ],
+        "N": [
+          60,
+          -63
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "60 m"
+        },
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "M"
+        ],
+        {
+          "from": "M",
+          "to": "D",
+          "label": "25 m"
+        },
+        {
+          "from": "D",
+          "to": "A",
+          "label": "45 m"
+        },
+        [
+          "A",
+          "M"
+        ],
+        [
+          "M",
+          "N"
+        ],
+        [
+          "C",
+          "N"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "A",
+          "D",
+          "M"
+        ],
+        [
+          "B",
+          "C",
+          "M"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "A",
+          "from": "D",
+          "to": "M",
+          "label": "?"
+        }
+      ],
+      "ariaLabel": "قطعة الأرض المستطيلة ABCD حيث AB يساوي 60 m و AD يساوي 45 m، والنقطة M من DC حيث DM يساوي 25 m، والمستقيم AM يقطع BC في N، والزاوية المطلوبة MAD عند A",
+      "maxWidth": 260
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن: $\\dfrac{MA}{MN} = \\dfrac{5}{7}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولا الطول $MC$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المستقيمان $(AD)$ و $(CN)$ متوازيان (كلاهما عمودي على $(DC)$ )."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق خاصية طالس."
+        }
+      ],
+      "feedback": {
+        "correct": "خاصية طالس في الوضعية المتقابلة بالرأس تعطي $\\dfrac{MA}{MN} = \\dfrac{MD}{MC} = \\dfrac{25}{35}$ .",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرا سطرا، ثم قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "$MC = DC - DM = 60 - 25 = 35\\,\\mathrm{m}$",
+          "المستقيمان $(AD)$ و $(CN)$ متوازيان لأنهما عموديان على $(DC)$ ،",
+          "والمستقيمان $(AN)$ و $(DC)$ متقاطعان في $M$ ، فحسب خاصية طالس: $\\dfrac{MA}{MN} = \\dfrac{MD}{MC} = \\dfrac{AD}{CN}$",
+          "$\\dfrac{MA}{MN} = \\dfrac{25}{35} = \\dfrac{5}{7}$"
+        ]
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب الطول $CN$ .",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "63",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل المساواة $\\dfrac{MD}{MC} = \\dfrac{AD}{CN}$ من السؤال السابق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الجداء المتصالب."
+        }
+      ],
+      "feedback": {
+        "correct": "$CN = \\dfrac{45 \\times 35}{25} = 63\\,\\mathrm{m}$ .",
+        "incorrect": "من $\\dfrac{MD}{MC} = \\dfrac{AD}{CN}$ نعزل $CN$ بالجداء المتصالب."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{25}{35} = \\dfrac{45}{CN}$",
+          "$CN = \\dfrac{45 \\times 35}{25}$"
+        ],
+        "result": "CN = 63\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب بالتدوير إلى الوحدة من الدرجة قيس الزاوية $\\widehat{MAD}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_hasiba-muthallathiya_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_hasiba-muthallathiya_P3",
+          "role": "secondary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: قيس الزاوية بالدرجة، مدوّرا إلى الوحدة",
+      "expectedAnswer": "29",
+      "misconceptionSignatures": [
+        {
+          "value": "61",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        },
+        {
+          "value": "56",
+          "id": "MISC-MUTH-NISBA-UKHRA"
+        },
+        {
+          "value": "1",
+          "id": "MISC-MUTH-HASIBA-RAD"
+        },
+        {
+          "value": "0",
+          "id": "MISC-MUTH-AKS-BADAL-MUBASHIR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث $ADM$ قائم في $D$ : حدّد موقع $[AD]$ و $[DM]$ بالنسبة إلى الزاوية $\\widehat{MAD}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اللمسة العكسية: ⁦2nd⁩ ثم ⁦tan⁻¹⁩ ثم النسبة ثم ⁦=⁩."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الحرف ⁦D⁩ (الدرجة)، ثم دوّر إلى الوحدة: انظر إلى الرقم الموالي للرقم الأخير الذي تحتفظ به."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\widehat{MAD} \\approx 29{,}0546041^{\\circ} \\approx 29^{\\circ}$ .",
+        "incorrect": "النسبة ليست القيس: القيس يُعيَّن باللمسة العكسية المناسبة والحاسبة مبرمجة بالدرجة، ثم يُدوَّر (لا يُبتر) إلى الوحدة."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $ADM$ قائم في $D$ : $\\tan\\widehat{MAD} = \\dfrac{DM}{AD} = \\dfrac{25}{45}$",
+          "باستعمال الحاسبة المبرمجة بالدرجة: ⁦ON 2nd tan⁻¹ ( 25 ÷ 45 ) =⁩ يظهر على الشاشة $29{,}0546041$ .",
+          "الرقم الذي يلي رقم الوحدات هو 0، وهو أصغر من 5: نُبقي رقم الوحدات كما هو."
+        ],
+        "result": "\\widehat{MAD} \\approx 29^{\\circ}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

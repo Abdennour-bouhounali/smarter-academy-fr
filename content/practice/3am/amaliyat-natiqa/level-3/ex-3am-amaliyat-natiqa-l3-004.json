@@ -1,0 +1,273 @@
+{
+  "id": "ex-3am-amaliyat-natiqa-l3-004",
+  "lessonCode": "amaliyat-natiqa",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — عمليات على أبسط شكل",
+    "estimatedMinutes": 14,
+    "tags": [
+      "العمليات على الأعداد الناطقة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 1,
+      "file": "3am-s1-110",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "احسب الأعداد التالية واكتب كلّ نتيجة على شكل كسر غير قابل للاختزال ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $A = -\\dfrac{7}{10} + \\dfrac{3}{5} \\div \\left(-\\dfrac{6}{5}\\right)$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "-6/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "1/12",
+          "id": "MISC-AMAL-PRIORITY"
+        },
+        {
+          "value": "6/5",
+          "id": "MISC-AMAL-SUMSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليات الموجودة؟ وهل توجد أقواس أو كسر مركّب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح، ومع كلّ عملية نحدّد الإشارة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز عملية واحدة في كلّ سطر، ثمّ اكتب النتيجة غير القابلة للاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = -\\dfrac{6}{5}$ .",
+        "incorrect": "احترم الأولويّة: الأقواس ثمّ الضرب والقسمة ثمّ الجمع والطرح، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "القسمة على $-\\dfrac{6}{5}$ هي الضرب في مقلوبه، ومقلوب $-\\dfrac{6}{5}$ هو $-\\dfrac{5}{6}$ (يحتفظ بالإشارة نفسها).",
+          "$\\dfrac{3}{5} \\div \\left(-\\dfrac{6}{5}\\right) = \\dfrac{3}{5} \\times \\left(-\\dfrac{5}{6}\\right)$ .",
+          "العاملان من إشارتين مختلفتين: الجداء سالب.",
+          "$\\dfrac{3}{5} \\times \\left(-\\dfrac{5}{6}\\right) = -\\dfrac{3 \\times 5}{5 \\times 6} = -\\dfrac{15}{30} = -\\dfrac{1}{2}$ .",
+          "العددان $-\\dfrac{7}{10}$ و $-\\dfrac{1}{2}$ سالبان، فنجمع بعديهما عن الصفر ونكتب الإشارة $-$.",
+          "$-\\dfrac{7}{10} + \\left(-\\dfrac{1}{2}\\right) = -\\dfrac{7}{10} - \\dfrac{5}{10} = \\dfrac{-7 - 5}{10} = -\\dfrac{6}{5}$ ."
+        ],
+        "result": "A = -\\dfrac{6}{5}"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $B = \\left(-\\dfrac{4}{3} + \\dfrac{5}{6}\\right) \\times \\left(-\\dfrac{9}{5}\\right)$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "9/10",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "-9/10",
+          "id": "MISC-AMAL-PRODSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليات الموجودة؟ وهل توجد أقواس أو كسر مركّب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح، ومع كلّ عملية نحدّد الإشارة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز عملية واحدة في كلّ سطر، ثمّ اكتب النتيجة غير القابلة للاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = \\dfrac{9}{10}$ .",
+        "incorrect": "احترم الأولويّة: الأقواس ثمّ الضرب والقسمة ثمّ الجمع والطرح، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "العددان $-\\dfrac{4}{3}$ و $\\dfrac{5}{6}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $-\\dfrac{4}{3}$ ، فإشارة المجموع سالبة.",
+          "$-\\dfrac{4}{3} + \\dfrac{5}{6} = -\\dfrac{8}{6} + \\dfrac{5}{6} = \\dfrac{-8 + 5}{6} = -\\dfrac{1}{2}$ .",
+          "العاملان سالبان: الجداء موجب.",
+          "$-\\dfrac{1}{2} \\times \\left(-\\dfrac{9}{5}\\right) = \\dfrac{1 \\times 9}{2 \\times 5} = \\dfrac{9}{10}$ ."
+        ],
+        "result": "B = \\dfrac{9}{10}"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب $C = 2 - \\left(\\dfrac{3}{4} - \\dfrac{5}{6}\\right) \\times 6$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "5/2",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "25/2",
+          "id": "MISC-AMAL-PRIORITY"
+        },
+        {
+          "value": "-5/2",
+          "id": "MISC-AMAL-SUMSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليات الموجودة؟ وهل توجد أقواس أو كسر مركّب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح، ومع كلّ عملية نحدّد الإشارة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز عملية واحدة في كلّ سطر، ثمّ اكتب النتيجة غير القابلة للاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "$C = \\dfrac{5}{2}$ .",
+        "incorrect": "احترم الأولويّة: الأقواس ثمّ الضرب والقسمة ثمّ الجمع والطرح، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "$\\dfrac{3}{4} - \\dfrac{5}{6} = \\dfrac{3}{4} + \\left(-\\dfrac{5}{6}\\right)$ (طرح عدد هو جمع معاكسه).",
+          "العددان $\\dfrac{3}{4}$ و $-\\dfrac{5}{6}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $-\\dfrac{5}{6}$ ، فإشارة المجموع سالبة.",
+          "$\\dfrac{3}{4} + \\left(-\\dfrac{5}{6}\\right) = \\dfrac{9}{12} - \\dfrac{10}{12} = \\dfrac{9 - 10}{12} = -\\dfrac{1}{12}$ .",
+          "العاملان من إشارتين مختلفتين: الجداء سالب.",
+          "$-\\dfrac{1}{12} \\times 6 = -\\dfrac{1 \\times 6}{12} = -\\dfrac{6}{12} = -\\dfrac{1}{2}$ .",
+          "$2 - \\left(-\\dfrac{1}{2}\\right) = 2 + \\dfrac{1}{2}$ (طرح عدد هو جمع معاكسه).",
+          "العددان $2$ و $\\dfrac{1}{2}$ موجبان، فمجموعهما موجب.",
+          "$2 + \\dfrac{1}{2} = \\dfrac{4}{2} + \\dfrac{1}{2} = \\dfrac{4 + 1}{2} = \\dfrac{5}{2}$ ."
+        ],
+        "result": "C = \\dfrac{5}{2}"
+      }
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب $D = \\left(-\\dfrac{5}{8}\\right) \\times \\left(-\\dfrac{12}{25}\\right) - \\dfrac{1}{10}$ واكتب النتيجة على أبسط شكل .",
+      "learningPoints": [
+        {
+          "code": "3am_amaliyat-natiqa_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "timeSeconds": 90,
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "1/5",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "-1/5",
+          "id": "MISC-AMAL-PRODSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العمليات الموجودة؟ وهل توجد أقواس أو كسر مركّب؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح، ومع كلّ عملية نحدّد الإشارة أوّلًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز عملية واحدة في كلّ سطر، ثمّ اكتب النتيجة غير القابلة للاختزال."
+        }
+      ],
+      "feedback": {
+        "correct": "$D = \\dfrac{1}{5}$ .",
+        "incorrect": "احترم الأولويّة: الأقواس ثمّ الضرب والقسمة ثمّ الجمع والطرح، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نحترم الأولويّة: الأقواس أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح.",
+          "العاملان سالبان: الجداء موجب.",
+          "$-\\dfrac{5}{8} \\times \\left(-\\dfrac{12}{25}\\right) = \\dfrac{5 \\times 12}{8 \\times 25} = \\dfrac{60}{200} = \\dfrac{3}{10}$ .",
+          "$\\dfrac{3}{10} - \\dfrac{1}{10} = \\dfrac{3}{10} + \\left(-\\dfrac{1}{10}\\right)$ (طرح عدد هو جمع معاكسه).",
+          "العددان $\\dfrac{3}{10}$ و $-\\dfrac{1}{10}$ من إشارتين مختلفتين: الأبعد عن الصفر هو $\\dfrac{3}{10}$ ، فإشارة المجموع موجبة.",
+          "$\\dfrac{3}{10} + \\left(-\\dfrac{1}{10}\\right) = \\dfrac{3 - 1}{10} = \\dfrac{1}{5}$ ."
+        ],
+        "result": "D = \\dfrac{1}{5}"
+      }
+    }
+  ]
+}

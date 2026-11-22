@@ -1,0 +1,189 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l4-010",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — كتابات العدد نفسه",
+    "estimatedMinutes": 6,
+    "tags": [
+      "k × قوة 10",
+      "المفكوك"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد $45\\,000$ . اختر الكتابة الصحيحة ثمّ أجب عن السؤالين التاليين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ الكتابات التالية تساوي $45\\,000$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم صفرًا يلي العدد 45 في $45\\,000$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب ما تقترحه كتابة عشرية ثمّ قارن."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "مفكوك العدد يضع كلّ رقم في رتبته الصحيحة: 4 عشرات الآلاف و 5 آلاف."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$4 \\times 10^{3} + 5 \\times 10^{4}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-MAFKUK"
+        },
+        {
+          "id": "B",
+          "content": "$45 \\times 10^{3}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$45 \\times 10^{5}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$45\\,000 = 45 \\times 10^{3}$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب الكتابة العشرية للقوة المعنية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$45 \\times 10^{3} = 45 \\times 1\\,000 = 45\\,000$ ."
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "$0{,}07 = 7 \\times 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في أيّ رتبة بعد الفاصلة يقع الرقم 7؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الرتبة بعد الفاصلة هي القيمة المطلقة للأسّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأسّ سالب."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "-1",
+          "id": "MISC-ASHARA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}07 = 7 \\times 0{,}01 = 7 \\times 10^{-2}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الرقم 7 في الرتبة الثانية بعد الفاصلة.",
+          "$0{,}07 = 7 \\times 10^{-2}$ ."
+        ],
+        "result": "n = -2"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "$28\\,000 = 28 \\times 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم صفرًا يلي العدد 28 في $28\\,000$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $28\\,000$ جداءً للعدد 28 في عدد يتكوّن من 1 متبوعًا بأصفار."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدّ الأصفار بعد 28."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-ASHARA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$28\\,000 = 28 \\times 1\\,000 = 28 \\times 10^{3}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "بعد 28 ثلاثة أصفار.",
+          "$28\\,000 = 28 \\times 10^{3}$ ."
+        ],
+        "result": "n = 3"
+      }
+    }
+  ]
+}

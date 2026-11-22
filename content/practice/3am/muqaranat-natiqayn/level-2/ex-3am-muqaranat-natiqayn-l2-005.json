@@ -1,0 +1,240 @@
+{
+  "id": "ex-3am-muqaranat-natiqayn-l2-005",
+  "lessonCode": "muqaranat-natiqayn",
+  "level": 2,
+  "metadata": {
+    "title": "أقارن مضاعفين للعدد π",
+    "estimatedMinutes": 10,
+    "tags": [
+      "π",
+      "فرق",
+      "مقارنة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "self-9",
+      "page": 65,
+      "section": "أؤكّد تعلّماتي",
+      "number": 9
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نقارن في كلّ جزء بين العددين $a$ و $b$ المكتوبين بدلالة $\\pi$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "الجزء الأول: $a = \\dfrac{3\\pi}{8}$ و $b = \\dfrac{\\pi}{3}$ . نكتب $a - b = k\\pi$ ، فما العدد $k$ ؟",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $k$ فقط (كسر غير قابل للاختزال)",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط؟ وما العمليات التي تحتاجها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب خطوة خطوة مع الانتباه إلى الإشارات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "راجع النتيجة بطريقة ثانية قبل أن تجيب."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "1/24",
+      "misconceptionSignatures": [
+        {
+          "value": "-1/24",
+          "id": "MISC-MUQ-ORDER-SUB"
+        }
+      ],
+      "feedback": {
+        "correct": "$a - b = \\dfrac{1}{24}\\pi$ .",
+        "incorrect": "أعد الحساب بالترتيب مع الانتباه إلى الإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$a - b = \\dfrac{3\\pi}{8} - \\dfrac{\\pi}{3} = \\dfrac{9\\pi}{24} - \\dfrac{8\\pi}{24} = \\dfrac{\\pi}{24}$"
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما المقارنة الصحيحة بين $a$ و $b$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا تعلّمنا إشارة الفرق عن ترتيب العددين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اربط إشارة الفرق بالمقارنة بين العددين، وانتبه إلى أيّ العددين هو الأول في الفرق."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا انعكس ترتيب الطرح فإنّ إشارة الفرق تنعكس أيضًا."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$a < b$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-ORDER-SUB"
+        },
+        {
+          "id": "B",
+          "content": "$a > b$",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "$a > b$ لأنّ $a - b > 0$ .",
+        "incorrect": "اربط إشارة الفرق بالترتيب، وانتبه إلى ترتيب الطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$a - b = \\dfrac{\\pi}{24} > 0$ لأنّ $\\pi > 0$ ، إذن $a > b$ ."
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "الجزء الثاني: $a = -\\dfrac{2\\pi}{5}$ و $b = -\\dfrac{3\\pi}{7}$ . نكتب $a - b = k\\pi$ ، فما العدد $k$ ؟",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $k$ فقط (كسر غير قابل للاختزال)",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط؟ وما العمليات التي تحتاجها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب خطوة خطوة مع الانتباه إلى الإشارات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "راجع النتيجة بطريقة ثانية قبل أن تجيب."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "1/35",
+      "misconceptionSignatures": [
+        {
+          "value": "-29/35",
+          "id": "MISC-MUQ-BRACKET"
+        }
+      ],
+      "feedback": {
+        "correct": "$a - b = \\dfrac{1}{35}\\pi$ .",
+        "incorrect": "أعد الحساب بالترتيب مع الانتباه إلى الإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$a - b = -\\dfrac{14\\pi}{35} + \\dfrac{15\\pi}{35} = \\dfrac{\\pi}{35}$"
+        ]
+      }
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما المقارنة الصحيحة بين $a$ و $b$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ماذا تعلّمنا إشارة الفرق عن ترتيب العددين؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اربط إشارة الفرق بالمقارنة بين العددين، وانتبه إلى أيّ العددين هو الأول في الفرق."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا انعكس ترتيب الطرح فإنّ إشارة الفرق تنعكس أيضًا."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$a > b$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$a < b$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-ABS"
+        }
+      ],
+      "feedback": {
+        "correct": "$a > b$ لأنّ $a - b > 0$ .",
+        "incorrect": "اربط إشارة الفرق بالترتيب، وانتبه إلى ترتيب الطرح، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$a - b = \\dfrac{\\pi}{35} > 0$ ، إذن $a > b$ ."
+        ]
+      }
+    }
+  ]
+}

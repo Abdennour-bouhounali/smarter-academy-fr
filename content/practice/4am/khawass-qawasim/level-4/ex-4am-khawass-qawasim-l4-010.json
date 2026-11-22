@@ -1,0 +1,213 @@
+{
+  "id": "ex-4am-khawass-qawasim-l4-010",
+  "lessonCode": "khawass-qawasim",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2024 — شريطا الزينة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "خاصية 1",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_khawass-qawasim_P1",
+      "modelledOn": "BEM 2024 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتزيين قاعة حفل نهاية السنة، تتعاون لجنة الحفلات في متوسطة، فيؤدّي كل عضو مهمّته، وتملك اللجنة شريطين ملوّنين طولاهما 252cm و 196cm، وتريد تقطيع كل منهما إلى قطع متساوية الطول، دون ضياع، بحيث يكون لكل القطع الطول نفسه."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "هل يمكن أن يكون طول كل قطعة 28cm ؟ 21cm ؟ برّر إجابتك.",
+      "statement": "28cm.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يجب أن يقسم طول القطعة كلا من 252 و 196."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أجرِ القسمتين $252 \\div 28$ و $196 \\div 28$."
+        }
+      ],
+      "feedback": {
+        "correct": "$252 = 28 \\times 9$ و $196 = 28 \\times 7$: يمكن أن يكون طول القطعة 28cm.",
+        "incorrect": "تحقّق من قابلية قسمة كلٍّ من 252 و 196 على 28."
+      },
+      "solution": {
+        "lines": [
+          "$252 = 28 \\times 9$ و $196 = 28 \\times 7$",
+          "28 قاسم مشترك للعددين، إذن يمكن ذلك."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "21cm.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يجب أن يقسم طول القطعة كلا من 252 و 196."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أجرِ القسمة الإقليدية للعدد 196 على 21."
+        }
+      ],
+      "feedback": {
+        "correct": "$196 = 21 \\times 9 + 7$: لا يمكن أن يكون طول القطعة 21cm.",
+        "incorrect": "تحقّق من قابلية قسمة كلٍّ من 252 و 196 على 21."
+      },
+      "solution": {
+        "lines": [
+          "$252 = 21 \\times 12$ لكن $196 = 21 \\times 9 + 7$: الباقي غير معدوم.",
+          "21 لا يقسم 196، إذن لا يمكن ذلك."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "في حالة قطع طولها 28cm، بيّن دون حساب عدد قطع كل شريط أن 28 يقسم $252 - 196$ ، واستنتج بكم قطعة يزيد عدد قطع الشريط الأول على عدد قطع الشريط الثاني.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد القطع)",
+      "expectedAnswer": "2",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الكتابتين $252 = 28 \\times 9$ و $196 = 28 \\times 7$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرج 28 عاملًا مشتركًا: $28 \\times q - 28 \\times q' = 28 \\times (q - q')$."
+        }
+      ],
+      "feedback": {
+        "correct": "$252 - 196 = 28 \\times (9 - 7) = 28 \\times 2$.",
+        "incorrect": "القاسم المشترك لعددين يقسم فرقهما: اكتب كلا من العددين على الشكل $28 \\times q$ ثم أخرج 28 عاملًا مشتركًا."
+      },
+      "solution": {
+        "lines": [
+          "$252 - 196 = 28 \\times 9 - 28 \\times 7$",
+          "$252 - 196 = 28 \\times (9 - 7)$",
+          "$252 - 196 = 28 \\times 2$ ، إذن 28 يقسم $252 - 196$."
+        ],
+        "result": "252 - 196 = 28 \\times 2"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "أوجد العدد الكلي للقطع في هذه الحالة.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد القطع)",
+      "expectedAnswer": "16",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الكتابتين $252 = 28 \\times 9$ و $196 = 28 \\times 7$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرج 28 عاملًا مشتركًا: $28 \\times q + 28 \\times q' = 28 \\times (q + q')$."
+        }
+      ],
+      "feedback": {
+        "correct": "$252 + 196 = 28 \\times (9 + 7) = 28 \\times 16$.",
+        "incorrect": "القاسم المشترك لعددين يقسم مجموعهما: اكتب كلا من العددين على الشكل $28 \\times q$ ثم أخرج 28 عاملًا مشتركًا."
+      },
+      "solution": {
+        "lines": [
+          "$252 + 196 = 28 \\times 9 + 28 \\times 7$",
+          "$252 + 196 = 28 \\times (9 + 7)$",
+          "$252 + 196 = 28 \\times 16$ ، إذن 28 يقسم $252 + 196$."
+        ],
+        "result": "252 + 196 = 28 \\times 16"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,12 +1,8 @@
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
-const LINES = [
-  'Une petite découverte aujourd\'hui.',
-  'Une difficulté surmontée demain.',
-  'Une notion enfin comprise.',
-  "Un problème que l'on réussit seul.",
-  'Puis un autre.',
-];
+// Des CLÉS, pas des libellés : pas d'appel à `t()` au niveau module.
+const LINES = ['line1', 'line2', 'line3', 'line4', 'line5'];
 
 const containerVariants = {
   hidden: {},
@@ -18,22 +14,24 @@ const lineVariants = {
 };
 
 export default function SmarterEverydaySection() {
+  const { t } = useTranslation('marketing');
+
   return (
     <section className="relative z-10 py-20 sm:py-28 px-4 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-900 to-indigo-950" />
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-blue-500/10 to-transparent rounded-full blur-3xl" />
 
       <div className="relative max-w-3xl mx-auto text-center">
-        <motion.p
+        <m.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           className="font-mono-jetbrains text-cyan-400 text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase mb-10"
         >
-          Smarter Everyday
-        </motion.p>
+          {t('everyday.brand')}
+        </m.p>
 
-        <motion.div
+        <m.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -41,13 +39,13 @@ export default function SmarterEverydaySection() {
           className="space-y-3 mb-12"
         >
           {LINES.map((line) => (
-            <motion.p key={line} variants={lineVariants} className="font-space font-medium text-xl sm:text-2xl text-slate-200 leading-snug">
-              {line}
-            </motion.p>
+            <m.p key={line} variants={lineVariants} className="font-space font-medium text-xl sm:text-2xl text-slate-200 leading-snug">
+              {t(`everyday.${line}`)}
+            </m.p>
           ))}
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -55,12 +53,12 @@ export default function SmarterEverydaySection() {
           className="pt-8 border-t border-white/10 inline-block"
         >
           <p className="font-space font-bold text-2xl sm:text-3xl text-white leading-snug text-balance">
-            Chaque jour un peu plus loin.
+            {t('everyday.closing1')}
           </p>
           <p className="font-space font-bold text-2xl sm:text-3xl gradient-text leading-snug text-balance mt-1">
-            Chaque jour un peu plus capable.
+            {t('everyday.closing2')}
           </p>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

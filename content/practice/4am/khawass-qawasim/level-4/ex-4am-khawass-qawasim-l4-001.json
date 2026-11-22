@@ -1,0 +1,169 @@
+{
+  "id": "ex-4am-khawass-qawasim-l4-001",
+  "lessonCode": "khawass-qawasim",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 13 — 11 و 14 300",
+    "estimatedMinutes": 7,
+    "tags": [
+      "خاصية 1",
+      "مضاعفات"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-13",
+      "page": 14,
+      "section": "أوظّف تعلّماتي",
+      "number": 13
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن 11 من قواسم العدد 14 300: اكتبه على الشكل $11 \\times k$ حيث $k$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k$ فقط (عدد طبيعي)",
+      "expectedAnswer": "1300",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 14300 على 11: يجب أن يكون الباقي معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل هذه القسمة هو العدد $k$ المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$14300 = 11 \\times 1300$ ، إذن 11 يقسم 14300.",
+        "incorrect": "ابحث عن العدد الطبيعي $k$ الذي إذا ضُرب في 11 أعطى 14300."
+      },
+      "solution": {
+        "lines": [
+          "$14\\,300 = 143 \\times 100$ و $143 = 11 \\times 13$",
+          "$14300 = 11 \\times 1300$"
+        ],
+        "result": "14300 = 11 \\times 1300"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج أن 11 من قواسم العدد 14 322: اكتبه على الشكل $11 \\times K$ حيث $K$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $K$ فقط (عدد طبيعي)",
+      "expectedAnswer": "1302",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب 14 322 على شكل مجموع عددين يقسمهما 11."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لاحظ أن $14\\,322 = 14\\,300 + 22$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أخرج 11 عاملًا مشتركًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$14\\,322 = 14\\,300 + 22 = 11 \\times 1300 + 11 \\times 2 = 11 \\times 1302$.",
+        "incorrect": "القاسم المشترك لعددين يقسم مجموعهما: اكتب 14 322 مجموعًا للعدد 14 300 وعدد آخر يقسمه 11."
+      },
+      "solution": {
+        "lines": [
+          "$14\\,322 = 14\\,300 + 22$",
+          "$14\\,322 = 11 \\times 1300 + 11 \\times 2$",
+          "$14\\,322 = 11 \\times 1302$"
+        ],
+        "result": "14\\,322 = 11 \\times 1302"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل 11 من قواسم العدد 14 325 ؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "افترض أن 11 يقسم 14 325. ماذا تستنتج عن الفرق $14\\,325 - 14\\,300$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يقبل 25 القسمة على 11؟"
+        }
+      ],
+      "feedback": {
+        "correct": "لو قسم 11 العدد 14 325 لقسم الفرق $14\\,325 - 14\\,300 = 25$، و 25 لا يقبل القسمة على 11.",
+        "incorrect": "استعمل الفرق مع العدد 14 300 الذي يقسمه 11."
+      },
+      "solution": {
+        "lines": [
+          "نفرض أن 11 يقسم 14 325.",
+          "11 يقسم 14 300، فهو يقسم الفرق $14\\,325 - 14\\,300 = 25$ (الخاصية 1).",
+          "$25 = 11 \\times 2 + 3$: هذا تناقض.",
+          "إذن 11 لا يقسم 14 325."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

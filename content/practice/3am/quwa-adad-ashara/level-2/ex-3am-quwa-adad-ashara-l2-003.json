@@ -1,0 +1,234 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l2-003",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 2,
+  "metadata": {
+    "title": "من $\\dfrac{1}{10^{n}}$ إلى $10^{-n}$",
+    "estimatedMinutes": 6,
+    "tags": [
+      "أسّ سالب",
+      "الكتابة العشرية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-5",
+      "page": 46,
+      "section": "أوظّف تعلّماتي",
+      "number": 5
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اكتب كلًّا من الأعداد التالية على شكل قوة للعدد 10 ثمّ كتابة عشرية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "$A = \\dfrac{1}{10^{4}} = 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نتّفق أنّ $10^{-n}$ هو مقلوب $10^{n}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مقلوب $10^{n}$ هو $10^{-n}$ : الأسّ يتغيّر إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الأسّ في المقام ثمّ غيّر إشارته."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-ASHARA-SALIB"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{10^{4}} = 10^{-4}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{10^{4}}$ مقلوب $10^{4}$ .",
+          "إذن $\\dfrac{1}{10^{4}} = 10^{-4}$ ."
+        ],
+        "result": "n = -4"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$B = \\dfrac{1}{10^{7}} = 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نتّفق أنّ $10^{-n}$ هو مقلوب $10^{n}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مقلوب $10^{n}$ هو $10^{-n}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الأسّ في المقام ثمّ غيّر إشارته."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-7",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-ASHARA-SALIB"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{10^{7}} = 10^{-7}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{1}{10^{7}} = 10^{-7}$ ."
+        ],
+        "result": "n = -7"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "ما الكتابة العشرية للعدد $C = \\dfrac{1}{10^{6}}$ ؟",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $10^{6}$ كتابة عشرية ثمّ ابحث عن مقلوبه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الرقم 1 يقع في الرتبة $n$ بعد الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من أنّ الرقم 1 في الرتبة المطلوبة تمامًا."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "0.000001",
+      "misconceptionSignatures": [
+        {
+          "value": "0.0000001",
+          "id": "MISC-ASHARA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{10^{6}} = 0{,}000001$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الرقم 1 في الرتبة السادسة بعد الفاصلة.",
+          "$\\dfrac{1}{10^{6}} = 0{,}000001$ ."
+        ],
+        "result": "0{,}000001"
+      }
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما الكتابة العشرية للعدد $D = \\dfrac{1}{10^{9}}$ ؟",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $10^{9}$ كتابة عشرية ثمّ ابحث عن مقلوبه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الرقم 1 يقع في الرتبة $n$ بعد الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدّ الرتب بعد الفاصلة بعناية."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "0.000000001",
+      "misconceptionSignatures": [
+        {
+          "value": "0.0000000001",
+          "id": "MISC-ASHARA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{10^{9}} = 0{,}000000001$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الرقم 1 في الرتبة التاسعة بعد الفاصلة.",
+          "$\\dfrac{1}{10^{9}} = 0{,}000000001$ ."
+        ],
+        "result": "0{,}000000001"
+      }
+    }
+  ]
+}

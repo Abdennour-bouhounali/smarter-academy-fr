@@ -1,0 +1,168 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l3-006",
+  "lessonCode": "maqati-mustawiya",
+  "level": 3,
+  "metadata": {
+    "title": "دوري الآن — الطول AB",
+    "estimatedMinutes": 3,
+    "tags": [
+      "أسطوانة",
+      "جذر"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "now-169",
+      "page": 169,
+      "section": "دوري الآن"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 169): (P) مستو مُواز لمحور أسطوانة دوران ارتفاعها $3\\,\\mathrm{cm}$ ونصف قطر قاعدتها $2\\,\\mathrm{cm}$ ، يقطعها وفق الرباعي ABCD، والمسافة بين O و $(AB)$ هي $1\\,\\mathrm{cm}$ (الشكل).",
+    "figure": {
+      "kind": "space",
+      "view": {
+        "azimuth": -62,
+        "elevation": 22
+      },
+      "points": {
+        "O'": [
+          0,
+          0,
+          0
+        ],
+        "O": [
+          0,
+          0,
+          3
+        ],
+        "H": [
+          0,
+          -1,
+          3
+        ],
+        "A": [
+          -1.732,
+          -1,
+          3
+        ],
+        "B": [
+          1.732,
+          -1,
+          3
+        ],
+        "C": [
+          1.732,
+          -1,
+          0
+        ],
+        "D": [
+          -1.732,
+          -1,
+          0
+        ]
+      },
+      "solids": [
+        {
+          "type": "cylinder",
+          "base": "O'",
+          "top": "O",
+          "radius": 2
+        }
+      ],
+      "sections": [
+        {
+          "points": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "tone": "emerald"
+        }
+      ],
+      "segments": [
+        {
+          "from": "O'",
+          "to": "O",
+          "dashed": true
+        },
+        {
+          "from": "O",
+          "to": "H",
+          "tone": "rose",
+          "dashed": true
+        }
+      ],
+      "rightAngles": [
+        [
+          "O",
+          "H",
+          "B"
+        ]
+      ],
+      "hidden": [
+        "O'"
+      ],
+      "labels": {
+        "H": "sw",
+        "O": "n"
+      },
+      "ariaLabel": "أسطوانة دوران ارتفاعها 3 ونصف قطر قاعدتها 2 يقطعها مستو موازٍ لمحورها وفق الرباعي ABCD، و H المسقط العمودي لـ O على (AB)",
+      "maxWidth": 380
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "القيمة المضبوطة للطول AB:",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$2\\sqrt{3}\\,\\mathrm{cm}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$2\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQTA-TARH"
+        },
+        {
+          "id": "C",
+          "content": "$\\sqrt{3}\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQTA-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "H المسقط العمودي لـ O على $(AB)$ منتصف $[AB]$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المثلث OHA قائم في H، $OA = 2$ و $OH = 1$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$AB = 2\\,AH$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AH^2 = 4 - 1 = 3$ ، $AH = \\sqrt{3}$ و $AB = 2\\sqrt{3}\\,\\mathrm{cm}$ .",
+        "incorrect": "$\\sqrt{3}$ نصف الوتر فقط، و $2(2 - 1) = 2$ ليس بخاصية فيثاغورس."
+      },
+      "difficulty": 3
+    }
+  ]
+}

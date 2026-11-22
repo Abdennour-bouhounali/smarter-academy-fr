@@ -1,57 +1,85 @@
-import { useContext } from 'react';
-import { Navigate, Outlet } from 'react-router-dom';
+import { Suspense, useContext } from 'react';
+import { Navigate, Outlet, useLocation } from 'react-router-dom';
 import StudentNavbar from '../student/StudentNavbar';
-import BackgroundLayer from '../common/BackgroundLayer';
+import { DoorTabs, RAIL_WIDTH } from '../common/WorkspaceNav';
+import { studentDoors } from '../../data/studentNavigation';
 import ScrollToTop from '../common/ScrollToTop';
 import { AuthContext } from '../../context/AuthContext';
 import { useWorkspaceLayout } from '../../context/WorkspaceLayoutContext';
+import { getAllGradesSummary } from '../../utils/gradeSummary';
+import { needsName } from '../../utils/personName';
+import PageTourProvider from '../../features/tours/PageTourProvider';
 
 /**
  * The authenticated student area's shell — a workspace (sidebar + content),
- * not the visitor's marketing shell (MainLayout). No Footer, no
- * CommandPalette: those are visitor-site affordances the workspace doesn't
- * need since its own nav is always visible.
+ * not the visitor's marketing shell (MainLayout). No Footer: a visitor-site
+ * affordance the workspace doesn't need since its own nav is always visible.
  *
  * Registration no longer collects a grade, so any student can reach this
  * shell with `user.grade === null` — not just right after signing up (e.g.
  * they closed the tab mid-onboarding). Every route nested under here
  * requires a grade to make sense, so this is the one place that guard lives
- * rather than repeating it per page.
+ * rather than repeating it per page — except while no Algerian grade exists
+ * at all (see the getAllGrades() check below), since gating on a choice
+ * nobody can make would trap every student in a redirect loop.
  *
- * MODE COLONNE (« prior ») — la coquille RÉSERVE la place de la carte au lieu
- * de la laisser flotter par-dessus la leçon : la barre latérale se comprime
- * (w-64 → w-20, géré dans StudentNavbar) et le <main> gagne une gouttière à
- * droite. Le contenu rétrécit donc pour de bon, et `useLessonViewport`, qui lit
- * la boîte de padding de ce <main>, place la carte exactement dans la
- * gouttière ainsi ouverte (cf. WorkspaceLayoutContext).
+ * COLUMN MODE (« prior ») — the shell RESERVES the place of « بطاقتي » instead of letting it float over the lesson: the
+ * rail keeps its 80 px (`RAIL_WIDTH`, it does not fold) and <main> gains a gutter on the end side. The content really
+ * shrinks, and `useLessonViewport`, which reads the padding box of this <main>, places the map exactly in that gutter
+ * (see WorkspaceLayoutContext).
  */
 export default function StudentLayout() {
   const { user } = useContext(AuthContext);
-  const { isPrior, contentGutter, sidebarWidth } = useWorkspaceLayout();
+  const { isPrior, contentGutter } = useWorkspaceLayout();
+  const location = useLocation();
 
-  if (user && !user.grade) {
+  // « الاسم و اللقب » AVANT la classe scolaire : un compte sans nom (créé
+  // avant leur collecte) passe d'abord par l'étape qui les demande, puis
+  // revient ici — `from` le ramène à la page qu'il visait.
+  if (needsName(user)) {
+    return <Navigate to="/espace/bienvenue/nom" replace state={{ from: location.pathname + location.search }} />;
+  }
+
+  // No Algerian grade exists yet (packages/core/curriculum/activeGrades.js —
+  // ACTIVE_GRADE_IDS is empty pending Phase 7's official curriculum), so
+  // ChooseGrade.jsx has nothing to offer any student right now. Gating on a
+  // grade that cannot possibly be chosen would trap every student in a
+  // redirect loop — so the gate only applies once there is at least one
+  // grade to actually choose.
+  if (user && !user.grade && getAllGradesSummary().length > 0) {
     return <Navigate to="/espace/bienvenue" replace />;
   }
 
+  // « جولة تعريفية » : la visite guidée de la première visite de chaque page
+  // (features/tours, docs/architecture/PAGE_TOURS.md).
   return (
-    <div className="relative min-h-screen bg-[#FAFAFA]">
+    <PageTourProvider>
+    <div className="relative min-h-screen bg-nav-page">
       <ScrollToTop />
-      <BackgroundLayer />
+      {/* No coloured halo behind the workspace (NAVIGATION_REBUILD_PLAN.md §6bis): one plain page colour. */}
       <StudentNavbar />
       <main
         // `lg:pl-64` devient une valeur calculée : c'est la MÊME réservation,
         // rendue variable pour que la compression de la barre s'anime au lieu
         // de sauter. En dessous de `lg`, la barre latérale n'existe pas et le
         // mode colonne est désactivé : les deux décalages valent alors 0.
-        className="sa-workspace-main relative z-10 pt-14 pb-20 lg:pt-0 lg:pb-0 min-h-screen"
+        className="sa-workspace-main relative z-10 pt-14 pb-20 md:pt-0 md:pb-0 min-h-screen"
         style={{
-          '--sa-sidebar-w': `${sidebarWidth}px`,
+          '--sa-sidebar-w': `${RAIL_WIDTH}px`,
           '--sa-gutter-w': `${contentGutter}px`,
         }}
         data-workspace-prior={isPrior ? 'true' : undefined}
+        data-rail
       >
-        <Outlet />
+        {/* Les pages sont des lots paresseux (App.jsx) : cette frontière
+            garde la coquille — barre, navigation — à l'écran pendant
+            qu'une page arrive, au lieu du repli plein écran du routeur. */}
+        <Suspense fallback={<div className="min-h-screen" aria-busy="true" />}>
+          <DoorTabs account="student" doors={studentDoors} />
+          <Outlet />
+        </Suspense>
       </main>
     </div>
+    </PageTourProvider>
   );
 }

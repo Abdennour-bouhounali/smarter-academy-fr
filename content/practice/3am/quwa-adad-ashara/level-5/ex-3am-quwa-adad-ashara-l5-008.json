@@ -1,0 +1,246 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l5-008",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — بادئات في المختبر",
+    "estimatedMinutes": 6,
+    "tags": [
+      "مسألة",
+      "البادئات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يستعمل مختبر المتوسّطة قياسات بالبادئات: ميغا $= 1\\,000\\,000$ ، وجيغا $= 1\\,000\\,000\\,000$ ، وميكرو $= 0{,}000001$ ، وتيرا $= 1\\,000\\,000\\,000\\,000$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "الجزء الأول. $1\\ \\mathrm{MW} = 1\\,000\\,000\\ \\mathrm{W} = 10^{n}\\ \\mathrm{W}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ الأصفار الواقعة بعد الرقم 1 في هذا العدد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأسّ هو عدد الأصفار بعد الرقم 1، وليس عدد أرقام العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدّ الأصفار صفرًا صفرًا بدءًا من الرقم 1 حتى آخر العدد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-ASHARA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\ \\mathrm{MW} = 10^{6}\\ \\mathrm{W}$ .",
+        "incorrect": "عدّ الأصفار (أو رتبة الرقم 1 بعد الفاصلة) بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$1\\,000\\,000$ ستّة أصفار.",
+          "$1\\,000\\,000 = 10^{6}$ ."
+        ],
+        "result": "n = 6"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$1\\ \\mu\\mathrm{s} = 0{,}000001\\ \\mathrm{s} = 10^{n}\\ \\mathrm{s}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أين يقع الرقم 1 بعد الفاصلة؟ حدّد رتبته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في $10^{-n}$ يكون الرقم 1 في الرتبة $n$ بعد الفاصلة (الأعشار هي الرتبة الأولى)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأسّ سالب وقيمته المطلقة هي رتبة الرقم 1، أمّا عدد الأصفار بين الفاصلة والرقم 1 فأقلّ منها بواحد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "-6",
+      "misconceptionSignatures": [
+        {
+          "value": "6",
+          "id": "MISC-ASHARA-WIHDA"
+        },
+        {
+          "value": "-5",
+          "id": "MISC-ASHARA-FASILA"
+        }
+      ],
+      "feedback": {
+        "correct": "$1\\ \\mu\\mathrm{s} = 10^{-6}\\ \\mathrm{s}$ .",
+        "incorrect": "عدّ الأصفار (أو رتبة الرقم 1 بعد الفاصلة) بعناية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الرقم 1 في الرتبة السادسة بعد الفاصلة.",
+          "$0{,}000001 = 10^{-6}$ ."
+        ],
+        "result": "n = -6"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "الجزء الثاني. أيّ الجمل التالية صحيحة؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«نانو» و«ميلي» تدلّان على أجزاء صغيرة من الوحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأسّ الموجب للقوى الكبيرة، والأسّ السالب للأجزاء الصغيرة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "«جيغا» تعني مليارًا."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "«جيغا» $= 10^{9}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "«نانو» $= 10^{9}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-WIHDA"
+        },
+        {
+          "id": "C",
+          "content": "«ميلي» $= 10^{3}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-WIHDA"
+        }
+      ],
+      "feedback": {
+        "correct": "«جيغا» تعني مليارًا: $10^{9}$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب الكتابة العشرية للقوة المعنية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "«جيغا» $= 1\\,000\\,000\\,000 = 10^{9}$ .",
+          "«نانو» $= 10^{-9}$ و«ميلي» $= 10^{-3}$ ."
+        ]
+      }
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "قرص صلب سعته $2\\ \\mathrm{To}$ ، و $1\\ \\mathrm{To} = 1\\,000\\,000\\,000\\,000$ أوكتي. نكتب سعته $2 \\times 10^{n}$ أوكتي : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم أوكتي في To واحد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "السعة هي 2 مضروبة في ذلك العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدّ أصفار العدد الذي يعطي عدد أوكتيّات To واحد."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "13",
+          "id": "MISC-ASHARA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$2\\ \\mathrm{To} = 2 \\times 10^{12}$ أوكتي.",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$1\\ \\mathrm{To} = 1\\,000\\,000\\,000\\,000 = 10^{12}$ أوكتي.",
+          "$2\\ \\mathrm{To} = 2 \\times 10^{12}$ أوكتي."
+        ],
+        "result": "n = 12"
+      }
+    }
+  ]
+}

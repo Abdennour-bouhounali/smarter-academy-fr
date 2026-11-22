@@ -1,0 +1,220 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l4-006",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2021 — a = 2⁴ × 3³ × 5",
+    "estimatedMinutes": 8,
+    "tags": [
+      "جداء",
+      "قاسم",
+      "مضاعف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-adad-tabii_P3",
+      "modelledOn": "BEM 2021 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد الطبيعي a حيث:",
+    "formulas": [
+      "a = 2^4 \\times 3^3 \\times 5"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب a.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2160",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$2^4 = 16$ و $3^3 = 27$."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 16 \\times 27 \\times 5 = 2160$.",
+        "incorrect": "احسب القوى أولًا ثم الجداء."
+      },
+      "solution": {
+        "lines": [
+          "$a = 16 \\times 27 \\times 5$",
+          "$a = 80 \\times 27$"
+        ],
+        "result": "a = 2160"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "بيّن أن 45 يقسم a، ثم اكتب a على الشكل $45 \\times q$ حيث $q$ عدد طبيعي.",
+      "statement": "العدد $q$:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_qasim-adad-tabii_P3",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $q$ فقط (عدد طبيعي)",
+      "expectedAnswer": "48",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$45 = 3^2 \\times 5$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جمّع العوامل: $a = (3^2 \\times 5) \\times \\ldots$"
+        }
+      ],
+      "feedback": {
+        "correct": "$a = (3^2 \\times 5) \\times (2^4 \\times 3) = 45 \\times 48$.",
+        "incorrect": "اكتب a على الشكل $(3^2 \\times 5) \\times$ (بقية العوامل)."
+      },
+      "solution": {
+        "lines": [
+          "$a = 2^4 \\times 3^3 \\times 5 = (3^2 \\times 5) \\times (2^4 \\times 3)$",
+          "$a = 45 \\times 48$",
+          "إذن 45 يقسم a."
+        ],
+        "result": "a = 45 \\times 48"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "lead": "برّر إجابتك في كل حالة:",
+      "statement": "هل 32 قاسم للعدد a؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$32 = 2^5$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كم مرة يظهر العامل 2 في كتابة a؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 2160 = 32 \\times 67 + 16$: الباقي غير معدوم، 32 ليس قاسمًا للعدد a.",
+        "incorrect": "اكتب 32 على شكل قوة للعدد 2 وقارنها بكتابة a."
+      },
+      "solution": {
+        "lines": [
+          "$32 = 2^5$ بينما يظهر العامل 2 في a أربع مرات فقط.",
+          "$2160 = 32 \\times 67 + 16$ مع $16 \\neq 0$",
+          "إذن 32 ليس قاسمًا للعدد a."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "هل a مضاعف للعدد 54؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$54 = 2 \\times 3^3$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جمّع العوامل: $a = (2 \\times 3^3) \\times \\ldots$"
+        }
+      ],
+      "feedback": {
+        "correct": "$a = (2 \\times 3^3) \\times (2^3 \\times 5) = 54 \\times 40$.",
+        "incorrect": "اكتب 54 على شكل جداء عوامل وابحث عنها في كتابة a."
+      },
+      "solution": {
+        "lines": [
+          "$a = (2 \\times 3^3) \\times (2^3 \\times 5)$",
+          "$a = 54 \\times 40$",
+          "إذن a مضاعف للعدد 54."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

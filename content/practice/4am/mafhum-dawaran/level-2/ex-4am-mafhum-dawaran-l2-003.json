@@ -1,0 +1,118 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l2-003",
+  "lessonCode": "mafhum-dawaran",
+  "level": 2,
+  "metadata": {
+    "title": "طرائق 1 — صورة نقطة بزاوية 50 درجة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "صورة نقطة",
+      "إنشاء"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-point",
+      "page": 155,
+      "section": "طرائق",
+      "number": 1
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 155): O و A نقطتان متمايزتان حيث $OA = 4\\,\\mathrm{cm}$ . نريد إنشاء A′ صورة A بالدوران الذي مركزه O وزاويته $50^\\circ$ في الاتجاه المباشر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "كم يساوي الطول $OA'$ بالسنتيمتر؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر)",
+      "expectedAnswer": "4",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-MASAFA",
+          "value": "8"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "A′ على الدائرة التي مركزها O وتشمل A."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المدور يضمن هذا الطول."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تعريف صورة نقطة: البعد عن المركز."
+        }
+      ],
+      "feedback": {
+        "correct": "$OA' = OA = 4\\,\\mathrm{cm}$ .",
+        "incorrect": "الدوران لا يغيّر البعد عن المركز."
+      },
+      "difficulty": 1
+    },
+    {
+      "id": "q2",
+      "statement": "نرسم نصف المستقيم [Ox) حيث:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\widehat{AOx} = 50^\\circ$ في اتجاه عقارب الساعة انطلاقا من [OA)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ITTIJAH"
+        },
+        {
+          "id": "B",
+          "content": "$\\widehat{OAx} = 50^\\circ$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-RAS-ZAWIYA"
+        },
+        {
+          "id": "C",
+          "content": "$\\widehat{AOx} = 50^\\circ$ عكس اتجاه عقارب الساعة انطلاقا من [OA)",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رأس زاوية الدوران هو المركز."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "صفر المنقلة على [OA)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الاتجاه المباشر هو عكس اتجاه حركة عقارب الساعة ↺، وغير المباشر في اتجاهها ↻."
+        }
+      ],
+      "feedback": {
+        "correct": "مركز المنقلة على O وصفرها على [OA)، و $50^\\circ$ عكس عقارب الساعة.",
+        "incorrect": "زاوية الدوران رأسها O، والاتجاه المباشر عكس عقارب الساعة."
+      },
+      "difficulty": 2
+    }
+  ]
+}

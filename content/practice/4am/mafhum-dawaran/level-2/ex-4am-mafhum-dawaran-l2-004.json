@@ -1,0 +1,129 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l2-004",
+  "lessonCode": "mafhum-dawaran",
+  "level": 2,
+  "metadata": {
+    "title": "نشاط 2 — صورة نقطة أخرى",
+    "estimatedMinutes": 3,
+    "tags": [
+      "صورة نقطة",
+      "إنشاء"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-2",
+      "page": 152,
+      "section": "أنشطة",
+      "number": 2
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 152): أنشأنا A′ صورة A بالدوران الذي مركزه O وزاويته $70^\\circ$ في الاتجاه المباشر. نعيّن نقطة أخرى B تختلف عن O و A وننشئ صورتها B′ بنفس الدوران."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "B′ هي النقطة التي تحقّق:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$OB' = OB$ و $\\widehat{BOB'} = 70^\\circ$ في الاتجاه المباشر",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$OB' = OA$ و $\\widehat{BOB'} = 70^\\circ$ في الاتجاه المباشر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MASAFA"
+        },
+        {
+          "id": "C",
+          "content": "$OB' = OB$ و $\\widehat{OBB'} = 70^\\circ$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-RAS-ZAWIYA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نفس البرنامج لكل نقطة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الدائرة الجديدة مركزها O وتشمل B."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "زاوية الدوران رأسها O."
+        }
+      ],
+      "feedback": {
+        "correct": "نفس الدوران: دائرة مركزها O وتشمل B، ثم $70^\\circ$ من [OB) في الاتجاه المباشر.",
+        "incorrect": "لكل نقطة دائرتها: البعد OB لا OA، والزاوية رأسها O."
+      },
+      "difficulty": 2
+    },
+    {
+      "id": "q2",
+      "statement": "الأداة التي تضمن $OB' = OB$ هي:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "المنقلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MASAFA"
+        },
+        {
+          "id": "B",
+          "content": "المدور",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "المسطرة غير المدرّجة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MASAFA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أداة للطول وأداة للزاوية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الدائرة ترسم كل النقط على نفس البعد من مركزها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أي أداة ترسم دائرة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "المدور ينقل البعد OB؛ والمنقلة للزاوية.",
+        "incorrect": "المنقلة تقيس الزوايا لا الأطوال."
+      },
+      "difficulty": 1
+    }
+  ]
+}

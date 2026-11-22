@@ -1,0 +1,203 @@
+{
+  "id": "ex-1am-adad-ashri-mustaqim-mudarraj-l4-010",
+  "lessonCode": "adad-ashri-mustaqim-mudarraj",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — فاصلة بين علامتين",
+    "estimatedMinutes": 5,
+    "tags": [
+      "حصر",
+      "عدد عشري"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نحصر فواصل نقاط بين تدريجتين متتاليتين في نصف مستقيم مدرّج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "النقطة $U$ فاصلتها $7{,}91$ ، وهي تقع بين تدريجتين صغيرتين متتاليتين على نصف مستقيم تدريجته الصغيرة $0{,}1$ . أيّ حصر صحيح لفاصلتها بين تدريجتين متتاليتين ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الحصر الصحيح",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$7{,}8 < U < 7{,}9$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-BOUNDSSHIFT"
+        },
+        {
+          "id": "B",
+          "content": "$7{,}9 < U < 8$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$8 < U < 8{,}1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-BOUNDSSHIFT"
+        },
+        {
+          "id": "D",
+          "content": "$8 < U < 7{,}9$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-BOUNDSREV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التدريجتان متتاليتان : الفرق بينهما قيمة التدريجة الصغيرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الأصغر في الحصر يكون على يسار النقطة والأكبر على يمينها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الفاصلة بكلّ تدريجة قريبة منها."
+        }
+      ],
+      "feedback": {
+        "correct": "الحصر الصحيح : $7{,}9$ < $7{,}91$ < $8$.",
+        "incorrect": "نحصر الفاصلة بين تدريجتين متتاليتين : الأصغر على يسار النقطة والأكبر على يمينها، والفرق بينهما قيمة التدريجة."
+      },
+      "solution": {
+        "lines": [
+          "نبحث عن التدريجتين المتتاليتين اللتين تحيطان بالعدد $7{,}91$",
+          "$7{,}9$ < $7{,}91$ < $8$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "النقطة $B$ فاصلتها $7{,}91$ ، وهي تقع بين تدريجتين صغيرتين متتاليتين قيمة التدريجة الصغيرة $0{,}1$ . ما فاصلة التدريجة التي على يسار النقطة مباشرة ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "7,9",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-ABSC-BOUNDSSHIFT"
+        },
+        {
+          "value": "7,8",
+          "id": "MISC-ABSC-BOUNDSSHIFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب التدريجات القريبة من الفاصلة بخطوة قيمتها قيمة التدريجة الصغيرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التدريجة اليسرى أصغر من الفاصلة والتي تليها أكبر منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خذ آخر مضاعف للخطوة لا يتجاوز الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "التدريجة التي على يسار النقطة مباشرة فاصلتها $7{,}9$.",
+        "incorrect": "التدريجة اليسرى هي أكبر تدريجة لا تتجاوز فاصلة النقطة ؛ والتي تليها (اليمنى) أكبر من الفاصلة."
+      },
+      "solution": {
+        "lines": [
+          "التدريجات هي مضاعفات $0{,}1$ : ... $7{,}8$ ، $7{,}9$ ، $8$ ...",
+          "العدد $7{,}91$ محصور بين $7{,}9$ و$8$ ، فالتدريجة اليسرى هي $7{,}9$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "النقطة $A$ فاصلتها $7{,}91$ . هي تقع بين العلامتين $7{,}9$ و$8$ .",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثمّ قارن تبريرك بالحلّ النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-BOUNDSSHIFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الفاصلة بكلّ علامة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الجزء الصحيح للعدد يخبرك بين أيّ علامتين من العلامات الصحيحة تقع النقطة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الجهتين : أكبر من الأولى وأصغر من الثانية."
+        }
+      ],
+      "feedback": {
+        "correct": "إجابة صحيحة.",
+        "incorrect": "نتحقّق بحساب الفاصلة أو بمقارنتها بالعلامات ولا نكتفي بالنظر إلى شكل الكتابة."
+      },
+      "solution": {
+        "lines": [
+          "$7{,}9$ < $7{,}91$ < $8$"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

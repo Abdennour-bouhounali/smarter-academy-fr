@@ -1,0 +1,232 @@
+{
+  "id": "ex-3am-tabsit-hadhf-aqwas-l2-003",
+  "lessonCode": "tabsit-hadhf-aqwas",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — عبارتان متشابهتان في الكتابة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "مجموع",
+      "جداء",
+      "تبرير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لتكن العبارتان:",
+    "formulas": [
+      "E = 4(x - 2)",
+      "F = 4x - 2"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "عيّن نوع كل من العبارتين.",
+      "statement": "هل العبارة $E = 4(x - 2)$ مجموع أم جداء؟",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مجموع (آخر عملية فيها جمع أو طرح)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-SUM-PRODUCT-CONFUSED"
+        },
+        {
+          "id": "B",
+          "content": "جداء (آخر عملية فيها ضرب)",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تخيّل أنك تحسب العبارة من أجل عدد: ما آخر عملية تُنجزها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كانت آخر عملية جمعًا أو طرحًا فالعبارة مجموع، وإذا كانت ضربًا فهي جداء."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأقواس تُحسب أولًا، ثم الضرب قبل الجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر عملية في $E$ هي الضرب: $E$ جداء.",
+        "incorrect": "ابحث عن آخر عملية تُنجز عند الحساب، بعد الأقواس وبعد الضرب."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية تُنجز في $E = 4(x - 2)$ هي ضرب، إذن $E$ جداء."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "هل العبارة $F = 4x - 2$ مجموع أم جداء؟",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مجموع (آخر عملية فيها جمع أو طرح)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "جداء (آخر عملية فيها ضرب)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TABSIT-SUM-PRODUCT-CONFUSED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تخيّل أنك تحسب العبارة من أجل عدد: ما آخر عملية تُنجزها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كانت آخر عملية جمعًا أو طرحًا فالعبارة مجموع، وإذا كانت ضربًا فهي جداء."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأقواس تُحسب أولًا، ثم الضرب قبل الجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر عملية في $F$ هي الجمع أو الطرح: $F$ مجموع.",
+        "incorrect": "ابحث عن آخر عملية تُنجز عند الحساب، بعد الأقواس وبعد الضرب."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية تُنجز في $F = 4x - 2$ هي جمع أو طرح، إذن $F$ مجموع."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب قيمة $E$ من أجل $x = 0$ .",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "-8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد المعطى، ويُستحسن أن تعوّض في الشكل المبسّط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويات العمليات: القوى، ثم الضرب، ثم الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالتعويض في العبارة قبل تبسيطها: القيمة لا تتغيّر."
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل $x = 0$ نجد $E = -8$.",
+        "incorrect": "عوّض $x$ بالعدد المعطى في الشكل المبسّط واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$E = 4 \\times (0 - 2) = 4 \\times (-2) = -8$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "هل $E = F$ ؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "3am_tabsit-hadhf-aqwas_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تخيّل أنك تحسب العبارة من أجل عدد: ما آخر عملية تُنجزها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كانت آخر عملية جمعًا أو طرحًا فالعبارة مجموع، وإذا كانت ضربًا فهي جداء."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الأقواس تُحسب أولًا، ثم الضرب قبل الجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$E$ جداء آخر عملية فيه ضرب ($4$ في القوسين)، و $F$ مجموع آخر عملية فيه طرح.",
+          "من أجل $x = 0$ : $E = -8$ و $F = 4 \\times 0 - 2 = -2$ .",
+          "القيمتان مختلفتان، إذن $E \\neq F$ ."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

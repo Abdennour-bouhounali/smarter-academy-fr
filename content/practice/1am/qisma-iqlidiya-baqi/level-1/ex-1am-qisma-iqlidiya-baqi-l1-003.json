@@ -1,0 +1,155 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l1-003",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — أسماء حدود القسمة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "المقسوم",
+      "المقسوم عليه",
+      "الحاصل",
+      "الباقي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نكتب القسمة الإقليدية للعدد 87 على 6 بالمساواة: $87 = 6 \\times 14 + 3$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما هو الحاصل في هذه القسمة؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "14",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "3",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "id": "C",
+          "content": "87",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-ADWAR"
+        },
+        {
+          "id": "D",
+          "content": "6",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-ADWAR"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في $a = b \\times q + r$: ما الذي نضربه في المقسوم عليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحاصل هو عدد المرّات التي يحتويها المقسوم من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "87 هو المقسوم، 6 المقسوم عليه، 14 الحاصل، و 3 الباقي.",
+        "incorrect": "الحاصل يُضرب في المقسوم عليه (6) في المساواة."
+      },
+      "solution": {
+        "lines": [
+          "في $87 = 6 \\times 14 + 3$: المقسوم 87 والمقسوم عليه 6.",
+          "الحاصل 14 والباقي 3 ، و $3 < 6$."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هو الباقي في هذه القسمة؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "87",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-ADWAR"
+        },
+        {
+          "id": "B",
+          "content": "14",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "id": "C",
+          "content": "3",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "6",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-ADWAR"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو العدد المضاف بعد الجداء."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي أصغر دائمًا من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "الباقي 3 ، وهو أصغر من المقسوم عليه 6.",
+        "incorrect": "الباقي هو ما يبقى بعد أخذ 14 مرّة العدد 6 من 87."
+      },
+      "solution": {
+        "lines": [
+          "$6 \\times 14 = 84$ و $87 - 84 = 3$",
+          "الباقي 3 و $3 < 6$."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

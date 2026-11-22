@@ -1,0 +1,184 @@
+{
+  "id": "ex-2am-jam-tarh-kusur-l5-007",
+  "lessonCode": "jam-tarh-kusur",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — وضعية إدماجية : مكتبة المتوسّطة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جمع كسرين",
+      "الجزء الباقي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "06"
+    }
+  },
+  "statement": {
+    "content": "في مكتبة المتوسّطة $\\dfrac{7}{20}$ من الكتب روايات ، و $\\dfrac{2}{5}$ منها كتب علميّة ، والباقي كتب تاريخ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما الكسر الذي يمثّل الروايات والكتب العلميّة معًا ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "3/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "9/25",
+          "id": "MISC-JAMKASR-ACROSS"
+        },
+        {
+          "value": "9/20",
+          "id": "MISC-JAMKASR-NOSCALE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الجزءان اللذان تبحث عن مجموعهما أو عن الباقي بعدهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور بمقام واحد ثمّ اجمع، والباقي نحصل عليه بالطرح من الكلّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختزل الناتج إن أمكن وتحقّق أنّه يبقى أصغر من الكلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{4}$ .",
+        "incorrect": "اكتب الكسرين بمقام واحد قبل الجمع أو الطرح، ثمّ اختزل الناتج وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{2}{5} = \\dfrac{2 \\times 4}{5 \\times 4} = \\dfrac{8}{20}$ .",
+          "$\\dfrac{7}{20} + \\dfrac{2}{5} = \\dfrac{7 + 8}{20} = \\dfrac{15}{20}$ .",
+          "نختزل بالقسمة على $5$ : $\\dfrac{15}{20} = \\dfrac{3}{4}$ ."
+        ],
+        "result": "\\dfrac{3}{4}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما الكسر الذي يمثّل كتب التاريخ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "1/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "3/4",
+          "id": "MISC-JAMKASR-PART"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الكلّ يساوي كسرًا بسطه ومقامه عدد واحد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العدد 1 على شكل كسر مقامه هو مقام الأجزاء المأخوذة ثمّ اطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الجزء الباقي هو الكلّ ناقص ما أُخذ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{4}$ : هذا هو الجزء الباقي .",
+        "incorrect": "اكتب الكلّ على شكل كسر ثمّ اطرح منه ما أُخذ، ولا تُعطِ ما أُخذ بدل الباقي."
+      },
+      "solution": {
+        "lines": [
+          "$1 = \\dfrac{20}{20}$ .",
+          "$1 - \\dfrac{7}{20} - \\dfrac{2}{5} = \\dfrac{20}{20} - \\dfrac{7}{20} - \\dfrac{8}{20} = \\dfrac{5}{20}$ .",
+          "نختزل : $\\dfrac{1}{4}$ ."
+        ],
+        "result": "\\dfrac{1}{4}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "إذا كان في المكتبة $480$ كتابًا ، فكم كتاب تاريخ فيها ؟",
+      "learningPoints": [
+        {
+          "code": "2am_jam-tarh-kusur_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "120",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "جزء من الكلّ يُحسب بقسمة الكلّ على المقام ثمّ الضرب في البسط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب قيمة الجزء الواحد أوّلًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$480 \\times \\dfrac{1}{4} = 120$ .",
+        "incorrect": "اقسم الكلّ على المقام ثمّ اضرب الناتج في البسط."
+      },
+      "solution": {
+        "lines": [
+          "$480 \\div 4 = 120$",
+          "$120 \\times 1 = 120$"
+        ],
+        "result": "120"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

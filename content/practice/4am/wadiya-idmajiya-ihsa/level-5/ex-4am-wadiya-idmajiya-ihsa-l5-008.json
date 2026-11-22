@@ -1,0 +1,344 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ihsa-l5-008",
+  "lessonCode": "wadiya-idmajiya-ihsa",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2024 — جناح دار نشر في الصالون الدولي للكتاب",
+    "estimatedMinutes": 20,
+    "tags": [
+      "وضعية إدماجية",
+      "مخطط دائري",
+      "زاوية القطاع",
+      "المتوسط",
+      "الوسيط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-ihsa_P1",
+      "modelledOn": "BEM 2024 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "في الصالون الدولي للكتاب بالجزائر العاصمة، الذي يغرس حبّ القراءة والعلم في الناشئة، باع جناح دار نشر 360 كتابا في ستة أيام. يمثّل المخطط الدائري الآتي توزيع هذه الكتب حسب نوعها (لم تُكتب زاوية قطاع القواميس)، ويعطي الجدول عدد الكتب المبيعة في كل يوم:",
+    "table": {
+      "head": [
+        "اليوم",
+        "عدد الكتب المبيعة"
+      ],
+      "rows": [
+        [
+          "اليوم الأول",
+          "48"
+        ],
+        [
+          "اليوم الثاني",
+          "52"
+        ],
+        [
+          "اليوم الثالث",
+          "60"
+        ],
+        [
+          "اليوم الرابع",
+          "70"
+        ],
+        [
+          "اليوم الخامس",
+          "64"
+        ],
+        [
+          "اليوم السادس",
+          "66"
+        ]
+      ]
+    },
+    "figure": {
+      "kind": "chart",
+      "type": "pie",
+      "show": "angle",
+      "ariaLabel": "مخطط دائري للكتب المبيعة حسب نوعها: روايات، كتب علمية، قصص الأطفال، وقطاع القواميس بلا زاوية",
+      "parts": [
+        {
+          "label": "روايات",
+          "value": 126
+        },
+        {
+          "label": "كتب علمية",
+          "value": 90
+        },
+        {
+          "label": "قصص الأطفال",
+          "value": 108
+        },
+        {
+          "label": "قواميس",
+          "value": 36,
+          "missing": true
+        }
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب زاوية قطاع القواميس.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: قيس الزاوية بالدرجات دون الرمز °",
+      "expectedAnswer": "36",
+      "misconceptionSignatures": [
+        {
+          "value": "324",
+          "id": "MISC-IHSA-ZAWIYA-QITA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مجموع زوايا قطاعات مخطط دائري 360° ."
+        }
+      ],
+      "feedback": {
+        "correct": "$360 - (126 + 90 + 108) = 36$ .",
+        "incorrect": "اطرح مجموع الزوايا المكتوبة من 360° ."
+      },
+      "solution": {
+        "lines": [
+          "$126 + 90 + 108 = 324$",
+          "$360 - 324 = 36$"
+        ],
+        "result": "36^\\circ"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "باستعمال المخطط الدائري:",
+      "statement": "احسب عدد الروايات المبيعة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "126",
+      "misconceptionSignatures": [
+        {
+          "value": "35",
+          "id": "MISC-IHSA-ZAWIYA-QITA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الكتب من نوع = $\\dfrac{\\text{الزاوية}}{360} \\times 360$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{126}{360} \\times 360 = 126$ .",
+        "incorrect": "اقسم زاوية القطاع على 360 ثم اضرب في العدد الكلي للكتب."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{126}{360} \\times 360 = 126$",
+          "(العدد الكلي 360 ، فكل درجة توافق كتابا واحدا.)"
+        ],
+        "result": "126"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب النسبة المئوية لقصص الأطفال من الكتب المبيعة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: النسبة المئوية دون الرمز %",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "108",
+          "id": "MISC-IHSA-TAWATUR-BILA-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النسبة المئوية = $\\dfrac{\\text{الزاوية}}{360} \\times 100$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{108}{360} \\times 100 = 30$ .",
+        "incorrect": "لا تكتب الزاوية: اقسمها على 360 ثم اضرب في 100 ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{108}{360} \\times 100 = 30$"
+        ],
+        "result": "30\\%"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "باستعمال الجدول، احسب المتوسط وعيّن الوسيط لعدد الكتب المبيعة في اليوم.",
+      "statement": "المتوسط.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "60",
+      "misconceptionSignatures": [
+        {
+          "value": "62",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع أعداد الأيام الستة ثم اقسم على 6 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{360}{6} = 60$ .",
+        "incorrect": "المتوسط = مجموع مبيعات الأيام الستة ÷ 6 ."
+      },
+      "solution": {
+        "lines": [
+          "$48 + 52 + 60 + 70 + 64 + 66 = 360$",
+          "$\\dfrac{360}{6} = 60$"
+        ],
+        "result": "60"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "الوسيط.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة إن لزم)",
+      "expectedAnswer": "62",
+      "misconceptionSignatures": [
+        {
+          "value": "65",
+          "id": "MISC-IHSA-WASIT-BILA-TARTIB"
+        },
+        {
+          "value": "60",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رتّب الأعداد الستة تصاعديا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عددها زوجي: نصف مجموع القيمتين الثالثة والرابعة."
+        }
+      ],
+      "feedback": {
+        "correct": "الترتيب: 48 ، 52 ، 60 ، 64 ، 66 ، 70 ؛ $\\dfrac{60 + 64}{2} = 62$ .",
+        "incorrect": "رتّب المبيعات اليومية قبل أخذ القيمتين الوسطيين."
+      },
+      "solution": {
+        "lines": [
+          "الترتيب التصاعدي: 48 ، 52 ، 60 ، 64 ، 66 ، 70",
+          "$\\dfrac{60 + 64}{2} = 62$"
+        ],
+        "result": "62"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "statement": "☜ ثمن الرواية الواحدة 900DA . أعط مداخيل الجناح من بيع الروايات.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "113400",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل عدد الروايات الذي وجدته في 02 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$126 \\times 900 = 113400$ DA .",
+        "incorrect": "المداخيل = عدد الروايات × ثمن الرواية الواحدة."
+      },
+      "solution": {
+        "lines": [
+          "$126 \\times 900 = 113\\,400$"
+        ],
+        "result": "113\\,400\\,\\mathrm{DA}"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

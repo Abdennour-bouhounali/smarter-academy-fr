@@ -1,0 +1,123 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l5-004",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — ملعب خماسي",
+    "estimatedMinutes": 2,
+    "tags": [
+      "مستطيل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_ithbat-khawas-maalam_P2",
+      "modelledOn": "ex-27"
+    }
+  },
+  "generator": {
+    "tool": "u1x-ithbat-khawas-maalam/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "ثلاث زوايا ملعب خماسي يتناوب الأطفال على اللعب فيه $A(0\\,;\\,1)$ ، $B(3\\,;\\,0)$ ، $C(5\\,;\\,6)$ في معلم متعامد ومتجانس (الوحدة 5 m). الزاوية الرابعة D حيث ABCD متوازي أضلاع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا D :",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x\\,;\\,y)$ : الأولى ثم الثانية (عدد صحيح أو كسر مثل 5/2)",
+      "expectedAnswer": {
+        "x": "2",
+        "y": "7"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{AD} = \\overrightarrow{BC}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مركبتا $\\overrightarrow{BC}$ : $2$ و $6$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضفهما إلى إحداثيتي A."
+        }
+      ],
+      "feedback": {
+        "correct": "$D(0 + 2\\,;\\,1 + 6) = (2\\,;\\,7)$ .",
+        "incorrect": "D = A مزاحة بمركبتي $\\overrightarrow{BC}$ ."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "مع $AB^2 = 10$ ، $BC^2 = 40$ ، $AC^2 = BD^2 = 50$ ، الملعب ABCD :",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مربّع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "B",
+          "content": "معيّن",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "C",
+          "content": "متوازي أضلاع ليس مستطيلا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "D",
+          "content": "مستطيل وليس مربّعا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القطران؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلعان المتتاليان؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المربّع يحتاج الاثنين."
+        }
+      ],
+      "feedback": {
+        "correct": "قطران متقايسان: مستطيل؛ $10 \\neq 40$ : ليس مربّعا.",
+        "incorrect": "القطران متقايسان، والضلعان لا."
+      }
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "id": "ex-4am-khawass-qawasim-l5-003",
+  "lessonCode": "khawass-qawasim",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2021 — رفوف مكتبة بلدية بتيارت",
+    "estimatedMinutes": 12,
+    "tags": [
+      "خاصية 1",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_khawass-qawasim_P1",
+      "modelledOn": "BEM 2021 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تلقّت مكتبة بلدية بتيارت، التي تفتح أبوابها مجّانًا لكل طالب علم، شحنتين من الكتب: 1428 كتابًا في الشحنة الأولى و 952 كتابًا في الشحنة الثانية، وتريد ترتيبها كلها على رفوف متماثلة يحمل كل منها 28 كتابًا بالضبط.\n• مصاريف نقل الرفوف وتركيبها 6000DA مهما كان عددها.\n• خصّصت البلدية لشراء الرفوف وتركيبها مبلغ 125000DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "بيّن أن 28 قاسم مشترك للعددين 1428 و 952:",
+      "statement": "اكتب العدد 1428 على الشكل $28 \\times k$ حيث $k$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k$ فقط (عدد طبيعي)",
+      "expectedAnswer": "51",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 1428 على 28: يجب أن يكون الباقي معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل هذه القسمة هو العدد $k$ المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$1428 = 28 \\times 51$ ، إذن 28 يقسم 1428.",
+        "incorrect": "ابحث عن العدد الطبيعي $k$ الذي إذا ضُرب في 28 أعطى 1428."
+      },
+      "solution": {
+        "lines": [
+          "$1428 = 28 \\times 51$"
+        ],
+        "result": "1428 = 28 \\times 51"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اكتب العدد 952 على الشكل $28 \\times k'$ حيث $k'$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k'$ فقط (عدد طبيعي)",
+      "expectedAnswer": "34",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 952 على 28: يجب أن يكون الباقي معدومًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل هذه القسمة هو العدد $k'$ المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$952 = 28 \\times 34$ ، إذن 28 يقسم 952.",
+        "incorrect": "ابحث عن العدد الطبيعي $k'$ الذي إذا ضُرب في 28 أعطى 952."
+      },
+      "solution": {
+        "lines": [
+          "$952 = 28 \\times 34$"
+        ],
+        "result": "952 = 28 \\times 34"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "استنتج، دون حساب العدد الكلي للكتب، عدد الرفوف اللازمة.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد الرفوف)",
+      "expectedAnswer": "85",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل الكتابتين $1428 = 28 \\times 51$ و $952 = 28 \\times 34$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخرج 28 عاملًا مشتركًا: $28 \\times q + 28 \\times q' = 28 \\times (q + q')$."
+        }
+      ],
+      "feedback": {
+        "correct": "$1428 + 952 = 28 \\times (51 + 34) = 28 \\times 85$.",
+        "incorrect": "القاسم المشترك لعددين يقسم مجموعهما: اكتب كلا من العددين على الشكل $28 \\times q$ ثم أخرج 28 عاملًا مشتركًا."
+      },
+      "solution": {
+        "lines": [
+          "$1428 + 952 = 28 \\times 51 + 28 \\times 34$",
+          "$1428 + 952 = 28 \\times (51 + 34)$",
+          "$1428 + 952 = 28 \\times 85$ ، إذن 28 يقسم $1428 + 952$."
+        ],
+        "result": "1428 + 952 = 28 \\times 85"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "☜ أعط أكبر ثمن ممكن للرف الواحد حتى لا تتجاوز التكلفة المبلغ الذي خصّصته البلدية.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (DA)",
+      "expectedAnswer": "1400",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الرفوف هو جواب السؤال 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان $p$ ثمن الرف فإن $85p + 6000 \\leq 125000$."
+        }
+      ],
+      "feedback": {
+        "correct": "$85p + 6000 \\leq 125000$ تعطي $p \\leq 1400$: لا يتجاوز ثمن الرف 1400DA.",
+        "incorrect": "اكتب أن ثمن الرفوف مع مصاريف النقل والتركيب لا يتجاوز المبلغ المخصّص."
+      },
+      "solution": {
+        "lines": [
+          "ليكن $p$ ثمن الرف (بالـ DA): $85p + 6000 \\leq 125000$",
+          "$85p \\leq 119000$",
+          "$p \\leq 1400$"
+        ],
+        "result": "p \\leq 1400 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

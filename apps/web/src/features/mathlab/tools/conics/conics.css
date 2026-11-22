@@ -1,0 +1,963 @@
+/* ── Le مختبر المقاطع المخروطية ────────────────────────────────────────────
+   Le plan prend tout ce qu'il peut ; le panneau se range sur le bord de
+   départ (à droite en arabe) sur grand écran, et devient un TIROIR en bas
+   sous 768 px (§47). Le plan est LTR par nature — c'est des mathématiques
+   (§48) ; le panneau suit la direction de la page.
+
+   Les conventions sont celles du grapheur, du مختبر الأشعة et du مختبر
+   التحويلات (functionGrapher.css, vectors.css, transformations.css) : mêmes
+   teintes, mêmes rayons, mêmes familles — les instruments du مختبر doivent
+   se ressembler. */
+
+.sa-ml-cn {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  background: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .sa-ml-cn { flex-direction: row; }
+}
+
+/* ── Le plan ───────────────────────────────────────────────────────────── */
+
+.sa-ml-cn__stage {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+}
+
+.sa-ml-cn__plane {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #ffffff;
+  /* Le doigt MANIPULE, il ne fait pas défiler la page (§47). */
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: crosshair;
+}
+
+.sa-ml-cn__plane:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: -2px;
+}
+
+/* mafs aux couleurs de la plateforme. mafs livre un thème SOMBRE par défaut
+   (--mafs-bg: black) : sans ces variables le repère serait noir et les
+   étiquettes blanches sur blanc. Ce sont EXACTEMENT les valeurs du grapheur
+   — un seul repère sur la plateforme, donc une seule apparence. */
+.sa-ml-cn__plane .MafsView {
+  position: absolute;
+  inset: 0;
+  font-family: 'JetBrains Mono', 'Inter', sans-serif;
+  font-size: 12px;
+  --mafs-bg: #ffffff;
+  --mafs-fg: #0f172a;
+  --mafs-origin-color: #334155;
+  --mafs-line-color: #cbd5e1;
+  --grid-line-subdivision-color: #eef2f7;
+  --mafs-axis-stroke-width: 1.5px;
+  --mafs-line-stroke-dash-style: 6, 4;
+}
+
+.sa-ml-cn__plane--nogrid .MafsView {
+  --mafs-line-color: transparent;
+  --grid-line-subdivision-color: transparent;
+}
+
+.sa-ml-cn__plane .mafs-axis text { fill: #475569; }
+
+.sa-ml-cn__axisnames text {
+  font-family: 'Inter', 'Cairo', serif;
+  font-size: 15px;
+  fill: #334155;
+}
+
+/* ── Les courbes et les éléments (§49) ─────────────────────────────────────
+   Rien ne se distingue par la SEULE couleur : le trait (plein, tireté,
+   pointillé) et la FORME des points portent l'information. Lisible en noir
+   et blanc, lisible par un élève daltonien. */
+
+/* mafs pose `.MafsView path { stroke: var(--mafs-fg) }` — un sélecteur de
+   CLASSE, donc plus fort que l'attribut `stroke` d'un `<path>`. Les quatre
+   coniques sortaient toutes en #0f172a (presque noir) et devenaient
+   indiscernables, alors que le code leur passait bien leur couleur (défaut
+   vu à la capture 02 de la QA visuelle).
+
+   La couleur est donc posée en STYLE EN LIGNE par le composant (`style={{
+   stroke }}`), ce qui l'emporte sur toute feuille de style sans avoir à
+   surenchérir ici en spécificité — et sans `!important`, qui empêcherait la
+   mise en évidence de §36 de reprendre la main. */
+
+.sa-ml-cn__curve {
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+.sa-ml-cn__curve--selected { stroke-width: 3.4; }
+
+/* §44 — l'état figé : présent, mais clairement en retrait. */
+.sa-ml-cn__curve--reference {
+  stroke-width: 2;
+  stroke-dasharray: 5 5;
+  opacity: 0.55;
+}
+
+/* §35 — le lieu : une courbe qu'on vient de CONSTRUIRE, pas de poser. */
+.sa-ml-cn__curve--locus {
+  stroke-width: 2.4;
+  stroke-dasharray: 2 5;
+  stroke-linecap: round;
+}
+
+/* §20 — les asymptotes : des guides, jamais la courbe. */
+.sa-ml-cn__asymptote {
+  stroke-width: 1.6;
+  stroke-dasharray: 8 6;
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+/* §11 — l'axe de symétrie : plus discret encore. */
+.sa-ml-cn__symaxis {
+  stroke-width: 1.2;
+  stroke-dasharray: 3 5;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* §14 — la directrice : une DROITE de plein droit, elle porte un nom. */
+.sa-ml-cn__directrix {
+  stroke-width: 2;
+  stroke-dasharray: 10 5;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.sa-ml-cn__line {
+  stroke-width: 2.4;
+  pointer-events: none;
+}
+
+.sa-ml-cn__line--selected { stroke-width: 3.2; }
+
+.sa-ml-cn__majoraxis,
+.sa-ml-cn__radius {
+  stroke-width: 2;
+  stroke-dasharray: 4 3;
+  pointer-events: none;
+}
+
+/* §28 — les rayons focaux : ce que l'élève regarde pendant qu'il déplace P. */
+.sa-ml-cn__focalray {
+  stroke-width: 1.8;
+  stroke-dasharray: 5 3;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+/* La mise en évidence de la RÉVÉLATION (§36). */
+.sa-ml-cn__hl {
+  stroke-width: 3.4;
+  filter: drop-shadow(0 0 4px rgba(37, 99, 235, 0.55));
+}
+
+.sa-ml-cn__feature { pointer-events: none; }
+
+.sa-ml-cn__featurelabel,
+.sa-ml-cn__seglabel,
+.sa-ml-cn__axislabel {
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 12px;
+  paint-order: stroke;
+  stroke: #ffffff;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+/* ── Les poignées (§6, §47) ────────────────────────────────────────────── */
+
+.sa-ml-cn__handle { cursor: grab; touch-action: none; }
+.sa-ml-cn__handle--dragging { cursor: grabbing; }
+.sa-ml-cn__handle--fixed { cursor: default; }
+
+/* La cible TACTILE : invisible, large (44 px de diamètre), et seule à
+   écouter les gestes. Le dessin ne grossit pas, la cible oui. */
+.sa-ml-cn__hit { fill: transparent; }
+
+.sa-ml-cn__halo { fill: none; stroke-width: 1.5; opacity: 0.4; }
+
+.sa-ml-cn__handle:focus-visible { outline: none; }
+
+.sa-ml-cn__handle:focus-visible .sa-ml-cn__dot {
+  stroke: #2563eb;
+  stroke-width: 3.5;
+}
+
+.sa-ml-cn__handlelabel {
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 12px;
+  paint-order: stroke;
+  stroke: #ffffff;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+/* ── Les commandes flottantes ──────────────────────────────────────────── */
+
+.sa-ml-cn__zoom,
+.sa-ml-cn__stagebar {
+  position: absolute;
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+}
+
+.sa-ml-cn__zoom {
+  inset-block-end: 12px;
+  inset-inline-end: 12px;
+  flex-direction: column;
+}
+
+.sa-ml-cn__stagebar {
+  inset-block-start: 12px;
+  inset-inline-start: 12px;
+}
+
+.sa-ml-cn__zoombtn,
+.sa-ml-cn__stagebar .sa-ml-btn {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.1);
+  /* §47 — une cible tactile confortable. */
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* ── Le panneau ────────────────────────────────────────────────────────── */
+
+.sa-ml-cn__panel {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  background: #f8fafc;
+  border-block-start: 1px solid #e2e8f0;
+  max-height: 46vh;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .sa-ml-cn__panel {
+    width: 340px;
+    max-height: none;
+    border-block-start: none;
+    border-inline-start: 1px solid #e2e8f0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .sa-ml-cn__panel { width: 384px; }
+}
+
+.sa-ml-cn__panelbody {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 12px 14px 20px;
+}
+
+.sa-ml-cn__toggle {
+  position: absolute;
+  inset-block-start: 12px;
+  inset-inline-end: 12px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  background: rgba(255, 255, 255, 0.94);
+  color: #334155;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .sa-ml-cn__toggle { inset-inline-end: 356px; }
+  .sa-ml-cn--nopanel .sa-ml-cn__toggle { inset-inline-end: 12px; }
+}
+
+@media (min-width: 1280px) {
+  .sa-ml-cn__toggle { inset-inline-end: 400px; }
+  .sa-ml-cn--nopanel .sa-ml-cn__toggle { inset-inline-end: 12px; }
+}
+
+/* ── Les onglets ───────────────────────────────────────────────────────── */
+
+.sa-ml-cn__tabs {
+  display: flex;
+  gap: 2px;
+  padding: 8px 10px 0;
+  border-block-end: 1px solid #e2e8f0;
+  background: #ffffff;
+}
+
+.sa-ml-cn__tab {
+  flex: 1 1 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 8px 6px;
+  border: none;
+  border-block-end: 2px solid transparent;
+  background: none;
+  color: #64748b;
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.sa-ml-cn__tab--active {
+  color: #1d4ed8;
+  border-block-end-color: #2563eb;
+  font-weight: 600;
+}
+
+.sa-ml-cn__tab:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: -2px;
+}
+
+/* ── Les sections ──────────────────────────────────────────────────────── */
+
+.sa-ml-cn__section {
+  padding-block: 12px;
+  border-block-end: 1px solid #eef2f7;
+}
+
+.sa-ml-cn__section:last-child { border-block-end: none; }
+
+.sa-ml-cn__h3 {
+  margin: 0 0 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.sa-ml-cn__note,
+.sa-ml-cn__hint {
+  margin: 4px 0 0;
+  font-size: 0.75rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.sa-ml-cn__mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ── Les objets de la scène (§24) ──────────────────────────────────────── */
+
+.sa-ml-cn__objects {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sa-ml-cn__object {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+
+.sa-ml-cn__object--active {
+  border-color: #bfdbfe;
+  background: #eff6ff;
+}
+
+.sa-ml-cn__objectmain {
+  flex: 1 1 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 4px 8px;
+  border: none;
+  background: none;
+  font: inherit;
+  font-size: 0.85rem;
+  color: #0f172a;
+  cursor: pointer;
+  text-align: start;
+}
+
+.sa-ml-cn__objectbtn { min-width: 36px; min-height: 36px; }
+
+.sa-ml-cn__swatch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  color: #ffffff;
+  flex: 0 0 auto;
+}
+
+.sa-ml-cn__addrow,
+.sa-ml-cn__btnrow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.sa-ml-cn__add,
+.sa-ml-cn__btnrow .sa-ml-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 40px;
+  font-size: 0.8rem;
+}
+
+/* ── Le segmenté (famille, orientation) ────────────────────────────────── */
+
+.sa-ml-cn__segmented {
+  display: flex;
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.sa-ml-cn__seg {
+  flex: 1 1 0;
+  min-height: 40px;
+  padding: 6px 4px;
+  border: none;
+  background: none;
+  font: inherit;
+  font-size: 0.78rem;
+  color: #475569;
+  cursor: pointer;
+}
+
+.sa-ml-cn__seg + .sa-ml-cn__seg { border-inline-start: 1px solid #e2e8f0; }
+
+.sa-ml-cn__seg--active {
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.sa-ml-cn__seg:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: -2px;
+}
+
+/* ── Les curseurs (§5, §23) ────────────────────────────────────────────── */
+
+.sa-ml-cn__slider { margin-block-end: 10px; }
+
+.sa-ml-cn__sliderhead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-block-end: 3px;
+}
+
+.sa-ml-cn__sliderlabel {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: #0f172a;
+}
+
+.sa-ml-cn__sliderlabel .sa-ml-cn__mono { font-weight: 700; }
+
+.sa-ml-cn__number,
+.sa-ml-cn__answerinput {
+  width: 78px;
+  min-height: 36px;
+  padding: 4px 6px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  text-align: center;
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.sa-ml-cn__range {
+  width: 100%;
+  /* §47 — une piste assez haute pour être attrapée au doigt. */
+  height: 28px;
+  accent-color: #2563eb;
+  cursor: pointer;
+  /* Le curseur est un objet MATHÉMATIQUE : −20 est à gauche et +20 à droite,
+     comme sur l'axe, même quand la page est en arabe. Sans cela, pousser le
+     curseur « vers la droite » ferait DÉCROÎTRE h, à rebours du plan qui est
+     juste à côté. */
+  direction: ltr;
+}
+
+.sa-ml-cn__range:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.sa-ml-cn__field { margin-block-end: 10px; }
+
+.sa-ml-cn__fieldlabel {
+  display: block;
+  margin-block-end: 4px;
+  font-size: 0.78rem;
+  color: #475569;
+}
+
+/* §2, §7 — l'équation EN DIRECT, au-dessus des curseurs.
+
+   Elle colle en haut de la section pour rester lisible pendant qu'on fait
+   défiler les curseurs : l'élève doit voir l'équation et la géométrie
+   changer ENSEMBLE, et non l'une après l'autre. */
+.sa-ml-cn__liveeq {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin: 0 0 10px;
+  padding: 9px 10px;
+  border-radius: 9px;
+  border: 1px solid #bfdbfe;
+  background: #eff6ff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1d4ed8;
+  text-align: center;
+  /* Une équation longue ne doit ni déborder ni pousser le panneau (§47). */
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/* ── Les lectures ──────────────────────────────────────────────────────── */
+
+.sa-ml-cn__readout {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 6px 0 0;
+  font-size: 0.85rem;
+  color: #334155;
+}
+
+.sa-ml-cn__readout strong {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  color: #0f172a;
+}
+
+.sa-ml-cn__facts {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 12px;
+  margin: 0;
+}
+
+.sa-ml-cn__fact { display: contents; }
+
+.sa-ml-cn__fact dt {
+  font-size: 0.79rem;
+  color: #64748b;
+}
+
+.sa-ml-cn__fact dd {
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  color: #0f172a;
+  text-align: start;
+}
+
+.sa-ml-cn__fact--strong { font-weight: 700; color: #1d4ed8; }
+
+/* ── L'équation (§7, §30) ──────────────────────────────────────────────── */
+
+.sa-ml-cn__eqform {
+  display: flex;
+  gap: 6px;
+  align-items: stretch;
+}
+
+.sa-ml-cn__eqinput {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 44px;
+  padding: 6px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  background: #ffffff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.88rem;
+  color: #0f172a;
+}
+
+.sa-ml-cn__eqinput:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 1px;
+}
+
+.sa-ml-cn__eqinput--error {
+  border-color: #dc2626;
+  background: #fef2f2;
+}
+
+.sa-ml-cn__general {
+  margin: 8px 0 0;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #f1f5f9;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  color: #334155;
+}
+
+.sa-ml-cn__small { font-size: 0.76rem; min-height: 36px; margin-block-start: 6px; }
+
+.sa-ml-cn__error {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin: 8px 0 0;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 0.79rem;
+  line-height: 1.6;
+}
+
+/* ── Le point interrogé (§10, §32) ─────────────────────────────────────── */
+
+.sa-ml-cn__position {
+  margin: 6px 0 0;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.sa-ml-cn__position--inside { background: #eff6ff; color: #1d4ed8; }
+.sa-ml-cn__position--on { background: #ecfdf5; color: #047857; }
+.sa-ml-cn__position--outside { background: #fef3c7; color: #b45309; }
+
+.sa-ml-cn__focal { margin-block-start: 8px; }
+
+.sa-ml-cn__verdict {
+  margin: 6px 0 0;
+  font-size: 0.78rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.sa-ml-cn__verdict--ok { color: #047857; font-weight: 600; }
+
+/* ── Le tableau comparatif (§21) ───────────────────────────────────────── */
+
+.sa-ml-cn__tablewrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sa-ml-cn__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.74rem;
+}
+
+.sa-ml-cn__table th,
+.sa-ml-cn__table td {
+  padding: 5px 6px;
+  border: 1px solid #e2e8f0;
+  text-align: start;
+  color: #475569;
+  white-space: nowrap;
+}
+
+.sa-ml-cn__table thead th {
+  background: #f1f5f9;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.sa-ml-cn__th--active { background: #dbeafe !important; color: #1d4ed8 !important; }
+
+.sa-ml-cn__td--active {
+  background: #eff6ff;
+  color: #0f172a;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+}
+
+/* ── §44 — avant / après ───────────────────────────────────────────────── */
+
+.sa-ml-cn__beforeafter {
+  display: grid;
+  gap: 8px;
+}
+
+.sa-ml-cn__beforeafter p {
+  margin: 2px 0 0;
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: #f1f5f9;
+  font-size: 0.8rem;
+  color: #0f172a;
+}
+
+/* ── L'entraînement (§36 – §42) ────────────────────────────────────────── */
+
+.sa-ml-cn__practicestart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 24px 12px;
+  text-align: center;
+  color: #475569;
+}
+
+.sa-ml-cn__practicehead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-block-end: 10px;
+}
+
+.sa-ml-cn__score {
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+.sa-ml-cn__question {
+  margin: 0 0 6px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #0f172a;
+  line-height: 1.7;
+}
+
+.sa-ml-cn__equationline {
+  margin: 0 0 12px;
+  padding: 8px 10px;
+  border-radius: 9px;
+  background: #f1f5f9;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.92rem;
+  color: #0f172a;
+  text-align: center;
+}
+
+.sa-ml-cn__answerform {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.sa-ml-cn__pointinputs {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  color: #334155;
+}
+
+.sa-ml-cn__choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sa-ml-cn__choice {
+  flex: 0 1 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 64px;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #ffffff;
+  font: inherit;
+  font-size: 0.85rem;
+  color: #0f172a;
+  cursor: pointer;
+}
+
+.sa-ml-cn__choice:hover { border-color: #2563eb; background: #eff6ff; }
+
+.sa-ml-cn__choice:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* §37 — les vignettes : de vrais graphes, pas des équations réécrites. */
+.sa-ml-cn__mini { width: 84px; height: 84px; }
+.sa-ml-cn__miniaxis { stroke: #cbd5e1; stroke-width: 1; }
+.sa-ml-cn__minicurve { stroke: #2563eb; stroke-width: 2; }
+
+.sa-ml-cn__hintbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin: 10px 0 0;
+  padding: 8px 10px;
+  border-radius: 9px;
+  background: #fffbeb;
+  color: #92400e;
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+
+.sa-ml-cn__verdictbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 0.85rem;
+}
+
+.sa-ml-cn__verdictbox--ok { background: #ecfdf5; color: #047857; }
+
+.sa-ml-cn__verdictbox p { margin: 0 0 3px; }
+
+.sa-ml-cn__expected {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+}
+
+.sa-ml-cn__practicefoot {
+  display: flex;
+  gap: 8px;
+  margin-block-start: 14px;
+}
+
+.sa-ml-cn__practicefoot .sa-ml-btn { min-height: 44px; }
+
+/* ── Les bascules de couches ───────────────────────────────────────────── */
+
+.sa-ml-cn__toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  margin-block-end: 8px;
+}
+
+.sa-ml-cn__toggle-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 34px;
+  font-size: 0.79rem;
+  color: #334155;
+  cursor: pointer;
+}
+
+.sa-ml-cn__toggle-label input {
+  width: 17px;
+  height: 17px;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+/* ── Accessibilité ─────────────────────────────────────────────────────────
+   §49 — le texte réservé aux lecteurs d'écran. Chaque instrument définit le
+   SIEN : il n'existe aucune classe `.sr-only` globale sur la plateforme, et
+   en supposer une afficherait le texte en clair au milieu du panneau. */
+
+.sa-ml-cn__sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── §49 — mouvement réduit ────────────────────────────────────────────────
+   L'instrument n'anime rien de lui-même (les courbes suivent le doigt en
+   temps réel) ; il ne reste que les transitions d'interface, qu'on coupe. */
+
+@media (prefers-reduced-motion: reduce) {
+  .sa-ml-cn *,
+  .sa-ml-cn *::before,
+  .sa-ml-cn *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .sa-ml-cn__hl { filter: none; stroke-width: 4; }
+}
+
+/* ── §47 — le mobile : le graphe d'abord ───────────────────────────────── */
+
+@media (max-width: 767px) {
+  .sa-ml-cn__panel { max-height: 50vh; }
+  .sa-ml-cn__stage { min-height: 46vh; }
+  /* Aucun débordement horizontal, jamais (§47). */
+  .sa-ml-cn__panelbody { overflow-x: hidden; }
+  .sa-ml-cn__table { font-size: 0.7rem; }
+}
+
+.sa-ml-cn--compact .sa-ml-cn__question { font-size: 0.86rem; }
+
+/* ── §30 — le passage développée → canonique (StepPlayer + MathBoard) ── */
+
+.sa-ml-cn__derivation {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sa-ml-cn__solve {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sa-ml-cn__solve .sa-ml-kit-steps__math {
+  overflow-x: auto;
+  text-align: left;
+}
+
+/* « D'un seul regard » (MATH_LAB §3.5) : tableau comparatif et avant/après se masquent. */
+.sa-ml-cn__labpanel { margin-block: 10px; }

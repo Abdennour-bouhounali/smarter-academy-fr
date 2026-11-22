@@ -1,0 +1,149 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-aadad-nisbiya-l4-008",
+  "lessonCode": "wadiya-idmajiya-aadad-nisbiya",
+  "level": 4,
+  "metadata": {
+    "title": "منتصف قطعة نقطة ونظيرتها",
+    "estimatedMinutes": 6,
+    "tags": [
+      "إحداثيات",
+      "نظير",
+      "منتصف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الأول",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد مبدؤه $O$ ، النقطة $M$ إحداثيتاها $(−8\\,;\\,5)$ والنقطة $N$ نظيرتها بالنسبة إلى $O$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أوجد إحداثيتي $N$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "8",
+        "y": "-5"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-WIDMAJ-ONECOORD",
+          "value": {
+            "x": "8",
+            "y": "5"
+          }
+        },
+        {
+          "id": "MISC-WIDMAJ-ONECOORD",
+          "value": {
+            "x": "-8",
+            "y": "-5"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الإحداثيتين المعلومتين: الفاصلة أولًا ثم الترتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر بعملية على كل إحداثية على حدة، ثم اجمع النتيجتين في ثنائية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من النتيجة بالنظر إلى موضع النقطة بالنسبة إلى محوري المعلم."
+        }
+      ],
+      "feedback": {
+        "correct": "الإحداثيتان هما $(8 ; −5)$ .",
+        "incorrect": "راجع قراءة الإحداثيات وأثر الضرب في عدد سالب على كل إحداثية."
+      },
+      "solution": {
+        "lines": [
+          "$x = 8$ ، $y = −5$"
+        ],
+        "result": "(8 ; −5)"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "أوجد إحداثيتي منتصف $[MN]$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "0",
+        "y": "0"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-WIDMAJ-MEANDIFF",
+          "value": {
+            "x": "-8",
+            "y": "5"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الإحداثيتين المعلومتين: الفاصلة أولًا ثم الترتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر بعملية على كل إحداثية على حدة، ثم اجمع النتيجتين في ثنائية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من النتيجة بالنظر إلى موضع النقطة بالنسبة إلى محوري المعلم."
+        }
+      ],
+      "feedback": {
+        "correct": "الإحداثيتان هما $(0 ; 0)$ .",
+        "incorrect": "راجع قراءة الإحداثيات وأثر الضرب في عدد سالب على كل إحداثية."
+      },
+      "solution": {
+        "lines": [
+          "$x = \\dfrac{−8 + 8}{2} = 0$ ، $y = \\dfrac{5 + (−5)}{2} = 0$ : منتصف $[MN]$ هو $O$ ."
+        ],
+        "result": "(0 ; 0)"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "id": "ex-4am-takbir-tasghir-l4-009",
+  "lessonCode": "takbir-tasghir",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — مقطع في منتصف الارتفاع",
+    "estimatedMinutes": 2,
+    "tags": [
+      "مقطع هرم",
+      "المساحة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takbir-tasghir_P1",
+      "modelledOn": "act-5"
+    }
+  },
+  "statement": {
+    "content": "هرم يقطعه مستو يوازي قاعدته ويمرّ بمنتصف ارتفاعه."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "مساحة المقطع تساوي مساحة القاعدة مضروبة في:",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{1}{2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-MISAHA-K"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{1}{8}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAKBIR-BUUD"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{1}{4}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المقطع تصغير للقاعدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "النسبة $k = \\dfrac{1}{2}$ ، والمساحة تُضرب في $k^2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب $\\left(\\dfrac{1}{2}\\right)^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "المقطع تصغير للقاعدة بالنسبة $\\dfrac{1}{2}$ : مساحته $\\left(\\dfrac{1}{2}\\right)^2 = \\dfrac{1}{4}$ مساحة القاعدة.",
+        "incorrect": "المساحة تُضرب في $k^2$ ."
+      }
+    }
+  ]
+}

@@ -1,7 +1,9 @@
-import React, { useContext, useMemo } from 'react';
+import { useContext, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Play } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { Play } from 'lucide-react';
+import { ArrowForward } from '../common/DirectionalIcons';
 import { courseLevels, getAllGrades } from '@smarter-academy/core';
 import { AuthContext } from '../../context/AuthContext';
 import { getResumeLesson } from '../../lessons/common/utils/progress/getResumeLesson';
@@ -15,6 +17,7 @@ import { getDisplayName } from '../../utils/userDisplay';
  * untouched for them.
  */
 export default function StudentHomeBanner() {
+  const { t } = useTranslation('marketing');
   const { user } = useContext(AuthContext);
 
   const continueCourse = useMemo(() => {
@@ -40,22 +43,24 @@ export default function StudentHomeBanner() {
         >
           <div>
             <p className="font-inter text-sm text-slate-500">
-              Bonjour {getDisplayName(user)} — {grade ? `${level?.title} ${grade.name}` : 'choisissez votre classe'}
+              {t('studentBanner.greeting', { name: getDisplayName(user) })} — {grade ? `${level?.title} ${grade.name}` : t('studentBanner.chooseGrade')}
             </p>
             <h2 className="font-space font-bold text-lg sm:text-xl text-slate-900 mt-0.5">
               {continueCourse
-                ? `Reprendre : ${continueCourse.course.title}`
-                : `Découvrez vos cours de ${grade ? grade.name : 'mathématiques'}`}
+                ? t('studentBanner.resume', { title: continueCourse.course.title })
+                : grade
+                  ? t('studentBanner.discoverCourses', { grade: grade.name })
+                  : t('studentBanner.discoverCoursesGeneric')}
             </h2>
           </div>
 
           <Link
             to={continueCourse ? continueCourse.resumePath : gradeCatalogueLink}
-            className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-space font-bold text-sm text-white bg-blue-600 hover:bg-blue-700 transition-colors shadow-sm whitespace-nowrap"
+            className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-space font-bold text-sm text-white bg-nav-accent hover:bg-[#3350c4] transition-colors shadow-sm whitespace-nowrap"
           >
             {continueCourse ? <Play size={16} /> : null}
-            {continueCourse ? 'Continuer' : grade ? 'Voir mes cours' : 'Choisir ma classe'}
-            <ArrowRight size={16} />
+            {continueCourse ? t('studentBanner.continue') : grade ? t('studentBanner.seeMyCourses') : t('studentBanner.chooseMyGrade')}
+            <ArrowForward size={16} />
           </Link>
         </motion.div>
       </div>

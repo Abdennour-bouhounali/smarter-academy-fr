@@ -1,0 +1,125 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l3-001",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 8 — مبدأ ونهاية مجهولان",
+    "estimatedMinutes": 4,
+    "tags": [
+      "نقطة مجهولة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-8",
+      "page": 146,
+      "section": "مركبتا شعاع علمت إحداثيات مبدئه ونهايته",
+      "number": 8
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 146، تمرين 8): المستوي مزوّد بمعلم متعامد ومتجانس مبدؤه O. 1) $B(-10\\,;\\,10)$ و $\\overrightarrow{AB}\\begin{pmatrix} 3 \\\\ 2 \\end{pmatrix}$ . 2) $C(-4\\,;\\,1{,}5)$ و $\\overrightarrow{CD}\\begin{pmatrix} 2 \\\\ -5 \\end{pmatrix}$ . (صحّحت المنصّة خطأً مطبعيًا: في الكتاب «CD(2;-5)» والمقصود الشعاع $\\overrightarrow{CD}$ .)"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "1) إحداثيتا A:",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "point",
+      "answerFormat": "الإحداثيتان (x ; y) — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "-13",
+        "y": "8"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-7",
+            "y": "12"
+          },
+          "id": "MISC-MAALAM-MAJHUL-AMALIYA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النهاية B معلومة والمبدأ A مجهول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$x_B - x_A$ يساوي المركبة الأولى: اكتب المعادلة وحلّها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المبدأ = النهاية ناقص المركبتين، في كل إحداثية."
+        }
+      ],
+      "feedback": {
+        "correct": "$-10 - x_A = 3$ ومنه $x_A = -13$ ؛ $10 - y_A = 2$ ومنه $y_A = 8$ .",
+        "incorrect": "B هي النهاية: A = B ناقص المركبتين."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "2) إحداثيتا D:",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "point",
+      "answerFormat": "الإحداثيتان (x ; y) — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "-2",
+        "y": "-3.5"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-6",
+            "y": "6.5"
+          },
+          "id": "MISC-MAALAM-MAJHUL-AMALIYA"
+        },
+        {
+          "value": {
+            "x": "2",
+            "y": "-5"
+          },
+          "id": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبدأ C معلوم والنهاية D مجهولة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$x_D - x_C$ يساوي المركبة الأولى، و $y_D - y_C$ يساوي الثانية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف كل مركبة إلى إحداثية C الموافقة."
+        }
+      ],
+      "feedback": {
+        "correct": "$x_D = -4 + 2 = -2$ و $y_D = 1{,}5 - 5 = -3{,}5$ .",
+        "incorrect": "C هي المبدأ: D = C زائد المركبتين."
+      }
+    }
+  ]
+}

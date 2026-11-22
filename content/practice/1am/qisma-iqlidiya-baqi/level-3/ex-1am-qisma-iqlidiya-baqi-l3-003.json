@@ -1,0 +1,221 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l3-003",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — صحيح أم خطأ؟",
+    "estimatedMinutes": 8,
+    "tags": [
+      "صحيح أو خطأ",
+      "قراءة المساواة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 2,
+      "file": "1am-s2-72",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الأول",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "أجب بـ « صحيح » أو « خطأ »، مع التبرير."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "باقي القسمة الإقليدية للعدد 251 على 8 هو 3.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 251 على 8."
+        }
+      ],
+      "feedback": {
+        "correct": "$251 = 8 \\times 31 + 3$ و $3 < 8$.",
+        "incorrect": "أنجز القسمة، ثم قارن الباقي بالعدد المقترح."
+      },
+      "solution": {
+        "lines": [
+          "$8 \\times 31 = 248$ و $251 - 248 = 3$",
+          "الجملة صحيحة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حاصل القسمة الإقليدية للعدد 251 على 8 هو 30.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $8 \\times 30$ ثم $8 \\times 31$."
+        }
+      ],
+      "feedback": {
+        "correct": "$8 \\times 31 = 248 \\le 251$: يمكن أخذ 31 مرّة.",
+        "incorrect": "هل يبقى بعد 30 مرّة ما يكفي لمرّة أخرى؟"
+      },
+      "solution": {
+        "lines": [
+          "$8 \\times 30 = 240$ ، ويبقى 11 ، و $11 > 8$.",
+          "الحاصل 31 ، والجملة خاطئة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "المساواة $251 = 8 \\times 30 + 11$ تعبّر عن القسمة الإقليدية للعدد 251 على 8.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل المساواة صحيحة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن 11 بالمقسوم عليه 8."
+        }
+      ],
+      "feedback": {
+        "correct": "المساواة صحيحة، لكن $11 > 8$.",
+        "incorrect": "المساواة يجب أن تحقّق شرط الباقي أيضًا."
+      },
+      "solution": {
+        "lines": [
+          "$8 \\times 30 + 11 = 251$ ، لكن $11 > 8$.",
+          "الجملة خاطئة."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "المساواة نفسها $251 = 8 \\times 30 + 11$ تعبّر عن القسمة الإقليدية للعدد 251 على 30.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-QIRAA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في القسمة على 30، ما المقسوم عليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن 11 بالعدد 30."
+        }
+      ],
+      "feedback": {
+        "correct": "$251 = 30 \\times 8 + 11$ و $11 < 30$.",
+        "incorrect": "في القسمة على 30 يكفي أن يكون الباقي أصغر من 30."
+      },
+      "solution": {
+        "lines": [
+          "$251 = 30 \\times 8 + 11$",
+          "$11 < 30$ ، إذن الجملة صحيحة: الحاصل 8 والباقي 11."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

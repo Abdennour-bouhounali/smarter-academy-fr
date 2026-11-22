@@ -1,0 +1,67 @@
+{
+  "id": "ex-4am-khawas-dawaran-l1-008",
+  "lessonCode": "khawas-dawaran",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — ساعة البريد المركزي",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الأطوال"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_khawas-dawaran_P1",
+      "modelledOn": "know-3"
+    }
+  },
+  "generator": {
+    "tool": "u13-khawas-dawaran/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "عقرب الدقائق في ساعة البريد المركزي بالجزائر طوله $1{,}2\\,\\mathrm{m}$ . في ربع ساعة يدور حول مركز الساعة بزاوية $90^\\circ$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما طول العقرب بعد ربع ساعة، بالمتر؟",
+      "learningPoints": [
+        {
+          "code": "4am_khawas-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة)",
+      "expectedAnswer": "1.2",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-DAWARAN-KHAWAS",
+          "value": "91.2"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العقرب في الموضع الجديد صورته بدوران."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ماذا يحفظ الدوران؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الطول لا يتعلق بالزاوية."
+        }
+      ],
+      "feedback": {
+        "correct": "الدوران يحافظ على الأطوال: $1{,}2\\,\\mathrm{m}$ .",
+        "incorrect": "الطول لا يتغيّر بالدوران."
+      }
+    }
+  ]
+}

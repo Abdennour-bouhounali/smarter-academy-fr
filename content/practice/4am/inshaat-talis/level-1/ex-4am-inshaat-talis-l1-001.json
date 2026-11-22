@@ -1,0 +1,209 @@
+{
+  "id": "ex-4am-inshaat-talis-l1-001",
+  "lessonCode": "inshaat-talis",
+  "level": 1,
+  "metadata": {
+    "title": "طرائق ص 107 — تقسيم قطعة مستقيمة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "طرائق",
+      "تقسيم قطعة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-divide",
+      "page": 107,
+      "section": "طرائق",
+      "adaptedFrom": "ex-4am-inshaat-talis-l1-001"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "$ABC$ مثلث. $D$ نظيرة $B$ بالنسبة إلى $C$ و $E$ نظيرة $C$ بالنسبة إلى $D$ . المستقيمان اللذان يشملان $C$ و $D$ ويوازيان $(AE)$ يقطعان $[AB]$ في $M$ و $N$ على الترتيب (الشكل المقابل).",
+    "figure": {
+      "points": {
+        "A": [
+          4.0,
+          6.0
+        ],
+        "B": [
+          0.0,
+          0.0
+        ],
+        "C": [
+          3.0,
+          1.0
+        ],
+        "D": [
+          6.0,
+          2.0
+        ],
+        "E": [
+          9.0,
+          3.0
+        ],
+        "M": [
+          1.333333333333,
+          2.0
+        ],
+        "N": [
+          2.666666666667,
+          4.0
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "A",
+          "C"
+        ],
+        {
+          "from": "B",
+          "to": "C",
+          "ticks": 1
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "ticks": 1
+        },
+        {
+          "from": "D",
+          "to": "E",
+          "ticks": 1
+        },
+        {
+          "from": "A",
+          "to": "E",
+          "arrows": 1,
+          "tone": "indigo"
+        },
+        {
+          "from": "C",
+          "to": "M",
+          "arrows": 1,
+          "tone": "indigo"
+        },
+        {
+          "from": "D",
+          "to": "N",
+          "arrows": 1,
+          "tone": "indigo"
+        }
+      ],
+      "labels": {
+        "M": "w",
+        "N": "w",
+        "A": "n",
+        "B": "s",
+        "E": "e"
+      },
+      "ariaLabel": "مثلث ABC، النقط B و C و D و E على استقامة و BC = CD = DE، والموازيان للمستقيم (AE) المارّان بـ C و D يقطعان [AB] في M و N",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب النسبة $\\dfrac{BD}{BE}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "2/3",
+      "misconceptionSignatures": [
+        {
+          "value": "1,5",
+          "id": "MISC-TALIS-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$C$ منتصف $[BD]$ و $D$ منتصف $[CE]$ : القطع $[BC]$ و $[CD]$ و $[DE]$ متقايسة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر عن كل من $BD$ و $BE$ بدلالة $BC$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$BD = 2BC$ و $BE = 3BC$ ، فـ $\\dfrac{BD}{BE} = \\dfrac{2}{3}$ .",
+        "incorrect": "عدّ القطع المتقايسة: كم قطعة في $[BD]$ ؟ وكم قطعة في $[BE]$ ؟"
+      },
+      "solution": {
+        "lines": [
+          "$D$ نظيرة $B$ بالنسبة إلى $C$ : $BC = CD$ ، و $E$ نظيرة $C$ بالنسبة إلى $D$ : $CD = DE$ .",
+          "$BD = 2BC$ و $BE = 3BC$",
+          "$\\dfrac{BD}{BE} = \\dfrac{2BC}{3BC}$"
+        ],
+        "result": "\\dfrac{BD}{BE} = \\dfrac{2}{3}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "إذا علمت أن $AB = 7{,}5\\,\\mathrm{cm}$ ، احسب الطول $BN$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ cm",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "2,5",
+          "id": "MISC-TALIS-QITAA-BADAL-DILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النقط $B$ ، $N$ ، $A$ في استقامية والنقط $B$ ، $D$ ، $E$ في استقامية، و $(DN) \\parallel (EA)$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق خاصية طالس في المثلثين $BDN$ و $BEA$ ، ثم استعمل النسبة التي حسبتها."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{BN}{BA} = \\dfrac{BD}{BE} = \\dfrac{2}{3}$ ، فـ $BN = \\dfrac{2}{3} \\times 7{,}5 = 5\\,\\mathrm{cm}$ .",
+        "incorrect": "اكتب تساوي النسبتين $\\dfrac{BN}{BA}$ و $\\dfrac{BD}{BE}$ ثم احسب $BN$ ؛ الطولان يُقاسان من الرأس $B$ ."
+      },
+      "solution": {
+        "lines": [
+          "النقط $B$ ، $N$ ، $A$ في استقامية والنقط $B$ ، $D$ ، $E$ في استقامية، و $(DN) \\parallel (EA)$ .",
+          "حسب خاصية طالس في المثلثين $BDN$ و $BEA$ : $\\dfrac{BN}{BA} = \\dfrac{BD}{BE} = \\dfrac{2}{3}$",
+          "$BN = \\dfrac{2}{3} \\times 7{,}5$"
+        ],
+        "result": "BN = 5\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,231 @@
+{
+  "id": "ex-4am-bahth-pgcd-l4-007",
+  "lessonCode": "bahth-pgcd",
+  "level": 4,
+  "metadata": {
+    "title": "الكسر 441/770",
+    "estimatedMinutes": 8,
+    "tags": [
+      "خوارزمية إقليدس",
+      "أوليان فيما بينهما"
+    ],
+    "source": {
+      "type": "worksheet",
+      "worksheetId": "tafawwuq-01",
+      "elementId": "ws01-ex-09",
+      "section": "التمارين",
+      "number": 9,
+      "adaptedFrom": "ex-4am-ikhtizal-kasr-l4-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العددين 63 و 110، والكسر $\\dfrac{441}{770}$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $PGCD(110 ; 63)$، ثم استنتج أن العددين 63 و 110 أوليان فيما بينهما.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-PGCD-SIFR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 110 على 63: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (110 ; 63) بالزوج (63 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 1.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم، لا الباقي المعدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$110 = 63 \\times 1 + 47$",
+          "$63 = 47 \\times 1 + 16$",
+          "$47 = 16 \\times 2 + 15$",
+          "$16 = 15 \\times 1 + 1$",
+          "$15 = 1 \\times 15 + 0$",
+          "آخر باقٍ غير معدوم هو 1، إذن:",
+          "$PGCD(110 ; 63) = 1$، إذن العددان 63 و 110 أوليان فيما بينهما."
+        ],
+        "result": "PGCD(110 ; 63) = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $PGCD(770 ; 441)$.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-PGCD-SIFR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 770 على 441: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (770 ; 441) بالزوج (441 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 7.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم، لا الباقي المعدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$770 = 441 \\times 1 + 329$",
+          "$441 = 329 \\times 1 + 112$",
+          "$329 = 112 \\times 2 + 105$",
+          "$112 = 105 \\times 1 + 7$",
+          "$105 = 7 \\times 15 + 0$",
+          "آخر باقٍ غير معدوم هو 7، إذن:"
+        ],
+        "result": "PGCD(770 ; 441) = 7"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "sub": "ا",
+      "statement": "بيّن أن $\\dfrac{441}{770} = \\dfrac{63}{110}$.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجة السؤال 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على القاسم المشترك الأكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "التبرير سليم: القسمة على PGCD تعطي الكسر غير القابل للاختزال.",
+        "incorrect": "قارن حلك بالحل النموذجي: اقسم 441 و 770 على قاسمهما المشترك الأكبر."
+      },
+      "solution": {
+        "lines": [
+          "$441 \\div 7 = 63$ و $770 \\div 7 = 110$",
+          "$\\dfrac{441}{770} = \\dfrac{441 \\div 7}{770 \\div 7} = \\dfrac{63}{110}$",
+          "و $\\dfrac{63}{110}$ غير قابل للاختزال لأن $PGCD(110 ; 63) = 1$."
+        ]
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ب",
+      "statement": "عيّن العدد الطبيعي n حيث $\\dfrac{441}{770} = \\dfrac{315}{315 + n}$.",
+      "learningPoints": [
+        {
+          "code": "4am_bahth-pgcd_P4",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "235",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل المساواة $\\dfrac{441}{770} = \\dfrac{63}{110}$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بأي عدد نضرب 63 لنحصل على 315؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب المقام 110 في العدد نفسه، ثم استنتج n."
+        }
+      ],
+      "feedback": {
+        "correct": "$315 = 63 \\times 5$ إذن $315 + n = 110 \\times 5 = 550$.",
+        "incorrect": "اكتب 315 على شكل جداء 63 في عدد، واضرب المقام في العدد نفسه ثم اطرح 315."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{441}{770} = \\dfrac{63}{110} = \\dfrac{63 \\times 5}{110 \\times 5} = \\dfrac{315}{550}$",
+          "إذن $315 + n = 550$",
+          "$n = 550 - 315$"
+        ],
+        "result": "n = 235"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

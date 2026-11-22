@@ -1,0 +1,188 @@
+{
+  "id": "ex-1am-muqaranat-adad-ashriya-l4-008",
+  "lessonCode": "muqaranat-adad-ashriya",
+  "level": 4,
+  "metadata": {
+    "title": "دوري الآن: رتّب ستة أعداد",
+    "estimatedMinutes": 8,
+    "tags": [
+      "ترتيب",
+      "ستة أعداد"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "now-16",
+      "page": 16,
+      "section": "دوري الآن"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "رتّب تصاعديًّا الأعداد العشرية الآتية: $31{,}28$ ، $4{,}015$ ، $31{,}208$ ، $4{,}15$ ، $31{,}3$ ، $4{,}2$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "رتّب الأعداد تصاعديًا (من الأصغر إلى الأكبر): $31{,}28$ ، $4{,}015$ ، $31{,}208$ ، $4{,}15$ ، $31{,}3$ ، $4{,}2$. أيّ السلاسل الآتية صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$4{,}2 < 4{,}15 < 4{,}015 < 31{,}3 < 31{,}28 < 31{,}208$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-LONGER-BIGGER"
+        },
+        {
+          "id": "B",
+          "content": "$31{,}3 < 31{,}28 < 31{,}208 < 4{,}2 < 4{,}15 < 4{,}015$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-ORDER-DIRECTION"
+        },
+        {
+          "id": "C",
+          "content": "$4{,}015 < 4{,}15 < 4{,}2 < 31{,}208 < 31{,}28 < 31{,}3$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$4{,}2 < 4{,}015 < 4{,}15 < 31{,}3 < 31{,}28 < 31{,}208$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQARANA-DIGITS-AS-NATURAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن عددين عددين، وابحث عن الأصغر (أو الأكبر) أولًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابدأ بالجزء الصحيح، فهو يفرز الأعداد إلى مجموعات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "داخل المجموعة الواحدة قارن الأعشار ثم الأجزاء من مائة، ثم تحقق من الترتيب كاملًا."
+        }
+      ],
+      "feedback": {
+        "correct": "الترتيب التصاعدي : $4{,}015 < 4{,}15 < 4{,}2 < 31{,}208 < 31{,}28 < 31{,}3$",
+        "incorrect": "نقارن العددين اثنين اثنين، ونبدأ بالجزء الصحيح ثم الأعشار فالأجزاء من مائة، ثم نكتب السلسلة كاملة ونتحقق من كل رمز."
+      },
+      "solution": {
+        "lines": [
+          "نقارن الأعداد اثنين اثنين ونرتّبها: $4{,}015 < 4{,}15 < 4{,}2 < 31{,}208 < 31{,}28 < 31{,}3$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هو أصغر عدد من بين الأعداد: $31{,}28$ ، $4{,}015$ ، $31{,}208$ ، $4{,}15$ ، $31{,}3$ ، $4{,}2$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "4,015",
+      "misconceptionSignatures": [
+        {
+          "value": "4,2",
+          "id": "MISC-MUQARANA-DIGITS-AS-NATURAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الأعداد عددين عددين، واحتفظ في كل مرة بالأكبر (أو الأصغر)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الجزء الصحيح أولًا، ثم الأعشار، ثم الأجزاء من مائة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا يكفي أن يكون في العدد أرقام كثيرة بعد الفاصلة ليكون أكبر."
+        }
+      ],
+      "feedback": {
+        "correct": "أصغر عدد هو $4{,}015$ ؛ الترتيب: $4{,}015 < 4{,}15 < 4{,}2 < 31{,}208 < 31{,}28 < 31{,}3$.",
+        "incorrect": "نقارن الأعداد الواحد بالآخر رتبةً رتبةً؛ وليس العدد الأطول (أرقامه أكثر بعد الفاصلة) هو الأكبر دائمًا."
+      },
+      "solution": {
+        "lines": [
+          "نرتّب الأعداد: $4{,}015 < 4{,}15 < 4{,}2 < 31{,}208 < 31{,}28 < 31{,}3$",
+          "إذن أصغر عدد هو $4{,}015$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب: $31{,}28 \\times 10$",
+      "learningPoints": [
+        {
+          "code": "1am_muqaranat-adad-ashriya_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "312,8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن موضع الفاصلة في العددين: كم رتبة انتقلت، وفي أيّ اتجاه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا صار العدد أكبر فالانتقال نحو اليمين، وإذا صار أصغر فنحو اليسار."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد الرتب المنقولة يعطي عدد أصفار العدد المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$312{,}8$",
+        "incorrect": "الضرب في 10 أو 100 أو 1000 ينقل الفاصلة نحو اليمين، والقسمة تنقلها نحو اليسار، بعدد رتب يساوي عدد الأصفار."
+      },
+      "solution": {
+        "lines": [
+          "$31{,}28\\times 10 = 312{,}8$"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

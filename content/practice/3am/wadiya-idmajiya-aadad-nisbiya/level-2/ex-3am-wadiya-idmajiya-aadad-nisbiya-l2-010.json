@@ -1,0 +1,257 @@
+{
+  "id": "ex-3am-wadiya-idmajiya-aadad-nisbiya-l2-010",
+  "lessonCode": "wadiya-idmajiya-aadad-nisbiya",
+  "level": 2,
+  "metadata": {
+    "title": "الحرارة والارتفاع عن سطح البحر",
+    "estimatedMinutes": 8,
+    "tags": [
+      "ارتفاع",
+      "جداء",
+      "حاصل قسمة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "integration",
+      "page": 20,
+      "section": "أدمج تعلّماتي"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "الوضعية",
+      "points": "06"
+    }
+  },
+  "statement": {
+    "content": "كلّما ارتفعنا $100$ m عن سطح البحر انخفضت الحرارة بمقدار $0{,}65$ °C ، أي أنّ التغيّر في الحرارة عند الصعود $h$ مئات الأمتار هو $(−0{,}65) \\times h$ . في محطة ارتفاعها $400$ m كانت الحرارة $19{,}5$ °C . والارتفاع عن سطح البحر يُقاس بالأمتار؛ ومستوى البحر ارتفاعه $0$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "كم مئة متر بين المحطة وقمّة ارتفاعها $2400$ m ؟ احسب $(2400 − 400) \\div 100$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "20",
+      "misconceptionSignatures": [
+        {
+          "value": "-20",
+          "id": "MISC-QISMA-SIGN"
+        },
+        {
+          "value": "0.05",
+          "id": "MISC-QISMA-ORDER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العددين اللذين نقسم أحدهما على الآخر وعيّن إشارة كل منهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عاملان مجهولان فالعامل الناقص هو حاصل قسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعملية العكسية: اضرب نتيجتك في العامل المعلوم."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $20$ .",
+        "incorrect": "راجع الربط بين الضرب والقسمة وقاعدة إشارات الحاصل، ثم تحقّق بالضرب."
+      },
+      "solution": {
+        "lines": [
+          "$(2400 − 400) \\div 100$",
+          "$= 2000 \\div 100$",
+          "$= 20$"
+        ],
+        "result": "20"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما الحرارة في القمّة التي ارتفاعها $2400$ m ؟",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "6.5",
+      "misconceptionSignatures": [
+        {
+          "value": "377",
+          "id": "MISC-QISMA-PRIORITY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ النص وحدّد الأعداد المعطاة وما يعبّر عنه كل منها: ارتفاع أم انخفاض، ربح أم خسارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر عن الانخفاض أو الخسارة أو الدَّين بعدد سالب، ثم اختر العملية التي تناسب السؤال."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العملية بأعداد نسبية ثم أنجزها بقاعدة الإشارات وبأولوية العمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $6{,}5$ °C .",
+        "incorrect": "راجع ترجمة النص إلى عملية بين أعداد نسبية: أيّ عدد سالب وأيّ عملية تناسب السؤال؟"
+      },
+      "solution": {
+        "lines": [
+          "$19{,}5 + (−0{,}65) \\times ((2400 − 400) \\div 100)$",
+          "$= 19{,}5 + (−0{,}65) \\times (2000 \\div 100)$",
+          "$= 19{,}5 + (−0{,}65) \\times 20$",
+          "$= 19{,}5 + (−13)$",
+          "$= 6{,}5$"
+        ],
+        "result": "6{,}5"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "ما الحرارة عند مستوى البحر؟ ($h = (0 − 400) \\div 100$ سالب لأنّنا ننزل).",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "22.1",
+      "misconceptionSignatures": [
+        {
+          "value": "-75.4",
+          "id": "MISC-QISMA-PRIORITY"
+        },
+        {
+          "value": "16.9",
+          "id": "MISC-JIDAA-NEGNEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ النص وحدّد الأعداد المعطاة وما يعبّر عنه كل منها: ارتفاع أم انخفاض، ربح أم خسارة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عبّر عن الانخفاض أو الخسارة أو الدَّين بعدد سالب، ثم اختر العملية التي تناسب السؤال."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب العملية بأعداد نسبية ثم أنجزها بقاعدة الإشارات وبأولوية العمليات."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $22{,}1$ °C .",
+        "incorrect": "راجع ترجمة النص إلى عملية بين أعداد نسبية: أيّ عدد سالب وأيّ عملية تناسب السؤال؟"
+      },
+      "solution": {
+        "lines": [
+          "$19{,}5 + (−0{,}65) \\times ((0 − 400) \\div 100)$",
+          "$= 19{,}5 + (−0{,}65) \\times ((−400) \\div 100)$",
+          "$= 19{,}5 + (−0{,}65) \\times (−4)$",
+          "$= 19{,}5 + 2{,}6$",
+          "$= 22{,}1$"
+        ],
+        "result": "22{,}1"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "عند أيّ ارتفاع تنعدم الحرارة؟ أوجد $h$ حيث $19{,}5 + (−0{,}65) \\times h = 0$ بحساب $(0 − 19{,}5) \\div (−0{,}65)$ ثم أضف $400$ بعد ضرب $h$ في $100$ .",
+      "learningPoints": [
+        {
+          "code": "3am_wadiya-idmajiya-aadad-nisbiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "3400",
+      "misconceptionSignatures": [
+        {
+          "value": "43000",
+          "id": "MISC-QISMA-PRIORITY"
+        },
+        {
+          "value": "-2600",
+          "id": "MISC-QISMA-SIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد العددين اللذين نقسم أحدهما على الآخر وعيّن إشارة كل منهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إذا كان عاملان مجهولان فالعامل الناقص هو حاصل قسمة الجداء على العامل المعلوم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعملية العكسية: اضرب نتيجتك في العامل المعلوم."
+        }
+      ],
+      "feedback": {
+        "correct": "الجواب: $3400$ m .",
+        "incorrect": "راجع الربط بين الضرب والقسمة وقاعدة إشارات الحاصل، ثم تحقّق بالضرب."
+      },
+      "solution": {
+        "lines": [
+          "$400 + ((0 − 19{,}5) \\div (−0{,}65)) \\times 100$",
+          "$= 400 + ((−19{,}5) \\div (−0{,}65)) \\times 100$",
+          "$= 400 + 30 \\times 100$",
+          "$= 400 + 3000$",
+          "$= 3400$"
+        ],
+        "result": "3400"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

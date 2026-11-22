@@ -1,0 +1,234 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l3-005",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — شاحنات القمح",
+    "estimatedMinutes": 7,
+    "tags": [
+      "حصر",
+      "شاحنات",
+      "بالزيادة"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-77",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "تعاون فلّاحو قرية على جمع $45{,}3$ طنًّا من القمح لنقلها إلى المخزن بشاحنات حمولة كل منها 6 أطنان. نعطي: $45{,}3 \\div 6 = 7{,}55$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اختر حصرًا بين عددين طبيعيين متتاليين للحاصل $45{,}3 \\div 6$.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$7 < 45{,}3 \\div 6 < 8$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$6 < 45{,}3 \\div 6 < 7$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        },
+        {
+          "id": "C",
+          "content": "$8 < 45{,}3 \\div 6 < 9$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل يساوي $7{,}55$: انظر إلى جزئه الصحيح."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العددان الطبيعيان المتتاليان هما الجزء الصحيح والعدد الذي يليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$7 < 7{,}55 < 8$.",
+        "incorrect": "الحصر بين عددين طبيعيين متتاليين: الجزء الصحيح للحاصل والعدد الذي يليه."
+      },
+      "solution": {
+        "lines": [
+          "$45{,}3 \\div 6 = 7{,}55$",
+          "$7 < 7{,}55 < 8$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أعط القيمة المقرّبة إلى الوحدة بالنقصان للحاصل $45{,}3 \\div 6$.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "8",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل يساوي $7{,}55$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمة بالنقصان إلى الوحدة هي العدد الطبيعي الذي يسبقه مباشرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$7 < 7{,}55 < 8$ ، فالقيمة بالنقصان 7.",
+        "incorrect": "بالنقصان: أصغر طرفي الحصر بين عددين طبيعيين متتاليين."
+      },
+      "solution": {
+        "lines": [
+          "$7 < 7{,}55 < 8$",
+          "القيمة المقرّبة إلى الوحدة بالنقصان هي 7."
+        ],
+        "result": "7"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أعط القيمة المقرّبة إلى الوحدة بالزيادة للحاصل $45{,}3 \\div 6$.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "value": "9",
+          "id": "MISC-HASR-IZAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل يساوي $7{,}55$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمة بالزيادة إلى الوحدة هي العدد الطبيعي الذي يليه مباشرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$7 < 7{,}55 < 8$ ، فالقيمة بالزيادة 8.",
+        "incorrect": "بالزيادة: أكبر طرفي الحصر بين عددين طبيعيين متتاليين."
+      },
+      "solution": {
+        "lines": [
+          "$7 < 7{,}55 < 8$",
+          "القيمة المقرّبة إلى الوحدة بالزيادة هي 8."
+        ],
+        "result": "8"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "كم شاحنة تلزم لنقل القمح كاملًا؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد الشاحنات",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "value": "9",
+          "id": "MISC-HASR-IZAHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "7 شاحنات تنقل $42$ طنًّا فقط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما يبقى من القمح يحتاج إلى شاحنة أخرى."
+        }
+      ],
+      "feedback": {
+        "correct": "7 شاحنات لا تكفي ($6 \\times 7 = 42 < 45{,}3$)، فتلزم 8 شاحنات: القيمة المقرّبة بالزيادة.",
+        "incorrect": "الشاحنات الممتلئة لا تنقل كل القمح: ما يبقى يحتاج إلى شاحنة أخرى."
+      },
+      "solution": {
+        "lines": [
+          "$7 < 7{,}55 < 8$",
+          "$6 \\times 7 = 42 < 45{,}3$ و $6 \\times 8 = 48 \\ge 45{,}3$",
+          "تلزم 8 شاحنات."
+        ],
+        "result": "8"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

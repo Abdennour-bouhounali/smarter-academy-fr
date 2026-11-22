@@ -1,0 +1,165 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l5-002",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2020 — كراسي حفل نهاية السنة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "قاسم",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-adad-tabii_P1",
+      "modelledOn": "BEM 2020 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2020",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تحضّر متوسطة بتلمسان حفل نهاية السنة الدراسية في ساحتها لتكريم التلاميذ المجتهدين في طلب العلم. يريد المنظمون وضع 540 كرسيًا في صفوف تحتوي كلها على نفس العدد من الكراسي، دون أن يبقى أي كرسي. يتردد المنظمون بين 24 أو 27 أو 28 كرسيًا في كل صف.\n• يوضع في نهاية كل صف مصباح زينة.\n• تكلفة تركيب المصابيح 1000DA مهما كان عددها.\n• خصّصت المتوسطة للإنارة مبلغ 9600DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن من بين الأعداد 24 ، 27 ، 28 تلك التي تقسم 540.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        27
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 540 على كل عدد من الأعداد الثلاثة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احتفظ بالأعداد التي يكون باقيها معدومًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$540 = 27 \\times 20$، أما 24 و 28 فليسا قاسمين للعدد 540.",
+        "incorrect": "اختبر باقي قسمة 540 على كل عدد من الأعداد الثلاثة."
+      },
+      "solution": {
+        "lines": [
+          "$540 = 24 \\times 22 + 12$ : الباقي غير معدوم.",
+          "$540 = 27 \\times 20 + 0$ : الباقي معدوم.",
+          "$540 = 28 \\times 19 + 8$ : الباقي غير معدوم.",
+          "إذن من بين هذه الأعداد، 27 فقط يقسم 540."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج عدد الصفوف.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "20",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نبحث عن عدد طبيعي $q$ حيث $540 = 27 \\times q$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أجرِ القسمة الإقليدية للعدد 540 على 27."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان الباقي معدومًا فإن حاصل القسمة هو العدد المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$540 = 27 \\times 20$.",
+        "incorrect": "اقسم 540 على 27: حاصل القسمة هو العدد $q$ إذا كان الباقي معدومًا."
+      },
+      "solution": {
+        "lines": [
+          "$27 \\times 20 = 540$",
+          "إذن $540 = 27 \\times 20$"
+        ],
+        "result": "540 = 27 \\times 20"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "☜ أعط القيمة التي لا يمكن أن يتجاوزها ثمن المصباح الواحد حتى يكفي المبلغ المخصص للإنارة.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (DA)",
+      "expectedAnswer": "430",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد المصابيح يساوي عدد الصفوف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح تكلفة التركيب من المبلغ المخصص."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان p ثمن المصباح فإن $20p + 1000 \\leq 9600$."
+        }
+      ],
+      "feedback": {
+        "correct": "$20p + 1000 \\leq 9600$ تعطي $p \\leq 430$: لا يتجاوز ثمن المصباح 430DA.",
+        "incorrect": "عدد المصابيح هو عدد الصفوف؛ اكتب أن ثمنها مع تكلفة التركيب لا يتجاوز المبلغ المخصص."
+      },
+      "solution": {
+        "lines": [
+          "عدد المصابيح = عدد الصفوف = 20.",
+          "ليكن p ثمن المصباح (بالـ DA): $20p + 1000 \\leq 9600$",
+          "$20p \\leq 8600$",
+          "$p \\leq 430$"
+        ],
+        "result": "p \\leq 430 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    }
+  ]
+}

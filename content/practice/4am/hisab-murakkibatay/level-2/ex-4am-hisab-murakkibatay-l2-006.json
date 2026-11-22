@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l2-006",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — تساوي شعاعين بأعداد سالبة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "تساوي شعاعين"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_hisab-murakkibatay_P2",
+      "modelledOn": "know-equal"
+    }
+  },
+  "statement": {
+    "content": "$E(-2\\,;\\,-3)$ ، $F(1\\,;\\,-7)$ ، $G(-6\\,;\\,4)$ ، $H(-3\\,;\\,0)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "هل $\\overrightarrow{EF}$ و $\\overrightarrow{GH}$ متساويان؟",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، المركبتان الثانيتان متعاكستان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-ISHARA"
+        },
+        {
+          "id": "B",
+          "content": "نعم، لكل منهما المركبتان 3 و −4",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "لا، لأن E و G مختلفتان",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MABDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مركبتي كل شعاع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن المركبة الأولى بالأولى والثانية بالثانية."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "يتساوى الشعاعان إذا تساوت المركبتان معا."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{EF}\\begin{pmatrix} 3 \\\\ -4 \\end{pmatrix}$ و $\\overrightarrow{GH}\\begin{pmatrix} 3 \\\\ -4 \\end{pmatrix}$ : متساويان.",
+        "incorrect": "$0 - 4 = -4$ و $-7 - (-3) = -4$ : احسب بعناية مع الإشارات."
+      }
+    }
+  ]
+}

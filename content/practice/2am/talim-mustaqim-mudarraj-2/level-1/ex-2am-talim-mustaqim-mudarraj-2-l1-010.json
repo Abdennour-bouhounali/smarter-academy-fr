@@ -1,0 +1,204 @@
+{
+  "id": "ex-2am-talim-mustaqim-mudarraj-2-l1-010",
+  "lessonCode": "talim-mustaqim-mudarraj-2",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — قراءة وكتابة معاكس",
+    "estimatedMinutes": 6,
+    "tags": [
+      "قراءة فاصلة",
+      "معاكس",
+      "مسافة إلى الصفر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "يحدّد حارس الحديقة مواضع أعمدة الإنارة على شريط مدرّج مبدؤه $O$ وقيمة تدريجته الواحدة $10\\,\\mathrm{m}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "النقطة $P$ على 4 تدريجات إلى يسار المبدأ، وقيمة التدريجة الواحدة $10\\,\\mathrm{m}$. ما فاصلة $P$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-40\\,\\mathrm{m}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$40\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM2-SIGNSIDE"
+        },
+        {
+          "id": "C",
+          "content": "$-4\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM2-UNITIGNORED"
+        },
+        {
+          "id": "D",
+          "content": "$-14\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM2-ADDSTEP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ التدريجات بين المبدأ والنقطة، ثم انظر إلى جهتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفاصلة = عدد التدريجات × قيمة التدريجة الواحدة، وإشارتها حسب الجهة: يمين المبدأ موجبة، يسار المبدأ سالبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء أوّلًا ثم ضع الإشارة المناسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$P(-40)$ : $4$ تدريجات × $10\\,\\mathrm{m}$ ، في الجهة اليسرى فالإشارة سالبة.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "عدد التدريجات $4$ ، قيمة التدريجة $10\\,\\mathrm{m}$",
+          "النقطة على يسار المبدأ فالإشارة سالبة",
+          "$P(-40)$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما معاكس العدد $-40$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "40",
+      "misconceptionSignatures": [
+        {
+          "value": "-40",
+          "id": "MISC-TALIM2-OPPSAME"
+        },
+        {
+          "value": "-0.025",
+          "id": "MISC-TALIM2-RECIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العددان المتعاكسان لهما المسافة نفسها إلى الصفر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "معاكس عدد يُحصل عليه بتغيير إشارته فقط، ولا يتغيّر ما بعد الإشارة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق: مجموع العددين المتعاكسين يساوي الصفر."
+        }
+      ],
+      "feedback": {
+        "correct": "معاكس $-40$ هو $40$ : المسافة نفسها إلى الصفر، والإشارة مختلفة.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "معاكس $-40$ هو العدد الذي له المسافة نفسها إلى الصفر وإشارته مخالفة",
+          "$40$"
+        ],
+        "result": "40"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما المسافة إلى الصفر للعدد $-40$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد موجب أو معدوم",
+      "expectedAnswer": "40",
+      "misconceptionSignatures": [
+        {
+          "value": "-40",
+          "id": "MISC-TALIM2-NEGDIST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المسافة إلى الصفر هي عدد التدريجات مضروبًا في قيمتها، ولا تكون سالبة أبدًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احذف الإشارة وأبقِ العدد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة إلى الصفر لعددين متعاكسين واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "المسافة إلى الصفر للعدد $-40$ هي $40$ : لا تكون سالبة.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "المسافة إلى الصفر هي العدد دون إشارته",
+          "$40$"
+        ],
+        "result": "40"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

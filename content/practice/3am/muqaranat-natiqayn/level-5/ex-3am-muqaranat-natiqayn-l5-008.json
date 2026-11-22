@@ -1,0 +1,316 @@
+{
+  "id": "ex-3am-muqaranat-natiqayn-l5-008",
+  "lessonCode": "muqaranat-natiqayn",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — نادي كراء الدرّاجات",
+    "estimatedMinutes": 16,
+    "tags": [
+      "وضعية إدماجية",
+      "عرضان",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يقترح نادٍ بيع بطاقة اشتراك: الصيغة $A$ ثمنها $400 + 10t$ دينارًا، والصيغة $B$ ثمنها $12t$ دينارًا، حيث $t$ عدد ساعات الكراء في الشهر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "الجزء الأول. احسب ثمن الصيغة $A$ من أجل $t = 150$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر مختزل)",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط؟ وما العمليات التي تحتاجها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب خطوة خطوة مع الانتباه إلى الإشارات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "راجع النتيجة بطريقة ثانية قبل أن تجيب."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "1900",
+      "feedback": {
+        "correct": "ثمن $A$ هو $1900$ دج.",
+        "incorrect": "أعد الحساب بالترتيب مع الانتباه إلى الإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$A = 400 + 10 \\times 150 = 1900$"
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب ثمن الصيغة $B$ من أجل $t = 150$ .",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح أو عشري أو كسر مختزل)",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب بالضبط؟ وما العمليات التي تحتاجها؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب خطوة خطوة مع الانتباه إلى الإشارات."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "راجع النتيجة بطريقة ثانية قبل أن تجيب."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "1800",
+      "feedback": {
+        "correct": "ثمن $B$ هو $1800$ دج.",
+        "incorrect": "أعد الحساب بالترتيب مع الانتباه إلى الإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$B = 12 \\times 150 = 1800$"
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "نكتب $A - B = 400 - kt$ . ما العدد $k$ ؟",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $k$ فقط",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العبارتان؟ وكيف يُكتب فرقهما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الفرق بوضع العبارة الثانية بين قوسين ثم بسّط وانتبه إلى إشارة ما بعد الطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض قيمة بسيطة للحرف في الفرق وفي النتيجة."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "2",
+      "feedback": {
+        "correct": "$A - B = 400 - 2t$ ، إذن $k = 2$ .",
+        "incorrect": "ضع العبارة الثانية بين قوسين قبل الطرح، ثمّ بسّط."
+      },
+      "solution": {
+        "lines": [
+          "$A - B = 400 + 10t - 12t = 400 - 2t$"
+        ]
+      }
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "من أيّ عدد من الساعات تصير الصيغة $A$ أرخص من الصيغة $B$ ؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما هو الفرق المبسَّط؟ ومتى يكون موجبًا ومتى يكون سالبًا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن القيمة التي ينعدم عندها الفرق، ثم انظر إلى جهتيها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر قيمة من كل جهة للتأكّد من الإشارة."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "دائمًا، لأنّ $A$ فيها ثمن أصغر للساعة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-COEF"
+        },
+        {
+          "id": "B",
+          "content": "عندما $t > 200$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "عندما $t < 200$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-ORDER-SUB"
+        }
+      ],
+      "feedback": {
+        "correct": "$A - B < 0$ عندما $t > 200$ .",
+        "incorrect": "ادرس إشارة الفرق المبسَّط على جهتي القيمة التي ينعدم عندها."
+      },
+      "solution": {
+        "lines": [
+          "$A - B = 400 - 2t = 2(200 - t)$ سالب عندما $t > 200$ ."
+        ]
+      }
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "تستعمل ليلى الدرّاجة $150$ ساعة في الشهر. أيّ الصيغتين أرخص لها؟",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُطلب مقارنته؟ وما الأعداد المعنيّة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الفرق بين الكمّيتين ثم اقرأ إشارته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب القرار في جملة تذكر الفرق وإشارته."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "الصيغة $A$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQ-COEF"
+        },
+        {
+          "id": "B",
+          "content": "الصيغة $B$",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "الصيغة $B$ أرخص بـ $100$ دج.",
+        "incorrect": "احسب الفرق بين الكمّيتين واقرأ إشارته، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$A - B = 400 - 2 \\times 150 = 100 > 0$ ، إذن $B$ أرخص."
+        ]
+      }
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "اكتب قرارك: ماذا تنصح شخصًا يستعمل الدرّاجة $300$ ساعة في الشهر؟ علّل بإشارة $A - B$ .",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "learningPoints": [
+        {
+          "code": "3am_muqaranat-natiqayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي تريد تبريره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الفرق أوّلًا ثم إشارته ثم الخلاصة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب جملة واحدة تربط إشارة الفرق بالمقارنة."
+        }
+      ],
+      "timeSeconds": 180,
+      "feedback": {
+        "correct": "الفرق سالب، إذن $A$ أرخص.",
+        "incorrect": "قارن برهانك بالحل النموذجي سطرًا سطرًا، ثمّ قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $t = 300$ : $A - B = 400 - 2 \\times 300 = -200 < 0$ .",
+          "إذن $A < B$ ، وننصحه بالصيغة $A$ لأنّها أرخص بـ $200$ دج."
+        ]
+      }
+    }
+  ]
+}

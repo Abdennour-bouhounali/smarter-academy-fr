@@ -1,0 +1,175 @@
+{
+  "id": "ex-3am-nashr-jabri-3am-l4-010",
+  "lessonCode": "nashr-jabri-3am",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — نشر وحل معادلة",
+    "estimatedMinutes": 8,
+    "tags": [
+      "نشر",
+      "معادلة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر المعادلة التالية ذات المجهول $x$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "نريد حلّ المعادلة $(x + 4)(x - 2) = x(x + 1) + 7$ . انشر الطرف الأيسر $G = (x + 4)(x - 2)$ واكتبه على الشكل $ax^2 + bx + c$ .",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $G$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-NASHR-PRODUCT-MISSING"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني: أربعة جداءات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات الأربعة واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء الأصلي وفي النتيجة: يجب أن تجد العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$G = x^2 + 2x - 8$ إذن $b = 2$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$G = (x + 4)(x - 2)$",
+          "$G = x \\times x - x \\times 2 + 4 \\times x - 4 \\times 2$",
+          "$G = x^2 + 2x - 8$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "انشر الطرف الأيمن $D = x(x + 1) + 7$ واكتبه على الشكل $ax^2 + bx + c$ .",
+      "statement": "العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $D$ على الشكل $ax^2 + bx + c$ : اكتب العدد $b$ فقط",
+      "expectedAnswer": "1",
+      "misconceptionSignatures": [
+        {
+          "value": "0",
+          "id": "MISC-NASHR-FIRST-ONLY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد (أو الحرف) الذي أمام القوسين يضرب كل حدّ من الحدود التي بينهما، وليس الحدّ الأول وحده."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب في كل حدّ مع إشارته: جداء عددين لهما الإشارة نفسها موجب، وجداء عددين إشارتاهما مختلفتان سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير (مثل $1$ أو $2$) في العبارة قبل النشر وبعده: يجب أن تجد العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$D = x^2 + x + 7$ إذن $b = 1$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$D = x(x + 1) + 7$",
+          "$D = x \\times x + x \\times 1 + 7$",
+          "$D = x^2 + x + 7$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "حلّ المعادلة $(x + 4)(x - 2) = x(x + 1) + 7$ . ما هو حلّها؟",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "15",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اجمع حدود $x$ في طرف والأعداد في الطرف الآخر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "غيّر إشارة الحدّ عندما تنقله إلى الطرف الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض الحل في المعادلة الأصلية."
+        }
+      ],
+      "feedback": {
+        "correct": "حلّ المعادلة هو $x = 15$ .",
+        "incorrect": "عوّض $x$ بالعدد المعطى واحترم أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$x^2 + 2x - 8 = x^2 + x + 7$ ، فيحذف $x^2$ من الطرفين",
+          "$x = 15$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

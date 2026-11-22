@@ -1,0 +1,68 @@
+{
+  "id": "ex-4am-kura-julla-l3-006",
+  "lessonCode": "kura-julla",
+  "level": 3,
+  "metadata": {
+    "title": "تدريب — طرف قطر",
+    "estimatedMinutes": 4,
+    "tags": [
+      "القطر",
+      "معلم الفضاء"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_kura-julla_P2",
+      "modelledOn": "know-1"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس للفضاء مبدؤه O، كرة مركزها O، و $[MM']$ قطر لها حيث $M(0\\,;\\,0\\,;\\,5)$ و $M'(0\\,;\\,0\\,;\\,z)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قيمة z؟",
+      "learningPoints": [
+        {
+          "code": "4am_kura-julla_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "-5",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-KURA-WATAR",
+          "value": "5"
+        },
+        {
+          "id": "MISC-KURA-QUTR",
+          "value": "0"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "O منتصف القطر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إحداثيات المنتصف نصف مجموع إحداثيات الطرفين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب $\\dfrac{5 + z}{2} = 0$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "O منتصف $[MM']$ : $\\dfrac{5 + z}{2} = 0$ ، إذن $z = -5$ .",
+        "incorrect": "الطرف الآخر للقطر يقابل M بالنسبة إلى O."
+      }
+    }
+  ]
+}

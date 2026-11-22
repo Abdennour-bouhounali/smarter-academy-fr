@@ -1,0 +1,163 @@
+{
+  "id": "ex-4am-jidhr-tarbii-l3-003",
+  "lessonCode": "jidhr-tarbii",
+  "level": 3,
+  "metadata": {
+    "title": "من الجذر إلى العدد",
+    "estimatedMinutes": 6,
+    "tags": [
+      "تعريف الجذر التربيعي"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_jidhr-tarbii_P1",
+      "modelledOn": "ex-1",
+      "adaptedFrom": "ex-4am-jidhr-tarbii-l3-003"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$a$ و $b$ عددان موجبان حيث: $\\sqrt{a} = 1{,}5$ و $\\sqrt{b} = \\dfrac{2}{5}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "احسب $a$ .",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري",
+      "expectedAnswer": "2.25",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-MURABBA-DIF"
+        },
+        {
+          "value": "0.75",
+          "id": "MISC-JIDHR-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\sqrt{a} = 1{,}5$ معناه: $1{,}5$ موجب و $1{,}5^2 = a$."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 1{,}5^2 = 2{,}25$.",
+        "incorrect": "$a$ هو مربع $1{,}5$، لا ضعفه."
+      },
+      "solution": {
+        "lines": [
+          "$\\sqrt{a} = 1{,}5$ معناه $a = 1{,}5^2$"
+        ],
+        "result": "a = 2{,}25"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "احسب $b$ .",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "4/25",
+      "misconceptionSignatures": [
+        {
+          "value": "4/5",
+          "id": "MISC-MURABBA-DIF"
+        },
+        {
+          "value": "1/5",
+          "id": "MISC-JIDHR-NISF"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$b = \\left(\\dfrac{2}{5}\\right)^2$."
+        }
+      ],
+      "feedback": {
+        "correct": "$b = \\left(\\dfrac{2}{5}\\right)^2 = \\dfrac{4}{25}$.",
+        "incorrect": "ربّع البسط والمقام معا."
+      },
+      "solution": {
+        "lines": [
+          "$b = \\left(\\dfrac{2}{5}\\right)^2$"
+        ],
+        "result": "b = \\dfrac{4}{25}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب $a \\times b$ ثم استنتج $\\sqrt{a \\times b}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_jidhr-tarbii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة √(a × b) على شكل كسر a/b",
+      "expectedAnswer": "3/5",
+      "misconceptionSignatures": [
+        {
+          "value": "9/25",
+          "id": "MISC-TARBI-JIDHR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$a \\times b = 2{,}25 \\times \\dfrac{4}{25}$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم ابحث عن الكسر الموجب الذي مربعه هذا الجداء."
+        }
+      ],
+      "feedback": {
+        "correct": "$a \\times b = \\dfrac{9}{25}$ و $\\sqrt{\\dfrac{9}{25}} = \\dfrac{3}{5}$.",
+        "incorrect": "احسب الجداء أولا، ثم خذ العدد الموجب الذي مربعه هذا الجداء."
+      },
+      "solution": {
+        "lines": [
+          "$a \\times b = \\dfrac{225}{100} \\times \\dfrac{4}{25} = \\dfrac{9}{25}$",
+          "$\\left(\\dfrac{3}{5}\\right)^2 = \\dfrac{9}{25}$ و $\\dfrac{3}{5}$ موجب"
+        ],
+        "result": "\\sqrt{a \\times b} = \\dfrac{3}{5}"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l4-009",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — عبارة وقابلية القسمة",
+    "estimatedMinutes": 9,
+    "tags": [
+      "أولويات العمليات",
+      "قابلية القسمة",
+      "حصر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "نعتبر العدد $A = 3 \\times (125 + 87) - 36$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $A$.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "600",
+      "misconceptionSignatures": [
+        {
+          "value": "426",
+          "id": "MISC-HASR-HISAB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بما بين القوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثم الضرب، ثم الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 \\times 212 - 36 = 636 - 36 = 600$.",
+        "incorrect": "الأولوية لما بين القوسين، ثم للضرب."
+      },
+      "solution": {
+        "lines": [
+          "$125 + 87 = 212$",
+          "$3 \\times 212 = 636$",
+          "$A = 636 - 36 = 600$"
+        ],
+        "result": "A = 600"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل يقبل العدد 600 القسمة على 24؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-HISAB"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 600 على 24."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يقبل القسمة يعني: الباقي معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "$600 = 24 \\times 25$ والباقي معدوم.",
+        "incorrect": "انظر إلى باقي القسمة الإقليدية: هل هو معدوم؟"
+      },
+      "solution": {
+        "lines": [
+          "$600 = 24 \\times 25 + 0$",
+          "الباقي معدوم، إذن 600 يقبل القسمة على 24."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "$\\frac{600}{24}$ عدد طبيعي. احسبه.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "25",
+      "misconceptionSignatures": [
+        {
+          "value": "26",
+          "id": "MISC-HASR-SIFR-SARIM"
+        },
+        {
+          "value": "24",
+          "id": "MISC-HASR-SIFR-SARIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 600 على 24."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي معدوم: حاصل القسمة هو القيمة المضبوطة."
+        }
+      ],
+      "feedback": {
+        "correct": "$600 = 24 \\times 25$ ، إذن $\\frac{600}{24} = 25$.",
+        "incorrect": "ابحث عن العدد الطبيعي الذي إذا ضربناه في 24 نجد 600."
+      },
+      "solution": {
+        "lines": [
+          "$24 \\times 25 = 600$",
+          "إذن $\\frac{600}{24} = 25$."
+        ],
+        "result": "25"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "اختر الكتابة الصحيحة التي تحصر حاصل القسمة $\\frac{600}{36}$ بين عددين طبيعيين متتاليين (أو تعطيه إذا كان عددًا طبيعيًا).",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$15 < \\frac{600}{36} < 16$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        },
+        {
+          "id": "B",
+          "content": "$16 < \\frac{600}{36} < 17$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$24 < \\frac{600}{36} < 25$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 600 على 36."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من $36 \\times q \\le 600 < 36 \\times (q + 1)$ نقسم الأطراف على 36."
+        }
+      ],
+      "feedback": {
+        "correct": "$600 = 36 \\times 16 + 24$ والباقي غير معدوم، فـ $\\frac{600}{36}$ يقع تمامًا بين 16 و 17.",
+        "incorrect": "احصر 600 بين مضاعفين متتاليين للعدد 36 ثم اقسم على 36؛ وإذا كان الباقي معدومًا فحاصل القسمة عدد طبيعي."
+      },
+      "solution": {
+        "lines": [
+          "$600 = 36 \\times 16 + 24$",
+          "$36 \\times 16 < 600 < 36 \\times 17$ ، نقسم على 36: $16 < \\frac{600}{36} < 17$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

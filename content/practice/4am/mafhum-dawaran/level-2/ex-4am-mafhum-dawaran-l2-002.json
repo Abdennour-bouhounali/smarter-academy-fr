@@ -1,0 +1,273 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l2-002",
+  "lessonCode": "mafhum-dawaran",
+  "level": 2,
+  "metadata": {
+    "title": "تمرين 7 — الشكلان ① و ②",
+    "estimatedMinutes": 3,
+    "tags": [
+      "تعيين دوران"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-7",
+      "page": 159,
+      "section": "صورة شكل بدوران",
+      "number": 7
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 159): في الشكل، الشكل ② (المثلثان HFG و HKL) صورة الشكل ① (المثلثان ABC و CDE) بدوران مركزه O.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -5,
+          -4
+        ],
+        "B": [
+          -1,
+          -4
+        ],
+        "C": [
+          -5,
+          -2
+        ],
+        "D": [
+          -3,
+          0
+        ],
+        "E": [
+          -3,
+          -2
+        ],
+        "H": [
+          2,
+          -5
+        ],
+        "F": [
+          4,
+          -5
+        ],
+        "G": [
+          4,
+          -1
+        ],
+        "K": [
+          2,
+          -3
+        ],
+        "L": [
+          0,
+          -3
+        ]
+      },
+      "grid": true,
+      "polygons": [
+        {
+          "points": [
+            "A",
+            "B",
+            "C"
+          ],
+          "tone": "emerald"
+        },
+        {
+          "points": [
+            "C",
+            "D",
+            "E"
+          ],
+          "tone": "emerald"
+        },
+        {
+          "points": [
+            "H",
+            "F",
+            "G"
+          ],
+          "tone": "amber"
+        },
+        {
+          "points": [
+            "H",
+            "K",
+            "L"
+          ],
+          "tone": "amber"
+        }
+      ],
+      "segments": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "A"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "D",
+          "E"
+        ],
+        [
+          "E",
+          "C"
+        ],
+        [
+          "H",
+          "F"
+        ],
+        [
+          "F",
+          "G"
+        ],
+        [
+          "G",
+          "H"
+        ],
+        [
+          "H",
+          "K"
+        ],
+        [
+          "K",
+          "L"
+        ],
+        [
+          "L",
+          "H"
+        ]
+      ],
+      "labels": {
+        "O": "n",
+        "D": "n",
+        "L": "s",
+        "K": "e",
+        "E": "e",
+        "C": "w",
+        "A": "sw",
+        "H": "sw"
+      },
+      "ariaLabel": "ورقة مرصوفة: الشكل 1 (المثلثان ABC و CDE) على اليسار، والشكل 2 (المثلثان HFG و HKL) على اليمين، والنقطة O في الأعلى بينهما",
+      "maxWidth": 520
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "زاوية هذا الدوران واتجاهه:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$90^\\circ$ في الاتجاه المباشر",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$90^\\circ$ في الاتجاه غير المباشر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ITTIJAH"
+        },
+        {
+          "id": "C",
+          "content": "$180^\\circ$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ZAWIYA-UKHRA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن ضلعا شاقوليا من ① بصورته في ②."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلع الشاقولي [CA] صار أفقيا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تتبّع نقطة واحدة حول O: أي اتجاه سلكت؟"
+        }
+      ],
+      "feedback": {
+        "correct": "ربع دورة عكس اتجاه عقارب الساعة: $90^\\circ$ في الاتجاه المباشر.",
+        "incorrect": "نصف دورة لا تجعل ضلعا شاقوليا أفقيا؛ وتتبّع اتجاه حركة نقطة حول O."
+      },
+      "difficulty": 3
+    },
+    {
+      "id": "q2",
+      "statement": "صورة النقطة A هي:",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "H",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-TARTIB"
+        },
+        {
+          "id": "B",
+          "content": "F",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "G",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "A رأس الزاوية القائمة في المثلث ABC."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الدوران يحافظ على شكل المثلث: رأس الزاوية القائمة يذهب إلى رأس زاوية قائمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "في HFG، أين الزاوية القائمة؟"
+        }
+      ],
+      "feedback": {
+        "correct": "A رأس الزاوية القائمة في ABC، وصورتها F رأس الزاوية القائمة في HFG.",
+        "incorrect": "طابق الرؤوس: رأس الزاوية القائمة مع رأس الزاوية القائمة."
+      },
+      "difficulty": 2
+    }
+  ]
+}

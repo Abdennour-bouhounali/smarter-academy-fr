@@ -1,0 +1,316 @@
+{
+  "id": "ex-2am-ikhtibar-musawat-mutabayina-l5-010",
+  "lessonCode": "ikhtibar-musawat-mutabayina",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — شاحنة بمنصّات الطوب وصناديق البلاط",
+    "estimatedMinutes": 8,
+    "tags": [
+      "وضعيّة إدماجيّة",
+      "مجهولان",
+      "متباينة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "تزن شاحنة فارغة $3400\\,\\mathrm{kg}$ وتحمل $x$ منصّة من الطوب كتلة كلّ منها $120\\,\\mathrm{kg}$ و $y$ صندوقا من البلاط كتلة كلّ منها $75\\,\\mathrm{kg}$ . لافتة الجسر : الكتلة الكلّيّة أقلّ من $5800\\,\\mathrm{kg}$ ، فتترجم الوضعيّة بالمتباينة $3400+120x+75y<5800$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ماذا يمثّل كلّ من الحرفين $x$ و $y$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "counted": false,
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x$ عدد صناديق البلاط و $y$ عدد منصّات الطوب",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$x$ كتلة الطوب و $y$ كتلة البلاط",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$x$ عدد منصّات الطوب و $y$ عدد صناديق البلاط",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارجع إلى نصّ الوضعيّة : ماذا يُحمَّل على الشاحنة أو يُشترى ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اربط كلّ حرف بالكمّية التي يُضرب فيها العدد المقابل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد الذي يُضرب في الحرف هو كتلة (أو ثمن) الوحدة الواحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "اخترت الجواب الصحيح .",
+        "incorrect": "اربط كلّ حرف بالكمّية التي يتكرّر عددها في الوضعيّة."
+      },
+      "solution": {
+        "lines": [
+          "الحرف يرمز إلى عدد الوحدات : هو العدد الذي يُضرب في كتلة (أو ثمن) الوحدة الواحدة ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل المتباينة $3400+120x+75y<5800$ صحيحة من أجل $x=15$ و $y=8$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بالقيمة المعطاة في الطرف الأوّل ثمّ في الطرف الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة، مع إنجاز الضرب قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الناتجين بالرمز المكتوب، وانتبه إلى حالة التساوي : هل يقبلها الرمز ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "لا : المتباينة خاطئة .",
+        "incorrect": "عوّض الحرف في الطرفين، احسب كلّ طرف ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل : $3400+120\\times 15+75\\times 8=5800$ .",
+          "الطرف الثاني : $5800$ .",
+          "$5800<5800$ : المقارنة خاطئة، فالمتباينة خاطئة ."
+        ]
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل المتباينة $3400+120x+75y<5800$ صحيحة من أجل $x=9$ و $y=16$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بالقيمة المعطاة في الطرف الأوّل ثمّ في الطرف الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كلّ طرف على حدة، مع إنجاز الضرب قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الناتجين بالرمز المكتوب، وانتبه إلى حالة التساوي : هل يقبلها الرمز ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "نعم : المتباينة صحيحة .",
+        "incorrect": "عوّض الحرف في الطرفين، احسب كلّ طرف ثمّ قارن الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "الطرف الأوّل : $3400+120\\times 9+75\\times 16=5680$ .",
+          "الطرف الثاني : $5800$ .",
+          "$5680<5800$ : المقارنة صحيحة، فالمتباينة صحيحة ."
+        ]
+      },
+      "timeSeconds": 70
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "الحالة $1$ : $x=10$ و $y=15$ ؛ الحالة $2$ : $x=15$ و $y=8$ ؛ الحالة $3$ : $x=9$ و $y=16$ . في أيّ حالة تعبر الشاحنة الجسر ؟ اختر الإجابة الصحيحة :",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "في الحالات كلّها",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IKHTIBAR-BOUNDARY"
+        },
+        {
+          "id": "B",
+          "content": "في الحالة $1$ فقط",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "في الحالة $2$ فقط",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "في الحالتين $1$ و $3$ فقط",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اختبر كلّ حالة بتعويض قيمتي الحرفين في الطرفين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الطرفين ثمّ قارن بالرمز المكتوب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عندما يكون الطرفان متساويين انظر هل يقبل الرمز التساوي."
+        }
+      ],
+      "feedback": {
+        "correct": "في الحالتين $1$ و $3$ فقط .",
+        "incorrect": "اختبر كلّ حالة على حدة وانتبه إلى حالة تساوي الطرفين."
+      },
+      "solution": {
+        "lines": [
+          "الحالة $1$ : $5725<5800$ ← صحيحة ، فالمرور ممكن .",
+          "الحالة $2$ : $5800<5800$ ← خاطئة ، فلا مرور .",
+          "الحالة $3$ : $5680<5800$ ← صحيحة ، فالمرور ممكن .",
+          "الجواب : في الحالتين $1$ و $3$ فقط ."
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "احسب قيمة $3400+120x+75y$ من أجل $x=10$ و $y=15$ .",
+      "learningPoints": [
+        {
+          "code": "2am_ikhtibar-musawat-mutabayina_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "5725",
+      "misconceptionSignatures": [
+        {
+          "value": "5950",
+          "id": "MISC-IKHTIBAR-SWAP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بقيمته، وضع الأعداد السالبة بين قوسين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الضرب صراحة : العدد المكتوب قبل الحرف يضرب قيمته، ولا يُكتب بجانبها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز الضرب أوّلا ثمّ الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "القيمة هي $5725$ .",
+        "incorrect": "عوّض الحرف بقيمته ثمّ أنجز العمليّات بحسب الأولويّة."
+      },
+      "solution": {
+        "lines": [
+          "$3400+120\\times 10+75\\times 15=5725$ ."
+        ],
+        "result": "5725"
+      },
+      "work": "optional",
+      "timeSeconds": 70
+    }
+  ]
+}

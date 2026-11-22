@@ -1,0 +1,128 @@
+{
+  "id": "ex-4am-dala-khattiya-l2-008",
+  "lessonCode": "dala-khattiya",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2025 — نقطتان من تمثيل دالة خطية",
+    "estimatedMinutes": 5,
+    "tags": [
+      "تعيين دالة خطية",
+      "صورة عدد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_dala-khattiya_P3",
+      "modelledOn": "BEM 2025 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2025",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعتبر النقطتين $A(6 ; 4)$ و $B(345 ; 230)$ . نريد أن نبيّن أنهما تنتميان إلى التمثيل البياني لدالة خطية $f$ ، أي أن $f(6) = 4$ و $f(345) = 230$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن الدالة الخطية $f$ التي تحقق $f(6) = 4$ .",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "2/3",
+      "misconceptionSignatures": [
+        {
+          "value": "1,5",
+          "id": "MISC-KHATTIYA-MUAMIL-MAQLUB"
+        },
+        {
+          "value": "-2/3",
+          "id": "MISC-KHATTIYA-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$f$ دالة خطية: $f(x) = ax$ ، و $f(6) = 4$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب المعادلة $a \\times 6 = 4$ ثم حلّها."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{4}{6} = \\dfrac{2}{3}$ ، إذن $f(x) = \\dfrac{2}{3}x$ .",
+        "incorrect": "المعامل هو الصورة مقسومة على العدد (وليس العكس)، مع الانتباه إلى الإشارة."
+      },
+      "solution": {
+        "lines": [
+          "$f$ دالة خطية، إذن $f(x) = ax$ .",
+          "$f(6) = 4$ معناه $a \\times 6 = 4$",
+          "$a = \\dfrac{4}{6} = \\dfrac{2}{3}$"
+        ],
+        "result": "f(x) = \\dfrac{2}{3}x"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $f(345)$ ، ثم استنتج.",
+      "learningPoints": [
+        {
+          "code": "4am_dala-khattiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "230",
+      "misconceptionSignatures": [
+        {
+          "value": "517,5",
+          "id": "MISC-KHATTIYA-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل عبارة $f(x)$ التي وجدتها في السؤال السابق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الجداء ثم قارن بترتيب النقطة $B$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(345) = \\dfrac{2}{3} \\times 345 = 230$ : النقطتان $A$ و $B$ من تمثيل $f$ .",
+        "incorrect": "عوّض $x$ بفاصلة $B$ في عبارة $f(x)$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(345) = \\dfrac{2}{3} \\times 345 = \\dfrac{690}{3} = 230$",
+          "إذن $f(6) = 4$ و $f(345) = 230$ : النقطتان $A$ و $B$ تنتميان إلى التمثيل البياني للدالة الخطية $f$ ."
+        ],
+        "result": "f(345) = 230"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

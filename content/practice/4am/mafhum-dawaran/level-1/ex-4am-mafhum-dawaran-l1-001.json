@@ -1,0 +1,331 @@
+{
+  "id": "ex-4am-mafhum-dawaran-l1-001",
+  "lessonCode": "mafhum-dawaran",
+  "level": 1,
+  "metadata": {
+    "title": "تمرين 2 — أربعة مثلثات",
+    "estimatedMinutes": 2,
+    "tags": [
+      "الدوران",
+      "الاتجاه"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-2",
+      "page": 158,
+      "section": "صورة شكل بدوران",
+      "number": 2
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 158): الشكل الآتي يتكون من أربعة مثلثات. الدوران الذي مركزه O و زاويته $90^\\circ$ يحوّل المثلث ① إلى المثلث ② في الاتجاه غير المباشر.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "①": [
+          -4,
+          0
+        ],
+        "②": [
+          0,
+          4
+        ],
+        "③": [
+          4,
+          0
+        ],
+        "④": [
+          0,
+          -4
+        ],
+        "b01": [
+          -2,
+          -0.8
+        ],
+        "b02": [
+          -2,
+          0.8
+        ],
+        "b11": [
+          -0.8,
+          2
+        ],
+        "b12": [
+          0.8,
+          2
+        ],
+        "b21": [
+          2,
+          0.8
+        ],
+        "b22": [
+          2,
+          -0.8
+        ],
+        "b31": [
+          0.8,
+          -2
+        ],
+        "b32": [
+          -0.8,
+          -2
+        ],
+        "e1": [
+          -2,
+          0
+        ],
+        "e2": [
+          2,
+          0
+        ],
+        "e3": [
+          0,
+          2
+        ],
+        "e4": [
+          0,
+          -2
+        ]
+      },
+      "hidden": [
+        "b01",
+        "b02",
+        "b11",
+        "b12",
+        "b21",
+        "b22",
+        "b31",
+        "b32",
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "polygons": [
+        {
+          "points": [
+            "①",
+            "b01",
+            "b02"
+          ],
+          "tone": "amber"
+        },
+        {
+          "points": [
+            "②",
+            "b11",
+            "b12"
+          ],
+          "tone": "amber"
+        },
+        {
+          "points": [
+            "③",
+            "b21",
+            "b22"
+          ],
+          "tone": "amber"
+        },
+        {
+          "points": [
+            "④",
+            "b31",
+            "b32"
+          ],
+          "tone": "amber"
+        }
+      ],
+      "segments": [
+        [
+          "e1",
+          "e2"
+        ],
+        [
+          "e3",
+          "e4"
+        ],
+        {
+          "from": "①",
+          "to": "b01",
+          "tone": "amber"
+        },
+        {
+          "from": "b01",
+          "to": "b02",
+          "tone": "amber"
+        },
+        {
+          "from": "b02",
+          "to": "①",
+          "tone": "amber"
+        },
+        {
+          "from": "②",
+          "to": "b11",
+          "tone": "amber"
+        },
+        {
+          "from": "b11",
+          "to": "b12",
+          "tone": "amber"
+        },
+        {
+          "from": "b12",
+          "to": "②",
+          "tone": "amber"
+        },
+        {
+          "from": "③",
+          "to": "b21",
+          "tone": "amber"
+        },
+        {
+          "from": "b21",
+          "to": "b22",
+          "tone": "amber"
+        },
+        {
+          "from": "b22",
+          "to": "③",
+          "tone": "amber"
+        },
+        {
+          "from": "④",
+          "to": "b31",
+          "tone": "amber"
+        },
+        {
+          "from": "b31",
+          "to": "b32",
+          "tone": "amber"
+        },
+        {
+          "from": "b32",
+          "to": "④",
+          "tone": "amber"
+        }
+      ],
+      "rightAngles": [
+        [
+          "e2",
+          "O",
+          "e3"
+        ]
+      ],
+      "labels": {
+        "O": "se"
+      },
+      "ariaLabel": "صليب: قطعتان متعامدتان في O، وفي طرف كل ذراع مثلث رأسه نحو الخارج: المثلث 1 يسارا، 2 أعلى، 3 يمينا، 4 أسفل",
+      "maxWidth": 380
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما هي صورة المثلث ② بهذا الدوران؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "المثلث ③",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "المثلث ①",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ITTIJAH"
+        },
+        {
+          "id": "C",
+          "content": "المثلث ④",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-TANAZUR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث ① على اليسار و ② في الأعلى: الحركة من اليسار إلى الأعلى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الاتجاه المباشر هو عكس اتجاه حركة عقارب الساعة ↺، وغير المباشر في اتجاهها ↻."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أكمل ربع دورة أخرى في نفس الاتجاه انطلاقا من ②."
+        }
+      ],
+      "feedback": {
+        "correct": "ربع دورة في اتجاه عقارب الساعة تنقل الأعلى إلى اليمين: صورة ② هي ③.",
+        "incorrect": "الاتجاه غير المباشر هو اتجاه عقارب الساعة: من الأعلى نذهب إلى اليمين."
+      },
+      "difficulty": 1
+    },
+    {
+      "id": "q2",
+      "statement": "ما هي صورة المثلث ④ بهذا الدوران؟",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "المثلث ③",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-ITTIJAH"
+        },
+        {
+          "id": "B",
+          "content": "المثلث ①",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "المثلث ②",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-TANAZUR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث ④ في الأسفل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الاتجاه المباشر هو عكس اتجاه حركة عقارب الساعة ↺، وغير المباشر في اتجاهها ↻."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "دوّر ربع دورة من الأسفل في اتجاه عقارب الساعة."
+        }
+      ],
+      "feedback": {
+        "correct": "من الأسفل، ربع دورة في اتجاه عقارب الساعة تصل إلى اليسار: صورة ④ هي ①.",
+        "incorrect": "في اتجاه عقارب الساعة، بعد الأسفل يأتي اليسار."
+      },
+      "difficulty": 1
+    }
+  ]
+}

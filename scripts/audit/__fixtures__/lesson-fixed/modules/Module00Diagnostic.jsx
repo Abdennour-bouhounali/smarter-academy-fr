@@ -1,4 +1,3 @@
-import React from 'react';
 import { PrerequisiteDiagnostic } from '../../../../../apps/web/src/lessons/common/kit';
 
 const QUESTIONS = [

@@ -1,0 +1,231 @@
+{
+  "id": "ex-2am-muqarana-kasrayn-l3-003",
+  "lessonCode": "muqarana-kasrayn",
+  "level": 3,
+  "metadata": {
+    "title": "كسور مرتّبة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "ترتيب كسور",
+      "متتالية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-34",
+      "page": 34,
+      "section": "أتعمّق",
+      "number": 34
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "06"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الكسور : $\\dfrac{1}{2}$ ؛ $\\dfrac{3}{4}$ ؛ $\\dfrac{7}{8}$ ؛ $\\dfrac{15}{16}$ ؛ …"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما الكسر الذي يلي $\\dfrac{15}{16}$ في هذه المتتالية ؟",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "31/32",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن بين كلّ حدّ والحدّ الذي يليه : ماذا يحدث للمقام ؟ وللبسط ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كلّ مقام هو ضعف المقام السابق ، وكلّ حدّ ينقصه جزء واحد حتّى يبلغ $1$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{31}{32}$ .",
+        "incorrect": "ابحث عن القاعدة التي تنتقل بها من حدّ إلى الذي يليه ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$2 \\times 16 = 32$ هو المقام الجديد ، والبسط ينقصه جزء واحد من المقام .",
+          "$\\dfrac{31}{32}$ ."
+        ],
+        "result": "\\dfrac{31}{32}"
+      },
+      "work": "optional",
+      "timeSeconds": 100
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "رتّب الكسور التالية تصاعديًّا : $\\dfrac{15}{16}$ ؛ $\\dfrac{1}{2}$ ؛ $\\dfrac{7}{8}$ ؛ $\\dfrac{3}{4}$ ؛ $\\dfrac{31}{32}$ .",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{1}{2} < \\dfrac{3}{4} < \\dfrac{7}{8} < \\dfrac{31}{32} < \\dfrac{15}{16}$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{3}{4} < \\dfrac{1}{2} < \\dfrac{7}{8} < \\dfrac{15}{16} < \\dfrac{31}{32}$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{1}{2} < \\dfrac{3}{4} < \\dfrac{7}{8} < \\dfrac{15}{16} < \\dfrac{31}{32}$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{31}{32} < \\dfrac{15}{16} < \\dfrac{7}{8} < \\dfrac{3}{4} < \\dfrac{1}{2}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-REVERSED"
+        }
+      ],
+      "answerFormat": "اختر الترتيب الصحيح",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما مقامات هذه الكسور ؟ هل يقسم أحدها الآخر ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الكسور كلّها بالمقام الأكبر ثمّ قارن بين البسوط ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى جهة الترتيب المطلوبة : الأصغر أوّلًا في الترتيب التصاعدي والأكبر أوّلًا في التنازلي ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1}{2} < \\dfrac{3}{4} < \\dfrac{7}{8} < \\dfrac{15}{16} < \\dfrac{31}{32}$ .",
+        "incorrect": "وحّد المقامات ثمّ رتّب البسوط في الجهة المطلوبة وأعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "نكتب الكسور بالمقام نفسه ($32$) : $\\dfrac{15}{16} = \\dfrac{30}{32}$ ، $\\dfrac{1}{2} = \\dfrac{16}{32}$ ، $\\dfrac{7}{8} = \\dfrac{28}{32}$ ، $\\dfrac{3}{4} = \\dfrac{24}{32}$ ، $\\dfrac{31}{32}$ .",
+          "نرتّب البسوط تصاعديًّا : $16 < 24 < 28 < 30 < 31$ .",
+          "إذن : $\\dfrac{1}{2} < \\dfrac{3}{4} < \\dfrac{7}{8} < \\dfrac{15}{16} < \\dfrac{31}{32}$ ."
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "قارن بين $\\dfrac{31}{32}$ والعدد $1$ :",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{31}{32} < 1$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{31}{32} > 1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUQKASR-ONEWRONG"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع الكسر أمام العدد المعطى : اكتب العدد كسرًا مقامه مقام الكسر ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العدد على شكل كسر له المقام نفسه ثمّ قارن بين البسطين ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن بين البسطين بعد توحيد المقامين ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{31}{32} < 1$ .",
+        "incorrect": "اختر طريقة المقارنة المناسبة للحالة ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "العدد $1 = \\dfrac{32}{32}$ .",
+          "البسط أصغر من المقام : $31 < 32$ ، إذن $\\dfrac{31}{32} < 1$ ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "علّل أنّ كلّ حدود المتتالية أصغر من $1$ وأنّها مرتّبة ترتيبًا تصاعديًّا .",
+      "learningPoints": [
+        {
+          "code": "2am_muqarana-kasrayn_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا ، ثمّ اضغط «سجّل إجابتي» لتطّلع على الحلّ النموذجي .",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب جملة أو جملتين : الطريقة المستعملة ثمّ المقارنة التي تدعمها ."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحلّ النموذجي .",
+        "incorrect": "قارن تبريرك بالحلّ النموذجي : الطريقة ثمّ المقارنة التي تدعمها ."
+      },
+      "solution": {
+        "lines": [
+          "في كلّ حدّ البسط أصغر من المقام بوحدة واحدة ، فهو أصغر من $1$ .",
+          "بتوحيد المقامات : $\\dfrac{1}{2} = \\dfrac{16}{32} < \\dfrac{3}{4} = \\dfrac{24}{32} < \\dfrac{7}{8} = \\dfrac{28}{32} < \\dfrac{15}{16} = \\dfrac{30}{32} < \\dfrac{31}{32}$ ، فهي تتزايد ."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

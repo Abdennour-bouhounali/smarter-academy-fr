@@ -1,0 +1,222 @@
+{
+  "id": "ex-4am-tayin-pgcd-l5-008",
+  "lessonCode": "tayin-pgcd",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2022 — هدايا اليوم العالمي للطفولة بقسنطينة",
+    "estimatedMinutes": 14,
+    "tags": [
+      "PGCD",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tayin-pgcd_P1",
+      "modelledOn": "BEM 2022 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "بمناسبة اليوم العالمي للطفولة، جمعت جمعية ثقافية بقسنطينة 135 كتاب تلوين و 105 علب أقلام ملوّنة، وتريد تجميعها في هدايا متماثلة من حيث النوع والعدد (أي كل هدية تحتوي على نفس عدد الكتب ونفس عدد العلب) دون أن يبقى أي شيء، لتوزيعها على رياض الأطفال.\n• ثمن كتاب التلوين 180DA وثمن علبة الأقلام 250DA.\n• تغليف الهدية الواحدة يكلّف 300DA.\n• تبرّع محسن للجمعية بمبلغ 60000DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما هو أكبر عدد من الهدايا التي يمكن تكوينها ؟",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (عدد الهدايا)",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        },
+        {
+          "value": "9",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العدد المطلوب يقسم 135 و 105 معًا: اكتب قائمة قواسم كل منهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استخرج القواسم المشتركة: الأعداد الموجودة في القائمتين معًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القاسم المشترك الأكبر هو أكبر القواسم المشتركة، لا أيّ واحد منها."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة للعددين 135 و 105 هي 1 ، 3 ، 5 ، 15، وأكبرها 15.",
+        "incorrect": "اكتب قائمتي القواسم كاملتين، ثم خذ أكبر عدد يظهر في القائمتين معًا."
+      },
+      "solution": {
+        "lines": [
+          "قواسم العدد 135 هي: 1 ، 3 ، 5 ، 9 ، 15 ، 27 ، 45 ، 135",
+          "قواسم العدد 105 هي: 1 ، 3 ، 5 ، 7 ، 15 ، 21 ، 35 ، 105",
+          "القواسم المشتركة للعددين 135 و 105 هي: 1 ، 3 ، 5 ، 15",
+          "أكبرها هو 15، إذن أكبر عدد ممكن هو:"
+        ],
+        "result": "PGCD(135 ; 105) = 15"
+      },
+      "work": "optional",
+      "timeSeconds": 330
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "lead": "ما هو عدد كتب التلوين وعدد علب الأقلام في كل هدية ؟",
+      "statement": "عدد كتب التلوين في كل هدية:",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع كتب التلوين كلها بالتساوي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد الكلي على العدد الذي وجدته في السؤال السابق."
+        }
+      ],
+      "feedback": {
+        "correct": "$135 \\div 15 = 9$",
+        "incorrect": "اقسم العدد الكلي (135) على أكبر عدد وجدته، لا العكس."
+      },
+      "solution": {
+        "lines": [
+          "$135 \\div 15 = 9$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ب",
+      "statement": "عدد علب الأقلام في كل هدية:",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-PGCD-HASIL-BADAL-QASIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "وزّع علب الأقلام كلها بالتساوي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم العدد الكلي على العدد الذي وجدته في السؤال السابق."
+        }
+      ],
+      "feedback": {
+        "correct": "$105 \\div 15 = 7$",
+        "incorrect": "اقسم العدد الكلي (105) على أكبر عدد وجدته، لا العكس."
+      },
+      "solution": {
+        "lines": [
+          "$105 \\div 15 = 7$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "statement": "☜ هل يكفي مبلغ المحسن لشراء الكتب والعلب وتغليف كل الهدايا ؟ أعط المبلغ المتبقي.",
+      "learningPoints": [
+        {
+          "code": "4am_tayin-pgcd_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (المبلغ بالدينار)",
+      "expectedAnswer": "4950",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب ثمن الكتب، ثم ثمن العلب، ثم تكلفة التغليف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التغليف يُحسب لكل هدية: استعمل عدد الهدايا."
+        }
+      ],
+      "feedback": {
+        "correct": "التكلفة $55050$DA، والمتبقي $4950$DA.",
+        "incorrect": "التكلفة = ثمن كل الكتب + ثمن كل العلب + تغليف كل الهدايا؛ ثم اطرحها من 60000DA."
+      },
+      "solution": {
+        "lines": [
+          "الكتب: $135 \\times 180 = 24300$DA",
+          "العلب: $105 \\times 250 = 26250$DA",
+          "التغليف: $15 \\times 300 = 4500$DA",
+          "التكلفة الكلية: $55050$DA و $55050 < 60000$ : المبلغ يكفي.",
+          "المتبقي: $60000 - 55050 = 4950$DA"
+        ],
+        "result": "4950DA"
+      },
+      "timeSeconds": 360
+    }
+  ]
+}

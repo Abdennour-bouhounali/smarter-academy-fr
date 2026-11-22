@@ -1,9 +1,10 @@
 import { describe, it, expect } from 'vitest';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 import { pruneToVisible, toggleAllVisible, toggleId } from './bulkSelectionCore';
-import { CONTENT_NOUNS, agree, countNoun } from '../components/admin/contentNouns';
+import i18n from '../i18n';
+import { CONTENT_NOUNS } from '../components/admin/contentNouns';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const webRoot = resolve(here, '../..');
@@ -104,13 +105,34 @@ describe('« tout sélectionner »', () => {
  * d'environnement DOM.
  */
 describe('le branchement des actions groupées', () => {
+  // La liste des MODULES n'en fait plus partie (2026-11-11) : un module n'a
+  // pas d'état propre, il suit sa leçon — voir le test dédié plus bas.
+  // La page « التمارين » n'en fait plus partie non plus (2026-11-11) : elle
+  // est organisée PAR LEÇON — voir le test dédié plus bas.
   const PAGES = {
     'src/pages/admin/content/Lessons.jsx': 'lesson',
-    'src/pages/admin/content/Modules.jsx': 'module',
-    'src/pages/admin/content/Exercises.jsx': 'exercise',
   };
 
-  it('les trois listes de contenu portent la sélection et la barre d’actions', () => {
+  it('la page « التمارين » change la banque d’une leçon d’un seul geste, pas exercice par exercice', () => {
+    const source = read('src/pages/admin/content/Exercises.jsx');
+    expect(source).toContain('fetchLessons');
+    expect(source).toContain('withExercises: 1');
+    expect(source).toContain('ExerciseBankControl');
+    expect(source).not.toContain('PublicationControl');
+    expect(source).not.toContain('BulkActionBar');
+  });
+
+  it('il n’y a plus de page « المحاور » : un module suit sa leçon (2026-11-11)', () => {
+    expect(existsSync(resolve(webRoot, 'src/pages/admin/content/Modules.jsx'))).toBe(false);
+    expect(read('src/data/adminNavigation.js')).not.toContain('contenu/modules');
+    expect(read('src/App.jsx')).not.toContain('contenu/modules');
+    expect(read('src/services/admin/contentService.js')).not.toContain('/admin/content/modules');
+    const detail = read('src/pages/admin/content/LessonDetail.jsx');
+    expect(detail).not.toContain('type="module"');
+    expect(detail).not.toContain('m.publicationStatus');
+  });
+
+  it('les listes de contenu portent la sélection et la barre d’actions', () => {
     for (const page of Object.keys(PAGES)) {
       const source = read(page);
       expect(source, page).toContain('useBulkSelection');
@@ -134,11 +156,7 @@ describe('le branchement des actions groupées', () => {
    * route — un bouton qui ne peut qu'échouer.
    */
   it('le palier en lot n’est proposé que là où il existe à l’unité', () => {
-    expect(read('src/pages/admin/content/Modules.jsx')).toContain('withTier: false');
     expect(read('src/pages/admin/content/Lessons.jsx')).toContain('withTier: true');
-    expect(read('src/pages/admin/content/Exercises.jsx')).toContain('withTier: true');
-    // « Hériter de la leçon » n'a de sens que pour un exercice.
-    expect(read('src/pages/admin/content/Exercises.jsx')).toContain('withTierInherit: true');
     expect(read('src/pages/admin/content/Lessons.jsx')).not.toContain('withTierInherit');
   });
 
@@ -196,76 +214,98 @@ describe('le branchement des actions groupées', () => {
       expect(read(page), page).toContain('PublicationControl');
     }
     expect(read('src/pages/admin/content/Lessons.jsx')).toContain('TierControl');
-    expect(read('src/pages/admin/content/Exercises.jsx')).toContain('TierControl');
+    // Le palier d'UN exercice se règle sur la fiche de sa leçon.
+    expect(read('src/pages/admin/content/LessonDetail.jsx')).toContain('TierControl');
   });
 
   /**
    * La case à cocher n'apparaît QUE là où une action groupée existe. Les
-   * listes d'élèves, de signalements et d'abonnements n'en ont pas : une case
-   * qui ne mène à rien est une promesse non tenue.
+   * listes de signalements et d'abonnements n'en ont pas : une case qui ne
+   * mène à rien est une promesse non tenue. (Les élèves en ont une depuis
+   * « تفعيل عرض » en lot — voir le test suivant.)
    */
   it('la sélection reste optionnelle dans DataTable', () => {
     const table = read('src/components/admin/ui/DataTable.jsx');
     expect(table).toContain('{selection && (');
 
     for (const page of [
-      'src/pages/admin/students/StudentList.jsx',
       'src/pages/admin/reports/ReportList.jsx',
     ]) {
       expect(read(page), page).not.toContain('selection={');
     }
   });
+
+  it('la liste des élèves active une offre par ligne ET en lot, par la route unitaire', () => {
+    const page = read('src/pages/admin/students/StudentList.jsx');
+    expect(page).toContain('PlanActivateControl');
+    expect(page).toContain('BulkActionBar');
+    expect(page).toContain('buildPlanBulkActions');
+    // Sans offre activable, aucune case : elle ne mènerait à rien.
+    expect(page).toContain('selection={plans.length ? selection : undefined}');
+
+    // Le lot n'a pas de route à lui : il rappelle le geste unitaire, élève par
+    // élève, pour garder la validation et le journal du serveur.
+    const bulk = read('src/components/admin/commercial/bulkPlanActions.jsx');
+    expect(bulk).toContain("activatePlan(token, 'students', row.id, { planId: plan.id })");
+    expect(bulk).toContain('statusById');
+  });
 });
 
 /**
- * L'accord en français.
+ * LE NOMBRE, EN ARABE.
  *
- * Écrit après l'avoir vu à l'écran : l'interface annonçait « 24 leçons
- * sélectionnés » et « 1 leçon sélectionné ». « leçon » est féminin, et le
- * participe se recopiait dans cinq gabarits — donc la faute aussi.
+ * L'ancienne version de ce bloc verifiait l'accord FRANCAIS : « 24 lecons
+ * selectionnees » contre « 24 lecons selectionnes ». L'interface est arabe
+ * desormais, et l'arabe ne se decline pas en deux formes mais en SIX
+ * categories (`zero`, `one`, `two`, `few`, `many`, `other`) — c'est
+ * `Intl.PluralRules('ar-DZ')` qui choisit, jamais une concatenation. Ces
+ * tests verifient donc que le catalogue porte bien les six formes, et que le
+ * nom vient toujours du TYPE.
  */
-describe('l’accord du nom du contenu', () => {
-  it('accorde en genre ET en nombre', () => {
-    expect(agree('sélectionné', 1, true)).toBe('sélectionnée');
-    expect(agree('sélectionné', 24, true)).toBe('sélectionnées');
-    expect(agree('sélectionné', 1, false)).toBe('sélectionné');
-    expect(agree('sélectionné', 2, false)).toBe('sélectionnés');
+describe('le nom compte du contenu', () => {
+  const noun = (key, count) => i18n.t(`bulk.noun.${key}`, { ns: 'admin', count });
+
+  it('decline chaque type dans les categories de pluriel arabes', () => {
+    for (const key of ['lesson', 'module', 'exercise', 'item']) {
+      // Une forme par categorie, toutes non vides : une cle manquante revient
+      // telle quelle et se verrait a l'ecran.
+      for (const count of [1, 2, 3, 11, 100]) {
+        const rendered = noun(key, count);
+        expect(rendered, `${key}/${count}`).not.toContain('bulk.noun');
+        expect(rendered, `${key}/${count}`).not.toBe('');
+      }
+    }
   });
 
-  it('connaît le genre des trois types de contenu', () => {
-    // « leçon » est le seul féminin : c'est LUI qui produisait la faute.
-    expect(CONTENT_NOUNS.lesson.feminine).toBe(true);
-    expect(CONTENT_NOUNS.module.feminine).toBe(false);
-    expect(CONTENT_NOUNS.exercise.feminine).toBe(false);
+  it('distingue le singulier, le duel et le pluriel', () => {
+    // Le duel est ce qu'aucune regle francaise ne sait produire : « درسان »
+    // ne s'obtient pas en ajoutant « s » a « درس ».
+    expect(noun('lesson', 1)).not.toBe(noun('lesson', 2));
+    expect(noun('lesson', 2)).not.toBe(noun('lesson', 3));
+    expect(noun('lesson', 3)).not.toBe(noun('lesson', 11));
   });
 
-  it('compte au singulier comme au pluriel', () => {
-    expect(countNoun(1, CONTENT_NOUNS.lesson)).toBe('1 leçon');
-    expect(countNoun(24, CONTENT_NOUNS.lesson)).toBe('24 leçons');
-    expect(countNoun(1, CONTENT_NOUNS.exercise)).toBe('1 exercice');
+  it('connait les trois types de contenu, par leur cle', () => {
+    expect(CONTENT_NOUNS.lesson.key).toBe('lesson');
+    expect(CONTENT_NOUNS.module.key).toBe('module');
+    expect(CONTENT_NOUNS.exercise.key).toBe('exercise');
   });
 
-  it('produit les phrases exactes que l’administrateur lit', () => {
-    const l = CONTENT_NOUNS.lesson;
-    expect(`${countNoun(1, l)} ${agree('sélectionné', 1, l.feminine)}`)
-      .toBe('1 leçon sélectionnée');
-    expect(`${countNoun(24, l)} ${agree('sélectionné', 24, l.feminine)}`)
-      .toBe('24 leçons sélectionnées');
+  it('n\'expose plus d\'accord grammatical francais', async () => {
+    const mod = await import('../components/admin/contentNouns');
 
-    const m = CONTENT_NOUNS.module;
-    expect(`${countNoun(2, m)} ${agree('sélectionné', 2, m.feminine)}`)
-      .toBe('2 modules sélectionnés');
+    expect(mod.agree).toBeUndefined();
+    expect(mod.countNoun).toBeUndefined();
   });
 
   /**
-   * Le nom vient du TYPE, jamais de l'appelant : c'est ce qui empêche une
-   * quatrième page de réintroduire la faute en recopiant deux chaînes.
+   * Le nom vient du TYPE, jamais de l'appelant : c'est ce qui empeche une
+   * quatrieme page de reintroduire un nombre mal accorde en recopiant deux
+   * chaines.
    */
-  it('les pages ne recopient plus le nom à la main', () => {
+  it('les pages ne recopient plus le nom a la main', () => {
     for (const page of [
       'src/pages/admin/content/Lessons.jsx',
-      'src/pages/admin/content/Modules.jsx',
-      'src/pages/admin/content/Exercises.jsx',
     ]) {
       expect(read(page), page).toContain('CONTENT_NOUNS.');
       expect(read(page), page).not.toContain('nounPlural');

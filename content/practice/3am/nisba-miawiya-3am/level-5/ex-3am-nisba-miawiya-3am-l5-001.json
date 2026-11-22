@@ -1,0 +1,338 @@
+{
+  "id": "ex-3am-nisba-miawiya-3am-l5-001",
+  "lessonCode": "nisba-miawiya-3am",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — المحمية الوطنية للطيور",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "معادلة",
+      "نسبة مئوية",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 3,
+      "file": "3am-s3-57",
+      "exercise": 4
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: محمية وطنية أرض مستطيلة الشكل، طولها يمثّل $3$ أمثال عرضها، ومحيطها $240\\,\\mathrm{km}$ .\nالجزء الثاني: يرعى حرّاس المحمية بأمانة $1\\,600$ طائر، وأظهر الإحصاء أنّ $25\\,\\%$ منها صقور و $35\\,\\%$ ببغاوات، وأنّ عدد الطيور الصغيرة $192$ طائرا. تشترط هيئة حماية الطبيعة ألّا تقلّ نسبة الصقور عن $20\\,\\%$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "إذا كان عرض المحمية $w$ ، فما قيمة $w$ بالكيلومتر؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "30",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كل سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بالتعويض أو بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$30$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "المحيط $2(3w + w) = 8w = 240$ ، إذن $w = 240 \\div 8 = 30$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما طول المحمية بالكيلومتر؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "90",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب في هذه الخطوة؟ وما الدرس الذي تعود إليه؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طبّق قاعدة الدرس المناسب، خطوة واحدة في كل سطر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بالتعويض أو بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$90$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الطول $3 \\times 30 = 90\\,\\mathrm{km}$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "ما عدد الصقور؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "400",
+      "misconceptionSignatures": [
+        {
+          "value": "16",
+          "id": "MISC-NISBA3-DIV100-ONLY"
+        },
+        {
+          "value": "40000",
+          "id": "MISC-NISBA3-MULT-T"
+        },
+        {
+          "value": "1625",
+          "id": "MISC-NISBA3-ADD-T"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نأخذ منه النسبة؟ وما هي هذه النسبة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نسبة مئوية من عدد: نضرب هذا العدد في النسبة مقسومة على مئة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب النسبة على شكل كسر مقامه مئة، ثم احسب جداء العدد في هذا الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$400$ .",
+        "incorrect": "لحساب نسبة مئوية من عدد نضرب العدد في النسبة مقسومة على مئة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$25\\,\\%$ من $1\\,600$ هي $1\\,600 \\times \\dfrac{25}{100} = 400$ ."
+        ],
+        "result": "1\\,600 \\times \\dfrac{25}{100} = 400"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "ما عدد الببغاوات؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (الفاصلة مقبولة)",
+      "expectedAnswer": "560",
+      "misconceptionSignatures": [
+        {
+          "value": "16",
+          "id": "MISC-NISBA3-DIV100-ONLY"
+        },
+        {
+          "value": "56000",
+          "id": "MISC-NISBA3-MULT-T"
+        },
+        {
+          "value": "1635",
+          "id": "MISC-NISBA3-ADD-T"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العدد الذي نأخذ منه النسبة؟ وما هي هذه النسبة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نسبة مئوية من عدد: نضرب هذا العدد في النسبة مقسومة على مئة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب النسبة على شكل كسر مقامه مئة، ثم احسب جداء العدد في هذا الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$560$ .",
+        "incorrect": "لحساب نسبة مئوية من عدد نضرب العدد في النسبة مقسومة على مئة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$35\\,\\%$ من $1\\,600$ هي $1\\,600 \\times \\dfrac{35}{100} = 560$ ."
+        ],
+        "result": "1\\,600 \\times \\dfrac{35}{100} = 560"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ج",
+      "statement": "ما النسبة المئوية للطيور الصغيرة؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "النسبة المئوية (بدون الرمز %)",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الجزء؟ وما الكلّ الذي نقارن به؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نبحث عن العدد الذي يجعل الكسر «الجزء على الكلّ» مساويا للكسر «هذا العدد على مئة»."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع الكلّ تحت مئة في جدول تناسبية وضع الجزء تحت العدد المجهول، ثم أتمّم."
+        }
+      ],
+      "feedback": {
+        "correct": "$12$ .",
+        "incorrect": "النسبة المئوية هي العدد الذي يساوي الكسر «الجزء على الكلّ» حين نكتبه مقامه مئة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $\\dfrac{192}{1\\,600} = \\dfrac{t}{100}$ ، فنجد $t = \\dfrac{100 \\times 192}{1\\,600} = 12$ .",
+          "إذن النسبة المئوية هي $12\\,\\%$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "د",
+      "statement": "هل تحقّق المحمية شرط الهيئة (نسبة الصقور لا تقلّ عن $20\\,\\%$) ؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيحة",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خاطئة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NISBA3-SUM-RATES"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العملية التي تنقلنا من الكمية الأصلية إلى الجديدة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن بين طريقتين: إضافة نسبة كعدد، وضرب في معامل مناسب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جرّب مثالا بأعداد بسيطة لتتأكد من الحكم."
+        }
+      ],
+      "feedback": {
+        "correct": "صحيحة .",
+        "incorrect": "القرار يُبنى على الضرب في المعامل المناسب لا على جمع النسبة كعدد؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نسبة الصقور $25\\,\\%$ وهي أكبر من $20\\,\\%$ ، فالشرط محقّق."
+        ]
+      },
+      "timeSeconds": 100
+    }
+  ]
+}

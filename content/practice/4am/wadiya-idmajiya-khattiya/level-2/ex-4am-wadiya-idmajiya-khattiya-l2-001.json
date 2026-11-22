@@ -1,0 +1,131 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-khattiya-l2-001",
+  "lessonCode": "wadiya-idmajiya-khattiya",
+  "level": 2,
+  "metadata": {
+    "title": "تمرين 32 — هل الدالة g خطية؟",
+    "estimatedMinutes": 7,
+    "tags": [
+      "دالة خطية",
+      "نشر وتبسيط"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-32",
+      "page": 75,
+      "section": "الوضعيات",
+      "number": 32,
+      "adaptedFrom": "ex-4am-wadiya-idmajiya-khattiya-l2-001"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "نعتبر الدالة $g$ المعرّفة بـ:",
+    "formulas": [
+      "g(x) = x\\sqrt{8}\\left(\\dfrac{1}{2} - x\\sqrt{2}\\right) + 8 - 16\\left(\\dfrac{x}{2} - \\sqrt{2}\\right)^2"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "انشر ثم بسّط عبارة $g(x)$ ، وأعط معامل $x^2$ فيها.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب معامل $x^2$ فقط (عدد صحيح)",
+      "expectedAnswer": "-8",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$x\\sqrt{8} \\times x\\sqrt{2} = x^2\\sqrt{16}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انشر $\\left(\\dfrac{x}{2} - \\sqrt{2}\\right)^2$ بالمتطابقة $(a - b)^2 = a^2 - 2ab + b^2$ ثم اضرب في $-16$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$g(x) = -8x^2 + 17\\sqrt{2}x - 24$ .",
+        "incorrect": "أعد النشر حدًّا حدًّا: $\\sqrt{8} = 2\\sqrt{2}$ و $\\sqrt{8} \\times \\sqrt{2} = 4$ ."
+      },
+      "solution": {
+        "lines": [
+          "$x\\sqrt{8}\\left(\\dfrac{1}{2} - x\\sqrt{2}\\right) = \\dfrac{2\\sqrt{2}}{2}x - 4x^2 = \\sqrt{2}x - 4x^2$",
+          "$\\left(\\dfrac{x}{2} - \\sqrt{2}\\right)^2 = \\dfrac{x^2}{4} - \\sqrt{2}x + 2$",
+          "$-16\\left(\\dfrac{x^2}{4} - \\sqrt{2}x + 2\\right) = -4x^2 + 16\\sqrt{2}x - 32$",
+          "$g(x) = \\sqrt{2}x - 4x^2 + 8 - 4x^2 + 16\\sqrt{2}x - 32$"
+        ],
+        "result": "g(x) = -8x^2 + 17\\sqrt{2}x - 24"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل $g$ دالة خطية؟ برّر. (في حالة الإيجاب عيّن معاملها.)",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-khattiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KHATTIYA-AFFINE"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الدالة الخطية تكتب على الشكل $x \\longmapsto ax$ فقط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انظر إلى الحدود الأخرى في العبارة المبسّطة."
+        }
+      ],
+      "feedback": {
+        "correct": "العبارة تحتوي على حد بـ $x^2$ وحد ثابت: $g$ ليست خطية.",
+        "incorrect": "دالة خطية لا تحتوي إلا على حد من الشكل $ax$ ."
+      },
+      "solution": {
+        "lines": [
+          "$g(x) = -8x^2 + 17\\sqrt{2}x - 24$ لا تكتب على الشكل $ax$ (فيها حد بـ $x^2$ وحد ثابت $-24$).",
+          "وأيضا $g(0) = -24 \\neq 0$ ، بينما صورة 0 بدالة خطية هي 0.",
+          "إذن $g$ ليست دالة خطية."
+        ],
+        "result": "الدالة g ليست خطية"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

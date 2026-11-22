@@ -1,0 +1,1424 @@
+/* « عُدّة الانطلاق » — the launch pad at night. Designed at 1280 × 720 (1000 × 740 on a 4:3 screen), zoomed to the window: nothing scrolls. Prefix lk-. */
+.lk-root {
+  position: fixed;
+  inset: 0;
+  z-index: 1250;
+  overflow: hidden;
+  color: #eef2ff;
+  font-family: 'Cairo', 'Tajawal', system-ui, sans-serif;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+  background: radial-gradient(900px 520px at 20% 110%, #4c1d95 0%, transparent 60%),
+    radial-gradient(1000px 600px at 85% -10%, #1e3a8a 0%, transparent 60%), linear-gradient(170deg, #0b1026, #151a44);
+}
+.lk-root--inline {
+  position: absolute;
+  z-index: 40;
+}
+.lk-root::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.7;
+  background-image: radial-gradient(1.5px 1.5px at 12% 18%, #fff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 31% 62%, #c7d2fe 50%, transparent 51%),
+    radial-gradient(2px 2px at 54% 12%, #fff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 71% 44%, #a5b4fc 50%, transparent 51%),
+    radial-gradient(2px 2px at 88% 76%, #fff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 44% 86%, #c7d2fe 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 6% 70%, #fff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 94% 22%, #fff 50%, transparent 51%);
+}
+.lk-root *,
+.lk-root *::before,
+.lk-root *::after {
+  box-sizing: border-box;
+}
+.lk-root h2,
+.lk-root h3,
+.lk-root h4,
+.lk-root p,
+.lk-root li,
+.lk-root button {
+  color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+.lk-root .katex {
+  white-space: nowrap;
+  font-size: 1.05em;
+}
+.lk-fit {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 17rem minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 0.9rem;
+  padding: 0.9rem 1.1rem 1rem;
+}
+
+.lk-head {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+}
+.lk-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-width: 0;
+}
+.lk-brand i {
+  font-style: normal;
+  font-size: 2rem;
+}
+.lk-brand h2 {
+  font-size: 1.4rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+.lk-brand p {
+  font-size: 0.95rem;
+  color: #a5b4fc;
+  font-weight: 700;
+  /* the lesson's title is WHOLE, on two lines when the head is narrow — never cut by an ellipsis (defects.md B5: lesson
+     6's « البحث عن القاسم المشترك الأكبر لعددين طبيعيين » lost its last word at 1024 × 768) */
+  line-height: 1.35;
+  text-wrap: balance;
+  max-width: 26rem;
+}
+.lk-head__end {
+  display: flex;
+  gap: 0.5rem;
+  /* the ✕ and the sound button stay ABOVE a card opened over the launch (the tool's revision card, `.lk-veil` at z 8):
+     a way out at every screen (GAME_WORLD.md, defects B2/B15) — the veil had covered them */
+  position: relative;
+  z-index: 9;
+}
+.lk-icon {
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 0.9rem;
+  border: 1.5px solid rgba(199, 210, 254, 0.35);
+  background: rgba(255, 255, 255, 0.06);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.lk-icon:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+.lk-fuel {
+  flex: 1;
+  max-width: 26rem;
+  height: 0.8rem;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  direction: ltr;
+  border: 1px solid rgba(199, 210, 254, 0.25);
+}
+.lk-fuel span {
+  display: block;
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #f59e0b, #5eead4);
+  transition: width 1s linear;
+}
+
+.lk-bag {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 0.9rem 0.8rem 0.4rem;
+  border-radius: 1.4rem;
+  background: rgba(15, 20, 55, 0.72);
+  border: 1.5px solid rgba(165, 180, 252, 0.28);
+  min-height: 0;
+}
+.lk-bag h3 {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #c7d2fe;
+}
+.lk-tool {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-areas: 'i t' 'c c' 'e e';
+  gap: 0.25rem 0.6rem;
+  align-items: center;
+  padding: 0.65rem 0.7rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(165, 180, 252, 0.22);
+  transition:
+    border-color 0.3s,
+    background 0.3s,
+    transform 0.3s;
+}
+.lk-tool > i {
+  grid-area: i;
+  font-style: normal;
+  font-size: 1.7rem;
+  filter: grayscale(0.9) opacity(0.6);
+  transition: filter 0.4s;
+}
+.lk-tool > div {
+  grid-area: t;
+  min-width: 0;
+}
+.lk-tool strong {
+  display: block;
+  font-size: 1.02rem;
+  font-weight: 900;
+  line-height: 1.3;
+}
+.lk-tool small {
+  font-size: 0.78rem;
+  color: #a5b4fc;
+  font-weight: 700;
+}
+.lk-tool em {
+  grid-area: e;
+  font-style: normal;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #a5b4fc;
+  min-height: 1.3rem;
+}
+.lk-tool.is-active {
+  border-color: #fbbf24;
+  background: rgba(251, 191, 36, 0.1);
+  transform: scale(1.02);
+}
+.lk-tool.is-active em {
+  color: #fde68a;
+}
+.lk-tool.is-solid {
+  border-color: #34d399;
+  background: rgba(52, 211, 153, 0.12);
+}
+.lk-tool.is-solid > i,
+.lk-tool.is-consolidate > i {
+  filter: none;
+}
+.lk-tool.is-solid em {
+  color: #6ee7b7;
+}
+.lk-tool.is-consolidate {
+  border-color: #fbbf24;
+}
+.lk-tool.is-consolidate em {
+  color: #fde68a;
+}
+.lk-tool.is-start {
+  border-color: #fb923c;
+}
+.lk-tool.is-start em {
+  color: #fdba74;
+}
+.lk-cells {
+  grid-area: c;
+  display: flex;
+  gap: 0.3rem;
+  direction: ltr;
+}
+.lk-cells b {
+  flex: 1;
+  height: 0.65rem;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.13);
+  transition:
+    background 0.35s,
+    box-shadow 0.35s;
+}
+.lk-cells b.is-on {
+  background: #5eead4;
+  box-shadow: 0 0 12px rgba(94, 234, 212, 0.8);
+  animation: lk-pop 0.45s;
+}
+.lk-robot {
+  margin-top: auto;
+  align-self: center;
+  width: 8.4rem;
+  height: auto;
+  min-height: 0;
+  flex-shrink: 1;
+}
+.lk-robot__body {
+  animation: lk-bob 2.6s ease-in-out infinite;
+  transform-origin: 80px 170px;
+}
+.lk-robot.is-glad .lk-robot__body {
+  animation: lk-hop 0.5s ease-out 2;
+}
+.lk-robot__bulb {
+  animation: lk-blink 1.8s infinite;
+}
+.lk-robot__gauge {
+  transition: width 0.4s;
+}
+.lk-robot__flame {
+  animation: lk-blink 0.18s infinite;
+}
+
+.lk-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  border-radius: 1.6rem;
+  background: rgba(15, 20, 55, 0.6);
+  border: 1.5px solid rgba(165, 180, 252, 0.28);
+  padding: 1.1rem 1.4rem;
+  overflow: hidden;
+}
+.lk-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 3rem;
+  padding: 0 1.2rem;
+  border-radius: 1rem;
+  border: 2px solid rgba(199, 210, 254, 0.45);
+  background: rgba(255, 255, 255, 0.07);
+  font-size: 1.05rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition:
+    transform 0.12s,
+    background 0.2s;
+  white-space: nowrap;
+}
+.lk-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.16);
+}
+.lk-btn:active:not(:disabled) {
+  transform: scale(0.96);
+}
+.lk-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.lk-root .lk-btn--main {
+  background: #fbbf24;
+  border-color: #fbbf24;
+  color: #1b1f4b;
+}
+.lk-root .lk-btn--main:hover:not(:disabled) {
+  background: #fcd34d;
+}
+.lk-btn--xl {
+  min-height: 3.9rem;
+  padding: 0 2.4rem;
+  font-size: 1.4rem;
+  border-radius: 1.3rem;
+  box-shadow: 0 10px 30px rgba(251, 191, 36, 0.3);
+}
+.lk-btn--ghost.is-on {
+  background: #818cf8;
+  border-color: #c7d2fe;
+}
+
+.lk-intro {
+  margin: auto;
+  display: grid;
+  justify-items: center;
+  gap: 1.1rem;
+  text-align: center;
+  max-width: 44rem;
+}
+.lk-intro h3 {
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1.5;
+}
+.lk-intro p {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #c7d2fe;
+}
+.lk-intro__rule {
+  font-size: 1.12rem !important;
+  color: #a5b4fc !important;
+}
+
+.lk-question,
+.lk-example {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  min-height: 0;
+  animation: lk-in 0.3s ease-out;
+}
+.lk-qhead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.lk-chipline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.9rem;
+  border-radius: 99px;
+  background: rgba(129, 140, 248, 0.25);
+  font-size: 1rem;
+  font-weight: 800;
+  color: #c7d2fe;
+}
+.lk-chipline.is-shop {
+  background: rgba(251, 146, 60, 0.25);
+  color: #fed7aa;
+}
+.lk-dots {
+  display: flex;
+  gap: 0.35rem;
+  direction: ltr;
+}
+.lk-dots i {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+}
+.lk-dots i.is-now {
+  background: #fbbf24;
+  box-shadow: 0 0 10px #fbbf24;
+}
+.lk-prompt {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.7;
+  text-align: center;
+  padding: 0 1rem;
+}
+.lk-gesture {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lk-qfoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.lk-qfoot--end {
+  justify-content: flex-end;
+}
+.lk-qfoot .lk-btn--main {
+  min-width: 11rem;
+  min-height: 3.4rem;
+  font-size: 1.25rem;
+}
+.lk-signal {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  font-size: 3rem;
+  font-weight: 900;
+  text-shadow: 0 6px 30px rgba(0, 0, 0, 0.7);
+  animation: lk-stamp 0.35s cubic-bezier(0.3, 1.6, 0.5, 1);
+  background: radial-gradient(closest-side, rgba(11, 16, 38, 0.82), transparent);
+}
+.lk-signal.is-good {
+  color: #6ee7b7;
+}
+.lk-signal.is-later {
+  color: #fcd34d;
+  font-size: 2.5rem;
+}
+
+.lk-write {
+  display: grid;
+  justify-items: center;
+  gap: 1.1rem;
+}
+.lk-equation {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  font-size: 2.9rem;
+  font-weight: 900;
+  line-height: 4.2rem;
+}
+.lk-equation b {
+  font-weight: 900;
+}
+.lk-slot {
+  display: grid;
+  justify-items: center;
+  gap: 0.1rem;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.lk-slot span {
+  display: grid;
+  place-items: center;
+  min-width: 5.4rem;
+  height: 4.2rem;
+  padding: 0 0.5rem;
+  border-radius: 1rem;
+  border: 3px dashed rgba(199, 210, 254, 0.6);
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 2.7rem;
+  font-weight: 900;
+  color: #5eead4;
+  line-height: 1;
+}
+.lk-slot small {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #a5b4fc;
+  line-height: 1.5;
+}
+.lk-slot.is-on span {
+  border-style: solid;
+  border-color: #fbbf24;
+  background: rgba(251, 191, 36, 0.12);
+  box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.2);
+}
+.lk-slot.is-filled span {
+  border-style: solid;
+}
+/* a fraction of a « write » question: its two terms one above the other, a real bar between them; a box inside it is
+   smaller and keeps its label for the screen reader only, so the equation stays about one box and a half high */
+.lk-frac {
+  display: inline-grid;
+  justify-items: center;
+  align-self: center;
+  gap: 0.25rem;
+  font-size: 2.4rem;
+  line-height: 2.9rem;
+}
+.lk-frac > i {
+  display: block;
+  width: 100%;
+  min-width: 3.4rem;
+  height: 0.28rem;
+  border-radius: 0.2rem;
+  background: currentColor;
+}
+.lk-frac .lk-slot span {
+  min-width: 4.4rem;
+  height: 3rem;
+  font-size: 2.2rem;
+}
+.lk-frac .lk-slot small {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.lk-equation:has(.lk-frac) {
+  align-items: center;
+}
+/* a power of a « write » question (`{ pow: [base, exponent] }`): the exponent is a real superscript, never « ^ »; a
+   fraction base stands in brackets as tall as its two terms */
+.lk-pow {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+.lk-pow > sup {
+  align-self: flex-start;
+  font-size: 0.6em;
+  font-weight: 900;
+  line-height: 1;
+  margin-inline-start: 0.12em;
+  margin-top: 0.35em;
+}
+.lk-pow__paren {
+  font-size: 1.9em;
+  font-weight: 400;
+  line-height: 1;
+  transform: scaleX(0.7);
+}
+.lk-pow .lk-frac {
+  font-size: 2.2rem;
+  line-height: 2.6rem;
+}
+.lk-keys {
+  display: grid;
+  grid-template-columns: repeat(11, 3.6rem);
+  gap: 0.45rem;
+}
+.lk-keys button {
+  height: 3.6rem;
+  border-radius: 0.9rem;
+  border: 2px solid rgba(199, 210, 254, 0.4);
+  background: rgba(255, 255, 255, 0.09);
+  font-size: 1.6rem;
+  font-weight: 900;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+.lk-keys button:active:not(:disabled) {
+  transform: scale(0.92);
+  background: rgba(94, 234, 212, 0.3);
+}
+.lk-keys button:disabled {
+  opacity: 0.4;
+}
+.lk-keys__back {
+  background: rgba(251, 146, 60, 0.2) !important;
+}
+
+.lk-sort {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 17rem minmax(0, 1fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+.lk-box {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1.3rem;
+  border: 3px solid rgba(199, 210, 254, 0.35);
+  background: rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+  min-height: 0;
+}
+.lk-box--yes {
+  border-color: rgba(94, 234, 212, 0.6);
+}
+.lk-box--no {
+  border-color: rgba(251, 146, 60, 0.6);
+}
+.lk-box__door {
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.8rem 0.6rem;
+  border: 0;
+  background: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  text-align: center;
+}
+.lk-box__door strong {
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+.lk-box__door small {
+  font-size: 0.85rem;
+  color: #a5b4fc;
+  font-weight: 700;
+}
+.lk-box--yes .lk-box__door strong {
+  color: #99f6e4;
+}
+.lk-box--no .lk-box__door strong {
+  color: #fed7aa;
+}
+.lk-box.is-open .lk-box__door:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+.lk-box__door:disabled {
+  cursor: default;
+}
+.lk-box__in {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.6rem;
+  min-height: 0;
+}
+.lk-chip {
+  padding: 0.3rem 1rem;
+  border-radius: 0.8rem;
+  border: 2px solid rgba(199, 210, 254, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 1.35rem;
+  font-weight: 900;
+  cursor: pointer;
+  animation: lk-pop 0.3s;
+}
+.lk-chip:disabled {
+  cursor: default;
+}
+.lk-hand {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 0.7rem;
+}
+.lk-card {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 8.5rem;
+  padding: 0.8rem;
+  border-radius: 1.2rem;
+  background: #eef2ff;
+  color: #1b1f4b;
+  font-size: 2.3rem;
+  font-weight: 900;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
+  animation: lk-deal 0.3s ease-out;
+  text-align: center;
+}
+.lk-card:not(.lk-card--none) {
+  cursor: grab;
+  touch-action: none;
+  position: relative;
+  z-index: 2;
+}
+.lk-card.is-drag {
+  cursor: grabbing;
+  z-index: 6;
+  animation: none;
+  box-shadow: 0 26px 50px rgba(0, 0, 0, 0.6);
+  transition: none;
+}
+.lk-box {
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s,
+    background 0.15s;
+}
+.lk-box.is-over {
+  transform: scale(1.03);
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 0 0 5px rgba(238, 242, 255, 0.55);
+}
+.lk-hand__tip {
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #a5b4fc;
+  text-align: center;
+}
+.lk-root .lk-card .katex {
+  font-size: 0.7em;
+}
+.lk-root .lk-card,
+.lk-root .lk-card * {
+  color: #1b1f4b;
+}
+/* a card that is a SENTENCE: Arabic words need less size than a number, and may take two lines — never three */
+.lk-say {
+  display: block;
+}
+.lk-card .lk-say {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-wrap: balance;
+}
+.lk-chip .lk-say {
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+.lk-chip:has(.lk-say) {
+  padding: 0.3rem 0.6rem;
+}
+/* a sentence that is a LIST (« قواسم 88: 1 ، 2 ، 4 ، 8 ، 11 ، 22 ، 43 ، 44 ، 88 », the longest `4am.m1.r02` draws): its commas
+   are glued to the number before them (families.js › LIST_SEP), so a line breaks only after one. Sized so the longest list
+   takes two lines at most — measured in Cairo Black: 1.5rem needs 231 px of card, 1.3rem 200, 1.1rem 169; the
+   card holds 246 px (17rem column) and 198 px on a 4:3 screen (14rem column) */
+.lk-card .lk-say[data-lk-list] {
+  font-size: 1.3rem;
+}
+.lk-root--narrow .lk-card .lk-say[data-lk-list] {
+  font-size: 1.1rem;
+}
+.lk-card--none {
+  background: transparent;
+  box-shadow: none;
+  border: 2px dashed rgba(199, 210, 254, 0.35);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.7;
+}
+.lk-root .lk-card--none {
+  color: #a5b4fc;
+}
+.lk-pile {
+  display: flex;
+  gap: 0.35rem;
+  height: 0.6rem;
+}
+.lk-pile i {
+  width: 2.2rem;
+  height: 0.6rem;
+  border-radius: 99px;
+  background: rgba(238, 242, 255, 0.55);
+}
+
+.lk-place {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+.lk-place svg {
+  width: 100%;
+  height: 100%;
+  max-height: 17rem;
+  touch-action: none;
+  cursor: pointer;
+  direction: ltr;
+  font-family: 'Cairo', sans-serif;
+}
+.lk-place svg.is-locked {
+  cursor: default;
+}
+.lk-flag {
+  transition: transform 0.12s ease-out;
+  outline: none;
+}
+.lk-pulse {
+  animation: lk-pulse 1.4s ease-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.lk-example__lead {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #fed7aa;
+}
+.lk-example h4 {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+.lk-example ol {
+  flex: 1;
+  min-height: 0;
+  margin: 0;
+  padding-inline-start: 1.6rem;
+  display: grid;
+  align-content: start;
+  gap: 0.55rem;
+  font-size: 1.28rem;
+  font-weight: 700;
+  line-height: 1.8;
+}
+.lk-example li {
+  animation: lk-in 0.3s ease-out;
+}
+.lk-example li::marker {
+  color: #fbbf24;
+  font-weight: 900;
+}
+
+.lk-capsule {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  min-height: 0;
+  animation: lk-in 0.3s ease-out;
+}
+.lk-chipline.is-cap {
+  background: rgba(94, 234, 212, 0.2);
+  color: #99f6e4;
+}
+.lk-capsteps {
+  display: flex;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.lk-capsteps li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.7rem 0.2rem 0.3rem;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.07);
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #a5b4fc;
+  white-space: nowrap;
+}
+.lk-capsteps b {
+  display: grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  font-size: 0.85rem;
+}
+.lk-capsteps li.is-now {
+  background: #fbbf24;
+  color: #1b1f4b;
+}
+.lk-capsteps li.is-now b {
+  background: #1b1f4b;
+  color: #fbbf24;
+}
+.lk-capsteps li.is-done {
+  color: #6ee7b7;
+}
+.lk-capsteps li.is-done b {
+  background: rgba(52, 211, 153, 0.3);
+}
+.lk-capbody {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.lk-capbody.lk-example {
+  animation: none;
+}
+.lk-caplist {
+  margin: 0;
+  padding: 1rem 2.4rem 1rem 1.4rem;
+  display: grid;
+  gap: 0.6rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.85;
+  border-radius: 1.2rem;
+  background: #fffdf2;
+  align-self: stretch;
+}
+.lk-root .lk-caplist li {
+  color: #1b1f4b;
+}
+.lk-caplist li::marker {
+  color: #f59e0b;
+}
+.lk-capbody--lab {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.1rem;
+}
+.lk-capbody--lab > i {
+  font-style: normal;
+  font-size: 4rem;
+}
+.lk-capbody--lab p {
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+.lk-capsule .lk-question {
+  animation: none;
+}
+.lk-gate {
+  margin-top: auto;
+  display: grid;
+  justify-items: center;
+  gap: 0.7rem;
+  padding: 0.9rem 1.2rem;
+  border-radius: 1.3rem;
+  background: rgba(94, 234, 212, 0.1);
+  border: 2px solid rgba(94, 234, 212, 0.55);
+}
+.lk-gate p {
+  font-size: 1.15rem;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.7;
+}
+.lk-gate .lk-btn--xl {
+  min-height: 3.5rem;
+}
+.lk-capend {
+  margin-top: auto !important;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #99f6e4;
+  animation: lk-pop 0.5s;
+}
+.lk-capend + .lk-btn--xl {
+  margin-top: 0 !important;
+}
+.lk-result {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  min-height: 0;
+  animation: lk-in 0.35s ease-out;
+}
+.lk-result__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+}
+.lk-result h3 {
+  font-size: 1.75rem;
+  font-weight: 900;
+}
+.lk-star {
+  margin-top: 0.2rem !important;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #fde68a;
+  animation: lk-pop 0.5s;
+}
+.lk-score {
+  display: grid;
+  justify-items: center;
+  gap: 0.15rem;
+  padding: 0.5rem 1.1rem;
+  border-radius: 1.1rem;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1.5px solid rgba(199, 210, 254, 0.3);
+}
+.lk-score small {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #a5b4fc;
+}
+.lk-score > b {
+  font-size: 1.9rem;
+  font-weight: 900;
+  line-height: 1.1;
+}
+.lk-cells--big {
+  width: 9rem;
+}
+.lk-cells--big b {
+  height: 0.8rem;
+}
+.lk-kit {
+  display: flex;
+  gap: 0.8rem;
+}
+.lk-kcard {
+  flex: 1;
+  display: grid;
+  justify-items: center;
+  gap: 0.1rem;
+  padding: 0.75rem 0.6rem;
+  border-radius: 1.2rem;
+  border: 2.5px solid rgba(199, 210, 254, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  text-align: center;
+}
+.lk-kcard:disabled {
+  cursor: default;
+  opacity: 1;
+}
+.lk-kcard > i {
+  font-style: normal;
+  font-size: 2.1rem;
+}
+.lk-kcard strong {
+  font-size: 1.15rem;
+  font-weight: 900;
+}
+.lk-kcard small {
+  font-size: 0.82rem;
+  color: #a5b4fc;
+  font-weight: 700;
+}
+.lk-kcard em {
+  font-style: normal;
+  font-size: 1rem;
+  font-weight: 900;
+  margin-top: 0.15rem;
+}
+.lk-kcard.is-solid {
+  border-color: #34d399;
+  background: rgba(52, 211, 153, 0.14);
+  box-shadow: 0 0 26px rgba(52, 211, 153, 0.25);
+}
+.lk-kcard.is-solid em {
+  color: #6ee7b7;
+}
+.lk-kcard.is-consolidate {
+  border-color: #fbbf24;
+}
+.lk-kcard.is-consolidate em {
+  color: #fde68a;
+}
+.lk-kcard.is-start {
+  border-color: #fb923c;
+}
+.lk-kcard.is-start em {
+  color: #fdba74;
+}
+.lk-kcard.is-unseen em {
+  color: #a5b4fc;
+}
+.lk-kcard.is-unseen > i {
+  filter: grayscale(1) opacity(0.5);
+}
+.lk-kcard.is-shown {
+  outline: 3px solid #eef2ff;
+  outline-offset: 2px;
+}
+.lk-revise {
+  display: grid;
+  gap: 0.55rem;
+  padding: 0.8rem 1rem;
+  border-radius: 1.2rem;
+  background: rgba(251, 146, 60, 0.12);
+  border: 1.5px solid rgba(251, 146, 60, 0.5);
+}
+.lk-revise p {
+  font-size: 1.12rem;
+  font-weight: 800;
+}
+.lk-revise p b {
+  color: #fed7aa;
+}
+.lk-revise p span {
+  color: #a5b4fc;
+  font-size: 0.95rem;
+}
+.lk-revise > div {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+}
+.lk-revise .lk-btn {
+  flex: 1;
+  min-height: 2.8rem;
+  padding: 0 0.6rem;
+  font-size: 0.98rem;
+}
+.lk-soon {
+  align-self: center;
+  font-size: 0.9rem;
+  color: #a5b4fc;
+  font-weight: 700;
+  padding: 0 0.6rem;
+}
+.lk-result > .lk-btn--xl {
+  align-self: center;
+  margin-top: auto;
+}
+
+.lk-liftoff {
+  flex: 1;
+  display: grid;
+  place-items: center;
+}
+.lk-liftoff b {
+  font-size: 9rem;
+  font-weight: 900;
+  color: #fbbf24;
+  animation: lk-stamp 0.4s cubic-bezier(0.3, 1.6, 0.5, 1);
+  text-shadow: 0 0 60px rgba(251, 191, 36, 0.6);
+}
+.lk-liftoff.is-go b {
+  animation: lk-rise 1.5s cubic-bezier(0.5, 0, 0.8, 0.4) forwards;
+}
+
+.lk-veil {
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  display: grid;
+  place-items: center;
+  background: rgba(8, 11, 30, 0.72);
+  animation: lk-in 0.2s;
+}
+.lk-memo {
+  width: min(40rem, 88%);
+  display: grid;
+  gap: 0.8rem;
+  padding: 1.4rem 1.6rem;
+  border-radius: 1.4rem;
+  background: #fffdf2;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+  justify-items: start;
+}
+.lk-root .lk-memo,
+.lk-root .lk-memo h3,
+.lk-root .lk-memo p,
+.lk-root .lk-memo li {
+  color: #1b1f4b;
+}
+.lk-memo h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.45rem;
+  font-weight: 900;
+}
+.lk-memo ul {
+  margin: 0;
+  padding-inline-start: 1.3rem;
+  display: grid;
+  gap: 0.45rem;
+  font-size: 1.18rem;
+  font-weight: 700;
+  line-height: 1.85;
+}
+.lk-memo p {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.8;
+}
+.lk-memo > .lk-btn,
+.lk-memo > span {
+  justify-self: center;
+}
+.lk-memo > span {
+  display: inline-flex;
+  gap: 0.7rem;
+}
+.lk-root .lk-memo .lk-btn:not(.lk-btn--main) {
+  color: #1b1f4b;
+  border-color: #1b1f4b;
+  background: #fff;
+}
+
+.lk-root--narrow .lk-fit {
+  grid-template-columns: 14.5rem minmax(0, 1fr);
+  gap: 0.7rem;
+  padding: 0.7rem 0.8rem 0.8rem;
+}
+.lk-root--narrow .lk-keys {
+  grid-template-columns: repeat(6, 3.9rem);
+}
+.lk-root--narrow .lk-keys button {
+  height: 3.3rem;
+}
+.lk-root--narrow .lk-equation {
+  font-size: 2.5rem;
+  gap: 0.6rem;
+}
+.lk-root--narrow .lk-slot span {
+  min-width: 4.6rem;
+}
+.lk-root--narrow .lk-sort {
+  grid-template-columns: minmax(0, 1fr) 14rem minmax(0, 1fr);
+  gap: 0.7rem;
+}
+.lk-root--narrow .lk-card {
+  font-size: 2rem;
+}
+.lk-root--narrow .lk-prompt {
+  font-size: 1.35rem;
+}
+.lk-root--narrow .lk-revise > div {
+  flex-wrap: wrap;
+}
+.lk-root--narrow .lk-revise .lk-btn {
+  flex: 1 1 44%;
+}
+.lk-root--narrow .lk-robot {
+  width: 7rem;
+}
+.lk-root--narrow .lk-brand p {
+  max-width: 18rem;
+}
+
+@keyframes lk-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+@keyframes lk-pop {
+  0% {
+    transform: scale(0.6);
+  }
+  60% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lk-stamp {
+  from {
+    opacity: 0;
+    transform: scale(1.8) rotate(-6deg);
+  }
+}
+@keyframes lk-deal {
+  from {
+    opacity: 0;
+    transform: translateY(-18px) rotate(-4deg);
+  }
+}
+@keyframes lk-bob {
+  50% {
+    transform: translateY(-5px);
+  }
+}
+@keyframes lk-hop {
+  40% {
+    transform: translateY(-16px) rotate(-3deg);
+  }
+}
+@keyframes lk-blink {
+  50% {
+    opacity: 0.45;
+  }
+}
+@keyframes lk-pulse {
+  from {
+    transform: scale(0.5);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+@keyframes lk-rise {
+  to {
+    transform: translateY(-120vh) scale(1.3);
+    opacity: 0.2;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lk-root *,
+  .lk-root *::before {
+    animation-duration: 0.01s !important;
+    transition-duration: 0.01s !important;
+  }
+}
+.lk-root--narrow .lk-box__door strong {
+  font-size: 1.05rem;
+  white-space: nowrap;
+}
+.lk-root--narrow .lk-hand__tip {
+  font-size: 0.9rem;
+}
+.lk-root--narrow .lk-capsteps li {
+  font-size: 0.82rem;
+  padding: 0.15rem 0.5rem 0.15rem 0.25rem;
+}
+.lk-root--narrow .lk-caplist {
+  font-size: 1.18rem;
+}
+
+/* a phone held sideways (no zoom there): what is taller than the screen scrolls inside the stage */
+@media (max-height: 500px) {
+  .lk-root {
+    touch-action: pan-y;
+  }
+  .lk-fit > * {
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .lk-fit {
+    grid-template-columns: 13rem minmax(0, 1fr);
+    gap: 0.6rem;
+    padding: 0.6rem 0.7rem;
+  }
+  /* THE BAG FITS: a tool is its emblem, its name and its charge — where it comes from and the word of its level are
+     read on a wider screen; the robot is small. With four tools the last one and the robot used to be out of sight. */
+  .lk-bag {
+    gap: 0.35rem;
+    padding: 0.45rem 0.5rem 0.3rem;
+  }
+  .lk-bag h3 {
+    font-size: 1rem;
+  }
+  .lk-tool {
+    gap: 0.15rem 0.45rem;
+    padding: 0.3rem 0.5rem;
+  }
+  .lk-tool > i {
+    font-size: 1.3rem;
+  }
+  .lk-tool strong {
+    font-size: 0.95rem;
+    line-height: 1.2;
+  }
+  .lk-tool small,
+  .lk-tool em {
+    display: none;
+  }
+  .lk-robot {
+    width: 4.4rem;
+  }
+  /* A CAPSULE: its card or its worked example slides INSIDE its own box. Taller than the stage, its last lines lay over
+     « التالي » and took the taps meant for it — the student could not go on. */
+  .lk-capbody {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .lk-capbody.lk-example ol {
+    flex: none;
+  }
+  /* SORTING FITS above « تمّ »: the card, its boxes and what they hold are shorter and the boxes wider. The card kept its
+     laptop height and, with its boxes, lay under the two buttons of the question. */
+  .lk-question {
+    gap: 0.4rem;
+  }
+  .lk-prompt {
+    line-height: 1.45;
+  }
+  .lk-sort {
+    grid-template-columns: minmax(0, 1fr) 11.5rem minmax(0, 1fr);
+    gap: 0.5rem;
+  }
+  .lk-hand {
+    gap: 0.3rem;
+  }
+  .lk-card {
+    min-height: 4.4rem;
+    padding: 0.4rem 0.5rem;
+    font-size: 1.8rem;
+  }
+  .lk-card .lk-say {
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+  .lk-card .lk-say[data-lk-list],
+  .lk-root--narrow .lk-card .lk-say[data-lk-list] {
+    font-size: 1rem;
+  }
+  .lk-card--none {
+    font-size: 0.92rem;
+    line-height: 1.4;
+  }
+  .lk-hand__tip {
+    font-size: 0.9rem;
+  }
+  .lk-box__door {
+    padding: 0.3rem 0.4rem;
+  }
+  .lk-box__door strong {
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+  .lk-box__in {
+    gap: 0.25rem;
+    padding: 0.3rem;
+  }
+  .lk-chip {
+    padding: 0.05rem 0.7rem;
+    font-size: 1.1rem;
+  }
+  .lk-chip .lk-say {
+    font-size: 0.95rem;
+    line-height: 1.3;
+  }
+  .lk-chip:has(.lk-say) {
+    padding: 0.15rem 0.45rem;
+  }
+}

@@ -1,258 +1,71 @@
-import { useContext, useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import {
-  TrendingUp, CircleCheckBig, Flame, Zap, ArrowRight, Target, ChevronDown, Trophy,
-} from 'lucide-react';
+import { useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { useTranslation, Trans } from 'react-i18next';
+import { motion, MotionConfig } from 'framer-motion';
+import { TrendingUp, BookOpen, GraduationCap, SearchX } from 'lucide-react';
 import { courseLevels, getAllGrades } from '@smarter-academy/core';
 import { getStudentActivity } from '../../lessons/common/utils/progress/getStudentActivity';
+import { getFirstModuleNumber } from '../../lessons/registry';
+import { getResumeModulePath } from '../../lessons/common/utils/progress/getResumeLesson';
+import { LESSON_PROGRESS_SYNCED_EVENT } from '../../hooks/useLessonProgressSync';
 import { AuthContext } from '../../context/AuthContext';
 import { useDocumentMeta } from '../../hooks/useDocumentMeta';
 import { useLearningProfile } from '../../lessons/common/hooks/useLearningProfile';
-import {
-  LearningPointCard, resolveMasteryState, findLessonMasteryRows, MASTERY_STATES,
-} from '../../lessons/common/components/LearningPointMastery';
-import NotebookBrowser from '../../features/practice/NotebookBrowser';
-import StatTile from '../../components/common/StatTile';
-
-/** Looks up a lesson's display title/path and its chapter's title from the
- * catalogue — the learning-profile API only returns codes (grade/lesson/
- * chapter), never display strings for the lesson/chapter themselves. */
-function resolveLessonMeta(gradeId, lessonId) {
-  for (const level of courseLevels) {
-    const grade = level.grades.find((g) => g.id === gradeId);
-    if (!grade) continue;
-    for (const chapter of grade.chapters) {
-      const lesson = chapter.lessons.find((l) => l.id === lessonId);
-      if (lesson) {
-        return {
-          lesson,
-          lessonTitle: lesson.title,
-          lessonPath: lesson.path,
-          chapterTitle: chapter.title,
-          gradeLabel: `${level.title} (${grade.name})`,
-        };
-      }
-    }
-  }
-  return null;
-}
-
-const MASTERY_MESSAGE = {
-  unassessed: "Passe le bilan de la leçon pour évaluer cette compétence.",
-  gap: 'Une vraie difficulté à travailler.',
-  reinforce: 'Des bases, mais pas encore solide.',
-  mastered: 'Compétence solidement acquise.',
-};
-
-/** Ordre d'affichage : ce qui bloque d'abord, ce qui est acquis ensuite. */
-const STATE_ORDER = { gap: 0, reinforce: 1, unassessed: 2, mastered: 3 };
+import { buildProgressionTree } from '../../features/progression/buildProgressionTree';
+import { applyProgressionView, DEFAULT_VIEW } from '../../features/progression/progressionView';
+import { pickWorkNow, pickNextStep } from '../../features/progression/pickWorkNow';
+import ProgressionStats from '../../features/progression/components/ProgressionStats';
+import WorkNowSection from '../../features/progression/components/WorkNowSection';
+import ProgressionToolbar from '../../features/progression/components/ProgressionToolbar';
+import FieldProgressGroup from '../../features/progression/components/FieldProgressGroup';
+import ProgressionEmptyState from '../../features/progression/components/ProgressionEmptyState';
+import MasteryExplanationDrawer from '../../features/progression/components/MasteryExplanationDrawer';
 
 /**
- * Les Learning Points d'une leçon, fusionnés depuis DEUX sources :
- *  - le catalogue (coursesData.js) donne la LISTE COMPLÈTE et l'ordre officiel ;
- *  - le profil d'apprentissage (API) donne l'état réel de maîtrise.
+ * « تقدّمي » — le tableau de bord de PROGRESSION de l'élève, dans l'ordre
+ * de ses questions :
  *
- * Une compétence encore jamais évaluée apparaît donc quand même, en
- * « Pas encore évalué » — l'élève voit ce qui l'attend, sans qu'on invente
- * le moindre pourcentage (règle de LearningPointMastery).
+ *   où en suis-je ?            → en-tête + indicateurs
+ *   que dois-je faire là ?     → « للعمل الآن »
+ *   où suis-je dans le programme ? → الميدان → الوحدة → الدرس → الكفاءات
+ *
+ * La page n'invente rien : la structure vient du catalogue, la progression
+ * de getStudentActivity, la maîtrise du profil serveur (useLearningProfile).
+ * Elle ne parle QUE de progression — les notes ont leur espace (« كرّاسي »),
+ * la carte des connaissances le sien.
  */
-function mergeLearningPoints(lesson, currentMastery, gradeId) {
-  const rows = findLessonMasteryRows(currentMastery, gradeId, lesson.id);
-  const byCode = new Map(rows.map((r) => [r.code, r]));
-
-  return (lesson.learningPoints || []).map((lp) => {
-    const row = byCode.get(lp.id);
-    return {
-      code: lp.id,
-      title: row?.title || lp.title,
-      order: lp.order,
-      row,
-      state: resolveMasteryState(row),
-      confidence: row?.confidence,
-    };
-  });
-}
-
-/** Petit résumé chiffré : combien de compétences dans chaque état. */
-function masteryCounts(points) {
-  return points.reduce(
-    (acc, p) => ({ ...acc, [p.state]: (acc[p.state] || 0) + 1 }),
-    {}
-  );
-}
-
-/** Pastilles de synthèse — jamais la couleur seule, toujours un nombre. */
-function MasteryChips({ counts, total }) {
-  const order = ['mastered', 'reinforce', 'gap', 'unassessed'];
-  return (
-    <div className="flex items-center gap-1.5 flex-wrap">
-      {order
-        .filter((state) => counts[state])
-        .map((state) => (
-          <span
-            key={state}
-            className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-white/80 border border-slate-200 font-mono text-[10px] font-bold text-slate-600"
-            title={MASTERY_STATES[state].label}
-          >
-            <span aria-hidden="true">{MASTERY_STATES[state].emoji}</span>
-            {counts[state]}
-          </span>
-        ))}
-      <span className="font-mono text-[10px] text-slate-400">/ {total} compétences</span>
-    </div>
-  );
-}
-
-/**
- * Une ligne de leçon dépliable : progression du parcours + état des
- * compétences. Le dépli est un vrai <button> (clavier, aria-expanded), et le
- * lien vers la leçon reste distinct pour ne pas piéger la navigation.
- */
-function LessonRow({ item, currentMastery, profileReady }) {
-  const [open, setOpen] = useState(false);
-  const gradeId = item.grade.id;
-
-  const points = useMemo(
-    () => mergeLearningPoints(item.lesson, currentMastery, gradeId),
-    [item.lesson, currentMastery, gradeId]
-  );
-  const counts = useMemo(() => masteryCounts(points), [points]);
-  const assessedCount = points.length - (counts.unassessed || 0);
-  const sorted = useMemo(
-    () => [...points].sort((a, b) => (STATE_ORDER[a.state] - STATE_ORDER[b.state]) || (a.order - b.order)),
-    [points]
-  );
-
-  const panelId = `lp-${gradeId}-${item.lesson.id}`;
-  const hasPoints = points.length > 0;
-
-  return (
-    <div className="first:rounded-t-[20px] last:rounded-b-[20px] overflow-hidden">
-      <div className="flex items-center gap-3 p-4 hover:bg-slate-50/70 transition-colors group">
-        <span className="text-2xl flex-shrink-0" aria-hidden="true">{item.lesson.icon}</span>
-
-        <div className="flex-1 min-w-0">
-          <Link
-            to={item.lesson.path}
-            className="font-inter font-semibold text-slate-800 text-sm truncate hover:text-blue-600 block"
-          >
-            {item.lesson.title}
-          </Link>
-          <div className="flex items-center gap-3 mt-1.5">
-            <div className="flex-1 h-1.5 bg-slate-100 rounded-full overflow-hidden max-w-[160px]">
-              <div
-                className={`h-full ${item.progressPercent >= 100 ? 'bg-emerald-500' : 'bg-blue-500'}`}
-                style={{ width: `${item.progressPercent}%` }}
-              />
-            </div>
-            <span className="text-xs font-mono-jetbrains font-bold text-slate-500 tabular-nums">
-              {item.progressPercent}%
-            </span>
-          </div>
-          {hasPoints && (
-            <div className="mt-2">
-              <MasteryChips counts={counts} total={points.length} />
-            </div>
-          )}
-        </div>
-
-        {hasPoints && (
-          <button
-            type="button"
-            onClick={() => setOpen((o) => !o)}
-            aria-expanded={open}
-            aria-controls={panelId}
-            className="flex-shrink-0 min-h-[44px] px-3 rounded-xl border-2 border-slate-200 bg-white hover:border-blue-400 text-xs font-mono font-bold text-slate-600 flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-          >
-            {open ? 'Masquer' : 'Mes acquis'}
-            <ChevronDown
-              size={14}
-              className={`transition-transform ${open ? 'rotate-180' : ''}`}
-              aria-hidden="true"
-            />
-          </button>
-        )}
-      </div>
-
-      <AnimatePresence initial={false}>
-        {open && (
-          <motion.div
-            key={panelId}
-            id={panelId}
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25 }}
-            className="overflow-hidden bg-slate-50/60 border-t border-slate-100"
-          >
-            <div className="p-4 space-y-3">
-              {assessedCount === 0 && (
-                <div className="rounded-xl border-2 border-amber-200 bg-amber-50 px-4 py-3 flex items-start gap-2.5">
-                  <Trophy size={16} className="text-amber-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
-                  <p className="text-xs text-amber-900 leading-relaxed">
-                    Aucune compétence encore évaluée pour cette leçon.{' '}
-                    <strong>Termine le bilan final</strong> pour que tes résultats apparaissent ici.
-                  </p>
-                </div>
-              )}
-
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                {sorted.map((p) => (
-                  <LearningPointCard
-                    key={p.code}
-                    title={p.title}
-                    state={p.state}
-                    confidence={p.confidence}
-                    message={MASTERY_MESSAGE[p.state]}
-                    action={
-                      p.state === 'gap' || p.state === 'reinforce' ? (
-                        <Link
-                          to={item.lesson.path}
-                          className="text-xs font-mono font-bold text-blue-600 hover:text-blue-800 underline decoration-dotted"
-                        >
-                          → Revoir la leçon
-                        </Link>
-                      ) : null
-                    }
-                  />
-                ))}
-              </div>
-
-              {!profileReady && (
-                <p className="text-[11px] text-slate-400 font-mono">
-                  Connecte-toi pour voir tes résultats réels de bilan.
-                </p>
-              )}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-}
-
-
 export default function Progression() {
-  useDocumentMeta('Ma progression', 'Suis ta progression et tes acquis, leçon par leçon.');
+  const { t } = useTranslation('student');
+  useDocumentMeta(t('progression.metaTitle'), t('progression.metaDescription'));
 
   const { user } = useContext(AuthContext);
   const gradeId = user?.grade || null;
 
   // Cette page ne montre QUE la classe courante de l'élève — le même cadrage
   // que l'accueil de l'espace, qui appelle déjà `getStudentActivity` avec
-  // `gradeId`. Les deux écrans racontaient jusqu'ici deux histoires
-  // différentes du même parcours.
+  // `gradeId`. Ce n'est PAS la restriction contre laquelle met en garde
+  // ARCHITECTURE.md §10 (qui vise `getResumeLesson`, ce qu'on PROPOSE, pas ce
+  // qu'un tableau de bord AFFICHE). La progression reste indexée par leçon :
+  // changer de classe ne supprime rien. Un élève sans classe voit tout.
   //
-  // Ce n'est PAS la restriction contre laquelle met en garde ARCHITECTURE.md
-  // §10 : la mise en garde vise `getResumeLesson` — ce qu'on PROPOSE à
-  // l'élève de faire —, pas ce qu'un tableau de bord AFFICHE. La progression
-  // reste indexée par leçon, jamais par classe : changer de classe ne
-  // supprime rien, et le travail fait ailleurs réapparaît dès qu'on y
-  // revient. Un élève sans classe (compte neuf) voit tout, faute de cadre.
+  // L'activité est lue dans le stockage local au montage. Deux moments
+  // peuvent la rendre obsolète sans changer `gradeId` : la fusion des lignes
+  // du serveur (useLessonProgressSync, juste après le montage) et le retour
+  // sur l'onglet après avoir travaillé une leçon — le même réflexe que
+  // l'accueil de l'espace. `tick` force alors le recalcul.
+  const [tick, setTick] = useState(0);
+  useEffect(() => {
+    const bump = () => setTick((n) => n + 1);
+    window.addEventListener(LESSON_PROGRESS_SYNCED_EVENT, bump);
+    window.addEventListener('focus', bump);
+    return () => {
+      window.removeEventListener(LESSON_PROGRESS_SYNCED_EVENT, bump);
+      window.removeEventListener('focus', bump);
+    };
+  }, []);
   const activity = useMemo(
     () => getStudentActivity(courseLevels, gradeId ? { gradeId } : undefined),
-    [gradeId],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [gradeId, tick],
   );
   const gradeLabel = useMemo(
     () => getAllGrades().find((g) => g.id === gradeId)?.name || null,
@@ -260,144 +73,175 @@ export default function Progression() {
   );
   const { profile, status, reload } = useLearningProfile();
   // La maîtrise vient de l'API groupée par classe : on ne garde que la
-  // sienne, sinon le compteur « compétences maîtrisées » continuerait de
-  // compter des acquis invisibles sur cette page.
+  // sienne, sinon le compteur « compétences maîtrisées » compterait des
+  // acquis invisibles sur cette page.
   const currentMastery = useMemo(() => {
     const all = profile?.currentMastery || [];
     return gradeId ? all.filter((g) => g.grade === gradeId) : all;
   }, [profile, gradeId]);
-  const profileReady = status === 'ready';
 
-  const byGrade = useMemo(() => {
-    const map = new Map();
-    activity.lessons.forEach((item) => {
-      const key = `${item.level.title} ${item.grade.name}`;
-      if (!map.has(key)) map.set(key, { label: key, lessons: [] });
-      map.get(key).lessons.push(item);
-    });
-    // Un seul groupe quand une classe est fixée ; le regroupement reste utile
-    // pour l'élève sans classe, qui voit tout.
-    return Array.from(map.values()).filter((g) => g.lessons.some((l) => l.lastVisitedAt > 0));
-  }, [activity]);
-
-  // Compétences maîtrisées sur la classe affichée — un chiffre qui vient
-  // uniquement des bilans réels, jamais d'une moyenne de complétion.
-  // `currentMastery` est déjà filtré plus haut : la somme suit le cadrage.
-  const masteredTotal = useMemo(
-    () =>
-      currentMastery.reduce(
-        (sum, g) =>
-          sum + g.lessons.reduce((s, l) => s + l.learningPoints.filter((p) => p.status === 'mastered').length, 0),
-        0
-      ),
-    [currentMastery]
+  // L'arbre complet (structure + progression + maîtrise), calculé une fois
+  // par changement de données ; la vue (recherche/filtres/tri) est une
+  // projection pure par-dessus, recalculée sans retoucher l'arbre.
+  const tree = useMemo(
+    () => buildProgressionTree(courseLevels, activity, currentMastery, { gradeId, getModulePath: getResumeModulePath, getFirstModuleNumber }),
+    [activity, currentMastery, gradeId],
   );
+  const [view, setView] = useState(DEFAULT_VIEW);
+  const shown = useMemo(() => applyProgressionView(tree, view), [tree, view]);
+  const workNow = useMemo(() => pickWorkNow(tree, { limit: 4 }), [tree]);
+  const nextStep = useMemo(() => pickNextStep(tree), [tree]);
 
-  // Dénominateur du compteur : les compétences réellement évaluées (une
-  // compétence sans bilan n'entre ni au numérateur ni au dénominateur).
-  const assessedTotal = useMemo(
-    () =>
-      currentMastery.reduce(
-        (sum, g) =>
-          sum +
-          g.lessons.reduce(
-            (s, l) => s + l.learningPoints.filter((p) => p.status !== 'unassessed').length,
-            0
-          ),
-        0
-      ),
-    [currentMastery]
+  const hasStarted = activity.lessons.some((l) => l.lastVisitedAt > 0);
+  const multiGrade = tree.grades.length > 1;
+
+  // Le ميدان ouvert par défaut : celui du dernier travail, sinon le premier
+  // qui a des leçons construites.
+  const defaultFieldId = useMemo(() => {
+    const fields = tree.grades.flatMap((g) => g.fields);
+    const recent = fields.filter((f) => f.agg.lastVisitedAt > 0).sort((a, b) => b.agg.lastVisitedAt - a.agg.lastVisitedAt)[0];
+    return recent?.id ?? fields.find((f) => f.agg.lessons > 0)?.id ?? null;
+  }, [tree]);
+
+  // Le point dont l'élève demande « لماذا؟ » — `{code, title}` ou null.
+  const [explaining, setExplaining] = useState(null);
+  const closeExplaining = useCallback(() => setExplaining(null), []);
+
+  const curriculumRef = useRef(null);
+  const showAllWork = useCallback(() => {
+    setView((v) => ({ ...DEFAULT_VIEW, sort: v.sort, filter: 'work' }));
+    curriculumRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, []);
+
+  const filterFields = useMemo(
+    () => tree.grades.flatMap((g) => g.fields).filter((f) => f.agg.lessons > 0).map((f) => ({ id: f.id, title: f.title, groups: f.groups.map((gr) => ({ id: gr.id, title: gr.title, kind: gr.kind })) })),
+    [tree],
   );
 
   return (
-    <div className="sa-page py-8 sm:py-10">
-      <div className="mb-8">
-        <p className="font-mono-jetbrains text-blue-500 text-xs font-semibold tracking-widest uppercase mb-2 flex items-center gap-1.5">
-          <TrendingUp size={13} /> Ma progression
-        </p>
-        <h1 className="font-space font-bold text-2xl sm:text-3xl text-slate-900">Ce que tu as accompli</h1>
-        <p className="font-inter text-slate-500 text-sm mt-1 max-w-xl">
-          {/* Le cadre est annoncé : sans cela, un élève qui a travaillé dans
-              une autre classe croirait ce travail perdu. */}
-          {gradeLabel ? <>Ta classe de <strong>{gradeLabel}</strong> — tes leçons et, pour chacune, les compétences que tu maîtrises vraiment.</> : <>Tes leçons et, pour chacune, les compétences que tu maîtrises vraiment.</>}
-          {' '}Clique sur <strong>« Mes acquis »</strong> sous une leçon pour voir le détail, compétence par compétence.
-        </p>
-      </div>
+    <MotionConfig reducedMotion="user">
+      <div className="sa-page py-8 sm:py-10" aria-busy={status === 'loading'} data-progression-page>
+        {/* ── En-tête ─────────────────────────────────────────────────── */}
+        <div className="mb-8">
+          <p className="font-mono-jetbrains text-blue-500 text-xs font-semibold tracking-widest uppercase mb-2 flex items-center gap-1.5">
+            <TrendingUp size={13} aria-hidden="true" /> {t('progression.eyebrow')}
+          </p>
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
+            <div>
+              <h1 className="font-space font-bold text-2xl sm:text-3xl text-slate-900">{t('progression.title')}</h1>
+              <p className="font-inter text-slate-500 text-sm mt-1 max-w-xl">
+                {/* Le cadre est annoncé : sans cela, un élève qui a travaillé dans
+                    une autre classe croirait ce travail perdu. */}
+                {gradeLabel
+                  ? <Trans i18nKey="progression.subtitleWithGrade" ns="student" values={{ grade: gradeLabel }} components={[<strong key="g" />]} />
+                  : t('progression.subtitleLead')}
+              </p>
+            </div>
+            {gradeLabel && (
+              <span className="inline-flex items-center gap-2 self-start sm:self-auto rounded-2xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-inter text-slate-700" data-progression-grade>
+                <GraduationCap size={16} className="text-blue-500" aria-hidden="true" />
+                <span className="text-xs text-slate-400">{t('progression.gradeChip')}</span>
+                <strong className="font-space">{gradeLabel}</strong>
+              </span>
+            )}
+          </div>
+        </div>
 
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-10">
-        <StatTile icon={CircleCheckBig} value={activity.completedCount} label="Leçons terminées" accent="bg-emerald-50 text-emerald-600" />
-        <StatTile icon={Flame} value={activity.inProgressCount} label="Leçons en cours" accent="bg-amber-50 text-amber-600" />
-        {/* Total sur les leçons de la classe affichée — le détail par leçon
-            vit dans le panneau « Mes acquis » ci-dessous. */}
-        <StatTile
-          icon={Target}
-          value={profileReady ? `${masteredTotal} / ${assessedTotal}` : '—'}
-          label={gradeLabel ? `Compétences maîtrisées (${gradeLabel})` : 'Compétences maîtrisées'}
-          accent="bg-blue-50 text-blue-600"
+        {/* ── Erreur de chargement du profil : jamais confondue avec un zéro ── */}
+        {status === 'error' && (
+          <div role="alert" className="rounded-2xl border-2 border-rose-200 bg-rose-50 p-4 mb-6 flex items-center justify-between gap-3 flex-wrap" data-progression-error>
+            <div>
+              <p className="font-space font-bold text-rose-900 text-sm">{t('progression.errorTitle')}</p>
+              <p className="font-inter text-rose-900/80 text-xs mt-0.5 max-w-xl">{t('progression.errorAcquis')}</p>
+            </div>
+            <button
+              type="button"
+              onClick={reload}
+              className="min-h-[44px] px-4 rounded-xl border-2 border-rose-200 bg-white text-xs font-mono-jetbrains font-bold text-rose-800 hover:border-rose-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500"
+            >
+              🔄 {t('retry', { ns: 'common' })}
+            </button>
+          </div>
+        )}
+
+        {/* ── Vue d'ensemble ─────────────────────────────────────────── */}
+        {hasStarted ? (
+          <>
+            <div className="mb-10" data-tour="progression.stats">
+              <ProgressionStats activity={activity} agg={tree.agg} profileStatus={status} gradeLabel={gradeLabel} />
+            </div>
+            <WorkNowSection
+              items={workNow.items}
+              total={workNow.total}
+              nextStep={nextStep}
+              unassessedCount={tree.agg.counts.unassessed}
+              profileStatus={status}
+              onShowAll={showAllWork}
+            />
+          </>
+        ) : (
+          <ProgressionEmptyState />
+        )}
+
+        {/* ── Le programme ───────────────────────────────────────────── */}
+        <section ref={curriculumRef} aria-labelledby="curriculum-title" className="scroll-mt-6" data-progression-curriculum>
+          <div className="mb-4">
+            <h2 id="curriculum-title" className="font-space font-bold text-slate-900 text-lg flex items-center gap-2">
+              <BookOpen size={18} className="text-blue-500" aria-hidden="true" /> {t('progression.curriculum.title')}
+            </h2>
+            <p className="font-inter text-slate-500 text-xs mt-0.5">{t('progression.curriculum.subtitle')}</p>
+          </div>
+
+          {tree.lessonCount > 0 && (
+            <div className="mb-5">
+              <ProgressionToolbar view={view} onChange={setView} fields={filterFields} matched={shown.matched} total={shown.total} />
+            </div>
+          )}
+
+          {shown.grades.length === 0 ? (
+            <div className="glass-card p-8 text-center" data-progression-no-match>
+              <SearchX size={26} className="mx-auto text-slate-300 mb-3" aria-hidden="true" />
+              <p className="font-space font-bold text-slate-800 text-sm">
+                {tree.lessonCount === 0
+                  ? (gradeLabel ? t('progression.noLessonsStartedGrade', { grade: gradeLabel }) : t('progression.noLessonsStarted'))
+                  : t('progression.curriculum.noMatchTitle')}
+              </p>
+              {tree.lessonCount > 0 && <p className="font-inter text-slate-500 text-xs mt-1">{t('progression.curriculum.noMatchBody')}</p>}
+            </div>
+          ) : (
+            <div className="space-y-8">
+              {shown.grades.map((grade) => (
+                <motion.div key={grade.id} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.25 }}>
+                  {multiGrade && <h3 className="font-space font-bold text-slate-700 text-sm mb-3">{grade.label}</h3>}
+                  <div className="space-y-4">
+                    {grade.fields.map((field) => (
+                      <FieldProgressGroup
+                        key={field.id}
+                        field={field}
+                        defaultOpen={field.id === defaultFieldId}
+                        profileStatus={status}
+                        onExplain={setExplaining}
+                      />
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          )}
+        </section>
+
+        <p className="mt-8 text-xs text-slate-400 font-inter max-w-xl">
+          {t('progression.footnote')}
+        </p>
+
+        {/* « لماذا؟ » — le tiroir d'explication d'un point (plan §18). */}
+        <MasteryExplanationDrawer
+          open={explaining !== null}
+          code={explaining?.code ?? null}
+          title={explaining?.title ?? ''}
+          onClose={closeExplaining}
         />
-        <StatTile icon={Zap} value={activity.totalXp} label="XP total" accent="bg-purple-50 text-purple-600" />
       </div>
-
-      {status === 'loading' && (
-        <p className="text-xs font-mono text-slate-400 mb-4">Chargement de tes acquis…</p>
-      )}
-      {status === 'error' && (
-        <div className="glass-card p-4 mb-6 flex items-center justify-between gap-3 flex-wrap">
-          <p className="font-inter text-slate-500 text-sm">
-            Impossible de charger tes acquis pour le moment. Ta progression de parcours reste affichée.
-          </p>
-          <button
-            type="button"
-            onClick={reload}
-            className="min-h-[44px] px-4 rounded-xl border-2 border-slate-200 bg-white text-xs font-mono font-bold text-slate-600 hover:border-blue-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-          >
-            🔄 Réessayer
-          </button>
-        </div>
-      )}
-
-      {byGrade.length === 0 ? (
-        <div className="glass-card p-10 text-center">
-          <p className="font-inter text-slate-500 text-sm mb-5">
-            {gradeLabel
-              ? `Tu n'as pas encore commencé de leçon en ${gradeLabel}.`
-              : "Tu n'as pas encore commencé de leçon."}
-          </p>
-          <Link to="/espace/cours" className="btn-primary text-sm inline-flex">Commencer une leçon</Link>
-        </div>
-      ) : (
-        <div className="space-y-8">
-          {byGrade.map((group) => (
-            <motion.div key={group.label} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
-              <h2 className="font-space font-bold text-slate-800 text-sm mb-3">{group.label}</h2>
-              <div className="glass-card divide-y divide-slate-100">
-                {group.lessons
-                  .filter((l) => l.lastVisitedAt > 0)
-                  .sort((a, b) => b.lastVisitedAt - a.lastVisitedAt)
-                  .map((item) => (
-                    <LessonRow
-                      key={item.lesson.id}
-                      item={item}
-                      currentMastery={currentMastery}
-                      profileReady={profileReady}
-                    />
-                  ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      )}
-
-      {/* Le carnet vit ici, et non dans la pratique : c'est l'écran où l'élève
-          fait le point. Il s'ouvre par leçon, comme le reste de la page. */}
-      <div className="mt-10 pt-8 border-t border-slate-200">
-        <NotebookBrowser />
-      </div>
-
-      <p className="mt-8 text-xs text-slate-400 font-inter max-w-xl">
-        Chaque compétence est évaluée à partir de tes vraies réponses aux bilans de fin de leçon — jamais d'une
-        moyenne générale. Une compétence « Pas encore évaluée » attend simplement que tu passes le bilan.
-      </p>
-    </div>
+    </MotionConfig>
   );
 }

@@ -1,0 +1,175 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ihsa-l3-009",
+  "lessonCode": "wadiya-idmajiya-ihsa",
+  "level": 3,
+  "metadata": {
+    "title": "مدة التنقل إلى المتوسطة: المتوسط بمراكز الفئات",
+    "estimatedMinutes": 8,
+    "tags": [
+      "مدرّج تكراري",
+      "مراكز الفئات",
+      "التواتر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ihsa_P1"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يمثّل المدرّج التكراري الآتي، ضمن دراسة عن احترام مواعيد الدخول إلى المتوسطة، مدة التنقل إلى المتوسطة (بالدقائق) لتلاميذ فوج من قسم (الفئات: $0 \\le t < 10$ ، $10 \\le t < 20$ ، $20 \\le t \\le 30$):",
+    "figure": {
+      "kind": "chart",
+      "type": "histogram",
+      "ariaLabel": "مدرّج تكراري لمدة التنقل إلى المتوسطة لعشرة تلاميذ بثلاث فئات من 0 إلى 30 دقيقة",
+      "xTitle": "مدة التنقل (min)",
+      "yTitle": "عدد التلاميذ",
+      "edges": [
+        0,
+        10,
+        20,
+        30
+      ],
+      "values": [
+        2,
+        5,
+        3
+      ],
+      "y": {
+        "max": 6,
+        "step": 1
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما هو عدد تلاميذ الفوج؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ ارتفاع كل مستطيل على المحور العمودي."
+        }
+      ],
+      "feedback": {
+        "correct": "$2 + 5 + 3 = 10$ تلاميذ.",
+        "incorrect": "عدد التلاميذ هو مجموع ارتفاعات المستطيلات الثلاثة."
+      },
+      "solution": {
+        "lines": [
+          "القراءة: 2 ، 5 ، 3 .",
+          "$2 + 5 + 3 = 10$"
+        ],
+        "result": "10"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "باستعمال مراكز الفئات، احسب المتوسط المقدّر لمدة التنقل.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المدة بـ min",
+      "expectedAnswer": "16",
+      "misconceptionSignatures": [
+        {
+          "value": "11",
+          "id": "MISC-IHSA-MARKAZ-FIA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مركز الفئة نصف مجموع حدّيها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب كل مركز في تكرار فئته ثم اقسم على التكرار الكلي."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{5 \\times 2 + 15 \\times 5 + 25 \\times 3}{10} = 16$ min .",
+        "incorrect": "استعمل مركز كل فئة (لا حدّها الأدنى) ثم المتوسط المتوازن."
+      },
+      "solution": {
+        "lines": [
+          "المراكز: 5 ، 15 ، 25 .",
+          "$5 \\times 2 + 15 \\times 5 + 25 \\times 3 = 160$",
+          "$\\dfrac{160}{10} = 16$"
+        ],
+        "result": "16\\,\\mathrm{min}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "احسب النسبة المئوية لتلاميذ الفوج الذين يستغرقون 20 دقيقة على الأقل.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ihsa_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: النسبة المئوية دون الرمز %",
+      "expectedAnswer": "30",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-IHSA-TAWATUR-BILA-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«20 دقيقة على الأقل» هي الفئة الأخيرة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{10} \\times 100 = 30$ .",
+        "incorrect": "اقسم تكرار الفئة الأخيرة على التكرار الكلي ثم اضرب في 100 ."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{10} \\times 100 = 30$"
+        ],
+        "result": "30\\%"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

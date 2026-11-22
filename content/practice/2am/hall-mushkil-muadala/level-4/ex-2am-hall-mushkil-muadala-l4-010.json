@@ -1,0 +1,190 @@
+{
+  "id": "ex-2am-hall-mushkil-muadala-l4-010",
+  "lessonCode": "hall-mushkil-muadala",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — قماش الخيّاط",
+    "estimatedMinutes": 6,
+    "tags": [
+      "معادلة",
+      "عمليّتان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "اشترى خيّاط $x$ مترًا من القماش ثمن المتر $60$ DA ، ودفع $150$ DA أجرة للنقل، فكان المبلغ $870$ DA . المعادلة : $60x+150=870$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "نريد حلّ $60x+150=870$ . ما المعادلة التي نحصل عليها بعد إلغاء آخر عملية أُجريت على المجهول ؟",
+      "learningPoints": [
+        {
+          "code": "2am_hall-mushkil-muadala_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$60\\times x=1020$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAJHUL-ADDFORM"
+        },
+        {
+          "id": "B",
+          "content": "$60\\times x=720$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$x+150=14{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAJHUL-UNDOFIRST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد آخر عملية أُجريت على المجهول في الطرف الأيسر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ألغِ تلك العملية أوّلًا بالعملية العكسية، وطبّقها على العدد الآخر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اختبر الخيار بالحلّ المتوقّع : هل يحقّق المعادلة الجديدة ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "نحصل على $60\\times x=720$ .",
+        "incorrect": "ألغِ آخر عملية أوّلًا : إن كانت جمعًا فاطرح، وإن كانت قسمة فاضرب."
+      },
+      "solution": {
+        "lines": [
+          "$60\\times x=720$ : ألغينا آخر عملية بعكسها.",
+          "ثمّ نحلّ المعادلة الجديدة بعملية واحدة."
+        ]
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حلّ المعادلة : $60x+150=870$ .",
+      "learningPoints": [
+        {
+          "code": "2am_hall-mushkil-muadala_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "12",
+      "misconceptionSignatures": [
+        {
+          "value": "720",
+          "id": "MISC-MAJHUL-SUBFORM"
+        },
+        {
+          "value": "17",
+          "id": "MISC-MAJHUL-ADDFORM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في المعادلة ما يُفعل بالمجهول : ضرب أو قسمة أو جمع أو طرح، وما هي آخر عملية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ألغِ آخر عملية أُجريت على المجهول أوّلًا، ثمّ ألغِ ما بقي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من حلّك : عوّض المجهول بقيمته وأنجز العملية، فإن وجدت الطرف الآخر فالحلّ صحيح."
+        }
+      ],
+      "feedback": {
+        "correct": "$x=12$ .",
+        "incorrect": "ابحث عن العدد الذي يجعل المساواة صحيحة بالعملية العكسية، ثمّ تحقّق منه بإنجاز العملية."
+      },
+      "solution": {
+        "lines": [
+          "آخر عملية هي جمع $150$ : $60x=870-150=720$ .",
+          "$x=720\\div 60=12$ .",
+          "التحقّق : $60\\times 12+150=870$ ."
+        ],
+        "result": "12"
+      },
+      "work": "optional",
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "تحقّق : احسب $60x+150$ من أجل قيمة $x$ التي وجدتها.",
+      "learningPoints": [
+        {
+          "code": "2am_hall-mushkil-muadala_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "870",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كلّ حرف بقيمته المعلومة في كلّ مكان يظهر فيه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احترم أولويّة العمليّات : الضرب والقسمة قبل الجمع والطرح."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب مرحلة مرحلة واكتب كلّ نتيجة جزئيّة."
+        }
+      ],
+      "feedback": {
+        "correct": "النتيجة $870$ .",
+        "incorrect": "عوّض بالقيم المعلومة واحسب مرحلة مرحلة."
+      },
+      "solution": {
+        "lines": [
+          "$60\\times 12+150=870$ ."
+        ],
+        "result": "870"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "id": "ex-4am-hisab-murakkibatay-l3-002",
+  "lessonCode": "hisab-murakkibatay",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 9 — النقطة P",
+    "estimatedMinutes": 4,
+    "tags": [
+      "تساوي شعاعين",
+      "المبدأ O"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-9",
+      "page": 146,
+      "section": "مركبتا شعاع علمت إحداثيات مبدئه ونهايته",
+      "number": 9
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 146، تمرين 9): A، B، P نقط من المستوي حيث $A(2\\,;\\,2)$ ، $B(-3\\,;\\,2{,}5)$ ، $P(x\\,;\\,y)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "1) $\\overrightarrow{AB} = \\overrightarrow{OP}$ : الثنائية $(x\\,;\\,y)$",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "point",
+      "answerFormat": "الإحداثيتان (x ; y) — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "-5",
+        "y": "0.5"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "5",
+            "y": "-0.5"
+          },
+          "id": "MISC-MAALAM-TARH-MAQLUB"
+        },
+        {
+          "value": {
+            "x": "-3",
+            "y": "2.5"
+          },
+          "id": "MISC-MAALAM-IHDATHIYAT-MURAKKIBAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مركبتا OP هما x و y."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب مركبتي AB."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تساوي الشعاعين: x = المركبة الأولى لـ AB، و y = الثانية."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AB}\\begin{pmatrix} -5 \\\\ 0{,}5 \\end{pmatrix}$ ، فـ $x = -5$ و $y = 0{,}5$ .",
+        "incorrect": "احسب مركبتي AB أولا، ثم ساو المركبتين."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "2) $\\overrightarrow{AB} = \\overrightarrow{PO}$ : الثنائية $(x\\,;\\,y)$",
+      "learningPoints": [
+        {
+          "code": "4am_hisab-murakkibatay_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "point",
+      "answerFormat": "الإحداثيتان (x ; y) — عدد صحيح أو عشري (3,5) أو كسر (3/2)",
+      "expectedAnswer": {
+        "x": "5",
+        "y": "-0.5"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "-5",
+            "y": "0.5"
+          },
+          "id": "MISC-MAALAM-TARTIB-NUQAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مبدأ PO هو P ونهايته O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مركبتا PO هما $-x$ و $-y$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$-x = -5$ و $-y = 0{,}5$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{PO}\\begin{pmatrix} -x \\\\ -y \\end{pmatrix}$ : $x = 5$ و $y = -0{,}5$ .",
+        "incorrect": "مركبتا PO ليستا x و y بل $0 - x$ و $0 - y$ ."
+      }
+    }
+  ]
+}

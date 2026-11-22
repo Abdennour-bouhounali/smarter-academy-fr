@@ -1,0 +1,342 @@
+{
+  "id": "ex-3am-khassiyat-fitaghuras-l3-002",
+  "lessonCode": "khassiyat-fitaghuras",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — شجرة الحيّ المنكسرة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "خاصية فيثاغورس",
+      "مثلث غير قائم"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 2,
+      "file": "3am-s2-81",
+      "exercise": 3
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثالث",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "بعد عاصفة قوية، خرج شباب الحيّ يعتنون بأشجار حديقتهم المشتركة. الشجرة الأولى (الشكل) انكسرت: بقي جزؤها $[PK]$ قائما عموديا على الأرض بطول $2{,}1\\,\\mathrm{m}$ ، ولمس رأسها $T$ الأرض على بعد $PT = 2{,}8\\,\\mathrm{m}$ من أسفل الجذع. الشجرة الثانية يبدو جذعها مائلا قليلا: ربطوا حبلا مشدودا من النقطة $E$ من جذعها، على بعد $EF = 2\\,\\mathrm{m}$ من أسفله $F$ ، إلى وتد $G$ على الأرض حيث $FG = 2{,}9\\,\\mathrm{m}$ ، فكان طول الحبل $EG = 3{,}4\\,\\mathrm{m}$ .",
+    "figure": {
+      "points": {
+        "P": [
+          0.0,
+          0.0
+        ],
+        "T": [
+          2.8,
+          0.0
+        ],
+        "K": [
+          0.0,
+          2.1
+        ]
+      },
+      "segments": [
+        {
+          "from": "P",
+          "to": "T",
+          "label": "2,8 m"
+        },
+        {
+          "from": "P",
+          "to": "K",
+          "label": "2,1 m"
+        },
+        {
+          "from": "T",
+          "to": "K"
+        }
+      ],
+      "rightAngles": [
+        [
+          "T",
+          "P",
+          "K"
+        ]
+      ],
+      "ariaLabel": "شجرة انكسرت: الجزء القائم [PK] طوله 2,1 m عمودي على الأرض، ورأسها T يلمس الأرض على بعد PT = 2,8 m من جذعها",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الشجرة الأولى:",
+      "statement": "احسب طول الجزء المنكسر $KT$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m",
+      "expectedAnswer": "3.5",
+      "misconceptionSignatures": [
+        {
+          "value": "4.9",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        },
+        {
+          "value": "12.25",
+          "id": "MISC-FITAGHURAS-NO-ROOT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد الزاوية القائمة في المثلث، ثم الضلع المقابل لها: إنه الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع طول الوتر يساوي مجموع مربعي طولي الضلعين الآخرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولا مربع الطول، ثم خذ جذره التربيعي بالآلة الحاسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$KT^2 = 2{,}1^2 + 2{,}8^2 = 12{,}25$ ، إذن $KT = 3{,}5\\,\\mathrm{m}$ .",
+        "incorrect": "ابدأ بتحديد الوتر، ثم اكتب مساواة فيثاغورس، وتذكّر أن ما تحسبه أولا هو مربع الطول لا الطول نفسه."
+      },
+      "solution": {
+        "lines": [
+          "المثلث $KPT$ قائم في $P$ ، حسب خاصية فيثاغورس: $KT^2 = PK^2 + PT^2$",
+          "$KT^2 = 2{,}1^2 + 2{,}8^2$",
+          "$KT^2 = 4{,}41 + 7{,}84 = 12{,}25$",
+          "$KT = \\sqrt{12{,}25} = 3{,}5\\,\\mathrm{m}$"
+        ],
+        "result": "KT = 3{,}5\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "استنتج طول الشجرة قبل انكسارها.",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: الطول بـ m",
+      "expectedAnswer": "5.6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كانت الشجرة قائمة كلها قبل أن تنكسر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع الجزء الباقي والجزء المنكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$2{,}1 + 3{,}5 = 5{,}6\\,\\mathrm{m}$ .",
+        "incorrect": "الشجرة كاملة = الجزء القائم + الجزء المنكسر."
+      },
+      "solution": {
+        "lines": [
+          "طول الشجرة قبل الانكسار $= PK + KT = 2{,}1 + 3{,}5 = 5{,}6\\,\\mathrm{m}$"
+        ],
+        "result": "5{,}6\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "الشجرة الثانية:",
+      "statement": "احسب $EG^2$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: قيمة $EG^2$",
+      "expectedAnswer": "11.56",
+      "misconceptionSignatures": [
+        {
+          "value": "6.8",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        },
+        {
+          "value": "8.41",
+          "id": "MISC-FITAGHURAS-NOT-LONGEST"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "رتّب أطوال الأضلاع الثلاثة: الضلع الأطول هو الوحيد الذي يمكن أن يكون وترا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مربع العدد هو جداؤه في نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "أطول الأضلاع هو $[EG]$ و $EG^2 = 3{,}4^2 = 11{,}56$ .",
+        "incorrect": "تأكّد أنك اخترت الضلع الأطول، وأنك ضربت طوله في نفسه."
+      },
+      "solution": {
+        "lines": [
+          "أطول أضلاع المثلث $EFG$ هو $[EG]$ .",
+          "$EG^2 = 3{,}4^2 = 11{,}56$"
+        ],
+        "result": "EG^2 = 11{,}56"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب $EF^2 + FG^2$ .",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري: مجموع المربعين",
+      "expectedAnswer": "12.41",
+      "misconceptionSignatures": [
+        {
+          "value": "9.8",
+          "id": "MISC-FITAGHURAS-SQUARE-DOUBLE"
+        },
+        {
+          "value": "4.9",
+          "id": "MISC-FITAGHURAS-ADD-LENGTHS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ربّع طول كل ضلع من الضلعين الأقصرين على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اجمع المربعين ولا تجمع الطولين."
+        }
+      ],
+      "feedback": {
+        "correct": "$EF^2 + FG^2 = 2^2 + 2{,}9^2 = 4 + 8{,}41 = 12{,}41$ .",
+        "incorrect": "احسب مربع كل طول أولا، ثم اجمع المربعين."
+      },
+      "solution": {
+        "lines": [
+          "$EF^2 + FG^2 = 2^2 + 2{,}9^2$",
+          "$EF^2 + FG^2 = 4 + 8{,}41 = 12{,}41$"
+        ],
+        "result": "EF^2 + FG^2 = 12{,}41"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ج",
+      "statement": "هل جذع الشجرة الثانية عمودي على الأرض؟",
+      "learningPoints": [
+        {
+          "code": "3am_khassiyat-fitaghuras_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم، لأن $12{,}41$ قريب من $11{,}56$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-LOOKS-RIGHT"
+        },
+        {
+          "id": "B",
+          "content": "لا، الجذع مائل",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نعم، لأن الأشجار تنبت دائما عمودية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-FITAGHURAS-LOOKS-RIGHT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العددين اللذين حسبتهما: هل هما متساويان تماما؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "لو كان المثلث قائما لكان مربع طول أطول أضلاعه مساويا تماما لمجموع مربعي الضلعين الآخرين (خاصية فيثاغورس)."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "التقارب لا يكفي: المساواة يجب أن تكون تامة."
+        }
+      ],
+      "feedback": {
+        "correct": "$11{,}56 \\neq 12{,}41$ : لو كان المثلث قائما لتساوى العددان حسب خاصية فيثاغورس، إذن هو ليس قائما.",
+        "incorrect": "الشكل أو تقارب العددين لا يكفيان: انظر هل المساواة محقّقة تماما أم لا."
+      },
+      "solution": {
+        "lines": [
+          "أطول الأضلاع هو $[EG]$ : $EG^2 = 11{,}56$ و $EF^2 + FG^2 = 12{,}41$ .",
+          "بما أن $EG^2 \\neq EF^2 + FG^2$ ، فحسب خاصية فيثاغورس المثلث $EFG$ ليس قائما."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

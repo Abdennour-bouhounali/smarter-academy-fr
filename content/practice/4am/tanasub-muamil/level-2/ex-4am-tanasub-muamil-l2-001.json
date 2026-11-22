@@ -1,0 +1,191 @@
+{
+  "id": "ex-4am-tanasub-muamil-l2-001",
+  "lessonCode": "tanasub-muamil",
+  "level": 2,
+  "metadata": {
+    "title": "نشاط 1 — تخفيض العيد",
+    "estimatedMinutes": 2,
+    "tags": [
+      "جدول تناسبية",
+      "تخفيض"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-1",
+      "page": 66,
+      "section": "أنشطة",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "قرّر تاجر تخفيض أثمان سلعه بـ 20% بمناسبة عيد الفطر ليتمكّن الجميع من شراء كسوة العيد. يعطي الجدول الآتي الثمن قبل التخفيض والثمن بعده (بـ DA):",
+    "table": {
+      "head": [
+        "الثمن قبل التخفيض",
+        "50",
+        "100",
+        "150",
+        "200"
+      ],
+      "rows": [
+        [
+          "الثمن بعد التخفيض",
+          "40",
+          "80",
+          "…",
+          "…"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب معامل التناسبية.",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر من الشكل a/b)",
+      "expectedAnswer": "0,8",
+      "misconceptionSignatures": [
+        {
+          "value": "0,2",
+          "id": "MISC-TAKHFID-NISBA"
+        },
+        {
+          "value": "5/4",
+          "id": "MISC-TANASUB-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل التناسبية هو العدد الذي نضرب فيه أعداد السطر الأول لنحصل على أعداد السطر الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم عددا من السطر الثاني على العدد المقابل له من السطر الأول: $\\dfrac{y}{x}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن حاصل القسمة هو نفسه في عمود آخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{40}{50} = \\dfrac{80}{100} = 0{,}8$ .",
+        "incorrect": "معامل التناسبية هو $\\dfrac{y}{x}$ : السطر الثاني على السطر الأول، وليس العكس."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{40}{50} = \\dfrac{80}{100} = 0{,}8$",
+          "معامل التناسبية هو $0{,}8$ : بعد تخفيض 20% ندفع 80% من الثمن."
+        ],
+        "result": "a = 0{,}8"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "انقل الجدول وأكمله.",
+      "statement": "الثمن بعد التخفيض لسلعة ثمنها 150DA :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "120",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في جدول تناسبية نضرب في المعامل، ولا نضيف الفرق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب معامل التناسبية من عمود كامل."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب الثمن قبل التخفيض في المعامل."
+        }
+      ],
+      "feedback": {
+        "correct": "$150 \\times 0{,}8 = 120$ .",
+        "incorrect": "أعد الحساب: في جدول تناسبية حاصل القسمة ثابت، فتحقّق من جوابك بالضرب في المعامل."
+      },
+      "solution": {
+        "lines": [
+          "$150 \\times 0{,}8 = 120$"
+        ],
+        "result": "120DA"
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "الثمن بعد التخفيض لسلعة ثمنها 200DA :",
+      "learningPoints": [
+        {
+          "code": "4am_tanasub-muamil_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "160",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في جدول تناسبية نضرب في المعامل، ولا نضيف الفرق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب معامل التناسبية من عمود كامل."
+        }
+      ],
+      "feedback": {
+        "correct": "$200 \\times 0{,}8 = 160$ .",
+        "incorrect": "أعد الحساب: في جدول تناسبية حاصل القسمة ثابت، فتحقّق من جوابك بالضرب في المعامل."
+      },
+      "solution": {
+        "lines": [
+          "$200 \\times 0{,}8 = 160$",
+          "أو: $200 = 2 \\times 100$ ، إذن الثمن بعد التخفيض $2 \\times 80 = 160$ ."
+        ],
+        "result": "160DA"
+      },
+      "timeSeconds": 45
+    }
+  ]
+}

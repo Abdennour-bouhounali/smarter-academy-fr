@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-misaha-hajm-kura-l5-008",
+  "lessonCode": "misaha-hajm-kura",
+  "level": 5,
+  "metadata": {
+    "title": "وضعية — من الحجم إلى القطر",
+    "estimatedMinutes": 4,
+    "tags": [
+      "حجم الجلة",
+      "القطر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_misaha-hajm-kura_P2",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "حجم كرة سلة صغيرة للأطفال $288\\pi\\,\\mathrm{cm}^3$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قطرها بالـ $\\mathrm{cm}$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_misaha-hajm-kura_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالسنتيمتر)",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\frac{4}{3}\\pi R^3 = 288\\pi$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$R^3 = 216$ ، و $6^3 = 216$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "القطر ضعف نصف القطر."
+        }
+      ],
+      "feedback": {
+        "correct": "$R = 6\\,\\mathrm{cm}$ فالقطر $12\\,\\mathrm{cm}$ .",
+        "incorrect": "المطلوب القطر لا نصف القطر."
+      },
+      "difficulty": 5,
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-KURA-QUTR",
+          "value": "6"
+        },
+        {
+          "id": "MISC-HAJM-JADHR",
+          "value": "216"
+        }
+      ]
+    }
+  ]
+}

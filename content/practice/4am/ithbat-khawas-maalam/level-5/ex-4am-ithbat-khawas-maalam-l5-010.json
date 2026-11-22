@@ -1,0 +1,68 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l5-010",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — زاوية قائمة في A",
+    "estimatedMinutes": 2,
+    "tags": [
+      "مجهول"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_ithbat-khawas-maalam_P1",
+      "modelledOn": "method-unknown"
+    }
+  },
+  "generator": {
+    "tool": "u1x-ithbat-khawas-maalam/gen.mjs",
+    "version": "1"
+  },
+  "statement": {
+    "content": "$A(1\\,;\\,2)$ ، $B(5\\,;\\,4)$ ، $C(-1\\,;\\,y)$ ثلاث نقط في معلم متعامد ومتجانس."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "عيّن y حتى يكون المثلث ABC قائما في A.",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MAALAM-ISHARA",
+          "value": "-6"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قائم في A : $AB^2 + AC^2 = BC^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$AB^2 = 20$ ، $AC^2 = 4 + (y - 2)^2$ ، $BC^2 = 36 + (y - 4)^2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انشر: $y^2$ يحذف."
+        }
+      ],
+      "feedback": {
+        "correct": "$24 + y^2 - 4y + 4 = 36 + y^2 - 8y + 16$ ⇔ $4y = 24$ ⇔ $y = 6$ .",
+        "incorrect": "الضلع الوحيد [BC] يقابل A."
+      }
+    }
+  ]
+}

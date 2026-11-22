@@ -1,0 +1,86 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ashia-l4-010",
+  "lessonCode": "wadiya-idmajiya-ashia",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — نمذجة بالحروف",
+    "estimatedMinutes": 3,
+    "tags": [
+      "نمذجة",
+      "الانسحاب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ashia_P2",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "طريق عرضه w بين حافتين أفقيتين. الحي A فوق الحافة العليا بمسافة a، والمدرسة B تحت الحافة السفلى بمسافة b. B′ صورة B بالانسحاب الذي شعاعه $\\overrightarrow{NM}$ للممر [MN] العمودي على الحافتين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المسافة الشاقولية بين A و B′ تساوي:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$a + b$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$a + b + w$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MAMAR-NASI"
+        },
+        {
+          "id": "C",
+          "content": "$a + w - b$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "$a + b + 2w$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بين A و B شاقوليا: a + w + b."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "B′ أعلى من B بـ w."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح w."
+        }
+      ],
+      "feedback": {
+        "correct": "بين A و B شاقوليا $a + w + b$ ، و B′ أعلى من B بـ w: يبقى $a + b$ — عرض الطريق «يختفي» بالانسحاب.",
+        "incorrect": "B′ تصعد بعرض الطريق."
+      },
+      "cognitiveDemand": "reason",
+      "difficulty": 4
+    }
+  ]
+}

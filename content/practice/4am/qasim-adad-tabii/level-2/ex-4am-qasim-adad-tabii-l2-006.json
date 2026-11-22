@@ -1,0 +1,166 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l2-006",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2015 — 2346 و 46",
+    "estimatedMinutes": 4,
+    "tags": [
+      "مراحل الحساب",
+      "مضاعف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-adad-tabii_P1",
+      "modelledOn": "BEM 2015 I-1 01"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "اكتب المساواة التي تعبّر عن القسمة الإقليدية للعدد 2346 على 46 مع كتابة مراحل الحساب.",
+      "statement": "حاصل القسمة:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "51",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن أكبر مضاعف للعدد 46 لا يتجاوز 2346."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاصل القسمة هو أكبر عدد طبيعي $q$ يحقق $46 \\times q \\leq 2346$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أن الباقي أصغر تمامًا من 46."
+        }
+      ],
+      "feedback": {
+        "correct": "$2346 = 46 \\times 51 + 0$ مع $0 < 46$.",
+        "incorrect": "ابحث عن أكبر مضاعف للعدد 46 لا يتجاوز 2346، ثم اطرحه من 2346."
+      },
+      "solution": {
+        "lines": [
+          "$46 \\times 51 = 2346$ و $46 \\times 52 = 2392$ أكبر من 2346.",
+          "$2346 - 2346 = 0$ و $0 < 46$",
+          "إذن المساواة التي تعبّر عن القسمة الإقليدية هي:"
+        ],
+        "result": "2346 = 46 \\times 51 + 0"
+      },
+      "work": "required",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "الباقي:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى من 2346 بعد طرح أكبر مضاعف للعدد 46 لا يتجاوزه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي عدد طبيعي أصغر تمامًا من 46."
+        }
+      ],
+      "feedback": {
+        "correct": "$2346 = 46 \\times 51 + 0$: الباقي 0، فهو معدوم.",
+        "incorrect": "اطرح من 2346 أكبر مضاعف للعدد 46 لا يتجاوزه."
+      },
+      "solution": {
+        "lines": [
+          "$2346 - 46 \\times 51 = 0$"
+        ],
+        "result": "r = 0"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل 2346 مضاعف للعدد 51؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QASIM-MUDAAF-ITTIJAH"
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل المساواة التي وجدتها في السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$a$ مضاعف للعدد $b$ إذا وُجد عدد طبيعي $k$ حيث $a = b \\times k$."
+        }
+      ],
+      "feedback": {
+        "correct": "$2346 = 46 \\times 51 = 51 \\times 46$: 2346 مضاعف للعدد 51.",
+        "incorrect": "اكتب 2346 على شكل جداء أحد عامليه 51، مستعملًا السؤال 01."
+      },
+      "solution": {
+        "lines": [
+          "$2346 = 46 \\times 51 + 0$",
+          "$2346 = 51 \\times 46$ إذن 2346 مضاعف للعدد 51."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

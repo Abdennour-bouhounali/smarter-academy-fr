@@ -1,0 +1,132 @@
+{
+  "id": "ex-4am-khawass-qawasim-l1-008",
+  "lessonCode": "khawass-qawasim",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2021 — 23 و 690",
+    "estimatedMinutes": 5,
+    "tags": [
+      "خاصية 1"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_khawass-qawasim_P1",
+      "modelledOn": "BEM 2021 I-1 01"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعلم أن: $690 = 23 \\times 30$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "هل يقسم 23 العدد $690 + 46$ ؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "23 يقسم 690. هل يقسم 46 أيضًا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القاسم المشترك لعددين يقسم مجموعهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$46 = 23 \\times 2$، و 23 يقسم 690، فهو يقسم المجموع: $690 + 46 = 23 \\times 32$.",
+        "incorrect": "ادرس قابلية قسمة 46 على 23، ثم استعمل الخاصية 1."
+      },
+      "solution": {
+        "lines": [
+          "$690 = 23 \\times 30$ و $46 = 23 \\times 2$",
+          "23 قاسم مشترك للعددين 690 و 46، فهو يقسم مجموعهما.",
+          "$690 + 46 = 23 \\times (30 + 2) = 23 \\times 32$"
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "هل يقسم 23 العدد $690 + 47$ ؟ برّر إجابتك.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "افترض أن 23 يقسم $690 + 47$. ماذا تستنتج عن الفرق $(690 + 47) - 690$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يقبل 47 القسمة على 23؟"
+        }
+      ],
+      "feedback": {
+        "correct": "لو قسم 23 العدد 737 لقسم الفرق $737 - 690 = 47$، و 47 لا يقبل القسمة على 23.",
+        "incorrect": "استعمل الفرق: إذا قسم 23 كلا من $690 + 47$ و 690 فإنه يقسم فرقهما."
+      },
+      "solution": {
+        "lines": [
+          "نفرض أن 23 يقسم $690 + 47$.",
+          "23 يقسم 690، فهو يقسم الفرق $(690 + 47) - 690 = 47$ (الخاصية 1).",
+          "$47 = 23 \\times 2 + 1$: الباقي غير معدوم، فـ 23 لا يقسم 47. هذا تناقض.",
+          "إذن 23 لا يقسم $690 + 47$."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

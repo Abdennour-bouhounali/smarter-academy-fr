@@ -1,0 +1,208 @@
+{
+  "id": "ex-2am-wadiya-idmajiya-kusur-amaliyat-l1-002",
+  "lessonCode": "wadiya-idmajiya-kusur-amaliyat",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — حصر حاصل قسمة بين عددين طبيعيين",
+    "estimatedMinutes": 6,
+    "tags": [
+      "القيمة المقرّبة إلى الوحدة",
+      "الحصر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين الثاني",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر حاصل القسمة $\\dfrac{613}{25}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اختر الحصر الصحيح للحاصل $\\dfrac{613}{25}$ بين عددين طبيعيين متتاليين .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$25 < \\dfrac{613}{25} < 26$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        },
+        {
+          "id": "B",
+          "content": "$23 < \\dfrac{613}{25} < 24$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-IZAHA"
+        },
+        {
+          "id": "C",
+          "content": "$24 < \\dfrac{613}{25} < 25$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$13 < \\dfrac{613}{25} < 14$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من القسمة الإقليدية نعرف أنّ المقسوم عليه × الحاصل لا يتجاوز المقسوم ، وأنّ المقسوم عليه × (الحاصل + 1) يتجاوزه ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحصر بين عددين طبيعيين متتاليين يبدأ بالحاصل الإقليدي ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب طرفي الحصر في المقسوم عليه وقارن بالمقسوم للتأكّد ."
+        }
+      ],
+      "feedback": {
+        "correct": "$24 < \\dfrac{613}{25} < 25$ .",
+        "incorrect": "المقسوم عليه × الحاصل + الباقي = المقسوم ، والباقي أصغر من المقسوم عليه . تحقّق ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$613 = 25 \\times 24 + 13$ ، فالحاصل الإقليدي هو $24$ .",
+          "$25 \\times 24 = 600 < 613 < 625 = 25 \\times 25$ ، ومنه $24 < \\dfrac{613}{25} < 25$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "أعط القيمة المقرّبة إلى الوحدة بالنقصان لحاصل القسمة $\\dfrac{613}{25}$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "24",
+      "misconceptionSignatures": [
+        {
+          "value": "25",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "value": "13",
+          "id": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العددان الطبيعيان المتتاليان اللذان يحصران الحاصل ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمة المقرّبة إلى الوحدة بالنقصان هي العدد الأصغر ، وبالزيادة هي العدد الأكبر ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تأخذ الباقي مكان الحاصل ولا تعكس القيمتين ."
+        }
+      ],
+      "feedback": {
+        "correct": "$24$ .",
+        "incorrect": "المقسوم عليه × الحاصل + الباقي = المقسوم ، والباقي أصغر من المقسوم عليه . تحقّق ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$613 = 25 \\times 24 + 13$ ، ومنه $24 < \\dfrac{613}{25} < 25$ .",
+          "القيمة المقرّبة إلى الوحدة بالنقصان هي $24$ ."
+        ],
+        "result": "24"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "أعط القيمة المقرّبة إلى الوحدة بالزيادة لحاصل القسمة $\\dfrac{613}{25}$ .",
+      "learningPoints": [
+        {
+          "code": "2am_wadiya-idmajiya-kusur-amaliyat_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "25",
+      "misconceptionSignatures": [
+        {
+          "value": "24",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "value": "13",
+          "id": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما العددان الطبيعيان المتتاليان اللذان يحصران الحاصل ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القيمة المقرّبة إلى الوحدة بالنقصان هي العدد الأصغر ، وبالزيادة هي العدد الأكبر ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تأخذ الباقي مكان الحاصل ولا تعكس القيمتين ."
+        }
+      ],
+      "feedback": {
+        "correct": "$25$ .",
+        "incorrect": "المقسوم عليه × الحاصل + الباقي = المقسوم ، والباقي أصغر من المقسوم عليه . تحقّق ثمّ أعد المحاولة ."
+      },
+      "solution": {
+        "lines": [
+          "$613 = 25 \\times 24 + 13$ ، ومنه $24 < \\dfrac{613}{25} < 25$ .",
+          "القيمة المقرّبة إلى الوحدة بالزيادة هي $25$ ."
+        ],
+        "result": "25"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

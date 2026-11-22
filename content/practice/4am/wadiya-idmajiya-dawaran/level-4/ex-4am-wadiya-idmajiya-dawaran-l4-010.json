@@ -1,0 +1,77 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-dawaran-l4-010",
+  "lessonCode": "wadiya-idmajiya-dawaran",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — وردة زليج تلمسان",
+    "estimatedMinutes": 2,
+    "tags": [
+      "المسافة في المثلث القائم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-dawaran_P3",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "وردة زليج في قصر المشور بتلمسان لها 10 بتلات، أطرافها على دائرة نصف قطرها $6\\,\\mathrm{cm}$ ومتباعدة بنفس المسافة. يتعلّم الحرفي الصغير فنّ الزليج من والده ويشكر له جهده، فبرّ الوالدين واجب."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المسافة بين طرفي بتلتين متتاليتين بالسنتيمتر، مدوّرة إلى $0{,}01$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة (مدوّر إلى 0,01)",
+      "expectedAnswer": "3.71",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الزاوية المركزية $36^\\circ$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في المثلث القائم: $18^\\circ$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$d = 2 \\times 6 \\times \\sin 18^\\circ$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$d = 12\\sin 18^\\circ \\approx 3{,}71\\,\\mathrm{cm}$ .",
+        "incorrect": "نصف الزاوية في المثلث القائم ثم ضاعف نصف المسافة."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "7.05",
+          "id": "MISC-MUNTAZAM-NISF-ZAWIYA"
+        },
+        {
+          "value": "3.77",
+          "id": "MISC-MUNTAZAM-QAWS-WATAR"
+        },
+        {
+          "value": "6",
+          "id": "MISC-MUNTAZAM-DIL"
+        }
+      ],
+      "difficulty": 4
+    }
+  ]
+}

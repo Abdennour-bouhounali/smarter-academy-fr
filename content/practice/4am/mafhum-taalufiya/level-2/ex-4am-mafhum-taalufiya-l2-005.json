@@ -1,0 +1,138 @@
+{
+  "id": "ex-4am-mafhum-taalufiya-l2-005",
+  "lessonCode": "mafhum-taalufiya",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2016 — صورة وعدد صورته معلومة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "صورة عدد",
+      "العدد الذي صورته معلومة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mafhum-taalufiya_P3",
+      "modelledOn": "BEM 2016 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "$f$ دالة تآلفية عبارتها الجبرية:",
+    "formulas": [
+      "f(x) = 6x - 5"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $f(2)$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "12",
+          "id": "MISC-TAALUFI-NISYAN-B"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بـ $2$ في العبارة $f(x) = 6x - 5$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب في المعامل أولا، ثم أضف الحدّ الثابت، مع الانتباه إلى الإشارات."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(2) = 6 \\times 2 - 5 = 7$ .",
+        "incorrect": "اضرب العدد في المعامل $a$ ، ثم أضف الحدّ الثابت $b$ ."
+      },
+      "solution": {
+        "lines": [
+          "$f(2) = 6 \\times 2 - 5$",
+          "$f(2) = 12 - 5$",
+          "$f(2) = 7$"
+        ],
+        "result": "f(2) = 7"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "جد العدد الذي صورته 25 بالدالة $f$ .",
+      "learningPoints": [
+        {
+          "code": "4am_mafhum-taalufiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "25/6",
+          "id": "MISC-TAALUFI-SABIQ-QISMA"
+        },
+        {
+          "value": "55/6",
+          "id": "MISC-TAALUFI-SABIQ-TARTIB"
+        },
+        {
+          "value": "145",
+          "id": "MISC-KHATTIYA-SURA-SABIQ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن العدد $x$ الذي يحقق $f(x) = 25$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حلّ المعادلة $ax + b = m$ : اطرح الحدّ الثابت من الطرفين أولا، ثم اقسم على المعامل."
+        }
+      ],
+      "feedback": {
+        "correct": "$6x - 5 = 25$ تعطي $x = 5$ .",
+        "incorrect": "اطرح الحدّ الثابت $b$ أولا، ثم اقسم على المعامل $a$ (البرنامج العكسي)."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 25$ معناه $6x - 5 = 25$",
+          "$6x = 25 + 5$",
+          "$6x = 30$",
+          "$x = \\dfrac{30}{6}$",
+          "$x = 5$"
+        ],
+        "result": "x = 5"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

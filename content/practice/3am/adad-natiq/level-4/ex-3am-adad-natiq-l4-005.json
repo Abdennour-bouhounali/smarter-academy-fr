@@ -1,0 +1,244 @@
+{
+  "id": "ex-3am-adad-natiq-l4-005",
+  "lessonCode": "adad-natiq",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — عدد ومقلوبه",
+    "estimatedMinutes": 12,
+    "tags": [
+      "العدد الناطق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يقارن التلاميذ بدقّة العدد $a=-\\dfrac{3}{8}$ بمقلوبه على حبل الأعداد."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما مقلوب العدد $a=-\\dfrac{3}{8}$ ؟ اكتبه بمقام موجب .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال",
+      "expectedAnswer": "-8/3",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "8/3",
+          "id": "MISC-NATIQ-DROPSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ المطلوب بدقّة قبل أن تحسب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعن بقاعدة الدرس المناسبة وطبّقها خطوة خطوة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق من الناتج بتقدير معقول."
+        }
+      ],
+      "feedback": {
+        "correct": "$-\\dfrac{8}{3}$ .",
+        "incorrect": "راجع قاعدة الدرس المعنيّ وطبّقها خطوة خطوة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "مقلوب $\\dfrac{p}{q}$ هو $\\dfrac{q}{p}$ ، والإشارة تبقى.",
+          "$\\dfrac{1}{a}=-\\dfrac{8}{3}$ ."
+        ],
+        "result": "-\\dfrac{8}{3}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "قارن $a$ ومقلوبه $\\dfrac{1}{a}=-\\dfrac{8}{3}$ .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-\\dfrac{8}{3}<-\\dfrac{3}{8}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$-\\dfrac{8}{3}>-\\dfrac{3}{8}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-NEGORDER"
+        },
+        {
+          "id": "C",
+          "content": "$-\\dfrac{8}{3}=-\\dfrac{3}{8}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-WRITINGS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العددين بالمقام الموجب نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن البسطين بقواعد مقارنة الأعداد النسبية: على يسار الصفر، الأبعد عن الصفر هو الأصغر."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $-\\dfrac{8}{3}<-\\dfrac{3}{8}$ .",
+        "incorrect": "اكتب العددين بمقام موجب مشترك قبل أن تقارن، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$-\\dfrac{3}{8}=-0{,}375$ و $-\\dfrac{8}{3}=-2{,}666\\ldots$ .",
+          "الأبعد عن الصفر في الجهة السالبة هو الأصغر : $-\\dfrac{8}{3}<-\\dfrac{3}{8}$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "بين أيّ عددين صحيحين متتاليين يقع $-\\dfrac{8}{3}$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-3$ و $-2$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$-2$ و $-1$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-NEGPLACE"
+        },
+        {
+          "id": "C",
+          "content": "$2$ و $3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-DROPSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أنجز القسمة الإقليدية للبسط على المقام، ثمّ انتبه إلى الإشارة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارسم المستقيم المدرّج واقرأ التدريجات الصغيرة."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $-3$ و $-2$ .",
+        "incorrect": "حدّد الجهة من الصفر ثمّ العددين الصحيحين المتتاليين، وأعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{8}{3}=2{,}66\\ldots$ يقع بين $2$ و $3$ .",
+          "إذن $-\\dfrac{8}{3}$ بين $-3$ و $-2$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "برّر أنّ $-\\dfrac{8}{3}$ ليس عددًا عشريًا ومع ذلك هو عدد ناطق .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثمّ اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجب أن تبرّره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اذكر القاعدة التي تستعملها في كلّ سطر."
+        }
+      ],
+      "feedback": {
+        "correct": "تطابق تبريرك مع الحل النموذجي .",
+        "incorrect": "قارن تبريرك بالحل النموذجي سطرًا سطرًا، ثمّ قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "$-\\dfrac{8}{3}$ حاصل قسمة عددين صحيحين مقامه $3$ غير معدوم، إذن هو ناطق.",
+          "$3$ عامل أوّلي مختلف عن $2$ و $5$ ، فلا كتابة عشرية تامّة للعدد."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

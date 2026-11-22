@@ -1,0 +1,246 @@
+{
+  "id": "ex-4am-majmu-shuaayn-l3-001",
+  "lessonCode": "majmu-shuaayn",
+  "level": 3,
+  "metadata": {
+    "title": "تمرين 10 — أربعة مثلثات متقايسة الأضلاع",
+    "estimatedMinutes": 4,
+    "tags": [
+      "قاعدة متوازي الأضلاع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-10",
+      "page": 135,
+      "section": "مجموع شعاعين - علاقة شال",
+      "number": 10
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (تمرين 10): ABC و BCD و AFC و EAB مثلثات متقايسة الأضلاع (الشكل).",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          -1,
+          -1.732
+        ],
+        "C": [
+          1,
+          -1.732
+        ],
+        "E": [
+          -2,
+          0
+        ],
+        "F": [
+          2,
+          0
+        ],
+        "D": [
+          0,
+          -3.464
+        ]
+      },
+      "segments": [
+        [
+          "E",
+          "F"
+        ],
+        [
+          "F",
+          "D"
+        ],
+        [
+          "D",
+          "E"
+        ],
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "A"
+        ]
+      ],
+      "labels": {
+        "A": "n",
+        "B": "w",
+        "C": "e",
+        "E": "nw",
+        "F": "ne",
+        "D": "s"
+      },
+      "ariaLabel": "مثلث متقايس الأضلاع EFD و A و B و C منتصفات [EF] و [ED] و [FD]: أربعة مثلثات متقايسة الأضلاع ABC و BCD و AFC و EAB"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ممثل للشعاع $\\overrightarrow{EA} + \\overrightarrow{EB}$",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{AB}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-QAIDA-QUTR"
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{ED}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-JAM-ATWAL"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{EC}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل للشعاعين نفس المبدأ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "شعاعان لهما نفس المبدأ يُجمعان بقاعدة متوازي الأضلاع."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع هو القطر الصادر من المبدأ المشترك، لا القطر الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "نفس المبدأ E: EACB معيّن، المجموع هو القطر $\\overrightarrow{EC}$ .",
+        "incorrect": "قاعدة متوازي الأضلاع: مجموع شعاعين لهما نفس المبدأ هو القطر الصادر من ذلك المبدأ."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "ممثل للشعاع $\\overrightarrow{BA} + \\overrightarrow{AF}$",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{BF}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{FB}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-AKS"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{BC}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-SHAL-RABT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى نهاية الشعاع الأول ومبدأ الشعاع الثاني."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "علاقة شال تتطلب أن تكون نهاية الأول مبدأ الثاني؛ يمكن تبديل ترتيب الحدّين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المجموع يبدأ من مبدأ الأول وينتهي عند نهاية الثاني."
+        }
+      ],
+      "feedback": {
+        "correct": "متعاقبان: $\\overrightarrow{BA} + \\overrightarrow{AF} = \\overrightarrow{BF}$ .",
+        "incorrect": "علاقة شال: نهاية الأول مبدأ الثاني، والمجموع من مبدأ الأول إلى نهاية الثاني."
+      }
+    },
+    {
+      "id": "q3",
+      "statement": "ممثل للشعاع $\\overrightarrow{EA} + \\overrightarrow{FA}$",
+      "learningPoints": [
+        {
+          "code": "4am_majmu-shuaayn_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{EF}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-JAM-ATWAL"
+        },
+        {
+          "id": "B",
+          "content": "$\\vec{0}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$2\\overrightarrow{EA}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المنحى والاتجاه والطول."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "شعاعان متعاكسان لهما نفس المنحى ونفس الطول واتجاهان متعاكسان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الذهاب ثم العودة إلى نفس النقطة يعطي الشعاع المعدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "A منتصف [EF]: $\\overrightarrow{FA} = \\overrightarrow{AE}$ ، و $\\overrightarrow{EA} + \\overrightarrow{AE} = \\vec{0}$ .",
+        "incorrect": "الشعاعان المتعاكسان مجموعهما الشعاع المعدوم؛ لا نجمع الأطوال."
+      }
+    }
+  ]
+}

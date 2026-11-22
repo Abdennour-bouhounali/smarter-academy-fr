@@ -1,0 +1,293 @@
+{
+  "id": "ex-2am-qisma-iqlidiya-hasr-l5-005",
+  "lessonCode": "qisma-iqlidiya-hasr",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — حافلات الرحلة المدرسية",
+    "estimatedMinutes": 18,
+    "tags": [
+      "حافلات",
+      "بالزيادة",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: تنظّم متوسّطة رحلة علمية لـ 538 تلميذًا يرافقهم 22 أستاذًا، ويجب أن ينطلق الجميع في الموعد.\nالجزء الثاني: عرض أوّل: حافلات من 54 مقعدًا بـ 12000 دج للحافلة. عرض ثانٍ: حافلات صغيرة من 30 مقعدًا بـ 7000 دج للحافلة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "كم شخصًا يشارك في الرحلة؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "560",
+      "misconceptionSignatures": [
+        {
+          "value": "516",
+          "id": "MISC-HASR-HISAB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التلاميذ والأساتذة معًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$538 + 22 = 560$.",
+        "incorrect": "اجمع عدد التلاميذ وعدد الأساتذة."
+      },
+      "solution": {
+        "lines": [
+          "$538 + 22 = 560$"
+        ],
+        "result": "560"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اختر المساواة التي تعبّر عن القسمة الإقليدية للعدد 560 على 54.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$560 = 54 \\times 10 + 20$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$560 = 54 \\times 9 + 74$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-AKBAR"
+        },
+        {
+          "id": "C",
+          "content": "$560 = 54 \\times 20 + 10$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-BAQI-HASIL"
+        },
+        {
+          "id": "D",
+          "content": "$560 = 54 \\times 11 + 20$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-HISAB"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق من صحة كل مساواة بالحساب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في القسمة الإقليدية على 54 يكون الباقي أصغر من 54."
+        }
+      ],
+      "feedback": {
+        "correct": "$54 \\times 10 + 20 = 560$ و $20 < 54$.",
+        "incorrect": "ابحث عن المساواة الصحيحة التي باقيها أصغر من 54."
+      },
+      "solution": {
+        "lines": [
+          "$54 \\times 10 = 540$ و $540 + 20 = 560$",
+          "$20 < 54$ ، إذن $560 = 54 \\times 10 + 20$ هي القسمة الإقليدية للعدد 560 على 54."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "كم حافلة يلزم في العرض الأول؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد الحافلات",
+      "expectedAnswer": "11",
+      "misconceptionSignatures": [
+        {
+          "value": "10",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "value": "20",
+          "id": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 560 على 54."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يبقى شيء بعد المجموعات الكاملة؟ ماذا نفعل به؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد اللازم هو القيمة المقرّبة إلى الوحدة بالزيادة عندما لا يكون الحاصل عددًا طبيعيًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$560 = 54 \\times 10 + 20$: 10 كاملة ويبقى 20، فيلزم 11.",
+        "incorrect": "لا تنسَ ما يبقى بعد المجموعات الكاملة: يحتاج هو أيضًا إلى مكان."
+      },
+      "solution": {
+        "lines": [
+          "$560 = 54 \\times 10 + 20$",
+          "$10 < \\frac{560}{54} < 11$ ، والباقي 20 يحتاج إلى واحدة أخرى: يلزم 11 (القيمة المقرّبة بالزيادة)."
+        ],
+        "result": "11"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "كم حافلة صغيرة يلزم في العرض الثاني؟",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد الحافلات",
+      "expectedAnswer": "19",
+      "misconceptionSignatures": [
+        {
+          "value": "18",
+          "id": "MISC-HASR-NAQS-ZIYADA"
+        },
+        {
+          "value": "20",
+          "id": "MISC-HASR-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أنجز القسمة الإقليدية للعدد 560 على 30."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يبقى شيء بعد المجموعات الكاملة؟ ماذا نفعل به؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد اللازم هو القيمة المقرّبة إلى الوحدة بالزيادة عندما لا يكون الحاصل عددًا طبيعيًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$560 = 30 \\times 18 + 20$: 18 كاملة ويبقى 20، فيلزم 19.",
+        "incorrect": "لا تنسَ ما يبقى بعد المجموعات الكاملة: يحتاج هو أيضًا إلى مكان."
+      },
+      "solution": {
+        "lines": [
+          "$560 = 30 \\times 18 + 20$",
+          "$18 < \\frac{560}{30} < 19$ ، والباقي 20 يحتاج إلى واحدة أخرى: يلزم 19 (القيمة المقرّبة بالزيادة)."
+        ],
+        "result": "19"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "أيّ العرضين أقل كلفة؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "2am_qisma-iqlidiya-hasr_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "العرض الأول",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "العرض الثاني",
+          "isCorrect": false,
+          "misconceptionId": "MISC-HASR-NAQS-ZIYADA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب كلفة كل عرض بعدد الحافلات اللازمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الكلفتين."
+        }
+      ],
+      "feedback": {
+        "correct": "$11 \\times 12000 = 132000$ و $19 \\times 7000 = 133000$: العرض الأول أقل كلفة.",
+        "incorrect": "لا تنسَ الحافلة الأخيرة غير الممتلئة في كل عرض."
+      },
+      "solution": {
+        "lines": [
+          "العرض الأول: $11 \\times 12000 = 132000$ دج.",
+          "العرض الثاني: $19 \\times 7000 = 133000$ دج.",
+          "$132000 < 133000$ ، إذن العرض الأول."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-dawaran-l5-006",
+  "lessonCode": "wadiya-idmajiya-dawaran",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — عمودان على مخطط مرصوف",
+    "estimatedMinutes": 3,
+    "tags": [
+      "صورة نقطة بدوران",
+      "المسافة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-dawaran_P1",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "على مخطط مرصوف (معلم متعامد ومتجانس، الوحدة $1\\,\\mathrm{m}$ )، مركز حوض في $O(0\\,;\\,0)$ وعمود A في $(3\\,;\\,0)$ . العمود B صورة A بالدوران الذي مركزه O وزاويته $90^\\circ$ في الاتجاه المباشر.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          3,
+          0
+        ]
+      },
+      "labels": {
+        "O": "sw",
+        "A": "se"
+      },
+      "grid": true,
+      "axes": true,
+      "ariaLabel": "معلم على ورقة مرصوفة: مركز الحوض O في المبدأ والعمود A على محور الفواصل على بعد ثلاثة مربعات"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إحداثيتا B:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الثنائية (x ; y)",
+      "expectedAnswer": {
+        "x": "0",
+        "y": "3"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "A على محور الفواصل على بعد 3 من O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ربع دورة عكس عقارب الساعة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "$(x\\,;\\,y) \\mapsto (-y\\,;\\,x)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$B(0\\,;\\,3)$ : على محور التراتيب، على بعد 3 من O.",
+        "incorrect": "ربع دورة مباشرة تنقل محور الفواصل الموجب إلى محور التراتيب الموجب."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 5
+    },
+    {
+      "id": "q2",
+      "statement": "القيمة المضبوطة للمسافة AB:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3\\sqrt{2}\\,\\mathrm{m}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$3\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-DIL"
+        },
+        {
+          "id": "C",
+          "content": "$6\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-DAIRA-QUTR"
+        },
+        {
+          "id": "D",
+          "content": "$\\dfrac{3\\pi}{2}\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-QAWS-WATAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المثلث AOB قائم في O."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$OA = OB = 3$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خاصية فيثاغورس."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB^2 = 3^2 + 3^2 = 18$ ومنه $AB = 3\\sqrt{2}\\,\\mathrm{m}$ .",
+        "incorrect": "المسافة المستقيمة لا طول القوس $\\dfrac{3\\pi}{2}$ ."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 5
+    }
+  ]
+}

@@ -1,0 +1,344 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l5-002",
+  "lessonCode": "mana-jam-tarh",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — حقل العم مراد",
+    "estimatedMinutes": 20,
+    "tags": [
+      "محيط",
+      "سياج",
+      "باقٍ",
+      "هل يكفي المبلغ"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 1,
+      "file": "1am-s1-96",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يملك العم مراد حقلًا رباعي الأضلاع أطوال أضلاعه: $135\\,\\mathrm{m}$ و $86{,}4\\,\\mathrm{m}$ و $52{,}5\\,\\mathrm{m}$ و $94{,}6\\,\\mathrm{m}$، ويعتني به بإتقان.\nالجزء الأول: أراد إحاطة حقله بسياج مع ترك مدخل عرضه $4{,}5\\,\\mathrm{m}$. ثمن المتر الواحد من السياج 300 دج.\nالجزء الثاني: استأجر آلة حرث بـ 2500 دج للساعة، تعمل 4 ساعات في اليوم مدة 3 أيام. كان معه 150000 دج، ويريد بعد ذلك شراء بذور بـ 12000 دج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب محيط الحقل.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالمتر (m)",
+      "expectedAnswer": "368.5",
+      "misconceptionSignatures": [
+        {
+          "value": "273.9",
+          "id": "MISC-JAMTARH-JUZ-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المحيط مجموع أطوال الأضلاع الأربعة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاذِ الفواصل."
+        }
+      ],
+      "feedback": {
+        "correct": "$135 + 86{,}4 + 52{,}5 + 94{,}6 = 368{,}5\\,\\mathrm{m}$.",
+        "incorrect": "اجمع أطوال الأضلاع الأربعة كلها."
+      },
+      "solution": {
+        "lines": [
+          "$135 + 86{,}4 + 52{,}5 + 94{,}6 = 368{,}5$"
+        ],
+        "result": "368{,}5 \\text{ m}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "بعد ترك المدخل، في المخطط بأقواس محيط الحقل هو:",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الكل (القوس تحت الخط)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "جزء (قوس فوق الخط)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المحيط = السياج + المدخل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أيّها يضمّ الآخرين؟"
+        }
+      ],
+      "feedback": {
+        "correct": "محيط الحقل = طول السياج + عرض المدخل: هو الكل.",
+        "incorrect": "المحيط يضمّ السياج والمدخل معًا."
+      },
+      "solution": {
+        "lines": [
+          "محيط الحقل = طول السياج + عرض المدخل.",
+          "إذن المحيط هو الكل."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب طول السياج.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالمتر (m)",
+      "expectedAnswer": "364",
+      "misconceptionSignatures": [
+        {
+          "value": "373",
+          "id": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول السياج جزء من المحيط."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح عرض المدخل من المحيط."
+        }
+      ],
+      "feedback": {
+        "correct": "$368{,}5 - 4{,}5 = 364\\,\\mathrm{m}$.",
+        "incorrect": "السياج لا يغطّي المدخل: طوله أقل من المحيط."
+      },
+      "solution": {
+        "lines": [
+          "$368{,}5 - 4{,}5 = 364$"
+        ],
+        "result": "364 \\text{ m}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب تكلفة التسييج.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "109200",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طول السياج × ثمن المتر."
+        }
+      ],
+      "feedback": {
+        "correct": "$364 \\times 300 = 109200$ دج.",
+        "incorrect": "اضرب طول السياج (بعد ترك المدخل) في ثمن المتر."
+      },
+      "solution": {
+        "lines": [
+          "$364 \\times 300 = 109200$"
+        ],
+        "result": "109200 \\text{ DA}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "احسب تكلفة الحرث.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "30000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولًا عدد ساعات الحرث."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التكلفة = عدد الساعات × سعر الساعة."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 3 = 12\\,\\mathrm{h}$ و $12 \\times 2500 = 30000$ دج.",
+        "incorrect": "عدد الساعات = ساعات اليوم × عدد الأيام، ثم اضرب في سعر الساعة."
+      },
+      "solution": {
+        "lines": [
+          "$4 \\times 3 = 12$",
+          "$12 \\times 2500 = 30000$"
+        ],
+        "result": "30000 \\text{ DA}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "احسب المبلغ المتبقي بعد عمليتي التسييج والحرث.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "10800",
+      "misconceptionSignatures": [
+        {
+          "value": "40800",
+          "id": "MISC-JAMTARH-JUZ-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المبلغ الذي معه هو الكل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اطرح التكلفتين كلتيهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$150000 - (109200 + 30000) = 10800$ دج.",
+        "incorrect": "اطرح مجموع تكلفتي التسييج والحرث من المبلغ الذي معه."
+      },
+      "solution": {
+        "lines": [
+          "$109200 + 30000 = 139200$",
+          "$150000 - 139200 = 10800$"
+        ],
+        "result": "10800 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q7",
+      "step": "06",
+      "statement": "هل يكفي المبلغ المتبقي لشراء البذور؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-JUZ-NAQIS"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن المبلغ المتبقي بثمن البذور."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب المتبقي بعد التكلفتين كلتيهما."
+        }
+      ],
+      "feedback": {
+        "correct": "$10800 < 12000$: المبلغ لا يكفي.",
+        "incorrect": "احسب المتبقي بعد التسييج والحرث، ثم قارنه بثمن البذور."
+      },
+      "solution": {
+        "lines": [
+          "المبلغ المتبقي 10800 دج.",
+          "$10800 < 12000$ ، إذن لا يكفي لشراء البذور."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

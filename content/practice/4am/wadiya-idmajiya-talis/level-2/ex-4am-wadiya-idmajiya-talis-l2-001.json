@@ -1,0 +1,191 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-talis-l2-001",
+  "lessonCode": "wadiya-idmajiya-talis",
+  "level": 2,
+  "metadata": {
+    "title": "تحدّ الوحدة — ارتفاع المئذنة",
+    "estimatedMinutes": 7,
+    "tags": [
+      "طريقة الظلّ",
+      "خاصية طالس"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "challenge",
+      "page": 103,
+      "section": "تحدّ"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "حبًّا للعلم وإتقانًا للقياس، غرس عمر عصا شاقولية $[SR]$ طولها $1\\,\\mathrm{m}$ على بعد $10\\,\\mathrm{m}$ من قاعدة مئذنة $[PT]$ ، فانتهى ظلّها حيث ينتهي ظلّ المئذنة، في النقطة $O$ على بعد $11{,}6\\,\\mathrm{m}$ من قاعدة المئذنة (الشكل المقابل).",
+    "figure": {
+      "points": {
+        "T": [
+          0.0,
+          7.25
+        ],
+        "P": [
+          0.0,
+          0.0
+        ],
+        "S": [
+          10.0,
+          0.0
+        ],
+        "R": [
+          10.0,
+          1.0
+        ],
+        "O": [
+          11.6,
+          0.0
+        ]
+      },
+      "segments": [
+        {
+          "from": "P",
+          "to": "T",
+          "bold": true
+        },
+        {
+          "from": "P",
+          "to": "S",
+          "label": "10"
+        },
+        [
+          "S",
+          "O"
+        ],
+        {
+          "from": "S",
+          "to": "R",
+          "label": "1",
+          "bold": true,
+          "tone": "amber"
+        },
+        {
+          "from": "T",
+          "to": "O",
+          "dashed": true,
+          "tone": "amber"
+        }
+      ],
+      "rightAngles": [
+        [
+          "T",
+          "P",
+          "S"
+        ],
+        [
+          "R",
+          "S",
+          "O"
+        ]
+      ],
+      "labels": {
+        "T": "n",
+        "P": "sw",
+        "S": "s",
+        "R": "n",
+        "O": "se"
+      },
+      "ariaLabel": "المئذنة [PT] والعصا [SR] شاقوليتان، النقط P و S و O على استقامة على الأرض، والشعاع الشمسي (TO) يمر بـ R؛ PS = 10",
+      "maxWidth": 320
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب طول ظلّ العصا $SO$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "1,6",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الظلّان ينتهيان معا في النقطة $O$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$PO = PS + SO$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$SO = 11{,}6 - 10 = 1{,}6\\,\\mathrm{m}$ .",
+        "incorrect": "ظلّ العصا يبدأ من قدمها $S$ وينتهي في $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "$SO = PO - PS = 11{,}6 - 10$"
+        ],
+        "result": "SO = 1{,}6\\,\\mathrm{m}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب ارتفاع المئذنة $PT$ .",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الطول بـ m",
+      "expectedAnswer": "7,25",
+      "misconceptionSignatures": [
+        {
+          "value": "6.25",
+          "id": "MISC-TALIS-ZILL-RAS-MUSHTARAK"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$(SR) \\parallel (PT)$ (كلاهما شاقولي): المثلثان $OSR$ و $OPT$ في وضعية طالس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب $\\dfrac{OS}{OP} = \\dfrac{SR}{PT}$ : الأطوال تُقاس من النقطة $O$ لا من قدم المئذنة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{1{,}6}{11{,}6} = \\dfrac{1}{PT}$ ومنه $PT = 7{,}25\\,\\mathrm{m}$ .",
+        "incorrect": "في كل نسبة: طول من المثلث الصغير على الطول الموافق له في المثلث الكبير، والأطوال كلها تُقاس من الرأس المشترك."
+      },
+      "solution": {
+        "lines": [
+          "$(SR) \\parallel (PT)$ ، حسب خاصية طالس: $\\dfrac{OS}{OP} = \\dfrac{OR}{OT} = \\dfrac{SR}{PT}$",
+          "$\\dfrac{1{,}6}{11{,}6} = \\dfrac{1}{PT}$",
+          "$PT = \\dfrac{11{,}6 \\times 1}{1{,}6}$"
+        ],
+        "result": "PT = 7{,}25\\,\\mathrm{m}"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

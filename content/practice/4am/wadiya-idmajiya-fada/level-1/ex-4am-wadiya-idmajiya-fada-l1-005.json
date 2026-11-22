@@ -1,0 +1,70 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-fada-l1-005",
+  "lessonCode": "wadiya-idmajiya-fada",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — اللتر",
+    "estimatedMinutes": 3,
+    "tags": [
+      "السعة",
+      "اللتر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-fada_P3",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "اشترى كمال برًّا بوالدته جرّة زيت زيتون من القبائل سعتها $4500\\,\\mathrm{cm}^3$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "سعتها باللتر:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-fada_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (باللتر)",
+      "expectedAnswer": "4.5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$1\\,\\mathrm{L} = 1\\,\\mathrm{dm}^3$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كم سنتيمترا مكعبا في لتر واحد؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نقسم على $1000$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$4500 \\div 1000 = 4{,}5\\,\\mathrm{L}$ .",
+        "incorrect": "$1\\,\\mathrm{L} = 1000\\,\\mathrm{cm}^3$ : نقسم على 1000 لا على 100."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "45",
+          "id": "MISC-SAA-WAHDA"
+        },
+        {
+          "value": "450",
+          "id": "MISC-SAA-WAHDA"
+        }
+      ],
+      "difficulty": 1
+    }
+  ]
+}

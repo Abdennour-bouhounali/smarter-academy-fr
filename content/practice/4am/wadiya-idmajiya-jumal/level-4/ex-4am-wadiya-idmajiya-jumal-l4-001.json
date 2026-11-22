@@ -1,0 +1,207 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-jumal-l4-001",
+  "lessonCode": "wadiya-idmajiya-jumal",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2022 — ثنائيتان وجملتان",
+    "estimatedMinutes": 11,
+    "tags": [
+      "جملة",
+      "التحقق",
+      "حالات الجملة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-jumal_P2",
+      "modelledOn": "BEM 2022 I-3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2022",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "لتكن الثنائيتان $(35 ; 15)$ و $(15 ; 35)$ .",
+      "statement": "أيهما حل لهذه الجملة: $\\begin{cases} x + y = 50 \\\\ x + \\dfrac{4}{3}y = 55 \\end{cases}$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية التي هي حل للجملة: قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "35",
+        "y": "15"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "15",
+            "y": "35"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض كل ثنائية في المعادلتين معا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الثنائيتان تحققان المعادلة الأولى: افصل بينهما بالمعادلة الثانية."
+        }
+      ],
+      "feedback": {
+        "correct": "تحقق المعادلتين معا: هي حل الجملة.",
+        "incorrect": "الثنائية حل للجملة إذا حققت المعادلتين معا؛ احسب $x + \\dfrac{4}{3}y$ لكل ثنائية."
+      },
+      "solution": {
+        "lines": [
+          "نعوّض كل ثنائية في المعادلتين:",
+          "الثنائية $(35 ; 15)$ : $35 + 15 = 50$ و $35 + \\dfrac{4}{3} \\times 15 = 35 + 20 = 55$ : تحقق المعادلتين.",
+          "الثنائية $(15 ; 35)$ : $15 + 35 = 50$ و $15 + \\dfrac{4}{3} \\times 35 = 15 + \\dfrac{140}{3} = \\dfrac{185}{3} \\neq 55$ .",
+          "إذن الثنائية $(35 ; 15)$ هي حل الجملة."
+        ],
+        "result": "(35 ; 15)"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "حل الجملة التالية: $\\begin{cases} x + y = 50 \\ldots\\ldots (1) \\\\ 3x + 4y = 165 \\ldots\\ldots (2) \\end{cases}$",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        },
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$ (عدد صحيح أو كسر مثل 7/3)",
+      "expectedAnswer": {
+        "x": "35",
+        "y": "15"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": {
+            "x": "15",
+            "y": "35"
+          },
+          "id": "MISC-JUMLA-TARTIB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن معاملات $x$ ومعاملات $y$ في المعادلتين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اختر طريقة التعويض أو طريقة الجمع (بعد ضرب المعادلتين في عددين مناسبين) لحذف أحد المجهولين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "بعد إيجاد أحد المجهولين، عوّضه في إحدى المعادلتين لتجد الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "الثنائية $(35 ; 15)$ تحقق المعادلتين معا.",
+        "incorrect": "عوّض الثنائية التي وجدتها في المعادلتين: الحل يحققهما معا، والترتيب $(x ; y)$ مهم."
+      },
+      "solution": {
+        "lines": [
+          "$\\begin{cases} x + y = 50 & ...(1) \\\\ 3x + 4y = 165 & ...(2) \\end{cases}$",
+          "من المعادلة (1) نجد: $y = 50 - x$",
+          "بالتعويض في المعادلة (2) نجد: $3x + 4(50 - x) = 165$",
+          "$-x + 200 = 165$",
+          "$-x = -35$",
+          "$x = 35$",
+          "ومنه: $y = 50 - 35 = 15$",
+          "نلاحظ أن المعادلة (2) هي المعادلة الثانية للسؤال 01 بعد ضرب طرفيها في 3، فللجملتين الحل نفسه.",
+          "إذن حل الجملة هو الثنائية:"
+        ],
+        "result": "(35 ; 15)"
+      },
+      "work": "optional",
+      "timeSeconds": 300
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "نعتبر الجملة $\\begin{cases} x + y = 50 \\\\ 3x + 3y = 165 \\end{cases}$ . هل لهذه الجملة حل؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-jumal_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JUMLA-HALAT"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم طرفي المعادلة الثانية على 3."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن ما تحصل عليه بالمعادلة الأولى."
+        }
+      ],
+      "feedback": {
+        "correct": "لا: المعادلة الثانية تعني $x + y = 55$ ، وهذا يناقض $x + y = 50$ .",
+        "incorrect": "اقسم طرفي المعادلة الثانية على 3 ثم قارن قيمة $x + y$ في المعادلتين."
+      },
+      "solution": {
+        "lines": [
+          "بقسمة طرفي المعادلة الثانية على 3: $x + y = 55$",
+          "لكن المعادلة الأولى تعطي $x + y = 50$ و $50 \\neq 55$ .",
+          "لا توجد ثنائية تحقق المعادلتين معا: الجملة ليس لها حل."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

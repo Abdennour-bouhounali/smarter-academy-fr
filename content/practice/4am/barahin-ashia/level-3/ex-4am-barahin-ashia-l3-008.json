@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-barahin-ashia-l3-008",
+  "lessonCode": "barahin-ashia",
+  "level": 3,
+  "generator": {
+    "tool": "gen-barahin.mjs",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — مجموع شعاعين على مستقيم",
+    "estimatedMinutes": 3,
+    "tags": [
+      "علاقة شال",
+      "طول"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_barahin-ashia_P1",
+      "modelledOn": "ex-24"
+    }
+  },
+  "statement": {
+    "content": "النقط A و B و C على استقامة واحدة بهذا الترتيب، حيث $AB = 3\\,\\mathrm{cm}$ و $BC = 4\\,\\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "طول الشعاع $\\overrightarrow{AB}$ + $\\overrightarrow{BC}$ بالسنتيمتر:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-SHUAA-JAM-ATWAL",
+          "value": "5"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بسّط المجموع بعلاقة شال أولا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المجموع هو $\\overrightarrow{AC}$ ؛ ما طوله؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "B بين A و C على المستقيم نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{AB} + \\overrightarrow{BC} = \\overrightarrow{AC}$ ، و B على [AC] فـ $AC = 3 + 4 = 7\\,\\mathrm{cm}$ .",
+        "incorrect": "المجموع $\\overrightarrow{AC}$ ، و B بين A و C : الطولان يُجمعان هنا فقط."
+      }
+    }
+  ]
+}

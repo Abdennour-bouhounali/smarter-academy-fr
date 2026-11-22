@@ -1,0 +1,220 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l4-004",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — هدية المعلّمة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "اقتسام",
+      "قسمة عشرية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "اتّفق 4 أصدقاء على شراء هدية لمعلّمتهم ثمنها 1350 دج، يدفع كل منهم المبلغ نفسه."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أنجز القسمة الإقليدية للعدد 1350 على 4: ما هو الحاصل؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "337",
+      "misconceptionSignatures": [
+        {
+          "value": "2",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "336",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "338",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 1350 من 4 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 4 دون أن نتجاوز 1350."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$1350 = 4 \\times 337 + 2$ و $2 < 4$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 4 فلا يتجاوز الجداء 1350، والباقي عندئذ أصغر من 4."
+      },
+      "solution": {
+        "lines": [
+          "$4 \\times 337 = 1348$ و $4 \\times 338 = 1352$",
+          "$1348 \\le 1350 < 1352$ ، إذن الحاصل هو 337."
+        ],
+        "result": "q = 337"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما هو الباقي؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "337",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "6",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 1350."
+        }
+      ],
+      "feedback": {
+        "correct": "$1350 - 4 \\times 337 = 1350 - 1348 = 2$ ، و $2 < 4$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 4."
+      },
+      "solution": {
+        "lines": [
+          "$1350 = 4 \\times 337 + 2$",
+          "$2 < 4$ ، إذن الباقي هو 2."
+        ],
+        "result": "r = 2"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "إذا دفع كل صديق 337 دج فقط، كم دينارًا ينقص لشراء الهدية؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "337",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم يجمع الأصدقاء الأربعة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن بثمن الهدية."
+        }
+      ],
+      "feedback": {
+        "correct": "$4 \\times 337 = 1348$ و $1350 - 1348 = 2$ دج: إنه الباقي.",
+        "incorrect": "احسب ما يجمعه الأربعة، ثم الفرق مع ثمن الهدية."
+      },
+      "solution": {
+        "lines": [
+          "$4 \\times 337 = 1348$",
+          "$1350 - 1348 = 2$: الناقص هو باقي القسمة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "احسب بالضبط ما يدفعه كل صديق (القسمة العشرية).",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "337.5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "واصل القسمة بعد الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$1350 \\div 4 = 337{,}5$ دج.",
+        "incorrect": "الباقي 2 دج يُقسم أيضًا على 4."
+      },
+      "solution": {
+        "lines": [
+          "$1350 = 4 \\times 337 + 2$",
+          "$2 \\div 4 = 0{,}5$ ، إذن $1350 \\div 4 = 337{,}5$ دج."
+        ],
+        "result": "337{,}5 \\text{ DA}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

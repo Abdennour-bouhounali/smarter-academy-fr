@@ -1,0 +1,194 @@
+{
+  "id": "ex-2am-masafa-nuqtatayn-l1-008",
+  "lessonCode": "masafa-nuqtatayn",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — المسافة لا تتغيّر بتبديل الحرفين",
+    "estimatedMinutes": 6,
+    "tags": [
+      "مسافة بين نقطتين",
+      "AB = BA"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "نعلّم $A(+6)$ و $B(-9)$ على مستقيم مدرّج، ثمّ نكتب المسافة بترتيبين مختلفين للحرفين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "النقطتان $A(+6)$ و $B(-9)$ على مستقيم مدرّج. احسب المسافة $AB$ .",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "3"
+        },
+        {
+          "id": "MISC-MASAFA2-NEGDIST",
+          "value": "-15"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عيّن أوّلًا أيّ الفاصلتين أكبر: الأكبر هي الأبعد إلى اليمين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المسافة هي الفاصلة الكبرى مطروحًا منها الصغرى؛ وإذا كانت الصغرى سالبة فنطرح عددًا سالبًا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة عدد موجب دائمًا: إن وجدت ناتجًا سالبًا فقد قلبت ترتيب الطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB=15$ : النقطتان على جهتين من المبدأ فنجمع المسافتين إلى الصفر.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى هي $+6$ والفاصلة الصغرى هي $-9$",
+          "$AB=(+6)-(-9)=(+6)+(+9)=15$"
+        ],
+        "result": "15"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "النقطتان $B(-9)$ و $A(+6)$ على مستقيم مدرّج. احسب المسافة $BA$ .",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري موجب أو معدوم",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MASAFA2-SUBDIST",
+          "value": "3"
+        },
+        {
+          "id": "MISC-MASAFA2-ORDERSWAP",
+          "value": "-15"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب فاصلة كلّ من النقطتين ثمّ عيّن الكبرى منهما."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مهما كان ترتيب الحرفين في الكتابة فالمسافة هي الفاصلة الكبرى مطروحًا منها الصغرى."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المسافة لا تتغيّر إن بدّلنا الحرفين، ولا تكون سالبة أبدًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$BA=15$ : النقطتان على جهتين من المبدأ فنجمع المسافتين إلى الصفر.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة الكبرى هي $+6$ والفاصلة الصغرى هي $-9$",
+          "$BA=(+6)-(-9)=(+6)+(+9)=15$"
+        ],
+        "result": "15"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "$A(+6)$ و $B(-9)$ نقطتان على مستقيم مدرّج، و $AB=15$ . هل المسافة $BA$ هي نفسها ؟",
+      "learningPoints": [
+        {
+          "code": "2am_masafa-nuqtatayn_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MASAFA2-ORDERSWAP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب المسافة $BA$ من الفاصلتين: الكبرى مطروحًا منها الصغرى."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل تتغيّر الفاصلتان إذا بدّلنا ترتيب الحرفين؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر أنّ المسافة لا تكون سالبة."
+        }
+      ],
+      "feedback": {
+        "correct": "نعم: $BA=AB=15$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$BA=(+6)-(-9)=15$",
+          "$AB=BA$"
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

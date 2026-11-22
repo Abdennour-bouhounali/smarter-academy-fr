@@ -1,0 +1,146 @@
+{
+  "id": "ex-1am-qawaid-qabiliyat-qisma-l1-009",
+  "lessonCode": "qawaid-qabiliyat-qisma",
+  "level": 1,
+  "metadata": {
+    "title": "على 2 و 5 في آن واحد",
+    "estimatedMinutes": 5,
+    "tags": [
+      "2 و 5",
+      "رقم الآحاد 0"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-22",
+      "page": 46,
+      "section": "أتمرّن",
+      "number": 22
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "إليك الأعداد: 230 ، 145 ، 1000 ، 72 ، 3015 ، 4060."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "حدّد الأعداد التي تقبل القسمة على 2 وعلى 5 في آن واحد.",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        230,
+        1000,
+        4060
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            145,
+            230,
+            1000,
+            3015,
+            4060
+          ],
+          "id": "MISC-QABILIYA-2-WA-5"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طبّق قاعدة كل قاسم على حدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "يجب أن تتحقّق كل القواعد معًا."
+        }
+      ],
+      "feedback": {
+        "correct": "الأعداد التي تقبل القسمة على 2 و 5: 230 ، 1000 ، 4060.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 2 إذا كان رقم آحاده 0 أو 2 أو 4 أو 6 أو 8. يقبل عدد طبيعي القسمة على 5 إذا كان رقم آحاده 0 أو 5."
+      },
+      "solution": {
+        "lines": [
+          "230: رقم آحاده 0، رقم آحاده 0 ← يقبل القسمة على 2 و 5.",
+          "145: رقم آحاده 5، رقم آحاده 5 ← لا يقبل القسمة على 2 و 5.",
+          "1000: رقم آحاده 0، رقم آحاده 0 ← يقبل القسمة على 2 و 5.",
+          "72: رقم آحاده 2، رقم آحاده 2 ← لا يقبل القسمة على 2 و 5.",
+          "3015: رقم آحاده 5، رقم آحاده 5 ← لا يقبل القسمة على 2 و 5.",
+          "4060: رقم آحاده 0، رقم آحاده 0 ← يقبل القسمة على 2 و 5."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كيف نتعرّف بطريقة أخرى على عدد يقبل القسمة على 2 وعلى 5 في آن واحد؟",
+      "learningPoints": [
+        {
+          "code": "1am_qawaid-qabiliyat-qisma_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "رقم آحاده 0 أو 5",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-2-WA-5"
+        },
+        {
+          "id": "B",
+          "content": "رقم آحاده 5",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QABILIYA-SIFR"
+        },
+        {
+          "id": "C",
+          "content": "رقم آحاده 0",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الأرقام التي ينتهي بها مضاعف للعدد 2؟ ومضاعف للعدد 5؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن الرقم المشترك بين القائمتين."
+        }
+      ],
+      "feedback": {
+        "correct": "رقم آحاد مضاعف للعدد 2 هو 0 أو 2 أو 4 أو 6 أو 8، ومضاعف للعدد 5 رقم آحاده 0 أو 5: المشترك هو 0.",
+        "incorrect": "يجب أن يحقّق رقم الآحاد الشرطين معًا."
+      },
+      "solution": {
+        "lines": [
+          "للقسمة على 2: رقم الآحاد 0 أو 2 أو 4 أو 6 أو 8.",
+          "للقسمة على 5: رقم الآحاد 0 أو 5.",
+          "الرقم المشترك هو 0: يقبل العدد القسمة على 2 و 5 معًا إذا كان رقم آحاده 0."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

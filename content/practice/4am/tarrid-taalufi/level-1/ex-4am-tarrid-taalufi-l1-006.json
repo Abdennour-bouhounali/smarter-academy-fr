@@ -1,0 +1,156 @@
+{
+  "id": "ex-4am-tarrid-taalufi-l1-006",
+  "lessonCode": "tarrid-taalufi",
+  "level": 1,
+  "metadata": {
+    "title": "كراء درّاجة على الشاطئ",
+    "estimatedMinutes": 5,
+    "tags": [
+      "نمذجة",
+      "صورة عدد"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-taalufi_P1",
+      "modelledOn": "act-4"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "على شاطئ نظيف يحافظ عليه روّاده: كراء درّاجة برسم ثابت قدره 300DA ثم 150DA لكل ساعة.\nنسمّي $x$ مدة الكراء بالساعات و $f(x)$ مبلغ الكراء بـ DA."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "عبّر عن $f(x)$ بدلالة $x$ .",
+      "statement": "أعط العددين $a$ و $b$ حيث: $f(x) = ax + b$ ، ابدأ بالعدد $a$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "150",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "300"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع عن كل ساعة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هو ما يُدفع $x$ مرّة: معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "ما يُدفع عن كل ساعة هو معامل $x$ .",
+        "incorrect": "معامل $x$ هو المبلغ الذي يتكرّر مع كل وحدة، لا المبلغ الذي يُدفع مرّة واحدة."
+      },
+      "solution": {
+        "lines": [
+          "الرسم الثابت 300DA يُدفع مرّة واحدة، و 150DA عن كل ساعة:",
+          "$f(x) = 150x + 300$"
+        ],
+        "result": "f(x) = 150x + 300"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "ثم العدد $b$ :",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $b$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "300",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TARRID-JUZ-THABIT",
+          "value": "150"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يُدفع مرّة واحدة (الرسم الثابت)؟"
+        }
+      ],
+      "feedback": {
+        "correct": "الرسم الثابت يُدفع مرّة واحدة: هو الحدّ الثابت $b$ .",
+        "incorrect": "الحدّ الثابت لا يتعلّق بعدد الوحدات $x$ ."
+      },
+      "solution": {
+        "lines": [
+          "الرسم الثابت 300DA يُدفع مرّة واحدة، و 150DA عن كل ساعة:",
+          "$f(x) = 150x + 300$"
+        ],
+        "result": "f(x) = 150x + 300"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب مبلغ الكراء لمدة 3 ساعات.",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-taalufi_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المبلغ بـ DA",
+      "expectedAnswer": "750",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAALUFI-NISYAN-B",
+          "value": "450"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض $x$ بالعدد 3 في عبارة $f(x)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$150 \\times 3 + 300$ .",
+        "incorrect": "احسب ثمن الساعات ثم أضف الرسم الثابت."
+      },
+      "solution": {
+        "lines": [
+          "$f(3) = 150 \\times 3 + 300 = 450 + 300 = 750$",
+          "مبلغ الكراء 750DA ."
+        ],
+        "result": "750DA"
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

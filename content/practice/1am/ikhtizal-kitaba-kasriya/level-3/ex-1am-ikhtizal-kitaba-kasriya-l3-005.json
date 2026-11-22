@@ -1,0 +1,381 @@
+{
+  "id": "ex-1am-ikhtizal-kitaba-kasriya-l3-005",
+  "lessonCode": "ikhtizal-kitaba-kasriya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — صحيح أو خطأ مع التصحيح",
+    "estimatedMinutes": 9,
+    "tags": [
+      "كتابات متساوية",
+      "كسر عشري",
+      "اختزال"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 2,
+      "file": "1am-s2-72",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الأول",
+      "points": "05"
+    }
+  },
+  "statement": {
+    "content": "أجب بـ «صحيح» أو «خطأ» مع تصحيح الخطأ إن وُجد."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "الكسر $\\dfrac{3}{4}$ يساوي الكسر $\\dfrac{27}{36}$.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KASRIYA-AKBAR-ARQAM"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الكسرين بنفس الحدّ (نفس المقام أو نفس البسط) ثم قارن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل مررنا من كتابة إلى أخرى بالضرب (أو القسمة) في نفس العدد؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{3}{4} = \\dfrac{3 \\times 9}{4 \\times 9} = \\dfrac{27}{36}$.",
+        "incorrect": "كتابتان كسريتان متساويتان إذا مررنا من إحداهما إلى الأخرى بضرب البسط والمقام في نفس العدد غير المعدوم أو قسمتهما عليه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{3}{4} = \\dfrac{3 \\times 9}{4 \\times 9} = \\dfrac{27}{36}$ : صحيح."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "الكسر $\\dfrac{5}{6}$ يساوي الكسر $\\dfrac{35}{48}$.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KASRIYA-HADD-WAHID"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب الكسرين بنفس الحدّ (نفس المقام أو نفس البسط) ثم قارن."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل مررنا من كتابة إلى أخرى بالضرب (أو القسمة) في نفس العدد؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$35 = 5 \\times 7$ لكن $48 = 6 \\times 8$ : لم نضرب في نفس العدد.",
+        "incorrect": "كتابتان كسريتان متساويتان إذا مررنا من إحداهما إلى الأخرى بضرب البسط والمقام في نفس العدد غير المعدوم أو قسمتهما عليه."
+      },
+      "solution": {
+        "lines": [
+          "$35 = 5 \\times 7$ بينما $6 \\times 7 = 42$ وليس 48 : خطأ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "صحّح: أتمم: $\\dfrac{5}{6} = \\dfrac{35}{\\ldots}$",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "42",
+      "misconceptionSignatures": [
+        {
+          "value": "36",
+          "id": "MISC-KASRIYA-JAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الحدّين المعروفين اللذين في نفس الموضع (بسطين أو مقامين)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بأيّ عدد نضرب (أو نقسم) أحدهما لنحصل على الآخر؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق نفس العملية على الحدّ الآخر من الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{5}{6} = \\dfrac{5 \\times 7}{6 \\times 7} = \\dfrac{35}{42}$ : ضربنا البسط والمقام في نفس العدد.",
+        "incorrect": "الكسر لا يتغيّر إذا ضربنا البسط والمقام في نفس العدد غير المعدوم أو قسمناهما عليه، أمّا إضافة نفس العدد إليهما فتغيّره."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{5}{6} = \\dfrac{5 \\times 7}{6 \\times 7} = \\dfrac{35}{42}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "statement": "العدد 0,7 يساوي $\\dfrac{7}{100}$.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KASRIYA-FASILA"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم صفرًا في المقام 100؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كم رقمًا بعد الفاصلة في 0,7؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{7}{100} = 0{,}07$ وليس 0,7.",
+        "incorrect": "كتابتان كسريتان متساويتان إذا مررنا من إحداهما إلى الأخرى بضرب البسط والمقام في نفس العدد غير المعدوم أو قسمتهما عليه."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{7}{100} = 0{,}07$ : في المقام صفران، فيوجد رقمان بعد الفاصلة.",
+          "$0{,}7 = \\dfrac{7}{10}$ : خطأ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "lead": "صحّح:",
+      "statement": "أتمم: $0{,}7 = \\dfrac{\\ldots}{100}$",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "70",
+      "misconceptionSignatures": [
+        {
+          "value": "700",
+          "id": "MISC-KASRIYA-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم رقمًا بعد الفاصلة في هذا العدد؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كم صفرًا في المقام المطلوب؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "البسط هو العدد مضروبًا في المقام."
+        }
+      ],
+      "feedback": {
+        "correct": "$0{,}7 = \\dfrac{70}{100}$ لأن $\\dfrac{70}{100} = 70 \\div 100$.",
+        "incorrect": "في الكسر العشري، عدد أصفار المقام هو عدد الأرقام بعد الفاصلة: نضرب العدد العشري في المقام لنجد البسط."
+      },
+      "solution": {
+        "lines": [
+          "$0{,}7 \\times 100 = 70$ ، إذن $0{,}7 = \\dfrac{70}{100}$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q6",
+      "step": "04",
+      "sub": "ا",
+      "statement": "الكسر $\\dfrac{51}{68}$ لا يقبل الاختزال، لأنّ 51 و 68 لا يقبلان معًا القسمة على 2 ولا على 3.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KASRIYA-LA-QAIDA"
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القواعد لا تكشف كل القواسم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جرّب جداول الضرب: 7، 11، 13، 17…"
+        }
+      ],
+      "feedback": {
+        "correct": "$51 = 3 \\times 17$ و $68 = 4 \\times 17$ : العدد 17 قاسم مشترك.",
+        "incorrect": "كتابتان كسريتان متساويتان إذا مررنا من إحداهما إلى الأخرى بضرب البسط والمقام في نفس العدد غير المعدوم أو قسمتهما عليه."
+      },
+      "solution": {
+        "lines": [
+          "$51 = 3 \\times 17$ و $68 = 4 \\times 17$ ، إذن الكسر يقبل الاختزال على 17 : خطأ."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q7",
+      "step": "04",
+      "sub": "ب",
+      "statement": "اختزل الكسر $\\dfrac{51}{68}$ إلى أبسط شكل ممكن.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b لا يقبل الاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "3/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن قاسم مشترك للبسط والمقام بقواعد قابلية القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على هذا القاسم، ثم أعد البحث في الكسر الجديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا لم تنفع القواعد، جرّب جداول الضرب (7، 11، 13…)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{51}{68} = \\dfrac{3}{4}$ ولا يقبل البسط والمقام قاسمًا مشتركًا غير 1.",
+        "incorrect": "نقسم البسط والمقام على قاسم مشترك لهما، ونعيد ذلك حتى لا يبقى قاسم مشترك غير 1.",
+        "notIrreducible": "الكتابة تساوي الكسر لكنها ما زالت قابلة للاختزال: ابحث عن قاسم مشترك آخر للبسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "$51 = 17 \\times 3$ و $68 = 17 \\times 4$ ، إذن $\\dfrac{51}{68} = \\dfrac{51 \\div 17}{68 \\div 17} = \\dfrac{3}{4}$",
+          "العددان 3 و 4 لا يقبلان قاسمًا مشتركًا غير 1: $\\dfrac{3}{4}$ في أبسط شكل ممكن."
+        ],
+        "result": "\\dfrac{51}{68} = \\dfrac{3}{4}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

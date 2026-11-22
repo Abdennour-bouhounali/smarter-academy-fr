@@ -1,0 +1,65 @@
+{
+  "id": "ex-4am-misaha-hajm-kura-l4-009",
+  "lessonCode": "misaha-hajm-kura",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — كرة المنتخب إلى السنتيمتر المربع",
+    "estimatedMinutes": 2,
+    "tags": [
+      "مساحة الكرة",
+      "التدوير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_misaha-hajm-kura_P3",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "كرة المنتخب الوطني نصف قطرها $11\\,\\mathrm{cm}$ ، مساحة سطحها $484\\pi\\,\\mathrm{cm}^2$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أعط مساحتها بالـ $\\mathrm{cm}^2$ مدوّرة إلى الوحدة.",
+      "learningPoints": [
+        {
+          "code": "4am_misaha-hajm-kura_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1521",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$484\\pi = 1520{,}5\\ldots$"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إلى الوحدة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الرقم بعد الفاصلة 5: نزيد 1."
+        }
+      ],
+      "feedback": {
+        "correct": "$484\\pi = 1520{,}53\\ldots \\approx 1521\\,\\mathrm{cm}^2$ .",
+        "incorrect": "$1520$ بتر لا تدوير."
+      },
+      "difficulty": 4,
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TADWIR",
+          "value": "1520"
+        }
+      ]
+    }
+  ]
+}

@@ -7,7 +7,7 @@ use App\Domain\Billing\CheckoutService;
 use App\Domain\Billing\PlanCatalog;
 use DomainException;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
+use Illuminate\Validation\ValidationException;
 
 /**
  * L'entrée en paiement, côté élève.
@@ -66,10 +66,15 @@ class BillingCheckoutController extends Controller
             // Liste blanche : seules les clés du catalogue sont acceptées.
             // C'est la barrière qui rend la falsification de tarif
             // impossible — il n'y a rien à falsifier.
-            'plan' => ['required', 'string', Rule::in(array_keys(config('billing.plans', [])))],
-        ], [
-            'plan.in' => "Cette offre n'existe pas.",
+            'plan' => ['required', 'string', 'max:64'],
         ]);
+
+        // Liste blanche : seules les clés du CATALOGUE sont acceptées —
+        // configuration ou base. C'est la barrière qui rend la falsification
+        // de tarif impossible : il n'y a rien à falsifier.
+        if (! $this->plans->exists($validated['plan'])) {
+            throw ValidationException::withMessages(['plan' => "Cette offre n'existe pas."]);
+        }
 
         try {
             $session = $this->checkout->start($request->user(), $validated['plan']);
@@ -83,7 +88,7 @@ class BillingCheckoutController extends Controller
             // toute façon la seule chose actionnable.
             return response()->json([
                 'success' => false,
-                'message' => "Le service de paiement est momentanément indisponible. Réessayez dans quelques instants.",
+                'message' => 'Le service de paiement est momentanément indisponible. Réessayez dans quelques instants.',
             ], 503);
         }
 

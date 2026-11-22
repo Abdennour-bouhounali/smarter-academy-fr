@@ -1,7 +1,8 @@
-import React, { useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { Flag } from 'lucide-react';
-import AdminPage from '../../../components/admin/AdminPage';
+import { Flag, Image as ImageIcon } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { AdminPage, useAdminLabels, formatDate, Num } from '../adminUi';
 import DataTable from '../../../components/admin/ui/DataTable';
 import StatusBadge from '../../../components/admin/ui/StatusBadge';
 import { FilterBar, SearchInput, SelectFilter, Pagination } from '../../../components/admin/ui/FilterBar';
@@ -10,13 +11,12 @@ import { useAdminResource } from '../../../hooks/useAdminResource';
 import { fetchReports } from '../../../services/admin/reportService';
 import { useDocumentMeta } from '../../../hooks/useDocumentMeta';
 import { useDebounced } from '../../../hooks/useDebounced';
-import { REPORT_CATEGORIES } from '../../../services/reportService';
-import { SOURCE_LABELS, categoryLabel } from './reportLabels';
-
-const dateFormat = new Intl.DateTimeFormat('fr-FR', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' });
+import { SOURCE_VALUES, sourceKey, categoryKey, CATEGORY_KEYS } from './reportLabels';
 
 export default function AdminReportList() {
-  useDocumentMeta('Signalements — Administration');
+  const { t } = useTranslation('admin');
+  const L = useAdminLabels();
+  useDocumentMeta(t('reports.metaTitle'));
 
   // Le statut vient de l'URL : les entrées « Nouveaux » / « En cours » de la
   // barre latérale sont de simples liens, et un filtre reste partageable.
@@ -27,15 +27,15 @@ export default function AdminReportList() {
   const [priority, setPriority] = useState();
   const [category, setCategory] = useState();
   const [source, setSource] = useState();
-  const [completion, setCompletion] = useState();
+  const [screenshot, setScreenshot] = useState();
   const [page, setPage] = useState(1);
   const debouncedSearch = useDebounced(search, 300);
 
   const loader = useCallback(
     (token) => fetchReports(token, {
-      search: debouncedSearch, status, priority, category, source, completion, page,
+      search: debouncedSearch, status, priority, category, source, screenshot, page,
     }),
-    [debouncedSearch, status, priority, category, source, completion, page],
+    [debouncedSearch, status, priority, category, source, screenshot, page],
   );
   const { data, loading, error, reload } = useAdminResource(loader, [loader]);
 
@@ -49,119 +49,135 @@ export default function AdminReportList() {
 
   const counts = data?.counts;
 
+  // Le libellé d'une catégorie : la clé du catalogue, ou le code brut quand
+  // la base porte une valeur qu'aucun des deux vocabulaires ne connaît.
+  const labelForCategory = (value) => {
+    const key = categoryKey(value);
+    if (key === null) return t('common.dash');
+    return key ? t(key) : value;
+  };
+
   return (
     <AdminPage
-      eyebrow="Signalements"
-      title="Problèmes signalés par les élèves"
-      subtitle="Le contexte (leçon, module, exercice, question) est capté automatiquement — l’élève n’a rien à désigner."
+      eyebrow={t('reports.eyebrow')}
+      title={t('reports.title')}
+      subtitle={t('reports.subtitle')}
     >
       <div className="space-y-3">
         {counts && (
           <div className="flex flex-wrap gap-2">
             {[
-              { key: undefined, label: 'Tous', value: counts.all },
-              { key: 'new', label: 'Nouveaux', value: counts.new },
-              { key: 'in_review', label: 'En cours', value: counts.inReview },
-              { key: 'resolved', label: 'Résolus', value: counts.resolved },
-              { key: 'dismissed', label: 'Rejetés', value: counts.dismissed },
+              { key: undefined, id: 'all', label: t('common.all'), value: counts.all },
+              { key: 'new', id: 'new', label: t('reports.tabNew'), value: counts.new },
+              { key: 'in_review', id: 'in_review', label: t('reports.tabInReview'), value: counts.inReview },
+              { key: 'resolved', id: 'resolved', label: t('reports.tabResolved'), value: counts.resolved },
+              { key: 'dismissed', id: 'dismissed', label: t('reports.tabDismissed'), value: counts.dismissed },
             ].map((tab) => (
               <button
-                key={tab.label}
+                key={tab.id}
                 type="button"
                 onClick={() => setStatus(tab.key)}
                 className={`rounded-lg border px-3 py-1.5 font-inter text-xs font-semibold ${
                   status === tab.key
-                    ? 'border-blue-300 bg-blue-50 text-blue-700'
+                    ? 'border-violet-300 bg-violet-50 text-violet-700'
                     : 'border-slate-300 bg-white text-slate-600 hover:bg-slate-50'
                 }`}
               >
-                {tab.label} <span className="tabular-nums text-slate-400">{tab.value}</span>
+                {tab.label} <Num className="tabular-nums text-slate-400">{tab.value}</Num>
               </button>
             ))}
           </div>
         )}
 
         <FilterBar>
-          <SearchInput value={search} onChange={(v) => { setSearch(v); setPage(1); }} placeholder="Message, leçon, exercice…" />
+          <SearchInput
+            value={search}
+            onChange={(v) => { setSearch(v); setPage(1); }}
+            placeholder={t('reports.searchPlaceholder')}
+            label={L.filters.searchLabel}
+          />
           <SelectFilter
-            label="Priorité" allLabel="Toutes priorités" value={priority}
+            label={t('reports.columnSeverity')} allLabel={t('reports.allPriorities')} value={priority}
             onChange={(v) => { setPriority(v); setPage(1); }}
             options={[
-              { value: 'critical', label: 'Critique' }, { value: 'high', label: 'Haute' },
-              { value: 'medium', label: 'Moyenne' }, { value: 'low', label: 'Basse' },
+              { value: 'critical', label: t('status.critical') }, { value: 'high', label: t('status.high') },
+              { value: 'medium', label: t('status.medium') }, { value: 'low', label: t('status.low') },
             ]}
           />
           <SelectFilter
-            label="Catégorie" allLabel="Toutes catégories" value={category}
+            label={t('reports.columnCategory')} allLabel={t('reports.allCategories')} value={category}
             onChange={(v) => { setCategory(v); setPage(1); }}
-            options={REPORT_CATEGORIES.map((c) => ({ value: c.id, label: c.label }))}
+            options={Object.entries(CATEGORY_KEYS).map(([value, key]) => ({ value, label: t(key) }))}
           />
           <SelectFilter
-            label="Origine" allLabel="Toutes origines" value={source}
+            label={t('reports.columnSource')} allLabel={t('reports.allSources')} value={source}
             onChange={(v) => { setSource(v); setPage(1); }}
-            options={Object.entries(SOURCE_LABELS).map(([value, label]) => ({ value, label }))}
+            options={SOURCE_VALUES.map((value) => ({ value, label: t(sourceKey(value)) }))}
           />
           <SelectFilter
-            label="Complétude" allLabel="Tout" value={completion}
-            onChange={(v) => { setCompletion(v); setPage(1); }}
-            options={[
-              { value: 'complete', label: 'Décrits seulement' },
-              { value: 'incomplete', label: 'Signaux seuls' },
-            ]}
+            label={t('reports.columnScreenshot')} allLabel={t('common.all')} value={screenshot}
+            onChange={(v) => { setScreenshot(v); setPage(1); }}
+            options={[{ value: '1', label: t('reports.withScreenshotOnly') }]}
           />
         </FilterBar>
 
         <DataTable
+          labels={L.table}
           columns={[
-            { key: 'id', label: '#', render: (r) => <span className="font-mono-jetbrains text-xs text-slate-400">{r.id}</span> },
+            { key: 'id', label: '#', render: (r) => <Num className="font-mono-jetbrains text-xs text-slate-400">{r.id}</Num> },
             {
               key: 'content',
-              label: 'Contenu',
+              label: t('reports.columnContent'),
               // Sans largeur minimale, un titre long s'empile sur quatre
               // lignes et quadruple la hauteur de chaque rangée.
               cellClassName: 'min-w-[220px]',
               render: (r) => (
                 <Link to={`/admin/signalements/${r.id}`} className="block hover:underline">
-                  <span className="font-semibold text-slate-900">{r.lessonTitle ?? r.lessonCode ?? '—'}</span>
+                  <span className="font-semibold text-slate-900">{r.lessonTitle ?? r.lessonCode ?? t('common.dash')}</span>
                   <span className="block truncate text-xs text-slate-500">
-                    {r.moduleTitle ?? (r.moduleNumber != null ? `Module ${r.moduleNumber}` : null)}
-                    {r.exerciseCode ? ` · ${r.exerciseCode}` : ''}
-                    {r.questionId ? ` · ${r.questionId}` : ''}
+                    {r.moduleTitle ?? (r.moduleNumber != null ? t('reports.moduleNumber', { number: r.moduleNumber }) : null)}
+                    {r.exerciseCode ? <> · <Num>{r.exerciseCode}</Num></> : ''}
+                    {r.questionId ? <> · <Num>{r.questionId}</Num></> : ''}
                   </span>
                 </Link>
               ),
             },
             {
               key: 'source',
-              label: 'Origine',
+              label: t('reports.columnSource'),
               render: (r) => (
-                <span className="whitespace-nowrap">{SOURCE_LABELS[r.source] ?? r.source}</span>
+                <span className="whitespace-nowrap">{sourceKey(r.source) ? t(sourceKey(r.source)) : r.source}</span>
               ),
             },
             {
               key: 'category',
-              label: 'Type',
-              render: (r) => (r.detailsCompleted
-                ? categoryLabel(r.category)
-                // Un signal ouvert sans description : dire ce que c'est plutôt
-                // que d'afficher un vide qu'on lirait comme un bug.
-                : <span className="italic text-slate-400">—</span>),
+              label: t('reports.columnCategory'),
+              render: (r) => labelForCategory(r.category),
             },
             {
-              key: 'detailsCompleted',
-              label: 'Complétude',
-              render: (r) => (r.detailsCompleted
-                ? <StatusBadge status="resolved" label="Décrit" />
-                // Étiqueté, pas masqué : « douze élèves ont ouvert la fenêtre
-                // ici sans rien écrire » est une information, à condition de
-                // ne pas la confondre avec un signalement abouti.
-                : <StatusBadge status="draft" label="Signal seul" />),
+              key: 'hasScreenshot',
+              label: t('reports.columnScreenshot'),
+              render: (r) => (r.hasScreenshot
+                ? <ImageIcon size={16} className="text-violet-600" aria-label={t('reports.hasScreenshot')} />
+                : <span className="text-slate-400">{t('common.dash')}</span>),
             },
-            { key: 'note', label: 'Message', render: (r) => <span className="line-clamp-2 max-w-xs text-slate-600">{r.note || <span className="text-slate-400">Sans message</span>}</span> },
-            { key: 'studentEmail', label: 'Élève', render: (r) => <Link to={`/admin/eleves/${r.studentId}`} className="hover:underline">{r.studentEmail}</Link> },
-            { key: 'priority', label: 'Priorité', render: (r) => <StatusBadge status={r.priority} /> },
-            { key: 'status', label: 'Statut', render: (r) => <StatusBadge status={r.status} /> },
-            { key: 'createdAt', label: 'Date', render: (r) => <span className="whitespace-nowrap text-slate-500">{dateFormat.format(new Date(r.createdAt))}</span> },
+            {
+              key: 'note',
+              label: t('reports.columnMessage'),
+              render: (r) => <span className="line-clamp-2 max-w-xs text-slate-600">{r.note || <span className="text-slate-400">{t('reports.noMessage')}</span>}</span>,
+            },
+            {
+              key: 'studentEmail',
+              label: t('reports.columnReporter'),
+              render: (r) => <Num>{r.studentEmail}</Num>,
+            },
+            { key: 'priority', label: t('reports.columnSeverity'), render: (r) => <StatusBadge status={r.priority} /> },
+            { key: 'status', label: t('reports.columnStatus'), render: (r) => <StatusBadge status={r.status} /> },
+            {
+              key: 'createdAt',
+              label: t('reports.columnDate'),
+              render: (r) => <span className="whitespace-nowrap text-slate-500">{formatDate(r.createdAt, { withTime: true })}</span>,
+            },
           ]}
           rows={data?.reports?.data ?? []}
           loading={loading}
@@ -170,14 +186,15 @@ export default function AdminReportList() {
           empty={(
             <EmptyState
               icon={Flag}
-              title="Aucun signalement"
-              hint="C’est plutôt bon signe. Les élèves peuvent en envoyer depuis chaque module et chaque question."
+              title={t('reports.emptyTitle')}
+              hint={t('reports.emptyHint')}
             />
           )}
         />
 
-        <Pagination meta={data?.reports} onPage={setPage} />
+        <Pagination meta={data?.reports} onPage={setPage} labels={L.pagination} />
       </div>
     </AdminPage>
   );
 }
+

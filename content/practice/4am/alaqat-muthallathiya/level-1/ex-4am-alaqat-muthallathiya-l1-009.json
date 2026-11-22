@@ -1,0 +1,232 @@
+{
+  "id": "ex-4am-alaqat-muthallathiya-l1-009",
+  "lessonCode": "alaqat-muthallathiya",
+  "level": 1,
+  "metadata": {
+    "title": "الجيب على جيب التمام في مثلث قائم",
+    "estimatedMinutes": 5,
+    "tags": [
+      "العلاقات المثلثية",
+      "الظل"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_alaqat-muthallathiya_P1",
+      "modelledOn": "act-5",
+      "adaptedFrom": "ex-4am-alaqat-muthallathiya-l1-009"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في الشكل المقابل، $ABC$ مثلث قائم في $A$ حيث $AB = 15$ ، $AC = 8$ و $BC = 17$ ، و $x$ قيس الزاوية $\\widehat{ABC}$ .",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          15,
+          0
+        ],
+        "C": [
+          0,
+          8
+        ]
+      },
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "label": "15"
+        },
+        {
+          "from": "A",
+          "to": "C",
+          "label": "8"
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "label": "17"
+        }
+      ],
+      "rightAngles": [
+        [
+          "B",
+          "A",
+          "C"
+        ]
+      ],
+      "angles": [
+        {
+          "at": "B",
+          "from": "A",
+          "to": "C",
+          "label": "x"
+        }
+      ],
+      "labels": {
+        "A": "sw",
+        "B": "se",
+        "C": "n"
+      },
+      "ariaLabel": "مثلث ABC قائم في A حيث AB = 15 و AC = 8 و BC = 17، و x قيس الزاوية عند B",
+      "maxWidth": 300
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "اكتب كلا من $\\sin x$ و $\\cos x$ بأطوال أضلاع المثلث.",
+      "statement": "$\\sin x$ :",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "8/17",
+      "misconceptionSignatures": [
+        {
+          "value": "15/17",
+          "id": "MISC-MUTH-MUQABIL-MUJAWIR"
+        },
+        {
+          "value": "17/8",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "بالنسبة إلى الزاوية $\\widehat{ABC}$ : الوتر $[BC]$ ، والضلع المقابل لا يمرّ بالرأس $B$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الجيب = المقابل على الوتر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\sin x = \\dfrac{AC}{BC} = \\dfrac{8}{17}$ .",
+        "incorrect": "الجيب = طول الضلع المقابل للزاوية على طول الوتر."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $ABC$ القائم في $A$ : $\\sin x = \\dfrac{AC}{BC}$"
+        ],
+        "result": "\\sin x = \\dfrac{8}{17}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "$\\cos x$ :",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "15/17",
+      "misconceptionSignatures": [
+        {
+          "value": "8/17",
+          "id": "MISC-MUTH-MUQABIL-MUJAWIR"
+        },
+        {
+          "value": "17/15",
+          "id": "MISC-MUTH-NISBA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الضلع المجاور للزاوية $\\widehat{ABC}$ يمرّ بالرأس $B$ وليس الوتر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جيب التمام = المجاور على الوتر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\cos x = \\dfrac{AB}{BC} = \\dfrac{15}{17}$ .",
+        "incorrect": "جيب التمام = طول الضلع المجاور للزاوية على طول الوتر."
+      },
+      "solution": {
+        "lines": [
+          "في المثلث $ABC$ القائم في $A$ : $\\cos x = \\dfrac{AB}{BC}$"
+        ],
+        "result": "\\cos x = \\dfrac{15}{17}"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "احسب $\\dfrac{\\sin x}{\\cos x}$ ، ثم قارنه بـ $\\tan x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_alaqat-muthallathiya_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر غير قابل للاختزال أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "8/15",
+      "misconceptionSignatures": [
+        {
+          "value": "15/8",
+          "id": "MISC-MUTH-TAN-QISMA-MAQLUBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقسم الكسرين اللذين وجدتهما: القسمة على كسر هي الضرب في مقلوبه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "المقام 17 يُختزل."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{\\sin x}{\\cos x} = \\dfrac{8}{17} \\times \\dfrac{17}{15} = \\dfrac{8}{15} = \\dfrac{AC}{AB} = \\tan x$ .",
+        "incorrect": "اقسم الجيب على جيب التمام (الجيب في البسط)، واختزل."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{\\sin x}{\\cos x} = \\dfrac{8}{17} \\div \\dfrac{15}{17} = \\dfrac{8}{17} \\times \\dfrac{17}{15} = \\dfrac{8}{15}$",
+          "و $\\tan x = \\dfrac{AC}{AB} = \\dfrac{8}{15}$ : نجد $\\tan x = \\dfrac{\\sin x}{\\cos x}$ ."
+        ],
+        "result": "\\dfrac{\\sin x}{\\cos x} = \\tan x = \\dfrac{8}{15}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

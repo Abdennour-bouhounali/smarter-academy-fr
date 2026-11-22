@@ -1,0 +1,249 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l4-008",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — تدريبات ياسين",
+    "estimatedMinutes": 10,
+    "tags": [
+      "مدة",
+      "ساعات ودقائق"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثالث",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يتدرّب ياسين على الجري 45 دقيقة كل يوم، بانتظام ودون انقطاع، مدة 3 أسابيع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب مجموع مدة التدريب بالدقائق.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الدقائق",
+      "expectedAnswer": "945",
+      "misconceptionSignatures": [
+        {
+          "value": "135",
+          "id": "MISC-IQLIDIYA-JUDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم يومًا في 3 أسابيع؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد الأيام × مدة التدريب اليومي."
+        }
+      ],
+      "feedback": {
+        "correct": "$3 \\times 7 = 21$ يومًا و $21 \\times 45 = 945$ دقيقة.",
+        "incorrect": "احسب أولًا عدد الأيام في 3 أسابيع."
+      },
+      "solution": {
+        "lines": [
+          "$3 \\times 7 = 21$",
+          "$21 \\times 45 = 945$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "كم ساعة كاملة تدرّب ياسين؟ (الساعة 60 دقيقة)",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الساعات",
+      "expectedAnswer": "15",
+      "misconceptionSignatures": [
+        {
+          "value": "45",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "14",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "16",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 945 من 60 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 60 دون أن نتجاوز 945."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$945 = 60 \\times 15 + 45$ و $45 < 60$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 60 فلا يتجاوز الجداء 945، والباقي عندئذ أصغر من 60."
+      },
+      "solution": {
+        "lines": [
+          "$60 \\times 15 = 900$ و $60 \\times 16 = 960$",
+          "$900 \\le 945 < 960$ ، إذن الحاصل هو 15."
+        ],
+        "result": "q = 15"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "وكم دقيقة تبقى بعد هذه الساعات؟",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الدقائق",
+      "expectedAnswer": "45",
+      "misconceptionSignatures": [
+        {
+          "value": "15",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "105",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 945."
+        }
+      ],
+      "feedback": {
+        "correct": "$945 - 60 \\times 15 = 945 - 900 = 45$ ، و $45 < 60$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 60."
+      },
+      "solution": {
+        "lines": [
+          "$945 = 60 \\times 15 + 45$",
+          "$45 < 60$ ، إذن الباقي هو 45."
+        ],
+        "result": "r = 45"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "اختر المساواة التي تعبّر عن القسمة الإقليدية للعدد 945 على 60.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$945 = 60 \\times 45 + 15$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "id": "B",
+          "content": "$945 = 60 \\times 16 + 45$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        },
+        {
+          "id": "C",
+          "content": "$945 = 60 \\times 15 + 45$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$945 = 60 \\times 14 + 105$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق من صحة كل مساواة بالحساب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في القسمة الإقليدية على 60، يجب أن يكون الباقي أصغر من 60."
+        }
+      ],
+      "feedback": {
+        "correct": "$60 \\times 15 + 45 = 945$ و $45 < 60$: الشرطان محقّقان.",
+        "incorrect": "المساواة الصحيحة يجب أن تكون صحيحة حسابيًا، وأن يكون باقيها أصغر من المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$60 \\times 15 = 900$ و $900 + 45 = 945$",
+          "$45 < 60$ ، إذن:"
+        ],
+        "result": "945 = 60 \\times 15 + 45"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

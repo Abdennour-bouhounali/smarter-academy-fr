@@ -1,0 +1,204 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l1-001",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 1,
+  "metadata": {
+    "title": "قراءة إحداثيي نقطة من المعلم",
+    "estimatedMinutes": 3,
+    "tags": [
+      "معلم",
+      "إحداثيات"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "prep",
+      "page": 87,
+      "section": "أستعدّ",
+      "number": 6
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "تعاون تلاميذ القسم لتجهيز مكتبة الحيّ فاشتروا علب أقلام. تمثّل النقطة $A$ في المعلم المتعامد والمتجانس التالي هذا الشراء: فاصلتها عدد العلب، وترتيبها الثمن بمئات الدنانير.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          5,
+          3
+        ]
+      },
+      "grid": true,
+      "axes": true,
+      "labels": {
+        "O": "sw",
+        "A": "n"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس على ورقة مرصوفة: النقطة A فاصلتها 5 وترتيبها 3",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: عدد العلب — محور التراتيب: الثمن بمئات الدنانير"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "بقراءة المعلم:",
+      "statement": "ما فاصلة النقطة $A$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد: فاصلة النقطة",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "3",
+          "id": "MISC-TAMTHIL-SWAP-XY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفاصلة هي العدد الأوّل في زوج الإحداثيين، وتُقرأ على المحور الأفقي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انزل من النقطة عموديا إلى المحور الأفقي واقرأ العدد الذي تقع عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "فاصلة $A$ هي $5$.",
+        "incorrect": "الفاصلة تُقرأ على المحور الأفقي لا العمودي، ويجب أن تحترم قيمة المربع."
+      },
+      "solution": {
+        "lines": [
+          "ننزل من $A$ عموديا إلى محور الفواصل فنقرأ $5$ ."
+        ],
+        "result": "5"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما ترتيب النقطة $A$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "rational",
+      "answerFormat": "عدد: ترتيب النقطة",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-TAMTHIL-SWAP-XY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الترتيب هو العدد الثاني في زوج الإحداثيين، وتُقرأ على المحور العمودي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اذهب من النقطة أفقيا إلى المحور العمودي واقرأ العدد الذي تقع عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "ترتيب $A$ هي $3$ , أي $300$ دج.",
+        "incorrect": "الترتيب يُقرأ على المحور العمودي لا الأفقي، ويجب أن تحترم قيمة المربع."
+      },
+      "solution": {
+        "lines": [
+          "نمشي من $A$ أفقيا إلى محور التراتيب فنقرأ $3$ ."
+        ],
+        "result": "3"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "كيف نكتب إحداثيي النقطة $A$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "recall",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$A(5\\,;\\,3)$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$A(3\\,;\\,5)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-SWAP-XY"
+        },
+        {
+          "id": "C",
+          "content": "$A(5\\,;\\,0)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-SWAP-XY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في زوج الإحداثيين نكتب الفاصلة أوّلا ثم الترتيب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما الفاصلة وما الترتيب كما قرأتهما في السؤالين السابقين؟"
+        }
+      ],
+      "feedback": {
+        "correct": "نكتب الفاصلة أوّلا ثم الترتيب: $A(5\\,;\\,3)$ .",
+        "incorrect": "في الزوج المرتّب تأتي الفاصلة أوّلا ثم الترتيب."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $A$ هي $5$ وترتيبها $3$ ، إذن $A(5\\,;\\,3)$ ."
+        ],
+        "result": "A(5\\,;\\,3)"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ashia-l2-006",
+  "lessonCode": "wadiya-idmajiya-ashia",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — طول AB′ (6 و 8)",
+    "estimatedMinutes": 2,
+    "tags": [
+      "فيثاغورس"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ashia_P1",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "على خريطة، النقطة B′ تبعد عن A بـ $8\\,\\mathrm{cm}$ أفقيا و $6\\,\\mathrm{cm}$ شاقوليا."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما الطول $AB'$ (بالسنتيمتر)؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد",
+      "expectedAnswer": "10",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مثلث قائم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الضلعان 8 و 6."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خاصية فيثاغورس."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB'^2 = 8^2 + 6^2 = 100$ ومنه $AB' = 10\\,\\mathrm{cm}$ .",
+        "incorrect": "الوتر ليس مجموع الضلعين."
+      },
+      "cognitiveDemand": "apply",
+      "difficulty": 2,
+      "misconceptionSignatures": [
+        {
+          "value": "14",
+          "id": "MISC-SHUAA-JAM-ATWAL"
+        }
+      ]
+    }
+  ]
+}

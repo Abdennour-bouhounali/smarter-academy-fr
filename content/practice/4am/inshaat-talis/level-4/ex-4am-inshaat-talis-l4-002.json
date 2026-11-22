@@ -1,0 +1,245 @@
+{
+  "id": "ex-4am-inshaat-talis-l4-002",
+  "lessonCode": "inshaat-talis",
+  "level": 4,
+  "metadata": {
+    "title": "دوري الآن ص 109 — نقطتان من (xy)",
+    "estimatedMinutes": 12,
+    "tags": [
+      "دوري الآن",
+      "داخل القطعة وخارجها"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "now-109",
+      "page": 109,
+      "section": "دوري الآن",
+      "adaptedFrom": "ex-4am-inshaat-talis-l4-002"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$(xy)$ مستقيم، $A$ و $B$ نقطتان منه. استعمل مسطرة غير مدرّجة ومدور لإنشاء نقطة $C$ من المستقيم $(xy)$ حيث $\\dfrac{CA}{CB} = \\dfrac{2}{5}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أنشئ النقطتين $C_1$ (بين $A$ و $B$ ) و $C_2$ (خارج $[AB]$ ) اللتين تحقّقان هذه النسبة.",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب خطوات الإنشاء مرقّمة (أو صوّر ورقتك)، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "موازيان مدرّجان بنفس الوحدة يشملان $A$ و $B$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جهتان مختلفتان تعطيان النقطة الداخلية، ونفس الجهة تعطي النقطة الخارجية."
+        }
+      ],
+      "feedback": {
+        "correct": "$AF = 2$ و $BE = 5$ في جهتين مختلفتين تعطيان $C_1$ ، و $AK = 2$ في جهة $E$ تعطي $C_2$ .",
+        "incorrect": "قارن إنشاءك بالحل النموذجي خطوة خطوة، ثم صحّح الخطوة التي تختلف."
+      },
+      "solution": {
+        "lines": [
+          "1) نرسم مستقيمين متوازيين $(d_1)$ و $(d_2)$ يشملان $A$ و $B$ على الترتيب.",
+          "2) بنفس فتحة المدور نعيّن على $(d_1)$ النقطة $F$ حيث $AF = 2$ ، وعلى $(d_2)$ النقطة $E$ حيث $BE = 5$ ، في جهتين مختلفتين للمستقيم $(xy)$ : المستقيم $(EF)$ يقطع $[AB]$ في $C_1$ .",
+          "3) نعيّن على $(d_1)$ النقطة $K$ حيث $AK = 2$ ، في نفس جهة $E$ : المستقيم $(EK)$ يقطع $(xy)$ في $C_2$ خارج $[AB]$ .",
+          "التبرير: $(AF) \\parallel (BE)$ ، حسب خاصية طالس في المثلثين $C_1AF$ و $C_1BE$ ، ثم في $C_2AK$ و $C_2BE$ : $\\dfrac{C_1A}{C_1B} = \\dfrac{C_2A}{C_2B} = \\dfrac{2}{5}$ ."
+        ]
+      },
+      "timeSeconds": 480
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب النسبة $\\dfrac{AC_1}{AB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "2/7",
+      "misconceptionSignatures": [
+        {
+          "value": "0,4",
+          "id": "MISC-TALIS-NISBA-JUZ-KULL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$AB = C_1A + C_1B$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{AC_1}{AB} = \\dfrac{2}{2 + 5} = \\dfrac{2}{7}$ .",
+        "incorrect": "$\\dfrac{2}{5}$ نسبة جزأين؛ المطلوب نسبة الجزء إلى الكل."
+      },
+      "solution": {
+        "lines": [
+          "$C_1A = 2u$ و $C_1B = 5u$ و $AB = 7u$"
+        ],
+        "result": "\\dfrac{AC_1}{AB} = \\dfrac{2}{7}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "هل تقع $C_2$ قبل $A$ (من جهة $A$ ) ؟",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIS-JIHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$C_2A$ أصغر من $C_2B$ : من أي النقطتين $C_2$ أقرب؟"
+        }
+      ],
+      "feedback": {
+        "correct": "نعم: $C_2A < C_2B$ ، فـ $C_2$ أقرب إلى $A$ ، أي قبل $A$ .",
+        "incorrect": "النقطة الخارجية أقرب إلى النقطة ذات الطول الأصغر في النسبة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{C_2A}{C_2B} = \\dfrac{2}{5} < 1$ ومنه $C_2A < C_2B$ : $C_2$ قبل $A$ ( $A$ بين $C_2$ و $B$ )."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ج",
+      "statement": "احسب النسبة $\\dfrac{AC_2}{AB}$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري (قيمة مضبوطة)",
+      "expectedAnswer": "2/3",
+      "misconceptionSignatures": [
+        {
+          "value": "2/7",
+          "id": "MISC-TALIS-JIHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$A$ بين $C_2$ و $B$ : $AB = C_2B - C_2A$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AB = 5u - 2u = 3u$ ، فـ $\\dfrac{AC_2}{AB} = \\dfrac{2}{3}$ .",
+        "incorrect": "خارج القطعة: $AB$ هو الفرق بين $C_2B$ و $C_2A$ ."
+      },
+      "solution": {
+        "lines": [
+          "$C_2A = 2u$ و $C_2B = 5u$ و $A \\in [C_2B]$ ومنه $AB = 3u$",
+          "$\\dfrac{AC_2}{AB} = \\dfrac{2u}{3u}$"
+        ],
+        "result": "\\dfrac{AC_2}{AB} = \\dfrac{2}{3}"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "إذا كان $AB = 7\\,\\mathrm{cm}$ ، احسب المسافة $C_1C_2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_inshaat-talis_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر أو عدد عشري: الطول بـ cm (قيمة مضبوطة)",
+      "expectedAnswer": "20/3",
+      "misconceptionSignatures": [
+        {
+          "value": "8/3",
+          "id": "MISC-TALIS-JIHA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $AC_1$ و $AC_2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$A$ بين $C_2$ و $C_1$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$AC_1 = 2$ و $AC_2 = \\dfrac{14}{3}$ ، و $A$ بينهما: $C_1C_2 = 2 + \\dfrac{14}{3} = \\dfrac{20}{3}\\,\\mathrm{cm}$ .",
+        "incorrect": "النقطتان في جهتين مختلفتين بالنسبة إلى $A$ : اجمع البعدين."
+      },
+      "solution": {
+        "lines": [
+          "$AC_1 = \\dfrac{2}{7} \\times 7 = 2$ و $AC_2 = \\dfrac{2}{3} \\times 7 = \\dfrac{14}{3}$",
+          "$A \\in [C_2C_1]$ ومنه $C_1C_2 = AC_1 + AC_2$"
+        ],
+        "result": "C_1C_2 = \\dfrac{20}{3}\\,\\mathrm{cm}"
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

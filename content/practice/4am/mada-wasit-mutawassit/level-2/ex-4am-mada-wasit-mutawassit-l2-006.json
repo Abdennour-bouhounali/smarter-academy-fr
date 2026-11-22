@@ -1,0 +1,138 @@
+{
+  "id": "ex-4am-mada-wasit-mutawassit-l2-006",
+  "lessonCode": "mada-wasit-mutawassit",
+  "level": 2,
+  "metadata": {
+    "title": "وسيط عشر قيم مرتّبة",
+    "estimatedMinutes": 4,
+    "tags": [
+      "الوسيط",
+      "عدد زوجي"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "know-4",
+      "page": 96,
+      "section": "معارف",
+      "number": 4
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "إليك سلسلة إحصائية مرتّبة: 2 ، 5 ، 7 ، 7 ، 9 ، 12 ، 13 ، 13 ، 20 ، 22 ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "كل عدد محصور بين 9 و 12 يجزئ هذه السلسلة إلى سلسلتين لهما نفس التكرار. ما هو هذا التكرار؟",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "5",
+      "misconceptionSignatures": [
+        {
+          "value": "4",
+          "id": "MISC-IHSA-WASIT-RUTBA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عُدّ قيم السلسلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كم قيمة تقع قبل 12؟ وكم قيمة تقع بعد 9؟"
+        }
+      ],
+      "feedback": {
+        "correct": "خمس قيم قبل هذا العدد وخمس قيم بعده.",
+        "incorrect": "عُدّ القيم الأصغر من 12 ثم القيم الأكبر من 9."
+      },
+      "solution": {
+        "lines": [
+          "عدد قيم السلسلة 10.",
+          "القيم الأصغر من عدد محصور بين 9 و 12: 2 ، 5 ، 7 ، 7 ، 9 ، أي 5 قيم.",
+          "القيم الأكبر منه: 12 ، 13 ، 13 ، 20 ، 22 ، أي 5 قيم."
+        ],
+        "result": "5"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "عيّن وسيط هذه السلسلة.",
+      "learningPoints": [
+        {
+          "code": "4am_mada-wasit-mutawassit_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة العشرية إن لزم)",
+      "expectedAnswer": "10,5",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-IHSA-WASIT-RUTBA"
+        },
+        {
+          "value": "12",
+          "id": "MISC-IHSA-WASIT-RUTBA"
+        },
+        {
+          "value": "11",
+          "id": "MISC-IHSA-WASIT-MUTAWASSIT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا يُقرأ الوسيط إلا بعد ترتيب قيم السلسلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب القيم تصاعديا، ثم عُدّها: هل عددها N فردي أم زوجي؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان N فرديا فالوسيط هو القيمة ذات الرتبة $\\dfrac{N + 1}{2}$ ، وإذا كان زوجيا فهو نصف مجموع القيمتين ذواتي الرتبتين $\\dfrac{N}{2}$ و $\\dfrac{N}{2} + 1$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$Med = 10{,}5$ .",
+        "incorrect": "رتّب القيم أولا، ثم عيّن الرتبة الوسطى (أو الرتبتين الوسطيين إذا كان عدد القيم زوجيا)."
+      },
+      "solution": {
+        "lines": [
+          "الترتيب التصاعدي: 2 ، 5 ، 7 ، 7 ، 9 ، 12 ، 13 ، 13 ، 20 ، 22",
+          "عدد القيم 10 عدد زوجي، فالوسيط هو نصف مجموع القيمتين ذواتي الرتبتين 5 و 6 (9 و 12):",
+          "$Med = \\dfrac{9 + 12}{2} = 10{,}5$"
+        ],
+        "result": "Med = 10{,}5"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

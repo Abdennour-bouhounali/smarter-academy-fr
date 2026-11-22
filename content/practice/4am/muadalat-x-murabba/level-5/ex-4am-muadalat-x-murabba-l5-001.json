@@ -1,0 +1,247 @@
+{
+  "id": "ex-4am-muadalat-x-murabba-l5-001",
+  "lessonCode": "muadalat-x-murabba",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2008 — البيت البلاستيكي",
+    "estimatedMinutes": 20,
+    "tags": [
+      "مساحة",
+      "مستطيل",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_muadalat-x-murabba_P2",
+      "modelledOn": "BEM 2008 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2008",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "يملك فلاح بولاية بسكرة، يعتني بمحصوله بإتقان، بيتًا بلاستيكيًا مستطيل الشكل مساحته $1350m^2$ و عرضه يساوي ثلثي طوله."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "احسب عرض و طول هذا البيت البلاستيكي.",
+      "statement": "الطول:",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_muadalat-x-murabba_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول بالمتر (m)",
+      "expectedAnswer": "45",
+      "misconceptionSignatures": [
+        {
+          "value": "675",
+          "id": "MISC-HALL-QISMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "سمِّ $x$ الطول: العرض إذن $\\dfrac{2}{3}x$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب أن جداء الطول في العرض يساوي المساحة، ثم اعزل $x^2$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الطول عدد موجب: احتفظ بالحل الموجب."
+        }
+      ],
+      "feedback": {
+        "correct": "من $\\dfrac{2}{3}x^2 = 1350$ نجد $x^2 = 2025$ ومنه الطول $45m$.",
+        "incorrect": "العرض هو $\\dfrac{2}{3}$ الطول: ستحصل على معادلة فيها $x^2$، احتفظ بالحل الموجب."
+      },
+      "solution": {
+        "lines": [
+          "ليكن $x$ طول البيت البلاستيكي و $y$ عرضه.",
+          "العرض يساوي ثلثي الطول معناه: $y = \\dfrac{2}{3}x$",
+          "و لدينا: $x \\times y = 1350$",
+          "بتعويض $y$ بما يساويه نجد: $x \\times \\dfrac{2}{3}x = 1350$",
+          "$\\dfrac{2}{3}x^2 = 1350$",
+          "$x^2 = \\dfrac{1350 \\times 3}{2}$",
+          "$x^2 = 2025$",
+          "$x = \\sqrt{2025} = 45$ (الطول عدد موجب)"
+        ],
+        "result": "x = 45m"
+      },
+      "work": "optional",
+      "timeSeconds": 360
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "العرض:",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: العرض بالمتر (m)",
+      "expectedAnswer": "30",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العرض يساوي ثلثي الطول."
+        }
+      ],
+      "feedback": {
+        "correct": "العرض $\\dfrac{2}{3} \\times 45 = 30m$.",
+        "incorrect": "العرض هو $\\dfrac{2}{3}$ الطول الذي وجدته."
+      },
+      "solution": {
+        "lines": [
+          "$y = \\dfrac{2}{3} \\times 45$"
+        ],
+        "result": "y = 30m"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "يقسم الفلاح البيت البلاستيكي إلى جزأين مستطيلين عرض كل منهما $30m$: جزء طوله $x$ (بالمتر) مخصص للطماطم، و الجزء الباقي مخصص للفلفل.",
+      "statement": "عبّر بدلالة $x$ عن مساحة كل جزء.",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل جزء مستطيل عرضه $30m$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طول جزء الفلفل هو ما يبقى من الطول بعد طرح $x$."
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك سطرًا بسطر بالحل النموذجي."
+      },
+      "solution": {
+        "lines": [
+          "جزء الطماطم مستطيل بُعداه $x$ و $30$: مساحته $S_1 = 30x$",
+          "جزء الفلفل مستطيل بُعداه $45 - x$ و $30$: مساحته $S_2 = 30(45 - x)$"
+        ],
+        "result": "S_1 = 30x \\quad ; \\quad S_2 = 1350 - 30x"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "جِد قيمة $x$ حتى تكون مساحة جزء الطماطم $900m^2$.",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: الطول x بالمتر (m)",
+      "expectedAnswer": "30",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل عبارة $S_1$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حل معادلة من الدرجة الأولى."
+        }
+      ],
+      "feedback": {
+        "correct": "$30x = 900$ يعطي $x = 30m$.",
+        "incorrect": "مساحة جزء الطماطم هي $30x$: اكتب المعادلة ثم حلها."
+      },
+      "solution": {
+        "lines": [
+          "$S_1 = 900$ يعني $30x = 900$",
+          "$x = 900 \\div 30$"
+        ],
+        "result": "x = 30m"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "ينتج كل $1m^2$ من جزء الطماطم $6kg$، ويبيع الفلاح الكيلوغرام الواحد بـ $50DA$. احسب المبلغ الذي يتحصل عليه من بيع الطماطم.",
+      "learningPoints": [
+        {
+          "code": "4am_muadalat-x-murabba_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المبلغ بالدينار (DA)",
+      "expectedAnswer": "270000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب أولًا كتلة الطماطم المنتجة في جزء مساحته $900m^2$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب الكتلة في ثمن الكيلوغرام."
+        }
+      ],
+      "feedback": {
+        "correct": "الإنتاج $900 \\times 6 = 5400kg$، والمبلغ $5400 \\times 50 = 270000DA$.",
+        "incorrect": "احسب الإنتاج الكلي بالكيلوغرام ثم اضربه في ثمن الكيلوغرام."
+      },
+      "solution": {
+        "lines": [
+          "كتلة الطماطم المنتجة: $900 \\times 6 = 5400kg$",
+          "المبلغ: $5400 \\times 50$"
+        ],
+        "result": "270000DA"
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

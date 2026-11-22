@@ -1,0 +1,322 @@
+{
+  "id": "ex-3am-tanasub-tamthil-bayani-l4-010",
+  "lessonCode": "tanasub-tamthil-bayani",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — مبيعات البرتقال",
+    "estimatedMinutes": 12,
+    "tags": [
+      "تمثيل بياني",
+      "تناسبية",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "3am",
+      "semester": 3,
+      "file": "3am-s3-56",
+      "exercise": 3
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الرابع",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يبيع بستاني البرتقال بوزن دقيق وسعر ثابت للكيلوغرام. يلخّص الجدول التالي مبيعات اليوم، ومثّلنا نقطه في المعلم المتعامد والمتجانس الموالي (الفاصلة بالكيلوغرام والترتيب بمئات الدنانير).",
+    "table": {
+      "head": [
+        "الكتلة (kg)",
+        "4",
+        "8",
+        "12"
+      ],
+      "rows": [
+        [
+          "الثمن (دج)",
+          "600",
+          "1200",
+          "1800"
+        ]
+      ]
+    },
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          4,
+          6
+        ],
+        "B": [
+          8,
+          12
+        ],
+        "C": [
+          12,
+          18
+        ]
+      },
+      "lines": [
+        {
+          "through": [
+            "O",
+            "C"
+          ],
+          "name": "(D)",
+          "tone": "indigo",
+          "extend": [
+            0,
+            0.4
+          ]
+        }
+      ],
+      "grid": true,
+      "axes": {
+        "every": 2
+      },
+      "labels": {
+        "O": "sw",
+        "A": "se",
+        "B": "se",
+        "C": "se"
+      },
+      "ariaLabel": "معلم متعامد ومتجانس: المستقيم (D) يشمل المبدأ O والنقط A(4;6) و B(8;12) و C(12;18) ويمتد إلى ما بعدها",
+      "maxWidth": 340,
+      "caption": "محور الفواصل: الكتلة بالكيلوغرام — محور التراتيب: الثمن بمئات الدنانير"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "هل الثمن متناسب مع الكتلة؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا، لأنّ الترتيب لا يساوي الفاصلة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-EQUAL-ONLY"
+        },
+        {
+          "id": "B",
+          "content": "لا، لأنّ المبدأ $O$ ليس من النقط المعلَّمة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-ORIGIN-DROP"
+        },
+        {
+          "id": "C",
+          "content": "نعم، النقط على استقامة واحدة مع المبدأ $O$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انظر إلى النقط: هل هي على مستقيم واحد؟ وهل يمرّ هذا المستقيم بالمبدأ $O$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوضعية التناسبية تُمثَّل بنقط على استقامة واحدة مع مبدأ المعلم."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "للتأكد، ضع مسطرة على النقطة $O$ وعلى إحدى النقط الأخرى وانظر إن كانت النقط الباقية على حافتها."
+        }
+      ],
+      "feedback": {
+        "correct": "النقط على استقامة واحدة مع المبدأ $O$ ، فهي تمثّل وضعية تناسبية.",
+        "incorrect": "تحقّق من أمرين معا: النقط على استقامة واحدة، وهذا المستقيم يشمل المبدأ $O$ ."
+      },
+      "solution": {
+        "lines": [
+          "$A$ و $B$ و $C$ على المستقيم $(D)$ الذي يشمل $O$ .",
+          "إذن الثمن متناسب مع الكتلة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "ما معامل التناسبية $a$ (ثمن الكيلوغرام بمئات الدنانير)؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 2,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: معامل التناسبية",
+      "expectedAnswer": "1.5",
+      "misconceptionSignatures": [
+        {
+          "value": "2/3",
+          "id": "MISC-TAMTHIL-COEF-INVERSE"
+        },
+        {
+          "value": "4",
+          "id": "MISC-TAMTHIL-DIFFERENCE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "معامل التناسبية هو ترتيب النقطة الذي فاصلته $1$ ، أو ناتج قسمة الترتيب على الفاصلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقرأ إحداثيي النقطة $B$ ثم اقسم الترتيب على الفاصلة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تقسم الفاصلة على الترتيب ولا تطرح أحد العددين من الآخر."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{12}{8} = 1{,}5$ .",
+        "incorrect": "المعامل هو ناتج قسمة الترتيب على الفاصلة (وليس العكس) لنقطة من المستقيم."
+      },
+      "solution": {
+        "lines": [
+          "النقطة $B(8\\,;\\,12)$ من المستقيم.",
+          "$a = \\dfrac{12}{8} = 1{,}5$"
+        ],
+        "result": "a = 1{,}5"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "بقراءة بيانية، ما ثمن $16$ kg بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الثمن بالدينار",
+      "expectedAnswer": "2400",
+      "misconceptionSignatures": [
+        {
+          "value": "24",
+          "id": "MISC-TAMTHIL-UNIT-AXIS"
+        },
+        {
+          "value": "16",
+          "id": "MISC-TAMTHIL-SWAP-XY"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اتبع المستقيم $(D)$ حتى الفاصلة $16$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حوّل ترتيب النقطة إلى دنانير."
+        }
+      ],
+      "feedback": {
+        "correct": "عند الفاصلة $16$ الترتيب $24$ ، أي $2400$ دج.",
+        "incorrect": "لا تنس أنّ الترتيب بمئات الدنانير."
+      },
+      "solution": {
+        "lines": [
+          "النقطة من $(D)$ التي فاصلتها $16$ ترتيبها $24$ ، أي $2400$ دج."
+        ],
+        "result": "2400\\ \\text{دج}"
+      },
+      "work": "optional",
+      "timeSeconds": 100
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "يملك سمير $2500$ دج ويريد $17$ kg. هل يكفيه مبلغه؟",
+      "learningPoints": [
+        {
+          "code": "3am_tanasub-tamthil-bayani_P4",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم: لأنّ $2500$ يكاد يساوي $2550$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-APPROX-DECISION"
+        },
+        {
+          "id": "B",
+          "content": "نعم: لأنّ ثمن $16$ kg هو $2400$ دج وهو أقلّ من $2500$ دج",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TAMTHIL-DIFFERENCE"
+        },
+        {
+          "id": "C",
+          "content": "لا: ثمن $17$ kg هو $17 \\times 150 = 2550$ دج وهو أكبر من $2500$ دج",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثمن الكيلوغرام الواحد هو معامل التناسبية."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضربه في $17$ ثم قارنه بالمبلغ الذي مع سمير."
+        }
+      ],
+      "feedback": {
+        "correct": "$2550 > 2500$ : يلزم له $50$ دج أخرى.",
+        "incorrect": "لا تقرّب: قارن الثمن المحسوب بالمبلغ الذي معه بدقّة."
+      },
+      "solution": {
+        "lines": [
+          "ثمن الكيلوغرام: $150$ دج.",
+          "$17 \\times 150 = 2550$ دج وهو أكبر من $2500$ دج، فلا يكفيه مبلغه."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

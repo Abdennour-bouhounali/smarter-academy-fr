@@ -1,0 +1,320 @@
+{
+  "id": "ex-1am-talim-fi-mustawi-l4-009",
+  "lessonCode": "talim-fi-mustawi",
+  "level": 4,
+  "metadata": {
+    "title": "قراءة ثمّ حكم",
+    "estimatedMinutes": 7,
+    "tags": [
+      "قراءة",
+      "موضع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في الشكل أربع نقط على مخطّط مدينة صغيرة بمعلم متعامد.",
+    "figure": {
+      "points": {
+        "A": [
+          -3,
+          2
+        ],
+        "B": [
+          4,
+          3
+        ],
+        "C": [
+          2,
+          -2
+        ],
+        "D": [
+          -2,
+          -4
+        ],
+        "c1": [
+          -5,
+          -5
+        ],
+        "c2": [
+          5,
+          5
+        ]
+      },
+      "grid": true,
+      "axes": true,
+      "hidden": [
+        "c1",
+        "c2"
+      ],
+      "ariaLabel": "معلم متعامد تظهر فيه أربع نقط A و B و C و D",
+      "maxWidth": 400
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اقرأ إحداثيي النقطة $B$ في الشكل.",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "4",
+        "y": "3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SWAP",
+          "value": {
+            "x": "3",
+            "y": "4"
+          }
+        },
+        {
+          "id": "MISC-MUSTAWI-SIGNY",
+          "value": {
+            "x": "4",
+            "y": "-3"
+          }
+        },
+        {
+          "id": "MISC-MUSTAWI-SIGNX",
+          "value": {
+            "x": "-4",
+            "y": "3"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ الفاصلة على الخط الأفقي أوّلًا ثمّ الترتيب على الخط الشاقولي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "من النقطة انزل أو اصعد إلى الخط الأفقي لتقرأ الفاصلة، ثمّ سر أفقيًّا إلى الخط الشاقولي لتقرأ الترتيب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "راقب الإشارة: يسار الخط الشاقولي فاصلة سالبة، وتحت الخط الأفقي ترتيب سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "إحداثيا $B$ هما $(4\\,;\\,3)$ .",
+        "incorrect": "الفاصلة أوّلًا (على الخط الأفقي) ثمّ الترتيب (على الخط الشاقولي)، ولا تنسَ الإشارتين."
+      },
+      "solution": {
+        "lines": [
+          "فاصلة $B$ هي $4$ وترتيبها $3$",
+          "$B(4\\,;\\,3)$"
+        ],
+        "result": "B(4\\,;\\,3)"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما ترتيب النقطة $D$ في الشكل؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MUSTAWI-SWAP",
+          "value": "-2"
+        },
+        {
+          "id": "MISC-MUSTAWI-SIGNY",
+          "value": "4"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الترتيب يُقرأ على الخط الشاقولي."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "سر من النقطة أفقيًّا إلى الخط الشاقولي واقرأ التدريجة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ الإشارة: يسار الخط الشاقولي أو تحت الخط الأفقي عدد سالب."
+        }
+      ],
+      "feedback": {
+        "correct": "ترتيب $D$ هي $-4$ .",
+        "incorrect": "اقرأ التدريجة على المحور المناسب ولا تُبدّل الفاصلة بالترتيب."
+      },
+      "solution": {
+        "lines": [
+          "نقرأ الترتيب على الخط الشاقولي: $-4$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "أين تقع النقطة $(2\\,;\\,-2)$ بالنسبة إلى المحورين؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "تحت محور الفواصل وعلى يسار محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNX"
+        },
+        {
+          "id": "B",
+          "content": "فوق محور الفواصل وعلى يمين محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNY"
+        },
+        {
+          "id": "C",
+          "content": "فوق محور الفواصل وعلى يسار محور التراتيب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUSTAWI-SIGNBOTH"
+        },
+        {
+          "id": "D",
+          "content": "تحت محور الفواصل وعلى يمين محور التراتيب",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الفاصلة تقول الجهة على الخط الأفقي: يمين أو يسار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الترتيب يقول الجهة على الخط الشاقولي: فوق أو تحت."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "العدد السالب: يسار (للفاصلة) أو تحت (للترتيب)."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة تعيّن اليمين أو اليسار والترتيب يعيّن الفوق أو التحت.",
+        "incorrect": "انظر إلى إشارة كلّ إحداثي على حدة."
+      },
+      "solution": {
+        "lines": [
+          "إشارة الفاصلة موجبة: يمين محور التراتيب",
+          "إشارة الترتيب سالبة: تحت محور الفواصل"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "أيّ النقط في الشكل إحداثياها $(-3\\,;\\,2)$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_talim-fi-mustawi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "النقطة $C$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "النقطة $D$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "النقطة $A$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "النقطة $B$",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالعدد الأول: أين تقع الفاصلة على الخط الأفقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ثمّ اصعد أو انزل بمقدار العدد الثاني من الخط الأفقي."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن كلّ نقطة بالزوج: إن بدّلتَ العددين وصلتَ إلى نقطة أخرى."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة $A$ إحداثياها $(-3\\,;\\,2)$ .",
+        "incorrect": "ابدأ بالفاصلة على الخط الأفقي ثمّ بالترتيب على الخط الشاقولي."
+      },
+      "solution": {
+        "lines": [
+          "الفاصلة $-3$ على الخط الأفقي ثمّ الترتيب $2$ على الخط الشاقولي",
+          "النقطة $A$"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

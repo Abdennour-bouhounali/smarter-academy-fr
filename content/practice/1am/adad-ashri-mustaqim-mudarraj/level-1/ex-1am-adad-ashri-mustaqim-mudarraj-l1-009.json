@@ -1,0 +1,186 @@
+{
+  "id": "ex-1am-adad-ashri-mustaqim-mudarraj-l1-009",
+  "lessonCode": "adad-ashri-mustaqim-mudarraj",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — قراءة وتعليم",
+    "estimatedMinutes": 5,
+    "tags": [
+      "فاصلة",
+      "تعليم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نصف مستقيم مدرّج مبدؤه $O$ ، ووحدته مقسّمة إلى 10 أجزاء متساوية. نعيّن مواضع نقاط بعدّ تدريجاتها الصغيرة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "كم تدريجة صغيرة تفصل النقطة التي فاصلتها $0{,}9$ عن المبدإ $O$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "0,9",
+          "id": "MISC-ABSC-FROMO"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم تدريجة صغيرة في الوحدة الواحدة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع عدد الوحدات في عدد التدريجات التي تساويها كلّ وحدة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثمّ أضف التدريجات الباقية بعد آخر علامة."
+        }
+      ],
+      "feedback": {
+        "correct": "النقطة تبعد عن المبدإ بـ $9$ تدريجة صغيرة.",
+        "incorrect": "الوحدة الكاملة تُحسب بعدد أجزائها لا بواحد : نضرب الفاصلة في عدد أجزاء الوحدة."
+      },
+      "solution": {
+        "lines": [
+          "الوحدة الواحدة تساوي $10$ تدريجات صغيرة",
+          "$0{,}9$ = $0{,}9$ × $10$ تدريجة = $9$ تدريجة"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "المسافة بين المبدإ $O$ والنقطة $E$ تساوي 5 تدريجات صغيرة. ما فاصلة النقطة $E$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "0,5",
+      "misconceptionSignatures": [
+        {
+          "value": "5",
+          "id": "MISC-ABSC-SWAP"
+        },
+        {
+          "value": "0,05",
+          "id": "MISC-ABSC-HUNDREDTH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم وحدة كاملة تفصل النقطة عن المبدإ، وماذا يبقى بعدها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كلّ تدريجة صغيرة جزء من الوحدة، وليست وحدة كاملة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف قيمة التدريجات الصغيرة إلى عدد الوحدات الكاملة."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة $0{,}5$ : الوحدات الكاملة أوّلًا ثمّ التدريجات الصغيرة.",
+        "incorrect": "الوحدات الكاملة تعطي الجزء الصحيح، والتدريجات الصغيرة تعطي الجزء بعد الفاصلة ؛ كلّ تدريجة صغيرة جزء من الوحدة لا وحدة كاملة."
+      },
+      "solution": {
+        "lines": [
+          "$0$ وحدة كاملة، ثمّ $5$ تدريجة صغيرة قيمة كلّ منها $0{,}1$",
+          "الفاصلة : $0$ + $5$ × $0{,}1$ = $0{,}5$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "تُغرس النقطة $C$ بعد العلامة $1$ بـ 4 تدريجات صغيرة (الوحدة مقسّمة إلى 10 أجزاء متساوية). فاصلة $C$ هي $1{,}4$ .",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة، ثمّ قارن تبريرك بالحلّ النموذجي",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيح",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "خطأ",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-SWAP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم تساوي التدريجات الصغيرة التي بعد العلامة ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كلّ تدريجة صغيرة عُشر الوحدة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف ذلك إلى قيمة العلامة ثمّ قارن بالفاصلة المعطاة."
+        }
+      ],
+      "feedback": {
+        "correct": "إجابة صحيحة.",
+        "incorrect": "نتحقّق بحساب الفاصلة أو بمقارنتها بالعلامات ولا نكتفي بالنظر إلى شكل الكتابة."
+      },
+      "solution": {
+        "lines": [
+          "$1$ + $4$ × $0{,}1$ = $1{,}4$",
+          "ومنه الادّعاء صحيح"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

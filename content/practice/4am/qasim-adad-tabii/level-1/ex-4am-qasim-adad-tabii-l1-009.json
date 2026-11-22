@@ -1,0 +1,131 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l1-009",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2021 — 17 يقسم 612",
+    "estimatedMinutes": 3,
+    "tags": [
+      "يقسم",
+      "a = b × q"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-adad-tabii_P3",
+      "modelledOn": "BEM 2021 I-1 01"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2021",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "بيّن أن العدد 17 يقسم العدد 612، وذلك بإيجاد العدد الطبيعي $q$ حيث: $612 = 17 \\times q$ .",
+      "statement": "العدد $q$:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P3",
+          "role": "primary"
+        },
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $q$ فقط (عدد طبيعي)",
+      "expectedAnswer": "36",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نبحث عن عدد طبيعي $q$ حيث $612 = 17 \\times q$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أجرِ القسمة الإقليدية للعدد 612 على 17."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان الباقي معدومًا فإن حاصل القسمة هو العدد المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$612 = 17 \\times 36$.",
+        "incorrect": "اقسم 612 على 17: حاصل القسمة هو العدد $q$ إذا كان الباقي معدومًا."
+      },
+      "solution": {
+        "lines": [
+          "$17 \\times 36 = 612$",
+          "إذن $612 = 17 \\times 36$",
+          "إذن 17 يقسم 612."
+        ],
+        "result": "612 = 17 \\times 36"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "استنتج: هل 36 قاسم للعدد 612؟",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل المساواة التي وجدتها في السؤال 01."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في المساواة $a = b \\times q$ العددان $b$ و $q$ كلاهما قاسم للعدد $a$."
+        }
+      ],
+      "feedback": {
+        "correct": "$612 = 17 \\times 36 = 36 \\times 17$: 36 قاسم للعدد 612.",
+        "incorrect": "اقرأ المساواة $612 = 17 \\times q$ في الاتجاهين."
+      },
+      "solution": {
+        "lines": [
+          "$612 = 17 \\times 36 = 36 \\times 17$",
+          "إذن 36 قاسم للعدد 612 (حاصل قسمة 612 على 36 هو 17 والباقي معدوم)."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

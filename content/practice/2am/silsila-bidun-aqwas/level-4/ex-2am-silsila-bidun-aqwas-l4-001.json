@@ -1,0 +1,314 @@
+{
+  "id": "ex-2am-silsila-bidun-aqwas-l4-001",
+  "lessonCode": "silsila-bidun-aqwas",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — لوحة النجّار",
+    "estimatedMinutes": 12,
+    "tags": [
+      "مخطط",
+      "سلسلة عمليات",
+      "قطع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يملك نجّار لوحة خشبية طولها 240 cm . قطع منها قطعتين، طول الأولى 85 cm وطول الثانية 64 cm ، ويبقى منها الجزء □ كما يبيّن المخطط.",
+    "figure": {
+      "kind": "tape",
+      "parts": [
+        {
+          "label": "85",
+          "value": 85
+        },
+        {
+          "label": "64",
+          "value": 64
+        },
+        {
+          "label": "□",
+          "unknown": true
+        }
+      ],
+      "whole": {
+        "label": "240",
+        "value": 240
+      },
+      "ariaLabel": "مخطط: قطعتان طولاهما 85 و 64 فوق الخط وجزء مجهول، وطول اللوحة كلها 240 تحت الخط"
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ سلسلة عمليات تعطي طول القطعة المتبقية □ في المخطط؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bidun-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$240 - 85 + 64$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SILSILA-STORYSIGN"
+        },
+        {
+          "id": "B",
+          "content": "$240 + 85 + 64$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SILSILA-STORYSIGN"
+        },
+        {
+          "id": "C",
+          "content": "$240 - 85 - 64$",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: كل جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل جملة بعملية، بالترتيب الذي جاءت به في القصة."
+        }
+      ],
+      "feedback": {
+        "correct": "$240 - 85 - 64 = 91$ .",
+        "incorrect": "اكتب جمل القصة بعمليات بالترتيب نفسه، واحرص على إشارة كل عملية: ما يُدفع أو ينقص يُطرح."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة الصحيحة: $240 - 85 - 64$",
+          "$155 - 64$",
+          "$91$"
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما طول القطعة المتبقية □ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bidun-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد بالسنتيمتر",
+      "expectedAnswer": "91",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: كل جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل جملة بعملية، بالترتيب الذي جاءت به في القصة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب السلسلة مراعيًا أولوية الضرب والقسمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$240 - 85 - 64 = 91$ .",
+        "incorrect": "نترجم كل جملة من القصة بعملية بالترتيب نفسه، ثم نحسب السلسلة: الضرب والقسمة أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $240 - 85 - 64$",
+          "$155 - 64$",
+          "$91$"
+        ],
+        "result": "91 \\text{ cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 100
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ثم قطع النجّار من القطعة المتبقية 3 مسطرات، طول كل مسطرة 25 cm . أيّ سلسلة عمليات تعطي طول ما بقي بعد قطع المسطرات؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bidun-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$3 \\times 240 - 85 - 64 - 25$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SILSILA-STORYORDER"
+        },
+        {
+          "id": "B",
+          "content": "$240 - 85 - 64 - 3 \\times 25$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$240 - 85 - 64 + 3 \\times 25$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SILSILA-STORYSIGN"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: كل جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل جملة بعملية، بالترتيب الذي جاءت به في القصة."
+        }
+      ],
+      "feedback": {
+        "correct": "$240 - 85 - 64 - 3 \\times 25 = 16$ .",
+        "incorrect": "اكتب جمل القصة بعمليات بالترتيب نفسه، واحرص على إشارة كل عملية: ما يُدفع أو ينقص يُطرح."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة الصحيحة: $240 - 85 - 64 - 3 \\times 25$",
+          "$240 - 85 - 64 - 75$",
+          "$155 - 64 - 75$",
+          "$91 - 75$",
+          "$16$"
+        ]
+      },
+      "timeSeconds": 100
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "ما طول ما بقي من اللوحة؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bidun-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد بالسنتيمتر",
+      "expectedAnswer": "16",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ القصة جملة جملة: كل جملة تضيف شيئًا أو تأخذ منه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل جملة بعملية، بالترتيب الذي جاءت به في القصة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم احسب السلسلة مراعيًا أولوية الضرب والقسمة."
+        }
+      ],
+      "feedback": {
+        "correct": "$240 - 85 - 64 - 3 \\times 25 = 16$ .",
+        "incorrect": "نترجم كل جملة من القصة بعملية بالترتيب نفسه، ثم نحسب السلسلة: الضرب والقسمة أوّلًا."
+      },
+      "solution": {
+        "lines": [
+          "السلسلة: $240 - 85 - 64 - 3 \\times 25$",
+          "$240 - 85 - 64 - 75$",
+          "$155 - 64 - 75$",
+          "$91 - 75$",
+          "$16$"
+        ],
+        "result": "16 \\text{ cm}"
+      },
+      "work": "optional",
+      "timeSeconds": 100
+    },
+    {
+      "id": "q5",
+      "step": "05",
+      "statement": "هل يكفي ما بقي لقطع مسطرة رابعة طولها 25 cm ؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bidun-aqwas_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن العددين المحسوبين بدقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل ما حسبته في الأسئلة السابقة."
+        }
+      ],
+      "feedback": {
+        "correct": "تحقّقت من ذلك بالحساب.",
+        "incorrect": "قارن العددين المحسوبين بدقة قبل أن تحكم."
+      },
+      "solution": {
+        "lines": [
+          "ما بقي $16 \\text{ cm}$ .",
+          "$16 < 25$ ، إذن لا يكفي."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

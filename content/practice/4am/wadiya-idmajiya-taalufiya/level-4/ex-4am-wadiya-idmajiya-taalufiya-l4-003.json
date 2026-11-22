@@ -1,0 +1,167 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-taalufiya-l4-003",
+  "lessonCode": "wadiya-idmajiya-taalufiya",
+  "level": 4,
+  "metadata": {
+    "title": "كراء قارب كاياك: ثلاث صيغ",
+    "estimatedMinutes": 12,
+    "tags": [
+      "ثلاث صيغ",
+      "مفاضلة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-taalufiya_P2"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "لكراء قارب كاياك تقترح محطة تحافظ على نظافة مياهها ثلاث صيغ، حيث $x$ عدد الساعات:\n- الصيغة الأولى: 120DA للساعة.\n- الصيغة الثانية: رسم ثابت 240DA ثم 60DA للساعة.\n- الصيغة الثالثة: 540DA جزافيا لليوم كله."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما هي الصيغة الأقل تكلفة لكراء القارب مدة 3 ساعات؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الصيغة الأولى",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "الصيغة الثانية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        },
+        {
+          "id": "C",
+          "content": "الصيغة الثالثة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عبّر عن المبالغ الثلاثة بدلالة $x$ ثم احسبها من أجل 3 ساعات."
+        }
+      ],
+      "feedback": {
+        "correct": "360DA و 420DA و 540DA .",
+        "incorrect": "احسب المبالغ الثلاثة ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 120x$ ، $g(x) = 60x + 240$ ، $h(x) = 540$",
+          "$f(3) = 360DA$ ، $g(3) = 420DA$ ، $h(3) = 540DA$",
+          "الصيغة الأولى هي الأقل تكلفة مدة 3 ساعات."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "من أجل كم ساعة تتساوى الصيغتان الثانية والثالثة؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: عدد الساعات",
+      "expectedAnswer": "5",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حلّ $g(x) = h(x)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$60x + 240 = 540$ .",
+        "incorrect": "اطرح الرسم الثابت ثم اقسم على 60."
+      },
+      "solution": {
+        "lines": [
+          "$60x + 240 = 540$",
+          "$60x = 300$",
+          "$x = 5$"
+        ],
+        "result": "x = 5"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما هي الصيغة الأقل تكلفة لكراء القارب مدة 7 ساعات؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-taalufiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الصيغة الأولى",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        },
+        {
+          "id": "B",
+          "content": "الصيغة الثانية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TARRID-AFDAL-DAIMAN"
+        },
+        {
+          "id": "C",
+          "content": "الصيغة الثالثة",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "7 أكبر من عدد الساعات الذي تتساوى عنده الصيغتان الثانية والثالثة."
+        }
+      ],
+      "feedback": {
+        "correct": "840DA و 660DA و 540DA .",
+        "incorrect": "احسب المبالغ الثلاثة من أجل 7 ساعات."
+      },
+      "solution": {
+        "lines": [
+          "$f(x) = 120x$ ، $g(x) = 60x + 240$ ، $h(x) = 540$",
+          "$f(7) = 840DA$ ، $g(7) = 660DA$ ، $h(7) = 540DA$",
+          "الصيغة الثالثة هي الأقل تكلفة مدة 7 ساعات."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

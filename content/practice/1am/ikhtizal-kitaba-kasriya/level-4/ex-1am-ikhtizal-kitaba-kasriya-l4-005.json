@@ -1,0 +1,220 @@
+{
+  "id": "ex-1am-ikhtizal-kitaba-kasriya-l4-005",
+  "lessonCode": "ikhtizal-kitaba-kasriya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — المجهولان ثم الكسر",
+    "estimatedMinutes": 11,
+    "tags": [
+      "معادلة",
+      "اختزال",
+      "كتابة عشرية"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 3,
+      "file": "1am-s3-37",
+      "exercise": 2
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثاني",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "احسب قيمة المجهول في كل حالة مع توضيح طريقة الحساب، ثم أجب."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أوجد $\\square$ حيث: $45 + \\square = 75$",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "30",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المجهول جزء من المجموع 75."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نطرح الجزء المعروف من الكلّ."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\square = 75 - 45 = 30$",
+        "incorrect": "إذا كان المجهول حدًّا من المجموع، نطرح الحدّ الآخر من المجموع."
+      },
+      "solution": {
+        "lines": [
+          "$\\square = 75 - 45 = 30$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "أوجد $\\Delta$ حيث: $\\Delta - 2{,}5 = 9{,}5$",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "Δ هو الكلّ في هذا الفرق."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نجمع الجزأين."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\Delta = 9{,}5 + 2{,}5 = 12$",
+        "incorrect": "إذا كان المجهول هو الكلّ في الفرق، نجمع الفرق والحدّ الآخر."
+      },
+      "solution": {
+        "lines": [
+          "$\\Delta = 9{,}5 + 2{,}5 = 12$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "اكتب الكسر $\\dfrac{\\square}{\\Delta}$ في أبسط شكل ممكن.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b لا يقبل الاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "5/2",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "15/6",
+          "id": "MISC-KASRIYA-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن قاسم مشترك للبسط والمقام بقواعد قابلية القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على هذا القاسم، ثم أعد البحث في الكسر الجديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا لم تنفع القواعد، جرّب جداول الضرب (7، 11، 13…)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{30}{12} = \\dfrac{5}{2}$ ولا يقبل البسط والمقام قاسمًا مشتركًا غير 1.",
+        "incorrect": "نقسم البسط والمقام على قاسم مشترك لهما، ونعيد ذلك حتى لا يبقى قاسم مشترك غير 1.",
+        "notIrreducible": "الكتابة تساوي الكسر لكنها ما زالت قابلة للاختزال: ابحث عن قاسم مشترك آخر للبسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "$30 = 2 \\times 15$ و $12 = 2 \\times 6$ ، إذن $\\dfrac{30}{12} = \\dfrac{30 \\div 2}{12 \\div 2} = \\dfrac{15}{6}$",
+          "$15 = 3 \\times 5$ و $6 = 3 \\times 2$ ، إذن $\\dfrac{15}{6} = \\dfrac{15 \\div 3}{6 \\div 3} = \\dfrac{5}{2}$",
+          "العددان 5 و 2 لا يقبلان قاسمًا مشتركًا غير 1: $\\dfrac{5}{2}$ في أبسط شكل ممكن."
+        ],
+        "result": "\\dfrac{30}{12} = \\dfrac{5}{2}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "اكتب العدد $\\dfrac{\\square}{\\Delta}$ على الشكل العشري.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة)",
+      "expectedAnswer": "2,5",
+      "misconceptionSignatures": [
+        {
+          "value": "25",
+          "id": "MISC-KASRIYA-FASILA"
+        },
+        {
+          "value": "30,12",
+          "id": "MISC-KASRIYA-ARQAM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل المقام 10 أو 100 أو 1000؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "إن لم يكن كذلك، اضرب البسط والمقام في نفس العدد لتحصل على مقام 10 أو 100 أو 1000."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد أصفار المقام هو عدد الأرقام بعد الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{30}{12} = 2{,}5$.",
+        "incorrect": "في كسر عشري، عدد أصفار المقام هو عدد الأرقام بعد الفاصلة؛ وإن لم يكن المقام 10 أو 100 أو 1000 نحوّله أولًا."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{30}{12} = \\dfrac{5}{2} = \\dfrac{5 \\times 50}{2 \\times 50} = \\dfrac{250}{100}$",
+          "$\\dfrac{250}{100} = 2{,}5$"
+        ],
+        "result": "\\dfrac{30}{12} = 2{,}5"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

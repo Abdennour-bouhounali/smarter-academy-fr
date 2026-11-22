@@ -1,0 +1,373 @@
+{
+  "id": "ex-2am-talim-mustaqim-mudarraj-2-l5-004",
+  "lessonCode": "talim-mustaqim-mudarraj-2",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — لوحة الكورنيش",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "تدريج",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "06"
+    }
+  },
+  "statement": {
+    "content": "تصنع البلدية لوحة مدرّجة تحت درابزين الكورنيش، فيها $6$ تدريجات على الأكثر في كلّ جهة من دبّوس الصفر $O$ الموضوع تحت النافورة. تُعلَّم المعالم: الكشك $K$ على $-50\\,\\mathrm{m}$ ، المقعد $B$ على $+75\\,\\mathrm{m}$ ، موقف الحافلة $S$ على $+150\\,\\mathrm{m}$ .\nالجزء الأول: اختيار التدريجة.\nالجزء الثاني: القراءة وتغيير المبدأ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "نريد وضع النقط التي فواصلها $-50$ ؛ $75$ ؛ $150\\,\\mathrm{m}$ على مستقيم مدرّج فيه $6$ تدريجات على الأكثر في كلّ جهة من المبدأ. ما التدريجة المناسبة (قيمة التدريجة الواحدة) ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$25\\,\\mathrm{m}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$10\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM2-TOOBIG"
+        },
+        {
+          "id": "C",
+          "content": "$20\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM2-TOOBIG"
+        },
+        {
+          "id": "D",
+          "content": "$50\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM2-TOOBIG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أبعد عدد عن الصفر يحدّد أكبر عدد من التدريجات يلزم عدّها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التدريجة المناسبة تُبقي كلّ النقط داخل المستقيم وتجعل كلّ فاصلة على تدريجة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قسّم كلّ فاصلة على قيمة التدريجة المقترحة وانظر إلى النتيجة."
+        }
+      ],
+      "feedback": {
+        "correct": "التدريجة $25$ تضع كلّ النقط على تدريجات وداخل المستقيم.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "أبعد فاصلة عن الصفر هي $150$",
+          "مع التدريجة $25$ : $-50 \\div 25 = -2$ ؛ $75 \\div 25 = 3$ ؛ $150 \\div 25 = 6$",
+          "كلّ فاصلة على تدريجة وأبعدها على $6$ تدريجات: التدريجة المناسبة هي $25$"
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "نريد وضع النقطة $B(75)$ على مستقيم مدرّج، وقيمة التدريجة الواحدة $25\\,\\mathrm{m}$. كم تدريجة تعدّ من المبدأ؟ اكتب العدد سالبًا إذا كانت النقطة على يسار المبدأ.",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "75",
+          "id": "MISC-TALIM2-UNITIGNORED"
+        },
+        {
+          "value": "-3",
+          "id": "MISC-TALIM2-SIGNSIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد التدريجات = الفاصلة ÷ قيمة التدريجة الواحدة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أمّا الجهة فتحدّدها الإشارة: سالبة على اليسار، موجبة على اليمين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بضرب عدد التدريجات في قيمة التدريجة."
+        }
+      ],
+      "feedback": {
+        "correct": "$75 \\div 25 = 3$ : عدد التدريجات مسبوق بالإشارة.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$75 \\div 25 = 3$",
+          "$3$ تدريجات إلى يمين المبدأ"
+        ],
+        "result": "3"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "برّر : لماذا لا تصلح التدريجة $20\\,\\mathrm{m}$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب جملة أو جملتين: الفكرة ثمّ الحساب الذي يدعمها."
+        }
+      ],
+      "feedback": {
+        "correct": "فلا يمكن وضعه على تدريجة.",
+        "incorrect": "قارن تبريرك بالحلّ النموذجي: الفكرة ثمّ الحساب الذي يدعمها."
+      },
+      "solution": {
+        "lines": [
+          "$-50 \\div 20 = -2{,}5$ : المعلم $K$ يقع بين تدريجتين.",
+          "فلا يمكن وضعه على تدريجة."
+        ]
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ا",
+      "statement": "النقطة $S$ على 6 تدريجات إلى يمين المبدأ، وقيمة التدريجة الواحدة $25\\,\\mathrm{m}$. ما فاصلة $S$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$-150\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM2-SIGNSIDE"
+        },
+        {
+          "id": "B",
+          "content": "$31\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM2-ADDSTEP"
+        },
+        {
+          "id": "C",
+          "content": "$150\\,\\mathrm{m}$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "content": "$6\\,\\mathrm{m}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TALIM2-UNITIGNORED"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدّ التدريجات بين المبدأ والنقطة، ثم انظر إلى جهتها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفاصلة = عدد التدريجات × قيمة التدريجة الواحدة، وإشارتها حسب الجهة: يمين المبدأ موجبة، يسار المبدأ سالبة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء أوّلًا ثم ضع الإشارة المناسبة."
+        }
+      ],
+      "feedback": {
+        "correct": "$S(150)$ : $6$ تدريجات × $25\\,\\mathrm{m}$ ، في الجهة اليمنى فالإشارة موجبة.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "عدد التدريجات $6$ ، قيمة التدريجة $25\\,\\mathrm{m}$",
+          "النقطة على يمين المبدأ فالإشارة موجبة",
+          "$S(150)$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ب",
+      "statement": "فاصلة النقطة $K$ هي $-50\\,\\mathrm{m}$ والنقطة $B$ فاصلتها $75\\,\\mathrm{m}$ . ننقل المبدأ إلى $B$ ونبقي التدريجة نفسها. ما الفاصلة الجديدة للنقطة $K$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "-125",
+      "misconceptionSignatures": [
+        {
+          "value": "-50",
+          "id": "MISC-TALIM2-ORIGINFIXED"
+        },
+        {
+          "value": "25",
+          "id": "MISC-TALIM2-ADDORIGIN"
+        },
+        {
+          "value": "125",
+          "id": "MISC-TALIM2-SIGNSIDE"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لا تتغيّر النقطة، بل يتغيّر المبدأ الذي نبدأ منه العدّ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفاصلة الجديدة = الفاصلة القديمة − فاصلة المبدأ الجديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بالعدّ من المبدأ الجديد إلى النقطة."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة الجديدة $-50 - (75) = -125$ : النقطة هي نفسها والمبدأ تغيّر.",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "النقطة لم تتحرّك، وإنّما المبدأ هو الذي تحرّك",
+          "الفاصلة الجديدة = $-50 - (75) = -125$"
+        ],
+        "result": "-125"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "02",
+      "sub": "ج",
+      "statement": "النقطة $L$ فاصلتها معاكس فاصلة النقطة $K(-50)$ . ما فاصلة $L$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-mustaqim-mudarraj-2_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي",
+      "expectedAnswer": "50",
+      "misconceptionSignatures": [
+        {
+          "value": "-50",
+          "id": "MISC-TALIM2-OPPSAME"
+        },
+        {
+          "value": "-0.02",
+          "id": "MISC-TALIM2-RECIP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نقطتان فاصلتاهما متعاكستان تبعدان عن المبدأ بالمسافة نفسها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "وهما في جهتين مختلفتين من المبدأ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "غيّر إشارة الفاصلة المعطاة دون أن تغيّر ما بعدها."
+        }
+      ],
+      "feedback": {
+        "correct": "$L(50)$ : معاكس $-50$ هو $50$ .",
+        "incorrect": "راجع القاعدة المناسبة، ثم أعد العدّ خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$K(-50)$ و $L$ متعاكستان: المسافة نفسها إلى الصفر وجهتان مختلفتان",
+          "$L(50)$"
+        ],
+        "result": "50"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

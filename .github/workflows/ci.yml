@@ -47,6 +47,30 @@ jobs:
       - name: Build
         run: npm run build
 
+      # Le lot d'entrée (ce que CHAQUE visiteur télécharge avant le premier rendu) a un budget :
+      # une leçon, un namespace ou un moteur qui y fuit fait échouer la CI
+      # (docs/architecture/BUNDLE_BOUNDARIES.md §4 règle 10). Mesuré sur le build ci-dessus.
+      - name: Entry bundle budget
+        run: node scripts/analyze-entry-bundle.mjs --dist apps/web/dist --budget 212
+
+      # L'index des leçons (lessons/lessonIndex.generated.json) suit leurs lesson.config.js.
+      - name: Format of the lesson v2 areas (Prettier)
+        run: npm run check:format
+
+      - name: No dead file in apps/web/src
+        run: npm run check:unreached
+
+      # Unused imports and variables, a name that does not exist, a duplicated key (docs/architecture/CODE_HEALTH.md).
+      - name: Lint (ESLint)
+        run: npm run lint
+
+      # Unused exports, i18n keys and string-table entries (web, core), unused classes and unrouted actions (api).
+      - name: Nothing new is unused
+        run: npm run check:unused
+
+      - name: Lesson index is fresh
+        run: npm run check:lesson-index && npm run check:routes
+
       - name: Verify build output
         run: |
           test -d apps/web/dist
@@ -71,7 +95,7 @@ jobs:
         image: mysql:8.0
         env:
           MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: smart_academy_test
+          MYSQL_DATABASE: smarter_academy_dz_test
         ports:
           - 3306:3306
         options: >-
@@ -84,9 +108,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # 8.4 is what production actually serves (x-powered-by: PHP/8.4.19);
-      # composer.json only requires ^8.3, so CI pins the production version
-      # rather than drifting to whatever is newest.
+      # 8.4, la version que le serveur algérien sert en production.
+      #
+      # Ce n'est PAS un choix libre. composer.json annonce « php ^8.3 », mais
+      # composer.lock épingle symfony/* 8.1.x, qui exige « php >=8.4.1 ».
+      # Une CI en 8.3 échoue donc dès `composer install` (constaté :
+      # 17 conflits), et le serveur l'aurait refusé de la même façon.
+      # smarter-academy.com a été passé en 8.4 dans hPanel pour cette raison.
+      # Baisser ce numéro sans re-résoudre le lockfile recasse tout.
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -116,7 +145,7 @@ jobs:
         working-directory: apps/api
         run: |
           cat > .env <<'ENVFILE'
-          APP_NAME=SmarterAcademyCI
+          APP_NAME=SmarterAcademyDzCI
           APP_ENV=testing
           # Left empty on purpose: `key:generate` below rewrites this line, and
           # it only rewrites a key that is already declared.
@@ -127,7 +156,7 @@ jobs:
           DB_CONNECTION=mysql
           DB_HOST=127.0.0.1
           DB_PORT=3306
-          DB_DATABASE=smart_academy_test
+          DB_DATABASE=smarter_academy_dz_test
           DB_USERNAME=root
           DB_PASSWORD=root
           CACHE_STORE=array
@@ -151,6 +180,11 @@ jobs:
         working-directory: apps/api
         run: php artisan --version
 
+      # One Pint rule only — no unused `use` line (docs/architecture/CODE_HEALTH.md). Not the code style.
+      - name: No unused import (Pint)
+        working-directory: apps/api
+        run: php vendor/bin/pint --test --config pint.unused.json app routes database config bootstrap tests
+
       # Catches a route file that references a missing controller or a
       # malformed binding - the kind of error that would otherwise only
       # surface as a 500 in production.
@@ -169,7 +203,7 @@ jobs:
           DB_CONNECTION: mysql
           DB_HOST: 127.0.0.1
           DB_PORT: 3306
-          DB_DATABASE: smart_academy_test
+          DB_DATABASE: smarter_academy_dz_test
           DB_USERNAME: root
           DB_PASSWORD: root
         # No --configuration flag: `artisan test` already passes one through to

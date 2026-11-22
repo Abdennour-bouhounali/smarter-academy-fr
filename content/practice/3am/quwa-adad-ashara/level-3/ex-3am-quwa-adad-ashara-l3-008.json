@@ -1,0 +1,225 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l3-008",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 3,
+  "metadata": {
+    "title": "مساحة وحجم وقوى العدد 10",
+    "estimatedMinutes": 6,
+    "tags": [
+      "القوى",
+      "المساحة والحجم"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-1",
+      "page": 40,
+      "section": "أنشطة",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "مربع طول ضلعه $10\\ \\mathrm{m}$ ، ومكعب طول حرفه $10\\ \\mathrm{cm}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما مساحة المربّع بالمتر المربّع؟",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة المربّع جداء ضلعه في ضلعه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب 10 في 10."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء ثمّ احسبه."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "100",
+      "feedback": {
+        "correct": "مساحة المربّع $10 \\times 10 = 100\\ \\mathrm{m}^{2}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10 \\times 10 = 100$ ."
+        ],
+        "result": "100"
+      }
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "نكتب مساحة المربّع $10 \\times 10 = 10^{n}\\ \\mathrm{m}^{2}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم عاملًا في الجداء $10 \\times 10$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأسّ هو عدد العوامل التي تساوي 10."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عاملان."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "2",
+      "misconceptionSignatures": [
+        {
+          "value": "20",
+          "id": "MISC-ASHARA-DARB"
+        }
+      ],
+      "feedback": {
+        "correct": "$10 \\times 10 = 10^{2}$ ، أي المساحة $10^{2}\\ \\mathrm{m}^{2}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10 \\times 10 = 10^{2}$ ."
+        ],
+        "result": "n = 2"
+      }
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "statement": "ما حجم المكعّب بالسنتيمتر المكعّب؟",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حجم المكعّب جداء حرفه في حرفه في حرفه."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب ثلاث مرّات العدد 10."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء ثمّ احسبه."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "1000",
+      "misconceptionSignatures": [
+        {
+          "value": "30",
+          "id": "MISC-ASHARA-DARB"
+        }
+      ],
+      "feedback": {
+        "correct": "حجم المكعّب $10 \\times 10 \\times 10 = 1\\,000\\ \\mathrm{cm}^{3}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10 \\times 10 \\times 10 = 1\\,000$ ."
+        ],
+        "result": "1\\,000"
+      }
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "نكتب حجم المكعّب $10 \\times 10 \\times 10 = 10^{n}\\ \\mathrm{cm}^{3}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم عاملًا في الجداء؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأسّ هو عدد العوامل التي تساوي 10."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثلاثة عوامل."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "30",
+          "id": "MISC-ASHARA-DARB"
+        }
+      ],
+      "feedback": {
+        "correct": "$10 \\times 10 \\times 10 = 10^{3}$ ، أي الحجم $10^{3}\\ \\mathrm{cm}^{3}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$10 \\times 10 \\times 10 = 10^{3}$ ."
+        ],
+        "result": "n = 3"
+      }
+    }
+  ]
+}

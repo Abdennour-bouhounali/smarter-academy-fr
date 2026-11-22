@@ -1,0 +1,185 @@
+{
+  "id": "ex-3am-adad-natiq-l2-008",
+  "lessonCode": "adad-natiq",
+  "level": 2,
+  "metadata": {
+    "title": "أقارن عددًا ناطقًا بأعداد أخرى",
+    "estimatedMinutes": 10,
+    "tags": [
+      "العدد الناطق"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "self-10",
+      "page": 33,
+      "section": "أؤكّد تعلّماتي",
+      "number": 10
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد الناطق $x=-\\dfrac{5}{9}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اختر كلّ العبارات الصحيحة .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "multiChoice",
+      "answerFormat": "اختر كلّ الإجابات الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$x$ أكبر من $-\\dfrac{7}{9}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$x$ أصغر من $-\\dfrac{2}{9}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$x$ أكبر من $-\\dfrac{5}{11}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-NEGORDER"
+        },
+        {
+          "id": "D",
+          "content": "$x$ أصغر من $-\\dfrac{5}{7}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NATIQ-NEGORDER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اقرأ كلّ خيار على حدة قبل أن تقرّر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العددين بالمقام الموجب نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن البسطين بقواعد مقارنة الأعداد النسبية: على يسار الصفر، الأبعد عن الصفر هو الأصغر."
+        }
+      ],
+      "feedback": {
+        "correct": "الخيار الصحيح: $x$ أكبر من $-\\dfrac{7}{9}$ ، $x$ أصغر من $-\\dfrac{2}{9}$ .",
+        "incorrect": "اكتب العددين بمقام موجب مشترك قبل أن تقارن، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$-\\dfrac{5}{9}$ و $-\\dfrac{7}{9}$ بالمقام نفسه : $-5>-7$ ، فالعبارة الأولى صحيحة. و $-5<-2$ فالثانية صحيحة.",
+          "$-\\dfrac{5}{9}=\\dfrac{-55}{99}$ و $-\\dfrac{5}{11}=\\dfrac{-45}{99}$ : $-55<-45$ ، فالثالثة خاطئة.",
+          "$-\\dfrac{5}{7}=\\dfrac{-45}{63}$ و $-\\dfrac{5}{9}=\\dfrac{-35}{63}$ : $x>-\\dfrac{5}{7}$ ، فالرابعة خاطئة."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب $x=-\\dfrac{5}{9}$ بمقام $99$ : ما بسط الكتابة $\\dfrac{y}{99}$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح نسبي",
+      "expectedAnswer": "-55",
+      "misconceptionSignatures": [
+        {
+          "value": "55",
+          "id": "MISC-NATIQ-DROPSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل العددان في الجهة نفسها من الصفر؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب العددين بالمقام الموجب نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن البسطين بقواعد مقارنة الأعداد النسبية: على يسار الصفر، الأبعد عن الصفر هو الأصغر."
+        }
+      ],
+      "feedback": {
+        "correct": "$-55$ .",
+        "incorrect": "اكتب العددين بمقام موجب مشترك قبل أن تقارن، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "$99=9\\times 11$ .",
+          "$-\\dfrac{5}{9}=\\dfrac{-55}{99}$ ."
+        ],
+        "result": "-55"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "برّر لماذا $-\\dfrac{5}{9}$ ليس أكبر من $-\\dfrac{5}{11}$ رغم أنّ $9<11$ .",
+      "learningPoints": [
+        {
+          "code": "3am_adad-natiq_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثمّ اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يجب أن تبرّره بالضبط؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اذكر القاعدة التي تستعملها في كلّ سطر."
+        }
+      ],
+      "feedback": {
+        "correct": "تطابق تبريرك مع الحل النموذجي .",
+        "incorrect": "قارن تبريرك بالحل النموذجي سطرًا سطرًا، ثمّ قيّم إجابتك."
+      },
+      "solution": {
+        "lines": [
+          "$-\\dfrac{5}{9}=\\dfrac{-55}{99}$ و $-\\dfrac{5}{11}=\\dfrac{-45}{99}$ .",
+          "$-55<-45$ ، إذن $-\\dfrac{5}{9}<-\\dfrac{5}{11}$ .",
+          "في الجهة السالبة، الأبعد عن الصفر هو الأصغر."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

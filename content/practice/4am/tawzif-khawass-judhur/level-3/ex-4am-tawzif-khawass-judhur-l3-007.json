@@ -1,0 +1,146 @@
+{
+  "id": "ex-4am-tawzif-khawass-judhur-l3-007",
+  "lessonCode": "tawzif-khawass-judhur",
+  "level": 3,
+  "metadata": {
+    "title": "A = 2√12 − 4√3 + √75 − √147",
+    "estimatedMinutes": 7,
+    "tags": [
+      "a√b",
+      "الخاصية التوزيعية",
+      "نسبة مقامها عدد ناطق"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-26",
+      "page": 27,
+      "section": "أوظّف تعلّماتي",
+      "number": 26,
+      "adaptedFrom": "ex-4am-tawzif-khawass-judhur-l3-002"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد A حيث:",
+    "formulas": [
+      "A = 2\\sqrt{12} - 4\\sqrt{3} + \\sqrt{75} - \\sqrt{147}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب العدد A على الشكل $a\\sqrt{3}$ حيث $a$ عدد صحيح.",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_tawzif-khawass-judhur_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، قد يكون سالبًا)",
+      "expectedAnswer": "-2",
+      "misconceptionSignatures": [
+        {
+          "value": "-4",
+          "id": "MISC-MUAMIL-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب كل جذر على الشكل $x\\sqrt{3}$: ابحث عن أكبر مربع تامّ يقسم العدد الذي تحت الجذر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل $\\sqrt{m \\times 3} = \\sqrt{m} \\times \\sqrt{3}$ ثم احسب جذر المربع التامّ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع المعاملات بإشاراتها بالخاصية التوزيعية: $x\\sqrt{3} + y\\sqrt{3} = (x + y)\\sqrt{3}$."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = 4\\sqrt{3} - 4\\sqrt{3} + 5\\sqrt{3} - 7\\sqrt{3} = -2\\sqrt{3}$.",
+        "incorrect": "اكتب كل جذر على الشكل $x\\sqrt{3}$ (لا تنسَ المعامل 2)، ثم اجمع المعاملات بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$A = 2\\sqrt{12} - 4\\sqrt{3} + \\sqrt{75} - \\sqrt{147}$",
+          "$A = 2\\sqrt{4} \\times \\sqrt{3} - 4\\sqrt{3} + \\sqrt{25} \\times \\sqrt{3} - \\sqrt{49} \\times \\sqrt{3}$",
+          "$A = 2 \\times 2\\sqrt{3} - 4\\sqrt{3} + 5\\sqrt{3} - 7\\sqrt{3}$",
+          "$A = (4 - 4 + 5 - 7)\\sqrt{3}$"
+        ],
+        "result": "A = -2\\sqrt{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب العدد $\\dfrac{6}{A}$ على الشكل $a\\sqrt{3}$ حيث $a$ عدد صحيح.",
+      "learningPoints": [
+        {
+          "code": "4am_tawzif-khawass-judhur_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، قد يكون سالبًا)",
+      "expectedAnswer": "-1",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض A بالكتابة التي وجدتها في السؤال 01 واختزل."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب البسط والمقام في $\\sqrt{3}$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انتبه إلى إشارة A."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{6}{A} = \\dfrac{-3}{\\sqrt{3}} = \\dfrac{-3\\sqrt{3}}{3} = -\\sqrt{3}$ إذن $a = -1$.",
+        "incorrect": "اختزل أولًا، ثم اضرب البسط والمقام في $\\sqrt{3}$، واحتفظ بالإشارة السالبة."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{6}{A} = \\dfrac{6}{-2\\sqrt{3}}$",
+          "$= \\dfrac{-3}{\\sqrt{3}}$",
+          "$= \\dfrac{-3 \\times \\sqrt{3}}{\\sqrt{3} \\times \\sqrt{3}}$",
+          "$= \\dfrac{-3\\sqrt{3}}{3}$"
+        ],
+        "result": "\\dfrac{6}{A} = -\\sqrt{3}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

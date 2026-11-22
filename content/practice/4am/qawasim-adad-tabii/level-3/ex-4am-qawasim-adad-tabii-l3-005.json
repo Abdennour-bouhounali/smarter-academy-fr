@@ -1,0 +1,207 @@
+{
+  "id": "ex-4am-qawasim-adad-tabii-l3-005",
+  "lessonCode": "qawasim-adad-tabii",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2010 — قاعة مساحتها 168m²",
+    "estimatedMinutes": 12,
+    "tags": [
+      "قواسم",
+      "جداء عاملين",
+      "وضعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qawasim-adad-tabii_P1",
+      "modelledOn": "BEM 2010 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2010",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب كل قواسم العدد 168.",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        12,
+        14,
+        21,
+        24,
+        28,
+        42,
+        56,
+        84,
+        168
+      ],
+      "misconceptionSignatures": [
+        {
+          "value": [
+            2,
+            3,
+            4,
+            6,
+            7,
+            8,
+            12,
+            14,
+            21,
+            24,
+            28,
+            42,
+            56,
+            84
+          ],
+          "id": "MISC-QAWASIM-NASY-1-WA-N"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن 168 بمربعات الأعداد: إلى أي عدد يكفي أن تختبر قابلية القسمة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كل قسمة باقيها معدوم تعطي قاسمين: $d$ و $168 \\div d$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تنسَ القاسم 1 والعدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$168 = 1 \\times 168$ ، $168 = 2 \\times 84$ ، $168 = 3 \\times 56$ ، $168 = 4 \\times 42$ ، $168 = 6 \\times 28$ ، $168 = 7 \\times 24$ ، $168 = 8 \\times 21$ ، $168 = 12 \\times 14$.",
+        "incorrect": "اختبر الأعداد التي مربعها أصغر من العدد أو يساويه، وخذ من كل قسمة باقيها معدوم القاسمين معًا."
+      },
+      "solution": {
+        "lines": [
+          "$12^2 = 144 \\leq 168 < 169 = 13^2$ ومنه نختبر قابلية قسمة 168 على الأعداد من 1 إلى 12.",
+          "نجد أن 168 يقبل القسمة على كل من الأعداد: 1 ، 2 ، 3 ، 4 ، 6 ، 7 ، 8 ، 12.",
+          "ومن المساويات: $168 = 1 \\times 168$ ، $168 = 2 \\times 84$ ، $168 = 3 \\times 56$ ، $168 = 4 \\times 42$ ، $168 = 6 \\times 28$ ، $168 = 7 \\times 24$ ، $168 = 8 \\times 21$ ، $168 = 12 \\times 14$",
+          "إذن قواسم العدد 168 هي: 1 ، 2 ، 3 ، 4 ، 6 ، 7 ، 8 ، 12 ، 14 ، 21 ، 24 ، 28 ، 42 ، 56 ، 84 ، 168."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 390
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "lead": "قاعة مستطيلة الشكل خصّصتها البلدية لدروس الدعم المجانية لتلاميذ الحي، مساحتها $168\\,m^2$ ، بُعداها (بالمتر) عددان طبيعيان.",
+      "statement": "ما هي القيم الممكنة لعرض هذه القاعة؟ (العرض أصغر من الطول أو يساويه)",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        12
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العرض × الطول = 168."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب 168 على شكل جداء عاملين بكل الأشكال الممكنة، والعرض هو العامل الأصغر."
+        }
+      ],
+      "feedback": {
+        "correct": "$168 = 1 \\times 168$ ، $168 = 2 \\times 84$ ، $168 = 3 \\times 56$ ، $168 = 4 \\times 42$ ، $168 = 6 \\times 28$ ، $168 = 7 \\times 24$ ، $168 = 8 \\times 21$ ، $168 = 12 \\times 14$.",
+        "incorrect": "اكتب 168 على شكل جداء عاملين $\\ell \\times L$ حيث $\\ell \\leq L$، وخذ في كل مرة العامل الأصغر."
+      },
+      "solution": {
+        "lines": [
+          "مساحة المستطيل = العرض × الطول، إذن العرض × الطول = 168.",
+          "$168 = 1 \\times 168$ ، $168 = 2 \\times 84$ ، $168 = 3 \\times 56$ ، $168 = 4 \\times 42$ ، $168 = 6 \\times 28$ ، $168 = 7 \\times 24$ ، $168 = 8 \\times 21$ ، $168 = 12 \\times 14$",
+          "القيم الممكنة للعرض (بالمتر): 1 ، 2 ، 3 ، 4 ، 6 ، 7 ، 8 ، 12."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "إذا كان طول القاعة يزيد عن عرضها بـ 2m، فما هو عرضها؟",
+      "learningPoints": [
+        {
+          "code": "4am_qawasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (بالمتر)",
+      "expectedAnswer": "12",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث بين الجداءات التي وجدتها عن عاملين الفرق بينهما 2."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العرض هو العامل الأصغر."
+        }
+      ],
+      "feedback": {
+        "correct": "$168 = 12 \\times 14$ و $14 - 12 = 2$.",
+        "incorrect": "من بين كتابات 168 على شكل جداء عاملين، اختر التي يكون فيها الفرق بين العاملين 2."
+      },
+      "solution": {
+        "lines": [
+          "نبحث عن كتابة $168 = \\ell \\times L$ حيث $L - \\ell = 2$.",
+          "$168 = 12 \\times 14$ و $14 - 12 = 2$",
+          "إذن عرض القاعة 12m وطولها 14m."
+        ],
+        "result": "12\\,m"
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

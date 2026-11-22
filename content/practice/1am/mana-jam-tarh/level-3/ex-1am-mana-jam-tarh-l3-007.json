@@ -1,0 +1,172 @@
+{
+  "id": "ex-1am-mana-jam-tarh-l3-007",
+  "lessonCode": "mana-jam-tarh",
+  "level": 3,
+  "metadata": {
+    "title": "جرّار ومقطورة",
+    "estimatedMinutes": 7,
+    "tags": [
+      "يزيد",
+      "مجموع"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-17",
+      "page": 30,
+      "section": "أتمرّن",
+      "number": 17
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لنقل محصول تعاونية فلاحية، رُبطت إلى جرّار طوله $5{,}35\\,\\mathrm{m}$ مقطورة طولها $6{,}9\\,\\mathrm{m}$، وبذلك يزيد مجموع طوليهما بـ $1{,}85\\,\\mathrm{m}$ عن طول شاحنة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب مجموع طولي الجرّار والمقطورة.",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالمتر (m)",
+      "expectedAnswer": "12.25",
+      "misconceptionSignatures": [
+        {
+          "value": "6.04",
+          "id": "MISC-JAMTARH-FASILA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المجموع ناتج جمع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "حاذِ الفاصلتين: $6{,}9 = 6{,}90$."
+        }
+      ],
+      "feedback": {
+        "correct": "$5{,}35 + 6{,}9 = 12{,}25\\,\\mathrm{m}$.",
+        "incorrect": "اجمع الطولين بعد محاذاة الفاصلتين."
+      },
+      "solution": {
+        "lines": [
+          "$5{,}35 + 6{,}9 = 5{,}35 + 6{,}90 = 12{,}25$"
+        ],
+        "result": "12{,}25 \\text{ m}"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "في المخطط بأقواس الذي يقارن مجموع الطولين بطول الشاحنة، مجموع طولي الجرّار والمقطورة هو:",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الكل (القوس تحت الخط)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "جزء (قوس فوق الخط)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-JAMTARH-KULL-JUZ"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّهما أطول: الجرّار مع المقطورة أم الشاحنة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الأطول يضمّ الأقصر والفرق."
+        }
+      ],
+      "feedback": {
+        "correct": "مجموع الطولين = طول الشاحنة + 1,85: هو الكل.",
+        "incorrect": "مجموع الطولين يزيد عن طول الشاحنة: فهو يضمّها والزيادة معًا."
+      },
+      "solution": {
+        "lines": [
+          "مجموع الطولين يزيد عن طول الشاحنة بـ $1{,}85\\,\\mathrm{m}$.",
+          "إذن طول الشاحنة + 1,85 = مجموع الطولين: مجموع الطولين هو الكل."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما هو طول الشاحنة؟",
+      "learningPoints": [
+        {
+          "code": "1am_mana-jam-tarh_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالمتر (m)",
+      "expectedAnswer": "10.4",
+      "misconceptionSignatures": [
+        {
+          "value": "14.1",
+          "id": "MISC-JAMTARH-KALIMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الشاحنة أقصر من الجرّار مع المقطورة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "طول الشاحنة جزء من الكل."
+        }
+      ],
+      "feedback": {
+        "correct": "$12{,}25 - 1{,}85 = 10{,}4\\,\\mathrm{m}$.",
+        "incorrect": "كلمة « يزيد » لا تعني الجمع هنا: طول الشاحنة جزء من الكل."
+      },
+      "solution": {
+        "lines": [
+          "مجموع الطولين $12{,}25\\,\\mathrm{m}$.",
+          "$12{,}25 - 1{,}85 = 10{,}4$"
+        ],
+        "result": "10{,}4 \\text{ m}"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

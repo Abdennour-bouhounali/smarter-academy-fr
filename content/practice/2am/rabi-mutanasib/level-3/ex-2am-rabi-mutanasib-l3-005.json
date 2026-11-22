@@ -1,0 +1,219 @@
+{
+  "id": "ex-2am-rabi-mutanasib-l3-005",
+  "lessonCode": "rabi-mutanasib",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — أكياس الطحين",
+    "estimatedMinutes": 10,
+    "tags": [
+      "الخاصية الضربية",
+      "الخاصية الجمعية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "2am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يبيع تاجر الطحين بسعر ثابت للكيلوغرام: ثمن $5$ kg هو $750$ DA.",
+    "table": {
+      "head": [
+        "الكتلة (kg)",
+        "5",
+        "10",
+        "15",
+        "25",
+        "40"
+      ],
+      "rows": [
+        [
+          "الثمن (DA)",
+          "750",
+          "…",
+          "…",
+          "…",
+          "…"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "ما ثمن $10$ kg؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "1500",
+      "misconceptionSignatures": [
+        {
+          "value": "755",
+          "id": "MISC-RABI-ADD"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن علاقة بسيطة بين عددين من السطر الأول: مجموع أو جداء أو ضعف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما يحدث في السطر الأول يحدث في السطر الثاني: المجموع يقابله مجموع، والجداء في عدد يقابله جداء في العدد نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل عددين معلومين من السطر الثاني لتركيب العدد المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "الثمن $1500$ DA .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$10 = 5 \\times 2$",
+          "$750 \\times 2 = 1500$"
+        ],
+        "result": "1500"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اختر الحساب الذي يعطي ثمن $25$ kg بالخاصية الضربية ($25 = 5 \\times 5$).",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$750 \\times 5$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$750 + 20$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-RABI-ADD"
+        },
+        {
+          "id": "C",
+          "content": "$750 \\times 25$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-RABI-MULROW"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن علاقة بسيطة بين عددين من السطر الأول: مجموع أو جداء أو ضعف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما يحدث في السطر الأول يحدث في السطر الثاني: المجموع يقابله مجموع، والجداء في عدد يقابله جداء في العدد نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل عددين معلومين من السطر الثاني لتركيب العدد المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "الثمن $3750$ DA .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$25 = 5 \\times 5$",
+          "$750 \\times 5 = 3750$"
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما ثمن $40$ kg؟",
+      "learningPoints": [
+        {
+          "code": "2am_rabi-mutanasib_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "6000",
+      "misconceptionSignatures": [
+        {
+          "value": "785",
+          "id": "MISC-RABI-ADD"
+        },
+        {
+          "value": "30000",
+          "id": "MISC-RABI-MULROW"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن علاقة بسيطة بين عددين من السطر الأول: مجموع أو جداء أو ضعف."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما يحدث في السطر الأول يحدث في السطر الثاني: المجموع يقابله مجموع، والجداء في عدد يقابله جداء في العدد نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "استعمل عددين معلومين من السطر الثاني لتركيب العدد المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "الثمن $6000$ DA .",
+        "incorrect": "راجع الطريقة المناسبة، ثم أعد الحساب خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$40 = 5 \\times 8$",
+          "$750 \\times 8 = 6000$"
+        ],
+        "result": "6000"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    }
+  ]
+}

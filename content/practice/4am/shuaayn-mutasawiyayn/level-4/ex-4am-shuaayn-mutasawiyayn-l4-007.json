@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-shuaayn-mutasawiyayn-l4-007",
+  "lessonCode": "shuaayn-mutasawiyayn",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — طريقة الكتاب بحروف أخرى",
+    "estimatedMinutes": 3,
+    "tags": [
+      "طرائق",
+      "المنتصف"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_shuaayn-mutasawiyayn_P3",
+      "modelledOn": "method-image"
+    }
+  },
+  "statement": {
+    "content": "KLM مثلث. P صورة M بالانسحاب الذي شعاعه $\\overrightarrow{KL}$ ، و Q النقطة حيث $\\overrightarrow{QL} = \\overrightarrow{KM}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ماذا تمثّل L بالنسبة إلى القطعة [PQ]؟",
+      "learningPoints": [
+        {
+          "code": "4am_shuaayn-mutasawiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "منتصفها",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "L نظيرة P بالنسبة إلى Q",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "لا شيء: Q = P",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSIHAB-SURA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "P صورة M: ما متوازي الأضلاع الذي يتكوّن؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "KLPM متوازي أضلاع، فالشعاع KM يساوي الشعاع LP."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الشعاعين QL و LP."
+        }
+      ],
+      "feedback": {
+        "correct": "KLPM متوازي أضلاع فـ KM = LP (شعاعان)، و QL = KM، إذن QL = LP: L منتصف [PQ].",
+        "incorrect": "اكتب متوازي الأضلاع الذي تعطيه صورة M، ثم استعمل معارف 3."
+      }
+    }
+  ]
+}

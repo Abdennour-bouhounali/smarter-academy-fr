@@ -1,0 +1,215 @@
+{
+  "id": "ex-4am-qasim-adad-tabii-l4-002",
+  "lessonCode": "qasim-adad-tabii",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2010 — العدد 2023",
+    "estimatedMinutes": 8,
+    "tags": [
+      "a = b × q",
+      "قاسم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_qasim-adad-tabii_P2",
+      "modelledOn": "BEM 2010 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2010",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "ليكن العدد الطبيعي 2023."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب باقي القسمة الإقليدية للعدد 2023 على 7، ثم اكتب 2023 على الشكل $7 \\times q$ حيث $q$ عدد طبيعي.",
+      "statement": "الباقي:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "0",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $7 \\times 289$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الباقي أصغر تمامًا من 7."
+        }
+      ],
+      "feedback": {
+        "correct": "$2023 = 7 \\times 289 + 0$: الباقي معدوم.",
+        "incorrect": "اطرح من 2023 أكبر مضاعف للعدد 7 لا يتجاوزه."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 289 = 2023$",
+          "$2023 = 7 \\times 289 + 0$"
+        ],
+        "result": "r = 0"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "العدد $q$:",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $q$ فقط (عدد طبيعي)",
+      "expectedAnswer": "289",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نبحث عن عدد طبيعي $q$ حيث $2023 = 7 \\times q$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أجرِ القسمة الإقليدية للعدد 2023 على 7."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا كان الباقي معدومًا فإن حاصل القسمة هو العدد المطلوب."
+        }
+      ],
+      "feedback": {
+        "correct": "$2023 = 7 \\times 289$.",
+        "incorrect": "اقسم 2023 على 7: حاصل القسمة هو العدد $q$ إذا كان الباقي معدومًا."
+      },
+      "solution": {
+        "lines": [
+          "$7 \\times 289 = 2023$",
+          "إذن $2023 = 7 \\times 289$"
+        ],
+        "result": "2023 = 7 \\times 289"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "هل 17 قاسم للعدد 289؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أجرِ القسمة الإقليدية للعدد 289 على 17."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "17 قاسم للعدد 289 إذا وفقط إذا كان باقي هذه القسمة معدومًا."
+        }
+      ],
+      "feedback": {
+        "correct": "$289 = 17 \\times 17$: الباقي معدوم.",
+        "incorrect": "أجرِ القسمة الإقليدية للعدد 289 على 17، وانظر هل الباقي معدوم."
+      },
+      "solution": {
+        "lines": [
+          "$289 = 17 \\times 17$ (الباقي معدوم).",
+          "إذن 17 قاسم للعدد 289."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "استنتج أن 17 قاسم للعدد 2023، واكتب 2023 على الشكل $17 \\times k$ حيث $k$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_qasim-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $k$ فقط (عدد طبيعي)",
+      "expectedAnswer": "119",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل نتيجتي السؤالين 01 و 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض 289 في المساواة $2023 = 7 \\times 289$ بالجداء الذي وجدته."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "جمّع العوامل: $7 \\times 17 \\times 17 = 17 \\times (7 \\times 17)$."
+        }
+      ],
+      "feedback": {
+        "correct": "$2023 = 7 \\times 17 \\times 17 = 17 \\times 119$.",
+        "incorrect": "عوّض 289 بالجداء $17 \\times 17$ في المساواة $2023 = 7 \\times 289$ ثم جمّع العوامل."
+      },
+      "solution": {
+        "lines": [
+          "$2023 = 7 \\times 289$ و $289 = 17 \\times 17$",
+          "$2023 = 7 \\times 17 \\times 17 = 17 \\times (7 \\times 17)$",
+          "$2023 = 17 \\times 119$",
+          "إذن 17 قاسم للعدد 2023."
+        ],
+        "result": "2023 = 17 \\times 119"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

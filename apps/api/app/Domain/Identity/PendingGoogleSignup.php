@@ -2,6 +2,7 @@
 
 namespace App\Domain\Identity;
 
+use App\Models\User;
 use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Support\Facades\Crypt;
 
@@ -37,7 +38,13 @@ final class PendingGoogleSignup
     /**
      * Emballe une identité prouvée en un jeton opaque.
      */
-    public static function issue(GoogleIdentity $identity): string
+    /**
+     * `$role` : le TYPE de compte que la personne a choisi avant de partir
+     * chez Google (élève par défaut, ou enseignant). Il voyage dans le jeton
+     * chiffré, donc ni lisible ni falsifiable par le navigateur ; l'écran de
+     * consentement peut encore le changer, dans la même liste blanche.
+     */
+    public static function issue(GoogleIdentity $identity, string $role = User::ROLE_STUDENT): string
     {
         return Crypt::encryptString(json_encode([
             'sub' => $identity->providerUserId,
@@ -45,8 +52,23 @@ final class PendingGoogleSignup
             'verified' => $identity->emailVerified,
             'first' => $identity->firstName,
             'last' => $identity->lastName,
+            'role' => in_array($role, User::SELF_REGISTERABLE_ROLES, true) ? $role : User::ROLE_STUDENT,
             'exp' => now()->addSeconds(self::TTL_SECONDS)->getTimestamp(),
         ], JSON_THROW_ON_ERROR));
+    }
+
+    /** Le type de compte porté par un jeton, ou élève si le jeton n'en dit rien. */
+    public static function roleOf(string $token): string
+    {
+        try {
+            $data = json_decode(Crypt::decryptString($token), true, 512, JSON_THROW_ON_ERROR);
+        } catch (DecryptException|\JsonException) {
+            return User::ROLE_STUDENT;
+        }
+
+        $role = is_array($data) ? ($data['role'] ?? null) : null;
+
+        return in_array($role, User::SELF_REGISTERABLE_ROLES, true) ? $role : User::ROLE_STUDENT;
     }
 
     /**

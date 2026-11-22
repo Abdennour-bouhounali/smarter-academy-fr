@@ -1,0 +1,209 @@
+{
+  "id": "ex-4am-mutatabiqat-shahira-l5-009",
+  "lessonCode": "mutatabiqat-shahira",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2015 — قطعتا أرض لأخوين",
+    "estimatedMinutes": 10,
+    "tags": [
+      "جداء مجموع وفرق",
+      "مساحة",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_mutatabiqat-shahira_P3",
+      "modelledOn": "BEM 2015 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2015",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "ورث أخوان قطعتي أرض فلاحية بولاية معسكر فاتفقا على اقتسامهما بالعدل والتراضي: الأولى مربعة الشكل طول ضلعها $x$ m ، والثانية مستطيلة الشكل طولها $(x + 8)$ m وعرضها $(x - 8)$ m ، حيث $x > 8$ . ثمن المتر المربع من الأرض في تلك المنطقة 3500DA ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بيّن أن للقطعتين نفس المحيط.",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب محيط المربع: $4 \\times$ الضلع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب محيط المستطيل: $2 \\times ($الطول $+$ العرض$)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك سطرًا بسطر بالحل النموذجي، وانتبه إلى الإشارات عند النشر."
+      },
+      "solution": {
+        "lines": [
+          "محيط القطعة الأولى: $4x$",
+          "محيط القطعة الثانية: $2[(x + 8) + (x - 8)] = 2 \\times 2x = 4x$",
+          "إذن للقطعتين نفس المحيط."
+        ],
+        "result": "P_1 = P_2 = 4x"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "عبّر بدلالة $x$ عن مساحة القطعة الثانية $S$ على شكل مجموع مبسّط.",
+      "statement": "العدد $m$ :",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "يُكتب $S$ على الشكل $x^2 + m$ : اكتب العدد $m$ فقط",
+      "expectedAnswer": "-64",
+      "misconceptionSignatures": [
+        {
+          "value": "64",
+          "id": "MISC-JIDAA-MAJMU-FARQ-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تعرّف على جداء مجموع حدّين وفرقهما: $(a + b)(a - b) = a^2 - b^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عيّن الحدّين $a$ و $b$ ، ثم احسب مربع كل منهما: إذا كان $a = 3x$ فإن $a^2 = 9x^2$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الحدود المتشابهة: حدود $x^2$ معًا، ثم حدود $x$، ثم الأعداد."
+        }
+      ],
+      "feedback": {
+        "correct": "$S = x^2 - 64$ إذن $m = -64$ .",
+        "incorrect": "طبّق المتطابقة الشهيرة حدًّا حدًّا (مربع كل حد والحد المضاعف)، ثم اجمع الحدود المتشابهة بإشاراتها."
+      },
+      "solution": {
+        "lines": [
+          "$S = (x + 8) \\times (x - 8)$",
+          "$S = (x + 8)(x - 8)$",
+          "$S = x^2 - 8^2$"
+        ],
+        "result": "S = x^2 - 64"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "استنتج الفرق بين مساحة القطعة الأولى ومساحة القطعة الثانية.",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (بالمتر المربع)",
+      "expectedAnswer": "64",
+      "misconceptionSignatures": [
+        {
+          "value": "16",
+          "id": "MISC-MUTATABIQA-MURABBA-MUAMIL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اطرح $S$ من مساحة المربع $x^2$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الفرق لا يتعلّق بـ $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x^2 - (x^2 - 64) = 64$ : القطعة المربعة أكبر بـ $64\\ m^2$ مهما كان $x$ .",
+        "incorrect": "ضع نشر $S$ بين قوسين عند طرحه من $x^2$ ."
+      },
+      "solution": {
+        "lines": [
+          "$x^2 - S = x^2 - (x^2 - 64)$",
+          "$= x^2 - x^2 + 64$"
+        ],
+        "result": "64\\ m^2"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "☜ ظنّ أحد الأخوين أن للقطعتين نفس القيمة لأن لهما نفس المحيط. ما الفرق بين قيمتي القطعتين بالدينار؟",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدينار DA)",
+      "expectedAnswer": "224000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قيمة القطعة = مساحتها × ثمن المتر المربع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل الفرق بين المساحتين الذي وجدته في السؤال 03."
+        }
+      ],
+      "feedback": {
+        "correct": "$64 \\times 3500 = 224000$ DA ، مهما كان $x$ .",
+        "incorrect": "المحيط لا يحدّد المساحة: اضرب فرق المساحتين في ثمن المتر المربع."
+      },
+      "solution": {
+        "lines": [
+          "نفس المحيط لا يعني نفس المساحة.",
+          "فرق القيمتين: $64 \\times 3500 = 224000$ DA"
+        ],
+        "result": "224000\\ DA"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

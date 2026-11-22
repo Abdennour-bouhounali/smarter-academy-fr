@@ -1,0 +1,134 @@
+{
+  "id": "ex-4am-barahin-ashia-l5-001",
+  "lessonCode": "barahin-ashia",
+  "level": 5,
+  "generator": {
+    "tool": "gen-barahin.mjs",
+    "version": "1"
+  },
+  "metadata": {
+    "title": "تدريب — أربع محطات في المترو",
+    "estimatedMinutes": 5,
+    "tags": [
+      "متوازي أضلاع",
+      "برهان"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_barahin-ashia_P2",
+      "modelledOn": "ex-18"
+    }
+  },
+  "statement": {
+    "content": "على خريطة مترو الجزائر، وهو مرفق نحافظ عليه جميعًا، أربع محطات G و P و T و H. الرحلة من G إلى P هي نفسها (نفس المنحى والاتجاه والطول) الرحلة من H إلى T ، والمحطات G و P و T ليست على استقامة واحدة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "نترجم المعطى إلى:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{GP}$ = $\\overrightarrow{HT}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{GP}$ = $\\overrightarrow{TH}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        },
+        {
+          "id": "C",
+          "content": "GP = HT طولا فقط",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TUL-FAQAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "نفس المنحى والاتجاه والطول: هذا تعريف تساوي شعاعين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الرحلة من H إلى T يمثّلها شعاع مبدؤه H ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الشعاعين بمبدئهما ونهايتهما."
+        }
+      ],
+      "feedback": {
+        "correct": "الرحلتان متساويتان: $\\overrightarrow{GP} = \\overrightarrow{HT}$ .",
+        "incorrect": "الرحلة من H إلى T شعاع مبدؤه H ونهايته T ."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "إذن:",
+      "learningPoints": [
+        {
+          "code": "4am_barahin-ashia_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "GPTH متوازي أضلاع",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "GPHT متوازي أضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-TARTIB-RUUS"
+        },
+        {
+          "id": "C",
+          "content": "T منتصف [GH]",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MUNTASAF-IB-IA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{GP} = \\overrightarrow{HT}$ : من G إلى P كما من H إلى T ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ارسم الشكل ودُر حوله."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "المحطات ليست على استقامة: الرباعي غير مسطّح."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{GP} = \\overrightarrow{HT}$ : الرباعي GPTH متوازي أضلاع.",
+        "incorrect": "الضلع الرابع يصل P بـ T و H بـ G ."
+      }
+    }
+  ]
+}

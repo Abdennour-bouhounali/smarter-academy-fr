@@ -1,0 +1,333 @@
+{
+  "id": "ex-1am-qisma-iqlidiya-baqi-l5-001",
+  "lessonCode": "qisma-iqlidiya-baqi",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — أرض العم خالد",
+    "estimatedMinutes": 18,
+    "tags": [
+      "مساحة",
+      "باقات",
+      "قرار"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "1am",
+      "semester": 2,
+      "file": "1am-s2-73",
+      "exercise": 5
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "اشترى العم خالد قطعة أرض فلاحية ليزرعها وردًا، وهي تتكوّن من مربّع طول ضلعه $15\\,\\mathrm{m}$ ومستطيل طوله $34\\,\\mathrm{m}$ وعرضه $12\\,\\mathrm{m}$ (الأطوال غير حقيقية).\nالجزء الأول: أنتجت الأرض 1297 وردة، فوضعها العم خالد في باقات بحيث تضمّ كل باقة 14 وردة.\nالجزء الثاني: يبيع الباقة بـ 350 دج، ويريد أن يشتري من ثمن الباقات مضخّة ماء ثمنها 32000 دج لسقي أرضه دون تبذير."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب المساحة الإجمالية للأرض.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالمتر المربع (m²)",
+      "expectedAnswer": "633",
+      "misconceptionSignatures": [
+        {
+          "value": "225",
+          "id": "MISC-IQLIDIYA-JUDA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مساحة المربّع + مساحة المستطيل."
+        }
+      ],
+      "feedback": {
+        "correct": "$225 + 408 = 633\\,\\mathrm{m}^2$.",
+        "incorrect": "اجمع مساحة المربّع ومساحة المستطيل."
+      },
+      "solution": {
+        "lines": [
+          "$15 \\times 15 = 225$ و $34 \\times 12 = 408$",
+          "$225 + 408 = 633$"
+        ],
+        "result": "633\\,\\mathrm{m}^2"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "sub": "ا",
+      "statement": "احسب عدد الباقات (وضّح العملية).",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الباقات",
+      "expectedAnswer": "92",
+      "misconceptionSignatures": [
+        {
+          "value": "9",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "91",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "value": "93",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الحاصل هو عدد المرّات التي يحتويها 1297 من 14 كاملة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ابحث عن أكبر عدد طبيعي نضربه في 14 دون أن نتجاوز 1297."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أنجز القسمة عموديًا، ثم تحقّق أن الباقي أصغر من المقسوم عليه."
+        }
+      ],
+      "feedback": {
+        "correct": "$1297 = 14 \\times 92 + 9$ و $9 < 14$.",
+        "incorrect": "الحاصل هو أكبر عدد طبيعي نضربه في 14 فلا يتجاوز الجداء 1297، والباقي عندئذ أصغر من 14."
+      },
+      "solution": {
+        "lines": [
+          "$14 \\times 92 = 1288$ و $14 \\times 93 = 1302$",
+          "$1288 \\le 1297 < 1302$ ، إذن الحاصل هو 92."
+        ],
+        "result": "q = 92"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ب",
+      "statement": "احسب عدد الورود الباقية.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد الورود",
+      "expectedAnswer": "9",
+      "misconceptionSignatures": [
+        {
+          "value": "92",
+          "id": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "value": "23",
+          "id": "MISC-IQLIDIYA-BAQI-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الباقي هو ما يبقى بعد أخذ أكبر عدد ممكن من المرّات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الحاصل أولًا، ثم اطرح الجداء من 1297."
+        }
+      ],
+      "feedback": {
+        "correct": "$1297 - 14 \\times 92 = 1297 - 1288 = 9$ ، و $9 < 14$.",
+        "incorrect": "الباقي = المقسوم − المقسوم عليه × الحاصل، ويجب أن يكون أصغر من 14."
+      },
+      "solution": {
+        "lines": [
+          "$1297 = 14 \\times 92 + 9$",
+          "$9 < 14$ ، إذن الباقي هو 9."
+        ],
+        "result": "r = 9"
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "statement": "اختر المساواة التي تعبّر عن القسمة الإقليدية للعدد 1297 على 14.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$1297 = 14 \\times 92 + 9$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$1297 = 14 \\times 91 + 23$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-AKBAR"
+        },
+        {
+          "id": "C",
+          "content": "$1297 = 14 \\times 9 + 92$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-BAQI-HASIL"
+        },
+        {
+          "id": "D",
+          "content": "$1297 = 14 \\times 93 + 9$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تحقّق من صحة كل مساواة بالحساب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "في القسمة الإقليدية على 14، يجب أن يكون الباقي أصغر من 14."
+        }
+      ],
+      "feedback": {
+        "correct": "$14 \\times 92 + 9 = 1297$ و $9 < 14$: الشرطان محقّقان.",
+        "incorrect": "المساواة الصحيحة يجب أن تكون صحيحة حسابيًا، وأن يكون باقيها أصغر من المقسوم عليه."
+      },
+      "solution": {
+        "lines": [
+          "$14 \\times 92 = 1288$ و $1288 + 9 = 1297$",
+          "$9 < 14$ ، إذن:"
+        ],
+        "result": "1297 = 14 \\times 92 + 9"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q5",
+      "step": "04",
+      "statement": "احسب ثمن بيع كل الباقات.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالدينار (دج)",
+      "expectedAnswer": "32200",
+      "misconceptionSignatures": [
+        {
+          "value": "32550",
+          "id": "MISC-IQLIDIYA-LA-BAQI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عدد الباقات × ثمن الباقة."
+        }
+      ],
+      "feedback": {
+        "correct": "$92 \\times 350 = 32200$ دج.",
+        "incorrect": "تُباع الباقات الكاملة فقط."
+      },
+      "solution": {
+        "lines": [
+          "$92 \\times 350 = 32200$"
+        ],
+        "result": "32200 \\text{ DA}"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q6",
+      "step": "05",
+      "statement": "هل يكفي ثمن الباقات لشراء المضخّة؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "1am_qisma-iqlidiya-baqi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IQLIDIYA-JUDA"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن ثمن الباقات بثمن المضخّة."
+        }
+      ],
+      "feedback": {
+        "correct": "$32200 > 32000$: يكفي ويبقى 200 دج.",
+        "incorrect": "قارن المبلغين."
+      },
+      "solution": {
+        "lines": [
+          "ثمن الباقات $32200$ دج و $32200 > 32000$.",
+          "إذن يكفي ثمن الباقات لشراء المضخّة."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

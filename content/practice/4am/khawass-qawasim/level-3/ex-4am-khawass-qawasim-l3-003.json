@@ -1,0 +1,120 @@
+{
+  "id": "ex-4am-khawass-qawasim-l3-003",
+  "lessonCode": "khawass-qawasim",
+  "level": 3,
+  "metadata": {
+    "title": "أتعلّم البرهنة — n يقسم a + b",
+    "estimatedMinutes": 7,
+    "tags": [
+      "برهان",
+      "خاصية 1"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-proof",
+      "page": 11,
+      "section": "طرائق",
+      "adaptedFrom": "ex-4am-khawass-qawasim-l5-001"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$n$ ، $a$ و $b$ أعداد طبيعية حيث $n \\neq 0$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "برهن أنه إذا كان $n$ يقسم كلا من $a$ و $b$ فإن $n$ يقسم $a + b$.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما المطلوب؟ لإثبات أن $n$ يقسم عددًا $m$ يكفي إيجاد عدد طبيعي $k$ حيث $m = n \\times k$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم المعطيات: يوجد عددان طبيعيان $q$ و $q'$ حيث $a = n \\times q$ و $b = n \\times q'$."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع الكتابتين وأخرج $n$ عاملًا مشتركًا."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك سطرًا بسطر بالحل النموذجي، وانتبه إلى كل مرحلة من مراحل الاستدلال."
+      },
+      "solution": {
+        "lines": [
+          "المعطيات: $n$ ، $a$ و $b$ أعداد طبيعية حيث $n \\neq 0$ ، و $n$ يقسم كلا من $a$ و $b$.",
+          "المطلوب: $n$ يقسم $a + b$.",
+          "البرهان: يكفي إيجاد عدد طبيعي $k$ حيث $a + b = n \\times k$.",
+          "بما أن $n$ يقسم كلا من $a$ و $b$ ، يوجد عددان طبيعيان $q$ و $q'$ حيث $a = n \\times q$ و $b = n \\times q'$.",
+          "ومنه $a + b = n \\times q + n \\times q' = n(q + q')$.",
+          "بوضع $k = q + q'$ (عدد طبيعي) نجد $a + b = n \\times k$ ، وهذا يعني أن $n$ يقسم $a + b$."
+        ],
+        "result": "a + b = n \\times (q + q')"
+      },
+      "timeSeconds": 300
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "تطبيق: $a = 7 \\times 45$ و $b = 7 \\times 38$.",
+      "statement": "اكتب $a + b$ على الشكل $7 \\times k$ حيث $k$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k$ فقط (عدد طبيعي)",
+      "expectedAnswer": "83",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "استعمل البرهان السابق: $k = q + q'$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هنا $q$ و $q'$ هما العاملان المضروبان في 7."
+        }
+      ],
+      "feedback": {
+        "correct": "$a + b = 7 \\times 45 + 7 \\times 38 = 7 \\times 83$.",
+        "incorrect": "أخرج 7 عاملًا مشتركًا، كما في البرهان."
+      },
+      "solution": {
+        "lines": [
+          "$a + b = 7 \\times 45 + 7 \\times 38$",
+          "$a + b = 7 \\times (45 + 38)$",
+          "$a + b = 7 \\times 83$"
+        ],
+        "result": "a + b = 7 \\times 83"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

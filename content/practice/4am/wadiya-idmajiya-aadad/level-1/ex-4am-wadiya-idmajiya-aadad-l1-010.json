@@ -1,0 +1,131 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-aadad-l1-010",
+  "lessonCode": "wadiya-idmajiya-aadad",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال BEM 2024 — لوح خشبي 182cm × 234cm",
+    "estimatedMinutes": 3,
+    "tags": [
+      "قابلية القسمة",
+      "تجزئة إلى مربعات"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-aadad_P1",
+      "modelledOn": "BEM 2024 I-2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2024",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "حرصًا على الأمانة في العمل وعدم تبذير مال الزبون، يريد نجّار تقسيم لوح خشبي مستطيل الشكل عرضه 182cm وطوله 234cm إلى مربعات متقايسة دون ضياع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "lead": "هل يمكن أن يكون طول ضلع كل مربع 13cm ؟ 39cm ؟ برّر إجابتك.",
+      "statement": "طول ضلع كل مربع 13cm.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يجب أن يقسم طول الضلع العرض والطول معًا دون ضياع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 182 على 13، ثم اقسم 234 على 13: هل القسمتان تامتان؟"
+        }
+      ],
+      "feedback": {
+        "correct": "182 = 13 × 14 و 234 = 13 × 18: يمكن أن يكون طول الضلع 13cm.",
+        "incorrect": "أجرِ القسمتين 182 ÷ 13 و 234 ÷ 13، وانظر إلى الباقي في كل منهما."
+      },
+      "solution": {
+        "lines": [
+          "$182 = 13 \\times 14$ و $234 = 13 \\times 18$ : 13 يقسم البعدين معًا.",
+          "إذن يمكن أن يكون طول ضلع كل مربع 13cm."
+        ],
+        "result": "نعم"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "statement": "طول ضلع كل مربع 39cm.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر نعم أو لا، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "يجب أن يقسم طول الضلع العرض والطول معًا دون ضياع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم 182 على 39، ثم اقسم 234 على 39: هل القسمتان تامتان؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$182 = 39 \\times 4 + 26$ : 39 لا يقسم 182، إذن لا يمكن أن يكون طول الضلع 39cm.",
+        "incorrect": "أجرِ القسمتين 182 ÷ 39 و 234 ÷ 39، وانظر إلى الباقي في كل منهما."
+      },
+      "solution": {
+        "lines": [
+          "$234 = 39 \\times 6$ لكن $182 = 39 \\times 4 + 26$ : الباقي غير معدوم.",
+          "إذن لا يمكن أن يكون طول ضلع كل مربع 39cm."
+        ],
+        "result": "لا"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

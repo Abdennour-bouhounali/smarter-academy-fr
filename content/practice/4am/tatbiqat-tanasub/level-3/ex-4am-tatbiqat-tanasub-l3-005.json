@@ -1,0 +1,160 @@
+{
+  "id": "ex-4am-tatbiqat-tanasub-l3-005",
+  "lessonCode": "tatbiqat-tanasub",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال BEM 2023 — تعبيد ممرّ في حديقة عمومية بسكيكدة",
+    "estimatedMinutes": 7,
+    "tags": [
+      "مصاريف",
+      "ربح أو خسارة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_tatbiqat-tanasub_P1",
+      "modelledOn": "BEM 2023 II 02"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2023",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "خصّصت بلدية سكيكدة مبلغ 360000DA لتعبيد ممرّ في حديقة عمومية تسهيلًا على كبار السن، وكلّفت مقاولا بإنجاز المشروع. إذا علمت أن:\n– مساحة الممرّ $150m^2$ ، وثمن المتر المربع الواحد من مواد التعبيد 1500DA .\n– مصاريف الإنجاز (النقل وأجرة العمال) تمثّل 25% من المبلغ المخصّص للمشروع."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب ثمن مواد التعبيد اللازمة للممرّ.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "225000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ثمن المواد متناسب مع المساحة: سعر المتر المربع مقدار حاصل قسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب المساحة في سعر المتر المربع."
+        }
+      ],
+      "feedback": {
+        "correct": "$150 \\times 1500 = 225000$ ، أي 225000DA .",
+        "incorrect": "اضرب مساحة الممرّ في ثمن المتر المربع الواحد."
+      },
+      "solution": {
+        "lines": [
+          "$150 \\times 1500 = 225000$",
+          "ثمن مواد التعبيد 225000DA ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب مصاريف الإنجاز.",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المبلغ بـ DA (عدد فقط)",
+      "expectedAnswer": "90000",
+      "misconceptionSignatures": [
+        {
+          "value": "56250",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        },
+        {
+          "value": "450000",
+          "id": "MISC-NISBA-AKHDH-BADAL-ZIYADA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المصاريف نسبة من المبلغ المخصّص، لا من ثمن المواد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أخذ $t\\%$ من مقدار هو ضربه في $\\dfrac{t}{100}$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$360000 \\times \\dfrac{25}{100} = 90000$ ، أي 90000DA .",
+        "incorrect": "خذ 25% من المبلغ المخصّص للمشروع."
+      },
+      "solution": {
+        "lines": [
+          "$360000 \\times \\dfrac{25}{100} = 90000$",
+          "مصاريف الإنجاز 90000DA ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما هو مقدار ربح أو خسارة المقاول؟",
+      "learningPoints": [
+        {
+          "code": "4am_tatbiqat-tanasub_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب المقدار بـ DA : عددًا موجبًا إن كان ربحًا، وسالبًا (مسبوقًا بالإشارة −) إن كان خسارة",
+      "expectedAnswer": "45000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التكلفة الكلية للمقاول = ثمن المواد + مصاريف الإنجاز."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن التكلفة الكلية بالمبلغ المخصّص."
+        }
+      ],
+      "feedback": {
+        "correct": "$360000 - 315000 = 45000$ : ربح المقاول 45000DA .",
+        "incorrect": "احسب التكلفة الكلية ثم اطرحها من المبلغ المخصّص."
+      },
+      "solution": {
+        "lines": [
+          "التكلفة الكلية: $225000 + 90000 = 315000$",
+          "$360000 - 315000 = 45000$",
+          "$45000 > 0$ : المقاول ربح 45000DA ."
+        ],
+        "result": "ربح 45000DA"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

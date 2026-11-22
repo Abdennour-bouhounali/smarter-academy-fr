@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Domain\Admin\StudentService;
+use App\Domain\Identity\PersonName;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use DomainException;
@@ -27,6 +28,55 @@ class AdminStudentController extends Controller
                 'disabled' => User::where('role', User::ROLE_STUDENT)->where('account_status', User::STATUS_DISABLED)->count(),
             ],
         ]);
+    }
+
+    /**
+     * POST /admin/students — l'administrateur crée un compte élève (StudentService::create). Le mot de passe n'est
+     * rendu qu'ici, une fois : `Cache-Control: no-store`.
+     */
+    public function store(Request $request)
+    {
+        PersonName::normalizeRequest($request);
+        if (is_string($request->input('email'))) {
+            $email = mb_strtolower(trim($request->input('email')));
+            $request->merge(['email' => $email === '' ? null : $email]);
+        }
+
+        // La classe scolaire : un code de `grades` (active, quand la plateforme ne sert que les classes actives) —
+        // la même règle que la classe d'un enseignant (ClassroomService::assertGradeAllowed).
+        $grade = Rule::exists('grades', 'code');
+        if (config('curriculum.enforce_active_grades', true)) {
+            $grade = $grade->where('is_active', true);
+        }
+
+        $validated = $request->validate([
+            ...PersonName::rules(),
+            'email' => ['nullable', 'string', 'email', 'max:190'],
+            'grade' => ['nullable', 'string', 'max:50', $grade],
+        ], [
+            ...PersonName::messages(),
+            'email.email' => 'Format email invalide.',
+            'grade.exists' => 'Cette classe scolaire n\'existe pas.',
+        ]);
+
+        try {
+            $created = $this->students->create($request->user(), [
+                'firstName' => $validated['firstName'],
+                'lastName' => $validated['lastName'],
+                'email' => $validated['email'] ?? null,
+                'grade' => $validated['grade'] ?? null,
+            ]);
+        } catch (DomainException $e) {
+            return response()->json(['success' => false, 'reason' => 'email_taken', 'message' => $e->getMessage()], 422);
+        }
+
+        return response()->json([
+            'success' => true,
+            'student' => $this->serialize($created['student']),
+            'login' => $created['login'],
+            // Rendu UNE fois : l'administrateur le remet à l'élève.
+            'password' => $created['password'],
+        ], 201)->header('Cache-Control', 'no-store');
     }
 
     public function show(int $id)

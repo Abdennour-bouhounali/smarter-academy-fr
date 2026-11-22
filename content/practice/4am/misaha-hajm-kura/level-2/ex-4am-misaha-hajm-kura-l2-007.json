@@ -1,0 +1,65 @@
+{
+  "id": "ex-4am-misaha-hajm-kura-l2-007",
+  "lessonCode": "misaha-hajm-kura",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — من القطر إلى المساحة",
+    "estimatedMinutes": 2,
+    "tags": [
+      "مساحة الكرة",
+      "القطر"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_misaha-hajm-kura_P1",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "كرة قطرها $14\\,\\mathrm{cm}$ . اكتب مساحتها على الشكل $k\\pi\\,\\mathrm{cm}^2$ ثم أعط $k$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "ما قيمة $k$ ؟",
+      "learningPoints": [
+        {
+          "code": "4am_misaha-hajm-kura_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة (مثل 2,5) أو عدد طبيعي",
+      "expectedAnswer": "196",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "القانون يستعمل نصف القطر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نصف القطر = القطر ÷ 2."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب $4 \\times 7^2$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$R = 7\\,\\mathrm{cm}$ و $\\mathcal{A} = 4\\pi \\times 49 = 196\\pi\\,\\mathrm{cm}^2$ .",
+        "incorrect": "قسّم القطر على 2 أولا."
+      },
+      "difficulty": 2,
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-MISAHA-QUTR",
+          "value": "784"
+        }
+      ]
+    }
+  ]
+}

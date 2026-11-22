@@ -1,0 +1,160 @@
+{
+  "id": "ex-4am-muadala-ula-l2-009",
+  "lessonCode": "muadala-ula",
+  "level": 2,
+  "metadata": {
+    "title": "المجهول في الطرف الثاني",
+    "estimatedMinutes": 5,
+    "tags": [
+      "ax + b = c"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_muadala-ula_P2",
+      "modelledOn": "ex-4"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "حل كلا من المعادلتين الآتيتين:",
+      "statement": "$17 = 5x + 2$",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب حل المعادلة: عدد صحيح أو كسر على الشكل a/b (يُقبل العدد العشري)",
+      "expectedAnswer": "3",
+      "misconceptionSignatures": [
+        {
+          "value": "1/3",
+          "id": "MISC-MUADALA-QISMA-MAQLUBA"
+        },
+        {
+          "value": "-3",
+          "id": "MISC-MUADALA-ISHARA-SALIBA"
+        },
+        {
+          "value": "-19/5",
+          "id": "MISC-MUADALA-NAQL-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بعزل الحدّ الذي فيه $x$ في طرف واحد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أضف إلى الطرفين (أو اطرح منهما) العدد نفسه حتى تصل إلى الشكل $ax = b$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم اقسم الطرفين على معامل $x$ مع إشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 3$ .",
+        "incorrect": "أجرِ كل عملية على الطرفين معًا، ثم اقسم على معامل $x$ بإشارته، وتحقّق بالتعويض."
+      },
+      "solution": {
+        "lines": [
+          "$17 - 2 = 5x$",
+          "$15 = 5x$",
+          "$x = \\dfrac{15}{5}$"
+        ],
+        "result": "x = 3"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$-8 = 3x + 4$",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب حل المعادلة: عدد صحيح أو كسر على الشكل a/b (يُقبل العدد العشري)",
+      "expectedAnswer": "-4",
+      "misconceptionSignatures": [
+        {
+          "value": "-1/4",
+          "id": "MISC-MUADALA-QISMA-MAQLUBA"
+        },
+        {
+          "value": "4",
+          "id": "MISC-MUADALA-ISHARA-SALIBA"
+        },
+        {
+          "value": "4/3",
+          "id": "MISC-MUADALA-NAQL-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بعزل الحدّ الذي فيه $x$ في طرف واحد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أضف إلى الطرفين (أو اطرح منهما) العدد نفسه حتى تصل إلى الشكل $ax = b$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم اقسم الطرفين على معامل $x$ مع إشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = -4$ .",
+        "incorrect": "أجرِ كل عملية على الطرفين معًا، ثم اقسم على معامل $x$ بإشارته، وتحقّق بالتعويض."
+      },
+      "solution": {
+        "lines": [
+          "$-8 - 4 = 3x$",
+          "$-12 = 3x$",
+          "$x = \\dfrac{-12}{3}$"
+        ],
+        "result": "x = -4"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

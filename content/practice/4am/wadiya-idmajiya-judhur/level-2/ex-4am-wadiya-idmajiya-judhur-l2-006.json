@@ -1,0 +1,130 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-judhur-l2-006",
+  "lessonCode": "wadiya-idmajiya-judhur",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال BEM 2020 — التمرين الأول",
+    "estimatedMinutes": 5,
+    "tags": [
+      "كسر غير قابل للاختزال",
+      "a√5"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-judhur_P1",
+      "modelledOn": "BEM 2020 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2020",
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "إليك العددين $A$ و $B$ حيث:",
+    "formulas": [
+      "A = \\dfrac{3}{4} + \\dfrac{5}{4} \\times \\dfrac{2}{5}",
+      "B = 3\\sqrt{20} - 2\\sqrt{45} - \\sqrt{5}"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "اكتب $A$ على شكل كسر غير قابل للاختزال.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b",
+      "expectedAnswer": "5/4",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بالضرب قبل الجمع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "وحّد المقامات ثم اجمع."
+        }
+      ],
+      "feedback": {
+        "correct": "$A = \\dfrac{3}{4} + \\dfrac{1}{2} = \\dfrac{3}{4} + \\dfrac{2}{4} = \\dfrac{5}{4}$",
+        "incorrect": "الضرب أولوي على الجمع: احسب $\\dfrac{5}{4} \\times \\dfrac{2}{5}$ أولًا، ثم وحّد المقامات.",
+        "notIrreducible": "الكسر صحيح لكنه ما زال قابلًا للاختزال: بسّطه."
+      },
+      "solution": {
+        "lines": [
+          "$A = \\dfrac{3}{4} + \\dfrac{10}{20} = \\dfrac{3}{4} + \\dfrac{1}{2}$",
+          "$A = \\dfrac{3}{4} + \\dfrac{2}{4}$"
+        ],
+        "result": "A = \\dfrac{5}{4}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "اكتب $B$ على الشكل $a\\sqrt{5}$ حيث $a$ عدد صحيح.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-judhur_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح نسبي)",
+      "expectedAnswer": "-1",
+      "misconceptionSignatures": [
+        {
+          "value": "1",
+          "id": "MISC-MUAMIL-MANSI"
+        },
+        {
+          "value": "0",
+          "id": "MISC-MUAMIL-MANSI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$20 = 4 \\times 5$ و $45 = 9 \\times 5$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب كل حد على الشكل $k\\sqrt{5}$ ، و لا تنس الحد الأخير."
+        }
+      ],
+      "feedback": {
+        "correct": "$B = 6\\sqrt{5} - 6\\sqrt{5} - \\sqrt{5} = -\\sqrt{5}$ ، أي $a = -1$ .",
+        "incorrect": "اكتب كل حد على الشكل $k\\sqrt{5}$ ؛ معامل $\\sqrt{5}$ وحده هو 1."
+      },
+      "solution": {
+        "lines": [
+          "$B = 3\\sqrt{4 \\times 5} - 2\\sqrt{9 \\times 5} - \\sqrt{5}$",
+          "$= 6\\sqrt{5} - 6\\sqrt{5} - \\sqrt{5}$",
+          "$= (6 - 6 - 1)\\sqrt{5}$"
+        ],
+        "result": "B = -\\sqrt{5}"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    }
+  ]
+}

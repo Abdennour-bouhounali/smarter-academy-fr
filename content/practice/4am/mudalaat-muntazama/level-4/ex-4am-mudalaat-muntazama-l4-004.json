@@ -1,0 +1,153 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l4-004",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 4,
+  "metadata": {
+    "title": "طرائق — إنشاء خماسي منتظم بالدوران",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الإنشاء بالدوران",
+      "الخماسي"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "method-construct",
+      "page": 157,
+      "section": "طرائق"
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 157): لإنشاء خماسي منتظم ABCDE حيث AB = 3cm، نبدأ بإنشاء النقطة E صورة B بدوران.",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -1.5,
+          2.065
+        ],
+        "B": [
+          -2.427,
+          -0.789
+        ],
+        "C": [
+          0,
+          -2.552
+        ],
+        "D": [
+          2.427,
+          -0.789
+        ],
+        "E": [
+          1.5,
+          2.065
+        ]
+      },
+      "circles": [
+        {
+          "center": "O",
+          "radius": 2.552
+        }
+      ],
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "tone": "rose",
+          "bold": true
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "tone": "rose",
+          "bold": true
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "tone": "rose",
+          "bold": true
+        },
+        {
+          "from": "D",
+          "to": "E",
+          "tone": "rose",
+          "bold": true
+        },
+        {
+          "from": "E",
+          "to": "A",
+          "tone": "rose",
+          "bold": true
+        }
+      ],
+      "angles": [
+        {
+          "at": "A",
+          "from": "B",
+          "to": "E",
+          "label": "108°",
+          "arrow": true
+        }
+      ],
+      "ariaLabel": "خماسي منتظم ABCDE ودائرته المحيطة التي مركزها O، وسهم 108 درجات في A من [AB] نحو [AE]",
+      "maxWidth": 400
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "هذا الدوران:",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مركزه A وزاويته $108^\\circ$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "مركزه A وزاويته $72^\\circ$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-MARKAZIYA"
+        },
+        {
+          "id": "C",
+          "content": "مركزه B وزاويته $108^\\circ$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-DAWARAN-MARKAZ"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "AB = AE: أي رأس على نفس البعد من B و E؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "زاوية الدوران هي الزاوية $\\widehat{BAE}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "وهي زاوية الخماسي المنتظم."
+        }
+      ],
+      "feedback": {
+        "correct": "AB = AE و $\\widehat{BAE} = 108^\\circ$ : E صورة B بالدوران الذي مركزه A وزاويته $108^\\circ$ .",
+        "incorrect": "حول رأس نستعمل زاوية المضلع، وحول المركز الزاوية المركزية."
+      },
+      "difficulty": 3
+    }
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "id": "ex-4am-insihab-shuaa-l4-002",
+  "lessonCode": "insihab-shuaa",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 8 — الأشعة المساوية لـ GE",
+    "estimatedMinutes": 3,
+    "tags": [
+      "تساوي شعاعين"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-8",
+      "page": 134,
+      "section": "الأشعة ومتوازي الأضلاع",
+      "number": 8
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 134): لاحظ الشكل. صحّحت المنصّة خطأً مطبعيًا: الكتاب يطلب 4 أشعة ولا يوجد بين النقط المسمّاة إلا ثلاثة.",
+    "figure": {
+      "points": {
+        "A": [
+          0,
+          2
+        ],
+        "B": [
+          0,
+          0
+        ],
+        "C": [
+          4,
+          0
+        ],
+        "D": [
+          4,
+          2
+        ],
+        "E": [
+          2,
+          2
+        ],
+        "F": [
+          2,
+          0
+        ],
+        "G": [
+          0,
+          1
+        ],
+        "H": [
+          4,
+          1
+        ],
+        "O": [
+          2,
+          1
+        ]
+      },
+      "segments": [
+        [
+          "A",
+          "D"
+        ],
+        [
+          "D",
+          "C"
+        ],
+        [
+          "C",
+          "B"
+        ],
+        [
+          "B",
+          "A"
+        ],
+        [
+          "A",
+          "C"
+        ],
+        [
+          "B",
+          "D"
+        ],
+        [
+          "E",
+          "F"
+        ],
+        [
+          "G",
+          "H"
+        ],
+        [
+          "G",
+          "E"
+        ],
+        [
+          "E",
+          "H"
+        ],
+        [
+          "H",
+          "F"
+        ],
+        [
+          "F",
+          "G"
+        ]
+      ],
+      "rightAngles": [
+        [
+          "B",
+          "A",
+          "D"
+        ],
+        [
+          "A",
+          "D",
+          "C"
+        ],
+        [
+          "D",
+          "C",
+          "B"
+        ],
+        [
+          "C",
+          "B",
+          "A"
+        ]
+      ],
+      "labels": {
+        "A": "nw",
+        "D": "ne",
+        "B": "sw",
+        "C": "se",
+        "E": "n",
+        "F": "s",
+        "G": "w",
+        "H": "e",
+        "O": "s"
+      },
+      "ariaLabel": "مستطيل ABCD: E و F منتصفا [AD] و [BC]، G و H منتصفا [AB] و [DC]، O مركزه، والمعين GEHF",
+      "maxWidth": 480
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الأشعة المساوية للشعاع $\\overrightarrow{GE}$ هي:",
+      "learningPoints": [
+        {
+          "code": "4am_insihab-shuaa_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{BO}$ ، $\\overrightarrow{OD}$ ، $\\overrightarrow{FH}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{BO}$ ، $\\overrightarrow{OD}$ ، $\\overrightarrow{HF}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{AO}$ ، $\\overrightarrow{OC}$ ، $\\overrightarrow{FH}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MANHA-MUSTAQIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "على المرصوفة، عُدّ المربعات أفقيا ثم شاقوليا لكل سهم، مع الجهة (يمين / يسار، أعلى / أسفل)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "سهمان متساويان يعني نفس العدّ ونفس الجهة في الاتجاهين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب لكل سهم «كذا يمينا وكذا نحو الأعلى» ثم قارن."
+        }
+      ],
+      "feedback": {
+        "correct": "من G إلى E: نصف العرض يمينا ونصف الطول نحو الأعلى، كما من B إلى O ومن O إلى D ومن F إلى H.",
+        "incorrect": "$\\overrightarrow{AO}$ ينزل بينما $\\overrightarrow{GE}$ يصعد."
+      },
+      "difficulty": 4
+    }
+  ]
+}

@@ -1,0 +1,1271 @@
+/**
+ * Le مختبر المتتاليات — mise en page et dessin.
+ *
+ * Les conventions sont celles du grapheur, des أشعة et des المثلثات
+ * (functionGrapher.css, vectors.css, trigonometry.css) : mêmes teintes, mêmes
+ * rayons, mêmes familles de police. Préfixe `sa-ml-seq`.
+ *
+ * ── RTL (§44) ────────────────────────────────────────────────────────────
+ * Aucun sélecteur `[dir="rtl"]`, aucune déclaration `direction` sur la mise en
+ * page : tout passe par des propriétés LOGIQUES (`inset-inline-start`,
+ * `border-inline-start`, `text-align: start`), si bien que le panneau suit la
+ * direction de la page sans une ligne de plus. Le DESSIN, lui, est en
+ * `dir="ltr"` depuis le JSX : c'est de la mathématique, l'axe des indices
+ * croît vers la droite même en arabe.
+ *
+ * Et la paire que §44 exige partout où une notation est posée : `dir="ltr"`
+ * fixe l'ORDRE des caractères, `text-align: left` + `unicode-bidi: isolate`
+ * la remettent à leur place dans une page arabe. Sans la seconde moitié, une
+ * formule reste collée au bord droit et paraît lue à l'envers.
+ *
+ * ── Mobile (§45) ─────────────────────────────────────────────────────────
+ * Mobile d'abord : la scène en haut, le pupitre dessous, repliable d'un
+ * bouton. À partir de 768 px le pupitre devient une colonne latérale. Le
+ * tableau défile horizontalement plutôt que de comprimer ses colonnes, et
+ * toute cible tactile fait au moins 44 px.
+ */
+
+.sa-ml-seq {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  background: #ffffff;
+  font-family: 'Cairo', sans-serif;
+}
+
+@media (min-width: 768px) {
+  .sa-ml-seq { flex-direction: row; }
+}
+
+/* ── LA SCÈNE ─────────────────────────────────────────────────────────── */
+
+/**
+ * La scène garde une HAUTEUR MINIMALE sur mobile.
+ *
+ * Sans elle, la QA visuelle a montré un téléphone où le graphe se réduisait à
+ * une bande d'environ 180 px montrant deux points sur dix, pendant que le
+ * pupitre occupait le reste : `flex: 1 1 auto` avec `min-height: 0` autorise
+ * la scène à se laisser écraser jusqu'à rien par un panneau plus demandeur.
+ *
+ * 45 vh laisse au graphe la moitié haute de l'écran — ce que §45 veut dire
+ * par « the graph must remain usable » — et le pupitre garde les 52 % que sa
+ * propre règle lui accorde, en défilant à l'intérieur.
+ */
+.sa-ml-seq__stage {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 45vh;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  /* En colonnes, la scène occupe toute la hauteur : plus de plancher à poser. */
+  .sa-ml-seq__stage { min-height: 0; }
+}
+
+/**
+ * La zone des tracés porte son propre plancher.
+ *
+ * Le poser sur la SCÈNE ne suffit pas : la scène contient aussi la barre de
+ * transport, la micro-explication et le guide d'expérience, qui mangent la
+ * hauteur avant le graphe. Sur un 360 × 740 la QA a mesuré 212 px de tracé
+ * pour 45 vh de scène — les points tenaient, mais l'axe des valeurs devenait
+ * illisible.
+ */
+.sa-ml-seq__plots {
+  flex: 1 1 auto;
+  min-height: 34vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .sa-ml-seq__plots { min-height: 0; }
+}
+
+/* La toile à côté du graphe — l'un sous l'autre sur un téléphone, côte à côte
+   dès qu'il y a la place : les comparer d'un coup d'œil est tout l'intérêt. */
+.sa-ml-seq__plots--split {
+  grid-template-rows: 1fr 1fr;
+}
+
+@media (min-width: 1024px) {
+  .sa-ml-seq__plots--split {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.sa-ml-seq__plotbox {
+  position: relative;
+  min-height: 0;
+  min-width: 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.sa-ml-seq__plane {
+  position: absolute;
+  inset: 0;
+  /* Le doigt TIRE, il ne fait pas défiler la page (§45). */
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+  outline: none;
+}
+
+.sa-ml-seq__plane:focus-visible {
+  box-shadow: inset 0 0 0 2px #7c3aed;
+}
+
+/**
+ * mafs aux couleurs de la plateforme : un plan calme, blanc, gris clair.
+ *
+ * mafs livre un thème SOMBRE par défaut (`--mafs-bg: black`,
+ * `--mafs-fg: white`, `node_modules/mafs/core.css`). Sans ces variables le
+ * repère s'affiche NOIR, ce que la QA visuelle a vu tout de suite : un plan
+ * d'encre au milieu d'une page blanche, à côté de sept instruments clairs.
+ * Ce sont exactement les valeurs du grapheur et des أشعة — un seul repère sur
+ * la plateforme, donc une seule apparence.
+ */
+.sa-ml-seq__plane .MafsView {
+  position: absolute;
+  inset: 0;
+  font-family: 'JetBrains Mono', 'Inter', sans-serif;
+  font-size: 12px;
+  --mafs-bg: #ffffff;
+  --mafs-fg: #0f172a;
+  --mafs-origin-color: #334155;
+  --mafs-line-color: #cbd5e1;
+  --grid-line-subdivision-color: #eef2f7;
+  --mafs-axis-stroke-width: 1.5px;
+  --mafs-line-stroke-dash-style: 6, 4;
+}
+
+/* La grille éteinte : on garde les axes, on retire le quadrillage. */
+.sa-ml-seq__plane--nogrid .MafsView {
+  --mafs-line-color: transparent;
+  --grid-line-subdivision-color: transparent;
+}
+
+.sa-ml-seq__plane .mafs-axis text { fill: #475569; }
+
+.sa-ml-seq__axisnames {
+  fill: #64748b;
+  font-size: 0.82rem;
+}
+
+/* Les boutons de vue, dans le coin — au bord LOGIQUE de fin. */
+.sa-ml-seq__zoom {
+  position: absolute;
+  inset-block-start: 0.5rem;
+  inset-inline-end: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  z-index: 2;
+}
+
+.sa-ml-seq__zoombtn {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+}
+
+/* ── LE DESSIN DE LA SUITE ────────────────────────────────────────────── */
+
+.sa-ml-seq__stem {
+  stroke: #cbd5e1;
+  stroke-width: 2;
+}
+
+.sa-ml-seq__stem--negative {
+  stroke: #fbcfe8;
+}
+
+/* La liaison n'est JAMAIS un trait plein : elle guide l'œil, elle ne prétend
+   pas qu'il existe des termes entre deux indices (§18). */
+.sa-ml-seq__connect {
+  fill: none;
+  stroke: #a78bfa;
+  stroke-width: 1.5;
+  stroke-dasharray: 4 4;
+  opacity: 0.8;
+}
+
+.sa-ml-seq__dot {
+  fill: #7c3aed;
+  stroke: #ffffff;
+  stroke-width: 1.5;
+  transition: r 120ms ease, fill 120ms ease;
+}
+
+.sa-ml-seq__dot--negative { fill: #db2777; }
+.sa-ml-seq__dot--even { fill: #2563eb; }
+.sa-ml-seq__dot--odd { fill: #d97706; }
+
+.sa-ml-seq__dot--current {
+  fill: #6d28d9;
+  stroke: #ede9fe;
+  stroke-width: 3;
+}
+
+.sa-ml-seq__hit {
+  fill: transparent;
+  cursor: pointer;
+}
+
+.sa-ml-seq__label {
+  fill: #475569;
+  font-size: 0.72rem;
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  pointer-events: none;
+}
+
+.sa-ml-seq__label--current {
+  fill: #6d28d9;
+  font-weight: 700;
+}
+
+.sa-ml-seq__secondarydot {
+  fill: none;
+  stroke: #0ea5e9;
+  stroke-width: 2;
+}
+
+.sa-ml-seq__boundline {
+  stroke: #94a3b8;
+  stroke-width: 1;
+  stroke-dasharray: 6 4;
+}
+
+.sa-ml-seq__fixedline {
+  stroke: #059669;
+  stroke-width: 1.5;
+  stroke-dasharray: 8 4;
+}
+
+.sa-ml-seq__trendline {
+  stroke: #0ea5e9;
+  stroke-width: 1.5;
+  stroke-dasharray: 2 5;
+}
+
+/* ── LA TOILE D'ARAIGNÉE ──────────────────────────────────────────────── */
+
+.sa-ml-seq__diagonal {
+  stroke: #94a3b8;
+  stroke-width: 1.5;
+  stroke-dasharray: 5 4;
+}
+
+.sa-ml-seq__rulecurve {
+  fill: none;
+  stroke: #7c3aed;
+  stroke-width: 2.5;
+}
+
+.sa-ml-seq__webline {
+  stroke: #d97706;
+  stroke-width: 1.75;
+}
+
+.sa-ml-seq__webline--current {
+  stroke: #b45309;
+  stroke-width: 3;
+}
+
+.sa-ml-seq__webstart {
+  fill: #d97706;
+  stroke: #ffffff;
+  stroke-width: 2;
+}
+
+.sa-ml-seq__fixeddot {
+  fill: #059669;
+  stroke: #ffffff;
+  stroke-width: 2;
+}
+
+/* ── LE TRANSPORT ─────────────────────────────────────────────────────── */
+
+.sa-ml-seq__transport {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0.35rem 0.1rem;
+}
+
+.sa-ml-seq__cursorbadge {
+  margin-inline-start: auto;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.5rem;
+  background: #f5f3ff;
+  color: #5b21b6;
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-align: left;
+  unicode-bidi: isolate;
+  white-space: nowrap;
+}
+
+.sa-ml-seq__speed {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.sa-ml-seq__speedlabel {
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+.sa-ml-seq__select {
+  min-height: 44px;
+  padding: 0 0.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  background: #ffffff;
+  color: #1e293b;
+  font-family: inherit;
+  font-size: 0.85rem;
+}
+
+/* ── LES BOUTONS ──────────────────────────────────────────────────────── */
+
+.sa-ml-seq__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 44px;
+  padding: 0 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  background: #ffffff;
+  color: #1e293b;
+  font-family: inherit;
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+
+.sa-ml-seq__btn:hover:not(:disabled) { background: #f1f5f9; }
+
+.sa-ml-seq__btn:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+}
+
+.sa-ml-seq__btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.sa-ml-seq__btn--icon {
+  min-width: 44px;
+  padding: 0;
+}
+
+.sa-ml-seq__btn--primary {
+  background: #7c3aed;
+  border-color: #6d28d9;
+  color: #ffffff;
+}
+
+.sa-ml-seq__btn--primary:hover:not(:disabled) { background: #6d28d9; }
+
+.sa-ml-seq__btn--active {
+  background: #ede9fe;
+  border-color: #7c3aed;
+  color: #5b21b6;
+}
+
+.sa-ml-seq__btnlabel { white-space: nowrap; }
+
+@media (max-width: 420px) {
+  /* Sur un très petit écran, le libellé cède la place : l'icône suffit. */
+  .sa-ml-seq__btnlabel { display: none; }
+}
+
+/* ── LE PANNEAU ───────────────────────────────────────────────────────── */
+
+.sa-ml-seq__panel {
+  flex: 0 0 auto;
+  max-height: 52%;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  border-top: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+@media (min-width: 768px) {
+  .sa-ml-seq__panel {
+    flex: 0 0 22rem;
+    max-height: none;
+    border-top: none;
+    border-inline-start: 1px solid #e2e8f0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .sa-ml-seq__panel { flex-basis: 24rem; }
+}
+
+.sa-ml-seq__panel--collapsed { max-height: 3.25rem; }
+
+@media (min-width: 768px) {
+  /* Au-dessus de 768 px le panneau est une colonne : le replier n'a plus de sens. */
+  .sa-ml-seq__panel--collapsed { max-height: none; }
+  .sa-ml-seq__collapse { display: none; }
+}
+
+.sa-ml-seq__panel-head {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.6rem;
+  border-bottom: 1px solid #e2e8f0;
+  background: #ffffff;
+}
+
+.sa-ml-seq__panel-title {
+  flex: 1 1 auto;
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: start;
+}
+
+.sa-ml-seq__panel-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* ── LES CARTES DE LECTURE ────────────────────────────────────────────── */
+
+.sa-ml-seq__card {
+  padding: 0.6rem 0.7rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.65rem;
+  background: #ffffff;
+}
+
+/**
+ * LA DÉFINITION RESTE SOUS LES YEUX.
+ *
+ * Les curseurs (`a`, `b`, `r`, `q`) sont tout en bas du panneau, qui défile ;
+ * la définition est tout en haut. En tirant un curseur on ne voyait donc plus
+ * la règle qu'on était en train de changer — on manipulait à l'aveugle, ce
+ * qui est le contraire de « toucher la mathématique et voir ce qui se passe ».
+ *
+ * `position: sticky` la garde au sommet de la zone qui défile. Le fond est
+ * OPAQUE (et non hérité) : sans lui, le contenu qui passe dessous la traverse
+ * et la formule devient illisible. L'ombre ne paraît qu'une fois collée,
+ * grâce à un pixel sentinelle négatif en haut — sans quoi la carte porterait
+ * une ombre permanente, même au repos.
+ */
+.sa-ml-seq__card--sticky {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
+}
+
+/**
+ * Le rembourrage du panneau (0,6 rem) passe AU-DESSUS de la carte collée :
+ * un curseur qui défile dessous y réapparaissait, découpé, par-dessus la
+ * définition (vu en QA visuelle). Ce cache opaque rebouche exactement cette
+ * bande, sans toucher aux coins arrondis de la carte.
+ */
+.sa-ml-seq__card--sticky::before {
+  content: '';
+  position: absolute;
+  inset-inline: -0.6rem;
+  bottom: 100%;
+  height: 0.6rem;
+  background: #f8fafc;
+}
+
+/* Sur un téléphone le panneau ne fait que ~52 % de l'écran : une carte
+   collante y mangerait la moitié du peu qui reste. La définition y défile
+   donc normalement — l'élève voit déjà la règle changer sur le graphe. */
+@media (max-width: 767px) {
+  .sa-ml-seq__card--sticky {
+    position: static;
+    box-shadow: none;
+  }
+}
+
+.sa-ml-seq__cardtitle {
+  margin: 0 0 0.45rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #475569;
+  text-align: start;
+}
+
+/* Toute notation posée en ltr suit la règle de §44 : ordre ET alignement. */
+.sa-ml-seq__rule,
+.sa-ml-seq__initial,
+.sa-ml-seq__closed,
+.sa-ml-seq__current,
+.sa-ml-seq__step,
+.sa-ml-seq__fixedformula,
+.sa-ml-seq__proberesult,
+.sa-ml-seq__explainanswer,
+.sa-ml-seq__num {
+  text-align: left;
+  unicode-bidi: isolate;
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+}
+
+.sa-ml-seq__rule {
+  margin: 0 0 0.3rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #5b21b6;
+}
+
+.sa-ml-seq__initial {
+  margin: 0 0 0.3rem;
+  font-size: 0.9rem;
+  color: #334155;
+}
+
+.sa-ml-seq__closed {
+  margin: 0.4rem 0 0.2rem;
+  padding-top: 0.4rem;
+  border-top: 1px dashed #e2e8f0;
+  font-size: 0.9rem;
+  color: #0f766e;
+}
+
+.sa-ml-seq__current {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.sa-ml-seq__currentname { color: #7c3aed; }
+.sa-ml-seq__currenteq { color: #94a3b8; }
+
+/* Le pas en trois temps (§8) : uₙ → règle → uₙ₊₁. */
+.sa-ml-seq__step {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.5rem 0 0;
+  padding: 0.45rem 0.5rem;
+  border-radius: 0.5rem;
+  background: #f5f3ff;
+  font-size: 0.86rem;
+}
+
+.sa-ml-seq__stepfrom { color: #64748b; }
+.sa-ml-seq__stepapplied { color: #b45309; font-weight: 700; }
+.sa-ml-seq__stepto { color: #5b21b6; font-weight: 700; }
+.sa-ml-seq__steparrow { color: #94a3b8; flex: 0 0 auto; }
+
+/* Le badge de comportement. La couleur ne porte JAMAIS le sens seule (§43) :
+   le mot est écrit dedans. */
+.sa-ml-seq__badge {
+  display: inline-block;
+  margin: 0 0 0.4rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.sa-ml-seq__badge--increasing { background: #dcfce7; color: #166534; }
+.sa-ml-seq__badge--decreasing { background: #ffedd5; color: #9a3412; }
+.sa-ml-seq__badge--constant { background: #e0e7ff; color: #3730a3; }
+.sa-ml-seq__badge--approaching { background: #cffafe; color: #155e75; }
+.sa-ml-seq__badge--alternating,
+.sa-ml-seq__badge--oscillating { background: #fce7f3; color: #9d174d; }
+.sa-ml-seq__badge--diverging { background: #fee2e2; color: #991b1b; }
+
+.sa-ml-seq__trendtext {
+  margin: 0 0 0.3rem;
+  font-size: 0.88rem;
+  color: #1e293b;
+  text-align: start;
+}
+
+.sa-ml-seq__note {
+  margin: 0.25rem 0 0;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: #64748b;
+  text-align: start;
+}
+
+/* La mention qui distingue l'observation du théorème (§11, §51) : elle doit se
+   remarquer sans crier. */
+.sa-ml-seq__note--caution {
+  padding: 0.35rem 0.5rem;
+  border-inline-start: 3px solid #fbbf24;
+  border-radius: 0.25rem;
+  background: #fffbeb;
+  color: #92400e;
+}
+
+.sa-ml-seq__range,
+.sa-ml-seq__fixedformula {
+  margin: 0.3rem 0 0;
+  font-size: 0.85rem;
+  color: #0f766e;
+  text-align: start;
+}
+
+.sa-ml-seq__error {
+  margin: 0.4rem 0 0;
+  padding: 0.35rem 0.5rem;
+  border-radius: 0.4rem;
+  background: #fef2f2;
+  color: #991b1b;
+  font-size: 0.82rem;
+  text-align: start;
+}
+
+.sa-ml-seq__warn {
+  margin: 0.4rem 0 0;
+  padding: 0.35rem 0.5rem;
+  border-radius: 0.4rem;
+  background: #fffbeb;
+  color: #92400e;
+  font-size: 0.82rem;
+  text-align: start;
+}
+
+.sa-ml-seq__micro {
+  margin: 0;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.5rem;
+  background: #f5f3ff;
+  color: #5b21b6;
+  font-size: 0.84rem;
+  text-align: start;
+}
+
+.sa-ml-seq__empty {
+  margin: 0;
+  padding: 1rem;
+  color: #64748b;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* ── L'EXPLORATION D'UN INDICE LOINTAIN ───────────────────────────────── */
+
+.sa-ml-seq__probesteps,
+.sa-ml-seq__chips,
+.sa-ml-seq__kinds,
+.sa-ml-seq__marks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.sa-ml-seq__proberow {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.45rem;
+}
+
+.sa-ml-seq__proberesult {
+  margin: 0.45rem 0 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* ── LES PUCES ────────────────────────────────────────────────────────── */
+
+.sa-ml-seq__chip {
+  min-height: 44px;
+  /* Un libellé court — « u₀ », « 0 » — ne doit pas rendre la puce étroite au
+     point d'être manquée au pouce : la QA mobile a mesuré 34 px de large. */
+  min-width: 44px;
+  padding: 0 0.6rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #334155;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+
+.sa-ml-seq__chip:hover { background: #f1f5f9; }
+
+.sa-ml-seq__chip:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+}
+
+.sa-ml-seq__chip--active {
+  background: #ede9fe;
+  border-color: #7c3aed;
+  color: #5b21b6;
+}
+
+/* ── LES PARAMÈTRES ──────────────────────────────────────────────────── */
+
+.sa-ml-seq__param {
+  padding: 0.45rem 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.sa-ml-seq__param:last-child { border-bottom: none; }
+
+/* Le paramètre qu'une expérience invite à tirer (§26). */
+.sa-ml-seq__param--focus {
+  padding-inline: 0.45rem;
+  border-inline-start: 3px solid #7c3aed;
+  border-radius: 0.35rem;
+  background: #faf5ff;
+}
+
+.sa-ml-seq__paramhead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.sa-ml-seq__label-inline,
+.sa-ml-seq__label-block {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #334155;
+  text-align: start;
+}
+
+.sa-ml-seq__label-block { display: block; margin-bottom: 0.3rem; }
+
+.sa-ml-seq__field {
+  min-height: 44px;
+  padding: 0 0.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  background: #ffffff;
+  color: #0f172a;
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 0.9rem;
+  text-align: left;
+  unicode-bidi: isolate;
+}
+
+.sa-ml-seq__field:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 1px;
+}
+
+.sa-ml-seq__field--num { width: 5.5rem; }
+.sa-ml-seq__field--rule { flex: 1 1 auto; min-width: 0; }
+.sa-ml-seq__field--answer { flex: 1 1 auto; min-width: 0; }
+
+.sa-ml-seq__field[aria-invalid='true'] {
+  border-color: #dc2626;
+  background: #fef2f2;
+}
+
+/* Le curseur : une piste épaisse et une poignée large — on le tire au doigt (§45). */
+.sa-ml-seq__slider {
+  width: 100%;
+  min-height: 44px;
+  accent-color: #7c3aed;
+  cursor: pointer;
+  /* L'axe d'un curseur est une grandeur mathématique : il croît vers la
+     droite, comme les axes du graphe, même dans une page arabe. */
+  direction: ltr;
+}
+
+.sa-ml-seq__slider:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+}
+
+/**
+ * Les puces de valeurs remarquables (−1, 0, 1) sont de VRAIES cibles
+ * tactiles : c'est par elles qu'on franchit une frontière de comportement
+ * d'un doigt (§14).
+ *
+ * Elles faisaient 32 × 23 px, ce que la QA mobile a refusé : sous 36 px, un
+ * pouce en manque une sur deux, et la puce « 0 » — la plus étroite parce que
+ * son libellé est le plus court — était la plus dure à atteindre. La largeur
+ * minimale est donc posée en plus de la hauteur, sinon un libellé d'un seul
+ * caractère redevient une cible minuscule.
+ */
+.sa-ml-seq__mark {
+  min-height: 38px;
+  min-width: 38px;
+  padding: 0 0.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.4rem;
+  background: #f8fafc;
+  color: #475569;
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  /* À la souris, le pointeur est précis : les puces peuvent se resserrer pour
+     qu'une rangée de huit tienne dans la colonne du pupitre. */
+  .sa-ml-seq__mark {
+    min-height: 36px;
+    min-width: 36px;
+  }
+}
+
+.sa-ml-seq__mark--active {
+  background: #ede9fe;
+  border-color: #7c3aed;
+  color: #5b21b6;
+  font-weight: 700;
+}
+
+.sa-ml-seq__ruleinputrow {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.sa-ml-seq__rulelhs {
+  color: #7c3aed;
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 0.9rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.sa-ml-seq__hint {
+  margin: 0.3rem 0 0;
+  font-size: 0.76rem;
+  color: #64748b;
+  text-align: start;
+}
+
+.sa-ml-seq__rulefield { padding: 0.45rem 0; }
+
+/* ── LES SECTIONS REPLIABLES ─────────────────────────────────────────── */
+
+.sa-ml-seq__section {
+  border: 1px solid #e2e8f0;
+  border-radius: 0.65rem;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.sa-ml-seq__section + .sa-ml-seq__section { margin-top: 0.5rem; }
+
+.sa-ml-seq__section-head { margin: 0; }
+
+.sa-ml-seq__section-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 44px;
+  padding: 0 0.7rem;
+  border: none;
+  background: transparent;
+  color: #0f172a;
+  font-family: inherit;
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-align: start;
+  cursor: pointer;
+}
+
+.sa-ml-seq__section-btn:hover { background: #f8fafc; }
+
+.sa-ml-seq__section-btn:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: -2px;
+}
+
+.sa-ml-seq__section-sign {
+  display: inline-flex;
+  color: #7c3aed;
+  flex: 0 0 auto;
+}
+
+.sa-ml-seq__section-body {
+  padding: 0.5rem 0.7rem 0.7rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.sa-ml-seq__fieldset {
+  margin: 0 0 0.5rem;
+  padding: 0;
+  border: none;
+}
+
+.sa-ml-seq__fieldset:last-child { margin-bottom: 0; }
+
+.sa-ml-seq__legend {
+  padding: 0;
+  margin-bottom: 0.3rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.sa-ml-seq__check {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 40px;
+  font-size: 0.84rem;
+  color: #334155;
+  cursor: pointer;
+}
+
+.sa-ml-seq__check input {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: #7c3aed;
+  flex: 0 0 auto;
+}
+
+.sa-ml-seq__secondaryparams {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed #e2e8f0;
+}
+
+/* ── LE TABLEAU ──────────────────────────────────────────────────────── */
+
+.sa-ml-seq__tablewrap {
+  /* §45 : le tableau DÉFILE plutôt que de comprimer ses colonnes. */
+  overflow-x: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.65rem;
+  background: #ffffff;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sa-ml-seq__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.sa-ml-seq__tablecaption {
+  padding: 0.45rem 0.6rem;
+  border-bottom: 1px solid #e2e8f0;
+  color: #475569;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: start;
+}
+
+.sa-ml-seq__table :is(th, td) {
+  padding: 0.3rem 0.5rem;
+  border-bottom: 1px solid #f1f5f9;
+  text-align: start;
+  white-space: nowrap;
+}
+
+/**
+ * L'en-tête reste visible quand le tableau défile — mais il ne doit pas
+ * VOLER LES CLICS des premières lignes.
+ *
+ * Un `position: sticky` avec un fond opaque recouvre la ligne qui passe
+ * dessous : le bouton d'indice de cette ligne devient inatteignable, et un
+ * élève qui tape « 3 » pour aller au troisième terme touche l'en-tête. La QA
+ * l'a attrapé (le clic sur `[data-ml-seq-rowbtn]` expirait, intercepté par
+ * `.sa-ml-seq__tablewrap`).
+ *
+ * Le collage est donc réservé aux écrans assez hauts pour que le tableau
+ * défile vraiment, et l'en-tête laisse passer le pointeur : il ne sert qu'à
+ * lire, jamais à cliquer.
+ */
+.sa-ml-seq__table thead th {
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+@media (min-height: 800px) {
+  .sa-ml-seq__table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+}
+
+.sa-ml-seq__table tbody th { font-weight: 600; }
+
+.sa-ml-seq__num {
+  display: inline-block;
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  text-align: left;
+  unicode-bidi: isolate;
+}
+
+/* La ligne courante : un fond ET une barre latérale — jamais la couleur
+   seule (§43). */
+.sa-ml-seq__row--current {
+  background: #f5f3ff;
+  box-shadow: inset 3px 0 0 #7c3aed;
+}
+
+.sa-ml-seq__rowbtn {
+  min-width: 44px;
+  min-height: 36px;
+  padding: 0 0.3rem;
+  border: none;
+  border-radius: 0.35rem;
+  background: transparent;
+  color: #5b21b6;
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.sa-ml-seq__rowbtn:hover { background: #ede9fe; }
+
+.sa-ml-seq__rowbtn:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: -2px;
+}
+
+/* ── L'ENTRAÎNEMENT ──────────────────────────────────────────────────── */
+
+.sa-ml-seq__practice {
+  padding: 0.6rem 0.7rem;
+  border: 1px solid #ddd6fe;
+  border-radius: 0.65rem;
+  background: #faf5ff;
+}
+
+.sa-ml-seq__practicehead {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.sa-ml-seq__practicehead .sa-ml-seq__cardtitle {
+  flex: 1 1 auto;
+  margin: 0;
+}
+
+/* Un couple N / M est de la notation : il lui faut son isolation (§44). */
+.sa-ml-seq__score {
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  background: #ede9fe;
+  color: #5b21b6;
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-align: left;
+  unicode-bidi: isolate;
+}
+
+.sa-ml-seq__question {
+  margin: 0 0 0.5rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #0f172a;
+  text-align: start;
+}
+
+.sa-ml-seq__answerrow {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.45rem;
+}
+
+.sa-ml-seq__choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 0.45rem;
+}
+
+.sa-ml-seq__verdict {
+  margin: 0 0 0.4rem;
+  padding: 0.35rem 0.55rem;
+  border-radius: 0.45rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: start;
+}
+
+.sa-ml-seq__verdict--ok { background: #dcfce7; color: #166534; }
+.sa-ml-seq__verdict--no { background: #fee2e2; color: #991b1b; }
+.sa-ml-seq__verdict--unreadable { background: #fffbeb; color: #92400e; }
+
+.sa-ml-seq__hintbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  margin: 0 0 0.45rem;
+  padding: 0.4rem 0.55rem;
+  border-radius: 0.45rem;
+  background: #fffbeb;
+  color: #92400e;
+  font-size: 0.84rem;
+  line-height: 1.55;
+  text-align: start;
+}
+
+.sa-ml-seq__hintbox svg { flex: 0 0 auto; margin-top: 0.15rem; }
+
+.sa-ml-seq__explain {
+  margin: 0 0 0.5rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 0.5rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+}
+
+.sa-ml-seq__explaintext {
+  margin: 0 0 0.4rem;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #334155;
+  text-align: start;
+}
+
+/* Les VRAIS termes, alignés : c'est l'explication de §29. */
+.sa-ml-seq__explainterms {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  text-align: left;
+  unicode-bidi: isolate;
+}
+
+.sa-ml-seq__explainterm {
+  padding: 0.2rem 0.45rem;
+  border-radius: 0.35rem;
+  background: #f1f5f9;
+  color: #334155;
+  font-size: 0.8rem;
+}
+
+.sa-ml-seq__explainterm--target {
+  background: #dcfce7;
+  color: #166534;
+  font-weight: 700;
+}
+
+.sa-ml-seq__explainterm--far {
+  background: #cffafe;
+  color: #155e75;
+}
+
+.sa-ml-seq__explainanswer {
+  margin: 0.4rem 0 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #166534;
+}
+
+.sa-ml-seq__practiceactions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+/* ── LES EXPÉRIENCES GUIDÉES ─────────────────────────────────────────── */
+
+.sa-ml-seq__guide {
+  padding: 0.55rem 0.7rem;
+  border: 1px solid #bae6fd;
+  border-radius: 0.6rem;
+  background: #f0f9ff;
+}
+
+.sa-ml-seq__guidequestion {
+  margin: 0 0 0.3rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #075985;
+  text-align: start;
+}
+
+.sa-ml-seq__guidestep {
+  margin: 0 0 0.45rem;
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: #0c4a6e;
+  text-align: start;
+}
+
+.sa-ml-seq__guideactions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+/* ── L'ANNONCE AUX LECTEURS D'ÉCRAN ──────────────────────────────────── */
+
+.sa-ml-seq__sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── LE MOUVEMENT RÉDUIT (§43) ───────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .sa-ml-seq__dot,
+  .sa-ml-seq__btn,
+  .sa-ml-seq__chip {
+    transition: none;
+  }
+}
+
+/* Le rappel qui apparaît quand un préréglage a éteint le tableau (§39). */
+.sa-ml-seq__tableoff {
+  align-self: flex-start;
+}

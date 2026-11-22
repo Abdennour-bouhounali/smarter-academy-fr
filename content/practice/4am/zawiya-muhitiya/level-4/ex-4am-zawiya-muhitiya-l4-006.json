@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-zawiya-muhitiya-l4-006",
+  "lessonCode": "zawiya-muhitiya",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — تصويب إجابة ياسين",
+    "estimatedMinutes": 3,
+    "tags": [
+      "تصويب خطأ"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_zawiya-muhitiya_P2",
+      "modelledOn": "know-4"
+    }
+  },
+  "statement": {
+    "content": "في دائرة مركزها O، $\\widehat{AOB} = 80^\\circ$ و M نقطة من القوس الكبير. كتب ياسين: «$\\widehat{AMB} = 2 \\times 80^\\circ = 160^\\circ$ »."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "إجابة ياسين:",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "صحيحة",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-DIF"
+        },
+        {
+          "id": "B",
+          "content": "خاطئة: $\\widehat{AMB} = \\dfrac{80^\\circ}{2} = 40^\\circ$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "خاطئة: $\\widehat{AMB} = 80^\\circ$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-MUSAWIYA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوس الذي تحصره كل زاوية: هل هو نفس القوس؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الزاويتين: أيهما أكبر، المركزية أم المحيطية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قيس الزاوية المحيطية نصف قيس الزاوية المركزية التي تحصر معها نفس القوس."
+        }
+      ],
+      "feedback": {
+        "correct": "المحيطية نصف المركزية، لا ضعفها.",
+        "incorrect": "المحيطية نصف المركزية: نقسم على 2، لا نضرب في 2."
+      }
+    }
+  ]
+}

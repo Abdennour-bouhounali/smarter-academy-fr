@@ -1,0 +1,74 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-maalam-l5-007",
+  "lessonCode": "wadiya-idmajiya-maalam",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — الفرق بالمتر",
+    "estimatedMinutes": 4,
+    "tags": [
+      "مقارنة مسارين",
+      "قيمة مقرّبة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-maalam_P1",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "طولا مسارين بالكيلومتر: المسار (1) $2\\pi + 1$ ، والمسار (2) $\\sqrt{13} + \\sqrt{10}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "كم مترا يزيد المسار (1) على المسار (2)؟ (مدوّرا إلى المتر)",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح (بالمتر)",
+      "expectedAnswer": "515",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$2\\pi + 1 \\approx 7{,}2832$"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$\\sqrt{13} + \\sqrt{10} \\approx 6{,}7678$"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "الفرق بالكيلومتر ثم × 1000."
+        }
+      ],
+      "feedback": {
+        "correct": "الفرق $\\approx 0{,}5154\\,\\mathrm{km}$ ، أي حوالي $515\\,\\mathrm{m}$ .",
+        "incorrect": "احسب بدقة، اطرح، حوّل إلى المتر، ثم دوّر."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "520",
+          "id": "MISC-WADIYA-TADWIR-MUBAKKIR"
+        },
+        {
+          "value": "0.52",
+          "id": "MISC-MAALAM-SULLAM"
+        }
+      ],
+      "difficulty": 5
+    }
+  ]
+}

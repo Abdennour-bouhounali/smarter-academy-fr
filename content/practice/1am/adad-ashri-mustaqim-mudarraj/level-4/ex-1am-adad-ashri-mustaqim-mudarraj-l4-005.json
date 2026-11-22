@@ -1,0 +1,210 @@
+{
+  "id": "ex-1am-adad-ashri-mustaqim-mudarraj-l4-005",
+  "lessonCode": "adad-ashri-mustaqim-mudarraj",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — مقياس دقيق",
+    "estimatedMinutes": 5,
+    "tags": [
+      "حصر",
+      "قراءة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يقيس نجّار طول قطعة بمسطرة صغيرة، وتُقسَّم كلّ وحدة منها إلى 10 أجزاء متساوية."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "المسافة بين المبدإ $O$ وطرف القطعة الأولى تساوي 5 وحدات و3 تدريجات صغيرة. ما فاصلة طرف القطعة الأولى ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "5,3",
+      "misconceptionSignatures": [
+        {
+          "value": "3,5",
+          "id": "MISC-ABSC-SWAP"
+        },
+        {
+          "value": "8",
+          "id": "MISC-ABSC-TICKUNIT"
+        },
+        {
+          "value": "5,03",
+          "id": "MISC-ABSC-HUNDREDTH"
+        },
+        {
+          "value": "0,3",
+          "id": "MISC-ABSC-FROMO"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم وحدة كاملة تفصل النقطة عن المبدإ، وماذا يبقى بعدها ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "كلّ تدريجة صغيرة جزء من الوحدة، وليست وحدة كاملة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضف قيمة التدريجات الصغيرة إلى عدد الوحدات الكاملة."
+        }
+      ],
+      "feedback": {
+        "correct": "الفاصلة $5{,}3$ : الوحدات الكاملة أوّلًا ثمّ التدريجات الصغيرة.",
+        "incorrect": "الوحدات الكاملة تعطي الجزء الصحيح، والتدريجات الصغيرة تعطي الجزء بعد الفاصلة ؛ كلّ تدريجة صغيرة جزء من الوحدة لا وحدة كاملة."
+      },
+      "solution": {
+        "lines": [
+          "$5$ وحدة كاملة، ثمّ $3$ تدريجة صغيرة قيمة كلّ منها $0{,}1$",
+          "الفاصلة : $5$ + $3$ × $0{,}1$ = $5{,}3$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "النقطة $S$ فاصلتها $5{,}37$ ، وهي تقع بين تدريجتين صغيرتين متتاليتين على نصف مستقيم تدريجته الصغيرة $0{,}1$ . أيّ حصر صحيح لفاصلتها بين تدريجتين متتاليتين ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الحصر الصحيح",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$5{,}2 < S < 5{,}3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-BOUNDSSHIFT"
+        },
+        {
+          "id": "B",
+          "content": "$5{,}3 < S < 5{,}4$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$5{,}4 < S < 5{,}5$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-BOUNDSSHIFT"
+        },
+        {
+          "id": "D",
+          "content": "$5{,}4 < S < 5{,}3$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ABSC-BOUNDSREV"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "التدريجتان متتاليتان : الفرق بينهما قيمة التدريجة الصغيرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "العدد الأصغر في الحصر يكون على يسار النقطة والأكبر على يمينها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن الفاصلة بكلّ تدريجة قريبة منها."
+        }
+      ],
+      "feedback": {
+        "correct": "الحصر الصحيح : $5{,}3$ < $5{,}37$ < $5{,}4$.",
+        "incorrect": "نحصر الفاصلة بين تدريجتين متتاليتين : الأصغر على يسار النقطة والأكبر على يمينها، والفرق بينهما قيمة التدريجة."
+      },
+      "solution": {
+        "lines": [
+          "نبحث عن التدريجتين المتتاليتين اللتين تحيطان بالعدد $5{,}37$",
+          "$5{,}3$ < $5{,}37$ < $5{,}4$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "النقطة $B$ فاصلتها $5{,}88$ ، وهي تقع بين تدريجتين صغيرتين متتاليتين قيمة التدريجة الصغيرة $0{,}1$ . ما فاصلة التدريجة التي على يسار النقطة مباشرة ؟",
+      "learningPoints": [
+        {
+          "code": "1am_adad-ashri-mustaqim-mudarraj_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "5,8",
+      "misconceptionSignatures": [
+        {
+          "value": "5,9",
+          "id": "MISC-ABSC-BOUNDSSHIFT"
+        },
+        {
+          "value": "5,7",
+          "id": "MISC-ABSC-BOUNDSSHIFT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب التدريجات القريبة من الفاصلة بخطوة قيمتها قيمة التدريجة الصغيرة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التدريجة اليسرى أصغر من الفاصلة والتي تليها أكبر منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "خذ آخر مضاعف للخطوة لا يتجاوز الفاصلة."
+        }
+      ],
+      "feedback": {
+        "correct": "التدريجة التي على يسار النقطة مباشرة فاصلتها $5{,}8$.",
+        "incorrect": "التدريجة اليسرى هي أكبر تدريجة لا تتجاوز فاصلة النقطة ؛ والتي تليها (اليمنى) أكبر من الفاصلة."
+      },
+      "solution": {
+        "lines": [
+          "التدريجات هي مضاعفات $0{,}1$ : ... $5{,}7$ ، $5{,}8$ ، $5{,}9$ ...",
+          "العدد $5{,}88$ محصور بين $5{,}8$ و$5{,}9$ ، فالتدريجة اليسرى هي $5{,}8$"
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

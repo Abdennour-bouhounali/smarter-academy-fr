@@ -1,0 +1,335 @@
+{
+  "id": "ex-3am-jidaa-ida-nisbiya-l5-001",
+  "lessonCode": "jidaa-ida-nisbiya",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — مبرّدات المخبر",
+    "estimatedMinutes": 18,
+    "tags": [
+      "وضعية إدماجية",
+      "سياق",
+      "إشارة الجداء",
+      "توزيع الضرب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "الجزء الأول: في مخبر المدرسة غرفة تبريد فيها مبرّدات متماثلة، يخفض كل مبرّد حرارة الغرفة بمقدار $2{,}5$ درجة في كل ساعة. اللحظة $0$ هي لحظة تشغيل المبرّدات، و $t$ هو الزمن بالساعات ($t$ سالب قبل التشغيل). إذا اشتغل $n$ مبرّدًا فتغيّر الحرارة عند اللحظة $t$ هو $(−2{,}5) \\times n \\times t$ درجة.\nالجزء الثاني: في غرفة ثانية، يخفض كل مبرّد الحرارة بمقدار $4$ درجات في كل ساعة، ويشتغل فيها $5$ مبرّدات."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "الجزء الأول.",
+      "statement": "اشتغلت $3$ مبرّدات. ما تغيّر الحرارة عند اللحظة $t = 6$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-45",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في النص العددين أو الأعداد التي تُضرب، وأعطِ كلًّا منها إشارته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التناقص أو الخسارة عدد سالب، والزمن قبل اللحظة المرجعية عدد سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء بإشاراته، ثم عيّن إشارته بعدّ العوامل السالبة قبل أن تحسب."
+        }
+      ],
+      "feedback": {
+        "correct": "التغيّر $−45$ درجة.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "التغيّر هو $(−2{,}5) \\times 3 \\times 6$ .",
+          "عامل سالب واحد: الجداء سالب، و $2{,}5 \\times 3 \\times 6 = 45$ .",
+          "التغيّر $−45$ درجة."
+        ],
+        "result": "−45"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "اشتغل مبرّدان. ما تغيّر الحرارة عند اللحظة $t = −4$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "20",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في النص العددين أو الأعداد التي تُضرب، وأعطِ كلًّا منها إشارته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التناقص أو الخسارة عدد سالب، والزمن قبل اللحظة المرجعية عدد سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء بإشاراته، ثم عيّن إشارته بعدّ العوامل السالبة قبل أن تحسب."
+        }
+      ],
+      "feedback": {
+        "correct": "التغيّر $20$ درجة: قبل التشغيل كانت الغرفة أدفأ.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "التغيّر هو $(−2{,}5) \\times 2 \\times (−4)$ .",
+          "عاملان سالبان: الجداء موجب، و $2{,}5 \\times 2 \\times 4 = 20$ .",
+          "التغيّر $20$ درجة: قبل التشغيل كانت الغرفة أدفأ."
+        ],
+        "result": "20"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "statement": "اشتغلت $4$ مبرّدات. ما إشارة تغيّر الحرارة عند اللحظة $t = −7$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "سالب",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IDA-MORENEG"
+        },
+        {
+          "id": "B",
+          "content": "موجب",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في النص العددين أو الأعداد التي تُضرب، وأعطِ كلًّا منها إشارته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التناقص أو الخسارة عدد سالب، والزمن قبل اللحظة المرجعية عدد سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء بإشاراته، ثم عيّن إشارته بعدّ العوامل السالبة قبل أن تحسب."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد العوامل السالبة هو 2 (عدد زوجي)، إذن الجداء موجب.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "عدد العوامل السالبة هو $2$ ، وهو عدد زوجي.",
+          "إذن الجداء موجب."
+        ]
+      },
+      "timeSeconds": 45
+    },
+    {
+      "id": "q4",
+      "step": "03",
+      "sub": "ا",
+      "lead": "الجزء الثاني.",
+      "statement": "ما تغيّر الحرارة في الغرفة الثانية عند اللحظة $t = 3$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-60",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في النص العددين أو الأعداد التي تُضرب، وأعطِ كلًّا منها إشارته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التناقص أو الخسارة عدد سالب، والزمن قبل اللحظة المرجعية عدد سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء بإشاراته، ثم عيّن إشارته بعدّ العوامل السالبة قبل أن تحسب."
+        }
+      ],
+      "feedback": {
+        "correct": "التغيّر $−60$ درجة.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "التغيّر هو $(−4) \\times 5 \\times 3$ .",
+          "عامل سالب واحد: الجداء سالب، و $4 \\times 5 \\times 3 = 60$ .",
+          "التغيّر $−60$ درجة."
+        ],
+        "result": "−60"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "sub": "ب",
+      "statement": "اشتغلت المبرّدات $18$ ساعة ثم $12$ ساعة أخرى. احسب ذهنيًا التغيّر الإجمالي $(−4) \\times 5 \\times 18 + (−4) \\times 5 \\times 12$ .",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد نسبي (يُقبل الكسر العشري)",
+      "expectedAnswer": "-600",
+      "misconceptionSignatures": [
+        {
+          "value": "600",
+          "id": "MISC-IDA-DISTSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن العامل المشترك في الحدّين."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$k \\times a + k \\times b = k \\times (a + b)$ و $k \\times a - k \\times b = k \\times (a - b)$ ، في الاتجاهين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب أولًا ما بين القوسين إن كان عددًا سهلًا (مثل $10$ أو $100$) ثم اضرب."
+        }
+      ],
+      "feedback": {
+        "correct": "$(−4) \\times 5 \\times 18 + (−4) \\times 5 \\times 12 = −600$ .",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "العاملان $(−4)$ و $5$ مشتركان: $(−4) \\times 5 = −20$ .",
+          "$(−20) \\times 18 + (−20) \\times 12 = (−20) \\times (18 + 12) = (−20) \\times 30$ .",
+          "$−600$"
+        ],
+        "result": "−600"
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q6",
+      "step": "03",
+      "sub": "ج",
+      "statement": "قال زميلك: «تغيّر الحرارة في الغرفة الثانية عند اللحظة $t = −2$ سالب». هل هو محقّ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_jidaa-ida-nisbiya_P2",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-IDA-ANYNEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد في النص العددين أو الأعداد التي تُضرب، وأعطِ كلًّا منها إشارته."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "التناقص أو الخسارة عدد سالب، والزمن قبل اللحظة المرجعية عدد سالب."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اكتب الجداء بإشاراته، ثم عيّن إشارته بعدّ العوامل السالبة قبل أن تحسب."
+        }
+      ],
+      "feedback": {
+        "correct": "التغيّر $40$ موجب: زميلك مخطئ.",
+        "incorrect": "راجع الحل النموذجي: الإشارة أولًا بعدّ العوامل السالبة، ثم جداء المسافات إلى الصفر."
+      },
+      "solution": {
+        "lines": [
+          "التغيّر عند $t = −2$ هو $(−4) \\times 5 \\times (−2)$ .",
+          "عاملان سالبان: الجداء موجب ($40$ )، إذن زميلك مخطئ."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

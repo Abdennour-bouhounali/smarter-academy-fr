@@ -1,0 +1,227 @@
+{
+  "id": "ex-2am-talim-nuqta-mustawi-l2-007",
+  "lessonCode": "talim-nuqta-mustawi",
+  "level": 2,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — نظيرة بالنسبة إلى محور التراتيب",
+    "estimatedMinutes": 8,
+    "tags": [
+      "نظير",
+      "طول",
+      "نوع الرباعي"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 2,
+      "file": "2am-s2-69",
+      "exercise": 3
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "في معلم للمستوي مبدؤه $O$ ووحدته $1\\,\\mathrm{cm}$ ، نعلّم النقط $O(0\\,;\\,0)$ ، $A(4\\,;\\,3)$ ، $B(0\\,;\\,6)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عيّن إحداثيتي نظيرة النقطة $A(4\\,;\\,3)$ بالنسبة إلى محور التراتيب .",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "point",
+      "answerFormat": "اكتب الثنائية $(x ; y)$ : قيمة $x$ ثم قيمة $y$",
+      "expectedAnswer": {
+        "x": "-4",
+        "y": "3"
+      },
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-SYMMIX",
+          "value": {
+            "x": "4",
+            "y": "-3"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-BOTHSIGNS",
+          "value": {
+            "x": "-4",
+            "y": "-3"
+          }
+        },
+        {
+          "id": "MISC-NUQTA2-SWAP",
+          "value": {
+            "x": "3",
+            "y": "-4"
+          }
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "النظير بالنسبة إلى محور يقع على بعد المسافة نفسها من هذا المحور في الجهة المقابلة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الإحداثية المقيسة على طول المحور تبقى كما هي، والإحداثية الأخرى تتغيّر."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ارسم النقطة ونظيرتها وقِس كلّ منهما على الشبكة للتأكّد."
+        }
+      ],
+      "feedback": {
+        "correct": "$D(-4\\,;\\,3)$ .",
+        "incorrect": "النظير بالنسبة إلى محور يحتفظ بالإحداثية المقيسة على طول المحور ويعاكس الإحداثية الأخرى."
+      },
+      "solution": {
+        "lines": [
+          "النظير بالنسبة إلى محور التراتيب يبقي الترتيب كما هي",
+          "الفاصلة تصير معاكسها: $D(-4\\,;\\,3)$"
+        ],
+        "result": "D(-4\\,;\\,3)"
+      },
+      "work": "optional",
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما طول القطعة $[AD]$ بالسنتيمتر ، علمًا أنّ وحدة المعلم $1\\,\\mathrm{cm}$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد بالسنتيمتر",
+      "expectedAnswer": "8",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-NUQTA2-LENSUM",
+          "value": "0"
+        },
+        {
+          "id": "MISC-NUQTA2-LENOFF",
+          "value": "9"
+        },
+        {
+          "id": "MISC-NUQTA2-LENMAX",
+          "value": "4"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "علّم النقطتين وتأكّد أنّهما على خطّ واحد من الشبكة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عُدّ الوحدات بين النقطتين على الشبكة، مرورًا بالمحور إن كان القطعة تقطعه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اضرب عدد الوحدات في طول الوحدة إن طُلبت النتيجة بالمتر أو السنتيمتر."
+        }
+      ],
+      "feedback": {
+        "correct": "عدد الوحدات $8$ فالطول $8\\,\\mathrm{cm}$ .",
+        "incorrect": "القطعة تقع على خطّ من الشبكة: عُدّ وحداتها واحدة واحدة، ومُرّ بالمحور إن كانت تقطعه."
+      },
+      "solution": {
+        "lines": [
+          "القطعة $[AD]$ توازي أحد المحورين",
+          "عدد وحداتها $8$",
+          "الطول $8 \\times 1 = 8\\,\\mathrm{cm}$"
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما نوع الرباعي $ABDO$ ؟ (بدون تعليل)",
+      "learningPoints": [
+        {
+          "code": "2am_talim-nuqta-mustawi_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "مربّع",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "معيّن",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "مستطيل",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "content": "متوازي أضلاع",
+          "isCorrect": false
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن أطوال الأضلاع الأربعة بعدّ الوحدات أو باستعمال الشبكة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن بعد ذلك القطرين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تذكّر أنّ المربّع يجمع خواصّ المستطيل والمعيّن."
+        }
+      ],
+      "feedback": {
+        "correct": "الرباعي $ABDO$ معيّن .",
+        "incorrect": "قارن أطوال الأضلاع بعدّ الوحدات، ثم قارن القطرين."
+      },
+      "solution": {
+        "lines": [
+          "الأضلاع والقطران مقروءة على الشبكة",
+          "$ABDO$ : معيّن"
+        ]
+      },
+      "timeSeconds": 75
+    }
+  ]
+}

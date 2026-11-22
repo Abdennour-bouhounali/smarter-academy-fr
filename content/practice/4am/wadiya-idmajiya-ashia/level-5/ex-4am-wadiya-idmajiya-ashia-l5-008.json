@@ -1,0 +1,80 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ashia-l5-008",
+  "lessonCode": "wadiya-idmajiya-ashia",
+  "level": 5,
+  "metadata": {
+    "title": "تدريب — المدرسة تبتعد",
+    "estimatedMinutes": 3,
+    "tags": [
+      "موضع M",
+      "تفسير"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ashia_P2",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "في وضعية ممر الراجلين، تبقى A والشارع في مكانهما، لكن نبني المدرسة الجديدة B أبعد عن الحافة السفلى بنفس المسافة الأفقية من A."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "كيف يتغيّر الموضع الأمثل للنقطة M؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "تقترب M من النقطة المقابلة لـ A",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "تبتعد M عن A",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "لا يتغيّر",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-MAMAR-WASAT"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "B′ تنزل أيضا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "[AB′] يصبح أكثر انحدارا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أين يقطع الحافة العليا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "B′ تنزل مع B، فتصبح القطعة [AB′] أشدّ انحدارا وتقطع الحافة العليا أقرب إلى النقطة المقابلة لـ A.",
+        "incorrect": "تتبّع B′ ثم [AB′]."
+      },
+      "cognitiveDemand": "reason",
+      "difficulty": 5
+    }
+  ]
+}

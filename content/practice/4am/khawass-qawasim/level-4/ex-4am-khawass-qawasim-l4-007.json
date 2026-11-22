@@ -1,0 +1,152 @@
+{
+  "id": "ex-4am-khawass-qawasim-l4-007",
+  "lessonCode": "khawass-qawasim",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال BEM 2016 — n يقسم 5a + 3b",
+    "estimatedMinutes": 10,
+    "tags": [
+      "برهان",
+      "خاصية 1"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_khawass-qawasim_P4",
+      "modelledOn": "BEM 2016 I-1"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2016",
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "$a$ ، $b$ و $n$ أعداد طبيعية حيث $n \\neq 0$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "برهن أنه إذا كان $n$ يقسم $a$ فإن $n$ يقسم $5a$.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "لإثبات أن $n$ يقسم $5a$ يكفي إيجاد عدد طبيعي $k$ حيث $5a = n \\times k$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ترجم المعطى: $a = n \\times q$."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك سطرًا بسطر بالحل النموذجي، وانتبه إلى كل مرحلة من مراحل الاستدلال."
+      },
+      "solution": {
+        "lines": [
+          "المعطيات: $n$ يقسم $a$ ، أي يوجد عدد طبيعي $q$ حيث $a = n \\times q$.",
+          "المطلوب: $n$ يقسم $5a$.",
+          "لدينا $5a = 5 \\times n \\times q = n \\times (5q)$.",
+          "بوضع $k = 5q$ (عدد طبيعي) نجد $5a = n \\times k$ ، إذن $n$ يقسم $5a$."
+        ],
+        "result": "5a = n \\times (5q)"
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "برهن أنه إذا كان $n$ يقسم كلا من $a$ و $b$ فإن $n$ يقسم $5a + 3b$.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ترجم المعطيات: $a = n \\times q$ و $b = n \\times q'$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض في $5a + 3b$ وأخرج $n$ عاملًا مشتركًا."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك سطرًا بسطر بالحل النموذجي، وانتبه إلى كل مرحلة من مراحل الاستدلال."
+      },
+      "solution": {
+        "lines": [
+          "المعطيات: يوجد عددان طبيعيان $q$ و $q'$ حيث $a = n \\times q$ و $b = n \\times q'$.",
+          "المطلوب: $n$ يقسم $5a + 3b$.",
+          "$5a + 3b = 5 \\times n \\times q + 3 \\times n \\times q' = n(5q + 3q')$.",
+          "بوضع $k = 5q + 3q'$ (عدد طبيعي) نجد $5a + 3b = n \\times k$ ، إذن $n$ يقسم $5a + 3b$."
+        ],
+        "result": "5a + 3b = n(5q + 3q')"
+      },
+      "timeSeconds": 240
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "lead": "تطبيق: العدد 17 يقسم كلا من 85 و 51.",
+      "statement": "اكتب العدد $5 \\times 85 + 3 \\times 51$ على الشكل $17 \\times k$ حيث $k$ عدد طبيعي.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب قيمة $k$ فقط (عدد طبيعي)",
+      "expectedAnswer": "34",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب 85 و 51 على الشكل $17 \\times q$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "استعمل عبارة $k$ التي وجدتها في البرهان (السؤال 02)."
+        }
+      ],
+      "feedback": {
+        "correct": "$85 = 17 \\times 5$ و $51 = 17 \\times 3$ ، ومنه $5 \\times 85 + 3 \\times 51 = 17 \\times (5 \\times 5 + 3 \\times 3) = 17 \\times 34$.",
+        "incorrect": "طبّق البرهان: $k = 5q + 3q'$ حيث $85 = 17 \\times q$ و $51 = 17 \\times q'$."
+      },
+      "solution": {
+        "lines": [
+          "$85 = 17 \\times 5$ و $51 = 17 \\times 3$",
+          "$5 \\times 85 + 3 \\times 51 = 17 \\times (5 \\times 5 + 3 \\times 3)$",
+          "$5 \\times 85 + 3 \\times 51 = 17 \\times 34$"
+        ],
+        "result": "5 \\times 85 + 3 \\times 51 = 17 \\times 34"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "id": "ex-1am-tatbiq-qaida-harfiya-l4-001",
+  "lessonCode": "tatbiq-qaida-harfiya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — تسييج حديقة وثمن الشبك",
+    "estimatedMinutes": 10,
+    "tags": [
+      "قاعدة حرفية",
+      "أعداد عشرية",
+      "ثمن"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثالث",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "يُحسب طول شبك حديقة مستطيلة بعداها $a$ و $b$ بالمتر بالقاعدة $P=2\\times(a+b)$ ، وثمن المتر الواحد من الشبك $250$ دج."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $P$ للحديقة التي $a=14{,}5$ و $b=9{,}5$ .",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "48",
+      "misconceptionSignatures": [
+        {
+          "value": "38.5",
+          "id": "MISC-TATBIQ-ORDER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما قيمة كلّ حرف؟ وفي كم موضع يظهر كلّ حرف في العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع القيمة في كلّ موضع يظهر فيه الحرف، وأعد إشارة الضرب بين العددين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب بالأولويات: ما بين القوسين، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: النتيجة $48$ .",
+        "incorrect": "نحسب ما بين القوسين أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "نكتب القاعدة: $P=2\\times (a+b)$ .",
+          "نضع قيمة كلّ حرف في كلّ موضع يظهر فيه: $P=2\\times (14{,}5+9{,}5)$ .",
+          "نحسب: $P=2\\times 24$ .",
+          "نحسب: $P=48$ .",
+          "الجواب: $P=48$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما ثمن الشبك اللازم لهذه الحديقة بالدينار، إذا كان طول الشبك $48$ م وثمن المتر $250$ دج؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "12000",
+      "misconceptionSignatures": [],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما قيمة كلّ حرف؟ وفي كم موضع يظهر كلّ حرف في العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع القيمة في كلّ موضع يظهر فيه الحرف، وأعد إشارة الضرب بين العددين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب بالأولويات: ما بين القوسين، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: النتيجة $12000$ .",
+        "incorrect": "نضع القيمة في كلّ موضع ثمّ نحسب بالأولويات."
+      },
+      "solution": {
+        "lines": [
+          "نكتب العبارة: $48\\times 250$ .",
+          "نحسب: $12000$ .",
+          "الجواب: $12000$ ."
+        ]
+      },
+      "timeSeconds": 90,
+      "counted": false
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "تملك الجمعيّة $11\\,500$ دج. هل تكفي لشبك الحديقة التي $a=14{,}5$ و $b=9{,}5$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-ORDER"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما القاعدة في كلّ حالة؟ وما القيم المعطاة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القيمتين كلتيهما بالقاعدة المناسبة لكلّ حالة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن النتيجتين ثمّ أجب عن السؤال."
+        }
+      ],
+      "feedback": {
+        "correct": "قارنّا القيمة المحسوبة بالمبلغ المتوفّر.",
+        "incorrect": "نحسب ما بين القوسين أوّلًا، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "نحسب: $2\\times (14{,}5+9{,}5)\\times 250=12000$ .",
+          "نقارن مع $11500$ : المبلغ غير كافٍ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "ex-4am-maqati-mustawiya-l1-002",
+  "lessonCode": "maqati-mustawiya",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — مستو يمر بالمركز",
+    "estimatedMinutes": 1,
+    "tags": [
+      "دائرة كبرى"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_maqati-mustawiya_P1",
+      "modelledOn": "know-3"
+    }
+  },
+  "statement": {
+    "content": "كرة مركزها O ونصف قطرها $6\\,\\mathrm{cm}$ ، يقطعها مستو يشمل O."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المقطع هو:",
+      "learningPoints": [
+        {
+          "code": "4am_maqati-mustawiya_P1",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "دائرة نصف قطرها $12\\,\\mathrm{cm}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KURA-QUTR"
+        },
+        {
+          "id": "B",
+          "content": "دائرة كبرى نصف قطرها $6\\,\\mathrm{cm}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "نقطة واحدة هي O",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAQTA-MUMAS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما بعد المستوي عن المركز O؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$h = 0$ : كل نقطة من المقطع على الكرة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نصف قطر المقطع هو OM حيث M من الكرة."
+        }
+      ],
+      "feedback": {
+        "correct": "المستوي يشمل المركز ($h = 0$): المقطع دائرة كبرى نصف قطرها $R = 6\\,\\mathrm{cm}$ .",
+        "incorrect": "12 هو القطر لا نصف القطر، و O وحدها ليست من الكرة."
+      },
+      "difficulty": 1
+    }
+  ]
+}

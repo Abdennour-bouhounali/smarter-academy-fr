@@ -1,0 +1,258 @@
+{
+  "id": "ex-3am-nisba-miawiya-3am-l1-006",
+  "lessonCode": "nisba-miawiya-3am",
+  "level": 1,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — جدول التناسبية للنسبة",
+    "estimatedMinutes": 5,
+    "tags": [
+      "جدول تناسبية",
+      "نسبة مئوية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "3am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين",
+      "points": "02,5"
+    }
+  },
+  "statement": {
+    "content": "في قسم $32$ تلميذا يوجد $8$ بنات. نريد النسبة المئوية للبنات، فنضع الكلّ تحت العدد مئة في جدول التناسبية.",
+    "table": {
+      "head": [
+        "",
+        "العدد",
+        "النسبة المئوية"
+      ],
+      "rows": [
+        [
+          "البنات",
+          "8",
+          "$t$"
+        ],
+        [
+          "القسم كلّه",
+          "32",
+          "100"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "أيّ المساواتين تعبّر عن الجدول؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{32}{8} = \\dfrac{t}{100}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NISBA3-PART-WHOLE-SWAP"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{8}{32} = \\dfrac{t}{100}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{8}{100} = \\dfrac{t}{32}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NISBA3-PART-WHOLE-SWAP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الجزء؟ وما الكلّ الذي نقارن به؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نبحث عن العدد الذي يجعل الكسر «الجزء على الكلّ» مساويا للكسر «هذا العدد على مئة»."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع الكلّ تحت مئة في جدول تناسبية وضع الجزء تحت العدد المجهول، ثم أتمّم."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{8}{32} = \\dfrac{t}{100}$ .",
+        "incorrect": "النسبة المئوية هي العدد الذي يساوي الكسر «الجزء على الكلّ» حين نكتبه مقامه مئة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "الجزء $8$ يقابل $t$ والكلّ $32$ يقابل $100$ ، فالمعامل واحد في السطرين: $\\dfrac{8}{32} = \\dfrac{t}{100}$ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "أتمّم الجدول: ما النسبة المئوية $t$ للبنات؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "النسبة المئوية (بدون الرمز %)",
+      "expectedAnswer": "25",
+      "misconceptionSignatures": [
+        {
+          "value": "400",
+          "id": "MISC-NISBA3-PART-WHOLE-SWAP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الجزء؟ وما الكلّ الذي نقارن به؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نبحث عن العدد الذي يجعل الكسر «الجزء على الكلّ» مساويا للكسر «هذا العدد على مئة»."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع الكلّ تحت مئة في جدول تناسبية وضع الجزء تحت العدد المجهول، ثم أتمّم."
+        }
+      ],
+      "feedback": {
+        "correct": "$25$ .",
+        "incorrect": "النسبة المئوية هي العدد الذي يساوي الكسر «الجزء على الكلّ» حين نكتبه مقامه مئة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $\\dfrac{8}{32} = \\dfrac{t}{100}$ ، فنجد $t = \\dfrac{100 \\times 8}{32} = 25$ .",
+          "إذن النسبة المئوية هي $25\\,\\%$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "ما النسبة المئوية للبنين في هذا القسم؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "النسبة المئوية (بدون الرمز %)",
+      "expectedAnswer": "75",
+      "misconceptionSignatures": [
+        {
+          "value": "25",
+          "id": "MISC-NISBA3-PART-WHOLE-SWAP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الجزء؟ وما الكلّ الذي نقارن به؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نبحث عن العدد الذي يجعل الكسر «الجزء على الكلّ» مساويا للكسر «هذا العدد على مئة»."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع الكلّ تحت مئة في جدول تناسبية وضع الجزء تحت العدد المجهول، ثم أتمّم."
+        }
+      ],
+      "feedback": {
+        "correct": "$75$ .",
+        "incorrect": "النسبة المئوية هي العدد الذي يساوي الكسر «الجزء على الكلّ» حين نكتبه مقامه مئة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "البنون $32 - 8 = 24$ ، و $\\dfrac{24}{32} = 0{,}75$ ، أي $75\\,\\%$ ."
+        ]
+      },
+      "timeSeconds": 75
+    },
+    {
+      "id": "q4",
+      "step": "01",
+      "sub": "د",
+      "statement": "في قسم ثانٍ $48$ تلميذا منهم $12$ بنات. ما النسبة المئوية للبنات؟",
+      "learningPoints": [
+        {
+          "code": "3am_nisba-miawiya-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "النسبة المئوية (بدون الرمز %)",
+      "expectedAnswer": "25",
+      "misconceptionSignatures": [
+        {
+          "value": "400",
+          "id": "MISC-NISBA3-PART-WHOLE-SWAP"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الجزء؟ وما الكلّ الذي نقارن به؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نبحث عن العدد الذي يجعل الكسر «الجزء على الكلّ» مساويا للكسر «هذا العدد على مئة»."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضع الكلّ تحت مئة في جدول تناسبية وضع الجزء تحت العدد المجهول، ثم أتمّم."
+        }
+      ],
+      "feedback": {
+        "correct": "$25$ .",
+        "incorrect": "النسبة المئوية هي العدد الذي يساوي الكسر «الجزء على الكلّ» حين نكتبه مقامه مئة؛ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "نكتب $\\dfrac{12}{48} = \\dfrac{t}{100}$ ، فنجد $t = \\dfrac{100 \\times 12}{48} = 25$ .",
+          "إذن النسبة المئوية هي $25\\,\\%$ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

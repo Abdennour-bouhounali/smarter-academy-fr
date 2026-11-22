@@ -1,0 +1,224 @@
+{
+  "id": "ex-1am-ikhtizal-kitaba-kasriya-l4-004",
+  "lessonCode": "ikhtizal-kitaba-kasriya",
+  "level": 4,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثاني — رقم مجهول ثم كسر",
+    "estimatedMinutes": 11,
+    "tags": [
+      "قابلية القسمة",
+      "اختزال",
+      "كسر عشري"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s2"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثاني",
+      "heading": "التمرين الثاني",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "العدد $7\\square2$ عدد من ثلاثة أرقام، رقم عشراته مجهول."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما هو أكبر رقم نضعه مكان $\\square$ ليقبل العدد القسمة على 3؟",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "9",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب مجموع الأرقام المعروفة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ما الأرقام التي تجعل المجموع يقبل القسمة على 3؟"
+        }
+      ],
+      "feedback": {
+        "correct": "أكبرها 9: العدد 792.",
+        "incorrect": "يقبل عدد طبيعي القسمة على 3 إذا كان مجموع أرقامه يقبل القسمة على 3."
+      },
+      "solution": {
+        "lines": [
+          "$7 + \\square + 2$ يجب أن يقبل القسمة على 3: الأرقام الممكنة 0، 3، 6، 9.",
+          "أكبرها 9: العدد 792."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "lead": "نعتبر الكسر $\\dfrac{792}{1080}$.",
+      "statement": "أتمم: $\\dfrac{792}{1080} = \\dfrac{88}{\\ldots}$",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "120",
+      "misconceptionSignatures": [
+        {
+          "value": "376",
+          "id": "MISC-KASRIYA-JAMA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن الحدّين المعروفين اللذين في نفس الموضع (بسطين أو مقامين)."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بأيّ عدد نضرب (أو نقسم) أحدهما لنحصل على الآخر؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق نفس العملية على الحدّ الآخر من الكسر."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{792}{1080} = \\dfrac{792 \\div 9}{1080 \\div 9} = \\dfrac{88}{120}$ : قسمنا البسط والمقام على نفس العدد.",
+        "incorrect": "الكسر لا يتغيّر إذا ضربنا البسط والمقام في نفس العدد غير المعدوم أو قسمناهما عليه، أمّا إضافة نفس العدد إليهما فتغيّره."
+      },
+      "solution": {
+        "lines": [
+          "$\\dfrac{792}{1080} = \\dfrac{792 \\div 9}{1080 \\div 9} = \\dfrac{88}{120}$"
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "اختزل الكسر $\\dfrac{792}{1080}$ إلى أبسط شكل ممكن.",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "كسر على الشكل a/b لا يقبل الاختزال (أو عدد طبيعي)",
+      "expectedAnswer": "11/15",
+      "evaluationPolicy": {
+        "requiredForm": "irreducible"
+      },
+      "misconceptionSignatures": [
+        {
+          "value": "396/540",
+          "id": "MISC-KASRIYA-NAQIS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابحث عن قاسم مشترك للبسط والمقام بقواعد قابلية القسمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اقسم البسط والمقام على هذا القاسم، ثم أعد البحث في الكسر الجديد."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إذا لم تنفع القواعد، جرّب جداول الضرب (7، 11، 13…)."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{792}{1080} = \\dfrac{11}{15}$ ولا يقبل البسط والمقام قاسمًا مشتركًا غير 1.",
+        "incorrect": "نقسم البسط والمقام على قاسم مشترك لهما، ونعيد ذلك حتى لا يبقى قاسم مشترك غير 1.",
+        "notIrreducible": "الكتابة تساوي الكسر لكنها ما زالت قابلة للاختزال: ابحث عن قاسم مشترك آخر للبسط والمقام."
+      },
+      "solution": {
+        "lines": [
+          "$792 = 8 \\times 99$ و $1080 = 8 \\times 135$ ، إذن $\\dfrac{792}{1080} = \\dfrac{792 \\div 8}{1080 \\div 8} = \\dfrac{99}{135}$",
+          "$99 = 9 \\times 11$ و $135 = 9 \\times 15$ ، إذن $\\dfrac{99}{135} = \\dfrac{99 \\div 9}{135 \\div 9} = \\dfrac{11}{15}$",
+          "العددان 11 و 15 لا يقبلان قاسمًا مشتركًا غير 1: $\\dfrac{11}{15}$ في أبسط شكل ممكن."
+        ],
+        "result": "\\dfrac{792}{1080} = \\dfrac{11}{15}"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "هل يمكن كتابة $\\dfrac{11}{15}$ على شكل كسر عشري؟",
+      "learningPoints": [
+        {
+          "code": "1am_ikhtizal-kitaba-kasriya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-KASRIYA-KULL-ASHRI"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب مضاعفات المقام."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "هل يصل أحدها إلى 10 أو 100 أو 1000…؟"
+        }
+      ],
+      "feedback": {
+        "correct": "المقام 15 فيه العامل 3، ولا يقسم 3 أيّ عدد من الأعداد 10، 100، 1000…",
+        "incorrect": "لا يُكتب كسر على شكل كسر عشري إلا إذا وُجد عدد نضرب فيه مقامه (بعد الاختزال) لنجد 10 أو 100 أو 1000…"
+      },
+      "solution": {
+        "lines": [
+          "$15 = 3 \\times 5$ و $\\dfrac{11}{15}$ لا يقبل الاختزال.",
+          "مجموع أرقام 10، 100، 1000… هو 1: لا تقبل القسمة على 3، إذن الجواب: لا."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

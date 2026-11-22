@@ -1,0 +1,292 @@
+{
+  "id": "ex-4am-muadala-ula-l5-008",
+  "lessonCode": "muadala-ula",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2013 — كراء سيارة بقسنطينة",
+    "estimatedMinutes": 18,
+    "tags": [
+      "معادلة",
+      "وضعية إدماجية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_muadala-ula_P2",
+      "modelledOn": "BEM 2013 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2013",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "لكراء سيارة لمدة يوم واحد قصد زيارة الأقارب وصلة الرحم، تقترح ثلاث وكالات بقسنطينة التسعيرات التالية: الوكالة الأولى: 30DA للكيلومتر الواحد. الوكالة الثانية: 2000DA إضافة إلى 20DA للكيلومتر الواحد. الوكالة الثالثة: مبلغ جزافي قدره 7000DA مهما كانت المسافة المقطوعة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب تكلفة كراء سيارة لقطع مسافة 150km :",
+      "statement": "لدى الوكالة الأولى.",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المبلغ بـ DA",
+      "expectedAnswer": "4500",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض عدد الوحدات في عبارة التكلفة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الجداء ثم أضف المبلغ الثابت إن وُجد."
+        }
+      ],
+      "feedback": {
+        "correct": "$4500DA$ .",
+        "incorrect": "اضرب عدد الوحدات في السعر، ثم أضف المبلغ الثابت (الاشتراك) إن وُجد."
+      },
+      "solution": {
+        "lines": [
+          "$30 \\times 150 = 4500$"
+        ],
+        "result": "4500DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "لدى الوكالة الثانية.",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: المبلغ بـ DA",
+      "expectedAnswer": "5000",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض عدد الوحدات في عبارة التكلفة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب الجداء ثم أضف المبلغ الثابت إن وُجد."
+        }
+      ],
+      "feedback": {
+        "correct": "$5000DA$ .",
+        "incorrect": "اضرب عدد الوحدات في السعر، ثم أضف المبلغ الثابت (الاشتراك) إن وُجد."
+      },
+      "solution": {
+        "lines": [
+          "$2000 + 20 \\times 150 = 2000 + 3000$"
+        ],
+        "result": "5000DA"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "ليكن $x$ عدد الكيلومترات المقطوعة.",
+      "statement": "جد $x$ حتى تتساوى تكلفتا الوكالتين الأولى والثانية.",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المسافة بـ km",
+      "expectedAnswer": "200",
+      "misconceptionSignatures": [
+        {
+          "value": "1/200",
+          "id": "MISC-MUADALA-QISMA-MAQLUBA"
+        },
+        {
+          "value": "40",
+          "id": "MISC-MUADALA-NAQL-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عبّر عن تكلفة كل وكالة بدلالة $x$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب أن التكلفتين متساويتان."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "انقل حدود $x$ إلى طرف والأعداد إلى الطرف الآخر، ثم اقسم على معامل $x$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 200$ .",
+        "incorrect": "انقل كل حدّ بإشارة معاكسة، وجمّع الحدود المتشابهة، ثم اقسم على معامل $x$ بإشارته. تحقّق بالتعويض."
+      },
+      "solution": {
+        "lines": [
+          "$30x = 20x + 2000$",
+          "$30x - 20x = 2000$",
+          "$10x = 2000$",
+          "$x = \\dfrac{2000}{10}$"
+        ],
+        "result": "x = 200"
+      },
+      "work": "optional",
+      "timeSeconds": 180
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "جد $x$ حتى تتساوى تكلفتا الوكالتين الثانية والثالثة.",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: المسافة بـ km",
+      "expectedAnswer": "250",
+      "misconceptionSignatures": [
+        {
+          "value": "1/250",
+          "id": "MISC-MUADALA-QISMA-MAQLUBA"
+        },
+        {
+          "value": "450",
+          "id": "MISC-MUADALA-NAQL-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "تكلفة الوكالة الثالثة ثابتة: 7000DA ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب أن تكلفة الوكالة الثانية تساويها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اطرح 2000 من الطرفين ثم اقسم على 20."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = 250$ .",
+        "incorrect": "أجرِ كل عملية على الطرفين معًا، ثم اقسم على معامل $x$ بإشارته، وتحقّق بالتعويض."
+      },
+      "solution": {
+        "lines": [
+          "$20x + 2000 = 7000$",
+          "$20x = 7000 - 2000$",
+          "$20x = 5000$",
+          "$x = \\dfrac{5000}{20}$"
+        ],
+        "result": "x = 250"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    },
+    {
+      "id": "q5",
+      "step": "03",
+      "statement": "☜ يريد أب كراء سيارة لرحلة عائلية طولها 280km . أيّ وكالة أنسب له؟ برّر.",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "الوكالة الأولى",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "content": "الوكالة الثانية",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "content": "الوكالة الثالثة",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب تكلفة 280km لدى كل وكالة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الوكالة الأنسب هي الأقل تكلفة."
+        }
+      ],
+      "feedback": {
+        "correct": "الوكالة الثالثة: 7000DA مقابل 8400DA و 7600DA .",
+        "incorrect": "احسب التكلفات الثلاث من أجل 280km ثم قارن."
+      },
+      "solution": {
+        "lines": [
+          "الوكالة الأولى: $30 \\times 280 = 8400$",
+          "الوكالة الثانية: $2000 + 20 \\times 280 = 7600$",
+          "الوكالة الثالثة: $7000$",
+          "أقل تكلفة هي 7000DA ، إذن الوكالة الثالثة أنسب له."
+        ]
+      },
+      "timeSeconds": 180
+    }
+  ]
+}

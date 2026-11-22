@@ -1,0 +1,947 @@
+/**
+ * Le مختبر المنطق والبرهان — mise en page et dessin. Préfixe `sa-ml-lg`.
+ *
+ * Les conventions sont celles des autres instruments (numberLab.css,
+ * sequences.css) : mêmes teintes, mêmes rayons, même famille de police.
+ *
+ * ── RTL (§2) ─────────────────────────────────────────────────────────────
+ * Aucun sélecteur `[dir="rtl"]`, aucune déclaration `direction` sur la mise
+ * en page : tout passe par des propriétés LOGIQUES (`inset-inline-start`,
+ * `margin-inline-start`, `padding-inline`, `border-inline-start`,
+ * `text-align: start`), si bien que tout suit la direction de la page sans
+ * une ligne de plus.
+ *
+ * La NOTATION, elle, est en `dir="ltr"` depuis le JSX, et cette feuille
+ * fournit l'autre moitié de la paire exigée par ARABIC_RTL_CONTRACT §4 :
+ * `text-align: left` + `unicode-bidi: isolate` sur `.sa-ml-lg__math`. Sans
+ * la seconde moitié, « P ⇒ Q » reste collée au bord droit et paraît lue à
+ * l'envers. Les flèches ⇒ ⇔ ∀ ∃ ne se retournent JAMAIS : ce sont des
+ * symboles mathématiques, pas des flèches de prose.
+ *
+ * ── Mobile (§44) ─────────────────────────────────────────────────────────
+ * Mobile d'abord : la scène en haut, le pupitre dessous, repliable. À partir
+ * de 900 px le pupitre devient une colonne latérale. Les tables défilent
+ * horizontalement plutôt que de comprimer leurs colonnes, et toute cible
+ * tactile fait au moins 44 px.
+ *
+ * ── Couleur jamais seule (§45) ───────────────────────────────────────────
+ * Vrai/faux ne se distinguent pas par la seule couleur : une lettre ARABE
+ * (ص / خ) et un libellé accompagnent chaque teinte. Les lettres sont arabes
+ * parce que ce sont des MOTS abrégés (صحيحة / خاطئة) — contrairement aux
+ * symboles et aux variables, qui restent en notation internationale et que
+ * « قاموس الرموز » explique.
+ */
+
+.sa-ml-lg {
+  --lg-primary: #4f46e5;
+  --lg-true: #15803d;
+  --lg-true-soft: #dcfce7;
+  --lg-false: #b91c1c;
+  --lg-false-soft: #fee2e2;
+  --lg-unknown: #64748b;
+  --lg-surface: #ffffff;
+  --lg-muted: #64748b;
+  --lg-border: #e2e8f0;
+  --lg-ink: #0f172a;
+
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background: #f8fafc;
+  overflow: hidden;
+  font-family: 'Cairo', 'Inter', sans-serif;
+  color: var(--lg-ink);
+}
+
+/* ── La barre des aires ────────────────────────────────────────────────── */
+
+.sa-ml-lg__areas {
+  display: flex;
+  gap: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  overflow-x: auto;
+  background: var(--lg-surface);
+  border-block-end: 1px solid var(--lg-border);
+  scrollbar-width: thin;
+}
+
+.sa-ml-lg__area {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--lg-border);
+  border-radius: 999px;
+  background: #f8fafc;
+  color: var(--lg-muted);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.sa-ml-lg__area:hover { background: #eef2ff; color: var(--lg-primary); }
+.sa-ml-lg__area:focus-visible { outline: 2px solid var(--lg-primary); outline-offset: 2px; }
+
+.sa-ml-lg__area[aria-pressed='true'] {
+  background: var(--lg-primary);
+  border-color: var(--lg-primary);
+  color: #ffffff;
+}
+
+/* ── Le corps : scène + pupitre ────────────────────────────────────────── */
+
+.sa-ml-lg__body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 900px) {
+  .sa-ml-lg__body { flex-direction: row; }
+}
+
+.sa-ml-lg__stage {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sa-ml-lg__panel {
+  flex: 0 0 auto;
+  max-height: 46%;
+  overflow-y: auto;
+  padding: 0.85rem 1rem 1.25rem;
+  background: var(--lg-surface);
+  border-block-start: 1px solid var(--lg-border);
+}
+
+@media (min-width: 900px) {
+  .sa-ml-lg__panel {
+    max-height: none;
+    inline-size: 22rem;
+    border-block-start: none;
+    border-inline-start: 1px solid var(--lg-border);
+  }
+}
+
+.sa-ml-lg__panel[hidden] { display: none; }
+
+.sa-ml-lg__panel-toggle {
+  align-self: flex-start;
+  min-height: 44px;
+  margin: 0.5rem 1rem 0;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--lg-border);
+  border-radius: 0.6rem;
+  background: var(--lg-surface);
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+@media (min-width: 900px) { .sa-ml-lg__panel-toggle { display: none; } }
+
+/* ── Les cartes ────────────────────────────────────────────────────────── */
+
+.sa-ml-lg__card {
+  background: var(--lg-surface);
+  border: 1px solid var(--lg-border);
+  border-radius: 0.9rem;
+  padding: 0.9rem 1rem;
+}
+
+.sa-ml-lg__card--accent { border-color: #c7d2fe; background: #eef2ff; }
+
+.sa-ml-lg__title {
+  margin: 0 0 0.25rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.sa-ml-lg__lead {
+  margin: 0 0 0.75rem;
+  color: var(--lg-muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.sa-ml-lg__question {
+  margin: 0 0 0.6rem;
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.sa-ml-lg__note {
+  margin: 0.5rem 0 0;
+  font-size: 0.88rem;
+  color: var(--lg-muted);
+  line-height: 1.6;
+}
+
+.sa-ml-lg__sectionTitle {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--lg-muted);
+  text-transform: none;
+}
+
+/* ── La NOTATION : LTR, isolée du texte arabe ─────────────────────────── */
+
+.sa-ml-lg__math {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: isolate;
+  font-family: 'Inter', 'Cairo', sans-serif;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.sa-ml-lg__math--block {
+  display: block;
+  padding: 0.55rem 0.75rem;
+  background: #f8fafc;
+  border: 1px solid var(--lg-border);
+  border-radius: 0.6rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.sa-ml-lg__math--lead { font-size: 1.25rem; }
+
+/**
+ * Un ÉNONCÉ : une phrase arabe qui contient de la notation. Elle suit la
+ * direction de la page (`dir="auto"` côté JSX) — surtout PAS `direction: ltr`,
+ * qui en retournerait les mots. Seule la notation qu'elle contient s'isole,
+ * et l'algorithme bidi s'en charge sans qu'on ait à la baliser.
+ */
+.sa-ml-lg__statement {
+  margin: 0;
+  padding: 0.55rem 0.75rem;
+  background: #f8fafc;
+  border: 1px solid var(--lg-border);
+  border-radius: 0.6rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.7;
+  text-align: start;
+}
+
+/* ── Vrai / faux : jamais la couleur seule ─────────────────────────────── */
+
+.sa-ml-lg__verdict {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.sa-ml-lg__verdict--true { background: var(--lg-true-soft); color: var(--lg-true); border-color: #86efac; }
+.sa-ml-lg__verdict--false { background: var(--lg-false-soft); color: var(--lg-false); border-color: #fca5a5; }
+.sa-ml-lg__verdict--unknown { background: #f1f5f9; color: var(--lg-unknown); border-color: var(--lg-border); }
+
+.sa-ml-lg__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 1.4rem;
+  block-size: 1.4rem;
+  border-radius: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.sa-ml-lg__badge--true { background: var(--lg-true); color: #ffffff; }
+.sa-ml-lg__badge--false { background: var(--lg-false); color: #ffffff; }
+.sa-ml-lg__badge--unknown { background: #cbd5e1; color: #334155; }
+
+/* ── Boutons ───────────────────────────────────────────────────────────── */
+
+.sa-ml-lg__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-block-start: 0.75rem;
+}
+
+.sa-ml-lg__btn {
+  min-height: 44px;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--lg-border);
+  border-radius: 0.6rem;
+  background: var(--lg-surface);
+  color: var(--lg-ink);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.sa-ml-lg__btn:hover:not(:disabled) { background: #f1f5f9; }
+.sa-ml-lg__btn:focus-visible { outline: 2px solid var(--lg-primary); outline-offset: 2px; }
+.sa-ml-lg__btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.sa-ml-lg__btn--primary {
+  background: var(--lg-primary);
+  border-color: var(--lg-primary);
+  color: #ffffff;
+}
+
+.sa-ml-lg__btn--primary:hover:not(:disabled) { background: #4338ca; }
+
+.sa-ml-lg__btn--choice { flex: 1 1 auto; justify-content: center; }
+.sa-ml-lg__btn[aria-pressed='true'] {
+  border-color: var(--lg-primary);
+  background: #eef2ff;
+  color: var(--lg-primary);
+}
+
+.sa-ml-lg__btn--icon { min-inline-size: 44px; justify-content: center; padding: 0.45rem; }
+
+/* ── Champs ────────────────────────────────────────────────────────────── */
+
+.sa-ml-lg__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-block-start: 0.5rem;
+}
+
+.sa-ml-lg__label { font-size: 0.85rem; font-weight: 600; color: var(--lg-muted); }
+
+.sa-ml-lg__input {
+  min-height: 44px;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--lg-border);
+  border-radius: 0.6rem;
+  font: inherit;
+  font-size: 1rem;
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: isolate;
+}
+
+.sa-ml-lg__input:focus-visible { outline: 2px solid var(--lg-primary); outline-offset: 1px; }
+
+.sa-ml-lg__select {
+  min-height: 44px;
+  inline-size: 100%;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--lg-border);
+  border-radius: 0.6rem;
+  background: var(--lg-surface);
+  font: inherit;
+  font-size: 0.92rem;
+}
+
+/* ── La table de vérité ────────────────────────────────────────────────── */
+
+.sa-ml-lg__tableWrap { overflow-x: auto; }
+
+.sa-ml-lg__table {
+  inline-size: 100%;
+  border-collapse: collapse;
+  direction: ltr;
+  unicode-bidi: isolate;
+  font-variant-numeric: tabular-nums;
+}
+
+.sa-ml-lg__table th,
+.sa-ml-lg__table td {
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--lg-border);
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.sa-ml-lg__table th { background: #f8fafc; font-weight: 700; }
+.sa-ml-lg__table tbody tr.is-current { background: #eef2ff; }
+.sa-ml-lg__table tbody tr.is-current td { font-weight: 800; }
+.sa-ml-lg__table td.is-true { color: var(--lg-true); }
+.sa-ml-lg__table td.is-false { color: var(--lg-false); }
+
+.sa-ml-lg__tableNote { margin: 0.5rem 0 0; font-size: 0.85rem; color: var(--lg-muted); }
+
+/* ── Les diagrammes SVG ────────────────────────────────────────────────── */
+
+.sa-ml-lg__svg {
+  inline-size: 100%;
+  block-size: auto;
+  direction: ltr;
+  overflow: visible;
+}
+
+.sa-ml-lg__svgLabel { font-size: 12px; font-weight: 600; fill: var(--lg-muted); }
+.sa-ml-lg__svgValue { font-size: 13px; font-weight: 700; fill: var(--lg-ink); }
+
+/* ── Le constructeur de preuve ─────────────────────────────────────────── */
+
+.sa-ml-lg__proof {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (min-width: 1100px) {
+  .sa-ml-lg__proof { flex-direction: row; align-items: flex-start; }
+  .sa-ml-lg__proofCol { flex: 1 1 0; min-inline-size: 0; }
+}
+
+.sa-ml-lg__steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sa-ml-lg__step {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  inline-size: 100%;
+  min-height: 44px;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--lg-border);
+  border-radius: 0.7rem;
+  background: var(--lg-surface);
+  font: inherit;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  text-align: start;
+  cursor: pointer;
+  touch-action: none;
+}
+
+.sa-ml-lg__step:hover { border-color: #c7d2fe; background: #f8fafc; }
+.sa-ml-lg__step:focus-visible { outline: 2px solid var(--lg-primary); outline-offset: 2px; }
+.sa-ml-lg__step[aria-pressed='true'] { border-color: var(--lg-primary); background: #eef2ff; }
+.sa-ml-lg__step.is-dragging { opacity: 0.6; }
+.sa-ml-lg__step.is-dropTarget { border-color: var(--lg-primary); border-style: dashed; }
+.sa-ml-lg__step.is-refused { animation: sa-ml-lg-shake 0.3s; border-color: var(--lg-false); }
+.sa-ml-lg__step.is-contradiction { border-color: #fca5a5; background: var(--lg-false-soft); }
+
+@keyframes sa-ml-lg-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sa-ml-lg__step.is-refused { animation: none; }
+  .sa-ml-lg__step { transition: none; }
+}
+
+.sa-ml-lg__stepRole {
+  flex: 0 0 auto;
+  padding: 0.1rem 0.45rem;
+  border-radius: 0.4rem;
+  background: #f1f5f9;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--lg-muted);
+}
+
+.sa-ml-lg__stepText { flex: 1 1 auto; min-inline-size: 0; }
+.sa-ml-lg__stepIndex {
+  flex: 0 0 auto;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--lg-muted);
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.sa-ml-lg__chain { min-height: 4rem; }
+
+.sa-ml-lg__chainEmpty {
+  padding: 1rem;
+  border: 1px dashed var(--lg-border);
+  border-radius: 0.7rem;
+  color: var(--lg-muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* L'arbre : des rangs, et ce qui les relie. */
+.sa-ml-lg__tree { display: flex; flex-direction: column; gap: 0.4rem; }
+.sa-ml-lg__treeRank { display: flex; flex-wrap: wrap; gap: 0.4rem; justify-content: center; }
+.sa-ml-lg__treeNode {
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--lg-border);
+  border-radius: 0.5rem;
+  background: var(--lg-surface);
+  font-size: 0.82rem;
+}
+.sa-ml-lg__treeNode.is-placed { border-color: var(--lg-true); background: var(--lg-true-soft); }
+.sa-ml-lg__treeJoin { text-align: center; color: var(--lg-muted); font-size: 0.9rem; }
+
+/* Le déroulé de l'arbre (2026-09-30) : le rang courant en orange, la conclusion en vert. */
+.sa-ml-lg__treeRank.is-current { padding: 0.3rem; border-radius: 0.6rem; box-shadow: 0 0 0 2px #f36d21; }
+.sa-ml-lg__treeRank.is-conclusion .sa-ml-lg__treeNode { border-color: var(--lg-true); background: var(--lg-true-soft); font-weight: 700; }
+.sa-ml-lg__treeRole {
+  margin-inline-end: 0.35rem;
+  padding: 0 0.35rem;
+  border-radius: 0.35rem;
+  background: #f1f5f9;
+  color: var(--lg-muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+/* Un exemple de récurrence, pas à pas : الحالة الأولى → الانتقال → الخلاصة. */
+.sa-ml-lg__caseSteps { margin: 0.5rem 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+.sa-ml-lg__caseStep {
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--lg-border);
+  border-radius: 0.6rem;
+  background: var(--lg-surface);
+}
+.sa-ml-lg__caseStep.is-current { border-color: #f36d21; box-shadow: 0 0 0 2px rgba(243, 109, 33, 0.18); }
+.sa-ml-lg__caseStepLine { margin: 0; font-size: 0.86rem; line-height: 1.7; }
+
+/* ── Messages ──────────────────────────────────────────────────────────── */
+
+.sa-ml-lg__message {
+  margin-block-start: 0.6rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 0.6rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  border: 1px solid transparent;
+}
+
+.sa-ml-lg__message--ok { background: var(--lg-true-soft); color: #14532d; border-color: #86efac; }
+.sa-ml-lg__message--no { background: var(--lg-false-soft); color: #7f1d1d; border-color: #fca5a5; }
+.sa-ml-lg__message--info { background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe; }
+.sa-ml-lg__message--warn { background: #fffbeb; color: #78350f; border-color: #fcd34d; }
+
+.sa-ml-lg__chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-block-start: 0.5rem; }
+
+.sa-ml-lg__chip {
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: #f1f5f9;
+  border: 1px solid var(--lg-border);
+  font-size: 0.82rem;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.sa-ml-lg__chip--true { background: var(--lg-true-soft); border-color: #86efac; color: #14532d; }
+.sa-ml-lg__chip--false { background: var(--lg-false-soft); border-color: #fca5a5; color: #7f1d1d; }
+
+/* ── Le texte réservé aux lecteurs d'écran ────────────────────────────── */
+
+.sa-ml-lg__sr {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Le dictionnaire des symboles ─────────────────────────────────────────
+ *
+ * Deux colonnes : le SYMBOLE (en `dir="ltr"`, c'est de la notation) et son
+ * sens en arabe. La colonne du symbole a une largeur fixe pour que les
+ * signes s'alignent et se comparent d'un coup d'œil.
+ */
+
+.sa-ml-lg__dictToggle {
+  inline-size: 100%;
+  justify-content: space-between;
+}
+
+.sa-ml-lg__dictChevron { transition: transform 0.15s; }
+.sa-ml-lg__dictChevron.is-open { transform: rotate(180deg); }
+
+@media (prefers-reduced-motion: reduce) {
+  .sa-ml-lg__dictChevron { transition: none; }
+}
+
+.sa-ml-lg__dictBody { margin-block-start: 0.75rem; }
+
+.sa-ml-lg__dictList {
+  margin: 0 0 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.sa-ml-lg__dictRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  padding: 0.35rem 0.5rem;
+  border-radius: 0.5rem;
+  background: #f8fafc;
+}
+
+.sa-ml-lg__dictSymbol {
+  flex: 0 0 2.75rem;
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  text-align: center;
+  color: var(--lg-primary);
+}
+
+.sa-ml-lg__dictMeaning {
+  margin: 0;
+  flex: 1 1 auto;
+  min-inline-size: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.sa-ml-lg__dictReading { color: var(--lg-muted); font-size: 0.84rem; }
+
+.sa-ml-lg__dictExample {
+  font-size: 0.86rem;
+  color: #334155;
+  background: #ffffff;
+  border: 1px solid var(--lg-border);
+  border-radius: 0.4rem;
+  padding: 0.1rem 0.4rem;
+  align-self: flex-start;
+  max-inline-size: 100%;
+  overflow-x: auto;
+}
+
+/* ── L'escalier de la récurrence ──────────────────────────────────────── */
+
+.sa-ml-lg__stairs { max-inline-size: 26rem; inline-size: 100%; margin-inline: auto; display: block; }
+
+/* L'escalier de l'expérience est l'objet CENTRAL (§3, §31) : il ne se laisse
+   pas comprimer par le panneau de résultat, et il reste lisible seul. */
+.sa-ml-lg__climbStage .sa-ml-lg__stairs { max-inline-size: 30rem; }
+
+.sa-ml-lg__caseBody {
+  margin-block-start: 0.5rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--lg-border);
+  border-radius: 0.7rem;
+  background: #f8fafc;
+}
+
+/* ── L'escalier qu'on monte (§25) ─────────────────────────────────────────
+ *
+ * Mobile : la règle, puis le SLLAM, puis le résultat, puis les actions —
+ * l'ordre du geste. À partir de 860 px l'escalier et le panneau de résultat
+ * se mettent côte à côte, l'escalier gardant la place principale.
+ */
+
+.sa-ml-lg__climb {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 860px) {
+  .sa-ml-lg__climb { flex-direction: row; align-items: flex-start; }
+  /* L'escalier d'abord, et plus large : c'est lui qu'on regarde. */
+  .sa-ml-lg__climbStage { flex: 1 1 60%; min-inline-size: 0; position: sticky; top: 0; }
+  .sa-ml-lg__climbPanel { flex: 1 1 40%; min-inline-size: 0; }
+}
+
+.sa-ml-lg__climbStage { min-inline-size: 0; }
+
+.sa-ml-lg__climbPanel {
+  padding: 0.75rem 0.85rem;
+  border: 1px solid var(--lg-border);
+  border-radius: 0.8rem;
+  background: #f8fafc;
+}
+
+/* Les marches : cliquables, focalisables, et distinctes sans la couleur. */
+.sa-ml-lg__stair {
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.sa-ml-lg__stair:hover { opacity: 0.85; }
+
+.sa-ml-lg__stair:focus-visible {
+  outline: 2px solid var(--lg-primary);
+  outline-offset: 2px;
+}
+
+.sa-ml-lg__stair.is-current rect {
+  /* La marche courante PULSE doucement — l'état reste lisible sans elle. */
+  animation: sa-ml-lg-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes sa-ml-lg-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.72; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sa-ml-lg__stair.is-current rect { animation: none; }
+  .sa-ml-lg__stair { transition: none; }
+}
+
+/* Le constructeur de règle : des jetons, pas un clavier. */
+.sa-ml-lg__builder {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-block-start: 0.5rem;
+}
+
+.sa-ml-lg__btn--token {
+  min-inline-size: 44px;
+  padding: 0.4rem 0.7rem;
+  justify-content: center;
+}
+
+/* La lecture d'une marche : règle, résultat, attendu. */
+.sa-ml-lg__readout {
+  margin: 0.5rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.sa-ml-lg__readout > div {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.sa-ml-lg__readout dt {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--lg-muted);
+  min-inline-size: 6.5rem;
+}
+
+.sa-ml-lg__readout dd { margin: 0; font-weight: 700; }
+
+.sa-ml-lg__grammar { margin-block-start: 0.75rem; }
+.sa-ml-lg__grammar summary { cursor: pointer; display: inline-flex; }
+.sa-ml-lg__grammar summary::-webkit-details-marker { display: none; }
+
+/* ── L'ESCALIER DES PROPOSITIONS (§5n.6ter) ───────────────────────────── */
+
+/**
+ * Les DÉFINITIONS des suites : u₀ = −1 · uₙ₊₁ = ⅓uₙ + 2.
+ *
+ * Une liste sans puces : ce sont des lignes de tableau noir, pas une
+ * énumération de prose. Chaque ligne est de la NOTATION (`Notation` l'isole
+ * déjà en LTR) posée dans une page RTL.
+ */
+.sa-ml-lg__defs {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.sa-ml-lg__defs li {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--lg-line, #e2e8f0);
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+/* La proposition à démontrer, et son bouton « جرّب عبارة أخرى ». */
+.sa-ml-lg__propose {
+  margin-block-start: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Les deux membres de la proposition, saisis séparément (§18). */
+.sa-ml-lg__input--term {
+  inline-size: 7rem;
+  flex: 0 1 7rem;
+  text-align: center;
+}
+
+/**
+ * La relation reste ÉTROITE et centrée : c'est un symbole, pas une phrase.
+ * `min-inline-size: 44px` tient la cible tactile du contrat (§44).
+ */
+.sa-ml-lg__select--relation {
+  inline-size: auto;
+  min-inline-size: 44px;
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+/**
+ * Les maillons d'hérédité POSÉS : une suite numérotée.
+ *
+ * Le numéro n'est pas décoratif. L'écran demande « رتّب الخطوات » — ranger
+ * les étapes — et sans repère visuel d'ORDRE la liste ne montrait pas ce
+ * qu'elle demandait. Le compteur est placé côté début de ligne (RTL) et
+ * reste en chiffres latins, comme toute la notation du laboratoire.
+ */
+.sa-ml-lg__chain {
+  counter-reset: sa-ml-lg-link;
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.sa-ml-lg__chain li {
+  counter-increment: sa-ml-lg-link;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--lg-border);
+  border-radius: 0.6rem;
+  background: var(--lg-surface);
+}
+
+.sa-ml-lg__chain li::before {
+  content: counter(sa-ml-lg-link);
+  flex: 0 0 auto;
+  min-inline-size: 1.5rem;
+  padding-block: 0.05rem;
+  border-radius: 0.4rem;
+  background: #eef2ff;
+  color: var(--lg-primary);
+  font-weight: 800;
+  font-size: 0.8rem;
+  text-align: center;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* Le maillon posé à la mauvaise place. */
+.sa-ml-lg__chain li.is-wrong {
+  border-color: #dc2626;
+  background: #fef2f2;
+}
+
+.sa-ml-lg__chain li.is-wrong::before {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/**
+ * Mobile (§36) : le constructeur passe en colonne plutôt que de déborder.
+ * Aucun défilement horizontal de page n'est acceptable, jamais.
+ */
+@media (max-width: 40rem) {
+  .sa-ml-lg__input--term { inline-size: 100%; flex-basis: 100%; }
+  .sa-ml-lg__propose { align-items: stretch; }
+}
+
+/* ── « D'un seul regard » (MATH_LAB §3.5) ─────────────────────────────────
+ * 1. Le pupitre (cycle, تمارين، كرّاسي، قاموس الرموز) n'occupe une colonne
+ *    que lorsqu'il contient quelque chose à lire : les exercices ou le
+ *    lexique ouverts (`--side`). Sinon, c'est une barre compacte au-dessus
+ *    de la scène.
+ * 2. La scène range ses cartes en DEUX colonnes dès qu'elle en a la place :
+ *    l'énoncé en tête (sur toute la largeur quand il y a au moins trois
+ *    cartes), puis la figure À CÔTÉ de ce qui l'explique — jamais trois
+ *    écrans plus bas. */
+@media (min-width: 900px) {
+  .sa-ml-lg__body:not(.sa-ml-lg__body--side) { flex-direction: column; }
+
+  .sa-ml-lg__body:not(.sa-ml-lg__body--side) > .sa-ml-lg__panel {
+    order: -1;
+    inline-size: auto;
+    max-height: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 0.75rem;
+    padding: 0.45rem 1rem;
+    border-inline-start: none;
+    border-block-end: 1px solid var(--lg-border);
+  }
+
+  .sa-ml-lg__body:not(.sa-ml-lg__body--side) > .sa-ml-lg__panel > .sa-ml-lg__lead {
+    flex: 1 1 16rem;
+    margin: 0;
+    font-size: 0.82rem;
+  }
+
+  .sa-ml-lg__body:not(.sa-ml-lg__body--side) > .sa-ml-lg__panel > .sa-ml-lg__actions { margin: 0; }
+
+  .sa-ml-lg__body:not(.sa-ml-lg__body--side) > .sa-ml-lg__panel > [data-ml-lg-dictionary] {
+    padding: 0;
+    border: none;
+    background: transparent;
+  }
+
+  .sa-ml-lg__body--side > .sa-ml-lg__panel { inline-size: 20rem; }
+  /* Le repli est une affaire de téléphone : au-delà, le pupitre est toujours là. */
+  .sa-ml-lg__body--side > .sa-ml-lg__panel[hidden] { display: block; }
+}
+
+.sa-ml-lg__body { container-type: inline-size; container-name: lg-body; }
+
+@container lg-body (min-width: 760px) {
+  .sa-ml-lg__body:not(.sa-ml-lg__body--side) > .sa-ml-lg__stage {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-content: start;
+    align-items: start;
+  }
+}
+
+@container lg-body (min-width: 1100px) {
+  .sa-ml-lg__body--side > .sa-ml-lg__stage {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-content: start;
+    align-items: start;
+  }
+}
+
+/* Au moins trois cartes : l'énoncé (la première) couvre les deux colonnes.
+   Sans effet hors grille. */
+.sa-ml-lg__stage > :first-child:nth-last-child(n + 3),
+.sa-ml-lg__stage > .sa-ml-lg__card--wide { grid-column: 1 / -1; }
+
+/* بناء البرهان : l'énoncé À CÔTÉ du tableau (cartes + preuve empilées), la
+   شجرة البرهان dessous sur toute la largeur. */
+.sa-ml-lg__stage:has(> .sa-ml-lg__proof) > :first-child { grid-column: auto; }
+.sa-ml-lg__stage:has(> .sa-ml-lg__proof) > :last-child:not(.sa-ml-lg__proof) { grid-column: 1 / -1; }
+
+@container lg-body (min-width: 760px) {
+  .sa-ml-lg__body:not(.sa-ml-lg__body--side) > .sa-ml-lg__stage > .sa-ml-lg__proof { flex-direction: column; align-items: stretch; }
+}

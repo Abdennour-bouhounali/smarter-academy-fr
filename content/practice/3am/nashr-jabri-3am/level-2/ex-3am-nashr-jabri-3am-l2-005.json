@@ -1,0 +1,201 @@
+{
+  "id": "ex-3am-nashr-jabri-3am-l2-005",
+  "lessonCode": "nashr-jabri-3am",
+  "level": 2,
+  "metadata": {
+    "title": "أيّ الجداءات يساوي العبارة المعطاة؟",
+    "estimatedMinutes": 7,
+    "tags": [
+      "نشر",
+      "مقارنة عبارات"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "self-8",
+      "page": 65,
+      "section": "أؤكّد تعلّماتي",
+      "number": 8
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "لا نريد النشر الكامل لكل جداء: نحتاج إلى فحص ذكي للإشارات ثم تأكيد بالنشر."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "أيّ الجداءات الآتية يساوي $x^2 - 2x - 8$ ؟ (دون نشر كامل: يكفي أن تفحص الحدّ الثابت ثم حدّ $x$ )",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(x - 4)(x + 2)$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$(x - 4)(x - 2)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-NEG-NEG"
+        },
+        {
+          "id": "C",
+          "content": "$(4 - x)(x + 2)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-SIGN-NEG"
+        },
+        {
+          "id": "D",
+          "content": "$(x + 4)(x - 2)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-SIGN-NEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني: أربعة جداءات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات الأربعة واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء الأصلي وفي النتيجة: يجب أن تجد العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$x^2 - 2x - 8$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$(x-4)(x+2) = x^2 + 2x - 4x - 8 = x^2 - 2x - 8$ ✓",
+          "$(4-x)(x+2) = -x^2 + 2x + 8$ ، و $(x-4)(x-2) = x^2 - 6x + 8$ ، و $(x+4)(x-2) = x^2 + 2x - 8$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "أيّ الجداءات الآتية يساوي $x^2 + x - 6$ ؟",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$(x + 3)(x - 2)$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$(x - 3)(x + 2)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-SIGN-NEG"
+        },
+        {
+          "id": "C",
+          "content": "$(x + 3)(x + 2)$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-NASHR-NEG-NEG"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني: أربعة جداءات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات الأربعة واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء الأصلي وفي النتيجة: يجب أن تجد العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "$x^2 + x - 6$ .",
+        "incorrect": "انشر بتوزيع كل حدّ على كل حدّ، وانتبه إلى الإشارات، ثم اجمع الحدود المتشابهة."
+      },
+      "solution": {
+        "lines": [
+          "$(x+3)(x-2) = x^2 - 2x + 3x - 6 = x^2 + x - 6$ ✓",
+          "$(x-3)(x+2) = x^2 - x - 6$ و $(x+3)(x+2) = x^2 + 5x + 6$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "برّر اختيارك في السؤال الأول بنشر الجداء الذي اخترته، ثم بيّن بنشر أحد الجداءات الأخرى أنه لا يساوي $x^2 - 2x - 8$ .",
+      "learningPoints": [
+        {
+          "code": "3am_nashr-jabri-3am_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل حدّ من القوس الأول يُضرب في كل حدّ من القوس الثاني: أربعة جداءات."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اكتب الجداءات الأربعة واحدًا واحدًا مع إشاراتها، ثم اجمع الحدود المتشابهة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق بتعويض $x$ بعدد صغير في الجداء الأصلي وفي النتيجة: يجب أن تجد العدد نفسه."
+        }
+      ],
+      "feedback": {
+        "correct": "قارن تبريرك بالحل النموذجي: كل خطوة مكتوبة ومعلّلة.",
+        "incorrect": "اطّلع على الحل النموذجي وقارن به تبريرك خطوة خطوة."
+      },
+      "solution": {
+        "lines": [
+          "$(x-4)(x+2) = x^2 + 2x - 4x - 8 = x^2 - 2x - 8$ : هذا هو الجداء المطلوب.",
+          "$(x-4)(x-2) = x^2 - 2x - 4x + 8 = x^2 - 6x + 8 \\neq x^2 - 2x - 8$ ."
+        ]
+      },
+      "timeSeconds": 150
+    }
+  ]
+}

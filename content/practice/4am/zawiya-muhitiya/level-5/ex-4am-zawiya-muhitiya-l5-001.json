@@ -1,0 +1,137 @@
+{
+  "id": "ex-4am-zawiya-muhitiya-l5-001",
+  "lessonCode": "zawiya-muhitiya",
+  "level": 5,
+  "metadata": {
+    "title": "نشاط 4 — قول هوارية",
+    "estimatedMinutes": 4,
+    "tags": [
+      "قول هوارية",
+      "برهان"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-4",
+      "page": 153,
+      "section": "أنشطة",
+      "number": 4
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 153): تضيف هوارية: «تبقى العلاقة $\\widehat{AOB} = 2\\widehat{ADB}$ صحيحة إذا كان [AD] و [BD] وترين كيفيين في (𝒞)» (الشكل).",
+    "figure": {
+      "points": {
+        "O": [
+          0,
+          0
+        ],
+        "A": [
+          -1.5321,
+          1.2856
+        ],
+        "B": [
+          1.5321,
+          1.2856
+        ],
+        "D": [
+          0.0,
+          -2.0
+        ]
+      },
+      "circles": [
+        {
+          "center": "O",
+          "radius": 2
+        }
+      ],
+      "arcs": [
+        {
+          "center": "O",
+          "from": "B",
+          "to": "A",
+          "sweep": "ccw",
+          "tone": "rose",
+          "bold": true
+        }
+      ],
+      "segments": [
+        {
+          "from": "O",
+          "to": "A",
+          "tone": "indigo"
+        },
+        {
+          "from": "O",
+          "to": "B",
+          "tone": "indigo"
+        },
+        {
+          "from": "D",
+          "to": "A",
+          "tone": "amber"
+        },
+        {
+          "from": "D",
+          "to": "B",
+          "tone": "amber"
+        }
+      ],
+      "ariaLabel": "دائرة مركزها O، القوس AB الصغير ملوّن، الزاوية المركزية AOB والزاوية المحيطية ADB",
+      "maxWidth": 380
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "هل هي على صواب؟ أيّ تبرير صحيح؟",
+      "learningPoints": [
+        {
+          "code": "4am_zawiya-muhitiya_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 5,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "لا: العلاقة صحيحة فقط إذا كان [AD] قطرا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-QAWS"
+        },
+        {
+          "id": "B",
+          "content": "نعم: لأن المثلث ADB متساوي الساقين دائما",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUHITIYA-MUTASAWIYA"
+        },
+        {
+          "id": "C",
+          "content": "نعم: نرسم القطر [DD₁] ونطبّق قول مزيان على كل جزء، ثم نجمع (أو نطرح)",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "حدّد القوس الذي تحصره كل زاوية: هل هو نفس القوس؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "قارن الزاويتين: أيهما أكبر، المركزية أم المحيطية؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قيس الزاوية المحيطية نصف قيس الزاوية المركزية التي تحصر معها نفس القوس."
+        }
+      ],
+      "feedback": {
+        "correct": "القطر المار بـ D يقسم كلا من الزاويتين إلى جزأين، وكل جزء يحقق قول مزيان.",
+        "incorrect": "المثلث ADB ليس متساوي الساقين في الحالة العامة."
+      }
+    }
+  ]
+}

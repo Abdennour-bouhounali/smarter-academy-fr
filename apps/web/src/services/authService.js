@@ -1,4 +1,5 @@
 import { apiRequest, ApiError, classifyStatus } from './apiClient';
+import { apiMessage } from './apiMessage';
 
 /**
  * L'adresse de l'API, telle que le navigateur doit l'employer pour QUITTER
@@ -7,11 +8,10 @@ import { apiRequest, ApiError, classifyStatus } from './apiClient';
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api/v1';
 
 /**
- * Registers a new student account from email + password alone and returns
- * an authenticated session, exactly like login() does. Self-registration
- * always produces a student — the backend ignores any role sent by the
- * client. Grade and any other profile data are collected afterwards
- * (see updateGrade()), not at registration.
+ * Registers a new account from « الاسم و اللقب » + email + password and
+ * returns an authenticated session, exactly like login() does. The role comes
+ * from a server whitelist (student by default, or teacher). Grade is collected
+ * afterwards (see updateGrade()), not at registration.
  *
  * `acceptLegal` est un BOOLÉEN, et c'est tout ce que le client transmet du
  * consentement : les versions acceptées sont écrites par le SERVEUR, d'après
@@ -22,19 +22,34 @@ const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api/v1';
  * @throws {ApiError} On network failure or a non-2xx response (e.g. a
  *   duplicate email or a weak password come back as 422).
  */
-export async function register({ email, password, acceptLegal }) {
+export async function register({
+  firstName,
+  lastName,
+  email,
+  password,
+  acceptLegal,
+  accountType = 'student',
+  classJoinLink,
+  classJoinConsent,
+}) {
+  // `accountType` : 'student' (défaut) ou 'teacher'. Le serveur tient la
+  // liste blanche ; le client ne fait que transmettre le choix.
+  // `classJoinLink` + `classJoinConsent` : l'élève vient du lien d'une classe
+  // et y a consenti ; le serveur revalide le jeton et rejoint à la
+  // vérification de l'adresse (PendingClassJoin).
+  const body = { firstName, lastName, email, password, accept_legal: acceptLegal, accountType };
+  if (classJoinLink && classJoinConsent === true) {
+    body.classJoinLink = classJoinLink;
+    body.classJoinConsent = true;
+  }
   const { ok, status, data } = await apiRequest('/auth/register', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email, password, accept_legal: acceptLegal }),
+    body: JSON.stringify(body),
   });
 
   if (!ok) {
-    throw new ApiError(
-      data?.errors?.accept_legal?.[0] || data?.message || 'Erreur lors de l’inscription',
-      classifyStatus(status),
-      status,
-    );
+    throw new ApiError(apiMessage('register', data, status), classifyStatus(status), status);
   }
 
   return data;
@@ -53,7 +68,7 @@ export async function login(email, password) {
   });
 
   if (!ok) {
-    throw new ApiError(data?.message || 'Erreur de connexion', classifyStatus(status), status);
+    throw new ApiError(apiMessage('login', data, status), classifyStatus(status), status);
   }
 
   return data;
@@ -70,7 +85,7 @@ export async function fetchCurrentUser(token) {
   });
 
   if (!ok || !data?.success) {
-    throw new ApiError(data?.message || 'Session invalide.', classifyStatus(status), status);
+    throw new ApiError(apiMessage('session', data, status), classifyStatus(status), status);
   }
 
   return data.user;
@@ -89,8 +104,28 @@ export async function logout(token) {
   });
 
   if (!ok) {
-    throw new ApiError(data?.message || 'Erreur de déconnexion', classifyStatus(status), status);
+    throw new ApiError(apiMessage('logout', data, status), classifyStatus(status), status);
   }
+}
+
+/**
+ * Changes the current user's « الاسم و اللقب » — students and teachers alike
+ * (profile page, and the onboarding step for accounts that have none yet).
+ * @returns {Promise<object>} The updated user.
+ * @throws {ApiError} On network failure or a non-2xx response.
+ */
+export async function updateProfile(token, { firstName, lastName }) {
+  const { ok, status, data } = await apiRequest('/auth/profile', {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+    body: JSON.stringify({ firstName, lastName }),
+  });
+
+  if (!ok) {
+    throw new ApiError(apiMessage('profileUpdate', data, status), classifyStatus(status), status);
+  }
+
+  return data.user;
 }
 
 /**
@@ -107,12 +142,11 @@ export async function updateGrade(token, grade) {
   });
 
   if (!ok) {
-    throw new ApiError(data?.message || 'Erreur lors du changement de classe.', classifyStatus(status), status);
+    throw new ApiError(apiMessage('gradeUpdate', data, status), classifyStatus(status), status);
   }
 
   return data.user;
 }
-
 
 /**
  * Redemande l'e-mail de vérification pour l'élève CONNECTÉ.
@@ -130,30 +164,58 @@ export async function resendVerificationEmail(token) {
   });
 
   if (!ok) {
-    throw new ApiError(
-      status === 429
-        ? 'Trop de demandes. Patientez quelques minutes avant de réessayer.'
-        : data?.message || 'Impossible d’envoyer l’e-mail.',
-      classifyStatus(status),
-      status,
-    );
+    // apiMessage() traite lui-même le 429 (voir apiMessage.js) : la branche
+    // explicite n'avait plus de raison d'être, et elle était française.
+    throw new ApiError(apiMessage('sendEmail', data, status), classifyStatus(status), status);
   }
 
   return data;
 }
 
 /**
- * Les versions des documents légaux qui ont cours, d'après le SERVEUR.
- * Affichage seulement — le client ne décide jamais d'une version.
+ * « نسيت كلمة المرور » — demande le lien par courriel.
+ *
+ * Le serveur répond pareil que l'adresse existe ou non : ne jamais en
+ * déduire (ni afficher) qu'un compte existe.
  */
-export async function fetchLegalVersions() {
-  const { ok, status, data } = await apiRequest('/legal/versions');
+export async function requestPasswordReset(email) {
+  const { ok, status, data } = await apiRequest('/auth/password/forgot', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email }),
+  });
 
   if (!ok) {
-    throw new ApiError(data?.message || 'Versions indisponibles.', classifyStatus(status), status);
+    throw new ApiError(apiMessage('sendEmail', data, status), classifyStatus(status), status);
   }
 
-  return data.versions;
+  return data;
+}
+
+/**
+ * Choisit un nouveau mot de passe avec le jeton reçu par courriel.
+ * Une réponse `reason: 'invalid_token'` (422) veut dire lien invalide ou
+ * expiré ; les autres 422 sont des règles de mot de passe.
+ */
+export async function resetPassword({ token, email, password, passwordConfirmation }) {
+  const { ok, status, data } = await apiRequest('/auth/password/reset', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ token, email, password, password_confirmation: passwordConfirmation }),
+  });
+
+  if (!ok) {
+    const invalidLink = data?.reason === 'invalid_token';
+    const error = new ApiError(
+      apiMessage(invalidLink ? 'resetLinkInvalid' : 'resetPassword', data, status),
+      classifyStatus(status),
+      status,
+    );
+    error.invalidLink = invalidLink;
+    throw error;
+  }
+
+  return data;
 }
 
 /**
@@ -164,8 +226,12 @@ export async function fetchLegalVersions() {
  * de second plan. Le frontend ne connaît ni l'identifiant client, ni le
  * secret — il ne connaît que cette adresse.
  */
-export function googleRedirectUrl() {
-  return `${API_URL}/auth/google/redirect`;
+export function googleRedirectUrl(accountType = 'student') {
+  // Le type de compte (élève par défaut, ou enseignant) part avec la
+  // navigation ; le serveur le tient dans une liste blanche et ne s'en sert
+  // que pour un compte NEUF.
+  const suffix = accountType === 'teacher' ? '?accountType=teacher' : '';
+  return `${API_URL}/auth/google/redirect${suffix}`;
 }
 
 /**
@@ -174,20 +240,44 @@ export function googleRedirectUrl() {
  * `handoff` est le jeton d'attente opaque rendu par le serveur au retour de
  * Google. Il est chiffré : ni lisible ni falsifiable ici.
  */
-export async function completeGoogleSignup({ handoff, acceptLegal }) {
+export async function completeGoogleSignup({
+  handoff,
+  firstName,
+  lastName,
+  password,
+  acceptLegal,
+  accountType = 'student',
+}) {
   const { ok, status, data } = await apiRequest('/auth/google/complete', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ handoff, accept_legal: acceptLegal }),
+    body: JSON.stringify({ handoff, firstName, lastName, password, accept_legal: acceptLegal, accountType }),
   });
 
   if (!ok) {
-    throw new ApiError(
-      data?.errors?.accept_legal?.[0] || data?.message || 'La connexion avec Google n’a pas abouti.',
-      classifyStatus(status),
-      status,
-    );
+    throw new ApiError(apiMessage('google', data, status), classifyStatus(status), status);
   }
 
+  return data;
+}
+
+/** Are registrations open? (apps/api › config/registration.php) — `{ open, classLinks }`; unreachable = open (the server decides anyway). */
+export async function registrationStatus() {
+  try {
+    const { ok, data } = await apiRequest('/registration', { method: 'GET' });
+    return ok ? { open: Boolean(data.open), classLinks: Boolean(data.classLinks) } : { open: true, classLinks: true };
+  } catch {
+    return { open: true, classLinks: true };
+  }
+}
+
+/** The waiting list while registrations are closed: a phone number, a name if given, who he is. */
+export async function joinWaitlist({ phone, name, role }) {
+  const { ok, data } = await apiRequest('/waitlist', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ phone, ...(name ? { name } : {}), role }),
+  });
+  if (!ok) throw new Error(data?.errors?.phone?.[0] ?? data?.message ?? 'تعذّر الإرسال. حاول من جديد.');
   return data;
 }

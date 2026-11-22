@@ -1,0 +1,124 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-dawaran-l4-008",
+  "lessonCode": "wadiya-idmajiya-dawaran",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — تيفو النجمة",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الزاوية المركزية",
+      "المسافة في المثلث القائم"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-dawaran_P2",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "لرسم تيفو نجمة العلم في ملعب 5 جويلية، تُوضع أطراف النجمة الخمسة على دائرة نصف قطرها $10\\,\\mathrm{m}$ ، متباعدة بنفس المسافة. يتدرّب الأنصار بحماس حبًّا في علم وطنهم."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "الزاوية المركزية بين طرفين متتاليين (بالدرجة):",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد (بالدرجة)",
+      "expectedAnswer": "72",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خمسة أطراف على دائرة مغلقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "خمسة أقواس متقايسة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "نقسم $360^\\circ$ على 5."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{360^\\circ}{5} = 72^\\circ$ .",
+        "incorrect": "خمسة أطراف تحدّد خمسة أقواس متقايسة."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "36",
+          "id": "MISC-MUNTAZAM-180"
+        },
+        {
+          "value": "108",
+          "id": "MISC-MUNTAZAM-MARKAZIYA"
+        }
+      ],
+      "difficulty": 4
+    },
+    {
+      "id": "q2",
+      "statement": "المسافة بين طرفين متتاليين بالمتر، مدوّرة إلى $0{,}01$ :",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "rational",
+      "answerFormat": "عدد عشري بالفاصلة (مدوّر إلى 0,01)",
+      "expectedAnswer": "11.76",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "في المثلث القائم الزاوية عند المركز $36^\\circ$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نصف المسافة $= 10\\sin 36^\\circ$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ضاعف ثم دوّر."
+        }
+      ],
+      "feedback": {
+        "correct": "$d = 20\\sin 36^\\circ \\approx 11{,}76\\,\\mathrm{m}$ .",
+        "incorrect": "نصف الزاوية المركزية في المثلث القائم، ثم الجيب."
+      },
+      "cognitiveDemand": "apply",
+      "misconceptionSignatures": [
+        {
+          "value": "19.02",
+          "id": "MISC-MUNTAZAM-NISF-ZAWIYA"
+        },
+        {
+          "value": "12.57",
+          "id": "MISC-MUNTAZAM-QAWS-WATAR"
+        },
+        {
+          "value": "10",
+          "id": "MISC-MUNTAZAM-DIL"
+        }
+      ],
+      "difficulty": 4
+    }
+  ]
+}

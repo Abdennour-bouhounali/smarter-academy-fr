@@ -1,0 +1,187 @@
+{
+  "id": "ex-2am-silsila-bi-aqwas-l3-001",
+  "lessonCode": "silsila-bi-aqwas",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الأول — أنجز بالتفصيل",
+    "estimatedMinutes": 12,
+    "tags": [
+      "أقواس متداخلة",
+      "معقوفان"
+    ],
+    "source": {
+      "type": "term_exam",
+      "grade": "2am",
+      "semester": 1,
+      "file": "2am-s1-91",
+      "exercise": 1
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الأول",
+      "heading": "التمرين",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "احسب العبارات الآتية مع توضيح مراحل الحساب. الآلة الحاسبة غير مسموح بها."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $K = 15 \\times 4 + 9 - 56 \\div 7$ .",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "61",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع إطارًا حول القوسين: ما بداخلهما يُحسب أوّلًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب ما بين القوسين وفق أولوية العمليات، ثم أعد كتابة العبارة بما بقي منها."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "كرّر ذلك عملية بعد عملية إلى أن يبقى عدد واحد."
+        }
+      ],
+      "feedback": {
+        "correct": "$K = 15 \\times 4 + 9 - 56 \\div 7 = 61$",
+        "incorrect": "ما بين القوسين يُحسب أوّلًا، ثم نكمل العمليات باحترام أولوية الضرب والقسمة على الجمع والطرح."
+      },
+      "solution": {
+        "lines": [
+          "$K = 15 \\times 4 + 9 - 56 \\div 7$",
+          "$K = 60 + 9 - 8$",
+          "$K = 69 - 8$",
+          "$K = 61$"
+        ],
+        "result": "K = 61"
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $L = 85 - [18 + (30 - 4 \\times 5) \\div 2] + 6$ .",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري، الفاصلة مقبولة",
+      "expectedAnswer": "68",
+      "misconceptionSignatures": [
+        {
+          "value": "93",
+          "id": "MISC-AQWAS-IGNORED"
+        },
+        {
+          "value": "78",
+          "id": "MISC-AQWAS-DROPOUTER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ضع خطًّا تحت أعمق القوسين: هما أوّل ما يُحسب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القوسين الداخليين ثم المعقوفين، ثم أكمل بقية العبارة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أعد كتابة العبارة بعد كل مرحلة بما بقي منها."
+        }
+      ],
+      "feedback": {
+        "correct": "$L = 85 - [18 + (30 - 4 \\times 5) \\div 2] + 6 = 68$",
+        "incorrect": "نبدأ بأعمق القوسين ثم نخرج إلى المعقوفين، وفي كل مستوى نحترم أولوية العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$L = 85 - [18 + (30 - 4 \\times 5) \\div 2] + 6$",
+          "$L = 85 - [18 + (30 - 20) \\div 2] + 6$",
+          "$L = 85 - (18 + 10 \\div 2) + 6$",
+          "$L = 85 - (18 + 5) + 6$",
+          "$L = 85 - 23 + 6$",
+          "$L = 62 + 6$",
+          "$L = 68$"
+        ],
+        "result": "L = 68"
+      },
+      "timeSeconds": 80
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "هل المعقوفان $[\\ \\ ]$ ضروريان في العبارة $L = 85 - [18 + (30 - 4 \\times 5) \\div 2] + 6$ ؟",
+      "learningPoints": [
+        {
+          "code": "2am_silsila-bi-aqwas_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": false,
+          "misconceptionId": "MISC-AQWAS-ALLUSELESS"
+        }
+      ],
+      "answerFormat": "اختر الإجابة، ثم قارن تبريرك بالحل النموذجي",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "قارن النتيجتين بدقة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب كل عبارة بالترتيب الصحيح قبل أن تحكم."
+        }
+      ],
+      "feedback": {
+        "correct": "تحقّقت من ذلك بالحساب.",
+        "incorrect": "احسب كل عبارة مرحلة مرحلة وقارن النتيجتين قبل أن تحكم."
+      },
+      "solution": {
+        "lines": [
+          "$L = 85 - 23 + 6 = 68$",
+          "وبدون المعقوفين: $85 - 18 + (30 - 20) \\div 2 + 6 = 85 - 18 + 5 + 6 = 78$ : النتيجة تغيّرت، فالمعقوفان ضروريان."
+        ]
+      },
+      "timeSeconds": 70
+    }
+  ]
+}

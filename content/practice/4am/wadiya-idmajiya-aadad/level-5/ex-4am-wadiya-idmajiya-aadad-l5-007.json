@@ -1,0 +1,169 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-aadad-l5-007",
+  "lessonCode": "wadiya-idmajiya-aadad",
+  "level": 5,
+  "metadata": {
+    "title": "على منوال BEM 2010 — تبليط قاعة دار الشباب بالنعامة",
+    "estimatedMinutes": 14,
+    "tags": [
+      "القاسم المشترك الأكبر",
+      "تبليط"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "bem_modelled",
+      "learningPoint": "4am_wadiya-idmajiya-aadad_P1",
+      "modelledOn": "BEM 2010 II"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال BEM 2010",
+      "heading": "الوضعية الإدماجية",
+      "points": "08"
+    }
+  },
+  "statement": {
+    "content": "قاعة متعددة النشاطات بدار الشباب بالنعامة، أرضيتها مستطيلة الشكل بُعداها 7,80m و 5,40m. يريد مدير الدار، ليكون فضاءً نظيفًا يلتقي فيه الشباب للعلم والتعاون، تبليطها ببلاطات مربعة الشكل متقايسة دون تقطيع، طول ضلع كل منها عدد طبيعي بالسنتيمتر، بحيث يكون عدد البلاطات أقل ما يمكن.\n\n• تُباع البلاطات في علب، في كل علبة 4 بلاطات، وثمن العلبة 2600DA.\n\n• أجرة البلّاط 450DA للمتر المربع الواحد."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "جد طول ضلع البلاطة (بالسنتيمتر).",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (بالسنتيمتر)",
+      "expectedAnswer": "60",
+      "misconceptionSignatures": [
+        {
+          "value": "30",
+          "id": "MISC-PGCD-LAYSA-AKBAR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بقسمة العدد الأكبر 780 على 540: ما الباقي؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عوّض الزوج (780 ; 540) بالزوج (540 ; الباقي)، ثم أعد القسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "توقّف عندما يصير الباقي معدومًا: القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+        }
+      ],
+      "feedback": {
+        "correct": "آخر باقٍ غير معدوم في خوارزمية إقليدس هو 60.",
+        "incorrect": "أجرِ القسمات المتتابعة إلى أن تجد باقيًا معدومًا؛ القاسم المشترك الأكبر هو آخر باقٍ غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "باستعمال خوارزمية إقليدس:",
+          "$780 = 540 \\times 1 + 240$",
+          "$540 = 240 \\times 2 + 60$",
+          "$240 = 60 \\times 4 + 0$",
+          "آخر باقٍ غير معدوم هو 60، إذن:",
+          "$7{,}80m = 780cm$ و $5{,}40m = 540cm$ ؛ أقل عدد من البلاطات يوافق أكبر ضلع يقسم البعدين، فهو $PGCD(780 ; 540)$ ."
+        ],
+        "result": "60\\,cm"
+      },
+      "work": "optional",
+      "timeSeconds": 210
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب عدد البلاطات اللازمة.",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "117",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب عدد البلاطات على الطول ثم على العرض."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "اضرب العددين."
+        }
+      ],
+      "feedback": {
+        "correct": "$13 \\times 9 = 117$ بلاطة.",
+        "incorrect": "اقسم كل بُعد (بالسنتيمتر) على طول ضلع البلاطة، ثم اضرب الناتجين."
+      },
+      "solution": {
+        "lines": [
+          "على الطول: $780 \\div 60 = 13$",
+          "على العرض: $540 \\div 60 = 9$",
+          "عدد البلاطات: $13 \\times 9 = 117$"
+        ],
+        "result": "117"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "☜ احسب التكلفة الإجمالية لتبليط هذه القاعة (ثمن العلب وأجرة البلّاط).",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-aadad_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "transfer",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي (بالدينار)",
+      "expectedAnswer": "96954",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "العلب لا تُجزّأ: احسب عدد العلب اللازمة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب مساحة الأرضية بالمتر المربع لحساب أجرة البلّاط."
+        }
+      ],
+      "feedback": {
+        "correct": "30 علبة: $78000$DA، والأجرة $42{,}12 \\times 450 = 18954$DA، والمجموع 96954DA.",
+        "incorrect": "احسب عدد العلب (عدد طبيعي يكفي كل البلاطات) وثمنها، ثم الأجرة حسب المساحة، واجمع."
+      },
+      "solution": {
+        "lines": [
+          "$117 = 4 \\times 29 + 1$ : 29 علبة لا تكفي، إذن تلزم 30 علبة.",
+          "ثمن العلب: $30 \\times 2600 = 78000$DA",
+          "المساحة: $7{,}8 \\times 5{,}4 = 42{,}12\\,m^2$",
+          "الأجرة: $42{,}12 \\times 450 = 18954$DA",
+          "التكلفة الإجمالية: $78000 + 18954 = 96954$DA"
+        ],
+        "result": "96954\\,DA"
+      },
+      "work": "optional",
+      "timeSeconds": 480
+    }
+  ]
+}

@@ -1,0 +1,217 @@
+{
+  "id": "ex-4am-mutatabiqat-shahira-l4-004",
+  "lessonCode": "mutatabiqat-shahira",
+  "level": 4,
+  "metadata": {
+    "title": "خمّن ثم برهن",
+    "estimatedMinutes": 9,
+    "tags": [
+      "حساب ذهني",
+      "متطابقة"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-36",
+      "page": 41,
+      "section": "أتعمّق",
+      "number": 36
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": ""
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "lead": "احسب كل عدد مما يلي:",
+      "statement": "$a = 35^2 - 36 \\times 34$",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$36 \\times 34 = (35 + 1)(35 - 1)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = 1225 - 1224 = 1$ .",
+        "incorrect": "اكتب $36 \\times 34$ على الشكل $(35 + 1)(35 - 1)$ ."
+      },
+      "solution": {
+        "lines": [
+          "$36 \\times 34 = (35 + 1)(35 - 1) = 35^2 - 1$",
+          "$a = 35^2 - (35^2 - 1)$"
+        ],
+        "result": "a = 1"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$2018^2 - 2019 \\times 2017$",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "خمّن النتيجة انطلاقًا من السؤال (ا)، ثم تحقّق."
+        }
+      ],
+      "feedback": {
+        "correct": "$2019 \\times 2017 = 2018^2 - 1$ ، إذن النتيجة $1$ .",
+        "incorrect": "اكتب $2019 \\times 2017$ على الشكل $(2018 + 1)(2018 - 1)$ ."
+      },
+      "solution": {
+        "lines": [
+          "$2019 \\times 2017 = (2018 + 1)(2018 - 1) = 2018^2 - 1$",
+          "$2018^2 - 2019 \\times 2017 = 2018^2 - (2018^2 - 1)$"
+        ],
+        "result": "2018^2 - 2019 \\times 2017 = 1"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "02",
+      "sub": "ا",
+      "lead": "انشر وبسّط كلا من الصيغ الآتية التي تعبّر عن الحسابات السابقة:",
+      "statement": "$E_1 = x^2 - (x + 1)(x - 1)$",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد الذي تساويه $E_1$ بعد التبسيط",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر بالمتطابقة الشهيرة المناسبة، وضع النشر بين قوسين إذا سبقته إشارة $-$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$E_1 = 1$ مهما كان $x$ .",
+        "incorrect": "انشر حدًّا حدًّا، ثم احذف القوسين المسبوقين بإشارة $-$ بتغيير إشارات حدودهما."
+      },
+      "solution": {
+        "lines": [
+          "$E_1 = x^2 - (x + 1)(x - 1)$",
+          "$E_1 = x^2 - \\left[x^2 - 1^2\\right]$",
+          "$E_1 = x^2 - (x^2 - 1)$",
+          "$E_1 = x^2 - x^2 + 1$"
+        ],
+        "result": "E_1 = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q4",
+      "step": "02",
+      "sub": "ب",
+      "statement": "$E_2 = (x - 1)^2 - x(x - 2)$",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد الذي تساويه $E_2$ بعد التبسيط",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر بالمتطابقة الشهيرة المناسبة، وضع النشر بين قوسين إذا سبقته إشارة $-$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$E_2 = 1$ مهما كان $x$ .",
+        "incorrect": "انشر حدًّا حدًّا، ثم احذف القوسين المسبوقين بإشارة $-$ بتغيير إشارات حدودهما."
+      },
+      "solution": {
+        "lines": [
+          "$E_2 = (x - 1)^2 - x(x - 2)$",
+          "$E_2 = x^2 - 2 \\times x \\times 1 + 1^2 - \\left[x \\times x - x \\times 2\\right]$",
+          "$E_2 = x^2 - 2x + 1 - (x^2 - 2x)$",
+          "$E_2 = x^2 - 2x + 1 - x^2 + 2x$"
+        ],
+        "result": "E_2 = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    },
+    {
+      "id": "q5",
+      "step": "02",
+      "sub": "ج",
+      "statement": "$E_3 = (x + 1)^2 - (x + 2)x$",
+      "learningPoints": [
+        {
+          "code": "4am_mutatabiqat-shahira_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد الذي تساويه $E_3$ بعد التبسيط",
+      "expectedAnswer": "1",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "انشر بالمتطابقة الشهيرة المناسبة، وضع النشر بين قوسين إذا سبقته إشارة $-$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$E_3 = 1$ مهما كان $x$ .",
+        "incorrect": "انشر حدًّا حدًّا، ثم احذف القوسين المسبوقين بإشارة $-$ بتغيير إشارات حدودهما."
+      },
+      "solution": {
+        "lines": [
+          "$E_3 = (x + 1)^2 - (x + 2)x$",
+          "$E_3 = x^2 + 2 \\times x \\times 1 + 1^2 - \\left[x \\times x + 2 \\times x\\right]$",
+          "$E_3 = x^2 + 2x + 1 - (x^2 + 2x)$",
+          "$E_3 = x^2 + 2x + 1 - x^2 - 2x$"
+        ],
+        "result": "E_3 = 1"
+      },
+      "work": "optional",
+      "timeSeconds": 120
+    }
+  ]
+}

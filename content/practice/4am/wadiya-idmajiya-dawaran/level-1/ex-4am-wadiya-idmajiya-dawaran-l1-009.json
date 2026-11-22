@@ -1,0 +1,86 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-dawaran-l1-009",
+  "lessonCode": "wadiya-idmajiya-dawaran",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — قراءة المعطيات",
+    "estimatedMinutes": 2,
+    "tags": [
+      "نمذجة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-dawaran_P2",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "حوض دائري قطره $8\\,\\mathrm{m}$ تحيط به 5 أعمدة إنارة متباعدة بنفس المسافة. نريد رسم مخطّط للأعمدة."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "المعطيات التي نرسم بها المخطط:",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-dawaran_P2",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "دائرة نصف قطرها $8\\,\\mathrm{m}$ وخماسي منتظم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-DAIRA-QUTR"
+        },
+        {
+          "id": "B",
+          "content": "دائرة نصف قطرها $4\\,\\mathrm{m}$ وخماسي منتظم (5 رؤوس)",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "دائرة نصف قطرها $4\\,\\mathrm{m}$ ومربع (4 مسافات بين 5 أعمدة)",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MUNTAZAM-AMDA"
+        },
+        {
+          "id": "D",
+          "content": "دائرة نصف قطرها $16\\,\\mathrm{m}$ وخماسي منتظم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-DAIRA-QUTR"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ميّز بين القطر ونصف القطر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "نصف القطر نصف القطر... أي نصف $8\\,\\mathrm{m}$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدد الأعمدة هو عدد رؤوس المضلع."
+        }
+      ],
+      "feedback": {
+        "correct": "نصف القطر نصف القطر: $4\\,\\mathrm{m}$ ، والأعمدة الخمسة رؤوس خماسي منتظم.",
+        "incorrect": "القطر ضعف نصف القطر، وعلى دائرة مغلقة خمسة أعمدة تحدّد خمسة أقواس."
+      },
+      "cognitiveDemand": "recall",
+      "difficulty": 1
+    }
+  ]
+}

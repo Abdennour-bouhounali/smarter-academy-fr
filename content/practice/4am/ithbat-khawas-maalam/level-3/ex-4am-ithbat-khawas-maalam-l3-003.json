@@ -1,0 +1,179 @@
+{
+  "id": "ex-4am-ithbat-khawas-maalam-l3-003",
+  "lessonCode": "ithbat-khawas-maalam",
+  "level": 3,
+  "metadata": {
+    "title": "من الكتاب — التمرين 27 (ص 149)",
+    "estimatedMinutes": 4,
+    "tags": [
+      "مربّع",
+      "انسحاب"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-27",
+      "page": 149,
+      "section": "أتعمّق",
+      "number": 27
+    }
+  },
+  "statement": {
+    "content": "من الكتاب (ص 149): المستوي منسوب إلى معلم متعامد ومتجانس مبدؤه O. (الوحدة 1cm). $A(-3\\,;\\,1)$ ، $B(1\\,;\\,4)$ ، $C(4\\,;\\,0)$ . D هي صورة النقطة A بالانسحاب الذي شعاعه $\\overrightarrow{BC}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "نوع المثلث ABC ( $AB^2 = 25$ ، $BC^2 = 25$ ، $AC^2 = 50$ ):",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "قائم في B ومتساوي الساقين",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "قائم في A",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-FITHAGHURAS-WATAR"
+        },
+        {
+          "id": "C",
+          "content": "متقايس الأضلاع",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SAQAYN-QAIM"
+        },
+        {
+          "id": "D",
+          "content": "متساوي الساقين وليس قائما",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SAQAYN-QAIM"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أكبر مربع."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$25 + 25$ ؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "والضلعان الصادران من B ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "$25 + 25 = 50$ : قائم في B ، و $AB = BC = 5$ .",
+        "incorrect": "الزاوية القائمة تقابل [AC]."
+      }
+    },
+    {
+      "id": "q2",
+      "statement": "إحداثيتا D :",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "point",
+      "answerFormat": "الثنائية $(x\\,;\\,y)$ : الأولى ثم الثانية (عدد صحيح أو كسر مثل 5/2)",
+      "expectedAnswer": {
+        "x": "0",
+        "y": "-3"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "$\\overrightarrow{AD} = \\overrightarrow{BC}$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "مركبتا $\\overrightarrow{BC}$ أولا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "أضفهما إلى إحداثيتي A."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{BC}\\begin{pmatrix} 3 \\\\ -4 \\end{pmatrix}$ ، $D(0\\,;\\,-3)$ .",
+        "incorrect": "D = A مزاحة بمركبتي $\\overrightarrow{BC}$ ."
+      }
+    },
+    {
+      "id": "q3",
+      "statement": "الرباعي ABCD مربّع لأن:",
+      "learningPoints": [
+        {
+          "code": "4am_ithbat-khawas-maalam_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 3,
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "أضلاعه تبدو متساوية",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-SHAKL-DALIL"
+        },
+        {
+          "id": "B",
+          "content": "متوازي أضلاع فيه زاوية قائمة وضلعان متتاليان متقايسان",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{AD} = \\overrightarrow{BC}$ وحدها",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        },
+        {
+          "id": "D",
+          "content": "المثلث ABC قائم في B وحده",
+          "isCorrect": false,
+          "misconceptionId": "MISC-MAALAM-MUTAWAZI-KAFI"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما الذي يثبته $\\overrightarrow{AD} = \\overrightarrow{BC}$ ؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ماذا تضيف الزاوية القائمة؟"
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "وماذا يضيف $AB = BC$ ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "متوازي أضلاع + زاوية قائمة + ضلعان متتاليان متقايسان: مربّع.",
+        "incorrect": "المربّع يحتاج الأدلة الثلاثة."
+      }
+    }
+  ]
+}

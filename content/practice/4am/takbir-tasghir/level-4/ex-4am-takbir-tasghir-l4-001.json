@@ -1,0 +1,69 @@
+{
+  "id": "ex-4am-takbir-tasghir-l4-001",
+  "lessonCode": "takbir-tasghir",
+  "level": 4,
+  "metadata": {
+    "title": "تدريب — ميدالية الخزّان",
+    "estimatedMinutes": 3,
+    "tags": [
+      "التكبير",
+      "السعة"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_takbir-tasghir_P2",
+      "modelledOn": null
+    }
+  },
+  "statement": {
+    "content": "ميدالية مفاتيح مطبوعة بطابعة ثلاثية الأبعاد هي تصغير لخزّان مائي بالنسبة $\\dfrac{1}{40}$ . حجم الميدالية $20\\,\\mathrm{cm}^3$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "احسب سعة الخزّان الحقيقي باللتر ($1\\,\\mathrm{L} = 1000\\,\\mathrm{cm}^3$).",
+      "learningPoints": [
+        {
+          "code": "4am_takbir-tasghir_P2",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 4,
+      "answerType": "rational",
+      "answerFormat": "عدد (صحيح، أو عشري بالفاصلة مثل 1,25 ، أو كسر مثل 4/7)",
+      "expectedAnswer": "1280",
+      "misconceptionSignatures": [
+        {
+          "id": "MISC-TAKBIR-HAJM-K",
+          "value": "0,8"
+        },
+        {
+          "id": "MISC-TAKBIR-HAJM-K",
+          "value": "32"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "من الميدالية إلى الخزّان تكبير بالنسبة 40."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الحجم يُضرب في $40^3 = 64000$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب الحجم بـ $\\mathrm{cm}^3$ ثم اقسم على 1000."
+        }
+      ],
+      "feedback": {
+        "correct": "$20 \\times 64000 = 1280000\\,\\mathrm{cm}^3 = 1280\\,\\mathrm{L}$ .",
+        "incorrect": "الحجم يُضرب في $40^3$ لا في 40 ولا في $40^2$ ."
+      }
+    }
+  ]
+}

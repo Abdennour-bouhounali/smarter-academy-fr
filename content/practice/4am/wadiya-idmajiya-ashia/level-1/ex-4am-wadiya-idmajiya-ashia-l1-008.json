@@ -1,0 +1,80 @@
+{
+  "id": "ex-4am-wadiya-idmajiya-ashia-l1-008",
+  "lessonCode": "wadiya-idmajiya-ashia",
+  "level": 1,
+  "metadata": {
+    "title": "تدريب — صورة B بانسحاب الممر",
+    "estimatedMinutes": 2,
+    "tags": [
+      "الانسحاب"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_wadiya-idmajiya-ashia_P3",
+      "modelledOn": "situation"
+    }
+  },
+  "generator": {
+    "tool": "gen_bank.py",
+    "version": "1"
+  },
+  "statement": {
+    "content": "في وضعية ممر الراجلين [MN] (M على الحافة القريبة من الحي، N على الحافة القريبة من المدرسة B)، نسمّي B′ صورة B بالانسحاب الذي شعاعه $\\overrightarrow{NM}$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "أيّ مساواة صحيحة؟",
+      "learningPoints": [
+        {
+          "code": "4am_wadiya-idmajiya-ashia_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "choice",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\overrightarrow{BB'} = \\overrightarrow{NM}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\overrightarrow{B'B} = \\overrightarrow{NM}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-INSIHAB-SURA"
+        },
+        {
+          "id": "C",
+          "content": "$\\overrightarrow{BB'} = \\overrightarrow{MN}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-SHUAA-ITTIJAH-MUAKKAS"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "صورة نقطة بانسحاب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "الشعاع يبدأ من النقطة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ويساوي شعاع الانسحاب."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\overrightarrow{BB'} = \\overrightarrow{NM}$ : من B إلى صورتها B′.",
+        "incorrect": "الشعاع يبدأ من B وينتهي عند صورتها B′، ويساوي $\\overrightarrow{NM}$ ."
+      },
+      "cognitiveDemand": "recall",
+      "difficulty": 1
+    }
+  ]
+}

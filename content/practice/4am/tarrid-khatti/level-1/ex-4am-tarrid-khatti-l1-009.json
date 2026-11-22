@@ -1,0 +1,112 @@
+{
+  "id": "ex-4am-tarrid-khatti-l1-009",
+  "lessonCode": "tarrid-khatti",
+  "level": 1,
+  "metadata": {
+    "title": "باقة الأنترنت",
+    "estimatedMinutes": 3,
+    "tags": [
+      "نمذجة",
+      "دالة خطية"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_tarrid-khatti_P1",
+      "modelledOn": "act-4",
+      "adaptedFrom": "ex-4am-tarrid-khatti-l1-009"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "في عرض لمتعامل الهاتف النقال، ثمن الأنترنت المستعمل في البحث العلمي متناسب مع حجمه: 2Go بـ 250DA. نسمّي $f(x)$ ثمن $x$ جيغا (Go) بالدينار."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "عبّر عن $f(x)$ بدلالة $x$ .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P1",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب العدد $a$ فقط (عدد صحيح، أو عشري بالفاصلة، أو كسر a/b)",
+      "expectedAnswer": "125",
+      "misconceptionSignatures": [
+        {
+          "value": "1/125",
+          "id": "MISC-TANASUB-MUAMIL-MAQLUB"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الثمن متناسب مع الحجم: $f(x) = ax$ ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "$a$ هو ثمن 1Go : اقسم الثمن على الحجم."
+        }
+      ],
+      "feedback": {
+        "correct": "$a = \\dfrac{250}{2}$ ، إذن $f(x) = 125x$ .",
+        "incorrect": "المعامل هو ثمن 1Go : الثمن على الحجم."
+      },
+      "solution": {
+        "lines": [
+          "$a = \\dfrac{250}{2} = 125$",
+          "إذن $f(x) = 125x$ ."
+        ],
+        "result": "f(x) = 125x"
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب ثمن 7Go .",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-khatti_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد: الثمن بـ DA",
+      "expectedAnswer": "875",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الثمن هو صورة 7 بالدالة $f$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$f(7) = 125 \\times 7 = 875$ : الثمن 875DA.",
+        "incorrect": "احسب صورة 7: اضرب في المعامل."
+      },
+      "solution": {
+        "lines": [
+          "$f(7) = 125 \\times 7 = 875$",
+          "ثمن 7Go هو 875DA."
+        ],
+        "result": "875DA"
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

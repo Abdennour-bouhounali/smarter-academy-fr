@@ -1,0 +1,203 @@
+{
+  "id": "ex-4am-khawass-qawasim-l4-003",
+  "lessonCode": "khawass-qawasim",
+  "level": 4,
+  "metadata": {
+    "title": "تمرين 16 — n + 2 و n + 32",
+    "estimatedMinutes": 12,
+    "tags": [
+      "خاصية 1",
+      "برهان",
+      "حرفي"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-16",
+      "page": 14,
+      "section": "أوظّف تعلّماتي",
+      "number": 16,
+      "adaptedFrom": "ex-4am-khawass-qawasim-l5-002"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03,5"
+    }
+  },
+  "statement": {
+    "content": "$n$ عدد طبيعي كيفي. نضع $a = n + 32$ و $b = n + 2$."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $a - b$.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "30",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "اكتب $a - b = (n + 32) - (n + 2)$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احذف القوسين: الحد $n$ يختفي."
+        }
+      ],
+      "feedback": {
+        "correct": "$a - b = n + 32 - n - 2 = 30$.",
+        "incorrect": "احذف القوسين مع الانتباه إلى الإشارة أمام القوس الثاني."
+      },
+      "solution": {
+        "lines": [
+          "$a - b = (n + 32) - (n + 2)$",
+          "$a - b = 30$"
+        ],
+        "result": "a - b = 30"
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بيّن أن كل قاسم مشترك للعددين $a$ و $b$ يقسم 30.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ليكن $d$ قاسمًا مشتركًا للعددين $a$ و $b$ ، مع $a > b$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القاسم المشترك لعددين يقسم فرقهما."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك سطرًا بسطر بالحل النموذجي، وانتبه إلى كل مرحلة من مراحل الاستدلال."
+      },
+      "solution": {
+        "lines": [
+          "ليكن $d$ قاسمًا مشتركًا للعددين $a$ و $b$.",
+          "$d$ يقسم كلا من $a$ و $b$ و $a > b$ ، فهو يقسم الفرق $a - b$ (الخاصية 1).",
+          "وحسب السؤال 01: $a - b = 30$ ، إذن $d$ يقسم 30."
+        ]
+      },
+      "timeSeconds": 180
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "عيّن كل الأعداد الطبيعية التي يمكن أن تكون قواسم مشتركة للعددين $n + 2$ و $n + 32$.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        10,
+        15,
+        30
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كل قاسم مشترك يقسم 30 حسب السؤال 02."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "جد كل قواسم 30، ثم تحقّق أن كل واحد منها ممكن."
+        }
+      ],
+      "feedback": {
+        "correct": "القواسم المشتركة الممكنة هي قواسم 30: 1 ، 2 ، 3 ، 5 ، 6 ، 10 ، 15 ، 30 (مثلًا من أجل $n = 28$: $a = 60$ و $b = 30$).",
+        "incorrect": "القاسم المشترك يقسم 30: ابحث عن كل قواسم 30."
+      },
+      "solution": {
+        "lines": [
+          "حسب السؤال 02، كل قاسم مشترك يقسم 30، وقواسم 30 هي: 1 ، 2 ، 3 ، 5 ، 6 ، 10 ، 15 ، 30.",
+          "وكلها ممكنة: من أجل $n = 28$ يكون $a = 60$ و $b = 30$ ، وقواسمهما المشتركة هي قواسم 30."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "من أجل $n = 13$ ، عيّن القواسم المشتركة للعددين $a$ و $b$.",
+      "learningPoints": [
+        {
+          "code": "4am_khawass-qawasim_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "integerSet",
+      "answerFormat": "الأعداد مفصولة بفاصلة",
+      "expectedAnswer": [
+        1,
+        3,
+        5,
+        15
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "احسب $a$ و $b$ من أجل $n = 13$."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "القواسم المشتركة هي من بين قواسم 30 (السؤال 03): أيّها يقسم العددين معًا؟"
+        }
+      ],
+      "feedback": {
+        "correct": "من أجل $n = 13$: $a = 45$ و $b = 15$ ، وقواسمهما المشتركة هي: 1 ، 3 ، 5 ، 15.",
+        "incorrect": "عوّض $n$ بالعدد 13، ثم اختبر قواسم 30 واحتفظ بالتي تقسم العددين معًا."
+      },
+      "solution": {
+        "lines": [
+          "من أجل $n = 13$: $a = 45$ و $b = 15$.",
+          "نختبر قواسم 30: 2 و 6 و 10 و 30 لا تقسم 15.",
+          "إذن القواسم المشتركة للعددين 45 و 15 هي: 1 ، 3 ، 5 ، 15."
+        ]
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    }
+  ]
+}

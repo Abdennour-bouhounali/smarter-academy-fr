@@ -1,0 +1,154 @@
+{
+  "id": "ex-1am-kitabat-adad-tabii-l2-006",
+  "lessonCode": "kitabat-adad-tabii",
+  "level": 2,
+  "metadata": {
+    "title": "بطاقات الأرقام",
+    "estimatedMinutes": 5,
+    "tags": [
+      "أصغر عدد",
+      "صفر في البداية"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "deep-3",
+      "page": 20,
+      "section": "أتعمّق",
+      "number": 3
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "نعتبر البطاقات 6، 0، 4، 1. نستعمل كل بطاقة مرة واحدة لتكوين عدد طبيعي من أربعة أرقام."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "ما هو أصغر عدد طبيعي من أربعة أرقام يمكن تشكيله؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "1046",
+      "misconceptionSignatures": [
+        {
+          "value": "146",
+          "id": "MISC-KITABA-LEADING-ZERO"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "هل يمكن أن يبدأ العدد بالرقم 0؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع في المرتبة الكبرى أصغر رقم غير معدوم، ثم باقي الأرقام تصاعديا."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنك استعملت كل رقم مرة واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "العدد المطلوب هو 1046.",
+        "incorrect": "الرقم 0 لا يمكن أن يفتتح كتابة عدد من عدة أرقام: نبدأ بأصغر رقم غير معدوم."
+      },
+      "solution": {
+        "lines": [
+          "لا يمكن أن يبدأ العدد بـ 0، فنبدأ بأصغر رقم غير معدوم ثم نرتّب الباقي تصاعديا: 1046."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "ما هو أكبر عدد طبيعي من أربعة أرقام يمكن تشكيله؟",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "6410",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أيّ رقم يجب أن يكون في أكبر مرتبة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "رتّب الأرقام من الأكبر إلى الأصغر انطلاقا من اليسار."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "تحقّق أنك استعملت كل رقم مرة واحدة."
+        }
+      ],
+      "feedback": {
+        "correct": "العدد المطلوب هو 6410.",
+        "incorrect": "كلما كان الرقم أكبر وجب أن يأخذ مرتبة أكبر."
+      },
+      "solution": {
+        "lines": [
+          "نضع الأرقام من الأكبر إلى الأصغر انطلاقا من المرتبة الكبرى: 6410."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "برّر لماذا لا يكون 0146 جوابا عن السؤال الأول.",
+      "learningPoints": [
+        {
+          "code": "1am_kitabat-adad-tabii_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب تبريرك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "كم رقما في الكتابة 146؟"
+        }
+      ],
+      "feedback": {
+        "correct": "تبريرك مطابق للحل النموذجي.",
+        "incorrect": "قارن تبريرك بالحل النموذجي سطرا بسطر."
+      },
+      "solution": {
+        "lines": [
+          "0146 هو العدد 146: الصفر في بدايته لا يحفظ أي مرتبة.",
+          "146 مكتوب بثلاثة أرقام فقط، والمطلوب عدد من أربعة أرقام.",
+          "لذلك نبدأ بأصغر رقم غير معدوم: 1، ثم 0، 4، 6."
+        ]
+      },
+      "timeSeconds": 120
+    }
+  ]
+}

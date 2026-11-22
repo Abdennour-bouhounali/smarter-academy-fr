@@ -1,0 +1,214 @@
+{
+  "id": "ex-3am-qismat-nisbiyayn-l1-003",
+  "lessonCode": "qismat-nisbiyayn",
+  "level": 1,
+  "metadata": {
+    "title": "أتحقّق: إشارة كسر",
+    "estimatedMinutes": 3,
+    "tags": [
+      "إشارة",
+      "كسر",
+      "اختيار من متعدد"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "self-10",
+      "page": 17,
+      "section": "أؤكّد تعلّماتي",
+      "number": 10
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "اختر الإجابة الصحيحة في كل سؤال. الحرفان $a$ و $b$ يرمزان إلى عددين نسبيين غير معدومين."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "sub": "ا",
+      "statement": "$a$ عدد سالب و $b$ عدد سالب. أيّ الكسور الآتية سالب؟",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{a}{b}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QISMA-SIGN"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{-a}{-b}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QISMA-FRACSIGN"
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{a}{-b}$",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الإشارة السالبة قد تكون في البسط أو في المقام أو أمام الكسر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "غيّر موضع الإشارة السالبة دون أن تغيّر عدد الإشارات السالبة، فيبقى العدد نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إشارتان سالبتان، واحدة في البسط وواحدة في المقام، تلغي إحداهما الأخرى."
+        }
+      ],
+      "feedback": {
+        "correct": "$a$ سالب و $-b$ موجب: إشارتاهما مختلفتان، فـ $\\dfrac{a}{-b}$ سالب.",
+        "incorrect": "راجع كتابات الكسر الثلاث: موضع الإشارة السالبة لا يغيّر العدد ما دام عدد الإشارات السالبة ثابتًا."
+      },
+      "solution": {
+        "lines": [
+          "$a$ سالب و $b$ سالب، إذن $-b$ موجب.",
+          "في $\\dfrac{a}{-b}$ البسط سالب والمقام موجب: إشارتان مختلفتان، فالكسر سالب.",
+          "أمّا $\\dfrac{a}{b}$ و $\\dfrac{-a}{-b}$ فبسطهما ومقامهما لهما الإشارة نفسها، فهما موجبان."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q2",
+      "step": "01",
+      "sub": "ب",
+      "statement": "$a$ عدد موجب و $b$ عدد سالب. أيّ الكسور الآتية موجب؟",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{a}{b}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QISMA-SIGN"
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{-a}{b}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$\\dfrac{-a}{-b}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QISMA-FRACSIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الإشارة السالبة قد تكون في البسط أو في المقام أو أمام الكسر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "غيّر موضع الإشارة السالبة دون أن تغيّر عدد الإشارات السالبة، فيبقى العدد نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إشارتان سالبتان، واحدة في البسط وواحدة في المقام، تلغي إحداهما الأخرى."
+        }
+      ],
+      "feedback": {
+        "correct": "$-a$ و $b$ سالبان: لهما الإشارة نفسها، فـ $\\dfrac{-a}{b}$ موجب.",
+        "incorrect": "راجع كتابات الكسر الثلاث: موضع الإشارة السالبة لا يغيّر العدد ما دام عدد الإشارات السالبة ثابتًا."
+      },
+      "solution": {
+        "lines": [
+          "$a$ موجب و $b$ سالب، إذن $-a$ سالب و $-b$ موجب.",
+          "في $\\dfrac{-a}{b}$ البسط والمقام سالبان، فالكسر موجب.",
+          "أمّا $\\dfrac{a}{b}$ و $\\dfrac{-a}{-b}$ فبسطهما ومقامهما مختلفا الإشارة، فهما سالبان."
+        ]
+      },
+      "timeSeconds": 60
+    },
+    {
+      "id": "q3",
+      "step": "01",
+      "sub": "ج",
+      "statement": "$a$ عدد سالب و $b$ عدد موجب. أيّ الكسور الآتية سالب؟",
+      "learningPoints": [
+        {
+          "code": "3am_qismat-nisbiyayn_P3",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$\\dfrac{a}{b}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "content": "$\\dfrac{a}{-b}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-QISMA-SIGN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "الإشارة السالبة قد تكون في البسط أو في المقام أو أمام الكسر."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "غيّر موضع الإشارة السالبة دون أن تغيّر عدد الإشارات السالبة، فيبقى العدد نفسه."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "إشارتان سالبتان، واحدة في البسط وواحدة في المقام، تلغي إحداهما الأخرى."
+        }
+      ],
+      "feedback": {
+        "correct": "$a$ سالب و $b$ موجب: إشارتاهما مختلفتان، فـ $\\dfrac{a}{b}$ سالب.",
+        "incorrect": "راجع كتابات الكسر الثلاث: موضع الإشارة السالبة لا يغيّر العدد ما دام عدد الإشارات السالبة ثابتًا."
+      },
+      "solution": {
+        "lines": [
+          "$a$ سالب و $b$ موجب: إشارتاهما مختلفتان، فـ $\\dfrac{a}{b}$ سالب.",
+          "أمّا $\\dfrac{a}{-b}$ فبسطه ومقامه سالبان، فهو موجب."
+        ]
+      },
+      "timeSeconds": 60
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "id": "ex-4am-tarrid-mushkila-l2-003",
+  "lessonCode": "tarrid-mushkila",
+  "level": 2,
+  "metadata": {
+    "title": "ضعف مجموع عمري الابنين",
+    "estimatedMinutes": 6,
+    "tags": [
+      "ترييض",
+      "أعمار"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "ex-12",
+      "page": 50,
+      "section": "أوظّف تعلّماتي",
+      "number": 12
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "يبلغ عمر أب يربّي ابنيه على الصدق والأمانة 43 سنة و عمرا ابنيه 4 و 7 سنوات."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "بعد كم سنة يكون عمر الأب ضعف مجموع عمري ابنيه؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: عدد السنوات",
+      "expectedAnswer": "7",
+      "misconceptionSignatures": [
+        {
+          "value": "21",
+          "id": "MISC-TARRID-MAJHUL-WAHID"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "سمِّ $x$ عدد السنوات: الأب والابنان يكبرون معًا."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بعد $x$ سنة: مجموع عمري الابنين $(4 + x) + (7 + x)$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "«ضعف المجموع»: ضع المجموع كله بين قوسين ثم اضربه في 2 ."
+        }
+      ],
+      "feedback": {
+        "correct": "$43 + x = 2[(4 + x) + (7 + x)]$ تعطي $x = 7$ .",
+        "incorrect": "كل ابن يكبر بـ $x$ سنة، والضعف يشمل المجموع كله."
+      },
+      "solution": {
+        "lines": [
+          "نسمّي $x$ عدد السنوات.",
+          "المعادلة: $43 + x = 2[(4 + x) + (7 + x)]$",
+          "$43 + x = 2(11 + 2x)$",
+          "$43 + x = 22 + 4x$",
+          "$43 - 22 = 4x - x$",
+          "$21 = 3x$",
+          "$x = 7$"
+        ],
+        "result": "x = 7"
+      },
+      "work": "optional",
+      "timeSeconds": 240
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "كم يكون عمر الأب حينئذ؟",
+      "learningPoints": [
+        {
+          "code": "4am_tarrid-mushkila_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي: العمر بالسنوات",
+      "expectedAnswer": "50",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "أضف عدد السنوات إلى عمر الأب اليوم."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "تحقّق: هل هو ضعف مجموع عمري الابنين حينئذ؟"
+        }
+      ],
+      "feedback": {
+        "correct": "عمر الأب 50 سنة، ومجموع عمري الابنين $11 + 14 = 25$ سنة: $50 = 2 \\times 25$ .",
+        "incorrect": "أضف عدد السنوات الذي وجدته إلى عمر الأب اليوم."
+      },
+      "solution": {
+        "lines": [
+          "$43 + 7 = 50$",
+          "التحقق: $(4 + 7) + (7 + 7) = 25$ و $2 \\times 25 = 50$ ."
+        ],
+        "result": "50"
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

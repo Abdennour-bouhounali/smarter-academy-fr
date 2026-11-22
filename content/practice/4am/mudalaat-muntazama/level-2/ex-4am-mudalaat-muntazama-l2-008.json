@@ -1,0 +1,62 @@
+{
+  "id": "ex-4am-mudalaat-muntazama-l2-008",
+  "lessonCode": "mudalaat-muntazama",
+  "level": 2,
+  "metadata": {
+    "title": "تدريب — مربع بالدوران في معلم",
+    "estimatedMinutes": 3,
+    "tags": [
+      "الإنشاء بالدوران",
+      "المربع"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "practice_generation",
+      "learningPoint": "4am_mudalaat-muntazama_P3",
+      "modelledOn": "know-5"
+    }
+  },
+  "statement": {
+    "content": "في معلم متعامد ومتجانس، ABCD مربع مركزه O(0 ; 0) ورؤوسه مرتّبة في الاتجاه المباشر، و $A(3\\,;\\,1)$ ."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "statement": "B صورة A بالدوران الذي مركزه O وزاويته $90^\\circ$ في الاتجاه المباشر. ما إحداثيا B؟",
+      "learningPoints": [
+        {
+          "code": "4am_mudalaat-muntazama_P3",
+          "role": "primary"
+        }
+      ],
+      "answerType": "point",
+      "answerFormat": "الثنائية (x ; y)",
+      "expectedAnswer": {
+        "x": "-1",
+        "y": "3"
+      },
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ارسم A و O، ثم ربع دورة عكس عقارب الساعة."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "بربع دورة في الاتجاه المباشر، $(x\\,;\\,y)$ تصير $(-y\\,;\\,x)$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "طبّق ذلك على $(3\\,;\\,1)$ ."
+        }
+      ],
+      "feedback": {
+        "correct": "$B(-1\\,;\\,3)$ : $OB = OA = \\sqrt{10}$ و $\\widehat{AOB} = 90^\\circ$ في الاتجاه المباشر.",
+        "incorrect": "تحقّق: OB = OA والزاوية قائمة، والدوران عكس عقارب الساعة."
+      },
+      "difficulty": 2
+    }
+  ]
+}

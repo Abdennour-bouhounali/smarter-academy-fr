@@ -1,4 +1,4 @@
-import { calculateCompletionPercentage } from '@smarter-academy/core';
+import { calculateCompletionPercentage, isValidModuleNumber, migrateLessonProgress } from '@smarter-academy/core';
 import { scopedStorage as storage } from '../../../../utils/storage';
 
 /**
@@ -22,7 +22,7 @@ export function getLessonProgress(lessonId, totalModules) {
   try {
     const saved = storage.getItem(`smarter_lesson_${lessonId}`);
     if (saved) {
-      const parsed = JSON.parse(saved);
+      const parsed = migrateLessonProgress(lessonId, JSON.parse(saved));
       if (Array.isArray(parsed.completedModules)) {
         parsed.completedModules.forEach(m => {
           const str = String(m);
@@ -35,7 +35,7 @@ export function getLessonProgress(lessonId, totalModules) {
       progressPercent = totalModules
         ? calculateCompletionPercentage(parsed.completedModules, totalModules)
         : 0;
-      currentModule = parsed.currentModule || 1;
+      currentModule = isValidModuleNumber(parsed.currentModule) ? Number(parsed.currentModule) : 1;
       lastVisitedAt = parsed.lastVisitedAt || 0;
     }
   } catch {

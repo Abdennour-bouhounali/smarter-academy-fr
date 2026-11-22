@@ -1,0 +1,142 @@
+{
+  "id": "ex-3am-quwa-adad-ashara-l4-008",
+  "lessonCode": "quwa-adad-ashara",
+  "level": 4,
+  "metadata": {
+    "title": "أكتب كمّية بقوة للعدد 10",
+    "estimatedMinutes": 6,
+    "tags": [
+      "k × قوة 10",
+      "أسماء الأعداد"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "self-11",
+      "page": 49,
+      "section": "أؤكّد تعلّماتي",
+      "number": 11
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "اختر الإجابة الصحيحة في السؤال الأول ثمّ أجب عن السؤال الثاني."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "تُكتب «52 مليونًا» :",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«مليون» هو 1 متبوع بعدد من الأصفار: كم صفرًا؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "«مليون» $= 10^{n}$ ، ثمّ نضرب 52 في هذه القوة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا نضرب 52 في الأسّ، ولا نعدّ الأرقام بدل الأصفار."
+        }
+      ],
+      "timeSeconds": 90,
+      "choices": [
+        {
+          "id": "A",
+          "content": "$52 \\times 10^{7}$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-RAQAM"
+        },
+        {
+          "id": "B",
+          "content": "$52 \\times 6$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-ASHARA-DARB"
+        },
+        {
+          "id": "C",
+          "content": "$52 \\times 10^{6}$",
+          "isCorrect": true
+        }
+      ],
+      "feedback": {
+        "correct": "$52$ مليونًا $= 52 \\times 1\\,000\\,000 = 52 \\times 10^{6}$ .",
+        "incorrect": "اختبر كلّ اقتراح بحساب الكتابة العشرية للقوة المعنية، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "«مليون» $= 1\\,000\\,000 = 10^{6}$ .",
+          "$52$ مليونًا $= 52 \\times 10^{6}$ ."
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "نكتب «7 ملايين» على الشكل $7 \\times 10^{n}$ : ما قيمة $n$ ؟",
+      "answerType": "rational",
+      "answerFormat": "الأسّ $n$ (عدد صحيح نسبي)",
+      "learningPoints": [
+        {
+          "code": "3am_quwa-adad-ashara_P4",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "«مليون» هو 1 متبوع بعدد من الأصفار."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "«مليون» $= 10^{n}$ ، ثمّ نضرب 7 في هذه القوة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "عدّ أصفار «مليون»."
+        }
+      ],
+      "timeSeconds": 90,
+      "expectedAnswer": "6",
+      "misconceptionSignatures": [
+        {
+          "value": "7",
+          "id": "MISC-ASHARA-RAQAM"
+        }
+      ],
+      "feedback": {
+        "correct": "$7$ ملايين $= 7 \\times 10^{6}$ .",
+        "incorrect": "أعد قراءة السؤال، وراجع القاعدة المناسبة، ثمّ أعد المحاولة."
+      },
+      "solution": {
+        "lines": [
+          "«مليون» $= 10^{6}$ .",
+          "$7$ ملايين $= 7 \\times 10^{6}$ ."
+        ],
+        "result": "n = 6"
+      }
+    }
+  ]
+}

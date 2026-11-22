@@ -1,0 +1,264 @@
+{
+  "id": "ex-1am-tatbiq-qaida-harfiya-l3-008",
+  "lessonCode": "tatbiq-qaida-harfiya",
+  "level": 3,
+  "metadata": {
+    "title": "على منوال اختبار الفصل الثالث — أجرة سيّارة أجرة",
+    "estimatedMinutes": 10,
+    "tags": [
+      "قاعدة حرفية",
+      "عدد عشري",
+      "قرار"
+    ],
+    "source": {
+      "type": "platform_addition",
+      "reason": "term_exam_modelled",
+      "modelledOn": "1am-s3"
+    },
+    "exam": {
+      "kind": "modelled",
+      "badge": "على منوال اختبار الفصل الثالث",
+      "heading": "التمرين الثالث",
+      "points": "04"
+    }
+  },
+  "statement": {
+    "content": "تحسب سيّارة أجرة ثمن الرحلة بالدينار بالقاعدة التالية حيث $k$ عدد الكيلومترات المقطوعة:",
+    "formulas": [
+      "T=50+30\\times k"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب $T$ من أجل $k=4$ .",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "170",
+      "misconceptionSignatures": [
+        {
+          "value": "84",
+          "id": "MISC-TATBIQ-PLUS"
+        },
+        {
+          "value": "320",
+          "id": "MISC-TATBIQ-ORDER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما قيمة كلّ حرف؟ وفي كم موضع يظهر كلّ حرف في العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع القيمة في كلّ موضع يظهر فيه الحرف، وأعد إشارة الضرب بين العددين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب بالأولويات: ما بين القوسين، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: النتيجة $170$ .",
+        "incorrect": "حذف إشارة الضرب لا يعني الجمع: $3x$ تعني $3\\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "نكتب القاعدة: $T=50+30\\times k$ .",
+          "نضع قيمة كلّ حرف في كلّ موضع يظهر فيه: $T=50+30\\times 4$ .",
+          "نحسب: $T=50+120$ .",
+          "نحسب: $T=170$ .",
+          "الجواب: $T=170$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب $T$ من أجل $k=7{,}5$ .",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد (بالفاصلة عند اللزوم)",
+      "expectedAnswer": "275",
+      "misconceptionSignatures": [
+        {
+          "value": "2300",
+          "id": "MISC-TATBIQ-DECIMAL"
+        },
+        {
+          "value": "600",
+          "id": "MISC-TATBIQ-ORDER"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما قيمة كلّ حرف؟ وفي كم موضع يظهر كلّ حرف في العبارة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "ضع القيمة في كلّ موضع يظهر فيه الحرف، وأعد إشارة الضرب بين العددين."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب بالأولويات: ما بين القوسين، ثمّ الضرب والقسمة، ثمّ الجمع والطرح."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: النتيجة $275$ .",
+        "incorrect": "الفاصلة جزء من العدد: $0{,}5$ ليس $5$ ."
+      },
+      "solution": {
+        "lines": [
+          "نكتب القاعدة: $T=50+30\\times k$ .",
+          "نضع قيمة كلّ حرف في كلّ موضع يظهر فيه: $T=50+30\\times 7{,}5$ .",
+          "نحسب: $T=50+225$ .",
+          "نحسب: $T=275$ .",
+          "الجواب: $T=275$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "ما ثمن رحلة طولها $k=2{,}5$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "$200$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-ORDER"
+        },
+        {
+          "id": "B",
+          "content": "$125$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "content": "$800$",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-DECIMAL"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "عوّض الحرف بقيمته في كلّ موضع ولا تحذف إشارة الضرب."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب ما بين القوسين أوّلًا إن وُجدا، ثمّ الضرب والقسمة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "احسب القيمة بنفسك ثمّ قارنها بالاقتراحات."
+        }
+      ],
+      "feedback": {
+        "correct": "نتحقّق: القيمة $125$ .",
+        "incorrect": "لا نحسب من اليسار إلى اليمين: الضرب والقسمة قبل الجمع والطرح، وما بين القوسين قبل كلّ شيء."
+      },
+      "solution": {
+        "lines": [
+          "نكتب القاعدة: $T=50+30\\times k$ .",
+          "نضع قيمة كلّ حرف في كلّ موضع يظهر فيه: $T=50+30\\times 2{,}5$ .",
+          "نحسب: $T=50+75$ .",
+          "نحسب: $T=125$ .",
+          "الجواب: $T=125$ ."
+        ]
+      },
+      "timeSeconds": 90
+    },
+    {
+      "id": "q4",
+      "step": "04",
+      "statement": "يملك راشد $300$ دج. هل يكفيه لرحلة طولها $k=9$ ؟",
+      "learningPoints": [
+        {
+          "code": "1am_tatbiq-qaida-harfiya_P2",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "transfer",
+      "answerType": "choice",
+      "answerFormat": "اختر الإجابة الصحيحة",
+      "choices": [
+        {
+          "id": "A",
+          "content": "نعم",
+          "isCorrect": false,
+          "misconceptionId": "MISC-TATBIQ-PLUS"
+        },
+        {
+          "id": "B",
+          "content": "لا",
+          "isCorrect": true
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ما القاعدة في كلّ حالة؟ وما القيم المعطاة؟"
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب القيمتين كلتيهما بالقاعدة المناسبة لكلّ حالة."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "قارن النتيجتين ثمّ أجب عن السؤال."
+        }
+      ],
+      "feedback": {
+        "correct": "قارنّا القيمة المحسوبة بالمبلغ المتوفّر.",
+        "incorrect": "حذف إشارة الضرب لا يعني الجمع: $3x$ تعني $3\\times x$ ."
+      },
+      "solution": {
+        "lines": [
+          "نحسب: $50+30\\times 9=320$ .",
+          "نقارن مع $300$ : المبلغ غير كافٍ ."
+        ]
+      },
+      "timeSeconds": 90
+    }
+  ]
+}

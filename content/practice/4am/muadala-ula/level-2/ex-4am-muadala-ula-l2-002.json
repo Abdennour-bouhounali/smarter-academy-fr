@@ -1,0 +1,165 @@
+{
+  "id": "ex-4am-muadala-ula-l2-002",
+  "lessonCode": "muadala-ula",
+  "level": 2,
+  "metadata": {
+    "title": "برنامج حساب: عدد فاطمة",
+    "estimatedMinutes": 6,
+    "tags": [
+      "برنامج حساب",
+      "ax + b = c"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "act-1",
+      "page": 44,
+      "section": "أنشطة",
+      "number": 1
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "03"
+    }
+  },
+  "statement": {
+    "content": "إليك برنامج الحساب الآتي: «اختر عددًا، اضربه في 3 ثمّ أضف 2، اضرب الناتج في 3، ثم اطرح 5»."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب النتيجة التي نحصل عليها عند اختيار العدد $2$ .",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "primary"
+        }
+      ],
+      "counted": false,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد صحيح: النتيجة",
+      "expectedAnswer": "19",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طبّق مراحل البرنامج بالترتيب على العدد 2."
+        }
+      ],
+      "feedback": {
+        "correct": "$19$ .",
+        "incorrect": "أعد الحساب خطوة خطوة، مع احترام أولويات العمليات والإشارات."
+      },
+      "solution": {
+        "lines": [
+          "$2 \\times 3 = 6$ ، $6 + 2 = 8$ ، $8 \\times 3 = 24$ ، $24 - 5 = 19$"
+        ],
+        "result": "19"
+      },
+      "work": "optional",
+      "timeSeconds": 90
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "بيّن أنه عند اختيار عدد $x$ تكون النتيجة $9x + 1$ .",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "primary"
+        }
+      ],
+      "cognitiveDemand": "reason",
+      "answerType": "selfCheck",
+      "answerFormat": "اكتب برهانك هنا، ثم اضغط «سجّل إجابتي» لتطّلع على الحل النموذجي.",
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "طبّق البرنامج على $x$ : اكتب العبارة الناتجة بالأقواس."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "انشر وبسّط."
+        }
+      ],
+      "feedback": {
+        "correct": "برهانك مطابق للحل النموذجي.",
+        "incorrect": "قارن برهانك سطرًا بسطر بالحل النموذجي: عوّض في كل طرف على حدة، واحترم أولويات العمليات."
+      },
+      "solution": {
+        "lines": [
+          "$(3x + 2) \\times 3 - 5$",
+          "$= 9x + 6 - 5$"
+        ],
+        "result": "9x + 1"
+      },
+      "timeSeconds": 150
+    },
+    {
+      "id": "q3",
+      "step": "03",
+      "statement": "حصلت فاطمة على العدد $-26$ . ما هو العدد الذي اختارته؟",
+      "learningPoints": [
+        {
+          "code": "4am_muadala-ula_P2",
+          "role": "primary"
+        },
+        {
+          "code": "4am_muadala-ula_P1",
+          "role": "secondary"
+        }
+      ],
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "اكتب حل المعادلة: عدد صحيح أو كسر على الشكل a/b (يُقبل العدد العشري)",
+      "expectedAnswer": "-3",
+      "misconceptionSignatures": [
+        {
+          "value": "-1/3",
+          "id": "MISC-MUADALA-QISMA-MAQLUBA"
+        },
+        {
+          "value": "-25/9",
+          "id": "MISC-MUADALA-NAQL-ISHARA"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "ابدأ بعزل الحدّ الذي فيه $x$ في طرف واحد."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "أضف إلى الطرفين (أو اطرح منهما) العدد نفسه حتى تصل إلى الشكل $ax = b$ ."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "ثم اقسم الطرفين على معامل $x$ مع إشارته."
+        }
+      ],
+      "feedback": {
+        "correct": "$x = -3$ : اختارت فاطمة العدد $-3$ .",
+        "incorrect": "أجرِ كل عملية على الطرفين معًا، ثم اقسم على معامل $x$ بإشارته، وتحقّق بالتعويض."
+      },
+      "solution": {
+        "lines": [
+          "نحل المعادلة $9x + 1 = -26$ :",
+          "$9x = -26 - 1$",
+          "$9x = -27$",
+          "$x = \\dfrac{-27}{9}$"
+        ],
+        "result": "x = -3"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}

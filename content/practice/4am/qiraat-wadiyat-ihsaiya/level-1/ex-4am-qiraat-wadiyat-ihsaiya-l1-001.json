@@ -1,0 +1,152 @@
+{
+  "id": "ex-4am-qiraat-wadiyat-ihsaiya-l1-001",
+  "lessonCode": "qiraat-wadiyat-ihsaiya",
+  "level": 1,
+  "metadata": {
+    "title": "تحدّ الكتاب — معدّل القسم (ب)",
+    "estimatedMinutes": 4,
+    "tags": [
+      "المتوسط المتوازن",
+      "مجموعات"
+    ],
+    "source": {
+      "type": "textbook",
+      "elementId": "challenge",
+      "page": 91,
+      "section": "تحدّ"
+    },
+    "exam": {
+      "kind": "adapted",
+      "badge": null,
+      "heading": "التمرين",
+      "points": "02"
+    }
+  },
+  "statement": {
+    "content": "يقدّم الجدول الآتي نتائج تلاميذ القسم (ب) في امتحان حسب عدد الذكور والإناث والمعدّل:",
+    "table": {
+      "head": [
+        "",
+        "ذكور — العدد",
+        "ذكور — المعدّل",
+        "إناث — العدد",
+        "إناث — المعدّل"
+      ],
+      "rows": [
+        [
+          "القسم (ب)",
+          "14",
+          "12,5",
+          "19",
+          "11"
+        ]
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "step": "01",
+      "statement": "احسب مجموع نقاط تلاميذ القسم (ب).",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد طبيعي",
+      "expectedAnswer": "384",
+      "misconceptionSignatures": [
+        {
+          "value": "23,5",
+          "id": "MISC-IHSA-MUTAWASSIT-BILA-TARJIH"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "مجموع نقاط مجموعة = عدد أفرادها × معدّلها."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "احسب مجموع نقاط الذكور، ثم مجموع نقاط الإناث."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "اجمع المجموعين."
+        }
+      ],
+      "feedback": {
+        "correct": "$14 \\times 12{,}5 + 19 \\times 11 = 384$ .",
+        "incorrect": "لا تجمع المعدّلين: اضرب كل معدّل في عدد أفراد مجموعته، ثم اجمع."
+      },
+      "solution": {
+        "lines": [
+          "مجموع نقاط الذكور: $14 \\times 12{,}5 = 175$",
+          "مجموع نقاط الإناث: $19 \\times 11 = 209$",
+          "$175 + 209 = 384$"
+        ],
+        "result": "384"
+      },
+      "timeSeconds": 120
+    },
+    {
+      "id": "q2",
+      "step": "02",
+      "statement": "احسب معدّل القسم (ب) مدوّرا إلى 0,01 .",
+      "learningPoints": [
+        {
+          "code": "4am_qiraat-wadiyat-ihsaiya_P3",
+          "role": "primary"
+        }
+      ],
+      "difficulty": 1,
+      "cognitiveDemand": "apply",
+      "answerType": "rational",
+      "answerFormat": "عدد عشري مدوّر إلى 0,01",
+      "expectedAnswer": "11,64",
+      "misconceptionSignatures": [
+        {
+          "value": "11,75",
+          "id": "MISC-IHSA-MUTAWASSIT-MUTAWASSITAYN"
+        }
+      ],
+      "hints": [
+        {
+          "id": "h1",
+          "type": "look",
+          "content": "المعدّل = مجموع النقاط ÷ عدد التلاميذ."
+        },
+        {
+          "id": "h2",
+          "type": "direction",
+          "content": "عدد التلاميذ هو عدد الذكور زائد عدد الإناث."
+        },
+        {
+          "id": "h3",
+          "type": "strategy",
+          "content": "لا تحسب متوسط المعدّلين: عدد الإناث لا يساوي عدد الذكور."
+        }
+      ],
+      "feedback": {
+        "correct": "$\\dfrac{384}{33} \\approx 11{,}64$ .",
+        "incorrect": "اقسم مجموع النقاط على عدد كل تلاميذ القسم، ثم دوّر إلى 0,01 ."
+      },
+      "solution": {
+        "lines": [
+          "عدد تلاميذ القسم: $14 + 19 = 33$",
+          "$\\dfrac{384}{33} \\approx 11{,}64$"
+        ],
+        "result": "11{,}64"
+      },
+      "work": "optional",
+      "timeSeconds": 150
+    }
+  ]
+}
